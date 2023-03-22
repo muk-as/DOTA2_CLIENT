@@ -7,6 +7,7 @@
 00000000H
 00000000I9
 00010203040506070809101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899
+0123456789
 0123456789ABCDEF
 0123456789abcdef
 02d.%03H
@@ -195,7 +196,6 @@
 9@8:u:H
 9IMemAlloc
 9IPipeRead
-9_Rb_tree_insert_and_rebalancebPSt18_Rb_tree_node_baseS0_RS
 A channel specifier is either
 A+L$$Hc
 A+T$$Hc
@@ -321,6 +321,7 @@ AnimCommonParams
 AnimCycleOverride
 AnimDelta
 AnimFile
+AnimForceBonePosition
 AnimGraphEditorUtils001
 AnimIkLockLocal
 AnimLayer
@@ -591,6 +592,7 @@ C_INIT_CreateOnModelAtHeight
 C_INIT_CreateSequentialPath
 C_INIT_CreateWithinBox
 C_INIT_CreateWithinSphere
+C_INIT_CreateWithinSphereTransform
 C_INIT_DistanceToCPInit
 C_INIT_GlobalScale
 C_INIT_InheritFromParentParticles
@@ -624,15 +626,23 @@ C_INIT_RandomVector
 C_INIT_RandomVectorComponent
 C_INIT_RandomYaw
 C_INIT_RandomYawFlip
+C_INIT_RemapCPOrientationToRotations
 C_INIT_RemapCPtoScalar
 C_INIT_RemapCPtoVector
 C_INIT_RemapInitialCPDirectionToRotation
+C_INIT_RemapInitialDirectionToCPToVector
+C_INIT_RemapInitialDirectionToTransformToVector
+C_INIT_RemapInitialTransformDirectionToRotation
 C_INIT_RemapInitialVisibilityScalar
 C_INIT_RemapNamedModelElementToScalar
 C_INIT_RemapParticleCountToScalar
+C_INIT_RemapQAnglesToRotation
 C_INIT_RemapScalar
 C_INIT_RemapScalarToVector
 C_INIT_RemapSpeedToScalar
+C_INIT_RemapTransformOrientationToRotations
+C_INIT_RemapTransformToVector
+C_INIT_RemapTransformtoVector
 C_INIT_RingWave
 C_INIT_RtEnvCull
 C_INIT_SequenceFromCP
@@ -648,8 +658,11 @@ C_OP_AttractToControlPoint
 C_OP_ConstrainDistance
 C_OP_ContinuousEmitter
 C_OP_CurlNoiseForce
+C_OP_CylindricalDistanceToCP
 C_OP_DecayMaintainCount
+C_OP_DistanceBetweenCPs
 C_OP_DistanceBetweenCPsToCP
+C_OP_DistanceToCP
 C_OP_DriveCPFromGlobalSoundFloat
 C_OP_EnableChildrenFromParentParticleCount
 C_OP_HSVShiftToCP
@@ -659,13 +672,24 @@ C_OP_InstantaneousEmitter
 C_OP_LockToSavedSequentialPath
 C_OP_MaintainEmitter
 C_OP_MovementPlaceOnGround
+C_OP_MovementRotateParticleAroundAxis
 C_OP_NoiseEmitter
+C_OP_PercentageBetweenCPLerpCPs
+C_OP_PercentageBetweenCPs
+C_OP_PercentageBetweenCPsVector
+C_OP_PositionLock
 C_OP_RampCPLinearRandom
 C_OP_RemapAverageScalarValuetoCP
 C_OP_RemapBoundingVolumetoCP
+C_OP_RemapCPOrientationToRotations
+C_OP_RemapCPOrientationToYaw
+C_OP_RemapCPVisibilityToScalar
+C_OP_RemapCPVisibilityToVector
 C_OP_RemapCPtoCP
+C_OP_RemapCPtoVelocity
 C_OP_RemapModelVolumetoCP
 C_OP_RemapSpeedtoCP
+C_OP_RemapTransformToVelocity
 C_OP_RenderRopes
 C_OP_RenderSprites
 C_OP_RenderStandardLight
@@ -728,6 +752,7 @@ ClothEffectAnimEvent
 ClothShapeCapsule
 ClothShapeList
 ClothShapeSphere
+Color(r=%d, g=%d, b=%d
 CommandProcedure
 CommandProcedureList
 Comment unavailable. CMiniDumpComment encountered an error while generating the comment
@@ -1146,6 +1171,8 @@ LccHD;cXD
 LcchD;cxD
 Lck D;k0D
 LengthOfMatchingPaths
+LerpCPs
+LerpTransforms
 Lightweight memory verifier is ON (allocation sizes %s, %uMiB reserved, %s, %s
 Lightweight verifier
 Line %d
@@ -1403,6 +1430,8 @@ PF_TYPE_RANDOM_UNIFORM
 POINTER
 PORTUGUESE
 PROTECTED
+PT_TYPE_CONTROL_POINT
+PT_TYPE_CONTROL_POINT_RANGE
 PVEC_TYPE_CP_VALUE
 PVEC_TYPE_FLOAT_COMPONENTS
 PVEC_TYPE_LITERAL
@@ -2690,6 +2719,7 @@ X[A\A]A^A
 Y4D3Y D3Y
 Y8E3Y$E3Y
 Y<E3Y(E3Y
+YA1AUATL
 YaG|`F
 Yacute
 YieldWait
@@ -2795,6 +2825,7 @@ Z22Assert_ConditionFailedRK34_AssertCompileTimeConstantStruct_tPKcz
 Z22Assert_ConditionFailedRK34_AssertCompileTimeConstantStruct_tPiPKcz
 Z22LooksLikeKV3BinaryDataPKviP7KV3ID_t
 Z22LooksLikeOldSchemaTextPKviP7KV3ID_t
+Z23FormatArgumentsToBufferP19IFormatOutputStreamPKcPK28CTypeErasedFormattingWrapperi
 Z23LoggingSystem_LogDirecti17LoggingSeverity_t5ColorPK17LoggingMetaData_tPKc
 Z23LoggingSystem_LogDirecti17LoggingSeverity_t5ColorPKc
 Z23LoggingSystem_LogDirecti17LoggingSeverity_tPK17LoggingMetaData_tPKc
@@ -2814,6 +2845,7 @@ Z26V_UnicodeConvertAndCaseStrPKwPwiPS1_i25EStringConvertErrorPolicy
 Z27V_UnicodeCaseStringInStringPKcS0_i25EStringConvertErrorPolicy
 Z27V_UnicodeCaseStringInStringPKtS0_i25EStringConvertErrorPolicy
 Z27V_UnicodeCaseStringInStringPKwS0_i25EStringConvertErrorPolicy
+Z28Formatting_AdjustIndentationi
 Z28V_SanitizeTextForCommandLinePKcP13CBufferString
 Z28V_SanitizeTextForCommandLinePKcPci
 Z29LoadKV3FromKV1Text_TranslatedP10KeyValues3P10CUtlStringPKc23KV1TextEscapeBehavior_tPK21KV1ToKV3Translation_tiS4_b
@@ -2841,6 +2873,19 @@ Z8FioClosei
 Z8FioFlushi
 Z8FioWriteiPKviPi
 Z8FioWriteiPKvmPm
+Z8FormatToP19IFormatOutputStream20CFormatStringElementPKc
+Z8FormatToP19IFormatOutputStream20CFormatStringElementPKv
+Z8FormatToP19IFormatOutputStream20CFormatStringElementRK10CUtlString
+Z8FormatToP19IFormatOutputStream20CFormatStringElementb
+Z8FormatToP19IFormatOutputStream20CFormatStringElementc
+Z8FormatToP19IFormatOutputStream20CFormatStringElementd
+Z8FormatToP19IFormatOutputStream20CFormatStringElementf
+Z8FormatToP19IFormatOutputStream20CFormatStringElementi
+Z8FormatToP19IFormatOutputStream20CFormatStringElementj
+Z8FormatToP19IFormatOutputStream20CFormatStringElementl
+Z8FormatToP19IFormatOutputStream20CFormatStringElementm
+Z8FormatToP19IFormatOutputStream20CFormatStringElementx
+Z8FormatToP19IFormatOutputStream20CFormatStringElementy
 Z9FioReadAtiyPviPi
 Z9IsKV3DataPK10CUtlBufferP7KV3ID_t
 Z9IsKV3DataPKviP7KV3ID_t
@@ -3376,6 +3421,9 @@ ZN19CModuleListSnapshot7CaptureEPv
 ZN19CModuleListSnapshot7CaptureEj
 ZN19CModuleListSnapshotC1EPhm
 ZN19CModuleListSnapshotC2EPhm
+ZN19IFormatOutputStream17OutputIndentationEv
+ZN19IFormatOutputStream4PutSEPKc
+ZN19IFormatOutputStream8PutCharsEPKci
 ZN19KeyValuesJSONParser9ParseFileEv
 ZN19KeyValuesJSONParserC1EPKci
 ZN19KeyValuesJSONParserC1ERK10CUtlBuffer
@@ -3398,6 +3446,10 @@ ZN20CExpressionEvaluatorC1Ev
 ZN20CExpressionEvaluatorC2Ev
 ZN20CExpressionEvaluatorD1Ev
 ZN20CExpressionEvaluatorD2Ev
+ZN20CFormatStringElement12ParseElementEPKc
+ZN20CFormatStringElement18EnforceTypeAndSizeEPKcS1
+ZN20CFormatStringElementC1EPKc
+ZN20CFormatStringElementC2EPKc
 ZN20CUniformRandomStream11RandomFloatEff
 ZN20CUniformRandomStream14RandomFloatExpEfff
 ZN20CUniformRandomStream20GenerateRandomNumberEv
@@ -3481,6 +3533,8 @@ ZN23CUtlFilenameSymbolTable6StringERKjPci
 ZN23CUtlFilenameSymbolTable9RemoveAllEv
 ZN24CDeferredCallStackMarker6InsertEv
 ZN24CDeferredCallStackMarker6RemoveEv
+ZN24CStdIOFormatOutputStream4PutCEc
+ZN24CStdIOFormatOutputStream8PutCharsEPKci
 ZN24CUtlMemoryBlockAllocator11SetPageSizeEj
 ZN24CUtlMemoryBlockAllocator12AllocAndCopyEPKcj
 ZN24CUtlMemoryBlockAllocator5AllocEj
@@ -3525,6 +3579,10 @@ ZN28CCallStackStatsGatherer_Base27STUB_OnLinkedGathererPoppedERKS
 ZN28CCallStackStatsGatherer_Base27STUB_OnLinkedGathererPushedERKS_RK20CCallStackMarkerBase
 ZN28CCallStackStatsGatherer_Base28STUB_EvaluateGathererLinkageERS
 ZN28CCallStackStatsGatherer_Base29STUB_RemoveSharedInstanceDataERK43CallStackStatsGatherer_SharedInstanceData_t
+ZN28CUtlStringFormatOutputStream4PutCEc
+ZN29CCharBufferFormatOutputStream4PutCEc
+ZN29CCharBufferFormatOutputStream8PutCharsEPKci
+ZN29CCharBufferFormatOutputStream9TerminateEv
 ZN29CKeyValuesDumpContextAsDevMsg10KvBeginKeyEP9KeyValuesi
 ZN29CKeyValuesDumpContextAsDevMsg11KvWriteTextEPKc
 ZN30CStackTop_ReferenceParentStack21ChangeReferencedStackEPKPKvi
@@ -3759,6 +3817,7 @@ ZNK10CUtlStringixEi
 ZNK10CUtlStringplEPKc
 ZNK10CUtlStringplERKS
 ZNK10CUtlStringplEi
+ZNK10CUtlSymbol8FormatToEP19IFormatOutputStream20CFormatStringElement
 ZNK10CVProfNode10GetSubNodeEPKciS1
 ZNK10CVProfNode10GetSubNodeEPKciS1_i
 ZNK10MD5Value_t6IsZeroEv
@@ -3801,6 +3860,7 @@ ZNK15CStringRegistry4NextEt
 ZNK15CStringRegistry5FirstEv
 ZNK15CUtlBinaryBlock3GetEPvi
 ZNK15CUtlBinaryBlockeqERKS
+ZNK15CUtlStringToken8FormatToEP19IFormatOutputStream20CFormatStringElement
 ZNK15CUtlSymbolTable11GetElementsEiiP10CUtlSymbol
 ZNK15CUtlSymbolTable12SaveToBufferER10CUtlBuffer
 ZNK15CUtlSymbolTable14GetMemoryUsageEv
@@ -3850,6 +3910,9 @@ ZNK28CCallStackStatsGatherer_Base27STUB_PopFromLinkedGatherersEv
 ZNK28CCallStackStatsGatherer_Base30STUB_GetCapturedCallStackDepthEv
 ZNK28CCallStackStatsGatherer_Base30STUB_GetVectorData_StatEntriesERPKvRj
 ZNK28CCallStackStatsGatherer_Base33STUB_GetVectorData_StoredSubTreesERPKPKS_Rj
+ZNK29CCharBufferFormatOutputStream17RemainingCapacityEv
+ZNK29CCharBufferFormatOutputStream6IsFullEv
+ZNK5Color8FormatToEP19IFormatOutputStream20CFormatStringElement
 ZNK6CFiber17EstimateBytesUsedEm
 ZNK8netadr_t10CompareAdrERKS_b
 ZNK8netadr_t10IsLoopbackEv
@@ -4077,8 +4140,8 @@ ZSt18_Rb_tree_incrementPSt18_Rb_tree_node_base
 ZSt20__throw_system_errori
 ZSt25__throw_bad_function_callv
 ZSt28_Rb_tree_rebalance_for_erasePSt18_Rb_tree_node_baseRS
+ZSt29_Rb_tree_insert_and_rebalancebPSt18_Rb_tree_node_baseS0_RS
 ZSt9use_facetISt8numpunctIcEERKT_RKSt6locale
-ZTI12CThreadEvent
 ZTI16CThreadFullMutex
 ZTI16CThreadSemaphore
 ZTI17CThreadSyncObject
@@ -4091,7 +4154,6 @@ ZTI35CKeyValuesDumpContextToBufferString
 ZTI37CKeyValuesDumpContextToLoggingChannel
 ZTI7CThread
 ZTISt13runtime_error
-ZTS12CThreadEvent
 ZTS16CThreadFullMutex
 ZTS16CThreadSemaphore
 ZTS17CThreadSyncObject
@@ -4103,7 +4165,6 @@ ZTS29CKeyValuesDumpContextAsDevMsg
 ZTS35CKeyValuesDumpContextToBufferString
 ZTS37CKeyValuesDumpContextToLoggingChannel
 ZTS7CThread
-ZTV12CThreadEvent
 ZTV16CThreadFullMutex
 ZTV16CThreadSemaphore
 ZTV17CThreadSyncObject
@@ -4263,6 +4324,7 @@ differences
 disable_affinity_preferences
 disconnected
 distributed
+diuoxXfFeEgGaAcsp
 divide
 dladdr1
 dlclose
@@ -4278,7 +4340,6 @@ dynstr
 dynsym
 e0IcE(M
 eDkk(F
-eIDoW5
 eacute
 egrave
 eh_frame
@@ -4399,6 +4460,7 @@ getrlimit64
 getrusage
 getsockname
 gettimeofday
+gfFeEaAG
 gmon_start
 gmtime_r
 gnu.hash
@@ -4449,7 +4511,6 @@ jobthread.cpp
 keyvaluessystem.cpp
 kv3 encoding:%s:version{%s} format:%s:version{%s
 kv3format_manager.cpp
-l_AUATL
 lambda
 last_sniff
 ld-linux-x86-64.so.2
@@ -4528,6 +4589,7 @@ m_Joints
 m_LiteralColor
 m_LocalCoordinateSystemSpeedMax
 m_LocalCoordinateSystemSpeedMin
+m_LocalSpaceTransform
 m_Modifiers
 m_MotorList
 m_Operators
@@ -4542,6 +4604,9 @@ m_TargetSettingSource
 m_TargetSource
 m_TextureControls
 m_TraceSpace
+m_TransformEnd
+m_TransformInput
+m_TransformStart
 m_VecCoroutineStack.Count() > 1
 m_actions
 m_additiveChildID
@@ -4553,6 +4618,7 @@ m_bApplyMinForce
 m_bDisableChild
 m_bDisableNetworking
 m_bDisableOperator
+m_bDistributeInCPRange
 m_bDoBonesOrientAlongPositiveX
 m_bFitCycleToLifetime
 m_bFogParticles
@@ -4643,6 +4709,7 @@ m_flDuration
 m_flEmissionDuration
 m_flEmissionScale
 m_flEmitRate
+m_flEndCPGrowthTime
 m_flEndTime
 m_flExponent
 m_flFinalTextureOffsetU
@@ -4758,6 +4825,9 @@ m_nClusterSizeMin
 m_nCollisionMode
 m_nControlPoint
 m_nControlPointNumber
+m_nControlPointNumberMax
+m_nControlPointRangeMax
+m_nEndCP
 m_nFeatheringMode
 m_nField
 m_nFieldInput
@@ -4767,6 +4837,7 @@ m_nFogType
 m_nHand
 m_nIncrement
 m_nLightType
+m_nLocalSpaceCP
 m_nMapType
 m_nMinParticlesToEmit
 m_nNoiseType
@@ -4791,6 +4862,7 @@ m_nScaleControlPointField
 m_nSequenceCombineMode
 m_nSetMethod
 m_nSortMethod
+m_nStartCP
 m_nTextureChannels
 m_nTextureType
 m_nTraceMissBehavior
@@ -4915,6 +4987,7 @@ modeldoc29
 modeldoc3
 modeldoc30
 modeldoc31
+modeldoc32
 modeldoc4
 modeldoc5
 modeldoc6
@@ -4956,6 +5029,7 @@ note.gnu.build-id
 notify-send
 nowatchdog
 ntilde
+nullptr
 number
 number is too big
 numsegments
@@ -5075,6 +5149,8 @@ rnd_down
 rodata
 rootNode
 root_keyname
+rotation
+rotation_xyz
 s %c%s
 s %d: proc %d (group %u:%u
 s %i %s
@@ -5187,11 +5263,12 @@ sys/devices/system/cpu/cpu%u/topology/core_id
 sys/devices/system/cpu/cpu%u/topology/physical_package_id
 sysconf
 sysinfo
+t H;=)48
 t H;Q r
 t3Lc#D;c
 t4[A\A
-t7H;58*8
-t7H;5X(8
+t7H;5X38
+t7H;5x18
 t7[A\A]A
 t8@:1uCH
 tC[A\A]A
