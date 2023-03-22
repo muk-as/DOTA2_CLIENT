@@ -4859,7 +4859,6 @@
 19TEDecal_GameEvent_t
 19TESmoke_GameEvent_t
 1: AI Decisions
-1CDOTA_Modifier_Frostivus2018_Siege_Fireball_Thinker
 1CMsgServerToGCRequestBatchPlayerResourcesResponse
 1DOTA_UNIT_ORDER_TAKE_ITEM_FROM_NEUTRAL_ITEM_STASH
 1DPC_PUSH_NOTIFICATION_PLAYER_JOINED_TEAM_AS_COACH
@@ -5454,7 +5453,6 @@
 21CDOTAMsg_CoachHUDPing
 21CDOTAMsg_LocationPing
 21CDOTAMutationGameMode
-21CDOTAPlayerController
 21CDOTASubChallengeInfo
 21CDOTATrophyGameSystem
 21CDOTAUserMsg_HudError
@@ -7800,7 +7798,7 @@
 29CEntFireAutoCompletionFunctor
 29CEntityMessageRemoveAllDecals
 29CGCClientJobSetLeaverDetected
-29CGCSe
+29CGCServerJobSendRealtimeStats
 29CGCStorePurchaseInit_LineItem
 29CInfoOffscreenPanoramaTexture
 29CMatchAdditionalUnitInventory
@@ -11529,7 +11527,6 @@
 41CDOTA_Ability_Special_Bonus_Unique_Doom_1
 41CDOTA_Ability_Special_Bonus_Unique_Doom_2
 41CDOTA_Ability_Special_Bonus_Unique_Doom_3
-41CDOTA_Ability_Special_Bonus_Unique_Doom_4
 41CDOTA_Ability_Special_Bonus_Unique_Doom_5
 41CDOTA_Ability_Special_Bonus_Unique_Doom_6
 41CDOTA_Ability_Special_Bonus_Unique_Doom_7
@@ -14146,6 +14143,7 @@
 51CDOTA_Modifier_Fountain_Fury_Swipes_Damage_Increase
 51CDOTA_Modifier_Frostivus2018_Earthshaker_Aftershock
 51CDOTA_Modifier_Frostivus2018_Puck_DreamCoil_Thinker
+51CDOTA_Modifier_Frostivus2018_Siege_Fireball_Thinker
 51CDOTA_Modifier_Frostivus2018_Summon_Snowman_Thinker
 51CDOTA_Modifier_GnollAssassin_EnvenomedWeapon_Poison
 51CDOTA_Modifier_Greevil_Miniboss_Purple_VenomousGale
@@ -14202,6 +14200,7 @@
 52CDOTA_Ability_Special_Bonus_Unique_Marci_Lunge_Range
 52CDOTA_Ability_Special_Bonus_Unique_Outworld_Devourer
 52CDOTA_Ability_Special_Bonus_Unique_Vengeful_Spirit_1
+52CDOTA_Ability_Special_Bonus_Unique_Vengeful_Spirit_2
 52CDOTA_Ability_Special_Bonus_Unique_Vengeful_Spirit_3
 52CDOTA_Ability_Special_Bonus_Unique_Vengeful_Spirit_4
 52CDOTA_Ability_Special_Bonus_Unique_Vengeful_Spirit_5
@@ -16252,7 +16251,6 @@ ACT_MELEE_VM_PULLBACK
 ACT_MELEE_VM_RELOAD
 ACT_MELEE_VM_SECONDARYATTACK
 ACT_MIRANA_LEAP_END
-ACT_MP
 ACT_MP_AIRWALK
 ACT_MP_AIRWALK_BUILDING
 ACT_MP_AIRWALK_ITEM1
@@ -16331,6 +16329,7 @@ ACT_MP_ATTACK_SWIM_PREFIRE
 ACT_MP_ATTACK_SWIM_PRIMARY
 ACT_MP_ATTACK_SWIM_PRIMARYFIRE
 ACT_MP_ATTACK_SWIM_SECONDARY
+ACT_MP_ATTACK_SWIM_SECONDARYFIRE
 ACT_MP_CROUCHWALK
 ACT_MP_CROUCHWALK_BUILDING
 ACT_MP_CROUCHWALK_ITEM1
@@ -17118,7 +17117,6 @@ ATTACKCOMBO_B
 ATTACKCOMBO_C
 ATTACKCOMBO_RESET
 ATTACKER
-ATTACK_SWIM_SECONDARYFIRE
 AUATSHc
 AUATSHcG
 AUATSLc'E
@@ -26393,6 +26391,7 @@ Crash report has been pending to submit for %d seconds
 Crash report message acknowledge by GC
 Crash report message send failed with result code %d.  GIVING UP
 Crash report message send failed with result code %d.  Will retry in %d seconds
+Create
 Create a C proxy for a script-based spawn group filter
 Create a DOTA item
 Create a localhost HTTP request
@@ -26412,7 +26411,6 @@ Create an entity at a specified location and orientaton, orientation is Euler an
 Create an entity at the location of a named entity
 Create an entity at the location of a specified entity instance
 Create an entity at the location of the maker
-Create illusions of the passed hero that belong to passed unit using passed modifier data. ( hOwner, hHeroToCopy, hModiiferKeys, nNumIllusions, nPadding, bScramblePosition, bFindClearSpace
 Create(CDOTALobby
 Create(CDOTAPlayerChallenge
 Create(CDotaDynamicLobby
@@ -26983,6 +26981,7 @@ DOTAMusic_Stinger.009
 DOTANeutralItems
 DOTAOutgoingBonus_t
 DOTAPlayer sendToPlayer, int iMessageType, Entity targetEntity, int iValue, DOTAPlayer sourcePlayer ) - sendToPlayer and sourcePlayer can be nil - iMessageType is one of OVERHEAD_ALERT
+DOTAPlayerController
 DOTAPortraitEnvironmentType_t
 DOTAPostGameColumn_t
 DOTAPostGameLayout_t
@@ -31751,6 +31750,7 @@ GetModifierStatusResistance
 GetModifierStatusResistanceCaster
 GetModifierStatusResistanceStacking
 GetModifierStrongIllusion
+GetModifierSuperIllusion
 GetModifierSuperIllusionWithUltimate
 GetModifierTempestDouble
 GetModifierTotalDamageOutgoing_Percentage
@@ -42381,7 +42381,7 @@ T$XHcSXH
 T$`HcS`H
 T$pHcSpH
 T$xHcSxH
-TA_Ability_Special_Bonus_Unique_Vengeful_Spirit_2
+TA_Ability_Special_Bonus_Unique_Doom_4
 TD SUMMARY (%d summaries
 TEAM_DIRE
 TEAM_NEUTRAL
@@ -48449,7 +48449,6 @@ courier_go_to_sideshop
 courier_go_to_sideshop2
 courier_gold
 courier_killed_events
-courier_lost_bad
 courier_lost_good
 courier_morph
 courier_no_vision
@@ -50562,6 +50561,7 @@ dynstr
 dynsym
 e E;e0D
 e" must be followed by exponent
+e.protobuf.UninterpretedOption.identifier_value
 eAbilityH
 eAction
 eBotMode
@@ -50589,7 +50589,7 @@ eResult_Success
 eRollType
 eShopType
 eUnlockEvent
-eXL;%Av
+eXL;%at
 e_body_idle
 e_definiH
 e_face_idle
@@ -51075,7 +51075,6 @@ equip_regions_list
 equip_sound
 equipped_econ_items
 equipped_state
-er_omniknight_hammer_of_purity_bomb
 eresult
 eresult_deprecated
 errno_location
@@ -51084,7 +51083,6 @@ error %s:  %s
 error in transition graph: %s to %s
 error:%08lX:%s:%s:%s
 error_message
-erverJobSendRealtimeStats
 escalating_chance_drop
 escalating_chance_drop_by_rarity
 escalating_pitch
@@ -52476,7 +52474,6 @@ google.protobuf.UInt32Value
 google.protobuf.UInt64Value
 google.protobuf.UninterpretedOption.NamePart.name_part
 google.protobuf.UninterpretedOption.aggregate_value
-google.protobuf.UninterpretedOption.identifier_value
 google.protobuf.Value
 google.protobuf.bridge.MessageSet
 google/protobuf/arena.cc
@@ -53571,6 +53568,7 @@ identifier_value
 idle: %s, weight: %.2f
 idle_alt_2_anim
 idle_lifetime
+ier_lost_bad
 if g_reloadState == nil then
 if g_reloadState[k] == nil then
 if imgui should consume input
@@ -53580,6 +53578,7 @@ if we starve, we hold the faster time dilation for at least this many msecs
 if we starve, we increment target queue only this often, 0 to disable
 if you ignore case and strip out the enum name prefix (if any). This is error-prone and can lead to undefined behavior. Please avoid doing this. If you are using allow_alias, please assign the same numeric value to both enums
 ifA;L$.waf
+ifier_aghsfort_bane_brain_sap_invis_crit
 ignite_damage_percent
 ignite_duration
 ignite_multicast_aoe
@@ -53643,6 +53642,7 @@ illusion_proc_chance_pct
 illusion_type
 illusioncount
 illusionlabel
+illusions of the passed hero that belong to passed unit using passed modifier data. ( hOwner, hHeroToCopy, hModiiferKeys, nNumIllusions, nPadding, bScramblePosition, bFindClearSpace
 image_banner
 image_bits
 image_inventory
@@ -54338,6 +54338,7 @@ item_orb_of_pestilence
 item_orb_of_revelations
 item_orchid
 item_overflowing_elixir
+item_overwhelming_blink
 item_pack
 item_parent_entindex_const
 item_penta_edged_sword
@@ -56599,7 +56600,6 @@ launch_radius
 launch_tick
 launchoptions
 layerSequence%d
-layer_id_2
 layout_filename
 lazy = true] can only be specified for submessage fields
 ld bytes leaked in %d chunks
@@ -57606,6 +57606,7 @@ m_TargetEntities
 m_TargetFOV
 m_TargetLane
 m_TargetLocation
+m_TargetSource
 m_TeamBarracks
 m_TeamShrines
 m_TeamStatsUpdateTimer
@@ -61899,7 +61900,6 @@ m_outerKnuckle2
 m_outputMorph
 m_outputTransformList
 m_outputWeightList
-m_overwhelming_blink
 m_ownerChannelIndex
 m_ownerSpawnGroupType
 m_pActiveBotMode != nullptr
@@ -63576,7 +63576,6 @@ modfiier_rattletrap_cog_push
 modifer_change_tree_model_thinker
 modifer_hoodwink_acorn_shot_tree_thinker
 modifer_pine_cone_acorn_shot_tree_thinker
-modifie
 modifiedconvars_t
 modifier.parent
 modifier_731_teaser_stun
@@ -63666,7 +63665,6 @@ modifier_aghsfort_aziyog_underlord_portal_fx
 modifier_aghsfort_aziyog_underlord_portal_warp_channel
 modifier_aghsfort_aziyog_underlord_portal_warp_channel_soundstop
 modifier_aghsfort_bane_brain_sap_invis
-modifier_aghsfort_bane_brain_sap_invis_crit
 modifier_aghsfort_bane_brain_sap_knockback
 modifier_aghsfort_bane_brain_sap_knockback_slow
 modifier_aghsfort_bane_brain_sap_nightmare_mirror
@@ -66015,6 +66013,7 @@ modifier_ogre_seal_totem_slow
 modifier_ogre_smash_swing
 modifier_omniknight_degen_aura
 modifier_omniknight_degen_aura_effect
+modifier_omniknight_hammer_of_purity_bomb
 modifier_omniknight_martyr
 modifier_omniknight_pacify
 modifier_omniknight_repel
@@ -68349,7 +68348,6 @@ occlusionRadius
 octarine_tested
 octree.dat
 odds_damage
-odifierSuperIllusion
 of all visible avoidance zones in a {ability, location, radius} table
 of that program.  Please make an effort to report this bug
 of the Protocol Buffer runtime library, but the installed version is
@@ -72708,7 +72706,6 @@ reward_premium_pts
 reward_sound
 rf;C6I
 rfc822Mailbox
-rgetSource
 rhHcR`H
 right_cheek_raiser
 right_click_jumping
@@ -74541,7 +74538,6 @@ skybox_reference
 skycolor
 skyintensity
 skywrath_mage_ancient_seal
-skywrath_mage_arcane_bolt
 skywrath_mage_concussive_shot
 skywrath_mage_mystic_flare
 skywrath_mage_shield_of_the_scion
@@ -77037,6 +77033,8 @@ t%D9`4H
 t%HcC0A
 t%M;4$L
 t%Mc'E;g
+t&D:%ebv
+t&D:%etv
 t&M9,$L
 t'H;2sEH
 t(H;2H
@@ -78771,6 +78769,7 @@ wraith_vision_duration
 wraith_vision_radius
 wrapped_gift
 wrath_kills
+wrath_mage_arcane_bolt
 wrinkler
 write gameevents keyvalues (sorted by name) to gameevents_<modname>.txt
 writeback_queue
