@@ -1,0 +1,28 @@
+/// <reference path="../../../../../dota/panorama/scripts/dota.d.ts" />
+//-----------------------------------------------------------------------------------------
+$.Schedule(2.0, function () {
+    // Startup code
+    OnShowGameInfo();
+});
+//-----------------------------------------------------------------------------------------
+function OnGameInfoDismissed() {
+    $("#GameInfoPopup").SetHasClass("Visible", false);
+    Game.EmitSound("ui_find_match_slide_out");
+}
+//-----------------------------------------------------------------------------------------
+function OnShowGameInfo() {
+    const bShowGameInfo = Game.Winter2022ShouldShowGameInfo();
+    if (bShowGameInfo) {
+        $("#GameInfoPopup").SetHasClass("Visible", true);
+        Game.EmitSound("ui_find_match_slide_in");
+    }
+}
+//-----------------------------------------------------------------------------------------
+let g_bDontShowCheckBox = false;
+function OnGameInfoDontShowAgain() {
+    $.Msg("winter2022_hero_selection.js - OnGameInfoDontShowAgain()!");
+    g_bDontShowCheckBox = !g_bDontShowCheckBox;
+    Game.Winter2022SetShowGameInfo(!g_bDontShowCheckBox);
+    $.GetContextPanel().FindChildInLayoutFile("DontShowAgainButton").SetHasClass("CheckboxActive", g_bDontShowCheckBox);
+}
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoid2ludGVyMjAyMl9oZXJvX3NlbGVjdGlvbi5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIndpbnRlcjIwMjJfaGVyb19zZWxlY3Rpb24udHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsdUVBQXVFO0FBRXZFLDJGQUEyRjtBQUMzRixDQUFDLENBQUMsUUFBUSxDQUFFLEdBQUcsRUFBRTtJQUVoQixlQUFlO0lBQ2YsY0FBYyxFQUFFLENBQUM7QUFDbEIsQ0FBQyxDQUFFLENBQUM7QUFFSiwyRkFBMkY7QUFDM0YsU0FBUyxtQkFBbUI7SUFFM0IsQ0FBQyxDQUFFLGdCQUFnQixDQUFHLENBQUMsV0FBVyxDQUFFLFNBQVMsRUFBRSxLQUFLLENBQUUsQ0FBQztJQUN2RCxJQUFJLENBQUMsU0FBUyxDQUFFLHlCQUF5QixDQUFFLENBQUM7QUFDN0MsQ0FBQztBQUVELDJGQUEyRjtBQUMzRixTQUFTLGNBQWM7SUFFdEIsTUFBTSxhQUFhLEdBQUcsSUFBSSxDQUFDLDRCQUE0QixFQUFFLENBQUM7SUFDMUQsSUFBSyxhQUFhLEVBQ2xCO1FBQ0MsQ0FBQyxDQUFFLGdCQUFnQixDQUFHLENBQUMsV0FBVyxDQUFFLFNBQVMsRUFBRSxJQUFJLENBQUUsQ0FBQztRQUV0RCxJQUFJLENBQUMsU0FBUyxDQUFFLHdCQUF3QixDQUFFLENBQUM7S0FDM0M7QUFDRixDQUFDO0FBRUQsMkZBQTJGO0FBQzNGLElBQUksbUJBQW1CLEdBQUcsS0FBSyxDQUFDO0FBQ2hDLFNBQVMsdUJBQXVCO0lBRS9CLENBQUMsQ0FBQyxHQUFHLENBQUUsMkRBQTJELENBQUUsQ0FBQTtJQUNwRSxtQkFBbUIsR0FBRyxDQUFDLG1CQUFtQixDQUFDO0lBQzNDLElBQUksQ0FBQyx5QkFBeUIsQ0FBRSxDQUFDLG1CQUFtQixDQUFFLENBQUM7SUFFdkQsQ0FBQyxDQUFDLGVBQWUsRUFBRSxDQUFDLHFCQUFxQixDQUFFLHFCQUFxQixDQUFHLENBQUMsV0FBVyxDQUFFLGdCQUFnQixFQUFFLG1CQUFtQixDQUFFLENBQUM7QUFDMUgsQ0FBQyJ9

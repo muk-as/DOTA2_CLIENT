@@ -1,0 +1,85 @@
+/// <reference path="../../../../../dota/panorama/scripts/dota.d.ts" />
+//-----------------------------------------------------------------------------------------
+const g_sDiretideTips = [
+    "#DOTA_winter_2022_gameplay_tip_00",
+    "#DOTA_winter_2022_gameplay_tip_01",
+    "#DOTA_winter_2022_gameplay_tip_02",
+    "#DOTA_winter_2022_gameplay_tip_03",
+    "#DOTA_winter_2022_gameplay_tip_04",
+    "#DOTA_winter_2022_gameplay_tip_05",
+    "#DOTA_winter_2022_gameplay_tip_06",
+    "#DOTA_winter_2022_gameplay_tip_07",
+    "#DOTA_winter_2022_gameplay_tip_08",
+    "#DOTA_winter_2022_gameplay_tip_09",
+    "#DOTA_winter_2022_gameplay_tip_10",
+    "#DOTA_winter_2022_gameplay_tip_11",
+    "#DOTA_winter_2022_gameplay_tip_12",
+    "#DOTA_winter_2022_gameplay_tip_13",
+    "#DOTA_winter_2022_gameplay_tip_14",
+    "#DOTA_winter_2022_gameplay_tip_15",
+    "#DOTA_winter_2022_gameplay_tip_16",
+    "#DOTA_winter_2022_gameplay_tip_17",
+    "#DOTA_winter_2022_gameplay_tip_18",
+    "#DOTA_winter_2022_gameplay_tip_19",
+    "#DOTA_winter_2022_gameplay_tip_20",
+    "#DOTA_winter_2022_gameplay_tip_21",
+    "#DOTA_winter_2022_gameplay_tip_22",
+    "#DOTA_winter_2022_gameplay_tip_23",
+    "#DOTA_winter_2022_gameplay_tip_24",
+    "#DOTA_winter_2022_gameplay_tip_25",
+    "#DOTA_winter_2022_gameplay_tip_26",
+    "#DOTA_winter_2022_gameplay_tip_27",
+    "#DOTA_winter_2022_gameplay_tip_28",
+    "#DOTA_winter_2022_gameplay_tip_29",
+    "#DOTA_winter_2022_gameplay_tip_30",
+    "#DOTA_winter_2022_gameplay_tip_31",
+    "#DOTA_winter_2022_gameplay_tip_32",
+    "#DOTA_winter_2022_gameplay_tip_33",
+    "#DOTA_winter_2022_gameplay_tip_34",
+    "#DOTA_winter_2022_gameplay_tip_35",
+    "#DOTA_winter_2022_gameplay_tip_36",
+    "#DOTA_winter_2022_gameplay_tip_37",
+    "#DOTA_winter_2022_gameplay_tip_38",
+    "#DOTA_winter_2022_gameplay_tip_39",
+    "#DOTA_winter_2022_gameplay_tip_40",
+    "#DOTA_winter_2022_gameplay_tip_41",
+];
+const g_nNumDiretideTips = g_sDiretideTips.length;
+let g_nCurrentDiretideTip = 0;
+//-----------------------------------------------------------------------------------------
+$.Schedule(0.0, () => {
+    $.Msg("diretide_pregame_strategy.js - START!");
+    g_nCurrentDiretideTip = Game.Winter2022GetGameplayTipNumber();
+    OnShowPregameStrategy();
+});
+//-----------------------------------------------------------------------------------------
+function OnShowPregameStrategy() {
+    $.Msg("diretide_pregame_strategy.js - OnShowPregameStrategy()!");
+    $.GetContextPanel().SetDialogVariableInt("num_tips", g_nNumDiretideTips);
+    SetDiretideTipDialogVars();
+}
+//-----------------------------------------------------------------------------------------
+function IncrementTip(nIncrement) {
+    g_nCurrentDiretideTip = g_nCurrentDiretideTip + nIncrement;
+    while (g_nCurrentDiretideTip < 0) {
+        g_nCurrentDiretideTip += g_nNumDiretideTips;
+    }
+    g_nCurrentDiretideTip = g_nCurrentDiretideTip % g_nNumDiretideTips;
+    Game.Winter2022SetGameplayTipNumber(g_nCurrentDiretideTip);
+    SetDiretideTipDialogVars();
+    if (nIncrement == -1) {
+        $('#TipBodyText').RemoveClass('AnimateNextTip');
+        $('#TipBodyText').TriggerClass('AnimatePrevTip');
+    }
+    if (nIncrement == 1) {
+        $('#TipBodyText').RemoveClass('AnimatePrevTip');
+        $('#TipBodyText').TriggerClass('AnimateNextTip');
+    }
+    Game.EmitSound("ui_select_arrow");
+}
+//-----------------------------------------------------------------------------------------
+function SetDiretideTipDialogVars() {
+    $.GetContextPanel().SetDialogVariable("tip_text", $.Localize(g_sDiretideTips[g_nCurrentDiretideTip]));
+    $.GetContextPanel().SetDialogVariableInt("current_tip_num", g_nCurrentDiretideTip + 1);
+}
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoid2ludGVyMjAyMl9wcmVnYW1lX3N0cmF0ZWd5LmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsid2ludGVyMjAyMl9wcmVnYW1lX3N0cmF0ZWd5LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLHVFQUF1RTtBQUV2RSwyRkFBMkY7QUFDM0YsTUFBTSxlQUFlLEdBQUc7SUFDdkIsbUNBQW1DO0lBQ25DLG1DQUFtQztJQUNuQyxtQ0FBbUM7SUFDbkMsbUNBQW1DO0lBQ25DLG1DQUFtQztJQUNuQyxtQ0FBbUM7SUFDbkMsbUNBQW1DO0lBQ25DLG1DQUFtQztJQUNuQyxtQ0FBbUM7SUFDbkMsbUNBQW1DO0lBQ25DLG1DQUFtQztJQUNuQyxtQ0FBbUM7SUFDbkMsbUNBQW1DO0lBQ25DLG1DQUFtQztJQUNuQyxtQ0FBbUM7SUFDbkMsbUNBQW1DO0lBQ25DLG1DQUFtQztJQUNuQyxtQ0FBbUM7SUFDbkMsbUNBQW1DO0lBQ25DLG1DQUFtQztJQUNuQyxtQ0FBbUM7SUFDbkMsbUNBQW1DO0lBQ25DLG1DQUFtQztJQUNuQyxtQ0FBbUM7SUFDbkMsbUNBQW1DO0lBQ25DLG1DQUFtQztJQUNuQyxtQ0FBbUM7SUFDbkMsbUNBQW1DO0lBQ25DLG1DQUFtQztJQUNuQyxtQ0FBbUM7SUFDbkMsbUNBQW1DO0lBQ25DLG1DQUFtQztJQUNuQyxtQ0FBbUM7SUFDbkMsbUNBQW1DO0lBQ25DLG1DQUFtQztJQUNuQyxtQ0FBbUM7SUFDbkMsbUNBQW1DO0lBQ25DLG1DQUFtQztJQUNuQyxtQ0FBbUM7SUFDbkMsbUNBQW1DO0lBQ25DLG1DQUFtQztJQUNuQyxtQ0FBbUM7Q0FDbkMsQ0FBQztBQUVGLE1BQU0sa0JBQWtCLEdBQUcsZUFBZSxDQUFDLE1BQU0sQ0FBQTtBQUNqRCxJQUFJLHFCQUFxQixHQUFHLENBQUMsQ0FBQTtBQUU3QiwyRkFBMkY7QUFDM0YsQ0FBQyxDQUFDLFFBQVEsQ0FBRSxHQUFHLEVBQUUsR0FBRyxFQUFFO0lBRXJCLENBQUMsQ0FBQyxHQUFHLENBQUUsdUNBQXVDLENBQUUsQ0FBQTtJQUVoRCxxQkFBcUIsR0FBRyxJQUFJLENBQUMsOEJBQThCLEVBQUUsQ0FBQztJQUU5RCxxQkFBcUIsRUFBRSxDQUFDO0FBQ3pCLENBQUMsQ0FBRSxDQUFDO0FBRUosMkZBQTJGO0FBQzNGLFNBQVMscUJBQXFCO0lBRTdCLENBQUMsQ0FBQyxHQUFHLENBQUUseURBQXlELENBQUUsQ0FBQTtJQUNsRSxDQUFDLENBQUMsZUFBZSxFQUFFLENBQUMsb0JBQW9CLENBQUUsVUFBVSxFQUFFLGtCQUFrQixDQUFFLENBQUM7SUFDM0Usd0JBQXdCLEVBQUUsQ0FBQztBQUM1QixDQUFDO0FBRUQsMkZBQTJGO0FBQzNGLFNBQVMsWUFBWSxDQUFFLFVBQWtCO0lBRXhDLHFCQUFxQixHQUFHLHFCQUFxQixHQUFHLFVBQVUsQ0FBQztJQUMzRCxPQUFRLHFCQUFxQixHQUFHLENBQUMsRUFDakM7UUFDQyxxQkFBcUIsSUFBSSxrQkFBa0IsQ0FBQztLQUM1QztJQUNELHFCQUFxQixHQUFHLHFCQUFxQixHQUFHLGtCQUFrQixDQUFDO0lBRW5FLElBQUksQ0FBQyw4QkFBOEIsQ0FBRSxxQkFBcUIsQ0FBRSxDQUFDO0lBQzdELHdCQUF3QixFQUFFLENBQUM7SUFFM0IsSUFBSSxVQUFVLElBQUksQ0FBQyxDQUFDLEVBQUM7UUFDcEIsQ0FBQyxDQUFFLGNBQWMsQ0FBRyxDQUFDLFdBQVcsQ0FBQyxnQkFBZ0IsQ0FBQyxDQUFDO1FBQ25ELENBQUMsQ0FBRSxjQUFjLENBQUcsQ0FBQyxZQUFZLENBQUUsZ0JBQWdCLENBQUUsQ0FBQztLQUN0RDtJQUVELElBQUksVUFBVSxJQUFJLENBQUMsRUFBQztRQUNuQixDQUFDLENBQUUsY0FBYyxDQUFHLENBQUMsV0FBVyxDQUFDLGdCQUFnQixDQUFDLENBQUM7UUFDbkQsQ0FBQyxDQUFFLGNBQWMsQ0FBRyxDQUFDLFlBQVksQ0FBRSxnQkFBZ0IsQ0FBRSxDQUFDO0tBQ3REO0lBRUQsSUFBSSxDQUFDLFNBQVMsQ0FBRSxpQkFBaUIsQ0FBRSxDQUFDO0FBQ3JDLENBQUM7QUFFRCwyRkFBMkY7QUFDM0YsU0FBUyx3QkFBd0I7SUFFaEMsQ0FBQyxDQUFDLGVBQWUsRUFBRSxDQUFDLGlCQUFpQixDQUFFLFVBQVUsRUFBRSxDQUFDLENBQUMsUUFBUSxDQUFFLGVBQWUsQ0FBQyxxQkFBcUIsQ0FBQyxDQUFFLENBQUUsQ0FBQztJQUMxRyxDQUFDLENBQUMsZUFBZSxFQUFFLENBQUMsb0JBQW9CLENBQUUsaUJBQWlCLEVBQUUscUJBQXFCLEdBQUcsQ0FBQyxDQUFFLENBQUM7QUFDMUYsQ0FBQyJ9

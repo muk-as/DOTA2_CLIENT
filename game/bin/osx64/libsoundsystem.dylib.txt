@@ -4,6 +4,10 @@
 0 00 0
 0.005714, 0.3, 1.083, 1.083, 2.0, 3.0
 0.1 16000
+00000000000
+000000000000000
+0000000000000000000000000000000000000000000000
+0000000000@  p@00@@00000   00000@0000000000000000000000000000000000000000   00000000000000000000000000000000000
 018COscAudioProcessor
 0Ict$8H
 0[A\A^A
@@ -51,6 +55,7 @@
 15IAudioSubsystem
 15ISoundSequencer
 16CAudioSourceWave
+16CDSPTableManager
 16CSosOperatorGoTo
 16CSosOperatorNull
 16CSosOperatorVec3
@@ -115,12 +120,14 @@
 20ISoundMixGroupSystem
 21CAudioStream_Attached
 21CFilterAudioProcessor
+21CPannerAudioProcessor
 21CSosGroupActionSchema
 21CSosGroupMatchPattern
 21CSosOperatorBlockTest
 21CSosOperatorCrossfade
 21CSosOperatorFalloffVR
 21CSosOperatorFindGroup
+21CSosOperatorGateLogic
 21CSosOperatorGroupInfo
 21CSosOperatorGroupQuit
 21CSosOperatorGroupStop
@@ -134,6 +141,7 @@
 21CSosOperatorVMixInput
 21CSoundDebugVisualizer
 21IVConCommDataReceived
+22CBoxverbAudioProcessor
 22CPathingAudioProcessor
 22CSchemaInstallCallback
 22CSosGroupBranchPattern
@@ -152,6 +160,7 @@
 22CUtilityAudioProcessor
 22CVocoderAudioProcessor
 22IAddonListChangeNotify
+22IVDataResourceListener
 23CDiffusorAudioProcessor
 23CDynamicsAudioProcessor
 23CEnvelopeAudioProcessor
@@ -198,11 +207,13 @@
 25CSosOperatorPointOnSphere
 25CSosOperatorPointOnVolume
 25CSosOperatorSetOpVarFloat
+25CSosOperatorVMixNameInput
 25CSosStartSoundEventInfo_t
 25IAsyncProcessedDataResult
 26CConvolutionAudioProcessor
 26CEffectChainAudioProcessor
 26CSosGroupActionLimitSchema
+26CSosOperatorDspMixgroupMod
 26CSosOperatorGetOpVarFloat3
 26CSosOperatorGetOpVarSndevt
 26CSosOperatorGetOpVarString
@@ -226,6 +237,7 @@
 28CDynamics3BandAudioProcessor
 28CSosEventInfoWithFieldData_t
 28CSosOperatorArrangementStart
+28CSosOperatorGetCurrentEffect
 28CSosOperatorPauseSoundEvents
 28CSosOperatorPointInSoundArea
 28CSosOperatorRightAngleFloat3
@@ -258,6 +270,7 @@
 31CSchemaRegistration_soundsystem
 31CSosOperatorCalcDirectionalVec3
 31CSosOperatorCalcWeightedAvgVec3
+31CSosOperatorFindSourceDspPreset
 31CSosOperatorIncrementOpVarFloat
 31CSosOperatorLogicSwitchSpeakers
 31CSosOperatorStartSoundEventData
@@ -283,33 +296,43 @@
 41CSosOperatorCalcInterpolatedRotationAngle
 4C17CSosOperatorFunc1
 8CSosEdit
+8IcD$hH
 8[A\A]A^A
 9CAudioSDL
 9CSfxTable
-A+E ~iA
-A+F`~eA
-A+NH~fA
-A+OH~]A
+A+t$8~1L
+A+t$X~9I
 A24CSosOperatorSamplerEvent
-A;GHs;E
+A;@hu:H
+A;D$`sUI
 A;\$HsKI
 APPSYSTEM: In ConnectInterfaces(), s_nRegistrationCount is %d
 AQARATA
 AQARPASA
 ARARARATAp
-ARARARAp
+ARARATAp
+ARARAYA
 ARASAVj
 ARATATAp
+ARAUASASASASASASB
+ARAUBSASASASASASASASASASASASASASASASASASASASASASASASASASASASASASB
 ARAYA]ARARAYAp
-ARBRAWA
+ARBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp
+ASASASASASASASB`aAp
 ATAQARASPAWA
 ATAQSAR
+ATBRARAUATAp
+AUASASASASASASASASASASASASBWATASASASASASASASASASASASASASB
+AUASASASASASB
+AUASASBUAp
+AUASASBp
+AUBSAUASASBRAp
 AWAVATS
 AWAVATSA
+AWAVATSD
 AWAVATSE
 AWAVATSE1
 AWAVATSH
-AWAVATSHc
 AWAVATSI
 AWAVATSL
 AWAVATSM
@@ -322,12 +345,10 @@ AWAVAUATSP1
 AWAVAUATSPA
 AWAVAUATSPD
 AWAVAUATSPE
-AWAVAUATSPE1
 AWAVAUATSPH
 AWAVAUATSPH9
 AWAVAUATSPI
 AWAVAUATSPL
-AWAVAUATSPLc7
 AWAVAUATSPM
 AWAVAUATSPf
 AWAVSP1
@@ -338,9 +359,9 @@ AWAVSPH
 AWAVSPI
 AWAVSPL
 AWAVSPM
+A[AWASASASBp
 A[A\A^A
 A\A]A^A
-A``ARARARARARARA\0
 Abort processing sound event %s (scheduled recursively will not process this frame
 Above Threshold(dB
 Action Type
@@ -363,7 +384,7 @@ AllPass
 AnimGraphEditorUtils001
 AnimationSystemUtils_001
 AnimationSystem_001
-Ap ^A^ARARARARA^A^A^ARARARA^ARA^ARA^A
+Ap ^A^ARARARAUASASB^A^A^ARARARA^ARA^ARA^ARA^A
 Application is not loaded
 Apply cos(angle) * weight before pan law
 Arrangement: %s
@@ -374,6 +395,7 @@ AssetRenameSystem_001
 AssetSystem001
 AssetSystemTest001
 Async read of %s failed: ERROR_FILEOPEN
+AsyncSoundQueue
 Atomic Type: %i
 Attack time (ms
 Attempted preload of soundevent %s with no vsnds
@@ -382,13 +404,17 @@ Attempting to pause non-existent soundevent: %s
 Attempting to stop non-existent soundevent: %s
 Attribute.%s
 Audio Capture Device
-Audio Occlusion: Could not find full path from %0.1f,%0.1f,%0.1f to %0.1f,%0.1f,%0.1f
 Audio Occlusion: Could path from %0.1f,%0.1f,%0.1f to %0.1f,%0.1f,%0.1f encountered %d walls
+Audio Occlusion: Direct path is fully occluded from %0.1f,%0.1f,%0.1f to %0.1f,%0.1f,%0.1f
 Audio Occlusion: No occlusion for path from %0.1f,%0.1f,%0.1f to %0.1f,%0.1f,%0.1f
-Audio Occlusion: path from %0.1f,%0.1f,%0.1f to %0.1f,%0.1f,%0.1f encountered one wall. Thickness = %0.2f; surface = %s
+Audio Occlusion: No walls found, no occlusion
+Audio Occlusion: occlusion factor %.2f based on direct path; indirect ratio of %.2f based on finding %.2f paths lerped between %.2f and %.2f
+Audio Occlusion: occlusion factor overridden to %.2f
+Audio Occlusion: path from %0.1f,%0.1f,%0.1f to %0.1f,%0.1f,%0.1f encountered one wall. surface = %s (occlusion = %0.2f
 Audio device starved %d samples
 AudioMixer
 Available Operators
+B333333
 BPM: %f
 BRASCSETBRA
 Bad KV3 data for resource: %s
@@ -399,6 +425,7 @@ BandPass
 Bandwidth
 Base: %s
 BaseStack
+Bcalc_occlusion_src1
 BduPzN
 Below Threshold(dB
 BenchmarkService001
@@ -412,6 +439,9 @@ Branch Rules
 CAsyncWavDataCache:  %i sounds total %s, %.2f %% of capacity
 CAudioMixThread::CAudioMixThread
 CAudioMixThread::MixAudioFrame
+CDSPMixgroupModifier
+CDSPPresetMixgroupModifierTable
+CDspPresetModifierList
 CFieldSelectionWordAllocator: Total number of array selection bytes on soundevent exceeded
 CMemAllocSystemInitialize
 COM_TimestampedLog
@@ -504,6 +534,7 @@ Can't read from type %d for field %s
 Can't write to type %d for field %s
 Cannot allocate abstract class
 Cannot deduce for class
+Casts a ray and starts a sound event where the ray hits. The sound event will retrigger periodically. Usage: snd_cast <eventname> [<retrigger time>] [<max distance>]. Arguments that are specified will become defaults for the remainder of the session
 Catch up mixing failed: %d times
 Center: %i
 Ch[A\A^A
@@ -534,18 +565,22 @@ Cutoff Freq
 Cutoff Frequency
 D$(fA;D
 D$8A;E8
+D$XIcL$hH
 D$XfA;D
 D10CVMixMixer
-D9$9tqH
+D9$9tzH
 D9k0tEf
 D9kXtEf
 D9p0~0H
 D9{,tlH
 DEFAULT_WRITE_PATH
+DIcL$LH9
+DSP Effect Name
+DSP Mix Modifiers: Couldn't load mix file %s
 DSP NODE
 DSP PRESET: %.0f size:(%.0f,%.0f) height:(%.0f) dif %.4f : refl %.4f : cobj: %.0f : sky %.0f
 DSP: %f
-DSP: Warning, clamping out of range parameter
+DSP: Warning, clamping out of range parameter '%s' to range [%.2f, %.2f], was %.2f
 DSP: Warning, failed to allocate LFO
 DSP: Warning, failed to allocate amp
 DSP: Warning, failed to allocate chorus
@@ -596,18 +631,18 @@ Downward Ratio
 Drive (dB
 Dropping Voice data (%d bytes
 Dry/Wet
+DspPresetModifiers
 Dump a record of current soundevents and profile data
 Dump main graph control output values
 Duration: %f
 Dynamic
-E u)z'A
-E;~0u0A
-EPIcM`I
+E9,$tlI
+E;l$xuVH
+ELA;EHvML
 ERROR: Invalid Group Branch Index
 ERROR: Resource name "%s" has the incorrect extension "%s" for the specified resource type (expected "%s
 ERROR: missing enum name
 ERROR: missing enum tokenset
-ERROR: sound event %s operator %s
 EXPORTSYSTEM_INTERFACE_VERSION_001
 EarlyInit_Tier0
 EconItemToolModel_001
@@ -622,6 +657,7 @@ Envelope Type
 Error: %s : Math expression type not currently supported in sound operator math_accumulate12_float
 Error: Failed to get mix group %s
 Error: Invalid SoundEvent Hash %i from entry %s
+Error: Invalid SoundEvent Hash %i from entry %s in sound event %s
 Error: MixGroup %s cannot be resolved
 Error: MixGroup %s, in LayerTriggers cannot be resolved
 Error: MixGroup %s, in SoundMixer %s, cannot be resolved
@@ -653,8 +689,9 @@ Exponential Ramp
 Exports scene currently used by Steam Audio as a phononscene file
 Extra taps
 F9, t[N
+F<A:G<u
+F=A:G=A
 FATAL ERROR: unable to register all schema data: %s
-FHIcF0Ic
 FIELDATA COMPARE FAIL: %s->%s
 FIELDATASIZE COMPARE FAIL: %s->%s
 FIELINFO COMPARE FAIL: %s->%s
@@ -678,6 +715,7 @@ FREEING MATCH ENTRY
 FX Mix (1.0 == wet
 Fade In
 Fade Out
+Failed parsing mix modifier table %s: %s
 Failed to allocate an instance of a class
 Failed to allocate an instance of class '%s
 Failed to decode %s
@@ -713,6 +751,9 @@ Forward Saw
 Found %d probes in %s
 Free ?: %s
 Frequency (Hz
+G u[zYA
+G$uEzC
+G(u6z4
 G\A+GlI
 Game v.o. volume
 Game volume
@@ -767,23 +808,21 @@ ID of the sound device to use
 IMSVu{A
 INSt3__117bad_function_callE
 INVALID
-IQuickTime001
 IcD$ I9
-IcD$(Hi
-IcD$0I9
-IcD$@H
+IcD$(H9
 IcD$HH9
+IcD$PI9
 IcD$`H9
-IcD$`Hc
-IcD$pD9
-IcD$pH
-IcD$xH9
+IcD$hH
+IcG`Lcu
+IcL$$I9
+IcL$(D9
 IcL$X9
-IcL$tI9
-IcO$H9
 IcOLH9
+If set > 0, overrides how long the decay time is on all mix graphs (in seconds
 If set to 1, report more error found when playing sounds
 If set to 1, show all incoming updates to vmix inputs
+If set to >= 0, we will use this mix modifier for source-specific DSP effects. Otherwise we will use the listener DSP value
 Incorrect sampling rate in %s (mp3 frames are at %dHz, .vsnd file has %dHz
 Increased audio mix latency to %d buffers
 InfoForResourceTypeCVMixListResource
@@ -820,6 +859,7 @@ LOG fade out
 LOG_GENERAL
 LVL: %f
 LayerTriH1
+LcsHHcCPL
 LfA9q&rEf
 Limiter
 List all active tracks
@@ -856,10 +896,13 @@ MODEL_PROCESSING_SERVICES_INTERFACE_001
 MPropertyAttributeChoiceEnumName
 MPropertyAttributeRange
 MPropertyAutoExpandSelf
+MPropertyDescription
 MPropertyElementNameFn
 MPropertyFriendlyName
 MPropertySuppressField
 MUTE: %f
+MVDataNodeType
+MVDataRoot
 Main Output
 MapListService_001
 MasterVolume
@@ -892,6 +935,8 @@ MixLayer triggered %s
 MixLayerH1
 MixLayers
 MixLayers %s
+Mixgroup Modifiers
+Mixgroup Name
 Mod Depth
 Mod Frequency
 Mod Glide (ms
@@ -903,6 +948,10 @@ ModCutoff
 ModCutoffMax
 ModCutoffMin
 ModelDocUtils001
+Modification amount for listener DSP
+Modification amount for listener DSP when source DSP is used
+Modification amount for source-specific DSP
+Modifier Table
 Modulation Depth
 Modulation Frequency
 Music volume
@@ -927,6 +976,8 @@ NULL m_pSfx
 NZf;JZu
 N\f;J\ur
 N^f;J^uh
+Name of the DSP effect / subgraph used
+Name of the mixgroup. TODO: needs to be autopopulated with mixgroups
 NetworkClientService_001
 NetworkMessagesVersion001
 NetworkP2PService_001
@@ -941,6 +992,7 @@ No filename specified to export Steam Audio scene
 No scene loaded to export as Steam Audio scene
 Not safe to 'new' this class due to alignment requirements
 Note: Stack topology report only available in -tools mode
+Note: sound event %s operator %s has empty "match all" match settings
 Num Match groups: %i
 Number of materials not mapped = %d
 Number of materials updated with new mapping = %d
@@ -965,6 +1017,8 @@ Output Balance
 Output Gain (dB
 OutputPosToVmix
 Oversampling
+PANNER_TYPE_EQUAL_POWER
+PANNER_TYPE_LINEAR
 PAQARASAUATA
 PAQARASAVAUA
 PAQARAVM
@@ -973,12 +1027,13 @@ PARAMDATA COMPARE FAIL: %s->%s : %s
 PARAMINFO COMPARE FAIL: %s->%s
 PHH=vmatu
 PIct$XH
-PPP@ 0
+PPP@@ 0
 PPPPPPPP
 PPPPPPPPPP
 PPPPPPPPPPP
 PPPPPPPPPPPPP
 PPPPPPPPPPPPPP
+PPp0@`@0
 PSAQARAWASA
 P[A\A^A
 PanoramaTextServices001
@@ -993,6 +1048,7 @@ Parsing MixGroups
 Parsing MixLayers
 Parsing SoundMixers
 ParticleSystemMgr003
+Pause the specified soundevent in the list
 Peak Amplitude
 Peak mode
 Performing fixup on '%s
@@ -1054,16 +1110,17 @@ PropertyEditorSystem_001
 Purge and reload all vmidi data and files
 PurgeAndDeleteAll: Deleting orphaned CSoundEvent pointer for %s via shutdown
 Queued: elapsed time: %f, next sync time: %f, length: %f
-RARARARARASAp
-RARASARA
-RARAUATAp
+RARARARARARA\0
+RARARARARBSARASARA\0
+RARARAVASB^Ap
 RARA^A^ARARA^A^ARARA^A^ARARA^ARA^A
-RASKRAp
+RASKRATASB
+RATARA
+RATASASB
+RATAUASASASASB
 RAUARAUARAUARA
-RA]ARARA
+RA]AUBRA
 RA`9ARA
-RA`fARARARARARARA
-RBRASARASARA\0
 RBRBRBRBRBRBRBRBRB
 RBRBRBRBRBRBRBRBRBRBp
 RBRBRBRBRBRBRBRBRBp
@@ -1072,7 +1129,6 @@ RBRBRBRBRBp
 RBRBRBRBRCp
 RBRBRBRBp
 RBRBRBp
-RBRBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp
 RESOURCE_TYPE_SOUND
 RESOURCE_TYPE_SOUNDEVENTSCRIPT
 RESOURCE_TYPE_SOUNDSTACKSCRIPT
@@ -1098,7 +1154,6 @@ RenderDevice003
 RenderDeviceMgr001
 RenderHardwareConfig002
 RenderService_001
-RenderSystemSurface001
 RenderUtils_001
 Resolve the inputs and execute one specified operator from a specified stack
 ResourceCompilerSystem001
@@ -1115,6 +1170,9 @@ Running snd_set_physics_surface_properties for %s mod
 SAQAVAR
 SASARATL
 SASARAW
+SASASASASASASASASASASASASASASASASASBSAp
+SASASASB[D^Ap
+SASBZAp
 SATAQARPASA
 SAUAQARPASA
 SAVAQARPASA
@@ -1179,8 +1237,12 @@ SOS_STOPTYPE_NONE
 SOS_STOPTYPE_OPVAR
 SOS_STOPTYPE_TIME
 SOUNDEVENT COMPARE SUCCESS: %s->%s
+SPAQARAWASA
 SSE and SSE2 are required
 STACK COMPARE FAIL: %s->%s
+SUBGRAPH_INTERPOLATION_KEEP_LAST_SUBGRAPH_RUNNING
+SUBGRAPH_INTERPOLATION_TEMPORAL_CROSSFADE
+SUBGRAPH_INTERPOLATION_TEMPORAL_FADE_OUT
 S_Init( finish
 S_MixSampleFrames
 S_UpdateVoicesPerFrame
@@ -1205,6 +1267,7 @@ Set named Mixgroup of current mixer to mix vol, mute, solo
 Set named Mixgroup of named mix layer to mix vol, mute, solo
 Set named mix layer / mix group, trigger amount
 Set named mix layer mix amount
+Set of modifiers for individual mix groups
 Set physics surface properties for materials. Usage: <heuristic #> <commit
 SetDataFromKV3: Unrecognized KV3 type on field %s
 SetSoundEventDefinitionField: attempt to set an array element on an instance field beyond it's element count on %s
@@ -1243,6 +1306,7 @@ Sound disabled
 Sound memory used %3.1f%%, %s bytes used, %s bytes total
 Sound memory used %3.1f%%, %s used, %s total
 Sound merge method (0 == sum and clip, 1 == max, 2 == avg
+Sound services not available
 Sound system not started
 Sound volume
 SoundEvent %s, input_entity_index %i found but specified attachment %s was not
@@ -1337,6 +1401,7 @@ T$(fA;L$(sHI
 T$@fA9D
 TARATARATAp
 TUNNEL Detected
+Table of mixgroup modifiers for effect names
 TestFormatA
 TestFormatB
 TestFormatC
@@ -1344,6 +1409,7 @@ TestFormatD
 TestFormatE
 TestScriptMgr001
 TextLayout_001
+The amount to multiply the volume by. 1.0 leaves the volume unchanged
 The soundsystem requires the filesystem to run
 This convar is being accessed prior to ConVar_Register being called
 ThreadGetCurrentId
@@ -1384,16 +1450,24 @@ Total field bytes: %i
 Total param bytes: %i
 Total soundevents %i
 Total: %.2f MB
+Tracing soundscapes is only supported in the Server
 Track: %s
 Triangle
 Tried to load a polymorphic pointer with no '%s' key
 Tried to load resource reference '%s' from a value without a resource reference flag
+Triggering %s with retrigger interval = %f; maximum distance = %f
 Triggers
 TriggersSoundEvents
 Type Name: %s
 Type: %s
+UASASASASASB[Ap
+UASASASB
+UASASB
+UASASBYAp
+UB`gARARARARARARA
 UNRESOLVED
 UUUUUUUUH
+UnPause the first soundevent in the list
 Unable to allocate voice for %s
 Unable to connect convar input %s
 Unable to create audio thread
@@ -1408,6 +1482,7 @@ Unwind_Resume
 Update SoundEvent: %s
 Upward Ratio
 Usage:  playdelay delay_in_msec (negative to skip ahead) soundname
+Usage:  snd_cast <eventname> [<retrigger time>] [<max distance
 Usage:  snd_compare_soundevents soundevent1 soundevent2
 Usage:  snd_print_soundevent <soundeventname
 Usage:  snd_print_soundevent_default_public_properties <soundeventname
@@ -1425,6 +1500,8 @@ Usage:  snd_sos_stop_soundevent_index <index
 Usage: movie_fixwave wavname
 Usage: snd_get_physics_surface_properties <all|null|assigned|default|material-name
 Usage: snd_set_physics_surface_properties <diffmaterials|diffmapping|set|overwrite|single> <mapping-file|material-name,material
+Usage: snd_sos_pause_first_soundevent <soundevent index
+Usage: snd_sos_unpause_soundevent <soundevent index
 Usage: snd_steamaudio_probes_nearby <radius_inches> <display_duration> <mapname>. Set radius_inches to -1 to use influence radius per probe
 Used main graph %s on voice %s
 Used stack: %s
@@ -1438,12 +1515,7 @@ VConComm001
 VERTICAL SHAFT Detected
 VEngineCvar007
 VFileSystem017
-VGUI_Input005
-VGUI_Panel010
-VGUI_Scheme010
-VGUI_Surface032
-VGUI_System010
-VGUI_ivgui008
+VMIX %s switching to subgraph %s
 VMIX: Unknown processor type %s (name %s
 VMIX_CHAN_LEFT
 VMIX_CHAN_MID_SIDE
@@ -1454,6 +1526,7 @@ VMIX_CHAN_SWAP
 VMaterialSystem2_001
 VMediaFoundation001
 VMixAutoFilterDesc_t
+VMixBoxverbDesc_t
 VMixChannelOperation_t
 VMixConvolutionDesc_t
 VMixDelayDesc_t
@@ -1469,18 +1542,23 @@ VMixEnvelopeDesc_t
 VMixFilterDesc_t
 VMixFilterSlope_t
 VMixFilterType_t
+VMixFreeverbDesc_t
 VMixLFOShape_t
 VMixModDelayDesc_t
 VMixOscDesc_t
+VMixPannerDesc_t
+VMixPannerType_t
 VMixPitchShiftDesc_t
 VMixProcessorType_t
 VMixShaperDesc_t
 VMixStartup
 VMixSubgraphSwitchDesc_t
+VMixSubgraphSwitchInterpolationType_t
 VMixUtilityDesc_t
 VMixVocoderDesc_t
 VOL: %f
 VPROCESSOR_AUTOFILTER
+VPROCESSOR_BOXVERB
 VPROCESSOR_CONVOLUTION
 VPROCESSOR_DELAY
 VPROCESSOR_DIFFUSOR
@@ -1491,9 +1569,11 @@ VPROCESSOR_EFFECT_CHAIN
 VPROCESSOR_ENVELOPE
 VPROCESSOR_EQ8
 VPROCESSOR_FILTER
+VPROCESSOR_FREEVERB
 VPROCESSOR_FULLWAVE_INTEGRATOR
 VPROCESSOR_MOD_DELAY
 VPROCESSOR_OSC
+VPROCESSOR_PANNER
 VPROCESSOR_PRESETDSP
 VPROCESSOR_RT_PITCH
 VPROCESSOR_SHAPER
@@ -1567,6 +1647,7 @@ V_strncat
 V_strnchr
 V_strncpy
 V_strnicmp_fast
+V_strtod
 V_strtok
 V_strtoui64
 V_tand
@@ -1582,15 +1663,15 @@ Visualize Sounds
 Voice Elapsed Time: %f
 Voice volume
 Volume of sounds in tools (e.g. Hammer, SFM
+W?23CFreeverbAudioProcessor
 WARNING: Attempting to import existing public field %s in stack %s
 WARNING: Attempting to set fields on a stopped sound
 WARNING: Invalid vsnd version '%d' for file: %s
 WARNING: Stack %s Operator %s, opvar field %s overwriting existing parameter of the same name. THERE IS NO TYPE OR SIZE CHECKING IN PLACE, IT IS UP TO YOU TO MAKE SURE THEY ARE THE SAME
 WARNING: Stack %s had %i stack field overwrite warnings. Set "snd_sos_show_parameter_overwrite_warnings 1" and recompile for details
 WARNING: snd_sos_soundevent_profile disabled - ignoring
-WAUATAp
 Wait: elapsed time: %f, next sync time: %f, local elapsed: %f, local sync: %f, length: %f, num loops: %i
-Wall: Thickness = %0.2f; surface = %s
+Wall: surface = %s (%.2f
 Warning
 Warning: %s (error %s
 Warning: Can't find sos strings file: %s
@@ -1602,9 +1683,12 @@ Warning: cannot sync to soundevent %s on track %s, because it has no start/end p
 Warning: sos_start_soundevent unable to read opvar %s for passing
 Warning: sos_start_soundevent unable to read opvar %s for passing from event %s
 Warning: track_queue: No track name specified on %s, playing without track features
+When a source has source-specific DSP, this can be used as an additional mix stage for the listener reverb amount
+When on, silences all DSP mixes
 Width Reflectivity
 Won't age handle
 WorldRendererMgr001
+XAUATAp
 X[A\A]A^A
 Xt9<HufI
 Y@18CSosOperatorSubmix
@@ -1620,6 +1704,7 @@ Z16SaveKV3AsKV1TextPK10KeyValues3P10CUtlStringP10CUtlBuffer23KV1TextEscapeBehavi
 Z17LoggingSystem_Logi17LoggingSeverity_t5ColorPKcz
 Z17LoggingSystem_Logi17LoggingSeverity_tRK14LeafCodeInfo_tPKcz
 Z19LoadKV3FromKV3OrKV1P10KeyValues3P10CUtlStringP10CUtlBufferRK7KV3ID_tPKc
+Z22Assert_ConditionFailedRK34_AssertCompileTimeConstantStruct_t
 Z22Assert_ConditionFailedRK34_AssertCompileTimeConstantStruct_tPKcz
 Z6ConMsgPKcz
 Z6DevMsgPKcz
@@ -1724,12 +1809,10 @@ ZN9KeyValues23LoadTemporaryFromBufferEbPKcS1_P11IFileSystemS1_PFbS1_PvEP19IKeyVa
 ZN9KeyValues4DumpEP21IKeyValuesDumpContexti
 ZN9KeyValues5ClearEv
 ZN9KeyValues6AddIntEPKci
-ZN9KeyValues6GetIntEPKci
 ZN9KeyValues6SetIntEPKci
 ZN9KeyValues7FindKeyEPKcb
 ZN9KeyValues7SetNameEPKc
 ZN9KeyValues8AddFloatEPKcf
-ZN9KeyValues8GetFloatEPKcf
 ZN9KeyValues8SetFloatEPKcf
 ZN9KeyValues9AddStringEPKcS1
 ZN9KeyValues9AddSubKeyEPS
@@ -1761,14 +1844,16 @@ ZNK9KeyValues14GetFirstSubKeyEv
 ZNK9KeyValues17GetNextTrueSubKeyEv
 ZNK9KeyValues18GetFirstTrueSubKeyEv
 ZNK9KeyValues5CountEv
+ZNK9KeyValues6GetIntEPKci
 ZNK9KeyValues7ElementEi
 ZNK9KeyValues7GetNameEv
+ZNK9KeyValues8GetFloatEPKcf
 ZNK9KeyValues8MakeCopyEv
 ZNKSt9exception4whatEv
 ZNSt3__119__shared_weak_count14__release_weakEv
 ZNSt3__16__sortIRNS_6__lessIjjEEPjEEvT0_S5_T
 ZNSt9exceptionD2Ev
-ZNV16CThreadFastMutex4LockEPKciyj
+ZNV16CThreadSpinMutex4LockEPKciyj
 ZSt9terminatev
 ZTINSt3__117bad_function_callE
 ZTISt9bad_alloc
@@ -1798,6 +1883,7 @@ adsp_street_min
 adsp_tunnel_min
 adsp_wall_height
 advanced
+allow_empty_match
 altgameroot
 anim_type
 applyAirAbsorption
@@ -1815,6 +1901,7 @@ async_load
 attachment
 auto.convar
 auto_connect_public_fields
+bHHcB0Hc
 backward
 band_0:gainReduction
 band_0:input
@@ -1863,7 +1950,7 @@ calc_spatialize_speakers_hrtf
 causes_ducking
 center1
 center2
-ch[A\A^A
+changes to final result of %.2f
 channels
 check_event_data
 circle_bounce
@@ -1884,9 +1971,11 @@ core.default
 core.null
 core.voip
 core_update_default
+cp[A\A^A
 cputimeus
 crossfade ms
 cstring
+ctrl_gate
 ctrl_switch12_float
 ctrl_switch3_float
 ctrl_switch3_float3
@@ -1975,6 +2064,7 @@ ducker_threshold
 duration
 dyld_stub_binder
 dynamicEQScale
+e8Mc~8D
 econ_replacement
 editor
 enablespatialblend
@@ -1991,7 +2081,6 @@ f %f %f
 f %f %f %f
 f : %i : %i
 f Async I/O Bumped priority for %s (%8.2f msec
-f Ic_HIcGPH
 f: %f : %f : %f : %f
 f;CXu D
 f;CXu=D
@@ -1999,7 +2088,6 @@ f;CXuBD
 fA;GXuME
 fA;L$(sBI
 fA;L$(sDI
-fE9g$|`I
 fade_type
 fff?15CAudioProcessor
 fff?fff?fff?fff?fff?fff
@@ -2033,6 +2121,7 @@ game_get_point_contents
 game_get_source_info
 gcc_except_tab__TEXT
 generic
+generic_data_type
 get_entity_info.output_position
 get_system_globals
 get_vsnd_%s
@@ -2048,11 +2137,11 @@ i available
 i bytes available
 i required
 i selection bytes reguired
+iE9f$|cI
 import_public_opvars
 import_stack
 index %i = %i guid : %i dependents
 indirectbinaural
-input %s received updated value from processor %d (%x
 input10
 input11
 input12
@@ -2111,6 +2200,8 @@ input_doppler_factor_receding
 input_doppler_observer_scale
 input_dsp_preset_name
 input_duration
+input_effect
+input_effect_name
 input_elevation_angle
 input_end_value
 input_entity_index
@@ -2139,6 +2230,7 @@ input_goto_operator
 input_group_name
 input_group_result
 input_guid
+input_hold_to_interval
 input_hrtf_mix
 input_hrtf_on
 input_index
@@ -2175,6 +2267,7 @@ input_memory_type
 input_min
 input_min_val
 input_min_val_offset
+input_mixgroup
 input_mixgroups
 input_name
 input_near_max
@@ -2188,6 +2281,14 @@ input_opvar
 input_pathing_enabled
 input_pause
 input_pitch
+input_pitch1
+input_pitch2
+input_pitch3
+input_pitch4
+input_pitch5
+input_pitch6
+input_pitch7
+input_pitch8
 input_pos
 input_position
 input_position1
@@ -2211,6 +2312,7 @@ input_rand_max
 input_rand_min
 input_rear_stereo_scale
 input_reset
+input_reset_event_time_on_restart
 input_restart_fade_in
 input_restart_loop_fade_out
 input_restart_start_time
@@ -2259,6 +2361,7 @@ input_start6
 input_start7
 input_start8
 input_start_position
+input_start_resets
 input_start_time_offset
 input_start_value
 input_stop
@@ -2273,6 +2376,7 @@ input_sync_track_name
 input_tail_max
 input_tail_min
 input_target_angle
+input_threshold
 input_threshold_high
 input_threshold_low
 input_threshold_mid
@@ -2321,6 +2425,7 @@ input_x
 input_y
 input_z
 instrument
+int64)m_nAllocationCount + (int64)num ) <= 0x7FFFFFFF
 invalid
 invalid event
 invalid soundevent name
@@ -2337,9 +2442,9 @@ itemName
 itemPos
 itemType
 itemTypeName
+kCreateInterface
 key_groups
 l=25CAutoFilterAudioProcessor
-lCreateInterface
 la_symbol_ptr
 left_front
 left_front1
@@ -2389,6 +2494,8 @@ m_bMatchEntIndex
 m_bMatchEventName
 m_bMatchEventSubString
 m_bMatchOpvar
+m_bOnlyTailsOnFadeOut
+m_bParallel
 m_bPeakMode
 m_bPhaseInvert
 m_bPreviewInGame
@@ -2402,10 +2509,12 @@ m_controlMeters
 m_controlOutputs
 m_controlPoints
 m_curves
+m_dspName
 m_effectName
 m_effectsPreview
 m_feedbackFilter
 m_filter
+m_filterType
 m_flAttackTimeMS
 m_flBandwidth
 m_flBassFreq
@@ -2413,6 +2522,7 @@ m_flComplexity
 m_flCompressionRatio
 m_flCrossfadeTime
 m_flCutoffFreq
+m_flDamp
 m_flDelay
 m_flDelayGain
 m_flDepth
@@ -2422,16 +2532,24 @@ m_flElapsedTime
 m_flEntIndex
 m_flEnvelopeAmount
 m_flFeedback
+m_flFeedbackDepth
 m_flFeedbackGain
+m_flFeedbackHeight
+m_flFeedbackScale
+m_flFeedbackWidth
 m_flFreqRangeEnd
 m_flFreqRangeStart
 m_flGlideTime
+m_flHeight
 m_flHighCutoffFreq
 m_flHoldTimeMS
 m_flInputPan
+m_flInterpolationTime
 m_flLFOAmount
 m_flLFORate
+m_flLateReflections
 m_flLimiterRatio
+m_flListenerReverbModifierWhenSourceReverbIsActive
 m_flLowCutoffFreq
 m_flMasterVolume
 m_flMaxDuration
@@ -2439,6 +2557,7 @@ m_flMaxVolumeChangePerBuffer
 m_flMix
 m_flModDepth
 m_flModRate
+m_flModifier
 m_flOpvar
 m_flOutputBalance
 m_flOutputGain
@@ -2451,11 +2570,17 @@ m_flRatio
 m_flRatioAbove
 m_flRatioBelow
 m_flReleaseTimeMS
+m_flRoomSize
 m_flSend
 m_flSendFacingDSP
 m_flSendRoomDSP
 m_flSize
+m_flSizeMax
+m_flSizeMin
+m_flSourceModifier
+m_flStrength
 m_flSystemVolumeFadeRate
+m_flTaps
 m_flTime
 m_flTimeScale
 m_flValue
@@ -2483,9 +2608,12 @@ m_graphName
 m_graphPreview
 m_groupList
 m_inputName
+m_interpolationMode
 m_matchPattern
 m_matchSoundEventName
 m_matchSoundEventSubString
+m_mixgroup
+m_modifiers
 m_nBandCount
 m_nBlockMaxCount
 m_nChannelSelect
@@ -2527,6 +2655,7 @@ m_soundName
 m_sounds
 m_stages
 m_subgraphs
+m_table
 m_trackName
 m_vActions
 m_vHandLeft
@@ -2633,6 +2762,7 @@ ms Delay (tap 3
 ms delay max
 ms delay min
 ms of mod depth
+multibase
 mute: %3.2f
 muteTrackList
 nTries < 10000000
@@ -2644,13 +2774,17 @@ normalize_spread
 normalize_trig
 nosound
 not_equal
+not_pickable
 note out of sampler range
+npMc|$pD
 nullfield
 numerator
 objc_imageinfo__DATA
 occlusion_db_loss
 opFields
 operator
+operatorH
+operatorI
 operator_arg_field
 operator_field_display
 operator_field_display_bool
@@ -2666,7 +2800,6 @@ operator_field_display_int
 operator_field_display_none
 operator_field_display_token
 operator_field_display_vsnd
-operator_override
 operator_properties
 operator_stacks
 operator_variables
@@ -2675,6 +2808,7 @@ opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/mathlib/mathlib.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/schemalib/schemaclassinfo.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/soundsystem/audio_stream_attached.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/soundsystem/debug_visualizer.cpp
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/soundsystem/dsp_preset_soundgroup_mix.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/soundsystem/snd_dma.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/soundsystem/snd_mix.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/soundsystem/snd_mixgroups.cpp
@@ -2721,6 +2855,7 @@ output_dependencies
 output_distance
 output_dsp
 output_duration
+output_effect_name
 output_elapsed_time
 output_element_count
 output_ent_dormant
@@ -2729,9 +2864,6 @@ output_entity_index
 output_entity_is_actual_player_entity
 output_entity_is_player
 output_entity_scale
-output_eq_high
-output_eq_low
-output_eq_mid
 output_event_finished
 output_events_matching
 output_float
@@ -2756,6 +2888,7 @@ output_listener_hand_left
 output_listener_hand_right
 output_listener_is_underwater
 output_listener_left
+output_listener_mix
 output_listener_position
 output_listener_up
 output_local_player_team
@@ -2764,6 +2897,7 @@ output_match_count
 output_match_time
 output_max_index
 output_mid
+output_mix
 output_mixgroups
 output_not_selected
 output_occlusion
@@ -2797,6 +2931,7 @@ output_stopped
 output_string
 output_success
 output_team
+output_threshold_result
 output_time_to_next_syncpoint
 output_time_to_start
 output_transmission
@@ -2817,21 +2952,24 @@ output_waiting
 output_x
 output_y
 output_z
+overridH
+overridI
 overwrite
-p RARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARA^A^A^ARARARB^A
 p RARARB^Ap
 p RA^A^A^A^ARARARARB^A^A^A
 p RBRGRATAp
-p ^ARARA^ARB^A
+p ^ARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARAUB^A^A^ARARARB^A
+p ^ARARASAp
+p ^ARARA^A^ARARA^ARB^A
 p ^ARARA^A^A^ARARARA^A^ARARA^A^A^A^A^A^A^A^A^ARARARARARARARARARATAp
-p ^ARARBRBSA^Ap
 p ^ARARB^A
-p ^A^ARARARA^A^A^A^A^A^ARARARARARARA^ARB^A^A^A
+p ^A^ARARARA^A^A^A^A^A^ARARARARARAUB^ARB^A^A^A
 p ^A^A^A^A^A
-p ^A^A^A^A^A^A^A^ARARARARARARARARARARA^A^A^A^A^A^A^ARARARARARARARA^Ap
+p ^A^A^A^A^A^A^A^A^ARARARARARARARARARARAUASASB^A^A^A^A^A^A^ARARARARARARARA^Ap
 p ^A^A^A^A^A^A^A^A^A^A^A^ARARARARARARARARARARARARARARARA^ARA^ARA^ARB^A
 pAmath_string
 pB24CSosOperatorQueueToTrack
+p[A\A^A
 p` @ ``  P
 parallel filters
 paramName
@@ -2852,6 +2990,7 @@ priority_override
 procedural
 process_steamaudio_source
 processor
+processor.setnameinput
 processor.setparameter
 processor.setparameterarray
 processor.setvsnd
@@ -2869,16 +3008,22 @@ pthread_mutexattr_settype
 public
 public.%s
 public.attack
+public.dsp_preset
+public.enable_retrigger
 public.end_point
 public.pitch
 public.position
 public.release
+public.retrigger_interval_max
+public.retrigger_interval_min
+public.retrigger_radius
 public.sample
 public.start_point
 public.sync_bpm
 public.sync_bpm_beats
 public.volume
 public/tier0/tslist.h
+public/tier0/utlmemory.h
 public/tier0/utlsymboltable.h
 public_field_name
 quantize_multiplier
@@ -2968,6 +3113,7 @@ sequence_index
 sequences
 sideChain
 sideChainPeak
+silence_dsp
 slerp_bounce
 smixgroup: %s
 snd_arrangement_start
@@ -2977,6 +3123,7 @@ snd_async_showmem_music
 snd_async_showmem_summary
 snd_async_spew_blocking
 snd_autodetect_latency
+snd_cast
 snd_compare_KV_convert
 snd_compare_soundevents
 snd_delay_sound_shift
@@ -2987,6 +3134,7 @@ snd_duckerreleasetime
 snd_duckerthreshold
 snd_ducktovolume
 snd_enable_imgui
+snd_enable_subgraph_log
 snd_envelope_rate
 snd_filter
 snd_front_headphone_position
@@ -3012,12 +3160,15 @@ snd_mixer_master_level
 snd_musicvolume
 snd_occlusion_bounces
 snd_occlusion_debug
+snd_occlusion_debug_listener_pos
 snd_occlusion_indirect_max
 snd_occlusion_indirect_min
 snd_occlusion_indirect_radius
 snd_occlusion_min_wall_thickness
+snd_occlusion_override
 snd_occlusion_rays
 snd_occlusion_report
+snd_occlusion_visualize
 snd_op_test_convar
 snd_print_activetracks
 snd_print_arrangements
@@ -3060,6 +3211,7 @@ snd_sos_ingame_debug
 snd_sos_list_operator_updates
 snd_sos_max_event_base_depth
 snd_sos_opvar_debug
+snd_sos_pause_soundevent
 snd_sos_pause_system
 snd_sos_print_class_sizes
 snd_sos_print_field_name_strings
@@ -3108,6 +3260,7 @@ snd_sos_stop_all_soundevents
 snd_sos_stop_soundevent_guid
 snd_sos_stop_soundevent_index
 snd_sos_test_soundmessage
+snd_sos_unpause_soundevent
 snd_sos_use_case_sensitive_soundevents
 snd_soundevent_clear_deferred
 snd_soundmixer
@@ -3128,6 +3281,7 @@ snd_surround_speaker_pan_exponent
 snd_surround_speaker_pan_radial_weight
 snd_toolvolume
 snd_vmidi_flush
+snd_vmix_override_mix_decay_time
 snd_vmix_show_input_updates
 snd_voipvolume
 sndlvl_max
@@ -3171,7 +3325,10 @@ soundevents/soundevents_manifest_tools.vrman
 soundinfo
 soundlevel_t
 soundlist
+soundmixer_get_current_dsp_effect
+soundmixer_get_dsp_mixgroup_modifier
 soundmixer_get_mixgroup
+soundmixer_get_source_dsp_preset
 soundmixer_set_mixlayer
 soundmixer_set_mixlayer_amount
 soundmixer_set_trigger
@@ -3179,6 +3336,7 @@ soundmixer_set_vmix
 sounds
 sounds/%s_%llu.vsnd
 sounds/__attached_output_stream_wrapper_%d.vsnd
+soundstacks/dsp_mix_modifiers.vdata
 soundstacks/generated/generator_templates.txt
 soundstacks/mixgraph.vmix
 soundstacks/sosstrings.txt
@@ -3187,6 +3345,7 @@ soundstacks/soundstacks_manifest.vrman
 soundsystem
 soundsystem_lowlevel
 soundsysteminfo
+source_soundscape
 spawn_orphans
 speaker.surround
 speaker.surroundBack
@@ -3198,11 +3357,13 @@ startSubvoice
 startVoice
 start_beat
 start_offset
+start_on_name_change
 start_vsnd
 stopSubvoice
 stopVoice
 stop_events_by_next
 stop_oldest
+stop_previous_on_name_change
 stopped_includes_dependencies
 stopsound
 strchr
@@ -3217,11 +3378,11 @@ submix.accumulate
 submix.accumulate_single
 submix.generate.sidechain
 submix_name
-syncSoundQueue
 sync_track
 sync_type
 system_properties
 t(D#C\L
+t:Ic_ H
 threshold
 threshold_type
 time slice ms
@@ -3234,11 +3395,11 @@ track_name
 track_queue
 track_stop
 transmissionHigh
-transmission_factor
 trigger
+tripExtension
 u/<XtE<Hu'L
 u/<XtT<Hu'L
-u=z;IcE`I
+uDIcD$hH
 uX<Xt-<HuPL
 uZ<Xt.<HuRL
 undefined
@@ -3294,6 +3455,7 @@ vmix_start_vsnd: %s No available voices (%d in use), aborting starting vsnd %s
 vmix_voice_start
 vmix_voicegraph_input
 vmix_voicegraph_inputarray
+vmix_voicegraph_name_input
 vmix_vsnd_info
 voice_fadeouttime
 voice_initial_buffer_ms
@@ -3311,6 +3473,183 @@ void CSosOperatorSystem::HandleSetLibStackFieldsMessageQueue
 void CSosOperatorSystem::HandleSetSoundEventFieldsMessageQueue(CSosMessageQueue<SoundEventGuid_t> &, SoundEventGuid_t, CSosOperatorStack
 void CUtlLeanVectorBase<std::__1::unique_ptr<CTemporaryKeyValues, std::__1::default_delete<CTemporaryKeyValues> >, short>::EnsureCapacity(int, bool) [T = std::__1::unique_ptr<CTemporaryKeyValues, std::__1::default_delete<CTemporaryKeyValues> >, I = short
 void CUtlLeanVectorFixedGrowableBase<CSosPackedFieldData::Entry_t, 3, short>::EnsureCapacity(int, bool) [T = CSosPackedFieldData::Entry_t, N = 3, I = short
+void CUtlMemory<AudioBufferInput_t, int>::Grow(int) [T = AudioBufferInput_t, I = int
+void CUtlMemory<AudioMixCommand_t, int>::Grow(int) [T = AudioMixCommand_t, I = int
+void CUtlMemory<AudioSourceIndexstate_t, int>::Grow(int) [T = AudioSourceIndexstate_t, I = int
+void CUtlMemory<AudioSourceInput_t, int>::Grow(int) [T = AudioSourceInput_t, I = int
+void CUtlMemory<AutomaticConvarInput_t, int>::Grow(int) [T = AutomaticConvarInput_t, I = int
+void CUtlMemory<CAudioMeterDesc, int>::Grow(int) [T = CAudioMeterDesc, I = int
+void CUtlMemory<CAudioMeterInstance, int>::Grow(int) [T = CAudioMeterInstance, I = int
+void CUtlMemory<CAudioMixBuffer, int>::Grow(int) [T = CAudioMixBuffer, I = int
+void CUtlMemory<CAudioOutputStream *, int>::Grow(int) [T = CAudioOutputStream *, I = int
+void CUtlMemory<CAudioProcessor *, int>::Grow(int) [T = CAudioProcessor *, I = int
+void CUtlMemory<CAudioSource_PlayerVoiceStream *, int>::Grow(int) [T = CAudioSource_PlayerVoiceStream *, I = int
+void CUtlMemory<CBlockIR, int>::Grow(int) [T = CBlockIR, I = int
+void CUtlMemory<CDSPMixgroupModifier, int>::Grow(int) [T = CDSPMixgroupModifier, I = int
+void CUtlMemory<CDelayRingBuffer, int>::Grow(int) [T = CDelayRingBuffer, I = int
+void CUtlMemory<CDspPresetModifierList, int>::Grow(int) [T = CDspPresetModifierList, I = int
+void CUtlMemory<CFilter4thOrder, int>::Grow(int) [T = CFilter4thOrder, I = int
+void CUtlMemory<CKeyValues3ArrayCluster *, int>::Grow(int) [T = CKeyValues3ArrayCluster *, I = int
+void CUtlMemory<CKeyValues3Cluster *, int>::Grow(int) [T = CKeyValues3Cluster *, I = int
+void CUtlMemory<CKeyValues3TableCluster *, int>::Grow(int) [T = CKeyValues3TableCluster *, I = int
+void CUtlMemory<CLayerTrigger, int>::Grow(int) [T = CLayerTrigger, I = int
+void CUtlMemory<CMixVoiceList::OutputLevelVoice_t, int>::Grow(int) [T = CMixVoiceList::OutputLevelVoice_t, I = int
+void CUtlMemory<CMonoDelayLine, int>::Grow(int) [T = CMonoDelayLine, I = int
+void CUtlMemory<CPitchShiftFFT *, int>::Grow(int) [T = CPitchShiftFFT *, I = int
+void CUtlMemory<CReverbDelayLine, int>::Grow(int) [T = CReverbDelayLine, I = int
+void CUtlMemory<CSendOperatorList::SendOperatorRegister_t, int>::Grow(int) [T = CSendOperatorList::SendOperatorRegister_t, I = int
+void CUtlMemory<CSequenceTrack *, int>::Grow(int) [T = CSequenceTrack *, I = int
+void CUtlMemory<CSfxTable *, int>::Grow(int) [T = CSfxTable *, I = int
+void CUtlMemory<CSimpleDataCache<CAsyncWaveData, asyncwaveparams_t>::cache_table_t, int>::Grow(int) [T = CSimpleDataCache<CAsyncWaveData, asyncwaveparams_t>::cache_table_t, I = int
+void CUtlMemory<CSimpleDelayLine, int>::Grow(int) [T = CSimpleDelayLine, I = int
+void CUtlMemory<CSosGroupAction *, int>::Grow(int) [T = CSosGroupAction *, I = int
+void CUtlMemory<CSosGroupEntry *, int>::Grow(int) [T = CSosGroupEntry *, I = int
+void CUtlMemory<CSosMessageQueue<SoundEventGuid_t>::Entry_t, int>::Grow(int) [T = CSosMessageQueue<SoundEventGuid_t>::Entry_t, I = int
+void CUtlMemory<CSosMessageQueue<unsigned int>::Entry_t, int>::Grow(int) [T = CSosMessageQueue<unsigned int>::Entry_t, I = int
+void CUtlMemory<CSosOperatorStack *, int>::Grow(int) [T = CSosOperatorStack *, I = int
+void CUtlMemory<CSosOperatorStack::StackOpInfo_t, int>::Grow(int) [T = CSosOperatorStack::StackOpInfo_t, I = int
+void CUtlMemory<CSosSoundEventGroup *, int>::Grow(int) [T = CSosSoundEventGroup *, I = int
+void CUtlMemory<CSosSoundEventGroupSchema, int>::Grow(int) [T = CSosSoundEventGroupSchema, I = int
+void CUtlMemory<CSosStackExecutionList::CSosStackExecInfo_t, int>::Grow(int) [T = CSosStackExecutionList::CSosStackExecInfo_t, I = int
+void CUtlMemory<CSoundEventCustomStackCurve, int>::Grow(int) [T = CSoundEventCustomStackCurve, I = int
+void CUtlMemory<CSoundEventCustomStackFieldInfo, int>::Grow(int) [T = CSoundEventCustomStackFieldInfo, I = int
+void CUtlMemory<CSoundEventCustomStackLayerInfo, int>::Grow(int) [T = CSoundEventCustomStackLayerInfo, I = int
+void CUtlMemory<CSoundEventDefinition *, int>::Grow(int) [T = CSoundEventDefinition *, I = int
+void CUtlMemory<CSoundEventInstanceDefFieldInfo, int>::Grow(int) [T = CSoundEventInstanceDefFieldInfo, I = int
+void CUtlMemory<CSoundEventKV3 *, int>::Grow(int) [T = CSoundEventKV3 *, I = int
+void CUtlMemory<CSoundEventManager::DeferredLoadEvent_t, int>::Grow(int) [T = CSoundEventManager::DeferredLoadEvent_t, I = int
+void CUtlMemory<CSpectrumEntry *, int>::Grow(int) [T = CSpectrumEntry *, I = int
+void CUtlMemory<CSpectrumList, int>::Grow(int) [T = CSpectrumList, I = int
+void CUtlMemory<CSplitScreenSlot, int>::Grow(int) [T = CSplitScreenSlot, I = int
+void CUtlMemory<CSubmix, int>::Grow(int) [T = CSubmix, I = int
+void CUtlMemory<CUtlKeyValuePair<unsigned int, SoundEventStaticDefFieldInfo_t>, int>::Grow(int) [T = CUtlKeyValuePair<unsigned int, SoundEventStaticDefFieldInfo_t>, I = int
+void CUtlMemory<CUtlString, int>::Grow(int) [T = CUtlString, I = int
+void CUtlMemory<CUtlStringToken, int>::Grow(int) [T = CUtlStringToken, I = int
+void CUtlMemory<CUtlSymbol, int>::Grow(int) [T = CUtlSymbol, I = int
+void CUtlMemory<CUtlVector<float, int, CUtlMemory<float, int> >, int>::Grow(int) [T = CUtlVector<float, int, CUtlMemory<float, int> >, I = int
+void CUtlMemory<CVMixDescription *, int>::Grow(int) [T = CVMixDescription *, I = int
+void CUtlMemory<CVMixInstance *, int>::Grow(int) [T = CVMixInstance *, I = int
+void CUtlMemory<CVMixList *, int>::Grow(int) [T = CVMixList *, I = int
+void CUtlMemory<CVMixMixer::VMixVoice_t, int>::Grow(int) [T = CVMixMixer::VMixVoice_t, I = int
+void CUtlMemory<CVMixVoiceDebugEntry, int>::Grow(int) [T = CVMixVoiceDebugEntry, I = int
+void CUtlMemory<CVMixVoiceParams, int>::Grow(int) [T = CVMixVoiceParams, I = int
+void CUtlMemory<CVSndAsyncLoadRequest *, int>::Grow(int) [T = CVSndAsyncLoadRequest *, I = int
+void CUtlMemory<CVoiceTraceFrame, int>::Grow(int) [T = CVoiceTraceFrame, I = int
+void CUtlMemory<ControlMeterDesc_t, int>::Grow(int) [T = ControlMeterDesc_t, I = int
+void CUtlMemory<EQ3Band_t, int>::Grow(int) [T = EQ3Band_t, I = int
+void CUtlMemory<EventStartSound_t, int>::Grow(int) [T = EventStartSound_t, I = int
+void CUtlMemory<EventStopSound_t, int>::Grow(int) [T = EventStopSound_t, I = int
+void CUtlMemory<FilterBiquadSIMD_t *, int>::Grow(int) [T = FilterBiquadSIMD_t *, I = int
+void CUtlMemory<FilterBiquadSIMD_t, int>::Grow(int) [T = FilterBiquadSIMD_t, I = int
+void CUtlMemory<FilterSVF_t *, int>::Grow(int) [T = FilterSVF_t *, I = int
+void CUtlMemory<FilterSVF_t, int>::Grow(int) [T = FilterSVF_t, I = int
+void CUtlMemory<IAsset *, int>::Grow(int) [T = IAsset *, I = int
+void CUtlMemory<ISoundEventListener *, int>::Grow(int) [T = ISoundEventListener *, I = int
+void CUtlMemory<ISoundOpSystemEdit::FieldInfo, int>::Grow(int) [T = ISoundOpSystemEdit::FieldInfo, I = int
+void CUtlMemory<KeyGroup_t *, int>::Grow(int) [T = KeyGroup_t *, I = int
+void CUtlMemory<KeyGroup_t, int>::Grow(int) [T = KeyGroup_t, I = int
+void CUtlMemory<KeyValues *, int>::Grow(int) [T = KeyValues *, I = int
+void CUtlMemory<KeyValues3 *, int>::Grow(int) [T = KeyValues3 *, I = int
+void CUtlMemory<MixDebugOutput_t, int>::Grow(int) [T = MixDebugOutput_t, I = int
+void CUtlMemory<MixStateEntry_t, int>::Grow(int) [T = MixStateEntry_t, I = int
+void CUtlMemory<NameInputerMeterDesc_t, int>::Grow(int) [T = NameInputerMeterDesc_t, I = int
+void CUtlMemory<PropEdIndirectionType_t, int>::Grow(int) [T = PropEdIndirectionType_t, I = int
+void CUtlMemory<QuadraticCurveSection_t, int>::Grow(int) [T = QuadraticCurveSection_t, I = int
+void CUtlMemory<ResourceManifestDesc_t *, int>::Grow(int) [T = ResourceManifestDesc_t *, I = int
+void CUtlMemory<SEGMatchResult_t, int>::Grow(int) [T = SEGMatchResult_t, I = int
+void CUtlMemory<SequenceArrangementEvent_t *, int>::Grow(int) [T = SequenceArrangementEvent_t *, I = int
+void CUtlMemory<SequenceNoteEvent_t, int>::Grow(int) [T = SequenceNoteEvent_t, I = int
+void CUtlMemory<SndInfo_t, int>::Grow(int) [T = SndInfo_t, I = int
+void CUtlMemory<SosEditItemInfo_t, int>::Grow(int) [T = SosEditItemInfo_t, I = int
+void CUtlMemory<SosOpConnectionList_t, int>::Grow(int) [T = SosOpConnectionList_t, I = int
+void CUtlMemory<SosOpConnection_t, int>::Grow(int) [T = SosOpConnection_t, I = int
+void CUtlMemory<SosOpFieldInfoList_t, int>::Grow(int) [T = SosOpFieldInfoList_t, I = int
+void CUtlMemory<SosOpFieldInfo_t *, int>::Grow(int) [T = SosOpFieldInfo_t *, I = int
+void CUtlMemory<SosOpFieldInfo_t, int>::Grow(int) [T = SosOpFieldInfo_t, I = int
+void CUtlMemory<SoundEventCurveDebugInfo_t, int>::Grow(int) [T = SoundEventCurveDebugInfo_t, I = int
+void CUtlMemory<SoundEventGuid_t, int>::Grow(int) [T = SoundEventGuid_t, I = int
+void CUtlMemory<SoundEventSendDebugEntry_t *, int>::Grow(int) [T = SoundEventSendDebugEntry_t *, I = int
+void CUtlMemory<SoundEventStartVmixDebugEntry_t *, int>::Grow(int) [T = SoundEventStartVmixDebugEntry_t *, I = int
+void CUtlMemory<SoundGuid_t, int>::Grow(int) [T = SoundGuid_t, I = int
+void CUtlMemory<StartVsndInfo_t, int>::Grow(int) [T = StartVsndInfo_t, I = int
+void CUtlMemory<TrackQueue_t, int>::Grow(int) [T = TrackQueue_t, I = int
+void CUtlMemory<UtlRBTreeNode_t<CUtlMap<CSosDependent *, int, unsigned short, bool (*)(CSosDependent *const &, CSosDependent *const &)>::Node_t, unsigned short>, unsigned short>::Grow(int) [T = UtlRBTreeNode_t<CUtlMap<CSosDependent *, int, unsigned short, bool (*)(CSosDependent *const &, CSosDependent *const &)>::Node_t, unsigned short>, I = unsigned short
+void CUtlMemory<UtlRBTreeNode_t<CUtlMap<SoundEventGuid_t, CSndMixGroupTrigger_t, unsigned short, CDefLess<SoundEventGuid_t> >::Node_t, unsigned short>, unsigned short>::Grow(int) [T = UtlRBTreeNode_t<CUtlMap<SoundEventGuid_t, CSndMixGroupTrigger_t, unsigned short, CDefLess<SoundEventGuid_t> >::Node_t, unsigned short>, I = unsigned short
+void CUtlMemory<UtlRBTreeNode_t<CUtlMap<const char *, CSosOperator *, int, bool (*)(const char *const &, const char *const &)>::Node_t, int>, int>::Grow(int) [T = UtlRBTreeNode_t<CUtlMap<const char *, CSosOperator *, int, bool (*)(const char *const &, const char *const &)>::Node_t, int>, I = int
+void CUtlMemory<UtlRBTreeNode_t<CUtlMap<const char *, CSosOperatorStack *, int, bool (*)(const char *const &, const char *const &)>::Node_t, int>, int>::Grow(int) [T = UtlRBTreeNode_t<CUtlMap<const char *, CSosOperatorStack *, int, bool (*)(const char *const &, const char *const &)>::Node_t, int>, I = int
+void CUtlMemory<UtlRBTreeNode_t<CUtlMap<const char *, CUtlString, int, bool (*)(const char *const &, const char *const &)>::Node_t, int>, int>::Grow(int) [T = UtlRBTreeNode_t<CUtlMap<const char *, CUtlString, int, bool (*)(const char *const &, const char *const &)>::Node_t, int>, I = int
+void CUtlMemory<UtlRBTreeNode_t<CUtlMap<const char *, CUtlString, unsigned short, bool (*)(const char *const &, const char *const &)>::Node_t, unsigned short>, unsigned short>::Grow(int) [T = UtlRBTreeNode_t<CUtlMap<const char *, CUtlString, unsigned short, bool (*)(const char *const &, const char *const &)>::Node_t, unsigned short>, I = unsigned short
+void CUtlMemory<UtlRBTreeNode_t<CUtlMap<const char *, KeyValues *, int, bool (*)(const char *const &, const char *const &)>::Node_t, int>, int>::Grow(int) [T = UtlRBTreeNode_t<CUtlMap<const char *, KeyValues *, int, bool (*)(const char *const &, const char *const &)>::Node_t, int>, I = int
+void CUtlMemory<UtlRBTreeNode_t<CUtlMap<const char *, int, int, bool (*)(const char *const &, const char *const &)>::Node_t, int>, int>::Grow(int) [T = UtlRBTreeNode_t<CUtlMap<const char *, int, int, bool (*)(const char *const &, const char *const &)>::Node_t, int>, I = int
+void CUtlMemory<UtlRBTreeNode_t<CUtlMap<unsigned int, CSosOperatorStack *, unsigned short, CDefLess<unsigned int> >::Node_t, unsigned short>, unsigned short>::Grow(int) [T = UtlRBTreeNode_t<CUtlMap<unsigned int, CSosOperatorStack *, unsigned short, CDefLess<unsigned int> >::Node_t, unsigned short>, I = unsigned short
+void CUtlMemory<UtlRBTreeNode_t<CUtlMap<unsigned int, SosOpFieldMapInfo_t *, unsigned short, CDefLess<unsigned int> >::Node_t, unsigned short>, unsigned short>::Grow(int) [T = UtlRBTreeNode_t<CUtlMap<unsigned int, SosOpFieldMapInfo_t *, unsigned short, CDefLess<unsigned int> >::Node_t, unsigned short>, I = unsigned short
+void CUtlMemory<UtlRBTreeNode_t<CUtlMap<unsigned short, int, unsigned short, CDefLess<unsigned short> >::Node_t, unsigned short>, unsigned short>::Grow(int) [T = UtlRBTreeNode_t<CUtlMap<unsigned short, int, unsigned short, CDefLess<unsigned short> >::Node_t, unsigned short>, I = unsigned short
+void CUtlMemory<VMixAudioOutput_t, int>::Grow(int) [T = VMixAudioOutput_t, I = int
+void CUtlMemory<VMixAutomaticControlInputs_t, int>::Grow(int) [T = VMixAutomaticControlInputs_t, I = int
+void CUtlMemory<VMixControlInputArrayDesc_t, int>::Grow(int) [T = VMixControlInputArrayDesc_t, I = int
+void CUtlMemory<VMixControlInputDesc_t, int>::Grow(int) [T = VMixControlInputDesc_t, I = int
+void CUtlMemory<VMixControlOutputDesc_t, int>::Grow(int) [T = VMixControlOutputDesc_t, I = int
+void CUtlMemory<VMixCurveDesc_t, int>::Grow(int) [T = VMixCurveDesc_t, I = int
+void CUtlMemory<VMixEngineStateVoice_t *, int>::Grow(int) [T = VMixEngineStateVoice_t *, I = int
+void CUtlMemory<VMixEngineStateVoice_t, int>::Grow(int) [T = VMixEngineStateVoice_t, I = int
+void CUtlMemory<VMixGraphCommand_t, int>::Grow(int) [T = VMixGraphCommand_t, I = int
+void CUtlMemory<VMixNameInputDesc_t, int>::Grow(int) [T = VMixNameInputDesc_t, I = int
+void CUtlMemory<VMixProcessorDesc_t, int>::Grow(int) [T = VMixProcessorDesc_t, I = int
+void CUtlMemory<VMixStateGraph_t, int>::Grow(int) [T = VMixStateGraph_t, I = int
+void CUtlMemory<VMixStateVoice_t, int>::Grow(int) [T = VMixStateVoice_t, I = int
+void CUtlMemory<VMixSubvoice_t, int>::Grow(int) [T = VMixSubvoice_t, I = int
+void CUtlMemory<VMixVsndInputDesc_t, int>::Grow(int) [T = VMixVsndInputDesc_t, I = int
+void CUtlMemory<VSndInputRecord_t, int>::Grow(int) [T = VSndInputRecord_t, I = int
+void CUtlMemory<Vector, int>::Grow(int) [T = Vector, I = int
+void CUtlMemory<VelocityZone_t, int>::Grow(int) [T = VelocityZone_t, I = int
+void CUtlMemory<VocoderBand_t, int>::Grow(int) [T = VocoderBand_t, I = int
+void CUtlMemory<VocoderChannel_t, int>::Grow(int) [T = VocoderChannel_t, I = int
+void CUtlMemory<VoiceOperatorOutput_t, int>::Grow(int) [T = VoiceOperatorOutput_t, I = int
+void CUtlMemory<VoiceSendSubmixList_t, int>::Grow(int) [T = VoiceSendSubmixList_t, I = int
+void CUtlMemory<VoiceSendSubmix_t, int>::Grow(int) [T = VoiceSendSubmix_t, I = int
+void CUtlMemory<VoicetraceGraphControlArrayInput_t, int>::Grow(int) [T = VoicetraceGraphControlArrayInput_t, I = int
+void CUtlMemory<VoicetraceGraphControlInput_t, int>::Grow(int) [T = VoicetraceGraphControlInput_t, I = int
+void CUtlMemory<VoicetraceGraphNameInput_t, int>::Grow(int) [T = VoicetraceGraphNameInput_t, I = int
+void CUtlMemory<VoicetraceGraphParams_t, int>::Grow(int) [T = VoicetraceGraphParams_t, I = int
+void CUtlMemory<VoicetraceStackParams_t, int>::Grow(int) [T = VoicetraceStackParams_t, I = int
+void CUtlMemory<VoicetraceStartSubvoice_t, int>::Grow(int) [T = VoicetraceStartSubvoice_t, I = int
+void CUtlMemory<VoicetraceStartVoice_t, int>::Grow(int) [T = VoicetraceStartVoice_t, I = int
+void CUtlMemory<VoicetraceStateGraph_t, int>::Grow(int) [T = VoicetraceStateGraph_t, I = int
+void CUtlMemory<VoicetraceStopSubvoice_t, int>::Grow(int) [T = VoicetraceStopSubvoice_t, I = int
+void CUtlMemory<VoicetraceUpdateVoice_t, int>::Grow(int) [T = VoicetraceUpdateVoice_t, I = int
+void CUtlMemory<VoicetraceVoiceParams_t, int>::Grow(int) [T = VoicetraceVoiceParams_t, I = int
+void CUtlMemory<audio_device_description_t, int>::Grow(int) [T = audio_device_description_t, I = int
+void CUtlMemory<bool, int>::Grow(int) [T = bool, I = int
+void CUtlMemory<char *, int>::Grow(int) [T = char *, I = int
+void CUtlMemory<char, int>::Grow(int) [T = char, I = int
+void CUtlMemory<const CVMixListResource *, int>::Grow(int) [T = const CVMixListResource *, I = int
+void CUtlMemory<const KeyValues3 *, int>::Grow(int) [T = const KeyValues3 *, I = int
+void CUtlMemory<const char *, int>::Grow(int) [T = const char *, I = int
+void CUtlMemory<cubic_spline_section_t, int>::Grow(int) [T = cubic_spline_section_t, I = int
+void CUtlMemory<curve_tangents_t, int>::Grow(int) [T = curve_tangents_t, I = int
+void CUtlMemory<float *, int>::Grow(int) [T = float *, I = int
+void CUtlMemory<float, int>::Grow(int) [T = float, I = int
+void CUtlMemory<grouplevels_t, int>::Grow(int) [T = grouplevels_t, I = int
+void CUtlMemory<int, int>::Grow(int) [T = int, I = int
+void CUtlMemory<memhandle_t__ *, int>::Grow(int) [T = memhandle_t__ *, I = int
+void CUtlMemory<mouth_source_t, int>::Grow(int) [T = mouth_source_t, I = int
+void CUtlMemory<piecewise_curve_floatsection_t, int>::Grow(int) [T = piecewise_curve_floatsection_t, I = int
+void CUtlMemory<pset_t, int>::Grow(int) [T = pset_t, I = int
+void CUtlMemory<resample_grain_set_t, int>::Grow(int) [T = resample_grain_set_t, I = int
+void CUtlMemory<short, int>::Grow(int) [T = short, I = int
+void CUtlMemory<unsigned char, int>::Grow(int) [T = unsigned char, I = int
+void CUtlMemory<unsigned int, int>::Grow(int) [T = unsigned int, I = int
+void CUtlMemory<unsigned long long, int>::Grow(int) [T = unsigned long long, I = int
+void CUtlMemory<unsigned short, int>::Grow(int) [T = unsigned short, I = int
+void CUtlMemory<vcon_SoundViewerBlockItem_t, int>::Grow(int) [T = vcon_SoundViewerBlockItem_t, I = int
+void CUtlMemory<vcon_SoundViewerGroupsItem_t, int>::Grow(int) [T = vcon_SoundViewerGroupsItem_t, I = int
+void CUtlMemory<vcon_SoundViewerMixGrpsItem_t, int>::Grow(int) [T = vcon_SoundViewerMixGrpsItem_t, I = int
+void CUtlMemory<vcon_SoundViewerMixItem_t, int>::Grow(int) [T = vcon_SoundViewerMixItem_t, I = int
+void CUtlMemory<vcon_SoundViewerSoundEventsItem_t, int>::Grow(int) [T = vcon_SoundViewerSoundEventsItem_t, I = int
+void CUtlMemory<vcon_SoundViewerSubvoice_t, int>::Grow(int) [T = vcon_SoundViewerSubvoice_t, I = int
+void CUtlMemory<vcon_SoundViewerTracksItem_t, int>::Grow(int) [T = vcon_SoundViewerTracksItem_t, I = int
+void CUtlMemory<vcon_SoundViewerVoice_t, int>::Grow(int) [T = vcon_SoundViewerVoice_t, I = int
+void CUtlMemory<void *, int>::Grow(int) [T = void *, I = int
 void CUtlMemory_RawAllocator<CUtlHashtableEntry<unsigned int, empty_t> >::EnsureCapacity(int) [T = CUtlHashtableEntry<unsigned int, empty_t
 void CUtlMemory_RawAllocator<CUtlHashtableEntry<unsigned int, empty_t> >::SetRawAllocatorType(RawAllocatorType_t) [T = CUtlHashtableEntry<unsigned int, empty_t
 void CUtlMemory_RawAllocator<unsigned int>::EnsureCapacity(int) [T = unsigned int
@@ -3333,7 +3672,6 @@ wcscmp
 weights_field_name
 x*A9FH~$I
 x+97~'H
-x297~.H
 x4E9l$8~-E9l$L|&I
 x: %4f y: %4f z: %4f
 x<E9g8~6E9gL|0I
@@ -3344,3 +3682,4 @@ xR9HP~MH
 xVA9]8~PA9]L|JI
 x[A\A]A^A
 xoA9]8~iA9]L|cI
+zIcMLI9

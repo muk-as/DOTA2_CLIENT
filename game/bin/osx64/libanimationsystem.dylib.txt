@@ -1,24 +1,31 @@
-0  PP 0
+0     0000
+0  0PP 0
 0 0 0 0
 0 0 0 255
-0 0@@  0   @0@@@@@` 0@00@0
 0.01 0.2
 00                                             0
 00      0000
-00 @    0
+00    p
+00 0 0
+000      p
 0000      00
 000000
-000@P  00
-000@PP
-00@@   0   0
+0000000
+00000000
+00000000 0000000000000000000000000000000000000000000000000000 0000000000000000000000000000000000000000000000
+0000000000000
+00000000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000pp00000000000000000000000
+00000@00000@@0  00         00@0@` 000@0@0@00
+00000@@  0   @0@@@@@` 00@00@000000000000000@00000000000000000@000@000@@000000000000000000000000000000
+00000@P  00
 00p0@p 00
-098 - Expected ',' for call to vararg function
 0@ 0@@P
 0@@  0  0
-0@@@  0000         @0
+0@` 000
 0@p0@p 00
 0H;C(t
-0Hc40I
+0Mct$0E
 0[A\A^A
 0`p0@p 00
 1 1000
@@ -53,6 +60,7 @@
 12IsClientFunc
 13AngleDiffFunc
 13CAnimClipData
+13CAnimNodeBase
 13CAnimNodeList
 13CAnimPosePool
 13CAnimSkeleton
@@ -62,6 +70,7 @@
 13CNWaySequence
 13CRootAnimNode
 13CTagCondition
+13CycleDiffFunc
 13IAnimClipData
 13IAudioAnimTag
 13IBaseSequence
@@ -102,6 +111,7 @@
 15CAnimationGraph
 15CAnimationGroup
 15CBaseConstraint
+15CBlendNodeChild
 15CChoiceAnimNode
 15CChoreoAnimNode
 15CCompressedAnimI17QuaternionStorageE
@@ -131,7 +141,6 @@
 15CTier1AppSystemI16IAnimationSystemLx0EE
 15CTier2AppSystemI16IAnimationSystemLx0EE
 15CTier3AppSystemI16IAnimationSystemLx0EE
-15CWaypointBuffer
 15GetPrevTimeFunc
 15GetTimeStepFunc
 15IAnimTagManager
@@ -140,6 +149,7 @@
 15ISaveRestoreOps
 15ISlopeComponent
 15VectorCrossFunc
+16AdvanceCycleFunc
 16CActionComponent
 16CAnimNodeManager
 16CAnimReplayFrame
@@ -237,7 +247,7 @@
 18CAnimNetVarDataOpsI11CAnimNetVarIfELi1EE
 18CAnimNetVarDataOpsI11CAnimNetVarIhELi57EE
 18CAnimNetVarDataOpsI11CAnimNetVarIiELi5EE
-18CAnimNetVarDataOpsI11CAnimNetVarItELi58EE
+18CAnimNetVarDataOpsI11CAnimNetVarIjELi37EE
 18CAnimParameterBase
 18CAnimParameterList
 18CAnimScriptManager
@@ -251,6 +261,7 @@
 18CFinishedCondition
 18CFootMotionManager
 18CMotionNodeBlend1D
+18CMotionNodeBuilder
 18CMotionNodeManager
 18CMovementComponent
 18CMutableRefCountedI20CMutableRefCountBaseI6CRefMTEE
@@ -273,6 +284,9 @@
 18CUnregisterReceiptI9CSmartPtrI16CSubGraphManager17CRefCountAccessorEMS1_FvRK10CUtlStringES4_E
 18CUnregisterReceiptI9CSmartPtrI21CAnimGraphDebugReplay17CRefCountAccessorEMS1_FvP19IAnimReplayListenerES5_E
 18CUnregisterReceiptI9CSmartPtrI23CAnimationGraphInstance17CRefCountAccessorEMS1_FvP34IAnimGraphSequenceFinishedListenerES5_E
+18CycleNormalizeFunc
+18CyclesAreEqualFunc
+18GetCycleAtTimeFunc
 18GetRandomFloatFunc
 18IAnimMotorInstance
 18IAnimParameterList
@@ -281,7 +295,9 @@
 18IContainerAnimNode
 18IEnumAnimParameter
 18IMovementComponent
+18IMultipleWorkerJob
 18IParamLookupHelper
+18IParameterProvider
 18IScriptEditManager
 19CAnimComponentState
 19CAnimNetVarRegistry
@@ -309,18 +325,25 @@
 19CSchemaRegistration
 19CSelectorUpdateNode
 19CSequenceMotionItem
+19CSequenceUpdateNode
 19CSetParameterAction
 19CSimpleFunctionBaseI11GetTimeFuncE
 19CSimpleFunctionBaseI12IsClientFuncE
 19CSimpleFunctionBaseI13AngleDiffFuncE
+19CSimpleFunctionBaseI13CycleDiffFuncE
 19CSimpleFunctionBaseI15GetPrevTimeFuncE
 19CSimpleFunctionBaseI15GetTimeStepFuncE
+19CSimpleFunctionBaseI16AdvanceCycleFuncE
 19CSimpleFunctionBaseI16GetRandomIntFuncE
 19CSimpleFunctionBaseI18AngleNormalizeFuncE
 19CSimpleFunctionBaseI18AnglesAreEqualFuncE
+19CSimpleFunctionBaseI18CycleNormalizeFuncE
+19CSimpleFunctionBaseI18CyclesAreEqualFuncE
+19CSimpleFunctionBaseI18GetCycleAtTimeFuncE
 19CSimpleFunctionBaseI18GetRandomFloatFuncE
 19CSimpleFunctionBaseI19GetWorldHeadingFuncE
 19CSimpleFunctionBaseI20GetPlaybackSpeedFuncE
+19CSimpleFunctionBaseI21IsCycleNormalizedFuncE
 19CSimpleFunctionBaseI23IsNetworkingEnabledFuncE
 19CSimpleFunctionBaseI26AngleNormalizePositiveFuncE
 19CSpeedScaleAnimNode
@@ -338,6 +361,7 @@
 19VectorLengthSqrFunc
 19VectorNormalizeFunc
 19VectorToHeadingFunc
+1Hc41I
 20CAimMatrixUpdateNode
 20CAnimClipDataManager
 20CAnimGraphLogManager
@@ -354,6 +378,7 @@
 20CCompressedStaticInt
 20CDampedPathAnimMotor
 20CEditableMotionGraph
+20CFootPinningAnimNode
 20CGenericFunctionBaseI13SetFacingFuncE
 20CGenericFunctionBaseI13VectorDotFuncE
 20CGenericFunctionBaseI15VectorCrossFuncE
@@ -376,8 +401,8 @@
 20CRefCountServiceBaseI6CRefMTE
 20CRigidBodyWeightList
 20CSequenceBlend2DItem
-20CSetFacingUpdateNode
 20CSingleFrameAnimNode
+20CStanceScaleAnimNode
 20CTagConditionUpdater
 20CTiltTwistConstraint
 20CTimeRemainingMetric
@@ -436,6 +461,7 @@
 21ISolveIKChainAnimNode
 21ISolveIKChainSettings
 21IVConCommDataReceived
+21IsCycleNormalizedFunc
 22CAnimComponentInstance
 22CAnimGraphModelBinding
 22CAnimParameterInstance
@@ -449,9 +475,11 @@
 22CControlValueCondition
 22CCurrentVelocityMetric
 22CCycleConditionUpdater
+22CFootPinningUpdateNode
 22CFootstepLandedAnimTag
 22CInputStreamUpdateNode
 22CLookComponentInstance
+22CMotionGraphUpdateNode
 22CMotionMetricEvaluator
 22CParamConditionUpdater
 22CPathAnimMotorInstance
@@ -460,6 +488,7 @@
 22CSingleFrameUpdateNode
 22CSkeletalInputAnimNode
 22CSlopeComponentUpdater
+22CStanceScaleUpdateNode
 22CStateMachineComponent
 22CToggleComponentAction
 22IAnimGraphModelBinding
@@ -490,6 +519,7 @@
 23CGroundConditionUpdater
 23CKV3ResourceBlockHelper
 23CKV3ResourceTypeManagerILy7525640765879247222EE
+23CMotionGraphPreviewNode
 23CMotionMatchingAnimNode
 23CMotionParameterManager
 23CParameterAnimCondition
@@ -497,6 +527,7 @@
 23CSequenceDistanceHelper
 23CSlopeComponentInstance
 23CSolveIKChainUpdateNode
+23CStanceOverrideAnimNode
 23CStateMachineUpdateNode
 23CStaticPoseCacheBuilder
 23CVConCommandMessageAnim
@@ -506,6 +537,7 @@
 23IAnimationDebugRenderer
 23IAnimationGraphInstance
 23IChoreoAnimNodeInstance
+23IMotionGraphPreviewNode
 23IMotionMatchingAnimNode
 23IMotionParameterManager
 23ISlopeComponentInstance
@@ -520,7 +552,6 @@
 24CDistanceRemainingMetric
 24CEnduringClassMemoryPoolI9CAnimPoseE
 24CExpressionActionUpdater
-24CFixedSizeCircularBufferI13CAnimWayPointLi15E11CAnimNetVarIiEE
 24CFixedSizeCircularBufferI15CPoseCacheEntryLi12EiE
 24CFootStepTriggerAnimNode
 24CModelDocAnimResourceSeq
@@ -544,6 +575,7 @@
 25CCompressedStaticVector4D
 25CCycleControlClipAnimNode
 25CDirectPlaybackUpdateNode
+25CDirectionalBlendAnimNode
 25CFinishedConditionUpdater
 25CFollowAttachmentAnimNode
 25CFootAdjustmentUpdateNode
@@ -557,6 +589,7 @@
 25CSeqResourceMultiSequence
 25CSequenceAnimNodeInstance
 25CSlowDownOnSlopesAnimNode
+25CStanceOverrideUpdateNode
 25CVRInputComponentInstance
 25CWayPointHelperUpdateNode
 25IAnimGraphSettingsManager
@@ -608,6 +641,7 @@
 28CCompressedReferenceVector4D
 28CCompressedStaticFullVector3
 28CDampedValueComponentUpdater
+28CFootPinningAnimNodeInstance
 28CFootPositionMetricEvaluator
 28CForceFacingConditionUpdater
 28CFutureFacingMetricEvaluator
@@ -619,6 +653,7 @@
 28CPlayerInputAnimMotorUpdater
 28CSchemaRegistration_modellib
 28CStateStatusConditionUpdater
+28IFootPinningAnimNodeInstance
 28IInputStreamAnimNodeInstance
 29CAnimComponentManagerInstance
 29CAnimComponentStateTransition
@@ -655,8 +690,10 @@
 31CCurrentVelocityMetricEvaluator
 31CDirectPlaybackAnimNodeInstance
 31CModelConfigElement_RandomColor
+31CMotionGraphPreviewNodeInstance
 31CMotionMatchingAnimNodeInstance
 31IDirectPlaybackAnimNodeInstance
+31IMotionGraphPreviewNodeInstance
 31IMotionMatchingAnimNodeInstance
 32CModelConfigElement_SetBodygroup
 3333333
@@ -682,6 +719,7 @@
 37CTypesafeIntrospectedToKV3TypeManagerILy482955714934E15CAnimationGroupE
 38CAnimationGraphVisualizerPrimitiveBase
 39CCurrentRotationVelocityMetricEvaluator
+39CKV3Transfer_EmptyResourceLoadInterface
 3[A\A^A
 40.40s %10.10s %10.10s
 40.40s %10.2f %10.2f
@@ -694,10 +732,10 @@
 8E9T;0u
 8G9T80u
 8G9\80u
-8Hc5vcd
+8Hc<8I
 8IAnimTag
 8IcD$hA
-8Mc|$ M
+8McfhD
 8[A\A]A^A
 9B ~)E1
 9CAnimData
@@ -712,34 +750,22 @@
 A I9F r
 A master convar that effectively disables the entire footlock node
 A(I9F(r
-A+D$ ~eA
-A+D$ ~pA
-A+D$0~iA
-A+D$0~pA
-A+D$0~rA
-A+D$H~pA
-A+D$h~gA
-A+D$x~lA
-A+E0~mA
-A+E@~fA
-A+EH~nA
-A+F8~_A
-A+F`~oA
-A+Fh~sA
-A+G ~mA
-A+G ~rA
-A+G0~rA
-A+G8~rA
-A+GH~rA
-A+G`~rA
-A13CAnimNodeBase
-A19CSequenceUpdateNode
-A25CDirectionalBlendAnimNode
+A+D$p~1
+A+GH~6D
+A+t$X~9I
+A+v ~gI
+A+w ~7I
+A+w ~|I
+A+w(~lI
+A+wX~1I
+A+wp~!I
+A20CSetFacingUpdateNode
 A8H+A(H
 A9D$,v$I
+A9D$,v?H
 A9D$x~zI
 A9E(~GI
-A9E,vLH
+A9E,vDH
 A9EH~'I
 A9GLv5I
 ACN6exprtk7details24assignment_vec_elem_nodeIfEE
@@ -872,18 +898,23 @@ ANIMPARAM_UNKNOWN
 ANIMPARAM_VECTOR
 APPSYSTEM: In ConnectInterfaces(), s_nRegistrationCount is %d
 ARARASAp
-ARASARASARAVARASARAVARASARAVARASARASARASARASARASARAVARASARASARAVARASARASARASARASARAVARASARASARAVARASARASARASARAVARASARAVARASARAVARASARAVARASARAVAVARASARASARAVARB
-ARASARAVARASARASARAVARASARAVARASARAVARASARASARASARAVARASARASARASARAVARASARAVARASARASARAp
+ARASARASARAVARASARAVARASARASARASARASARASARAVARASARASARAVARASARAVARASARAVARASARASARASARASARASARASARASARAVARASARAVARASARASARASARAVARASARAVARASARAVARASARAVARASARAVAVARASARASARAVARB
 ARASASA[A\AZASAYAWAp
-ARAYJVGp
+ARAUASASASASASB
 ARBYASARA
 ARB` B
 ASARARAp
-ASARA`!ASA`!ASA`!ASA`!ASA`!ASA`!ASA`$ASASARA`!ASA`!ASA`!ASA`!ASA`!ASAp
-ASAXAYARA
+ASASASASA
+ASASASASASASASASASASASASASASASASA`GASC
+ASASASASASASASASASASASASAp
+ASASASASASA[ASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASA`iASA`.A
+ASASASASBRAUASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASAp
+ASASASAp
+ASASBTBUASASASASBTAVBUB
+ASAXAYA
 ASA[ASAVA
-ASA]ARAp
-ASBRBRBRBTBRBRBRBZBRBRB
+ASA[ASAWAp
+ASBRBRBRBTBRBRBRBVCp
 ASM^ARARAp
 ASM^ARARB[K\ARAp
 ASM^ARARB[K\ARB
@@ -892,21 +923,19 @@ ASM^ARARBp
 ASM^NY0
 ASM^NYFp
 ASM^NYJp
+ATASBYARASATBSARASARAp
 ATAVAUA
 ATAVAUARA\ATAVAUA
 ATAYAp
-ATA`/AVATA`'C
-ATBRATAVBRA
 ATTACHMENT_INFLUENCE_FLAGS_NONE
-AVARASAp
-AVBRAVARAZAWARBSBRAZBSARA
+AUASASASASASASASASCp
+AVAUASASASASASASBSAp
+AVBRAVAUASBZAWARBSBRAZBSARA
 AVSHcG(H
-AVSf97u
 AWAVATS
 AWAVATS1
 AWAVATSA
 AWAVATSD
-AWAVATSE
 AWAVATSE1
 AWAVATSH
 AWAVATSI
@@ -933,15 +962,11 @@ AWAVAUATSPHcG@H
 AWAVAUATSPHc_ H
 AWAVAUATSPI
 AWAVAUATSPL
-AWAVAUATSPLc
 AWAVAUATSPLc'M
-AWAVAUATSPLc7D
 AWAVAUATSPLcoPM
 AWAVAUATSPM
 AWAVSP1
-AWAVSP9
 AWAVSPA
-AWAVSPD
 AWAVSPE
 AWAVSPE1
 AWAVSPH
@@ -953,29 +978,32 @@ AWAVSPL
 AWAVSPLc
 AWAVSPM
 AWAXAZ0
+AYASASASASASA
+AYASAp
 AYA[AUAYA
 AYA[FYAp
+AYA`CA`=A]BRB`2Ap
+AYBRBRBRBRBTBRBVBRBRBRBVC
 AYB[K\A
 AYB[K\B
 AYB[K\B[K\A
 AYB]L^ARAYFRAp
 AYB^AYK\A
-AZBTCSB]M^B
 A[ARARAp
+A[BRBZCp
+A\ARAYJVGp
 A\A]A^A
-A]ASARA
-A]ASARA`!C
-A]A`?A`)BRBRBRBRBRBRBRBZBRB
-A]BRB`0Ap
+A]ASARAWAWAWAYA]Cp
+A]A`KA`)BRBRBRBRBRBRBRBZBRB
 A^AYARAp
-A^B`10
-A`!ASAp
-A`!ASB` 0
+A^B`50
+A`!ASB
+A`!ASB`!AW0
+A`!ASB`%0
 A`!ASB`3B
-A`#AUA]A
-A`BARA`CA`BA`CA`CA`DARA`CA`CASARARA`ABRARA`CARARARARA
+A`#AUA]A`QAp
+A`FARA`GA`FA`GA`GA`HARA`GA`GASARARA`EBRARA`GARARARARA
 A`FASAS0
-A`OASA
 Absolute
 AbsolutePoseControl
 Acceleration
@@ -1000,6 +1028,7 @@ Active When Listening
 Active When Talking
 Active While Current
 Add Correction Delta
+Add Foot Motion
 Add node is missing a child.  Will use t-pose by default
 AddCorrectionDelta
 AddEventTypeFlags
@@ -1009,10 +1038,13 @@ Additive
 Adds or merges the pose parameter range of the specified pose paramater
 Adds the the specified type flags for specified event on the sequence
 Adjusted foot position; offset: %.2f
+AdvanceCH
+AdvanceCycle
 Aim Attachment
 Aim Matrix
 Aim Matrix does not have a valid attachment
 Aim Matrix does not have a valid sequence
+Aim Matrix has invalid parameter
 Aim Matrix is missing a child
 Aim Matrix sequence %s has %i frames, needs %i
 AimMatrixBlendMode
@@ -1157,23 +1189,24 @@ Auto-Calculate target speed
 B28CIKJointConstraintData_Hinge
 BAD_KEY
 BAD_VAL
-BATA`+Ap
 BLEND_PREALIGNED
 BRBRBRBRBRBRB
 BRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRCp
 BRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRC
-BRBRBRBRBRBRB`2BRBRBRBRBTBRBVBRBRBRBVC
-BRBRBRBRBRBYA
-BRBRBSA
+BRBRBRBRBRBYA`!ASAUASASB
+BRBRBUA
 BRBRB`'ATAp
-BRBRB`BAUAp
-BRBXBRB\BRB
+BRBRB`PAp
 BSA`$ASA`%ASAWA`$ASA`$ASA`$ASA`$ASARAp
-BTAVBRA
-B]ApP[ARA\AYARARARASASARASARAVARATAp
+BTAVBUASB
+B]ApP[ARA\AYARARARASARASARAVARATARAZAp
 B]ApP[ARB
-B` AW0
 B`!AW0
+B`$AW0
+B`%AW0
+B`(AZAWAX0
+B`-AWB
+B`1AWB
 Bad %s on sequence %s couldn't compute nodeId for "%s" on model: %s
 Bad %s on sequence %s expected a string as the parameter on model: %s
 Bad %s on sequence %s failed on model: %s
@@ -1211,8 +1244,10 @@ Blend Items
 Blend Key Values
 Blend Method
 Blend Mode
+Blend Node set to invalid parameter
 Blend Out Time
 Blend Parameter
+Blend Parameter (optional
 Blend Source
 Blend Source for the X Axis set to "Parameter", but no parameter is set
 Blend Source for the Y Axis set to "Parameter", but no parameter is set
@@ -1288,7 +1323,6 @@ C I9@ r
 C [A\A^A
 C(HcK(H
 C(I9@(r
-C+D/h~zC
 C0HcK0H
 C19CAnimUpdateNodeBase
 C8HcK8H
@@ -1544,6 +1578,9 @@ CFootLockAnimNode
 CFootLockItem
 CFootLockUpdateNode
 CFootMotion
+CFootPinningAnimNode
+CFootPinningItem
+CFootPinningUpdateNode
 CFootPositionMetric
 CFootPositionMetricEvaluator
 CFootStepTriggerAnimNode
@@ -1567,7 +1604,6 @@ CGroupInputAnimNode
 CGroupOutputAnimNode
 CHH+C@H
 CHHcKHH
-CH[A\A^A
 CHitBox
 CHitBoxSet
 CHitBoxSetList
@@ -1635,7 +1671,8 @@ CMotionNodeManager
 CMotionNodeSequence
 CMotionParameter
 CMotionParameterManager
-CMotionSearchIndex
+CMotionSearchDB
+CMotionSearchNode
 CMovementComponent
 CMovementComponentUpdater
 CMovementMode
@@ -1681,7 +1718,7 @@ CPointConstraint
 CProductQuantizer
 CProxyAnimNodeBase
 CQuaternionAnimParameter
-CRASARARARASAp
+CRASAUBRARASAp
 CRITICAL ERROR): %s
 CRagdollAnimNode
 CRagdollAnimTag
@@ -1741,6 +1778,9 @@ CSolveIKChainAnimNodeChainData
 CSolveIKChainUpdateNode
 CSpeedScaleAnimNode
 CSpeedScaleUpdateNode
+CStanceOverrideAnimNode
+CStanceScaleAnimNode
+CStanceScaleUpdateNode
 CStateAction
 CStateActionUpdater
 CStateMachineAnimNode
@@ -1841,8 +1881,11 @@ ClearFlag
 Clears the flags given the specified flag mask
 Client Simulate
 ClientSimulate
+Clip %s has invalid tag span
+Clip %s using in Motion Item %s has invalid tag span
 Clip Data
 Clip Data Manager
+Clip Span has invalid tag
 Cloth Settings Tag
 CmdLinkAI
 Command
@@ -1862,6 +1905,7 @@ ConfigIndex
 Configuration
 Constant
 ConstraiH
+Constrain Twist
 Control Points: %f, %f
 Control Value Condition
 ControlValue
@@ -1937,12 +1981,22 @@ Cycle Control
 Cycle Control Clip
 Cycle Control Clip node is missing its control parameter
 Cycle Control node is missing its control parameter
+Cycle Utils/bool CyclesAreEqual( cycle1, cycle2
+Cycle Utils/bool IsCycleNormalized( cycle
+Cycle Utils/float AdvanceCycle( prevCycle, timeStep, playbackSpeed, duration, bLoop
+Cycle Utils/float CycleDiff( cycleTo, cycleFrom
+Cycle Utils/float CycleNormalize( cycle
+Cycle Utils/float GetCycleAtTime( startTime, currentTime, playbackSpeed, duration, bLoop
 CycleControlClipNode
+CycleDifH
+CycleDiff
+CycleNorH
+CycleNormalize
+CyclesArH
+CyclesAreEqual
 D$ H9C
 D$(H9C(r
 D$8H9C8r)D
-D$LA;D$P
-D$PIcNPH
 D9b ~(1
 D9b ~:E1
 D9b ~;E1
@@ -1954,7 +2008,6 @@ D9r ~:E1
 D9y ~!1
 D9y ~"E1
 D9z ~:E1
-DA;\$Hu
 DEFAULT_WRITE_PATH
 Damped Motor cannot write to parameter %s
 Damped Path Motor
@@ -1963,7 +2016,6 @@ Damped Value Component
 DampedPathAnimMotorInstance
 DampedPathMotorInstanceData_t
 DampedValue Component cannot write to parameter %s
-DampedValueData%i
 DampedValueType
 Damping
 Damping Ratio
@@ -2028,8 +2080,7 @@ Dpad Up
 Duration
 Duration Override
 E8I9D$8
-E9T;0u
-E;oPu:A
+ELA;EP
 ERR000 - Current stack depth
 ERR001 -H
 ERR002 -H
@@ -2126,6 +2177,7 @@ ERR093 -H
 ERR094 -H
 ERR096 - Unsupported vararg function
 ERR097 - Expected '(' for call to vararg function
+ERR098 - Expected ',' for call to vararg function
 ERR099 -H
 ERR100 -H
 ERR101 - Expected
@@ -2244,6 +2296,7 @@ EarlyInit_Tier0
 EaseOut
 EconItemToolModel_001
 Emit Tag
+Emit Tag Action does not have a valid tag
 Empty eH
 Enable Collision
 Enable Distance Scaling
@@ -2288,6 +2341,7 @@ F(I9G(r
 F14CBufferStringNILi20EEPK20CAnimStateTransitionE
 F8H9C8L
 F8I9G8r*H
+F;d3(u!L
 FATAL ERROR: unable to register all schema data: %s
 FHJcL80H
 FIELD_AI_SCHEDULE_BITS
@@ -2472,7 +2526,9 @@ Failed to compile script text
 Failed to convert relative path to full path.  Relative path: %s
 Failed to create Motion Graph Node for %s
 Failed to create handle for script: %s
+Failed to find IK chain with name "%s
 Failed to find ankle bone with name "%s".  Check the Feet settings of this model in ModelDoc
+Failed to find foot with name "%s
 Failed to load Animation Graph Resource: %s
 Failed to read file.  Filename: %s
 Failed to run initial animationsystem script
@@ -2578,6 +2634,7 @@ FloatParameter
 Follow Attachment
 Follow Attachment node does not have a valid attachment
 Follow Path
+Follow Path node set to turn to face "Parameter", but no parameter is set
 FollowAttachmentSettings_t
 FontManager_001
 Foot Adjustment
@@ -2587,6 +2644,7 @@ Foot Lock node (%s): Failed to find foot with name "%s
 Foot Lock node (%s): No feet defined; node will do nothing
 Foot Locking
 Foot Motion Timing
+Foot Pinning
 Foot Position
 Foot Position Metric
 Foot Step Trigger
@@ -2598,11 +2656,14 @@ FootAdjust:m_nClipIndex
 FootAdjustmentNode
 FootFall Tag
 FootFallTagFoot_t
+FootFixedData_t
 FootFixedSettings
 FootLock:m_resetCount
 FootLockPoseOpFixedSettings
 FootLockSubVisualization
-FootOpFixedInfo
+FootMotion
+FootPinningPoseOpFixedData_t
+FootPinningTimingSource
 FootStepTrigger
 Footstep Landed Tag
 Footstep Type
@@ -2631,12 +2692,12 @@ Future Velocity Metric
 G H;G(t
 G(H9C(r
 G(H9G0u
-G(HcO4H
 G(I9F(r
+G4u(z&H
 G8H9C8r
 G8HcG(H
 G8I9F8r*A
-G9| 0u
+G9t,h}#K
 G@HcO8H
 GXH;G`t
 G`I;GXt
@@ -2647,6 +2708,7 @@ GameUIService_001
 General
 General token error
 Generate Movement
+Generate Movement is enabled but the Movement Velocity parameter is missing
 Get the list of animations for the model
 Get the list of sequences on the model
 Get the model this sequence belongs to
@@ -2658,6 +2720,8 @@ GetAllSequences
 GetAnimationList
 GetAssetInfo
 GetCPUInformation
+GetCycleAtTime
+GetCycleH
 GetEvent
 GetFadeInTime
 GetFadeOutTime
@@ -2713,7 +2777,7 @@ H [A\A]A^A
 H0IcD$hA
 H9V@tOH
 HELPER_BONE
-HRBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp
+HLccHE
 HSCRIPT CModelVScriptCompile::CreateSequence(HSCRIPT
 HSCRIPT CModelVScriptCompile::GetSequence(const ScriptVariant_t &) const
 HSequence
@@ -2727,7 +2791,7 @@ H__ZnwmRKSt9nothrow_t
 HammerMapLoader001
 Has a Path
 HasPath
-HcCxHk
+HcJhIc
 HeadingTH
 HeadingToVector
 Height Decrease Scale
@@ -2765,6 +2829,8 @@ IK Chains
 IK Solve
 IK Solver Type
 IK Target: %s
+IK target type set to Parameter and Match Target Rotation is enabled but the rotation parameter is missing
+IK target type set to Parameter but the position parameter is missing
 IKBoneNameAndIndex_t
 IKChain
 IKSOLVER_CCD
@@ -2786,28 +2852,24 @@ IKTargetSettings_t
 IKTargetSource
 INFINITY
 INVALID
-IQuickTime001
 ISequence
 IVSSequence
+IcD$ H9
 IcD$ I9
-IcD$(I9
+IcD$(H9
 IcD$0H
-IcD$8H
-IcD$@H
+IcD$0I9
 IcD$@H9
 IcD$@I9
+IcD$PH9
 IcD$PI9
 IcD$XH9
-IcD$pH
 IcD$pI9
-IcD$xH
-IcD$xH9
 IcL$0H9
-IcL$@H9
 IcL$X9
 IcNhD9
 IcT$,H9
-Ic]xIcu|H
+Ic\$ B
 Ict$,H9
 Identity
 Ignore Slope
@@ -2832,6 +2894,7 @@ InfoForResourceTypeCRenderMesh
 InfoForResourceTypeCSequenceGroupData
 InfoForResourceTypeCTextureBase
 InfoForResourceTypeIMaterial2
+InfoForResourceTypeIParticleSystemDefinition
 Initial tilt bone orientation
 Inner Angle
 Inner Stopping Radius
@@ -2882,6 +2945,8 @@ IsAnimation
 IsAutoplay
 IsClient
 IsClientH
+IsCycleNH
+IsCycleNormalized
 IsDelta
 IsFlagSet
 IsFrameCacheable
@@ -2893,8 +2958,10 @@ IsNetworH
 IsNetworkingEnabled
 IsSnapped
 IsVScript
+Item has invalid tag
 Iterate
 IterateRandom
+J LcZ4L
 JIGGLE_BONE
 JOINT_FLAGS_BODY1_FIXED
 JOINT_FLAGS_NONE
@@ -2933,6 +3000,7 @@ Left Shoulder
 Left Trigger
 Leg Extension Scale
 Lexer Er
+Limit Leg Twist
 Linking WeightLists To Data Channels :: %s
 List of animations to choose from
 Live Stream
@@ -2945,6 +3013,7 @@ Lock Blend on Reset
 Lock Breaking
 Lock Selection When Waning
 Lock State when Waning
+Lock Timing Source
 Lock To Path
 Lock to Path
 LoggingSystem_IsChannelEnabled
@@ -3020,6 +3089,7 @@ MORPH_FLEXCONTROLLER_REMAP_2WAY
 MORPH_FLEXCONTROLLER_REMAP_EYELID
 MORPH_FLEXCONTROLLER_REMAP_NWAY
 MORPH_FLEXCONTROLLER_REMAP_PASSTHRU
+MPropertyArrayElementNameKey
 MPropertyAttrChangeCallback
 MPropertyAttrExtraInfoFn
 MPropertyAttrStateCallback
@@ -3075,12 +3145,15 @@ Max Foot Lift
 Max Goal Overshoot Scale
 Max Impact Force
 Max Left Rotation
+Max Leg Straight Amount
+Max Leg Twist Angle
 Max Move Speed
 Max Offset
 Max Right Rotation
 Max Stretch Amount
 Max Tension
 Max Time Remaining
+Max Twist
 Max Value
 MaxFrame
 MaxMoveSpeed
@@ -3088,7 +3161,8 @@ Maximum Speed Scale
 Maximum Tension
 Maximum Tracked Distance
 Maximum Value
-Mct$@A
+McexIcu|H
+Mc|$XM9
 MemAlloc_AllocAlignedFunc
 MemAlloc_FreeAlignedFunc
 MemAlloc_ReallocAlignedFunc
@@ -3112,9 +3186,14 @@ Minimum Speed Scale
 Minimum Value
 Misc/float GetRandomFloat(flMin, flMax
 Misc/int GetRandomInt(nMin, nMax
+Missing Parameter
+Missing connection to child node
+Missing connection to stance source node
 Missing file '%s
 Missing mandatory parameter "%s
+Missing or invalid parameter
 Missing parameter for %s
+Missing target parameter
 Model %s is missing a physics container
 Model %s: group %s: missing referenced sequence "%s
 Model %s: sequence/animation name collision found "%s
@@ -3145,15 +3224,15 @@ Morph[%d] %s %f :: MC %d MI %d
 Motion Clip Group
 Motion Graph
 Motion Graph %s has more than %i parameters
-Motion Graph is missing a root node
+Motion Item %s has invalid tag span
 Motion Matching
 Motion Matching node requires at least one metric to work
 Motion Range
 MotionBlendItem
+MotionDBIndex
 MotionIndex
 MotionMatching:SelectionChangeCount
-MotionMatching:clipIndex.clipindex
-MotionMatching:clipIndex.groupindex
+MotionMatching:clipIndex.index
 MotionMatching:cycleZeroTime
 MotionMatching:playbackRate
 MotionMatching:startTime
@@ -3196,6 +3275,7 @@ MovementSettings
 MoverNode
 MultiplH
 Multiplier of the animation duration
+N Hc^4L
 N(H9K(r
 N10Reflection10CAttributeE
 N10Reflection12CTypeFactoryI23CMotionGraphNodeFactory13CAnimNodeBaseJEE13CFactoryMakerE
@@ -3250,16 +3330,20 @@ N10Reflection12CTypeFactoryIv13CAnimNodeBaseJEE14CFactoryMakerTI19CPathHelperAni
 N10Reflection12CTypeFactoryIv13CAnimNodeBaseJEE14CFactoryMakerTI19CSpeedScaleAnimNodeEE
 N10Reflection12CTypeFactoryIv13CAnimNodeBaseJEE14CFactoryMakerTI19CStopAtGoalAnimNodeEE
 N10Reflection12CTypeFactoryIv13CAnimNodeBaseJEE14CFactoryMakerTI19CTurnHelperAnimNodeEE
+N10Reflection12CTypeFactoryIv13CAnimNodeBaseJEE14CFactoryMakerTI20CFootPinningAnimNodeEE
 N10Reflection12CTypeFactoryIv13CAnimNodeBaseJEE14CFactoryMakerTI20CGroupOutputAnimNodeEE
 N10Reflection12CTypeFactoryIv13CAnimNodeBaseJEE14CFactoryMakerTI20CInputStreamAnimNodeEE
 N10Reflection12CTypeFactoryIv13CAnimNodeBaseJEE14CFactoryMakerTI20CSingleFrameAnimNodeEE
+N10Reflection12CTypeFactoryIv13CAnimNodeBaseJEE14CFactoryMakerTI20CStanceScaleAnimNodeEE
 N10Reflection12CTypeFactoryIv13CAnimNodeBaseJEE14CFactoryMakerTI21CCycleControlAnimNodeEE
 N10Reflection12CTypeFactoryIv13CAnimNodeBaseJEE14CFactoryMakerTI21CSolveIKChainAnimNodeEE
 N10Reflection12CTypeFactoryIv13CAnimNodeBaseJEE14CFactoryMakerTI21CStateMachineAnimNodeEE
 N10Reflection12CTypeFactoryIv13CAnimNodeBaseJEE14CFactoryMakerTI22CSkeletalInputAnimNodeEE
 N10Reflection12CTypeFactoryIv13CAnimNodeBaseJEE14CFactoryMakerTI23CDirectPlaybackAnimNodeEE
 N10Reflection12CTypeFactoryIv13CAnimNodeBaseJEE14CFactoryMakerTI23CFootAdjustmentAnimNodeEE
+N10Reflection12CTypeFactoryIv13CAnimNodeBaseJEE14CFactoryMakerTI23CMotionGraphPreviewNodeEE
 N10Reflection12CTypeFactoryIv13CAnimNodeBaseJEE14CFactoryMakerTI23CMotionMatchingAnimNodeEE
+N10Reflection12CTypeFactoryIv13CAnimNodeBaseJEE14CFactoryMakerTI23CStanceOverrideAnimNodeEE
 N10Reflection12CTypeFactoryIv13CAnimNodeBaseJEE14CFactoryMakerTI23CWayPointHelperAnimNodeEE
 N10Reflection12CTypeFactoryIv13CAnimNodeBaseJEE14CFactoryMakerTI24CFootStepTriggerAnimNodeEE
 N10Reflection12CTypeFactoryIv13CAnimNodeBaseJEE14CFactoryMakerTI25CCycleControlClipAnimNodeEE
@@ -3333,6 +3417,7 @@ N10Reflection6CFieldE
 N10Reflection6Detail12ArrayWrapperI10CUtlVectorI12CStateActioni10CUtlMemoryIS3_iEEEE
 N10Reflection6Detail12ArrayWrapperI10CUtlVectorI13CMovementModei10CUtlMemoryIS3_iEEEE
 N10Reflection6Detail12ArrayWrapperI10CUtlVectorI14CWeightPreviewi10CUtlMemoryIS3_iEEEE
+N10Reflection6Detail12ArrayWrapperI10CUtlVectorI15CBlendNodeChildi10CUtlMemoryIS3_iEEEE
 N10Reflection6Detail12ArrayWrapperI10CUtlVectorI16CRigidBodyWeighti10CUtlMemoryIS3_iEEEE
 N10Reflection6Detail12ArrayWrapperI10CUtlVectorI20CRigidBodyWeightListi10CUtlMemoryIS3_iEEEE
 N10Reflection6Detail12ArrayWrapperI10CUtlVectorI9CSmartPtrI12CAnimTagBase17CRefCountAccessorEi10CUtlMemoryIS6_iEEEE
@@ -3343,12 +3428,14 @@ N10Reflection6Detail12ArrayWrapperI10CUtlVectorI9CSmartPtrI18CAnimComponentBase1
 N10Reflection6Detail12ArrayWrapperI10CUtlVectorI9CSmartPtrI18CAnimMotorInstance17CRefCountAccessorEi10CUtlMemoryIS6_iEEEE
 N10Reflection6Detail12ArrayWrapperI10CUtlVectorI9CSmartPtrI18CAnimParameterBase17CRefCountAccessorEi10CUtlMemoryIS6_iEEEE
 N10Reflection6Detail12ArrayWrapperI10CUtlVectorI9CSmartPtrI22CAnimComponentInstance17CRefCountAccessorEi10CUtlMemoryIS6_iEEEE
+N10Reflection6Detail12ArrayWrapperI10CUtlVectorI9CSmartPtrI22CAnimParameterInstance17CRefCountAccessorEi10CUtlMemoryIS6_iEEEE
 N10Reflection6Detail12ArrayWrapperI10CUtlVectorIfi10CUtlMemoryIfiEEEE
 N10Reflection6Detail14CTypeInfoMakerI10CAnimStateEE
 N10Reflection6Detail14CTypeInfoMakerI10CUtlStringEE
 N10Reflection6Detail14CTypeInfoMakerI10CUtlVectorI12CStateActioni10CUtlMemoryIS3_iEEEE
 N10Reflection6Detail14CTypeInfoMakerI10CUtlVectorI13CMovementModei10CUtlMemoryIS3_iEEEE
 N10Reflection6Detail14CTypeInfoMakerI10CUtlVectorI14CWeightPreviewi10CUtlMemoryIS3_iEEEE
+N10Reflection6Detail14CTypeInfoMakerI10CUtlVectorI15CBlendNodeChildi10CUtlMemoryIS3_iEEEE
 N10Reflection6Detail14CTypeInfoMakerI10CUtlVectorI16CRigidBodyWeighti10CUtlMemoryIS3_iEEEE
 N10Reflection6Detail14CTypeInfoMakerI10CUtlVectorI20CRigidBodyWeightListi10CUtlMemoryIS3_iEEEE
 N10Reflection6Detail14CTypeInfoMakerI10CUtlVectorI9CSmartPtrI12CAnimTagBase17CRefCountAccessorEi10CUtlMemoryIS6_iEEEE
@@ -3359,6 +3446,7 @@ N10Reflection6Detail14CTypeInfoMakerI10CUtlVectorI9CSmartPtrI18CAnimComponentBas
 N10Reflection6Detail14CTypeInfoMakerI10CUtlVectorI9CSmartPtrI18CAnimMotorInstance17CRefCountAccessorEi10CUtlMemoryIS6_iEEEE
 N10Reflection6Detail14CTypeInfoMakerI10CUtlVectorI9CSmartPtrI18CAnimParameterBase17CRefCountAccessorEi10CUtlMemoryIS6_iEEEE
 N10Reflection6Detail14CTypeInfoMakerI10CUtlVectorI9CSmartPtrI22CAnimComponentInstance17CRefCountAccessorEi10CUtlMemoryIS6_iEEEE
+N10Reflection6Detail14CTypeInfoMakerI10CUtlVectorI9CSmartPtrI22CAnimParameterInstance17CRefCountAccessorEi10CUtlMemoryIS6_iEEEE
 N10Reflection6Detail14CTypeInfoMakerI10CUtlVectorIfi10CUtlMemoryIfiEEEE
 N10Reflection6Detail14CTypeInfoMakerI10FacingModeEE
 N10Reflection6Detail14CTypeInfoMakerI10IAnimMotorEE
@@ -3370,6 +3458,7 @@ N10Reflection6Detail14CTypeInfoMakerI11CMotionNodeEE
 N10Reflection6Detail14CTypeInfoMakerI11CPathMetricEE
 N10Reflection6Detail14CTypeInfoMakerI11IAnimActionEE
 N10Reflection6Detail14CTypeInfoMakerI11IMotionItemEE
+N10Reflection6Detail14CTypeInfoMakerI12BlendKeyTypeEE
 N10Reflection6Detail14CTypeInfoMakerI12CAddAnimNodeEE
 N10Reflection6Detail14CTypeInfoMakerI12CAnimTagBaseE11BaseCasterTIS2_8IAnimTagEE
 N10Reflection6Detail14CTypeInfoMakerI12CAnimTagBaseEE
@@ -3418,9 +3507,11 @@ N10Reflection6Detail14CTypeInfoMakerI15CAnimActionBaseE11BaseCasterTIS2_11IAnimA
 N10Reflection6Detail14CTypeInfoMakerI15CAnimActionBaseEE
 N10Reflection6Detail14CTypeInfoMakerI15CAnimTagManagerEE
 N10Reflection6Detail14CTypeInfoMakerI15CAnimationGraphEE
+N10Reflection6Detail14CTypeInfoMakerI15CBlendNodeChildEE
 N10Reflection6Detail14CTypeInfoMakerI15CChoiceAnimNodeEE
 N10Reflection6Detail14CTypeInfoMakerI15CChoreoAnimNodeEE
 N10Reflection6Detail14CTypeInfoMakerI15CCycleConditionEE
+N10Reflection6Detail14CTypeInfoMakerI15CLeafUpdateNodeEE
 N10Reflection6Detail14CTypeInfoMakerI15CLookAtAnimNodeEE
 N10Reflection6Detail14CTypeInfoMakerI15CRagdollAnimTagEE
 N10Reflection6Detail14CTypeInfoMakerI15CRootUpdateNodeEE
@@ -3506,6 +3597,7 @@ N10Reflection6Detail14CTypeInfoMakerI18CBoolAnimParameterEE
 N10Reflection6Detail14CTypeInfoMakerI18CEnumAnimParameterEE
 N10Reflection6Detail14CTypeInfoMakerI18CFinishedConditionEE
 N10Reflection6Detail14CTypeInfoMakerI18CMotionNodeBlend1DEE
+N10Reflection6Detail14CTypeInfoMakerI18CMotionNodeBuilderEE
 N10Reflection6Detail14CTypeInfoMakerI18CMotionNodeManagerEE
 N10Reflection6Detail14CTypeInfoMakerI18CMovementComponentEE
 N10Reflection6Detail14CTypeInfoMakerI18CPathAnimMotorBaseEE
@@ -3522,6 +3614,7 @@ N10Reflection6Detail14CTypeInfoMakerI18IContainerAnimNodeEE
 N10Reflection6Detail14CTypeInfoMakerI18IEnumAnimParameterEE
 N10Reflection6Detail14CTypeInfoMakerI18IMovementComponentE11BaseCasterTIS2_14IAnimComponentEE
 N10Reflection6Detail14CTypeInfoMakerI18IMovementComponentEE
+N10Reflection6Detail14CTypeInfoMakerI18IParameterProviderEE
 N10Reflection6Detail14CTypeInfoMakerI18RagdollPoseControlEE
 N10Reflection6Detail14CTypeInfoMakerI19AnimNodeNetworkModeEE
 N10Reflection6Detail14CTypeInfoMakerI19CAnimComponentStateEE
@@ -3564,6 +3657,7 @@ N10Reflection6Detail14CTypeInfoMakerI20CAnimClipDataManagerEE
 N10Reflection6Detail14CTypeInfoMakerI20CAnimScriptComponentEE
 N10Reflection6Detail14CTypeInfoMakerI20CAnimStateTransitionEE
 N10Reflection6Detail14CTypeInfoMakerI20CDampedPathAnimMotorEE
+N10Reflection6Detail14CTypeInfoMakerI20CFootPinningAnimNodeEE
 N10Reflection6Detail14CTypeInfoMakerI20CGroupOutputAnimNodeEE
 N10Reflection6Detail14CTypeInfoMakerI20CInputStreamAnimNodeEE
 N10Reflection6Detail14CTypeInfoMakerI20CLODComponentUpdaterEE
@@ -3573,6 +3667,7 @@ N10Reflection6Detail14CTypeInfoMakerI20CRigidBodyWeightListEE
 N10Reflection6Detail14CTypeInfoMakerI20CSequenceBlend2DItemEE
 N10Reflection6Detail14CTypeInfoMakerI20CSetFacingUpdateNodeEE
 N10Reflection6Detail14CTypeInfoMakerI20CSingleFrameAnimNodeEE
+N10Reflection6Detail14CTypeInfoMakerI20CStanceScaleAnimNodeEE
 N10Reflection6Detail14CTypeInfoMakerI20CTimeRemainingMetricEE
 N10Reflection6Detail14CTypeInfoMakerI20CTwoBoneIKUpdateNodeEE
 N10Reflection6Detail14CTypeInfoMakerI20CVectorAnimParameterEE
@@ -3585,6 +3680,7 @@ N10Reflection6Detail14CTypeInfoMakerI20IRigidBodyWeightListEE
 N10Reflection6Detail14CTypeInfoMakerI20ISequenceBlend2DItemE11BaseCasterTIS2_12IBlend2DItemEE
 N10Reflection6Detail14CTypeInfoMakerI20ISequenceBlend2DItemEE
 N10Reflection6Detail14CTypeInfoMakerI20ISingleFrameAnimNodeEE
+N10Reflection6Detail14CTypeInfoMakerI20SingleFrameSelectionEE
 N10Reflection6Detail14CTypeInfoMakerI21CAnimComponentManagerEE
 N10Reflection6Detail14CTypeInfoMakerI21CAnimComponentUpdaterEE
 N10Reflection6Detail14CTypeInfoMakerI21CAnimNodeInstanceBaseE11BaseCasterTIS2_17IAnimNodeInstanceEE
@@ -3627,14 +3723,17 @@ N10Reflection6Detail14CTypeInfoMakerI22CAnimTagManagerUpdaterEE
 N10Reflection6Detail14CTypeInfoMakerI22CContainerAnimNodeBaseEE
 N10Reflection6Detail14CTypeInfoMakerI22CControlValueConditionEE
 N10Reflection6Detail14CTypeInfoMakerI22CCurrentVelocityMetricEE
+N10Reflection6Detail14CTypeInfoMakerI22CFootPinningUpdateNodeEE
 N10Reflection6Detail14CTypeInfoMakerI22CFootstepLandedAnimTagEE
 N10Reflection6Detail14CTypeInfoMakerI22CInputStreamUpdateNodeEE
 N10Reflection6Detail14CTypeInfoMakerI22CLookComponentInstanceEE
+N10Reflection6Detail14CTypeInfoMakerI22CMotionGraphUpdateNodeEE
 N10Reflection6Detail14CTypeInfoMakerI22CMotionMetricEvaluatorEE
 N10Reflection6Detail14CTypeInfoMakerI22CPathAnimMotorInstanceEE
 N10Reflection6Detail14CTypeInfoMakerI22CSingleFrameUpdateNodeEE
 N10Reflection6Detail14CTypeInfoMakerI22CSkeletalInputAnimNodeEE
 N10Reflection6Detail14CTypeInfoMakerI22CSlopeComponentUpdaterEE
+N10Reflection6Detail14CTypeInfoMakerI22CStanceScaleUpdateNodeEE
 N10Reflection6Detail14CTypeInfoMakerI22CStateMachineComponentEE
 N10Reflection6Detail14CTypeInfoMakerI22CToggleComponentActionEE
 N10Reflection6Detail14CTypeInfoMakerI22IAnimComponentInstanceEE
@@ -3654,17 +3753,21 @@ N10Reflection6Detail14CTypeInfoMakerI23CCycleControlUpdateNodeEE
 N10Reflection6Detail14CTypeInfoMakerI23CDirectPlaybackAnimNodeEE
 N10Reflection6Detail14CTypeInfoMakerI23CFacingHeadingConditionEE
 N10Reflection6Detail14CTypeInfoMakerI23CFootAdjustmentAnimNodeEE
+N10Reflection6Detail14CTypeInfoMakerI23CMotionGraphPreviewNodeEE
 N10Reflection6Detail14CTypeInfoMakerI23CMotionMatchingAnimNodeEE
 N10Reflection6Detail14CTypeInfoMakerI23CMotionParameterManagerEE
 N10Reflection6Detail14CTypeInfoMakerI23CParameterAnimConditionEE
 N10Reflection6Detail14CTypeInfoMakerI23CSlopeComponentInstanceEE
 N10Reflection6Detail14CTypeInfoMakerI23CSolveIKChainUpdateNodeEE
+N10Reflection6Detail14CTypeInfoMakerI23CStanceOverrideAnimNodeEE
 N10Reflection6Detail14CTypeInfoMakerI23CStateMachineUpdateNodeEE
 N10Reflection6Detail14CTypeInfoMakerI23CWayPointHelperAnimNodeEE
 N10Reflection6Detail14CTypeInfoMakerI23IAnimGraphSettingsGroupEE
 N10Reflection6Detail14CTypeInfoMakerI23IAnimTagManagerInstanceEE
 N10Reflection6Detail14CTypeInfoMakerI23IAnimationGraphInstanceEE
 N10Reflection6Detail14CTypeInfoMakerI23IChoreoAnimNodeInstanceEE
+N10Reflection6Detail14CTypeInfoMakerI23IMotionGraphPreviewNodeE11BaseCasterTIS2_9IAnimNodeEE
+N10Reflection6Detail14CTypeInfoMakerI23IMotionGraphPreviewNodeEE
 N10Reflection6Detail14CTypeInfoMakerI23IMotionMatchingAnimNodeE11BaseCasterTIS2_9IAnimNodeEE
 N10Reflection6Detail14CTypeInfoMakerI23IMotionMatchingAnimNodeEE
 N10Reflection6Detail14CTypeInfoMakerI23IMotionParameterManagerEE
@@ -3698,6 +3801,7 @@ N10Reflection6Detail14CTypeInfoMakerI25CMovementComponentUpdaterEE
 N10Reflection6Detail14CTypeInfoMakerI25CRagdollComponentInstanceEE
 N10Reflection6Detail14CTypeInfoMakerI25CSequenceAnimNodeInstanceEE
 N10Reflection6Detail14CTypeInfoMakerI25CSlowDownOnSlopesAnimNodeEE
+N10Reflection6Detail14CTypeInfoMakerI25CStanceOverrideUpdateNodeEE
 N10Reflection6Detail14CTypeInfoMakerI25CVRInputComponentInstanceEE
 N10Reflection6Detail14CTypeInfoMakerI25CWayPointHelperUpdateNodeEE
 N10Reflection6Detail14CTypeInfoMakerI25IAnimStateMachineInstanceEE
@@ -3733,10 +3837,12 @@ N10Reflection6Detail14CTypeInfoMakerI28CAnimScriptComponentInstanceEE
 N10Reflection6Detail14CTypeInfoMakerI28CBonePositionMetricEvaluatorEE
 N10Reflection6Detail14CTypeInfoMakerI28CBoneVelocityMetricEvaluatorEE
 N10Reflection6Detail14CTypeInfoMakerI28CDampedValueComponentUpdaterEE
+N10Reflection6Detail14CTypeInfoMakerI28CFootPinningAnimNodeInstanceEE
 N10Reflection6Detail14CTypeInfoMakerI28CFootPositionMetricEvaluatorEE
 N10Reflection6Detail14CTypeInfoMakerI28CFutureFacingMetricEvaluatorEE
 N10Reflection6Detail14CTypeInfoMakerI28CInputStreamAnimNodeInstanceEE
 N10Reflection6Detail14CTypeInfoMakerI28CMotionMatchingScratchObjectEE
+N10Reflection6Detail14CTypeInfoMakerI28IFootPinningAnimNodeInstanceEE
 N10Reflection6Detail14CTypeInfoMakerI28IInputStreamAnimNodeInstanceEE
 N10Reflection6Detail14CTypeInfoMakerI29CAnimComponentManagerInstanceEE
 N10Reflection6Detail14CTypeInfoMakerI29CAnimComponentStateTransitionEE
@@ -3761,8 +3867,11 @@ N10Reflection6Detail14CTypeInfoMakerI30CStateMachineComponentInstanceEE
 N10Reflection6Detail14CTypeInfoMakerI30CStepsRemainingMetricEvaluatorEE
 N10Reflection6Detail14CTypeInfoMakerI31CCurrentVelocityMetricEvaluatorEE
 N10Reflection6Detail14CTypeInfoMakerI31CDirectPlaybackAnimNodeInstanceEE
+N10Reflection6Detail14CTypeInfoMakerI31CMotionGraphPreviewNodeInstanceEE
 N10Reflection6Detail14CTypeInfoMakerI31CMotionMatchingAnimNodeInstanceEE
 N10Reflection6Detail14CTypeInfoMakerI31IDirectPlaybackAnimNodeInstanceEE
+N10Reflection6Detail14CTypeInfoMakerI31IMotionGraphPreviewNodeInstanceE11BaseCasterTIS2_17IAnimNodeInstanceEE
+N10Reflection6Detail14CTypeInfoMakerI31IMotionGraphPreviewNodeInstanceEE
 N10Reflection6Detail14CTypeInfoMakerI31IMotionMatchingAnimNodeInstanceE11BaseCasterTIS2_17IAnimNodeInstanceEE
 N10Reflection6Detail14CTypeInfoMakerI31IMotionMatchingAnimNodeInstanceEE
 N10Reflection6Detail14CTypeInfoMakerI33CDistanceRemainingMetricEvaluatorEE
@@ -3775,6 +3884,7 @@ N10Reflection6Detail14CTypeInfoMakerIN9Attribute10DeprecatedEEE
 N10Reflection6Detail14CTypeInfoMakerIN9Attribute10ObjectIconEEE
 N10Reflection6Detail14CTypeInfoMakerIN9Attribute10ObjectNameEEE
 N10Reflection6Detail14CTypeInfoMakerIN9Attribute11DescriptionEEE
+N10Reflection6Detail14CTypeInfoMakerIN9Attribute11ObjectColorEEE
 N10Reflection6Detail14CTypeInfoMakerIN9Attribute11ObjectGroupEEE
 N10Reflection6Detail14CTypeInfoMakerIN9Attribute11TypeFactoryEEE
 N10Reflection6Detail14CTypeInfoMakerIN9Attribute12FriendlyNameEEE
@@ -3794,9 +3904,10 @@ N10Reflection6Detail14CTypeInfoMakerIN9Attribute2UI5EmbedEEE
 N10Reflection6Detail14CTypeInfoMakerIN9Attribute2UI6HiddenEEE
 N10Reflection6Detail14CTypeInfoMakerIN9Attribute2UI8EditEnumEEE
 N10Reflection6Detail14CTypeInfoMakerIN9Attribute2UI8ReadOnlyEEE
+N10Reflection6Detail14CTypeInfoMakerIN9Attribute2UI9AnimGraph13EditModelDataEEE
 N10Reflection6Detail14CTypeInfoMakerIN9Attribute2UI9AnimGraph13EditParameterEEE
 N10Reflection6Detail14CTypeInfoMakerIN9Attribute2UI9AnimGraph14EditExpressionEEE
-N10Reflection6Detail14CTypeInfoMakerIN9Attribute2UI9AnimGraph16EditVariantValueEEE
+N10Reflection6Detail14CTypeInfoMakerIN9Attribute2UI9AnimGraph18EditParameterValueEEE
 N10Reflection6Detail14CTypeInfoMakerIN9Attribute2UI9AnimGraph23EditRigidBodyWeightListEEE
 N10Reflection6Detail14CTypeInfoMakerIN9Attribute2UI9EditLabelEEE
 N10Reflection6Detail14CTypeInfoMakerIN9Attribute4IconEEE
@@ -3806,6 +3917,7 @@ N10Reflection6Detail14CTypeInfoMakerIN9Attribute6Detail14StringAttrBaseINS2_10Ob
 N10Reflection6Detail14CTypeInfoMakerIN9Attribute6Detail14StringAttrBaseINS2_11ObjectGroupEEEEE
 N10Reflection6Detail14CTypeInfoMakerIN9Attribute9AnimGraph16RequireComponentEEE
 N10Reflection6Detail14CTypeInfoMakerIN9Attribute9AnimGraph17NodeOnlyConditionEEE
+N10Reflection6Detail14CTypeInfoMakerIN9Attribute9AnimGraph19ReplayInputProviderEEE
 N10Reflection6Detail14CTypeInfoMakerIN9Attribute9AnimGraph19UseReflectionEditorEEE
 N10Reflection6Detail14CTypeInfoMakerIN9Attribute9AnimGraph8LimitOneEEE
 N10Reflection6Detail14CTypeInfoMakerIN9Attribute9AnimGraph9ParamTypeEEE
@@ -3820,11 +3932,13 @@ N10Reflection6Detail14CTypeInfoMakerIP18CAnimComponentBaseEE
 N10Reflection6Detail14CTypeInfoMakerIP18CAnimMotorInstanceEE
 N10Reflection6Detail14CTypeInfoMakerIP18CAnimParameterBaseEE
 N10Reflection6Detail14CTypeInfoMakerIP22CAnimComponentInstanceEE
+N10Reflection6Detail14CTypeInfoMakerIP22CAnimParameterInstanceEE
 N10Reflection6Detail14CTypeInfoMakerIbEE
 N10Reflection6Detail14CTypeInfoMakerIfEE
 N10Reflection6Detail14CTypeInfoMakerIiEE
 N10Reflection6Detail16FunctionAccessorI14CAnimMotorBaseMS2_KFRK10CUtlStringvEMS2_FvS5_EEE
 N10Reflection6Detail16FunctionAccessorI21CLODComponentInstanceMS2_KFivEMS2_FviEEE
+N10Reflection6Detail16FunctionAccessorI22CAnimParameterInstanceMS2_KF12CAnimVariantvEMS2_FvRKS3_EEE
 N10Reflection6Detail16FunctionAccessorI22CLookComponentInstanceMS2_KFfvEMS2_FvfEEE
 N10Reflection6Detail16FunctionAccessorI23CSlopeComponentInstanceMS2_KFfvEMS2_FvfEEE
 N10Reflection6Detail16FunctionAccessorI26CMovementComponentInstanceMS2_KF10FacingModevEMS2_FvS3_EEE
@@ -3832,21 +3946,32 @@ N10Reflection6Detail16FunctionAccessorI26CMovementComponentInstanceMS2_KFfvEMS2_
 N10Reflection6Detail16FunctionAccessorI26CMovementComponentInstanceMS2_KFivEMS2_FviEEE
 N10Reflection6Detail16ReadOnlyAccessorI14CWeightPreviewMS2_KFfvEEE
 N10Reflection6Detail18CConstantAccessorTI10FacingModeEE
+N10Reflection6Detail18CConstantAccessorTI12BlendKeyTypeEE
 N10Reflection6Detail18CConstantAccessorTI18RagdollPoseControlEE
 N10Reflection6Detail18CConstantAccessorTI19AnimNodeNetworkModeEE
 N10Reflection6Detail18CConstantAccessorTI19StateActionBehaviorEE
 N10Reflection6Detail18CConstantAccessorTI20DampingSpeedFunctionEE
+N10Reflection6Detail18CConstantAccessorTI20SingleFrameSelectionEE
 N10Reflection6Detail20MemberObjectAccessorI10CAnimState10CUtlStringEE
 N10Reflection6Detail20MemberObjectAccessorI10CAnimState10CUtlVectorI12CStateActioni10CUtlMemoryIS4_iEEEE
 N10Reflection6Detail20MemberObjectAccessorI10CAnimStatebEE
 N10Reflection6Detail20MemberObjectAccessorI12CStateAction19StateActionBehaviorEE
 N10Reflection6Detail20MemberObjectAccessorI12CStateAction9CSmartPtrI15CAnimActionBase17CRefCountAccessorEEE
+N10Reflection6Detail20MemberObjectAccessorI13CAnimNodeBase10CUtlStringEE
+N10Reflection6Detail20MemberObjectAccessorI13CAnimNodeBase19AnimNodeNetworkModeEE
 N10Reflection6Detail20MemberObjectAccessorI13CLODComponentiEE
 N10Reflection6Detail20MemberObjectAccessorI13CMovementMode10CUtlStringEE
 N10Reflection6Detail20MemberObjectAccessorI13CMovementModefEE
 N10Reflection6Detail20MemberObjectAccessorI14CAnimMotorBasebEE
+N10Reflection6Detail20MemberObjectAccessorI14CBlendAnimNode10CUtlVectorI15CBlendNodeChildi10CUtlMemoryIS4_iEEEE
+N10Reflection6Detail20MemberObjectAccessorI14CBlendAnimNode11AnimParamIDEE
+N10Reflection6Detail20MemberObjectAccessorI14CBlendAnimNode12BlendKeyTypeEE
+N10Reflection6Detail20MemberObjectAccessorI14CBlendAnimNode17CAnimInputDampingEE
+N10Reflection6Detail20MemberObjectAccessorI14CBlendAnimNodebEE
 N10Reflection6Detail20MemberObjectAccessorI14CEmitTagAction9AnimTagIDEE
 N10Reflection6Detail20MemberObjectAccessorI15CAnimTagManager10CUtlVectorI9CSmartPtrI12CAnimTagBase17CRefCountAccessorEi10CUtlMemoryIS7_iEEEE
+N10Reflection6Detail20MemberObjectAccessorI15CBlendNodeChild10CUtlStringEE
+N10Reflection6Detail20MemberObjectAccessorI15CBlendNodeChildfEE
 N10Reflection6Detail20MemberObjectAccessorI16CActionComponent10CUtlStringEE
 N10Reflection6Detail20MemberObjectAccessorI16CActionComponent10CUtlVectorI9CSmartPtrI15CAnimActionBase17CRefCountAccessorEi10CUtlMemoryIS7_iEEEE
 N10Reflection6Detail20MemberObjectAccessorI16CMotionParameter10CUtlStringEE
@@ -3875,6 +4000,10 @@ N10Reflection6Detail20MemberObjectAccessorI19CSetParameterAction12CAnimVariantEE
 N10Reflection6Detail20MemberObjectAccessorI20CDampedPathAnimMotor11AnimParamIDEE
 N10Reflection6Detail20MemberObjectAccessorI20CDampedPathAnimMotorfEE
 N10Reflection6Detail20MemberObjectAccessorI20CRigidBodyWeightList10CUtlVectorI16CRigidBodyWeighti10CUtlMemoryIS4_iEEEE
+N10Reflection6Detail20MemberObjectAccessorI20CSingleFrameAnimNode10CUtlStringEE
+N10Reflection6Detail20MemberObjectAccessorI20CSingleFrameAnimNode10CUtlVectorI9CSmartPtrI15CAnimActionBase17CRefCountAccessorEi10CUtlMemoryIS7_iEEEE
+N10Reflection6Detail20MemberObjectAccessorI20CSingleFrameAnimNode20SingleFrameSelectionEE
+N10Reflection6Detail20MemberObjectAccessorI20CSingleFrameAnimNodeiEE
 N10Reflection6Detail20MemberObjectAccessorI21CAnimComponentManager10CUtlVectorI9CSmartPtrI18CAnimComponentBase17CRefCountAccessorEi10CUtlMemoryIS7_iEEEE
 N10Reflection6Detail20MemberObjectAccessorI21CPlayerInputAnimMotor10CUtlVectorIfi10CUtlMemoryIfiEEEE
 N10Reflection6Detail20MemberObjectAccessorI21CPlayerInputAnimMotor11AnimParamIDEE
@@ -3885,6 +4014,7 @@ N10Reflection6Detail20MemberObjectAccessorI22CToggleComponentActionbEE
 N10Reflection6Detail20MemberObjectAccessorI23CMotionParameterManager10CUtlVectorI9CSmartPtrI16CMotionParameter17CRefCountAccessorEi10CUtlMemoryIS7_iEEEE
 N10Reflection6Detail20MemberObjectAccessorI25CRagdollComponentInstance10CUtlVectorI14CWeightPreviewi10CUtlMemoryIS4_iEEEE
 N10Reflection6Detail20MemberObjectAccessorI25CRagdollComponentInstancefEE
+N10Reflection6Detail20MemberObjectAccessorI26CAnimParameterListInstance10CUtlVectorI9CSmartPtrI22CAnimParameterInstance17CRefCountAccessorEi10CUtlMemoryIS7_iEEEE
 N10Reflection6Detail20MemberObjectAccessorI26CMovementComponentInstance10CUtlVectorI9CSmartPtrI18CAnimMotorInstance17CRefCountAccessorEi10CUtlMemoryIS7_iEEEE
 N10Reflection6Detail20MemberObjectAccessorI29CAnimComponentManagerInstance10CUtlVectorI9CSmartPtrI22CAnimComponentInstance17CRefCountAccessorEi10CUtlMemoryIS7_iEEEE
 N10Reflection6ObjectE
@@ -3895,30 +4025,41 @@ N10Reflection9CTypeInfo10BaseCasterE
 N10Reflection9CTypeInfoE
 N18CAnimParameterBase3$_0E
 N19SkeletalCompression15CVrHandSkeletonE
+N20CSingleFrameAnimNode3$_3E
 N21CPlayerInputAnimMotor3$_0E
+N22CAnimParameterInstance3$_0E
 N24CAnimNodeInstanceFactory13CFactoryMakerE
 N24CAnimNodeInstanceFactory14CFactoryMakerTI23CChoreoAnimNodeInstanceEE
 N24CAnimNodeInstanceFactory14CFactoryMakerTI24CBlend2DAnimNodeInstanceEE
 N24CAnimNodeInstanceFactory14CFactoryMakerTI25CFootLockAnimNodeInstanceEE
 N24CAnimNodeInstanceFactory14CFactoryMakerTI25CSequenceAnimNodeInstanceEE
+N24CAnimNodeInstanceFactory14CFactoryMakerTI28CFootPinningAnimNodeInstanceEE
 N24CAnimNodeInstanceFactory14CFactoryMakerTI28CInputStreamAnimNodeInstanceEE
 N24CAnimNodeInstanceFactory14CFactoryMakerTI29CSolveIKChainAnimNodeInstanceEE
 N24CAnimNodeInstanceFactory14CFactoryMakerTI29CStateMachineAnimNodeInstanceEE
 N24CAnimNodeInstanceFactory14CFactoryMakerTI31CDirectPlaybackAnimNodeInstanceEE
+N24CAnimNodeInstanceFactory14CFactoryMakerTI31CMotionGraphPreviewNodeInstanceEE
 N24CAnimNodeInstanceFactory14CFactoryMakerTI31CMotionMatchingAnimNodeInstanceEE
+N24CParallelProcessLauncher18CParallelLambdaJobIZN17CKMeansClustering23AssignVectorsToClustersEvE3$_0EE
+N24CParallelProcessLauncher18CParallelLambdaJobIZNK23CMotionMatchingAnimNode16CreateUpdateNodeER21CAnimGraphInitContextE3$_0EE
 N26CAnimScriptFunctionFactory6CMakerE
 N26CAnimScriptFunctionFactory7CMakerTI11GetTimeFuncEE
 N26CAnimScriptFunctionFactory7CMakerTI12IsClientFuncEE
 N26CAnimScriptFunctionFactory7CMakerTI13AngleDiffFuncEE
+N26CAnimScriptFunctionFactory7CMakerTI13CycleDiffFuncEE
 N26CAnimScriptFunctionFactory7CMakerTI13SetFacingFuncEE
 N26CAnimScriptFunctionFactory7CMakerTI13VectorDotFuncEE
 N26CAnimScriptFunctionFactory7CMakerTI15GetPrevTimeFuncEE
 N26CAnimScriptFunctionFactory7CMakerTI15GetTimeStepFuncEE
 N26CAnimScriptFunctionFactory7CMakerTI15VectorCrossFuncEE
+N26CAnimScriptFunctionFactory7CMakerTI16AdvanceCycleFuncEE
 N26CAnimScriptFunctionFactory7CMakerTI16GetRandomIntFuncEE
 N26CAnimScriptFunctionFactory7CMakerTI16VectorLengthFuncEE
 N26CAnimScriptFunctionFactory7CMakerTI18AngleNormalizeFuncEE
 N26CAnimScriptFunctionFactory7CMakerTI18AnglesAreEqualFuncEE
+N26CAnimScriptFunctionFactory7CMakerTI18CycleNormalizeFuncEE
+N26CAnimScriptFunctionFactory7CMakerTI18CyclesAreEqualFuncEE
+N26CAnimScriptFunctionFactory7CMakerTI18GetCycleAtTimeFuncEE
 N26CAnimScriptFunctionFactory7CMakerTI18GetRandomFloatFuncEE
 N26CAnimScriptFunctionFactory7CMakerTI19GetWorldHeadingFuncEE
 N26CAnimScriptFunctionFactory7CMakerTI19HeadingToVectorFuncEE
@@ -3927,6 +4068,7 @@ N26CAnimScriptFunctionFactory7CMakerTI19VectorNormalizeFuncEE
 N26CAnimScriptFunctionFactory7CMakerTI19VectorToHeadingFuncEE
 N26CAnimScriptFunctionFactory7CMakerTI20GetPlaybackSpeedFuncEE
 N26CAnimScriptFunctionFactory7CMakerTI20GetWorldPositionFuncEE
+N26CAnimScriptFunctionFactory7CMakerTI21IsCycleNormalizedFuncEE
 N26CAnimScriptFunctionFactory7CMakerTI23IsNetworkingEnabledFuncEE
 N26CAnimScriptFunctionFactory7CMakerTI26AngleNormalizePositiveFuncEE
 N2IK16CAnimPoseWrapperE
@@ -6587,6 +6729,7 @@ N9Attribute10DeprecatedE
 N9Attribute10ObjectIconE
 N9Attribute10ObjectNameE
 N9Attribute11DescriptionE
+N9Attribute11ObjectColorE
 N9Attribute11ObjectGroupE
 N9Attribute12FriendlyNameE
 N9Attribute13ArrayOperator8AccessorE
@@ -6595,6 +6738,7 @@ N9Attribute13ArrayOperator9AccessorTI15CAnimTagManager8IAnimTagEE
 N9Attribute13ArrayOperator9AccessorTI16CActionComponent15CAnimActionBaseEE
 N9Attribute13ArrayOperator9AccessorTI18CAnimParameterList14IAnimParameterEE
 N9Attribute13ArrayOperator9AccessorTI18CMovementComponent10IAnimMotorEE
+N9Attribute13ArrayOperator9AccessorTI20CSingleFrameAnimNode15CAnimActionBaseEE
 N9Attribute13ArrayOperator9AccessorTI21CAnimComponentManager14IAnimComponentEE
 N9Attribute13ArrayOperator9AccessorTI23CMotionParameterManager16IMotionParameterEE
 N9Attribute13ArrayOperatorE
@@ -6610,9 +6754,10 @@ N9Attribute2UI4FontE
 N9Attribute2UI5EmbedE
 N9Attribute2UI6HiddenE
 N9Attribute2UI8ReadOnlyE
+N9Attribute2UI9AnimGraph13EditModelDataE
 N9Attribute2UI9AnimGraph13EditParameterE
 N9Attribute2UI9AnimGraph14EditExpressionE
-N9Attribute2UI9AnimGraph16EditVariantValueE
+N9Attribute2UI9AnimGraph18EditParameterValueE
 N9Attribute2UI9AnimGraph23EditRigidBodyWeightListE
 N9Attribute2UI9EditLabelE
 N9Attribute4IconE
@@ -6634,6 +6779,7 @@ N9Attribute6Detail6GetterI14CBufferStringNILi20EEEE
 N9Attribute6Detail6GetterI16CAnimGraphSymbolEE
 N9Attribute6Detail6GetterI5ColorEE
 N9Attribute6Detail6GetterIPK14IAnimParameterEE
+N9Attribute6Detail6GetterIPK18IParameterProviderEE
 N9Attribute6Detail6GetterIPKcEE
 N9Attribute6Detail6GetterIRK10CUtlStringEE
 N9Attribute6Detail6GetterIbEE
@@ -6646,6 +6792,7 @@ N9Attribute6Detail7GetterTI13CAnimClipDataRK10CUtlStringEE
 N9Attribute6Detail7GetterTI13CAnimNodeBase10CUtlStringEE
 N9Attribute6Detail7GetterTI13CLODComponent10CUtlVectorINS_2UI8Choice_tEi10CUtlMemoryIS5_iEEEE
 N9Attribute6Detail7GetterTI14CAnimMotorBaseRK10CUtlStringEE
+N9Attribute6Detail7GetterTI14CBlendAnimNodebEE
 N9Attribute6Detail7GetterTI14CEmitTagAction10CUtlVectorINS_2UI8Choice_tEi10CUtlMemoryIS5_iEEEE
 N9Attribute6Detail7GetterTI14CWeightPreviewRK10CUtlStringEE
 N9Attribute6Detail7GetterTI14IAnimParameter16CAnimGraphSymbolEE
@@ -6658,14 +6805,20 @@ N9Attribute6Detail7GetterTI18CAnimComponentBaseRK10CUtlStringEE
 N9Attribute6Detail7GetterTI18CAnimMotorInstanceRK10CUtlStringEE
 N9Attribute6Detail7GetterTI18CAnimParameterBase5ColorEE
 N9Attribute6Detail7GetterTI18CAnimParameterBasebEE
+N9Attribute6Detail7GetterTI18CMotionNodeBuilderPK18IParameterProviderEE
 N9Attribute6Detail7GetterTI19CAnimUpdateNodeBaseRK10CUtlStringEE
 N9Attribute6Detail7GetterTI19CSetParameterActionPK14IAnimParameterEE
 N9Attribute6Detail7GetterTI20CAnimScriptComponentRK10CUtlStringEE
 N9Attribute6Detail7GetterTI20CAnimStateTransition14CBufferStringNILi20EEEE
 N9Attribute6Detail7GetterTI20CRigidBodyWeightListRK10CUtlStringEE
+N9Attribute6Detail7GetterTI20CSingleFrameAnimNodebEE
 N9Attribute6Detail7GetterTI21CLODComponentInstance10CUtlVectorINS_2UI8Choice_tEi10CUtlMemoryIS5_iEEEE
 N9Attribute6Detail7GetterTI21CPlayerInputAnimMotorbEE
 N9Attribute6Detail7GetterTI22CAnimComponentInstancebEE
+N9Attribute6Detail7GetterTI22CAnimParameterInstance16CAnimGraphSymbolEE
+N9Attribute6Detail7GetterTI22CAnimParameterInstance5ColorEE
+N9Attribute6Detail7GetterTI22CAnimParameterInstancePK14IAnimParameterEE
+N9Attribute6Detail7GetterTI22CAnimParameterInstanceRK10CUtlStringEE
 N9Attribute6Detail7GetterTI22CStateMachineComponentRK10CUtlStringEE
 N9Attribute6Detail7GetterTI22CToggleComponentAction10CUtlVectorINS_2UI8Choice_tEi10CUtlMemoryIS5_iEEEE
 N9Attribute6Detail7GetterTI24CActionComponentInstanceRK10CUtlStringEE
@@ -6686,6 +6839,7 @@ N9Attribute6Detail7SetterTI22CStateMachineComponentRK10CUtlStringEE
 N9Attribute6Detail7SetterTI8IAnimTagRK10CUtlStringEE
 N9Attribute9AnimGraph16RequireComponentE
 N9Attribute9AnimGraph17NodeOnlyConditionE
+N9Attribute9AnimGraph19ReplayInputProviderE
 N9Attribute9AnimGraph19UseReflectionEditorE
 N9Attribute9AnimGraph8LimitOneE
 N9Attribute9AnimGraph9ParamTypeE
@@ -6702,19 +6856,25 @@ NSt3__110__function6__baseIF10CUtlVectorIPKN10Reflection9CTypeInfoEi10CUtlMemory
 NSt3__110__function6__baseIF10CUtlVectorIPKN10Reflection9CTypeInfoEi10CUtlMemoryIS6_iEEPK16CActionComponentbEEE
 NSt3__110__function6__baseIF10CUtlVectorIPKN10Reflection9CTypeInfoEi10CUtlMemoryIS6_iEEPK18CAnimParameterListbEEE
 NSt3__110__function6__baseIF10CUtlVectorIPKN10Reflection9CTypeInfoEi10CUtlMemoryIS6_iEEPK18CMovementComponentbEEE
+NSt3__110__function6__baseIF10CUtlVectorIPKN10Reflection9CTypeInfoEi10CUtlMemoryIS6_iEEPK20CSingleFrameAnimNodebEEE
 NSt3__110__function6__baseIF10CUtlVectorIPKN10Reflection9CTypeInfoEi10CUtlMemoryIS6_iEEPK21CAnimComponentManagerbEEE
 NSt3__110__function6__baseIF10CUtlVectorIPKN10Reflection9CTypeInfoEi10CUtlMemoryIS6_iEEPK23CMotionParameterManagerbEEE
 NSt3__110__function6__baseIF14CBufferStringNILi20EEPK20CAnimStateTransitionEEE
 NSt3__110__function6__baseIF16CAnimGraphSymbolPK14IAnimParameterEEE
+NSt3__110__function6__baseIF16CAnimGraphSymbolPK22CAnimParameterInstanceEEE
 NSt3__110__function6__baseIF5ColorPK18CAnimParameterBaseEEE
+NSt3__110__function6__baseIF5ColorPK22CAnimParameterInstanceEEE
 NSt3__110__function6__baseIFP10IAnimMotorP18CMovementComponentPKcEEE
 NSt3__110__function6__baseIFP12CStateActionP10CAnimStatePKcEEE
 NSt3__110__function6__baseIFP14IAnimComponentP21CAnimComponentManagerPKcEEE
 NSt3__110__function6__baseIFP14IAnimParameterP18CAnimParameterListPKcEEE
 NSt3__110__function6__baseIFP15CAnimActionBaseP16CActionComponentPKcEEE
+NSt3__110__function6__baseIFP15CAnimActionBaseP20CSingleFrameAnimNodePKcEEE
 NSt3__110__function6__baseIFP16IMotionParameterP23CMotionParameterManagerPKcEEE
 NSt3__110__function6__baseIFP8IAnimTagP15CAnimTagManagerPKcEEE
 NSt3__110__function6__baseIFPK14IAnimParameterPK19CSetParameterActionEEE
+NSt3__110__function6__baseIFPK14IAnimParameterPK22CAnimParameterInstanceEEE
+NSt3__110__function6__baseIFPK18IParameterProviderPK18CMotionNodeBuilderEEE
 NSt3__110__function6__baseIFPKcPK12CStateActionEEE
 NSt3__110__function6__baseIFRK10CUtlStringPK10CAnimStateEEE
 NSt3__110__function6__baseIFRK10CUtlStringPK13CAnimClipDataEEE
@@ -6729,14 +6889,17 @@ NSt3__110__function6__baseIFRK10CUtlStringPK18CAnimMotorInstanceEEE
 NSt3__110__function6__baseIFRK10CUtlStringPK19CAnimUpdateNodeBaseEEE
 NSt3__110__function6__baseIFRK10CUtlStringPK20CAnimScriptComponentEEE
 NSt3__110__function6__baseIFRK10CUtlStringPK20CRigidBodyWeightListEEE
+NSt3__110__function6__baseIFRK10CUtlStringPK22CAnimParameterInstanceEEE
 NSt3__110__function6__baseIFRK10CUtlStringPK22CStateMachineComponentEEE
 NSt3__110__function6__baseIFRK10CUtlStringPK24CActionComponentInstanceEEE
 NSt3__110__function6__baseIFRK10CUtlStringPK28CAnimScriptComponentInstanceEEE
 NSt3__110__function6__baseIFRK10CUtlStringPK30CStateMachineComponentInstanceEEE
 NSt3__110__function6__baseIFRK10CUtlStringPK8IAnimTagEEE
 NSt3__110__function6__baseIFbP18IAnimationSubGraphEEE
+NSt3__110__function6__baseIFbPK14CBlendAnimNodeEEE
 NSt3__110__function6__baseIFbPK18CAnimParameterBaseEEE
 NSt3__110__function6__baseIFbPK18IAnimationSubGraphEEE
+NSt3__110__function6__baseIFbPK20CSingleFrameAnimNodeEEE
 NSt3__110__function6__baseIFbPK21CPlayerInputAnimMotorEEE
 NSt3__110__function6__baseIFbPK22CAnimComponentInstanceEEE
 NSt3__110__function6__baseIFvP10CAnimStateP12CStateActionEEE
@@ -6752,18 +6915,22 @@ NSt3__110__function6__baseIFvP18CAnimParameterListP14IAnimParameterEEE
 NSt3__110__function6__baseIFvP18CMovementComponentP10IAnimMotorEEE
 NSt3__110__function6__baseIFvP20CAnimScriptComponentRK10CUtlStringEEE
 NSt3__110__function6__baseIFvP20CRigidBodyWeightListRK10CUtlStringEEE
+NSt3__110__function6__baseIFvP20CSingleFrameAnimNodeP15CAnimActionBaseEEE
 NSt3__110__function6__baseIFvP21CAnimComponentManagerP14IAnimComponentEEE
 NSt3__110__function6__baseIFvP22CAnimComponentInstancebEEE
 NSt3__110__function6__baseIFvP22CStateMachineComponentRK10CUtlStringEEE
 NSt3__110__function6__baseIFvP23CMotionParameterManagerP16IMotionParameterEEE
 NSt3__110__function6__baseIFvP8IAnimTagRK10CUtlStringEEE
+NSt3__110__function6__baseIFvP9IAnimNodeRK13CAnimNodePathEEE
 NSt3__110__function6__baseIFvPK18IAnimationSubGraphEEE
-NSt3__110__function6__baseIFvPK9IAnimNodeEEE
+NSt3__110__function6__baseIFvPK9IAnimNodeRK13CAnimNodePathEEE
 NSt3__110__function6__baseIFvR18CAnimUpdateContextfEEE
 NSt3__110__function6__baseIFvR18CAnimUpdateContexthEEE
 NSt3__110__function6__baseIFvR18CAnimUpdateContextiEEE
 NSt3__110__function6__funcIN18CAnimParameterBase3$_0ENS_9allocatorIS3_EEF5ColorPKS2_EEE
+NSt3__110__function6__funcIN20CSingleFrameAnimNode3$_3ENS_9allocatorIS3_EEFbPKS2_EEE
 NSt3__110__function6__funcIN21CPlayerInputAnimMotor3$_0ENS_9allocatorIS3_EEFbPKS2_EEE
+NSt3__110__function6__funcIN22CAnimParameterInstance3$_0ENS_9allocatorIS3_EEF5ColorPKS2_EEE
 NSt3__110__function6__funcINS_8__mem_fnIM10CAnimStateFP12CStateActionPKcEEENS_9allocatorISA_EEFS5_PS3_S7_EEE
 NSt3__110__function6__funcINS_8__mem_fnIM10CAnimStateFvP12CStateActionEEENS_9allocatorIS8_EEFvPS3_S5_EEE
 NSt3__110__function6__funcINS_8__mem_fnIM10CAnimStateKF10CUtlVectorIPKN10Reflection9CTypeInfoEi10CUtlMemoryIS8_iEEbEEENS_9allocatorISE_EEFSB_PKS3_bEEE
@@ -6774,6 +6941,7 @@ NSt3__110__function6__funcINS_8__mem_fnIM13CAnimNodeBaseKF10CUtlStringvEEENS_9al
 NSt3__110__function6__funcINS_8__mem_fnIM13CLODComponentKF10CUtlVectorIN9Attribute2UI8Choice_tEi10CUtlMemoryIS7_iEEvEEENS_9allocatorISD_EEFSA_PKS3_EEE
 NSt3__110__function6__funcINS_8__mem_fnIM14CAnimMotorBaseFvRK10CUtlStringEEENS_9allocatorIS9_EEFvPS3_S6_EEE
 NSt3__110__function6__funcINS_8__mem_fnIM14CAnimMotorBaseKFRK10CUtlStringvEEENS_9allocatorIS9_EEFS6_PKS3_EEE
+NSt3__110__function6__funcINS_8__mem_fnIM14CBlendAnimNodeKFbvEEENS_9allocatorIS6_EEFbPKS3_EEE
 NSt3__110__function6__funcINS_8__mem_fnIM14CEmitTagActionKF10CUtlVectorIN9Attribute2UI8Choice_tEi10CUtlMemoryIS7_iEEvEEENS_9allocatorISD_EEFSA_PKS3_EEE
 NSt3__110__function6__funcINS_8__mem_fnIM14CWeightPreviewKFRK10CUtlStringvEEENS_9allocatorIS9_EEFS6_PKS3_EEE
 NSt3__110__function6__funcINS_8__mem_fnIM14IAnimParameterFv16CAnimGraphSymbolEEENS_9allocatorIS7_EEFvPS3_S4_EEE
@@ -6799,6 +6967,7 @@ NSt3__110__function6__funcINS_8__mem_fnIM18CAnimParameterBaseKFbvEEENS_9allocato
 NSt3__110__function6__funcINS_8__mem_fnIM18CAnimParameterListFP14IAnimParameterPKcEEENS_9allocatorISA_EEFS5_PS3_S7_EEE
 NSt3__110__function6__funcINS_8__mem_fnIM18CAnimParameterListFvP14IAnimParameterEEENS_9allocatorIS8_EEFvPS3_S5_EEE
 NSt3__110__function6__funcINS_8__mem_fnIM18CAnimParameterListKF10CUtlVectorIPKN10Reflection9CTypeInfoEi10CUtlMemoryIS8_iEEbEEENS_9allocatorISE_EEFSB_PKS3_bEEE
+NSt3__110__function6__funcINS_8__mem_fnIM18CMotionNodeBuilderKFPK18IParameterProvidervEEENS_9allocatorIS9_EEFS6_PKS3_EEE
 NSt3__110__function6__funcINS_8__mem_fnIM18CMovementComponentFP10IAnimMotorPKcEEENS_9allocatorISA_EEFS5_PS3_S7_EEE
 NSt3__110__function6__funcINS_8__mem_fnIM18CMovementComponentFvP10IAnimMotorEEENS_9allocatorIS8_EEFvPS3_S5_EEE
 NSt3__110__function6__funcINS_8__mem_fnIM18CMovementComponentKF10CUtlVectorIPKN10Reflection9CTypeInfoEi10CUtlMemoryIS8_iEEbEEENS_9allocatorISE_EEFSB_PKS3_bEEE
@@ -6808,12 +6977,19 @@ NSt3__110__function6__funcINS_8__mem_fnIM20CAnimScriptComponentFvRK10CUtlStringE
 NSt3__110__function6__funcINS_8__mem_fnIM20CAnimScriptComponentKFRK10CUtlStringvEEENS_9allocatorIS9_EEFS6_PKS3_EEE
 NSt3__110__function6__funcINS_8__mem_fnIM20CRigidBodyWeightListFvRK10CUtlStringEEENS_9allocatorIS9_EEFvPS3_S6_EEE
 NSt3__110__function6__funcINS_8__mem_fnIM20CRigidBodyWeightListKFRK10CUtlStringvEEENS_9allocatorIS9_EEFS6_PKS3_EEE
+NSt3__110__function6__funcINS_8__mem_fnIM20CSingleFrameAnimNodeFP15CAnimActionBasePKcEEENS_9allocatorISA_EEFS5_PS3_S7_EEE
+NSt3__110__function6__funcINS_8__mem_fnIM20CSingleFrameAnimNodeFvP15CAnimActionBaseEEENS_9allocatorIS8_EEFvPS3_S5_EEE
+NSt3__110__function6__funcINS_8__mem_fnIM20CSingleFrameAnimNodeKF10CUtlVectorIPKN10Reflection9CTypeInfoEi10CUtlMemoryIS8_iEEbEEENS_9allocatorISE_EEFSB_PKS3_bEEE
 NSt3__110__function6__funcINS_8__mem_fnIM21CAnimComponentManagerFP14IAnimComponentPKcEEENS_9allocatorISA_EEFS5_PS3_S7_EEE
 NSt3__110__function6__funcINS_8__mem_fnIM21CAnimComponentManagerFvP14IAnimComponentEEENS_9allocatorIS8_EEFvPS3_S5_EEE
 NSt3__110__function6__funcINS_8__mem_fnIM21CAnimComponentManagerKF10CUtlVectorIPKN10Reflection9CTypeInfoEi10CUtlMemoryIS8_iEEbEEENS_9allocatorISE_EEFSB_PKS3_bEEE
 NSt3__110__function6__funcINS_8__mem_fnIM21CLODComponentInstanceKF10CUtlVectorIN9Attribute2UI8Choice_tEi10CUtlMemoryIS7_iEEvEEENS_9allocatorISD_EEFSA_PKS3_EEE
 NSt3__110__function6__funcINS_8__mem_fnIM22CAnimComponentInstanceFvbEEENS_9allocatorIS6_EEFvPS3_bEEE
 NSt3__110__function6__funcINS_8__mem_fnIM22CAnimComponentInstanceKFbvEEENS_9allocatorIS6_EEFbPKS3_EEE
+NSt3__110__function6__funcINS_8__mem_fnIM22CAnimParameterInstanceKF16CAnimGraphSymbolvEEENS_9allocatorIS7_EEFS4_PKS3_EEE
+NSt3__110__function6__funcINS_8__mem_fnIM22CAnimParameterInstanceKF5ColorvEEENS_9allocatorIS7_EEFS4_PKS3_EEE
+NSt3__110__function6__funcINS_8__mem_fnIM22CAnimParameterInstanceKFPK14IAnimParametervEEENS_9allocatorIS9_EEFS6_PKS3_EEE
+NSt3__110__function6__funcINS_8__mem_fnIM22CAnimParameterInstanceKFRK10CUtlStringvEEENS_9allocatorIS9_EEFS6_PKS3_EEE
 NSt3__110__function6__funcINS_8__mem_fnIM22CStateMachineComponentFvRK10CUtlStringEEENS_9allocatorIS9_EEFvPS3_S6_EEE
 NSt3__110__function6__funcINS_8__mem_fnIM22CStateMachineComponentKFRK10CUtlStringvEEENS_9allocatorIS9_EEFS6_PKS3_EEE
 NSt3__110__function6__funcINS_8__mem_fnIM22CToggleComponentActionKF10CUtlVectorIN9Attribute2UI8Choice_tEi10CUtlMemoryIS7_iEEvEEENS_9allocatorISD_EEFSA_PKS3_EEE
@@ -6849,17 +7025,20 @@ NSt3__110__function6__funcIZ18MakeNetVarCallbackI25CMotionMatchingUpdateNodefENS
 NSt3__110__function6__funcIZ18MakeNetVarCallbackI25CMotionMatchingUpdateNodehENS_8functionIFvR18CAnimUpdateContextT0_EEEPKT_MSA_KFvS6_S7_EEUlS6_hE_NS_9allocatorISF_EEFvS6_hEEE
 NSt3__110__function6__funcIZ18MakeNetVarCallbackI27CDirectionalBlendUpdateNodefENS_8functionIFvR18CAnimUpdateContextT0_EEEPKT_MSA_KFvS6_S7_EEUlS6_fE_NS_9allocatorISF_EEFvS6_fEEE
 NSt3__110__function6__funcIZN15CAnimationGraph13FindComponentEN10Reflection6TypeIDEE3$_0NS_9allocatorIS5_EEFbP18IAnimationSubGraphEEE
+NSt3__110__function6__funcIZN15CAnimationGraph16BackCompatUpdateEPK6CModelE3$_2NS_9allocatorIS6_EEFvP9IAnimNodeRK13CAnimNodePathEEE
+NSt3__110__function6__funcIZN18CMotionNodeManager16SetParamProviderEPK18IParameterProviderE3$_1NS_9allocatorIS6_EEFvP9IAnimNodeRK13CAnimNodePathEEE
 NSt3__110__function6__funcIZNK15CAnimationGraph13FindComponentEN10Reflection6TypeIDEE3$_1NS_9allocatorIS5_EEFbPK18IAnimationSubGraphEEE
-NSt3__110__function6__funcIZNK16CGraphMotionItem16GetSequencesUsedER13CSequenceListRK13CUtlHashtableI10CUtlStringS6_18DefaultHashFunctorIS6_vE19DefaultEqualFunctorIS6_E11undefined_t10CUtlMemoryI18CUtlHashtableEntryIS6_S6_EiELb0EEE3$_0NS_9allocatorISJ_EEFvPK9IAnimNodeEEE
-NSt3__110__function6__funcIZNK16CRagdollAnimNode20GetWeightListChoicesEvE3$_1NS_9allocatorIS3_EEFvPK18IAnimationSubGraphEEE
-NSt3__110__function6__funcIZNK17CRagdollComponent13CreateUpdaterER21CAnimGraphInitContextE3$_0NS_9allocatorIS5_EEFvPK9IAnimNodeEEE
-NSt3__110__function6__funcIZNK18CAnimationSubGraph22AccumulateDependenciesER13CUtlHashtableI10CUtlString7empty_t18DefaultHashFunctorIS4_vE19DefaultEqualFunctorIS4_E11undefined_t10CUtlMemoryI18CUtlHashtableEntryIS4_S5_EiELb0EEE3$_2NS_9allocatorISH_EEFvPK9IAnimNodeEEE
-NSt3__110__function6__funcIZNK18CAnimationSubGraph22AccumulateDependenciesER13CUtlHashtableI10CUtlString7empty_t18DefaultHashFunctorIS4_vE19DefaultEqualFunctorIS4_E11undefined_t10CUtlMemoryI18CUtlHashtableEntryIS4_S5_EiELb0EEE3$_3NS_9allocatorISH_EEFvPK18IAnimationSubGraphEEE
+NSt3__110__function6__funcIZNK16CGraphMotionItem16GetSequencesUsedER13CSequenceListRK13CUtlHashtableI10CUtlStringS6_18DefaultHashFunctorIS6_vE19DefaultEqualFunctorIS6_E11undefined_t10CUtlMemoryI18CUtlHashtableEntryIS6_S6_EiELb0EEE3$_0NS_9allocatorISJ_EEFvPK9IAnimNodeRK13CAnimNodePathEEE
+NSt3__110__function6__funcIZNK16CRagdollAnimNode20GetWeightListChoicesEvE3$_2NS_9allocatorIS3_EEFvPK18IAnimationSubGraphEEE
+NSt3__110__function6__funcIZNK17CRagdollComponent13CreateUpdaterER21CAnimGraphInitContextE3$_0NS_9allocatorIS5_EEFvPK9IAnimNodeRK13CAnimNodePathEEE
+NSt3__110__function6__funcIZNK18CAnimationSubGraph22AccumulateDependenciesER13CUtlHashtableI10CUtlString7empty_t18DefaultHashFunctorIS4_vE19DefaultEqualFunctorIS4_E11undefined_t10CUtlMemoryI18CUtlHashtableEntryIS4_S5_EiELb0EEE3$_3NS_9allocatorISH_EEFvPK9IAnimNodeRK13CAnimNodePathEEE
+NSt3__110__function6__funcIZNK18CAnimationSubGraph22AccumulateDependenciesER13CUtlHashtableI10CUtlString7empty_t18DefaultHashFunctorIS4_vE19DefaultEqualFunctorIS4_E11undefined_t10CUtlMemoryI18CUtlHashtableEntryIS4_S5_EiELb0EEE3$_4NS_9allocatorISH_EEFvPK18IAnimationSubGraphEEE
 NSt3__114default_deleteI11CScriptFileEE
 NSt3__114default_deleteIN9Attribute10DeprecatedEEE
 NSt3__114default_deleteIN9Attribute10ObjectIconEEE
 NSt3__114default_deleteIN9Attribute10ObjectNameEEE
 NSt3__114default_deleteIN9Attribute11DescriptionEEE
+NSt3__114default_deleteIN9Attribute11ObjectColorEEE
 NSt3__114default_deleteIN9Attribute11ObjectGroupEEE
 NSt3__114default_deleteIN9Attribute12FriendlyNameEEE
 NSt3__114default_deleteIN9Attribute13ArrayOperatorEEE
@@ -6875,9 +7054,10 @@ NSt3__114default_deleteIN9Attribute2UI4FontEEE
 NSt3__114default_deleteIN9Attribute2UI5EmbedEEE
 NSt3__114default_deleteIN9Attribute2UI6HiddenEEE
 NSt3__114default_deleteIN9Attribute2UI8ReadOnlyEEE
+NSt3__114default_deleteIN9Attribute2UI9AnimGraph13EditModelDataEEE
 NSt3__114default_deleteIN9Attribute2UI9AnimGraph13EditParameterEEE
 NSt3__114default_deleteIN9Attribute2UI9AnimGraph14EditExpressionEEE
-NSt3__114default_deleteIN9Attribute2UI9AnimGraph16EditVariantValueEEE
+NSt3__114default_deleteIN9Attribute2UI9AnimGraph18EditParameterValueEEE
 NSt3__114default_deleteIN9Attribute2UI9AnimGraph23EditRigidBodyWeightListEEE
 NSt3__114default_deleteIN9Attribute2UI9EditLabelEEE
 NSt3__114default_deleteIN9Attribute4IconEEE
@@ -6885,6 +7065,7 @@ NSt3__114default_deleteIN9Attribute5ColorEEE
 NSt3__114default_deleteIN9Attribute5GroupEEE
 NSt3__114default_deleteIN9Attribute9AnimGraph16RequireComponentEEE
 NSt3__114default_deleteIN9Attribute9AnimGraph17NodeOnlyConditionEEE
+NSt3__114default_deleteIN9Attribute9AnimGraph19ReplayInputProviderEEE
 NSt3__114default_deleteIN9Attribute9AnimGraph19UseReflectionEditorEEE
 NSt3__114default_deleteIN9Attribute9AnimGraph8LimitOneEEE
 NSt3__114default_deleteIN9Attribute9AnimGraph9ParamTypeEEE
@@ -6895,6 +7076,7 @@ NSt3__114unary_functionIPK13CAnimClipDataRK10CUtlStringEE
 NSt3__114unary_functionIPK13CAnimNodeBase10CUtlStringEE
 NSt3__114unary_functionIPK13CLODComponent10CUtlVectorIN9Attribute2UI8Choice_tEi10CUtlMemoryIS7_iEEEE
 NSt3__114unary_functionIPK14CAnimMotorBaseRK10CUtlStringEE
+NSt3__114unary_functionIPK14CBlendAnimNodebEE
 NSt3__114unary_functionIPK14CEmitTagAction10CUtlVectorIN9Attribute2UI8Choice_tEi10CUtlMemoryIS7_iEEEE
 NSt3__114unary_functionIPK14CWeightPreviewRK10CUtlStringEE
 NSt3__114unary_functionIPK14IAnimParameter16CAnimGraphSymbolEE
@@ -6906,12 +7088,17 @@ NSt3__114unary_functionIPK16CRigidBodyWeightRK10CUtlStringEE
 NSt3__114unary_functionIPK18CAnimComponentBaseRK10CUtlStringEE
 NSt3__114unary_functionIPK18CAnimMotorInstanceRK10CUtlStringEE
 NSt3__114unary_functionIPK18CAnimParameterBasebEE
+NSt3__114unary_functionIPK18CMotionNodeBuilderPK18IParameterProviderEE
 NSt3__114unary_functionIPK19CAnimUpdateNodeBaseRK10CUtlStringEE
 NSt3__114unary_functionIPK19CSetParameterActionPK14IAnimParameterEE
 NSt3__114unary_functionIPK20CAnimScriptComponentRK10CUtlStringEE
 NSt3__114unary_functionIPK20CRigidBodyWeightListRK10CUtlStringEE
 NSt3__114unary_functionIPK21CLODComponentInstance10CUtlVectorIN9Attribute2UI8Choice_tEi10CUtlMemoryIS7_iEEEE
 NSt3__114unary_functionIPK22CAnimComponentInstancebEE
+NSt3__114unary_functionIPK22CAnimParameterInstance16CAnimGraphSymbolEE
+NSt3__114unary_functionIPK22CAnimParameterInstance5ColorEE
+NSt3__114unary_functionIPK22CAnimParameterInstancePK14IAnimParameterEE
+NSt3__114unary_functionIPK22CAnimParameterInstanceRK10CUtlStringEE
 NSt3__114unary_functionIPK22CStateMachineComponentRK10CUtlStringEE
 NSt3__114unary_functionIPK22CToggleComponentAction10CUtlVectorIN9Attribute2UI8Choice_tEi10CUtlMemoryIS7_iEEEE
 NSt3__114unary_functionIPK24CActionComponentInstanceRK10CUtlStringEE
@@ -6937,6 +7124,8 @@ NSt3__115binary_functionIP18CMovementComponentP10IAnimMotorvEE
 NSt3__115binary_functionIP18CMovementComponentPKcP10IAnimMotorEE
 NSt3__115binary_functionIP20CAnimScriptComponentRK10CUtlStringvEE
 NSt3__115binary_functionIP20CRigidBodyWeightListRK10CUtlStringvEE
+NSt3__115binary_functionIP20CSingleFrameAnimNodeP15CAnimActionBasevEE
+NSt3__115binary_functionIP20CSingleFrameAnimNodePKcP15CAnimActionBaseEE
 NSt3__115binary_functionIP21CAnimComponentManagerP14IAnimComponentvEE
 NSt3__115binary_functionIP21CAnimComponentManagerPKcP14IAnimComponentEE
 NSt3__115binary_functionIP22CAnimComponentInstancebvEE
@@ -6949,6 +7138,7 @@ NSt3__115binary_functionIPK15CAnimTagManagerb10CUtlVectorIPKN10Reflection9CTypeI
 NSt3__115binary_functionIPK16CActionComponentb10CUtlVectorIPKN10Reflection9CTypeInfoEi10CUtlMemoryIS8_iEEEE
 NSt3__115binary_functionIPK18CAnimParameterListb10CUtlVectorIPKN10Reflection9CTypeInfoEi10CUtlMemoryIS8_iEEEE
 NSt3__115binary_functionIPK18CMovementComponentb10CUtlVectorIPKN10Reflection9CTypeInfoEi10CUtlMemoryIS8_iEEEE
+NSt3__115binary_functionIPK20CSingleFrameAnimNodeb10CUtlVectorIPKN10Reflection9CTypeInfoEi10CUtlMemoryIS8_iEEEE
 NSt3__115binary_functionIPK21CAnimComponentManagerb10CUtlVectorIPKN10Reflection9CTypeInfoEi10CUtlMemoryIS8_iEEEE
 NSt3__115binary_functionIPK23CMotionParameterManagerb10CUtlVectorIPKN10Reflection9CTypeInfoEi10CUtlMemoryIS8_iEEEE
 NSt3__117bad_function_callE
@@ -6962,6 +7152,7 @@ NSt3__118__weak_result_typeIM13CAnimNodeBaseKF10CUtlStringvEEE
 NSt3__118__weak_result_typeIM13CLODComponentKF10CUtlVectorIN9Attribute2UI8Choice_tEi10CUtlMemoryIS5_iEEvEEE
 NSt3__118__weak_result_typeIM14CAnimMotorBaseFvRK10CUtlStringEEE
 NSt3__118__weak_result_typeIM14CAnimMotorBaseKFRK10CUtlStringvEEE
+NSt3__118__weak_result_typeIM14CBlendAnimNodeKFbvEEE
 NSt3__118__weak_result_typeIM14CEmitTagActionKF10CUtlVectorIN9Attribute2UI8Choice_tEi10CUtlMemoryIS5_iEEvEEE
 NSt3__118__weak_result_typeIM14CWeightPreviewKFRK10CUtlStringvEEE
 NSt3__118__weak_result_typeIM14IAnimParameterFv16CAnimGraphSymbolEEE
@@ -6987,6 +7178,7 @@ NSt3__118__weak_result_typeIM18CAnimParameterBaseKFbvEEE
 NSt3__118__weak_result_typeIM18CAnimParameterListFP14IAnimParameterPKcEEE
 NSt3__118__weak_result_typeIM18CAnimParameterListFvP14IAnimParameterEEE
 NSt3__118__weak_result_typeIM18CAnimParameterListKF10CUtlVectorIPKN10Reflection9CTypeInfoEi10CUtlMemoryIS6_iEEbEEE
+NSt3__118__weak_result_typeIM18CMotionNodeBuilderKFPK18IParameterProvidervEEE
 NSt3__118__weak_result_typeIM18CMovementComponentFP10IAnimMotorPKcEEE
 NSt3__118__weak_result_typeIM18CMovementComponentFvP10IAnimMotorEEE
 NSt3__118__weak_result_typeIM18CMovementComponentKF10CUtlVectorIPKN10Reflection9CTypeInfoEi10CUtlMemoryIS6_iEEbEEE
@@ -6996,12 +7188,19 @@ NSt3__118__weak_result_typeIM20CAnimScriptComponentFvRK10CUtlStringEEE
 NSt3__118__weak_result_typeIM20CAnimScriptComponentKFRK10CUtlStringvEEE
 NSt3__118__weak_result_typeIM20CRigidBodyWeightListFvRK10CUtlStringEEE
 NSt3__118__weak_result_typeIM20CRigidBodyWeightListKFRK10CUtlStringvEEE
+NSt3__118__weak_result_typeIM20CSingleFrameAnimNodeFP15CAnimActionBasePKcEEE
+NSt3__118__weak_result_typeIM20CSingleFrameAnimNodeFvP15CAnimActionBaseEEE
+NSt3__118__weak_result_typeIM20CSingleFrameAnimNodeKF10CUtlVectorIPKN10Reflection9CTypeInfoEi10CUtlMemoryIS6_iEEbEEE
 NSt3__118__weak_result_typeIM21CAnimComponentManagerFP14IAnimComponentPKcEEE
 NSt3__118__weak_result_typeIM21CAnimComponentManagerFvP14IAnimComponentEEE
 NSt3__118__weak_result_typeIM21CAnimComponentManagerKF10CUtlVectorIPKN10Reflection9CTypeInfoEi10CUtlMemoryIS6_iEEbEEE
 NSt3__118__weak_result_typeIM21CLODComponentInstanceKF10CUtlVectorIN9Attribute2UI8Choice_tEi10CUtlMemoryIS5_iEEvEEE
 NSt3__118__weak_result_typeIM22CAnimComponentInstanceFvbEEE
 NSt3__118__weak_result_typeIM22CAnimComponentInstanceKFbvEEE
+NSt3__118__weak_result_typeIM22CAnimParameterInstanceKF16CAnimGraphSymbolvEEE
+NSt3__118__weak_result_typeIM22CAnimParameterInstanceKF5ColorvEEE
+NSt3__118__weak_result_typeIM22CAnimParameterInstanceKFPK14IAnimParametervEEE
+NSt3__118__weak_result_typeIM22CAnimParameterInstanceKFRK10CUtlStringvEEE
 NSt3__118__weak_result_typeIM22CStateMachineComponentFvRK10CUtlStringEEE
 NSt3__118__weak_result_typeIM22CStateMachineComponentKFRK10CUtlStringvEEE
 NSt3__118__weak_result_typeIM22CToggleComponentActionKF10CUtlVectorIN9Attribute2UI8Choice_tEi10CUtlMemoryIS5_iEEvEEE
@@ -7019,6 +7218,7 @@ NSt3__120__shared_ptr_pointerIPN9Attribute10DeprecatedENS_14default_deleteIS2_EE
 NSt3__120__shared_ptr_pointerIPN9Attribute10ObjectIconENS_14default_deleteIS2_EENS_9allocatorIS2_EEEE
 NSt3__120__shared_ptr_pointerIPN9Attribute10ObjectNameENS_14default_deleteIS2_EENS_9allocatorIS2_EEEE
 NSt3__120__shared_ptr_pointerIPN9Attribute11DescriptionENS_14default_deleteIS2_EENS_9allocatorIS2_EEEE
+NSt3__120__shared_ptr_pointerIPN9Attribute11ObjectColorENS_14default_deleteIS2_EENS_9allocatorIS2_EEEE
 NSt3__120__shared_ptr_pointerIPN9Attribute11ObjectGroupENS_14default_deleteIS2_EENS_9allocatorIS2_EEEE
 NSt3__120__shared_ptr_pointerIPN9Attribute12FriendlyNameENS_14default_deleteIS2_EENS_9allocatorIS2_EEEE
 NSt3__120__shared_ptr_pointerIPN9Attribute13ArrayOperatorENS_14default_deleteIS2_EENS_9allocatorIS2_EEEE
@@ -7034,9 +7234,10 @@ NSt3__120__shared_ptr_pointerIPN9Attribute2UI4FontENS_14default_deleteIS3_EENS_9
 NSt3__120__shared_ptr_pointerIPN9Attribute2UI5EmbedENS_14default_deleteIS3_EENS_9allocatorIS3_EEEE
 NSt3__120__shared_ptr_pointerIPN9Attribute2UI6HiddenENS_14default_deleteIS3_EENS_9allocatorIS3_EEEE
 NSt3__120__shared_ptr_pointerIPN9Attribute2UI8ReadOnlyENS_14default_deleteIS3_EENS_9allocatorIS3_EEEE
+NSt3__120__shared_ptr_pointerIPN9Attribute2UI9AnimGraph13EditModelDataENS_14default_deleteIS4_EENS_9allocatorIS4_EEEE
 NSt3__120__shared_ptr_pointerIPN9Attribute2UI9AnimGraph13EditParameterENS_14default_deleteIS4_EENS_9allocatorIS4_EEEE
 NSt3__120__shared_ptr_pointerIPN9Attribute2UI9AnimGraph14EditExpressionENS_14default_deleteIS4_EENS_9allocatorIS4_EEEE
-NSt3__120__shared_ptr_pointerIPN9Attribute2UI9AnimGraph16EditVariantValueENS_14default_deleteIS4_EENS_9allocatorIS4_EEEE
+NSt3__120__shared_ptr_pointerIPN9Attribute2UI9AnimGraph18EditParameterValueENS_14default_deleteIS4_EENS_9allocatorIS4_EEEE
 NSt3__120__shared_ptr_pointerIPN9Attribute2UI9AnimGraph23EditRigidBodyWeightListENS_14default_deleteIS4_EENS_9allocatorIS4_EEEE
 NSt3__120__shared_ptr_pointerIPN9Attribute2UI9EditLabelENS_14default_deleteIS3_EENS_9allocatorIS3_EEEE
 NSt3__120__shared_ptr_pointerIPN9Attribute4IconENS_14default_deleteIS2_EENS_9allocatorIS2_EEEE
@@ -7044,6 +7245,7 @@ NSt3__120__shared_ptr_pointerIPN9Attribute5ColorENS_14default_deleteIS2_EENS_9al
 NSt3__120__shared_ptr_pointerIPN9Attribute5GroupENS_14default_deleteIS2_EENS_9allocatorIS2_EEEE
 NSt3__120__shared_ptr_pointerIPN9Attribute9AnimGraph16RequireComponentENS_14default_deleteIS3_EENS_9allocatorIS3_EEEE
 NSt3__120__shared_ptr_pointerIPN9Attribute9AnimGraph17NodeOnlyConditionENS_14default_deleteIS3_EENS_9allocatorIS3_EEEE
+NSt3__120__shared_ptr_pointerIPN9Attribute9AnimGraph19ReplayInputProviderENS_14default_deleteIS3_EENS_9allocatorIS3_EEEE
 NSt3__120__shared_ptr_pointerIPN9Attribute9AnimGraph19UseReflectionEditorENS_14default_deleteIS3_EENS_9allocatorIS3_EEEE
 NSt3__120__shared_ptr_pointerIPN9Attribute9AnimGraph8LimitOneENS_14default_deleteIS3_EENS_9allocatorIS3_EEEE
 NSt3__120__shared_ptr_pointerIPN9Attribute9AnimGraph9ParamTypeENS_14default_deleteIS3_EENS_9allocatorIS3_EEEE
@@ -7058,6 +7260,7 @@ NSt3__18__mem_fnIM13CAnimNodeBaseKF10CUtlStringvEEE
 NSt3__18__mem_fnIM13CLODComponentKF10CUtlVectorIN9Attribute2UI8Choice_tEi10CUtlMemoryIS5_iEEvEEE
 NSt3__18__mem_fnIM14CAnimMotorBaseFvRK10CUtlStringEEE
 NSt3__18__mem_fnIM14CAnimMotorBaseKFRK10CUtlStringvEEE
+NSt3__18__mem_fnIM14CBlendAnimNodeKFbvEEE
 NSt3__18__mem_fnIM14CEmitTagActionKF10CUtlVectorIN9Attribute2UI8Choice_tEi10CUtlMemoryIS5_iEEvEEE
 NSt3__18__mem_fnIM14CWeightPreviewKFRK10CUtlStringvEEE
 NSt3__18__mem_fnIM14IAnimParameterFv16CAnimGraphSymbolEEE
@@ -7083,6 +7286,7 @@ NSt3__18__mem_fnIM18CAnimParameterBaseKFbvEEE
 NSt3__18__mem_fnIM18CAnimParameterListFP14IAnimParameterPKcEEE
 NSt3__18__mem_fnIM18CAnimParameterListFvP14IAnimParameterEEE
 NSt3__18__mem_fnIM18CAnimParameterListKF10CUtlVectorIPKN10Reflection9CTypeInfoEi10CUtlMemoryIS6_iEEbEEE
+NSt3__18__mem_fnIM18CMotionNodeBuilderKFPK18IParameterProvidervEEE
 NSt3__18__mem_fnIM18CMovementComponentFP10IAnimMotorPKcEEE
 NSt3__18__mem_fnIM18CMovementComponentFvP10IAnimMotorEEE
 NSt3__18__mem_fnIM18CMovementComponentKF10CUtlVectorIPKN10Reflection9CTypeInfoEi10CUtlMemoryIS6_iEEbEEE
@@ -7092,12 +7296,19 @@ NSt3__18__mem_fnIM20CAnimScriptComponentFvRK10CUtlStringEEE
 NSt3__18__mem_fnIM20CAnimScriptComponentKFRK10CUtlStringvEEE
 NSt3__18__mem_fnIM20CRigidBodyWeightListFvRK10CUtlStringEEE
 NSt3__18__mem_fnIM20CRigidBodyWeightListKFRK10CUtlStringvEEE
+NSt3__18__mem_fnIM20CSingleFrameAnimNodeFP15CAnimActionBasePKcEEE
+NSt3__18__mem_fnIM20CSingleFrameAnimNodeFvP15CAnimActionBaseEEE
+NSt3__18__mem_fnIM20CSingleFrameAnimNodeKF10CUtlVectorIPKN10Reflection9CTypeInfoEi10CUtlMemoryIS6_iEEbEEE
 NSt3__18__mem_fnIM21CAnimComponentManagerFP14IAnimComponentPKcEEE
 NSt3__18__mem_fnIM21CAnimComponentManagerFvP14IAnimComponentEEE
 NSt3__18__mem_fnIM21CAnimComponentManagerKF10CUtlVectorIPKN10Reflection9CTypeInfoEi10CUtlMemoryIS6_iEEbEEE
 NSt3__18__mem_fnIM21CLODComponentInstanceKF10CUtlVectorIN9Attribute2UI8Choice_tEi10CUtlMemoryIS5_iEEvEEE
 NSt3__18__mem_fnIM22CAnimComponentInstanceFvbEEE
 NSt3__18__mem_fnIM22CAnimComponentInstanceKFbvEEE
+NSt3__18__mem_fnIM22CAnimParameterInstanceKF16CAnimGraphSymbolvEEE
+NSt3__18__mem_fnIM22CAnimParameterInstanceKF5ColorvEEE
+NSt3__18__mem_fnIM22CAnimParameterInstanceKFPK14IAnimParametervEEE
+NSt3__18__mem_fnIM22CAnimParameterInstanceKFRK10CUtlStringvEEE
 NSt3__18__mem_fnIM22CStateMachineComponentFvRK10CUtlStringEEE
 NSt3__18__mem_fnIM22CStateMachineComponentKFRK10CUtlStringvEEE
 NSt3__18__mem_fnIM22CToggleComponentActionKF10CUtlVectorIN9Attribute2UI8Choice_tEi10CUtlMemoryIS5_iEEvEEE
@@ -7110,7 +7321,7 @@ NSt3__18__mem_fnIM28CAnimScriptComponentInstanceKFRK10CUtlStringvEEE
 NSt3__18__mem_fnIM30CStateMachineComponentInstanceKFRK10CUtlStringvEEE
 NSt3__18__mem_fnIM8IAnimTagFvRK10CUtlStringEEE
 NSt3__18__mem_fnIM8IAnimTagKFRK10CUtlStringvEEE
-N` ARARARARARARARARARARARARARARARARARARARARARARARARARARARARARC`,L`-B
+N` ARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARC`,L`-B
 Name of the animation
 Name of the layer
 NetVarConfigIndex
@@ -7141,11 +7352,14 @@ No DATA block for resource '%s
 No closing */ before end of file
 No conversion from %s to int now
 No conversion from %s to string at the moment
+No feet defined; node will do nothing
 No free conversion of %s variant to QuaternionStorage right now
 NoDamping
 NoPoseControl
 Node Blend Item
 Node Item
+Node Span has invalid tag
+Node has invalid tag span
 Node has reference to missing tag
 Not safe to 'new' this class due to alignment requirements
 Num Iterations
@@ -7173,6 +7387,7 @@ Only wrote %d (of %d) values when saving map
 Options
 Ordered constructor wrapped type has no default constructor
 Orient Movement
+Orient Movement is enabled but the Movement Heading parameter is missing
 Original
 Original Foot
 Original Joint
@@ -7186,6 +7401,7 @@ Override
 Override Solver Settings
 Override Sound
 Override Target Settings
+P      0
 P  pp `p
 P 0 0Pp@P@@ 0 00@0@ 0 0
 P @P@P
@@ -7215,10 +7431,8 @@ PAVAUATAWH
 PAWAUAVATH
 PAWAVAUATH
 PF14CBufferStringNILi20EEPK20CAnimStateTransitionE
-PHcG`H
-PHcKPD9
+PIcFHH
 PIcT$LH
-PIcvHH
 POSE_SPACE_BONE
 POSE_SPACE_MORPH
 PP    00  p
@@ -7245,9 +7459,13 @@ Parameter (World Space
 Parameter Condition
 Parameter In
 Parameter Out
+Parameter missing from Control Value condition on transition from "%s" to "%s" in state machine "%s
+Parameter missing from Cycle condition on transition from "%s" to "%s" in state machine "%s
+Parameter missing from Parameter condition on transition from "%s" to "%s" in state machine "%s
+Parameter missing from State Status condition on transition from "%s" to "%s" in state machine "%s
+Parameter missing from Time condition on transition from "%s" to "%s" in state machine "%s
 Parameters
 Parent Space
-Park Feet
 Parser E
 Particle System
 Particle Tag
@@ -7286,6 +7504,8 @@ Plat_FloatTime
 Plat_IsInDebugSession
 Plat_NonFatalErrorFunc
 Plat_ShouldCollectMiniDumpsForFatalErrors
+Play on Client
+Play on Server
 Playback Speed
 Playback:m_SequenceCycleZeroTime
 Playback:m_currentSequence
@@ -7315,82 +7535,90 @@ Procedural Hit Reacts
 Procedural Settings
 Propagation Scale
 PropertyEditorSystem_001
+Quantized Data Results
 Quaternion
 Quaternion Parameter
 QuaternionParameter
 QuaternionStorage
-RARARARARARA
 RARARARARARARARARARARARARASARASARASARASARASARASARASARASARASARASARASARASARASARASARA
-RARARARARARARARARARARASARBSARASARBp
+RARARARARARARARARARARASARASARASAUBSARBp
+RARARARARARARARAUAUBSARAZARAp
 RARARARARARARAp
-RARARARARASARASARAZAp
+RARARARARARASARASARAZAp
 RARARARARAUARA[Ap
-RARARARASARASARASARA[AZAYA
-RARARARAVARATAp
+RARARARASARASARASAUASASASB[AZAYA
+RARARARATARAZAp
 RARARARAp
-RARARASARAVARAVARAVARASARAVARAVARASAp
+RARARASARAVAp
 RARARAp
-RARASARASARASARASARASARASARASARAVARASARASARASARASARASARASARASARASARASARASARASARASARAVARAVARARAVARASARASARAVARAVARARASARAVARASARAVARASARAVARASARASARASARASARAVARASARASARASARASARASARAVARASARASARAVARB`!AW0
-RARASARASARASARASARASARAVARAYARASARASARAZAp
-RARASARASARASARATARAZAp
-RARASARASARASARA`!ASA`!ASA[Dp
+RARASARASARASARASARASARAVARAYARASARAZAp
+RARASARASARASAUASB`!ASA`!ASA[Dp
+RARASARASARASAUBSARASARASARASARAVARAYAp
 RARASARASARATARASARAVARATAp
 RARASARASARATARAZAp
-RARASARASARAVARARASARAVARASARAVARASARAVARASARAVARASARAVARASARAVARASARAVARASARASARASARAUARARASARAVARASARASARASARAUARASARAVARASARASARASARAUARASARASARASARASARASARASARAVARASARASARASARAUARASARAVARASARAVARA^BSA[ASA
-RARASARAVARASARAVARASARASARASARB` 0
-RARASARAVARASARAVARAZARAp
-RARASARAVARAVARAVARARASARAVARASARAVARASARASARASARASARAVARAYARAVARAVARATARAZAp
-RARASARAp
+RARASARASARAVARAUBSARAVARASARAVARASARAVARASARAVARASARAVARASARAVARASARAVARASARASARASARAUARARASARAVARASARASARASARAUARASARAVARASARASARASARAUARASARASARASARASARASARASARAVARASARASARASARAUARASARAVARASARAVARA^BSA[ASA
+RARASARAVARASARASARAVARATARAZAp
+RARASARAVARATARAZAp
+RARASARAVARAVARAVARAUBSARAVARASARAVARASARASARASARASARAVARAYARAVARAVARATARAZAp
+RARASARAVARAVAp
+RARASARAVARBSARASARASARASARAVARB
+RARASARBp
 RARATARAZAp
 RARATAp
-RARAVARA
-RARAVARARBSARASARAYARBp
-RARAVARASARASARASARASARASARASARAVARARASARASARASARAVARASARASARAVARASARASARAVARASARASARAVARASARASARAVARASARASARAVARASARASARAVARASARASARAVARASARASARAVARASARASARAVARB
-RARAVARASARASARASARAVARASARASARASARASARAVARAVAp
+RARAVARASARASARASARAVARASARASARASARBVARAVAp
 RARAVARASARASARASARAVARASARAVAp
-RARAVARASARASARASARAVARAYARASARASARASARASARATARAZAp
+RARAVARASARASARASARAVARAYAUBSARASARASARASARATARAZAp
 RARAVARASARASARAVARAYARASARAVARAVARAVAp
-RARAVARASARAVASARASARASARASARASARASAUBRA
-RARAVARASARAZARAp
-RARAVARAVARASARASARASARATARAZAp
+RARAVARASARASAUASBSARASARASARASARAVARAUBSARASARASARAVARASARASARAVARASARASARAVARASARASARAVARASARASARAVARASARASARAVARASARASARAVARASARASARAVARASARASARAVARASARASARAVARA
+RARAVARASARAVARASARASARB` 0
+RARAVARASARAVARASARAZAUBp
+RARAVARASAUBZARAp
+RARAVARAUASBSARBSARBVBTARAZAp
+RARAVARAVARASARATARASARASARASARASARATARAZAp
+RARAVARAVARASARATARAZAp
 RARAVARAVARASARAVARAYARAZAp
+RARAVARAVARASARAZARAp
 RARAVARAVARAVARASARASARASARAVARAYARASARAZAp
-RARAVARAVARBTARASARASARASARASARATARAZAp
-RARAVARAVAp
-RARAVASARAp
+RARAVARAVARB` 0
+RARAVARAVBSARASARASARATARAZAp
+RARAVARBp
+RARAVASARASAUBSAUBTAUASASASBSAUBVAp
+RARAVASARAVARAUBSARASARASARAVARAVAp
+RARAVATAp
+RARAVAUB
 RARAVAp
-RARAVBSARASARAVARATARAZAp
 RARAYARARAXARARA[ARARA[ARA[ARA[ARAZATA
+RARAYARAp
 RARAZARAp
 RARAZATARAZATARAZATARAZATARAZATARAZATARAZATARAZATARAZATARAZATARAZATARAZATARAZATARAZATARAZATARAZATARAZATARAWATARAZATARARAZATARAZATARAZATARAZATARAZATARAZATARAZATARAZATARAZATARAZATARAZATARAZATARAZATARAZATARAZATARAZATARAZATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAZATARARAZATARAZATARAZATARAZATARAZATARAZATARAZATARAZATARAZATARAZATARAZATARAZATARAZATARAZATARAZATARAZATARAZATARA[ATARARARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARAXATARAXATARA[ATARARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARAXATARA[ATARARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARAXATARAXATARAXATARA[ATARARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARAXATARAXATARA[ATARARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARAXATARAXATARA[ATARARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARAXATARA[ATARARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARA[ATARAXATARAXATARARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAWATARAXATARAXATAp
 RARAZAp
 RARA\AYARB
-RARBVARASARASARASARASARASARAVARB
-RARBVBSAp
-RARBVBVBSARAVAp
+RARBSARASARATARAZAp
 RASARASARASARASARA
-RASARASARASARASARASARASARAVARARAZARAp
-RASARASARASARASARASARASARAVARASARATARAZAp
-RASARAVARAVAVARAVARARASARAVARASARAVARASARAVARASARAVARASARAVARASARAVARASARAVARASARAVARASARA
-RASASARA
-RATARATARATARATARATARATARATARA^E
+RASARASARASARASARASAUBSARASARASARAVARASARATARAZAp
+RASARASARASARASARAVARAYARASAUBSARAVARATARAZAp
+RASARASARASARAVARASARAVARASARASARAVARATARAZAp
+RASARASARAZAp
+RASARAZAp
+RASARAp
+RASBZAp
 RATARAZAp
+RATASASASASB^AZAp
 RAVARA
 RAVARAXATAp
 RAXATARAXATARAXATARAXATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARA]ATAVAUA
 RAXATAVARA
 RAXATAVARAXATAp
 RAXATAWAVARAXATAp
-RAXA`2ATBp
-RAYARASARASARASARASARASARAZAp
-RAYARAYARAYARAYARAYARAYARAYARAYARAYARASARASARASARASARASARASARASARASARASARA[ARA[AT0
+RAXA`2ATFp
 RA\ASA\ASARAp
 RA\ATAYAp
-RA`CARAp
+RA`IA`FARAp
+RA`k0xp
+RBRBRBRBRBRB
 RBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRCp
-RBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBp
+RBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBp
 RBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBp
-RBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRDp
 RBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBp
 RBRBRBRBRBRBRBRBRBRBRBRBRBRBp
 RBRBRBRBRBRBRBRBRBRBRBRBRBp
@@ -7399,6 +7627,7 @@ RBRBRBRBRBRBRBRBRBRBRBp
 RBRBRBRBRBRBRBRBRBRBp
 RBRBRBRBRBRBRBRBRBp
 RBRBRBRBRBRBRBRBp
+RBRBRBRBRBRBRBRCp
 RBRBRBRBRBRBRBp
 RBRBRBRBRBRBp
 RBRBRBRBRBRCp
@@ -7406,13 +7635,11 @@ RBRBRBRBRBp
 RBRBRBRBp
 RBRBRBp
 RBRBRCp
-RBSARAVAp
-RBSBZAp
-RBVARASARAVARBVARASARASARATAp
+RBRBRDp
 RBWATAp
+RBZBRB\BRB
 RB[K\ARB
 RB[K\Ap
-RB`EA`BARAp
 RCRCp p
 RESOURCE_TYPE_ANIMATION_GROUP_INTERNAL
 RESOURCE_TYPE_ANIMATION_INTERNAL
@@ -7426,6 +7653,7 @@ Ragdoll Tag
 RagdollPoseControl
 RandomFloat
 RandomInt
+RandomSeed
 Range lH
 Range uH
 Re-Selection Time Window
@@ -7450,7 +7678,6 @@ RenderHardwareConfig002
 RenderPrimitiveType_t
 RenderService_001
 RenderSkeletonBone_t
-RenderSystemSurface001
 RenderUtils_001
 Requested Frame %i, Max Frame: %i
 Requested next step
@@ -7552,48 +7779,47 @@ RootMotionVelocity
 Rotate Through Forward
 Rotation Limits
 Rotation Parameter
-SARARAp
-SARASARASARARASARASARASARAZARAp
-SARASARASARASARASARAVARAYARASARAZAp
+SARASARASARASARASARASARAVARAUBZARAp
 SARASARASARASARASARAZARAp
+SARASARASARASARAVARATAp
+SARASARASARASARAVARAYARASARASARAZAp
 SARASARASARASARAVARAYARASARAZAp
-SARASARASARASARAZARAp
-SARASARASARATARAZAp
-SARASARASARATAp
 SARASARASARAVARASARASARASARASARAVAp
-SARASARASARAVARASARASARASARAVARASARASARASARASARASARATARAZAp
+SARASARASARAVARASARASARASARAVARASARBSARBSARATARAZAp
 SARASARASARAVARASARAZARAp
-SARASARASARAVARAVARASARASARASARAVARASARASARAVARAVARASARASARAVARB`(AZAWAX0
+SARASARASARAVARAVARASARASARASARAVARASARASARAVARAVARASARASARAVARASARATARASARASARAVARAVAp
+SARASARASARAVAVAYARAp
 SARASARASARAZARAp
-SARASARASARA\AYB
-SARASARASARAp
+SARASARASARA`!ASA`!ASA`!ASA`!ASA`!ASA`!ASA`#ASARA`!ASA`!ASA`!ASA`!ASA`!ASA`!ASA`!ASA`#ASARARARARARARARAp
+SARASARATARAZAp
+SARASARAVARATARAZAp
 SARASARAVARATAp
+SARASARAVARBVARASARAVARASARASARATAp
 SARASARAZARAp
 SARASARAZAp
-SARASARA`!ASA`!ASA`!ASA`!ASA`!ASA`!ASA`#ASARA`!ASA`!ASA`!ASA`!ASA`!ASA`!ASA`!ASARARARARARARARARARARARARARARAUARASARASARAZARAp
-SARASARAp
-SARASARBSARAVARAYARASARASARAZAp
+SARASAUBSARARASARASARASARAZAp
 SARATARAZAp
-SARAVARARASARASARAVARAVAp
-SARAVARASARASARAVARATARAZAp
-SARAVARASARAVARASARASARAVARASARASARAVAp
-SARAVARASARAVARAYARASARASARATARAZAp
+SARAVARASARASARAVARASARAVARASARAVARASARASARASARASARASARASARASARAVARASARASARASARAVAUASBTAp
+SARAVARASARASARAVARASARAVAp
+SARAVARASARAVARAYARBSARATARAZAp
 SARAVARATAp
-SARAVARAVARASARATARASARASARASARASARAVARAYARASARASARAVARATARAZAp
-SARAVARAVARASARAVARASARAVARASARB` 0
+SARAVARAVARARASARAVARASARAVARASARAVARASARAVARASARAVARASARAVARASAUBVARASARAVARASARAVARASARAVARASARA
 SARAVARAVARATARAZAp
 SARAVARAVAp
 SARAVARAYARAVAp
-SARAVARAYAp
+SARAVARAYAUBVAp
 SARAVAp
 SARAZARAp
-SARBSARASARAVBVBYARBp
+SARA`!ASA`!ASA`!ASA`!ASA`!ASA`!ASA`!ASA`!ASA`$ASASARA`!ASA`!ASA`!ASA`!ASA`!ASARARARARARARARARA
+SASASA
+SASASASASASASASA
 SASASASASCSASASASCSASCSASB
-SASAUAp
-SASAUBRB
-SBRBRBRBRBRBRBRBRCp
-SBRBRBRBRBRBRCXBRAWARAWARAWARAWARAWARAWARAWARAWARAWARAWARAWARA`'BRBRB
+SAUBRAp
+SA]A]Ap
+SBRBRBRBRBRBRCXBRAWARAWARAWARAWARAWARAWARAWARAWARAWARAWARAWARA
 SBRBRBRBRC
+SBSARASAUBSARA\AYB
+SB]M^B
 SEQ_POSE_SETTING_CONSTANT
 SEQ_POSE_SETTING_POSITION
 SEQ_POSE_SETTING_ROTATION
@@ -7617,7 +7843,9 @@ SameTimeAsSource
 Sample Count
 Sample Rate
 Sample Times
+SampleCode
 Samples Times
+Samples: %i  Dimensions: %i
 Scale Animation Motion
 ScaleMotion
 ScaleSet[%d] :: %s
@@ -7656,6 +7884,8 @@ Search Interval
 Search when goal changes
 Search when motion ends
 Search when tags change
+Selectable:  MSE: %g  Max Error: %g
+Selected frame is outside of valid range
 Selection Source
 Selection Threshold
 SelectionSource_Bool
@@ -7803,6 +8033,12 @@ Spring Frequency Max
 Spring Frequency Min
 Spring Strength
 Stack depth limit hit (%d
+Stance Override
+Stance Override missing sequence
+Stance Scale
+Stance Source
+StanceInfo_t
+StanceOverrideMode
 Start Cycle
 Start Cycle At
 Start Enabled
@@ -7841,6 +8077,7 @@ Steps Remaining Metric
 Stiffness
 Stop At Goal
 Stop Feet at Goal
+Stop When Graph Destroyed
 Stop on Tag End
 Stopping Distance
 Stopping Min Speed Scale
@@ -7854,6 +8091,7 @@ SubGraph
 SubGraph File
 SubGraphPropertiesEditor
 Subtract
+Subtract Foot Motion
 Subtract node is missing a child.  Will use t-pose by default
 SurfacePropertiesList
 Symbol EH
@@ -7871,7 +8109,8 @@ System/float GetPlaybackSpeed
 System/float GetPrevTime
 System/float GetTime
 System/float GetTimeStep
-TARATARATARATARATARA`DBSA`GA`%AUA
+TARASARAZARAp
+TARATARATARATARATARA`DBSA`FA`#AUA
 TARAZAp
 TAUA^ARARA^ARARAWA
 TAUA^ARARA^ARARA^ARARARAp
@@ -7883,6 +8122,7 @@ TILT_TWIST
 Tag Behavior
 Tag Condition
 Tag End Stop is Instant
+Tag missing from Tag condition on transition from "%s" to "%s" in state machine "%s
 TagSpan_t
 TagStatus
 Target Attachment
@@ -7896,6 +8136,7 @@ Target Source
 Target Speed
 Target State Blend Weight
 Target Type
+Target parameter is invalid
 TargetMoveHeading
 TargetMoveSpeed
 TargetStateBlendWeight
@@ -7961,6 +8202,7 @@ Turn Time Min
 Turn to Face
 Turn to Face Limit
 Turn to Face Offset
+Turn to Face is enabled but the Facing parameter is missing
 TurnHelperNode
 Two Bone
 Two-Bone IK
@@ -7970,12 +8212,20 @@ TwoBoneIK node has invalid IK chain
 TwoBoneIKSettings_t
 Type of mood
 TypeManager
-UARASARASARAVAVARARASARASARAVARASARATARAVAp
-UAUA`eAUA
+UARASARASARAVAVARAUBSARASARAVARATARAVAp
+UASASASAYASASAUASASASASASAUASASBTAUASASASASASASASASASASASASASA]A`#ASAWASASASASASASAUASASASASASASASBTAUASA`%C
+UASASASA`@ATA`+Ap
+UASB`EA
+UA`&AVBRA
+UBRBRB
+UBSARASARASARASARASAp
+UBTARATARATARATARATARATARATARA^E
+UBYARAYARAYARAYARAYARAYARAYARAYARAYARAYARAYARASARASARASARASARASARASARASARASARASARASARASAUB[ARA[ARAR0
 UNKNOWN
 UUUUUU
 UUUUUUU
 UUUUUUUUH
+UnSelectable:  MSE: %g  Max Error: %g
 Unable to parse AE_SV_DUSTTRAIL event "%s
 Unable to write file '%s
 Unassigned
@@ -8008,33 +8258,35 @@ User Defined Values
 UtlMemory_Alloc
 UtlMemory_CalcNewAllocationCount
 V@22IAnimComponentInstance
-VARARASARASARAVARASARAVARASARAVARASARAVARASARAVARA[AYAZA[AYASASASASAXAYAp
-VARARASARAVAp
+VARASARASARASARASARASARASARAVAUBSARASARASARASARASARASARASARASARASARASARASARASARAVARAVARAUBVARASARASARAp
 VARASARASARAVARAVAp
-VARASARATARAZAp
-VARASARAVARASARAVARASARASARAVARASARAVARAVAp
+VARASARAVARASARAVARASARASARAVARASARASARAVARASARAVARASARAVARAVARASARAVARASARAVARASARB` 0
 VARASARAVARASARAVARASARAVARASARAVARASARAVARASARAVARASARAVARASARAVARASARAVARAp
+VARASARAVARATARAZAp
 VARATARAZAp
-VARAVARASARASARASARATAp
-VARAVARAVARAp
-VARAZAp
-VASA`!ASA`"ASARA`!ASA`!ASA`!ASA`"ASARA`!ASA`!ASA`!ASA`!ASA`!ASAp
-VATARAp
-VAUATSPA
+VARATAp
+VARAUBSARASARAVARASARAVARASARAVARASARAVARASARAVARA[AYAZA[AYASASASASAXAYAp
+VARAUBSARAVAp
+VARAVARASARASARASAUBTAp
+VARAVARASARATAp
+VARAVARASARAVASARASARAVARAYARAVARATAp
+VARAVARAVARASARAVARAVARASARA
+VARAVARAVARAVARAUBSARAVARASARAVARASARAVARASARASARASARASARAVARASARASARASARASARASARAVARASARASARAVARASARAVARB` 0
+VARAVARAVAUBp
+VARAVBSARAVARBSARBVBZAp
+VARAYARASARAZAp
+VARAZARAp
+VASA`!ASA`"ASARA`!ASA`!ASA`!ASA`"ASARA`!ASA`!ASA`!ASA`!ASA`!ASA`!ASAp
+VAVASARASAUBSARAVARAYARASARARA
 VApplication001
 VAsyncFileSystem2_001
 VAvi001
+VBTARAp
 VBik001
 VConComm001
 VDataModelAnim( m_sModelName; include_deltas
 VEngineCvar007
 VFileSystem017
-VGUI_Input005
-VGUI_Panel010
-VGUI_Scheme010
-VGUI_Surface032
-VGUI_System010
-VGUI_ivgui008
 VM Did not start
 VMaterialSystem2_001
 VMediaFoundation001
@@ -8133,9 +8385,10 @@ Virtual Joint
 VisBuilder_001
 WARNING: Failed to convert introspected block for file: %s
 WARNING: Invalid resource version (%d): %s
+WASASASA
 WATARARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATAXATARAZATARAZATARA
 WATARAXATARA]ATAYAp
-WA[ARA
+WA[AUBTARA
 Warning
 Warning! autocycle specified on sequence "%s", but it's not looping, ignoring autocycle
 Warning! autocycle specified on sequence "%s", but sequence is not pose parameter invariant, i.e. it has blends, ignoring autocycle
@@ -8173,7 +8426,6 @@ World space tilt normal
 WorldRendererMgr001
 WristBone_t
 XATARARAXATAXATARAXATARAXATARAXATARAXATARAXATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAWATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAWATARAXATARA\ATAVAUA
-XATARAVARARA
 XATARAXATARAXATA
 XATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARA\ATAVAUA
 XATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARARAXATAXATARAXATARAXATARA]ATAVAUA
@@ -8182,17 +8434,20 @@ XATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXA
 XATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAXATARAYATARARAYATARAYATARAYATARAYATARAYATARAYATARAYATARAYATARAYATARAYATARAYATARAYATARAYATARAYATARAYATARAYATARAYATARAYATARAYATARAYATARAYATARAYATARAYATARAYATARAYATARAYATARAYATARAYATARAYATARAYATARAYATARAYATARAYATARAYATARAYATARAYATARAYATARAYATARAYATARA]ATAYAp
 XATARAXATARA]ATAVAUA
 XATARA]ATAVAUA
-XMct$XA
+XATAUASASBVARARA
+XMce`A
+XXA9\=P
 X[A\A]A^A
 Xt9<HufI
 Y@L9S(t
-YARASARATARAZAp
-YARASAp
-YARAYARAYARAYARAYARAYARAYARAYARAYARASARASARASARASARASARASARASARASARASARASARASARAYAYARAYARAYARAYARAYARAYARAYARAYARAYARAYARAYARARAYARASARASARASARASARASARASARASARASARASARASARASARASARASARASARASARASARASARA^ARA
+YARAYARAYARAYARAYARAYARAYARAYARAYARAYARASARASARASARASARASARASARASARASARASARASARASARASARAYAYARAYARAYARAYARAYARAYARAYARAYARAYARAYARAYARARAYARASARASARASARASARASARASARASARASARASARASARASARASARASARASARASARASARASAUASASASASASASASASASASASASASASASASB^ASASASASASASCRA
+YARBYARBSASARBp
+YASASASASASASA`_AUA
 YATAUAXATAp
 YATAUAp
 YAXA\BVBR0
-YBRBXASC
+YA`/ASASASA
+YBRB\ASC
 Yaw Limit
 You must construct it with ORDERED_CONSTRUCT macro in the dependency resolution function
 Z10DevWarningPKcz
@@ -8233,7 +8488,8 @@ Z7LoadKV3P10KeyValues3P10CUtlStringP10CUtlBufferRK7KV3ID_tPKc
 Z7LoadKV3P10KeyValues3P10CUtlStringPKcRK7KV3ID_tS4
 Z7LoadKV3P18CKeyValues3ContextP10CUtlStringP10CUtlBufferRK7KV3ID_tPKc
 Z7SaveKV3RK7KV3ID_tS1_PK10KeyValues3P10CUtlStringP10CUtlBuffer
-ZARAZARAZARAZARAZARAZARAZARAZARAZARAZARA
+ZARATBUAp
+ZARAZARAZARAZARAZARAZARAZARAZARAZARAZAUASASB
 ZATARARAZATAWATARA^ATAVAUA
 ZATAUAp
 ZN10CUtlBuffer13SetBufferTypeEbb
@@ -8280,6 +8536,7 @@ ZN13CBufferString9SetLengthEibPi
 ZN13CRawAllocator4FreeE18RawAllocatorType_tPvm
 ZN13CRawAllocator5AllocE18RawAllocatorType_tmPm
 ZN15CAnimationGraph13FindComponentEN10Reflection6TypeIDEE3$_0
+ZN15CAnimationGraph16BackCompatUpdateEPK6CModelE3$_2
 ZN15CStringRegistry11GetStringIDEPKc
 ZN15CStringRegistry15GetStringForKeyEt
 ZN15CStringRegistry9AddStringEPKci21ERBTreeInsertBehavior
@@ -8287,11 +8544,13 @@ ZN15CStringRegistryC1Ev
 ZN15CStringRegistryD1Ev
 ZN15CUtlBinaryBlock3SetEPKvi
 ZN15CUtlBinaryBlock9SetLengthEi
+ZN15CUtlBinaryBlockaSEOS
 ZN15CUtlBinaryBlockaSERKS
 ZN15CUtlSymbolTable9AddStringEPKcPb
 ZN15CUtlSymbolTable9RemoveAllEv
 ZN15CUtlSymbolTableC1Eiib
 ZN15CUtlSymbolTableD1Ev
+ZN18CMotionNodeManager16SetParamProviderEPK18IParameterProviderE3$_1
 ZN20CUniformRandomStream11RandomFloatEff
 ZN20CUniformRandomStream7SetSeedEi
 ZN20CUniformRandomStream9RandomIntEii
@@ -8312,7 +8571,6 @@ ZN37CTypesafeIntrospectedToKV3TypeManagerILy482955714934E15CAnimationGroupE15All
 ZN37CTypesafeIntrospectedToKV3TypeManagerILy482955714934E15CAnimationGroupE24DeallocateDestroyCleanupEPvP25IResourceDeallocatorUtilsE17CDeallocatorUtils
 ZN9CVProfile19FindOrCreateCounterEPKc14CounterGroup_t
 ZN9KeyValues12LoadFromFileEP11IFileSystemPKcS3_PFbS3_PvES4_S3
-ZN9KeyValues6GetIntEPKci
 ZN9KeyValues9GetStringEPKcS1_Pcm
 ZN9KeyValuesC1EPKc
 ZN9KeyValuesdlEPv
@@ -8331,12 +8589,13 @@ ZNK15CAnimationGraph13FindComponentEN10Reflection6TypeIDEE3$_1
 ZNK15CUtlSymbolTable4FindEPKc
 ZNK15CUtlSymbolTable6StringE10CUtlSymbol
 ZNK16CGraphMotionItem16GetSequencesUsedER13CSequenceListRK13CUtlHashtableI10CUtlStringS3_18DefaultHashFunctorIS3_vE19DefaultEqualFunctorIS3_E11undefined_t10CUtlMemoryI18CUtlHashtableEntryIS3_S3_EiELb0EEE3$_0
-ZNK16CRagdollAnimNode20GetWeightListChoicesEvE3$_1
+ZNK16CRagdollAnimNode20GetWeightListChoicesEvE3$_2
 ZNK17CRagdollComponent13CreateUpdaterER21CAnimGraphInitContextE3$_0
-ZNK18CAnimationSubGraph22AccumulateDependenciesER13CUtlHashtableI10CUtlString7empty_t18DefaultHashFunctorIS1_vE19DefaultEqualFunctorIS1_E11undefined_t10CUtlMemoryI18CUtlHashtableEntryIS1_S2_EiELb0EEE3$_2
 ZNK18CAnimationSubGraph22AccumulateDependenciesER13CUtlHashtableI10CUtlString7empty_t18DefaultHashFunctorIS1_vE19DefaultEqualFunctorIS1_E11undefined_t10CUtlMemoryI18CUtlHashtableEntryIS1_S2_EiELb0EEE3$_3
+ZNK18CAnimationSubGraph22AccumulateDependenciesER13CUtlHashtableI10CUtlString7empty_t18DefaultHashFunctorIS1_vE19DefaultEqualFunctorIS1_E11undefined_t10CUtlMemoryI18CUtlHashtableEntryIS1_S2_EiELb0EEE3$_4
 ZNK9KeyValues10GetNextKeyEv
 ZNK9KeyValues14GetFirstSubKeyEv
+ZNK9KeyValues6GetIntEPKci
 ZNK9KeyValues7GetNameEv
 ZNK9KeyValues8MakeCopyEv
 ZNKSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE7compareEmmPKcm
@@ -8405,6 +8664,7 @@ anim_resource_validate_on_load
 animationsystem
 animationsystem/animationsysteminit
 animationsystem/animgraph/animgraphlogmanager.cpp
+animationsystem/animgraph/motionmatchinganimnode.cpp:250
 animevents
 animgraph0
 animgraph1
@@ -8434,9 +8694,9 @@ animgraph_footlock_hip_offset_enable
 animgraph_footlock_tilt_mode
 animgraph_footlock_trace_ground_enabled
 animgraph_footlock_use_hip_shift
-animgraph_footlock_use_twobone_solve
 animgraph_force_full_network_updates
 animgraph_ik_debug
+animgraph_motionmatching_print_compressionstats
 animgraph_slowdownonslopes_enabled
 animgraph_verify_dirty_netvar_optimization
 animnetvar
@@ -8466,9 +8726,12 @@ autoreset
 bIsEndState
 bIsPassthrough
 bIsStartState
+bLockBlendOnReset
 bLockToPath
+bLockWhenWaning
 bSetEnabled
 bStartEnabled
+bSyncCycles
 bUseAcceleraion
 binary_auto
 binary_bc
@@ -8476,6 +8739,9 @@ binary_lz4
 binary_zstd
 bindPose
 bled logH
+blendKeyType
+blendValue
+blend_anim_events
 blendlayer
 body ofH
 bodygroup
@@ -8500,8 +8766,10 @@ call set
 call witH
 cantdie
 case forH
+ceOverrideUpdateNode
 ch stateH
 character
+children
 cl_skel_constraints_enable
 close sH
 common
@@ -8517,6 +8785,7 @@ const char *Reflection::Internal::GetFuncName() [T = AnimTagID
 const char *Reflection::Internal::GetFuncName() [T = Attribute::AnimGraph::LimitOne
 const char *Reflection::Internal::GetFuncName() [T = Attribute::AnimGraph::NodeOnlyCondition
 const char *Reflection::Internal::GetFuncName() [T = Attribute::AnimGraph::ParamType
+const char *Reflection::Internal::GetFuncName() [T = Attribute::AnimGraph::ReplayInputProvider
 const char *Reflection::Internal::GetFuncName() [T = Attribute::AnimGraph::RequireComponent
 const char *Reflection::Internal::GetFuncName() [T = Attribute::AnimGraph::UseReflectionEditor
 const char *Reflection::Internal::GetFuncName() [T = Attribute::ArrayOperator
@@ -8529,14 +8798,16 @@ const char *Reflection::Internal::GetFuncName() [T = Attribute::FriendlyName
 const char *Reflection::Internal::GetFuncName() [T = Attribute::Group
 const char *Reflection::Internal::GetFuncName() [T = Attribute::Icon
 const char *Reflection::Internal::GetFuncName() [T = Attribute::IsEnabled
+const char *Reflection::Internal::GetFuncName() [T = Attribute::ObjectColor
 const char *Reflection::Internal::GetFuncName() [T = Attribute::ObjectGroup
 const char *Reflection::Internal::GetFuncName() [T = Attribute::ObjectIcon
 const char *Reflection::Internal::GetFuncName() [T = Attribute::ObjectName
 const char *Reflection::Internal::GetFuncName() [T = Attribute::TypeFactory
 const char *Reflection::Internal::GetFuncName() [T = Attribute::UI::AnimGraph::EditExpression
+const char *Reflection::Internal::GetFuncName() [T = Attribute::UI::AnimGraph::EditModelData
 const char *Reflection::Internal::GetFuncName() [T = Attribute::UI::AnimGraph::EditParameter
+const char *Reflection::Internal::GetFuncName() [T = Attribute::UI::AnimGraph::EditParameterValue
 const char *Reflection::Internal::GetFuncName() [T = Attribute::UI::AnimGraph::EditRigidBodyWeightList
-const char *Reflection::Internal::GetFuncName() [T = Attribute::UI::AnimGraph::EditVariantValue
 const char *Reflection::Internal::GetFuncName() [T = Attribute::UI::AutoExpand
 const char *Reflection::Internal::GetFuncName() [T = Attribute::UI::AutoRefresh
 const char *Reflection::Internal::GetFuncName() [T = Attribute::UI::Edit
@@ -8553,6 +8824,7 @@ const char *Reflection::Internal::GetFuncName() [T = Attribute::UI::HideAddRemov
 const char *Reflection::Internal::GetFuncName() [T = Attribute::UI::ReadOnly
 const char *Reflection::Internal::GetFuncName() [T = Attribute::UI::RefreshObjectOnChange
 const char *Reflection::Internal::GetFuncName() [T = Attribute::UI::SortPriority
+const char *Reflection::Internal::GetFuncName() [T = BlendKeyType
 const char *Reflection::Internal::GetFuncName() [T = CActionComponent
 const char *Reflection::Internal::GetFuncName() [T = CActionComponentInstance
 const char *Reflection::Internal::GetFuncName() [T = CActionComponentUpdater
@@ -8610,6 +8882,7 @@ const char *Reflection::Internal::GetFuncName() [T = CBlend2DAnimNodeInstance
 const char *Reflection::Internal::GetFuncName() [T = CBlend2DItemBase
 const char *Reflection::Internal::GetFuncName() [T = CBlend2DUpdateNode
 const char *Reflection::Internal::GetFuncName() [T = CBlendAnimNode
+const char *Reflection::Internal::GetFuncName() [T = CBlendNodeChild
 const char *Reflection::Internal::GetFuncName() [T = CBlendUpdateNode
 const char *Reflection::Internal::GetFuncName() [T = CBlockSelectionMetric
 const char *Reflection::Internal::GetFuncName() [T = CBlockSelectionMetricEvaluator
@@ -8671,6 +8944,9 @@ const char *Reflection::Internal::GetFuncName() [T = CFootFallAnimTag
 const char *Reflection::Internal::GetFuncName() [T = CFootLockAnimNode
 const char *Reflection::Internal::GetFuncName() [T = CFootLockAnimNodeInstance
 const char *Reflection::Internal::GetFuncName() [T = CFootLockUpdateNode
+const char *Reflection::Internal::GetFuncName() [T = CFootPinningAnimNode
+const char *Reflection::Internal::GetFuncName() [T = CFootPinningAnimNodeInstance
+const char *Reflection::Internal::GetFuncName() [T = CFootPinningUpdateNode
 const char *Reflection::Internal::GetFuncName() [T = CFootPositionMetric
 const char *Reflection::Internal::GetFuncName() [T = CFootPositionMetricEvaluator
 const char *Reflection::Internal::GetFuncName() [T = CFootPositionMetricInstance
@@ -8702,6 +8978,7 @@ const char *Reflection::Internal::GetFuncName() [T = CJumpHelperUpdateNode
 const char *Reflection::Internal::GetFuncName() [T = CLODComponent
 const char *Reflection::Internal::GetFuncName() [T = CLODComponentInstance
 const char *Reflection::Internal::GetFuncName() [T = CLODComponentUpdater
+const char *Reflection::Internal::GetFuncName() [T = CLeafUpdateNode
 const char *Reflection::Internal::GetFuncName() [T = CLeanMatrixAnimNode
 const char *Reflection::Internal::GetFuncName() [T = CLeanMatrixUpdateNode
 const char *Reflection::Internal::GetFuncName() [T = CLookAtAnimNode
@@ -8710,6 +8987,9 @@ const char *Reflection::Internal::GetFuncName() [T = CLookComponent
 const char *Reflection::Internal::GetFuncName() [T = CLookComponentInstance
 const char *Reflection::Internal::GetFuncName() [T = CLookComponentUpdater
 const char *Reflection::Internal::GetFuncName() [T = CMaterialAttributeAnimTag
+const char *Reflection::Internal::GetFuncName() [T = CMotionGraphPreviewNode
+const char *Reflection::Internal::GetFuncName() [T = CMotionGraphPreviewNodeInstance
+const char *Reflection::Internal::GetFuncName() [T = CMotionGraphUpdateNode
 const char *Reflection::Internal::GetFuncName() [T = CMotionItem
 const char *Reflection::Internal::GetFuncName() [T = CMotionItemGroup
 const char *Reflection::Internal::GetFuncName() [T = CMotionMatchingAnimNode
@@ -8721,6 +9001,7 @@ const char *Reflection::Internal::GetFuncName() [T = CMotionMetricEvaluator
 const char *Reflection::Internal::GetFuncName() [T = CMotionMetricInstance
 const char *Reflection::Internal::GetFuncName() [T = CMotionNode
 const char *Reflection::Internal::GetFuncName() [T = CMotionNodeBlend1D
+const char *Reflection::Internal::GetFuncName() [T = CMotionNodeBuilder
 const char *Reflection::Internal::GetFuncName() [T = CMotionNodeManager
 const char *Reflection::Internal::GetFuncName() [T = CMotionNodeSequence
 const char *Reflection::Internal::GetFuncName() [T = CMotionParameter
@@ -8785,6 +9066,10 @@ const char *Reflection::Internal::GetFuncName() [T = CSolveIKChainAnimNodeInstan
 const char *Reflection::Internal::GetFuncName() [T = CSolveIKChainUpdateNode
 const char *Reflection::Internal::GetFuncName() [T = CSpeedScaleAnimNode
 const char *Reflection::Internal::GetFuncName() [T = CSpeedScaleUpdateNode
+const char *Reflection::Internal::GetFuncName() [T = CStanceOverrideAnimNode
+const char *Reflection::Internal::GetFuncName() [T = CStanceOverrideUpdateNode
+const char *Reflection::Internal::GetFuncName() [T = CStanceScaleAnimNode
+const char *Reflection::Internal::GetFuncName() [T = CStanceScaleUpdateNode
 const char *Reflection::Internal::GetFuncName() [T = CStateAction
 const char *Reflection::Internal::GetFuncName() [T = CStateMachineAnimNode
 const char *Reflection::Internal::GetFuncName() [T = CStateMachineAnimNodeInstance
@@ -8813,6 +9098,7 @@ const char *Reflection::Internal::GetFuncName() [T = CTurnHelperUpdateNode
 const char *Reflection::Internal::GetFuncName() [T = CTwoBoneIKAnimNode
 const char *Reflection::Internal::GetFuncName() [T = CTwoBoneIKUpdateNode
 const char *Reflection::Internal::GetFuncName() [T = CUtlString
+const char *Reflection::Internal::GetFuncName() [T = CUtlVector<CBlendNodeChild, int, CUtlMemory<CBlendNodeChild, int
 const char *Reflection::Internal::GetFuncName() [T = CUtlVector<CMovementMode, int, CUtlMemory<CMovementMode, int
 const char *Reflection::Internal::GetFuncName() [T = CUtlVector<CRigidBodyWeight, int, CUtlMemory<CRigidBodyWeight, int
 const char *Reflection::Internal::GetFuncName() [T = CUtlVector<CRigidBodyWeightList, int, CUtlMemory<CRigidBodyWeightList, int
@@ -8822,6 +9108,7 @@ const char *Reflection::Internal::GetFuncName() [T = CUtlVector<CSmartPtr<CAnimC
 const char *Reflection::Internal::GetFuncName() [T = CUtlVector<CSmartPtr<CAnimMotorBase, CRefCountAccessor>, int, CUtlMemory<CSmartPtr<CAnimMotorBase, CRefCountAccessor>, int
 const char *Reflection::Internal::GetFuncName() [T = CUtlVector<CSmartPtr<CAnimMotorInstance, CRefCountAccessor>, int, CUtlMemory<CSmartPtr<CAnimMotorInstance, CRefCountAccessor>, int
 const char *Reflection::Internal::GetFuncName() [T = CUtlVector<CSmartPtr<CAnimParameterBase, CRefCountAccessor>, int, CUtlMemory<CSmartPtr<CAnimParameterBase, CRefCountAccessor>, int
+const char *Reflection::Internal::GetFuncName() [T = CUtlVector<CSmartPtr<CAnimParameterInstance, CRefCountAccessor>, int, CUtlMemory<CSmartPtr<CAnimParameterInstance, CRefCountAccessor>, int
 const char *Reflection::Internal::GetFuncName() [T = CUtlVector<CSmartPtr<CAnimTagBase, CRefCountAccessor>, int, CUtlMemory<CSmartPtr<CAnimTagBase, CRefCountAccessor>, int
 const char *Reflection::Internal::GetFuncName() [T = CUtlVector<CSmartPtr<CMotionParameter, CRefCountAccessor>, int, CUtlMemory<CSmartPtr<CMotionParameter, CRefCountAccessor>, int
 const char *Reflection::Internal::GetFuncName() [T = CUtlVector<CStateAction, int, CUtlMemory<CStateAction, int
@@ -8883,6 +9170,7 @@ const char *Reflection::Internal::GetFuncName() [T = IEnumAnimParameter
 const char *Reflection::Internal::GetFuncName() [T = IEnumAnimParameterInstance
 const char *Reflection::Internal::GetFuncName() [T = IFootFallAnimTag
 const char *Reflection::Internal::GetFuncName() [T = IFootLockAnimNodeInstance
+const char *Reflection::Internal::GetFuncName() [T = IFootPinningAnimNodeInstance
 const char *Reflection::Internal::GetFuncName() [T = IFootPositionMetricInstance
 const char *Reflection::Internal::GetFuncName() [T = IFootstepLandedAnimTag
 const char *Reflection::Internal::GetFuncName() [T = IFutureFacingMetricInstance
@@ -8893,6 +9181,8 @@ const char *Reflection::Internal::GetFuncName() [T = IJumpHelperAnimNode
 const char *Reflection::Internal::GetFuncName() [T = ILookComponent
 const char *Reflection::Internal::GetFuncName() [T = ILookComponentInstance
 const char *Reflection::Internal::GetFuncName() [T = IMaterialAttributeAnimTag
+const char *Reflection::Internal::GetFuncName() [T = IMotionGraphPreviewNode
+const char *Reflection::Internal::GetFuncName() [T = IMotionGraphPreviewNodeInstance
 const char *Reflection::Internal::GetFuncName() [T = IMotionItem
 const char *Reflection::Internal::GetFuncName() [T = IMotionItemGroup
 const char *Reflection::Internal::GetFuncName() [T = IMotionMatchingAnimNode
@@ -8904,6 +9194,7 @@ const char *Reflection::Internal::GetFuncName() [T = IMotionParameterManager
 const char *Reflection::Internal::GetFuncName() [T = IMovementComponent
 const char *Reflection::Internal::GetFuncName() [T = IMovementComponentInstance
 const char *Reflection::Internal::GetFuncName() [T = INodeBlend2DItem
+const char *Reflection::Internal::GetFuncName() [T = IParameterProvider
 const char *Reflection::Internal::GetFuncName() [T = IParticleAnimTag
 const char *Reflection::Internal::GetFuncName() [T = IPathAnimMotorInstance
 const char *Reflection::Internal::GetFuncName() [T = IPathMetricInstance
@@ -8935,6 +9226,7 @@ const char *Reflection::Internal::GetFuncName() [T = IVRInputComponentInstance
 const char *Reflection::Internal::GetFuncName() [T = RagdollPoseControl
 const char *Reflection::Internal::GetFuncName() [T = Reflection::CAttribute
 const char *Reflection::Internal::GetFuncName() [T = Reflection::Object
+const char *Reflection::Internal::GetFuncName() [T = SingleFrameSelection
 const char *Reflection::Internal::GetFuncName() [T = StateActionBehavior
 const char *Reflection::Internal::GetFuncName() [T = bool
 const char *Reflection::Internal::GetFuncName() [T = float
@@ -8990,6 +9282,7 @@ d keyworH
 d sectioH
 d token H
 d variabH
+d,Du*z
 d.Add( %s, %d, %.2f
 d.Blend( %d, %.2f
 d.CallSequence( %s, %.2f, %.2f
@@ -9009,6 +9302,7 @@ d:%d - %s (match
 d:%d - %s (skipped
 dHeadingH
 dampening
+damping
 default
 default H
 defaultFacingMode
@@ -9025,6 +9319,7 @@ description
 detach_from_owner
 differ:H
 dition sH
+dnessFactor
 domFloatH
 duration
 dyld_stub_binder
@@ -9033,10 +9328,10 @@ e defaulH
 e definiH
 e of braH
 e' stateH
-e@Mc}pA
+eDE;eHu
+eFrameSelection
 eMoodType_Body
 eMoodType_Head
-eXMc}pA
 ed var dH
 efinitioH
 ehandle
@@ -9056,6 +9351,7 @@ epeat unH
 esize reH
 esize whH
 eventindex
+exMcwxD
 exceeds maximum allowed expression depth of
 exceeds maximum allowed stack depth of
 expressH
@@ -9071,16 +9367,23 @@ f stringH
 f swap sH
 f switchH
 f while-H
+f(Lc{(E
+f(Mc}(D
 f-statemH
+f0Lc{0E
 f4MaxDist
 f4MinDist
 f4RelaxationFactor
 f4Slack
 f4Weight0
 f4Weights
+f8Lc{8E
 f8[A\A^A
-f;BTuNH
+f@Lc{(E
+fPLc{PE
+fXLc{XE
 fXfE;fVL
+f`Lc{`E
 facingDamping
 fadeintime
 fadeouttime
@@ -9092,6 +9395,7 @@ ffer: stH
 ffer: veH
 ffffff
 fffffff
+fhMc}hD
 fieldtype_t
 finitionH
 flAlpha
@@ -9141,20 +9445,25 @@ for switH
 for uniH
 for-looH
 for-loopH
+fpLc{pE
+frameIndex
 framecacheable
 framerangesequence
 framestalltime
 frequencyMax
 frequencyMin
 friction
+fxLc{xE
 g %g %g
 g %g %g %g
 g 'breakH
 g returnH
 g symbolH
+gPHcKPD9
 g_VProfCurrentProfile
 g_bUpdateStringTokenDatabase
 g_pMemAlloc
+g_pThreadPool
 game:tools/images/animgraph_editor/animgraph_icon_action.png
 game:tools/images/animgraph_editor/animgraph_icon_component.png
 game:tools/images/animgraph_editor/animgraph_icon_expression.png
@@ -9184,6 +9493,7 @@ grad2deg
 grad2degH
 grad2degL
 gxx_personality_v0
+hLcchE
 hO9D"(w
 hO9D7(w
 hO9L (w
@@ -9195,7 +9505,6 @@ h[A\A]A^A
 handindex
 has a parameter sequence conflict between
 headtype
-highPitchOcclusion
 hile-looH
 hin a reH
 hscript
@@ -9256,7 +9565,7 @@ instead got
 int CModelVScriptCompile::CreateWeightlist(const char *, HSCRIPT
 int CScriptCreatableSequence::FindPoseParameterFromScript(const ScriptVariant_t &) const
 int CScriptCreatableSequence::FindWeightList(const ScriptVariant_t &) const
-int CUtlSortVector<unsigned int, CUtlSortVectorDefaultLess<unsigned int>, CUtlVector<unsigned int, int, CUtlMemory<unsigned int, int> > >::Find(const TKey &) const [T = unsigned int, LessFunc = CUtlSortVectorDefaultLess<unsigned int>, BaseVector = CUtlVector<unsigned int, int, CUtlMemory<unsigned int, int> >, TKey = unsigned int
+int64)m_nAllocationCount + (int64)num ) <= 0x7FFFFFFF
 integer
 invalid
 invert_orientation
@@ -9276,10 +9585,11 @@ js_array
 js_object
 js_raw_args
 js_value
+kCreateInterface
 keyvalues
 kingEnabH
 l is notH
-lCreateInterface
+l$@Mcw@D
 la_symbol_ptr
 labelled_debug_helper_arc_segments
 labelled_debug_helper_enabled
@@ -9291,6 +9601,7 @@ last_sniff
 layersaffectingmovementandduration
 ldexpf
 le definH
+leAtTimeH
 lement tH
 libanimationsystem.dylib
 lineNumber
@@ -9299,7 +9610,6 @@ loader_path
 log10f
 loop conH
 looping
-lowPitchOcclusion
 lue vectH
 lues durH
 m_AnimOverlay
@@ -9523,9 +9833,11 @@ m_bApplyChannelsSeparately
 m_bApplyFootRotationLimits
 m_bApplyHipDrop
 m_bApplyHipShift
+m_bApplyLegTwistLimits
 m_bApplyMovement
 m_bApplyRotation
 m_bApplyTilt
+m_bApplyToFootMotion
 m_bAutoReset
 m_bAutoTargetSpeed
 m_bAutoplay
@@ -9539,6 +9851,7 @@ m_bCalculatePoseParameters
 m_bCanBatchWithDynamicShaderConstants
 m_bClamp
 m_bComparisonValue
+m_bConstrainTwist
 m_bCrossFade
 m_bCylepose
 m_bDefault
@@ -9575,7 +9888,6 @@ m_bFilterGoalDistance
 m_bFilterGoalOvershoot
 m_bFinishEarly
 m_bForceFacing
-m_bForceFootPlant
 m_bForceSearchWhenTagsChange
 m_bGameWritable
 m_bGoalAssist
@@ -9636,7 +9948,6 @@ m_bModelDoc
 m_bModulateStepHeight
 m_bMoveVarsDisabled
 m_bMulti
-m_bNeedsSort
 m_bNetworkFacing
 m_bNetworkLookTarget
 m_bNetworkPath
@@ -9648,6 +9959,8 @@ m_bOnlyGoals
 m_bOrientMovement
 m_bOverrideMassCenter
 m_bParentJointRequiresAlignment
+m_bPlayOnClient
+m_bPlayOnServer
 m_bPose
 m_bPost
 m_bPreventOvershoot
@@ -9679,6 +9992,7 @@ m_bSpline
 m_bStartEnabled
 m_bStopFeetAtGoal
 m_bStopUpdatingWaypointPos
+m_bStopWhenGraphEnds
 m_bStopWhenTagEnds
 m_bStopping
 m_bSubtract
@@ -9703,7 +10017,6 @@ m_bUseHysteresis
 m_bUseManualTurnOffset
 m_bUseModelSpace
 m_bUseMostRecentValue
-m_bUseNewSearch
 m_bUseShadowFastPath
 m_bUserSpecifiedColor
 m_bUserSpecifiedMaterialGroup
@@ -9720,6 +10033,7 @@ m_blendItems
 m_blendKeyType
 m_blendMethod
 m_blendMode
+m_blendParamID
 m_blendParameter
 m_blendSource
 m_blendSourceX
@@ -9766,6 +10080,7 @@ m_clipDataManager
 m_clipName
 m_clips
 m_cmdLayerArray
+m_codeIndices
 m_collisionAttributes
 m_color
 m_colorCompressor
@@ -9785,14 +10100,12 @@ m_componentManager
 m_componentName
 m_components
 m_conditions
-m_configIndex
 m_configName
 m_constraints
 m_constraints2
 m_container
 m_controlValue
 m_controls
-m_courseQuantizer
 m_currentChoice
 m_currentIndex
 m_currentIndexStartTime
@@ -9854,6 +10167,7 @@ m_eNetworkSetting
 m_eRbfType
 m_eSimSpace
 m_eTagBehavior
+m_eTimingSource
 m_eTransformSource
 m_eType
 m_elasticity
@@ -9943,6 +10257,7 @@ m_flDefaultTimeDilation
 m_flDefaultVelAirDrag
 m_flDefaultVelQuadAirDrag
 m_flDefaultVolumetricSolveAmount
+m_flDirection
 m_flDistance
 m_flDistanceFadeScale
 m_flDistanceScale_InnerRadius
@@ -9973,7 +10288,6 @@ m_flFrequency
 m_flGoalAssistDistance
 m_flGoalAssistTolerance
 m_flGoalDistance
-m_flHighPitchOcclusion
 m_flHipBoneTranslationScale
 m_flHipDipDelay
 m_flHipDipImpactScale
@@ -10004,7 +10318,6 @@ m_flLockBlendTime
 m_flLockBreakBlendTime
 m_flLockBreakTolerance
 m_flLoop
-m_flLowPitchOcclusion
 m_flManualFacingHeading
 m_flManualTargetSpeed
 m_flMass
@@ -10021,6 +10334,8 @@ m_flMaxFraction
 m_flMaxGoalOvershootScale
 m_flMaxIKLength
 m_flMaxImpactForce
+m_flMaxLegStraightAmount
+m_flMaxLegTwist
 m_flMaxPitch
 m_flMaxRadians
 m_flMaxRootHeightOffset
@@ -10032,9 +10347,9 @@ m_flMaxStretchAmount
 m_flMaxTimeRemaining
 m_flMaxTimeStep
 m_flMaxTorque
+m_flMaxTwist
 m_flMaxValue
 m_flMaxYaw
-m_flMidPitchOcclusion
 m_flMin
 m_flMinAngle
 m_flMinDelayBetweenHits
@@ -10053,6 +10368,7 @@ m_flMinValue
 m_flMinYaw
 m_flNextAnimTime
 m_flNextStart
+m_flOcclusionFactor
 m_flOffset
 m_flOriginalJumpDuration
 m_flOriginalJumpMovement
@@ -10175,6 +10491,7 @@ m_footMotionTiming
 m_footName
 m_footOffCycle
 m_footSettings
+m_footStanceInfo
 m_footStrikeCycle
 m_footstepLandedTag
 m_footstepLandedTagIndex
@@ -10188,7 +10505,6 @@ m_goalOrientation
 m_goalPosition
 m_goalWayPointPos
 m_group
-m_groupIndex
 m_groups
 m_hAnticipationHeadingParam
 m_hAnticipationPosParam
@@ -10208,6 +10524,7 @@ m_hParam
 m_hParamIn
 m_hParamOut
 m_hParameter
+m_hParticleSystem
 m_hPoseCacheHandle
 m_hPositionParam
 m_hRotationParam
@@ -10224,7 +10541,6 @@ m_hTargetParam
 m_hTurnToFaceParam
 m_hardThreshold
 m_hardVelocityThreshold
-m_hardnessFactor
 m_hierarchyArray
 m_hingeAxis
 m_hipBoneName
@@ -10262,6 +10578,7 @@ m_inputConnection
 m_inputConnection1
 m_inputConnection2
 m_inputConnectionMap
+m_inputDataBlocks
 m_inputList
 m_inputNodeID
 m_inputValue
@@ -10380,7 +10697,6 @@ m_nConfigCount
 m_nConfigIndex
 m_nConfigStartIndex
 m_nCount
-m_nCourseCentroids
 m_nDefaultMeshGroupMask
 m_nDefaultMotorIndex
 m_nDimensionCount
@@ -10469,6 +10785,7 @@ m_nPriority
 m_nQuadCount1
 m_nQuadCount2
 m_nQuadVelocitySmoothIterations
+m_nRandomSeed
 m_nRefCounter
 m_nReserved
 m_nReservedUint8
@@ -10567,6 +10884,7 @@ m_pRegionSVM
 m_pSettingsManager
 m_pSharedData
 m_pSkeleton
+m_pStanceSourceNode
 m_pStaticPoseCache
 m_pTagManagerUpdater
 m_pTextureAtlas
@@ -10597,6 +10915,7 @@ m_poseCacheHandles
 m_poseControlMethod
 m_poseKeyArray0
 m_poseKeyArray1
+m_poseOpFixedData
 m_poseParams
 m_poseSettingArray
 m_poses
@@ -10609,7 +10928,6 @@ m_previousChoice
 m_previousIndex
 m_previousSelection
 m_processingType
-m_productQuantizer
 m_projectionAngularTolerance
 m_projectionLinearTolerance
 m_proxyItems
@@ -10622,6 +10940,7 @@ m_qChildBindRotation
 m_qFixupRotation
 m_qOffset
 m_qParentBindRotation
+m_quantizer
 m_quaternionCompressor
 m_ragdollNodePaths
 m_ranges
@@ -10644,10 +10963,12 @@ m_renderAttributesUsed
 m_resetCount
 m_resetCycleOption
 m_resetCycleValue
+m_residualQuantizer
 m_rnShape
 m_rolling
 m_rootHeightDamping
 m_rootMotion
+m_rootNode
 m_rootNodePath
 m_rootToWorld
 m_rotation
@@ -10672,7 +10993,6 @@ m_sampleCodes
 m_sampleIndices
 m_sampleTimes
 m_sampleToConfig
-m_samples
 m_scale
 m_sceneObjects
 m_scrapeRough
@@ -10681,9 +11001,10 @@ m_scriptCode
 m_scriptFilename
 m_scriptInfoList
 m_scriptManager
-m_searchIndex
+m_searchDB
 m_segmentArray
 m_segmentIndexArray
+m_selectableSamples
 m_selectionSource
 m_sequenceName
 m_sequenceParams
@@ -10710,12 +11031,14 @@ m_spheres
 m_srcState
 m_srcStateIndex
 m_stanceCycle
+m_stanceSourceConnection
 m_standardDeviations
 m_start
 m_startCycle
 m_startIndex
 m_startStateIndex
 m_startingLocalToWorld
+m_startingLocalToWorldTransform
 m_stateData
 m_stateID
 m_stateMachine
@@ -10726,6 +11049,7 @@ m_strParentBone
 m_strain
 m_strides
 m_stringAttributes
+m_subCode
 m_subGraphFilename
 m_subQuantizers
 m_subtractInputConnection
@@ -10839,6 +11163,7 @@ m_vOrigin
 m_vOrthographicAreas
 m_vPoint0
 m_vPoint1
+m_vPosition
 m_vRayDelta
 m_vRayStart
 m_vRotation
@@ -10914,7 +11239,6 @@ ment forH
 mesh_calculate_curvature_smooth_invert
 mesh_calculate_curvature_smooth_pass_count
 mesh_calculate_curvature_smooth_weight
-midPitchOcclusion
 minSpeed
 minValue
 missing all pose parameters
@@ -10926,6 +11250,7 @@ motionflags
 moveModes
 multi-sH
 n of ranH
+n(Mcg(D
 n-stringH
 n-vectorH
 nBeginDynamic
@@ -10934,6 +11259,8 @@ nChildNode
 nCollisionMask
 nCtrlChild
 nCtrlParent
+nHMcgHD
+nHMc|$HD
 nListBegin
 nListEnd
 nMapOffset
@@ -10999,9 +11326,10 @@ o [*] stH
 o add neH
 o switchH
 o! ConstH
-o(Hc^(H
 o(L9o0u
 oHeadingH
+o`Ic_XH
+occlusionFactor
 of for-lH
 of if-sH
 of rangeH
@@ -11015,6 +11343,7 @@ on for wH
 on of foH
 op condiH
 open_asset %s
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/mathlib/kmeansclustering.cpp:155
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/mathlib/mathlib.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/schemalib/schemaclassinfo.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/tier0_perproject/singletons.cpp
@@ -11024,10 +11353,13 @@ ormalizeH
 ounteredH
 out of range for vector
 ower bouH
+p   0@0@` 0
+p  00 0
 p 00 0
 p(p0p0p
-pHcA Hk
+p8RBRBp
 pLcxHM
+pRBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp
 p[A\A^A
 p`p 0 `p
 p`p`ppp
@@ -11053,6 +11385,7 @@ poseparamweight
 poseparamweightinverse
 posetocycle
 position
+pp0@ 0
 pper bouH
 pppppppp
 pseq_idx
@@ -11062,7 +11395,7 @@ pthread_mutex_lock
 pthread_mutex_unlock
 pthread_mutexattr_init
 pthread_mutexattr_settype
-public/tier0/utlsortvector.h
+public/tier0/utlmemory.h
 qAdjust
 quaternion
 r break H
@@ -11082,6 +11415,7 @@ range dH
 range, H
 re end oH
 remapactivity
+reorder_sequences
 repeat H
 require at least
 require no more than
@@ -11284,7 +11618,7 @@ t cases H
 t of subH
 t of swiH
 t$XI9t$`t91
-t'@KcT7<H
+t&A9G0u
 t(D#C\L
 t*t)*tH
 t*t)*tI
@@ -11300,11 +11634,12 @@ t-t)/tH
 t/t)*tH
 t/t)/tH
 t:LcOpM
+t>D8-jdy
 t@9qh~=H
 tailframe
 tatementH
 tch statH
-tdIcNXH
+tdIcOXH
 tement-0H
 ter condH
 ter incrH
@@ -11359,6 +11694,7 @@ unknown_variant_type
 unsigned
 until loH
 unwind_info
+upMc|$pD
 urn callH
 useMotionDamping
 useSmoothPaths
@@ -11408,8 +11744,391 @@ void CUtlLeanVectorBase<NetVarRegInfo<bool>, short>::EnsureCapacity(int, bool) [
 void CUtlLeanVectorBase<NetVarRegInfo<float>, short>::EnsureCapacity(int, bool) [T = NetVarRegInfo<float>, I = short
 void CUtlLeanVectorBase<NetVarRegInfo<int>, short>::EnsureCapacity(int, bool) [T = NetVarRegInfo<int>, I = short
 void CUtlLeanVectorBase<NetVarRegInfo<unsigned char>, short>::EnsureCapacity(int, bool) [T = NetVarRegInfo<unsigned char>, I = short
-void CUtlLeanVectorBase<NetVarRegInfo<unsigned short>, short>::EnsureCapacity(int, bool) [T = NetVarRegInfo<unsigned short>, I = short
+void CUtlLeanVectorBase<NetVarRegInfo<unsigned int>, short>::EnsureCapacity(int, bool) [T = NetVarRegInfo<unsigned int>, I = short
 void CUtlLeanVectorFixedGrowableBase<char, 8192, short>::EnsureCapacity(int, bool) [T = char, N = 8192, I = short
+void CUtlMemory<AABB_t, int>::Grow(int) [T = AABB_t, I = int
+void CUtlMemory<AnimBounds_t, int>::Grow(int) [T = AnimBounds_t, I = int
+void CUtlMemory<AnimEventDetectDesc_t, int>::Grow(int) [T = AnimEventDetectDesc_t, I = int
+void CUtlMemory<AnimEvent_t, int>::Grow(int) [T = AnimEvent_t, I = int
+void CUtlMemory<AnimGraphNetVarUpdateEntry_t, int>::Grow(int) [T = AnimGraphNetVarUpdateEntry_t, I = int
+void CUtlMemory<AnimGraphOperation_t, int>::Grow(int) [T = AnimGraphOperation_t, I = int
+void CUtlMemory<AnimInstanceMap_t, int>::Grow(int) [T = AnimInstanceMap_t, I = int
+void CUtlMemory<AnimNodeID, int>::Grow(int) [T = AnimNodeID, I = int
+void CUtlMemory<AnimNodeOutputID, int>::Grow(int) [T = AnimNodeOutputID, I = int
+void CUtlMemory<AnimParamID, int>::Grow(int) [T = AnimParamID, I = int
+void CUtlMemory<AnimTagID, int>::Grow(int) [T = AnimTagID, I = int
+void CUtlMemory<AnimationDecodeDebugDumpElement_t, int>::Grow(int) [T = AnimationDecodeDebugDumpElement_t, I = int
+void CUtlMemory<AnimationEventOccurrence_t, int>::Grow(int) [T = AnimationEventOccurrence_t, I = int
+void CUtlMemory<Attribute::UI::Choice_t, int>::Grow(int) [T = Attribute::UI::Choice_t, I = int
+void CUtlMemory<BlendItem_t, int>::Grow(int) [T = BlendItem_t, I = int
+void CUtlMemory<BodyGroupChoice_t, int>::Grow(int) [T = BodyGroupChoice_t, I = int
+void CUtlMemory<CActivityRemap, int>::Grow(int) [T = CActivityRemap, I = int
+void CUtlMemory<CAnimActivity, int>::Grow(int) [T = CAnimActivity, I = int
+void CUtlMemory<CAnimAnimEvent, int>::Grow(int) [T = CAnimAnimEvent, I = int
+void CUtlMemory<CAnimBone, int>::Grow(int) [T = CAnimBone, I = int
+void CUtlMemory<CAnimBoneDifference, int>::Grow(int) [T = CAnimBoneDifference, I = int
+void CUtlMemory<CAnimContainer_Imp::AnimationGroupImp_t, int>::Grow(int) [T = CAnimContainer_Imp::AnimationGroupImp_t, I = int
+void CUtlMemory<CAnimDataChannel, int>::Grow(int) [T = CAnimDataChannel, I = int
+void CUtlMemory<CAnimDataChannelDesc, int>::Grow(int) [T = CAnimDataChannelDesc, I = int
+void CUtlMemory<CAnimDecodeSwizzle, int>::Grow(int) [T = CAnimDecodeSwizzle, I = int
+void CUtlMemory<CAnimDecoder, int>::Grow(int) [T = CAnimDecoder, I = int
+void CUtlMemory<CAnimDesc, int>::Grow(int) [T = CAnimDesc, I = int
+void CUtlMemory<CAnimFoot, int>::Grow(int) [T = CAnimFoot, I = int
+void CUtlMemory<CAnimFrameBlockAnim, int>::Grow(int) [T = CAnimFrameBlockAnim, I = int
+void CUtlMemory<CAnimFrameSegment, int>::Grow(int) [T = CAnimFrameSegment, I = int
+void CUtlMemory<CAnimLocalHierarchy, int>::Grow(int) [T = CAnimLocalHierarchy, I = int
+void CUtlMemory<CAnimMorphDifference, int>::Grow(int) [T = CAnimMorphDifference, I = int
+void CUtlMemory<CAnimMovement, int>::Grow(int) [T = CAnimMovement, I = int
+void CUtlMemory<CAnimNodeBase *, int>::Grow(int) [T = CAnimNodeBase *, I = int
+void CUtlMemory<CAnimNodeConnection, int>::Grow(int) [T = CAnimNodeConnection, I = int
+void CUtlMemory<CAnimNodePath, int>::Grow(int) [T = CAnimNodePath, I = int
+void CUtlMemory<CAnimParamHandle, int>::Grow(int) [T = CAnimParamHandle, I = int
+void CUtlMemory<CAnimPose *, int>::Grow(int) [T = CAnimPose *, I = int
+void CUtlMemory<CAnimScriptBuilder::ScriptBuildInfo_t, int>::Grow(int) [T = CAnimScriptBuilder::ScriptBuildInfo_t, I = int
+void CUtlMemory<CAnimState *, int>::Grow(int) [T = CAnimState *, I = int
+void CUtlMemory<CAnimTagManagerInstance::AnimTagWithStatus, int>::Grow(int) [T = CAnimTagManagerInstance::AnimTagWithStatus, I = int
+void CUtlMemory<CAnimUpdateContext::NodeUpdateDesc_t, int>::Grow(int) [T = CAnimUpdateContext::NodeUpdateDesc_t, I = int
+void CUtlMemory<CAnimUpdateNodeRef, int>::Grow(int) [T = CAnimUpdateNodeRef, I = int
+void CUtlMemory<CAnimUser, int>::Grow(int) [T = CAnimUser, I = int
+void CUtlMemory<CAnimUserDifference, int>::Grow(int) [T = CAnimUserDifference, I = int
+void CUtlMemory<CAnimationBucket, int>::Grow(int) [T = CAnimationBucket, I = int
+void CUtlMemory<CAnimationChannelResult, int>::Grow(int) [T = CAnimationChannelResult, I = int
+void CUtlMemory<CAnimationDecodeOp, int>::Grow(int) [T = CAnimationDecodeOp, I = int
+void CUtlMemory<CAnimationGroupResource *, int>::Grow(int) [T = CAnimationGroupResource *, I = int
+void CUtlMemory<CAnimationResult, int>::Grow(int) [T = CAnimationResult, I = int
+void CUtlMemory<CBaseConstraint *, int>::Grow(int) [T = CBaseConstraint *, I = int
+void CUtlMemory<CBlendNodeChild, int>::Grow(int) [T = CBlendNodeChild, I = int
+void CUtlMemory<CBodyGroupSetting, int>::Grow(int) [T = CBodyGroupSetting, I = int
+void CUtlMemory<CBoneConstraintPoseSpaceBone::Input_t, int>::Grow(int) [T = CBoneConstraintPoseSpaceBone::Input_t, I = int
+void CUtlMemory<CBoneConstraintPoseSpaceMorph::Input_t, int>::Grow(int) [T = CBoneConstraintPoseSpaceMorph::Input_t, I = int
+void CUtlMemory<CBufferString, int>::Grow(int) [T = CBufferString, I = int
+void CUtlMemory<CCachedPose, int>::Grow(int) [T = CCachedPose, I = int
+void CUtlMemory<CChoiceNodeChild, int>::Grow(int) [T = CChoiceNodeChild, I = int
+void CUtlMemory<CCompressor<Color> *, int>::Grow(int) [T = CCompressor<Color> *, I = int
+void CUtlMemory<CCompressor<QuaternionStorage> *, int>::Grow(int) [T = CCompressor<QuaternionStorage> *, I = int
+void CUtlMemory<CCompressor<Vector2D> *, int>::Grow(int) [T = CCompressor<Vector2D> *, I = int
+void CUtlMemory<CCompressor<Vector4D> *, int>::Grow(int) [T = CCompressor<Vector4D> *, I = int
+void CUtlMemory<CCompressor<Vector> *, int>::Grow(int) [T = CCompressor<Vector> *, I = int
+void CUtlMemory<CCompressor<bool> *, int>::Grow(int) [T = CCompressor<bool> *, I = int
+void CUtlMemory<CCompressor<float> *, int>::Grow(int) [T = CCompressor<float> *, I = int
+void CUtlMemory<CCompressor<int> *, int>::Grow(int) [T = CCompressor<int> *, I = int
+void CUtlMemory<CConnectionProxyItem, int>::Grow(int) [T = CConnectionProxyItem, I = int
+void CUtlMemory<CConstraintSlave, int>::Grow(int) [T = CConstraintSlave, I = int
+void CUtlMemory<CConstraintTarget, int>::Grow(int) [T = CConstraintTarget, I = int
+void CUtlMemory<CDampedValueItem, int>::Grow(int) [T = CDampedValueItem, I = int
+void CUtlMemory<CDampedValueUpdateItem, int>::Grow(int) [T = CDampedValueUpdateItem, I = int
+void CUtlMemory<CFeIndexedJiggleBone, int>::Grow(int) [T = CFeIndexedJiggleBone, I = int
+void CUtlMemory<CFingerBone, int>::Grow(int) [T = CFingerBone, I = int
+void CUtlMemory<CFingerChain, int>::Grow(int) [T = CFingerChain, I = int
+void CUtlMemory<CFingerSource, int>::Grow(int) [T = CFingerSource, I = int
+void CUtlMemory<CFlexController, int>::Grow(int) [T = CFlexController, I = int
+void CUtlMemory<CFlexDesc, int>::Grow(int) [T = CFlexDesc, I = int
+void CUtlMemory<CFlexOp, int>::Grow(int) [T = CFlexOp, I = int
+void CUtlMemory<CFlexRule, int>::Grow(int) [T = CFlexRule, I = int
+void CUtlMemory<CFootDefinition, int>::Grow(int) [T = CFootDefinition, I = int
+void CUtlMemory<CFootLockItem, int>::Grow(int) [T = CFootLockItem, I = int
+void CUtlMemory<CFootMotion, int>::Grow(int) [T = CFootMotion, I = int
+void CUtlMemory<CFootPinningItem, int>::Grow(int) [T = CFootPinningItem, I = int
+void CUtlMemory<CFootStepTriggerItem, int>::Grow(int) [T = CFootStepTriggerItem, I = int
+void CUtlMemory<CFootStride, int>::Grow(int) [T = CFootStride, I = int
+void CUtlMemory<CFootTrajectory, int>::Grow(int) [T = CFootTrajectory, I = int
+void CUtlMemory<CHitBox, int>::Grow(int) [T = CHitBox, I = int
+void CUtlMemory<CHitBoxSet, int>::Grow(int) [T = CHitBoxSet, I = int
+void CUtlMemory<CIKChainData_t, int>::Grow(int) [T = CIKChainData_t, I = int
+void CUtlMemory<CIKChainJointData_t, int>::Grow(int) [T = CIKChainJointData_t, I = int
+void CUtlMemory<CInternalOperation, int>::Grow(int) [T = CInternalOperation, I = int
+void CUtlMemory<CJiggleBoneItem, int>::Grow(int) [T = CJiggleBoneItem, I = int
+void CUtlMemory<CKeyValues3ArrayCluster *, int>::Grow(int) [T = CKeyValues3ArrayCluster *, I = int
+void CUtlMemory<CKeyValues3Cluster *, int>::Grow(int) [T = CKeyValues3Cluster *, I = int
+void CUtlMemory<CKeyValues3TableCluster *, int>::Grow(int) [T = CKeyValues3TableCluster *, I = int
+void CUtlMemory<CLookAtChain, int>::Grow(int) [T = CLookAtChain, I = int
+void CUtlMemory<CLookAtChainItem, int>::Grow(int) [T = CLookAtChainItem, I = int
+void CUtlMemory<CMaterialDrawDescriptor, int>::Grow(int) [T = CMaterialDrawDescriptor, I = int
+void CUtlMemory<CMeshletDescriptor, int>::Grow(int) [T = CMeshletDescriptor, I = int
+void CUtlMemory<CModelConfig *, int>::Grow(int) [T = CModelConfig *, I = int
+void CUtlMemory<CModelConfigElement *, int>::Grow(int) [T = CModelConfigElement *, I = int
+void CUtlMemory<CModelConfigEval_AttachedModel *, int>::Grow(int) [T = CModelConfigEval_AttachedModel *, I = int
+void CUtlMemory<CModelConfigEval_Command_t, int>::Grow(int) [T = CModelConfigEval_Command_t, I = int
+void CUtlMemory<CModelConfigUserPick, int>::Grow(int) [T = CModelConfigUserPick, I = int
+void CUtlMemory<CMorphBundleData, int>::Grow(int) [T = CMorphBundleData, I = int
+void CUtlMemory<CMorphData, int>::Grow(int) [T = CMorphData, I = int
+void CUtlMemory<CMorphRectData, int>::Grow(int) [T = CMorphRectData, I = int
+void CUtlMemory<CMotionGraphConfig, int>::Grow(int) [T = CMotionGraphConfig, I = int
+void CUtlMemory<CMotionGraphGroup, int>::Grow(int) [T = CMotionGraphGroup, I = int
+void CUtlMemory<CMotionMatchingAnimNode::SampleCreationDesc_t, int>::Grow(int) [T = CMotionMatchingAnimNode::SampleCreationDesc_t, I = int
+void CUtlMemory<CMotionMetricEvaluator *, int>::Grow(int) [T = CMotionMetricEvaluator *, I = int
+void CUtlMemory<CMotionSearchNode *, int>::Grow(int) [T = CMotionSearchNode *, I = int
+void CUtlMemory<CMoveSpeed, int>::Grow(int) [T = CMoveSpeed, I = int
+void CUtlMemory<CMovementMode, int>::Grow(int) [T = CMovementMode, I = int
+void CUtlMemory<CNetVarHandle, int>::Grow(int) [T = CNetVarHandle, I = int
+void CUtlMemory<CPackedAnimationChannelDesc::ChannelDesc_t, int>::Grow(int) [T = CPackedAnimationChannelDesc::ChannelDesc_t, I = int
+void CUtlMemory<CPhysSurfaceProperties *, int>::Grow(int) [T = CPhysSurfaceProperties *, I = int
+void CUtlMemory<CPoseRecipe::PoseOpDesc, int>::Grow(int) [T = CPoseRecipe::PoseOpDesc, I = int
+void CUtlMemory<CRigidBodyWeight, int>::Grow(int) [T = CRigidBodyWeight, I = int
+void CUtlMemory<CRigidBodyWeightList, int>::Grow(int) [T = CRigidBodyWeightList, I = int
+void CUtlMemory<CSceneObjectData, int>::Grow(int) [T = CSceneObjectData, I = int
+void CUtlMemory<CSchemaInheritanceIterator::ClassToTraverse_t, int>::Grow(int) [T = CSchemaInheritanceIterator::ClassToTraverse_t, I = int
+void CUtlMemory<CScriptCreatableSequence::Activity_t, int>::Grow(int) [T = CScriptCreatableSequence::Activity_t, I = int
+void CUtlMemory<CSeqAutoLayer, int>::Grow(int) [T = CSeqAutoLayer, I = int
+void CUtlMemory<CSeqBoneMaskList, int>::Grow(int) [T = CSeqBoneMaskList, I = int
+void CUtlMemory<CSeqCmdLayer, int>::Grow(int) [T = CSeqCmdLayer, I = int
+void CUtlMemory<CSeqCmdSeqDesc, int>::Grow(int) [T = CSeqCmdSeqDesc, I = int
+void CUtlMemory<CSeqGroupInstance, int>::Grow(int) [T = CSeqGroupInstance, I = int
+void CUtlMemory<CSeqIKLock, int>::Grow(int) [T = CSeqIKLock, I = int
+void CUtlMemory<CSeqPoseParamDesc, int>::Grow(int) [T = CSeqPoseParamDesc, I = int
+void CUtlMemory<CSeqPoseSetting, int>::Grow(int) [T = CSeqPoseSetting, I = int
+void CUtlMemory<CSeqS1SeqDesc, int>::Grow(int) [T = CSeqS1SeqDesc, I = int
+void CUtlMemory<CSeqScaleSet, int>::Grow(int) [T = CSeqScaleSet, I = int
+void CUtlMemory<CSeqSynthAnimDesc, int>::Grow(int) [T = CSeqSynthAnimDesc, I = int
+void CUtlMemory<CSimpleSequenceTransitioner<CAnimationHelper>::TransitioningLaterMetaInfo_t, int>::Grow(int) [T = CSimpleSequenceTransitioner<CAnimationHelper>::TransitioningLaterMetaInfo_t, I = int
+void CUtlMemory<CSmartPtr<CAnimActionBase, CRefCountAccessor>, int>::Grow(int) [T = CSmartPtr<CAnimActionBase, CRefCountAccessor>, I = int
+void CUtlMemory<CSmartPtr<CAnimActionUpdater, CRefCountAccessor>, int>::Grow(int) [T = CSmartPtr<CAnimActionUpdater, CRefCountAccessor>, I = int
+void CUtlMemory<CSmartPtr<CAnimComponentBase, CRefCountAccessor>, int>::Grow(int) [T = CSmartPtr<CAnimComponentBase, CRefCountAccessor>, I = int
+void CUtlMemory<CSmartPtr<CAnimComponentInstance, CRefCountAccessor>, int>::Grow(int) [T = CSmartPtr<CAnimComponentInstance, CRefCountAccessor>, I = int
+void CUtlMemory<CSmartPtr<CAnimComponentUpdater, CRefCountAccessor>, int>::Grow(int) [T = CSmartPtr<CAnimComponentUpdater, CRefCountAccessor>, I = int
+void CUtlMemory<CSmartPtr<CAnimGraphSettingsGroup, CRefCountAccessor>, int>::Grow(int) [T = CSmartPtr<CAnimGraphSettingsGroup, CRefCountAccessor>, I = int
+void CUtlMemory<CSmartPtr<CAnimMotorBase, CRefCountAccessor>, int>::Grow(int) [T = CSmartPtr<CAnimMotorBase, CRefCountAccessor>, I = int
+void CUtlMemory<CSmartPtr<CAnimMotorInstance, CRefCountAccessor>, int>::Grow(int) [T = CSmartPtr<CAnimMotorInstance, CRefCountAccessor>, I = int
+void CUtlMemory<CSmartPtr<CAnimMotorUpdaterBase, CRefCountAccessor>, int>::Grow(int) [T = CSmartPtr<CAnimMotorUpdaterBase, CRefCountAccessor>, I = int
+void CUtlMemory<CSmartPtr<CAnimParameterBase, CRefCountAccessor>, int>::Grow(int) [T = CSmartPtr<CAnimParameterBase, CRefCountAccessor>, I = int
+void CUtlMemory<CSmartPtr<CAnimParameterInstance, CRefCountAccessor>, int>::Grow(int) [T = CSmartPtr<CAnimParameterInstance, CRefCountAccessor>, I = int
+void CUtlMemory<CSmartPtr<CAnimReplayFrame, CRefCountAccessor>, int>::Grow(int) [T = CSmartPtr<CAnimReplayFrame, CRefCountAccessor>, I = int
+void CUtlMemory<CSmartPtr<CAnimScriptFunction, CRefCountAccessor>, int>::Grow(int) [T = CSmartPtr<CAnimScriptFunction, CRefCountAccessor>, I = int
+void CUtlMemory<CSmartPtr<CAnimScriptFunctionFactory::CMaker, CRefCountAccessor>, int>::Grow(int) [T = CSmartPtr<CAnimScriptFunctionFactory::CMaker, CRefCountAccessor>, I = int
+void CUtlMemory<CSmartPtr<CAnimState, CRefCountAccessor>, int>::Grow(int) [T = CSmartPtr<CAnimState, CRefCountAccessor>, I = int
+void CUtlMemory<CSmartPtr<CAnimStateConditionBase, CRefCountAccessor>, int>::Grow(int) [T = CSmartPtr<CAnimStateConditionBase, CRefCountAccessor>, I = int
+void CUtlMemory<CSmartPtr<CAnimStateTransition, CRefCountAccessor>, int>::Grow(int) [T = CSmartPtr<CAnimStateTransition, CRefCountAccessor>, I = int
+void CUtlMemory<CSmartPtr<CAnimTagBase, CRefCountAccessor>, int>::Grow(int) [T = CSmartPtr<CAnimTagBase, CRefCountAccessor>, I = int
+void CUtlMemory<CSmartPtr<CAnimTagSpan, CRefCountAccessor>, int>::Grow(int) [T = CSmartPtr<CAnimTagSpan, CRefCountAccessor>, I = int
+void CUtlMemory<CSmartPtr<CAnimUpdateNodeBase, CRefCountAccessor>, int>::Grow(int) [T = CSmartPtr<CAnimUpdateNodeBase, CRefCountAccessor>, I = int
+void CUtlMemory<CSmartPtr<CBlend2DItemBase, CRefCountAccessor>, int>::Grow(int) [T = CSmartPtr<CBlend2DItemBase, CRefCountAccessor>, I = int
+void CUtlMemory<CSmartPtr<CMotionGraph, CRefCountAccessor>, int>::Grow(int) [T = CSmartPtr<CMotionGraph, CRefCountAccessor>, I = int
+void CUtlMemory<CSmartPtr<CMotionItem, CRefCountAccessor>, int>::Grow(int) [T = CSmartPtr<CMotionItem, CRefCountAccessor>, I = int
+void CUtlMemory<CSmartPtr<CMotionItemGroup, CRefCountAccessor>, int>::Grow(int) [T = CSmartPtr<CMotionItemGroup, CRefCountAccessor>, I = int
+void CUtlMemory<CSmartPtr<CMotionMetricBase, CRefCountAccessor>, int>::Grow(int) [T = CSmartPtr<CMotionMetricBase, CRefCountAccessor>, I = int
+void CUtlMemory<CSmartPtr<CMotionMetricEvaluator, CRefCountAccessor>, int>::Grow(int) [T = CSmartPtr<CMotionMetricEvaluator, CRefCountAccessor>, I = int
+void CUtlMemory<CSmartPtr<CMotionMetricInstance, CRefCountAccessor>, int>::Grow(int) [T = CSmartPtr<CMotionMetricInstance, CRefCountAccessor>, I = int
+void CUtlMemory<CSmartPtr<CMotionNode, CRefCountAccessor>, int>::Grow(int) [T = CSmartPtr<CMotionNode, CRefCountAccessor>, I = int
+void CUtlMemory<CSmartPtr<CMotionParameter, CRefCountAccessor>, int>::Grow(int) [T = CSmartPtr<CMotionParameter, CRefCountAccessor>, I = int
+void CUtlMemory<CSmartPtr<ConditionUpdater, CRefCountAccessor>, int>::Grow(int) [T = CSmartPtr<ConditionUpdater, CRefCountAccessor>, I = int
+void CUtlMemory<CSmartPtr<IScriptFile, CRefCountAccessor>, int>::Grow(int) [T = CSmartPtr<IScriptFile, CRefCountAccessor>, I = int
+void CUtlMemory<CSmartPtr<Reflection::CTypeFactory<CMotionGraphNodeFactory, CAnimNodeBase>::CFactoryMaker, CRefCountAccessor>, int>::Grow(int) [T = CSmartPtr<Reflection::CTypeFactory<CMotionGraphNodeFactory, CAnimNodeBase>::CFactoryMaker, CRefCountAccessor>, I = int
+void CUtlMemory<CSmartPtr<Reflection::CTypeFactory<void, CAnimActionBase>::CFactoryMaker, CRefCountAccessor>, int>::Grow(int) [T = CSmartPtr<Reflection::CTypeFactory<void, CAnimActionBase>::CFactoryMaker, CRefCountAccessor>, I = int
+void CUtlMemory<CSmartPtr<Reflection::CTypeFactory<void, CAnimComponentBase>::CFactoryMaker, CRefCountAccessor>, int>::Grow(int) [T = CSmartPtr<Reflection::CTypeFactory<void, CAnimComponentBase>::CFactoryMaker, CRefCountAccessor>, I = int
+void CUtlMemory<CSmartPtr<Reflection::CTypeFactory<void, CAnimMotorBase>::CFactoryMaker, CRefCountAccessor>, int>::Grow(int) [T = CSmartPtr<Reflection::CTypeFactory<void, CAnimMotorBase>::CFactoryMaker, CRefCountAccessor>, I = int
+void CUtlMemory<CSmartPtr<Reflection::CTypeFactory<void, CAnimNodeBase>::CFactoryMaker, CRefCountAccessor>, int>::Grow(int) [T = CSmartPtr<Reflection::CTypeFactory<void, CAnimNodeBase>::CFactoryMaker, CRefCountAccessor>, I = int
+void CUtlMemory<CSmartPtr<Reflection::CTypeFactory<void, CAnimParameterBase>::CFactoryMaker, CRefCountAccessor>, int>::Grow(int) [T = CSmartPtr<Reflection::CTypeFactory<void, CAnimParameterBase>::CFactoryMaker, CRefCountAccessor>, I = int
+void CUtlMemory<CSmartPtr<Reflection::CTypeFactory<void, CAnimStateConditionBase>::CFactoryMaker, CRefCountAccessor>, int>::Grow(int) [T = CSmartPtr<Reflection::CTypeFactory<void, CAnimStateConditionBase>::CFactoryMaker, CRefCountAccessor>, I = int
+void CUtlMemory<CSmartPtr<Reflection::CTypeFactory<void, CAnimTagBase>::CFactoryMaker, CRefCountAccessor>, int>::Grow(int) [T = CSmartPtr<Reflection::CTypeFactory<void, CAnimTagBase>::CFactoryMaker, CRefCountAccessor>, I = int
+void CUtlMemory<CSmartPtr<Reflection::CTypeFactory<void, CBlend2DItemBase>::CFactoryMaker, CRefCountAccessor>, int>::Grow(int) [T = CSmartPtr<Reflection::CTypeFactory<void, CBlend2DItemBase>::CFactoryMaker, CRefCountAccessor>, I = int
+void CUtlMemory<CSmartPtr<Reflection::CTypeFactory<void, CMotionItem>::CFactoryMaker, CRefCountAccessor>, int>::Grow(int) [T = CSmartPtr<Reflection::CTypeFactory<void, CMotionItem>::CFactoryMaker, CRefCountAccessor>, I = int
+void CUtlMemory<CSmartPtr<Reflection::CTypeFactory<void, CMotionMetricBase>::CFactoryMaker, CRefCountAccessor>, int>::Grow(int) [T = CSmartPtr<Reflection::CTypeFactory<void, CMotionMetricBase>::CFactoryMaker, CRefCountAccessor>, I = int
+void CUtlMemory<CSolveIKChainAnimNodeChainData, int>::Grow(int) [T = CSolveIKChainAnimNodeChainData, I = int
+void CUtlMemory<CSolveIKChainData, int>::Grow(int) [T = CSolveIKChainData, I = int
+void CUtlMemory<CStateAction, int>::Grow(int) [T = CStateAction, I = int
+void CUtlMemory<CStateActionUpdater, int>::Grow(int) [T = CStateActionUpdater, I = int
+void CUtlMemory<CStateNodeStateData, int>::Grow(int) [T = CStateNodeStateData, I = int
+void CUtlMemory<CStateNodeTransitionData, int>::Grow(int) [T = CStateNodeTransitionData, I = int
+void CUtlMemory<CStateUpdateData, int>::Grow(int) [T = CStateUpdateData, I = int
+void CUtlMemory<CStrongHandle<InfoForResourceTypeCAnimData>, int>::Grow(int) [T = CStrongHandle<InfoForResourceTypeCAnimData>, I = int
+void CUtlMemory<CStrongHandle<InfoForResourceTypeCAnimationGroup>, int>::Grow(int) [T = CStrongHandle<InfoForResourceTypeCAnimationGroup>, I = int
+void CUtlMemory<CStrongHandle<InfoForResourceTypeCModel>, int>::Grow(int) [T = CStrongHandle<InfoForResourceTypeCModel>, I = int
+void CUtlMemory<CStrongHandle<InfoForResourceTypeCPhysAggregateData>, int>::Grow(int) [T = CStrongHandle<InfoForResourceTypeCPhysAggregateData>, I = int
+void CUtlMemory<CStrongHandle<InfoForResourceTypeCRenderMesh>, int>::Grow(int) [T = CStrongHandle<InfoForResourceTypeCRenderMesh>, I = int
+void CUtlMemory<CStrongHandle<InfoForResourceTypeCSequenceGroupData>, int>::Grow(int) [T = CStrongHandle<InfoForResourceTypeCSequenceGroupData>, I = int
+void CUtlMemory<CStrongHandle<InfoForResourceTypeIMaterial2>, int>::Grow(int) [T = CStrongHandle<InfoForResourceTypeIMaterial2>, I = int
+void CUtlMemory<CTransform, int>::Grow(int) [T = CTransform, I = int
+void CUtlMemory<CTransitionUpdateData, int>::Grow(int) [T = CTransitionUpdateData, I = int
+void CUtlMemory<CUtlBinaryBlock, int>::Grow(int) [T = CUtlBinaryBlock, I = int
+void CUtlMemory<CUtlHashDict<CScriptCreatableSequence::Token_t, true, false>::Entry_t, int>::Grow(int) [T = CUtlHashDict<CScriptCreatableSequence::Token_t, true, false>::Entry_t, I = int
+void CUtlMemory<CUtlHashDict<ChannelElementMap_t, true, true>::Entry_t, int>::Grow(int) [T = CUtlHashDict<ChannelElementMap_t, true, true>::Entry_t, I = int
+void CUtlMemory<CUtlHashDict<UserDataElement_t, true, false>::Entry_t, int>::Grow(int) [T = CUtlHashDict<UserDataElement_t, true, false>::Entry_t, I = int
+void CUtlMemory<CUtlHashDict<int, true, false>::Entry_t, int>::Grow(int) [T = CUtlHashDict<int, true, false>::Entry_t, I = int
+void CUtlMemory<CUtlHashDict<short, true, false>::Entry_t, int>::Grow(int) [T = CUtlHashDict<short, true, false>::Entry_t, I = int
+void CUtlMemory<CUtlHashDict<short, true, true>::Entry_t, int>::Grow(int) [T = CUtlHashDict<short, true, true>::Entry_t, I = int
+void CUtlMemory<CUtlHashMap<CUtlString, VertexColor_t, CDefEquals<CUtlString>, HashMapFunctor_t<CUtlString>, int>::HashBucket_t, int>::Grow(int) [T = CUtlHashMap<CUtlString, VertexColor_t, CDefEquals<CUtlString>, HashMapFunctor_t<CUtlString>, int>::HashBucket_t, I = int
+void CUtlMemory<CUtlHashMap<CUtlString, VertexColor_t, CDefEquals<CUtlString>, HashMapFunctor_t<CUtlString>, int>::Node_t, int>::Grow(int) [T = CUtlHashMap<CUtlString, VertexColor_t, CDefEquals<CUtlString>, HashMapFunctor_t<CUtlString>, int>::Node_t, I = int
+void CUtlMemory<CUtlSlice<const float>, int>::Grow(int) [T = CUtlSlice<const float>, I = int
+void CUtlMemory<CUtlString, int>::Grow(int) [T = CUtlString, I = int
+void CUtlMemory<CUtlStringToken, int>::Grow(int) [T = CUtlStringToken, I = int
+void CUtlMemory<CUtlTokenReference, int>::Grow(int) [T = CUtlTokenReference, I = int
+void CUtlMemory<CUtlVector<CUtlHashDict<CScriptCreatableSequence::Token_t, true, false>::Entry_t, int, CUtlMemory<CUtlHashDict<CScriptCreatableSequence::Token_t, true, false>::Entry_t, int> >, int>::Grow(int) [T = CUtlVector<CUtlHashDict<CScriptCreatableSequence::Token_t, true, false>::Entry_t, int, CUtlMemory<CUtlHashDict<CScriptCreatableSequence::Token_t, true, false>::Entry_t, int> >, I = int
+void CUtlMemory<CUtlVector<CUtlHashDict<ChannelElementMap_t, true, true>::Entry_t, int, CUtlMemory<CUtlHashDict<ChannelElementMap_t, true, true>::Entry_t, int> >, int>::Grow(int) [T = CUtlVector<CUtlHashDict<ChannelElementMap_t, true, true>::Entry_t, int, CUtlMemory<CUtlHashDict<ChannelElementMap_t, true, true>::Entry_t, int> >, I = int
+void CUtlMemory<CUtlVector<CUtlHashDict<UserDataElement_t, true, false>::Entry_t, int, CUtlMemory<CUtlHashDict<UserDataElement_t, true, false>::Entry_t, int> >, int>::Grow(int) [T = CUtlVector<CUtlHashDict<UserDataElement_t, true, false>::Entry_t, int, CUtlMemory<CUtlHashDict<UserDataElement_t, true, false>::Entry_t, int> >, I = int
+void CUtlMemory<CUtlVector<CUtlHashDict<int, true, false>::Entry_t, int, CUtlMemory<CUtlHashDict<int, true, false>::Entry_t, int> >, int>::Grow(int) [T = CUtlVector<CUtlHashDict<int, true, false>::Entry_t, int, CUtlMemory<CUtlHashDict<int, true, false>::Entry_t, int> >, I = int
+void CUtlMemory<CUtlVector<CUtlHashDict<short, true, false>::Entry_t, int, CUtlMemory<CUtlHashDict<short, true, false>::Entry_t, int> >, int>::Grow(int) [T = CUtlVector<CUtlHashDict<short, true, false>::Entry_t, int, CUtlMemory<CUtlHashDict<short, true, false>::Entry_t, int> >, I = int
+void CUtlMemory<CUtlVector<CUtlHashDict<short, true, true>::Entry_t, int, CUtlMemory<CUtlHashDict<short, true, true>::Entry_t, int> >, int>::Grow(int) [T = CUtlVector<CUtlHashDict<short, true, true>::Entry_t, int, CUtlMemory<CUtlHashDict<short, true, true>::Entry_t, int> >, I = int
+void CUtlMemory<CUtlVector<CUtlString, int, CUtlMemory<CUtlString, int> > *, int>::Grow(int) [T = CUtlVector<CUtlString, int, CUtlMemory<CUtlString, int> > *, I = int
+void CUtlMemory<CUtlVector<SampleCode, int, CUtlMemory<SampleCode, int> >, int>::Grow(int) [T = CUtlVector<SampleCode, int, CUtlMemory<SampleCode, int> >, I = int
+void CUtlMemory<CUtlVector<const char *, int, CUtlMemory<const char *, int> >, int>::Grow(int) [T = CUtlVector<const char *, int, CUtlMemory<const char *, int> >, I = int
+void CUtlMemory<CUtlVector<float, int, CUtlMemory<float, int> >, int>::Grow(int) [T = CUtlVector<float, int, CUtlMemory<float, int> >, I = int
+void CUtlMemory<CUtlVector<int, int, CUtlMemory<int, int> >, int>::Grow(int) [T = CUtlVector<int, int, CUtlMemory<int, int> >, I = int
+void CUtlMemory<CVectorQuantizer, int>::Grow(int) [T = CVectorQuantizer, I = int
+void CUtlMemory<CWeightPreview, int>::Grow(int) [T = CWeightPreview, I = int
+void CUtlMemory<CWristBone, int>::Grow(int) [T = CWristBone, I = int
+void CUtlMemory<ChainToSolveData_t, int>::Grow(int) [T = ChainToSolveData_t, I = int
+void CUtlMemory<ChannelElementMap_t, int>::Grow(int) [T = ChannelElementMap_t, I = int
+void CUtlMemory<ChannelElementWeights_t, int>::Grow(int) [T = ChannelElementWeights_t, I = int
+void CUtlMemory<ChannelScaleset_t, int>::Grow(int) [T = ChannelScaleset_t, I = int
+void CUtlMemory<ChannelScaleset_t::IndexScalePair_t, int>::Grow(int) [T = ChannelScaleset_t::IndexScalePair_t, I = int
+void CUtlMemory<ChannelWeightlist_t, int>::Grow(int) [T = ChannelWeightlist_t, I = int
+void CUtlMemory<ChannelWeightlist_t::IndexWeightPair_t, int>::Grow(int) [T = ChannelWeightlist_t::IndexWeightPair_t, I = int
+void CUtlMemory<Cluster_t, int>::Grow(int) [T = Cluster_t, I = int
+void CUtlMemory<CmdSequenceCmdLayer_t, int>::Grow(int) [T = CmdSequenceCmdLayer_t, I = int
+void CUtlMemory<ColorGradientStop_t, int>::Grow(int) [T = ColorGradientStop_t, I = int
+void CUtlMemory<ElementRequestPattern_t, int>::Grow(int) [T = ElementRequestPattern_t, I = int
+void CUtlMemory<EventList_t, int>::Grow(int) [T = EventList_t, I = int
+void CUtlMemory<ExprParamProxy, int>::Grow(int) [T = ExprParamProxy, I = int
+void CUtlMemory<FeAnimStrayRadius_t, int>::Grow(int) [T = FeAnimStrayRadius_t, I = int
+void CUtlMemory<FeAxialEdgeBend_t, int>::Grow(int) [T = FeAxialEdgeBend_t, I = int
+void CUtlMemory<FeBoxRigid_t, int>::Grow(int) [T = FeBoxRigid_t, I = int
+void CUtlMemory<FeCollisionPlane_t, int>::Grow(int) [T = FeCollisionPlane_t, I = int
+void CUtlMemory<FeCollisionSphere_t, int>::Grow(int) [T = FeCollisionSphere_t, I = int
+void CUtlMemory<FeCtrlOffset_t, int>::Grow(int) [T = FeCtrlOffset_t, I = int
+void CUtlMemory<FeCtrlOsOffset_t, int>::Grow(int) [T = FeCtrlOsOffset_t, I = int
+void CUtlMemory<FeCtrlSoftOffset_t, int>::Grow(int) [T = FeCtrlSoftOffset_t, I = int
+void CUtlMemory<FeEffectDesc_t, int>::Grow(int) [T = FeEffectDesc_t, I = int
+void CUtlMemory<FeFitMatrix_t, int>::Grow(int) [T = FeFitMatrix_t, I = int
+void CUtlMemory<FeFitWeight_t, int>::Grow(int) [T = FeFitWeight_t, I = int
+void CUtlMemory<FeFollowNode_t, int>::Grow(int) [T = FeFollowNode_t, I = int
+void CUtlMemory<FeKelagerBend2_t, int>::Grow(int) [T = FeKelagerBend2_t, I = int
+void CUtlMemory<FeMorphLayerDepr_t, int>::Grow(int) [T = FeMorphLayerDepr_t, I = int
+void CUtlMemory<FeNodeBase_t, int>::Grow(int) [T = FeNodeBase_t, I = int
+void CUtlMemory<FeNodeIntegrator_t, int>::Grow(int) [T = FeNodeIntegrator_t, I = int
+void CUtlMemory<FeNodeReverseOffset_t, int>::Grow(int) [T = FeNodeReverseOffset_t, I = int
+void CUtlMemory<FeNodeWindBase_t, int>::Grow(int) [T = FeNodeWindBase_t, I = int
+void CUtlMemory<FeQuad_t, int>::Grow(int) [T = FeQuad_t, I = int
+void CUtlMemory<FeRigidColliderIndices_t, int>::Grow(int) [T = FeRigidColliderIndices_t, I = int
+void CUtlMemory<FeRodConstraint_t, int>::Grow(int) [T = FeRodConstraint_t, I = int
+void CUtlMemory<FeSimdAnimStrayRadius_t, int>::Grow(int) [T = FeSimdAnimStrayRadius_t, I = int
+void CUtlMemory<FeSimdNodeBase_t, int>::Grow(int) [T = FeSimdNodeBase_t, I = int
+void CUtlMemory<FeSimdQuad_t, int>::Grow(int) [T = FeSimdQuad_t, I = int
+void CUtlMemory<FeSimdRodConstraint_t, int>::Grow(int) [T = FeSimdRodConstraint_t, I = int
+void CUtlMemory<FeSimdSpringIntegrator_t, int>::Grow(int) [T = FeSimdSpringIntegrator_t, I = int
+void CUtlMemory<FeSimdTri_t, int>::Grow(int) [T = FeSimdTri_t, I = int
+void CUtlMemory<FeSphereRigid_t, int>::Grow(int) [T = FeSphereRigid_t, I = int
+void CUtlMemory<FeSpringIntegrator_t, int>::Grow(int) [T = FeSpringIntegrator_t, I = int
+void CUtlMemory<FeTaperedCapsuleRigid_t, int>::Grow(int) [T = FeTaperedCapsuleRigid_t, I = int
+void CUtlMemory<FeTaperedCapsuleStretch_t, int>::Grow(int) [T = FeTaperedCapsuleStretch_t, I = int
+void CUtlMemory<FeTreeChildren_t, int>::Grow(int) [T = FeTreeChildren_t, I = int
+void CUtlMemory<FeTri_t, int>::Grow(int) [T = FeTri_t, I = int
+void CUtlMemory<FeTwistConstraint_t, int>::Grow(int) [T = FeTwistConstraint_t, I = int
+void CUtlMemory<FeVertexMapBuild_t *, int>::Grow(int) [T = FeVertexMapBuild_t *, I = int
+void CUtlMemory<FeVertexMapDesc_t, int>::Grow(int) [T = FeVertexMapDesc_t, I = int
+void CUtlMemory<FeWorldCollisionParams_t, int>::Grow(int) [T = FeWorldCollisionParams_t, I = int
+void CUtlMemory<FingerBone_t, int>::Grow(int) [T = FingerBone_t, I = int
+void CUtlMemory<FingerChain_t, int>::Grow(int) [T = FingerChain_t, I = int
+void CUtlMemory<FingerSource_t, int>::Grow(int) [T = FingerSource_t, I = int
+void CUtlMemory<FootFixedData_t, int>::Grow(int) [T = FootFixedData_t, I = int
+void CUtlMemory<FootFixedSettings, int>::Grow(int) [T = FootFixedSettings, I = int
+void CUtlMemory<FootStepTrigger, int>::Grow(int) [T = FootStepTrigger, I = int
+void CUtlMemory<HSCRIPT__ *, int>::Grow(int) [T = HSCRIPT__ *, I = int
+void CUtlMemory<HSequence, int>::Grow(int) [T = HSequence, I = int
+void CUtlMemory<IAnimGraphLogListener *, int>::Grow(int) [T = IAnimGraphLogListener *, I = int
+void CUtlMemory<IAnimGraphSequenceFinishedListener *, int>::Grow(int) [T = IAnimGraphSequenceFinishedListener *, I = int
+void CUtlMemory<IAnimNode *, int>::Grow(int) [T = IAnimNode *, I = int
+void CUtlMemory<IAnimReplayListener *, int>::Grow(int) [T = IAnimReplayListener *, I = int
+void CUtlMemory<IAnimState *, int>::Grow(int) [T = IAnimState *, I = int
+void CUtlMemory<IAnimTagListener *, int>::Grow(int) [T = IAnimTagListener *, I = int
+void CUtlMemory<IAnimationGraphVisualizerInfo *, int>::Grow(int) [T = IAnimationGraphVisualizerInfo *, I = int
+void CUtlMemory<IIKJointConstraintData *, int>::Grow(int) [T = IIKJointConstraintData *, I = int
+void CUtlMemory<IKLocked_t, int>::Grow(int) [T = IKLocked_t, I = int
+void CUtlMemory<ISequence *, int>::Grow(int) [T = ISequence *, I = int
+void CUtlMemory<InstanceDataRange, int>::Grow(int) [T = InstanceDataRange, I = int
+void CUtlMemory<JiggleBoneSettings_t, int>::Grow(int) [T = JiggleBoneSettings_t, I = int
+void CUtlMemory<KeyValues3 *, int>::Grow(int) [T = KeyValues3 *, I = int
+void CUtlMemory<LookAtBone_t, int>::Grow(int) [T = LookAtBone_t, I = int
+void CUtlMemory<MaterialGroup_t, int>::Grow(int) [T = MaterialGroup_t, I = int
+void CUtlMemory<MaterialParamBuffer_t, int>::Grow(int) [T = MaterialParamBuffer_t, I = int
+void CUtlMemory<MaterialParamFloat_t, int>::Grow(int) [T = MaterialParamFloat_t, I = int
+void CUtlMemory<MaterialParamInt_t, int>::Grow(int) [T = MaterialParamInt_t, I = int
+void CUtlMemory<MaterialParamString_t, int>::Grow(int) [T = MaterialParamString_t, I = int
+void CUtlMemory<MaterialParamTexture_t, int>::Grow(int) [T = MaterialParamTexture_t, I = int
+void CUtlMemory<MaterialParamVector_t, int>::Grow(int) [T = MaterialParamVector_t, I = int
+void CUtlMemory<ModelAspectLockType_t, int>::Grow(int) [T = ModelAspectLockType_t, I = int
+void CUtlMemory<ModelBoneFlexDriverControl_t, int>::Grow(int) [T = ModelBoneFlexDriverControl_t, I = int
+void CUtlMemory<ModelBoneFlexDriver_t, int>::Grow(int) [T = ModelBoneFlexDriver_t, I = int
+void CUtlMemory<MoodAnimationLayer_t, int>::Grow(int) [T = MoodAnimationLayer_t, I = int
+void CUtlMemory<MoodAnimation_t, int>::Grow(int) [T = MoodAnimation_t, I = int
+void CUtlMemory<MorphBundleType_t, int>::Grow(int) [T = MorphBundleType_t, I = int
+void CUtlMemory<MotionBlendItem, int>::Grow(int) [T = MotionBlendItem, I = int
+void CUtlMemory<MotionDBIndex, int>::Grow(int) [T = MotionDBIndex, I = int
+void CUtlMemory<OpResult, int>::Grow(int) [T = OpResult, I = int
+void CUtlMemory<PermModelDataAnimatedMaterialAttribute_t, int>::Grow(int) [T = PermModelDataAnimatedMaterialAttribute_t, I = int
+void CUtlMemory<PermModelExtPart_t, int>::Grow(int) [T = PermModelExtPart_t, I = int
+void CUtlMemory<PoseParamDesc_t, int>::Grow(int) [T = PoseParamDesc_t, I = int
+void CUtlMemory<Quaternion, int>::Grow(int) [T = Quaternion, I = int
+void CUtlMemory<QuaternionStorage, int>::Grow(int) [T = QuaternionStorage, I = int
+void CUtlMemory<Reflection::CConstant *, int>::Grow(int) [T = Reflection::CConstant *, I = int
+void CUtlMemory<Reflection::CField *, int>::Grow(int) [T = Reflection::CField *, I = int
+void CUtlMemory<Reflection::CTypeInfo::BaseTypeInfo, int>::Grow(int) [T = Reflection::CTypeInfo::BaseTypeInfo, I = int
+void CUtlMemory<RenderSkeletonBone_t, int>::Grow(int) [T = RenderSkeletonBone_t, I = int
+void CUtlMemory<RequestElementWeights_t, int>::Grow(int) [T = RequestElementWeights_t, I = int
+void CUtlMemory<RnCapsuleDesc_t, int>::Grow(int) [T = RnCapsuleDesc_t, I = int
+void CUtlMemory<RnFace_t, int>::Grow(int) [T = RnFace_t, I = int
+void CUtlMemory<RnHalfEdge_t, int>::Grow(int) [T = RnHalfEdge_t, I = int
+void CUtlMemory<RnHullDesc_t, int>::Grow(int) [T = RnHullDesc_t, I = int
+void CUtlMemory<RnMeshDesc_t, int>::Grow(int) [T = RnMeshDesc_t, I = int
+void CUtlMemory<RnNode_t, int>::Grow(int) [T = RnNode_t, I = int
+void CUtlMemory<RnPlane_t, int>::Grow(int) [T = RnPlane_t, I = int
+void CUtlMemory<RnSoftbodyCapsule_t, int>::Grow(int) [T = RnSoftbodyCapsule_t, I = int
+void CUtlMemory<RnSoftbodyParticle_t, int>::Grow(int) [T = RnSoftbodyParticle_t, I = int
+void CUtlMemory<RnSoftbodySpring_t, int>::Grow(int) [T = RnSoftbodySpring_t, I = int
+void CUtlMemory<RnSphereDesc_t, int>::Grow(int) [T = RnSphereDesc_t, I = int
+void CUtlMemory<RnTriangle_t, int>::Grow(int) [T = RnTriangle_t, I = int
+void CUtlMemory<RnWing_t, int>::Grow(int) [T = RnWing_t, I = int
+void CUtlMemory<SampleCode, int>::Grow(int) [T = SampleCode, I = int
+void CUtlMemory<ScriptFunctionBinding_t, int>::Grow(int) [T = ScriptFunctionBinding_t, I = int
+void CUtlMemory<ScriptInfo_t, int>::Grow(int) [T = ScriptInfo_t, I = int
+void CUtlMemory<StanceInfo_t, int>::Grow(int) [T = StanceInfo_t, I = int
+void CUtlMemory<SubGraphRef, int>::Grow(int) [T = SubGraphRef, I = int
+void CUtlMemory<TagSpan_t, int>::Grow(int) [T = TagSpan_t, I = int
+void CUtlMemory<TokenWarning_t, int>::Grow(int) [T = TokenWarning_t, I = int
+void CUtlMemory<UserDataElementMap_t, int>::Grow(int) [T = UserDataElementMap_t, I = int
+void CUtlMemory<UtlRBTreeNode_t<CUtlMap<const char *, CActivityRemapCache, int, bool (*)(const char *const &, const char *const &)>::Node_t, int>, int>::Grow(int) [T = UtlRBTreeNode_t<CUtlMap<const char *, CActivityRemapCache, int, bool (*)(const char *const &, const char *const &)>::Node_t, int>, I = int
+void CUtlMemory<UtlRBTreeNode_t<CUtlMap<const char *, CAttachment, int, bool (*)(const char *const &, const char *const &)>::Node_t, int>, int>::Grow(int) [T = UtlRBTreeNode_t<CUtlMap<const char *, CAttachment, int, bool (*)(const char *const &, const char *const &)>::Node_t, int>, I = int
+void CUtlMemory<UtlRBTreeNode_t<CUtlMap<const char *, CHitBoxSet, int, bool (*)(const char *const &, const char *const &)>::Node_t, int>, int>::Grow(int) [T = UtlRBTreeNode_t<CUtlMap<const char *, CHitBoxSet, int, bool (*)(const char *const &, const char *const &)>::Node_t, int>, I = int
+void CUtlMemory<UtlRBTreeNode_t<CUtlMap<const char *, const IParamLookupHelper *, int, bool (*)(const char *const &, const char *const &)>::Node_t, int>, int>::Grow(int) [T = UtlRBTreeNode_t<CUtlMap<const char *, const IParamLookupHelper *, int, bool (*)(const char *const &, const char *const &)>::Node_t, int>, I = int
+void CUtlMemory<VPhysXBodyPart_t, int>::Grow(int) [T = VPhysXBodyPart_t, I = int
+void CUtlMemory<VPhysXCollisionAttributes_t, int>::Grow(int) [T = VPhysXCollisionAttributes_t, I = int
+void CUtlMemory<VPhysXConstraint2_t, int>::Grow(int) [T = VPhysXConstraint2_t, I = int
+void CUtlMemory<VPhysXJoint_t, int>::Grow(int) [T = VPhysXJoint_t, I = int
+void CUtlMemory<Vector, int>::Grow(int) [T = Vector, I = int
+void CUtlMemory<WeightList, int>::Grow(int) [T = WeightList, I = int
+void CUtlMemory<WristBone_t, int>::Grow(int) [T = WristBone_t, I = int
+void CUtlMemory<activitylist_t, int>::Grow(int) [T = activitylist_t, I = int
+void CUtlMemory<animevent_t, int>::Grow(int) [T = animevent_t, I = int
+void CUtlMemory<bool (*)(const char *, KeyValues3 *), int>::Grow(int) [T = bool (*)(const char *, KeyValues3 *), I = int
+void CUtlMemory<bool, int>::Grow(int) [T = bool, I = int
+void CUtlMemory<char *, int>::Grow(int) [T = char *, I = int
+void CUtlMemory<char, int>::Grow(int) [T = char, I = int
+void CUtlMemory<const CAnimComponentBase *, int>::Grow(int) [T = const CAnimComponentBase *, I = int
+void CUtlMemory<const CAnimationGroupResource *, int>::Grow(int) [T = const CAnimationGroupResource *, I = int
+void CUtlMemory<const CAttachment *, int>::Grow(int) [T = const CAttachment *, I = int
+void CUtlMemory<const CRagdollComponent *, int>::Grow(int) [T = const CRagdollComponent *, I = int
+void CUtlMemory<const IAnimClipData *, int>::Grow(int) [T = const IAnimClipData *, I = int
+void CUtlMemory<const IAnimParameter *, int>::Grow(int) [T = const IAnimParameter *, I = int
+void CUtlMemory<const IAnimationSubGraph *, int>::Grow(int) [T = const IAnimationSubGraph *, I = int
+void CUtlMemory<const KeyValues3 *, int>::Grow(int) [T = const KeyValues3 *, I = int
+void CUtlMemory<const Reflection::CAttribute *, int>::Grow(int) [T = const Reflection::CAttribute *, I = int
+void CUtlMemory<const Reflection::CTypeInfo *, int>::Grow(int) [T = const Reflection::CTypeInfo *, I = int
+void CUtlMemory<const char *, int>::Grow(int) [T = const char *, I = int
+void CUtlMemory<fieldtype_t, int>::Grow(int) [T = fieldtype_t, I = int
+void CUtlMemory<float, int>::Grow(int) [T = float, I = int
+void CUtlMemory<int, int>::Grow(int) [T = int, I = int
+void CUtlMemory<long long, int>::Grow(int) [T = long long, I = int
+void CUtlMemory<matrix3x4a_t, int>::Grow(int) [T = matrix3x4a_t, I = int
+void CUtlMemory<short, int>::Grow(int) [T = short, I = int
+void CUtlMemory<signed char, int>::Grow(int) [T = signed char, I = int
+void CUtlMemory<std::__1::pair<CAnimParamHandle, CAnimVariant>, int>::Grow(int) [T = std::__1::pair<CAnimParamHandle, CAnimVariant>, I = int
+void CUtlMemory<std::__1::pair<CBufferString, float>, int>::Grow(int) [T = std::__1::pair<CBufferString, float>, I = int
+void CUtlMemory<std::__1::pair<LocalFlexController_t, float>, int>::Grow(int) [T = std::__1::pair<LocalFlexController_t, float>, I = int
+void CUtlMemory<std::__1::pair<int, int>, int>::Grow(int) [T = std::__1::pair<int, int>, I = int
+void CUtlMemory<std::__1::unique_ptr<CAnimationResource, std::__1::default_delete<CAnimationResource> >, int>::Grow(int) [T = std::__1::unique_ptr<CAnimationResource, std::__1::default_delete<CAnimationResource> >, I = int
+void CUtlMemory<unsigned char, int>::Grow(int) [T = unsigned char, I = int
+void CUtlMemory<unsigned int, int>::Grow(int) [T = unsigned int, I = int
+void CUtlMemory<unsigned long long, int>::Grow(int) [T = unsigned long long, I = int
+void CUtlMemory<unsigned short, int>::Grow(int) [T = unsigned short, I = int
 void CUtlMemory_RawAllocator<CUtlHashtableEntry<unsigned int, empty_t> >::EnsureCapacity(int) [T = CUtlHashtableEntry<unsigned int, empty_t
 void CUtlMemory_RawAllocator<CUtlHashtableEntry<unsigned int, empty_t> >::SetRawAllocatorType(RawAllocatorType_t) [T = CUtlHashtableEntry<unsigned int, empty_t
 void CUtlMemory_RawAllocator<unsigned int>::EnsureCapacity(int) [T = unsigned int
@@ -11421,9 +12140,9 @@ void MathLib_Init
 vscript
 vscript_sequence_%d
 w H9w(tEI
-w [A\A^A
 w local H
 w0;w4t9A
+w@Mcl$@D
 wXH9w`tEI
 walkspeed
 weaponType
@@ -11443,18 +12162,21 @@ x(A9FX~"I
 x09CX~+H
 x1A9OX~+I
 x1A9_X~+I
-x6A;Fh}0A
-x89wh~3
-x8A9M(~2I
+x7A9M(~1I
+x7Lc{`E
+x9A;Fh}3A
+x;9wh~6
 x=9Fh~8
 x?9WX~:H
+x@Mct$ E
+xF9wh~A
 xKD9kX~EH
 xP9VH~K
 xS9qh~NH
-xZIcF`H
+xYD92u]Mc/E
 x[A\A]A^A
 x]9Gh~X
-xfA9E(~`I
+xaA9E(~[I
 xg^Jp5
 xjD9{X~dH
 xn9Cx~iL
@@ -11462,8 +12184,6 @@ xo9Cx~jH
 xpressioH
 xsA9D$x~lM
 xv9Cx~qL
-xzIcF H
-x}IcNhH
 y?IcE0H
 yaw_end
 yaw_start

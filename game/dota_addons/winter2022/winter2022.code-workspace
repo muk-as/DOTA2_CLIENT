@@ -1,0 +1,54 @@
+{
+	"folders": [
+		{
+			"name": "game",
+			"path": ".",
+		},
+		{
+			"name": "content",
+			"path": "..\\..\\..\\content\\dota_addons\\winter2022"
+		}
+	],
+	"settings": {
+		"typescript.format.placeOpenBraceOnNewLineForControlBlocks": true,
+		"typescript.format.placeOpenBraceOnNewLineForFunctions": true,
+		"typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": false,
+		"typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis": true,
+		"typescript.format.semicolons": "insert",
+		"typescript.tsserver.experimental.enableProjectDiagnostics": true,
+		"xml.fileAssociations": [
+
+			{
+				"pattern": "panorama/**.xml",
+				"systemId": "../../../content/dota/panorama/layout.xsd"
+			}
+		],
+		"files.exclude": {
+			"**/*.*_c": true
+		}
+	},
+	"tasks": {
+		"group": "build",
+		"version":"2.0.0",
+		"command": "vscriptc.exe",
+		"args": ["${file}"],
+		"presentation": {
+			"showReuseMessage": false,
+			"clear": true
+		}
+	},
+	"launch": {
+		"version": "0.2.0",
+		"configurations": [
+			{
+				"name": "Attach",
+				"type": "node",
+				"request": "attach",
+				"port": 42000,
+				"outFiles": [
+					"${workspaceFolder:content}/**/*.js",
+				]
+			}
+		]
+	}
+}

@@ -85,17 +85,17 @@ function GetName( tReward, pRewardOption )
         || tReward.reward_type === "REWARD_TYPE_MINOR_ABILITY_UPGRADE"
         || tReward.reward_type === "REWARD_TYPE_MINOR_STATS_UPGRADE" )
     {
-        szName = "DOTA_Tooltip_ability_" + tReward.ability_name;
+        szName = "#DOTA_Tooltip_ability_" + tReward.ability_name;
     }
 
     if ( tReward.reward_type === "REWARD_TYPE_GOLD" )
     {
-        szName = "DOTA_HUD_Reward_Gold";
+        szName = "#DOTA_HUD_Reward_Gold";
     }
 
     if ( tReward.reward_type === "REWARD_TYPE_EXTRA_LIVES" )
     {
-        szName = "DOTA_HUD_Reward_ExtraLives";
+        szName = "#DOTA_HUD_Reward_ExtraLives";
     }
 
     return $.Localize( szName, pRewardOption );
@@ -104,16 +104,16 @@ function GetName( tReward, pRewardOption )
 function GetDescription( reward, pRewardOption )
 {
     if ( reward["reward_type"] === "REWARD_TYPE_ABILITY_UPGRADE" || reward["reward_type"] === "REWARD_TYPE_ITEM" || reward["reward_type"] === "REWARD_TYPE_TEMP_BUFF" || reward["reward_type"] === "REWARD_TYPE_AURA" )
-        return GameUI.ReplaceDOTAAbilitySpecialValues( reward["ability_name"], $.Localize( "DOTA_Tooltip_ability_" + reward["ability_name"] + "_Description", pRewardOption ) );
+        return GameUI.ReplaceDOTAAbilitySpecialValues( reward["ability_name"], $.Localize( "#DOTA_Tooltip_ability_" + reward["ability_name"] + "_Description", pRewardOption ) );
 
     if ( reward["reward_type"] === "REWARD_TYPE_MINOR_ABILITY_UPGRADE" || reward["reward_type"] === "REWARD_TYPE_MINOR_STATS_UPGRADE" )
-        return $.Localize( reward["description"], pRewardOption );
+        return $.Localize( '#' + reward["description"], pRewardOption );
 
     if ( reward["reward_type"] === "REWARD_TYPE_GOLD" )
-        return $.Localize( "DOTA_HUD_Reward_Gold_desc", pRewardOption );
+        return $.Localize( "#DOTA_HUD_Reward_Gold_desc", pRewardOption );
 
     if ( reward["reward_type"] === "REWARD_TYPE_EXTRA_LIVES" )
-        return $.Localize( "DOTA_HUD_Reward_ExtraLives_desc", pRewardOption );
+        return $.Localize( "#DOTA_HUD_Reward_ExtraLives_desc", pRewardOption );
 
     return "FIX ME";
 }
@@ -241,7 +241,7 @@ function UpdateRewardsHUD()
             } );
         }
 
-        pRewardOption.SetDialogVariable( "tier", $.Localize( "DOTA_HUD_" + tReward.reward_tier + "_Desc" ) );
+        pRewardOption.SetDialogVariable( "tier", $.Localize( "#DOTA_HUD_" + tReward.reward_tier + "_Desc" ) );
         pRewardOption.SetDialogVariable( "reward_name", GetName( tReward, pRewardOption ) );
         pRewardOption.SetDialogVariable( "reward_description", GetDescription( tReward, pRewardOption ) );
 
@@ -264,7 +264,7 @@ function UpdateRewardsHUD()
 
 function SetRewardHUDRarity( szRarity )
 {
-    AghanimRewardsHUD.SetDialogVariable( "header_rarity", $.Localize( "DOTA_HUD_Reward_Rarity_" + szRarity ) );
+    AghanimRewardsHUD.SetDialogVariable( "header_rarity", $.Localize( "#DOTA_HUD_Reward_Rarity_" + szRarity ) );
 
     AghanimRewardsHUD.SetHasClass( "CommonRoomRarity", szRarity == "common" || szRarity == "" );
     AghanimRewardsHUD.SetHasClass( "EliteRoomRarity", szRarity == "elite" );

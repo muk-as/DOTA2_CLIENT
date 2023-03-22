@@ -7832,8 +7832,10 @@
 				{
 					m_name = "audio.Processor1"
 					m_effectName = "core.null"
+					m_subgraphs = 
+					[
+					]
 					m_nProcessorType = "VPROCESSOR_PRESETDSP"
-					m_bAffectsGlobals = false
 					m_nChannels = -1
 					m_flxfade = 0.100000
 				},
@@ -7841,8 +7843,10 @@
 				{
 					m_name = "voip comp/limit"
 					m_effectName = ""
+					m_subgraphs = 
+					[
+					]
 					m_nProcessorType = "VPROCESSOR_DYNAMICS"
-					m_bAffectsGlobals = false
 					m_nChannels = 1
 					m_flxfade = 0.100000
 					m_params = 
@@ -7865,8 +7869,10 @@
 				{
 					m_name = "audio.Dynamics1"
 					m_effectName = ""
+					m_subgraphs = 
+					[
+					]
 					m_nProcessorType = "VPROCESSOR_DYNAMICS"
-					m_bAffectsGlobals = false
 					m_nChannels = -1
 					m_flxfade = 0.100000
 					m_params = 
@@ -7910,7 +7916,6 @@
 				{
 					name = "RoomDSP"
 					value = "core.null"
-					processor = 0
 				},
 			]
 			m_MixCommands = 
@@ -8005,9 +8010,9 @@
 				},
 				
 				{
-					command = "submix.accumulate_single"
+					command = "submix.copy"
 					paramName = 0
-					outputSubmix = 0
+					outputSubmix = 1
 					inputSubmix0 = 1
 					inputSubmix1 = -1
 					processor = -1
@@ -8016,10 +8021,21 @@
 				},
 				
 				{
+					command = "submix.accumulate_single"
+					paramName = 0
+					outputSubmix = 1
+					inputSubmix0 = 0
+					inputSubmix1 = -1
+					processor = -1
+					inputValue0 = 0
+					inputValue1 = -1
+				},
+				
+				{
 					command = "submix.meter"
 					paramName = 0
 					outputSubmix = -1
-					inputSubmix0 = 0
+					inputSubmix0 = 1
 					inputSubmix1 = -1
 					processor = -1
 					inputValue0 = 4
@@ -8030,7 +8046,7 @@
 					command = "submix.debug"
 					paramName = 1132046981
 					outputSubmix = -1
-					inputSubmix0 = 0
+					inputSubmix0 = 1
 					inputSubmix1 = -1
 					processor = -1
 					inputValue0 = -1
@@ -8060,10 +8076,21 @@
 				},
 				
 				{
+					command = "processor.setnameinput"
+					paramName = -1191692974
+					outputSubmix = -1
+					inputSubmix0 = -1
+					inputSubmix1 = -1
+					processor = 0
+					inputValue0 = 0
+					inputValue1 = -1
+				},
+				
+				{
 					command = "submix.process"
 					paramName = -22047292
-					outputSubmix = 0
-					inputSubmix0 = 0
+					outputSubmix = 1
+					inputSubmix0 = 1
 					inputSubmix1 = -1
 					processor = 0
 					inputValue0 = -1
@@ -8074,7 +8101,7 @@
 					command = "submix.debug"
 					paramName = 92986219
 					outputSubmix = -1
-					inputSubmix0 = 0
+					inputSubmix0 = 1
 					inputSubmix1 = -1
 					processor = -1
 					inputValue0 = -1
@@ -8115,10 +8142,10 @@
 				},
 				
 				{
-					command = "submix.accumulate_single"
+					command = "submix.copy"
 					paramName = 0
-					outputSubmix = 3
-					inputSubmix0 = 0
+					outputSubmix = 1
+					inputSubmix0 = 1
 					inputSubmix1 = -1
 					processor = -1
 					inputValue0 = 5
@@ -8126,10 +8153,21 @@
 				},
 				
 				{
+					command = "submix.accumulate_single"
+					paramName = 0
+					outputSubmix = 1
+					inputSubmix0 = 3
+					inputSubmix1 = -1
+					processor = -1
+					inputValue0 = 4
+					inputValue1 = -1
+				},
+				
+				{
 					command = "submix.meter"
 					paramName = 0
 					outputSubmix = -1
-					inputSubmix0 = 3
+					inputSubmix0 = 1
 					inputSubmix1 = -1
 					processor = -1
 					inputValue0 = 5
@@ -8140,7 +8178,7 @@
 					command = "submix.debug"
 					paramName = -666126924
 					outputSubmix = -1
-					inputSubmix0 = 3
+					inputSubmix0 = 1
 					inputSubmix1 = -1
 					processor = -1
 					inputValue0 = -1
@@ -8216,8 +8254,8 @@
 				{
 					command = "submix.process"
 					paramName = -1110160523
-					outputSubmix = 3
-					inputSubmix0 = 3
+					outputSubmix = 1
+					inputSubmix0 = 1
 					inputSubmix1 = -1
 					processor = 2
 					inputValue0 = -1
@@ -8228,7 +8266,7 @@
 					command = "submix.debug"
 					paramName = -1118809494
 					outputSubmix = -1
-					inputSubmix0 = 3
+					inputSubmix0 = 1
 					inputSubmix1 = -1
 					processor = -1
 					inputValue0 = -1
@@ -8250,7 +8288,7 @@
 					command = "submix.outputx2"
 					paramName = 0
 					outputSubmix = -1
-					inputSubmix0 = 3
+					inputSubmix0 = 1
 					inputSubmix1 = 2
 					processor = -1
 					inputValue0 = 6
@@ -8261,7 +8299,7 @@
 					command = "submix.meter"
 					paramName = 0
 					outputSubmix = -1
-					inputSubmix0 = 3
+					inputSubmix0 = 1
 					inputSubmix1 = -1
 					processor = -1
 					inputValue0 = 9
@@ -8330,6 +8368,11 @@
 				},
 				
 				{
+					name = "audio.Mix1/volume1"
+					value = 0
+				},
+				
+				{
 					name = "control.Input3/value"
 					value = 2
 				},
@@ -8345,6 +8388,11 @@
 				},
 				
 				{
+					name = "audio.Mix2/volume1"
+					value = 4
+				},
+				
+				{
 					name = "control.Input1/value"
 					value = 6
 				},
@@ -8357,6 +8405,14 @@
 				{
 					name = "audio.Output1/volume2"
 					value = 6
+				},
+			]
+			m_nameInputMeters = 
+			[
+				
+				{
+					name = "effect.Input1/Effect Name"
+					value = 0
 				},
 			]
 		},
@@ -8382,8 +8438,10 @@
 				{
 					m_name = "audio.PitchShift1"
 					m_effectName = ""
+					m_subgraphs = 
+					[
+					]
 					m_nProcessorType = "VPROCESSOR_RT_PITCH"
-					m_bAffectsGlobals = false
 					m_nChannels = 1
 					m_flxfade = 0.100000
 					m_params = 
@@ -8541,8 +8599,10 @@
 				{
 					m_name = "audio.SteamAudioSource1"
 					m_effectName = ""
+					m_subgraphs = 
+					[
+					]
 					m_nProcessorType = "VPROCESSOR_STEAMAUDIO_HRTF"
-					m_bAffectsGlobals = false
 					m_nChannels = 2
 					m_flxfade = 0.100000
 				},

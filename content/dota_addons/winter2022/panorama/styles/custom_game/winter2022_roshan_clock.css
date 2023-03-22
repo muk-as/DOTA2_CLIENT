@@ -1,0 +1,703 @@
+.RoshanClock
+{
+    align: center top;
+    width: 500px;
+    height: 200px;
+    flow-children: none;
+
+    transition-property: transform;
+    transition-duration: 1.4s;
+    transition-timing-function: ease-out;
+
+    &.ScrolledUp
+    {
+        transform: translate3d(0, -150px, 0);
+        sound-out: "RoshanClock.ScrollDown";
+    }
+}
+
+#RoshanClockFigures
+{
+    height: 100%;
+    width: 100%;
+}
+
+.ClockFigure
+{
+    width: 55px;
+    height: 75px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+
+    transition-property: transform;
+    transition-duration: .2s;
+    transition-timing-function: linear;
+
+    &.Hidden
+    {
+        transform: translate3d(0, -100px, 0);
+    }
+}
+
+#RadiantWellFigure
+{
+    background-image: url("file://{images}/hud/hud_well_figure_radiant.psd");
+    position: 118px 100px 0;
+}
+
+#DireWellFigure
+{
+    background-image: url("file://{images}/hud/hud_well_figure_dire.psd");
+    position: 328px 100px 0;
+}
+
+#RoshanFigure
+{
+    position: 222px 108px 0;
+    background-image: url("file://{images}/hud/hud_roshan_figure_left.psd");
+
+    &.FaceLeft
+    {
+        transform: rotateY(0deg);
+        background-image: url("file://{images}/hud/hud_roshan_figure_left.psd");
+    }
+
+    &.FaceRight
+    {
+        transform: rotateY(180deg);
+        background-image: url("file://{images}/hud/hud_roshan_figure_right.psd");
+    }
+}
+
+#CandyWells
+{}
+
+.CandyWellHud
+{
+    height: 40px;
+    width: 40px;
+    background-color: black;
+}
+
+#CandyWellRadiant0
+{
+    position: 113px 7px 0;
+}
+
+#CandyWellRadiant1
+{
+    position: 157px 7px 0;
+}
+
+#CandyWellRadiant3
+{
+    position: 122px 48px 0;
+}
+
+#CandyWellRadiant4
+{
+    position: 167px 48px 0;
+}
+
+#CandyWellDire0
+{
+    position: 348px 7px 0;
+}
+
+#CandyWellDire1
+{
+    position: 304px 7px 0;
+}
+
+#CandyWellDire3
+{
+    position: 338px 48px 0;
+}
+
+#CandyWellDire4
+{
+    position: 294px 48px 0;
+}
+
+.CandyWellRing
+{
+    width: 100%;
+    height: 100%;
+    background-color: gradient(radial, 50% 50%, 0% 0%, 50% 50%, from(#111), color-stop(0.7, #222), to(#fff));
+    border-radius: 50%;
+    transition-property: clip;
+
+    .Ally &
+    {
+        wash-color: #cf7;
+    }
+
+    .Enemy &
+    {
+        wash-color: #f64;
+    }
+}
+
+.CandyWellCount
+{
+    horizontal-align: center;
+    vertical-align: center;
+    text-align: center;
+    color: white;
+    font-size: 28px;
+    margin-top: 1px;
+    letter-spacing: 2px;
+    text-shadow: 1px 3px 4px #000;
+    text-overflow: shrink;
+    font-weight: bold;
+    wash-color: #77b;
+    font-family: diretideFontX;
+
+    .Ally &
+    {
+        wash-color: #cfa;
+    }
+
+    .Enemy &
+    {
+        wash-color: #fca;
+    }
+}
+
+.CandyWellLockLeft,
+.CandyWellLockRight
+{
+    width: 100%;
+    height: 100%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+
+    transition-property: transform;
+    transition-timing-function: ease-in;
+    transform: translate3d(0, 0, 0);
+
+    .Locked &
+    {
+        sound-out: "RoshanClock.LockOpen";
+        transition-delay: 3s;
+        transition-duration: 2s;
+    }
+}
+
+.CandyWellLockLeft
+{
+    background-image: url("file://{images}/hud/hud_well_locked_ally_left.psd");
+
+    .Vulnerable &
+    {
+        transform: translate3d(-40px, 0, 0);
+    }
+}
+
+.CandyWellLockRight
+{
+    background-image: url("file://{images}/hud/hud_well_locked_ally_right.psd");
+
+    .Vulnerable &
+    {
+        transform: translate3d(40px, 0, 0);
+    }
+}
+
+.CandyWellDestroyed
+{
+    width: 100%;
+    height: 100%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-image: url("file://{images}/hud/hud_well_destroyed.psd");
+    visibility: collapse;
+
+    .Destroyed &
+    {
+        visibility: visible;
+    }
+}
+
+#CandyWellDestroyedParticle
+{
+    width: 100%;
+    height: 100%;
+}
+
+#RoshanTimerCircle,
+#RoshanTimerGlowCircle
+{
+    height: 89px;
+    width: 89px;
+    horizontal-align: center;
+    vertical-align: top;
+    margin-top: 16px;
+}
+
+#RoshanTimerCircle
+{
+    background-color: black;
+}
+
+#RoshanTimerCenter
+{
+    width: 55px;
+    height: 55px;
+    horizontal-align: center;
+    vertical-align: center;
+    border-radius: 50%;
+}
+
+#RoshanTimerImageBG
+{
+    width: 220px;
+    height: 55px;
+    margin: 0 -165px 0 0;
+
+    background-size: 50% 100%;
+
+    .GameStateKillGreevils &
+    {
+        background-image: url("file://{images}/spellicons/roshan_kill_greevils_bg.psd");
+        
+        animation-name: scroll-horizontal;
+        animation-timing-function: linear;
+        animation-duration: 20s;
+        animation-iteration-count: infinite;
+    }
+}
+
+#RoshanTimerImageContainer
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+
+    .GameStateKillGreevils &
+    {
+        animation-name: step-then-slide;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+    }
+}
+
+#RoshanTimerImage
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+
+    background-size: 100% 100%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+
+    .GameStateSleep &
+    {
+        background-image: url("file://{images}/spellicons/roshan_sleep.png");
+    }
+
+    .GameStateKillGreevils &
+    {
+        background-image: url("file://{images}/spellicons/roshan_kill_greevils_top.psd");
+        width: 65px;
+        height: 65px;
+        margin: -5px;
+        
+        animation-name: up-down-step;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+    }
+
+    .GameStateScore &
+    {
+        background-image: url("file://{images}/spellicons/roshan_halloween_angry.png");
+    }
+}
+
+#RoshanTimerParticleSleep,
+#RoshanTimerParticleChase,
+#RoshanTimerParticleKill
+{
+    width: 100%;
+    height: 100%;
+    visibility: collapse;
+}
+
+.GameStateSleep #RoshanTimerParticleSleep
+{
+    background-image: none;
+    visibility: visible;
+}
+
+.GameStateScore #RoshanTimerParticleKill
+{
+    visibility: visible;
+}
+
+.GameStateKillGreevils #RoshanTimerParticleChase
+{
+    visibility: visible;
+}
+
+#RoshanTimerRing
+{
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+
+    .GameStateSleep &,
+    .GameStateKillGreevils &
+    {
+        background-image: url("file://{images}/hud/hud_well_timer_ring.psd");
+    }
+    
+    .GameStateScore &
+    {
+        background-image: url("file://{images}/hud/hud_well_timer_ring_score.psd");
+    }
+}
+
+#RoshanTimerRingGlow
+{
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+
+    .GameStateSleep &,
+    .GameStateKillGreevils &
+    {
+        background-image: url("file://{images}/hud/hud_well_timer_ring_glow.psd");
+    }
+    
+    .GameStateScore &
+    {
+        background-image: url("file://{images}/hud/hud_well_timer_ring_glow_score.psd");
+        animation-name: glow-pulse;
+        animation-timing-function: linear;
+        animation-duration: 4.0s;
+        animation-iteration-count: infinite;
+    }
+}
+
+#RoshanClockFrame
+{
+    align: center top;
+    width: 100%;
+    height: 100%;
+    background-image: url("file://{images}/hud/hud_frame.psd");
+    background-size: 100%;
+    background-repeat: no-repeat;
+
+    .TeamDire &
+    {
+        transform: scale3d(-1, 1, 1);
+    }
+}
+
+#RoshanClockFrameGlow
+{
+    align: center top;
+    width: 100%;
+    height: 100%;
+    background-image: url("file://{images}/hud/hud_frame_glow.psd");
+    background-size: 100%;
+    background-repeat: no-repeat;
+
+    animation-name: glow-pulse-rare;
+    animation-timing-function: linear;
+    animation-duration: 8.0s;
+    animation-iteration-count: infinite;
+
+    .TeamDire &
+    {
+        transform: scale3d(-1, 1, 1);
+    }
+}
+
+#TimerLabel
+{
+    width: 70px;
+    align: center top;
+    color: #cdcab7;
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-shadow: 1px 3px 4px #000;
+    font-family: diretideFontX;
+    font-weight: semi-bold;
+    margin-top: 2px;
+    background-color: black;
+}
+
+#RoshanClockTimeFrame
+{
+    height: 100px;
+    width: 150px;
+    align: center top;
+    background-size: 100% 100%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-image: url("file://{images}/hud/hud_frame_game_timer.psd");
+}
+
+#CandyWellTarget
+{
+    height: 50px;
+    width: 50px;
+    margin: -5px;
+
+    background-size: 100%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    animation-name: rotate-pulse;
+    animation-timing-function: linear;
+    animation-duration: 4.0s;
+    animation-iteration-count: infinite;
+
+    transition-property: position, opacity;
+    transition-timing-function: ease-out;
+    transition-duration: .3s;
+    position: 286px 38px 0;
+    opacity: 0;
+
+    &.Visible
+    {
+        opacity: 1;
+    }
+
+    &.CandyWellRadiant0
+    {
+        position: 112px 7px 0;
+        sound: "RoshanClock.TargetSwitch";
+    }
+
+    &.CandyWellRadiant1
+    {
+        position: 157px 7px 0;
+        sound: "RoshanClock.TargetSwitch";
+    }
+
+    &.CandyWellRadiant3
+    {
+        position: 122px 48px 0;
+        sound: "RoshanClock.TargetSwitch";
+    }
+
+    &.CandyWellRadiant4
+    {
+        position: 167px 48px 0;
+        sound: "RoshanClock.TargetSwitch";
+    }
+
+    &.CandyWellDire0
+    {
+        position: 349px 7px 0;
+        sound: "RoshanClock.TargetSwitch";
+    }
+
+    &.CandyWellDire1
+    {
+        position: 304px 7px 0;
+        sound: "RoshanClock.TargetSwitch";
+    }
+
+    &.CandyWellDire3
+    {
+        position: 339px 48px 0;
+        sound: "RoshanClock.TargetSwitch";
+    }
+
+    &.CandyWellDire4
+    {
+        position: 294px 48px 0;
+        sound: "RoshanClock.TargetSwitch";
+    }
+
+    .GameStateScore &
+    {
+        hue-rotation: 160deg;
+    }
+}
+
+#CandyWellTargetBase,
+#CandyWellTargetGlow
+{
+    height: 100%;
+    width: 100%;
+    background-size: 100%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
+
+#CandyWellTargetBase
+{
+    background-image: url("file://{images}/hud/target_ring.psd");
+    wash-color: #2562d2;
+}
+
+#CandyWellTargetGlow
+{
+    background-image: url("file://{images}/hud/target_ring_glow.psd");
+    animation-name: glow-pulse;
+    animation-timing-function: linear;
+    animation-duration: 4.0s;
+    animation-iteration-count: infinite;
+}
+
+#CandyWellExplosion
+{
+    height: 100px;
+    width: 100px;
+    visibility: collapse;
+
+    &.Visible
+    {
+        visibility: visible;
+    }
+}
+
+@keyframes 'rotate-pulse'
+
+{
+    0%
+    {
+        pre-transform-scale2d: .85;
+        transform: rotateZ(0deg);
+    }
+
+    50%
+    {
+        pre-transform-scale2d: 1;
+        transform: rotateZ(180deg);
+    }
+
+    100%
+    {
+        pre-transform-scale2d: .85;
+        transform: rotateZ(360deg);
+    }
+}
+
+@keyframes 'glow-pulse'
+
+{
+    0%
+    {
+        opacity: 1;
+    }
+
+    50%
+    {
+        opacity: 0;
+    }
+
+    100%
+    {
+        opacity: 1;
+    }
+}
+
+@keyframes 'glow-pulse-rare'
+{
+    0%
+    {
+        opacity: 0;
+    }
+
+    80%
+    {
+        opacity: 0;
+    }
+
+    90%
+    {
+        opacity: 1;
+    }
+
+    100%
+    {
+        opacity: 0;
+    }
+}
+
+@keyframes 'glow-pulse-rare'
+{
+    0%
+    {
+        opacity: 0;
+    }
+
+    80%
+    {
+        opacity: 0;
+    }
+
+    90%
+    {
+        opacity: 1;
+    }
+
+    100%
+    {
+        opacity: 0;
+    }
+}
+
+@keyframes 'scroll-horizontal'
+{
+    0%
+    {
+        transform: translateX( 0px );
+    }
+    100%
+    {
+        transform: translateX( -110px );
+    }
+}
+
+@keyframes 'up-down-step'
+{
+    0%
+    {
+        transform: translateY( 0px );
+    }
+
+    20%
+    {
+        transform: translateY( -5px );
+        animation-timing-function: cubic-bezier( 0, 0.5, 0.5, 1 );
+    }
+
+    40%
+    {
+        transform: translateY( 0px );
+        animation-timing-function: cubic-bezier( 0.5, 0, 1, 0.5 );
+    }
+
+    100%
+    {
+        transform: translateY( 0px );
+    }
+}
+
+@keyframes 'step-then-slide' {
+    0%
+    {
+        transform: translateX( -2px );
+    }
+
+    40%
+    {
+        transform: translateX( 2px );
+    }
+
+    100%
+    {
+        transform: translateX( -2px );
+    }
+}

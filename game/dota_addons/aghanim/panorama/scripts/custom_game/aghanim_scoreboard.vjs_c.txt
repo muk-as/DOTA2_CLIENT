@@ -111,8 +111,8 @@ function UpdateBlessings()
 			blessingImage.AddClass( "BlessingImageCenter" ); // Adding this class late fixes a bug where images aren't laying out
 
 			blessingPanel.SetDialogVariableInt( "instance_value", nBlessingValue );
-			blessingPanel.SetDialogVariable( "blessing_name", $.Localize( "DOTA_LabyrinthBlessing_" + szBlessing + "_Name", blessingPanel ) );
-			blessingPanel.SetDialogVariable( "blessing_description", $.Localize( "DOTA_LabyrinthBlessing_" + szBlessing + "_Desc", blessingPanel ) );
+			blessingPanel.SetDialogVariable( "blessing_name", $.Localize( "#DOTA_LabyrinthBlessing_" + szBlessing + "_Name", blessingPanel ) );
+			blessingPanel.SetDialogVariable( "blessing_description", $.Localize( "#DOTA_LabyrinthBlessing_" + szBlessing + "_Desc", blessingPanel ) );
 		} );
 	} );
 }
@@ -243,7 +243,7 @@ function UpdateRoomRewards()
         }
         reward.SetAttributeInt( "order", nOrder );
 		reward.AddClass( roomData["reward"] );
-		reward.SetDialogVariable("reward_name", $.Localize( "DOTA_HUD_" + roomData["reward"] + "_Desc" ) );
+		reward.SetDialogVariable("reward_name", $.Localize( "#DOTA_HUD_" + roomData["reward"] + "_Desc" ) );
     }
 }
 
@@ -388,7 +388,7 @@ function PopulateClaimedRewardsHud()
 	                claimedRewardPanel.SetDialogVariable( szVarName, Math.floor(flValue) == flValue ? Math.floor(flValue) : flValue.toFixed(2) );    
 	            }
 		    }
-		    claimedRewardPanel.SetDialogVariable("tier", $.Localize("DOTA_HUD_" + RewardChoice["reward_tier"] + "_Desc"));
+		    claimedRewardPanel.SetDialogVariable("tier", $.Localize("#DOTA_HUD_" + RewardChoice["reward_tier"] + "_Desc"));
 
 		    claimedRewardPanel.SetDialogVariable("reward_name", GetName(RewardChoice, claimedRewardPanel));
 		    claimedRewardPanel.SetDialogVariable("reward_description", GetDescription(RewardChoice, claimedRewardPanel));
@@ -437,7 +437,7 @@ function UpdateUpgradeDetails()
 
 	if ( g_nViewedHeroID != nHeroID || g_bAlwaysRebuild )
 	{
-		$.GetContextPanel().SetDialogVariable( "local_player_hero_name", $.Localize( szLocalPlayerHeroName ) );
+		$.GetContextPanel().SetDialogVariable( "local_player_hero_name", $.Localize( '#' + szLocalPlayerHeroName ) );
 		$( "#CharacterScenePanel" ).SetScenePanelToLocalHero( nHeroID );
 
 		var nAbilityCount = Entities.GetAbilityCount( nLocalHeroEntIndex );
@@ -461,7 +461,7 @@ function UpdateUpgradeDetails()
 		//	$.Msg( "Initializing ability " + szAbilityName );
 			AbilityContainer.SetAttributeString( "ability_name", szAbilityName );
 			AbilityContainer.SetAttributeInt( "ability_ui_slot", nCurrentAbilityUISlot );
-			AbilityContainer.SetDialogVariable( "ability_name", $.Localize( "DOTA_Tooltip_ability_" + szAbilityName, AbilityContainer ) );
+			AbilityContainer.SetDialogVariable( "ability_name", $.Localize( "#DOTA_Tooltip_ability_" + szAbilityName, AbilityContainer ) );
 
 			var AbilityImage = AbilityContainer.FindChildTraverse( "AttributeAbilityImage" + nCurrentAbilityUISlot.toString() );
 			if ( AbilityImage == null )
@@ -544,14 +544,14 @@ function UpdateUpgradeDetails()
 
 	    	var MajorLineItem = $.CreatePanel( "Panel", CurrentAbilityBuffList, szUpgradeName );
 	    	MajorLineItem.BLoadLayoutSnippet( "AttributeBuffLineItemSnippet" );
-	    	MajorLineItem.SetDialogVariable( "line_item_text", $.Localize( "DOTA_Tooltip_ability_" + szUpgradeName ) );
+	    	MajorLineItem.SetDialogVariable( "line_item_text", $.Localize( "#DOTA_Tooltip_ability_" + szUpgradeName ) );
 	    	MajorLineItem.SetHasClass( "LegendaryShard", true );
 
 	
 	    	(function( lineItem, szLocalizeAbilityName )
 	        {
 	            lineItem.SetPanelEvent( 'onmouseover', function () { $.DispatchEvent( 'UIShowTitleTextTooltip', lineItem, 
-	            	$.Localize(  "DOTA_Tooltip_ability_" + szLocalizeAbilityName  ), GameUI.ReplaceDOTAAbilitySpecialValues( szLocalizeAbilityName, $.Localize( "DOTA_Tooltip_ability_" + szLocalizeAbilityName + "_Description", lineItem ) ) ) } );
+	            	$.Localize(  "#DOTA_Tooltip_ability_" + szLocalizeAbilityName  ), GameUI.ReplaceDOTAAbilitySpecialValues( szLocalizeAbilityName, $.Localize( "#DOTA_Tooltip_ability_" + szLocalizeAbilityName + "_Description", lineItem ) ) ) } );
    				lineItem.SetPanelEvent( 'onmouseout', function () { $.DispatchEvent( 'UIHideTitleTextTooltip', lineItem ); } );;
 	        })( MajorLineItem, szUpgradeName ); 
 	    	
@@ -638,17 +638,17 @@ function UpdateUpgradeDetails()
 	    		var szAttributeText = szSpecialValueName;
 	    		if ( szSpecialValueName == "cooldown" )
 	    		{
-	    			szAttributeText =  $.Localize( "DOTA_HUD_Upgrades_Cooldown" );
+	    			szAttributeText =  $.Localize( "#DOTA_HUD_Upgrades_Cooldown" );
 	    			flNumUpgrades = 0;
 	    		}
 	    		else if ( szSpecialValueName == "mana_cost" )
 	    		{
-	    			szAttributeText =  $.Localize( "DOTA_HUD_Upgrades_ManaCost" );
+	    			szAttributeText =  $.Localize( "#DOTA_HUD_Upgrades_ManaCost" );
 	    			flNumUpgrades = 0;
 	    		}
 	    		else
 	    		{
-	    			szAttributeText = $.Localize( "DOTA_Tooltip_ability_" + key.toString() + "_" + szSpecialValueName );
+	    			szAttributeText = $.Localize( "#DOTA_Tooltip_ability_" + key.toString() + "_" + szSpecialValueName );
 	    			szAttributeText = szAttributeText.toLowerCase();
 	    			szAttributeText = szAttributeText.replace( ":", "" );
 	    			if ( szAttributeText[ 0 ] == "%" )
@@ -706,17 +706,17 @@ function GetName( reward, rewardPanel )
         || reward[ "reward_type" ] === "REWARD_TYPE_MINOR_ABILITY_UPGRADE"
         || reward[ "reward_type" ] === "REWARD_TYPE_MINOR_STATS_UPGRADE")
     { 
-        szName = "DOTA_Tooltip_ability_" + reward[ "ability_name" ];
+        szName = "#DOTA_Tooltip_ability_" + reward[ "ability_name" ];
     }
 
     if ( reward[ "reward_type" ] === "REWARD_TYPE_GOLD" )
     {
-        szName = "DOTA_HUD_Reward_Gold";
+        szName = "#DOTA_HUD_Reward_Gold";
     }
 
     if ( reward[ "reward_type" ] === "REWARD_TYPE_EXTRA_LIVES" )
     {
-        szName = "DOTA_HUD_Reward_ExtraLives";
+        szName = "#DOTA_HUD_Reward_ExtraLives";
     }
 
     return $.Localize( szName, rewardPanel );
@@ -730,16 +730,16 @@ function GetDescription( reward, rewardPanel )
     	return "COULD NOT FIND REWARD IN GetDescription";
     }
     if ( reward[ "reward_type" ] === "REWARD_TYPE_ABILITY_UPGRADE" || reward[ "reward_type" ] === "REWARD_TYPE_ITEM" || reward[ "reward_type" ] === "REWARD_TYPE_TEMP_BUFF" || reward[ "reward_type" ] === "REWARD_TYPE_AURA" ) 
-        return GameUI.ReplaceDOTAAbilitySpecialValues( reward[ "ability_name" ], $.Localize( "DOTA_Tooltip_ability_" + reward[ "ability_name" ] + "_Description", rewardPanel ) );
+        return GameUI.ReplaceDOTAAbilitySpecialValues( reward[ "ability_name" ], $.Localize( "#DOTA_Tooltip_ability_" + reward[ "ability_name" ] + "_Description", rewardPanel ) );
     
     if ( reward[ "reward_type" ] === "REWARD_TYPE_MINOR_ABILITY_UPGRADE" || reward[ "reward_type" ] === "REWARD_TYPE_MINOR_STATS_UPGRADE" )
-        return $.Localize( reward[ "description" ], rewardPanel );
+        return $.Localize( '#' + reward[ "description" ], rewardPanel );
 
     if ( reward[ "reward_type" ] === "REWARD_TYPE_GOLD" )
-        return $.Localize( "DOTA_HUD_Reward_Gold_desc", rewardPanel );
+        return $.Localize( "#DOTA_HUD_Reward_Gold_desc", rewardPanel );
 
     if ( reward[ "reward_type" ] === "REWARD_TYPE_EXTRA_LIVES" )
-        return $.Localize( "DOTA_HUD_Reward_ExtraLives_desc", rewardPanel );
+        return $.Localize( "#DOTA_HUD_Reward_ExtraLives_desc", rewardPanel );
 
    return "FIX ME";
 }

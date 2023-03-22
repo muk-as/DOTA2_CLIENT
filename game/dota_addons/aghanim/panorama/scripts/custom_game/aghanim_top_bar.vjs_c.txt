@@ -7,7 +7,7 @@ var g_hBestTimes = null;
 var g_bInit = false;
 if ( g_bInit == false )
 {
-	$.GetContextPanel().SetDialogVariable( "encounter_name", $.Localize( "encounter_hub" ) );
+	$.GetContextPanel().SetDialogVariable( "encounter_name", $.Localize( "#encounter_hub" ) );
 	$.GetContextPanel().SetDialogVariable( "room_name", $.Localize( "#DOTA_AghsLab_Depth0" ) );
 	g_bInit = true;
 }
@@ -185,7 +185,7 @@ function OnIntroduceEncounter( data )
 
 	$.Msg( data.encounter_name );
 
-	$.GetContextPanel().SetDialogVariable( "encounter_name", $.Localize( data.encounter_name ) );
+	$.GetContextPanel().SetDialogVariable( "encounter_name", $.Localize( '#' + data.encounter_name ) );
 	$.GetContextPanel().SwitchClass( "EncounterName", data.encounter_name );
 	$.GetContextPanel().SwitchClass( "RoomType", data.room_type );
 	$.GetContextPanel().SetDialogVariable( "encounter_depth", Number( data.encounter_depth ) - 1 );
@@ -212,11 +212,11 @@ function OnIntroduceEncounter( data )
 			var ModifierPanel = $.CreatePanel( "Panel", ModifiersContainer, szAbilityName );
 	      	ModifierPanel.BLoadLayoutSnippet( "EncounterModifier" );
 	      	ModifierPanel.SwitchClass( "ascension_ability_name", szAbilityName );
-			ModifierPanel.SetDialogVariable( "ability_name", $.Localize( szAbilityName ) );	
+			ModifierPanel.SetDialogVariable( "ability_name", $.Localize( '#' + szAbilityName ) );	
 
 			(function( modifierPanel, szLocalizeAbilityName )
 	        {
-	            modifierPanel.SetPanelEvent( 'onmouseover', function () { $.DispatchEvent( 'UIShowTitleTextTooltip', modifierPanel, $.Localize( szLocalizeAbilityName ), $.Localize( szLocalizeAbilityName + "_Description" ) ); } );
+	            modifierPanel.SetPanelEvent( 'onmouseover', function () { $.DispatchEvent( 'UIShowTitleTextTooltip', modifierPanel, $.Localize( '#' + szLocalizeAbilityName ), $.Localize( '#' + szLocalizeAbilityName + "_Description" ) ); } );
    				modifierPanel.SetPanelEvent( 'onmouseout', function () { $.DispatchEvent( 'UIHideTitleTextTooltip', modifierPanel ); } );;
 	        })( ModifierPanel, szAbilityName ); 
 			
@@ -296,7 +296,7 @@ function UpdateObjectives()
 		}
 
 		var szObjectiveLocString = Objective[ "name" ];
-		ObjectivePanel.SetDialogVariable( "objective_desc", $.Localize( szObjectiveLocString ) );
+		ObjectivePanel.SetDialogVariable( "objective_desc", $.Localize( '#' + szObjectiveLocString ) );
 
 		var nValue = Objective[ "value" ];
 		ObjectivePanel.SetDialogVariableInt( "value", nValue );

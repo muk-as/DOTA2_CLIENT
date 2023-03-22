@@ -79,12 +79,12 @@ function UpdateGlobalUIElements( )
 	var nTournamentSeed = hTournamentMode ? Number( hTournamentMode["1"] ) : 0;
 	if ( nTournamentSeed == 0 )
 	{
-		$( "#DifficultyContainer" ).SetDialogVariable( "difficulty_name", $.Localize( "TI10_EventGame_AscensionName_" + nAscensionLevel ) );		
+		$( "#DifficultyContainer" ).SetDialogVariable( "difficulty_name", $.Localize( "#TI10_EventGame_AscensionName_" + nAscensionLevel ) );		
 		$( "#DifficultyContainer").SwitchClass( "ascension_level", "AscensionLevel" + nAscensionLevel );
 	}
 	else
 	{
-		$( "#DifficultyContainer" ).SetDialogVariable( "difficulty_name", $.Localize( "TI10_EventGame_ChallengeName_Title" ) );		
+		$( "#DifficultyContainer" ).SetDialogVariable( "difficulty_name", $.Localize( "#TI10_EventGame_ChallengeName_Title" ) );		
 		$( "#DifficultyContainer").SwitchClass( "ascension_level", "InTournamentMode" );
 	}
 }
@@ -112,8 +112,8 @@ function OnIntroduceEncounter( data )
 
 	g_szEncounterName = data.encounter_name;
 
-	$( "#RoomDiscoverPanel" ).FindChildInLayoutFile( "EncounterNameLabel" ).SetDialogVariable( "encounter_name", $.Localize( data.encounter_name ) );
-	$( "#RoomDiscoverPanel" ).FindChildInLayoutFile( "InProgressEncounterNameLabel" ).SetDialogVariable( "encounter_name", $.Localize( data.encounter_name ) );
+	$( "#RoomDiscoverPanel" ).FindChildInLayoutFile( "EncounterNameLabel" ).SetDialogVariable( "encounter_name", $.Localize( '#' + data.encounter_name ) );
+	$( "#RoomDiscoverPanel" ).FindChildInLayoutFile( "InProgressEncounterNameLabel" ).SetDialogVariable( "encounter_name", $.Localize( '#' + data.encounter_name ) );
 	$( "#RoomDiscoverPanel" ).SetHasClass( "InProgress", false );
 	$( "#RoomDiscoverPanel" ).SetHasClass( "Visible", true );
 	$( "#RoomDiscoverPanel" ).SetHasClass( "HardRoom", data[ "hard_room" ] == 1 );
@@ -141,11 +141,11 @@ function OnIntroduceEncounter( data )
 			bHasAscensionAbilities = true;
 			var hAbilityPanel = $.CreatePanel( "Panel", hAbilitiesContainer, abilityName );
 	      	hAbilityPanel.BLoadLayoutSnippet( "AscensionAbilitySnippet" );
-			hAbilityPanel.SetDialogVariable( "ability_name", $.Localize( abilityName ) );
+			hAbilityPanel.SetDialogVariable( "ability_name", $.Localize( '#' + abilityName ) );
 
 			hAbilityPanel = $.CreatePanel( "Panel", hAbilitiesContainerInProgress, abilityName );
 	      	hAbilityPanel.BLoadLayoutSnippet( "AscensionAbilitySnippet" );
-			hAbilityPanel.SetDialogVariable( "ability_name", $.Localize( abilityName ) );			
+			hAbilityPanel.SetDialogVariable( "ability_name", $.Localize( '#' + abilityName ) );			
 		}		
 	}
 
@@ -221,7 +221,7 @@ function OnEncounterUpdated()
 		}
 
 		var szObjectiveLocString = Objective[ "name" ];
-		ObjectivePanel.SetDialogVariable( "objective", $.Localize( szObjectiveLocString ) );
+		ObjectivePanel.SetDialogVariable( "objective", $.Localize( '#' + szObjectiveLocString ) );
 
 		var nValue = Objective[ "value" ];
 		ObjectivePanel.SetDialogVariableInt( "value", nValue );
@@ -299,7 +299,7 @@ function OnBossUpdated( )
 		$( "#BossHealthBarContainer").SetHasClass( "Visible", CurrentBoss.active == true && g_bInBossCamera == false );
 		g_nBossEntIndex = CurrentBoss.ent_index
 
-		$( "#BossLabel" ).text = $.Localize( CurrentBoss.unit_name )
+		$( "#BossLabel" ).text = $.Localize( '#' + CurrentBoss.unit_name )
 
 		$( "#BossHealthBarContainer").SwitchClass( "class", "Boss_"+CurrentBoss.unit_name )
 
@@ -426,7 +426,7 @@ function OnBonusStart( data )
 
 	g_flBonusEndTime = data[ "end_time" ];
 	BonusPanel.SetDialogVariableInt( "time_left", Math.ceil( g_flBonusEndTime - Game.GetGameTime() ) );
-	BonusPanel.SetDialogVariable( "encounter_name", $.Localize( g_szEncounterName ) );
+	BonusPanel.SetDialogVariable( "encounter_name", $.Localize( '#' + g_szEncounterName ) );
 	BonusPanel.SetHasClass( "FinalGoldVisible", false );
 	BonusPanel.SetDialogVariableInt( "total_gold", 0 );
 	BonusPanel.SetHasClass( "Visible", true );
@@ -665,7 +665,7 @@ function StartWorldTextHint( event )
 		$( '#WorldHintPanel' ).SetDialogVariable( "alternate_keybind", "<panel class='" + GetAlternateKeybindForCommand( event["command"] ) + "'/>" );
 	}
 
-	var szLocalizedName = $.Localize( event[ "hint_text" ], $( '#WorldHintPanel' ) );
+	var szLocalizedName = $.Localize( '#' + event[ "hint_text" ], $( '#WorldHintPanel' ) );
 	$( '#WorldHintPanel' ).SetDialogVariable( "world_hint_text", szLocalizedName );
 	$( '#WorldHintPanel' ).style.x = ( nX / $( "#WorldHintPanel" ).actualuiscale_x ) - (  $( '#WorldHintPanel' ).actuallayoutwidth / 2 ) + "px"; 
 	$( '#WorldHintPanel' ).style.y = ( nY / $( "#WorldHintPanel" ).actualuiscale_y  ) + 75 + "px";
@@ -965,10 +965,10 @@ function OnInteractWithEventNPC( data )
 
 
 				$.Msg( "setting dialog var " +  key + " with " + DialogVar );
-				EventDialogPanel.SetDialogVariable( key,  $.Localize( DialogVar, EventDialogPanel ) );
+				EventDialogPanel.SetDialogVariable( key,  $.Localize( '#' + DialogVar, EventDialogPanel ) );
 
 				//var OptionLabel = $.CreatePanel( "Label", OptionButton, "DialogVar_" + key );
-				OptionButton.SetDialogVariable( key, $.Localize( DialogVar, OptionButton )  );
+				OptionButton.SetDialogVariable( key, $.Localize( '#' + DialogVar, OptionButton ) );
 
 			}
 		}
@@ -1032,7 +1032,7 @@ function OnInteractWithEventNPC( data )
 		if ( Option[ "description"] != null )
 		{
 			OptionButton.SetHasClass( "DescriptionVisible", true );
-			OptionButton.SetDialogVariable( "option_text", $.Localize( Option[ "description" ], OptionButton ) );
+			OptionButton.SetDialogVariable( "option_text", $.Localize( '#' + Option[ "description" ], OptionButton ) );
 		}
 
 		if ( Option[ "minor_shard"] != null )
@@ -1086,13 +1086,13 @@ function OnInteractWithEventNPC( data )
 	var szUnitName = Entities.GetUnitName( nInteractEntIndex );
 	var szLocalizeString = data[ "event_description" ] != null ? data[ "event_description" ] : szUnitName + "_event_body_description";
 
-	EventDialogPanel.SetDialogVariable( "event_body_description", $.Localize( szLocalizeString, EventDialogPanel ) );
+	EventDialogPanel.SetDialogVariable( "event_body_description", $.Localize( '#' + szLocalizeString, EventDialogPanel ) );
 	EventDialogPanel.SetHasClass( "EventDialogActive", true );
 	//EventDialogPanel.SetHasClass( "EventRoomStore", data[ "interaction_limit" ] == -1 );
 	EventDialogPanel.SetAttributeInt( "store_room", data[ "interaction_limit" ] == -1 ? 1 : 0 );
 	EventDialogPanel.SetAttributeInt( "interaction_limit", data[ "interaction_limit" ] );
 	EventDialogPanel.SetAttributeInt( "interact_npc_ent_index", nInteractEntIndex );
-	EventDialogPanel.SetDialogVariable( "event_npc_name",  $.Localize( szUnitName, EventDialogPanel ) );
+	EventDialogPanel.SetDialogVariable( "event_npc_name",  $.Localize( '#' + szUnitName, EventDialogPanel ) );
 	$( "#EventNPCScenePanel" ).SetUnit( szUnitName, "default_camera", true );	
 	if ( pJoyFocusPanel !== null )
 		Game.SetJoyFocusPanel( pJoyFocusPanel );
