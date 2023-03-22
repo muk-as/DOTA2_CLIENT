@@ -1174,7 +1174,6 @@
 15CAsyncDataCacheI9MatchID_t20CMsgPlayerCoachMatchE
 15CAsyncDataCacheIi10CUtlVectorI18CDOTA_TwitchStreami10CUtlMemoryIS1_iEEE
 15CAsyncDataCacheIi10CUtlVectorIji10CUtlMemoryIjiEEE
-15CAsyncDataCacheIi14SFrontpageDataE
 15CAsyncDataCacheIi17CDotaDPCFavoritesE
 15CAsyncDataCacheIi18CDOTAUserEmoticonsE
 15CAsyncDataCacheIi19CMsgDOTAProfileCardE
@@ -5380,7 +5379,6 @@
 19CFSRUpscaleRenderer
 19CFXQueueManagerImpl
 19CFlexAnimationTrack
-19CFrontpageDataCache
 19CGCMsgGetIPLocation
 19CGCReplicateConVars
 19CGCToGCMsgMasterAck
@@ -5509,6 +5507,7 @@
 1CMsgClientToGCRespondToCoachFriendRequestResponse
 1DOTA_UNIT_ORDER_TAKE_ITEM_FROM_NEUTRAL_ITEM_STASH
 1DPC_PUSH_NOTIFICATION_PLAYER_JOINED_TEAM_AS_COACH
+1GAME_PARTICLE_MANAGER_EVENT_SET_TEXTURE_ATTRIBUTE
 1If true, return children in the returned details
 1LEAGUE_AUDIT_ACTION_LEAGUE_REMOVE_PRIZE_POOL_ITEM
 1Service containing methods to manage OAuth tokens
@@ -5606,7 +5605,7 @@
 2".CDOTAUserMsg_StatsPlayerKillShare
 2".CDOTAUserMsg_UnitEvent.AddGesture
 2".CDOTAUserMsg_UnitEvent.SpeechMute
-2".CMsg
+2".CMsgDOTAChatRegionsEnabled.Region
 2".CMsgDOTACreateTeamResponse.Result
 2".CMsgDOTADPCSeasonResults.Standing
 2".CMsgDOTAFantasyCardList.CardBonus
@@ -8050,7 +8049,6 @@
 25CScrubSystemEventListener
 25CSingleItemAsyncDataCacheI10CUtlVectorI18CDOTA_TwitchStreami10CUtlMemoryIS1_iEEE
 25CSingleItemAsyncDataCacheI10CUtlVectorIji10CUtlMemoryIjiEEE
-25CSingleItemAsyncDataCacheI14SFrontpageDataE
 25CSingleItemAsyncDataCacheI17CDotaDPCFavoritesE
 25CSingleItemAsyncDataCacheI18CDOTAUserEmoticonsE
 25CSingleItemAsyncDataCacheI19CMsgDOTAProfileCardE
@@ -13298,6 +13296,7 @@
 38C_DOTA_Unit_AghsFort_Creature_Batrider
 39CCommunity_GetClanAnnouncements_Request
 39CCustomTextureTeamBannerLogoOnPropProxy
+39CDOTA
 39CDOTAClientMsg_AddOverwatchReportMarker
 39CDOTAClientMsg_ContextualTips_Subscribe
 39CDOTAClientMsg_FillEmptySlotsWithBots_t
@@ -13372,7 +13371,6 @@
 39CDOTA_Modifier_DrowRanger_WaveOfSilence
 39CDOTA_Modifier_EarthSpirit_BoulderSmash
 39CDOTA_Modifier_EarthSpirit_Polarization
-39CDOTA_Modifier_EarthSpirit_StoneThinker
 39CDOTA_Modifier_Earthshaker_EnchantTotem
 39CDOTA_Modifier_Earthshaker_Fissure_Stun
 39CDOTA_Modifier_Enchantress_Enchant_Slow
@@ -13655,6 +13653,7 @@
 3d: e=%.3f rms=%.6f %u
 3dSkyboxFrustum
 3dSkyboxWorldOffset
+3f;5Vhj
 3fA9\$Vr+I
 3fA;\$vw+H
 3i fps (%3i, %3i) smth:%4.1f ms frm:%4.1f ms on %s frames: %u
@@ -18646,6 +18645,7 @@ A:E#t2A
 A:G}tiL
 A;D$4s}I
 A;D$8t?A;D
+A;D$8tC[A
 A;D$<tDI
 A;D$HtEA;D$@t
 A;D$Lt#H
@@ -20271,6 +20271,7 @@ A\A]A^I
 A]A^u3H
 A^A_]fH
 A^A_uoH
+A_Modifier_EarthSpirit_StoneThinker
 AbandonGamePopup
 AbandonsDetails1
 AbandonsLabel
@@ -21800,7 +21801,6 @@ Bloom: Blur Y Compute
 Bloom: Clear hBloomBuffer
 Bloom: Clear hBloomBuffer/hBloomBuffer2
 Bloom: Clear hBloomBuffer2
-Bloom: Downsample
 Bloom: Downsample Compute
 BloomTexture
 BlurBackground
@@ -23206,6 +23206,7 @@ CDOTA_Ability_AghsFort_Special_Dawnbreaker_Starbreaker_CounterOrbital
 CDOTA_Ability_AghsFort_Special_Dawnbreaker_Starbreaker_Suncrusher
 CDOTA_Ability_AghsFort_Special_Magnataur_Empower_All_Allies
 CDOTA_Ability_AghsFort_Special_Magnataur_Empower_Charges
+CDOTA_Ability_AghsFort_Special_Magnataur_Empower_Lifesteal
 CDOTA_Ability_AghsFort_Special_Magnataur_Empower_ShockwaveOnAttack
 CDOTA_Ability_AghsFort_Special_Magnataur_Reverse_Polarity_Allies_Crit
 CDOTA_Ability_AghsFort_Special_Magnataur_Reverse_Polarity_Polarity_Dummy
@@ -29337,7 +29338,6 @@ CHandle<CIngameEvent_Base
 CHandle<C_DOTA_BaseNPC_Hero
 CHandle<C_EconWearable
 CHandle<C_PostProcessingVolume
-CHeroSelectEvent
 CHeroStatueLiked
 CHeroesPerPlayer
 CHin : voiceless postalveolar affricate
@@ -36333,7 +36333,6 @@ D$8H9C8t
 D$8H;X@t$H
 D$8IcT$0H
 D$8L;t$8t'A
-D$8tC[A
 D$<9C<t
 D$@9C@t
 D$@A9D$P
@@ -37576,7 +37575,6 @@ DOTAFrontpageContents
 DOTAFrontpageDPCLive
 DOTAFrontpageDPCLiveScheduledUpdate
 DOTAFrontpageDPCUpcoming
-DOTAFrontpageDataUpdated
 DOTAFrontpageDefaultButton
 DOTAFrontpageFall2021UpcomingRewards
 DOTAFrontpageFriendCustomGame
@@ -40116,7 +40114,6 @@ DOTATriviaChangedVisibility
 DOTATriviaGame
 DOTATriviaPlayQuestionSound
 DOTATriviaPollingUpdate
-DOTATriviaQuestionCategory_AbilityCooldown
 DOTATriviaToggleAutoplaySounds
 DOTATriviaToggleChat
 DOTATrophiesFilter
@@ -45301,6 +45298,7 @@ DataDesc_ConvertTextDataToNewKeyValues
 DataDesc_UnserializeKey
 DataOffset
 DataTeamPlayer_t
+DataUpdate
 Datamap at addr %p
 Date Cell
 DateContainer
@@ -46285,7 +46283,6 @@ E(A9D$<t
 E(A;E,t~I
 E(H9E0sHL
 E(I9E0sHH
-E(IcM I
 E(Mc>E
 E(zKuIH
 E(zNuLH
@@ -46418,7 +46415,6 @@ EEvent
 EEventActionScoreMode
 EExtractGems
 EFeedElementType
-EG parameter struct mismatch: library thinks size is %u, caller expects %u
 EGCBaseClientMsg
 EGCBaseMsg
 EGCEconBaseMsg
@@ -46439,7 +46435,6 @@ EHeroRelicRarity
 EHeroRelicRarity"i
 EHeroSelectionText
 EHeroStatType
-EHeroStatType_BerserkersCallHeroesHitAverage
 EHf9CHt
 EHighPriorityMMState
 EHighlightNumberFormat
@@ -50676,6 +50671,7 @@ HcK0Ic
 HcK4HcWTH
 HcKHIc
 HcP uGH
+HcQH;QXE
 HcS ;S0
 HcS(;S8H
 HcT$4Mc
@@ -52771,6 +52767,7 @@ JHcK0Ic
 JL[A\A]A
 JOIN_SUCCESS
 JPEG datastream contains no image
+JPEG parameter struct mismatch: library thinks size is %u, caller expects %u
 JPEGMEM
 JPH9HPt
 JP[A\A]A
@@ -55962,7 +55959,6 @@ N5GCSDK17GCClientJobLambdaIZN15CAsyncDataCacheIi10CUtlVectorI18CDOTA_TwitchStrea
 N5GCSDK17GCClientJobLambdaIZN15CAsyncDataCacheIi10CUtlVectorIji10CUtlMemoryIjiEEE16BatchRequestDataEPKiiEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN15CAsyncDataCacheIi10CUtlVectorIji10CUtlMemoryIjiEEE18RequestCurrentDataERKiEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN15CAsyncDataCacheIi10CUtlVectorIji10CUtlMemoryIjiEEE20ScheduleBatchRequestEfEUlvE_EE
-N5GCSDK17GCClientJobLambdaIZN15CAsyncDataCacheIi14SFrontpageDataE18RequestCurrentDataERKiEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN15CAsyncDataCacheIi17CDotaDPCFavoritesE18RequestCurrentDataERKiEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN15CAsyncDataCacheIi18CDOTAUserEmoticonsE16BatchRequestDataEPKiiEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN15CAsyncDataCacheIi18CDOTAUserEmoticonsE18RequestCurrentDataERKiEUlvE_EE
@@ -57816,7 +57812,6 @@ OPENPAREND
 OPTIONS
 ORGANIZATIONAL
 ORIGIN
-OTA_Ability_AghsFort_Special_Magnataur_Empower_Lifesteal
 OTHER_ERROR
 OUTBUFF_FULL
 OUT_OF_RANGE
@@ -65217,7 +65212,6 @@ TopBarUltIndicator
 TopBarWatch
 TopBottomFlow
 TopContributor
-TopCustomGame
 TopDire
 TopGamesCarousel
 TopGlyph
@@ -66301,6 +66295,7 @@ V8z3u1
 V@9Q0tHH
 V@IcW@I
 VAC_NOT_VERIFIED
+VAUATSH
 VApplication001
 VAsyncFileSystem2_001
 VAvi001
@@ -66847,6 +66842,7 @@ WATER_WAKE_NONE
 WATER_WAKE_RUNNING
 WATER_WAKE_WALKING
 WATER_WAKE_WATER_OVERHEAD
+WAVAUATSH
 WEAPON_IS_ACTIVE
 WEAPON_IS_CARRIED_BY_PLAYER
 WEAPON_NOT_CARRIED
@@ -69200,7 +69196,6 @@ a world layer in a dota map
 aCmodifier_item_null_talisman
 aIcN8Ic
 aZure : voiced postalveolar fricative
-a_clouds
 a_fDecodedAlpha >= 0.0f
 a_uiMultithreadingStride > 0
 a_uiRadius <= MAX_RADIUS
@@ -70589,6 +70584,7 @@ announcer_announcer_type_all_random
 announcer_announcer_type_single_draft
 announcer_preview
 announcer_voice
+anorama-xml
 another member of oneof
 answer_id
 answer_index
@@ -75714,7 +75710,6 @@ dota_friends_offline_expanded
 dota_friends_online_expanded
 dota_friends_open_party_expanded
 dota_friends_pending_expanded
-dota_frontpage_data_cache_duration
 dota_frontpage_dpc_live_update_interval
 dota_frontpage_ti10_live_update_interval
 dota_frontpage_ti10_replay_update_interval
@@ -77994,6 +77989,7 @@ event_expiration_time
 event_fall2016
 event_game_adjust_resource_remaining
 event_game_allows_live_spectating
+event_game_blessing_count
 event_game_cavern_full_credit
 event_game_competition_tier1_reward_item_defs
 event_game_competition_tier2_reward_item_defs
@@ -78450,6 +78446,7 @@ fiend_grip_damage
 fiend_grip_mana_drain
 fiend_grip_spread_radius
 fiend_grip_tick_interval
+fier_silencer_glaives_of_wisdom_debuff
 fiery_soul_attack_speed_bonus
 fiery_soul_max_stacks
 fiery_soul_move_speed_bonus
@@ -80169,7 +80166,6 @@ g:dota_league_name:league_id
 g:dota_persona
 g@A9L$(tmH
 gA;T$x
-gDOTAChatRegionsEnabled.Region
 gHA9L$(tUH
 gO : upper-mid back rounded vowel
 gPA9L$(tUH
@@ -81503,7 +81499,7 @@ hint_panel_fadein
 hint_panel_fadeout
 history_state
 hitEntities
-hitSoun
+hitSound
 hit_count
 hit_damage
 hit_recover_time
@@ -81761,13 +81757,11 @@ huskar_inner_fire
 huskar_inner_vitality
 huskar_life_break
 hype_loc
-h|D;-Af3
-h|D;-Fa4
-h|D;-GT3
-h|D;-Op
-h|D;-du
-h|D;-mc
-h|D;-rkd
+h|D;-Er
+h|D;-TZY
+h|D;-qg3
+h|D;-vb4
+h|D;-wU3
 i < length
 i matching ent%s
 i(ERemoteStoragePublishedFileVisibility) Visibility of the published file (private, friends, public, etc
@@ -81839,7 +81833,6 @@ iSpawnerEntIndex
 iStackCount
 iStockCount
 iTeamNumber
-ial_bonus_unique_wraith_king_3
 ic>%s</ic
 ice_shaman_incendiary_bomb
 icefrog
@@ -86215,8 +86208,8 @@ lycan_summon_wolves
 lycan_summon_wolves_critical_strike
 lycan_summon_wolves_invisibility
 lycan_wolf_bite
-m H;-8t
-m8L;-jC
+m8L;-JE
+m: Downsample
 m_16ByteOrLessStack out of space, falling through after %d entries, consider upping NETWORKFIELDSCRATCHDATA_16BYTE_COUNT
 m_AbilityDraftAbilities
 m_ActiveRingOwners
@@ -95137,7 +95130,6 @@ modifier_silencer_glaives_of_wisdom
 modifier_silencer_glaives_of_wisdom_attack_counter
 modifier_silencer_glaives_of_wisdom_buff
 modifier_silencer_glaives_of_wisdom_buff_counter
-modifier_silencer_glaives_of_wisdom_debuff
 modifier_silencer_glaives_of_wisdom_debuff_counter
 modifier_silencer_global_silence
 modifier_silencer_last_word
@@ -95870,6 +95862,7 @@ muzzleflash_shotgun_player
 muzzleflash_smg1_player
 mvp_account_id
 mvp_data
+mxH;-p
 my_behavior_score
 my_coach_rating
 my_custom_images/%d.png
@@ -97125,7 +97118,6 @@ override_badge_level
 override_desc
 override_hero
 override_operator_name
-override_shadow_farz
 override_trophy_badge_points
 override_vpk
 overridecurrentstars
@@ -97308,7 +97300,6 @@ pangolier_rollup_stop
 pangolier_shield_crash
 pangolier_swashbuckle
 pangolin
-panorama-xml
 panorama/browser/webkit.css
 panorama/fonts
 panorama/images/%s_%s.vtex_c
@@ -99819,12 +99810,10 @@ pwatchvar
 pwrd_cyber_cafe_id
 pwrd_cyber_cafe_name
 py_generic_services
-p|D;55w
-p|D;5=z
-p|D;5MS
-p|D;5jK5
-p|D;5ox
-p|D;5u
+p|D;55m
+p|D;5m
+p|D;5y5a
+p|D;5}T
 p|E;t$0
 q(HcI H
 q<@8p<t
@@ -99963,6 +99952,7 @@ r_dota_always_reflect_refract
 r_dota_bloom_compute_shader
 r_dota_caustic_fog_exclusion_radius
 r_dota_caustic_fog_plane_min
+r_dota_clouds
 r_dota_color_correction
 r_dota_debug_reflection_rects
 r_dota_default_post_process_fade
@@ -100878,6 +100868,7 @@ river_speed
 riverid
 rnd_down
 rndwave
+roSelectEvent
 roaming_radius
 roaming_seconds_per_rotation
 roared_bonus_armor
@@ -104471,6 +104462,7 @@ special_bonus_unique_wraith_king_1
 special_bonus_unique_wraith_king_10
 special_bonus_unique_wraith_king_11
 special_bonus_unique_wraith_king_2
+special_bonus_unique_wraith_king_3
 special_bonus_unique_wraith_king_4
 special_bonus_unique_wraith_king_5
 special_bonus_unique_wraith_king_6
@@ -105482,6 +105474,7 @@ t$pvufA
 t%9C8t
 t%;2t%H
 t%HcC0A
+t&D;5%f
 t&IcT$hA;T$x
 t'IcD$x
 t(Lc#D;c
@@ -105676,7 +105669,6 @@ t^M;4$L
 t_<"tcD
 t_I94$H
 t_M;4$L
-t_game_blessing_count
 t`E9w8t
 t`Lcc`D;cpD
 taG : voiced velar stop
@@ -106400,7 +106392,6 @@ top_75_finishes
 top_90_finishes
 top_bar_lvl%d
 top_bar_message
-top_custom_game
 top_custom_games
 top_heroes
 top_label
@@ -106868,7 +106859,6 @@ uQHcp`H
 uS[A\A]A
 uU[A\A]A
 uV[A\A]A
-uWMc,$E;l
 uW[A\A]A
 uY[A\A]A
 u`HcS@H
@@ -107458,6 +107448,7 @@ venomancer_plague_ward
 venomancer_poison_nova
 venomancer_poison_sting
 venomancer_venomous_gale
+verride_shadow_farz
 versatility
 versatility_score
 version
@@ -108236,11 +108227,8 @@ xp_value
 xpm_diff
 xstat64
 xwMcD$xD9
-x|D;=8S
-x|D;=FP
-x|D;=HV3
-x|D;=bZ
-x|D;=sE
+x|D;=vQ
+x|D;=xW3
 y(HcI H
 y0H9z0t
 y8H9z8t
