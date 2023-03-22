@@ -2275,7 +2275,6 @@
 16CModifierFactoryI37CDOTA_Modifier_Mirana_MoonlightShadowE
 16CModifierFactoryI37CDOTA_Modifier_MonkeyKing_ArcToGroundE
 16CModifierFactoryI37CDOTA_Modifier_MonkeyKing_BouncePerchE
-16CModifierFactoryI37CDOTA_Modifier_MonkeyKing_Strike_CritE
 16CModifierFactoryI37CDOTA_Modifier_MonkeyKing_Strike_StunE
 16CModifierFactoryI37CDOTA_Modifier_Morokai_JungleHealBeamE
 16CModifierFactoryI37CDOTA_Modifier_NagaSiren_Crit_PassiveE
@@ -5401,7 +5400,6 @@
 20CPointVelocitySensor
 20CPostConnectCallback
 20CProtoItemHeroStatue
-20CRagdollPropAttached
 20CRefCountServiceBaseI6CRefMTE
 20CResponseCriteriaSet
 20CSOEconItemAttribute
@@ -6185,6 +6183,7 @@
 23IAnimationDebugRenderer
 23IEconLootListDefinition
 23IEntityDataInstantiator
+23ILagCompensationManager
 23ISimulationThinkManager
 23ISpawnGroupEntityFilter
 23PingConfirmationState_t
@@ -15347,6 +15346,7 @@
 6ActionI13CDOTA_BaseNPCE
 6CCoJob
 6CHAT_MESSAGE_RANKED_GAME_STILL_SCORED_LEAVERS_GET_LOSS
+6CModifierFactoryI37CDOTA_Modifier_MonkeyKing_Strike_CritE
 6CWorld
 6GAME_PARTICLE_MANAGER_EVENT_FREEZE_TRANSITION_OVERRIDE
 6GAME_PARTICLE_MANAGER_EVENT_SET_CONTROL_POINT_SNAPSHOT
@@ -17550,9 +17550,7 @@ AUATASARA
 AUATCp ZAp(p(RCp
 AUAUARA]AUAp
 AUA`%A`HA[AUAYAYAWBp RA`!AUA
-AUserMsg_MoveCameraToUnit_t
 AVARA`wAVARA
-AVAUATSH
 AVA`-A`0A
 AVA`3ATA`6A
 AVS9w4t'A
@@ -17577,8 +17575,10 @@ AWAVATSHc^XH
 AWAVATSI
 AWAVATSL
 AWAVATSLc
+AWAVATSLc%V
 AWAVATSLc?M
 AWAVATSM
+AWAVAUA
 AWAVAUATS
 AWAVAUATS1
 AWAVAUATSD
@@ -19609,6 +19609,7 @@ CDOTAUserMsg_MinimapEvent_t
 CDOTAUserMsg_ModifierAlert
 CDOTAUserMsg_ModifierAlert_t
 CDOTAUserMsg_MoveCameraToUnit
+CDOTAUserMsg_MoveCameraToUnit_t
 CDOTAUserMsg_MuertaReleaseEvent_AssignedTargetKilled_t
 CDOTAUserMsg_MutedPlayers
 CDOTAUserMsg_MutedPlayers_t
@@ -19650,7 +19651,6 @@ CDOTAUserMsg_QueuedOrderRemoved_t
 CDOTAUserMsg_QuickBuyAlert
 CDOTAUserMsg_QuickBuyAlert_t
 CDOTAUserMsg_RadarAlert
-CDOTAUserMsg_RadarAlert_t
 CDOTAUserMsg_ReceivedXmasGift
 CDOTAUserMsg_ReceivedXmasGift_t
 CDOTAUserMsg_ReplaceQueryUnit
@@ -23240,6 +23240,7 @@ CDOTA_Item_HelmOfIronWill
 CDOTA_Item_HelmOfTheDominator
 CDOTA_Item_HelmOfTheDominator_2
 CDOTA_Item_HelmOfTheOverlord
+CDOTA_Item_Helm_Of_The_Undying
 CDOTA_Item_Holy_Locket
 CDOTA_Item_Hood_Of_Defiance
 CDOTA_Item_Horizon
@@ -27562,6 +27563,7 @@ CHAT_MESSAGE_WILL_NOT_BE_SCORED_NETWORK_RANKED
 CHAT_MESSAGE_WILL_NOT_BE_SCORED_RANKED
 CHAT_MESSAGE_YEAR_BEAST_KILLED
 CHAT_MESSAGE_YOUPAUSED
+CHECK f
 CHECK failed: !AllocPolicy
 CHECK failed: !HasUnknownFieldsTag
 CHECK failed: !InRealOneof(field
@@ -27789,7 +27791,6 @@ CHECK failed: tagged_ptr_.IsMutable
 CHECK failed: target + size == res
 CHECK failed: target_ != NULL
 CHECK failed: this != other
-CHECK failed: this != rhs
 CHECK failed: this == other_mutator
 CHECK failed: type > 0 && type <= WireFormatLite::MAX_FIELD_TYPE
 CHECK failed: uninterpreted_options_field != nullptr
@@ -27993,6 +27994,7 @@ CLASS_PLAYER
 CLASS_PLAYER_ALLY
 CLC_Messages
 CLICK_BEHAVIORS
+CLICK_BEHAVIOR_LEARN_ABILITY
 CLIENTSIDE
 CLIENTSTUB
 CLIENT_STEAMID
@@ -30740,7 +30742,7 @@ DOTA_CLICK_BEHAVIOR_CAST
 DOTA_CLICK_BEHAVIOR_DRAG
 DOTA_CLICK_BEHAVIOR_DROP_ITEM
 DOTA_CLICK_BEHAVIOR_DROP_SHOP_ITEM
-DOTA_CLICK_BEHAVIOR_LEARN_ABILITY
+DOTA_CLICK_BEHAVIOR_LAST
 DOTA_CLICK_BEHAVIOR_MOVE
 DOTA_CLICK_BEHAVIOR_NONE
 DOTA_CLICK_BEHAVIOR_PATROL
@@ -34163,7 +34165,6 @@ Frames: %d, Time: %2.2fs, FPS: %2.2f
 Free Sound List is full
 Free a damageinfo object that was created with CreateDamageInfo
 Frees the specified particle index
-Freeze the game time
 Frequency
 Friction coefficient at full sliding
 Friction during noclip move
@@ -35664,7 +35665,6 @@ GetTeamNumber
 GetTeamPlayerCount
 GetTeamPlayers
 GetTexture
-GetTimeFrozen
 GetTimeOfDay
 GetTimeOfLastConsumablePurchase
 GetTimeOfLastDeath
@@ -38474,7 +38474,6 @@ Is attached to parent
 Is it day time
 Is it night stalker night-time
 Is it temporarily night-time
-Is our time frozen
 Is playing entry
 Is the Nian horn
 Is the Nian's horn broken
@@ -38939,7 +38938,6 @@ ItemUpgradeable
 ItemUsageThink
 Item_Blight_Stone.Target
 Item_Desolator.Target
-Item_Helm_Of_The_Undying
 Items: %d, %d, %d, %d, %d, %d, %d, %d, %d, %d
 Items_HeH
 Items_MaH
@@ -39981,7 +39979,7 @@ MapValueRef::SetInt64Value
 MapValueRef::SetStringValue
 MapValueRef::SetUInt32Value
 MapValueRef::SetUInt64Value
-Mar 10 2023
+Mar 13 2023
 Margin desired = %0.2f, actual = %0.2f
 Mark object for debug
 Mark the ability button for this ability as needing a refresh
@@ -42600,7 +42598,6 @@ Pick hero for recording
 Pick up a dropped item
 Pick up a rune
 PickBanDetails
-PickRandom
 PickRandomShuffle
 Picker %i/%s - ent %s model %s
 Pickup Item
@@ -44536,6 +44533,7 @@ ScriptSetConstraint
 ScriptSetDynamicVsDynamicContinuous
 ScriptSetEntityName
 ScriptSetFarZ
+ScriptSetForward
 ScriptSetGraphLookTarget
 ScriptSetGraphParameter
 ScriptSetGraphParameterBool
@@ -45468,7 +45466,6 @@ Set if a given type of rune is enabled
 Set if bots should enable their late game behavior
 Set if the bots should try their best to push with a human player
 Set if this unit has an inventory
-Set if we should freeze time or not
 Set if we should whitelist shop items
 Set if weather effects are disabled
 Set int value for an entity attribute
@@ -45839,7 +45836,6 @@ SetFrequency
 SetFriction
 SetFriendlyBuildingMoveToEnabled
 SetFrozenCooldown
-SetGameTimeFrozen
 SetGameWinner
 SetGiveFreeTPOnDeath
 SetGlowOverride
@@ -46186,10 +46182,10 @@ SetTeamCustomHealthbarColor
 SetTextReplaceString
 SetTextReplaceValue
 SetTextureAttribute
-SetTimeFrozen
 SetTimeOfDay
 SetTimeUntilRespawn
 SetToDefaults
+SetTopBarTeamValue
 SetTopBarTeamValuesOverride
 SetTopBarTeamValuesVisible
 SetTowerBackdoorProtectionEnabled
@@ -46901,7 +46897,6 @@ TAUBTATCTAUBTAUAp TATCSBUBTAUBTAUBSBUBTATCTAUBTAUBSDp
 TAUBTAUBTAUBTAUBTCp
 TAUBTAUBTCp
 TAUBTCp
-TA_CLICK_BEHAVIOR_LAST
 TA`!ARA
 TA`1ATARATARA`4ATAWAp
 TBRASAp
@@ -48021,6 +48016,7 @@ Used to debug ViewPunch
 User Message Name,Count,Average Size Written,Total Size Written
 User Messages
 UserIDToControllerHScript
+UserMsg_RadarAlert_t
 UsesConstantGesture
 UsesGestureBasedAttackAnimation
 Using '$' in commands will substitute the entity selection spec
@@ -48038,6 +48034,7 @@ VARAVAUASB[AUBUBXA
 VARAVAUAZA]ATASASASASASASASASASASASASASASASASBRAZASBRARAp
 VASB`RA`RA
 VATDUAp(p8RAp
+VAUATSH
 VAUBVAUASA
 VApplication001
 VAsyncFileSystem2_001
@@ -50580,7 +50577,6 @@ arrow_damage_pct
 arrow_delay
 arrow_index
 arrow_max_stun
-arrow_max_stunrange
 arrow_min_stun
 arrow_range
 arrow_range_multiplier
@@ -50624,6 +50620,7 @@ assisting_player_count
 assists
 assists_count
 associated_favorite_team_id
+associated_item
 associated_item_def
 associated_passenger
 associated_workshop_file_for_direct_payments
@@ -52831,7 +52828,6 @@ couriers_killed
 cp p(RDp
 cp0_model
 cp0_snapshot
-cp_nistz256_select_w7
 cp_position
 cpoint%d
 cpoint%d_value
@@ -52931,7 +52927,6 @@ creeps_radiant
 creeps_stacked
 creeptests
 crest_images
-criptSetForward
 crit.vpcf
 crit_active
 crit_bonus
@@ -54984,6 +54979,7 @@ ecp_nistz256_point_add
 ecp_nistz256_point_add_affine
 ecp_nistz256_point_double
 ecp_nistz256_select_w5
+ecp_nistz256_select_w7
 ecp_nistz256_sqr_mont
 ecp_nistz256_sub
 ecp_nistz256_to_mont
@@ -55745,6 +55741,7 @@ fail_type
 failed to get memory
 failed to parse contents
 failed to restore %s
+failed: this != rhs
 failed_loaders
 failed_lookup_steamids
 failed_revenge
@@ -56453,7 +56450,6 @@ g %g %g %g
 g fieldsH
 g is not followed by a braced, angle-bracketed, or quoted name/number or by a plain number
 g:l4d2
-gSignOutGuildChallengeProgress
 g_BitBuf_BitWriteMasks
 g_CustomGameCache.IsBusy
 g_SoundPatchCount
@@ -56637,6 +56633,7 @@ gcsdk/gcsdk_types.h
 gcsdk_gcmessages.proto
 gcsql_version
 gcsystemmsgs.proto
+gdollPropAttached
 gearratio
 gem not removable
 gem quality
@@ -57744,7 +57741,6 @@ iVisionTeamNumber
 iW=:`TC
 iXPBounty
 i] = %f
-iated_item
 ice_blast
 ice_shaman_incendiary_bomb
 ick_AnnoH
@@ -62705,7 +62701,6 @@ m_bGameModeFilteredAbilities
 m_bGameModeWantsDefaultNeutralItemSchema
 m_bGamePaused
 m_bGameStarted
-m_bGameTimeFrozen
 m_bGameWasLoaded
 m_bGhostShipIsEntity
 m_bGiveAgility
@@ -71669,6 +71664,7 @@ modifier_minotaur_horn_immune
 modifier_mirana_leap
 modifier_mirana_leap_buff
 modifier_mirana_leap_charge_counter
+modifier_mirana_leap_slow
 modifier_mirana_moonlight_shadow
 modifier_mirana_moonlight_shadow_killtracker
 modifier_mirana_starfall_scepter_thinker
@@ -72861,7 +72857,7 @@ movie_name
 moving_entity
 movment
 mp_allowspectators
-mp_cost
+mp_cost_per_second
 mp_disable_autokick
 mp_fadetoblack
 mp_forcecamera
@@ -74287,7 +74283,6 @@ octarine_tested
 octree.dat
 odds of a game having the egg hunt
 odds_damage
-odifier_mirana_leap_slow
 of all visible avoidance zones in a {ability, location, radius} table
 of that program.  Please make an effort to report this bug
 off_duration
@@ -74547,6 +74542,7 @@ p `p `` `p
 p `p `p
 p `p `p `` `p
 p `p `p `` `p `p
+p `p `p `p
 p `p `p `p `p
 p p SDp
 p p p p p p p p  p p
@@ -74667,7 +74663,6 @@ pAddedBuff
 pAnimation
 pAttachmentName
 pAttachmentname
-pBarTeamValue
 pData->GetDataDescMap() == pTemplateDataMap
 pDefault
 pGlaive
@@ -83106,7 +83101,6 @@ t#IcO8
 t#IcOP
 t#IcOh
 t$ E;t$$u
-t$ H;5
 t$ IcT
 t$0E;t$4t
 t$0E;t$4t4
@@ -83179,7 +83173,6 @@ t[Mc,$D
 t\A9D$(uUA
 t_9w tZ9w$tU9w(tP9w,tK9w0tF9w4tA9w8t<9w<t79w@t29wDt-9wHt(9wLt#9wPt
 t_AnnotaH
-t_per_second
 t`</uOH
 taLc` M
 table: %u members
@@ -84011,7 +84004,6 @@ u8IcNxH
 u:%02u:%02u
 u@IcU8H
 uB!!cB!!c
-uD9%94
 uHE;uLu
 uPE;u`u#L
 uUA;D$0u
@@ -85826,6 +85818,7 @@ wAVASAp
 wHIcW@H
 wPIcWHH
 wXIcWPH
+w_max_stunrange
 w`IcWXH
 wager_amount
 wager_conversion_ratio
@@ -86180,8 +86173,6 @@ xp_reason
 xp_received
 xp_reward_details
 xt9Wp~oI
-x|D9={4
-x~D9%.4
 y=up=green, z=forward=blue, x=left=red
 y?IcE0H
 y_normal

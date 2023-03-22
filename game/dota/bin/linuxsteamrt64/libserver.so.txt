@@ -10870,7 +10870,6 @@
 38CWorkshop_GetItemDailyRevenue_Response
 38CWorkshop_SetItemPaymentRules_Response
 39CCommunity_GetClanAnnouncements_Request
-39CDOTA
 39CDOTAClientMsg_AddOverwatchReportMarker
 39CDOTAClientMsg_ContextualTips_Subscribe
 39CDOTAClientMsg_SetEnemyStartingPosition
@@ -10938,6 +10937,7 @@
 39CDOTA_Ability_Skywrath_Mage_Arcane_Bolt
 39CDOTA_Ability_Sniper_Concussive_Grenade
 39CDOTA_Ability_Special_Bonus_Agility_100
+39CDOTA_Ability_Special_Bonus_All_Stats_4
 39CDOTA_Ability_Special_Bonus_All_Stats_5
 39CDOTA_Ability_Special_Bonus_All_Stats_6
 39CDOTA_Ability_Special_Bonus_All_Stats_7
@@ -15471,7 +15471,7 @@
 8CUserCmd
 8CUtlSlot
 8D8c=t
-8D;5Qs
+8D;51j
 8E;7}3I
 8INavDraw
 8INextBot
@@ -15495,7 +15495,6 @@
 99w(|&H
 9CBaseFlex
 9CBaseProp
-9CCallb
 9CCallbackI14CDOTAGameRules14GSClientDeny_tLb1EE
 9CCallbackI14CDOTAGameRules14GSClientKick_tLb1EE
 9CCallbackI14CInstallUGCJob20DownloadItemResult_tLb1EE
@@ -15508,6 +15507,7 @@
 9CCallbackIN5GCSDK9CGCClientE20GCMessageAvailable_tLb0EE
 9CCallbackIN5GCSDK9CGCClientE23SteamServersConnected_tLb0EE
 9CCallbackIN5GCSDK9CGCClientE26SteamServersDisconnected_tLb0EE
+9CCallbackIN5GCSDK9CGCClientE27SteamServerConnectFailure_tLb0EE
 9CDOTABody
 9CDOTATeam
 9CDOTA_Bot
@@ -16689,7 +16689,6 @@ ACT_PDA_VM_IDLE_LOWERED
 ACT_PDA_VM_IDLE_TO_LOWERED
 ACT_PDA_VM_LOWERED_TO_IDLE
 ACT_PDA_VM_PRIMARYATTACK
-ACT_PDA_VM_PULLBACK
 ACT_PDA_VM_RELOAD
 ACT_PDA_VM_SECONDARYATTACK
 ACT_PHYSCANNON_UPGRADE
@@ -17288,7 +17287,8 @@ A\A]A^A_H
 A\A]A^H
 A\A]A^Hc
 A]A_uoH
-A_Ability_Special_Bonus_All_Stats_4
+A_Ability_Special_Bonus_Unique_Arc_Warden_2
+A_THREATLEVEL_Low
 A_to_curve
 Ability
 Ability '%s' is unhidden in a slot > 5! This will cause issues in ability layout
@@ -21315,7 +21315,6 @@ CDOTA_Ability_Special_Bonus_Unique_Antimage_6
 CDOTA_Ability_Special_Bonus_Unique_Antimage_7
 CDOTA_Ability_Special_Bonus_Unique_Antimage_8
 CDOTA_Ability_Special_Bonus_Unique_Arc_Warden
-CDOTA_Ability_Special_Bonus_Unique_Arc_Warden_2
 CDOTA_Ability_Special_Bonus_Unique_Arc_Warden_3
 CDOTA_Ability_Special_Bonus_Unique_Arc_Warden_4
 CDOTA_Ability_Special_Bonus_Unique_Arc_Warden_5
@@ -23214,6 +23213,7 @@ CDOTA_Item_WraithPact
 CDOTA_Item_Yasha
 CDOTA_Item_Yasha_And_Kaya
 CDOTA_Jungle_Varmint_Dive
+CDOTA_M
 CDOTA_MLBotManager
 CDOTA_MLUnitTracker::Update
 CDOTA_MapTree
@@ -25496,7 +25496,6 @@ CDOTA_Modifier_Nevermore_Requiem_Thinker
 CDOTA_Modifier_NianCharge
 CDOTA_Modifier_NianCharge::OnDestroy
 CDOTA_Modifier_NianChargePinned
-CDOTA_Modifier_Nian_Apocalypse
 CDOTA_Modifier_Nian_Attachment
 CDOTA_Modifier_Nian_Attachment_Regrow
 CDOTA_Modifier_Nian_Big_Flinch
@@ -27741,6 +27740,7 @@ CMsgConnectedPlayers
 CMsgConnectedPlayers.Player
 CMsgConnectionStatus
 CMsgConsumableUsage
+CMsgCraftStatue
 CMsgCraftingResponse
 CMsgCustomGameInstallStatus
 CMsgCustomGameWhitelist
@@ -30029,6 +30029,7 @@ DAMAGE_YES
 DATA_ERROR
 DATA_ERROR_MAGIC
 DATA_LOSS
+DA_VM_PULLBACK
 DEAD*(TEAM
 DEADLINE_EXCEEDED
 DEBUG HISTORY IS ENABLED. Disable before release (in env_debughistory.h
@@ -31672,7 +31673,6 @@ DOTA_TEAM_GOODGUYS
 DOTA_TEAM_NEUTRALS
 DOTA_TEAM_NOTEAM
 DOTA_THREATLEVEL_High
-DOTA_THREATLEVEL_Low
 DOTA_THREATLEVEL_Medium
 DOTA_THREATLEVEL_None
 DOTA_THREATLEVEL_Ultra
@@ -33605,7 +33605,6 @@ Find a path between the two points an return the length of the path. If there is
 Find a spawn point for the given team
 Find all entities by name. Returns an array containing all the found entities in it
 Find and list all entities with classnames or targetnames that contain the specified substring
-Find en
 Find entities by class name nearest to a point
 Find entities by class name within a radius
 Find entities by class name within a radius. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search
@@ -33619,6 +33618,7 @@ Find entities by name within a radius. Pass 'null' to start an iteration, or ref
 Find entities by name. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search
 Find entities by targetname
 Find entities by targetname. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search
+Find entities that intrude into the nav mesh.  List those entities in console output, and display bounding boxes around them for a while
 Find entities within a radius
 Find entities within a radius. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search
 Find ents using normal ent_ rules (match name and class
@@ -33641,7 +33641,6 @@ FindByModelWithin
 FindByName
 FindByNameNearest
 FindByNameWithin
-FindByTarget
 FindClearRandomPositionAroundUnit
 FindClearRandomPositionAroundUnit_Script
 FindClearSpaceForUnit_Script
@@ -33799,7 +33798,6 @@ Frames: %d, Time: %2.2fs, FPS: %2.2f
 Free Sound List is full
 Free a damageinfo object that was created with CreateDamageInfo
 Frees the specified particle index
-Freeze the game time
 Friction coefficient at full sliding
 Friction during noclip move
 Friction scale to use on a steep surface
@@ -35165,7 +35163,6 @@ GetTargetLinearLocation
 GetTargetTeam
 GetTargetType
 GetTeamKills
-GetTimeFrozen
 GetTimeOfLastConsumablePurchase
 GetTimeOfLastDeath
 GetTimeOfLastItemPurchase
@@ -35574,6 +35571,7 @@ HasMovementCapability
 HasOwnerAbandoned
 HasRoomForItem
 HasScepter
+HasScepterCached
 HasSelectedHero
 HasSetNetworkedEventActionClaimCount
 HasSilence
@@ -37980,7 +37978,6 @@ Is attached to parent
 Is it day time
 Is it night stalker night-time
 Is it temporarily night-time
-Is our time frozen
 Is playing entry
 Is the Nian horn
 Is the Nian's horn broken
@@ -39711,6 +39708,7 @@ Modifier name %s is not lowercase
 Modifier script %s failed to find class named %s
 ModifierGainedData
 ModifierNames
+Modifier_Nian_Apocalypse
 Modifies the number of valueless charges on this item
 Modify derived stat value constants. ( AttributeDerivedStat eStatType, float flNewValue
 ModifyAgility
@@ -39759,7 +39757,6 @@ MovementSpeedActivityModifiers
 MovementTurnRate
 Moveto: %s
 Moving away as an escape
-MsgCraftStatue
 MsgSaved
 Muerta Release Minigame: Finished Initialization
 Muerta Release Minigame: Opponents assignment force initialized based on random shuffle as this is not a standard dota game. Player count on each side %d
@@ -43615,6 +43612,7 @@ Script_GetAbility
 Script_GetAbilityByIndex
 Script_GetAbilityChargeRestoreTime
 Script_GetAbilityKeyValues
+Script_GetAbilityKeyValuesByName
 Script_GetActiveSpawnGroupHandle
 Script_GetAdditionalOwnedUnits
 Script_GetAggroTarget
@@ -44362,7 +44360,6 @@ Set if a given type of rune is enabled
 Set if bots should enable their late game behavior
 Set if the bots should try their best to push with a human player
 Set if this unit has an inventory
-Set if we should freeze time or not
 Set if we should whitelist shop items
 Set if weather effects are disabled
 Set int value for an entity attribute
@@ -44660,7 +44657,6 @@ SetFreeCourierModeEnabled
 SetFriction
 SetFriendlyBuildingMoveToEnabled
 SetFrozenCooldown
-SetGameTimeFrozen
 SetGiveFreeTPOnDeath
 SetGlyphCooldown
 SetGold
@@ -44877,7 +44873,6 @@ SetTeamCustomHealthbarColor
 SetTextReplaceString
 SetTextReplaceValue
 SetTextureAttribute
-SetTimeFrozen
 SetTimeOfDay
 SetTopBarTeamValue
 SetTopBarTeamValuesOverride
@@ -46509,6 +46504,7 @@ UnlockContractSlot
 UnlockMaxEffectIndex
 UnlockMinEffectIndex
 UnmountAddon: Failed to find %s search path
+UnpackBundle_Failed_UnableToDeleteItem
 Unparsed options
 Unrecognized custom hero name '%s
 Unrecognized error
@@ -49989,7 +49985,6 @@ bVisible
 bVisibleToEnemies
 b_isonstairs
 b_print.c
-backIN5GCSDK9CGCClientE27SteamServerConnectFailure_tLb0EE
 back_angle
 back_damage_reduction
 back_persona_1
@@ -50212,7 +50207,6 @@ big_thunder_lizard_frenzy
 big_thunder_lizard_slam
 big_thunder_lizard_wardrums_aura
 bignum routines
-bility_channel_finished
 billard ball
 bin/linuxsteamrt64
 binary blob: %u bytes
@@ -51872,7 +51866,6 @@ custom_radius
 custom_scene_panel
 custom_select
 custom_stats_1
-custom_stats_2
 custom_stats_3
 custom_stats_4
 custom_stats_5
@@ -52568,7 +52561,7 @@ dota_719
 dota_722
 dota_728
 dota_731_teaser_enabled
-dota_ab
+dota_ability_channel_finished
 dota_ability_debug
 dota_ability_debug_disable
 dota_ability_debug_enable
@@ -54241,7 +54234,6 @@ equip_regions_list
 equip_sound
 equipped_econ_items
 equipped_state
-equiredPlaytestHeroesStorage
 eresult
 eresult_deprecated
 errno_location
@@ -56425,7 +56417,6 @@ huskar_inner_vitality
 huskar_life_break
 hype_loc
 hypothermia
-h|D;-PK
 i : %s (ground %i %s
 i < length
 i links
@@ -56503,7 +56494,6 @@ iVisionTeamNumber
 iXPBounty
 i] = %f
 ice_shaman_incendiary_bomb
-icles/units/heroes/hero_dawnbreaker/dawnbreaker_solar_guardian_airtime_buff.vpcf
 icon_editor
 icon_path
 icon_replacement
@@ -59525,7 +59515,6 @@ k_UnpackBundle_Failed_BadItemQuantity
 k_UnpackBundle_Failed_ItemIsInvalid
 k_UnpackBundle_Failed_ItemIsNotBundle
 k_UnpackBundle_Failed_SOCacheError
-k_UnpackBundle_Failed_UnableToDeleteItem
 k_UnpackBundle_Succeeded
 k_eDisabled
 k_eEventActionScoreMode_Add
@@ -60169,7 +60158,6 @@ lycan_summon_wolves_critical_strike
 lycan_summon_wolves_invisibility
 lycan_wolf_bite
 m E9n4t
-m8H;-.H
 mIcNPIc
 mXRecord
 m_16ByteOrLessStack out of space, falling through after %d entries, consider upping NETWORKFIELDSCRATCHDATA_16BYTE_COUNT
@@ -61337,7 +61325,6 @@ m_bGameModeFilteredAbilities
 m_bGameModeWantsDefaultNeutralItemSchema
 m_bGamePaused
 m_bGameStarted
-m_bGameTimeFrozen
 m_bGameWasLoaded
 m_bGhostShipIsEntity
 m_bGiveAgility
@@ -61417,7 +61404,6 @@ m_bHasRevealedAnonymizedEnemyPlayerInfo
 m_bHasRicochetDamaged
 m_bHasRicocheted
 m_bHasScepter
-m_bHasScepterCached
 m_bHasScepterUpgrade
 m_bHasShardCached
 m_bHasShardUpgrade
@@ -67112,7 +67098,6 @@ m_vecPreviousTestPoint
 m_vecPrivateCoachPlayerIDs
 m_vecProjectileHandles
 m_vecPushDirEntitySpace
-m_vecRe
 m_vecRecentDamage
 m_vecRecentModifiers
 m_vecRecipeComponents
@@ -67121,6 +67106,7 @@ m_vecRecordTimes
 m_vecRecords
 m_vecRenderAttributes
 m_vecReportedPosition
+m_vecRequiredPlaytestHeroesStorage
 m_vecReturnPosition
 m_vecShards
 m_vecSmoothedVelocity
@@ -71838,6 +71824,7 @@ nb_update_framelimit
 nb_update_frequency
 nb_update_maxslide
 nb_warp_selected_here
+ndByTarget
 near_damage
 near_radius
 nearby_ally
@@ -72627,7 +72614,6 @@ nsDataType
 nsRenewalUrl
 nsRevocationUrl
 nsSslServerName
-ntities that intrude into the nav mesh.  List those entities in console output, and display bounding boxes around them for a while
 nt~~l<r
 nuke_base_dmg
 nuke_str_dmg
@@ -74154,6 +74140,7 @@ particles/units/heroes/hero_dawnbreaker/dawnbreaker_luminosity.vpcf
 particles/units/heroes/hero_dawnbreaker/dawnbreaker_luminosity_attack_buff.vpcf
 particles/units/heroes/hero_dawnbreaker/dawnbreaker_luminosity_target_impact.vpcf
 particles/units/heroes/hero_dawnbreaker/dawnbreaker_solar_guardian_airtime.vpcf
+particles/units/heroes/hero_dawnbreaker/dawnbreaker_solar_guardian_airtime_buff.vpcf
 particles/units/heroes/hero_dawnbreaker/dawnbreaker_solar_guardian_aoe.vpcf
 particles/units/heroes/hero_dawnbreaker/dawnbreaker_solar_guardian_damage.vpcf
 particles/units/heroes/hero_dawnbreaker/dawnbreaker_solar_guardian_damage_hit.vpcf
@@ -76417,7 +76404,6 @@ pszSpeech
 pszString
 pszTagName
 pszTalentName
-pt_GetAbilityKeyValuesByName
 ptestbed
 pthread_create
 pthread_key_create
@@ -80968,6 +80954,7 @@ static_remnant_radius
 static_seconary_radius
 static_strikes
 statpopup
+stats_2
 stats_display
 stats_dropdown
 stats_dropdown_sort
@@ -81494,7 +81481,6 @@ t0Lcc0H
 t0LccHH
 t0Lcg H
 t0[A\A
-t1D8%9Uz
 t1Mc,$E;l
 t2Hc>A
 t2Ic\$HA9\$X
