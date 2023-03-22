@@ -822,7 +822,6 @@
 13CNetMessagePBILi490E20CDOTAUserMsg_BotChatL13SignonGroup_t13EL19NetChannelBufType_t1ELb1EE
 13CNetMessagePBILi491E21CDOTAUserMsg_HudErrorL13SignonGroup_t13EL19NetChannelBufType_t1ELb1EE
 13CNetMessagePBILi492E26CDOTAUserMsg_ItemPurchasedL13SignonGroup_t13EL19NetChannelBufType_t1ELb1EE
-13CNetMessagePBILi493E17CDOTAUserMsg_PingL13SignonGroup_t13EL19NetChannelBufType_t1ELb1EE
 13CNetMessagePBILi494E22CDOTAUserMsg_ItemFoundL13SignonGroup_t13EL19NetChannelBufType_t1ELb1EE
 13CNetMessagePBILi496E23CDOTAUserMsg_SwapVerifyL13SignonGroup_t13EL19NetChannelBufType_t1ELb1EE
 13CNetMessagePBILi497E22CDOTAUserMsg_WorldLineL13SignonGroup_t13EL19NetChannelBufType_t1ELb1EE
@@ -4496,6 +4495,7 @@
 16CModifierFactoryI58CDOTA_Modifier_AghsFort_Blessings_Debuff_Duration_IncreaseE
 16CModifierFactoryI58CDOTA_Modifier_AghsFort_Dawnbreaker_Solar_Guardian_AirTimeE
 16CModifierFactoryI58CDOTA_Modifier_AghsFort_Juggernaut_Omnislash_Ignite_DisarmE
+16CModifierFactoryI58CDOTA_Modifier_AghsFort_Juggernaut_Omnislash_Ignite_InvulnE
 16CModifierFactoryI58CDOTA_Modifier_AghsFort_Luna_LunarBlessing_MoonShield_AuraE
 16CModifierFactoryI58CDOTA_Modifier_AghsFort_Special_Ursa_Overpower_Taunt_ArmorE
 16CModifierFactoryI58CDOTA_Modifier_AghsFort_Undying_Tombstone_Zombie_DeathlustE
@@ -8913,6 +8913,7 @@
 28CCustomGamePlayerCountsCache
 28CDOTAClientMsg_AspectRatio_t
 28CDOTAClientMsg_ChatMessage_t
+28CDOTAClientMsg_ClickedBuff_t
 28CDOTAClientMsg_ExecuteOrders
 28CDOTAClientMsg_FreeInventory
 28CDOTAClientMsg_GuideSelected
@@ -11418,7 +11419,6 @@
 34CDOTA_Ability_Creature_Flamestrike
 34CDOTA_Ability_GiantWolf_Intimidate
 34CDOTA_Ability_Grimstroke_SoulChain
-34CDOTA_Ability_Gyrocopter_Call_Down
 34CDOTA_Ability_Life_Stealer_Control
 34CDOTA_Ability_MudGolem_HurlBoulder
 34CDOTA_Ability_MudGolem_RockDestroy
@@ -18267,7 +18267,6 @@
 8B008B
 8Block4x4
 8CAmmoDef
-8CDOTAClientMsg_ClickedBuff_t
 8CDOTAEgg
 8CHROMA_BLUE_WEIGHTE
 8CMsgClientToGCGetAvailablePrivateCoachingSessionsSummary
@@ -18291,6 +18290,7 @@
 8Client ID for which to count the number of issued tokens
 8GetErrorEv
 8Gets the list of nicknames this user has for other users
+8Hc5LCh
 8HcA`Hk
 8HcCHHi
 8HcF0L
@@ -20664,6 +20664,7 @@ AWAVATSLc?M
 AWAVATSM
 AWAVATSPI
 AWAVATSf
+AWAVAUA
 AWAVAUATS
 AWAVAUATS1
 AWAVAUATSD
@@ -20762,7 +20763,6 @@ A]AYA`!CTA
 A^ARARAp
 A^A^A`4A^A
 A^A`QA`RATA`lA
-A_Ability_Tinker_MarchOfTheMachines
 A___darwin_check_fd_set_overflow
 A`"ARA
 A`"AUB
@@ -21141,6 +21141,7 @@ Activate radar mode
 Activate speed burst on courier
 Activate speed shield on courier
 ActivateBattlePassPopup
+ActivateGlyph
 ActivateMainWindow
 ActivateRadar
 Activated
@@ -22311,7 +22312,6 @@ BattlePointsPerContractMultipler
 BattleReport
 BattleReportTab
 Be quiet Rosh, the pros are trying to kill you
-Be quiet scan
 BeamClipStyle_t
 BeamManifest
 BeamType_t
@@ -24380,6 +24380,7 @@ CDOTA_Ability_Axe_BattleHunger
 CDOTA_Ability_Axe_BerserkersCall
 CDOTA_Ability_Axe_CounterHelix
 CDOTA_Ability_Axe_CullingBlade
+CDOTA_Ability_Bane_BrainSap
 CDOTA_Ability_Bane_FiendsGrip
 CDOTA_Ability_Bane_Nightmare
 CDOTA_Ability_Batrider_Flamebreak
@@ -26911,7 +26912,6 @@ CMatchTeamTimedStats
 CMaterialDrawDescriptor
 CMemAllocSystemInitialize
 CMeshletDescriptor
-CModel::GetBoneIndexForHitboxForMesh(const CHitBox *, int) const
 CModelCombiner
 CModelPointEntity
 CModelState
@@ -31031,6 +31031,7 @@ C_DOTA_Ability_Tinker_Defensive_Matrix
 C_DOTA_Ability_Tinker_HeatSeekingMissile
 C_DOTA_Ability_Tinker_Keen_Teleport
 C_DOTA_Ability_Tinker_Laser
+C_DOTA_Ability_Tinker_MarchOfTheMachines
 C_DOTA_Ability_Tinker_Rearm
 C_DOTA_Ability_Tiny_Avalanche
 C_DOTA_Ability_Tiny_CraggyExterior
@@ -33130,6 +33131,7 @@ ContractTypeClear
 ContractTypeGeneric
 ContractTypeHero
 ContractsList
+Control
 Control Point
 Control Point Number
 Control Point Pos
@@ -33145,7 +33147,6 @@ ControlGroup2
 ControlGroup3
 ControlGroup4
 ControlGroup5
-ControlGroup6
 ControlGroup7
 ControlGroup8
 ControlGroup9
@@ -42537,6 +42538,7 @@ Deselect
 DesireBarSnippet
 Desired Layout Height
 Desired Layout Width
+Desired number of items in the voting queue.  May be clamped by the server
 DesiredWardPlacement
 DesiredWardPlacementStrategyControl
 DesiredWardPlacements
@@ -45712,6 +45714,7 @@ GameMode_Ranked_CaptainsMode
 GameMode_Ranked_RandomDraft
 GameMode_ShowAll
 GameMode_SingleDraft
+GameMode_Turbo
 GameModelInfo001
 GameModes: %u
 GameName
@@ -49839,7 +49842,6 @@ J0Ic[`I
 J2Ic{dI
 J4Ic{hI
 J5InitFromEncodingBits_ETC1EPNS_8Block4x4EPhPNS_14ColorFloatRGBAENS_11ErrorMetricE
-JDesired number of items in the voting queue.  May be clamped by the server
 JFIF APP0 marker: version %d.%02d, density %dx%d  %d
 JFIF extension marker: JPEG-compressed thumbnail image, length %u
 JFIF extension marker: RGB thumbnail image, length %u
@@ -50033,6 +50035,7 @@ L9"v$IcG@A
 L9"v:HcFHA
 L9(vYIcG<A
 L9*v#IcG<A
+L95o(2
 L9:v)IcEpA
 L9fHtbH
 L9p8uUA
@@ -55736,8 +55739,8 @@ OPA9L$P}zH
 OPENPAREND
 OPTIONS
 ORGANIZATIONAL
-ORTRAIT_SOUND_MODE_INVALID
 OSCILLATE_POSE_PARAMETERS
+OTA_Ability_Gyrocopter_Call_Down
 OTHER_ERROR
 OVERALL
 OVERHEAD_ALERT_BLOCK
@@ -56505,6 +56508,7 @@ PORTRAIT_SCALE_SPECTATOR_LOADOUT
 PORTRAIT_SCALE_VERSUS_LOADOUT
 PORTRAIT_SCALE_WORLD
 PORTRAIT_SOUND_MODE_ALL_SOUNDS
+PORTRAIT_SOUND_MODE_INVALID
 PORTRAIT_SOUND_MODE_NO_SOUNDS
 PORTRAIT_SOUND_MODE_ONLY_TAUNT_SOUNDS
 PORTRAIT_SUMMONS_DISPLAY_MODE_ALL
@@ -60160,6 +60164,7 @@ SHAKE_START_RUMBLEONLY
 SHAKE_STOP
 SHOP_VIEW_MODE_GRID
 SHOP_VIEW_MODE_LIST
+SHOT CHANGE - %.1f (%d
 SHOWMATCH
 SHOW_WHEN_OCCLUDED
 SIGNED_R11
@@ -62528,7 +62533,6 @@ StatRow15
 StatRow20
 StatRow25
 StatTitle
-StatToggle
 StatType
 StatUp%d
 StatValue
@@ -63054,7 +63058,6 @@ TAUATA`QA`QA
 TAUAp p
 TAUBTCp
 TAZBRBZBRAp
-TA_Ability_Bane_BrainSap
 TA`-ARAp
 TA`QARB`kA`QB`iB`iARARARARARARARARARARARARARARARARARARARARARARARARARA
 TBRASAXAXAYC
@@ -65642,6 +65645,7 @@ WATER_WAKE_NONE
 WATER_WAKE_RUNNING
 WATER_WAKE_WALKING
 WATER_WAKE_WATER_OVERHEAD
+WAVAUATSH
 WAVAVAVAVAVAVAVAVAVAVAVAVAVAVAVAVAVAVAVAVAVAVAVAVAVAVAVAVDRBRBRBRBRBRBRBRBRBVARAp
 WAWAWA
 WAWAWAWAWAWAWAWAYAYAYAYAYAYAYAYAp
@@ -72630,7 +72634,6 @@ cstring
 ct lineOH
 ctSnowball
 ctTimer
-ctivateGlyph
 ctrl_held
 ctrl_is_down
 cubemapfogenddistance
@@ -72911,7 +72914,6 @@ d)  unit1:%d  unit2:%d  type:%d  priority:%d  time:%.1f
 d) Dynamic prop %s (model %s): no sequence named:%s
 d) In: %.1f  unit1:%d  unit2:%d  priority:%d Out:%.1f Length:%.1f
 d) ROLLING INTO NEXT SHOT CHANGE
-d) SHOT CHANGE - %.1f (%d
 d) Sending event for shot
 d) event: %s
 d) unit1: %d  unit2: %d
@@ -75636,7 +75638,6 @@ dota_show_waiting_for_match_warning_timeout
 dota_showcase
 dota_shrine_kill
 dota_silent_roshan
-dota_silent_scan
 dota_skip_region_pings
 dota_smart_doubletap
 dota_soccer_air_time
@@ -76189,7 +76190,6 @@ eFromMemH
 eGameMode
 eLocation
 eMatchingeMatchingUGCTypeFileType
-eMode_Turbo
 ePE_FirstBlood
 ePE_Killstreak_godlike
 ePackedStoreAddResultCode CPackedStore::AddFile(const char *, uint16, const void *, uint32, bool, const uint32
@@ -76619,6 +76619,7 @@ essence_item_id
 estimated_filesize_mb
 estimated_market_price
 estimated_wait_seconds_remaining
+etMessagePBILi493E17CDOTAUserMsg_PingL13SignonGroup_t13EL19NetChannelBufType_t1ELb1EE
 et_allocator
 ethe resulting relationship.  Depending on state, may move directly to friends rather than invite sent"R
 ethereal
@@ -78386,7 +78387,6 @@ flPostProcessFade
 flRange
 flScale
 flScaleAmount
-flScaleDuration
 flSeconds
 flTime, bInformClients
 flag_value
@@ -80381,6 +80381,8 @@ huskar_inner_fire
 huskar_inner_vitality
 huskar_life_break
 hype_loc
+h|D9-1W
+h|D9-IVE
 i %s.vtex
 i < length
 i matching ent%s
@@ -80453,7 +80455,6 @@ ic>%s</ic
 ice_shaman_incendiary_bomb
 icefrog
 iceiceice
-ickanalogvaluey
 iconCount
 icon_editor
 icon_path
@@ -80776,6 +80777,7 @@ insufficient memory
 insufficient_mana
 int CEntitySystem::RegisterComponentType(CEntityComponentHelper
 int CEntitySystem::RegisterEntityClass(CEntityClass
+int CModel::GetBoneIndexForHitboxForMesh(const CHitBox *, int) const
 int CPredictionCopy::TransferData(const char *, CEntityIndex, datamap_t
 int CPredictionCopyBuilder::BuildPackedFlattenedOffsetsForList(int, CUtlVector<T> &, const char *) [T = customfield_t
 int CPredictionCopyBuilder::BuildPackedFlattenedOffsetsForList(int, CUtlVector<T> &, const char *) [T = typedescription_t
@@ -82041,6 +82043,7 @@ joy_yaw_sensitivity
 joy_yawsensitivity
 joystick
 joystickanalogvaluex
+joystickanalogvaluey
 jsArray
 jsObject
 js_array
@@ -84387,6 +84390,7 @@ l$ IcT
 l$0E;l$4u&A
 l$HE;l$L
 l$xE;l
+lGroup6
 lOctree
 la_symbol_ptr
 label_item_def
@@ -84731,11 +84735,11 @@ light_probe_size_x
 light_probe_size_y
 light_probe_size_z
 light_rank_%d
-light_s
 light_scale_night
 light_spot
 light_strike_array_aoe
 light_strike_array_damage
+light_strike_array_stun_duration
 lightblue
 lightchoice
 lightcolor
@@ -87044,6 +87048,7 @@ m_flRuneMinimapIconScale
 m_flRuneTime
 m_flSaveTime
 m_flScale
+m_flScaleDuration
 m_flScaleEnd
 m_flScaleTimeEnd
 m_flScaleTimeStart
@@ -93820,7 +93825,6 @@ nClickedPlayerID
 nCommand
 nCompleted
 nCompletionThreshold
-nContentAssetType_LogoSVG
 nControlledUnitEnt
 nDamageCategory
 nDamageType
@@ -94748,7 +94752,6 @@ octarine
 octarine_tested
 octree.dat
 odeEXRImH
-odifierFactoryI58CDOTA_Modifier_AghsFort_Juggernaut_Omnislash_Ignite_InvulnE
 of channels is zero
 of that program.  Please make an effort to report this bug
 of the hero's hitbox height
@@ -94761,6 +94764,7 @@ offhand_weapon_persona_1
 offlane
 offscreen_panorama
 offset size
+offset vH
 offset-x
 offset-y
 offsetVal
@@ -94995,7 +94999,6 @@ other_map_variant_name
 other_session_member_account_id
 other_steamids
 otherentity
-ount_id
 outcome
 outcome_class
 outcome_state
@@ -97983,9 +97986,7 @@ pwatchvar
 pwrd_cyber_cafe_id
 pwrd_cyber_cafe_name
 py_generic_services
-p|D957`E
-p|D95m{E
-p|D95s
+p|D95:TE
 p|D95{_i
 p|G9t/0u
 p|G9t/0uXK
@@ -102951,7 +102952,6 @@ starter_card_packs
 starter_pack_count
 starter_packs_count
 startframe
-startgame
 startindex
 starting_anim_cycle
 starting_aoe
@@ -103275,7 +103275,6 @@ stretchx
 stretchy
 strftime
 strictclamptranslation
-strike_array_stun_duration
 strike_cast_range
 strike_chance
 strike_crit_mult
@@ -103653,7 +103652,6 @@ t"A9^ A
 t"IcGdH
 t"M9,$tZI
 t#I9N t
-t$ D;5I
 t$ HcITH
 t$ IcT
 t$(A9D$(t
@@ -103674,7 +103672,7 @@ t$dA;T
 t$hIcT$`H
 t$pA;t$t
 t$pIcT$hH
-t%D9%RC
+t%D9%RB
 t%D93r H
 t%LcA M
 t%LcG`M
@@ -103727,7 +103725,7 @@ t<IcGPI
 t=0m5s
 t=<#umI
 t=Ic_PH
-t=L95jB
+t=L95jA
 t?IcO(H
 t?McfXM
 t@IcK8H
@@ -103742,6 +103740,7 @@ tGHcF8H
 tGHcP8H
 tGHcp8H
 tGIcS8H
+tHD9=`j
 tIE9t$<u
 tJHcQ H
 tJHcQ8H
@@ -103762,12 +103761,13 @@ tR9WX~,HcG\H
 tRHcy8H
 tRI;^htpI;^p
 tRIc4$H
-tRL95iB
+tRL95iA
 tRfC;D
 tSE9.~Nf
 tSH;C(A
 tSHcH H
 tTHcKHH
+tToggle
 tVA+GHxP9A
 tVIcF8H
 tVfC;D5
@@ -103895,7 +103895,6 @@ taunt_radius
 taunting_player_id
 tax_usd
 tcHcC`H
-tchOutcome_Unknown
 tchinese
 td;B`u
 tdM9&v$A
@@ -104158,7 +104157,7 @@ texturename
 texturewidth
 texturewidth and textureheight can be used to override the size of vector graphics. Default value of -1 indicates texture width/height to be determined from source file
 tgHcH8H
-tgL95hB
+tgL95hA
 tgt_alpha
 tgtpath
 th or daH
@@ -104957,7 +104956,7 @@ tzD9#u_D9s
 tzM9/vaI
 t{I96v
 t|HcH`H
-t|L95gB
+t|L95gA
 t|M9'v8A
 t}I96v%A
 u - %u
@@ -106503,6 +106502,7 @@ wxIcWpH
 wxMcgxI
 x$E9ox
 x(;r(sZ9
+x*D9=?V
 x-A;F8}'I
 x-offset
 x/9wH~*L
@@ -106567,6 +106567,7 @@ xq9CP~lE
 xqA;D$@}jI
 xt9Cx~o9
 xt9Wp~oI
+xttoken
 xvA9D$P~oE
 x{97~wH
 x{9CP~vE
