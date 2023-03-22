@@ -364,6 +364,7 @@
 11CCallResultI18CScriptHTTPRequest22HTTPRequestCompleted_tE
 11CCallResultI19CDOTAGCClientSystem17DurationControl_tE
 11CCallResultI19CDOTAGCClientSystem22HTTPRequestCompleted_tE
+11CCallResultI19CDOTANewsController22HTTPRequestCompleted_tE
 11CCallResultI19CWorkshopController24SteamUGCQueryCompleted_tE
 11CCallResultI20CDOTAStoreController22HTTPRequestCompleted_tE
 11CCallResultI20CDOTAWatchController22HTTPRequestCompleted_tE
@@ -3860,6 +3861,7 @@
 16CModifierFactoryI48CDOTA_Modifier_Aghsfort_Magnataur_Shockwave_PullE
 16CModifierFactoryI48CDOTA_Modifier_Aghsfort_Mars_ArenaOfBlood_MarkerE
 16CModifierFactoryI48CDOTA_Modifier_Aghsfort_Omniknight_GuardianAngelE
+16CModifierFactoryI48CDOTA_Modifier_Aghsfort_PrimalBeast_Boss_Rock_HPE
 16CModifierFactoryI48CDOTA_Modifier_Aghsfort_Sand_King_Epicenter_SlowE
 16CModifierFactoryI48CDOTA_Modifier_Aghsfort_Sand_King_SandStorm_SlowE
 16CModifierFactoryI48CDOTA_Modifier_Aghsfort_Slark_ShadowDance_VisualE
@@ -5458,7 +5460,6 @@
 19TESmoke_GameEvent_t
 19WatchReplayResult_t
 1=s, 2=L, 4=I, 8=U, 16=D, 32=P
-1CDOTA_Modifier_Wisp_Tether_Slow
 1CHelpRequestLogs_UploadUserApplicationLog_Request
 1CMsgClientToGCCandyShopDevShuffleExchangeResponse
 1CMsgClientToGCCandyShopDoVariableExchangeResponse
@@ -6838,6 +6839,7 @@
 23CDOTA_DB_Page_WatchLive
 23CDOTA_DB_PlusPageHeader
 23CDOTA_DB_Popup_ChinaSSA
+23CDOTA_DB_Popup_NewsPost
 23CDOTA_DB_SettingsSlider
 23CDOTA_HUD_HeroAttribute
 23CDOTA_HUD_Tooltip_Glyph
@@ -10383,6 +10385,7 @@
 31CDOTA_Modifier_Ursa_Fury_Swipes
 31CDOTA_Modifier_Warlock_Upheaval
 31CDOTA_Modifier_Weaver_TimeLapse
+31CDOTA_Modifier_Wisp_Tether_Slow
 31CDOTA_PortraitWorldSpawnerAsync
 31CDOTA_UI_BP_CompTI10_RewardList
 31CDOTA_UI_BP_Fall2021_RewardList
@@ -11821,6 +11824,7 @@
 35CDOTA_Modifier_Marci_Dispose_Debuff
 35CDOTA_Modifier_Marci_Unleash_Flurry
 35CDOTA_Modifier_Mars_GodsRebuke_Crit
+35CDOTA_Modifier_Meepo_Self_Geostrike
 35CDOTA_Modifier_MeltingStrike_Debuff
 35CDOTA_Modifier_Minotaur_Horn_Immune
 35CDOTA_Modifier_MonkeyKing_Transform
@@ -14149,12 +14153,12 @@
 41CPublishedFile_RefreshVotingQueue_Request
 41CTraceFilterSkipPlayersAndNPCsAndChildren
 41CWorkshop_GetPackageDailyRevenue_Response
-41C_DOT
 41C_DOTA_Ability_AghsFort_Kunkka_No_Quarter
 41C_DOTA_Ability_AghsFort_Kunkka_Tidal_Wave
 41C_DOTA_Ability_AghsFort_QueenOfPain_Blink
 41C_DOTA_Ability_AghsFort_TrapRoom_Hookshot
 41C_DOTA_Ability_Aghsfort_Bane_NightmareEnd
+41C_DOTA_Ability_Aghsfort_Disruptor_Glimpse
 41C_DOTA_Ability_Aghsfort_Magnataur_Empower
 41C_DOTA_Ability_Aghsfort_Mars_Bulwark_Stop
 41C_DOTA_Ability_Aghsfort_Slark_ShadowDance
@@ -17643,7 +17647,6 @@
 59CMsgGCToClientCavernCrawlMapPathCompleted_CompletedPathInfo
 59CMsgGCToGCGrantAccountRolledItems_Item_AdditionalAuditEntry
 59CPlayer_GetFriendsGameplayInfo_Response_FriendsGameplayInfo
-59CProtoItemSocket_AssetModifier_DESERIALIZE_FROM_STRING_ONLY
 59C_DOTA_Ability_AghsFort_Sand_King_BurrowStrike_Channel_Stop
 59C_DOTA_Ability_Special_Bonus_Unique_Hoodwink_ScurryDuration
 5CDOTAClientMsg_BroadcasterUsingAssistedCameraOperator
@@ -18381,6 +18384,7 @@
 9CMsgClientToGCRequestAccountGuildPersonaInfoBatchResponse
 9CP2P_Ping
 9CPropData
+9CProtoItemSocket_AssetModifier_DESERIALIZE_FROM_STRING_ONLY
 9CTEImpact
 9CTESparks
 9CTempEnts
@@ -20022,7 +20026,6 @@ ATS9w t
 ATS;wHH
 ATSH;w(t
 ATSHcGDH
-ATSHcWHH
 ATSLc'H
 ATSxFHc
 ATTACHED_ENTITY
@@ -20127,6 +20130,7 @@ AWAY BACK
 AWAY FRONT
 AWSAVAUP
 AXAYuoH
+AYAZuoH
 AZA[uoH
 AZA\A]A^A_]I
 A[A^uoH
@@ -20136,7 +20140,6 @@ A\A]A^D
 A\A]A^H
 A\A]A^I
 A^A_]fH
-A_Ability_Aghsfort_PrimalBeast_Boss_ThrowAttack
 AbandonGamePopup
 AbandonsDetails1
 AbandonsLabel
@@ -20841,6 +20844,7 @@ AnyCompleted
 AnyLiveGames
 AnyTeamMemberIneligible
 AnyTeamMemberPlayedTooRecently
+Anything before this date is not considered news anymore
 App ID the file belongs to
 App ID to enumerate the files of
 App ID to which a file will be uploaded to."9
@@ -21561,7 +21565,6 @@ BeforeActive
 BeforeGameStart
 BeforeHeroSelect
 BeforeTranslucent
-Begin an iteration over the list of entities
 BeginDebuggerInspect
 BeginRestoreEntities without previous EndRestoreEntities
 BeginScriptDebug
@@ -21620,7 +21623,6 @@ Black Arachnia
 Blademail
 Blend the camera lookat position
 Blessing '%s' has invalid id (%d) or type '%s' (%d
-Blessing(%s) is already active
 Blessing(%s) is locked
 BlessingCannotAfford
 BlessingID_t
@@ -22514,6 +22516,7 @@ CDOTAMsg_UnitOrder"X
 CDOTAMsg_WorldLine
 CDOTAMutationGameMode
 CDOTANewPlayerPoolGameMode
+CDOTANewsController aer::LoadNewsData failed
 CDOTANotificationsController::MarkAllGCNotificationsViewed
 CDOTAParty
 CDOTAPartyController::JoinPartySearchParty
@@ -23347,6 +23350,7 @@ CDOTA_Ability_Aghsfort_PrimalBeast_Boss_Onslaught
 CDOTA_Ability_Aghsfort_PrimalBeast_Boss_PrimalRoar
 CDOTA_Ability_Aghsfort_PrimalBeast_Boss_Pummel
 CDOTA_Ability_Aghsfort_PrimalBeast_Boss_TectonicShift
+CDOTA_Ability_Aghsfort_PrimalBeast_Boss_ThrowAttack
 CDOTA_Ability_Aghsfort_PrimalBeast_Boss_Vault
 CDOTA_Ability_Aghsfort_Pugna_Grandmaster_NetherWard
 CDOTA_Ability_Aghsfort_Reward_ArmorAura
@@ -26215,7 +26219,6 @@ CModelPointEntity
 CModelState
 CModelState::DoSetupPhysics
 CModelState::SetupModel( %s '%s' @{%g,%g,%g}) cannot look at solid type because the entity class is not derived from CBaseEntity
-CModifierFactoryI48CDOTA_Modifier_Aghsfort_PrimalBeast_Boss_Rock_HPE
 CModifierHandleBase
 CModifierHandleTyped
 CModifierParams
@@ -29088,7 +29091,6 @@ C_DOTA_Ability_Special_Bonus_Attack_Base_Damage_100
 C_DOTA_Ability_Special_Bonus_Attack_Base_Damage_15
 C_DOTA_Ability_Special_Bonus_Attack_Base_Damage_20
 C_DOTA_Ability_Special_Bonus_Attack_Base_Damage_25
-C_DOTA_Ability_Special_Bonus_Attack_Base_Damage_30
 C_DOTA_Ability_Special_Bonus_Attack_Base_Damage_40
 C_DOTA_Ability_Special_Bonus_Attack_Base_Damage_45
 C_DOTA_Ability_Special_Bonus_Attack_Base_Damage_50
@@ -33044,7 +33046,6 @@ D9$9t[L
 D9@htLH9
 D9K8toH
 D9S8~DI
-D9Zl|?H
 D9` t"H
 D9`$|BH
 D9`ltvH
@@ -33083,6 +33084,7 @@ D9kHt1H
 D9o8tED
 D9p$|YH
 D9pd|TH
+D9px~VI
 D9r ~7A
 D9s`~2
 D9sp~3D9
@@ -33095,9 +33097,6 @@ D:hPvbH
 D:sctAH
 D;!ttHc
 D;"tBD
-D;%DxL
-D;%f4j
-D;%knJ
 D;2r8;Z
 D;8tNH9
 D;8}#Ic
@@ -33108,7 +33107,6 @@ D;c t(H
 D;c t^D
 D;c tlH
 D;c(Lcu
-D;c(|cH
 D;c(}lH
 D;c0}BH
 D;c8}GD9cPH
@@ -33121,6 +33119,7 @@ D;ch}+L
 D;cp}*fA
 D;ct}#D
 D;e }&D
+D;hx}yI
 D;k(t.H
 D;k0}#D
 D;k4}#D
@@ -35192,11 +35191,13 @@ DOTANewPlayerMoviePopup
 DOTANewPlayerShopBack
 DOTANewPlayerShopSkip
 DOTANewPrimaryModelSetVisible
+DOTANewsDataUpdated
 DOTANextTipText
 DOTANotificationButton
 DOTANotificationMenuMarkViewed
 DOTANotificationsMenu
 DOTANotificationsViewAll
+DOTANotificationsViewed
 DOTAOWManager
 DOTAOWReplayDecompressProgress
 DOTAOWReplayDownloadComplete
@@ -35215,6 +35216,7 @@ DOTAOpenLobbySelector
 DOTAOpenMatchmakingLanguage
 DOTAOpenMatchmakingRegion
 DOTAOpenMicSettingChanged
+DOTAOpenNewsPopupURL
 DOTAOpenOverlayChinaSSA
 DOTAOpenPlayTab
 DOTAOpenPlayerCardPack
@@ -35418,6 +35420,8 @@ DOTAPopupManageTeammatesPurchaseFilterPlayerSlot
 DOTAPopupManageTeammatesRemoveFromList
 DOTAPopupManageTeammatesSubmitNote
 DOTAPopupManager
+DOTAPopupNewsPost
+DOTAPopupNewsPostClose
 DOTAPopupNotifyMVPWinner
 DOTAPopupOverwatchCaseClose
 DOTAPopupOverwatchCaseHelp
@@ -36853,6 +36857,7 @@ DOTAViewChangeLogEntry
 DOTAViewImage
 DOTAViewImageNext
 DOTAViewImagePrev
+DOTAViewNewsPost
 DOTAViewSteamProfile
 DOTAViewUserGuild
 DOTAViewVideoDDB
@@ -37137,6 +37142,7 @@ DOTA_Ability_Ping_ReadyPassiveCharges
 DOTA_Ability_Ping_ReadyPassiveChargesWithReplenish
 DOTA_Ability_Ping_Unlearned
 DOTA_Ability_Ping_Will_Learn
+DOTA_Ability_Special_Bonus_Attack_Base_Damage_30
 DOTA_Ability_Variable_%s
 DOTA_AcceptCoachingSession_Failed
 DOTA_AccoladeDesc_AllTime
@@ -38887,6 +38893,7 @@ DOTA_HUD_AegisStolen
 DOTA_HUD_BarracksKilled
 DOTA_HUD_BottledRune
 DOTA_HUD_BoughtBack
+DOTA_HUD_Broadcaster_Channel
 DOTA_HUD_CUSTOMUI_BEHIND_HUD_ELEMENTS
 DOTA_HUD_Day
 DOTA_HUD_DeniedAegis
@@ -39994,7 +40001,6 @@ DOTA_Modifier_Alert_%s_%s
 DOTA_Modifier_Alert_%s_BH_Track
 DOTA_Modifier_Alert_%s_SB_ChargeOfDarknessTarget
 DOTA_Modifier_Alert_Time_Remaining
-DOTA_Modifier_Meepo_Self_Geostrike
 DOTA_ModifyGold_AbandonedRedistribute
 DOTA_ModifyGold_AbilityCost
 DOTA_ModifyGold_AbilityGold
@@ -41361,6 +41367,7 @@ DOTA_TrophyDetails_PointsPerLevel
 DOTA_TrophyTier
 DOTA_TrophyTierNoMax
 DOTA_TrophyXP
+DOTA_U
 DOTA_UI_Cancel
 DOTA_UI_CreepCard_UnitName
 DOTA_UI_CreepCard_UnitNameWithCount
@@ -41639,7 +41646,6 @@ DOTA_Underhollow_GreenTeamVictory
 DOTA_Underhollow_OliveTeamVictory
 DOTA_Underhollow_OrangeTeamVictory
 DOTA_Underhollow_PurpleTeamVictory
-DOTA_Underhollow_YellowTeamVictory
 DOTA_UnlockLabyrinthLegacyHeroReward
 DOTA_UnusualPaint_Confirm
 DOTA_Unverified_User_Chat
@@ -42880,6 +42886,7 @@ E!?t}E1
 E!A8E#I
 E(A9D$<t
 E(H9E0sHL
+E(IcM I
 E(Mc>E
 E(zKuIH
 E(zNuLH
@@ -43172,7 +43179,6 @@ ERROR_UNKNOWN
 ERROR_UNSPECIFIED
 ERROR_WRONG_LOBBY_STATE
 ERROR_WRONG_LOBBY_TYPE
-ER_PROPERTY_GOLD_RATE_BOOST
 ERandomSelectionGroup_t
 ERawValueType_t
 EReadyCheckRequestResult
@@ -44317,6 +44323,7 @@ Failed to generate correct hostname for URL
 Failed to get HTTP response data
 Failed to get HTTP response size
 Failed to get Steam interfaces.  Are you offline in Steam
+Failed to get blog data: HTTP status %d
 Failed to get broadcaster status
 Failed to get chat member list via HTTP
 Failed to get chat member list. Error code = %d
@@ -44401,6 +44408,7 @@ Failed to parse EXR version
 Failed to parse OAuth Token Grant Response
 Failed to parse and set new panel event for %s="%s
 Failed to parse attribute
+Failed to parse blog data values. HTTP status %d
 Failed to parse channel info
 Failed to parse components block in dynamic recipe
 Failed to parse event definition for '%s'. Unknown event
@@ -44714,6 +44722,7 @@ Finished %d Blocks out of %d
 Finished (%.1f seconds
 Finished building cubemaps, shutting down
 Finished pinging
+Finished requesting news data
 FinishedItem
 Fire Completion
 Fire Entity's Action Input w/no data
@@ -45163,7 +45172,6 @@ GC_steamoffline
 GC_steamupdating
 GC_suspended
 GC_updating
-GCalled
 GDCHero__Hidden
 GDCHero__IsCaptain
 GDCPip__Hidden
@@ -45480,6 +45488,7 @@ GameUI_ServerRejectBadPassword
 GameUI_ServerRejectBanned
 GameUI_ServerRejectFailedChannel
 GameUI_ServerRejectInvalidCertLen
+GameUI_ServerRejectInvalidConnection
 GameUI_ServerRejectInvalidReservation
 GameUI_ServerRejectInvalidSteamCertLen
 GameUI_ServerRejectLANRestrict
@@ -46695,7 +46704,6 @@ H;D$PH
 H;H }'H
 H;Q }5H
 H;T$ht;H
-H;Z@t"1
 H;p(t,H
 H;p8t'H
 H;p8t)H
@@ -47262,7 +47270,6 @@ HcHHLcX0I
 HcK0Ic
 HcKHIc
 HcP uGH
-HcQH;QXE
 HcS ;S0H
 HcT$4Mc
 HcX ;X0ZYt+H
@@ -47851,6 +47858,7 @@ How far in the future should the camera continue to process mousewheel events af
 How long does a ready check run for before it's considered complete
 How long in milliseconds before we warn about lock hold duration
 How long looping soundpatch captions should display for
+How long the news data caches for before it requests again
 How long to display screen message text
 How many bullets this gun can fire before it reloads (0 if no clip
 How many candy does it cost for one of these rewards
@@ -47887,7 +47895,7 @@ I9Ext:H
 I9U0t#A
 I9^ tSI
 I9^(t.I
-I9v0tjL
+I9v0tkL
 I9|$(tIH
 I;4$ssA
 I;4$swIcUH
@@ -47999,6 +48007,7 @@ IN_ATTACK
 IN_ATTACK2
 IN_BACK
 IN_BUTTON_DOWN
+IN_BUTTON_DOWN_UP
 IN_BUTTON_DOWN_UP_DOWN
 IN_BUTTON_DOWN_UP_DOWN_UP
 IN_BUTTON_STATE_COUNT
@@ -48572,6 +48581,7 @@ International2022CandyShop
 International2022Casters
 International2022CavernCrawl
 International2022ComingSoon
+International2022Compendium
 International2022CustomGame
 International2022DoubleElimBracket
 International2022Home
@@ -49316,7 +49326,6 @@ JFIF extension marker: JPEG-compressed thumbnail image, length %u
 JFIF extension marker: RGB thumbnail image, length %u
 JFIF extension marker: palette thumbnail image, length %u
 JFIF extension marker: type 0x%02x, length %u
-JHcK0Ic
 JIGGLE_BONE
 JL[A\A]A
 JOIN_SUCCESS
@@ -49393,7 +49402,6 @@ Jv_RegisterClasses
 K Hc:Hcr
 K [A\A]A
 K(9HTt,I
-K(HcC H
 K(Hc[ H
 K8zvut
 K<znul
@@ -49808,6 +49816,7 @@ Lco8D;oHD
 Lcp D;p0
 Lcp0D;p
 Lcs D;s0
+Lcs D;s0tYH
 Lcs(D;s8D
 Lcs0D;s@D
 Lcs8D;sH
@@ -49885,6 +49894,7 @@ LeaverConsequences_Warning
 Leaving current spectator lobby
 Leaving free camera mode
 Left Member[%d] %s
+Left clicking a unit will force query selection to that unit
 LeftAbility
 LeftAbilityImage
 LeftArrow
@@ -50467,7 +50477,6 @@ MODELCOMBINER: Removing requester from callback for %s
 MODELCOMBINER: Requested in cache combined model(%s
 MODEL_PROCESSING_SCRIPT_INTERFACE_001
 MODEL_PROCESSING_SERVICES_INTERFACE_001
-MODIFIE
 MODIFIERS (%d
 MODIFIER_ATTRIBUTE_AURA_PRIORITY
 MODIFIER_ATTRIBUTE_IGNORE_DODGE
@@ -50599,6 +50608,7 @@ MODIFIER_PROPERTY_FIXED_ATTACK_RATE
 MODIFIER_PROPERTY_FIXED_DAY_VISION
 MODIFIER_PROPERTY_FIXED_NIGHT_VISION
 MODIFIER_PROPERTY_FORCE_DRAW_MINIMAP
+MODIFIER_PROPERTY_GOLD_RATE_BOOST
 MODIFIER_PROPERTY_HEALTH_BONUS
 MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT
 MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE
@@ -51147,8 +51157,8 @@ McF@E;FP
 McFPE;F
 McOPE;O
 Mca8E;aH
+Mce(E;e8
 Mce8E;eHD
-Mcf(E;f8
 Mcg(E;g8
 Mcg0E;g@D
 Mcg8E;gHu
@@ -53733,6 +53743,7 @@ NEXON_CybercafeBonus
 NEXON_CybercafeBonusNoName
 NHH9OHt
 NHcK(Ic
+NHcK0Ic
 NHcK8Ic
 NHcKxIc
 NLA9OLu
@@ -53961,6 +53972,9 @@ NewUpdateLine
 New_Tai_Lue
 Newline in string literal
 NewlyPlaced
+News data not stale yet, use cached news data
+NewsPostCloseButton
+NewsPostWebFrame
 Next %s
 Next available ids are
 Next free IDs
@@ -54274,6 +54288,7 @@ Note that the exact same class is required; not just the same descriptor
 NoteCombineable
 Nothing
 NoticeHidden
+Notification entry not recognized
 Notification_Action_Taken
 Notification_Action_Taken_OverwatchMajor
 Notification_Action_Taken_OverwatchMinor
@@ -54332,6 +54347,7 @@ Number of Heroes Played
 Number of fixed exchange recipes
 Number of frames to render the portrait for in order for particle systems to settle
 Number of history lines to save for in-game chat
+Number of most recent news events to pull
 Number of packets per second of updates you are requesting from the server
 Number of pets allowed in a single match
 Number of requesters:  %d
@@ -54539,6 +54555,7 @@ OnControllerChanged
 OnCustomGameRuneSpawnerLastSpawnTimeChanged
 OnDOTAHudUpdate
 OnDOTAPopupFullscreenHTMLClosed
+OnDOTAPopupNewsPostClosed
 OnDamageCalculated
 OnDamageMaxChanged
 OnDamageMinChanged
@@ -55886,6 +55903,7 @@ PlayerID_t"B
 PlayerID_t"C
 PlayerID_t"K
 PlayerID_t"P
+PlayerID_t"V
 PlayerID_t"t
 PlayerID_t"u
 PlayerInfo%d
@@ -57206,7 +57224,6 @@ ReasonIsLowPri
 ReasonIsPeriodic
 ReasonLabel
 RebindKe
-RebindKeH
 RebindKeysInternal
 RebindKeysSubTab
 RebuildDebugLayout
@@ -57702,6 +57719,7 @@ Retrieve, creating if necessary, the private per-instance script-side data assoc
 Retrieve, creating if necessary, the public script-side data associated with an entity
 Retrieves files published by a user
 Retrieves the rich presence of the user (leave blank for local or specify user with SteamID.Render() format
+Retry delay when request fails
 Return cast behavior type of this ability
 Return cast point of this ability
 Return cast range of this ability
@@ -58177,6 +58195,8 @@ SPRING_2021_LEAGUE
 SPRING_2021_MAJOR
 SPRING_2022_LEAGUE
 SPRING_2022_MAJOR
+SPRING_2023_LEAGUE
+SPRING_2023_MAJOR
 SPingWheelMessageDefinition
 SQL_ERROR
 SRGB8A1
@@ -58251,6 +58271,8 @@ SUCCEEDED
 SUCCESS
 SUMMER_2022_LEAGUE
 SUMMER_2022_MAJOR
+SUMMER_2023_LEAGUE
+SUMMER_2023_MAJOR
 SUMMONED
 SUPPRESS_REST
 SURROUNDING_TYPE_BIT_COUNT
@@ -59246,6 +59268,7 @@ Sets details on current spectator lobby
 Sets how the panel is positioned relative to its parent. "static" means position in the default way. "fixed" means position in the default way, but ignoring the parent's scroll offset.<br><br><b>Example:</b><pre>layout-position: fixed;</pre
 Sets letter-spacing for text in a string. Possible values:<br>normal - no manual spacing<br>&lt;pixels&gt; - Any fixed pixel value (ex: "1px
 Sets limits on 3d scene panel in order of <yawMin> <yawMax> <pitchMin> <pitchMax
+Sets most recent time that you viewed notifications
 Sets the Opacity of background-image<br><br><b>Examples:</b><pre>background-img-opacity: 0.5;</pre
 Sets the amount of blur to apply to the contents behind this panel during composition.  Default is no blur, for now Gaussian is the only blur type and takes a horizontal standard deviation, vertical standard deviation, and number of passes.  Good std deviation values are around 0-10, if 10 is still not intense enough consider more passes, but more than one pass is bad for perf.  As shorthand you can specify with just one value, which will be used for the standard deviation in both directions and 1 pass will be set.<br><br><b>Examples:</b><pre>background-blur: gaussian( 2.5
 Sets the amount of blur to apply to the panel and all it's children during composition.  Default is no blur, for now Gaussian is the only blur type and takes a horizontal standard deviation, vertical standard deviation, and number of passes.  Good std deviation values are around 0-10, if 10 is still not intense enough consider more passes, but more than one pass is bad for perf.  As shorthand you can specify with just one value, which will be used for the standard deviation in both directions and 1 pass will be set.<br><br><b>Examples:</b><pre>blur: gaussian( 2.5
@@ -60807,8 +60830,6 @@ TAG_TAKEN
 TAG_TOO_LONG
 TARGET_ENGINE_MISMATCH
 TAWAVAUATSH
-TA_Ability_Aghsfort_Disruptor_Glimpse
-TA_HUD_Broadcaster_Channel
 TChinese
 TD_OFFSET_NORMAL
 TD_OFFSET_PACKED
@@ -62168,7 +62189,6 @@ UI_month_short_%d
 UIcL$(Ic
 UIcL$0Ic
 UIcL$xIc
-UIcM Ic
 UIcM(Ic
 UIcNXIc
 UM_AchievementEvent
@@ -62260,7 +62280,6 @@ UTIL_CountNumBitsSet([%s
 UTIL_ReadEncryptedKVFile(%s
 UTIL_Remove
 UTIL_RemoveImmediate
-UTTON_DOWN_UP
 UUUUUU
 UUUUUUUUH
 UVWQ8888
@@ -62355,6 +62374,7 @@ Underdraft tier %d is missing tickets per star data
 UnderdraftReward
 UnderhollowContainer
 UnderhollowHasPlayerStats
+Underhollow_YellowTeamVictory
 Underlying object is deleted
 Underwater.BulletImpact
 Undying
@@ -63391,6 +63411,8 @@ WHcKhIc
 WILD_CARD
 WINTER_2021_LEAGUE
 WINTER_2021_LEAGUE_FINALS
+WINTER_2023_LEAGUE
+WINTER_2023_MAJOR
 WIPE AND EXTRACT
 WIcN0Ic
 WKArcanaGetNumUnclaimedHeroes
@@ -65685,6 +65707,7 @@ a protocol
 a world layer in a dota map
 aIcD$81
 aZure : voiced postalveolar fricative
+a_combat_log_heals
 a_fDecodedAlpha >= 0.0f
 a_uiMultithreadingStride > 0
 a_uiRadius <= MAX_RADIUS
@@ -66982,6 +67005,7 @@ amp_per_charge
 ampersand
 amplitude
 an argument is not allowed for (*ACCEPT), (*FAIL), or (*COMMIT
+an iteration over the list of entities
 analog_action_data
 analysis_match.csv
 analysis_player.csv
@@ -67065,6 +67089,7 @@ announce_event
 announce_gamemode
 announce_remainingtime
 announce_wager
+announcement_body
 announcement_gid
 announcement_headline
 announcement_url
@@ -71789,6 +71814,7 @@ dota_chat_coaching_tab
 dota_chat_disable_refresh_user_list
 dota_chat_enable_whispers
 dota_chat_event
+dota_chat_fantasy_draft
 dota_chat_filter_settings
 dota_chat_filter_settings_apply_to_spectators
 dota_chat_first_blood
@@ -71855,7 +71881,6 @@ dota_combat_log_ability_triggered
 dota_combat_log_ability_triggered_target
 dota_combat_log_all
 dota_combat_log_healed
-dota_combat_log_heals
 dota_combat_log_hits
 dota_combat_log_hits_with
 dota_combat_log_illusion
@@ -72904,6 +72929,10 @@ dota_new_player_movie_volume
 dota_new_player_pool_game_mode
 dota_new_player_pool_matches_played
 dota_new_player_seen_learn_tab
+dota_news_data_cache_duration
+dota_news_data_ignore_before_date
+dota_news_data_retry_delay
+dota_news_latest_pull_count
 dota_newyear
 dota_newyear_681
 dota_nimbus_spawn_height
@@ -73920,10 +73949,9 @@ eResult_ServerError
 eResult_Success
 eRollType
 eStatusPH
-eUI_ServerRejectInvalidConnection
 eUnlockEvent
 eXIfoFFstIMEsPLTpHYshISTbKGDiTXtzTXttEXtsRGBsBITiCCPgAMAcHRMtRNSIENDIDATPLTEIHDR
-eXL;%=q
+eXL;%uu
 e_definiH
 earliest_common_match
 earn_amount
@@ -74006,7 +74034,6 @@ effigy_sequence_name
 effigy_status_effect
 effigy_type
 effortblocks = %d
-eft clicking a unit will force query selection to that unit
 egg_essence
 egg_item_id
 eh 0x%p
@@ -74446,6 +74473,7 @@ event_game_supports_rewards
 event_game_team_size
 event_game_ti10
 event_game_ti9
+event_gid
 event_goal_id
 event_goals
 event_guid
@@ -75737,6 +75765,7 @@ file://{resources}/layout/popups/popup_matchmaking_language.xml
 file://{resources}/layout/popups/popup_matchmaking_region.xml
 file://{resources}/layout/popups/popup_matchmaking_region_ping.xml
 file://{resources}/layout/popups/popup_new_player_movie.xml
+file://{resources}/layout/popups/popup_news_post.xml
 file://{resources}/layout/popups/popup_overwatch_case_help.xml
 file://{resources}/layout/popups/popup_overwatch_convict.xml
 file://{resources}/layout/popups/popup_overwatch_prep.xml
@@ -78146,8 +78175,8 @@ huskar_inner_fire
 huskar_inner_vitality
 huskar_life_break
 hype_loc
-h|D;-gwL
-h|D;-n6
+h|D;-ZFQ
+h|D;-dGJ
 i %s.vtex
 i < length
 i matching ent%s
@@ -82575,7 +82604,7 @@ lycan_summon_wolves
 lycan_summon_wolves_critical_strike
 lycan_summon_wolves_invisibility
 lycan_wolf_bite
-m H;-`t
+m H;-0w
 mIcL$0Ic
 m_16ByteOrLessStack out of space, falling through after %d entries, consider upping NETWORKFIELDSCRATCHDATA_16BYTE_COUNT
 m_AbilityDraftAbilities
@@ -83234,6 +83263,7 @@ m_bFrozen
 m_bFrozenCooldown
 m_bFullbright
 m_bFullyJoinedServer
+m_bGGCalled
 m_bGainedBonusHealth
 m_bGainedSecondPlatemail
 m_bGameModeFilteredAbilities
@@ -91618,6 +91648,7 @@ new_tier
 new_tournament_id
 new_tournament_state
 newlayout
+news_post
 newunit
 newuser
 nexonid
@@ -92160,7 +92191,6 @@ npx_ui_learn_items
 npx_ui_shard_shop
 npx_ui_spectate
 nt6~$<rtH<tu
-nternational2022Compendium
 null == "Unexpected return value from pcre_config(NEWLINE
 null entity
 null factor: %f
@@ -92476,7 +92506,6 @@ original_start_date
 ortholightheight
 ortholightwidth
 os_type
-ota_chat_fantasy_draft
 other low priority
 otherPanelID, eventToFire
 other_gold
@@ -95196,10 +95225,9 @@ pwatchvar
 pwrd_cyber_cafe_id
 pwrd_cyber_cafe_name
 py_generic_services
-p|D;5;0i
-p|D;5E9
-p|D;5dFi
-p|D;5j
+p|D;55
+p|D;5Z
+p|D;5l1i
 p|E;t$0
 q0f;r0t
 q<@8p<t
@@ -96414,6 +96442,7 @@ rtdelay
 rtime32_gc_welcome_timestamp
 rtime_oldest_date
 rtime_vacban_starts
+rting_aoe
 rubick_aH
 rubick_arcana
 rubick_arcana_follower
@@ -97648,6 +97677,7 @@ set_fow_disabled
 set_frozen
 set_item_remap
 set_named_value_context
+set_notifications_viewed_date
 set_particle_fow_properties
 set_particle_should_check_fow
 set_particle_text
@@ -97696,6 +97726,7 @@ setting.shaderquality
 setting.useadvanced
 settings
 settings_current_hero
+sevents/ajaxgetpartnereventspageable/?clan_accountid=0&appid=570&offset=%d&count=%d&l=%s
 severity
 sf[A\A]A
 sf_loadout_rotate_drag
@@ -98015,6 +98046,7 @@ simplified
 simulate_player_cards_ti9
 simulationTimeSerializer
 sin( %s
+sing(%s) is already active
 single_draft
 single_kill
 single_roster_name
@@ -98219,6 +98251,7 @@ snd_soundmixer
 snd_steamaudio_dynamicpathing_max_samples
 snd_steamaudio_pathing_caching_threshold
 snd_steamaudio_pathing_enable_caching
+snewsentry/%s?l=%s&is_embedded_in_client
 sniper_concussive_grenade
 snowball_damage
 snowball_damage_bonus
@@ -100016,6 +100049,7 @@ ss_loading
 ss_mimic
 ss_paused
 ss_waitingforgamesessionmanifest
+st_arcana_vote_count
 stack frames not accounted for stack unwind
 stackName
 stack_arrow_direction
@@ -100100,7 +100134,6 @@ startframe
 startgame
 startindex
 starting_anim_cycle
-starting_aoe
 starting_group
 starting_height
 starting_position
@@ -100809,7 +100842,6 @@ t%9C8t
 t%;2t%H
 t%HcC0A
 t%M;4$L
-t&D:%u4
 t&Hc@h1
 t&M9,$L
 t'IcD$x
@@ -100819,9 +100851,9 @@ t(L9;L
 t(Lc#D;c
 t(M;4$L
 t)D9s,t
+t)D;%hU
 t)Hc@h1
 t)HcPh1
-t*D;5)m
 t*D;p,t
 t*HcJPH
 t*Mc<$E
@@ -100885,6 +100917,7 @@ t4[A\A
 t4[A\A]A
 t5Hc2;s
 t5Lc@h1
+t5[A\A]A
 t6E;<$tY
 t6Lc+D;k
 t6[A\A
@@ -101298,7 +101331,6 @@ test of your memory system
 test top bar status message. usage: top_bar_message ["message here"] [scary: 0/1
 testMode
 test_arcana_initial_info
-test_arcana_vote_count
 test_arcana_vote_ui
 test_challenge_rank_up
 test_compendium_level_popup
@@ -101522,10 +101554,10 @@ timestamp
 timestamp: %2.3f
 timestamp=%u
 timestamp] [duration] Show the battle report popup
-timestamp_add_lock_after_event
-timestamp_completed_at
+timestamp_add_lock
+timestamp_content_deadline
 timestamp_created
-timestamp_drop_lock_after_event
+timestamp_drop_lock
 timestamp_end
 timestamp_raw
 timestamp_sent
@@ -102156,9 +102188,9 @@ uDHcQ`H
 uDIcU`I
 uD[A\A]A
 uEHcS@H
-uEIcP`I
 uEMc4$E;t
 uFHcS`H
+uG[A\A]A
 uGrants an implicit OAuth token (grant type 'token') for the specified client ID on behalf of a user without prompting
 uHLcs D;s0D
 uIIc^pA
@@ -102172,11 +102204,9 @@ uP[]A\A]A
 uQHcp`H
 uRIc\$@A9\$P
 uS[A\A]A
-uTHcH`H
 uT[A\A]A
 uU[A\A]A
 uWMc,$E;l
-uXHcH`H
 uY[A\A]A
 uZ[A\A]A
 u`HcS@H
@@ -103566,9 +103596,9 @@ xp_type
 xp_value
 xpm_diff
 xstat64
-x|D;=8Bi
-x|D;=Sqi
-x|D;=qAi
+x|D;=Bbs
+x|D;=O0j
+x|D;=cwi
 x~Mc|$hD9
 y(HcI H
 y0H9z0t
@@ -103587,7 +103617,6 @@ yawaxis
 yearbeast
 yellow power
 yellowgreen
-yerID_t"V
 yielding
 yielding_jobs
 ynormal
