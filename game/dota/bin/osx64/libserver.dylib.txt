@@ -139,6 +139,7 @@
 1 == client, 2 == server
 1 to enable graph data networking for all clients
 1.0.2, 30-Dec-2001
+1024_norm2red_avx2
 10CBreakable
 10CDOTALobby
 10CDOTA_Buff
@@ -2275,6 +2276,7 @@
 16CModifierFactoryI37CDOTA_Modifier_Mirana_MoonlightShadowE
 16CModifierFactoryI37CDOTA_Modifier_MonkeyKing_ArcToGroundE
 16CModifierFactoryI37CDOTA_Modifier_MonkeyKing_BouncePerchE
+16CModifierFactoryI37CDOTA_Modifier_MonkeyKing_Strike_CritE
 16CModifierFactoryI37CDOTA_Modifier_MonkeyKing_Strike_StunE
 16CModifierFactoryI37CDOTA_Modifier_Morokai_JungleHealBeamE
 16CModifierFactoryI37CDOTA_Modifier_NagaSiren_Crit_PassiveE
@@ -5400,6 +5402,7 @@
 20CPointVelocitySensor
 20CPostConnectCallback
 20CProtoItemHeroStatue
+20CRagdollPropAttached
 20CRefCountServiceBaseI6CRefMTE
 20CResponseCriteriaSet
 20CSOEconItemAttribute
@@ -15346,7 +15349,6 @@
 6ActionI13CDOTA_BaseNPCE
 6CCoJob
 6CHAT_MESSAGE_RANKED_GAME_STILL_SCORED_LEAVERS_GET_LOSS
-6CModifierFactoryI37CDOTA_Modifier_MonkeyKing_Strike_CritE
 6CWorld
 6GAME_PARTICLE_MANAGER_EVENT_FREEZE_TRANSITION_OVERRIDE
 6GAME_PARTICLE_MANAGER_EVENT_SET_CONTROL_POINT_SNAPSHOT
@@ -17577,6 +17579,7 @@ AWAVATSL
 AWAVATSLc
 AWAVATSLc?M
 AWAVATSM
+AWAVAUA
 AWAVAUATS
 AWAVAUATS1
 AWAVAUATSD
@@ -19625,7 +19628,6 @@ CDOTAUserMsg_OverheadEvent
 CDOTAUserMsg_OverheadEvent_t
 CDOTAUserMsg_ParticleManager_OBSOLETE_t
 CDOTAUserMsg_PauseMinigameData
-CDOTAUserMsg_PauseMinigameData_t
 CDOTAUserMsg_Ping
 CDOTAUserMsg_PingConfirmation
 CDOTAUserMsg_PingConfirmation_t
@@ -19649,6 +19651,7 @@ CDOTAUserMsg_QueuedOrderRemoved_t
 CDOTAUserMsg_QuickBuyAlert
 CDOTAUserMsg_QuickBuyAlert_t
 CDOTAUserMsg_RadarAlert
+CDOTAUserMsg_RadarAlert_t
 CDOTAUserMsg_ReceivedXmasGift
 CDOTAUserMsg_ReceivedXmasGift_t
 CDOTAUserMsg_ReplaceQueryUnit
@@ -27992,7 +27995,6 @@ CLASS_PLAYER
 CLASS_PLAYER_ALLY
 CLC_Messages
 CLICK_BEHAVIORS
-CLICK_BEHAVIOR_DROP_ITEM
 CLIENTSIDE
 CLIENTSTUB
 CLIENT_STEAMID
@@ -30738,6 +30740,7 @@ DOTA_CHAT_MESSAGE
 DOTA_CLICK_BEHAVIOR_ATTACK
 DOTA_CLICK_BEHAVIOR_CAST
 DOTA_CLICK_BEHAVIOR_DRAG
+DOTA_CLICK_BEHAVIOR_DROP_ITEM
 DOTA_CLICK_BEHAVIOR_DROP_SHOP_ITEM
 DOTA_CLICK_BEHAVIOR_LAST
 DOTA_CLICK_BEHAVIOR_LEARN_ABILITY
@@ -33095,6 +33098,7 @@ EVENT_ID_SPRING_FESTIVAL
 EVENT_ID_TEAM_2021_2022_TOUR2
 EVENT_ID_TEAM_2021_2022_TOUR3
 EVENT_ID_TEAM_2023_TOUR1
+EVENT_ID_TEAM_2023_TOUR2
 EVENT_ID_TEAM_FANDOM
 EVENT_ID_TEAM_FANDOM_FALL_2021
 EVENT_ID_TEAM_INTERNATIONAL_2022
@@ -35829,7 +35833,6 @@ Gets this unit's attack range after all modifiers
 Gets whether a courier is a flying courier
 Gets whether item is unequipped or ready
 Gets whether the Shrine is actively healing or not
-Gets whether tower backdoor protection is enabled or not
 GfA:Fft$I
 Give a supply of ammo for current weapon
 Give an item to another unit
@@ -36607,7 +36610,6 @@ Hero_Grimstroke.DarkPortrait.Cast
 Hero_Grimstroke.DarkPortrait.Target
 Hero_Grimstroke.InkCreature.Attach
 Hero_Grimstroke.InkCreature.Attack
-Hero_Grimstroke.InkCreature.Cast
 Hero_Grimstroke.InkCreature.Damage
 Hero_Grimstroke.InkCreature.Death
 Hero_Grimstroke.InkCreature.Returned
@@ -37929,7 +37931,6 @@ InputColor
 InputColorBlueValue
 InputColorGreenValue
 InputColorRedValue
-InputCompare
 InputCutDown
 InputCutDownForever
 InputDeactivate
@@ -39979,7 +39980,7 @@ MapValueRef::SetInt64Value
 MapValueRef::SetStringValue
 MapValueRef::SetUInt32Value
 MapValueRef::SetUInt64Value
-Mar  9 2023
+Mar 10 2023
 Margin desired = %0.2f, actual = %0.2f
 Mark object for debug
 Mark the ability button for this ability as needing a refresh
@@ -41676,6 +41677,7 @@ OPENSSL_rdtsc
 OPENSSL_wipe_cpu
 OPTIONS
 ORGANIZATIONAL
+OTAUserMsg_PauseMinigameData_t
 OTHER_BLOCKER
 OUTPOST
 OUTSIDE_WORLD
@@ -48020,7 +48022,6 @@ Used to debug ViewPunch
 User Message Name,Count,Average Size Written,Total Size Written
 User Messages
 UserIDToControllerHScript
-UserMsg_RadarAlert_t
 UsesConstantGesture
 UsesGestureBasedAttackAnimation
 Using '$' in commands will substitute the entity selection spec
@@ -50238,7 +50239,6 @@ aghsfort_witch_doctor_death_ward
 aghsfort_witch_doctor_death_ward_no_channel
 aghsfort_witch_doctor_maledict
 aghsfort_witch_doctor_paralyzing_cask
-aghsfort_witch_doctor_voodoo_restoration
 agi_base
 agi_gain
 agi_stance
@@ -50624,6 +50624,7 @@ assisting_player_count
 assists
 assists_count
 associated_favorite_team_id
+associated_item
 associated_item_def
 associated_passenger
 associated_workshop_file_for_direct_payments
@@ -55458,6 +55459,7 @@ et_bits5
 ethereal
 ethereal_damage_bonus
 ethereal_duration
+ets whether tower backdoor protection is enabled or not
 eucountries
 evading_unit
 evasion
@@ -56635,7 +56637,6 @@ gcsdk/gcsdk_types.h
 gcsdk_gcmessages.proto
 gcsql_version
 gcsystemmsgs.proto
-gdollPropAttached
 gearratio
 gem not removable
 gem quality
@@ -57743,7 +57744,6 @@ iVisionTeamNumber
 iW=:`TC
 iXPBounty
 i] = %f
-iated_item
 ice_blast
 ice_shaman_incendiary_bomb
 ick_AnnoH
@@ -60988,6 +60988,7 @@ kv_data
 kv_juxtapose_illusion
 l$ E;l$$u
 l$8H3D$0H3l
+lFadeEndDist
 lOctree
 lZrNlZrN
 la_symbol_ptr
@@ -61369,6 +61370,7 @@ lobby_updated
 lobbyid
 loc_key
 loc_stats
+loc_string
 local ang : (%f, %f, %f
 local pos : (%f, %f, %f
 local scale : (%f
@@ -64302,7 +64304,6 @@ m_flFacingTarget
 m_flFacingYaw
 m_flFactor
 m_flFadeDuration
-m_flFadeEndDist
 m_flFadeInDuration
 m_flFadeInEnd
 m_flFadeInLength
@@ -74257,6 +74258,7 @@ nyx_assassin_unburrow
 nyx_assassin_vendetta
 o [%5d] '%s' (%s) [group entity
 o [no group entity
+o_Grimstroke.InkCreature.Cast
 objc_class_prefix
 object_culling
 object_data
@@ -74441,6 +74443,7 @@ original_id
 original_purchaser_id
 original_start_date
 original_start_time
+ort_witch_doctor_voodoo_restoration
 ortholightheight
 ortholightwidth
 os_type
@@ -74478,7 +74481,6 @@ output_items
 output_type
 outputid
 outside
-overcharge
 overhead_follow
 overkilled
 overlay
@@ -78516,6 +78518,7 @@ recycle_recipes
 recycling_button_id
 recycling_recipe_item_def
 red2norm_avx2
+redder_return_chakram;shredder_return_chakram_2
 redeemed
 redemption
 redirect_chance
@@ -79012,9 +79015,9 @@ rr_followup_maxdist
 rr_forceconcept
 rr_reloadresponsesystems
 rr_thenany_score_slop
+rsaz_1
 rsaz_1024_gather5_avx2
 rsaz_1024_mul_avx2
-rsaz_1024_norm2red_avx2
 rsaz_1024_red2norm_avx2
 rsaz_1024_scatter5_avx2
 rsaz_1024_sqr_avx2
@@ -80424,7 +80427,6 @@ shredder_chakram_2;shredder_chakram
 shredder_flamethrower
 shredder_reactive_armor
 shredder_return_chakram
-shredder_return_chakram;shredder_return_chakram_2
 shredder_return_chakram_2
 shredder_timber_chain
 shredder_whirling_death
@@ -83105,7 +83107,7 @@ t#IcO8
 t#IcOP
 t#IcOh
 t$ E;t$$u
-t$ H;5i
+t$ H;5G
 t$ IcT
 t$0E;t$4t
 t$0E;t$4t4
@@ -83161,6 +83163,7 @@ t=%8.2f id=%d n='%-16s' minq=%d targetq=%.2f c=%d starve=%d maxstarve=%d maxbloa
 t=%8.2f name=%-16s %s
 t=IcN0
 tC[A\A^A
+tCompare
 tDHcCPH
 tHIcG8H
 tILch M
@@ -84009,6 +84012,7 @@ u8IcNxH
 u:%02u:%02u
 u@IcU8H
 uB!!cB!!c
+uD9%Y4
 uHE;uLu
 uPE;u`u#L
 uUA;D$0u
@@ -86057,6 +86061,7 @@ winter_wyvern_winters_curse
 winter_wyvern_winters_curse_kill_credit
 wipe_cpu
 wisp_count
+wisp_overcharge
 wisp_relocate
 wisp_spirits
 wisp_spirits_in
@@ -86176,6 +86181,7 @@ xp_reason
 xp_received
 xp_reward_details
 xt9Wp~oI
+x~D9%N4
 y=up=green, z=forward=blue, x=left=red
 y?IcE0H
 y_normal
