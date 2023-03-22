@@ -2275,7 +2275,6 @@
 16CModifierFactoryI37CDOTA_Modifier_Mirana_MoonlightShadowE
 16CModifierFactoryI37CDOTA_Modifier_MonkeyKing_ArcToGroundE
 16CModifierFactoryI37CDOTA_Modifier_MonkeyKing_BouncePerchE
-16CModifierFactoryI37CDOTA_Modifier_MonkeyKing_Strike_CritE
 16CModifierFactoryI37CDOTA_Modifier_MonkeyKing_Strike_StunE
 16CModifierFactoryI37CDOTA_Modifier_Morokai_JungleHealBeamE
 16CModifierFactoryI37CDOTA_Modifier_NagaSiren_Crit_PassiveE
@@ -7636,6 +7635,7 @@
 28CUserMessageUpdateCssClasses
 28IAnimGraphNetworkedVariables
 28IEconItemAttributeDefinition
+28IFlattenedSerializerSpewFunc
 28IPhysicsEntitySolverAutoList
 28ISteamUnifiedMessageListener
 28SimpleConstraintSoundProfile
@@ -11298,6 +11298,7 @@
 40CDOTA_Ability_NightStalker_CripplingFear
 40CDOTA_Ability_SatyrHellcaller_UnholyAura
 40CDOTA_Ability_Shadow_Demon_Demonic_Purge
+40CDOTA_Ability_Shadow_Demon_Shadow_Poison
 40CDOTA_Ability_SkeletonKing_HellfireBlast
 40CDOTA_Ability_SkeletonKing_Reincarnation
 40CDOTA_Ability_Skywrath_Mage_Ancient_Seal
@@ -15346,6 +15347,7 @@
 6ActionI13CDOTA_BaseNPCE
 6CCoJob
 6CHAT_MESSAGE_RANKED_GAME_STILL_SCORED_LEAVERS_GET_LOSS
+6CModifierFactoryI37CDOTA_Modifier_MonkeyKing_Strike_CritE
 6CWorld
 6GAME_PARTICLE_MANAGER_EVENT_FREEZE_TRANSITION_OVERRIDE
 6GAME_PARTICLE_MANAGER_EVENT_SET_CONTROL_POINT_SNAPSHOT
@@ -17574,7 +17576,6 @@ AWAVATSHc^XH
 AWAVATSI
 AWAVATSL
 AWAVATSLc
-AWAVATSLc%~9
 AWAVATSLc?M
 AWAVATSM
 AWAVAUA
@@ -19650,7 +19651,6 @@ CDOTAUserMsg_QueuedOrderRemoved_t
 CDOTAUserMsg_QuickBuyAlert
 CDOTAUserMsg_QuickBuyAlert_t
 CDOTAUserMsg_RadarAlert
-CDOTAUserMsg_RadarAlert_t
 CDOTAUserMsg_ReceivedXmasGift
 CDOTAUserMsg_ReceivedXmasGift_t
 CDOTAUserMsg_ReplaceQueryUnit
@@ -27994,6 +27994,7 @@ CLASS_PLAYER
 CLASS_PLAYER_ALLY
 CLC_Messages
 CLICK_BEHAVIORS
+CLICK_BEHAVIOR_DROP_ITEM
 CLIENTSIDE
 CLIENTSTUB
 CLIENT_STEAMID
@@ -29918,6 +29919,7 @@ Collide (%d active contacts): %6.3f [ms
 Collision
 CollisionAttributeChanged
 CollisonGroupOverride
+Color of ping effect. Leave default to use pinging player color
 ColorBlueValue
 ColorCorrectionFadeInThink
 ColorCorrectionFadeOutThink
@@ -30736,7 +30738,6 @@ DOTA_CHAT_MESSAGE
 DOTA_CLICK_BEHAVIOR_ATTACK
 DOTA_CLICK_BEHAVIOR_CAST
 DOTA_CLICK_BEHAVIOR_DRAG
-DOTA_CLICK_BEHAVIOR_DROP_ITEM
 DOTA_CLICK_BEHAVIOR_DROP_SHOP_ITEM
 DOTA_CLICK_BEHAVIOR_LAST
 DOTA_CLICK_BEHAVIOR_LEARN_ABILITY
@@ -41677,7 +41678,6 @@ OPENSSL_rdtsc
 OPENSSL_wipe_cpu
 OPTIONS
 ORGANIZATIONAL
-OTA_Ability_Shadow_Demon_Shadow_Poison
 OTHER_BLOCKER
 OUTPOST
 OUTSIDE_WORLD
@@ -42255,6 +42255,7 @@ Overflow in GetSerializedWorldState
 OverlayName%d
 OverlayTime%d
 Override playbackrate
+Override the values of the team values on the top game bar
 OverrideAnimation
 OverrideFriction
 OverrideWearableClass
@@ -47527,6 +47528,7 @@ Trying to play envelope on invalid sound event %s
 Trying to precache %s
 Trying to send message type %u (%s) before GC connection established.  This is guaranteed to fail
 Trying to set event data for inactive event: %s for PlayerID: %d
+Turbo Pick Rules: Resolving Draft Collision. firstPlayer=%d:%s, secondPlayer=%d:%s, heroID=%d
 Turn a userid integer (typically, fields named 'userid' in game events) to an HScript representing the associated player controller's script instance
 Turn an entity index integer to an HScript representing that entity's script instance
 Turn off a particular trace output by file or function name
@@ -48020,6 +48022,7 @@ Used to debug ViewPunch
 User Message Name,Count,Average Size Written,Total Size Written
 User Messages
 UserIDToControllerHScript
+UserMsg_RadarAlert_t
 UsesConstantGesture
 UsesGestureBasedAttackAnimation
 Using '$' in commands will substitute the entity selection spec
@@ -52191,6 +52194,7 @@ cavern_crawl_map_variant
 cavern_crawl_name
 cavern_crawl_name_short
 cavern_crawl_preferred_map_variant
+cavern_item
 cavernbrawl
 cb_encrypt
 cbc_encrypt
@@ -56879,7 +56883,6 @@ google.protobuf.Value
 google.protobuf.bridge.MessageSet
 google/protobuf/arena.cc
 google/protobuf/arena.h
-google/protobuf/arena_impl.h
 google/protobuf/arenastring.cc
 google/protobuf/arenastring.h
 google/protobuf/descriptor.cc
@@ -61111,7 +61114,6 @@ latched_unit_offset_short
 latest_common_match
 latest_timestamp_from_steam
 latitude
-lattenedSerializerSpewFunc
 launch_command
 launch_event
 launch_radius
@@ -61369,7 +61371,6 @@ lobby_updated
 lobbyid
 loc_key
 loc_stats
-loc_string
 local ang : (%f, %f, %f
 local pos : (%f, %f, %f
 local scale : (%f
@@ -74362,6 +74363,7 @@ onslaught
 onslaught_movement
 onslaught_windup
 onworldimpact
+oogle/protobuf/arena_impl.h
 open_for_join_requests
 operand of unlimited repeat could match the empty string
 operation
@@ -74479,6 +74481,7 @@ output_items
 output_type
 outputid
 outside
+overcharge
 overhead_follow
 overkilled
 overlay
@@ -78319,7 +78322,6 @@ quill_release_threshold
 quill_stack_damage
 quill_stack_duration
 quill_stacks
-r of ping effect. Leave default to use pinging player color
 r(;q(sDH
 r(;q(sLI
 r99Kr99K
@@ -83106,7 +83108,6 @@ t#IcO8
 t#IcOP
 t#IcOh
 t$ E;t$$u
-t$ H;5
 t$ IcT
 t$0E;t$4t
 t$0E;t$4t4
@@ -84013,7 +84014,6 @@ u8IcNxH
 u:%02u:%02u
 u@IcU8H
 uB!!cB!!c
-uD9%)2
 uHE;uLu
 uPE;u`u#L
 uUA;D$0u
@@ -84444,7 +84444,6 @@ venomancer_poison_nova
 venomancer_poison_sting
 venomancer_venomous_gale
 vermillion_robe_flames
-verride the values of the team values on the top game bar
 version
 version_max
 version_min
@@ -86062,7 +86061,6 @@ winter_wyvern_winters_curse
 winter_wyvern_winters_curse_kill_credit
 wipe_cpu
 wisp_count
-wisp_overcharge
 wisp_relocate
 wisp_spirits
 wisp_spirits_in
@@ -86182,7 +86180,6 @@ xp_reason
 xp_received
 xp_reward_details
 xt9Wp~oI
-x|D9=k2
 y=up=green, z=forward=blue, x=left=red
 y?IcE0H
 y_normal
