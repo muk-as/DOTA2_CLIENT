@@ -86,6 +86,7 @@
 0Marks latest announcement timestamp read by user
 0NETWORK_DISCONNECT_REJECT_SERVERCDKEYAUTHINVALID
 0Name of the file to publish in the user's cloud
+0STEAMLEARN_CACHE_DATA_ERROR_UNCACHED_DATA_SOURCE
 0TEAM_INVITE_ERROR_INVITEE_INSUFFICIENT_PLAY_TIME
 0YA1AUATL
 0YA1AVL
@@ -5030,9 +5031,9 @@
 18CMsgGameDataHeroes
 18CMsgGuildChallenge
 18CMsgGuildFeedEvent
-18CMsgI
 18CMsgIDLinkResponseILj1ELj16ELj2003E26CMsgDevUnlockAllItemStylesLj2004E34CMsgDevUnlockAllItemStylesResponseE
 18CMsgIDLinkResponseILj1ELj16ELj2609E44CMsgClientToGCGetLimitedItemPurchaseQuantityLj2610E52CMsgClientToGCGetLimitedItemPurchaseQuantityResponseE
+18CMsgIDLinkResponseILj1ELj16ELj7078E26CMsgDOTASubmitPlayerReportLj7079E34CMsgDOTASubmitPlayerReportResponseE
 18CMsgIDLinkResponseILj1ELj16ELj7527E27CMsgClientToGCGetTrophyListLj7528E35CMsgClientToGCGetTrophyListResponseE
 18CMsgIDLinkResponseILj1ELj16ELj7536E29CMsgClientToGCGetBattleReportLj7537E37CMsgClientToGCGetBattleReportResponseE
 18CMsgIDLinkResponseILj1ELj16ELj7541E43CMsgClientToGCGetBattleReportAggregateStatsLj7542E51CMsgClientToGCGetBattleReportAggregateStatsResponseE
@@ -5164,6 +5165,7 @@
 18CMsgSDONoMemcached
 18CMsgSOCacheVersion
 18CMsgSOSingleObject
+18CMsgSteamLearnData
 18CMsgSuccessfulHero
 18CMsgTEBeamEntPoint
 18CMsgTEEnergySplash
@@ -5564,7 +5566,9 @@
 2!.CMsgReadyCheckStatus.ReadyMember
 2!.CMsgSocialFeedResponse.FeedEvent
 2!.CMsgSource1LegacyGameEvent.key_t
+2!.CMsgSteamLearn_CacheData_Request
 2!.CSVCMsg_GameSessionConfiguration
+2!.ESteamLearnSnapshotProjectResult
 2!.EWeekendTourneyRichPresenceEvent:'k_EWeekendTourneyRichPresenceEvent_None
 2!.google.protobuf.EnumValueOptions
 2".CDOTAClientMsg_UpdateQuickBuyItem"1
@@ -5583,11 +5587,13 @@
 2".CMsgGCNotificationsUpdate.EResult
 2".CMsgPredictionRankings.Prediction
 2".CMsgSetItemPositions.ItemPosition
+2".CMsgSteamLearn_CacheData_Response
 2".DOTA_2013PassportSelectionIndices
 2#.CDOTAMatchMetadata.Team.CandyGrant
 2#.CDOTAMatchMetadata.Team.PlayerKill
 2#.CDOTAUserMsg_CompendiumStatePlayer
 2#.CDOTAUserMsg_StatsHeroPositionInfo
+2#.CDOTAUserMsg_UnitEvent.BloodImpact
 2#.CDOTAUserMsg_UnitEvent.FadeGesture
 2#.CMatchPlayerTimedStatStdDeviations
 2#.CMsgBattleReport_HighlightCategory
@@ -5606,6 +5612,7 @@
 2#.CMsgPracticeLobbyListResponseEntry"L
 2#.CMsgSOMultipleObjects.SingleObject
 2#.CMsgSpectatorLobbyGameDetails.Team
+2#.CMsgSteamLearnDataSourceDescObject
 2#.CP2P_VRAvatarPosition.COrientation
 2#.CSVCMsg_GameEventList.descriptor_t
 2#.google.protobuf.FieldOptions.CType
@@ -5641,6 +5648,7 @@
 2$.CMsgPlayerHeroRecentAccomplishments"R
 2$.CMsgPlayerHeroRecentAccomplishments"W
 2$.CMsgSerializedSOCache.Cache.Version
+2$.CMsgSteamLearnDataSourceDescElement
 2$.CMsgTeamFanContentStatus.TeamStatus
 2$.CMsgWeekendTourneySchedule.Division
 2$.google.protobuf.EnumDescriptorProto
@@ -5670,7 +5678,9 @@
 2%.CMsgMatchConsumableUsage.PlayerUsage
 2%.CMsgSOCacheSubscribed.SubscribedType
 2%.CMsgSource1LegacyGameEventList.key_t"K
+2%.CMsgSteamLearnHMACKeys.CacheDataKeys
 2%.CMsgStickerbookTeamPageOrderSequence
+2%.ESteammLearnRegisterDataSourceResult
 2%.google.protobuf.FieldDescriptorProto
 2%.google.protobuf.OneofDescriptorProto
 2&.CDOTAMatchPrivateMetadata.Team.Player
@@ -5715,6 +5725,7 @@
 2'.CMsgGCToGCGrantAccountRolledItems.Item
 2'.CMsgInGamePrediction.EResolutionType_t
 2'.CMsgJoinableCustomLobbiesResponseEntry
+2'.CMsgSteamLearn_SnapshotProject_Request
 2'.CPlayer_IncomingInviteMutualFriendList"7
 2'.google.protobuf.ServiceDescriptorProto
 2(.CDOTAMatchPrivateMetadata.Team.Building
@@ -5725,6 +5736,7 @@
 2(.CMsgGCToClientBattlePassRollup_Fall2016
 2(.CMsgGCUpdateSubGCSessionInfo.CMsgUpdate
 2(.CMsgMatchEventActionGrants.PlayerGrants
+2(.CMsgSteamLearn_SnapshotProject_Response
 2(.CUserMsg_ParticleManager.CreateParticle
 2(.CUserMsg_ParticleManager.UpdateParticle
 2(.google.protobuf.SourceCodeInfo.Location
@@ -5795,6 +5807,7 @@
 2+.CMsgPlayerConductScorecard.EBehaviorRating"R
 2+.CMsgResetStrangeGemCountResponse.EResetGem
 2+.CMsgSocialFeedCommentsResponse.FeedComment
+2+.CMsgSteamLearnHMACKeys.SnapshotProjectKeys
 2+.CUserMsg_ParticleManager.ParticleCanFreeze
 2+.CUserMsg_ParticleManager.UpdateParticleEnt
 2+.CUserMsg_ParticleManager.UpdateParticleFwd
@@ -6644,6 +6657,8 @@
 22CMsgSosStartSoundEvent
 22CMsgSpectateFriendGame
 22CMsgSpectatorLobbyList
+22CMsgSteamLearnDataList
+22CMsgSteamLearnHMACKeys
 22CMsgStickerbookSticker
 22CMsgWeekendTourneyOpts
 22CPeriodicResourceCache
@@ -7556,6 +7571,8 @@
 24CMsgPullTabsData_Jackpot
 24CMsgQuickJoinCustomLobby
 24CMsgResetStrangeGemCount
+24CMsgSteamLearnDataObject
+24CMsgSteamLearnDataSource
 24CMsgTeamFanContentStatus
 24CNetworkFieldScratchData
 24CPaginatedAsyncDataCacheI7NoKey_t25FavoritePlayerMatchData_t31FavoritePlayerPaginationState_tE
@@ -7965,6 +7982,8 @@
 25CMsgProfileUpdateResponse
 25CMsgRecentAccomplishments
 25CMsgSosStopSoundEventHash
+25CMsgSteamLearnDataElement
+25CMsgSteamLearn_AccessData
 25CNETMsg_SpawnGroup_Unload
 25CNetworkTransmitComponent
 25CP2P_WatchSynchronization
@@ -8764,6 +8783,7 @@
 27C_DOTA_Ability_Slardar_Bash
 27C_DOTA_Ability_Slark_Pounce
 27C_DOTA_Ability_Tinker_Laser
+27C_DOTA_Ability_Tinker_Rearm
 27C_DOTA_Ability_Wisp_Spirits
 27C_DOTA_AghsFort_Hero_Clinkz
 27C_DOTA_BaseNPC_HoldoutTower
@@ -10871,6 +10891,7 @@
 32CMsgResetStrangeGemCountResponse
 32CMsgSocialFeedResponse_FeedEvent
 32CMsgSource1LegacyGameEvent_key_t
+32CMsgSteamLearn_CacheData_Request
 32CNETMsg_SpawnGroup_LoadCompleted
 32CPlayer_GetNicknameList_Response
 32CPortraitBackgroundLightModifier
@@ -11240,6 +11261,7 @@
 33CMsgPredictionRankings_Prediction
 33CMsgRequestWeekendTourneySchedule
 33CMsgSetItemPositions_ItemPosition
+33CMsgSteamLearn_CacheData_Response
 33CMsgTeamFanContentAutographStatus
 33CNETMsg_SpawnGroup_ManifestUpdate
 33CPlayer_MovementServices_Humanoid
@@ -11597,6 +11619,8 @@
 34CMsgPracticeLobbyListResponseEntry
 34CMsgSOMultipleObjects_SingleObject
 34CMsgSpectatorLobbyGameDetails_Team
+34CMsgSteamLearnDataSourceDescObject
+34CMsgSteamLearn_GetHMACKeys_Request
 34CNETMsg_SpawnGroup_SetCreationTick
 34CP2P_VRAvatarPosition_COrientation
 34CPanoramaDOTA_GameStateEnumBinding
@@ -12067,6 +12091,8 @@
 35CMsgPlayerHeroRecentAccomplishments
 35CMsgPurchaseHeroRandomRelicResponse
 35CMsgSerializedSOCache_Cache_Version
+35CMsgSteamLearnDataSourceDescElement
+35CMsgSteamLearn_GetHMACKeys_Response
 35CMsgTeamFanContentStatus_TeamStatus
 35CMsgWeekendTourneySchedule_Division
 35CPlayer_GetGameBadgeLevels_Response
@@ -12438,6 +12464,7 @@
 36CMsgNotificationOfSuspiciousActivity
 36CMsgSOCacheSubscribed_SubscribedType
 36CMsgSource1LegacyGameEventList_key_t
+36CMsgSteamLearnHMACKeys_CacheDataKeys
 36CMsgStickerbookTeamPageOrderSequence
 36CNetworkSerializerBindingBuildFilter
 36CPublishedFile_GetUserFiles_Response
@@ -12781,6 +12808,7 @@
 37CMsgPracticeLobbyJoinBroadcastChannel
 37CMsgPredictionRankings_PredictionLine
 37CMsgPredictionResults_ResultBreakdown
+37CMsgSteamLearn_BatchOperation_Request
 37CMsgTeamFanContentAssetStatusResponse
 37CMsgWatchGameResponse_WatchGameResult
 37CPointClientUIWorldTextPanelPreviewer
@@ -13133,6 +13161,8 @@
 38CMsgJoinableCustomLobbiesResponseEntry
 38CMsgLookupMultipleAccountNamesResponse
 38CMsgPracticeLobbyCloseBroadcastChannel
+38CMsgSteamLearn_BatchOperation_Response
+38CMsgSteamLearn_SnapshotProject_Request
 38CPlayer_GetFriendsGameplayInfo_Request
 38CPlayer_IncomingInviteMutualFriendList
 38CWorkshop_GetItemDailyRevenue_Response
@@ -13428,6 +13458,7 @@
 39CMsgMatchEventActionGrants_PlayerGrants
 39CMsgPurchaseItemWithEventPointsResponse
 39CMsgRequestCrateEscalationLevelResponse
+39CMsgSteamLearn_SnapshotProject_Response
 39CPlayer_GetCommunityPreferences_Request
 39CPlayer_GetFriendsGameplayInfo_Response
 39CPlayer_GetPerFriendPreferences_Request
@@ -13560,6 +13591,7 @@
 3FE9BBC3
 3GAME_PARTICLE_MANAGER_EVENT_SET_CONTROL_POINT_MODEL
 3GAME_PARTICLE_MANAGER_EVENT_SET_NAMED_VALUE_CONTEXT
+3STEAMLEARN_SNAPSHOT_PROJECT_ERROR_INVALID_TIMESTAMP
 3_star_action
 3_week_streak
 3d %3d %3d %3d %3d %3d %3d %3d
@@ -14147,6 +14179,7 @@
 41CMsgLobbyEventPoints_PeriodicResourceData
 41CMsgLobbyGauntletProgress_AccountProgress
 41CMsgQuickJoinCustomLobby_LegacyRegionPing
+41CMsgSteamLearn_RegisterDataSource_Request
 41COAuthToken_ImplicitGrantNoPrompt_Request
 41CPlayer_GetGameBadgeLevels_Response_Badge
 41CPublishedFile_RefreshVotingQueue_Request
@@ -14432,6 +14465,8 @@
 42CMsgLobbyEventPoints_ChatWheelMessageRange
 42CMsgLobbyEventPoints_PingWheelMessageRange
 42CMsgSocialFeedCommentsResponse_FeedComment
+42CMsgSteamLearnHMACKeys_SnapshotProjectKeys
+42CMsgSteamLearn_RegisterDataSource_Response
 42COAuthToken_ImplicitGrantNoPrompt_Response
 42CPublishedFile_RefreshVotingQueue_Response
 42CUserMsg_ParticleManager_ParticleCanFreeze
@@ -16552,6 +16587,9 @@
 4COMPETITIVE_MM_NOT_ENOUGH_PLAY_TIME_PLAY_MORE_CASUAL
 4LEAGUE_AUDIT_ACTION_NODEGROUP_SET_TERTIARY_ADVANCING
 4Redirection URI provided during client registration.2
+4STEAMLEARN_REGISTER_DATA_SOURCE_RESULT_ERROR_GENERIC
+4STEAMLEARN_REGISTER_DATA_SOURCE_RESULT_SUCCESS_FOUND
+4STEAMLEARN_SNAPSHOT_PROJECT_ERROR_INVALID_PROJECT_ID
 4WAUATSH
 4[A\A]A
 4_week_streak
@@ -17651,6 +17689,8 @@
 5CProtoItemSocket_Strange_DESERIALIZE_FROM_STRING_ONLY
 5LEAGUE_AUDIT_ACTION_NODEGROUP_SET_SECONDARY_ADVANCING
 5Retrieves information about a set of published files
+5STEAMLEARN_SNAPSHOT_PROJECT_ERROR_NO_PUBLISHED_CONFIG
+5STEAMLEARN_SNAPSHOT_PROJECT_ERROR_UNKNOWN_DATA_SOURCE
 5d%9.0f%8d%9.0f%10.0f   %*s%s
 5d%9.0f%8s%9s%10s   %*s%s
 5d:  %5d -> %5d (%5d bytes): %s
@@ -18102,6 +18142,8 @@
 6PLMAD5efmQ
 6Q36qZdUTA0
 6Returns the URL of the proper cloud server for a user
+6STEAMLEARN_REGISTER_DATA_SOURCE_RESULT_ERROR_FORBIDDEN
+6STEAMLEARN_REGISTER_DATA_SOURCE_RESULT_SUCCESS_CREATED
 6True if the operation was successful, false otherwise
 6Vector
 6YA1ATSH
@@ -18280,6 +18322,7 @@
 8Mcd$0I
 8NETWORK_DISCONNECT_LOCALPROBLEM_HOSTEDSERVERPRIMARYRELAY
 8Name of the file to use as the published file's preview
+8STEAMLEARN_SNAPSHOT_PROJECT_ERROR_MISSING_CACHE_DURATION
 8Vector2D
 8[A\A]A
 8[A\A]A^A
@@ -18347,6 +18390,7 @@
 9CCallbackI28CPanoramaScript_SteamFriends19AvatarImageLoaded_tLb0EE
 9CCallbackI28CPanoramaScript_SteamFriends20PersonaStateChange_tLb0EE
 9CCallbackI30CSteamUnifiedMessageDispatcher38SteamUnifiedMessagesSendMethodResult_tLb0EE
+9CCallbackI30CSteamUnifiedMessageDispatcher38SteamUnifiedMessagesSendMethodResult_tLb1EE
 9CCallbackIN5GCSDK9CGCClientE20GCMessageAvailable_tLb0EE
 9CCallbackIN5GCSDK9CGCClientE23SteamServersConnected_tLb0EE
 9CCallbackIN5GCSDK9CGCClientE26SteamServersDisconnected_tLb0EE
@@ -18408,6 +18452,10 @@
 9P@tBH
 9S t\H9
 9SPtLH9
+9STEAMLEARN_REGISTER_DATA_SOURCE_RESULT_ERROR_DATA_CHANGED
+9STEAMLEARN_REGISTER_DATA_SOURCE_RESULT_ERROR_DATA_INVALID
+9STEAMLEARN_REGISTER_DATA_SOURCE_RESULT_ERROR_INVALID_NAME
+9STEAMLEARN_SNAPSHOT_PROJECT_ERROR_INVALID_DATA_SOURCE_KEY
 9Sh~QHi
 9Z(t$H9
 9ih~eHi
@@ -20052,6 +20100,7 @@ AUATUSH
 AUTOSPEED SLOWMO AT: %.1f (%.1f
 AUTOSPEED: %.1f (%.1f
 AUTOSPEED: GOT AN EVENT AT %.2f
+AUserMsg_MatchMetadata_t
 AVAQAU
 AVAUATA
 AVAUATD
@@ -20061,7 +20110,7 @@ AVAUATH
 AVAUATI
 AVAUATL
 AVAUATLc
-AVAUATLc%G
+AVAUATLc%w
 AVAUATM
 AVAUATS
 AVAUATS1
@@ -20319,7 +20368,7 @@ AbilityUnitTargetType
 AbilityUpgradeGoldCost
 AbilityUpgradeLevel
 AbilityValues
-Ability_AghsFort_QueenOfPain_SonicWave
+Ability_AghsFort_Special_Undying_Decay_Reverberation
 AbortMatchBeingConfirmed
 Aborting... query is already in flight
 AboutTabButton
@@ -21473,6 +21522,7 @@ BaseVehicleRole_t
 Base_CmdKeyValues
 BasicInfo
 BasicVideo
+BatchOperation
 Battle Cup Points
 Battle Music Flag: %f
 Battle Report
@@ -21669,7 +21719,6 @@ Bloom: Clear hBloomBuffer2
 Bloom: Downsample
 Bloom: Downsample Compute
 BloomTexture
-Blur X
 BlurBackground
 BlurHorz
 BlurVert
@@ -22159,8 +22208,8 @@ CChoreoScene::ParseEvent( %s ):  discarding invalid event of type '%s' [%f -> %f
 CChoreoScene::RestoreFromBinaryBuffer( %s ):  discarding invalid event of type '%s' [%f -> %f
 CCitadelModifierHandleTyped
 CCitadelUserCmdPB
-CClient
 CClientAlphaProperty
+CClientAlphaProperty CUtlMemoryPool
 CClientModeGameSystem
 CClientMsg_ClientUIEvent
 CClientMsg_ClientUIEvent_t
@@ -22429,7 +22478,6 @@ CDOTAEconItemController::SetItemStyle
 CDOTAEconItemController::UnlockAllItemStyles
 CDOTAEntityMsg_InvokerSpellCast
 CDOTAEntityMsg_InvokerSpellCast_t
-CDOTAFavoritePlayersController::HandleFavoritePlayerInvite
 CDOTAFavoritePlayersController::RemoveFavorite
 CDOTAFavoritePlayersController::SendInMatchInvite
 CDOTAFeaturedGamemodeDefinition
@@ -22750,7 +22798,6 @@ CDOTAUserMsg_MapLine_t
 CDOTAUserMsg_MarsArenaOfBloodAttack
 CDOTAUserMsg_MarsArenaOfBloodAttack_t
 CDOTAUserMsg_MatchDetails_t
-CDOTAUserMsg_MatchMetadata_t
 CDOTAUserMsg_MiniKillCamInfo
 CDOTAUserMsg_MiniKillCamInfo_t
 CDOTAUserMsg_MiniTaunt
@@ -22891,7 +22938,6 @@ CDOTAUserMsg_TutorialRequestExp_t
 CDOTAUserMsg_TutorialTipInfo
 CDOTAUserMsg_TutorialTipInfo_t
 CDOTAUserMsg_UnitEvent
-CDOTAUserMsg_UnitEvent.BloodImpact
 CDOTAUserMsg_UnitEvent.Speech
 CDOTAUserMsg_UnitEvent_t
 CDOTAUserMsg_UpdateQuestProgress
@@ -22928,6 +22974,7 @@ CDOTAWeekendTourneyController
 CDOTAWeekendTourneyController::GetTournamentInfo
 CDOTAWeekendTourneyController::RequestParticipationStats
 CDOTAWeekendTourneyController::RequestPlayerHistory
+CDOTA_A
 CDOTA_AbilityAnimations
 CDOTA_AbilityDraftAbilityState
 CDOTA_AbilityDraftAbilityState[MAX_ABILITY_DRAFT_ABILITIES
@@ -23216,7 +23263,6 @@ CDOTA_Ability_AghsFort_Special_Tusk_Walrus_Punch_Land_Damage
 CDOTA_Ability_AghsFort_Special_Tusk_Walrus_Punch_Reset
 CDOTA_Ability_AghsFort_Special_Tusk_Walrus_Punch_Wallop
 CDOTA_Ability_AghsFort_Special_Undying_Decay_On_Attack
-CDOTA_Ability_AghsFort_Special_Undying_Decay_Reverberation
 CDOTA_Ability_AghsFort_Special_Undying_Decay_Spawn_Zombies
 CDOTA_Ability_AghsFort_Special_Ursa_Earthshock_ApplyFurySwipes
 CDOTA_Ability_AghsFort_Special_Ursa_Earthshock_Invis
@@ -27350,6 +27396,30 @@ CMsgSpectatorLobbyList
 CMsgSpectatorLobbyListResponse
 CMsgStartFindingMatch
 CMsgStartFindingMatchResult
+CMsgSteamLearnData
+CMsgSteamLearnData"Z
+CMsgSteamLearnDataElement
+CMsgSteamLearnDataList
+CMsgSteamLearnDataObject
+CMsgSteamLearnDataObject"j
+CMsgSteamLearnDataSource
+CMsgSteamLearnDataSourceDescElement
+CMsgSteamLearnDataSourceDescObject
+CMsgSteamLearnHMACKeys
+CMsgSteamLearn_AccessData
+CMsgSteamLearn_BatchOperation_Request
+CMsgSteamLearn_BatchOperation_Response
+CMsgSteamLearn_BatchOperation_Response"W
+CMsgSteamLearn_CacheData_Request
+CMsgSteamLearn_CacheData_Response
+CMsgSteamLearn_GetHMACKeys_Request
+CMsgSteamLearn_GetHMACKeys_Response
+CMsgSteamLearn_GetHMACKeys_Response"n
+CMsgSteamLearn_RegisterDataSource_Request
+CMsgSteamLearn_RegisterDataSource_Response
+CMsgSteamLearn_RegisterDataSource_Response"L
+CMsgSteamLearn_SnapshotProject_Request
+CMsgSteamLearn_SnapshotProject_Response
 CMsgStickerHero
 CMsgStickerHero*U
 CMsgStickerHeroes
@@ -28181,7 +28251,6 @@ C_ClientRagdoll
 C_ColorCorrection
 C_ColorCorrectionVolume
 C_CommandContext
-C_DOTA
 C_DOTAAmbientCreatureParticleZone
 C_DOTAAppCheers
 C_DOTABaseAbility
@@ -28275,6 +28344,7 @@ C_DOTA_Ability_AghsFort_Phoenix_SunRayToggleMove
 C_DOTA_Ability_AghsFort_QueenOfPain_Blink
 C_DOTA_Ability_AghsFort_QueenOfPain_ScreamOfPain
 C_DOTA_Ability_AghsFort_QueenOfPain_ShadowStrike
+C_DOTA_Ability_AghsFort_QueenOfPain_SonicWave
 C_DOTA_Ability_AghsFort_RockGolem_Smash
 C_DOTA_Ability_AghsFort_Sand_King_BurrowStrike_Channel_Stop
 C_DOTA_Ability_AghsFort_ShadowShaman_Shackles
@@ -31321,6 +31391,8 @@ C_fogplayerparams_t
 C`D98~qH
 C`E9t$dE
 Cache-Control
+CacheData
+CacheDataKeys
 Cached peeked items
 Cafe Login Reward
 Cafe Match Played
@@ -32686,6 +32758,7 @@ Creates fake game data for a top game on the front page cells. 0 = disabled, 1 =
 Creating ingame event for event %d, but no event definition
 Creating spectator lobby
 CreatingLobby
+CreatingTeam
 Creator
 CreatorAvatarImage
 CreatorName
@@ -33101,8 +33174,9 @@ D:hPvbH
 D:sctAH
 D;!ttHc
 D;"tBD
-D;%IuJ
-D;%u4j
+D;%02j
+D;%6Zj
+D;%IQA
 D;2r8;Z
 D;8tNH9
 D;8}#Ic
@@ -36266,6 +36340,7 @@ DOTAShowSettingsPopupChatWheelPage
 DOTAShowSettingsPopupPingWheelPage
 DOTAShowShareMenu
 DOTAShowShortFilmVote
+DOTAShowSnapfireDebutPage
 DOTAShowSpecificEventDebugPage
 DOTAShowSpectatorPage
 DOTAShowSplashAdMovie
@@ -37150,7 +37225,6 @@ DOTA_Ability_Ping_ReadyPassiveCharges
 DOTA_Ability_Ping_ReadyPassiveChargesWithReplenish
 DOTA_Ability_Ping_Unlearned
 DOTA_Ability_Ping_Will_Learn
-DOTA_Ability_Tinker_Rearm
 DOTA_Ability_Variable_%s
 DOTA_AcceptCoachingSession_Failed
 DOTA_AccoladeDesc_AllTime
@@ -43211,6 +43285,11 @@ ESpecialPingValue
 ESplitScreenMessageType
 EStartFindingMatchResult
 EStatID
+ESteamLearnCacheDataResult
+ESteamLearnDataType
+ESteamLearnGetHMACKeysResult
+ESteamLearnSnapshotProjectResult
+ESteammLearnRegisterDataSourceResult
 EStickerbookAuditAction
 EStickerbookPageType
 ESupportEventRequestResult
@@ -44909,6 +44988,7 @@ Found no errors in %s
 Found no event points items in inventory
 FourAbility
 FourQuaternions
+Fow: Blur X
 Fow: Blur Y
 Fow: Draw MiniMap
 Fow: Draw Unfiltered
@@ -45092,7 +45172,6 @@ G8H;0t0H
 G8H;p@t
 G8IcW0H
 G<zUuS
-G@Lcg(D;g8D
 GAME INSTRUCTOR
 GAMEBIN
 GAMEEVENT] Event '%s' (index %d) added %s listener %p
@@ -45267,6 +45346,7 @@ GROUP_A
 GROUP_B
 GROUP_STAGE
 GST-4GDT
+GService for submitting data, training, and inferencing with SteamLearn
 G`HcWXH
 Gabe Newell
 Gained Hero Relic Levels
@@ -45629,7 +45709,6 @@ GeneralAvatarImage
 GeneralMedals
 GeneralSection
 GeneralSummary
-General_UnableToStartGame
 Generate 4 recipes
 Generate a vector given a QAngles
 Generate all recipes
@@ -45937,6 +46016,7 @@ GetGameTime
 GetGameWinner
 GetGold
 GetGoldPerMin
+GetHMACKeys
 GetHasteFactor
 GetHealth
 GetHealthBarOffset
@@ -46360,6 +46440,7 @@ Gets the stack count of a given modifier
 Gets the value of the given cvar, as a float
 Gets this unit's attack range after all modifiers
 GhIcW`H
+GhLcgPD;g`D
 GibTintColor
 GibType
 GiftDedicationConfirmation
@@ -46816,6 +46897,7 @@ HParticleSystemDefinition
 HParticleSystemDefinitionStrong
 HPostProcessing
 HPostProcessingStrong
+HRegisters a data desc (or finds a data desc if it's already registered
 HRenderTexture
 HRenderTextureStrong
 HSCRIPT hTarget) Determine whether an issued command on a target is valid
@@ -47923,7 +48005,6 @@ IDAT stream error
 IDAT stream too short
 IDEMPOTENCY_UNKNOWN
 IDEMPOTENT
-IDLinkResponseILj1ELj16ELj7078E26CMsgDOTASubmitPlayerReportLj7079E34CMsgDOTASubmitPlayerReportResponseE
 IEconItemDescription::YieldingFillOutEconItemDescription
 IEconItemInterface
 IEconomy
@@ -53755,7 +53836,7 @@ NEXON_CybercafeBonusNoName
 NHH9OHt
 NHcK(Ic
 NHcK0Ic
-NHcK8Ic
+NHcK`Ic
 NHcKxIc
 NLA9OLu
 NO EXPRESSION
@@ -54378,7 +54459,6 @@ Numbers starting with leading zero must be in octal
 Numer of seconds to cache other users' stickerbooks
 NzddISx-9zU
 O&D:G't
-O0;1t5H
 O0;1t=H
 O8H;1t4H
 O@H;1t4A
@@ -54407,6 +54487,7 @@ OPTIONS
 ORGANIZATIONAL
 ORIGIN
 OSCILLATE_POSE_PARAMETERS
+OTAFavoritePlayersController::HandleFavoritePlayerInvite
 OTHER_ERROR
 OUTBUFF_FULL
 OUT_OF_RANGE
@@ -54478,6 +54559,7 @@ OVERLAY_VIEWOFFSET
 OVERLAY_WC_CHANGE_ENTITY
 OWNED BY PLAYER CONTROLLING: %s
 OWNED BY: %s
+OX;1t5H
 Observer
 ObserverInterpState_t
 ObserverMode_t
@@ -55059,6 +55141,7 @@ PING_CONFIRMATION_STATE_ICON_TYPE_DEFEND
 PING_CONFIRMATION_STATE_ICON_TYPE_SMOKE
 PIcD$(L
 PIcMXIc
+PIcT$HI
 PK14C_EconItemView
 PK17CDotaTI10Blessing
 PK18CMsgDOTATournament
@@ -56295,7 +56378,6 @@ PrecacheCustomResponseSystem %s - Finish
 PrecacheCustomResponseSystem %s - Start
 PrecacheEffectBloodSpray_client
 PrecacheEffectBubbleTrail_client
-PrecacheEffectBubbles_client
 PrecacheEffectEnergySplash_client
 PrecacheEffectExplosion_client
 PrecacheEffectGlow_client
@@ -57392,6 +57474,7 @@ RegisterConVar 0x%p = %s
 RegisterConVar: Unknown error registering convar "%s
 RegisterConvar
 RegisterConvar(name, defaultValue, helpString, flags): register a new console variable
+RegisterDataSource
 RegisterDownloadItemResultCallback
 RegisterEntityClass
 RegisterForReadyEvents
@@ -57731,7 +57814,6 @@ Retrieve, creating if necessary, the public script-side data associated with an 
 Retrieves files published by a user
 Retrieves the rich presence of the user (leave blank for local or specify user with SteamID.Render() format
 Retry delay when request fails
-Return
 Return cast behavior type of this ability
 Return cast point of this ability
 Return cast range of this ability
@@ -57758,6 +57840,7 @@ Return the priority order this modifier will be applied over others
 Return the range around the parent this aura tries to apply its buff
 Return the team id of the winning team
 Return the teams this aura applies its buff to
+Return the types of attributes applied to this modifier (enum value from DOTAModifierAttribute_t
 Return the unit classifications this aura applies its buff to
 Return the unit flags this aura respects when placing buffs
 Return true of false indicating if automatically starting the game is enabled
@@ -58056,6 +58139,7 @@ SAVE_HEADER
 SBSummary__CanClaim
 SBSummary__HasProgress
 SBSummary__State
+SBatches multiple data updates, snapshots, and inference requests into a single call
 SBlocks or unblocks communication with the user.  Despite name, can be a non-friend
 SCRIPT UNKNOWN STATUS
 SCRIPT_CLEANUP
@@ -58240,6 +58324,26 @@ STEAMCHAT_INTERFACE_VERSION003
 STEAMHTMLSURFACE_INTERFACE_VERSION_005
 STEAMHTTP_INTERFACE_VERSION003
 STEAMINVENTORY_INTERFACE_V003
+STEAMLEARN_CACHE_DATA_ERROR
+STEAMLEARN_CACHE_DATA_ERROR_FORBIDDEN
+STEAMLEARN_CACHE_DATA_ERROR_INVALID_KEYS
+STEAMLEARN_CACHE_DATA_ERROR_INVALID_TIMESTAMP
+STEAMLEARN_CACHE_DATA_ERROR_UNKNOWN_DATA_SOURCE
+STEAMLEARN_CACHE_DATA_SUCCESS
+STEAMLEARN_DATATYPE_BOOL
+STEAMLEARN_DATATYPE_FLOAT32
+STEAMLEARN_DATATYPE_INT32
+STEAMLEARN_DATATYPE_INVALID
+STEAMLEARN_DATATYPE_OBJECT
+STEAMLEARN_DATATYPE_STRING
+STEAMLEARN_GET_HMAC_KEYS_SUCCESS
+STEAMLEARN_REGISTER_DATA_SOURCE_RESULT_ERROR
+STEAMLEARN_REGISTER_DATA_SOURCE_RESULT_ERROR_INVALID_TIMESTAMP
+STEAMLEARN_REGISTER_DATA_SOURCE_RESULT_ERROR_INVALID_VERSION
+STEAMLEARN_SNAPSHOT_PROJECT_ERROR
+STEAMLEARN_SNAPSHOT_PROJECT_ERROR_FORBIDDEN
+STEAMLEARN_SNAPSHOT_PROJECT_SUCCESS_QUEUED
+STEAMLEARN_SNAPSHOT_PROJECT_SUCCESS_STORED
 STEAMMUSICREMOTE_INTERFACE_VERSION001
 STEAMMUSIC_INTERFACE_VERSION001
 STEAMPARENTALSETTINGS_INTERFACE_VERSION001
@@ -59227,7 +59331,6 @@ SetReadyForDisplay
 SetRelic
 SetRemainingSetupTime
 SetRenderBottomInsetOverride
-SetRenderTopInsetOverride
 SetRepeat
 SetRepeatedBool
 SetRepeatedDouble
@@ -59870,6 +59973,9 @@ Smooth curve decreasing slower as it approaches zero
 Smooth player eye z coordinate when traversing stairs
 Smooth view/eye origin after prediction errors
 Smoothing not supported with nonstandard sampling ratios
+SnapshotProject
+SnapshotProjectKeys
+Snapshots the current data for a project
 SndEmitterSystem
 SocialControls
 SocialFeed
@@ -60228,7 +60334,6 @@ St11_Mutex_baseILN9__gnu_cxx12_Lock_policyE2EE
 St12_Bind_simpleIFSt7_Mem_fnIMN3Etc5ImageEFjjjjEEPS2_jijEE
 St12_Bind_simpleIFSt7_Mem_fnIMN3Etc5ImageEFvjjEEPS2_ijEE
 St14_Function_base
-St14_Function_base13_Base_managerIZN18CNewParticleEffect7RestartEvEUlvE_E10_M_managerERSt9_Any_dataRKS4_St18_Manager_operation
 St15_Sp_counted_ptrIPbLN9__gnu_cxx12_Lock_policyE2EE
 St15binary_functionIPKN8panorama14IUIPanelClientES3_iE
 St16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE2EE
@@ -60468,13 +60573,16 @@ SteamDurationControl: req from Steam
 SteamFriends017
 SteamGameCoordinator001
 SteamGameServer014
+SteamGameServer_GetHSteamUser
 SteamGuide
 SteamID %llu %s
 SteamInput006
 SteamInternal_ContextInit
 SteamInternal_CreateInterface
+SteamInternal_FindOrCreateGameServerInterface
 SteamInternal_FindOrCreateUserInterface
 SteamLeaderboardUpdated
+SteamLearn
 SteamMatchGameSearch001
 SteamMatchMaking009
 SteamMatchMakingServers002
@@ -62669,6 +62777,7 @@ UpdateUnitIcons
 UpdateUnrankedGameModes
 Updated looping radius sound %d to vol=%f
 Updated peeked items
+Updates a cached data entry
 Updates information about a published file
 Updates visibility bits
 Updating custom hero, unit, ability and item KeyValues with latest values from disk
@@ -62851,6 +62960,7 @@ V8z3u1
 V@;Q0tHH
 V@IcW@I
 VAC_NOT_VERIFIED
+VAUATSH
 VApplication001
 VAsyncFileSystem2_001
 VAvi001
@@ -65088,6 +65198,7 @@ ZNSt14_Function_base13_Base_managerISt8functionIFiPKN8panorama14IUIPanelClientES
 ZNSt14_Function_base13_Base_managerIZ20UpdateClassPanelListI19CDOTA_UI_CandyImageEvPN8panorama8CPanel2DEiSt8functionIFvPT_iEEEUliE_E10_M_managerERSt9_Any_dataRKSD_St18_Manager_operation
 ZNSt14_Function_base13_Base_managerIZN17C_TEUnitAnimation8DispatchERK30CDOTAUserMsg_TEUnitAnimation_tEUlvE_E10_M_managerERSt9_Any_dataRKS7_St18_Manager_operation
 ZNSt14_Function_base13_Base_managerIZN18AsyncCaptionData_t9AsyncLoadEPKciEUlP18IAsyncReadRequest220AsyncRequestStatus_tE_E10_M_managerERSt9_Any_dataRKS9_St18_Manager_operation
+ZNSt14_Function_base13_Base_managerIZN18CNewParticleEffect7RestartEvEUlvE_E10_M_managerERSt9_Any_dataRKS4_St18_Manager_operation
 ZNSt14_Function_base13_Base_managerIZN21CAsyncFileReadContext4InitEPKcS3_22AsyncRequestPriority_tP10CUtlBufferEUlP18IAsyncReadRequest220AsyncRequestStatus_tE_E10_M_managerERSt9_Any_dataRKSC_St18_Manager_operation
 ZNSt14_Function_base13_Base_managerIZN24CBuildCubemapsGameSystem12GameShutdownERK19EventGameShutdown_tEUlPKvE0_E10_M_managerERSt9_Any_dataRKS9_St18_Manager_operation
 ZNSt14_Function_base13_Base_managerIZN24CBuildCubemapsGameSystem12GameShutdownERK19EventGameShutdown_tEUlPKvE_E10_M_managerERSt9_Any_dataRKS9_St18_Manager_operation
@@ -65838,6 +65949,7 @@ accepted_ids
 accepted_timestamp
 accepter_player_id
 acceptsjoyfocus
+access_data
 access_rights
 access_token
 accessor_ == other.accessor
@@ -67272,7 +67384,6 @@ arrow_vision
 arrow_width
 arroworigin
 arrows_landed
-art_timestamp
 artifact
 artifacts
 as_coach
@@ -67311,7 +67422,6 @@ async_state
 asynchronous
 at end of pattern
 at_night_time
-atingTeam
 atk_speed_bonus
 att(%d:%s
 attacK_range_multiplier
@@ -68629,7 +68739,12 @@ c_thirdpersonshoulderoffset
 cable_dynamic
 cables_list
 cache_%u_%u.soc
+cache_data_keys
+cache_data_requests
+cache_data_responses
+cache_data_result
 cache_duration
+cache_duration_seconds
 cache_seconds
 cached_file_version
 cadetblue
@@ -70914,13 +71029,22 @@ dataWindow
 dataWindow" attribute not found in the header or invalid
 data_ == other.data
 data_bits
+data_bools
 data_compressed
 data_count
 data_cp
 data_cp_value
 data_extra
+data_floats
 data_height
+data_int32s
+data_object
+data_objects
+data_source
+data_source_id
+data_strings
 data_table_name
+data_type
 data_with or data_height too large. data_width
 date_end
 date_of_birth
@@ -74168,6 +74292,7 @@ end_timestamp
 end_value
 end_vision_duration
 endentity
+enderTopInsetOverride
 ending record
 ending_date
 ending_matchid
@@ -74193,6 +74318,7 @@ enemy_tower_killed
 enemy_towers_killed
 enemy_towers_status
 enemy_win_rate
+eneral_UnableToStartGame
 engine2
 engine_gcmessages.proto
 english
@@ -74702,7 +74828,6 @@ fD9't8H
 fD98t6
 fD;'t8H
 fD;(twH
-fD;5R)z
 fD;8ty
 fDistance
 fDurationMultiplier
@@ -78023,7 +78148,6 @@ how fast to run (1 to use player max run speed
 how many badge points to grant for each increment
 how many units need to be leveled up in order to get the badge point grant
 how should rewards for this option be generated
-howSnapfireDebutPage
 hp_bonus_per_upgrade
 hp_cost_pct
 hp_cost_perc
@@ -78189,8 +78313,10 @@ huskar_inner_fire
 huskar_inner_vitality
 huskar_life_break
 hype_loc
-h|D;-ss
-h|D;-xd
+h|D;-fU
+h|D;-pk
+h|D;-qKj
+h|D;-zX
 i %s.vtex
 i < length
 i matching ent%s
@@ -79538,6 +79664,7 @@ iv_interp
 iv_parallel_latch
 iv_parallel_restore
 iv_wrapped_parallel_latch
+jGets the HMAC keys needed for registering data sources, submitting data to them, and snapshotting projects
 jIcM Ic
 jackpots
 jakiro_liquid_fire
@@ -81109,6 +81236,7 @@ k_EMsgGCToServerPredictionResult
 k_EMsgGCToServerRealtimeStatsStartStop
 k_EMsgGCToServerRecordTrainingData
 k_EMsgGCToServerScenarioSave
+k_EMsgGCToServerSetSteamLearnDisable
 k_EMsgGCToServerSubmitCheerData
 k_EMsgGCToServerUpdateSteamBroadcasting
 k_EMsgGCTopCustomGamesList
@@ -81365,6 +81493,7 @@ k_ESupportEventRequestResult_ItemNotInInventory
 k_ESupportEventRequestResult_Success
 k_ESupportEventRequestResult_Timeout
 k_ESupportEventRequestResult_TransactionFailed
+k_ETour
 k_ETournamentEvent_Canceled
 k_ETournamentEvent_GameOutcome
 k_ETournamentEvent_None
@@ -94179,6 +94308,7 @@ penalty_multiplier
 pending_awards
 pending_awards_on_victory
 pending_count
+pending_data_limit_seconds
 pending_full_frame
 pending_invite_count
 pending_invites
@@ -95039,6 +95169,7 @@ progress_state
 progress_stored_in
 progressbar
 progrs %d
+project_id
 projectile.position
 projectileID
 projectile_bonus
@@ -95159,6 +95290,7 @@ publishedfiledetails
 publishedfileid
 publishedfileids
 publisher_group_id
+publisher_id
 puck_ethereal_jaunt
 puck_illusory_orb
 puck_waning_rift
@@ -95240,8 +95372,18 @@ pwatchvar
 pwrd_cyber_cafe_id
 pwrd_cyber_cafe_name
 py_generic_services
-p|D;5L;i
-p|D;5N'j
+p|D;5!D
+p|D;5+9
+p|D;5.pj
+p|D;50
+p|D;5:g
+p|D;5<Ni
+p|D;5J
+p|D;5[B
+p|D;5bC
+p|D;5{Mi
+p|D;5|mi
+p|D;5~Yj
 p|E;t$0
 q0f;r0t
 q<@8p<t
@@ -95568,6 +95710,7 @@ random_rare_relic_price
 random_relic_purchase_shards
 random_seed
 random_spawn_chance
+random_value
 random_wheel_intro
 random_wheel_lever
 random_wheel_rotate_click
@@ -95673,6 +95816,7 @@ really freaking heavy
 reason_code
 reasons
 rebeccapurple
+recacheEffectBubbles_client
 recalibration_countdown_time
 received for lesson "%s
 receivedAnimationDuration
@@ -95819,6 +95963,7 @@ region_sea
 region_select_flags
 regional_prices
 regions
+register_data_source_key
 registered_member_account_ids
 registered_players
 registration_period
@@ -96293,6 +96438,7 @@ river_paint_duration
 river_paint_item_defs
 river_speed
 riverid
+rnamentState_CanceledByAdmin
 rnd_down
 rndwave
 roaming_radius
@@ -96685,6 +96831,7 @@ s/filedetails?id=%llu
 s/guide_%llu.build
 s/jsfeed/uniqueusers
 s/majorsregistration/getdpcdata
+s/npc/portraits_card.txt
 s/sharedfiles
 s/ui/batH
 s/ui/batI
@@ -97320,7 +97467,6 @@ scripts/npc/npc_units.txt
 scripts/npc/npc_units_custom.txt
 scripts/npc/npc_units_staging.txt
 scripts/npc/portraits.txt
-scripts/npc/portraits_card.txt
 scripts/npc/portraits_card_staging.txt
 scripts/npc/portraits_custom.txt
 scripts/npc/portraits_full_body.txt
@@ -98236,6 +98382,10 @@ snapfire_mortimer_kisses
 snapfire_scatterblast
 snapshot_file
 snapshot_name
+snapshot_project_keys
+snapshot_requests
+snapshot_responses
+snapshot_result
 snatched
 snd_deathcam_replay_mix
 snd_disable_radar_visualize
@@ -98373,6 +98523,7 @@ source_account_id
 source_app_id
 source_attachment
 source_code_info
+source_description
 source_ehandle
 source_entindex
 source_entity_index
@@ -100243,6 +100394,7 @@ steam_gift_package_id
 steam_id
 steam_id_list
 steam_ids
+steam_learn_hmac_keys
 steam_level
 steam_player_group
 steam_player_group_size
@@ -100258,6 +100410,7 @@ steamid_left
 steamid_locks
 steamid_right
 steamids
+steamlearn_count
 steammessages.proto
 steammessages.proto"z
 steammessages_cloud.steamworkssdk.proto
@@ -100266,6 +100419,7 @@ steammessages_int.proto
 steammessages_oauth.steamworkssdk.proto
 steammessages_player.steamworkssdk.proto
 steammessages_publishedfile.steamworkssdk.proto
+steammessages_steamlearn.steamworkssdk.proto
 steammessages_unified_base.steamworkssdk.proto
 steammessages_unified_base.steamworkssdk.proto"4
 steammessages_unified_base.steamworkssdk.proto"d
@@ -100479,6 +100633,8 @@ strtoul
 strtoull
 strtouq
 struct
+structure
+structure_crc
 student_account_id
 students_available
 stun_chance
@@ -100853,8 +101009,7 @@ t%9C8t
 t%;2t%H
 t%HcC0A
 t%M;4$L
-t&D:%U5
-t&D:%UG
+t&D:%5p
 t&Hc@h1
 t&M9,$L
 t'IcD$x
@@ -100864,7 +101019,6 @@ t(L9;L
 t(Lc#D;c
 t(M;4$L
 t)D9s,t
-t)D;%Hx
 t)Hc@h1
 t)HcPh1
 t*D;p,t
@@ -100977,7 +101131,6 @@ tAHc@h1
 tAHcH H
 tAHcO8H
 tA[A\A]A
-tAlphaProperty CUtlMemoryPool
 tB9C(t=1
 tBHcp H
 tBHcx H
@@ -101420,7 +101573,6 @@ the image used to represent this level
 the resulting relationship
 the score at which this level is unlocked
 the top left corner of the image is placed 10px to the right of, 40px below the top left corner of the panel
-the types of attributes applied to this modifier (enum value from DOTAModifierAttribute_t
 the_dream
 the_multiverse_of_sb
 thensimple
@@ -103613,8 +103765,10 @@ xp_type
 xp_value
 xpm_diff
 xstat64
-x|D;=Q6i
-x|D;=ua
+x|D;=AIi
+x|D;=Hii
+x|D;=dKI
+x|D;=sCk
 x~Mc|$hD9
 y(HcI H
 y0H9z0t
