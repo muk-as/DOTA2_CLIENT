@@ -3863,7 +3863,6 @@
 16CModifierFactoryI48CDOTA_Modifier_Aghsfort_Magnataur_Shockwave_PullE
 16CModifierFactoryI48CDOTA_Modifier_Aghsfort_Mars_ArenaOfBlood_MarkerE
 16CModifierFactoryI48CDOTA_Modifier_Aghsfort_Omniknight_GuardianAngelE
-16CModifierFactoryI48CDOTA_Modifier_Aghsfort_PrimalBeast_Boss_Rock_HPE
 16CModifierFactoryI48CDOTA_Modifier_Aghsfort_Sand_King_Epicenter_SlowE
 16CModifierFactoryI48CDOTA_Modifier_Aghsfort_Sand_King_SandStorm_SlowE
 16CModifierFactoryI48CDOTA_Modifier_Aghsfort_Slark_ShadowDance_VisualE
@@ -14191,12 +14190,12 @@
 41CPublishedFile_RefreshVotingQueue_Request
 41CTraceFilterSkipPlayersAndNPCsAndChildren
 41CWorkshop_GetPackageDailyRevenue_Response
+41C_DOT
 41C_DOTA_Ability_AghsFort_Kunkka_No_Quarter
 41C_DOTA_Ability_AghsFort_Kunkka_Tidal_Wave
 41C_DOTA_Ability_AghsFort_QueenOfPain_Blink
 41C_DOTA_Ability_AghsFort_TrapRoom_Hookshot
 41C_DOTA_Ability_Aghsfort_Bane_NightmareEnd
-41C_DOTA_Ability_Aghsfort_Disruptor_Glimpse
 41C_DOTA_Ability_Aghsfort_Magnataur_Empower
 41C_DOTA_Ability_Aghsfort_Mars_Bulwark_Stop
 41C_DOTA_Ability_Aghsfort_Slark_ShadowDance
@@ -20197,6 +20196,7 @@ A\A]A^D
 A\A]A^H
 A\A]A^I
 A^A_]fH
+A_Ability_Aghsfort_PrimalBeast_Boss_ThrowAttack
 AbandonGamePopup
 AbandonsDetails1
 AbandonsLabel
@@ -20376,7 +20376,6 @@ AbilityUnitTargetType
 AbilityUpgradeGoldCost
 AbilityUpgradeLevel
 AbilityValues
-Ability_Aghsfort_Sand_King_CausticFinale
 AbortMatchBeingConfirmed
 Aborting... query is already in flight
 AboutTabButton
@@ -22986,7 +22985,6 @@ CDOTAWeekendTourneyController
 CDOTAWeekendTourneyController::GetTournamentInfo
 CDOTAWeekendTourneyController::RequestParticipationStats
 CDOTAWeekendTourneyController::RequestPlayerHistory
-CDOTA_A
 CDOTA_AbilityAnimations
 CDOTA_AbilityDraftAbilityState
 CDOTA_AbilityDraftAbilityState[MAX_ABILITY_DRAFT_ABILITIES
@@ -23413,7 +23411,6 @@ CDOTA_Ability_Aghsfort_PrimalBeast_Boss_Onslaught
 CDOTA_Ability_Aghsfort_PrimalBeast_Boss_PrimalRoar
 CDOTA_Ability_Aghsfort_PrimalBeast_Boss_Pummel
 CDOTA_Ability_Aghsfort_PrimalBeast_Boss_TectonicShift
-CDOTA_Ability_Aghsfort_PrimalBeast_Boss_ThrowAttack
 CDOTA_Ability_Aghsfort_PrimalBeast_Boss_Vault
 CDOTA_Ability_Aghsfort_Pugna_Grandmaster_NetherWard
 CDOTA_Ability_Aghsfort_Reward_ArmorAura
@@ -23421,6 +23418,7 @@ CDOTA_Ability_Aghsfort_Reward_CritAura
 CDOTA_Ability_Aghsfort_Reward_HPAura
 CDOTA_Ability_Aghsfort_Reward_MagicResistAura
 CDOTA_Ability_Aghsfort_Sand_King_BurrowStrike
+CDOTA_Ability_Aghsfort_Sand_King_CausticFinale
 CDOTA_Ability_Aghsfort_Sand_King_Epicenter
 CDOTA_Ability_Aghsfort_Sand_King_SandStorm
 CDOTA_Ability_Aghsfort_Slark_DarkPact
@@ -24673,7 +24671,7 @@ CDOTA_DB_Page_HeroGuides::OnHeroGuideCreate
 CDOTA_DB_Page_HeroGuides::OnHeroGuideDelete
 CDOTA_DB_Page_HeroGuides::OnHeroGuidePublish
 CDOTA_DB_Page_HeroGuides::OnHeroGuidePublishAll
-CDOTA_DB_Page_Heroes::UpdateGameMode
+CDOTA_DB_Page_Heroes::SetupCavernCrawl
 CDOTA_DB_Page_Home::OnPostSocialFeedMessage
 CDOTA_DB_Page_LaneSuggestDebug::EventHeroSelected
 CDOTA_DB_Page_OwnedItemDetails - DefIndex: %u, AccountID: %u, ItemID: %llu
@@ -26283,6 +26281,7 @@ CModelPointEntity
 CModelState
 CModelState::DoSetupPhysics
 CModelState::SetupModel( %s '%s' @{%g,%g,%g}) cannot look at solid type because the entity class is not derived from CBaseEntity
+CModifierFactoryI48CDOTA_Modifier_Aghsfort_PrimalBeast_Boss_Rock_HPE
 CModifierHandleBase
 CModifierHandleTyped
 CModifierParams
@@ -31609,6 +31608,7 @@ CandyContainerRight
 CandyGrant
 CandyInventory
 CandyInventoryRow
+CandyInventorySlot
 CandyReward
 CandyRewardDetail
 CandyRewardDetail_EconItem
@@ -33188,6 +33188,8 @@ D:hPvbH
 D:sctAH
 D;!ttHc
 D;"tBD
+D;%9xB
+D;%Exk
 D;2r8;Z
 D;8tNH9
 D;8}#Ic
@@ -44338,7 +44340,6 @@ FTYPEDESC_WAS_INPUT
 FTYPEDESC_WAS_OUTPUT
 FTz5u3
 FXAAEnabled
-FXIndexScepterAmbient
 FX[A\A]A
 FX_RicochetSound.Ricochet
 F_TRANSLUCENT
@@ -47660,7 +47661,6 @@ HeroSearchResultSmall
 HeroSearchTextEntry
 HeroSection
 HeroSelectSoundEffect
-HeroSelectionText_ChooseHero
 HeroSeparator
 HeroSetShuffleEnabled
 HeroSets
@@ -48414,6 +48414,7 @@ Index out-of-bounds (field is empty
 Index_%p
 Indexes map to same location in fow
 Indicates if you are watching a broadcaster in player view, so that the handling of selection can be treated differently. Meaningless when not in player view spectator mode
+Indicates that the animation has a segment that's interpolated. In general using this on navlinks that traverse +/- 50% of the recommended distance should look okay
 IndirectEnabled
 IndirectVoxelDimX
 IndirectVoxelDimY
@@ -56167,7 +56168,7 @@ PlusStatsValid
 PlusTab
 PlusThree
 PlusTwo
-PlusWai
+PlusWaitingOnSelections
 PodsShowPlayerPictures
 PodsVisible
 Point Item Used
@@ -60987,6 +60988,7 @@ TAG_TAKEN
 TAG_TOO_LONG
 TARGET_ENGINE_MISMATCH
 TAWAVAUATSH
+TA_Ability_Aghsfort_Disruptor_Glimpse
 TChinese
 TD_OFFSET_NORMAL
 TD_OFFSET_PACKED
@@ -62959,7 +62961,6 @@ UserCustomBackground
 UserHideVideo
 UserIDToControllerHScript
 UserInputActive
-UserNickname
 UserProfileBackground
 UserProfileBackgroundFrosted
 UserTooltipObj
@@ -71993,7 +71994,6 @@ dota_chat_coaching_tab
 dota_chat_disable_refresh_user_list
 dota_chat_enable_whispers
 dota_chat_event
-dota_chat_fantasy_draft
 dota_chat_filter_settings
 dota_chat_filter_settings_apply_to_spectators
 dota_chat_first_blood
@@ -72696,6 +72696,7 @@ dota_hud_error_tree_dance_tree_target_out_of_range
 dota_hud_error_treejump_tree_target_same_tree
 dota_hud_error_tutorial_shop_not_in_range
 dota_hud_error_underlord_dark_portal
+dota_hud_error_underlord_dark_portal_while_snowballing
 dota_hud_error_unit_cant_attack
 dota_hud_error_unit_cant_move
 dota_hud_error_unit_command_restricted
@@ -74090,7 +74091,6 @@ dust_amount
 dust_cost
 dust_value
 dx%d%s
-dyInventorySlot
 dynamic
 dynamicAttachOffset
 dynamicResetCount
@@ -74559,7 +74559,6 @@ evasion
 evasion_chance
 evasion_chance_pct
 evasion_per_stack
-evelKey
 even_row
 evenodd
 event %s "%s
@@ -74872,7 +74871,6 @@ fD9't8H
 fD98t6
 fD;'t8H
 fD;(twH
-fD;5ju
 fD;8ty
 fDistance
 fDurationMultiplier
@@ -74882,6 +74880,7 @@ fE99t:A
 fE;l$$t
 fE;t$@s
 fEEl : high front unrounded vowel
+fExtraTimeRemaining
 fIcD$01
 fIll : high central unrounded vowel
 fIll : semi-high front unrounded vowel
@@ -76021,6 +76020,7 @@ file://{resources}/layout/profile_league_pass.xml
 file://{resources}/layout/profilestat.xml
 file://{resources}/layout/purchase_button.xml
 file://{resources}/layout/purchase_event_levels_table.xml
+file://{resources}/layout/queenofpain_arcana_progress.xml
 file://{resources}/layout/razor_arcana_progress.xml
 file://{resources}/layout/ready_up_player_slot.xml
 file://{resources}/layout/ready_up_players.xml
@@ -78360,16 +78360,13 @@ huskar_inner_fire
 huskar_inner_vitality
 huskar_life_break
 hype_loc
-h|D;- bj
-h|D;-5i
-h|D;-DT
-h|D;-Ho
-h|D;-Uv
-h|D;-l3K
-h|D;-oh
-h|D;-vm
-h|D;-zn
-h|D;-zo
+h|D;-9i
+h|D;-Nqk
+h|D;-Paj
+h|D;-Uh
+h|D;-dS
+h|D;-uu
+h|D;-xn
 i %s.vtex
 i < length
 i matching ent%s
@@ -78384,7 +78381,6 @@ i:r:player%d_score
 iAmmoType
 iAttachType
 iAttribHook
-iBadTomeCount
 iBlue >= 0 && iBlue <= 15
 iBlue >= 0 && iBlue <= 31
 iBlue1 >= (signed)(0+a_uiRadius) && iBlue1 <= (signed)(31 - a_uiRadius
@@ -79711,7 +79707,6 @@ itemstoscroll
 itemstyle
 itemwidth
 iteration
-itingOnSelections
 itions.tH
 itions_sH
 iv_debug
@@ -82300,6 +82295,7 @@ layoutfailed
 layoutfile
 lazy = true] can only be specified for submessage fields
 ld-linux-x86-64.so.2
+ld_primary_color
 leader_account_id
 leader_id
 leader_name
@@ -82806,6 +82802,7 @@ lycan_summon_wolves_critical_strike
 lycan_summon_wolves_invisibility
 lycan_wolf_bite
 mIcL$0Ic
+mIsPurchasable
 m_16ByteOrLessStack out of space, falling through after %d entries, consider upping NETWORKFIELDSCRATCHDATA_16BYTE_COUNT
 m_AbilityDraftAbilities
 m_ActiveRingOwners
@@ -83658,6 +83655,7 @@ m_bIsUsable
 m_bIsValid
 m_bIsVectorTargeted
 m_bIsWaitingToSpawn
+m_bItem
 m_bItemAvailableAtCustomShop
 m_bItemAvailableAtGlobalShop
 m_bItemAvailableAtSecretShop
@@ -83665,7 +83663,6 @@ m_bItemAvailableAtSideShop
 m_bItemContributesToNetWorthWhenDropped
 m_bItemEnabled
 m_bItemHasPassive
-m_bItemIsPurchasable
 m_bItemIsPureSupport
 m_bItemIsRecipe
 m_bItemIsRecipeGenerated
@@ -84139,7 +84136,6 @@ m_fEffects
 m_fEndWidth
 m_fError >= 0.0f
 m_fExpireTime
-m_fExtraTimeRemaining
 m_fFModAmplitude
 m_fFModRate
 m_fFModTimeOffset
@@ -85313,6 +85309,7 @@ m_iAuraSearchTeam
 m_iAuraSearchType
 m_iAvailableSalutes
 m_iBKBChargesUsed
+m_iBadTomeCount
 m_iBarracksKills
 m_iBaseAttackSpeed
 m_iBattleBonusRate
@@ -86007,6 +86004,7 @@ m_nFXIndexChannel
 m_nFXIndexDestruction
 m_nFXIndexEnd
 m_nFXIndexEndTeam
+m_nFXIndexScepterAmbient
 m_nFXIndexSpirit
 m_nFXIndexSpiritB
 m_nFXIndexStart
@@ -86515,7 +86513,7 @@ m_pGameDirFilter
 m_pGameManager
 m_pGameRules
 m_pGameSceneNode
-m_pGrap
+m_pGraphManager
 m_pInflictorClassNameFilter
 m_pInflictorEntityNameFilter
 m_pInfo
@@ -86632,8 +86630,8 @@ m_pszHighlightOtherEntityName
 m_pszImpactEffect
 m_pszItemRecipeName
 m_pszKeyOverride
-m_pszLe
 m_pszLessonName
+m_pszLevelKey
 m_pszLightningSound
 m_pszLinkedAbility
 m_pszLinkedScepterAbility
@@ -86716,7 +86714,6 @@ m_sLandmarkName
 m_sLocCategory
 m_sLocDescription
 m_sLocName
-m_sLocUnitsPluralizable
 m_sLootList
 m_sMapName
 m_sModelName
@@ -91694,7 +91691,6 @@ name_token
 nameable
 named_value
 navajowhite
-ndicates that the animation has a segment that's interpolated. In general using this on navlinks that traverse +/- 50% of the recommended distance should look okay
 near_damage
 near_radius
 nearby_creep_death_count
@@ -92714,6 +92710,7 @@ original_start_date
 ortholightheight
 ortholightwidth
 os_type
+ota_chat_fantasy_draft
 other low priority
 otherPanelID, eventToFire
 other_gold
@@ -94458,7 +94455,6 @@ perspective-origin
 pervertexlighting
 pfD9't2H
 phHc@`H
-phManager
 phantom_assassin_armor_corruption_debuff
 phantom_assassin_blur
 phantom_assassin_coup_de_grace
@@ -95441,12 +95437,11 @@ pwrd_cyber_cafe_name
 py_generic_services
 p|D;5)z
 p|D;50x
-p|D;52|m
 p|D;5Fy
 p|D;5X
-p|D;5\wj
+p|D;5Z
 p|D;5b
-p|D;5eIK
+p|D;5b{m
 p|E;t$0
 q0f;r0t
 q<@8p<t
@@ -95543,6 +95538,7 @@ r@channel_meteor
 rBanned
 rBvVHc
 rCIcP8I
+rNickname
 rPD9ITt
 r_AirboatViewDampenDamp
 r_AirboatViewDampenFreq
@@ -96329,7 +96325,6 @@ resource_type
 resourcecompiler -nop4
 resourcecompiler.exe
 resourcehandle
-resources}/layout/queenofpain_arcana_progress.xml
 respawn_base
 respawn_seconds
 respawn_seconds_max_level
@@ -97110,6 +97105,7 @@ sIf true, then files must have all the tags specified.  If false, then must have
 sImage
 sLabel
 sLilShredderBounceInfo
+sLocUnitsPluralizable
 sLocalizedEndsIn
 sLock acquired: %s:%d
 sLower
@@ -97959,6 +97955,7 @@ sf_wins
 sfemale%s
 sfixed32
 sfixed64
+sgGCReadyUpStatus
 sguides/%s_%u.build
 shD;sxD
 shackle_count
@@ -101074,7 +101071,7 @@ t%9C8t
 t%;2t%H
 t%HcC0A
 t%M;4$L
-t&D:%Ut
+t&D:%us
 t&Hc@h1
 t&M9,$L
 t'IcD$x
@@ -103834,10 +103831,10 @@ xp_type
 xp_value
 xpm_diff
 xstat64
-x|D;=2jo
-x|D;=DtJ
-x|D;=Sel
-x|D;=arj
+x|D;=C1k
+x|D;=Xrj
+x|D;=bio
+x|D;=dsJ
 x~Mc|$hD9
 y(HcI H
 y0H9z0t
