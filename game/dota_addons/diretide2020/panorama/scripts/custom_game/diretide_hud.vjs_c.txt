@@ -1,0 +1,530 @@
+var serverConstants = CustomNetTables.GetTableValue( 'globals', 'constants' );
+var serverValues = CustomNetTables.GetTableValue( 'globals', 'values' );
+
+var strCurrentInstanceMessageClass = "";
+var nCurrentInstanceMessagePriority = 0;
+var flCurrentInstanceMessageDieTime = -1;
+var flRoundStartClearTime = -1;
+
+// Show per-player candy carrying
+// Call out "in the lead"
+
+function OnRoshanTrackerLoaded( panel )
+{
+    var contextPanel = $.GetContextPanel();
+    var parent = contextPanel.GetParent();
+    var customRoot = parent.GetParent();
+    // Need to reparent this, to get layering correct.
+    var hudRoot = customRoot.GetParent().FindChild( 'HUDElements' );
+    var topBar = hudRoot.FindChild( 'topbar' );
+    customRoot.SetParent( hudRoot );
+    hudRoot.MoveChildAfter( customRoot, topBar );
+    customRoot.GetParent().AddClass( "Diretide2020" );
+
+    // It is important to set all dialog variables here to reasonable defaults,
+    // otherwise the first update of the UI will have a bunch of "missing variable" slugs in it.
+    contextPanel.SetDialogVariableInt( "radiant_total_candy", serverConstants.DIRETIDE_STARTING_CANDY );
+    contextPanel.SetDialogVariableInt( "radiant_extra_candy", serverConstants.DIRETIDE_STARTING_CANDY );
+    contextPanel.SetDialogVariableInt( "dire_total_candy", serverConstants.DIRETIDE_STARTING_CANDY );
+    contextPanel.SetDialogVariableInt("dire_extra_candy", serverConstants.DIRETIDE_STARTING_CANDY );
+    SetCandyCount( contextPanel.FindChildInLayoutFile( "CandyCountContainerDire" ), serverConstants.DIRETIDE_STARTING_CANDY, 0 );
+    SetCandyCount( contextPanel.FindChildInLayoutFile( "CandyCountContainerRadiant" ), serverConstants.DIRETIDE_STARTING_CANDY, 0 );
+    SetCandyCount( contextPanel.FindChildInLayoutFile( "CandyExtraCountContainerDire" ), 0, 0 );
+    SetCandyCount( contextPanel.FindChildInLayoutFile( "CandyExtraPlusScoredCountContainerDire" ), serverConstants.DIRETIDE_STARTING_CANDY, serverConstants.DIRETIDE_STARTING_CANDY );
+    SetCandyCount( contextPanel.FindChildInLayoutFile( "CandyExtraCountContainerRadiant" ), 0, 0 );
+    SetCandyCount( contextPanel.FindChildInLayoutFile( "CandyExtraPlusScoredCountContainerRadiant" ), serverConstants.DIRETIDE_STARTING_CANDY, serverConstants.DIRETIDE_STARTING_CANDY );
+
+    contextPanel.SetDialogVariableInt("roshan_candy", 0);
+    contextPanel.SwitchClass( "GameState", "DIRETIDE_GAMESTATE_PREGAME" );
+    contextPanel.SetDialogVariable("round_end_timer_prefix", "Spawning Heroes");
+    contextPanel.SetDialogVariableInt( "radiant_score", 0 );
+    contextPanel.SetDialogVariableInt( "dire_score", 0 );
+    contextPanel.SwitchClass( "scoreDire", "ScoreDire0" );
+    contextPanel.SwitchClass( "scoreRadiant", "ScoreRadiant0" );
+    contextPanel.SetDialogVariable( "timevalue", "" );
+}
+
+function SetCandyCount( rootPanel, nCandyAmount, nCandyCheckAmount )
+{
+    if ( rootPanel === null )
+        return;
+
+    rootPanel.SetHasClass( "NoCandy", nCandyAmount <= nCandyCheckAmount )
+
+    for ( var nDigit = 0; ; nDigit++ )
+    {
+        var digitPanel = rootPanel.FindChild( 'CandyDigit' + nDigit );
+        if ( digitPanel === null )
+            break;
+        var nShiftedValue = ( nCandyAmount / Math.pow( 10, nDigit ) ) | 0;
+        if ( nShiftedValue == 0 && nDigit != 0 )
+        {
+            digitPanel.SwitchClass( "Digit", "digit_none" );
+        }
+        else
+        {
+            var nDigitValue = ( nShiftedValue % 10) | 0;
+            digitPanel.SwitchClass( "Digit", "digit_" + nDigitValue );
+        }
+    }
+}
+
+function DoInitialCameraSetup()
+{
+    if ( this.bDoneCameraSetup )
+        return;
+
+    var nLocalPlayer = Players.GetLocalPlayer();
+    var nLocalTeam = Players.GetTeam( nLocalPlayer );
+
+    var vLocalPlayerStarts = [];
+    if ( nLocalTeam == 2 )
+    {
+        vLocalPlayerStarts = Entities.GetAllEntitiesByClassname( 'info_player_start_goodguys' );
+    }
+    else
+    {
+        vLocalPlayerStarts = Entities.GetAllEntitiesByClassname( 'info_player_start_badguys' );
+    }
+    if ( vLocalPlayerStarts.length > 0 )
+    {
+        GameUI.MoveCameraToEntity( vLocalPlayerStarts[0] );
+        this.bDoneCameraSetup = true;
+    }
+}
+
+function OnThink()
+{
+    var bAltPressed = IsDotaAltPressed()
+    $.GetContextPanel().SetHasClass( "AltPressed", bAltPressed == true );
+    var bPaused = Game.IsGamePaused()
+    $.GetContextPanel().SetHasClass( "IsPaused", bPaused == true );
+
+    if ( flRoundStartClearTime != -1 && Game.GetDOTATime( false, true ) >= flRoundStartClearTime )
+    {
+        flRoundStartClearTime = -1;
+        ClearRoundStartPopup();
+    }
+
+    if ( serverValues !== undefined )
+    {
+        if ( serverValues.GameState == serverConstants.DIRETIDE_GAMESTATE_PREGAME )
+        {
+            $.GetContextPanel().SwitchClass( "GameState", "DIRETIDE_GAMESTATE_PREGAME" );
+            $.GetContextPanel().SetDialogVariable("round_end_timer_prefix", "Spawning Heroes");
+
+            DoInitialCameraSetup();
+        }
+        else if ( serverValues.GameState == serverConstants.DIRETIDE_GAMESTATE_GAMEOVER )
+        {
+            ClearInstanceMessage();
+            $.GetContextPanel().SwitchClass( "GameState", "DIRETIDE_GAMESTATE_GAMEOVER" );
+            $.GetContextPanel().SetDialogVariable("round_end_timer_prefix", "Game Over");
+        }
+        else if ( serverValues.GameState == serverConstants.DIRETIDE_GAMESTATE_INTERSTITIAL_ROUND_PHASE )
+        {
+            ClearInstanceMessage();
+            $.GetContextPanel().SwitchClass( "GameState", "DIRETIDE_GAMESTATE_INTERSTITIAL_ROUND_PHASE" );
+            $.GetContextPanel().SetDialogVariable("round_end_timer_prefix", "Round Interstitial Time");
+            var nSecondsRemaining = serverValues.TimeRoundEnds - Game.GetDOTATime( false, true);
+            SetTimeValue( nSecondsRemaining );
+            if ( nSecondsRemaining < ( serverConstants.DIRETIDE_INTERSTITIAL_TIME - 5 ) )
+            {
+                $.GetContextPanel().RemoveClass( "ShowRoundEnd" );
+            }
+        }
+        else if ( serverValues.GameState == serverConstants.DIRETIDE_GAMESTATE_ROUND_IN_PROGRESS )
+        {
+            TryExpireInstanceMessage();
+            $.GetContextPanel().SwitchClass( "GameState", "DIRETIDE_GAMESTATE_ROUND_IN_PROGRESS" );
+            $.GetContextPanel().SetDialogVariable("round_end_timer_prefix", "Round Interstitial Time");
+            var nSecondsRemaining = serverValues.TimeRoundEnds - Game.GetDOTATime( false, true);
+            SetTimeValue( nSecondsRemaining );
+        }
+        else if ( serverValues.GameState == serverConstants.DIRETIDE_GAMESTATE_DISPLAY_FINAL_ROUND_RESULTS )
+        {
+            ClearInstanceMessage();
+            $.GetContextPanel().SwitchClass( "GameState", "DIRETIDE_GAMESTATE_DISPLAY_FINAL_ROUND_RESULTS" );
+        }
+        else if ( serverValues.GameState == serverConstants.DIRETIDE_GAMESTATE_ENDING_CINEMATIC )
+        {
+            $.GetContextPanel().SwitchClass( "GameState", "DIRETIDE_GAMESTATE_ENDING_CINEMATIC" );
+        }
+
+        $( "#RoshanTargetHeroImage" ).heroid = serverValues.TrickOrTreatHeroID || -1;
+
+        var roshanTracker = $( "#RoshanTracker" );
+        var roshanTargetTeam = serverValues.TrickOrTreatTeam || 0;
+        var nLocalTeam = Players.GetTeam( Players.GetLocalPlayer() );
+        var nLocalHero = Players.GetPlayerHeroEntityIndex( Players.GetLocalPlayer() );
+
+        roshanTracker.SetHasClass( "RoshanSleeping", roshanTargetTeam == 0 );
+        roshanTracker.SetHasClass( "HideCandyRequest", roshanTargetTeam != 0 && nLocalTeam != roshanTargetTeam && ( nLocalTeam == 2 || nLocalTeam == 3 ) );
+        roshanTracker.SetHasClass( "TrackingAlly", nLocalTeam == roshanTargetTeam );
+        roshanTracker.SetHasClass( "TrackingRadiant", roshanTargetTeam == 2 );
+        roshanTracker.SetHasClass( "TrackingDire", roshanTargetTeam == 3 );
+        roshanTracker.SetHasClass("TrackingMe", serverValues.TrickOrTreatTargetEntIndex != -1 && nLocalHero == serverValues.TrickOrTreatTargetEntIndex);
+        roshanTracker.SetHasClass("RoshanCandy", serverValues.RoshanCandy > 0)
+        roshanTracker.SetHasClass( "ReachedAlly", nLocalTeam == roshanTargetTeam && serverValues.RoshanNearPlayer );
+        $.GetContextPanel().SetDialogVariableInt( "roshan_candy", serverValues.RoshanCandy );
+        
+        $.GetContextPanel().SetDialogVariableInt( "dire_score", serverValues.DireScore );
+        $.GetContextPanel().SetDialogVariableInt("radiant_score", serverValues.RadiantScore);
+        $.GetContextPanel().SwitchClass("scoreDire", "ScoreDire" + serverValues.DireScore.toString());
+        $.GetContextPanel().SwitchClass("scoreRadiant", "ScoreRadiant" + serverValues.RadiantScore.toString());
+        UpdateCandyCounts();      
+    } 
+
+    $.Schedule( 0.1, OnThink )
+}
+$.Schedule( 0.0, OnThink )
+
+function OnCameraThink()
+{
+    if ( g_bInEndGameCamera )
+    {
+        g_flCurrentPitch = g_flCurrentPitch + g_flCameraPitchSpeed;
+        if ( g_flCurrentPitch < g_flFinalPitch )
+        {
+            g_flCurrentPitch = g_flFinalPitch;
+        }
+        GameUI.SetCameraPitchMin( g_flCurrentPitch );
+        GameUI.SetCameraPitchMax( g_flCurrentPitch );
+        //var vCameraLookAtPos = GameUI.GetCameraLookAtPosition();
+        //GameUI.SetCameraPositionFromLateralLookAtPosition( vCameraLookAtPos[0], vCameraLookAtPos[1] );
+    }
+  
+    $.Schedule( 0.003, OnCameraThink )
+}
+$.Schedule( 0.0, OnCameraThink )
+
+function UpdateCandyCounts()
+{
+    var nRadiantCandyCollected = CustomNetTables.GetTableValue( 'candy_collected', '2' );
+    var nRadiantExtraCandy = serverValues.RadiantExtraCandy;
+    if ( nRadiantCandyCollected === undefined )
+    {
+        nRadiantCandyCollected = 0;
+    }
+    else
+    {
+        nRadiantCandyCollected = nRadiantCandyCollected['total_candy'];
+    }
+
+    var nDireCandyCollected = CustomNetTables.GetTableValue( 'candy_collected', '3' );
+    var nDireExtraCandy = serverValues.DireExtraCandy;
+    if ( nDireCandyCollected === undefined )
+    {
+        nDireCandyCollected = 0;
+    }
+    else
+    {
+        nDireCandyCollected = nDireCandyCollected['total_candy'];
+    }
+   
+    var contextPanel = $.GetContextPanel();
+    contextPanel.SetDialogVariableInt( "radiant_total_candy", nRadiantCandyCollected );
+    contextPanel.SetDialogVariableInt( "radiant_extra_candy", nRadiantCandyCollected + nRadiantExtraCandy );
+    contextPanel.SetDialogVariableInt( "dire_total_candy", nDireCandyCollected );
+    contextPanel.SetDialogVariableInt( "dire_extra_candy", nDireCandyCollected + nDireExtraCandy );
+
+    SetCandyCount( contextPanel.FindChildInLayoutFile( "CandyCountContainerRadiant" ), nRadiantCandyCollected, 0 );
+    SetCandyCount( contextPanel.FindChildInLayoutFile( "CandyExtraCountContainerRadiant" ), nRadiantExtraCandy, 0 );
+    SetCandyCount( contextPanel.FindChildInLayoutFile( "CandyExtraPlusScoredCountContainerRadiant" ), nRadiantCandyCollected + nRadiantExtraCandy, nRadiantCandyCollected );
+    SetCandyCount( contextPanel.FindChildInLayoutFile( "CandyCountContainerDire" ), nDireCandyCollected, 0 );
+    SetCandyCount( contextPanel.FindChildInLayoutFile( "CandyExtraCountContainerDire" ), nDireExtraCandy, 0 );
+    SetCandyCount( contextPanel.FindChildInLayoutFile( "CandyExtraPlusScoredCountContainerDire" ), nDireCandyCollected + nDireExtraCandy, nDireCandyCollected );
+
+    contextPanel.SetHasClass( 'RadiantLeads', nRadiantCandyCollected > nDireCandyCollected );
+    contextPanel.SetHasClass( 'DireLeads', nRadiantCandyCollected < nDireCandyCollected );
+    contextPanel.SetHasClass( 'NoLead', nRadiantCandyCollected === nDireCandyCollected );
+    contextPanel.SetHasClass( 'RadiantHasExtraCandy', nRadiantExtraCandy > 0 );
+    contextPanel.SetHasClass( 'DireHasExtraCandy', nDireExtraCandy > 0 );
+    contextPanel.SetHasClass( "RadiantLosingCandy", serverValues.RadiantBucketHurt == 1 );
+    contextPanel.SetHasClass( "DireLosingCandy", serverValues.DireBucketHurt == 1 );
+}
+
+function SetTimeValue( nSecondsRemaining )
+{
+    if ( nSecondsRemaining < 0 )
+    {
+        nSecondsRemaining = 0;
+    }
+    var nMinutesRemaining = Math.floor( nSecondsRemaining / 60 );
+    nSecondsRemaining = Math.floor( nSecondsRemaining - nMinutesRemaining*60) ;
+    var resultString = nMinutesRemaining.toString() + ":";
+    if ( nSecondsRemaining < 10 )
+    {
+        resultString = resultString + "0";
+    }
+    resultString = resultString + nSecondsRemaining.toString();
+    $.GetContextPanel().SetDialogVariable( "timevalue", resultString );
+    $.GetContextPanel().SetHasClass( "Last30Seconds", ( nMinutesRemaining == 0 ) && ( nSecondsRemaining <= 30 ) );
+    $.GetContextPanel().SetHasClass( "Last10Seconds", ( nMinutesRemaining == 0 ) && ( nSecondsRemaining <= 10 ) );
+}
+
+CustomNetTables.SubscribeNetTableListener( "candy_collected", OnCandyCollectedChanged );
+CustomNetTables.SubscribeNetTableListener( "globals", function( table_name, key, data )
+{
+    if ( key == 'constants' )
+    {
+        serverConstants = data;
+    }
+    else if ( key == 'values' )
+    {
+        serverValues = data;
+    }
+} );
+
+function OnCandyCollectedChanged( table_name, key, data )
+{
+    var nChar = key.search( "player_id_" );
+    if ( nChar == -1 )
+    {
+        UpdateCandyCounts();
+    }
+}
+
+function OnGameEventRoundStart( e )
+{
+    $.GetContextPanel().AddClass( "RoundNameTitleAnimation" );
+
+    $.GetContextPanel().SwitchClass( "roundNumber", "Round" + e.round_number.toString() );
+    $.GetContextPanel().SetDialogVariableInt( "round_number", e.round_number );
+    $.GetContextPanel().SetDialogVariable( "round_name", $.Localize( e.round_name ) );
+    $.GetContextPanel().AddClass( "ShowRoundStart" );
+    flRoundStartClearTime = Game.GetDOTATime( false, true ) + 4.0;
+}
+GameEvents.Subscribe( "round_start", OnGameEventRoundStart )
+
+function ClearRoundStartPopup()
+{
+    $.GetContextPanel().RemoveClass( "ShowRoundStart" );
+    $.GetContextPanel().RemoveClass( "RoundNameTitleAnimation" );
+}
+
+
+function OnGameEventRoundEnd( e )
+{
+    if ( e.scoring_team == 2 )
+    {
+        $.GetContextPanel().SwitchClass( "scoringTeam", "scoringTeamRadiant" );
+    }
+    else if ( e.scoring_team == 3 )
+    {
+        $.GetContextPanel().SwitchClass( "scoringTeam", "scoringTeamDire" );
+    }
+    
+    if ( e.is_final_round == 1 )
+    {
+        $.GetContextPanel().AddClass( "FinalRound" );
+    }
+    else
+    {
+        $.GetContextPanel().RemoveClass( "FinalRound" );
+    }
+
+    
+    $.GetContextPanel().SetDialogVariableInt( "radiant_candy", e.radiant_candy );
+    $.GetContextPanel().SetDialogVariableInt( "dire_candy", e.dire_candy );
+    $.GetContextPanel().SetDialogVariableInt( "round_number", e.round_number );
+    $.GetContextPanel().AddClass( "ShowRoundEnd" );
+}
+GameEvents.Subscribe( "round_end", OnGameEventRoundEnd )
+
+function OnGameEventFadeToBlack( e )
+{
+    if ( e.fade_down == 1 )
+    {
+        $.GetContextPanel().AddClass( "FadeToBlack" );
+    }
+    else
+    {
+        $.GetContextPanel().RemoveClass( "FadeToBlack" );
+    }
+}
+GameEvents.Subscribe( "fade_to_black", OnGameEventFadeToBlack )
+
+function TryUpdateInstanceMessage( flDuration, nPriority, strNewClass )
+{
+    if ( nPriority < nCurrentInstanceMessagePriority )
+        return false;
+
+    if ( strCurrentInstanceMessageClass != "" )
+    {
+        $.GetContextPanel().RemoveClass( strCurrentInstanceMessageClass );
+    }
+
+    strCurrentInstanceMessageClass = strNewClass;
+    if ( strNewClass == "" )
+    {
+        nCurrentInstanceMessagePriority = 0;
+        flCurrentInstanceMessageDieTime = -1.0;
+    }
+    else
+    {
+        nCurrentInstanceMessagePriority = nPriority;
+        $.GetContextPanel().AddClass( strNewClass );
+
+        if ( flDuration > 0 )
+        {
+            flCurrentInstanceMessageDieTime = flDuration + Game.GetDOTATime( false, true );
+        }
+        else
+        {
+            flCurrentInstanceMessageDieTime = -1.0;
+        }
+    }
+
+    return true;
+}
+
+function TryExpireInstanceMessage()
+{
+    if ( flCurrentInstanceMessageDieTime > 0 && flCurrentInstanceMessageDieTime <= Game.GetDOTATime( false, true ) )
+    {
+        ClearInstanceMessage();
+    }
+}
+
+function ClearInstanceMessage()
+{
+    if ( flCurrentInstanceMessageDieTime > 0 )
+    {
+        TryUpdateInstanceMessage( -1.0, 99999, "" );
+    }
+}
+
+function OnGameEventTeamCursed( e )
+{
+    var nLocalTeam = Players.GetTeam( Players.GetLocalPlayer() );
+
+    if ( ( nLocalTeam != 2 && nLocalTeam != 3 ) || e.cursed_team < 0 )
+    {
+        if ( abs( e.cursed_team ) == 2 )
+        {
+            $.GetContextPanel().SwitchClass( "cursedTeam", "cursedTeamRadiant" );
+        }
+        else
+        {
+            $.GetContextPanel().SwitchClass( "cursedTeam", "cursedTeamDire" );
+        }
+    }
+    else
+    {
+        if ( e.cursed_team == nLocalTeam )
+        {
+            $.GetContextPanel().SwitchClass( "cursedTeam", "cursedTeamYou" );
+        }
+        else
+        {
+            $.GetContextPanel().SwitchClass( "cursedTeam", "cursedTeamThem" );
+        }
+    }
+    TryUpdateInstanceMessage( 6.0, 10, "ShowCursePopup" );
+}
+GameEvents.Subscribe( "team_cursed", OnGameEventTeamCursed )
+
+function OnGameEventOvertime( e )
+{
+    $.GetContextPanel().SetDialogVariableInt( "extra_time", e.extra_time );
+    TryUpdateInstanceMessage( 2.0, 60, "ShowOvertimePopup" );
+    
+}
+GameEvents.Subscribe( "start_overtime", OnGameEventOvertime )
+
+function OnGameEventTimeLeft( e )
+{
+    $.GetContextPanel().SwitchClass( "timeLeft", "timeLeft" + e.time_left );
+    var flDuration = 1.0;
+    if ( e.time_left > 5 )
+    {
+        flDuration = 2.0;
+    }
+    TryUpdateInstanceMessage( flDuration, 1, "ShowTimeLeftPopup" );
+}
+GameEvents.Subscribe( "time_left", OnGameEventTimeLeft )
+
+function OnGameEventRoshanTarget( e )
+{
+    var nLocalTeam = Players.GetTeam( Players.GetLocalPlayer() );
+    var nLocalHero = Players.GetPlayerHeroEntityIndex( Players.GetLocalPlayer() );
+    var nPriority = 30;
+
+    if ( ( nLocalTeam != 2 && nLocalTeam != 3 ) || e.team < 0 )
+    {
+        if ( abs( e.team ) == 2 )
+        {
+            $.GetContextPanel().SwitchClass( "roshanTargeting", "roshanTargetingRadiant" );
+        }
+        else
+        {
+            $.GetContextPanel().SwitchClass( "roshanTargeting", "roshanTargetingDire" );
+        }
+    }
+    else
+    {
+        if ( nLocalTeam == e.team || e.force_you == 1 )
+        {
+            if ( nLocalHero == e.ent_index || e.force_you == 1 )
+            {
+                nPriority = 50;
+                $.GetContextPanel().SwitchClass( "roshanTargeting", "roshanTargetingYou" );
+            }
+            else
+            {
+                $.GetContextPanel().SwitchClass( "roshanTargeting", "roshanTargetingAlly" );
+            }
+        }
+        else
+        {
+            //$.GetContextPanel().SwitchClass( "roshanTargeting", "roshanTargetingEnemy" );
+            return;
+        }
+    }
+    TryUpdateInstanceMessage( 2.0, nPriority, "ShowRoshanTargetPopup" );
+}
+GameEvents.Subscribe( "roshan_target_switch", OnGameEventRoshanTarget )
+
+function OnGameEventCandyBucketAttacked( e )
+{
+    var nLocalTeam = Players.GetTeam( Players.GetLocalPlayer() );
+
+    if ( nLocalTeam == e.team )
+    {
+        TryUpdateInstanceMessage( 2.0, 40, "ShowCandyBucketAttackedPopup" );
+    }
+}
+GameEvents.Subscribe( "candy_bucket_attacked", OnGameEventCandyBucketAttacked )
+
+function OnGameEventStashRespawn( e )
+{
+    TryUpdateInstanceMessage( 2.0, 20, "ShowStashRespawnPopup" );
+}
+GameEvents.Subscribe( "stash_respawn", OnGameEventStashRespawn )
+
+var g_bInEndGameCamera = false;
+var g_flCurrentPitch = 0;
+var g_flInitialPitch = 40;
+var g_flFinalPitch = 30;
+var g_flCameraPitchSpeed = -0.015;
+
+GameEvents.Subscribe( "begin_end_game_cinematic", BeginEndGameCinematic );
+function BeginEndGameCinematic( data )
+{
+    GameUI.MoveCameraToEntity( data[ "ent_index" ] )
+
+    g_flCurrentPitch = g_flInitialPitch;
+    GameUI.SetCameraPitchMin( g_flCurrentPitch );
+    GameUI.SetCameraPitchMax( g_flCurrentPitch );
+    GameUI.SetCameraDistance( 650 );
+    GameUI.SetCameraLookAtPositionHeightOffset( 250 );
+    GameUI.SetCameraTarget( data["ent_index"] );
+    GameUI.SetCameraYaw( 0 )
+
+    g_bInEndGameCamera = true
+
+    //var vAghanimAngles = Entities.GetAbsAngles( data[ "ent_index" ] );
+    //GameUI.SetCameraYaw( vAghanimAngles[ 1 ] - 10 + 90 );                                
+    //g_flCameraYawSpeed = 0.025;
+}

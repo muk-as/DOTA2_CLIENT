@@ -1,0 +1,321 @@
+"use strict"
+
+var AghanimRewardsHUD = $.GetContextPanel().FindChildInLayoutFile( "AghanimRewardsHUD" );
+var AghanimRewardsMinimized = $.GetContextPanel().FindChildInLayoutFile( "AghanimRewardsMinimized" );
+var RewardsContainer = $.GetContextPanel().FindChildInLayoutFile( "RewardsContainer" );
+var AghanimScoreboardInfo = $.GetContextPanel().FindChildInLayoutFile( "AghanimScoreboardInfo" );
+
+
+var g_nCurrentlyDisplayedDepth = 0;
+var g_sCurrentlyDisplayedRewards = "";
+
+function ShowAghanimRewardsHUD()
+{
+    SetAghanimRewardsHidden( false );
+    SetAghanimRewardsMinimized( false );
+    Game.SetJoyFocusPanel( AghanimRewardsHUD.FindChildInLayoutFile( "RewardCloseButton" ) );
+}
+
+function MinimizeAghanimRewardsHUD()
+{
+    SetAghanimRewardsHidden( false );
+    SetAghanimRewardsMinimized( true );
+    Game.PopJoyFocusPanel();
+}
+
+function HideAghanimRewardsHUD()
+{
+    g_nCurrentlyDisplayedDepth = 0;
+    g_sCurrentlyDisplayedRewards = "";
+
+    SetAghanimRewardsHidden( true );
+    SetAghanimRewardsMinimized( false );
+    Game.PopJoyFocusPanel();
+}
+
+function SetAghanimRewardsHidden( bHidden )
+{
+    AghanimRewardsHUD.SetHasClass( "Hidden", bHidden );
+    AghanimRewardsMinimized.SetHasClass( "Hidden", bHidden );
+}
+
+function SetAghanimRewardsMinimized( bMinimized )
+{
+    AghanimRewardsHUD.SetHasClass( "Minimized", bMinimized );
+    AghanimRewardsMinimized.SetHasClass( "Minimized", bMinimized );
+}
+
+function OnRewardClicked( nRewardIndex, nRoomDepth )
+{
+    var data = {}
+    data["room_depth"] = nRoomDepth;
+    data["reward_index"] = nRewardIndex;
+    GameEvents.SendCustomGameEventToServer( "reward_choice", { room_depth: nRoomDepth, reward_index: nRewardIndex } );
+}
+
+var g_RewardOptions = {};
+function OnRewardOptions( table_name, key, data )
+{
+    //$.Msg( "OnRewardOptions " + key );
+    //$.Msg( JSON.stringify( data, null, " " ) );
+
+    g_RewardOptions[key] = data;
+    $.Schedule( 0.5, function() { UpdateRewardsHUD() } );
+}
+CustomNetTables.SubscribeNetTableListener( "reward_options", OnRewardOptions );
+
+var g_RewardChoices = {};
+function OnRewardChoices( table_name, key, data )
+{
+    //$.Msg( "OnRewardChoices " + key );
+    //$.Msg( JSON.stringify( data, null, " " ) );
+
+    g_RewardChoices[key] = data;
+    UpdateRewardsHUD();
+}
+CustomNetTables.SubscribeNetTableListener( "reward_choices", OnRewardChoices )
+
+function GetName( tReward, pRewardOption )
+{
+    var szName;
+    if ( tReward.reward_type === "REWARD_TYPE_ABILITY_UPGRADE"
+        || tReward.reward_type === "REWARD_TYPE_ITEM"
+        || tReward.reward_type === "REWARD_TYPE_TEMP_BUFF"
+        || tReward.reward_type === "REWARD_TYPE_AURA"
+        || tReward.reward_type === "REWARD_TYPE_MINOR_ABILITY_UPGRADE"
+        || tReward.reward_type === "REWARD_TYPE_MINOR_STATS_UPGRADE" )
+    {
+        szName = "DOTA_Tooltip_ability_" + tReward.ability_name;
+    }
+
+    if ( tReward.reward_type === "REWARD_TYPE_GOLD" )
+    {
+        szName = "DOTA_HUD_Reward_Gold";
+    }
+
+    if ( tReward.reward_type === "REWARD_TYPE_EXTRA_LIVES" )
+    {
+        szName = "DOTA_HUD_Reward_ExtraLives";
+    }
+
+    return $.Localize( szName, pRewardOption );
+}
+
+function GetDescription( reward, pRewardOption )
+{
+    if ( reward["reward_type"] === "REWARD_TYPE_ABILITY_UPGRADE" || reward["reward_type"] === "REWARD_TYPE_ITEM" || reward["reward_type"] === "REWARD_TYPE_TEMP_BUFF" || reward["reward_type"] === "REWARD_TYPE_AURA" )
+        return GameUI.ReplaceDOTAAbilitySpecialValues( reward["ability_name"], $.Localize( "DOTA_Tooltip_ability_" + reward["ability_name"] + "_Description", pRewardOption ) );
+
+    if ( reward["reward_type"] === "REWARD_TYPE_MINOR_ABILITY_UPGRADE" || reward["reward_type"] === "REWARD_TYPE_MINOR_STATS_UPGRADE" )
+        return $.Localize( reward["description"], pRewardOption );
+
+    if ( reward["reward_type"] === "REWARD_TYPE_GOLD" )
+        return $.Localize( "DOTA_HUD_Reward_Gold_desc", pRewardOption );
+
+    if ( reward["reward_type"] === "REWARD_TYPE_EXTRA_LIVES" )
+        return $.Localize( "DOTA_HUD_Reward_ExtraLives_desc", pRewardOption );
+
+    return "FIX ME";
+}
+
+function IsNewPlayer( nPlayerID )
+{
+    var rgNewPlayers = CustomNetTables.GetTableValue( "game_global", "new_players" );
+    return Array.isArray( rgNewPlayers ) && Object.values( rgNewPlayers ).includes( nPlayerID );
+}
+
+function UpdateRewardsHUD()
+{
+    var nCurrentDepth = g_RewardOptions.current_depth ? Number( g_RewardOptions.current_depth[1] ) : NaN;
+    if ( !Number.isInteger( nCurrentDepth ) )
+    {
+        return;
+    }
+
+    // Search for earliest depth with options but no choice for this player
+    var nPlayerID = Game.GetLocalPlayerID();
+    var nDepth;
+    for ( var d = 1; d <= nCurrentDepth; d++ )
+    {
+        if ( g_RewardOptions[d] != null && g_RewardOptions[d][nPlayerID] != null && ( g_RewardChoices[d] == null || g_RewardChoices[d][nPlayerID] == null ) )
+        {
+            nDepth = d;
+            break;
+        }
+    }
+
+    // If we were already displaying options but about to change the options we're showing (and maybe hide it)
+    if ( g_nCurrentlyDisplayedDepth != 0 && g_nCurrentlyDisplayedDepth != nDepth )
+    {
+        // If a new player has just chosen their first reward
+        if ( g_nCurrentlyDisplayedDepth == 1 && IsNewPlayer( nPlayerID ) )
+        {
+            AghanimScoreboardInfo.AddClass( "Visible" );
+            $.Schedule( 3.0, function() { AghanimScoreboardInfo.RemoveClass( "Visible" ); } );
+        }
+
+        var tChoice = g_RewardChoices[g_nCurrentlyDisplayedDepth][nPlayerID];
+        if ( tChoice && tChoice.reward_type )
+        {
+            Game.EmitSound( "RewardChosen." + tChoice.reward_type );
+        }
+        HideAghanimRewardsHUD();
+    }
+
+    if ( nDepth == null )
+    {
+        return;
+    }
+
+    var tOptions = g_RewardOptions[nDepth];
+    var tRewards = tOptions[nPlayerID];
+    var sRewards = Object.keys( tRewards ).map( i => tRewards[i].description ).join("|");
+    if ( nDepth == g_nCurrentlyDisplayedDepth && sRewards == g_sCurrentlyDisplayedRewards )
+    {
+        return;
+    }
+
+    var nBattlePoints = ( tOptions.battle_points && tOptions.battle_points[nPlayerID] ) || 0;
+    var nArcaneFragments = ( tOptions.arcane_fragments && tOptions.arcane_fragments[nPlayerID] ) || 0;
+    SetRewardHUDRarity( tOptions.rarity || "" );
+    AghanimRewardsHUD.SetHasClass( "StartingRoom", nCurrentDepth == 1 )
+    AghanimRewardsHUD.SetHasClass( "NoCurrencyReward", nBattlePoints == 0 && nArcaneFragments == 0 );
+    AghanimRewardsHUD.SetDialogVariableInt( "battle_points", nBattlePoints );
+    AghanimRewardsHUD.SetDialogVariableInt( "arcane_fragments", nArcaneFragments );
+    AghanimRewardsHUD.SetDialogVariableInt( "xp", tOptions.xp || 0 );
+    AghanimRewardsHUD.SetDialogVariableInt( "gold", tOptions["gold" + nPlayerID] || 0 );
+
+    var nRerollCount = GetRerollCount( nPlayerID );
+    AghanimRewardsHUD.SetDialogVariableInt( "reroll_count", nRerollCount );
+    AghanimRewardsHUD.SetHasClass( "NoRerolls", nRerollCount == 0 )
+
+    RewardsContainer.RemoveAndDeleteChildren();
+    Object.keys( tRewards ).forEach( szRewardIndex =>
+    {
+        var tReward = tRewards[szRewardIndex];
+
+        var pRewardOption = $.CreatePanel( "RadioButton", RewardsContainer, "" );
+        pRewardOption.BLoadLayoutSnippet( "RewardOptionSnippet_" + tReward.reward_type );
+        pRewardOption.AddClass( "RewardOptionContainer" );
+        pRewardOption.AddClass( "RewardOptionType_" + tReward.reward_type );
+        pRewardOption.AddClass( "RewardOptionTier_" + tReward.reward_tier );
+        pRewardOption.AddClass( "RewardOptionRarity_" + tReward.rarity );
+
+        var pRewardAbilityImage = pRewardOption.FindChildTraverse( "RewardAbilityImage" );
+        if ( pRewardAbilityImage )
+        {
+            if ( tReward.reward_type == "REWARD_TYPE_MINOR_STATS_UPGRADE" )
+            {
+                pRewardAbilityImage.SwitchClass( "minor_stat_upgrade", tReward.description );
+            }
+            else
+            {
+                pRewardAbilityImage.abilityname = tReward.ability_name;
+            }
+        }
+
+        var RewardItemImage = pRewardOption.FindChildTraverse( "RewardItemImage" );
+        if ( RewardItemImage )
+        {
+            RewardItemImage.itemname = tReward.ability_name;
+        }
+
+        if ( tReward.quantity )
+        {
+            pRewardOption.SetDialogVariableInt( "quantity", tReward.quantity );
+        }
+
+        if ( tReward.reward_type == "REWARD_TYPE_MINOR_ABILITY_UPGRADE" || tReward.reward_type == "REWARD_TYPE_MINOR_STATS_UPGRADE" )
+        {
+            pRewardOption.SetDialogVariable( "ability_name", GetName( tReward, pRewardOption ) );
+            Object.keys( tReward ).forEach( key =>
+            {
+                if ( key.startsWith( "value" ) )
+                {
+                    var value = tReward[key];
+                    if ( Number.isFinite( value ) )
+                    {
+                        pRewardOption.SetDialogVariable( key, Math.floor( value ) == value ? Math.floor( value ) : value.toFixed( 2 ) );
+                    }
+                }
+            } );
+        }
+
+        pRewardOption.SetDialogVariable( "tier", $.Localize( "DOTA_HUD_" + tReward.reward_tier + "_Desc" ) );
+        pRewardOption.SetDialogVariable( "reward_name", GetName( tReward, pRewardOption ) );
+        pRewardOption.SetDialogVariable( "reward_description", GetDescription( tReward, pRewardOption ) );
+
+        var pConfirmButton = pRewardOption.FindChildTraverse( "ConfirmButton" );
+        pConfirmButton.SetPanelEvent( 'onactivate', function() { OnRewardClicked( szRewardIndex, nDepth ); } );
+    } );
+
+    g_nCurrentlyDisplayedDepth = nDepth;
+    g_sCurrentlyDisplayedRewards = sRewards;
+    $.Schedule( 0.5, function()
+    {
+        if ( g_nCurrentlyDisplayedDepth != 0 && AghanimRewardsHUD.BHasClass( "Hidden" ) )
+        {
+            Game.EmitSound( "RewardScreenOpen" );
+            ShowAghanimRewardsHUD();
+        }
+    } );
+}
+
+
+function SetRewardHUDRarity( szRarity )
+{
+    AghanimRewardsHUD.SetDialogVariable( "header_rarity", $.Localize( "DOTA_HUD_Reward_Rarity_" + szRarity ) );
+
+    AghanimRewardsHUD.SetHasClass( "CommonRoomRarity", szRarity == "common" || szRarity == "" );
+    AghanimRewardsHUD.SetHasClass( "EliteRoomRarity", szRarity == "elite" );
+    AghanimRewardsHUD.SetHasClass( "LegendaryRoomRarity", szRarity == "epic" );
+    AghanimRewardsHUD.SetHasClass( "StartingRoomRarity", szRarity == "starting" );
+}
+
+function GetRerollCount( nPlayerID )
+{
+    var nHero = Players.GetPlayerHeroEntityIndex( nPlayerID );
+    var nBuffCount = Entities.GetNumBuffs( nHero );
+    for ( var i = 0; i < nBuffCount; i++ )
+    {
+        var nBuff = Entities.GetBuff( nHero, i );
+        if ( Buffs.GetName( nHero, nBuff ) == "modifier_blessing_upgrade_reroll" )
+        {
+            return Buffs.GetStackCount( nHero, nBuff );
+        }
+    }
+
+    return 0;
+}
+
+function RerollAghanimRoomRewards()
+{
+    if ( g_nCurrentlyDisplayedDepth == 0 || g_RewardOptions[g_nCurrentlyDisplayedDepth] == null )
+    {
+        return;
+    }
+    var eventData =
+    {
+        player_id: Game.GetLocalPlayerID(),
+        room_depth: g_nCurrentlyDisplayedDepth,
+    };
+    GameEvents.SendCustomGameEventToServer( "reroll_rewards", eventData );
+    HideAghanimRewardsHUD();
+}
+
+function GetCustomNetTable( sTableName )
+{
+    var entries = CustomNetTables.GetAllTableValues( sTableName );
+    var table = {};
+    if ( entries != null )
+        entries.forEach( entry => table[entry.key] = entry.value );
+    return table;
+}
+
+$.Schedule( 1.0, function()
+{
+    g_RewardOptions = GetCustomNetTable( "reward_options" );
+    g_RewardChoices = GetCustomNetTable( "reward_choices" );
+
+    UpdateRewardsHUD();
+} );

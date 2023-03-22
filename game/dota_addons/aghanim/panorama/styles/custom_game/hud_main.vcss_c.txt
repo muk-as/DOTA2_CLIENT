@@ -1,0 +1,2880 @@
+@import  url( "s2r://panorama/styles/battle_pass/international2020/bp_international2020_shared.vcss_c");
+
+ @define arcane_fragments_icon: url( "s2r://panorama/images/events/aghanim/aghanims_blessings_png.vtex");
+ @define battle_points_icon: url( "s2r://panorama/images/events/aghanim/battle_points_png.vtex");
+
+
+ @define RoomDiscoverTransitionTime: 1.2s;
+
+ @define single_room_margin: 125px;
+ @define double_room_margin: 250px;
+ @define triple_room_margin: 375px;
+
+ @define common_rarity_color: #88A6D9;
+ @define elite_rarity_color: #D02B29;
+ @define legendary_rarity_color: #7266FF;
+ @define aghanims_room_color: #3375FF;
+ @define transition_room_color: #FABE23;
+ @define trap_room_color: #7266FF;
+ @define bonus_room_color: #FF7F37;
+
+ .CustomHudRoot{
+
+     width: 100%;
+     height: 100%;
+ }
+
+
+ .CustomHudContents{
+
+     width: 100%;
+     height: 100%;
+ }
+
+
+ #RoomDiscoverPanel{
+
+  width: 100%;
+  margin-top: 60px;
+
+  flow-children: right;
+  vertical-align: top;
+
+  visibility: collapse;
+ }
+
+ #RoomDiscoverPanel.Visible{
+
+  visibility: visible;
+ }
+
+ .RoomDiscoverCenterBlock{
+
+  flow-children: right;
+ }
+
+ .RoomDiscoverSpacer{
+
+  width: fill-parent-flow( 1.0 );
+  transition-property: width;
+  transition-duration: RoomDiscoverTransitionTime;
+  transition-timing-function: ease-in-out;
+ }
+
+ #RoomDiscoverPanel.InProgress.Visible .RoomDiscoverSpacer.Left{
+
+  transition-duration: 0s;
+  width: fill-parent-flow( 1.0 );
+ }
+
+ #RoomDiscoverStrip{
+
+  width: 100%;
+  margin-top: 40px;
+
+  transition-property: width;
+  transition-duration: RoomDiscoverTransitionTime;
+  transition-timing-function: ease-in-out;
+ }
+
+
+
+
+
+
+ .RoomDiscoverTitleBlock{
+
+     padding: 20px 0 20px 0;
+  width: fit-children;
+  overflow: noclip;
+  horizontal-align: center;
+  flow-children: down;
+  opacity: 1;
+  transition-property: opacity;
+  transition-duration: RoomDiscoverTransitionTime;
+  transition-timing-function: ease-in-out;
+ }
+
+
+
+ #RoomDiscoverPanel.Visible.InProgress .RoomDiscoverTitleBlock{
+
+  transition-duration: 0s;
+  opacity: 0;
+ }
+
+ .RoomInProgressTitleBlock,.BonusRoomTitleBlock{
+
+
+     padding: 20px 0 20px 0;
+  width: 540px;
+  flow-children: down;
+  opacity: 0;
+  transition-property: opacity;
+  transition-duration: RoomDiscoverTransitionTime;
+  transition-timing-function: ease-in-out;
+  padding-left: 16px;
+ }
+
+
+
+
+ .RoomInProgressTitleBlock{
+
+  visibility: collapse;
+ }
+
+ .BonusActive .BonusRoomTitleBlock{
+
+  transition-duration: 0s;
+  opacity: 1;
+ }
+
+ #RoomDiscoverPanel.Visible.InProgress .RoomInProgressTitleBlock{
+
+  transition-duration: 0s;
+  opacity: 1;
+ }
+
+ DOTAHud.HUDFlipped .ShopIsOpen #RoomDiscoverPanel.Visible.InProgress .RoomInProgressTitleBlock{
+
+  transition-duration: 0s;
+  opacity: 0;
+ }
+
+ .EncounterNameLabel{
+
+   min-width: 600px;
+  horizontal-align: left;
+  padding: 10px 32px 10px 54px;
+  text-overflow: shrink;
+
+     text-transform: uppercase;
+     letter-spacing: 4px;
+   text-shadow: 1px 2px 2px #000000;
+
+     font-size: 32px;
+     font-weight: semi-bold;
+     text-align: left;
+
+  color: #FDFAEE;
+
+  vertical-align: center;
+ }
+
+ .ROOM_TYPE_ENEMY .EncounterNameLabel{
+
+  background-color: gradient( linear, 0% 0%, 100% 0%, from( #3E64A400 ), color-stop (0.1, #3E64A4dd), color-stop (0.6, #88A6D9aa), to ( #AAE0FF00 ) );
+ }
+
+ .ROOM_TYPE_ENEMY.HardRoom .EncounterNameLabel{
+
+  background-color: gradient( linear, 0% 0%, 100% 0%, from( #7B010000 ), color-stop (0.1, #7B0100dd), color-stop (0.6, #D02B29aa), to ( #FF737300 ) );
+ }
+
+ .ROOM_TYPE_BOSS .EncounterNameLabel{
+
+  background-color: gradient( linear, 0% 0%, 100% 0%, from( #2B229200 ), color-stop (0.1, #2B2292dd), color-stop (0.6, #7266FFaa), to ( #9388FE00 ) );
+ }
+
+ .ROOM_TYPE_TRANSITIONAL .EncounterNameLabel{
+
+  background-color: gradient( linear, 0% 0%, 100% 0%, from( #79570000 ), color-stop (0.1, #795700dd), color-stop (0.6, #C8981Caa), to ( #FFF26F00 ) );
+ }
+
+ .ROOM_TYPE_STARTING .EncounterNameLabel{
+
+  background-color: gradient( linear, 0% 0%, 100% 0%, from( #002E8F00 ), color-stop (0.1, #002E8Fdd), color-stop (0.6, #3375FFaa), to ( #82A9FF00 ) );
+ }
+
+ .ROOM_TYPE_EVENT .EncounterNameLabel{
+
+  background-color: gradient( linear, 0% 0%, 100% 0%, from( #79570000 ), color-stop (0.1, #795700dd), color-stop (0.6, #C8981Caa), to ( #FFF26F00 ) );
+ }
+
+ .ROOM_TYPE_TRAPS .EncounterNameLabel{
+
+  background-color: gradient( linear, 0% 0%, 100% 0%, from( #7D2D1400 ), color-stop (0.1, #7D2D14b9), color-stop (0.6, #E1542793), to ( #FFA88D00 ) );
+ }
+
+ .ROOM_TYPE_BONUS .EncounterNameLabel,#BonusPanel .EncounterNameLabel{
+
+
+  background-color: gradient( linear, 0% 0%, 100% 0%, from( #79570000 ), color-stop (0.1, #795700dd), color-stop (0.6, #C8981Caa), to ( #FFF26F00 ) );
+ }
+
+ .EncounterHeader{
+
+  width: fit-children;
+  height: fit-children;
+  flow-children: right;
+ }
+
+ .EncounterDepthLabel{
+
+  min-width: 450px;
+  horizontal-align: left;
+  font-size: 20px;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #FDFAEE;
+  background-color: gradient( linear, 0% 0%, 100% 0%, from( #661F3200 ), color-stop (0.1, #661F32dd), color-stop (0.6, #661F32dd), to ( #661F3200 ) );
+
+  padding: 8px 32px 6px 54px;
+ }
+
+ .ROOM_TYPE_STARTING .EncounterDepthLabel{
+
+  visibility: collapse;
+ }
+
+ .RoomDiscoverTitleBlock .EncounterTypeIcon,.InProgressEncounterIcon{
+
+
+  width: 150px;
+  height: 180px;
+  background-size: contain;
+  background-position: center;
+  background-image: url( "s2r://panorama/images/events/aghanim/aghanims_room_icon_png.vtex");
+  background-repeat: no-repeat;
+
+  z-index: 3;
+
+  img-shadow: 0px 3px 8px #000;
+ }
+
+
+
+
+
+
+ .InProgressEncounterIcon{
+
+  width: 72px;
+  height: 84px;
+ }
+
+ .ROOM_TYPE_ENEMY .EncounterTypeIcon,.ROOM_TYPE_ENEMY .InProgressEncounterIcon{
+
+
+  background-image: url( "s2r://panorama/images/events/aghanim/encounter_room_icon_png.vtex");
+ }
+
+ .ROOM_TYPE_ENEMY.HardRoom .EncounterTypeIcon,.ROOM_TYPE_ENEMY.HardRoom .InProgressEncounterIcon{
+
+
+  background-image: url( "s2r://panorama/images/events/aghanim/encounter_room_elite_icon_png.vtex");
+ }
+
+ .ROOM_TYPE_BOSS .EncounterTypeIcon,.ROOM_TYPE_BOSS .InProgressEncounterIcon{
+
+
+  background-image: url( "s2r://panorama/images/events/aghanim/boss_room_icon_png.vtex");
+ }
+
+ .ROOM_TYPE_TRAPS .EncounterTypeIcon,.ROOM_TYPE_TRAPS .InProgressEncounterIcon{
+
+
+  background-image: url( "s2r://panorama/images/events/aghanim/trap_room_icon_png.vtex");
+ }
+
+ .ROOM_TYPE_STARTING .EncounterTypeIcon,.ROOM_TYPE_STARTING .InProgressEncounterIcon{
+
+
+  background-image: url( "s2r://panorama/images/events/aghanim/aghanims_room_icon_png.vtex");
+ }
+
+ .ROOM_TYPE_TRANSITIONAL .EncounterTypeIcon,.ROOM_TYPE_TRANSITIONAL .InProgressEncounterIcon{
+
+
+  background-image: url( "s2r://panorama/images/events/aghanim/empty_room_icon_png.vtex");
+ }
+
+ .ROOM_TYPE_BONUS .EncounterTypeIcon,.ROOM_TYPE_BONUS .InProgressEncounterIcon{
+
+
+  background-image: url( "s2r://panorama/images/events/aghanim/bonus_room_icon_png.vtex");
+ }
+
+ .ROOM_TYPE_EVENT .EncounterTypeIcon,.ROOM_TYPE_EVENT .InProgressEncounterIcon{
+
+
+  background-image: url( "s2r://panorama/images/events/aghanim/npc_special1_png.vtex");
+ }
+
+
+ #BonusPanel .EncounterTypeIcon{
+
+  background-image: url( "s2r://panorama/images/events/aghanim/bonus_room_icon_png.vtex");
+  width: 72px;
+  height: 84px;
+ }
+
+ .EncounterHeaderTextContainer{
+
+  width: fit-children;
+  height: fit-children;
+  flow-children: down;
+  vertical-align: middle;
+
+  margin-left: -54px;
+ }
+
+ .RoomInProgressTitleBlock .EncounterHeaderTextContainer{
+
+  margin-left: -32px;
+ }
+
+ .RoomInProgressTitleBlock .EncounterNameLabel,#BonusPanel .EncounterNameLabel{
+
+
+  min-width: 400px;
+  font-size: 19px;
+  font-weight: bold;
+  text-align: left;
+  padding: 6px 64px 6px 42px;
+  letter-spacing: 3px;
+
+  box-shadow: fill 1px 2px 24px #00000030;
+ }
+
+
+
+ #BonusPanel .EncounterNameLabel{
+
+  margin-top: 22px;
+ }
+
+ .EliteEncounterLabel{
+
+  horizontal-align: left;
+  font-size: 17px;
+  text-transform: uppercase;
+  text-align: left;
+   letter-spacing: 3px;
+
+  text-shadow: 1px 2px 2px 2.0 #000000;
+  color: #EED97C;
+  margin-left: 54px;
+  margin-bottom: 4px;
+
+  opacity: 0;
+ }
+
+ .HardRoom .EliteEncounterLabel{
+
+  opacity: 1;
+ }
+
+ .RoomInProgressTitleBlock .EliteEncounterLabel{
+
+  horizontal-align: left;
+  font-size: 14px;
+  margin-left: 42px;
+  margin-bottom: 4px;
+ }
+
+ .AscensionAbilitiesContainer{
+
+  flow-children: down;
+  width: 100%;
+  height: fit-children;
+  visibility: collapse;
+ }
+
+ .RoomInProgressTitleBlock .AscensionAbilitiesContainer{
+
+  margin-top: 16px;
+  margin-left: 16px;
+  flow-children: down;
+  width: 100%;
+  height: fit-children;
+ }
+
+ .HasAscensionAbilities .AscensionAbilitiesContainer{
+
+  visibility: visible;
+ }
+
+ .AscensionAbilitiesTitle{
+
+  min-width: 450px;
+  horizontal-align: left;
+  font-size: 15px;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #FDFAEE;
+  background-color: gradient( linear, 0% 0%, 100% 0%, from( #661F3200 ), color-stop (0.1, #661F32dd), color-stop (0.6, #661F32dd), to ( #661F3200 ) );
+
+  padding: 8px 32px 6px 54px;
+ }
+
+ .RoomInProgressTitleBlock .AscensionAbilitiesTitle{
+
+  min-width: 350px;
+  horizontal-align: left;
+  font-weight: normal;
+  margin-left: 20px;
+  text-shadow: 1px 2px 2px 1.0 #000000;
+
+  padding: 4px 16px 3px 24px;
+ }
+
+ #AscensionAbilitiesContainer{
+
+  flow-children: down;
+  width: 100%;
+ }
+
+ #AscensionAbilitiesContainerInProgress{
+
+  flow-children: down;
+  width: fit-children;
+ }
+
+ .AscensionAbilityRow{
+
+  horizontal-align: left;
+  flow-children: right;
+  margin-left: 54px;
+  margin-top: 12px;
+ }
+
+ .RoomInProgressTitleBlock .AscensionAbilityRow{
+
+  horizontal-align: left;
+  margin-left: 44px;
+ }
+
+ .AscensionAbilityName{
+
+  font-size: 15px;
+  font-weight: normal;
+  margin-right: 20px;
+  color: #fff;
+
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 1px 2px 2px 2.0 #000000;
+ }
+
+ .RoomInProgressTitleBlock .AscensionAbilityName{
+
+  margin-bottom: 2px;
+ }
+
+ #ObjectivesContainer{
+
+  flow-children: down;
+  margin-left: 56px;
+  margin-top: -4px;
+ }
+
+ .BonusActive #ObjectivesContainer{
+
+  visibility: collapse;
+ }
+
+ .BonusActive #RoomDiscoverPanel{
+
+  visibility: collapse;
+ }
+
+ .ObjectiveRow{
+
+  flow-children: right;
+  margin: 5px;
+ }
+
+
+ .ObjectiveText{
+
+  font-size: 15px;
+  font-weight: normal;
+  margin-right: 20px;
+  color: #ffffff;
+
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 1px 2px 2px 2.0 #000000;
+  text-overflow: shrink;
+ }
+
+ .ObjectiveCounter{
+
+  font-size: 16px;
+  color: #45b6fe;
+  font-weight: bold;
+
+  text-shadow: 1px 2px 2px 2.0 #000000;
+  vertical-align: center;
+  margin-top: -1px;
+ }
+
+ .Simple .ObjectiveCounter{
+
+  visibility: collapse;
+ }
+
+ #EncounterArt{
+
+     background-size: cover;
+  width: 256px;
+  height: 40px;
+  horizontal-align: center;
+ }
+
+ #RoomDiscoverPanel.Difficulty0 #EncounterArt{
+
+  visibility: visible;
+ }
+
+ #RoomDiscoverPanel.Difficulty1 #EncounterArt{
+
+  background-image: url( "s2r://panorama/images/interface/room_difficulty_1_png.vtex");
+ }
+
+ #RoomDiscoverPanel.Difficulty2 #EncounterArt{
+
+  background-image: url( "s2r://panorama/images/interface/room_difficulty_2_png.vtex");
+ }
+
+ #RoomDiscoverPanel.Difficulty3 #EncounterArt{
+
+  background-image: url( "s2r://panorama/images/interface/room_difficulty_3_png.vtex");
+ }
+
+ #RoomDiscoverPanel.Difficulty4 #EncounterArt{
+
+  background-image: url( "s2r://panorama/images/interface/room_difficulty_4_png.vtex");
+ }
+
+ .Button{
+
+  height: 50px;
+  width: 150px;
+
+  horizontal-align: center;
+  vertical-align: bottom;
+  margin-bottom: 20px;
+ }
+
+ #BattleRoyaleDamageStarting{
+
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition-property: opacity;
+  transition-delay: 0s;
+  transition-duration: 0s;
+  transition-timing-function: ease-out;
+ }
+
+ #BattleRoyaleDamageStarting.Visible{
+
+  opacity: 1;
+  transition-delay: 2s;
+  transition-duration: 1.5s;
+ }
+
+ .BattleRoyaleLabel{
+
+  font-size: 48px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 2px 3.0 #000000;
+     color: gradient( linear, 0% 0%, 0% 100%, from( #ff0000 ), to ( #b97f78 ) );
+  vertical-align: center;
+  horizontal-align: center;
+ }
+
+ .GameOverHeader{
+
+  height: 40px;
+  vertical-align: top;
+  margin-top: 5px;
+  width: 100%;
+ }
+
+ #GameOverBlur{
+
+     width: 100%;
+     height: 100%;
+     blur: gaussian(5);
+     visibility: collapse;
+ }
+
+ #GameOverPanel{
+
+  height: 700px;
+  width: 1000px;
+  background-image: url( "s2r://panorama/images/hud/reborn/bg_hud_inspect_psd.vtex");
+     background-repeat: no-repeat;
+     background-size: cover;
+  visibility: collapse;
+  horizontal-align: center;
+  vertical-align: center;
+  flow-children: down;
+  border: 1px solid #70698130;
+  padding: 25px;
+     visibility: collapse;
+ }
+
+ .GameOverPanelLabel{
+
+  horizontal-align: center;
+ }
+
+ #GameOverPanel.Visible,#GameOverBlur.visible{
+
+
+  visibility: visible;
+ }
+
+ #FinishPosition,#DefeatedHeader{
+
+
+  text-transform: uppercase;
+  horizontal-align: right;
+  font-size: 30px;
+     font-weight: bold;
+     letter-spacing: 2px;
+  margin-left: 10px;
+  margin-right: 10px;
+  color: gradient( linear, 0% 0%, 0% 100%, from( #706981 ), to( #c3b3d1 ) );
+     text-shadow: 0px 0px 6px #000;
+ }
+
+ #FinishPosition{
+
+     color: #666;
+     font-weight: normal;
+     text-transform: none;
+     letter-spacing: 0px;
+ }
+
+ #DefeatedHeader{
+
+  horizontal-align: left;
+ }
+
+ #HeroesContainer{
+
+     margin-top: 20px;
+     margin-bottom: 20px;
+  width: 100%;
+  height: 250px;
+
+  horizontal-align: center;
+  flow-children: right;
+ }
+
+ .HeroContainer{
+
+  height: 100%;
+  width: 30%;
+  margin-left: 20px;
+  margin-right: 20px;
+  flow-children: down;
+ }
+
+ .GameOverHero{
+
+  height: 200px;
+  width: 100%;
+ }
+
+ .PlayerLabel{
+
+  width: 100%;
+  height: 60px;
+  background-color: gradient( linear, 0% 0%, 100% 0%, from( #00000000 ), color-stop(0.2, #00000070), color-stop(0.4, #00000090), color-stop(0.6, #00000090), color-stop(0.8, #00000070), to( #00000000 ) );
+ }
+
+ .PlayerLabel Label{
+
+  vertical-align: center;
+  horizontal-align: center;
+  text-align: center;
+  font-size: 24px;
+  color: white;
+ }
+
+ #EarnedPointsContainer{
+
+  height: fit-children;
+
+
+
+  vertical-align: top;
+  horizontal-align: right;
+  flow-children:  down;
+
+  transition-property: opacity, transform;
+  transition-duration: .1s;
+  transition-timing-function: ease-in-out;
+  opacity: 1;
+ }
+
+ .IsLocalPlayerSpectating #EarnedPointsContainer{
+
+  margin-right: 120px;
+ }
+
+
+ .ShopIsOpen #EarnedPointsContainer{
+
+  opacity: 0;
+  transform: translateX( 200px );
+ }
+
+
+ .EarnedPointsRow{
+
+  flow-children: left;
+  margin-right: 10px;
+  margin-top: 4px;
+  tooltip-position: left;
+  horizontal-align: right;
+ }
+
+ .EarnedPointsRow.WeeklyQuestStars{
+
+  visibility: collapse;
+ }
+
+ .WeeklyStarsVisible .EarnedPointsRow.WeeklyQuestStars{
+
+  visibility: visible;
+ }
+
+ .IsLocalPlayerSpectating .EarnedPointsRow,.IsLocalPlayerLiveSpectating .EarnedPointsRow{
+
+
+  visibility: collapse;
+ }
+
+ .EarnedPointsLabel{
+
+
+  font-size: 24px;
+  font-weight: bold;
+  margin-right: 10px;
+  text-align: right;
+  color: rgb(240, 234, 210);
+
+  vertical-align: middle;
+ }
+
+ .EarnedRewardIcon{
+
+  width: 40px;
+  height: 40px;
+  vertical-align: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+ }
+
+ .BattlePoints .EarnedRewardIcon{
+
+  background-image: battle_points_icon;
+  background-size: contain;
+ }
+
+ .ArcaneFragments .EarnedRewardIcon{
+
+  background-image: arcane_fragments_icon;
+  background-size: contain;
+ }
+
+ .WeeklyQuestStars .EarnedRewardIcon{
+
+  background-image: url( "s2r://panorama/images/battlepass/fall2021/quest_star_filled_psd.vtex");
+  background-size: contain;
+ }
+
+ #DifficultyContainer{
+
+  margin-top:  10px;
+  margin-right:  10px;
+  flow-children: down;
+  visibility: collapse;
+  vertical-align: center;
+ }
+
+
+ #DifficultyContainer.AscensionLevel0,#DifficultyContainer.AscensionLevel1,#DifficultyContainer.AscensionLevel2,#DifficultyContainer.AscensionLevel3,#DifficultyContainer.AscensionLevel4,#DifficultyContainer.InTournamentMode{
+
+
+
+
+
+
+  visibility: visible;
+ }
+
+ .DifficultyTextContainer{
+
+  flow-children:  right;
+ }
+
+ .DifficultyLabel{
+
+  font-size: 17px;
+  vertical-align: center;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  padding: 6px 24px 6px 48px;
+  background-color: gradient( linear, 100% 0%, 0% 0%, from( #6D553130 ), color-stop( 0.3, #C9A06430 ), color-stop( .5, #C9A06420 ), to( #C9A06400 ) );
+  margin-right: -20px;
+  margin-top: 4px;
+  color: #FDFAEE;
+
+  text-shadow: 1px 2px 2px #000;
+ }
+
+ .DifficultyImage{
+
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 48px;
+  height: 48px;
+  horizontal-align: center;
+ }
+
+ #DifficultyContainer.AscensionLevel0 .DifficultyImage{
+
+  background-image: url( "s2r://panorama/images/events/aghanim/difficulty_1_png.vtex");
+ }
+
+ #DifficultyContainer.AscensionLevel1 .DifficultyImage{
+
+  background-image: url( "s2r://panorama/images/events/aghanim/difficulty_2_png.vtex");
+ }
+
+ #DifficultyContainer.AscensionLevel2 .DifficultyImage{
+
+  background-image: url( "s2r://panorama/images/events/aghanim/difficulty_3_png.vtex");
+ }
+
+ #DifficultyContainer.AscensionLevel3 .DifficultyImage{
+
+  background-image: url( "s2r://panorama/images/events/aghanim/difficulty_4_png.vtex");
+ }
+
+ #DifficultyContainer.AscensionLevel4 .DifficultyImage{
+
+  background-image: url( "s2r://panorama/images/events/aghanim/difficulty_5_png.vtex");
+ }
+
+
+ .AghanimLabelSmall,.AghanimLabelLarge,.AghanimLabelHeader{
+
+
+
+  color: white;
+     font-weight: bold;
+     text-align: center;
+     text-shadow: 1px 1px 2px 2.0 #00000011;
+
+     font-family: Radiance,FZKai-Z03,TH Sarabun New,YDYGO 540;
+     font-size: 14px;
+     letter-spacing: 2px;
+
+  margin-bottom: -3px;
+ }
+
+ .AghanimLabelSmall.Header{
+
+  min-width: 84px;
+ }
+
+ .AghanimLabelLarge{
+
+  font-size: 20px;
+  letter-spacing: 1px;
+ }
+
+ .AghanimLabelHeader{
+
+  font-size: 36px;
+  font-weight: normal;
+  font-size: 32px;
+  line-height: 34px;
+
+
+  text-align: center;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  color: #FFFFFF;
+
+  text-shadow: 0px 2px 4px #000000;
+ }
+
+
+ #1UpPopup{
+
+  width: 100px;
+  animation-duration: 2.0s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  opacity: 0;
+ }
+
+
+ #1UpPopup.Play1Up{
+
+  animation-name: 1UpAnimation;
+  opacity: 0.01;
+ }
+
+ @keyframes '1UpAnimation'{
+
+     0%{
+
+   opacity: 0;
+   pre-transform-scale2d: 1;
+   transform: translateY(0px);
+     }
+     10%{
+
+   opacity: 1;
+   pre-transform-scale2d: 2;
+     }
+     30%{
+
+   pre-transform-scale2d: 1;
+     }
+     66%{
+
+   opacity: 1;
+   pre-transform-scale2d: 1;
+     }
+     100%{
+
+   opacity: 0;
+   pre-transform-scale2d: 1;
+   transform: translateY(-64px);
+     }
+ }
+
+ #1UpHeroIconOutline,#1UpHeroIcon{
+
+
+  vertical-align: middle;
+  horizontal-align: right;
+  margin: 4px;
+ }
+
+ #1UpHeroIconOutline{
+
+
+  wash-color: #000;
+  pre-transform-scale2d: 1.2;
+  contrast: 2;
+ }
+
+ .1UpIcon{
+
+  width: 64px;
+  height: 48px;
+  background-image: url( "s2r://panorama/images/events/aghanim/reward_type_lives_icon_psd.vtex");
+  background-position: center;
+  background-size: cover;
+  horizontal-align: left;
+  z-index: 2;
+ }
+
+ .LifeLost .1UpIcon{
+
+  background-image: url( "s2r://panorama/images/interface/1down_psd.vtex");
+ }
+
+
+
+ #BossHealthBarContainer{
+
+  horizontal-align: center;
+  margin-top: 80px;
+  visibility: collapse;
+ }
+
+ #BossHealthBarContainer.Visible{
+
+  visibility: visible;
+ }
+
+ .AghanimEndGameCinematic #BossHealthBarContainer{
+
+  visibility: collapse;
+ }
+
+ #BossHP{
+
+  width: 710px;
+  horizontal-align: center;
+  vertical-align: top;
+  flow-children: down;
+ }
+
+ #BossLabel{
+
+  font-size: 24px;
+  vertical-align: center;
+  horizontal-align:  center;
+
+  letter-spacing: 3px;
+  padding: 0px 24px 0px 48px;
+
+  margin-right: -20px;
+  margin-top: 15px;
+  color: #FDFAEE;
+  font-family: Radiance,FZKai-Z03,TH Sarabun New,YDYGO 540;
+  text-shadow: 1px 2px 2px #000;
+  text-transform: uppercase;
+ }
+
+ #BossProgressBar{
+
+  width: 80%;
+  border-radius: 4px;
+  border: 3px solid #444;
+  background-color: black;
+  height: 24px;
+  margin-top:  -5px;
+  vertical-align: center;
+  horizontal-align: left;
+ }
+
+
+ #BossProgressBar_Left{
+
+  background-image: url( "s2r://panorama/images/interface/objectivebar_boss_psd.vtex");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+
+   border-radius: 2px;
+  background-color: gradient( linear, 0% 0%, 100% 0%, from( #7B010000 ), color-stop (0.0, #7B0100dd), color-stop (1.0, #D02B29aa), to ( #FF737300 ) );
+ }
+
+
+ #BossProgressBar_Right{
+
+
+  background-image: url( "s2r://panorama/images/interface/objectivebar_empty_psd.vtex");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+
+  background-color: #000000cc;
+  border-radius: 0px 4px 4px 0px;
+  box-shadow: inset #000000 0px 1px 0px 1px;
+ }
+
+
+ #ProgressBarContainer{
+
+  vertical-align: bottom;
+  height: 40px;
+  width: 100%;
+ }
+
+ #BossProgressBarContainer{
+
+  vertical-align: bottom;
+  width: 100%;
+ }
+
+ #BossIcon{
+
+  margin-left: 8px;
+  margin-right: 12px;
+  height: 36px;
+  width: 36px;
+
+  background-size: contain;
+  background-repeat: no-repeat;
+  vertical-align: center;
+ }
+
+
+ .Boss_npc_dota_boss_timbersaw #BossIcon{
+
+  background-image: url( "s2r://panorama/images/heroes/icons/npc_dota_hero_shredder_png.vtex");
+ }
+
+ .Boss_npc_dota_boss_void_spirit #BossIcon{
+
+  background-image: url( "s2r://panorama/images/heroes/icons/npc_dota_hero_void_spirit_png.vtex");
+ }
+
+ .Boss_npc_dota_boss_tinker #BossIcon{
+
+  background-image: url( "s2r://panorama/images/heroes/icons/npc_dota_hero_tinker_png.vtex");
+ }
+
+ .Boss_npc_dota_creature_dark_willow_boss #BossIcon{
+
+  background-image: url( "s2r://panorama/images/heroes/icons/npc_dota_hero_dark_willow_png.vtex");
+ }
+
+ .Boss_npc_dota_creature_aghsfort_primal_beast_boss #BossIcon{
+
+  background-image: url( "s2r://panorama/images/heroes/icons/npc_dota_hero_primal_beast_png.vtex");
+ }
+
+ .Boss_npc_dota_creature_ice_boss #BossIcon{
+
+  background-image: url( "s2r://panorama/images/interface/karaul_psd.vtex");
+ }
+
+ .Boss_npc_dota_boss_earthshaker #BossIcon{
+
+  background-image: url( "s2r://panorama/images/heroes/icons/npc_dota_hero_earthshaker_png.vtex");
+ }
+
+ .Boss_npc_dota_aghsfort_arc_warden_boss #BossIcon{
+
+  background-image: url( "s2r://panorama/images/heroes/icons/npc_dota_hero_arc_warden_png.vtex");
+ }
+
+ .Boss_npc_dota_creature_amoeba_boss #BossIcon{
+
+  background-image: url( "s2r://panorama/images/interface/amoeba_psd.vtex");
+ }
+
+ .Boss_npc_dota_boss_aghanim #BossIcon{
+
+  background-image: url( "s2r://panorama/images/interface/aghs_minimap_icon_png.vtex");
+ }
+
+ .Boss_npc_dota_creature_storegga #BossIcon{
+
+  background-image: url( "s2r://panorama/images/interface/storegga_psd.vtex");
+ }
+
+ .Boss_npc_dota_creature_temple_guardian #BossIcon{
+
+  background-image: url( "s2r://panorama/images/interface/templeguards_psd.vtex");
+ }
+
+ #BossWarning{
+
+  height: 40px;
+  width: 40px;
+  opacity: 0;
+  transition-property: opacity, transform;
+  transition-duration: .32s;
+  transition-timing-function: ease-in-out;
+ }
+
+ #BossWarning.Visible{
+
+  opacity: 1.0;
+ }
+
+ #BossAbilityImage{
+
+  height: 100%;
+  width: 100%;
+ }
+
+
+
+ #BonusPanel{
+
+  height: 500px;
+  width: 380px;
+
+  vertical-align: top;
+  horizontal-align: left;
+  margin-top: 90px;
+  flow-children: down;
+
+  transition-property: opacity;
+  transition-duration: RoomDiscoverTransitionTime;
+  transition-timing-function: ease-in-out;
+
+
+  padding: 10px;
+  padding-left: 0px;
+  visibility: collapse;
+ }
+
+ #BonusPanel.Visible{
+
+  visibility: visible;
+ }
+
+
+
+
+
+
+ .Gold{
+
+  color: accentColorBright;
+  horizontal-align: right;
+  vertical-align: center;
+  text-align: right;
+  font-size: 22px;
+  font-weight: bold;
+  margin-right: 20px;
+  min-width: 50px;
+  text-shadow: 0px 2px 0px 2.0 #000000;
+  margin-top: 2px;
+ }
+
+ #BonusPlayers{
+
+  flow-children: down;
+  horizontal-align: left;
+  width: 400px;
+
+  margin-top: -28px;
+  z-index: -1;
+ }
+
+ .BonusPlayer{
+
+  flow-children: down;
+  horizontal-align: left;
+  margin-bottom: 4px;
+  margin-left: 50px;
+  width: 380px;
+  padding: 4px 0px 4px 20px;
+
+
+  background-color: gradient( linear, 0% 0%, 100% 0%, from( #1a130310 ), color-stop (0.1, #1a1303dd), color-stop (0.6, #1a1303dd), to ( #1a130300 ) );
+ }
+
+ .BonusPlayer.Timer{
+
+  background-color: gradient (linear, 0% 0%, 100% 0%, from(#30030300), color-stop(0.05, #300303bb), color-stop(0.6, #300303bb), to(#30030300) );
+ }
+
+ .BonusPlayer.TotalGold{
+
+  visibility: collapse;
+  background-color: gradient( linear, 0% 0%, 100% 0%, from( #3d2e0910 ), color-stop (0.1, #3d2e09dd), color-stop (0.6, #3d2e09dd), to ( #3d2e0900 ) );
+ }
+
+ .FinalGoldVisible .BonusPlayer.TotalGold{
+
+  visibility: visible;
+ }
+
+ .PlayerNameContainer{
+
+  flow-children: right;
+  horizontal-align: left;
+  width: 100%;
+ }
+
+ .BonusPlayerName{
+
+  font-size: 20px;
+  color: white;
+  vertical-align: center;
+  margin: 5px;
+  margin-left: 8px;
+  width: 180px;
+  font-weight: bold;
+  text-shadow: 0px 2px 0px 2.0 #000000;
+ }
+
+ .BonusPlayerIcon{
+
+  margin: 5px;
+ }
+
+ .BonusTimerHeader,.BonusGoldHeader{
+
+
+  font-size: 15px;
+  horizontal-align: center;
+  vertical-align: middle;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0px 2px 0px 2.0 #000000;
+
+  margin-left: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+ }
+
+ .BonusTimer,.BonusTotalGold{
+
+
+  font-size: 24px;
+  horizontal-align: right;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0px 2px 0px 2.0 #000000;
+  margin-right: 40px;
+ }
+
+ .BonusTotalGold{
+
+  margin-right: 40px;
+ }
+
+ .BonusTotalGoldContainer{
+
+  visibility: collapse;
+  vertical-align: center;
+  horizontal-align: center;
+ }
+
+ .FinalGoldVisible .BonusTotalGoldContainer{
+
+  visibility: visible;
+ }
+
+ .FinalGoldVisible .BonusTimer,.FinalGoldVisible .BonusTimerHeader{
+
+
+  visibility: collapse;
+ }
+
+ .BonusTotalGold{
+
+  font-size: 20px;
+  color: accentColorBright;
+  vertical-align: middle;
+  text-align: right;
+ }
+
+
+
+ .BonusTotalGoldIcon{
+
+  width: 32px;
+  height: 32px;
+  vertical-align: middle;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-image: url( "s2r://panorama/images/hud/reborn/gold_small_psd.vtex");
+  margin: 5px;
+  margin-left: 4px;
+ }
+
+ #OverlayMapContainer{
+
+  vertical-align: bottom;
+  horizontal-align: left;
+
+  width: 225px;
+  height: 225px;
+
+
+  opacity: 1;
+  background-image: url( "s2r://panorama/images/interface/aghsbgminimap_psd.vtex");
+  background-position: center;
+  background-size: contain;
+
+  transition-property: width, height, opacity, transform, pre-transform-scale2d, wash-color, background-color, opacity-mask, border-radius;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+ }
+
+
+ .AghanimEndGameCinematic #OverlayMapContainer{
+
+  opacity:  0;
+ }
+
+
+
+
+
+
+ #OverlayMapContainer.LargeOverlayMap{
+
+     width: 800px;
+     height: 800px;
+  border-radius: 0%;
+     horizontal-align: center;
+  vertical-align: middle;
+
+  transform: translateX(0px) translateY(0px);
+
+     opacity: 1;
+  background-color: gradient( radial, 50% 50%, 0% 0%, 300px 300px, from( #000f ), color-stop( .5, #000d ), to( #00000000 ) );
+  opacity-mask: url( "s2r://panorama/images/masks/softedge_box_png.vtex") 1;
+ }
+
+ #OverlayMap{
+
+  width: 190px;
+  height: 190px;
+  opacity: 1;
+  border: 0px solid black;
+  background-color: black;
+  horizontal-align: left;
+  vertical-align: bottom;
+ padding: 6px;
+  margin-left: 5px;
+  margin-bottom: 4px;
+ }
+
+ .MinimapImage{
+
+     width: 5px;
+     height: 5px;
+  background-image: url( "s2r://panorama/images/interface/minimap_creep_icon_psd.vtex");
+  background-position: center;
+  background-size: contain;
+  wash-color: #0f0;
+  z-index: 0;
+ }
+
+ .MinimapImage.Enemy{
+
+  width: 8px;
+  height: 8px;
+  wash-color: red;
+ }
+
+ .npc_dota_boss_aghanim.MinimapImage.Enemy.Boss.ConsideredHero{
+
+  width: 39px;
+  height: 33px;
+  wash-color: red;
+  background-image: url( "s2r://panorama/images/interface/aghs_minimap_icon_png.vtex");
+  background-position: center;
+  background-size: contain;
+
+  z-index: 1;
+ }
+
+ .npc_dota_boss_aghanim_crystal.MinimapImage.Enemy.ConsideredHero{
+
+  width: 5px;
+     height: 5px;
+  background-image: url( "s2r://panorama/images/interface/minimap_creep_icon_psd.vtex");
+  background-position: center;
+  background-size: contain;
+  wash-color: #0f0;
+  z-index: 0;
+ }
+
+ .MinimapImage.Enemy.ConsideredHero{
+
+  width: 18px;
+  height: 18px;
+  wash-color: red;
+
+  background-image: url( "s2r://panorama/images/interface/minimap_boss_icon_png.vtex");
+  background-position: center;
+  background-size: contain;
+  opacity: 1.5;
+  z-index: 1;
+ }
+
+ .npc_dota_announcer_aghanim.MinimapImage.ConsideredHero{
+
+  width: 32px;
+  height: 32px;
+  background-image: url( "s2r://panorama/images/npc_icons/npc_dota_aghanim_png.vtex");
+  wash-color: white;
+ }
+
+ .npc_dota_creature_event_life_roshan.MinimapImage.ConsideredHero{
+
+  width: 18px;
+  height: 18px;
+  background-image: url( "s2r://panorama/images/hud/icon_roshan_psd.vtex");
+  wash-color: #0f0;
+ }
+
+ .npc_dota_creature_dark_willow_boss.MinimapImage.Enemy.ConsideredHero,.npc_dota_creature_amoeba_boss.MinimapImage.Enemy.ConsideredHero,.npc_dota_creature_amoeba_medium.MinimapImage.Enemy.ConsideredHero,.npc_dota_creature_amoeba_small.MinimapImage.Enemy.ConsideredHero,.npc_dota_aghsfort_arc_warden_boss.MinimapImage.Enemy.ConsideredHero,.npc_dota_creature_aghsfort_primal_beast_boss.MinimapImage.Enemy.ConsideredHero,.npc_dota_boss_clockwerk.MinimapImage.Enemy.ConsideredHero,.npc_dota_boss_tinker.MinimapImage.Enemy.ConsideredHero,.npc_dota_boss_earthshaker.MinimapImage.Enemy.ConsideredHero,.npc_dota_boss_timbersaw.MinimapImage.Enemy.ConsideredHero,.npc_dota_creature_storegga.MinimapImage.Enemy.ConsideredHero,.npc_dota_creature_ice_boss.MinimapImage.Enemy.ConsideredHero{
+
+
+
+
+
+
+
+
+
+
+
+
+  width: 24px;
+  height: 24px;
+
+
+  animation-duration: 1.2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
+
+  animation-name: BossPulse;
+ }
+
+ .npc_dota_creature_dark_willow_boss.MinimapImage.Enemy.ConsideredHero{
+
+  background-image: url( "s2r://panorama/images/heroes/icons/npc_dota_hero_dark_willow_png.vtex");
+ }
+ .npc_dota_creature_amoeba_boss.MinimapImage.Enemy.ConsideredHero{
+
+  background-image: url( "s2r://panorama/images/npc_icons/npc_dota_amoeba_png.vtex");
+ }
+
+ .npc_dota_creature_amoeba_medium.MinimapImage.Enemy.ConsideredHero{
+
+  background-image: url( "s2r://panorama/images/npc_icons/npc_dota_amoeba_medium_png.vtex");
+  width: 20px;
+  height: 20px;
+ }
+
+ .npc_dota_creature_amoeba_small.MinimapImage.Enemy.ConsideredHero{
+
+  background-image: url( "s2r://panorama/images/npc_icons/npc_dota_amoeba_small_png.vtex");
+  width: 18px;
+  height: 18px;
+ }
+
+ .npc_dota_aghsfort_arc_warden_boss.MinimapImage.Enemy.ConsideredHero{
+
+  background-image: url( "s2r://panorama/images/heroes/icons/npc_dota_hero_arc_warden_png.vtex");
+ }
+
+ .npc_dota_creature_aghsfort_primal_beast_boss.MinimapImage.Enemy.ConsideredHero{
+
+  background-image: url( "s2r://panorama/images/heroes/icons/npc_dota_hero_primal_beast_png.vtex");
+ }
+
+ .npc_dota_boss_clockwerk.MinimapImage.Enemy.ConsideredHero{
+
+  background-image: url( "s2r://panorama/images/heroes/icons/npc_dota_hero_rattletrap_png.vtex");
+  width: 20px;
+  height: 20px;
+ }
+
+ .npc_dota_boss_tinker.MinimapImage.Enemy.ConsideredHero{
+
+  background-image: url( "s2r://panorama/images/heroes/icons/npc_dota_hero_tinker_png.vtex");
+  width: 18px;
+  height: 18px;
+ }
+
+ .npc_dota_boss_earthshaker.MinimapImage.Enemy.ConsideredHero{
+
+  background-image: url( "s2r://panorama/images/heroes/icons/npc_dota_hero_earthshaker_png.vtex");
+ }
+
+ .npc_dota_boss_timbersaw.MinimapImage.Enemy.ConsideredHero{
+
+  background-image: url( "s2r://panorama/images/heroes/icons/npc_dota_hero_rizzrick_png.vtex");
+ }
+
+ .npc_dota_creature_storegga.MinimapImage.Enemy.ConsideredHero{
+
+  background-image: url( "s2r://panorama/images/heroes/icons/npc_dota_hero_tiny_png.vtex");
+ }
+
+ .npc_dota_creature_ice_boss.MinimapImage.Enemy.ConsideredHeros{
+
+  background-image: url( "s2r://panorama/images/heroes/icons/npc_dota_hero_winter_wyvern_png.vtex");
+ }
+
+ @keyframes 'BossPulse'{
+
+     0%{
+
+   brightness: 1;
+   wash-color: white;
+     }
+     100%{
+
+   brightness: 1.5;
+   wash-color: #ff0000bb;
+     }
+ }
+
+ .MinimapImage.npc_aghsfort_dark_portal.Enemy{
+
+  wash-color: red;
+  width: 16px ;
+  height: 16px;
+
+  background-image: url( "s2r://panorama/images/interface/minimap_checkpoint_icon_psd.vtex");
+  background-position: center;
+  background-size: contain;
+ }
+
+
+ .MinimapImage.npc_dota_aghsfort_watch_tower_option_1,.MinimapImage.npc_dota_aghsfort_watch_tower_option_2,.MinimapImage.npc_dota_aghsfort_watch_tower_option_3,.MinimapImage.npc_dota_aghsfort_watch_tower_option_4{
+
+
+
+
+  wash-color: #0f0;
+  width: 20px ;
+  height: 20px;
+
+  background-image: url( "s2r://panorama/images/interface/minimap_gate_icon_psd.vtex");
+  background-position: center;
+  background-size: contain;
+ }
+
+ .MinimapImage.Shop{
+
+  wash-color: white;
+  width: 12px ;
+  height: 12px;
+
+  background-image: url( "s2r://panorama/images/control_icons/shop_icon_main_psd.vtex");
+  background-position: center;
+  background-size: contain;
+ }
+
+
+ .HUDFlipped #OverlayMapContainer{
+
+  horizontal-align: right;
+  transform: scaleX( -1 );
+ }
+
+ .HUDFlipped #OverlayMap{
+
+  transform: scaleX( -1 );
+ }
+
+ #OverlayMap DOTAHeroImage{
+
+  width: 20px;
+  height: 20px;
+  opacity: 1.5;
+  z-index: 2;
+ }
+
+ #OpenMapButton{
+
+  width: 50px;
+  height: 50px;
+  background-color: orange;
+  opacity: 1;
+  vertical-align: bottom;
+  horizontal-align: left;
+  margin-left: 285px;
+
+  visibility: collapse;
+
+  background-image: url( "s2r://panorama/images/compendium/achievements/quest_all_png.vtex");
+  background-position: center;
+  background-size: contain;
+ }
+
+ .HUDFlipped #OpenMapButton{
+
+  horizontal-align: right;
+  margin-left: 0px;
+  margin-right: 285px;
+ }
+
+ #MazeMap{
+
+  vertical-align: center;
+  horizontal-align: center;
+  height: 1000px;
+  width: 1000px;
+  background-color: black;
+  visibility: collapse;
+ }
+
+ #MazeMap.MapOpen{
+
+  visibility: collapse;
+ }
+
+ .MazeRoom{
+
+  width: 125px;
+  height: 125px;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: none;
+ }
+
+
+ .RewardIcon,.EliteIcon{
+
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 48px;
+  height: 48px;
+ }
+
+ .EliteIcon{
+
+  background-image: url( "s2r://panorama/images/interface/room_difficulty_1_png.vtex");
+  background-size: cover;
+  visibility: collapse;
+  wash-color: red;
+ }
+
+ .Elite .EliteIcon{
+
+  visibility: visible;
+ }
+
+ .BossIcon{
+
+  background-image: url( "s2r://panorama/images/interface/minimap_boss_icon_png.vtex");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 75px;
+  height: 75px;
+  margin: 25px;
+
+  vertical-align: center;
+  horizontal-align: center;
+
+  wash-color: red;
+  visibility: collapse;
+ }
+
+ .BossRoom .BossIcon{
+
+  visibility: visible;
+ }
+
+ .RoomContents{
+
+  flow-children: down;
+  height: 100%;
+  width: 100%;
+ }
+
+ .MazeRoom .IconContainer{
+
+  flow-children: right;
+  width: fit-children;
+  height: fit-children;
+  vertical-align: center;
+  horizontal-align: center;
+ }
+
+ .REWARD_TYPE_GOLD .RewardIcon{
+
+  background-image: url( "s2r://panorama/images/events/aghanim/reward_type_gold_icon_png.vtex");
+ }
+
+ .REWARD_TYPE_EXTRA_LIVES .RewardIcon{
+
+  background-image: url( "s2r://panorama/images/events/aghanim/reward_type_lives_icon_psd.vtex");
+ }
+
+ .REWARD_TYPE_XP .RewardIcon{
+
+  background-image: url( "s2r://panorama/images/items/tome_of_greater_knowledge_png.vtex");
+ }
+
+ .REWARD_TYPE_CONSUMABLES .RewardIcon{
+
+  background-image: url( "s2r://panorama/images/items/spell_amp_potion_png.vtex");
+ }
+
+ .REWARD_TYPE_TREASURE .RewardIcon{
+
+  background-image: url( "s2r://panorama/images/events/aghanim/reward_type_treasure_icon_png.vtex");
+ }
+
+
+ .REWARD_TYPE_HIDDEN .RewardIcon{
+
+  background-image: url( "s2r://panorama/images/compendium/achievements/question_quest_png.vtex");
+  background-color: black;
+  background-size: cover;
+ }
+
+
+ .MazeRoom.BossRoom{
+
+  width: 250px;
+  height: 250px;
+  background-color: #000000ee;
+ }
+
+
+ .MazeRoom.Completed{
+
+  color: none;
+ }
+
+
+
+
+
+
+ .MazeRoom.Exit0,.MazeRoom.Entrance0{
+
+
+  border-left: 0px solid black;
+ }
+
+ .MazeRoom.Exit1,.MazeRoom.Entrance1{
+
+
+  border-top: 0px solid black;
+ }
+
+ .MazeRoom.Exit2,.MazeRoom.Entrance2{
+
+
+  border-right: 0px solid black;
+ }
+
+ .MazeRoom.Exit3,.MazeRoom.Entrance3{
+
+
+  border-bottom: 0px solid black;
+ }
+
+
+ .Completed .RewardIcon,.Completed .EliteIcon,.Current .RewardIcon,.Current .EliteIcon{
+
+
+
+
+  visibility: collapse;
+ }
+
+ #a2_transition.RewardRoom{
+
+  width: 500px;
+  height: 250px;
+ }
+
+ .Act1{
+
+  height: 500px;
+  width: 500px;
+  horizontal-align: left;
+  vertical-align: bottom;
+ }
+
+ .Act2{
+
+  height: 625px;
+  width: 500px;
+  horizontal-align: right;
+  vertical-align: middle;
+ }
+
+ .Act3{
+
+  height: 500px;
+  width: 500px;
+  horizontal-align: left;
+  vertical-align: top;
+ }
+
+
+
+
+
+
+ #PlayerLocator{
+
+  margin-top: 25px;
+  vertical-align: center;
+  horizontal-align: center;
+  width: 48px;
+  height: 48px;
+  visibility: collapse;
+ }
+
+ .Current #PlayerLocator{
+
+  visibility: visible;
+ }
+
+ #a1_1a{
+
+  margin-top: triple_room_margin;
+ }
+
+ #a1_2a{
+
+  margin-top: double_room_margin;
+ }
+
+ #a1_2b{
+
+  margin-top: triple_room_margin;
+  margin-left: single_room_margin;
+ }
+
+ #a1_3a{
+
+  margin-top: single_room_margin;
+ }
+
+ #a1_3b{
+
+  margin-top: double_room_margin;
+  margin-left: single_room_margin;
+ }
+
+ #a1_3b{
+
+  margin-top: double_room_margin;
+  margin-left: single_room_margin;
+ }
+
+ #a1_3c{
+
+  margin-top: triple_room_margin;
+  margin-left: double_room_margin;
+ }
+
+ #a1_4d{
+
+  margin-top: triple_room_margin;
+  margin-left: triple_room_margin;
+ }
+
+ #a1_4c{
+
+  margin-top: double_room_margin;
+  margin-left: double_room_margin;
+ }
+
+
+ #a1_4b{
+
+  margin-top: single_room_margin;
+  margin-left: single_room_margin;
+ }
+
+
+
+
+
+
+
+ #a1_5a{
+
+  margin-left: single_room_margin;
+ }
+
+ #a1_5b{
+
+  margin-left: triple_room_margin;
+  margin-top: double_room_margin;
+ }
+
+ #a1_boss{
+
+  margin-left: double_room_margin;
+ }
+
+ #a2_transition{
+
+  margin-top: 500px;
+ }
+
+ #a2_1a,#a3_1a{
+
+  margin-top: triple_room_margin;
+  margin-left: triple_room_margin;
+ }
+
+
+ #a2_2b,#a3_2b{
+
+  margin-top: triple_room_margin;
+  margin-left: double_room_margin;
+ }
+
+ #a2_2a,#a3_2a{
+
+  margin-top: double_room_margin;
+  margin-left: triple_room_margin;
+ }
+
+
+ #a2_3c,#a3_3c{
+
+  margin-top: triple_room_margin;
+  margin-left: single_room_margin;
+ }
+
+ #a2_3b,#a3_3b{
+
+  margin-top: double_room_margin;
+  margin-left: double_room_margin;
+ }
+
+ #a2_3a,#a3_3a{
+
+  margin-top: single_room_margin;
+  margin-left: triple_room_margin;
+ }
+
+ #a2_4d,#a3_4d{
+
+  margin-top: triple_room_margin;
+ }
+
+ #a2_4c,#a3_4c{
+
+  margin-top: double_room_margin;
+  margin-left: single_room_margin;
+ }
+
+ #a2_4b,#a3_4b{
+
+  margin-top: single_room_margin;
+  margin-left: double_room_margin;
+ }
+
+ #a2_4a,#a3_4a{
+
+  margin-left: triple_room_margin;
+ }
+
+ #a2_5a,#a3_5a{
+
+  margin-left: double_room_margin;
+ }
+
+ #a2_5b,#a3_5b{
+
+  margin-top: double_room_margin;
+ }
+
+
+
+
+
+
+
+
+ #WorldHintPanel{
+
+  visibility: collapse;
+  height: fit-children;
+  width: fit-children;
+  padding: 10px 32px 10px 32px;
+  background-color: #000000dd;
+  border-radius: 8px;
+ }
+
+ #WorldHintPanel Label{
+
+  color: white;
+  font-size: 24px;
+  text-align: center;
+  vertical-align: middle;
+  text-overflow: clip;
+  width: 350px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: 40px;
+  overflow: squish;
+  margin: 5px;
+ }
+
+
+ #HintPanel.HintVisible,#WorldHintPanel.HintVisible{
+
+
+  visibility: visible;
+ }
+
+
+
+ .MOUSE1,.MOUSE2{
+
+
+  height: 45px;
+  width: 28px;
+  margin: 0 4px;
+  vertical-align: middle;
+  background-size: 100% 100%;
+  background-position: 50% 50%;
+  transform: translateY(-8px);
+  background-image: url( "s2r://panorama/images/interface/mouse_leftclick_png.vtex");
+  background-repeat: no-repeat;
+ }
+
+ .MOUSE2{
+
+  background-image: url( "s2r://panorama/images/interface/mouse_rightclick_png.vtex");
+ }
+
+ .A,.M,.Q,.W,.E,.R,.Z{
+
+
+
+
+
+
+
+  height: 40px;
+  width: 40px;
+
+
+  background-size: 100% 100%;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+
+  transform: translateY(-6px);
+ }
+
+ .A{
+
+  background-image: url( "s2r://panorama/images/interface/keyboard_a_psd.vtex");
+ }
+
+ .M{
+
+  background-image: url( "s2r://panorama/images/interface/keyboard_m_psd.vtex");
+ }
+
+ .Q{
+
+  background-image: url( "s2r://panorama/images/interface/keyboard_q_psd.vtex");
+ }
+
+ .W{
+
+  background-image: url( "s2r://panorama/images/interface/keyboard_w_psd.vtex");
+ }
+
+ .E{
+
+  background-image: url( "s2r://panorama/images/interface/keyboard_e_psd.vtex");
+ }
+
+ .R{
+
+  background-image: url( "s2r://panorama/images/interface/keyboard_r_psd.vtex");
+ }
+
+ .Z{
+
+  background-image: url( "s2r://panorama/images/interface/keyboard_z_psd.vtex");
+ }
+
+
+ #EventDialogPanel{
+
+  height:  fit-children;
+  width:  1300px;
+
+  vertical-align: center;
+  horizontal-align:  center;
+  visibility: collapse;
+  overflow: noclip;
+
+  transform: translateY(-75px);
+  pre-transform-scale2d: .95;
+  opacity: 0;
+  transition-property: opacity, transform, pre-transform-scale2d;
+  transition-duration: .25s;
+  transition-timing-function: ease-in-out;
+ }
+
+ #EventNPCScenePanel{
+
+  height:  200%;
+  max-height: 600px;
+
+  vertical-align: bottom;
+  width:  350px;
+
+  opacity-brush: gradient( linear, 0% 100%, 0% 0%, from( black ), color-stop( 0.05, black), color-stop( 0.4, #ffffffff), color-stop( 0.9, #ccccccff), to( #1a0cbc00 ) );
+
+  opacity: 0;
+  brightness: 0;
+
+  transition-property: opacity, brightness;
+  transition-timing-function: ease-in-out;
+  transition-duration: 1.5s;
+ }
+
+ .EventDialogActive #EventNPCScenePanel{
+
+  opacity: 1;
+  brightness: 1;
+  transform: translateY(0px);
+
+  transition-property: opacity, brightness;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0s;
+ }
+
+ #EventDialogPanel.EventDialogActive{
+
+  visibility: visible;
+  transform: translateX(0px);
+  pre-transform-scale2d: 1;
+  opacity: 1;
+ }
+
+ #EventNPCPortraitPanel{
+
+  height: fit-children;
+  width: 1300px;
+
+
+  vertical-align: center;
+
+
+  border-right: 1px solid #30313D25;
+  border-left: 1px solid #30313D25;
+  border-bottom: 1px solid #30313D25;
+
+  box-shadow: #000000bb 0px 0px 48px 0px;
+  overflow: squish;
+
+  background-image: url( "s2r://panorama/images/interface/aghanims_stone_bg_psd.vtex");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+
+  flow-children: right;
+ }
+ #EventNPCScenePanelBg{
+
+  height:  100%;
+  width:  350px;
+  margin-right: 12px;
+
+  background-image: url( "s2r://panorama/images/interface/aghanims_pregame_bg_png.vtex");
+  background-size: 170% 100%;
+  brightness: 1.5;
+  background-repeat: no-repeat;
+  border: 1px solid #000000;
+
+  opacity: 1;
+ }
+
+ #EventNPCDialogueBlock{
+
+  width: 100%;
+  height:fit-children;
+  margin-right: 12px;
+  vertical-align: center;
+  overflow: squish;
+  flow-children: down;
+ }
+
+
+ #EventNPCDialogue{
+
+  width: 100%;
+  height: fit-children;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-bottom: 16px;
+  margin-top: 16px;
+
+  background-color: #00000025;
+  border-top: 2px solid #00000035;
+  border-bottom: 1px solid #ffffff05;
+  border-left: 1px solid #00000045;
+  border-right: 1px solid #00000045;
+
+  flow-children: down;
+  overflow: noclip;
+  vertical-align: center;
+ }
+
+ #EventNPCName{
+
+  vertical-align: top;
+  horizontal-align:  left;
+  color:  legendary_rarity_color;
+
+  font-size: 24px;
+  text-transform: uppercase;
+  font-weight: semi-bold;
+  letter-spacing: 2px;
+  margin-top: 8px;
+  margin-bottom: 4px;
+  text-shadow: 0px 2px 0px 2.0 #00000040;
+  text-overflow: shrink;
+ }
+
+ #EventBodyDialog{
+
+  width: 100%;
+  margin-right: 8px;
+  padding-right: 8px;
+  font-weight: light;
+  text-align:  left;
+  font-size: 18px;
+  color:  #bbbbbb;
+  margin-bottom: 16px;
+ }
+
+ #EventContents{
+
+  height:  fit-children;
+  width:  100%;
+  margin-left: 8px;
+  horizontal-align:  left;
+ }
+
+ #OptionsContainer{
+
+  flow-children:  down;
+  vertical-align: bottom;
+  horizontal-align:  center;
+  width:  100%;
+ }
+
+ .OptionsRow{
+
+  flow-children:  down;
+  height:  fit-children;
+  width:  100%;
+  margin-bottom: 8px;
+ }
+
+ .EventRoomStore .OptionsRow{
+
+  flow-children:  right;
+ }
+
+ .EventRoomStore .EventOptionButton{
+
+  vertical-align: bottom;
+  background-color: black;
+  background-image: url( "s2r://panorama/images/hud/reborn/quickbuy_bg_psd.vtex");
+  border: 1px solid white;
+  color:  white;
+  width:  fit-children;
+  height:  fit-children;
+  margin:  10px;
+  padding:  5px;
+  width:  140px;
+  height: 140px;
+  flow-children:  down;
+ }
+
+ .EventOptionButton:hover{
+
+  background-color: gradient( linear, 0% 0%, 100% 0%, from( #ba73d780 ), color-stop(0.5, #3A5D87aa), to( #3A5D8700 ) );
+  brightness: 1.3;
+
+
+
+
+  transition-property: background-color;
+  transition-duration: 0.25s;
+  transition-timing-function: ease-in;
+ }
+
+ .EventOptionButton.Elite:hover{
+
+  background-color: gradient( linear, 0% 0%, 100% 0%, from( #aa1c1c55 ), color-stop(0.7, #e75856aa), to( #e7585600 ) );
+  brightness: 1.3;
+ }
+
+
+
+
+ .EventOptionButton{
+
+  vertical-align: center;
+  background-color: gradient( linear, 0% 0%, 100% 0%, from( #19191f ), color-stop(0.5, #0f0f11aa), to( #0f0f1100 ) );
+
+
+
+  background-repeat:  no-repeat;
+  background-size:  200%;
+
+  color:  white;
+  width:  fit-children;
+  height:  fit-children;
+  margin-bottom:  4px;
+  width:  100%;
+  height: 60px;
+  flow-children:  right;
+
+  transition-property: border;
+  transition-delay: 0s;
+  transition-duration: 1s;
+  transition-timing-function: ease-in;
+
+
+  transition-property: background-color;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in;
+ }
+
+ .Elite.EventOptionButton{
+
+  background-color: gradient( linear, 0% 0%, 100% 0%, from( #aa1c1c25 ), color-stop(0.25, #e7585600), to( #e7585600 ) );
+ }
+
+
+ .EventOptionButton.OutOfStock{
+
+  saturation:  0.1;
+ }
+
+ .EventOptionDescriptionLabel{
+
+  color:  #bbbbbb;
+  font-size:  18px;
+  width: fill-parent-flow( 1.0 );
+
+  font-weight: light;
+  text-align:  left;
+  vertical-align: center;
+  horizontal-align:  left;
+  visibility: collapse;
+  margin-left: 16px;
+  margin-right: 16px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+
+  text-overflow: shrink;
+ }
+
+ .Elite .EventOptionDescriptionLabel{
+
+  color: white;
+  text-shadow: 0px 0px 8px 2.0 #c72966aa;
+ }
+
+ .EventRoomStore .EventOptionDescriptionLabel{
+
+  color:  white;
+  font-size:  20px;
+  width:  130px;
+
+  text-align:  center;
+  vertical-align: center;
+  horizontal-align:  center;
+  visibility: collapse;
+
+  max-height:  28px;
+  text-overflow: shrink;
+ }
+
+ .DescriptionVisible .EventOptionDescriptionLabel{
+
+  visibility: visible;
+ }
+
+ #EventOptionItemImage,#EventOptionAbilityImage,#EventOptionDismissImage,#EventOptionGenericImage{
+
+
+
+
+  height: 60px;
+  width:  60px;
+  visibility: collapse;
+  horizontal-align:  center;
+  vertical-align: center;
+
+  background-color: black;
+  background-repeat:  no-repeat;
+  background-position: center;
+  background-size: 100%;
+ }
+
+
+ #EventOptionItemImage,#EventOptionGenericImage{
+
+
+  background-size: 136.9% 100%;
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+ .ItemVisible #EventOptionItemImage,.AbilityVisible #EventOptionAbilityImage,.GenericImageVisible #EventOptionGenericImage{
+
+
+
+  visibility: visible;
+ }
+
+ #ShardOverlay{
+
+
+  background-image: url( "s2r://panorama/images/items/aghanims_shard_trans_psd.vtex");
+  background-repeat: no-repeat;
+
+  visibility: collapse;
+  height: 100%;
+  width:  100%;
+
+
+  vertical-align: bottom;
+  horizontal-align: right;
+  animation-name: OpacityPingPong;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+ }
+
+ @keyframes 'OpacityPingPong'{
+
+     0%{
+
+   opacity: 0;
+     }
+     12.5%{
+
+   opacity: 1;
+     }
+     50%{
+
+   opacity: 1;
+     }
+     62.5%{
+
+   opacity: 0;
+     }
+     100%{
+
+   opacity: 0;
+     }
+ }
+
+
+ .MinorShard #ShardOverlay{
+
+  visibility: collapse;
+ }
+
+ #EventOptionDismissImage{
+
+  height: 100%;
+  width:  60px;
+  background-image: url( "s2r://panorama/images/control_icons/exit_circle_large_psd.vtex");
+  wash-color: #584be5;
+  img-shadow: 0px 0px 8px 0 #988fff99;
+  background-repeat:  no-repeat;
+  background-position: center;
+  background-size: 100%;
+
+  transition-property: wash-color, img-shadow;
+  transition-duration: .25s;
+  transition-timing-function: ease-in-out;
+ }
+
+ .EventOptionButton:hover #EventOptionDismissImage{
+
+  wash-color: #9db3fb;
+  img-shadow: 0px 0px 20px .50 #988fff;
+
+  transition-property: wash-color, img-shadow;
+  transition-duration: .25s;
+  transition-timing-function: ease-in-out;
+ }
+
+ .DismissIconVisible #EventOptionDismissImage{
+
+  visibility: visible;
+ }
+
+
+
+
+
+
+
+ #GoldRow{
+
+  visibility: collapse;
+  vertical-align: center;
+  horizontal-align:  center;
+  height:  100%;
+  flow-children:  right;
+ }
+
+ .GoldCostVisible #GoldRow{
+
+  visibility: visible;
+ }
+
+ .EventOptionGoldCostIcon{
+
+  width: 28px;
+  height: 28px;
+  vertical-align: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-image: url( "s2r://panorama/images/hud/reborn/gold_small_psd.vtex");
+  margin-left: -4px;
+  margin-bottom: 2px;
+  horizontal-align:  center;
+ }
+
+
+ .EventOptionGoldCostLabel{
+
+  color: accentColorBright;
+  vertical-align: center;
+  horizontal-align:  center;
+  text-align:  center;
+  font-size: 18px;
+   letter-spacing: 1px;
+  font-weight: normal;
+  min-width: 50px;
+ }
+
+ #StockCount{
+
+  width:  fit-children;
+  visibility: visible;
+
+  height:  32px;
+  margin-right: 8px;
+  margin-left: 8px;
+  visibility: collapse;
+  vertical-align: center;
+ }
+
+ .StockCountVisible #StockCount{
+
+  visibility: visible;
+ }
+
+ .EventOptionStockCountLabel{
+
+  color: #bbbbbb;
+  vertical-align: center;
+  horizontal-align:  center;
+  text-align:  center;
+  font-size: 18px;
+   letter-spacing: 1px;
+  font-weight: normal;
+  min-width: 50px;
+ }
+
+ #CryptGateUI{
+
+  height: 100%;
+  width:  100%;
+  visibility: collapse;
+ }
+
+ #CryptGateUI.CryptGateActive{
+
+  visibility: visible;
+ }
+
+ #CryptGateTotalProgressBar{
+
+  horizontal-align:  center;
+  vertical-align: top;
+  margin-top: 120px;
+  width: 600px;
+  height: 25px;
+  border: 1px solid white;
+ }
+
+ #CryptGateTotalProgressBar_Left{
+
+  background-color: red;
+ }
+
+ .AnyTouching #CryptGateTotalProgressBar_Left{
+
+  background-color: orange;
+ }
+
+ .CryptGateProgressBar{
+
+  width: 100px;
+  height: 20px;
+  border: 1px solid white;
+ }
+
+ .CryptGateProgressBar.CryptTriggerTouched .ProgressBarLeft{
+
+  background-color:  orange;
+ }
+
+ .CryptGateProgressBar.CryptTriggerComplete .ProgressBarLeft{
+
+  background-color:  green;
+ }
+
+ .CryptGateProgressBar .ProgressBarLeft{
+
+  background-color:  red;
+ }
+
+ .HeroInteractionNotificationIcon{
+
+  width: 72px;
+  height: 84px;
+  background-image: url( "s2r://panorama/images/events/aghanim/npc_special1_png.vtex");
+  background-size:  100%;
+ }
+
+ .AghanimEndGameCinematic .HeroInteractionNotificationIcon{
+
+  visibility: collapse;
+ }
+
+ .HeroInteractionNotificationRow{
+
+  margin-left: 10px;
+  margin-top:  20px;
+  width:  100%;
+  height:  20px;
+  background-color: gradient( linear, 0% 0%, 100% 0%, from( #79570000 ), color-stop (0.1, #795700dd), color-stop (0.6, #C8981Caa), to ( #FFF26F00 ) );
+  visibility: collapse;
+ }
+
+ #HeroInteractionRowContainer{
+
+  height: 100%;
+  width:  100%;
+  visibility: visible;
+  background-color:  none;
+  opacity: 1;
+ }
+
+
+ .HeroInteractionOuter{
+
+  height: 100px;
+  width:  75px;
+ }
+
+ #HeroIconsRow{
+
+  height: 100px;
+  width:  400px;
+  flow-children:  right;
+  margin-left: 80px;
+  margin-top:  20px;
+  visibility: collapse;
+ }
+
+ .HeroInteractionOverhead{
+
+  animation-duration: 2.0s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-name: InteractionNotify;
+ }
+
+ @keyframes 'InteractionNotify'{
+
+     0%{
+
+      brightness: 1.0;
+     }
+     50%{
+
+      brightness: 1.5;
+     }
+     100%{
+
+   brightness:  1.0;
+     }
+ }
+
+
+ #HeroInteractionOutlineIcon{
+
+  vertical-align: center;
+  horizontal-align:  center;
+  width:  50px;
+  height:  60px;
+ }
+
+ #HeroInteractionIcon{
+
+  vertical-align: center;
+  horizontal-align:  center;
+  margin-right:  0px;
+  margin-bottom: 10px;
+  width: 36px;
+  height: 36px;
+ }
+
+ .DifficultyModifiersContainer{
+
+  visibility: visible;
+  width: fit-children;
+  flow-children:  right;
+  horizontal-align:  right;
+  margin-top:  8px;
+ }
+
+ .AscensionModifierIcon{
+
+  height:  40px;
+  width:  40px;
+  margin:  4px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url( "s2r://panorama/images/events/aghanim/interface/hazard_armor_png.vtex");
+  visibility: collapse;
+  vertical-align: center;
+ }
+
+
+ #AscensionModifier1{
+
+  background-image: url( "s2r://panorama/images/events/aghanim/ascension_1_png.vtex");
+ }
+
+ #AscensionModifier2{
+
+  background-image: url( "s2r://panorama/images/events/aghanim/ascension_2_png.vtex");
+ }
+
+ #AscensionModifier3{
+
+  background-image: url( "s2r://panorama/images/events/aghanim/ascension_3_png.vtex");
+ }
+
+ #AscensionModifier4{
+
+  background-image: url( "s2r://panorama/images/events/aghanim/ascension_4_png.vtex");
+ }
+
+ .AscensionLevel1 #AscensionModifier1,.AscensionLevel2 #AscensionModifier1,.AscensionLevel2 #AscensionModifier2,.AscensionLevel3 #AscensionModifier1,.AscensionLevel3 #AscensionModifier2,.AscensionLevel3 #AscensionModifier3,.AscensionLevel4 #AscensionModifier1,.AscensionLevel4 #AscensionModifier2,.AscensionLevel4 #AscensionModifier3,.AscensionLevel4 #AscensionModifier4{
+
+
+
+
+
+
+
+
+
+
+  visibility: visible;
+}

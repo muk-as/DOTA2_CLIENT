@@ -1,0 +1,146 @@
+"EVENT_ID_NEW_BLOOM_2017"
+{
+	"season_name"	"#DOTA_EventName_NewBloom2017"
+	"season_class"	"DarkMoon"
+	"event_game_name"	"#DOTA_EventName_NewBloom2017"
+	"event_game_mode"	"new_bloom_2017"
+	"event_game_map"	"siege02"
+
+	"is_major"		"0"
+	"has_bracket_data" "0"
+	"must_be_owned"		"0"
+	"event_end_time"	"1486397735"
+ 	"expiration_date"	"1487059200"
+
+	"points_per_level"		"35000"
+	"normal_points_leaderboard_name"		"NewBloom2017Points"
+
+	"games_won_trophy"		"56"
+
+	"adjust_point_grants_periodic_resource"			"new_bloom_2017_score_multiplier"
+	"periodic_points_scale_normal_event_points"		"6"
+	"periodic_points_bonus_normal_event_points"		"35000"
+	"periodic_points_bonus_minimum_event_points"	"250"
+	"periodic_points_bonus_maximum_event_points"	"5000"
+
+
+	"custom_game_claim_reward_action"	"redeem_event_points"
+	"custom_game_wins_action"	"win_darkmoon_matches"
+
+	"mystery"
+	{
+		"name"	"#DOTA_NewBloom2017_Reward_Surprise_Item"
+		"scene"
+		{
+			"map"					"scenes/darkmoon_spinwheel"
+			"entity_name"			"courier"
+			"entity_idle_sequence"	"darkmoon_idle"
+			"entity_spin_sequence"	"darkmoon_reward"
+		}
+
+		"categories"
+		{
+			"old_treasures"
+			{
+				"locname"	"#DOTA_Wheel_Treasure"
+				"lootlist"	"new_bloom_2017_wheel_old_treasures"
+			}
+			"baby_roshan"
+			{
+				"locname"	"#DOTA_Wheel_BabyRoshan"
+				"lootlist"	"new_bloom_2017_wheel_baby_roshan"
+			}
+			"announcers"
+			{
+				"locname"	"#DOTA_Wheel_Announcer"
+				"lootlist"	"new_bloom_2017_wheel_announcers"
+			}
+			"new_bloom_sets"
+			{
+				"locname"	"#DOTA_Wheel_DarkMoonSet"
+				"lootlist"	"new_bloom_2017_wheel_new_bloom_sets"
+			}
+			"couriers"
+			{
+				"locname"	"#DOTA_Wheel_Courier"
+				"lootlist"	"new_bloom_2017_wheel_couriers"
+			}
+		}
+
+		"wheel_segments"
+		{
+			"0"	"old_treasures"
+			"1"	"baby_roshan"
+			"2"	"old_treasures"
+			"3"	"new_bloom_sets"
+			"4" "old_treasures"
+			"5" "couriers"
+			"6" "old_treasures"
+			"7" "new_bloom_sets"
+			"8" "old_treasures"
+			"9" "announcers"
+			"10" "old_treasures"
+			"11" "new_bloom_sets"
+			"12" "old_treasures"
+			"13" "couriers"
+			"14" "old_treasures"
+			"15" "announcers"
+			"16" "old_treasures"
+			"17" "new_bloom_sets"
+			"18" "old_treasures"
+			"19" "couriers"
+		}
+	}
+
+	"event_actions"
+	{
+		"redeem_event_points"
+		{
+			"action_id"			"1"
+			"max_grants"		"10000"
+			"must_own_event"	"0"
+			"point_cost"		"35000"
+
+			"rewards"
+			{
+				"1 + 1n"
+				{				
+					"grants"
+					{
+						"grant_mystery_item" ""
+					}
+				}
+			}
+		}
+
+		"win_darkmoon_matches"
+		{
+			"action_id"			"2"
+			"max_grants"		"10000"
+			"must_own_event"	"0"
+
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"grants"
+					{
+						"grant_trophy"
+						{
+							"trophy_id"		"games_won_trophy"
+							"trophy_score"	"add( 1 )"
+						}
+					}
+				}
+
+				"1"
+				{
+					"grants"
+					{
+						"grant_item" "17251 " // Dark Moon Emoticon
+					}
+				}
+			}
+		}
+	}
+}

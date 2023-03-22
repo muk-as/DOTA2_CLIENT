@@ -1,0 +1,208 @@
+<!-- xml reconstructed by ValveResourceFormat: https://vrf.steamdb.info/ -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/custom_game/hud_main.vcss_c" />
+		<include src="s2r://panorama/styles/hud_aghanims_reward.vcss_c" />
+		<include src="s2r://panorama/styles/custom_game/rewards_shared.vcss_c" />
+	</styles>
+	<scripts>
+		<include src="s2r://panorama/scripts/hud_aghanims_reward.vjs_c" />
+	</scripts>
+	<script><![CDATA[
+		function OnConfirmButtonJoyFocus()
+		{
+			var pPanel = Game.GetJoyFocusPanel();
+			while( pPanel !== null && !pPanel.BHasClass( "RewardsRowContent" ) )
+			{
+				pPanel = pPanel.GetParent();
+			}
+			if ( pPanel !== null )
+			{
+				pPanel.checked  = true;
+			}
+		}
+		function OnConfirmButtonJoyBlur()
+		{
+			var pPanel = Game.GetJoyFocusPanel();
+			while( pPanel !== null && !pPanel.BHasClass( "RewardsRowContent" ) )
+			{
+				pPanel = pPanel.GetParent();
+			}
+			if ( pPanel !== null )
+			{
+				pPanel.checked  = false;
+			}
+		}
+
+	]]></script>
+	<snippets>
+		<snippet name="RewardOptionSnippet_REWARD_TYPE_GOLD">
+			<Panel class="RewardParticleContainer">
+				<DOTAParticleScenePanel id="RewardParticleBg" hittest="false" particleName="particles/agh_ability_selection_ambient.vpcf" particleonly="true" startActive="true" cameraOrigin="500 0 0" lookAt="0 -225 0" fov="60" squarePixels="true" />
+				<Panel class="RewardOptionDescriptionContainer">
+					<Panel class="GoldIcon RewardIcon" />
+					<Panel class="RewardsContentText">
+						<Label html="true" class="RewardName" text="{s:reward_name}" />
+						<Label html="true" class="RewardDescription" text="{s:reward_description}" />
+					</Panel>
+				</Panel>
+			</Panel>
+		</snippet>
+		<snippet name="RewardOptionSnippet_REWARD_TYPE_ITEM">
+			<RadioButton group="RewardRadioButton" class="RewardsRowContent">
+				<Panel class="RewardParticleContainer">
+					<DOTAParticleScenePanel id="RewardParticleBg" hittest="false" particleName="particles/agh_ability_selection_ambient.vpcf" particleonly="true" startActive="true" cameraOrigin="500 0 0" lookAt="0 -225 0" fov="60" squarePixels="true" />
+					<Panel class="RewardOptionDescriptionContainer">
+						<DOTAAbilityImage id="RewardAbilityImage" class="RewardIcon" showtooltip="true" />
+						<Panel class="RewardsContentText">
+							<Label html="true" class="RewardName" text="{s:reward_name}" />
+							<Label html="true" class="RewardDescription" text="{s:reward_description}" />
+						</Panel>
+						<TextButton id="ConfirmButton" text="CONFIRM" acceptsjoyfocus="true" onjoyfocus="OnConfirmButtonJoyFocus()" onjoyblur="OnConfirmButtonJoyBlur()" />
+					</Panel>
+				</Panel>
+			</RadioButton>
+		</snippet>
+		<snippet name="RewardOptionSnippet_REWARD_TYPE_TEMP_BUFF">
+			<RadioButton group="RewardRadioButton" class="RewardsRowContent">
+				<Panel class="RewardParticleContainer">
+					<DOTAParticleScenePanel id="RewardParticleBg" hittest="false" particleName="particles/agh_ability_selection_ambient.vpcf" particleonly="true" startActive="true" cameraOrigin="500 0 0" lookAt="0 -225 0" fov="60" squarePixels="true" />
+					<Panel class="RewardOptionDescriptionContainer">
+						<DOTAAbilityImage id="RewardAbilityImage" class="RewardIcon" showtooltip="true" />
+						<Panel class="RewardsContentText">
+							<Label html="true" class="RewardName" text="{s:reward_name}" />
+							<Label html="true" class="RewardDescription" text="{s:reward_description}" />
+						</Panel>
+						<TextButton id="ConfirmButton" text="CONFIRM" acceptsjoyfocus="true" onjoyfocus="OnConfirmButtonJoyFocus()" onjoyblur="OnConfirmButtonJoyBlur()" />
+					</Panel>
+				</Panel>
+			</RadioButton>
+		</snippet>
+		<snippet name="RewardOptionSnippet_REWARD_TYPE_AURA">
+			<RadioButton group="RewardRadioButton" class="RewardsRowContent">
+				<Panel class="RewardParticleContainer">
+					<DOTAParticleScenePanel id="RewardParticleBg" hittest="false" particleName="particles/agh_ability_selection_ambient.vpcf" particleonly="true" startActive="true" cameraOrigin="500 0 0" lookAt="0 -225 0" fov="60" squarePixels="true" />
+					<Panel class="RewardOptionDescriptionContainer">
+						<DOTAAbilityImage id="RewardAbilityImage" class="RewardIcon" showtooltip="true" />
+						<Panel class="RewardsContentText">
+							<Label html="true" class="RewardName" text="{s:reward_name}" />
+							<Label html="true" class="RewardDescription" text="{s:reward_description}" />
+						</Panel>
+						<TextButton id="ConfirmButton" text="CONFIRM" acceptsjoyfocus="true" onjoyfocus="OnConfirmButtonJoyFocus()" onjoyblur="OnConfirmButtonJoyBlur()" />
+					</Panel>
+				</Panel>
+			</RadioButton>
+		</snippet>
+		<snippet name="RewardOptionSnippet_REWARD_TYPE_ABILITY_UPGRADE">
+			<RadioButton group="RewardRadioButton" class="RewardsRowContent">
+				<Panel class="RewardParticleContainer">
+					<DOTAParticleScenePanel id="RewardParticleBg" hittest="false" particleName="particles/agh_ability_selection_ambient.vpcf" particleonly="true" startActive="true" cameraOrigin="500 0 0" lookAt="0 -225 0" fov="60" squarePixels="true" />
+					<Panel class="RewardOptionDescriptionContainer">
+						<DOTAAbilityImage id="RewardAbilityImage" class="RewardIcon" showtooltip="true" />
+						<Panel class="RewardsContentText">
+							<Label html="true" class="RewardName" text="{s:reward_name}" />
+							<Label html="true" class="RewardDescription" text="{s:reward_description}" />
+						</Panel>
+						<TextButton id="ConfirmButton" text="CONFIRM" acceptsjoyfocus="true" onjoyfocus="OnConfirmButtonJoyFocus()" onjoyblur="OnConfirmButtonJoyBlur()" />
+					</Panel>
+				</Panel>
+			</RadioButton>
+		</snippet>
+		<snippet name="RewardOptionSnippet_REWARD_TYPE_EXTRA_LIVES">
+			<RadioButton group="RewardRadioButton" class="RewardsRowContent">
+				<Panel class="RewardParticleContainer">
+					<DOTAParticleScenePanel id="RewardParticleBg" hittest="false" particleName="particles/agh_ability_selection_ambient.vpcf" particleonly="true" startActive="true" cameraOrigin="500 0 0" lookAt="0 -225 0" fov="60" squarePixels="true" />
+					<Panel class="RewardOptionDescriptionContainer">
+						<Panel class="ExtraLifeIcon RewardIcon" />
+						<Panel class="RewardsContentText">
+							<Label html="true" class="RewardName" text="{s:reward_name}" />
+							<Label html="true" class="RewardDescription" text="{s:reward_description}" />
+						</Panel>
+						<TextButton id="ConfirmButton" text="CONFIRM" acceptsjoyfocus="true" onjoyfocus="OnConfirmButtonJoyFocus()" onjoyblur="OnConfirmButtonJoyBlur()" />
+					</Panel>
+				</Panel>
+			</RadioButton>
+		</snippet>
+		<snippet name="RewardOptionSnippet_REWARD_TYPE_MINOR_ABILITY_UPGRADE">
+			<RadioButton group="RewardRadioButton" class="RewardsRowContent">
+				<Panel class="RewardParticleContainer">
+					<DOTAParticleScenePanel id="RewardParticleBg" hittest="false" particleName="particles/agh_ability_selection_ambient.vpcf" particleonly="true" startActive="true" cameraOrigin="500 0 0" lookAt="0 -225 0" fov="60" squarePixels="true" />
+					<DOTAParticleScenePanel id="RewardParticleEliteBg" hittest="false" particleName="particles/agh_ability_selection_elite_ambient.vpcf" particleonly="true" startActive="true" cameraOrigin="500 0 0" lookAt="0 -225 0" fov="60" squarePixels="true" />
+					<Panel class="RewardOptionDescriptionContainer">
+						<DOTAAbilityImage id="RewardAbilityImage" class="RewardIcon" showtooltip="true" />
+						<Panel class="RewardsContentText">
+							<Label html="true" class="RewardName" text="{s:reward_name}" />
+							<Label html="true" class="RewardDescription" text="{s:reward_description}" />
+						</Panel>
+						<TextButton id="ConfirmButton" text="CONFIRM" acceptsjoyfocus="true" onjoyfocusgained="OnConfirmButtonJoyFocus()" onjoyblur="OnConfirmButtonJoyBlur()" />
+					</Panel>
+				</Panel>
+			</RadioButton>
+		</snippet>
+		<snippet name="RewardOptionSnippet_REWARD_TYPE_MINOR_STATS_UPGRADE">
+			<RadioButton group="RewardRadioButton" class="RewardsRowContent">
+				<Panel class="RewardParticleContainer">
+					<DOTAParticleScenePanel id="RewardParticleBg" hittest="false" particleName="particles/agh_ability_selection_ambient.vpcf" particleonly="true" startActive="true" cameraOrigin="500 0 0" lookAt="0 -225 0" fov="60" squarePixels="true" />
+					<Panel class="RewardOptionDescriptionContainer">
+						<Panel id="RewardAbilityImage" class="RewardIcon" showtooltip="true" />
+						<Panel class="RewardsContentText">
+							<Label html="true" class="RewardName" text="{s:reward_name}" />
+							<Label html="true" class="RewardDescription" text="{s:reward_description}" />
+						</Panel>
+						<TextButton id="ConfirmButton" text="CONFIRM" acceptsjoyfocus="true" onjoyfocus="OnConfirmButtonJoyFocus()" onjoyblur="OnConfirmButtonJoyBlur()" />
+					</Panel>
+				</Panel>
+			</RadioButton>
+		</snippet>
+	</snippets>
+	<Panel hittest="false" class="CustomHudRoot">
+		<Panel id="AghanimRewardsHUD" class="Hidden" hittest="true" hittestchildren="true" constrainsjoyfocus="true">
+			<Panel class="RewardBody">
+				<Panel class="RewardBodyHeader">
+					<Panel id="EncounterTypeIcon" class="EncounterTypeIconReward">
+						<DOTAParticleScenePanel id="EncounterRewardParticleCommon" hittest="false" particleName="particles/ui/ui_aghs_menu_common_ambient.vpcf" particleonly="true" startActive="true" cameraOrigin="75 0 0" lookAt="0 0 0" fov="60" squarePixels="true" />
+						<DOTAParticleScenePanel id="EncounterRewardParticleLegendary" hittest="false" particleName="particles/ui/ui_aghs_menu_legendary_ambient.vpcf" particleonly="true" startActive="true" cameraOrigin="75 0 0" lookAt="0 0 0" fov="60" squarePixels="true" />
+						<DOTAParticleScenePanel id="EncounterRewardParticleElite" hittest="false" particleName="particles/ui/ui_aghs_menu_elite_ambient.vpcf" particleonly="true" startActive="true" cameraOrigin="75 0 0" lookAt="0 0 0" fov="60" squarePixels="true" />
+						<Panel id="EncounterRewardTypeImage" />
+						<DOTAParticleScenePanel id="EncounterRewardParticleLegendarySpark" hittest="false" particleName="particles/ui/ui_aghs_menu_legendary_sparks_ambient.vpcf" particleonly="true" startActive="true" cameraOrigin="75 0 0" lookAt="0 0 0" fov="60" squarePixels="true" />
+					</Panel>
+					<Label id="RewardHeader" text="{s:header_rarity}" html="true" />
+				</Panel>
+				<Panel id="RewardsContainer" />
+				<Panel class="FixedRewards">
+					<Label class="AdditionalRewardsLabel" text="#DOTA_HUD_Reward_AdditionalRewards" />
+					<Panel id="EncounterRewards">
+						<Panel class="PointsRow XPReward">
+							<Label class="FixedRewardLabel" text="{d:xp}" />
+							<Label class="FixedRewardIcon" text="#DOTA_RewardTooltip_XP" />
+						</Panel>
+						<Panel class="PointsRow GoldReward" onmouseout="UIHideTextTooltip();" onmouseover="UIShowTextTooltip( #DOTA_RewardTooltip_Gold );">
+							<Label class="FixedRewardLabel" text="{d:gold}" />
+							<Panel class="FixedRewardIcon GoldImage" />
+						</Panel>
+						<Panel class="PointsRow CurrencyReward ArcaneFragments" onmouseout="UIHideTextTooltip();" onmouseover="UIShowTextTooltip( #DOTA_RewardTooltip_ArcaneFragments );">
+							<Label class="FixedRewardLabel" text="{d:arcane_fragments}" />
+							<Panel class="FixedRewardIcon" />
+						</Panel>
+						<Panel class="PointsRow CurrencyReward BattlePoints" onmouseout="UIHideTextTooltip();" onmouseover="UIShowTextTooltip( #DOTA_RewardTooltip_BattlePoints );">
+							<Label class="FixedRewardLabel" text="{d:battle_points}" />
+							<Panel class="FixedRewardIcon" />
+						</Panel>
+					</Panel>
+				</Panel>
+			</Panel>
+			<Panel id="RewardCloseButton" class="CloseButton" onactivate="MinimizeAghanimRewardsHUD()" acceptsjoyfocus="true" />
+			<Panel id="RewardRerollButton" onactivate="RerollAghanimRoomRewards()" onmouseout="UIHideTitleTextTooltip();" onmouseover="UIShowTitleTextTooltip( #DOTA_AghsLab_UpgradeReroll_Title, #DOTA_AghsLab_UpgradeReroll_Description );" acceptsjoyfocus="true">
+				<Label id="RewardRerollCount" text="{d:reroll_count}" />
+				<Panel id="RewardRerollImage" />
+			</Panel>
+		</Panel>
+		<Panel id="AghanimScoreboardInfo" hittest="false">
+			<Label class="ScoreboardInfoText" text="#DOTA_HUD_Rewards_Info" />
+		</Panel>
+		<Panel id="AghanimRewardsMinimized" class="Hidden" hittest="true" hittestchildren="true" onactivate="ShowAghanimRewardsHUD()" acceptsjoyfocus="true">
+			<Label id="AghanimRewardsMinimizedText" text="#DOTA_HUD_Rewards_ShowRewards" />
+		</Panel>
+	</Panel>
+</root>

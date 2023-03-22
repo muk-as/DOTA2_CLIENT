@@ -1,0 +1,38 @@
+"use strict";
+
+//-----------------------------------------------------------------------------------------
+$.Schedule( 2.0, function() 
+{
+	// Startup code
+	OnShowGameInfo();
+} );
+
+//-----------------------------------------------------------------------------------------
+function OnGameInfoDismissed()
+{
+	$( "#GameInfoPopup" ).SetHasClass( "Visible", false );
+	Game.EmitSound( "ui_find_match_slide_out" );
+}
+
+//-----------------------------------------------------------------------------------------
+function OnShowGameInfo()
+{
+	var bShowGameInfo = Game.Diretide2020ShouldShowGameInfo();
+	if ( bShowGameInfo )
+	{
+		$( "#GameInfoPopup" ).SetHasClass( "Visible", true );
+
+		Game.EmitSound( "ui_find_match_slide_in" );
+	}
+}
+
+//-----------------------------------------------------------------------------------------
+var g_bDontShowCheckBox = false;
+function OnGameInfoDontShowAgain()
+{
+	$.Msg( "diretide_hero_selection.js - OnGameInfoDontShowAgain()!" )
+	g_bDontShowCheckBox = !g_bDontShowCheckBox;
+	Game.Diretide2020SetShowGameInfo( !g_bDontShowCheckBox );
+
+	$.GetContextPanel().FindChildInLayoutFile( "DontShowAgainButton" ).SetHasClass( "CheckboxActive", g_bDontShowCheckBox );
+}

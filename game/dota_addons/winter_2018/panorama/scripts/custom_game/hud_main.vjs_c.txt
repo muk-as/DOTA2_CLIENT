@@ -1,0 +1,369 @@
+"use strict";
+
+//-----------------------------------------------------------------------------------------
+function intToARGB(i) 
+{ 
+                return ('00' + ( i & 0xFF).toString( 16 ) ).substr( -2 ) +
+                                               ('00' + ( ( i >> 8 ) & 0xFF ).toString( 16 ) ).substr( -2 ) +
+                                               ('00' + ( ( i >> 16 ) & 0xFF ).toString( 16 ) ).substr( -2 ) + 
+                                                ('00' + ( ( i >> 24 ) & 0xFF ).toString( 16 ) ).substr( -2 );
+}
+
+
+function OnRoundDataUpdated( table_name, key, data )
+{
+	UpdateRoundUI();
+}
+
+CustomNetTables.SubscribeNetTableListener( "round_data", OnRoundDataUpdated )
+
+var g_nRubickEntIndex = -1;
+
+function UpdateRoundUI()
+{
+	var key = 0;
+	var roundData = CustomNetTables.GetTableValue( "round_data", key.toString() );
+	if ( roundData !== null )
+	{
+		$( "#RoundNumber" ).text = roundData.round_number;
+		$( "#EnemyNumber" ).text = roundData.enemies_total - roundData.enemies_killed;
+		$( "#EnemyTotalNumber" ).text = roundData.enemies_total;
+		$( "#EnemyProgressBar" ).value = ( roundData.enemies_total - roundData.enemies_killed ) / roundData.enemies_total;
+		$( "#PrepTimer" ).text = parseInt( roundData.prep_time_left );
+
+		var nRubickHP = roundData.rubick_hp;
+		var bShowRubickHP = roundData.rubick_hp == 0 ? false : true;
+		$( "#RubickProgressBar" ).value = nRubickHP / 100;
+		$( "#RubickHP").SetHasClass( "Visible", bShowRubickHP );
+
+		var nAncientHP = roundData.ancient_hp;
+		var bShowAncientHP = roundData.ancient_hp == -1 ? false : true;
+		$( "#AncientProgressBar" ).value = roundData.ancient_hp / 4500;
+		$( "#AncientHP").SetHasClass( "Visible", bShowAncientHP );
+		$( "#AncientHP").SetHasClass( "RubickVisible", bShowRubickHP );
+		
+		var bRoundInProgress = roundData.prep_time_left === 0;
+		$( "#HoldoutState" ).SetHasClass( "RoundInProgress", bRoundInProgress );
+
+		var bTimedRound = roundData.timed_round === 1;
+		$( "#HoldoutState" ).SetHasClass( "TimedRound", bTimedRound );
+		if( bTimedRound )
+		{
+			$( "#TimeLeftNumber" ).text = Math.ceil(roundData.timed_round_time_remaining)
+			$( "#EnemyProgressBar" ).value = 1 - ( roundData.timed_round_total_time - roundData.timed_round_time_remaining) / roundData.timed_round_total_time;
+		}
+
+		if ( roundData.rubick_ent_index !== -1 )
+		{
+			g_nRubickEntIndex = roundData.rubick_ent_index
+			RubickThink();
+		}
+	}
+}
+
+function OnRoundStarted( roundStartData )
+{
+	var flTitleDuration = 5.0;
+	if ( roundStartData !== null )
+	{
+		$( "#RoundStartPanel" ).FindChildInLayoutFile( "RoundNameLabel" ).text = $.Localize( roundStartData.round_name );
+		$.Msg("round description is "+roundStartData.round_description);
+		$( "#RoundStartPanel" ).SetHasClass( "HasDescription" , false );  
+		if( roundStartData.round_description !== undefined )
+		{
+			$( "#RoundStartPanel" ).SetHasClass( "HasDescription" , true );  
+			$( "#RoundStartPanel" ).FindChildInLayoutFile( "RoundDescriptionLabel" ).text = $.Localize( roundStartData.round_description );
+			flTitleDuration = 8.0;
+		}
+		$( "#RoundStartPanel" ).SetHasClass( "Round" + ( roundStartData.round_number - 1), false );  
+		$( "#RoundStartPanel" ).SetHasClass( "Round" + roundStartData.round_number, true );
+	}
+
+	$( "#RoundStartPanel" ).SetHasClass( "Visible", true );
+	Game.EmitSound( "RoundStart" );
+	$.Schedule( flTitleDuration, HideRoundStart );
+	$.DispatchEvent( "DOTAHUDHideScoreboard" )
+}
+
+function HideRoundStart()
+{
+	$( "#RoundStartPanel" ).SetHasClass( "Visible", false );
+}
+
+GameEvents.Subscribe( "round_started", OnRoundStarted );
+
+var bGameEndActive = false;
+function OnGameEnd()
+{
+	// Don't do a Game End screen, they'll see it in Post-Game.
+	// HandleGameEnd();
+}
+
+CustomNetTables.SubscribeNetTableListener( "game_end", OnGameEnd )
+
+function HandleGameEnd()
+{
+	if ( bGameEndActive )
+	{
+		bGameEndActive = false;
+		$( "#GameEndPanel" ).SetHasClass( "Visible", false );
+		return;
+	}
+	
+	bGameEndActive = true;
+	$( "#GameEndPanel" ).SetHasClass( "Visible", true );
+	Game.EmitSound( "RoundEnd" );
+
+	var key = 0;
+	var gameEndData = CustomNetTables.GetTableValue( "game_end", key.toString() );
+	if ( gameEndData !== null )
+	{
+		var localPlayerInfo = Game.GetLocalPlayerInfo();
+		var players = Game.GetPlayerIDsOnTeam( localPlayerInfo.player_team_id );
+		var i = 0
+		for ( i; i < 5; i++ )
+		{
+			var playerID = i;
+			var playerRowPanelPrefix = "Player" + playerID;
+			var playerHeroEntIndex = Players.GetPlayerHeroEntityIndex( playerID );
+			var playerRow = $( "#GameEndPanel" ).FindChildInLayoutFile( playerRowPanelPrefix );
+
+			if ( playerRow !== null )
+			{
+				if ( playerHeroEntIndex === -1 )
+				{
+					playerRow.SetHasClass( "Hide", true );
+					continue;
+				}
+
+				playerRow.SetHasClass( "Hide", false );
+
+				var colorInt = Players.GetPlayerColor( playerID );
+				var colorString = "#" + intToARGB( colorInt );
+
+				var playerColor = playerRow.FindChildInLayoutFile( playerRowPanelPrefix + "Color" );
+				playerColor.style.backgroundColor = colorString;
+
+				var playerHeroNameLabel = playerRow.FindChildInLayoutFile( playerRowPanelPrefix + "HeroName" );
+				playerHeroNameLabel.text = Players.GetPlayerSelectedHero( playerID );
+
+				var playerNameLabel = playerRow.FindChildInLayoutFile( playerRowPanelPrefix + "PlayerName" );
+				playerNameLabel.text = Players.GetPlayerName( playerID );
+
+				var playerHeroImage = playerRow.FindChildInLayoutFile( playerRowPanelPrefix + "HeroImage" );
+				playerHeroImage.heroname = Players.GetPlayerSelectedHero( playerID );
+
+				var playerKills = playerRow.FindChildInLayoutFile( playerRowPanelPrefix + "Kills" );
+				playerKills.text = gameEndData[playerID.toString() + "Kills"];
+
+				var playerDeaths = playerRow.FindChildInLayoutFile( playerRowPanelPrefix + "Deaths" );
+				playerDeaths.text = gameEndData[playerID.toString() + "Deaths"];
+
+				var playerBags = playerRow.FindChildInLayoutFile( playerRowPanelPrefix + "Bags" );
+				playerBags.text = gameEndData[playerID.toString() + "Bags"];
+
+				var playerSaves = playerRow.FindChildInLayoutFile( playerRowPanelPrefix + "Saves" );
+				playerSaves.text = gameEndData[playerID.toString() + "Saves"];
+			}
+		}
+
+		var header = $( "#GameEndPanel" ).FindChildInLayoutFile( "GameEndHeader" );
+		if ( gameEndData["victory"] === true )
+		{
+			header.text = $.Localize( "#DOTA_HUD_Victory" );
+		}
+		else
+		{
+			header.text = $.Localize( "#DOTA_HUD_Defeat" );
+		}
+	}
+}
+
+function OnVoteYesClicked()
+{
+	var localPlayerInfo = Game.GetLocalPlayerInfo();
+	GameEvents.SendCustomGameEventToServer( "vote_button_clicked", { "player_id" : Game.GetLocalPlayerID(), "play_again" : true } );
+}
+
+function OnVoteNoClicked()
+{
+	var localPlayerInfo = Game.GetLocalPlayerInfo();
+	GameEvents.SendCustomGameEventToServer( "vote_button_clicked", { "player_id" : Game.GetLocalPlayerID(), "play_again" : false } );
+}
+
+function OnVotesUpdated()
+{
+	var key = 0;
+	var voteData = CustomNetTables.GetTableValue( "restart_votes", key.toString() );
+	if ( voteData !== null )
+	{
+		var nYesVotes = voteData["yes"];
+		var nNoVotes = voteData["no"];
+
+		var i = 0
+		for ( i; i < 5; i++ )
+		{
+			var voteNode = $( "#VotePanel" ).FindChildInLayoutFile( "VoteNode" + i.toString() );
+			if ( nYesVotes > 0 )
+			{
+				voteNode.SetHasClass( "Yes", true );
+				voteNode.SetHasClass( "No", false );
+				nYesVotes = nYesVotes - 1
+				continue;
+			}
+
+			if ( nNoVotes > 0 )
+			{
+				voteNode.SetHasClass( "Yes", false );
+				voteNode.SetHasClass( "No", true );
+				nNoVotes = nNoVotes - 1
+				continue;
+			}
+
+			voteNode.SetHasClass( "Yes", false );
+			voteNode.SetHasClass( "No", false );
+			continue;
+		}
+
+		$( "#VotePanel" ).FindChildInLayoutFile( "VoteTimer" ).text = parseInt( voteData["time_left"] );
+	}
+
+}
+
+CustomNetTables.SubscribeNetTableListener( "restart_votes", OnVotesUpdated )
+
+function TestAward()
+{
+	var awardDesc = $( "#AwardPanel" ).FindChildInLayoutFile( "AwardDesc" );
+	$.Msg( awardDesc );
+
+	var txt = $.Localize( "#DOTA_Holdout_Award_MostBags_Title" );
+	$.Msg( 'txt = ' + txt );
+
+	awardDesc.text = $.Localize( "#DOTA_Holdout_Award_MostBags_Desc" );
+
+	return '5';
+}
+
+var testAwardFunc = function()
+{
+	var awardDesc = $( "#AwardPanel" ).FindChildInLayoutFile( "AwardDesc" );
+	awardDesc.text = $.Localize( "#DOTA_Holdout_Award_MostBags_Desc" );
+}
+
+
+function DisplayAward( netTable )
+{
+	if ( netTable !== null )
+	{
+		$.Msg( "Updating Award" );
+		
+		$( "#AwardPanel" ).SetHasClass( "Visible", true );
+		var playerAvatar = $( "#AwardPanel" ).FindChildInLayoutFile( "PlayerAvatar" );
+		if ( playerAvatar !== null )
+		{
+			playerAvatar.steamid = netTable["SteamID"];
+		}
+
+		var awardHeroImage = $( "#AwardPanel" ).FindChildInLayoutFile( "AwardHeroImage" );
+		if ( awardHeroImage !== null )
+		{
+			awardHeroImage.heroname = Players.GetPlayerSelectedHero( netTable["PlayerID"] );
+		}
+		
+		var awardIcon = $( "#AwardPanel" ).FindChildInLayoutFile( "AwardIcon" );
+		if ( awardIcon !== null )
+		{
+			awardIcon.SetImage( netTable["Icon"] );
+		}
+
+		var awardName = $( "#AwardPanel" ).FindChildInLayoutFile( "AwardName" );
+		if ( awardName !== null )
+		{
+			awardName.text = $.Localize( netTable["Title"] );
+			awardName.html = true
+		}
+		
+		var awardDesc = $( "#AwardPanel" ).FindChildInLayoutFile( "AwardDesc" );
+		if ( awardDesc !== null )
+		{
+
+			awardDesc.text = $.Localize( netTable["Desc"] );
+			awardDesc.html = true
+		}
+
+
+		$( "#AwardPanel" ).SetDialogVariable( "player_name", Players.GetPlayerName( netTable["PlayerID"] ) ); 
+		$( "#AwardPanel" ).SetDialogVariableInt( "value", netTable["ResultValue"] ); 
+	}
+
+	$.Schedule( 15.0, HideAward );
+}
+
+function HideAward()
+{
+	$( "#AwardPanel" ).SetHasClass( "Visible", false );
+}
+
+GameEvents.Subscribe( "display_award", DisplayAward );
+
+
+
+function RubickThink() 
+{
+}
+
+
+function ShowRubickSpellStealWarning( netTable )
+{
+	if ( netTable === null )
+		return;
+	
+	$( "#RubickWarning" ).SetHasClass( "Visible", true );
+	var AbilityImage = $( "#RubickWarning" ).FindChildInLayoutFile( "AbilityImage" );
+	if ( AbilityImage !== null )
+	{
+		AbilityImage.abilityname = netTable["szAbilityName"];
+	}
+}
+
+function HideRubickSpellStealWarning()
+{
+	$( "#RubickWarning" ).SetHasClass( "Visible", false );
+}
+
+GameEvents.Subscribe( "rubick_stole_spell", ShowRubickSpellStealWarning )
+GameEvents.Subscribe( "rubick_finished_stolen_spell", HideRubickSpellStealWarning )
+
+// Dev Cheat Panel
+
+function CheatToRound( nRound )
+{
+	$.Msg( "Cheating to round " + nRound );
+	GameEvents.SendCustomGameEventToServer( "cheat_to_round", { "round_number": nRound } );
+}
+
+function CheatToNextRound()
+{
+	var key = 0;
+	var roundData = CustomNetTables.GetTableValue( "round_data", key.toString() );
+	if ( roundData !== null )
+	{
+		if (roundData.round_number < 15)
+		{
+			CheatToRound( roundData.round_number + 1 );
+		}
+	}
+}
+
+function CheatToFinalRound()
+{
+	CheatToRound( 15 );
+}
+
+$.RegisterEventHandler( 'DropDownSelectionChanged', $( '#CheatRounds' ), function ()
+{
+	var selectedPanel = $('#CheatRounds').GetSelected();
+	var nRound = parseInt( selectedPanel.text );
+	CheatToRound( nRound );
+});

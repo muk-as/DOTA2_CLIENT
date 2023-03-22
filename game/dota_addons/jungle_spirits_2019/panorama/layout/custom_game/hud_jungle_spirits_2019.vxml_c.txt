@@ -1,0 +1,124 @@
+<!-- xml reconstructed by ValveResourceFormat: https://vrf.steamdb.info/ -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/battle_pass/international2019/bp_international2019_shared.vcss_c" />
+		<include src="s2r://panorama/styles/hud_jungle_spirits_2019.vcss_c" />
+	</styles>
+	<scripts>
+		<include src="s2r://panorama/scripts/hud_jungle_spirits_2019.vjs_c" />
+	</scripts>
+	<snippets>
+		<snippet name="MarchParticlesRadiant">
+			<Panel>
+				<DOTAScenePanel class="MarchParticle_FX" map="active_beast_ui_particle" camera="shot_camera" />
+			</Panel>
+		</snippet>
+		<snippet name="MarchParticlesDire">
+			<Panel>
+				<DOTAScenePanel class="MarchParticle_FX" map="active_beast_ui_dire_particle" camera="shot_camera" />
+			</Panel>
+		</snippet>
+		<snippet name="MorokaiAbilityLearnedToast">
+			<Panel class="MorokaiToast LeftRightFlow" onactivate="OnToastClicked()">
+				<DOTAAbilityImage id="MorokaiAbilityLearned" showtooltip="true" />
+				<Panel class="TopBottomFlow">
+					<Panel class="UpgradeToastHeader LeftRightFlow">
+						<Panel class="UpgradeIcon" />
+						<Label class="MorokaiLearnedHeaderBranch" text="{s:branch_name}" />
+						<DOTAHeroImage id="UpgradingPlayerHero" heroimagestyle="icon" />
+					</Panel>
+					<Panel class="TopBottomFlow AbilityToast">
+						<Label class="MorokaiLearnedAbilityName" text="{s:ability_learned_name}" />
+						<Label class="MorokaiLearnedAbilityDesc" text="{s:ability_learned_desc}" />
+					</Panel>
+				</Panel>
+			</Panel>
+		</snippet>
+	</snippets>
+	<Panel hittest="false" class="CustomHudRoot">
+		<Panel id="JungleSpiritsHUD" hittest="false">
+			<Panel id="MorokaiAbilities" class="Hidden">
+				<Panel class="ClickCatcher" onactivate="ToggleSkillTree()" oncontextmenu="ToggleSkillTree()" />
+				<Panel class="SkillTree" hittest="true">
+					<Panel id="SkillNames">
+						<Panel id="SpiritTitle" class="Category">
+							<Panel id="CategoryIcon" onactivate="OnBranchAbilityButtonClicked( 1 )" />
+							<Label text="#spirit_branch" />
+						</Panel>
+						<Panel id="WrathTitle" class="Category">
+							<Panel id="CategoryIcon" onactivate="OnBranchAbilityButtonClicked( 3 )" />
+							<Label text="#wrath_branch" />
+						</Panel>
+						<Panel id="StormTitle" class="Category">
+							<Panel id="CategoryIcon" onactivate="OnBranchAbilityButtonClicked( 2 )" />
+							<Label text="#storm_branch" />
+						</Panel>
+					</Panel>
+					<Panel id="SkillColumns">
+						<Panel id="JungleColumn" class="SkillColumn" onactivate="OnBranchAbilityButtonClicked( 1 )" />
+						<Panel id="VolcanoColumn" class="SkillColumn" onactivate="OnBranchAbilityButtonClicked( 3 )" />
+						<Panel id="StormColumn" class="SkillColumn" onactivate="OnBranchAbilityButtonClicked( 2 )" />
+					</Panel>
+				</Panel>
+			</Panel>
+			<Panel id="JungleSpiritsDisplayUI" hittest="false" hittestchildren="false">
+				<Panel class="MorokaiSide MorokaiSide_Radiant">
+					<Panel id="MarchParticleRadiant" class="MarchParticle" />
+					<Panel id="MorokaiContainerRadiant" class="MorokaiContainer" />
+				</Panel>
+				<Panel class="MorokaiSide MorokaiSide_Dire">
+					<Panel id="MarchParticleDire" class="MarchParticle" />
+					<Panel id="MorokaiContainerDire" class="MorokaiContainer" />
+				</Panel>
+				<Panel id="MorokaiTimer">
+					<Label text="{s:time_until_morokai_march}" />
+					<Panel class="MorokaiIcon Radiant" />
+					<Panel id="MorokaiMarchBG" />
+					<Panel id="MorokaiMarchIcon" />
+					<Panel class="MorokaiIcon Dire" />
+				</Panel>
+			</Panel>
+			<Panel id="MorokaiEssenceMeterOuter" hittest="false">
+				<Panel id="MorokaiEssenceMeter">
+					<Panel class="MorokaiEssenceBackground" />
+					<Panel class="MorokaiEssenceContainer">
+						<DOTAScenePanel id="MorokaiEssence" class="MorokaiEssence" map="morokai_meter_interior" camera="shot_camera" particleonly="true" hittest="false" />
+					</Panel>
+					<Panel class="MorokaiEssenceForeground" onactivate="ToggleSkillTree()" />
+					<Panel class="MorokaiEssenceForegroundLit" />
+					<Label class="GemCount" text="{d:gems_count}/{d:upgrade_cost}" />
+					<Panel class="InfoIcon" onmouseover="UIShowTextTooltip( #Morokai_EssenceMeter_Tooltip )" onmouseout="UIHideTextTooltip()" />
+					<DOTAScenePanel class="MorokaiEssenceFullGlow" map="morokai_meter_full" camera="shot_camera" particleonly="true" hittest="false" />
+				</Panel>
+			</Panel>
+		</Panel>
+		<Panel id="GameInfoPopup" class="Visible" hittest="false" oncancel="OnHelpOkButtonClicked()">
+			<Panel id="DarkWillowImage" />
+			<Panel id="BeastImage" />
+			<Panel class="GameInfoContents">
+				<Panel id="ObjectiveContainer" class="TopBottomFlow">
+					<Panel class="MorokaiLogo" />
+					<Label id="BriefDescription" text="#jungle_spirits_game_info_brief_description" />
+				</Panel>
+				<Panel id="JungleDescription" class="LeftRightFlow">
+					<Panel class="DescriptionGroup">
+						<Image class="BodyImage" scaling="stretch-to-fit-y-preserve-aspect" src="s2r://panorama/images/tutorial_1_png.vtex" />
+						<Label class="BodyText" html="true" text="#jungle_game_info_desc_group_1" />
+					</Panel>
+					<Panel class="DescriptionGroup">
+						<Image class="BodyImage" scaling="stretch-to-fit-y-preserve-aspect" src="s2r://panorama/images/tutorial_2_png.vtex" />
+						<Label class="BodyText" html="true" text="#jungle_game_info_desc_group_2" />
+					</Panel>
+					<Panel class="DescriptionGroup">
+						<Image class="BodyImage" scaling="stretch-to-fit-y-preserve-aspect" src="s2r://panorama/images/tutorial_3_png.vtex" />
+						<Label class="BodyText" html="true" text="#jungle_game_info_desc_group_3" />
+					</Panel>
+				</Panel>
+			</Panel>
+			<TextButton id="OkButton" class="BattlePassBrightButton" text="#jungle_game_info_ok" onactivate="OnHelpOkButtonClicked()" />
+		</Panel>
+		<ToastManager id="ToastManager" hittest="false" toastduration="8.0s" maxtoastsvisible="3" />
+	</Panel>
+</root>

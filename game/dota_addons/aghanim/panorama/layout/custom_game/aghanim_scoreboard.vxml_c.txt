@@ -1,0 +1,224 @@
+<!-- xml reconstructed by ValveResourceFormat: https://vrf.steamdb.info/ -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/hudstyles.vcss_c" />
+		<include src="s2r://panorama/styles/custom_game/hud_main.vcss_c" />
+		<include src="s2r://panorama/styles/custom_game/rewards_shared.vcss_c" />
+		<include src="s2r://panorama/styles/custom_game/aghanim_scoreboard.vcss_c" />
+	</styles>
+	<scripts>
+		<include src="s2r://panorama/scripts/custom_game/blessing_vdata.vjs_c" />
+		<include src="s2r://panorama/scripts/custom_game/aghanim_scoreboard.vjs_c" />
+	</scripts>
+	<snippets>
+		<snippet name="RoomReward">
+			<Panel class="RoomReward" onmouseout="UIHideTextTooltip();" onmouseover="UIShowTextTooltip( {s:reward_name} );">
+				<Panel class="RoomRewardImage" />
+			</Panel>
+		</snippet>
+		<snippet name="RewardOptionSnippet_REWARD_TYPE_GOLD">
+			<Panel class="TopBottomFlow" onmouseout="UIHideTitleTextTooltip();" onmouseover="UIShowTitleTextTooltip( {s:reward_name}, {s:reward_description} );">
+				<Panel class="GoldIcon RewardIcon" />
+			</Panel>
+		</snippet>
+		<snippet name="RewardOptionSnippet_REWARD_TYPE_ITEM">
+			<Panel class="TopBottomFlow" onmouseout="UIHideTitleTextTooltip();" onmouseover="UIShowTitleTextTooltip( {s:reward_name}, {s:reward_description} );">
+				<DOTAItemImage id="RewardItemImage" class="RewardIcon" />
+			</Panel>
+		</snippet>
+		<snippet name="RewardOptionSnippet_REWARD_TYPE_EXTRA_LIVES">
+			<Panel class="TopBottomFlow" onmouseout="UIHideTitleTextTooltip();" onmouseover="UIShowTitleTextTooltip( {s:reward_name}, {s:reward_description} );">
+				<Panel class="ExtraLifeIcon RewardIcon" />
+			</Panel>
+		</snippet>
+		<snippet name="RewardOptionSnippet_REWARD_TYPE_ABILITY_UPGRADE">
+			<Panel class="TopBottomFlow" onmouseout="UIHideTitleTextTooltip();" onmouseover="UIShowTitleTextTooltip( {s:reward_name}, {s:reward_description} );">
+				<DOTAAbilityImage id="RewardAbilityImage" class="RewardIcon" />
+			</Panel>
+		</snippet>
+		<snippet name="RewardOptionSnippet_REWARD_TYPE_MINOR_ABILITY_UPGRADE">
+			<Panel class="TopBottomFlow" onmouseout="UIHideTitleTextTooltip();" onmouseover="UIShowTitleTextTooltip( {s:reward_name}, {s:reward_description} );">
+				<DOTAAbilityImage id="RewardAbilityImage" class="RewardIcon" />
+			</Panel>
+		</snippet>
+		<snippet name="RewardOptionSnippet_REWARD_TYPE_MINOR_STATS_UPGRADE">
+			<Panel class="TopBottomFlow" onmouseout="UIHideTitleTextTooltip();" onmouseover="UIShowTitleTextTooltip( {s:reward_name}, {s:reward_description} );">
+				<Panel id="RewardAbilityImage" class="RewardIcon" />
+			</Panel>
+		</snippet>
+		<snippet name="Blessing">
+			<Panel class="Blessing" onmouseout="UIHideTextTooltip();" onmouseover="UIShowTextTooltip( {s:blessing_name} );">
+				<Panel id="BlessingImage" />
+				<Panel id="BlessingFrame" class="BlessingImageCenter" />
+			</Panel>
+		</snippet>
+		<snippet name="BlessingRow">
+			<Panel class="BlessingRow">
+				<Panel hittest="false" id="PlayerColor" class="PlayerColor" />
+				<DOTAHeroImage hittest="false" id="HeroImage" class="PlayerHeroImage" heroimagestyle="icon" />
+				<Panel hittest="false" class="PlayerNamesContainer TopBottomFlow">
+					<Label hittest="false" id="PlayerName" class="PlayerName" text="" />
+					<Label hittest="false" id="PlayerHeroName" class="HeroName" text="" />
+				</Panel>
+				<Panel id="BlessingsList" />
+			</Panel>
+		</snippet>
+		<snippet name="AttributeBuffLineItemSnippet">
+			<Panel class="AttributeBuffLineItem" hittest="true">
+				<Panel id="AttributeBuffSourceIcon" class="AttributeBuffSourceIcon" />
+				<Label class="AttributeBuffLineItemLabel AghanimLabelSmall" text="{s:line_item_text}" />
+			</Panel>
+		</snippet>
+	</snippets>
+	<Panel hittest="true" class="FlyoutScoreboardRoot">
+		<Button id="CloseButton" class="CloseButton" onactivate="CloseAghanimScoreboard();" />
+		<Panel id="AghanimScoreboard" onactivate="DummyClickAghanimScoreboard();">
+			<Panel hittest="false" id="CharacterDetailsContainer">
+				<Panel hittest="false" class="CharacterDetailsLeft">
+					<Label hittest="false" id="CharacterName" class="AghanimLabelHeader" text="{s:local_player_hero_name}" />
+					<DOTAScenePanel id="CharacterScenePanel" camera="default_camera" unit="npc_dota_hero_void_spirit" renderdeferred="true" deferredalpha="true" antialias="true" particleonly="false" hittest="false" />
+				</Panel>
+				<Panel hittest="false" class="CharacterDetailsAbilities">
+					<Panel id="AbilityUpgradesOuter" class="AbilityUpgradesOuter">
+						<Panel id="CharacterDetailsAbility1" class="AbilityUpgradesContainer">
+							<DOTAAbilityImage id="AttributeAbilityBackgroundImage1" class="AbilityUpgradesBackground" />
+							<Panel class="AttributeClassHeader">
+								<DOTAAbilityImage id="AttributeAbilityImage1" class="AttributeIcon">
+									<Label class="AttributeBuffCount AghanimLabelSmall" text="{d:upgrade_count}" />
+								</DOTAAbilityImage>
+								<Label class="AttributeNameLabel AghanimLabelSmall" text="{s:ability_name}" />
+								<Label class="AttributeBuffCount AghanimLabelSmall StandaloneCount" text="{d:upgrade_count}" />
+							</Panel>
+							<Panel id="AbilityBuffList1" class="AttributeBuffList" />
+						</Panel>
+						<Panel id="CharacterDetailsAbility2" class="AbilityUpgradesContainer">
+							<DOTAAbilityImage id="AttributeAbilityBackgroundImage2" class="AbilityUpgradesBackground" />
+							<Panel class="AttributeClassHeader">
+								<DOTAAbilityImage id="AttributeAbilityImage2" class="AttributeIcon">
+									<Label class="AttributeBuffCount AghanimLabelSmall" text="{d:upgrade_count}" />
+								</DOTAAbilityImage>
+								<Label class="AttributeNameLabel AghanimLabelSmall" text="{s:ability_name}" />
+								<Label class="AttributeBuffCount AghanimLabelSmall StandaloneCount" text="{d:upgrade_count}" />
+							</Panel>
+							<Panel id="AbilityBuffList2" class="AttributeBuffList" />
+						</Panel>
+						<Panel id="CharacterDetailsAbility3" class="AbilityUpgradesContainer">
+							<DOTAAbilityImage id="AttributeAbilityBackgroundImage3" class="AbilityUpgradesBackground" />
+							<Panel class="AttributeClassHeader">
+								<DOTAAbilityImage id="AttributeAbilityImage3" class="AttributeIcon">
+									<Label class="AttributeBuffCount AghanimLabelSmall" text="{d:upgrade_count}" />
+								</DOTAAbilityImage>
+								<Label class="AttributeNameLabel AghanimLabelSmall" text="{s:ability_name}" />
+								<Label class="AttributeBuffCount AghanimLabelSmall StandaloneCount" text="{d:upgrade_count}" />
+							</Panel>
+							<Panel id="AbilityBuffList3" class="AttributeBuffList" />
+						</Panel>
+						<Panel id="CharacterDetailsAbility4" class="AbilityUpgradesContainer">
+							<DOTAAbilityImage id="AttributeAbilityBackgroundImage4" class="AbilityUpgradesBackground" />
+							<Panel class="AttributeClassHeader">
+								<DOTAAbilityImage id="AttributeAbilityImage4" class="AttributeIcon">
+									<Label class="AttributeBuffCount AghanimLabelSmall" text="{d:upgrade_count}" />
+									<Label class="AttributeBuffCount AghanimLabelSmall" text="{d:upgrade_count}" />
+								</DOTAAbilityImage>
+								<Label class="AttributeNameLabel AghanimLabelSmall" text="{s:ability_name}" />
+								<Label class="AttributeBuffCount AghanimLabelSmall StandaloneCount" text="{d:upgrade_count}" />
+							</Panel>
+							<Panel id="AbilityBuffList4" class="AttributeBuffList" />
+						</Panel>
+						<Panel id="GenericBuffsColumn">
+							<Label class="GenericBuffsLabel AghanimLabelSmall" text="#DOTA_HUD_GenericBuffs" />
+							<Panel id="GenericBuffList" class="AttributeBuffList" />
+						</Panel>
+					</Panel>
+				</Panel>
+			</Panel>
+			<Panel hittest="false" id="PlayerContainer" class="TopBottomFlow">
+				<Panel hittest="false" id="PlayerScoreHeader" class="LeftRightFlow">
+					<Label hittest="false" class="AghanimLabelSmall Header Mute" text="#DOTA_HUD_Mute" />
+					<Label hittest="false" class="AghanimLabelSmall Header" text="#DOTA_HUD_Kills" />
+					<Label hittest="false" class="AghanimLabelSmall Header" text="#DOTA_HUD_Deaths" />
+					<Label hittest="false" class="AghanimLabelSmall Header" text="#DOTA_HUD_Bags" />
+					<Label hittest="false" class="AghanimLabelSmall Header Rewards" text="#DOTA_HUD_Rewards" />
+				</Panel>
+				<Panel hittest="false" id="Player0" class="PlayerRow LeftRightFlow">
+					<Panel hittest="false" id="Player0Color" class="PlayerColor" />
+					<DOTAHeroImage hittest="false" id="Player0HeroImage" class="PlayerHeroImage" heroimagestyle="icon" heroid="55" />
+					<Panel hittest="false" class="PlayerNamesContainer TopBottomFlow">
+						<Label hittest="false" id="Player0PlayerName" class="PlayerName" text="Jonathan" />
+						<Label hittest="false" id="Player0HeroName" class="HeroName" text="Jakiro" />
+					</Panel>
+					<Panel class="MuteButtonContainer">
+						<Button id="Player0MuteButton" class="MuteButton" onactivate="ToggleMute( 0 );" />
+					</Panel>
+					<Label hittest="false" id="Player0Kills" class="AghanimLabelSmall ScoreLabel" text="0" />
+					<Label hittest="false" id="Player0Deaths" class="AghanimLabelSmall ScoreLabel" text="0" />
+					<Label hittest="false" id="Player0Bags" class="AghanimLabelSmall ScoreLabel" text="0" />
+					<Panel hittest="false" id="Player0Rewards" />
+				</Panel>
+				<Panel hittest="false" id="Player1" class="PlayerRow LeftRightFlow">
+					<Panel hittest="false" id="Player1Color" class="PlayerColor" />
+					<DOTAHeroImage hittest="false" id="Player1HeroImage" class="PlayerHeroImage" heroimagestyle="icon" heroid="55" />
+					<Panel hittest="false" class="PlayerNamesContainer TopBottomFlow">
+						<Label hittest="false" id="Player1PlayerName" class="PlayerName" text="Jonathan" />
+						<Label hittest="false" id="Player1HeroName" class="HeroName" text="Jakiro" />
+					</Panel>
+					<Panel class="MuteButtonContainer">
+						<Button id="Player1MuteButton" class="MuteButton" onactivate="ToggleMute( 1 );" />
+					</Panel>
+					<Label hittest="false" id="Player1Kills" class="AghanimLabelSmall ScoreLabel" text="0" />
+					<Label hittest="false" id="Player1Deaths" class="AghanimLabelSmall ScoreLabel" text="0" />
+					<Label hittest="false" id="Player1Bags" class="AghanimLabelSmall ScoreLabel" text="0" />
+					<Panel hittest="false" id="Player1Rewards" />
+				</Panel>
+				<Panel hittest="false" id="Player2" class="PlayerRow LeftRightFlow">
+					<Panel hittest="false" id="Player2Color" class="PlayerColor" />
+					<DOTAHeroImage hittest="false" id="Player2HeroImage" class="PlayerHeroImage" heroimagestyle="icon" heroid="55" />
+					<Panel hittest="false" class="PlayerNamesContainer TopBottomFlow">
+						<Label hittest="false" id="Player2PlayerName" class="PlayerName" text="Jonathan" />
+						<Label hittest="false" id="Player2HeroName" class="HeroName" text="Jakiro" />
+					</Panel>
+					<Panel class="MuteButtonContainer">
+						<Button id="Player2MuteButton" class="MuteButton" onactivate="ToggleMute( 2 );" />
+					</Panel>
+					<Label hittest="false" id="Player2Kills" class="AghanimLabelSmall ScoreLabel" text="0" />
+					<Label hittest="false" id="Player2Deaths" class="AghanimLabelSmall ScoreLabel" text="0" />
+					<Label hittest="false" id="Player2Bags" class="AghanimLabelSmall ScoreLabel" text="0" />
+					<Panel hittest="false" id="Player2Rewards" />
+				</Panel>
+				<Panel hittest="false" id="Player3" class="PlayerRow LeftRightFlow">
+					<Panel hittest="false" id="Player3Color" class="PlayerColor" />
+					<DOTAHeroImage hittest="false" id="Player3HeroImage" class="PlayerHeroImage" heroimagestyle="icon" heroid="55" />
+					<Panel hittest="false" class="PlayerNamesContainer TopBottomFlow">
+						<Label hittest="false" id="Player3PlayerName" class="PlayerName" text="Jonathan" />
+						<Label hittest="false" id="Player3HeroName" class="HeroName" text="Jakiro" />
+					</Panel>
+					<Panel class="MuteButtonContainer">
+						<Button id="Player3MuteButton" class="MuteButton" onactivate="ToggleMute( 3 );" />
+					</Panel>
+					<Label hittest="false" id="Player3Kills" class="AghanimLabelSmall ScoreLabel" text="0" />
+					<Label hittest="false" id="Player3Deaths" class="AghanimLabelSmall ScoreLabel" text="0" />
+					<Label hittest="false" id="Player3Bags" class="AghanimLabelSmall ScoreLabel" text="0" />
+					<Panel hittest="false" id="Player3Rewards" />
+				</Panel>
+				<Panel hittest="false" class="RoomRewards PlayerRow LeftRightFlow">
+					<Label hittest="false" class="RoomRewardsLabel" text="#DOTA_HUD_RoomRewards" />
+					<Panel hittest="false" id="RoomRewardsList" />
+				</Panel>
+			</Panel>
+			<Panel class="BlessingsContainer">
+				<Button class="ShowBlessingsButton" onactivate="ToggleBlessings();">
+					<Panel class="ShowBlessings">
+						<Panel id="BlessingsIcon" />
+						<Label text="#DOTA_HUD_ShowBlessings" />
+					</Panel>
+					<Panel class="HideBlessings">
+						<Panel id="BlessingsIcon" />
+						<Label text="#DOTA_HUD_HideBlessings" />
+					</Panel>
+				</Button>
+				<Panel id="BlessingPlayers" />
+			</Panel>
+		</Panel>
+	</Panel>
+</root>

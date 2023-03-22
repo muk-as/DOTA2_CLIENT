@@ -1,0 +1,752 @@
+"use strict";
+
+//-----------------------------------------------------------------------------------------
+function intToARGB(i) 
+{ 
+                return ('00' + ( i & 0xFF).toString( 16 ) ).substr( -2 ) +
+                                               ('00' + ( ( i >> 8 ) & 0xFF ).toString( 16 ) ).substr( -2 ) +
+                                               ('00' + ( ( i >> 16 ) & 0xFF ).toString( 16 ) ).substr( -2 ) + 
+                                                ('00' + ( ( i >> 24 ) & 0xFF ).toString( 16 ) ).substr( -2 );
+}
+
+//-----------------------------------------------------------------------------------------
+$.Schedule( 0.1, function () 
+{
+    // Startup code
+    for ( var nPlayerID = 0; nPlayerID < 4; ++nPlayerID )
+    {
+		var playerData = CustomNetTables.GetTableValue( "aghanim_scores", nPlayerID.toString() );
+		if ( playerData == null )
+		{
+			playerData = { kills: 0, death_count: 0, gold_bags: 0 };
+		}
+	   	UpdateScoreboard( nPlayerID, playerData );
+    }
+    UpdateBlessings();
+  	PopulateClaimedRewardsHud();
+});
+
+
+function ToggleMute( nPlayerID )
+{
+	if ( nPlayerID !== -1 )
+	{
+		var newIsMuted = !Game.IsPlayerMuted( nPlayerID );
+		Game.SetPlayerMuted( nPlayerID, newIsMuted );
+		
+		var playerRowPanelPrefix = "Player" + nPlayerID;
+		var playerRow = $( "#AghanimScoreboard" ).FindChildInLayoutFile( playerRowPanelPrefix );
+		playerRow.SetHasClass( "player_muted", newIsMuted );
+	}	
+}
+
+function UpdateScoreboard( playerID, data )
+{
+	var playerRowPanelPrefix = "Player" + playerID;
+	var playerRow = $( "#AghanimScoreboard" ).FindChildInLayoutFile( playerRowPanelPrefix );
+	if ( playerRow === null )
+		return;
+
+	playerRow.SetHasClass( "Hide", false );
+	playerRow.SetHasClass( "player_muted", Game.IsPlayerMuted( playerID ) )
+	playerRow.SetHasClass( "local_player", Game.GetLocalPlayerID() == playerID )
+
+	var playerKills = playerRow.FindChildInLayoutFile( playerRowPanelPrefix + "Kills" );
+	playerKills.text = data["kills"];
+
+	var playerDeaths = playerRow.FindChildInLayoutFile( playerRowPanelPrefix + "Deaths" );
+	playerDeaths.text = data["death_count"];
+
+	var playerBags = playerRow.FindChildInLayoutFile( playerRowPanelPrefix + "Bags" );
+	playerBags.text = data["gold_bags"];
+
+	UpdateUpgradeDetails();
+}
+
+function UpdateBlessings()
+{
+	var blessingRadii = {};
+	Object.keys( BLESSINGS.m_mapBlessings ).forEach( blessingName =>
+	{
+		var blessing = BLESSINGS.m_mapBlessings[blessingName];
+		var blessingType = blessing.BlessingType;
+		var pos = blessing.vecPos || [0, 0];
+		var radiusSq = pos[0] * pos[0] + pos[1] * pos[1];
+		if ( blessingRadii[blessingType] == null || radiusSq < blessingRadii[blessingType] )
+			blessingRadii[blessingType] = radiusSq;
+	} );
+	var blessingKeys = Object.keys( BLESSINGS.m_mapBlessingTypes );
+	blessingKeys.sort( ( key1, key2 ) =>
+	{
+		var c = compare( blessingRadii[key1], blessingRadii[key2] );
+		if ( c !== 0 ) return c;
+		return compare( key1, key2 );
+	} );
+
+	var blessingsData = CustomNetTables.GetTableValue( "game_global", "blessings" );
+	Object.keys( blessingsData ).forEach( function( szPlayerID ) 
+	{
+		var blessingsRow = $( "#BlessingPlayers" ).FindChildInLayoutFile( szPlayerID );
+		if ( blessingsRow === null )
+			return;
+
+		var blessingsList = blessingsRow.FindChildInLayoutFile( "BlessingsList" );
+		blessingsList.RemoveAndDeleteChildren();
+
+		var playerBlessings = blessingsData[szPlayerID];
+
+		blessingKeys.forEach( function( szBlessing ) 
+		{
+			var nBlessingValue = playerBlessings[szBlessing];
+			if ( nBlessingValue == null || nBlessingValue == 0 )
+				return;
+
+			var blessingPanel = $.CreatePanel( 'Panel', blessingsList, '' );
+			blessingPanel.BLoadLayoutSnippet( "Blessing" );
+
+			var blessingType = BLESSINGS.m_mapBlessingTypes[szBlessing];
+			var szBlessingImage = 'url(' + blessingType.szIconImage.substr( 9 ) + ')';
+			var blessingImage = blessingPanel.FindChildInLayoutFile( "BlessingImage" );
+			blessingImage.style.backgroundImage = szBlessingImage;
+			blessingImage.AddClass( "BlessingImageCenter" ); // Adding this class late fixes a bug where images aren't laying out
+
+			blessingPanel.SetDialogVariableInt( "instance_value", nBlessingValue );
+			blessingPanel.SetDialogVariable( "blessing_name", $.Localize( "DOTA_LabyrinthBlessing_" + szBlessing + "_Name", blessingPanel ) );
+			blessingPanel.SetDialogVariable( "blessing_description", $.Localize( "DOTA_LabyrinthBlessing_" + szBlessing + "_Desc", blessingPanel ) );
+		} );
+	} );
+}
+
+CustomNetTables.SubscribeNetTableListener( "game_global", UpdateBlessings )
+
+function ToggleBlessings()
+{
+	$.GetContextPanel().ToggleClass( "BlessingsVisible" );
+}
+
+function InitializeScoreboard()
+{
+	var i = 0
+	for ( i; i < 4; i++ )
+	{
+		var playerID = i;
+		var playerRowPanelPrefix = "Player" + playerID;
+		var playerHeroEntIndex = Players.GetPlayerHeroEntityIndex( playerID );
+		var playerRow = $( "#PlayerContainer" ).FindChildInLayoutFile( playerRowPanelPrefix );
+
+		var colorInt = Players.GetPlayerColor( playerID );
+		var colorString = "#" + intToARGB( colorInt );
+
+		if ( playerRow !== null )
+		{
+			playerRow.SetHasClass( "player_muted", Game.IsPlayerMuted( playerID ) )
+			playerRow.SetHasClass( "local_player", Game.GetLocalPlayerID() == playerID )
+			playerRow.SetAttributeInt( "player_id", playerID );
+
+			var playerColor = playerRow.FindChildInLayoutFile( playerRowPanelPrefix + "Color" );
+			playerColor.style.backgroundColor = colorString;
+
+			var playerHeroNameLabel = playerRow.FindChildInLayoutFile( playerRowPanelPrefix + "HeroName" );
+			playerHeroNameLabel.text = Players.GetPlayerSelectedHero( playerID );
+			if ( playerHeroNameLabel.text === "invalid index" )
+			{
+				 playerHeroNameLabel.text = "";
+			} 
+
+			var playerNameLabel = playerRow.FindChildInLayoutFile( playerRowPanelPrefix + "PlayerName" );
+			playerNameLabel.text = Players.GetPlayerName( playerID );
+
+			var playerHeroImage = playerRow.FindChildInLayoutFile( playerRowPanelPrefix + "HeroImage" );
+			playerHeroImage.heroname = Players.GetPlayerSelectedHero( playerID );
+
+			var playerKills = playerRow.FindChildInLayoutFile( playerRowPanelPrefix + "Kills" );
+			playerKills.text = 0;
+
+			var playerDeaths = playerRow.FindChildInLayoutFile( playerRowPanelPrefix + "Deaths" );
+			playerDeaths.text = 0;
+
+			var playerBags = playerRow.FindChildInLayoutFile( playerRowPanelPrefix + "Bags" );
+			playerBags.text = 0;
+		}
+
+		var blessingsRow = $.CreatePanel( 'Panel', $( "#BlessingPlayers" ), playerID.toString() );
+		blessingsRow.BLoadLayoutSnippet( "BlessingRow" );
+		blessingsRow.SetHasClass( "local_player", Game.GetLocalPlayerID() == playerID )
+		blessingsRow.SetAttributeInt( "player_id", playerID );
+
+		var playerColor = blessingsRow.FindChildInLayoutFile( "PlayerColor" );
+		playerColor.style.backgroundColor = colorString;
+
+		var playerHeroNameLabel = blessingsRow.FindChildInLayoutFile( "PlayerHeroName" );
+		playerHeroNameLabel.text = Players.GetPlayerSelectedHero( playerID );
+		if ( playerHeroNameLabel.text === "invalid index" )
+		{
+			 playerHeroNameLabel.text = "";
+		} 
+
+		var playerNameLabel = blessingsRow.FindChildInLayoutFile( "PlayerName" );
+		playerNameLabel.text = Players.GetPlayerName( playerID );
+
+		var playerHeroImage = blessingsRow.FindChildInLayoutFile( "HeroImage" );
+		playerHeroImage.heroname = Players.GetPlayerSelectedHero( playerID );
+	}
+
+	UpdateUpgradeDetails();
+}
+
+function UpdateRoomRewards()
+{
+	var hRewardsList = $( "#RoomRewardsList" );
+	hRewardsList.RemoveAndDeleteChildren();
+
+	var hAllRoomData = CustomNetTables.GetAllTableValues( "room_data" );
+	for ( var i = 0; i < hAllRoomData.length; ++i )
+	{	
+		var roomData = hAllRoomData[i]["value"];
+ 		if ( roomData == null )
+			continue;
+
+		if ( Number( roomData["completed"] ) != 1 && Number( roomData["current_room"] ) != 1 )
+			continue;
+
+		if ( roomData["room_type"] == 5 || 
+			roomData["room_type"] == 6 || 
+			roomData["room_type"] == 7 || 
+			roomData["room_type"] == 1 ||
+			roomData["room_type"] == 0 )
+			continue;
+
+		if ( roomData["reward"] == null )
+			continue;
+
+		var nOrder = Number( roomData["depth"] );
+
+		var hBeforeChild = null;
+		for ( var nChild = 0; nChild < hRewardsList.GetChildCount(); nChild++ )
+		{
+			var hChild = hRewardsList.GetChild( nChild );
+			if ( hChild == null )
+				continue;
+
+			if ( hChild.GetAttributeInt( "order", 0 ) >= nOrder )
+			{
+				hBeforeChild = hChild;
+				break;
+			}
+		}
+
+		var reward = $.CreatePanel( 'Panel', hRewardsList, roomData[ "room_name" ] );
+ 		reward.BLoadLayoutSnippet( "RoomReward" );
+       if ( hBeforeChild != null )
+        {
+        	hRewardsList.MoveChildBefore( reward, hBeforeChild );
+        }
+        reward.SetAttributeInt( "order", nOrder );
+		reward.AddClass( roomData["reward"] );
+		reward.SetDialogVariable("reward_name", $.Localize( "DOTA_HUD_" + roomData["reward"] + "_Desc" ) );
+    }
+}
+
+function OnScoreboardDataUpdated( table_name, key, data )
+{
+	UpdateScoreboard( Number( key ), data );
+}
+
+CustomNetTables.SubscribeNetTableListener( "aghanim_scores", OnScoreboardDataUpdated )
+
+function OnRoomDataUpdated( table_name, key, data )
+{
+	UpdateRoomRewards( );
+}
+
+CustomNetTables.SubscribeNetTableListener( "room_data", OnRoomDataUpdated )
+
+function SetFlyoutScoreboardVisible( bVisible )
+{
+	if ( bVisible )
+	{
+		UpdateUpgradeDetails();
+	}
+	$.GetContextPanel().SetHasClass( "flyout_scoreboard_visible", bVisible );
+}
+
+// this is a dummy event to capture errant clicks on the scoreboard background
+function DummyClickAghanimScoreboard() { }
+
+function CloseAghanimScoreboard()
+{
+	$.DispatchEvent( "DOTAHUDToggleScoreboard" )
+	$.GetContextPanel().SetHasClass( "flyout_scoreboard_visible", false );
+	$.GetContextPanel().SetHasClass( "round_over", false );
+}
+
+(function()
+{	
+	InitializeScoreboard();
+	SetFlyoutScoreboardVisible( false );
+	
+	$.RegisterEventHandler( "DOTACustomUI_SetFlyoutScoreboardVisible", $.GetContextPanel(), SetFlyoutScoreboardVisible );
+})();
+
+
+function PopulateClaimedRewardsHud() 
+{
+	var CurrentRoom = CustomNetTables.GetTableValue( "reward_choices", "current_depth" );
+    var szCurrentDepth = CurrentRoom ? CurrentRoom["1"] : null;
+	if (szCurrentDepth == null)
+	{
+		//$.Msg("nCurrentDepth not found");
+		return;
+	}
+	
+	var nCurrentDepth = Number( szCurrentDepth );
+
+	//Reconstruct the reward choices for each player for each depth
+	var j = 0
+	for ( j; j < 4; j++ )
+	{	
+		var bNeedsRefresh = true;
+		var szPlayerID = j;
+
+		var i = 1
+		for ( i; i <= nCurrentDepth; i++ )
+		{			
+			var RewardChoices = CustomNetTables.GetTableValue( "reward_choices", i )	
+			if (!RewardChoices)
+			{
+				//$.Msg("RewardChoices for depth ", i, " not found");
+		        continue;
+			}
+
+			var RewardChoice = RewardChoices[szPlayerID]
+			if (!RewardChoice) 
+			{
+	        	//$.Msg("RewardChoice for PlayerID ", szPlayerID, " at depth ", i, " not found");
+	        	continue;
+    		}
+
+    		var playerRowPanelPrefix = "Player" + szPlayerID;
+			var playerRow = $( "#PlayerContainer" ).FindChildInLayoutFile( playerRowPanelPrefix );
+			var parentPanel = playerRow.FindChildInLayoutFile( "Player" + szPlayerID + "Rewards" );
+
+			if (bNeedsRefresh)
+			{
+				parentPanel.RemoveAndDeleteChildren(); 
+				bNeedsRefresh = false;	
+			}
+
+			var claimedRewardPanel = $.CreatePanel('Panel', parentPanel, '');
+    
+		    claimedRewardPanel.BLoadLayoutSnippet("RewardOptionSnippet_" + RewardChoice["reward_type"]);
+		    claimedRewardPanel.AddClass("RewardOptionContainer");
+		    claimedRewardPanel.AddClass("RewardOptionType_" + RewardChoice["reward_type"]);
+		    claimedRewardPanel.AddClass("RewardOptionTier_" + RewardChoice["reward_tier"]);
+		    claimedRewardPanel.AddClass("RewardOptionRarity_" + RewardChoice["rarity"]);
+
+		    var RewardAbilityImage = claimedRewardPanel.FindChildTraverse("RewardAbilityImage");
+		    if ( RewardAbilityImage ) 
+		    {
+		    	if ( RewardChoice[ "reward_type" ] == "REWARD_TYPE_MINOR_STATS_UPGRADE" )
+		    	{
+		        	RewardAbilityImage.SwitchClass( "minor_stat_upgrade", RewardChoice[ "description" ] );
+		        }
+		        else
+		        {
+		        	RewardAbilityImage.abilityname = RewardChoice["ability_name"];     	
+		        }
+		  		RewardAbilityImage.SetDialogVariable( "reward_name", GetName( RewardChoice, RewardAbilityImage ) );
+		    	RewardAbilityImage.SetDialogVariable( "reward_description", GetDescription( RewardChoice, RewardAbilityImage ) );
+		    }
+
+		    var RewardItemImage = claimedRewardPanel.FindChildTraverse("RewardItemImage");
+		    if (RewardItemImage) 
+		    {
+		        RewardItemImage.itemname = RewardChoice["ability_name"];
+		    }
+
+		    if (RewardChoice["quantity"]) 
+		    {
+		        claimedRewardPanel.SetDialogVariableInt("quantity", RewardChoice["quantity"]);
+		    }
+
+		    if ( RewardChoice[ "reward_type" ] == "REWARD_TYPE_MINOR_ABILITY_UPGRADE" || RewardChoice[ "reward_type" ] == "REWARD_TYPE_MINOR_STATS_UPGRADE") 
+		    {
+		        claimedRewardPanel.SetDialogVariable("ability_name", GetName(RewardChoice, claimedRewardPanel));
+		        for ( var n = 0; n < 3; n++ )
+	            {
+	                var szVarName = "value"
+	                if ( n > 0 )
+	                {
+	                    szVarName = "value" + n.toString(); 
+	                } 
+
+	                var flValue = RewardChoice[ szVarName ];
+	                //$.Msg( szVarName )
+	                if (typeof flValue === 'undefined' )
+	                    continue;
+
+	                claimedRewardPanel.SetDialogVariable( szVarName, Math.floor(flValue) == flValue ? Math.floor(flValue) : flValue.toFixed(2) );    
+	            }
+		    }
+		    claimedRewardPanel.SetDialogVariable("tier", $.Localize("DOTA_HUD_" + RewardChoice["reward_tier"] + "_Desc"));
+
+		    claimedRewardPanel.SetDialogVariable("reward_name", GetName(RewardChoice, claimedRewardPanel));
+		    claimedRewardPanel.SetDialogVariable("reward_description", GetDescription(RewardChoice, claimedRewardPanel));
+		}
+	}
+}
+
+CustomNetTables.SubscribeNetTableListener( "reward_choices", PopulateClaimedRewardsHud )
+
+
+function OnMinorAbilityUpgradesChanged( table_name, key, data )
+{
+	UpdateUpgradeDetails();
+}
+
+CustomNetTables.SubscribeNetTableListener( "minor_ability_upgrades", OnMinorAbilityUpgradesChanged )
+
+var g_nViewedHeroID = -1;
+var g_bAlwaysRebuild = false;
+
+function UpdateUpgradeDetails()
+{
+	var nPlayerID = Game.GetLocalPlayerID();
+	var szLocalPlayerHeroName = Players.GetPlayerSelectedHero( nPlayerID );
+	var nLocalHeroEntIndex = Players.GetPlayerHeroEntityIndex( nPlayerID );
+	var nHeroID = Players.GetSelectedHeroID( nPlayerID );
+	if ( nHeroID == -1 )
+		return;
+
+	if ( Players.IsSpectator( nPlayerID ) )
+	{
+		var nSelectedEntIndex = Players.GetLocalPlayerPortraitUnit();
+		var nPlayerOwnerID = Entities.GetPlayerOwnerID( nSelectedEntIndex );
+		if ( nPlayerOwnerID == -1 )
+		{
+			nPlayerOwnerID = 0;
+		}
+
+		nPlayerID = nPlayerOwnerID;
+		szLocalPlayerHeroName = Players.GetPlayerSelectedHero( nPlayerID );
+	    nLocalHeroEntIndex = Players.GetPlayerHeroEntityIndex( nPlayerID );
+		nHeroID = Players.GetSelectedHeroID( nPlayerID );
+		if ( nHeroID == -1 )
+			return;
+	}
+
+	if ( g_nViewedHeroID != nHeroID || g_bAlwaysRebuild )
+	{
+		$.GetContextPanel().SetDialogVariable( "local_player_hero_name", $.Localize( szLocalPlayerHeroName ) );
+		$( "#CharacterScenePanel" ).SetScenePanelToLocalHero( nHeroID );
+
+		var nAbilityCount = Entities.GetAbilityCount( nLocalHeroEntIndex );
+		var nCurrentAbilityUISlot = 1;
+
+		for ( var nAbilitySlot = 0; nAbilitySlot < nAbilityCount; nAbilitySlot++ )
+		{
+			var nEntAbilityIndex = Entities.GetAbility( nLocalHeroEntIndex, nAbilitySlot );
+			if ( nEntAbilityIndex == -1 || 
+				Abilities.IsHidden( nEntAbilityIndex ) || 
+				Abilities.IsActivated( nEntAbilityIndex ) == false ||
+				Abilities.CanAbilityBeUpgraded( nEntAbilityIndex ) == AbilityLearnResult_t.ABILITY_NOT_LEARNABLE )
+				continue;
+
+			var AbilityContainer = $( "#AbilityUpgradesOuter" ).FindChildTraverse( "CharacterDetailsAbility" + nCurrentAbilityUISlot.toString() );
+			if ( AbilityContainer == null )
+				break;
+			
+			var szAbilityName = Abilities.GetAbilityName( nEntAbilityIndex );
+
+		//	$.Msg( "Initializing ability " + szAbilityName );
+			AbilityContainer.SetAttributeString( "ability_name", szAbilityName );
+			AbilityContainer.SetAttributeInt( "ability_ui_slot", nCurrentAbilityUISlot );
+			AbilityContainer.SetDialogVariable( "ability_name", $.Localize( "DOTA_Tooltip_ability_" + szAbilityName, AbilityContainer ) );
+
+			var AbilityImage = AbilityContainer.FindChildTraverse( "AttributeAbilityImage" + nCurrentAbilityUISlot.toString() );
+			if ( AbilityImage == null )
+				break;
+
+			AbilityImage.abilityname = szAbilityName;
+
+			var BackgroundAbilityIcon =  AbilityContainer.FindChildTraverse( "AttributeAbilityBackgroundImage" + nCurrentAbilityUISlot.toString() );
+			if ( BackgroundAbilityIcon == null )
+				break;
+
+			BackgroundAbilityIcon.abilityname = szAbilityName;
+
+			var AbilityBuffList = AbilityContainer.FindChildTraverse( "AbilityBuffList" + nCurrentAbilityUISlot.toString() );
+			if ( AbilityBuffList == null )  
+				break;
+
+			AbilityBuffList.RemoveAndDeleteChildren();
+			AbilityContainer.SetDialogVariableInt( "upgrade_count", 0 );
+			AbilityContainer.SetHasClass( "NoUpgrades", true );
+
+		//	$.Msg( "Ability " + szAbilityName + " has been setup in the scoreboard successfully." );
+			nCurrentAbilityUISlot++;
+			if ( nCurrentAbilityUISlot > 4 )
+				break;
+		}	
+
+		if ( nCurrentAbilityUISlot > 4 )
+		{
+			g_nViewedHeroID = nHeroID;
+		}
+		else
+		{
+			//$.Msg( "error; could not find the hero's upgradable abilities" );
+			return;
+		}
+	}
+
+	var AbilityUpgradeData = CustomNetTables.GetTableValue( "minor_ability_upgrades", nPlayerID.toString() );
+	if ( AbilityUpgradeData == null )
+		return;
+
+	var MajorAbilityUpgradeData = CustomNetTables.GetTableValue( "major_ability_upgrades", nPlayerID.toString() );
+	if ( MajorAbilityUpgradeData == null )
+	{
+		$.Msg( "no major upgrades" );
+		return;
+	}
+
+	var AbilityContainers = $( "#AbilityUpgradesOuter" ).FindChildrenWithClassTraverse( "AbilityUpgradesContainer" );
+	for ( var i = 0; i < AbilityContainers.length; i++ )
+	{
+		var AbilityContainer = AbilityContainers[ i ];
+		if ( AbilityContainer == null )
+			continue;
+
+    	var nCurrentAbilityUISlot = AbilityContainer.GetAttributeInt( "ability_ui_slot", 0 );
+    	if ( nCurrentAbilityUISlot == 0 )
+    		continue;
+
+    	var CurrentAbilityBuffList = AbilityContainer.FindChildTraverse( "AbilityBuffList" + nCurrentAbilityUISlot.toString() );
+		if ( CurrentAbilityBuffList == null )  
+			continue;
+
+		CurrentAbilityBuffList.RemoveAndDeleteChildren();
+
+		var szAbilityName = AbilityContainer.GetAttributeString( "ability_name", "" );
+		var flAbilityUpgrades = 0;
+
+		Object.keys( MajorAbilityUpgradeData ).forEach( function( major_key ) 
+	    {
+	    	var MajorAbilityUpgrade = MajorAbilityUpgradeData[ major_key ];
+	    	if ( MajorAbilityUpgrade == null )
+	    		return;
+
+	    	if ( MajorAbilityUpgrade[ "ability_parent_name" ] != szAbilityName )
+	    		return;
+
+	    	var szUpgradeName = MajorAbilityUpgrade[ "ability_upgrade_name" ];
+
+	    	var MajorLineItem = $.CreatePanel( "Panel", CurrentAbilityBuffList, szUpgradeName );
+	    	MajorLineItem.BLoadLayoutSnippet( "AttributeBuffLineItemSnippet" );
+	    	MajorLineItem.SetDialogVariable( "line_item_text", $.Localize( "DOTA_Tooltip_ability_" + szUpgradeName ) );
+	    	MajorLineItem.SetHasClass( "LegendaryShard", true );
+
+	
+	    	(function( lineItem, szLocalizeAbilityName )
+	        {
+	            lineItem.SetPanelEvent( 'onmouseover', function () { $.DispatchEvent( 'UIShowTitleTextTooltip', lineItem, 
+	            	$.Localize(  "DOTA_Tooltip_ability_" + szLocalizeAbilityName  ), GameUI.ReplaceDOTAAbilitySpecialValues( szLocalizeAbilityName, $.Localize( "DOTA_Tooltip_ability_" + szLocalizeAbilityName + "_Description", lineItem ) ) ) } );
+   				lineItem.SetPanelEvent( 'onmouseout', function () { $.DispatchEvent( 'UIHideTitleTextTooltip', lineItem ); } );;
+	        })( MajorLineItem, szUpgradeName ); 
+	    	
+	    } );
+
+		Object.keys( AbilityUpgradeData ).forEach( function( key ) 
+	    {
+	    	var AbilityUpgrade = AbilityUpgradeData[ key ];
+	    	if ( AbilityUpgrade == null )
+	    		return;
+
+	    	if ( key.toString() != szAbilityName )
+	    		return;
+
+			Object.keys( AbilityUpgrade ).forEach( function( key2 ) 
+	   		{
+	   			var SpecialValueUpgrades = AbilityUpgrade[ key2 ];
+	    		if ( SpecialValueUpgrades == null )
+	    			return;
+
+	    		if ( key2.toString() == "AbilityChargeRestoreTime" )
+	    			return;
+	    		
+	    		var szSpecialValueName = key2.toString();
+	    		var LineItem = CurrentAbilityBuffList.FindChildTraverse( szSpecialValueName );
+	    		if ( LineItem == null )
+	    		{
+	    			LineItem = $.CreatePanel( "Panel", CurrentAbilityBuffList, szSpecialValueName );
+	    			LineItem.BLoadLayoutSnippet( "AttributeBuffLineItemSnippet" );
+	    		}
+
+	    		var flTotalValue = 0;
+	    		var flAddResult = 0;
+	    		var flMulResult = 1.0;
+	    		var flNumUpgrades = 0;
+	    		Object.keys( SpecialValueUpgrades ).forEach( function( key3 ) 
+	   			{
+	   				var SpecialValueUpgrade = SpecialValueUpgrades[ key3 ];
+	    			if ( SpecialValueUpgrade == null )
+	    				return;
+
+	    			var flCurrValue = SpecialValueUpgrade[ "value" ];
+	    			if ( typeof flCurrValue === 'undefined' )
+	    			{
+	    				//$.Msg( "GOT a NaN" );
+	    				return;
+	    			}
+
+	    			if ( SpecialValueUpgrade[ "operator" ] == 1 )
+	    			{
+	    				flAddResult = flAddResult + flCurrValue;
+	    			}
+	    			else
+	    			{
+	    				flMulResult = flMulResult * ( 1.0 - ( flCurrValue / 100.0 ) )
+	    			}
+
+	    			if ( szSpecialValueName == "mana_cost" || szSpecialValueName == "cooldown" )
+	    			{
+	    				flAbilityUpgrades = flAbilityUpgrades + 0.5;
+	    				flNumUpgrades = flNumUpgrades + 0.5
+	    			}
+	    			else
+	    			{
+	    				flAbilityUpgrades++;	
+	    				flNumUpgrades++;			
+	    			}
+	    		} );
+
+	    		flTotalValue = flAddResult == 0 ? ( 100 - ( flMulResult * 100 ) ) : flAddResult;
+	    		flTotalValue = Math.floor(flTotalValue) == flTotalValue ? Math.floor(flTotalValue) : flTotalValue.toFixed(2);
+	    		var szSign = "+";
+	    		if ( flTotalValue < 0 || szSpecialValueName == "mana_cost" || szSpecialValueName == "cooldown" )
+	    		{
+	    			szSign = "";
+	    		}
+	``
+	    		var szPercent = "";
+	    		if ( flAddResult == 0 )
+	    		{
+	    			szPercent = "%";
+	    		}
+
+	    		var szAttributeText = szSpecialValueName;
+	    		if ( szSpecialValueName == "cooldown" )
+	    		{
+	    			szAttributeText =  $.Localize( "DOTA_HUD_Upgrades_Cooldown" );
+	    			flNumUpgrades = 0;
+	    		}
+	    		else if ( szSpecialValueName == "mana_cost" )
+	    		{
+	    			szAttributeText =  $.Localize( "DOTA_HUD_Upgrades_ManaCost" );
+	    			flNumUpgrades = 0;
+	    		}
+	    		else
+	    		{
+	    			szAttributeText = $.Localize( "DOTA_Tooltip_ability_" + key.toString() + "_" + szSpecialValueName );
+	    			szAttributeText = szAttributeText.toLowerCase();
+	    			szAttributeText = szAttributeText.replace( ":", "" );
+	    			if ( szAttributeText[ 0 ] == "%" )
+	    			{
+	    				szPercent = "%";
+	    				szAttributeText = szAttributeText.replace( "%", "" );
+	    			}
+
+	    			var words = szAttributeText.split( " " );
+
+	    			for ( var j = 0; j < words.length; j++ )
+	    			{
+	    				words[ j ] = words[ j ][ 0 ].toUpperCase() + words[ j ].substr( 1 );
+	    			}
+	    			szAttributeText = words.join( " " );
+	    		}
+
+	    		LineItem.SetDialogVariable( "line_item_text", szSign + flTotalValue.toString() + szPercent + " " + szAttributeText );
+	    		LineItem.SetAttributeInt( "num_upgrades", Math.ceil( flNumUpgrades ) );
+
+	    		for ( var nChildIndex = 0; nChildIndex < CurrentAbilityBuffList.GetChildCount(); nChildIndex++ )
+	    		{
+	    			var BuffListItemChild = CurrentAbilityBuffList.GetChild( nChildIndex );
+	    			if ( BuffListItemChild == null )
+	    				continue;
+
+	    			if ( LineItem.GetAttributeInt( "num_upgrades", 0 ) < BuffListItemChild.GetAttributeInt( "num_upgrades", 0 ) )
+	    			{
+	    				CurrentAbilityBuffList.MoveChildAfter( LineItem, BuffListItemChild );
+	    			}
+	    		}
+				//$.Msg( "total value:" + flTotalValue.toString() );
+			} );
+
+			
+		} );
+
+		AbilityContainer.SetDialogVariableInt( "upgrade_count", Math.ceil( flAbilityUpgrades ) );
+		AbilityContainer.SetHasClass( "NoUpgrades", flAbilityUpgrades == 0 );
+	
+	}
+
+
+	
+}
+
+
+function GetName( reward, rewardPanel )
+{
+    var szName;
+    if ( reward[ "reward_type" ] === "REWARD_TYPE_ABILITY_UPGRADE" 
+        || reward[ "reward_type" ] === "REWARD_TYPE_ITEM" 
+        || reward[ "reward_type" ] === "REWARD_TYPE_TEMP_BUFF" 
+        || reward[ "reward_type" ] === "REWARD_TYPE_AURA"  
+        || reward[ "reward_type" ] === "REWARD_TYPE_MINOR_ABILITY_UPGRADE"
+        || reward[ "reward_type" ] === "REWARD_TYPE_MINOR_STATS_UPGRADE")
+    { 
+        szName = "DOTA_Tooltip_ability_" + reward[ "ability_name" ];
+    }
+
+    if ( reward[ "reward_type" ] === "REWARD_TYPE_GOLD" )
+    {
+        szName = "DOTA_HUD_Reward_Gold";
+    }
+
+    if ( reward[ "reward_type" ] === "REWARD_TYPE_EXTRA_LIVES" )
+    {
+        szName = "DOTA_HUD_Reward_ExtraLives";
+    }
+
+    return $.Localize( szName, rewardPanel );
+}
+
+function GetDescription( reward, rewardPanel )
+{
+    
+    if (!reward)
+    {
+    	return "COULD NOT FIND REWARD IN GetDescription";
+    }
+    if ( reward[ "reward_type" ] === "REWARD_TYPE_ABILITY_UPGRADE" || reward[ "reward_type" ] === "REWARD_TYPE_ITEM" || reward[ "reward_type" ] === "REWARD_TYPE_TEMP_BUFF" || reward[ "reward_type" ] === "REWARD_TYPE_AURA" ) 
+        return GameUI.ReplaceDOTAAbilitySpecialValues( reward[ "ability_name" ], $.Localize( "DOTA_Tooltip_ability_" + reward[ "ability_name" ] + "_Description", rewardPanel ) );
+    
+    if ( reward[ "reward_type" ] === "REWARD_TYPE_MINOR_ABILITY_UPGRADE" || reward[ "reward_type" ] === "REWARD_TYPE_MINOR_STATS_UPGRADE" )
+        return $.Localize( reward[ "description" ], rewardPanel );
+
+    if ( reward[ "reward_type" ] === "REWARD_TYPE_GOLD" )
+        return $.Localize( "DOTA_HUD_Reward_Gold_desc", rewardPanel );
+
+    if ( reward[ "reward_type" ] === "REWARD_TYPE_EXTRA_LIVES" )
+        return $.Localize( "DOTA_HUD_Reward_ExtraLives_desc", rewardPanel );
+
+   return "FIX ME";
+}
+
+function compare( a, b )
+{
+	return a < b ? -1 : a > b ? 1 : 0;
+}
+
+

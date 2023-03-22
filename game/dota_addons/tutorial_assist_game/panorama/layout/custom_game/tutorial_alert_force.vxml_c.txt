@@ -1,0 +1,44 @@
+<!-- xml reconstructed by ValveResourceFormat: https://vrf.steamdb.info/ -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/tutorial_assist_game.vcss_c" />
+	</styles>
+	<script><![CDATA[
+    function OnFadeIn( event_data )
+    {
+        $("#BasePanel").SetHasClass( "Visible", true )
+        $("#InvulnerableNotification").SetHasClass( "Visible", false )
+    }
+    GameEvents.Subscribe( "fade_in_dialog", OnFadeIn);
+  ]]></script>
+	<Panel class="OutmostContainer" hittest="false">
+		<Panel class="FullScreenLayout" hittest="false" id="InvulnerableNotification" onload="AddStyle(Visible)">
+			<Panel class="DialogRoot">
+				<Panel class="DialogMain TitleOnly">
+					<Panel id="TitleContainer" class="Alert">
+						<Panel id="TitleImage" class="Alert" />
+						<Label text="#ag_alert_InvulnerabilityTitle" id="TitleText" class="Alert" />
+					</Panel>
+				</Panel>
+			</Panel>
+		</Panel>
+		<Panel class="FullScreenLayout" hittest="false" id="BasePanel">
+			<Panel class="DialogRoot">
+				<Panel class="DialogMain">
+					<Panel id="TitleContainer" class="Alert">
+						<Panel id="TitleImage" class="Alert" />
+						<Label text="#TitleText" id="TitleText" class="Alert" />
+					</Panel>
+					<Panel id="BodyContainer">
+						<Panel id="TextContainerCentered">
+							<Panel id="Body">
+								<Label text="#BodyText" id="BodyText" />
+							</Panel>
+						</Panel>
+					</Panel>
+				</Panel>
+			</Panel>
+			<Panel class="BodyImage" hittest="false" />
+		</Panel>
+	</Panel>
+</root>

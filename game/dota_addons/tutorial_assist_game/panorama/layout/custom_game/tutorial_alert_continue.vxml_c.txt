@@ -1,0 +1,63 @@
+<!-- xml reconstructed by ValveResourceFormat: https://vrf.steamdb.info/ -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/tutorial_assist_game.vcss_c" />
+	</styles>
+	<script><![CDATA[
+    function OnFadeIn( event_data )
+    {
+        $("#BasePanel").SetHasClass( "Visible", true )
+        $("#InvulnerableNotification").SetHasClass( "Visible", false )
+    }
+    GameEvents.Subscribe( "fade_in_dialog", OnFadeIn);
+
+    function OnSetCustomAlertString( event_data )
+    {
+      $.Msg( "OnSetCustomAlertString: ", event_data );
+      var bodyTextLabel = $("#BodyText");
+      bodyTextLabel.SetDialogVariable( "keyname", event_data.keyname )
+      bodyTextLabel.SetDialogVariable( "keyname2", event_data.keyname2 )
+      bodyTextLabel.text = $.Localize( event_data.customBody, bodyTextLabel );
+    }
+    GameEvents.Subscribe( "set_custom_alert_string", OnSetCustomAlertString );
+  ]]></script>
+	<Panel class="OutmostContainer" hittest="false">
+		<Panel class="FullScreenLayout" hittest="false" id="InvulnerableNotification" onload="AddStyle(Visible)">
+			<Panel class="DialogRoot">
+				<Panel class="DialogMain TitleOnly">
+					<Panel id="TitleContainer" class="Alert">
+						<Panel id="TitleImage" class="Alert" />
+						<Label text="#ag_alert_InvulnerabilityTitle" id="TitleText" class="Alert" />
+					</Panel>
+				</Panel>
+			</Panel>
+		</Panel>
+		<Panel class="FullScreenLayout" hittest="false" id="BasePanel">
+			<Panel class="ShadedBG" />
+			<Panel class="DialogRoot">
+				<Panel class="DialogMain">
+					<Panel id="TitleContainer" class="Alert">
+						<Panel id="TitleImage" class="Alert" />
+						<Label text="#TitleText" id="TitleText" class="Alert" />
+					</Panel>
+					<Panel id="BodyContainer">
+						<Panel id="TextContainerCentered">
+							<Panel id="Body">
+								<Label text="#BodyText" id="BodyText" />
+							</Panel>
+						</Panel>
+					</Panel>
+				</Panel>
+				<Panel id="Footer">
+					<Button id="ContinueButton" onactivate="FireCustomGameEvent_Str( ButtonPressed, continue )">
+						<Panel id="ContinueButtonContents">
+							<Label id="ContinueButtonText" text="#InfoScreenClose" />
+							<Panel id="ContinueButtonImage" />
+						</Panel>
+					</Button>
+				</Panel>
+			</Panel>
+			<Panel class="BodyImage" hittest="false" />
+		</Panel>
+	</Panel>
+</root>

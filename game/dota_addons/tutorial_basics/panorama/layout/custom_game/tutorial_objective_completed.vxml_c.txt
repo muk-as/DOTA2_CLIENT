@@ -1,0 +1,30 @@
+<!-- xml reconstructed by ValveResourceFormat: https://vrf.steamdb.info/ -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/tutorial_ingame.vcss_c" />
+	</styles>
+	<script><![CDATA[
+    function OnSetCustomObjectiveString( event_data )
+    {
+      $.Msg( "OnSetCustomObjectiveString: ", event_data );
+      var bodyTextLabel = $("#BodyText");
+      bodyTextLabel.SetDialogVariable( "keyname", event_data.keyname )
+      bodyTextLabel.text = $.Localize( event_data.customBody, bodyTextLabel );
+    }
+    GameEvents.Subscribe( "set_custom_objective_string", OnSetCustomObjectiveString );
+  ]]></script>
+	<Panel class="ObjectiveRoot">
+		<Panel id="TitleContainer" class="ObjectiveCompleted">
+			<Panel id="TitleImage" class="ObjectiveCompleted" />
+			<Label text="#TitleText" id="TitleText" class="ObjectiveCompleted" />
+		</Panel>
+		<Panel id="BodyContainer">
+			<Panel id="TextContainerCentered">
+				<Panel id="Body">
+					<Label text="#BodyText" id="BodyText" class="FullBodyText" />
+				</Panel>
+			</Panel>
+		</Panel>
+	</Panel>
+</root>

@@ -1,0 +1,804 @@
+"EVENT_ID_FROSTIVUS_2019"
+{
+	"season_name"	"#DOTA_EventName_Frostivus"
+	"season_class"	"Season_Frostivus"
+
+	"is_major"		"0"
+	"has_bracket_data" "0"
+	"must_be_owned"		"0"
+	"default_event_points"	"1000"
+	"event_end_time"	"1578002400"        // 2pm 1/2/2020
+ 	"expiration_date"	"1579298400"        // 2pm 1/17/2020
+
+	"points_per_level"		"1000"
+	"show_battle_level"		"0"
+
+	"background_map_name"		"backgrounds/dashboard_parallax_frostivus_2017"
+
+    // This makes the consumable bundle appear in the plus store
+    "game_consumable_item_def"  "17529"
+
+	"effects_item_def"		"17528"
+	//"map_effects_item_defs"
+	//{
+	//	"npc_dota_goodguys_tower" "17480"
+	//	"npc_dota_badguys_tower" "17480"
+	//}
+
+	"adjust_point_grants_periodic_resource"			"frostivus_2019_daily_bonus"
+	"periodic_points_scale_normal_event_points"		"1"
+	"periodic_points_bonus_normal_event_points"		"1250"
+
+    // Naughty/Nice tipping
+	"tipping_periodic_resource" "frostivus_2019_tipping_tokens"
+   	"tip_amounts"
+	{
+		"0"
+		{
+			"tip_amount"	"0"  // Tipping grants the tips_received action, but no event points.
+			"particle"		""
+		}
+	}
+    "tip_button_name"   "#DOTA_Frostivus_Tip"
+    "tip_notification"  "#DOTA_Frostivus_TipNotification"
+
+	"game_secondary_abilities"
+	{
+		"seasonal_throw_snowball" "1"
+		"seasonal_summon_snowman" "1"
+		"seasonal_festive_firework" "1"
+		"seasonal_summon_penguin" "1"
+
+   		"high_five" "2"
+	}
+
+	"mystery"
+	{
+		"name"		"#DOTA_Frostivus2019_Reward_Surprise_Item"
+		"image"		"{images}/frostivus_2018_mystery_item.png"
+		"scene"
+		{
+			"map"					"scenes/frostivus_2018_spinwheel"
+			"entity_name"			"courier"
+			"entity_idle_sequence"	"darkmoon_idle"
+			"entity_spin_sequence"	"darkmoon_reward"
+		}	
+    
+		"categories"
+		{
+			"old_treasures"
+			{
+				"locname"	"#DOTA_Wheel_Treasure"
+				"lootlist"	"frostivus_2019_wheel_treasures"
+			}
+			"cosmically_rare_reward"
+			{
+				"locname"	"#DOTA_Wheel_BabyRoshan"
+				"lootlist"	"frostivus_2019_wheel_baby_roshan"
+			}
+			"announcers"
+			{
+				"locname"	"#DOTA_Wheel_Announcer"
+				"lootlist"	"frostivus_2019_wheel_announcers"
+			}
+			"event_sets"
+			{
+				"locname"	"#DOTA_Wheel_Set"
+				"lootlist"	"frostivus_2019_wheel_sets"
+			}
+			"couriers"
+			{
+				"locname"	"#DOTA_Wheel_Courier"
+				"lootlist"	"frostivus_2019_wheel_couriers"
+			}
+		}
+    
+		"wheel_segments"
+		{
+			"0"	"old_treasures"
+			"1"	"cosmically_rare_reward"
+			"2"	"old_treasures"
+			"3"	"event_sets"
+			"4" "old_treasures"
+			"5" "couriers"
+			"6" "old_treasures"
+			"7" "event_sets"
+			"8" "old_treasures"
+			"9" "announcers"
+			"10" "old_treasures"
+			"11" "event_sets"
+			"12" "old_treasures"
+			"13" "couriers"
+			"14" "old_treasures"
+			"15" "announcers"
+			"16" "old_treasures"
+			"17" "event_sets"
+			"18" "old_treasures"
+			"19" "couriers"
+		}
+	}
+
+	"event_actions"
+	{
+		"win_matches"
+		{
+			"action_id"					"1"
+			"must_own_event"			"0"
+			"eligible_for_periodic_adjustment" "1"
+			"max_grants"				"10000"
+			"rewards"
+			{
+				"1+1n"
+				{
+					"grants"
+					{
+						"grant_points"	"200"
+					}
+				}
+			}
+		}
+
+		"win_turbo_matches"
+		{
+			"action_id"					"2"
+			"must_own_event"			"0"
+			"eligible_for_periodic_adjustment" "1"
+			"max_grants"				"10000"
+			"rewards"
+			{
+				"1+1n"
+				{
+					"grants"
+					{
+						"grant_points"	"100"
+					}
+				}
+			}
+		}
+
+		"tips_received"
+		{
+			"action_id"		"4"
+			"max_grants"	"1000000"
+			"must_own_event"	"0"
+
+           	"rewards"
+			{
+				"1 + 1n"
+				{
+					"grants"
+					{
+                        "grant_action_custom"
+                        {
+                            "action"        "nice_points_received"
+                            "count"         "25"
+                        }
+					}
+				}
+			}
+		}
+
+		"tip_amount_upgrades"
+		{
+			"action_id"		"5"
+			"max_grants"	"0"
+        }
+		
+		"open_consumable_bundle"
+		{
+			"action_id"					"6"
+			"required_item_def"			"17529"
+			"must_own_event"			"0"
+			"rewards"
+			{
+				"1+1n"
+				{
+					"grants"
+					{
+						"grant_consumable_item_charges"
+						{
+							"item_def"	"17469"	//Fireworks
+							"quantity"           "20"						
+						}
+						"grant_consumable_item_charges"
+						{
+							"item_def"	"17433"	//Snowballs
+							"quantity"           "20"						
+						}
+						"grant_consumable_item_charges"
+						{
+							"item_def"	"17437"	//Snowmen
+							"quantity"           "20"						
+						}
+						"grant_consumable_item_charges"
+						{
+							"item_def"	"17527"	//Penguin
+							"quantity"           "10"						
+						}
+					}
+				}
+			}
+		}
+
+        "gifted_item_to_friend"
+        {
+			"action_id"		"7"
+			"max_grants"	"1000000"
+			"must_own_event"	"0"
+
+           	"rewards"
+			{
+				"1 + 1n"
+				{
+					"grants"
+					{
+                        "grant_action_custom"
+                        {
+                            "action"        "nice_points_received"
+                            "count"         "35"
+                        }
+					}
+				}
+			}
+        }
+
+        ///
+        /// Naughty/Nice
+        ///
+        "nice_points_received"
+        {
+			"action_id"		"100"
+			"max_grants"	"1000000"
+			"must_own_event"	"0"
+        }
+
+        "nice_points_awards"
+        {
+			"action_id"		"101"
+			"max_grants"	"6"
+			"must_own_event"	"0"
+   			"claimable_if_prerequisites_satisfied"	"1"
+			"prerequisite_actions"
+			{
+				"nice_points_received" "300 + 300n"
+			}
+
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"grants"
+					{
+						"grant_mystery_item" ""
+                        // "grant_loot_list"    "frostivus_2019_nice_reward_list"
+					}
+				}
+			}
+        }
+
+        ///
+        /// Reward line
+        ///
+
+		"level_reward_1"
+		{
+			"action_id"					"10010"
+			"available_at_event_level"	"1"
+			"must_own_event"	"0"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_consumable_item_charges"
+						{
+							"item_def"	"17469"	//Fireworks
+							"quantity"           "20"						
+						}
+						"grant_consumable_item_charges"
+						{
+							"item_def"	"17433"	//Snowballs
+							"quantity"           "20"						
+						}
+						"grant_consumable_item_charges"
+						{
+							"item_def"	"17437"	//Snowmen
+							"quantity"           "20"						
+						}
+						"grant_consumable_item_charges"
+						{
+							"item_def"	"17527"	//Penguin
+							"quantity"           "10"						
+						}
+						"grant_generic_reward"
+						{
+							"name"			"#DOTA_Frostivus2019_Reward_Tips"
+							"image"			"{images}/events/frostivus/rewards/tipping_token.png"
+						}	
+					}
+				}
+			}
+		}
+        
+		"level_reward_2"
+		{
+			"action_id"					"10020"
+			"available_at_event_level"	"2"
+			"must_own_event"	"0"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_chat_wheel_messages" "161" // Sleighbells
+					}
+				}
+			}
+		}
+       
+		"level_reward_3"
+		{
+			"action_id"					"10030"
+			"available_at_event_level"	"3"
+			"must_own_event"	"0"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{	
+						"grant_consumable_item_charges"
+						{
+							"item_def"	"17433"	//Snowballs
+							"quantity"           "20"						
+						}
+					}
+				}
+			}
+		}
+        
+		"level_reward_3_plus"
+		{
+			"action_id"					"10031"
+			"available_at_event_level"	"3"
+			"must_own_event"	"0"
+			"requires_plus_subscription"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"        "12535"
+					}
+				}
+			}
+		}
+        
+		"level_reward_4"
+		{
+			"action_id"					"10040"
+			"available_at_event_level"	"4"
+			"must_own_event"	"0"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_consumable_item_charges"
+						{
+							"item_def"	"17437"	//Snowmen
+							"quantity"           "20"						
+						}
+					}
+				}
+			}
+		}
+        
+		"level_reward_5"
+		{
+			"action_id"					"10050"
+			"available_at_event_level"	"5"
+			"must_own_event"	"0"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_chat_wheel_messages" "159" // Sparkling_Celebration
+					}
+				}
+			}
+		}
+        
+
+		"level_reward_6"
+		{
+			"action_id"					"10060"
+			"available_at_event_level"	"6"
+			"must_own_event"	"0"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_mystery_item" ""
+					}
+				}
+			}
+		}
+        
+		"level_reward_6_plus"
+		{
+			"action_id"					"10061"
+			"available_at_event_level"	"6"
+			"must_own_event"	"0"
+			"requires_plus_subscription"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_mystery_item" ""
+					}
+				}
+			}
+		}
+        
+		"level_reward_7"
+		{
+			"action_id"					"10070"
+			"available_at_event_level"	"7"
+			"must_own_event"	"0"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_consumable_item_charges"
+						{
+							"item_def"	"17469"	//Fireworks
+							"quantity"           "20"						
+						}
+					}
+				}
+			}
+		}
+        
+		"level_reward_8"
+		{
+			"action_id"					"10080"
+			"available_at_event_level"	"8"
+			"must_own_event"	"0"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_max_periodic_points"
+						{
+							"periodic_resource_id" "30" // frostivus_2019_tipping_tokens
+							"points"        "2"
+							"name"			"#DOTA_Frostivus2019_Reward_More_Tips"
+							"image"			"{images}/events/frostivus/rewards/tipping_token.png"
+						}
+					}
+				}
+			}
+		}
+        
+		"level_reward_9"
+		{
+			"action_id"					"10090"
+			"available_at_event_level"	"9"
+			"must_own_event"	"0"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_consumable_item_charges"
+						{
+							"item_def"	"17527"	//Penguin
+							"quantity"           "10"						
+						}
+					}
+				}
+			}
+		}
+
+        "level_reward_10"
+        {
+			"action_id"					"10100"
+			"available_at_event_level"	"10"
+			"must_own_event"	"0"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{	
+						"grant_effect"
+						{
+							"name"			"#DOTA_Frostivus_High_Five_Effect_Lvl_2"
+							"image"			"{images}/events/frostivus/rewards/high_five_mitten.png"
+							"effect_index"	"26"
+						}
+						
+					}
+				}
+			}
+        }
+		"level_reward_10_plus"
+		{
+			"action_id"					"10011"
+			"available_at_event_level"	"10"
+			"requires_plus_subscription"	"1"
+			"must_own_event"	"0"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_consumable_item_charges"
+						{
+							"item_def"	"17469"	//Fireworks
+							"quantity"           "20"						
+						}
+						"grant_consumable_item_charges"
+						{
+							"item_def"	"17433"	//Snowballs
+							"quantity"           "20"						
+						}
+						"grant_consumable_item_charges"
+						{
+							"item_def"	"17437"	//Snowmen
+							"quantity"           "20"						
+						}
+						"grant_consumable_item_charges"
+						{
+							"item_def"	"17527"	//Penguin
+							"quantity"           "10"						
+						}
+					}
+				}
+			}
+		}		
+
+		"level_reward_11"
+		{
+			"action_id"					"10110"
+			"available_at_event_level"	"11"
+			"must_own_event"	"0"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{	
+						"grant_consumable_item_charges"
+						{
+							"item_def"	"17433"	//Snowballs
+							"quantity"           "20"						
+						}
+					}
+				}
+			}
+		}
+         
+		"level_reward_12"
+		{
+			"action_id"					"10120"
+			"available_at_event_level"	"12"
+			"must_own_event"	"0"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_mystery_item" ""
+					}
+				}
+			}
+		}
+        
+		"level_reward_12_plus"
+		{
+			"action_id"					"10121"
+			"available_at_event_level"	"12"
+			"must_own_event"	"0"
+			"requires_plus_subscription"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_mystery_item" ""
+					}
+				}
+			}
+		}	
+        
+
+        
+		"level_reward_13"
+		{
+			"action_id"					"10130"
+			"available_at_event_level"	"13"
+			"must_own_event"	"0"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_consumable_item_charges"
+						{
+							"item_def"	"17437"	//Snowmen
+							"quantity"           "20"						
+						}
+					}
+				}
+			}
+		}
+		"level_reward_14"
+		{
+			"action_id"					"10140"
+			"available_at_event_level"	"14"
+			"must_own_event"	"0"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_consumable_item_charges"
+						{
+							"item_def"	"17469"	//Fireworks
+							"quantity"           "20"						
+						}
+					}
+				}
+			}
+		}		
+
+		"level_reward_15"
+		{
+			"action_id"					"10150"
+			"available_at_event_level"	"15"
+			"must_own_event"	"0"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_chat_wheel_messages" "158" // Greevil_Laughter
+					}
+				}
+			}
+		}        
+
+		"level_reward_16"
+		{
+			"action_id"					"10160"
+			"available_at_event_level"	"16"
+			"must_own_event"	"0"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_max_periodic_points"
+						{
+							"periodic_resource_id" "30" // frostivus_2019_tipping_tokens
+							"points"        "2"
+							"name"			"#DOTA_Frostivus2019_Reward_More_Tips"
+							"image"			"{images}/events/frostivus/rewards/tipping_token.png"
+						}
+
+					}
+				}
+			}
+		}
+		
+		"level_reward_17"
+		{
+			"action_id"					"10170"
+			"available_at_event_level"	"17"
+			"must_own_event"	"0"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_chat_wheel_messages" "233" //HappyPenguin
+					}
+				}
+			}
+		}
+        
+		"level_reward_18"
+		{
+			"action_id"					"10180"
+			"available_at_event_level"	"18"
+			"must_own_event"	"0"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_mystery_item" ""
+					}
+				}
+			}
+		}
+        
+		"level_reward_18_plus"
+		{
+			"action_id"					"10181"
+			"available_at_event_level"	"18"
+			"must_own_event"	"0"
+			"requires_plus_subscription"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_mystery_item" ""
+					}
+				}
+			}
+		}	
+        
+		"level_reward_19"
+		{
+			"action_id"					"10190"
+			"available_at_event_level"	"19"
+			"must_own_event"	"0"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_chat_wheel_messages" "160" //Frostivus_Magic
+					}
+				}
+			}
+		}
+        
+		"level_reward_20"
+		{
+			"action_id"					"10200"
+			"available_at_event_level"	"20"
+			"must_own_event"	"0"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"				"12211" // Frostivus Treasure
+					}
+				}
+			}
+		}
+	}
+}

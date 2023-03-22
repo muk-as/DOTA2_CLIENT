@@ -1,0 +1,152 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	windowTitle="Widgets Example"
+	windowIcon="tools/images/common/icon_info.png"
+	size=[500,900]
+	actions =
+	[
+		{ _class="QAction" name="example_shared_action" text="Shared Action" icon="tools/images/common/open.png" },
+	]
+	vbox =
+	[
+		//============================================================
+		// Menu Bar Example
+		//============================================================
+		{ _class="QMenuBar"
+			menus=
+			[
+				{
+					_class="QMenu" title="First Menu"
+					actions= 
+					[
+						{ _class="QAction" name="first_act_a" text="Action A" },
+						{ _class= "QAction" text="Submenu" menu =
+							{
+								_class="QMenu" title="Second Menu"
+								actions= 
+								[
+									{ _class="QAction" name="nested_act_a" text="Nested Action A" },
+									{ _class="QAction" name="nested_act_b" text="Nested Action B" },
+								]
+							}
+						},
+						{ separator=true },
+						"example_shared_action",
+					]
+				},
+				{
+					_class="QMenu" title="Second Menu"
+					actions= 
+					[
+						{ _class= "QAction" name="second_act_a" text="Action 2-A" },
+					]
+				},
+			]
+		},
+
+		//============================================================
+		// ToolBar and Action Examples
+		//============================================================
+		{ _class="QToolBar"
+			actions =
+			[
+				{ _class="QAction" text="Inline Action" icon="tools/images/common/save.png" },
+				{ separator=true },
+				"example_shared_action",
+			]
+		},
+		
+		{ _class="QScrollArea" widgetResizable=true	scroll_widget=
+			{ _class="QWidget"
+				vbox =
+				[
+					
+					//============================================================
+					// Vanilla Widget
+					//============================================================
+					{ _class="QWidget" fixed_width=25 fixed_height=25 background="darkCyan" autoFillBackground=true },
+
+					//============================================================
+					// Label Example (see labels.vqlayout for more)
+					//============================================================
+					{ _class="QLabel" text="Example Label" },
+
+					//============================================================
+					// Button Examples (see buttons.vqlayout for more)
+					//============================================================
+					{ _class="QPushButton" text="Push Button" },
+					{ _class="QToolButton" text="Tool Button" },
+
+					//============================================================
+					// CheckBox Examples
+					//============================================================
+					{ _class="QCheckBox" text="Check Box" },
+					{ _class="QCheckBox" text="Checked Check Box" checked=true },
+					{ _class="QCheckBox" text="Tri-State Check Box" tristate=true checkstate="PartiallyChecked" },
+					
+					//============================================================
+					// LineEdit Examples
+					//============================================================
+					{ _class="QLineEdit" text="Line Edit" },
+					{ _class="QLineEdit" placeholderText="Line Edit With Placeholder" },
+					
+					//============================================================
+					// Slider Examples
+					//============================================================
+					{ _class="QSlider" fixed_height=40 },
+					{ _class="QSlider" orientation="Horizontal" fixed_width=40 },
+					
+					//============================================================
+					// Frame Examples
+					//============================================================
+					{ _class="QFrame" fixed_width=25 fixed_height=25 lineWidth=2 foreground="darkcyan" background="black" autoFillBackground=true frameShape="Box" },
+
+					//============================================================
+					// GroupBox and RadioButton Examples
+					//============================================================
+					{ _class="QGroupBox" title="Group Box"
+						vbox=
+						[
+							{_class="QRadioButton" text="Radio Button 1" checked=true },
+							{_class="QRadioButton" text="Radio Button 2" },
+						]
+					},
+					
+					//============================================================
+					// ProgressBar Example
+					//============================================================
+					{ _class="QProgressBar" maximum=100 value=45 },
+					{ _class="QProgressBar" maximum=0 },
+
+					//============================================================
+					// ScrollBar Example
+					//============================================================
+					{ _class="QScrollBar" orientation="Horizontal" },
+
+					//============================================================
+					// SpinBox Example
+					//============================================================
+					{ _class="QSpinBox" },
+
+					//============================================================
+					// ScrollArea Example
+					//============================================================
+					{ _class="QScrollArea" scroll_widget=
+						{_class="QLabel" text="A Big Scrolled Label" fontstyle="80px bold" }
+					},
+					
+					//============================================================
+					// TabWidget Example
+					//============================================================
+					{ _class="QTabWidget" tabs=
+						{
+							"First Tab"={ _class="QLabel" text="First Tabbed Widget" fontstyle="20px bold" }
+							"Second Tab"={ _class="QLabel" text="Second Tabbed Widget" fontstyle="20px bold" }
+						}
+					},
+				]
+			}
+		}
+	]
+}
+

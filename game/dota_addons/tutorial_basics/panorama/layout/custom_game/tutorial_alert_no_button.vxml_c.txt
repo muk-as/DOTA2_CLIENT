@@ -1,0 +1,32 @@
+<!-- xml reconstructed by ValveResourceFormat: https://vrf.steamdb.info/ -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/tutorial_ingame.vcss_c" />
+	</styles>
+	<script><![CDATA[
+    function OnSetImage( event_data )
+    {
+      $("#BodyImage").SetHasClass( event_data.image_class, true );
+    }
+    GameEvents.Subscribe( "set_image", OnSetImage);
+  ]]></script>
+	<Panel class="FullScreenLayout" onload="AddStyle(Visible)">
+		<Panel class="ShadedBG" />
+		<Panel class="DialogRoot">
+			<Panel class="DialogMain">
+				<Panel id="TitleContainer" class="Alert">
+					<Panel id="TitleImage" class="Alert" />
+					<Label text="#TitleText" id="TitleText" class="Alert" />
+				</Panel>
+				<Panel id="BodyContainer">
+					<Panel id="TextContainerCentered">
+						<Panel id="Body">
+							<Label text="#BodyText" id="BodyText" />
+						</Panel>
+					</Panel>
+				</Panel>
+			</Panel>
+		</Panel>
+		<Panel class="BodyImage" hittest="false" id="BodyImage" />
+	</Panel>
+</root>
