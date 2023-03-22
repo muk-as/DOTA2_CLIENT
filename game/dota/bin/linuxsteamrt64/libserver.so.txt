@@ -1552,6 +1552,7 @@
 16CModifierFactoryI32CDOTA_Modifier_Earthshaker_ShardE
 16CModifierFactoryI32CDOTA_Modifier_Ghost_FrostAttackE
 16CModifierFactoryI32CDOTA_Modifier_Havoc_Hammer_SlowE
+16CModifierFactoryI32CDOTA_Modifier_HighFiveRequestedE
 16CModifierFactoryI32CDOTA_Modifier_Holdout_BladeFuryE
 16CModifierFactoryI32CDOTA_Modifier_Holdout_OmnislashE
 16CModifierFactoryI32CDOTA_Modifier_Hoodwink_CaltropsE
@@ -3711,6 +3712,7 @@
 16CModifierFactoryI51CDOTA_Modifier_EmberSpirit_SleightOfFist_InProgressE
 16CModifierFactoryI51CDOTA_Modifier_ForestTrollHighPriest_ManaAura_BonusE
 16CModifierFactoryI51CDOTA_Modifier_Fountain_Fury_Swipes_Damage_IncreaseE
+16CModifierFactoryI51CDOTA_Modifier_Frostivus2018_Earthshaker_AftershockE
 16CModifierFactoryI51CDOTA_Modifier_Frostivus2018_Puck_DreamCoil_ThinkerE
 16CModifierFactoryI51CDOTA_Modifier_Frostivus2018_Siege_Fireball_ThinkerE
 16CModifierFactoryI51CDOTA_Modifier_Frostivus2018_Summon_Snowman_ThinkerE
@@ -4129,7 +4131,6 @@
 16CModifierFactoryI64CDOTA_Modifier_AghsFort_ArcWardenBoss_MagneticField_Attack_SpeedE
 16CModifierFactoryI64CDOTA_Modifier_AghsFort_Lich_FrostShield_Magic_Resistance_DebuffE
 16CModifierFactoryI64CDOTA_Modifier_AghsFort_Special_Phoenix_IcarusDive_Savior_CasterE
-16CModifierFactoryI64CDOTA_Modifier_AghsFort_TreantMiniboss_NaturesGuise_Tree_WalkingE
 16CModifierFactoryI64CDOTA_Modifier_Aghsfort_ArcWardenBoss_SparkWraith_Missile_TargetE
 16CModifierFactoryI64CDOTA_Modifier_Aghsfort_Special_Gyrocopter_Call_Down_Attack_BuffE
 16CModifierFactoryI64CDOTA_Modifier_Aghsfort_Special_Mars_Spear_Burning_Trail_ThinkerE
@@ -6081,6 +6082,7 @@
 23CMsgSQLAddDropRateBonus
 23CMsgSignOutTextMuteInfo
 23CMsgSosStopSoundEvent_t
+23CMsgSteamLearnMatchHero
 23CMsgSteamLearnMatchInfo
 23CMsgTournamentItemEvent
 23CNETMsg_SpawnGroup_Load
@@ -10799,6 +10801,7 @@
 38CMsgGCToGCGrantAccountRolledItems_Item
 38CMsgGCToGCStoreProcessCDKeyTransaction
 38CMsgGCToServerCheerData_CheerTypeCount
+38CMsgGCToServerSetSteamLearnKeysChanged
 38CMsgGameMatchSignOutPermissionResponse
 38CMsgLookupMultipleAccountNamesResponse
 38CMsgServerToGCGetStickerHeroesResponse
@@ -13842,6 +13845,7 @@
 49CDOTA_Modifier_Warlock_Golem_Permanent_Immolation
 49CDOTA_Modifier_Watch_Tower_Invulnerable_Temporary
 49CDOTA_Modifier_Weaver_Shukuchi_GeminateAttackMark
+49CInlineJob_CMsgGCToServerSetSteamLearnKeysChanged
 49CMsgAMGetUserGameStatsResponse_Achievement_Blocks
 49CMsgDOTARealtimeGameStats_GraphData_LocationStats
 49CMsgLobbyFeaturedGamemodeProgress_AccountProgress
@@ -17526,6 +17530,7 @@ AddEventMetadataLeaderboardEntryRawScore
 AddExperience
 AddFloat
 AddGesture
+AddGoldSpentOnSupport
 AddHLTVServer
 AddHeroIDToBlacklist
 AddHeroIDToWhitelist
@@ -24219,6 +24224,7 @@ CInlineJob_CMsgGCToServerGetCheerState
 CInlineJob_CMsgGCToServerLobbyHeroBanRates
 CInlineJob_CMsgGCToServerRecordTrainingData
 CInlineJob_CMsgGCToServerSetSteamLearnDisable
+CInlineJob_CMsgGCToServerSetSteamLearnKeysChanged
 CInlineJob_CMsgGCToServerUpdateSteamBroadcasting
 CInlineJob_CMsgGCtoServerTensorflowInstance
 CInstallUGCJob
@@ -24679,7 +24685,8 @@ CMsgGCToServerPingResponse
 CMsgGCToServerPredictionResult
 CMsgGCToServerRealtimeStatsStartStop
 CMsgGCToServerRecordTrainingData
-CMsgGCToServerSetSteamLearnDisable
+CMsgGCToServerSetSteamLearnDisable"O
+CMsgGCToServerSetSteamLearnKeysChanged
 CMsgGCToServerUpdateSteamBroadcasting
 CMsgGCTopCustomGamesList
 CMsgGCUpdateSubGCSessionInfo
@@ -25518,7 +25525,7 @@ CSteamLearnManager
 CSteamLearnManager::BRegisterDataSource Steam UM dispatch failed
 CSteamLearnManager::BSnapshotProject (batched) no HMAC secret for project %u
 CSteamLearnManager::BSnapshotProject Steam UM dispatch failed
-CSteamLearnManager::BSnapshotProject no submission HMAC secret for project %u
+CSteamLearnManager::BSnapshotProject no submission HMAC secret for project %u, published version %u
 CSteamLearnManager::BSubmitToDataSource Steam UM dispatch failed
 CSteamLearnManager::BSubmitToDataSource no HMAC secret for data source %u
 CSteamLearnManager::BSubmitToDataSource no submission HMAC secret for data source %u
@@ -32180,6 +32187,7 @@ H;r(t*L
 H;rXt3H
 H;x trI
 H=vmdlt%H
+H@Hc@8H
 HA;\$Lu
 HAS_LADDERS_AND_ELEVATORS
 HDR Color Scale: %0.3f
@@ -32330,7 +32338,8 @@ HaticsType_None
 Have Entity say string, and teamOnly or not
 Have we received the post match signout message that includes reward information
 HaveAllPlayersJoined
-Hc5`-N
+Hc5 gN
+Hc5[iN
 HcCH;CX
 HcCx;Ct
 HcHHLcX0I
@@ -33773,7 +33782,6 @@ IDEA-OFB
 IDEMPOTENCY_UNKNOWN
 IDEMPOTENT
 IEconItemInterface
-IFIER_EVENT_ON_MODEL_CHANGED
 IGE_AssassinationState
 IGNORED due to being marked "Dont save
 IGNORED, no across_transition flag & no globalname
@@ -35451,7 +35459,6 @@ Lcc@D;cPD
 LccHD;cX
 LccHD;cXD
 LccPD;c`A
-LccPD;c`D
 LcchD;cxD
 LcchD;cxt.H
 Lcg(D;g8I
@@ -35730,6 +35737,7 @@ MEDIUM_TALL_HULL
 MEM_ERROR
 MESH_DRAW_FLAGS_DRAW_LAST
 MESH_DRAW_FLAGS_NONE
+ME_PARTICLE_MANAGER_EVENT_DESTROY_INVOLVING
 MEntitySubclassScopeFile
 MEnumFlagsWithOverlappingBits
 MEnumeratorIsNotAFlag
@@ -35814,6 +35822,7 @@ MODIFIER_EVENT_ON_HERO_KILLED
 MODIFIER_EVENT_ON_KILL
 MODIFIER_EVENT_ON_MAGIC_DAMAGE_CALCULATED
 MODIFIER_EVENT_ON_MANA_GAINED
+MODIFIER_EVENT_ON_MODEL_CHANGED
 MODIFIER_EVENT_ON_MODIFIER_ADDED
 MODIFIER_EVENT_ON_ORB_EFFECT
 MODIFIER_EVENT_ON_ORDER
@@ -36532,7 +36541,6 @@ MovementTurnRate
 Moveto: %s
 Moving away as an escape
 MsgSaved
-MsgSteamLearnMatchHero
 MultiQueryIdentifier: %s
 MultiSrc: Used by non member %s
 MultiTouch
@@ -37012,6 +37020,7 @@ N5GCSDK12CProtoBufMsgI36CMsgGCToServerRealtimeStatsStartStopEE
 N5GCSDK12CProtoBufMsgI37CMsgGCToServerUpdateSteamBroadcastingEE
 N5GCSDK12CProtoBufMsgI37CMsgGameMatchSignOutPermissionRequestEE
 N5GCSDK12CProtoBufMsgI37CMsgServerToGCCavernCrawlIsHeroActiveEE
+N5GCSDK12CProtoBufMsgI38CMsgGCToServerSetSteamLearnKeysChangedEE
 N5GCSDK12CProtoBufMsgI38CMsgGameMatchSignOutPermissionResponseEE
 N5GCSDK12CProtoBufMsgI45CMsgServerToGCCavernCrawlIsHeroActiveResponseEE
 N5GCSDK12CProtoBufMsgI51CMsgServerToGCCloseCompendiumInGamePredictionVotingEE
@@ -37033,6 +37042,7 @@ N5GCSDK16CGCClientLinkJobI27CMsgIDLinkGCToGenericClientILj2ELj8813E25CMsgGCToSer
 N5GCSDK16CGCClientLinkJobI27CMsgIDLinkGCToGenericClientILj2ELj8817E33CMsgGCToServerCheerScalesOverrideEEE
 N5GCSDK16CGCClientLinkJobI27CMsgIDLinkGCToGenericClientILj2ELj8818E27CMsgGCToServerGetCheerStateEEE
 N5GCSDK16CGCClientLinkJobI27CMsgIDLinkGCToGenericClientILj2ELj8875E34CMsgGCToServerSetSteamLearnDisableEEE
+N5GCSDK16CGCClientLinkJobI27CMsgIDLinkGCToGenericClientILj2ELj8876E38CMsgGCToServerSetSteamLearnKeysChangedEEE
 N5GCSDK16CProtoBufMsgBase20IProtoBufSendHandlerE
 N5GCSDK16CProtoBufMsgBaseE
 N5GCSDK16CStructNetPacketE
@@ -37052,6 +37062,7 @@ N5GCSDK17CGCClientProtoJobI32CMsgGCtoServerTensorflowInstanceEE
 N5GCSDK17CGCClientProtoJobI33CMsgGCToServerCheerScalesOverrideEE
 N5GCSDK17CGCClientProtoJobI34CMsgGCToServerSetSteamLearnDisableEE
 N5GCSDK17CGCClientProtoJobI37CMsgGCToServerUpdateSteamBroadcastingEE
+N5GCSDK17CGCClientProtoJobI38CMsgGCToServerSetSteamLearnKeysChangedEE
 N5GCSDK17GCClientJobLambdaIZL28dota_load_demo_mode_scenarioRK15CCommandContextRK8CCommandEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN14CDOTAGameRules21UpdatePlayerAccoladesE10PlayerID_tEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN17CIngameEvent_Base17EventLobbyUpdatedEvEUlvE_EE
@@ -39948,6 +39959,7 @@ STEAMAPPS_INTERFACE_VERSION008
 STEAMHTMLSURFACE_INTERFACE_VERSION_005
 STEAMHTTP_INTERFACE_VERSION003
 STEAMINVENTORY_INTERFACE_V003
+STEAMLEARN_CACHE_DATA_DISABLED
 STEAMLEARN_CACHE_DATA_ERROR
 STEAMLEARN_CACHE_DATA_ERROR_FORBIDDEN
 STEAMLEARN_CACHE_DATA_ERROR_INVALID_KEYS
@@ -39961,11 +39973,15 @@ STEAMLEARN_DATATYPE_INVALID
 STEAMLEARN_DATATYPE_OBJECT
 STEAMLEARN_DATATYPE_STRING
 STEAMLEARN_GET_HMAC_KEYS_SUCCESS
+STEAMLEARN_REGISTER_DATA_SOURCE_RESULT_DISABLED
 STEAMLEARN_REGISTER_DATA_SOURCE_RESULT_ERROR
 STEAMLEARN_REGISTER_DATA_SOURCE_RESULT_ERROR_INVALID_TIMESTAMP
 STEAMLEARN_REGISTER_DATA_SOURCE_RESULT_ERROR_INVALID_VERSION
+STEAMLEARN_SNAPSHOT_PROJECT_DISABLED
 STEAMLEARN_SNAPSHOT_PROJECT_ERROR
 STEAMLEARN_SNAPSHOT_PROJECT_ERROR_FORBIDDEN
+STEAMLEARN_SNAPSHOT_PROJECT_ERROR_INTERNAL_DATA_SOURCE_ERROR
+STEAMLEARN_SNAPSHOT_PROJECT_ERROR_INVALID_PUBLISHED_VERSION
 STEAMLEARN_SNAPSHOT_PROJECT_SUCCESS_QUEUED
 STEAMLEARN_SNAPSHOT_PROJECT_SUCCESS_STORED
 STEAMMUSICREMOTE_INTERFACE_VERSION001
@@ -41136,7 +41152,6 @@ ServerType
 ServiceDescriptorProto
 ServiceOptions
 SessionNotFound
-Set 0 to disable emotes
 Set 0 to disable the [RESPONSELIB] warning messages
 Set Angular Velocity for VPHYS or normal object, from a vector of the axis of rotation, multiplied by the degrees of rotation per second
 Set Ent Text Filtering
@@ -41912,8 +41927,8 @@ Smooth curve decreasing slower as it approaches zero
 Smooth player eye z coordinate when traversing stairs
 Snap player eyes and orientation to specified pitch yaw <roll:optional> (must have sv_cheats
 Snap player eyes to specified pitch yaw <roll:optional> (must have sv_cheats
-Snapshot id %u, key '%s
 Snapshot of the entire state of a Dota match
+Snapshot project id %u, published version %u, key '%s
 SnapshotProject
 SnapshotProjectKeys
 Snapshots the current data for a project
@@ -42363,7 +42378,6 @@ T$XHcSXH
 T$`HcS`H
 T$pHcSpH
 T$xHcSxH
-TA_UM_VersusScene_PlayerBehavior
 TD SUMMARY (%d summaries
 TEAM_DIRE
 TEAM_NEUTRAL
@@ -42975,6 +42989,8 @@ Tried to call SetMass() on %s but it has no physics
 Tried to change invalid tracking projectile speed
 Tried to copy from a message with a different type. to
 Tried to destroy (from script) a networked entity (%d/%s) on the client, the server controls lifespan, ignoring
+Tried to get SteamLearn ProjectID for %u
+Tried to get SteamLearn Published Version for %u
 Tried to hibernate while installing UGC
 Tried to install UGC when already busy doing soemthing else
 Tried to merge from a message with a different type.  to
@@ -51053,7 +51069,7 @@ equip_regions_list
 equip_sound
 equipped_econ_items
 equipped_state
-er_item_paintball
+er_necronomicon_warrior_sight
 eresult
 eresult_deprecated
 errno_location
@@ -53548,7 +53564,6 @@ identifier_value
 idle: %s, weight: %.2f
 idle_alt_2_anim
 idle_lifetime
-ier_templar_assassin_psi_blades_slow
 if g_reloadState == nil then
 if g_reloadState[k] == nil then
 if imgui should consume input
@@ -53558,8 +53573,7 @@ if we starve, we hold the faster time dilation for at least this many msecs
 if we starve, we increment target queue only this often, 0 to disable
 if you ignore case and strip out the enum name prefix (if any). This is error-prone and can lead to undefined behavior. Please avoid doing this. If you are using allow_alias, please assign the same numeric value to both enums
 ifA;L$.waf
-ifierFactoryI32CDOTA_Modifier_HighFiveRequestedE
-ifierFactoryI51CDOTA_Modifier_Frostivus2018_Earthshaker_AftershockE
+ifierFactoryI64CDOTA_Modifier_AghsFort_TreantMiniboss_NaturesGuise_Tree_WalkingE
 ignite_damage_percent
 ignite_duration
 ignite_multicast_aoe
@@ -56066,6 +56080,7 @@ k_EMsgGCToServerRealtimeStatsStartStop
 k_EMsgGCToServerRecordTrainingData
 k_EMsgGCToServerScenarioSave
 k_EMsgGCToServerSetSteamLearnDisable
+k_EMsgGCToServerSetSteamLearnKeysChanged
 k_EMsgGCToServerSubmitCheerData
 k_EMsgGCToServerUpdateSteamBroadcasting
 k_EMsgGCTopCustomGamesList
@@ -56583,7 +56598,6 @@ layout_filename
 lazy = true] can only be specified for submessage fields
 ld bytes leaked in %d chunks
 ld-linux-x86-64.so.2
-ldSpentOnSupport
 leader_account_id
 leader_id
 leaderboard_rank
@@ -56620,7 +56634,6 @@ leaver_detected
 leaver_penalty_count
 leaver_state
 leaver_status
-lee_mid
 leech_damage
 left_cheek_raiser
 left_corner_puller
@@ -56976,6 +56989,7 @@ lycan_summon_wolves
 lycan_summon_wolves_critical_strike
 lycan_summon_wolves_invisibility
 lycan_wolf_bite
+m H;-lC
 mIcL$0Ic
 mXRecord
 m_16ByteOrLessStack out of space, falling through after %d entries, consider upping NETWORKFIELDSCRATCHDATA_16BYTE_COUNT
@@ -65339,6 +65353,7 @@ modifier_item_orchid_malevolence
 modifier_item_overflowing_elixir
 modifier_item_overwhelming_blink
 modifier_item_overwhelming_blink_debuff
+modifier_item_paintball
 modifier_item_paintball_debuff
 modifier_item_paladin_sword
 modifier_item_panic_button
@@ -65898,7 +65913,6 @@ modifier_necronomicon_archer_aura
 modifier_necronomicon_archer_purge
 modifier_necronomicon_warrior_last_will
 modifier_necronomicon_warrior_mana_burn
-modifier_necronomicon_warrior_sight
 modifier_necrophos_death_seeker_ethereal
 modifier_nemestice_tower_death_ring_thinker
 modifier_neutral_creep_lost
@@ -66537,6 +66551,7 @@ modifier_templar_assassin_meld
 modifier_templar_assassin_meld_animation
 modifier_templar_assassin_meld_armor
 modifier_templar_assassin_psi_blades
+modifier_templar_assassin_psi_blades_slow
 modifier_templar_assassin_psionic_trap_counter
 modifier_templar_assassin_refraction_absorb
 modifier_templar_assassin_refraction_absorb_stacks
@@ -67165,6 +67180,7 @@ n_creep_warpine.SeedShot.Cast
 n_creep_warpine.SeedShot.Target
 n_mud_golem.Boulder.Cast
 n_mud_golem.Boulder.Target
+n_name
 naga_illusion_ensnare
 naga_siren_crit
 naga_siren_mirror_image
@@ -72016,6 +72032,7 @@ publish_data
 publish_data.txt
 publish_timestamp
 published_file_id
+published_version
 publisher_group_id
 publisher_id
 puck_ethereal_jaunt
@@ -72101,6 +72118,7 @@ pvsplayer
 pwrd_cyber_cafe_id
 pwrd_cyber_cafe_name
 py_generic_services
+q(HcI H
 qangle_pitch_yaw
 qcStatements
 qop_blink
@@ -72275,8 +72293,8 @@ rattletrap_power_cogs
 rattletrap_rocket_flare
 raw_started_matchmaking_time
 raw_value_type
-rax_mel
 rax_melee_bot
+rax_melee_mid
 rax_melee_top
 rax_range_bot
 rax_range_mid
@@ -72612,6 +72630,7 @@ responsevalue
 restoration
 restore
 restore failed entirely
+restore got most of the way
 restore_amount
 restore_chance
 restore_duration
@@ -76575,7 +76594,6 @@ stop_on_nonidle
 stopped
 stoppoint
 storage_type
-store got most of the way
 store_bundle
 store_country_code
 store_purchase_type
@@ -77016,6 +77034,7 @@ t(L9;L
 t(Lc#D;c
 t(M94$L
 t(M9<$L
+t*D:-jFt
 t*Mc.E;n
 t*Mc<$E
 t+H;J s
@@ -77529,6 +77548,7 @@ tm[A\A]A
 to %s: %d
 to SUSPEND_FOR
 to constrain
+to disable emotes
 to start from the outermost scope
 toLocalPlayer
 toggle
@@ -77913,6 +77933,7 @@ uint64s
 ujLcOXfE
 uj[A\A]A
 ukrainian
+ullPacket
 ultimate_cooldown
 ultimate_scepter_consumed_alchemist_bonus_mana
 ultimate_state
