@@ -1,0 +1,245 @@
+"EVENT_ID_MUERTA_RELEASE_SPRING2023"
+{
+	"season_name"	"#DOTA_EventName_MuertaRelease_Spring2023"
+	"season_class"	"Season_MuertaRelease"
+
+	"must_be_owned"		"0"
+	"default_event_points"	"1000"
+
+	"event_end_time"	"1680634800" // Tuesday, April 4, 2023 12:00:00 PM GMT-08:00
+ 	"expiration_date"	"1680634800" // Tuesday, April 4, 2023 12:00:00 PM GMT-08:00
+
+	"points_per_level"		"1000"
+	"show_battle_level"		"0"
+
+	"tipping_periodic_resource" "muerta_release_2023_tipping_tokens"
+
+	"tip_amounts"
+	{
+		"0"
+		{
+			"tip_amount"	"50"
+			"particle"		""
+		}
+	}
+
+	"custom_tip_styles"	
+	{
+		"1"
+		{
+			"style"		"muerta2023"
+			"escalating_sounds"
+			{
+				"1"		"tip.base.muerta2023"
+				"2"		"tip.escalating2.muerta2023"
+				"3"		"tip.escalating3.muerta2023"
+				"4"		"tip.escalating4.muerta2023"
+				"5"		"tip.escalating5.muerta2023"
+			}		
+		}
+	}
+
+	// TODO
+	//"dashboard_background_panel_path"	"DOTAMuertaOfrendaPage"
+	//"show_home_page_event"	"DOTAShowBPInternational2022HomePage()"
+
+	"event_actions"
+	{
+		"muerta_blessings"
+		{
+			"action_id"			"1"
+			"max_grants"		"999999"
+			"rewards"
+			{
+				"2"
+				{
+					"reward_name"			"#DOTA_MuertaEvent_Blessings_Claim_Name"
+   					"reward_class"			"Achievement"
+				}
+				"6"
+				{
+					"reward_name"			"#DOTA_MuertaEvent_Blessings_Claim_Name"
+   					"reward_class"			"Achievement"
+				}
+				"12"
+				{
+					"reward_name"			"#DOTA_MuertaEvent_Blessings_Claim_Name"
+   					"reward_class"			"Achievement"
+				}
+			}
+		}
+
+		"muerta_blessings_claim"
+		{
+			"action_id"			"2"
+			"max_grants"		"3"
+			"claimable_if_prerequisites_satisfied"	"1"
+			"prerequisite_actions"
+			{
+				"muerta_blessings"	"auto"
+			}
+
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"reward_name"			"#DOTA_MuertaEvent_Blessings_Claim_Name"
+   					"reward_class"			"Achievement"
+					"grants"
+					{
+						"grant_item"	"23769"
+					}
+				}
+			}
+		}
+		
+
+		"muerta_blessings_claim_infinite"
+		{
+			"action_id"			"3"
+			"max_grants"		"999999"
+			"claimable_if_prerequisites_satisfied"	"1"
+			"prerequisite_actions"
+			{
+				"muerta_blessings"	"20 + 10n"
+			}
+
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"reward_name"			"#DOTA_MuertaEvent_Blessings_Claim_Name"
+   					"reward_class"			"Achievement"
+					"grants"
+					{
+						"grant_item"	"23769"
+					}
+				}
+			}
+		}
+
+		"muerta_minigame_win"
+		{
+			"action_id"			"10"
+			"max_grants"		"99999"
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"grants"
+					{
+						"grant_action_custom"
+						{
+							"action"	"muerta_blessings"
+							"count"		"4"
+						}
+					}
+				}
+			}
+		}
+
+		"muerta_minigame_win_turbo"
+		{
+			"action_id"			"11"
+			"max_grants"		"99999"
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"grants"
+					{
+						"grant_action_custom"
+						{
+							"action"	"muerta_blessings"
+							"count"		"2"
+						}
+					}
+				}
+			}
+		}
+
+		"muerta_minigame_loss"
+		{
+			"action_id"			"12"
+			"max_grants"		"99999"
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"grants"
+					{
+						"grant_action_custom"
+						{
+							"action"	"muerta_blessings"
+							"count"		"2"
+						}
+					}
+				}
+			}
+		}
+
+		"muerta_minigame_loss_turbo"
+		{
+			"action_id"			"13"
+			"max_grants"		"99999"
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"grants"
+					{
+						"grant_action_custom"
+						{
+							"action"	"muerta_blessings"
+							"count"		"1"
+						}
+					}
+				}
+			}
+		}
+
+		"muerta_claim_free_keys"
+		{
+			"action_id"			"20"
+			"max_grants"		"1"
+			"always_claimable"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_items"
+						{
+							"item_def"	"23789" // Key of the Dead Reckoning
+							"quantity"	"5"
+						}
+					}
+				}
+			}
+		}
+
+		"level_reward_1"
+		{
+			"action_id"					"1001"
+			"available_at_event_level"	"1"
+			"must_own_event"	"0"
+			"is_lobby_networked"		"1"
+			"rewards"
+			{
+				"1"
+				{
+					"reward_class"		"CustomTip"
+					"grants"
+					{
+						"grant_generic_reward"
+						{
+							"name"			"#DOTA_International2022_TippingUpgrade1"
+							"image"			"{images}/battlepass/international2022/reward_line/rewardline_silver_tip_preview.psd"
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,52 @@
+<!-- xml reconstructed by ValveResourceFormat: https://vrf.steamdb.info/ -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/frontpage_shared.vcss_c" />
+		<include src="s2r://panorama/styles/leaf_pages/dashboard_page_debut_styles.vcss_c" />
+		<include src="s2r://panorama/styles/dashboard_frontpage_muerta_event.vcss_c" />
+	</styles>
+	<DOTAFrontpageMuertaEvent hittest="true" onactivate="">
+		<Panel class="EventTile" onmouseover="UIShowCustomLayoutTooltip( MuertaEventTooltip, file://{resources}/layout/tooltips/tooltip_muerta_event.xml )" onmouseout="UIHideCustomLayoutTooltip(MuertaEventTooltip)">
+			<Panel class="EventBody">
+				<Label class="MinigameTitle" text="#DOTA_MuertaEvent_Minigame" />
+				<Panel class="BlessingsCount">
+					<Panel class="FillWidth" />
+					<Panel id="BlessingsRemaining">
+						<Label class="BlessingsText Faint" text="#DOTA_MuertaEvent_BlessingsToNextTreasure" html="true" />
+					</Panel>
+					<Panel id="KeysRemaining">
+						<Label class="BlessingsText Faint" text="#DOTA_MuertaEvent_KeysRemaining" html="true" />
+					</Panel>
+					<Panel class="FillWidth" />
+				</Panel>
+				<Panel class="BlessingsProgressBarPanel">
+					<ProgressBar id="BlessingsProgressBar" class="BlessingsProgressBar" hasnotches="true" valuepernotch="1.0">
+						<DOTAScenePanel id="ProgressBarFX" map="scenes/events/muerta_ofrenda/muerta_ui_progress_bar" renderdeferred="false" rendershadows="false" camera="camera_1" hittest="false" particleonly="true" live-mode="high_end_only" />
+					</ProgressBar>
+					<Image class="BlessingImage" src="s2r://panorama/images/events/muerta/muerta_tribute_large_psd.vtex" scaling="stretch-to-fit-preserve-aspect" />
+					<Panel id="TreasureIconContainer">
+						<Panel id="BackgroundFXContainer">
+							<DOTAScenePanel id="BackgroundFX" map="scenes/rank_tier_ambient" renderdeferred="false" rendershadows="false" camera="camera_1" hittest="false" particleonly="true" />
+						</Panel>
+						<Image id="TreasureIcon" class="TreasureIcon" src="s2r://panorama/images/events/muerta/muerta_chest_icon_128_psd.vtex" scaling="stretch-to-fit-preserve-aspect" />
+					</Panel>
+				</Panel>
+			</Panel>
+			<Panel class="Divider" />
+			<Panel id="ViewTreasurePanel">
+				<Panel class="FillWidth" />
+				<Button id="ViewTreasure" onactivate="DOTAShowTreasurePage(23769)">
+					<Label text="#DOTA_MuertaEvent_ViewTreasure" />
+				</Button>
+				<Panel class="FillWidth" />
+			</Panel>
+			<Panel id="ClaimTreasurePanel">
+				<Button id="ClaimTreasure" onactivate="DOTAMuertaEventClaimReward()">
+					<Label text="#DOTA_MuertaEvent_ClaimTreasure" />
+				</Button>
+				<DOTAScenePanel id="ClaimTreasureButtonFX" map="scenes/events/muerta_ofrenda/muerta_ui_claim_treasure" camera="shot_camera" particleonly="true" live-mode="high_end_only" hittest="false" />
+			</Panel>
+		</Panel>
+	</DOTAFrontpageMuertaEvent>
+</root>

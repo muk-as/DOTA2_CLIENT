@@ -2,7 +2,7 @@
 0 0 0 255
 0 = Density corresponds to blade existance, 1 = Density corresponds to blade height, 2 = Both 0 and 1
 0 = Off, 1 = Low, 2 = Med, 3 = high, 4 = ultra
-00  0000000000000000000000000000000000000000000000000000000@@00000P00000000000@@0000000
+00  00000000000000000000000000000000000000000000000@@0000P00000000000@@000000000
 000000000000000
 0000000088888888
 0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz
@@ -21,7 +21,6 @@
 10IAppSystem
 11CGrassWorld
 11CRefCountedI20CRefCountServiceBaseI6CRefMTEE
-11CRenderMesh
 11CalculateA8Ef
 11IVSSequence
 12CSceneObject
@@ -32,6 +31,7 @@
 14CAimConstraint
 14CBaseAppSystemI17IWorldRendererMgrE
 14CEmptySequence
+14IErrorListener
 15CBaseConstraint
 15CEntityIOOutput
 15CSingleWorldRep
@@ -86,6 +86,9 @@
 22IToolsResourceListener
 23CEntityComponentHelperTI16CScriptComponent32CEntityComponentHelperReferencedIS0_EE
 23CKV3ResourceBlockHelper
+23CKV3TransferContextBase
+23CKV3TransferLoadContext
+23CKV3TransferSaveContext
 24Half4InitEiiiPKjj
 24ISaveRestoreBlockHandler
 25CAttributeDictSaveDataOps
@@ -119,6 +122,7 @@
 31ENS_14ColorFloatRGBAES1_PKjS3_jii
 32CEntityComponentHelperReferencedI16CScriptComponentE
 33333333H
+33333333L
 33CBaseIntrospectedToKV3TypeManager
 33CSchemaRegistration_worldrenderer
 34CKV3Transfer_ResourceLoadInterface
@@ -147,6 +151,7 @@
 4InitEPNS_8Block4x4EPNS_14ColorFloatRGBAENS_11ErrorMetricE
 4InitFromSourceEPNS_5ImageEjjPhNS_11ErrorMetricE
 4InitFromSourceEPNS_8Block4x4EPNS_14ColorFloatRGBAEPhNS_11ErrorMetricE
+51'W4i
 54SortEv
 55PrintEv
 58AddBlockEPNS_8Block4x4E
@@ -170,15 +175,14 @@
 6IWorld
 6PerformIterationEf
 73__assoc_stateIjEE
-79__async_assoc_stateI
 7CalcContributionsEiidbPFddEPNS_16tagFilterWeightsE
 7CalculateHalfOfTheSelectorsEjPKj
 7DetermineEncodingBitsFormatENS0_6FormatE
 7SetEncodingBits
 7TryIndividualHalfEPNS_14IndividualTrys4HalfE
 7bad_function_callE
+87bad_function_callE
 88CHROMA_BLUE_WEIGHTE
-88basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE
 8Block4x4
 8CalculateSelectorsEv
 8GetErrorEv
@@ -187,6 +191,7 @@
 8TryTAndHEj
 8[A\A]A^A
 8[A\A^A
+8basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE
 8jNS_12__async_funcIMN3Etc5ImageEFjjjjEJPS3_jijEEEEE
 8s_aafModifierTableE
 916Block4x4EncodingE
@@ -197,31 +202,32 @@
 9ISequence
 9TryDifferentialHalfEPNS_16DifferentialTrys4HalfE
 9TryPlanarEj
+9__async_assoc_stateI
 A+G ~"D
 A4Block4x4Encoding_RGBA8_TransparentE
 A5Block4x4Encoding_RGB8A1_TransparentE
 A9Block4x4Encoding_RGBA8_OpaqueE
 A9}(u{A9},uuA9}0uoA9}4uiA9}8ucA9}<u]A
 ABGR8888
-ANSt3__117bad_function_callE
+ANSt3__110__function6__funcIZN13CSOAContainer8FillAttrEifE3$_0NS_9allocatorIS3_EEFvvEEE
 APPSYSTEM: In ConnectInterfaces(), s_nRegistrationCount is %d
 ARAQASSAVAWAT
 ARARASAp
-ARAUASASASASASASBSAp
+ARAUASASASASASASASBSAp
 ARGB8888
 ASASASA
-ASASASASASASASASASASASASASAp
+ASASASASA
+ASASASASASASASASASASASASA]ASA\ASBRARAp
 ASASASASASBTAp
-ASASASASAUASASASASASASBp
 ATAZBRBZBRBZBRBZBRBZBRAZARAZARBZBRAZARAZARAZAp
 ATBZARAp
 ATTACHMENT_INFLUENCE_FLAGS_NONE
 AUASASASB
+AVBRBUASASASASASASASASB
 AWAVATS
 AWAVATS1
 AWAVATSA
 AWAVATSD
-AWAVATSE
 AWAVATSH
 AWAVATSHc
 AWAVATSI
@@ -246,12 +252,11 @@ AWAVAUATSPM
 AWAVSP1
 AWAVSPA
 AWAVSPD
-AWAVSPE
 AWAVSPE1
 AWAVSPH
 AWAVSPI
 AWAVSPL
-AYASASA
+AWAVSPf
 A\A]A^A
 AddBlock
 AggregateMeshInfo_t
@@ -274,6 +279,7 @@ AssetSystem001
 AssetSystemTest001
 Attempted to ConvertToCopiedData for unsupported type (%d
 Attempted to set attribute %s as if it was a non-attribute key
+Attempted to set non-attribute value %s as if it was an attribute
 B9Block4x4Encoding_RGBA8_OpaqueE
 BGRA1010102
 BGRA4444
@@ -281,6 +287,7 @@ BGRA8888
 BGRA8888_LINEAR
 BGRX8888
 BGRX8888_LINEAR
+BVARASASASA
 Bad KV3 data for resource '%s': %s
 Bad KV3 data for resource: %s
 Bad type %d in saved CVariant
@@ -320,7 +327,7 @@ CEntityIdentity::SetEntityName called, but there is no entity name string table 
 CEntityInstance
 CEntityKeyValues::Unserialize: Invalid version! Expected %d, encountered %d
 CEntityKeyValues::Unserialize: Unable to read from a text-based utlbuffer
-CEntityKeyValues::Unserialize: Unsupported keyvalue variant type
+CEntityKeyValues::Unserialize: Unsupported keyvalue variant type (%d
 CEntityOutputTemplate
 CEntitySystem
 CFingerBone
@@ -341,7 +348,6 @@ CNetworkVarChainer
 COrientConstraint
 CParentConstraint
 CPointConstraint
-CRASARAVAUASBVAp
 CRenderBufferBinding
 CRenderMesh
 CRenderSkeleton
@@ -363,7 +369,6 @@ CTwistConstraint
 CUtlBinaryBlock
 CUtlRBTree overflow with %u elements
 CUtlString
-CUtlStringToken
 CUtlSymbolLarge
 CUtlVector
 CUtlVectorEmbeddedNetworkVar
@@ -390,7 +395,7 @@ CalculateR11
 CalculateSourceAverages
 Cannot allocate abstract class
 Cannot deduce for class
-Cf[A\A^A
+Cast of %s loses value information (returning %s
 ChangeAccessorFieldPathIndex_t
 CmdLinkAH
 ColorRegressionEPNS_14ColorFloatRGBAEjS2_S2
@@ -416,16 +421,12 @@ DjNS_12__async_funcIMN3Etc5ImageEFjjjjEJPS3_jijEEEEE
 Double-save to Member '%s
 Dump all of the worlds that we know about
 Dump the contents of an entity lump
+EHJcL80H
 ENTITY_DORMANT
-ENTITY_IO_TARGET_CLASSNAME
-ENTITY_IO_TARGET_CLASSNAME_DERIVES_FROM
-ENTITY_IO_TARGET_CONTAINS_COMPONENT
 ENTITY_IO_TARGET_EHANDLE
 ENTITY_IO_TARGET_ENTITYNAME
 ENTITY_IO_TARGET_ENTITYNAME_OR_CLASSNAME
 ENTITY_IO_TARGET_INVALID
-ENTITY_IO_TARGET_SPECIAL_ACTIVATOR
-ENTITY_IO_TARGET_SPECIAL_CALLER
 ENTITY_NOT_DORMANT
 ENTITY_SUSPENDED
 ERROR: Resource name "%s" has the incorrect extension "%s" for the specified resource type (expected "%s
@@ -450,14 +451,13 @@ EntityKeyValueData_t
 EventQueue
 ExtraVertexStreamOverride_t
 FATAL ERROR: unable to register all schema data: %s
-FHJcL80H
+FATAL: %s called on a pool context (no root available
 Failed to allocate an instance of a class
 Failed to allocate an instance of class '%s
 Failed to call CBaseIntrospectedToKV3TypeManager::Init
 Failed to load geometry for level %s
 Failed to mount world vpk file %s, file could not be found
 Failed to save unsupported class
-Failed to transfer KV3 data for resource '%s' - %s
 FeetSettings
 Ffffff
 FillAttr
@@ -473,7 +473,7 @@ FloatBitMap_t::LoadFromBuffer: Unsupported color format, skipping
 FloatBitMap_t::LoadFromFloatBitmap: Received improper bitmap size, skipping
 FloatBitMap_t::WriteToBuffer: Received improper buffer size %s (expecting %s), skipping
 FontManager_001
-G`IcE`H
+GHIcEHH
 GameResourceServiceClientV001
 GameResourceServiceServerV001
 GameStartup
@@ -498,6 +498,7 @@ GrassQuadSpecular.vtex
 GrassQuadSpecularArray
 GrassRenderTexture.vtex
 GrassSkewBrightness.vtex
+GrassTileDataVB
 GrassTileDirectionalIB
 GrassTileInit
 GrassTileInputLayout
@@ -516,12 +517,12 @@ HammerMapLoader001
 HelpSystem_001
 Hitbox indexing is incorrect for set %s, hitbox %s. Hitboxes will not be setup properly
 HostStateMgr001
-Ht9<XufI
+HostageSpawnRandomFactor
+Ht9<XupI
 IHandleEntity
 IMAGE_FORMAT_R11G11B10_FLOAT
 INVALID
 IcD$0H
-IcL$X9
 IndividualTrys
 InfoForResourceTypeCEntityLump
 InfoForResourceTypeCModel
@@ -543,13 +544,16 @@ InstallSchemaBindings
 Intentionally vague touch behavior for %p
 IterateThroughWorstBlocks
 JIGGLE_BONE
+K11CRenderMesh
 KV3 load transfer failed for resource '%s': %s
 KeyValueCache001
+KeyValues3 *CKeyValues3Context::Root
 LINEAR_D24S8
 LINKEDIT
 LOG_GENERAL
 Lanczos3Ed
 Lc_ LcW
+Lightmap set to use, only works on map load
 Lightmap version number is out of date! Reverting to dynamic lighting
 List all known entity lumps
 List all world layers
@@ -593,6 +597,7 @@ MaterialParam_t
 MaterialResourceData_t
 MaterialUtils_001
 Maximum lightmap resolution
+Maximum lightmap resolution for directional_irradiance channel. -1 = use value of r_lightmap_size
 McexIcu|H
 MemAlloc_AllocAlignedFunc
 MemAlloc_FreeAlignedFunc
@@ -635,12 +640,12 @@ NSt3__110__function6__funcIZN11ImageLoaderL15ConvertFromBC6hI10BGRA8888_tLb1EEEb
 NSt3__110__function6__funcIZN11ImageLoaderL15ConvertFromBC6hI10RGBA8888_tLb1EEEbPKhPT_iiEUlRiE_NS_9allocatorISA_EEFvS9_EEE
 NSt3__110__function6__funcIZN11ImageLoaderL15ConvertFromBC6hI15RGBA16161616F_tLb0EEEbPKhPT_iiEUlRiE_NS_9allocatorISA_EEFvS9_EEE
 NSt3__110__function6__funcIZN11ImageLoaderL15ConvertFromBC6hI15RGBA32323232F_tLb0EEEbPKhPT_iiEUlRiE_NS_9allocatorISA_EEFvS9_EEE
-NSt3__110__function6__funcIZN13CSOAContainer8FillAttrEifE3$_0NS_9allocatorIS3_EEFvvEEE
 NSt3__110__function6__funcIZN17CWorldRendererMgr22HandleGrassLoadRequestEP18GrassLoadRequest_tE3$_0NS_9allocatorIS5_EEFvP18IAsyncReadRequest220AsyncRequestStatus_tEEE
 NSt3__110__function6__funcIZN20CGrassTileObjectDesc20GenerateGrassTextureE11CWeakHandleI29InfoForResourceTypeIMaterial2ES3_I31InfoForResourceTypeCTextureBaseEibPK12CTextureDescE3$_0NS_9allocatorISB_EEFvvEEE
 NSt3__110__function6__funcIZN31CReadGrassTexturePixelsCallback19OnReadTexturePixelsEPKh11ImageFormatiiiiEUlvE_NS_9allocatorIS6_EEFvvEEE
 NSt3__113__assoc_stateIjEE
 NSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEE
+NSt3__117bad_function_callE
 NSt3__118basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE
 NSt3__119__async_assoc_stateIjNS_12__async_funcIMN3Etc5ImageEFjjjjEJPS3_jijEEEEE
 NSt3__119__async_assoc_stateIvNS_12__async_funcIMN3Etc5ImageEFvjjEJPS3_ijEEEEE
@@ -681,9 +686,7 @@ Output unserialization of entities on map load. 0 - off, 1 - client/server, 2 - 
 POSE_SPACE_BONE
 POSE_SPACE_MORPH
 PPPPPP0
-PPPPPPP
-PPPPPPPPP
-PSARASAVAQ
+PSARASATAQ
 P[A\A^A
 PackedAABB_t
 PanoramaTextServices001
@@ -708,6 +711,7 @@ Plat_IsInDebugSession
 Plat_NeedsLowFragmentation
 Plat_NonFatalErrorFunc
 Plat_ShouldCollectMiniDumpsForFatalErrors
+Pointers cannot be used as numeric values
 PostProcessingSystem_001
 Print model load-time conversion info
 PropertyEditorSystem_001
@@ -723,18 +727,20 @@ R8G8B8_ETC2
 R8G8_UINT
 R8_UINT
 RARARARARARARA
-RARARAZBRB]AUAp
 RARARAp
-RARAUASASASASASASASASASB`(AVBUASASASASASASB
+RARAUASASASASA
 RARAZAp
+RARBRAZBRB]AUAp
+RASARAVAUBVAp
+RASASApXSBRBRBRBp
 RATASASASBZARAp
 RATASBSA
 RATAUASBRARAVBp
 RAUASBTAp
 RAUBUAp
 RAVA\ARA
-RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp`p
-RCRBpXRBRBRBRBp
+RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBpXp
+RCRBpXRBRBRBp
 RESOURCE_TYPE_ENTITY_LUMP
 RESOURCE_TYPE_WORLD
 RESOURCE_TYPE_WORLD_NODE
@@ -784,6 +790,7 @@ RunFirstPass
 SASASASASBZAp
 SATBp8
 SBZARAp
+SDSBSB]0
 SIGNED_R11
 SIGNED_RG11
 SRGB8A1
@@ -806,7 +813,6 @@ SetEncodingBits_T
 Show or hide the specified world layer
 SkeletalInputSettings
 SkeletonBoneBounds_t
-SlopeTrace
 SoundOpSystem001
 SoundOpSystemEdit001
 SoundService_001
@@ -834,11 +840,6 @@ System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices
 System/Library/Frameworks/Foundation.framework/Versions/C/Foundation
 TILT_TWIST
 T_BestSelectorCombinationEv
-TestFormatA
-TestFormatB
-TestFormatC
-TestFormatD
-TestFormatE
 TestScriptMgr001
 TextLayout_001
 This convar is being accessed prior to ConVar_Register being called
@@ -848,14 +849,14 @@ ToolFramework2_002
 ToolSceneNodeFactory_001
 ToolService_001
 Tried to load a polymorphic pointer with no '%s' key
-Tried to load resource reference '%s' from a value without a resource reference flag
+Tried to load resource reference '%s' from a value without a resource reference specific type
 TryDifferential
 TryDifferentialHalf
 TryIndividualHalf
 Trying to find a flex controller (%s) that doesn't actually exist in the model
 TwiddlePlanar
 TypeManager
-UASASASASASASASB
+UASASASASASASASAp
 UNKNOWN
 UUUUUUUUH
 UUUUfE9
@@ -865,6 +866,7 @@ Unknown lightmap texture: %s
 UnmountWorldVPK() --%s is at refcount %d
 Unsupported ETC image format %d
 Unsupported Grass File Version. Expected %d. Found %d
+Unsupported KV3 basic type '%s' (%d
 Unsupported number of values found in grass tile. Expected %d. Found %d
 Unwind_Resume
 Usage: %s <world_name> <layer_name> <visible
@@ -881,8 +883,6 @@ VFileSystem017
 VMapResourceData_t
 VMaterialSystem2_001
 VMediaFoundation001
-VOXVIS_COMPRESS_RAW
-VOXVIS_COMPRESS_RLE
 VPhysics2_Handle_Interface_001
 VPhysics2_Interface_001
 VProcessUtils002
@@ -893,17 +893,40 @@ VScriptDbg
 VScriptManager010
 VStringTokenSystem001
 V_CopyMemory3D
+V_DoubleToString_Unsafe
+V_FloatToString_Unsafe
 V_GetFileExtension
+V_Int16ToString_Unsafe
+V_Int32ToString_Unsafe
+V_Int64ToString_Unsafe
+V_Int8ToString_Unsafe
 V_IsAbsolutePath
 V_PrettifyNum
 V_RemoveDotSlashes
+V_StringParseError
+V_StringToBool
+V_StringToColor
+V_StringToFloat32
+V_StringToFloat64
+V_StringToInt16
+V_StringToInt32
+V_StringToInt64
+V_StringToInt8
+V_StringToQAngle
+V_StringToUint16
+V_StringToUint32
+V_StringToUint64
+V_StringToUint8
+V_StringToVector
+V_StringToVector2D
+V_StringToVector4D
+V_UInt16ToString_Unsafe
+V_UInt32ToString_Unsafe
+V_UInt64ToString_Unsafe
+V_UInt8ToString_Unsafe
 V_acosf
 V_asinf
 V_atan2f
-V_atofloat32
-V_atofloat64
-V_atoi64
-V_atoui64
 V_cosf
 V_expf
 V_frexpf
@@ -913,14 +936,9 @@ V_qsort
 V_qsort_s
 V_sincosf
 V_sinf
-V_snprintf
-V_sscanf
 V_stricmp_fast
 V_strncpy
 V_strnicmp_fast
-V_strtod
-V_strtoi64
-V_strtoui64
 V_uuid_t
 Vector2D
 Vector4D
@@ -938,6 +956,7 @@ Volumes/P4/source2/src/thirdparty/etc2comp/EtcLib/EtcCodec/EtcBlock4x4Encoding_R
 Volumes/P4/source2/src/thirdparty/etc2comp/EtcLib/EtcCodec/EtcDifferentialTrys.cpp
 Volumes/P4/source2/src/thirdparty/etc2comp/EtcLib/EtcCodec/EtcIndividualTrys.cpp
 Volumes/P4/source2/src/thirdparty/etc2comp/EtcLib/EtcCodec/EtcSortedBlockList.cpp
+VoxelVisBlockOffset_t
 WARNING: Failed to convert introspected block for file: %s
 WARNING: Invalid resource version (%d): %s
 WARNING: Invalid worldnode version '%d' for file: %s
@@ -950,6 +969,7 @@ World '%s' layer '%s
 World: %s
 WorldBuilderParams_t
 WorldExtraVertexStream
+WorldGroupId_t
 WorldNodeOnDiskBufferData_t
 WorldNodeProceduralModel
 WorldNode_t
@@ -962,25 +982,27 @@ WorldRenderer/GrassQuadSize
 WorldRendererMgr001
 World_t
 X[A\A]A^A
-Xt9<HufI
+Xt9<HupI
 You must construct it with ORDERED_CONSTRUCT macro in the dependency resolution function
 Z13DebugPrintKV3PK10KeyValues3
 Z14V_stristr_fastPKcS0
 Z17LoggingSystem_Logi17LoggingSeverity_tPK17LoggingMetaData_tPKcz
 Z17LoggingSystem_Logi17LoggingSeverity_tRK14LeafCodeInfo_tPKcz
+Z20SaveKV3Text_NoHeaderPK10KeyValues3P10CUtlStringP13CBufferStringj
 Z22Assert_ConditionFailedRK34_AssertCompileTimeConstantStruct_t
 Z22Assert_ConditionFailedRK34_AssertCompileTimeConstantStruct_tPKcz
 Z7LoadKV3P10KeyValues3P10CUtlStringP10CUtlBufferRK7KV3ID_tPKc
 Z7LoadKV3P18CKeyValues3ContextP10CUtlStringP10CUtlBufferRK7KV3ID_tPKc
-ZARA`7ASDSBSB]0
+ZARA`4ASBp
 ZN10CCallQueue18ParallelCallQueuedEPKcP11IThreadPool
 ZN10CUtlBuffer14EnsureCapacityEi
 ZN10CUtlBuffer16PeekStringLengthEv
 ZN10CUtlBuffer17SetExternalBufferEPviii
+ZN10CUtlBuffer18AddNullTerminationEv
 ZN10CUtlBuffer21CheckArbitraryPeekGetEiRi
 ZN10CUtlBuffer7SeekGetENS_10SeekType_tEi
 ZN10CUtlBuffer8CheckGetEi
-ZN10CUtlBuffer9GetStringEPci
+ZN10CUtlBuffer9GetStringEP13CBufferString
 ZN10CUtlBufferC1EPKvii
 ZN10CUtlBufferC1Eiii
 ZN10CUtlString10FixSlashesEc
@@ -988,6 +1010,7 @@ ZN10CUtlString15FreeMemoryBlockEv
 ZN10CUtlString3SetEPKc
 ZN10CUtlString5PurgeEv
 ZN10CUtlString6FormatEPKcz
+ZN10CUtlString7AcquireEP13CBufferStringb
 ZN10CUtlString9SetDirectEPKci
 ZN11ImageLoaderL14ConvertFromBC7I10BGRA8888_tEEbPKhPT_iiEUlRiE
 ZN11ImageLoaderL14ConvertFromBC7I10RGBA8888_tEEbPKhPT_iiEUlRiE
@@ -998,15 +1021,19 @@ ZN11ImageLoaderL15ConvertFromBC6hI15RGBA32323232F_tLb0EEEbPKhPT_iiEUlRiE
 ZN12CSplitString9ConstructEPKcPS1_ib
 ZN13CBufferString10FixSlashesEc
 ZN13CBufferString11ToLowerFastEi
+ZN13CBufferString12AppendFormatEPKcz
 ZN13CBufferString12SetExtensionEPKc
 ZN13CBufferString13AppendFormatVEPKcP13__va_list_tag
 ZN13CBufferString13FixupPathNameEc
 ZN13CBufferString15ExtractFileBaseEPKc
+ZN13CBufferString15ExtractFilePathEPKcb
 ZN13CBufferString5PurgeEi
 ZN13CBufferString6ConcatEPKcS1_z
 ZN13CBufferString6FormatEPKcz
 ZN13CBufferString6InsertEiPKcib
+ZN13CBufferString6SetPtrEPciibb
 ZN13CBufferString8RemoveAtEii
+ZN13CBufferString8TrimTailEPKc
 ZN13CBufferString9SetLengthEibPi
 ZN13CRawAllocator4FreeE18RawAllocatorType_tPvm
 ZN13CRawAllocator5AllocE18RawAllocatorType_tmPm
@@ -1022,12 +1049,9 @@ ZN17CWorldRendererMgr22HandleGrassLoadRequestEP18GrassLoadRequest_tE3$_0
 ZN18CUtlMemoryPoolBase4FreeEPv
 ZN20CGrassTileObjectDesc20GenerateGrassTextureE11CWeakHandleI29InfoForResourceTypeIMaterial2ES0_I31InfoForResourceTypeCTextureBaseEibPK12CTextureDescE3$_0
 ZN21CUtlScratchMemoryPool12AllocAlignedEii
-ZN21CUtlScratchMemoryPool4InitEjjPvb
-ZN21CUtlScratchMemoryPool7FreeAllEv
-ZN21CUtlScratchMemoryPoolC1EjjPvb
-ZN21CUtlScratchMemoryPoolC1Ev
-ZN21CUtlScratchMemoryPoolD1Ev
 ZN24CUtlMemoryBlockAllocator12AllocAndCopyEPKcj
+ZN24CUtlMemoryBlockAllocator5PurgeEv
+ZN24CUtlMemoryBlockAllocator9RemoveAllEm
 ZN24CUtlMemoryBlockAllocatorC1Eij18RawAllocatorType_t
 ZN24CUtlMemoryBlockAllocatorD1Ev
 ZN31CReadGrassTexturePixelsCallback19OnReadTexturePixelsEPKh11ImageFormatiiiiEUlvE
@@ -1361,17 +1385,20 @@ ZnwmRKSt9nothrow_t
 a_fDecodedAlpha >= 0.0f
 a_uiMultithreadingStride > 0
 a_uiRadius <= MAX_RADIUS
+ambient_direction_day
+ambient_direction_night
+array: %u elements
 assert_rtn
-binary_auto
-binary_bc
-binary_lz4
-binary_zstd
+background
+binary blob: %u bytes
+binary_blob
 bool CEntityKeyValues::Unserialize(CUtlBuffer
 bool CEntityKeyValues::UnserializeKeys(CUtlBuffer &, int, bool
 boolean
 character
 cmaps%c
 common
+convars_hidden_by_default
 cstring
 cxa_allocate_exception
 cxa_atexit
@@ -1389,13 +1416,15 @@ d %d %d
 d %d %d %d
 d (s/n %d
 debug_chart_color
+default_ents
 detexConvertPixels: Too many temporary buffers needed
 detexConvertPixels: Unable to find conversion path
 detexSetErrorMessage: vasprintf returned error
 direct_light_shadows
 directional_irradiance
 dyld_stub_binder
-e`Ic_`E
+eHIc_HE
+e`Mcw`D
 effortblocks = %d
 egenerates
 ehandle
@@ -1407,7 +1436,6 @@ entity_log_load_unserialize
 entity_lump_list
 entity_lump_spew
 entity_lump_spew %s %s
-exMcwxD
 f %f %f
 f %f %f %f
 fMinAlpha <= fMaxAlpha
@@ -1466,8 +1494,11 @@ iRed2 < 0 || iRed2 > 31
 iRed2 >= (signed)(0 + a_uiRadius) && iRed2 <= (signed)(31 - a_uiRadius
 iRed2 >= 0 && iRed2 <= 31
 ifferentialEbjii
+inspector_specular_direction_day
+inspector_specular_direction_night
 int64)m_nAllocationCount + (int64)num ) <= 0x7FFFFFFF
 integer
+invalid
 iszString
 jNS_12__async_funcIMN3Etc5ImageEFjjjjEJPSA_jijEEEEEFvvEPSF_EEEEEPvSK
 js_array
@@ -1479,6 +1510,9 @@ kv 0x%p AddRef refcount == %d
 kv 0x%p Release refcount == %d
 la_symbol_ptr
 libworldrenderer.dylib
+light_direction_day
+light_direction_night
+lightmaps
 loader_path
 lrintf
 m_CScriptComponent
@@ -1486,11 +1520,16 @@ m_ChildNodeIndices
 m_ConeAxis
 m_ConeCutoff
 m_CullingData
+m_EnclosedClusterListBlock
+m_EnclosedClustersBlock
 m_Format
 m_HitBoxSets
 m_HitBoxes
+m_MasksBlock
+m_NodeBlock
 m_PackedAABB
 m_PathIndex
+m_RegionBlock
 m_SourceFilename
 m_Value
 m_VisClusterMemberBits
@@ -1519,7 +1558,6 @@ m_bTranslationOnly
 m_bUseCompressedNormalTangent
 m_bUseShadowFastPath
 m_bVisible
-m_blockOffset
 m_boneName
 m_boneParents
 m_bones
@@ -1529,11 +1567,9 @@ m_boolDone
 m_boolOpaque
 m_boolPunchThroughPixels
 m_boolTransparent
-m_boundsGroups
 m_builderParams
 m_cRenderColor
 m_childLumps
-m_clusters
 m_connections
 m_constraints
 m_designerName
@@ -1552,6 +1588,7 @@ m_fDataObjectTypes
 m_fError >= 0.0f
 m_fLODEndDrawDistance
 m_fLODStartDrawDistance
+m_fMaxObjectScale
 m_fingers
 m_flAlpha
 m_flBindPoseDirectionMS
@@ -1618,8 +1655,6 @@ m_lightMaps
 m_material
 m_materialName
 m_materialOverrides
-m_mergeClusters
-m_mergeLists
 m_meshlets
 m_metacarpalBoneName
 m_mode == MODE_ETC1
@@ -1628,14 +1663,12 @@ m_mode == MODE_PLANAR
 m_mode == MODE_T
 m_morphSet
 m_nAdditionalMeshDrawPrimitiveFlags
+m_nBaseClusterCount
 m_nBaseVertex
 m_nBindOffsetBytes
-m_nBlockIndex
 m_nBoneHash
 m_nBoneNameHash
 m_nBoneWeightCount
-m_nBoundsGroupIndex
-m_nClusterCount
 m_nCompileFingerprint
 m_nCompileTimestamp
 m_nCubeMapPrecomputedHandshake
@@ -1643,7 +1676,6 @@ m_nDrawCallIndex
 m_nElementCount
 m_nElementSizeInBytes
 m_nFingerIndex
-m_nFirstCluster
 m_nFirstMeshlet
 m_nFlags
 m_nGroupId
@@ -1659,39 +1691,37 @@ m_nLightProbeVolumePrecomputedHandshake
 m_nLightmapGameVersionNumber
 m_nLightmapVersionNumber
 m_nNameHash
-m_nNodeCount
 m_nNumMeshlets
 m_nObjectID
 m_nObjectTypeFlags
 m_nOffset
-m_nOffsetIntoBlock
 m_nOutputID
 m_nOverlayRenderOrder
-m_nPVSCompression
-m_nPVSSizeCompressed
+m_nPVSBytesPerCluster
 m_nParent
 m_nPrimitiveType
 m_nPriority
-m_nRegionCount
 m_nRenderOrder
 m_nRuntimeIndex
 m_nSceneObjectIndex
 m_nSemanticIndex
 m_nSequenceOverride
 m_nShapeType
+m_nSkyVisibilityCluster
 m_nSlaveAxis
 m_nSlaveChannel
 m_nSlot
 m_nSlotType
 m_nStartIndex
 m_nSubSceneObject
+m_nSunVisibilityCluster
 m_nTargetAxis
 m_nTargetType
 m_nTimesToFire
-m_nTreeSize
 m_nUpType
 m_nValue
 m_nVertexCount
+m_nVisBlocks
 m_nVisClusterMemberCount
 m_nVisClusterMemberOffset
 m_nameStringableIndex
@@ -1743,10 +1773,8 @@ m_sceneObjects
 m_scriptClassName
 m_shaderName
 m_skeleton
-m_skyVisibilityCluster
 m_slaves
 m_stringAttributes
-m_sunVisibilityCluster
 m_targetDesc
 m_targetInput
 m_targetName
@@ -1785,7 +1813,6 @@ m_vUVEnd
 m_vUVStart
 m_vUpLS
 m_vUpVector
-m_vWorldBounds
 m_value
 m_valueOverride
 m_variantValue
@@ -1809,6 +1836,7 @@ matrix3x4_t
 memcmp
 memcpy
 memmove
+memset
 memset_pattern16
 mesh_calculate_curvature_smooth_invert
 mesh_calculate_curvature_smooth_pass_count
@@ -1825,21 +1853,21 @@ no failure reason set
 no targetname
 o@NSt3__120__shared_ptr_pointerIPhZN3Etc13EncodeMipmapsEPfjjNS2_5Image6FormatENS2_11ErrorMetricEfjjjjPNS2_8RawImageEPibE3$_0NS_9allocatorIhEEEE
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/bitmap/floatbitmap.cpp
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/bitmap/floatbitmap.cpp(307): Conversion not supported yet
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/bitmap/floatbitmap.cpp(941): Unsupported color format "%s", skipping
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/bitmap/floatbitmap.cpp(317): Conversion not supported yet
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/bitmap/floatbitmap.cpp(962): Unsupported color format "%s", skipping
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/entity2/entitykeyvalues.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/mathlib/mathlib.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/schemalib/schemaclassinfo.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/tier0_perproject/singletons.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/worldrenderer/grasstilesceneobject.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/worldrenderer/worldrenderermgr.cpp
-p RBp0p
-p REp(p
-p0p0p8RASASApXSBRBRBRBp
+p REp p
+p8RBRCp
 p8SCpXp
 pass %u
 pbucket->plinkLast->GetNext() == nullptr
 phys_res
+pointer
 position
 pp@@0@@00
 printf
@@ -1870,7 +1898,9 @@ r_grass_parallel_load
 r_grass_quality
 r_grass_start_fade
 r_grass_vertex_lighting
+r_lightmap_set
 r_lightmap_size
+r_lightmap_size_directional_irradiance
 r_render_world_node_bounds
 r_world_allow_bindless_desc
 r_world_frame_load_threshold_ms
@@ -1909,13 +1939,18 @@ s_auiBottomPixelMappingE
 s_auiLeftPixelMappingE
 sc_allow_precomputed_vismembers
 scenesystem
+specular_direction_day
+specular_direction_night
 stack_chk_fail
 stack_chk_guard
+standard
 strcmp
 strdup
+strict_type_combinations
 strlen
 stub_helper
 t(D#C\L
+table: %u members
 texcoord
 thread constructor failed
 thread_bss
@@ -1925,14 +1960,12 @@ tlv_bootstrap
 tzD9#u_D9s
 u iterated blocks
 u unfinished blocks
-u/<XtE<Hu'L
-u/<XtT<Hu'L
 uK!>uK!>uK!>uK
-uX<Xt-<HuPL
-uZ<Xt.<HuRL
 uiTransparentPixels < PIXELS
 unable to load mesh "%s
 undefined
+unknown
+unknown KV3 basic type '%s' (%d
 unknown_variant_type
 unsigned
 unwind_info
@@ -1951,13 +1984,8 @@ vector2d
 vector3
 vector4
 vector4d
-vmdlkeys0
-vmdlkeys1
-vmdlkeys2
-vmdlkeys3
 void CSchemaClassInfo::ReportClassError(const char *) const
-void CUtlLeanVectorBase<CEntityKeyValues::KeyValueInfo_t, short>::EnsureCapacity(int, bool) [T = CEntityKeyValues::KeyValueInfo_t, I = short
-void CUtlLeanVectorFixedGrowableBase<unsigned int, 9, short>::EnsureCapacity(int, bool) [T = unsigned int, N = 9, I = short
+void CUtlLeanVectorBase<EntityIOConnectionDescFat_t, short>::EnsureCapacity(int, bool) [T = EntityIOConnectionDescFat_t, I = short
 void CUtlMemory<AABB_t, int>::Grow(int) [T = AABB_t, I = int
 void CUtlMemory<AggregateMeshInfo_t, int>::Grow(int) [T = AggregateMeshInfo_t, I = int
 void CUtlMemory<AggregateSceneObject_t, int>::Grow(int) [T = AggregateSceneObject_t, I = int
@@ -1976,9 +2004,6 @@ void CUtlMemory<CGrassTileSceneObject *, int>::Grow(int) [T = CGrassTileSceneObj
 void CUtlMemory<CGrassWorld *, int>::Grow(int) [T = CGrassWorld *, I = int
 void CUtlMemory<CHitBox, int>::Grow(int) [T = CHitBox, I = int
 void CUtlMemory<CHitBoxSet, int>::Grow(int) [T = CHitBoxSet, I = int
-void CUtlMemory<CKeyValues3ArrayCluster *, int>::Grow(int) [T = CKeyValues3ArrayCluster *, I = int
-void CUtlMemory<CKeyValues3Cluster *, int>::Grow(int) [T = CKeyValues3Cluster *, I = int
-void CUtlMemory<CKeyValues3TableCluster *, int>::Grow(int) [T = CKeyValues3TableCluster *, I = int
 void CUtlMemory<CMaterialDrawDescriptor, int>::Grow(int) [T = CMaterialDrawDescriptor, I = int
 void CUtlMemory<CMeshDrawPrimitive_t, int>::Grow(int) [T = CMeshDrawPrimitive_t, I = int
 void CUtlMemory<CMeshletDescriptor, int>::Grow(int) [T = CMeshletDescriptor, I = int
@@ -2003,7 +2028,6 @@ void CUtlMemory<CWorldRendererMgr::WindEntry_t, int>::Grow(int) [T = CWorldRende
 void CUtlMemory<CWorldSceneObjectRef *, int>::Grow(int) [T = CWorldSceneObjectRef *, I = int
 void CUtlMemory<CWristBone, int>::Grow(int) [T = CWristBone, I = int
 void CUtlMemory<EntityIOConnectionData_t, int>::Grow(int) [T = EntityIOConnectionData_t, I = int
-void CUtlMemory<EntityIOConnectionDescFat_t, int>::Grow(int) [T = EntityIOConnectionDescFat_t, I = int
 void CUtlMemory<EntityKeyValueData_t, int>::Grow(int) [T = EntityKeyValueData_t, I = int
 void CUtlMemory<ExtraSceneObjectStreamDesc_t, int>::Grow(int) [T = ExtraSceneObjectStreamDesc_t, I = int
 void CUtlMemory<ExtraVertexStreamOverride_t, int>::Grow(int) [T = ExtraVertexStreamOverride_t, I = int
@@ -2034,7 +2058,7 @@ void CUtlMemory<UtlRBTreeNode_t<CUtlMap<CUtlSymbolLarge, CUtlVector<CEntityHandl
 void CUtlMemory<UtlRBTreeNode_t<CUtlMap<const char *, CAttachment, int, bool (*)(const char *const &, const char *const &)>::Node_t, int>, int>::Grow(int) [T = UtlRBTreeNode_t<CUtlMap<const char *, CAttachment, int, bool (*)(const char *const &, const char *const &)>::Node_t, int>, I = int
 void CUtlMemory<UtlRBTreeNode_t<CUtlMap<const char *, CHitBoxSet, int, bool (*)(const char *const &, const char *const &)>::Node_t, int>, int>::Grow(int) [T = UtlRBTreeNode_t<CUtlMap<const char *, CHitBoxSet, int, bool (*)(const char *const &, const char *const &)>::Node_t, int>, I = int
 void CUtlMemory<UtlRBTreeNode_t<CUtlMap<unsigned long long, WorldTraversal_t *, unsigned short, bool (*)(const unsigned long long &, const unsigned long long &)>::Node_t, unsigned short>, unsigned short>::Grow(int) [T = UtlRBTreeNode_t<CUtlMap<unsigned long long, WorldTraversal_t *, unsigned short, bool (*)(const unsigned long long &, const unsigned long long &)>::Node_t, unsigned short>, I = unsigned short
-void CUtlMemory<Vector, int>::Grow(int) [T = Vector, I = int
+void CUtlMemory<Vector3DBase<float>, int>::Grow(int) [T = Vector3DBase<float>, I = int
 void CUtlMemory<VertexBufferHandle_t__ *, int>::Grow(int) [T = VertexBufferHandle_t__ *, I = int
 void CUtlMemory<WorldNodeOnDiskBufferData_t, int>::Grow(int) [T = WorldNodeOnDiskBufferData_t, I = int
 void CUtlMemory<WorldNodeSortElement_t, int>::Grow(int) [T = WorldNodeSortElement_t, I = int
@@ -2042,7 +2066,6 @@ void CUtlMemory<bool, int>::Grow(int) [T = bool, I = int
 void CUtlMemory<const CEntityKeyValues *, int>::Grow(int) [T = const CEntityKeyValues *, I = int
 void CUtlMemory<const CFlexController *, int>::Grow(int) [T = const CFlexController *, I = int
 void CUtlMemory<const KeyValues3 *, int>::Grow(int) [T = const KeyValues3 *, I = int
-void CUtlMemory<const char *, int>::Grow(int) [T = const char *, I = int
 void CUtlMemory<float, int>::Grow(int) [T = float, I = int
 void CUtlMemory<int, int>::Grow(int) [T = int, I = int
 void CUtlMemory<matrix3x4_t, int>::Grow(int) [T = matrix3x4_t, I = int
@@ -2052,8 +2075,6 @@ void CUtlMemory<unsigned char, int>::Grow(int) [T = unsigned char, I = int
 void CUtlMemory<unsigned int, int>::Grow(int) [T = unsigned int, I = int
 void CUtlMemory<unsigned long long, int>::Grow(int) [T = unsigned long long, I = int
 void CUtlMemory<unsigned short, int>::Grow(int) [T = unsigned short, I = int
-void CUtlMemory<voxel_vis_cluster_t, int>::Grow(int) [T = voxel_vis_cluster_t, I = int
-void CUtlMemory<voxel_vis_mergelist_t, int>::Grow(int) [T = voxel_vis_mergelist_t, I = int
 void CUtlMemory_RawAllocator<CUtlHashtableEntry<unsigned int, empty_t> >::EnsureCapacity(int) [T = CUtlHashtableEntry<unsigned int, empty_t
 void CUtlMemory_RawAllocator<CUtlHashtableEntry<unsigned int, empty_t> >::SetRawAllocatorType(RawAllocatorType_t) [T = CUtlHashtableEntry<unsigned int, empty_t
 void CUtlMemory_RawAllocator<unsigned int>::EnsureCapacity(int) [T = unsigned int
@@ -2062,9 +2083,6 @@ void CUtlMemory_RawAllocator<unsigned int>::SetRawAllocatorType(RawAllocatorType
 void ConnectInterfaceSingletons(CreateInterfaceFn *, int
 void FloatBitMap_t::ConvertGammaToLinear(FBMGammaType_t
 void MathLib_Init
-voxel_vis_cluster_t
-voxel_vis_compression_t
-voxel_vis_mergelist_t
 world renderer
 world_dump_loaded_worlds
 world_layer_list

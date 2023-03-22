@@ -1,7 +1,7 @@
 0 0 0 0
 0 0 0 255
 0000000000000000  00000000000P000000000000000P
-00000000000000000000000
+00000000000000000000
 000000000000000000000000P0000
 0123456789
 0[A\A^A
@@ -20,6 +20,7 @@
 14CBaseAppSystemI16IMaterialSystem2E
 14CBaseAppSystemI21IMaterialSystem2UtilsE
 14CBaseAppSystemI21IPostProcessingSystemE
+14IErrorListener
 14IOpCodeHandlerIiE
 15.15s
 15CIntOpEvaluator
@@ -66,6 +67,9 @@
 22CSchemaInstallCallback
 22CShaderCreateCallbacks
 23CKV3ResourceBlockHelper
+23CKV3TransferContextBase
+23CKV3TransferLoadContext
+23CKV3TransferSaveContext
 23CUtlStackMachineBuilder
 25IAsyncProcessedDataResult
 26CNullShaderCreateCallbacks
@@ -78,6 +82,7 @@
 31CCompileTargetExprOpCodeHandler
 31CParallelProcessorAbstract_Base
 33333333H
+33333333L
 33CBaseIntrospectedToKV3TypeManager
 34CKV3Transfer_ResourceLoadInterface
 34IKV3TransferInterface_ResourceLoad
@@ -112,12 +117,12 @@ APPSYSTEM: In ConnectInterfaces(), s_nRegistrationCount is %d
 ARARARARARARA\ISASB
 ARARARARARARAp
 ARARASAp
+ARAUASASASASASASA
 ARAUBSAp
 ARGB8888
 ASARPSj
-ASASASASASASA
-ASASASASBp
 ASAVARPj
+ASBRARAp
 ASPARAVj
 AVAWASARP
 AVSASARj
@@ -146,12 +151,12 @@ AWAVAUATSPLcg
 AWAVAUATSPM
 AWAVSPA
 AWAVSPD
-AWAVSPE
 AWAVSPE1
 AWAVSPH
 AWAVSPI
 AWAVSPL
 A\A]A^A
+A^BWA\C
 Actually dude, we didn't seem to be expecting anything here, or at least
 AlignedByteArray not properly aligned
 All %d static combos set to zero
@@ -282,6 +287,7 @@ CUtlVector
 CY[A\A^A
 C`L9(t+I
 Cannot allocate abstract class
+Cast of %s loses value information (returning %s
 ChildOf
 Clears the shader cache used for dynamic shader compile
 CmdLinkAH
@@ -351,6 +357,7 @@ Dynamic Shader Compile
 Dynamic Shader Compile Enabled
 Dynamic combo "%s" in %s cannot refer to a feature! Only static combos can refer to features
 Dynamic combos
+Dynamic shader compile disabled when launched from Steam
 Dynamic shader compile failed "%s" (%s
 Dynamic shader compile] Reloading %d material(s
 Dynamic shader compile] Warning: %d material(s) are not reloaded because they have outstanding file I/O requests
@@ -411,7 +418,7 @@ Error! Could not find feature with name "%s" in %s
 Error! Could not find static combo with name "%s" in %s
 Error! Could not find static or dynamic combo with name "%s" in %s
 Error! Multiple dynamic combos are putting the same constant (%s) in different descriptor sets. This won't work correctly
-Error! Multiple dynamic combos are putting the same constant (%s) in different locations. This shouldn't happen
+Error! Multiple dynamic combos are putting the same constant (%s) in different locations. This shouldn't happen (offset %d != %d
 Error! Multiple dynamic combos are putting the same sampler state (%s) in different bindless sampler indices. This won't work correctly
 Error! Multiple dynamic combos are putting the same texure (%s) in different descriptor set slots. This won't work correctly
 Error! Rule error string must be quoted in %s
@@ -420,13 +427,13 @@ Error! Too many or too few arguments to a rule in %s
 Example: mat_assert_on_shader_use error.vfx - Assert when the error shader is used
 Expression
 ExternalDescSet
-ExtraShaderDataFormat
 Extraneous input
 Extraneous input - expected %s
 Extraneous input - expected <EOF
 Extraneous token
 F A:@ s
 FATAL ERROR: unable to register all schema data: %s
+FATAL: %s called on a pool context (no root available
 FEATURES
 FROM_ATTRIBUTE
 FROM_ATTRIBUTETE_OR_FEATURE
@@ -518,7 +525,6 @@ IOS_VULKAN_5_0
 IS_DIRECTX
 IS_MOBILE
 IS_VULKAN
-IcL$X9
 ImageFmtfH
 Incorrect vpk path delimiter for shader %s
 InfoForResourceTypeCTextureBase
@@ -531,6 +537,7 @@ InvTextureDim
 InvViewportSize
 K A:M r
 KeyValueCache001
+KeyValues3 *CKeyValues3Context::Root
 KeyValuesSystem
 L$ :J r
 L$ A:M r
@@ -562,9 +569,6 @@ MD5Final
 MD5Init
 MD5Update
 MGetKV3ClassDefaults
-MOBILE_GLES
-MOBILE_GLES_3_0
-MOBILE_GLES_3_1
 MODEL_PROCESSING_SCRIPT_INTERFACE_001
 MODEL_PROCESSING_SERVICES_INTERFACE_001
 MapListService_001
@@ -621,8 +625,6 @@ Missing %s
 Missing <EOF
 Missing token
 Missing token (%d
-Mobile SM 3.0 (GLES 3.0
-Mobile SM 3.0 (GLES 3.1
 Mode "%s
 Mode "%s" in %s is missing an option
 Mode "%s" in %s references static combo %s that doesn't exist in any program
@@ -680,26 +682,18 @@ P8H=vmatu+A
 P8H=vmatu3
 P8H=vtext
 PAWAVASAR
-PC SM 3.0 (GLSL
 PC SM 4.0 (D3D10
-PC SM 4.0 (GLSL
 PC SM 4.0 (VULKAN
 PC SM 4.1 (D3D10.1
-PC SM 4.1 (GLSL
 PC SM 4.1 (VULKAN
 PC SM 5.0 (D3D11
-PC SM 5.0 (GLSL
 PC SM 5.0 (VULKAN
 PC SM 6.0 (VULKAN
-PC_SM_3_0_GL
 PC_SM_4_0
-PC_SM_4_0_GL
 PC_SM_4_0_VULKAN
 PC_SM_4_1
-PC_SM_4_1_GL
 PC_SM_4_1_VULKAN
 PC_SM_5_0
-PC_SM_5_0_GL
 PC_SM_5_0_VULKAN
 PC_SM_6_0_VULKAN
 POSITION
@@ -727,6 +721,7 @@ Plat_LoadInterface
 Plat_NonFatalErrorFunc
 Plat_ShouldCollectMiniDumpsForFatalErrors
 Plat_UnloadModule
+Pointers cannot be used as numeric values
 Polygon too large (%d points / max %d, %d indices / max %d), ignoring
 PostProcessing
 PostProcessingBloomParameters_t
@@ -770,7 +765,7 @@ RASARARAUB
 RASARARAp
 RASBSB
 RATBTAp
-RAWAUASASASASASASASASASASASASASAXA`%AVAp
+RAWAUASASASASASASASASASASASASASB`$AVAp
 RA\JSASASASASASASASB
 RA`PASBRARARARARARA\0
 RESOURCE_TYPE_MATERIAL
@@ -826,7 +821,7 @@ SASASASASASASASBUAp
 SASASASASBZAp
 SASB\ARARAp
 SBMSugH
-SBYASBYASBYASBYASBYASBYASBYASBYASBYASBYASBYASBYASBYASBYASBYASBYASBYASBYASBYBYAUAUASASASASASASASASASASASBTAp
+SBYASBYASBYASBYASBYASBYASBYASBYASBYASBYASBYASBYASBYBYAUAUASASASASASASASASASASASBTAp
 SET_BY_FEATURE
 SET_BY_FEATURE_EQ
 SET_BY_FEATURE_NE
@@ -907,11 +902,6 @@ TEXCOORD
 TTRIBUTEfH
 Tag: %s
 Targets
-TestFormatA
-TestFormatB
-TestFormatC
-TestFormatD
-TestFormatE
 TestScriptMgr001
 TextLayout_001
 Texture %s doesn't exist in %s
@@ -935,12 +925,13 @@ ToolSceneNodeFactory_001
 ToolService_001
 ToolsStallMonitorInternal_BeginScope
 ToolsStallMonitorInternal_EndScope
+ToolsVis
 Total Combos After Rules:  %15s ( %s Static
 Total Combos Before Rules: %15s ( %s Static, %s Dynamic
 Trebuchet MS
-Tried to load resource reference '%s' from a value without a resource reference flag
+Tried to load resource reference '%s' from a value without a resource reference specific type
 TypeManager
-UASASAS0
+UASASASEp
 UASASBZAp
 UNICODE_ESC
 UNKNOWN
@@ -957,10 +948,10 @@ Unexpected node
 Unexpected token
 Unknown DX level
 Unknown RenderPrimitives primitive type %d
-Unknown VPK platform %d
 Unknown font
 Unknown rule "%s" in %s
 Unknown text found in FEATURES section in %s: "%s
+Unsupported KV3 basic type '%s' (%d
 Unwind_Resume
 Usage: mat_assert_on_shader_use [shader_substring
 UtlMemory_Alloc
@@ -975,7 +966,7 @@ VCRT_toupper
 VCS file format is "%c%c%c%c" instead of "%c%c%c%c" for %s
 VCS file version is %d instead of %d for %s
 VConComm001
-VDRBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp
+VDRBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp
 VERT_JUSTIFICATION_BOTTOM
 VERT_JUSTIFICATION_CENTER
 VERT_JUSTIFICATION_NONE
@@ -1001,13 +992,34 @@ VScript
 VScriptDbg
 VScriptManager010
 VStringTokenSystem001
+V_DoubleToString_Unsafe
+V_FloatToString_Unsafe
 V_GetFileExtension
 V_Get_stderr
+V_Int32ToString_Unsafe
+V_Int64ToString_Unsafe
 V_IsAbsolutePath
 V_LZ4_decompress_safe
 V_PrettifyNum
 V_RemoveDotSlashes
 V_StringAfterPrefix
+V_StringParseError
+V_StringToBool
+V_StringToColor
+V_StringToFloat32
+V_StringToFloat64
+V_StringToInt16
+V_StringToInt32
+V_StringToInt64
+V_StringToQAngle
+V_StringToUint16
+V_StringToUint32
+V_StringToUint64
+V_StringToVector
+V_StringToVector2D
+V_StringToVector4D
+V_UInt32ToString_Unsafe
+V_UInt64ToString_Unsafe
 V_UTF32ToUTF16
 V_UnqualifiedFileName
 V_ZSTD_createDCtx
@@ -1018,10 +1030,7 @@ V_ZSTD_freeDCtx
 V_ZSTD_getDictID_fromDDict
 V_ZSTD_getDictID_fromFrame
 V_ZSTD_getFrameContentSize
-V_atofloat32
-V_atofloat64
 V_atoi
-V_atoi64
 V_cosf
 V_exp2f
 V_expf
@@ -1046,8 +1055,6 @@ V_strncmp
 V_strncpy
 V_strnicmp_fast
 V_strspn
-V_strtod
-V_strtoi64
 V_strtoui64
 V_tanf
 V_towupper32
@@ -1077,7 +1084,7 @@ WorldRendererMgr001
 XX: Shader program -vs -ps -gs -hs -ds -cs -psrs
 X[A\A]A^A
 X[A\A^A
-Xt9<HufI
+Xt9<HupI
 Y>t$7?H
 You must construct it with ORDERED_CONSTRUCT macro in the dependency resolution function
 Z14SeriousWarningiPKcz
@@ -1114,13 +1121,13 @@ ZN10CUtlBufferC1EPKvii
 ZN10CUtlBufferC1Eiii
 ZN10CUtlBufferC2EPKvii
 ZN10CUtlBufferC2Eiii
+ZN10CUtlString11ToLowerFastEv
 ZN10CUtlString12GetForModifyEv
 ZN10CUtlString15FreeMemoryBlockEv
 ZN10CUtlString3SetEPKc
 ZN10CUtlString5PurgeEv
 ZN10CUtlString6AppendEPKc
 ZN10CUtlString6AppendEPKci
-ZN10CUtlString6FormatEPKcz
 ZN10CUtlString7AcquireEP13CBufferStringb
 ZN10CUtlString9SetDirectEPKci
 ZN10CUtlString9SetLengthEi
@@ -1146,7 +1153,9 @@ ZN13CBufferString15ExtractFirstDirEPKc
 ZN13CBufferString5PurgeEi
 ZN13CBufferString6FormatEPKcz
 ZN13CBufferString6InsertEiPKcib
+ZN13CBufferString8MoveFromERS
 ZN13CBufferString8RemoveAtEii
+ZN13CBufferString8TrimTailEPKc
 ZN13CBufferString9SetLengthEibPi
 ZN13CRawAllocator4FreeE18RawAllocatorType_tPvm
 ZN13CRawAllocator5AllocE18RawAllocatorType_tmPm
@@ -1183,6 +1192,7 @@ ZN18CUtlMemoryPoolBaseC2Eiii20MemoryPoolGrowType_tPKc19MemAllocAttribute_t
 ZN18CUtlMemoryPoolBaseD2Ev
 ZN21CUtlScratchMemoryPool12AllocAlignedEii
 ZN24CUtlMemoryBlockAllocator12AllocAndCopyEPKcj
+ZN24CUtlMemoryBlockAllocator5PurgeEv
 ZN24CUtlMemoryBlockAllocatorC1Eij18RawAllocatorType_t
 ZN24CUtlMemoryBlockAllocatorD1Ev
 ZN37CTypesafeIntrospectedToKV3TypeManagerILy1952542070E22MaterialResourceData_tE15AllocateAndLoadER23CKV3TransferLoadContextPK21ResourceBindingBase_tP29IRD_RegisterResourceDataUtilsE15CAllocatorUtils
@@ -1228,14 +1238,13 @@ ZTVN10__cxxabiv121__vmi_class_type_infoE
 ZnamRKSt9nothrow_t
 ZnwmRKSt9nothrow_t
 appendstructuredbuffer
+array: %u elements
 at <EOF
 at offset %d
 batcherrors
 batchwarnings
-binary_auto
-binary_bc
-binary_lz4
-binary_zstd
+binary blob: %u bytes
+binary_blob
 bool CFontTextureCache::IsCharCached(FontHandle_t, FontDrawType_t, uchar32, int *, float
 byteaddressbuffer
 cannot match to any predicted input
@@ -1244,6 +1253,7 @@ channel
 colorcorrection_%p.vtex
 common
 consumestructuredbuffer
+convars_hidden_by_default
 copy%u
 cstring
 cxa_allocate_exception
@@ -1406,12 +1416,12 @@ game_controls
 gamelayer
 gcc_except_tab__TEXT
 generic
-gl_use_mobile_vcs
 gxx_personality_v0
 h[A\A]A^A
 iOS SM 4.0 (VULKAN
 iOS SM 4.1 (VULKAN
 iOS SM 5.0 (VULKAN
+id CUtlMemory<MaterialParamFloat_t, int>::Grow(int) [T = MaterialParamFloat_t, I = int
 include
 int VfxFindOrBuildFeatureComboData(CVfx *, uint64, IRuntimeShaderCreateCallbacks *, IVfx *, bool
 int32 CVfxProgramData::FindOrAddVsInputSignatureToArray(const CVsInputSignatureVector
@@ -1518,6 +1528,7 @@ mat_assert_on_shader_use sky       - Assert when sky.vfx or sky_cheap.vfx is use
 mat_clearshadercache
 mat_colorcorrection
 mat_disable_dynamic_shader_compile
+mat_force_molten_vk
 mat_hide_error_shader
 mat_overdraw
 mat_overdraw_color
@@ -1595,70 +1606,70 @@ noshaderopts
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/../src/vfx/compiletargetexpr.g
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/fontmanager/fonttexturecache.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material2.cpp
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material2.cpp(116): ERROR! Can't load vfx_dx dll, dynamic shader compile unavailable
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material2.cpp(1407): Error! Material "%s" is already loaded
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material2.cpp(1412): Error! Trying to load material "%s" without any params
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material2.cpp(1441): Cannot find shader entry in material "%s"! Using error.vfx
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material2.cpp(1480): Error creating shader %s for material %s
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material2.cpp(1484): Error creating shader %s and cannot load error.vfx instead
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material2.cpp(1524): Error creating fallback shader %s for %s for material %s! A fallback shader cannot fallback to a different shader
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material2.cpp(1537): Error creating fallback shader %s for %s for material %s
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material2.cpp(1541): Error creating fallback shader %s for %s and cannot load error.vfx instead
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material2.cpp(1569): Error creating shader %s for material %s
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material2.cpp(1574): Error creating shader %s and cannot load error.vfx instead
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material2.cpp(1584): Error creating static combos for shader %s and error.vfx instead
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material2.cpp(2203): DxSupportLevel %d not supported
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material2.cpp(2537): Dynamic Combos should be assumed to be unique for dynamic shader compile! %d != %d
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material2.cpp(2621): Dynamic shader compile failed for %s in material "%s
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material2.cpp(2894): Failed call to FindOrLoadStaticComboData
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material2.cpp(3215): All bad! The error material failed in dynamic shader compile
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material2.cpp(3857): Find a graphics programmer! Trying to bind a "%s" shader that doesn't exist! for %s
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material2.cpp(4484): Unsupported sampler state type for "%s
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material2.cpp(600): Material "%s" is requesting a bad mode "%s
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material2.cpp(715): Error! Material "%s" doesn't have any valid layers to get the CVsInputSignatureVector from
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material2.cpp(747): Error! Material "%s" doesn't have a CVsInputSignatureVector
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material2.cpp(765): Error! Material "%s" has invalid signature index %d
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material2.cpp:2556
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material2.cpp(114): ERROR! Can't load vfx_dx dll, dynamic shader compile unavailable
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material2.cpp(1404): Error! Material "%s" is already loaded
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material2.cpp(1409): Error! Trying to load material "%s" without any params
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material2.cpp(1438): Cannot find shader entry in material "%s"! Using error.vfx
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material2.cpp(1477): Error creating shader %s for material %s
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material2.cpp(1481): Error creating shader %s and cannot load error.vfx instead
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material2.cpp(1521): Error creating fallback shader %s for %s for material %s! A fallback shader cannot fallback to a different shader
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material2.cpp(1534): Error creating fallback shader %s for %s for material %s
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material2.cpp(1538): Error creating fallback shader %s for %s and cannot load error.vfx instead
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material2.cpp(1566): Error creating shader %s for material %s
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material2.cpp(1571): Error creating shader %s and cannot load error.vfx instead
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material2.cpp(1581): Error creating static combos for shader %s and error.vfx instead
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material2.cpp(2195): DxSupportLevel %d not supported
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material2.cpp(2542): Dynamic Combos should be assumed to be unique for dynamic shader compile! %d != %d
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material2.cpp(2626): Dynamic shader compile failed for %s in material "%s
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material2.cpp(2912): Failed call to FindOrLoadStaticComboData
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material2.cpp(3233): All bad! The error material failed in dynamic shader compile
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material2.cpp(3875): Find a graphics programmer! Trying to bind a "%s" shader that doesn't exist! for %s
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material2.cpp(4502): Unsupported sampler state type for "%s
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material2.cpp(597): Material "%s" is requesting a bad mode "%s
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material2.cpp(712): Error! Material "%s" doesn't have any valid layers to get the CVsInputSignatureVector from
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material2.cpp(744): Error! Material "%s" doesn't have a CVsInputSignatureVector
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material2.cpp(762): Error! Material "%s" has invalid signature index %d
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material2.cpp:2561
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material_command_buffer.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material_shader_params.cpp
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material_shader_params.cpp(1001): Invalid data type for render state variable %s in material "%s
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material_shader_params.cpp(1049): Invalid data type for render state variable %s in material "%s
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material_shader_params.cpp(1056): Error evaluating expression for render state variable %s in material "%s
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material_shader_params.cpp(1062): Invalid variable source type for render state variable %s in material "%s
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material_shader_params.cpp(1133): Unsupported render state type in material "%s
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material_shader_params.cpp(1151): Sampler index %d out of bounds for "%s" in material "%s
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material_shader_params.cpp(1224): Unsupported sampler state type for "%s" in material "%s
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material_shader_params.cpp(1306): Could not bind constant buffer "%s" because the constant buffer handle was invalid in material "%s
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material_shader_params.cpp(1324): Error setting constant for REGISTER_FLOAT4 for "%s" in material "%s"! Talk to a programmer
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material_shader_params.cpp(1422): Trying to set VFX_VARIABLE_TYPE_MATRIX_* but this isn't supported yet! In material "%s
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material_shader_params.cpp(1427): Bad VFX_VARIABlE type for VFX_VARIABLE_SOURCE_SET_BY_ARTIST %s in material "%s
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material_shader_params.cpp(1735): Invalid data type for render state variable %s in material "%s
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material_shader_params.cpp(1771): Invalid data type for render state variable %s in material "%s
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material_shader_params.cpp(1857): Invalid data type for render state variable %s in material "%s
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material_shader_params.cpp(1865): Invalid variable source type for render state variable %s in material "%s
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material_shader_params.cpp(1963): Unsupported render state type in material "%s
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material_shader_params.cpp(2114): Unsupported render state in material "%s
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material_shader_params.cpp(2187): Unsupported sampler state type for "%s" in material "%s
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material_shader_params.cpp(2209): Unsupported sampler state type for "%s" in material "%s
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material_shader_params.cpp(385): Trying to set VFX_VARIABLE_TYPE_MATRIX_* but this isn't supported yet! In material "%s
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material_shader_params.cpp(390): Bad VFX_VARIABlE type for VFX_VARIABLE_SOURCE_SET_BY_ARTIST %s in material "%s
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material_shader_params.cpp(445): Trying to set VFX_VARIABLE_TYPE_MATRIX_* but this isn't supported yet! In material "%s
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material_shader_params.cpp(450): Bad VFX_VARIABlE type for VFX_VARIABLE_SOURCE_SET_BY_ARTIST %s in material "%s
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material_shader_params.cpp(527): Trying to set VFX_VARIABLE_TYPE_MATRIX_* but this isn't supported yet! In material "%s
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material_shader_params.cpp(532): Bad VFX_VARIABlE type for VFX_VARIABLE_SOURCE_SET_BY_ARTIST %s in material "%s
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material_shader_params.cpp(957): Unknown variable type for %s in material "%s
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material_shader_params.cpp(1022): Invalid data type for render state variable %s in material "%s
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material_shader_params.cpp(1070): Invalid data type for render state variable %s in material "%s
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material_shader_params.cpp(1077): Error evaluating expression for render state variable %s in material "%s
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material_shader_params.cpp(1083): Invalid variable source type for render state variable %s in material "%s
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material_shader_params.cpp(1154): Unsupported render state type in material "%s
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material_shader_params.cpp(1172): Sampler index %d out of bounds for "%s" in material "%s
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material_shader_params.cpp(1245): Unsupported sampler state type for "%s" in material "%s
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material_shader_params.cpp(1327): Could not bind constant buffer "%s" because the constant buffer handle was invalid in material "%s
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material_shader_params.cpp(1345): Error setting constant for REGISTER_FLOAT4 for "%s" in material "%s"! Talk to a programmer
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material_shader_params.cpp(1443): Trying to set VFX_VARIABLE_TYPE_MATRIX_* but this isn't supported yet! In material "%s
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material_shader_params.cpp(1448): Bad VFX_VARIABlE type for VFX_VARIABLE_SOURCE_SET_BY_ARTIST %s in material "%s
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material_shader_params.cpp(1756): Invalid data type for render state variable %s in material "%s
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material_shader_params.cpp(1792): Invalid data type for render state variable %s in material "%s
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material_shader_params.cpp(1878): Invalid data type for render state variable %s in material "%s
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material_shader_params.cpp(1886): Invalid variable source type for render state variable %s in material "%s
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material_shader_params.cpp(1984): Unsupported render state type in material "%s
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material_shader_params.cpp(2135): Unsupported render state in material "%s
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material_shader_params.cpp(2208): Unsupported sampler state type for "%s" in material "%s
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material_shader_params.cpp(2230): Unsupported sampler state type for "%s" in material "%s
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material_shader_params.cpp(406): Trying to set VFX_VARIABLE_TYPE_MATRIX_* but this isn't supported yet! In material "%s
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material_shader_params.cpp(411): Bad VFX_VARIABlE type for VFX_VARIABLE_SOURCE_SET_BY_ARTIST %s in material "%s
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material_shader_params.cpp(466): Trying to set VFX_VARIABLE_TYPE_MATRIX_* but this isn't supported yet! In material "%s
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material_shader_params.cpp(471): Bad VFX_VARIABlE type for VFX_VARIABLE_SOURCE_SET_BY_ARTIST %s in material "%s
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material_shader_params.cpp(548): Trying to set VFX_VARIABLE_TYPE_MATRIX_* but this isn't supported yet! In material "%s
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material_shader_params.cpp(553): Bad VFX_VARIABlE type for VFX_VARIABLE_SOURCE_SET_BY_ARTIST %s in material "%s
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material_shader_params.cpp(978): Unknown variable type for %s in material "%s
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material_type_manager.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/material_type_manager.cpp(52): GetErrorMaterial() called before error material exists
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/materialsystem2.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/materialsystem2.cpp(147): ERROR! Empty shader mode string found! Use "Default" instead
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/materialsystem2.cpp(163): ERROR! Shader mode "%s" has unsupported type "%s" specified gameinfo.gi
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/materialsystem2.cpp(3363): pVfx == NULL
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/materialsystem2.cpp(3412): pVfx == NULL
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/materialsystem2.cpp(3685): Error reading index
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/materialsystem2.cpp(424): ERROR!!! Materials not released by other systems on shutdown! (See spew above
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/materialsystem2.cpp(429): ERROR!!! Shaders not freed on shutdown, likely due to unreleased materials! (See spew above
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/materialsystem2.cpp(443): GetErrorMaterial() called when m_pMaterialTypeManager == NULL
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/materialsystem2.cpp(981): ERROR!!! Shaders not freed before shader reload! (See spew above
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/materialsystem2.cpp(3367): pVfx == NULL
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/materialsystem2.cpp(3416): pVfx == NULL
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/materialsystem2.cpp(3689): Error reading index
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/materialsystem2.cpp(420): ERROR!!! Materials not released by other systems on shutdown! (See spew above
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/materialsystem2.cpp(425): ERROR!!! Shaders not freed on shutdown, likely due to unreleased materials! (See spew above
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/materialsystem2.cpp(439): GetErrorMaterial() called when m_pMaterialTypeManager == NULL
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/materialsystem2.cpp(985): ERROR!!! Shaders not freed before shader reload! (See spew above
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/postprocessingsystem.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/utils/materialsystem2utils.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/mathlib/mathlib.cpp
@@ -1666,32 +1677,34 @@ opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/schemalib/schemaclassi
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/texturedictionary/texturedictionary.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/tier0_perproject/singletons.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/vfx/vfx_common.cpp
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/vfx/vfx_common.cpp(1283): Error opening file "%s
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/vfx/vfx_common.cpp(1293): Error masking unused parts for "%s
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/vfx/vfx_common.cpp(1480): Error opening file "%s
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/vfx/vfx_common.cpp(1557): Error opening file "%s
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/vfx/vfx_common.cpp(269): Don't call VfxInit() more than once
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/vfx/vfx_common.cpp(277): g_pFullFileSystem must be set up before calling VfxInit
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/vfx/vfx_common.cpp(4124): Error! Ref count !=0 for static combo data cache entry
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/vfx/vfx_common.cpp(4211): Error! Ref count !=0 for static combo data cache entry
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/vfx/vfx_common.cpp(5665): Error opening file "%s
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/vfx/vfx_common.cpp(5815): Error opening include file in features list"%s
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/vfx/vfx_common.cpp(5854): Error opening file "%s
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/vfx/vfx_common.cpp(6083): Error opening file "%s
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/vfx/vfx_common.cpp(6117): Error opening file "%s
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/vfx/vfx_common.cpp(6156): Error opening file "%s
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/vfx/vfx_common.cpp(6260): Error opening file "%s
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/vfx/vfx_common.cpp(6770): Programmer Error! The order of VfxVariableSourceType_t does not match s_shaderVariableSource
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/vfx/vfx_common.cpp(7469): Error opening file %s
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/vfx/vfx_common.cpp(7542): VCS %s Unserialize failed
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/vfx/vfx_common.cpp(7556): VCS %s Unserialize hit EOF
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/vfx/vfx_common.cpp(7690): Error opening file %s
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/vfx/vfx_common.cpp(7697): Error calling SkipAndValidateVCSHeader() for %s
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/vfx/vfx_common.cpp(1266): Error opening file "%s
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/vfx/vfx_common.cpp(1276): Error masking unused parts for "%s
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/vfx/vfx_common.cpp(1427): Error opening file "%s
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/vfx/vfx_common.cpp(1504): Error opening file "%s
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/vfx/vfx_common.cpp(252): Don't call VfxInit() more than once
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/vfx/vfx_common.cpp(260): g_pFullFileSystem must be set up before calling VfxInit
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/vfx/vfx_common.cpp(4071): Error! Ref count !=0 for static combo data cache entry
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/vfx/vfx_common.cpp(4158): Error! Ref count !=0 for static combo data cache entry
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/vfx/vfx_common.cpp(5612): Error opening file "%s
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/vfx/vfx_common.cpp(5762): Error opening include file in features list"%s
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/vfx/vfx_common.cpp(5801): Error opening file "%s
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/vfx/vfx_common.cpp(6030): Error opening file "%s
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/vfx/vfx_common.cpp(6064): Error opening file "%s
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/vfx/vfx_common.cpp(6103): Error opening file "%s
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/vfx/vfx_common.cpp(6207): Error opening file "%s
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/vfx/vfx_common.cpp(6717): Programmer Error! The order of VfxVariableSourceType_t does not match s_shaderVariableSource
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/vfx/vfx_common.cpp(7408): Error opening file %s
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/vfx/vfx_common.cpp(7481): VCS %s Unserialize failed
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/vfx/vfx_common.cpp(7495): VCS %s Unserialize hit EOF
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/vfx/vfx_common.cpp(7629): Error opening file %s
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/vfx/vfx_common.cpp(7636): Error calling SkipAndValidateVCSHeader() for %s
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/vfx/vfx_compile_target_expr.cpp(100): : Failed to create input stream from "%s
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/vfx/vfx_compile_target_expr.cpp(108): : Failed to create lexer from "%s
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/vfx/vfx_compile_target_expr.cpp(116): : Failed to create token stream from "%s
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/vfx/vfx_compile_target_expr.cpp(124): : Failed to create parser from "%s
 or unterminated input element such as: "STRING
+p8SAp0p
+pointer
 positionH
 procedural
 pthread_mutex_destroy
@@ -1769,9 +1782,7 @@ shaders/vfx
 shaders_android_vulkan.vpk
 shaders_force_recompile
 shaders_ios_vulkan.vpk
-shaders_mobile_gles.vpk
 shaders_pc.vpk
-shaders_pcgl.vpk
 shaders_vulkan.vpk
 shaderstats
 show_none
@@ -1785,6 +1796,7 @@ static std::shared_ptr<CVfxStaticComboData::DecompressedComboData_t> CVfxStaticC
 strchr
 strcmp
 strcpy
+strict_type_combinations
 strlen
 strstr
 struct DS_INPUT
@@ -1800,6 +1812,7 @@ stub_helper
 syntax error
 syntax not recognized
 t(D#C\L
+table: %u members
 tangent
 texcoordH
 texture2darrayindex
@@ -1807,15 +1820,12 @@ texture2dindex
 texture3dindex
 texturecubearrayindex
 texturecubeindex
-u/<XtE<Hu'L
-u/<XtT<Hu'L
-uX<Xt-<HuPL
-uZ<Xt.<HuRL
 uifont
 uint64 CVfxProgramData::CalcStaticComboIdFromValues(const VfxComboValueVector_t &) const
 undefined
 unexpected input
 unknown
+unknown KV3 basic type '%s' (%d
 unknown source
 unknown_mod
 unwind_info
@@ -1827,7 +1837,7 @@ vector2
 vector3
 vector4
 vfx_dx11
-vfx_vulkan_gl
+vfx_vulkan
 view.bIsToolView
 virtual InitReturnVal_t CMaterialSystem2::Init
 virtual void CMaterialSystem2Utils::RenderPrimitives(IRenderContext *, MaterialPrimitiveType2_t, const Vector *, const Color *, const Vector2D *, int, const IMaterial2 *, const CRenderAttributes *, HRenderTexture, LayoutPositionType_e
@@ -1851,9 +1861,6 @@ void CUtlMemory<CCharRenderGeometry, int>::Grow(int) [T = CCharRenderGeometry, I
 void CUtlMemory<CFontAmalgam, int>::Grow(int) [T = CFontAmalgam, I = int
 void CUtlMemory<CFontAmalgam::SFontRange, int>::Grow(int) [T = CFontAmalgam::SFontRange, I = int
 void CUtlMemory<CFontManager::CustomFontInfo_t, int>::Grow(int) [T = CFontManager::CustomFontInfo_t, I = int
-void CUtlMemory<CKeyValues3ArrayCluster *, int>::Grow(int) [T = CKeyValues3ArrayCluster *, I = int
-void CUtlMemory<CKeyValues3Cluster *, int>::Grow(int) [T = CKeyValues3Cluster *, I = int
-void CUtlMemory<CKeyValues3TableCluster *, int>::Grow(int) [T = CKeyValues3TableCluster *, I = int
 void CUtlMemory<CMaterial2 *, int>::Grow(int) [T = CMaterial2 *, I = int
 void CUtlMemory<CMaterialLayer::CommandBufferInfo_t, int>::Grow(int) [T = CMaterialLayer::CommandBufferInfo_t, I = int
 void CUtlMemory<CMaterialParam, int>::Grow(int) [T = CMaterialParam, I = int
@@ -1898,7 +1905,6 @@ void CUtlMemory<IQueuedRenderable *, int>::Grow(int) [T = IQueuedRenderable *, I
 void CUtlMemory<IShaderReloadListener *, int>::Grow(int) [T = IShaderReloadListener *, I = int
 void CUtlMemory<KeyValues3 *, int>::Grow(int) [T = KeyValues3 *, I = int
 void CUtlMemory<MaterialParamBuffer_t, int>::Grow(int) [T = MaterialParamBuffer_t, I = int
-void CUtlMemory<MaterialParamFloat_t, int>::Grow(int) [T = MaterialParamFloat_t, I = int
 void CUtlMemory<MaterialParamInt_t, int>::Grow(int) [T = MaterialParamInt_t, I = int
 void CUtlMemory<MaterialParamString_t, int>::Grow(int) [T = MaterialParamString_t, I = int
 void CUtlMemory<MaterialParamTexture_t, int>::Grow(int) [T = MaterialParamTexture_t, I = int
@@ -1919,8 +1925,8 @@ void CUtlMemory<UtlRBTreeNode_t<CUtlMap<CUtlStringToken, int, unsigned short, bo
 void CUtlMemory<UtlRBTreeNode_t<CUtlMap<unsigned int, BindInfo_t, int, bool (*)(const unsigned int &, const unsigned int &)>::Node_t, int>, int>::Grow(int) [T = UtlRBTreeNode_t<CUtlMap<unsigned int, BindInfo_t, int, bool (*)(const unsigned int &, const unsigned int &)>::Node_t, int>, I = int
 void CUtlMemory<UtlRBTreeNode_t<CUtlMap<unsigned long long, bool, unsigned int, bool (*)(const unsigned long long &, const unsigned long long &)>::Node_t, unsigned int>, unsigned int>::Grow(int) [T = UtlRBTreeNode_t<CUtlMap<unsigned long long, bool, unsigned int, bool (*)(const unsigned long long &, const unsigned long long &)>::Node_t, unsigned int>, I = unsigned int
 void CUtlMemory<UtlRBTreeNode_t<CUtlMap<unsigned short, CFontManager::CFontDataFile, int, bool (*)(const unsigned short &, const unsigned short &)>::Node_t, int>, int>::Grow(int) [T = UtlRBTreeNode_t<CUtlMap<unsigned short, CFontManager::CFontDataFile, int, bool (*)(const unsigned short &, const unsigned short &)>::Node_t, int>, I = int
-void CUtlMemory<Vector, int>::Grow(int) [T = Vector, I = int
 void CUtlMemory<Vector2D, int>::Grow(int) [T = Vector2D, I = int
+void CUtlMemory<Vector3DBase<float>, int>::Grow(int) [T = Vector3DBase<float>, I = int
 void CUtlMemory<VfxCompileTarget_t, int>::Grow(int) [T = VfxCompileTarget_t, I = int
 void CUtlMemory<VfxCompiledShaderInfo_t, int>::Grow(int) [T = VfxCompiledShaderInfo_t, I = int
 void CUtlMemory<VsInputSignatureElement_t, int>::Grow(int) [T = VsInputSignatureElement_t, I = int

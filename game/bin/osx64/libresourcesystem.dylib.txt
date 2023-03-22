@@ -4,6 +4,7 @@
 10IAppSystem
 13ConCommandRef
 14CBaseAppSystemI15IResourceSystemE
+14IErrorListener
 15CResourceSystem
 15CTier0AppSystemI15IResourceSystemLx0EE
 15CTier1AppSystemI15IResourceSystemLx0EE
@@ -27,6 +28,9 @@
 23CKV3ResourceBlockHelper
 23CKV3ResourceTypeManagerILy418564367478EE
 23CKV3ResourceTypeManagerILy500152235126EE
+23CKV3TransferContextBase
+23CKV3TransferLoadContext
+23CKV3TransferSaveContext
 23CResourceSystemProfiler
 23IResourceSystemProfiler
 25CAsyncResourceDataRequest
@@ -46,6 +50,7 @@
 30IAsyncResourceDataRequestOwner
 32CSchemaRegistration_resourcefile
 33333333H
+33333333L
 34CKV3Transfer_ResourceLoadInterface
 34CSchemaRegistration_resourcesystem
 34CVConResourceProfileCommandHandler
@@ -63,10 +68,9 @@
 5ims cb] [% 5ims async cb] [% 5i / %10s] %s
 5ims cb] [% 5ims async cb] [% 5i / %10s] TOTAL
 8[A\A]A^A
-A+t$X~9I
 APPSYSTEM: In ConnectInterfaces(), s_nRegistrationCount is %d
 ARARARAp
-AUASASASASASASASASASASASASBXAp
+AUASASASASASASASASASASASASASAp
 AUASASASASASASASCRAp
 AWAVATS
 AWAVATS1
@@ -77,19 +81,20 @@ AWAVATSI
 AWAVAUATSH
 AWAVAUATSL
 AWAVAUATSP
+AWAVAUATSP1
 AWAVAUATSPA
 AWAVAUATSPD
 AWAVAUATSPE
 AWAVAUATSPH
-AWAVAUATSPH9
 AWAVAUATSPI
 AWAVAUATSPL
 AWAVAUATSPLc
 AWAVAUATSPM
+AWAVSP1
 AWAVSPA
-AWAVSPE
 AWAVSPH
 AWAVSPI
+AWAVSPL
 AWAVSPM
 A\A]A^A
 AlignedByteArray not properly aligned
@@ -116,6 +121,8 @@ CExampleSchemaVData_Monomorphic
 CExampleSchemaVData_PolymorphicBase
 CExampleSchemaVData_PolymorphicDerivedA
 CExampleSchemaVData_PolymorphicDerivedB
+CFuseProgram
+CFuseSymbolTable
 CLoadingResource::~CLoadingResource
 CMemAllocSystemInitialize
 CPH;FP}HL
@@ -147,17 +154,22 @@ CTSQueue: Misaligned queue
 CTSQueue::Node_t *CTSQueue<CResourceManifest *, false>::Push(CTSQueue::Node_t *) [T = CResourceManifest *, bTestOptimizer = false
 CTSQueue::Node_t *CTSQueue<const ResourceBindingBase_t *, false>::Push(CTSQueue::Node_t *) [T = const ResourceBindingBase_t *, bTestOptimizer = false
 CUtlBlockMemory overflow
+CUtlHashtable
 CUtlLinkedList overflow! (exhausted index range
 CUtlLinkedList overflow! (exhausted memory allocator
 CUtlReferenceTracker::Release() release counts for group outnumber addref counts for the same group
 CUtlString
+CUtlStringToken
+CUtlVector
 CWeakHandle
 CWeakHandleVoid
 C`L9(t+I
 Cannot allocate abstract class
 Cannot deduce for class
+Cast of %s loses value information (returning %s
 CmdLinkAH
 CommandLine
+ConstantInfo_t
 Couldn't load KV3 for resource: %s
 CreateInterface
 D%h t!L
@@ -187,6 +199,7 @@ Error loading resource manifest "%s" (No DATA block
 FAIL ] - Manifest contains an illegal resource name "%s
 FATAL ERROR: %s resource '%s' (%016llX) is the wrong resource type! (This is likely caused by a hash collision between the strings '%s' and '%s
 FATAL ERROR: unable to register all schema data: %s
+FATAL: %s called on a pool context (no root available
 FIELD_AI_SCHEDULE_BITS
 FIELD_AMMO_INDEX
 FIELD_ATTACHMENT_HANDLE
@@ -204,6 +217,8 @@ FIELD_CUSTOM
 FIELD_DIRECTION_VECTOR_WORLDSPACE
 FIELD_EHANDLE
 FIELD_EMBEDDED
+FIELD_ENGINE_TICK
+FIELD_ENGINE_TIME
 FIELD_FLOAT32
 FIELD_FLOAT64
 FIELD_FUNCTION
@@ -264,10 +279,11 @@ FIELD_VECTOR4D
 FIELD_VMATRIX
 FIELD_VMATRIX_WORLDSPACE
 FIELD_VOID
+FIELD_WORLD_GROUP_ID
+FLOAT32
 Failed to allocate an instance of a class
 Failed to load resource "%s" and -exit_on_resource_load_failure was set and it's not in badresources_whitelist.txt
 Failed to save unsupported class
-Failed to transfer KV3 data for resource '%s' - %s
 FileSystem
 Final operation count %llu
 Finalize queue Finalizing StartLoading(%s) @%.2f
@@ -280,6 +296,11 @@ FontManager_001
 Forcing all resource loads to fail: "%s
 Forgot to remove resource type manager for type %s
 FourQuaternions
+FunctionInfo_t
+FuseFunctionIndex_t
+FuseVariableAccess_t
+FuseVariableIndex_t
+FuseVariableType_t
 GL[A\A^A
 GameResourceServiceClientV001
 GameResourceServiceServerV001
@@ -308,7 +329,6 @@ HelpSystem_001
 HostStateMgr001
 INSt3__117bad_function_callE
 INVALID
-IcL$X9
 Idle (ResourceSystemSleep
 Individual reference records '%s
 InfoForResourceTypeCAnimData
@@ -331,6 +351,7 @@ InfoForResourceTypeCPhysAggregateData
 InfoForResourceTypeCPostProcessingResource
 InfoForResourceTypeCRenderMesh
 InfoForResourceTypeCResourceManifestInternal
+InfoForResourceTypeCResponseRulesList
 InfoForResourceTypeCSequenceGroupData
 InfoForResourceTypeCSmartProp
 InfoForResourceTypeCTextureBase
@@ -359,6 +380,7 @@ InstallSchemaBindings
 Intentionally vague touch behavior for %p
 IsResourceManifestGroupKnown: Manifest group name is empty or null
 KeyValueCache001
+KeyValues3 *CKeyValues3Context::Root
 LINKEDIT
 LOG_GENERAL
 Leaked reference to ERROR resource for type %s
@@ -407,13 +429,14 @@ NetworkSystemVersion001
 No DATA block for resource
 Not safe to 'new' this class due to alignment requirements
 OnAsyncProcessResourceData
+Only wrote %d (of %d) values when saving map
 Ordered constructor wrapped type has no default constructor
-P0 0000000P00pp0@@0@00@00000000000 00p0000000000000
+P0 0000000P0pp0@@0@0000@0000000000 00p00000000000
 PH;xP}?H
 PH;yP}wH9
 PPH;QP
 PPH;QP}.H
-PPPPPPPP
+P[A\A^A
 PackedAABB_t
 PanoramaTextServices001
 PanoramaUIClient001
@@ -433,14 +456,17 @@ Plat_TickDiffMilliSec
 Plat_TickDiffMilliSecF
 Plat_TickDiffSecF
 Plat_USTime
+Pointers cannot be used as numeric values
 PostProcessingSystem_001
 PropertyEditorSystem_001
 RARARARARA
-RARAZBVBUAXATAp
+RARAZBVBUAXAVAp
 RASARAp
 RASBp p
+RATBSAZBSC
 RBRBRCRBRBRBRBp
-RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RARAp
+RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RARAp
+READ_ONLY
 RESOURCE LOADING STATS
 RESOURCE STREAMING STATS
 RESOURCE_MANIFEST_HANDLE_INVALID
@@ -527,12 +553,6 @@ StatsService_001
 SteamAudio001
 System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices
 System/Library/Frameworks/Foundation.framework/Versions/C/Foundation
-TARATAUBRAR0
-TestFormatA
-TestFormatB
-TestFormatC
-TestFormatD
-TestFormatE
 TestResource_t
 TestScriptMgr001
 TextLayout_001
@@ -549,19 +569,21 @@ Tried to double-register resource manager for two resource types! ( "%lld" and "
 Tried to install a NULL resource manager for resource type "%lld
 Tried to install a placeholder resource manager for an existing resource type "%lld
 Tried to install two resource managers for the same resource type "%lld
-Tried to load resource reference '%s' from a value without a resource reference flag
+Tried to load resource reference '%s' from a value without a resource reference specific type
 Tried to release UGC that hasn't been referenced: %lld
 UASASASB
-UASBWBRA`_AVAYAXASBZAp
+UBWBRA`_AVAYAXASBZAp
 UUUUUUUUH
 Unrecognized resource leak tracking parameter: "%s", available configuration aliases
 UnregisterNamedManifest called, but we are not shutting down
+Unsupported KV3 basic type '%s' (%d
 Unsupported version %d for resource '%s' (Expected %d
 Unwind_Resume
 Usage: resource_leaks <resource_name
 Usage: resource_repeated_reload <count> <resource_name
 UtlMemory_Alloc
 UtlMemory_CalcNewAllocationCount
+VARAVARBUBRARCp(SAp
 VApplication001
 VAsyncFileSystem2_001
 VAvi001
@@ -580,22 +602,39 @@ VScript
 VScriptDbg
 VScriptManager010
 VStringTokenSystem001
+V_DoubleToString_Unsafe
 V_GetFileExtension
+V_Int32ToString_Unsafe
+V_Int64ToString_Unsafe
 V_IsAbsolutePath
 V_PrettifyMem
 V_RemoveDotSlashes
 V_StringAfterPrefix
+V_StringParseError
+V_StringToBool
+V_StringToColor
+V_StringToFloat32
+V_StringToFloat64
+V_StringToInt16
+V_StringToInt32
+V_StringToInt64
+V_StringToQAngle
+V_StringToUint16
+V_StringToUint32
+V_StringToUint64
+V_StringToVector
+V_StringToVector2D
+V_StringToVector4D
+V_UInt64ToString_Unsafe
 V_UnqualifiedFileName
-V_atofloat64
 V_atoi
-V_atoi64
 V_qsort_s
 V_snprintf
-V_sscanf
 V_stricmp_fast
 V_strncat
 V_strncpy
 V_vsnprintf
+VariableInfo_t
 VisBuilder_001
 WARNING: %s resource '%s' (%016llX) requested but is not in the system. (Missing from from a manifest
 WARNING: Long frame update (%.2fms) for resource type manager '%s' in frame %d (%d long updates total for this manager
@@ -605,9 +644,10 @@ WARNING: Resource system exiting at %.2f seconds due to '-resource_exit_after_ti
 WARNING: Trying to deallocate a resource after the type manager was uninstalled! ("%s
 WARNING: Trying to deallocate a resource with no associated resource type! ("%s
 WARNING: resource '%s' is an unrecognized resource type
+WRITABLE
 Warning
 WorldRendererMgr001
-XB`)A`[ASASASASASASASBp
+XB`*B\ARA`XASASBRARAp
 XPH;rP}{H9
 XPI;YP}8L
 X[A\A]A^A
@@ -637,7 +677,7 @@ ZN10CUtlBufferC1EPKvii
 ZN10CUtlBufferC1Eiii
 ZN10CUtlString15FreeMemoryBlockEv
 ZN10CUtlString3SetEPKc
-ZN10CUtlString6FormatEPKcz
+ZN10CUtlString5PurgeEv
 ZN10CUtlString7AcquireEP13CBufferStringb
 ZN10CUtlString9SetDirectEPKci
 ZN10CVProfNode10EnterScopeEv
@@ -648,6 +688,7 @@ ZN12CThreadEventC1Eb
 ZN13CBufferString10FixSlashesEc
 ZN13CBufferString10RelinquishENS_19EAllocationOption_tE
 ZN13CBufferString11ToLowerFastEi
+ZN13CBufferString12AppendFormatEPKcz
 ZN13CBufferString12SetExtensionEPKc
 ZN13CBufferString13AppendFormatVEPKcP13__va_list_tag
 ZN13CBufferString13FixupPathNameEc
@@ -658,6 +699,7 @@ ZN13CBufferString6ConcatEPKcS1_z
 ZN13CBufferString6FormatEPKcz
 ZN13CBufferString6InsertEiPKcib
 ZN13CBufferString8RemoveAtEii
+ZN13CBufferString8TrimTailEPKc
 ZN13CBufferString9SetLengthEibPi
 ZN13CRawAllocator4FreeE18RawAllocatorType_tPvm
 ZN13CRawAllocator5AllocE18RawAllocatorType_tmPm
@@ -685,6 +727,7 @@ ZN18CUtlMemoryPoolBaseD2Ev
 ZN22CVariableBitStringBase6ResizeEi
 ZN22CVariableBitStringBase8FreeIntsEv
 ZN24CUtlMemoryBlockAllocator12AllocAndCopyEPKcj
+ZN24CUtlMemoryBlockAllocator5PurgeEv
 ZN24CUtlMemoryBlockAllocatorC1Eij18RawAllocatorType_t
 ZN24CUtlMemoryBlockAllocatorD1Ev
 ZN25CAsyncResourceDataRequest15InitForFileReadEPK21ResourceBindingBase_tb30ResourceManifestLoadPriority_tbPKcE3$_0
@@ -720,14 +763,14 @@ ZTVN10__cxxabiv121__vmi_class_type_infoE
 ZnamRKSt9nothrow_t
 ZnwmRKSt9nothrow_t
 anonymous
+array: %u elements
 badresources_whitelist.txt
-binary_auto
-binary_bc
-binary_lz4
-binary_zstd
+binary blob: %u bytes
+binary_blob
 command
 common
-csgoitemp
+convars_hidden_by_default
+csgoitemvrr
 cstring
 cxa_allocate_exception
 cxa_atexit
@@ -753,6 +796,7 @@ error_resource
 exit_on_resource_load_failure
 f %f %f
 f %f %f %f
+f0Lc{0E
 fieldtype_t
 filesystem_stdio
 float32
@@ -770,16 +814,23 @@ int CUtlSortVector<CResourceManifest::LoadingResourceReference_t, CUtlSortVector
 int CUtlSortVector<CResourceManifest::LoadingResourceReference_t, CUtlSortVectorDefaultLess<CResourceManifest::LoadingResourceReference_t>, CUtlVector<CResourceManifest::LoadingResourceReference_t, int, CUtlMemory<CResourceManifest::LoadingResourceReference_t, int> > >::FindLessOrEqual(const TKey &, bool *) const [T = CResourceManifest::LoadingResourceReference_t, LessFunc = CUtlSortVectorDefaultLess<CResourceManifest::LoadingResourceReference_t>, BaseVector = CUtlVector<CResourceManifest::LoadingResourceReference_t, int, CUtlMemory<CResourceManifest::LoadingResourceReference_t, int> >, TKey = CResourceManifest::LoadingResourceReference_t
 int CUtlSortVector<CResourceManifest::LoadingResourceReference_t, CUtlSortVectorDefaultLess<CResourceManifest::LoadingResourceReference_t>, CUtlVector<CResourceManifest::LoadingResourceReference_t, int, CUtlMemory<CResourceManifest::LoadingResourceReference_t, int> > >::Insert(const T &) [T = CResourceManifest::LoadingResourceReference_t, LessFunc = CUtlSortVectorDefaultLess<CResourceManifest::LoadingResourceReference_t>, BaseVector = CUtlVector<CResourceManifest::LoadingResourceReference_t, int, CUtlMemory<CResourceManifest::LoadingResourceReference_t, int
 int64)m_nAllocationCount + (int64)num ) <= 0x7FFFFFFF
-kCreateInterface
+invalid
 keep_all_records
 keepall
 lA;D$l
+lCreateInterface
 la_symbol_ptr
 libresourcesystem.dylib
 loader_path
 m_Value
+m_bIsPure
 m_bNeedsSort
 m_child
+m_constants
+m_eAccess
+m_eVarType
+m_flValue
+m_functions
 m_hResource->m_nLoadingResource != LOADING_RESOURCE_INDEX_INVALID
 m_hResource->m_nStreamingResource != STREAMING_RESOURCE_DATA_INDEX_INVALID
 m_nBase
@@ -787,10 +838,19 @@ m_nDerivedA
 m_nDerivedB
 m_nExample1
 m_nExample2
+m_nIndex
+m_nMaxTempVarsUsed
+m_nNumComponents
 m_nPackedMax
 m_nPackedMin
+m_nParamCount
+m_nameToken
+m_programBuffer
 m_vMaxBounds
 m_vMinBounds
+m_variables
+m_variablesRead
+m_variablesWritten
 mathlib_extended
 memcmp
 memcpy
@@ -814,7 +874,8 @@ p8RCp p
 p8SATARAp8p
 pPH;rP}_I
 panorama_image
-pppppppppppppppppppppppppppppppppppp@@0@@0
+pointer
+ppppppppppppppppppppppppppppppppppppp@@0@@0
 pthread_mutex_destroy
 pthread_mutex_init
 pthread_mutex_lock
@@ -866,14 +927,14 @@ stack_chk_guard
 start_resource_profiling
 strchr
 strcmp
+strict_type_combinations
 strlen
 stub_helper
 t(D#C\L
-u/<XtE<Hu'L
-u/<XtT<Hu'L
-uX<Xt-<HuPL
-uZ<Xt.<HuRL
+table: %u members
 undefined
+unknown
+unknown KV3 basic type '%s' (%d
 unwind_info
 usr/lib/libSystem.B.dylib
 usr/lib/libc++.1.dylib
@@ -894,10 +955,7 @@ void CResourceSystem::Update_Internal(int, ResourceSystemUpdateMode_t, bool, boo
 void CSchemaClassInfo::ReportClassError(const char *) const
 void CUtlMemory<CAsyncResourceDataRequest *, int>::Grow(int) [T = CAsyncResourceDataRequest *, I = int
 void CUtlMemory<CBufferStringN<200>, int>::Grow(int) [T = CBufferStringN<200>, I = int
-void CUtlMemory<CKeyValues3ArrayCluster *, int>::Grow(int) [T = CKeyValues3ArrayCluster *, I = int
-void CUtlMemory<CKeyValues3Cluster *, int>::Grow(int) [T = CKeyValues3Cluster *, I = int
 void CUtlMemory<CKeyValues3Iterator::StackEntry_t, int>::Grow(int) [T = CKeyValues3Iterator::StackEntry_t, I = int
-void CUtlMemory<CKeyValues3TableCluster *, int>::Grow(int) [T = CKeyValues3TableCluster *, I = int
 void CUtlMemory<CLoadingResource *, int>::Grow(int) [T = CLoadingResource *, I = int
 void CUtlMemory<CManifestResourceGatherer::ResourceFenceGroup_t *, int>::Grow(int) [T = CManifestResourceGatherer::ResourceFenceGroup_t *, I = int
 void CUtlMemory<CResourceManifest *, int>::Grow(int) [T = CResourceManifest *, I = int
@@ -913,6 +971,7 @@ void CUtlMemory<CUtlString, int>::Grow(int) [T = CUtlString, I = int
 void CUtlMemory<CUtlStringToken, int>::Grow(int) [T = CUtlStringToken, I = int
 void CUtlMemory<CodeResourceManifestFenceGroup_t *, int>::Grow(int) [T = CodeResourceManifestFenceGroup_t *, I = int
 void CUtlMemory<CodeResourceManifest_t *, int>::Grow(int) [T = CodeResourceManifest_t *, I = int
+void CUtlMemory<FuseVariableIndex_t, int>::Grow(int) [T = FuseVariableIndex_t, I = int
 void CUtlMemory<HResourceManifest__ *, int>::Grow(int) [T = HResourceManifest__ *, I = int
 void CUtlMemory<IResourceSystemDetailedListener *, int>::Grow(int) [T = IResourceSystemDetailedListener *, I = int
 void CUtlMemory<IToolsResourceListener *, int>::Grow(int) [T = IToolsResourceListener *, I = int

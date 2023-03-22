@@ -1,0 +1,1223 @@
+@define rowHighlightColor:  #8b806e22;
+ @define tableHeaderHeight: 36px;
+
+ DOTAProfileBattleStatsPage{
+
+  width: 100%;
+  height: 100%;
+  flow-children: down;
+ }
+
+
+ #GenericBackground{
+
+  background-image: url( "s2r://panorama/images/backgrounds/generic_background_png.vtex");
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  blur: gaussian (12px);
+  ignore-parent-flow: true;
+ }
+
+ .MainContents{
+
+  width: 100%;
+  height: fill-parent-flow( 1.0 );
+  flow-children: right;
+ }
+
+ .ScreenHeader{
+
+  width: 100%;
+  margin-bottom: 24px;
+ }
+
+ .ReportScreenTitle{
+
+  font-size: 32px;
+  text-transform: uppercase;
+  text-align: left;
+  letter-spacing: 2px;
+  horizontal-align: left;
+ }
+
+ #BattleReportStats{
+
+  flow-children: right;
+  width: 1392px;
+  height: 100%;
+  horizontal-align: center;
+  background-color: dotaPlusBgGradientFaded;
+  margin-bottom: 50px;
+ }
+
+ #NoStatsMessage{
+
+  width: 100%;
+  height: 100%;
+  margin-top: 36px;
+  background-color: rgba(0, 0, 0, 0.3);
+  ignore-parent-flow: true;
+  flow-children: down;
+
+  opacity: 0;
+  transform: translateY( -16px );
+
+  transition-property: opacity, transform;
+  transition-duration: 0.3s;
+  transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
+  transition-delay: 0s;
+ }
+  #NoStatsMessage .NoStatsMessageIcon{
+   horizontal-align: center;
+   width: 48px;
+   height: width-percentage( 100% );
+   margin: 80px 0px 24px;
+   opacity: 0.2;
+   wash-color: dotaPlusGold&DD;
+  }
+
+  #NoStatsMessage .NoStatsMessage{
+   horizontal-align: center;
+   text-align: center;
+   margin-top: -40px;
+   padding: 36px;
+   opacity: 0.2;
+
+   font-size: 20px;
+   wash-color: dotaPlusGold&99;
+  }
+
+  .HasNoGames #NoStatsMessage{
+   opacity: 1;
+   transform: translateY( 0px );
+
+   transition-duration: 0.1s;
+   transition-timing-function: ease-in;
+   transition-delay: 0s;
+  }
+
+
+ #AllTimeNoFilterMessage{
+
+  width: 240px;
+  height: 100%;
+  margin-top: 36px;
+  background-color: rgba(0, 0, 0, 0.3);
+  ignore-parent-flow: true;
+  flow-children: down;
+
+  opacity: 0;
+  transform: translateY( -16px );
+
+  transition-property: opacity, transform;
+  transition-duration: 0.3s;
+  transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
+  transition-delay: 0.1s;
+ }
+  #AllTimeNoFilterMessage .AllTimeMessageIcon{
+   horizontal-align: center;
+   width: 48px;
+   height: width-percentage( 100% );
+   margin: 80px 0px 24px;
+   opacity: 0.2;
+   wash-color: dotaPlusGold&DD;
+  }
+
+  #AllTimeNoFilterMessage .AllTimeMessage{
+   text-align: center;
+   margin-top: -40px;
+   padding: 36px;
+   opacity: 0.2;
+   wash-color: dotaPlusGold&99;
+  }
+
+  .UsingAllTimeData #AllTimeNoFilterMessage{
+   opacity: 1;
+   transform: translateY( 0px );
+
+   transition-duration: 0.1s;
+   transition-timing-function: ease-in;
+   transition-delay: 0s;
+  }
+
+
+ #ProfileBattleReportFilters{
+
+  margin-top: 36px;
+  padding: 20px 20px 32px;
+  overflow: squish scroll;
+  opacity-mask: url( "s2r://panorama/images/masks/gradient_lower_fade_softtop_png.vtex");
+
+  transition-property: opacity, transform;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in;
+  transition-delay: 0s;
+
+  opacity: 1;
+  transform: translateY( 0px );
+ }
+
+   #ProfileBattleReportFilters:hover VerticalScrollBar{
+    opacity: 1;
+   }
+
+
+  #ProfileBattleReportFilters VerticalScrollBar{
+   opacity: 0;
+   transition-property: opacity, transform;
+   transition-duration: 0.1s;
+  }
+
+
+ .UsingAllTimeData #ProfileBattleReportFilters{
+  opacity: 0;
+  transform: translateY( 16px );
+
+  transition-duration: 0.3s;
+  transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
+  transition-delay: 0.2s;
+ }
+
+ #TablesContainer{
+
+  width: 100%;
+  height: 100%;
+
+  transition-property: opacity, transform;
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
+ }
+
+
+
+
+
+
+ .AnalysisModePicker{
+
+  horizontal-align: center;
+  flow-children: right;
+  background-color: dotaPlusCharcoal;
+  border-radius: 80px;
+  padding: 2px 1px;
+  vertical-align: middle;
+  box-shadow: 0px 1px 1px dotaPlusBrown, inset 0px 1px 3px rgba(0,0,0,0.2);
+ }
+
+ .AnalysisModePicker TabButton{
+
+  border-radius: 80px;
+  min-width: 160px;
+  margin: 0px 2px;
+
+  transition-property: background-color;
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
+ }
+
+ .AnalysisModePicker TabButton:hover:not(:selected){
+  background-color: rgba(255, 255, 255, 0.01);
+ }
+
+ .AnalysisModePicker TabButton:hover:not(:selected) Label{
+  color: white;
+  opacity: 1;
+ }
+
+ .AnalysisModePicker TabButton:selected{
+
+  background-color: dotaPlusBrown;
+  background-color: gradient( linear, 0% 0%, 0% 100%, from( dotaPlusBrownHi ), to( dotaPlusBrown ) );
+  box-shadow: inset 0px 1px 1px dotaPlusBoneHi&11;
+ }
+
+ .AnalysisModePicker TabButton Label{
+
+  text-transform: uppercase;
+  color: #ccc;
+  letter-spacing: 1px;
+  padding: 6px 4px;
+  text-align: center;
+  horizontal-align: center;
+  font-weight: semi-bold;
+  opacity: 0.6;
+
+  transition-property: color, opacity;
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
+ }
+
+ .AnalysisModePicker TabButton:selected Label{
+
+  color: white;
+ }
+
+ #InfrequentHeroesControl{
+
+  ignore-parent-flow: true;
+  horizontal-align: center;
+  vertical-align: bottom;
+  flow-children: right;
+
+  padding: 8px 12px;
+  background-color: #141a21;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  margin-left: 220px;
+  margin-bottom: 16px;
+  border-radius: 4px;
+
+  transition-property: transform, opacity;
+  transition-duration: 0.3s;
+  transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
+
+  opacity: 0;
+  transform: translateY(6px);
+ }
+
+   #InfrequentHeroesControl #InfrequentlyPlayedCheckbox Label{
+    letter-spacing: 0px;
+   }
+
+
+  #InfrequentHeroesControl .HideHeroesSliderTitle{
+   opacity: 0.4;
+   horizontal-align: center;
+   vertical-align: center;
+  }
+   #InfrequentHeroesControl .HideHeroesSliderTitle.NumberOfGames{
+    width: 66px;
+   }
+
+
+  #InfrequentHeroesControl #HideHeroesSlider{
+   margin: 0px 12px;
+   vertical-align: center;
+   width: 200px;
+  }
+
+
+ SlottedSlider.HorizontalSlider .SliderNotch{
+  margin: 0px;
+  border: 0px;
+  background-color: black;
+  width: 2px;
+  margin-top: 2px;
+ }
+
+
+
+
+   #BattleReportStats:hover #InfrequentHeroesControl{
+    opacity: 0.98;
+    transform: translateY(0px);
+    transition-timing-function: ease-in;
+   }
+
+
+
+
+
+
+
+
+ .TabGroupContainer{
+
+  horizontal-align: center;
+  vertical-align: center;
+  flow-children: right;
+  border-radius: 80px;
+  border: 1px solid rgba(255, 255, 255, 0.015);
+  background-color: rgba(255, 255, 255, 0.01);
+  padding: 2px 0px;
+  margin: 0px 4px;
+ }
+  .TabGroupContainer .TabItem{
+   padding: 6px 16px;
+   border-radius: 80px;
+   margin: 0px 2px;
+   border: 1px solid;
+   border-brush: gradient( linear, 0% 0%, 0% 100%, from( #DAE2E511 ), to( #B0BCC211 ) );
+   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0);
+   border-color: transparent;
+   background-color: gradient( linear, 0% 0%, 0% 100%, from( #44505500 ), to( #2F363A00 ) );
+
+   transition-property: color, border, background-color, box-shadow, text-shadow;
+   transition-duration: 0.2s;
+   transition-timing-function: ease;
+  }
+   .TabGroupContainer .TabItem Label{
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0px 0px 12px rgba(132, 185, 255, 0);
+    color: #768e8d;
+    text-align: center;
+    height: 20px;
+
+    transition-property: color, text-shadow;
+    transition-duration: 0.2s;
+    transition-timing-function: ease;
+   }
+
+   .TabGroupContainer .TabItem .TabItemIcon{
+    width: 20px;
+    height: 20px;
+    background-size: cover;
+    wash-color: #768e8d;
+    img-shadow: 0px 0px 12px rgba(197, 222, 255, 0);
+
+    transition-property: wash-color, img-shadow;
+    transition-duration: 0.2s;
+    transition-timing-function: ease;
+   }
+
+
+    .TabGroupContainer .TabItem:hover Label{
+     color: white;
+     text-shadow: 0px 0px 12px rgba(197, 222, 255, 0.3);
+    }
+
+    .TabGroupContainer .TabItem:hover .TabItemIcon{
+     wash-color: white;
+    }
+
+
+   .TabGroupContainer .TabItem:selected{
+    border-color: white;
+    background-color: gradient( linear, 0% 0%, 0% 100%, from( #445055 ), to( #2F363A ) );
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+   }
+    .TabGroupContainer .TabItem:selected Label{
+     color: white;
+     text-shadow: 0px 2px 4px rgba(0, 0, 0, 1);
+    }
+
+    .TabGroupContainer .TabItem:selected .TabItemIcon{
+     wash-color: white;
+    }
+
+
+
+
+ #ListViewIcon{
+  background-image: url( "s2r://panorama/images/control_icons/list_png.vtex");
+ }
+
+ #GraphViewIcon{
+  background-image: url( "s2r://panorama/images/control_icons/graph_png.vtex");
+ }
+
+ #MMRContainer{
+
+  horizontal-align: right;
+  vertical-align: center;
+  flow-children: right;
+  padding-right: 12px;
+ }
+  #MMRContainer Label{
+   margin-left: 4px;
+   color: whitesmoke;
+   opacity: 0.6;
+   font-size: 18px;
+  }
+
+
+ #MMRLabel{
+
+  min-width: 36px;
+  margin-right: 8px;
+  color: #959596;
+ }
+
+ #MMRValue{
+
+  visibility: collapse;
+ }
+
+ #MMRCalibrating{
+
+  visibility: collapse;
+  color: white;
+ }
+
+ #MMRNoData{
+
+  visibility: collapse;
+  color: white;
+ }
+
+ .MMRCalibrated #MMRValue,.MMRCalibrating #MMRCalibrating,.MMRNoData #MMRNoData{
+
+
+
+  visibility: visible;
+ }
+
+
+
+ #TableHeaderSpacer{
+
+  width: 100%;
+  height: tableHeaderHeight;
+  background-color: rgba(0, 0, 0, 1);
+  border-bottom: 2px solid dotaPlusGold;
+  ignore-parent-flow: true;
+ }
+
+ .AnalysisTable{
+
+  flow-children: down;
+ }
+
+ .AnalysisTableHeader{
+
+  flow-children: right;
+  height: tableHeaderHeight;
+ }
+
+ .AnalysisFirstColumnHeader{
+
+  flow-children: right;
+  height: 100%;
+  border-right: 1px solid rgba(255, 255, 255, 0.015);
+ }
+
+ .AnalysisColumnsHeader{
+
+  flow-children: right;
+  overflow: scroll squish;
+  height: 100%;
+ }
+
+ .AnalysisColumnsHeader HorizontalScrollBar{
+
+  opacity: 0.0;
+ }
+
+ .AnalysisTableRows{
+
+  flow-children: right;
+ }
+
+ .AnalysisTableFirstColumn{
+
+  flow-children: down;
+  overflow: squish scroll;
+  border-right: 1px solid rgba(0, 0, 0, 0.02);
+ }
+
+ .AnalysisTableFirstColumn VerticalScrollBar{
+
+  opacity: 0.0;
+ }
+
+ .AnalysisTableRowContents{
+
+  flow-children: down;
+  overflow: scroll;
+  width: fill-parent-flow( 1.0 );
+ }
+  .AnalysisTableRowContents #HorizontalScrollBar{
+   height: 8px;
+   box-shadow: none;
+  }
+
+  .AnalysisTableRowContents #VerticalScrollBar{
+   width: 8px;
+  }
+
+
+ .AnalysisTableFirstColumn,.AnalysisTableRowContents{
+
+
+  padding-bottom: 80px;
+ }
+
+ .AnalysisTableRow{
+     padding: 3px 0px;
+     margin-bottom: 1px;
+     transition-property: background-color;
+     transition-duration: 0s;
+     background-color: #8b806e0a;
+ }
+  .AnalysisTableRow.Expanded{
+   background-color: rowHighlightColor;
+  }
+
+
+ .AnalysisSubRows{
+
+  flow-children: down;
+  visibility: collapse;
+ }
+ .AnalysisTableRow.Expanded .AnalysisSubRows{
+
+  visibility: visible;
+ }
+
+ #HeroImage{
+
+  horizontal-align: left;
+  margin-top: 0px;
+ }
+
+ .AnalysisTableSubRow{
+
+  flow-children: right;
+  border-top: 1px solid #ffffff02;
+  padding: 6px 0px;
+ }
+
+
+ .AnalysisColumns{
+
+  flow-children: right;
+ }
+
+
+ .ColumnHeader,.ColumnData{
+
+
+  width: 110px;
+  margin-right: 0px;
+ }
+
+ .ColumnHeader{
+
+  flow-children: right;
+  padding: 4px 2px 4px 6px;
+  height: 100%;
+  vertical-align: center;
+
+  transition-property: brightness, background-color;
+  transition-duration: 0s;
+ }
+ .ColumnHeader:hover{
+
+  brightness: 2.0;
+  background-color: rgba(255, 255, 255, 0.01);
+ }
+ .ColumnHeader:active{
+
+  brightness: 1.5;
+ }
+
+ .ColumnHeader Label{
+
+  width: fill-parent-flow( 1.0 );
+  height: 18px;
+  color: baseText;
+  font-size: 15px;
+  text-transform: uppercase;
+
+  vertical-align: center;
+  opacity: 0.6;
+ }
+
+ .ColumnHeader .SortIcon{
+
+  width: 16px;
+  height: 16px;
+  wash-color: baseText;
+  vertical-align: center;
+
+  background-image: url( "s2r://panorama/images/control_icons/arrow_dropdown_png.vtex");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  visibility: collapse;
+ }
+
+ .ColumnHeader.Ascending .SortIcon{
+
+  transform: scaleY( -1 );
+  visibility: visible;
+ }
+
+ .ColumnHeader.Descending .SortIcon{
+
+  visibility: visible;
+ }
+
+
+
+
+ #ExpandCollapseIcon{
+
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  wash-color: rgb(158, 158, 158);
+  margin-right: 8px;
+
+  background-image: url( "s2r://panorama/images/control_icons/arrow_solid_right_png.vtex");
+  background-size: 8px 12px;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  transition-property: transform, brightness;
+  transition-duration: 0.2s;
+ }
+  .UsingAllTimeData #ExpandCollapseIcon{
+   visibility: collapse;
+  }
+
+
+ #ExpandCollapseIcon:hover{
+
+  brightness: 2.0;
+ }
+
+ #ExpandCollapseIcon:active{
+
+  brightness: 1.5;
+ }
+
+ .AnalysisTableRow.Expanded #ExpandCollapseIcon{
+
+  transform: rotateZ( 90deg );
+ }
+
+ .AnalysisTableSubRow #ExpandCollapseIcon{
+
+  visibility: collapse;
+ }
+
+
+
+
+
+
+
+ .LabelColumnData Label{
+
+  padding: 2px 2px 2px 6px;
+  vertical-align: middle;
+  color: #ccc;
+  font-size: 16px;
+ }
+
+ .AghsStatusColumn{
+
+  width: 60px;
+ }
+
+ .ItemColumnData{
+
+  flow-children: right;
+ }
+
+ .HeroColumnData{
+
+  flow-children: right;
+ }
+
+ .HeroColumnData #HeroImage{
+
+  width: 128px;
+  height: 72px;
+  ui-scale: 44%;
+  vertical-align: middle;
+  box-shadow: 0px 4px 4px rgba(0,0,0,0.2);
+ }
+
+ .HeroColumnData Label{
+
+  vertical-align: middle;
+  margin-left: 8px;
+ }
+
+ .HeroMode .HeroColumnData Label{
+
+  color: #FFF;
+
+  font-size: 16px;
+ }
+
+ .RoleMode .RoleColumnData Label{
+
+  color: #FFF;
+
+  font-size: 16px;
+ }
+
+ .ProgressBarColumnData{
+
+  padding: 2px;
+ }
+
+ .ProgressBarColumnData ProgressBar{
+
+  vertical-align: middle;
+  width: 100px;
+
+  height: 10px;
+
+  border-radius: 2px;
+  margin-left: 4px;
+  margin-right: 18px;
+  margin-bottom: 1px;
+ }
+
+ #StatProgressBar{
+
+  background-color: #00000088;
+ }
+
+ #StatProgressBar_Left{
+
+  background-color: gradient( linear, 0% 0%, 100% 0%, from( dotaPlusBoneHi&77 ), to( dotaPlusBoneHi&99 ) );
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.4);
+  border-radius: 2px;
+ }
+
+ #StatProgressBar_Right{
+
+  background-color: #00000033;
+ }
+
+
+ .RoleColumnData{
+
+  flow-children: right;
+  padding-left: 8px;
+ }
+
+ .RoleColumnData .RoleIcon{
+
+  width: 24px;
+  height: 24px;
+  margin-right: 4px;
+  wash-color: #ccc;
+  vertical-align: middle;
+
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+ }
+
+ .RoleColumnData.SafeLane .RoleIcon{  background-image: url( "s2r://panorama/images/rank_tier_icons/handicap/safelaneicon_psd.vtex");}
+ .RoleColumnData.MidLane .RoleIcon{   background-image: url( "s2r://panorama/images/rank_tier_icons/handicap/midlaneicon_psd.vtex");}
+ .RoleColumnData.OffLane .RoleIcon{   background-image: url( "s2r://panorama/images/rank_tier_icons/handicap/offlaneicon_psd.vtex");}
+ .RoleColumnData.SoftSupport .RoleIcon{  background-image: url( "s2r://panorama/images/rank_tier_icons/handicap/softsupporticon_psd.vtex");}
+ .RoleColumnData.HardSupport .RoleIcon{  background-image: url( "s2r://panorama/images/rank_tier_icons/handicap/hardsupporticon_psd.vtex");}
+
+ .RoleColumnData Label{
+
+  vertical-align: middle;
+  color: #ccc;
+ }
+
+ .HeroImageColumnData #HeroImage{
+
+  width: 128px;
+  height: 72px;
+  ui-scale: 50%;
+  margin-left: 8px;
+ }
+
+ #CustomizeColumns{
+
+  margin: 0px;
+  margin-top: 140px;
+  margin-left: 1430px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.6);
+  ignore-parent-flow: true;
+  vertical-align: top;
+  horizontal-align: center;
+
+  transition-property: brightness;
+  transition-duration: 0.1s;
+ }
+
+ #CustomizeColumns:hover:enabled{
+
+  brightness: 1.5;
+ }
+
+ #CustomizeColumns:active{
+
+  brightness: 1.5;
+ }
+
+ .ChangeColumnsButton{
+
+  width: 26px;
+  height: 26px;
+  background-color: #0009;
+  tooltip-position: top;
+
+  background-image: url( "s2r://panorama/images/dota_plus/column_button_psd.vtex");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  horizontal-align: right;
+  vertical-align: center;
+ }
+  .UsingAllTimeData .ChangeColumnsButton{
+   visibility: collapse;
+  }
+
+
+ .FiltersSection RadioButton{
+  margin-bottom: 4px;
+ }
+
+ .FiltersSection .LargeToggle{
+
+  background-color: gradient( linear, 0% 0%, 100% 0%, from( #1B181266 ), to( #1B181266 ) );
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1);
+
+  padding: 6px 0px;
+  width: 100%;
+  border-radius: 3px;
+  margin: 0px;
+  margin-bottom: 4px;
+ }
+  .FiltersSection .LargeToggle Label{
+   font-size: 18px;
+   margin-left: 8px;
+   margin-top: -2px;
+   text-transform: uppercase;
+   transform: none;
+
+   transition-property: transform;
+   transition-duration: 0.2s;
+   transition-timing-function: ease;
+  }
+
+  .FiltersSection .LargeToggle .RadioBox{
+   visibility: collapse;
+  }
+
+  .FiltersSection .LargeToggle:selected{
+   background-color: gradient( linear, 0% 0%, 100% 0%, from( #5c523f ), to( #453C2C ) );
+   border: 1px solid rgba(255, 255, 255, 0.02);
+   box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.4);
+  }
+   .FiltersSection .LargeToggle:selected Label{
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 1);
+    transform: translateX ( 6px );
+   }
+
+
+
+ #StatGroupsToggle{
+
+  transition-property: opacity, transform;
+  transition-duration: 0.2s;
+  transition-delay: 0s;
+  height: 170px;
+  margin-bottom: 0px;
+ }
+
+ .MatchMode #StatGroupsToggle{
+
+  opacity: 0;
+  transform: translateY( -10px );
+ }
+
+ #FiltersContainer{
+
+  width: 100%;
+  flow-children: down;
+  transition-property: transform;
+  transition-duration: 0.2s;
+ }
+
+ .MatchMode #FiltersContainer{
+
+  transform: translateY( -180px );
+ }
+
+
+
+
+ #HeroesTable,#RolesTable,#MatchesTable{
+
+
+
+  width: 100%;
+  height: 100%;
+  visibility: collapse;
+ }
+
+ .HeroMode #HeroesTable,.RoleMode #RolesTable,.MatchMode #MatchesTable{
+
+
+
+  visibility: visible;
+ }
+
+
+
+ .HeroRow{
+
+  flow-children: down;
+ }
+
+ #HeroesTable .ColumnData{
+
+  height: 36px;
+ }
+ #HeroesTable .AnalysisTableSubRow .ColumnData{
+
+  height: 24px;
+ }
+
+ #HeroesTable .HeroColumn{
+
+  width: 96px;
+  padding-left: 8px;
+ }
+  .UsingAllTimeData #HeroesTable .HeroColumn{
+   width: 72px;
+  }
+
+
+ #HeroesTable .RoleColumn{
+
+  width: 96px;
+  padding-left: 26px;
+ }
+
+ #HeroTableData,#RolesTableData,#MatchesTableData{
+
+
+
+  flow-children: down;
+ }
+
+ .RankedGamesColumn,.HeroesPlayedColumn,.RankedWinsColumn{
+
+
+
+  width: 44px;
+ }
+
+ .RoshanKillsColumn,.KillsColumn,.DeathsColumn,.AssistsColumn,.RunesColumn,.PowerRunesColumn,.PowerRunesColumn,.BountyRunesColumn,.MaxRoshanKillsColumn{
+
+
+
+
+
+
+
+
+
+  width: 54px;
+ }
+
+ .MaxWinstreakColumn,.CurrentWinstreakColumn,.GamesColumn,.WinsColumn,.LossesColumn,.DeniesColumn,.CampsStackedColumn,.LastHitsColumn,.HeroDamageColumn,.TowerDamageColumn,.HeroHealingColumn,.LaneWinPercentColumn,.GamesPurchasedShardColumn,.GamesPurchasedScepterColumn,.ShardPurchaseWinrateColumn,.ScepterPurchaseWinrateColumn,.MaxHeroHealingColumn,.MaxTowerDamageColumn,.MaxHeroDamageColumn,.MaxLastHitsColumn,.MaxDeniesColumn,.MaxCampsStackedColumn,.DewardsColumn,.GameDurationColumn,.WinDurationColumn,.LossDurationColumn,.RadiantWinrateColumn,.DireWinrateColumn,.MMRDeltaColumn,.MaxLossStreakColumn,.EnemyRoshanKillsColumn,.TeleportsUsedColumn,.RoshanAdvantageColumn,.AverageScepterPurchaseTimeColumn,.MaxDewardsColumn{
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  width: 64px;
+ }
+
+ .XPMColumn,.GPMColumn,.MaxXPMColumn,.MaxGPMColumn,.MaxKillsColumn,.TotalTimePlayedColumn,.MaxAssistsColumn{
+
+
+
+
+
+
+
+  width: 78px;
+ }
+
+
+ .AverageShardPurchaseTimeColumn{
+
+  width: 84px;
+ }
+
+ .WinrateColumn{
+
+  width: 90px;
+ }
+
+ .ItemsColumn{
+
+  width: 250px;
+ }
+  .ItemsColumn .ItemIcon{
+   width: 38px;
+   vertical-align: center;
+   margin-right: 4px;
+   border-radius: 2px;
+   box-shadow: 0px 1px 4px rgba(0 , 0 , 0 , 0.2);
+  }
+
+
+ .LabelColumnData.WinsColumn Label,.LabelColumnData.WonMatch Label{
+
+
+  color: winnerGreenLow;
+ }
+
+ .LabelColumnData.LossesColumn Label,.LabelColumnData.LostMatch Label{
+
+
+  color: #FF4949;
+ }
+
+ .LabelColumnData.WinsColumn Label,.LabelColumnData.LossesColumn Label{
+
+  font-weight: bold;
+ }
+
+
+ .LabelColumnData.HighlightMinMax Label{
+
+  text-shadow: 0px 0px 12px #ffeebe33;
+  brightness: 1.8;
+ }
+
+ .LabelColumnData.HighlightMinMax.LossesColumn Label,.LabelColumnData.HighlightMinMax.LostMatch Label{
+
+
+  text-shadow: 0px 0px 12px #ff727236;
+ }
+
+ .LabelColumnData.HighlightMinMax.WinsColumn Label,.LabelColumnData.HighlightMinMax.WonMatch Label{
+
+
+  text-shadow: 0px 0px 12px #72ff9f36;
+ }
+
+
+
+ .RoleRow{
+
+  flow-children: down;
+ }
+
+ #RolesTable .ColumnData{
+
+  height: 36px;
+ }
+ #RolesTable .AnalysisTableSubRow .ColumnData{
+
+  height: 24px;
+ }
+
+ #RolesTable .RoleColumn{
+
+  width: 80px;
+ }
+
+ #RolesTable .HeroColumn{
+
+  width: 80px;
+  padding-left: 30px;
+ }
+
+ #RolesTable .HeroColumn #HeroImage{
+
+  ui-scale: 30%;
+ }
+
+
+
+
+ .MatchRow{
+
+  flow-children: right;
+  transition-duration: 0s;
+ }
+  .MatchRow:hover{
+   background-color: rowHighlightColor;
+  }
+
+
+ #MatchesTable .ColumnData{
+
+  height: 36px;
+ }
+
+ .MatchRow #ExpandCollapseIcon{
+
+  visibility: collapse;
+ }
+
+ #MatchesTable .DateColumn{  width: 180px;}
+ #MatchesTable .RoleColumn{  width: 60px;}
+ #MatchesTable .HeroColumn{  width: 80px;}
+ #MatchesTable .ResultColumn{  width: 70px;}
+ #MatchesTable .DurationColumn{  width: 100px;}
+ #MatchesTable .LastHitsColumn{  width: 60px;}
+ #MatchesTable .DeniesColumn{  width: 60px;}
+ #MatchesTable .DateColumn{  width: 140px;}
+ #MatchesTable .HeroDamageColumn{  width: 83px;}
+ #MatchesTable .HeroHealingColumn{  width: 83px;}
+
+
+
+ .AghsIcon{
+
+  background-image: url( "s2r://panorama/images/hud/reborn/aghs_scept_icon_psd.vtex");
+  vertical-align: top;
+ }
+
+ .ShardIcon{
+
+  background-image: url( "s2r://panorama/images/hud/reborn/aghs_shard_icon_psd.vtex");
+  vertical-align: bottom;
+ }
+
+ .AghsIcon,.ShardIcon{
+
+
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  horizontal-align: center;
+  width: 20px;
+  height: 20px;
+  opacity: 0.5;
+  wash-color: #000000;
+ }
+
+ .HasShard .ShardIcon,.HasAghs .AghsIcon{
+
+
+  opacity: 1;
+  wash-color: #00000000;
+  img-shadow: 0px 1px 3px 1.0 #00000022;
+}

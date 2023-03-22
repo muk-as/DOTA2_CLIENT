@@ -1,0 +1,42 @@
+<!-- xml reconstructed by ValveResourceFormat: https://vrf.steamdb.info/ -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/popups/popups_shared.vcss_c" />
+		<include src="s2r://panorama/styles/popups/popup_muerta_dashboard_calavera.vcss_c" />
+	</styles>
+	<scripts>
+		<include src="s2r://panorama/scripts/util.vts_c" />
+		<include src="s2r://panorama/scripts/sequence_actions.vts_c" />
+		<include src="s2r://panorama/scripts/dota_sequence_actions.vts_c" />
+		<include src="s2r://panorama/scripts/popups/popup_muerta_dashboard_calavera.vts_c" />
+	</scripts>
+	<snippets>
+		<snippet name="ParticleFX">
+			<Panel>
+				<DOTAParticleScenePanel id="CalaveraFX" class="CalaveraFX" hittest="false" particleName="particles/events/muerta_ofrenda/muerta_calavera_screen_effect_town.vpcf" particleonly="true" startActive="true" cameraOrigin="0 0 1000" lookAt="0 1 0" fov="18" squarePixels="true" />
+			</Panel>
+		</snippet>
+		<snippet name="ParticleFXWide">
+			<Panel>
+				<DOTAParticleScenePanel id="CalaveraFX" class="CalaveraFX" hittest="false" particleName="particles/events/muerta_ofrenda/muerta_calavera_screen_effect_town.vpcf" particleonly="true" startActive="true" cameraOrigin="0 0 1000" lookAt="0 1 0" fov="25" squarePixels="true" />
+			</Panel>
+		</snippet>
+	</snippets>
+	<DOTAPopupMuertaCalavera class="PopupPanel Hidden" popupbackground="blur" oncancel="UIPopupButtonClicked()">
+		<Panel class="Contents">
+			<Button id="LeftArrow" onactivate="DOTANavigateMuertaCalaveraBackward()">
+				<Image class="ArrowImage Left" src="s2r://panorama/images/control_icons/arrow_chevron_gradient_png.vtex" />
+			</Button>
+			<Panel id="CalaveraImageContainer">
+				<Panel id="CalaveraImageGlow" class="FlameReveal" />
+				<Panel id="CalaveraImage" class="FlameReveal" />
+			</Panel>
+			<Button id="RightArrow" onactivate="DOTANavigateMuertaCalaveraForward()">
+				<Image class="ArrowImage" src="s2r://panorama/images/control_icons/arrow_chevron_gradient_png.vtex" />
+			</Button>
+		</Panel>
+		<Panel id="ParticleFXContainer" hittest="false" />
+		<Button class="CloseButton" onactivate="UIPopupButtonClicked()" />
+	</DOTAPopupMuertaCalavera>
+</root>

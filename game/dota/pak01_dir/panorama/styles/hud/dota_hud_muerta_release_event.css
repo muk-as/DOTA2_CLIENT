@@ -1,0 +1,829 @@
+DOTAHUDMuertaReleaseEvent{
+  width: 500px;
+  height: 290px;
+  background-color: #00000000;
+  visibility: visible;
+  margin-top: 250px;
+  overflow: noclip;
+}
+
+ DOTAHUDMuertaReleaseEvent .CloseButton{
+  vertical-align: top;
+  horizontal-align: right;
+  margin-right: -5px;
+  margin-top: -5px;
+  wash-color: #978862;
+  background-image: url( "s2r://panorama/images/control_icons/double_arrow_left_png.vtex");
+  width: 64px;
+  height: 64px;
+ }
+
+ DOTAHUDMuertaReleaseEvent .CloseButton:hover{
+  wash-color: #ddc891;
+ }
+
+ #NeverShowAgainCheckbox{
+  vertical-align: bottom;
+  horizontal-align: right;
+  ui-scale: 70%;
+  opacity: 0.8;
+  wash-color: #c6b384;
+  margin: 10px;
+ }
+
+ DOTAHUDMuertaReleaseEvent.Hidden{
+  visibility: collapse;
+ }
+
+ DOTAHUDMuertaReleaseEvent .Ornament{
+  width: 15px;
+  height: 15px;
+  margin: 10px;
+  vertical-align: top;
+ }
+
+ DOTAHUDMuertaReleaseEvent #OrnamentLeft{
+  horizontal-align: left;
+ }
+
+ DOTAHUDMuertaReleaseEvent #OrnamentRight{
+  horizontal-align: right;
+ }
+
+ .TargetPopupHeader{
+  color: white;
+  horizontal-align: center;
+  margin-bottom: 4px;
+  font-weight: normal;
+  font-size: 30px;
+  color: #eeeeee;
+  width: 100%;
+  text-align: center;
+ }
+
+ #TargetPopupDescription{
+  vertical-align: bottom;
+  font-size: 17px;
+  margin-left: 40px;
+  margin-right: 40px;
+  width: 100%;
+  color: #1d946d;
+ }
+
+ .DescriptionLabel{
+  vertical-align: middle;
+  text-align: center;
+  font-size: 21px;
+  font-weight: light;
+  color: #aaaaaa;
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.8);
+ }
+
+ #DescriptionPanel{
+  vertical-align: top;
+  horizontal-align: left;
+  transform: translateX(-2000px);
+  transition-duration: 1s;
+  transition-property: transform, opacity;
+  transition-timing-function: ease-in-out;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  overflow: noclip;
+  background-color: gradient( linear, 0% 0%, 0% 100%, from( #262C2DFF ), to( #131617FF ) );
+ }
+
+ #DescriptionContent{
+  flow-children: down;
+  width: 100%;
+  height: 100%;
+  overflow: noclip;
+ }
+
+ #VersusHeroPanelsContainer{
+  flow-children: right;
+  horizontal-align: center;
+  vertical-align: center;
+  ui-scale: 65%;
+ }
+
+ #VersusImage{
+  width: 88px;
+  height: 88px;
+  vertical-align: center;
+  img-shadow: 2px 2px 10px 3.0 #000000FF;
+ }
+
+ .VersusHeroFrame{
+  width: 128px;
+  height: 128px;
+  background-image: url( "s2r://panorama/images/events/muerta/versus_screen/portrait_bottom_png.vtex");
+  img-shadow: 2px 2px 10px 3.0 #000000FF;
+ }
+
+ .VersusHeroImageContainer{
+  opacity-mask: url( "s2r://panorama/images/events/muerta/versus_screen/portrait_frame_trans_png.vtex");
+  width: 100%;
+  height: 100%;
+ }
+
+ .VersusHeroImage{
+  horizontal-align: center;
+  width: 75%;
+  height: 100%;
+ }
+
+ .ShowVersusPanel #DescriptionPanel{
+  opacity: 1;
+  transform: translateX(0);
+  visibility: visible;
+ }
+
+ .BackgroundMask{
+
+  width: 100%;
+  height: 100%;
+ }
+
+ #EventLogoContainer{
+
+  height: 50%;
+  width: 100%;
+  background-image: url( "s2r://panorama/images/events/muerta/versus_screen/target_background_tile_png.vtex");
+  background-color: #1e312c;
+  background-size: 128px 128px;
+  overflow: clip;
+ }
+
+
+ #EventLogo{
+
+  width: 700px;
+  height: 262px;
+  vertical-align: top;
+  horizontal-align: center;
+  margin-top: -70px;
+ }
+
+
+
+ #EventDescriptionDivider{
+  height: 4px;
+  width: 100%;
+  background-color: #978862;
+ }
+
+ #EventDescriptionContainer{
+
+
+  width: 100%;
+  height: 50%;
+  background-image: url( "s2r://panorama/images/events/muerta/versus_screen/target_background_tile_png.vtex");
+
+  background-color: #2d4e43;
+  background-size: 128px 128px;
+ }
+
+ #EventDescriptionPanel{
+  flow-children: down;
+  width: 100%;
+  vertical-align: bottom;
+  margin-bottom: 40px;
+ }
+
+ .HideDescription{
+
+  opacity: 0;
+  animation-name: hide_description;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+ }
+
+
+ @keyframes 'hide_description'{
+ 0%{
+
+  opacity: 1;
+ }
+
+ 100%{
+
+  opacity: 0;
+ }
+ }
+
+ @keyframes 'score_increased'{
+ 5%{
+
+  transform: scaleX(2) scaleY(2);
+ }
+
+ 100%{
+
+  transform: scaleX(1) scaleY(1);
+ }
+ }
+
+ @keyframes 'flash'{
+
+  from{
+
+   brightness: 1;
+  }
+  50%{
+
+   brightness: 2;
+  }
+  to{
+
+   brightness: 1;
+  }
+ }
+
+ DOTAHUDMuertaReleaseEventCounter{
+
+  horizontal-align: left;
+  vertical-align: top;
+  width: 230px;
+  visibility: visible;
+  ui-scale: 100%;
+  margin-top: 5px;
+  margin-left: 5px;
+  transform: translateX(-300px);
+  transition-duration: 0.5s;
+  transition-property: transform, opacity;
+  transition-timing-function: ease-in-out;
+  tooltip-position: top;
+  tooltip-body-position: 50% 50%;
+  tooltip-arrow-position: 18% 40%;
+  overflow: noclip;
+ }
+
+ DOTAHUDMuertaReleaseEventCounter .CounterBurstFx{
+
+  overflow: noclip;
+  width: 150px;
+  height: 150px;
+
+  horizontal-align: center;
+  vertical-align: center;
+ }
+
+ DOTAHUDMuertaReleaseEventCounter .CounterHeroFrameBgFx{
+
+  overflow: noclip;
+  width:  250%;
+  height: 250%;
+  z-index: -10;
+  opacity: 0;
+  transition-duration: 1.0s;
+  transition-property: opacity;
+  transition-timing-function: linear;
+  transition-delay: 0.2s;
+  horizontal-align: center;
+  vertical-align: center;
+ }
+
+ DOTAHUDMuertaReleaseEventCounter .CounterHeroFrameHighlightFx{
+
+  horizontal-align: center;
+  vertical-align: center;
+  width: 60px;
+  height: 60px;
+  margin-top: 22px;
+  transition-duration: 0.0s;
+  transition-property: opacity;
+  transition-timing-function: linear;
+  transition-delay: 0.0s;
+  opacity-mask: url( "s2r://panorama/images/masks/gradient_topdown_hard_png.vtex");
+  visibility: collapse;
+ }
+
+ DOTAHUDMuertaReleaseEventCounter.Expanded .CounterHeroFrameHighlightFx{
+
+  transition-duration: 0.2s;
+  transition-delay: 0.1s;
+  opacity: 0;
+ }
+
+ DOTAHUDMuertaReleaseEventCounter.LocalPlayerLeads #CounterHeroHighlight1{
+
+  visibility: visible;
+ }
+
+ DOTAHUDMuertaReleaseEventCounter.OpponentLeads #CounterHeroHighlight2{
+
+  visibility: visible;
+ }
+
+ DOTAHUDMuertaReleaseEventCounter.LocalPlayerScored #CounterHeroFrameBgFx1{
+
+  opacity: 1;
+ }
+
+ DOTAHUDMuertaReleaseEventCounter.OpponentScored #CounterHeroFrameBgFx2{
+
+  opacity: 1;
+ }
+
+ DOTAHUDMuertaReleaseEventCounter.ShowCounterPanel.ToggledOff{
+  transform: translateX(-200px);
+ }
+
+ DOTAHUDMuertaReleaseEventCounter.ShowCounterPanel{
+  opacity: 1;
+  transform: translateX(0);
+ }
+
+ DOTAHUDMuertaReleaseEventCounter .CounterHeroFrame{
+
+  width: 50px;
+  height: 58px;
+  overflow: noclip;
+ }
+
+ DOTAHUDMuertaReleaseEventCounter #CounterHeroFrame1{
+
+  position: 0px 0px 0px;
+ }
+
+ DOTAHUDMuertaReleaseEventCounter #CounterHeroFrame2{
+
+  position: 50px 0px 0px;
+  transition-duration: 0.2s;
+  transition-property: position;
+  transition-timing-function: linear;
+ }
+
+ DOTAHUDMuertaReleaseEventCounter.Expanded #CounterHeroFrame2{
+
+  position: 190px 0px 0px;
+ }
+
+ DOTAHUDMuertaReleaseEventCounter #CounterFlowerLarge{
+
+  position: 95px 0px 0px;
+  width: 50px;
+  height: 50px;
+  opacity: 0;
+  transition-duration: 0.1s;
+  transition-property: opacity;
+  transition-timing-function: linear;
+  transition-delay: 0.2s;
+ }
+
+ DOTAHUDMuertaReleaseEventCounter.Expanded #CounterFlowerLarge{
+
+  opacity: 1;
+  transition-delay: 0s;
+ }
+
+ DOTAHUDMuertaReleaseEventCounter #CounterFlowerSmall{
+
+  position: 38px 12px 0px;
+  width: 25px;
+  height: 25px;
+  opacity: 1;
+  transition-duration: 0.1s;
+  transition-property: opacity;
+  transition-timing-function: linear;
+ }
+
+ DOTAHUDMuertaReleaseEventCounter.Expanded #CounterFlowerSmall{
+
+  opacity: 0;
+  transition-delay: 0.2s;
+ }
+
+ DOTAHUDMuertaReleaseEventCounter .CounterHeroImage{
+
+  horizontal-align: center;
+  vertical-align: center;
+  width: 55%;
+  height: 55%;
+  margin-bottom: 8px;
+  opacity: 1;
+ }
+
+ DOTAHUDMuertaReleaseEventCounter .CounterSmall{
+
+  horizontal-align: center;
+  vertical-align: bottom;
+  background-image: url( "s2r://panorama/images/hud/muerta/counter_small_number_bg_png.vtex");
+  background-size: 100%;
+  width: 35px;
+  height: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #FFFFFFFF;
+  margin-bottom: -5px;
+  opacity: 1;
+  transition-duration: 0.1s;
+  transition-property: opacity;
+  transition-timing-function: linear;
+ }
+
+ DOTAHUDMuertaReleaseEventCounter #CounterExpanded{
+
+  position: 20px 8px 0px;
+  height: 35px;
+  width: 200px;
+  opacity: 0;
+  transition-duration: 0.1s;
+  transition-property: opacity;
+  transition-timing-function: linear;
+  transition-delay: 0.1s;
+  overflow: noclip;
+ }
+
+ DOTAHUDMuertaReleaseEventCounter #CounterExpandedRadiant{
+
+  width: 50%;
+  height: 100%;
+  overflow: noclip;
+ }
+
+ DOTAHUDMuertaReleaseEventCounter #CounterExpandedBackgroundRadiant{
+
+  background-image: url( "s2r://panorama/images/hud/muerta/muerta_point_counter_bg_radiant_png.vtex");
+  background-size: 100%;
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+ }
+
+ DOTAHUDMuertaReleaseEventCounter #CounterExpandedDire{
+
+  margin-left: 50%;
+  width: 50%;
+  height: 100%;
+  overflow: noclip;
+ }
+
+ DOTAHUDMuertaReleaseEventCounter #CounterExpandedBackgroundDire{
+
+  background-image: url( "s2r://panorama/images/hud/muerta/muerta_point_counter_bg_dire_png.vtex");
+  background-size: 100%;
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+ }
+
+ DOTAHUDMuertaReleaseEventCounter.OpponentScored #CounterExpandedBackgroundDire{
+
+  animation-name: flash;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+ }
+
+ DOTAHUDMuertaReleaseEventCounter.LocalPlayerScored #CounterExpandedBackgroundRadiant{
+
+  animation-name: flash;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+ }
+
+ DOTAHUDMuertaReleaseEventCounter.Expanded #CounterExpanded{
+
+  opacity: 1;
+  transition-delay: 0.0s;
+ }
+
+ DOTAHUDMuertaReleaseEventCounter.Expanded .CounterSmall{
+
+  opacity: 0;
+ }
+
+
+
+
+
+
+
+
+
+ DOTAHUDMuertaReleaseEventCounter .CounterLarge{
+  vertical-align: center;
+  horizontal-align: center;
+  font-size: 24px;
+  color: #FFFFFFFF;
+  text-shadow: 2px 2px 2px #000;
+  text-align:center;
+  width:50px;
+  height: 100%;
+  opacity: 1;
+ }
+
+ DOTAHUDMuertaReleaseEventAnnouncements{
+  width: 800px;
+  horizontal-align: center;
+  vertical-align: top;
+
+  flow-children: down;
+ }
+
+ DOTAHUDMuertaReleaseEventAnnouncements.Hidden{
+  visibility: collapse;
+ }
+
+ .Announcement{
+  horizontal-align: center;
+  font-size: 26px;
+  font-weight: bold;
+  color: #FFFFFF;
+  text-shadow: 0px 0px 2px 2.0 #000000;
+  transition-property: position;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+ }
+
+
+ #AnnouncementsContainer{
+  width: 100%;
+ }
+
+ .Announcement.Expired{
+  opacity: 0;
+  animation-name: Expire;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+ }
+
+ @keyframes 'Expire'{
+  0%{
+   opacity: 1;
+  }
+
+  100%{
+   opacity: 0;
+  }
+ }
+
+ .PointsKill{
+  color: #80f815;
+ }
+
+ .ImportantRed{
+  color: #ff5319;
+ }
+
+ .ImportantWhite{
+  color: #ffffff;
+ }
+
+ .PointsAssist{
+  color: #bef78c;
+ }
+
+ .PointsKillOpponent{
+  color: #f83815;
+ }
+
+ .PointsAssistOpponent{
+  color: #f89380;
+ }
+
+ @keyframes 'AnnouncementReveal'{
+  0%{
+   opacity: 0;
+  }
+
+  100%{
+   opacity: 1;
+  }
+ }
+
+ DOTAHUDMuertaReleaseEventAnnouncement{
+  width: 50%;
+  height: 160px;
+  ui-scale: 100%;
+  margin-top: -40px;
+ }
+
+ DOTAHUDMuertaReleaseEventAnnouncement #ContentContainer{
+  width: 100%;
+  height: 120px;
+  vertical-align: bottom;
+  overflow: noclip;
+ }
+
+ DOTAHUDMuertaReleaseEventAnnouncement #Background{
+  width: 100%;
+  height: 92px;
+  background-color: #00000070;
+  background-size: 100%;
+  opacity-mask: url( "s2r://panorama/images/masks/softedge_horizontal_softer_png.vtex");
+  animation-name: AnnouncementReveal;
+  animation-duration: 0.33s;
+  position: 0px 28px 0px;
+ }
+
+ DOTAHUDMuertaReleaseEventAnnouncement.Assist .KillOnly{
+
+  visibility: collapse;
+ }
+
+ DOTAHUDMuertaReleaseEventAnnouncement .EffectFlowSide{
+
+  height: 30px;
+  width: 200px;
+  vertical-align: top;
+  margin-top: 14px;
+  opacity-mask: url( "s2r://panorama/images/masks/softedge_horizontal_softer_png.vtex");
+ }
+
+ DOTAHUDMuertaReleaseEventAnnouncement #EffectFlowLeft{
+  horizontal-align: right;
+  margin-right: 50%;
+ }
+
+ DOTAHUDMuertaReleaseEventAnnouncement #EffectFlowRight{
+  horizontal-align: left;
+  margin-left: 50%;
+  transform: scaleY(-1);
+ }
+
+ DOTAHUDMuertaReleaseEventAnnouncement #EffectFrameBackground{
+  width: 160px;
+  height: 160px;
+  vertical-align: top;
+  horizontal-align: center;
+  margin-top: -50px;
+  overflow: noclip;
+ }
+
+
+
+ DOTAHUDMuertaReleaseEventAnnouncement.Assist #TopFrameEffectLeft{
+  visibility: collapse;
+ }
+
+ DOTAHUDMuertaReleaseEventAnnouncement #TopFrame{
+  width: 100%;
+  height: 2px;
+  background-color: #000000c1;
+  background-size: 100%;
+ }
+
+ DOTAHUDMuertaReleaseEventAnnouncement #Content{
+  width: 100%;
+  flow-children: down;
+  vertical-align: bottom;
+  padding-top: 28px;
+  padding-bottom: 13px;
+  animation-name: AnnouncementReveal;
+  animation-duration: 0.33s;
+ }
+
+ DOTAHUDMuertaReleaseEventAnnouncement #DescriptionLabel{
+  horizontal-align: center;
+  margin-bottom: 3px;
+  font-size: 14px;
+  color: #e2e0e0;
+  text-shadow: 1px 1px 2px #000;
+ }
+
+ DOTAHUDMuertaReleaseEventAnnouncement #RewardLabel{
+  horizontal-align: center;
+  font-size: 24px;
+  color: #FFFFFFFF;
+  text-shadow: 2px 2px 2px #000;
+  text-transform: uppercase;
+ }
+
+ DOTAHUDMuertaReleaseEventAnnouncement #HeaderPanel{
+  horizontal-align: center;
+  height: 100%;
+ }
+
+ @keyframes 'HeaderFlowersReveal'{
+  0%{
+   opacity: 0;
+  }
+
+  20%{
+   opacity: 0;
+  }
+
+  100%{
+   opacity: 1;
+  }
+ }
+
+ DOTAHUDMuertaReleaseEventAnnouncement #HeaderFlowers{
+  margin-top: -65px;
+  horizontal-align: center;
+  vertical-align: top;
+  width: 256px;
+  height: 256px;
+ }
+
+
+
+ @keyframes 'HeroImageFrameReveal'{
+  0%{
+   opacity: 0;
+   pre-transform-scale2d: 4.0;
+  }
+
+  100%{
+   opacity: 1;
+   pre-transform-scale2d: 1.0;
+  }
+ }
+
+ DOTAHUDMuertaReleaseEventAnnouncement #HeroImageFrame{
+  horizontal-align: center;
+  animation-name: HeroImageFrameReveal;
+  animation-duration: 0.15s;
+ }
+
+ DOTAHUDMuertaReleaseEventAnnouncement #HeroImage{
+  horizontal-align: center;
+  vertical-align: center;
+  margin-top: -3px;
+  width: 27px;
+ }
+
+ .FlowerIcon{
+  width: 15px;
+  height: 15px;
+  img-shadow: 2px 2px 10px 3.0 #000000FF;
+ }
+
+ #Hero1Movie{
+  visibility: collapse;
+ }
+
+ #Hero2Movie{
+  visibility: collapse;
+ }
+
+ #Hero1Portrait{
+  width: 100%;
+ }
+
+ #Hero2Portrait{
+  width: 100%;
+ }
+
+ @keyframes 'muerta_background_scroll_right'{
+  0%{
+   transform: translateX( -2047px );
+  }
+
+  100%{
+   transform: translateX( 0px );
+  }
+ }
+
+ .MuertaScrollingBackgroundContainerRight,.MuertaScrollingBackgroundContainerLeft{
+  width: 100%;
+  height: 100%;
+  overflow: clip;
+  opacity-mask: url( "s2r://panorama/images/masks/gradient_rightleft_png.vtex");
+ }
+
+ .MuertaScrollingBackgroundContainerLeft{
+  opacity-mask: url( "s2r://panorama/images/masks/gradient_leftright_png.vtex");
+ }
+
+ .MuertaScrollingBackgroundRight,.MuertaScrollingBackgroundLeft{
+  width: 8192px;
+  height: 8192px;
+  min-width: 8192px;
+  min-height: 8192px;
+  horizontal-align: left;
+  vertical-align: center;
+  background-image: url( "s2r://panorama/images/events/muerta/muerta_cape_detail_psd.vtex");
+
+  background-size: 512px 512px;
+  background-repeat: repeat;
+  animation-name: muerta_background_scroll_right;
+  animation-iteration-count: infinite;
+  animation-duration: 80s;
+  animation-timing-function: linear;
+  opacity: 0.07;
+  z-index: -1;
+ }
+
+ .MuertaScrollingBackgroundLeft{
+  animation-direction: reverse;
+ }
+
+ .HeroPortrait{
+  horizontal-align: center;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+ }
+
+ .HeroPortrait.SceneUnloaded{
+  opacity: 0;
+}

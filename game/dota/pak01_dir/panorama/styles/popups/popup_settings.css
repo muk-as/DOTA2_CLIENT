@@ -604,7 +604,6 @@
 
 
 
-
  #PhrasesButton:hover,#ChatWheelButton:hover{
 
 
@@ -635,7 +634,8 @@
   padding-top: 120px;
  }
 
- #PhrasesSubTab,#ChatWheelSubTab,#PingWheelSubTab{
+ #PhrasesSubTab,#ChatWheelSubTab,#PingWheelSubTab,#ItemSpecificBindsSubTab{
+
 
 
 
@@ -675,8 +675,6 @@
   overflow: squish;
   margin: 16px 0;
   height: 100%;
-
-
   padding: 32px 0 0 0;
  }
 
@@ -734,9 +732,7 @@
 
  #BottomPingWheelPanel{
 
-
   horizontal-align:center;
-
   flow-children: right;
   width: 100%;
  }
@@ -812,7 +808,9 @@
   width: 440px;
  }
 
- #PhrasesClose,#ChatWheelClose,#PingWheelClose{
+ #PhrasesClose,#ChatWheelClose,#PingWheelClose,#ItemSpecificBindsClose,#ItemSpecificBindsReset{
+
+
 
 
 
@@ -929,7 +927,6 @@
   margin-top: 12px;
  }
 
-
  .SectionHeader{
 
   font-size: 24px;
@@ -940,7 +937,7 @@
 
  #Items .SectionHeader{
 
-  margin-left: 164px;
+  margin-bottom: 6px;
  }
 
  .AdvancedHeader{
@@ -949,7 +946,8 @@
   font-size: 32px;
  }
 
- #ChatWheelSubTab .SectionHeader,#PingWheelSubTab .SectionHeader{
+ #ChatWheelSubTab .SectionHeader,#PingWheelSubTab .SectionHeader,#ItemSpecificBindsSubTab .SectionHeader{
+
 
 
   horizontal-align: center;
@@ -1030,10 +1028,9 @@
 
 
   background-color: none;
-  height:40px;
-
-  margin: -4px;
  }
+
+
 
 
 
@@ -1085,9 +1082,8 @@
 
   margin: 0px;
   padding: 0px;
-
-     margin-left: 100px;
   vertical-align: middle;
+  height: fit-children;
  }
 
  #PerUnitHotkeysCheckBox Label{
@@ -1116,16 +1112,15 @@
  #Items,#Abilities{
 
 
-  width: 694px;
-  width: 50%;
+  width: fill-parent-flow( 1.0 );
+  height: 100%;
  }
-
-
 
 
  #Items{
 
   horizontal-align: right;
+  margin-left: 48px;
  }
 
  #AbilitiesContents{
@@ -1137,9 +1132,8 @@
 
      width: 100%;
      opacity: 1.0;
-  margin-top: 4px;
 
-     border: 1px solid #000000;
+     border: 2px solid #3b3f40;
   box-shadow: fill #00000033 0px 0px 4px 0px ;
 
   background-color: gradient( linear, 0% 0%, 0% 100%, from( #202023 ), to( #1C1D20 ) );
@@ -1249,17 +1243,27 @@
   vertical-align: top;
  }
 
-
-
  .CheckBox .TickBox{
-
 
   width: 18px;
   height: 18px;
  }
 
- .ItemsQuickcastContainer .TickBox,#DefaultAbilityQuickcastCheckBox .TickBox,.QuickCastCheckBox.CheckBox .TickBox{
+ .QuickCastTickBox{
 
+  vertical-align: center;
+  width: 32px;
+  height: 32px;
+  border-width: 0px;
+  background-color: none;
+  box-shadow: none;
+  background-size: 120%;
+
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+ }
+
+ .ItemsQuickcastContainer .TickBox,#DefaultAbilityQuickcastCheckBox .TickBox{
 
 
   width: 22px;
@@ -1294,8 +1298,7 @@
   border-width: 1px;
  }
 
- #DefaultItemQuickcastCheckBox:hover .TickBox,#DefaultAbilityQuickcastCheckBox:hover .TickBox,.QuickCastCheckBox.CheckBox:hover .TickBox{
-
+ #DefaultItemQuickcastCheckBox:hover .TickBox,#DefaultAbilityQuickcastCheckBox:hover .TickBox{
 
 
   width: 22px;
@@ -1303,11 +1306,123 @@
   border-color: #88CCFF;
   border-radius: 4px;
   border-width: 2px;
-  background-image: url("s2r://panorama/images/status_icons/quickcast_lightning_unchecked_psd.vtex");
   background-size: 10px 16px;
   background-position: 50% 50%;
   background-repeat: no-repeat;
  }
+
+ #DefaultItemQuickcastCheckBox:hover .TickBox,#DefaultAbilityQuickcastCheckBox:hover .TickBox{
+
+
+  background-image: url("s2r://panorama/images/status_icons/quickcast_lightning_unchecked_psd.vtex");
+ }
+
+ .QuickCastTickBox.Normal{
+
+  background-image: url("s2r://panorama/images/status_icons/quickcast_off_psd.vtex");
+ }
+
+ .QuickCastTickBox.KeyDown{
+
+  background-image: url("s2r://panorama/images/status_icons/quickcast_keydown_psd.vtex");
+ }
+
+ .QuickCastTickBox.KeyUp{
+
+  background-image: url("s2r://panorama/images/status_icons/quickcast_keyup_psd.vtex");
+ }
+
+
+ .QuickCastCheckBox.CheckBox.KeyDown .QuickCastCycleHover.ShowKeyDown,.QuickCastCheckBox.CheckBox.KeyUp .QuickCastCycleHover.ShowKeyUp,.QuickCastCheckBox.CheckBox.Normal .QuickCastCycleHover.ShowNormal{
+
+
+
+  visibility: visible;
+ }
+
+ .QuickCastCycleHover{
+
+  visibility: collapse;
+  width: 100%;
+  height: 100%;
+ }
+
+ .QuickCastDropdownItem{
+
+  flow-children: right;
+  min-height: 40px;
+  width: fit-children;
+ }
+
+ .QuickCastDropdownItem Label{
+
+  padding: 0px 0px 0px 4px;
+  vertical-align: center;
+  border: 0px;
+
+  background-color: #00000000;
+ }
+  .QuickCastDropdownItem Label:hover{
+   background-color: #00000000;
+  }
+
+
+ DropDownMenu{
+
+  box-shadow: 0px 8px 40px rgba(0, 0, 0, 0.4);
+ }
+
+ DropDownMenu .QuickCastDropdownItem{
+
+  width: 100%;
+  padding-left: 4px;
+  border-bottom: 1px solid black;
+ }
+  DropDownMenu .QuickCastDropdownItem:hover{
+   background-color: #585e62;
+  }
+
+
+ .QuickCastControl,.QuickCastControl:enabled:hover:not(:parentdisabled){
+
+
+  flow-children: none;
+  horizontal-align: right;
+
+  background-color: none;
+  background-image: none;
+  width: 300px;
+
+  box-shadow: none;
+  padding: 0px;
+  background-size: 0px;
+  background-position: 50% 50%;
+  width: fit-children;
+
+  border: 0px;
+
+  font-size: 24px;
+  height: 41px;
+  z-index: 1;
+ }
+
+
+ .QuickCastControl:hover{
+
+  pre-transform-scale2d: 1.05;
+  brightness: 1.1;
+ }
+
+ .QuickCastDescription{
+
+  visibility: collapse;
+ }
+
+ DropDownMenu .QuickCastDescription{
+
+  visibility: visible;
+ }
+
 
  #ButtonCodeIsScanCodeCheckBox{
 
@@ -1409,11 +1524,8 @@
   width: 100%;
   height: fit-children;
   height: 300px;
-  margin-bottom: 4px;
-  margin-top: 4px;
      flow-children: down;
  }
-
 
  .AbilityBindingTopRow{
 
@@ -1426,8 +1538,7 @@
 
      horizontal-align: center;
      flow-children: right;
-     margin-bottom: 9px;
-
+     margin-bottom: 12px;
   vertical-align: bottom;
  }
 
@@ -1435,10 +1546,9 @@
 
   vertical-align: bottom;
   horizontal-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   visibility: visible;
  }
-
 
 
  .ItemsQuickcastContainer Label,.DefaultAbilityQuickcastContainer Label{
@@ -1449,14 +1559,171 @@
   padding-left: 12px;
  }
 
+
+
+ #ItemSpecificBindsSubTab{
+
+  transform: translateY( 12px );
+  box-shadow: 0px 0px 0px #00000000;
+
+  transition-property: opacity, transform;
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
+ }
+
+ #ItemSpecificBindsSubTab.Focused{
+
+  transform: none;
+ }
+
+ .ItemSpecificBindsButtons{
+
+  vertical-align: bottom;
+  width: 100%;
+  margin-bottom: 20px;
+ }
+
+ .ItemSpecificBindsButton{
+
+  margin-left: 10px;
+  vertical-align: center;
+  min-width: 40px;
+  padding: 2px;
+  flow-children: right;
+  opacity: 0;
+  transform: translateX( -4px );
+
+  transition-property: opacity, transform;
+  transition-duration: 0.15s;
+  transition-timing-function: ease;
+ }
+
+ #ItemSpecificBindsButtonAdvanced{
+
+  opacity: 1;
+  visibility: collapse;
+ }
+
+
+ #Items.EnableItemQuickcastSlots #ItemSpecificBindsButtonAdvanced{
+
+  visibility: visible;
+ }
+
+ .HasItemQuickcast #ItemSpecificBindsButton{
+
+  opacity: 1;
+  transform: none;
+ }
+
+ .ItemSpecificBindsButtonImage{
+
+  vertical-align: center;
+  horizontal-align: center;
+  background-image: url( "s2r://panorama/images/control_icons/sliders_png.vtex");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 16px;
+  height: 16px;
+  wash-color: #939DA0;
+  margin: 0px 12px;
+
+  transition-property: wash-color, transform;
+  transition-duration: 0.2s;
+ }
+
+ #ItemSpecificBindsContents{
+
+
+  vertical-align: center;
+  horizontal-align: center;
+  width: 90%;
+  height: 80%;
+ }
+
+ #ItemSpecificBindsPanel{
+
+  flow-children: right;
+  horizontal-align: center;
+  vertical-align: center;
+ }
+
+ .ItemSpecificBindsItemList{
+
+  flow-children: down-wrap;
+  horizontal-align: center;
+ }
+
+ .ItemSpecificBinds_Group{
+
+  flow-children: down;
+  padding: 0px 12px;
+  min-width: 240px;
+  border-right: 2px solid #3b3f40;
+ }
+  .ItemSpecificBinds_Group.LastChild{
+   border-right: 0px;
+  }
+
+
+ .ItemSpecificBinds_GroupTitle{
+
+  horizontal-align: center;
+  text-transform: uppercase;
+  color: #939da0;
+  font-weight: thin;
+  opacity: 0.8;
+ }
+
+ #ItemSpecificBindsClose{
+
+  horizontal-align: center;
+ }
+
+ #ItemSpecificBindsReset{
+
+  horizontal-align: left;
+  margin-left: 200px;
+ }
+
+ .ItemSpecificBindContainer{
+
+  margin: 6px;
+  width: 96px;
+  height: 75px;
+  padding: 8px;
+ }
+
+ #ItemSpecificBindShopItem{
+
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
+  padding-bottom: -1px;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.174);
+ }
+
+ #ItemSpecificQuickcastCycle{
+
+  vertical-align: bottom;
+  horizontal-align: right;
+  height: fit-children;
+
+  margin-right: -12px;
+  margin-bottom: -12px;
+ }
+
+
+
  #AbilitiesDisabled .LegacyQuickCast Label{
 
      margin: 0px;
  }
 
- .HeroSpecificAbilityQuickcastContainer{
+ .HeroAbilityQuickcastContainer,.HeroAbilityExplicitQuickcastContainer{
 
-  height: 118px;
+
+  height: 124px;
      horizontal-align: center;
      flow-children: none;
 
@@ -1466,24 +1733,30 @@
   transition-timing-function: ease-in-out;
  }
 
- #Abilities.HasQuickcast .HeroSpecificAbilityQuickcastContainer{
+ .ExplicitQuickcastTabVisible .HeroAbilityExplicitQuickcastContainer{
 
   opacity: 1;
  }
 
- #ItemBindingContents .HeroSpecificAbilityQuickcastContainer{
+ #Abilities.HasQuickcast .HeroAbilityQuickcastContainer{
+
+  opacity: 1;
+ }
+
+ #ItemBindingContents .HeroAbilityQuickcastContainer{
 
   opacity: 0;
  }
 
- #Abilities.IsDefaultHeroKeybinds .HeroSpecificAbilityQuickcastContainer{
 
-     opacity: 0;
+ #Abilities.HasPerUnitKeybinds .HeroAbilityExplicityQuickcastContainer{
+
+  opacity: 1;
  }
 
  .HeroAbilityQuickCastButtons{
 
-  opacity: 1;
+  opacity: 0;
      horizontal-align: center;
      vertical-align: bottom;
      margin-top: 8px;
@@ -1491,7 +1764,12 @@
      flow-children: right;
  }
 
- .AspectRatio4x3 .HeroSpecificAbilityQuickcastContainer{
+ .PerUnitKeybindsActive .HeroAbilityQuickCastButtons{
+
+  opacity: 1;
+ }
+
+ .AspectRatio4x3 .HeroAbilityQuickcastContainer{
 
   height: 128px;
  }
@@ -1509,12 +1787,8 @@
  }
 
 
- .QuickCastCheckBox{
 
-     horizontal-align: right;
-  margin-right: 0px;
-  margin-bottom: 0px;
- }
+
 
  #AbilityBindingsHeroSelector{
 
@@ -1713,7 +1987,7 @@
  #ItemCast,#ItemQuickCast{
 
 
-  padding-top: 12px;
+  padding-top: 16px;
  }
 
 
@@ -1776,6 +2050,11 @@
   visibility: collapse;
  }
 
+ #Abilities.EnableAbilityQuickcastSlots .QuickCastCheckBoxContainer.Explicit{
+
+  visibility: visible;
+ }
+
  .HeroAbilityBindTypeButton Label{
 
   horizontal-align: center;
@@ -1813,14 +2092,13 @@
 
   background-color: none;
   width: 100%;
-  height: 260px;
-  margin-bottom: 4px;
+  height: 100%;
+  border: 2px solid #3b3f40;
  }
 
  #ItemBindTypeButtons{
 
   width: 384px;
-  height: 24px;
   vertical-align: bottom;
   margin-bottom: 5px;
   horizontal-align: center;
@@ -1840,6 +2118,7 @@
 
  .ItemBindTypeButton{
 
+  vertical-align: center;
   width: fill-parent-flow(1.0);
   text-align: center;
   color: #444444;
@@ -3077,6 +3356,7 @@
   height: 300px;
   horizontal-align: center;
   padding: 0px 16px 0px 16px;
+  flow-children: right;
  }
 
  #BasicHotkeysContainer{
@@ -3834,23 +4114,23 @@
   letter-spacing: 1px;
  }
 
- #ItemsTPBindingContainer{
 
-  horizontal-align: right;
-  vertical-align: bottom;
-  margin-right: 106px;
-  margin-bottom: 52px;
-  overflow: noclip;
- }
 
- #ItemsNeutralSlotBindingContainer{
 
-  horizontal-align: right;
-  vertical-align: bottom;
-  margin-right: 106px;
-  margin-bottom: 151px;
-  overflow: noclip;
- }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
  .AspectRatio4x3 #ItemsTPBindingContainer,.AspectRatio4x3 #ItemsNeutralSlotBindingContainer{
@@ -3892,45 +4172,31 @@
   visibility: visible;
  }
 
+ #ItemsTPBindingImage,#ItemsNeutralSlotBindingImage{
 
- #ItemsNeutralSlotBindingImage{
 
   width: 64px;
   height: 64px;
   border-radius: 50%;
-  background-image: url("s2r://panorama/images/hud/reborn/bg_neutral_slot_png.vtex");
   background-size: cover;
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  horizontal-align: right;
-  vertical-align: bottom;
-  margin-right: 122px;
-  margin-bottom: 165px;
   saturation: 0;
   brightness: 18;
   wash-color: #2B2F30;
   opacity: .2;
   z-index: 20;
+  margin: 10px;
+ }
+
+ #ItemsNeutralSlotBindingImage{
+
+  background-image: url("s2r://panorama/images/hud/reborn/bg_neutral_slot_png.vtex");
  }
 
  #ItemsTPBindingImage{
 
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
   background-image: url("s2r://panorama/images/items/tpscroll_png.vtex");
-  background-size: cover;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  horizontal-align: right;
-  vertical-align: bottom;
-  margin-right: 122px;
-  margin-bottom: 66px;
-  saturation: 0;
-  brightness: 18;
-  wash-color: #2B2F30;
-  opacity: .2;
-  z-index: 20;
  }
 
  #ChatWheelChoicesContainer{

@@ -1,0 +1,34 @@
+<!-- xml reconstructed by ValveResourceFormat: https://vrf.steamdb.info/ -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/comic_book_library_styles.vcss_c" />
+	</styles>
+	<scripts>
+		<include src="s2r://panorama/scripts/util.vts_c" />
+		<include src="s2r://panorama/scripts/sequence_actions.vts_c" />
+		<include src="s2r://panorama/scripts/dota_sequence_actions.vts_c" />
+		<include src="s2r://panorama/scripts/leaf_pages/dashboard_page_comic_book_library.vts_c" />
+	</scripts>
+	<snippets>
+		<snippet name="ComicBook">
+			<Panel class="ComicBook">
+				<Panel id="CoverImage" />
+				<TextButton id="Button" />
+			</Panel>
+		</snippet>
+	</snippets>
+	<DOTAReferencePage class="DashboardPage" oncancel="DOTAShowHomePage()">
+		<ComicViewerBookLibrary>
+			<Panel id="MainContainer">
+				<Panel id="ComicBookControls">
+					<TextButton class="ButtonBevel" text="Library" onactivate="ComicViewerBookLibraryCloseActiveBook()" />
+					<TextButton class="ButtonBevel" text="Back" onactivate="ComicViewerBookControlsGoDirection(-1)" />
+					<Label text="{d:current_page}/{d:total_pages}" />
+					<TextButton class="ButtonBevel" text="Forward" onactivate="ComicViewerBookControlsGoDirection(1)" />
+				</Panel>
+				<Panel id="ActiveBook" />
+				<Panel id="ComicBooks" />
+			</Panel>
+		</ComicViewerBookLibrary>
+	</DOTAReferencePage>
+</root>

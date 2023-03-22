@@ -1,6 +1,7 @@
 0 0 0 0
 0 0 0 255
-00000000000000000
+00000000000000
+0[A\A^A
 10IAppSystem
 11CSteamAudio
 11ISteamAudio
@@ -26,6 +27,7 @@
 23CSteamAudioMaterialList
 25CSurfacePropDataTableBase
 33333333H
+33333333L
 4 [A\A^A
 8[A\A]A^A
 APPSYSTEM: In ConnectInterfaces(), s_nRegistrationCount is %d
@@ -38,12 +40,11 @@ AWAVAUATSH
 AWAVAUATSL
 AWAVAUATSP
 AWAVAUATSPA
-AWAVAUATSPD
+AWAVAUATSPH
 AWAVAUATSPI
 AWAVAUATSPL
 AWAVAUATSPM
 AWAVSPA
-AWAVSPE
 AWAVSPH
 AWAVSPHc
 AWAVSPI
@@ -74,16 +75,19 @@ CDirectProcessor::CDirectProcessor(IPLContext, const IPLAudioSettings &, int
 CONTENT
 C`L9(t+I
 CommandLine
+Could not load custom hrtf properties file. %s
 CreateInterface
 CreateSimpleThread
 DemoUpconverterVersion001
 EXPORTSYSTEM_INTERFACE_VERSION_001
 EarlyInit_Tier0
 EconItemToolModel_001
+Enable custom HRTF loading
 EngineServiceMgr001
 Exported scene as OBJ to %s
 Exported scene as PHONONSCENE to %s
 FATAL ERROR: unable to register all schema data: %s
+FATAL: %s called on a pool context (no root available
 Failed to open file
 FlattenedSerializersVersion001
 FontManager_001
@@ -110,14 +114,18 @@ HelpSystem_001
 HostStateMgr001
 If set, baked pathing data is loaded. Steam Audio Hammer entities can successfully use pathing in this case
 If set, baked reverb data is loaded. Reset it to zero during an format changes of baked data until all data is updated
+Index of active HRTF
 InputService_001
 InputStackSystemVersion001
 InputSystemVersion001
 InstallSchemaBindings
 Intentionally vague touch behavior for %p
+Key field file or volume missing in custom hrtf properties file. Cannot load
 KeyValueCache001
+KeyValues3 *CKeyValues3Context::Root
 LINKEDIT
 LOG_GENERAL
+Loaded custom HRTF [%s] with volume [%.2f
 Localize_001
 LoggingSystem_IsChannelEnabled
 LoggingSystem_Log
@@ -131,6 +139,7 @@ MemAlloc_AllocAlignedFunc
 MemAlloc_FreeAlignedFunc
 MeshSystem001
 MeshUtils001
+Missing custom_hrtfs key field in custom hrtf properties file. Cannot load
 ModelDocUtils001
 N24CFieldPathHuffmanEncoder12InternalNodeE
 N24CFieldPathHuffmanEncoder5INodeE
@@ -175,7 +184,7 @@ PropertyEditorSystem_001
 RARARARARARA^0
 RASASASASASASASASB\Ap
 RATAUASASBRAR0
-RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBQ
+RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBQ
 RKSt9nothrow_t
 RegisterConCommand: Unknown error registering con command "%s
 RegisterConVar: Unknown error registering convar "%s
@@ -213,6 +222,7 @@ Reverb: Unable to load baked data file (%s
 Reverb: Unable to load probe batch. (%d
 SATAQARPASA
 SAUAQARPASA
+SPAQARATM
 SPAQARAVASA
 SSE and SSE2 are required
 SceneSystem_002
@@ -248,11 +258,6 @@ SteamAudio001
 SurfacePropertiesList
 System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices
 System/Library/Frameworks/Foundation.framework/Versions/C/Foundation
-TestFormatA
-TestFormatB
-TestFormatC
-TestFormatD
-TestFormatE
 TestScriptMgr001
 TextLayout_001
 The amount of directional detail in the simulated by Steam Audio
@@ -265,18 +270,19 @@ The time delay between a sound being emitted and the last audible reflection in 
 This convar is being accessed prior to ConVar_Register being called
 This variable is checked by soundstack to globally enabling pathing for audio processing
 ThreadGetCurrentId
+ThreadInMainThread
 ThreadJoin
 ThreadSleep
 ToolFramework2_002
 ToolSceneNodeFactory_001
 ToolService_001
-UASASASASCp
-UASBTAp
+UASASBTAp
 UUUUUUUUH
 Unable to create direct effect [%d
 Unable to create scene: %d
 Unable to create serialized object for scene export
 Unable to create static mesh: %d
+Unable to load custom HRTF [%s
 Unwind_Resume
 Usage: snd_steamaudio_halton_sequence <order> <numsamples
 UtlMemory_Alloc
@@ -299,20 +305,31 @@ VScript
 VScriptDbg
 VScriptManager010
 VStringTokenSystem001
-V_atofloat64
+V_StringToBool
+V_StringToColor
+V_StringToFloat32
+V_StringToFloat64
+V_StringToInt16
+V_StringToInt32
+V_StringToInt64
+V_StringToQAngle
+V_StringToUint16
+V_StringToUint32
+V_StringToUint64
+V_StringToVector
+V_StringToVector2D
+V_StringToVector4D
 V_atoi
 V_logf
 V_powf
 V_qsort_s
 V_sincosf
-V_sscanf
-V_stricmp_fast
 V_strncpy
-V_strtoui64
 VisBuilder_001
 WorldRendererMgr001
 X[A\A]A^A
 You must construct it with ORDERED_CONSTRUCT macro in the dependency resolution function
+Z15LoadKV3FromFileP18CKeyValues3ContextP10CUtlStringPKcS4_RK7KV3ID_t
 Z17LoggingSystem_Logi17LoggingSeverity_tRK14LeafCodeInfo_tPKcz
 Z22Assert_ConditionFailedRK34_AssertCompileTimeConstantStruct_t
 Z7LoadKV3P18CKeyValues3ContextP10CUtlStringP10CUtlBufferRK7KV3ID_tPKc
@@ -339,6 +356,7 @@ ZN13CRawAllocator4FreeE18RawAllocatorType_tPvm
 ZN13CRawAllocator5AllocE18RawAllocatorType_tmPm
 ZN17CThreadSyncObject4WaitEj
 ZN17CThreadSyncObjectD2Ev
+ZN24CUtlMemoryBlockAllocator5PurgeEv
 ZN24CUtlMemoryBlockAllocatorC1Eij18RawAllocatorType_t
 ZN24CUtlMemoryBlockAllocatorD1Ev
 ZNK10CUtlString27IsEqual_FastCaseInsensitiveEPKc
@@ -358,19 +376,18 @@ ZTVSt12length_error
 ZnamRKSt9nothrow_t
 ZnwmRKSt9nothrow_t
 allocator<T>::allocate(size_t n) 'n' exceeds maximum supported size
-binary_auto
-binary_bc
-binary_lz4
-binary_zstd
 buildmachine
 common
 content
+convars_hidden_by_default
 cstring
+custom_hrtfs
 cxa_allocate_exception
 cxa_atexit
 cxa_begin_catch
 cxa_call_unexpected
 cxa_free_exception
+cxa_guard_abort
 cxa_guard_acquire
 cxa_guard_release
 cxa_pure_virtual
@@ -413,7 +430,6 @@ iplEmbreeDeviceCreate
 iplEmbreeDeviceRelease
 iplHRTFCreate
 iplHRTFRelease
-iplHRTFRetain
 iplPathBakerBake
 iplPathEffectApply
 iplPathEffectCreate
@@ -497,8 +513,11 @@ s: Unsupported raw allocator type %u
 sapaths
 sareverb
 scattering
+scripts/custom_hrtfs.txt
 scripts/surfaceproperties_steamaudio.txt
+snd_steamaudio_active_hrtf
 snd_steamaudio_ambisonics_order
+snd_steamaudio_enable_custom_hrtf
 snd_steamaudio_enable_pathing
 snd_steamaudio_halton_sequence
 snd_steamaudio_hybrid_reverb_overlap
@@ -518,13 +537,10 @@ stack_chk_fail
 stack_chk_guard
 steamaudio
 strcmp
+strict_type_combinations
 strlen
 stub_helper
 surfacePropertyName
-u/<XtE<Hu'L
-u/<XtT<Hu'L
-uX<Xt-<HuPL
-uZ<Xt.<HuRL
 undefined
 unwind_info
 usr/lib/libSystem.B.dylib
@@ -539,17 +555,14 @@ void CSteamAudioScene::LoadBakedPathingData(const char
 void CSteamAudioScene::LoadBakedReverbData(const char
 void CUtlMemory<CFieldPathHuffmanEncoder::INode *, int>::Grow(int) [T = CFieldPathHuffmanEncoder::INode *, I = int
 void CUtlMemory<CFieldPathHuffmanEncoder::composed_t, int>::Grow(int) [T = CFieldPathHuffmanEncoder::composed_t, I = int
-void CUtlMemory<CKeyValues3ArrayCluster *, int>::Grow(int) [T = CKeyValues3ArrayCluster *, I = int
-void CUtlMemory<CKeyValues3Cluster *, int>::Grow(int) [T = CKeyValues3Cluster *, I = int
-void CUtlMemory<CKeyValues3TableCluster *, int>::Grow(int) [T = CKeyValues3TableCluster *, I = int
 void CUtlMemory<CSteamAudioMaterial, int>::Grow(int) [T = CSteamAudioMaterial, I = int
 void CUtlMemory<IPLMaterial, int>::Grow(int) [T = IPLMaterial, I = int
 void CUtlMemory<IPLSphere, int>::Grow(int) [T = IPLSphere, I = int
 void CUtlMemory<IPLTriangle, int>::Grow(int) [T = IPLTriangle, I = int
 void CUtlMemory<IPLVector3, int>::Grow(int) [T = IPLVector3, I = int
 void CUtlMemory<IPhysicsShape *, int>::Grow(int) [T = IPhysicsShape *, I = int
-void CUtlMemory<KeyValues3 *, int>::Grow(int) [T = KeyValues3 *, I = int
-void CUtlMemory<Vector, int>::Grow(int) [T = Vector, I = int
+void CUtlMemory<SteamAudioHRTF_t, int>::Grow(int) [T = SteamAudioHRTF_t, I = int
+void CUtlMemory<Vector3DBase<float>, int>::Grow(int) [T = Vector3DBase<float>, I = int
 void CUtlMemory<float, int>::Grow(int) [T = float, I = int
 void CUtlMemory<int, int>::Grow(int) [T = int, I = int
 void CUtlMemory<matrix3x4_t, int>::Grow(int) [T = matrix3x4_t, I = int

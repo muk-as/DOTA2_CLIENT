@@ -1,0 +1,598 @@
+
+ @define GlowSpeed: 0.8s;
+ @define ultraBrightColor: #FEE6A9;
+ @define darkColor: #331A1A;
+ @define brightTextColor: #4BD6A3;
+ @define faintTextColor: #196853;
+ @define backgroundColor: #000000aa;
+ @define treasureMarkerColor: #f4e2b5;
+ @define progressBarFgColor: gradient( linear, 0% 0%, 0% 100%, from( #3FB288 ), to( #6FFFCA ) );
+ @define progressBarBgColor: #142621;
+
+ DOTAFrontpageMuertaEvent{
+  opacity: 1;
+  height: 100%;
+  width: 354px;
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-delay: 0s;
+ }
+
+ @keyframes 'fadeIn'{
+  0%{
+   opacity: 0;
+  }
+
+  60%{
+   opacity: 0;
+  }
+
+  100%{
+   opacity: 1;
+  }
+ }
+
+
+ .EventTile{
+  width: 100%;
+  background-size: cover;
+  background-color: #214036;
+  background-image: url("s2r://panorama/images/events/muerta/muerta_panel_tile_common_png.vtex");
+  background-repeat: repeat;
+  background-size: 128px;
+  overflow: clip;
+  border-radius: 1px;
+  transition-property: height;
+  transition-duration: 0.3s;
+  transition-timing-function: cubic-bezier(1, 0, 0, 1);
+  flow-children: down;
+  box-shadow: 0px 8px 16px -4px rgba(0, 0, 0, 0.5);
+  tooltip-position: bottom;
+ }
+  .EventTile #MuertaEventDate{
+   width: 100%;
+   text-align: center;
+   position: 0px 100px 0px;
+  }
+
+  .EventTile .EventTitle{
+   width: 100%;
+  }
+
+  .EventTile .EventImage{
+   width: 100%;
+   opacity: 1;
+   vertical-align: top;
+
+   transition-property: opacity;
+   transition-duration: 0.2s;
+   transition-timing-function: ease;
+  }
+
+  .EventTile .Date{
+   text-transform: uppercase;
+   font-size: 16px;
+   text-shadow: 0px 1px 2px black;
+   color: brightTextColor;
+  }
+
+  .EventTile .ActiveBadge{
+   color: whitesmoke;
+   text-transform: uppercase;
+   font-weight: semi-bold;
+   padding: 4px 7px;
+   font-size: 14px;
+   border-radius: 2px;
+   text-shadow: 0px 1px 4px black;
+   visibility: collapse;
+   horizontal-align: right;
+   margin: 12px;
+
+   animation-name: glowActiveLabel;
+   animation-duration: GlowSpeed;
+   animation-iteration-count: infinite;
+   animation-timing-function: ease-in-out;
+   animation-direction: alternate;
+  }
+
+  .EventTile .EventBody{
+   width: 100%;
+   padding: 16px;
+   flow-children: down;
+   background-color: #00000088;
+   background-color: gradient( linear, 0% 0%, 0% 100%, from( #0B1B1Bcc ), to( #080F0Cee ) );
+  }
+   .EventTile .EventBody .MinigameTitle{
+
+    width: 100%;
+    color: gradient( linear, 0% 0%, 0% 100%, from( #FFE6A6 ), to( #998A63 ) );
+
+
+    font-size: 18px;
+    line-height: 1.1;
+    text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.8);
+
+    font-family: titleFont;
+    font-weight: semi-bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 0px 0px 0px 0px;
+    text-overflow: clip;
+    text-align: center;
+    transform-origin: 0% 0%;
+    transition-property: transform;
+    transition-duration: 0.3s;
+    transition-timing-function: cubic-bezier(1, 0, 0, 1);
+    margin-top: 8px;
+    margin-bottom: 4px;
+   }
+
+   .EventTile .EventBody .BlessingsProgressBarPanel{
+    width: 100%;
+    transform: translateX(6px);
+   }
+    .EventTile .EventBody .BlessingsProgressBarPanel .BlessingImage{
+     width: 64px;
+     height: 64px;
+     vertical-align: center;
+    }
+
+    .EventTile .EventBody .BlessingsProgressBarPanel #BlessingsProgressBar{
+     height: 24px;
+     width: 212px;
+     vertical-align: center;
+     margin-left: 60px;
+     border-radius: 0px;
+    }
+
+     .EventTile .EventBody .BlessingsProgressBarPanel #BlessingsProgressBar .ProgressBarLeft{
+      background-color: progressBarFgColor;
+      z-index: 0;
+      box-shadow: 0px 0px 4px #00FFA933;
+
+      transition-property: width;
+      transition-duration: 1.5s;
+      transition-timing-function: ease-in-out;
+     }
+
+     .EventTile .EventBody .BlessingsProgressBarPanel #BlessingsProgressBar .ProgressBarRight{
+      background-color: progressBarBgColor;
+      z-index: 2;
+      border-top: 1px solid #0b1210;
+      border-bottom: 1px solid #31A29311;
+     }
+
+     .EventTile .EventBody .BlessingsProgressBarPanel #BlessingsProgressBar .ProgressBarNotch{
+      width: 6px;
+      height: 6px;
+      border-radius: 3px;
+      background-color: #224038;
+      z-index: 3;
+
+      transform: translateX(-3px) translateY(9px);
+     }
+      .EventTile .EventBody .BlessingsProgressBarPanel #BlessingsProgressBar .ProgressBarNotch.Activated{
+       background-color: white;
+      }
+
+
+
+    .EventTile .EventBody .BlessingsProgressBarPanel #TreasureIconContainer{
+     vertical-align: center;
+     horizontal-align: right;
+     width: 80px;
+     height: 80px;
+     padding-bottom: 4px;
+    }
+
+    .EventTile .EventBody .BlessingsProgressBarPanel #BackgroundFXContainer{
+     width: 100%;
+     height: 100%;
+    }
+     .EventTile .EventBody .BlessingsProgressBarPanel #BackgroundFXContainer #BackgroundFX{
+      width: 100%;
+      height: 100%;
+
+      wash-color: #00ffaa;
+      opacity-mask: url("s2r://panorama/images/masks/softedge_box_irregular_png.vtex");
+     }
+
+
+
+    .EventTile .EventBody .BlessingsProgressBarPanel .TreasureIcon{
+     width: 100%;
+     height: 100%;
+     tooltip-position: top;
+     vertical-align: middle;
+     horizontal-align: middle;
+    }
+     .EventTile .EventBody .BlessingsProgressBarPanel .TreasureIcon.Inactive{
+      wash-color: faintTextColor;
+     }
+
+
+    .EventTile .EventBody .BlessingsProgressBarPanel .TreasurePip{
+     wash-color: treasureMarkerColor;
+     width: 15px;
+     height: 15px;
+    }
+     .EventTile .EventBody .BlessingsProgressBarPanel .TreasurePip.Inactive{
+      wash-color: faintTextColor;
+     }
+
+
+    .EventTile .EventBody .BlessingsProgressBarPanel #TreasurePip1{
+     position: 124px 30px 0px;
+    }
+
+    .EventTile .EventBody .BlessingsProgressBarPanel #TreasurePip2{
+     position: 212px 30px 0px;
+    }
+
+    .EventTile .EventBody .BlessingsProgressBarPanel #TreasurePip3{
+     position: 300px 30px 0px;
+    }
+
+    .EventTile .EventBody .BlessingsProgressBarPanel #TreasureIcon1{
+     position: 98px 10px 0px;
+    }
+
+    .EventTile .EventBody .BlessingsProgressBarPanel #TreasureIcon2{
+     position: 186px 10px 0px;
+    }
+
+    .EventTile .EventBody .BlessingsProgressBarPanel #TreasureIcon3{
+     position: 274px 10px 0px;
+    }
+
+
+   .EventTile .EventBody .BlessingsCount{
+    width: 100%;
+    flow-children: right;
+   }
+    .EventTile .EventBody .BlessingsCount .BlessingsText{
+     font-size: 14px;
+     line-height: 1.1;
+     text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.8);
+     text-transform: uppercase;
+     letter-spacing: 1px;
+     margin: 0px 8px;
+     padding: 0px 0px 0px 0px;
+     text-overflow: clip;
+     text-align: center;
+
+     transform-origin: 0% 0%;
+     transition-property: transform;
+     transition-duration: 0.3s;
+     transition-timing-function: cubic-bezier(1, 0, 0, 1);
+    }
+
+    .EventTile .EventBody .BlessingsCount .BlessingsTextHL{
+     color: #8BFFD8;
+     font-weight: bold;
+    }
+
+    .EventTile .EventBody .BlessingsCount .Bright{
+     color: brightTextColor;
+    }
+
+    .EventTile .EventBody .BlessingsCount .Faint{
+     color: #8BFFD866;
+    }
+
+
+   .EventTile .EventBody .BodyText{
+    font-size: 16px;
+    color: #999;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.8);
+    opacity: 1;
+    transform: none;
+    text-transform: uppercase;
+
+    transition-property: opacity, transform;
+    transition-duration: 0.1s;
+    transition-timing-function: cubic-bezier(1, 0, 0, 1);
+    transition-delay: 0s;
+   }
+    .EventTile .EventBody .BodyText b{
+
+    font-weight: bold;
+    color: ultraBrightColor;
+    padding-bottom: 4px;
+    text-shadow: 0px 1px 4px #e35022aa;
+    }
+
+
+   .EventTile .EventBody #LearnMoreLink{
+    margin-top: 8px;
+    padding-left: 32px;
+    flow-children: down;
+   }
+    .EventTile .EventBody #LearnMoreLink .InfoIcon{
+     wash-color: brightTextColor;
+    }
+
+    .EventTile .EventBody #LearnMoreLink Label{
+     font-size: 14px;
+     color: brightTextColor;
+    }
+
+    .EventTile .EventBody #LearnMoreLink:hover{
+     brightness: 1.5;
+    }
+
+
+
+  .EventTile .Divider{
+   horizontal-align: center;
+   width: 100%;
+   height: 4px;
+   background-color: gradient( linear, 0% 0%, 100% 0%, from( #FFE6A6 ), color-stop( 0.5, #4B4431 ), to( #998A63 ) );
+  }
+
+  .EventTile #ViewTreasurePanel{
+   width: 100%;
+   height: 80px;
+   padding: 16px;
+   flow-children: right;
+
+   background-color: gradient( linear, 0% 0%, 100% 0%, from( #297F7988 ), to( #14524988 ) );
+  }
+   .EventTile #ViewTreasurePanel.Inactive{
+    visibility: collapse;
+   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  .EventTile #ClaimTreasurePanel{
+   width: 100%;
+   height: 80px;
+   flow-children: none;
+
+   background-color: gradient( linear, 0% 0%, 100% 0%, from( #0D453D ), to( #0D2121 ) );
+  }
+   .EventTile #ClaimTreasurePanel.Inactive{
+    visibility: collapse;
+   }
+
+   .EventTile #ClaimTreasurePanel #ClaimTreasure{
+    horizontal-align: center;
+    vertical-align: center;
+    z-index: 2;
+   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   .EventTile #ClaimTreasurePanel #ClaimTreasureButtonFX{
+    width: 354px;
+    height: 80px;
+    opacity: 1.0;
+    transition-property: opacity;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out;
+    z-index: 1;
+    horizontal-align: center;
+    vertical-align: center;
+   }
+    .EventTile #ClaimTreasurePanel #ClaimTreasureButtonFX.Inactive{
+     opacity: 0.0;
+    }
+
+
+
+
+
+
+ #ViewTreasure,#ClaimTreasure{
+
+
+  border-radius: 3px;
+  padding: 10px 28px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.3);
+  background-image: url("s2r://panorama/images/events/muerta/circular_texture_png.vtex");
+  background-size: cover;
+  background-img-opacity: 0.3;
+
+  transition-property: background-color, border;
+  transition-duration: 0.1s;
+  transition-timing-function: ease;
+ }
+  #ViewTreasure Label,#ClaimTreasure Label{
+   color: white;
+   font-size: 20px;
+   font-weight: semi-bold;
+   horizontal-align: center;
+   vertical-align: middle;
+
+   text-transform: uppercase;
+
+   text-shadow: 0px 1px 4px #000000;
+   letter-spacing: 1px;
+
+   transition-property: transform;
+   transition-duration: 0.05s;
+   transition-timing-function: ease;
+  }
+
+  #ViewTreasure.Small,#ClaimTreasure.Small{
+   padding: 6px 16px;
+   min-width: 0px;
+  }
+   #ViewTreasure.Small Label,#ClaimTreasure.Small Label{
+    font-size: 16px;
+    font-weight: normal;
+   }
+
+
+  #ViewTreasure.Disabled,#ViewTreasure:disabled,#ClaimTreasure.Disabled,#ClaimTreasure:disabled{
+
+   saturation: 0;
+   opacity: 0.2;
+  }
+   #ViewTreasure.Disabled Label,#ViewTreasure:disabled Label,#ClaimTreasure.Disabled Label,#ClaimTreasure:disabled Label{
+    opacity: 0.6;
+   }
+
+
+
+ #ClaimTreasure{
+
+  background-color: gradient( linear, 0% 0%, 0% 100%, from( #998A63 ), to( #4B4431 ) );
+
+  border: 1px solid #ffffff10;
+
+  animation-name: GlowTreasureButtonPrimary;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
+  animation-direction: alternate;
+ }
+  #ClaimTreasure Label{
+   text-shadow: 0px 0px 4px #ffffff11;
+  }
+
+  #ClaimTreasure:hover:enabled:not(.Disabled){
+   background-color: gradient( linear, 0% 0%, 0% 100%, from( #c2b081 ), to( #998A63 ) );
+  }
+   #ClaimTreasure:hover:enabled:not(.Disabled) Label{
+    color: white;
+   }
+
+
+  #ClaimTreasure:active:enabled:not(.Disabled){
+   sound: "ui_generic_button_click";
+   background-color: gradient( linear, 0% 0%, 0% 100%, from( #998A63 ), to( #4B4431 ) );
+  }
+   #ClaimTreasure:active:enabled:not(.Disabled) Label{
+    transform: translateY( 1px );
+   }
+
+
+
+ #ViewTreasure{
+
+  background-color: gradient( linear, 0% 0%, 0% 100%, from( #297F7988 ), to( #14524988 ) );
+  border: 1px solid #8bffd84e;
+ }
+  #ViewTreasure Label{
+   color: #8BFFD8;
+  }
+
+  #ViewTreasure:hover:enabled:not(.Disabled){
+   background-color: gradient( linear, 0% 0%, 0% 100%, from( #32918a88 ), to( #1a615688 ) );
+   border: 1px solid #8bffd8;
+  }
+   #ViewTreasure:hover:enabled:not(.Disabled) Label{
+    color: #FFFFFF;
+   }
+
+
+  #ViewTreasure:active:enabled:not(.Disabled){
+   sound: "ui_generic_button_click";
+   background-color: gradient( linear, 0% 0%, 0% 100%, from( #14524988), to( #297F7988 ) );
+  }
+   #ViewTreasure:active:enabled:not(.Disabled) Label{
+    transform: translateY( 1px );
+   }
+
+
+
+ @keyframes 'GlowTreasureButtonPrimary'{
+  0%{
+   box-shadow: 0px 0px 24px #ffe28b00;
+   brightness: 1;
+  }
+
+  100%{
+   box-shadow: 0px 0px 32px #ffe28b22;
+   brightness: 2.5;
+  }
+ }
+
+ @keyframes 'GlowTreasureButtonSecondary'{
+  0%{
+   box-shadow: 0px 0px 24px #8bffd800;
+   brightness: 1;
+  }
+
+  100%{
+   box-shadow: 0px 0px 32px #8bffd8;
+   brightness: 2.2;
+  }
+ }
+
+ @keyframes 'GlowTreasureText'{
+  0%{
+   text-shadow: 0px 0px 6px #8bffd800;
+   brightness: 1;
+  }
+
+  100%{
+   text-shadow: 0px 0px 12px #8bffd822;
+   brightness: 2.5;
+  }
+ }
+
+ #ProgressBarFX{
+  width: 100%;
+  height: 100%;
+}

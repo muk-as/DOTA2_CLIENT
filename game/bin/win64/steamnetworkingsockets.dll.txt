@@ -109,9 +109,9 @@
 211007000000Z
 22.CMsgSteamNetworkingP2PRendezvous.ConnectionClosed
 220323000000Z
-220329000000Z
 220801000000Z
-220902182737Z0
+220921000000Z
+221214201427Z0
 22dV::tN
 24.CMsgSteamNetworkingP2PRendezvous.ApplicationMessage
 241009235959Z0a1
@@ -126,11 +126,10 @@
 2Uiwp"9
 2dV2:tN
 2http://crl3.digicert.com/DigiCertTrustedRootG4.crl0
-2xJK7*L
 3 G M Q _ c e i w
 3%3+3/353A3G3[3_3g3k3s3y3
 311109235959Z0b1
-330314235959Z0L1
+331121235959Z0F1
 3333333
 3333D3
 360428235959Z0i1
@@ -221,6 +220,7 @@ A;p |bH
 A;p@s6A
 AA Compromise
 AACompromise
+AAssertion Failed: count >= 0
 ABCDEFGHIJKLMNOPQRSTUVWXYZ
 ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789
 ACCESS_DESCRIPTION
@@ -409,6 +409,7 @@ AULinkStatsTrackerClientRelaySession@SteamNetworkingSocketsLib
 AULinkStatsTrackerEndToEnd@SteamNetworkingSocketsLib
 AULinkStatsTrackerRelayBase@SteamNetworkingSocketsLib
 AULinkStatsTrackerRelayServerSession@SteamNetworkingSocketsLib
+AUPostConnectionStateMsgTask@SteamNetworkingSocketsLib
 AUSendP2PRendezvousTask@SteamNetworkingSocketsLib
 AUSteamDatagramClientThinker@SteamNetworkingSocketsLib
 AUSteamNetworkingMessagesSession@SteamNetworkingSocketsLib
@@ -417,6 +418,7 @@ AUTHORITY_KEYID
 AV<lambda_436d24496487215312fd08115d699b18
 AV?$CQueuedTaskOnTarget@VCSteamNetworkConnectionPipe@SteamNetworkingSocketsLib@@@SteamNetworkingSocketsLib
 AV?$CQueuedTaskOnTarget@VCSteamNetworkingSocketsSteamBase@SteamNetworkingSocketsLib@@@SteamNetworkingSocketsLib
+AV?$CQueuedTaskOnTarget@VCSteamNetworkingUtilsSteamBase@SteamNetworkingSocketsLib@@@SteamNetworkingSocketsLib
 AV?$CSteamNetworkingSocketsCallResult@UHTTPRequestCompleted_t@@@SteamNetworkingSocketsLib
 AV?$CSteamNetworkingSocketsCallResult@USteamNetworkingSerializedFakeIP_t@@@SteamNetworkingSocketsLib
 AV?$CSteamNetworkingSocketsCallResult@USteamNetworkingSocketsCert_t@@@SteamNetworkingSocketsLib
@@ -720,7 +722,6 @@ Adds a directory from which ENGINEs can be loaded
 AdfA;@Bt
 Affiliation Changed
 After sending stats, we still want to send for reason '%s
-AjEB#AZ
 All apps excluded by auth chain
 All pops excluded by auth chain
 Already have a listen socket on P2P %s
@@ -747,6 +748,8 @@ Application closed connection in an unusual way
 ApplicationMessage
 AreFileApisANSI
 Arg list too long
+Asserti
+Assertion Failed: !"Parse bug
 Assertion Failed: !( TLinkStatsTracker::m_recvPktNumberMask[ idxRecvBitmask ] & bit
 Assertion Failed: !( msgStatsIn.flags() & msgStatsIn.ACK_REQUEST_E2E
 Assertion Failed: !(pQueue->m_pLast->*pMbrLinks).m_pNext
@@ -773,7 +776,6 @@ Assertion Failed: !m_bCanceled
 Assertion Failed: !m_bConnectionInitiatedRemotely
 Assertion Failed: !m_bCryptKeysValid
 Assertion Failed: !m_bHaveLowLevelRef
-Assertion Failed: !m_bPassive
 Assertion Failed: !m_connection.m_bConnectionInitiatedRemotely
 Assertion Failed: !m_connectionConfig.m_SymmetricConnect.IsLocked
 Assertion Failed: !m_fakeIPRefRemote.IsValid
@@ -850,11 +852,8 @@ Assertion Failed: !sFirstCertMsg.empty
 Assertion Failed: !s_bRawSocketPendingDestruction
 Assertion Failed: !s_pConfigFetchInProgress
 Assertion Failed: !s_pSDRPhsyicalSocket->m_mapClientBySessionKey.HasElement( relaySessKey
-Assertion Failed: "type mismatch! call is<type>() before get<type>()" && is<array
-Assertion Failed: "type mismatch! call is<type>() before get<type>()" && is<double
-Assertion Failed: "type mismatch! call is<type>() before get<type>()" && is<object
-Assertion Failed: "type mismatch! call is<type>() before get<type>()" && is<std::string
 Assertion Failed: &pSession->m_messageEndPointOwner == this
+Assertion Failed: &this->array_ref == &x.array_ref
 Assertion Failed: ( (int)eType & ((int)eType-1) ) == 0
 Assertion Failed: ( conn.m_pTransport == m_pSelfAsConnectionTransport ) == ( conn.m_pCurrentTransportP2P == this
 Assertion Failed: ( data->m_nRefCount == 0 ) == ( data->m_nLRUIndex >= 0
@@ -914,7 +913,11 @@ Assertion Failed: ListenSocket()->m_eHostedDedicatedServer == CSteamNetworkListe
 Assertion Failed: LocalVirtualPort() >= 0
 Assertion Failed: SteamNetworkingSockets().m_fakeIP.m_nPorts == 0
 Assertion Failed: SteamNetworkingSocketsInterface()->m_keyPrivateKey.IsValid
-Assertion Failed: TLinkStatsTracker::m_pktNumInFlight == 0
+Assertion Failed: TLinkStatsTracker::m_eActivityLevel != ELinkActivityLevel::Disconnected
+Assertion Failed: _double < (double)(1ULL << 53
+Assertion Failed: _type == kArray
+Assertion Failed: _type == kObject
+Assertion Failed: _type == kString
 Assertion Failed: a.MicrosecondsAge( usecNow ) < k_nMillion*10
 Assertion Failed: a.m_adr == m_adr
 Assertion Failed: a.m_eProtocol == m_eProtocol
@@ -934,8 +937,10 @@ Assertion Failed: bStillInQueue == ( pSeg->m_nOffset + pSeg->m_cbSegSize < pSeg-
 Assertion Failed: bStillInQueue == ( pSeg->m_pMsg->m_links.m_pQueue != nullptr
 Assertion Failed: bStillInQueue || pSeg->m_pMsg->m_links.m_pNext == nullptr
 Assertion Failed: bStillInQueue || pSeg->m_pMsg->m_linksSecondaryQueue.m_pNext == nullptr
+Assertion Failed: begin <= end
 Assertion Failed: bucket.m_nMinPing <= bucket.m_nMaxPing
 Assertion Failed: bucket.m_nPingCount > 0
+Assertion Failed: buf[0] >= '0' && buf[0] <= '9
 Assertion Failed: bufferLen > 0
 Assertion Failed: c <= k_cchMaxEncodedMarker
 Assertion Failed: cbAckBytesWritten == cbReserveForAcks
@@ -986,6 +991,9 @@ Assertion Failed: data->m_nRefCount >= 0
 Assertion Failed: data.m_nLRUIndex < 0
 Assertion Failed: data.m_nRefCount == 0
 Assertion Failed: data.m_nRefCount > 0
+Assertion Failed: dummy.ArraySize() == 0
+Assertion Failed: dummy.IsNull
+Assertion Failed: dummy.ObjectSize() == 0
 Assertion Failed: eFakeIPType == k_ESteamNetworkingFakeIPType_GlobalIPv4
 Assertion Failed: eFakeIPType == k_ESteamNetworkingFakeIPType_LocalIPv4
 Assertion Failed: eFakeIPType > k_ESteamNetworkingFakeIPType_NotFake
@@ -1000,6 +1008,7 @@ Assertion Failed: false
 Assertion Failed: firstGap->first >= lane.m_nReliableStreamPos
 Assertion Failed: firstGap->first >= nSegEnd
 Assertion Failed: firstGap->second <= nSegBegin
+Assertion Failed: first_digit >= '1' && first_digit <= '9
 Assertion Failed: fromFakeIP.IsIPv6AllZeros
 Assertion Failed: g_SteamDatagramNetwork.FindRelayPOPByAddress( adr ) == pClusterData->m_idxInConfig
 Assertion Failed: g_SteamDatagramNetwork.m_nRevision != SteamDatagramNetwork::k_nRevision_None
@@ -1105,6 +1114,9 @@ Assertion Failed: m_connection.m_statsEndToEnd.m_usecWhenTimeoutStarted > 0
 Assertion Failed: m_connection.m_unConnectionIDRemote != 0
 Assertion Failed: m_connectionConfig.m_ConnectionUserData.IsSet
 Assertion Failed: m_connectionConfig.m_LocalVirtualPort.IsLocked
+Assertion Failed: m_eActivityLevel == ELinkActivityLevel::Active
+Assertion Failed: m_eActivityLevel == ELinkActivityLevel::Disconnected
+Assertion Failed: m_eActivityLevel == ELinkActivityLevel::Idle
 Assertion Failed: m_eConnectionState == k_ESteamNetworkingConnectionState_Dead
 Assertion Failed: m_eConnectionWireState == eOldState
 Assertion Failed: m_eConnectionWireState == k_ESteamNetworkingConnectionState_Dead
@@ -1225,7 +1237,7 @@ Assertion Failed: m_pTransportICE != m_pTransportICEPendingDelete
 Assertion Failed: m_pTransportP2PSDR == nullptr
 Assertion Failed: m_padzero == 0 && x.m_padzero == 0
 Assertion Failed: m_pingTracker.m_usecTimeLastSentPingRequest == usecNow
-Assertion Failed: m_pktNumInFlight == 0 && !m_bPassive
+Assertion Failed: m_pktNumInFlight == 0 && m_eActivityLevel == ELinkActivityLevel::Active
 Assertion Failed: m_queueIndex == -1
 Assertion Failed: m_queueIndex >= 0
 Assertion Failed: m_queueRecvMessages.empty
@@ -1253,7 +1265,7 @@ Assertion Failed: m_senderState.m_mapInFlightPacketsByPktNum.begin()->first < 0
 Assertion Failed: m_senderState.m_mapInFlightPacketsByPktNum.lower_bound( m_statsEndToEnd.m_nNextSendSequenceNumber ) == m_senderState.m_mapInFlightPacketsByPktNum.end
 Assertion Failed: m_socket != INVALID_SOCKET
 Assertion Failed: m_stats.m_nNextSendSequenceNumber == 1
-Assertion Failed: m_statsEndToEnd.IsPassive
+Assertion Failed: m_statsEndToEnd.IsDisconnected
 Assertion Failed: m_statsEndToEnd.m_flInPacketsWeirdSequencePct >= 0.0f
 Assertion Failed: m_statsEndToEnd.m_latestRemote.m_flPacketsWeirdSequenceNumberPct >= 0.0f
 Assertion Failed: m_statsEndToEnd.m_nMaxRecvPktNum > 0
@@ -1533,6 +1545,8 @@ Assertion Failed: primary.m_sessionSelectQualityMetrics.m_nScore < k_nRouteScore
 Assertion Failed: pszCode[3] == '\0' || pszCode[4] == '\0
 Assertion Failed: pszFmt && *pszFmt
 Assertion Failed: pszVal && *pszVal
+Assertion Failed: ptr + escape_overhead < s
+Assertion Failed: ptr < end && *ptr
 Assertion Failed: pubData
 Assertion Failed: pubKey
 Assertion Failed: pubKey != nullptr
@@ -1597,9 +1611,10 @@ Assertion Failed: t+1 == m_vecLanes.end
 Assertion Failed: t.m_nHeldLocks < ThreadLockDebugInfo::k_nMaxHeldLocks
 Assertion Failed: t.m_nHeldLocks == 1 && t.m_arHeldLocks[0] == &s_mutexGlobalLock
 Assertion Failed: t.m_nHeldLocks > 0
+Assertion Failed: this->cur_ptr < this->end
+Assertion Failed: this->cur_ptr <= this->end() && x.cur_ptr <= this->end
 Assertion Failed: unFromConnectionID || unToConnectionID
 Assertion Failed: usecElapsed >= 0
-Assertion Failed: usecElapsed >= k_usecLinkStatsInstantaneousReportInterval
 Assertion Failed: usecElapsedSinceLast >= 0
 Assertion Failed: usecNextAction > usecNow
 Assertion Failed: usecNextCheck > usecNow
@@ -1652,7 +1667,6 @@ BC?>6t9
 BCheckInitHostedDedicatedServer
 BConnectionState_Connecting failed creating loopback pipe socket pair.  %s
 BCryptGenRandom
-BD9=s8
 BDA9AD
 BEGIN OPENSSH PRIVATE KEY
 BFd:p8
@@ -1785,7 +1799,6 @@ Bad identity in stats
 Bad identity.  %s
 Bad pkt 0x%02x from %s
 Bad private key size returned by callback
-Bad relay_public_key
 Bad signature.  %s.  Dropping
 Bad tag size
 Bad time value
@@ -1873,7 +1886,6 @@ CAST5-CBC
 CAST5-CFB
 CAST5-ECB
 CAST5-OFB
-CAssertion Failed: count >= 0
 CBIGNUM
 CConnectionTransportP2PICE_Valve::Init
 CConnectionTransportP2PICE_Valve::OnConnectionSelected
@@ -2329,6 +2341,8 @@ ChaCha20-Poly1305
 Challenge too old
 ChallengeReply
 ChallengeRequest
+Character 0x%02x is not a hex digit; invalid \u-escaped sequence
+Character 0x%2x is not valid after '\' in string
 Claiming protocol V%u now, but earlier was using V%u
 Class Hierarchy Descriptor
 CleanRoutesForServerSelection
@@ -2367,9 +2381,7 @@ Communications with routing cluster '%s' restored
 CompareStringEx
 CompareStringW
 Complete Object Locator
-Config 'certs' array has non-string element
 Config 'revoked_keys' array has invalid item '%s
-Config 'revoked_keys' array has non-string element
 Config fetch is in progess, but network config avail is %d
 ConfigureConnectionLanes
 ConfirmEndToEnd
@@ -2394,6 +2406,7 @@ ConnectionUserData
 Connectivity check
 Content-Length: %d
 Content-Type: application/ocsp-request
+Control character 0x%02x is illegal in string
 Control message of type %d failed serialization consistency check!  (%d, expected %d
 Control message of type %d is too big.  (%d bytes; max is %d
 ConvertFiberToThread
@@ -2404,7 +2417,7 @@ ConvertInterfaceLuidToIndex failed 0x%x
 CorExitProcess
 Could not bind socket %s
 Could not create an instance of
-Could not find secondary wifi adapter, even though wlan_intf_opcode_secondary_sta_synchronized_connections succeeded
+Could not find secondary wifi adapter, even though wlan_intf_opcode_secondary_sta_synchronized_connections returned %u items
 Could not find type
 Couldn't parse default value
 CpI9GpI
@@ -2461,7 +2474,6 @@ D$0HcFHL
 D$0HcPhI
 D$0L9P s
 D$0f;GLu1L
-D$0pops
 D$4#D$8
 D$8@8pCu
 D$@9G t
@@ -2486,7 +2498,6 @@ D$p9G4u
 D$pD91H
 D$pD;1H
 D$pD;cL
-D$pH;D$xtQ
 D$pH;k8
 D$pL9x
 D$tL;t$x
@@ -2637,7 +2648,7 @@ DSTU curve 8
 DSTU curve 9
 D]WO"#y
 Data Encipherment
-Data contains revision %d, not newer than current revision %d; ignoring
+Data contains revision %lld, not newer than current revision %lld; ignoring
 DataPacket
 DataRouterToClient
 Dc&6\<H
@@ -2673,9 +2684,10 @@ DigiCert Assured ID Root CA0
 DigiCert Inc1
 DigiCert Timestamp 2022 - 20
 DigiCert Trusted Root G40
-DigiCert, Inc.1$0
 DigiCert, Inc.1;09
 DigiCert, Inc.1A0
+DigiCert1$0
+Digit is required after exponent in JSON number; found 0x%02x instead
 Digital Signature
 DirName
 Directory
@@ -2690,14 +2702,14 @@ Don't know our AppID.  Order of init bug
 DowntimeWarningChanged
 Dropping
 Dropping connect request from %s.  Existing connection on virtual port %d, now they are asking for virtual port %d
-Dual Wifi support enabled successfully on adapter '%s
+Dual Wifi support detected on adapter '%s
+Dual Wifi support not detected on adapter '%s' (wlan_intf_opcode_secondary_sta_interfaces returned empty list
 Dual Wifi support not detected on adapter '%s' (wlan_intf_opcode_secondary_sta_synchronized_connections returned 0x%x
 DualWifi not detected.  We won't try again.  %s
 DualWifi_Enable
 Duplicate P2P connection %s %u
 Duplicate child connection!  %s %u
 Duplicate relay session key
-Dw^#jiO
 Dynamic engine loading support
 E @8pHt
 E D8xKt`A
@@ -2919,6 +2931,7 @@ Encipher Only
 EncodePointer
 Encrypted size doesn't make sense for tag size
 EncryptedData
+End of input during \u escape sequence
 End-of-file inside block comment
 End-to-end connection: BUG: invalid state %d
 End-to-end connection: closed by remote host, reason code %d.  (%s
@@ -2965,6 +2978,11 @@ ExitThread
 Expanded map entry type
 Expect a decimal number, got
 Expected
+Expected '"' to begin JSON object key, but found '%c' (0x%02x) instead
+Expected ':' but found '%c' (0x%02x) instead
+Expected ']' or ',' but found '%c' (0x%02x) instead
+Expected '}' or ',' but found '%c' (0x%02x) instead
+Expected digit after '-' in JSON number, found 0x%02x instead
 Expected double, got
 Expected eight hex digits up to 10ffff for \U escape sequence
 Expected four hex digits for \u escape sequence
@@ -2999,6 +3017,7 @@ ExtensionRangeOptions
 Extensions in proto3 are only allowed for defining options
 Extensions of MessageSets must be optional messages
 Extensions to non-lite types can only be declared in non-lite files.  Note that you cannot extend a non-lite type to contain a lite type, but the reverse is allowed
+Extra text starting with character 0x%02x='%c
 ExtraField
 F 9F tDA
 F#bgn?MwN
@@ -3049,10 +3068,11 @@ Failed to load wlanAPI.DLL
 Failed to negotiate mutually-agreeable cipher
 Failed to parse %s value %s
 Failed to parse '%s'.  %s
+Failed to parse JSON %s
 Failed to parse address '%s' as an IP address
 Failed to parse authorized client identity.  %s
 Failed to parse gameserver identity.  %s
-Failed to parse result JSON.  %s
+Failed to parse result JSON.  Line %d, offset %d: %s
 Failed to parse string
 Failed to send P2P signal
 Failed to serialize identity to %s message.  %s
@@ -3428,6 +3448,7 @@ HcL$0Hct$4H
 HcL$DL
 HcT$0Hc
 HcT$4Hc
+HcT$PE3
 HcT$`Hc
 Hc\$pA
 Hcl$pM
@@ -3537,7 +3558,6 @@ Ignoring P2PFailure notification about unknown ConnectionID %u from %s
 Ignoring P2PRendezvous from %s to unknown connection #%u
 Ignoring POP %s invalid alias '%s
 Ignoring POP %s invalid relay ipv4 address '%s
-Ignoring POP %s non-object relay
 Ignoring POP %s router %s with missing/invalid port range
 Ignoring SteamID %s; it is not valid for networking identity purposes
 Ignoring bad ping time override '%s
@@ -3585,6 +3605,7 @@ InitializeSListHead
 InitializeSRWLock
 Initialized low level socket/threading support
 Input size too large
+Input starting with character '%c' (0x%02x) not a valid JSON value
 Input/output error
 Integer out of range
 InterlockedFlushSList
@@ -3593,6 +3614,8 @@ Internal callback failure
 Internal error
 Internal error accepting connection.  %s
 Internal order of operations bug.  Can't create socket, because low level systems not initialized
+Internal parse BUG
+Internal parse BUG, or buffer modified while parsing
 InternalConnectP2P Matching Accept
 InternalConnectP2PDefaultSignaling
 InternalCreateListenSocketP2P
@@ -3626,6 +3649,7 @@ Invalid combination of steam datagram config and gameserver sample.  %s
 Invalid control characters encountered in text
 Invalid descriptor
 Invalid encoded message length %d.  Packet is %d bytes
+Invalid escape sequence '\%c' in string
 Invalid escape sequence in string literal
 Invalid fake port index %d.  (%d requested
 Invalid field type %d
@@ -3640,6 +3664,7 @@ Invalid key for map field
 Invalid lane %d.  Only %d lanes configured
 Invalid lane count %d; Connection only has %d lanes configured
 Invalid lead byte 0x%02x
+Invalid number
 Invalid numeric reason code
 Invalid package name
 Invalid private key
@@ -3687,6 +3712,8 @@ JLA3JLA
 JOINT-ISO-ITU-T
 JPA3JPA
 JSON file is empty
+JSON number contains too many characters
+JSON value required here. (Strict parsing mode; trailing comma not permitted
 JS_NORMAL
 JS_NUMBER
 JS_STRING
@@ -3807,6 +3834,7 @@ LcL$@HcT$DD
 Lcz HcZ
 Lead byte %d invalid for ticket blob
 Lead byte 0x%02x not a known message ID
+Leading zeros / octal format not allowed in JSON number
 LeaveCriticalSection
 LegacyDataCenter
 Lhttp://cacerts.digicert.com/DigiCertTrustedG4RSA4096SHA256TimeStampingCA.crt0
@@ -3821,7 +3849,7 @@ Lj66lZ??~A
 Load up the ENGINE specified by other settings
 LoadLibraryA
 LoadLibraryExW
-Loaded revision %d OK
+Loaded revision %lld OK
 Loading network config from '%s' as per SDR_NETWORK_CONFIG
 Local identity established from certificate.  We are '%s
 Local routes: %s
@@ -3950,9 +3978,8 @@ Missing connection ID
 Missing connection_id
 Missing field: FileDescriptorProto.name
 Missing name
-Missing required 'pops' list
+Missing/bad relay_public_key
 Missing/invalid expiry %llu
-Missing/invalid relay_public_key
 Mm/JhA
 Modulus
 Montgomery Multiplication for x86_64, CRYPTOGAMS by <appro@openssl.org
@@ -4048,6 +4075,7 @@ NetworkRevisionChanged
 Never gathered *any* host candidates
 Never received any remote candidates
 NewRelaySession
+Newline character (0x%02x) in string. (Missing closing quote
 No AppID
 No ClientNetworkingUtils, cannot init SDR support
 No ISteamHTTP
@@ -4101,7 +4129,6 @@ None of %d certs trusted.  (E.g
 Not After
 Not Attempted
 Not Before
-Not a JSON object
 Not a directory
 Not a regular file
 Not actually checking for Dual-wifi support, just creating simulating support, as per DualWifi_Enable=%d
@@ -4842,6 +4869,8 @@ SDR_LISTEN_PORT is set, but not SDR_CERT/SDR_PRIVATE_KEY
 SDR_LISTEN_PORT value '%s' is invalid; ignored
 SDR_NETWORK_CONFIG
 SDR_POPID
+SDR_POPID '%s' is not in network config revision %u
+SDR_POPID '%s' is not in network config revision %u.  We will not be able to receive relayed traffic
 SDR_POPID = '%s
 SDR_POPID = '%s', but SDR_LISTEN_PORT invalid or not set.  Setting SDR_POPID = 'err
 SDR_POPID=%s, but our cert is not valid for that PoP ID
@@ -5414,7 +5443,6 @@ Tunnel
 Type Descriptor
 Type appears to be in generated pool but wasn't
 Type is already registered
-U I;U(t
 U%04lX
 U)l:T^8rv
 U:\thirdpartycode\nonredist\protobuf\protobuf-3.15.3\src\google/protobuf/arena.h
@@ -5566,6 +5594,7 @@ Unexpected NoConnection
 Unexpected P2PSessionError %d
 Unexpected auth avail %d (%s
 Unexpected end of string
+Unexpected end-of-input
 Unexpected failure while serializing option submessage
 Unexpected g_eAvailAnyRelay %d while ping measurement in progress
 Unexpected g_eAvailNetworkConfig %d
@@ -5599,6 +5628,7 @@ Unsupported DH key type %d
 Unsupported key type %d
 Unsupported protocol %d
 Unsupported: type mismatch
+Unterminated string
 Until we obtain the config, we will not be able to accept clients
 UseCandidate was set
 Using cert from SDR_PRIVATE_KEY and SDR_CERT environment vars
@@ -5704,7 +5734,7 @@ We are pursuing a session on cluster %s, but that cluster is relay type %d.  Why
 We are the 'client' who initiated the connection, so 'server' shouldn't be sending us this
 We cannot fit reliable segment, need %d bytes, only %d remaining
 We didn't reserve enough space for stats
-We don't have a cert; replying to CMsgSteamDatagramGameserverPingRequest from relay %s anyway
+We don't have a cert; sending GameserverPingReply to relay %s anyway
 We don't have a signed cert
 We don't have cert, and self-signed certs not allowed
 We don't know our AppID.  Order of init bug
@@ -5722,7 +5752,6 @@ We're not logged into Steam
 WebRTC support not enabled
 Wednesday
 Weird RouterPingReply timestamps from %s.  Reply contained %u, current is %u (elapsed %d
-Weird value %f for '%s'.  Expecting a bool
 Whether to add a loaded ENGINE to the internal list (0=no,1=yes,2=mandatory
 Why are making API calls on this connection
 WideCharToMultiByte
@@ -6306,7 +6335,8 @@ c:\buildslave\sdr_public_win64\build\src\common\keypair.cpp
 c:\buildslave\sdr_public_win64\build\src\common\opensslwrapper.cpp
 c:\buildslave\sdr_public_win64\build\src\common\percentile_generator.h
 c:\buildslave\sdr_public_win64\build\src\common\urlhelper_webapihost.cpp
-c:\buildslave\sdr_public_win64\build\src\external\picojson\picojson.h
+c:\buildslave\sdr_public_win64\build\src\external\vjson\vjson.cpp
+c:\buildslave\sdr_public_win64\build\src\external\vjson\vjson.h
 c:\buildslave\sdr_public_win64\build\src\public\tier1\netadr.h
 c:\buildslave\sdr_public_win64\build\src\public\tier1\utlbuffer.h
 c:\buildslave\sdr_public_win64\build\src\public\tier1\utlhashmap.h
@@ -7014,6 +7044,8 @@ destination address required
 destinationIndicator
 desx-cbc
 detached content
+dev_client_cert
+dev_gameserver_identity
 device or resource busy
 dgram_sctp_new
 dgram_sctp_read
@@ -7546,7 +7578,9 @@ getsockopt
 getting socktype
 gf2m not supported
 gfffffff
+gfffffffA
 gfffffffH
+gfffffffH+K
 gfffffffI
 gfffffffL
 gfffffffM
@@ -8172,7 +8206,9 @@ invalid x931 digest
 invalidityDate
 io error
 ioctlsocket
+ion Failed: usecElapsed >= k_usecLinkStatsInstantaneousReportInterval
 ipAddressChoice
+ip_addresses
 ip_and_port field has invalid length %d
 ipsec Internet Key Exchange
 ipsecEndSystem
@@ -8398,7 +8434,7 @@ legacy_your_public_ip
 legacy_your_public_port
 length too long
 level_add_node
-lib Aug 10 2022 10:53:14
+lib Dec 13 2022 10:32:08
 lib(%lu
 libprotobuf %s %s:%d] %s
 lifetime
@@ -8407,6 +8443,7 @@ linebuffer_new
 list cannot be null
 list error
 listen v6 only
+llu%n %n
 load_iv
 loader incomplete
 loading cert dir
@@ -8536,6 +8573,7 @@ mobileTelephoneNumber
 modnarod
 modnarodH
 module
+module initialization error
 module_add
 module_init
 module_load_dso
@@ -8779,7 +8817,6 @@ ocsp_match_issuerid
 ocsphelper
 odd number of chars
 odd number of digits
-odule initialization error
 oid exists
 oid_module_init
 oid_section
@@ -8872,6 +8909,7 @@ p2p_routing_summary
 p2p_share_ip
 p2p_via_peer_relay_pop_id
 p@0pqE5tsO?|1
+pA^A]A
 pA_A]A
 pA_A^A
 pA_A^A]A
@@ -9637,6 +9675,7 @@ s] Sequence number from relay is duplicate or old, but end-to-end sequence numbe
 s] Setting SymmetricConnect=1 because it is enabled on listen socket on %s.  To avoid this warning, specify the option on connection creation
 s] Should not be trying to acccept this connection, it was not initiated remotely
 s] Shouldn't be rbeuilding routing message - basic routing data is dirty for reason '%s
+s] Shouldn't call me
 s] Started migration to %s at request of current primary %s
 s] StatsRouterToServer: Discarding because relay wire pkt num %lld (last %lld) from %s duplicate or old, but end-to-end packet number %lld (latest %lld) is OK
 s] StatsRouterToServer: Discarding end-to-end wire packet number %lld (latest %lld) and relay wire pkt num %lld (last %lld) from %s
@@ -9692,7 +9731,7 @@ s] recv message of size %u too large for limit of %d
 s] recv packet gap map badly fragmented, discarding gap [%lld,%lld).  %lld pkts [%lld,%lld] were received, but will now be nacked.  May trigger re-transmission
 s] recv queue overflow %d + %d bytes exceeds limit of %d
 s] recv queue overflow %d messages already queued
-s] stats passive, but in state %d
+s] stats are in activity level %d, but in state %d
 s] too many segments, aborting packert decode
 s] unexpected connection state %d
 sadmissionAuthority
@@ -10104,7 +10143,6 @@ surname
 swift_1
 swift_2
 swift_prefix
-syntax error at line %d near
 sys$assign error
 sys$dassgn error
 sys$qiow error
@@ -10304,8 +10342,6 @@ type_id
 type_name
 typeof
 typical_ping element %d invalid
-typical_ping element %d is not an array
-typical_ping element %d is not array starting with string,string,number
 typical_pings
 u %s '%s
 u ;QH}xHc
@@ -10324,6 +10360,7 @@ u.inherit
 u.range
 u0IcE@L
 u3HcH<H
+u79=2Z2
 u8A_A^A]A
 u8Hcl$`N
 u@L9l$`t

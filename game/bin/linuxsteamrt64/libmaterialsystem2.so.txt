@@ -19,6 +19,7 @@
 14CBaseAppSystemI16IMaterialSystem2E
 14CBaseAppSystemI21IMaterialSystem2UtilsE
 14CBaseAppSystemI21IPostProcessingSystemE
+14IErrorListener
 14IOpCodeHandlerIiE
 15.15s
 15CIntOpEvaluator
@@ -66,6 +67,9 @@
 22CSchemaInstallCallback
 22CShaderCreateCallbacks
 23CKV3ResourceBlockHelper
+23CKV3TransferContextBase
+23CKV3TransferLoadContext
+23CKV3TransferSaveContext
 23CUtlStackMachineBuilder
 25IAsyncProcessedDataResult
 26CNullShaderCreateCallbacks
@@ -88,8 +92,6 @@
 37CTypesafeIntrospectedToKV3TypeManagerILy1952542070E22MaterialResourceData_tE
 37CTypesafeIntrospectedToKV3TypeManagerILy500152889462E24PostProcessingResource_tE
 3YA1HcE
-3_0_gles
-3_1_gles
 4_0_android_vulkan
 4_0_ios_vulkan
 4_0_vulkan
@@ -126,7 +128,7 @@ ATSLc6E
 AUATSLc'E
 AUATSLc/E
 AUATSfA
-AVAUATE
+AVAUATA
 AVAUATE1
 AVAUATI
 AVAUATS
@@ -145,7 +147,6 @@ AWAVAUATS1
 AWAVAUATSH
 AWAVAUATSL
 AWAVAUE
-AWAVAUE1
 AWAVAUI
 AWAVAUL
 AWAVAULc
@@ -217,9 +218,7 @@ BindTextureToFile: Invalid texture id for file %s
 BindTextureToTextureHandle: Invalid texture id %d
 BloomBlendMode_t
 C@A;G@u
-CAnimVariant
 CCommand::Tokenize: Encountered command which overflows the tokenizer buffer.. Skipping
-CEntityIndex
 CFontTextureCache: Cache Page out of bounds %d (curr count %d
 CMatSystemTexture::SetMaterial
 CMaterial2 CUtlMemoryPoolMT
@@ -229,14 +228,11 @@ CMaterialSystem2Utils::AllocateGPUCompressionTextures() - not supported by rende
 CMaterialSystem2Utils::CompressTextureGPU() - not supported by render device, fallback to CPU compression
 CMaterialSystem2Utils::GenerateMipMaps: Can't get resources for compute shader, falling back to normal mipgen
 CMemAllocSystemInitialize
-CMotionTransform
 COMMENT
 CONTENT
 CONTENTROOT
-CPlayerSlot
 CPt?HcS$L
 CRC32_ProcessBuffer
-CSplitScreenSlot
 CStrongHandle
 CTextureDictionary::BindTextureToFile
 CTextureDictionary::GetTextureSize
@@ -245,7 +241,6 @@ CTextureDictionary::GetTextureSize() texture "%s" has no handles to load. And th
 CTextureDictionary::LoadDeferredIdNOW
 CTextureDictionary::LoadDeferredIdNOW() blocking load of "%s
 CTextureDictionary::ProcessDeferredResourceLoading
-CTransform
 CUtlBinaryBlock
 CUtlBlockMemory overflow
 CUtlLinkedList overflow! (exhausted index range
@@ -254,8 +249,6 @@ CUtlNTree overflow
 CUtlRBTree overflow with %u elements
 CUtlStreamBuffer does not support TEXT_BUFFER's use CUtlBuffer
 CUtlString
-CUtlSymbol
-CUtlSymbolLarge
 CUtlVector
 CXXABI_1.3
 CXXABI_1.3.9
@@ -266,6 +259,7 @@ Cannot copy abstract class
 Cannot deallocate abstract class
 Cannot deduce for class
 Cannot destruct abstract class
+Cast of %s loses value information (returning %s
 CharacterSetBuild
 CheckBox
 ChildOf
@@ -322,7 +316,6 @@ D_NO_ZTEST
 Decompress
 Default
 DefaultFontAliasGroup
-DegreeEuler
 DejaVu Sans
 DemoUpconverterVersion001
 DescriptH
@@ -338,6 +331,7 @@ Dynamic Shader Compile
 Dynamic Shader Compile Enabled
 Dynamic combo "%s" in %s cannot refer to a feature! Only static combos can refer to features
 Dynamic combos
+Dynamic shader compile disabled when launched from Steam
 Dynamic shader compile failed "%s" (%s
 Dynamic shader compile] Reloading %d material(s
 Dynamic shader compile] Warning: %d material(s) are not reloaded because they have outstanding file I/O requests
@@ -403,7 +397,7 @@ Error! Could not find feature with name "%s" in %s
 Error! Could not find static combo with name "%s" in %s
 Error! Could not find static or dynamic combo with name "%s" in %s
 Error! Multiple dynamic combos are putting the same constant (%s) in different descriptor sets. This won't work correctly
-Error! Multiple dynamic combos are putting the same constant (%s) in different locations. This shouldn't happen
+Error! Multiple dynamic combos are putting the same constant (%s) in different locations. This shouldn't happen (offset %d != %d
 Error! Multiple dynamic combos are putting the same sampler state (%s) in different bindless sampler indices. This won't work correctly
 Error! Multiple dynamic combos are putting the same texure (%s) in different descriptor set slots. This won't work correctly
 Error! Rule error string must be quoted in %s
@@ -420,6 +414,7 @@ Extraneous input - expected %s
 Extraneous input - expected <EOF
 Extraneous token
 FATAL ERROR: unable to register all schema data: %s
+FATAL: %s called on a pool context (no root available
 FEATURES
 FROM_ATTRIBUTE
 FROM_ATTRIBUTE_OR_FEATURE
@@ -537,10 +532,10 @@ IS_MOBILE
 IS_VULKAN
 ITM_deregisterTMCloneTable
 ITM_registerTMCloneTable
-IcD$ A9
+IcD$<A9
 IcD$PL9
-IcD$XA9
 IcL$<Hc
+IcO8Ic_<I
 IcT$<Hc0
 Incorrect vpk path delimiter for shader %s
 InfoForResourceTypeCTextureBase
@@ -551,9 +546,11 @@ InstallSchemaBindings
 Intentionally vague touch behavior for %p
 InvTextureDim
 InvViewportSize
+Invalid use of KV3 specific type %s with basic type %s, must be basic type %s
 IsCharCached
 J [A\A]A
 Jv_RegisterClasses
+KV3 instances cannot be set to an unspecified specific type
 KeyValueCache001
 KeyValuesSystem
 LAYOUTPOSITIONTYPE_FRACTIONAL
@@ -563,7 +560,6 @@ LINEAR_D24S8
 LOG_GENERAL
 LayerReference
 LayoutPositionType_e
-LccHD;cXD
 Lexer encountered %i errors parsing compile targets expression "%s
 Liberation Sans
 LightSim_DiffuseAlbedoTexture
@@ -581,9 +577,6 @@ MD5Init
 MD5Update
 MGetKV3ClassDefaults
 MIcMPIc
-MOBILE_GLES
-MOBILE_GLES_3_0
-MOBILE_GLES_3_1
 MODEL_PROCESSING_SCRIPT_INTERFACE_001
 MODEL_PROCESSING_SERVICES_INTERFACE_001
 MapListService_001
@@ -646,8 +639,6 @@ Missing %s
 Missing <EOF
 Missing token
 Missing token (%d
-Mobile SM 3.0 (GLES 3.0
-Mobile SM 3.0 (GLES 3.1
 Mode "%s
 Mode "%s" in %s is missing an option
 Mode "%s" in %s references static combo %s that doesn't exist in any program
@@ -706,27 +697,19 @@ P8H=vmattAH
 P8H=vmattmE1
 P8H=vmatu
 P8H=vtex
-P8H=vtextZ1
-PC SM 3.0 (GLSL
+P8H=vtext$1
 PC SM 4.0 (D3D10
-PC SM 4.0 (GLSL
 PC SM 4.0 (VULKAN
 PC SM 4.1 (D3D10.1
-PC SM 4.1 (GLSL
 PC SM 4.1 (VULKAN
 PC SM 5.0 (D3D11
-PC SM 5.0 (GLSL
 PC SM 5.0 (VULKAN
 PC SM 6.0 (VULKAN
-PC_SM_3_0_GL
 PC_SM_4_0
-PC_SM_4_0_GL
 PC_SM_4_0_VULKAN
 PC_SM_4_1
-PC_SM_4_1_GL
 PC_SM_4_1_VULKAN
 PC_SM_5_0
-PC_SM_5_0_GL
 PC_SM_5_0_VULKAN
 PC_SM_6_0_VULKAN
 POSITION
@@ -759,6 +742,7 @@ Plat_LoadModuleRaw
 Plat_NonFatalErrorFunc
 Plat_ShouldCollectMiniDumpsForFatalErrors
 Plat_UnloadModule
+Pointers cannot be used as numeric values
 Polygon too large (%d points / max %d, %d indices / max %d), ignoring
 PostProcessing
 PostProcessingBloomParameters_t
@@ -787,8 +771,6 @@ Program MD5 is out of date with features! %s
 Program MD5 is out of date with features! If you recompiled shaders in the background, reload shaders now! %s
 Programmer Error! Static combo not loaded
 PropertyEditorSystem_001
-Quaternion
-QuaternionStorage
 R11_EAC
 R16G16_UINT
 R16_UINT
@@ -812,8 +794,6 @@ RGBA32323232_UINT
 RGBA8888
 RGBA8888_LINEAR
 RGBX8888
-RHcKxIc
-RadianEuler
 RandomFloat
 RayTrace
 Raytracing Shader
@@ -848,7 +828,6 @@ ResourceCompilerSystem001
 ResourceHandleUtils001
 ResourceManifestRegistry001
 ResourceSystem013
-RotationVector
 SASARAQWL
 SET_BY_FEATURE
 SET_BY_FEATURE_EQ
@@ -880,7 +859,6 @@ SetByArtist
 SetByArtistAndExpression
 SetColorCorrectionLookupWeight
 SetColorCorrectionResetable
-SetRawAllocatorType
 SetSubTextureRGBA: Invalid texture id %i
 SetTextureRGBA: Invalid texture id %i
 Shader %s attribute "%s" has inconsistent value or type across multiple shaders of a feature combo
@@ -895,7 +873,6 @@ ShaderIDColors
 ShadingComplexity
 Skipped %d%% of all combos
 Sorry! mat_reloadmaterials is currently disabled due to bugs in other systems. Talk to Alex
-SoundGuid_t
 SoundOpSystem001
 SoundOpSystemEdit001
 SoundService_001
@@ -931,14 +908,11 @@ SubsurfaceProfile
 SupportsMappingDimensions
 T$0A\A]A
 TANGENT
+TD_OFFSET_NORMAL
+TD_OFFSET_PACKED
 TEXCOORD
 TKHfD9P
 Tag: %s
-TestFormatA
-TestFormatB
-TestFormatC
-TestFormatD
-TestFormatE
 TestScriptMgr001
 TextLayout_001
 Texture %s doesn't exist in %s
@@ -961,10 +935,11 @@ ToolSceneNodeFactory_001
 ToolService_001
 ToolsStallMonitorInternal_BeginScope
 ToolsStallMonitorInternal_EndScope
+ToolsVis
 Total Combos After Rules:  %15s ( %s Static
 Total Combos Before Rules: %15s ( %s Static, %s Dynamic
 Trebuchet MS
-Tried to load resource reference '%s' from a value without a resource reference flag
+Tried to load resource reference '%s' from a value without a resource reference specific type
 TypeManager
 UHD;2tpH
 UI_Font_New_Face_Override
@@ -984,12 +959,14 @@ Unexpected node
 Unexpected token
 Unknown
 Unknown DX level
+Unknown KV3 specific type %u
 Unknown RenderPrimitives primitive type %d
 Unknown VPK platform %d
 Unknown font
 Unknown rule "%s" in %s
 Unknown text found in FEATURES section in %s: "%s
 Unknown variable name %s
+Unsupported KV3 basic type '%s' (%d
 Usage: mat_assert_on_shader_use [shader_substring
 UtlMemory_Alloc
 UtlMemory_CalcNewAllocationCount
@@ -1020,7 +997,6 @@ VIEW_FADE_MOD2X
 VIEW_FADE_MODULATE
 VMatError
 VMaterialSystem2_001
-VMatrix
 VMediaFoundation001
 VPhysics2_Handle_Interface_001
 VPhysics2_Interface_001
@@ -1031,9 +1007,13 @@ VScript
 VScriptDbg
 VScriptManager010
 VStringTokenSystem001
+V_DoubleToString_Unsafe
 V_FixDoubleSlashes
+V_FloatToString_Unsafe
 V_GetFileExtension
 V_Get_stderr
+V_Int32ToString_Unsafe
+V_Int64ToString_Unsafe
 V_IsAbsolutePath
 V_LZ4_compressBound
 V_LZ4_compress_fast
@@ -1043,7 +1023,24 @@ V_PrettifyNum
 V_RemoveDotSlashes
 V_SetExtension
 V_StringAfterPrefix
+V_StringParseError
+V_StringToBool
+V_StringToColor
+V_StringToFloat32
+V_StringToFloat64
+V_StringToInt16
+V_StringToInt32
+V_StringToInt64
+V_StringToQAngle
+V_StringToUint16
+V_StringToUint32
+V_StringToUint64
+V_StringToVector
+V_StringToVector2D
+V_StringToVector4D
 V_StripLastDir
+V_UInt32ToString_Unsafe
+V_UInt64ToString_Unsafe
 V_UnqualifiedFileName
 V_ZSTD_compressBound
 V_ZSTD_compress_usingCDict
@@ -1064,9 +1061,6 @@ V_asinf
 V_atan2f
 V_atanf
 V_atofloat32
-V_atofloat64
-V_atoi64
-V_atoui64
 V_exp2f
 V_fmodf
 V_fpclassifyd
@@ -1087,17 +1081,12 @@ V_stricmp_fast
 V_strncmp
 V_strncpy
 V_strnicmp_fast
-V_strnlen
 V_strspn
-V_strtod
-V_strtoi64
 V_strtoui64
 V_towupper32
-V_uuid_t
 V_vsnprintf
 Vector2D
 Vector4D
-VectorAligned
 VectorText
 Verdana
 Version
@@ -1134,9 +1123,11 @@ Z17LoggingSystem_Logi17LoggingSeverity_tPK17LoggingMetaData_t5ColorPKcz
 Z17LoggingSystem_Logi17LoggingSeverity_tRK14LeafCodeInfo_tPKcz
 Z22Assert_ConditionFailedRK34_AssertCompileTimeConstantStruct_t
 Z22Assert_ConditionFailedRK34_AssertCompileTimeConstantStruct_tPKcz
+Z23FormatArgumentsToBufferP19IFormatOutputStreamPKcPK28CTypeErasedFormattingWrapperi
 Z30LoggingSystem_IsChannelEnabledi18LoggingVerbosity_t
 Z31CompileAllShadersForStaticComboyR19CVfxStaticComboDataR4CVfx12VfxProgram_tP4IVfxEUlRiE
 Z7LoadKV3P18CKeyValues3ContextP10CUtlStringP10CUtlBufferRK7KV3ID_tPKc
+Z9V_strnlenPKci
 ZN10CMaterial222IssueAsyncLoadRequestsER14CUtlLeanVectorI32MaterialStaticComboLoadRequest_tsE11CWeakHandleI29InfoForResourceTypeIMaterial2E16ShaderLoadMode_tEUlP25IAsyncResourceDataRequestE
 ZN10CMaterial222IssueAsyncLoadRequestsER14CUtlLeanVectorI32MaterialStaticComboLoadRequest_tsE11CWeakHandleI29InfoForResourceTypeIMaterial2E16ShaderLoadMode_tEUlP25IAsyncResourceDataRequestSt10unique_ptrI25IAsyncProcessedDataResultSt14default_deleteISB_EEE0
 ZN10CUtlBuffer10ParseTokenEPK14characterset_tPcib
@@ -1161,6 +1152,7 @@ ZN10CUtlBufferC1EPKvii
 ZN10CUtlBufferC1Eiii
 ZN10CUtlBufferC2EPKvii
 ZN10CUtlBufferC2Eiii
+ZN10CUtlString11ToLowerFastEv
 ZN10CUtlString12GetForModifyEv
 ZN10CUtlString15FreeMemoryBlockEv
 ZN10CUtlString3SetEPKc
@@ -1206,6 +1198,7 @@ ZN13CBufferString6InsertEiPKcib
 ZN13CBufferString7ReplaceEPKcS1_b
 ZN13CBufferString8MoveFromERS
 ZN13CBufferString8RemoveAtEii
+ZN13CBufferString8TrimTailEPKc
 ZN13CBufferString9SetLengthEibPi
 ZN13CRawAllocator4FreeE18RawAllocatorType_tPvm
 ZN13CRawAllocator5AllocE18RawAllocatorType_tmPm
@@ -1243,8 +1236,13 @@ ZN18CUtlMemoryPoolBase5AllocEv
 ZN18CUtlMemoryPoolBase5ClearEv
 ZN18CUtlMemoryPoolBaseC2Eiii20MemoryPoolGrowType_tPKc19MemAllocAttribute_t
 ZN18CUtlMemoryPoolBaseD2Ev
+ZN19IFormatOutputStream17OutputIndentationEv
+ZN19IFormatOutputStream4PutSEPKc
 ZN21CUtlScratchMemoryPool12AllocAlignedEii
+ZN24CUniformRandomStreamImplI16CThreadNullMutexE11RandomFloatEff
 ZN24CUtlMemoryBlockAllocator12AllocAndCopyEPKcj
+ZN24CUtlMemoryBlockAllocator5PurgeEv
+ZN24CUtlMemoryBlockAllocator9RemoveAllEm
 ZN24CUtlMemoryBlockAllocatorC1Eij18RawAllocatorType_t
 ZN24CUtlMemoryBlockAllocatorD1Ev
 ZN37CTypesafeIntrospectedToKV3TypeManagerILy1952542070E22MaterialResourceData_tE15AllocateAndLoadER23CKV3TransferLoadContextPK21ResourceBindingBase_tP29IRD_RegisterResourceDataUtilsE15CAllocatorUtils
@@ -1268,6 +1266,7 @@ ZNK10CUtlString5RightEi
 ZNK10CUtlString5SliceEii
 ZNK10CUtlString7DirNameEv
 ZNK10CUtlStringplEPKc
+ZNK13CBufferString8FormatToEP19IFormatOutputStream20CFormatStringElement
 ZNK14CStrAutoEncode13PopulateUTF32Ev
 ZNK15CKeyValues_Data15Internal_GetIntEv
 ZNK15CUtlSymbolTable4FindEPKc
@@ -1281,9 +1280,11 @@ ZNK9KeyValues7GetNameEv
 ZNK9KeyValues8GetColorEPKcRK5Color
 ZNSt15_Sp_counted_ptrIDnLN9__gnu_cxx12_Lock_policyE2EE10_M_disposeEv
 ZNSt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE2EE10_M_destroyEv
+ZNSt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE2EE10_M_releaseEv
 ZNV16CThreadSpinMutex4LockEPKciyj
 ZSt25__throw_bad_function_callv
 ZTI17CThreadSyncObject
+ZTI19IFormatOutputStream
 ZTISt11_Mutex_baseILN9__gnu_cxx12_Lock_policyE2EE
 ZTISt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE2EE
 ZTISt19_Sp_make_shared_tag
@@ -1298,23 +1299,24 @@ ZnamRKSt9nothrow_t
 ZnwmRKSt9nothrow_t
 aEarly exit
 appendstructuredbuffer
+array: %u elements
 at <EOF
 at offset %d
 batcherrors
 batchwarnings
-binary_auto
-binary_bc
-binary_lz4
-binary_zstd
+binary blob: %u bytes
+binary_blob
 bss_start
 cHD;cXH
 cannot match to any predicted input
 cbuffer
 channel
 charset
+color32
 colorcorrection_%p.vtex
 comment
 consumestructuredbuffer
+convars_hidden_by_default
 copy%u
 cxa_atexit
 cxa_finalize
@@ -1327,7 +1329,6 @@ dA;T$8
 data.rel.ro
 data/src/vfx/compiletargetexpr.g
 debug_font_size
-default
 define
 degrees
 dev/materialsystem2utils/pixel.vtex
@@ -1339,6 +1340,7 @@ dynstr
 dynsym
 eh_frame
 eh_frame_hdr
+ehandle
 end of input
 environmentmapped
 error %d : %s
@@ -1363,6 +1365,7 @@ float3x3
 float4x3
 float4x4
 float64
+float64[%u
 font_show_glyph_miss
 fontmanager/fontmanager.cpp
 fontmanager/fonttexturecache.cpp
@@ -1485,7 +1488,6 @@ g_vXenAnimation
 game_controls
 gamelayer
 generic
-gl_use_mobile_vcs
 gmon_start
 gnu.hash
 gnu.version
@@ -1498,6 +1500,7 @@ iOS SM 4.1 (VULKAN
 iOS SM 5.0 (VULKAN
 include
 init_array
+int32[%u
 int64)m_nAllocationCount + (int64)num ) <= 0x7FFFFFFF
 invalid
 is also the end of the line, so you must check your lexer rules
@@ -1599,6 +1602,7 @@ mat_assert_on_shader_use sky       - Assert when sky.vfx or sky_cheap.vfx is use
 mat_clearshadercache
 mat_colorcorrection
 mat_disable_dynamic_shader_compile
+mat_force_molten_vk
 mat_hide_error_shader
 mat_overdraw
 mat_overdraw_color
@@ -1640,58 +1644,58 @@ mat_shading_complexity_max_register_count
 mat_warn_bad_modes
 material
 material2.cpp
-material2.cpp(116): ERROR! Can't load vfx_dx dll, dynamic shader compile unavailable
-material2.cpp(1407): Error! Material "%s" is already loaded
-material2.cpp(1412): Error! Trying to load material "%s" without any params
-material2.cpp(1441): Cannot find shader entry in material "%s"! Using error.vfx
-material2.cpp(1480): Error creating shader %s for material %s
-material2.cpp(1484): Error creating shader %s and cannot load error.vfx instead
-material2.cpp(1524): Error creating fallback shader %s for %s for material %s! A fallback shader cannot fallback to a different shader
-material2.cpp(1537): Error creating fallback shader %s for %s for material %s
-material2.cpp(1541): Error creating fallback shader %s for %s and cannot load error.vfx instead
-material2.cpp(1569): Error creating shader %s for material %s
-material2.cpp(1574): Error creating shader %s and cannot load error.vfx instead
-material2.cpp(1584): Error creating static combos for shader %s and error.vfx instead
-material2.cpp(2203): DxSupportLevel %d not supported
-material2.cpp(2537): Dynamic Combos should be assumed to be unique for dynamic shader compile! %d != %d
-material2.cpp(2621): Dynamic shader compile failed for %s in material "%s
-material2.cpp(2894): Failed call to FindOrLoadStaticComboData
-material2.cpp(3215): All bad! The error material failed in dynamic shader compile
-material2.cpp(3857): Find a graphics programmer! Trying to bind a "%s" shader that doesn't exist! for %s
-material2.cpp(4484): Unsupported sampler state type for "%s
-material2.cpp(600): Material "%s" is requesting a bad mode "%s
-material2.cpp(715): Error! Material "%s" doesn't have any valid layers to get the CVsInputSignatureVector from
-material2.cpp(747): Error! Material "%s" doesn't have a CVsInputSignatureVector
-material2.cpp(765): Error! Material "%s" has invalid signature index %d
-material2.cpp:2556
+material2.cpp(114): ERROR! Can't load vfx_dx dll, dynamic shader compile unavailable
+material2.cpp(1404): Error! Material "%s" is already loaded
+material2.cpp(1409): Error! Trying to load material "%s" without any params
+material2.cpp(1438): Cannot find shader entry in material "%s"! Using error.vfx
+material2.cpp(1477): Error creating shader %s for material %s
+material2.cpp(1481): Error creating shader %s and cannot load error.vfx instead
+material2.cpp(1521): Error creating fallback shader %s for %s for material %s! A fallback shader cannot fallback to a different shader
+material2.cpp(1534): Error creating fallback shader %s for %s for material %s
+material2.cpp(1538): Error creating fallback shader %s for %s and cannot load error.vfx instead
+material2.cpp(1566): Error creating shader %s for material %s
+material2.cpp(1571): Error creating shader %s and cannot load error.vfx instead
+material2.cpp(1581): Error creating static combos for shader %s and error.vfx instead
+material2.cpp(2195): DxSupportLevel %d not supported
+material2.cpp(2542): Dynamic Combos should be assumed to be unique for dynamic shader compile! %d != %d
+material2.cpp(2626): Dynamic shader compile failed for %s in material "%s
+material2.cpp(2912): Failed call to FindOrLoadStaticComboData
+material2.cpp(3233): All bad! The error material failed in dynamic shader compile
+material2.cpp(3875): Find a graphics programmer! Trying to bind a "%s" shader that doesn't exist! for %s
+material2.cpp(4502): Unsupported sampler state type for "%s
+material2.cpp(597): Material "%s" is requesting a bad mode "%s
+material2.cpp(712): Error! Material "%s" doesn't have any valid layers to get the CVsInputSignatureVector from
+material2.cpp(744): Error! Material "%s" doesn't have a CVsInputSignatureVector
+material2.cpp(762): Error! Material "%s" has invalid signature index %d
+material2.cpp:2561
 material_command_buffer.cpp
 material_shader_params.cpp
-material_shader_params.cpp(1001): Invalid data type for render state variable %s in material "%s
-material_shader_params.cpp(1049): Invalid data type for render state variable %s in material "%s
-material_shader_params.cpp(1056): Error evaluating expression for render state variable %s in material "%s
-material_shader_params.cpp(1062): Invalid variable source type for render state variable %s in material "%s
-material_shader_params.cpp(1133): Unsupported render state type in material "%s
-material_shader_params.cpp(1151): Sampler index %d out of bounds for "%s" in material "%s
-material_shader_params.cpp(1224): Unsupported sampler state type for "%s" in material "%s
-material_shader_params.cpp(1307): Could not bind constant buffer "%s" because the constant buffer handle was invalid in material "%s
-material_shader_params.cpp(1324): Error setting constant for REGISTER_FLOAT4 for "%s" in material "%s"! Talk to a programmer
-material_shader_params.cpp(1422): Trying to set VFX_VARIABLE_TYPE_MATRIX_* but this isn't supported yet! In material "%s
-material_shader_params.cpp(1427): Bad VFX_VARIABlE type for VFX_VARIABLE_SOURCE_SET_BY_ARTIST %s in material "%s
-material_shader_params.cpp(1735): Invalid data type for render state variable %s in material "%s
-material_shader_params.cpp(1771): Invalid data type for render state variable %s in material "%s
-material_shader_params.cpp(1857): Invalid data type for render state variable %s in material "%s
-material_shader_params.cpp(1865): Invalid variable source type for render state variable %s in material "%s
-material_shader_params.cpp(1963): Unsupported render state type in material "%s
-material_shader_params.cpp(2114): Unsupported render state in material "%s
-material_shader_params.cpp(2187): Unsupported sampler state type for "%s" in material "%s
-material_shader_params.cpp(2209): Unsupported sampler state type for "%s" in material "%s
-material_shader_params.cpp(385): Trying to set VFX_VARIABLE_TYPE_MATRIX_* but this isn't supported yet! In material "%s
-material_shader_params.cpp(390): Bad VFX_VARIABlE type for VFX_VARIABLE_SOURCE_SET_BY_ARTIST %s in material "%s
-material_shader_params.cpp(445): Trying to set VFX_VARIABLE_TYPE_MATRIX_* but this isn't supported yet! In material "%s
-material_shader_params.cpp(450): Bad VFX_VARIABlE type for VFX_VARIABLE_SOURCE_SET_BY_ARTIST %s in material "%s
-material_shader_params.cpp(527): Trying to set VFX_VARIABLE_TYPE_MATRIX_* but this isn't supported yet! In material "%s
-material_shader_params.cpp(532): Bad VFX_VARIABlE type for VFX_VARIABLE_SOURCE_SET_BY_ARTIST %s in material "%s
-material_shader_params.cpp(957): Unknown variable type for %s in material "%s
+material_shader_params.cpp(1022): Invalid data type for render state variable %s in material "%s
+material_shader_params.cpp(1070): Invalid data type for render state variable %s in material "%s
+material_shader_params.cpp(1077): Error evaluating expression for render state variable %s in material "%s
+material_shader_params.cpp(1083): Invalid variable source type for render state variable %s in material "%s
+material_shader_params.cpp(1154): Unsupported render state type in material "%s
+material_shader_params.cpp(1172): Sampler index %d out of bounds for "%s" in material "%s
+material_shader_params.cpp(1245): Unsupported sampler state type for "%s" in material "%s
+material_shader_params.cpp(1328): Could not bind constant buffer "%s" because the constant buffer handle was invalid in material "%s
+material_shader_params.cpp(1345): Error setting constant for REGISTER_FLOAT4 for "%s" in material "%s"! Talk to a programmer
+material_shader_params.cpp(1443): Trying to set VFX_VARIABLE_TYPE_MATRIX_* but this isn't supported yet! In material "%s
+material_shader_params.cpp(1448): Bad VFX_VARIABlE type for VFX_VARIABLE_SOURCE_SET_BY_ARTIST %s in material "%s
+material_shader_params.cpp(1756): Invalid data type for render state variable %s in material "%s
+material_shader_params.cpp(1792): Invalid data type for render state variable %s in material "%s
+material_shader_params.cpp(1878): Invalid data type for render state variable %s in material "%s
+material_shader_params.cpp(1886): Invalid variable source type for render state variable %s in material "%s
+material_shader_params.cpp(1984): Unsupported render state type in material "%s
+material_shader_params.cpp(2135): Unsupported render state in material "%s
+material_shader_params.cpp(2208): Unsupported sampler state type for "%s" in material "%s
+material_shader_params.cpp(2230): Unsupported sampler state type for "%s" in material "%s
+material_shader_params.cpp(406): Trying to set VFX_VARIABLE_TYPE_MATRIX_* but this isn't supported yet! In material "%s
+material_shader_params.cpp(411): Bad VFX_VARIABlE type for VFX_VARIABLE_SOURCE_SET_BY_ARTIST %s in material "%s
+material_shader_params.cpp(466): Trying to set VFX_VARIABLE_TYPE_MATRIX_* but this isn't supported yet! In material "%s
+material_shader_params.cpp(471): Bad VFX_VARIABlE type for VFX_VARIABLE_SOURCE_SET_BY_ARTIST %s in material "%s
+material_shader_params.cpp(548): Trying to set VFX_VARIABLE_TYPE_MATRIX_* but this isn't supported yet! In material "%s
+material_shader_params.cpp(553): Bad VFX_VARIABlE type for VFX_VARIABLE_SOURCE_SET_BY_ARTIST %s in material "%s
+material_shader_params.cpp(978): Unknown variable type for %s in material "%s
 material_type_manager.cpp
 material_type_manager.cpp(52): GetErrorMaterial() called before error material exists
 materials/dev/combine_colorcorrection_lut_cs.vmat
@@ -1704,17 +1708,16 @@ materialsystem2
 materialsystem2.cpp
 materialsystem2.cpp(147): ERROR! Empty shader mode string found! Use "Default" instead
 materialsystem2.cpp(163): ERROR! Shader mode "%s" has unsupported type "%s" specified gameinfo.gi
-materialsystem2.cpp(3363): pVfx == NULL
-materialsystem2.cpp(3412): pVfx == NULL
-materialsystem2.cpp(3685): Error reading index
-materialsystem2.cpp(424): ERROR!!! Materials not released by other systems on shutdown! (See spew above
-materialsystem2.cpp(429): ERROR!!! Shaders not freed on shutdown, likely due to unreleased materials! (See spew above
-materialsystem2.cpp(443): GetErrorMaterial() called when m_pMaterialTypeManager == NULL
-materialsystem2.cpp(981): ERROR!!! Shaders not freed before shader reload! (See spew above
+materialsystem2.cpp(3367): pVfx == NULL
+materialsystem2.cpp(3416): pVfx == NULL
+materialsystem2.cpp(3689): Error reading index
+materialsystem2.cpp(420): ERROR!!! Materials not released by other systems on shutdown! (See spew above
+materialsystem2.cpp(425): ERROR!!! Shaders not freed on shutdown, likely due to unreleased materials! (See spew above
+materialsystem2.cpp(439): GetErrorMaterial() called when m_pMaterialTypeManager == NULL
+materialsystem2.cpp(985): ERROR!!! Shaders not freed before shader reload! (See spew above
 materialsystem2_strict
 mathlib.cpp
-matrix3x4_t
-matrix3x4a_t
+matrix3x4
 matsystemtexture_%s_%lld.vtex
 memmove
 memory
@@ -1722,6 +1725,7 @@ met_fast_dcs
 missing
 missing elements
 mobile_use_pc_graphics
+multiline_string
 nBatchIndices <= nMaxIndexCountPerPass
 nCombos
 near %s
@@ -1740,6 +1744,7 @@ pDEngine2/RenderingPipeline
 panorama
 panorama/fonts
 panorama_text_pango
+pointer
 position
 positionH
 postprocessingsystem.cpp
@@ -1755,6 +1760,7 @@ public/scenesystem/vertexformat.h
 public/tier0/utlmemory.h
 public/tier0/utlsymboltable.h
 public/tier0/utltshash.h
+quaternion
 radians
 rela.dyn
 rela.plt
@@ -1764,6 +1770,7 @@ resourcesystem
 rodata
 rotate2d
 rotation2d
+rotation_vector
 rwbuffer
 rwbyteaddressbuffer
 rwstructuredbuffer
@@ -1779,9 +1786,7 @@ s "%s" in %s has min(%d) < 0
 s "%s" in %s has min(%d) > max(%d
 s - %s
 s 0..0
-s : %u
 s File
-s Schema Type: %s
 s Shader: %s attribute '%s' set in mode '%s' does not match VMatrix value set in another mode
 s Shader: %s attribute '%s' set in mode '%s' does not match Vector value set in another mode
 s Shader: %s attribute '%s' set in mode '%s' does not match Vector2D value set in another mode
@@ -1797,12 +1802,12 @@ s() isn't a known function
 s(): Deprecated and unimplemented. Fix client code to use new postprocessing resources
 s(): Trying to add an empty VS input signature
 s+-- Schema Class: %s
-s, cat %d
 s: Input vector has incorrect length
 s: Invalid capacity %u
 s: Invalid grow amount %d
-s: Unsupported raw allocator type %u
 s: Warning: No compile targets specified! Shader will not be compiled
+s: invalid nBeforeIndex %d
+s: invalid nSize %d
 s:%s needs base %s:%s to be registered
 s[line %d:%d
 s__font_page_%d
@@ -1819,7 +1824,6 @@ samplerstateindex
 saturate
 schemaclassinfo.cpp
 schemasystem
-schematype.cpp
 setting.shaderquality
 shaderdebugging
 shaders
@@ -1827,21 +1831,22 @@ shaders/vfx
 shaders_android_vulkan.vpk
 shaders_force_recompile
 shaders_ios_vulkan.vpk
-shaders_mobile_gles.vpk
 shaders_pc.vpk
-shaders_pcgl.vpk
 shaders_vulkan.vpk
 shaderstats
 show_none
 show_used_combos
 show_used_combos: Verbosely spew a line for each program and the list of combos enabled
 shstrtab
+single_quoted_string
 singletons.cpp
 smoothstep
 soundevent
 spew_fonts
 stack_chk_fail
 strcpy_chk
+strict_type_combinations
+string_token
 struct DS_INPUT
 struct DS_PATCH_CONSTANT_INPUT
 struct GS_INPUT
@@ -1862,9 +1867,11 @@ s| Fields
 s| Project: '%s' Binary: '%s
 s| SizeOf: %d
 s| Virtual: %s; Abstract: %s; TrivialConstr: %s; TrivialDestr: %s
-t/;w0t2;w@t=1
+t$@IcT$8H
+t/;w8t2;wHt=1
 t7[A\A
 tT<<tpH
+table: %u members
 tangent
 temp_unserialization_member
 texcoord
@@ -1877,58 +1884,64 @@ texturecubeindex
 texturedictionary.cpp
 tmIcT$(9
 tpIcT$X9
+transform
 ttIcD$@9
 tvHcSP1
 t|IcT$p9
+uchar32
 undefined
 unexpected input
 unknown
+unknown KV3 basic type '%s' (%d
 unknown source
-unknown: %d
 unknown_mod
+unspecified
 using substring "%s
 utils/materialsystem2utils.cpp
 v+<Ht_<Xt[<7uyH
 vector2
+vector2d
 vector3
 vector4
+vector4d
 vfx_common.cpp
-vfx_common.cpp(1203): Error opening file "%s
-vfx_common.cpp(1213): Error masking unused parts for "%s
-vfx_common.cpp(1283): Error opening file "%s
-vfx_common.cpp(1293): Error masking unused parts for "%s
-vfx_common.cpp(1480): Error opening file "%s
-vfx_common.cpp(1557): Error opening file "%s
-vfx_common.cpp(269): Don't call VfxInit() more than once
-vfx_common.cpp(277): g_pFullFileSystem must be set up before calling VfxInit
-vfx_common.cpp(4124): Error! Ref count !=0 for static combo data cache entry
-vfx_common.cpp(4211): Error! Ref count !=0 for static combo data cache entry
-vfx_common.cpp(5665): Error opening file "%s
-vfx_common.cpp(5815): Error opening include file in features list"%s
-vfx_common.cpp(5854): Error opening file "%s
-vfx_common.cpp(6083): Error opening file "%s
-vfx_common.cpp(6117): Error opening file "%s
-vfx_common.cpp(6156): Error opening file "%s
-vfx_common.cpp(6260): Error opening file "%s
-vfx_common.cpp(6770): Programmer Error! The order of VfxVariableSourceType_t does not match s_shaderVariableSource
-vfx_common.cpp(7469): Error opening file %s
-vfx_common.cpp(7542): VCS %s Unserialize failed
-vfx_common.cpp(7556): VCS %s Unserialize hit EOF
-vfx_common.cpp(7690): Error opening file %s
-vfx_common.cpp(7697): Error calling SkipAndValidateVCSHeader() for %s
-vfx_common.cpp(7928): Programmer Error! NULL pointer passed into function
-vfx_common.cpp(7954): Programmer Error! Non feature rule found in feature rule array
+vfx_common.cpp(1186): Error opening file "%s
+vfx_common.cpp(1196): Error masking unused parts for "%s
+vfx_common.cpp(1266): Error opening file "%s
+vfx_common.cpp(1276): Error masking unused parts for "%s
+vfx_common.cpp(1427): Error opening file "%s
+vfx_common.cpp(1504): Error opening file "%s
+vfx_common.cpp(252): Don't call VfxInit() more than once
+vfx_common.cpp(260): g_pFullFileSystem must be set up before calling VfxInit
+vfx_common.cpp(4071): Error! Ref count !=0 for static combo data cache entry
+vfx_common.cpp(4158): Error! Ref count !=0 for static combo data cache entry
+vfx_common.cpp(5612): Error opening file "%s
+vfx_common.cpp(5762): Error opening include file in features list"%s
+vfx_common.cpp(5801): Error opening file "%s
+vfx_common.cpp(6030): Error opening file "%s
+vfx_common.cpp(6064): Error opening file "%s
+vfx_common.cpp(6103): Error opening file "%s
+vfx_common.cpp(6207): Error opening file "%s
+vfx_common.cpp(6717): Programmer Error! The order of VfxVariableSourceType_t does not match s_shaderVariableSource
+vfx_common.cpp(7408): Error opening file %s
+vfx_common.cpp(7481): VCS %s Unserialize failed
+vfx_common.cpp(7495): VCS %s Unserialize hit EOF
+vfx_common.cpp(7629): Error opening file %s
+vfx_common.cpp(7636): Error calling SkipAndValidateVCSHeader() for %s
+vfx_common.cpp(7867): Programmer Error! NULL pointer passed into function
+vfx_common.cpp(7893): Programmer Error! Non feature rule found in feature rule array
 vfx_compile_target_expr.cpp(100): : Failed to create input stream from "%s
 vfx_compile_target_expr.cpp(108): : Failed to create lexer from "%s
 vfx_compile_target_expr.cpp(116): : Failed to create token stream from "%s
 vfx_compile_target_expr.cpp(124): : Failed to create parser from "%s
 vfx_dx11
-vfx_vulkan_gl
+vfx_vulkan
 vmatAUATSH
 vmatAVAUATSH
 vmatAVL
 vulkan_use_android_vcs
 vulkan_use_ios_vcs
+w@IcW8L
 x8Ic](A;]8
 x[A\A]A^A
 z H9x u

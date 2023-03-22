@@ -1,10 +1,11 @@
+DOTABattleReportScreenSummary{
 
-
-
+  flow-children: down;
+}
 
  DOTABattleReportScreenSummary .ReportScreenTitleContainer{
 
-  margin-top: 48px;
+  margin-top: 40px;
  }
 
  .ReportDates{
@@ -18,7 +19,7 @@
 
  .HighlightsSummary{
 
-  margin: 220px containerMargins 0px;
+  margin: 24px containerMargins 0px;
   flow-children: right;
   horizontal-align: center;
  }
@@ -232,7 +233,7 @@
  .ShardsEarned{
 
   horizontal-align: center;
-  margin-top: 480px;
+  margin-top: 8px;
   flow-children: down;
   img-shadow: 0px 0px 24px white;
  }
@@ -272,4 +273,94 @@
   font-weight: semi-bold;
   color: #FFEEBE;
   text-shadow: 0px 4px 8px rgba(0,0,0,0.4);
+ }
+
+ #BattleAnalysisBanner{
+
+  width: 1000px;
+  background-color: gradient( linear, 0% 0%, 0% 100%, from( #1b2127 ), to( #14191e ) );
+  flow-children: right;
+  horizontal-align: center;
+  margin-top: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.01);
+
+  transform: translateY( 24px );
+  opacity: 0;
+
+  transition-property: transform, opacity, border-brush, box-shadow, background-color;
+  transition-duration: 0.6s;
+  transition-delay: 0.2s;
+  transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
+
+  animation-name: glowButton;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
+  animation-delay: 1s;
+ }
+  .Active #BattleAnalysisBanner{
+   transform: none;
+   opacity: 1;
+   transition-duration: 0.3s;
+   transition-delay: 0s;
+  }
+
+  #BattleAnalysisBanner .Content{
+   flow-children: right;
+   padding: 12px;
+  }
+
+  #BattleAnalysisBanner #BattleReportScreenGrab{
+   width: 200px;
+   margin-bottom: -32px;
+   margin-right: 24px;
+   box-shadow: 0px 8px 24px #00000055;
+  }
+
+  #BattleAnalysisBanner .Description{
+   width: fill-parent-flow( 1 );
+   margin-right: 20px;
+  }
+   #BattleAnalysisBanner .Description b{
+    color: #F1D380;
+   }
+
+
+
+ .BorderAnimation{
+
+  ignore-parent-flow: true;
+  width: 100%;
+  height: 100%;
+  margin: -2px;
+
+  transition-property: border-brush, box-shadow;
+  transition-duration: 1s;
+  transition-delay: 0.4s;
+  transition-timing-function: cubic-bezier(0.5, 0, 0, 1);
+
+  border: 2px solid white;
+  border-brush: gradient( linear, -100% 0%, 0% 0%, from( rgba(255, 255, 255, 0.01) ), color-stop( 0.5, rgba(255, 255, 255, 1) ), to( rgba(255, 255, 255, 0.01) ) );
+ }
+  .Active .BorderAnimation{
+   border-brush: gradient( linear, 100% 0%, 200% 0%, from( rgba(255, 255, 255, 0.01) ), color-stop( 0.5, rgba(255, 255, 255, 0.3) ), to( rgba(255, 255, 255, 0.01) ) );
+
+   transition-duration: 0.4s;
+   transition-delay: 0s;
+  }
+
+
+ @keyframes 'glowButton'{
+  0%{
+   box-shadow: 0px 0px 24px #F1D38000;
+   border: 2px solid rgba(255, 255, 255, 0.01);
+   brightness: 1;
+  }
+
+  100%{
+   box-shadow: 0px 0px 32px #F1D38007;
+   border: 2px solid rgba(255, 255, 255, 0.03);
+   brightness: 1.3;
+  }
 }

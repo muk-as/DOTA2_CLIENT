@@ -1,0 +1,524 @@
+
+ @define PageTopMargin: 160px;
+ @define PageEdgeMargin: 100px;
+ @define brightTeal: #33ffbb;
+
+
+ @define fullPreviewTransitionDuration: 1s;
+ @define openTreasureRotationSpeed: 40.0;
+ @define openTreasureRotationAcceleration: 5.0;
+ @define openTreasureEliminationDelay: 3.0s;
+
+
+
+ @define openTreasureSpinUpDuration: 5.0s;
+ @define openTreasureBrightnessModelDelay: 4.0s;
+
+
+ @define openTreasureAnimateContentsDuration: 0.3s;
+
+
+ @define openTreasureFocusIntervalSlow: 0.05s;
+ @define openTreasureFocusIntervalFast: 0.05s;
+
+
+
+ @define uncommonTextColor: #4cc2de;
+ @define uncommonGlowColor: #4bafde;
+ @define uncommonEscalatingChanceIconColor: #4bafde;
+ @define uncommonHueRotation: 240deg;
+ @define uncommonSaturation: 1.0;
+
+ @define rareTextColor: #9ede4c;
+ @define rareGlowColor: #afde4b;
+ @define rareEscalatingChanceIconColor: #afde4b;
+ @define rareHueRotation: 240deg;
+ @define rareSaturation: 1.0;
+
+ @define veryRareTextColor: #fd9d55;
+ @define veryRareGlowColor: #fdc194;
+ @define veryRareEscalatingChanceIconColor: #fd9d55;
+ @define veryRareHueRotation: 150deg;
+ @define veryRareSaturation: 1.0;
+
+ @define extremelyRareTextColor: #fddb87;
+ @define extremelyRareGlowColor: #fdca4a;
+ @define extremelyRareEscalatingChanceIconColor: #fdca4a;
+ @define extremelyRareHueRotation: 170deg;
+ @define extremelyRareSaturation: 1.0;
+
+ @define ultraRareChanceTextColor: #fddb87;
+ @define ultraRareChanceGlowColor: #fdca4a;
+ @define ultraRareEscalatingChanceIconColor: #fdca4a;
+ @define ultraRareChanceHueRotation: 170deg;
+ @define ultraRareChanceSaturation: 1.0;
+
+ @define cosmicallyRareChanceTextColor: #b759f3;
+ @define cosmicallyRareChanceGlowColor: #9400f3;
+ @define cosmicallyRareEscalatingChanceIconColor: #9400f3;
+ @define cosmicallyRareChanceHueRotation: 70deg;
+ @define cosmicallyRareChanceSaturation: 1.0;
+
+
+ @define bronzeTextColor: #cd8f68;
+ @define bronzeGlowColor: #cd8f68;
+ @define bronzeHueRotation: 155deg;
+ @define bronzeSaturation: 1.0;
+
+ @define silverTextColor: #ededed;
+ @define silverGlowColor: #ededed;
+ @define silverHueRotation: 0deg;
+ @define silverSaturation: 0;
+
+ @define goldTextColor: #ebcb6c;
+ @define goldGlowColor: #ebd79c;
+ @define goldHueRotation: 185deg;
+ @define goldSaturation: 1.0;
+
+
+ @define infusedTextColor: #a149d4;
+ @define infusedGlowColor: #a149d4;
+ @define infusedHueRotation: 30deg;
+ @define infusedSaturation: 1.0;
+
+ @define CrateTierOne_bgcolor: grey;
+ @define CrateTierTwo_bgcolor: purple;
+ @define CrateTierThree_bgcolor: green;
+ @define CrateTierFour_bgcolor: blue;
+ @define CrateTierFive_bgcolor: gold;
+
+
+
+
+
+
+
+ @define CrateTierZero_textcolor: gradient( linear, 0% 0%, 0% 100%, from( #F1FA90 ), to( #FCC22D ) );
+ @define CrateTierOne_textcolor: gradient( linear, 0% 0%, 0% 100%, from( #C7EAE3 ), to( #749C95 ) );
+ @define CrateTierTwo_textcolor: gradient( linear, 0% 0%, 0% 100%, from( #86EA63 ), to( #00AD6F ) );
+ @define CrateTierThree_textcolor: gradient( linear, 0% 0%, 0% 100%, from( #70E5FF ), to( #0EA1F3 ) );
+ @define CrateTierFour_textcolor: gradient( linear, 0% 0%, 0% 100%, from( #D39AFF ), to( #A378FF ) );
+ @define CrateTierFive_textcolor: gradient( linear, 0% 0%, 0% 100%, from( #FFC062 ), to( #FC782D ) );
+
+ @define offCenterRightPadding: 0px;
+
+
+
+ #BackgroundContainer{
+
+  width: 100%;
+  height: 100%;
+  background-image: url("s2r://panorama/images/events/muerta/treasure_assets/background_sky_psd.vtex");
+  background-size: cover;
+ }
+  #BackgroundContainer #BackgroundEffects{
+   width: 100%;
+   height: 100%;
+   border: 2px solid red;
+  }
+
+  #BackgroundContainer .BackgroundGradient{
+   width: 100%;
+   height: 100%;
+   background-color: gradient( linear, 0% 0%, 0% 100%, from( #0A121A00 ), color-stop( 0.35, #0A121AEF ), color-stop( 0.55, #152434 ), to( #152034 ) );
+  }
+
+  #BackgroundContainer #TreeImage{
+   width: 100%;
+   height: 100%;
+   background-image: url("s2r://panorama/images/events/muerta/treasure_assets/tree_psd.vtex");
+   background-size: cover;
+
+   transform: translateX( 300px ) translateY( -100px );
+  }
+
+  #BackgroundContainer #GrassRocks{
+   width: 1060px;
+   height: 596px;
+   background-image: url("s2r://panorama/images/events/muerta/treasure_assets/grass_rocks_psd.vtex");
+   background-size: cover;
+   horizontal-align: center;
+   vertical-align: center;
+
+   transform: translateY( 20px );
+
+   transition-property: opacity, transform;
+   transition-duration: 1s;
+   transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
+   transition-delay: 0s;
+  }
+
+
+
+
+
+
+ #ForegroundGrass{
+
+  width: 100%;
+  height: 750px;
+  background-image: url("s2r://panorama/images/events/muerta/treasure_assets/foreground_grass_psd.vtex");
+  background-size: cover;
+  transform: translateY( 260px );
+  blur: gaussian( 80px );
+ }
+
+ #WIPNote{
+  color: white;
+  background-color: rgb(255, 0, 136);
+  margin-top: 40px;
+  horizontal-align: center;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  letter-spacing: 1px;
+  border-radius: 3px;
+ }
+
+ .PageTitleContainer{
+
+  width: 500px;
+  flow-children: down;
+  margin-bottom: 16px;
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ .PageLabel{
+
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0px;
+  color: gradient( linear, 0% 0%, 0% 100%, from( #FFECAA ), to( #B68E56 ) );
+  color: rgba(255, 255, 255, 0.5);
+  text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.5);
+ }
+
+ .PurchaseRowDivider{
+
+  width: 100%;
+  flow-children: right;
+ }
+  .PurchaseRowDivider .Emblem{
+   width: 16px;
+   height: 16px;
+   background-image: url( "s2r://panorama/images/events/muerta/emblem_png.vtex");
+   background-size: cover;
+   vertical-align: center;
+   margin-right: 6px;
+  }
+
+  .PurchaseRowDivider .Dash{
+   height: 1px;
+   width: fill-parent-flow( 1 );
+   background-color: gradient( linear, 0% 0%, 80% 0%, from( #FFE6A655 ), to( #4B443100 ) );
+   vertical-align: center;
+  }
+
+
+
+
+
+ .TreasureButtonPrimary,.TreasureButtonSecondary{
+
+
+  border-radius: 3px;
+  padding: 10px 28px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.3);
+  background-image: url("s2r://panorama/images/events/muerta/circular_texture_png.vtex");
+  background-size: cover;
+  background-img-opacity: 0.3;
+
+  transition-property: background-color, border;
+  transition-duration: 0.1s;
+  transition-timing-function: ease;
+ }
+  .TreasureButtonPrimary Label,.TreasureButtonSecondary Label{
+   color: white;
+   font-size: 20px;
+   font-weight: semi-bold;
+   horizontal-align: center;
+   vertical-align: middle;
+
+   text-transform: uppercase;
+   text-overflow: shrink;
+   text-shadow: 0px 1px 4px #000000;
+   letter-spacing: 1px;
+
+   transition-property: transform;
+   transition-duration: 0.05s;
+   transition-timing-function: ease;
+  }
+
+  .TreasureButtonPrimary.Small,.TreasureButtonSecondary.Small{
+   padding: 6px 16px;
+   min-width: 0px;
+  }
+   .TreasureButtonPrimary.Small Label,.TreasureButtonSecondary.Small Label{
+    font-size: 16px;
+    font-weight: normal;
+   }
+
+
+  .TreasureButtonPrimary.Disabled,.TreasureButtonPrimary:disabled,.TreasureButtonSecondary.Disabled,.TreasureButtonSecondary:disabled{
+
+   saturation: 0;
+   opacity: 0.2;
+  }
+   .TreasureButtonPrimary.Disabled Label,.TreasureButtonPrimary:disabled Label,.TreasureButtonSecondary.Disabled Label,.TreasureButtonSecondary:disabled Label{
+    opacity: 0.6;
+   }
+
+
+
+ .TreasureButtonPrimary{
+
+  background-color: gradient( linear, 0% 0%, 0% 100%, from( #387d69 ), to( #225a49 ) );
+  border: 1px solid #ffffff10;
+ }
+  .TreasureButtonPrimary:hover:enabled:not(.Disabled){
+   background-color: gradient( linear, 0% 0%, 0% 100%, from( #45997F ), to( #28614F ) );
+  }
+   .TreasureButtonPrimary:hover:enabled:not(.Disabled) Label{
+    color: white;
+   }
+
+
+  .TreasureButtonPrimary:active:enabled:not(.Disabled){
+   sound: "ui_generic_button_click";
+   background-color: gradient( linear, 0% 0%, 0% 100%, from( #1D463A ), to( #35705E ) );
+  }
+   .TreasureButtonPrimary:active:enabled:not(.Disabled) Label{
+    transform: translateY( 1px );
+   }
+
+
+
+ .TreasureButtonSecondary{
+
+  background-color: gradient( linear, 0% 0%, 0% 100%, from( #122028 ), to( #0E1620 ) );
+  border: 1px solid #8bffd84e;
+ }
+  .TreasureButtonSecondary Label{
+   color: #8BFFD8;
+  }
+
+  .TreasureButtonSecondary:hover:enabled:not(.Disabled){
+   background-color: gradient( linear, 0% 0%, 0% 100%, from( #213744 ), to( #182535 ) );
+   border: 1px solid #8bffd8;
+  }
+   .TreasureButtonSecondary:hover:enabled:not(.Disabled) Label{
+    color: #FFFFFF;
+   }
+
+
+  .TreasureButtonSecondary:active:enabled:not(.Disabled){
+   sound: "ui_generic_button_click";
+   background-color: gradient( linear, 0% 0%, 0% 100%, from( #0E1620 ), to( #122028 ) );
+  }
+   .TreasureButtonSecondary:active:enabled:not(.Disabled) Label{
+    transform: translateY( 1px );
+   }
+
+
+
+ @keyframes 'GlowTreasureButtonPrimary'{
+  0%{
+   box-shadow: 0px 0px 24px #8bffd800;
+   brightness: 1;
+  }
+
+  100%{
+   box-shadow: 0px 0px 32px #8bffd822;
+   brightness: 2.5;
+  }
+ }
+
+ @keyframes 'GlowTreasureButtonSecondary'{
+  0%{
+   box-shadow: 0px 0px 24px #8bffd800;
+   brightness: 1;
+  }
+
+  100%{
+   box-shadow: 0px 0px 32px #8bffd8;
+   brightness: 2.2;
+  }
+ }
+
+ @keyframes 'GlowTreasureText'{
+  0%{
+   text-shadow: 0px 0px 6px #8bffd800;
+   brightness: 1;
+  }
+
+  100%{
+   text-shadow: 0px 0px 12px #8bffd822;
+   brightness: 2.5;
+  }
+ }
+
+
+
+ .TreasureTextLink{
+
+
+  border-radius: 3px;
+  flow-children: right;
+ }
+  .TreasureTextLink Image{
+   wash-color: #8BFFD8;
+   width: 20px;
+   height: 20px;
+
+   transition-property: wash-color;
+   transition-duration: 0.1s;
+   transition-timing-function: ease;
+  }
+
+  .TreasureTextLink Label{
+   color: #8bffd8;
+
+   transition-property: color;
+   transition-duration: 0.1s;
+   transition-timing-function: ease;
+  }
+
+
+   .TreasureTextLink.Small Image{
+    width: 16px;
+    height: 16px;
+   }
+
+   .TreasureTextLink.Small Label{
+    font-size: 16px;
+    font-weight: normal;
+   }
+
+
+  .TreasureTextLink:hover:enabled:not(.Disabled){
+   color: white;
+  }
+   .TreasureTextLink:hover:enabled:not(.Disabled) Image{
+    wash-color: white;
+   }
+
+   .TreasureTextLink:hover:enabled:not(.Disabled) Label{
+    color: #FFFFFF;
+   }
+
+
+  .TreasureTextLink:active:enabled:not(.Disabled){
+   sound: "ui_generic_button_click";
+  }
+
+
+
+
+
+ #TreasureRarityFilterButtons,#TreasureRarityFilterButtonsTradeUp{
+
+
+  flow-children: right;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 80px;
+  padding: 4px 0px;
+  box-shadow: inset 0px 2px 8px -2px rgba(0, 0, 0, 0.4);
+ }
+  #TreasureRarityFilterButtons .TreasureRarityFilterButton,#TreasureRarityFilterButtonsTradeUp .TreasureRarityFilterButton{
+   padding: 8px 32px;
+   margin: 0px 4px;
+   border-radius: 80px;
+   box-shadow: 0px 0px 0px -2px #00000000;
+   background-size: cover;
+   background-img-opacity: 0.3;
+   border: 1px solid #FFFFFF00;
+
+   transition-property: box-shadow, background-color, border, transform;
+   transition-duration: 0.1s;
+   transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
+
+   transform: none;
+  }
+   #TreasureRarityFilterButtons .TreasureRarityFilterButton:hover,#TreasureRarityFilterButtonsTradeUp .TreasureRarityFilterButton:hover{
+    background-color: #00000046;
+   }
+
+   #TreasureRarityFilterButtons .TreasureRarityFilterButton:active,#TreasureRarityFilterButtonsTradeUp .TreasureRarityFilterButton:active{
+    transform: scale3d(0.96, 0.96, 1) translateY(1px);
+   }
+
+   #TreasureRarityFilterButtons .TreasureRarityFilterButton.Rarity__Crate_Tier1,#TreasureRarityFilterButtonsTradeUp .TreasureRarityFilterButton.Rarity__Crate_Tier1{
+    background-image: url("s2r://panorama/images/events/muerta/circular_texture_png.vtex");
+   }#TreasureRarityFilterButtons .TreasureRarityFilterButton.Rarity__Crate_Tier1 Label,#TreasureRarityFilterButtonsTradeUp .TreasureRarityFilterButton.Rarity__Crate_Tier1 Label{
+     color: CrateTierOne_textcolor;
+    }
+
+
+   #TreasureRarityFilterButtons .TreasureRarityFilterButton.Rarity__Crate_Tier2,#TreasureRarityFilterButtonsTradeUp .TreasureRarityFilterButton.Rarity__Crate_Tier2{
+    background-image: url("s2r://panorama/images/events/muerta/circular_texture_png.vtex");
+   }#TreasureRarityFilterButtons .TreasureRarityFilterButton.Rarity__Crate_Tier2 Label,#TreasureRarityFilterButtonsTradeUp .TreasureRarityFilterButton.Rarity__Crate_Tier2 Label{
+     color: CrateTierTwo_textcolor;
+    }
+
+
+   #TreasureRarityFilterButtons .TreasureRarityFilterButton.Rarity__Crate_Tier3,#TreasureRarityFilterButtonsTradeUp .TreasureRarityFilterButton.Rarity__Crate_Tier3{
+    background-image: url("s2r://panorama/images/events/muerta/circular_texture_png.vtex");
+   }#TreasureRarityFilterButtons .TreasureRarityFilterButton.Rarity__Crate_Tier3 Label,#TreasureRarityFilterButtonsTradeUp .TreasureRarityFilterButton.Rarity__Crate_Tier3 Label{
+     color: CrateTierThree_textcolor;
+    }
+
+
+   #TreasureRarityFilterButtons .TreasureRarityFilterButton Label,#TreasureRarityFilterButtonsTradeUp .TreasureRarityFilterButton Label{
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 17px;
+    text-shadow: 0px 2px 6px black;
+    transition-property: color, text-shadow;
+    transition-duration: 0.2s;
+   }
+
+
+    .FilterCrate_Tier1 #TreasureRarityFilterButtons .TreasureRarityFilterButton.Rarity__Crate_Tier1,.FilterCrate_Tier1 #TreasureRarityFilterButtonsTradeUp .TreasureRarityFilterButton.Rarity__Crate_Tier1{
+     background-color: CrateTierOne_textcolor;
+     box-shadow: 0px 4px 16px -2px #000000DD;
+     border: 1px solid #FFFFFF22;
+    }
+     .FilterCrate_Tier1 #TreasureRarityFilterButtons .TreasureRarityFilterButton.Rarity__Crate_Tier1 Label,.FilterCrate_Tier1 #TreasureRarityFilterButtonsTradeUp .TreasureRarityFilterButton.Rarity__Crate_Tier1 Label{
+      color: white;
+     }
+
+
+
+
+    .FilterCrate_Tier2 #TreasureRarityFilterButtons .TreasureRarityFilterButton.Rarity__Crate_Tier2,.FilterCrate_Tier2 #TreasureRarityFilterButtonsTradeUp .TreasureRarityFilterButton.Rarity__Crate_Tier2{
+     background-color: CrateTierTwo_textcolor;
+     box-shadow: 0px 4px 16px -2px #000000DD;
+     border: 1px solid #FFFFFF22;
+    }
+     .FilterCrate_Tier2 #TreasureRarityFilterButtons .TreasureRarityFilterButton.Rarity__Crate_Tier2 Label,.FilterCrate_Tier2 #TreasureRarityFilterButtonsTradeUp .TreasureRarityFilterButton.Rarity__Crate_Tier2 Label{
+      color: white;
+     }
+
+
+
+
+    .FilterCrate_Tier3 #TreasureRarityFilterButtons .TreasureRarityFilterButton.Rarity__Crate_Tier3,.FilterCrate_Tier3 #TreasureRarityFilterButtonsTradeUp .TreasureRarityFilterButton.Rarity__Crate_Tier3{
+     background-color: CrateTierThree_textcolor;
+     box-shadow: 0px 4px 16px -2px #000000DD;
+     border: 1px solid #FFFFFF22;
+    }
+     .FilterCrate_Tier3 #TreasureRarityFilterButtons .TreasureRarityFilterButton.Rarity__Crate_Tier3 Label,.FilterCrate_Tier3 #TreasureRarityFilterButtonsTradeUp .TreasureRarityFilterButton.Rarity__Crate_Tier3 Label{
+      color: white;
+}

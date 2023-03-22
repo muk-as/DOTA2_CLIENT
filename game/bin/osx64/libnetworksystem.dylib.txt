@@ -15,8 +15,10 @@
 0" does not declare $1 as an extension number
 0$1 = $2
 0$1$2 $3 = $4
-00000000000000000000000000 0000P00`@0@@0@00000
-00000000@@0@pp00000000000000000000000000` 0000000000000@000000 00000$&##2####)000000004#%,!)!!&#,000
+0.00.0
+00000000000000000000000000 0000P00`@@0@@0@00000
+000000005.,$!/&#.000
+00000000@@0@pp00000000000000000000000000` 0000000000000@000000 0000>#1
 00010203040506070809101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899
 0123456789abcdef
 0@@00000
@@ -47,6 +49,7 @@
 12CMsgVector2D
 12CNETMsg_Tick
 12CSVCMsg_Menu
+13CMsgTransform
 13CNetMessagePBILi35E25CCLCMsg_RconServerDetailsL13SignonGroup_t0EL19NetChannelBufType_t1ELb0EE
 13CNetMessagePBILi3E23CNETMsg_SplitScreenUserL13SignonGroup_t11EL19NetChannelBufType_t1ELb0EE
 13CNetMessagePBILin1E19NetMessagePacketEndL13SignonGroup_t11EL19NetChannelBufType_t1ELb0EE
@@ -59,10 +62,12 @@
 14CBaseAppSystemI14INetworkSystemE
 14CMsgIPCAddress
 14CMsgPlayerInfo
+14CMsgQuaternion
 14CMsgServerPeer
 14CMsgVoiceAudio
 14CNetworkSystem
 14CSVCMsg_Sounds
+14IErrorListener
 14INetworkSystem
 15CMsg_CVars_CVar
 15CSVCMsg_SetView
@@ -70,6 +75,8 @@
 15CTier1AppSystemI14INetworkSystemLx0EE
 15CTier2AppSystemI14INetworkSystemLx0EE
 15INetChannelInfo
+16777215"R
+16777215B
 16CNetworkMessages
 16CSVCMsg_BSPDecal
 16CSVCMsg_FixAngle
@@ -142,6 +149,7 @@
 20CCLCMsg_ServerStatus
 20CNETMsg_DebugOverlay
 20CNetworkSerializerPB
+20CPostConnectCallback
 20CRefCountServiceBaseI6CRefMTE
 20CSVCMsg_CmdKeyValues
 20CSVCMsg_GetCvarValue
@@ -169,6 +177,9 @@
 22CSVCMsg_PacketReliable
 22CSchemaInstallCallback
 23CCLCMsg_LoadingProgress
+23CKV3TransferContextBase
+23CKV3TransferLoadContext
+23CKV3TransferSaveContext
 23CNETMsg_SpawnGroup_Load
 23CNETMsg_SplitScreenUser
 23CSVCMsg_GameEvent_key_t
@@ -226,6 +237,7 @@
 32NetMessageSplitscreenUserChanged
 3333333
 33333333H
+33333333L
 33CNETMsg_SpawnGroup_ManifestUpdate
 33CSchemaRegistration_networksystem
 34CNETMsg_SpawnGroup_SetCreationTick
@@ -237,13 +249,14 @@
 41CFlattenedSerializerReadFieldListListener
 43CSVCMsg_PacketEntities_alternate_baseline_t
 43CSVCMsg_PacketEntities_command_queue_info_t
+4444<*Z
 4JfA;4Hu
+4Vf;4Su
 4d classes
 5basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEE
 5d %-20s : [%-5d -> %-5d] %-5s bits:  %-32s %-80s : '%s' %s
 60.60s %6.6s %15.15s %5.5s %10.10s
 60.60s %6.6s %15.15s %5d %10d
-6bV6``V04
 75s %-75s offset %10.10s %9.9s %s
 7H;1u H
 8#GameUI_Disconnect_LocalProblem_HostedServerPrimaryRelay
@@ -254,26 +267,28 @@
 8CMsgRGBA
 8CNetChan
 8CUtlSlot
-8D956R
-8IcG0L
 8NETWORK_DISCONNECT_LOCALPROBLEM_HOSTEDSERVERPRIMARYRELAY
-8ZGpXSI
 8[A\A]A^A
+8basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE
 9basic_ostringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE
 A file with this name is already in the pool
 A protocol message was rejected because it was too big (more than
 A9D$Dr6
-A;FDt\H
+A;D$h~DH
+A;Fh~DH
+A;Gx~UH
+A;G|~LH
 A;N(u-A
 A;_0u:H
 A;_0u>H
-AM9&vR
+A;_\uCD
+A;_h~AH
 APPSYSTEM: In ConnectInterfaces(), s_nRegistrationCount is %d
-ARARARARARARARARARARARARARARARARARARARARARARARARARARAp
-ARARARARARAp
+ARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARASBp
 ARAUASASASASASASASB
-ATARARATARA[ASKSE
-AUASASASASASASASASASASASB
+ASBRARAp
+ATARARATA\Ap
+AUASASASASASASASASASASASA
 AUASASASASASB
 AUASASASB
 AUASB`)ASASBp
@@ -282,7 +297,6 @@ AWAVATSA
 AWAVATSD
 AWAVATSE1
 AWAVATSH
-AWAVATSH9
 AWAVATSI
 AWAVATSL
 AWAVATSLc?M
@@ -299,8 +313,8 @@ AWAVAUATSPD
 AWAVAUATSPE
 AWAVAUATSPH
 AWAVAUATSPH9
+AWAVAUATSPHc
 AWAVAUATSPHcG(H
-AWAVAUATSPHc_ H
 AWAVAUATSPI
 AWAVAUATSPL
 AWAVAUATSPLc
@@ -310,16 +324,18 @@ AWAVAUATSPf
 AWAVSP1
 AWAVSPA
 AWAVSPD
-AWAVSPE
 AWAVSPH
 AWAVSPH9
 AWAVSPI
 AWAVSPL
+AWAVSPLc
+AWAVSPM
 AWAVSPf
-A[A\AUARAWA
+A[ATCSBSB]0
 A\A]A^A
-A`0ARARARARARARARARARARARARARARARARARARARARARARARARARARARA
-A`FARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARAYARA
+A`"ARARARARARAp
+A`TARARARARARARARARARARARARARARARARARARARARARARARARARARARARAp
+A`dARARARARARARARARARARARARARARARARARARARARARARARARARARARAXAp
 Accepting Steam Net connection %s
 Activates/deactivates net message validation
 Actual
@@ -344,6 +360,7 @@ AnimGraphEditorUtils001
 AnimationSystemUtils_001
 AnimationSystem_001
 Annotation
+Ap@RBSEp
 ApplyOverrides_R:  couldn't find field from schema %s::%s
 AssetBrowserSystem_001
 AssetPreviewSystem_001
@@ -380,10 +397,11 @@ BuildMergedSerializedEntity:  ignoring %s, was in previous state only, now outsi
 BuildMergedSerializedEntity:  problem writing %s:  %d bits [%d to %d] is < 1 bit
 BuildOutputString:  change %s to %d
 Builtin
-C$;CXuJL
+C$;CXuHL
 C(A;F(u
 C,A;F,u
 C0[A\A^A
+C8D9hXtPH
 C8[A\A^A
 C8fA;G8t
 C<A:F<u
@@ -410,7 +428,7 @@ CCLCMsg_VoiceData
 CCommand::Tokenize: Encountered command which overflows the tokenizer buffer.. Skipping
 CDeltaCalculator::FieldCalcDelta fromBits
 CDeltaCalculator::FieldCalcDelta toBits
-CEHandleNetworkableInt"R
+CEHandleNetworkableInt
 CEntityIndex
 CEntityMsg
 CEntitySystem::BuildEntityNetworking (%s build of %s) took %.3f msecs for %d out of %d classes
@@ -440,6 +458,7 @@ CFlattenedSerializer::WriteFieldList fieldDataBuf
 CFlattenedSerializer::[ent %d] Decode path %s array index %d out of range %d for field %s::%s [%d] %s
 CFlattenedSerializers::BuildMergedSerializedEntity fieldDataBuf
 CFlattenedSerializers::SpewSerializer: called with NULL serializer
+CHECK failed: !HasUnknownFieldsTag
 CHECK failed: !InRealOneof(field
 CHECK failed: !TableEntryIsTree(b) && !TableEntryIsTree(b ^ 1
 CHECK failed: !checkpoints_.empty
@@ -449,29 +468,31 @@ CHECK failed: !extension->is_repeated
 CHECK failed: !failed
 CHECK failed: !field->options().weak
 CHECK failed: !fields_.empty
-CHECK failed: !file
 CHECK failed: !file->finished_building
 CHECK failed: !had_error
-CHECK failed: !name
+CHECK failed: !has_allocated
+CHECK failed: !is_message_owned || arena != nullptr
 CHECK failed: !once
 CHECK failed: !oneof_descriptor->is_synthetic
-CHECK failed: !out.HadError
+CHECK failed: !same_message_owned_arena && !internal::IsDescendant(to, from
 CHECK failed: !schema_.InRealOneof(field) || HasOneofField(message, field
-CHECK failed: !tagged_ptr_.IsTagged
 CHECK failed: !tree->empty
-CHECK failed: !value || options_ != nullptr
-CHECK failed: !value || source_code_info_ != nullptr
-CHECK failed: (&from) != (this
+CHECK failed: !value || _impl_.options_ != nullptr
+CHECK failed: !value || _impl_.source_code_info_ != nullptr
+CHECK failed: (&from) != (_this
 CHECK failed: (&from) != (to
 CHECK failed: (&other) != (this
 CHECK failed: ((*extension).is_repeated ? FieldDescriptor::LABEL_REPEATED : FieldDescriptor::LABEL_OPTIONAL) == (FieldDescriptor::LABEL_OPTIONAL
 CHECK failed: ((*extension).is_repeated ? FieldDescriptor::LABEL_REPEATED : FieldDescriptor::LABEL_OPTIONAL) == (FieldDescriptor::LABEL_REPEATED
 CHECK failed: ((*extension).is_repeated ? REPEATED_FIELD : OPTIONAL_FIELD) == (OPTIONAL_FIELD
 CHECK failed: ((*extension).is_repeated ? REPEATED_FIELD : OPTIONAL_FIELD) == (REPEATED_FIELD
+CHECK failed: ((lhs_donated_array[0] & 0x1u) == 0) == ((rhs_donated_array[0] & 0x1u) == 0
 CHECK failed: (*buffer) == (first_byte
 CHECK failed: (0) == (BufferSize
 CHECK failed: (FieldDescriptor::TypeToCppType(field->type())) == (value.type
+CHECK failed: (GetOwningArena()) == (other->GetOwningArena
 CHECK failed: (TYPE_LENGTH_DELIMITED) == (type
+CHECK failed: (arena_) == (other->arena
 CHECK failed: (bucket_index_ % 2) == (0u
 CHECK failed: (bucket_index_ & 1) == (0u
 CHECK failed: (buffer[0]) >= (128
@@ -502,6 +523,7 @@ CHECK failed: (cpp_type(extension->type)) == (WireFormatLite::CPPTYPE_MESSAGE
 CHECK failed: (cpp_type(extension->type)) == (WireFormatLite::CPPTYPE_STRING
 CHECK failed: (cpp_type(extension->type)) == (WireFormatLite::CPPTYPE_UINT32
 CHECK failed: (cpp_type(extension->type)) == (WireFormatLite::CPPTYPE_UINT64
+CHECK failed: (ctx.LastTag()) != (1
 CHECK failed: (current_size_) > (0
 CHECK failed: (descriptor->file()->pool()) == (DescriptorPool::generated_pool
 CHECK failed: (digits) < (100
@@ -511,30 +533,41 @@ CHECK failed: (extension->type) == (other_extension.type
 CHECK failed: (field->message_type()) == (desc
 CHECK failed: (field->options().ctype()) == (ctype
 CHECK failed: (field->type()) == (FieldDescriptor::TYPE_BYTES
+CHECK failed: (field->type()) == (FieldDescriptor::TYPE_MESSAGE
 CHECK failed: (field_count()) == (2
 CHECK failed: (first_byte & 0x80) == (0x80
 CHECK failed: (first_byte_or_zero) != (0
 CHECK failed: (first_byte_or_zero) == (buffer_[0
+CHECK failed: (from) != (to
 CHECK failed: (from.GetDescriptor()) == (descriptor
+CHECK failed: (full_name) == (symbol.full_name
 CHECK failed: (has_bit_index) != (~0u
 CHECK failed: (index) < (current_size
+CHECK failed: (index) > (0
 CHECK failed: (index) >= (0
 CHECK failed: (internal::AlignUpTo8(n)) == (n
 CHECK failed: (it.m_) == (this
 CHECK failed: (kBlockHeaderSize + ThreadSafeArena::kSerialArenaSize) <= (mem.size
 CHECK failed: (last_returned_size_) > (0
+CHECK failed: (limit_) > (0
 CHECK failed: (limit_) >= (ptr
+CHECK failed: (message1->GetOwningArena()) == (message2->GetOwningArena
 CHECK failed: (message1->GetReflection()) == (this
 CHECK failed: (message2->GetReflection()) == (this
 CHECK failed: (message_type) == (field->message_type
 CHECK failed: (min_bytes) <= (std::numeric_limits<size_t>::max() - SerialArena::kBlockHeaderSize
-CHECK failed: (n & (n - 1)) == (0
+CHECK failed: (n & (n - 1)) == (0u
 CHECK failed: (n) >= (0
+CHECK failed: (name) == (symbol.parent_name_key().second
 CHECK failed: (new_num_buckets) >= (kMinTableSize
-CHECK failed: (new_size) > (kRepeatedFieldUpperClampLimit
+CHECK failed: (num_elements) <= (std::numeric_limits<size_t>::max() / sizeof(T
 CHECK failed: (option_field->type()) == (FieldDescriptor::TYPE_GROUP
 CHECK failed: (out) == (begin + result.size
+CHECK failed: (out_oneof_decl.fields_ + out_oneof_decl.field_count_) == (message->field(i
 CHECK failed: (overrun) <= (kSlopBytes
+CHECK failed: (overrun) >= (0
+CHECK failed: (parent) == (symbol.parent_name_key().first
+CHECK failed: (reinterpret_cast<uintptr_t>(p) & kMask) == (0UL
 CHECK failed: (result.bucket_index_) == (b & ~static_cast<size_type>(1
 CHECK failed: (size) <= (6
 CHECK failed: (size) <= (static_cast<size_t>(2147483647
@@ -546,35 +579,42 @@ CHECK failed: (target - output->data()) == (output->size
 CHECK failed: (temp[0]) == ('1
 CHECK failed: (temp[size - 1]) == ('5
 CHECK failed: (to->GetDescriptor()) == (descriptor
-CHECK failed: (total_size_ - current_size_) >= (n
+CHECK failed: (total_.template Get<U>()) == (used_.template Get<U
+CHECK failed: (total_size_ - current_size_) >= (elements
 CHECK failed: (total_size_) > (0
 CHECK failed: (type) != (WireFormatLite::TYPE_ENUM
 CHECK failed: (type) != (WireFormatLite::TYPE_GROUP
 CHECK failed: (type) != (WireFormatLite::TYPE_MESSAGE
 CHECK failed: (uintptr_t((a).data() - (*result).data())) > (uintptr_t((*result).size
+CHECK failed: (used) <= (total_.template Get<TypeToUse
+CHECK failed: *from != nullptr
 CHECK failed: *ptr
+CHECK failed: *to == nullptr
 CHECK failed: GeneratedDatabase()->Add(encoded_file_descriptor, size
-CHECK failed: GetArena() == nullptr
-CHECK failed: GetArena() == other->GetArena
+CHECK failed: GetArenaForAllocation() == nullptr
 CHECK failed: HasExtensionSet
 CHECK failed: HasHasbits
-CHECK failed: IsDefault(default_value
+CHECK failed: HasInlinedString
+CHECK failed: IsDefault
 CHECK failed: IsInitialized
 CHECK failed: IsMapValid() && other.IsMapValid
 CHECK failed: TableEntryIsNonEmptyList(b
 CHECK failed: TableEntryIsTree(b
+CHECK failed: _impl_.options_ != nullptr
+CHECK failed: _impl_.source_code_info_ != nullptr
 CHECK failed: a.type() == b.type
 CHECK failed: allow_unknown_field_ || allow_unknown_extension_ || reserved_field
-CHECK failed: arena != nullptr
+CHECK failed: arena_ == nullptr
 CHECK failed: builder
 CHECK failed: checkpoints_.empty
-CHECK failed: cur
 CHECK failed: descriptor
 CHECK failed: dynamic.get() != nullptr
-CHECK failed: enum_type_->value_count
+CHECK failed: enum_type->value_count
 CHECK failed: errors == nullptr
-CHECK failed: extension != NULL
+CHECK failed: extension != nullptr
 CHECK failed: extension->is_repeated
+CHECK failed: extension->type > 0 && extension->type <= WireFormatLite::MAX_FIELD_TYPE
+CHECK failed: false
 CHECK failed: field != nullptr
 CHECK failed: field->cpp_type() == cpp_type || (field->cpp_type() == FieldDescriptor::CPPTYPE_ENUM && cpp_type == FieldDescriptor::CPPTYPE_INT32
 CHECK failed: field->is_repeated
@@ -582,17 +622,18 @@ CHECK failed: field->is_repeated() || (index == -1
 CHECK failed: file != nullptr
 CHECK failed: file && file->pool
 CHECK failed: file()->finished_building_ == true
+CHECK failed: file->finished_building
 CHECK failed: file->pool_->lazily_build_dependencies
-CHECK failed: file_->finished_building
 CHECK failed: find(node->kv.first) == end
 CHECK failed: finished_building_ == true
 CHECK failed: had_errors_ || recursion_limit_ == initial_recursion_limit
+CHECK failed: has_allocated
 CHECK failed: has_default_value
 CHECK failed: index_of_first_non_null_ == num_buckets_ || table_[index_of_first_non_null_] != nullptr
+CHECK failed: is_extension
 CHECK failed: is_prototype
 CHECK failed: is_repeated
 CHECK failed: limit >= 0 && limit <= INT_MAX - kSlopBytes
-CHECK failed: limit_ > 0
 CHECK failed: limit_ > kSlopBytes
 CHECK failed: limit_end_ == buffer_end
 CHECK failed: limit_end_ == buffer_end_ + (std::min)(0, limit
@@ -600,10 +641,9 @@ CHECK failed: m_->index_of_first_non_null_ == m_->num_buckets_ || m_->table_[m_-
 CHECK failed: n <= size
 CHECK failed: n >= kMinTableSize
 CHECK failed: node_ != nullptr && m_ != nullptr
-CHECK failed: options_ != nullptr
 CHECK failed: options_descriptor
 CHECK failed: original_uninterpreted_options_field != nullptr
-CHECK failed: other->GetArena() != GetArena
+CHECK failed: other->GetOwningArena() != GetOwningArena
 CHECK failed: out_location != nullptr
 CHECK failed: output
 CHECK failed: output->message_info.prototype != nullptr
@@ -612,29 +652,37 @@ CHECK failed: overrun < limit
 CHECK failed: overrun <= kSlopBytes
 CHECK failed: overrun >= 0
 CHECK failed: overrun >= 0 && overrun <= kSlopBytes
-CHECK failed: owning_arena == nullptr
-CHECK failed: prototype != NULL
+CHECK failed: p != nullptr
+CHECK failed: prototype != nullptr
+CHECK failed: ptr != nullptr
 CHECK failed: ptr < end
+CHECK failed: ptr <= buffer_end_ + kSlopBytes
 CHECK failed: ptr <= end_ + kSlopBytes
 CHECK failed: reflection
+CHECK failed: rep
+CHECK failed: repeated_field_ == nullptr
 CHECK failed: s >= 0
 CHECK failed: schema_.HasHasbits
+CHECK failed: schema_.HasInlinedString
 CHECK failed: size > 0
 CHECK failed: size > chunk_size
+CHECK failed: size >= 16
 CHECK failed: size_ == 0
 CHECK failed: size_ > kSlopBytes
 CHECK failed: snprintf_result > 0 && snprintf_result < kDoubleToBufferSize
 CHECK failed: snprintf_result > 0 && snprintf_result < kFloatToBufferSize
-CHECK failed: source_code_info_ != nullptr
+CHECK failed: sub_message == nullptr || sub_message->GetOwningArena() == nullptr || sub_message->GetOwningArena() == message->GetArenaForAllocation
 CHECK failed: table_[b] == table_[b + 1] && (b & 1) == 0
-CHECK failed: tagged_ptr_.UnsafeGet() != nullptr
+CHECK failed: tagged_ptr_.Get() != nullptr
+CHECK failed: tagged_ptr_.IsMutable
 CHECK failed: target + size == res
 CHECK failed: target_ != NULL
 CHECK failed: this != other
+CHECK failed: this != rhs
 CHECK failed: this == other_mutator
 CHECK failed: type > 0 && type <= WireFormatLite::MAX_FIELD_TYPE
 CHECK failed: uninterpreted_options_field != nullptr
-CHECK failed: value != nullptr
+CHECK failed: unknown_fields->SerializeToString(outstr
 CHECK failed: z.first != NULL
 CLC_Messages
 CMemAllocSystemInitialize
@@ -643,11 +691,14 @@ CMsgIPCAddress
 CMsgPlayerInfo
 CMsgQAngle
 CMsgQAngle"4
+CMsgQuaternion
+CMsgQuaternion"6
 CMsgRGBA
 CMsgServerNetworkStats
 CMsgServerNetworkStats.Player
 CMsgServerNetworkStats.Port
 CMsgServerPeer
+CMsgTransform
 CMsgVector
 CMsgVector"O
 CMsgVector2D
@@ -715,7 +766,6 @@ CPPTYPE_STRING
 CPPTYPE_UINT32
 CPPTYPE_UINT64
 CPlayerSlot
-CPlayerSlot"9
 CRC64_ProcessBuffer
 CSVCMsgList_GameEvents
 CSVCMsgList_GameEvents.event_t
@@ -814,6 +864,7 @@ Cannot use priority equal to NETWORK_FIELD_CHANGE_DEFAULT_PRIORITY
 CannotBeNetworked        = %s
 Capture active, %s samples written
 Captures low-level data to replay path culling algorithm behavior in controlled unit test environment
+Cast of %s loses value information (returning %s
 Category Mask            = %08X
 ChangeAccessorFieldPathIndex_t
 Class                    = '%s
@@ -845,8 +896,6 @@ CreateHostedDedicatedServerListenSocket for socket '%s' failed /+/ port %u vport
 CreateInterface
 CreateSerializedEntityBlob:  removing %s from field path list, culled by another change
 Created poll group for socket '%s
-CxD9hPtPH
-D$(IcL
 D$,E+D$0A
 D5LI;D
 D9k8t_;Ch
@@ -881,6 +930,8 @@ Dump non-loopback udp only
 E LchHD
 E Lcx`M
 E;w0uHH
+E;wLuCE
+E;wl~AH
 EDA;EHu
 ENetworkDisconnectionReason
 EQueryCvarValueStatus
@@ -923,6 +974,7 @@ EstablishNewSteamNetConnection ConnectByIPv4Address(%s) failed
 EstablishNewSteamNetConnection ConnectP2P(%s) failed
 Established cacheable shared Steam Net Connection to '%s
 Exceeded max number proxies in CFlattenedSerializer::BuildHierarchy
+Exceeds Maximum Package Depth
 Executing queued command: '%s
 Expanded map entry type
 Expect a decimal number, got
@@ -939,7 +991,7 @@ Expecting NetMessageInfo_t::m_pProtobufBinding to be non-NULL
 Explicit default values are not allowed in proto3
 Extension
 Extension conflicts with extension already in database: extend
-Extension factory's GetPrototype() returned NULL for extension
+Extension factory's GetPrototype() returned nullptr; extension
 Extension number $0 has already been used in "$1" by extension "$2
 Extension number $0 has already been used in "$1" by extension "$2" defined in $3
 Extension numbers cannot be greater than $0
@@ -955,8 +1007,11 @@ Extensions in proto3 are only allowed for defining options
 Extensions of MessageSets must be optional messages
 Extensions to non-lite types can only be declared in non-lite files.  Note that you cannot extend a non-lite type to contain a lite type, but the reverse is allowed
 Extra connection [%s
+F H+p(H
 F,E+F0A
+F0I;F(sAH
 F4A;F8
+F8Lc`\M
 FAKE array size
 FAKE pointer
 FATAL ERROR: unable to register all schema data: %s
@@ -1030,14 +1085,18 @@ FontManager_001
 For network encoding stats, provide a notes field if field change count is above this many standard deviations for the average field change counts for the serializer
 For servers behind NAT/DHCP meant to be exposed to the public internet, this is the public facing ip address string: ("x.x.x.x
 Found invalid proto option data for
-FxLc`XM
+G H+x(H
+G Mcw$D9
+G$Mcw(D9
 G(H;F(t5H
+G(Mcw,D9
 G,;G0tE
 G,;G0tH
+G,Mcw0D9
 G4A;F4u
 G@H+G8I
 GN6google8protobuf2io20ZeroCopyOutputStreamE
-GPH+x(H
+GP[A\A^A
 G[A\A^A
 GameResourceServiceClientV001
 GameResourceServiceServerV001
@@ -1178,7 +1237,8 @@ Group                    = '%s
 Group ID                 = %u
 GroupID
 Groups are not supported in proto3 syntax
-H+K0HcRhH
+H*NLFPFFLF
+H+N0HcR
 H+~ tyI
 H;A0urH
 H;C@t8I
@@ -1198,21 +1258,7 @@ Hex and octal numbers must be integers
 Host game server ip
 HostStateMgr001
 I+~8tQL
-I96v"IcG
-I96v"IcG4
-I96v"IcG8
-I96v"IcGL
-I96v(IcG
-I96v,IcG
-I96v/IcG
-I96v/IcGH
-I96v<IcG
-I96v<IcG0
-I96vIIcG4
-I97v"IcF0
-I97vQHc
-I97v_IcF
-I;GPtiH
+I;D$PtjH
 ID                       = %u
 IDEMPOTENCY_UNKNOWN
 IDEMPOTENT
@@ -1222,14 +1268,14 @@ INetChannel::SetCategories: Network category wasn't registered
 INetworkSystem::RegisterNetworkCategory: Attempted to register category %u twice (debug name: %s and %s
 INetworkSystem::RegisterNetworkCategory: all categories must have ids between 0-31
 IcD$(I9
+IcD$0H9
 IcD$0I9
-IcD$HI9
+IcD$4H9
 IcD$LfA
 IcD$XI9
 IcD$hH9
 IcD$hI9
 IcL$0H9
-IcL$X9
 IdempotencyLevel
 If set, only net_showmsg spew for data inbound on this socket name e.g. client, server, etc
 If this is intended, set 'option allow_alias = true;' to the enum definition
@@ -1249,7 +1295,6 @@ InputSystemVersion001
 InstallSchemaBindings
 Integer out of range
 Intentionally vague touch behavior for %p
-InternalSerialize
 Interpreting non ascii codepoint %d
 Invalid
 Invalid control characters encountered in text
@@ -1274,13 +1319,10 @@ InvokeMiniDumpHandler
 JS_NORMAL
 JS_NUMBER
 JS_STRING
-JcD8DH9
 Key in map fields cannot be enum types
 Key in map fields cannot be float/double, bytes or message types
 KeyValueCache001
 L$,E+L$0A
-L$@IcT$8
-L9"v$IcG@A
 L;sxtKL
 L?333?32CNetworkFieldSerializerAllocator
 LABEL_OPTIONAL
@@ -1303,47 +1345,7 @@ LoggingSystem_Log
 LoggingSystem_RegisterLoggingChannel
 LookupMapValue
 Loss:    avg out %.1f, in %.1f
-M9&v IcG A
-M9&v IcG(A
-M9&v IcG8A
-M9&v#IcG$A
-M9&v#IcG(A
-M9&v$IcG$A
-M9&v$IcG(A
-M9&v$IcG,A
-M9&v$IcG0A
-M9&v$IcG4A
-M9&v$IcGhA
-M9&v$IcGlA
-M9&v*IcGPA
-M9&v*IcGTA
-M9&v*IcG`A
-M9&v*IcGdA
-M9&v2IcG$A
-M9&v7IcG,A
-M9&v7IcGDA
-M9&vFIcG A
-M9&vFIcG$A
-M9&vFIcG(A
-M9&vFIcG,A
-M9&vFIcG4A
-M9&vGIcG(A
-M9&vHIcG<A
-M9&vMIcG\A
-M9&vVIcG(A
-M9&vZIcG@A
-M9&vfIcG$A
-M9&vnIcGpA
-M9&voIcG<A
-M9(vbHc
-M9,$vpL
-M9,$v|L
-M9.vGIcG8A
-M9/v"IcFHA
-M9/v"IcFLA
-M9/v"IcFXA
-M9/v8IcFPA
-M9>v`Hc
+M9'v_Hc
 MATCHFRAMEWORK_001
 MIsBoxedFloatType
 MIsBoxedIntegerType
@@ -1460,6 +1462,7 @@ N6google8protobuf10TextFormat21FastFieldValuePrinterE
 N6google8protobuf10TextFormat6FinderE
 N6google8protobuf10TextFormat6Parser10ParserImpl20ParserErrorCollectorE
 N6google8protobuf10TextFormat7Printer13TextGeneratorE
+N6google8protobuf10TextFormat7Printer28DebugStringFieldValuePrinterE
 N6google8protobuf11EnumOptionsE
 N6google8protobuf11FileOptionsE
 N6google8protobuf11MessageLiteE
@@ -1501,6 +1504,7 @@ N6google8protobuf21MethodDescriptorProtoE
 N6google8protobuf22ServiceDescriptorProtoE
 N6google8protobuf23SourceCodeInfo_LocationE
 N6google8protobuf24EnumValueDescriptorProtoE
+N6google8protobuf24ZeroCopyCodedInputStreamE
 N6google8protobuf25EncodedDescriptorDatabaseE
 N6google8protobuf28GeneratedCodeInfo_AnnotationE
 N6google8protobuf28UninterpretedOption_NamePartE
@@ -1514,8 +1518,8 @@ N6google8protobuf37EnumDescriptorProto_EnumReservedRangeE
 N6google8protobuf7MessageE
 N6google8protobuf8internal12ExtensionSet8KeyValueE
 N6google8protobuf8internal12MapFieldBaseE
+N6google8protobuf8internal14ZeroFieldsBaseE
 N6google8protobuf8internal15DynamicMapFieldE
-N6google8protobuf8internal15ExtensionFinderE
 N6google8protobuf8internal16InternalMetadata13ContainerBaseE
 N6google8protobuf8internal16InternalMetadata9ContainerINS0_15UnknownFieldSetEEE
 N6google8protobuf8internal16MapFieldAccessorE
@@ -1531,8 +1535,6 @@ N6google8protobuf8internal21RepeatedFieldAccessorE
 N6google8protobuf8internal23RepeatedPtrFieldWrapperINS0_7MessageEEE
 N6google8protobuf8internal23RepeatedPtrFieldWrapperINSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEEEE
 N6google8protobuf8internal23TypeDefinedMapFieldBaseINS0_6MapKeyENS0_11MapValueRefEEE
-N6google8protobuf8internal24GeneratedExtensionFinderE
-N6google8protobuf8internal29DescriptorPoolExtensionFinderE
 N6google8protobuf8internal30RepeatedFieldPrimitiveAccessorIbEE
 N6google8protobuf8internal30RepeatedFieldPrimitiveAccessorIdEE
 N6google8protobuf8internal30RepeatedFieldPrimitiveAccessorIfEE
@@ -1678,7 +1680,6 @@ NETWORK_FIELD_HIGHEST_PRIORITY
 NETWORK_FIELD_LOWEST_PRIORITY
 NET_Messages
 NO_SIDE_EFFECTS
-NPH+q(H
 NSt3__110__back_refIcEE
 NSt3__110__l_anchorIcEE
 NSt3__110__r_anchorIcEE
@@ -1699,6 +1700,7 @@ NSt3__117__owns_two_statesIcEE
 NSt3__117__repeat_one_loopIcEE
 NSt3__118__back_ref_collateIcNS_12regex_traitsIcEEEE
 NSt3__118__match_char_icaseIcNS_12regex_traitsIcEEEE
+NSt3__118basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE
 NSt3__119basic_ostringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE
 NSt3__120__bracket_expressionIcNS_12regex_traitsIcEEEE
 NSt3__120__match_char_collateIcNS_12regex_traitsIcEEEE
@@ -1724,7 +1726,7 @@ NetChannel '%s
 NetMessage '%s' still using auto-assigned, has to generate id from name CUtlStringToken hashcode = %d
 NetMessageConnectionClosed
 NetMessageConnectionCrashed
-NetMessagePacketEndB
+NetMessagePacketEnd
 NetMessagePacketStart
 NetMessageSplitscreenUserChanged
 NetSteamConn
@@ -1736,6 +1738,7 @@ NetworkFieldSerializerGroup_t *CNetworkSerializer::DetermineFieldSerializerGroup
 NetworkMessages::FindOrCreateNetMessage: Message %s is of size %d in leaf code, but protobuf object is size %lld, the added fields should be placed into object derived from protobuf and then CNetMessagePB references that
 NetworkMessagesVersion001
 NetworkP2PService_001
+NetworkReplayCompatField_t %s::%s on field '%s' is using possibly bogus this pointer from class %s
 NetworkServerService_001
 NetworkService_001
 NetworkSystem
@@ -1779,22 +1782,21 @@ P 00 0
 P 0000000000000000000@000 0000000000P
 P 0@ 0@PP
 P(A:F(u
-P0000000@PP@@P0P00000
+P0000000000@PP@@P0P00000
 PACKET_STATUS_DROPPED
 PACKET_STATUS_INVALID
 PACKET_STATUS_NORMAL
 PARATASAU
 PARAWASA
 PATAWAUH
-PD;QD}{I
 PFT_SOUND
 PLACEHOLDER_VALUE
 PPPPPPPPPPP
 PP`PP@ 0@PP
-PRAPVQS
 PROTOBUF_NAMESPACE_ID::FieldDescriptorProto_Label_IsValid(value
 PROTOBUF_NAMESPACE_ID::FieldDescriptorProto_Type_IsValid(value
 P[A\A^A
+Package name is too long
 Packets: net total out  %.1f/s, in %.1f/s
 PanoramaTextServices001
 PanoramaUIClient001
@@ -1839,6 +1841,7 @@ PlusThree
 PlusTwo
 Pointer
 Pointer to CUtlVector not supported by networking:  %s::%s
+Pointers cannot be used as numeric values
 PopAllButOnePlusN
 PopAllButOnePlusNPack3Bits
 PopAllButOnePlusNPack6Bits
@@ -1850,7 +1853,7 @@ PopOnePlusN
 PopOnePlusOne
 PostProcessingSystem_001
 PrefetchType
-PrefetchType"V
+PrefetchType"h
 Print detailed network statistics for each network connection
 Problem
 Problem     : Enum value did not match field type
@@ -1885,24 +1888,23 @@ PushTwoLeftDeltaZero
 PushTwoPack5LeftDeltaN
 PushTwoPack5LeftDeltaOne
 PushTwoPack5LeftDeltaZero
-QD|-L9
 Quaternion
 QuaternionStorage
+QueueCallback( %s ) '%s' using value type (%s) on struct field, ignoring
 QueueChange
+QueueReplayCompatFieldChange( %s ): can't place MNetworkReplayCompatField callback on a fully fake struct (e.g., a pointed to component or object), game code should move callback on entity %d to a C_BaseEntity derived class
 RARARA
 RARARARARA
 RASARAp
 RATAUASASASBRARATCp TCp
 RAUARAUARAUARAUARAUARAUARAUARAUARAUARAUARARAUAUARAUARAUARAUAUASASASASASASASASASASASASASASASASASASASASASASASASASBUAp
-RBRBVEp
-RBSDp(p(p
-RCp(RBp
+RBRASAp
+RE;4$}LH
 REPLAY_EVENT_CANCEL
 REPLAY_EVENT_DEATH
 REPLAY_EVENT_GENERIC
 REPLAY_EVENT_STUCK_NEED_FULL_UPDATE
 REPLAY_EVENT_VICTORY
-RGp0pXp
 RKSt9nothrow_t
 RP_PAUSE
 RP_TOGGLEPAUSE
@@ -1912,6 +1914,7 @@ RandomFloat
 RandomInt
 Reached an unintended state: CPPTYPE_MESSAGE
 Reached impossible case in HasBit
+Reached maximum recursion limit for nested messages
 ReadFields
 Recursion limit at end of parse should be
 RegisterConCommand: Unknown error registering con command "%s
@@ -1949,7 +1952,6 @@ SASASBp
 SASBRAp
 SASBTAp
 SBTCRARAp p
-SBpXZBpHp@p
 SDR connect
 SENTINEL
 SIGNONSTATE_CHALLENGE
@@ -2028,6 +2030,7 @@ SoundOpSystem001
 SoundOpSystemEdit001
 SoundService_001
 SoundSystem001
+Source of CopyFrom cannot be a descendant of the target
 Source2Client002
 Source2ClientPrediction001
 Source2ClientUI001
@@ -2101,8 +2104,8 @@ SteamUtils010
 Stopping capture, %s samples written
 String field
 String literals cannot cross line boundaries
-StringPiece
 SubstituteAndAppend
+Suggested field numbers for
 Summary of connection [%s
 Symbol name
 Synthetic oneofs must be after all other oneofs
@@ -2128,11 +2131,6 @@ TYPE_SINT64
 TYPE_STRING
 TYPE_UINT32
 TYPE_UINT64
-TestFormatA
-TestFormatB
-TestFormatC
-TestFormatD
-TestFormatE
 TestScriptMgr001
 TextLayout_001
 The 'sdr' console command has been renamed to 'net_option'.  Please update your scripts
@@ -2160,19 +2158,17 @@ ToolFramework2_002
 ToolSceneNodeFactory_001
 ToolService_001
 Tried to copy from a message with a different type. to
-Tried to merge from a message with a different type.  to
 Tried to merge messages of different types
 Tried to register a non-generated type with the generated type registry
 Tried to send ad-hoc to address %s, but address is not in list of steam net connections
 Type appears to be in generated pool but wasn't
 Type is already registered
+UARARA
 UARARARAUAUARAUARAUARAUARASAp
-UARAWARATA
-UASASASASASASASASASASASB`AAUASASASASBp
-UASASASASASASASASB`eBp
-UASASASASA^BVAUASASASASASBUAp
-UASASASASBVAVAp
-UASASASASBp
+UASASASASASASASASASASASB`AAUASASASASAp
+UASASASASASASASASASB`eBp
+UASASASASBUAUAp
+UASASASBRAUA^BUAUASASASASASBUAp
 UASBWAp
 UDP -> %s: sz=%5i seq=%5i ack=%5i rel=%1i tm=%8.3f
 UDP -> %s: sz=%i OOB (%d
@@ -2180,7 +2176,6 @@ UDP <- %s: sz=%5i seq=%5i ack=%5i rel=%1i tm=%8.3f
 UDP <- %s: sz=%i OOB (%d
 UNKNOWN
 UNKNOWN_ENUM_VALUE_%s_%d
-UTF-8 data when
 UUUUUUU
 UUUUUUUUH
 Unable to unambiguously match %s::%s in %s, %d possible matches found
@@ -2193,6 +2188,7 @@ Unknown enumeration value of
 Unparsed options
 Unrecognized syntax
 Unsupported
+Unsupported KV3 basic type '%s' (%d
 Unsupported: type mismatch
 Unwind_Resume
 Usage: net_captureculldata <file path
@@ -2201,13 +2197,12 @@ Use network sockets layer even for listen server local player's packets (multipl
 Using Valve ICE implementation
 UtlMemory_Alloc
 UtlMemory_CalcNewAllocationCount
-VARAUARATAp
+VARAUARA
 VApplication001
 VAsyncFileSystem2_001
 VAvi001
 VBik001
 VConComm001
-VD;WD}4H
 VERBOSE_BITCOUNT
 VERBOSE_ENDBIT
 VERBOSE_FIELDNAME_WITH_ARRAY_INDEX
@@ -2234,11 +2229,28 @@ VScript
 VScriptDbg
 VScriptManager010
 VStringTokenSystem001
+V_DoubleToString_Unsafe
+V_Int32ToString_Unsafe
+V_Int64ToString_Unsafe
 V_PrettifyNum
+V_StringParseError
+V_StringToBool
+V_StringToColor
+V_StringToFloat32
+V_StringToFloat64
+V_StringToInt16
+V_StringToInt32
+V_StringToInt64
+V_StringToQAngle
+V_StringToUint16
+V_StringToUint32
+V_StringToUint64
+V_StringToVector
+V_StringToVector2D
+V_StringToVector4D
+V_UInt64ToString_Unsafe
 V_atan2f
-V_atofloat64
 V_atoi
-V_atoi64
 V_atoui64
 V_fmodf
 V_qsort_s
@@ -2277,15 +2289,17 @@ Vector4D
 VisBuilder_001
 VoiceDataFormat_t
 WARNING
-WAXARA
+WAXARARASDp
 Warning
 Warning parsing text-format
+WorldGroupId_t
 WorldRendererMgr001
 WriteFields
 WriteToBuffer Message %s is not initialized! Probably missing required fields
 Writing %d bits for path %s of serializer %s entity %d, this will fail to parse
 XCRCXCRCXCRCXCRCXCRCXCRCXCRCXCRCXCRCXCRCXCRCXCRCXCRCXCRCXCRCXCRCXCRESE
 X[A\A]A^A
+YAUARAWARA
 You must construct it with ORDERED_CONSTRUCT macro in the dependency resolution function
 Z-google.golang.org/protobuf/types/descriptorpb
 Z13V_SplitStringPKcS0_R10CUtlVectorIPci10CUtlMemoryIS2_iEE
@@ -2297,7 +2311,7 @@ Z22Assert_ConditionFailedRK34_AssertCompileTimeConstantStruct_tPKcz
 Z25V_SplitStringOnSeparatorsPKcS0_R10CUtlVectorIPci10CUtlMemoryIS2_iEE
 Z6DevMsgPKcz
 Z7LoadKV3P10KeyValues3P10CUtlStringP10CUtlBufferRK7KV3ID_tPKc
-Z7SaveKV3RK7KV3ID_tS1_PK10KeyValues3P10CUtlStringP10CUtlBuffer
+Z7SaveKV3RK7KV3ID_tS1_PK10KeyValues3P10CUtlStringP10CUtlBufferj
 ZN10CUtlBuffer10ParseTokenEPK14characterset_tPcib
 ZN10CUtlBuffer18AddNullTerminationEv
 ZN10CUtlBuffer3PutEPKvi
@@ -2319,6 +2333,7 @@ ZN10CUtlStringpLERKS
 ZN12CThreadEvent3SetEv
 ZN12CThreadEventC1Eb
 ZN13CBufferString11ToLowerFastEi
+ZN13CBufferString12AppendFormatEPKcz
 ZN13CBufferString12AppendRepeatEcib
 ZN13CBufferString13AppendFormatVEPKcP13__va_list_tag
 ZN13CBufferString4TrimEPKc
@@ -2326,6 +2341,7 @@ ZN13CBufferString5PurgeEi
 ZN13CBufferString6FormatEPKcz
 ZN13CBufferString6InsertEiPKcib
 ZN13CBufferString7ReplaceEPKcS1_b
+ZN13CBufferString8TrimTailEPKc
 ZN13CBufferString9SetLengthEibPi
 ZN13CRawAllocator4FreeE18RawAllocatorType_tPvm
 ZN13CRawAllocator5AllocE18RawAllocatorType_tmPm
@@ -2353,8 +2369,6 @@ ZN18CUtlMemoryPoolBase5AllocEv
 ZN18CUtlMemoryPoolBase5ClearEv
 ZN18CUtlMemoryPoolBaseC2Eiii20MemoryPoolGrowType_tPKc19MemAllocAttribute_t
 ZN18CUtlMemoryPoolBaseD2Ev
-ZN20CUniformRandomStream7SetSeedEi
-ZN20CUniformRandomStreamC1Ev
 ZN21CEventDispatcher_Base15IterateListenerERNS_23DelegateIterator_Base_tE
 ZN21CEventDispatcher_Base20IterateListeners_EndERNS_23DelegateIterator_Base_tE
 ZN21CEventDispatcher_Base22IterateListeners_StartERNS_23DelegateIterator_Base_tEb
@@ -2369,8 +2383,9 @@ ZN22CThreadRWLock_FastRead35EncounteredComplexReadLockOperationEjbPKci
 ZN22CThreadRWLock_FastReadC1Ev
 ZN22CVariableBitStringBase6ResizeEi
 ZN22CVariableBitStringBase8FreeIntsEv
+ZN24CUniformRandomStreamImplI16CThreadNullMutexEC1Ei
 ZN24CUtlMemoryBlockAllocator12AllocAndCopyEPKcj
-ZN24CUtlMemoryBlockAllocator5PurgeEv
+ZN24CUtlMemoryBlockAllocator9RemoveAllEm
 ZN24CUtlMemoryBlockAllocatorC1Eij18RawAllocatorType_t
 ZN24CUtlMemoryBlockAllocatorD1Ev
 ZN8netadr_t13SetFromStringEPKcb
@@ -2413,6 +2428,7 @@ ZNKSt3__121__basic_string_commonILb1EE20__throw_length_errorEv
 ZNKSt3__123__match_any_but_newlineIcE6__execERNS_7__stateIcEE
 ZNKSt3__16locale4nameEv
 ZNKSt3__16locale9use_facetERNS0_2idE
+ZNKSt3__18ios_base6getlocEv
 ZNSt11logic_errorC2EPKc
 ZNSt12length_errorD1Ev
 ZNSt3__111__call_onceERVmPvPFvS2_E
@@ -2438,9 +2454,17 @@ ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1ERKS5_mmRKS4
 ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEED1Ev
 ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEaSERKS5
 ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEaSEc
+ZNSt3__113basic_istreamIcNS_11char_traitsIcEEED0Ev
+ZNSt3__113basic_istreamIcNS_11char_traitsIcEEED1Ev
+ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEE6sentryC1ERS3
+ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEE6sentryD1Ev
 ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEED0Ev
 ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEED1Ev
 ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEED2Ev
+ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEElsEi
+ZNSt3__114basic_iostreamIcNS_11char_traitsIcEEED0Ev
+ZNSt3__114basic_iostreamIcNS_11char_traitsIcEEED1Ev
+ZNSt3__114basic_iostreamIcNS_11char_traitsIcEEED2Ev
 ZNSt3__115__get_classnameEPKcb
 ZNSt3__115basic_streambufIcNS_11char_traitsIcEEE4syncEv
 ZNSt3__115basic_streambufIcNS_11char_traitsIcEEE5imbueERKNS_6localeE
@@ -2449,6 +2473,7 @@ ZNSt3__115basic_streambufIcNS_11char_traitsIcEEE6setbufEPcl
 ZNSt3__115basic_streambufIcNS_11char_traitsIcEEE6xsgetnEPcl
 ZNSt3__115basic_streambufIcNS_11char_traitsIcEEE6xsputnEPKcl
 ZNSt3__115basic_streambufIcNS_11char_traitsIcEEE9showmanycEv
+ZNSt3__115basic_streambufIcNS_11char_traitsIcEEEC2Ev
 ZNSt3__115basic_streambufIcNS_11char_traitsIcEEED2Ev
 ZNSt3__119__shared_weak_count14__release_weakEv
 ZNSt3__119__shared_weak_countD2Ev
@@ -2461,6 +2486,9 @@ ZNSt3__16localeC1ERKS0
 ZNSt3__16localeC1Ev
 ZNSt3__16localeD1Ev
 ZNSt3__17collateIcE2idE
+ZNSt3__18ios_base33__set_badbit_and_consider_rethrowEv
+ZNSt3__18ios_base4initEPv
+ZNSt3__18ios_base5clearEj
 ZNSt3__19basic_iosIcNS_11char_traitsIcEEED2Ev
 ZNSt3__1plIcNS_11char_traitsIcEENS_9allocatorIcEEEENS_12basic_stringIT_T0_T1_EEPKS6_RKS9
 ZNSt9exceptionD2Ev
@@ -2469,9 +2497,12 @@ ZSt7nothrow
 ZSt9terminatev
 ZTINSt3__111regex_errorE
 ZTINSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEE
+ZTINSt3__113basic_istreamIcNS_11char_traitsIcEEEE
 ZTINSt3__113basic_ostreamIcNS_11char_traitsIcEEEE
+ZTINSt3__114basic_iostreamIcNS_11char_traitsIcEEEE
 ZTINSt3__115basic_streambufIcNS_11char_traitsIcEEEE
 ZTINSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEE
+ZTINSt3__118basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE
 ZTINSt3__119__shared_weak_countE
 ZTINSt3__119basic_ostringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE
 ZTINSt3__121__basic_string_commonILb1EEE
@@ -2480,17 +2511,24 @@ ZTISt9bad_alloc
 ZTISt9exception
 ZTSNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEE
 ZTSNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEE
+ZTSNSt3__118basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE
 ZTSNSt3__119basic_ostringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE
 ZTSNSt3__121__basic_string_commonILb1EEE
 ZTVN10__cxxabiv117__class_type_infoE
 ZTVN10__cxxabiv120__si_class_type_infoE
 ZTVN10__cxxabiv121__vmi_class_type_infoE
 ZTVSt12length_error
+ZThn16_NSt3__114basic_iostreamIcNS_11char_traitsIcEEED0Ev
+ZThn16_NSt3__114basic_iostreamIcNS_11char_traitsIcEEED1Ev
+ZTv0_n24_NSt3__113basic_istreamIcNS_11char_traitsIcEEED0Ev
+ZTv0_n24_NSt3__113basic_istreamIcNS_11char_traitsIcEEED1Ev
 ZTv0_n24_NSt3__113basic_ostreamIcNS_11char_traitsIcEEED0Ev
 ZTv0_n24_NSt3__113basic_ostreamIcNS_11char_traitsIcEEED1Ev
+ZTv0_n24_NSt3__114basic_iostreamIcNS_11char_traitsIcEEED0Ev
+ZTv0_n24_NSt3__114basic_iostreamIcNS_11char_traitsIcEEED1Ev
 ZnamRKSt9nothrow_t
 ZnwmRKSt9nothrow_t
-a protocol
+a protocol buffer. Use the 'bytes' type if you intend to send raw bytes
 accessor_ == other.accessor
 activated
 active_spawngroup_handle
@@ -2545,10 +2583,8 @@ bi_RebroadcastGameEvent
 bi_RebroadcastSource
 bi_RelayInfo
 bi_RelayPacket
-binary_auto
 binary_bc
-binary_lz4
-binary_zstd
+binary_blob
 bit %d - %d (%d bits/%d bytes
 bit_count
 bitcount=%d
@@ -2560,16 +2596,16 @@ bool CNetChan::ProcessMessages
 bool CNetworkSerializer::InitField(NetworkFieldSerializerInfo_t *, int, NetworkValidationMode_t, const char *, const FieldMetaInfo_t &, int, CDataparserBuilder &, bool, INetworkSerializerBindingBuildFilter *, int) const
 both states
 boxed_type
-buffer. Use the 'bytes' type if you intend to send raw
 buftype
 building fake field for %s %s
 builtin
 but only
 but was
-bytes).  To increase the limit (or to disable these warnings), see CodedInputStream::SetTotalBytesLimit() in third_party/protobuf/src/google/protobuf/io/coded_stream.h
+bytes).  To increase the limit (or to disable these warnings), see CodedInputStream::SetTotalBytesLimit() in third_party/protobuf/io/coded_stream.h
 c9C$|^H
 cameraman_scoreboard
 can't reach here
+cannot H
 cannot be required
 cc_enable_arenas
 cc_generic_services
@@ -2622,11 +2658,12 @@ conflicts with an existing nested message type
 conflicts with an existing oneof type
 conflicts with field
 conflicts with the existing symbol
-contains invalid
+contains invalid UTF-8 data when
 contains null character
 context entity 0x%p
 context(0x%p
 convars
+convars_hidden_by_default
 coord_integral
 cpu_usage
 create_on_client
@@ -2683,6 +2720,7 @@ deprecated
 descriptor_t
 descriptors
 details
+determinH
 dialog_type
 diff_encode_field
 dimensions
@@ -2699,6 +2737,8 @@ due to MNetworkNoBase
 duplicate
 dyld_stub_binder
 dynamic_cast
+e messagH
+e missinH
 e" must be followed by exponent
 eQueryCvarValueStatus_CvarNotFound
 eQueryCvarValueStatus_CvarProtected
@@ -2733,7 +2773,7 @@ eye_angles
 f %f %f
 f %f %f %f
 f == nullptr || dynamic_cast<To>(f) != nullptr
-fPO9|,PusK
+fPO9|, uvK
 failed to construct fake field from metadata %s::%s in %s
 failed to parse contents
 fakeplayer
@@ -2764,6 +2804,7 @@ float64
 flow: in %.1f, out %.1f kB/s
 foo = value
 for field
+for litH
 for option
 fp_trace
 fprintf
@@ -2771,6 +2812,7 @@ framerate
 friends_id
 friends_name
 fs_spew_readfieldlist
+g fieldsH
 g_BitBuf_BitWriteMasks
 g_bUpdateStringTokenDatabase
 g_pMemAlloc
@@ -2812,6 +2854,7 @@ google.protobuf.FieldDescriptorProto.type_name
 google.protobuf.FieldMask
 google.protobuf.FieldOptions
 google.protobuf.FieldOptions.boxed_type
+google.protobuf.FieldOptions.synthetic_default
 google.protobuf.FileDescriptorProto.dependency
 google.protobuf.FileDescriptorProto.name
 google.protobuf.FileDescriptorProto.package
@@ -2857,10 +2900,12 @@ google.protobuf.UninterpretedOption.identifier_value
 google.protobuf.Value
 google.protobuf.bridge.MessageSet
 google/protobuf/arena.cc
+google/protobuf/arena.h
 google/protobuf/arena_impl.h
 google/protobuf/arenastring.cc
 google/protobuf/arenastring.h
 google/protobuf/descriptor.cc
+google/protobuf/descriptor.h
 google/protobuf/descriptor.pb.cc
 google/protobuf/descriptor.pb.h
 google/protobuf/descriptor.proto
@@ -2872,6 +2917,7 @@ google/protobuf/extension_set.cc
 google/protobuf/extension_set.h
 google/protobuf/extension_set_heavy.cc
 google/protobuf/extension_set_inl.h
+google/protobuf/generated_message_bases.cc
 google/protobuf/generated_message_reflection.cc
 google/protobuf/generated_message_reflection.h
 google/protobuf/io/coded_stream.cc
@@ -2883,6 +2929,7 @@ google/protobuf/map.h
 google/protobuf/map_field.cc
 google/protobuf/map_field.h
 google/protobuf/message.cc
+google/protobuf/message.h
 google/protobuf/message_lite.cc
 google/protobuf/message_lite.h
 google/protobuf/metadata_lite.h
@@ -2892,6 +2939,8 @@ google/protobuf/reflection.h
 google/protobuf/reflection_internal.h
 google/protobuf/reflection_ops.cc
 google/protobuf/repeated_field.h
+google/protobuf/repeated_ptr_field.cc
+google/protobuf/repeated_ptr_field.h
 google/protobuf/stubs/casts.h
 google/protobuf/stubs/stringpiece.cc
 google/protobuf/stubs/stringpiece.h
@@ -2905,6 +2954,7 @@ google/protobuf/wire_format_lite.cc
 groupindex
 groupnames
 gxx_personality_v0
+hA;_lu/D
 hE9w$|bI
 hE9~$|bI
 h[A\A]A^A
@@ -2926,7 +2976,8 @@ host_unfiltered_frametime
 hostname
 i < length
 i9C$rdH
-i:  culled %s:  %s -> %s
+i:  culled %-20s:  %s -> %s (%s
+iW=:`TC
 idempotency_level
 identifier_value
 if you ignore case and strip out the enum name prefix (if any). This is error-prone and can lead to undefined behavior. Please avoid doing this. If you are using allow_alias, please assign the same numeric value to both enums
@@ -2999,7 +3050,6 @@ json_name
 jstype is only allowed on int64, uint64, sint64, fixed64 or sfixed64 fields
 kCreateInterface
 keeping around as cacheable shared connection
-kxD;k|u'E
 l$DE;l$Hu
 la_symbol_ptr
 landmarkname
@@ -3009,7 +3059,6 @@ latency_seconds
 lazy = true] can only be specified for submessage fields
 leading_comments
 leading_detached_comments
-len >= 0
 length_ >= n
 length_delimited
 leveltransition
@@ -3024,10 +3073,12 @@ loopback:%d
 loopback_t CUtlMemoryPool
 low_priority
 low_value
+m$`< uMH
 m_Value
 m_bCanStillRegisterCallbackPriorities
 m_bNeedsSort
 m_nSharedChangeCallbackCount must be <= 32
+mach_absolute_time
 manifestincomplete
 manifestloadpriority
 map keys are not unique
@@ -3060,6 +3111,7 @@ memmove
 memory_free_mb
 memory_used_mb
 memset
+memset_pattern16
 menu_key_values
 message
 message of type
@@ -3170,6 +3222,7 @@ not just within
 not previously defined in symbols_by_name_, but was defined in symbols_by_parent_; this shouldn't be possible
 now outside range
 nullptr
+nullptr != pFieldOwnerStruct
 num_bits
 num_bots
 num_changed_entries
@@ -3183,7 +3236,6 @@ num_tv_relays
 objc_class_prefix
 observer_mode
 observer_target
-ohIcGhH9
 oneof_decl
 oneof_index
 online: %.3f seconds
@@ -3208,6 +3260,7 @@ optimize_for
 option json_name is not allowed on extension fields
 optional
 options
+orientation
 origin_x
 origin_y
 origin_z
@@ -3220,8 +3273,8 @@ output specified is nullptr
 output_type
 override_operator_name
 p p0RFp
-p(SCpXSEp(p
-p8SBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RB
+p0TAUBTAU0
+p8SBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp@p
 pEnd > *pStart
 p[A\A^A
 package
@@ -3240,7 +3293,6 @@ pending_full_frame
 per client out %.1f, in %.1f kB/s
 per client out %.1f/s, in %.1f/s
 perfectworld
-pfA;|u
 php_class_prefix
 php_generic_services
 php_metadata_namespace
@@ -3256,6 +3308,7 @@ players_networkids
 pointer
 pointer field
 pointer to struct
+position
 positive_int_value
 possible match: %s.%s
 posttoserver
@@ -3291,10 +3344,6 @@ public/tier0/utltshash.h
 public_dependency
 py_generic_services
 p}?fff
-qD;rD}$I
-qD;rD}6I
-qD;rD};H
-qD;rD}XH
 qangle_pitch_yaw
 quality
 radr://5614542
@@ -3322,6 +3371,7 @@ required
 reserved_name
 reserved_range
 resource_type
+rfA;<wumH
 rnd_down
 rpath/libnetworksystem.dylib
 rpath/libtier0.dylib
@@ -3398,13 +3448,12 @@ s: shrinking removes delegate [0x%p
 s::%s was in the original serializer at offset %u but that offset isn't in the ignore list
 s::%s:%u (%s ) already encountered at %s::%s:%u (%s
 s:Dropped %i packets at %i
+s=E9>u8L
 s@H+s8H
-sAE9<$u;H
 sApplying %s
 sCull fields for %s
 sCulled %s::%s
-sPHcSHH
-sPK9L>PusO
+sPK9L& uvO
 sProcess includes/excludes %s %s [%d fields
 sample_rate
 savegamefilename
@@ -3444,7 +3493,6 @@ sfixed32
 sfixed64
 sfound leafmost nobase at %s
 sfound offset %u in %s at path '%s
-shHcS`H
 shutdown
 signed enum
 signon_state
@@ -3452,7 +3500,6 @@ signore offset %u in %s at path '%s
 simplified
 sincluding %s::%s to ensure entire chain to field
 size too big
-size_t to int conversion
 skipping MatchToSerializerByMeta for %s
 sky_name
 slowdown_length
@@ -3494,6 +3541,8 @@ stored in google.protobuf.Any has missing required fields
 strchr
 strcmp
 stream: %s local: %s) %s
+strict_type_combinations
+string length exceeds max size
 string_data
 string_t_table
 string_value
@@ -3543,15 +3592,23 @@ svc_dummy
 swift_prefix
 sxH+spH
 symbols
+synthetic_default
 t"M9,$tZI
+t#IcN8
+t$ H;5
 t$ IcT
-t$D95Kb
-t$D95na
+t$IcN0
+t$IcNH
+t$IcO8
 t(D#C\L
-t.HcC0H
+t-HcN0
+t/HcC0H
 t8E94$~2D
 tCHcKhH
 tPHcX H
+tRI96vs
+tUI96vvH
+tUI96vvHcC
 t`</uOH
 table_id
 target struct
@@ -3565,6 +3622,7 @@ thread_vars
 tick_interval
 tickcount
 time_dilation_percent
+tkI96vYI
 tlv_bootstrap
 tmfG9D3
 to start from the outermost scope
@@ -3573,13 +3631,10 @@ total_data_in
 total_data_out
 total_packets_in
 total_packets_out
-tpM9/v(Ic
 trailing_comments
 truncated
-tvM9/vaI
-twM9'vbI
 type does not match
-type or int32
+type or int32_t
 type() == TYPE_FIXED32
 type() == TYPE_FIXED64
 type() == TYPE_GROUP
@@ -3590,13 +3645,10 @@ type.googleprod.com
 type_name
 u %u %u %u
 u serializers with %u fields (approx memory %llu / %llu in fields ) bytes (field size %d, serializer size %d
-u&M9&t!L
-u/<XtE<Hu'L
+u8IcE0M
 u>;CXu9I
 uCMcnpM
 uLA;uP
-uX<Xt-<HuPL
-uZ<Xt.<HuRL
 uint64s
 uint8 CNetworkMessages::FindOrCreateGroupId(const char
 unable to match %s::%s (type %s) in %s, no likely matches found
@@ -3604,11 +3656,13 @@ uncompressed_sample_offset
 uncompressed_size
 undefined
 unfiltered_server_framerate
+unimplemented type
 uninterpreted_option
 unknown
 unknown. Ensure that your proto
 unreliable
 unreliable_bits
+unverified_lazy
 unwind_info
 update_baseline
 updated_entries
@@ -3625,18 +3679,6 @@ usr/lib/libc++.1.dylib
 usr/lib/libiconv.2.dylib
 utlvector
 utlvector count
-v H;5%f
-v H;5;Z
-v IcNP
-v IcNT
-v IcNX
-v#IcNd
-v#IcNh
-v#IcNl
-v-IcNL
-v@20CPostConnectCallback
-vPLcfDL
-vXH;5$X
 val_bool
 val_byte
 val_float
@@ -3657,6 +3699,7 @@ version
 view_offset
 virtual NetMessageHandle_t CNetworkMessages::FindOrCreateNetMessage(int, const IProtobufBinding *, uint32, INetworkSerializerBindingBuildFilter *, bool, bool
 virtual bool CNetworkFieldChangedEventQueue::QueueChange(int, const CFieldPath &, const char *, void *, void *, void *&, int, NetworkFieldChangedDelegateType_t, CUtlAbstractDelegate, int, const INetworkFieldChangedEventQueue::ChangeQueueArrayContext_t
+virtual bool CNetworkFieldChangedEventQueue::QueueReplayCompatFieldChange(int, const CFieldPath &, const char *, void *, void *, int, CUtlAbstractDelegate, NetworkReplayCompatFieldFlags_t, const ReplayChangeEntry_t
 virtual int CNetworkMessages::ComputeOrderForPriority(int) const
 virtual void CNetworkMessages::RegisterFieldChangeCallbackPriority(int
 virtual void CNetworkMessages::RegisterNetworkArrayFieldSerializer(const char *, NetworkSerializationMode_t, NetworkArrayFieldSerializer_t, NetworkArrayFieldUnserializer_t, NetworkParserDataSize_t, NetworkDataParser_t, NetworkArrayFieldSerializer_t, NetworkArrayFieldUnserializer_t
@@ -3692,9 +3735,6 @@ void CUtlMemory<CFlattenedSerializer::FlattenedHierarchyProp_t, int>::Grow(int) 
 void CUtlMemory<CFlattenedSerializer::SerializerAndField_t, int>::Grow(int) [T = CFlattenedSerializer::SerializerAndField_t, I = int
 void CUtlMemory<CFlattenedSerializer::SerializerField_t, int>::Grow(int) [T = CFlattenedSerializer::SerializerField_t, I = int
 void CUtlMemory<CFlattenedSerializer::VarNameData_t, int>::Grow(int) [T = CFlattenedSerializer::VarNameData_t, I = int
-void CUtlMemory<CKeyValues3ArrayCluster *, int>::Grow(int) [T = CKeyValues3ArrayCluster *, I = int
-void CUtlMemory<CKeyValues3Cluster *, int>::Grow(int) [T = CKeyValues3Cluster *, I = int
-void CUtlMemory<CKeyValues3TableCluster *, int>::Grow(int) [T = CKeyValues3TableCluster *, I = int
 void CUtlMemory<CNetChan *, int>::Grow(int) [T = CNetChan *, I = int
 void CUtlMemory<CNetworkMessages::NetCategoryInfo_t, int>::Grow(int) [T = CNetworkMessages::NetCategoryInfo_t, I = int
 void CUtlMemory<CNetworkMessages::NetworkContextData_t, int>::Grow(int) [T = CNetworkMessages::NetworkContextData_t, I = int
@@ -3798,6 +3838,8 @@ void CUtlMemory_RawAllocator<unsigned int>::SetRawAllocatorType(RawAllocatorType
 void ConnectInterfaceSingletons(CreateInterfaceFn *, int
 void MathLib_Init
 vsnprintf
+wPIcWHH
+w`IcWXH
 was already set
 was listed twice
 was not found or had errors
@@ -3810,10 +3852,17 @@ which is not imported by
 world_offset_angle
 world_offset_pos
 worldgroupid
+worldgroupname
 worldname
+wpIcWhL
 writing (in %s
 wrong submessage type
 x (int:%d, float:%f
-xAD95#R
+x%A;Gh
+x8HcN H
+x@HcV$H
+xA;_|uZD
+xHHcN(H
+xPHcV,H
 x[A\A]A^A
 you_hear_them

@@ -7,6 +7,9 @@
 		<include src="s2r://panorama/styles/battle_report/battle_report_screen_summary.vcss_c" />
 	</styles>
 	<snippets>
+		<snippet name="SingleMedal">
+			<Panel class="SingleMedal" />
+		</snippet>
 		<snippet name="RoleHero">
 			<Panel class="RoleHero">
 				<DOTAHeroImage id="HeroImage" />
@@ -29,17 +32,17 @@
 					<Label class="HighlightSummaryName" text="{s:featured_hero_name}" />
 					<Label class="HighlightSummaryWinrate" text="#DOTA_BattleReport_SummaryWinrate" html="true" />
 					<Panel id="HeroMedals" class="MedalCounts">
-						<Panel class="SingleMedal Gold">
+						<Panel class="SingleMedal Bronze">
 							<Panel class="MedalImage" />
-							<Label class="MedalCount" text="{d:gold_medal_count}" />
+							<Label class="MedalCount" text="{d:bronze_medal_count}" />
 						</Panel>
 						<Panel class="SingleMedal Silver">
 							<Panel class="MedalImage" />
 							<Label class="MedalCount" text="{d:silver_medal_count}" />
 						</Panel>
-						<Panel class="SingleMedal Bronze">
+						<Panel class="SingleMedal Gold">
 							<Panel class="MedalImage" />
-							<Label class="MedalCount" text="{d:bronze_medal_count}" />
+							<Label class="MedalCount" text="{d:gold_medal_count}" />
 						</Panel>
 					</Panel>
 				</Panel>
@@ -56,17 +59,17 @@
 					<Label class="HighlightSummaryName" text="{s:featured_role_name}" />
 					<Label class="HighlightSummaryWinrate" text="#DOTA_BattleReport_SummaryWinrate" html="true" />
 					<Panel id="RoleMedals" class="MedalCounts">
-						<Panel class="SingleMedal Gold">
+						<Panel class="SingleMedal Bronze">
 							<Panel class="MedalImage" />
-							<Label class="MedalCount" text="{d:gold_medal_count}" />
+							<Label class="MedalCount" text="{d:bronze_medal_count}" />
 						</Panel>
 						<Panel class="SingleMedal Silver">
 							<Panel class="MedalImage" />
 							<Label class="MedalCount" text="{d:silver_medal_count}" />
 						</Panel>
-						<Panel class="SingleMedal Bronze">
+						<Panel class="SingleMedal Gold">
 							<Panel class="MedalImage" />
-							<Label class="MedalCount" text="{d:bronze_medal_count}" />
+							<Label class="MedalCount" text="{d:gold_medal_count}" />
 						</Panel>
 					</Panel>
 				</Panel>
@@ -80,17 +83,17 @@
 					<Label class="HighlightSummaryName" text="#DOTA_BattleReport_OverallPerformance" />
 					<Label class="HighlightSummaryWinrate" text="#DOTA_BattleReport_SummaryWinrate" html="true" />
 					<Panel id="GeneralMedals" class="MedalCounts">
-						<Panel class="SingleMedal Gold">
+						<Panel class="SingleMedal Bronze">
 							<Panel class="MedalImage" />
-							<Label class="MedalCount" text="{d:gold_medal_count}" />
+							<Label class="MedalCount" text="{d:bronze_medal_count}" />
 						</Panel>
 						<Panel class="SingleMedal Silver">
 							<Panel class="MedalImage" />
 							<Label class="MedalCount" text="{d:silver_medal_count}" />
 						</Panel>
-						<Panel class="SingleMedal Bronze">
+						<Panel class="SingleMedal Gold">
 							<Panel class="MedalImage" />
-							<Label class="MedalCount" text="{d:bronze_medal_count}" />
+							<Label class="MedalCount" text="{d:gold_medal_count}" />
 						</Panel>
 					</Panel>
 				</Panel>
@@ -106,6 +109,14 @@
 				<Panel class="ShardsIcon" />
 				<Label class="ShardsEarnedValue" text="{d:total_shards_earned}" />
 			</Panel>
+		</Panel>
+		<Panel id="BattleAnalysisBanner">
+			<Panel class="Content">
+				<Image id="BattleReportScreenGrab" src="s2r://panorama/images/battle_report/battlestats_screengrab_1_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+				<Label class="Description VerticalCenter" html="true" text="#DOTA_BattleReport_AnalysisBannerDescription" />
+				<TextButton id="AnalysisButton" class="GoldGlassButton NavButton PopupButton VerticalCenter" text="#DOTA_BattleReport_AnalysisBannerButtonLabel" onactivate="DOTAShowProfileBattleStatsPage() DOTABattleReportFinished()" />
+			</Panel>
+			<Panel class="BorderAnimation" />
 		</Panel>
 	</DOTABattleReportScreenSummary>
 </root>

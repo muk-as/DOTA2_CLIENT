@@ -6,18 +6,18 @@
 		<include src="s2r://panorama/styles/popups/popup_initial_skill.vcss_c" />
 	</styles>
 	<script><![CDATA[
-		g_TimePerTip = 10;
-		g_NumTips = 4;
+		const k_TimePerTip = 10;
+		const k_NumTips = 4;
 		
-		g_hScheduledSkipWizardTip = null;
-		g_bQuestionnaireShown = false;
+		let g_hScheduledShowQuestionnaire = null;
+		let g_hScheduledSkipWizardTip = null;
 		
-		function ShowQuestionnaire()
+		function CancelSkipWizardTip()
 		{
-			if( !$('#Questionnaire').BHasClass('Show') )
+			if( g_hScheduledSkipWizardTip !== null )
 			{
-				$('#WelcomeToDota').AddClass('Hide');
-				$('#Questionnaire').AddClass('Show');
+				$.CancelScheduled( g_hScheduledSkipWizardTip );
+				g_hScheduledSkipWizardTip = null;
 			}
 		}
 		
@@ -28,22 +28,54 @@
 		
 		function ScheduleSkipWizardTip()
 		{
-			if( g_hScheduledSkipWizardTip != null )
+			CancelSkipWizardTip();
+			g_hScheduledSkipWizardTip = $.Schedule( k_TimePerTip, function OnSkipWizardTip() {
+				g_hScheduledSkipWizardTip = null;
+				SkipWizardTip();
+			} );
+		}
+		
+		function CancelShowQuestionnaire()
+		{
+			if( g_hScheduledShowQuestionnaire !== null )
 			{
-				$.CancelScheduled( g_hScheduledSkipWizardTip );
+				$.CancelScheduled( g_hScheduledShowQuestionnaire );
+				g_hScheduledShowQuestionnaire = null;
 			}
-			
-			$.Schedule( g_TimePerTip, SkipWizardTip );
 		}
 	
+		function ShowQuestionnaire()
+		{
+			CancelSkipWizardTip();
+			CancelShowQuestionnaire();
+			
+			if( !$('#Questionnaire').BHasClass('Show') )
+			{
+				$('#WelcomeToDota').AddClass('Hide');
+				$('#Questionnaire').AddClass('Show');
+			}
+		}
+		
+		function ScheduleShowQuestionnaire()
+		{
+			CancelShowQuestionnaire();
+			g_hScheduledShowQuestionnaire = $.Schedule( k_TimePerTip * (k_NumTips+1), function OnShowQuestionnaire() 
+			{
+				g_hScheduledShowQuestionnaire = null;
+				ShowQuestionnaire();
+			} );
+		}
+		
 		$.RegisterForUnhandledEvent( 'DOTATipDismissed', function ( tipName ) 
 		{
 			if( tipName == 'dota_tip_new_user_intro_wizard_speech_4')
 			{
 				ShowQuestionnaire();
 			}
-			
-			ScheduleSkipWizardTip();
+			else
+			{
+				ScheduleSkipWizardTip();
+			}
 		} );
 		
 		function OnLoad()
@@ -52,8 +84,7 @@
 			$('#WelcomeToDota').RemoveClass('Hidden');
 			
 			ScheduleSkipWizardTip();
-			
-			$.Schedule( g_TimePerTip * (g_NumTips+1), ShowQuestionnaire );
+			ScheduleShowQuestionnaire();
 		}
 	]]></script>
 	<PopupInitialSkill class="PopupPanel Hidden" dimbackground="true" onload="OnLoad()" onactivate="SkipWizardTip();">

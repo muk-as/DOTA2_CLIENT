@@ -13,11 +13,13 @@
 0$1$2 $3 = $4
 0..whitepoint] in HDR gets tonemapped to [0..1] in LDR
 0.00..1.00
+0.00.0
 0.9 WIP
 000   0P0
-00000000000000000
+000000000000000000
 0000000000000000000000000p
-00000000000@0000000000000000000@@0000 P0000000000000$&##2####)000000004#%,!)!!&#,000000000@@00
+00000000000@0000000000000000000@@000 P00000000>#1
+000000005.,$!/&#.000000000@@00
 00010203040506070809101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899
 000```0
 00P000
@@ -91,6 +93,7 @@
 12ILightBinner
 12ISceneSystem
 13CLightBinner2
+13CMsgTransform
 13ConCommandRef
 13IBaseSequence
 14CAimConstraint
@@ -100,8 +103,10 @@
 14CEmptySequence
 14CImPlotWrapper
 14CMsgPlayerInfo
+14CMsgQuaternion
 14CTonemapSystem
 14CVolumetricFog
+14IErrorListener
 14ITonemapSystem
 14IVolumetricFog
 15CBaseConstraint
@@ -120,6 +125,8 @@
 15CTier3AppSystemI10IAppSystemLx0EE
 15CTier3AppSystemI11ISceneUtilsLx0EE
 15CTier3AppSystemI12ISceneSystemLx0EE
+16777215"R
+16777215B
 16CLightObjectDesc
 16CMorphConstraint
 16CPointConstraint
@@ -127,18 +134,16 @@
 16CTonemapRenderer
 16CTwistConstraint
 16ICommandCallback
+16ISceneObjectDesc
 17CNETMsg_SetConVar
 17CNETMsg_StringCmd
 17COrientConstraint
 17CParentConstraint
 17CSVCMsg_GameEvent
-17CSceneLightObject
-17CSkyBoxObjectDesc
 17CTimestampManager
 17IGenericInterface
 18C6FaceSkyboxObject
 18CEnvMapSceneObject
-18CMonitorObjectDesc
 18CNETMsg_Disconnect
 18CRenderingPipeline
 18CSceneSkyBoxObject
@@ -148,6 +153,7 @@
 19CBoneConstraintBase
 19CDebugLayerRenderer
 19CNETMsg_SignonState
+19CRayTraceSceneWorld
 19CRenderingPipelines
 19CSceneMonitorObject
 19CSchemaRegistration
@@ -191,7 +197,6 @@
 200x200
 20CBarnLightObjectDesc
 20CBaseSceneObjectDesc
-20CDebugTextObjectDesc
 20CFilterLayerRenderer
 20CLightBinner2Factory
 20CNETMsg_DebugOverlay
@@ -228,6 +233,8 @@
 23CBarnLightObjectDescGPU
 23CCharacterDecalRenderer
 23CFullscreenQuadRenderer
+23CKV3TransferContextBase
+23CKV3TransferLoadContext
 23CMeshBuilderSceneObject
 23CNETMsg_SpawnGroup_Load
 23CNETMsg_SplitScreenUser
@@ -256,7 +263,6 @@
 26.google.protobuf.EnumDescriptorProto.EnumReservedRange
 26CAnimatableSceneObjectDesc
 26CParallelProcessorAbstractI18CParallelProcessorIP12CSceneObject21CFuncJobItemProcessorIS2_ELi1EEE
-26CParallelProcessorAbstractI22CParallelLoopProcessorI13CViewDrawList31CLoopMemberFuncJobItemProcessorIS1_12CSceneSystemS3_EEE
 26ICommandCompletionCallback
 27CDirectionalLightObjectDesc
 27CLightProbeVolumeObjectDesc
@@ -298,6 +304,7 @@
 333333
 3333333
 33333333H
+33333333L
 333337
 333339
 33333A
@@ -331,7 +338,6 @@
 35CSceneLPVSampleGridObjectDescriptor
 37CAmbientOcclusionProxySceneObjectDesc
 38IMaxSwapChainDimensionsChangedListener
-3D Skybox
 3d: %s
 3f, %.3f, %.3f
 3ff, %.3ff, %.3ff, %.3ff
@@ -339,7 +345,7 @@
 4. I am selectable
 40ISceneAnimatableProceduralBoneTransforms
 433333
-46CBindlessFastPathParitionToolsResourceListener
+4444<*Z
 4:H;1u
 5. I am double clickable
 500x500
@@ -352,7 +358,6 @@
 6.1f,%6.1f) (%6.1f,%6.1f) Size (%6.1f,%6.1f) %s
 6.1f,%6.1f) (%6.1f,%6.1f) Size (%6.1f,%6.1f) Col %d %s
 6IImGui
-6bV6``V04
 7H;1u H
 7IImPlot
 7])#######hV0qs'/###[),##/l:$#Q6>##5[n42>c-TH`->>#/e>11NNV=Bv(*:.F?uu#(gRU.o0XGH`$vhLG1hxt9?W`#,5LsCp#-i>.r$<$6pD>Lb';9Crc6tgXmKVeU2cD4Eo3R/2*>]b(MC;$jPfY.;h^`IWM9<Lh2TlS+f-s$o6Q<BWH`YiU.xfLq$N;$0iR/GX:U(jcW2p/W*q?-qmnUCI;jHSAiFWM.R*kU@C=GH?a9wp8f$e.-4^Qg1)Q-GL(lf(r/7GrRgwV%MS=C#`8ND>Qo#t'X#(v#Y9w0#1D$CIf;W'#pWUPXOuxXuU(H9M(1<q-UE31#^-V'8IRUo7Qf./L>=Ke$$'5F%)]0^#0X@U.a<r:QLtFsLcL6##lOj)#.Y5<-R&KgLwqJfLgN&;Q?gI^#DY2uLi@^rMl9t=cWq6##weg>$FBjVQTSDgEKnIS7EM9>ZY9w0#L;>>#Mx&4Mvt//L[MkA#W@lK.N'[0#7RL_&#w+F%HtG9M#XL`N&.,GM4Pg;-<nLENhvx>-VsM.M0rJfLH2eTM`*oJMHRC`NkfimM2J,W-jXS:)r0wK#@Fge$U>`w'N7G#$#fB#$E^$#:9:hk+eOe--6x)F7*E%?76%^GMHePW-Z5l'&GiF#$956:rS?dA#fiK:)Yr+`&#0j@'DbG&#^$PG.Ll+DNa<XCMKEV*N)LN/N*b=%Q6pia-Xg8I$<MR&,VdJe$<(7G;Ckl'&hF;;$<_=X(b.RS%%)###MPBuuE1V:v&cX&#2m#(&cV]`k9OhLMbn%s$G2,B$BfD3X*sp5#l,$R#]x_X1xKX%b5U*[r5iMfUo9U`N99hG)tm+/Us9pG)XPu`<0s-)WTt(gCRxIg(%6sfh=ktMKn3j)<6<b5Sk_/0(^]AaN#(p/L>&VZ>1i%h1S9u5o@YaaW$e+b<TWFn/Z:Oh(Cx2$lNEoN^e)#CFY@@I;BOQ*sRwZtZxRcU7uW6CXow0i(?$Q[cjOd[P4d)]>ROPOpxTO7Stwi1::iB1q)C_=dV26J;2,]7op$]uQr@_V7$q^%lQwtuHY]=DX,n3L#0PHDO4f9>dC@O>HBuKPpP*E,N+b3L#lpR/MrTEH.IAQk.a>D[.e;mc.x]Ip.PH^'/aqUO/$1WxLoW0[iLA<QT;5HKD+@qQ'NQ(3_PLhE48R.qAPSwQ0/WK?Z,[x?-J;jQTWA0X@KJ(_Y8N-:/M74:/-ZpKrUss?d#dZq]DAbkU*JqkL+nwX@@47`5>w=4h(9.`GCRUxHPeR`5Mjol(dUWxZa(>STrPkrJiWx`5U7F#.g*jrohGg`cg:lSTvEY/EV_7H4Q9[Z%cnv;JQYZ5q.l7Zeas:HOIZOB?G<Nald$qs]@]L<J7bR*>gv:[7MI2k).'2($5FNP&EQ(,)U]W]+fh18.vsai00);D3@4ku5P?DP8aJt+;qUM]=+b'8@;mViBKx0DE[-auGl8:PJ&Dj+M6OC]O^((##]`0i)drT;-7X`=-H3[igUnPG-NZlo.#k@h#=Ork$m>a>$-?Tm$UV(?#P6YY#'/###xe7q.73rI3*pP/$1>s9)W,JrM7SN]'/4C#v$U`0#V.[0>xQsH$fEmPMgY2u7Kh(G%siIfLSoS+MK2eTM$=5,M8p`A.;_R%#u[K#$x4AG8.kK/HSB==-'Ie/QTtG?-.*^N-4B/ZM_3YlQC7(p7q)&](`6_c)$/*JL(L-^(]$wIM`dPtOdGA,U3:w2M-0<q-]L_?^)1vw'.,MRsqVr.L;aN&#/EgJ)PBc[-f>+WomX2u7lqM2iEumMTcsF?-aT=Z-97UEnXglEn1K-bnEO`guFt(c%=;Am_Qs@jLooI&NX;]0#j4#F14;gl8-GQpgwhrq8'=l_f-b49'UOqkLu7-##oDY2L(te+Mch&gLYtJ,MEtJfLh'x'M=$CS-ZZ%P]8bZ>#S?YY#%Q&q'3^Fw&?D)UDNrocM3A76//oL?#h7gl85[qW/NDOk%16ij;+:1a'iNIdb-ou8.P*w,v5#EI$TWS>Pot-R*H'-SEpA:g)f+O$%%`kA#G=8RMmG1&O`>to8bC]T&$,n.LoO>29sp3dt-52U%VM#q7'DHpg+#Z9%H[K<L%a2E-grWVM3@2=-k22tL]4$##6We'8UJCKE[d_=%wI;'6X-GsLX4j^SgJ$##R*w,vP3wK#iiW&#*h^D&R?jp7+/u&#(AP##XU8c$fSYW-J95_-Dp[g9wcO&#M-h1OcJlc-*vpw0xUX&#OQFKNX@QI'IoPp7nb,QU//MQ&ZDkKP)X<WSVL(68uVl&#c'[0#(s1X&xm$Y%B7*K:eDA323j998GXbA#pwMs-jgD$9QISB-A_(aN4xoFM^@C58D0+Q+q3n0#3U1InDjF682-SjMXJK)(h$hxua_K]ul92%'BOU&#BRRh-slg8KDlr:%L71Ka:.A;%YULjDPmL<LYs8i#XwJOYaKPKc1h:'9Ke,g)b),78=I39B;xiY$bgGw-&.Zi9InXDuYa%G*f2Bq7mn9^#p1vv%#(Wi-;/Z5ho;#2:;%d&#x9v68C5g?ntX0X)pT`;%pB3q7mgGN)3%(P8nTd5L7GeA-GL@+%J3u2:(Yf>et`e;)f#Km8&+DC$I46>#Kr]]u-[=99tts1.qb#q72g1WJO81q+eN'03'eM>&1XxY-caEnOj%2n8)),?ILR5^.Ibn<-X-Mq7[a82Lq:F&#ce+S9wsCK*x`569E8ew'He]h:sI[2LM$[guka3ZRd6:t%IG:;$%YiJ:Nq=?eAw;/:nnDq0(CYcMpG)qLN4$##&J<j$UpK<Q4a1]MupW^-sj_$%[HK%'F####QRZJ::Y3EGl4'@%FkiAOg#p[##O`gukTfBHagL<LHw%q&OV0##F=6/:chIm0@eCP8X]:kFI%hl8hgO@RcBhS-@Qb$%+m=hPDLg*%K8ln(wcf3/'DW-$.lR?n[nCH-eXOONTJlh:.RYF%3'p6sq:UIMA945&^HFS87@$EP2iG<-lCO$%c`uKGD3rC$x0BL8aFn--`ke%#HMP'vh1/R&O_J9'um,.<tx[@%wsJk&bUT2`0uMv7gg#qp/ij.L56'hl;.s5CUrxjOM7-##.l+Au'A&O:-T72L]P`&=;ctp'XScX*rU.>-XTt,%OVU4)S1+R-#dg0/Nn?Ku1^0f$B*P:Rowwm-`0PKjYDDM'3]d39VZHEl4,.j']Pk-M.h^&:0FACm$maq-&sgw0t7/6(^xtk%LuH88Fj-ekm>GA#_>568x6(OFRl-IZp`&b,_P'$M<Jnq79VsJW/mWS*PUiq76;]/NM_>hLbxfc$mj`,O;&%W2m`Zh:/)Uetw:aJ%]K9h:TcF]u_-Sj9,VK3M.*'&0D[Ca]J9gp8,kAW]%(?A%R$f<->Zts'^kn=-^@c4%-pY6qI%J%1IGxfLU9CP8cbPlXv);C=b),<2mOvP8up,UVf3839acAWAW-W?#ao/^#%KYo8fRULNd2.>%m]UK:n%r$'sw]J;5pAoO_#2mO3n,'=H5(etHg*`+RLgv>=4U8guD$I%D:W>-r5V*%j*W:Kvej.Lp$<M-SGZ':+Q_k+uvOSLiEo(<aD/K<CCc`'Lx>'?;++O'>()jLR-^u68PHm8ZFWe+ej8h:9r6L*0//c&iH&R8pRbA#Kjm%upV1g:a_#Ur7FuA#(tRh#.Y5K+@?3<-8m0$PEn;J:rh6?I6uG<-`wMU'ircp0LaE_OtlMb&1#6T.#FDKu#1Lw%u%+GM+X'e?YLfjM[VO0MbuFp7;>Q&#WIo)0@F%q7c#4XAXN-U&VB<HFF*qL($/V,;(kXZejWO`<[5??ewY(*9=%wDc;,u<'9t3W-(H1th3+G]ucQ]kLs7df($/*JL]@*t7Bu_G3_7mp7<iaQjO@.kLg;x3B0lqp7Hf,^Ze7-##@/c58Mo(3;knp0%)A7?-W+eI'o8)b<nKnw'Ho8C=Y>pqB>0ie&jhZ[?iLR@@_AvA-iQC(=ksRZRVp7`.=+NpBC%rh&3]R:8XDmE5^V8O(x<<aG/1N$#FX$0V5Y6x'aErI3I$7x%E`v<-BY,)%-?Psf*l?%C3.mM(=/M0:JxG'?7WhH%o'a<-80g0NBxoO(GH<dM]n.+%q@jH?f.UsJ2Ggs&4<-e47&Kl+f//9@`b+?.TeN_&B8Ss?v;^Trk;f#YvJkl&w$]>-+k?'(<S:68tq*WoDfZu';mM?8X[ma8W%*`-=;D.(nc7/;)g:T1=^J$&BRV(-lTmNB6xqB[@0*o.erM*<SWF]u2=st-*(6v>^](H.aREZSi,#1:[IXaZFOm<-ui#qUq2$##Ri;u75OK#(RtaW-K-F`S+cF]uN`-KMQ%rP/Xri.LRcB##=YL3BgM/3MD?@f&1'BW-)Ju<L25gl8uhVm1hL$##*8###'A3/LkKW+(^rWX?5W_8g)a(m&K8P>#bmmWCMkk&#TR`C,5d>g)F;t,4:@_l8G/5h4vUd%&%950:VXD'QdWoY-F$BtUwmfe$YqL'8(PWX(P?^@Po3$##`MSs?DWBZ/S>+4%>fX,VWv/w'KD`LP5IbH;rTV>n3cEK8U#bX]l-/V+^lj3;vlMb&[5YQ8#pekX9JP3XUC72L,,?+Ni&co7ApnO*5NK,((W-i:$,kp'UDAO(G0Sq7MVjJsbIu)'Z,*[>br5fX^:FPAWr-m2KgL<LUN098kTF&#lvo58=/vjDo;.;)Ka*hLR#/k=rKbxuV`>Q_nN6'8uTG&#1T5g)uLv:873UpTLgH+#FgpH'_o1780Ph8KmxQJ8#H72L4@768@Tm&Qh4CB/5OvmA&,Q&QbUoi$a_%3M01H)4x7I^&KQVgtFnV+;[Pc>[m4k//,]1?#`VY[Jr*3&&slRfLiVZJ:]?=K3Sw=[$=uRB?3xk48@aeg<Z'<$#4H)6,>e0jT6'N#(q%.O=?2S]u*(m<-V8J'(1)G][68hW$5'q[GC&5j`TE?m'esFGNRM)j,ffZ?-qx8;->g4t*:CIP/[Qap7/9'#(1sao7w-.qNUdkJ)tCF&#B^;xGvn2r9FEPFFFcL@.iFNkTve$m%#QvQS8U@)2Z+3K:AKM5isZ88+dKQ)W6>J%CL<KE>`.d*(B`-n8D9oK<Up]c$X$(,)M8Zt7/[rdkqTgl-0cuGMv'?>-XV1q['-5k'cAZ69e;D_?$ZPP&s^+7])$*$#@QYi9,5P&#9r+$%CE=68>K8r0=dSC%%(@p7.m7jilQ02'0-VWAg<a/''3u.=4L$Y)6k/K:_[3=&jvL<L0C/2'v:^;-DIBW,B4E68:kZ;%?8(Q8BH=kO65BW?xSG&#@uU,DS*,?.+(o(#1vCS8#CHF>TlGW'b)Tq7VT9q^*^$$.:&N@@$&)WHtPm*5_rO0&e%K&#-30j(E4#'Zb.o/(Tpm$>K'f@[PvFl,hfINTNU6u'0pao7%XUp9]5.>%h`8_=VYbxuel.NTSsJfLacFu3B'lQSu/m6-Oqem8T+oE--$0a/k]uj9EwsG>%veR*hv^BFpQj:K'#SJ,sB-'#](j.Lg92rTw-*n%@/;39rrJF,l#qV%OrtBeC6/,;qB3ebNW[?,Hqj2L.1NP&GjUR=1D8QaS3Up&@*9wP?+lo7b?@%'k4`p0Z$22%K3+iCZj?XJN4Nm&+YF]u@-W$U%VEQ/,,>>#)D<h#`)h0:<Q6909ua+&VU%n2:cG3FJ-%@Bj-DgLr`Hw&HAKjKjseK</xKT*)B,N9X3]krc12t'pgTV(Lv-tL[xg_%=M_q7a^x?7Ubd>#%8cY#YZ?=,`Wdxu/ae&#w6)R89tI#6@s'(6Bf7a&?S=^ZI_kS&ai`&=tE72L_D,;^R)7[$s<Eh#c&)q.MXI%#v9ROa5FZO%sF7q7Nwb&#ptUJ:aqJe$Sl68%.D###EC><?-aF&#RNQv>o8lKN%5/$(vdfq7+ebA#u1p]ovUKW&Y%q]'>$1@-[xfn$7ZTp7mM,G,Ko7a&Gu%G[RMxJs[0MM%wci.LFDK)(<c`Q8N)jEIF*+?P2a8g%)$q]o2aH8C&<SibC/q,(e:v;-b#6[$NtDZ84Je2KNvB#$P5?tQ3nt(0d=j.LQf./Ll33+(;q3L-w=8dX$#WF&uIJ@-bfI>%:_i2B5CsR8&9Z&#=mPEnm0f`<&c)QL5uJ#%u%lJj+D-r;BoF&#4DoS97h5g)E#o:&S4weDF,9^Hoe`h*L+_a*NrLW-1pG_&2UdB86e%B/:=>)N4xeW.*wft-;$'58-ESqr<b?UI(_%@[P46>#U`'6AQ]m&6/`Z>#S?YY#Vc;r7U2&326d=w&H####?TZ`*4?&.MK?LP8Vxg>$[QXc%QJv92.(Db*B)gb*BM9dM*hJMAo*c&#b0v=Pjer]$gG&JXDf->'StvU7505l9$AFvgYRI^&<^b68?j#q9QX4SM'RO#&sL1IM.rJfLUAj221]d##DW=m83u5;'bYx,*Sl0hL(W;;$doB&O/TQ:(Z^xBdLjL<Lni;''X.`$#8+1GD:k$YUWsbn8ogh6rxZ2Z9]%nd+>V#*8U_72Lh+2Q8Cj0i:6hp&$C/:p(HK>T8Y[gHQ4`4)'$Ab(Nof%V'8hL&#<NEdtg(n'=S1A(Q1/I&4([%dM`,Iu'1:_hL>SfD07&6D<fp8dHM7/g+tlPN9J*rKaPct&?'uBCem^jn%9_K)<,C5K3s=5g&GmJb*[SYq7K;TRLGCsM-$$;S%:Y@r7AK0pprpL<Lrh,q7e/%KWK:50I^+m'vi`3?%Zp+<-d+$L-Sv:@.o19n$s0&39;kn;S%BSq*$3WoJSCLweV[aZ'MQIjO<7;X-X;&+dMLvu#^UsGEC9WEc[X(wI7#2.(F0jV*eZf<-Qv3J-c+J5AlrB#$p(H68LvEA'q3n0#m,[`*8Ft)FcYgEud]CWfm68,(aLA$@EFTgLXoBq/UPlp7:d[/;r_ix=:TF`S5H-b<LI&HY(K=h#)]Lk$K14lVfm:x$H<3^Ql<M`$OhapBnkup'D#L$Pb_`N*g]2e;X/Dtg,bsj&K#2[-:iYr'_wgH)NUIR8a1n#S?Yej'h8^58UbZd+^FKD*T@;6A7aQC[K8d-(v6GI$x:T<&'Gp5Uf>@M.*J:;$-rv29'M]8qMv-tLp,'886iaC=Hb*YJoKJ,(j%K=H`K.v9HggqBIiZu'QvBT.#=)0ukruV&.)3=(^1`o*Pj4<-<aN((^7('#Z0wK#5GX@7u][`*S^43933A4rl][`*O4CgLEl]v$1Q3AeF37dbXk,.)vj#x'd`;qgbQR%FW,2(?LO=s%Sc68%NP'##Aotl8x=BE#j1UD([3$M(]UI2LX3RpKN@;/#f'f/&_mt&F)XdF<9t4)Qa.*kTLwQ'(TTB9.xH'>#MJ+gLq9-##@HuZPN0]u:h7.T..G:;$/Usj(T7`Q8tT72LnYl<-qx8;-HV7Q-&Xdx%1a,hC=0u+HlsV>nuIQL-5<N?)NBS)QN*_I,?&)2'IM%L3I)X((e/dl2&8'<M:^#M*Q+[T.Xri.LYS3v%fF`68h;b-X[/En'CR.q7E)p'/kle2HM,u;^%OKC-N+Ll%F9CF<Nf'^#t2L,;27W:0O@6##U6W7:$rJfLWHj$#)woqBefIZ.PK<b*t7ed;p*_m;4ExK#h@&]>_>@kXQtMacfD.m-VAb8;IReM3$wf0''hra*so568'Ip&vRs849'MRYSp%:t:h5qSgwpEr$B>Q,;s(C#$)`svQuF$##-D,##,g68@2[T;.XSdN9Qe)rpt._K-#5wF)sP'##p#C0c%-Gb%hd+<-j'Ai*x&&HMkT]C'OSl##5RG[JXaHN;d'uA#x._U;.`PU@(Z3dt4r152@:v,'R.Sj'w#0<-;kPI)FfJ&#AYJ&#//)>-k=m=*XnK$>=)72L]0I%>.G690a:$##<,);?;72#?x9+d;^V'9;jY@;)br#q^YQpx:X#Te$Z^'=-=bGhLf:D6&bNwZ9-ZD#n^9HhLMr5G;']d&6'wYmTFmL<LD)F^%[tC'8;+9E#C$g%#5Y>q9wI>P(9mI[>kC-ekLC/R&CH+s'B;K-M6$EB%is00:+A4[7xks.LrNk0&E)wILYF@2L'0Nb$+pv<(2.768/FrY&h$^3i&@+G%JT'<-,v`3;_)I9M^AE]CN?Cl2AZg+%4iTpT3<n-&%H%b<FDj2M<hH=&Eh<2Len$b*aTX=-8QxN)k11IM1c^j%9s<L<NFSo)B?+<-(GxsF,^-Eh@$4dXhN$+#rxK8'je'D7k`e;)2pYwPA'_p9&@^18ml1^[@g4t*[JOa*[=Qp7(qJ_oOL^('7fB&Hq-:sf,sNj8xq^>$U4O]GKx'm9)b@p7YsvK3w^YR-CdQ*:Ir<($u&)#(&?L9Rg3H)4fiEp^iI9O8KnTj,]H?D*r7'M;PwZ9K0E^k&-cpI;.p/6_vwoFMV<->#%Xi.LxVnrU(4&8/P+:hLSKj$#U%]49t'I:rgMi'FL@a:0Y-uA[39',(vbma*hU%<-SRF`Tt:542R_VV$p@[p8DV[A,?1839FWdF<TddF<9Ah-6&9tWoDlh]&1SpGMq>Ti1O*H&#(AL8[_P%.M>v^-))qOT*F5Cq0`Ye%+$B6i:7@0IX<N+T+0MlMBPQ*Vj>SsD<U4JHY8kD2)2fU/M#$e.)T4,_=8hLim[&);?UkK'-x?'(:siIfL<$pFM`i<?%W(mGDHM%>iWP,##P`%/L<eXi:@Z9C.7o=@(pXdAO/NLQ8lPl+HPOQa8wD8=^GlPa8TKI1CjhsCTSLJM'/Wl>-S(qw%sf/@%#B6;/U7K]uZbi^Oc^2n<bhPmUkMw>%t<)'mEVE''n`WnJra$^TKvX5B>;_aSEK',(hwa0:i4G?.Bci.(X[?b*($,=-n<.Q%`(X=?+@Am*Js0&=3bh8K]mL<LoNs'6,'85`0?t/'_U59@]ddF<#LdF<eWdF<OuN/45rY<-L@&#+fm>69=Lb,OcZV/);TTm8VI;?%OtJ<(b4mq7M6:u?KRdF<gR@2L=FNU-<b[(9c/ML3m;Z[$oF3g)GAWqpARc=<ROu7cL5l;-[A]%/+fsd;l#SafT/f*W]0=O'$(Tb<[)*@e775R-:Yob%g*>l*:xP?Yb.5)%w_I?7uk5JC+FS(m#i'k.'a0i)9<7b'fs'59hq$*5Uhv##pi^8+hIEBF`nvo`;'l0.^S1<-wUK2/Coh58KKhLjM=SO*rfO`+qC`W-On.=AJ56>>i2@2LH6A:&5q`?9I3@@'04&p2/LVa*T-4<-i3;M9UvZd+N7>b*eIwg:CC)c<>nO&#<IGe;__.thjZl<%w(Wk2xmp4Q@I#I9,DF]u7-P=.-_:YJ]aS@V?6*C()dOp7:WL,b&3Rg/.cmM9&r^>$(>.Z-I&J(Q0Hd5Q%7Co-b`-c<N(6r@ip+AurK<m86QIth*#v;-OBqi+L7wDE-Ir8K['m+DDSLwK&/.?-V%U_%3:qKNu$_b*B-kp7NaD'QdWQPKYq[@>P)hI;*_F]u`Rb[.j8_Q/<&>uu+VsH$sM9TA%?)(vmJ80),P7E>)tjD%2L=-t#fK[%`v=Q8<FfNkgg^oIbah*#8/Qt$F&:K*-(N/'+1vMB,u()-a.VUU*#[e%gAAO(S>WlA2);Sa>gXm8YB`1d@K#n]76-a$U,mF<fX]idqd)<3,]J7JmW4`6]uks=4-72L(jEk+:bJ0M^q-8Dm_Z?0olP1C9Sa&H[d&c$ooQUj]Exd*3ZM@-WGW2%s',B-_M%>%Ul:#/'xoFM9QX-$.QN'>[%$Z$uF6pA6Ki2O5:8w*vP1<-1`[G,)-m#>0`P&#eb#.3i)rtB61(o'$?X3B</R90;eZ]%Ncq;-Tl]#F>2Qft^ae_5tKL9MUe9b*sLEQ95C&`=G?@Mj=wh*'3E>=-<)Gt*Iw)'QG:`@IwOf7&]1i'S01B+Ev/Nac#9S;=;YQpg_6U`*kVY39xK,[/6Aj7:'1Bm-_1EYfa1+o&o4hp7KN_Q(OlIo@S%;jVdn0'1<Vc52=u`3^o-n1'g4v58Hj&6_t7$##?M)c<$bgQ_'SY((-xkA#Y(,p'H9rIVY-b,'%bCPF7.J<Up^,(dU1VY*5#WkTU>h19w,WQhLI)3S#f$2(eb,jr*b;3Vw]*7NH%$c4Vs,eD9>XW8?N]o+(*pgC%/72LV-u<Hp,3@e^9UB1J+ak9-TN/mhKPg+AJYd$MlvAF_jCK*.O-^(63adMT->W%iewS8W6m2rtCpo'RS1R84=@paTKt)>=%&1[)*vp'u+x,VrwN;&]kuO9JDbg=pO$J*.jVe;u'm0dr9l,<*wMK*Oe=g8lV_KEBFkO'oU]^=[-792#ok,)i]lR8qQ2oA8wcRCZ^7w/Njh;?.stX?Q1>S1q4Bn$)K1<-rGdO'$Wr.Lc.CG)$/*JL4tNR/,SVO3,aUw'DJN:)Ss;wGn9A32ijw%FL+Z0Fn.U9;reSq)bmI32U==5ALuG&#Vf1398/pVo1*c-(aY168o<`JsSbk-,1N;$>0:OUas(3:8Z972LSfF8eb=c-;>SPw7.6hn3m`9^Xkn(r.qS[0;T%&Qc=+STRxX'q1BNk3&*eu2;&8q$&x>Q#Q7^Tf+6<(d%ZVmj2bDi%.3L2n+4W'$PiDDG)g,r%+?,$@?uou5tSe2aN_AQU*<h`e-GI7)?OK2A.d7_c)?wQ5AS@DL3r#7fSkgl6-++D:'A,uq7SvlB$pcpH'q3n0#_%dY#xCpr-l<F0NR@-##FEV6NTF6##$l84N1w?AO>'IAOURQ##V^Fv-XFbGM7Fl(N<3DhLGF%q.1rC$#:T__&Pi68%0xi_&[qFJ(77j_&JWoF.V735&T,[R*:xFR*K5>>#`bW-?4Ne_&6Ne_&6Ne_&n`kr-#GJcM6X;uM6X;uM(.a..^2TkL%oR(#;u.T%fAr%4tJ8&><1=GHZ_+m9/#H1F^R#SC#*N=BA9(D?v[UiFY>>^8p,KKF.W]L29uLkLlu/+4T<XoIB&hx=T1PcDaB&;HH+-AFr?(m9HZV)FKS8JCw;SD=6[^/DZUL`EUDf]GGlG&>w$)F./^n3+rlo+DB;5sIYGNk+i1t-69Jg--0pao7Sm#K)pdHW&;LuDNH@H>#/X-TI(;P>#,Gc>#0Su>#4`1?#8lC?#<xU?#@.i?#D:%@#HF7@#LRI@#P_[@#Tkn@#Xw*A#]-=A#a9OA#d<F&#*;G##.GY##2Sl##6`($#:l:$#>xL$#B.`$#F:r$#JF.%#NR@%#R_R%#Vke%#Zww%#_-4&#3^Rh%Sflr-k'MS.o?.5/sWel/wpEM0%3'/1)K^f1-d>G21&v(35>V`39V7A4=onx4A1OY5EI0;6Ibgr6M$HS7Q<)58C5w,;WoA*#[%T*#`1g*#d=#+#hI5+#lUG+#pbY+#tnl+#x$),#&1;,#*=M,#.I`,#2Ur,#6b.-#;w[H#iQtA#m^0B#qjBB#uvTB##-hB#'9$C#+E6C#/QHC#3^ZC#7jmC#;v)D#?,<D#C8ND#GDaD#KPsD#O]/E#g1A5#KA*1#gC17#MGd;#8(02#L-d3#rWM4#Hga1#,<w0#T.j<#O#'2#CYN1#qa^:#_4m3#o@/=#eG8=#t8J5#`+78#4uI-#m3B2#SB[8#Q0@8#i[*9#iOn8#1Nm;#^sN9#qh<9#:=x-#P;K2#$%X9#bC+.#Rg;<#mN=.#MTF.#RZO.#2?)4#Y#(/#[)1/#b;L/#dAU/#0Sv;#lY$0#n`-0#sf60#(F24#wrH0#%/e0#TmD<#%JSMFove:CTBEXI:<eh2g)B,3h2^G3i;#d3jD>)4kMYD4lVu`4m`:&5niUA5@(A5BA1]PBB:xlBCC=2CDLXMCEUtiCf&0g2'tN?PGT4CPGT4CPGT4CPGT4CPGT4CPGT4CPGT4CPGT4CPGT4CPGT4CPGT4CPGT4CPGT4CP-qekC`.9kEg^+F$kwViFJTB&5KTB&5KTB&5KTB&5KTB&5KTB&5KTB&5KTB&5KTB&5KTB&5KTB&5KTB&5KTB&5KTB&5KTB&5o,^<-28ZI'O?;xpO?;xpO?;xpO?;xpO?;xpO?;xpO?;xpO?;xpO?;xpO?;xpO?;xpO?;xpO?;xpO?;xp;7q-#lLYI:xvD
@@ -362,9 +367,9 @@
 8CMsgRGBA
 8CUtlGrid
 8I9}8L
-8IcG0L
 8NETWORK_DISCONNECT_LOCALPROBLEM_HOSTEDSERVERPRIMARYRELAY
 8[A\A]A^A
+8basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE
 9;t"Hcs
 9ISequence
 9basic_ostringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE
@@ -373,22 +378,28 @@ A file with this name is already in the pool
 A protocol message was rejected because it was too big (more than
 A+E(~3D
 A+L$$Hc
+A+u8~-I
 A+u8~.I
-A+u8~1I
 A0 Row 0
 A0 Row 1
 A1 Row 0
 A1 Row 1
-A9GHt A
+A23CKV3TransferSaveContext
+A9D$Ht"A
 A9^ t8A9
 A9_ t%A9
 A9_ u\A
 A:%0.3f
 A:D$@u6
-A;FDt\H
+A;D$h~DH
+A;Fh~DH
+A;Gx~UH
+A;G|~LH
 A;MD}gA
 A;N(u-A
-A;T$P}xHk
+A;NP}kHk
+A;_\uCD
+A;_h~AH
 AA for plots can be toggled from the plot's context menu
 ABGR8888
 ABOUT THIS DEMO
@@ -412,26 +423,25 @@ ANIMATION_SNAPSHOT_MAX
 ANIMATION_SNAPSHOT_SERVER_SIMULATION
 AO Proxies: %d (%d drawcalls
 AOProxies
+AOProxyClipPlane
 APPSYSTEM: In ConnectInterfaces(), s_nRegistrationCount is %d
 ARARARARA
-ARARARARARARARARARARARARARARARARARARARARARARARARARARAp
 ARARARAVAUBp
 ARARAUB
-ARARAVARATARARARATARATARAYA
+ARARAVARATARARARATARATARAZA
 ARARAVARATAp
-ARARAVAUASASBVARA
+ARARAVAUASASBWBp
 ARASSAVAW
 ARATARATARA`"ARA
 ARAUASBZAp
 ARAVASATASASASASASBTAWASASB
-ARAVAUASASASASASASASASASASC
+ARAVAUASASASASASASASASASC^BRAVB\Ap
 ARGB8888
-ASASASA
 ASASASASASA
-ASASASASASASASBp
-ASASASASASA`WA]A`'ARBRBRBRBRBRBRBRBRB
-ATARARATARA[ASKSE
-ATARARA`FARARARARARARARA\0
+ASASASASASASA`WA]A`'ARBRBRBRBRBRBRBRBRB
+ASAZASBRARAp
+ATARARATA\Ap
+ATARARA`GARARARARARARARA\0
 ATATARA
 ATATA[ARA
 ATAWASAR
@@ -441,9 +451,9 @@ AUASASASASBZARATASASASASASASASB
 AUASASASB
 AUASASB
 AVASARj
-AVASASASBRARARARARARA
-AVAUATSH
+AVBRARARARARARA
 AVS9O<~oH
+AWARARARASAp
 AWAVARSAUAS
 AWAVATS
 AWAVATS9w
@@ -451,7 +461,6 @@ AWAVATSA
 AWAVATSD
 AWAVATSE
 AWAVATSH
-AWAVATSH9
 AWAVATSI
 AWAVATSL
 AWAVATSM
@@ -470,24 +479,27 @@ AWAVAUATSPA
 AWAVAUATSPD
 AWAVAUATSPE
 AWAVAUATSPH
-AWAVAUATSPH9
-AWAVAUATSPHc_ H
 AWAVAUATSPI
 AWAVAUATSPL
 AWAVAUATSPLc
 AWAVAUATSPM
 AWAVSP1
+AWAVSP9wl
 AWAVSPA
+AWAVSPD
 AWAVSPE
 AWAVSPE1
 AWAVSPH
 AWAVSPH9
 AWAVSPI
 AWAVSPL
+AWAVSPLc
+AWAVSPM
 AWSAUATASH
-A[A\AUARAWA
+A[ATCSBSB]0
 A\A]A^A
-A`0ARARARARARARARARARARARARARARARARARARARARARARARARARARARA
+A`TARARARARARARARARARARARARARARARARARARARARARARARARARARARARAp
+A`dARARARARARARARARARARARARARARARARARARARARARARARARARARARAXAp
 Abibliophobia
 About Dear ImGui
 Absquatulate
@@ -532,9 +544,8 @@ All objects/fields data are dummies here
 All primitives
 All those beautiful files will be deleted
 AllHovered: %s
-AllocatePerFrameTransformData: Transform buffer full
 AllocateRenderTarget: Does not work to pass pOtherView == this
-Allocating new transform buffer
+Allow stationary/dynamic lights to cast shadows
 Allow time-sliced shadow buffer rendering when enabled via gameinfo.gi
 AllowSubrectResolve
 Allows rendering dynamic lights
@@ -584,6 +595,7 @@ AnyHit2
 AnyHit3
 AoProxyConstantBuffer_t
 AoProxyManifest
+Ap@RBSEp
 Appearing: %d, Hidden: %d (CanSkip %d Cannot %d), SkipItems: %d
 Application average %.3f ms/frame (%.1f FPS
 Apricot
@@ -626,6 +638,7 @@ B0 Row 0
 B0 Row 1
 B1 Row 0
 B1 Row 1
+B17CSkyBoxObjectDesc
 B:%0.3f
 BBBBBBBB
 BG/FG draw lists
@@ -637,7 +650,7 @@ BGRX8888
 BGRX8888_LINEAR
 BLAS %d
 BRARARARARAYASAWA[BSASASASASASASASASA
-BRAVA\Ap
+BRASASASA
 BUZZWORD
 BackUp() can only be called after a successful Next
 Backend Flags
@@ -698,7 +711,7 @@ Bound Last Frame
 BoundTexture%d
 BoundTextureSrgb%d
 Box Select
-Bp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RB
+Bp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp@p
 BreakOnDelete
 BreakOnDraw
 Brianna
@@ -730,11 +743,12 @@ By default, labels are in UTC time but can be set to use local time instead
 By default, right-clicking over a TableHeadersRow()/TableHeader() line will open the default context-menu
 B~>m9w>e
 C LcK$H
-C$;CXuJL
+C$;CXuHL
 C++ lambdas can be passed as function pointers as well
 C0[A\A^A
-C16ISceneObjectDesc
+C20CDebugTextObjectDesc
 C6FaceSkyboxObjectDesc
+C8D9hXtPH
 CAggregateSceneObject
 CAggregateSceneObjectDesc
 CAimConstraint
@@ -767,7 +781,7 @@ CDebugTextObjectDesc
 CDirectionalLightObjectDesc
 CDirectionalLightObjectDescGpu
 CDrawCullingData
-CEHandleNetworkableInt"R
+CEHandleNetworkableInt
 CEntityMsg
 CEnvMapLightObjectDesc
 CEnvMapLightObjectDescCPU
@@ -776,6 +790,7 @@ CFingerBone
 CFingerChain
 CFingerSource
 CFootDefinition
+CHECK failed: !HasUnknownFieldsTag
 CHECK failed: !InRealOneof(field
 CHECK failed: !TableEntryIsTree(b) && !TableEntryIsTree(b ^ 1
 CHECK failed: !checkpoints_.empty
@@ -785,29 +800,31 @@ CHECK failed: !extension->is_repeated
 CHECK failed: !failed
 CHECK failed: !field->options().weak
 CHECK failed: !fields_.empty
-CHECK failed: !file
 CHECK failed: !file->finished_building
 CHECK failed: !had_error
-CHECK failed: !name
+CHECK failed: !has_allocated
+CHECK failed: !is_message_owned || arena != nullptr
 CHECK failed: !once
 CHECK failed: !oneof_descriptor->is_synthetic
-CHECK failed: !out.HadError
+CHECK failed: !same_message_owned_arena && !internal::IsDescendant(to, from
 CHECK failed: !schema_.InRealOneof(field) || HasOneofField(message, field
-CHECK failed: !tagged_ptr_.IsTagged
 CHECK failed: !tree->empty
-CHECK failed: !value || options_ != nullptr
-CHECK failed: !value || source_code_info_ != nullptr
-CHECK failed: (&from) != (this
+CHECK failed: !value || _impl_.options_ != nullptr
+CHECK failed: !value || _impl_.source_code_info_ != nullptr
+CHECK failed: (&from) != (_this
 CHECK failed: (&from) != (to
 CHECK failed: (&other) != (this
 CHECK failed: ((*extension).is_repeated ? FieldDescriptor::LABEL_REPEATED : FieldDescriptor::LABEL_OPTIONAL) == (FieldDescriptor::LABEL_OPTIONAL
 CHECK failed: ((*extension).is_repeated ? FieldDescriptor::LABEL_REPEATED : FieldDescriptor::LABEL_OPTIONAL) == (FieldDescriptor::LABEL_REPEATED
 CHECK failed: ((*extension).is_repeated ? REPEATED_FIELD : OPTIONAL_FIELD) == (OPTIONAL_FIELD
 CHECK failed: ((*extension).is_repeated ? REPEATED_FIELD : OPTIONAL_FIELD) == (REPEATED_FIELD
+CHECK failed: ((lhs_donated_array[0] & 0x1u) == 0) == ((rhs_donated_array[0] & 0x1u) == 0
 CHECK failed: (*buffer) == (first_byte
 CHECK failed: (0) == (BufferSize
 CHECK failed: (FieldDescriptor::TypeToCppType(field->type())) == (value.type
+CHECK failed: (GetOwningArena()) == (other->GetOwningArena
 CHECK failed: (TYPE_LENGTH_DELIMITED) == (type
+CHECK failed: (arena_) == (other->arena
 CHECK failed: (bucket_index_ % 2) == (0u
 CHECK failed: (bucket_index_ & 1) == (0u
 CHECK failed: (buffer[0]) >= (128
@@ -838,6 +855,7 @@ CHECK failed: (cpp_type(extension->type)) == (WireFormatLite::CPPTYPE_MESSAGE
 CHECK failed: (cpp_type(extension->type)) == (WireFormatLite::CPPTYPE_STRING
 CHECK failed: (cpp_type(extension->type)) == (WireFormatLite::CPPTYPE_UINT32
 CHECK failed: (cpp_type(extension->type)) == (WireFormatLite::CPPTYPE_UINT64
+CHECK failed: (ctx.LastTag()) != (1
 CHECK failed: (current_size_) > (0
 CHECK failed: (descriptor->file()->pool()) == (DescriptorPool::generated_pool
 CHECK failed: (digits) < (100
@@ -847,30 +865,41 @@ CHECK failed: (extension->type) == (other_extension.type
 CHECK failed: (field->message_type()) == (desc
 CHECK failed: (field->options().ctype()) == (ctype
 CHECK failed: (field->type()) == (FieldDescriptor::TYPE_BYTES
+CHECK failed: (field->type()) == (FieldDescriptor::TYPE_MESSAGE
 CHECK failed: (field_count()) == (2
 CHECK failed: (first_byte & 0x80) == (0x80
 CHECK failed: (first_byte_or_zero) != (0
 CHECK failed: (first_byte_or_zero) == (buffer_[0
+CHECK failed: (from) != (to
 CHECK failed: (from.GetDescriptor()) == (descriptor
+CHECK failed: (full_name) == (symbol.full_name
 CHECK failed: (has_bit_index) != (~0u
 CHECK failed: (index) < (current_size
+CHECK failed: (index) > (0
 CHECK failed: (index) >= (0
 CHECK failed: (internal::AlignUpTo8(n)) == (n
 CHECK failed: (it.m_) == (this
 CHECK failed: (kBlockHeaderSize + ThreadSafeArena::kSerialArenaSize) <= (mem.size
 CHECK failed: (last_returned_size_) > (0
+CHECK failed: (limit_) > (0
 CHECK failed: (limit_) >= (ptr
+CHECK failed: (message1->GetOwningArena()) == (message2->GetOwningArena
 CHECK failed: (message1->GetReflection()) == (this
 CHECK failed: (message2->GetReflection()) == (this
 CHECK failed: (message_type) == (field->message_type
 CHECK failed: (min_bytes) <= (std::numeric_limits<size_t>::max() - SerialArena::kBlockHeaderSize
-CHECK failed: (n & (n - 1)) == (0
+CHECK failed: (n & (n - 1)) == (0u
 CHECK failed: (n) >= (0
+CHECK failed: (name) == (symbol.parent_name_key().second
 CHECK failed: (new_num_buckets) >= (kMinTableSize
-CHECK failed: (new_size) > (kRepeatedFieldUpperClampLimit
+CHECK failed: (num_elements) <= (std::numeric_limits<size_t>::max() / sizeof(T
 CHECK failed: (option_field->type()) == (FieldDescriptor::TYPE_GROUP
 CHECK failed: (out) == (begin + result.size
+CHECK failed: (out_oneof_decl.fields_ + out_oneof_decl.field_count_) == (message->field(i
 CHECK failed: (overrun) <= (kSlopBytes
+CHECK failed: (overrun) >= (0
+CHECK failed: (parent) == (symbol.parent_name_key().first
+CHECK failed: (reinterpret_cast<uintptr_t>(p) & kMask) == (0UL
 CHECK failed: (result.bucket_index_) == (b & ~static_cast<size_type>(1
 CHECK failed: (size) <= (6
 CHECK failed: (size) <= (static_cast<size_t>(2147483647
@@ -882,35 +911,42 @@ CHECK failed: (target - output->data()) == (output->size
 CHECK failed: (temp[0]) == ('1
 CHECK failed: (temp[size - 1]) == ('5
 CHECK failed: (to->GetDescriptor()) == (descriptor
-CHECK failed: (total_size_ - current_size_) >= (n
+CHECK failed: (total_.template Get<U>()) == (used_.template Get<U
+CHECK failed: (total_size_ - current_size_) >= (elements
 CHECK failed: (total_size_) > (0
 CHECK failed: (type) != (WireFormatLite::TYPE_ENUM
 CHECK failed: (type) != (WireFormatLite::TYPE_GROUP
 CHECK failed: (type) != (WireFormatLite::TYPE_MESSAGE
 CHECK failed: (uintptr_t((a).data() - (*result).data())) > (uintptr_t((*result).size
+CHECK failed: (used) <= (total_.template Get<TypeToUse
+CHECK failed: *from != nullptr
 CHECK failed: *ptr
+CHECK failed: *to == nullptr
 CHECK failed: GeneratedDatabase()->Add(encoded_file_descriptor, size
-CHECK failed: GetArena() == nullptr
-CHECK failed: GetArena() == other->GetArena
+CHECK failed: GetArenaForAllocation() == nullptr
 CHECK failed: HasExtensionSet
 CHECK failed: HasHasbits
-CHECK failed: IsDefault(default_value
+CHECK failed: HasInlinedString
+CHECK failed: IsDefault
 CHECK failed: IsInitialized
 CHECK failed: IsMapValid() && other.IsMapValid
 CHECK failed: TableEntryIsNonEmptyList(b
 CHECK failed: TableEntryIsTree(b
+CHECK failed: _impl_.options_ != nullptr
+CHECK failed: _impl_.source_code_info_ != nullptr
 CHECK failed: a.type() == b.type
 CHECK failed: allow_unknown_field_ || allow_unknown_extension_ || reserved_field
-CHECK failed: arena != nullptr
+CHECK failed: arena_ == nullptr
 CHECK failed: builder
 CHECK failed: checkpoints_.empty
-CHECK failed: cur
 CHECK failed: descriptor
 CHECK failed: dynamic.get() != nullptr
-CHECK failed: enum_type_->value_count
+CHECK failed: enum_type->value_count
 CHECK failed: errors == nullptr
-CHECK failed: extension != NULL
+CHECK failed: extension != nullptr
 CHECK failed: extension->is_repeated
+CHECK failed: extension->type > 0 && extension->type <= WireFormatLite::MAX_FIELD_TYPE
+CHECK failed: false
 CHECK failed: field != nullptr
 CHECK failed: field->cpp_type() == cpp_type || (field->cpp_type() == FieldDescriptor::CPPTYPE_ENUM && cpp_type == FieldDescriptor::CPPTYPE_INT32
 CHECK failed: field->is_repeated
@@ -918,17 +954,18 @@ CHECK failed: field->is_repeated() || (index == -1
 CHECK failed: file != nullptr
 CHECK failed: file && file->pool
 CHECK failed: file()->finished_building_ == true
+CHECK failed: file->finished_building
 CHECK failed: file->pool_->lazily_build_dependencies
-CHECK failed: file_->finished_building
 CHECK failed: find(node->kv.first) == end
 CHECK failed: finished_building_ == true
 CHECK failed: had_errors_ || recursion_limit_ == initial_recursion_limit
+CHECK failed: has_allocated
 CHECK failed: has_default_value
 CHECK failed: index_of_first_non_null_ == num_buckets_ || table_[index_of_first_non_null_] != nullptr
+CHECK failed: is_extension
 CHECK failed: is_prototype
 CHECK failed: is_repeated
 CHECK failed: limit >= 0 && limit <= INT_MAX - kSlopBytes
-CHECK failed: limit_ > 0
 CHECK failed: limit_ > kSlopBytes
 CHECK failed: limit_end_ == buffer_end
 CHECK failed: limit_end_ == buffer_end_ + (std::min)(0, limit
@@ -936,10 +973,9 @@ CHECK failed: m_->index_of_first_non_null_ == m_->num_buckets_ || m_->table_[m_-
 CHECK failed: n <= size
 CHECK failed: n >= kMinTableSize
 CHECK failed: node_ != nullptr && m_ != nullptr
-CHECK failed: options_ != nullptr
 CHECK failed: options_descriptor
 CHECK failed: original_uninterpreted_options_field != nullptr
-CHECK failed: other->GetArena() != GetArena
+CHECK failed: other->GetOwningArena() != GetOwningArena
 CHECK failed: out_location != nullptr
 CHECK failed: output
 CHECK failed: output->message_info.prototype != nullptr
@@ -948,29 +984,37 @@ CHECK failed: overrun < limit
 CHECK failed: overrun <= kSlopBytes
 CHECK failed: overrun >= 0
 CHECK failed: overrun >= 0 && overrun <= kSlopBytes
-CHECK failed: owning_arena == nullptr
-CHECK failed: prototype != NULL
+CHECK failed: p != nullptr
+CHECK failed: prototype != nullptr
+CHECK failed: ptr != nullptr
 CHECK failed: ptr < end
+CHECK failed: ptr <= buffer_end_ + kSlopBytes
 CHECK failed: ptr <= end_ + kSlopBytes
 CHECK failed: reflection
+CHECK failed: rep
+CHECK failed: repeated_field_ == nullptr
 CHECK failed: s >= 0
 CHECK failed: schema_.HasHasbits
+CHECK failed: schema_.HasInlinedString
 CHECK failed: size > 0
 CHECK failed: size > chunk_size
+CHECK failed: size >= 16
 CHECK failed: size_ == 0
 CHECK failed: size_ > kSlopBytes
 CHECK failed: snprintf_result > 0 && snprintf_result < kDoubleToBufferSize
 CHECK failed: snprintf_result > 0 && snprintf_result < kFloatToBufferSize
-CHECK failed: source_code_info_ != nullptr
+CHECK failed: sub_message == nullptr || sub_message->GetOwningArena() == nullptr || sub_message->GetOwningArena() == message->GetArenaForAllocation
 CHECK failed: table_[b] == table_[b + 1] && (b & 1) == 0
-CHECK failed: tagged_ptr_.UnsafeGet() != nullptr
+CHECK failed: tagged_ptr_.Get() != nullptr
+CHECK failed: tagged_ptr_.IsMutable
 CHECK failed: target + size == res
 CHECK failed: target_ != NULL
 CHECK failed: this != other
+CHECK failed: this != rhs
 CHECK failed: this == other_mutator
 CHECK failed: type > 0 && type <= WireFormatLite::MAX_FIELD_TYPE
 CHECK failed: uninterpreted_options_field != nullptr
-CHECK failed: value != nullptr
+CHECK failed: unknown_fields->SerializeToString(outstr
 CHECK failed: z.first != NULL
 CHitBox
 CHitBoxSet
@@ -992,7 +1036,10 @@ CMonitorObjectDesc
 CMorphConstraint
 CMsgPlayerInfo
 CMsgQAngle
+CMsgQuaternion
+CMsgQuaternion"6
 CMsgRGBA
+CMsgTransform
 CMsgVector
 CMsgVector2D
 CMsg_CVars
@@ -1029,7 +1076,6 @@ CPointLightObjectDescGpu
 CProjectedDecalSceneObjectDesc
 CP}`Hk
 CRC64_ProcessBuffer
-CRKTEp
 CRenderBufferBinding
 CRenderMesh
 CRenderSkeleton
@@ -1084,7 +1130,6 @@ CTSQueue corruption
 CTSQueue: Misaligned queue
 CTSQueue::Node_t *CTSQueue<CSceneDrawList *, false>::Push(CTSQueue::Node_t *) [T = CSceneDrawList *, bTestOptimizer = false
 CTSQueue::Node_t *CTSQueue<CSceneObject *, false>::Push(CTSQueue::Node_t *) [T = CSceneObject *, bTestOptimizer = false
-CTSQueue::Node_t *CTSQueue<CSceneSystem::HMDAttachmentFixup_t, false>::Push(CTSQueue::Node_t *) [T = CSceneSystem::HMDAttachmentFixup_t, bTestOptimizer = false
 CTextureDisplayer
 CTiltTwistConstraint
 CTonemapRenderer is trying to render with an invalid occlusion query handle. Are we rendering while the screen isn't visible? Look for a previous warning saying we ran out of buckets
@@ -1106,6 +1151,7 @@ CUtlRBTree overflow with %u elements
 CUtlString
 CUtlVector
 CUtlVectorFixedGrowable
+CVfA;FV
 CVrSkeletalInputSettings
 CWristBone
 CX;C\unD
@@ -1117,6 +1163,7 @@ C`L9(t+I
 Call set methods to initialize MapKey
 Callback %p, user_data %p
 Caller should provide us with *buffer_ when buffer is non-empty
+CameraDepthDimensions
 Can't get here
 Can't get here: failed to get default value as string
 Can't happen
@@ -1133,6 +1180,7 @@ Cannot resolve to the same render targets as in the previous layer
 Cannot skip field value, unexpected token
 Capacity: %d
 Capture/Logging
+Cast of %s loses value information (returning %s
 Category A
 Category B
 Category C
@@ -1144,7 +1192,6 @@ CellPaddingX: %.1f, CellSpacingX: %.1f/%.1f, OuterPaddingX: %.1f
 CentralNode
 CentralNode=%d%n
 CentralNode=1
-Cf[A\A^A
 ChI;Fhu
 Change Colormap
 Changing MeshGroupMask when PrunUnusedMeshGroups is set, after the sceneobject has been created (the groups have already been discarded
@@ -1273,6 +1320,7 @@ Config/Build Information
 Configuration
 Configuration##2
 Console
+Constants
 Constrained-resizing window
 Constraint
 Content
@@ -1312,7 +1360,6 @@ Ctrl shows window dock info
 CtuNzL
 CubeMapDebugColors
 Cucumber
-Cull View
 CullCameraForwardWs
 CullCameraPositionWs
 CulledMeshletDrawArgs
@@ -1338,10 +1385,8 @@ CustomRend
 CustomShadowPipeline
 CustomTexture0
 CustomTexture1
-CxD9hPtPH
 C|u2z0
 D$$A9L
-D$(IcL
 D$(IcL$0H
 D16_SHADOW
 D24X8_SHADOW
@@ -1351,7 +1396,6 @@ D9#tjL
 D9;tnL
 D9c$}zIc
 D;cP}gMk
-D;k uHH
 D;xP}]Ik
 DDDDUUUUDDDDUUUU
 DEFAULT_WRITE_PATH
@@ -1376,11 +1420,10 @@ D_DECALS_ENABLED
 D_DOWNSAMPLE_MODE
 D_ENABLE_INDIRECT
 D_ENABLE_VOLUMETRIC_FOG
+D_FAST_CONSERVATIVE_BOUNDS
 D_FLOAT_INTERMEDIATE_TEXTURES
 D_MIN_ANGULAR_FOG
 D_MSAA_DEPTH_BUFFER
-D_MULTIVIEW_INSTANCING
-D_MULTIVIEW_INSTANCING_STRIDE
 D_OCCLUSION_CULLING
 D_ORTHOGRAPHIC_VIEW
 D_OVERWRITE_DEPTH
@@ -1552,13 +1595,16 @@ Dynamic Shadow
 DynamicAmbientOcclusion
 DynamicAmbientOcclusionDepth
 E;g@u f
-E;i u?H
+E;wLuCE
+E;wl~AH
+EHJcL80H
 EMG Signal
 ENetworkDisconnectionReason
 ERROR! Cannot load GpuLightBinnerManifest
 ERROR: Docking is not enabled! See Demo > Configuration
 ERROR: Resource name "%s" has the incorrect extension "%s" for the specified resource type (expected "%s
 ESCAPE to revert
+EVfA;FV
 EXPORTSYSTEM_INTERFACE_VERSION_001
 EarlyInit_Tier0
 EconItemToolModel_001
@@ -1567,6 +1613,7 @@ Eggplant
 Electrode
 Ellipsis character: '%c' (U+%04X
 Embed everything inside a child window (for additional testing
+EmissiveLightingBoost
 Enable blinking cursor (optional as some users consider it to be distracting
 Enable context menu
 Enable display of console messages on screen. 1 = Enabled, 0 = Disabled, -1 = Enabled if vgui is not present
@@ -1584,6 +1631,7 @@ Enabled: %d, VisibleX/Y: %d/%d, RequestOutput: %d, SkipItems: %d, DrawChannels: 
 EncodeRGBM
 Encountered bad skin weights, summing to %g (1.0 expected) at position %.3f %.3f %.3f
 End-of-file inside block comment
+EndMarker
 EndTimestamp
 Engine2
 Engine2/RenderingPipeline
@@ -1635,6 +1683,7 @@ Exceeded maximum number of environment maps: %i added to world, %i maximum
 Exceeded maximum number visible environment maps: %i, %i maximum
 Exceeding number of envmaps: MAX %i, found %i
 Exceeding number of lpvs: MAX %i, found %i
+Exceeds Maximum Package Depth
 Expanded map entry type
 Expect a decimal number, got
 Expected
@@ -1655,7 +1704,7 @@ ExtHovered: %s
 Extend hit area to all available width instead of allowing more items to be laid out after the node
 Extension
 Extension conflicts with extension already in database: extend
-Extension factory's GetPrototype() returned NULL for extension
+Extension factory's GetPrototype() returned nullptr; extension
 Extension number $0 has already been used in "$1" by extension "$2
 Extension number $0 has already been used in "$1" by extension "$2" defined in $3
 Extension numbers cannot be greater than $0
@@ -1670,12 +1719,15 @@ ExtensionRangeOptions
 Extensions in proto3 are only allowed for defining options
 Extensions of MessageSets must be optional messages
 Extensions to non-lite types can only be declared in non-lite files.  Note that you cannot extend a non-lite type to contain a lite type, but the reverse is allowed
+F H+p(H
+F0I;F(sAH
+F17CSceneLightObject
 F4A;F8
+F8Lc`\M
 FATAL ERROR: unable to register all schema data: %s
-FHJcL80H
-FXIcNhH
-FXMcnhM
-FZf9GZu
+FATAL: %s called on a pool context (no root available
+FRf9CRu
+FRfA9ER
 F`HcNXH
 F`HcvXH
 Failed to allocate an instance of class '%s
@@ -1788,7 +1840,6 @@ ForceShadowsFromNonShadowCastingGeometry
 Forces all ray traced geometry to use default hit shaders instead of specialized ones
 Foreground
 Forward
-ForwardDebugLightingOnly
 ForwardLayerOnly
 ForwardLightSetup
 Found invalid proto option data for
@@ -1817,20 +1868,23 @@ Full-width
 Fullscreen
 Fullscreen window
 FvP12CSceneObjectE
-FxLc`XM
 FzfA;FxA
+G H+x(H
+G Mcw$D9
+G$Mcw(D9
 G(H;F(t5H
 G(HcO0H
+G(Mcw,D9
+G,Mcw0D9
 G:%0.3f
 G@H+G8I
 GHA;GLuoD
 GN6google8protobuf2io20ZeroCopyOutputStreamE
-GPH+x(H
 GPH;FPu4H
 GPIcOHH
 GPU Memory Size
 GPUProfiler
-G^f;F^A
+GPUSort
 GameResourceServiceClientV001
 GameResourceServiceServerV001
 GameStartup
@@ -1935,7 +1989,7 @@ Gamepad
 Generate Huge Data (~500MB
 GenerateDecalNormals
 GeneratedCodeInfo
-Generating LPV debug grid colors for %s
+Generating LPV Debug color atlas for %s
 GenericOpaque
 GenericTransparent
 GeoViewBH
@@ -1992,7 +2046,8 @@ Grid Lines
 Groups are not supported in proto3 syntax
 Gx;G|uxD
 GxfA;Gzu.A
-H+K0HcRhH
+H*NLFPFFLF
+H+N0HcR
 H-scrollbar
 H9H8t$H
 H: %.3f, S: %.3f, V: %.3f
@@ -2097,7 +2152,7 @@ HoveredWindow: '%s
 HoveredWindowUnderMovingWindow: '%s
 Hovering me sets the
 However, the _correct_ way of scaling your UI is currently to reload your font at the designed size, rebuild the font atlas, and call style.ScaleAllSizes() on a reference ImGuiStyle structure
-Ht9<XufI
+Ht9<XupI
 Hue bar + SV rect
 Hue wheel + SV triangle
 I am a fancy tooltip
@@ -2106,8 +2161,8 @@ I am a tooltip over a popup
 I am an odd tab
 I am the last one here
 I.w? F
-I96v<IcG
-I;GPtiH
+I9\$Ht3I
+I;D$PtjH
 I;OPt(I
 ID: 0123456789
 ID=0x%08X
@@ -2136,11 +2191,11 @@ ITEM: Text
 ITEM: TreeNode
 ITEM: TreeNode w/ ImGuiTreeNodeFlags_OpenOnDoubleClick
 IcD$0H
-IcD$HI9
+IcD$0H9
+IcD$4H9
 IcD$LfA
 IcD$hH9
 IcL$0H
-IcL$X9
 IdempotencyLevel
 If enabled, the camera's translation will be included in the projection matrix
 If lb_csm_override_staticgeo_cascades, override value used to determine which cascades render static objects
@@ -2254,6 +2309,8 @@ IndentSpacing
 Indented
 Index must be -1 for non-repeated fields
 Index out-of-bounds (field is empty
+Indirect Dispatch Args
+IndirectDispatchArgs
 Inferred order (front-to-back
 Infinite
 Infinite Joint Weights encountered: Skinning will not work! (At position %.3f %.3f %.3f
@@ -2282,7 +2339,6 @@ Intentionally vague touch behavior for %p
 Interactive Data
 Internal inconsistency between the layout format and attribute is detected
 Internal state
-InternalSerialize
 Interpreting non ascii codepoint %d
 InvRenderTargetDim
 Invalid control characters encountered in text
@@ -2377,11 +2433,11 @@ Items (%d
 Items (1,000 pts each
 I|?ff6
 JIGGLE_BONE
+JP}`Hk
 JS_NORMAL
 JS_NUMBER
 JS_STRING
 January
-JcD8DH9
 Joint Indices (%d) Out Of Range for SINT16: Skinning will not work
 Joint Indices (%d) Out Of Range for UINT10: Skinning will not work
 Joint Indices (%d) Out Of Range for UINT8: Skinning will not work
@@ -2393,6 +2449,7 @@ Key 0x%08X Value { i: %d
 Key in map fields cannot be enum types
 Key in map fields cannot be float/double, bytes or message types
 KeyValueCache001
+KeyValues3 *CKeyValues3Context::Root
 Keyboard
 Keyboard & Navigation State
 Keys down
@@ -2402,8 +2459,6 @@ Keys release
 L$$A9T
 L$(IcT$0H
 L$0u%z
-L$@IcT$8
-L9"v$IcG@A
 L;sxtKL
 LABEL_OPTIONAL
 LABEL_REPEATED
@@ -2443,13 +2498,14 @@ LegendText
 Lettuce
 Light Bounds Debugger
 Light Cookies
+LightBinner
 LightBinnerCullingData_t
 LightCookieTexture
 LightDataRWBuffer
 LightDepthBuffer
 LightProbeVolume
 LightProbeVolumeDebugColors
-LightProbeVolumeDebugColors_Atlas
+LightProbeVolumeDebugColors_%s
 LightProbeVolumeDesc
 LightSim_DiffuseAlbedoTexture
 LightSim_Opacity
@@ -2516,19 +2572,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 Low level command to set the flags byte associated with an object class. sc_SetClassFlags <classname> <value
 Low:   $%.2f
 M8ASAVL
-M9&v IcG A
-M9&v$IcG,A
-M9&v$IcG0A
-M9&v$IcGlA
-M9&vVIcG(A
-M9&vnIcGpA
-M9(vbHc
-M9,$vpL
-M9,$v|L
-M9.vGIcG8A
-M9>v`Hc
+M9'v_Hc
 M9v t[H
-M9}Ht.I
 M:0.000
 MATCHFRAMEWORK_001
 MESH_DRAW_FLAGS_CAN_BATCH_WITH_DYNAMIC_SHADER_CONSTANTS
@@ -2708,14 +2753,6 @@ Multi-Axis Plot
 Multi-component Widgets
 Multi-line Text Input
 Multi-line text
-MultiGpuTransfer
-MultiGpuTransferBackBuffer
-MultiGpuTransferDstGpu
-MultiGpuTransferRenderTargetDst
-MultiGpuTransferRenderTargetSrc
-MultiGpuTransferSrcGpu
-MultiGpuTransferSrcRectX
-MultiGpuTransferSrcRectY
 Multiple Y-Axes
 Multiple calls to Text(), clipped
 Multiple calls to Text(), not clipped (slow
@@ -2746,11 +2783,13 @@ N19CRayTraceSceneWorld9CPipelineE
 N19IRayTraceSceneWorld9IPipelineE
 N23CCharacterDecalRenderer26CCharacterDecalSceneObjectE
 N23CCharacterDecalRenderer27CCharacterDecalRendererDescE
+N24CParallelProcessLauncher18CParallelLambdaJobIZN12CSceneSystem15Thread_CullViewEP10CSceneViewP13CViewDrawListE3$_2EE
 N6google8protobuf10TextFormat17BaseTextGeneratorE
 N6google8protobuf10TextFormat21FastFieldValuePrinterE
 N6google8protobuf10TextFormat6FinderE
 N6google8protobuf10TextFormat6Parser10ParserImpl20ParserErrorCollectorE
 N6google8protobuf10TextFormat7Printer13TextGeneratorE
+N6google8protobuf10TextFormat7Printer28DebugStringFieldValuePrinterE
 N6google8protobuf11EnumOptionsE
 N6google8protobuf11FileOptionsE
 N6google8protobuf11MessageLiteE
@@ -2792,6 +2831,7 @@ N6google8protobuf21MethodDescriptorProtoE
 N6google8protobuf22ServiceDescriptorProtoE
 N6google8protobuf23SourceCodeInfo_LocationE
 N6google8protobuf24EnumValueDescriptorProtoE
+N6google8protobuf24ZeroCopyCodedInputStreamE
 N6google8protobuf25EncodedDescriptorDatabaseE
 N6google8protobuf28GeneratedCodeInfo_AnnotationE
 N6google8protobuf28UninterpretedOption_NamePartE
@@ -2805,8 +2845,8 @@ N6google8protobuf37EnumDescriptorProto_EnumReservedRangeE
 N6google8protobuf7MessageE
 N6google8protobuf8internal12ExtensionSet8KeyValueE
 N6google8protobuf8internal12MapFieldBaseE
+N6google8protobuf8internal14ZeroFieldsBaseE
 N6google8protobuf8internal15DynamicMapFieldE
-N6google8protobuf8internal15ExtensionFinderE
 N6google8protobuf8internal16InternalMetadata13ContainerBaseE
 N6google8protobuf8internal16InternalMetadata9ContainerINS0_15UnknownFieldSetEEE
 N6google8protobuf8internal16MapFieldAccessorE
@@ -2822,8 +2862,6 @@ N6google8protobuf8internal21RepeatedFieldAccessorE
 N6google8protobuf8internal23RepeatedPtrFieldWrapperINS0_7MessageEEE
 N6google8protobuf8internal23RepeatedPtrFieldWrapperINSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEEEE
 N6google8protobuf8internal23TypeDefinedMapFieldBaseINS0_6MapKeyENS0_11MapValueRefEEE
-N6google8protobuf8internal24GeneratedExtensionFinderE
-N6google8protobuf8internal29DescriptorPoolExtensionFinderE
 N6google8protobuf8internal30RepeatedFieldPrimitiveAccessorIbEE
 N6google8protobuf8internal30RepeatedFieldPrimitiveAccessorIdEE
 N6google8protobuf8internal30RepeatedFieldPrimitiveAccessorIfEE
@@ -2956,7 +2994,6 @@ NETWORK_DISCONNECT_UNUSUAL
 NETWORK_DISCONNECT_USERCMD
 NET_Messages
 NO_SIDE_EFFECTS
-NPH+q(H
 NP}YHk
 NSt3__110__function6__baseIFvP12CSceneObjectEEE
 NSt3__110__function6__baseIFvP18CEnvMapSceneObjectEEE
@@ -2967,10 +3004,11 @@ NSt3__110__function6__funcIPFvP12CSceneObjectENS_9allocatorIS5_EES4_EE
 NSt3__110__function6__funcIZL29InitForFrustum_DebugRendering17ESceneObjectFlagsS2_P10CSceneViewE4$_18NS_9allocatorIS5_EEFvP25CSceneLightObjectInternalEEE
 NSt3__110__function6__funcIZN12CSceneSystem11RenderAViewEP10CSceneViewfP24ConstantBufferHandle_t__R26SceneSystemPerFrameStats_tE3$_0NS_9allocatorIS9_EEFvvEEE
 NSt3__110__function6__funcIZN12CSceneSystem11RenderAViewEP10CSceneViewfP24ConstantBufferHandle_t__R26SceneSystemPerFrameStats_tE3$_1NS_9allocatorIS9_EEFvvEEE
-NSt3__110__function6__funcIZN12CSceneSystem17Thread_RenderViewEP10CSceneViewE3$_7NS_9allocatorIS5_EEFvvEEE
-NSt3__110__function6__funcIZN12CSceneSystem22ReleaseLayerDependentsERKNS_10shared_ptrI13CViewDrawListEEP11CSceneLayerE3$_3NS_9allocatorISA_EEFvvEEE
+NSt3__110__function6__funcIZN12CSceneSystem17Thread_RenderViewEP10CSceneViewE4$_10NS_9allocatorIS5_EEFvvEEE
 NSt3__110__function6__funcIZN12CSceneSystem22ReleaseLayerDependentsERKNS_10shared_ptrI13CViewDrawListEEP11CSceneLayerE3$_4NS_9allocatorISA_EEFvvEEE
-NSt3__110__function6__funcIZN12CSceneSystem26Thread_RenderLayerDrawListENS_10shared_ptrI13CViewDrawListEEP11CSceneLayerP16CRenderBatchList18EBatchStartFlags_tRK10CUtlVectorIP14CSceneDrawListi10CUtlMemoryISD_iEEE3$_2NS_9allocatorISJ_EEFvvEEE
+NSt3__110__function6__funcIZN12CSceneSystem22ReleaseLayerDependentsERKNS_10shared_ptrI13CViewDrawListEEP11CSceneLayerE3$_5NS_9allocatorISA_EEFvvEEE
+NSt3__110__function6__funcIZN12CSceneSystem22ReleaseLayerDependentsERKNS_10shared_ptrI13CViewDrawListEEP11CSceneLayerE3$_6NS_9allocatorISA_EEFvvEEE
+NSt3__110__function6__funcIZN12CSceneSystem26Thread_RenderLayerDrawListENS_10shared_ptrI13CViewDrawListEEP11CSceneLayerP16CRenderBatchList18EBatchStartFlags_tRK10CUtlVectorIP14CSceneDrawListi10CUtlMemoryISD_iEEE3$_3NS_9allocatorISJ_EEFvvEEE
 NSt3__110__function6__funcIZN13CLightBinner225AddEnvironmentMapsForViewEP10CSceneView17ESceneObjectFlagsS5_iE3$_3NS_9allocatorIS6_EEFvP18CEnvMapSceneObjectEEE
 NSt3__110__function6__funcIZN13CLightBinner225DebugLightProbeVolumeGridEP10CSceneViewE3$_1NS_9allocatorIS5_EEFvP28CSceneLightProbeVolumeObjectEEE
 NSt3__110__function6__funcIZN13CLightBinner225DebugLightProbeVolumeGridEP10CSceneViewE3$_2NS_9allocatorIS5_EEFvP28CSceneLightProbeVolumeObjectEEE
@@ -2978,13 +3016,14 @@ NSt3__110__function6__funcIZN13CLightBinner227AddLightProbeVolumesForViewEP10CSc
 NSt3__110__function6__funcIZN15CLightBinnerGPU18GatherHammerLightsEvE3$_3NS_9allocatorIS3_EEFvP25CSceneLightObjectInternalEEE
 NSt3__110__function6__funcIZN26CBindlessFastPathPartition21EnsureEnvironmentMapsEPK10ISceneViewE3$_0NS_9allocatorIS6_EEFvP18CEnvMapSceneObjectEEE
 NSt3__110__function6__funcIZN32CBindlessFastPathSceneObjectDesc25UpdateLightProbeVolumeSetEPK10ISceneViewP31LightProbeVolumeDescriptorSet_tP26CBindlessFastPathPartitionE3$_1NS_9allocatorISA_EEFvP28CSceneLightProbeVolumeObjectEEE
-NSt3__110__function6__funcIZZN12CSceneSystem22Thread_RenderViewLayerENS_10shared_ptrI13CViewDrawListEEP11CSceneLayerENK3$_6clEbEUlvE_NS_9allocatorIS9_EEFvvEEE
+NSt3__110__function6__funcIZZN12CSceneSystem22Thread_RenderViewLayerENS_10shared_ptrI13CViewDrawListEEP11CSceneLayerENK3$_8clEbEUlvE_NS_9allocatorIS9_EEFvvEEE
 NSt3__110__function6__funcIZZN13CLightBinner225DebugLightProbeVolumeGridEP10CSceneViewENK3$_1clEP28CSceneLightProbeVolumeObjectEUlvE_NS_9allocatorIS8_EEFvvEEE
 NSt3__110__function6__funcIZZN13CLightBinner225DebugLightProbeVolumeGridEP10CSceneViewENK3$_2clEP28CSceneLightProbeVolumeObjectEUlvE0_NS_9allocatorIS8_EEFvvEEE
 NSt3__110__function6__funcIZZN13CLightBinner225DebugLightProbeVolumeGridEP10CSceneViewENK3$_2clEP28CSceneLightProbeVolumeObjectEUlvE_NS_9allocatorIS8_EEFvvEEE
 NSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEE
 NSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEE
 NSt3__117bad_function_callE
+NSt3__118basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE
 NSt3__119basic_ostringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE
 NSt3__120__shared_ptr_emplaceI10CUtlVectorI20CMeshDrawPrimitive_ti10CUtlMemoryIS2_iEENS_9allocatorIS5_EEEE
 NSt3__120__shared_ptr_emplaceI13CViewDrawListNS_9allocatorIS1_EEEE
@@ -2993,7 +3032,6 @@ NSt3__121__basic_string_commonILb1EEE
 NSt3__13mapINS_17reference_wrapperIKN6google8protobuf6MapKeyEEEPvNS_4lessIS4_EENS3_8internal12MapAllocatorINS_4pairIKS6_S7_EEEEEE
 NSt3__13mapIiN6google8protobuf8internal12ExtensionSet9ExtensionENS_4lessIiEENS_9allocatorINS_4pairIKiS5_EEEEEE
 NV_NULL
-NXIcVhH
 Name:       %s
 NameOffset: %d
 NamePart
@@ -3117,7 +3155,6 @@ OOOOOOO
 Object %4d: 0x%p, class=%20s, origin=(%13g,%13g,%13g), bounds=(%13g,%13g,%13g):(%13g,%13g,%13g), desc=0x%p, flags=0x%016llX
 Object %d
 ObjectDesc
-ObjectLists use %ikb w/%ikb waste, reclaimed %ikb of unused
 OcclusionQueryIssueLayer
 October
 Offset %.2f
@@ -3175,9 +3212,12 @@ Over two lines
 Overlapping
 Override Cascades that will render static objects with lb_csm_override_staticgeo_cascades_value
 Override Streaming GPU Memory
-Override default setting for HDR rendering. -1 default, 0 NoHdr, 1 Hdr, 2 Hdr 1010102
+Override default setting for HDR rendering. -1 default, 0 NoHdr, 1 Hdr, 2 Hdr 1010102 3 Hdr 111110
+Override height of shadow atlas texture
+Override maximum visible barn lights
+Override maximum visible envmaps
+Override width of shadow atlas texture
 Override width/height of individual cascades in the CSM
-Override width/height of shadow atlas texture
 Override. Old default was 3.0
 Override. Old default was 45
 Override. Old value was 1.0
@@ -3185,17 +3225,17 @@ OverrideShaderMode
 Overrides the map's fog settings (-1 populates fog_ vars with map's values
 OwnedByApp
 P       P`  0 0    00000@@@     0000@@0@@0@@    0
+P46CBindlessFastPathParitionToolsResourceListener
 P>8c7NXNZd
+P@PPPPP
 PA;]Tu
 PAUSATAWAVAS
 PAWAVASAR
-PD;QD}{I
 PFvP12CSceneObjectE
 PLACEHOLDER_VALUE
 POSE_SPACE_BONE
 POSE_SPACE_MORPH
-PP;QPuo
-PPP@@P
+PP;QPus
 PPPPPPP
 PPPPPPPP
 PPPPPPPPP
@@ -3204,7 +3244,6 @@ PPPPPPPPPPPPPPP0PPPPP
 PP}YHk
 PP}]Hk
 PP}`Hk
-PRAPVQS
 PRESS SPACE TO DISABLE
 PROGRAMMER
 PROGRAMMER GUIDE
@@ -3212,6 +3251,7 @@ PROTOBUF_NAMESPACE_ID::FieldDescriptorProto_Label_IsValid(value
 PROTOBUF_NAMESPACE_ID::FieldDescriptorProto_Type_IsValid(value
 PUNCTUAL
 P[A\A^A
+Package name is too long
 PackedAABB_t
 Padding
 Palette
@@ -3241,6 +3281,7 @@ PerViewLightData_t
 PerViewLightProbeVolumeConstantBuffer_t
 PerViewLightingConstantBufferCPU_t
 PerViewLightingConstantBufferGPU_t
+PerViewLightingConstantBufferGPU_t NoShadow
 PerViewLightingConstantBufferGPU_t ViewModel
 PerViewLightingConstantBufferGpu_t
 Physics
@@ -3298,6 +3339,7 @@ PlotPadding
 Plots (%d
 Plots Widgets
 Plots can be used inside of ImGui tables
+Pointers cannot be used as numeric values
 Points
 Pollock
 PopupBg
@@ -3329,6 +3371,7 @@ Press ESC to abort picking
 Pressed %d times
 Pressed Down
 Pressed Up
+PrevFrameTransformBuffer
 Previous
 Primitives
 Printing unusually long amount of text
@@ -3346,7 +3389,6 @@ PropertyEditorSystem_001
 Protobuf: %s(%d): %s
 Protocol Buffer map usage error
 Protocol Buffer reflection usage error
-QD|-L9
 QPA"T$VI
 Quad-shaped light
 Quantity
@@ -3357,6 +3399,7 @@ Querying
 Querying Status (Edited/Active/Focused/Hovered etc
 Querying:      %s
 R = radius, N = number of segments
+R11G11B10F
 R11_EAC
 R16G16_UINT
 R16_UINT
@@ -3374,15 +3417,14 @@ RARARARARARARARARARARARARARASAp
 RARASAp
 RARAUASASASASASASASASB^ASB
 RARA\Ap
-RARMRFSASASASASCVAZAp
+RARKRFSASASASASBVAZAp
 RASARAp
 RAVARAYA
-RA`/A`UAT0
-RAp SAp@p
-RAp TARBRAp
-RBRARA
-RCTASARBVATATASBUB
-RCp(RBp
+RA`/A`UATETCp TCp
+RAp RAp
+RAp TBRCRAp
+RCTBSBRBVATATASBUB
+RE;4$}LH
 REACTION
 RESIZE
 RESOLVE: After layer %s, resolve rt to %s %d %d, %dx%d
@@ -3414,6 +3456,7 @@ Ray trace shader material %s has invalid RayTypeCount %d - must be between 1 and
 RaytraceLightBins
 Reached an unintended state: CPPTYPE_MESSAGE
 Reached impossible case in HasBit
+Reached maximum recursion limit for nested messages
 Read FAQ and docs/FONTS.md for details on font loading
 Read FAQ and docs/FONTS.md for more details
 Read instructions in imgui.cpp for details
@@ -3426,6 +3469,8 @@ RecullRequestCount
 Recurse
 Recursion limit at end of parse should be
 Redock all
+Reduce Scratch Buffer
+ReduceScratchBuffer
 RefColor
 RefScale=%f
 RefScale=%g
@@ -3512,7 +3557,9 @@ ResizeNESW
 ResizeNS
 ResizeNWSE
 ResizedColumn: %d, ReorderColumn: %d, HeldHeaderColumn: %d
+Resizing lock-free aggregate data pool to %s
 ResolveMSAARenderTargetIfNecessary
+ResourceCompiler/BakedLighting/LPVAtlas
 ResourceCompiler/BakedLighting/LightmapChannels/direct_light_shadows
 ResourceCompiler/DefaultMapBuilders/bakedlighting
 ResourceCompiler/WorldRendererBuilder/UseStaticEnvMapForObjectsWithLightingOrigin
@@ -3544,18 +3591,17 @@ Rows are padded with 'style.CellPadding.y' on top and bottom, so effectively the
 S9O<~ZH
 S: %7.3f
 S:%0.3f
-SASASASASASASASASASB
+SASASASASASASASASASASB
 SASASASASASASASASASBZARAp
 SASASASASASB
+SASASASASAp
 SASASASASBVARARAVARAVAVA
 SASASASBZARAp
-SASASASB``ATAp
 SASASB
-SASASBTA
+SASBZARATASBTA
 SAUASAR
 SAVATAR
 SBTARATARATAUASASB`_Ap
-SBpXZBpHp@p
 SCROLLX
 SCROLLY
 SIGNONSTATE_CHALLENGE
@@ -3618,6 +3664,7 @@ SceneSystem/DefaultShadowTextureHeight
 SceneSystem/DefaultShadowTextureWidth
 SceneSystem/DisableShadowFullSort
 SceneSystem/FirstpersonLegs
+SceneSystem/FrameBufferCopyFormat
 SceneSystem/GPU Profiler
 SceneSystem/GpuLightBinner
 SceneSystem/GpuLightBinnerBinEnvMaps
@@ -3643,6 +3690,7 @@ SceneSystem/LightCookieAllocGranularity
 SceneSystem/LightCookieMinAllocSize
 SceneSystem/NonTexturedGradientFog
 SceneSystem/PointLightShadowsEnabled
+SceneSystem/PunctualContactShadows
 SceneSystem/SkipLoadingRenderingPipelines
 SceneSystem/SunLightManagerCount
 SceneSystem/SunLightManagerCountTools
@@ -3672,6 +3720,9 @@ SchemaTestExternal_One_001
 SchemaTestExternal_Two_001
 ScrambledHalton
 ScrambledHaltonPermutations
+Scratch Buffer
+Scratch Keys
+Scratch Payload
 Scroll %.1f/%.1f %.1f/%.1f
 Scroll Offset
 Scroll To Pos
@@ -3721,8 +3772,6 @@ ServiceDescriptorProto
 ServiceOptions
 Set 'io.ConfigFlags |= NavEnableGamepad' for gamepad controls
 Set 'io.ConfigFlags |= NavEnableKeyboard' for keyboard controls
-Set a float attribute which will be visible to all rendering (Usage: sc_setfloatattr <attrname> <value
-Set an integer attribute which will be visible to all rendering (Usage: sc_setintattr <attrname> <value
 Set as default
 Set defaults in code
 Set io.ConfigFlags |= ImGuiConfigFlags_DockingEnable in your code, or
@@ -3824,7 +3873,6 @@ Sizing policies
 SkeletalInputSettings
 SkeletonBoneBounds_t
 SkinnedObject
-Skip layer '%s
 SkipBindlessFastPath
 SkyAmbientBounce
 SkyBrightnessExposureBias
@@ -3838,7 +3886,6 @@ SliderInt (0 -> 100
 Sliders
 Sliders (reverse
 SlopeScaleDepthBias
-SlopeTrace
 Small buttons
 SmallButton
 Snickersnee
@@ -3866,6 +3913,7 @@ SoundOpSystem001
 SoundOpSystemEdit001
 SoundService_001
 SoundSystem001
+Source of CopyFrom cannot be a descendant of the target
 Source2Client002
 Source2ClientPrediction001
 Source2ClientUI001
@@ -3903,12 +3951,6 @@ Static World Overlays
 StaticOverlayLayer
 StatsService_001
 SteamAudio001
-SteamVrCompositorLeftDepthRt
-SteamVrCompositorLeftRt
-SteamVrCompositorRightDepthRt
-SteamVrCompositorRightRt
-SteamVrCompositorRtHeight
-SteamVrCompositorRtWidth
 Stem Plots
 Stems 1
 Stems 2
@@ -3933,7 +3975,6 @@ StretchSame
 Striding is useful for interleaved data (e.g. audio) or plotting structs
 String field
 String literals cannot cross line boundaries
-StringPiece
 Student
 Style Editor
 Style Editor (ImGui
@@ -3946,6 +3987,7 @@ Submit dependent display list for dependent view %s
 Submit transform texture and other resource updates
 SubstituteAndAppend
 Suggested
+Suggested field numbers for
 SunLightShaderParamsCB
 SunShadow
 SunShadow%u
@@ -3968,9 +4010,8 @@ T: %7.3f
 T>gaW?:]f?AHV
 TAB/SHIFT+TAB to cycle through keyboard editable fields
 TARAUASASASASASASASASASASASASASASASASASASASASASASASASASASASASBSAUASASASASB
-TAUARAp
+TAUARAp8RApXp
 TCSBWKp
-TCp TCp
 TEST##1
 TEST##2
 TILT_TWIST
@@ -4027,11 +4068,6 @@ Test of different widgets react and impact the work rectangle growing when horiz
 Test paragraph %d
 Test tree node as drag source
 Test type
-TestFormatA
-TestFormatB
-TestFormatC
-TestFormatD
-TestFormatE
 TestScriptMgr001
 Testing how various types of items are interacting with the IsItemXXX functions. Note that the bool return value of most ImGui function is generally equivalent to calling ImGui::IsItemHovered
 Tex Mem
@@ -4185,7 +4221,6 @@ TreePush
 Triangles rendered
 Tried to copy from a message with a different type. to
 Tried to load a polymorphic pointer with no '%s' key
-Tried to merge from a message with a different type.  to
 Tried to merge messages of different types
 Tried to move layer to be after non-existant label
 Tried to register a non-generated type with the generated type registry
@@ -4198,10 +4233,10 @@ TwoTwoTwo
 Type appears to be in generated pool but wasn't
 Type is already registered
 U+%04X..U+%04X (%d %s
-UARAWARAp
+UARARA
 UASASASASASASASASASASASASASASASASASASASASASASASASB
 UASBTB
-UASBYAp
+UASBZAp
 UBTASBZARAZAp
 UBZARATASASBZAp
 UNIX timestamps in seconds and axis labels are formated as date/time
@@ -4210,7 +4245,6 @@ UNKNOWN ID: %d
 UNKNOWN_ENUM_VALUE_%s_%d
 USER GUIDE
 UTF-8 Text
-UTF-8 data when
 UTF-8 input
 UUUUUUU
 UUUUUUUUH
@@ -4225,6 +4259,7 @@ Unimplemented type
 Uninterpreted option is missing name or value
 UninterpretedOption
 Unknown
+Unknown FrameBufferCopyFormat: %s, using 8888
 Unknown command: '%s
 Unknown enumeration value of
 Unknown item
@@ -4236,13 +4271,12 @@ Unparsed options
 Unrecognized command %d in scene system debugger command
 Unrecognized syntax
 Unsupported
+Unsupported KV3 basic type '%s' (%d
 Unsupported: type mismatch
 Untitled
 Unwind_Resume
 UpdateBinGPUData
 UpdateDirtyObjects
-Usage is sc_setfloatattr <attrname> <value
-Usage is sc_setintattr <attrname> <value
 Use 'Metrics->Tools->Show windows rectangles' to visualize rectangles
 Use +- to subtract
 Use ImGui::SameLine() to keep adding items to the right of the preceding item
@@ -4286,7 +4320,6 @@ VAsyncFileSystem2_001
 VAvi001
 VBik001
 VConComm001
-VD;WD}4H
 VERBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBR0
 VEngineCvar007
 VFileSystem017
@@ -4302,21 +4335,43 @@ VScript
 VScriptDbg
 VScriptManager010
 VStringTokenSystem001
+V_DoubleToString_Unsafe
+V_FloatToString_Unsafe
 V_GetFileExtension
+V_Int32ToString_Unsafe
+V_Int64ToString_Unsafe
+V_Int8ToString_Unsafe
 V_IsAbsolutePath
 V_LZ4_decompress_safe
 V_PrettifyMem
 V_PrettifyNum
 V_RemoveDotSlashes
+V_StringParseError
+V_StringToBool
+V_StringToColor
+V_StringToFloat32
+V_StringToFloat64
+V_StringToInt16
+V_StringToInt32
+V_StringToInt64
+V_StringToInt8
+V_StringToQAngle
+V_StringToUint16
+V_StringToUint32
+V_StringToUint64
+V_StringToUint8
+V_StringToVector
+V_StringToVector2D
+V_StringToVector4D
+V_UInt16ToString_Unsafe
+V_UInt32ToString_Unsafe
+V_UInt64ToString_Unsafe
+V_UInt8ToString_Unsafe
 V_UnqualifiedFileName
 V_acosf
 V_asinf
 V_atan2f
-V_atofloat32
-V_atofloat64
 V_atoi
-V_atoi64
-V_atoui64
 V_cosf
 V_exp2f
 V_expf
@@ -4331,7 +4386,6 @@ V_qsort_s
 V_sincosf
 V_sinf
 V_snprintf
-V_sscanf
 V_stricmp_fast
 V_strncat
 V_strncpy
@@ -4408,7 +4462,7 @@ W: %.1f
 WARNING
 WARNING: Encountered %d total problems with vertex data (first %d shown above
 WARNING: Trying to create a CRenderContextPtr without a valid context
-WAXARA
+WAXARARASDp
 WINDOWING
 WantCaptureKeyboard: %d
 WantCaptureMouse: %d
@@ -4497,6 +4551,7 @@ Work Area = entire viewport minus sections used by the main menu bars, task bars
 WorkArea Offset Left: %.0f Top: %.0f, Right: %.0f, Bottom: %.0f
 WorkMin (%.0f,%.0f), WorkMax (%.0f,%.0f), WorkSize (%.0f,%.0f
 WorkRect
+WorldGroupId_t
 WorldRenderer/EnvironmentMapCacheSize
 WorldRenderer/EnvironmentMapCacheSizeTools
 WorldRenderer/EnvironmentMapColorSpace
@@ -4513,15 +4568,17 @@ XAxisGrid
 XContext
 XXXXXXX-    X    -           X           -XXXXXXX          -          XXXXXXX-     XX          ..-         -X.....X-   X.X   -          X.X          -X.....X          -          X.....X-    X..X         ---         -XXX.XXX-  X...X  -         X...X         -X....X           -           X....X-    X..X         X           -  X.X  - X.....X -        X.....X        -X...X            -            X...X-    X..X         XX          -  X.X  -X.......X-       X.......X       -X..X.X           -           X.X..X-    X..X         X.X         -  X.X  -XXXX.XXXX-       XXXX.XXXX       -X.X X.X          -          X.X X.X-    X..XXX       X..X        -  X.X  -   X.X   -          X.X          -XX   X.X         -         X.X   XX-    X..X..XXX    X...X       -  X.X  -   X.X   -    XX    X.X    XX    -      X.X        -        X.X      -    X..X..X..XX  X....X      -  X.X  -   X.X   -   X.X    X.X    X.X   -       X.X       -       X.X       -    X..X..X..X.X X.....X     -  X.X  -   X.X   -  X..X    X.X    X..X  -        X.X      -      X.X        -XXX X..X..X..X..XX......X    -  X.X  -   X.X   - X...XXXXXX.XXXXXX...X -         X.X   XX-XX   X.X         -X..XX........X..XX.......X   -  X.X  -   X.X   -X.....................X-          X.X X.X-X.X X.X          -X...X...........XX........X  -  X.X  -   X.X   - X...XXXXXX.XXXXXX...X -           X.X..X-X..X.X           - X..............XX.........X -XXX.XXX-   X.X   -  X..X    X.X    X..X  -            X...X-X...X            -  X.............XX..........X-X.....X-   X.X   -   X.X    X.X    X.X   -           X....X-X....X           -  X.............XX......XXXXX-XXXXXXX-   X.X   -    XX    X.X    XX    -          X.....X-X.....X          -   X............XX...X..X    ---------   X.X   -          X.X          -          XXXXXXX-XXXXXXX          -   X...........X X..X X..X   -       -XXXX.XXXX-       XXXX.XXXX       -------------------------------------    X..........X X.X  X..X   -       -X.......X-       X.......X       -    XX           XX    -           -    X..........X XX    X..X  -       - X.....X -        X.....X        -   X.X           X.X   -           -     X........X        X..X          -  X...X  -         X...X         -  X..X           X..X  -           -     X........X         XX           -   X.X   -          X.X          - X...XXXXXXXXXXXXX...X -           -     XXXXXXXXXX  ------------        -    X    -           X           -X.....................X-           ------------------                    ----------------------------------- X...XXXXXXXXXXXXX...X -                                                                                   -  X..X           X..X  -                                                                                   -   X.X           X.X   -                                                                                   -    XX           XX
 X[A\A]A^A
-Xt9<HufI
+Xt9<HupI
 Y-Axis %d
 Y-Axis 1
 Y-Axis 2
 Y-Axis 3
+YAUARAWARA
 YAxisGrid
 YAxisGrid2
 YAxisGrid3
 YContext
+YDSKVERBp
 YSN[RUZ
 Yellow mark below is the scalar value
 Yes, you can
@@ -4558,9 +4615,8 @@ Z17LoggingSystem_Logi17LoggingSeverity_tRK14LeafCodeInfo_tPKcz
 Z22Assert_ConditionFailedRK34_AssertCompileTimeConstantStruct_t
 Z22Assert_ConditionFailedRK34_AssertCompileTimeConstantStruct_tPKcz
 Z6DevMsgPKcz
-Z7SaveKV3RK7KV3ID_tS1_PK10KeyValues3P10CUtlStringP10CUtlBuffer
+Z7SaveKV3RK7KV3ID_tS1_PK10KeyValues3P10CUtlStringP10CUtlBufferj
 Z>wg}?0
-ZARATASASASBTA
 ZARATBTAp
 ZARATBVA
 ZARAZARAp
@@ -4579,6 +4635,7 @@ ZN10CUtlString15FreeMemoryBlockEv
 ZN10CUtlString3SetEPKc
 ZN10CUtlString5PurgeEv
 ZN10CUtlString6FormatEPKcz
+ZN10CUtlString7AcquireEP13CBufferStringb
 ZN10CUtlString7FormatVEPKcP13__va_list_tag
 ZN10CUtlString9SetDirectEPKci
 ZN10CUtlString9SetLengthEi
@@ -4590,10 +4647,11 @@ ZN10CVProfNode10GetSubNodeEPKciS1_i
 ZN10CVProfNode9ExitScopeEv
 ZN12CSceneSystem11RenderAViewEP10CSceneViewfP24ConstantBufferHandle_t__R26SceneSystemPerFrameStats_tE3$_0
 ZN12CSceneSystem11RenderAViewEP10CSceneViewfP24ConstantBufferHandle_t__R26SceneSystemPerFrameStats_tE3$_1
-ZN12CSceneSystem17Thread_RenderViewEP10CSceneViewE3$_7
-ZN12CSceneSystem22ReleaseLayerDependentsERKNSt3__110shared_ptrI13CViewDrawListEEP11CSceneLayerE3$_3
+ZN12CSceneSystem17Thread_RenderViewEP10CSceneViewE4$_10
 ZN12CSceneSystem22ReleaseLayerDependentsERKNSt3__110shared_ptrI13CViewDrawListEEP11CSceneLayerE3$_4
-ZN12CSceneSystem26Thread_RenderLayerDrawListENSt3__110shared_ptrI13CViewDrawListEEP11CSceneLayerP16CRenderBatchList18EBatchStartFlags_tRK10CUtlVectorIP14CSceneDrawListi10CUtlMemoryISB_iEEE3$_2
+ZN12CSceneSystem22ReleaseLayerDependentsERKNSt3__110shared_ptrI13CViewDrawListEEP11CSceneLayerE3$_5
+ZN12CSceneSystem22ReleaseLayerDependentsERKNSt3__110shared_ptrI13CViewDrawListEEP11CSceneLayerE3$_6
+ZN12CSceneSystem26Thread_RenderLayerDrawListENSt3__110shared_ptrI13CViewDrawListEEP11CSceneLayerP16CRenderBatchList18EBatchStartFlags_tRK10CUtlVectorIP14CSceneDrawListi10CUtlMemoryISB_iEEE3$_3
 ZN12CSplitString9ConstructEPKcPS1_ib
 ZN12CThreadEvent3SetEv
 ZN12CThreadEventC1Eb
@@ -4611,6 +4669,7 @@ ZN13CBufferString6InsertEiPKcib
 ZN13CBufferString6SetPtrEPciibb
 ZN13CBufferString8MoveFromERS
 ZN13CBufferString8RemoveAtEii
+ZN13CBufferString8TrimTailEPKc
 ZN13CBufferString9SetLengthEibPi
 ZN13CLightBinner225AddEnvironmentMapsForViewEP10CSceneView17ESceneObjectFlagsS2_iE3$_3
 ZN13CLightBinner225DebugLightProbeVolumeGridEP10CSceneViewE3$_1
@@ -4648,9 +4707,6 @@ ZN18CUtlMemoryPoolBase4FreeEPv
 ZN18CUtlMemoryPoolBase5AllocEv
 ZN18CUtlMemoryPoolBaseC2Eiii20MemoryPoolGrowType_tPKc19MemAllocAttribute_t
 ZN18CUtlMemoryPoolBaseD2Ev
-ZN20CUniformRandomStream11RandomFloatEff
-ZN20CUniformRandomStream7SetSeedEi
-ZN20CUniformRandomStreamC1Ev
 ZN21CThreadMultiWaitEvent3SetEv
 ZN21CThreadMultiWaitEvent5ResetEv
 ZN21CThreadMultiWaitEventC1Eb
@@ -4664,14 +4720,16 @@ ZN22CThreadRWLock_FastRead20UnlockReadAccountingEPKcij
 ZN22CThreadRWLock_FastRead27HaveWriteLock_BlockReadsNowEb
 ZN22CThreadRWLock_FastRead35EncounteredComplexReadLockOperationEjbPKci
 ZN22CThreadRWLock_FastReadC1Ev
+ZN24CUniformRandomStreamImplI16CThreadNullMutexE11RandomFloatEff
+ZN24CUniformRandomStreamImplI16CThreadNullMutexEC1Ei
 ZN24CUtlMemoryBlockAllocator12AllocAndCopyEPKcj
+ZN24CUtlMemoryBlockAllocator5PurgeEv
 ZN24CUtlMemoryBlockAllocatorC1Eij18RawAllocatorType_t
 ZN24CUtlMemoryBlockAllocatorD1Ev
 ZN26CBindlessFastPathPartition21EnsureEnvironmentMapsEPK10ISceneViewE3$_0
 ZN32CBindlessFastPathSceneObjectDesc25UpdateLightProbeVolumeSetEPK10ISceneViewP31LightProbeVolumeDescriptorSet_tP26CBindlessFastPathPartitionE3$_1
 ZN9KeyValues7FindKeyEPKcb
 ZN9KeyValues9GetStringEPKcS1_Pcm
-ZNK10CUtlString21IsEqual_CaseSensitiveEPKc
 ZNK10CUtlString27IsEqual_FastCaseInsensitiveEPKc
 ZNK10CUtlStringeqERKS
 ZNK10CUtlStringixEi
@@ -4691,6 +4749,8 @@ ZNKSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE7compareEmmPKcm
 ZNKSt3__119__shared_weak_count13__get_deleterERKSt9type_info
 ZNKSt3__120__vector_base_commonILb1EE20__throw_length_errorEv
 ZNKSt3__121__basic_string_commonILb1EE20__throw_length_errorEv
+ZNKSt3__16locale9use_facetERNS0_2idE
+ZNKSt3__18ios_base6getlocEv
 ZNKSt9exception4whatEv
 ZNSt11logic_errorC2EPKc
 ZNSt12length_errorD1Ev
@@ -4714,9 +4774,17 @@ ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1ERKS5
 ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1ERKS5_mmRKS4
 ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEED1Ev
 ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEaSERKS5
+ZNSt3__113basic_istreamIcNS_11char_traitsIcEEED0Ev
+ZNSt3__113basic_istreamIcNS_11char_traitsIcEEED1Ev
+ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEE6sentryC1ERS3
+ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEE6sentryD1Ev
 ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEED0Ev
 ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEED1Ev
 ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEED2Ev
+ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEElsEi
+ZNSt3__114basic_iostreamIcNS_11char_traitsIcEEED0Ev
+ZNSt3__114basic_iostreamIcNS_11char_traitsIcEEED1Ev
+ZNSt3__114basic_iostreamIcNS_11char_traitsIcEEED2Ev
 ZNSt3__115basic_streambufIcNS_11char_traitsIcEEE4syncEv
 ZNSt3__115basic_streambufIcNS_11char_traitsIcEEE5imbueERKNS_6localeE
 ZNSt3__115basic_streambufIcNS_11char_traitsIcEEE5uflowEv
@@ -4724,12 +4792,18 @@ ZNSt3__115basic_streambufIcNS_11char_traitsIcEEE6setbufEPcl
 ZNSt3__115basic_streambufIcNS_11char_traitsIcEEE6xsgetnEPcl
 ZNSt3__115basic_streambufIcNS_11char_traitsIcEEE6xsputnEPKcl
 ZNSt3__115basic_streambufIcNS_11char_traitsIcEEE9showmanycEv
+ZNSt3__115basic_streambufIcNS_11char_traitsIcEEEC2Ev
 ZNSt3__115basic_streambufIcNS_11char_traitsIcEEED2Ev
 ZNSt3__119__shared_weak_count14__release_weakEv
 ZNSt3__119__shared_weak_countD2Ev
+ZNSt3__15ctypeIcE2idE
 ZNSt3__15mutex4lockEv
 ZNSt3__15mutex6unlockEv
 ZNSt3__15mutexD1Ev
+ZNSt3__16localeD1Ev
+ZNSt3__18ios_base33__set_badbit_and_consider_rethrowEv
+ZNSt3__18ios_base4initEPv
+ZNSt3__18ios_base5clearEj
 ZNSt3__19basic_iosIcNS_11char_traitsIcEEED2Ev
 ZNSt3__1plIcNS_11char_traitsIcEENS_9allocatorIcEEEENS_12basic_stringIT_T0_T1_EEPKS6_RKS9
 ZNSt9exceptionD2Ev
@@ -4737,10 +4811,13 @@ ZNV16CThreadSpinMutex4LockEPKciyj
 ZSt7nothrow
 ZSt9terminatev
 ZTINSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEE
+ZTINSt3__113basic_istreamIcNS_11char_traitsIcEEEE
 ZTINSt3__113basic_ostreamIcNS_11char_traitsIcEEEE
+ZTINSt3__114basic_iostreamIcNS_11char_traitsIcEEEE
 ZTINSt3__115basic_streambufIcNS_11char_traitsIcEEEE
 ZTINSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEE
 ZTINSt3__117bad_function_callE
+ZTINSt3__118basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE
 ZTINSt3__119__shared_weak_countE
 ZTINSt3__119basic_ostringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE
 ZTINSt3__121__basic_string_commonILb1EEE
@@ -4750,6 +4827,7 @@ ZTISt9exception
 ZTSNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEE
 ZTSNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEE
 ZTSNSt3__117bad_function_callE
+ZTSNSt3__118basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE
 ZTSNSt3__119basic_ostringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE
 ZTSNSt3__121__basic_string_commonILb1EEE
 ZTVN10__cxxabiv117__class_type_infoE
@@ -4758,16 +4836,22 @@ ZTVN10__cxxabiv120__function_type_infoE
 ZTVN10__cxxabiv120__si_class_type_infoE
 ZTVN10__cxxabiv121__vmi_class_type_infoE
 ZTVSt12length_error
+ZThn16_NSt3__114basic_iostreamIcNS_11char_traitsIcEEED0Ev
+ZThn16_NSt3__114basic_iostreamIcNS_11char_traitsIcEEED1Ev
+ZTv0_n24_NSt3__113basic_istreamIcNS_11char_traitsIcEEED0Ev
+ZTv0_n24_NSt3__113basic_istreamIcNS_11char_traitsIcEEED1Ev
 ZTv0_n24_NSt3__113basic_ostreamIcNS_11char_traitsIcEEED0Ev
 ZTv0_n24_NSt3__113basic_ostreamIcNS_11char_traitsIcEEED1Ev
-ZZN12CSceneSystem22Thread_RenderViewLayerENSt3__110shared_ptrI13CViewDrawListEEP11CSceneLayerENK3$_6clEbEUlvE
+ZTv0_n24_NSt3__114basic_iostreamIcNS_11char_traitsIcEEED0Ev
+ZTv0_n24_NSt3__114basic_iostreamIcNS_11char_traitsIcEEED1Ev
+ZZN12CSceneSystem22Thread_RenderViewLayerENSt3__110shared_ptrI13CViewDrawListEEP11CSceneLayerENK3$_8clEbEUlvE
 ZZN13CLightBinner225DebugLightProbeVolumeGridEP10CSceneViewENK3$_1clEP28CSceneLightProbeVolumeObjectEUlvE
 ZZN13CLightBinner225DebugLightProbeVolumeGridEP10CSceneViewENK3$_2clEP28CSceneLightProbeVolumeObjectEUlvE
 ZZN13CLightBinner225DebugLightProbeVolumeGridEP10CSceneViewENK3$_2clEP28CSceneLightProbeVolumeObjectEUlvE0
 Zero-area light
 ZnamRKSt9nothrow_t
 ZnwmRKSt9nothrow_t
-a protocol
+a protocol buffer. Use the 'bytes' type if you intend to send raw bytes
 aaa2.cpp
 aaaaaaaa bbbbbbbb, c cccccccc,dddddddd. d eeeeeeee   ffffffff. gggggggg!hhhhhhhh
 access to in this demo
@@ -4794,6 +4878,7 @@ any form of row selection
 ao_proxy_box_list
 ao_proxy_capsule_list
 args were given.  Full format string was
+array: %u elements
 assert_rtn
 atan2f
 avg lum
@@ -4804,21 +4889,18 @@ bDisableDynamicRefractionMap
 bNeedsDynamicReflectionMap
 bNeedsDynamicRefractionMap
 bReflectDynamicObjectsOnly
-bStereoRendering
 bWantsFBCopyTexture
 baked_shadow_index
 baked_shadow_light_id
 bakedshadowindex
 bbb2.cpp
 be automatically deduced from your ImGui style or the
-because aux mask=%i (index = %i) (discarded renderbatch = %s
 because it is missing required fields
 bentnormal
 beta] Enable beta multi-viewports support. See ImGuiPlatformIO for details
-binary_auto
+binary blob: %u bytes
 binary_bc
-binary_lz4
-binary_zstd
+binary_blob
 bindless_procedural.vmat
 binner_shadow_depthDS.vtex
 blah blah
@@ -4832,16 +4914,16 @@ bool CRayTraceSceneWorld::CPipeline::Rebuild(IRenderContext
 bool vis_info_t::IsInPVS(int) const
 bounce_scale
 boxed_type
-buffer. Use the 'bytes' type if you intend to send raw
 built in or custom
 but only
 but was
-bytes).  To increase the limit (or to disable these warnings), see CodedInputStream::SetTotalBytesLimit() in third_party/protobuf/src/google/protobuf/io/coded_stream.h
+bytes).  To increase the limit (or to disable these warnings), see CodedInputStream::SetTotalBytesLimit() in third_party/protobuf/io/coded_stream.h
 c' (0x%04X
 c0.x0 c0.y0 ... cn.x0 cn.y0 c0.x1 c0.y1 ... cn.x1 cn.y1 ... cn.xm cn.ym
 c<yXH?B
 can fit within a text block
 can't reach here
+cannot H
 cannot be required
 cc_enable_arenas
 cc_generic_services
@@ -4879,10 +4961,11 @@ conflicts with an existing nested message type
 conflicts with an existing oneof type
 conflicts with field
 conflicts with the existing symbol
-contains invalid
+contains invalid UTF-8 data when
 contains null character
 context
 convars
+convars_hidden_by_default
 copy_rt
 creationsequence
 csharp_namespace
@@ -4985,6 +5068,7 @@ deprecated
 depthTarget
 desktop.ini
 details
+determinH
 diff_encode_field
 digital_%d
 digital_0
@@ -4992,9 +5076,6 @@ digital_1
 dimensions
 direct_light_shadows
 directional_irradiance
-disableSunShadowEnhancedCulling
-disableSunShadowRenderingViews
-disableSunShadows
 display all lines
 display very important message here
 double-click to auto fit window to its contents
@@ -5034,12 +5115,14 @@ dx%dTriStrippedVB
 dyld_stub_binder
 dynamic_cast
 e grams
+e messagH
+e missinH
 e" must be followed by exponent
 e.g. "1e+8" becomes "100000000
 e.g. [ 100 ], input '*2', result becomes [ 200
 edit me
 editor
-enableFixedNearFarPlanesForSunCascades
+emissive_lighting_boost
 enter text here
 entityfiltername
 entityhandle.h
@@ -5070,7 +5153,7 @@ f(x) = sin(x+.5)*100+200 (Y3
 f(x) = x
 f9K*rxI
 fA9T$(u
-fPO9|,PusK
+fPO9|, uvK
 failed to parse contents
 fakeplayer
 false:7
@@ -5134,13 +5217,16 @@ fog_override
 font color="red">Display lists discarded</font
 foo = value
 for field
+for litH
 for option
 fprintf
 fragmentbounds
 freeze_cols
 freeze_rows
 frustum
+fullscreenquad
 fwrite
+g fieldsH
 g^>q d
 g_ScrambledHaltonPermutations
 g_VProfCurrentProfile
@@ -5180,6 +5266,7 @@ g_vFogClipmapUVWOffset2
 g_vIndirectBBScale_flIndirectStrength
 gamemode
 gcc_except_tab__TEXT
+generatecullrequests
 generic
 generic_data_type
 gffffff
@@ -5212,6 +5299,7 @@ google.protobuf.FieldDescriptorProto.type_name
 google.protobuf.FieldMask
 google.protobuf.FieldOptions
 google.protobuf.FieldOptions.boxed_type
+google.protobuf.FieldOptions.synthetic_default
 google.protobuf.FileDescriptorProto.dependency
 google.protobuf.FileDescriptorProto.name
 google.protobuf.FileDescriptorProto.package
@@ -5257,10 +5345,12 @@ google.protobuf.UninterpretedOption.identifier_value
 google.protobuf.Value
 google.protobuf.bridge.MessageSet
 google/protobuf/arena.cc
+google/protobuf/arena.h
 google/protobuf/arena_impl.h
 google/protobuf/arenastring.cc
 google/protobuf/arenastring.h
 google/protobuf/descriptor.cc
+google/protobuf/descriptor.h
 google/protobuf/descriptor.pb.cc
 google/protobuf/descriptor.pb.h
 google/protobuf/descriptor.proto
@@ -5272,6 +5362,7 @@ google/protobuf/extension_set.cc
 google/protobuf/extension_set.h
 google/protobuf/extension_set_heavy.cc
 google/protobuf/extension_set_inl.h
+google/protobuf/generated_message_bases.cc
 google/protobuf/generated_message_reflection.cc
 google/protobuf/generated_message_reflection.h
 google/protobuf/io/coded_stream.cc
@@ -5283,6 +5374,7 @@ google/protobuf/map.h
 google/protobuf/map_field.cc
 google/protobuf/map_field.h
 google/protobuf/message.cc
+google/protobuf/message.h
 google/protobuf/message_lite.cc
 google/protobuf/message_lite.h
 google/protobuf/metadata_lite.h
@@ -5292,6 +5384,8 @@ google/protobuf/reflection.h
 google/protobuf/reflection_internal.h
 google/protobuf/reflection_ops.cc
 google/protobuf/repeated_field.h
+google/protobuf/repeated_ptr_field.cc
+google/protobuf/repeated_ptr_field.h
 google/protobuf/stubs/casts.h
 google/protobuf/stubs/stringpiece.cc
 google/protobuf/stubs/stringpiece.h
@@ -5307,6 +5401,7 @@ gradient2
 guides
 gxx_personality_v0
 h(D7RH9
+hA;_lu/D
 h[A\A]A^A
 has no field named
 has no value named
@@ -5340,10 +5435,12 @@ i>Label Layer</i
 i>Not using PerViewConstantBuffer_t</i
 i>PerViewConstantBuffer_t</i
 i>Procedural Layer</i
+iW=:`TC
 idempotency_level
 identifier_value
 if you ignore case and strip out the enum name prefix (if any). This is error-prone and can lead to undefined behavior. Please avoid doing this. If you are using allow_alias, please assign the same numeric value to both enums
 illumfrustum
+illumination_volume
 imGUI detached window
 imgui" letters
 imgui.ini
@@ -5382,17 +5479,18 @@ input u64
 input u8
 input_type
 inside block comment.  Block comments cannot be nested
+instancebuffer
 instanceidbuffer
 instanceidbuffer2
 instances
 instruction bug, is a design flaw in the majority of
-int CSceneSystem::AllocatePerFrameTransformData(int, SceneSystemTransformEntry_t
 int ParseRenderTargetTokens(const char *, int, RenderTargetToken_t
 int64)m_nAllocationCount + (int64)num ) <= 0x7FFFFFFF
 intensity_to_luminance
 internal error in map key sorting
 internal_set_label
 internal_set_type
+invalid
 io.BackendFlags: 0x%08X
 io.BackendFlags: HasGamepad
 io.BackendFlags: HasMouseCursors
@@ -5478,7 +5576,6 @@ kDisableShadows_None
 kDisableShadows_Realtime
 kakikukeko
 keyboard capture flag
-kxD;k|u'E
 l$(Mc7M
 l$(Mc>L
 la_symbol_ptr
@@ -5504,12 +5601,16 @@ lb_enable_binning
 lb_enable_dynamic_lights
 lb_enable_envmaps
 lb_enable_lights
+lb_enable_shadow_casting
 lb_enable_stationary_lights
 lb_enable_sunlight
 lb_low_quality_shader_fade_region_rescale
+lb_max_visible_barn_lights_override
+lb_max_visible_envmaps_override
 lb_mixed_shadows
 lb_shadow_map_culling
-lb_shadow_texture_size_override
+lb_shadow_texture_height_override
+lb_shadow_texture_width_override
 lb_show_light_fog_clipmap_cb_cost
 lb_sun_csm_size_cull_threshold_texels
 lb_tile_pixels
@@ -5518,7 +5619,6 @@ lb_use_illumination_silhouette
 leading_comments
 leading_detached_comments
 left pane
-len >= 0
 length_ >= n
 length_delimited
 leveltransition
@@ -5550,6 +5650,7 @@ longeeer
 lowprecisionuv
 lowprecisionuv1
 luminance
+m$`< uMH
 m_ConeAxis
 m_ConeCutoff
 m_CullingData
@@ -5585,6 +5686,7 @@ m_bIsAttachment
 m_bIsNotMatchedToMaterial
 m_bLightInsideFrustum
 m_bSelected
+m_bSphericalCookie
 m_bTranslationOnly
 m_bUseCompressedNormalTangent
 m_bUseShadowFastPath
@@ -5682,8 +5784,6 @@ m_nMultisampleNumSamples
 m_nNameHash
 m_nNumMeshlets
 m_nNumMipLevels
-m_nNumObjects <= V_ARRAYSIZE( m_objectReferences
-m_nNumObjects >= 0
 m_nPrimitiveType
 m_nRequestedHeight
 m_nRequestedWidth
@@ -5738,6 +5838,7 @@ m_vCenter
 m_vColor
 m_vConeApex
 m_vDistanceFade
+m_vExtent
 m_vForwardLS
 m_vHeelOffset
 m_vInfluenceOffsets
@@ -5764,6 +5865,7 @@ m_vectorParams
 m_vertexBuffers
 m_viewId
 m_wristBones
+mach_absolute_time
 malloc
 manifestincomplete
 manifestloadpriority
@@ -5812,23 +5914,22 @@ materials/deferred_lights/envmaplight.vmat
 materials/deferred_lights/pointlight.vmat
 materials/deferred_lights/spotlight.vmat
 materials/deferred_lights/spotlight_shadowed.vmat
-materials/deferred_lights/spotlight_volumeshadowed.vmat
 materials/deferred_lights/sunlight.vmat
 materials/dev/aoproxy_splat.vmat
 materials/dev/compute_depthbin_cullbits.vmat
 materials/dev/compute_tile_cullbits.vmat
+materials/dev/cs_parallel_sort.vmat
 materials/dev/cs_volumetric_fog.vmat
 materials/dev/cull_aggregate_fragments.vmat
 materials/dev/debug_show_texture.vmat
 materials/dev/debug_solid.vmat
 materials/dev/debug_sunshadow_vis.vmat
 materials/dev/debug_ui.vmat
-materials/dev/debug_ui_alphatexture.vmat
 materials/dev/debug_wireframe.vmat
 materials/dev/debug_wireframe_2d.vmat
-materials/dev/debugoverlay_wireframe.vmat
 materials/dev/downsample.vmat
 materials/dev/generalfilter.vmat
+materials/dev/generate_aggregate_cull_requests.vmat
 materials/dev/generate_decal_normals.vmat
 materials/dev/imgui.vmat
 materials/dev/lpv_debug_grid.vmat
@@ -5907,6 +6008,7 @@ my_toggle_popup
 mycolumns
 mycolumns3
 mypicker
+nCompressedSize == nUncompressedSize
 nDispatchX <= c_nClipmapDimension
 nDispatchY <= c_nClipmapDimension
 nDispatchZ <= c_nClipmapDimension
@@ -5935,6 +6037,7 @@ networkbasetypes.proto
 nextafterf
 nihongo
 nl_symbol_ptr
+no blank
 no failure reason set
 no_standard_descriptor_accessor
 no_steam_server
@@ -5950,8 +6053,6 @@ objc_class_prefix
 occlusionproxyvb
 offset_angles
 offset_origin
-ohIcGhH9
-omitDepthFeathering
 oneof_decl
 oneof_index
 operator
@@ -5973,8 +6074,8 @@ opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/scenesystem/scenelpvde
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/scenesystem/sceneobject_methods.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/scenesystem/sceneraytracing.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/scenesystem/scenesystem.cpp
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/scenesystem/scenesystem.cpp(5843): Expecting 1 renderable pass for material "%s" but found %d
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/scenesystem/scenesystem.cpp(7014): Waited 500 ms for jobs to complete. Attempt to drain windows message queue
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/scenesystem/scenesystem.cpp(5582): Expecting 1 renderable pass for material "%s" but found %d
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/scenesystem/scenesystem.cpp:3484
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/scenesystem/sceneview.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/scenesystem/sceneviewdebugoverlays.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/scenesystem/scratchrendertargetsystem.cpp
@@ -5986,12 +6087,14 @@ opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/scenesystem/utils/scen
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/scenesystem/utils/tonemapsystem.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/scenesystem/utils/volumetricfog.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/schemalib/schemaclassinfo.cpp
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/texturelib/extract.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/tier0_perproject/singletons.cpp
 optimize_for
 option json_name is not allowed on extension fields
 optional
 optionallycompressedtangentframe
 options
+orientation
 original
 outer_child
 outer_size
@@ -6005,8 +6108,7 @@ own texture data
 p         0@PPPP0@PPPP0@   @                 0 0 00 00@0000     @  @0@pP
 p Hc4>Hi
 p Hcp$D
-p(SCpXSEp(p
-p@@000@00000000000000@0000000000000000000000 p @ 000@@@000@0@0000000000@@@@@000@00@0000000
+p@@000@0000000000000@0000000000000000000000 p @ 00@@@0000@0000000000@@@@@00@000000000
 p@PPPPP
 pObj->HasFlags( SCENEOBJECTFLAG_DELETED
 pObj->IsDeleted
@@ -6037,6 +6139,7 @@ placeholder.proto
 players_networkids
 plot items, use Push/PopStyleColor around its function
 pointLightLayout
+pointer
 pos2Dtex2D
 position
 positionH
@@ -6050,6 +6153,7 @@ previewLightMaps
 previewing_picker
 previous
 previouslevel
+prevtransformbuffer
 processors (all in the P5 microarchitecture
 proto text format> }". To set fields within it, use syntax like
 proto3_optional
@@ -6069,11 +6173,6 @@ public/tier0/utlsymboltable.h
 public/tier0/utltshash.h
 public_dependency
 py_generic_services
-p}?19CRayTraceSceneWorld
-qD;rD}$I
-qD;rD}6I
-qD;rD};H
-qD;rD}XH
 qP}`Hk
 quadLayout
 qxs?{7
@@ -6095,6 +6194,7 @@ r_dopixelvisibility
 r_draw_overlays
 r_drawpixelvisibility
 r_fallback_texture_lod_scale
+r_fullscreen_quad_single_triangle
 r_lightBinnerFarPlane
 r_light_probe_volume_debug_colors
 r_light_probe_volume_debug_grid
@@ -6117,9 +6217,6 @@ r_ssao_bias
 r_ssao_blur
 r_ssao_radius
 r_ssao_strength
-r_stereo_mode_anaglyph
-r_stereo_mode_crossed
-r_stereo_mode_parallel
 r_stereo_multiview_instancing
 r_texture_budget_dynamic
 r_texture_lod_scale
@@ -6195,7 +6292,7 @@ s/%s's viewport (%d,%d - %d,%d) extends outside of the framebuffer (%d,%d
 s/%s_%08X
 s/AsyncComputeSemaphoreWait
 s/DockSpace_%08X
-s/PrimaryContext frame( %d
+s/PrimaryContext
 s1_mapname
 s: %.3f
 s: %d entries, %d bytes
@@ -6206,8 +6303,7 @@ s: NULL
 s: Unsupported raw allocator type %u
 s@H+s8H
 sHello, sailor! Making this line long enough for the example
-sPHcSHH
-sPK9L>PusO
+sPK9L& uvO
 sThis is line %d
 sXkS@4H
 s][0x%08X,%d
@@ -6215,12 +6311,12 @@ s][Data
 savegamefilename
 savegamename
 sc_aggregate_gpu_culling
+sc_aggregate_gpu_culling_conservative_bounds
 sc_aggregate_gpu_culling_show_culled
 sc_aggregate_gpu_occlusion_culling
 sc_aggregate_material_solo
 sc_allow_dynamic_constant_batching
 sc_allow_secondary_contexts
-sc_aux_cameras_enabled
 sc_batch_layer_cb_updates
 sc_bounds_group_cull
 sc_cache_envmap_lpv_lookup
@@ -6233,7 +6329,6 @@ sc_disable_shadow_fastpath
 sc_disable_shadow_materials
 sc_disable_spotlight_shadows
 sc_disable_world_materials
-sc_double_submit
 sc_draw_aggregate_meshes
 sc_dump_lists
 sc_dumpworld
@@ -6268,8 +6363,6 @@ sc_queue_reflection_views_to_layers
 sc_reject_all_objects
 sc_setclassflags
 sc_setclassflags %s %d
-sc_setfloatattr
-sc_setintattr
 sc_shadow_depth_bias
 sc_shadow_depth_bias_clamp
 sc_shadow_depth_bias_state_override
@@ -6321,7 +6414,6 @@ server_streaming
 service
 sfixed32
 sfixed64
-shHcS`H
 shadowTargetSize
 shadowTargetSize %d - Adjusting nMaxShadowBufferSize size to %d from %d
 shadowTargetSize Adjusting shadow target size to %d from %d
@@ -6339,7 +6431,6 @@ signon_state
 sincos_stret
 sincosf_stret
 size too big
-size_t to int conversion
 sizeof(size_t): %d, sizeof(ImDrawIdx): %d, sizeof(ImDrawVert): %d
 slider angle
 slider double high
@@ -6413,7 +6504,9 @@ stored in google.protobuf.Any has missing required fields
 strchr
 strcmp
 strcpy
+strict_type_combinations
 strideoffset
+string length exceeds max size
 string_value
 strings::Substitute format string invalid: asked for
 strlen
@@ -6444,13 +6537,16 @@ sunshadowdummy
 sunshadows
 swift_prefix
 sxH+spH
+synthetic_default
 t IcG`H
 t IcGhH
 t!AVASARAWj
 t"M9,$tZI
+t$ H;5AT2
 t$(Ic\$0H
 t$(Lc+L
 t$(Mc?M
+t$IcO8
 t&AVASARAWS
 t&HcK H
 t'E9~Xu
@@ -6461,11 +6557,14 @@ t2KcT40H
 t:IcT$(H
 t<HcC H
 tDHcG H
+tRI96vs
 tSL9` t[A
+tUI96vvHcC
 tWLc;E9
 tXH9^ t`H
 t`</uOH
 table border="1
+table: %u members
 table_advanced
 table_columns_flags
 table_columns_flags_checkboxes
@@ -6588,13 +6687,11 @@ tonemap scale: final exposure scale used to scale HDR values before tonemapping
 tonemap.cpp: g_pRenderDevice->CreateQueryObject( RENDER_QUERY_OCCLUSION ) failed
 tools.toolsmaterial
 toupper
-tpM9/v(Ic
 tr><td><b>Excluded obj flags</b></td><td>0x%llx</td
 tr><td><b>Frustum Override Count</b></td><td>%d</td></tr
 tr><td><b>Required obj flags</b><td>0x%llx</td
 tr><td><b>m_bDisableReflectionsAndRefractions</b></td><td>true</td></tr
 tr><td><b>m_flTonemapScaleOveride</b></td><td>%.3f</td></tr
-tr><td><b>m_nAuxiliaryCameraMask</b></td><td>%x</td></tr
 tr><td><b>m_nClearFlags</b></td><td>0x%x</td
 tr><td><b>m_nLayerFlags</b></td><td>0x%llx</td
 tr><td><b>m_nObjectMatchID</b></b></td><td>0x%x</td></tr
@@ -6622,9 +6719,9 @@ translucentScreenspace
 truncated
 trying to move layer %s after unfound layer %s
 trying to move non existent layer
-tvM9/vaI
+ttL;- _C
 type does not match
-type or int32
+type or int32_t
 type() == TYPE_FIXED32
 type() == TYPE_FIXED64
 type() == TYPE_GROUP
@@ -6634,22 +6731,23 @@ type.googleapis.com
 type.googleprod.com
 type_name
 t{IcGLH
-u&M9&t!L
-u/<XtE<Hu'L
-u/<XtT<Hu'L
 u/z-HcU
 u0ARASS
-uX<Xt-<HuPL
-uZ<Xt.<HuRL
+u8IcE0M
 uint64s
 undefined
 uniform_color
+unimplemented type
 uninterpreted_option
 unknown
+unknown KV3 basic type '%s' (%d
 unknown. Ensure that your proto
 unnamed
 unrecognized string in token spec %s
+unverified_lazy
 unwind_info
+upL;-YZC
+upL;-a_C
 uppercase
 use this as a shortcut if you are only using ImDrawList calls
 use this if you want your clipping rectangle to affect interactions
@@ -6658,9 +6756,9 @@ usr/lib/libSystem.B.dylib
 usr/lib/libc++.1.dylib
 usr/lib/libiconv.2.dylib
 uvtangent
+u~z|HcU
 v@HcS<H
 vOn?vOn?M
-vPLcfDL
 val_bool
 val_byte
 val_float
@@ -6678,7 +6776,6 @@ vertexbuffer
 vertical
 vfA9F*roI
 view.bIsToolView
-viewModelFarPlane
 viewport TopLeftX: %d TopLeftY: %d Width: %d Height: %d
 virtual bool CVConCommandMessageScene::MessageData(uint32, uint16, uint32, byte *, uint32
 virtual void CSceneSystem::BeginRenderingViews(IRenderDevice *, bool
@@ -6693,7 +6790,6 @@ virtual void CSceneViewDebugOverlays::AgeList(float, float
 virtual void CVolumetricFogClipmapRenderer::Render(ISceneView *, IRenderContext *, ISceneLayer *, SceneSystemPerFrameStats_t
 void CSceneSystem::ComputeScratchTargetActualSize(const SceneScratchRenderTargetInfo_t &, int *, int
 void CSceneSystem::DeleteObjectForReal(CSceneObject
-void CSceneWorldObjectListChunk::Check(const CSceneWorld *) const
 void CSchemaClassInfo::ReportClassError(const char *) const
 void CScratchRenderTargetSystem::ComputeLayerInfo(CSceneLayer *, int, CScratchRenderTargetSystem::LayerInfo_t
 void CUtlLeanVectorBase<CBindlessFastPathSceneObject *, short>::EnsureCapacity(int, bool) [T = CBindlessFastPathSceneObject *, I = short
@@ -6731,14 +6827,10 @@ void CUtlMemory<CDrawShadowMapsForLightParams, int>::Grow(int) [T = CDrawShadowM
 void CUtlMemory<CFingerBone, int>::Grow(int) [T = CFingerBone, I = int
 void CUtlMemory<CFingerChain, int>::Grow(int) [T = CFingerChain, I = int
 void CUtlMemory<CFingerSource, int>::Grow(int) [T = CFingerSource, I = int
-void CUtlMemory<CFrustum, int>::Grow(int) [T = CFrustum, I = int
 void CUtlMemory<CGeoViewVertex, int>::Grow(int) [T = CGeoViewVertex, I = int
 void CUtlMemory<CHitBox, int>::Grow(int) [T = CHitBox, I = int
 void CUtlMemory<CHitBoxSet, int>::Grow(int) [T = CHitBoxSet, I = int
 void CUtlMemory<CImGuiRenderer *, int>::Grow(int) [T = CImGuiRenderer *, I = int
-void CUtlMemory<CKeyValues3ArrayCluster *, int>::Grow(int) [T = CKeyValues3ArrayCluster *, I = int
-void CUtlMemory<CKeyValues3Cluster *, int>::Grow(int) [T = CKeyValues3Cluster *, I = int
-void CUtlMemory<CKeyValues3TableCluster *, int>::Grow(int) [T = CKeyValues3TableCluster *, I = int
 void CUtlMemory<CLightBinner2::EnvironmentMapData_t, int>::Grow(int) [T = CLightBinner2::EnvironmentMapData_t, I = int
 void CUtlMemory<CLightBinner2::LightProbeVolumeData_t, int>::Grow(int) [T = CLightBinner2::LightProbeVolumeData_t, I = int
 void CUtlMemory<CLightBinnerCPU *, int>::Grow(int) [T = CLightBinnerCPU *, I = int
@@ -6768,7 +6860,6 @@ void CUtlMemory<CSceneSystemStatsViewInfo, int>::Grow(int) [T = CSceneSystemStat
 void CUtlMemory<CSceneView *, int>::Grow(int) [T = CSceneView *, I = int
 void CUtlMemory<CSceneViewDebugOverlays *, int>::Grow(int) [T = CSceneViewDebugOverlays *, I = int
 void CUtlMemory<CSceneWorld *, int>::Grow(int) [T = CSceneWorld *, I = int
-void CUtlMemory<CSceneWorldObjectListChunk *, int>::Grow(int) [T = CSceneWorldObjectListChunk *, I = int
 void CUtlMemory<CScratchRenderTargetSystem::RenderTargetInfo_t, int>::Grow(int) [T = CScratchRenderTargetSystem::RenderTargetInfo_t, I = int
 void CUtlMemory<CSecondaryViewRenderInformation, int>::Grow(int) [T = CSecondaryViewRenderInformation, I = int
 void CUtlMemory<CShadowAtlas *, int>::Grow(int) [T = CShadowAtlas *, I = int
@@ -6794,10 +6885,10 @@ void CUtlMemory<CViewTemplateReference, int>::Grow(int) [T = CViewTemplateRefere
 void CUtlMemory<CWeakHandle<InfoForResourceTypeCTextureBase>, int>::Grow(int) [T = CWeakHandle<InfoForResourceTypeCTextureBase>, I = int
 void CUtlMemory<CWeakHandle<InfoForResourceTypeIMaterial2>, int>::Grow(int) [T = CWeakHandle<InfoForResourceTypeIMaterial2>, I = int
 void CUtlMemory<CWristBone, int>::Grow(int) [T = CWristBone, I = int
-void CUtlMemory<CachedSlotAndExtraData_t, int>::Grow(int) [T = CachedSlotAndExtraData_t, I = int
 void CUtlMemory<ChildSceneObjectReference_t, int>::Grow(int) [T = ChildSceneObjectReference_t, I = int
 void CUtlMemory<Color, int>::Grow(int) [T = Color, I = int
 void CUtlMemory<ConstantBufferHandle_t__ *, int>::Grow(int) [T = ConstantBufferHandle_t__ *, I = int
+void CUtlMemory<CullingObjectList_t, int>::Grow(int) [T = CullingObjectList_t, I = int
 void CUtlMemory<Debug2DText_t, int>::Grow(int) [T = Debug2DText_t, I = int
 void CUtlMemory<Debug3DText_t, int>::Grow(int) [T = Debug3DText_t, I = int
 void CUtlMemory<Debug3DVectorText_t, int>::Grow(int) [T = Debug3DVectorText_t, I = int
@@ -6817,6 +6908,7 @@ void CUtlMemory<DrawIndirectArguments_t, int>::Grow(int) [T = DrawIndirectArgume
 void CUtlMemory<EnvMapFadeData_t, int>::Grow(int) [T = EnvMapFadeData_t, I = int
 void CUtlMemory<EnvironmentMapBinding_t, int>::Grow(int) [T = EnvironmentMapBinding_t, I = int
 void CUtlMemory<FragmentCullStats_t, int>::Grow(int) [T = FragmentCullStats_t, I = int
+void CUtlMemory<GenerateFragmentCullRequests_t, int>::Grow(int) [T = GenerateFragmentCullRequests_t, I = int
 void CUtlMemory<IRenderingPipeline *, int>::Grow(int) [T = IRenderingPipeline *, I = int
 void CUtlMemory<ISceneEnvironmentMapListener *, int>::Grow(int) [T = ISceneEnvironmentMapListener *, I = int
 void CUtlMemory<ISceneLayer *, int>::Grow(int) [T = ISceneLayer *, I = int
@@ -6840,10 +6932,11 @@ void CUtlMemory<MaterialParamTexture_t, int>::Grow(int) [T = MaterialParamTextur
 void CUtlMemory<MaterialParamVector_t, int>::Grow(int) [T = MaterialParamVector_t, I = int
 void CUtlMemory<MultiDraw_t, int>::Grow(int) [T = MultiDraw_t, I = int
 void CUtlMemory<PathTraceBarnLightGPU_t, int>::Grow(int) [T = PathTraceBarnLightGPU_t, I = int
-void CUtlMemory<PendingVisitList_t, int>::Grow(int) [T = PendingVisitList_t, I = int
 void CUtlMemory<PerFragmentBounds_t, int>::Grow(int) [T = PerFragmentBounds_t, I = int
+void CUtlMemory<PerInstancePackedShaderData_t, int>::Grow(int) [T = PerInstancePackedShaderData_t, I = int
 void CUtlMemory<PerLayerRenderAttributesSetupCallbackInfo_t, int>::Grow(int) [T = PerLayerRenderAttributesSetupCallbackInfo_t, I = int
 void CUtlMemory<PerMeshletData_t, int>::Grow(int) [T = PerMeshletData_t, I = int
+void CUtlMemory<PerThreadState_t, int>::Grow(int) [T = PerThreadState_t, I = int
 void CUtlMemory<ProfiledRegion_t *, int>::Grow(int) [T = ProfiledRegion_t *, I = int
 void CUtlMemory<Quaternion, int>::Grow(int) [T = Quaternion, I = int
 void CUtlMemory<QueuedTemplateViewInfo_t, int>::Grow(int) [T = QueuedTemplateViewInfo_t, I = int
@@ -6860,7 +6953,6 @@ void CUtlMemory<RenderInputLayoutField_t, int>::Grow(int) [T = RenderInputLayout
 void CUtlMemory<RenderMeshDrawPrimitiveFlags_t, int>::Grow(int) [T = RenderMeshDrawPrimitiveFlags_t, I = int
 void CUtlMemory<RenderSkeletonBone_t, int>::Grow(int) [T = RenderSkeletonBone_t, I = int
 void CUtlMemory<RenderTargetId_t, int>::Grow(int) [T = RenderTargetId_t, I = int
-void CUtlMemory<SceneInstanceGPU_t, int>::Grow(int) [T = SceneInstanceGPU_t, I = int
 void CUtlMemory<SceneObjectCullingBox_t, int>::Grow(int) [T = SceneObjectCullingBox_t, I = int
 void CUtlMemory<SceneSystemTimestampFrameData_t, int>::Grow(int) [T = SceneSystemTimestampFrameData_t, I = int
 void CUtlMemory<SceneViewTimestampQuery_t *, int>::Grow(int) [T = SceneViewTimestampQuery_t *, I = int
@@ -6881,8 +6973,8 @@ void CUtlMemory<UtlLinkedListElem_t<std::__1::pair<CBindlessFastPathPartition *,
 void CUtlMemory<UtlRBTreeNode_t<CUtlMap<const char *, CAttachment, int, bool (*)(const char *const &, const char *const &)>::Node_t, int>, int>::Grow(int) [T = UtlRBTreeNode_t<CUtlMap<const char *, CAttachment, int, bool (*)(const char *const &, const char *const &)>::Node_t, int>, I = int
 void CUtlMemory<UtlRBTreeNode_t<CUtlMap<const char *, CHitBoxSet, int, bool (*)(const char *const &, const char *const &)>::Node_t, int>, int>::Grow(int) [T = UtlRBTreeNode_t<CUtlMap<const char *, CHitBoxSet, int, bool (*)(const char *const &, const char *const &)>::Node_t, int>, I = int
 void CUtlMemory<UtlRBTreeNode_t<CUtlMap<const char *, int, int, bool (*)(const char *const &, const char *const &)>::Node_t, int>, int>::Grow(int) [T = UtlRBTreeNode_t<CUtlMap<const char *, int, int, bool (*)(const char *const &, const char *const &)>::Node_t, int>, I = int
-void CUtlMemory<Vector, int>::Grow(int) [T = Vector, I = int
 void CUtlMemory<Vector2D, int>::Grow(int) [T = Vector2D, I = int
+void CUtlMemory<Vector3DBase<float>, int>::Grow(int) [T = Vector3DBase<float>, I = int
 void CUtlMemory<Vector4D, int>::Grow(int) [T = Vector4D, I = int
 void CUtlMemory<VertexBufferHandle_t__ *, int>::Grow(int) [T = VertexBufferHandle_t__ *, I = int
 void CUtlMemory<VisibleBarnLight_t *, int>::Grow(int) [T = VisibleBarnLight_t *, I = int
@@ -6900,14 +6992,12 @@ void CUtlMemory<const CSceneSunLightObject *, int>::Grow(int) [T = const CSceneS
 void CUtlMemory<const DebugSphere_t *, int>::Grow(int) [T = const DebugSphere_t *, I = int
 void CUtlMemory<const IMaterial2 *, int>::Grow(int) [T = const IMaterial2 *, I = int
 void CUtlMemory<const KeyValues3 *, int>::Grow(int) [T = const KeyValues3 *, I = int
-void CUtlMemory<const char *, int>::Grow(int) [T = const char *, I = int
 void CUtlMemory<double, int>::Grow(int) [T = double, I = int
 void CUtlMemory<float, int>::Grow(int) [T = float, I = int
 void CUtlMemory<int, int>::Grow(int) [T = int, I = int
 void CUtlMemory<matrix3x4a_t, int>::Grow(int) [T = matrix3x4a_t, I = int
 void CUtlMemory<short, int>::Grow(int) [T = short, I = int
 void CUtlMemory<std::__1::function<void (CSceneObject *)> *, int>::Grow(int) [T = std::__1::function<void (CSceneObject *)> *, I = int
-void CUtlMemory<std::__1::pair<void (*)(const CSceneView *, const ISceneLayer *, float, int, int, void *), void *>, int>::Grow(int) [T = std::__1::pair<void (*)(const CSceneView *, const ISceneLayer *, float, int, int, void *), void *>, I = int
 void CUtlMemory<texture_use_info_t, int>::Grow(int) [T = texture_use_info_t, I = int
 void CUtlMemory<unsigned char, int>::Grow(int) [T = unsigned char, I = int
 void CUtlMemory<unsigned int, int>::Grow(int) [T = unsigned int, I = int
@@ -6922,6 +7012,7 @@ void CUtlMemory_RawAllocator<unsigned int>::Grow(int) [T = unsigned int
 void CUtlMemory_RawAllocator<unsigned int>::SetRawAllocatorType(RawAllocatorType_t) [T = unsigned int
 void CVolumetricFog::SetupConstantBuffer(IRenderContext *, const ISceneView *, int
 void ConnectInterfaceSingletons(CreateInterfaceFn *, int
+void DecompressTextureBits(const CUtlBuffer &, CUtlBuffer
 void MathLib_Init
 void_context
 volume_fog_clipmap_update
@@ -6936,10 +7027,8 @@ volume_fog_height
 volume_fog_intermediate_textures_hdr
 volume_fog_jitter_offset_random
 volume_fog_show_volumes
-volume_fog_vr_single_dispatch
 volume_fog_width
 volumetric_fog.vtex
-vr_disable_view_override
 vsnprintf
 vz[A\A^A
 w/ default threshold: %d
@@ -6948,6 +7037,8 @@ w/ large threshold: %d
 w/ zero threshold: %d
 w/ zero threshold: (%.1f, %.1f
 w: %5.1f
+wPIcWHH
+w`IcWXH
 was already set
 was listed twice
 was not found or had errors
@@ -6957,6 +7048,8 @@ wellknown_black_2x2x2
 wellknown_black_cube_1x1
 wellknown_black_cube_array_1x1x1
 wellknown_checker_2x2.vtex
+wellknown_depth_d32_black.vtex
+wellknown_depth_d32_white.vtex
 wellknown_one_16bit_1x1
 wellknown_one_array_16bit_1x1x1
 wellknown_opaque_black_2x2x2
@@ -6981,12 +7074,20 @@ works within a column set
 world_offset_angle
 world_offset_pos
 worldgroupid
+worldgroupname
 worldname
+wpIcWhL
 wrong submessage type
 x Hc<7Hi
+x%A;Gh
 x-A9Nl
+x8HcN H
+x@HcV$H
+xA;_|uZD
+xHHcN(H
 xKA9OhL
-xY{[xY{[xY{[xY
+xPHcV,H
+xY{[xY{[xY{[xY18CMonitorObjectDesc
 x[A\A]A^A
 xxx"      display lines containing "xxx
 xxx"     hide lines containing "xxx

@@ -5,6 +5,10 @@
 		<include src="s2r://panorama/styles/friend.vcss_c" />
 	</styles>
 	<DOTAFriend>
+		<Panel id="FavoriteStatus" class="" onactivate="DOTAFriendToggleFavorite()">
+			<Panel id="FavoriteFilled" class="FavoriteIcon" onmouseover="UIShowTextTooltip( #DOTA_Friends_RemoveFromFavoritesLabel )" onmouseout="UIHideTextTooltip()" />
+			<Panel id="FavoriteOutline" class="FavoriteIcon" onmouseover="UIShowTextTooltip( #DOTA_Friends_AddToFavoritesLabel )" onmouseout="UIHideTextTooltip()" />
+		</Panel>
 		<Panel id="FriendImagePanel">
 			<Panel id="FriendImage">
 				<Panel id="EmptyPanel" />
@@ -37,6 +41,14 @@
 				<Panel id="BadgeGleamContainer">
 					<Panel id="BadgeGleam" />
 				</Panel>
+			</Panel>
+			<Panel id="PendingFriendActions">
+				<Button class="SimpleIconButton" id="ActionAcceptFriendRequest" onactivate="DOTAAcceptFriendRequest();" onmouseout="UIHideTextTooltip();" onmouseover="UIShowTextTooltip( #DOTA_PlayerContextMenu_AcceptFriendRequest );">
+					<Image src="s2r://panorama/images/control_icons/check_png.vtex" />
+				</Button>
+				<Button class="SimpleIconButton" id="ActionIgnoreFriendRequest" onactivate="DOTAIgnoreFriendRequest();" onmouseout="UIHideTextTooltip();" onmouseover="UIShowTextTooltip( #DOTA_PlayerContextMenu_IgnoreFriendRequest );">
+					<Image src="s2r://panorama/images/control_icons/close_png.vtex" />
+				</Button>
 			</Panel>
 		</Panel>
 	</DOTAFriend>

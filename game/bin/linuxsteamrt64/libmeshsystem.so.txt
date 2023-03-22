@@ -24,6 +24,7 @@
 14CBaseAppSystemI10IMeshUtilsE
 14CBaseAppSystemI11IMeshSystemE
 14CEmptySequence
+14IErrorListener
 15CBaseConstraint
 15CTier0AppSystemI10IMeshUtilsLx0EE
 15CTier0AppSystemI11IMeshSystemLx0EE
@@ -61,6 +62,9 @@
 22CSchemaInstallCallback
 22IToolsResourceListener
 23CKV3ResourceBlockHelper
+23CKV3TransferContextBase
+23CKV3TransferLoadContext
+23CKV3TransferSaveContext
 23CSyncModelResourceUtils
 24CSceneSkeletonObjectDesc
 25IAsyncProcessedDataResult
@@ -96,7 +100,7 @@
 9ISequence
 A0tlIcT
 A;V saI
-A;X tvI
+A;X t~I
 ACTIVITY WEIGHTS
 ACT_IDLE
 ACT_NEUTRAL_REF_POSE
@@ -105,6 +109,8 @@ ATTACHMENT_INFLUENCE_FLAGS_NONE
 AUATSLc'E
 AUATSLc/E
 AVAUATA
+AVAUATE
+AVAUATE1
 AVAUATI
 AVAUATLc
 AVAUATS
@@ -113,11 +119,11 @@ AVAUATSHc
 AVAUATSL
 AWAVAUA
 AWAVAUATA
-AWAVAUATE1
 AWAVAUATI
 AWAVAUATL
 AWAVAUATLc
 AWAVAUATS
+AWAVAUATS1
 AWAVAUATSH
 AWAVAUE1
 AWAVAUI
@@ -189,15 +195,9 @@ BoneChannel
 BoneConstraintList
 Browse to the corresponding model in asset browser, right click and select Full Recompile
 CAimConstraint
-CAnimBone
 CAnimCycle
-CAnimDataChannelDesc
 CAnimFoot
-CAnimKeyData
 CAnimSkeleton
-CAnimUser
-CAnimVariant
-CAnimationGroup
 CAssociateResourceBlockLoader::BlockingLoadResourceFileData: Trying to load an illegal resource name %s
 CAttachment
 CBaseConstraint
@@ -206,14 +206,12 @@ CBoneConstraintPoseSpaceBone
 CBoneConstraintPoseSpaceBone::Input_t
 CBoneConstraintPoseSpaceMorph
 CBoneConstraintPoseSpaceMorph::Input_t
-CBufferString
 CColorGradient
 CCommand::Tokenize: Encountered command which overflows the tokenizer buffer.. Skipping
 CConstraintSlave
 CConstraintTarget
 CCycleBase
 CDrawCullingData
-CEntityIndex
 CFeIndexedJiggleBone
 CFeJiggleBone
 CFeMorphLayer
@@ -259,7 +257,6 @@ CMorphConstraint
 CMorphData
 CMorphRectData
 CMorphSetData
-CMotionTransform
 CONTENT
 CONTENTROOT
 COrientConstraint
@@ -269,7 +266,6 @@ CPhysSurfaceProperties
 CPhysSurfacePropertiesAudio
 CPhysSurfacePropertiesPhysics
 CPhysSurfacePropertiesSoundNames
-CPlayerSlot
 CPointConstraint
 CRC32_ProcessBuffer
 CRegionSVM
@@ -277,20 +273,16 @@ CRenderBufferBinding
 CRenderMesh
 CRenderSkeleton
 CSceneObjectData
-CSplitScreenSlot
 CStrongHandle
 CTSQueue corruption
 CTiltTwistConstraint
 CTransform
 CTwistConstraint
-CUtlBinaryBlock
 CUtlBlockMemory overflow
 CUtlLinkedList overflow! (exhausted index range
 CUtlLinkedList overflow! (exhausted memory allocator
 CUtlRBTree overflow with %u elements
 CUtlString
-CUtlSymbol
-CUtlSymbolLarge
 CUtlVector
 CUtlVectorFixedGrowable
 CUtlVectorSIMDPaddedVector
@@ -306,8 +298,10 @@ Cannot copy abstract class
 Cannot deallocate abstract class
 Cannot deduce for class
 Cannot destruct abstract class
+Cast of %s loses value information (returning %s
 CastSphereSATParams_t
 CharacterSetBuild
+Colors: %s
 CommandLine
 ConnectInterfaceSingletons
 Control block error for '%s
@@ -318,7 +312,6 @@ CovMatrix3
 CpIcD$pH
 CreateInterface
 D$PIcT$HH
-DegreeEuler
 DemoUpconverterVersion001
 Dominate
 Double-save to Member '%s
@@ -335,6 +328,7 @@ Encountered bad skin weights, summing to %g (1.0 expected) at position %.3f %.3f
 EngineServiceMgr001
 EnsureCapacity
 FATAL ERROR: unable to register all schema data: %s
+FATAL: %s called on a pool context (no root available
 FLAG0_SHIFT_BREAKABLE_FORCE
 FLAG0_SHIFT_BREAKABLE_TORQUE
 FLAG0_SHIFT_CONSTRAIN
@@ -499,6 +493,7 @@ GetResourceManifests
 GxL;(t
 H;p`tfL
 H=vmdlu
+HB_modelbuilder_phys_%i.vphys
 HELPER_BONE
 H[A\A]A^A
 HammerMapLoader001
@@ -510,19 +505,19 @@ INVALID EXPRESSION
 INVALID_RBF_TYPE
 ITM_deregisterTMCloneTable
 ITM_registerTMCloneTable
-IcD$ A9
-IcD$XA9
+IcD$<A9
 IcD$XHcSX
 IcD$pHcSp
 IcG0IcW4H
 IcL$@Ic
+IcO8Ic_<I
 IcT$(HcC
 IcW`A;Wp
 Ic\$0A
 Ic\$pA
 Identity
+Indices: %s
 Infinite Joint Weights encountered: Skinning will not work! (At position %.3f %.3f %.3f
-InfoForResourceTypeCAnimData
 InfoForResourceTypeCAnimationGroup
 InfoForResourceTypeCModel
 InfoForResourceTypeCPhysAggregateData
@@ -533,6 +528,7 @@ InfoForResourceTypeIMaterial2
 InputService_001
 InputStackSystemVersion001
 InputSystemVersion001
+InsertBeforeGetPtr
 InstallSchemaBindings
 Intentionally vague touch behavior for %p
 Internal inconsistency between the layout format and attribute is detected
@@ -549,6 +545,7 @@ Invalid remapping table starts for mesh %d on model %s, %d expected %d
 Invalid request for mesh %d in model %s with %d entry remapping start table
 Invalid request for mesh %d in model %s with no remapping table
 Invalid request for mesh %d in model %s with no remapping table starts
+Invalid use of KV3 specific type %s with basic type %s, must be basic type %s
 Inverse Multi Quadratic
 Invert Axes
 It contains connectivity part %d with %d vertices
@@ -568,13 +565,13 @@ Joint Indices (%d) Out Of Range for UINT8: Skinning will not work
 JointAxis_t
 JointMotion_t
 Jv_RegisterClasses
+KV3 instances cannot be set to an unspecified specific type
 KV3 load transfer failed for mesh '%s': %s
 KV3 load transfer failed: %s
 KeyValueCache001
 KeyValues3
 Kmaterial_group
 LOG_GENERAL
-LccHD;cXD
 Left Hand
 Length
 LightmapUV
@@ -594,7 +591,6 @@ LowerEyelid
 MATCHFRAMEWORK_001
 MATERIAL_ATTRIBUTE
 MBUFt@H
-MDATtFH
 MESH_DRAW_FLAGS_CAN_BATCH_WITH_DYNAMIC_SHADER_CONSTANTS
 MESH_DRAW_FLAGS_DRAW_LAST
 MESH_DRAW_FLAGS_NONE
@@ -629,15 +625,9 @@ MPropertyFriendlyName
 MPropertySuppressField
 MapListService_001
 MaterialGroup_t
-MaterialParamBuffer_t
-MaterialParamFloat_t
-MaterialParamInt_t
-MaterialParamString_t
-MaterialParamTexture_t
-MaterialParamVector_t
-MaterialParam_t
 MaterialResourceData_t
 MaterialUtils_001
+Materials: %s
 MathLib_Init
 Mc4$E;t
 Mcn8E;nH
@@ -689,6 +679,7 @@ NetworkSystemVersion001
 No DATA block for resource
 No DATA block for resource '%s
 No schemasystem
+Nodes: %s
 Not safe to 'new' this class due to alignment requirements
 ORIGIN
 OldFeEdge_t
@@ -725,7 +716,7 @@ Plat_NonFatalErrorFunc
 Plat_ShouldCollectMiniDumpsForFatalErrors
 Please add a MovementSettings node to the model in ModelDoc
 Please add a Skeletal Input Settings node to the model in ModelDoc
-Pm_nValue
+Pointers cannot be used as numeric values
 PostProcessingSystem_001
 Print model load-time conversion info
 Prints the bind pose of the specified model. Optionally limits to a particular bone and its parent chain, otherwise prints the entire skeleton
@@ -739,9 +730,7 @@ Quintic
 RESOURCE_TYPE_MODEL
 RESOURCE_TYPE_MORPHSET_INTERNAL
 RESOURCE_TYPE_RENDERMESH_INTERNAL
-RHcKxIc
 ROTATION
-RadianEuler
 RandomFloat
 RandomInt
 RayTracingEnvironment::RefineNode
@@ -757,7 +746,6 @@ RenderHardwareConfig002
 RenderPrimitiveType_t
 RenderService_001
 RenderSkeletonBone_t
-RenderSlotType_t
 RenderUtils_001
 ReportClassError
 ResourceCompiler/MeshCompiler/UseMikkTSpace
@@ -785,10 +773,9 @@ RnSphereDesc_t
 RnSphere_t
 RnTriangle_t
 RnWing_t
-RotationVector
-S z5u3
 S(IcT$(H
 SSE and SSE2 are required
+SceneSystem/DynamicDecalsUseShrinkWrap
 SceneSystem_002
 SceneUtils_001
 SchemaSystem_001
@@ -798,8 +785,6 @@ SequenceGroupResourceData_t
 SerializedEntitiesVersion001
 Simulated
 SkeletonBoneBounds_t
-SlopeTrace
-SoundGuid_t
 SoundOpSystem001
 SoundOpSystemEdit001
 SoundService_001
@@ -823,14 +808,12 @@ Stack depth limit hit (%d
 StatsService_001
 SteamAudio001
 SyncExtref!!%s
-Syntax Error at offset: %d
+T$@HcC<J
+TD_OFFSET_NORMAL
+TD_OFFSET_PACKED
 TILT_TWIST
-TestFormatA
-TestFormatB
-TestFormatC
-TestFormatD
-TestFormatE
 TestScriptMgr001
+Texcoord0: %s
 TextLayout_001
 Thin Plate
 This convar is being accessed prior to ConVar_Register being called
@@ -843,8 +826,9 @@ ToolSceneNodeFactory_001
 ToolService_001
 ToolsStallMonitorInternal_BeginScope
 ToolsStallMonitorInternal_EndScope
+Triangles: %s
 Tried to load a polymorphic pointer with no '%s' key
-Tried to load resource reference '%s' from a value without a resource reference flag
+Tried to load resource reference '%s' from a value without a resource reference specific type
 Tried to replace animations from model %s with no anim groups
 Try changing the number of bones per vertex or the skin weighting, and send Sergiy a repro mesh with this error description
 Trying to concatenate meshes with different numbers of attributes
@@ -859,8 +843,10 @@ UUUUUUUUH
 Unable to read resource file %s
 Unhandled vertex format %i for vertex attribute %s%i
 Unknown
+Unknown KV3 specific type %u
 Unnormalized joint weights encountered (%f): Skinning may not work! (At position %.3f %.3f %.3f
 Unrecognized resource version (%d): %s
+Unsupported KV3 basic type '%s' (%d
 UpperEyelid
 Using 16-bit blend indices
 UtlMemory_Alloc
@@ -873,7 +859,6 @@ VConComm001
 VEngineCvar007
 VFileSystem017
 VMaterialSystem2_001
-VMatrix
 VMediaFoundation001
 VModelError
 VPIcFHI
@@ -894,22 +879,48 @@ VPhysics2_Interface_001
 VProcessUtils002
 VProfService_001
 VRenderDeviceSetupV001
-VSInputSignature
 VScript
 VScriptDbg
 VScriptManager010
 VStringTokenSystem001
 VUUUAVAUATL
+V_DoubleToString_Unsafe
 V_FixDoubleSlashes
 V_FixSlashes
+V_FloatToString_Unsafe
 V_GetFileExtension
+V_Int16ToString_Unsafe
+V_Int32ToString_Unsafe
+V_Int64ToString_Unsafe
+V_Int8ToString_Unsafe
 V_IsAbsolutePath
 V_PathContainsPath
 V_PrettifyMem
 V_RemoveDotSlashes
 V_SetExtension
 V_StringAfterPrefix
+V_StringParseError
+V_StringToBool
+V_StringToColor
+V_StringToFloat32
+V_StringToFloat64
+V_StringToInt16
+V_StringToInt32
+V_StringToInt64
+V_StringToInt8
+V_StringToQAngle
+V_StringToUint16
+V_StringToUint32
+V_StringToUint64
+V_StringToUint8
+V_StringToVector
+V_StringToVector2D
+V_StringToVector4D
 V_StripLastDir
+V_UInt16ToString_Unsafe
+V_UInt32ToString_Unsafe
+V_UInt64ToString_Unsafe
+V_UInt8ToString_Unsafe
 V_UnqualifiedFileName
 V_acosd
 V_acosf
@@ -917,9 +928,6 @@ V_asinf
 V_atan2f
 V_atanf
 V_atofloat32
-V_atofloat64
-V_atoi64
-V_atoui64
 V_fmodf
 V_fpclassifyd
 V_frexpf
@@ -937,14 +945,7 @@ V_strncat
 V_strncmp
 V_strncpy
 V_strnicmp_fast
-V_strnlen
-V_strtod
-V_strtoi64
-V_strtoui64
-V_uuid_t
-Vector2D
 Vector4D
-VectorAligned
 VertexColorPos_t
 VertexPaintBlendParams
 VertexPaintBlendParams1
@@ -963,19 +964,22 @@ YA1ATL
 You must construct it with ORDERED_CONSTRUCT macro in the dependency resolution function
 Z13DebugPrintKV3PK10KeyValues3
 Z14V_stristr_fastPKcS0
+Z15GetGameInfoBoolPKcb
 Z17LoggingSystem_Logi17LoggingSeverity_t5ColorPKcz
 Z17LoggingSystem_Logi17LoggingSeverity_tRK14LeafCodeInfo_tPKcz
 Z20LoadKV3Text_NoHeaderP10KeyValues3P10CUtlStringPKcRK7KV3ID_tS4
 Z20LooksLikeKV3TextDataPKviP7KV3ID_t
-Z20SaveKV3Text_NoHeaderPK10KeyValues3P10CUtlStringP10CUtlBuffer
-Z20SaveKV3Text_NoHeaderPK10KeyValues3P10CUtlStringS3
-Z20SaveKV3Text_ToStringRK7KV3ID_tPK10KeyValues3P10CUtlStringS6
+Z20SaveKV3Text_NoHeaderPK10KeyValues3P10CUtlStringP10CUtlBufferj
+Z20SaveKV3Text_NoHeaderPK10KeyValues3P10CUtlStringS3_j
+Z20SaveKV3Text_ToStringRK7KV3ID_tPK10KeyValues3P10CUtlStringS6_j
 Z22Assert_ConditionFailedRK34_AssertCompileTimeConstantStruct_t
 Z22Assert_ConditionFailedRK34_AssertCompileTimeConstantStruct_tPKcz
+Z23FormatArgumentsToBufferP19IFormatOutputStreamPKcPK28CTypeErasedFormattingWrapperi
 Z29LoadKV3FromKV1Text_TranslatedP10KeyValues3P10CUtlStringPKc23KV1TextEscapeBehavior_tPK21KV1ToKV3Translation_tiS4_b
 Z7LoadKV3P10KeyValues3P10CUtlStringP10CUtlBufferRK7KV3ID_tPKc
 Z7LoadKV3P10KeyValues3P10CUtlStringPKcRK7KV3ID_tS4
 Z7LoadKV3P18CKeyValues3ContextP10CUtlStringP10CUtlBufferRK7KV3ID_tPKc
+Z9V_strnlenPKci
 ZN10CCallQueue18ParallelCallQueuedEPKcP11IThreadPool
 ZN10CUtlBuffer10ParseTokenEPK14characterset_tPcib
 ZN10CUtlBuffer14EnsureCapacityEi
@@ -995,7 +999,6 @@ ZN10CUtlBufferC2Eiii
 ZN10CUtlString15FreeMemoryBlockEv
 ZN10CUtlString3SetEPKc
 ZN10CUtlString5PurgeEv
-ZN10CUtlString6AppendEPKc
 ZN10CUtlString6FormatEPKcz
 ZN10CUtlString7AcquireEP13CBufferStringb
 ZN10CUtlString7FormatVEPKcP13__va_list_tag
@@ -1030,6 +1033,7 @@ ZN13CBufferString6SetPtrEPciibb
 ZN13CBufferString7ReplaceEPKcS1_b
 ZN13CBufferString8MoveFromERS
 ZN13CBufferString8RemoveAtEii
+ZN13CBufferString8TrimTailEPKc
 ZN13CBufferString9SetLengthEibPi
 ZN13CRawAllocator4FreeE18RawAllocatorType_tPvm
 ZN13CRawAllocator5AllocE18RawAllocatorType_tmPm
@@ -1051,6 +1055,8 @@ ZN18CUtlMemoryPoolBase5AllocEv
 ZN18CUtlMemoryPoolBase5ClearEv
 ZN18CUtlMemoryPoolBaseC2Eiii20MemoryPoolGrowType_tPKc19MemAllocAttribute_t
 ZN18CUtlMemoryPoolBaseD2Ev
+ZN19IFormatOutputStream17OutputIndentationEv
+ZN19IFormatOutputStream4PutSEPKc
 ZN21CThreadMultiWaitEvent3SetEv
 ZN21CThreadMultiWaitEvent5ResetEv
 ZN21CThreadMultiWaitEventC1Eb
@@ -1058,11 +1064,14 @@ ZN21CThreadMultiWaitEventD1Ev
 ZN21CUtlScratchMemoryPool12AllocAlignedEii
 ZN21CUtlScratchMemoryPoolC1EjjPvb
 ZN21CUtlScratchMemoryPoolD1Ev
-ZN21RayTracingEnvironment10RefineNodeEiPKiiPK16TriangleBounds_t6VectorS5_iP21CUtlMultiJobProcessorEUlvE
-ZN21RayTracingEnvironment10RefineNodeEiPKiiPK16TriangleBounds_t6VectorS5_iP21CUtlMultiJobProcessorEUlvE0
+ZN21RayTracingEnvironment10RefineNodeEiPKiiPK16TriangleBounds_t12Vector3DBaseIfES6_iP21CUtlMultiJobProcessorEUlvE
+ZN21RayTracingEnvironment10RefineNodeEiPKiiPK16TriangleBounds_t12Vector3DBaseIfES6_iP21CUtlMultiJobProcessorEUlvE0
 ZN21RayTracingEnvironment26SetupAccelerationStructureEvEUlvE
 ZN24CDecalDrawDataRefCounted7ReleaseEvEUlvE
+ZN24CUniformRandomStreamImplI16CThreadNullMutexE11RandomFloatEff
 ZN24CUtlMemoryBlockAllocator12AllocAndCopyEPKcj
+ZN24CUtlMemoryBlockAllocator5PurgeEv
+ZN24CUtlMemoryBlockAllocator9RemoveAllEm
 ZN24CUtlMemoryBlockAllocatorC1Eij18RawAllocatorType_t
 ZN24CUtlMemoryBlockAllocatorD1Ev
 ZN37CTypesafeIntrospectedToKV3TypeManagerILy1818520950E15PermModelData_tE15AllocateAndLoadER23CKV3TransferLoadContextPK21ResourceBindingBase_tP29IRD_RegisterResourceDataUtilsE15CAllocatorUtils
@@ -1077,7 +1086,8 @@ ZNK10CUtlString21IsEqual_CaseSensitiveEPKc
 ZNK10CUtlString27IsEqual_FastCaseInsensitiveEPKc
 ZNK10CUtlStringeqERKS
 ZNK10CUtlStringplEPKc
-ZNK13CVertexKDTree14FindVertsInBoxER23CUtlVectorFixedGrowableIPKfLm64EiERK6VectorS7_i
+ZNK13CBufferString8FormatToEP19IFormatOutputStream20CFormatStringElement
+ZNK13CVertexKDTree14FindVertsInBoxER23CUtlVectorFixedGrowableIPKfLm64EiERK12Vector3DBaseIfES8_i
 ZNK15CUtlSymbolTable4FindEPKc
 ZNK15CUtlSymbolTable6StringE10CUtlSymbol
 ZNK9KeyValues10GetNextKeyEv
@@ -1089,6 +1099,7 @@ ZNSt8ios_base4InitC1Ev
 ZNSt8ios_base4InitD1Ev
 ZNV16CThreadSpinMutex4LockEPKciyj
 ZSt25__throw_bad_function_callv
+ZTI19IFormatOutputStream
 ZTISt11_Mutex_baseILN9__gnu_cxx12_Lock_policyE2EE
 ZTISt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE2EE
 ZTISt19_Sp_make_shared_tag
@@ -1107,6 +1118,7 @@ angularburst
 anim_data_block
 anim_graph_resource
 animationsystem
+array: %u elements
 audioHardMinVelocity
 audiohardnessfactor
 audioparams
@@ -1117,10 +1129,8 @@ bOwnVBAndIB == m_bOwnVBAndIB && m_pFixedMeshDataOverride
 bad line in triangle file %s :  %s
 baselayer
 bentnormal
-binary_auto
-binary_bc
-binary_lz4
-binary_zstd
+binary blob: %u bytes
+binary_blob
 blendindices
 blendweight
 blendweights
@@ -1138,8 +1148,10 @@ cables_list
 chancetospawn
 cloth_enable
 collision_group_override
+color32
 comment
 config_state
+convars_hidden_by_default
 cos( %s
 curvature
 cxHcCpI
@@ -1148,22 +1160,20 @@ cxa_finalize
 cxa_guard_acquire
 cxa_guard_release
 cxa_pure_virtual
-d "No animation data
 d %d %d %d
 d tris
 data.rel.ro
-default
 dme_position_map
 dynamic
 dynstr
 dynsym
 eh_frame
 eh_frame_hdr
+ehandle
 embedded_animation
 embedded_meshes
 embedded_physics
 environmentmappeddynamic
-error in transition graph: %s to %s
 error opening required file %s
 error.vmesh
 exp( %s
@@ -1180,6 +1190,7 @@ f4Slack
 f4Weight0
 f4Weights
 f;0t_fD
+fIcL$@Ic
 fademaxdist
 fademindist
 fadetime
@@ -1214,6 +1225,7 @@ flWeight0
 flWorldFriction
 float32
 float64
+float64[%u
 g cMesh
 g default
 g_bUpdateStringTokenDatabase
@@ -1233,11 +1245,11 @@ impactHardThreshold
 impacthard
 impactsoft
 init_array
+int32[%u
 int64)m_nAllocationCount + (int64)num ) <= 0x7FFFFFFF
 interactive
 invalid
 jiggle bone %u
-kIcH Ic
 l$@IcD$8I
 l$HIcD$@I
 l$PIcD$HM
@@ -1301,7 +1313,6 @@ m_FlexDesc
 m_FlexOps
 m_FlexRules
 m_FollowNodes
-m_Format
 m_Frame1
 m_Frame2
 m_FreeNodes
@@ -1418,7 +1429,6 @@ m_bInfluenceRootTransform
 m_bInverse
 m_bIsAttachment
 m_bIsNotMatchedToMaterial
-m_bNeedsSort
 m_bOverrideMassCenter
 m_bSelected
 m_bTopLevel
@@ -1430,7 +1440,6 @@ m_bUserSpecifiedMaterialGroup
 m_bVisible
 m_baseNameHash
 m_bindPose
-m_boneArray
 m_boneFlexDrivers
 m_boneName
 m_boneNameToken
@@ -1453,15 +1462,10 @@ m_collisionAttributes
 m_constraints
 m_constraints2
 m_controls
-m_dampening
-m_dataChannelArray
 m_debugPartNames
-m_decodeKey
 m_definition
 m_density
 m_description
-m_directHSeqGroup
-m_directHSeqGroup_Handle
 m_drawBounds
 m_drawCalls
 m_driveDampingSlerp
@@ -1476,12 +1480,9 @@ m_driveSpringTwist
 m_driveSpringX
 m_driveSpringY
 m_driveSpringZ
-m_dynamicParams
-m_dynamicTextureParams
 m_eHand
 m_eRbfType
 m_elasticity
-m_elems
 m_embeddedKeyvalues
 m_fingers
 m_flAddWorldCollisionRadius
@@ -1519,6 +1520,7 @@ m_flFalloff
 m_flFingerScaleRatio
 m_flFingerWeight
 m_flFootLength
+m_flFriction
 m_flInertiaScale
 m_flInternalPressure
 m_flLength
@@ -1571,8 +1573,8 @@ m_flUWidthSrc
 m_flUvDensity
 m_flVHeightSrc
 m_flVTopSrc
-m_flValue
 m_flVolume
+m_flVolumetricSolveStrength
 m_flWeight
 m_flWindDrag
 m_flWindage
@@ -1580,11 +1582,8 @@ m_flYawBounce
 m_flYawDamping
 m_flYawFriction
 m_flYawStiffness
-m_flags
 m_flexController
 m_flexControllerToken
-m_floatAttributes
-m_floatParams
 m_footLandCycle
 m_footLiftCycle
 m_footOffCycle
@@ -1603,8 +1602,6 @@ m_hitboxsets
 m_hulls
 m_impactHard
 m_impactSoft
-m_includedGroupArray
-m_includedGroupArray_Handle
 m_indexBuffer
 m_indexHash
 m_indexNames
@@ -1613,8 +1610,6 @@ m_influenceNames
 m_influenceWeights
 m_inputList
 m_inputValue
-m_intAttributes
-m_intParams
 m_invBindPose
 m_jiggleBone
 m_joints
@@ -1623,14 +1618,11 @@ m_linearLimitDamping
 m_linearLimitRestitution
 m_linearLimitSpring
 m_linearLimitValue
-m_localHAnimArray
-m_localHAnimArray_Handle
 m_localSpaceTransforms
 m_lodBoneCounts
 m_lodGroupSwitchDistances
 m_material
 m_materialGroups
-m_materialName
 m_materials
 m_maxForce
 m_maxTorque
@@ -1641,7 +1633,6 @@ m_metacarpalBoneName
 m_modelInfo
 m_modelSkeleton
 m_modelSpaceTransforms
-m_morphArray
 m_morphDatas
 m_morphNames
 m_morphRectDatas
@@ -1655,7 +1646,6 @@ m_nBoneHash
 m_nBoneNameHash
 m_nBoneWeightCount
 m_nBoxRigidIndex
-m_nChannelElements
 m_nChild
 m_nChildren
 m_nChoice
@@ -1664,18 +1654,16 @@ m_nCollisionMask
 m_nCollisionPlaneIndex
 m_nCollisionSphereInclusiveCount
 m_nCollisionSphereIndex
-m_nD3DSemanticIndex
 m_nDefaultMeshGroupMask
 m_nDynamicNodeFlags
 m_nEdge
-m_nElementIndexArray
-m_nElementMaskArray
 m_nExtraGoalIterations
 m_nExtraIterations
 m_nExtraPressureIterations
 m_nFace
 m_nFingerIndex
 m_nFirstMeshlet
+m_nFirstPositionDrivenNode
 m_nFlag
 m_nFlags
 m_nFlex
@@ -1688,7 +1676,6 @@ m_nIndex1
 m_nIndex2
 m_nIndexCount
 m_nInfluences
-m_nInstanceStepRate
 m_nJiggleParent
 m_nNameHash
 m_nNext
@@ -1697,7 +1684,6 @@ m_nNodeBaseJiggleboneDependsCount
 m_nNodeCount
 m_nNumChannels
 m_nNumMeshlets
-m_nOffset
 m_nOrigin
 m_nParent
 m_nParticle
@@ -1713,7 +1699,7 @@ m_nRodVelocitySmoothIterations
 m_nRopeCount
 m_nRotLockStaticNodes
 m_nRotateMotion
-m_nSemanticIndex
+m_nScaleSourceNode
 m_nShapeType
 m_nSimdQuadCount1
 m_nSimdQuadCount2
@@ -1721,8 +1707,6 @@ m_nSimdTriCount1
 m_nSimdTriCount2
 m_nSlaveAxis
 m_nSlaveChannel
-m_nSlot
-m_nSlotType
 m_nSphereRigidIndex
 m_nStartIndex
 m_nStaticNodeFlags
@@ -1754,18 +1738,12 @@ m_outerKnuckle2
 m_outputMorph
 m_outputTransformList
 m_outputWeightList
-m_pD3DSemanticName
 m_pFeModel
 m_pHull
 m_pModelConfigList
-m_pName
 m_pRegionSVM
-m_pSemantic
-m_pSemanticName
 m_pTextureAtlas
-m_pValue
 m_params
-m_parent
 m_parentName
 m_parents
 m_parts
@@ -1773,7 +1751,6 @@ m_physics
 m_projectionAngularTolerance
 m_projectionLinearTolerance
 m_qAimOffset
-m_qAlignment
 m_qBaseOrientation
 m_qChildBindRotation
 m_qOffset
@@ -1792,7 +1769,6 @@ m_refSequenceGroups
 m_reflectivity
 m_remappingTable
 m_remappingTableStarts
-m_renderAttributesUsed
 m_rnShape
 m_rolling
 m_roughThreshold
@@ -1802,11 +1778,9 @@ m_sBoneName
 m_sName
 m_sSurfaceProperty
 m_sTargetMorph
-m_scale
 m_sceneObjects
 m_scrapeRough
 m_scrapeSmooth
-m_shaderName
 m_skeleton
 m_slaves
 m_softContactDampingRatio
@@ -1817,7 +1791,6 @@ m_stanceCycle
 m_strParentBone
 m_strain
 m_strides
-m_stringAttributes
 m_surfacePropertiesList
 m_surfacePropertyHashes
 m_swing1LimitDamping
@@ -1828,18 +1801,10 @@ m_swing2LimitDamping
 m_swing2LimitRestitution
 m_swing2LimitSpring
 m_swing2LimitValue
-m_szChannelClass
-m_szDescription
-m_szElementNameArray
 m_szFacs
-m_szGrouping
 m_szName
-m_szScripts
 m_szType
-m_szVariableName
 m_targets
-m_textureAttributes
-m_textureParams
 m_thickness
 m_tipParentBoneName
 m_toeBoneIndex
@@ -1854,7 +1819,6 @@ m_twistLowLimitDamping
 m_twistLowLimitRestitution
 m_twistLowLimitSpring
 m_twistLowLimitValue
-m_userArray
 m_vAngularTargetVelocity
 m_vBallOffset
 m_vBasePosition
@@ -1889,18 +1853,14 @@ m_vStancePositionMS
 m_vTintColor
 m_vTipOffset
 m_vToStrideStartPos
-m_vTraceOffset
-m_vTraceScale
 m_vUpLS
 m_vUpVector
 m_vViewMax
 m_vViewMin
-m_value
 m_vecCenter
 m_vecSize
-m_vectorAttributes
-m_vectorParams
 m_vertexBuffers
+m_wheelDrag
 m_wristBones
 mapbuilder.nodraw
 mapbuilder.occluder
@@ -1910,10 +1870,10 @@ materials/error.vmat
 materials/tools/show_skeleton.vmat
 materialsystem2
 mathlib.cpp
+matrix3x4
 matrix3x4_t
 matrix3x4a_t
 max( %s, %s
-maxSpringTension
 memcpy_chk
 memmove
 mesh.cpp
@@ -1932,7 +1892,6 @@ model.cpp
 model_default_preview_sequence_name
 model_dump_convert_info
 model_old_disk.cpp
-modelbuilder_phys_%i.vphys
 modellib
 models
 models/%s
@@ -1941,6 +1900,7 @@ morph_block
 morph_name
 morph_texture
 motiondisabled
+multiline_string
 multiplayer_break
 nBeginDynamic
 nBoneCtrl
@@ -1979,10 +1939,12 @@ parent
 parent of jiggle bone %u: %s
 particles_list
 pervertexlighting
+phys_build_mesh_wings
 phys_data_block
 phys_res
 placementattachment
 placementbone
+pointer
 position
 print_model_bind_pose
 projectedDecal
@@ -1994,11 +1956,12 @@ pthread_mutex_lock
 pthread_mutex_unlock
 pthread_mutexattr_init
 pthread_mutexattr_settype
-public/scenesystem/memoryvertex.h(149
+public/scenesystem/memoryvertex.h(145
 public/tier0/tslist.h
 public/tier0/utlmemory.h
 public/tier0/utltshash.h
 qAdjust
+quaternion
 ragdoll
 raytrace.cpp
 rela.dyn
@@ -2009,41 +1972,45 @@ remapping vertex %d[w%d] invalid: %d->? >= %d
 resource_name
 resourcesystem
 rodata
-runspeed
+rotation_vector
 s (Color
 s (Material
 s * %s
 s + %s
 s - %s
 s / %s
-s : %u
-s Schema Type: %s
 s allocation count overflow
 s allocation count overflow( %llu > %llu
+s allocation count overflow( add %llu + current %llu > max %llu
 s+-- Schema Class: %s
-s, cat %d
 s: Invalid capacity %u
 s: Invalid grow amount %d
+s: invalid nBeforeIndex %d
+s: invalid nSize %d
 s:%s needs base %s:%s to be registered
+s@HcS8H
+sIcH Ic
 s_color
 s_matgrp
 schemaclassinfo.cpp
-schematype.cpp
 scrapeRoughThreshold
 scraperough
 scrapesmooth
 scripts/activity_modifier_weights.txt
 seq_trans
 seqgroup_data_block
-sharpStartAngle
 shstrtab
 sin( %s
+single_quoted_string
 singletons.cpp
+softcontactdampingratio
+softcontactfrequency
 soundevent
-springConstant
 sqrt( %s
 stack_chk_fail
 staticImpactVolume
+strict_type_combinations
+string_token
 subclass
 surfacePropertyName
 s|  % 2d: %s [Offset: %d
@@ -2055,67 +2022,69 @@ s| Project: '%s' Binary: '%s
 s| SizeOf: %d
 s| Virtual: %s; Abstract: %s; TrivialConstr: %s; TrivialDestr: %s
 t$8AkT$0
+t$@IcT$8H
 t$PAkT$H
 t-IcG A;G0
-t/;w0t2;w@t=1
+t/;w8t2;wHt=1
 t@IcW0I
-tH<&tD
 tWHcS A9
 tWHcSHA9
-tWHcS`A9
 tZHcS(A9
 tZHcS@A9
-tZIcV09
-t[IcVPA9
+t[IcV`A9
 t^HcCXA9
-t^IcFh9
+t`IcV09
+taIcVPA9
+table: %u members
 tangent
 tangentu_signv
-tcHcS09
 tcHcS89
+tcHcSH9
+tdIcFh9
 temp_unserialization_member
 texcoord
 tfHcC0A9
 tfHcCHA9
 tfHcS09
-tfHcSH9
 tgHcC`9
 tgIcD$XA9
 tiHcSpA9
 tjHcCP9
-tlHcSxA9
 tmFrame
 tmFrame2
 tools_preview
+tpIcVxA9
 tqIcD$@9
+trHcS09
 tvIcD$pA9
-txHcSx9
+t{HcSx9
+uchar32
 unable to load mesh "%s
 undefined
 unknown
+unknown KV3 basic type '%s' (%d
 unknown activity %d on for activity model %s
-unknown: %d
 unspecified
-useMotionDamping
-useSmoothPaths
 usemtl initialShadingGroup
+userdefinedsheets
 v %g %g %g
 v %g %g %g%s
 v+<Ht_<Xt[<7uyH
+vCenterOfMass
 vSphere
 vanmgrphL
 vb phys
 vbib_block
 vector2
+vector2d
 vector3
 vector4
-vmdlkeys0
-vmdlkeys1
-vmdlkeys2
+vector4d
 vmdlkeys3
 vn %g %g %g
 vphysics2
-walkspeed
+w@IcW8L
+wheeldrag
 xC;rh}>Hc
 xHcFpL
 x[A\A]A^A

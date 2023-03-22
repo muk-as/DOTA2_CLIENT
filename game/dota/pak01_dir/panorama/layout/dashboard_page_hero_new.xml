@@ -35,6 +35,7 @@
 					</Panel>
 					<Panel id="LargeModelPreviewControls">
 						<Button id="FullscreenButton" onactivate="DOTASetCurrentDashboardPageFullscreen( true ); TriggerStyle( ExitFullscreenHint, AnimateHint );" />
+						<Button id="DebutToolButton" unlocalized="true" onactivate="DOTAShowDebutTool();" />
 						<Panel id="ModelSelector">
 							<Label text="#DOTA_tooltip_econ_item_modifier_model" />
 							<Panel id="ModelButtons" />
@@ -194,19 +195,44 @@
 			<Label id="ExitFullscreenHint" text="#DOTA_ExitFullscreen" />
 			<DOTAQuickSearch id="HeroQuickSearch" />
 		</Panel>
-		<Panel class="DebugTools DebugToolButtons">
-			<TextButton class="PopupButton Blue" onactivate="AddStyle(GreenScreen, Hidden); AddStyle(BlackScreen, Hidden);AddStyle(BlueScreen, Hidden);">
-				<Label text="No Screen" />
-			</TextButton>
-			<TextButton class="PopupButton Green" onactivate="ToggleStyle(GreenScreen, Hidden);AddStyle(BlackScreen, Hidden);AddStyle(BlueScreen, Hidden);">
-				<Label text="Green Screen" />
-			</TextButton>
-			<TextButton class="PopupButton Black" onactivate="ToggleStyle(BlackScreen, Hidden);AddStyle(GreenScreen, Hidden);AddStyle(BlueScreen, Hidden);">
-				<Label text="Black Screen" />
-			</TextButton>
-			<TextButton class="PopupButton Blue" onactivate="ToggleStyle(BlueScreen, Hidden);AddStyle(BlackScreen, Hidden);AddStyle(GreenScreen, Hidden);">
-				<Label text="Blue Screen" />
-			</TextButton>
+		<Panel class="DebugTools DebugToolButtons TopBottomFlow">
+			<Panel class="HeroPageDebugControlsGroup">
+				<TextButton class="PopupButton Blue HeroPageDebugControl" onactivate="AddStyle(GreenScreen, Hidden); AddStyle(BlackScreen, Hidden);AddStyle(BlueScreen, Hidden);">
+					<Label unlocalized="true" text="No Screen" />
+				</TextButton>
+				<TextButton class="PopupButton Green HeroPageDebugControl" onactivate="ToggleStyle(GreenScreen, Hidden);AddStyle(BlackScreen, Hidden);AddStyle(BlueScreen, Hidden);">
+					<Label unlocalized="true" text="Green Screen" />
+				</TextButton>
+				<TextButton class="PopupButton Black HeroPageDebugControl" onactivate="ToggleStyle(BlackScreen, Hidden);AddStyle(GreenScreen, Hidden);AddStyle(BlueScreen, Hidden);">
+					<Label unlocalized="true" text="Black Screen" />
+				</TextButton>
+				<TextButton class="PopupButton Blue HeroPageDebugControl" onactivate="ToggleStyle(BlueScreen, Hidden);AddStyle(BlackScreen, Hidden);AddStyle(GreenScreen, Hidden);">
+					<Label unlocalized="true" text="Blue Screen" />
+				</TextButton>
+			</Panel>
+			<Panel class="HeroPageDebugControlsGroup">
+				<Label unlocalized="true" id="HeroPageDebugPedestalLabel" text="Pedestal" />
+				<TextButton class="PopupButton White HeroPageDebugControl" onactivate="DOTAHeroPageDebugSetPedestal(true)">
+					<Label unlocalized="true" text="Show Pedestal" />
+				</TextButton>
+				<TextButton class="PopupButton Black HeroPageDebugControl" onactivate="DOTAHeroPageDebugSetPedestal(false)">
+					<Label unlocalized="true" text="Hide Pedestal" />
+				</TextButton>
+			</Panel>
+			<Panel class="HeroPageDebugControlsGroup TopBottomFlow">
+				<Label unlocalized="true" id="HeroPageDebugAnimationLabel" text="Animation" />
+				<TextEntry unlocalized="true" style="margin: 8px;" class="HeroPageDebugControl" id="HeroPageDebugAnimationSequence" oninputsubmit="DOTAHeroPageDebugPlayAnimationSequence()" placeholder="Animation Sequence Name ..." maxchars="1024" />
+				<TextButton class="PopupButton Black HeroPageDebugControl" onactivate="DOTAHeroPageDebugPlayAnimationSequence()">
+					<Label unlocalized="true" text="Play Sequence " />
+				</TextButton>
+			</Panel>
+			<Panel class="HeroPageDebugControlsGroup TopBottomFlow">
+				<Label unlocalized="true" id="HeroPageDebugMapLabel" text="Map" />
+				<TextEntry unlocalized="true" style="margin: 8px;" class="HeroPageDebugControl" id="HeroPageDebugMapName" placeholder="Map Name ..." maxchars="1024" />
+				<TextButton class="PopupButton Black HeroPageDebugControl" onactivate="DOTAHeroPageDebugLoadMap()">
+					<Label unlocalized="true" text="Load Map " />
+				</TextButton>
+			</Panel>
 		</Panel>
 	</DOTAHeroPageNew>
 </root>
