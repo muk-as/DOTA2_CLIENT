@@ -5043,6 +5043,8 @@
 2%.CMsgSource1LegacyGameEventList.key_t"K
 2%.CMsgSteamLearnHMACKeys.CacheDataKeys
 2%.CMsgSteamLearnMatchState.PlayerStateB
+2%.CMsgSteamLearnWardPlacement.Location
+2%.CMsgSteamLearnWardPlacement.LocationB
 2%.CMsgStickerbookTeamPageOrderSequence
 2%.ESteammLearnRegisterDataSourceResult
 2%.google.protobuf.FieldDescriptorProto
@@ -7319,6 +7321,7 @@
 27CMsgServerToGCRealtimeStats
 27CMsgServerToGCRequestStatus
 27CMsgSosStopSoundEventHash_t
+27CMsgSteamLearnWardPlacement
 27CMsgUnderDraftData_ShopSlot
 27CNetworkedSequenceOperation
 27CParticleClientSideModifier
@@ -7605,7 +7608,7 @@
 28IPhysicsEntitySolverAutoList
 28ISteamUnifiedMessageListener
 28SimpleConstraintSoundProfile
-28Source1LegacyGameEventList_t
+28Sourc
 28TEEffectDispatch_GameEvent_t
 28TEProjectedDecal_GameEvent_t
 28VPhysicsCollisionAttribute_t
@@ -7880,6 +7883,7 @@
 29CMsgSOCacheSubscribedUpToDate
 29CMsgServerNetworkStats_Player
 29CMsgSource1LegacyListenEvents
+29CMsgSteamLearnMatchInfoPlayer
 29CMvpData_MvpDatum_MvpAccolade
 29CNavBreadthFirstSearchLattice
 29CParticleControlPointModifier
@@ -10241,6 +10245,7 @@
 36CMsgSource1LegacyGameEventList_key_t
 36CMsgSteamLearnHMACKeys_CacheDataKeys
 36CMsgSteamLearnMatchState_PlayerState
+36CMsgSteamLearnWardPlacement_Location
 36CMsgStickerbookTeamPageOrderSequence
 36CNetworkSerializerBindingBuildFilter
 36CSchemaRegistration_mathlib_extended
@@ -15472,7 +15477,6 @@
 8CUserCmd
 8CUtlSlot
 8D8c=t
-8D;5qu
 8E;7}3I
 8INavDraw
 8INextBot
@@ -17279,6 +17283,7 @@ AWAVAUfA
 AXAYt"H
 AXAYt0A
 AX[]A\A
+AX_PLAYERS
 AYAZt+A
 AZA\A]A^A_]I
 A[A\fA9
@@ -17414,6 +17419,8 @@ AbilityUpgradeGoldCost
 AbilityUsageThink
 AbilityValueData
 AbilityValues
+Ability_Special_Bonus_Unique_Doom_6
+Ability_Wisp_Spirits_In
 Aborting cache/install of UGC %llu
 AbsTagType(unknown
 Accel (time*time
@@ -21494,7 +21501,6 @@ CDOTA_Ability_Special_Bonus_Unique_Doom_2
 CDOTA_Ability_Special_Bonus_Unique_Doom_3
 CDOTA_Ability_Special_Bonus_Unique_Doom_4
 CDOTA_Ability_Special_Bonus_Unique_Doom_5
-CDOTA_Ability_Special_Bonus_Unique_Doom_6
 CDOTA_Ability_Special_Bonus_Unique_Doom_7
 CDOTA_Ability_Special_Bonus_Unique_Doom_8
 CDOTA_Ability_Special_Bonus_Unique_Doom_9
@@ -22395,7 +22401,6 @@ CDOTA_Ability_Winter_Wyvern_Winters_Curse
 CDOTA_Ability_Wisp_Overcharge
 CDOTA_Ability_Wisp_Relocate
 CDOTA_Ability_Wisp_Spirits
-CDOTA_Ability_Wisp_Spirits_In
 CDOTA_Ability_Wisp_Spirits_Out
 CDOTA_Ability_Wisp_Tether
 CDOTA_Ability_Wisp_Tether_Break
@@ -23214,7 +23219,6 @@ CDOTA_Item_WraithPact
 CDOTA_Item_Yasha
 CDOTA_Item_Yasha_And_Kaya
 CDOTA_Jungle_Varmint_Dive
-CDOTA_M
 CDOTA_MLBotManager
 CDOTA_MLUnitTracker::Update
 CDOTA_MapTree
@@ -24085,6 +24089,7 @@ CDOTA_Modifier_Broodmother_SpawnSpideriteDebuff
 CDOTA_Modifier_Broodmother_SpawnSpiderlings
 CDOTA_Modifier_Broodmother_SpawnSpiderlingsShard
 CDOTA_Modifier_Broodmother_Spider_HP
+CDOTA_Modifier_Broodmother_SpinWeb
 CDOTA_Modifier_Broodmother_SpinWebInvisibleApplier
 CDOTA_Modifier_Broodmother_SpinWeb_ChargeCounter
 CDOTA_Modifier_Broodmother_SpinWeb_NoTreeWalking
@@ -24402,6 +24407,7 @@ CDOTA_Modifier_Eul_Wind_Waker_Thinker
 CDOTA_Modifier_FacelessVoid_Arcana
 CDOTA_Modifier_FacelessVoid_ArcanaDamageRouter
 CDOTA_Modifier_FacelessVoid_Arcana_Kill_Effect
+CDOTA_Modifier_FacelessVoid_Backtrack
 CDOTA_Modifier_FacelessVoid_Chronosphere
 CDOTA_Modifier_FacelessVoid_Chronosphere_Freeze
 CDOTA_Modifier_FacelessVoid_Chronosphere_SelfBuff
@@ -26928,6 +26934,7 @@ CGCSODestroyJob
 CGCSODestroyJob(owner=%s, type=%d
 CGCSOUpdateJob
 CGCSOUpdateJob(owner=%s
+CGCSOUpdateJob(owner=%s, type=%d
 CGCSOUpdateMultipleJob
 CGCServerJobSendRealtimeStats
 CGCStorePurchaseInit_LineItem
@@ -28217,8 +28224,10 @@ CMsgSteamLearnItemPurchase
 CMsgSteamLearnMatchHero
 CMsgSteamLearnMatchHeroes
 CMsgSteamLearnMatchInfo
+CMsgSteamLearnMatchInfoPlayer
 CMsgSteamLearnMatchState
 CMsgSteamLearnPreGameItemPurchases
+CMsgSteamLearnWardPlacement
 CMsgSteamLearn_AccessData
 CMsgSteamLearn_BatchOperation_Request
 CMsgSteamLearn_BatchOperation_Response
@@ -29068,8 +29077,8 @@ CallHitBottom
 CallHitTop
 CallPrivateScriptFunction
 CallScriptFunction
+Callbac
 Callback for event "%s" is NULL
-Callback returned false.  Marking install request as canceled
 Called when the motion gets interrupted
 Caller should provide us with *buffer_ when buffer is non-empty
 Can not find event action %u for end of event fantasy award %d
@@ -31094,7 +31103,6 @@ DOTA_ITEM_TP_SCROLL
 DOTA_ITEM_TRANSIENT_CAST_ITEM
 DOTA_ITEM_TRANSIENT_ITEM
 DOTA_ITEM_TRANSIENT_RECIPE
-DOTA_It
 DOTA_Item.AbyssalBlade.Activate
 DOTA_Item.ArcaneBoots.Activate
 DOTA_Item.ArcaneRing.Cast
@@ -31166,6 +31174,7 @@ DOTA_Item.Nullifier.Cast
 DOTA_Item.Nullifier.Slow
 DOTA_Item.Nullifier.Target
 DOTA_Item.ObserverWard.Activate
+DOTA_Item.Orchid.Activate
 DOTA_Item.Overwhelming_Blink.Activate
 DOTA_Item.Overwhelming_Blink.NailedIt
 DOTA_Item.PhaseBoots.Activate
@@ -31338,8 +31347,8 @@ DOTA_LaneNameBottom
 DOTA_LaneNameMiddle
 DOTA_LaneNameNone
 DOTA_LaneNameTop
+DOTA_MA
 DOTA_MAX_ABILITIES
-DOTA_MAX_PLAYERS
 DOTA_MAX_PLAYER_TEAMS
 DOTA_MAX_SPECTATOR_LOBBY_SIZE
 DOTA_MAX_SPECTATOR_TEAM_SIZE
@@ -32313,6 +32322,7 @@ DotaPseudoRandomType
 DotaSpectatorGraphManager
 DotaTreeId_t
 DotaTrophies_global_server
+DotaWardPlacement
 Double-save to Member '%s
 Download completed in %.1fs with result code %d
 Download files with result code %d
@@ -33495,6 +33505,7 @@ Failed to load rubick arcana file '%s
 Failed to load scenario definitions file 'scripts/scenario_definitions.txt
 Failed to load scenario definitions file 'scripts/scenario_definitions_staging.txt
 Failed to load single event definition file '%s' for event '%s
+Failed to load special ability %s(%s) - missing name and value
 Failed to load special ability %s(%s) - missing type
 Failed to load tutorial lesson: '%s
 Failed to load. pName='%s', bIncrementVersion=%s, list
@@ -34171,6 +34182,7 @@ GasCylinder.Explode
 Gave a Commend
 Gave the item
 General information about the match as a whole
+General information about the match as a whole from the perspective of a particular user
 General.Buy
 General.CastFail_InvalidTarget_MagicImmune
 General.Coins
@@ -37048,7 +37060,6 @@ IDEA-ECB
 IDEA-OFB
 IDEMPOTENCY_UNKNOWN
 IDEMPOTENT
-IER_PROPERTY_PRE_ATTACK
 IEconItemInterface
 IGNORED due to being marked "Dont save
 IGNORED, no across_transition flag & no globalname
@@ -37344,6 +37355,7 @@ InfoForResourceTypeCTextureBase
 InfoForResourceTypeIMaterial2
 InfoForResourceTypeIParticleSystemDefinition
 InfoPanel
+Information about a ward being placed
 Information about an ability getting skilled up
 Information about an item purchase
 Information about item purchases in the pregame
@@ -38675,7 +38687,6 @@ LastHit = %d  Deny = %d  ClaimedMiss = %d  ClaimedDeny = %d  Miss = %d
 LastHitChallengeRival
 LastRemainingQuery
 LastToPassQuery
-LastTrailThinkerLocation
 Latam_Spanish
 LatchDirtyPermission_t
 Late precache of %s
@@ -39239,6 +39250,7 @@ MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE
 MODIFIER_PROPERTY_PREATTACK_DEADLY_BLOW
 MODIFIER_PROPERTY_PREATTACK_TARGET_CRITICALSTRIKE
 MODIFIER_PROPERTY_PRESERVE_PARTICLES_ON_MODEL_CHANGE
+MODIFIER_PROPERTY_PRE_ATTACK
 MODIFIER_PROPERTY_PRIMARY_STAT_DAMAGE_MULTIPLIER
 MODIFIER_PROPERTY_PROCATTACK_BONUS_DAMAGE_MAGICAL
 MODIFIER_PROPERTY_PROCATTACK_BONUS_DAMAGE_MAGICAL_TARGET
@@ -39710,8 +39722,6 @@ Modifier name %s is not lowercase
 Modifier script %s failed to find class named %s
 ModifierGainedData
 ModifierNames
-Modifier_Broodmother_SpinWeb
-Modifier_FacelessVoid_Backtrack
 Modifies the number of valueless charges on this item
 Modify derived stat value constants. ( AttributeDerivedStat eStatType, float flNewValue
 ModifyAgility
@@ -45767,6 +45777,7 @@ TYPE_GROUP
 TYPE_INT32
 TYPE_INT64
 TYPE_MESSAGE
+TYPE_ROAM
 TYPE_SFIXED32
 TYPE_SFIXED64
 TYPE_SINT32
@@ -46562,7 +46573,6 @@ UpdateEventPoints
 UpdateFarmLaneDesires
 UpdateGCServerInfo
 UpdateGestureLayer
-UpdateJob(owner=%s, type=%d
 UpdateLaneAssignments
 UpdateLinearProjectileDirection
 UpdateLiveFantasyStats
@@ -48580,6 +48590,7 @@ aghsfort_special_bane_enfeeble_damage_steal
 aghsfort_special_bane_enfeeble_death_spread
 aghsfort_special_bane_enfeeble_end_fiends_grip
 aghsfort_special_bane_enfeeble_spill
+aghsfort_special_bane_fiends_grip_auto_nightmare
 aghsfort_special_bane_fiends_grip_boost_ally
 aghsfort_special_bane_fiends_grip_spread
 aghsfort_special_bane_nightmare_confusion
@@ -49261,6 +49272,7 @@ ambient_generic
 ambientfx
 ammo_id
 ammomod
+amount
 amount_wagered
 amp_per_charge
 amplitude
@@ -50974,6 +50986,7 @@ cd_select7
 cd_select8
 cd_select9
 cdndelay
+ce1LegacyGameEventList_t
 ceiling
 celestial_hammer_proj
 cell %d at (%0.2f, %0.2f), (%d, %d) has %d areas
@@ -50997,7 +51010,7 @@ cgcache
 chD;cxt"H
 chain_bounces
 chain_break_distance
-chain_chance
+chain_c
 chain_cooldown
 chain_damage
 chain_damage_per_charge
@@ -51152,6 +51165,7 @@ choices
 chosen_lane
 chronotargets
 citadel
+ck returned false.  Marking install request as canceled
 ckPoint H
 cl_cq_min_queue
 cl_imgui_set_selection %i
@@ -51983,6 +51997,7 @@ daggers_4
 daggers_5
 daily_weekly_challenges_enabled
 daily_win_periodic_resource
+damage
 damageForce
 damagePosition
 damage_absorb_pct
@@ -53786,7 +53801,6 @@ eclipse_pct
 econ_gcmessages.proto
 econ_owner
 econ_shared_enums.proto
-ed to load special ability %s(%s) - missing name and value
 edge %d, in connection %d(%d
 edge %d, out connection %d(%d
 edge_damage
@@ -54357,6 +54371,7 @@ execifexists %s
 execifexists server_default.cfg
 execution_time
 existing_duration
+existing_ward_locs
 exorcism_1_extra_spirits
 exorcism_2_extra_spirits
 exorcism_3_extra_spirits
@@ -54996,7 +55011,6 @@ forged_spirit_melting_strike
 forgivedelay
 formation_delay
 fort_attacked
-fort_special_bane_fiends_grip_auto_nightmare
 fortunate_soul
 forum_topic_id
 forward
@@ -56422,6 +56436,7 @@ huskar_inner_vitality
 huskar_life_break
 hype_loc
 hypothermia
+h|D;-OZ
 i : %s (ground %i %s
 i < length
 i links
@@ -56736,7 +56751,6 @@ identified-organization
 identifier_value
 idle_alt_2_anim
 idle_lifetime
-ier_visage_grave_chill_debuff
 if g_reloadState == nil then
 if g_reloadState[k] == nil then
 if imgui should consume input
@@ -59662,6 +59676,7 @@ l$X[A\A]A
 l$`IcD$XM
 l$dD8kdt
 lIcMPIc
+l_bonus_unique_shadow_demon_3
 labelled_debug_helper_arc_segments
 labelled_debug_helper_enabled
 labelled_debug_helper_scale
@@ -66807,6 +66822,7 @@ m_vLastRippleOffsets
 m_vLastSeenLoc
 m_vLastSlopeCheckPos
 m_vLastTempViewer
+m_vLastTrailThinkerLocation
 m_vLastVisibilityChange
 m_vLeftControl
 m_vLightDirection
@@ -71087,6 +71103,7 @@ modifier_viper_viper_strike
 modifier_viper_viper_strike_slow
 modifier_visage_armor_reduction
 modifier_visage_grave_chill_buff
+modifier_visage_grave_chill_debuff
 modifier_visage_gravekeepers_cloak
 modifier_visage_gravekeepers_cloak_secondary
 modifier_visage_gravekeepers_cloak_stack
@@ -75792,7 +75809,7 @@ ping_details
 ping_deviation
 ping_minimap
 ping_minimap_stop
-ping_source
+ping_so
 ping_stddev_ms
 pinned_damage_amount
 pinned_damage_interval
@@ -78543,7 +78560,6 @@ setct-CredRevReqTBEX
 setct-CredRevReqTBS
 setct-CredRevReqTBSX
 setct-CredRevResData
-setct-CredRevResTBE
 setct-ErrorTBS
 setct-HODInput
 setct-MeAqCInitResTBS
@@ -80401,7 +80417,6 @@ special_bonus_unique_sand_king_7
 special_bonus_unique_sand_king_8
 special_bonus_unique_shadow_demon_1
 special_bonus_unique_shadow_demon_2
-special_bonus_unique_shadow_demon_3
 special_bonus_unique_shadow_demon_4
 special_bonus_unique_shadow_demon_5
 special_bonus_unique_shadow_demon_6
@@ -81475,6 +81490,7 @@ t*Mc<$E
 t+H;y s
 t+Lc#D;c
 t-<"tyD
+t-CredRevResTBE
 t-D;h,t
 t.<"tzD
 t/;w8t2;wHt=1
@@ -81809,7 +81825,6 @@ teleports_completed
 teleports_used
 teletexTerminalIdentifier
 telexNumber
-tem.Orchid.Activate
 temp tree
 temp_unserialization_member
 tempest_double_cooldown_reduction
@@ -82974,6 +82989,7 @@ wap-wsg-idm-ecid-wtls8
 wap-wsg-idm-ecid-wtls9
 ward_index
 ward_kill_gold
+ward_loc
 ward_onprojectilehit
 ward_placements
 ward_radius
@@ -83264,7 +83280,6 @@ xp_received
 xp_reward_details
 xstat64
 y=up=green, z=forward=blue, x=left=red
-yDotaTV_900
 y_normal
 y_offset
 yasha_bonus_agility
