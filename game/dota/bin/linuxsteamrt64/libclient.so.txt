@@ -305,6 +305,7 @@
 10CMsgIDLinkILj1ELj16ELj8861E31CMsgClientToGCCandyShopOpenBagsE
 10CMsgIDLinkILj1ELj16ELj8865E41CMsgClientToGCCandyShopDevShuffleExchangeE
 10CMsgIDLinkILj1ELj16ELj8871E49CMsgClientToGCCollectorsCacheAvailableDataRequestE
+10CMsgIDLinkILj1ELj16ELj8879E25CMsgClientToGCRankRequestE
 10CMsgQAngle
 10CMsgTEDust
 10CMsgTEFizz
@@ -952,6 +953,7 @@
 14CPointTemplate
 14CRadixTrieBaseI17CUtlRadixTrieNode20CUtlRadixTrieNodeRefE
 14CRadixTrieBaseI21CPickledRadixTrieNode24CPickledRadixTrieNodeRefE
+14CRankDataCache
 14CRecordingList
 14CSVCMsg_Sounds
 14CSoundModifier
@@ -1167,6 +1169,7 @@
 15CAsyncDataCacheI6EEvent49CMsgClientToGCRequestArcanaVotesRemainingResponseE
 15CAsyncDataCacheI9ECurrency18market_full_data_tE
 15CAsyncDataCacheI9ELanguage39CMsgAvailablePrivateCoachingSessionListE
+15CAsyncDataCacheI9ERankType26CMsgGCToClientRankResponseE
 15CAsyncDataCacheI9GuildID_t10CGuildDataE
 15CAsyncDataCacheI9GuildID_t14CUtlSortVectorI18CMsgGuildFeedEvent21GuildFeedItemSortLess10CUtlVectorIS2_i10CUtlMemoryIS2_iEEEE
 15CAsyncDataCacheI9GuildID_t16CMsgGuildSummaryE
@@ -5192,6 +5195,7 @@
 18CMsgIDLinkResponseILj1ELj16ELj8861E31CMsgClientToGCCandyShopOpenBagsLj8862E39CMsgClientToGCCandyShopOpenBagsResponseE
 18CMsgIDLinkResponseILj1ELj16ELj8865E41CMsgClientToGCCandyShopDevShuffleExchangeLj8866E49CMsgClientToGCCandyShopDevShuffleExchangeResponseE
 18CMsgIDLinkResponseILj1ELj16ELj8871E49CMsgClientToGCCollectorsCacheAvailableDataRequestLj8872E50CMsgGCToClientCollectorsCacheAvailableDataResponseE
+18CMsgIDLinkResponseILj1ELj16ELj8879E25CMsgClientToGCRankRequestLj8880E26CMsgGCToClientRankResponseE
 18CMsgNotifyWatchdog
 18CMsgPackageLicense
 18CMsgProfileRequest
@@ -5751,6 +5755,7 @@
 2'.CMsgDOTARedeemItemResponse.EResultCode
 2'.CMsgDPPartnerMicroTxns.PartnerMicroTxn
 2'.CMsgGCPlayerInfoSubmitResponse.EResult"b
+2'.CMsgGCToClientRankResponse.EResultCode
 2'.CMsgGCToGCFlushSteamInventoryCache.Key
 2'.CMsgGCToGCGrantAccountRolledItems.Item
 2'.CMsgInGamePrediction.EResolutionType_t
@@ -7602,6 +7607,7 @@
 24CMsgDraftTriviaVoteCount
 24CMsgEventGoals_EventGoal
 24CMsgGCHAppCheersReceived
+24CMsgGCToClientRankUpdate
 24CMsgGCToGCRefreshSOCache
 24CMsgGCTopCustomGamesList
 24CMsgGuildActiveContracts
@@ -7982,6 +7988,7 @@
 25CMsgClearWorldDecalsEvent
 25CMsgClientToGCCoachFriend
 25CMsgClientToGCCreateGuild
+25CMsgClientToGCRankRequest
 25CMsgClientToGCUnlockCrate
 25CMsgDOTABetaParticipation
 25CMsgDOTAEmoticonAccessSDO
@@ -8396,6 +8403,7 @@
 26CMsgGCNotificationsRequest
 26CMsgGCServerVersionUpdated
 26CMsgGCToClientEmoticonData
+26CMsgGCToClientRankResponse
 26CMsgGCToGCSOCacheSubscribe
 26CMsgGCToGCUpdateWelcomeMsg
 26CMsgHeroGlobalDataResponse
@@ -11966,6 +11974,7 @@
 35CGameInfo_CDotaGameInfo_CPlayerInfo
 35CGameIntegrationDataRenderer_Map_v1
 35CHLTVSpectatorChannelJoinGameSystem
+35CInlineJob_CMsgGCToClientRankUpdate
 35CMsgAvailablePrivateCoachingSession
 35CMsgBotWorldState_EventRoshanKilled
 35CMsgCandyShopRewardData_EventAction
@@ -12132,6 +12141,7 @@
 35CMsgIDLinkGenericClientToGCResponseILj1ELj8861E31CMsgClientToGCCandyShopOpenBagsLj8862E39CMsgClientToGCCandyShopOpenBagsResponseE
 35CMsgIDLinkGenericClientToGCResponseILj1ELj8865E41CMsgClientToGCCandyShopDevShuffleExchangeLj8866E49CMsgClientToGCCandyShopDevShuffleExchangeResponseE
 35CMsgIDLinkGenericClientToGCResponseILj1ELj8871E49CMsgClientToGCCollectorsCacheAvailableDataRequestLj8872E50CMsgGCToClientCollectorsCacheAvailableDataResponseE
+35CMsgIDLinkGenericClientToGCResponseILj1ELj8879E25CMsgClientToGCRankRequestLj8880E26CMsgGCToClientRankResponseE
 35CMsgInGamePrediction_QueryKeyValues
 35CMsgJoinableCustomGameModesResponse
 35CMsgLobbyPlayerPlusSubscriptionData
@@ -13296,7 +13306,6 @@
 38C_DOTA_Unit_AghsFort_Creature_Batrider
 39CCommunity_GetClanAnnouncements_Request
 39CCustomTextureTeamBannerLogoOnPropProxy
-39CDOTA
 39CDOTAClientMsg_AddOverwatchReportMarker
 39CDOTAClientMsg_ContextualTips_Subscribe
 39CDOTAClientMsg_FillEmptySlotsWithBots_t
@@ -13371,6 +13380,7 @@
 39CDOTA_Modifier_DrowRanger_WaveOfSilence
 39CDOTA_Modifier_EarthSpirit_BoulderSmash
 39CDOTA_Modifier_EarthSpirit_Polarization
+39CDOTA_Modifier_EarthSpirit_StoneThinker
 39CDOTA_Modifier_Earthshaker_EnchantTotem
 39CDOTA_Modifier_Earthshaker_Fissure_Stun
 39CDOTA_Modifier_Enchantress_Enchant_Slow
@@ -13653,7 +13663,6 @@
 3d: e=%.3f rms=%.6f %u
 3dSkyboxFrustum
 3dSkyboxWorldOffset
-3f;5Vhj
 3fA9\$Vr+I
 3fA;\$vw+H
 3i fps (%3i, %3i) smth:%4.1f ms frm:%4.1f ms on %s frames: %u
@@ -18538,6 +18547,7 @@
 9CdAXAYr
 9ECurrency
 9ELanguage
+9ERankType
 9GAME_PARTICLE_MANAGER_EVENT_SET_SCENE_OBJECT_GENERIC_FLAG
 9GuildID_t
 9H@tDL
@@ -20271,7 +20281,6 @@ A\A]A^I
 A]A^u3H
 A^A_]fH
 A^A_uoH
-A_Modifier_EarthSpirit_StoneThinker
 AbandonGamePopup
 AbandonsDetails1
 AbandonsLabel
@@ -21211,7 +21220,6 @@ Attrib_AutographTool
 Attrib_CannotCraft
 Attrib_CannotCraftOrDelete
 Attrib_CannotDelete
-Attrib_CannotTrade
 Attrib_CannotTradeOrCraft
 Attrib_CannotTradeOrCraftOrDelete
 Attrib_CannotTradeOrDelete
@@ -21801,6 +21809,7 @@ Bloom: Blur Y Compute
 Bloom: Clear hBloomBuffer
 Bloom: Clear hBloomBuffer/hBloomBuffer2
 Bloom: Clear hBloomBuffer2
+Bloom: Downsample
 Bloom: Downsample Compute
 BloomTexture
 BlurBackground
@@ -29338,6 +29347,7 @@ CHandle<CIngameEvent_Base
 CHandle<C_DOTA_BaseNPC_Hero
 CHandle<C_EconWearable
 CHandle<C_PostProcessingVolume
+CHeroSelectEvent
 CHeroStatueLiked
 CHeroesPerPlayer
 CHin : voiceless postalveolar affricate
@@ -29427,6 +29437,7 @@ CInlineJob_CMsgGCToClientPlayerBeaconState
 CInlineJob_CMsgGCToClientPlaytestStatus
 CInlineJob_CMsgGCToClientPrivateCoachingSessionUpdated
 CInlineJob_CMsgGCToClientQuestProgressUpdated
+CInlineJob_CMsgGCToClientRankUpdate
 CInlineJob_CMsgGCToClientRequestLaneSelection
 CInlineJob_CMsgGCToClientRequestMMInfo
 CInlineJob_CMsgGCToClientSteamDatagramTicket
@@ -29815,6 +29826,7 @@ CMsgClientToGCPrivateChatPromote
 CMsgClientToGCPublishUserStat
 CMsgClientToGCPurchaseFilteredPlayerSlot
 CMsgClientToGCPurchaseLabyrinthBlessings
+CMsgClientToGCRankRequest
 CMsgClientToGCRecalibrateMMR
 CMsgClientToGCRecalibrateMMRResponse
 CMsgClientToGCRecordContestVote
@@ -30355,6 +30367,9 @@ CMsgGCToClientPollFileResponse
 CMsgGCToClientPrivateChatResponse
 CMsgGCToClientPrivateCoachingSessionUpdated
 CMsgGCToClientQuestProgressUpdated
+CMsgGCToClientRankResponse
+CMsgGCToClientRankResponse"2
+CMsgGCToClientRankUpdate
 CMsgGCToClientRecordContestVoteResponse
 CMsgGCToClientRemoveFilteredPlayerResponse
 CMsgGCToClientRequestDropped
@@ -38977,6 +38992,8 @@ DOTARankPipsName%d
 DOTARankTierName%d
 DOTARankTierNameLeaderboard
 DOTARankTierTooltip
+DOTARankTypeUpdated
+DOTARankUpdated
 DOTARankedModeRadioChecked
 DOTARankedPhonePopupAssociate
 DOTAReadyUpPlayerSlot
@@ -42690,7 +42707,6 @@ DOTA_InGamePrediction_ErrorTitle
 DOTA_InGamePrediction_SubmittedVoteTooLate
 DOTA_InGamePrediction_SubmittedVoteTooLateTitle
 DOTA_InGamePrediction_UnknownErrorInSubmission
-DOTA_InspectHeroInWorld_Error_Dead
 DOTA_InspectHeroInWorld_Error_EnemySelected
 DOTA_InspectHeroInWorld_Error_FreeCamOnly
 DOTA_International2022_BonusWeekTooltip
@@ -45298,7 +45314,6 @@ DataDesc_ConvertTextDataToNewKeyValues
 DataDesc_UnserializeKey
 DataOffset
 DataTeamPlayer_t
-DataUpdate
 Datamap at addr %p
 Date Cell
 DateContainer
@@ -50497,7 +50512,6 @@ HasMultipleStyles
 HasMultipleTips
 HasMutation%d
 HasMyFavoriteCount
-HasMysteryItemRecyclingReward
 HasNewItems
 HasNewTeams
 HasNextResults
@@ -55497,6 +55511,7 @@ N5GCSDK12CProtoBufMsgI24CMsgCreateSpectatorLobbyEE
 N5GCSDK12CProtoBufMsgI24CMsgDOTAClaimEventActionEE
 N5GCSDK12CProtoBufMsgI24CMsgDOTAGroupMergeInviteEE
 N5GCSDK12CProtoBufMsgI24CMsgDOTALeaveChatChannelEE
+N5GCSDK12CProtoBufMsgI24CMsgGCToClientRankUpdateEE
 N5GCSDK12CProtoBufMsgI24CMsgQuickJoinCustomLobbyEE
 N5GCSDK12CProtoBufMsgI24CMsgResetStrangeGemCountEE
 N5GCSDK12CProtoBufMsgI25CMsgClientToGCUnlockCrateEE
@@ -55807,6 +55822,7 @@ N5GCSDK16CGCClientLinkJobI27CMsgIDLinkGCToGenericClientILj1ELj8750E37CMsgDOTAPos
 N5GCSDK16CGCClientLinkJobI27CMsgIDLinkGCToGenericClientILj1ELj8772E37CMsgGCToClientOverwatchCasesAvailableEEE
 N5GCSDK16CGCClientLinkJobI27CMsgIDLinkGCToGenericClientILj1ELj8795E43CMsgGCToClientPrivateCoachingSessionUpdatedEEE
 N5GCSDK16CGCClientLinkJobI27CMsgIDLinkGCToGenericClientILj1ELj8842E38CMsgGCToClientCandyShopUserDataUpdatedEEE
+N5GCSDK16CGCClientLinkJobI27CMsgIDLinkGCToGenericClientILj1ELj8881E24CMsgGCToClientRankUpdateEEE
 N5GCSDK16CGCClientLinkJobI35CMsgIDLinkGCToGenericClientResponseILj1ELj7623E34CMsgGCToClientRequestLaneSelectionLj7624E42CMsgGCToClientRequestLaneSelectionResponseEEE
 N5GCSDK16CProtoBufMsgBase20IProtoBufSendHandlerE
 N5GCSDK16CProtoBufMsgBaseE
@@ -55818,6 +55834,7 @@ N5GCSDK17CGCClientProtoJobI18CMsgSOSingleObjectEE
 N5GCSDK17CGCClientProtoJobI21CMsgSOCacheSubscribedEE
 N5GCSDK17CGCClientProtoJobI21CMsgSOMultipleObjectsEE
 N5GCSDK17CGCClientProtoJobI23CMsgSOCacheUnsubscribedEE
+N5GCSDK17CGCClientProtoJobI24CMsgGCToClientRankUpdateEE
 N5GCSDK17CGCClientProtoJobI25CMsgGCNotificationsUpdateEE
 N5GCSDK17CGCClientProtoJobI25CMsgGCToClientVACReminderEE
 N5GCSDK17CGCClientProtoJobI27CMsgGCToClientRequestMMInfoEE
@@ -55942,6 +55959,9 @@ N5GCSDK17GCClientJobLambdaIZN15CAsyncDataCacheI9ECurrency18market_full_data_tE16
 N5GCSDK17GCClientJobLambdaIZN15CAsyncDataCacheI9ECurrency18market_full_data_tE18RequestCurrentDataERKS2_EUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN15CAsyncDataCacheI9ECurrency18market_full_data_tE20ScheduleBatchRequestEfEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN15CAsyncDataCacheI9ELanguage39CMsgAvailablePrivateCoachingSessionListE18RequestCurrentDataERKS2_EUlvE_EE
+N5GCSDK17GCClientJobLambdaIZN15CAsyncDataCacheI9ERankType26CMsgGCToClientRankResponseE16BatchRequestDataEPKS2_iEUlvE_EE
+N5GCSDK17GCClientJobLambdaIZN15CAsyncDataCacheI9ERankType26CMsgGCToClientRankResponseE18RequestCurrentDataERKS2_EUlvE_EE
+N5GCSDK17GCClientJobLambdaIZN15CAsyncDataCacheI9ERankType26CMsgGCToClientRankResponseE20ScheduleBatchRequestEfEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN15CAsyncDataCacheI9GuildID_t10CGuildDataE16BatchRequestDataEPKS2_iEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN15CAsyncDataCacheI9GuildID_t10CGuildDataE18RequestCurrentDataERKS2_EUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN15CAsyncDataCacheI9GuildID_t10CGuildDataE20ScheduleBatchRequestEfEUlvE_EE
@@ -56815,6 +56835,7 @@ N8panorama8CUIEventILb0EJ8itemid_tEEE
 N8panorama8CUIEventILb0EJ8itemid_tjEEE
 N8panorama8CUIEventILb0EJ9ECurrencyEEE
 N8panorama8CUIEventILb0EJ9ELanguageEEE
+N8panorama8CUIEventILb0EJ9ERankTypeEEE
 N8panorama8CUIEventILb0EJ9GuildID_t6EEventEEE
 N8panorama8CUIEventILb0EJ9GuildID_tEEE
 N8panorama8CUIEventILb0EJ9GuildID_tjEEE
@@ -57812,6 +57833,7 @@ OPENPAREND
 OPTIONS
 ORGANIZATIONAL
 ORIGIN
+OTA_InspectHeroInWorld_Error_Dead
 OTHER_ERROR
 OUTBUFF_FULL
 OUT_OF_RANGE
@@ -64181,6 +64203,7 @@ Supplemental subscribed tournament
 Support Grant
 SupportButton
 SupportCardsContainer
+SupportEventRequestResult_InvalidActionScore
 SupportGold
 SupportHard
 SupportHardHandicap
@@ -66096,7 +66119,6 @@ UpdateParticleSetFrozen
 UpdateParticleShouldDraw
 UpdateParticleTransform
 UpdateParticle_OBSOLETE
-UpdatePending
 UpdatePreGame
 UpdatePurchasedItems
 UpdateQueryCache
@@ -66295,7 +66317,6 @@ V8z3u1
 V@9Q0tHH
 V@IcW@I
 VAC_NOT_VERIFIED
-VAUATSH
 VApplication001
 VAsyncFileSystem2_001
 VAvi001
@@ -66842,7 +66863,6 @@ WATER_WAKE_NONE
 WATER_WAKE_RUNNING
 WATER_WAKE_WALKING
 WATER_WAKE_WATER_OVERHEAD
-WAVAUATSH
 WEAPON_IS_ACTIVE
 WEAPON_IS_CARRIED_BY_PLAYER
 WEAPON_NOT_CARRIED
@@ -69041,6 +69061,7 @@ ZTS6EEvent
 ZTS7EResult
 ZTS9ECurrency
 ZTS9ELanguage
+ZTS9ERankType
 ZTS9MatchType
 ZTSFPKciE
 ZTSN30CDOTA_DB_Popup_JoinChatChannel5ESortE
@@ -70560,7 +70581,6 @@ announcement_body
 announcement_gid
 announcement_headline
 announcement_url
-announcements
 announcer_ad_countdown_01
 announcer_ad_countdown_02
 announcer_ad_countdown_03
@@ -70584,7 +70604,6 @@ announcer_announcer_type_all_random
 announcer_announcer_type_single_draft
 announcer_preview
 announcer_voice
-anorama-xml
 another member of oneof
 answer_id
 answer_index
@@ -73481,8 +73500,6 @@ compendium_players
 compendium_points
 compendium_set_selection
 compendiumlevel
-competitive_calibration_games_remaining
-competitive_rank
 competitive_rank_name
 compiles daisy wheel input dictionaries to more performant form
 complete
@@ -77901,6 +77918,7 @@ equip_regions_list
 equip_sound
 equipped_econ_items
 equipped_state
+er_aghsfort_mars_arena_of_blood_animation_aura
 eresult
 eresult_deprecated
 errno_location
@@ -78256,9 +78274,9 @@ fD;8ty
 fD;f~w?L
 fDistance
 fDurationMultiplier
+fE9't<I
 fE9'tXI
 fE99t:A
-fE;'t<I
 fE;'t>A
 fE;l$$t
 fE;t$@s
@@ -78446,7 +78464,7 @@ fiend_grip_damage
 fiend_grip_mana_drain
 fiend_grip_spread_radius
 fiend_grip_tick_interval
-fier_silencer_glaives_of_wisdom_debuff
+fier_marci_unleash_flurry_pulse_debuff
 fiery_soul_attack_speed_bonus
 fiery_soul_max_stacks
 fiery_soul_move_speed_bonus
@@ -80216,8 +80234,8 @@ game/client/dota/dota_minimap_helpers.cpp
 game/client/dota/external_webapi_integration.cpp
 game/client/dota/keybindings.cpp
 game/client/dota/keybindings.h
-game/client/dota/panorama/dota_db_play.cpp:4960
-game/client/dota/panorama/dota_db_play.cpp:5007
+game/client/dota/panorama/dota_db_play.cpp:4961
+game/client/dota/panorama/dota_db_play.cpp:5008
 game/client/dota/panorama/dota_guide_controller.cpp
 game/client/dota/panorama/dota_help_tips_controller.cpp
 game/client/dota/panorama/dota_purchase_controller.cpp
@@ -81757,11 +81775,10 @@ huskar_inner_fire
 huskar_inner_vitality
 huskar_life_break
 hype_loc
-h|D;-Er
-h|D;-TZY
-h|D;-qg3
-h|D;-vb4
-h|D;-wU3
+h|D;-4CJ
+h|D;-NB
+h|D;-PE
+h|D;-i1
 i < length
 i matching ent%s
 i(ERemoteStoragePublishedFileVisibility) Visibility of the published file (private, friends, public, etc
@@ -84071,6 +84088,7 @@ k_EMsgClientToGCPurchaseLabyrinthBlessings
 k_EMsgClientToGCPurchaseLabyrinthBlessingsResponse
 k_EMsgClientToGCQuickStatsRequest
 k_EMsgClientToGCQuickStatsResponse
+k_EMsgClientToGCRankRequest
 k_EMsgClientToGCRecalibrateMMR
 k_EMsgClientToGCRecalibrateMMRResponse
 k_EMsgClientToGCRecordContestVote
@@ -84531,6 +84549,8 @@ k_EMsgGCToClientProfileCardStatsUpdated
 k_EMsgGCToClientProfileCardUpdated
 k_EMsgGCToClientPurchaseFilteredPlayerSlotResponse
 k_EMsgGCToClientQuestProgressUpdated
+k_EMsgGCToClientRankResponse
+k_EMsgGCToClientRankUpdate
 k_EMsgGCToClientRecordContestVoteResponse
 k_EMsgGCToClientRemoveFilteredPlayerResponse
 k_EMsgGCToClientRequestActiveBeaconPartiesResponse
@@ -84897,9 +84917,13 @@ k_EPurchaseHeroRelicResult_NotEnoughPoints
 k_EPurchaseHeroRelicResult_PurchaseNotAllowed
 k_EPurchaseHeroRelicResult_Success
 k_ERankType_Casual
+k_ERankType_CasualGlicko
 k_ERankType_CasualLegacy
+k_ERankType_CasualRemapped
+k_ERankType_CasualRemappedGlicko
 k_ERankType_Invalid
 k_ERankType_Ranked
+k_ERankType_RankedGlicko
 k_ERankType_RankedLegacy
 k_EReadyCheckRequestResult_AlreadyInProgress
 k_EReadyCheckRequestResult_NotInParty
@@ -85068,6 +85092,7 @@ k_Failed
 k_Failed_CodeAlreadyUsed
 k_Failed_CodeNotFound
 k_Failed_OtherError
+k_InvalidRankType
 k_MsgAlreadyRunning
 k_MsgInvalidAppID
 k_MsgInvalidPartnerInfo
@@ -86208,8 +86233,6 @@ lycan_summon_wolves
 lycan_summon_wolves_critical_strike
 lycan_summon_wolves_invisibility
 lycan_wolf_bite
-m8L;-JE
-m: Downsample
 m_16ByteOrLessStack out of space, falling through after %d entries, consider upping NETWORKFIELDSCRATCHDATA_16BYTE_COUNT
 m_AbilityDraftAbilities
 m_ActiveRingOwners
@@ -90906,7 +90929,6 @@ m_sImage
 m_sInventorySizeUpgradeImage
 m_sLandmark
 m_sLandmarkName
-m_sLocCategory
 m_sLocDescription
 m_sLocName
 m_sLocUnitsPluralizable
@@ -91496,7 +91518,6 @@ m_vecTiers
 m_vecTranslocatingAllies
 m_vecTreeCircleCenter
 m_vecTreeFires
-m_vecValues
 m_vecVelocity
 m_vecViewOffset
 m_vecWatchPositions
@@ -92464,6 +92485,7 @@ modelscale
 modemanager->Init
 modifer_hoodwink_acorn_shot_tree_thinker
 modifer_pine_cone_acorn_shot_tree_thinker
+modifie
 modifiedarmor
 modifier not found
 modifier.parent
@@ -92766,7 +92788,6 @@ modifier_aghsfort_maledict
 modifier_aghsfort_maledict_dot
 modifier_aghsfort_mars_arena_of_blood
 modifier_aghsfort_mars_arena_of_blood_animation
-modifier_aghsfort_mars_arena_of_blood_animation_aura
 modifier_aghsfort_mars_arena_of_blood_buff
 modifier_aghsfort_mars_arena_of_blood_buff_aura
 modifier_aghsfort_mars_arena_of_blood_fear
@@ -94591,7 +94612,6 @@ modifier_marci_lunge_tracking_motion
 modifier_marci_unleash
 modifier_marci_unleash_flurry
 modifier_marci_unleash_flurry_cooldown
-modifier_marci_unleash_flurry_pulse_debuff
 modifier_marci_unleash_pull
 modifier_marci_unleash_pulse_silence
 modifier_mars_arena_of_blood
@@ -95130,6 +95150,7 @@ modifier_silencer_glaives_of_wisdom
 modifier_silencer_glaives_of_wisdom_attack_counter
 modifier_silencer_glaives_of_wisdom_buff
 modifier_silencer_glaives_of_wisdom_buff_counter
+modifier_silencer_glaives_of_wisdom_debuff
 modifier_silencer_glaives_of_wisdom_debuff_counter
 modifier_silencer_global_silence
 modifier_silencer_last_word
@@ -95862,7 +95883,6 @@ muzzleflash_shotgun_player
 muzzleflash_smg1_player
 mvp_account_id
 mvp_data
-mxH;-p
 my_behavior_score
 my_coach_rating
 my_custom_images/%d.png
@@ -96296,6 +96316,7 @@ notifications_showonline
 notify_client
 notify_server
 notreadybehavior
+nouncements
 nova_damage
 npc_aghsfort_unit_tombstone
 npc_aghsfort_unit_undying_tombstone
@@ -97118,6 +97139,7 @@ override_badge_level
 override_desc
 override_hero
 override_operator_name
+override_shadow_farz
 override_trophy_badge_points
 override_vpk
 overridecurrentstars
@@ -97300,6 +97322,7 @@ pangolier_rollup_stop
 pangolier_shield_crash
 pangolier_swashbuckle
 pangolin
+panorama-xml
 panorama/browser/webkit.css
 panorama/fonts
 panorama/images/%s_%s.vtex_c
@@ -99810,10 +99833,10 @@ pwatchvar
 pwrd_cyber_cafe_id
 pwrd_cyber_cafe_name
 py_generic_services
-p|D;55m
-p|D;5m
-p|D;5y5a
-p|D;5}T
+p|D;5=I
+p|D;5Xr
+p|D;5hR
+p|D;5sc
 p|E;t$0
 q(HcI H
 q<@8p<t
@@ -100163,6 +100186,10 @@ rank-tier
 rank_change
 rank_chunk
 rank_chunked_stats
+rank_data1
+rank_data2
+rank_data3
+rank_info
 rank_mmr_boost_type
 rank_pips_name
 rank_stats
@@ -100170,7 +100197,9 @@ rank_tier
 rank_tier_name
 rank_tier_score
 rank_tier_tooltip_title
+rank_type
 rank_uncertainty_change
+rank_value
 rank_wager_token
 rank_wagering_item
 rank_wagering_periodic_resource
@@ -100868,7 +100897,6 @@ river_speed
 riverid
 rnd_down
 rndwave
-roSelectEvent
 roaming_radius
 roaming_seconds_per_rotation
 roared_bonus_armor
@@ -101469,6 +101497,7 @@ sIf true, then files must have all the tags specified.  If false, then must have
 sImage
 sLabel
 sLilShredderBounceInfo
+sLocCategory
 sLocalizedEndsIn
 sLock acquired: %s:%d
 sLower
@@ -104885,6 +104914,7 @@ steammessages_unified_base.steamworkssdk.proto"t
 steamml_is_timestamp
 steamml_max_entries
 stemp%d.tga
+steryItemRecyclingReward
 stick_pri_cold_time
 stick_pri_move_scale_x
 stick_pri_move_scale_y
@@ -105474,7 +105504,6 @@ t$pvufA
 t%9C8t
 t%;2t%H
 t%HcC0A
-t&D;5%f
 t&IcT$hA;T$x
 t'IcD$x
 t(Lc#D;c
@@ -105791,6 +105820,7 @@ tdA;G\t^L
 tdLcc(D;c8D
 td_example
 te.proto
+tePending
 team ID
 team is
 team%d_id
@@ -106679,6 +106709,7 @@ trial_account
 trialsofmadness
 triangle_height
 triangle_width
+trib_CannotTrade
 trigger the Glyph of Fortification for your team
 trigger_distance
 trigger_radius
@@ -106859,6 +106890,7 @@ uQHcp`H
 uS[A\A]A
 uU[A\A]A
 uV[A\A]A
+uWMc,$E;l
 uW[A\A]A
 uY[A\A]A
 u`HcS@H
@@ -107410,6 +107442,7 @@ vecAngles
 vecFallbackPositionVal
 vecSave
 vecSpawnPos
+vecValues
 vec[0] >= 0
 vec[1] >= 0
 vector (%g %g %g
@@ -107448,7 +107481,6 @@ venomancer_plague_ward
 venomancer_poison_nova
 venomancer_poison_sting
 venomancer_venomous_gale
-verride_shadow_farz
 versatility
 versatility_score
 version
@@ -108227,8 +108259,8 @@ xp_value
 xpm_diff
 xstat64
 xwMcD$xD9
-x|D;=vQ
-x|D;=xW3
+x|D;=Ovh
+x|D;=xBJ
 y(HcI H
 y0H9z0t
 y8H9z8t
