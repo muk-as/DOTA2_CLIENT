@@ -8,40 +8,12 @@
 		<include src="s2r://panorama/styles/friend_menu_home.vcss_c" />
 		<include src="s2r://panorama/styles/frontpage_shared.vcss_c" />
 	</styles>
-	<snippets>
-		<snippet name="MuertaEventTitleEnglish">
-			<Panel>
-				<Label id="MuertaPreText1" text="#DOTA_Muerta_PreText1" />
-				<MoviePanel id="LogoMovie" src="file://{resources}/videos/events/muerta/logo_combined_en.webm" repeat="true" autoplay="onload" hittest="false" onload="$( &apos;#LogoMovie&apos; ).AddClass(&apos;Initialize&apos;); $( &apos;#MuertaPreText1&apos; ).AddClass(&apos;Initialize&apos;); $( &apos;#MuertaPreText2&apos; ).AddClass(&apos;Initialize&apos;)" />
-				<Label id="MuertaPreText2" text="#DOTA_Muerta_PreText2" />
-			</Panel>
-		</snippet>
-		<snippet name="MuertaEventTitleChinese">
-			<Panel>
-				<Label id="MuertaPreText1" text="#DOTA_Muerta_PreText1" />
-				<MoviePanel id="LogoMovie" src="file://{resources}/videos/events/muerta/logo_combined_cn.webm" repeat="true" autoplay="onload" hittest="false" onload="$( &apos;#LogoMovie&apos; ).AddClass(&apos;Initialize&apos;); $( &apos;#MuertaPreText1&apos; ).AddClass(&apos;Initialize&apos;); $( &apos;#MuertaPreText2&apos; ).AddClass(&apos;Initialize&apos;)" />
-				<Label id="MuertaPreText2" text="#DOTA_Muerta_PreText2" />
-			</Panel>
-		</snippet>
-	</snippets>
-	<script><![CDATA[
-		function LoadEventTitle() {
-			if ( $( "#MuertaEventTitle" ).BAscendantHasClass( "Language_schinese" ) || $( "#MuertaEventTitle" ).BAscendantHasClass("Language_tchinese") ) {
-				$( "#MuertaEventTitle" ).BLoadLayoutSnippet( "MuertaEventTitleChinese" );
-			} else {
-				$( "#MuertaEventTitle" ).BLoadLayoutSnippet( "MuertaEventTitleEnglish" );
-			}
-		}
-	]]></script>
-	<DOTAHomePage class="DashboardPage" hittest="false" onnavigatedto="DOTASetFriendsMenuVisible( true )" onnavigatedaway="DOTASetFriendsMenuVisible( false )" onload="LoadEventTitle()" dashboardclass="OnHomePage">
+	<DOTAHomePage class="DashboardPage" hittest="false" onnavigatedto="DOTASetFriendsMenuVisible( true )" onnavigatedaway="DOTASetFriendsMenuVisible( false )" dashboardclass="OnHomePage">
 		<Panel id="FullscreenVideoContainer" hittest="false" />
 		<Panel id="StatLine" class="LeftRightFlow">
 			<DOTAAntiAddictionBadge class="StatLineContainer" />
 		</Panel>
 		<Panel id="TodayPages" hittest="false">
-			<Panel id="TitleColumn" hittest="false">
-				<Panel id="MuertaEventTitle" hittest="false" />
-			</Panel>
 			<Panel id="RightColumn" hittest="false">
 				<DOTAFrontpageContents id="FrontpageContents" />
 				<Panel class="StatusAndFriendFeed TopBottomFlow">
