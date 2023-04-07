@@ -134,28 +134,11 @@
 				<Panel id="TreasureImageContainer">
 					<EconItemImage id="TreasureImage" />
 				</Panel>
-				<Panel id="TreasureMarketPurchaseRow" class="TreasureDetailsRow TreasurePurchaseRow">
-					<Panel class="PurchaseButtonContainer">
-						<Button class="PurchaseButtonBase" onactivate="DOTATierTreasurePurchaseSelectedTreasureOnMarket()">
-							<Panel class="PurchaseButton">
-								<Label class="PurchaseButtonLabel" text="#DOTA_Treasure_BuyChestQty" html="true" />
-							</Panel>
-							<Panel class="PriceLabelContainer">
-								<Label class="CratePriceLabel" text="{m:treasure_price}" />
-								<Label class="CratePriceLabelDisclaimer" text="#DOTA_Treasure_MarketPrice" onmouseover="UIShowTextTooltip( #DOTA_tooltip_treasure_marketprice_disclaimer )" onmouseout="UIHideTextTooltip()" />
-							</Panel>
-						</Button>
-						<Panel class="PurchaseArrows" onactivate="">
-							<NumberEntry class="CustomStyling DiretidePurchase" min="1" max="10" value="1" />
-						</Panel>
-					</Panel>
-					<Label class="OwnedCountLabel" text="#DOTA_Treasure_ChestsOwned" />
-				</Panel>
 				<Panel id="TreasureOwnedRow" class="TreasureDetailsRow TreasurePurchaseRow LeftRightFlow">
-					<Panel class="ChestIcon" onmouseover="UIShowCustomLayoutTooltip( MuertaEventTooltip, file://{resources}/layout/tooltips/tooltip_muerta_event.xml )" onmouseout="UIHideCustomLayoutTooltip(MuertaEventTooltip)" />
+					<Panel class="ChestIcon" />
 					<Panel class="TopBottomFlow VerticalCenter">
 						<Label id="OwnedTreasuresCount" class="OwnedCount" text="#DOTA_Treasure_CountChestsOwned" />
-						<Button id="UnlockChestButton" class="TreasureButtonPrimary" onactivate="DOTATierTreasureStartOpeningSelectedTreasure()" onmouseover="UIShowCustomLayoutTooltip( MuertaEventTooltip, file://{resources}/layout/tooltips/tooltip_muerta_event.xml )" onmouseout="UIHideCustomLayoutTooltip(MuertaEventTooltip)">
+						<Button id="UnlockChestButton" class="TreasureButtonPrimary" onactivate="DOTATierTreasureStartOpeningSelectedTreasure()">
 							<Label text="#DOTA_Treasure_UnlockChest" />
 						</Button>
 						<Button id="PreviewContentsButton" class="TreasureTextLink" onactivate="DOTATierTreasureSelectPeekTreasure()">
@@ -164,6 +147,14 @@
 						<Label class="UnlockChestExplain None" text="#DOTA_Treasure_UnlockChestExplain_None" html="true" />
 						<Label class="UnlockChestExplain HasKey" text="#DOTA_Treasure_UnlockChestExplain_HasKey" html="true" />
 						<Label class="UnlockChestExplain HasChest" text="#DOTA_Treasure_UnlockChestExplain_HasChest" html="true" />
+						<Panel id="TreasureMarketPurchaseRow" class="TreasureDetailsRow TreasurePurchaseRow">
+							<Panel class="PriceLabelContainer" onmouseover="UIShowTextTooltip( #DOTA_tooltip_treasure_marketprice_disclaimer )" onmouseout="UIHideTextTooltip()">
+								<Label class="CratePriceLabelDisclaimer" text="#DOTA_Sticker_BuyOnMarket" />
+							</Panel>
+							<Button class="TreasureButtonSecondary Small" onactivate="DOTATierTreasurePurchaseSelectedTreasureOnMarket()">
+								<Label class="CratePriceLabel" text="{m:treasure_price}" />
+							</Button>
+						</Panel>
 					</Panel>
 				</Panel>
 				<Panel class="PurchaseRowDivider">
