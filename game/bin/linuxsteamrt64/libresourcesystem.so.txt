@@ -80,6 +80,7 @@ AVAUATSD
 AVAUATSH
 AWAVATI
 AWAVAUA
+AWAVAUATA
 AWAVAUATE1
 AWAVAUATI
 AWAVAUATL
@@ -149,6 +150,7 @@ CUtlBlockMemory overflow
 CUtlHashtable
 CUtlLinkedList overflow! (exhausted index range
 CUtlLinkedList overflow! (exhausted memory allocator
+CUtlRBTree overflow with %u elements
 CUtlReferenceTracker::Release() release counts for group outnumber addref counts for the same group
 CUtlString
 CUtlStringToken
@@ -201,7 +203,6 @@ EngineServiceMgr001
 EnsureCapacity
 Error initializing resource manager for resource type "%lld
 Error loading resource "%s" (Invalid header version: %d != %d
-Error loading resource file "%s" (Error: %s
 Error loading resource manifest "%s" (No DATA block
 FAIL ] - Manifest contains an illegal resource name "%s
 FATAL ERROR: %s resource '%s' (%016llX) is the wrong resource type! (This is likely caused by a hash collision between the strings '%s' and '%s
@@ -287,10 +288,9 @@ FIELD_VMATRIX
 FIELD_VMATRIX_WORLDSPACE
 FIELD_VOID
 FIELD_WORLD_GROUP_ID
+Failed loading resource "%s" (%s
 Failed to allocate an instance of a class
 Failed to load resource "%s" and -exit_on_resource_load_failure was set and it's not in badresources_whitelist.txt
-Failed to map from %s to content-path
-Failed to map from %s to game-path
 Failed to save unsupported class
 FileSystem
 Final operation count %llu
@@ -313,7 +313,6 @@ FuseFunctionIndex_t
 FuseVariableAccess_t
 FuseVariableIndex_t
 FuseVariableType_t
-GAMEROOT
 GCC: (SteamRT 5.4.0-7.really.6+steamrt1.2+srt2) 5.4.1 20160803
 GLIBC_2.14
 GLIBC_2.2.5
@@ -345,7 +344,7 @@ Idle (ResourceSystemSleep
 Individual reference records '%s
 InfoForResourceTypeCAnimData
 InfoForResourceTypeCAnimationGroup
-InfoForResourceTypeCCSGOItem
+InfoForResourceTypeCCSGOEconItem
 InfoForResourceTypeCChoreoSceneFileData
 InfoForResourceTypeCCompositeMaterialKit
 InfoForResourceTypeCDACGameDefsData
@@ -378,6 +377,7 @@ InfoForResourceTypeIAnimGraphModelBinding
 InfoForResourceTypeIMaterial2
 InfoForResourceTypeIParticleSnapshot
 InfoForResourceTypeIParticleSystemDefinition
+InfoForResourceTypeIPulseGraphDef
 InfoForResourceTypeIVectorGraphic
 InfoForResourceTypeManifestTestResource_t
 InfoForResourceTypeProceduralTestResource_t
@@ -391,7 +391,6 @@ InstallResourceTypeManager
 InstallSchemaBindings
 InstallTypeManager
 Intentionally vague touch behavior for %p
-Invalid Path
 Invalid use of KV3 specific type %s with basic type %s, must be basic type %s
 IsResourceManifestGroupKnown: Manifest group name is empty or null
 JPH9NP
@@ -458,7 +457,6 @@ PanoramaTextServices001
 PanoramaUIClient001
 PanoramaUIEngine001
 ParticleSystemMgr003
-Path Overflow, must be less than 4096 characters
 PhysicsBuilderMgr001
 Plat_DebugPrint
 Plat_ExitProcess
@@ -538,6 +536,7 @@ Schematized reference, %d operations: %s
 Schematized reference, Pairing ID: %d, operation: %lld
 SerializedEntitiesVersion001
 SeriousWarning
+ServerResourceCompilerInfo_001
 Sleeping
 SoundOpSystem001
 SoundOpSystemEdit001
@@ -567,7 +566,6 @@ TD_OFFSET_NORMAL
 TD_OFFSET_PACKED
 TestScriptMgr001
 TextLayout_001
-The filename may only contain lower case alphanumeric characters, dashes, and underscores
 This convar is being accessed prior to ConVar_Register being called
 ThreadGetCurrentId
 ThreadGetCurrentProcessId
@@ -585,7 +583,6 @@ Tried to load resource reference '%s' from a value without a resource reference 
 Tried to release UGC that hasn't been referenced: %lld
 UUUUUUUUH
 Unknown KV3 specific type %u
-Unknown Path Class
 Unrecognized resource leak tracking parameter: "%s", available configuration aliases
 UnregisterNamedManifest called, but we are not shutting down
 Unsupported KV3 basic type '%s' (%d
@@ -595,6 +592,7 @@ Usage: resource_leaks <resource_name
 Usage: resource_repeated_reload <count> <resource_name
 UtlMemory_Alloc
 UtlMemory_CalcNewAllocationCount
+UtlMemory_FailedAllocation
 VApplication001
 VAsyncFileSystem2_001
 VAvi001
@@ -657,10 +655,6 @@ V_strncmp
 V_strncpy
 V_strnicmp_fast
 V_vsnprintf
-Valid Content Absolute Path
-Valid External Path
-Valid Game Absolute Path
-Valid Relative Path
 VariableInfo_t
 VisBuilder_001
 WARNING: %s resource '%s' (%016llX) requested but is not in the system. (Missing from from a manifest
@@ -674,6 +668,7 @@ WARNING: resource '%s' is an unrecognized resource type
 WRITABLE
 WorldRendererMgr001
 X[A\A]A^A
+XtKw;UH
 You must construct it with ORDERED_CONSTRUCT macro in the dependency resolution function
 Z14V_stristr_fastPKcS0
 Z17LoggingSystem_Logi17LoggingSeverity_t5ColorPKcz
@@ -710,7 +705,7 @@ ZN10CVProfNode9ExitScopeEv
 ZN12CSplitString9ConstructEPKcPS1_ib
 ZN12CThreadEvent3SetEv
 ZN12CThreadEventC1Eb
-ZN13CBufferString10ExtendPathEPKcc
+ZN13CBufferString10ExtendPathEPKccb
 ZN13CBufferString10FixSlashesEc
 ZN13CBufferString10RelinquishENS_19EAllocationOption_tE
 ZN13CBufferString11ShortenPathEb
@@ -808,7 +803,6 @@ ZTVN10__cxxabiv121__vmi_class_type_infoE
 ZdlPvm
 ZnamRKSt9nothrow_t
 ZnwmRKSt9nothrow_t
-addons
 anonymous
 array: %u elements
 badresources_whitelist.txt
@@ -818,9 +812,6 @@ bss_start
 color32
 command
 comment
-content
-convars_hidden_by_default
-csgoitem
 cxa_atexit
 cxa_finalize
 cxa_guard_acquire
@@ -832,14 +823,17 @@ d Manifest references (Still holding onto a HResourceManifest somewhere
 d Schema references (Most likely a resource referring to another resource
 d Strong handle references (Still holding onto a CStrongHandle somewhere
 data.rel.ro
+default
 disable_group_clearing
 dynamic
 dynstr
 dynsym
+econitem
 editor
 eh_frame
 eh_frame_hdr
 ehandle
+empty member name
 enable_profiling
 error_resource
 exit_on_resource_load_failure
@@ -849,14 +843,13 @@ fieldtype_t
 filesystem_stdio
 fini_array
 float32
+float32[%u
 float64
 float64[%u
 force_all_resource_loads_to_fail
 g_VProfCurrentProfile
 g_bUpdateStringTokenDatabase
 g_pMemAlloc
-gameinfo.gi
-gameinfo.txt
 generic
 generic_data_type
 gmon_start
@@ -866,9 +859,10 @@ gnu.version_r
 gnu_debuglink
 h[A\A]A^A
 init_array
+int16[%u
 int32[%u
-int64)m_nAllocationCount + (int64)num ) <= 0x7FFFFFFF
 invalid
+k4IcD$(A9
 keep_all_records
 keepall
 libc.so.6
@@ -907,12 +901,13 @@ m_vMinBounds
 m_variables
 m_variablesRead
 m_variablesWritten
+map_key
+map_value
 mathlib_extended
 matrix3x4
 memcpy_chk
 memmove
 multibase
-multiline_string
 nTries < 10000000
 no failure reason set
 no_spread_finalize
@@ -931,7 +926,6 @@ pthread_mutex_unlock
 pthread_mutexattr_init
 pthread_mutexattr_settype
 public/tier0/tslist.h
-public/tier0/utlmemory.h
 public/tier0/utlreferencetracker.h
 public/tier0/utlsortvector.h
 public/tier0/utltshash.h
@@ -979,18 +973,13 @@ s@HcS8H
 sResource System profile stats unavailable. Compile with RESOURCE_SYSTEM_GATHER_STATS as 1 to gather stats
 schemaclassinfo.cpp
 schemasystem
-sdktools/bin/vproj.exe
-sdktools/bin/vprojUI.exe
 set_profile_mode
 shstrtab
-single_quoted_string
 singletons.cpp
 soundevent
-src/public/tier0/platform.h
 stack_chk_fail
 start_resource_profiling
 streamingresourcedata.cpp
-strict_type_combinations
 string_token
 subclass
 s|  % 2d: %s [Offset: %d
@@ -1007,12 +996,12 @@ temp_unserialization_member
 transform
 u1Lc#D;c
 uchar32
+uint8[%u
 undefined
 unknown
 unknown KV3 basic type '%s' (%d
 unspecified
 v$@80t$H
-v+<Ht_<Xt[<7uyH
 vanmgrph
 vcdlist
 vcompmat

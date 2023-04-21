@@ -10,26 +10,26 @@
 	<script><![CDATA[
 		function updateMinimapPreview()
 		{
-			var minimapPanel = $( "#MinimapContainer" );
-			if ( !minimapPanel )
-				return;
-			
-			minimapPanel.SetHasClass( "SimpleColors", $("#dota_minimap_simple_colors").checked );
-			minimapPanel.SetHasClass( "UseHeroIcons", $("#dota_minimap_show_hero_icon").checked );
-			minimapPanel.SetHasClass( "SwapToggle", $("#dota_minimap_always_draw_hero_icons").checked );
-			minimapPanel.SetHasClass( "NoBackground", $("#dota_minimap_hide_background").checked );
-			minimapPanel.SetHasClass( "SimpleBackground", $("#dota_minimap_simple_background").checked );
-			minimapPanel.SetHasClass( "ExtraLargeMinimap", $("#dota_hud_extra_large_minimap").checked );
+		var minimapPanel = $( "#MinimapContainer" );
+		if ( !minimapPanel )
+		return;
 
-			var heroSizePanel = $( "#dota_minimap_hero_size" );
-			var iconValue = heroSizePanel.value;
-			var minScale = 0.22;
-			var maxScale = .92;
-			var iconScale = ( ( iconValue - heroSizePanel.min )  / ( heroSizePanel.max - heroSizePanel.min ) ) * ( maxScale - minScale ) + minScale;
+		minimapPanel.SetHasClass( "SimpleColors", $("#dota_minimap_simple_colors").checked );
+		minimapPanel.SetHasClass( "UseHeroIcons", $("#dota_minimap_show_hero_icon").checked );
+		minimapPanel.SetHasClass( "SwapToggle", $("#dota_minimap_always_draw_hero_icons").checked );
+		minimapPanel.SetHasClass( "NoBackground", $("#dota_minimap_hide_background").checked );
+		minimapPanel.SetHasClass( "SimpleBackground", $("#dota_minimap_simple_background").checked );
+		minimapPanel.SetHasClass( "ExtraLargeMinimap", $("#dota_hud_extra_large_minimap").checked );
 
-			var heroRegEx = /Hero\d+$/;
+		var heroSizePanel = $( "#dota_minimap_hero_size" );
+		var iconValue = heroSizePanel.value;
+		var minScale = 0.22;
+		var maxScale = .92;
+		var iconScale = ( ( iconValue - heroSizePanel.min )  / ( heroSizePanel.max - heroSizePanel.min ) ) * ( maxScale - minScale ) + minScale;
 
-			for ( var i = 0; i < minimapPanel.GetChildCount(); ++i )
+		var heroRegEx = /Hero\d+$/;
+
+		for ( var i = 0; i < minimapPanel.GetChildCount(); ++i )
 			{
 				var childPanel = minimapPanel.GetChild( i );
 				if ( !heroRegEx.test( childPanel.id ) )
@@ -330,6 +330,7 @@
 											<Panel id="ItemsNeutralSlotBindingContainer">
 												<Panel id="ItemsNeutralSlotBindingImage" hittest="false" />
 												<DOTASettingsKeyBinder class="ItemBindButton" bind="InventoryNeutral" />
+												<DOTASettingsKeyBinder class="ItemBindButton Quickcast" bind="InventoryNeutralQuickcast" />
 											</Panel>
 										</Panel>
 										<Panel class="ItemBindButtonContainer">
@@ -339,6 +340,7 @@
 											<Panel id="ItemsTPBindingContainer">
 												<Panel id="ItemsTPBindingImage" hittest="false" />
 												<DOTASettingsKeyBinder class="ItemBindButton" bind="InventoryTP" />
+												<DOTASettingsKeyBinder class="ItemBindButton Quickcast" bind="InventoryTPQuickcast" />
 											</Panel>
 										</Panel>
 									</Panel>
@@ -347,19 +349,11 @@
 											<DOTASettingsKeyBinder class="ItemBindButton" bind="Inventory1Quickcast" />
 											<DOTASettingsKeyBinder class="ItemBindButton" bind="Inventory2Quickcast" />
 											<DOTASettingsKeyBinder class="ItemBindButton" bind="Inventory3Quickcast" />
-											<Panel id="ItemsNeutralSlotBindingContainer">
-												<Panel id="ItemsNeutralSlotBindingImage" hittest="false" />
-												<DOTASettingsKeyBinder class="ItemBindButton Quickcast" bind="InventoryNeutralQuickcast" />
-											</Panel>
 										</Panel>
 										<Panel class="ItemBindButtonContainer">
 											<DOTASettingsKeyBinder class="ItemBindButton" bind="Inventory4Quickcast" />
 											<DOTASettingsKeyBinder class="ItemBindButton" bind="Inventory5Quickcast" />
 											<DOTASettingsKeyBinder class="ItemBindButton" bind="Inventory6Quickcast" />
-											<Panel id="ItemsTPBindingContainer">
-												<Panel id="ItemsTPBindingImage" hittest="false" />
-												<DOTASettingsKeyBinder class="ItemBindButton Quickcast" bind="InventoryTPQuickcast" />
-											</Panel>
 										</Panel>
 									</Panel>
 									<Panel id="ItemBindTypeButtons">

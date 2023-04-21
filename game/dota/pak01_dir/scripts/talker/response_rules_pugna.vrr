@@ -1,804 +1,2458 @@
-#include "talker/response_rules_shared.vrr"
-
-criterion "Ispugna" "classname" "npc_dota_hero_pugna" weight 5 required
-criterion "IsPugnaNetherBlast" "abilityname" "pugna_nether_blast" weight 5 required
-criterion "IsPugnaNetherWard" "abilityname" "pugna_nether_ward" weight 5 required
-criterion "IsPugnaLifeDrain" "abilityname" "pugna_life_drain" weight 5 required
-criterion "IsPugnaLoadoutSpawn" "special_spawn" "pugna_loadout_spawn" weight 5 required
-criterion "IsPugnaTI8_Taunt" "taunt_type" "ti8_pugna_taunt" weight 5 required
-
-Response pugna_Spawn
-{
-	scene "scenes/pugna/pugna_pugna_spawn_01.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_spawn_02.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_spawn_03.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_spawn_04.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_spawn_05.vcd" nodelay 
-}
-
-Rule pugna_Spawn_Rule
-{
-	criteria Spawn Ispugna 
-	response pugna_Spawn
-}
-
-Response pugna_CustomIsGameStart
-{
-	scene "scenes/pugna/pugna_pugna_battlebegins_01.vcd" nodelay 
-}
-
-Rule pugna_CustomIsGameStart_Rule
-{
-	criteria Custom Ispugna IsGameStart
-	response pugna_CustomIsGameStart
-}
-
-Response pugna_CustomIsPugnaLoadoutSpawn
-{
-	scene "scenes/pugna/pugna_pugna_spawn_01.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_spawn_02.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_spawn_03.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_spawn_04.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_spawn_05.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_battlebegins_01.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_move_09.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_level_02.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_level_03.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_respawn_06.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_move_17.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_attack_13.vcd" nodelay 
-}
-
-Rule pugna_CustomIsPugnaLoadoutSpawn_Rule
-{
-	criteria Custom Ispugna IsPugnaLoadoutSpawn
-	response pugna_CustomIsPugnaLoadoutSpawn
-}
-
-Response pugna_KillIsFirstBlood
-{
-	scene "scenes/pugna/pugna_pugna_firstblood_01.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_firstblood_02.vcd" nodelay 
-}
-
-Rule pugna_KillIsFirstBlood_Rule
-{
-	criteria Kill Ispugna IsFirstBlood
-	response pugna_KillIsFirstBlood
-}
-
-Response pugna_KillIsPugnaNetherBlastChance_5%
-{
-	scene "scenes/pugna/pugna_pugna_ability_nblast_03.vcd" nodelay 
-}
-
-Rule pugna_KillIsPugnaNetherBlastChance_5%_Rule
-{
-	criteria Kill Ispugna IsPugnaNetherBlast Chance_5%
-	response pugna_KillIsPugnaNetherBlastChance_5%
-}
-
-Response pugna_KillIsPugnaNetherWardChance_15%
-{
-	scene "scenes/pugna/pugna_pugna_ability_nward_05.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_ability_nward_07.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_ability_nward_08.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_ability_nward_10.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_ability_nward_11.vcd" nodelay 
-}
-
-Rule pugna_KillIsPugnaNetherWardChance_15%_Rule
-{
-	criteria Kill Ispugna IsPugnaNetherWard Chance_15%
-	response pugna_KillIsPugnaNetherWardChance_15%
-}
-
-Response pugna_KillIsPugnaLifeDrainChance_10%
-{
-	scene "scenes/pugna/pugna_pugna_ability_life_03.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_ability_life_05.vcd" nodelay 
-}
-
-Rule pugna_KillIsPugnaLifeDrainChance_10%_Rule
-{
-	criteria Kill Ispugna IsPugnaLifeDrain Chance_10%
-	response pugna_KillIsPugnaLifeDrainChance_10%
-}
-
-Response pugna_Kill
-{
-	scene "scenes/pugna/pugna_pugna_kill_01.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_kill_02.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_kill_03.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_kill_04.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_kill_05.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_kill_06.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_kill_07.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_kill_08.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_kill_09.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_kill_10.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_kill_11.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_kill_12.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_kill_13.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_kill_14.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_kill_15.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_kill_16.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_kill_17.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_kill_18.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_laugh_01.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_laugh_02.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_laugh_09.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_laugh_10.vcd" nodelay 
-}
-
-Rule pugna_Kill_Rule
-{
-	criteria Kill Ispugna 
-	response pugna_Kill
-}
-
-Response pugna_KillIsEnemyViperChance_35%
-{
-	scene "scenes/pugna/pugna_pugna_rival_01.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_rival_02.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_rival_03.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_rival_04.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_rival_05.vcd" nodelay 
-}
-
-Rule pugna_KillIsEnemyViperChance_35%_Rule
-{
-	criteria Kill Ispugna IsEnemyViper Chance_35%
-	response pugna_KillIsEnemyViperChance_35%
-}
-
-Response pugna_KillIsEnemyAntimageChance_35%
-{
-	scene "scenes/pugna/pugna_pugna_rival_06.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_rival_07.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_rival_08.vcd" nodelay 
-}
-
-Rule pugna_KillIsEnemyAntimageChance_35%_Rule
-{
-	criteria Kill Ispugna IsEnemyAntimage Chance_35%
-	response pugna_KillIsEnemyAntimageChance_35%
-}
-
-Response pugna_KillIsEnemyEnigmaChance_35%
-{
-	scene "scenes/pugna/pugna_pugna_rival_09.vcd" nodelay 
-}
-
-Rule pugna_KillIsEnemyEnigmaChance_35%_Rule
-{
-	criteria Kill Ispugna IsEnemyEnigma Chance_35%
-	response pugna_KillIsEnemyEnigmaChance_35%
-}
-
-Response pugna_KillIsEnemyShadowShamanChance_35%
-{
-	scene "scenes/pugna/pugna_pugna_rival_10.vcd" nodelay 
-}
-
-Rule pugna_KillIsEnemyShadowShamanChance_35%_Rule
-{
-	criteria Kill Ispugna IsEnemyShadowShaman Chance_35%
-	response pugna_KillIsEnemyShadowShamanChance_35%
-}
-
-Response pugna_Move
-{
-	scene "scenes/pugna/pugna_pugna_move_01.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_move_02.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_move_03.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_move_04.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_move_05.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_move_06.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_move_07.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_move_08.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_move_09.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_move_10.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_move_11.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_move_12.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_move_13.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_move_14.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_move_15.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_move_16.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_move_17.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_move_18.vcd" nodelay 
-}
-
-Rule pugna_Move_Rule
-{
-	criteria Move Ispugna 
-	response pugna_Move
-}
-
-Response pugna_Attack
-{
-	scene "scenes/pugna/pugna_pugna_attack_01.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_attack_02.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_attack_03.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_attack_04.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_attack_05.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_attack_06.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_attack_07.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_attack_08.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_attack_09.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_attack_10.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_attack_11.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_attack_12.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_attack_13.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_attack_14.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_attack_15.vcd" nodelay 
-}
-
-Rule pugna_Attack_Rule
-{
-	criteria Attack Ispugna 
-	response pugna_Attack
-}
-
-Response pugna_CastOrder
-{
-	scene "scenes/pugna/pugna_pugna_cast_01.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_cast_02.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_cast_03.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_cast_04.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_cast_05.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_cast_06.vcd" nodelay 
-}
-
-Rule pugna_CastOrder_Rule
-{
-	criteria CastOrder Ispugna 
-	response pugna_CastOrder
-}
-
-Response pugna_LevelUp
-{
-	scene "scenes/pugna/pugna_pugna_level_01.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_level_02.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_level_03.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_level_04.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_level_05.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_level_06.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_level_07.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_level_08.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_level_09.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_level_10.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_level_11.vcd" nodelay 
-}
-
-Rule pugna_LevelUp_Rule
-{
-	criteria LevelUp Ispugna 
-	response pugna_LevelUp
-}
-
-Response pugna_LastHit
-{
-	scene "scenes/pugna/pugna_pugna_lasthit_01.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_lasthit_02.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_lasthit_03.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_lasthit_04.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_lasthit_05.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_lasthit_06.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_lasthit_07.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_lasthit_08.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_lasthit_09.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_lasthit_10.vcd" nodelay 
-}
-
-Rule pugna_LastHit_Rule
-{
-	criteria LastHit Ispugna 
-	response pugna_LastHit
-}
-
-Response pugna_Death
-{
-	scene "scenes/pugna/pugna_pugna_death_01.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_death_02.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_death_03.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_death_04.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_death_05.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_death_06.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_death_07.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_death_08.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_death_09.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_death_10.vcd" nodelay 
-}
-
-Rule pugna_Death_Rule
-{
-	criteria Death Ispugna 
-	response pugna_Death
-}
-
-Response pugna_DeathIsReincarnating
-{
-	scene "scenes/pugna/pugna_pugna_fastres_01.vcd" nodelay 
-}
-
-Rule pugna_DeathIsReincarnating_Rule
-{
-	criteria Death Ispugna IsReincarnating
-	response pugna_DeathIsReincarnating
-}
-
-Response pugna_Respawn
-{
-	scene "scenes/pugna/pugna_pugna_respawn_01.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_respawn_02.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_respawn_03.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_respawn_04.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_respawn_05.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_respawn_06.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_respawn_07.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_respawn_08.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_respawn_09.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_respawn_10.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_respawn_11.vcd" nodelay 
-}
-
-Rule pugna_Respawn_Rule
-{
-	criteria Respawn Ispugna 
-	response pugna_Respawn
-}
-
-Response pugna_Select
-{
-	scene "scenes/pugna/pugna_pugna_rare_01.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_rare_02.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_rare_03.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_rare_04.vcd" nodelay 
-}
-
-Rule pugna_Select_Rule
-{
-	criteria Select Ispugna 
-	response pugna_Select
-}
-
-Response pugna_PurchaseIsExpensiveItem
-{
-	scene "scenes/pugna/pugna_pugna_purch_01.vcd" nodelay speakonce
-	scene "scenes/pugna/pugna_pugna_purch_02.vcd" nodelay speakonce
-	scene "scenes/pugna/pugna_pugna_purch_03.vcd" nodelay speakonce
-}
-
-Rule pugna_PurchaseIsExpensiveItem_Rule
-{
-	criteria Purchase Ispugna IsExpensiveItem
-	response pugna_PurchaseIsExpensiveItem
-}
-
-Response pugna_PurchaseIsBlinkDagger
-{
-	scene "scenes/pugna/pugna_pugna_blink_01.vcd" nodelay speakonce
-	scene "scenes/pugna/pugna_pugna_blink_02.vcd" nodelay speakonce
-}
-
-Rule pugna_PurchaseIsBlinkDagger_Rule
-{
-	criteria Purchase Ispugna IsBlinkDagger
-	response pugna_PurchaseIsBlinkDagger
-}
-
-Response pugna_PurchaseIsUltimateScepter
-{
-	scene "scenes/pugna/pugna_pugna_scepter_01.vcd" nodelay speakonce
-	scene "scenes/pugna/pugna_pugna_scepter_02.vcd" nodelay speakonce
-	scene "scenes/pugna/pugna_pugna_scepter_03.vcd" nodelay speakonce
-}
-
-Rule pugna_PurchaseIsUltimateScepter_Rule
-{
-	criteria Purchase Ispugna IsUltimateScepter
-	response pugna_PurchaseIsUltimateScepter
-}
-
-Response pugna_PurchaseIsMekansm
-{
-	scene "scenes/pugna/pugna_pugna_item_01.vcd" nodelay speakonce
-}
-
-Rule pugna_PurchaseIsMekansm_Rule
-{
-	criteria Purchase Ispugna IsMekansm
-	response pugna_PurchaseIsMekansm
-}
-
-Response pugna_PurchaseIsBlackKingBar
-{
-	scene "scenes/pugna/pugna_pugna_item_02.vcd" nodelay speakonce
-}
-
-Rule pugna_PurchaseIsBlackKingBar_Rule
-{
-	criteria Purchase Ispugna IsBlackKingBar
-	response pugna_PurchaseIsBlackKingBar
-}
-
-Response pugna_Bottling
-{
-	scene "scenes/pugna/pugna_pugna_bottle_01.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_bottle_02.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_bottle_03.vcd" nodelay 
-}
-
-Rule pugna_Bottling_Rule
-{
-	criteria Bottling Ispugna 
-	response pugna_Bottling
-}
-
-Response pugna_Deny
-{
-	scene "scenes/pugna/pugna_pugna_deny_01.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_deny_02.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_deny_03.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_deny_04.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_deny_05.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_deny_06.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_deny_07.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_deny_08.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_deny_09.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_deny_10.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_deny_11.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_deny_12.vcd" nodelay 
-}
-
-Rule pugna_Deny_Rule
-{
-	criteria Deny Ispugna 
-	response pugna_Deny
-}
-
-Response pugna_Defeat
-{
-	scene "scenes/pugna/pugna_pugna_lose_01.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_lose_02.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_lose_03.vcd" nodelay 
-}
-
-Rule pugna_Defeat_Rule
-{
-	criteria Defeat Ispugna 
-	response pugna_Defeat
-}
-
-Response pugna_Victory
-{
-	scene "scenes/pugna/pugna_pugna_win_01.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_win_02.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_win_03.vcd" nodelay 
-}
-
-Rule pugna_Victory_Rule
-{
-	criteria Victory Ispugna 
-	response pugna_Victory
-}
-
-Response pugna_Immortality
-{
-	scene "scenes/pugna/pugna_pugna_immort_01.vcd" nodelay 
-}
-
-Rule pugna_Immortality_Rule
-{
-	criteria Immortality Ispugna 
-	response pugna_Immortality
-}
-
-Response pugna_ImmortalityChance_25%
-{
-	scene "scenes/pugna/pugna_pugna_immort_02.vcd" nodelay 
-}
-
-Rule pugna_ImmortalityChance_25%_Rule
-{
-	criteria Immortality Ispugna Chance_25%
-	response pugna_ImmortalityChance_25%
-}
-
-Response pugna_PowerupIsPowerupBounty
-{
-	scene "scenes/pugna/pugna_pugna_lasthit_03.vcd" nodelay respeakdelay 300
-}
-
-Rule pugna_PowerupIsPowerupBounty_Rule
-{
-	criteria Powerup Ispugna IsPowerupBounty
-	response pugna_PowerupIsPowerupBounty
-}
-
-Response pugna_PowerupIsPowerupHaste
-{
-	scene "scenes/pugna/pugna_pugna_haste_01.vcd" nodelay 
-}
-
-Rule pugna_PowerupIsPowerupHaste_Rule
-{
-	criteria Powerup Ispugna IsPowerupHaste
-	response pugna_PowerupIsPowerupHaste
-}
-
-Response pugna_PowerupIsPowerupHasteChance_25%
-{
-	scene "scenes/pugna/pugna_pugna_haste_02.vcd" nodelay 
-}
-
-Rule pugna_PowerupIsPowerupHasteChance_25%_Rule
-{
-	criteria Powerup Ispugna IsPowerupHaste Chance_25%
-	response pugna_PowerupIsPowerupHasteChance_25%
-}
-
-Response pugna_PowerupIsPowerupDoubleDamage
-{
-	scene "scenes/pugna/pugna_pugna_doubdam_01.vcd" nodelay 
-}
-
-Rule pugna_PowerupIsPowerupDoubleDamage_Rule
-{
-	criteria Powerup Ispugna IsPowerupDoubleDamage
-	response pugna_PowerupIsPowerupDoubleDamage
-}
-
-Response pugna_PowerupIsPowerupDoubleDamageChance_25%
-{
-	scene "scenes/pugna/pugna_pugna_doubdam_02.vcd" nodelay 
-}
-
-Rule pugna_PowerupIsPowerupDoubleDamageChance_25%_Rule
-{
-	criteria Powerup Ispugna IsPowerupDoubleDamage Chance_25%
-	response pugna_PowerupIsPowerupDoubleDamageChance_25%
-}
-
-Response pugna_PowerupIsPowerupRegeneration
-{
-	scene "scenes/pugna/pugna_pugna_regen_01.vcd" nodelay 
-}
-
-Rule pugna_PowerupIsPowerupRegeneration_Rule
-{
-	criteria Powerup Ispugna IsPowerupRegeneration
-	response pugna_PowerupIsPowerupRegeneration
-}
-
-Response pugna_PowerupIsPowerupIllusion
-{
-	scene "scenes/pugna/pugna_pugna_illus_01.vcd" nodelay 
-}
-
-Rule pugna_PowerupIsPowerupIllusion_Rule
-{
-	criteria Powerup Ispugna IsPowerupIllusion
-	response pugna_PowerupIsPowerupIllusion
-}
-
-Response pugna_PowerupIsPowerupInvisibility
-{
-	scene "scenes/pugna/pugna_pugna_invis_01.vcd" nodelay 
-}
-
-Rule pugna_PowerupIsPowerupInvisibility_Rule
-{
-	criteria Powerup Ispugna IsPowerupInvisibility
-	response pugna_PowerupIsPowerupInvisibility
-}
-
-Response pugna_PowerupIsPowerupArcane
-{
-	scene "scenes/pugna/pugna_pugna_ability_nward_06.vcd" nodelay respeakdelay 300
-}
-
-Rule pugna_PowerupIsPowerupArcane_Rule
-{
-	criteria Powerup Ispugna IsPowerupArcane
-	response pugna_PowerupIsPowerupArcane
-}
-
-Response pugna_CooldownLittleNag
-{
-	scene "scenes/pugna/pugna_pugna_notyet_01.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_notyet_02.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_notyet_03.vcd" nodelay 
-}
-
-Rule pugna_CooldownLittleNag_Rule
-{
-	criteria Cooldown Ispugna LittleNag
-	response pugna_CooldownLittleNag
-}
-
-Response pugna_CooldownMediumNag
-{
-	scene "scenes/pugna/pugna_pugna_notyet_04.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_notyet_05.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_notyet_06.vcd" nodelay 
-}
-
-Rule pugna_CooldownMediumNag_Rule
-{
-	criteria Cooldown Ispugna MediumNag
-	response pugna_CooldownMediumNag
-}
-
-Response pugna_CooldownSuperNag
-{
-	scene "scenes/pugna/pugna_pugna_notyet_07.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_notyet_08.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_notyet_09.vcd" nodelay 
-}
-
-Rule pugna_CooldownSuperNag_Rule
-{
-	criteria Cooldown Ispugna SuperNag
-	response pugna_CooldownSuperNag
-}
-
-Response pugna_NoManaLittleNag
-{
-	scene "scenes/pugna/pugna_pugna_nomana_01.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_nomana_02.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_nomana_03.vcd" nodelay 
-}
-
-Rule pugna_NoManaLittleNag_Rule
-{
-	criteria NoMana Ispugna LittleNag
-	response pugna_NoManaLittleNag
-}
-
-Response pugna_NoManaMediumNag
-{
-	scene "scenes/pugna/pugna_pugna_nomana_04.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_nomana_05.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_nomana_06.vcd" nodelay 
-}
-
-Rule pugna_NoManaMediumNag_Rule
-{
-	criteria NoMana Ispugna MediumNag
-	response pugna_NoManaMediumNag
-}
-
-Response pugna_NoManaSuperNag
-{
-	scene "scenes/pugna/pugna_pugna_nomana_07.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_nomana_08.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_nomana_09.vcd" nodelay 
-}
-
-Rule pugna_NoManaSuperNag_Rule
-{
-	criteria NoMana Ispugna SuperNag
-	response pugna_NoManaSuperNag
-}
-
-Response pugna_Thanks
-{
-	scene "scenes/pugna/pugna_pugna_thanks_01.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_thanks_02.vcd" nodelay 
-}
-
-Rule pugna_Thanks_Rule
-{
-	criteria Thanks Ispugna 
-	response pugna_Thanks
-}
-
-Response pugna_PainChance_25%
-{
-	scene "scenes/pugna/pugna_pugna_underattack_01.vcd" nodelay respeakdelay 120
-}
-
-Rule pugna_PainChance_25%_Rule
-{
-	criteria Pain Ispugna Chance_25%
-	response pugna_PainChance_25%
-}
-
-Response pugna_Pain
-{
-	scene "scenes/pugna/pugna_pugna_pain_01.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_pain_02.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_pain_03.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_pain_04.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_pain_05.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_pain_08.vcd" nodelay 
-}
-
-Rule pugna_Pain_Rule
-{
-	criteria Pain Ispugna 
-	response pugna_Pain
-}
-
-Response pugna_InTheBag
-{
-	scene "scenes/pugna/pugna_pugna_inthebag_01.vcd" nodelay 
-}
-
-Rule pugna_InTheBag_Rule
-{
-	criteria InTheBag Ispugna 
-	response pugna_InTheBag
-}
-
-Response pugna_ItemDropIsCommonDrop
-{
-	scene "scenes/pugna/pugna_pugna_happy_01.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_laugh_05.vcd" nodelay 
-}
-
-Rule pugna_ItemDropIsCommonDrop_Rule
-{
-	criteria ItemDrop Ispugna IsCommonDrop
-	response pugna_ItemDropIsCommonDrop
-}
-
-Response pugna_ItemDropIsUltraRareDrop
-{
-	scene "scenes/pugna/pugna_pugna_happy_03.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_laugh_03.vcd" nodelay 
-}
-
-Rule pugna_ItemDropIsUltraRareDrop_Rule
-{
-	criteria ItemDrop Ispugna IsUltraRareDrop
-	response pugna_ItemDropIsUltraRareDrop
-}
-
-Response pugna_ItemDropIsRareDrop
-{
-	scene "scenes/pugna/pugna_pugna_happy_04.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_laugh_04.vcd" nodelay 
-}
-
-Rule pugna_ItemDropIsRareDrop_Rule
-{
-	criteria ItemDrop Ispugna IsRareDrop
-	response pugna_ItemDropIsRareDrop
-}
-
-Response pugna_EmoteIsEmoteLaugh
-{
-	scene "scenes/pugna/pugna_pugna_laugh_01.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_laugh_02.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_laugh_03.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_laugh_04.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_laugh_05.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_laugh_06.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_laugh_07.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_laugh_08.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_laugh_09.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_laugh_10.vcd" nodelay 
-}
-
-Rule pugna_EmoteIsEmoteLaugh_Rule
-{
-	criteria Emote Ispugna IsEmoteLaugh
-	response pugna_EmoteIsEmoteLaugh
-}
-
-Response pugna_TauntIsPugnaTI8_Taunt
-{
-	scene "scenes/pugna/pugna_pugna_laugh_01.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_laugh_03.vcd" nodelay 
-	scene "scenes/pugna/pugna_pugna_laugh_09.vcd" nodelay 
-}
-
-Rule pugna_TauntIsPugnaTI8_Taunt_Rule
-{
-	criteria Taunt Ispugna IsPugnaTI8_Taunt
-	response pugna_TauntIsPugnaTI8_Taunt
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vrfunknown:version{c1f07085-5299-4e8a-b7e9-1cbb66bbbe23} -->
+{
+	m_Includes = 
+	[
+		"scripts/talker/response_rules_shared.vrr",
+	]
+	m_ResponseGroups = 
+	[
+		
+		{
+			m_name = "pugna_Spawn"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_spawn_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_spawn_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_spawn_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_spawn_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_spawn_05.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "pugna_CustomIsGameStart"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_battlebegins_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "pugna_CustomIsPugnaLoadoutSpawn"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_spawn_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_spawn_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_spawn_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_spawn_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_spawn_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_battlebegins_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_move_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_level_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_level_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_respawn_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_move_17.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_attack_13.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "pugna_KillIsFirstBlood"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_firstblood_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_firstblood_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "pugna_KillIsPugnaNetherBlastChance_5%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_ability_nblast_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "pugna_KillIsPugnaNetherWardChance_15%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_ability_nward_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_ability_nward_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_ability_nward_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_ability_nward_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_ability_nward_11.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "pugna_KillIsPugnaLifeDrainChance_10%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_ability_life_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_ability_life_05.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "pugna_Kill"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_kill_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_kill_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_kill_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_kill_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_kill_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_kill_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_kill_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_kill_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_kill_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_kill_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_kill_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_kill_12.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_kill_13.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_kill_14.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_kill_15.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_kill_16.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_kill_17.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_kill_18.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_laugh_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_laugh_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_laugh_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_laugh_10.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "pugna_KillIsEnemyViperChance_35%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_rival_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_rival_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_rival_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_rival_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_rival_05.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "pugna_KillIsEnemyAntimageChance_35%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_rival_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_rival_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_rival_08.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "pugna_KillIsEnemyEnigmaChance_35%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_rival_09.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "pugna_KillIsEnemyShadowShamanChance_35%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_rival_10.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "pugna_Move"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_move_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_move_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_move_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_move_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_move_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_move_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_move_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_move_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_move_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_move_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_move_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_move_12.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_move_13.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_move_14.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_move_15.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_move_16.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_move_17.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_move_18.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "pugna_Attack"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_attack_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_attack_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_attack_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_attack_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_attack_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_attack_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_attack_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_attack_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_attack_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_attack_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_attack_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_attack_12.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_attack_13.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_attack_14.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_attack_15.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "pugna_CastOrder"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_cast_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_cast_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_cast_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_cast_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_cast_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_cast_06.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "pugna_LevelUp"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_level_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_level_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_level_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_level_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_level_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_level_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_level_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_level_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_level_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_level_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_level_11.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "pugna_LastHit"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_lasthit_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_lasthit_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_lasthit_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_lasthit_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_lasthit_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_lasthit_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_lasthit_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_lasthit_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_lasthit_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_lasthit_10.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "pugna_Death"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_death_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_death_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_death_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_death_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_death_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_death_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_death_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_death_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_death_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_death_10.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "pugna_DeathIsReincarnating"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_fastres_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "pugna_Respawn"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_respawn_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_respawn_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_respawn_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_respawn_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_respawn_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_respawn_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_respawn_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_respawn_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_respawn_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_respawn_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_respawn_11.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "pugna_Select"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_rare_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_rare_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_rare_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_rare_04.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "pugna_PurchaseIsExpensiveItem"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_purch_01.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_purch_02.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_purch_03.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "pugna_PurchaseIsBlinkDagger"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_blink_01.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_blink_02.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "pugna_PurchaseIsUltimateScepter"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_scepter_01.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_scepter_02.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_scepter_03.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "pugna_PurchaseIsMekansm"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_item_01.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "pugna_PurchaseIsBlackKingBar"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_item_02.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "pugna_Bottling"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_bottle_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_bottle_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_bottle_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "pugna_Deny"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_deny_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_deny_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_deny_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_deny_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_deny_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_deny_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_deny_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_deny_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_deny_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_deny_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_deny_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_deny_12.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "pugna_Defeat"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_lose_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_lose_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_lose_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "pugna_Victory"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_win_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_win_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_win_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "pugna_Immortality"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_immort_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "pugna_ImmortalityChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_immort_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "pugna_PowerupIsPowerupBounty"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_lasthit_03.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 300.000000
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "pugna_PowerupIsPowerupHaste"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_haste_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "pugna_PowerupIsPowerupHasteChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_haste_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "pugna_PowerupIsPowerupDoubleDamage"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_doubdam_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "pugna_PowerupIsPowerupDoubleDamageChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_doubdam_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "pugna_PowerupIsPowerupRegeneration"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_regen_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "pugna_PowerupIsPowerupIllusion"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_illus_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "pugna_PowerupIsPowerupInvisibility"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_invis_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "pugna_PowerupIsPowerupArcane"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_ability_nward_06.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 300.000000
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "pugna_CooldownLittleNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_notyet_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_notyet_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_notyet_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "pugna_CooldownMediumNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_notyet_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_notyet_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_notyet_06.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "pugna_CooldownSuperNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_notyet_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_notyet_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_notyet_09.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "pugna_NoManaLittleNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_nomana_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_nomana_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_nomana_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "pugna_NoManaMediumNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_nomana_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_nomana_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_nomana_06.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "pugna_NoManaSuperNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_nomana_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_nomana_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_nomana_09.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "pugna_Thanks"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_thanks_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_thanks_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "pugna_PainChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_underattack_01.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 120.000000
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "pugna_Pain"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_pain_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_pain_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_pain_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_pain_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_pain_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_pain_08.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "pugna_InTheBag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_inthebag_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "pugna_ItemDropIsCommonDrop"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_happy_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_laugh_05.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "pugna_ItemDropIsUltraRareDrop"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_happy_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_laugh_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "pugna_ItemDropIsRareDrop"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_happy_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_laugh_04.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "pugna_EmoteIsEmoteLaugh"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_laugh_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_laugh_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_laugh_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_laugh_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_laugh_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_laugh_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_laugh_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_laugh_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_laugh_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_laugh_10.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "pugna_TauntIsPugnaTI8_Taunt"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_laugh_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_laugh_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/pugna/pugna_pugna_laugh_09.vcd"
+				},
+			]
+		},
+	]
+	m_Requirements = 
+	[
+		
+		{
+			m_name = "Ispugna"
+			m_matchKey = "classname"
+			m_matchExpr = "npc_dota_hero_pugna"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsPugnaNetherBlast"
+			m_matchKey = "abilityname"
+			m_matchExpr = "pugna_nether_blast"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsPugnaNetherWard"
+			m_matchKey = "abilityname"
+			m_matchExpr = "pugna_nether_ward"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsPugnaLifeDrain"
+			m_matchKey = "abilityname"
+			m_matchExpr = "pugna_life_drain"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsPugnaLoadoutSpawn"
+			m_matchKey = "special_spawn"
+			m_matchExpr = "pugna_loadout_spawn"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsPugnaTI8_Taunt"
+			m_matchKey = "taunt_type"
+			m_matchExpr = "ti8_pugna_taunt"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+	]
+	m_Rules = 
+	[
+		
+		{
+			m_name = "pugna_Spawn_Rule"
+			m_Requirements = 
+			[
+				"Spawn",
+				"Ispugna",
+			]
+			m_ResponseGroups = 
+			[
+				"pugna_Spawn",
+			]
+		},
+		
+		{
+			m_name = "pugna_CustomIsGameStart_Rule"
+			m_Requirements = 
+			[
+				"Custom",
+				"Ispugna",
+				"IsGameStart",
+			]
+			m_ResponseGroups = 
+			[
+				"pugna_CustomIsGameStart",
+			]
+		},
+		
+		{
+			m_name = "pugna_CustomIsPugnaLoadoutSpawn_Rule"
+			m_Requirements = 
+			[
+				"Custom",
+				"Ispugna",
+				"IsPugnaLoadoutSpawn",
+			]
+			m_ResponseGroups = 
+			[
+				"pugna_CustomIsPugnaLoadoutSpawn",
+			]
+		},
+		
+		{
+			m_name = "pugna_KillIsFirstBlood_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Ispugna",
+				"IsFirstBlood",
+			]
+			m_ResponseGroups = 
+			[
+				"pugna_KillIsFirstBlood",
+			]
+		},
+		
+		{
+			m_name = "pugna_KillIsPugnaNetherBlastChance_5%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Ispugna",
+				"IsPugnaNetherBlast",
+				"Chance_5%",
+			]
+			m_ResponseGroups = 
+			[
+				"pugna_KillIsPugnaNetherBlastChance_5%",
+			]
+		},
+		
+		{
+			m_name = "pugna_KillIsPugnaNetherWardChance_15%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Ispugna",
+				"IsPugnaNetherWard",
+				"Chance_15%",
+			]
+			m_ResponseGroups = 
+			[
+				"pugna_KillIsPugnaNetherWardChance_15%",
+			]
+		},
+		
+		{
+			m_name = "pugna_KillIsPugnaLifeDrainChance_10%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Ispugna",
+				"IsPugnaLifeDrain",
+				"Chance_10%",
+			]
+			m_ResponseGroups = 
+			[
+				"pugna_KillIsPugnaLifeDrainChance_10%",
+			]
+		},
+		
+		{
+			m_name = "pugna_Kill_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Ispugna",
+			]
+			m_ResponseGroups = 
+			[
+				"pugna_Kill",
+			]
+		},
+		
+		{
+			m_name = "pugna_KillIsEnemyViperChance_35%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Ispugna",
+				"IsEnemyViper",
+				"Chance_35%",
+			]
+			m_ResponseGroups = 
+			[
+				"pugna_KillIsEnemyViperChance_35%",
+			]
+		},
+		
+		{
+			m_name = "pugna_KillIsEnemyAntimageChance_35%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Ispugna",
+				"IsEnemyAntimage",
+				"Chance_35%",
+			]
+			m_ResponseGroups = 
+			[
+				"pugna_KillIsEnemyAntimageChance_35%",
+			]
+		},
+		
+		{
+			m_name = "pugna_KillIsEnemyEnigmaChance_35%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Ispugna",
+				"IsEnemyEnigma",
+				"Chance_35%",
+			]
+			m_ResponseGroups = 
+			[
+				"pugna_KillIsEnemyEnigmaChance_35%",
+			]
+		},
+		
+		{
+			m_name = "pugna_KillIsEnemyShadowShamanChance_35%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Ispugna",
+				"IsEnemyShadowShaman",
+				"Chance_35%",
+			]
+			m_ResponseGroups = 
+			[
+				"pugna_KillIsEnemyShadowShamanChance_35%",
+			]
+		},
+		
+		{
+			m_name = "pugna_Move_Rule"
+			m_Requirements = 
+			[
+				"Move",
+				"Ispugna",
+			]
+			m_ResponseGroups = 
+			[
+				"pugna_Move",
+			]
+		},
+		
+		{
+			m_name = "pugna_Attack_Rule"
+			m_Requirements = 
+			[
+				"Attack",
+				"Ispugna",
+			]
+			m_ResponseGroups = 
+			[
+				"pugna_Attack",
+			]
+		},
+		
+		{
+			m_name = "pugna_CastOrder_Rule"
+			m_Requirements = 
+			[
+				"CastOrder",
+				"Ispugna",
+			]
+			m_ResponseGroups = 
+			[
+				"pugna_CastOrder",
+			]
+		},
+		
+		{
+			m_name = "pugna_LevelUp_Rule"
+			m_Requirements = 
+			[
+				"LevelUp",
+				"Ispugna",
+			]
+			m_ResponseGroups = 
+			[
+				"pugna_LevelUp",
+			]
+		},
+		
+		{
+			m_name = "pugna_LastHit_Rule"
+			m_Requirements = 
+			[
+				"LastHit",
+				"Ispugna",
+			]
+			m_ResponseGroups = 
+			[
+				"pugna_LastHit",
+			]
+		},
+		
+		{
+			m_name = "pugna_Death_Rule"
+			m_Requirements = 
+			[
+				"Death",
+				"Ispugna",
+			]
+			m_ResponseGroups = 
+			[
+				"pugna_Death",
+			]
+		},
+		
+		{
+			m_name = "pugna_DeathIsReincarnating_Rule"
+			m_Requirements = 
+			[
+				"Death",
+				"Ispugna",
+				"IsReincarnating",
+			]
+			m_ResponseGroups = 
+			[
+				"pugna_DeathIsReincarnating",
+			]
+		},
+		
+		{
+			m_name = "pugna_Respawn_Rule"
+			m_Requirements = 
+			[
+				"Respawn",
+				"Ispugna",
+			]
+			m_ResponseGroups = 
+			[
+				"pugna_Respawn",
+			]
+		},
+		
+		{
+			m_name = "pugna_Select_Rule"
+			m_Requirements = 
+			[
+				"Select",
+				"Ispugna",
+			]
+			m_ResponseGroups = 
+			[
+				"pugna_Select",
+			]
+		},
+		
+		{
+			m_name = "pugna_PurchaseIsExpensiveItem_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Ispugna",
+				"IsExpensiveItem",
+			]
+			m_ResponseGroups = 
+			[
+				"pugna_PurchaseIsExpensiveItem",
+			]
+		},
+		
+		{
+			m_name = "pugna_PurchaseIsBlinkDagger_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Ispugna",
+				"IsBlinkDagger",
+			]
+			m_ResponseGroups = 
+			[
+				"pugna_PurchaseIsBlinkDagger",
+			]
+		},
+		
+		{
+			m_name = "pugna_PurchaseIsUltimateScepter_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Ispugna",
+				"IsUltimateScepter",
+			]
+			m_ResponseGroups = 
+			[
+				"pugna_PurchaseIsUltimateScepter",
+			]
+		},
+		
+		{
+			m_name = "pugna_PurchaseIsMekansm_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Ispugna",
+				"IsMekansm",
+			]
+			m_ResponseGroups = 
+			[
+				"pugna_PurchaseIsMekansm",
+			]
+		},
+		
+		{
+			m_name = "pugna_PurchaseIsBlackKingBar_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Ispugna",
+				"IsBlackKingBar",
+			]
+			m_ResponseGroups = 
+			[
+				"pugna_PurchaseIsBlackKingBar",
+			]
+		},
+		
+		{
+			m_name = "pugna_Bottling_Rule"
+			m_Requirements = 
+			[
+				"Bottling",
+				"Ispugna",
+			]
+			m_ResponseGroups = 
+			[
+				"pugna_Bottling",
+			]
+		},
+		
+		{
+			m_name = "pugna_Deny_Rule"
+			m_Requirements = 
+			[
+				"Deny",
+				"Ispugna",
+			]
+			m_ResponseGroups = 
+			[
+				"pugna_Deny",
+			]
+		},
+		
+		{
+			m_name = "pugna_Defeat_Rule"
+			m_Requirements = 
+			[
+				"Defeat",
+				"Ispugna",
+			]
+			m_ResponseGroups = 
+			[
+				"pugna_Defeat",
+			]
+		},
+		
+		{
+			m_name = "pugna_Victory_Rule"
+			m_Requirements = 
+			[
+				"Victory",
+				"Ispugna",
+			]
+			m_ResponseGroups = 
+			[
+				"pugna_Victory",
+			]
+		},
+		
+		{
+			m_name = "pugna_Immortality_Rule"
+			m_Requirements = 
+			[
+				"Immortality",
+				"Ispugna",
+			]
+			m_ResponseGroups = 
+			[
+				"pugna_Immortality",
+			]
+		},
+		
+		{
+			m_name = "pugna_ImmortalityChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Immortality",
+				"Ispugna",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"pugna_ImmortalityChance_25%",
+			]
+		},
+		
+		{
+			m_name = "pugna_PowerupIsPowerupBounty_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Ispugna",
+				"IsPowerupBounty",
+			]
+			m_ResponseGroups = 
+			[
+				"pugna_PowerupIsPowerupBounty",
+			]
+		},
+		
+		{
+			m_name = "pugna_PowerupIsPowerupHaste_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Ispugna",
+				"IsPowerupHaste",
+			]
+			m_ResponseGroups = 
+			[
+				"pugna_PowerupIsPowerupHaste",
+			]
+		},
+		
+		{
+			m_name = "pugna_PowerupIsPowerupHasteChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Ispugna",
+				"IsPowerupHaste",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"pugna_PowerupIsPowerupHasteChance_25%",
+			]
+		},
+		
+		{
+			m_name = "pugna_PowerupIsPowerupDoubleDamage_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Ispugna",
+				"IsPowerupDoubleDamage",
+			]
+			m_ResponseGroups = 
+			[
+				"pugna_PowerupIsPowerupDoubleDamage",
+			]
+		},
+		
+		{
+			m_name = "pugna_PowerupIsPowerupDoubleDamageChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Ispugna",
+				"IsPowerupDoubleDamage",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"pugna_PowerupIsPowerupDoubleDamageChance_25%",
+			]
+		},
+		
+		{
+			m_name = "pugna_PowerupIsPowerupRegeneration_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Ispugna",
+				"IsPowerupRegeneration",
+			]
+			m_ResponseGroups = 
+			[
+				"pugna_PowerupIsPowerupRegeneration",
+			]
+		},
+		
+		{
+			m_name = "pugna_PowerupIsPowerupIllusion_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Ispugna",
+				"IsPowerupIllusion",
+			]
+			m_ResponseGroups = 
+			[
+				"pugna_PowerupIsPowerupIllusion",
+			]
+		},
+		
+		{
+			m_name = "pugna_PowerupIsPowerupInvisibility_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Ispugna",
+				"IsPowerupInvisibility",
+			]
+			m_ResponseGroups = 
+			[
+				"pugna_PowerupIsPowerupInvisibility",
+			]
+		},
+		
+		{
+			m_name = "pugna_PowerupIsPowerupArcane_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Ispugna",
+				"IsPowerupArcane",
+			]
+			m_ResponseGroups = 
+			[
+				"pugna_PowerupIsPowerupArcane",
+			]
+		},
+		
+		{
+			m_name = "pugna_CooldownLittleNag_Rule"
+			m_Requirements = 
+			[
+				"Cooldown",
+				"Ispugna",
+				"LittleNag",
+			]
+			m_ResponseGroups = 
+			[
+				"pugna_CooldownLittleNag",
+			]
+		},
+		
+		{
+			m_name = "pugna_CooldownMediumNag_Rule"
+			m_Requirements = 
+			[
+				"Cooldown",
+				"Ispugna",
+				"MediumNag",
+			]
+			m_ResponseGroups = 
+			[
+				"pugna_CooldownMediumNag",
+			]
+		},
+		
+		{
+			m_name = "pugna_CooldownSuperNag_Rule"
+			m_Requirements = 
+			[
+				"Cooldown",
+				"Ispugna",
+				"SuperNag",
+			]
+			m_ResponseGroups = 
+			[
+				"pugna_CooldownSuperNag",
+			]
+		},
+		
+		{
+			m_name = "pugna_NoManaLittleNag_Rule"
+			m_Requirements = 
+			[
+				"NoMana",
+				"Ispugna",
+				"LittleNag",
+			]
+			m_ResponseGroups = 
+			[
+				"pugna_NoManaLittleNag",
+			]
+		},
+		
+		{
+			m_name = "pugna_NoManaMediumNag_Rule"
+			m_Requirements = 
+			[
+				"NoMana",
+				"Ispugna",
+				"MediumNag",
+			]
+			m_ResponseGroups = 
+			[
+				"pugna_NoManaMediumNag",
+			]
+		},
+		
+		{
+			m_name = "pugna_NoManaSuperNag_Rule"
+			m_Requirements = 
+			[
+				"NoMana",
+				"Ispugna",
+				"SuperNag",
+			]
+			m_ResponseGroups = 
+			[
+				"pugna_NoManaSuperNag",
+			]
+		},
+		
+		{
+			m_name = "pugna_Thanks_Rule"
+			m_Requirements = 
+			[
+				"Thanks",
+				"Ispugna",
+			]
+			m_ResponseGroups = 
+			[
+				"pugna_Thanks",
+			]
+		},
+		
+		{
+			m_name = "pugna_PainChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Pain",
+				"Ispugna",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"pugna_PainChance_25%",
+			]
+		},
+		
+		{
+			m_name = "pugna_Pain_Rule"
+			m_Requirements = 
+			[
+				"Pain",
+				"Ispugna",
+			]
+			m_ResponseGroups = 
+			[
+				"pugna_Pain",
+			]
+		},
+		
+		{
+			m_name = "pugna_InTheBag_Rule"
+			m_Requirements = 
+			[
+				"InTheBag",
+				"Ispugna",
+			]
+			m_ResponseGroups = 
+			[
+				"pugna_InTheBag",
+			]
+		},
+		
+		{
+			m_name = "pugna_ItemDropIsCommonDrop_Rule"
+			m_Requirements = 
+			[
+				"ItemDrop",
+				"Ispugna",
+				"IsCommonDrop",
+			]
+			m_ResponseGroups = 
+			[
+				"pugna_ItemDropIsCommonDrop",
+			]
+		},
+		
+		{
+			m_name = "pugna_ItemDropIsUltraRareDrop_Rule"
+			m_Requirements = 
+			[
+				"ItemDrop",
+				"Ispugna",
+				"IsUltraRareDrop",
+			]
+			m_ResponseGroups = 
+			[
+				"pugna_ItemDropIsUltraRareDrop",
+			]
+		},
+		
+		{
+			m_name = "pugna_ItemDropIsRareDrop_Rule"
+			m_Requirements = 
+			[
+				"ItemDrop",
+				"Ispugna",
+				"IsRareDrop",
+			]
+			m_ResponseGroups = 
+			[
+				"pugna_ItemDropIsRareDrop",
+			]
+		},
+		
+		{
+			m_name = "pugna_EmoteIsEmoteLaugh_Rule"
+			m_Requirements = 
+			[
+				"Emote",
+				"Ispugna",
+				"IsEmoteLaugh",
+			]
+			m_ResponseGroups = 
+			[
+				"pugna_EmoteIsEmoteLaugh",
+			]
+		},
+		
+		{
+			m_name = "pugna_TauntIsPugnaTI8_Taunt_Rule"
+			m_Requirements = 
+			[
+				"Taunt",
+				"Ispugna",
+				"IsPugnaTI8_Taunt",
+			]
+			m_ResponseGroups = 
+			[
+				"pugna_TauntIsPugnaTI8_Taunt",
+			]
+		},
+	]
 }
-

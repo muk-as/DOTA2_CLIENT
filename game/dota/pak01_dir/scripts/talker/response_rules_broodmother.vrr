@@ -1,922 +1,2771 @@
-#include "talker/response_rules_shared.vrr"
-
-criterion "Isbroodmother" "classname" "npc_dota_hero_broodmother" weight 5 required
-criterion "IsBroodmotherSpiderling" "beastname" "spiderling" weight 5 required
-criterion "IsBroodmotherWeb" "abilityname" "broodmother_spin_web" weight 5 required
-criterion "IsItemSheepstick" "abilityname" "item_sheepstick" weight 5 required
-criterion "IsBroodmotherLoadoutSpawn" "special_spawn" "broodmother_loadout_spawn" weight 5 required
-criterion "IsBroodTauntSpiderShuffle" "taunt_type" "broodmother_spin" weight 5 required
-
-Response broodmother_Spawn
-{
-	scene "scenes/broodmother/broodmother_broo_spawn_01.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_spawn_02.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_spawn_03.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_spawn_04.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_spawn_05.vcd" nodelay 
-}
-
-Rule broodmother_Spawn_Rule
-{
-	criteria Spawn Isbroodmother 
-	response broodmother_Spawn
-}
-
-Response broodmother_CustomIsGameStart
-{
-	scene "scenes/broodmother/broodmother_broo_battlebegins_01.vcd" nodelay 
-}
-
-Rule broodmother_CustomIsGameStart_Rule
-{
-	criteria Custom Isbroodmother IsGameStart
-	response broodmother_CustomIsGameStart
-}
-
-Response broodmother_CustomIsBroodmotherLoadoutSpawn
-{
-	scene "scenes/broodmother/broodmother_broo_spawn_01.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_spawn_02.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_spawn_03.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_spawn_04.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_spawn_05.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_battlebegins_01.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_attack_10.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_attack_11.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_ability_spawn_08.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_kill_01.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_lasthit_01.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_ability_hunger_03.vcd" nodelay 
-}
-
-Rule broodmother_CustomIsBroodmotherLoadoutSpawn_Rule
-{
-	criteria Custom Isbroodmother IsBroodmotherLoadoutSpawn
-	response broodmother_CustomIsBroodmotherLoadoutSpawn
-}
-
-Response broodmother_KillIsFirstBlood
-{
-	scene "scenes/broodmother/broodmother_broo_firstblood_01.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_firstblood_02.vcd" nodelay 
-}
-
-Rule broodmother_KillIsFirstBlood_Rule
-{
-	criteria Kill Isbroodmother IsFirstBlood
-	response broodmother_KillIsFirstBlood
-}
-
-Response broodmother_Kill
-{
-	scene "scenes/broodmother/broodmother_broo_ability_incap_02.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_ability_incap_03.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_ability_incap_04.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_kill_01.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_kill_02.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_kill_03.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_kill_04.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_kill_05.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_kill_06.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_kill_07.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_kill_08.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_kill_09.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_kill_10.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_kill_11.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_kill_12.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_kill_13.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_kill_14.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_kill_15.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_kill_16.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_kill_17.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_kill_18.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_laugh_01.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_laugh_02.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_laugh_03.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_laugh_04.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_laugh_05.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_laugh_06.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_laugh_07.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_laugh_08.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_laugh_09.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_laugh_10.vcd" nodelay 
-}
-
-Rule broodmother_Kill_Rule
-{
-	criteria Kill Isbroodmother 
-	response broodmother_Kill
-}
-
-Response broodmother_KillIsEnemyWeaverChance_35%
-{
-	scene "scenes/broodmother/broodmother_broo_rival_01.vcd" nodelay 
-}
-
-Rule broodmother_KillIsEnemyWeaverChance_35%_Rule
-{
-	criteria Kill Isbroodmother IsEnemyWeaver Chance_35%
-	response broodmother_KillIsEnemyWeaverChance_35%
-}
-
-Response broodmother_KillIsEnemyNyx_AssassinChance_35%
-{
-	scene "scenes/broodmother/broodmother_broo_rival_02.vcd" nodelay 
-}
-
-Rule broodmother_KillIsEnemyNyx_AssassinChance_35%_Rule
-{
-	criteria Kill Isbroodmother IsEnemyNyx_Assassin Chance_35%
-	response broodmother_KillIsEnemyNyx_AssassinChance_35%
-}
-
-Response broodmother_KillIsEnemySandKingChance_35%
-{
-	scene "scenes/broodmother/broodmother_broo_rival_03.vcd" nodelay 
-}
-
-Rule broodmother_KillIsEnemySandKingChance_35%_Rule
-{
-	criteria Kill Isbroodmother IsEnemySandKing Chance_35%
-	response broodmother_KillIsEnemySandKingChance_35%
-}
-
-Response broodmother_KillIsEnemySlardarChance_35%
-{
-	scene "scenes/broodmother/broodmother_broo_rival_04.vcd" nodelay 
-}
-
-Rule broodmother_KillIsEnemySlardarChance_35%_Rule
-{
-	criteria Kill Isbroodmother IsEnemySlardar Chance_35%
-	response broodmother_KillIsEnemySlardarChance_35%
-}
-
-Response broodmother_KillIsEnemyNight_StalkerChance_35%
-{
-	scene "scenes/broodmother/broodmother_broo_rival_05.vcd" nodelay 
-}
-
-Rule broodmother_KillIsEnemyNight_StalkerChance_35%_Rule
-{
-	criteria Kill Isbroodmother IsEnemyNight_Stalker Chance_35%
-	response broodmother_KillIsEnemyNight_StalkerChance_35%
-}
-
-Response broodmother_KillIsEnemyBounty_HunterChance_35%
-{
-	scene "scenes/broodmother/broodmother_broo_rival_06.vcd" nodelay 
-}
-
-Rule broodmother_KillIsEnemyBounty_HunterChance_35%_Rule
-{
-	criteria Kill Isbroodmother IsEnemyBounty_Hunter Chance_35%
-	response broodmother_KillIsEnemyBounty_HunterChance_35%
-}
-
-Response broodmother_KillIsEnemyEarthShakerChance_35%
-{
-	scene "scenes/broodmother/broodmother_broo_rival_07.vcd" nodelay 
-}
-
-Rule broodmother_KillIsEnemyEarthShakerChance_35%_Rule
-{
-	criteria Kill Isbroodmother IsEnemyEarthShaker Chance_35%
-	response broodmother_KillIsEnemyEarthShakerChance_35%
-}
-
-Response broodmother_KillIsEnemyKunkkaChance_35%
-{
-	scene "scenes/broodmother/broodmother_broo_rival_08.vcd" nodelay 
-}
-
-Rule broodmother_KillIsEnemyKunkkaChance_35%_Rule
-{
-	criteria Kill Isbroodmother IsEnemyKunkka Chance_35%
-	response broodmother_KillIsEnemyKunkkaChance_35%
-}
-
-Response broodmother_KillIsEnemyEnigmaChance_35%
-{
-	scene "scenes/broodmother/broodmother_broo_rival_09.vcd" nodelay 
-}
-
-Rule broodmother_KillIsEnemyEnigmaChance_35%_Rule
-{
-	criteria Kill Isbroodmother IsEnemyEnigma Chance_35%
-	response broodmother_KillIsEnemyEnigmaChance_35%
-}
-
-Response broodmother_Move
-{
-	scene "scenes/broodmother/broodmother_broo_move_01.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_move_02.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_move_03.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_move_04.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_move_05.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_move_06.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_move_07.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_move_08.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_move_09.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_move_10.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_move_11.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_move_12.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_move_13.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_move_14.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_move_15.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_move_16.vcd" nodelay 
-}
-
-Rule broodmother_Move_Rule
-{
-	criteria Move Isbroodmother 
-	response broodmother_Move
-}
-
-Response broodmother_MoveIsBroodmotherIsBroodmotherSpiderling
-{
-	scene "scenes/broodmother/broodmother_broo_ability_spawn_07.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_ability_spawn_08.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_ability_spawn_09.vcd" nodelay 
-}
-
-Rule broodmother_MoveIsBroodmotherIsBroodmotherSpiderling_Rule
-{
-	criteria Move Isbroodmother IsBroodmother IsBroodmotherSpiderling
-	response broodmother_MoveIsBroodmotherIsBroodmotherSpiderling
-}
-
-Response broodmother_Attack
-{
-	scene "scenes/broodmother/broodmother_broo_attack_01.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_attack_02.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_attack_03.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_attack_04.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_attack_05.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_attack_06.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_attack_07.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_attack_08.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_attack_09.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_attack_10.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_attack_11.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_attack_12.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_attack_13.vcd" nodelay 
-}
-
-Rule broodmother_Attack_Rule
-{
-	criteria Attack Isbroodmother 
-	response broodmother_Attack
-}
-
-Response broodmother_AttackIsBroodmotherIsBroodmotherSpiderling
-{
-	scene "scenes/broodmother/broodmother_broo_ability_spawn_10.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_ability_spawn_11.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_ability_spawn_12.vcd" nodelay 
-}
-
-Rule broodmother_AttackIsBroodmotherIsBroodmotherSpiderling_Rule
-{
-	criteria Attack Isbroodmother IsBroodmother IsBroodmotherSpiderling
-	response broodmother_AttackIsBroodmotherIsBroodmotherSpiderling
-}
-
-Response broodmother_CastOrder
-{
-	scene "scenes/broodmother/broodmother_broo_cast_01.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_cast_02.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_cast_03.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_cast_04.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_ability_spawn_02.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_ability_hunger_03.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_ability_hunger_04.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_ability_hunger_05.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_ability_hunger_06.vcd" nodelay 
-}
-
-Rule broodmother_CastOrder_Rule
-{
-	criteria CastOrder Isbroodmother 
-	response broodmother_CastOrder
-}
-
-Response broodmother_ItemDropIsUltraRareDrop
-{
-	scene "scenes/broodmother/broodmother_broo_ability_spawn_06.vcd" nodelay 
-}
-
-Rule broodmother_ItemDropIsUltraRareDrop_Rule
-{
-	criteria ItemDrop Isbroodmother IsUltraRareDrop
-	response broodmother_ItemDropIsUltraRareDrop
-}
-
-Response broodmother_ItemDropIsRareDrop
-{
-	scene "scenes/broodmother/broodmother_broo_happy_01.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_happy_07.vcd" nodelay 
-}
-
-Rule broodmother_ItemDropIsRareDrop_Rule
-{
-	criteria ItemDrop Isbroodmother IsRareDrop
-	response broodmother_ItemDropIsRareDrop
-}
-
-Response broodmother_ItemDropIsCommonDrop
-{
-	scene "scenes/broodmother/broodmother_broo_happy_02.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_happy_04.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_happy_05.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_happy_08.vcd" nodelay 
-}
-
-Rule broodmother_ItemDropIsCommonDrop_Rule
-{
-	criteria ItemDrop Isbroodmother IsCommonDrop
-	response broodmother_ItemDropIsCommonDrop
-}
-
-Response broodmother_CastExecuteIsBroodmotherWebChance_75%
-{
-	scene "scenes/broodmother/broodmother_broo_ability_spin_01.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_ability_spin_02.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_ability_spin_03.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_ability_spin_04.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_ability_spin_05.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_ability_spin_06.vcd" nodelay 
-}
-
-Rule broodmother_CastExecuteIsBroodmotherWebChance_75%_Rule
-{
-	criteria CastExecute Isbroodmother IsBroodmotherWeb Chance_75%
-	response broodmother_CastExecuteIsBroodmotherWebChance_75%
-}
-
-Response broodmother_CastExecuteIsItemSheepstick
-{
-	scene "scenes/broodmother/broodmother_broo_rare_02.vcd" nodelay 
-}
-
-Rule broodmother_CastExecuteIsItemSheepstick_Rule
-{
-	criteria CastExecute Isbroodmother IsItemSheepstick
-	response broodmother_CastExecuteIsItemSheepstick
-}
-
-Response broodmother_LevelUp
-{
-	scene "scenes/broodmother/broodmother_broo_level_01.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_level_02.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_level_03.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_level_04.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_level_05.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_level_06.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_level_07.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_level_08.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_level_09.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_level_10.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_level_11.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_level_12.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_level_13.vcd" nodelay 
-}
-
-Rule broodmother_LevelUp_Rule
-{
-	criteria LevelUp Isbroodmother 
-	response broodmother_LevelUp
-}
-
-Response broodmother_LastHit
-{
-	scene "scenes/broodmother/broodmother_broo_lasthit_01.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_lasthit_02.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_lasthit_03.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_lasthit_04.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_lasthit_05.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_lasthit_06.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_lasthit_07.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_lasthit_08.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_lasthit_09.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_lasthit_10.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_lasthit_11.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_lasthit_12.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_lasthit_13.vcd" nodelay 
-}
-
-Rule broodmother_LastHit_Rule
-{
-	criteria LastHit Isbroodmother 
-	response broodmother_LastHit
-}
-
-Response broodmother_Death
-{
-	scene "scenes/broodmother/broodmother_broo_death_01.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_death_02.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_death_03.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_death_04.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_death_05.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_death_06.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_death_07.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_death_08.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_death_09.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_death_10.vcd" nodelay 
-}
-
-Rule broodmother_Death_Rule
-{
-	criteria Death Isbroodmother 
-	response broodmother_Death
-}
-
-Response broodmother_DeathIsReincarnating
-{
-	scene "scenes/broodmother/broodmother_broo_fastres_01.vcd" nodelay 
-}
-
-Rule broodmother_DeathIsReincarnating_Rule
-{
-	criteria Death Isbroodmother IsReincarnating
-	response broodmother_DeathIsReincarnating
-}
-
-Response broodmother_Respawn
-{
-	scene "scenes/broodmother/broodmother_broo_respawn_01.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_respawn_02.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_respawn_03.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_respawn_04.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_respawn_05.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_respawn_06.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_respawn_07.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_respawn_08.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_respawn_09.vcd" nodelay 
-}
-
-Rule broodmother_Respawn_Rule
-{
-	criteria Respawn Isbroodmother 
-	response broodmother_Respawn
-}
-
-Response broodmother_PurchaseIsExpensiveItem
-{
-	scene "scenes/broodmother/broodmother_broo_purch_01.vcd" nodelay speakonce
-	scene "scenes/broodmother/broodmother_broo_purch_02.vcd" nodelay speakonce
-	scene "scenes/broodmother/broodmother_broo_purch_03.vcd" nodelay speakonce
-}
-
-Rule broodmother_PurchaseIsExpensiveItem_Rule
-{
-	criteria Purchase Isbroodmother IsExpensiveItem
-	response broodmother_PurchaseIsExpensiveItem
-}
-
-Response broodmother_PurchaseIsBlinkDagger
-{
-	scene "scenes/broodmother/broodmother_broo_blink_01.vcd" nodelay speakonce
-}
-
-Rule broodmother_PurchaseIsBlinkDagger_Rule
-{
-	criteria Purchase Isbroodmother IsBlinkDagger
-	response broodmother_PurchaseIsBlinkDagger
-}
-
-Response broodmother_PurchaseIsUltimateScepter
-{
-	scene "scenes/broodmother/broodmother_broo_scepter_01.vcd" nodelay speakonce
-	scene "scenes/broodmother/broodmother_broo_scepter_02.vcd" nodelay speakonce
-}
-
-Rule broodmother_PurchaseIsUltimateScepter_Rule
-{
-	criteria Purchase Isbroodmother IsUltimateScepter
-	response broodmother_PurchaseIsUltimateScepter
-}
-
-Response broodmother_PurchaseIsVladmirs
-{
-	scene "scenes/broodmother/broodmother_broo_item_01.vcd" nodelay speakonce
-}
-
-Rule broodmother_PurchaseIsVladmirs_Rule
-{
-	criteria Purchase Isbroodmother IsVladmirs
-	response broodmother_PurchaseIsVladmirs
-}
-
-Response broodmother_PurchaseIsBlackKingBar
-{
-	scene "scenes/broodmother/broodmother_broo_item_02.vcd" nodelay speakonce
-}
-
-Rule broodmother_PurchaseIsBlackKingBar_Rule
-{
-	criteria Purchase Isbroodmother IsBlackKingBar
-	response broodmother_PurchaseIsBlackKingBar
-}
-
-Response broodmother_PurchaseIsButterfly
-{
-	scene "scenes/broodmother/broodmother_broo_item_03.vcd" nodelay speakonce
-}
-
-Rule broodmother_PurchaseIsButterfly_Rule
-{
-	criteria Purchase Isbroodmother IsButterfly
-	response broodmother_PurchaseIsButterfly
-}
-
-Response broodmother_PurchaseIsMonkeyKingBar
-{
-	scene "scenes/broodmother/broodmother_broo_item_04.vcd" nodelay speakonce
-}
-
-Rule broodmother_PurchaseIsMonkeyKingBar_Rule
-{
-	criteria Purchase Isbroodmother IsMonkeyKingBar
-	response broodmother_PurchaseIsMonkeyKingBar
-}
-
-Response broodmother_PurchaseIsHeart
-{
-	scene "scenes/broodmother/broodmother_broo_item_05.vcd" nodelay speakonce
-}
-
-Rule broodmother_PurchaseIsHeart_Rule
-{
-	criteria Purchase Isbroodmother IsHeart
-	response broodmother_PurchaseIsHeart
-}
-
-Response broodmother_PurchaseIsRadiance
-{
-	scene "scenes/broodmother/broodmother_broo_item_06.vcd" nodelay speakonce
-}
-
-Rule broodmother_PurchaseIsRadiance_Rule
-{
-	criteria Purchase Isbroodmother IsRadiance
-	response broodmother_PurchaseIsRadiance
-}
-
-Response broodmother_Bottling
-{
-	scene "scenes/broodmother/broodmother_broo_bottle_01.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_bottle_02.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_bottle_03.vcd" nodelay 
-}
-
-Rule broodmother_Bottling_Rule
-{
-	criteria Bottling Isbroodmother 
-	response broodmother_Bottling
-}
-
-Response broodmother_Deny
-{
-	scene "scenes/broodmother/broodmother_broo_deny_01.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_deny_02.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_deny_03.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_deny_04.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_deny_05.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_deny_06.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_deny_07.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_deny_08.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_deny_09.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_deny_10.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_deny_11.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_deny_12.vcd" nodelay 
-}
-
-Rule broodmother_Deny_Rule
-{
-	criteria Deny Isbroodmother 
-	response broodmother_Deny
-}
-
-Response broodmother_Defeat
-{
-	scene "scenes/broodmother/broodmother_broo_lose_01.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_lose_02.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_lose_03.vcd" nodelay 
-}
-
-Rule broodmother_Defeat_Rule
-{
-	criteria Defeat Isbroodmother 
-	response broodmother_Defeat
-}
-
-Response broodmother_Victory
-{
-	scene "scenes/broodmother/broodmother_broo_win_01.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_win_02.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_win_03.vcd" nodelay 
-}
-
-Rule broodmother_Victory_Rule
-{
-	criteria Victory Isbroodmother 
-	response broodmother_Victory
-}
-
-Response broodmother_Immortality
-{
-	scene "scenes/broodmother/broodmother_broo_immort_01.vcd" nodelay 
-}
-
-Rule broodmother_Immortality_Rule
-{
-	criteria Immortality Isbroodmother 
-	response broodmother_Immortality
-}
-
-Response broodmother_ImmortalityChance_25%
-{
-	scene "scenes/broodmother/broodmother_broo_immort_02.vcd" nodelay 
-}
-
-Rule broodmother_ImmortalityChance_25%_Rule
-{
-	criteria Immortality Isbroodmother Chance_25%
-	response broodmother_ImmortalityChance_25%
-}
-
-Response broodmother_PowerupIsPowerupBounty
-{
-	scene "scenes/broodmother/broodmother_broo_deny_11.vcd" nodelay respeakdelay 300
-}
-
-Rule broodmother_PowerupIsPowerupBounty_Rule
-{
-	criteria Powerup Isbroodmother IsPowerupBounty
-	response broodmother_PowerupIsPowerupBounty
-}
-
-Response broodmother_PowerupIsPowerupArcane
-{
-	scene "scenes/broodmother/broodmother_broo_ability_spawn_06.vcd" nodelay respeakdelay 300
-}
-
-Rule broodmother_PowerupIsPowerupArcane_Rule
-{
-	criteria Powerup Isbroodmother IsPowerupArcane
-	response broodmother_PowerupIsPowerupArcane
-}
-
-Response broodmother_PowerupIsPowerupHaste
-{
-	scene "scenes/broodmother/broodmother_broo_haste_01.vcd" nodelay 
-}
-
-Rule broodmother_PowerupIsPowerupHaste_Rule
-{
-	criteria Powerup Isbroodmother IsPowerupHaste
-	response broodmother_PowerupIsPowerupHaste
-}
-
-Response broodmother_PowerupIsPowerupDoubleDamage
-{
-	scene "scenes/broodmother/broodmother_broo_doubdam_01.vcd" nodelay 
-}
-
-Rule broodmother_PowerupIsPowerupDoubleDamage_Rule
-{
-	criteria Powerup Isbroodmother IsPowerupDoubleDamage
-	response broodmother_PowerupIsPowerupDoubleDamage
-}
-
-Response broodmother_PowerupIsPowerupRegeneration
-{
-	scene "scenes/broodmother/broodmother_broo_regen_01.vcd" nodelay 
-}
-
-Rule broodmother_PowerupIsPowerupRegeneration_Rule
-{
-	criteria Powerup Isbroodmother IsPowerupRegeneration
-	response broodmother_PowerupIsPowerupRegeneration
-}
-
-Response broodmother_PowerupIsPowerupIllusion
-{
-	scene "scenes/broodmother/broodmother_broo_illus_01.vcd" nodelay 
-}
-
-Rule broodmother_PowerupIsPowerupIllusion_Rule
-{
-	criteria Powerup Isbroodmother IsPowerupIllusion
-	response broodmother_PowerupIsPowerupIllusion
-}
-
-Response broodmother_PowerupIsPowerupIllusionChance_25%
-{
-	scene "scenes/broodmother/broodmother_broo_illus_02.vcd" nodelay 
-}
-
-Rule broodmother_PowerupIsPowerupIllusionChance_25%_Rule
-{
-	criteria Powerup Isbroodmother IsPowerupIllusion Chance_25%
-	response broodmother_PowerupIsPowerupIllusionChance_25%
-}
-
-Response broodmother_PowerupIsPowerupInvisibility
-{
-	scene "scenes/broodmother/broodmother_broo_invis_01.vcd" nodelay 
-}
-
-Rule broodmother_PowerupIsPowerupInvisibility_Rule
-{
-	criteria Powerup Isbroodmother IsPowerupInvisibility
-	response broodmother_PowerupIsPowerupInvisibility
-}
-
-Response broodmother_PowerupIsPowerupInvisibilityChance_5%
-{
-	scene "scenes/broodmother/broodmother_broo_invis_02.vcd" nodelay 
-}
-
-Rule broodmother_PowerupIsPowerupInvisibilityChance_5%_Rule
-{
-	criteria Powerup Isbroodmother IsPowerupInvisibility Chance_5%
-	response broodmother_PowerupIsPowerupInvisibilityChance_5%
-}
-
-Response broodmother_CooldownLittleNag
-{
-	scene "scenes/broodmother/broodmother_broo_notyet_01.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_notyet_02.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_notyet_03.vcd" nodelay 
-}
-
-Rule broodmother_CooldownLittleNag_Rule
-{
-	criteria Cooldown Isbroodmother LittleNag
-	response broodmother_CooldownLittleNag
-}
-
-Response broodmother_CooldownMediumNag
-{
-	scene "scenes/broodmother/broodmother_broo_notyet_04.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_notyet_05.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_notyet_06.vcd" nodelay 
-}
-
-Rule broodmother_CooldownMediumNag_Rule
-{
-	criteria Cooldown Isbroodmother MediumNag
-	response broodmother_CooldownMediumNag
-}
-
-Response broodmother_CooldownSuperNag
-{
-	scene "scenes/broodmother/broodmother_broo_notyet_07.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_notyet_08.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_notyet_09.vcd" nodelay 
-}
-
-Rule broodmother_CooldownSuperNag_Rule
-{
-	criteria Cooldown Isbroodmother SuperNag
-	response broodmother_CooldownSuperNag
-}
-
-Response broodmother_NoManaLittleNag
-{
-	scene "scenes/broodmother/broodmother_broo_nomana_01.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_nomana_02.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_nomana_03.vcd" nodelay 
-}
-
-Rule broodmother_NoManaLittleNag_Rule
-{
-	criteria NoMana Isbroodmother LittleNag
-	response broodmother_NoManaLittleNag
-}
-
-Response broodmother_NoManaMediumNag
-{
-	scene "scenes/broodmother/broodmother_broo_nomana_04.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_nomana_05.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_nomana_06.vcd" nodelay 
-}
-
-Rule broodmother_NoManaMediumNag_Rule
-{
-	criteria NoMana Isbroodmother MediumNag
-	response broodmother_NoManaMediumNag
-}
-
-Response broodmother_NoManaSuperNag
-{
-	scene "scenes/broodmother/broodmother_broo_nomana_07.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_nomana_08.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_nomana_09.vcd" nodelay 
-}
-
-Rule broodmother_NoManaSuperNag_Rule
-{
-	criteria NoMana Isbroodmother SuperNag
-	response broodmother_NoManaSuperNag
-}
-
-Response broodmother_Thanks
-{
-	scene "scenes/broodmother/broodmother_broo_thanks_01.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_thanks_02.vcd" nodelay 
-}
-
-Rule broodmother_Thanks_Rule
-{
-	criteria Thanks Isbroodmother 
-	response broodmother_Thanks
-}
-
-Response broodmother_PainChance_25%
-{
-	scene "scenes/broodmother/broodmother_broo_underattack_01.vcd" nodelay respeakdelay 120
-}
-
-Rule broodmother_PainChance_25%_Rule
-{
-	criteria Pain Isbroodmother Chance_25%
-	response broodmother_PainChance_25%
-}
-
-Response broodmother_Pain
-{
-	scene "scenes/broodmother/broodmother_broo_pain_01.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_pain_02.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_pain_03.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_pain_04.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_pain_05.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_pain_06.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_pain_07.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_pain_08.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_pain_09.vcd" nodelay 
-}
-
-Rule broodmother_Pain_Rule
-{
-	criteria Pain Isbroodmother 
-	response broodmother_Pain
-}
-
-Response broodmother_InTheBag
-{
-	scene "scenes/broodmother/broodmother_broo_inthebag_01.vcd" nodelay 
-}
-
-Rule broodmother_InTheBag_Rule
-{
-	criteria InTheBag Isbroodmother 
-	response broodmother_InTheBag
-}
-
-Response broodmother_EmoteIsEmoteLaugh
-{
-	scene "scenes/broodmother/broodmother_broo_laugh_01.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_laugh_02.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_laugh_03.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_laugh_04.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_laugh_05.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_laugh_06.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_laugh_07.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_laugh_08.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_laugh_09.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_laugh_10.vcd" nodelay 
-}
-
-Rule broodmother_EmoteIsEmoteLaugh_Rule
-{
-	criteria Emote Isbroodmother IsEmoteLaugh
-	response broodmother_EmoteIsEmoteLaugh
-}
-
-Response broodmother_Select
-{
-	scene "scenes/broodmother/broodmother_broo_respawn_06.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_rare_01.vcd" nodelay 
-	scene "scenes/broodmother/broodmother_broo_ability_hunger_01.vcd" nodelay 
-}
-
-Rule broodmother_Select_Rule
-{
-	criteria Select Isbroodmother 
-	response broodmother_Select
-}
-
-Response broodmother_TauntIsBroodTauntSpiderShuffle
-{
-	scene "scenes/broodmother/broodmother_broo_laugh_02.vcd" nodelay 
-}
-
-Rule broodmother_TauntIsBroodTauntSpiderShuffle_Rule
-{
-	criteria Taunt Isbroodmother IsBroodTauntSpiderShuffle
-	response broodmother_TauntIsBroodTauntSpiderShuffle
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vrfunknown:version{c1f07085-5299-4e8a-b7e9-1cbb66bbbe23} -->
+{
+	m_Includes = 
+	[
+		"scripts/talker/response_rules_shared.vrr",
+	]
+	m_ResponseGroups = 
+	[
+		
+		{
+			m_name = "broodmother_Spawn"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_spawn_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_spawn_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_spawn_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_spawn_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_spawn_05.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "broodmother_CustomIsGameStart"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_battlebegins_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "broodmother_CustomIsBroodmotherLoadoutSpawn"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_spawn_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_spawn_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_spawn_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_spawn_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_spawn_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_battlebegins_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_attack_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_attack_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_ability_spawn_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_kill_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_lasthit_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_ability_hunger_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "broodmother_KillIsFirstBlood"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_firstblood_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_firstblood_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "broodmother_Kill"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_ability_incap_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_ability_incap_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_ability_incap_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_kill_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_kill_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_kill_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_kill_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_kill_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_kill_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_kill_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_kill_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_kill_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_kill_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_kill_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_kill_12.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_kill_13.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_kill_14.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_kill_15.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_kill_16.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_kill_17.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_kill_18.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_laugh_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_laugh_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_laugh_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_laugh_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_laugh_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_laugh_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_laugh_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_laugh_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_laugh_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_laugh_10.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "broodmother_KillIsEnemyWeaverChance_35%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_rival_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "broodmother_KillIsEnemyNyx_AssassinChance_35%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_rival_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "broodmother_KillIsEnemySandKingChance_35%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_rival_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "broodmother_KillIsEnemySlardarChance_35%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_rival_04.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "broodmother_KillIsEnemyNight_StalkerChance_35%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_rival_05.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "broodmother_KillIsEnemyBounty_HunterChance_35%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_rival_06.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "broodmother_KillIsEnemyEarthShakerChance_35%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_rival_07.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "broodmother_KillIsEnemyKunkkaChance_35%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_rival_08.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "broodmother_KillIsEnemyEnigmaChance_35%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_rival_09.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "broodmother_Move"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_move_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_move_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_move_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_move_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_move_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_move_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_move_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_move_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_move_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_move_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_move_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_move_12.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_move_13.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_move_14.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_move_15.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_move_16.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "broodmother_MoveIsBroodmotherIsBroodmotherSpiderling"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_ability_spawn_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_ability_spawn_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_ability_spawn_09.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "broodmother_Attack"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_attack_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_attack_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_attack_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_attack_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_attack_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_attack_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_attack_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_attack_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_attack_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_attack_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_attack_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_attack_12.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_attack_13.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "broodmother_AttackIsBroodmotherIsBroodmotherSpiderling"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_ability_spawn_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_ability_spawn_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_ability_spawn_12.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "broodmother_CastOrder"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_cast_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_cast_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_cast_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_cast_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_ability_spawn_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_ability_hunger_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_ability_hunger_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_ability_hunger_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_ability_hunger_06.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "broodmother_ItemDropIsUltraRareDrop"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_ability_spawn_06.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "broodmother_ItemDropIsRareDrop"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_happy_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_happy_07.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "broodmother_ItemDropIsCommonDrop"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_happy_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_happy_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_happy_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_happy_08.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "broodmother_CastExecuteIsBroodmotherWebChance_75%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_ability_spin_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_ability_spin_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_ability_spin_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_ability_spin_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_ability_spin_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_ability_spin_06.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "broodmother_CastExecuteIsItemSheepstick"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_rare_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "broodmother_LevelUp"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_level_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_level_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_level_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_level_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_level_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_level_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_level_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_level_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_level_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_level_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_level_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_level_12.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_level_13.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "broodmother_LastHit"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_lasthit_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_lasthit_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_lasthit_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_lasthit_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_lasthit_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_lasthit_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_lasthit_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_lasthit_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_lasthit_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_lasthit_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_lasthit_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_lasthit_12.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_lasthit_13.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "broodmother_Death"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_death_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_death_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_death_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_death_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_death_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_death_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_death_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_death_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_death_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_death_10.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "broodmother_DeathIsReincarnating"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_fastres_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "broodmother_Respawn"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_respawn_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_respawn_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_respawn_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_respawn_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_respawn_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_respawn_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_respawn_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_respawn_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_respawn_09.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "broodmother_PurchaseIsExpensiveItem"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_purch_01.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_purch_02.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_purch_03.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "broodmother_PurchaseIsBlinkDagger"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_blink_01.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "broodmother_PurchaseIsUltimateScepter"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_scepter_01.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_scepter_02.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "broodmother_PurchaseIsVladmirs"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_item_01.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "broodmother_PurchaseIsBlackKingBar"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_item_02.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "broodmother_PurchaseIsButterfly"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_item_03.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "broodmother_PurchaseIsMonkeyKingBar"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_item_04.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "broodmother_PurchaseIsHeart"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_item_05.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "broodmother_PurchaseIsRadiance"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_item_06.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "broodmother_Bottling"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_bottle_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_bottle_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_bottle_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "broodmother_Deny"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_deny_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_deny_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_deny_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_deny_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_deny_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_deny_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_deny_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_deny_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_deny_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_deny_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_deny_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_deny_12.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "broodmother_Defeat"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_lose_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_lose_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_lose_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "broodmother_Victory"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_win_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_win_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_win_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "broodmother_Immortality"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_immort_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "broodmother_ImmortalityChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_immort_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "broodmother_PowerupIsPowerupBounty"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_deny_11.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 300.000000
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "broodmother_PowerupIsPowerupArcane"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_ability_spawn_06.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 300.000000
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "broodmother_PowerupIsPowerupHaste"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_haste_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "broodmother_PowerupIsPowerupDoubleDamage"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_doubdam_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "broodmother_PowerupIsPowerupRegeneration"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_regen_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "broodmother_PowerupIsPowerupIllusion"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_illus_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "broodmother_PowerupIsPowerupIllusionChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_illus_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "broodmother_PowerupIsPowerupInvisibility"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_invis_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "broodmother_PowerupIsPowerupInvisibilityChance_5%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_invis_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "broodmother_CooldownLittleNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_notyet_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_notyet_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_notyet_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "broodmother_CooldownMediumNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_notyet_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_notyet_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_notyet_06.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "broodmother_CooldownSuperNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_notyet_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_notyet_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_notyet_09.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "broodmother_NoManaLittleNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_nomana_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_nomana_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_nomana_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "broodmother_NoManaMediumNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_nomana_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_nomana_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_nomana_06.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "broodmother_NoManaSuperNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_nomana_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_nomana_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_nomana_09.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "broodmother_Thanks"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_thanks_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_thanks_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "broodmother_PainChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_underattack_01.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 120.000000
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "broodmother_Pain"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_pain_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_pain_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_pain_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_pain_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_pain_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_pain_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_pain_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_pain_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_pain_09.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "broodmother_InTheBag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_inthebag_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "broodmother_EmoteIsEmoteLaugh"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_laugh_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_laugh_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_laugh_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_laugh_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_laugh_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_laugh_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_laugh_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_laugh_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_laugh_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_laugh_10.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "broodmother_Select"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_respawn_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_rare_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_ability_hunger_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "broodmother_TauntIsBroodTauntSpiderShuffle"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/broodmother/broodmother_broo_laugh_02.vcd"
+				},
+			]
+		},
+	]
+	m_Requirements = 
+	[
+		
+		{
+			m_name = "Isbroodmother"
+			m_matchKey = "classname"
+			m_matchExpr = "npc_dota_hero_broodmother"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsBroodmotherSpiderling"
+			m_matchKey = "beastname"
+			m_matchExpr = "spiderling"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsBroodmotherWeb"
+			m_matchKey = "abilityname"
+			m_matchExpr = "broodmother_spin_web"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsItemSheepstick"
+			m_matchKey = "abilityname"
+			m_matchExpr = "item_sheepstick"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsBroodmotherLoadoutSpawn"
+			m_matchKey = "special_spawn"
+			m_matchExpr = "broodmother_loadout_spawn"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsBroodTauntSpiderShuffle"
+			m_matchKey = "taunt_type"
+			m_matchExpr = "broodmother_spin"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+	]
+	m_Rules = 
+	[
+		
+		{
+			m_name = "broodmother_Spawn_Rule"
+			m_Requirements = 
+			[
+				"Spawn",
+				"Isbroodmother",
+			]
+			m_ResponseGroups = 
+			[
+				"broodmother_Spawn",
+			]
+		},
+		
+		{
+			m_name = "broodmother_CustomIsGameStart_Rule"
+			m_Requirements = 
+			[
+				"Custom",
+				"Isbroodmother",
+				"IsGameStart",
+			]
+			m_ResponseGroups = 
+			[
+				"broodmother_CustomIsGameStart",
+			]
+		},
+		
+		{
+			m_name = "broodmother_CustomIsBroodmotherLoadoutSpawn_Rule"
+			m_Requirements = 
+			[
+				"Custom",
+				"Isbroodmother",
+				"IsBroodmotherLoadoutSpawn",
+			]
+			m_ResponseGroups = 
+			[
+				"broodmother_CustomIsBroodmotherLoadoutSpawn",
+			]
+		},
+		
+		{
+			m_name = "broodmother_KillIsFirstBlood_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isbroodmother",
+				"IsFirstBlood",
+			]
+			m_ResponseGroups = 
+			[
+				"broodmother_KillIsFirstBlood",
+			]
+		},
+		
+		{
+			m_name = "broodmother_Kill_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isbroodmother",
+			]
+			m_ResponseGroups = 
+			[
+				"broodmother_Kill",
+			]
+		},
+		
+		{
+			m_name = "broodmother_KillIsEnemyWeaverChance_35%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isbroodmother",
+				"IsEnemyWeaver",
+				"Chance_35%",
+			]
+			m_ResponseGroups = 
+			[
+				"broodmother_KillIsEnemyWeaverChance_35%",
+			]
+		},
+		
+		{
+			m_name = "broodmother_KillIsEnemyNyx_AssassinChance_35%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isbroodmother",
+				"IsEnemyNyx_Assassin",
+				"Chance_35%",
+			]
+			m_ResponseGroups = 
+			[
+				"broodmother_KillIsEnemyNyx_AssassinChance_35%",
+			]
+		},
+		
+		{
+			m_name = "broodmother_KillIsEnemySandKingChance_35%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isbroodmother",
+				"IsEnemySandKing",
+				"Chance_35%",
+			]
+			m_ResponseGroups = 
+			[
+				"broodmother_KillIsEnemySandKingChance_35%",
+			]
+		},
+		
+		{
+			m_name = "broodmother_KillIsEnemySlardarChance_35%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isbroodmother",
+				"IsEnemySlardar",
+				"Chance_35%",
+			]
+			m_ResponseGroups = 
+			[
+				"broodmother_KillIsEnemySlardarChance_35%",
+			]
+		},
+		
+		{
+			m_name = "broodmother_KillIsEnemyNight_StalkerChance_35%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isbroodmother",
+				"IsEnemyNight_Stalker",
+				"Chance_35%",
+			]
+			m_ResponseGroups = 
+			[
+				"broodmother_KillIsEnemyNight_StalkerChance_35%",
+			]
+		},
+		
+		{
+			m_name = "broodmother_KillIsEnemyBounty_HunterChance_35%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isbroodmother",
+				"IsEnemyBounty_Hunter",
+				"Chance_35%",
+			]
+			m_ResponseGroups = 
+			[
+				"broodmother_KillIsEnemyBounty_HunterChance_35%",
+			]
+		},
+		
+		{
+			m_name = "broodmother_KillIsEnemyEarthShakerChance_35%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isbroodmother",
+				"IsEnemyEarthShaker",
+				"Chance_35%",
+			]
+			m_ResponseGroups = 
+			[
+				"broodmother_KillIsEnemyEarthShakerChance_35%",
+			]
+		},
+		
+		{
+			m_name = "broodmother_KillIsEnemyKunkkaChance_35%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isbroodmother",
+				"IsEnemyKunkka",
+				"Chance_35%",
+			]
+			m_ResponseGroups = 
+			[
+				"broodmother_KillIsEnemyKunkkaChance_35%",
+			]
+		},
+		
+		{
+			m_name = "broodmother_KillIsEnemyEnigmaChance_35%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isbroodmother",
+				"IsEnemyEnigma",
+				"Chance_35%",
+			]
+			m_ResponseGroups = 
+			[
+				"broodmother_KillIsEnemyEnigmaChance_35%",
+			]
+		},
+		
+		{
+			m_name = "broodmother_Move_Rule"
+			m_Requirements = 
+			[
+				"Move",
+				"Isbroodmother",
+			]
+			m_ResponseGroups = 
+			[
+				"broodmother_Move",
+			]
+		},
+		
+		{
+			m_name = "broodmother_MoveIsBroodmotherIsBroodmotherSpiderling_Rule"
+			m_Requirements = 
+			[
+				"Move",
+				"Isbroodmother",
+				"IsBroodmother",
+				"IsBroodmotherSpiderling",
+			]
+			m_ResponseGroups = 
+			[
+				"broodmother_MoveIsBroodmotherIsBroodmotherSpiderling",
+			]
+		},
+		
+		{
+			m_name = "broodmother_Attack_Rule"
+			m_Requirements = 
+			[
+				"Attack",
+				"Isbroodmother",
+			]
+			m_ResponseGroups = 
+			[
+				"broodmother_Attack",
+			]
+		},
+		
+		{
+			m_name = "broodmother_AttackIsBroodmotherIsBroodmotherSpiderling_Rule"
+			m_Requirements = 
+			[
+				"Attack",
+				"Isbroodmother",
+				"IsBroodmother",
+				"IsBroodmotherSpiderling",
+			]
+			m_ResponseGroups = 
+			[
+				"broodmother_AttackIsBroodmotherIsBroodmotherSpiderling",
+			]
+		},
+		
+		{
+			m_name = "broodmother_CastOrder_Rule"
+			m_Requirements = 
+			[
+				"CastOrder",
+				"Isbroodmother",
+			]
+			m_ResponseGroups = 
+			[
+				"broodmother_CastOrder",
+			]
+		},
+		
+		{
+			m_name = "broodmother_ItemDropIsUltraRareDrop_Rule"
+			m_Requirements = 
+			[
+				"ItemDrop",
+				"Isbroodmother",
+				"IsUltraRareDrop",
+			]
+			m_ResponseGroups = 
+			[
+				"broodmother_ItemDropIsUltraRareDrop",
+			]
+		},
+		
+		{
+			m_name = "broodmother_ItemDropIsRareDrop_Rule"
+			m_Requirements = 
+			[
+				"ItemDrop",
+				"Isbroodmother",
+				"IsRareDrop",
+			]
+			m_ResponseGroups = 
+			[
+				"broodmother_ItemDropIsRareDrop",
+			]
+		},
+		
+		{
+			m_name = "broodmother_ItemDropIsCommonDrop_Rule"
+			m_Requirements = 
+			[
+				"ItemDrop",
+				"Isbroodmother",
+				"IsCommonDrop",
+			]
+			m_ResponseGroups = 
+			[
+				"broodmother_ItemDropIsCommonDrop",
+			]
+		},
+		
+		{
+			m_name = "broodmother_CastExecuteIsBroodmotherWebChance_75%_Rule"
+			m_Requirements = 
+			[
+				"CastExecute",
+				"Isbroodmother",
+				"IsBroodmotherWeb",
+				"Chance_75%",
+			]
+			m_ResponseGroups = 
+			[
+				"broodmother_CastExecuteIsBroodmotherWebChance_75%",
+			]
+		},
+		
+		{
+			m_name = "broodmother_CastExecuteIsItemSheepstick_Rule"
+			m_Requirements = 
+			[
+				"CastExecute",
+				"Isbroodmother",
+				"IsItemSheepstick",
+			]
+			m_ResponseGroups = 
+			[
+				"broodmother_CastExecuteIsItemSheepstick",
+			]
+		},
+		
+		{
+			m_name = "broodmother_LevelUp_Rule"
+			m_Requirements = 
+			[
+				"LevelUp",
+				"Isbroodmother",
+			]
+			m_ResponseGroups = 
+			[
+				"broodmother_LevelUp",
+			]
+		},
+		
+		{
+			m_name = "broodmother_LastHit_Rule"
+			m_Requirements = 
+			[
+				"LastHit",
+				"Isbroodmother",
+			]
+			m_ResponseGroups = 
+			[
+				"broodmother_LastHit",
+			]
+		},
+		
+		{
+			m_name = "broodmother_Death_Rule"
+			m_Requirements = 
+			[
+				"Death",
+				"Isbroodmother",
+			]
+			m_ResponseGroups = 
+			[
+				"broodmother_Death",
+			]
+		},
+		
+		{
+			m_name = "broodmother_DeathIsReincarnating_Rule"
+			m_Requirements = 
+			[
+				"Death",
+				"Isbroodmother",
+				"IsReincarnating",
+			]
+			m_ResponseGroups = 
+			[
+				"broodmother_DeathIsReincarnating",
+			]
+		},
+		
+		{
+			m_name = "broodmother_Respawn_Rule"
+			m_Requirements = 
+			[
+				"Respawn",
+				"Isbroodmother",
+			]
+			m_ResponseGroups = 
+			[
+				"broodmother_Respawn",
+			]
+		},
+		
+		{
+			m_name = "broodmother_PurchaseIsExpensiveItem_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isbroodmother",
+				"IsExpensiveItem",
+			]
+			m_ResponseGroups = 
+			[
+				"broodmother_PurchaseIsExpensiveItem",
+			]
+		},
+		
+		{
+			m_name = "broodmother_PurchaseIsBlinkDagger_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isbroodmother",
+				"IsBlinkDagger",
+			]
+			m_ResponseGroups = 
+			[
+				"broodmother_PurchaseIsBlinkDagger",
+			]
+		},
+		
+		{
+			m_name = "broodmother_PurchaseIsUltimateScepter_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isbroodmother",
+				"IsUltimateScepter",
+			]
+			m_ResponseGroups = 
+			[
+				"broodmother_PurchaseIsUltimateScepter",
+			]
+		},
+		
+		{
+			m_name = "broodmother_PurchaseIsVladmirs_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isbroodmother",
+				"IsVladmirs",
+			]
+			m_ResponseGroups = 
+			[
+				"broodmother_PurchaseIsVladmirs",
+			]
+		},
+		
+		{
+			m_name = "broodmother_PurchaseIsBlackKingBar_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isbroodmother",
+				"IsBlackKingBar",
+			]
+			m_ResponseGroups = 
+			[
+				"broodmother_PurchaseIsBlackKingBar",
+			]
+		},
+		
+		{
+			m_name = "broodmother_PurchaseIsButterfly_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isbroodmother",
+				"IsButterfly",
+			]
+			m_ResponseGroups = 
+			[
+				"broodmother_PurchaseIsButterfly",
+			]
+		},
+		
+		{
+			m_name = "broodmother_PurchaseIsMonkeyKingBar_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isbroodmother",
+				"IsMonkeyKingBar",
+			]
+			m_ResponseGroups = 
+			[
+				"broodmother_PurchaseIsMonkeyKingBar",
+			]
+		},
+		
+		{
+			m_name = "broodmother_PurchaseIsHeart_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isbroodmother",
+				"IsHeart",
+			]
+			m_ResponseGroups = 
+			[
+				"broodmother_PurchaseIsHeart",
+			]
+		},
+		
+		{
+			m_name = "broodmother_PurchaseIsRadiance_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isbroodmother",
+				"IsRadiance",
+			]
+			m_ResponseGroups = 
+			[
+				"broodmother_PurchaseIsRadiance",
+			]
+		},
+		
+		{
+			m_name = "broodmother_Bottling_Rule"
+			m_Requirements = 
+			[
+				"Bottling",
+				"Isbroodmother",
+			]
+			m_ResponseGroups = 
+			[
+				"broodmother_Bottling",
+			]
+		},
+		
+		{
+			m_name = "broodmother_Deny_Rule"
+			m_Requirements = 
+			[
+				"Deny",
+				"Isbroodmother",
+			]
+			m_ResponseGroups = 
+			[
+				"broodmother_Deny",
+			]
+		},
+		
+		{
+			m_name = "broodmother_Defeat_Rule"
+			m_Requirements = 
+			[
+				"Defeat",
+				"Isbroodmother",
+			]
+			m_ResponseGroups = 
+			[
+				"broodmother_Defeat",
+			]
+		},
+		
+		{
+			m_name = "broodmother_Victory_Rule"
+			m_Requirements = 
+			[
+				"Victory",
+				"Isbroodmother",
+			]
+			m_ResponseGroups = 
+			[
+				"broodmother_Victory",
+			]
+		},
+		
+		{
+			m_name = "broodmother_Immortality_Rule"
+			m_Requirements = 
+			[
+				"Immortality",
+				"Isbroodmother",
+			]
+			m_ResponseGroups = 
+			[
+				"broodmother_Immortality",
+			]
+		},
+		
+		{
+			m_name = "broodmother_ImmortalityChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Immortality",
+				"Isbroodmother",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"broodmother_ImmortalityChance_25%",
+			]
+		},
+		
+		{
+			m_name = "broodmother_PowerupIsPowerupBounty_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isbroodmother",
+				"IsPowerupBounty",
+			]
+			m_ResponseGroups = 
+			[
+				"broodmother_PowerupIsPowerupBounty",
+			]
+		},
+		
+		{
+			m_name = "broodmother_PowerupIsPowerupArcane_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isbroodmother",
+				"IsPowerupArcane",
+			]
+			m_ResponseGroups = 
+			[
+				"broodmother_PowerupIsPowerupArcane",
+			]
+		},
+		
+		{
+			m_name = "broodmother_PowerupIsPowerupHaste_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isbroodmother",
+				"IsPowerupHaste",
+			]
+			m_ResponseGroups = 
+			[
+				"broodmother_PowerupIsPowerupHaste",
+			]
+		},
+		
+		{
+			m_name = "broodmother_PowerupIsPowerupDoubleDamage_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isbroodmother",
+				"IsPowerupDoubleDamage",
+			]
+			m_ResponseGroups = 
+			[
+				"broodmother_PowerupIsPowerupDoubleDamage",
+			]
+		},
+		
+		{
+			m_name = "broodmother_PowerupIsPowerupRegeneration_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isbroodmother",
+				"IsPowerupRegeneration",
+			]
+			m_ResponseGroups = 
+			[
+				"broodmother_PowerupIsPowerupRegeneration",
+			]
+		},
+		
+		{
+			m_name = "broodmother_PowerupIsPowerupIllusion_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isbroodmother",
+				"IsPowerupIllusion",
+			]
+			m_ResponseGroups = 
+			[
+				"broodmother_PowerupIsPowerupIllusion",
+			]
+		},
+		
+		{
+			m_name = "broodmother_PowerupIsPowerupIllusionChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isbroodmother",
+				"IsPowerupIllusion",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"broodmother_PowerupIsPowerupIllusionChance_25%",
+			]
+		},
+		
+		{
+			m_name = "broodmother_PowerupIsPowerupInvisibility_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isbroodmother",
+				"IsPowerupInvisibility",
+			]
+			m_ResponseGroups = 
+			[
+				"broodmother_PowerupIsPowerupInvisibility",
+			]
+		},
+		
+		{
+			m_name = "broodmother_PowerupIsPowerupInvisibilityChance_5%_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isbroodmother",
+				"IsPowerupInvisibility",
+				"Chance_5%",
+			]
+			m_ResponseGroups = 
+			[
+				"broodmother_PowerupIsPowerupInvisibilityChance_5%",
+			]
+		},
+		
+		{
+			m_name = "broodmother_CooldownLittleNag_Rule"
+			m_Requirements = 
+			[
+				"Cooldown",
+				"Isbroodmother",
+				"LittleNag",
+			]
+			m_ResponseGroups = 
+			[
+				"broodmother_CooldownLittleNag",
+			]
+		},
+		
+		{
+			m_name = "broodmother_CooldownMediumNag_Rule"
+			m_Requirements = 
+			[
+				"Cooldown",
+				"Isbroodmother",
+				"MediumNag",
+			]
+			m_ResponseGroups = 
+			[
+				"broodmother_CooldownMediumNag",
+			]
+		},
+		
+		{
+			m_name = "broodmother_CooldownSuperNag_Rule"
+			m_Requirements = 
+			[
+				"Cooldown",
+				"Isbroodmother",
+				"SuperNag",
+			]
+			m_ResponseGroups = 
+			[
+				"broodmother_CooldownSuperNag",
+			]
+		},
+		
+		{
+			m_name = "broodmother_NoManaLittleNag_Rule"
+			m_Requirements = 
+			[
+				"NoMana",
+				"Isbroodmother",
+				"LittleNag",
+			]
+			m_ResponseGroups = 
+			[
+				"broodmother_NoManaLittleNag",
+			]
+		},
+		
+		{
+			m_name = "broodmother_NoManaMediumNag_Rule"
+			m_Requirements = 
+			[
+				"NoMana",
+				"Isbroodmother",
+				"MediumNag",
+			]
+			m_ResponseGroups = 
+			[
+				"broodmother_NoManaMediumNag",
+			]
+		},
+		
+		{
+			m_name = "broodmother_NoManaSuperNag_Rule"
+			m_Requirements = 
+			[
+				"NoMana",
+				"Isbroodmother",
+				"SuperNag",
+			]
+			m_ResponseGroups = 
+			[
+				"broodmother_NoManaSuperNag",
+			]
+		},
+		
+		{
+			m_name = "broodmother_Thanks_Rule"
+			m_Requirements = 
+			[
+				"Thanks",
+				"Isbroodmother",
+			]
+			m_ResponseGroups = 
+			[
+				"broodmother_Thanks",
+			]
+		},
+		
+		{
+			m_name = "broodmother_PainChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Pain",
+				"Isbroodmother",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"broodmother_PainChance_25%",
+			]
+		},
+		
+		{
+			m_name = "broodmother_Pain_Rule"
+			m_Requirements = 
+			[
+				"Pain",
+				"Isbroodmother",
+			]
+			m_ResponseGroups = 
+			[
+				"broodmother_Pain",
+			]
+		},
+		
+		{
+			m_name = "broodmother_InTheBag_Rule"
+			m_Requirements = 
+			[
+				"InTheBag",
+				"Isbroodmother",
+			]
+			m_ResponseGroups = 
+			[
+				"broodmother_InTheBag",
+			]
+		},
+		
+		{
+			m_name = "broodmother_EmoteIsEmoteLaugh_Rule"
+			m_Requirements = 
+			[
+				"Emote",
+				"Isbroodmother",
+				"IsEmoteLaugh",
+			]
+			m_ResponseGroups = 
+			[
+				"broodmother_EmoteIsEmoteLaugh",
+			]
+		},
+		
+		{
+			m_name = "broodmother_Select_Rule"
+			m_Requirements = 
+			[
+				"Select",
+				"Isbroodmother",
+			]
+			m_ResponseGroups = 
+			[
+				"broodmother_Select",
+			]
+		},
+		
+		{
+			m_name = "broodmother_TauntIsBroodTauntSpiderShuffle_Rule"
+			m_Requirements = 
+			[
+				"Taunt",
+				"Isbroodmother",
+				"IsBroodTauntSpiderShuffle",
+			]
+			m_ResponseGroups = 
+			[
+				"broodmother_TauntIsBroodTauntSpiderShuffle",
+			]
+		},
+	]
 }
-

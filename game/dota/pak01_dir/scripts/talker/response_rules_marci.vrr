@@ -1,72 +1,217 @@
-#include "talker/response_rules_shared.vrr"
-
-criterion "Ismarci" "classname" "npc_dota_hero_marci" weight 5 required
-
-Response marci_Deny
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vrfunknown:version{c1f07085-5299-4e8a-b7e9-1cbb66bbbe23} -->
 {
-	scene "scenes/marci/marci_marci_deny.vcd" nodelay respeakdelay 30
+	m_Includes = 
+	[
+		"scripts/talker/response_rules_shared.vrr",
+	]
+	m_ResponseGroups = 
+	[
+		
+		{
+			m_name = "marci_Deny"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/marci/marci_marci_deny.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 30.000000
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "marci_Immortality"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/marci/marci_marci_immortality.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "marci_Move"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/marci/marci_marci_move.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 60.000000
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/marci/marci_marci_move_2.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 60.000000
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/marci/marci_marci_move_3.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 60.000000
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "marci_Pain"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/marci/marci_marci_taking_damage.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 10.000000
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "marci_Thanks"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/marci/marci_marci_thanks.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 30.000000
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "marci_EmoteIsEmoteLaugh"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/marci/marci_marci_laugh.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 60.000000
+					}
+				},
+			]
+		},
+	]
+	m_Requirements = 
+	[
+		
+		{
+			m_name = "Ismarci"
+			m_matchKey = "classname"
+			m_matchExpr = "npc_dota_hero_marci"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+	]
+	m_Rules = 
+	[
+		
+		{
+			m_name = "marci_Deny_Rule"
+			m_Requirements = 
+			[
+				"Deny",
+				"Ismarci",
+			]
+			m_ResponseGroups = 
+			[
+				"marci_Deny",
+			]
+		},
+		
+		{
+			m_name = "marci_Immortality_Rule"
+			m_Requirements = 
+			[
+				"Immortality",
+				"Ismarci",
+			]
+			m_ResponseGroups = 
+			[
+				"marci_Immortality",
+			]
+		},
+		
+		{
+			m_name = "marci_Move_Rule"
+			m_Requirements = 
+			[
+				"Move",
+				"Ismarci",
+			]
+			m_ResponseGroups = 
+			[
+				"marci_Move",
+			]
+		},
+		
+		{
+			m_name = "marci_Pain_Rule"
+			m_Requirements = 
+			[
+				"Pain",
+				"Ismarci",
+			]
+			m_ResponseGroups = 
+			[
+				"marci_Pain",
+			]
+		},
+		
+		{
+			m_name = "marci_Thanks_Rule"
+			m_Requirements = 
+			[
+				"Thanks",
+				"Ismarci",
+			]
+			m_ResponseGroups = 
+			[
+				"marci_Thanks",
+			]
+		},
+		
+		{
+			m_name = "marci_EmoteIsEmoteLaugh_Rule"
+			m_Requirements = 
+			[
+				"Emote",
+				"Ismarci",
+				"IsEmoteLaugh",
+			]
+			m_ResponseGroups = 
+			[
+				"marci_EmoteIsEmoteLaugh",
+			]
+		},
+	]
 }
-
-Rule marci_Deny_Rule
-{
-	criteria Deny Ismarci 
-	response marci_Deny
-}
-
-Response marci_Immortality
-{
-	scene "scenes/marci/marci_marci_immortality.vcd" nodelay speakonce
-}
-
-Rule marci_Immortality_Rule
-{
-	criteria Immortality Ismarci 
-	response marci_Immortality
-}
-
-Response marci_Move
-{
-	scene "scenes/marci/marci_marci_move.vcd" nodelay respeakdelay 60
-	scene "scenes/marci/marci_marci_move_2.vcd" nodelay respeakdelay 60
-	scene "scenes/marci/marci_marci_move_3.vcd" nodelay respeakdelay 60
-}
-
-Rule marci_Move_Rule
-{
-	criteria Move Ismarci 
-	response marci_Move
-}
-
-Response marci_Pain
-{
-	scene "scenes/marci/marci_marci_taking_damage.vcd" nodelay respeakdelay 10
-}
-
-Rule marci_Pain_Rule
-{
-	criteria Pain Ismarci 
-	response marci_Pain
-}
-
-Response marci_Thanks
-{
-	scene "scenes/marci/marci_marci_thanks.vcd" nodelay respeakdelay 30
-}
-
-Rule marci_Thanks_Rule
-{
-	criteria Thanks Ismarci 
-	response marci_Thanks
-}
-
-Response marci_EmoteIsEmoteLaugh
-{
-	scene "scenes/marci/marci_marci_laugh.vcd" nodelay respeakdelay 60
-}
-
-Rule marci_EmoteIsEmoteLaugh_Rule
-{
-	criteria Emote Ismarci IsEmoteLaugh
-	response marci_EmoteIsEmoteLaugh
-}
-

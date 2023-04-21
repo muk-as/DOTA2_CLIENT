@@ -1,405 +1,1004 @@
-#include "talker/response_rules_shared.vrr"
-
-criterion "Isphoenix" "classname" "npc_dota_hero_phoenix" weight 5 required
-criterion "IsPhoenixDive" "abilityname" "phoenix_icarus_dive" weight 5 required
-criterion "IsPhoenixSpiritsSummon" "abilityname" "phoenix_fire_spirits" weight 5 required
-criterion "IsPhoenixSpiritsSend" "abiltyname" "phoenix_launch_fire_spirit" weight 5 required
-criterion "IsPhoenixSupernova" "abilityname" "phoenix_supernova" weight 5 required
-
-Response phoenix_spawn
-{
-	scene "scenes/phoenix/phoenix_phoenix_bird_respawn.vcd" nodelay 
-}
-
-Rule phoenix_spawn_Rule
-{
-	criteria spawn Isphoenix 
-	response phoenix_spawn
-}
-
-Response phoenix_CustomIsGameStart
-{
-	scene "scenes/phoenix/phoenix_phoenix_bird_victory.vcd" nodelay 
-}
-
-Rule phoenix_CustomIsGameStart_Rule
-{
-	criteria Custom Isphoenix IsGameStart
-	response phoenix_CustomIsGameStart
-}
-
-Response phoenix_Move
-{
-	scene "scenes/phoenix/phoenix_phoenix_bird_moving01.vcd" nodelay 
-	scene "scenes/phoenix/phoenix_phoenix_bird_moving02.vcd" nodelay 
-}
-
-Rule phoenix_Move_Rule
-{
-	criteria Move Isphoenix 
-	response phoenix_Move
-}
-
-Response phoenix_Attack
-{
-	scene "scenes/phoenix/phoenix_phoenix_bird_attack.vcd" nodelay 
-}
-
-Rule phoenix_Attack_Rule
-{
-	criteria Attack Isphoenix 
-	response phoenix_Attack
-}
-
-Response phoenix_LevelUp
-{
-	scene "scenes/phoenix/phoenix_phoenix_bird_level_up.vcd" nodelay 
-}
-
-Rule phoenix_LevelUp_Rule
-{
-	criteria LevelUp Isphoenix 
-	response phoenix_LevelUp
-}
-
-Response phoenix_Kill
-{
-	scene "scenes/phoenix/phoenix_phoenix_bird_kill.vcd" nodelay 
-}
-
-Rule phoenix_Kill_Rule
-{
-	criteria Kill Isphoenix 
-	response phoenix_Kill
-}
-
-Response phoenix_KillChance_50%IsEnemyInvoker
-{
-	scene "scenes/phoenix/phoenix_phoenix_bird_emote_bad.vcd" nodelay 
-}
-
-Rule phoenix_KillChance_50%IsEnemyInvoker_Rule
-{
-	criteria Kill Isphoenix Chance_50% IsEnemyInvoker
-	response phoenix_KillChance_50%IsEnemyInvoker
-}
-
-Response phoenix_KillChance_50%IsEnemyKeeper_of_the_Light
-{
-	scene "scenes/phoenix/phoenix_phoenix_bird_emote_bad.vcd" nodelay 
-}
-
-Rule phoenix_KillChance_50%IsEnemyKeeper_of_the_Light_Rule
-{
-	criteria Kill Isphoenix Chance_50% IsEnemyKeeper_of_the_Light
-	response phoenix_KillChance_50%IsEnemyKeeper_of_the_Light
-}
-
-Response phoenix_KillChance_50%IsEnemyLina
-{
-	scene "scenes/phoenix/phoenix_phoenix_bird_emote_bad.vcd" nodelay 
-}
-
-Rule phoenix_KillChance_50%IsEnemyLina_Rule
-{
-	criteria Kill Isphoenix Chance_50% IsEnemyLina
-	response phoenix_KillChance_50%IsEnemyLina
-}
-
-Response phoenix_KillChance_50%IsEnemyAlchemist
-{
-	scene "scenes/phoenix/phoenix_phoenix_bird_emote_bad.vcd" nodelay 
-}
-
-Rule phoenix_KillChance_50%IsEnemyAlchemist_Rule
-{
-	criteria Kill Isphoenix Chance_50% IsEnemyAlchemist
-	response phoenix_KillChance_50%IsEnemyAlchemist
-}
-
-Response phoenix_KillChance_50%IsEnemySkywrath_Mage
-{
-	scene "scenes/phoenix/phoenix_phoenix_bird_emote_bad.vcd" nodelay 
-}
-
-Rule phoenix_KillChance_50%IsEnemySkywrath_Mage_Rule
-{
-	criteria Kill Isphoenix Chance_50% IsEnemySkywrath_Mage
-	response phoenix_KillChance_50%IsEnemySkywrath_Mage
-}
-
-Response phoenix_KillChance_50%IsEnemyElder_Titan
-{
-	scene "scenes/phoenix/phoenix_phoenix_bird_emote_bad.vcd" nodelay 
-}
-
-Rule phoenix_KillChance_50%IsEnemyElder_Titan_Rule
-{
-	criteria Kill Isphoenix Chance_50% IsEnemyElder_Titan
-	response phoenix_KillChance_50%IsEnemyElder_Titan
-}
-
-Response phoenix_KillChance_50%IsEnemyAbyssal_Underlord
-{
-	scene "scenes/phoenix/phoenix_phoenix_bird_emote_bad.vcd" nodelay 
-}
-
-Rule phoenix_KillChance_50%IsEnemyAbyssal_Underlord_Rule
-{
-	criteria Kill Isphoenix Chance_50% IsEnemyAbyssal_Underlord
-	response phoenix_KillChance_50%IsEnemyAbyssal_Underlord
-}
-
-Response phoenix_KillChance_50%IsEnemyEnigma
-{
-	scene "scenes/phoenix/phoenix_phoenix_bird_emote_bad.vcd" nodelay 
-}
-
-Rule phoenix_KillChance_50%IsEnemyEnigma_Rule
-{
-	criteria Kill Isphoenix Chance_50% IsEnemyEnigma
-	response phoenix_KillChance_50%IsEnemyEnigma
-}
-
-Response phoenix_KillChance_50%IsEnemyAncient_Apparition
-{
-	scene "scenes/phoenix/phoenix_phoenix_bird_emote_bad.vcd" nodelay 
-}
-
-Rule phoenix_KillChance_50%IsEnemyAncient_Apparition_Rule
-{
-	criteria Kill Isphoenix Chance_50% IsEnemyAncient_Apparition
-	response phoenix_KillChance_50%IsEnemyAncient_Apparition
-}
-
-Response phoenix_KillChance_50%IsEnemyTerrorblade
-{
-	scene "scenes/phoenix/phoenix_phoenix_bird_emote_bad.vcd" nodelay 
-}
-
-Rule phoenix_KillChance_50%IsEnemyTerrorblade_Rule
-{
-	criteria Kill Isphoenix Chance_50% IsEnemyTerrorblade
-	response phoenix_KillChance_50%IsEnemyTerrorblade
-}
-
-Response phoenix_Death
-{
-	scene "scenes/phoenix/phoenix_phoenix_bird_death_defeat.vcd" nodelay 
-}
-
-Rule phoenix_Death_Rule
-{
-	criteria Death Isphoenix 
-	response phoenix_Death
-}
-
-Response phoenix_Respawn
-{
-	scene "scenes/phoenix/phoenix_phoenix_bird_respawn.vcd" nodelay 
-}
-
-Rule phoenix_Respawn_Rule
-{
-	criteria Respawn Isphoenix 
-	response phoenix_Respawn
-}
-
-Response phoenix_LastHit
-{
-	scene "scenes/phoenix/phoenix_phoenix_bird_last_hit.vcd" nodelay 
-}
-
-Rule phoenix_LastHit_Rule
-{
-	criteria LastHit Isphoenix 
-	response phoenix_LastHit
-}
-
-Response phoenix_Deny
-{
-	scene "scenes/phoenix/phoenix_phoenix_bird_denied.vcd" nodelay 
-}
-
-Rule phoenix_Deny_Rule
-{
-	criteria Deny Isphoenix 
-	response phoenix_Deny
-}
-
-Response phoenix_Defeat
-{
-	scene "scenes/phoenix/phoenix_phoenix_bird_death_defeat.vcd" nodelay 
-}
-
-Rule phoenix_Defeat_Rule
-{
-	criteria Defeat Isphoenix 
-	response phoenix_Defeat
-}
-
-Response phoenix_Victory
-{
-	scene "scenes/phoenix/phoenix_phoenix_bird_victory.vcd" nodelay 
-}
-
-Rule phoenix_Victory_Rule
-{
-	criteria Victory Isphoenix 
-	response phoenix_Victory
-}
-
-Response phoenix_Immortality
-{
-	scene "scenes/phoenix/phoenix_phoenix_bird_rune.vcd" nodelay 
-}
-
-Rule phoenix_Immortality_Rule
-{
-	criteria Immortality Isphoenix 
-	response phoenix_Immortality
-}
-
-Response phoenix_Powerup
-{
-	scene "scenes/phoenix/phoenix_phoenix_bird_rune.vcd" nodelay 
-}
-
-Rule phoenix_Powerup_Rule
-{
-	criteria Powerup Isphoenix 
-	response phoenix_Powerup
-}
-
-Response phoenix_PowerupIsPowerupBounty
-{
-	scene "scenes/phoenix/phoenix_phoenix_bird_rune.vcd" nodelay respeakdelay 300
-}
-
-Rule phoenix_PowerupIsPowerupBounty_Rule
-{
-	criteria Powerup Isphoenix IsPowerupBounty
-	response phoenix_PowerupIsPowerupBounty
-}
-
-Response phoenix_PowerupIsPowerupArcane
-{
-	scene "scenes/phoenix/phoenix_phoenix_bird_rune.vcd" nodelay respeakdelay 300
-}
-
-Rule phoenix_PowerupIsPowerupArcane_Rule
-{
-	criteria Powerup Isphoenix IsPowerupArcane
-	response phoenix_PowerupIsPowerupArcane
-}
-
-Response phoenix_CooldownLittleNag
-{
-	scene "scenes/phoenix/phoenix_phoenix_bird_no01.vcd" nodelay 
-}
-
-Rule phoenix_CooldownLittleNag_Rule
-{
-	criteria Cooldown Isphoenix LittleNag
-	response phoenix_CooldownLittleNag
-}
-
-Response phoenix_CooldownMediumNag
-{
-	scene "scenes/phoenix/phoenix_phoenix_bird_no02.vcd" nodelay 
-}
-
-Rule phoenix_CooldownMediumNag_Rule
-{
-	criteria Cooldown Isphoenix MediumNag
-	response phoenix_CooldownMediumNag
-}
-
-Response phoenix_CooldownSuperNag
-{
-	scene "scenes/phoenix/phoenix_phoenix_bird_no03.vcd" nodelay 
-}
-
-Rule phoenix_CooldownSuperNag_Rule
-{
-	criteria Cooldown Isphoenix SuperNag
-	response phoenix_CooldownSuperNag
-}
-
-Response phoenix_NoManaLittleNag
-{
-	scene "scenes/phoenix/phoenix_phoenix_bird_no01.vcd" nodelay 
-}
-
-Rule phoenix_NoManaLittleNag_Rule
-{
-	criteria NoMana Isphoenix LittleNag
-	response phoenix_NoManaLittleNag
-}
-
-Response phoenix_NoManaMediumNag
-{
-	scene "scenes/phoenix/phoenix_phoenix_bird_no02.vcd" nodelay 
-}
-
-Rule phoenix_NoManaMediumNag_Rule
-{
-	criteria NoMana Isphoenix MediumNag
-	response phoenix_NoManaMediumNag
-}
-
-Response phoenix_NoManaSuperNag
-{
-	scene "scenes/phoenix/phoenix_phoenix_bird_no03.vcd" nodelay 
-}
-
-Rule phoenix_NoManaSuperNag_Rule
-{
-	criteria NoMana Isphoenix SuperNag
-	response phoenix_NoManaSuperNag
-}
-
-Response phoenix_PainChance_25%
-{
-	scene "scenes/phoenix/phoenix_phoenix_bird_under_attack.vcd" nodelay respeakdelay 120
-}
-
-Rule phoenix_PainChance_25%_Rule
-{
-	criteria Pain Isphoenix Chance_25%
-	response phoenix_PainChance_25%
-}
-
-Response phoenix_Thanks
-{
-	scene "scenes/phoenix/phoenix_phoenix_bird_emote_good.vcd" nodelay 
-}
-
-Rule phoenix_Thanks_Rule
-{
-	criteria Thanks Isphoenix 
-	response phoenix_Thanks
-}
-
-Response phoenix_EmoteIsEmoteLaugh
-{
-	scene "scenes/phoenix/phoenix_phoenix_bird_laugh.vcd" nodelay 
-}
-
-Rule phoenix_EmoteIsEmoteLaugh_Rule
-{
-	criteria Emote Isphoenix IsEmoteLaugh
-	response phoenix_EmoteIsEmoteLaugh
-}
-
-Response phoenix_InTheBag
-{
-	scene "scenes/phoenix/phoenix_phoenix_bird_inthebag.vcd" nodelay 
-}
-
-Rule phoenix_InTheBag_Rule
-{
-	criteria InTheBag Isphoenix 
-	response phoenix_InTheBag
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vrfunknown:version{c1f07085-5299-4e8a-b7e9-1cbb66bbbe23} -->
+{
+	m_Includes = 
+	[
+		"scripts/talker/response_rules_shared.vrr",
+	]
+	m_ResponseGroups = 
+	[
+		
+		{
+			m_name = "phoenix_spawn"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/phoenix/phoenix_phoenix_bird_respawn.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "phoenix_CustomIsGameStart"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/phoenix/phoenix_phoenix_bird_victory.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "phoenix_Move"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/phoenix/phoenix_phoenix_bird_moving01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/phoenix/phoenix_phoenix_bird_moving02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "phoenix_Attack"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/phoenix/phoenix_phoenix_bird_attack.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "phoenix_LevelUp"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/phoenix/phoenix_phoenix_bird_level_up.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "phoenix_Kill"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/phoenix/phoenix_phoenix_bird_kill.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "phoenix_KillChance_50%IsEnemyInvoker"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/phoenix/phoenix_phoenix_bird_emote_bad.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "phoenix_KillChance_50%IsEnemyKeeper_of_the_Light"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/phoenix/phoenix_phoenix_bird_emote_bad.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "phoenix_KillChance_50%IsEnemyLina"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/phoenix/phoenix_phoenix_bird_emote_bad.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "phoenix_KillChance_50%IsEnemyAlchemist"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/phoenix/phoenix_phoenix_bird_emote_bad.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "phoenix_KillChance_50%IsEnemySkywrath_Mage"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/phoenix/phoenix_phoenix_bird_emote_bad.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "phoenix_KillChance_50%IsEnemyElder_Titan"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/phoenix/phoenix_phoenix_bird_emote_bad.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "phoenix_KillChance_50%IsEnemyAbyssal_Underlord"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/phoenix/phoenix_phoenix_bird_emote_bad.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "phoenix_KillChance_50%IsEnemyEnigma"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/phoenix/phoenix_phoenix_bird_emote_bad.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "phoenix_KillChance_50%IsEnemyAncient_Apparition"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/phoenix/phoenix_phoenix_bird_emote_bad.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "phoenix_KillChance_50%IsEnemyTerrorblade"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/phoenix/phoenix_phoenix_bird_emote_bad.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "phoenix_Death"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/phoenix/phoenix_phoenix_bird_death_defeat.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "phoenix_Respawn"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/phoenix/phoenix_phoenix_bird_respawn.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "phoenix_LastHit"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/phoenix/phoenix_phoenix_bird_last_hit.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "phoenix_Deny"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/phoenix/phoenix_phoenix_bird_denied.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "phoenix_Defeat"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/phoenix/phoenix_phoenix_bird_death_defeat.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "phoenix_Victory"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/phoenix/phoenix_phoenix_bird_victory.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "phoenix_Immortality"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/phoenix/phoenix_phoenix_bird_rune.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "phoenix_Powerup"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/phoenix/phoenix_phoenix_bird_rune.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "phoenix_PowerupIsPowerupBounty"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/phoenix/phoenix_phoenix_bird_rune.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 300.000000
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "phoenix_PowerupIsPowerupArcane"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/phoenix/phoenix_phoenix_bird_rune.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 300.000000
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "phoenix_CooldownLittleNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/phoenix/phoenix_phoenix_bird_no01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "phoenix_CooldownMediumNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/phoenix/phoenix_phoenix_bird_no02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "phoenix_CooldownSuperNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/phoenix/phoenix_phoenix_bird_no03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "phoenix_NoManaLittleNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/phoenix/phoenix_phoenix_bird_no01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "phoenix_NoManaMediumNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/phoenix/phoenix_phoenix_bird_no02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "phoenix_NoManaSuperNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/phoenix/phoenix_phoenix_bird_no03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "phoenix_PainChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/phoenix/phoenix_phoenix_bird_under_attack.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 120.000000
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "phoenix_Thanks"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/phoenix/phoenix_phoenix_bird_emote_good.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "phoenix_EmoteIsEmoteLaugh"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/phoenix/phoenix_phoenix_bird_laugh.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "phoenix_InTheBag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/phoenix/phoenix_phoenix_bird_inthebag.vcd"
+				},
+			]
+		},
+	]
+	m_Requirements = 
+	[
+		
+		{
+			m_name = "Isphoenix"
+			m_matchKey = "classname"
+			m_matchExpr = "npc_dota_hero_phoenix"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsPhoenixDive"
+			m_matchKey = "abilityname"
+			m_matchExpr = "phoenix_icarus_dive"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsPhoenixSpiritsSummon"
+			m_matchKey = "abilityname"
+			m_matchExpr = "phoenix_fire_spirits"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsPhoenixSpiritsSend"
+			m_matchKey = "abiltyname"
+			m_matchExpr = "phoenix_launch_fire_spirit"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsPhoenixSupernova"
+			m_matchKey = "abilityname"
+			m_matchExpr = "phoenix_supernova"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+	]
+	m_Rules = 
+	[
+		
+		{
+			m_name = "phoenix_spawn_Rule"
+			m_Requirements = 
+			[
+				"spawn",
+				"Isphoenix",
+			]
+			m_ResponseGroups = 
+			[
+				"phoenix_spawn",
+			]
+		},
+		
+		{
+			m_name = "phoenix_CustomIsGameStart_Rule"
+			m_Requirements = 
+			[
+				"Custom",
+				"Isphoenix",
+				"IsGameStart",
+			]
+			m_ResponseGroups = 
+			[
+				"phoenix_CustomIsGameStart",
+			]
+		},
+		
+		{
+			m_name = "phoenix_Move_Rule"
+			m_Requirements = 
+			[
+				"Move",
+				"Isphoenix",
+			]
+			m_ResponseGroups = 
+			[
+				"phoenix_Move",
+			]
+		},
+		
+		{
+			m_name = "phoenix_Attack_Rule"
+			m_Requirements = 
+			[
+				"Attack",
+				"Isphoenix",
+			]
+			m_ResponseGroups = 
+			[
+				"phoenix_Attack",
+			]
+		},
+		
+		{
+			m_name = "phoenix_LevelUp_Rule"
+			m_Requirements = 
+			[
+				"LevelUp",
+				"Isphoenix",
+			]
+			m_ResponseGroups = 
+			[
+				"phoenix_LevelUp",
+			]
+		},
+		
+		{
+			m_name = "phoenix_Kill_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isphoenix",
+			]
+			m_ResponseGroups = 
+			[
+				"phoenix_Kill",
+			]
+		},
+		
+		{
+			m_name = "phoenix_KillChance_50%IsEnemyInvoker_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isphoenix",
+				"Chance_50%",
+				"IsEnemyInvoker",
+			]
+			m_ResponseGroups = 
+			[
+				"phoenix_KillChance_50%IsEnemyInvoker",
+			]
+		},
+		
+		{
+			m_name = "phoenix_KillChance_50%IsEnemyKeeper_of_the_Light_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isphoenix",
+				"Chance_50%",
+				"IsEnemyKeeper_of_the_Light",
+			]
+			m_ResponseGroups = 
+			[
+				"phoenix_KillChance_50%IsEnemyKeeper_of_the_Light",
+			]
+		},
+		
+		{
+			m_name = "phoenix_KillChance_50%IsEnemyLina_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isphoenix",
+				"Chance_50%",
+				"IsEnemyLina",
+			]
+			m_ResponseGroups = 
+			[
+				"phoenix_KillChance_50%IsEnemyLina",
+			]
+		},
+		
+		{
+			m_name = "phoenix_KillChance_50%IsEnemyAlchemist_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isphoenix",
+				"Chance_50%",
+				"IsEnemyAlchemist",
+			]
+			m_ResponseGroups = 
+			[
+				"phoenix_KillChance_50%IsEnemyAlchemist",
+			]
+		},
+		
+		{
+			m_name = "phoenix_KillChance_50%IsEnemySkywrath_Mage_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isphoenix",
+				"Chance_50%",
+				"IsEnemySkywrath_Mage",
+			]
+			m_ResponseGroups = 
+			[
+				"phoenix_KillChance_50%IsEnemySkywrath_Mage",
+			]
+		},
+		
+		{
+			m_name = "phoenix_KillChance_50%IsEnemyElder_Titan_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isphoenix",
+				"Chance_50%",
+				"IsEnemyElder_Titan",
+			]
+			m_ResponseGroups = 
+			[
+				"phoenix_KillChance_50%IsEnemyElder_Titan",
+			]
+		},
+		
+		{
+			m_name = "phoenix_KillChance_50%IsEnemyAbyssal_Underlord_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isphoenix",
+				"Chance_50%",
+				"IsEnemyAbyssal_Underlord",
+			]
+			m_ResponseGroups = 
+			[
+				"phoenix_KillChance_50%IsEnemyAbyssal_Underlord",
+			]
+		},
+		
+		{
+			m_name = "phoenix_KillChance_50%IsEnemyEnigma_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isphoenix",
+				"Chance_50%",
+				"IsEnemyEnigma",
+			]
+			m_ResponseGroups = 
+			[
+				"phoenix_KillChance_50%IsEnemyEnigma",
+			]
+		},
+		
+		{
+			m_name = "phoenix_KillChance_50%IsEnemyAncient_Apparition_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isphoenix",
+				"Chance_50%",
+				"IsEnemyAncient_Apparition",
+			]
+			m_ResponseGroups = 
+			[
+				"phoenix_KillChance_50%IsEnemyAncient_Apparition",
+			]
+		},
+		
+		{
+			m_name = "phoenix_KillChance_50%IsEnemyTerrorblade_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isphoenix",
+				"Chance_50%",
+				"IsEnemyTerrorblade",
+			]
+			m_ResponseGroups = 
+			[
+				"phoenix_KillChance_50%IsEnemyTerrorblade",
+			]
+		},
+		
+		{
+			m_name = "phoenix_Death_Rule"
+			m_Requirements = 
+			[
+				"Death",
+				"Isphoenix",
+			]
+			m_ResponseGroups = 
+			[
+				"phoenix_Death",
+			]
+		},
+		
+		{
+			m_name = "phoenix_Respawn_Rule"
+			m_Requirements = 
+			[
+				"Respawn",
+				"Isphoenix",
+			]
+			m_ResponseGroups = 
+			[
+				"phoenix_Respawn",
+			]
+		},
+		
+		{
+			m_name = "phoenix_LastHit_Rule"
+			m_Requirements = 
+			[
+				"LastHit",
+				"Isphoenix",
+			]
+			m_ResponseGroups = 
+			[
+				"phoenix_LastHit",
+			]
+		},
+		
+		{
+			m_name = "phoenix_Deny_Rule"
+			m_Requirements = 
+			[
+				"Deny",
+				"Isphoenix",
+			]
+			m_ResponseGroups = 
+			[
+				"phoenix_Deny",
+			]
+		},
+		
+		{
+			m_name = "phoenix_Defeat_Rule"
+			m_Requirements = 
+			[
+				"Defeat",
+				"Isphoenix",
+			]
+			m_ResponseGroups = 
+			[
+				"phoenix_Defeat",
+			]
+		},
+		
+		{
+			m_name = "phoenix_Victory_Rule"
+			m_Requirements = 
+			[
+				"Victory",
+				"Isphoenix",
+			]
+			m_ResponseGroups = 
+			[
+				"phoenix_Victory",
+			]
+		},
+		
+		{
+			m_name = "phoenix_Immortality_Rule"
+			m_Requirements = 
+			[
+				"Immortality",
+				"Isphoenix",
+			]
+			m_ResponseGroups = 
+			[
+				"phoenix_Immortality",
+			]
+		},
+		
+		{
+			m_name = "phoenix_Powerup_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isphoenix",
+			]
+			m_ResponseGroups = 
+			[
+				"phoenix_Powerup",
+			]
+		},
+		
+		{
+			m_name = "phoenix_PowerupIsPowerupBounty_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isphoenix",
+				"IsPowerupBounty",
+			]
+			m_ResponseGroups = 
+			[
+				"phoenix_PowerupIsPowerupBounty",
+			]
+		},
+		
+		{
+			m_name = "phoenix_PowerupIsPowerupArcane_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isphoenix",
+				"IsPowerupArcane",
+			]
+			m_ResponseGroups = 
+			[
+				"phoenix_PowerupIsPowerupArcane",
+			]
+		},
+		
+		{
+			m_name = "phoenix_CooldownLittleNag_Rule"
+			m_Requirements = 
+			[
+				"Cooldown",
+				"Isphoenix",
+				"LittleNag",
+			]
+			m_ResponseGroups = 
+			[
+				"phoenix_CooldownLittleNag",
+			]
+		},
+		
+		{
+			m_name = "phoenix_CooldownMediumNag_Rule"
+			m_Requirements = 
+			[
+				"Cooldown",
+				"Isphoenix",
+				"MediumNag",
+			]
+			m_ResponseGroups = 
+			[
+				"phoenix_CooldownMediumNag",
+			]
+		},
+		
+		{
+			m_name = "phoenix_CooldownSuperNag_Rule"
+			m_Requirements = 
+			[
+				"Cooldown",
+				"Isphoenix",
+				"SuperNag",
+			]
+			m_ResponseGroups = 
+			[
+				"phoenix_CooldownSuperNag",
+			]
+		},
+		
+		{
+			m_name = "phoenix_NoManaLittleNag_Rule"
+			m_Requirements = 
+			[
+				"NoMana",
+				"Isphoenix",
+				"LittleNag",
+			]
+			m_ResponseGroups = 
+			[
+				"phoenix_NoManaLittleNag",
+			]
+		},
+		
+		{
+			m_name = "phoenix_NoManaMediumNag_Rule"
+			m_Requirements = 
+			[
+				"NoMana",
+				"Isphoenix",
+				"MediumNag",
+			]
+			m_ResponseGroups = 
+			[
+				"phoenix_NoManaMediumNag",
+			]
+		},
+		
+		{
+			m_name = "phoenix_NoManaSuperNag_Rule"
+			m_Requirements = 
+			[
+				"NoMana",
+				"Isphoenix",
+				"SuperNag",
+			]
+			m_ResponseGroups = 
+			[
+				"phoenix_NoManaSuperNag",
+			]
+		},
+		
+		{
+			m_name = "phoenix_PainChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Pain",
+				"Isphoenix",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"phoenix_PainChance_25%",
+			]
+		},
+		
+		{
+			m_name = "phoenix_Thanks_Rule"
+			m_Requirements = 
+			[
+				"Thanks",
+				"Isphoenix",
+			]
+			m_ResponseGroups = 
+			[
+				"phoenix_Thanks",
+			]
+		},
+		
+		{
+			m_name = "phoenix_EmoteIsEmoteLaugh_Rule"
+			m_Requirements = 
+			[
+				"Emote",
+				"Isphoenix",
+				"IsEmoteLaugh",
+			]
+			m_ResponseGroups = 
+			[
+				"phoenix_EmoteIsEmoteLaugh",
+			]
+		},
+		
+		{
+			m_name = "phoenix_InTheBag_Rule"
+			m_Requirements = 
+			[
+				"InTheBag",
+				"Isphoenix",
+			]
+			m_ResponseGroups = 
+			[
+				"phoenix_InTheBag",
+			]
+		},
+	]
 }
-

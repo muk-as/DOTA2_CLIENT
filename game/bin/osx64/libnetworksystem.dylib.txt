@@ -3,7 +3,7 @@
 0  reserved
 0 0 0 0
 0 0 0 255
-0 00 00 00 00 00 00 00 00 00 00 00 00 0@0
+0 00 00 00 00 00 00 00 00 00 00 00 00 00 0
 0 0P`p
 0 bit issue, changes
 0 bit issue, spot 1
@@ -16,12 +16,11 @@
 0$1 = $2
 0$1$2 $3 = $4
 0.00.0
-00000000000000000000000000 0000P00`@@0@@0@00000
-000000005.,$!/&#.000
-00000000@@0@pp00000000000000000000000000` 0000000000000@000000 0000>#1
+000000005
 00010203040506070809101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899
 0123456789abcdef
 0@@00000
+0@pp0000` @0 00.#1
 0NETWORK_DISCONNECT_REJECT_SERVERCDKEYAUTHINVALID
 0[A\A^A
 0enum $1
@@ -267,6 +266,7 @@
 8CMsgRGBA
 8CNetChan
 8CUtlSlot
+8D95fl
 8NETWORK_DISCONNECT_LOCALPROBLEM_HOSTEDSERVERPRIMARYRELAY
 8[A\A]A^A
 8basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE
@@ -279,19 +279,16 @@ A;Fh~DH
 A;Gx~UH
 A;G|~LH
 A;N(u-A
+A;O<~AH
 A;_0u:H
 A;_0u>H
-A;_\uCD
 A;_h~AH
 APPSYSTEM: In ConnectInterfaces(), s_nRegistrationCount is %d
 ARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARASBp
-ARAUASASASASASASASB
-ASBRARAp
+ASASAp
 ATARARATA\Ap
-AUASASASASASASASASASASASA
-AUASASASASASB
-AUASASASB
-AUASB`)ASASBp
+AUASASASA
+AUB`)ASASBp
 AWAVATS
 AWAVATSA
 AWAVATSD
@@ -319,6 +316,7 @@ AWAVAUATSPI
 AWAVAUATSPL
 AWAVAUATSPLc
 AWAVAUATSPLc'M
+AWAVAUATSPLcw H
 AWAVAUATSPM
 AWAVAUATSPf
 AWAVSP1
@@ -868,6 +866,7 @@ Cast of %s loses value information (returning %s
 Category Mask            = %08X
 ChangeAccessorFieldPathIndex_t
 Class                    = '%s
+Class,Field,Field Path,Decode Count,Total Bits,Avg Bits,Total Index Bits,Avg Index Bits,Priority,=SUM(E:E),Full Name,Notes
 ClearField
 CloseSocket
 CloseSteamNetConnection handle #%u (userdata %d)%s
@@ -897,6 +896,7 @@ CreateInterface
 CreateSerializedEntityBlob:  removing %s from field path list, culled by another change
 Created poll group for socket '%s
 D$,E+D$0A
+D$LA;D$P
 D5LI;D
 D9k8t_;Ch
 D;c8~!H
@@ -907,7 +907,10 @@ DIALOG_MSG
 DIALOG_TEXT
 DIALOG_TYPE
 DTI reset
-DTI: wrote client stats into %s. Session duration = %0.2f seconds
+DTI: can't Flush(), no data to write
+DTI: enabled from command line
+DTI: was unable to open file '%s' for write
+DTI: wrote client stats into %s. Session duration = %0.2f seconds, rowcount %d
 Data:    net total out  %.1f, in %.1f kB/s
 DebugCallback
 Declared Class
@@ -929,8 +932,8 @@ Dump UDP packets summary to console
 Dump non-loopback udp only
 E LchHD
 E Lcx`M
+E;t$LuBE
 E;w0uHH
-E;wLuCE
 E;wl~AH
 EDA;EHu
 ENetworkDisconnectionReason
@@ -1082,7 +1085,6 @@ First argument to Swap() (of type
 Fixed Array
 FlattenedSerializersVersion001
 FontManager_001
-For network encoding stats, provide a notes field if field change count is above this many standard deviations for the average field change counts for the serializer
 For servers behind NAT/DHCP meant to be exposed to the public internet, this is the public facing ip address string: ("x.x.x.x
 Found invalid proto option data for
 G H+x(H
@@ -1094,6 +1096,7 @@ G,;G0tE
 G,;G0tH
 G,Mcw0D9
 G4A;F4u
+G8[A\A^A
 G@H+G8I
 GN6google8protobuf2io20ZeroCopyOutputStreamE
 GP[A\A^A
@@ -1272,7 +1275,6 @@ IcD$0H9
 IcD$0I9
 IcD$4H9
 IcD$LfA
-IcD$XI9
 IcD$hH9
 IcD$hI9
 IcL$0H9
@@ -1782,7 +1784,7 @@ P 00 0
 P 0000000000000000000@000 0000000000P
 P 0@ 0@PP
 P(A:F(u
-P0000000000@PP@@P0P00000
+P0000@PP@@PP
 PACKET_STATUS_DROPPED
 PACKET_STATUS_INVALID
 PACKET_STATUS_NORMAL
@@ -1894,11 +1896,14 @@ QueueCallback( %s ) '%s' using value type (%s) on struct field, ignoring
 QueueChange
 QueueReplayCompatFieldChange( %s ): can't place MNetworkReplayCompatField callback on a fully fake struct (e.g., a pointed to component or object), game code should move callback on entity %d to a C_BaseEntity derived class
 RARARA
-RARARARARA
+RARARARARAp
 RASARAp
-RATAUASASASBRARATCp TCp
-RAUARAUARAUARAUARAUARAUARAUARAUARAUARAUARARAUAUARAUARAUARAUAUASASASASASASASASASASASASASASASASASASASASASASASASASBUAp
-RBRASAp
+RASA]AUAUBUAp
+RATARARARATCp TCp
+RAUARAUARAUARAUARAUARAUARAUARAUARAUARAUARARAUAUARAUARAUARAUARAUAp
+RAUAUAp
+RA`AAUASASASASAp
+RBSASAp
 RE;4$}LH
 REPLAY_EVENT_CANCEL
 REPLAY_EVENT_DEATH
@@ -1949,8 +1954,6 @@ ResourceSystem013
 Reusing cacheable shared Steam Net Connection to '%s
 S4A;T$4u*H
 SASASBp
-SASBRAp
-SASBTAp
 SBTCRARAp p
 SDR connect
 SENTINEL
@@ -1996,7 +1999,7 @@ SchemaTestExternal_Two_001
 Second argument to Swap() (of type
 Sending %d byte message to %s on socket %s
 SerializedEntitiesVersion001
-Serializer,Field,Field Path,Decode Count,Total Bits,Avg Bits,Total Index Bits,Avg Index Bits,Priority,Best Priority,=SUM(E:E),Full Name,Notes
+ServerResourceCompilerInfo_001
 ServiceDescriptorProto
 ServiceOptions
 SetAllocatedMessage
@@ -2165,11 +2168,7 @@ Type appears to be in generated pool but wasn't
 Type is already registered
 UARARA
 UARARARAUAUARAUARAUARAUARASAp
-UASASASASASASASASASASASB`AAUASASASASAp
-UASASASASASASASASASB`eBp
-UASASASASBUAUAp
-UASASASBRAUA^BUAUASASASASASBUAp
-UASBWAp
+UASASB`eBp
 UDP -> %s: sz=%5i seq=%5i ack=%5i rel=%1i tm=%8.3f
 UDP -> %s: sz=%i OOB (%d
 UDP <- %s: sz=%5i seq=%5i ack=%5i rel=%1i tm=%8.3f
@@ -2197,6 +2196,7 @@ Use network sockets layer even for listen server local player's packets (multipl
 Using Valve ICE implementation
 UtlMemory_Alloc
 UtlMemory_CalcNewAllocationCount
+UtlMemory_FailedAllocation
 VARAUARA
 VApplication001
 VAsyncFileSystem2_001
@@ -2263,6 +2263,7 @@ V_strnicmp_fast
 V_vsnprintf
 Validate
 ValidateSerializedEntity:  %s [ent %d] invalid change '%s' for field %s (value '%s') on array that has metadata with only %d array elements
+ValidateSerializedEntity:  expected metadata entry of ARRAYCOUNT for %s but got %s instead
 ValidateSerializedEntity:  metadata incorrect entry for %s [%d expected %d
 ValidateSerializedEntity:  missing metadata entry for %s
 Value must be "true" or "false" for boolean option
@@ -2549,6 +2550,7 @@ args were given.  Full format string was
 array count
 array of pointers
 array size changed
+arraycount
 assert_rtn
 assign_poll_group
 at depth %d items %d
@@ -2577,7 +2579,6 @@ baseline_nr
 baseline_tick
 basetypes.h
 because it is missing required fields
-best_priority
 bi_GameEvent
 bi_RebroadcastGameEvent
 bi_RebroadcastSource
@@ -2611,8 +2612,10 @@ cc_enable_arenas
 cc_generic_services
 chained via %s
 channel
+class_and_field
 class_id
 class_name
+class_only
 class_t
 classes
 classname
@@ -2663,7 +2666,6 @@ contains null character
 context entity 0x%p
 context(0x%p
 convars
-convars_hidden_by_default
 coord_integral
 cpu_usage
 create_on_client
@@ -2693,7 +2695,6 @@ d Scratch Buffers in use (%llu bytes
 d bits
 d of %d empty (%.3f
 d total
-d) is > avg (%.2f) with stddev*scale (%.2f * %.2f) and threshold (%.2f
 d:  %s %s [ptr 0x%p] 0x%p (%s) (%s *) %s '%s
 d:  %s (%s) [ptr 0x%p] %s%s '%s
 data_ == other.data
@@ -2730,9 +2731,8 @@ double_value
 down_cast
 dropped
 dt_name
-dti_client_%02d%02d%02d-%02d%02d%02d.csv
+dti_%02d%02d%02d-%02d%02d%02d_%s.csv
 dti_enabled
-dti_report_stddev_threshold
 due to MNetworkNoBase
 duplicate
 dyld_stub_binder
@@ -2745,6 +2745,7 @@ eQueryCvarValueStatus_CvarProtected
 eQueryCvarValueStatus_NotACvar
 eQueryCvarValueStatus_ValueIntact
 embedded field
+empty member name
 enabled
 encode_flags
 encoder
@@ -2778,13 +2779,15 @@ failed to construct fake field from metadata %s::%s in %s
 failed to parse contents
 fakeplayer
 false:7
-fc=%d, m=%d, sum=%d, bits=%u
+fc=%d, m=%d, sum=%d (poly:%d), bits=%u
 fffffff
 fflush
 field not in previous encoding
 field number
 field pointer
 field_full
+field_notes
+field_only
 field_serializer_name_sym
 field_serializer_version
 field_short
@@ -2954,7 +2957,7 @@ google/protobuf/wire_format_lite.cc
 groupindex
 groupnames
 gxx_personality_v0
-hA;_lu/D
+hA;\$lu-D
 hE9w$|bI
 hE9~$|bI
 h[A\A]A^A
@@ -3000,7 +3003,6 @@ int CUtlSortVector<int, CNetworkMessages::CPriorityLess, CUtlVector<int, int, CU
 int CUtlSortVector<int, CNetworkMessages::CPriorityLess, CUtlVector<int, int, CUtlMemory<int, int> > >::FindLessOrEqual(const TKey &, bool *) const [T = int, LessFunc = CNetworkMessages::CPriorityLess, BaseVector = CUtlVector<int, int, CUtlMemory<int, int> >, TKey = int
 int CUtlSortVector<int, CNetworkMessages::CPriorityLess, CUtlVector<int, int, CUtlMemory<int, int> > >::Insert(const T &) [T = int, LessFunc = CNetworkMessages::CPriorityLess, BaseVector = CUtlVector<int, int, CUtlMemory<int, int
 int CUtlSortVector<int, CNetworkMessages::CPriorityLess, CUtlVector<int, int, CUtlMemory<int, int> > >::InsertIfNotFound(const T &) [T = int, LessFunc = CNetworkMessages::CPriorityLess, BaseVector = CUtlVector<int, int, CUtlMemory<int, int
-int64)m_nAllocationCount + (int64)num ) <= 0x7FFFFFFF
 internal error in map key sorting
 internal_set_label
 internal_set_type
@@ -3308,6 +3310,7 @@ players_networkids
 pointer
 pointer field
 pointer to struct
+polymorphic_id
 position
 positive_int_value
 possible match: %s.%s
@@ -3336,7 +3339,6 @@ pthread_mutexattr_settype
 public/networksystem/serializedentity.h
 public/tier0/eventdispatcher.h
 public/tier0/tslist.h
-public/tier0/utlmemory.h
 public/tier0/utlsignalslot.h
 public/tier0/utlsortvector.h
 public/tier0/utlsymboltable.h
@@ -3429,7 +3431,7 @@ s:  encodeded data mismatched %d bits
 s:  encoding mismatched %d vs. %d bits
 s:  high packet loss detected flow %s: %4dms latency, %5d/%5d dropped (%.1f
 s:  in serializer '%s' couldn't find field %s::%s, possibly already marked MNetworkExclude
-s:  metadata( %d : field %s arraycount = %d
+s:  metadata( %d: '% -10s' %s = %u
 s:  specified different usergroup proxy functions for '%s
 s:  value %u: count %d
 s: !CanPacket() - SNPQueueTime=%.1fms
@@ -3489,6 +3491,7 @@ server_streaming
 server_tick
 service
 sexcluding %s::%s due to MNetworkNoBase
+sf;<ru
 sfixed32
 sfixed64
 sfound leafmost nobase at %s
@@ -3541,11 +3544,11 @@ stored in google.protobuf.Any has missing required fields
 strchr
 strcmp
 stream: %s local: %s) %s
-strict_type_combinations
 string length exceeds max size
 string_data
 string_t_table
 string_value
+strings
 strings::Substitute format string invalid: asked for
 strlen
 strrchr
@@ -3594,12 +3597,11 @@ sxH+spH
 symbols
 synthetic_default
 t"M9,$tZI
+t#IcL$8
 t#IcN8
-t$ H;5
 t$ IcT
 t$IcN0
 t$IcNH
-t$IcO8
 t(D#C\L
 t-HcN0
 t/HcC0H
@@ -3623,14 +3625,15 @@ tick_interval
 tickcount
 time_dilation_percent
 tkI96vYI
+tlfG9D3
 tlv_bootstrap
-tmfG9D3
 to start from the outermost scope
 total: in %.1f, out %.1f MB
 total_data_in
 total_data_out
 total_packets_in
 total_packets_out
+tpL93v[I
 trailing_comments
 truncated
 type does not match
@@ -3674,11 +3677,13 @@ user_data_fixed_size
 user_data_size
 user_data_size_bits
 uses the same enum value as
+using_varint_bitcounts
 usr/lib/libSystem.B.dylib
 usr/lib/libc++.1.dylib
 usr/lib/libiconv.2.dylib
 utlvector
 utlvector count
+v8H;50
 val_bool
 val_byte
 val_float
@@ -3724,112 +3729,6 @@ void CUtlLeanVectorFixedGrowableBase<CFieldPath::Path_t, 6, short>::EnsureCapaci
 void CUtlLeanVectorFixedGrowableBase<CFieldPathReconstruct_t, 3, short>::EnsureCapacity(int, bool) [T = CFieldPathReconstruct_t, N = 3, I = short
 void CUtlLeanVectorFixedGrowableBase<std::__1::pair<const CFlattenedSerializer *, const void *>, 6, short>::EnsureCapacity(int, bool) [T = std::__1::pair<const CFlattenedSerializer *, const void *>, N = 6, I = short
 void CUtlLeanVectorFixedGrowableBase<unsigned int, 3, short>::EnsureCapacity(int, bool) [T = unsigned int, N = 3, I = short
-void CUtlMemory<CBuildNetworkSerializerHierarchyOrder::BuildEntry_t, int>::Grow(int) [T = CBuildNetworkSerializerHierarchyOrder::BuildEntry_t, I = int
-void CUtlMemory<CBuildNetworkSerializerHierarchyOrder::SortedByDepth_t, int>::Grow(int) [T = CBuildNetworkSerializerHierarchyOrder::SortedByDepth_t, I = int
-void CUtlMemory<CDeltaFieldPathTracer::Entry_t, int>::Grow(int) [T = CDeltaFieldPathTracer::Entry_t, I = int
-void CUtlMemory<CFieldPathHuffmanEncoder::INode *, int>::Grow(int) [T = CFieldPathHuffmanEncoder::INode *, I = int
-void CUtlMemory<CFieldPathHuffmanEncoder::composed_t, int>::Grow(int) [T = CFieldPathHuffmanEncoder::composed_t, I = int
-void CUtlMemory<CFlattenedSerializer *, int>::Grow(int) [T = CFlattenedSerializer *, I = int
-void CUtlMemory<CFlattenedSerializer::CProxyPath, int>::Grow(int) [T = CFlattenedSerializer::CProxyPath, I = int
-void CUtlMemory<CFlattenedSerializer::FlattenedHierarchyProp_t, int>::Grow(int) [T = CFlattenedSerializer::FlattenedHierarchyProp_t, I = int
-void CUtlMemory<CFlattenedSerializer::SerializerAndField_t, int>::Grow(int) [T = CFlattenedSerializer::SerializerAndField_t, I = int
-void CUtlMemory<CFlattenedSerializer::SerializerField_t, int>::Grow(int) [T = CFlattenedSerializer::SerializerField_t, I = int
-void CUtlMemory<CFlattenedSerializer::VarNameData_t, int>::Grow(int) [T = CFlattenedSerializer::VarNameData_t, I = int
-void CUtlMemory<CNetChan *, int>::Grow(int) [T = CNetChan *, I = int
-void CUtlMemory<CNetworkMessages::NetCategoryInfo_t, int>::Grow(int) [T = CNetworkMessages::NetCategoryInfo_t, I = int
-void CUtlMemory<CNetworkMessages::NetworkContextData_t, int>::Grow(int) [T = CNetworkMessages::NetworkContextData_t, I = int
-void CUtlMemory<CNetworkSerializer::ChangeCallbackInfo_t, int>::Grow(int) [T = CNetworkSerializer::ChangeCallbackInfo_t, I = int
-void CUtlMemory<CSchemaInheritanceIterator::ClassToTraverse_t, int>::Grow(int) [T = CSchemaInheritanceIterator::ClassToTraverse_t, I = int
-void CUtlMemory<CSendNode *, int>::Grow(int) [T = CSendNode *, I = int
-void CUtlMemory<CSendProxyData, int>::Grow(int) [T = CSendProxyData, I = int
-void CUtlMemory<CSerializerHandle_t<CFlattenedSerializer>, int>::Grow(int) [T = CSerializerHandle_t<CFlattenedSerializer>, I = int
-void CUtlMemory<CStackPair *, int>::Grow(int) [T = CStackPair *, I = int
-void CUtlMemory<CTSQueue<CNetworkFieldChangedEventQueueChangeInfo_t, false>, int>::Grow(int) [T = CTSQueue<CNetworkFieldChangedEventQueueChangeInfo_t, false>, I = int
-void CUtlMemory<CUtlDelegate<CUtlString (int, const char *, int)>, int>::Grow(int) [T = CUtlDelegate<CUtlString (int, const char *, int)>, I = int
-void CUtlMemory<CUtlHashMap<CFieldPath, CDTIField, CDefEquals<CFieldPath>, HashMapFunctor_t<CFieldPath>, int>::HashBucket_t, int>::Grow(int) [T = CUtlHashMap<CFieldPath, CDTIField, CDefEquals<CFieldPath>, HashMapFunctor_t<CFieldPath>, int>::HashBucket_t, I = int
-void CUtlMemory<CUtlHashMap<CFieldPath, CDTIField, CDefEquals<CFieldPath>, HashMapFunctor_t<CFieldPath>, int>::Node_t, int>::Grow(int) [T = CUtlHashMap<CFieldPath, CDTIField, CDefEquals<CFieldPath>, HashMapFunctor_t<CFieldPath>, int>::Node_t, I = int
-void CUtlMemory<CUtlHashMap<CSerializerHandle_t<CFlattenedSerializer>, CDTISerializerInfo *, CDefEquals<CSerializerHandle_t<CFlattenedSerializer> >, HashMapFunctor_t<CSerializerHandle_t<CFlattenedSerializer> >, int>::HashBucket_t, int>::Grow(int) [T = CUtlHashMap<CSerializerHandle_t<CFlattenedSerializer>, CDTISerializerInfo *, CDefEquals<CSerializerHandle_t<CFlattenedSerializer> >, HashMapFunctor_t<CSerializerHandle_t<CFlattenedSerializer> >, int>::HashBucket_t, I = int
-void CUtlMemory<CUtlHashMap<CSerializerHandle_t<CFlattenedSerializer>, CDTISerializerInfo *, CDefEquals<CSerializerHandle_t<CFlattenedSerializer> >, HashMapFunctor_t<CSerializerHandle_t<CFlattenedSerializer> >, int>::Node_t, int>::Grow(int) [T = CUtlHashMap<CSerializerHandle_t<CFlattenedSerializer>, CDTISerializerInfo *, CDefEquals<CSerializerHandle_t<CFlattenedSerializer> >, HashMapFunctor_t<CSerializerHandle_t<CFlattenedSerializer> >, int>::Node_t, I = int
-void CUtlMemory<CUtlHashMap<unsigned int, int, CDefEquals<unsigned int>, HashMapFunctor_t<unsigned int>, int>::HashBucket_t, int>::Grow(int) [T = CUtlHashMap<unsigned int, int, CDefEquals<unsigned int>, HashMapFunctor_t<unsigned int>, int>::HashBucket_t, I = int
-void CUtlMemory<CUtlHashMap<unsigned int, int, CDefEquals<unsigned int>, HashMapFunctor_t<unsigned int>, int>::Node_t, int>::Grow(int) [T = CUtlHashMap<unsigned int, int, CDefEquals<unsigned int>, HashMapFunctor_t<unsigned int>, int>::Node_t, I = int
-void CUtlMemory<CUtlSignaller_Base *, int>::Grow(int) [T = CUtlSignaller_Base *, I = int
-void CUtlMemory<CUtlSignaller_Identified<CEventIDManager_NetChan>::ConnectedSlot_t, int>::Grow(int) [T = CUtlSignaller_Identified<CEventIDManager_NetChan>::ConnectedSlot_t, I = int
-void CUtlMemory<CUtlSignaller_Identified<CEventIDManager_NetChan>::EventAndDelegate_t, int>::Grow(int) [T = CUtlSignaller_Identified<CEventIDManager_NetChan>::EventAndDelegate_t, I = int
-void CUtlMemory<CUtlString, int>::Grow(int) [T = CUtlString, I = int
-void CUtlMemory<CUtlStringToken, int>::Grow(int) [T = CUtlStringToken, I = int
-void CUtlMemory<CUtlSymbolLarge, int>::Grow(int) [T = CUtlSymbolLarge, I = int
-void CUtlMemory<Color, int>::Grow(int) [T = Color, I = int
-void CUtlMemory<FieldMetaInfo_t, int>::Grow(int) [T = FieldMetaInfo_t, I = int
-void CUtlMemory<FlattenedSerializerField_t, int>::Grow(int) [T = FlattenedSerializerField_t, I = int
-void CUtlMemory<GetFieldByPathResult_t::Path_t, int>::Grow(int) [T = GetFieldByPathResult_t::Path_t, I = int
-void CUtlMemory<IFlattenedSerializerSpewListener *, int>::Grow(int) [T = IFlattenedSerializerSpewListener *, I = int
-void CUtlMemory<INetworkChannelNotify *, int>::Grow(int) [T = INetworkChannelNotify *, I = int
-void CUtlMemory<INetworkMessageProcessingPreFilter *, int>::Grow(int) [T = INetworkMessageProcessingPreFilter *, I = int
-void CUtlMemory<INetworkPrepareStartupParams *, int>::Grow(int) [T = INetworkPrepareStartupParams *, I = int
-void CUtlMemory<InheritedClassInfo_t, int>::Grow(int) [T = InheritedClassInfo_t, I = int
-void CUtlMemory<KeyValues3 *, int>::Grow(int) [T = KeyValues3 *, I = int
-void CUtlMemory<NetBandwithGraph_t, int>::Grow(int) [T = NetBandwithGraph_t, I = int
-void CUtlMemory<NetCmdInfo_t, int>::Grow(int) [T = NetCmdInfo_t, I = int
-void CUtlMemory<NetGraphGroup_t, int>::Grow(int) [T = NetGraphGroup_t, I = int
-void CUtlMemory<NetGraphMsgBits_t, int>::Grow(int) [T = NetGraphMsgBits_t, I = int
-void CUtlMemory<NetMessageHandle_t__ *, int>::Grow(int) [T = NetMessageHandle_t__ *, I = int
-void CUtlMemory<NetSocket_t, int>::Grow(int) [T = NetSocket_t, I = int
-void CUtlMemory<NetworkArrayFieldSerializerGroup_t, int>::Grow(int) [T = NetworkArrayFieldSerializerGroup_t, I = int
-void CUtlMemory<NetworkFieldSerializerGroup_t, int>::Grow(int) [T = NetworkFieldSerializerGroup_t, I = int
-void CUtlMemory<NetworkOverride_t *, int>::Grow(int) [T = NetworkOverride_t *, I = int
-void CUtlMemory<NetworkReplayCompatField_t *, int>::Grow(int) [T = NetworkReplayCompatField_t *, I = int
-void CUtlMemory<NetworkUserGroupProxy_t *, int>::Grow(int) [T = NetworkUserGroupProxy_t *, I = int
-void CUtlMemory<NetworkVarDecl_t *, int>::Grow(int) [T = NetworkVarDecl_t *, I = int
-void CUtlMemory<ReplayChangeEntry_t, int>::Grow(int) [T = ReplayChangeEntry_t, I = int
-void CUtlMemory<Result_t, int>::Grow(int) [T = Result_t, I = int
-void CUtlMemory<SerializerUniqueField_t, int>::Grow(int) [T = SerializerUniqueField_t, I = int
-void CUtlMemory<UserGroupProxy_t, int>::Grow(int) [T = UserGroupProxy_t, I = int
-void CUtlMemory<UtlLinkedListElem_t<CNetChan *, int>, int>::Grow(int) [T = UtlLinkedListElem_t<CNetChan *, int>, I = int
-void CUtlMemory<UtlLinkedListElem_t<CUtlKeyValuePair<CFieldPath, empty_t>, unsigned int>, unsigned int>::Grow(int) [T = UtlLinkedListElem_t<CUtlKeyValuePair<CFieldPath, empty_t>, unsigned int>, I = unsigned int
-void CUtlMemory<UtlLinkedListElem_t<SteamNetConnection_t, int>, int>::Grow(int) [T = UtlLinkedListElem_t<SteamNetConnection_t, int>, I = int
-void CUtlMemory<UtlRBTreeNode_t<CNetChan::SplitPlayer_t, unsigned short>, unsigned short>::Grow(int) [T = UtlRBTreeNode_t<CNetChan::SplitPlayer_t, unsigned short>, I = unsigned short
-void CUtlMemory<UtlRBTreeNode_t<CUtlMap<NSPacketReason_t, int, unsigned short, bool (*)(const NSPacketReason_t &, const NSPacketReason_t &)>::Node_t, unsigned short>, unsigned short>::Grow(int) [T = UtlRBTreeNode_t<CUtlMap<NSPacketReason_t, int, unsigned short, bool (*)(const NSPacketReason_t &, const NSPacketReason_t &)>::Node_t, unsigned short>, I = unsigned short
-void CUtlMemory<UtlRBTreeNode_t<CUtlMap<SchemaTypeHandle_t, NetworkFieldSerializerGroup_t *, unsigned short, bool (*)(const SchemaTypeHandle_t &, const SchemaTypeHandle_t &)>::Node_t, unsigned short>, unsigned short>::Grow(int) [T = UtlRBTreeNode_t<CUtlMap<SchemaTypeHandle_t, NetworkFieldSerializerGroup_t *, unsigned short, bool (*)(const SchemaTypeHandle_t &, const SchemaTypeHandle_t &)>::Node_t, unsigned short>, I = unsigned short
-void CUtlMemory<UtlRBTreeNode_t<CUtlMap<const IProtobufBinding *, CUtlVector<CEventDispatcher_Base::EventListenerInfo_t, int, CUtlMemory<CEventDispatcher_Base::EventListenerInfo_t, int> >, unsigned int, bool (*)(const IProtobufBinding *const &, const IProtobufBinding *const &)>::Node_t, unsigned int>, unsigned int>::Grow(int) [T = UtlRBTreeNode_t<CUtlMap<const IProtobufBinding *, CUtlVector<CEventDispatcher_Base::EventListenerInfo_t, int, CUtlMemory<CEventDispatcher_Base::EventListenerInfo_t, int> >, unsigned int, bool (*)(const IProtobufBinding *const &, const IProtobufBinding *const &)>::Node_t, unsigned int>, I = unsigned int
-void CUtlMemory<UtlRBTreeNode_t<CUtlMap<const char *, CNetworkSerializer *, int, bool (*)(const char *const &, const char *const &)>::Node_t, int>, int>::Grow(int) [T = UtlRBTreeNode_t<CUtlMap<const char *, CNetworkSerializer *, int, bool (*)(const char *const &, const char *const &)>::Node_t, int>, I = int
-void CUtlMemory<UtlRBTreeNode_t<CUtlMap<const char *, CSchemaClassField_Dynamic *, int, bool (*)(const char *const &, const char *const &)>::Node_t, int>, int>::Grow(int) [T = UtlRBTreeNode_t<CUtlMap<const char *, CSchemaClassField_Dynamic *, int, bool (*)(const char *const &, const char *const &)>::Node_t, int>, I = int
-void CUtlMemory<UtlRBTreeNode_t<CUtlMap<const char *, CWriteSerializersStableVersionDatabase::OrderedVariants_t *, int, bool (*)(const char *const &, const char *const &)>::Node_t, int>, int>::Grow(int) [T = UtlRBTreeNode_t<CUtlMap<const char *, CWriteSerializersStableVersionDatabase::OrderedVariants_t *, int, bool (*)(const char *const &, const char *const &)>::Node_t, int>, I = int
-void CUtlMemory<UtlRBTreeNode_t<CUtlMap<const char *, NetworkFieldSerializerGroup_t *, int, bool (*)(const char *const &, const char *const &)>::Node_t, int>, int>::Grow(int) [T = UtlRBTreeNode_t<CUtlMap<const char *, NetworkFieldSerializerGroup_t *, int, bool (*)(const char *const &, const char *const &)>::Node_t, int>, I = int
-void CUtlMemory<UtlRBTreeNode_t<CUtlMap<const char *, bool, int, bool (*)(const char *const &, const char *const &)>::Node_t, int>, int>::Grow(int) [T = UtlRBTreeNode_t<CUtlMap<const char *, bool, int, bool (*)(const char *const &, const char *const &)>::Node_t, int>, I = int
-void CUtlMemory<UtlRBTreeNode_t<CUtlMap<const char *, const CFlattenedSerializer *, int, bool (*)(const char *const &, const char *const &)>::Node_t, int>, int>::Grow(int) [T = UtlRBTreeNode_t<CUtlMap<const char *, const CFlattenedSerializer *, int, bool (*)(const char *const &, const char *const &)>::Node_t, int>, I = int
-void CUtlMemory<UtlRBTreeNode_t<CUtlMap<const char *, empty_t, int, bool (*)(const char *const &, const char *const &)>::Node_t, int>, int>::Grow(int) [T = UtlRBTreeNode_t<CUtlMap<const char *, empty_t, int, bool (*)(const char *const &, const char *const &)>::Node_t, int>, I = int
-void CUtlMemory<UtlRBTreeNode_t<CUtlMap<const char *, unsigned int, int, bool (*)(const char *const &, const char *const &)>::Node_t, int>, int>::Grow(int) [T = UtlRBTreeNode_t<CUtlMap<const char *, unsigned int, int, bool (*)(const char *const &, const char *const &)>::Node_t, int>, I = int
-void CUtlMemory<UtlRBTreeNode_t<CUtlMap<int, INetworkMessageInternal *, unsigned short, bool (*)(const int &, const int &)>::Node_t, unsigned short>, unsigned short>::Grow(int) [T = UtlRBTreeNode_t<CUtlMap<int, INetworkMessageInternal *, unsigned short, bool (*)(const int &, const int &)>::Node_t, unsigned short>, I = unsigned short
-void CUtlMemory<UtlRBTreeNode_t<CUtlMap<int, int, unsigned short, bool (*)(const int &, const int &)>::Node_t, unsigned short>, unsigned short>::Grow(int) [T = UtlRBTreeNode_t<CUtlMap<int, int, unsigned short, bool (*)(const int &, const int &)>::Node_t, unsigned short>, I = unsigned short
-void CUtlMemory<UtlRBTreeNode_t<CUtlMap<ns_address, int, int, SteamNetConnection_t::ns_address_less>::Node_t, int>, int>::Grow(int) [T = UtlRBTreeNode_t<CUtlMap<ns_address, int, int, SteamNetConnection_t::ns_address_less>::Node_t, int>, I = int
-void CUtlMemory<UtlRBTreeNode_t<CUtlMap<unsigned int, CUtlString, unsigned short, bool (*)(const unsigned int &, const unsigned int &)>::Node_t, unsigned short>, unsigned short>::Grow(int) [T = UtlRBTreeNode_t<CUtlMap<unsigned int, CUtlString, unsigned short, bool (*)(const unsigned int &, const unsigned int &)>::Node_t, unsigned short>, I = unsigned short
-void CUtlMemory<UtlRBTreeNode_t<CUtlMap<unsigned int, ConnectionStats_t, int, CDefLess<unsigned int> >::Node_t, int>, int>::Grow(int) [T = UtlRBTreeNode_t<CUtlMap<unsigned int, ConnectionStats_t, int, CDefLess<unsigned int> >::Node_t, int>, I = int
-void CUtlMemory<UtlRBTreeNode_t<CUtlMap<unsigned int, SchemaTypeHandle_t, unsigned short, bool (*)(const unsigned int &, const unsigned int &)>::Node_t, unsigned short>, unsigned short>::Grow(int) [T = UtlRBTreeNode_t<CUtlMap<unsigned int, SchemaTypeHandle_t, unsigned short, bool (*)(const unsigned int &, const unsigned int &)>::Node_t, unsigned short>, I = unsigned short
-void CUtlMemory<UtlRBTreeNode_t<CUtlMap<unsigned int, int, int, CDefLess<unsigned int> >::Node_t, int>, int>::Grow(int) [T = UtlRBTreeNode_t<CUtlMap<unsigned int, int, int, CDefLess<unsigned int> >::Node_t, int>, I = int
-void CUtlMemory<UtlRBTreeNode_t<OverrideWork_t, unsigned short>, unsigned short>::Grow(int) [T = UtlRBTreeNode_t<OverrideWork_t, unsigned short>, I = unsigned short
-void CUtlMemory<UtlRBTreeNode_t<int, unsigned short>, unsigned short>::Grow(int) [T = UtlRBTreeNode_t<int, unsigned short>, I = unsigned short
-void CUtlMemory<UtlRBTreeNode_t<void *, int>, int>::Grow(int) [T = UtlRBTreeNode_t<void *, int>, I = int
-void CUtlMemory<bool (*)(const FieldMetaInfo_t &, const NetworkFieldInfo_t &, void *), int>::Grow(int) [T = bool (*)(const FieldMetaInfo_t &, const NetworkFieldInfo_t &, void *), I = int
-void CUtlMemory<bool, int>::Grow(int) [T = bool, I = int
-void CUtlMemory<char, int>::Grow(int) [T = char, I = int
-void CUtlMemory<const CFlattenedSerializer *, int>::Grow(int) [T = const CFlattenedSerializer *, I = int
-void CUtlMemory<const CSendNode *, int>::Grow(int) [T = const CSendNode *, I = int
-void CUtlMemory<const CSerializedEntity *, int>::Grow(int) [T = const CSerializedEntity *, I = int
-void CUtlMemory<const KeyValues3 *, int>::Grow(int) [T = const KeyValues3 *, I = int
-void CUtlMemory<const NetworkFieldSerializerInfo_t *, int>::Grow(int) [T = const NetworkFieldSerializerInfo_t *, I = int
-void CUtlMemory<const NetworkOverride_t *, int>::Grow(int) [T = const NetworkOverride_t *, I = int
-void CUtlMemory<const OffsetIgnore_t *, int>::Grow(int) [T = const OffsetIgnore_t *, I = int
-void CUtlMemory<const char **, int>::Grow(int) [T = const char **, I = int
-void CUtlMemory<const char *, int>::Grow(int) [T = const char *, I = int
-void CUtlMemory<int, int>::Grow(int) [T = int, I = int
-void CUtlMemory<s_t, int>::Grow(int) [T = s_t, I = int
-void CUtlMemory<unsigned char *, int>::Grow(int) [T = unsigned char *, I = int
-void CUtlMemory<unsigned char, int>::Grow(int) [T = unsigned char, I = int
-void CUtlMemory<unsigned int, int>::Grow(int) [T = unsigned int, I = int
-void CUtlMemory<unsigned long, int>::Grow(int) [T = unsigned long, I = int
-void CUtlMemory<unsigned short, int>::Grow(int) [T = unsigned short, I = int
-void CUtlMemory<vcon_NetworkEncodingStatsEntry_t, int>::Grow(int) [T = vcon_NetworkEncodingStatsEntry_t, I = int
-void CUtlMemory<void *, int>::Grow(int) [T = void *, I = int
 void CUtlMemory_RawAllocator<CUtlHashtableEntry<unsigned int, empty_t> >::EnsureCapacity(int) [T = CUtlHashtableEntry<unsigned int, empty_t
 void CUtlMemory_RawAllocator<CUtlHashtableEntry<unsigned int, empty_t> >::SetRawAllocatorType(RawAllocatorType_t) [T = CUtlHashtableEntry<unsigned int, empty_t
 void CUtlMemory_RawAllocator<unsigned int>::EnsureCapacity(int) [T = unsigned int
@@ -3860,8 +3759,10 @@ wrong submessage type
 x (int:%d, float:%f
 x%A;Gh
 x8HcN H
+x9IcF09
 x@HcV$H
-xA;_|uZD
+xA;\$|uYD
+xAD95Sl
 xHHcN(H
 xPHcV,H
 x[A\A]A^A

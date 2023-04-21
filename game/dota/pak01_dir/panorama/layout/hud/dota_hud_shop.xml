@@ -62,12 +62,13 @@
 				<Panel class="TeamNeutralItemsTierHeader">
 					<Label class="TeamNeutralItemsTierTitle" text="#DOTA_Shop_NeutralTier" />
 					<Panel class="FillWidth" />
-					<Panel class="LeftRightFlow" onmouseout="UIHideTextTooltip();" onmouseover="UIShowTextTooltip( #DOTA_NeutralItemSlot_TimeTip );">
+					<Panel class="TeamNeutralItemsTierDesc LeftRightFlow" onmouseout="UIHideTextTooltip();" onmouseover="UIShowTextTooltip( #DOTA_NeutralItemSlot_TimeTip );">
 						<Panel class="Clock" />
 						<Label class="TeamNeutralItemsTierTimes" text="{s:tier_times}" />
 						<Label class="TeamNeutralItemsTierCount" text="[ {d:tier_found_count} / {d:tier_max_count} ]" />
 					</Panel>
 				</Panel>
+				<Label id="TeamNeutralItemsTierNoneAvailable" class="TeamNeutralItemsTierNoneAvailable" text="#DOTA_Shop_NeutralTierNoTokensAvailable" />
 				<Panel id="TierItemsList" />
 			</Panel>
 		</snippet>
@@ -159,7 +160,7 @@
 									<Button id="ClearSearchButton" class="CloseButton" onactivate="ClearSearch();" />
 								</Panel>
 							</Panel>
-							<Button id="RequestSuggestion" class="HeaderButton" onactivate="DOTATrackUserStatsEvent( DOTA_USER_STATS_EVENT_ASKED_FOR_ITEM_SUGGESTION, 0 ) DOTAShopRequestSuggestion()" onmouseout="UIHideTextTooltip();" onmouseover="UIShowTextTooltip( #DOTA_Shop_Tip_RequestSuggestion );" onload="DOTAAttachHelpTip( &apos;suggested_items&apos; )">
+							<Button id="RequestSuggestion" class="HeaderButton" onactivate="DOTAShopRequestSuggestion()" onmouseout="UIHideTextTooltip();" onmouseover="UIShowTextTooltip( #DOTA_Shop_Tip_RequestSuggestion );" onload="DOTAAttachHelpTip( &apos;suggested_items&apos; )">
 								<Panel id="RequestSuggestionIcon" />
 								<DOTAHeroImage id="RequestSuggestionHeroImage" heroimagestyle="icon" />
 							</Button>
@@ -230,9 +231,11 @@
 							<Panel id="GridUpgradeItems" class="ShopItemsRows" />
 						</TabContents>
 						<TabContents id="GridNeutralsCategory" group="ShopGridTab" tabid="GridNeutralsTab" class="ShopItemsCategory">
-							<Panel class="TeamNeutralItems">
-								<Panel id="TeamNeutralItemsTierList" />
-								<Label class="TeamNeutralItemsHint" text="#DOTA_TeamNeutralItems_Hint" html="true" />
+							<Panel id="TeamNeutralItems" class="TeamNeutralItems">
+								<Label class="TeamNeutralTokensTitle" text="#DOTA_Shop_TeamNeutralTokens" />
+								<Panel id="TeamNeutralTokensList" />
+								<Label class="YourNeutralItemsTitle" text="#DOTA_Shop_YourNeutralItems" />
+								<Panel id="YourNeutralItemsList" />
 								<TextButton id="ViewAllButton" class="NeutralItemsToggleButton" text="#DOTA_TeamNeutralItems_ViewAll" html="true" onactivate="AddStyle( GridNeutralsCategory, ShowAllNeutralItems )" acceptsjoyfocus="true" />
 							</Panel>
 							<Panel class="AllNeutralItems">

@@ -1,6 +1,5 @@
 0 0 0 0
 0 0 0 255
-00000000000000000@@0000
 0:Off, 1:All (for tracking accumulated duplicate read times), >1:Microsecond threashold
 0:Off, 1:Always, 2:Not during load
 0:Off, 1:Warn main thread, 2:Warn other threads
@@ -43,7 +42,6 @@ A15CBaseFileSystem
 AHHcITH
 APPSYSTEM: In ConnectInterfaces(), s_nRegistrationCount is %d
 ASYNC Read: %s
-ATBRARAUARARAUAUARARAXASGp
 AWAVATS
 AWAVATSA
 AWAVATSH
@@ -125,9 +123,11 @@ CUtlRBTree overflow with %u elements
 C`L9(t+I
 Cannot rename file "%s" that exists in a VPK or UGC file
 Cannot rename file "%s" that exists in a read only search path
+Chunk not found %d
 Clear the list of files that have been opened
 CommandLine
 Content being marked corrupt.  bMissingFilesOnly = %s, pFile specified as '%s', reason: '%s
+Content file %s is corrupt. Verify integrity of game files
 CopyAFile: Cannot copy into a VPK or UGC file '%s
 CopyAFile: Failed to copy file %s
 CopyAFile: dest '%s' must be absolute path
@@ -221,6 +221,7 @@ MATCHFRAMEWORK_001
 MD5Final
 MD5Init
 MD5Update
+MD5_ProcessSingleBuffer
 MODEL_PROCESSING_SCRIPT_INTERFACE_001
 MODEL_PROCESSING_SERVICES_INTERFACE_001
 MapListService_001
@@ -262,11 +263,8 @@ Open( %llu microsecs, %s
 Open( %s
 Ordered constructor wrapped type has no default constructor
 Packed store %s with refcount > 0
-Packedstore %s failed directory hash check
-Packedstore %s failed master chunk hash check
-Packedstore %s passed directory hash check
-Packedstore %s passed master chunk hash check
-Packedstore full path: %s data file: %s
+Packedstore failed checks: %s
+Packedstore passes all checks: %s
 PanoramaTextServices001
 PanoramaUIClient001
 PanoramaUIEngine001
@@ -302,7 +300,8 @@ PostProcessingSystem_001
 PreloadDirectoryEntries
 PropertyEditorSystem_001
 RARARARARARA
-RAUBTAp
+RARATAp
+RARAUARARAUAUARARAXGp
 RA\0xSBp p
 RA]ARARAUAp
 RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBQ
@@ -323,7 +322,6 @@ ResourceCompilerSystem001
 ResourceHandleUtils001
 ResourceManifestRegistry001
 ResourceSystem013
-SASBSAp
 SBRARARARARARAp
 SBSBSBTAp
 STATUS_ABORTED: Request canceled
@@ -338,9 +336,9 @@ SchemaTestExternal_One_001
 SchemaTestExternal_Two_001
 Sending Steam API content notification
 SerializedEntitiesVersion001
+ServerResourceCompilerInfo_001
 Set fs_report_long_reads 1 before loading to use this. Prints a list of files that were opened more than once and ~how long was spent reading from them
 Show the filesystem path
-Size mismatch determining size of signed data block (%d vs %d
 Size of per file buffers. 0 for none
 SoundOpSystem001
 SoundOpSystemEdit001
@@ -380,7 +378,6 @@ Tried to Seek NULL file handle
 Tried to close unknown file pointer 0x%llX
 Tried to read %i bytes from unknown file pointer 0x%llX
 Tried to write %i bytes from unknown file pointer 0x%llX
-UASASASASASASASASASASASASASASASB
 UNKNOWN VALUE
 Unable to remove %s
 Unable to rename "%s" to "%s
@@ -391,6 +388,7 @@ Unwind_Resume
 Use native FS or STDIO
 UtlMemory_Alloc
 UtlMemory_CalcNewAllocationCount
+UtlMemory_FailedAllocation
 VApplication001
 VAsyncFileSystem2_001
 VAvi001
@@ -465,7 +463,7 @@ Whitelist -       reload (absolute path) %s
 Whitelist - don't reload %s
 Whitelist - don't reload (unheard-of-file) %s
 WorldRendererMgr001
-XA`FB`;Lp
+XA`FB`3Lp
 X[A\A]A^A
 You must construct it with ORDERED_CONSTRUCT macro in the dependency resolution function
 Z10FioGetSizeiPy
@@ -506,7 +504,7 @@ ZN12CDirIteratorC1EPKcj
 ZN12CDirIteratorD1Ev
 ZN12CThreadEvent3SetEv
 ZN12CThreadEventC1Eb
-ZN13CBufferString10ExtendPathEPKcc
+ZN13CBufferString10ExtendPathEPKccb
 ZN13CBufferString10FixSlashesEc
 ZN13CBufferString11ShortenPathEb
 ZN13CBufferString11ToLowerFastEi
@@ -610,6 +608,7 @@ ZnamRKSt9nothrow_t
 ZnwmRKSt9nothrow_t
 allocator<T>::allocate(size_t n) 'n' exceeds maximum supported size
 async_memory_map
+bool CPackedStore::VerifyPackRead(int, int, int, ChunkHashFraction_t
 c9C$|^H
 centralDirectorySize
 commentLength
@@ -617,7 +616,6 @@ common
 compressedSize
 compressionMethod
 console.log
-convars_hidden_by_default
 cstring
 cxa_allocate_exception
 cxa_atexit
@@ -668,8 +666,9 @@ g_VProfCurrentProfile
 g_pMemAlloc
 gcc_except_tab__TEXT
 gxx_personality_v0
+hD9t:Xu
 h[A\A]A^A
-int64)m_nAllocationCount + (int64)num ) <= 0x7FFFFFFF
+int CUtlSortVector<ChunkHashFraction_t, ChunkHashFractionLess_t, CUtlVector<ChunkHashFraction_t, int, CUtlMemory<ChunkHashFraction_t, int> > >::Find(const TKey &) const [T = ChunkHashFraction_t, LessFunc = ChunkHashFractionLess_t, BaseVector = CUtlVector<ChunkHashFraction_t, int, CUtlMemory<ChunkHashFraction_t, int> >, TKey = ChunkHashFraction_t
 internalFileAttribs
 lCreateInterface
 la_symbol_ptr
@@ -679,6 +678,7 @@ libfilesystem_stdio.dylib
 loader_path
 loader_path/libsteam_api.dylib
 log_opened_files
+m_bNeedsSort
 materials/overviews
 materials/vgui/hud
 memcmp
@@ -710,7 +710,7 @@ pthread_mutex_unlock
 pthread_mutexattr_init
 pthread_mutexattr_settype
 public/tier0/threadtoolstypes.h
-public/tier0/utlmemory.h
+public/tier0/utlsortvector.h
 public/tier0/utlsymboltable.h
 radr://5614542
 recordPerfStats
@@ -768,31 +768,8 @@ virtual bool CBaseFileSystem::UnzipFile(const char *, const char *, const char
 virtual int CBaseFileSystem::ReadFileEx(const char *, const char *, void **, bool, bool, int, int, FSAllocFunc_t
 virtual void CBaseFileSystem::EnableWhitelistFileTracking(bool
 void CPackedStore::BuildHashTables
+void CPackedStore::TestHashChunkFraction(int, const ChunkHashFraction_t &, const ChunkHashFraction_t
 void CSemiAutoRWLockT<CThreadRWLock_FastRead>::Unlock(const char *, int) [RWLOCK_TYPE = CThreadRWLock_FastRead
-void CUtlMemory<CAsyncFileSystem2::CIOServiceThread *, int>::Grow(int) [T = CAsyncFileSystem2::CIOServiceThread *, I = int
-void CUtlMemory<CBaseFileSystem::COpenedFile, int>::Grow(int) [T = CBaseFileSystem::COpenedFile, I = int
-void CUtlMemory<CBaseFileSystem::CPathIDInfo *, int>::Grow(int) [T = CBaseFileSystem::CPathIDInfo *, I = int
-void CUtlMemory<CBaseFileSystem::CSearchPath *, int>::Grow(int) [T = CBaseFileSystem::CSearchPath *, I = int
-void CUtlMemory<CBaseFileSystem::CSearchPath, int>::Grow(int) [T = CBaseFileSystem::CSearchPath, I = int
-void CUtlMemory<CBaseFileSystem::SearchPathStateEntry_t, int>::Grow(int) [T = CBaseFileSystem::SearchPathStateEntry_t, I = int
-void CUtlMemory<CFileHandleTimer *, int>::Grow(int) [T = CFileHandleTimer *, I = int
-void CUtlMemory<CStoreIDEntry, int>::Grow(int) [T = CStoreIDEntry, I = int
-void CUtlMemory<CUtlString, int>::Grow(int) [T = CUtlString, I = int
-void CUtlMemory<CUtlSymbol, int>::Grow(int) [T = CUtlSymbol, I = int
-void CUtlMemory<FileOpenDuplicateTime_t *, int>::Grow(int) [T = FileOpenDuplicateTime_t *, I = int
-void CUtlMemory<UtlLinkedListElem_t<CFileInfo *, int>, int>::Grow(int) [T = UtlLinkedListElem_t<CFileInfo *, int>, I = int
-void CUtlMemory<UtlLinkedListElem_t<CFileInfo *, unsigned short>, unsigned short>::Grow(int) [T = UtlLinkedListElem_t<CFileInfo *, unsigned short>, I = unsigned short
-void CUtlMemory<UtlRBTreeNode_t<CUtlMap<const char *, CFileInfo *, int, bool (*)(const char *const &, const char *const &)>::Node_t, int>, int>::Grow(int) [T = UtlRBTreeNode_t<CUtlMap<const char *, CFileInfo *, int, bool (*)(const char *const &, const char *const &)>::Node_t, int>, I = int
-void CUtlMemory<UtlRBTreeNode_t<CUtlMap<const char *, CPathIDFileList *, int, bool (*)(const char *const &, const char *const &)>::Node_t, int>, int>::Grow(int) [T = UtlRBTreeNode_t<CUtlMap<const char *, CPathIDFileList *, int, bool (*)(const char *const &, const char *const &)>::Node_t, int>, I = int
-void CUtlMemory<UtlRBTreeNode_t<CUtlMap<const char *, CUtlVector<CStoreIDEntry, int, CUtlMemory<CStoreIDEntry, int> > *, int, bool (*)(const char *const &, const char *const &)>::Node_t, int>, int>::Grow(int) [T = UtlRBTreeNode_t<CUtlMap<const char *, CUtlVector<CStoreIDEntry, int, CUtlMemory<CStoreIDEntry, int> > *, int, bool (*)(const char *const &, const char *const &)>::Node_t, int>, I = int
-void CUtlMemory<UtlRBTreeNode_t<CUtlMap<const char *, int, int, bool (*)(const char *const &, const char *const &)>::Node_t, int>, int>::Grow(int) [T = UtlRBTreeNode_t<CUtlMap<const char *, int, int, bool (*)(const char *const &, const char *const &)>::Node_t, int>, I = int
-void CUtlMemory<UtlRBTreeNode_t<CUtlMap<int, unsigned long long, unsigned short, bool (*)(const int &, const int &)>::Node_t, unsigned short>, unsigned short>::Grow(int) [T = UtlRBTreeNode_t<CUtlMap<int, unsigned long long, unsigned short, bool (*)(const int &, const int &)>::Node_t, unsigned short>, I = unsigned short
-void CUtlMemory<UtlRBTreeNode_t<sort_search_paths_t, unsigned short>, unsigned short>::Grow(int) [T = UtlRBTreeNode_t<sort_search_paths_t, unsigned short>, I = unsigned short
-void CUtlMemory<bool, int>::Grow(int) [T = bool, I = int
-void CUtlMemory<char *, int>::Grow(int) [T = char *, I = int
-void CUtlMemory<const char *, int>::Grow(int) [T = const char *, I = int
-void CUtlMemory<int, int>::Grow(int) [T = int, I = int
-void CUtlMemory<unsigned char, int>::Grow(int) [T = unsigned char, I = int
 void CUtlMemory_RawAllocator<CUtlHashtableEntry<unsigned int, empty_t> >::EnsureCapacity(int) [T = CUtlHashtableEntry<unsigned int, empty_t
 void CUtlMemory_RawAllocator<CUtlHashtableEntry<unsigned int, empty_t> >::SetRawAllocatorType(RawAllocatorType_t) [T = CUtlHashtableEntry<unsigned int, empty_t
 void CUtlMemory_RawAllocator<unsigned int>::EnsureCapacity(int) [T = unsigned int

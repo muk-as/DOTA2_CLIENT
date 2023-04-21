@@ -25,10 +25,10 @@
 0CUtlMemoryPoolBase@@QEAA@HHHW4MemoryPoolGrowType_t@@PEBDW4MemAllocAttribute_t@@@Z
 0CUtlString@@QEAA@AEBVCBufferString@@@Z
 0CUtlSymbolTable@@QEAA@HH_N@Z
-0D9|$P
 0Hcv(Lc3
 0KeyValues@@QEAA@PEBD00@Z
 0KeyValues@@QEAA@PEBD@Z
+0Lc3D;s
 100s: Can not read TIFF directory
 16-byte data pool
 1:1: Tokens : ( T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | TOK_COLON | OPEN_BRACE | CLOSE_BRACE | OPEN_PAREN | CLOSE_PAREN | OPEN_BRACKET | CLOSE_BRACKET | SEMICOLON | OP_EQUAL | COMMA | DOUBLE_AND | NEGATIVE_TOK | DOUBLE_OR | LITERAL_TRUE | LITERAL_FALSE | POS_INTLITERAL | POS_FLOATLITERAL | ID | DOUBLE_QUOTED_STRING | SINGLE_QUOTED_STRING | SINGLE_LINE_COMMENT | ML_COMMENT | WS | UNRECOGNIZED
@@ -44,7 +44,7 @@
 220323000000Z
 220801000000Z
 220921000000Z
-230404162654Z0
+230420032329Z0
 241009235959Z0a1
 2DigiCert Trusted G4 RSA4096 SHA256 TimeStamping CA
 2DigiCert Trusted G4 RSA4096 SHA256 TimeStamping CA0
@@ -61,6 +61,7 @@
 3;CScs
 3KeyValues@@SAXPEAX@Z
 3d %3d %3d %3d %3d %3d %3d %3d
+4-byte data pool
 488:1: POS_FLOATLITERAL : ( ( DIGIT )+ '.' ( DIGIT )* ( EXPONENT )? | '.' ( DIGIT )+ ( EXPONENT )? | ( DIGIT )+ EXPONENT
 49HoKC
 4CUtlBinaryBlock@@QEAAAEAV0@AEBV0@@Z
@@ -92,12 +93,7 @@
 9t$H~"H
 9t$H~'H
 9t$H~-H
-9t$hu-H
-9|$8u-H
-9|$Hu-H
-9|$Hu1H
 9|$PtHHc
-9|$Xu-H
 A+D$$Hc
 A9JX~6Mc
 A9~`~jH
@@ -118,6 +114,7 @@ ANTLR3_EXCEPTION: %s
 ANYCRLF
 APPSYSTEM: In ConnectInterfaces(), s_nRegistrationCount is %d
 ARGB8888
+ASDetailed @ %0llu : %s : %s
 ASSETS: File extension symbol table is over half full (%llu
 ASSETS: File name symbol table is over half full (%llu
 ASSETS: Mod name symbol table is over half full (%llu
@@ -754,10 +751,12 @@ Asset is Empty
 Asset keys encountered across multiple different asset types
 Asset resort '%s' - %.2f seconds for %d iterations of %d assets ==> %.2fms per run (%.2fus per asset
 Asset system disabled - skipping dependency update for asset '%s
+AssetBrowser
 AssetBrowserSystem_001
 AssetDependencies
 AssetDependencyTier: % 4d - %s
 AssetEditInfoFilterFunc_t
+AssetEngineCommand_t
 AssetPath
 AssetPreviewSystem_001
 AssetRenameSystem_001
@@ -776,6 +775,7 @@ AssetSystem removing read-only stale asset file '%s' from '%s
 AssetSystem removing stale asset file '%s' from '%s
 AssetSystem saved persistent info for %u layers / %u assets in %.3f sec
 AssetSystem unable to load persistent info from '%s
+AssetSystem unable to load read-only persistent info from '%s', forcing full filesystem scan
 AssetSystem unable to save persistent info to '%s
 AssetSystem001
 AssetSystem: Mod '%s' set to read-only
@@ -929,7 +929,7 @@ C:\buildworker\source2_dota_rel_2019_win64\build\src\mathlib\extended\generic_ex
 C:\buildworker\source2_dota_rel_2019_win64\build\src\mathlib\mathlib.cpp
 C:\buildworker\source2_dota_rel_2019_win64\build\src\public\tier0\threadtoolstypes.h
 C:\buildworker\source2_dota_rel_2019_win64\build\src\public\tier0\tslist.h
-C:\buildworker\source2_dota_rel_2019_win64\build\src\public\tier0\utlmemory.h
+C:\buildworker\source2_dota_rel_2019_win64\build\src\public\tier0\utlsortvector.h
 C:\buildworker\source2_dota_rel_2019_win64\build\src\resourcefile\resourcefile.cpp
 C:\buildworker\source2_dota_rel_2019_win64\build\src\schemalib\schemaclassinfo.cpp
 C:\buildworker\source2_dota_rel_2019_win64\build\src\tier0_perproject\singletons.cpp
@@ -943,6 +943,7 @@ CAssetStringTable16 is overflowing 16 bits
 CAssetStringTable32 is overflowing 32 bits
 CAssetSystem::BuildDependencyData
 CAssetSystem::FilterAssetFiles
+CAssetSystem::FindAssetByFilename
 CAssetSystem::GetAssetInfo
 CAssetSystem::HandleFileChange: %s
 CAssetSystem::LoadAssetTypes
@@ -957,6 +958,7 @@ CAsyncLoadResourceHeaderPromise::GetHeader
 CAsyncLoadResourceHeaderPromise::StartNewReadRequest
 CBaseToolInfo
 CBitmapAssetTypeInfo
+CBufferString
 CCIR601 sampling not implemented yet
 CCITT Group 3
 CCITT Group 4
@@ -1045,6 +1047,8 @@ CONTENT
 CONTENTROOT
 CPackedStore::BuildHashTables
 CPackedStore::CPackedStore
+CPackedStore::TestHashChunkFraction
+CPackedStore::VerifyPackRead
 CRC32_ProcessBuffer
 CRT$XCA
 CRT$XCC
@@ -1121,146 +1125,11 @@ CUtlLeanVectorImpl<class CUtlLeanVectorFixedGrowableBase<struct AssetReference_t
 CUtlLeanVectorImpl<class CUtlLeanVectorFixedGrowableBase<unsigned char,64,int>,unsigned char,int>::AddMultipleToTail
 CUtlLinkedList overflow! (exhausted index range
 CUtlLinkedList overflow! (exhausted memory allocator
-CUtlMemory<__int64,int>::Grow
-CUtlMemory<bool,int>::Grow
-CUtlMemory<char *,int>::Grow
-CUtlMemory<char const *,int>::Grow
-CUtlMemory<char,int>::Grow
-CUtlMemory<class CAsset *,int>::Grow
-CUtlMemory<class CAssetTagInfo *,int>::Grow
-CUtlMemory<class CAssetTagInfo const *,int>::Grow
-CUtlMemory<class CAssetType *,int>::Grow
-CUtlMemory<class CAttributeNode *,int>::Grow
-CUtlMemory<class CBufferString,int>::Grow
-CUtlMemory<class CDmAttribute *,int>::Grow
-CUtlMemory<class CDmElement *,int>::Grow
-CUtlMemory<class CDmeHandle<class CDmElement,2>,int>::Grow
-CUtlMemory<class CEditInfoKeyData *,int>::Grow
-CUtlMemory<class CEngineToolInfo,int>::Grow
-CUtlMemory<class CExternalToolInfo,int>::Grow
-CUtlMemory<class CGenericExprPart *,int>::Grow
-CUtlMemory<class CGenericFilter *,int>::Grow
-CUtlMemory<class CManifestInfo,int>::Grow
-CUtlMemory<class CPCRE_CompiledRegEx,int>::Grow
-CUtlMemory<class CResourceName,int>::Grow
-CUtlMemory<class CSimpleAssetTypeInfo *,int>::Grow
-CUtlMemory<class CStrongHandleCopyable<struct InfoForResourceTypeCVDataResource>,int>::Grow
-CUtlMemory<class CSubasset *,int>::Grow
-CUtlMemory<class CSubassetType *,int>::Grow
-CUtlMemory<class CUtlBinaryBlock,int>::Grow
-CUtlMemory<class CUtlString,int>::Grow
-CUtlMemory<class CUtlSymbolLarge,int>::Grow
-CUtlMemory<class CUtlTokenReference,int>::Grow
-CUtlMemory<class CUtlVector<class CAttributeNode *,int,class CUtlMemory<class CAttributeNode *,int> >,int>::Grow
-CUtlMemory<class CUtlVector<enum DmElementHandle_t,int,class CUtlMemory<enum DmElementHandle_t,int> >,int>::Grow
-CUtlMemory<class CUtlVector<struct CDataModel::ElementIdHandlePair_t,int,class CUtlMemory<struct CDataModel::ElementIdHandlePair_t,int> >,int>::Grow
-CUtlMemory<class CUtlVector<struct CDmElementDictionary::DmIdPair_t,int,class CUtlMemory<struct CDmElementDictionary::DmIdPair_t,int> >,int>::Grow
-CUtlMemory<class Color,int>::Grow
-CUtlMemory<class DmeTime_t,int>::Grow
-CUtlMemory<class IAsset *,int>::Grow
-CUtlMemory<class IAssetCacheListener *,int>::Grow
-CUtlMemory<class IAssetFileListener *,int>::Grow
-CUtlMemory<class IAssetFingerprintListener *,int>::Grow
-CUtlMemory<class IAssetTagListener *,int>::Grow
-CUtlMemory<class IAssetType *,int>::Grow
-CUtlMemory<class IDataModelChangedListener *,int>::Grow
-CUtlMemory<class IDmAttributeAddedListener *,int>::Grow
-CUtlMemory<class IDmAttributeChangedListener *,int>::Grow
-CUtlMemory<class IDmAttributeRemovedListener *,int>::Grow
-CUtlMemory<class IDmElementChangedListener *,int>::Grow
-CUtlMemory<class IDmElementDeletedListener *,int>::Grow
-CUtlMemory<class IDmFormatUpdater *,int>::Grow
-CUtlMemory<class IDmLegacyUpdater *,int>::Grow
-CUtlMemory<class IDmNotify *,int>::Grow
-CUtlMemory<class IDmSerializer *,int>::Grow
-CUtlMemory<class IDmeElementCreated *,int>::Grow
-CUtlMemory<class IDmeOperator *,int>::Grow
-CUtlMemory<class IProceduralWorkingSet *,int>::Grow
-CUtlMemory<class ISubasset *,int>::Grow
-CUtlMemory<class ISubassetType *,int>::Grow
-CUtlMemory<class IUndoElement *,int>::Grow
-CUtlMemory<class IUndoListChangedNotify *,int>::Grow
-CUtlMemory<class IWorkingSet *,int>::Grow
-CUtlMemory<class KeyValues *,int>::Grow
-CUtlMemory<class KeyValues3 *,int>::Grow
-CUtlMemory<class KeyValues3 const *,int>::Grow
-CUtlMemory<class ModSortIndex_t,int>::Grow
-CUtlMemory<class QAngle,int>::Grow
-CUtlMemory<class QuaternionStorage,int>::Grow
-CUtlMemory<class VMatrix,int>::Grow
-CUtlMemory<class Vector2D,int>::Grow
-CUtlMemory<class Vector3DBase<float>,int>::Grow
-CUtlMemory<class Vector4D,int>::Grow
-CUtlMemory<class std::unique_ptr<struct CGenericFilterKey,struct std::default_delete<struct CGenericFilterKey> >,int>::Grow
-CUtlMemory<class std::unique_ptr<struct GenericFilterList_t::Part_t,struct std::default_delete<struct GenericFilterList_t::Part_t> >,int>::Grow
-CUtlMemory<enum DmElementHandle_t,int>::Grow
-CUtlMemory<float,int>::Grow
-CUtlMemory<int,int>::Grow
-CUtlMemory<struct AssetCRCDependency_t,int>::Grow
-CUtlMemory<struct AssetCalculateDependenciesContext_t *,int>::Grow
-CUtlMemory<struct AssetCalculateDependenciesContext_t,int>::Grow
-CUtlMemory<struct AssetFileChange_t,int>::Grow
-CUtlMemory<struct AssetPathSymbols_t,int>::Grow
-CUtlMemory<struct AssetReference_t,int>::Grow
-CUtlMemory<struct AssetSearchLocation_t,int>::Grow
-CUtlMemory<struct AssetStringTableElement_t<unsigned int>,int>::Grow
-CUtlMemory<struct AssetStringTableElement_t<unsigned short>,int>::Grow
-CUtlMemory<struct AutoTagDriver_t *,int>::Grow
-CUtlMemory<struct CAssetSystem::AssetSearchInfo_t,int>::Grow
-CUtlMemory<struct CAssetSystem::DeferredFileChange_t,int>::Grow
-CUtlMemory<struct CAssetSystem::ModPathInfo_t,int>::Grow
-CUtlMemory<struct CAssetSystem::PathInfo_t,int>::Grow
-CUtlMemory<struct CAssetTagVDataManager::TagHandle_t,int>::Grow
-CUtlMemory<struct CAssetTypeDependencyTierSolver::AssetGroup_t *,int>::Grow
-CUtlMemory<struct CDataModel::ElementIdHandlePair_t,int>::Grow
-CUtlMemory<struct CDmElementDictionary::AttributeInfo_t,int>::Grow
-CUtlMemory<struct CDmElementDictionary::DeletionInfo_t,int>::Grow
-CUtlMemory<struct CDmElementDictionary::DmIdPair_t,int>::Grow
-CUtlMemory<struct CInMemoryFilesystem::CPendingChange,int>::Grow
-CUtlMemory<struct CInMemoryFilesystem::CTestFile *,int>::Grow
-CUtlMemory<struct CInMemoryFilesystem::CTestSearchPath *,int>::Grow
-CUtlMemory<struct COperatorNode *,int>::Grow
-CUtlMemory<struct CResourceEditInfo::AdditionalRelatedFile_t,int>::Grow
-CUtlMemory<struct CResourceEditInfo::ArgumentDependency_t,int>::Grow
-CUtlMemory<struct CResourceEditInfo::InputDependency_t,int>::Grow
-CUtlMemory<struct CResourceEditInfo::SpecialDependency_t,int>::Grow
-CUtlMemory<struct CTestAsset::LogicalDependency_t,int>::Grow
-CUtlMemory<struct CUtlHandleTable<class CDmAttribute,23>::EntryType_t,int>::Grow
-CUtlMemory<struct CUtlHandleTable<class CDmElement,23>::EntryType_t,int>::Grow
-CUtlMemory<struct CUtlHandleTable<struct FileElementSet_t,20>::EntryType_t,int>::Grow
-CUtlMemory<struct CUtlHashMap<class CDmElement *,struct empty_t,class CDefEquals<class CDmElement *>,struct HashMapFunctor_t<class CDmElement *>,int>::HashBucket_t,int>::Grow
-CUtlMemory<struct CUtlHashMap<class CDmElement *,struct empty_t,class CDefEquals<class CDmElement *>,struct HashMapFunctor_t<class CDmElement *>,int>::Node_t,int>::Grow
-CUtlMemory<struct CUtlHashMap<class CUtlSymbolLarge,struct empty_t,class CDefEquals<class CUtlSymbolLarge>,struct HashMapFunctor_t<class CUtlSymbolLarge>,int>::HashBucket_t,int>::Grow
-CUtlMemory<struct CUtlHashMap<class CUtlSymbolLarge,struct empty_t,class CDefEquals<class CUtlSymbolLarge>,struct HashMapFunctor_t<class CUtlSymbolLarge>,int>::Node_t,int>::Grow
-CUtlMemory<struct CropData_t,int>::Grow
-CUtlMemory<struct ElementPathItem_t,int>::Grow
-CUtlMemory<struct InfoDataFilter_t,int>::Grow
-CUtlMemory<struct QueuedAssetChange_t,int>::Grow
-CUtlMemory<struct ResourceBindingBase_t const *,int>::Grow
-CUtlMemory<struct ResourceBlockTypeInfo_t,int>::Grow
-CUtlMemory<struct SubassetAndRefcount_t,int>::Grow
-CUtlMemory<struct TokenWarning_t,int>::Grow
-CUtlMemory<struct UndoInfo_t,int>::Grow
-CUtlMemory<struct UniqueId_t,int>::Grow
-CUtlMemory<struct UtlLinkedListElem_t<class CUtlKeyValuePair<unsigned __int64,class CAsset *>,unsigned int>,unsigned int>::Grow
-CUtlMemory<struct UtlRBTreeNode_t<class CDmAttribute *,unsigned short>,unsigned short>::Grow
-CUtlMemory<struct UtlRBTreeNode_t<class CDmElement *,int>,int>::Grow
-CUtlMemory<struct UtlRBTreeNode_t<class IDmeOperator *,unsigned short>,unsigned short>::Grow
-CUtlMemory<struct UtlRBTreeNode_t<struct CUtlMap<char const *,class CDmElement *,int,bool (__cdecl*)(char const * const &,char const * const &)>::Node_t,int>,int>::Grow
-CUtlMemory<struct UtlRBTreeNode_t<struct CUtlMap<char const *,class CDmElementFactoryHelper *,int,bool (__cdecl*)(char const * const &,char const * const &)>::Node_t,int>,int>::Grow
-CUtlMemory<struct UtlRBTreeNode_t<struct CUtlMap<class CUtlSymbolLarge,int,int,bool (__cdecl*)(class CUtlSymbolLarge const &,class CUtlSymbolLarge const &)>::Node_t,int>,int>::Grow
-CUtlMemory<struct UtlRBTreeNode_t<struct CUtlMap<class CUtlSymbolLarge,struct DmMemoryInfo_t,unsigned short,bool (__cdecl*)(class CUtlSymbolLarge const &,class CUtlSymbolLarge const &)>::Node_t,unsigned short>,unsigned short>::Grow
-CUtlMemory<struct UtlRBTreeNode_t<struct CUtlMap<enum DmElementHandle_t,enum DmElementHandle_t,int,bool (__cdecl*)(enum DmElementHandle_t const &,enum DmElementHandle_t const &)>::Node_t,int>,int>::Grow
-CUtlMemory<struct UtlRBTreeNode_t<struct CUtlMap<int,class CUtlSymbolLarge,int,bool (__cdecl*)(int const &,int const &)>::Node_t,int>,int>::Grow
-CUtlMemory<struct `private: void __cdecl CAssetSystem::SaveAssetTags(void)'::`2'::AssetEntry_t,int>::Grow
-CUtlMemory<unsigned __int64,int>::Grow
-CUtlMemory<unsigned char,int>::Grow
-CUtlMemory<unsigned int,int>::Grow
-CUtlMemory<unsigned short,int>::Grow
 CUtlMemory_RawAllocator<class CUtlHashtableEntry<unsigned int,struct empty_t> >::EnsureCapacity
 CUtlMemory_RawAllocator<unsigned int>::EnsureCapacity
 CUtlMemory_RawAllocator<unsigned int>::Grow
 CUtlRBTree overflow with %u elements
+CUtlSortVector<struct ChunkHashFraction_t,class ChunkHashFractionLess_t,class CUtlVector<struct ChunkHashFraction_t,int,class CUtlMemory<struct ChunkHashFraction_t,int> > >::Find
 CUtlStreamBuffer does not support TEXT_BUFFER's use CUtlBuffer
 CUtlString
 CUtlVector
@@ -1300,6 +1169,7 @@ Checking compile state for asset: %s
 Checking whether dependencies of asset %s are being written
 Cherokee
 ChromaBlurRadius
+Chunk not found %d
 Circular resourcecompile-time type dependency in assettypes_(common|internal).txt involving '%s' (See console log for full trace
 Class Hierarchy Descriptor
 CleanFaxData
@@ -1352,6 +1222,7 @@ ConsecutiveBadFaxLines
 Construct@CSplitString@@AEAAXPEBDPEAPEBDH_N@Z
 Content
 Content (%s
+Content file %s is corrupt. Verify integrity of game files
 ConvertCRLF@CUtlBuffer@@QEAA_NAEAV1@@Z
 Converter error - element "%s" already has a non-int attribute "%s
 CopyUniqueId
@@ -1399,7 +1270,7 @@ CurrentPreProfileMatrix
 Cx;p8}U
 Cypriot
 Cyrillic
-D$ ?K,ML
+D$ ?K,M
 D$ @89t
 D$ D8!t
 D$ Hc(H
@@ -1407,7 +1278,9 @@ D$ Hc0H
 D$ L9l$(t
 D$ Lc0M
 D$ Lc8M
+D$ {hw
 D$09(tSH
+D$0?K,MH
 D$0D81t
 D$0E8n
 D$0H!L$ H
@@ -1416,6 +1289,7 @@ D$0H9|$8t
 D$0H;A t
 D$0H;C t
 D$0Lc(M
+D$0{hw>L
 D$8;D$L
 D$8HcC(I
 D$@9D$Hu
@@ -1428,12 +1302,12 @@ D$P;L$L
 D$PH;D$h
 D$PHcL$x
 D$XD89t
-D$`H9t$ht
 D$h9t$P
-D$h@HcA
-D$lE8l
 D$pA*B0
 D$pA+B0
+D$pA;D
+D$pL9d$xt
+D$tH;D$Tu
 D16_SHADOW
 D24X8_SHADOW
 D8*t#Ic
@@ -1448,8 +1322,12 @@ D9l$ tj
 D9q ~7H
 D9t$0~<H
 D9y@~ZH
-D9}(u-H
 D;D$8}BIc
+DB failed to ReadFile (Err=%u): %s
+DB load ended: %s
+DB load started: %s
+DB save ended: %s
+DB save started: %s
 DCT coefficient out of range
 DCT scaled block size %dx%d not supported
 DD u)E
@@ -1721,7 +1599,7 @@ Expecting element type name, didn't find it
 Expecting element type, didn't find it
 Expecting quoted attribute value for attribute "%s", didn't find one
 Expression
-ExtendPath@CBufferString@@QEAAPEBDPEBDD@Z
+ExtendPath@CBufferString@@QEAAPEBDPEBDD_N@Z
 Extensions excluded from your client: %d
 ExtraSamples
 ExtractFileBase@CBufferString@@QEAAPEBDPEBD@Z
@@ -1804,18 +1682,19 @@ FixupResourceName: Illegal path, missing extension passed in ("%s
 FlattenedSerializersVersion001
 Float( %f
 FloatBitMap_t::ConvertGammaToLinear
-FloatBitMap_t::ConvertGammaToLinear(317): Conversion not supported yet
+FloatBitMap_t::ConvertGammaToLinear(318): Conversion not supported yet
+FloatBitMap_t::InitializeDummyRow
 FloatBitMap_t::LoadFromBuffer: Received improper buffer size, skipping
 FloatBitMap_t::LoadFromBuffer: Unsupported color format, skipping
-FloatBitMap_t::WriteToBuffer(962): Unsupported color format "%s", skipping
+FloatBitMap_t::WriteToBuffer(963): Unsupported color format "%s", skipping
 FloatBitMap_t::WriteToBuffer: Received improper buffer size %s (expecting %s), skipping
-FloatBitMap_t::WriteToBufferBC7_bc7e(), C:\buildworker\source2_dota_rel_2019_win64\build\src\bitmap\floatbitmap.cpp:1399
-FloatBitMap_t::WriteToBufferBC7_ispctexcomp(), C:\buildworker\source2_dota_rel_2019_win64\build\src\bitmap\floatbitmap.cpp:1511
-FloatBitMap_t::WriteToBufferDXT_atitc(1019): Error! Temp texture is %d bytes when ATI's lib requires %d bytes
-FloatBitMap_t::WriteToBufferDXT_atitc(1104): Unsupported output color format "%s
-FloatBitMap_t::WriteToBufferDXT_atitc(1113): Error! Allocated %llu bytes when ATI's lib requires %d bytes
-FloatBitMap_t::WriteToBufferDXT_atitc(1121): Error %d returned from ATI_TC_ConvertTexture
-FloatBitMap_t::WriteToBufferETC(), C:\buildworker\source2_dota_rel_2019_win64\build\src\bitmap\floatbitmap.cpp:1635
+FloatBitMap_t::WriteToBufferBC7_bc7e(), C:\buildworker\source2_dota_rel_2019_win64\build\src\bitmap\floatbitmap.cpp:1400
+FloatBitMap_t::WriteToBufferBC7_ispctexcomp(), C:\buildworker\source2_dota_rel_2019_win64\build\src\bitmap\floatbitmap.cpp:1512
+FloatBitMap_t::WriteToBufferDXT_atitc(1020): Error! Temp texture is %d bytes when ATI's lib requires %d bytes
+FloatBitMap_t::WriteToBufferDXT_atitc(1105): Unsupported output color format "%s
+FloatBitMap_t::WriteToBufferDXT_atitc(1114): Error! Allocated %llu bytes when ATI's lib requires %d bytes
+FloatBitMap_t::WriteToBufferDXT_atitc(1122): Error %d returned from ATI_TC_ConvertTexture
+FloatBitMap_t::WriteToBufferETC(), C:\buildworker\source2_dota_rel_2019_win64\build\src\bitmap\floatbitmap.cpp:1636
 Floating point "Predictor" not supported with %d data format
 FlsAlloc
 FlsFree
@@ -1966,7 +1845,6 @@ Gujarati
 Gurmukhi
 H*0"ZOW
 H3E H3E
-H9APumH
 H9CPu3
 H9D$PuCH
 H9H uIH
@@ -1994,6 +1872,7 @@ HA_A]A
 HA_A^A
 HA_A^A]A
 HH:mm:ss
+HIcD$@H
 HLc\$D
 HXA9NXt
 HXHc@PH
@@ -2004,12 +1883,16 @@ Handling batched file changes
 Hanunoo
 Have CRC
 HaveWriteLock_BlockReadsNow@CThreadRWLock_FastRead@@QEAAX_N@Z
+HcC(Icw4
 HcD$ H
 HcL$<H
-HcL$HLcl$XL
-HcQ$HcI4L
+HcP$Hc@4
 HcT$`L
+Hc\$pA
 Hci8E3
+Hck ;k0
+HckH;kX
+Hco ;o0
 Hct$PM
 Hct$`Lcl$lL
 HelpSystem_001
@@ -2030,7 +1913,7 @@ IHDRPLTEIDATIENDtRNScHRMgAMAiCCPsBITsRGBtEXtzTXtiTXtbKGDhISTpHYssPLTtIMEoFFseXIf
 IMAGE_FORMAT_R11G11B10_FLOAT
 INCONSISTENT: Marked as child resource, but has content files
 ISO JBIG
-IcG(t9I
+IcD$(t:I
 IcW\LcU
 Icon associated with the tag
 If set, draw this as an overlay image on the asset preview
@@ -2099,6 +1982,7 @@ Integer overflow in %s
 Intentionally vague touch behavior for %p
 InterlockedFlushSList
 Internal error, unknown tag 0x%x
+Internal_GetString@CKeyValues_Data@@IEAAPEBDPEBDPEAD_K@Z
 InteroperabilityIFDOffset
 Invalid Dependency Information
 Invalid JPEG file structure: SOS before SOF
@@ -2127,6 +2011,7 @@ Invalid scan script at entry %d
 Invalid sequence type
 Invalid tile size x
 Invalid tile size y
+Invalid use of KV3 specific type %s with basic type %s, must be basic type %s
 InvalidateUniqueId
 InvokeMiniDumpHandler
 Irrelevant deleted file: %s
@@ -2153,7 +2038,9 @@ Javanese
 K ATAUAVAWH
 K H9K0u
 K UWAUH
+K32GetModuleBaseNameA
 KERNEL32.dll
+KV3 instances cannot be set to an unspecified specific type
 Kannada
 Katakana
 Kayah_Li
@@ -2191,7 +2078,7 @@ L$@D9c
 L$@E)uP
 L$P+G$E3
 L$PA+F$L
-L$PLc1M
+L$PLc9M
 L$XH;D$8r
 L$`D9w8
 L$`D;w8
@@ -2199,8 +2086,8 @@ L$h+G$3
 L$h+G$L
 L$hH;D$@r
 L9d$(uhH
+L9gpt{E
 L9wPtdL9w`t^L9whtXH
-L9{pt{E
 L;L$8v7H
 L;T$Pt D
 L;T$Pt!D
@@ -2233,12 +2120,15 @@ LZWPreDecode
 LZWSetupDecode
 LZWSetupEncode
 Last two rows as percentage of total size %f
+Lc3D;s
 Lc?IcvH
 LcD$ J
-Lcd$HM
 Lcd$pI
 Lcq,HcilHcq<HcyLHcY\Lc
-Lct$XE3
+Lct$ E
+Lcw D;w0
+Lc} D;}0
+Lc~ D;~0
 Leaking %i elements
 LeaveCriticalSection
 LeftFingers
@@ -2289,11 +2179,14 @@ LoggingSystem_Log@@YA?AW4LoggingResponse_t@@HW4LoggingSeverity_t@@AEBULeafCodeIn
 LoggingSystem_Log@@YA?AW4LoggingResponse_t@@HW4LoggingSeverity_t@@VColor@@PEBDZZ
 LoggingSystem_RegisterLoggingChannel
 LoggingSystem_SetChannelVerbosity
-M9gpt{E
 MARK) must have an argument
 MATCHFRAMEWORK_001
 MAX_ALLOC_CHUNK is wrong, please fix
 MAYBE STALE
+MD5Final
+MD5Init
+MD5Update
+MD5_ProcessSingleBuffer
 MGetKV3ClassDefaults
 ML_COMMENT
 MM/dd/yy
@@ -2332,6 +2225,7 @@ Max length of strings to dump in assetsystem_dump_table
 MaxSampleValue
 Maximum supported image dimension is %u pixels
 Maximum time to spend in this busy anim
+Mc4$E;t
 Meetei_Mayek
 MemAlloc_AllocAlignedFunc
 MemAlloc_AllocFunc
@@ -2439,6 +2333,7 @@ Not implemented yet
 Not loaded
 Not safe to 'new' this class due to alignment requirements
 November
+NumCols() <= V_ARRAYSIZE( s_DummyRow
 NumberOfInks
 OPEN_BRACE
 OPEN_BRACKET
@@ -2490,6 +2385,7 @@ POSIX named classes are supported only within a class
 POS_FLOATLITERAL
 POS_INTLITERAL
 PPPPPPP
+PXHcT$x
 PackBits
 PackBitsDecode: Not enough data for scanline %ld
 PackBitsDecode: discarding %ld bytes to avoid buffer overrun
@@ -2528,10 +2424,13 @@ Plat_CPUTickFrequency
 Plat_DebugPrint
 Plat_ExitProcess
 Plat_FatalErrorFunc
+Plat_FileExists
 Plat_FloatTime
 Plat_GetCrtEnv
 Plat_GetEnv
+Plat_GetGameDirectory
 Plat_GetModuleProcAddress
+Plat_GetPlatformError
 Plat_GetTime
 Plat_IsDirectory
 Plat_IsInDebugSession
@@ -2587,7 +2486,7 @@ Purge@CUtlString@@QEAAXXZ
 Put@CUtlBuffer@@QEAAXPEBXH@Z
 PutDelimitedString@CUtlBuffer@@QEAAXPEAVCUtlCharConversion@@PEBD@Z
 PutString@CUtlBuffer@@QEAAXPEBD@Z
-PxHcD$PA
+PxHcD$P
 Quantization table 0x%02x was not defined
 Quantizing to %d = %d*%d*%d colors
 Quantizing to %d colors
@@ -2756,6 +2655,7 @@ STRING_CHAR
 SUATAVH
 SUATAWH
 SUAUAVAWH
+SUAUAWH
 SUAVAWH
 SUVATH
 SUVAUAVAWH
@@ -2782,15 +2682,14 @@ SVATAUAVH
 SVATAVAWH
 SVATAVH
 SVATAWH
-SVAUAVAWH
 SVAUAVH
 SVAVAWH
 SVWATAUAVAWH
 SVWATAUAWH
-SVWATAUH
 SVWATAVAWH
 SVWATAVH
 SVWATAWH
+SVWAUAVH
 SVWAUAWH
 SVWAVAWH
 SVWAVH
@@ -2830,6 +2729,7 @@ Seek failed on temporary file
 SeekGet@CUtlBuffer@@QEAAXW4SeekType_t@1@H@Z
 SeekPut@CUtlBuffer@@QEAAXW4SeekType_t@1@H@Z
 Selected %d colors for quantization
+SendMiniDumpReport
 September
 Sequence %d out of order (@position %d
 Sequence Name". If specified, this is used over the activity name. Specify it in the hint node
@@ -2842,6 +2742,7 @@ Serialize: File encoding %s is undefined
 Serialize: File encoding '%s' is undefined
 Serialize: Format %s expects to be written to a binary format, but the buffer is a text-format buffer
 SerializedEntitiesVersion001
+ServerResourceCompilerInfo_001
 Set this to automatically apply this tag based on an asset filter string. (NOTE: Auto tag names MUST start with an '@' character
 Set this to automatically apply this tag based on contents of a VData file. (NOTE: Auto tag names MUST start with an '@' character
 Set to true to revert to old behavior
@@ -2878,7 +2779,6 @@ Shavian
 ShortenPath@CBufferString@@QEAAPEBD_N@Z
 Show regardless of user setting
 Sinhala
-Size mismatch determining size of signed data block (%d vs %d
 Skipping registration of failed in-memory compile result for resource: '%s' (root = '%s
 Skipping reload of in-memory compiled resource '%s' with no associated asset
 Skipping reload of in-memory compiled resource '%s' without a compiled replacement buffer
@@ -2933,7 +2833,7 @@ Suspension not allowed here
 Syloti_Nagri
 Symbol table:  %d entries %llu bytes
 T$8D;T
-T$8H9:t
+T$8L92t
 T$HL;T$Pt
 T$XH;T$p
 T$\D+T$dD
@@ -3071,7 +2971,6 @@ UATAUAVAWH
 UATAUAVH
 UATAUAWH
 UATAVH
-UAUAWH
 UAVAWH
 UNEXPECTED: Assetsystem doesn't know about '%s:%s' (dependency of '%s'), but the filesystem found it at '%s
 UNKNOWN
@@ -3079,23 +2978,22 @@ UNKNOWN ERROR
 UNRECOGNIZED
 USATAUAWH
 USATAUH
-USATAVI
 USATAWH
+USAUAVI
 USER32.dll
-USVAUAVAWH
+USVATAVAWH
 USVAUAVH
-USVAVAWH
 USVWATAUAVAWH
 USVWATAUAVH
+USVWATAUAWH
 USVWATAVAWH
 USVWATAVH
-USVWATAWH
 USVWATH
 USVWATI
 USVWAUAWH
 USVWAUH
 USVWAVH
-USWATAUAVAWH
+USVWAWH
 USWATAUH
 USWAUAVH
 USWAVAWH
@@ -3111,6 +3009,7 @@ UVWATAUAVAWH
 UVWATAUH
 UVWATAVH
 UVWATAWH
+UVWAUAVAWH
 UVWAUAWH
 UVWAVAWH
 UVWAVH
@@ -3119,6 +3018,7 @@ UWATAUAWH
 UWATAUH
 UWATAVAWH
 UWATAWH
+UWAUAVH
 UWAUAWH
 Ugaritic
 UnInvalid
@@ -3150,6 +3050,7 @@ Unknown
 Unknown APP0 marker (not JFIF), length %u
 Unknown APP14 marker (not Adobe), length %u
 Unknown Adobe color transform code %d
+Unknown KV3 specific type %u
 Unknown compression type
 Unknown data format %d for LogLuv compression
 Unknown encoding %d for LogLuv compression
@@ -3197,7 +3098,9 @@ User-facing tag name
 Using rule file '%s
 UtlMemory_Alloc
 UtlMemory_CalcNewAllocationCount
+UtlMemory_FailedAllocation
 VATAUAWH
+VATAWH
 VAUAVAWH
 VAUAWH
 VAVAWH
@@ -3251,6 +3154,7 @@ V_FixDoubleSlashes
 V_FixSlashes
 V_GetFileExtension
 V_GetFileExtensionSafe
+V_GetPathForm
 V_Get_stderr
 V_Int32ToString_Unsafe
 V_Int64ToString_Unsafe
@@ -3343,10 +3247,13 @@ WARN: Discarding tags for unknown asset '%s
 WARNING: -AssetTargetGameRoot directory '%s' does not exist
 WARNING: -assetmergegameother directory '%s' does not exist
 WARNING: Asset '%s' refers to dependency '%s' from nonexistent mod '%s' (file '%s
-WARNING: Asset database '%s' corrupted (%d bytes) - forcing a full rescan
-WARNING: Asset database '%s' has bad format signature (0x%X) - forcing a full rescan
-WARNING: Asset database '%s' has bad guard value (0x%X) - forcing a full rescan
-WARNING: Asset database '%s' has bad version (%d) - forcing a full rescan
+WARNING: Asset database '%s' - FindOrCreateAssetByAssetCanonicalPathSymbols failed for '%s
+WARNING: Asset database '%s' - LoadPersistentInfo failed for '%s
+WARNING: Asset database '%s' StartLoadAssetSymbols failed
+WARNING: Asset database '%s' corrupted (%d bytes
+WARNING: Asset database '%s' has bad format signature (0x%X
+WARNING: Asset database '%s' has bad guard value (0x%X
+WARNING: Asset database '%s' has bad version (%d
 WARNING: Assetsystem encountered dependencies from nonexistent mod '%s' (first asset: '%s
 WARNING: Assetsystem is trying to save persistent info but no changelist was specified
 WARNING: CAsset::EnsureFileWritable: Asset '%s' does not have requested file. (%d
@@ -3360,9 +3267,11 @@ WARNING: Failed to load data for bitmap asset '%s
 WARNING: Failed to read '%s': %s
 WARNING: Failed to write '%s': %s
 WARNING: Include paths specified but no exclude paths specified! Ignoring includes
+WARNING: ReadFile failed for asset database '%s', error %u
 WARNING: Suppressing on-demand recompile of asset %s - already tried with this fingerprint
 WARNING: Unable to compile regex '%s', %s
 WARNING: VNotify abandoned after too many attempts
+WARNING: drive-relative paths like '%s' are not allowed
 WARNING: unrecognized extension '%s' used with -restricted_write_include
 WATAUAVAWH
 WATAUAVAWL
@@ -3370,10 +3279,8 @@ WATAUAVH
 WATAUAWH
 WATAUH
 WATAVAWH
-WATAVH
 WATAWH
 WAUAVAWH
-WAUAVH
 WAUAWH
 WAVAWH
 Wait@CThreadSyncObject@@QEAA_NI@Z
@@ -3763,6 +3670,7 @@ color log
 color$0
 color$0Indices
 color255
+color32
 color_array
 color_blue
 color_fade
@@ -3813,7 +3721,6 @@ controlValues
 controlValuesLagged
 controlpoint_light
 controls
-convars_hidden_by_default
 coordSys
 copy constructor closure
 core/__hack_nonexistent_folder/__hack_nonexistent_file.txt
@@ -3830,9 +3737,7 @@ d mods (%d unrecognized
 d$ D8#tFH
 d$ UAVAWH
 d$0L9d$ t
-d$HD9fp
 d$dD;d$ltY
-d$xfD;d
 d: *** Skipping string due to length (%d chars.) Increase assetsystem_dump_string_threshold to include
 d?000000
 d] Aborting undo '%s
@@ -3923,6 +3828,7 @@ eh vector copy constructor iterator
 eh vector destructor iterator
 eh vector vbase constructor iterator
 eh vector vbase copy constructor iterator
+ehandle
 element
 elementList
 element_array
@@ -3930,6 +3836,7 @@ elementid
 embeddedTarget
 emissionStopTime
 emitting
+empty member name
 enablemotionongravitygrab
 enableuseoutput
 encoding %s %d format %s %d
@@ -4105,11 +4012,11 @@ groupColor
 group_title
 g~{<itd<ntY<ot7<pt
 h:\dev\source2\main\src\thirdparty\etc2comp\etclib\etccodec\EtcBlock4x4Encoding.h
-hA_A^A
 hA_A^A]A
-hM9t$ptxD
+hM9wptxD
 header crc mismatch
 height
+hhHc@`Lk
 hiddenFlags
 hiddenGroups
 hintDxt5Compression
@@ -4180,7 +4087,6 @@ instance_file
 instance_parm
 instance_variable
 insufficient memory
-int64)m_nAllocationCount + (int64)num ) <= 0x7FFFFFFF
 int_array
 integer
 intensity
@@ -4248,8 +4154,10 @@ keyvalues2_flat
 keyvalues2_flat_v
 keyvalues2_noids
 keyvalues2_v
+l$ ATAVAWH
 l$ AVE3
 l$ VWATAUAVH
+l$ VWATAUAWH
 l$ VWATAVAWH
 l$ VWATH
 l$ VWAUAVAWH
@@ -4257,16 +4165,16 @@ l$ VWAVH
 l$ VWAWH
 l$ WATAVH
 l$ WAVAWH
-l$0Hci0
-l$0Hco
-l$0Hco8
-l$8D;d$p
-l$@H9sptzE
-l$@Hck0
+l$0Hci0;i
+l$0Hco ;o0
+l$0Hco8;oH
+l$8Ic6A;v
+l$@Hck0;k
 l$HA_A^A]A
 l$PD30A
+l$XI9t$ptzE
 l$`D9i8~UL
-l$`Mc?H
+l$`D9l$p|LH
 leftEdgeActive
 leftEdgeCurveType
 leftEdgeValue
@@ -4327,8 +4235,10 @@ m_AutoFilterTag
 m_BlockID
 m_Blocks
 m_ChildResourceList
+m_Command
 m_CompileDependsOnResourceTypes
 m_CompilerIdentifier
+m_Description
 m_Encoding
 m_EngineCommands
 m_EngineModulesThatReferenceAssets
@@ -4341,6 +4251,7 @@ m_FilterFunc
 m_Filters
 m_FriendlyName
 m_Group
+m_HideForRetailMods
 m_IconLg
 m_IconSm
 m_InputDependencies
@@ -4376,7 +4287,9 @@ m_ToolIcon
 m_Value
 m_WeakReferenceList
 m_WorkingDir
+m_bBringEngineToFront
 m_bCannotBeAMultiParentChildCompile
+m_bCannotBeShown
 m_bContentFileIsText
 m_bDebugCommandline
 m_bDoNotWarnAboutLargeAssetBatches
@@ -4386,6 +4299,9 @@ m_bIgnoreCompiledState
 m_bIsGameFile
 m_bIsNontrivialChildAssetType
 m_bIsSecondaryTool
+m_bIsWorkshopItemTool
+m_bIsWorkshopManagerTool
+m_bNeedsSort
 m_bOptional
 m_bPrefersIconForThumbnail
 m_bPrefersLivePreview
@@ -4438,6 +4354,7 @@ materialgroup
 materials/test_tga.content
 materials/test_txt.content
 materials/test_vmat.vres
+matrix3x4
 matrix_array
 maxChannels
 maxThrust
@@ -4584,7 +4501,6 @@ ownerlog
 p UAVAWH
 p WATAUAVAWH
 p WAVAWH
-p?4-byte data pool
 pA^A]A
 pA_A^A
 pA_A^A]A
@@ -4644,6 +4560,7 @@ pWAVThenMP3_Second == pWAVThenMP3_First
 pWAVThenMP3_Second->HasFileInLocation( ASSET_LOCATION_CONTENT
 pWAVThenMP3_Second->HasFileInLocation( ASSET_LOCATION_GAME
 packmode
+panorama
 parameter %s has no value
 parentConstraint
 parented by asset
@@ -4666,7 +4583,6 @@ pathsInclude
 pbucket->plinkLast->GetNext() == nullptr
 permission denied
 pfmscale
-phHc@`M
 physics
 physicsSimplificationError
 physicsSimplificationOverride
@@ -4776,11 +4692,13 @@ resampleinterval
 resource
 resource deadlock would occur
 resource unavailable try again
+resource_name
 restrict
 restricted_write_include
 result out of range
 result_left
 result_right
+retail_filter%d
 rightEdgeActive
 rightEdgeCurveType
 rightEdgeTime
@@ -4800,6 +4718,7 @@ rotation_random
 rotation_speed_random
 rotation_spin
 rotation_spin yaw
+rotation_vector
 rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr
 rtc$IAA
 rtc$IZZ
@@ -4816,6 +4735,7 @@ s allocation count overflow
 s allocation count overflow( %llu > %llu
 s allocation count overflow( add %llu + current %llu > max %llu
 s at offset %d
+s called with leading-slash path '%s
 s channel
 s compression support is not configured
 s definitions
@@ -4954,6 +4874,7 @@ snappable
 snapshotOverride
 snapshot_file
 someone please define this - I have no idea what it does
+soundevent
 source_column
 source_file
 source_line
@@ -5017,11 +4938,12 @@ stereoscopic
 stream end
 stream error
 stream timeout
-strict_type_combinations
 string
 string too long
 string_array
 string_instanced
+string_token
+subclass
 subkeys
 subpattern name expected
 subpattern name is too long (maximum 32 characters
@@ -5036,11 +4958,13 @@ syntax error in subpattern name (missing terminator
 syntax not recognized
 t!@8p t
 t$ AVAWH
+t$ D9%Kt
 t$ H;t$8
 t$ L9#t
 t$ UWATAVAWH
 t$ UWAUAVAWH
 t$ UWAVH
+t$ UWAWH
 t$ WATAUAVAWH
 t$ WATAUAVAWL
 t$ WATAUAVD
@@ -5059,6 +4983,7 @@ t$0D83tAH
 t$0Hcq@H
 t$0t2fff
 t$0x$Hc
+t$0x=Hc
 t$8;Upr4I
 t$8A^A
 t$8HcD$0I
@@ -5068,16 +4993,14 @@ t$@twLcK<L
 t$@x2Hc
 t$HA_A^A]A
 t$HHcD$@H
-t$Hx<Hc
 t$PHc1L
+t$PLcq D;q0
 t$XH9t$8t
-t$XI9|$pt|D
 t$XIc1H
 t$`H9t$@t
 t$`Lc3A
 t$`fD9+t$I
 t$h9t$x|JH
-t$ptiHcK<L
 t$ptkLcK<L
 t$ptsLcK<L
 t$xH9t$`t
@@ -5114,7 +5037,6 @@ t:/game/mid
 t@9+u,9s
 tBMcV<IcN@Lc
 tD@83t?H
-tD@8;t?H
 tIf9wbH
 tJD8;tEH
 tKHc_ H
@@ -5180,6 +5102,7 @@ time_steps
 timed out
 tintColor
 tls$ZZZ
+tnD9'~^A
 to fetch array of rationals
 to fetch per-sample values
 to fetch strip tag
@@ -5233,6 +5156,7 @@ uSfA9r uLfA9r0uEfA9r@u>fA9rPu7fA9r`u0fA9rpu)A
 uVfE9E uOfE9E0uHfE9E@uAfE9EPu:fE9E`u3fE9Epu,E
 uZE9F(uTE9F,uNE9F0uHE9F4uBE9F8u<E9F<u6A
 u]fE9M"uVfE9M2uOfE9MBuHfE9MRuAfE9Mbu:fE9Mru3A
+uchar32
 udfA9H u]fA9H0uVfA9H@uOfA9HPuHfA9H`uAfA9Hpu:A
 udt returning
 ue!T$(H!T
@@ -5267,6 +5191,7 @@ unrecognized character after (? or
 unrecognized character after (?P
 unrecognized character follows
 unrecognized option in text file - %s
+unspecified
 unspecified_texture
 useEdgeInfo
 usecurvetypes
@@ -5305,10 +5230,12 @@ vector vbase constructor iterator
 vector vbase copy constructor iterator
 vector2
 vector2_array
+vector2d
 vector3
 vector3_array
 vector4
 vector4_array
+vector4d
 vector<T> too long
 vectorcall
 velTolerance
@@ -5359,8 +5286,6 @@ x ATAVAWH
 x AUAVAWH
 x AVHcA
 x UATAUAVAWH
-x!Lcl$@M
-x!Lcl$HM
 x#A;AX
 x%A;AX
 x7;X0}2H
@@ -5404,6 +5329,7 @@ xAA;Y0};I
 xAA;y0};I
 xAE;K0};I
 xA^A]A
+xA_A^A
 xA_A^A]A
 xBA;Y0}<I
 xBE;Y0}<I

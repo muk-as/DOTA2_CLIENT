@@ -170,8 +170,14 @@
   opacity: 0.0;
   transition-delay: 0.5s;
  }
+ .DOTA_GAMERULES_STATE_PLAYER_DRAFT #PickModeSubtitle{
 
- #GameModeLabel{
+  transform: translateX( 30px );
+  opacity: 0;
+  transition-delay: 0.5s;
+ }
+
+ .GameModeLabel{
 
   color: white;
   text-shadow: 0px 0px 6px 1.0 #9EF8FF45;
@@ -189,14 +195,14 @@
   opacity: 0;
  }
 
- .EventGame DOTAHudPreGame.DarkMoon #GameModeLabel{
+ .EventGame DOTAHudPreGame.DarkMoon .GameModeLabel{
 
   text-shadow: 0px 0px 8px 2.0 #BA707045;
   font-size: 28px;
   letter-spacing: 2px;
  }
 
- .nemestice #GameModeLabel{
+ .nemestice .GameModeLabel{
 
   text-shadow: 0px 0px 8px 2.0 #BA707045;
   font-size: 20px;
@@ -211,7 +217,7 @@
 
 
 
- .EventGame DOTAHudPreGame.Season_Frostivus2018 #GameModeLabel{
+ .EventGame DOTAHudPreGame.Season_Frostivus2018 .GameModeLabel{
 
   text-shadow: 0px 0px 8px 2.0 #8baebb45;
   font-size: 28px;
@@ -268,7 +274,7 @@
   visibility: collapse;
  }
 
- .AllDraftMode #PickModePickPhase{
+ .AllDraftMode.DOTA_GAMERULES_STATE_HERO_SELECTION #PickModePickPhase{
 
   visibility: visible;
  }
@@ -485,18 +491,31 @@
  #WaitingForPlayersLabel,#StrategyTimeLabel{
 
 
-  color: white;
-  text-shadow: 0px 0px 6px 1.0 #9EF8FF45;
   width: 100%;
-  font-size: 20px;
-  text-align: center;
-  text-transform: uppercase;
   transform: translateX( 30px );
   opacity: 0;
 
   transition-property: transform, opacity;
   transition-duration: 0.5s;
   transition-delay: 0.5s;
+ }
+
+ #PlayerDraftLabel{
+
+  width: 100%;
+  transform: translateX( -30px );
+  opacity: 0;
+
+  transition-property: transform, opacity;
+  transition-duration: 0.5s;
+  transition-delay: 0.5s;
+ }
+
+ .DOTA_GAMERULES_STATE_PLAYER_DRAFT #PlayerDraftLabel{
+
+  opacity: 1;
+  transform: none;
+  transition-delay: 0s;
  }
 
  #ConnectionClock,#WaitingForPlayersLabel{
@@ -548,81 +567,6 @@
   transition-delay: 0.0s;
  }
 
- #HeaderRanked{
-
-  width: 390px;
-  horizontal-align: center;
-  margin-top: 4px;
-
-  visibility: collapse;
- }
-
- .AspectRatio16x10 #HeaderRanked{
-
-  width: 360px;
- }
-
- .AspectRatio4x3 #HeaderRanked{
-
-  width: 310px;
- }
-
- .Ranked #HeaderRanked{
-
-  visibility: visible;
- }
-
- .HeaderRankedTeam{
-
-  flow-children: down;
- }
-
- #HeaderRankedDire{
-
-  horizontal-align: right;
- }
-
- #HeaderRankedDire > Label{
-
-  horizontal-align: right;
-  text-align: right;
- }
-
- .TeamAverageMMRLabel{
-
-  color: #999;
-  font-size: 14px;
-  text-transform: uppercase;
-  padding: 2px 4px 0px 4px;
-  background-color: gradient( linear, 0% 0%, 100% 0%, from( #532E35dd ), color-stop( .65, #532E35dd ), to( #00000000 ) );
-  color: #C5A97A;
-  color: gradient( linear, 0% 0%, 0% 100%, from( #C5A97A ), to( #C5A97A44 ) );
-  font-size: 14px;
-  padding-left: 20px;
-  padding-right: 34px;
- }
-
- #HeaderRankedDire .TeamAverageMMRLabel{
-
-  background-color: gradient( linear, 100% 0%, 0% 0%, from( #532E35dd ), color-stop( .65, #532E35dd ), to( #00000000 ) );
-  padding-left: 34px;
-  padding-right: 20px;
- }
-
- .TeamAverageMMRValue{
-
-  color: #8E745A;
-  font-size: 20px;
-  margin-top: -2px;
-  padding-left: 24px;
- }
-
- #HeaderRankedDire .TeamAverageMMRValue{
-
-  padding-right: 24px;
-  padding-left: 0px;
- }
-
  #HeaderCaptainsMode{
 
   width: 390px;
@@ -637,56 +581,25 @@
 
   visibility: collapse;
  }
+  .AspectRatio16x10 #HeaderCaptainsMode{width:360px;}
+  .AspectRatio4x3 #HeaderCaptainsMode{width: 310px;}
+
+  .DOTA_GAMERULES_STATE_HERO_SELECTION #HeaderCaptainsMode{opacity: 1;}
+  .CaptainsModeHeroPicking #HeaderCaptainsMode{visibility: visible;}
+  .DOTA_GAMERULES_STATE_PLAYER_DRAFT #HeaderCaptainsMode{opacity: 1;visibility: visible;}
+
 
  #HeaderCaptainsModeRadiant{
 
   margin-left: 30px;
- }
+ }.AspectRatio16x10 #HeaderCaptainsModeRadiant{margin-left: 0px;}
 
- .AspectRatio16x10 #HeaderCaptainsModeRadiant{
-
-  margin-left: 0px;
- }
 
  #HeaderCaptainsModeDire{
 
   margin-right: 30px;
- }
+ }.AspectRatio16x10 #HeaderCaptainsModeDire{margin-right: 0px;}
 
- .AspectRatio16x10 #HeaderCaptainsModeDire{
-
-  margin-right: 0px;
- }
-
- .DOTA_GAMERULES_STATE_HERO_SELECTION #HeaderCaptainsMode{
-
-  opacity: 1.0;
- }
-
- .CaptainsModeHeroPicking #HeaderCaptainsMode{
-
-  visibility: visible;
- }
-
- .AspectRatio16x10 #HeaderCaptainsMode{
-
-  width: 360px;
- }
-
- .AspectRatio4x3 #HeaderCaptainsMode{
-
-  width: 310px;
- }
-
- .AspectRatio16x10 .Ranked #HeaderCaptainsMode{
-
-  width: 340px;
- }
-
- .AspectRatio4x3 .Ranked #HeaderCaptainsMode{
-
-  width: 290px;
- }
 
  .HeaderCaptainsModeTeam{
 
@@ -760,37 +673,6 @@
   transform: translateX(-50px) translateY(-95px);
  }
 
- .Ranked.InReserveTime.RadiantPicking #RadiantReserveTime{
-
-  transform: translateX(109px) translateY(-55px);
- }
-
- .Ranked.InReserveTime.DirePicking #DireReserveTime{
-
-  transform: translateX(-115px) translateY(-55px);
- }
-
-
- .AspectRatio16x10 .Ranked.InReserveTime.RadiantPicking #RadiantReserveTime{
-
-  transform: translateX(92px) translateY(-55px);
- }
-
- .AspectRatio16x10 .Ranked.InReserveTime.DirePicking #DireReserveTime{
-
-  transform: translateX(-96px) translateY(-55px);
- }
-
- .AspectRatio4x3 .Ranked.InReserveTime.RadiantPicking #RadiantReserveTime{
-
-  transform: translateX(70px) translateY(-55px);
- }
-
- .AspectRatio4x3 .Ranked.InReserveTime.DirePicking #DireReserveTime{
-
-  transform: translateX(-74px) translateY(-55px);
- }
-
  #HeaderCaptainsModeDire .TeamReserveTimeValue{
 
   padding-right: 24px;
@@ -851,13 +733,7 @@
   width: 1920px;
   height: 100%;
   overflow: clip squish;
-  flow-children: right;
   horizontal-align: center;
- }
-
- .AspectRatio16x10 #ScreenContainer,.AspectRatio4x3 #ScreenContainer{
-
-  width: 100%;
  }
 
  DOTAHudPreGame.Reconnect:not(.PreGamePhase){
@@ -921,23 +797,27 @@
 
   opacity: 1;
 
-  transition-property: transform, wash-color;
-  transition-duration: 0.8s, 0.6s;
+  transition-property: transform, wash-color, opacity;
+  transition-duration: 0.8s, 0.6s, 0s;
   transition-timing-function: ease-in-out;
  }
 
- .StrategyVisible #HeroPickScreen,.StrategyVisible #StrategyScreen{
 
+ .StrategyVisible #HeroPickScreen{
 
   transform: translateX( -100% );
-  transition-duration: 0.8s, 0.6s;
  }
 
  .StrategyVisible #HeroPickScreen{
 
-  transform: translateX( -1800px );
+  transform: translateX( -100% );
+ }
 
-  transition-duration: 0.8s, 1s;
+ .PlayerDraftVisible #HeroPickScreen{
+
+  transition-property: transform, wash-color, opacity;
+  transition-duration: 0.8s, 0.6s, 0.6s;
+  opacity: 0;
  }
 
  #HeroPickScreenContents{
@@ -2130,6 +2010,27 @@
   sound: "ui.untick";
  }
 
+ #PlayerDraftScreen{
+
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+
+  transition-property: transform;
+  transition-duration: 0s;
+  transition-timing-function: ease-in-out;
+ }
+ .PlayerDraftVisible #PlayerDraftScreen{
+
+  opacity: 1;
+
+
+  transition-property: opacity;
+  transition-duration: 1s;
+ }
+
+ #PlayerDraftScreen Label{  border: 1px solid red;}
+
  #StrategyScreen{
 
   width: 100%;
@@ -2137,11 +2038,17 @@
   horizontal-align: center;
 
   opacity: 1;
+  transform: translateX( 100% );
 
   transition-property: transform, wash-color, opacity;
   transition-duration: 0.8s, 1s;
   transition-timing-function: ease-in-out;
  }
+ .StrategyVisible #StrategyScreen{
+
+  transform: translateX( 0% );
+ }
+
 
  #StrategyHeroBadge{
 
@@ -2178,8 +2085,7 @@
  .AspectRatio4x3 #HeroRelicsContainer{  margin-left: -5px;}
 
 
- .MapLoadingOutro #SettingsButton,.StrategyVersusTransition #SettingsButton,.MapLoading #SettingsButton,.MapLoadingOutro #DashboardButton,.StrategyVersusTransition #DashboardButton,.MapLoading #DashboardButton,.MapLoadingOutro #PlusButton,.StrategyVersusTransition #PlusButton,.MapLoading #PlusButton,.MapLoadingOutro #BottomPanelsContainer,.StrategyVersusTransition #BottomPanelsContainer,.MapLoading #BottomPanelsContainer,.MapLoadingOutro #Header,.StrategyVersusTransition #Header,.MapLoading #Header,.MapLoadingOutro #HeroPickViewStrategy,.StrategyVersusTransition #HeroPickViewStrategy,.MapLoading #HeroPickViewStrategy,.StrategyVisible.MapLoadingOutro #HeroPickViewStrategy,.StrategyVisible.StrategyVersusTransition #HeroPickViewStrategy,.StrategyVisible.MapLoading #HeroPickViewStrategy,.MapLoadingOutro #BacktoHeroGrid,.StrategyVersusTransition #BacktoHeroGrid,.MapLoading #BacktoHeroGrid,.StrategyVisible.MapLoadingOutro #BacktoHeroGrid,.StrategyVisible.StrategyVersusTransition #BacktoHeroGrid,.StrategyVisible.MapLoading #BacktoHeroGrid,.MapLoadingOutro #SwitchScreenButton,.StrategyVersusTransition .SwitchScreenButton,.MapLoading .SwitchScreenButton,.MapLoadingOutro #MainContents,.StrategyVersusTransition #MainContents,.MapLoading #MainContents,.MapLoadingOutro #HeaderRanked,.StrategyVersusTransition #HeaderRanked,.MapLoading #HeaderRanked,.MapLoadingOutro #HeaderCaptainsMode,.StrategyVersusTransition #HeaderCaptainsMode,.MapLoading #HeaderCaptainsMode,.MapLoadingOutro #AbilityDraft,.StrategyVersusTransition #AbilityDraft,.MapLoading #AbilityDraft{
-
+ .MapLoadingOutro #SettingsButton,.StrategyVersusTransition #SettingsButton,.MapLoading #SettingsButton,.MapLoadingOutro #DashboardButton,.StrategyVersusTransition #DashboardButton,.MapLoading #DashboardButton,.MapLoadingOutro #PlusButton,.StrategyVersusTransition #PlusButton,.MapLoading #PlusButton,.MapLoadingOutro #BottomPanelsContainer,.StrategyVersusTransition #BottomPanelsContainer,.MapLoading #BottomPanelsContainer,.MapLoadingOutro #Header,.StrategyVersusTransition #Header,.MapLoading #Header,.MapLoadingOutro #HeroPickViewStrategy,.StrategyVersusTransition #HeroPickViewStrategy,.MapLoading #HeroPickViewStrategy,.StrategyVisible.MapLoadingOutro #HeroPickViewStrategy,.StrategyVisible.StrategyVersusTransition #HeroPickViewStrategy,.StrategyVisible.MapLoading #HeroPickViewStrategy,.MapLoadingOutro #BacktoHeroGrid,.StrategyVersusTransition #BacktoHeroGrid,.MapLoading #BacktoHeroGrid,.StrategyVisible.MapLoadingOutro #BacktoHeroGrid,.StrategyVisible.StrategyVersusTransition #BacktoHeroGrid,.StrategyVisible.MapLoading #BacktoHeroGrid,.MapLoadingOutro #SwitchScreenButton,.StrategyVersusTransition .SwitchScreenButton,.MapLoading .SwitchScreenButton,.MapLoadingOutro #MainContents,.StrategyVersusTransition #MainContents,.MapLoading #MainContents,.MapLoadingOutro #HeaderCaptainsMode,.StrategyVersusTransition #HeaderCaptainsMode,.MapLoading #HeaderCaptainsMode,.MapLoadingOutro #AbilityDraft,.StrategyVersusTransition #AbilityDraft,.MapLoading #AbilityDraft{
 
 
 
@@ -5123,9 +5029,7 @@
   visibility: visible;
  }
 
-
- .LocalPlayerIsSpectating #PreMinimapContainer,.LocalPlayerIsSpectating #AvailableItemsContainer,.LocalPlayerIsSpectating #GridTeamComp,.LocalPlayerIsSpectating #BattlePassContainer,.LocalPlayerIsSpectating #PlusChallengeContainer,.LocalPlayerIsSpectating #Chat,.LocalPlayerIsSpectating #Header,.LocalPlayerIsSpectating #HeaderRanked,.LocalPlayerIsSpectating #HeaderCaptainsMode,.LocalPlayerIsSpectating .CavernCrawlContainer,.LocalPlayerIsSpectating #MainContents,.LocalPlayerIsSpectating #FriendsAndFoes{
-
+ .LocalPlayerIsSpectating #PreMinimapContainer,.LocalPlayerIsSpectating #AvailableItemsContainer,.LocalPlayerIsSpectating #GridTeamComp,.LocalPlayerIsSpectating #BattlePassContainer,.LocalPlayerIsSpectating #PlusChallengeContainer,.LocalPlayerIsSpectating #Chat,.LocalPlayerIsSpectating #Header,.LocalPlayerIsSpectating #HeaderCaptainsMode,.LocalPlayerIsSpectating .CavernCrawlContainer,.LocalPlayerIsSpectating #MainContents,.LocalPlayerIsSpectating #FriendsAndFoes{
 
 
 
@@ -5150,8 +5054,15 @@
   margin-bottom: 4px;
  }
 
- .IsAbilityDraft .SwitchScreenButton,.IsAbilityDraft #PregameBG,.IsAbilityDraft #PreMinimapContainer,.IsAbilityDraft .CavernCrawlContainer,.IsAbilityDraft #AvailableItemsContainer,.IsAbilityDraft #GridTeamComp,.IsAbilityDraft #BattlePassContainer,.IsAbilityDraft #PlusChallengeContainer,.IsAbilityDraft #Header,.IsAbilityDraft #HeaderRanked,.IsAbilityDraft #HeaderCaptainsMode,.IsAbilityDraft #FriendsAndFoes,.IsAbilityDraft #MainContents{
+ .LocalPlayerIsSpectating.PlayerDraftVisible #Header,.LocalPlayerIsSpectating.PlayerDraftVisible #HeaderCaptainsMode,.LocalPlayerIsSpectating.PlayerDraftVisible #Chat,.LocalPlayerIsSpectating.PlayerDraftVisible #MainContents{
 
+
+
+
+  visibility: visible;
+ }
+
+ .IsAbilityDraft .SwitchScreenButton,.IsAbilityDraft #PregameBG,.IsAbilityDraft #PreMinimapContainer,.IsAbilityDraft .CavernCrawlContainer,.IsAbilityDraft #AvailableItemsContainer,.IsAbilityDraft #GridTeamComp,.IsAbilityDraft #BattlePassContainer,.IsAbilityDraft #PlusChallengeContainer,.IsAbilityDraft #Header,.IsAbilityDraft #HeaderCaptainsMode,.IsAbilityDraft #FriendsAndFoes,.IsAbilityDraft #MainContents{
 
 
 
@@ -5165,6 +5076,13 @@
 
 
   visibility: collapse;
+ }
+
+ .IsAbilityDraft.PlayerDraftVisible #MainContents,.IsAbilityDraft.PlayerDraftVisible #Header,.IsAbilityDraft.PlayerDraftVisible #HeaderCaptainsMode{
+
+
+
+  visibility: visible;
  }
 
  .IsAbilityDraft.StrategyVisible.StrategyTimeActive #MainContents{
@@ -5218,16 +5136,12 @@
   height: 20px;
  }
 
- .IsAbilityDraft.StrategyVisible #MainContents #ScreenContainer,.IsAbilityDraft.StrategyVisible.StrategyTimeActive #MainContents #ScreenContainer{
+ .IsAbilityDraft.StrategyVisible #MainContents #ScreenContainer{
 
-
-  transform: none;
-  flow-children: none;
   width: 720px;
  }
 
- .IsAbilityDraft.StrategyVisible #MainContents #StrategyScreen,.IsAbilityDraft.StrategyVisible.StrategyTimeActive #MainContents #StrategyScreen{
-
+ .IsAbilityDraft.StrategyVisible #MainContents #StrategyScreen{
 
   width: 900px;
   horizontal-align: center;

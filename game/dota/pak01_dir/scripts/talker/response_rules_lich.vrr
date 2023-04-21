@@ -1,793 +1,2475 @@
-#include "talker/response_rules_shared.vrr"
-
-criterion "Islich" "classname" "npc_dota_hero_lich" weight 5 required
-criterion "IsLichFrostNova" "abilityname" "lich_frost_nova" weight 5 required
-criterion "IsLichDarkRitual" "abilityname" "lich_sinister_gaze" weight 5 required
-criterion "IsLichFrostArmor" "abilityname" "lich_frost_shield" weight 5 required
-criterion "IsLichFailedChainFrost" "chainfrost_damageratio" "<=0.3" weight 5 required
-criterion "IsLichLoadoutSpawn" "special_spawn" "lich_loadout_spawn" weight 5 required
-
-Response lich_Spawn
-{
-	scene "scenes/lich/lich_lich_spawn_01.vcd" nodelay 
-	scene "scenes/lich/lich_lich_spawn_02.vcd" nodelay 
-	scene "scenes/lich/lich_lich_spawn_03.vcd" nodelay 
-	scene "scenes/lich/lich_lich_spawn_04.vcd" nodelay 
-	scene "scenes/lich/lich_lich_spawn_05.vcd" nodelay 
-}
-
-Rule lich_Spawn_Rule
-{
-	criteria Spawn Islich 
-	response lich_Spawn
-}
-
-Response lich_Move
-{
-	scene "scenes/lich/lich_lich_move_01.vcd" nodelay 
-	scene "scenes/lich/lich_lich_move_02.vcd" nodelay 
-	scene "scenes/lich/lich_lich_move_03.vcd" nodelay 
-	scene "scenes/lich/lich_lich_move_04.vcd" nodelay 
-	scene "scenes/lich/lich_lich_move_05.vcd" nodelay 
-	scene "scenes/lich/lich_lich_move_06.vcd" nodelay 
-	scene "scenes/lich/lich_lich_move_07.vcd" nodelay 
-	scene "scenes/lich/lich_lich_move_08.vcd" nodelay 
-	scene "scenes/lich/lich_lich_move_09.vcd" nodelay 
-	scene "scenes/lich/lich_lich_move_10.vcd" nodelay 
-	scene "scenes/lich/lich_lich_move_12.vcd" nodelay 
-	scene "scenes/lich/lich_lich_move_13.vcd" nodelay 
-	scene "scenes/lich/lich_lich_move_14.vcd" nodelay 
-	scene "scenes/lich/lich_lich_move_15.vcd" nodelay 
-}
-
-Rule lich_Move_Rule
-{
-	criteria Move Islich 
-	response lich_Move
-}
-
-Response lich_Attack
-{
-	scene "scenes/lich/lich_lich_move_11.vcd" nodelay 
-	scene "scenes/lich/lich_lich_move_16.vcd" nodelay 
-	scene "scenes/lich/lich_lich_move_17.vcd" nodelay 
-	scene "scenes/lich/lich_lich_attack_01.vcd" nodelay 
-	scene "scenes/lich/lich_lich_attack_02.vcd" nodelay 
-	scene "scenes/lich/lich_lich_attack_03.vcd" nodelay 
-	scene "scenes/lich/lich_lich_attack_04.vcd" nodelay 
-	scene "scenes/lich/lich_lich_attack_05.vcd" nodelay 
-	scene "scenes/lich/lich_lich_attack_06.vcd" nodelay 
-	scene "scenes/lich/lich_lich_attack_07.vcd" nodelay 
-	scene "scenes/lich/lich_lich_attack_08.vcd" nodelay 
-	scene "scenes/lich/lich_lich_attack_09.vcd" nodelay 
-	scene "scenes/lich/lich_lich_attack_10.vcd" nodelay 
-	scene "scenes/lich/lich_lich_attack_11.vcd" nodelay 
-}
-
-Rule lich_Attack_Rule
-{
-	criteria Attack Islich 
-	response lich_Attack
-}
-
-Response lich_CastOrder
-{
-	scene "scenes/lich/lich_lich_cast_01.vcd" nodelay 
-	scene "scenes/lich/lich_lich_cast_02.vcd" nodelay 
-	scene "scenes/lich/lich_lich_cast_03.vcd" nodelay 
-}
-
-Rule lich_CastOrder_Rule
-{
-	criteria CastOrder Islich 
-	response lich_CastOrder
-}
-
-Response lich_KillIsLichFrostNovaChance_20%
-{
-	scene "scenes/lich/lich_lich_ability_nova_01.vcd" nodelay 
-	scene "scenes/lich/lich_lich_ability_nova_02.vcd" nodelay 
-	scene "scenes/lich/lich_lich_ability_nova_03.vcd" nodelay 
-	scene "scenes/lich/lich_lich_ability_nova_04.vcd" nodelay 
-	scene "scenes/lich/lich_lich_ability_nova_05.vcd" nodelay 
-}
-
-Rule lich_KillIsLichFrostNovaChance_20%_Rule
-{
-	criteria Kill Islich IsLichFrostNova Chance_20%
-	response lich_KillIsLichFrostNovaChance_20%
-}
-
-Response lich_KillIsLichFrostNovaIsEnemyCrystalMaidenChance_25%
-{
-	scene "scenes/lich/lich_lich_ability_nova_06.vcd" nodelay 
-}
-
-Rule lich_KillIsLichFrostNovaIsEnemyCrystalMaidenChance_25%_Rule
-{
-	criteria Kill Islich IsLichFrostNova IsEnemyCrystalMaiden Chance_25%
-	response lich_KillIsLichFrostNovaIsEnemyCrystalMaidenChance_25%
-}
-
-Response lich_Kill
-{
-	scene "scenes/lich/lich_lich_kill_01.vcd" nodelay 
-	scene "scenes/lich/lich_lich_kill_02.vcd" nodelay 
-	scene "scenes/lich/lich_lich_kill_03.vcd" nodelay 
-	scene "scenes/lich/lich_lich_kill_04.vcd" nodelay 
-	scene "scenes/lich/lich_lich_kill_05.vcd" nodelay 
-	scene "scenes/lich/lich_lich_kill_06.vcd" nodelay 
-	scene "scenes/lich/lich_lich_kill_07.vcd" nodelay 
-	scene "scenes/lich/lich_lich_kill_08.vcd" nodelay 
-	scene "scenes/lich/lich_lich_kill_09.vcd" nodelay 
-	scene "scenes/lich/lich_lich_kill_10.vcd" nodelay 
-	scene "scenes/lich/lich_lich_kill_11.vcd" nodelay 
-	scene "scenes/lich/lich_lich_kill_12.vcd" nodelay 
-	scene "scenes/lich/lich_lich_kill_13.vcd" nodelay 
-	scene "scenes/lich/lich_lich_kill_14.vcd" nodelay 
-	scene "scenes/lich/lich_lich_laugh_01.vcd" nodelay 
-	scene "scenes/lich/lich_lich_laugh_02.vcd" nodelay 
-	scene "scenes/lich/lich_lich_laugh_03.vcd" nodelay 
-	scene "scenes/lich/lich_lich_laugh_04.vcd" nodelay 
-	scene "scenes/lich/lich_lich_laugh_05.vcd" nodelay 
-}
-
-Rule lich_Kill_Rule
-{
-	criteria Kill Islich 
-	response lich_Kill
-}
-
-Response lich_CastExecuteIsLichFrostArmorChance_75%
-{
-	scene "scenes/lich/lich_lich_ability_armor_01.vcd" nodelay respeakdelay 15
-	scene "scenes/lich/lich_lich_ability_armor_02.vcd" nodelay respeakdelay 15
-	scene "scenes/lich/lich_lich_ability_armor_04.vcd" nodelay respeakdelay 15
-	scene "scenes/lich/lich_lich_ability_armor_05.vcd" nodelay respeakdelay 15
-}
-
-Rule lich_CastExecuteIsLichFrostArmorChance_75%_Rule
-{
-	criteria CastExecute Islich IsLichFrostArmor Chance_75%
-	response lich_CastExecuteIsLichFrostArmorChance_75%
-}
-
-Response lich_CastExecuteIsLichDarkRitualChance_75%
-{
-	scene "scenes/lich/lich_lich_ability_ritual_02.vcd" nodelay respeakdelay 60
-	scene "scenes/lich/lich_lich_ability_ritual_03.vcd" nodelay respeakdelay 60
-	scene "scenes/lich/lich_lich_ability_ritual_04.vcd" nodelay respeakdelay 60
-	scene "scenes/lich/lich_lich_ability_ritual_05.vcd" nodelay respeakdelay 60
-	scene "scenes/lich/lich_lich_ability_ritual_13.vcd" nodelay respeakdelay 60
-}
-
-Rule lich_CastExecuteIsLichDarkRitualChance_75%_Rule
-{
-	criteria CastExecute Islich IsLichDarkRitual Chance_75%
-	response lich_CastExecuteIsLichDarkRitualChance_75%
-}
-
-Response lich_CastExecuteIsLichDarkRitualChance_5%
-{
-	scene "scenes/lich/lich_lich_ability_ritual_07.vcd" nodelay speakonce
-}
-
-Rule lich_CastExecuteIsLichDarkRitualChance_5%_Rule
-{
-	criteria CastExecute Islich IsLichDarkRitual Chance_5%
-	response lich_CastExecuteIsLichDarkRitualChance_5%
-}
-
-Response lich_CastExecuteIsLichFrostNovaChance_15%
-{
-	scene "scenes/lich/lich_lich_ability_chain_11.vcd" nodelay 
-	scene "scenes/lich/lich_lich_ability_chain_12.vcd" nodelay 
-	scene "scenes/lich/lich_lich_ability_chain_13.vcd" nodelay 
-	scene "scenes/lich/lich_lich_ability_chain_14.vcd" nodelay 
-	scene "scenes/lich/lich_lich_ability_chain_16.vcd" nodelay 
-	scene "scenes/lich/lich_lich_ability_chain_19.vcd" nodelay 
-}
-
-Rule lich_CastExecuteIsLichFrostNovaChance_15%_Rule
-{
-	criteria CastExecute Islich IsLichFrostNova Chance_15%
-	response lich_CastExecuteIsLichFrostNovaChance_15%
-}
-
-Response lich_ItemDropIsRareDrop
-{
-	scene "scenes/lich/lich_lich_ability_ritual_12.vcd" nodelay 
-	scene "scenes/lich/lich_lich_happy_03.vcd" nodelay 
-}
-
-Rule lich_ItemDropIsRareDrop_Rule
-{
-	criteria ItemDrop Islich IsRareDrop
-	response lich_ItemDropIsRareDrop
-}
-
-Response lich_ItemDropIsUltraRareDrop
-{
-	scene "scenes/lich/lich_lich_ability_ritual_14.vcd" nodelay 
-	scene "scenes/lich/lich_lich_happy_02.vcd" nodelay 
-}
-
-Rule lich_ItemDropIsUltraRareDrop_Rule
-{
-	criteria ItemDrop Islich IsUltraRareDrop
-	response lich_ItemDropIsUltraRareDrop
-}
-
-Response lich_ItemDropIsCommonDrop
-{
-	scene "scenes/lich/lich_lich_happy_01.vcd" nodelay 
-}
-
-Rule lich_ItemDropIsCommonDrop_Rule
-{
-	criteria ItemDrop Islich IsCommonDrop
-	response lich_ItemDropIsCommonDrop
-}
-
-Response lich_CustomIsLichFailedChainFrostChance_25%
-{
-	scene "scenes/lich/lich_lich_ability_chain_10.vcd" nodelay 
-	scene "scenes/lich/lich_lich_ability_failure_01.vcd" nodelay 
-	scene "scenes/lich/lich_lich_ability_failure_04.vcd" nodelay 
-	scene "scenes/lich/lich_lich_ability_failure_05.vcd" nodelay 
-	scene "scenes/lich/lich_lich_ability_failure_06.vcd" nodelay 
-}
-
-Rule lich_CustomIsLichFailedChainFrostChance_25%_Rule
-{
-	criteria Custom Islich IsLichFailedChainFrost Chance_25%
-	response lich_CustomIsLichFailedChainFrostChance_25%
-}
-
-Response lich_CustomIsGameStart
-{
-	scene "scenes/lich/lich_lich_rare_01.vcd" nodelay 
-}
-
-Rule lich_CustomIsGameStart_Rule
-{
-	criteria Custom Islich IsGameStart
-	response lich_CustomIsGameStart
-}
-
-Response lich_CustomIsLichLoadoutSpawn
-{
-	scene "scenes/lich/lich_lich_spawn_01.vcd" nodelay 
-	scene "scenes/lich/lich_lich_spawn_02.vcd" nodelay 
-	scene "scenes/lich/lich_lich_spawn_03.vcd" nodelay 
-	scene "scenes/lich/lich_lich_spawn_04.vcd" nodelay 
-	scene "scenes/lich/lich_lich_spawn_05.vcd" nodelay 
-	scene "scenes/lich/lich_lich_move_13.vcd" nodelay 
-	scene "scenes/lich/lich_lich_level_02.vcd" nodelay 
-	scene "scenes/lich/lich_lich_respawn_05.vcd" nodelay 
-	scene "scenes/lich/lich_lich_respawn_08.vcd" nodelay 
-	scene "scenes/lich/lich_lich_ability_nova_01.vcd" nodelay 
-	scene "scenes/lich/lich_lich_ability_chain_01.vcd" nodelay 
-	scene "scenes/lich/lich_lich_kill_01.vcd" nodelay 
-}
-
-Rule lich_CustomIsLichLoadoutSpawn_Rule
-{
-	criteria Custom Islich IsLichLoadoutSpawn
-	response lich_CustomIsLichLoadoutSpawn
-}
-
-Response lich_LevelUp
-{
-	scene "scenes/lich/lich_lich_level_01.vcd" nodelay 
-	scene "scenes/lich/lich_lich_level_02.vcd" nodelay 
-	scene "scenes/lich/lich_lich_level_03.vcd" nodelay 
-	scene "scenes/lich/lich_lich_level_04.vcd" nodelay 
-	scene "scenes/lich/lich_lich_level_05.vcd" nodelay 
-	scene "scenes/lich/lich_lich_level_06.vcd" nodelay 
-	scene "scenes/lich/lich_lich_level_07.vcd" nodelay 
-	scene "scenes/lich/lich_lich_level_08.vcd" nodelay 
-	scene "scenes/lich/lich_lich_level_09.vcd" nodelay 
-	scene "scenes/lich/lich_lich_level_10.vcd" nodelay 
-	scene "scenes/lich/lich_lich_level_11.vcd" nodelay 
-}
-
-Rule lich_LevelUp_Rule
-{
-	criteria LevelUp Islich 
-	response lich_LevelUp
-}
-
-Response lich_Death
-{
-	scene "scenes/lich/lich_lich_death_01.vcd" nodelay 
-	scene "scenes/lich/lich_lich_death_02.vcd" nodelay 
-	scene "scenes/lich/lich_lich_death_03.vcd" nodelay 
-	scene "scenes/lich/lich_lich_death_04.vcd" nodelay 
-	scene "scenes/lich/lich_lich_death_05.vcd" nodelay 
-	scene "scenes/lich/lich_lich_death_06.vcd" nodelay 
-	scene "scenes/lich/lich_lich_death_07.vcd" nodelay 
-	scene "scenes/lich/lich_lich_death_08.vcd" nodelay 
-	scene "scenes/lich/lich_lich_death_09.vcd" nodelay 
-	scene "scenes/lich/lich_lich_death_10.vcd" nodelay 
-	scene "scenes/lich/lich_lich_death_11.vcd" nodelay 
-	scene "scenes/lich/lich_lich_death_12.vcd" nodelay 
-	scene "scenes/lich/lich_lich_death_13.vcd" nodelay 
-	scene "scenes/lich/lich_lich_death_14.vcd" nodelay 
-	scene "scenes/lich/lich_lich_death_15.vcd" nodelay 
-}
-
-Rule lich_Death_Rule
-{
-	criteria Death Islich 
-	response lich_Death
-}
-
-Response lich_DeathIsReincarnating
-{
-	scene "scenes/lich/lich_lich_laugh_06.vcd" nodelay 
-}
-
-Rule lich_DeathIsReincarnating_Rule
-{
-	criteria Death Islich IsReincarnating
-	response lich_DeathIsReincarnating
-}
-
-Response lich_Respawn
-{
-	scene "scenes/lich/lich_lich_respawn_01.vcd" nodelay 
-	scene "scenes/lich/lich_lich_respawn_02.vcd" nodelay 
-	scene "scenes/lich/lich_lich_respawn_03.vcd" nodelay 
-	scene "scenes/lich/lich_lich_respawn_04.vcd" nodelay 
-	scene "scenes/lich/lich_lich_respawn_05.vcd" nodelay 
-	scene "scenes/lich/lich_lich_respawn_06.vcd" nodelay 
-	scene "scenes/lich/lich_lich_respawn_07.vcd" nodelay 
-	scene "scenes/lich/lich_lich_respawn_08.vcd" nodelay 
-	scene "scenes/lich/lich_lich_respawn_09.vcd" nodelay 
-	scene "scenes/lich/lich_lich_respawn_10.vcd" nodelay 
-	scene "scenes/lich/lich_lich_respawn_11.vcd" nodelay 
-	scene "scenes/lich/lich_lich_respawn_12.vcd" nodelay 
-	scene "scenes/lich/lich_lich_respawn_13.vcd" nodelay 
-}
-
-Rule lich_Respawn_Rule
-{
-	criteria Respawn Islich 
-	response lich_Respawn
-}
-
-Response lich_LastHit
-{
-	scene "scenes/lich/lich_lich_lasthit_01.vcd" nodelay 
-	scene "scenes/lich/lich_lich_lasthit_02.vcd" nodelay 
-	scene "scenes/lich/lich_lich_lasthit_03.vcd" nodelay 
-	scene "scenes/lich/lich_lich_lasthit_04.vcd" nodelay 
-	scene "scenes/lich/lich_lich_lasthit_05.vcd" nodelay 
-	scene "scenes/lich/lich_lich_lasthit_06.vcd" nodelay 
-	scene "scenes/lich/lich_lich_lasthit_07.vcd" nodelay 
-	scene "scenes/lich/lich_lich_lasthit_08.vcd" nodelay 
-	scene "scenes/lich/lich_lich_lasthit_09.vcd" nodelay 
-	scene "scenes/lich/lich_lich_lasthit_10.vcd" nodelay 
-	scene "scenes/lich/lich_lich_lasthit_11.vcd" nodelay 
-}
-
-Rule lich_LastHit_Rule
-{
-	criteria LastHit Islich 
-	response lich_LastHit
-}
-
-Response lich_Deny
-{
-	scene "scenes/lich/lich_lich_deny_01.vcd" nodelay 
-	scene "scenes/lich/lich_lich_deny_02.vcd" nodelay 
-	scene "scenes/lich/lich_lich_deny_03.vcd" nodelay 
-	scene "scenes/lich/lich_lich_deny_04.vcd" nodelay 
-	scene "scenes/lich/lich_lich_deny_05.vcd" nodelay 
-	scene "scenes/lich/lich_lich_deny_06.vcd" nodelay 
-	scene "scenes/lich/lich_lich_deny_07.vcd" nodelay 
-	scene "scenes/lich/lich_lich_deny_08.vcd" nodelay 
-	scene "scenes/lich/lich_lich_deny_09.vcd" nodelay 
-	scene "scenes/lich/lich_lich_deny_10.vcd" nodelay 
-	scene "scenes/lich/lich_lich_deny_11.vcd" nodelay 
-}
-
-Rule lich_Deny_Rule
-{
-	criteria Deny Islich 
-	response lich_Deny
-}
-
-Response lich_Select
-{
-	scene "scenes/lich/lich_lich_rare_02.vcd" nodelay 
-	scene "scenes/lich/lich_lich_rare_03.vcd" nodelay 
-}
-
-Rule lich_Select_Rule
-{
-	criteria Select Islich 
-	response lich_Select
-}
-
-Response lich_PurchaseIsExpensiveItem
-{
-	scene "scenes/lich/lich_lich_purch_01.vcd" nodelay speakonce
-	scene "scenes/lich/lich_lich_purch_02.vcd" nodelay speakonce
-	scene "scenes/lich/lich_lich_purch_03.vcd" nodelay speakonce
-	scene "scenes/lich/lich_lich_purch_04.vcd" nodelay speakonce
-}
-
-Rule lich_PurchaseIsExpensiveItem_Rule
-{
-	criteria Purchase Islich IsExpensiveItem
-	response lich_PurchaseIsExpensiveItem
-}
-
-Response lich_PurchaseIsUltimateScepter
-{
-	scene "scenes/lich/lich_lich_scepter_01.vcd" nodelay speakonce
-}
-
-Rule lich_PurchaseIsUltimateScepter_Rule
-{
-	criteria Purchase Islich IsUltimateScepter
-	response lich_PurchaseIsUltimateScepter
-}
-
-Response lich_PurchaseIsBlinkDagger
-{
-	scene "scenes/lich/lich_lich_blink_01.vcd" nodelay speakonce
-}
-
-Rule lich_PurchaseIsBlinkDagger_Rule
-{
-	criteria Purchase Islich IsBlinkDagger
-	response lich_PurchaseIsBlinkDagger
-}
-
-Response lich_PurchaseIsObserverWardChance_50%
-{
-	scene "scenes/lich/lich_lich_wards_01.vcd" nodelay speakonce
-	scene "scenes/lich/lich_lich_wards_02.vcd" nodelay speakonce
-}
-
-Rule lich_PurchaseIsObserverWardChance_50%_Rule
-{
-	criteria Purchase Islich IsObserverWard Chance_50%
-	response lich_PurchaseIsObserverWardChance_50%
-}
-
-Response lich_PurchaseIsMekansm
-{
-	scene "scenes/lich/lich_lich_mechanism_01.vcd" nodelay speakonce
-	scene "scenes/lich/lich_lich_mechanism_02.vcd" nodelay speakonce
-}
-
-Rule lich_PurchaseIsMekansm_Rule
-{
-	criteria Purchase Islich IsMekansm
-	response lich_PurchaseIsMekansm
-}
-
-Response lich_Bottling
-{
-	scene "scenes/lich/lich_lich_bottle_01.vcd" nodelay 
-	scene "scenes/lich/lich_lich_bottle_02.vcd" nodelay 
-	scene "scenes/lich/lich_lich_bottle_03.vcd" nodelay 
-}
-
-Rule lich_Bottling_Rule
-{
-	criteria Bottling Islich 
-	response lich_Bottling
-}
-
-Response lich_Immortality
-{
-	scene "scenes/lich/lich_lich_immort_01.vcd" nodelay 
-}
-
-Rule lich_Immortality_Rule
-{
-	criteria Immortality Islich 
-	response lich_Immortality
-}
-
-Response lich_ImmortalityChance_25%
-{
-	scene "scenes/lich/lich_lich_immort_02.vcd" nodelay 
-}
-
-Rule lich_ImmortalityChance_25%_Rule
-{
-	criteria Immortality Islich Chance_25%
-	response lich_ImmortalityChance_25%
-}
-
-Response lich_PowerupIsPowerupBounty
-{
-	scene "scenes/lich/lich_lich_lasthit_10.vcd" nodelay respeakdelay 300
-}
-
-Rule lich_PowerupIsPowerupBounty_Rule
-{
-	criteria Powerup Islich IsPowerupBounty
-	response lich_PowerupIsPowerupBounty
-}
-
-Response lich_PowerupIsPowerupHaste
-{
-	scene "scenes/lich/lich_lich_haste_01.vcd" nodelay 
-}
-
-Rule lich_PowerupIsPowerupHaste_Rule
-{
-	criteria Powerup Islich IsPowerupHaste
-	response lich_PowerupIsPowerupHaste
-}
-
-Response lich_PowerupIsPowerupDoubleDamage
-{
-	scene "scenes/lich/lich_lich_doubdam_01.vcd" nodelay 
-}
-
-Rule lich_PowerupIsPowerupDoubleDamage_Rule
-{
-	criteria Powerup Islich IsPowerupDoubleDamage
-	response lich_PowerupIsPowerupDoubleDamage
-}
-
-Response lich_PowerupIsPowerupDoubleDamageChance_25%
-{
-	scene "scenes/lich/lich_lich_doubdam_02.vcd" nodelay 
-}
-
-Rule lich_PowerupIsPowerupDoubleDamageChance_25%_Rule
-{
-	criteria Powerup Islich IsPowerupDoubleDamage Chance_25%
-	response lich_PowerupIsPowerupDoubleDamageChance_25%
-}
-
-Response lich_PowerupIsPowerupRegeneration
-{
-	scene "scenes/lich/lich_lich_regen_01.vcd" nodelay 
-}
-
-Rule lich_PowerupIsPowerupRegeneration_Rule
-{
-	criteria Powerup Islich IsPowerupRegeneration
-	response lich_PowerupIsPowerupRegeneration
-}
-
-Response lich_PowerupIsPowerupRegenerationChance_25%
-{
-	scene "scenes/lich/lich_lich_regen_02.vcd" nodelay 
-}
-
-Rule lich_PowerupIsPowerupRegenerationChance_25%_Rule
-{
-	criteria Powerup Islich IsPowerupRegeneration Chance_25%
-	response lich_PowerupIsPowerupRegenerationChance_25%
-}
-
-Response lich_PowerupIsPowerupIllusion
-{
-	scene "scenes/lich/lich_lich_illus_01.vcd" nodelay 
-}
-
-Rule lich_PowerupIsPowerupIllusion_Rule
-{
-	criteria Powerup Islich IsPowerupIllusion
-	response lich_PowerupIsPowerupIllusion
-}
-
-Response lich_PowerupIsPowerupIllusionChance_25%
-{
-	scene "scenes/lich/lich_lich_illus_02.vcd" nodelay 
-}
-
-Rule lich_PowerupIsPowerupIllusionChance_25%_Rule
-{
-	criteria Powerup Islich IsPowerupIllusion Chance_25%
-	response lich_PowerupIsPowerupIllusionChance_25%
-}
-
-Response lich_PowerupIsPowerupInvisibility
-{
-	scene "scenes/lich/lich_lich_invis_01.vcd" nodelay 
-}
-
-Rule lich_PowerupIsPowerupInvisibility_Rule
-{
-	criteria Powerup Islich IsPowerupInvisibility
-	response lich_PowerupIsPowerupInvisibility
-}
-
-Response lich_PowerupIsPowerupArcane
-{
-	scene "scenes/lich/lich_lich_happy_02.vcd" nodelay respeakdelay 300
-}
-
-Rule lich_PowerupIsPowerupArcane_Rule
-{
-	criteria Powerup Islich IsPowerupArcane
-	response lich_PowerupIsPowerupArcane
-}
-
-Response lich_Thanks
-{
-	scene "scenes/lich/lich_lich_thanks_01.vcd" nodelay 
-	scene "scenes/lich/lich_lich_thanks_02.vcd" nodelay 
-}
-
-Rule lich_Thanks_Rule
-{
-	criteria Thanks Islich 
-	response lich_Thanks
-}
-
-Response lich_PainChance_25%
-{
-	scene "scenes/lich/lich_lich_underattack_01.vcd" nodelay respeakdelay 120
-}
-
-Rule lich_PainChance_25%_Rule
-{
-	criteria Pain Islich Chance_25%
-	response lich_PainChance_25%
-}
-
-Response lich_Pain
-{
-	scene "scenes/lich/lich_lich_pain_01.vcd" nodelay 
-	scene "scenes/lich/lich_lich_pain_02.vcd" nodelay 
-	scene "scenes/lich/lich_lich_pain_03.vcd" nodelay 
-	scene "scenes/lich/lich_lich_pain_04.vcd" nodelay 
-	scene "scenes/lich/lich_lich_pain_05.vcd" nodelay 
-	scene "scenes/lich/lich_lich_pain_06.vcd" nodelay 
-	scene "scenes/lich/lich_lich_pain_07.vcd" nodelay 
-	scene "scenes/lich/lich_lich_pain_08.vcd" nodelay 
-	scene "scenes/lich/lich_lich_pain_09.vcd" nodelay 
-}
-
-Rule lich_Pain_Rule
-{
-	criteria Pain Islich 
-	response lich_Pain
-}
-
-Response lich_InTheBag
-{
-	scene "scenes/lich/lich_lich_inthebag_01.vcd" nodelay 
-}
-
-Rule lich_InTheBag_Rule
-{
-	criteria InTheBag Islich 
-	response lich_InTheBag
-}
-
-Response lich_CooldownLittleNag
-{
-	scene "scenes/lich/lich_lich_notyet_01.vcd" nodelay 
-	scene "scenes/lich/lich_lich_notyet_02.vcd" nodelay 
-	scene "scenes/lich/lich_lich_notyet_03.vcd" nodelay 
-}
-
-Rule lich_CooldownLittleNag_Rule
-{
-	criteria Cooldown Islich LittleNag
-	response lich_CooldownLittleNag
-}
-
-Response lich_CooldownMediumNag
-{
-	scene "scenes/lich/lich_lich_notyet_04.vcd" nodelay 
-	scene "scenes/lich/lich_lich_notyet_05.vcd" nodelay 
-	scene "scenes/lich/lich_lich_notyet_06.vcd" nodelay 
-}
-
-Rule lich_CooldownMediumNag_Rule
-{
-	criteria Cooldown Islich MediumNag
-	response lich_CooldownMediumNag
-}
-
-Response lich_CooldownSuperNag
-{
-	scene "scenes/lich/lich_lich_notyet_07.vcd" nodelay 
-	scene "scenes/lich/lich_lich_notyet_08.vcd" nodelay 
-	scene "scenes/lich/lich_lich_notyet_09.vcd" nodelay 
-}
-
-Rule lich_CooldownSuperNag_Rule
-{
-	criteria Cooldown Islich SuperNag
-	response lich_CooldownSuperNag
-}
-
-Response lich_NoManaLittleNag
-{
-	scene "scenes/lich/lich_lich_nomana_01.vcd" nodelay 
-	scene "scenes/lich/lich_lich_nomana_02.vcd" nodelay 
-	scene "scenes/lich/lich_lich_nomana_03.vcd" nodelay 
-}
-
-Rule lich_NoManaLittleNag_Rule
-{
-	criteria NoMana Islich LittleNag
-	response lich_NoManaLittleNag
-}
-
-Response lich_NoManaMediumNag
-{
-	scene "scenes/lich/lich_lich_nomana_04.vcd" nodelay 
-	scene "scenes/lich/lich_lich_nomana_05.vcd" nodelay 
-	scene "scenes/lich/lich_lich_nomana_06.vcd" nodelay 
-}
-
-Rule lich_NoManaMediumNag_Rule
-{
-	criteria NoMana Islich MediumNag
-	response lich_NoManaMediumNag
-}
-
-Response lich_NoManaSuperNag
-{
-	scene "scenes/lich/lich_lich_nomana_07.vcd" nodelay 
-	scene "scenes/lich/lich_lich_nomana_08.vcd" nodelay 
-	scene "scenes/lich/lich_lich_nomana_09.vcd" nodelay 
-}
-
-Rule lich_NoManaSuperNag_Rule
-{
-	criteria NoMana Islich SuperNag
-	response lich_NoManaSuperNag
-}
-
-Response lich_Defeat
-{
-	scene "scenes/lich/lich_lich_lose_01.vcd" nodelay 
-	scene "scenes/lich/lich_lich_lose_02.vcd" nodelay 
-	scene "scenes/lich/lich_lich_lose_03.vcd" nodelay 
-	scene "scenes/lich/lich_lich_lose_04.vcd" nodelay 
-}
-
-Rule lich_Defeat_Rule
-{
-	criteria Defeat Islich 
-	response lich_Defeat
-}
-
-Response lich_Victory
-{
-	scene "scenes/lich/lich_lich_win_01.vcd" nodelay 
-	scene "scenes/lich/lich_lich_win_02.vcd" nodelay 
-	scene "scenes/lich/lich_lich_win_03.vcd" nodelay 
-	scene "scenes/lich/lich_lich_win_04.vcd" nodelay 
-}
-
-Rule lich_Victory_Rule
-{
-	criteria Victory Islich 
-	response lich_Victory
-}
-
-Response lich_EmoteIsEmoteLaugh
-{
-	scene "scenes/lich/lich_lich_laugh_01.vcd" nodelay 
-	scene "scenes/lich/lich_lich_laugh_02.vcd" nodelay 
-	scene "scenes/lich/lich_lich_laugh_03.vcd" nodelay 
-	scene "scenes/lich/lich_lich_laugh_04.vcd" nodelay 
-	scene "scenes/lich/lich_lich_laugh_05.vcd" nodelay 
-	scene "scenes/lich/lich_lich_laugh_06.vcd" nodelay 
-}
-
-Rule lich_EmoteIsEmoteLaugh_Rule
-{
-	criteria Emote Islich IsEmoteLaugh
-	response lich_EmoteIsEmoteLaugh
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vrfunknown:version{c1f07085-5299-4e8a-b7e9-1cbb66bbbe23} -->
+{
+	m_Includes = 
+	[
+		"scripts/talker/response_rules_shared.vrr",
+	]
+	m_ResponseGroups = 
+	[
+		
+		{
+			m_name = "lich_Spawn"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_spawn_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_spawn_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_spawn_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_spawn_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_spawn_05.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lich_Move"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_move_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_move_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_move_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_move_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_move_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_move_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_move_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_move_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_move_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_move_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_move_12.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_move_13.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_move_14.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_move_15.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lich_Attack"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_move_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_move_16.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_move_17.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_attack_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_attack_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_attack_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_attack_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_attack_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_attack_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_attack_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_attack_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_attack_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_attack_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_attack_11.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lich_CastOrder"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_cast_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_cast_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_cast_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lich_KillIsLichFrostNovaChance_20%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_ability_nova_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_ability_nova_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_ability_nova_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_ability_nova_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_ability_nova_05.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lich_KillIsLichFrostNovaIsEnemyCrystalMaidenChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_ability_nova_06.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lich_Kill"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_kill_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_kill_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_kill_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_kill_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_kill_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_kill_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_kill_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_kill_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_kill_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_kill_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_kill_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_kill_12.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_kill_13.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_kill_14.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_laugh_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_laugh_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_laugh_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_laugh_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_laugh_05.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lich_CastExecuteIsLichFrostArmorChance_75%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_ability_armor_01.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 15.000000
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_ability_armor_02.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 15.000000
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_ability_armor_04.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 15.000000
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_ability_armor_05.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 15.000000
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "lich_CastExecuteIsLichDarkRitualChance_75%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_ability_ritual_02.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 60.000000
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_ability_ritual_03.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 60.000000
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_ability_ritual_04.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 60.000000
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_ability_ritual_05.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 60.000000
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_ability_ritual_13.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 60.000000
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "lich_CastExecuteIsLichDarkRitualChance_5%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_ability_ritual_07.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "lich_CastExecuteIsLichFrostNovaChance_15%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_ability_chain_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_ability_chain_12.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_ability_chain_13.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_ability_chain_14.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_ability_chain_16.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_ability_chain_19.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lich_ItemDropIsRareDrop"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_ability_ritual_12.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_happy_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lich_ItemDropIsUltraRareDrop"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_ability_ritual_14.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_happy_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lich_ItemDropIsCommonDrop"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_happy_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lich_CustomIsLichFailedChainFrostChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_ability_chain_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_ability_failure_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_ability_failure_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_ability_failure_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_ability_failure_06.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lich_CustomIsGameStart"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_rare_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lich_CustomIsLichLoadoutSpawn"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_spawn_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_spawn_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_spawn_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_spawn_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_spawn_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_move_13.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_level_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_respawn_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_respawn_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_ability_nova_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_ability_chain_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_kill_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lich_LevelUp"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_level_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_level_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_level_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_level_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_level_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_level_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_level_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_level_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_level_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_level_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_level_11.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lich_Death"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_death_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_death_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_death_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_death_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_death_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_death_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_death_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_death_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_death_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_death_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_death_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_death_12.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_death_13.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_death_14.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_death_15.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lich_DeathIsReincarnating"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_laugh_06.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lich_Respawn"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_respawn_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_respawn_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_respawn_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_respawn_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_respawn_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_respawn_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_respawn_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_respawn_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_respawn_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_respawn_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_respawn_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_respawn_12.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_respawn_13.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lich_LastHit"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_lasthit_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_lasthit_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_lasthit_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_lasthit_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_lasthit_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_lasthit_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_lasthit_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_lasthit_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_lasthit_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_lasthit_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_lasthit_11.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lich_Deny"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_deny_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_deny_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_deny_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_deny_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_deny_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_deny_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_deny_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_deny_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_deny_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_deny_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_deny_11.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lich_Select"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_rare_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_rare_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lich_PurchaseIsExpensiveItem"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_purch_01.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_purch_02.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_purch_03.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_purch_04.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "lich_PurchaseIsUltimateScepter"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_scepter_01.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "lich_PurchaseIsBlinkDagger"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_blink_01.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "lich_PurchaseIsObserverWardChance_50%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_wards_01.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_wards_02.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "lich_PurchaseIsMekansm"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_mechanism_01.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_mechanism_02.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "lich_Bottling"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_bottle_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_bottle_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_bottle_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lich_Immortality"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_immort_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lich_ImmortalityChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_immort_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lich_PowerupIsPowerupBounty"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_lasthit_10.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 300.000000
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "lich_PowerupIsPowerupHaste"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_haste_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lich_PowerupIsPowerupDoubleDamage"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_doubdam_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lich_PowerupIsPowerupDoubleDamageChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_doubdam_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lich_PowerupIsPowerupRegeneration"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_regen_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lich_PowerupIsPowerupRegenerationChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_regen_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lich_PowerupIsPowerupIllusion"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_illus_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lich_PowerupIsPowerupIllusionChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_illus_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lich_PowerupIsPowerupInvisibility"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_invis_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lich_PowerupIsPowerupArcane"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_happy_02.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 300.000000
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "lich_Thanks"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_thanks_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_thanks_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lich_PainChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_underattack_01.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 120.000000
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "lich_Pain"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_pain_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_pain_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_pain_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_pain_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_pain_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_pain_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_pain_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_pain_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_pain_09.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lich_InTheBag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_inthebag_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lich_CooldownLittleNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_notyet_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_notyet_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_notyet_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lich_CooldownMediumNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_notyet_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_notyet_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_notyet_06.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lich_CooldownSuperNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_notyet_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_notyet_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_notyet_09.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lich_NoManaLittleNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_nomana_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_nomana_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_nomana_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lich_NoManaMediumNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_nomana_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_nomana_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_nomana_06.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lich_NoManaSuperNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_nomana_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_nomana_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_nomana_09.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lich_Defeat"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_lose_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_lose_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_lose_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_lose_04.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lich_Victory"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_win_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_win_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_win_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_win_04.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lich_EmoteIsEmoteLaugh"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_laugh_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_laugh_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_laugh_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_laugh_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_laugh_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lich/lich_lich_laugh_06.vcd"
+				},
+			]
+		},
+	]
+	m_Requirements = 
+	[
+		
+		{
+			m_name = "Islich"
+			m_matchKey = "classname"
+			m_matchExpr = "npc_dota_hero_lich"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsLichFrostNova"
+			m_matchKey = "abilityname"
+			m_matchExpr = "lich_frost_nova"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsLichDarkRitual"
+			m_matchKey = "abilityname"
+			m_matchExpr = "lich_sinister_gaze"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsLichFrostArmor"
+			m_matchKey = "abilityname"
+			m_matchExpr = "lich_frost_shield"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsLichFailedChainFrost"
+			m_matchKey = "chainfrost_damageratio"
+			m_matchExpr = "<=0.3"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsLichLoadoutSpawn"
+			m_matchKey = "special_spawn"
+			m_matchExpr = "lich_loadout_spawn"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+	]
+	m_Rules = 
+	[
+		
+		{
+			m_name = "lich_Spawn_Rule"
+			m_Requirements = 
+			[
+				"Spawn",
+				"Islich",
+			]
+			m_ResponseGroups = 
+			[
+				"lich_Spawn",
+			]
+		},
+		
+		{
+			m_name = "lich_Move_Rule"
+			m_Requirements = 
+			[
+				"Move",
+				"Islich",
+			]
+			m_ResponseGroups = 
+			[
+				"lich_Move",
+			]
+		},
+		
+		{
+			m_name = "lich_Attack_Rule"
+			m_Requirements = 
+			[
+				"Attack",
+				"Islich",
+			]
+			m_ResponseGroups = 
+			[
+				"lich_Attack",
+			]
+		},
+		
+		{
+			m_name = "lich_CastOrder_Rule"
+			m_Requirements = 
+			[
+				"CastOrder",
+				"Islich",
+			]
+			m_ResponseGroups = 
+			[
+				"lich_CastOrder",
+			]
+		},
+		
+		{
+			m_name = "lich_KillIsLichFrostNovaChance_20%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Islich",
+				"IsLichFrostNova",
+				"Chance_20%",
+			]
+			m_ResponseGroups = 
+			[
+				"lich_KillIsLichFrostNovaChance_20%",
+			]
+		},
+		
+		{
+			m_name = "lich_KillIsLichFrostNovaIsEnemyCrystalMaidenChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Islich",
+				"IsLichFrostNova",
+				"IsEnemyCrystalMaiden",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"lich_KillIsLichFrostNovaIsEnemyCrystalMaidenChance_25%",
+			]
+		},
+		
+		{
+			m_name = "lich_Kill_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Islich",
+			]
+			m_ResponseGroups = 
+			[
+				"lich_Kill",
+			]
+		},
+		
+		{
+			m_name = "lich_CastExecuteIsLichFrostArmorChance_75%_Rule"
+			m_Requirements = 
+			[
+				"CastExecute",
+				"Islich",
+				"IsLichFrostArmor",
+				"Chance_75%",
+			]
+			m_ResponseGroups = 
+			[
+				"lich_CastExecuteIsLichFrostArmorChance_75%",
+			]
+		},
+		
+		{
+			m_name = "lich_CastExecuteIsLichDarkRitualChance_75%_Rule"
+			m_Requirements = 
+			[
+				"CastExecute",
+				"Islich",
+				"IsLichDarkRitual",
+				"Chance_75%",
+			]
+			m_ResponseGroups = 
+			[
+				"lich_CastExecuteIsLichDarkRitualChance_75%",
+			]
+		},
+		
+		{
+			m_name = "lich_CastExecuteIsLichDarkRitualChance_5%_Rule"
+			m_Requirements = 
+			[
+				"CastExecute",
+				"Islich",
+				"IsLichDarkRitual",
+				"Chance_5%",
+			]
+			m_ResponseGroups = 
+			[
+				"lich_CastExecuteIsLichDarkRitualChance_5%",
+			]
+		},
+		
+		{
+			m_name = "lich_CastExecuteIsLichFrostNovaChance_15%_Rule"
+			m_Requirements = 
+			[
+				"CastExecute",
+				"Islich",
+				"IsLichFrostNova",
+				"Chance_15%",
+			]
+			m_ResponseGroups = 
+			[
+				"lich_CastExecuteIsLichFrostNovaChance_15%",
+			]
+		},
+		
+		{
+			m_name = "lich_ItemDropIsRareDrop_Rule"
+			m_Requirements = 
+			[
+				"ItemDrop",
+				"Islich",
+				"IsRareDrop",
+			]
+			m_ResponseGroups = 
+			[
+				"lich_ItemDropIsRareDrop",
+			]
+		},
+		
+		{
+			m_name = "lich_ItemDropIsUltraRareDrop_Rule"
+			m_Requirements = 
+			[
+				"ItemDrop",
+				"Islich",
+				"IsUltraRareDrop",
+			]
+			m_ResponseGroups = 
+			[
+				"lich_ItemDropIsUltraRareDrop",
+			]
+		},
+		
+		{
+			m_name = "lich_ItemDropIsCommonDrop_Rule"
+			m_Requirements = 
+			[
+				"ItemDrop",
+				"Islich",
+				"IsCommonDrop",
+			]
+			m_ResponseGroups = 
+			[
+				"lich_ItemDropIsCommonDrop",
+			]
+		},
+		
+		{
+			m_name = "lich_CustomIsLichFailedChainFrostChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Custom",
+				"Islich",
+				"IsLichFailedChainFrost",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"lich_CustomIsLichFailedChainFrostChance_25%",
+			]
+		},
+		
+		{
+			m_name = "lich_CustomIsGameStart_Rule"
+			m_Requirements = 
+			[
+				"Custom",
+				"Islich",
+				"IsGameStart",
+			]
+			m_ResponseGroups = 
+			[
+				"lich_CustomIsGameStart",
+			]
+		},
+		
+		{
+			m_name = "lich_CustomIsLichLoadoutSpawn_Rule"
+			m_Requirements = 
+			[
+				"Custom",
+				"Islich",
+				"IsLichLoadoutSpawn",
+			]
+			m_ResponseGroups = 
+			[
+				"lich_CustomIsLichLoadoutSpawn",
+			]
+		},
+		
+		{
+			m_name = "lich_LevelUp_Rule"
+			m_Requirements = 
+			[
+				"LevelUp",
+				"Islich",
+			]
+			m_ResponseGroups = 
+			[
+				"lich_LevelUp",
+			]
+		},
+		
+		{
+			m_name = "lich_Death_Rule"
+			m_Requirements = 
+			[
+				"Death",
+				"Islich",
+			]
+			m_ResponseGroups = 
+			[
+				"lich_Death",
+			]
+		},
+		
+		{
+			m_name = "lich_DeathIsReincarnating_Rule"
+			m_Requirements = 
+			[
+				"Death",
+				"Islich",
+				"IsReincarnating",
+			]
+			m_ResponseGroups = 
+			[
+				"lich_DeathIsReincarnating",
+			]
+		},
+		
+		{
+			m_name = "lich_Respawn_Rule"
+			m_Requirements = 
+			[
+				"Respawn",
+				"Islich",
+			]
+			m_ResponseGroups = 
+			[
+				"lich_Respawn",
+			]
+		},
+		
+		{
+			m_name = "lich_LastHit_Rule"
+			m_Requirements = 
+			[
+				"LastHit",
+				"Islich",
+			]
+			m_ResponseGroups = 
+			[
+				"lich_LastHit",
+			]
+		},
+		
+		{
+			m_name = "lich_Deny_Rule"
+			m_Requirements = 
+			[
+				"Deny",
+				"Islich",
+			]
+			m_ResponseGroups = 
+			[
+				"lich_Deny",
+			]
+		},
+		
+		{
+			m_name = "lich_Select_Rule"
+			m_Requirements = 
+			[
+				"Select",
+				"Islich",
+			]
+			m_ResponseGroups = 
+			[
+				"lich_Select",
+			]
+		},
+		
+		{
+			m_name = "lich_PurchaseIsExpensiveItem_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Islich",
+				"IsExpensiveItem",
+			]
+			m_ResponseGroups = 
+			[
+				"lich_PurchaseIsExpensiveItem",
+			]
+		},
+		
+		{
+			m_name = "lich_PurchaseIsUltimateScepter_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Islich",
+				"IsUltimateScepter",
+			]
+			m_ResponseGroups = 
+			[
+				"lich_PurchaseIsUltimateScepter",
+			]
+		},
+		
+		{
+			m_name = "lich_PurchaseIsBlinkDagger_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Islich",
+				"IsBlinkDagger",
+			]
+			m_ResponseGroups = 
+			[
+				"lich_PurchaseIsBlinkDagger",
+			]
+		},
+		
+		{
+			m_name = "lich_PurchaseIsObserverWardChance_50%_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Islich",
+				"IsObserverWard",
+				"Chance_50%",
+			]
+			m_ResponseGroups = 
+			[
+				"lich_PurchaseIsObserverWardChance_50%",
+			]
+		},
+		
+		{
+			m_name = "lich_PurchaseIsMekansm_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Islich",
+				"IsMekansm",
+			]
+			m_ResponseGroups = 
+			[
+				"lich_PurchaseIsMekansm",
+			]
+		},
+		
+		{
+			m_name = "lich_Bottling_Rule"
+			m_Requirements = 
+			[
+				"Bottling",
+				"Islich",
+			]
+			m_ResponseGroups = 
+			[
+				"lich_Bottling",
+			]
+		},
+		
+		{
+			m_name = "lich_Immortality_Rule"
+			m_Requirements = 
+			[
+				"Immortality",
+				"Islich",
+			]
+			m_ResponseGroups = 
+			[
+				"lich_Immortality",
+			]
+		},
+		
+		{
+			m_name = "lich_ImmortalityChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Immortality",
+				"Islich",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"lich_ImmortalityChance_25%",
+			]
+		},
+		
+		{
+			m_name = "lich_PowerupIsPowerupBounty_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Islich",
+				"IsPowerupBounty",
+			]
+			m_ResponseGroups = 
+			[
+				"lich_PowerupIsPowerupBounty",
+			]
+		},
+		
+		{
+			m_name = "lich_PowerupIsPowerupHaste_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Islich",
+				"IsPowerupHaste",
+			]
+			m_ResponseGroups = 
+			[
+				"lich_PowerupIsPowerupHaste",
+			]
+		},
+		
+		{
+			m_name = "lich_PowerupIsPowerupDoubleDamage_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Islich",
+				"IsPowerupDoubleDamage",
+			]
+			m_ResponseGroups = 
+			[
+				"lich_PowerupIsPowerupDoubleDamage",
+			]
+		},
+		
+		{
+			m_name = "lich_PowerupIsPowerupDoubleDamageChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Islich",
+				"IsPowerupDoubleDamage",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"lich_PowerupIsPowerupDoubleDamageChance_25%",
+			]
+		},
+		
+		{
+			m_name = "lich_PowerupIsPowerupRegeneration_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Islich",
+				"IsPowerupRegeneration",
+			]
+			m_ResponseGroups = 
+			[
+				"lich_PowerupIsPowerupRegeneration",
+			]
+		},
+		
+		{
+			m_name = "lich_PowerupIsPowerupRegenerationChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Islich",
+				"IsPowerupRegeneration",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"lich_PowerupIsPowerupRegenerationChance_25%",
+			]
+		},
+		
+		{
+			m_name = "lich_PowerupIsPowerupIllusion_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Islich",
+				"IsPowerupIllusion",
+			]
+			m_ResponseGroups = 
+			[
+				"lich_PowerupIsPowerupIllusion",
+			]
+		},
+		
+		{
+			m_name = "lich_PowerupIsPowerupIllusionChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Islich",
+				"IsPowerupIllusion",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"lich_PowerupIsPowerupIllusionChance_25%",
+			]
+		},
+		
+		{
+			m_name = "lich_PowerupIsPowerupInvisibility_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Islich",
+				"IsPowerupInvisibility",
+			]
+			m_ResponseGroups = 
+			[
+				"lich_PowerupIsPowerupInvisibility",
+			]
+		},
+		
+		{
+			m_name = "lich_PowerupIsPowerupArcane_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Islich",
+				"IsPowerupArcane",
+			]
+			m_ResponseGroups = 
+			[
+				"lich_PowerupIsPowerupArcane",
+			]
+		},
+		
+		{
+			m_name = "lich_Thanks_Rule"
+			m_Requirements = 
+			[
+				"Thanks",
+				"Islich",
+			]
+			m_ResponseGroups = 
+			[
+				"lich_Thanks",
+			]
+		},
+		
+		{
+			m_name = "lich_PainChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Pain",
+				"Islich",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"lich_PainChance_25%",
+			]
+		},
+		
+		{
+			m_name = "lich_Pain_Rule"
+			m_Requirements = 
+			[
+				"Pain",
+				"Islich",
+			]
+			m_ResponseGroups = 
+			[
+				"lich_Pain",
+			]
+		},
+		
+		{
+			m_name = "lich_InTheBag_Rule"
+			m_Requirements = 
+			[
+				"InTheBag",
+				"Islich",
+			]
+			m_ResponseGroups = 
+			[
+				"lich_InTheBag",
+			]
+		},
+		
+		{
+			m_name = "lich_CooldownLittleNag_Rule"
+			m_Requirements = 
+			[
+				"Cooldown",
+				"Islich",
+				"LittleNag",
+			]
+			m_ResponseGroups = 
+			[
+				"lich_CooldownLittleNag",
+			]
+		},
+		
+		{
+			m_name = "lich_CooldownMediumNag_Rule"
+			m_Requirements = 
+			[
+				"Cooldown",
+				"Islich",
+				"MediumNag",
+			]
+			m_ResponseGroups = 
+			[
+				"lich_CooldownMediumNag",
+			]
+		},
+		
+		{
+			m_name = "lich_CooldownSuperNag_Rule"
+			m_Requirements = 
+			[
+				"Cooldown",
+				"Islich",
+				"SuperNag",
+			]
+			m_ResponseGroups = 
+			[
+				"lich_CooldownSuperNag",
+			]
+		},
+		
+		{
+			m_name = "lich_NoManaLittleNag_Rule"
+			m_Requirements = 
+			[
+				"NoMana",
+				"Islich",
+				"LittleNag",
+			]
+			m_ResponseGroups = 
+			[
+				"lich_NoManaLittleNag",
+			]
+		},
+		
+		{
+			m_name = "lich_NoManaMediumNag_Rule"
+			m_Requirements = 
+			[
+				"NoMana",
+				"Islich",
+				"MediumNag",
+			]
+			m_ResponseGroups = 
+			[
+				"lich_NoManaMediumNag",
+			]
+		},
+		
+		{
+			m_name = "lich_NoManaSuperNag_Rule"
+			m_Requirements = 
+			[
+				"NoMana",
+				"Islich",
+				"SuperNag",
+			]
+			m_ResponseGroups = 
+			[
+				"lich_NoManaSuperNag",
+			]
+		},
+		
+		{
+			m_name = "lich_Defeat_Rule"
+			m_Requirements = 
+			[
+				"Defeat",
+				"Islich",
+			]
+			m_ResponseGroups = 
+			[
+				"lich_Defeat",
+			]
+		},
+		
+		{
+			m_name = "lich_Victory_Rule"
+			m_Requirements = 
+			[
+				"Victory",
+				"Islich",
+			]
+			m_ResponseGroups = 
+			[
+				"lich_Victory",
+			]
+		},
+		
+		{
+			m_name = "lich_EmoteIsEmoteLaugh_Rule"
+			m_Requirements = 
+			[
+				"Emote",
+				"Islich",
+				"IsEmoteLaugh",
+			]
+			m_ResponseGroups = 
+			[
+				"lich_EmoteIsEmoteLaugh",
+			]
+		},
+	]
 }
-

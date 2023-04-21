@@ -26,7 +26,6 @@
 23CSteamAudioMaterialList
 25CSurfacePropDataTableBase
 33333333H
-50.50s: %2.2d bits == '%s
 8[A\A]A^A
 APPSYSTEM: In ConnectInterfaces(), s_nRegistrationCount is %d
 AVAUATE1
@@ -40,7 +39,6 @@ AWAVAUATSH
 AWAVAUI
 A\A]A^A
 AlignedByteArray not properly aligned
-AlowFreqAbsorption
 Ambisonics order to use for convolution reverb. 0th order = 1 channel, 1st order = 4 channels
 AnimGraphEditorUtils001
 AnimationSystemUtils_001
@@ -67,6 +65,7 @@ CCommand::Tokenize: Encountered command which overflows the tokenizer buffer.. S
 CDirectProcessor
 CONTENT
 CRC32_ProcessBuffer
+CUtlRBTree overflow with %u elements
 CXXABI_1.3
 CXXABI_1.3.9
 ChangeCallbackOnChange
@@ -84,6 +83,7 @@ EXPORTSYSTEM_INTERFACE_VERSION_001
 EarlyInit_Tier0
 EconItemToolModel_001
 Enable custom HRTF loading
+Enable perspective correction for 3D audio
 EngineServiceMgr001
 Exported scene as OBJ to %s
 Exported scene as PHONONSCENE to %s
@@ -100,7 +100,6 @@ FRAME_NET_UPDATE_PREDICTION
 FRAME_NET_UPDATE_START
 FRAME_SIMULATE
 Failed to open file
-FieldPathEncodeFinish
 FlattenedSerializersVersion001
 FontManager_001
 GCC: (SteamRT 5.4.0-7.really.6+steamrt1.2+srt2) 5.4.1 20160803
@@ -115,13 +114,20 @@ Generate Halton Sequence for a given order and number of samples
 Generated %d probes with %.2f spacing and %.2f height
 Generating Halton Sequence of %d order for %d samples
 GetCPUInformation
-GetPathData failed for read only CFieldPath
 GetResourceManifestCount
 GetResourceManifests
 H[A\A]A^A
 HammerMapLoader001
 HelpSystem_001
 HostStateMgr001
+ITEM_FLAG_CAN_SELECT_WITHOUT_AMMO
+ITEM_FLAG_DOHITLOCATIONDMG
+ITEM_FLAG_EXHAUSTIBLE
+ITEM_FLAG_LIMITINWORLD
+ITEM_FLAG_NOAMMOPICKUPS
+ITEM_FLAG_NOAUTORELOAD
+ITEM_FLAG_NOAUTOSWITCHEMPTY
+ITEM_FLAG_NOITEMPICKUP
 ITM_deregisterTMCloneTable
 ITM_registerTMCloneTable
 If set, baked pathing data is loaded. Steam Audio Hammer entities can successfully use pathing in this case
@@ -188,9 +194,6 @@ NetworkServerService_001
 NetworkService_001
 NetworkSystemVersion001
 No PHONONSCENE found for export to %s
-NonTopoComplex
-NonTopoComplexPack4Bits
-NonTopoPenultimatePluseOne
 ORIGIN
 Ordered constructor wrapped type has no default constructor
 PanoramaTextServices001
@@ -198,10 +201,6 @@ PanoramaUIClient001
 PanoramaUIEngine001
 Parse error on %s: %s
 ParticleSystemMgr003
-Path_AddToTail failed for read only CFieldPath
-Path_AddToTail failed, depth already == DEFAULT_MAX_PATH_DEPTH(%d
-Path_PopLast failed for read only CFieldPath
-Path_RemoveAll failed for read only CFieldPath
 Pathing: Baked data file is the wrong format version, skipping load. Consider re-baking. (%s
 Pathing: Baked data file is the wrong format, skipping load. Consider re-baking. (%s
 Pathing: Filesystem not initialized
@@ -210,6 +209,7 @@ Pathing: No baked pathing found in baked data file: %s
 Pathing: Unable to create serialized object. (%d
 Pathing: Unable to load probe batch. (%d
 Pathing: Unable to read from baked data file (%s). Pathing disabled
+Perspective correction factor, ratio of screen size and view depth from screen, for 3D audio
 Phonon_Log
 PhysicsBuilderMgr001
 Plat_DebugPrint
@@ -221,45 +221,12 @@ Plat_NonFatalErrorFunc
 Plat_RelativeTicks
 Plat_ShouldCollectMiniDumpsForFatalErrors
 Plat_TickDiffSecF
-PlusFour
-PlusThree
-PlusTwo
-PopAllButOnePlusN
-PopAllButOnePlusNPack3Bits
-PopAllButOnePlusNPack6Bits
-PopAllButOnePlusOne
-PopNAndNonTopographical
-PopNPlusN
-PopNPlusOne
-PopOnePlusN
-PopOnePlusOne
 PostProcessingSystem_001
 Probes: Baked reverb data is not in the correct format, consider re-baking. (%s
 Probes: Filesystem not initialized
 Probes: Mising baked reverb data - %s
 Probes: Reverb needs to be baked before Path baking
 PropertyEditorSystem_001
-PushNAndNonTopographical
-PushOneLeftDeltaNRightNonZero
-PushOneLeftDeltaNRightNonZeroPack6Bits
-PushOneLeftDeltaNRightNonZeroPack8Bits
-PushOneLeftDeltaNRightZero
-PushOneLeftDeltaOneRightNonZero
-PushOneLeftDeltaOneRightZero
-PushOneLeftDeltaZeroRightNonZero
-PushOneLeftDeltaZeroRightZero
-PushThreeLeftDeltaN
-PushThreeLeftDeltaOne
-PushThreeLeftDeltaZero
-PushThreePack5LeftDeltaN
-PushThreePack5LeftDeltaOne
-PushThreePack5LeftDeltaZero
-PushTwoLeftDeltaN
-PushTwoLeftDeltaOne
-PushTwoLeftDeltaZero
-PushTwoPack5LeftDeltaN
-PushTwoPack5LeftDeltaOne
-PushTwoPack5LeftDeltaZero
 RandomFloat
 RegisterConCommand: Unknown error registering con command "%s
 RegisterConVar: Unknown error registering convar "%s
@@ -295,7 +262,6 @@ Reverb: No probes found in baked data file: %s
 Reverb: Unable to create serialized object. (%d
 Reverb: Unable to load baked data file (%s
 Reverb: Unable to load probe batch. (%d
-SABDGrow
 SSE and SSE2 are required
 SceneSystem_002
 SceneUtils_001
@@ -303,6 +269,7 @@ SchemaSystem_001
 SchemaTestExternal_One_001
 SchemaTestExternal_Two_001
 SerializedEntitiesVersion001
+ServerResourceCompilerInfo_001
 Set the maximum update rate (in Hz) for reverb
 Set the overlap fraction (0 to 1) for hybrid reverb
 Set the transition time (in seconds) between convolution and parametric reverb
@@ -348,9 +315,9 @@ ThreadSleep
 ToolFramework2_002
 ToolSceneNodeFactory_001
 ToolService_001
-UNKNOWN
 UUUUUU
 UUUUUUUUH
+Unable to create custom HRTF [%s
 Unable to create direct effect [%d
 Unable to create scene: %d
 Unable to create serialized object for scene export
@@ -360,6 +327,7 @@ Unknown KV3 specific type %u
 Usage: snd_steamaudio_halton_sequence <order> <numsamples
 UtlMemory_Alloc
 UtlMemory_CalcNewAllocationCount
+UtlMemory_FailedAllocation
 VApplication001
 VAsyncFileSystem2_001
 VAvi001
@@ -414,10 +382,10 @@ V_strtok
 VisBuilder_001
 Warning
 WorldRendererMgr001
+XtKw;UH
 You must construct it with ORDERED_CONSTRUCT macro in the dependency resolution function
 Z15LoadKV3FromFileP18CKeyValues3ContextP10CUtlStringPKcS4_RK7KV3ID_t
 Z17LoggingSystem_Logi17LoggingSeverity_tRK14LeafCodeInfo_tPKcz
-Z22Assert_ConditionFailedRK34_AssertCompileTimeConstantStruct_t
 Z7LoadKV3P18CKeyValues3ContextP10CUtlStringP10CUtlBufferRK7KV3ID_tPKc
 Z9V_strnlenPKci
 ZN10CUtlBuffer10ParseTokenEPK14characterset_tPcib
@@ -449,6 +417,7 @@ ZN13CBufferString5PurgeEi
 ZN13CBufferString6FormatEPKcz
 ZN13CBufferString6InsertEiPKcib
 ZN13CBufferString7ReplaceEPKcS1_b
+ZN13CBufferString8MoveFromERS
 ZN13CBufferString8RemoveAtEii
 ZN13CRawAllocator4FreeE18RawAllocatorType_tPvm
 ZN13CRawAllocator5AllocE18RawAllocatorType_tmPm
@@ -480,15 +449,17 @@ ZdlPvm
 ZnamRKSt9nothrow_t
 ZnwmRKSt9nothrow_t
 aggegated
+animation
 array: %u elements
+arraycount
 binary blob: %u bytes
 binary_blob
 bss_start
 buildmachine
+clientside
 color32
 comment
 content
-convars_hidden_by_default
 custom_hrtfs
 cxa_atexit
 cxa_finalize
@@ -497,6 +468,7 @@ cxa_guard_release
 cxa_pure_virtual
 d %d %d %d
 data.rel.ro
+default
 dynamic
 dynstr
 dynsym
@@ -506,6 +478,7 @@ ehandle
 f %f %f %f
 fini_array
 float32
+float32[%u
 float64
 float64[%u
 g_BitBuf_BitWriteMasks
@@ -522,8 +495,8 @@ highFreqAbsorption
 highFreqTransmission
 i2t<f2R
 init_array
+int16[%u
 int32[%u
-int64)m_nAllocationCount + (int64)num ) <= 0x7FFFFFFF
 invalid
 invalid_bone
 invalid_hitbox
@@ -601,24 +574,24 @@ libstdc++.so.6
 libsteamaudio.so
 libsteamaudio.so.dbg
 libtier0.so
+lowFreqAbsorption
 lowFreqTransmission
 mathlib.cpp
 matrix3x4
 memmove
 midFreqAbsorption
 midFreqTransmission
-multiline_string
 no failure reason set
 note.gnu.build-id
 panorama
 pointer
+polymorphic_id
 pthread_mutex_destroy
 pthread_mutex_init
 pthread_mutex_lock
 pthread_mutex_unlock
 pthread_mutexattr_init
 pthread_mutexattr_settype
-public/tier0/utlmemory.h
 qa1-x]1
 quaternion
 rela.dyn
@@ -629,7 +602,6 @@ rnd_down
 rodata
 rotation_vector
 s allocation count overflow
-s allocation count overflow( %llu > %llu
 s allocation count overflow( add %llu + current %llu > max %llu
 s: Invalid capacity %u
 s: Invalid grow amount %d
@@ -641,12 +613,13 @@ scattering
 scripts/custom_hrtfs.txt
 scripts/surfaceproperties_steamaudio.txt
 shstrtab
-single_quoted_string
+simulation
 singletons.cpp
 snd_steamaudio_active_hrtf
 snd_steamaudio_ambisonics_order
 snd_steamaudio_enable_custom_hrtf
 snd_steamaudio_enable_pathing
+snd_steamaudio_enable_perspective_correction
 snd_steamaudio_halton_sequence
 snd_steamaudio_hybrid_reverb_overlap
 snd_steamaudio_hybrid_reverb_transition_time
@@ -659,6 +632,7 @@ snd_steamaudio_num_bounces
 snd_steamaudio_num_diffuse_samples
 snd_steamaudio_num_rays
 snd_steamaudio_num_threads
+snd_steamaudio_perspective_correction_factor
 snd_steamaudio_reverb_order
 snd_steamaudio_reverb_update_rate
 soundevent
@@ -666,7 +640,6 @@ stack_chk_fail
 steamaudio
 steamaudio.cpp
 steamaudioscene.cpp
-strict_type_combinations
 string_token
 subclass
 surfacePropertyName
@@ -674,11 +647,11 @@ table: %u members
 temp_unserialization_member
 transform
 uchar32
+uint8[%u
 undefined
 unknown
 unknown KV3 basic type '%s' (%d
 unspecified
-v+<Ht_<Xt[<7uyH
 vector2
 vector2d
 vector3

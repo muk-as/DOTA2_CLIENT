@@ -1563,6 +1563,8 @@
 
   transition-property: saturation, brightness;
   transition-duration: 0.2s;
+
+  ui-scale:90%;
  }
 
  #NeutralItemsList DOTAShopItem.NeutralItemFound{
@@ -1605,6 +1607,26 @@
   margin-top: 13px;
  }
 
+ .TeamNeutralItems .TeamNeutralTokensTitle,.TeamNeutralItems .YourNeutralItemsTitle{
+
+
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+  margin-left: 3px;
+  min-width: 50px;
+  color: baseText;
+  width: 100%;
+  text-align: center;
+  text-shadow: 2px 2px 0px 2.0 black;
+ }
+
+ .TeamNeutralItems .YourNeutralItemsTitle{
+
+  margin-top: 8px;
+ }
+
  .ShowAllNeutralItems .TeamNeutralItems{
 
   visibility: collapse;
@@ -1628,14 +1650,37 @@
 
  #TeamNeutralItemsTierList{
 
+  width: 100%;
+  margin: 0px 20px;
   flow-children: down;
   horizontal-align: center;
  }
 
- .TeamNeutralItemsTier{
-
-  flow-children: down;
+ #TeamNeutralTokensList{
+  width: 100%;
+  margin: 0px 20px;
   horizontal-align: center;
+  flow-children: down;
+ }
+
+ #YourNeutralItemsList{
+  width: 100%;
+  margin: 0px 20px;
+  horizontal-align: center;
+  flow-children: right;
+ }
+
+ .TeamSpectatorView #YourNeutralItemsList,.TeamSpectatorView .YourNeutralItemsTitle,.TeamSpectatorView .TeamNeutralItemsTierNoneAvailable,.TeamSpectatorView .TeamNeutralItemsTierNoneAvailable.ShowUnavailableTokens{
+
+
+
+  visibility: collapse;
+ }
+
+ .TeamNeutralItemsTier{
+  width: 100%;
+  flow-children: down;
+
   margin-bottom: 8px;
  }
 
@@ -1657,14 +1702,35 @@
   min-width: 50px;
  }
 
- .NeutralTier1 .TeamNeutralItemsTierTitle{  color: NeutralTier1;}
+ .TeamNeutralItemsTierDesc{
+
+  min-width: 50px;
+ }
+
+ .NeutralTier1 .TeamNeutralItemsTierTitle{
+  color: NeutralTier1;
+ }
  .NeutralTier2 .TeamNeutralItemsTierTitle{  color: NeutralTier2;}
  .NeutralTier3 .TeamNeutralItemsTierTitle{  color: NeutralTier3;}
  .NeutralTier4 .TeamNeutralItemsTierTitle{  color: NeutralTier4;}
  .NeutralTier5 .TeamNeutralItemsTierTitle{  color: NeutralTier5;}
 
- .TeamNeutralItemsTierTimes{
+ .TeamNeutralItemsTierNoneAvailable{
+  width: 100%;
+  text-align: center;
+  visibility: collapse;
+  text-transform: uppercase;
+  font-size: 10px;
+  color: #7a7a7a;
+  letter-spacing: 1px;
+  margin: 4px 0px;
+ }
 
+ .TeamNeutralItemsTierNoneAvailable.ShowUnavailableTokens{
+  visibility: visible;
+ }
+
+ .TeamNeutralItemsTierTimes{
   font-size: 13px;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -1695,11 +1761,13 @@
  .TeamNeutralItemsTier #TierItemsList{
 
   flow-children: right;
+  horizontal-align: center;
  }
 
+ .TeamNeutralItem{
 
-
-
+  visibility: collapse;
+ }
 
  .TeamNeutralItemMainContents{
 
@@ -1709,7 +1777,7 @@
 
  .TeamNeutralItem #ShopItem{
 
-  width: 60px;
+  width: 50px;
   height: width-percentage( 72.7% );
   margin: 0px 6px 5px 6px;
   box-shadow: 0px 0px 12px #0009;
@@ -1732,7 +1800,42 @@
   box-shadow: 0px 0px 20px #66666620;
  }
 
- .TeamNeutralItem.Equipped #ShopItem,.TeamNeutralItem.InBackpack #ShopItem,.TeamNeutralItem.InPlayerStash #ShopItem,.TeamNeutralItem.OnCourier #ShopItem,.TeamNeutralItem.Consumed #ShopItem,.TeamNeutralItem.Unknown #ShopItem{
+ #YourNeutralItemsList .TeamNeutralItem{
+  margin: 0px 4px;
+ }
+
+
+ #YourNeutralItemsList .TeamNeutralItem.Yours{
+  visibility: visible;
+  margin: 0px 4px;
+ }
+
+ #YourNeutralItemsList .TeamNeutralItem.Yours.IsTierToken{
+  visibility: collapse;
+ }
+ #TeamNeutralTokensList .TeamNeutralItem.IsTierToken{
+  visibility: visible;
+ }
+
+ .TeamSpectatorView #TeamNeutralTokensList .TeamNeutralItem.IsTierToken,.TeamSpectatorView #TeamNeutralTokensList .TeamNeutralItem.InTeamStash,.TeamSpectatorView #TeamNeutralTokensList .TeamNeutralItem.Equipped,.TeamSpectatorView #TeamNeutralTokensList .TeamNeutralItem.InBackpack,.TeamSpectatorView #TeamNeutralTokensList .TeamNeutralItem.InPlayerStash,.TeamSpectatorView #TeamNeutralTokensList .TeamNeutralItem.OnCourier{
+
+
+
+
+
+  visibility: visible;
+ }
+
+ .TeamNeutralItem.InTeamStash.NotYours #ShopItem{
+  border: 1px solid gray;
+  saturation: 0.5;
+  brightness: 0.5;
+  box-shadow: 0px 0px 20px #66666620;
+ }
+
+
+ .TeamNeutralItem.Equipped #ShopItem,.TeamNeutralItem.InBackpack #ShopItem,.TeamNeutralItem.InPlayerStash #ShopItem,.TeamNeutralItem.OnCourier #ShopItem,.TeamNeutralItem.Consumed #ShopItem,.TeamNeutralItem.Unknown #ShopItem,.TeamNeutralItem.UnavailableToken #ShopItem{
+
 
 
 
@@ -1758,8 +1861,8 @@
   vertical-align: bottom;
   horizontal-align: right;
   margin-bottom: 14px;
-  saturation: 0.2;
-  brightness: 0.5;
+  saturation: 1.0;
+  brightness: 1.0;
   img-shadow: 0px 0px 15px #000000;
  }
 
@@ -1788,7 +1891,7 @@
   width: 100%;
   text-align: center;
   color: #7a7a7a;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
  }
 
 
@@ -1797,8 +1900,8 @@
 
 
   font-weight: semi-bold;
-  visibility: collapse;
  }
+
 
  .TeamNeutralItem.Equipped .TeamNeutralItemStatus{
 

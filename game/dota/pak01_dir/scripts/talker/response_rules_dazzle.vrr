@@ -1,801 +1,2463 @@
-#include "talker/response_rules_shared.vrr"
-
-criterion "Isdazzle" "classname" "npc_dota_hero_dazzle" weight 5 required
-criterion "IsDazzleShallowGrave" "abilityname" "dazzle_shallow_grave" weight 5 required
-criterion "IsDazzlePoison" "abilityname" "dazzle_poison_touch" weight 5 required
-criterion "IsDazzleShadowWave" "abilityname" "dazzle_shadow_wave" weight 5 required
-criterion "IsDazzleTauntDazzlecopter" "taunt_type" "dazzlecopter" weight 5 required
-criterion "IsDazzleLoadoutSpawn" "special_spawn" "dazzle_loadout_spawn" weight 5 required
-
-Response dazzle_Spawn
-{
-	scene "scenes/dazzle/dazzle_dazz_spawn_01.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_spawn_02.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_spawn_03.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_spawn_04.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_spawn_05.vcd" nodelay 
-}
-
-Rule dazzle_Spawn_Rule
-{
-	criteria Spawn Isdazzle 
-	response dazzle_Spawn
-}
-
-Response dazzle_CustomIsGameStart
-{
-	scene "scenes/dazzle/dazzle_dazz_battlebegins_01.vcd" nodelay 
-}
-
-Rule dazzle_CustomIsGameStart_Rule
-{
-	criteria Custom Isdazzle IsGameStart
-	response dazzle_CustomIsGameStart
-}
-
-Response dazzle_CustomIsDazzleLoadoutSpawn
-{
-	scene "scenes/dazzle/dazzle_dazz_spawn_01.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_spawn_02.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_spawn_03.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_spawn_04.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_spawn_05.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_level_05.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_move_09.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_kill_04.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_respawn_04.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_ability_sfx_14.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_move_17.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_win_03.vcd" nodelay 
-}
-
-Rule dazzle_CustomIsDazzleLoadoutSpawn_Rule
-{
-	criteria Custom Isdazzle IsDazzleLoadoutSpawn
-	response dazzle_CustomIsDazzleLoadoutSpawn
-}
-
-Response dazzle_KillIsFirstBlood
-{
-	scene "scenes/dazzle/dazzle_dazz_firstblood_01.vcd" nodelay 
-}
-
-Rule dazzle_KillIsFirstBlood_Rule
-{
-	criteria Kill Isdazzle IsFirstBlood
-	response dazzle_KillIsFirstBlood
-}
-
-Response dazzle_Kill
-{
-	scene "scenes/dazzle/dazzle_dazz_kill_01.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_kill_02.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_kill_03.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_kill_04.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_kill_05.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_kill_06.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_kill_07.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_kill_08.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_kill_09.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_kill_10.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_kill_11.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_kill_12.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_laugh_01.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_laugh_06.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_laugh_07.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_laugh_08.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_laugh_09.vcd" nodelay 
-}
-
-Rule dazzle_Kill_Rule
-{
-	criteria Kill Isdazzle 
-	response dazzle_Kill
-}
-
-Response dazzle_KillIsEnemyWitchDoctorChance_50%
-{
-	scene "scenes/dazzle/dazzle_dazz_rival_01.vcd" nodelay 
-}
-
-Rule dazzle_KillIsEnemyWitchDoctorChance_50%_Rule
-{
-	criteria Kill Isdazzle IsEnemyWitchDoctor Chance_50%
-	response dazzle_KillIsEnemyWitchDoctorChance_50%
-}
-
-Response dazzle_KillIsEnemyAxeChance_50%
-{
-	scene "scenes/dazzle/dazzle_dazz_rival_02.vcd" nodelay 
-}
-
-Rule dazzle_KillIsEnemyAxeChance_50%_Rule
-{
-	criteria Kill Isdazzle IsEnemyAxe Chance_50%
-	response dazzle_KillIsEnemyAxeChance_50%
-}
-
-Response dazzle_KillIsEnemyShadowShamanChance_50%
-{
-	scene "scenes/dazzle/dazzle_dazz_rival_03.vcd" nodelay 
-}
-
-Rule dazzle_KillIsEnemyShadowShamanChance_50%_Rule
-{
-	criteria Kill Isdazzle IsEnemyShadowShaman Chance_50%
-	response dazzle_KillIsEnemyShadowShamanChance_50%
-}
-
-Response dazzle_Move
-{
-	scene "scenes/dazzle/dazzle_dazz_move_01.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_move_02.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_move_03.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_move_04.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_move_05.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_move_06.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_move_07.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_move_08.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_move_09.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_move_10.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_move_11.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_move_12.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_move_13.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_move_14.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_move_15.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_move_16.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_move_17.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_ability_shalgrave_05.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_ability_shadowave_11.vcd" nodelay 
-}
-
-Rule dazzle_Move_Rule
-{
-	criteria Move Isdazzle 
-	response dazzle_Move
-}
-
-Response dazzle_Attack
-{
-	scene "scenes/dazzle/dazzle_dazz_attack_01.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_attack_02.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_attack_03.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_attack_04.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_attack_05.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_attack_06.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_attack_07.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_attack_08.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_attack_09.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_attack_10.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_attack_11.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_attack_12.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_attack_13.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_ability_poistouch_03.vcd" nodelay 
-}
-
-Rule dazzle_Attack_Rule
-{
-	criteria Attack Isdazzle 
-	response dazzle_Attack
-}
-
-Response dazzle_CastOrder
-{
-	scene "scenes/dazzle/dazzle_dazz_cast_01.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_cast_02.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_cast_03.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_ability_shalgrave_08.vcd" nodelay 
-}
-
-Rule dazzle_CastOrder_Rule
-{
-	criteria CastOrder Isdazzle 
-	response dazzle_CastOrder
-}
-
-Response dazzle_CastExecuteIsDazzleShallowGraveIsEnemyDazzle
-{
-	scene "scenes/dazzle/dazzle_dazz_ability_shalgrave_01.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_ability_shalgrave_03.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_ability_shalgrave_10.vcd" nodelay 
-}
-
-Rule dazzle_CastExecuteIsDazzleShallowGraveIsEnemyDazzle_Rule
-{
-	criteria CastExecute Isdazzle IsDazzleShallowGrave IsEnemyDazzle
-	response dazzle_CastExecuteIsDazzleShallowGraveIsEnemyDazzle
-}
-
-Response dazzle_CastExecuteIsDazzleShallowGrave
-{
-	scene "scenes/dazzle/dazzle_dazz_ability_shalgrave_01.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_ability_shalgrave_02.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_ability_shalgrave_03.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_ability_shalgrave_04.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_ability_shalgrave_06.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_ability_shalgrave_07.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_ability_shalgrave_09.vcd" nodelay 
-}
-
-Rule dazzle_CastExecuteIsDazzleShallowGrave_Rule
-{
-	criteria CastExecute Isdazzle IsDazzleShallowGrave
-	response dazzle_CastExecuteIsDazzleShallowGrave
-}
-
-Response dazzle_CastExecuteIsDazzleShadowWave
-{
-	scene "scenes/dazzle/dazzle_dazz_ability_shadowave_01.vcd" nodelay respeakdelay 60
-	scene "scenes/dazzle/dazzle_dazz_ability_shadowave_02.vcd" nodelay respeakdelay 60
-	scene "scenes/dazzle/dazzle_dazz_ability_shadowave_03.vcd" nodelay respeakdelay 60
-	scene "scenes/dazzle/dazzle_dazz_ability_shadowave_04.vcd" nodelay respeakdelay 60
-	scene "scenes/dazzle/dazzle_dazz_ability_shadowave_09.vcd" nodelay respeakdelay 60
-	scene "scenes/dazzle/dazzle_dazz_ability_shadowave_10.vcd" nodelay respeakdelay 60
-}
-
-Rule dazzle_CastExecuteIsDazzleShadowWave_Rule
-{
-	criteria CastExecute Isdazzle IsDazzleShadowWave
-	response dazzle_CastExecuteIsDazzleShadowWave
-}
-
-Response dazzle_CastExecuteIsDazzlePoison
-{
-	scene "scenes/dazzle/dazzle_dazz_ability_sfx_01.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_ability_sfx_02.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_ability_sfx_03.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_ability_sfx_04.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_ability_sfx_05.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_ability_sfx_06.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_ability_sfx_07.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_ability_sfx_09.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_ability_sfx_10.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_ability_sfx_11.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_ability_sfx_12.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_ability_sfx_13.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_ability_sfx_14.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_ability_sfx_15.vcd" nodelay 
-}
-
-Rule dazzle_CastExecuteIsDazzlePoison_Rule
-{
-	criteria CastExecute Isdazzle IsDazzlePoison
-	response dazzle_CastExecuteIsDazzlePoison
-}
-
-Response dazzle_LevelUp
-{
-	scene "scenes/dazzle/dazzle_dazz_ability_shadowave_12.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_level_01.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_level_02.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_level_03.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_level_04.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_level_05.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_level_06.vcd" nodelay 
-}
-
-Rule dazzle_LevelUp_Rule
-{
-	criteria LevelUp Isdazzle 
-	response dazzle_LevelUp
-}
-
-Response dazzle_ItemDropIsRareDrop
-{
-	scene "scenes/dazzle/dazzle_dazz_ability_weave_02.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_ability_weave_03.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_laugh_02.vcd" nodelay 
-}
-
-Rule dazzle_ItemDropIsRareDrop_Rule
-{
-	criteria ItemDrop Isdazzle IsRareDrop
-	response dazzle_ItemDropIsRareDrop
-}
-
-Response dazzle_ItemDropIsCommonDrop
-{
-	scene "scenes/dazzle/dazzle_dazz_happy_03.vcd" nodelay 
-}
-
-Rule dazzle_ItemDropIsCommonDrop_Rule
-{
-	criteria ItemDrop Isdazzle IsCommonDrop
-	response dazzle_ItemDropIsCommonDrop
-}
-
-Response dazzle_ItemDropIsUltraRareDrop
-{
-	scene "scenes/dazzle/dazzle_dazz_laugh_05.vcd" nodelay 
-}
-
-Rule dazzle_ItemDropIsUltraRareDrop_Rule
-{
-	criteria ItemDrop Isdazzle IsUltraRareDrop
-	response dazzle_ItemDropIsUltraRareDrop
-}
-
-Response dazzle_PowerupIsPowerupBounty
-{
-	scene "scenes/dazzle/dazzle_dazz_ability_sfx_08.vcd" nodelay respeakdelay 300
-}
-
-Rule dazzle_PowerupIsPowerupBounty_Rule
-{
-	criteria Powerup Isdazzle IsPowerupBounty
-	response dazzle_PowerupIsPowerupBounty
-}
-
-Response dazzle_PowerupIsPowerupHaste
-{
-	scene "scenes/dazzle/dazzle_dazz_haste_01.vcd" nodelay 
-}
-
-Rule dazzle_PowerupIsPowerupHaste_Rule
-{
-	criteria Powerup Isdazzle IsPowerupHaste
-	response dazzle_PowerupIsPowerupHaste
-}
-
-Response dazzle_PowerupIsPowerupDoubleDamage
-{
-	scene "scenes/dazzle/dazzle_dazz_doubdam_01.vcd" nodelay 
-}
-
-Rule dazzle_PowerupIsPowerupDoubleDamage_Rule
-{
-	criteria Powerup Isdazzle IsPowerupDoubleDamage
-	response dazzle_PowerupIsPowerupDoubleDamage
-}
-
-Response dazzle_PowerupIsPowerupDoubleDamageChance_25%
-{
-	scene "scenes/dazzle/dazzle_dazz_doubdam_02.vcd" nodelay 
-}
-
-Rule dazzle_PowerupIsPowerupDoubleDamageChance_25%_Rule
-{
-	criteria Powerup Isdazzle IsPowerupDoubleDamage Chance_25%
-	response dazzle_PowerupIsPowerupDoubleDamageChance_25%
-}
-
-Response dazzle_PowerupIsPowerupRegeneration
-{
-	scene "scenes/dazzle/dazzle_dazz_regen_01.vcd" nodelay 
-}
-
-Rule dazzle_PowerupIsPowerupRegeneration_Rule
-{
-	criteria Powerup Isdazzle IsPowerupRegeneration
-	response dazzle_PowerupIsPowerupRegeneration
-}
-
-Response dazzle_PowerupIsPowerupIllusion
-{
-	scene "scenes/dazzle/dazzle_dazz_illus_01.vcd" nodelay 
-}
-
-Rule dazzle_PowerupIsPowerupIllusion_Rule
-{
-	criteria Powerup Isdazzle IsPowerupIllusion
-	response dazzle_PowerupIsPowerupIllusion
-}
-
-Response dazzle_PowerupIsPowerupInvisibility
-{
-	scene "scenes/dazzle/dazzle_dazz_invis_01.vcd" nodelay 
-}
-
-Rule dazzle_PowerupIsPowerupInvisibility_Rule
-{
-	criteria Powerup Isdazzle IsPowerupInvisibility
-	response dazzle_PowerupIsPowerupInvisibility
-}
-
-Response dazzle_PowerupIsPowerupArcane
-{
-	scene "scenes/dazzle/dazzle_dazz_ability_poistouch_02.vcd" nodelay respeakdelay 300
-}
-
-Rule dazzle_PowerupIsPowerupArcane_Rule
-{
-	criteria Powerup Isdazzle IsPowerupArcane
-	response dazzle_PowerupIsPowerupArcane
-}
-
-Response dazzle_Death
-{
-	scene "scenes/dazzle/dazzle_dazz_death_01.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_death_02.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_death_03.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_death_04.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_death_05.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_death_06.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_death_07.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_death_08.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_death_09.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_death_10.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_death_11.vcd" nodelay 
-}
-
-Rule dazzle_Death_Rule
-{
-	criteria Death Isdazzle 
-	response dazzle_Death
-}
-
-Response dazzle_DeathIsReincarnating
-{
-	scene "scenes/dazzle/dazzle_dazz_fastres_01.vcd" nodelay 
-}
-
-Rule dazzle_DeathIsReincarnating_Rule
-{
-	criteria Death Isdazzle IsReincarnating
-	response dazzle_DeathIsReincarnating
-}
-
-Response dazzle_Respawn
-{
-	scene "scenes/dazzle/dazzle_dazz_respawn_01.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_respawn_02.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_respawn_03.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_respawn_04.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_respawn_05.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_respawn_06.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_respawn_07.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_respawn_08.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_respawn_09.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_respawn_10.vcd" nodelay 
-}
-
-Rule dazzle_Respawn_Rule
-{
-	criteria Respawn Isdazzle 
-	response dazzle_Respawn
-}
-
-Response dazzle_LastHit
-{
-	scene "scenes/dazzle/dazzle_dazz_lasthit_01.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_lasthit_02.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_lasthit_03.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_lasthit_04.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_lasthit_05.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_lasthit_06.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_lasthit_07.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_lasthit_08.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_lasthit_09.vcd" nodelay 
-}
-
-Rule dazzle_LastHit_Rule
-{
-	criteria LastHit Isdazzle 
-	response dazzle_LastHit
-}
-
-Response dazzle_Deny
-{
-	scene "scenes/dazzle/dazzle_dazz_deny_01.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_deny_02.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_deny_03.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_deny_04.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_deny_05.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_deny_06.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_deny_07.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_deny_08.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_deny_09.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_deny_10.vcd" nodelay 
-}
-
-Rule dazzle_Deny_Rule
-{
-	criteria Deny Isdazzle 
-	response dazzle_Deny
-}
-
-Response dazzle_Select
-{
-	scene "scenes/dazzle/dazzle_dazz_rare_01.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_rare_02.vcd" nodelay 
-}
-
-Rule dazzle_Select_Rule
-{
-	criteria Select Isdazzle 
-	response dazzle_Select
-}
-
-Response dazzle_PurchaseIsExpensiveItem
-{
-	scene "scenes/dazzle/dazzle_dazz_purch_01.vcd" nodelay speakonce
-	scene "scenes/dazzle/dazzle_dazz_purch_02.vcd" nodelay speakonce
-	scene "scenes/dazzle/dazzle_dazz_purch_03.vcd" nodelay speakonce
-}
-
-Rule dazzle_PurchaseIsExpensiveItem_Rule
-{
-	criteria Purchase Isdazzle IsExpensiveItem
-	response dazzle_PurchaseIsExpensiveItem
-}
-
-Response dazzle_PurchaseIsBlinkDagger
-{
-	scene "scenes/dazzle/dazzle_dazz_blink_01.vcd" nodelay speakonce
-	scene "scenes/dazzle/dazzle_dazz_blink_02.vcd" nodelay speakonce
-}
-
-Rule dazzle_PurchaseIsBlinkDagger_Rule
-{
-	criteria Purchase Isdazzle IsBlinkDagger
-	response dazzle_PurchaseIsBlinkDagger
-}
-
-Response dazzle_PurchaseIsUltimateScepter
-{
-	scene "scenes/dazzle/dazzle_dazz_scepter_01.vcd" nodelay speakonce
-	scene "scenes/dazzle/dazzle_dazz_scepter_02.vcd" nodelay speakonce
-}
-
-Rule dazzle_PurchaseIsUltimateScepter_Rule
-{
-	criteria Purchase Isdazzle IsUltimateScepter
-	response dazzle_PurchaseIsUltimateScepter
-}
-
-Response dazzle_PurchaseIsMekansm
-{
-	scene "scenes/dazzle/dazzle_dazz_item_01.vcd" nodelay speakonce
-}
-
-Rule dazzle_PurchaseIsMekansm_Rule
-{
-	criteria Purchase Isdazzle IsMekansm
-	response dazzle_PurchaseIsMekansm
-}
-
-Response dazzle_PurchaseIsShiva
-{
-	scene "scenes/dazzle/dazzle_dazz_item_02.vcd" nodelay speakonce
-}
-
-Rule dazzle_PurchaseIsShiva_Rule
-{
-	criteria Purchase Isdazzle IsShiva
-	response dazzle_PurchaseIsShiva
-}
-
-Response dazzle_PurchaseIsDesolator
-{
-	scene "scenes/dazzle/dazzle_dazz_item_03.vcd" nodelay speakonce
-}
-
-Rule dazzle_PurchaseIsDesolator_Rule
-{
-	criteria Purchase Isdazzle IsDesolator
-	response dazzle_PurchaseIsDesolator
-}
-
-Response dazzle_Bottling
-{
-	scene "scenes/dazzle/dazzle_dazz_bottle_01.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_bottle_02.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_bottle_03.vcd" nodelay 
-}
-
-Rule dazzle_Bottling_Rule
-{
-	criteria Bottling Isdazzle 
-	response dazzle_Bottling
-}
-
-Response dazzle_Immortality
-{
-	scene "scenes/dazzle/dazzle_dazz_immort_01.vcd" nodelay 
-}
-
-Rule dazzle_Immortality_Rule
-{
-	criteria Immortality Isdazzle 
-	response dazzle_Immortality
-}
-
-Response dazzle_ImmortalityChance_25%
-{
-	scene "scenes/dazzle/dazzle_dazz_immort_02.vcd" nodelay 
-}
-
-Rule dazzle_ImmortalityChance_25%_Rule
-{
-	criteria Immortality Isdazzle Chance_25%
-	response dazzle_ImmortalityChance_25%
-}
-
-Response dazzle_Thanks
-{
-	scene "scenes/dazzle/dazzle_dazz_thanks_01.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_thanks_02.vcd" nodelay 
-}
-
-Rule dazzle_Thanks_Rule
-{
-	criteria Thanks Isdazzle 
-	response dazzle_Thanks
-}
-
-Response dazzle_PainChance_25%
-{
-	scene "scenes/dazzle/dazzle_dazz_underattack_01.vcd" nodelay respeakdelay 120
-}
-
-Rule dazzle_PainChance_25%_Rule
-{
-	criteria Pain Isdazzle Chance_25%
-	response dazzle_PainChance_25%
-}
-
-Response dazzle_Pain
-{
-	scene "scenes/dazzle/dazzle_dazz_pain_01.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_pain_02.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_pain_03.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_pain_05.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_pain_06.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_pain_07.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_pain_08.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_pain_09.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_pain_11.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_pain_12.vcd" nodelay 
-}
-
-Rule dazzle_Pain_Rule
-{
-	criteria Pain Isdazzle 
-	response dazzle_Pain
-}
-
-Response dazzle_InTheBag
-{
-	scene "scenes/dazzle/dazzle_dazz_inthebag_01.vcd" nodelay 
-}
-
-Rule dazzle_InTheBag_Rule
-{
-	criteria InTheBag Isdazzle 
-	response dazzle_InTheBag
-}
-
-Response dazzle_CooldownLittleNag
-{
-	scene "scenes/dazzle/dazzle_dazz_notyet_01.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_notyet_02.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_notyet_03.vcd" nodelay 
-}
-
-Rule dazzle_CooldownLittleNag_Rule
-{
-	criteria Cooldown Isdazzle LittleNag
-	response dazzle_CooldownLittleNag
-}
-
-Response dazzle_CooldownMediumNag
-{
-	scene "scenes/dazzle/dazzle_dazz_notyet_04.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_notyet_05.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_notyet_06.vcd" nodelay 
-}
-
-Rule dazzle_CooldownMediumNag_Rule
-{
-	criteria Cooldown Isdazzle MediumNag
-	response dazzle_CooldownMediumNag
-}
-
-Response dazzle_CooldownSuperNag
-{
-	scene "scenes/dazzle/dazzle_dazz_notyet_07.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_notyet_08.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_notyet_09.vcd" nodelay 
-}
-
-Rule dazzle_CooldownSuperNag_Rule
-{
-	criteria Cooldown Isdazzle SuperNag
-	response dazzle_CooldownSuperNag
-}
-
-Response dazzle_NoManaLittleNag
-{
-	scene "scenes/dazzle/dazzle_dazz_nomana_01.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_nomana_02.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_nomana_03.vcd" nodelay 
-}
-
-Rule dazzle_NoManaLittleNag_Rule
-{
-	criteria NoMana Isdazzle LittleNag
-	response dazzle_NoManaLittleNag
-}
-
-Response dazzle_NoManaMediumNag
-{
-	scene "scenes/dazzle/dazzle_dazz_nomana_04.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_nomana_05.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_nomana_06.vcd" nodelay 
-}
-
-Rule dazzle_NoManaMediumNag_Rule
-{
-	criteria NoMana Isdazzle MediumNag
-	response dazzle_NoManaMediumNag
-}
-
-Response dazzle_NoManaSuperNag
-{
-	scene "scenes/dazzle/dazzle_dazz_nomana_07.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_nomana_08.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_nomana_09.vcd" nodelay 
-}
-
-Rule dazzle_NoManaSuperNag_Rule
-{
-	criteria NoMana Isdazzle SuperNag
-	response dazzle_NoManaSuperNag
-}
-
-Response dazzle_Defeat
-{
-	scene "scenes/dazzle/dazzle_dazz_lose_01.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_lose_02.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_lose_03.vcd" nodelay 
-}
-
-Rule dazzle_Defeat_Rule
-{
-	criteria Defeat Isdazzle 
-	response dazzle_Defeat
-}
-
-Response dazzle_Victory
-{
-	scene "scenes/dazzle/dazzle_dazz_win_01.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_win_02.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_win_03.vcd" nodelay 
-}
-
-Rule dazzle_Victory_Rule
-{
-	criteria Victory Isdazzle 
-	response dazzle_Victory
-}
-
-Response dazzle_EmoteIsEmoteLaugh
-{
-	scene "scenes/dazzle/dazzle_dazz_laugh_01.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_laugh_02.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_laugh_03.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_laugh_04.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_laugh_05.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_laugh_06.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_laugh_07.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_laugh_08.vcd" nodelay 
-	scene "scenes/dazzle/dazzle_dazz_laugh_09.vcd" nodelay 
-}
-
-Rule dazzle_EmoteIsEmoteLaugh_Rule
-{
-	criteria Emote Isdazzle IsEmoteLaugh
-	response dazzle_EmoteIsEmoteLaugh
-}
-
-Response dazzle_TauntIsDazzleTauntDazzlecopter
-{
-	scene "scenes/dazzle/dazzle_dazz_ability_sfx_14.vcd" nodelay 
-}
-
-Rule dazzle_TauntIsDazzleTauntDazzlecopter_Rule
-{
-	criteria Taunt Isdazzle IsDazzleTauntDazzlecopter
-	response dazzle_TauntIsDazzleTauntDazzlecopter
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vrfunknown:version{c1f07085-5299-4e8a-b7e9-1cbb66bbbe23} -->
+{
+	m_Includes = 
+	[
+		"scripts/talker/response_rules_shared.vrr",
+	]
+	m_ResponseGroups = 
+	[
+		
+		{
+			m_name = "dazzle_Spawn"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_spawn_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_spawn_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_spawn_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_spawn_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_spawn_05.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "dazzle_CustomIsGameStart"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_battlebegins_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "dazzle_CustomIsDazzleLoadoutSpawn"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_spawn_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_spawn_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_spawn_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_spawn_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_spawn_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_level_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_move_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_kill_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_respawn_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_ability_sfx_14.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_move_17.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_win_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "dazzle_KillIsFirstBlood"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_firstblood_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "dazzle_Kill"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_kill_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_kill_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_kill_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_kill_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_kill_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_kill_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_kill_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_kill_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_kill_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_kill_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_kill_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_kill_12.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_laugh_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_laugh_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_laugh_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_laugh_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_laugh_09.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "dazzle_KillIsEnemyWitchDoctorChance_50%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_rival_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "dazzle_KillIsEnemyAxeChance_50%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_rival_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "dazzle_KillIsEnemyShadowShamanChance_50%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_rival_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "dazzle_Move"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_move_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_move_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_move_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_move_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_move_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_move_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_move_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_move_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_move_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_move_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_move_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_move_12.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_move_13.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_move_14.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_move_15.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_move_16.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_move_17.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_ability_shalgrave_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_ability_shadowave_11.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "dazzle_Attack"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_attack_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_attack_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_attack_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_attack_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_attack_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_attack_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_attack_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_attack_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_attack_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_attack_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_attack_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_attack_12.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_attack_13.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_ability_poistouch_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "dazzle_CastOrder"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_cast_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_cast_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_cast_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_ability_shalgrave_08.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "dazzle_CastExecuteIsDazzleShallowGraveIsEnemyDazzle"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_ability_shalgrave_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_ability_shalgrave_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_ability_shalgrave_10.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "dazzle_CastExecuteIsDazzleShallowGrave"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_ability_shalgrave_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_ability_shalgrave_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_ability_shalgrave_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_ability_shalgrave_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_ability_shalgrave_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_ability_shalgrave_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_ability_shalgrave_09.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "dazzle_CastExecuteIsDazzleShadowWave"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_ability_shadowave_01.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 60.000000
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_ability_shadowave_02.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 60.000000
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_ability_shadowave_03.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 60.000000
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_ability_shadowave_04.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 60.000000
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_ability_shadowave_09.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 60.000000
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_ability_shadowave_10.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 60.000000
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "dazzle_CastExecuteIsDazzlePoison"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_ability_sfx_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_ability_sfx_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_ability_sfx_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_ability_sfx_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_ability_sfx_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_ability_sfx_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_ability_sfx_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_ability_sfx_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_ability_sfx_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_ability_sfx_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_ability_sfx_12.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_ability_sfx_13.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_ability_sfx_14.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_ability_sfx_15.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "dazzle_LevelUp"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_ability_shadowave_12.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_level_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_level_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_level_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_level_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_level_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_level_06.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "dazzle_ItemDropIsRareDrop"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_ability_weave_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_ability_weave_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_laugh_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "dazzle_ItemDropIsCommonDrop"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_happy_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "dazzle_ItemDropIsUltraRareDrop"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_laugh_05.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "dazzle_PowerupIsPowerupBounty"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_ability_sfx_08.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 300.000000
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "dazzle_PowerupIsPowerupHaste"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_haste_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "dazzle_PowerupIsPowerupDoubleDamage"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_doubdam_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "dazzle_PowerupIsPowerupDoubleDamageChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_doubdam_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "dazzle_PowerupIsPowerupRegeneration"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_regen_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "dazzle_PowerupIsPowerupIllusion"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_illus_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "dazzle_PowerupIsPowerupInvisibility"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_invis_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "dazzle_PowerupIsPowerupArcane"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_ability_poistouch_02.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 300.000000
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "dazzle_Death"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_death_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_death_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_death_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_death_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_death_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_death_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_death_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_death_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_death_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_death_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_death_11.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "dazzle_DeathIsReincarnating"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_fastres_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "dazzle_Respawn"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_respawn_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_respawn_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_respawn_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_respawn_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_respawn_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_respawn_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_respawn_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_respawn_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_respawn_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_respawn_10.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "dazzle_LastHit"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_lasthit_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_lasthit_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_lasthit_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_lasthit_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_lasthit_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_lasthit_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_lasthit_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_lasthit_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_lasthit_09.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "dazzle_Deny"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_deny_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_deny_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_deny_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_deny_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_deny_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_deny_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_deny_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_deny_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_deny_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_deny_10.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "dazzle_Select"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_rare_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_rare_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "dazzle_PurchaseIsExpensiveItem"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_purch_01.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_purch_02.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_purch_03.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "dazzle_PurchaseIsBlinkDagger"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_blink_01.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_blink_02.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "dazzle_PurchaseIsUltimateScepter"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_scepter_01.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_scepter_02.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "dazzle_PurchaseIsMekansm"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_item_01.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "dazzle_PurchaseIsShiva"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_item_02.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "dazzle_PurchaseIsDesolator"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_item_03.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "dazzle_Bottling"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_bottle_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_bottle_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_bottle_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "dazzle_Immortality"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_immort_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "dazzle_ImmortalityChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_immort_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "dazzle_Thanks"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_thanks_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_thanks_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "dazzle_PainChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_underattack_01.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 120.000000
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "dazzle_Pain"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_pain_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_pain_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_pain_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_pain_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_pain_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_pain_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_pain_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_pain_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_pain_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_pain_12.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "dazzle_InTheBag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_inthebag_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "dazzle_CooldownLittleNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_notyet_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_notyet_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_notyet_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "dazzle_CooldownMediumNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_notyet_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_notyet_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_notyet_06.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "dazzle_CooldownSuperNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_notyet_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_notyet_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_notyet_09.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "dazzle_NoManaLittleNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_nomana_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_nomana_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_nomana_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "dazzle_NoManaMediumNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_nomana_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_nomana_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_nomana_06.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "dazzle_NoManaSuperNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_nomana_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_nomana_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_nomana_09.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "dazzle_Defeat"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_lose_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_lose_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_lose_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "dazzle_Victory"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_win_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_win_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_win_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "dazzle_EmoteIsEmoteLaugh"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_laugh_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_laugh_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_laugh_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_laugh_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_laugh_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_laugh_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_laugh_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_laugh_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_laugh_09.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "dazzle_TauntIsDazzleTauntDazzlecopter"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/dazzle/dazzle_dazz_ability_sfx_14.vcd"
+				},
+			]
+		},
+	]
+	m_Requirements = 
+	[
+		
+		{
+			m_name = "Isdazzle"
+			m_matchKey = "classname"
+			m_matchExpr = "npc_dota_hero_dazzle"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsDazzleShallowGrave"
+			m_matchKey = "abilityname"
+			m_matchExpr = "dazzle_shallow_grave"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsDazzlePoison"
+			m_matchKey = "abilityname"
+			m_matchExpr = "dazzle_poison_touch"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsDazzleShadowWave"
+			m_matchKey = "abilityname"
+			m_matchExpr = "dazzle_shadow_wave"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsDazzleTauntDazzlecopter"
+			m_matchKey = "taunt_type"
+			m_matchExpr = "dazzlecopter"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsDazzleLoadoutSpawn"
+			m_matchKey = "special_spawn"
+			m_matchExpr = "dazzle_loadout_spawn"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+	]
+	m_Rules = 
+	[
+		
+		{
+			m_name = "dazzle_Spawn_Rule"
+			m_Requirements = 
+			[
+				"Spawn",
+				"Isdazzle",
+			]
+			m_ResponseGroups = 
+			[
+				"dazzle_Spawn",
+			]
+		},
+		
+		{
+			m_name = "dazzle_CustomIsGameStart_Rule"
+			m_Requirements = 
+			[
+				"Custom",
+				"Isdazzle",
+				"IsGameStart",
+			]
+			m_ResponseGroups = 
+			[
+				"dazzle_CustomIsGameStart",
+			]
+		},
+		
+		{
+			m_name = "dazzle_CustomIsDazzleLoadoutSpawn_Rule"
+			m_Requirements = 
+			[
+				"Custom",
+				"Isdazzle",
+				"IsDazzleLoadoutSpawn",
+			]
+			m_ResponseGroups = 
+			[
+				"dazzle_CustomIsDazzleLoadoutSpawn",
+			]
+		},
+		
+		{
+			m_name = "dazzle_KillIsFirstBlood_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isdazzle",
+				"IsFirstBlood",
+			]
+			m_ResponseGroups = 
+			[
+				"dazzle_KillIsFirstBlood",
+			]
+		},
+		
+		{
+			m_name = "dazzle_Kill_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isdazzle",
+			]
+			m_ResponseGroups = 
+			[
+				"dazzle_Kill",
+			]
+		},
+		
+		{
+			m_name = "dazzle_KillIsEnemyWitchDoctorChance_50%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isdazzle",
+				"IsEnemyWitchDoctor",
+				"Chance_50%",
+			]
+			m_ResponseGroups = 
+			[
+				"dazzle_KillIsEnemyWitchDoctorChance_50%",
+			]
+		},
+		
+		{
+			m_name = "dazzle_KillIsEnemyAxeChance_50%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isdazzle",
+				"IsEnemyAxe",
+				"Chance_50%",
+			]
+			m_ResponseGroups = 
+			[
+				"dazzle_KillIsEnemyAxeChance_50%",
+			]
+		},
+		
+		{
+			m_name = "dazzle_KillIsEnemyShadowShamanChance_50%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isdazzle",
+				"IsEnemyShadowShaman",
+				"Chance_50%",
+			]
+			m_ResponseGroups = 
+			[
+				"dazzle_KillIsEnemyShadowShamanChance_50%",
+			]
+		},
+		
+		{
+			m_name = "dazzle_Move_Rule"
+			m_Requirements = 
+			[
+				"Move",
+				"Isdazzle",
+			]
+			m_ResponseGroups = 
+			[
+				"dazzle_Move",
+			]
+		},
+		
+		{
+			m_name = "dazzle_Attack_Rule"
+			m_Requirements = 
+			[
+				"Attack",
+				"Isdazzle",
+			]
+			m_ResponseGroups = 
+			[
+				"dazzle_Attack",
+			]
+		},
+		
+		{
+			m_name = "dazzle_CastOrder_Rule"
+			m_Requirements = 
+			[
+				"CastOrder",
+				"Isdazzle",
+			]
+			m_ResponseGroups = 
+			[
+				"dazzle_CastOrder",
+			]
+		},
+		
+		{
+			m_name = "dazzle_CastExecuteIsDazzleShallowGraveIsEnemyDazzle_Rule"
+			m_Requirements = 
+			[
+				"CastExecute",
+				"Isdazzle",
+				"IsDazzleShallowGrave",
+				"IsEnemyDazzle",
+			]
+			m_ResponseGroups = 
+			[
+				"dazzle_CastExecuteIsDazzleShallowGraveIsEnemyDazzle",
+			]
+		},
+		
+		{
+			m_name = "dazzle_CastExecuteIsDazzleShallowGrave_Rule"
+			m_Requirements = 
+			[
+				"CastExecute",
+				"Isdazzle",
+				"IsDazzleShallowGrave",
+			]
+			m_ResponseGroups = 
+			[
+				"dazzle_CastExecuteIsDazzleShallowGrave",
+			]
+		},
+		
+		{
+			m_name = "dazzle_CastExecuteIsDazzleShadowWave_Rule"
+			m_Requirements = 
+			[
+				"CastExecute",
+				"Isdazzle",
+				"IsDazzleShadowWave",
+			]
+			m_ResponseGroups = 
+			[
+				"dazzle_CastExecuteIsDazzleShadowWave",
+			]
+		},
+		
+		{
+			m_name = "dazzle_CastExecuteIsDazzlePoison_Rule"
+			m_Requirements = 
+			[
+				"CastExecute",
+				"Isdazzle",
+				"IsDazzlePoison",
+			]
+			m_ResponseGroups = 
+			[
+				"dazzle_CastExecuteIsDazzlePoison",
+			]
+		},
+		
+		{
+			m_name = "dazzle_LevelUp_Rule"
+			m_Requirements = 
+			[
+				"LevelUp",
+				"Isdazzle",
+			]
+			m_ResponseGroups = 
+			[
+				"dazzle_LevelUp",
+			]
+		},
+		
+		{
+			m_name = "dazzle_ItemDropIsRareDrop_Rule"
+			m_Requirements = 
+			[
+				"ItemDrop",
+				"Isdazzle",
+				"IsRareDrop",
+			]
+			m_ResponseGroups = 
+			[
+				"dazzle_ItemDropIsRareDrop",
+			]
+		},
+		
+		{
+			m_name = "dazzle_ItemDropIsCommonDrop_Rule"
+			m_Requirements = 
+			[
+				"ItemDrop",
+				"Isdazzle",
+				"IsCommonDrop",
+			]
+			m_ResponseGroups = 
+			[
+				"dazzle_ItemDropIsCommonDrop",
+			]
+		},
+		
+		{
+			m_name = "dazzle_ItemDropIsUltraRareDrop_Rule"
+			m_Requirements = 
+			[
+				"ItemDrop",
+				"Isdazzle",
+				"IsUltraRareDrop",
+			]
+			m_ResponseGroups = 
+			[
+				"dazzle_ItemDropIsUltraRareDrop",
+			]
+		},
+		
+		{
+			m_name = "dazzle_PowerupIsPowerupBounty_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isdazzle",
+				"IsPowerupBounty",
+			]
+			m_ResponseGroups = 
+			[
+				"dazzle_PowerupIsPowerupBounty",
+			]
+		},
+		
+		{
+			m_name = "dazzle_PowerupIsPowerupHaste_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isdazzle",
+				"IsPowerupHaste",
+			]
+			m_ResponseGroups = 
+			[
+				"dazzle_PowerupIsPowerupHaste",
+			]
+		},
+		
+		{
+			m_name = "dazzle_PowerupIsPowerupDoubleDamage_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isdazzle",
+				"IsPowerupDoubleDamage",
+			]
+			m_ResponseGroups = 
+			[
+				"dazzle_PowerupIsPowerupDoubleDamage",
+			]
+		},
+		
+		{
+			m_name = "dazzle_PowerupIsPowerupDoubleDamageChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isdazzle",
+				"IsPowerupDoubleDamage",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"dazzle_PowerupIsPowerupDoubleDamageChance_25%",
+			]
+		},
+		
+		{
+			m_name = "dazzle_PowerupIsPowerupRegeneration_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isdazzle",
+				"IsPowerupRegeneration",
+			]
+			m_ResponseGroups = 
+			[
+				"dazzle_PowerupIsPowerupRegeneration",
+			]
+		},
+		
+		{
+			m_name = "dazzle_PowerupIsPowerupIllusion_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isdazzle",
+				"IsPowerupIllusion",
+			]
+			m_ResponseGroups = 
+			[
+				"dazzle_PowerupIsPowerupIllusion",
+			]
+		},
+		
+		{
+			m_name = "dazzle_PowerupIsPowerupInvisibility_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isdazzle",
+				"IsPowerupInvisibility",
+			]
+			m_ResponseGroups = 
+			[
+				"dazzle_PowerupIsPowerupInvisibility",
+			]
+		},
+		
+		{
+			m_name = "dazzle_PowerupIsPowerupArcane_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isdazzle",
+				"IsPowerupArcane",
+			]
+			m_ResponseGroups = 
+			[
+				"dazzle_PowerupIsPowerupArcane",
+			]
+		},
+		
+		{
+			m_name = "dazzle_Death_Rule"
+			m_Requirements = 
+			[
+				"Death",
+				"Isdazzle",
+			]
+			m_ResponseGroups = 
+			[
+				"dazzle_Death",
+			]
+		},
+		
+		{
+			m_name = "dazzle_DeathIsReincarnating_Rule"
+			m_Requirements = 
+			[
+				"Death",
+				"Isdazzle",
+				"IsReincarnating",
+			]
+			m_ResponseGroups = 
+			[
+				"dazzle_DeathIsReincarnating",
+			]
+		},
+		
+		{
+			m_name = "dazzle_Respawn_Rule"
+			m_Requirements = 
+			[
+				"Respawn",
+				"Isdazzle",
+			]
+			m_ResponseGroups = 
+			[
+				"dazzle_Respawn",
+			]
+		},
+		
+		{
+			m_name = "dazzle_LastHit_Rule"
+			m_Requirements = 
+			[
+				"LastHit",
+				"Isdazzle",
+			]
+			m_ResponseGroups = 
+			[
+				"dazzle_LastHit",
+			]
+		},
+		
+		{
+			m_name = "dazzle_Deny_Rule"
+			m_Requirements = 
+			[
+				"Deny",
+				"Isdazzle",
+			]
+			m_ResponseGroups = 
+			[
+				"dazzle_Deny",
+			]
+		},
+		
+		{
+			m_name = "dazzle_Select_Rule"
+			m_Requirements = 
+			[
+				"Select",
+				"Isdazzle",
+			]
+			m_ResponseGroups = 
+			[
+				"dazzle_Select",
+			]
+		},
+		
+		{
+			m_name = "dazzle_PurchaseIsExpensiveItem_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isdazzle",
+				"IsExpensiveItem",
+			]
+			m_ResponseGroups = 
+			[
+				"dazzle_PurchaseIsExpensiveItem",
+			]
+		},
+		
+		{
+			m_name = "dazzle_PurchaseIsBlinkDagger_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isdazzle",
+				"IsBlinkDagger",
+			]
+			m_ResponseGroups = 
+			[
+				"dazzle_PurchaseIsBlinkDagger",
+			]
+		},
+		
+		{
+			m_name = "dazzle_PurchaseIsUltimateScepter_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isdazzle",
+				"IsUltimateScepter",
+			]
+			m_ResponseGroups = 
+			[
+				"dazzle_PurchaseIsUltimateScepter",
+			]
+		},
+		
+		{
+			m_name = "dazzle_PurchaseIsMekansm_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isdazzle",
+				"IsMekansm",
+			]
+			m_ResponseGroups = 
+			[
+				"dazzle_PurchaseIsMekansm",
+			]
+		},
+		
+		{
+			m_name = "dazzle_PurchaseIsShiva_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isdazzle",
+				"IsShiva",
+			]
+			m_ResponseGroups = 
+			[
+				"dazzle_PurchaseIsShiva",
+			]
+		},
+		
+		{
+			m_name = "dazzle_PurchaseIsDesolator_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isdazzle",
+				"IsDesolator",
+			]
+			m_ResponseGroups = 
+			[
+				"dazzle_PurchaseIsDesolator",
+			]
+		},
+		
+		{
+			m_name = "dazzle_Bottling_Rule"
+			m_Requirements = 
+			[
+				"Bottling",
+				"Isdazzle",
+			]
+			m_ResponseGroups = 
+			[
+				"dazzle_Bottling",
+			]
+		},
+		
+		{
+			m_name = "dazzle_Immortality_Rule"
+			m_Requirements = 
+			[
+				"Immortality",
+				"Isdazzle",
+			]
+			m_ResponseGroups = 
+			[
+				"dazzle_Immortality",
+			]
+		},
+		
+		{
+			m_name = "dazzle_ImmortalityChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Immortality",
+				"Isdazzle",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"dazzle_ImmortalityChance_25%",
+			]
+		},
+		
+		{
+			m_name = "dazzle_Thanks_Rule"
+			m_Requirements = 
+			[
+				"Thanks",
+				"Isdazzle",
+			]
+			m_ResponseGroups = 
+			[
+				"dazzle_Thanks",
+			]
+		},
+		
+		{
+			m_name = "dazzle_PainChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Pain",
+				"Isdazzle",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"dazzle_PainChance_25%",
+			]
+		},
+		
+		{
+			m_name = "dazzle_Pain_Rule"
+			m_Requirements = 
+			[
+				"Pain",
+				"Isdazzle",
+			]
+			m_ResponseGroups = 
+			[
+				"dazzle_Pain",
+			]
+		},
+		
+		{
+			m_name = "dazzle_InTheBag_Rule"
+			m_Requirements = 
+			[
+				"InTheBag",
+				"Isdazzle",
+			]
+			m_ResponseGroups = 
+			[
+				"dazzle_InTheBag",
+			]
+		},
+		
+		{
+			m_name = "dazzle_CooldownLittleNag_Rule"
+			m_Requirements = 
+			[
+				"Cooldown",
+				"Isdazzle",
+				"LittleNag",
+			]
+			m_ResponseGroups = 
+			[
+				"dazzle_CooldownLittleNag",
+			]
+		},
+		
+		{
+			m_name = "dazzle_CooldownMediumNag_Rule"
+			m_Requirements = 
+			[
+				"Cooldown",
+				"Isdazzle",
+				"MediumNag",
+			]
+			m_ResponseGroups = 
+			[
+				"dazzle_CooldownMediumNag",
+			]
+		},
+		
+		{
+			m_name = "dazzle_CooldownSuperNag_Rule"
+			m_Requirements = 
+			[
+				"Cooldown",
+				"Isdazzle",
+				"SuperNag",
+			]
+			m_ResponseGroups = 
+			[
+				"dazzle_CooldownSuperNag",
+			]
+		},
+		
+		{
+			m_name = "dazzle_NoManaLittleNag_Rule"
+			m_Requirements = 
+			[
+				"NoMana",
+				"Isdazzle",
+				"LittleNag",
+			]
+			m_ResponseGroups = 
+			[
+				"dazzle_NoManaLittleNag",
+			]
+		},
+		
+		{
+			m_name = "dazzle_NoManaMediumNag_Rule"
+			m_Requirements = 
+			[
+				"NoMana",
+				"Isdazzle",
+				"MediumNag",
+			]
+			m_ResponseGroups = 
+			[
+				"dazzle_NoManaMediumNag",
+			]
+		},
+		
+		{
+			m_name = "dazzle_NoManaSuperNag_Rule"
+			m_Requirements = 
+			[
+				"NoMana",
+				"Isdazzle",
+				"SuperNag",
+			]
+			m_ResponseGroups = 
+			[
+				"dazzle_NoManaSuperNag",
+			]
+		},
+		
+		{
+			m_name = "dazzle_Defeat_Rule"
+			m_Requirements = 
+			[
+				"Defeat",
+				"Isdazzle",
+			]
+			m_ResponseGroups = 
+			[
+				"dazzle_Defeat",
+			]
+		},
+		
+		{
+			m_name = "dazzle_Victory_Rule"
+			m_Requirements = 
+			[
+				"Victory",
+				"Isdazzle",
+			]
+			m_ResponseGroups = 
+			[
+				"dazzle_Victory",
+			]
+		},
+		
+		{
+			m_name = "dazzle_EmoteIsEmoteLaugh_Rule"
+			m_Requirements = 
+			[
+				"Emote",
+				"Isdazzle",
+				"IsEmoteLaugh",
+			]
+			m_ResponseGroups = 
+			[
+				"dazzle_EmoteIsEmoteLaugh",
+			]
+		},
+		
+		{
+			m_name = "dazzle_TauntIsDazzleTauntDazzlecopter_Rule"
+			m_Requirements = 
+			[
+				"Taunt",
+				"Isdazzle",
+				"IsDazzleTauntDazzlecopter",
+			]
+			m_ResponseGroups = 
+			[
+				"dazzle_TauntIsDazzleTauntDazzlecopter",
+			]
+		},
+	]
 }
-

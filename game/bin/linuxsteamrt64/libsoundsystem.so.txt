@@ -37,7 +37,6 @@
 14IVoiceTraceKV3
 15CAudioMixerWave
 15CAudioProcessor
-15CAudioSourceMP3
 15CSosEventInfo_t
 15CSosGroupAction
 15CSosOperatorLFO
@@ -139,6 +138,7 @@
 21CSosOperatorLoopFloat
 21CSosOperatorOcclusion
 21CSosOperatorPrintVsnd
+21CSosOperatorScaleVec3
 21CSosOperatorSetConvar
 21CSosOperatorStackInfo
 21CSosOperatorStopTrack
@@ -259,6 +259,7 @@
 28CSosOperatorPauseSoundEvents
 28CSosOperatorPointInSoundArea
 28CSosOperatorRightAngleFloat3
+28CSosOperatorSetVoicePosition
 29CSosOperatorCalcFixedRotation
 29CSosOperatorFloatAccumulate12
 29CSosOperatorGetOpVarDsppreset
@@ -317,6 +318,7 @@
 8A]A^]H
 8CSosEdit
 8HcO Hcw
+8Lc-0b
 8[A\A]A^A
 8[A\A]A^H
 9CAudioSDL
@@ -325,7 +327,6 @@
 9auto.convar
 A8HcQ H
 A9]$|zL
-A;]x}0I
 A;^P}DA
 APPSYSTEM: In ConnectInterfaces(), s_nRegistrationCount is %d
 ASARAQL
@@ -379,6 +380,7 @@ AddNewSoundEvent:  %s has a hash collision with existing %s
 AddSoundEvent event with empty name
 AddSoundEvent:  %s has a hash collision with existing %s
 AddSoundEvent:AddSoundEvent event with empty name
+AddSoundEventDefinition: Overwriting existing soundevent %s
 AddSoundEvents: SoundEvent %s was unable to convert to KV3
 AddSoundEvents: SoundEvent file %s was not compiled from a KeyValues3 file and is being converted. Please recompile
 AddSoundEvents: event with empty name
@@ -821,7 +823,6 @@ HA;]XfA
 HALL Detected
 HD;{XI
 HFPOATI
-HRTF calculations will calculate the player as being this far behind the camera
 H[A\A]A^A
 H`z-u+H
 HammerMapLoader001
@@ -852,6 +853,7 @@ IcN8Ic
 IcO8Ic_<I
 IcT$8A;T$H
 IcWhA;Wx
+Ic\$xA
 If set > 0, overrides how long the decay time is on all mix graphs (in seconds
 If set to 1, report more error found when playing sounds
 If set to 1, show all incoming updates to vmix inputs
@@ -895,7 +897,6 @@ LOG_GENERAL
 LVL: %f
 LayerTriggers
 LcC0D;C
-Lcc`D;cpD
 Lcs D;s0t"H
 Lc{hD;{xD
 List all active tracks
@@ -1131,6 +1132,7 @@ Purge and reload all vmidi data and files
 PurgeAndDeleteAll: Deleting orphaned CSoundEvent pointer for %s via shutdown
 Q)=<No schemasystem
 Queued: elapsed time: %f, next sync time: %f, length: %f
+R@15CAudioSourceMP3
 RESOURCE_TYPE_SOUND
 RESOURCE_TYPE_SOUNDEVENTSCRIPT
 RESOURCE_TYPE_SOUNDSTACKSCRIPT
@@ -1169,13 +1171,13 @@ Reverb Height ms
 Reverb Width ms
 Running snd_get_physics_surface_properties for %s mod
 Running snd_set_physics_surface_properties for %s mod
+S@HcK8M
 SDL Audio Device: %s (status: %d, driver: %s
 SDL_AUDIODRIVER
 SEQUENCER ERROR: Loading sequence file(error %s
 SEQUENCER ERROR: Loading vmidi manifest file(error %s
 SEQUENCER ERROR: Reading sequence file %s
 SEQUENCER ERROR: Reading vmidi manifest file %s
-SET VMIXGRAPH NAME: %s
 SNDLVL_100dB
 SNDLVL_105dB
 SNDLVL_110dB
@@ -1256,6 +1258,7 @@ SendVoiceInverseTotalSend
 SendVoiceWithNamedSend
 Sequence
 SerializedEntitiesVersion001
+ServerResourceCompilerInfo_001
 Set an input mix value
 Set named Mixgroup of current mixer to mix vol, mute, solo
 Set named Mixgroup of named mix layer to mix vol, mute, solo
@@ -1296,6 +1299,7 @@ SosOpFieldInfo_t::ValueToString: Unable to find ENUM tokenset on %s
 Sound Disabled
 Sound Event
 Sound Initialization: Finish, Sampling Rate: %i
+Sound device in use (changing this does not change the soundsystem
 Sound device synchronization max delay (ms
 Sound device synchronization shift (ms
 Sound disabled
@@ -1441,6 +1445,7 @@ Total soundevents %i
 Total: %.2f MB
 Tracing soundscapes is only supported in the Server
 Track: %s
+Transient input %s set to %.2f
 Triangle
 Tried to load a polymorphic pointer with no '%s' key
 Tried to load resource reference '%s' from a value without a resource reference specific type
@@ -1462,7 +1467,6 @@ Unable to load sound system data
 Unknown KV3 specific type %u
 Unknown field type %s for field %s
 Unknown graph input %s
-Unknown track name %s, will not play voice %s
 Unrecognized symbol in Sound Operator Stack math expression
 Unsupported KV3 basic type '%s' (%d
 Unsupported version %d for resource '%s' (Expected %d
@@ -1494,6 +1498,7 @@ Used main graph %s on voice %s
 Used stack: %s
 UtlMemory_Alloc
 UtlMemory_CalcNewAllocationCount
+UtlMemory_FailedAllocation
 VApplication001
 VAsyncFileSystem2_001
 VAvi001
@@ -1704,6 +1709,7 @@ X@VUUUUU
 XIcL$(Ic
 X[A\A]A^A
 X[A\A]L
+XtKw;UH
 Y@vmix_apply_effect
 You must construct it with ORDERED_CONSTRUCT macro in the dependency resolution function
 Z10DevWarningPKcz
@@ -1728,8 +1734,8 @@ Z7LoadKV3P10KeyValues3P10CUtlStringP10CUtlBufferRK7KV3ID_tPKc
 Z7LoadKV3P10KeyValues3P10CUtlStringPKcRK7KV3ID_tS4
 Z7LoadKV3P18CKeyValues3ContextP10CUtlStringP10CUtlBufferRK7KV3ID_tPKc
 Z7SaveKV3RK7KV3ID_tS1_PK10KeyValues3P10CUtlStringP10CUtlBufferj
-Z9IsKV3DataPK10CUtlBufferP7KV3ID_t
-Z9IsKV3DataPKviP7KV3ID_t
+Z9IsKV3DataPK10CUtlBufferP7KV3ID_tPci
+Z9IsKV3DataPKviP7KV3ID_tPci
 Z9V_strnlenPKci
 ZHcK0Ic
 ZIcL$(Ic
@@ -1771,7 +1777,7 @@ ZN12CSplitString9ConstructEPKcPS1_ib
 ZN12CThreadEvent3SetEv
 ZN12CThreadEventC1Eb
 ZN12CThreadMutex7TryLockEPKci
-ZN13CBufferString10ExtendPathEPKcc
+ZN13CBufferString10ExtendPathEPKccb
 ZN13CBufferString10FixSlashesEc
 ZN13CBufferString11ShortenPathEb
 ZN13CBufferString11ToLowerFastEi
@@ -1942,6 +1948,7 @@ allow_empty_match
 altgameroot
 and_not
 anim_type
+applyDirectivity
 applyTransmission
 area_shape
 area_type
@@ -2017,16 +2024,21 @@ connected: %s %i
 construction_stack
 control.copy
 control.curve
+control.evaluate_envelope
+control.increment_timer
+control.max
 control.output
 control.remap_linear
 control.remap_loglinear
 control.remap_sine
+control.reset_timer
+control.reset_transient
 control.sine_blend
 control.store
+control.store.transient
 control.store_db
 convar_get
 convar_set
-convars_hidden_by_default
 core.auto
 core.default
 core.null
@@ -2125,6 +2137,7 @@ editor
 eh_frame
 eh_frame_hdr
 ehandle
+empty member name
 enum_decl
 enum_field
 equal_power
@@ -2162,6 +2175,7 @@ filterQ
 fini_array
 float16
 float32
+float32[%u
 float64
 float64[%u
 float_max_speakers
@@ -2192,7 +2206,9 @@ gnu.version_r
 gnu_debuglink
 greater_than
 greater_than_or_equal
+hHcC`H
 hIcD$p1
+hIcF`L
 h[A\A]A^A
 headphones
 i available
@@ -2501,8 +2517,8 @@ input_x
 input_y
 input_z
 instrument
+int16[%u
 int32[%u
-int64)m_nAllocationCount + (int64)num ) <= 0x7FFFFFFF
 invalid
 invalid event
 invalid soundevent name
@@ -2519,6 +2535,7 @@ itemName
 itemPos
 itemType
 itemTypeName
+k4IcD$(A9
 key_groups
 left_front
 left_front1
@@ -2585,6 +2602,7 @@ m_controlInputs
 m_controlMeters
 m_controlOutputs
 m_controlPoints
+m_controlTransientInputs
 m_curves
 m_dspName
 m_effectsPreview
@@ -2793,6 +2811,7 @@ math_random_float3
 math_randomize_float
 math_remap_float
 math_right_angle_float3
+math_scale_float3
 math_speakers
 math_string
 math_velocity
@@ -2841,12 +2860,10 @@ ms delay max
 ms delay min
 ms of mod depth
 multibase
-multiline_string
 mute: %3.2f
 muteTrackList
 n0E;n@A
 nTries < 10000000
-nhMcv`I
 no failure reason set
 no stack mem
 noise_type
@@ -3074,7 +3091,6 @@ public.sync_bpm
 public.sync_bpm_beats
 public.volume
 public/tier0/tslist.h
-public/tier0/utlmemory.h
 public/tier0/utlsymboltable.h
 public_field_name
 quantize_multiplier
@@ -3170,7 +3186,6 @@ shstrtab
 sideChain
 sideChainPeak
 silence_dsp
-single_quoted_string
 singletons.cpp
 slerp_bounce
 smixgroup: %s
@@ -3211,7 +3226,6 @@ snd_gamevolume
 snd_get_physics_surface_properties
 snd_headphone_pan_exponent
 snd_headphone_pan_radial_weight
-snd_hrtf_distance_behind
 snd_list
 snd_list_deferred_soundevents
 snd_list_soundevents
@@ -3315,6 +3329,7 @@ snd_sos_show_opvar_updates
 snd_sos_show_opvar_updates_filter
 snd_sos_show_parameter_overwrite_warnings
 snd_sos_show_queuetotrack
+snd_sos_show_soundevent_overwrites
 snd_sos_show_soundevent_param_overwrite
 snd_sos_show_soundevent_start
 snd_sos_show_track_list
@@ -3366,6 +3381,7 @@ sos_goto
 sos_import_stack
 sos_set_builtins
 sos_set_info
+sos_set_voice_position
 sound_area_contains_point
 sound_area_register
 sound_area_unregister
@@ -3413,6 +3429,7 @@ soundstacks/soundeventgroups.vsndgrps
 soundstacks/soundstacks_manifest.vrman
 soundsystem
 soundsystem.cpp
+soundsystem_device_used
 soundsystem_lowlevel
 soundsysteminfo
 source_soundscape
@@ -3434,7 +3451,6 @@ stop_previous_on_name_change
 stopped_includes_dependencies
 stopsound
 strcpy_chk
-strict_type_combinations
 string_token
 subclass
 submix.accumulate
@@ -3462,7 +3478,6 @@ s| SizeOf: %d
 s| Virtual: %s; Abstract: %s; TrivialConstr: %s; TrivialDestr: %s
 t$@IcT$8H
 t$XD9>txH
-t$x;5;J2
 t$xA\A]A
 t(Lc#D;c
 t(Lc&D;f
@@ -3474,7 +3489,6 @@ t4[A\A
 t9HcZP;Z
 tD[A\A]A
 tF[A\A]A
-tVLc3D;s
 tX[A\A]A
 table: %u members
 temp_unserialization_member
@@ -3494,6 +3508,7 @@ transmissionMid
 u!IcWlH
 u?;KL}:Hc
 uchar32
+uint8[%u
 undefined
 unknown
 unknown KV3 basic type '%s' (%d
@@ -3516,7 +3531,6 @@ util_print_string
 util_print_vsnd
 util_timer
 util_timer_ramp
-v+<Ht_<Xt[<7uyH
 value%d
 vector2
 vector2d
@@ -3574,7 +3588,6 @@ wave_type
 weights_field_name
 x&A;Ep} I
 x+D9cp~%H
-x4A;D$H}-I
 x: %4f y: %4f z: %4f
 x<HcH H
 x<Hcp L
@@ -3583,5 +3596,4 @@ xHHc@@M
 xI;P`}DHc
 x[A\A]A^A
 y<Hcq L
-z(u&IcT
 zC(%2db) %6i : %s

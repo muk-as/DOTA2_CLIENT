@@ -1,1124 +1,3342 @@
-#include "talker/response_rules_shared.vrr"
-
-criterion "Isomniknight" "classname" "npc_dota_hero_omniknight" weight 5 required
-criterion "IsAbilityPurification" "abilityname" "omniknight_purification" weight 5 required
-criterion "IsAbilityRepel" "abilityname" "omniknight_repel" weight 5 required
-criterion "IsAbilityGuardianAngel" "abilityname" "omniknight_guardian_angel" weight 5 required
-criterion "IsOmniLoadoutSpawn" "special_spawn" "omni_loadout_spawn" weight 5 required
-criterion "IsOmniSunWorshipTI8Taunt" "taunt_type" "sun_worship" weight 5 required
-
-Response omniknight_Spawn
-{
-	scene "scenes/omniknight/omniknight_omni_spawn_01.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_spawn_02.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_spawn_03.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_spawn_04.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_spawn_05.vcd" nodelay 
-}
-
-Rule omniknight_Spawn_Rule
-{
-	criteria Spawn Isomniknight 
-	response omniknight_Spawn
-}
-
-Response omniknight_CustomIsGameStart
-{
-	scene "scenes/omniknight/omniknight_omni_battlebegins_01.vcd" nodelay 
-}
-
-Rule omniknight_CustomIsGameStart_Rule
-{
-	criteria Custom Isomniknight IsGameStart
-	response omniknight_CustomIsGameStart
-}
-
-Response omniknight_CustomIsOmniLoadoutSpawn
-{
-	scene "scenes/omniknight/omniknight_omni_spawn_01.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_spawn_02.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_spawn_03.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_spawn_04.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_spawn_05.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_move_03.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_move_04.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_move_05.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_move_11.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_attack_08.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_ability_guard_03.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_ability_guard_07.vcd" nodelay 
-}
-
-Rule omniknight_CustomIsOmniLoadoutSpawn_Rule
-{
-	criteria Custom Isomniknight IsOmniLoadoutSpawn
-	response omniknight_CustomIsOmniLoadoutSpawn
-}
-
-Response omniknight_KillIsFirstBlood
-{
-	scene "scenes/omniknight/omniknight_omni_firstblood_01.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_firstblood_02.vcd" nodelay 
-}
-
-Rule omniknight_KillIsFirstBlood_Rule
-{
-	criteria Kill Isomniknight IsFirstBlood
-	response omniknight_KillIsFirstBlood
-}
-
-Response omniknight_KillIsEnemyTerrorbladeChance_50%
-{
-	scene "scenes/omniknight/omniknight_omni_ability_degaura_03.vcd" nodelay 
-}
-
-Rule omniknight_KillIsEnemyTerrorbladeChance_50%_Rule
-{
-	criteria Kill Isomniknight IsEnemyTerrorblade Chance_50%
-	response omniknight_KillIsEnemyTerrorbladeChance_50%
-}
-
-Response omniknight_KillIsEnemyTechiesChance_50%
-{
-	scene "scenes/omniknight/omniknight_omni_ability_degaura_08.vcd" nodelay 
-}
-
-Rule omniknight_KillIsEnemyTechiesChance_50%_Rule
-{
-	criteria Kill Isomniknight IsEnemyTechies Chance_50%
-	response omniknight_KillIsEnemyTechiesChance_50%
-}
-
-Response omniknight_Kill
-{
-	scene "scenes/omniknight/omniknight_omni_ability_degaura_10.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_kill_01.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_kill_02.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_kill_03.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_kill_04.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_kill_05.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_kill_06.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_kill_07.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_kill_08.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_kill_09.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_kill_10.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_kill_11.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_kill_12.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_laugh_01.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_laugh_02.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_laugh_03.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_laugh_04.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_laugh_05.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_laugh_06.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_laugh_07.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_laugh_08.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_laugh_09.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_laugh_10.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_laugh_11.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_laugh_12.vcd" nodelay 
-}
-
-Rule omniknight_Kill_Rule
-{
-	criteria Kill Isomniknight 
-	response omniknight_Kill
-}
-
-Response omniknight_KillIsEnemyChenChance_50%
-{
-	scene "scenes/omniknight/omniknight_omni_rival_01.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_rival_02.vcd" nodelay 
-}
-
-Rule omniknight_KillIsEnemyChenChance_50%_Rule
-{
-	criteria Kill Isomniknight IsEnemyChen Chance_50%
-	response omniknight_KillIsEnemyChenChance_50%
-}
-
-Response omniknight_KillIsEnemyDoom_BringerChance_50%
-{
-	scene "scenes/omniknight/omniknight_omni_rival_03.vcd" nodelay 
-}
-
-Rule omniknight_KillIsEnemyDoom_BringerChance_50%_Rule
-{
-	criteria Kill Isomniknight IsEnemyDoom_Bringer Chance_50%
-	response omniknight_KillIsEnemyDoom_BringerChance_50%
-}
-
-Response omniknight_KillIsEnemyLife_StealerChance_50%
-{
-	scene "scenes/omniknight/omniknight_omni_rival_05.vcd" nodelay 
-}
-
-Rule omniknight_KillIsEnemyLife_StealerChance_50%_Rule
-{
-	criteria Kill Isomniknight IsEnemyLife_Stealer Chance_50%
-	response omniknight_KillIsEnemyLife_StealerChance_50%
-}
-
-Response omniknight_KillIsEnemyWeaverChance_50%
-{
-	scene "scenes/omniknight/omniknight_omni_rival_06.vcd" nodelay 
-}
-
-Rule omniknight_KillIsEnemyWeaverChance_50%_Rule
-{
-	criteria Kill Isomniknight IsEnemyWeaver Chance_50%
-	response omniknight_KillIsEnemyWeaverChance_50%
-}
-
-Response omniknight_KillIsEnemyBaneChance_50%
-{
-	scene "scenes/omniknight/omniknight_omni_rival_07.vcd" nodelay 
-}
-
-Rule omniknight_KillIsEnemyBaneChance_50%_Rule
-{
-	criteria Kill Isomniknight IsEnemyBane Chance_50%
-	response omniknight_KillIsEnemyBaneChance_50%
-}
-
-Response omniknight_KillIsEnemyTinkerChance_50%
-{
-	scene "scenes/omniknight/omniknight_omni_rival_08.vcd" nodelay 
-}
-
-Rule omniknight_KillIsEnemyTinkerChance_50%_Rule
-{
-	criteria Kill Isomniknight IsEnemyTinker Chance_50%
-	response omniknight_KillIsEnemyTinkerChance_50%
-}
-
-Response omniknight_KillIsEnemyDragon_KnightChance_50%
-{
-	scene "scenes/omniknight/omniknight_omni_rival_09.vcd" nodelay 
-}
-
-Rule omniknight_KillIsEnemyDragon_KnightChance_50%_Rule
-{
-	criteria Kill Isomniknight IsEnemyDragon_Knight Chance_50%
-	response omniknight_KillIsEnemyDragon_KnightChance_50%
-}
-
-Response omniknight_KillIsEnemyZuusChance_50%
-{
-	scene "scenes/omniknight/omniknight_omni_rival_10.vcd" nodelay 
-}
-
-Rule omniknight_KillIsEnemyZuusChance_50%_Rule
-{
-	criteria Kill Isomniknight IsEnemyZuus Chance_50%
-	response omniknight_KillIsEnemyZuusChance_50%
-}
-
-Response omniknight_KillIsEnemyNevermoreChance_50%
-{
-	scene "scenes/omniknight/omniknight_omni_rival_11.vcd" nodelay 
-}
-
-Rule omniknight_KillIsEnemyNevermoreChance_50%_Rule
-{
-	criteria Kill Isomniknight IsEnemyNevermore Chance_50%
-	response omniknight_KillIsEnemyNevermoreChance_50%
-}
-
-Response omniknight_KillIsEnemyWarlockChance_50%
-{
-	scene "scenes/omniknight/omniknight_omni_rival_12.vcd" nodelay 
-}
-
-Rule omniknight_KillIsEnemyWarlockChance_50%_Rule
-{
-	criteria Kill Isomniknight IsEnemyWarlock Chance_50%
-	response omniknight_KillIsEnemyWarlockChance_50%
-}
-
-Response omniknight_KillIsEnemyFaceless_VoidChance_50%
-{
-	scene "scenes/omniknight/omniknight_omni_rival_13.vcd" nodelay 
-}
-
-Rule omniknight_KillIsEnemyFaceless_VoidChance_50%_Rule
-{
-	criteria Kill Isomniknight IsEnemyFaceless_Void Chance_50%
-	response omniknight_KillIsEnemyFaceless_VoidChance_50%
-}
-
-Response omniknight_KillIsEnemySilencerChance_50%
-{
-	scene "scenes/omniknight/omniknight_omni_rival_14.vcd" nodelay 
-}
-
-Rule omniknight_KillIsEnemySilencerChance_50%_Rule
-{
-	criteria Kill Isomniknight IsEnemySilencer Chance_50%
-	response omniknight_KillIsEnemySilencerChance_50%
-}
-
-Response omniknight_KillIsEnemySvenChance_50%
-{
-	scene "scenes/omniknight/omniknight_omni_rival_15.vcd" nodelay 
-}
-
-Rule omniknight_KillIsEnemySvenChance_50%_Rule
-{
-	criteria Kill Isomniknight IsEnemySven Chance_50%
-	response omniknight_KillIsEnemySvenChance_50%
-}
-
-Response omniknight_KillIsEnemyDazzleChance_50%
-{
-	scene "scenes/omniknight/omniknight_omni_rival_16.vcd" nodelay 
-}
-
-Rule omniknight_KillIsEnemyDazzleChance_50%_Rule
-{
-	criteria Kill Isomniknight IsEnemyDazzle Chance_50%
-	response omniknight_KillIsEnemyDazzleChance_50%
-}
-
-Response omniknight_KillIsEnemyChaos_KnightChance_50%
-{
-	scene "scenes/omniknight/omniknight_omni_rival_17.vcd" nodelay 
-}
-
-Rule omniknight_KillIsEnemyChaos_KnightChance_50%_Rule
-{
-	criteria Kill Isomniknight IsEnemyChaos_Knight Chance_50%
-	response omniknight_KillIsEnemyChaos_KnightChance_50%
-}
-
-Response omniknight_Move
-{
-	scene "scenes/omniknight/omniknight_omni_move_01.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_move_02.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_move_03.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_move_04.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_move_05.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_move_06.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_move_07.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_move_08.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_move_09.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_move_10.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_move_11.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_move_12.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_move_13.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_move_14.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_move_15.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_move_16.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_move_17.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_move_18.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_move_19.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_move_20.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_move_21.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_move_22.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_move_23.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_ability_guard_03.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_ability_guard_07.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_ability_guard_11.vcd" nodelay 
-}
-
-Rule omniknight_Move_Rule
-{
-	criteria Move Isomniknight 
-	response omniknight_Move
-}
-
-Response omniknight_Attack
-{
-	scene "scenes/omniknight/omniknight_omni_attack_01.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_attack_02.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_attack_03.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_attack_04.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_attack_05.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_attack_06.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_attack_07.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_attack_09.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_attack_10.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_attack_11.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_attack_12.vcd" nodelay 
-}
-
-Rule omniknight_Attack_Rule
-{
-	criteria Attack Isomniknight 
-	response omniknight_Attack
-}
-
-Response omniknight_CastOrder
-{
-	scene "scenes/omniknight/omniknight_omni_cast_01.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_cast_02.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_cast_03.vcd" nodelay 
-}
-
-Rule omniknight_CastOrder_Rule
-{
-	criteria CastOrder Isomniknight 
-	response omniknight_CastOrder
-}
-
-Response omniknight_CastExecuteIsAbilityPurificationChance_50%
-{
-	scene "scenes/omniknight/omniknight_omni_ability_purif_01.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_ability_purif_02.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_ability_purif_04.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_ability_purif_05.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_ability_purif_06.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_ability_purif_07.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_ability_purif_08.vcd" nodelay 
-}
-
-Rule omniknight_CastExecuteIsAbilityPurificationChance_50%_Rule
-{
-	criteria CastExecute Isomniknight IsAbilityPurification Chance_50%
-	response omniknight_CastExecuteIsAbilityPurificationChance_50%
-}
-
-Response omniknight_CastExecuteIsAbilityPurificationChance_5%
-{
-	scene "scenes/omniknight/omniknight_omni_ability_purif_03.vcd" nodelay 
-}
-
-Rule omniknight_CastExecuteIsAbilityPurificationChance_5%_Rule
-{
-	criteria CastExecute Isomniknight IsAbilityPurification Chance_5%
-	response omniknight_CastExecuteIsAbilityPurificationChance_5%
-}
-
-Response omniknight_CastExecuteIsAbilityPurificationIsEnemyOmniknightChance_50%
-{
-	scene "scenes/omniknight/omniknight_omni_ability_purif_01.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_ability_purif_05.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_ability_purif_06.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_ability_purif_07.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_ability_purif_08.vcd" nodelay 
-}
-
-Rule omniknight_CastExecuteIsAbilityPurificationIsEnemyOmniknightChance_50%_Rule
-{
-	criteria CastExecute Isomniknight IsAbilityPurification IsEnemyOmniknight Chance_50%
-	response omniknight_CastExecuteIsAbilityPurificationIsEnemyOmniknightChance_50%
-}
-
-Response omniknight_CastExecuteIsAbilityRepel
-{
-	scene "scenes/omniknight/omniknight_omni_ability_repel_01.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_ability_repel_02.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_ability_repel_03.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_ability_repel_04.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_ability_repel_05.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_ability_repel_06.vcd" nodelay 
-}
-
-Rule omniknight_CastExecuteIsAbilityRepel_Rule
-{
-	criteria CastExecute Isomniknight IsAbilityRepel
-	response omniknight_CastExecuteIsAbilityRepel
-}
-
-Response omniknight_CastExecuteIsAbilityRepelIsEnemyOmniknight
-{
-	scene "scenes/omniknight/omniknight_omni_ability_repel_01.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_ability_repel_05.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_ability_repel_06.vcd" nodelay 
-}
-
-Rule omniknight_CastExecuteIsAbilityRepelIsEnemyOmniknight_Rule
-{
-	criteria CastExecute Isomniknight IsAbilityRepel IsEnemyOmniknight
-	response omniknight_CastExecuteIsAbilityRepelIsEnemyOmniknight
-}
-
-Response omniknight_CastExecuteIsAbilityGuardianAngel
-{
-	scene "scenes/omniknight/omniknight_omni_ability_guard_04.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_ability_guard_05.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_ability_guard_06.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_ability_guard_10.vcd" nodelay 
-}
-
-Rule omniknight_CastExecuteIsAbilityGuardianAngel_Rule
-{
-	criteria CastExecute Isomniknight IsAbilityGuardianAngel
-	response omniknight_CastExecuteIsAbilityGuardianAngel
-}
-
-Response omniknight_ItemDropIsUltraRareDrop
-{
-	scene "scenes/omniknight/omniknight_omni_ability_degaura_12.vcd" nodelay 
-}
-
-Rule omniknight_ItemDropIsUltraRareDrop_Rule
-{
-	criteria ItemDrop Isomniknight IsUltraRareDrop
-	response omniknight_ItemDropIsUltraRareDrop
-}
-
-Response omniknight_ItemDropIsRareDrop
-{
-	scene "scenes/omniknight/omniknight_omni_ability_guard_09.vcd" nodelay 
-}
-
-Rule omniknight_ItemDropIsRareDrop_Rule
-{
-	criteria ItemDrop Isomniknight IsRareDrop
-	response omniknight_ItemDropIsRareDrop
-}
-
-Response omniknight_ItemDropIsCommonDrop
-{
-	scene "scenes/omniknight/omniknight_omni_happy_04.vcd" nodelay 
-}
-
-Rule omniknight_ItemDropIsCommonDrop_Rule
-{
-	criteria ItemDrop Isomniknight IsCommonDrop
-	response omniknight_ItemDropIsCommonDrop
-}
-
-Response omniknight_LevelUp
-{
-	scene "scenes/omniknight/omniknight_omni_level_01.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_level_02.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_level_03.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_level_04.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_level_05.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_level_06.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_level_07.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_level_08.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_level_09.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_level_10.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_level_11.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_level_12.vcd" nodelay 
-}
-
-Rule omniknight_LevelUp_Rule
-{
-	criteria LevelUp Isomniknight 
-	response omniknight_LevelUp
-}
-
-Response omniknight_AllyNearIsAllyChenEarlyGame
-{
-	scene "scenes/omniknight/omniknight_omni_rival_18.vcd" nodelay speakonce
-}
-
-Rule omniknight_AllyNearIsAllyChenEarlyGame_Rule
-{
-	criteria AllyNear Isomniknight IsAllyChen EarlyGame
-	response omniknight_AllyNearIsAllyChenEarlyGame
-}
-
-Response omniknight_AllyNearIsAllyDragon_KnightEarlyGame
-{
-	scene "scenes/omniknight/omniknight_omni_rival_19.vcd" nodelay speakonce
-}
-
-Rule omniknight_AllyNearIsAllyDragon_KnightEarlyGame_Rule
-{
-	criteria AllyNear Isomniknight IsAllyDragon_Knight EarlyGame
-	response omniknight_AllyNearIsAllyDragon_KnightEarlyGame
-}
-
-Response omniknight_AllyNearIsAllySilencerEarlyGame
-{
-	scene "scenes/omniknight/omniknight_omni_rival_20.vcd" nodelay speakonce
-}
-
-Rule omniknight_AllyNearIsAllySilencerEarlyGame_Rule
-{
-	criteria AllyNear Isomniknight IsAllySilencer EarlyGame
-	response omniknight_AllyNearIsAllySilencerEarlyGame
-}
-
-Response omniknight_AllyNearIsAllySvenEarlyGame
-{
-	scene "scenes/omniknight/omniknight_omni_rival_21.vcd" nodelay speakonce
-}
-
-Rule omniknight_AllyNearIsAllySvenEarlyGame_Rule
-{
-	criteria AllyNear Isomniknight IsAllySven EarlyGame
-	response omniknight_AllyNearIsAllySvenEarlyGame
-}
-
-Response omniknight_AllyNearIsAllyChaos_KnightEarlyGame
-{
-	scene "scenes/omniknight/omniknight_omni_rival_22.vcd" nodelay speakonce
-}
-
-Rule omniknight_AllyNearIsAllyChaos_KnightEarlyGame_Rule
-{
-	criteria AllyNear Isomniknight IsAllyChaos_Knight EarlyGame
-	response omniknight_AllyNearIsAllyChaos_KnightEarlyGame
-}
-
-Response omniknight_LastHit
-{
-	scene "scenes/omniknight/omniknight_omni_lasthit_01.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_lasthit_02.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_lasthit_03.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_lasthit_04.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_lasthit_05.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_lasthit_06.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_lasthit_07.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_lasthit_08.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_lasthit_09.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_lasthit_10.vcd" nodelay 
-}
-
-Rule omniknight_LastHit_Rule
-{
-	criteria LastHit Isomniknight 
-	response omniknight_LastHit
-}
-
-Response omniknight_Death
-{
-	scene "scenes/omniknight/omniknight_omni_death_01.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_death_02.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_death_03.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_death_04.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_death_05.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_death_06.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_death_07.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_death_08.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_death_09.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_death_10.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_death_11.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_death_12.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_death_13.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_death_14.vcd" nodelay 
-}
-
-Rule omniknight_Death_Rule
-{
-	criteria Death Isomniknight 
-	response omniknight_Death
-}
-
-Response omniknight_DeathIsReincarnating
-{
-	scene "scenes/omniknight/omniknight_omni_fastres_01.vcd" nodelay 
-}
-
-Rule omniknight_DeathIsReincarnating_Rule
-{
-	criteria Death Isomniknight IsReincarnating
-	response omniknight_DeathIsReincarnating
-}
-
-Response omniknight_Respawn
-{
-	scene "scenes/omniknight/omniknight_omni_respawn_01.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_respawn_02.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_respawn_03.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_respawn_04.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_respawn_05.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_respawn_06.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_respawn_07.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_respawn_08.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_respawn_09.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_respawn_10.vcd" nodelay 
-}
-
-Rule omniknight_Respawn_Rule
-{
-	criteria Respawn Isomniknight 
-	response omniknight_Respawn
-}
-
-Response omniknight_Select
-{
-	scene "scenes/omniknight/omniknight_omni_rare_01.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_rare_02.vcd" nodelay 
-}
-
-Rule omniknight_Select_Rule
-{
-	criteria Select Isomniknight 
-	response omniknight_Select
-}
-
-Response omniknight_PurchaseIsExpensiveItem
-{
-	scene "scenes/omniknight/omniknight_omni_purch_01.vcd" nodelay speakonce
-	scene "scenes/omniknight/omniknight_omni_purch_02.vcd" nodelay speakonce
-	scene "scenes/omniknight/omniknight_omni_purch_03.vcd" nodelay speakonce
-}
-
-Rule omniknight_PurchaseIsExpensiveItem_Rule
-{
-	criteria Purchase Isomniknight IsExpensiveItem
-	response omniknight_PurchaseIsExpensiveItem
-}
-
-Response omniknight_PurchaseIsBlinkDagger
-{
-	scene "scenes/omniknight/omniknight_omni_blink_01.vcd" nodelay speakonce
-	scene "scenes/omniknight/omniknight_omni_blink_02.vcd" nodelay speakonce
-}
-
-Rule omniknight_PurchaseIsBlinkDagger_Rule
-{
-	criteria Purchase Isomniknight IsBlinkDagger
-	response omniknight_PurchaseIsBlinkDagger
-}
-
-Response omniknight_PurchaseIsUltimateScepter
-{
-	scene "scenes/omniknight/omniknight_omni_scepter_01.vcd" nodelay speakonce
-	scene "scenes/omniknight/omniknight_omni_scepter_02.vcd" nodelay speakonce
-}
-
-Rule omniknight_PurchaseIsUltimateScepter_Rule
-{
-	criteria Purchase Isomniknight IsUltimateScepter
-	response omniknight_PurchaseIsUltimateScepter
-}
-
-Response omniknight_PurchaseIsArcaneBoots
-{
-	scene "scenes/omniknight/omniknight_omni_item_01.vcd" nodelay speakonce
-}
-
-Rule omniknight_PurchaseIsArcaneBoots_Rule
-{
-	criteria Purchase Isomniknight IsArcaneBoots
-	response omniknight_PurchaseIsArcaneBoots
-}
-
-Response omniknight_PurchaseIsSoulRing
-{
-	scene "scenes/omniknight/omniknight_omni_item_02.vcd" nodelay speakonce
-}
-
-Rule omniknight_PurchaseIsSoulRing_Rule
-{
-	criteria Purchase Isomniknight IsSoulRing
-	response omniknight_PurchaseIsSoulRing
-}
-
-Response omniknight_PurchaseIsSheepstick
-{
-	scene "scenes/omniknight/omniknight_omni_item_03.vcd" nodelay speakonce
-}
-
-Rule omniknight_PurchaseIsSheepstick_Rule
-{
-	criteria Purchase Isomniknight IsSheepstick
-	response omniknight_PurchaseIsSheepstick
-}
-
-Response omniknight_PurchaseIsAssaultCuirass
-{
-	scene "scenes/omniknight/omniknight_omni_item_04.vcd" nodelay speakonce
-}
-
-Rule omniknight_PurchaseIsAssaultCuirass_Rule
-{
-	criteria Purchase Isomniknight IsAssaultCuirass
-	response omniknight_PurchaseIsAssaultCuirass
-}
-
-Response omniknight_PurchaseIsShiva
-{
-	scene "scenes/omniknight/omniknight_omni_item_05.vcd" nodelay speakonce
-}
-
-Rule omniknight_PurchaseIsShiva_Rule
-{
-	criteria Purchase Isomniknight IsShiva
-	response omniknight_PurchaseIsShiva
-}
-
-Response omniknight_PurchaseIsDrums
-{
-	scene "scenes/omniknight/omniknight_omni_item_06.vcd" nodelay speakonce
-}
-
-Rule omniknight_PurchaseIsDrums_Rule
-{
-	criteria Purchase Isomniknight IsDrums
-	response omniknight_PurchaseIsDrums
-}
-
-Response omniknight_PurchaseIsMekansm
-{
-	scene "scenes/omniknight/omniknight_omni_item_07.vcd" nodelay speakonce
-}
-
-Rule omniknight_PurchaseIsMekansm_Rule
-{
-	criteria Purchase Isomniknight IsMekansm
-	response omniknight_PurchaseIsMekansm
-}
-
-Response omniknight_PurchaseIsNecronomicon
-{
-	scene "scenes/omniknight/omniknight_omni_item_08.vcd" nodelay speakonce
-	scene "scenes/omniknight/omniknight_omni_item_09.vcd" nodelay speakonce
-}
-
-Rule omniknight_PurchaseIsNecronomicon_Rule
-{
-	criteria Purchase Isomniknight IsNecronomicon
-	response omniknight_PurchaseIsNecronomicon
-}
-
-Response omniknight_PurchaseIsForceStaff
-{
-	scene "scenes/omniknight/omniknight_omni_item_10.vcd" nodelay speakonce
-}
-
-Rule omniknight_PurchaseIsForceStaff_Rule
-{
-	criteria Purchase Isomniknight IsForceStaff
-	response omniknight_PurchaseIsForceStaff
-}
-
-Response omniknight_Bottling
-{
-	scene "scenes/omniknight/omniknight_omni_bottle_01.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_bottle_02.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_bottle_03.vcd" nodelay 
-}
-
-Rule omniknight_Bottling_Rule
-{
-	criteria Bottling Isomniknight 
-	response omniknight_Bottling
-}
-
-Response omniknight_Deny
-{
-	scene "scenes/omniknight/omniknight_omni_deny_01.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_deny_02.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_deny_03.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_deny_04.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_deny_05.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_deny_06.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_deny_07.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_deny_08.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_deny_09.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_deny_10.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_deny_11.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_deny_12.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_deny_13.vcd" nodelay 
-}
-
-Rule omniknight_Deny_Rule
-{
-	criteria Deny Isomniknight 
-	response omniknight_Deny
-}
-
-Response omniknight_Defeat
-{
-	scene "scenes/omniknight/omniknight_omni_lose_01.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_lose_02.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_lose_03.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_lose_04.vcd" nodelay 
-}
-
-Rule omniknight_Defeat_Rule
-{
-	criteria Defeat Isomniknight 
-	response omniknight_Defeat
-}
-
-Response omniknight_Victory
-{
-	scene "scenes/omniknight/omniknight_omni_win_01.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_win_02.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_win_03.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_win_04.vcd" nodelay 
-}
-
-Rule omniknight_Victory_Rule
-{
-	criteria Victory Isomniknight 
-	response omniknight_Victory
-}
-
-Response omniknight_Immortality
-{
-	scene "scenes/omniknight/omniknight_omni_immort_01.vcd" nodelay 
-}
-
-Rule omniknight_Immortality_Rule
-{
-	criteria Immortality Isomniknight 
-	response omniknight_Immortality
-}
-
-Response omniknight_ImmortalityChance_25%
-{
-	scene "scenes/omniknight/omniknight_omni_immort_02.vcd" nodelay 
-}
-
-Rule omniknight_ImmortalityChance_25%_Rule
-{
-	criteria Immortality Isomniknight Chance_25%
-	response omniknight_ImmortalityChance_25%
-}
-
-Response omniknight_PowerupIsPowerupHaste
-{
-	scene "scenes/omniknight/omniknight_omni_haste_01.vcd" nodelay 
-}
-
-Rule omniknight_PowerupIsPowerupHaste_Rule
-{
-	criteria Powerup Isomniknight IsPowerupHaste
-	response omniknight_PowerupIsPowerupHaste
-}
-
-Response omniknight_PowerupIsPowerupDoubleDamage
-{
-	scene "scenes/omniknight/omniknight_omni_doubdam_01.vcd" nodelay 
-}
-
-Rule omniknight_PowerupIsPowerupDoubleDamage_Rule
-{
-	criteria Powerup Isomniknight IsPowerupDoubleDamage
-	response omniknight_PowerupIsPowerupDoubleDamage
-}
-
-Response omniknight_PowerupIsPowerupBounty
-{
-	scene "scenes/omniknight/omniknight_omni_lasthit_02.vcd" nodelay respeakdelay 300
-}
-
-Rule omniknight_PowerupIsPowerupBounty_Rule
-{
-	criteria Powerup Isomniknight IsPowerupBounty
-	response omniknight_PowerupIsPowerupBounty
-}
-
-Response omniknight_PowerupIsPowerupRegeneration
-{
-	scene "scenes/omniknight/omniknight_omni_regen_01.vcd" nodelay 
-}
-
-Rule omniknight_PowerupIsPowerupRegeneration_Rule
-{
-	criteria Powerup Isomniknight IsPowerupRegeneration
-	response omniknight_PowerupIsPowerupRegeneration
-}
-
-Response omniknight_PowerupIsPowerupIllusion
-{
-	scene "scenes/omniknight/omniknight_omni_illus_01.vcd" nodelay 
-}
-
-Rule omniknight_PowerupIsPowerupIllusion_Rule
-{
-	criteria Powerup Isomniknight IsPowerupIllusion
-	response omniknight_PowerupIsPowerupIllusion
-}
-
-Response omniknight_PowerupIsPowerupInvisibility
-{
-	scene "scenes/omniknight/omniknight_omni_invis_01.vcd" nodelay 
-}
-
-Rule omniknight_PowerupIsPowerupInvisibility_Rule
-{
-	criteria Powerup Isomniknight IsPowerupInvisibility
-	response omniknight_PowerupIsPowerupInvisibility
-}
-
-Response omniknight_PowerupIsPowerupInvisibilityChance_5%
-{
-	scene "scenes/omniknight/omniknight_omni_invis_02.vcd" nodelay 
-}
-
-Rule omniknight_PowerupIsPowerupInvisibilityChance_5%_Rule
-{
-	criteria Powerup Isomniknight IsPowerupInvisibility Chance_5%
-	response omniknight_PowerupIsPowerupInvisibilityChance_5%
-}
-
-Response omniknight_PowerupIsPowerupArcane
-{
-	scene "scenes/omniknight/omniknight_omni_ability_degaura_11.vcd" nodelay respeakdelay 300
-}
-
-Rule omniknight_PowerupIsPowerupArcane_Rule
-{
-	criteria Powerup Isomniknight IsPowerupArcane
-	response omniknight_PowerupIsPowerupArcane
-}
-
-Response omniknight_CooldownLittleNag
-{
-	scene "scenes/omniknight/omniknight_omni_notyet_01.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_notyet_02.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_notyet_03.vcd" nodelay 
-}
-
-Rule omniknight_CooldownLittleNag_Rule
-{
-	criteria Cooldown Isomniknight LittleNag
-	response omniknight_CooldownLittleNag
-}
-
-Response omniknight_CooldownMediumNag
-{
-	scene "scenes/omniknight/omniknight_omni_notyet_04.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_notyet_05.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_notyet_06.vcd" nodelay 
-}
-
-Rule omniknight_CooldownMediumNag_Rule
-{
-	criteria Cooldown Isomniknight MediumNag
-	response omniknight_CooldownMediumNag
-}
-
-Response omniknight_CooldownSuperNag
-{
-	scene "scenes/omniknight/omniknight_omni_notyet_07.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_notyet_08.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_notyet_09.vcd" nodelay 
-}
-
-Rule omniknight_CooldownSuperNag_Rule
-{
-	criteria Cooldown Isomniknight SuperNag
-	response omniknight_CooldownSuperNag
-}
-
-Response omniknight_NoManaLittleNag
-{
-	scene "scenes/omniknight/omniknight_omni_nomana_01.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_nomana_02.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_nomana_03.vcd" nodelay 
-}
-
-Rule omniknight_NoManaLittleNag_Rule
-{
-	criteria NoMana Isomniknight LittleNag
-	response omniknight_NoManaLittleNag
-}
-
-Response omniknight_NoManaMediumNag
-{
-	scene "scenes/omniknight/omniknight_omni_nomana_04.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_nomana_05.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_nomana_06.vcd" nodelay 
-}
-
-Rule omniknight_NoManaMediumNag_Rule
-{
-	criteria NoMana Isomniknight MediumNag
-	response omniknight_NoManaMediumNag
-}
-
-Response omniknight_NoManaSuperNag
-{
-	scene "scenes/omniknight/omniknight_omni_nomana_07.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_nomana_08.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_nomana_09.vcd" nodelay 
-}
-
-Rule omniknight_NoManaSuperNag_Rule
-{
-	criteria NoMana Isomniknight SuperNag
-	response omniknight_NoManaSuperNag
-}
-
-Response omniknight_Thanks
-{
-	scene "scenes/omniknight/omniknight_omni_thanks_01.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_thanks_02.vcd" nodelay 
-}
-
-Rule omniknight_Thanks_Rule
-{
-	criteria Thanks Isomniknight 
-	response omniknight_Thanks
-}
-
-Response omniknight_PainChance_25%
-{
-	scene "scenes/omniknight/omniknight_omni_underattack_01.vcd" nodelay respeakdelay 120
-}
-
-Rule omniknight_PainChance_25%_Rule
-{
-	criteria Pain Isomniknight Chance_25%
-	response omniknight_PainChance_25%
-}
-
-Response omniknight_Pain
-{
-	scene "scenes/omniknight/omniknight_omni_pain_01.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_pain_02.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_pain_03.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_pain_04.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_pain_05.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_pain_06.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_pain_07.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_pain_08.vcd" nodelay 
-}
-
-Rule omniknight_Pain_Rule
-{
-	criteria Pain Isomniknight 
-	response omniknight_Pain
-}
-
-Response omniknight_InTheBag
-{
-	scene "scenes/omniknight/omniknight_omni_inthebag_01.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_inthebag_02.vcd" nodelay 
-}
-
-Rule omniknight_InTheBag_Rule
-{
-	criteria InTheBag Isomniknight 
-	response omniknight_InTheBag
-}
-
-Response omniknight_EmoteIsEmoteLaugh
-{
-	scene "scenes/omniknight/omniknight_omni_laugh_01.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_laugh_02.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_laugh_03.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_laugh_04.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_laugh_05.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_laugh_06.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_laugh_07.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_laugh_08.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_laugh_09.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_laugh_10.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_laugh_11.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_laugh_12.vcd" nodelay 
-}
-
-Rule omniknight_EmoteIsEmoteLaugh_Rule
-{
-	criteria Emote Isomniknight IsEmoteLaugh
-	response omniknight_EmoteIsEmoteLaugh
-}
-
-Response omniknight_TauntIsOmniSunWorshipTI8Taunt
-{
-	scene "scenes/omniknight/omniknight_omni_spawn_03.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_move_05.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_move_11.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_ability_guard_02.vcd" nodelay 
-	scene "scenes/omniknight/omniknight_omni_attack_08.vcd" nodelay 
-}
-
-Rule omniknight_TauntIsOmniSunWorshipTI8Taunt_Rule
-{
-	criteria Taunt Isomniknight IsOmniSunWorshipTI8Taunt
-	response omniknight_TauntIsOmniSunWorshipTI8Taunt
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vrfunknown:version{c1f07085-5299-4e8a-b7e9-1cbb66bbbe23} -->
+{
+	m_Includes = 
+	[
+		"scripts/talker/response_rules_shared.vrr",
+	]
+	m_ResponseGroups = 
+	[
+		
+		{
+			m_name = "omniknight_Spawn"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_spawn_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_spawn_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_spawn_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_spawn_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_spawn_05.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_CustomIsGameStart"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_battlebegins_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_CustomIsOmniLoadoutSpawn"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_spawn_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_spawn_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_spawn_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_spawn_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_spawn_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_move_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_move_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_move_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_move_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_attack_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_ability_guard_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_ability_guard_07.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_KillIsFirstBlood"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_firstblood_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_firstblood_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_KillIsEnemyTerrorbladeChance_50%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_ability_degaura_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_KillIsEnemyTechiesChance_50%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_ability_degaura_08.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_Kill"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_ability_degaura_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_kill_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_kill_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_kill_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_kill_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_kill_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_kill_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_kill_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_kill_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_kill_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_kill_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_kill_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_kill_12.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_laugh_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_laugh_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_laugh_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_laugh_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_laugh_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_laugh_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_laugh_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_laugh_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_laugh_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_laugh_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_laugh_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_laugh_12.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_KillIsEnemyChenChance_50%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_rival_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_rival_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_KillIsEnemyDoom_BringerChance_50%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_rival_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_KillIsEnemyLife_StealerChance_50%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_rival_05.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_KillIsEnemyWeaverChance_50%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_rival_06.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_KillIsEnemyBaneChance_50%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_rival_07.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_KillIsEnemyTinkerChance_50%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_rival_08.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_KillIsEnemyDragon_KnightChance_50%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_rival_09.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_KillIsEnemyZuusChance_50%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_rival_10.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_KillIsEnemyNevermoreChance_50%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_rival_11.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_KillIsEnemyWarlockChance_50%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_rival_12.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_KillIsEnemyFaceless_VoidChance_50%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_rival_13.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_KillIsEnemySilencerChance_50%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_rival_14.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_KillIsEnemySvenChance_50%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_rival_15.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_KillIsEnemyDazzleChance_50%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_rival_16.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_KillIsEnemyChaos_KnightChance_50%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_rival_17.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_Move"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_move_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_move_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_move_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_move_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_move_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_move_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_move_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_move_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_move_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_move_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_move_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_move_12.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_move_13.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_move_14.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_move_15.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_move_16.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_move_17.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_move_18.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_move_19.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_move_20.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_move_21.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_move_22.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_move_23.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_ability_guard_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_ability_guard_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_ability_guard_11.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_Attack"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_attack_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_attack_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_attack_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_attack_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_attack_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_attack_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_attack_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_attack_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_attack_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_attack_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_attack_12.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_CastOrder"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_cast_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_cast_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_cast_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_CastExecuteIsAbilityPurificationChance_50%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_ability_purif_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_ability_purif_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_ability_purif_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_ability_purif_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_ability_purif_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_ability_purif_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_ability_purif_08.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_CastExecuteIsAbilityPurificationChance_5%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_ability_purif_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_CastExecuteIsAbilityPurificationIsEnemyOmniknightChance_50%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_ability_purif_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_ability_purif_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_ability_purif_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_ability_purif_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_ability_purif_08.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_CastExecuteIsAbilityRepel"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_ability_repel_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_ability_repel_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_ability_repel_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_ability_repel_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_ability_repel_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_ability_repel_06.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_CastExecuteIsAbilityRepelIsEnemyOmniknight"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_ability_repel_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_ability_repel_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_ability_repel_06.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_CastExecuteIsAbilityGuardianAngel"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_ability_guard_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_ability_guard_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_ability_guard_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_ability_guard_10.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_ItemDropIsUltraRareDrop"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_ability_degaura_12.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_ItemDropIsRareDrop"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_ability_guard_09.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_ItemDropIsCommonDrop"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_happy_04.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_LevelUp"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_level_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_level_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_level_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_level_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_level_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_level_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_level_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_level_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_level_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_level_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_level_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_level_12.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_AllyNearIsAllyChenEarlyGame"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_rival_18.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_AllyNearIsAllyDragon_KnightEarlyGame"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_rival_19.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_AllyNearIsAllySilencerEarlyGame"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_rival_20.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_AllyNearIsAllySvenEarlyGame"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_rival_21.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_AllyNearIsAllyChaos_KnightEarlyGame"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_rival_22.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_LastHit"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_lasthit_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_lasthit_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_lasthit_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_lasthit_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_lasthit_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_lasthit_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_lasthit_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_lasthit_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_lasthit_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_lasthit_10.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_Death"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_death_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_death_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_death_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_death_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_death_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_death_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_death_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_death_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_death_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_death_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_death_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_death_12.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_death_13.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_death_14.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_DeathIsReincarnating"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_fastres_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_Respawn"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_respawn_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_respawn_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_respawn_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_respawn_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_respawn_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_respawn_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_respawn_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_respawn_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_respawn_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_respawn_10.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_Select"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_rare_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_rare_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_PurchaseIsExpensiveItem"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_purch_01.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_purch_02.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_purch_03.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_PurchaseIsBlinkDagger"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_blink_01.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_blink_02.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_PurchaseIsUltimateScepter"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_scepter_01.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_scepter_02.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_PurchaseIsArcaneBoots"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_item_01.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_PurchaseIsSoulRing"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_item_02.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_PurchaseIsSheepstick"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_item_03.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_PurchaseIsAssaultCuirass"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_item_04.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_PurchaseIsShiva"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_item_05.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_PurchaseIsDrums"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_item_06.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_PurchaseIsMekansm"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_item_07.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_PurchaseIsNecronomicon"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_item_08.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_item_09.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_PurchaseIsForceStaff"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_item_10.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_Bottling"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_bottle_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_bottle_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_bottle_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_Deny"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_deny_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_deny_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_deny_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_deny_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_deny_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_deny_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_deny_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_deny_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_deny_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_deny_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_deny_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_deny_12.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_deny_13.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_Defeat"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_lose_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_lose_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_lose_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_lose_04.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_Victory"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_win_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_win_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_win_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_win_04.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_Immortality"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_immort_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_ImmortalityChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_immort_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_PowerupIsPowerupHaste"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_haste_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_PowerupIsPowerupDoubleDamage"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_doubdam_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_PowerupIsPowerupBounty"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_lasthit_02.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 300.000000
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_PowerupIsPowerupRegeneration"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_regen_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_PowerupIsPowerupIllusion"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_illus_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_PowerupIsPowerupInvisibility"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_invis_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_PowerupIsPowerupInvisibilityChance_5%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_invis_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_PowerupIsPowerupArcane"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_ability_degaura_11.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 300.000000
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_CooldownLittleNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_notyet_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_notyet_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_notyet_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_CooldownMediumNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_notyet_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_notyet_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_notyet_06.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_CooldownSuperNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_notyet_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_notyet_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_notyet_09.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_NoManaLittleNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_nomana_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_nomana_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_nomana_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_NoManaMediumNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_nomana_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_nomana_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_nomana_06.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_NoManaSuperNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_nomana_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_nomana_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_nomana_09.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_Thanks"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_thanks_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_thanks_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_PainChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_underattack_01.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 120.000000
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_Pain"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_pain_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_pain_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_pain_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_pain_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_pain_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_pain_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_pain_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_pain_08.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_InTheBag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_inthebag_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_inthebag_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_EmoteIsEmoteLaugh"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_laugh_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_laugh_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_laugh_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_laugh_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_laugh_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_laugh_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_laugh_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_laugh_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_laugh_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_laugh_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_laugh_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_laugh_12.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "omniknight_TauntIsOmniSunWorshipTI8Taunt"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_spawn_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_move_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_move_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_ability_guard_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/omniknight/omniknight_omni_attack_08.vcd"
+				},
+			]
+		},
+	]
+	m_Requirements = 
+	[
+		
+		{
+			m_name = "Isomniknight"
+			m_matchKey = "classname"
+			m_matchExpr = "npc_dota_hero_omniknight"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsAbilityPurification"
+			m_matchKey = "abilityname"
+			m_matchExpr = "omniknight_purification"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsAbilityRepel"
+			m_matchKey = "abilityname"
+			m_matchExpr = "omniknight_repel"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsAbilityGuardianAngel"
+			m_matchKey = "abilityname"
+			m_matchExpr = "omniknight_guardian_angel"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsOmniLoadoutSpawn"
+			m_matchKey = "special_spawn"
+			m_matchExpr = "omni_loadout_spawn"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsOmniSunWorshipTI8Taunt"
+			m_matchKey = "taunt_type"
+			m_matchExpr = "sun_worship"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+	]
+	m_Rules = 
+	[
+		
+		{
+			m_name = "omniknight_Spawn_Rule"
+			m_Requirements = 
+			[
+				"Spawn",
+				"Isomniknight",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_Spawn",
+			]
+		},
+		
+		{
+			m_name = "omniknight_CustomIsGameStart_Rule"
+			m_Requirements = 
+			[
+				"Custom",
+				"Isomniknight",
+				"IsGameStart",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_CustomIsGameStart",
+			]
+		},
+		
+		{
+			m_name = "omniknight_CustomIsOmniLoadoutSpawn_Rule"
+			m_Requirements = 
+			[
+				"Custom",
+				"Isomniknight",
+				"IsOmniLoadoutSpawn",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_CustomIsOmniLoadoutSpawn",
+			]
+		},
+		
+		{
+			m_name = "omniknight_KillIsFirstBlood_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isomniknight",
+				"IsFirstBlood",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_KillIsFirstBlood",
+			]
+		},
+		
+		{
+			m_name = "omniknight_KillIsEnemyTerrorbladeChance_50%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isomniknight",
+				"IsEnemyTerrorblade",
+				"Chance_50%",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_KillIsEnemyTerrorbladeChance_50%",
+			]
+		},
+		
+		{
+			m_name = "omniknight_KillIsEnemyTechiesChance_50%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isomniknight",
+				"IsEnemyTechies",
+				"Chance_50%",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_KillIsEnemyTechiesChance_50%",
+			]
+		},
+		
+		{
+			m_name = "omniknight_Kill_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isomniknight",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_Kill",
+			]
+		},
+		
+		{
+			m_name = "omniknight_KillIsEnemyChenChance_50%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isomniknight",
+				"IsEnemyChen",
+				"Chance_50%",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_KillIsEnemyChenChance_50%",
+			]
+		},
+		
+		{
+			m_name = "omniknight_KillIsEnemyDoom_BringerChance_50%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isomniknight",
+				"IsEnemyDoom_Bringer",
+				"Chance_50%",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_KillIsEnemyDoom_BringerChance_50%",
+			]
+		},
+		
+		{
+			m_name = "omniknight_KillIsEnemyLife_StealerChance_50%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isomniknight",
+				"IsEnemyLife_Stealer",
+				"Chance_50%",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_KillIsEnemyLife_StealerChance_50%",
+			]
+		},
+		
+		{
+			m_name = "omniknight_KillIsEnemyWeaverChance_50%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isomniknight",
+				"IsEnemyWeaver",
+				"Chance_50%",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_KillIsEnemyWeaverChance_50%",
+			]
+		},
+		
+		{
+			m_name = "omniknight_KillIsEnemyBaneChance_50%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isomniknight",
+				"IsEnemyBane",
+				"Chance_50%",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_KillIsEnemyBaneChance_50%",
+			]
+		},
+		
+		{
+			m_name = "omniknight_KillIsEnemyTinkerChance_50%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isomniknight",
+				"IsEnemyTinker",
+				"Chance_50%",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_KillIsEnemyTinkerChance_50%",
+			]
+		},
+		
+		{
+			m_name = "omniknight_KillIsEnemyDragon_KnightChance_50%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isomniknight",
+				"IsEnemyDragon_Knight",
+				"Chance_50%",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_KillIsEnemyDragon_KnightChance_50%",
+			]
+		},
+		
+		{
+			m_name = "omniknight_KillIsEnemyZuusChance_50%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isomniknight",
+				"IsEnemyZuus",
+				"Chance_50%",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_KillIsEnemyZuusChance_50%",
+			]
+		},
+		
+		{
+			m_name = "omniknight_KillIsEnemyNevermoreChance_50%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isomniknight",
+				"IsEnemyNevermore",
+				"Chance_50%",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_KillIsEnemyNevermoreChance_50%",
+			]
+		},
+		
+		{
+			m_name = "omniknight_KillIsEnemyWarlockChance_50%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isomniknight",
+				"IsEnemyWarlock",
+				"Chance_50%",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_KillIsEnemyWarlockChance_50%",
+			]
+		},
+		
+		{
+			m_name = "omniknight_KillIsEnemyFaceless_VoidChance_50%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isomniknight",
+				"IsEnemyFaceless_Void",
+				"Chance_50%",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_KillIsEnemyFaceless_VoidChance_50%",
+			]
+		},
+		
+		{
+			m_name = "omniknight_KillIsEnemySilencerChance_50%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isomniknight",
+				"IsEnemySilencer",
+				"Chance_50%",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_KillIsEnemySilencerChance_50%",
+			]
+		},
+		
+		{
+			m_name = "omniknight_KillIsEnemySvenChance_50%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isomniknight",
+				"IsEnemySven",
+				"Chance_50%",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_KillIsEnemySvenChance_50%",
+			]
+		},
+		
+		{
+			m_name = "omniknight_KillIsEnemyDazzleChance_50%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isomniknight",
+				"IsEnemyDazzle",
+				"Chance_50%",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_KillIsEnemyDazzleChance_50%",
+			]
+		},
+		
+		{
+			m_name = "omniknight_KillIsEnemyChaos_KnightChance_50%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isomniknight",
+				"IsEnemyChaos_Knight",
+				"Chance_50%",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_KillIsEnemyChaos_KnightChance_50%",
+			]
+		},
+		
+		{
+			m_name = "omniknight_Move_Rule"
+			m_Requirements = 
+			[
+				"Move",
+				"Isomniknight",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_Move",
+			]
+		},
+		
+		{
+			m_name = "omniknight_Attack_Rule"
+			m_Requirements = 
+			[
+				"Attack",
+				"Isomniknight",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_Attack",
+			]
+		},
+		
+		{
+			m_name = "omniknight_CastOrder_Rule"
+			m_Requirements = 
+			[
+				"CastOrder",
+				"Isomniknight",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_CastOrder",
+			]
+		},
+		
+		{
+			m_name = "omniknight_CastExecuteIsAbilityPurificationChance_50%_Rule"
+			m_Requirements = 
+			[
+				"CastExecute",
+				"Isomniknight",
+				"IsAbilityPurification",
+				"Chance_50%",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_CastExecuteIsAbilityPurificationChance_50%",
+			]
+		},
+		
+		{
+			m_name = "omniknight_CastExecuteIsAbilityPurificationChance_5%_Rule"
+			m_Requirements = 
+			[
+				"CastExecute",
+				"Isomniknight",
+				"IsAbilityPurification",
+				"Chance_5%",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_CastExecuteIsAbilityPurificationChance_5%",
+			]
+		},
+		
+		{
+			m_name = "omniknight_CastExecuteIsAbilityPurificationIsEnemyOmniknightChance_50%_Rule"
+			m_Requirements = 
+			[
+				"CastExecute",
+				"Isomniknight",
+				"IsAbilityPurification",
+				"IsEnemyOmniknight",
+				"Chance_50%",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_CastExecuteIsAbilityPurificationIsEnemyOmniknightChance_50%",
+			]
+		},
+		
+		{
+			m_name = "omniknight_CastExecuteIsAbilityRepel_Rule"
+			m_Requirements = 
+			[
+				"CastExecute",
+				"Isomniknight",
+				"IsAbilityRepel",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_CastExecuteIsAbilityRepel",
+			]
+		},
+		
+		{
+			m_name = "omniknight_CastExecuteIsAbilityRepelIsEnemyOmniknight_Rule"
+			m_Requirements = 
+			[
+				"CastExecute",
+				"Isomniknight",
+				"IsAbilityRepel",
+				"IsEnemyOmniknight",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_CastExecuteIsAbilityRepelIsEnemyOmniknight",
+			]
+		},
+		
+		{
+			m_name = "omniknight_CastExecuteIsAbilityGuardianAngel_Rule"
+			m_Requirements = 
+			[
+				"CastExecute",
+				"Isomniknight",
+				"IsAbilityGuardianAngel",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_CastExecuteIsAbilityGuardianAngel",
+			]
+		},
+		
+		{
+			m_name = "omniknight_ItemDropIsUltraRareDrop_Rule"
+			m_Requirements = 
+			[
+				"ItemDrop",
+				"Isomniknight",
+				"IsUltraRareDrop",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_ItemDropIsUltraRareDrop",
+			]
+		},
+		
+		{
+			m_name = "omniknight_ItemDropIsRareDrop_Rule"
+			m_Requirements = 
+			[
+				"ItemDrop",
+				"Isomniknight",
+				"IsRareDrop",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_ItemDropIsRareDrop",
+			]
+		},
+		
+		{
+			m_name = "omniknight_ItemDropIsCommonDrop_Rule"
+			m_Requirements = 
+			[
+				"ItemDrop",
+				"Isomniknight",
+				"IsCommonDrop",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_ItemDropIsCommonDrop",
+			]
+		},
+		
+		{
+			m_name = "omniknight_LevelUp_Rule"
+			m_Requirements = 
+			[
+				"LevelUp",
+				"Isomniknight",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_LevelUp",
+			]
+		},
+		
+		{
+			m_name = "omniknight_AllyNearIsAllyChenEarlyGame_Rule"
+			m_Requirements = 
+			[
+				"AllyNear",
+				"Isomniknight",
+				"IsAllyChen",
+				"EarlyGame",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_AllyNearIsAllyChenEarlyGame",
+			]
+		},
+		
+		{
+			m_name = "omniknight_AllyNearIsAllyDragon_KnightEarlyGame_Rule"
+			m_Requirements = 
+			[
+				"AllyNear",
+				"Isomniknight",
+				"IsAllyDragon_Knight",
+				"EarlyGame",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_AllyNearIsAllyDragon_KnightEarlyGame",
+			]
+		},
+		
+		{
+			m_name = "omniknight_AllyNearIsAllySilencerEarlyGame_Rule"
+			m_Requirements = 
+			[
+				"AllyNear",
+				"Isomniknight",
+				"IsAllySilencer",
+				"EarlyGame",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_AllyNearIsAllySilencerEarlyGame",
+			]
+		},
+		
+		{
+			m_name = "omniknight_AllyNearIsAllySvenEarlyGame_Rule"
+			m_Requirements = 
+			[
+				"AllyNear",
+				"Isomniknight",
+				"IsAllySven",
+				"EarlyGame",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_AllyNearIsAllySvenEarlyGame",
+			]
+		},
+		
+		{
+			m_name = "omniknight_AllyNearIsAllyChaos_KnightEarlyGame_Rule"
+			m_Requirements = 
+			[
+				"AllyNear",
+				"Isomniknight",
+				"IsAllyChaos_Knight",
+				"EarlyGame",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_AllyNearIsAllyChaos_KnightEarlyGame",
+			]
+		},
+		
+		{
+			m_name = "omniknight_LastHit_Rule"
+			m_Requirements = 
+			[
+				"LastHit",
+				"Isomniknight",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_LastHit",
+			]
+		},
+		
+		{
+			m_name = "omniknight_Death_Rule"
+			m_Requirements = 
+			[
+				"Death",
+				"Isomniknight",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_Death",
+			]
+		},
+		
+		{
+			m_name = "omniknight_DeathIsReincarnating_Rule"
+			m_Requirements = 
+			[
+				"Death",
+				"Isomniknight",
+				"IsReincarnating",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_DeathIsReincarnating",
+			]
+		},
+		
+		{
+			m_name = "omniknight_Respawn_Rule"
+			m_Requirements = 
+			[
+				"Respawn",
+				"Isomniknight",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_Respawn",
+			]
+		},
+		
+		{
+			m_name = "omniknight_Select_Rule"
+			m_Requirements = 
+			[
+				"Select",
+				"Isomniknight",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_Select",
+			]
+		},
+		
+		{
+			m_name = "omniknight_PurchaseIsExpensiveItem_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isomniknight",
+				"IsExpensiveItem",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_PurchaseIsExpensiveItem",
+			]
+		},
+		
+		{
+			m_name = "omniknight_PurchaseIsBlinkDagger_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isomniknight",
+				"IsBlinkDagger",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_PurchaseIsBlinkDagger",
+			]
+		},
+		
+		{
+			m_name = "omniknight_PurchaseIsUltimateScepter_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isomniknight",
+				"IsUltimateScepter",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_PurchaseIsUltimateScepter",
+			]
+		},
+		
+		{
+			m_name = "omniknight_PurchaseIsArcaneBoots_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isomniknight",
+				"IsArcaneBoots",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_PurchaseIsArcaneBoots",
+			]
+		},
+		
+		{
+			m_name = "omniknight_PurchaseIsSoulRing_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isomniknight",
+				"IsSoulRing",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_PurchaseIsSoulRing",
+			]
+		},
+		
+		{
+			m_name = "omniknight_PurchaseIsSheepstick_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isomniknight",
+				"IsSheepstick",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_PurchaseIsSheepstick",
+			]
+		},
+		
+		{
+			m_name = "omniknight_PurchaseIsAssaultCuirass_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isomniknight",
+				"IsAssaultCuirass",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_PurchaseIsAssaultCuirass",
+			]
+		},
+		
+		{
+			m_name = "omniknight_PurchaseIsShiva_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isomniknight",
+				"IsShiva",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_PurchaseIsShiva",
+			]
+		},
+		
+		{
+			m_name = "omniknight_PurchaseIsDrums_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isomniknight",
+				"IsDrums",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_PurchaseIsDrums",
+			]
+		},
+		
+		{
+			m_name = "omniknight_PurchaseIsMekansm_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isomniknight",
+				"IsMekansm",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_PurchaseIsMekansm",
+			]
+		},
+		
+		{
+			m_name = "omniknight_PurchaseIsNecronomicon_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isomniknight",
+				"IsNecronomicon",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_PurchaseIsNecronomicon",
+			]
+		},
+		
+		{
+			m_name = "omniknight_PurchaseIsForceStaff_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isomniknight",
+				"IsForceStaff",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_PurchaseIsForceStaff",
+			]
+		},
+		
+		{
+			m_name = "omniknight_Bottling_Rule"
+			m_Requirements = 
+			[
+				"Bottling",
+				"Isomniknight",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_Bottling",
+			]
+		},
+		
+		{
+			m_name = "omniknight_Deny_Rule"
+			m_Requirements = 
+			[
+				"Deny",
+				"Isomniknight",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_Deny",
+			]
+		},
+		
+		{
+			m_name = "omniknight_Defeat_Rule"
+			m_Requirements = 
+			[
+				"Defeat",
+				"Isomniknight",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_Defeat",
+			]
+		},
+		
+		{
+			m_name = "omniknight_Victory_Rule"
+			m_Requirements = 
+			[
+				"Victory",
+				"Isomniknight",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_Victory",
+			]
+		},
+		
+		{
+			m_name = "omniknight_Immortality_Rule"
+			m_Requirements = 
+			[
+				"Immortality",
+				"Isomniknight",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_Immortality",
+			]
+		},
+		
+		{
+			m_name = "omniknight_ImmortalityChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Immortality",
+				"Isomniknight",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_ImmortalityChance_25%",
+			]
+		},
+		
+		{
+			m_name = "omniknight_PowerupIsPowerupHaste_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isomniknight",
+				"IsPowerupHaste",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_PowerupIsPowerupHaste",
+			]
+		},
+		
+		{
+			m_name = "omniknight_PowerupIsPowerupDoubleDamage_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isomniknight",
+				"IsPowerupDoubleDamage",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_PowerupIsPowerupDoubleDamage",
+			]
+		},
+		
+		{
+			m_name = "omniknight_PowerupIsPowerupBounty_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isomniknight",
+				"IsPowerupBounty",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_PowerupIsPowerupBounty",
+			]
+		},
+		
+		{
+			m_name = "omniknight_PowerupIsPowerupRegeneration_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isomniknight",
+				"IsPowerupRegeneration",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_PowerupIsPowerupRegeneration",
+			]
+		},
+		
+		{
+			m_name = "omniknight_PowerupIsPowerupIllusion_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isomniknight",
+				"IsPowerupIllusion",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_PowerupIsPowerupIllusion",
+			]
+		},
+		
+		{
+			m_name = "omniknight_PowerupIsPowerupInvisibility_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isomniknight",
+				"IsPowerupInvisibility",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_PowerupIsPowerupInvisibility",
+			]
+		},
+		
+		{
+			m_name = "omniknight_PowerupIsPowerupInvisibilityChance_5%_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isomniknight",
+				"IsPowerupInvisibility",
+				"Chance_5%",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_PowerupIsPowerupInvisibilityChance_5%",
+			]
+		},
+		
+		{
+			m_name = "omniknight_PowerupIsPowerupArcane_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isomniknight",
+				"IsPowerupArcane",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_PowerupIsPowerupArcane",
+			]
+		},
+		
+		{
+			m_name = "omniknight_CooldownLittleNag_Rule"
+			m_Requirements = 
+			[
+				"Cooldown",
+				"Isomniknight",
+				"LittleNag",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_CooldownLittleNag",
+			]
+		},
+		
+		{
+			m_name = "omniknight_CooldownMediumNag_Rule"
+			m_Requirements = 
+			[
+				"Cooldown",
+				"Isomniknight",
+				"MediumNag",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_CooldownMediumNag",
+			]
+		},
+		
+		{
+			m_name = "omniknight_CooldownSuperNag_Rule"
+			m_Requirements = 
+			[
+				"Cooldown",
+				"Isomniknight",
+				"SuperNag",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_CooldownSuperNag",
+			]
+		},
+		
+		{
+			m_name = "omniknight_NoManaLittleNag_Rule"
+			m_Requirements = 
+			[
+				"NoMana",
+				"Isomniknight",
+				"LittleNag",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_NoManaLittleNag",
+			]
+		},
+		
+		{
+			m_name = "omniknight_NoManaMediumNag_Rule"
+			m_Requirements = 
+			[
+				"NoMana",
+				"Isomniknight",
+				"MediumNag",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_NoManaMediumNag",
+			]
+		},
+		
+		{
+			m_name = "omniknight_NoManaSuperNag_Rule"
+			m_Requirements = 
+			[
+				"NoMana",
+				"Isomniknight",
+				"SuperNag",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_NoManaSuperNag",
+			]
+		},
+		
+		{
+			m_name = "omniknight_Thanks_Rule"
+			m_Requirements = 
+			[
+				"Thanks",
+				"Isomniknight",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_Thanks",
+			]
+		},
+		
+		{
+			m_name = "omniknight_PainChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Pain",
+				"Isomniknight",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_PainChance_25%",
+			]
+		},
+		
+		{
+			m_name = "omniknight_Pain_Rule"
+			m_Requirements = 
+			[
+				"Pain",
+				"Isomniknight",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_Pain",
+			]
+		},
+		
+		{
+			m_name = "omniknight_InTheBag_Rule"
+			m_Requirements = 
+			[
+				"InTheBag",
+				"Isomniknight",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_InTheBag",
+			]
+		},
+		
+		{
+			m_name = "omniknight_EmoteIsEmoteLaugh_Rule"
+			m_Requirements = 
+			[
+				"Emote",
+				"Isomniknight",
+				"IsEmoteLaugh",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_EmoteIsEmoteLaugh",
+			]
+		},
+		
+		{
+			m_name = "omniknight_TauntIsOmniSunWorshipTI8Taunt_Rule"
+			m_Requirements = 
+			[
+				"Taunt",
+				"Isomniknight",
+				"IsOmniSunWorshipTI8Taunt",
+			]
+			m_ResponseGroups = 
+			[
+				"omniknight_TauntIsOmniSunWorshipTI8Taunt",
+			]
+		},
+	]
 }
-

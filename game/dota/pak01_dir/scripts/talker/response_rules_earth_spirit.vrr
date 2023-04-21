@@ -1,1566 +1,4724 @@
-#include "talker/response_rules_shared.vrr"
-
-criterion "Isearth_spirit" "classname" "npc_dota_hero_earth_spirit" weight 5 required
-criterion "IsEarthSpiStoneRemnant" "stoneremnantcast" "yes" weight 5 required
-criterion "IsEarthSpiBoulderSmash" "abilityname" "earth_spirit_boulder_smash" weight 5 required
-criterion "IsEarthSpiRollingBoulder" "abilityname" "earth_spirit_rolling_boulder" weight 5 required
-criterion "IsEarthSpiGeoGrip" "abilityname" "earth_spirit_geomagnetic_grip" weight 5 required
-criterion "IsEarthSpiMagnetize" "abilityname" "earth_spirit_magnetize" weight 5 required
-criterion "IsEaSpRock" "targetclassname" "npc_dota_earth_spirit_stone" weight 5 required
-criterion "IsEarthSpiritEnchRemnant" "abilityname" "earth_spirit_petrify" weight 5 required
-criterion "IsEarthSpiLoadoutSpawn" "special_spawn" "earth_spirit_loadout_spawn" weight 5 required
-
-Response earth_spirit_Spawn
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_spawn_01.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_spawn_02.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_spawn_03.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_spawn_04.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_spawn_05.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_spawn_06.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_spawn_07.vcd" nodelay 
-}
-
-Rule earth_spirit_Spawn_Rule
-{
-	criteria Spawn Isearth_spirit 
-	response earth_spirit_Spawn
-}
-
-Response earth_spirit_CustomIsGameStart
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_battlebegins_01.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_battlebegins_02.vcd" nodelay 
-}
-
-Rule earth_spirit_CustomIsGameStart_Rule
-{
-	criteria Custom Isearth_spirit IsGameStart
-	response earth_spirit_CustomIsGameStart
-}
-
-Response earth_spirit_CustomIsEarthSpiStoneRemnant
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_stonecaller_05.vcd" nodelay weapondelay 5
-	scene "scenes/earth_spirit/earth_spirit_earthspi_stonecaller_10.vcd" nodelay weapondelay 5
-	scene "scenes/earth_spirit/earth_spirit_earthspi_stonecaller_11.vcd" nodelay weapondelay 5
-	scene "scenes/earth_spirit/earth_spirit_earthspi_stonecaller_12.vcd" nodelay weapondelay 5
-	scene "scenes/earth_spirit/earth_spirit_earthspi_stonecaller_07.vcd" nodelay weapondelay 5
-	scene "scenes/earth_spirit/earth_spirit_earthspi_stonecaller_14.vcd" nodelay weapondelay 5
-	scene "scenes/earth_spirit/earth_spirit_earthspi_happy_03.vcd" nodelay weapondelay 5
-	scene "scenes/earth_spirit/earth_spirit_earthspi_happy_04.vcd" nodelay weapondelay 5
-	scene "scenes/earth_spirit/earth_spirit_earthspi_happy_05.vcd" nodelay weapondelay 5
-}
-
-Rule earth_spirit_CustomIsEarthSpiStoneRemnant_Rule
-{
-	criteria Custom Isearth_spirit IsEarthSpiStoneRemnant
-	response earth_spirit_CustomIsEarthSpiStoneRemnant
-}
-
-Response earth_spirit_CustomIsEarthSpiLoadoutSpawn
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_spawn_01.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_spawn_02.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_spawn_03.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_spawn_04.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_spawn_05.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_spawn_06.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_spawn_07.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_battlebegins_02.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_levelup_05.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_respawn_10.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_battlebegins_01.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_move_11.vcd" nodelay 
-}
-
-Rule earth_spirit_CustomIsEarthSpiLoadoutSpawn_Rule
-{
-	criteria Custom Isearth_spirit IsEarthSpiLoadoutSpawn
-	response earth_spirit_CustomIsEarthSpiLoadoutSpawn
-}
-
-Response earth_spirit_KillIsFirstBloodChance_10%
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_firstblood_01.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_firstblood_03.vcd" nodelay 
-}
-
-Rule earth_spirit_KillIsFirstBloodChance_10%_Rule
-{
-	criteria Kill Isearth_spirit IsFirstBlood Chance_10%
-	response earth_spirit_KillIsFirstBloodChance_10%
-}
-
-Response earth_spirit_KillIsFirstBlood
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_firstblood_02.vcd" nodelay 
-}
-
-Rule earth_spirit_KillIsFirstBlood_Rule
-{
-	criteria Kill Isearth_spirit IsFirstBlood
-	response earth_spirit_KillIsFirstBlood
-}
-
-Response earth_spirit_KillIsEarthSpiBoulderSmashChance_20%
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_bouldersmash_02.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_bouldersmash_05.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_bouldersmash_07.vcd" nodelay 
-}
-
-Rule earth_spirit_KillIsEarthSpiBoulderSmashChance_20%_Rule
-{
-	criteria Kill Isearth_spirit IsEarthSpiBoulderSmash Chance_20%
-	response earth_spirit_KillIsEarthSpiBoulderSmashChance_20%
-}
-
-Response earth_spirit_KillIsEarthSpiGeoGrip
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_geomagnetic_03.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_geomagnetic_08.vcd" nodelay 
-}
-
-Rule earth_spirit_KillIsEarthSpiGeoGrip_Rule
-{
-	criteria Kill Isearth_spirit IsEarthSpiGeoGrip
-	response earth_spirit_KillIsEarthSpiGeoGrip
-}
-
-Response earth_spirit_KillIsEarthSpiRollingBoulderChance_20%
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_geomagnetic_05.vcd" nodelay 
-}
-
-Rule earth_spirit_KillIsEarthSpiRollingBoulderChance_20%_Rule
-{
-	criteria Kill Isearth_spirit IsEarthSpiRollingBoulder Chance_20%
-	response earth_spirit_KillIsEarthSpiRollingBoulderChance_20%
-}
-
-Response earth_spirit_Kill
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_magnetize_01.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_magnetize_03.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_magnetize_06.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_kill_01.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_kill_03.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_kill_04.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_kill_05.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_kill_06.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_kill_07.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_kill_08.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_kill_09.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_kill_10.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_kill_11.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_kill_12.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_kill_13.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_kill_14.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_kill_15.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_kill_16.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_kill_17.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_kill_18.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_kill_19.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_kill_20.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_laugh_01.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_laugh_03.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_laugh_04.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_laugh_05.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_laugh_06.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_laugh_07.vcd" nodelay 
-}
-
-Rule earth_spirit_Kill_Rule
-{
-	criteria Kill Isearth_spirit 
-	response earth_spirit_Kill
-}
-
-Response earth_spirit_KillIsEnemyEmber_SpiritChance_25%
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_rival_01.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_rival_02.vcd" nodelay 
-}
-
-Rule earth_spirit_KillIsEnemyEmber_SpiritChance_25%_Rule
-{
-	criteria Kill Isearth_spirit IsEnemyEmber_Spirit Chance_25%
-	response earth_spirit_KillIsEnemyEmber_SpiritChance_25%
-}
-
-Response earth_spirit_KillIsEnemyStormSpiritChance_25%
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_rival_01.vcd" nodelay 
-}
-
-Rule earth_spirit_KillIsEnemyStormSpiritChance_25%_Rule
-{
-	criteria Kill Isearth_spirit IsEnemyStormSpirit Chance_25%
-	response earth_spirit_KillIsEnemyStormSpiritChance_25%
-}
-
-Response earth_spirit_KillIsEnemyBrewmasterChance_25%
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_rival_03.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_rival_04.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_rival_05.vcd" nodelay 
-}
-
-Rule earth_spirit_KillIsEnemyBrewmasterChance_25%_Rule
-{
-	criteria Kill Isearth_spirit IsEnemyBrewmaster Chance_25%
-	response earth_spirit_KillIsEnemyBrewmasterChance_25%
-}
-
-Response earth_spirit_KillIsEnemyTreantChance_25%
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_rival_06.vcd" nodelay 
-}
-
-Rule earth_spirit_KillIsEnemyTreantChance_25%_Rule
-{
-	criteria Kill Isearth_spirit IsEnemyTreant Chance_25%
-	response earth_spirit_KillIsEnemyTreantChance_25%
-}
-
-Response earth_spirit_KillIsEnemyTinyChance_25%
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_rival_07.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_rival_08.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_rival_09.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_rival_10.vcd" nodelay 
-}
-
-Rule earth_spirit_KillIsEnemyTinyChance_25%_Rule
-{
-	criteria Kill Isearth_spirit IsEnemyTiny Chance_25%
-	response earth_spirit_KillIsEnemyTinyChance_25%
-}
-
-Response earth_spirit_KillIsEnemyElder_TitanChance_25%
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_rival_11.vcd" nodelay 
-}
-
-Rule earth_spirit_KillIsEnemyElder_TitanChance_25%_Rule
-{
-	criteria Kill Isearth_spirit IsEnemyElder_Titan Chance_25%
-	response earth_spirit_KillIsEnemyElder_TitanChance_25%
-}
-
-Response earth_spirit_KillIsEnemyChaos_KnightChance_25%
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_rival_12.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_rival_13.vcd" nodelay 
-}
-
-Rule earth_spirit_KillIsEnemyChaos_KnightChance_25%_Rule
-{
-	criteria Kill Isearth_spirit IsEnemyChaos_Knight Chance_25%
-	response earth_spirit_KillIsEnemyChaos_KnightChance_25%
-}
-
-Response earth_spirit_KillIsEnemyWispChance_25%
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_rival_15.vcd" nodelay 
-}
-
-Rule earth_spirit_KillIsEnemyWispChance_25%_Rule
-{
-	criteria Kill Isearth_spirit IsEnemyWisp Chance_25%
-	response earth_spirit_KillIsEnemyWispChance_25%
-}
-
-Response earth_spirit_KillIsEnemyTerrorbladeChance_25%
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_rival_16.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_rival_17.vcd" nodelay 
-}
-
-Rule earth_spirit_KillIsEnemyTerrorbladeChance_25%_Rule
-{
-	criteria Kill Isearth_spirit IsEnemyTerrorblade Chance_25%
-	response earth_spirit_KillIsEnemyTerrorbladeChance_25%
-}
-
-Response earth_spirit_KillIsEnemyTuskChance_25%
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_rival_18.vcd" nodelay 
-}
-
-Rule earth_spirit_KillIsEnemyTuskChance_25%_Rule
-{
-	criteria Kill Isearth_spirit IsEnemyTusk Chance_25%
-	response earth_spirit_KillIsEnemyTuskChance_25%
-}
-
-Response earth_spirit_KillIsEnemyKunkkaChance_25%
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_rival_19.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_rival_20.vcd" nodelay 
-}
-
-Rule earth_spirit_KillIsEnemyKunkkaChance_25%_Rule
-{
-	criteria Kill Isearth_spirit IsEnemyKunkka Chance_25%
-	response earth_spirit_KillIsEnemyKunkkaChance_25%
-}
-
-Response earth_spirit_KillIsEnemyViperChance_25%
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_rival_21.vcd" nodelay 
-}
-
-Rule earth_spirit_KillIsEnemyViperChance_25%_Rule
-{
-	criteria Kill Isearth_spirit IsEnemyViper Chance_25%
-	response earth_spirit_KillIsEnemyViperChance_25%
-}
-
-Response earth_spirit_KillIsEnemySandKingChance_25%
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_rival_22.vcd" nodelay 
-}
-
-Rule earth_spirit_KillIsEnemySandKingChance_25%_Rule
-{
-	criteria Kill Isearth_spirit IsEnemySandKing Chance_25%
-	response earth_spirit_KillIsEnemySandKingChance_25%
-}
-
-Response earth_spirit_KillIsEnemyEnigmaChance_25%
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_rival_23.vcd" nodelay 
-}
-
-Rule earth_spirit_KillIsEnemyEnigmaChance_25%_Rule
-{
-	criteria Kill Isearth_spirit IsEnemyEnigma Chance_25%
-	response earth_spirit_KillIsEnemyEnigmaChance_25%
-}
-
-Response earth_spirit_KillIsEnemyFurionChance_25%
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_rival_24.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_rival_25.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_rival_26.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_rival_27.vcd" nodelay 
-}
-
-Rule earth_spirit_KillIsEnemyFurionChance_25%_Rule
-{
-	criteria Kill Isearth_spirit IsEnemyFurion Chance_25%
-	response earth_spirit_KillIsEnemyFurionChance_25%
-}
-
-Response earth_spirit_KillIsEnemyGyrocopterChance_25%
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_rival_28.vcd" nodelay 
-}
-
-Rule earth_spirit_KillIsEnemyGyrocopterChance_25%_Rule
-{
-	criteria Kill Isearth_spirit IsEnemyGyrocopter Chance_25%
-	response earth_spirit_KillIsEnemyGyrocopterChance_25%
-}
-
-Response earth_spirit_KillIsEnemyShadowShamanChance_25%
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_rival_29.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_rival_30.vcd" nodelay 
-}
-
-Rule earth_spirit_KillIsEnemyShadowShamanChance_25%_Rule
-{
-	criteria Kill Isearth_spirit IsEnemyShadowShaman Chance_25%
-	response earth_spirit_KillIsEnemyShadowShamanChance_25%
-}
-
-Response earth_spirit_KillIsEnemyEnchantressChance_25%
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_rival_31.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_rival_32.vcd" nodelay 
-}
-
-Rule earth_spirit_KillIsEnemyEnchantressChance_25%_Rule
-{
-	criteria Kill Isearth_spirit IsEnemyEnchantress Chance_25%
-	response earth_spirit_KillIsEnemyEnchantressChance_25%
-}
-
-Response earth_spirit_KillIsEnemyUndyingChance_25%
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_rival_34.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_rival_35.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_rival_36.vcd" nodelay 
-}
-
-Rule earth_spirit_KillIsEnemyUndyingChance_25%_Rule
-{
-	criteria Kill Isearth_spirit IsEnemyUndying Chance_25%
-	response earth_spirit_KillIsEnemyUndyingChance_25%
-}
-
-Response earth_spirit_KillIsEnemyWeaverChance_25%
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_rival_37.vcd" nodelay 
-}
-
-Rule earth_spirit_KillIsEnemyWeaverChance_25%_Rule
-{
-	criteria Kill Isearth_spirit IsEnemyWeaver Chance_25%
-	response earth_spirit_KillIsEnemyWeaverChance_25%
-}
-
-Response earth_spirit_KillIsEnemyUrsaChance_25%
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_rival_38.vcd" nodelay 
-}
-
-Rule earth_spirit_KillIsEnemyUrsaChance_25%_Rule
-{
-	criteria Kill Isearth_spirit IsEnemyUrsa Chance_25%
-	response earth_spirit_KillIsEnemyUrsaChance_25%
-}
-
-Response earth_spirit_KillIsEnemyShredderChance_25%
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_rival_39.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_rival_40.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_rival_41.vcd" nodelay 
-}
-
-Rule earth_spirit_KillIsEnemyShredderChance_25%_Rule
-{
-	criteria Kill Isearth_spirit IsEnemyShredder Chance_25%
-	response earth_spirit_KillIsEnemyShredderChance_25%
-}
-
-Response earth_spirit_KillIsEnemyKeeper_of_the_LightChance_25%
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_rival_42.vcd" nodelay 
-}
-
-Rule earth_spirit_KillIsEnemyKeeper_of_the_LightChance_25%_Rule
-{
-	criteria Kill Isearth_spirit IsEnemyKeeper_of_the_Light Chance_25%
-	response earth_spirit_KillIsEnemyKeeper_of_the_LightChance_25%
-}
-
-Response earth_spirit_KillIsEnemyBroodmotherChance_25%
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_rival_43.vcd" nodelay 
-}
-
-Rule earth_spirit_KillIsEnemyBroodmotherChance_25%_Rule
-{
-	criteria Kill Isearth_spirit IsEnemyBroodmother Chance_25%
-	response earth_spirit_KillIsEnemyBroodmotherChance_25%
-}
-
-Response earth_spirit_KillIsEnemyVoid_SpiritChance_30%
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_rival_void_01.vcd" nodelay speakonce
-	scene "scenes/earth_spirit/earth_spirit_earthspi_rival_void_02.vcd" nodelay speakonce
-}
-
-Rule earth_spirit_KillIsEnemyVoid_SpiritChance_30%_Rule
-{
-	criteria Kill Isearth_spirit IsEnemyVoid_Spirit Chance_30%
-	response earth_spirit_KillIsEnemyVoid_SpiritChance_30%
-}
-
-Response earth_spirit_Move
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_move_01.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_move_02.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_move_03.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_move_04.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_move_05.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_move_06.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_move_07.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_move_08.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_move_09.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_move_10.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_move_11.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_move_12.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_move_13.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_move_14.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_move_15.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_move_16.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_move_17.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_move_18.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_move_19.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_move_20.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_move_21.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_move_22.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_move_23.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_move_24.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_move_25.vcd" nodelay 
-}
-
-Rule earth_spirit_Move_Rule
-{
-	criteria Move Isearth_spirit 
-	response earth_spirit_Move
-}
-
-Response earth_spirit_Attack
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_attack_01.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_attack_03.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_attack_04.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_attack_05.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_attack_06.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_attack_07.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_attack_08.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_attack_10.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_attack_11.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_attack_12.vcd" nodelay 
-}
-
-Rule earth_spirit_Attack_Rule
-{
-	criteria Attack Isearth_spirit 
-	response earth_spirit_Attack
-}
-
-Response earth_spirit_Deny
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_attack_09.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_deny_01.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_deny_02.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_deny_04.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_deny_05.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_deny_06.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_deny_08.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_deny_09.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_deny_10.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_deny_11.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_deny_12.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_deny_13.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_deny_14.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_deny_15.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_deny_16.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_deny_17.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_deny_18.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_deny_19.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_deny_20.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_deny_21.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_deny_22.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_deny_23.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_deny_24.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_deny_25.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_deny_26.vcd" nodelay 
-}
-
-Rule earth_spirit_Deny_Rule
-{
-	criteria Deny Isearth_spirit 
-	response earth_spirit_Deny
-}
-
-Response earth_spirit_CastOrder
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_cast_02.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_cast_03.vcd" nodelay 
-}
-
-Rule earth_spirit_CastOrder_Rule
-{
-	criteria CastOrder Isearth_spirit 
-	response earth_spirit_CastOrder
-}
-
-Response earth_spirit_CastExecuteIsEarthSpiGeoGripChance_75%
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_geomagnetic_02.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_geomagnetic_04.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_geomagnetic_06.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_geomagnetic_07.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_geomagnetic_10.vcd" nodelay 
-}
-
-Rule earth_spirit_CastExecuteIsEarthSpiGeoGripChance_75%_Rule
-{
-	criteria CastExecute Isearth_spirit IsEarthSpiGeoGrip Chance_75%
-	response earth_spirit_CastExecuteIsEarthSpiGeoGripChance_75%
-}
-
-Response earth_spirit_CastExecuteIsEarthSpiGeoGripIsEaSpRockChance_75%
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_geomagnetic_01.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_geomagnetic_07.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_geomagnetic_09.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_geomagnetic_10.vcd" nodelay 
-}
-
-Rule earth_spirit_CastExecuteIsEarthSpiGeoGripIsEaSpRockChance_75%_Rule
-{
-	criteria CastExecute Isearth_spirit IsEarthSpiGeoGrip IsEaSpRock Chance_75%
-	response earth_spirit_CastExecuteIsEarthSpiGeoGripIsEaSpRockChance_75%
-}
-
-Response earth_spirit_CastExecuteIsEarthSpiritEnchRemnantChance_75%
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_stonecaller_07.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_stonecaller_14.vcd" nodelay 
-}
-
-Rule earth_spirit_CastExecuteIsEarthSpiritEnchRemnantChance_75%_Rule
-{
-	criteria CastExecute Isearth_spirit IsEarthSpiritEnchRemnant Chance_75%
-	response earth_spirit_CastExecuteIsEarthSpiritEnchRemnantChance_75%
-}
-
-Response earth_spirit_LevelUp
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_levelup_01.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_levelup_02.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_levelup_03.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_levelup_04.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_levelup_05.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_levelup_06.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_levelup_07.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_levelup_08.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_levelup_09.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_levelup_10.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_levelup_11.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_levelup_12.vcd" nodelay 
-}
-
-Rule earth_spirit_LevelUp_Rule
-{
-	criteria LevelUp Isearth_spirit 
-	response earth_spirit_LevelUp
-}
-
-Response earth_spirit_AllyNearEarlyGameIsAllyStormSpirit
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_ally_01.vcd" nodelay speakonce
-}
-
-Rule earth_spirit_AllyNearEarlyGameIsAllyStormSpirit_Rule
-{
-	criteria AllyNear Isearth_spirit EarlyGame IsAllyStormSpirit
-	response earth_spirit_AllyNearEarlyGameIsAllyStormSpirit
-}
-
-Response earth_spirit_AllyNearEarlyGameIsAllyEmber_Spirit
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_ally_02.vcd" nodelay speakonce
-}
-
-Rule earth_spirit_AllyNearEarlyGameIsAllyEmber_Spirit_Rule
-{
-	criteria AllyNear Isearth_spirit EarlyGame IsAllyEmber_Spirit
-	response earth_spirit_AllyNearEarlyGameIsAllyEmber_Spirit
-}
-
-Response earth_spirit_AllyNearEarlyGameIsAllyBrewmaster
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_ally_03.vcd" nodelay speakonce
-}
-
-Rule earth_spirit_AllyNearEarlyGameIsAllyBrewmaster_Rule
-{
-	criteria AllyNear Isearth_spirit EarlyGame IsAllyBrewmaster
-	response earth_spirit_AllyNearEarlyGameIsAllyBrewmaster
-}
-
-Response earth_spirit_AllyNearEarlyGameIsAllyTreant
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_ally_04.vcd" nodelay speakonce
-}
-
-Rule earth_spirit_AllyNearEarlyGameIsAllyTreant_Rule
-{
-	criteria AllyNear Isearth_spirit EarlyGame IsAllyTreant
-	response earth_spirit_AllyNearEarlyGameIsAllyTreant
-}
-
-Response earth_spirit_AllyNearEarlyGameIsAllySpirit_Breaker
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_ally_06.vcd" nodelay speakonce
-}
-
-Rule earth_spirit_AllyNearEarlyGameIsAllySpirit_Breaker_Rule
-{
-	criteria AllyNear Isearth_spirit EarlyGame IsAllySpirit_Breaker
-	response earth_spirit_AllyNearEarlyGameIsAllySpirit_Breaker
-}
-
-Response earth_spirit_AllyNearEarlyGameIsAllySpirit_BreakerChance_1%
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_ally_07.vcd" nodelay speakonce
-}
-
-Rule earth_spirit_AllyNearEarlyGameIsAllySpirit_BreakerChance_1%_Rule
-{
-	criteria AllyNear Isearth_spirit EarlyGame IsAllySpirit_Breaker Chance_1%
-	response earth_spirit_AllyNearEarlyGameIsAllySpirit_BreakerChance_1%
-}
-
-Response earth_spirit_AllyNearEarlyGameIsAllyTinyChance_30%
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_ally_08.vcd" nodelay speakonce
-	scene "scenes/earth_spirit/earth_spirit_earthspi_ally_09.vcd" nodelay speakonce
-	scene "scenes/earth_spirit/earth_spirit_earthspi_ally_10.vcd" nodelay speakonce
-}
-
-Rule earth_spirit_AllyNearEarlyGameIsAllyTinyChance_30%_Rule
-{
-	criteria AllyNear Isearth_spirit EarlyGame IsAllyTiny Chance_30%
-	response earth_spirit_AllyNearEarlyGameIsAllyTinyChance_30%
-}
-
-Response earth_spirit_AllyNearEarlyGameIsAllyElder_Titan
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_ally_11.vcd" nodelay speakonce
-}
-
-Rule earth_spirit_AllyNearEarlyGameIsAllyElder_Titan_Rule
-{
-	criteria AllyNear Isearth_spirit EarlyGame IsAllyElder_Titan
-	response earth_spirit_AllyNearEarlyGameIsAllyElder_Titan
-}
-
-Response earth_spirit_AllyNearEarlyGameIsAllyWisp
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_ally_12.vcd" nodelay speakonce
-}
-
-Rule earth_spirit_AllyNearEarlyGameIsAllyWisp_Rule
-{
-	criteria AllyNear Isearth_spirit EarlyGame IsAllyWisp
-	response earth_spirit_AllyNearEarlyGameIsAllyWisp
-}
-
-Response earth_spirit_AllyNearEarlyGameIsAllyTusk
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_ally_13.vcd" nodelay speakonce
-}
-
-Rule earth_spirit_AllyNearEarlyGameIsAllyTusk_Rule
-{
-	criteria AllyNear Isearth_spirit EarlyGame IsAllyTusk
-	response earth_spirit_AllyNearEarlyGameIsAllyTusk
-}
-
-Response earth_spirit_AllyNearEarlyGameIsAllyFurionChance_30%
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_ally_14.vcd" nodelay speakonce
-	scene "scenes/earth_spirit/earth_spirit_earthspi_ally_15.vcd" nodelay speakonce
-}
-
-Rule earth_spirit_AllyNearEarlyGameIsAllyFurionChance_30%_Rule
-{
-	criteria AllyNear Isearth_spirit EarlyGame IsAllyFurion Chance_30%
-	response earth_spirit_AllyNearEarlyGameIsAllyFurionChance_30%
-}
-
-Response earth_spirit_AllyNearEarlyGameIsAllySniper
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_ally_16.vcd" nodelay speakonce
-}
-
-Rule earth_spirit_AllyNearEarlyGameIsAllySniper_Rule
-{
-	criteria AllyNear Isearth_spirit EarlyGame IsAllySniper
-	response earth_spirit_AllyNearEarlyGameIsAllySniper
-}
-
-Response earth_spirit_AllyNearEarlyGameIsAllyRattletrap
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_ally_17.vcd" nodelay speakonce
-}
-
-Rule earth_spirit_AllyNearEarlyGameIsAllyRattletrap_Rule
-{
-	criteria AllyNear Isearth_spirit EarlyGame IsAllyRattletrap
-	response earth_spirit_AllyNearEarlyGameIsAllyRattletrap
-}
-
-Response earth_spirit_AllyNearEarlyGameIsAllyTinker
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_ally_18.vcd" nodelay speakonce
-}
-
-Rule earth_spirit_AllyNearEarlyGameIsAllyTinker_Rule
-{
-	criteria AllyNear Isearth_spirit EarlyGame IsAllyTinker
-	response earth_spirit_AllyNearEarlyGameIsAllyTinker
-}
-
-Response earth_spirit_AllyNearEarlyGameIsAllyUrsa
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_ally_19.vcd" nodelay speakonce
-}
-
-Rule earth_spirit_AllyNearEarlyGameIsAllyUrsa_Rule
-{
-	criteria AllyNear Isearth_spirit EarlyGame IsAllyUrsa
-	response earth_spirit_AllyNearEarlyGameIsAllyUrsa
-}
-
-Response earth_spirit_AllyNearEarlyGameIsAllyEnchantressChance_30%
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_ally_20.vcd" nodelay speakonce
-	scene "scenes/earth_spirit/earth_spirit_earthspi_ally_21.vcd" nodelay speakonce
-}
-
-Rule earth_spirit_AllyNearEarlyGameIsAllyEnchantressChance_30%_Rule
-{
-	criteria AllyNear Isearth_spirit EarlyGame IsAllyEnchantress Chance_30%
-	response earth_spirit_AllyNearEarlyGameIsAllyEnchantressChance_30%
-}
-
-Response earth_spirit_AllyNearEarlyGameIsAllyLone_Druid
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_ally_22.vcd" nodelay speakonce
-}
-
-Rule earth_spirit_AllyNearEarlyGameIsAllyLone_Druid_Rule
-{
-	criteria AllyNear Isearth_spirit EarlyGame IsAllyLone_Druid
-	response earth_spirit_AllyNearEarlyGameIsAllyLone_Druid
-}
-
-Response earth_spirit_AllyNearEarlyGameIsAllyShredderChance_30%
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_ally_23.vcd" nodelay speakonce
-	scene "scenes/earth_spirit/earth_spirit_earthspi_ally_24.vcd" nodelay speakonce
-}
-
-Rule earth_spirit_AllyNearEarlyGameIsAllyShredderChance_30%_Rule
-{
-	criteria AllyNear Isearth_spirit EarlyGame IsAllyShredder Chance_30%
-	response earth_spirit_AllyNearEarlyGameIsAllyShredderChance_30%
-}
-
-Response earth_spirit_AllyNearEarlyGameIsAllyEnigma
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_ally_25.vcd" nodelay speakonce
-}
-
-Rule earth_spirit_AllyNearEarlyGameIsAllyEnigma_Rule
-{
-	criteria AllyNear Isearth_spirit EarlyGame IsAllyEnigma
-	response earth_spirit_AllyNearEarlyGameIsAllyEnigma
-}
-
-Response earth_spirit_AllyNearEarlyGameIsAllyVoid_SpiritChance_30%
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_ally_26.vcd" nodelay speakonce
-	scene "scenes/earth_spirit/earth_spirit_earthspi_ally_27.vcd" nodelay speakonce
-}
-
-Rule earth_spirit_AllyNearEarlyGameIsAllyVoid_SpiritChance_30%_Rule
-{
-	criteria AllyNear Isearth_spirit EarlyGame IsAllyVoid_Spirit Chance_30%
-	response earth_spirit_AllyNearEarlyGameIsAllyVoid_SpiritChance_30%
-}
-
-Response earth_spirit_LastHit
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_lasthit_01.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_lasthit_02.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_lasthit_03.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_lasthit_04.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_lasthit_05.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_lasthit_06.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_lasthit_07.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_lasthit_08.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_lasthit_09.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_lasthit_10.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_lasthit_11.vcd" nodelay 
-}
-
-Rule earth_spirit_LastHit_Rule
-{
-	criteria LastHit Isearth_spirit 
-	response earth_spirit_LastHit
-}
-
-Response earth_spirit_Death
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_death_01.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_death_02.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_death_03.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_death_04.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_death_05.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_death_07.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_death_08.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_death_09.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_death_10.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_death_11.vcd" nodelay 
-}
-
-Rule earth_spirit_Death_Rule
-{
-	criteria Death Isearth_spirit 
-	response earth_spirit_Death
-}
-
-Response earth_spirit_DeathIsReincarnating
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_fastres_01.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_fastres_02.vcd" nodelay 
-}
-
-Rule earth_spirit_DeathIsReincarnating_Rule
-{
-	criteria Death Isearth_spirit IsReincarnating
-	response earth_spirit_DeathIsReincarnating
-}
-
-Response earth_spirit_Respawn
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_respawn_01.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_respawn_02.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_respawn_03.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_respawn_04.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_respawn_05.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_respawn_06.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_respawn_07.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_respawn_08.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_respawn_09.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_respawn_10.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_respawn_11.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_respawn_12.vcd" nodelay 
-}
-
-Rule earth_spirit_Respawn_Rule
-{
-	criteria Respawn Isearth_spirit 
-	response earth_spirit_Respawn
-}
-
-Response earth_spirit_PurchaseIsExpensiveItem
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_purch_01.vcd" nodelay speakonce
-	scene "scenes/earth_spirit/earth_spirit_earthspi_purch_02.vcd" nodelay speakonce
-	scene "scenes/earth_spirit/earth_spirit_earthspi_purch_03.vcd" nodelay speakonce
-}
-
-Rule earth_spirit_PurchaseIsExpensiveItem_Rule
-{
-	criteria Purchase Isearth_spirit IsExpensiveItem
-	response earth_spirit_PurchaseIsExpensiveItem
-}
-
-Response earth_spirit_PurchaseIsUltimateScepter
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_scepter_01.vcd" nodelay speakonce
-	scene "scenes/earth_spirit/earth_spirit_earthspi_scepter_02.vcd" nodelay speakonce
-}
-
-Rule earth_spirit_PurchaseIsUltimateScepter_Rule
-{
-	criteria Purchase Isearth_spirit IsUltimateScepter
-	response earth_spirit_PurchaseIsUltimateScepter
-}
-
-Response earth_spirit_PurchaseIsBlinkDagger
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_blink_01.vcd" nodelay speakonce
-	scene "scenes/earth_spirit/earth_spirit_earthspi_blink_02.vcd" nodelay speakonce
-}
-
-Rule earth_spirit_PurchaseIsBlinkDagger_Rule
-{
-	criteria Purchase Isearth_spirit IsBlinkDagger
-	response earth_spirit_PurchaseIsBlinkDagger
-}
-
-Response earth_spirit_PurchaseIsHeart
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_items_01.vcd" nodelay speakonce
-}
-
-Rule earth_spirit_PurchaseIsHeart_Rule
-{
-	criteria Purchase Isearth_spirit IsHeart
-	response earth_spirit_PurchaseIsHeart
-}
-
-Response earth_spirit_PurchaseIsShiva
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_items_02.vcd" nodelay speakonce
-}
-
-Rule earth_spirit_PurchaseIsShiva_Rule
-{
-	criteria Purchase Isearth_spirit IsShiva
-	response earth_spirit_PurchaseIsShiva
-}
-
-Response earth_spirit_PurchaseIsBloodStone
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_items_03.vcd" nodelay speakonce
-}
-
-Rule earth_spirit_PurchaseIsBloodStone_Rule
-{
-	criteria Purchase Isearth_spirit IsBloodStone
-	response earth_spirit_PurchaseIsBloodStone
-}
-
-Response earth_spirit_PurchaseIsAssaultCuirass
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_items_04.vcd" nodelay speakonce
-}
-
-Rule earth_spirit_PurchaseIsAssaultCuirass_Rule
-{
-	criteria Purchase Isearth_spirit IsAssaultCuirass
-	response earth_spirit_PurchaseIsAssaultCuirass
-}
-
-Response earth_spirit_PurchaseIsBlackKingBar
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_items_05.vcd" nodelay speakonce
-}
-
-Rule earth_spirit_PurchaseIsBlackKingBar_Rule
-{
-	criteria Purchase Isearth_spirit IsBlackKingBar
-	response earth_spirit_PurchaseIsBlackKingBar
-}
-
-Response earth_spirit_PurchaseIsBattleFury
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_items_06.vcd" nodelay speakonce
-	scene "scenes/earth_spirit/earth_spirit_earthspi_items_16.vcd" nodelay speakonce
-}
-
-Rule earth_spirit_PurchaseIsBattleFury_Rule
-{
-	criteria Purchase Isearth_spirit IsBattleFury
-	response earth_spirit_PurchaseIsBattleFury
-}
-
-Response earth_spirit_PurchaseIsBladeMail
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_items_07.vcd" nodelay speakonce
-}
-
-Rule earth_spirit_PurchaseIsBladeMail_Rule
-{
-	criteria Purchase Isearth_spirit IsBladeMail
-	response earth_spirit_PurchaseIsBladeMail
-}
-
-Response earth_spirit_PurchaseIsSangeAndYasha
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_items_08.vcd" nodelay speakonce
-}
-
-Rule earth_spirit_PurchaseIsSangeAndYasha_Rule
-{
-	criteria Purchase Isearth_spirit IsSangeAndYasha
-	response earth_spirit_PurchaseIsSangeAndYasha
-}
-
-Response earth_spirit_PurchaseIsInvisSword
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_items_09.vcd" nodelay speakonce
-}
-
-Rule earth_spirit_PurchaseIsInvisSword_Rule
-{
-	criteria Purchase Isearth_spirit IsInvisSword
-	response earth_spirit_PurchaseIsInvisSword
-}
-
-Response earth_spirit_PurchaseIsUrnOfShadows
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_items_10.vcd" nodelay speakonce
-}
-
-Rule earth_spirit_PurchaseIsUrnOfShadows_Rule
-{
-	criteria Purchase Isearth_spirit IsUrnOfShadows
-	response earth_spirit_PurchaseIsUrnOfShadows
-}
-
-Response earth_spirit_PurchaseIsPipe
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_items_11.vcd" nodelay speakonce
-}
-
-Rule earth_spirit_PurchaseIsPipe_Rule
-{
-	criteria Purchase Isearth_spirit IsPipe
-	response earth_spirit_PurchaseIsPipe
-}
-
-Response earth_spirit_PurchaseIsVanguard
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_items_12.vcd" nodelay speakonce
-	scene "scenes/earth_spirit/earth_spirit_earthspi_items_17.vcd" nodelay speakonce
-}
-
-Rule earth_spirit_PurchaseIsVanguard_Rule
-{
-	criteria Purchase Isearth_spirit IsVanguard
-	response earth_spirit_PurchaseIsVanguard
-}
-
-Response earth_spirit_PurchaseIsMekansm
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_items_13.vcd" nodelay speakonce
-}
-
-Rule earth_spirit_PurchaseIsMekansm_Rule
-{
-	criteria Purchase Isearth_spirit IsMekansm
-	response earth_spirit_PurchaseIsMekansm
-}
-
-Response earth_spirit_PurchaseIsVladmirs
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_items_14.vcd" nodelay speakonce
-}
-
-Rule earth_spirit_PurchaseIsVladmirs_Rule
-{
-	criteria Purchase Isearth_spirit IsVladmirs
-	response earth_spirit_PurchaseIsVladmirs
-}
-
-Response earth_spirit_PurchaseIsVeilofDiscord
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_items_15.vcd" nodelay speakonce
-	scene "scenes/earth_spirit/earth_spirit_earthspi_items_19.vcd" nodelay speakonce
-}
-
-Rule earth_spirit_PurchaseIsVeilofDiscord_Rule
-{
-	criteria Purchase Isearth_spirit IsVeilofDiscord
-	response earth_spirit_PurchaseIsVeilofDiscord
-}
-
-Response earth_spirit_Bottling
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_bottle_01.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_bottle_02.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_bottle_03.vcd" nodelay 
-}
-
-Rule earth_spirit_Bottling_Rule
-{
-	criteria Bottling Isearth_spirit 
-	response earth_spirit_Bottling
-}
-
-Response earth_spirit_MissingIsLaneTop
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_lanemissing_01.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_lanemissing_02.vcd" nodelay 
-}
-
-Rule earth_spirit_MissingIsLaneTop_Rule
-{
-	criteria Missing Isearth_spirit IsLaneTop
-	response earth_spirit_MissingIsLaneTop
-}
-
-Response earth_spirit_MissingIsLaneMid
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_lanemissing_03.vcd" nodelay 
-}
-
-Rule earth_spirit_MissingIsLaneMid_Rule
-{
-	criteria Missing Isearth_spirit IsLaneMid
-	response earth_spirit_MissingIsLaneMid
-}
-
-Response earth_spirit_MissingIsLaneBot
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_lanemissing_04.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_lanemissing_05.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_lanemissing_06.vcd" nodelay 
-}
-
-Rule earth_spirit_MissingIsLaneBot_Rule
-{
-	criteria Missing Isearth_spirit IsLaneBot
-	response earth_spirit_MissingIsLaneBot
-}
-
-Response earth_spirit_ItemDropIsCommonDrop
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_itemcommon_01.vcd" nodelay 
-}
-
-Rule earth_spirit_ItemDropIsCommonDrop_Rule
-{
-	criteria ItemDrop Isearth_spirit IsCommonDrop
-	response earth_spirit_ItemDropIsCommonDrop
-}
-
-Response earth_spirit_ItemDropIsRareDrop
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_itemmoderate_01.vcd" nodelay 
-}
-
-Rule earth_spirit_ItemDropIsRareDrop_Rule
-{
-	criteria ItemDrop Isearth_spirit IsRareDrop
-	response earth_spirit_ItemDropIsRareDrop
-}
-
-Response earth_spirit_ItemDropIsUltraRareDrop
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_itemrare_01.vcd" nodelay 
-}
-
-Rule earth_spirit_ItemDropIsUltraRareDrop_Rule
-{
-	criteria ItemDrop Isearth_spirit IsUltraRareDrop
-	response earth_spirit_ItemDropIsUltraRareDrop
-}
-
-Response earth_spirit_Immortality
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_immort_01.vcd" nodelay 
-}
-
-Rule earth_spirit_Immortality_Rule
-{
-	criteria Immortality Isearth_spirit 
-	response earth_spirit_Immortality
-}
-
-Response earth_spirit_ImmortalityChance_25%
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_immort_02.vcd" nodelay 
-}
-
-Rule earth_spirit_ImmortalityChance_25%_Rule
-{
-	criteria Immortality Isearth_spirit Chance_25%
-	response earth_spirit_ImmortalityChance_25%
-}
-
-Response earth_spirit_PowerupIsPowerupHaste
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_haste_01.vcd" nodelay 
-}
-
-Rule earth_spirit_PowerupIsPowerupHaste_Rule
-{
-	criteria Powerup Isearth_spirit IsPowerupHaste
-	response earth_spirit_PowerupIsPowerupHaste
-}
-
-Response earth_spirit_PowerupIsPowerupHasteChance_25%
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_haste_02.vcd" nodelay 
-}
-
-Rule earth_spirit_PowerupIsPowerupHasteChance_25%_Rule
-{
-	criteria Powerup Isearth_spirit IsPowerupHaste Chance_25%
-	response earth_spirit_PowerupIsPowerupHasteChance_25%
-}
-
-Response earth_spirit_PowerupIsPowerupArcane
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_arcane_01.vcd" nodelay respeakdelay 360
-	scene "scenes/earth_spirit/earth_spirit_earthspi_itemrare_01.vcd" nodelay respeakdelay 300
-}
-
-Rule earth_spirit_PowerupIsPowerupArcane_Rule
-{
-	criteria Powerup Isearth_spirit IsPowerupArcane
-	response earth_spirit_PowerupIsPowerupArcane
-}
-
-Response earth_spirit_PowerupIsPowerupBounty
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_bounty_01.vcd" nodelay respeakdelay 120
-	scene "scenes/earth_spirit/earth_spirit_earthspi_bounty_02.vcd" nodelay respeakdelay 120
-	scene "scenes/earth_spirit/earth_spirit_earthspi_itemmoderate_01.vcd" nodelay respeakdelay 300
-}
-
-Rule earth_spirit_PowerupIsPowerupBounty_Rule
-{
-	criteria Powerup Isearth_spirit IsPowerupBounty
-	response earth_spirit_PowerupIsPowerupBounty
-}
-
-Response earth_spirit_PowerupIsPowerupDoubleDamage
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_doubdam_01.vcd" nodelay 
-}
-
-Rule earth_spirit_PowerupIsPowerupDoubleDamage_Rule
-{
-	criteria Powerup Isearth_spirit IsPowerupDoubleDamage
-	response earth_spirit_PowerupIsPowerupDoubleDamage
-}
-
-Response earth_spirit_PowerupIsPowerupDoubleDamageChance_25%
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_doubdam_02.vcd" nodelay 
-}
-
-Rule earth_spirit_PowerupIsPowerupDoubleDamageChance_25%_Rule
-{
-	criteria Powerup Isearth_spirit IsPowerupDoubleDamage Chance_25%
-	response earth_spirit_PowerupIsPowerupDoubleDamageChance_25%
-}
-
-Response earth_spirit_PowerupIsPowerupRegeneration
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_regen_01.vcd" nodelay 
-}
-
-Rule earth_spirit_PowerupIsPowerupRegeneration_Rule
-{
-	criteria Powerup Isearth_spirit IsPowerupRegeneration
-	response earth_spirit_PowerupIsPowerupRegeneration
-}
-
-Response earth_spirit_PowerupIsPowerupRegenerationChance_25%
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_regen_02.vcd" nodelay 
-}
-
-Rule earth_spirit_PowerupIsPowerupRegenerationChance_25%_Rule
-{
-	criteria Powerup Isearth_spirit IsPowerupRegeneration Chance_25%
-	response earth_spirit_PowerupIsPowerupRegenerationChance_25%
-}
-
-Response earth_spirit_PowerupIsPowerupIllusion
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_illus_01.vcd" nodelay 
-}
-
-Rule earth_spirit_PowerupIsPowerupIllusion_Rule
-{
-	criteria Powerup Isearth_spirit IsPowerupIllusion
-	response earth_spirit_PowerupIsPowerupIllusion
-}
-
-Response earth_spirit_PowerupIsPowerupInvisibility
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_invis_01.vcd" nodelay 
-}
-
-Rule earth_spirit_PowerupIsPowerupInvisibility_Rule
-{
-	criteria Powerup Isearth_spirit IsPowerupInvisibility
-	response earth_spirit_PowerupIsPowerupInvisibility
-}
-
-Response earth_spirit_PowerupIsPowerupInvisibilityChance_25%
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_invis_02.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_invis_03.vcd" nodelay 
-}
-
-Rule earth_spirit_PowerupIsPowerupInvisibilityChance_25%_Rule
-{
-	criteria Powerup Isearth_spirit IsPowerupInvisibility Chance_25%
-	response earth_spirit_PowerupIsPowerupInvisibilityChance_25%
-}
-
-Response earth_spirit_CooldownLittleNag
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_notyet_01.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_notyet_04.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_notyet_07.vcd" nodelay 
-}
-
-Rule earth_spirit_CooldownLittleNag_Rule
-{
-	criteria Cooldown Isearth_spirit LittleNag
-	response earth_spirit_CooldownLittleNag
-}
-
-Response earth_spirit_CooldownMediumNag
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_notyet_02.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_notyet_05.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_notyet_08.vcd" nodelay 
-}
-
-Rule earth_spirit_CooldownMediumNag_Rule
-{
-	criteria Cooldown Isearth_spirit MediumNag
-	response earth_spirit_CooldownMediumNag
-}
-
-Response earth_spirit_CooldownSuperNag
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_notyet_03.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_notyet_06.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_notyet_09.vcd" nodelay 
-}
-
-Rule earth_spirit_CooldownSuperNag_Rule
-{
-	criteria Cooldown Isearth_spirit SuperNag
-	response earth_spirit_CooldownSuperNag
-}
-
-Response earth_spirit_NoManaLittleNag
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_nomana_01.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_nomana_04.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_nomana_07.vcd" nodelay 
-}
-
-Rule earth_spirit_NoManaLittleNag_Rule
-{
-	criteria NoMana Isearth_spirit LittleNag
-	response earth_spirit_NoManaLittleNag
-}
-
-Response earth_spirit_NoManaMediumNag
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_nomana_02.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_nomana_05.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_nomana_08.vcd" nodelay 
-}
-
-Rule earth_spirit_NoManaMediumNag_Rule
-{
-	criteria NoMana Isearth_spirit MediumNag
-	response earth_spirit_NoManaMediumNag
-}
-
-Response earth_spirit_NoManaSuperNag
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_nomana_03.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_nomana_06.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_nomana_09.vcd" nodelay 
-}
-
-Rule earth_spirit_NoManaSuperNag_Rule
-{
-	criteria NoMana Isearth_spirit SuperNag
-	response earth_spirit_NoManaSuperNag
-}
-
-Response earth_spirit_Thanks
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_thanks_01.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_thanks_02.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_thanks_03.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_thanks_04.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_thanks_06.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_thanks_07.vcd" nodelay 
-}
-
-Rule earth_spirit_Thanks_Rule
-{
-	criteria Thanks Isearth_spirit 
-	response earth_spirit_Thanks
-}
-
-Response earth_spirit_ThanksChance_1%
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_thanks_05.vcd" nodelay 
-}
-
-Rule earth_spirit_ThanksChance_1%_Rule
-{
-	criteria Thanks Isearth_spirit Chance_1%
-	response earth_spirit_ThanksChance_1%
-}
-
-Response earth_spirit_PainChance_25%
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_underattack_01.vcd" nodelay respeakdelay 120
-}
-
-Rule earth_spirit_PainChance_25%_Rule
-{
-	criteria Pain Isearth_spirit Chance_25%
-	response earth_spirit_PainChance_25%
-}
-
-Response earth_spirit_Pain
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_pain_01.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_pain_02.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_pain_03.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_pain_04.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_pain_05.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_pain_06.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_pain_07.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_pain_08.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_pain_09.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_pain_10.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_pain_11.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_pain_12.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_pain_13.vcd" nodelay 
-}
-
-Rule earth_spirit_Pain_Rule
-{
-	criteria Pain Isearth_spirit 
-	response earth_spirit_Pain
-}
-
-Response earth_spirit_InTheBag
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_inthebag_01.vcd" nodelay 
-}
-
-Rule earth_spirit_InTheBag_Rule
-{
-	criteria InTheBag Isearth_spirit 
-	response earth_spirit_InTheBag
-}
-
-Response earth_spirit_Defeat
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_lose_01.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_lose_02.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_lose_03.vcd" nodelay 
-}
-
-Rule earth_spirit_Defeat_Rule
-{
-	criteria Defeat Isearth_spirit 
-	response earth_spirit_Defeat
-}
-
-Response earth_spirit_Victory
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_win_01.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_win_02.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_win_03.vcd" nodelay 
-}
-
-Rule earth_spirit_Victory_Rule
-{
-	criteria Victory Isearth_spirit 
-	response earth_spirit_Victory
-}
-
-Response earth_spirit_EmoteIsEmoteLaugh
-{
-	scene "scenes/earth_spirit/earth_spirit_earthspi_laugh_01.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_laugh_02.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_laugh_03.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_laugh_04.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_laugh_05.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_laugh_06.vcd" nodelay 
-	scene "scenes/earth_spirit/earth_spirit_earthspi_laugh_07.vcd" nodelay 
-}
-
-Rule earth_spirit_EmoteIsEmoteLaugh_Rule
-{
-	criteria Emote Isearth_spirit IsEmoteLaugh
-	response earth_spirit_EmoteIsEmoteLaugh
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vrfunknown:version{c1f07085-5299-4e8a-b7e9-1cbb66bbbe23} -->
+{
+	m_Includes = 
+	[
+		"scripts/talker/response_rules_shared.vrr",
+	]
+	m_ResponseGroups = 
+	[
+		
+		{
+			m_name = "earth_spirit_Spawn"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_spawn_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_spawn_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_spawn_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_spawn_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_spawn_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_spawn_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_spawn_07.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_CustomIsGameStart"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_battlebegins_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_battlebegins_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_CustomIsEarthSpiStoneRemnant"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_stonecaller_05.vcd"
+					m_params = 
+					{
+						m_weapondelay.start = 5.000000
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_stonecaller_10.vcd"
+					m_params = 
+					{
+						m_weapondelay.start = 5.000000
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_stonecaller_11.vcd"
+					m_params = 
+					{
+						m_weapondelay.start = 5.000000
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_stonecaller_12.vcd"
+					m_params = 
+					{
+						m_weapondelay.start = 5.000000
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_stonecaller_07.vcd"
+					m_params = 
+					{
+						m_weapondelay.start = 5.000000
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_stonecaller_14.vcd"
+					m_params = 
+					{
+						m_weapondelay.start = 5.000000
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_happy_03.vcd"
+					m_params = 
+					{
+						m_weapondelay.start = 5.000000
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_happy_04.vcd"
+					m_params = 
+					{
+						m_weapondelay.start = 5.000000
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_happy_05.vcd"
+					m_params = 
+					{
+						m_weapondelay.start = 5.000000
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_CustomIsEarthSpiLoadoutSpawn"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_spawn_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_spawn_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_spawn_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_spawn_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_spawn_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_spawn_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_spawn_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_battlebegins_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_levelup_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_respawn_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_battlebegins_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_move_11.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_KillIsFirstBloodChance_10%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_firstblood_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_firstblood_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_KillIsFirstBlood"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_firstblood_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_KillIsEarthSpiBoulderSmashChance_20%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_bouldersmash_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_bouldersmash_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_bouldersmash_07.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_KillIsEarthSpiGeoGrip"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_geomagnetic_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_geomagnetic_08.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_KillIsEarthSpiRollingBoulderChance_20%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_geomagnetic_05.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_Kill"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_magnetize_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_magnetize_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_magnetize_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_kill_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_kill_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_kill_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_kill_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_kill_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_kill_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_kill_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_kill_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_kill_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_kill_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_kill_12.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_kill_13.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_kill_14.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_kill_15.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_kill_16.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_kill_17.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_kill_18.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_kill_19.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_kill_20.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_laugh_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_laugh_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_laugh_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_laugh_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_laugh_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_laugh_07.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_KillIsEnemyEmber_SpiritChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_rival_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_rival_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_KillIsEnemyStormSpiritChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_rival_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_KillIsEnemyBrewmasterChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_rival_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_rival_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_rival_05.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_KillIsEnemyTreantChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_rival_06.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_KillIsEnemyTinyChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_rival_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_rival_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_rival_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_rival_10.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_KillIsEnemyElder_TitanChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_rival_11.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_KillIsEnemyChaos_KnightChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_rival_12.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_rival_13.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_KillIsEnemyWispChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_rival_15.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_KillIsEnemyTerrorbladeChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_rival_16.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_rival_17.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_KillIsEnemyTuskChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_rival_18.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_KillIsEnemyKunkkaChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_rival_19.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_rival_20.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_KillIsEnemyViperChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_rival_21.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_KillIsEnemySandKingChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_rival_22.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_KillIsEnemyEnigmaChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_rival_23.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_KillIsEnemyFurionChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_rival_24.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_rival_25.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_rival_26.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_rival_27.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_KillIsEnemyGyrocopterChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_rival_28.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_KillIsEnemyShadowShamanChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_rival_29.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_rival_30.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_KillIsEnemyEnchantressChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_rival_31.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_rival_32.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_KillIsEnemyUndyingChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_rival_34.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_rival_35.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_rival_36.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_KillIsEnemyWeaverChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_rival_37.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_KillIsEnemyUrsaChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_rival_38.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_KillIsEnemyShredderChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_rival_39.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_rival_40.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_rival_41.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_KillIsEnemyKeeper_of_the_LightChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_rival_42.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_KillIsEnemyBroodmotherChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_rival_43.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_KillIsEnemyVoid_SpiritChance_30%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_rival_void_01.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_rival_void_02.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_Move"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_move_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_move_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_move_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_move_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_move_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_move_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_move_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_move_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_move_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_move_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_move_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_move_12.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_move_13.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_move_14.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_move_15.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_move_16.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_move_17.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_move_18.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_move_19.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_move_20.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_move_21.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_move_22.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_move_23.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_move_24.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_move_25.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_Attack"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_attack_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_attack_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_attack_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_attack_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_attack_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_attack_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_attack_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_attack_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_attack_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_attack_12.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_Deny"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_attack_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_deny_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_deny_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_deny_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_deny_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_deny_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_deny_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_deny_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_deny_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_deny_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_deny_12.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_deny_13.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_deny_14.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_deny_15.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_deny_16.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_deny_17.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_deny_18.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_deny_19.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_deny_20.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_deny_21.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_deny_22.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_deny_23.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_deny_24.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_deny_25.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_deny_26.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_CastOrder"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_cast_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_cast_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_CastExecuteIsEarthSpiGeoGripChance_75%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_geomagnetic_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_geomagnetic_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_geomagnetic_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_geomagnetic_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_geomagnetic_10.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_CastExecuteIsEarthSpiGeoGripIsEaSpRockChance_75%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_geomagnetic_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_geomagnetic_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_geomagnetic_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_geomagnetic_10.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_CastExecuteIsEarthSpiritEnchRemnantChance_75%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_stonecaller_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_stonecaller_14.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_LevelUp"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_levelup_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_levelup_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_levelup_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_levelup_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_levelup_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_levelup_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_levelup_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_levelup_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_levelup_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_levelup_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_levelup_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_levelup_12.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_AllyNearEarlyGameIsAllyStormSpirit"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_ally_01.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_AllyNearEarlyGameIsAllyEmber_Spirit"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_ally_02.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_AllyNearEarlyGameIsAllyBrewmaster"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_ally_03.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_AllyNearEarlyGameIsAllyTreant"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_ally_04.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_AllyNearEarlyGameIsAllySpirit_Breaker"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_ally_06.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_AllyNearEarlyGameIsAllySpirit_BreakerChance_1%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_ally_07.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_AllyNearEarlyGameIsAllyTinyChance_30%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_ally_08.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_ally_09.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_ally_10.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_AllyNearEarlyGameIsAllyElder_Titan"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_ally_11.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_AllyNearEarlyGameIsAllyWisp"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_ally_12.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_AllyNearEarlyGameIsAllyTusk"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_ally_13.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_AllyNearEarlyGameIsAllyFurionChance_30%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_ally_14.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_ally_15.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_AllyNearEarlyGameIsAllySniper"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_ally_16.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_AllyNearEarlyGameIsAllyRattletrap"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_ally_17.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_AllyNearEarlyGameIsAllyTinker"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_ally_18.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_AllyNearEarlyGameIsAllyUrsa"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_ally_19.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_AllyNearEarlyGameIsAllyEnchantressChance_30%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_ally_20.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_ally_21.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_AllyNearEarlyGameIsAllyLone_Druid"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_ally_22.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_AllyNearEarlyGameIsAllyShredderChance_30%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_ally_23.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_ally_24.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_AllyNearEarlyGameIsAllyEnigma"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_ally_25.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_AllyNearEarlyGameIsAllyVoid_SpiritChance_30%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_ally_26.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_ally_27.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_LastHit"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_lasthit_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_lasthit_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_lasthit_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_lasthit_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_lasthit_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_lasthit_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_lasthit_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_lasthit_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_lasthit_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_lasthit_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_lasthit_11.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_Death"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_death_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_death_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_death_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_death_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_death_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_death_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_death_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_death_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_death_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_death_11.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_DeathIsReincarnating"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_fastres_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_fastres_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_Respawn"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_respawn_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_respawn_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_respawn_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_respawn_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_respawn_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_respawn_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_respawn_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_respawn_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_respawn_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_respawn_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_respawn_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_respawn_12.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_PurchaseIsExpensiveItem"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_purch_01.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_purch_02.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_purch_03.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_PurchaseIsUltimateScepter"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_scepter_01.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_scepter_02.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_PurchaseIsBlinkDagger"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_blink_01.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_blink_02.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_PurchaseIsHeart"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_items_01.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_PurchaseIsShiva"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_items_02.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_PurchaseIsBloodStone"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_items_03.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_PurchaseIsAssaultCuirass"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_items_04.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_PurchaseIsBlackKingBar"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_items_05.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_PurchaseIsBattleFury"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_items_06.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_items_16.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_PurchaseIsBladeMail"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_items_07.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_PurchaseIsSangeAndYasha"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_items_08.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_PurchaseIsInvisSword"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_items_09.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_PurchaseIsUrnOfShadows"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_items_10.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_PurchaseIsPipe"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_items_11.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_PurchaseIsVanguard"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_items_12.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_items_17.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_PurchaseIsMekansm"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_items_13.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_PurchaseIsVladmirs"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_items_14.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_PurchaseIsVeilofDiscord"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_items_15.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_items_19.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_Bottling"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_bottle_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_bottle_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_bottle_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_MissingIsLaneTop"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_lanemissing_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_lanemissing_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_MissingIsLaneMid"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_lanemissing_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_MissingIsLaneBot"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_lanemissing_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_lanemissing_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_lanemissing_06.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_ItemDropIsCommonDrop"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_itemcommon_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_ItemDropIsRareDrop"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_itemmoderate_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_ItemDropIsUltraRareDrop"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_itemrare_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_Immortality"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_immort_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_ImmortalityChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_immort_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_PowerupIsPowerupHaste"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_haste_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_PowerupIsPowerupHasteChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_haste_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_PowerupIsPowerupArcane"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_arcane_01.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 360.000000
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_itemrare_01.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 300.000000
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_PowerupIsPowerupBounty"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_bounty_01.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 120.000000
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_bounty_02.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 120.000000
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_itemmoderate_01.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 300.000000
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_PowerupIsPowerupDoubleDamage"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_doubdam_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_PowerupIsPowerupDoubleDamageChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_doubdam_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_PowerupIsPowerupRegeneration"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_regen_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_PowerupIsPowerupRegenerationChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_regen_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_PowerupIsPowerupIllusion"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_illus_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_PowerupIsPowerupInvisibility"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_invis_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_PowerupIsPowerupInvisibilityChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_invis_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_invis_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_CooldownLittleNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_notyet_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_notyet_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_notyet_07.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_CooldownMediumNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_notyet_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_notyet_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_notyet_08.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_CooldownSuperNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_notyet_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_notyet_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_notyet_09.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_NoManaLittleNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_nomana_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_nomana_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_nomana_07.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_NoManaMediumNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_nomana_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_nomana_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_nomana_08.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_NoManaSuperNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_nomana_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_nomana_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_nomana_09.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_Thanks"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_thanks_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_thanks_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_thanks_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_thanks_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_thanks_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_thanks_07.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_ThanksChance_1%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_thanks_05.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_PainChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_underattack_01.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 120.000000
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_Pain"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_pain_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_pain_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_pain_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_pain_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_pain_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_pain_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_pain_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_pain_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_pain_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_pain_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_pain_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_pain_12.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_pain_13.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_InTheBag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_inthebag_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_Defeat"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_lose_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_lose_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_lose_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_Victory"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_win_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_win_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_win_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_EmoteIsEmoteLaugh"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_laugh_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_laugh_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_laugh_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_laugh_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_laugh_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_laugh_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/earth_spirit/earth_spirit_earthspi_laugh_07.vcd"
+				},
+			]
+		},
+	]
+	m_Requirements = 
+	[
+		
+		{
+			m_name = "Isearth_spirit"
+			m_matchKey = "classname"
+			m_matchExpr = "npc_dota_hero_earth_spirit"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsEarthSpiStoneRemnant"
+			m_matchKey = "stoneremnantcast"
+			m_matchExpr = "yes"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsEarthSpiBoulderSmash"
+			m_matchKey = "abilityname"
+			m_matchExpr = "earth_spirit_boulder_smash"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsEarthSpiRollingBoulder"
+			m_matchKey = "abilityname"
+			m_matchExpr = "earth_spirit_rolling_boulder"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsEarthSpiGeoGrip"
+			m_matchKey = "abilityname"
+			m_matchExpr = "earth_spirit_geomagnetic_grip"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsEarthSpiMagnetize"
+			m_matchKey = "abilityname"
+			m_matchExpr = "earth_spirit_magnetize"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsEaSpRock"
+			m_matchKey = "targetclassname"
+			m_matchExpr = "npc_dota_earth_spirit_stone"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsEarthSpiritEnchRemnant"
+			m_matchKey = "abilityname"
+			m_matchExpr = "earth_spirit_petrify"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsEarthSpiLoadoutSpawn"
+			m_matchKey = "special_spawn"
+			m_matchExpr = "earth_spirit_loadout_spawn"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+	]
+	m_Rules = 
+	[
+		
+		{
+			m_name = "earth_spirit_Spawn_Rule"
+			m_Requirements = 
+			[
+				"Spawn",
+				"Isearth_spirit",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_Spawn",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_CustomIsGameStart_Rule"
+			m_Requirements = 
+			[
+				"Custom",
+				"Isearth_spirit",
+				"IsGameStart",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_CustomIsGameStart",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_CustomIsEarthSpiStoneRemnant_Rule"
+			m_Requirements = 
+			[
+				"Custom",
+				"Isearth_spirit",
+				"IsEarthSpiStoneRemnant",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_CustomIsEarthSpiStoneRemnant",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_CustomIsEarthSpiLoadoutSpawn_Rule"
+			m_Requirements = 
+			[
+				"Custom",
+				"Isearth_spirit",
+				"IsEarthSpiLoadoutSpawn",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_CustomIsEarthSpiLoadoutSpawn",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_KillIsFirstBloodChance_10%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isearth_spirit",
+				"IsFirstBlood",
+				"Chance_10%",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_KillIsFirstBloodChance_10%",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_KillIsFirstBlood_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isearth_spirit",
+				"IsFirstBlood",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_KillIsFirstBlood",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_KillIsEarthSpiBoulderSmashChance_20%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isearth_spirit",
+				"IsEarthSpiBoulderSmash",
+				"Chance_20%",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_KillIsEarthSpiBoulderSmashChance_20%",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_KillIsEarthSpiGeoGrip_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isearth_spirit",
+				"IsEarthSpiGeoGrip",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_KillIsEarthSpiGeoGrip",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_KillIsEarthSpiRollingBoulderChance_20%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isearth_spirit",
+				"IsEarthSpiRollingBoulder",
+				"Chance_20%",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_KillIsEarthSpiRollingBoulderChance_20%",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_Kill_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isearth_spirit",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_Kill",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_KillIsEnemyEmber_SpiritChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isearth_spirit",
+				"IsEnemyEmber_Spirit",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_KillIsEnemyEmber_SpiritChance_25%",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_KillIsEnemyStormSpiritChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isearth_spirit",
+				"IsEnemyStormSpirit",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_KillIsEnemyStormSpiritChance_25%",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_KillIsEnemyBrewmasterChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isearth_spirit",
+				"IsEnemyBrewmaster",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_KillIsEnemyBrewmasterChance_25%",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_KillIsEnemyTreantChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isearth_spirit",
+				"IsEnemyTreant",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_KillIsEnemyTreantChance_25%",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_KillIsEnemyTinyChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isearth_spirit",
+				"IsEnemyTiny",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_KillIsEnemyTinyChance_25%",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_KillIsEnemyElder_TitanChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isearth_spirit",
+				"IsEnemyElder_Titan",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_KillIsEnemyElder_TitanChance_25%",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_KillIsEnemyChaos_KnightChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isearth_spirit",
+				"IsEnemyChaos_Knight",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_KillIsEnemyChaos_KnightChance_25%",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_KillIsEnemyWispChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isearth_spirit",
+				"IsEnemyWisp",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_KillIsEnemyWispChance_25%",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_KillIsEnemyTerrorbladeChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isearth_spirit",
+				"IsEnemyTerrorblade",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_KillIsEnemyTerrorbladeChance_25%",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_KillIsEnemyTuskChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isearth_spirit",
+				"IsEnemyTusk",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_KillIsEnemyTuskChance_25%",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_KillIsEnemyKunkkaChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isearth_spirit",
+				"IsEnemyKunkka",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_KillIsEnemyKunkkaChance_25%",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_KillIsEnemyViperChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isearth_spirit",
+				"IsEnemyViper",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_KillIsEnemyViperChance_25%",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_KillIsEnemySandKingChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isearth_spirit",
+				"IsEnemySandKing",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_KillIsEnemySandKingChance_25%",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_KillIsEnemyEnigmaChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isearth_spirit",
+				"IsEnemyEnigma",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_KillIsEnemyEnigmaChance_25%",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_KillIsEnemyFurionChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isearth_spirit",
+				"IsEnemyFurion",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_KillIsEnemyFurionChance_25%",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_KillIsEnemyGyrocopterChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isearth_spirit",
+				"IsEnemyGyrocopter",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_KillIsEnemyGyrocopterChance_25%",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_KillIsEnemyShadowShamanChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isearth_spirit",
+				"IsEnemyShadowShaman",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_KillIsEnemyShadowShamanChance_25%",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_KillIsEnemyEnchantressChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isearth_spirit",
+				"IsEnemyEnchantress",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_KillIsEnemyEnchantressChance_25%",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_KillIsEnemyUndyingChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isearth_spirit",
+				"IsEnemyUndying",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_KillIsEnemyUndyingChance_25%",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_KillIsEnemyWeaverChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isearth_spirit",
+				"IsEnemyWeaver",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_KillIsEnemyWeaverChance_25%",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_KillIsEnemyUrsaChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isearth_spirit",
+				"IsEnemyUrsa",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_KillIsEnemyUrsaChance_25%",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_KillIsEnemyShredderChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isearth_spirit",
+				"IsEnemyShredder",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_KillIsEnemyShredderChance_25%",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_KillIsEnemyKeeper_of_the_LightChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isearth_spirit",
+				"IsEnemyKeeper_of_the_Light",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_KillIsEnemyKeeper_of_the_LightChance_25%",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_KillIsEnemyBroodmotherChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isearth_spirit",
+				"IsEnemyBroodmother",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_KillIsEnemyBroodmotherChance_25%",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_KillIsEnemyVoid_SpiritChance_30%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isearth_spirit",
+				"IsEnemyVoid_Spirit",
+				"Chance_30%",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_KillIsEnemyVoid_SpiritChance_30%",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_Move_Rule"
+			m_Requirements = 
+			[
+				"Move",
+				"Isearth_spirit",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_Move",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_Attack_Rule"
+			m_Requirements = 
+			[
+				"Attack",
+				"Isearth_spirit",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_Attack",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_Deny_Rule"
+			m_Requirements = 
+			[
+				"Deny",
+				"Isearth_spirit",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_Deny",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_CastOrder_Rule"
+			m_Requirements = 
+			[
+				"CastOrder",
+				"Isearth_spirit",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_CastOrder",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_CastExecuteIsEarthSpiGeoGripChance_75%_Rule"
+			m_Requirements = 
+			[
+				"CastExecute",
+				"Isearth_spirit",
+				"IsEarthSpiGeoGrip",
+				"Chance_75%",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_CastExecuteIsEarthSpiGeoGripChance_75%",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_CastExecuteIsEarthSpiGeoGripIsEaSpRockChance_75%_Rule"
+			m_Requirements = 
+			[
+				"CastExecute",
+				"Isearth_spirit",
+				"IsEarthSpiGeoGrip",
+				"IsEaSpRock",
+				"Chance_75%",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_CastExecuteIsEarthSpiGeoGripIsEaSpRockChance_75%",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_CastExecuteIsEarthSpiritEnchRemnantChance_75%_Rule"
+			m_Requirements = 
+			[
+				"CastExecute",
+				"Isearth_spirit",
+				"IsEarthSpiritEnchRemnant",
+				"Chance_75%",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_CastExecuteIsEarthSpiritEnchRemnantChance_75%",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_LevelUp_Rule"
+			m_Requirements = 
+			[
+				"LevelUp",
+				"Isearth_spirit",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_LevelUp",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_AllyNearEarlyGameIsAllyStormSpirit_Rule"
+			m_Requirements = 
+			[
+				"AllyNear",
+				"Isearth_spirit",
+				"EarlyGame",
+				"IsAllyStormSpirit",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_AllyNearEarlyGameIsAllyStormSpirit",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_AllyNearEarlyGameIsAllyEmber_Spirit_Rule"
+			m_Requirements = 
+			[
+				"AllyNear",
+				"Isearth_spirit",
+				"EarlyGame",
+				"IsAllyEmber_Spirit",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_AllyNearEarlyGameIsAllyEmber_Spirit",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_AllyNearEarlyGameIsAllyBrewmaster_Rule"
+			m_Requirements = 
+			[
+				"AllyNear",
+				"Isearth_spirit",
+				"EarlyGame",
+				"IsAllyBrewmaster",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_AllyNearEarlyGameIsAllyBrewmaster",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_AllyNearEarlyGameIsAllyTreant_Rule"
+			m_Requirements = 
+			[
+				"AllyNear",
+				"Isearth_spirit",
+				"EarlyGame",
+				"IsAllyTreant",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_AllyNearEarlyGameIsAllyTreant",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_AllyNearEarlyGameIsAllySpirit_Breaker_Rule"
+			m_Requirements = 
+			[
+				"AllyNear",
+				"Isearth_spirit",
+				"EarlyGame",
+				"IsAllySpirit_Breaker",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_AllyNearEarlyGameIsAllySpirit_Breaker",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_AllyNearEarlyGameIsAllySpirit_BreakerChance_1%_Rule"
+			m_Requirements = 
+			[
+				"AllyNear",
+				"Isearth_spirit",
+				"EarlyGame",
+				"IsAllySpirit_Breaker",
+				"Chance_1%",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_AllyNearEarlyGameIsAllySpirit_BreakerChance_1%",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_AllyNearEarlyGameIsAllyTinyChance_30%_Rule"
+			m_Requirements = 
+			[
+				"AllyNear",
+				"Isearth_spirit",
+				"EarlyGame",
+				"IsAllyTiny",
+				"Chance_30%",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_AllyNearEarlyGameIsAllyTinyChance_30%",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_AllyNearEarlyGameIsAllyElder_Titan_Rule"
+			m_Requirements = 
+			[
+				"AllyNear",
+				"Isearth_spirit",
+				"EarlyGame",
+				"IsAllyElder_Titan",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_AllyNearEarlyGameIsAllyElder_Titan",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_AllyNearEarlyGameIsAllyWisp_Rule"
+			m_Requirements = 
+			[
+				"AllyNear",
+				"Isearth_spirit",
+				"EarlyGame",
+				"IsAllyWisp",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_AllyNearEarlyGameIsAllyWisp",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_AllyNearEarlyGameIsAllyTusk_Rule"
+			m_Requirements = 
+			[
+				"AllyNear",
+				"Isearth_spirit",
+				"EarlyGame",
+				"IsAllyTusk",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_AllyNearEarlyGameIsAllyTusk",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_AllyNearEarlyGameIsAllyFurionChance_30%_Rule"
+			m_Requirements = 
+			[
+				"AllyNear",
+				"Isearth_spirit",
+				"EarlyGame",
+				"IsAllyFurion",
+				"Chance_30%",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_AllyNearEarlyGameIsAllyFurionChance_30%",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_AllyNearEarlyGameIsAllySniper_Rule"
+			m_Requirements = 
+			[
+				"AllyNear",
+				"Isearth_spirit",
+				"EarlyGame",
+				"IsAllySniper",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_AllyNearEarlyGameIsAllySniper",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_AllyNearEarlyGameIsAllyRattletrap_Rule"
+			m_Requirements = 
+			[
+				"AllyNear",
+				"Isearth_spirit",
+				"EarlyGame",
+				"IsAllyRattletrap",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_AllyNearEarlyGameIsAllyRattletrap",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_AllyNearEarlyGameIsAllyTinker_Rule"
+			m_Requirements = 
+			[
+				"AllyNear",
+				"Isearth_spirit",
+				"EarlyGame",
+				"IsAllyTinker",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_AllyNearEarlyGameIsAllyTinker",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_AllyNearEarlyGameIsAllyUrsa_Rule"
+			m_Requirements = 
+			[
+				"AllyNear",
+				"Isearth_spirit",
+				"EarlyGame",
+				"IsAllyUrsa",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_AllyNearEarlyGameIsAllyUrsa",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_AllyNearEarlyGameIsAllyEnchantressChance_30%_Rule"
+			m_Requirements = 
+			[
+				"AllyNear",
+				"Isearth_spirit",
+				"EarlyGame",
+				"IsAllyEnchantress",
+				"Chance_30%",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_AllyNearEarlyGameIsAllyEnchantressChance_30%",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_AllyNearEarlyGameIsAllyLone_Druid_Rule"
+			m_Requirements = 
+			[
+				"AllyNear",
+				"Isearth_spirit",
+				"EarlyGame",
+				"IsAllyLone_Druid",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_AllyNearEarlyGameIsAllyLone_Druid",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_AllyNearEarlyGameIsAllyShredderChance_30%_Rule"
+			m_Requirements = 
+			[
+				"AllyNear",
+				"Isearth_spirit",
+				"EarlyGame",
+				"IsAllyShredder",
+				"Chance_30%",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_AllyNearEarlyGameIsAllyShredderChance_30%",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_AllyNearEarlyGameIsAllyEnigma_Rule"
+			m_Requirements = 
+			[
+				"AllyNear",
+				"Isearth_spirit",
+				"EarlyGame",
+				"IsAllyEnigma",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_AllyNearEarlyGameIsAllyEnigma",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_AllyNearEarlyGameIsAllyVoid_SpiritChance_30%_Rule"
+			m_Requirements = 
+			[
+				"AllyNear",
+				"Isearth_spirit",
+				"EarlyGame",
+				"IsAllyVoid_Spirit",
+				"Chance_30%",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_AllyNearEarlyGameIsAllyVoid_SpiritChance_30%",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_LastHit_Rule"
+			m_Requirements = 
+			[
+				"LastHit",
+				"Isearth_spirit",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_LastHit",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_Death_Rule"
+			m_Requirements = 
+			[
+				"Death",
+				"Isearth_spirit",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_Death",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_DeathIsReincarnating_Rule"
+			m_Requirements = 
+			[
+				"Death",
+				"Isearth_spirit",
+				"IsReincarnating",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_DeathIsReincarnating",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_Respawn_Rule"
+			m_Requirements = 
+			[
+				"Respawn",
+				"Isearth_spirit",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_Respawn",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_PurchaseIsExpensiveItem_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isearth_spirit",
+				"IsExpensiveItem",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_PurchaseIsExpensiveItem",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_PurchaseIsUltimateScepter_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isearth_spirit",
+				"IsUltimateScepter",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_PurchaseIsUltimateScepter",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_PurchaseIsBlinkDagger_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isearth_spirit",
+				"IsBlinkDagger",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_PurchaseIsBlinkDagger",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_PurchaseIsHeart_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isearth_spirit",
+				"IsHeart",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_PurchaseIsHeart",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_PurchaseIsShiva_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isearth_spirit",
+				"IsShiva",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_PurchaseIsShiva",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_PurchaseIsBloodStone_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isearth_spirit",
+				"IsBloodStone",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_PurchaseIsBloodStone",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_PurchaseIsAssaultCuirass_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isearth_spirit",
+				"IsAssaultCuirass",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_PurchaseIsAssaultCuirass",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_PurchaseIsBlackKingBar_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isearth_spirit",
+				"IsBlackKingBar",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_PurchaseIsBlackKingBar",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_PurchaseIsBattleFury_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isearth_spirit",
+				"IsBattleFury",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_PurchaseIsBattleFury",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_PurchaseIsBladeMail_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isearth_spirit",
+				"IsBladeMail",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_PurchaseIsBladeMail",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_PurchaseIsSangeAndYasha_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isearth_spirit",
+				"IsSangeAndYasha",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_PurchaseIsSangeAndYasha",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_PurchaseIsInvisSword_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isearth_spirit",
+				"IsInvisSword",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_PurchaseIsInvisSword",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_PurchaseIsUrnOfShadows_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isearth_spirit",
+				"IsUrnOfShadows",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_PurchaseIsUrnOfShadows",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_PurchaseIsPipe_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isearth_spirit",
+				"IsPipe",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_PurchaseIsPipe",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_PurchaseIsVanguard_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isearth_spirit",
+				"IsVanguard",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_PurchaseIsVanguard",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_PurchaseIsMekansm_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isearth_spirit",
+				"IsMekansm",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_PurchaseIsMekansm",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_PurchaseIsVladmirs_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isearth_spirit",
+				"IsVladmirs",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_PurchaseIsVladmirs",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_PurchaseIsVeilofDiscord_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isearth_spirit",
+				"IsVeilofDiscord",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_PurchaseIsVeilofDiscord",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_Bottling_Rule"
+			m_Requirements = 
+			[
+				"Bottling",
+				"Isearth_spirit",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_Bottling",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_MissingIsLaneTop_Rule"
+			m_Requirements = 
+			[
+				"Missing",
+				"Isearth_spirit",
+				"IsLaneTop",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_MissingIsLaneTop",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_MissingIsLaneMid_Rule"
+			m_Requirements = 
+			[
+				"Missing",
+				"Isearth_spirit",
+				"IsLaneMid",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_MissingIsLaneMid",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_MissingIsLaneBot_Rule"
+			m_Requirements = 
+			[
+				"Missing",
+				"Isearth_spirit",
+				"IsLaneBot",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_MissingIsLaneBot",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_ItemDropIsCommonDrop_Rule"
+			m_Requirements = 
+			[
+				"ItemDrop",
+				"Isearth_spirit",
+				"IsCommonDrop",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_ItemDropIsCommonDrop",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_ItemDropIsRareDrop_Rule"
+			m_Requirements = 
+			[
+				"ItemDrop",
+				"Isearth_spirit",
+				"IsRareDrop",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_ItemDropIsRareDrop",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_ItemDropIsUltraRareDrop_Rule"
+			m_Requirements = 
+			[
+				"ItemDrop",
+				"Isearth_spirit",
+				"IsUltraRareDrop",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_ItemDropIsUltraRareDrop",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_Immortality_Rule"
+			m_Requirements = 
+			[
+				"Immortality",
+				"Isearth_spirit",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_Immortality",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_ImmortalityChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Immortality",
+				"Isearth_spirit",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_ImmortalityChance_25%",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_PowerupIsPowerupHaste_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isearth_spirit",
+				"IsPowerupHaste",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_PowerupIsPowerupHaste",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_PowerupIsPowerupHasteChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isearth_spirit",
+				"IsPowerupHaste",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_PowerupIsPowerupHasteChance_25%",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_PowerupIsPowerupArcane_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isearth_spirit",
+				"IsPowerupArcane",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_PowerupIsPowerupArcane",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_PowerupIsPowerupBounty_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isearth_spirit",
+				"IsPowerupBounty",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_PowerupIsPowerupBounty",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_PowerupIsPowerupDoubleDamage_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isearth_spirit",
+				"IsPowerupDoubleDamage",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_PowerupIsPowerupDoubleDamage",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_PowerupIsPowerupDoubleDamageChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isearth_spirit",
+				"IsPowerupDoubleDamage",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_PowerupIsPowerupDoubleDamageChance_25%",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_PowerupIsPowerupRegeneration_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isearth_spirit",
+				"IsPowerupRegeneration",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_PowerupIsPowerupRegeneration",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_PowerupIsPowerupRegenerationChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isearth_spirit",
+				"IsPowerupRegeneration",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_PowerupIsPowerupRegenerationChance_25%",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_PowerupIsPowerupIllusion_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isearth_spirit",
+				"IsPowerupIllusion",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_PowerupIsPowerupIllusion",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_PowerupIsPowerupInvisibility_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isearth_spirit",
+				"IsPowerupInvisibility",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_PowerupIsPowerupInvisibility",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_PowerupIsPowerupInvisibilityChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isearth_spirit",
+				"IsPowerupInvisibility",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_PowerupIsPowerupInvisibilityChance_25%",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_CooldownLittleNag_Rule"
+			m_Requirements = 
+			[
+				"Cooldown",
+				"Isearth_spirit",
+				"LittleNag",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_CooldownLittleNag",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_CooldownMediumNag_Rule"
+			m_Requirements = 
+			[
+				"Cooldown",
+				"Isearth_spirit",
+				"MediumNag",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_CooldownMediumNag",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_CooldownSuperNag_Rule"
+			m_Requirements = 
+			[
+				"Cooldown",
+				"Isearth_spirit",
+				"SuperNag",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_CooldownSuperNag",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_NoManaLittleNag_Rule"
+			m_Requirements = 
+			[
+				"NoMana",
+				"Isearth_spirit",
+				"LittleNag",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_NoManaLittleNag",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_NoManaMediumNag_Rule"
+			m_Requirements = 
+			[
+				"NoMana",
+				"Isearth_spirit",
+				"MediumNag",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_NoManaMediumNag",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_NoManaSuperNag_Rule"
+			m_Requirements = 
+			[
+				"NoMana",
+				"Isearth_spirit",
+				"SuperNag",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_NoManaSuperNag",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_Thanks_Rule"
+			m_Requirements = 
+			[
+				"Thanks",
+				"Isearth_spirit",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_Thanks",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_ThanksChance_1%_Rule"
+			m_Requirements = 
+			[
+				"Thanks",
+				"Isearth_spirit",
+				"Chance_1%",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_ThanksChance_1%",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_PainChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Pain",
+				"Isearth_spirit",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_PainChance_25%",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_Pain_Rule"
+			m_Requirements = 
+			[
+				"Pain",
+				"Isearth_spirit",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_Pain",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_InTheBag_Rule"
+			m_Requirements = 
+			[
+				"InTheBag",
+				"Isearth_spirit",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_InTheBag",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_Defeat_Rule"
+			m_Requirements = 
+			[
+				"Defeat",
+				"Isearth_spirit",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_Defeat",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_Victory_Rule"
+			m_Requirements = 
+			[
+				"Victory",
+				"Isearth_spirit",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_Victory",
+			]
+		},
+		
+		{
+			m_name = "earth_spirit_EmoteIsEmoteLaugh_Rule"
+			m_Requirements = 
+			[
+				"Emote",
+				"Isearth_spirit",
+				"IsEmoteLaugh",
+			]
+			m_ResponseGroups = 
+			[
+				"earth_spirit_EmoteIsEmoteLaugh",
+			]
+		},
+	]
 }
-

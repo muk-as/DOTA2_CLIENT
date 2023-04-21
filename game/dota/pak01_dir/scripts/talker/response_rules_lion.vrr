@@ -1,697 +1,2060 @@
-#include "talker/response_rules_shared.vrr"
-
-criterion "Islion" "classname" "npc_dota_hero_lion" weight 5 required
-criterion "IsLionVoodoo" "abilityname" "lion_voodoo" weight 5 required
-criterion "IsLionImpale" "abilityname" "lion_impale" weight 5 required
-criterion "IsLionLoadoutSpawn" "special_spawn" "lion_loadout_spawn" weight 5 required
-
-Response lion_Spawn
-{
-	scene "scenes/lion/lion_lion_spawn_01.vcd" nodelay 
-	scene "scenes/lion/lion_lion_spawn_03.vcd" nodelay 
-	scene "scenes/lion/lion_lion_spawn_04.vcd" nodelay 
-	scene "scenes/lion/lion_lion_spawn_05.vcd" nodelay 
-	scene "scenes/lion/lion_lion_spawn_06.vcd" nodelay 
-}
-
-Rule lion_Spawn_Rule
-{
-	criteria Spawn Islion 
-	response lion_Spawn
-}
-
-Response lion_Move
-{
-	scene "scenes/lion/lion_lion_move_01.vcd" nodelay 
-	scene "scenes/lion/lion_lion_move_02.vcd" nodelay 
-	scene "scenes/lion/lion_lion_move_03.vcd" nodelay 
-	scene "scenes/lion/lion_lion_move_04.vcd" nodelay 
-	scene "scenes/lion/lion_lion_move_05.vcd" nodelay 
-	scene "scenes/lion/lion_lion_move_06.vcd" nodelay 
-	scene "scenes/lion/lion_lion_move_07.vcd" nodelay 
-	scene "scenes/lion/lion_lion_move_08.vcd" nodelay 
-	scene "scenes/lion/lion_lion_move_09.vcd" nodelay 
-	scene "scenes/lion/lion_lion_move_10.vcd" nodelay 
-	scene "scenes/lion/lion_lion_move_12.vcd" nodelay 
-	scene "scenes/lion/lion_lion_move_13.vcd" nodelay 
-}
-
-Rule lion_Move_Rule
-{
-	criteria Move Islion 
-	response lion_Move
-}
-
-Response lion_MoveChance_3%
-{
-	scene "scenes/lion/lion_lion_move_11.vcd" nodelay 
-}
-
-Rule lion_MoveChance_3%_Rule
-{
-	criteria Move Islion Chance_3%
-	response lion_MoveChance_3%
-}
-
-Response lion_Attack
-{
-	scene "scenes/lion/lion_lion_attack_01.vcd" nodelay 
-	scene "scenes/lion/lion_lion_attack_02.vcd" nodelay 
-	scene "scenes/lion/lion_lion_attack_03.vcd" nodelay 
-	scene "scenes/lion/lion_lion_attack_04.vcd" nodelay 
-	scene "scenes/lion/lion_lion_attack_05.vcd" nodelay 
-	scene "scenes/lion/lion_lion_attack_06.vcd" nodelay 
-	scene "scenes/lion/lion_lion_attack_07.vcd" nodelay 
-	scene "scenes/lion/lion_lion_attack_08.vcd" nodelay 
-	scene "scenes/lion/lion_lion_attack_09.vcd" nodelay 
-	scene "scenes/lion/lion_lion_attack_10.vcd" nodelay 
-	scene "scenes/lion/lion_lion_attack_11.vcd" nodelay 
-	scene "scenes/lion/lion_lion_attack_12.vcd" nodelay 
-	scene "scenes/lion/lion_lion_attack_13.vcd" nodelay 
-	scene "scenes/lion/lion_lion_attack_14.vcd" nodelay 
-}
-
-Rule lion_Attack_Rule
-{
-	criteria Attack Islion 
-	response lion_Attack
-}
-
-Response lion_CustomIsGameStart
-{
-	scene "scenes/lion/lion_lion_cast_01.vcd" nodelay 
-}
-
-Rule lion_CustomIsGameStart_Rule
-{
-	criteria Custom Islion IsGameStart
-	response lion_CustomIsGameStart
-}
-
-Response lion_CustomIsLionLoadoutSpawn
-{
-	scene "scenes/lion/lion_lion_spawn_01.vcd" nodelay 
-	scene "scenes/lion/lion_lion_spawn_02.vcd" nodelay 
-	scene "scenes/lion/lion_lion_spawn_03.vcd" nodelay 
-	scene "scenes/lion/lion_lion_spawn_04.vcd" nodelay 
-	scene "scenes/lion/lion_lion_spawn_05.vcd" nodelay 
-	scene "scenes/lion/lion_lion_spawn_06.vcd" nodelay 
-	scene "scenes/lion/lion_lion_move_11.vcd" nodelay 
-	scene "scenes/lion/lion_lion_move_12.vcd" nodelay 
-	scene "scenes/lion/lion_lion_move_10.vcd" nodelay 
-	scene "scenes/lion/lion_lion_attack_10.vcd" nodelay 
-	scene "scenes/lion/lion_lion_attack_11.vcd" nodelay 
-	scene "scenes/lion/lion_lion_attack_12.vcd" nodelay 
-}
-
-Rule lion_CustomIsLionLoadoutSpawn_Rule
-{
-	criteria Custom Islion IsLionLoadoutSpawn
-	response lion_CustomIsLionLoadoutSpawn
-}
-
-Response lion_CastOrder
-{
-	scene "scenes/lion/lion_lion_cast_02.vcd" nodelay 
-	scene "scenes/lion/lion_lion_cast_03.vcd" nodelay 
-}
-
-Rule lion_CastOrder_Rule
-{
-	criteria CastOrder Islion 
-	response lion_CastOrder
-}
-
-Response lion_CastExecuteIsLionImpaleChance_15%
-{
-	scene "scenes/lion/lion_lion_ability_spike_01.vcd" nodelay 
-}
-
-Rule lion_CastExecuteIsLionImpaleChance_15%_Rule
-{
-	criteria CastExecute Islion IsLionImpale Chance_15%
-	response lion_CastExecuteIsLionImpaleChance_15%
-}
-
-Response lion_CastExecuteIsLionVoodooChance_75%
-{
-	scene "scenes/lion/lion_lion_ability_voodoo_03.vcd" nodelay 
-	scene "scenes/lion/lion_lion_ability_voodoo_04.vcd" nodelay 
-	scene "scenes/lion/lion_lion_ability_voodoo_05.vcd" nodelay 
-	scene "scenes/lion/lion_lion_ability_voodoo_06.vcd" nodelay 
-	scene "scenes/lion/lion_lion_ability_voodoo_07.vcd" nodelay 
-	scene "scenes/lion/lion_lion_ability_voodoo_08.vcd" nodelay 
-	scene "scenes/lion/lion_lion_ability_voodoo_09.vcd" nodelay 
-	scene "scenes/lion/lion_lion_ability_voodoo_10.vcd" nodelay 
-}
-
-Rule lion_CastExecuteIsLionVoodooChance_75%_Rule
-{
-	criteria CastExecute Islion IsLionVoodoo Chance_75%
-	response lion_CastExecuteIsLionVoodooChance_75%
-}
-
-Response lion_LevelUp
-{
-	scene "scenes/lion/lion_lion_level_01.vcd" nodelay 
-	scene "scenes/lion/lion_lion_level_02.vcd" nodelay 
-	scene "scenes/lion/lion_lion_level_03.vcd" nodelay 
-	scene "scenes/lion/lion_lion_level_04.vcd" nodelay 
-	scene "scenes/lion/lion_lion_level_05.vcd" nodelay 
-	scene "scenes/lion/lion_lion_level_06.vcd" nodelay 
-	scene "scenes/lion/lion_lion_level_07.vcd" nodelay 
-}
-
-Rule lion_LevelUp_Rule
-{
-	criteria LevelUp Islion 
-	response lion_LevelUp
-}
-
-Response lion_Kill
-{
-	scene "scenes/lion/lion_lion_kill_01.vcd" nodelay 
-	scene "scenes/lion/lion_lion_kill_02.vcd" nodelay 
-	scene "scenes/lion/lion_lion_kill_03.vcd" nodelay 
-	scene "scenes/lion/lion_lion_kill_04.vcd" nodelay 
-	scene "scenes/lion/lion_lion_kill_05.vcd" nodelay 
-	scene "scenes/lion/lion_lion_kill_06.vcd" nodelay 
-	scene "scenes/lion/lion_lion_kill_07.vcd" nodelay 
-	scene "scenes/lion/lion_lion_kill_08.vcd" nodelay 
-	scene "scenes/lion/lion_lion_kill_09.vcd" nodelay 
-	scene "scenes/lion/lion_lion_kill_10.vcd" nodelay 
-	scene "scenes/lion/lion_lion_kill_11.vcd" nodelay 
-	scene "scenes/lion/lion_lion_laugh_02.vcd" nodelay 
-	scene "scenes/lion/lion_lion_laugh_03.vcd" nodelay 
-	scene "scenes/lion/lion_lion_laugh_04.vcd" nodelay 
-	scene "scenes/lion/lion_lion_laugh_05.vcd" nodelay 
-	scene "scenes/lion/lion_lion_laugh_06.vcd" nodelay 
-}
-
-Rule lion_Kill_Rule
-{
-	criteria Kill Islion 
-	response lion_Kill
-}
-
-Response lion_KillIsEnemyWitchDoctorChance_35%
-{
-	scene "scenes/lion/lion_lion_killspecial_01.vcd" nodelay 
-}
-
-Rule lion_KillIsEnemyWitchDoctorChance_35%_Rule
-{
-	criteria Kill Islion IsEnemyWitchDoctor Chance_35%
-	response lion_KillIsEnemyWitchDoctorChance_35%
-}
-
-Response lion_LastHit
-{
-	scene "scenes/lion/lion_lion_lasthit_01.vcd" nodelay 
-	scene "scenes/lion/lion_lion_lasthit_02.vcd" nodelay 
-	scene "scenes/lion/lion_lion_lasthit_03.vcd" nodelay 
-	scene "scenes/lion/lion_lion_lasthit_04.vcd" nodelay 
-	scene "scenes/lion/lion_lion_lasthit_05.vcd" nodelay 
-	scene "scenes/lion/lion_lion_lasthit_06.vcd" nodelay 
-	scene "scenes/lion/lion_lion_lasthit_07.vcd" nodelay 
-	scene "scenes/lion/lion_lion_lasthit_08.vcd" nodelay 
-	scene "scenes/lion/lion_lion_lasthit_09.vcd" nodelay 
-}
-
-Rule lion_LastHit_Rule
-{
-	criteria LastHit Islion 
-	response lion_LastHit
-}
-
-Response lion_Respawn
-{
-	scene "scenes/lion/lion_lion_death_01.vcd" nodelay 
-	scene "scenes/lion/lion_lion_respawn_01.vcd" nodelay 
-	scene "scenes/lion/lion_lion_respawn_02.vcd" nodelay 
-	scene "scenes/lion/lion_lion_respawn_03.vcd" nodelay 
-	scene "scenes/lion/lion_lion_respawn_04.vcd" nodelay 
-	scene "scenes/lion/lion_lion_respawn_05.vcd" nodelay 
-	scene "scenes/lion/lion_lion_respawn_06.vcd" nodelay 
-	scene "scenes/lion/lion_lion_respawn_07.vcd" nodelay 
-	scene "scenes/lion/lion_lion_respawn_08.vcd" nodelay 
-	scene "scenes/lion/lion_lion_respawn_09.vcd" nodelay 
-	scene "scenes/lion/lion_lion_respawn_10.vcd" nodelay 
-}
-
-Rule lion_Respawn_Rule
-{
-	criteria Respawn Islion 
-	response lion_Respawn
-}
-
-Response lion_Death
-{
-	scene "scenes/lion/lion_lion_death_02.vcd" nodelay 
-	scene "scenes/lion/lion_lion_death_03.vcd" nodelay 
-	scene "scenes/lion/lion_lion_death_04.vcd" nodelay 
-	scene "scenes/lion/lion_lion_death_05.vcd" nodelay 
-	scene "scenes/lion/lion_lion_death_06.vcd" nodelay 
-	scene "scenes/lion/lion_lion_death_07.vcd" nodelay 
-	scene "scenes/lion/lion_lion_death_08.vcd" nodelay 
-	scene "scenes/lion/lion_lion_death_09.vcd" nodelay 
-	scene "scenes/lion/lion_lion_death_10.vcd" nodelay 
-}
-
-Rule lion_Death_Rule
-{
-	criteria Death Islion 
-	response lion_Death
-}
-
-Response lion_DeathIsReincarnating
-{
-	scene "scenes/lion/lion_lion_laugh_01.vcd" nodelay 
-}
-
-Rule lion_DeathIsReincarnating_Rule
-{
-	criteria Death Islion IsReincarnating
-	response lion_DeathIsReincarnating
-}
-
-Response lion_Select
-{
-	scene "scenes/lion/lion_lion_rare_01.vcd" nodelay 
-	scene "scenes/lion/lion_lion_rare_02.vcd" nodelay 
-	scene "scenes/lion/lion_lion_rare_03.vcd" nodelay 
-}
-
-Rule lion_Select_Rule
-{
-	criteria Select Islion 
-	response lion_Select
-}
-
-Response lion_PurchaseIsExpensiveItem
-{
-	scene "scenes/lion/lion_lion_purch_01.vcd" nodelay speakonce
-	scene "scenes/lion/lion_lion_purch_02.vcd" nodelay speakonce
-	scene "scenes/lion/lion_lion_purch_03.vcd" nodelay speakonce
-}
-
-Rule lion_PurchaseIsExpensiveItem_Rule
-{
-	criteria Purchase Islion IsExpensiveItem
-	response lion_PurchaseIsExpensiveItem
-}
-
-Response lion_Bottling
-{
-	scene "scenes/lion/lion_lion_bottle_01.vcd" nodelay 
-	scene "scenes/lion/lion_lion_bottle_02.vcd" nodelay 
-	scene "scenes/lion/lion_lion_bottle_03.vcd" nodelay 
-}
-
-Rule lion_Bottling_Rule
-{
-	criteria Bottling Islion 
-	response lion_Bottling
-}
-
-Response lion_MissingIsLaneTop
-{
-	scene "scenes/lion/lion_lion_lane_missing_01.vcd" nodelay 
-}
-
-Rule lion_MissingIsLaneTop_Rule
-{
-	criteria Missing Islion IsLaneTop
-	response lion_MissingIsLaneTop
-}
-
-Response lion_MissingIsLaneMid
-{
-	scene "scenes/lion/lion_lion_lane_missing_02.vcd" nodelay 
-}
-
-Rule lion_MissingIsLaneMid_Rule
-{
-	criteria Missing Islion IsLaneMid
-	response lion_MissingIsLaneMid
-}
-
-Response lion_MissingIsLaneBot
-{
-	scene "scenes/lion/lion_lion_lane_missing_03.vcd" nodelay 
-}
-
-Rule lion_MissingIsLaneBot_Rule
-{
-	criteria Missing Islion IsLaneBot
-	response lion_MissingIsLaneBot
-}
-
-Response lion_Deny
-{
-	scene "scenes/lion/lion_lion_deny_01.vcd" nodelay 
-	scene "scenes/lion/lion_lion_deny_02.vcd" nodelay 
-	scene "scenes/lion/lion_lion_deny_03.vcd" nodelay 
-	scene "scenes/lion/lion_lion_deny_04.vcd" nodelay 
-	scene "scenes/lion/lion_lion_deny_05.vcd" nodelay 
-	scene "scenes/lion/lion_lion_deny_06.vcd" nodelay 
-	scene "scenes/lion/lion_lion_deny_07.vcd" nodelay 
-	scene "scenes/lion/lion_lion_deny_08.vcd" nodelay 
-	scene "scenes/lion/lion_lion_deny_09.vcd" nodelay 
-	scene "scenes/lion/lion_lion_deny_10.vcd" nodelay 
-}
-
-Rule lion_Deny_Rule
-{
-	criteria Deny Islion 
-	response lion_Deny
-}
-
-Response lion_Defeat
-{
-	scene "scenes/lion/lion_lion_lose_01.vcd" nodelay 
-	scene "scenes/lion/lion_lion_lose_02.vcd" nodelay 
-	scene "scenes/lion/lion_lion_lose_03.vcd" nodelay 
-}
-
-Rule lion_Defeat_Rule
-{
-	criteria Defeat Islion 
-	response lion_Defeat
-}
-
-Response lion_Victory
-{
-	scene "scenes/lion/lion_lion_win_01.vcd" nodelay 
-	scene "scenes/lion/lion_lion_win_02.vcd" nodelay 
-	scene "scenes/lion/lion_lion_win_03.vcd" nodelay 
-}
-
-Rule lion_Victory_Rule
-{
-	criteria Victory Islion 
-	response lion_Victory
-}
-
-Response lion_Immortality
-{
-	scene "scenes/lion/lion_lion_immort_01.vcd" nodelay 
-}
-
-Rule lion_Immortality_Rule
-{
-	criteria Immortality Islion 
-	response lion_Immortality
-}
-
-Response lion_PowerupIsPowerupBounty
-{
-	scene "scenes/lion/lion_lion_lasthit_03.vcd" nodelay respeakdelay 300
-}
-
-Rule lion_PowerupIsPowerupBounty_Rule
-{
-	criteria Powerup Islion IsPowerupBounty
-	response lion_PowerupIsPowerupBounty
-}
-
-Response lion_PowerupIsPowerupArcane
-{
-	scene "scenes/lion/lion_lion_purch_02.vcd" nodelay respeakdelay 300
-}
-
-Rule lion_PowerupIsPowerupArcane_Rule
-{
-	criteria Powerup Islion IsPowerupArcane
-	response lion_PowerupIsPowerupArcane
-}
-
-Response lion_PowerupIsPowerupHaste
-{
-	scene "scenes/lion/lion_lion_haste_01.vcd" nodelay 
-}
-
-Rule lion_PowerupIsPowerupHaste_Rule
-{
-	criteria Powerup Islion IsPowerupHaste
-	response lion_PowerupIsPowerupHaste
-}
-
-Response lion_PowerupIsPowerupDoubleDamage
-{
-	scene "scenes/lion/lion_lion_doubdam_01.vcd" nodelay 
-}
-
-Rule lion_PowerupIsPowerupDoubleDamage_Rule
-{
-	criteria Powerup Islion IsPowerupDoubleDamage
-	response lion_PowerupIsPowerupDoubleDamage
-}
-
-Response lion_PowerupIsPowerupDoubleDamageChance_25%
-{
-	scene "scenes/lion/lion_lion_doubdam_02.vcd" nodelay 
-}
-
-Rule lion_PowerupIsPowerupDoubleDamageChance_25%_Rule
-{
-	criteria Powerup Islion IsPowerupDoubleDamage Chance_25%
-	response lion_PowerupIsPowerupDoubleDamageChance_25%
-}
-
-Response lion_PowerupIsPowerupRegeneration
-{
-	scene "scenes/lion/lion_lion_regen_01.vcd" nodelay 
-}
-
-Rule lion_PowerupIsPowerupRegeneration_Rule
-{
-	criteria Powerup Islion IsPowerupRegeneration
-	response lion_PowerupIsPowerupRegeneration
-}
-
-Response lion_PowerupIsPowerupRegenerationChance_25%
-{
-	scene "scenes/lion/lion_lion_regen_02.vcd" nodelay 
-}
-
-Rule lion_PowerupIsPowerupRegenerationChance_25%_Rule
-{
-	criteria Powerup Islion IsPowerupRegeneration Chance_25%
-	response lion_PowerupIsPowerupRegenerationChance_25%
-}
-
-Response lion_PowerupIsPowerupIllusion
-{
-	scene "scenes/lion/lion_lion_illus_01.vcd" nodelay 
-}
-
-Rule lion_PowerupIsPowerupIllusion_Rule
-{
-	criteria Powerup Islion IsPowerupIllusion
-	response lion_PowerupIsPowerupIllusion
-}
-
-Response lion_PowerupIsPowerupIllusionChance_25%
-{
-	scene "scenes/lion/lion_lion_illus_02.vcd" nodelay 
-}
-
-Rule lion_PowerupIsPowerupIllusionChance_25%_Rule
-{
-	criteria Powerup Islion IsPowerupIllusion Chance_25%
-	response lion_PowerupIsPowerupIllusionChance_25%
-}
-
-Response lion_PowerupIsPowerupInvisibility
-{
-	scene "scenes/lion/lion_lion_invis_01.vcd" nodelay 
-}
-
-Rule lion_PowerupIsPowerupInvisibility_Rule
-{
-	criteria Powerup Islion IsPowerupInvisibility
-	response lion_PowerupIsPowerupInvisibility
-}
-
-Response lion_CooldownLittleNag
-{
-	scene "scenes/lion/lion_lion_notyet_01.vcd" nodelay 
-	scene "scenes/lion/lion_lion_notyet_02.vcd" nodelay 
-	scene "scenes/lion/lion_lion_notyet_03.vcd" nodelay 
-}
-
-Rule lion_CooldownLittleNag_Rule
-{
-	criteria Cooldown Islion LittleNag
-	response lion_CooldownLittleNag
-}
-
-Response lion_CooldownMediumNag
-{
-	scene "scenes/lion/lion_lion_notyet_05.vcd" nodelay 
-	scene "scenes/lion/lion_lion_notyet_06.vcd" nodelay 
-	scene "scenes/lion/lion_lion_notyet_07.vcd" nodelay 
-}
-
-Rule lion_CooldownMediumNag_Rule
-{
-	criteria Cooldown Islion MediumNag
-	response lion_CooldownMediumNag
-}
-
-Response lion_CooldownSuperNag
-{
-	scene "scenes/lion/lion_lion_notyet_08.vcd" nodelay 
-	scene "scenes/lion/lion_lion_notyet_09.vcd" nodelay 
-	scene "scenes/lion/lion_lion_notyet_10.vcd" nodelay 
-}
-
-Rule lion_CooldownSuperNag_Rule
-{
-	criteria Cooldown Islion SuperNag
-	response lion_CooldownSuperNag
-}
-
-Response lion_NoManaLittleNag
-{
-	scene "scenes/lion/lion_lion_nomana_01.vcd" nodelay 
-	scene "scenes/lion/lion_lion_nomana_02.vcd" nodelay 
-	scene "scenes/lion/lion_lion_nomana_03.vcd" nodelay 
-}
-
-Rule lion_NoManaLittleNag_Rule
-{
-	criteria NoMana Islion LittleNag
-	response lion_NoManaLittleNag
-}
-
-Response lion_NoManaMediumNag
-{
-	scene "scenes/lion/lion_lion_nomana_04.vcd" nodelay 
-	scene "scenes/lion/lion_lion_nomana_05.vcd" nodelay 
-	scene "scenes/lion/lion_lion_nomana_06.vcd" nodelay 
-}
-
-Rule lion_NoManaMediumNag_Rule
-{
-	criteria NoMana Islion MediumNag
-	response lion_NoManaMediumNag
-}
-
-Response lion_NoManaSuperNag
-{
-	scene "scenes/lion/lion_lion_nomana_07.vcd" nodelay 
-	scene "scenes/lion/lion_lion_nomana_08.vcd" nodelay 
-	scene "scenes/lion/lion_lion_nomana_09.vcd" nodelay 
-}
-
-Rule lion_NoManaSuperNag_Rule
-{
-	criteria NoMana Islion SuperNag
-	response lion_NoManaSuperNag
-}
-
-Response lion_Thanks
-{
-	scene "scenes/lion/lion_lion_thanks_01.vcd" nodelay 
-	scene "scenes/lion/lion_lion_thanks_02.vcd" nodelay 
-}
-
-Rule lion_Thanks_Rule
-{
-	criteria Thanks Islion 
-	response lion_Thanks
-}
-
-Response lion_InTheBag
-{
-	scene "scenes/lion/lion_lion_inthebag_01.vcd" nodelay 
-}
-
-Rule lion_InTheBag_Rule
-{
-	criteria InTheBag Islion 
-	response lion_InTheBag
-}
-
-Response lion_Pain
-{
-	scene "scenes/lion/lion_lion_pain_01.vcd" nodelay 
-	scene "scenes/lion/lion_lion_pain_02.vcd" nodelay 
-	scene "scenes/lion/lion_lion_pain_03.vcd" nodelay 
-	scene "scenes/lion/lion_lion_pain_04.vcd" nodelay 
-	scene "scenes/lion/lion_lion_pain_05.vcd" nodelay 
-	scene "scenes/lion/lion_lion_pain_06.vcd" nodelay 
-	scene "scenes/lion/lion_lion_pain_07.vcd" nodelay 
-	scene "scenes/lion/lion_lion_pain_08.vcd" nodelay 
-	scene "scenes/lion/lion_lion_pain_09.vcd" nodelay 
-	scene "scenes/lion/lion_lion_pain_10.vcd" nodelay 
-}
-
-Rule lion_Pain_Rule
-{
-	criteria Pain Islion 
-	response lion_Pain
-}
-
-Response lion_PainChance_25%
-{
-	scene "scenes/lion/lion_lion_underattack_02.vcd" nodelay respeakdelay 120
-}
-
-Rule lion_PainChance_25%_Rule
-{
-	criteria Pain Islion Chance_25%
-	response lion_PainChance_25%
-}
-
-Response lion_ItemDropIsCommonDrop
-{
-	scene "scenes/lion/lion_lion_happy_01.vcd" nodelay 
-}
-
-Rule lion_ItemDropIsCommonDrop_Rule
-{
-	criteria ItemDrop Islion IsCommonDrop
-	response lion_ItemDropIsCommonDrop
-}
-
-Response lion_ItemDropIsRareDrop
-{
-	scene "scenes/lion/lion_lion_happy_02.vcd" nodelay 
-}
-
-Rule lion_ItemDropIsRareDrop_Rule
-{
-	criteria ItemDrop Islion IsRareDrop
-	response lion_ItemDropIsRareDrop
-}
-
-Response lion_ItemDropIsUltraRareDrop
-{
-	scene "scenes/lion/lion_lion_happy_03.vcd" nodelay 
-}
-
-Rule lion_ItemDropIsUltraRareDrop_Rule
-{
-	criteria ItemDrop Islion IsUltraRareDrop
-	response lion_ItemDropIsUltraRareDrop
-}
-
-Response lion_EmoteIsEmoteLaugh
-{
-	scene "scenes/lion/lion_lion_laugh_01.vcd" nodelay 
-	scene "scenes/lion/lion_lion_laugh_02.vcd" nodelay 
-	scene "scenes/lion/lion_lion_laugh_03.vcd" nodelay 
-	scene "scenes/lion/lion_lion_laugh_04.vcd" nodelay 
-	scene "scenes/lion/lion_lion_laugh_05.vcd" nodelay 
-	scene "scenes/lion/lion_lion_laugh_06.vcd" nodelay 
-}
-
-Rule lion_EmoteIsEmoteLaugh_Rule
-{
-	criteria Emote Islion IsEmoteLaugh
-	response lion_EmoteIsEmoteLaugh
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vrfunknown:version{c1f07085-5299-4e8a-b7e9-1cbb66bbbe23} -->
+{
+	m_Includes = 
+	[
+		"scripts/talker/response_rules_shared.vrr",
+	]
+	m_ResponseGroups = 
+	[
+		
+		{
+			m_name = "lion_Spawn"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_spawn_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_spawn_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_spawn_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_spawn_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_spawn_06.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lion_Move"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_move_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_move_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_move_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_move_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_move_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_move_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_move_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_move_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_move_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_move_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_move_12.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_move_13.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lion_MoveChance_3%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_move_11.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lion_Attack"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_attack_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_attack_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_attack_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_attack_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_attack_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_attack_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_attack_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_attack_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_attack_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_attack_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_attack_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_attack_12.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_attack_13.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_attack_14.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lion_CustomIsGameStart"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_cast_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lion_CustomIsLionLoadoutSpawn"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_spawn_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_spawn_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_spawn_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_spawn_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_spawn_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_spawn_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_move_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_move_12.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_move_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_attack_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_attack_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_attack_12.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lion_CastOrder"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_cast_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_cast_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lion_CastExecuteIsLionImpaleChance_15%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_ability_spike_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lion_CastExecuteIsLionVoodooChance_75%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_ability_voodoo_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_ability_voodoo_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_ability_voodoo_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_ability_voodoo_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_ability_voodoo_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_ability_voodoo_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_ability_voodoo_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_ability_voodoo_10.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lion_LevelUp"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_level_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_level_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_level_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_level_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_level_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_level_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_level_07.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lion_Kill"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_kill_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_kill_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_kill_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_kill_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_kill_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_kill_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_kill_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_kill_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_kill_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_kill_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_kill_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_laugh_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_laugh_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_laugh_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_laugh_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_laugh_06.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lion_KillIsEnemyWitchDoctorChance_35%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_killspecial_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lion_LastHit"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_lasthit_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_lasthit_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_lasthit_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_lasthit_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_lasthit_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_lasthit_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_lasthit_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_lasthit_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_lasthit_09.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lion_Respawn"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_death_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_respawn_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_respawn_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_respawn_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_respawn_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_respawn_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_respawn_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_respawn_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_respawn_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_respawn_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_respawn_10.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lion_Death"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_death_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_death_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_death_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_death_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_death_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_death_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_death_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_death_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_death_10.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lion_DeathIsReincarnating"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_laugh_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lion_Select"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_rare_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_rare_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_rare_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lion_PurchaseIsExpensiveItem"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_purch_01.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_purch_02.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_purch_03.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "lion_Bottling"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_bottle_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_bottle_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_bottle_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lion_MissingIsLaneTop"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_lane_missing_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lion_MissingIsLaneMid"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_lane_missing_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lion_MissingIsLaneBot"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_lane_missing_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lion_Deny"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_deny_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_deny_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_deny_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_deny_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_deny_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_deny_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_deny_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_deny_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_deny_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_deny_10.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lion_Defeat"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_lose_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_lose_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_lose_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lion_Victory"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_win_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_win_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_win_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lion_Immortality"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_immort_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lion_PowerupIsPowerupBounty"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_lasthit_03.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 300.000000
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "lion_PowerupIsPowerupArcane"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_purch_02.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 300.000000
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "lion_PowerupIsPowerupHaste"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_haste_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lion_PowerupIsPowerupDoubleDamage"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_doubdam_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lion_PowerupIsPowerupDoubleDamageChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_doubdam_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lion_PowerupIsPowerupRegeneration"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_regen_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lion_PowerupIsPowerupRegenerationChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_regen_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lion_PowerupIsPowerupIllusion"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_illus_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lion_PowerupIsPowerupIllusionChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_illus_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lion_PowerupIsPowerupInvisibility"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_invis_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lion_CooldownLittleNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_notyet_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_notyet_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_notyet_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lion_CooldownMediumNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_notyet_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_notyet_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_notyet_07.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lion_CooldownSuperNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_notyet_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_notyet_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_notyet_10.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lion_NoManaLittleNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_nomana_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_nomana_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_nomana_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lion_NoManaMediumNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_nomana_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_nomana_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_nomana_06.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lion_NoManaSuperNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_nomana_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_nomana_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_nomana_09.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lion_Thanks"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_thanks_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_thanks_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lion_InTheBag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_inthebag_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lion_Pain"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_pain_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_pain_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_pain_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_pain_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_pain_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_pain_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_pain_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_pain_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_pain_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_pain_10.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lion_PainChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_underattack_02.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 120.000000
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "lion_ItemDropIsCommonDrop"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_happy_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lion_ItemDropIsRareDrop"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_happy_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lion_ItemDropIsUltraRareDrop"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_happy_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "lion_EmoteIsEmoteLaugh"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_laugh_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_laugh_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_laugh_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_laugh_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_laugh_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/lion/lion_lion_laugh_06.vcd"
+				},
+			]
+		},
+	]
+	m_Requirements = 
+	[
+		
+		{
+			m_name = "Islion"
+			m_matchKey = "classname"
+			m_matchExpr = "npc_dota_hero_lion"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsLionVoodoo"
+			m_matchKey = "abilityname"
+			m_matchExpr = "lion_voodoo"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsLionImpale"
+			m_matchKey = "abilityname"
+			m_matchExpr = "lion_impale"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsLionLoadoutSpawn"
+			m_matchKey = "special_spawn"
+			m_matchExpr = "lion_loadout_spawn"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+	]
+	m_Rules = 
+	[
+		
+		{
+			m_name = "lion_Spawn_Rule"
+			m_Requirements = 
+			[
+				"Spawn",
+				"Islion",
+			]
+			m_ResponseGroups = 
+			[
+				"lion_Spawn",
+			]
+		},
+		
+		{
+			m_name = "lion_Move_Rule"
+			m_Requirements = 
+			[
+				"Move",
+				"Islion",
+			]
+			m_ResponseGroups = 
+			[
+				"lion_Move",
+			]
+		},
+		
+		{
+			m_name = "lion_MoveChance_3%_Rule"
+			m_Requirements = 
+			[
+				"Move",
+				"Islion",
+				"Chance_3%",
+			]
+			m_ResponseGroups = 
+			[
+				"lion_MoveChance_3%",
+			]
+		},
+		
+		{
+			m_name = "lion_Attack_Rule"
+			m_Requirements = 
+			[
+				"Attack",
+				"Islion",
+			]
+			m_ResponseGroups = 
+			[
+				"lion_Attack",
+			]
+		},
+		
+		{
+			m_name = "lion_CustomIsGameStart_Rule"
+			m_Requirements = 
+			[
+				"Custom",
+				"Islion",
+				"IsGameStart",
+			]
+			m_ResponseGroups = 
+			[
+				"lion_CustomIsGameStart",
+			]
+		},
+		
+		{
+			m_name = "lion_CustomIsLionLoadoutSpawn_Rule"
+			m_Requirements = 
+			[
+				"Custom",
+				"Islion",
+				"IsLionLoadoutSpawn",
+			]
+			m_ResponseGroups = 
+			[
+				"lion_CustomIsLionLoadoutSpawn",
+			]
+		},
+		
+		{
+			m_name = "lion_CastOrder_Rule"
+			m_Requirements = 
+			[
+				"CastOrder",
+				"Islion",
+			]
+			m_ResponseGroups = 
+			[
+				"lion_CastOrder",
+			]
+		},
+		
+		{
+			m_name = "lion_CastExecuteIsLionImpaleChance_15%_Rule"
+			m_Requirements = 
+			[
+				"CastExecute",
+				"Islion",
+				"IsLionImpale",
+				"Chance_15%",
+			]
+			m_ResponseGroups = 
+			[
+				"lion_CastExecuteIsLionImpaleChance_15%",
+			]
+		},
+		
+		{
+			m_name = "lion_CastExecuteIsLionVoodooChance_75%_Rule"
+			m_Requirements = 
+			[
+				"CastExecute",
+				"Islion",
+				"IsLionVoodoo",
+				"Chance_75%",
+			]
+			m_ResponseGroups = 
+			[
+				"lion_CastExecuteIsLionVoodooChance_75%",
+			]
+		},
+		
+		{
+			m_name = "lion_LevelUp_Rule"
+			m_Requirements = 
+			[
+				"LevelUp",
+				"Islion",
+			]
+			m_ResponseGroups = 
+			[
+				"lion_LevelUp",
+			]
+		},
+		
+		{
+			m_name = "lion_Kill_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Islion",
+			]
+			m_ResponseGroups = 
+			[
+				"lion_Kill",
+			]
+		},
+		
+		{
+			m_name = "lion_KillIsEnemyWitchDoctorChance_35%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Islion",
+				"IsEnemyWitchDoctor",
+				"Chance_35%",
+			]
+			m_ResponseGroups = 
+			[
+				"lion_KillIsEnemyWitchDoctorChance_35%",
+			]
+		},
+		
+		{
+			m_name = "lion_LastHit_Rule"
+			m_Requirements = 
+			[
+				"LastHit",
+				"Islion",
+			]
+			m_ResponseGroups = 
+			[
+				"lion_LastHit",
+			]
+		},
+		
+		{
+			m_name = "lion_Respawn_Rule"
+			m_Requirements = 
+			[
+				"Respawn",
+				"Islion",
+			]
+			m_ResponseGroups = 
+			[
+				"lion_Respawn",
+			]
+		},
+		
+		{
+			m_name = "lion_Death_Rule"
+			m_Requirements = 
+			[
+				"Death",
+				"Islion",
+			]
+			m_ResponseGroups = 
+			[
+				"lion_Death",
+			]
+		},
+		
+		{
+			m_name = "lion_DeathIsReincarnating_Rule"
+			m_Requirements = 
+			[
+				"Death",
+				"Islion",
+				"IsReincarnating",
+			]
+			m_ResponseGroups = 
+			[
+				"lion_DeathIsReincarnating",
+			]
+		},
+		
+		{
+			m_name = "lion_Select_Rule"
+			m_Requirements = 
+			[
+				"Select",
+				"Islion",
+			]
+			m_ResponseGroups = 
+			[
+				"lion_Select",
+			]
+		},
+		
+		{
+			m_name = "lion_PurchaseIsExpensiveItem_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Islion",
+				"IsExpensiveItem",
+			]
+			m_ResponseGroups = 
+			[
+				"lion_PurchaseIsExpensiveItem",
+			]
+		},
+		
+		{
+			m_name = "lion_Bottling_Rule"
+			m_Requirements = 
+			[
+				"Bottling",
+				"Islion",
+			]
+			m_ResponseGroups = 
+			[
+				"lion_Bottling",
+			]
+		},
+		
+		{
+			m_name = "lion_MissingIsLaneTop_Rule"
+			m_Requirements = 
+			[
+				"Missing",
+				"Islion",
+				"IsLaneTop",
+			]
+			m_ResponseGroups = 
+			[
+				"lion_MissingIsLaneTop",
+			]
+		},
+		
+		{
+			m_name = "lion_MissingIsLaneMid_Rule"
+			m_Requirements = 
+			[
+				"Missing",
+				"Islion",
+				"IsLaneMid",
+			]
+			m_ResponseGroups = 
+			[
+				"lion_MissingIsLaneMid",
+			]
+		},
+		
+		{
+			m_name = "lion_MissingIsLaneBot_Rule"
+			m_Requirements = 
+			[
+				"Missing",
+				"Islion",
+				"IsLaneBot",
+			]
+			m_ResponseGroups = 
+			[
+				"lion_MissingIsLaneBot",
+			]
+		},
+		
+		{
+			m_name = "lion_Deny_Rule"
+			m_Requirements = 
+			[
+				"Deny",
+				"Islion",
+			]
+			m_ResponseGroups = 
+			[
+				"lion_Deny",
+			]
+		},
+		
+		{
+			m_name = "lion_Defeat_Rule"
+			m_Requirements = 
+			[
+				"Defeat",
+				"Islion",
+			]
+			m_ResponseGroups = 
+			[
+				"lion_Defeat",
+			]
+		},
+		
+		{
+			m_name = "lion_Victory_Rule"
+			m_Requirements = 
+			[
+				"Victory",
+				"Islion",
+			]
+			m_ResponseGroups = 
+			[
+				"lion_Victory",
+			]
+		},
+		
+		{
+			m_name = "lion_Immortality_Rule"
+			m_Requirements = 
+			[
+				"Immortality",
+				"Islion",
+			]
+			m_ResponseGroups = 
+			[
+				"lion_Immortality",
+			]
+		},
+		
+		{
+			m_name = "lion_PowerupIsPowerupBounty_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Islion",
+				"IsPowerupBounty",
+			]
+			m_ResponseGroups = 
+			[
+				"lion_PowerupIsPowerupBounty",
+			]
+		},
+		
+		{
+			m_name = "lion_PowerupIsPowerupArcane_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Islion",
+				"IsPowerupArcane",
+			]
+			m_ResponseGroups = 
+			[
+				"lion_PowerupIsPowerupArcane",
+			]
+		},
+		
+		{
+			m_name = "lion_PowerupIsPowerupHaste_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Islion",
+				"IsPowerupHaste",
+			]
+			m_ResponseGroups = 
+			[
+				"lion_PowerupIsPowerupHaste",
+			]
+		},
+		
+		{
+			m_name = "lion_PowerupIsPowerupDoubleDamage_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Islion",
+				"IsPowerupDoubleDamage",
+			]
+			m_ResponseGroups = 
+			[
+				"lion_PowerupIsPowerupDoubleDamage",
+			]
+		},
+		
+		{
+			m_name = "lion_PowerupIsPowerupDoubleDamageChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Islion",
+				"IsPowerupDoubleDamage",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"lion_PowerupIsPowerupDoubleDamageChance_25%",
+			]
+		},
+		
+		{
+			m_name = "lion_PowerupIsPowerupRegeneration_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Islion",
+				"IsPowerupRegeneration",
+			]
+			m_ResponseGroups = 
+			[
+				"lion_PowerupIsPowerupRegeneration",
+			]
+		},
+		
+		{
+			m_name = "lion_PowerupIsPowerupRegenerationChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Islion",
+				"IsPowerupRegeneration",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"lion_PowerupIsPowerupRegenerationChance_25%",
+			]
+		},
+		
+		{
+			m_name = "lion_PowerupIsPowerupIllusion_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Islion",
+				"IsPowerupIllusion",
+			]
+			m_ResponseGroups = 
+			[
+				"lion_PowerupIsPowerupIllusion",
+			]
+		},
+		
+		{
+			m_name = "lion_PowerupIsPowerupIllusionChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Islion",
+				"IsPowerupIllusion",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"lion_PowerupIsPowerupIllusionChance_25%",
+			]
+		},
+		
+		{
+			m_name = "lion_PowerupIsPowerupInvisibility_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Islion",
+				"IsPowerupInvisibility",
+			]
+			m_ResponseGroups = 
+			[
+				"lion_PowerupIsPowerupInvisibility",
+			]
+		},
+		
+		{
+			m_name = "lion_CooldownLittleNag_Rule"
+			m_Requirements = 
+			[
+				"Cooldown",
+				"Islion",
+				"LittleNag",
+			]
+			m_ResponseGroups = 
+			[
+				"lion_CooldownLittleNag",
+			]
+		},
+		
+		{
+			m_name = "lion_CooldownMediumNag_Rule"
+			m_Requirements = 
+			[
+				"Cooldown",
+				"Islion",
+				"MediumNag",
+			]
+			m_ResponseGroups = 
+			[
+				"lion_CooldownMediumNag",
+			]
+		},
+		
+		{
+			m_name = "lion_CooldownSuperNag_Rule"
+			m_Requirements = 
+			[
+				"Cooldown",
+				"Islion",
+				"SuperNag",
+			]
+			m_ResponseGroups = 
+			[
+				"lion_CooldownSuperNag",
+			]
+		},
+		
+		{
+			m_name = "lion_NoManaLittleNag_Rule"
+			m_Requirements = 
+			[
+				"NoMana",
+				"Islion",
+				"LittleNag",
+			]
+			m_ResponseGroups = 
+			[
+				"lion_NoManaLittleNag",
+			]
+		},
+		
+		{
+			m_name = "lion_NoManaMediumNag_Rule"
+			m_Requirements = 
+			[
+				"NoMana",
+				"Islion",
+				"MediumNag",
+			]
+			m_ResponseGroups = 
+			[
+				"lion_NoManaMediumNag",
+			]
+		},
+		
+		{
+			m_name = "lion_NoManaSuperNag_Rule"
+			m_Requirements = 
+			[
+				"NoMana",
+				"Islion",
+				"SuperNag",
+			]
+			m_ResponseGroups = 
+			[
+				"lion_NoManaSuperNag",
+			]
+		},
+		
+		{
+			m_name = "lion_Thanks_Rule"
+			m_Requirements = 
+			[
+				"Thanks",
+				"Islion",
+			]
+			m_ResponseGroups = 
+			[
+				"lion_Thanks",
+			]
+		},
+		
+		{
+			m_name = "lion_InTheBag_Rule"
+			m_Requirements = 
+			[
+				"InTheBag",
+				"Islion",
+			]
+			m_ResponseGroups = 
+			[
+				"lion_InTheBag",
+			]
+		},
+		
+		{
+			m_name = "lion_Pain_Rule"
+			m_Requirements = 
+			[
+				"Pain",
+				"Islion",
+			]
+			m_ResponseGroups = 
+			[
+				"lion_Pain",
+			]
+		},
+		
+		{
+			m_name = "lion_PainChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Pain",
+				"Islion",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"lion_PainChance_25%",
+			]
+		},
+		
+		{
+			m_name = "lion_ItemDropIsCommonDrop_Rule"
+			m_Requirements = 
+			[
+				"ItemDrop",
+				"Islion",
+				"IsCommonDrop",
+			]
+			m_ResponseGroups = 
+			[
+				"lion_ItemDropIsCommonDrop",
+			]
+		},
+		
+		{
+			m_name = "lion_ItemDropIsRareDrop_Rule"
+			m_Requirements = 
+			[
+				"ItemDrop",
+				"Islion",
+				"IsRareDrop",
+			]
+			m_ResponseGroups = 
+			[
+				"lion_ItemDropIsRareDrop",
+			]
+		},
+		
+		{
+			m_name = "lion_ItemDropIsUltraRareDrop_Rule"
+			m_Requirements = 
+			[
+				"ItemDrop",
+				"Islion",
+				"IsUltraRareDrop",
+			]
+			m_ResponseGroups = 
+			[
+				"lion_ItemDropIsUltraRareDrop",
+			]
+		},
+		
+		{
+			m_name = "lion_EmoteIsEmoteLaugh_Rule"
+			m_Requirements = 
+			[
+				"Emote",
+				"Islion",
+				"IsEmoteLaugh",
+			]
+			m_ResponseGroups = 
+			[
+				"lion_EmoteIsEmoteLaugh",
+			]
+		},
+	]
 }
-

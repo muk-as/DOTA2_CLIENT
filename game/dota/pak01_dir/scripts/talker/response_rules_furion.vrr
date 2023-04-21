@@ -1,877 +1,2592 @@
-#include "talker/response_rules_shared.vrr"
-
-criterion "Isfurion" "classname" "npc_dota_hero_furion" weight 5 required
-criterion "IsNaturesCall" "abilityname" "furion_force_of_nature" weight 5 required
-criterion "IsWrathOfNature" "abilityname" "furion_wrath_of_nature" weight 5 required
-criterion "IsFurionLoadoutSpawn" "special_spawn" "furion_loadout_spawn" weight 5 required
-
-Response furion_Spawn
-{
-	scene "scenes/furion/furion_furi_spawn_01.vcd" nodelay 
-	scene "scenes/furion/furion_furi_spawn_02.vcd" nodelay 
-	scene "scenes/furion/furion_furi_spawn_03.vcd" nodelay 
-}
-
-Rule furion_Spawn_Rule
-{
-	criteria Spawn Isfurion 
-	response furion_Spawn
-}
-
-Response furion_CustomIsGameStart
-{
-	scene "scenes/furion/furion_furi_battlebegins_01.vcd" nodelay 
-}
-
-Rule furion_CustomIsGameStart_Rule
-{
-	criteria Custom Isfurion IsGameStart
-	response furion_CustomIsGameStart
-}
-
-Response furion_CustomIsFurionLoadoutSpawn
-{
-	scene "scenes/furion/furion_furi_spawn_01.vcd" nodelay 
-	scene "scenes/furion/furion_furi_spawn_02.vcd" nodelay 
-	scene "scenes/furion/furion_furi_spawn_03.vcd" nodelay 
-	scene "scenes/furion/furion_furi_move_10.vcd" nodelay 
-	scene "scenes/furion/furion_furi_cast_03.vcd" nodelay 
-	scene "scenes/furion/furion_furi_ability_teleport_04.vcd" nodelay 
-	scene "scenes/furion/furion_furi_ability_force_04.vcd" nodelay 
-	scene "scenes/furion/furion_furi_level_02.vcd" nodelay 
-	scene "scenes/furion/furion_furi_respawn_11.vcd" nodelay 
-	scene "scenes/furion/furion_furi_move_11.vcd" nodelay 
-	scene "scenes/furion/furion_furi_attack_02.vcd" nodelay 
-	scene "scenes/furion/furion_furi_attack_07.vcd" nodelay 
-}
-
-Rule furion_CustomIsFurionLoadoutSpawn_Rule
-{
-	criteria Custom Isfurion IsFurionLoadoutSpawn
-	response furion_CustomIsFurionLoadoutSpawn
-}
-
-Response furion_KillIsFirstBlood
-{
-	scene "scenes/furion/furion_furi_firstblood_01.vcd" nodelay 
-}
-
-Rule furion_KillIsFirstBlood_Rule
-{
-	criteria Kill Isfurion IsFirstBlood
-	response furion_KillIsFirstBlood
-}
-
-Response furion_KillIsWrathOfNature
-{
-	scene "scenes/furion/furion_furi_ability_wrath_06.vcd" nodelay 
-	scene "scenes/furion/furion_furi_ability_wrath_07.vcd" nodelay 
-}
-
-Rule furion_KillIsWrathOfNature_Rule
-{
-	criteria Kill Isfurion IsWrathOfNature
-	response furion_KillIsWrathOfNature
-}
-
-Response furion_Kill
-{
-	scene "scenes/furion/furion_furi_kill_01.vcd" nodelay 
-	scene "scenes/furion/furion_furi_kill_02.vcd" nodelay 
-	scene "scenes/furion/furion_furi_kill_03.vcd" nodelay 
-	scene "scenes/furion/furion_furi_kill_04.vcd" nodelay 
-	scene "scenes/furion/furion_furi_kill_05.vcd" nodelay 
-	scene "scenes/furion/furion_furi_kill_06.vcd" nodelay 
-	scene "scenes/furion/furion_furi_kill_07.vcd" nodelay 
-	scene "scenes/furion/furion_furi_kill_08.vcd" nodelay 
-	scene "scenes/furion/furion_furi_kill_09.vcd" nodelay 
-	scene "scenes/furion/furion_furi_kill_10.vcd" nodelay 
-	scene "scenes/furion/furion_furi_kill_11.vcd" nodelay 
-	scene "scenes/furion/furion_furi_kill_12.vcd" nodelay 
-	scene "scenes/furion/furion_furi_kill_13.vcd" nodelay 
-	scene "scenes/furion/furion_furi_kill_14.vcd" nodelay 
-	scene "scenes/furion/furion_furi_kill_15.vcd" nodelay 
-	scene "scenes/furion/furion_furi_laugh_03.vcd" nodelay 
-	scene "scenes/furion/furion_furi_laugh_07.vcd" nodelay 
-	scene "scenes/furion/furion_furi_laugh_08.vcd" nodelay 
-}
-
-Rule furion_Kill_Rule
-{
-	criteria Kill Isfurion 
-	response furion_Kill
-}
-
-Response furion_KillIsEnemyTreantChance_35%
-{
-	scene "scenes/furion/furion_furi_rival_01.vcd" nodelay 
-	scene "scenes/furion/furion_furi_rival_02.vcd" nodelay 
-	scene "scenes/furion/furion_furi_rival_03.vcd" nodelay 
-}
-
-Rule furion_KillIsEnemyTreantChance_35%_Rule
-{
-	criteria Kill Isfurion IsEnemyTreant Chance_35%
-	response furion_KillIsEnemyTreantChance_35%
-}
-
-Response furion_KillIsEnemyLeshracChance_35%
-{
-	scene "scenes/furion/furion_furi_rival_04.vcd" nodelay 
-}
-
-Rule furion_KillIsEnemyLeshracChance_35%_Rule
-{
-	criteria Kill Isfurion IsEnemyLeshrac Chance_35%
-	response furion_KillIsEnemyLeshracChance_35%
-}
-
-Response furion_KillIsEnemyAbyssal_UnderlordChance_35%
-{
-	scene "scenes/furion/furion_furi_rival_05.vcd" nodelay 
-}
-
-Rule furion_KillIsEnemyAbyssal_UnderlordChance_35%_Rule
-{
-	criteria Kill Isfurion IsEnemyAbyssal_Underlord Chance_35%
-	response furion_KillIsEnemyAbyssal_UnderlordChance_35%
-}
-
-Response furion_Move
-{
-	scene "scenes/furion/furion_furi_move_01.vcd" nodelay 
-	scene "scenes/furion/furion_furi_move_02.vcd" nodelay 
-	scene "scenes/furion/furion_furi_move_03.vcd" nodelay 
-	scene "scenes/furion/furion_furi_move_04.vcd" nodelay 
-	scene "scenes/furion/furion_furi_move_05.vcd" nodelay 
-	scene "scenes/furion/furion_furi_move_06.vcd" nodelay 
-	scene "scenes/furion/furion_furi_move_07.vcd" nodelay 
-	scene "scenes/furion/furion_furi_move_08.vcd" nodelay 
-	scene "scenes/furion/furion_furi_move_09.vcd" nodelay 
-	scene "scenes/furion/furion_furi_move_10.vcd" nodelay 
-	scene "scenes/furion/furion_furi_move_11.vcd" nodelay 
-	scene "scenes/furion/furion_furi_move_12.vcd" nodelay 
-	scene "scenes/furion/furion_furi_move_13.vcd" nodelay 
-	scene "scenes/furion/furion_furi_move_14.vcd" nodelay 
-	scene "scenes/furion/furion_furi_move_15.vcd" nodelay 
-	scene "scenes/furion/furion_furi_move_16.vcd" nodelay 
-	scene "scenes/furion/furion_furi_ability_teleport_01.vcd" nodelay 
-}
-
-Rule furion_Move_Rule
-{
-	criteria Move Isfurion 
-	response furion_Move
-}
-
-Response furion_Attack
-{
-	scene "scenes/furion/furion_furi_attack_01.vcd" nodelay 
-	scene "scenes/furion/furion_furi_attack_02.vcd" nodelay 
-	scene "scenes/furion/furion_furi_attack_03.vcd" nodelay 
-	scene "scenes/furion/furion_furi_attack_04.vcd" nodelay 
-	scene "scenes/furion/furion_furi_attack_05.vcd" nodelay 
-	scene "scenes/furion/furion_furi_attack_06.vcd" nodelay 
-	scene "scenes/furion/furion_furi_attack_07.vcd" nodelay 
-	scene "scenes/furion/furion_furi_attack_08.vcd" nodelay 
-	scene "scenes/furion/furion_furi_attack_09.vcd" nodelay 
-	scene "scenes/furion/furion_furi_attack_10.vcd" nodelay 
-	scene "scenes/furion/furion_furi_attack_11.vcd" nodelay 
-	scene "scenes/furion/furion_furi_ability_teleport_04.vcd" nodelay 
-}
-
-Rule furion_Attack_Rule
-{
-	criteria Attack Isfurion 
-	response furion_Attack
-}
-
-Response furion_CastOrder
-{
-	scene "scenes/furion/furion_furi_cast_01.vcd" nodelay 
-	scene "scenes/furion/furion_furi_cast_02.vcd" nodelay 
-	scene "scenes/furion/furion_furi_cast_03.vcd" nodelay 
-}
-
-Rule furion_CastOrder_Rule
-{
-	criteria CastOrder Isfurion 
-	response furion_CastOrder
-}
-
-Response furion_ItemDropIsUltraRareDrop
-{
-	scene "scenes/furion/furion_furi_ability_teleport_03.vcd" nodelay 
-	scene "scenes/furion/furion_furi_drop_rare.vcd" nodelay 
-}
-
-Rule furion_ItemDropIsUltraRareDrop_Rule
-{
-	criteria ItemDrop Isfurion IsUltraRareDrop
-	response furion_ItemDropIsUltraRareDrop
-}
-
-Response furion_ItemDropIsCommonDrop
-{
-	scene "scenes/furion/furion_furi_happy_03.vcd" nodelay 
-	scene "scenes/furion/furion_furi_drop_common.vcd" nodelay 
-}
-
-Rule furion_ItemDropIsCommonDrop_Rule
-{
-	criteria ItemDrop Isfurion IsCommonDrop
-	response furion_ItemDropIsCommonDrop
-}
-
-Response furion_ItemDropIsRareDrop
-{
-	scene "scenes/furion/furion_furi_laugh_01.vcd" nodelay 
-	scene "scenes/furion/furion_furi_drop_medium.vcd" nodelay 
-}
-
-Rule furion_ItemDropIsRareDrop_Rule
-{
-	criteria ItemDrop Isfurion IsRareDrop
-	response furion_ItemDropIsRareDrop
-}
-
-Response furion_CastExecuteIsNaturesCall
-{
-	scene "scenes/furion/furion_furi_ability_force_01.vcd" nodelay 
-	scene "scenes/furion/furion_furi_ability_force_02.vcd" nodelay 
-	scene "scenes/furion/furion_furi_ability_force_03.vcd" nodelay 
-	scene "scenes/furion/furion_furi_ability_force_04.vcd" nodelay 
-	scene "scenes/furion/furion_furi_ability_force_05.vcd" nodelay 
-	scene "scenes/furion/furion_furi_ability_force_06.vcd" nodelay 
-	scene "scenes/furion/furion_furi_ability_force_07.vcd" nodelay 
-}
-
-Rule furion_CastExecuteIsNaturesCall_Rule
-{
-	criteria CastExecute Isfurion IsNaturesCall
-	response furion_CastExecuteIsNaturesCall
-}
-
-Response furion_LevelUp
-{
-	scene "scenes/furion/furion_furi_level_01.vcd" nodelay 
-	scene "scenes/furion/furion_furi_level_02.vcd" nodelay 
-	scene "scenes/furion/furion_furi_level_03.vcd" nodelay 
-	scene "scenes/furion/furion_furi_level_04.vcd" nodelay 
-	scene "scenes/furion/furion_furi_level_05.vcd" nodelay 
-	scene "scenes/furion/furion_furi_level_06.vcd" nodelay 
-	scene "scenes/furion/furion_furi_level_07.vcd" nodelay 
-	scene "scenes/furion/furion_furi_level_08.vcd" nodelay 
-	scene "scenes/furion/furion_furi_level_09.vcd" nodelay 
-}
-
-Rule furion_LevelUp_Rule
-{
-	criteria LevelUp Isfurion 
-	response furion_LevelUp
-}
-
-Response furion_LastHit
-{
-	scene "scenes/furion/furion_furi_lasthit_01.vcd" nodelay 
-	scene "scenes/furion/furion_furi_lasthit_02.vcd" nodelay 
-	scene "scenes/furion/furion_furi_lasthit_03.vcd" nodelay 
-	scene "scenes/furion/furion_furi_lasthit_04.vcd" nodelay 
-	scene "scenes/furion/furion_furi_lasthit_05.vcd" nodelay 
-	scene "scenes/furion/furion_furi_lasthit_06.vcd" nodelay 
-	scene "scenes/furion/furion_furi_lasthit_07.vcd" nodelay 
-	scene "scenes/furion/furion_furi_lasthit_08.vcd" nodelay 
-	scene "scenes/furion/furion_furi_lasthit_09.vcd" nodelay 
-	scene "scenes/furion/furion_furi_lasthit_10.vcd" nodelay 
-}
-
-Rule furion_LastHit_Rule
-{
-	criteria LastHit Isfurion 
-	response furion_LastHit
-}
-
-Response furion_Death
-{
-	scene "scenes/furion/furion_furi_death_01.vcd" nodelay 
-	scene "scenes/furion/furion_furi_death_02.vcd" nodelay 
-	scene "scenes/furion/furion_furi_death_03.vcd" nodelay 
-	scene "scenes/furion/furion_furi_death_04.vcd" nodelay 
-	scene "scenes/furion/furion_furi_death_05.vcd" nodelay 
-	scene "scenes/furion/furion_furi_death_06.vcd" nodelay 
-	scene "scenes/furion/furion_furi_death_07.vcd" nodelay 
-	scene "scenes/furion/furion_furi_death_08.vcd" nodelay 
-	scene "scenes/furion/furion_furi_death_09.vcd" nodelay 
-	scene "scenes/furion/furion_furi_death_10.vcd" nodelay 
-	scene "scenes/furion/furion_furi_death_11.vcd" nodelay 
-}
-
-Rule furion_Death_Rule
-{
-	criteria Death Isfurion 
-	response furion_Death
-}
-
-Response furion_DeathIsReincarnating
-{
-	scene "scenes/furion/furion_furi_fastres_01.vcd" nodelay 
-	scene "scenes/furion/furion_furi_fastres_02.vcd" nodelay 
-}
-
-Rule furion_DeathIsReincarnating_Rule
-{
-	criteria Death Isfurion IsReincarnating
-	response furion_DeathIsReincarnating
-}
-
-Response furion_Respawn
-{
-	scene "scenes/furion/furion_furi_respawn_01.vcd" nodelay 
-	scene "scenes/furion/furion_furi_respawn_02.vcd" nodelay 
-	scene "scenes/furion/furion_furi_respawn_03.vcd" nodelay 
-	scene "scenes/furion/furion_furi_respawn_04.vcd" nodelay 
-	scene "scenes/furion/furion_furi_respawn_05.vcd" nodelay 
-	scene "scenes/furion/furion_furi_respawn_06.vcd" nodelay 
-	scene "scenes/furion/furion_furi_respawn_07.vcd" nodelay 
-	scene "scenes/furion/furion_furi_respawn_08.vcd" nodelay 
-	scene "scenes/furion/furion_furi_respawn_09.vcd" nodelay 
-	scene "scenes/furion/furion_furi_respawn_10.vcd" nodelay 
-	scene "scenes/furion/furion_furi_respawn_11.vcd" nodelay 
-}
-
-Rule furion_Respawn_Rule
-{
-	criteria Respawn Isfurion 
-	response furion_Respawn
-}
-
-Response furion_Select
-{
-	scene "scenes/furion/furion_furi_rare_01.vcd" nodelay 
-	scene "scenes/furion/furion_furi_rare_02.vcd" nodelay 
-}
-
-Rule furion_Select_Rule
-{
-	criteria Select Isfurion 
-	response furion_Select
-}
-
-Response furion_PurchaseIsExpensiveItem
-{
-	scene "scenes/furion/furion_furi_purch_01.vcd" nodelay speakonce
-	scene "scenes/furion/furion_furi_purch_02.vcd" nodelay speakonce
-	scene "scenes/furion/furion_furi_purch_03.vcd" nodelay speakonce
-}
-
-Rule furion_PurchaseIsExpensiveItem_Rule
-{
-	criteria Purchase Isfurion IsExpensiveItem
-	response furion_PurchaseIsExpensiveItem
-}
-
-Response furion_PurchaseIsBlinkDagger
-{
-	scene "scenes/furion/furion_furi_blink_01.vcd" nodelay speakonce
-}
-
-Rule furion_PurchaseIsBlinkDagger_Rule
-{
-	criteria Purchase Isfurion IsBlinkDagger
-	response furion_PurchaseIsBlinkDagger
-}
-
-Response furion_PurchaseIsUltimateScepter
-{
-	scene "scenes/furion/furion_furi_scepter_01.vcd" nodelay speakonce
-	scene "scenes/furion/furion_furi_scepter_02.vcd" nodelay speakonce
-}
-
-Rule furion_PurchaseIsUltimateScepter_Rule
-{
-	criteria Purchase Isfurion IsUltimateScepter
-	response furion_PurchaseIsUltimateScepter
-}
-
-Response furion_PurchaseIsOrchid
-{
-	scene "scenes/furion/furion_furi_item_01.vcd" nodelay speakonce
-}
-
-Rule furion_PurchaseIsOrchid_Rule
-{
-	criteria Purchase Isfurion IsOrchid
-	response furion_PurchaseIsOrchid
-}
-
-Response furion_PurchaseIsNecronomicon
-{
-	scene "scenes/furion/furion_furi_item_02.vcd" nodelay speakonce
-	scene "scenes/furion/furion_furi_item_03.vcd" nodelay speakonce
-}
-
-Rule furion_PurchaseIsNecronomicon_Rule
-{
-	criteria Purchase Isfurion IsNecronomicon
-	response furion_PurchaseIsNecronomicon
-}
-
-Response furion_PurchaseIsSheepstick
-{
-	scene "scenes/furion/furion_furi_item_04.vcd" nodelay speakonce
-}
-
-Rule furion_PurchaseIsSheepstick_Rule
-{
-	criteria Purchase Isfurion IsSheepstick
-	response furion_PurchaseIsSheepstick
-}
-
-Response furion_PurchaseIsDagon
-{
-	scene "scenes/furion/furion_furi_item_05.vcd" nodelay speakonce
-}
-
-Rule furion_PurchaseIsDagon_Rule
-{
-	criteria Purchase Isfurion IsDagon
-	response furion_PurchaseIsDagon
-}
-
-Response furion_PurchaseIsMjollnir
-{
-	scene "scenes/furion/furion_furi_item_06.vcd" nodelay speakonce
-}
-
-Rule furion_PurchaseIsMjollnir_Rule
-{
-	criteria Purchase Isfurion IsMjollnir
-	response furion_PurchaseIsMjollnir
-}
-
-Response furion_Bottling
-{
-	scene "scenes/furion/furion_furi_bottle_01.vcd" nodelay 
-	scene "scenes/furion/furion_furi_bottle_02.vcd" nodelay 
-	scene "scenes/furion/furion_furi_bottle_03.vcd" nodelay 
-	scene "scenes/furion/furion_furi_bottle_04.vcd" nodelay 
-}
-
-Rule furion_Bottling_Rule
-{
-	criteria Bottling Isfurion 
-	response furion_Bottling
-}
-
-Response furion_MissingIsLaneTop
-{
-	scene "scenes/furion/furion_furi_missing_lane_01.vcd" nodelay 
-}
-
-Rule furion_MissingIsLaneTop_Rule
-{
-	criteria Missing Isfurion IsLaneTop
-	response furion_MissingIsLaneTop
-}
-
-Response furion_MissingIsLaneBot
-{
-	scene "scenes/furion/furion_furi_missing_lane_02.vcd" nodelay 
-}
-
-Rule furion_MissingIsLaneBot_Rule
-{
-	criteria Missing Isfurion IsLaneBot
-	response furion_MissingIsLaneBot
-}
-
-Response furion_MissingIsLaneMid
-{
-	scene "scenes/furion/furion_furi_missing_lane_03.vcd" nodelay 
-}
-
-Rule furion_MissingIsLaneMid_Rule
-{
-	criteria Missing Isfurion IsLaneMid
-	response furion_MissingIsLaneMid
-}
-
-Response furion_Deny
-{
-	scene "scenes/furion/furion_furi_deny_01.vcd" nodelay 
-	scene "scenes/furion/furion_furi_deny_02.vcd" nodelay 
-	scene "scenes/furion/furion_furi_deny_03.vcd" nodelay 
-	scene "scenes/furion/furion_furi_deny_04.vcd" nodelay 
-	scene "scenes/furion/furion_furi_deny_05.vcd" nodelay 
-	scene "scenes/furion/furion_furi_deny_06.vcd" nodelay 
-	scene "scenes/furion/furion_furi_deny_07.vcd" nodelay 
-	scene "scenes/furion/furion_furi_deny_08.vcd" nodelay 
-	scene "scenes/furion/furion_furi_deny_09.vcd" nodelay 
-	scene "scenes/furion/furion_furi_deny_10.vcd" nodelay 
-	scene "scenes/furion/furion_furi_deny_11.vcd" nodelay 
-	scene "scenes/furion/furion_furi_deny_12.vcd" nodelay 
-}
-
-Rule furion_Deny_Rule
-{
-	criteria Deny Isfurion 
-	response furion_Deny
-}
-
-Response furion_Defeat
-{
-	scene "scenes/furion/furion_furi_lose_01.vcd" nodelay 
-	scene "scenes/furion/furion_furi_lose_02.vcd" nodelay 
-	scene "scenes/furion/furion_furi_lose_03.vcd" nodelay 
-}
-
-Rule furion_Defeat_Rule
-{
-	criteria Defeat Isfurion 
-	response furion_Defeat
-}
-
-Response furion_Victory
-{
-	scene "scenes/furion/furion_furi_win_01.vcd" nodelay 
-	scene "scenes/furion/furion_furi_win_02.vcd" nodelay 
-	scene "scenes/furion/furion_furi_win_03.vcd" nodelay 
-}
-
-Rule furion_Victory_Rule
-{
-	criteria Victory Isfurion 
-	response furion_Victory
-}
-
-Response furion_Immortality
-{
-	scene "scenes/furion/furion_furi_immort_01.vcd" nodelay 
-}
-
-Rule furion_Immortality_Rule
-{
-	criteria Immortality Isfurion 
-	response furion_Immortality
-}
-
-Response furion_ImmortalityChance_25%
-{
-	scene "scenes/furion/furion_furi_immort_03.vcd" nodelay 
-}
-
-Rule furion_ImmortalityChance_25%_Rule
-{
-	criteria Immortality Isfurion Chance_25%
-	response furion_ImmortalityChance_25%
-}
-
-Response furion_PowerupIsPowerupHaste
-{
-	scene "scenes/furion/furion_furi_haste_01.vcd" nodelay 
-}
-
-Rule furion_PowerupIsPowerupHaste_Rule
-{
-	criteria Powerup Isfurion IsPowerupHaste
-	response furion_PowerupIsPowerupHaste
-}
-
-Response furion_PowerupIsPowerupHasteChance_25%
-{
-	scene "scenes/furion/furion_furi_haste_02.vcd" nodelay 
-}
-
-Rule furion_PowerupIsPowerupHasteChance_25%_Rule
-{
-	criteria Powerup Isfurion IsPowerupHaste Chance_25%
-	response furion_PowerupIsPowerupHasteChance_25%
-}
-
-Response furion_PowerupIsPowerupDoubleDamage
-{
-	scene "scenes/furion/furion_furi_doubdam_01.vcd" nodelay 
-}
-
-Rule furion_PowerupIsPowerupDoubleDamage_Rule
-{
-	criteria Powerup Isfurion IsPowerupDoubleDamage
-	response furion_PowerupIsPowerupDoubleDamage
-}
-
-Response furion_PowerupIsPowerupDoubleDamageChance_25%
-{
-	scene "scenes/furion/furion_furi_doubdam_02.vcd" nodelay 
-}
-
-Rule furion_PowerupIsPowerupDoubleDamageChance_25%_Rule
-{
-	criteria Powerup Isfurion IsPowerupDoubleDamage Chance_25%
-	response furion_PowerupIsPowerupDoubleDamageChance_25%
-}
-
-Response furion_PowerupIsPowerupBounty
-{
-	scene "scenes/furion/furion_furi_lasthit_01.vcd" nodelay respeakdelay 300
-}
-
-Rule furion_PowerupIsPowerupBounty_Rule
-{
-	criteria Powerup Isfurion IsPowerupBounty
-	response furion_PowerupIsPowerupBounty
-}
-
-Response furion_PowerupIsPowerupArcane
-{
-	scene "scenes/furion/furion_furi_equipping_05.vcd" nodelay respeakdelay 300
-}
-
-Rule furion_PowerupIsPowerupArcane_Rule
-{
-	criteria Powerup Isfurion IsPowerupArcane
-	response furion_PowerupIsPowerupArcane
-}
-
-Response furion_PowerupIsPowerupArcaneChance_20%
-{
-	scene "scenes/furion/furion_furi_set_complete_04.vcd" nodelay 
-}
-
-Rule furion_PowerupIsPowerupArcaneChance_20%_Rule
-{
-	criteria Powerup Isfurion IsPowerupArcane Chance_20%
-	response furion_PowerupIsPowerupArcaneChance_20%
-}
-
-Response furion_PowerupIsPowerupRegeneration
-{
-	scene "scenes/furion/furion_furi_regen_01.vcd" nodelay 
-}
-
-Rule furion_PowerupIsPowerupRegeneration_Rule
-{
-	criteria Powerup Isfurion IsPowerupRegeneration
-	response furion_PowerupIsPowerupRegeneration
-}
-
-Response furion_PowerupIsPowerupRegenerationChance_5%
-{
-	scene "scenes/furion/furion_furi_regen_02.vcd" nodelay 
-}
-
-Rule furion_PowerupIsPowerupRegenerationChance_5%_Rule
-{
-	criteria Powerup Isfurion IsPowerupRegeneration Chance_5%
-	response furion_PowerupIsPowerupRegenerationChance_5%
-}
-
-Response furion_PowerupIsPowerupRegenerationChance_25%
-{
-	scene "scenes/furion/furion_furi_regen_03.vcd" nodelay 
-}
-
-Rule furion_PowerupIsPowerupRegenerationChance_25%_Rule
-{
-	criteria Powerup Isfurion IsPowerupRegeneration Chance_25%
-	response furion_PowerupIsPowerupRegenerationChance_25%
-}
-
-Response furion_PowerupIsPowerupIllusion
-{
-	scene "scenes/furion/furion_furi_illus_01.vcd" nodelay 
-}
-
-Rule furion_PowerupIsPowerupIllusion_Rule
-{
-	criteria Powerup Isfurion IsPowerupIllusion
-	response furion_PowerupIsPowerupIllusion
-}
-
-Response furion_PowerupIsPowerupIllusionChance_25%
-{
-	scene "scenes/furion/furion_furi_illus_02.vcd" nodelay 
-}
-
-Rule furion_PowerupIsPowerupIllusionChance_25%_Rule
-{
-	criteria Powerup Isfurion IsPowerupIllusion Chance_25%
-	response furion_PowerupIsPowerupIllusionChance_25%
-}
-
-Response furion_PowerupIsPowerupInvisibility
-{
-	scene "scenes/furion/furion_furi_invis_01.vcd" nodelay 
-}
-
-Rule furion_PowerupIsPowerupInvisibility_Rule
-{
-	criteria Powerup Isfurion IsPowerupInvisibility
-	response furion_PowerupIsPowerupInvisibility
-}
-
-Response furion_CooldownLittleNag
-{
-	scene "scenes/furion/furion_furi_notyet_01.vcd" nodelay 
-	scene "scenes/furion/furion_furi_notyet_02.vcd" nodelay 
-	scene "scenes/furion/furion_furi_notyet_03.vcd" nodelay 
-}
-
-Rule furion_CooldownLittleNag_Rule
-{
-	criteria Cooldown Isfurion LittleNag
-	response furion_CooldownLittleNag
-}
-
-Response furion_CooldownMediumNag
-{
-	scene "scenes/furion/furion_furi_notyet_04.vcd" nodelay 
-	scene "scenes/furion/furion_furi_notyet_05.vcd" nodelay 
-	scene "scenes/furion/furion_furi_notyet_06.vcd" nodelay 
-}
-
-Rule furion_CooldownMediumNag_Rule
-{
-	criteria Cooldown Isfurion MediumNag
-	response furion_CooldownMediumNag
-}
-
-Response furion_CooldownSuperNag
-{
-	scene "scenes/furion/furion_furi_notyet_07.vcd" nodelay 
-	scene "scenes/furion/furion_furi_notyet_08.vcd" nodelay 
-	scene "scenes/furion/furion_furi_notyet_09.vcd" nodelay 
-}
-
-Rule furion_CooldownSuperNag_Rule
-{
-	criteria Cooldown Isfurion SuperNag
-	response furion_CooldownSuperNag
-}
-
-Response furion_NoManaLittleNag
-{
-	scene "scenes/furion/furion_furi_nomana_01.vcd" nodelay 
-	scene "scenes/furion/furion_furi_nomana_02.vcd" nodelay 
-	scene "scenes/furion/furion_furi_nomana_03.vcd" nodelay 
-}
-
-Rule furion_NoManaLittleNag_Rule
-{
-	criteria NoMana Isfurion LittleNag
-	response furion_NoManaLittleNag
-}
-
-Response furion_NoManaMediumNag
-{
-	scene "scenes/furion/furion_furi_nomana_04.vcd" nodelay 
-	scene "scenes/furion/furion_furi_nomana_05.vcd" nodelay 
-	scene "scenes/furion/furion_furi_nomana_06.vcd" nodelay 
-}
-
-Rule furion_NoManaMediumNag_Rule
-{
-	criteria NoMana Isfurion MediumNag
-	response furion_NoManaMediumNag
-}
-
-Response furion_NoManaSuperNag
-{
-	scene "scenes/furion/furion_furi_nomana_07.vcd" nodelay 
-	scene "scenes/furion/furion_furi_nomana_08.vcd" nodelay 
-	scene "scenes/furion/furion_furi_nomana_09.vcd" nodelay 
-}
-
-Rule furion_NoManaSuperNag_Rule
-{
-	criteria NoMana Isfurion SuperNag
-	response furion_NoManaSuperNag
-}
-
-Response furion_Thanks
-{
-	scene "scenes/furion/furion_furi_thanks_01.vcd" nodelay 
-	scene "scenes/furion/furion_furi_thanks_02.vcd" nodelay 
-}
-
-Rule furion_Thanks_Rule
-{
-	criteria Thanks Isfurion 
-	response furion_Thanks
-}
-
-Response furion_PainChance_25%
-{
-	scene "scenes/furion/furion_furi_underattack_01.vcd" nodelay respeakdelay 120
-}
-
-Rule furion_PainChance_25%_Rule
-{
-	criteria Pain Isfurion Chance_25%
-	response furion_PainChance_25%
-}
-
-Response furion_Pain
-{
-	scene "scenes/furion/furion_furi_pain_01.vcd" nodelay 
-	scene "scenes/furion/furion_furi_pain_02.vcd" nodelay 
-	scene "scenes/furion/furion_furi_pain_03.vcd" nodelay 
-	scene "scenes/furion/furion_furi_pain_04.vcd" nodelay 
-	scene "scenes/furion/furion_furi_pain_05.vcd" nodelay 
-	scene "scenes/furion/furion_furi_pain_06.vcd" nodelay 
-	scene "scenes/furion/furion_furi_pain_07.vcd" nodelay 
-}
-
-Rule furion_Pain_Rule
-{
-	criteria Pain Isfurion 
-	response furion_Pain
-}
-
-Response furion_InTheBag
-{
-	scene "scenes/furion/furion_furi_inthebag_01.vcd" nodelay 
-}
-
-Rule furion_InTheBag_Rule
-{
-	criteria InTheBag Isfurion 
-	response furion_InTheBag
-}
-
-Response furion_Taunt
-{
-	scene "scenes/furion/furion_furi_taunt_01.vcd" nodelay 
-	scene "scenes/furion/furion_furi_taunt_02.vcd" nodelay 
-	scene "scenes/furion/furion_furi_taunt_03.vcd" nodelay 
-	scene "scenes/furion/furion_furi_taunt_04.vcd" nodelay 
-	scene "scenes/furion/furion_furi_taunt_05.vcd" nodelay 
-	scene "scenes/furion/furion_furi_taunt_06.vcd" nodelay 
-	scene "scenes/furion/furion_furi_taunt_07.vcd" nodelay 
-	scene "scenes/furion/furion_furi_taunt_08.vcd" nodelay 
-	scene "scenes/furion/furion_furi_taunt_09.vcd" nodelay 
-}
-
-Rule furion_Taunt_Rule
-{
-	criteria Taunt Isfurion 
-	response furion_Taunt
-}
-
-Response furion_EmoteIsEmoteLaugh
-{
-	scene "scenes/furion/furion_furi_laugh_01.vcd" nodelay 
-	scene "scenes/furion/furion_furi_laugh_02.vcd" nodelay 
-	scene "scenes/furion/furion_furi_laugh_03.vcd" nodelay 
-	scene "scenes/furion/furion_furi_laugh_04.vcd" nodelay 
-	scene "scenes/furion/furion_furi_laugh_05.vcd" nodelay 
-	scene "scenes/furion/furion_furi_laugh_06.vcd" nodelay 
-	scene "scenes/furion/furion_furi_laugh_07.vcd" nodelay 
-	scene "scenes/furion/furion_furi_laugh_08.vcd" nodelay 
-}
-
-Rule furion_EmoteIsEmoteLaugh_Rule
-{
-	criteria Emote Isfurion IsEmoteLaugh
-	response furion_EmoteIsEmoteLaugh
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vrfunknown:version{c1f07085-5299-4e8a-b7e9-1cbb66bbbe23} -->
+{
+	m_Includes = 
+	[
+		"scripts/talker/response_rules_shared.vrr",
+	]
+	m_ResponseGroups = 
+	[
+		
+		{
+			m_name = "furion_Spawn"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_spawn_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_spawn_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_spawn_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "furion_CustomIsGameStart"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_battlebegins_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "furion_CustomIsFurionLoadoutSpawn"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_spawn_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_spawn_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_spawn_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_move_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_cast_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_ability_teleport_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_ability_force_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_level_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_respawn_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_move_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_attack_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_attack_07.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "furion_KillIsFirstBlood"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_firstblood_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "furion_KillIsWrathOfNature"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_ability_wrath_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_ability_wrath_07.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "furion_Kill"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_kill_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_kill_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_kill_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_kill_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_kill_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_kill_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_kill_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_kill_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_kill_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_kill_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_kill_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_kill_12.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_kill_13.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_kill_14.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_kill_15.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_laugh_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_laugh_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_laugh_08.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "furion_KillIsEnemyTreantChance_35%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_rival_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_rival_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_rival_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "furion_KillIsEnemyLeshracChance_35%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_rival_04.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "furion_KillIsEnemyAbyssal_UnderlordChance_35%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_rival_05.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "furion_Move"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_move_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_move_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_move_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_move_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_move_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_move_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_move_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_move_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_move_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_move_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_move_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_move_12.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_move_13.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_move_14.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_move_15.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_move_16.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_ability_teleport_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "furion_Attack"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_attack_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_attack_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_attack_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_attack_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_attack_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_attack_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_attack_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_attack_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_attack_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_attack_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_attack_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_ability_teleport_04.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "furion_CastOrder"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_cast_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_cast_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_cast_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "furion_ItemDropIsUltraRareDrop"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_ability_teleport_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_drop_rare.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "furion_ItemDropIsCommonDrop"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_happy_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_drop_common.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "furion_ItemDropIsRareDrop"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_laugh_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_drop_medium.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "furion_CastExecuteIsNaturesCall"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_ability_force_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_ability_force_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_ability_force_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_ability_force_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_ability_force_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_ability_force_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_ability_force_07.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "furion_LevelUp"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_level_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_level_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_level_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_level_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_level_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_level_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_level_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_level_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_level_09.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "furion_LastHit"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_lasthit_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_lasthit_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_lasthit_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_lasthit_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_lasthit_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_lasthit_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_lasthit_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_lasthit_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_lasthit_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_lasthit_10.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "furion_Death"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_death_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_death_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_death_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_death_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_death_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_death_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_death_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_death_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_death_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_death_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_death_11.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "furion_DeathIsReincarnating"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_fastres_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_fastres_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "furion_Respawn"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_respawn_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_respawn_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_respawn_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_respawn_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_respawn_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_respawn_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_respawn_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_respawn_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_respawn_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_respawn_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_respawn_11.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "furion_Select"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_rare_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_rare_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "furion_PurchaseIsExpensiveItem"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_purch_01.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_purch_02.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_purch_03.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "furion_PurchaseIsBlinkDagger"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_blink_01.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "furion_PurchaseIsUltimateScepter"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_scepter_01.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_scepter_02.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "furion_PurchaseIsOrchid"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_item_01.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "furion_PurchaseIsNecronomicon"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_item_02.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_item_03.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "furion_PurchaseIsSheepstick"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_item_04.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "furion_PurchaseIsDagon"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_item_05.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "furion_PurchaseIsMjollnir"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_item_06.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "furion_Bottling"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_bottle_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_bottle_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_bottle_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_bottle_04.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "furion_MissingIsLaneTop"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_missing_lane_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "furion_MissingIsLaneBot"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_missing_lane_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "furion_MissingIsLaneMid"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_missing_lane_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "furion_Deny"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_deny_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_deny_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_deny_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_deny_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_deny_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_deny_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_deny_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_deny_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_deny_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_deny_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_deny_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_deny_12.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "furion_Defeat"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_lose_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_lose_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_lose_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "furion_Victory"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_win_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_win_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_win_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "furion_Immortality"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_immort_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "furion_ImmortalityChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_immort_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "furion_PowerupIsPowerupHaste"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_haste_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "furion_PowerupIsPowerupHasteChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_haste_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "furion_PowerupIsPowerupDoubleDamage"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_doubdam_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "furion_PowerupIsPowerupDoubleDamageChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_doubdam_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "furion_PowerupIsPowerupBounty"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_lasthit_01.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 300.000000
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "furion_PowerupIsPowerupArcane"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_equipping_05.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 300.000000
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "furion_PowerupIsPowerupArcaneChance_20%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_set_complete_04.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "furion_PowerupIsPowerupRegeneration"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_regen_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "furion_PowerupIsPowerupRegenerationChance_5%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_regen_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "furion_PowerupIsPowerupRegenerationChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_regen_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "furion_PowerupIsPowerupIllusion"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_illus_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "furion_PowerupIsPowerupIllusionChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_illus_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "furion_PowerupIsPowerupInvisibility"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_invis_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "furion_CooldownLittleNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_notyet_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_notyet_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_notyet_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "furion_CooldownMediumNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_notyet_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_notyet_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_notyet_06.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "furion_CooldownSuperNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_notyet_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_notyet_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_notyet_09.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "furion_NoManaLittleNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_nomana_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_nomana_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_nomana_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "furion_NoManaMediumNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_nomana_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_nomana_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_nomana_06.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "furion_NoManaSuperNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_nomana_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_nomana_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_nomana_09.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "furion_Thanks"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_thanks_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_thanks_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "furion_PainChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_underattack_01.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 120.000000
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "furion_Pain"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_pain_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_pain_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_pain_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_pain_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_pain_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_pain_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_pain_07.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "furion_InTheBag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_inthebag_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "furion_Taunt"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_taunt_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_taunt_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_taunt_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_taunt_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_taunt_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_taunt_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_taunt_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_taunt_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_taunt_09.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "furion_EmoteIsEmoteLaugh"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_laugh_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_laugh_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_laugh_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_laugh_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_laugh_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_laugh_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_laugh_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/furion/furion_furi_laugh_08.vcd"
+				},
+			]
+		},
+	]
+	m_Requirements = 
+	[
+		
+		{
+			m_name = "Isfurion"
+			m_matchKey = "classname"
+			m_matchExpr = "npc_dota_hero_furion"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsNaturesCall"
+			m_matchKey = "abilityname"
+			m_matchExpr = "furion_force_of_nature"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsWrathOfNature"
+			m_matchKey = "abilityname"
+			m_matchExpr = "furion_wrath_of_nature"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsFurionLoadoutSpawn"
+			m_matchKey = "special_spawn"
+			m_matchExpr = "furion_loadout_spawn"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+	]
+	m_Rules = 
+	[
+		
+		{
+			m_name = "furion_Spawn_Rule"
+			m_Requirements = 
+			[
+				"Spawn",
+				"Isfurion",
+			]
+			m_ResponseGroups = 
+			[
+				"furion_Spawn",
+			]
+		},
+		
+		{
+			m_name = "furion_CustomIsGameStart_Rule"
+			m_Requirements = 
+			[
+				"Custom",
+				"Isfurion",
+				"IsGameStart",
+			]
+			m_ResponseGroups = 
+			[
+				"furion_CustomIsGameStart",
+			]
+		},
+		
+		{
+			m_name = "furion_CustomIsFurionLoadoutSpawn_Rule"
+			m_Requirements = 
+			[
+				"Custom",
+				"Isfurion",
+				"IsFurionLoadoutSpawn",
+			]
+			m_ResponseGroups = 
+			[
+				"furion_CustomIsFurionLoadoutSpawn",
+			]
+		},
+		
+		{
+			m_name = "furion_KillIsFirstBlood_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isfurion",
+				"IsFirstBlood",
+			]
+			m_ResponseGroups = 
+			[
+				"furion_KillIsFirstBlood",
+			]
+		},
+		
+		{
+			m_name = "furion_KillIsWrathOfNature_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isfurion",
+				"IsWrathOfNature",
+			]
+			m_ResponseGroups = 
+			[
+				"furion_KillIsWrathOfNature",
+			]
+		},
+		
+		{
+			m_name = "furion_Kill_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isfurion",
+			]
+			m_ResponseGroups = 
+			[
+				"furion_Kill",
+			]
+		},
+		
+		{
+			m_name = "furion_KillIsEnemyTreantChance_35%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isfurion",
+				"IsEnemyTreant",
+				"Chance_35%",
+			]
+			m_ResponseGroups = 
+			[
+				"furion_KillIsEnemyTreantChance_35%",
+			]
+		},
+		
+		{
+			m_name = "furion_KillIsEnemyLeshracChance_35%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isfurion",
+				"IsEnemyLeshrac",
+				"Chance_35%",
+			]
+			m_ResponseGroups = 
+			[
+				"furion_KillIsEnemyLeshracChance_35%",
+			]
+		},
+		
+		{
+			m_name = "furion_KillIsEnemyAbyssal_UnderlordChance_35%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isfurion",
+				"IsEnemyAbyssal_Underlord",
+				"Chance_35%",
+			]
+			m_ResponseGroups = 
+			[
+				"furion_KillIsEnemyAbyssal_UnderlordChance_35%",
+			]
+		},
+		
+		{
+			m_name = "furion_Move_Rule"
+			m_Requirements = 
+			[
+				"Move",
+				"Isfurion",
+			]
+			m_ResponseGroups = 
+			[
+				"furion_Move",
+			]
+		},
+		
+		{
+			m_name = "furion_Attack_Rule"
+			m_Requirements = 
+			[
+				"Attack",
+				"Isfurion",
+			]
+			m_ResponseGroups = 
+			[
+				"furion_Attack",
+			]
+		},
+		
+		{
+			m_name = "furion_CastOrder_Rule"
+			m_Requirements = 
+			[
+				"CastOrder",
+				"Isfurion",
+			]
+			m_ResponseGroups = 
+			[
+				"furion_CastOrder",
+			]
+		},
+		
+		{
+			m_name = "furion_ItemDropIsUltraRareDrop_Rule"
+			m_Requirements = 
+			[
+				"ItemDrop",
+				"Isfurion",
+				"IsUltraRareDrop",
+			]
+			m_ResponseGroups = 
+			[
+				"furion_ItemDropIsUltraRareDrop",
+			]
+		},
+		
+		{
+			m_name = "furion_ItemDropIsCommonDrop_Rule"
+			m_Requirements = 
+			[
+				"ItemDrop",
+				"Isfurion",
+				"IsCommonDrop",
+			]
+			m_ResponseGroups = 
+			[
+				"furion_ItemDropIsCommonDrop",
+			]
+		},
+		
+		{
+			m_name = "furion_ItemDropIsRareDrop_Rule"
+			m_Requirements = 
+			[
+				"ItemDrop",
+				"Isfurion",
+				"IsRareDrop",
+			]
+			m_ResponseGroups = 
+			[
+				"furion_ItemDropIsRareDrop",
+			]
+		},
+		
+		{
+			m_name = "furion_CastExecuteIsNaturesCall_Rule"
+			m_Requirements = 
+			[
+				"CastExecute",
+				"Isfurion",
+				"IsNaturesCall",
+			]
+			m_ResponseGroups = 
+			[
+				"furion_CastExecuteIsNaturesCall",
+			]
+		},
+		
+		{
+			m_name = "furion_LevelUp_Rule"
+			m_Requirements = 
+			[
+				"LevelUp",
+				"Isfurion",
+			]
+			m_ResponseGroups = 
+			[
+				"furion_LevelUp",
+			]
+		},
+		
+		{
+			m_name = "furion_LastHit_Rule"
+			m_Requirements = 
+			[
+				"LastHit",
+				"Isfurion",
+			]
+			m_ResponseGroups = 
+			[
+				"furion_LastHit",
+			]
+		},
+		
+		{
+			m_name = "furion_Death_Rule"
+			m_Requirements = 
+			[
+				"Death",
+				"Isfurion",
+			]
+			m_ResponseGroups = 
+			[
+				"furion_Death",
+			]
+		},
+		
+		{
+			m_name = "furion_DeathIsReincarnating_Rule"
+			m_Requirements = 
+			[
+				"Death",
+				"Isfurion",
+				"IsReincarnating",
+			]
+			m_ResponseGroups = 
+			[
+				"furion_DeathIsReincarnating",
+			]
+		},
+		
+		{
+			m_name = "furion_Respawn_Rule"
+			m_Requirements = 
+			[
+				"Respawn",
+				"Isfurion",
+			]
+			m_ResponseGroups = 
+			[
+				"furion_Respawn",
+			]
+		},
+		
+		{
+			m_name = "furion_Select_Rule"
+			m_Requirements = 
+			[
+				"Select",
+				"Isfurion",
+			]
+			m_ResponseGroups = 
+			[
+				"furion_Select",
+			]
+		},
+		
+		{
+			m_name = "furion_PurchaseIsExpensiveItem_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isfurion",
+				"IsExpensiveItem",
+			]
+			m_ResponseGroups = 
+			[
+				"furion_PurchaseIsExpensiveItem",
+			]
+		},
+		
+		{
+			m_name = "furion_PurchaseIsBlinkDagger_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isfurion",
+				"IsBlinkDagger",
+			]
+			m_ResponseGroups = 
+			[
+				"furion_PurchaseIsBlinkDagger",
+			]
+		},
+		
+		{
+			m_name = "furion_PurchaseIsUltimateScepter_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isfurion",
+				"IsUltimateScepter",
+			]
+			m_ResponseGroups = 
+			[
+				"furion_PurchaseIsUltimateScepter",
+			]
+		},
+		
+		{
+			m_name = "furion_PurchaseIsOrchid_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isfurion",
+				"IsOrchid",
+			]
+			m_ResponseGroups = 
+			[
+				"furion_PurchaseIsOrchid",
+			]
+		},
+		
+		{
+			m_name = "furion_PurchaseIsNecronomicon_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isfurion",
+				"IsNecronomicon",
+			]
+			m_ResponseGroups = 
+			[
+				"furion_PurchaseIsNecronomicon",
+			]
+		},
+		
+		{
+			m_name = "furion_PurchaseIsSheepstick_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isfurion",
+				"IsSheepstick",
+			]
+			m_ResponseGroups = 
+			[
+				"furion_PurchaseIsSheepstick",
+			]
+		},
+		
+		{
+			m_name = "furion_PurchaseIsDagon_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isfurion",
+				"IsDagon",
+			]
+			m_ResponseGroups = 
+			[
+				"furion_PurchaseIsDagon",
+			]
+		},
+		
+		{
+			m_name = "furion_PurchaseIsMjollnir_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isfurion",
+				"IsMjollnir",
+			]
+			m_ResponseGroups = 
+			[
+				"furion_PurchaseIsMjollnir",
+			]
+		},
+		
+		{
+			m_name = "furion_Bottling_Rule"
+			m_Requirements = 
+			[
+				"Bottling",
+				"Isfurion",
+			]
+			m_ResponseGroups = 
+			[
+				"furion_Bottling",
+			]
+		},
+		
+		{
+			m_name = "furion_MissingIsLaneTop_Rule"
+			m_Requirements = 
+			[
+				"Missing",
+				"Isfurion",
+				"IsLaneTop",
+			]
+			m_ResponseGroups = 
+			[
+				"furion_MissingIsLaneTop",
+			]
+		},
+		
+		{
+			m_name = "furion_MissingIsLaneBot_Rule"
+			m_Requirements = 
+			[
+				"Missing",
+				"Isfurion",
+				"IsLaneBot",
+			]
+			m_ResponseGroups = 
+			[
+				"furion_MissingIsLaneBot",
+			]
+		},
+		
+		{
+			m_name = "furion_MissingIsLaneMid_Rule"
+			m_Requirements = 
+			[
+				"Missing",
+				"Isfurion",
+				"IsLaneMid",
+			]
+			m_ResponseGroups = 
+			[
+				"furion_MissingIsLaneMid",
+			]
+		},
+		
+		{
+			m_name = "furion_Deny_Rule"
+			m_Requirements = 
+			[
+				"Deny",
+				"Isfurion",
+			]
+			m_ResponseGroups = 
+			[
+				"furion_Deny",
+			]
+		},
+		
+		{
+			m_name = "furion_Defeat_Rule"
+			m_Requirements = 
+			[
+				"Defeat",
+				"Isfurion",
+			]
+			m_ResponseGroups = 
+			[
+				"furion_Defeat",
+			]
+		},
+		
+		{
+			m_name = "furion_Victory_Rule"
+			m_Requirements = 
+			[
+				"Victory",
+				"Isfurion",
+			]
+			m_ResponseGroups = 
+			[
+				"furion_Victory",
+			]
+		},
+		
+		{
+			m_name = "furion_Immortality_Rule"
+			m_Requirements = 
+			[
+				"Immortality",
+				"Isfurion",
+			]
+			m_ResponseGroups = 
+			[
+				"furion_Immortality",
+			]
+		},
+		
+		{
+			m_name = "furion_ImmortalityChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Immortality",
+				"Isfurion",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"furion_ImmortalityChance_25%",
+			]
+		},
+		
+		{
+			m_name = "furion_PowerupIsPowerupHaste_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isfurion",
+				"IsPowerupHaste",
+			]
+			m_ResponseGroups = 
+			[
+				"furion_PowerupIsPowerupHaste",
+			]
+		},
+		
+		{
+			m_name = "furion_PowerupIsPowerupHasteChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isfurion",
+				"IsPowerupHaste",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"furion_PowerupIsPowerupHasteChance_25%",
+			]
+		},
+		
+		{
+			m_name = "furion_PowerupIsPowerupDoubleDamage_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isfurion",
+				"IsPowerupDoubleDamage",
+			]
+			m_ResponseGroups = 
+			[
+				"furion_PowerupIsPowerupDoubleDamage",
+			]
+		},
+		
+		{
+			m_name = "furion_PowerupIsPowerupDoubleDamageChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isfurion",
+				"IsPowerupDoubleDamage",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"furion_PowerupIsPowerupDoubleDamageChance_25%",
+			]
+		},
+		
+		{
+			m_name = "furion_PowerupIsPowerupBounty_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isfurion",
+				"IsPowerupBounty",
+			]
+			m_ResponseGroups = 
+			[
+				"furion_PowerupIsPowerupBounty",
+			]
+		},
+		
+		{
+			m_name = "furion_PowerupIsPowerupArcane_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isfurion",
+				"IsPowerupArcane",
+			]
+			m_ResponseGroups = 
+			[
+				"furion_PowerupIsPowerupArcane",
+			]
+		},
+		
+		{
+			m_name = "furion_PowerupIsPowerupArcaneChance_20%_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isfurion",
+				"IsPowerupArcane",
+				"Chance_20%",
+			]
+			m_ResponseGroups = 
+			[
+				"furion_PowerupIsPowerupArcaneChance_20%",
+			]
+		},
+		
+		{
+			m_name = "furion_PowerupIsPowerupRegeneration_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isfurion",
+				"IsPowerupRegeneration",
+			]
+			m_ResponseGroups = 
+			[
+				"furion_PowerupIsPowerupRegeneration",
+			]
+		},
+		
+		{
+			m_name = "furion_PowerupIsPowerupRegenerationChance_5%_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isfurion",
+				"IsPowerupRegeneration",
+				"Chance_5%",
+			]
+			m_ResponseGroups = 
+			[
+				"furion_PowerupIsPowerupRegenerationChance_5%",
+			]
+		},
+		
+		{
+			m_name = "furion_PowerupIsPowerupRegenerationChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isfurion",
+				"IsPowerupRegeneration",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"furion_PowerupIsPowerupRegenerationChance_25%",
+			]
+		},
+		
+		{
+			m_name = "furion_PowerupIsPowerupIllusion_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isfurion",
+				"IsPowerupIllusion",
+			]
+			m_ResponseGroups = 
+			[
+				"furion_PowerupIsPowerupIllusion",
+			]
+		},
+		
+		{
+			m_name = "furion_PowerupIsPowerupIllusionChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isfurion",
+				"IsPowerupIllusion",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"furion_PowerupIsPowerupIllusionChance_25%",
+			]
+		},
+		
+		{
+			m_name = "furion_PowerupIsPowerupInvisibility_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isfurion",
+				"IsPowerupInvisibility",
+			]
+			m_ResponseGroups = 
+			[
+				"furion_PowerupIsPowerupInvisibility",
+			]
+		},
+		
+		{
+			m_name = "furion_CooldownLittleNag_Rule"
+			m_Requirements = 
+			[
+				"Cooldown",
+				"Isfurion",
+				"LittleNag",
+			]
+			m_ResponseGroups = 
+			[
+				"furion_CooldownLittleNag",
+			]
+		},
+		
+		{
+			m_name = "furion_CooldownMediumNag_Rule"
+			m_Requirements = 
+			[
+				"Cooldown",
+				"Isfurion",
+				"MediumNag",
+			]
+			m_ResponseGroups = 
+			[
+				"furion_CooldownMediumNag",
+			]
+		},
+		
+		{
+			m_name = "furion_CooldownSuperNag_Rule"
+			m_Requirements = 
+			[
+				"Cooldown",
+				"Isfurion",
+				"SuperNag",
+			]
+			m_ResponseGroups = 
+			[
+				"furion_CooldownSuperNag",
+			]
+		},
+		
+		{
+			m_name = "furion_NoManaLittleNag_Rule"
+			m_Requirements = 
+			[
+				"NoMana",
+				"Isfurion",
+				"LittleNag",
+			]
+			m_ResponseGroups = 
+			[
+				"furion_NoManaLittleNag",
+			]
+		},
+		
+		{
+			m_name = "furion_NoManaMediumNag_Rule"
+			m_Requirements = 
+			[
+				"NoMana",
+				"Isfurion",
+				"MediumNag",
+			]
+			m_ResponseGroups = 
+			[
+				"furion_NoManaMediumNag",
+			]
+		},
+		
+		{
+			m_name = "furion_NoManaSuperNag_Rule"
+			m_Requirements = 
+			[
+				"NoMana",
+				"Isfurion",
+				"SuperNag",
+			]
+			m_ResponseGroups = 
+			[
+				"furion_NoManaSuperNag",
+			]
+		},
+		
+		{
+			m_name = "furion_Thanks_Rule"
+			m_Requirements = 
+			[
+				"Thanks",
+				"Isfurion",
+			]
+			m_ResponseGroups = 
+			[
+				"furion_Thanks",
+			]
+		},
+		
+		{
+			m_name = "furion_PainChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Pain",
+				"Isfurion",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"furion_PainChance_25%",
+			]
+		},
+		
+		{
+			m_name = "furion_Pain_Rule"
+			m_Requirements = 
+			[
+				"Pain",
+				"Isfurion",
+			]
+			m_ResponseGroups = 
+			[
+				"furion_Pain",
+			]
+		},
+		
+		{
+			m_name = "furion_InTheBag_Rule"
+			m_Requirements = 
+			[
+				"InTheBag",
+				"Isfurion",
+			]
+			m_ResponseGroups = 
+			[
+				"furion_InTheBag",
+			]
+		},
+		
+		{
+			m_name = "furion_Taunt_Rule"
+			m_Requirements = 
+			[
+				"Taunt",
+				"Isfurion",
+			]
+			m_ResponseGroups = 
+			[
+				"furion_Taunt",
+			]
+		},
+		
+		{
+			m_name = "furion_EmoteIsEmoteLaugh_Rule"
+			m_Requirements = 
+			[
+				"Emote",
+				"Isfurion",
+				"IsEmoteLaugh",
+			]
+			m_ResponseGroups = 
+			[
+				"furion_EmoteIsEmoteLaugh",
+			]
+		},
+	]
 }
-

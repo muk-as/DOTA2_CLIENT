@@ -1,1061 +1,3047 @@
-#include "talker/response_rules_shared.vrr"
-
-criterion "Ispuck" "classname" "npc_dota_hero_puck" weight 5 required
-criterion "IsPhaseShift" "abilityname" "puck_phase_shift" weight 5 required
-criterion "IsDreamCoil" "abilityname" "puck_dream_coil" weight 5 required
-criterion "IsEtherealJaunt" "abilityname" "puck_ethereal_jaunt" weight 5 required
-criterion "IsWaningRift" "abilityname" "puck_waning_rift" weight 5 required
-criterion "IsPuckLoadoutSpawn" "special_spawn" "puck_loadout_spawn" weight 5 required
-
-Response puck_Spawn
-{
-	scene "scenes/puck/puck_puck_spawn_01.vcd" nodelay 
-	scene "scenes/puck/puck_puck_spawn_02.vcd" nodelay 
-	scene "scenes/puck/puck_puck_spawn_03.vcd" nodelay 
-	scene "scenes/puck/puck_puck_spawn_04.vcd" nodelay 
-	scene "scenes/puck/puck_puck_spawn_05.vcd" nodelay 
-	scene "scenes/puck/puck_puck_spawn_06.vcd" nodelay 
-	scene "scenes/puck/puck_puck_spawn_08.vcd" nodelay 
-}
-
-Rule puck_Spawn_Rule
-{
-	criteria Spawn Ispuck 
-	response puck_Spawn
-}
-
-Response puck_CustomIsGameStart
-{
-	scene "scenes/puck/puck_puck_spawn_07.vcd" nodelay 
-	scene "scenes/puck/puck_puck_battlebegins_01.vcd" nodelay 
-}
-
-Rule puck_CustomIsGameStart_Rule
-{
-	criteria Custom Ispuck IsGameStart
-	response puck_CustomIsGameStart
-}
-
-Response puck_CustomIsPuckLoadoutSpawn
-{
-	scene "scenes/puck/puck_puck_spawn_01.vcd" nodelay 
-	scene "scenes/puck/puck_puck_spawn_02.vcd" nodelay 
-	scene "scenes/puck/puck_puck_spawn_03.vcd" nodelay 
-	scene "scenes/puck/puck_puck_spawn_04.vcd" nodelay 
-	scene "scenes/puck/puck_puck_spawn_05.vcd" nodelay 
-	scene "scenes/puck/puck_puck_spawn_06.vcd" nodelay 
-	scene "scenes/puck/puck_puck_spawn_07.vcd" nodelay 
-	scene "scenes/puck/puck_puck_spawn_08.vcd" nodelay 
-	scene "scenes/puck/puck_puck_move_08.vcd" nodelay 
-	scene "scenes/puck/puck_puck_attack_11.vcd" nodelay 
-	scene "scenes/puck/puck_puck_ability_orb_01.vcd" nodelay 
-	scene "scenes/puck/puck_puck_level_01.vcd" nodelay 
-}
-
-Rule puck_CustomIsPuckLoadoutSpawn_Rule
-{
-	criteria Custom Ispuck IsPuckLoadoutSpawn
-	response puck_CustomIsPuckLoadoutSpawn
-}
-
-Response puck_Move
-{
-	scene "scenes/puck/puck_puck_move_01.vcd" nodelay 
-	scene "scenes/puck/puck_puck_move_02.vcd" nodelay 
-	scene "scenes/puck/puck_puck_move_03.vcd" nodelay 
-	scene "scenes/puck/puck_puck_move_04.vcd" nodelay 
-	scene "scenes/puck/puck_puck_move_05.vcd" nodelay 
-	scene "scenes/puck/puck_puck_move_06.vcd" nodelay 
-	scene "scenes/puck/puck_puck_move_07.vcd" nodelay 
-	scene "scenes/puck/puck_puck_move_08.vcd" nodelay 
-	scene "scenes/puck/puck_puck_move_09.vcd" nodelay 
-	scene "scenes/puck/puck_puck_move_10.vcd" nodelay 
-	scene "scenes/puck/puck_puck_move_11.vcd" nodelay 
-	scene "scenes/puck/puck_puck_move_12.vcd" nodelay 
-}
-
-Rule puck_Move_Rule
-{
-	criteria Move Ispuck 
-	response puck_Move
-}
-
-Response puck_Attack
-{
-	scene "scenes/puck/puck_puck_attack_01.vcd" nodelay 
-	scene "scenes/puck/puck_puck_attack_02.vcd" nodelay 
-	scene "scenes/puck/puck_puck_attack_03.vcd" nodelay 
-	scene "scenes/puck/puck_puck_attack_05.vcd" nodelay 
-	scene "scenes/puck/puck_puck_attack_06.vcd" nodelay 
-	scene "scenes/puck/puck_puck_attack_07.vcd" nodelay 
-	scene "scenes/puck/puck_puck_attack_08.vcd" nodelay 
-	scene "scenes/puck/puck_puck_attack_09.vcd" nodelay 
-	scene "scenes/puck/puck_puck_attack_10.vcd" nodelay 
-	scene "scenes/puck/puck_puck_attack_11.vcd" nodelay 
-	scene "scenes/puck/puck_puck_attack_12.vcd" nodelay 
-}
-
-Rule puck_Attack_Rule
-{
-	criteria Attack Ispuck 
-	response puck_Attack
-}
-
-Response puck_Kill
-{
-	scene "scenes/puck/puck_puck_attack_04.vcd" nodelay 
-	scene "scenes/puck/puck_puck_ability_orb_07.vcd" nodelay 
-	scene "scenes/puck/puck_puck_kill_01.vcd" nodelay 
-	scene "scenes/puck/puck_puck_kill_02.vcd" nodelay 
-	scene "scenes/puck/puck_puck_kill_03.vcd" nodelay 
-	scene "scenes/puck/puck_puck_kill_04.vcd" nodelay 
-	scene "scenes/puck/puck_puck_kill_05.vcd" nodelay 
-	scene "scenes/puck/puck_puck_kill_06.vcd" nodelay 
-	scene "scenes/puck/puck_puck_kill_07.vcd" nodelay 
-	scene "scenes/puck/puck_puck_kill_08.vcd" nodelay 
-	scene "scenes/puck/puck_puck_kill_09.vcd" nodelay 
-	scene "scenes/puck/puck_puck_kill_10.vcd" nodelay 
-	scene "scenes/puck/puck_puck_laugh_01.vcd" nodelay 
-}
-
-Rule puck_Kill_Rule
-{
-	criteria Kill Ispuck 
-	response puck_Kill
-}
-
-Response puck_KillIsFirstBlood
-{
-	scene "scenes/puck/puck_puck_firstblood_01.vcd" nodelay 
-	scene "scenes/puck/puck_puck_firstblood_02.vcd" nodelay 
-}
-
-Rule puck_KillIsFirstBlood_Rule
-{
-	criteria Kill Ispuck IsFirstBlood
-	response puck_KillIsFirstBlood
-}
-
-Response puck_KillIsEnemyViperChance_25%
-{
-	scene "scenes/puck/puck_puck_rival_01.vcd" nodelay 
-}
-
-Rule puck_KillIsEnemyViperChance_25%_Rule
-{
-	criteria Kill Ispuck IsEnemyViper Chance_25%
-	response puck_KillIsEnemyViperChance_25%
-}
-
-Response puck_KillIsEnemySlardarChance_25%
-{
-	scene "scenes/puck/puck_puck_rival_02.vcd" nodelay 
-}
-
-Rule puck_KillIsEnemySlardarChance_25%_Rule
-{
-	criteria Kill Ispuck IsEnemySlardar Chance_25%
-	response puck_KillIsEnemySlardarChance_25%
-}
-
-Response puck_KillIsEnemyEnchantressChance_25%
-{
-	scene "scenes/puck/puck_puck_rival_03.vcd" nodelay 
-}
-
-Rule puck_KillIsEnemyEnchantressChance_25%_Rule
-{
-	criteria Kill Ispuck IsEnemyEnchantress Chance_25%
-	response puck_KillIsEnemyEnchantressChance_25%
-}
-
-Response puck_KillIsEnemyFurionChance_25%
-{
-	scene "scenes/puck/puck_puck_rival_04.vcd" nodelay 
-}
-
-Rule puck_KillIsEnemyFurionChance_25%_Rule
-{
-	criteria Kill Ispuck IsEnemyFurion Chance_25%
-	response puck_KillIsEnemyFurionChance_25%
-}
-
-Response puck_KillIsEnemyWispChance_25%
-{
-	scene "scenes/puck/puck_puck_rival_05.vcd" nodelay 
-	scene "scenes/puck/puck_puck_rival_17.vcd" nodelay 
-	scene "scenes/puck/puck_puck_rival_18.vcd" nodelay 
-}
-
-Rule puck_KillIsEnemyWispChance_25%_Rule
-{
-	criteria Kill Ispuck IsEnemyWisp Chance_25%
-	response puck_KillIsEnemyWispChance_25%
-}
-
-Response puck_KillIsEnemyInvokerChance_25%
-{
-	scene "scenes/puck/puck_puck_rival_06.vcd" nodelay 
-}
-
-Rule puck_KillIsEnemyInvokerChance_25%_Rule
-{
-	criteria Kill Ispuck IsEnemyInvoker Chance_25%
-	response puck_KillIsEnemyInvokerChance_25%
-}
-
-Response puck_KillIsEnemyVengefulSpiritChance_25%
-{
-	scene "scenes/puck/puck_puck_rival_07.vcd" nodelay 
-}
-
-Rule puck_KillIsEnemyVengefulSpiritChance_25%_Rule
-{
-	criteria Kill Ispuck IsEnemyVengefulSpirit Chance_25%
-	response puck_KillIsEnemyVengefulSpiritChance_25%
-}
-
-Response puck_KillIsEnemyJakiroChance_25%
-{
-	scene "scenes/puck/puck_puck_rival_08.vcd" nodelay 
-}
-
-Rule puck_KillIsEnemyJakiroChance_25%_Rule
-{
-	criteria Kill Ispuck IsEnemyJakiro Chance_25%
-	response puck_KillIsEnemyJakiroChance_25%
-}
-
-Response puck_KillIsEnemyDragon_KnightChance_25%
-{
-	scene "scenes/puck/puck_puck_rival_09.vcd" nodelay 
-}
-
-Rule puck_KillIsEnemyDragon_KnightChance_25%_Rule
-{
-	criteria Kill Ispuck IsEnemyDragon_Knight Chance_25%
-	response puck_KillIsEnemyDragon_KnightChance_25%
-}
-
-Response puck_KillIsEnemyWarlockChance_25%
-{
-	scene "scenes/puck/puck_puck_rival_10.vcd" nodelay 
-}
-
-Rule puck_KillIsEnemyWarlockChance_25%_Rule
-{
-	criteria Kill Ispuck IsEnemyWarlock Chance_25%
-	response puck_KillIsEnemyWarlockChance_25%
-}
-
-Response puck_KillIsEnemyTinkerChance_25%
-{
-	scene "scenes/puck/puck_puck_rival_11.vcd" nodelay 
-	scene "scenes/puck/puck_puck_rival_12.vcd" nodelay 
-	scene "scenes/puck/puck_puck_rival_13.vcd" nodelay 
-}
-
-Rule puck_KillIsEnemyTinkerChance_25%_Rule
-{
-	criteria Kill Ispuck IsEnemyTinker Chance_25%
-	response puck_KillIsEnemyTinkerChance_25%
-}
-
-Response puck_KillIsEnemySpectreChance_25%
-{
-	scene "scenes/puck/puck_puck_rival_14.vcd" nodelay 
-	scene "scenes/puck/puck_puck_rival_15.vcd" nodelay 
-}
-
-Rule puck_KillIsEnemySpectreChance_25%_Rule
-{
-	criteria Kill Ispuck IsEnemySpectre Chance_25%
-	response puck_KillIsEnemySpectreChance_25%
-}
-
-Response puck_KillIsEnemyFaceless_VoidChance_25%
-{
-	scene "scenes/puck/puck_puck_rival_16.vcd" nodelay 
-}
-
-Rule puck_KillIsEnemyFaceless_VoidChance_25%_Rule
-{
-	criteria Kill Ispuck IsEnemyFaceless_Void Chance_25%
-	response puck_KillIsEnemyFaceless_VoidChance_25%
-}
-
-Response puck_CastOrder
-{
-	scene "scenes/puck/puck_puck_cast_01.vcd" nodelay 
-	scene "scenes/puck/puck_puck_cast_02.vcd" nodelay 
-	scene "scenes/puck/puck_puck_cast_03.vcd" nodelay 
-}
-
-Rule puck_CastOrder_Rule
-{
-	criteria CastOrder Ispuck 
-	response puck_CastOrder
-}
-
-Response puck_CastExecuteIsEtherealJaunt
-{
-	scene "scenes/puck/puck_puck_ability_orb_01.vcd" nodelay 
-	scene "scenes/puck/puck_puck_ability_orb_02.vcd" nodelay 
-	scene "scenes/puck/puck_puck_ability_orb_03.vcd" nodelay 
-}
-
-Rule puck_CastExecuteIsEtherealJaunt_Rule
-{
-	criteria CastExecute Ispuck IsEtherealJaunt
-	response puck_CastExecuteIsEtherealJaunt
-}
-
-Response puck_CastExecuteIsWaningRift
-{
-	scene "scenes/puck/puck_puck_ability_rift_01.vcd" nodelay 
-	scene "scenes/puck/puck_puck_ability_rift_02.vcd" nodelay 
-	scene "scenes/puck/puck_puck_ability_rift_03.vcd" nodelay 
-}
-
-Rule puck_CastExecuteIsWaningRift_Rule
-{
-	criteria CastExecute Ispuck IsWaningRift
-	response puck_CastExecuteIsWaningRift
-}
-
-Response puck_CastExecuteIsPhaseShift
-{
-	scene "scenes/puck/puck_puck_ability_phase_01.vcd" nodelay 
-	scene "scenes/puck/puck_puck_ability_phase_02.vcd" nodelay 
-	scene "scenes/puck/puck_puck_ability_phase_03.vcd" nodelay 
-	scene "scenes/puck/puck_puck_ability_phase_04.vcd" nodelay 
-	scene "scenes/puck/puck_puck_ability_phase_05.vcd" nodelay 
-	scene "scenes/puck/puck_puck_ability_phase_06.vcd" nodelay 
-	scene "scenes/puck/puck_puck_ability_phase_07.vcd" nodelay 
-}
-
-Rule puck_CastExecuteIsPhaseShift_Rule
-{
-	criteria CastExecute Ispuck IsPhaseShift
-	response puck_CastExecuteIsPhaseShift
-}
-
-Response puck_CastExecuteIsDreamCoil
-{
-	scene "scenes/puck/puck_puck_ability_dreamcoil_01.vcd" nodelay 
-	scene "scenes/puck/puck_puck_ability_dreamcoil_02.vcd" nodelay 
-}
-
-Rule puck_CastExecuteIsDreamCoil_Rule
-{
-	criteria CastExecute Ispuck IsDreamCoil
-	response puck_CastExecuteIsDreamCoil
-}
-
-Response puck_ItemDropIsUltraRareDrop
-{
-	scene "scenes/puck/puck_puck_ability_orb_05.vcd" nodelay 
-	scene "scenes/puck/puck_puck_happy_05.vcd" nodelay 
-	scene "scenes/puck/puck_puck_drop_rare_01.vcd" nodelay 
-}
-
-Rule puck_ItemDropIsUltraRareDrop_Rule
-{
-	criteria ItemDrop Ispuck IsUltraRareDrop
-	response puck_ItemDropIsUltraRareDrop
-}
-
-Response puck_ItemDropIsCommonDrop
-{
-	scene "scenes/puck/puck_puck_happy_01.vcd" nodelay 
-	scene "scenes/puck/puck_puck_happy_02.vcd" nodelay 
-	scene "scenes/puck/puck_puck_drop_common_01.vcd" nodelay 
-}
-
-Rule puck_ItemDropIsCommonDrop_Rule
-{
-	criteria ItemDrop Ispuck IsCommonDrop
-	response puck_ItemDropIsCommonDrop
-}
-
-Response puck_ItemDropIsRareDrop
-{
-	scene "scenes/puck/puck_puck_happy_03.vcd" nodelay 
-	scene "scenes/puck/puck_puck_happy_04.vcd" nodelay 
-	scene "scenes/puck/puck_puck_drop_medium_01.vcd" nodelay 
-}
-
-Rule puck_ItemDropIsRareDrop_Rule
-{
-	criteria ItemDrop Ispuck IsRareDrop
-	response puck_ItemDropIsRareDrop
-}
-
-Response puck_Death
-{
-	scene "scenes/puck/puck_puck_death_01.vcd" nodelay 
-	scene "scenes/puck/puck_puck_death_02.vcd" nodelay 
-	scene "scenes/puck/puck_puck_death_03.vcd" nodelay 
-	scene "scenes/puck/puck_puck_death_04.vcd" nodelay 
-	scene "scenes/puck/puck_puck_death_05.vcd" nodelay 
-	scene "scenes/puck/puck_puck_death_06.vcd" nodelay 
-	scene "scenes/puck/puck_puck_death_07.vcd" nodelay 
-	scene "scenes/puck/puck_puck_death_08.vcd" nodelay 
-	scene "scenes/puck/puck_puck_death_09.vcd" nodelay 
-	scene "scenes/puck/puck_puck_death_10.vcd" nodelay 
-	scene "scenes/puck/puck_puck_death_11.vcd" nodelay 
-}
-
-Rule puck_Death_Rule
-{
-	criteria Death Ispuck 
-	response puck_Death
-}
-
-Response puck_DeathIsReincarnating
-{
-	scene "scenes/puck/puck_puck_level_08.vcd" nodelay 
-	scene "scenes/puck/puck_puck_fastres_01.vcd" nodelay 
-}
-
-Rule puck_DeathIsReincarnating_Rule
-{
-	criteria Death Ispuck IsReincarnating
-	response puck_DeathIsReincarnating
-}
-
-Response puck_Respawn
-{
-	scene "scenes/puck/puck_puck_respawn_01.vcd" nodelay 
-	scene "scenes/puck/puck_puck_respawn_02.vcd" nodelay 
-	scene "scenes/puck/puck_puck_respawn_03.vcd" nodelay 
-	scene "scenes/puck/puck_puck_respawn_04.vcd" nodelay 
-	scene "scenes/puck/puck_puck_respawn_05.vcd" nodelay 
-	scene "scenes/puck/puck_puck_respawn_06.vcd" nodelay 
-	scene "scenes/puck/puck_puck_respawn_07.vcd" nodelay 
-	scene "scenes/puck/puck_puck_respawn_08.vcd" nodelay 
-	scene "scenes/puck/puck_puck_respawn_09.vcd" nodelay 
-	scene "scenes/puck/puck_puck_respawn_10.vcd" nodelay 
-}
-
-Rule puck_Respawn_Rule
-{
-	criteria Respawn Ispuck 
-	response puck_Respawn
-}
-
-Response puck_Select
-{
-	scene "scenes/puck/puck_puck_rare_01.vcd" nodelay 
-	scene "scenes/puck/puck_puck_rare_02.vcd" nodelay 
-}
-
-Rule puck_Select_Rule
-{
-	criteria Select Ispuck 
-	response puck_Select
-}
-
-Response puck_PurchaseIsExpensiveItem
-{
-	scene "scenes/puck/puck_puck_purch_01.vcd" nodelay speakonce
-	scene "scenes/puck/puck_puck_purch_02.vcd" nodelay speakonce
-	scene "scenes/puck/puck_puck_purch_03.vcd" nodelay speakonce
-}
-
-Rule puck_PurchaseIsExpensiveItem_Rule
-{
-	criteria Purchase Ispuck IsExpensiveItem
-	response puck_PurchaseIsExpensiveItem
-}
-
-Response puck_PurchaseIsUltimateScepter
-{
-	scene "scenes/puck/puck_puck_scepter_01.vcd" nodelay 
-	scene "scenes/puck/puck_puck_scepter_02.vcd" nodelay speakonce
-	scene "scenes/puck/puck_puck_scepter_03.vcd" nodelay speakonce
-}
-
-Rule puck_PurchaseIsUltimateScepter_Rule
-{
-	criteria Purchase Ispuck IsUltimateScepter
-	response puck_PurchaseIsUltimateScepter
-}
-
-Response puck_PurchaseIsBlinkDagger
-{
-	scene "scenes/puck/puck_puck_blink_01.vcd" nodelay speakonce
-	scene "scenes/puck/puck_puck_blink_02.vcd" nodelay speakonce
-}
-
-Rule puck_PurchaseIsBlinkDagger_Rule
-{
-	criteria Purchase Ispuck IsBlinkDagger
-	response puck_PurchaseIsBlinkDagger
-}
-
-Response puck_PurchaseIsShiva
-{
-	scene "scenes/puck/puck_puck_item_01.vcd" nodelay speakonce
-}
-
-Rule puck_PurchaseIsShiva_Rule
-{
-	criteria Purchase Ispuck IsShiva
-	response puck_PurchaseIsShiva
-}
-
-Response puck_PurchaseIsSheepstick
-{
-	scene "scenes/puck/puck_puck_item_02.vcd" nodelay speakonce
-}
-
-Rule puck_PurchaseIsSheepstick_Rule
-{
-	criteria Purchase Ispuck IsSheepstick
-	response puck_PurchaseIsSheepstick
-}
-
-Response puck_PurchaseIsSkadi
-{
-	scene "scenes/puck/puck_puck_item_03.vcd" nodelay speakonce
-}
-
-Rule puck_PurchaseIsSkadi_Rule
-{
-	criteria Purchase Ispuck IsSkadi
-	response puck_PurchaseIsSkadi
-}
-
-Response puck_PurchaseIsNecronomicon
-{
-	scene "scenes/puck/puck_puck_item_04.vcd" nodelay speakonce
-}
-
-Rule puck_PurchaseIsNecronomicon_Rule
-{
-	criteria Purchase Ispuck IsNecronomicon
-	response puck_PurchaseIsNecronomicon
-}
-
-Response puck_PurchaseIsOrchid
-{
-	scene "scenes/puck/puck_puck_item_05.vcd" nodelay speakonce
-}
-
-Rule puck_PurchaseIsOrchid_Rule
-{
-	criteria Purchase Ispuck IsOrchid
-	response puck_PurchaseIsOrchid
-}
-
-Response puck_PurchaseIsDagon
-{
-	scene "scenes/puck/puck_puck_item_06.vcd" nodelay speakonce
-}
-
-Rule puck_PurchaseIsDagon_Rule
-{
-	criteria Purchase Ispuck IsDagon
-	response puck_PurchaseIsDagon
-}
-
-Response puck_PurchaseIsSphere
-{
-	scene "scenes/puck/puck_puck_item_07.vcd" nodelay speakonce
-}
-
-Rule puck_PurchaseIsSphere_Rule
-{
-	criteria Purchase Ispuck IsSphere
-	response puck_PurchaseIsSphere
-}
-
-Response puck_Immortality
-{
-	scene "scenes/puck/puck_puck_immort_01.vcd" nodelay 
-}
-
-Rule puck_Immortality_Rule
-{
-	criteria Immortality Ispuck 
-	response puck_Immortality
-}
-
-Response puck_ImmortalityChance_25%
-{
-	scene "scenes/puck/puck_puck_immort_02.vcd" nodelay 
-}
-
-Rule puck_ImmortalityChance_25%_Rule
-{
-	criteria Immortality Ispuck Chance_25%
-	response puck_ImmortalityChance_25%
-}
-
-Response puck_Deny
-{
-	scene "scenes/puck/puck_puck_deny_01.vcd" nodelay 
-	scene "scenes/puck/puck_puck_deny_02.vcd" nodelay 
-	scene "scenes/puck/puck_puck_deny_03.vcd" nodelay 
-	scene "scenes/puck/puck_puck_deny_04.vcd" nodelay 
-	scene "scenes/puck/puck_puck_deny_05.vcd" nodelay 
-	scene "scenes/puck/puck_puck_deny_06.vcd" nodelay 
-	scene "scenes/puck/puck_puck_deny_07.vcd" nodelay 
-	scene "scenes/puck/puck_puck_deny_08.vcd" nodelay 
-	scene "scenes/puck/puck_puck_deny_09.vcd" nodelay 
-	scene "scenes/puck/puck_puck_deny_10.vcd" nodelay 
-}
-
-Rule puck_Deny_Rule
-{
-	criteria Deny Ispuck 
-	response puck_Deny
-}
-
-Response puck_LastHit
-{
-	scene "scenes/puck/puck_puck_lasthit_01.vcd" nodelay 
-	scene "scenes/puck/puck_puck_lasthit_02.vcd" nodelay 
-	scene "scenes/puck/puck_puck_lasthit_03.vcd" nodelay 
-	scene "scenes/puck/puck_puck_lasthit_04.vcd" nodelay 
-	scene "scenes/puck/puck_puck_lasthit_05.vcd" nodelay 
-	scene "scenes/puck/puck_puck_lasthit_06.vcd" nodelay 
-	scene "scenes/puck/puck_puck_lasthit_07.vcd" nodelay 
-	scene "scenes/puck/puck_puck_lasthit_08.vcd" nodelay 
-}
-
-Rule puck_LastHit_Rule
-{
-	criteria LastHit Ispuck 
-	response puck_LastHit
-}
-
-Response puck_Defeat
-{
-	scene "scenes/puck/puck_puck_lose_01.vcd" nodelay 
-	scene "scenes/puck/puck_puck_lose_02.vcd" nodelay 
-	scene "scenes/puck/puck_puck_lose_03.vcd" nodelay 
-	scene "scenes/puck/puck_puck_lose_04.vcd" nodelay 
-}
-
-Rule puck_Defeat_Rule
-{
-	criteria Defeat Ispuck 
-	response puck_Defeat
-}
-
-Response puck_Victory
-{
-	scene "scenes/puck/puck_puck_win_01.vcd" nodelay 
-	scene "scenes/puck/puck_puck_win_02.vcd" nodelay 
-	scene "scenes/puck/puck_puck_win_03.vcd" nodelay 
-	scene "scenes/puck/puck_puck_win_04.vcd" nodelay 
-}
-
-Rule puck_Victory_Rule
-{
-	criteria Victory Ispuck 
-	response puck_Victory
-}
-
-Response puck_Bottling
-{
-	scene "scenes/puck/puck_puck_bottle_01.vcd" nodelay 
-	scene "scenes/puck/puck_puck_bottle_02.vcd" nodelay 
-	scene "scenes/puck/puck_puck_bottle_03.vcd" nodelay 
-}
-
-Rule puck_Bottling_Rule
-{
-	criteria Bottling Ispuck 
-	response puck_Bottling
-}
-
-Response puck_PowerupIsPowerupHaste
-{
-	scene "scenes/puck/puck_puck_haste_01.vcd" nodelay 
-}
-
-Rule puck_PowerupIsPowerupHaste_Rule
-{
-	criteria Powerup Ispuck IsPowerupHaste
-	response puck_PowerupIsPowerupHaste
-}
-
-Response puck_PowerupIsPowerupHasteChance_25%
-{
-	scene "scenes/puck/puck_puck_haste_02.vcd" nodelay 
-}
-
-Rule puck_PowerupIsPowerupHasteChance_25%_Rule
-{
-	criteria Powerup Ispuck IsPowerupHaste Chance_25%
-	response puck_PowerupIsPowerupHasteChance_25%
-}
-
-Response puck_PowerupIsPowerupDoubleDamage
-{
-	scene "scenes/puck/puck_puck_doubdam_01.vcd" nodelay 
-}
-
-Rule puck_PowerupIsPowerupDoubleDamage_Rule
-{
-	criteria Powerup Ispuck IsPowerupDoubleDamage
-	response puck_PowerupIsPowerupDoubleDamage
-}
-
-Response puck_PowerupIsPowerupDoubleDamageChance_25%
-{
-	scene "scenes/puck/puck_puck_doubdam_02.vcd" nodelay 
-}
-
-Rule puck_PowerupIsPowerupDoubleDamageChance_25%_Rule
-{
-	criteria Powerup Ispuck IsPowerupDoubleDamage Chance_25%
-	response puck_PowerupIsPowerupDoubleDamageChance_25%
-}
-
-Response puck_PowerupIsPowerupRegeneration
-{
-	scene "scenes/puck/puck_puck_regen_01.vcd" nodelay 
-}
-
-Rule puck_PowerupIsPowerupRegeneration_Rule
-{
-	criteria Powerup Ispuck IsPowerupRegeneration
-	response puck_PowerupIsPowerupRegeneration
-}
-
-Response puck_PowerupIsPowerupBounty
-{
-	scene "scenes/puck/puck_puck_lasthit_03.vcd" nodelay respeakdelay 300
-}
-
-Rule puck_PowerupIsPowerupBounty_Rule
-{
-	criteria Powerup Ispuck IsPowerupBounty
-	response puck_PowerupIsPowerupBounty
-}
-
-Response puck_PowerupIsPowerupIllusion
-{
-	scene "scenes/puck/puck_puck_illus_01.vcd" nodelay 
-}
-
-Rule puck_PowerupIsPowerupIllusion_Rule
-{
-	criteria Powerup Ispuck IsPowerupIllusion
-	response puck_PowerupIsPowerupIllusion
-}
-
-Response puck_PowerupIsPowerupIllusionChance_5%
-{
-	scene "scenes/puck/puck_puck_illus_02.vcd" nodelay 
-	scene "scenes/puck/puck_puck_illus_04.vcd" nodelay 
-}
-
-Rule puck_PowerupIsPowerupIllusionChance_5%_Rule
-{
-	criteria Powerup Ispuck IsPowerupIllusion Chance_5%
-	response puck_PowerupIsPowerupIllusionChance_5%
-}
-
-Response puck_PowerupIsPowerupInvisibility
-{
-	scene "scenes/puck/puck_puck_invis_01.vcd" nodelay 
-}
-
-Rule puck_PowerupIsPowerupInvisibility_Rule
-{
-	criteria Powerup Ispuck IsPowerupInvisibility
-	response puck_PowerupIsPowerupInvisibility
-}
-
-Response puck_PowerupIsPowerupArcane
-{
-	scene "scenes/puck/puck_puck_spawn_04.vcd" nodelay respeakdelay 300
-}
-
-Rule puck_PowerupIsPowerupArcane_Rule
-{
-	criteria Powerup Ispuck IsPowerupArcane
-	response puck_PowerupIsPowerupArcane
-}
-
-Response puck_LevelUp
-{
-	scene "scenes/puck/puck_puck_level_01.vcd" nodelay 
-	scene "scenes/puck/puck_puck_level_02.vcd" nodelay 
-	scene "scenes/puck/puck_puck_level_03.vcd" nodelay 
-	scene "scenes/puck/puck_puck_level_04.vcd" nodelay 
-	scene "scenes/puck/puck_puck_level_05.vcd" nodelay 
-	scene "scenes/puck/puck_puck_level_06.vcd" nodelay 
-	scene "scenes/puck/puck_puck_level_07.vcd" nodelay 
-}
-
-Rule puck_LevelUp_Rule
-{
-	criteria LevelUp Ispuck 
-	response puck_LevelUp
-}
-
-Response puck_Pain
-{
-	scene "scenes/puck/puck_puck_pain_01.vcd" nodelay 
-	scene "scenes/puck/puck_puck_pain_02.vcd" nodelay 
-	scene "scenes/puck/puck_puck_pain_03.vcd" nodelay 
-	scene "scenes/puck/puck_puck_pain_04.vcd" nodelay 
-	scene "scenes/puck/puck_puck_pain_05.vcd" nodelay 
-}
-
-Rule puck_Pain_Rule
-{
-	criteria Pain Ispuck 
-	response puck_Pain
-}
-
-Response puck_PainChance_25%
-{
-	scene "scenes/puck/puck_puck_underattack_01.vcd" nodelay respeakdelay 120
-}
-
-Rule puck_PainChance_25%_Rule
-{
-	criteria Pain Ispuck Chance_25%
-	response puck_PainChance_25%
-}
-
-Response puck_CooldownLittleNag
-{
-	scene "scenes/puck/puck_puck_notyet_01.vcd" nodelay 
-	scene "scenes/puck/puck_puck_notyet_02.vcd" nodelay 
-	scene "scenes/puck/puck_puck_notyet_03.vcd" nodelay 
-}
-
-Rule puck_CooldownLittleNag_Rule
-{
-	criteria Cooldown Ispuck LittleNag
-	response puck_CooldownLittleNag
-}
-
-Response puck_CooldownMediumNag
-{
-	scene "scenes/puck/puck_puck_notyet_04.vcd" nodelay 
-	scene "scenes/puck/puck_puck_notyet_05.vcd" nodelay 
-	scene "scenes/puck/puck_puck_notyet_06.vcd" nodelay 
-}
-
-Rule puck_CooldownMediumNag_Rule
-{
-	criteria Cooldown Ispuck MediumNag
-	response puck_CooldownMediumNag
-}
-
-Response puck_CooldownSuperNag
-{
-	scene "scenes/puck/puck_puck_notyet_07.vcd" nodelay 
-	scene "scenes/puck/puck_puck_notyet_08.vcd" nodelay 
-	scene "scenes/puck/puck_puck_notyet_09.vcd" nodelay 
-}
-
-Rule puck_CooldownSuperNag_Rule
-{
-	criteria Cooldown Ispuck SuperNag
-	response puck_CooldownSuperNag
-}
-
-Response puck_NoManaLittleNag
-{
-	scene "scenes/puck/puck_puck_nomana_01.vcd" nodelay 
-	scene "scenes/puck/puck_puck_nomana_02.vcd" nodelay 
-	scene "scenes/puck/puck_puck_nomana_03.vcd" nodelay 
-}
-
-Rule puck_NoManaLittleNag_Rule
-{
-	criteria NoMana Ispuck LittleNag
-	response puck_NoManaLittleNag
-}
-
-Response puck_NoManaMediumNag
-{
-	scene "scenes/puck/puck_puck_nomana_04.vcd" nodelay 
-	scene "scenes/puck/puck_puck_nomana_05.vcd" nodelay 
-	scene "scenes/puck/puck_puck_nomana_06.vcd" nodelay 
-}
-
-Rule puck_NoManaMediumNag_Rule
-{
-	criteria NoMana Ispuck MediumNag
-	response puck_NoManaMediumNag
-}
-
-Response puck_NoManaSuperNag
-{
-	scene "scenes/puck/puck_puck_nomana_07.vcd" nodelay 
-	scene "scenes/puck/puck_puck_nomana_08.vcd" nodelay 
-	scene "scenes/puck/puck_puck_nomana_09.vcd" nodelay 
-}
-
-Rule puck_NoManaSuperNag_Rule
-{
-	criteria NoMana Ispuck SuperNag
-	response puck_NoManaSuperNag
-}
-
-Response puck_InTheBag
-{
-	scene "scenes/puck/puck_puck_inthebag_01.vcd" nodelay 
-}
-
-Rule puck_InTheBag_Rule
-{
-	criteria InTheBag Ispuck 
-	response puck_InTheBag
-}
-
-Response puck_EmoteIsEmoteLaugh
-{
-	scene "scenes/puck/puck_puck_laugh_01.vcd" nodelay 
-}
-
-Rule puck_EmoteIsEmoteLaugh_Rule
-{
-	criteria Emote Ispuck IsEmoteLaugh
-	response puck_EmoteIsEmoteLaugh
-}
-
-Response puck_AllyNearIsAllyWispEarlyGame
-{
-	scene "scenes/puck/puck_puck_ally_01.vcd" nodelay speakonce
-}
-
-Rule puck_AllyNearIsAllyWispEarlyGame_Rule
-{
-	criteria AllyNear Ispuck IsAllyWisp EarlyGame
-	response puck_AllyNearIsAllyWispEarlyGame
-}
-
-Response puck_AllyNearIsAllyAncient_ApparitionEarlyGame
-{
-	scene "scenes/puck/puck_puck_ally_02.vcd" nodelay speakonce
-}
-
-Rule puck_AllyNearIsAllyAncient_ApparitionEarlyGame_Rule
-{
-	criteria AllyNear Ispuck IsAllyAncient_Apparition EarlyGame
-	response puck_AllyNearIsAllyAncient_ApparitionEarlyGame
-}
-
-Response puck_AllyNearIsAllyLone_DruidEarlyGame
-{
-	scene "scenes/puck/puck_puck_ally_03.vcd" nodelay speakonce
-}
-
-Rule puck_AllyNearIsAllyLone_DruidEarlyGame_Rule
-{
-	criteria AllyNear Ispuck IsAllyLone_Druid EarlyGame
-	response puck_AllyNearIsAllyLone_DruidEarlyGame
-}
-
-Response puck_AllyNearIsAllyOutworld_DestroyerEarlyGame
-{
-	scene "scenes/puck/puck_puck_ally_04.vcd" nodelay speakonce
-}
-
-Rule puck_AllyNearIsAllyOutworld_DestroyerEarlyGame_Rule
-{
-	criteria AllyNear Ispuck IsAllyOutworld_Destroyer EarlyGame
-	response puck_AllyNearIsAllyOutworld_DestroyerEarlyGame
-}
-
-Response puck_AllyNearIsAllyEnigmaEarlyGame
-{
-	scene "scenes/puck/puck_puck_ally_05.vcd" nodelay speakonce
-}
-
-Rule puck_AllyNearIsAllyEnigmaEarlyGame_Rule
-{
-	criteria AllyNear Ispuck IsAllyEnigma EarlyGame
-	response puck_AllyNearIsAllyEnigmaEarlyGame
-}
-
-Response puck_AllyNearIsAllyTinyEarlyGame
-{
-	scene "scenes/puck/puck_puck_ally_06.vcd" nodelay speakonce
-}
-
-Rule puck_AllyNearIsAllyTinyEarlyGame_Rule
-{
-	criteria AllyNear Ispuck IsAllyTiny EarlyGame
-	response puck_AllyNearIsAllyTinyEarlyGame
-}
-
-Response puck_AllyNearIsAllyTreantEarlyGame
-{
-	scene "scenes/puck/puck_puck_ally_07.vcd" nodelay speakonce
-}
-
-Rule puck_AllyNearIsAllyTreantEarlyGame_Rule
-{
-	criteria AllyNear Ispuck IsAllyTreant EarlyGame
-	response puck_AllyNearIsAllyTreantEarlyGame
-}
-
-Response puck_MissingIsLaneTop
-{
-	scene "scenes/puck/puck_puck_missing_lane_01.vcd" nodelay 
-}
-
-Rule puck_MissingIsLaneTop_Rule
-{
-	criteria Missing Ispuck IsLaneTop
-	response puck_MissingIsLaneTop
-}
-
-Response puck_MissingIsLaneMid
-{
-	scene "scenes/puck/puck_puck_missing_lane_02.vcd" nodelay 
-}
-
-Rule puck_MissingIsLaneMid_Rule
-{
-	criteria Missing Ispuck IsLaneMid
-	response puck_MissingIsLaneMid
-}
-
-Response puck_MissingIsLaneBot
-{
-	scene "scenes/puck/puck_puck_missing_lane_03.vcd" nodelay 
-}
-
-Rule puck_MissingIsLaneBot_Rule
-{
-	criteria Missing Ispuck IsLaneBot
-	response puck_MissingIsLaneBot
-}
-
-Response puck_Thanks
-{
-	scene "scenes/puck/puck_puck_thanks_01.vcd" nodelay 
-	scene "scenes/puck/puck_puck_thanks_02.vcd" nodelay 
-}
-
-Rule puck_Thanks_Rule
-{
-	criteria Thanks Ispuck 
-	response puck_Thanks
-}
-
-Response puck_ThanksChance_5%
-{
-	scene "scenes/puck/puck_puck_thanks_03.vcd" nodelay 
-}
-
-Rule puck_ThanksChance_5%_Rule
-{
-	criteria Thanks Ispuck Chance_5%
-	response puck_ThanksChance_5%
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vrfunknown:version{c1f07085-5299-4e8a-b7e9-1cbb66bbbe23} -->
+{
+	m_Includes = 
+	[
+		"scripts/talker/response_rules_shared.vrr",
+	]
+	m_ResponseGroups = 
+	[
+		
+		{
+			m_name = "puck_Spawn"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_spawn_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_spawn_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_spawn_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_spawn_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_spawn_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_spawn_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_spawn_08.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_CustomIsGameStart"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_spawn_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_battlebegins_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_CustomIsPuckLoadoutSpawn"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_spawn_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_spawn_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_spawn_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_spawn_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_spawn_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_spawn_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_spawn_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_spawn_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_move_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_attack_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_ability_orb_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_level_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_Move"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_move_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_move_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_move_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_move_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_move_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_move_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_move_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_move_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_move_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_move_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_move_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_move_12.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_Attack"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_attack_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_attack_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_attack_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_attack_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_attack_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_attack_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_attack_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_attack_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_attack_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_attack_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_attack_12.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_Kill"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_attack_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_ability_orb_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_kill_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_kill_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_kill_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_kill_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_kill_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_kill_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_kill_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_kill_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_kill_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_kill_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_laugh_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_KillIsFirstBlood"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_firstblood_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_firstblood_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_KillIsEnemyViperChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_rival_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_KillIsEnemySlardarChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_rival_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_KillIsEnemyEnchantressChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_rival_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_KillIsEnemyFurionChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_rival_04.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_KillIsEnemyWispChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_rival_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_rival_17.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_rival_18.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_KillIsEnemyInvokerChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_rival_06.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_KillIsEnemyVengefulSpiritChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_rival_07.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_KillIsEnemyJakiroChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_rival_08.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_KillIsEnemyDragon_KnightChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_rival_09.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_KillIsEnemyWarlockChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_rival_10.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_KillIsEnemyTinkerChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_rival_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_rival_12.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_rival_13.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_KillIsEnemySpectreChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_rival_14.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_rival_15.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_KillIsEnemyFaceless_VoidChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_rival_16.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_CastOrder"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_cast_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_cast_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_cast_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_CastExecuteIsEtherealJaunt"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_ability_orb_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_ability_orb_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_ability_orb_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_CastExecuteIsWaningRift"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_ability_rift_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_ability_rift_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_ability_rift_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_CastExecuteIsPhaseShift"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_ability_phase_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_ability_phase_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_ability_phase_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_ability_phase_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_ability_phase_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_ability_phase_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_ability_phase_07.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_CastExecuteIsDreamCoil"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_ability_dreamcoil_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_ability_dreamcoil_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_ItemDropIsUltraRareDrop"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_ability_orb_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_happy_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_drop_rare_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_ItemDropIsCommonDrop"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_happy_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_happy_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_drop_common_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_ItemDropIsRareDrop"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_happy_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_happy_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_drop_medium_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_Death"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_death_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_death_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_death_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_death_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_death_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_death_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_death_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_death_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_death_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_death_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_death_11.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_DeathIsReincarnating"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_level_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_fastres_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_Respawn"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_respawn_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_respawn_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_respawn_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_respawn_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_respawn_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_respawn_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_respawn_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_respawn_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_respawn_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_respawn_10.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_Select"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_rare_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_rare_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_PurchaseIsExpensiveItem"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_purch_01.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_purch_02.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_purch_03.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_PurchaseIsUltimateScepter"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_scepter_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_scepter_02.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_scepter_03.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_PurchaseIsBlinkDagger"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_blink_01.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_blink_02.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_PurchaseIsShiva"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_item_01.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_PurchaseIsSheepstick"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_item_02.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_PurchaseIsSkadi"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_item_03.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_PurchaseIsNecronomicon"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_item_04.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_PurchaseIsOrchid"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_item_05.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_PurchaseIsDagon"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_item_06.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_PurchaseIsSphere"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_item_07.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_Immortality"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_immort_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_ImmortalityChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_immort_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_Deny"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_deny_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_deny_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_deny_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_deny_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_deny_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_deny_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_deny_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_deny_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_deny_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_deny_10.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_LastHit"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_lasthit_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_lasthit_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_lasthit_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_lasthit_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_lasthit_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_lasthit_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_lasthit_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_lasthit_08.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_Defeat"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_lose_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_lose_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_lose_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_lose_04.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_Victory"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_win_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_win_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_win_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_win_04.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_Bottling"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_bottle_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_bottle_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_bottle_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_PowerupIsPowerupHaste"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_haste_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_PowerupIsPowerupHasteChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_haste_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_PowerupIsPowerupDoubleDamage"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_doubdam_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_PowerupIsPowerupDoubleDamageChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_doubdam_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_PowerupIsPowerupRegeneration"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_regen_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_PowerupIsPowerupBounty"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_lasthit_03.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 300.000000
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_PowerupIsPowerupIllusion"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_illus_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_PowerupIsPowerupIllusionChance_5%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_illus_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_illus_04.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_PowerupIsPowerupInvisibility"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_invis_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_PowerupIsPowerupArcane"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_spawn_04.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 300.000000
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_LevelUp"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_level_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_level_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_level_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_level_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_level_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_level_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_level_07.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_Pain"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_pain_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_pain_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_pain_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_pain_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_pain_05.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_PainChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_underattack_01.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 120.000000
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_CooldownLittleNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_notyet_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_notyet_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_notyet_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_CooldownMediumNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_notyet_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_notyet_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_notyet_06.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_CooldownSuperNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_notyet_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_notyet_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_notyet_09.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_NoManaLittleNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_nomana_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_nomana_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_nomana_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_NoManaMediumNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_nomana_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_nomana_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_nomana_06.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_NoManaSuperNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_nomana_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_nomana_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_nomana_09.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_InTheBag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_inthebag_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_EmoteIsEmoteLaugh"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_laugh_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_AllyNearIsAllyWispEarlyGame"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_ally_01.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_AllyNearIsAllyAncient_ApparitionEarlyGame"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_ally_02.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_AllyNearIsAllyLone_DruidEarlyGame"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_ally_03.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_AllyNearIsAllyOutworld_DestroyerEarlyGame"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_ally_04.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_AllyNearIsAllyEnigmaEarlyGame"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_ally_05.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_AllyNearIsAllyTinyEarlyGame"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_ally_06.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_AllyNearIsAllyTreantEarlyGame"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_ally_07.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_MissingIsLaneTop"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_missing_lane_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_MissingIsLaneMid"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_missing_lane_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_MissingIsLaneBot"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_missing_lane_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_Thanks"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_thanks_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_thanks_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "puck_ThanksChance_5%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/puck/puck_puck_thanks_03.vcd"
+				},
+			]
+		},
+	]
+	m_Requirements = 
+	[
+		
+		{
+			m_name = "Ispuck"
+			m_matchKey = "classname"
+			m_matchExpr = "npc_dota_hero_puck"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsPhaseShift"
+			m_matchKey = "abilityname"
+			m_matchExpr = "puck_phase_shift"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsDreamCoil"
+			m_matchKey = "abilityname"
+			m_matchExpr = "puck_dream_coil"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsEtherealJaunt"
+			m_matchKey = "abilityname"
+			m_matchExpr = "puck_ethereal_jaunt"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsWaningRift"
+			m_matchKey = "abilityname"
+			m_matchExpr = "puck_waning_rift"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsPuckLoadoutSpawn"
+			m_matchKey = "special_spawn"
+			m_matchExpr = "puck_loadout_spawn"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+	]
+	m_Rules = 
+	[
+		
+		{
+			m_name = "puck_Spawn_Rule"
+			m_Requirements = 
+			[
+				"Spawn",
+				"Ispuck",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_Spawn",
+			]
+		},
+		
+		{
+			m_name = "puck_CustomIsGameStart_Rule"
+			m_Requirements = 
+			[
+				"Custom",
+				"Ispuck",
+				"IsGameStart",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_CustomIsGameStart",
+			]
+		},
+		
+		{
+			m_name = "puck_CustomIsPuckLoadoutSpawn_Rule"
+			m_Requirements = 
+			[
+				"Custom",
+				"Ispuck",
+				"IsPuckLoadoutSpawn",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_CustomIsPuckLoadoutSpawn",
+			]
+		},
+		
+		{
+			m_name = "puck_Move_Rule"
+			m_Requirements = 
+			[
+				"Move",
+				"Ispuck",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_Move",
+			]
+		},
+		
+		{
+			m_name = "puck_Attack_Rule"
+			m_Requirements = 
+			[
+				"Attack",
+				"Ispuck",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_Attack",
+			]
+		},
+		
+		{
+			m_name = "puck_Kill_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Ispuck",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_Kill",
+			]
+		},
+		
+		{
+			m_name = "puck_KillIsFirstBlood_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Ispuck",
+				"IsFirstBlood",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_KillIsFirstBlood",
+			]
+		},
+		
+		{
+			m_name = "puck_KillIsEnemyViperChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Ispuck",
+				"IsEnemyViper",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_KillIsEnemyViperChance_25%",
+			]
+		},
+		
+		{
+			m_name = "puck_KillIsEnemySlardarChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Ispuck",
+				"IsEnemySlardar",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_KillIsEnemySlardarChance_25%",
+			]
+		},
+		
+		{
+			m_name = "puck_KillIsEnemyEnchantressChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Ispuck",
+				"IsEnemyEnchantress",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_KillIsEnemyEnchantressChance_25%",
+			]
+		},
+		
+		{
+			m_name = "puck_KillIsEnemyFurionChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Ispuck",
+				"IsEnemyFurion",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_KillIsEnemyFurionChance_25%",
+			]
+		},
+		
+		{
+			m_name = "puck_KillIsEnemyWispChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Ispuck",
+				"IsEnemyWisp",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_KillIsEnemyWispChance_25%",
+			]
+		},
+		
+		{
+			m_name = "puck_KillIsEnemyInvokerChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Ispuck",
+				"IsEnemyInvoker",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_KillIsEnemyInvokerChance_25%",
+			]
+		},
+		
+		{
+			m_name = "puck_KillIsEnemyVengefulSpiritChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Ispuck",
+				"IsEnemyVengefulSpirit",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_KillIsEnemyVengefulSpiritChance_25%",
+			]
+		},
+		
+		{
+			m_name = "puck_KillIsEnemyJakiroChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Ispuck",
+				"IsEnemyJakiro",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_KillIsEnemyJakiroChance_25%",
+			]
+		},
+		
+		{
+			m_name = "puck_KillIsEnemyDragon_KnightChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Ispuck",
+				"IsEnemyDragon_Knight",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_KillIsEnemyDragon_KnightChance_25%",
+			]
+		},
+		
+		{
+			m_name = "puck_KillIsEnemyWarlockChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Ispuck",
+				"IsEnemyWarlock",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_KillIsEnemyWarlockChance_25%",
+			]
+		},
+		
+		{
+			m_name = "puck_KillIsEnemyTinkerChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Ispuck",
+				"IsEnemyTinker",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_KillIsEnemyTinkerChance_25%",
+			]
+		},
+		
+		{
+			m_name = "puck_KillIsEnemySpectreChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Ispuck",
+				"IsEnemySpectre",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_KillIsEnemySpectreChance_25%",
+			]
+		},
+		
+		{
+			m_name = "puck_KillIsEnemyFaceless_VoidChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Ispuck",
+				"IsEnemyFaceless_Void",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_KillIsEnemyFaceless_VoidChance_25%",
+			]
+		},
+		
+		{
+			m_name = "puck_CastOrder_Rule"
+			m_Requirements = 
+			[
+				"CastOrder",
+				"Ispuck",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_CastOrder",
+			]
+		},
+		
+		{
+			m_name = "puck_CastExecuteIsEtherealJaunt_Rule"
+			m_Requirements = 
+			[
+				"CastExecute",
+				"Ispuck",
+				"IsEtherealJaunt",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_CastExecuteIsEtherealJaunt",
+			]
+		},
+		
+		{
+			m_name = "puck_CastExecuteIsWaningRift_Rule"
+			m_Requirements = 
+			[
+				"CastExecute",
+				"Ispuck",
+				"IsWaningRift",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_CastExecuteIsWaningRift",
+			]
+		},
+		
+		{
+			m_name = "puck_CastExecuteIsPhaseShift_Rule"
+			m_Requirements = 
+			[
+				"CastExecute",
+				"Ispuck",
+				"IsPhaseShift",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_CastExecuteIsPhaseShift",
+			]
+		},
+		
+		{
+			m_name = "puck_CastExecuteIsDreamCoil_Rule"
+			m_Requirements = 
+			[
+				"CastExecute",
+				"Ispuck",
+				"IsDreamCoil",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_CastExecuteIsDreamCoil",
+			]
+		},
+		
+		{
+			m_name = "puck_ItemDropIsUltraRareDrop_Rule"
+			m_Requirements = 
+			[
+				"ItemDrop",
+				"Ispuck",
+				"IsUltraRareDrop",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_ItemDropIsUltraRareDrop",
+			]
+		},
+		
+		{
+			m_name = "puck_ItemDropIsCommonDrop_Rule"
+			m_Requirements = 
+			[
+				"ItemDrop",
+				"Ispuck",
+				"IsCommonDrop",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_ItemDropIsCommonDrop",
+			]
+		},
+		
+		{
+			m_name = "puck_ItemDropIsRareDrop_Rule"
+			m_Requirements = 
+			[
+				"ItemDrop",
+				"Ispuck",
+				"IsRareDrop",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_ItemDropIsRareDrop",
+			]
+		},
+		
+		{
+			m_name = "puck_Death_Rule"
+			m_Requirements = 
+			[
+				"Death",
+				"Ispuck",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_Death",
+			]
+		},
+		
+		{
+			m_name = "puck_DeathIsReincarnating_Rule"
+			m_Requirements = 
+			[
+				"Death",
+				"Ispuck",
+				"IsReincarnating",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_DeathIsReincarnating",
+			]
+		},
+		
+		{
+			m_name = "puck_Respawn_Rule"
+			m_Requirements = 
+			[
+				"Respawn",
+				"Ispuck",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_Respawn",
+			]
+		},
+		
+		{
+			m_name = "puck_Select_Rule"
+			m_Requirements = 
+			[
+				"Select",
+				"Ispuck",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_Select",
+			]
+		},
+		
+		{
+			m_name = "puck_PurchaseIsExpensiveItem_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Ispuck",
+				"IsExpensiveItem",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_PurchaseIsExpensiveItem",
+			]
+		},
+		
+		{
+			m_name = "puck_PurchaseIsUltimateScepter_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Ispuck",
+				"IsUltimateScepter",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_PurchaseIsUltimateScepter",
+			]
+		},
+		
+		{
+			m_name = "puck_PurchaseIsBlinkDagger_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Ispuck",
+				"IsBlinkDagger",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_PurchaseIsBlinkDagger",
+			]
+		},
+		
+		{
+			m_name = "puck_PurchaseIsShiva_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Ispuck",
+				"IsShiva",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_PurchaseIsShiva",
+			]
+		},
+		
+		{
+			m_name = "puck_PurchaseIsSheepstick_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Ispuck",
+				"IsSheepstick",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_PurchaseIsSheepstick",
+			]
+		},
+		
+		{
+			m_name = "puck_PurchaseIsSkadi_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Ispuck",
+				"IsSkadi",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_PurchaseIsSkadi",
+			]
+		},
+		
+		{
+			m_name = "puck_PurchaseIsNecronomicon_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Ispuck",
+				"IsNecronomicon",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_PurchaseIsNecronomicon",
+			]
+		},
+		
+		{
+			m_name = "puck_PurchaseIsOrchid_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Ispuck",
+				"IsOrchid",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_PurchaseIsOrchid",
+			]
+		},
+		
+		{
+			m_name = "puck_PurchaseIsDagon_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Ispuck",
+				"IsDagon",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_PurchaseIsDagon",
+			]
+		},
+		
+		{
+			m_name = "puck_PurchaseIsSphere_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Ispuck",
+				"IsSphere",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_PurchaseIsSphere",
+			]
+		},
+		
+		{
+			m_name = "puck_Immortality_Rule"
+			m_Requirements = 
+			[
+				"Immortality",
+				"Ispuck",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_Immortality",
+			]
+		},
+		
+		{
+			m_name = "puck_ImmortalityChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Immortality",
+				"Ispuck",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_ImmortalityChance_25%",
+			]
+		},
+		
+		{
+			m_name = "puck_Deny_Rule"
+			m_Requirements = 
+			[
+				"Deny",
+				"Ispuck",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_Deny",
+			]
+		},
+		
+		{
+			m_name = "puck_LastHit_Rule"
+			m_Requirements = 
+			[
+				"LastHit",
+				"Ispuck",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_LastHit",
+			]
+		},
+		
+		{
+			m_name = "puck_Defeat_Rule"
+			m_Requirements = 
+			[
+				"Defeat",
+				"Ispuck",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_Defeat",
+			]
+		},
+		
+		{
+			m_name = "puck_Victory_Rule"
+			m_Requirements = 
+			[
+				"Victory",
+				"Ispuck",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_Victory",
+			]
+		},
+		
+		{
+			m_name = "puck_Bottling_Rule"
+			m_Requirements = 
+			[
+				"Bottling",
+				"Ispuck",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_Bottling",
+			]
+		},
+		
+		{
+			m_name = "puck_PowerupIsPowerupHaste_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Ispuck",
+				"IsPowerupHaste",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_PowerupIsPowerupHaste",
+			]
+		},
+		
+		{
+			m_name = "puck_PowerupIsPowerupHasteChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Ispuck",
+				"IsPowerupHaste",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_PowerupIsPowerupHasteChance_25%",
+			]
+		},
+		
+		{
+			m_name = "puck_PowerupIsPowerupDoubleDamage_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Ispuck",
+				"IsPowerupDoubleDamage",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_PowerupIsPowerupDoubleDamage",
+			]
+		},
+		
+		{
+			m_name = "puck_PowerupIsPowerupDoubleDamageChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Ispuck",
+				"IsPowerupDoubleDamage",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_PowerupIsPowerupDoubleDamageChance_25%",
+			]
+		},
+		
+		{
+			m_name = "puck_PowerupIsPowerupRegeneration_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Ispuck",
+				"IsPowerupRegeneration",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_PowerupIsPowerupRegeneration",
+			]
+		},
+		
+		{
+			m_name = "puck_PowerupIsPowerupBounty_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Ispuck",
+				"IsPowerupBounty",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_PowerupIsPowerupBounty",
+			]
+		},
+		
+		{
+			m_name = "puck_PowerupIsPowerupIllusion_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Ispuck",
+				"IsPowerupIllusion",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_PowerupIsPowerupIllusion",
+			]
+		},
+		
+		{
+			m_name = "puck_PowerupIsPowerupIllusionChance_5%_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Ispuck",
+				"IsPowerupIllusion",
+				"Chance_5%",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_PowerupIsPowerupIllusionChance_5%",
+			]
+		},
+		
+		{
+			m_name = "puck_PowerupIsPowerupInvisibility_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Ispuck",
+				"IsPowerupInvisibility",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_PowerupIsPowerupInvisibility",
+			]
+		},
+		
+		{
+			m_name = "puck_PowerupIsPowerupArcane_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Ispuck",
+				"IsPowerupArcane",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_PowerupIsPowerupArcane",
+			]
+		},
+		
+		{
+			m_name = "puck_LevelUp_Rule"
+			m_Requirements = 
+			[
+				"LevelUp",
+				"Ispuck",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_LevelUp",
+			]
+		},
+		
+		{
+			m_name = "puck_Pain_Rule"
+			m_Requirements = 
+			[
+				"Pain",
+				"Ispuck",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_Pain",
+			]
+		},
+		
+		{
+			m_name = "puck_PainChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Pain",
+				"Ispuck",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_PainChance_25%",
+			]
+		},
+		
+		{
+			m_name = "puck_CooldownLittleNag_Rule"
+			m_Requirements = 
+			[
+				"Cooldown",
+				"Ispuck",
+				"LittleNag",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_CooldownLittleNag",
+			]
+		},
+		
+		{
+			m_name = "puck_CooldownMediumNag_Rule"
+			m_Requirements = 
+			[
+				"Cooldown",
+				"Ispuck",
+				"MediumNag",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_CooldownMediumNag",
+			]
+		},
+		
+		{
+			m_name = "puck_CooldownSuperNag_Rule"
+			m_Requirements = 
+			[
+				"Cooldown",
+				"Ispuck",
+				"SuperNag",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_CooldownSuperNag",
+			]
+		},
+		
+		{
+			m_name = "puck_NoManaLittleNag_Rule"
+			m_Requirements = 
+			[
+				"NoMana",
+				"Ispuck",
+				"LittleNag",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_NoManaLittleNag",
+			]
+		},
+		
+		{
+			m_name = "puck_NoManaMediumNag_Rule"
+			m_Requirements = 
+			[
+				"NoMana",
+				"Ispuck",
+				"MediumNag",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_NoManaMediumNag",
+			]
+		},
+		
+		{
+			m_name = "puck_NoManaSuperNag_Rule"
+			m_Requirements = 
+			[
+				"NoMana",
+				"Ispuck",
+				"SuperNag",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_NoManaSuperNag",
+			]
+		},
+		
+		{
+			m_name = "puck_InTheBag_Rule"
+			m_Requirements = 
+			[
+				"InTheBag",
+				"Ispuck",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_InTheBag",
+			]
+		},
+		
+		{
+			m_name = "puck_EmoteIsEmoteLaugh_Rule"
+			m_Requirements = 
+			[
+				"Emote",
+				"Ispuck",
+				"IsEmoteLaugh",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_EmoteIsEmoteLaugh",
+			]
+		},
+		
+		{
+			m_name = "puck_AllyNearIsAllyWispEarlyGame_Rule"
+			m_Requirements = 
+			[
+				"AllyNear",
+				"Ispuck",
+				"IsAllyWisp",
+				"EarlyGame",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_AllyNearIsAllyWispEarlyGame",
+			]
+		},
+		
+		{
+			m_name = "puck_AllyNearIsAllyAncient_ApparitionEarlyGame_Rule"
+			m_Requirements = 
+			[
+				"AllyNear",
+				"Ispuck",
+				"IsAllyAncient_Apparition",
+				"EarlyGame",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_AllyNearIsAllyAncient_ApparitionEarlyGame",
+			]
+		},
+		
+		{
+			m_name = "puck_AllyNearIsAllyLone_DruidEarlyGame_Rule"
+			m_Requirements = 
+			[
+				"AllyNear",
+				"Ispuck",
+				"IsAllyLone_Druid",
+				"EarlyGame",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_AllyNearIsAllyLone_DruidEarlyGame",
+			]
+		},
+		
+		{
+			m_name = "puck_AllyNearIsAllyOutworld_DestroyerEarlyGame_Rule"
+			m_Requirements = 
+			[
+				"AllyNear",
+				"Ispuck",
+				"IsAllyOutworld_Destroyer",
+				"EarlyGame",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_AllyNearIsAllyOutworld_DestroyerEarlyGame",
+			]
+		},
+		
+		{
+			m_name = "puck_AllyNearIsAllyEnigmaEarlyGame_Rule"
+			m_Requirements = 
+			[
+				"AllyNear",
+				"Ispuck",
+				"IsAllyEnigma",
+				"EarlyGame",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_AllyNearIsAllyEnigmaEarlyGame",
+			]
+		},
+		
+		{
+			m_name = "puck_AllyNearIsAllyTinyEarlyGame_Rule"
+			m_Requirements = 
+			[
+				"AllyNear",
+				"Ispuck",
+				"IsAllyTiny",
+				"EarlyGame",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_AllyNearIsAllyTinyEarlyGame",
+			]
+		},
+		
+		{
+			m_name = "puck_AllyNearIsAllyTreantEarlyGame_Rule"
+			m_Requirements = 
+			[
+				"AllyNear",
+				"Ispuck",
+				"IsAllyTreant",
+				"EarlyGame",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_AllyNearIsAllyTreantEarlyGame",
+			]
+		},
+		
+		{
+			m_name = "puck_MissingIsLaneTop_Rule"
+			m_Requirements = 
+			[
+				"Missing",
+				"Ispuck",
+				"IsLaneTop",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_MissingIsLaneTop",
+			]
+		},
+		
+		{
+			m_name = "puck_MissingIsLaneMid_Rule"
+			m_Requirements = 
+			[
+				"Missing",
+				"Ispuck",
+				"IsLaneMid",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_MissingIsLaneMid",
+			]
+		},
+		
+		{
+			m_name = "puck_MissingIsLaneBot_Rule"
+			m_Requirements = 
+			[
+				"Missing",
+				"Ispuck",
+				"IsLaneBot",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_MissingIsLaneBot",
+			]
+		},
+		
+		{
+			m_name = "puck_Thanks_Rule"
+			m_Requirements = 
+			[
+				"Thanks",
+				"Ispuck",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_Thanks",
+			]
+		},
+		
+		{
+			m_name = "puck_ThanksChance_5%_Rule"
+			m_Requirements = 
+			[
+				"Thanks",
+				"Ispuck",
+				"Chance_5%",
+			]
+			m_ResponseGroups = 
+			[
+				"puck_ThanksChance_5%",
+			]
+		},
+	]
 }
-

@@ -11,9 +11,12 @@
 		<Panel id="MainSectionContainer" class="LeftRightFlow">
 			<Button class="Arrow Left" id="PrevArrowButton" onactivate="RemoveStyle( IconContainer, StartAnim ); AddStyle( IconContainer, StartAnim ); DOTAItemReceivedArrowClicked( -1 )" />
 			<Panel id="Body">
+				<Panel id="Horizon" />
 				<DOTAScenePanel id="BackgroundFXWindow" map="scenes/item_received" camera="shot_camera" particleonly="true" />
 				<Label id="ItemPanelTitle" class="PopupTitle" text="{s:banner_text}" html="true" />
-				<Panel id="IconContainer" hittest="false">
+				<Panel id="IconContainer" hittestchildren="false">
+					<Panel id="ItemShadow" />
+					<DOTAUIEconSetPreview id="ItemSetPreview" allowrotation="true" antialias="true" drawbackground="false" displaymode="loadout_small" suppress-intro-effects="true" pin-fov="vertical" />
 					<Panel class="ReceivedItemIcon">
 						<DOTAEconItem id="MainImage" class="DisableInspect DisableEquipped" />
 					</Panel>

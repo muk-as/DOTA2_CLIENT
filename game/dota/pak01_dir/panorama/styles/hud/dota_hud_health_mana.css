@@ -61,21 +61,161 @@
   background-color: gradient( linear, 0% 0%, 0% 100%, from( #658fdf  ), color-stop( 0.2, #a4caff ), color-stop( .5, #3f6fcb), to( #2c56ab ) );
  }
 
+ #HealthLabelContainer{
+
+  vertical-align: center;
+  horizontal-align: center;
+  flow-children: right;
+  width: fit-children;
+  height: fit-children;
+  overflow: squish;
+  z-index: 4;
+ }
+
+
+ .BarrierProgress{
+
+  height: 4px;
+  width: fill-parent-flow(1);
+  overflow: clip clip;
+
+  vertical-align: center;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+ }
+
+ #AllBarrierProgress .ProgressBarLeft{
+
+  background-color: gradient( linear, 0% 10%, 0% 70%, from( PureDamageColorHi ), to( PureDamageColor ) );
+ }
+
+ #PhysicalBarrierProgress .ProgressBarLeft{
+
+  background-color: gradient( linear, 0% 10%, 0% 70%, from( PhysicalDamageColorHi ), to( PhysicalDamageColor ) );
+ }
+
+ #MagicBarrierProgress .ProgressBarLeft{
+
+  background-color: gradient( linear, 0% 10%, 0% 70%, from( MagicalDamageColorHi ), to( MagicalDamageColor ) );
+ }
+
+ .BarrierIcon{
+
+  width: 16px;
+  height: 16px;
+  background-size: cover;
+  vertical-align: center;
+  img-shadow: 0px 2px 6px black;
+  margin-right: -4px;
+  z-index: 10;
+ }
+
+ #MagicIcon{
+
+  background-image: url( "s2r://panorama/images/hud/hud_shield_magical_png.vtex");
+ }
+
+ #PhysicalIcon{
+
+  background-image: url( "s2r://panorama/images/hud/hud_shield_physical_png.vtex");
+ }
+
+ #AllIcon{
+
+  background-image: url("s2r://panorama/images/hud/hud_shield_pure_png.vtex");
+ }
+
+ #MagicIcon,#PhysicalIcon,#AllIcon{
+
+
+
+  visibility: collapse;
+ }
+
+ #HealthLabel,#ManaLabel{
+
+
+  text-shadow: 0px 1px 4px 2.0 #000000;
+ }
 
 
 
 
 
- #HealthLabel{
 
-  width: 100%;
-  margin-top: 2px;
-  color: white;
+
+
+
+
+
+
+
+
+
+
+ #HealthLabel,#AllBarrierLabel,#PhysicalBarrierLabel,#MagicBarrierLabel{
+
+
+
+
+  vertical-align: center;
   font-weight: bold;
   text-align: center;
-  vertical-align: center;
-  text-shadow: 0px 0px 0px 3.7 #000000;
      z-index: 4;
+     color: white;
+     font-size: 12px;
+     text-shadow: 0px 1px 3px 1.0 #000000ce;
+     font-weight: bold;
+  margin-left: 2px;
+ }
+
+ #AllBarrierLabel,#PhysicalBarrierLabel,#MagicBarrierLabel{
+
+
+
+  padding-right: 6px;
+  visibility: collapse;
+ }
+
+
+ #BarrierContainer{
+
+  width: 100%;
+  flow-children: right;
+  horizontal-align: center;
+ }
+
+ #AllBarrierContainer,#PhysicalBarrierContainer,#MagicBarrierContainer{
+
+
+
+  visibility: collapse;
+  vertical-align: center;
+  horizontal-align: center;
+  flow-children: left;
+  width: 100%;
+  z-index: 4;
+  margin-right: 2px;
+ }
+
+ .AllBarrier #AllBarrierContainer,.PhysicalBarrier #PhysicalBarrierContainer,.MagicBarrier #MagicBarrierContainer{
+
+
+
+  visibility: visible;
+ }
+
+ .AllBarrier #AllBarrierLabel,.PhysicalBarrier #PhysicalBarrierLabel,.MagicBarrier #MagicBarrierLabel{
+
+
+
+  visibility: visible;
+ }
+
+ .AllBarrier #AllIcon,.PhysicalBarrier #PhysicalIcon,.MagicBarrier #MagicIcon{
+
+
+
+  visibility: visible;
  }
 
  .MaxHealthLabel{
@@ -185,7 +325,7 @@
      font-weight: bold;
   text-align: center;
   vertical-align: center;
-  text-shadow: 2px 2px 0px #000000;
+
      z-index: 4;
  }
 
@@ -197,7 +337,7 @@
   font-weight: bold;
   text-align: center;
   vertical-align: center;
-  text-shadow: 2px 2px 0px #000000;
+
      z-index: 4;
  }
 
@@ -235,6 +375,17 @@
  }
 
 
+
+ .Reborn .AnyBarrier #HealthContainer{
+
+  height: 20px;
+  margin-top: 1px;
+ }
+
+ .Reborn .AnyBarrier #HealthProgress{
+
+  margin-top: 0px;
+ }
 
  .Reborn #HealthProgress{
 
@@ -279,16 +430,12 @@
 
  .Reborn #HealthLabel{
 
-     text-align: center;
   font-weight: bold;
   font-size: 18px;
 
-  color: white;
-     width: 332px;
      margin-top: 1px;
   margin-bottom: 2px;
      horizontal-align: center;
-     text-shadow: 1px 1px 0px 2.0 #000000;
      overflow: noclip;
  }
 
@@ -298,6 +445,12 @@
   height: 26px;
  }
 
+
+ .Reborn .AnyBarrier #ManaContainer{
+
+  height: 20px;
+  margin-top: 2px;
+ }
 
  .Reborn #ManaProgress{
 
@@ -336,8 +489,20 @@
      color: white;
      horizontal-align: center;
      margin-top: 2px;
-     text-shadow: 1px 1px 0px 2.0 #000000;
      overflow: noclip;
+ }
+
+ .Reborn .AnyBarrier #ManaLabel,.Reborn .AnyBarrier #MaxManaLabel{
+
+
+  margin-top: 1px;
+ }
+
+ .Reborn .AnyBarrier #HealthLabel,.Reborn .AnyBarrier #MaxHealthLabel{
+
+
+  margin-top: 1px;
+  margin-bottom: 0px;
  }
 
  .Reborn .UnitDead #ManaRegenLabel,.Reborn .UnitDead .MaxManaLabel,.Reborn .UnitDead #ManaLabel{
@@ -392,29 +557,29 @@
   font-size: 18px;
  }
 
- .Reborn #HealthRegenLabel{
+ .Reborn #HealthRegenLabel,.Reborn #ManaRegenLabel{
 
-  color: #3ED038;
+
      font-size: 14px;
-     text-shadow: 2px 2px 0px 1.0 #00000066;
+     text-shadow: 0px 2px 4px #000000;
      font-weight: bold;
-     margin-top: -1px;
+     margin-top: 1px;
      margin-right: 4px;
  }
 
- .Reborn .EnemyUnit #HealthRegenLabel{
+ .Reborn #HealthRegenLabel{
 
-  color: #ff4433;
+  color: #3ED038;
  }
 
  .Reborn #ManaRegenLabel{
 
   color: #83C2FE;
-     margin-top: 1px;
-     font-size: 14px;
-     text-shadow: 2px 2px 0px 1.0 #00000066;
-     font-weight: bold;
-     margin-right: 4px;
+ }
+
+ .Reborn .EnemyUnit #HealthRegenLabel{
+
+  color: #ff4433;
  }
 
  #BarSpacer{

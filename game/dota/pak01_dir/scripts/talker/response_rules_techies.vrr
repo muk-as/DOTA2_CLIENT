@@ -1,1785 +1,5787 @@
-#include "talker/response_rules_shared.vrr"
-
-criterion "Istechies" "classname" "npc_dota_hero_techies" weight 5 required
-criterion "IsTechiesSetMine" "abilityname" "techies_land_mines" weight 5 required
-criterion "IsTechiesStickyBomb" "abilityname" "techies_sticky_bomb" weight 5 required
-criterion "IsTechiesZap" "abilityname" "techies_reactive_tazer" weight 5 required
-criterion "IsTechiesStasisTrap" "abilityname" "techies_stasis_trap" weight 5 required
-criterion "IsTechiesRemoteMineSet" "abilityname" "techies_remote_mines" weight 5 required
-criterion "IsTechiesRemoteMineDet" "abilityname" "techies_focused_detonate" weight 5 required
-criterion "IsTechiesArcanaTaunt" "istechiesminitaunt" "yes" weight 5 required
-criterion "IsTechiesSuicideSuccess" "suicide_kills" ">=1" weight 5 required
-criterion "IsTechiesSuicideFizzle" "suicide_kills" "0" weight 5 required
-criterion "IsTechiesRespawnSuicide" "respawnFromSuicide" ">=1" weight 5 required
-criterion "IsTechiesRespawnDeath" "respawnFromSuicide" "0" weight 5 required
-criterion "IsTechiesTauntSwingAround" "taunt_type" "swing_around" weight 5 required
-criterion "IsTechiesLoadoutSpawn" "special_spawn" "techies_loadout_spawn" weight 5 required
-criterion "IsTechSpeakTrioHigh" "randomnum" ">=46" weight 5 required
-criterion "IsTechSpeakTrioLow" "randomnum" ">=6,<=45" weight 5 required
-criterion "IsTechSpeakTrioBarrel" "randomnum" "<=5" weight 5 required
-criterion "IsTechSpeakDuoHigh" "randomnum" ">=46" weight 5 required
-criterion "IsTechSpeakDuoLow" "randomnum" "<=45" weight 5 required
-criterion "IsTechSpeakDuoLowRMine01" "randomnum" "<=1" weight 5 required
-
-Response techies_Spawn
-{
-	scene "scenes/techies/techies_tech_spawn_01.vcd" nodelay 
-	scene "scenes/techies/techies_tech_spawn_02.vcd" nodelay 
-	scene "scenes/techies/techies_tech_spawn_03.vcd" nodelay 
-	scene "scenes/techies/techies_tech_spawn_04.vcd" nodelay 
-	scene "scenes/techies/techies_tech_spawn_05.vcd" nodelay 
-	scene "scenes/techies/techies_tech_spawn_06.vcd" nodelay 
-}
-
-Rule techies_Spawn_Rule
-{
-	criteria Spawn Istechies 
-	response techies_Spawn
-}
-
-Response techies_CustomIsGameStart
-{
-	scene "scenes/techies/techies_tech_begin_01.vcd" nodelay 
-}
-
-Rule techies_CustomIsGameStart_Rule
-{
-	criteria Custom Istechies IsGameStart
-	response techies_CustomIsGameStart
-}
-
-Response techies_CustomIsTechiesArcanaTaunt
-{
-	scene "scenes/techies/techies_tech_move_26.vcd" nodelay 
-	scene "scenes/techies/techies_tech_move_28.vcd" nodelay 
-	scene "scenes/techies/techies_tech_move_45.vcd" nodelay 
-	scene "scenes/techies/techies_tech_move_46.vcd" nodelay 
-	scene "scenes/techies/techies_tech_move_48.vcd" nodelay 
-	scene "scenes/techies/techies_tech_move_50.vcd" nodelay 
-	scene "scenes/techies/techies_tech_move_54.vcd" nodelay 
-	scene "scenes/techies/techies_tech_attack_13.vcd" nodelay 
-	scene "scenes/techies/techies_tech_attack_24.vcd" nodelay 
-	scene "scenes/techies/techies_tech_attack_25.vcd" nodelay 
-}
-
-Rule techies_CustomIsTechiesArcanaTaunt_Rule
-{
-	criteria Custom Istechies IsTechiesArcanaTaunt
-	response techies_CustomIsTechiesArcanaTaunt
-}
-
-Response techies_CustomIsTechiesLoadoutSpawn
-{
-	scene "scenes/techies/techies_tech_spawn_01.vcd" nodelay 
-	scene "scenes/techies/techies_tech_spawn_02.vcd" nodelay 
-	scene "scenes/techies/techies_tech_spawn_03.vcd" nodelay 
-	scene "scenes/techies/techies_tech_spawn_04.vcd" nodelay 
-	scene "scenes/techies/techies_tech_spawn_05.vcd" nodelay 
-	scene "scenes/techies/techies_tech_spawn_06.vcd" nodelay 
-	scene "scenes/techies/techies_tech_attack_01.vcd" nodelay 
-	scene "scenes/techies/techies_tech_cast_01.vcd" nodelay 
-	scene "scenes/techies/techies_tech_cast_02.vcd" nodelay 
-	scene "scenes/techies/techies_tech_cast_03.vcd" nodelay 
-	scene "scenes/techies/techies_tech_setmine_11.vcd" nodelay 
-	scene "scenes/techies/techies_tech_settrap_01.vcd" nodelay 
-}
-
-Rule techies_CustomIsTechiesLoadoutSpawn_Rule
-{
-	criteria Custom Istechies IsTechiesLoadoutSpawn
-	response techies_CustomIsTechiesLoadoutSpawn
-}
-
-Response techies_KillIsFirstBlood
-{
-	scene "scenes/techies/techies_tech_firstblood_01.vcd" nodelay 
-	scene "scenes/techies/techies_tech_firstblood_02.vcd" nodelay 
-}
-
-Rule techies_KillIsFirstBlood_Rule
-{
-	criteria Kill Istechies IsFirstBlood
-	response techies_KillIsFirstBlood
-}
-
-Response techies_KillIsFirstBloodChance_10%
-{
-	scene "scenes/techies/techies_tech_firstblood_03.vcd" nodelay 
-}
-
-Rule techies_KillIsFirstBloodChance_10%_Rule
-{
-	criteria Kill Istechies IsFirstBlood Chance_10%
-	response techies_KillIsFirstBloodChance_10%
-}
-
-Response techies_KillIsTechiesSetMineChance_25%
-{
-	scene "scenes/techies/techies_tech_mineblowsup_01.vcd" nodelay 
-	scene "scenes/techies/techies_tech_mineblowsup_02.vcd" nodelay 
-	scene "scenes/techies/techies_tech_mineblowsup_03.vcd" nodelay 
-	scene "scenes/techies/techies_tech_mineblowsup_04.vcd" nodelay 
-	scene "scenes/techies/techies_tech_mineblowsup_05.vcd" nodelay 
-	scene "scenes/techies/techies_tech_mineblowsup_06.vcd" nodelay 
-	scene "scenes/techies/techies_tech_mineblowsup_08.vcd" nodelay 
-	scene "scenes/techies/techies_tech_mineblowsup_09.vcd" nodelay 
-	scene "scenes/techies/techies_tech_minekill_01.vcd" nodelay 
-	scene "scenes/techies/techies_tech_minekill_02.vcd" nodelay 
-	scene "scenes/techies/techies_tech_minekill_03.vcd" nodelay 
-}
-
-Rule techies_KillIsTechiesSetMineChance_25%_Rule
-{
-	criteria Kill Istechies IsTechiesSetMine Chance_25%
-	response techies_KillIsTechiesSetMineChance_25%
-}
-
-Response techies_KillIsTechiesZapChance_75%
-{
-	scene "scenes/techies/techies_tech_trapgoesoff_02.vcd" nodelay 
-	scene "scenes/techies/techies_tech_trapgoesoff_03.vcd" nodelay 
-	scene "scenes/techies/techies_tech_trapgoesoff_07.vcd" nodelay speakonce
-	scene "scenes/techies/techies_tech_trapgoesoff_09.vcd" nodelay 
-	scene "scenes/techies/techies_tech_trapgoesoff_10.vcd" nodelay 
-}
-
-Rule techies_KillIsTechiesZapChance_75%_Rule
-{
-	criteria Kill Istechies IsTechiesZap Chance_75%
-	response techies_KillIsTechiesZapChance_75%
-}
-
-Response techies_KillIsTechiesSetMineChance_15%
-{
-	scene "scenes/techies/techies_tech_focuseddetonate_01.vcd" nodelay 
-	scene "scenes/techies/techies_tech_focuseddetonate_04.vcd" nodelay 
-	scene "scenes/techies/techies_tech_focuseddetonate_05.vcd" nodelay 
-	scene "scenes/techies/techies_tech_focuseddetonate_07.vcd" nodelay 
-	scene "scenes/techies/techies_tech_focuseddetonate_08.vcd" nodelay 
-	scene "scenes/techies/techies_tech_focuseddetonate_11.vcd" nodelay 
-	scene "scenes/techies/techies_tech_focuseddetonate_13.vcd" nodelay 
-	scene "scenes/techies/techies_tech_focuseddetonate_15.vcd" nodelay 
-	scene "scenes/techies/techies_tech_focuseddetonate_16.vcd" nodelay 
-	scene "scenes/techies/techies_tech_focuseddetonate_17.vcd" nodelay 
-	scene "scenes/techies/techies_tech_focuseddetonate_19.vcd" nodelay 
-	scene "scenes/techies/techies_tech_focuseddetonate_21.vcd" nodelay 
-	scene "scenes/techies/techies_tech_focuseddetonate_22.vcd" nodelay 
-	scene "scenes/techies/techies_tech_detonatekill_01.vcd" nodelay 
-	scene "scenes/techies/techies_tech_detonatekill_02.vcd" nodelay 
-	scene "scenes/techies/techies_tech_detonatekill_03.vcd" nodelay 
-}
-
-Rule techies_KillIsTechiesSetMineChance_15%_Rule
-{
-	criteria Kill Istechies IsTechiesSetMine Chance_15%
-	response techies_KillIsTechiesSetMineChance_15%
-}
-
-Response techies_KillIsTechiesSetMineChance_5%
-{
-	scene "scenes/techies/techies_tech_focuseddetonate_06.vcd" nodelay 
-	scene "scenes/techies/techies_tech_focuseddetonate_18.vcd" nodelay 
-}
-
-Rule techies_KillIsTechiesSetMineChance_5%_Rule
-{
-	criteria Kill Istechies IsTechiesSetMine Chance_5%
-	response techies_KillIsTechiesSetMineChance_5%
-}
-
-Response techies_Kill
-{
-	scene "scenes/techies/techies_tech_levelup_04.vcd" nodelay 
-	scene "scenes/techies/techies_tech_levelup_14.vcd" nodelay 
-	scene "scenes/techies/techies_tech_kill_02.vcd" nodelay 
-	scene "scenes/techies/techies_tech_kill_03.vcd" nodelay 
-	scene "scenes/techies/techies_tech_kill_04.vcd" nodelay 
-	scene "scenes/techies/techies_tech_kill_05.vcd" nodelay 
-	scene "scenes/techies/techies_tech_kill_06.vcd" nodelay 
-	scene "scenes/techies/techies_tech_kill_07.vcd" nodelay 
-	scene "scenes/techies/techies_tech_kill_08.vcd" nodelay 
-	scene "scenes/techies/techies_tech_kill_09.vcd" nodelay 
-	scene "scenes/techies/techies_tech_kill_11.vcd" nodelay 
-	scene "scenes/techies/techies_tech_kill_12.vcd" nodelay 
-	scene "scenes/techies/techies_tech_kill_13.vcd" nodelay 
-	scene "scenes/techies/techies_tech_kill_17.vcd" nodelay 
-	scene "scenes/techies/techies_tech_kill_18.vcd" nodelay 
-	scene "scenes/techies/techies_tech_kill_19.vcd" nodelay 
-	scene "scenes/techies/techies_tech_kill_20.vcd" nodelay 
-	scene "scenes/techies/techies_tech_kill_21.vcd" nodelay 
-	scene "scenes/techies/techies_tech_kill_22.vcd" nodelay 
-	scene "scenes/techies/techies_tech_kill_23.vcd" nodelay 
-}
-
-Rule techies_Kill_Rule
-{
-	criteria Kill Istechies 
-	response techies_Kill
-}
-
-Response techies_KillChance_5%
-{
-	scene "scenes/techies/techies_tech_kill_01.vcd" nodelay 
-	scene "scenes/techies/techies_tech_kill_14.vcd" nodelay 
-	scene "scenes/techies/techies_tech_kill_16.vcd" nodelay 
-}
-
-Rule techies_KillChance_5%_Rule
-{
-	criteria Kill Istechies Chance_5%
-	response techies_KillChance_5%
-}
-
-Response techies_KillIsEnemyAlchemistChance_20%
-{
-	scene "scenes/techies/techies_tech_rival_02.vcd" nodelay 
-}
-
-Rule techies_KillIsEnemyAlchemistChance_20%_Rule
-{
-	criteria Kill Istechies IsEnemyAlchemist Chance_20%
-	response techies_KillIsEnemyAlchemistChance_20%
-}
-
-Response techies_KillIsEnemyGyrocopterChance_20%
-{
-	scene "scenes/techies/techies_tech_rival_03.vcd" nodelay 
-}
-
-Rule techies_KillIsEnemyGyrocopterChance_20%_Rule
-{
-	criteria Kill Istechies IsEnemyGyrocopter Chance_20%
-	response techies_KillIsEnemyGyrocopterChance_20%
-}
-
-Response techies_KillIsEnemyTinkerChance_20%
-{
-	scene "scenes/techies/techies_tech_rival_04.vcd" nodelay 
-}
-
-Rule techies_KillIsEnemyTinkerChance_20%_Rule
-{
-	criteria Kill Istechies IsEnemyTinker Chance_20%
-	response techies_KillIsEnemyTinkerChance_20%
-}
-
-Response techies_KillIsEnemyOgre_MagiChance_20%
-{
-	scene "scenes/techies/techies_tech_rival_06.vcd" nodelay 
-	scene "scenes/techies/techies_tech_rival_07.vcd" nodelay 
-	scene "scenes/techies/techies_tech_rival_08.vcd" nodelay 
-}
-
-Rule techies_KillIsEnemyOgre_MagiChance_20%_Rule
-{
-	criteria Kill Istechies IsEnemyOgre_Magi Chance_20%
-	response techies_KillIsEnemyOgre_MagiChance_20%
-}
-
-Response techies_KillIsEnemyAbyssal_UnderlordChance_20%
-{
-	scene "scenes/techies/techies_tech_rival_10.vcd" nodelay 
-}
-
-Rule techies_KillIsEnemyAbyssal_UnderlordChance_20%_Rule
-{
-	criteria Kill Istechies IsEnemyAbyssal_Underlord Chance_20%
-	response techies_KillIsEnemyAbyssal_UnderlordChance_20%
-}
-
-Response techies_KillIsEnemyDoom_BringerChance_3%
-{
-	scene "scenes/techies/techies_tech_rival_11.vcd" nodelay 
-}
-
-Rule techies_KillIsEnemyDoom_BringerChance_3%_Rule
-{
-	criteria Kill Istechies IsEnemyDoom_Bringer Chance_3%
-	response techies_KillIsEnemyDoom_BringerChance_3%
-}
-
-Response techies_KillIsEnemyWispChance_20%
-{
-	scene "scenes/techies/techies_tech_rival_13.vcd" nodelay 
-}
-
-Rule techies_KillIsEnemyWispChance_20%_Rule
-{
-	criteria Kill Istechies IsEnemyWisp Chance_20%
-	response techies_KillIsEnemyWispChance_20%
-}
-
-Response techies_MoveIsTechSpeakTrioLow
-{
-	scene "scenes/techies/techies_tech_move_01.vcd" nodelay 
-	scene "scenes/techies/techies_tech_move_02.vcd" nodelay 
-	scene "scenes/techies/techies_tech_move_03.vcd" nodelay 
-	scene "scenes/techies/techies_tech_move_04.vcd" nodelay 
-	scene "scenes/techies/techies_tech_move_06.vcd" nodelay 
-	scene "scenes/techies/techies_tech_move_07.vcd" nodelay 
-	scene "scenes/techies/techies_tech_move_08.vcd" nodelay 
-	scene "scenes/techies/techies_tech_move_10.vcd" nodelay 
-	scene "scenes/techies/techies_tech_move_11.vcd" nodelay 
-	scene "scenes/techies/techies_tech_move_12.vcd" nodelay 
-	scene "scenes/techies/techies_tech_move_21.vcd" nodelay 
-	scene "scenes/techies/techies_tech_move_22.vcd" nodelay 
-	scene "scenes/techies/techies_tech_move_23.vcd" nodelay 
-	scene "scenes/techies/techies_tech_move_24.vcd" nodelay 
-	scene "scenes/techies/techies_tech_move_40.vcd" nodelay 
-	scene "scenes/techies/techies_tech_move_45.vcd" nodelay 
-	scene "scenes/techies/techies_tech_move_46.vcd" nodelay 
-	scene "scenes/techies/techies_tech_move_47.vcd" nodelay 
-	scene "scenes/techies/techies_tech_move_48.vcd" nodelay 
-	scene "scenes/techies/techies_tech_move_49.vcd" nodelay 
-}
-
-Rule techies_MoveIsTechSpeakTrioLow_Rule
-{
-	criteria Move Istechies IsTechSpeakTrioLow
-	response techies_MoveIsTechSpeakTrioLow
-}
-
-Response techies_MoveIsTechSpeakTrioHigh
-{
-	scene "scenes/techies/techies_tech_move_09.vcd" nodelay 
-	scene "scenes/techies/techies_tech_move_14.vcd" nodelay 
-	scene "scenes/techies/techies_tech_move_26.vcd" nodelay 
-	scene "scenes/techies/techies_tech_move_27.vcd" nodelay 
-	scene "scenes/techies/techies_tech_move_28.vcd" nodelay 
-	scene "scenes/techies/techies_tech_move_36.vcd" nodelay 
-	scene "scenes/techies/techies_tech_move_37.vcd" nodelay 
-	scene "scenes/techies/techies_tech_move_38.vcd" nodelay 
-	scene "scenes/techies/techies_tech_move_39.vcd" nodelay 
-	scene "scenes/techies/techies_tech_move_42.vcd" nodelay 
-	scene "scenes/techies/techies_tech_move_50.vcd" nodelay 
-	scene "scenes/techies/techies_tech_move_51.vcd" nodelay 
-	scene "scenes/techies/techies_tech_move_52.vcd" nodelay 
-	scene "scenes/techies/techies_tech_move_53.vcd" nodelay 
-	scene "scenes/techies/techies_tech_move_54.vcd" nodelay 
-	scene "scenes/techies/techies_tech_move_60.vcd" nodelay 
-}
-
-Rule techies_MoveIsTechSpeakTrioHigh_Rule
-{
-	criteria Move Istechies IsTechSpeakTrioHigh
-	response techies_MoveIsTechSpeakTrioHigh
-}
-
-Response techies_MoveIsTechSpeakTrioBarrel
-{
-	scene "scenes/techies/techies_tech_move_16.vcd" nodelay 
-	scene "scenes/techies/techies_tech_move_17.vcd" nodelay 
-	scene "scenes/techies/techies_tech_move_18.vcd" nodelay 
-	scene "scenes/techies/techies_tech_move_19.vcd" nodelay 
-	scene "scenes/techies/techies_tech_move_20.vcd" nodelay 
-	scene "scenes/techies/techies_tech_move_30.vcd" nodelay speakonce
-	scene "scenes/techies/techies_tech_move_32.vcd" nodelay 
-	scene "scenes/techies/techies_tech_move_33.vcd" nodelay 
-	scene "scenes/techies/techies_tech_move_34.vcd" nodelay 
-	scene "scenes/techies/techies_tech_move_43.vcd" nodelay 
-	scene "scenes/techies/techies_tech_move_44.vcd" nodelay 
-	scene "scenes/techies/techies_tech_move_56.vcd" nodelay 
-}
-
-Rule techies_MoveIsTechSpeakTrioBarrel_Rule
-{
-	criteria Move Istechies IsTechSpeakTrioBarrel
-	response techies_MoveIsTechSpeakTrioBarrel
-}
-
-Response techies_AttackIsTechSpeakDuoLow
-{
-	scene "scenes/techies/techies_tech_attack_01.vcd" nodelay 
-	scene "scenes/techies/techies_tech_attack_07.vcd" nodelay 
-	scene "scenes/techies/techies_tech_attack_13.vcd" nodelay 
-	scene "scenes/techies/techies_tech_attack_14.vcd" nodelay 
-	scene "scenes/techies/techies_tech_attack_15.vcd" nodelay 
-	scene "scenes/techies/techies_tech_attack_19.vcd" nodelay 
-	scene "scenes/techies/techies_tech_attack_21.vcd" nodelay 
-	scene "scenes/techies/techies_tech_attack_22.vcd" nodelay 
-	scene "scenes/techies/techies_tech_attack_23.vcd" nodelay 
-}
-
-Rule techies_AttackIsTechSpeakDuoLow_Rule
-{
-	criteria Attack Istechies IsTechSpeakDuoLow
-	response techies_AttackIsTechSpeakDuoLow
-}
-
-Response techies_AttackIsTechSpeakDuoHigh
-{
-	scene "scenes/techies/techies_tech_attack_02.vcd" nodelay 
-	scene "scenes/techies/techies_tech_attack_03.vcd" nodelay 
-	scene "scenes/techies/techies_tech_attack_05.vcd" nodelay 
-	scene "scenes/techies/techies_tech_attack_06.vcd" nodelay 
-	scene "scenes/techies/techies_tech_attack_09.vcd" nodelay 
-	scene "scenes/techies/techies_tech_attack_12.vcd" nodelay 
-	scene "scenes/techies/techies_tech_attack_16.vcd" nodelay 
-	scene "scenes/techies/techies_tech_attack_20.vcd" nodelay 
-	scene "scenes/techies/techies_tech_attack_24.vcd" nodelay 
-	scene "scenes/techies/techies_tech_attack_25.vcd" nodelay 
-}
-
-Rule techies_AttackIsTechSpeakDuoHigh_Rule
-{
-	criteria Attack Istechies IsTechSpeakDuoHigh
-	response techies_AttackIsTechSpeakDuoHigh
-}
-
-Response techies_CastExecuteIsTechiesSetMineIsTechSpeakDuoHigh
-{
-	scene "scenes/techies/techies_tech_cast_02.vcd" nodelay 
-	scene "scenes/techies/techies_tech_cast_03.vcd" nodelay 
-	scene "scenes/techies/techies_tech_setmine_05.vcd" nodelay 
-	scene "scenes/techies/techies_tech_setmine_06.vcd" nodelay 
-	scene "scenes/techies/techies_tech_setmine_07.vcd" nodelay 
-	scene "scenes/techies/techies_tech_setmine_14.vcd" nodelay 
-	scene "scenes/techies/techies_tech_setmine_21.vcd" nodelay 
-	scene "scenes/techies/techies_tech_setmine_22.vcd" nodelay 
-	scene "scenes/techies/techies_tech_setmine_23.vcd" nodelay 
-	scene "scenes/techies/techies_tech_setmine_24.vcd" nodelay 
-	scene "scenes/techies/techies_tech_setmine_25.vcd" nodelay 
-	scene "scenes/techies/techies_tech_setmine_26.vcd" nodelay 
-	scene "scenes/techies/techies_tech_setmine_28.vcd" nodelay 
-	scene "scenes/techies/techies_tech_setmine_29.vcd" nodelay 
-	scene "scenes/techies/techies_tech_setmine_35.vcd" nodelay 
-	scene "scenes/techies/techies_tech_setmine_36.vcd" nodelay 
-	scene "scenes/techies/techies_tech_setmine_37.vcd" nodelay 
-	scene "scenes/techies/techies_tech_setmine_39.vcd" nodelay 
-	scene "scenes/techies/techies_tech_setmine_41.vcd" nodelay 
-	scene "scenes/techies/techies_tech_setmine_42.vcd" nodelay 
-	scene "scenes/techies/techies_tech_setmine_43.vcd" nodelay 
-	scene "scenes/techies/techies_tech_setmine_44.vcd" nodelay 
-	scene "scenes/techies/techies_tech_setmine_52.vcd" nodelay 
-	scene "scenes/techies/techies_tech_settrap_07.vcd" nodelay 
-	scene "scenes/techies/techies_tech_remotemines_02.vcd" nodelay 
-	scene "scenes/techies/techies_tech_remotemines_21.vcd" nodelay 
-	scene "scenes/techies/techies_tech_remotemines_22.vcd" nodelay 
-	scene "scenes/techies/techies_tech_remotemines_23.vcd" nodelay 
-	scene "scenes/techies/techies_tech_remotemines_28.vcd" nodelay 
-	scene "scenes/techies/techies_tech_remotemines_29.vcd" nodelay 
-}
-
-Rule techies_CastExecuteIsTechiesSetMineIsTechSpeakDuoHigh_Rule
-{
-	criteria CastExecute Istechies IsTechiesSetMine IsTechSpeakDuoHigh
-	response techies_CastExecuteIsTechiesSetMineIsTechSpeakDuoHigh
-}
-
-Response techies_CastExecuteIsTechiesSetMineIsTechSpeakDuoLow
-{
-	scene "scenes/techies/techies_tech_setmine_01.vcd" nodelay 
-	scene "scenes/techies/techies_tech_setmine_02.vcd" nodelay 
-	scene "scenes/techies/techies_tech_setmine_04.vcd" nodelay 
-	scene "scenes/techies/techies_tech_setmine_08.vcd" nodelay 
-	scene "scenes/techies/techies_tech_setmine_09.vcd" nodelay 
-	scene "scenes/techies/techies_tech_setmine_10.vcd" nodelay 
-	scene "scenes/techies/techies_tech_setmine_11.vcd" nodelay 
-	scene "scenes/techies/techies_tech_setmine_13.vcd" nodelay 
-	scene "scenes/techies/techies_tech_setmine_16.vcd" nodelay 
-	scene "scenes/techies/techies_tech_setmine_17.vcd" nodelay 
-	scene "scenes/techies/techies_tech_setmine_18.vcd" nodelay 
-	scene "scenes/techies/techies_tech_setmine_19.vcd" nodelay 
-	scene "scenes/techies/techies_tech_setmine_20.vcd" nodelay 
-	scene "scenes/techies/techies_tech_setmine_30.vcd" nodelay 
-	scene "scenes/techies/techies_tech_setmine_32.vcd" nodelay 
-	scene "scenes/techies/techies_tech_setmine_33.vcd" nodelay 
-	scene "scenes/techies/techies_tech_setmine_34.vcd" nodelay 
-	scene "scenes/techies/techies_tech_setmine_38.vcd" nodelay 
-	scene "scenes/techies/techies_tech_setmine_45.vcd" nodelay 
-	scene "scenes/techies/techies_tech_setmine_46.vcd" nodelay 
-	scene "scenes/techies/techies_tech_setmine_47.vcd" nodelay 
-	scene "scenes/techies/techies_tech_setmine_48.vcd" nodelay 
-	scene "scenes/techies/techies_tech_setmine_50.vcd" nodelay 
-	scene "scenes/techies/techies_tech_setmine_51.vcd" nodelay 
-	scene "scenes/techies/techies_tech_setmine_54.vcd" nodelay 
-	scene "scenes/techies/techies_tech_settrap_01.vcd" nodelay 
-	scene "scenes/techies/techies_tech_settrap_04.vcd" nodelay 
-	scene "scenes/techies/techies_tech_remotemines_07.vcd" nodelay 
-	scene "scenes/techies/techies_tech_remotemines_08.vcd" nodelay 
-	scene "scenes/techies/techies_tech_remotemines_09.vcd" nodelay 
-	scene "scenes/techies/techies_tech_remotemines_14.vcd" nodelay 
-	scene "scenes/techies/techies_tech_remotemines_17.vcd" nodelay 
-	scene "scenes/techies/techies_tech_remotemines_18.vcd" nodelay 
-	scene "scenes/techies/techies_tech_remotemines_19.vcd" nodelay 
-	scene "scenes/techies/techies_tech_remotemines_30.vcd" nodelay 
-}
-
-Rule techies_CastExecuteIsTechiesSetMineIsTechSpeakDuoLow_Rule
-{
-	criteria CastExecute Istechies IsTechiesSetMine IsTechSpeakDuoLow
-	response techies_CastExecuteIsTechiesSetMineIsTechSpeakDuoLow
-}
-
-Response techies_CastExecuteIsTechiesZapChance_75%
-{
-	scene "scenes/techies/techies_tech_settrap_03.vcd" nodelay 
-	scene "scenes/techies/techies_tech_settrap_06.vcd" nodelay 
-	scene "scenes/techies/techies_tech_settrap_08.vcd" nodelay 
-	scene "scenes/techies/techies_tech_settrap_09.vcd" nodelay 
-	scene "scenes/techies/techies_tech_settrap_10.vcd" nodelay 
-	scene "scenes/techies/techies_tech_settrap_11.vcd" nodelay 
-}
-
-Rule techies_CastExecuteIsTechiesZapChance_75%_Rule
-{
-	criteria CastExecute Istechies IsTechiesZap Chance_75%
-	response techies_CastExecuteIsTechiesZapChance_75%
-}
-
-Response techies_CastExecuteIsTechiesSetMineIsTechSpeakDuoLowRMine01
-{
-	scene "scenes/techies/techies_tech_remotemines_01.vcd" nodelay 
-}
-
-Rule techies_CastExecuteIsTechiesSetMineIsTechSpeakDuoLowRMine01_Rule
-{
-	criteria CastExecute Istechies IsTechiesSetMine IsTechSpeakDuoLowRMine01
-	response techies_CastExecuteIsTechiesSetMineIsTechSpeakDuoLowRMine01
-}
-
-Response techies_CastExecuteIsTechiesStickyBombIsTechSpeakDuoLow
-{
-	scene "scenes/techies/techies_tech_remotemines_03.vcd" nodelay 
-	scene "scenes/techies/techies_tech_remotemines_04.vcd" nodelay 
-	scene "scenes/techies/techies_tech_remotemines_05.vcd" nodelay 
-	scene "scenes/techies/techies_tech_remotemines_13.vcd" nodelay 
-	scene "scenes/techies/techies_tech_remotemines_15.vcd" nodelay 
-	scene "scenes/techies/techies_tech_remotemines_20.vcd" nodelay 
-	scene "scenes/techies/techies_tech_remotemines_25.vcd" nodelay 
-	scene "scenes/techies/techies_tech_remotemines_26.vcd" nodelay 
-	scene "scenes/techies/techies_tech_remotemines_27.vcd" nodelay 
-}
-
-Rule techies_CastExecuteIsTechiesStickyBombIsTechSpeakDuoLow_Rule
-{
-	criteria CastExecute Istechies IsTechiesStickyBomb IsTechSpeakDuoLow
-	response techies_CastExecuteIsTechiesStickyBombIsTechSpeakDuoLow
-}
-
-Response techies_CastExecuteIsTechiesStickyBombIsTechSpeakDuoHigh
-{
-	scene "scenes/techies/techies_tech_remotemines_10.vcd" nodelay 
-	scene "scenes/techies/techies_tech_remotemines_11.vcd" nodelay 
-	scene "scenes/techies/techies_tech_remotemines_16.vcd" nodelay 
-}
-
-Rule techies_CastExecuteIsTechiesStickyBombIsTechSpeakDuoHigh_Rule
-{
-	criteria CastExecute Istechies IsTechiesStickyBomb IsTechSpeakDuoHigh
-	response techies_CastExecuteIsTechiesStickyBombIsTechSpeakDuoHigh
-}
-
-Response techies_CastExecuteIsTechiesZapChance_5%
-{
-	scene "scenes/techies/techies_tech_focuseddetonate_02.vcd" nodelay 
-}
-
-Rule techies_CastExecuteIsTechiesZapChance_5%_Rule
-{
-	criteria CastExecute Istechies IsTechiesZap Chance_5%
-	response techies_CastExecuteIsTechiesZapChance_5%
-}
-
-Response techies_CastExecuteIsTechiesZapChance_1%
-{
-	scene "scenes/techies/techies_tech_pain_01.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_02.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_03.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_04.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_05.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_06.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_07.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_08.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_09.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_10.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_11.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_12.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_13.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_14.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_15.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_16.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_17.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_18.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_19.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_20.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_21.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_22.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_23.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_25.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_26.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_27.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_28.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_29.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_30.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_31.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_32.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_33.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_34.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_35.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_36.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_37.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_38.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_39.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_40.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_41.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_42.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_43.vcd" nodelay 
-}
-
-Rule techies_CastExecuteIsTechiesZapChance_1%_Rule
-{
-	criteria CastExecute Istechies IsTechiesZap Chance_1%
-	response techies_CastExecuteIsTechiesZapChance_1%
-}
-
-Response techies_DeathIsTechiesSuicideSuccess
-{
-	scene "scenes/techies/techies_tech_suicidesquad_02.vcd" nodelay 
-	scene "scenes/techies/techies_tech_suicidesquad_03.vcd" nodelay 
-	scene "scenes/techies/techies_tech_suicidesquad_06.vcd" nodelay 
-	scene "scenes/techies/techies_tech_suicidesquad_11.vcd" nodelay 
-	scene "scenes/techies/techies_tech_suicidesquad_12.vcd" nodelay 
-}
-
-Rule techies_DeathIsTechiesSuicideSuccess_Rule
-{
-	criteria Death Istechies IsTechiesSuicideSuccess
-	response techies_DeathIsTechiesSuicideSuccess
-}
-
-Response techies_DeathIsTechiesSuicideFizzle
-{
-	scene "scenes/techies/techies_tech_suicidesquad_04.vcd" nodelay 
-	scene "scenes/techies/techies_tech_suicidesquad_09.vcd" nodelay 
-	scene "scenes/techies/techies_tech_suicidesquad_13.vcd" nodelay 
-}
-
-Rule techies_DeathIsTechiesSuicideFizzle_Rule
-{
-	criteria Death Istechies IsTechiesSuicideFizzle
-	response techies_DeathIsTechiesSuicideFizzle
-}
-
-Response techies_DeathIsTechiesSuicideFizzleChance_15%
-{
-	scene "scenes/techies/techies_tech_suicidesquad_08.vcd" nodelay 
-	scene "scenes/techies/techies_tech_failure_01.vcd" nodelay 
-}
-
-Rule techies_DeathIsTechiesSuicideFizzleChance_15%_Rule
-{
-	criteria Death Istechies IsTechiesSuicideFizzle Chance_15%
-	response techies_DeathIsTechiesSuicideFizzleChance_15%
-}
-
-Response techies_DeathIsTechiesSuicideSuccessChance_15%
-{
-	scene "scenes/techies/techies_tech_focuseddetonate_14.vcd" nodelay 
-}
-
-Rule techies_DeathIsTechiesSuicideSuccessChance_15%_Rule
-{
-	criteria Death Istechies IsTechiesSuicideSuccess Chance_15%
-	response techies_DeathIsTechiesSuicideSuccessChance_15%
-}
-
-Response techies_Death
-{
-	scene "scenes/techies/techies_tech_death_01.vcd" nodelay 
-	scene "scenes/techies/techies_tech_death_02.vcd" nodelay 
-	scene "scenes/techies/techies_tech_death_04.vcd" nodelay 
-	scene "scenes/techies/techies_tech_death_05.vcd" nodelay 
-	scene "scenes/techies/techies_tech_death_08.vcd" nodelay 
-	scene "scenes/techies/techies_tech_death_09.vcd" nodelay 
-	scene "scenes/techies/techies_tech_death_10.vcd" nodelay 
-	scene "scenes/techies/techies_tech_death_11.vcd" nodelay 
-	scene "scenes/techies/techies_tech_death_12.vcd" nodelay 
-	scene "scenes/techies/techies_tech_death_13.vcd" nodelay 
-	scene "scenes/techies/techies_tech_death_15.vcd" nodelay 
-	scene "scenes/techies/techies_tech_death_16.vcd" nodelay 
-	scene "scenes/techies/techies_tech_death_17.vcd" nodelay 
-	scene "scenes/techies/techies_tech_death_18.vcd" nodelay 
-}
-
-Rule techies_Death_Rule
-{
-	criteria Death Istechies 
-	response techies_Death
-}
-
-Response techies_DeathIsReincarnating
-{
-	scene "scenes/techies/techies_tech_fastres_01.vcd" nodelay 
-}
-
-Rule techies_DeathIsReincarnating_Rule
-{
-	criteria Death Istechies IsReincarnating
-	response techies_DeathIsReincarnating
-}
-
-Response techies_DeathIsTechiesSuicideSuccessIsReincarnating
-{
-	scene "scenes/techies/techies_tech_fastressuicide_01.vcd" nodelay 
-}
-
-Rule techies_DeathIsTechiesSuicideSuccessIsReincarnating_Rule
-{
-	criteria Death Istechies IsTechiesSuicideSuccess IsReincarnating
-	response techies_DeathIsTechiesSuicideSuccessIsReincarnating
-}
-
-Response techies_DeathIsTechiesSuicideFizzleIsReincarnating
-{
-	scene "scenes/techies/techies_tech_fastressuicide_01.vcd" nodelay 
-}
-
-Rule techies_DeathIsTechiesSuicideFizzleIsReincarnating_Rule
-{
-	criteria Death Istechies IsTechiesSuicideFizzle IsReincarnating
-	response techies_DeathIsTechiesSuicideFizzleIsReincarnating
-}
-
-Response techies_LevelUp
-{
-	scene "scenes/techies/techies_tech_levelup_01.vcd" nodelay 
-	scene "scenes/techies/techies_tech_levelup_02.vcd" nodelay 
-	scene "scenes/techies/techies_tech_levelup_03.vcd" nodelay 
-	scene "scenes/techies/techies_tech_levelup_05.vcd" nodelay 
-	scene "scenes/techies/techies_tech_levelup_06.vcd" nodelay 
-	scene "scenes/techies/techies_tech_levelup_08.vcd" nodelay 
-	scene "scenes/techies/techies_tech_levelup_09.vcd" nodelay 
-	scene "scenes/techies/techies_tech_levelup_10.vcd" nodelay 
-	scene "scenes/techies/techies_tech_levelup_12.vcd" nodelay 
-	scene "scenes/techies/techies_tech_levelup_13.vcd" nodelay 
-	scene "scenes/techies/techies_tech_levelup_15.vcd" nodelay 
-	scene "scenes/techies/techies_tech_levelup_17.vcd" nodelay 
-	scene "scenes/techies/techies_tech_levelup_18.vcd" nodelay 
-	scene "scenes/techies/techies_tech_levelup_19.vcd" nodelay 
-	scene "scenes/techies/techies_tech_levelup_20.vcd" nodelay 
-	scene "scenes/techies/techies_tech_levelup_21.vcd" nodelay 
-}
-
-Rule techies_LevelUp_Rule
-{
-	criteria LevelUp Istechies 
-	response techies_LevelUp
-}
-
-Response techies_LevelUpChance_5%
-{
-	scene "scenes/techies/techies_tech_levelup_22.vcd" nodelay 
-	scene "scenes/techies/techies_tech_levelup_24.vcd" nodelay 
-}
-
-Rule techies_LevelUpChance_5%_Rule
-{
-	criteria LevelUp Istechies Chance_5%
-	response techies_LevelUpChance_5%
-}
-
-Response techies_AllyNearEarlyGameIsAllyAlchemist
-{
-	scene "scenes/techies/techies_tech_ally_02.vcd" nodelay speakonce
-}
-
-Rule techies_AllyNearEarlyGameIsAllyAlchemist_Rule
-{
-	criteria AllyNear Istechies EarlyGame IsAllyAlchemist
-	response techies_AllyNearEarlyGameIsAllyAlchemist
-}
-
-Response techies_AllyNearEarlyGameIsAllyOgre_Magi
-{
-	scene "scenes/techies/techies_tech_ally_03.vcd" nodelay speakonce
-}
-
-Rule techies_AllyNearEarlyGameIsAllyOgre_Magi_Rule
-{
-	criteria AllyNear Istechies EarlyGame IsAllyOgre_Magi
-	response techies_AllyNearEarlyGameIsAllyOgre_Magi
-}
-
-Response techies_AllyNearEarlyGameIsAllyJakiro
-{
-	scene "scenes/techies/techies_tech_ally_04.vcd" nodelay speakonce
-}
-
-Rule techies_AllyNearEarlyGameIsAllyJakiro_Rule
-{
-	criteria AllyNear Istechies EarlyGame IsAllyJakiro
-	response techies_AllyNearEarlyGameIsAllyJakiro
-}
-
-Response techies_AllyNearEarlyGameIsAllyPudge
-{
-	scene "scenes/techies/techies_tech_ally_06.vcd" nodelay speakonce
-}
-
-Rule techies_AllyNearEarlyGameIsAllyPudge_Rule
-{
-	criteria AllyNear Istechies EarlyGame IsAllyPudge
-	response techies_AllyNearEarlyGameIsAllyPudge
-}
-
-Response techies_AllyNearEarlyGameIsAllyTiny
-{
-	scene "scenes/techies/techies_tech_ally_07.vcd" nodelay speakonce
-}
-
-Rule techies_AllyNearEarlyGameIsAllyTiny_Rule
-{
-	criteria AllyNear Istechies EarlyGame IsAllyTiny
-	response techies_AllyNearEarlyGameIsAllyTiny
-}
-
-Response techies_AllyNearEarlyGameIsAllyDark_Seer
-{
-	scene "scenes/techies/techies_tech_ally_08.vcd" nodelay speakonce
-}
-
-Rule techies_AllyNearEarlyGameIsAllyDark_Seer_Rule
-{
-	criteria AllyNear Istechies EarlyGame IsAllyDark_Seer
-	response techies_AllyNearEarlyGameIsAllyDark_Seer
-}
-
-Response techies_AllyNearEarlyGameIsAllyTinkerChance_3%
-{
-	scene "scenes/techies/techies_tech_ally_09.vcd" nodelay speakonce
-}
-
-Rule techies_AllyNearEarlyGameIsAllyTinkerChance_3%_Rule
-{
-	criteria AllyNear Istechies EarlyGame IsAllyTinker Chance_3%
-	response techies_AllyNearEarlyGameIsAllyTinkerChance_3%
-}
-
-Response techies_LastHit
-{
-	scene "scenes/techies/techies_tech_lasthit_01.vcd" nodelay 
-	scene "scenes/techies/techies_tech_lasthit_02.vcd" nodelay 
-	scene "scenes/techies/techies_tech_lasthit_04.vcd" nodelay 
-	scene "scenes/techies/techies_tech_lasthit_05.vcd" nodelay 
-	scene "scenes/techies/techies_tech_lasthit_06.vcd" nodelay 
-	scene "scenes/techies/techies_tech_lasthit_07.vcd" nodelay 
-	scene "scenes/techies/techies_tech_lasthit_08.vcd" nodelay 
-	scene "scenes/techies/techies_tech_lasthit_09.vcd" nodelay 
-	scene "scenes/techies/techies_tech_lasthit_11.vcd" nodelay 
-	scene "scenes/techies/techies_tech_lasthit_12.vcd" nodelay 
-	scene "scenes/techies/techies_tech_lasthit_13.vcd" nodelay 
-	scene "scenes/techies/techies_tech_lasthit_16.vcd" nodelay 
-	scene "scenes/techies/techies_tech_lasthit_17.vcd" nodelay 
-	scene "scenes/techies/techies_tech_lasthit_18.vcd" nodelay 
-	scene "scenes/techies/techies_tech_lasthit_19.vcd" nodelay 
-	scene "scenes/techies/techies_tech_lasthit_20.vcd" nodelay 
-	scene "scenes/techies/techies_tech_lasthit_21.vcd" nodelay 
-}
-
-Rule techies_LastHit_Rule
-{
-	criteria LastHit Istechies 
-	response techies_LastHit
-}
-
-Response techies_LastHitChance_5%
-{
-	scene "scenes/techies/techies_tech_lasthit_10.vcd" nodelay 
-}
-
-Rule techies_LastHitChance_5%_Rule
-{
-	criteria LastHit Istechies Chance_5%
-	response techies_LastHitChance_5%
-}
-
-Response techies_RespawnIsTechiesRespawnDeath
-{
-	scene "scenes/techies/techies_tech_respawn_01.vcd" nodelay 
-	scene "scenes/techies/techies_tech_respawn_03.vcd" nodelay 
-	scene "scenes/techies/techies_tech_respawn_05.vcd" nodelay 
-	scene "scenes/techies/techies_tech_respawn_06.vcd" nodelay 
-	scene "scenes/techies/techies_tech_respawn_07.vcd" nodelay 
-	scene "scenes/techies/techies_tech_respawn_09.vcd" nodelay 
-	scene "scenes/techies/techies_tech_respawn_10.vcd" nodelay 
-	scene "scenes/techies/techies_tech_respawn_11.vcd" nodelay 
-	scene "scenes/techies/techies_tech_respawn_12.vcd" nodelay 
-}
-
-Rule techies_RespawnIsTechiesRespawnDeath_Rule
-{
-	criteria Respawn Istechies IsTechiesRespawnDeath
-	response techies_RespawnIsTechiesRespawnDeath
-}
-
-Response techies_RespawnIsTechiesRespawnSuicideChance_75%
-{
-	scene "scenes/techies/techies_tech_respawn_ssa_01.vcd" nodelay 
-	scene "scenes/techies/techies_tech_respawn_ssa_02.vcd" nodelay 
-	scene "scenes/techies/techies_tech_respawn_ssa_03.vcd" nodelay 
-	scene "scenes/techies/techies_tech_respawn_ssa_04.vcd" nodelay 
-	scene "scenes/techies/techies_tech_respawn_01.vcd" nodelay 
-}
-
-Rule techies_RespawnIsTechiesRespawnSuicideChance_75%_Rule
-{
-	criteria Respawn Istechies IsTechiesRespawnSuicide Chance_75%
-	response techies_RespawnIsTechiesRespawnSuicideChance_75%
-}
-
-Response techies_PurchaseIsExpensiveItem
-{
-	scene "scenes/techies/techies_tech_purch_01.vcd" nodelay speakonce
-	scene "scenes/techies/techies_tech_purch_02.vcd" nodelay speakonce
-	scene "scenes/techies/techies_tech_purch_03.vcd" nodelay speakonce
-}
-
-Rule techies_PurchaseIsExpensiveItem_Rule
-{
-	criteria Purchase Istechies IsExpensiveItem
-	response techies_PurchaseIsExpensiveItem
-}
-
-Response techies_PurchaseIsUltimateScepter
-{
-	scene "scenes/techies/techies_tech_scepter_01.vcd" nodelay speakonce
-	scene "scenes/techies/techies_tech_scepter_02.vcd" nodelay speakonce
-	scene "scenes/techies/techies_tech_scepter_03.vcd" nodelay speakonce
-}
-
-Rule techies_PurchaseIsUltimateScepter_Rule
-{
-	criteria Purchase Istechies IsUltimateScepter
-	response techies_PurchaseIsUltimateScepter
-}
-
-Response techies_PurchaseIsBlinkDagger
-{
-	scene "scenes/techies/techies_tech_blink_01.vcd" nodelay speakonce
-	scene "scenes/techies/techies_tech_blink_02.vcd" nodelay speakonce
-	scene "scenes/techies/techies_tech_blink_03.vcd" nodelay speakonce
-	scene "scenes/techies/techies_tech_blink_04.vcd" nodelay speakonce
-}
-
-Rule techies_PurchaseIsBlinkDagger_Rule
-{
-	criteria Purchase Istechies IsBlinkDagger
-	response techies_PurchaseIsBlinkDagger
-}
-
-Response techies_PurchaseIsNecronomiconChance_20%
-{
-	scene "scenes/techies/techies_tech_items_01.vcd" nodelay speakonce
-}
-
-Rule techies_PurchaseIsNecronomiconChance_20%_Rule
-{
-	criteria Purchase Istechies IsNecronomicon Chance_20%
-	response techies_PurchaseIsNecronomiconChance_20%
-}
-
-Response techies_PurchaseIsInvisSwordChance_20%
-{
-	scene "scenes/techies/techies_tech_items_02.vcd" nodelay speakonce
-}
-
-Rule techies_PurchaseIsInvisSwordChance_20%_Rule
-{
-	criteria Purchase Istechies IsInvisSword Chance_20%
-	response techies_PurchaseIsInvisSwordChance_20%
-}
-
-Response techies_PurchaseIsMantaChance_20%
-{
-	scene "scenes/techies/techies_tech_items_03.vcd" nodelay speakonce
-}
-
-Rule techies_PurchaseIsMantaChance_20%_Rule
-{
-	criteria Purchase Istechies IsManta Chance_20%
-	response techies_PurchaseIsMantaChance_20%
-}
-
-Response techies_PurchaseIsBootsOfTravelChance_20%
-{
-	scene "scenes/techies/techies_tech_items_04.vcd" nodelay speakonce
-	scene "scenes/techies/techies_tech_items_05.vcd" nodelay speakonce
-}
-
-Rule techies_PurchaseIsBootsOfTravelChance_20%_Rule
-{
-	criteria Purchase Istechies IsBootsOfTravel Chance_20%
-	response techies_PurchaseIsBootsOfTravelChance_20%
-}
-
-Response techies_PurchaseIsEulScepter
-{
-	scene "scenes/techies/techies_tech_items_06.vcd" nodelay speakonce
-}
-
-Rule techies_PurchaseIsEulScepter_Rule
-{
-	criteria Purchase Istechies IsEulScepter
-	response techies_PurchaseIsEulScepter
-}
-
-Response techies_PurchaseIsSheepStick
-{
-	scene "scenes/techies/techies_tech_items_07.vcd" nodelay speakonce
-}
-
-Rule techies_PurchaseIsSheepStick_Rule
-{
-	criteria Purchase Istechies IsSheepStick
-	response techies_PurchaseIsSheepStick
-}
-
-Response techies_PurchaseIsForceStaff
-{
-	scene "scenes/techies/techies_tech_items_08.vcd" nodelay speakonce
-}
-
-Rule techies_PurchaseIsForceStaff_Rule
-{
-	criteria Purchase Istechies IsForceStaff
-	response techies_PurchaseIsForceStaff
-}
-
-Response techies_PurchaseIsBloodStone
-{
-	scene "scenes/techies/techies_tech_items_09.vcd" nodelay speakonce
-}
-
-Rule techies_PurchaseIsBloodStone_Rule
-{
-	criteria Purchase Istechies IsBloodStone
-	response techies_PurchaseIsBloodStone
-}
-
-Response techies_PurchaseIsOrchid
-{
-	scene "scenes/techies/techies_tech_items_10.vcd" nodelay speakonce
-}
-
-Rule techies_PurchaseIsOrchid_Rule
-{
-	criteria Purchase Istechies IsOrchid
-	response techies_PurchaseIsOrchid
-}
-
-Response techies_PurchaseIsSphere
-{
-	scene "scenes/techies/techies_tech_items_11.vcd" nodelay speakonce
-}
-
-Rule techies_PurchaseIsSphere_Rule
-{
-	criteria Purchase Istechies IsSphere
-	response techies_PurchaseIsSphere
-}
-
-Response techies_PurchaseIsShiva
-{
-	scene "scenes/techies/techies_tech_items_12.vcd" nodelay speakonce
-}
-
-Rule techies_PurchaseIsShiva_Rule
-{
-	criteria Purchase Istechies IsShiva
-	response techies_PurchaseIsShiva
-}
-
-Response techies_PurchaseIsClaymoreChance_15%
-{
-	scene "scenes/techies/techies_tech_items_15.vcd" nodelay speakonce
-}
-
-Rule techies_PurchaseIsClaymoreChance_15%_Rule
-{
-	criteria Purchase Istechies IsClaymore Chance_15%
-	response techies_PurchaseIsClaymoreChance_15%
-}
-
-Response techies_PurchaseIsNecronomicon
-{
-	scene "scenes/techies/techies_tech_items_16.vcd" nodelay speakonce
-}
-
-Rule techies_PurchaseIsNecronomicon_Rule
-{
-	criteria Purchase Istechies IsNecronomicon
-	response techies_PurchaseIsNecronomicon
-}
-
-Response techies_PurchaseIsInvisSword
-{
-	scene "scenes/techies/techies_tech_items_17.vcd" nodelay speakonce
-}
-
-Rule techies_PurchaseIsInvisSword_Rule
-{
-	criteria Purchase Istechies IsInvisSword
-	response techies_PurchaseIsInvisSword
-}
-
-Response techies_PurchaseIsManta
-{
-	scene "scenes/techies/techies_tech_items_18.vcd" nodelay speakonce
-}
-
-Rule techies_PurchaseIsManta_Rule
-{
-	criteria Purchase Istechies IsManta
-	response techies_PurchaseIsManta
-}
-
-Response techies_Bottling
-{
-	scene "scenes/techies/techies_tech_bottle_01.vcd" nodelay 
-	scene "scenes/techies/techies_tech_bottle_02.vcd" nodelay 
-}
-
-Rule techies_Bottling_Rule
-{
-	criteria Bottling Istechies 
-	response techies_Bottling
-}
-
-Response techies_Deny
-{
-	scene "scenes/techies/techies_tech_deny_01.vcd" nodelay 
-	scene "scenes/techies/techies_tech_deny_02.vcd" nodelay 
-	scene "scenes/techies/techies_tech_deny_03.vcd" nodelay 
-	scene "scenes/techies/techies_tech_deny_04.vcd" nodelay 
-	scene "scenes/techies/techies_tech_deny_05.vcd" nodelay 
-	scene "scenes/techies/techies_tech_deny_07.vcd" nodelay 
-	scene "scenes/techies/techies_tech_deny_08.vcd" nodelay 
-	scene "scenes/techies/techies_tech_deny_09.vcd" nodelay 
-	scene "scenes/techies/techies_tech_deny_10.vcd" nodelay 
-	scene "scenes/techies/techies_tech_deny_11.vcd" nodelay 
-	scene "scenes/techies/techies_tech_deny_12.vcd" nodelay 
-	scene "scenes/techies/techies_tech_deny_13.vcd" nodelay 
-	scene "scenes/techies/techies_tech_deny_14.vcd" nodelay 
-	scene "scenes/techies/techies_tech_deny_15.vcd" nodelay 
-	scene "scenes/techies/techies_tech_deny_17.vcd" nodelay 
-	scene "scenes/techies/techies_tech_deny_18.vcd" nodelay 
-	scene "scenes/techies/techies_tech_deny_19.vcd" nodelay 
-	scene "scenes/techies/techies_tech_deny_20.vcd" nodelay 
-	scene "scenes/techies/techies_tech_deny_21.vcd" nodelay 
-	scene "scenes/techies/techies_tech_deny_22.vcd" nodelay 
-}
-
-Rule techies_Deny_Rule
-{
-	criteria Deny Istechies 
-	response techies_Deny
-}
-
-Response techies_MissingIsLaneTop
-{
-	scene "scenes/techies/techies_tech_lanemissing_01.vcd" nodelay 
-	scene "scenes/techies/techies_tech_lanemissing_04.vcd" nodelay 
-}
-
-Rule techies_MissingIsLaneTop_Rule
-{
-	criteria Missing Istechies IsLaneTop
-	response techies_MissingIsLaneTop
-}
-
-Response techies_MissingIsLaneMid
-{
-	scene "scenes/techies/techies_tech_lanemissing_02.vcd" nodelay 
-	scene "scenes/techies/techies_tech_lanemissing_05.vcd" nodelay 
-}
-
-Rule techies_MissingIsLaneMid_Rule
-{
-	criteria Missing Istechies IsLaneMid
-	response techies_MissingIsLaneMid
-}
-
-Response techies_MissingIsLaneBot
-{
-	scene "scenes/techies/techies_tech_lanemissing_03.vcd" nodelay 
-	scene "scenes/techies/techies_tech_lanemissing_06.vcd" nodelay 
-}
-
-Rule techies_MissingIsLaneBot_Rule
-{
-	criteria Missing Istechies IsLaneBot
-	response techies_MissingIsLaneBot
-}
-
-Response techies_ItemDropIsCommonDrop
-{
-	scene "scenes/techies/techies_tech_itemcommon_01.vcd" nodelay 
-}
-
-Rule techies_ItemDropIsCommonDrop_Rule
-{
-	criteria ItemDrop Istechies IsCommonDrop
-	response techies_ItemDropIsCommonDrop
-}
-
-Response techies_ItemDropIsRareDropChance_10%
-{
-	scene "scenes/techies/techies_tech_itemmoderate_01.vcd" nodelay 
-}
-
-Rule techies_ItemDropIsRareDropChance_10%_Rule
-{
-	criteria ItemDrop Istechies IsRareDrop Chance_10%
-	response techies_ItemDropIsRareDropChance_10%
-}
-
-Response techies_ItemDropIsRareDrop
-{
-	scene "scenes/techies/techies_tech_itemmoderate_02.vcd" nodelay 
-}
-
-Rule techies_ItemDropIsRareDrop_Rule
-{
-	criteria ItemDrop Istechies IsRareDrop
-	response techies_ItemDropIsRareDrop
-}
-
-Response techies_ItemDropIsUltraRareDrop
-{
-	scene "scenes/techies/techies_tech_itemrare_01.vcd" nodelay 
-}
-
-Rule techies_ItemDropIsUltraRareDrop_Rule
-{
-	criteria ItemDrop Istechies IsUltraRareDrop
-	response techies_ItemDropIsUltraRareDrop
-}
-
-Response techies_Immortality
-{
-	scene "scenes/techies/techies_tech_immort_01.vcd" nodelay 
-}
-
-Rule techies_Immortality_Rule
-{
-	criteria Immortality Istechies 
-	response techies_Immortality
-}
-
-Response techies_ImmortalityChance_25%
-{
-	scene "scenes/techies/techies_tech_immort_03.vcd" nodelay 
-}
-
-Rule techies_ImmortalityChance_25%_Rule
-{
-	criteria Immortality Istechies Chance_25%
-	response techies_ImmortalityChance_25%
-}
-
-Response techies_PowerupIsPowerupArcane
-{
-	scene "scenes/techies/techies_tech_itemmoderate_02.vcd" nodelay respeakdelay 300
-}
-
-Rule techies_PowerupIsPowerupArcane_Rule
-{
-	criteria Powerup Istechies IsPowerupArcane
-	response techies_PowerupIsPowerupArcane
-}
-
-Response techies_PowerupIsPowerupBounty
-{
-	scene "scenes/techies/techies_tech_lasthit_01.vcd" nodelay respeakdelay 300
-}
-
-Rule techies_PowerupIsPowerupBounty_Rule
-{
-	criteria Powerup Istechies IsPowerupBounty
-	response techies_PowerupIsPowerupBounty
-}
-
-Response techies_PowerupIsPowerupHasteChance_25%
-{
-	scene "scenes/techies/techies_tech_haste_01.vcd" nodelay 
-	scene "scenes/techies/techies_tech_haste_02.vcd" nodelay 
-}
-
-Rule techies_PowerupIsPowerupHasteChance_25%_Rule
-{
-	criteria Powerup Istechies IsPowerupHaste Chance_25%
-	response techies_PowerupIsPowerupHasteChance_25%
-}
-
-Response techies_PowerupIsPowerupHaste
-{
-	scene "scenes/techies/techies_tech_haste_03.vcd" nodelay 
-	scene "scenes/techies/techies_tech_haste_04.vcd" nodelay 
-}
-
-Rule techies_PowerupIsPowerupHaste_Rule
-{
-	criteria Powerup Istechies IsPowerupHaste
-	response techies_PowerupIsPowerupHaste
-}
-
-Response techies_PowerupIsPowerupDoubleDamage
-{
-	scene "scenes/techies/techies_tech_doubdam_02.vcd" nodelay 
-	scene "scenes/techies/techies_tech_doubdam_03.vcd" nodelay 
-}
-
-Rule techies_PowerupIsPowerupDoubleDamage_Rule
-{
-	criteria Powerup Istechies IsPowerupDoubleDamage
-	response techies_PowerupIsPowerupDoubleDamage
-}
-
-Response techies_PowerupIsPowerupDoubleDamageChance_5%
-{
-	scene "scenes/techies/techies_tech_doubdam_04.vcd" nodelay 
-}
-
-Rule techies_PowerupIsPowerupDoubleDamageChance_5%_Rule
-{
-	criteria Powerup Istechies IsPowerupDoubleDamage Chance_5%
-	response techies_PowerupIsPowerupDoubleDamageChance_5%
-}
-
-Response techies_PowerupIsPowerupRegeneration
-{
-	scene "scenes/techies/techies_tech_regen_01.vcd" nodelay 
-	scene "scenes/techies/techies_tech_regen_03.vcd" nodelay 
-}
-
-Rule techies_PowerupIsPowerupRegeneration_Rule
-{
-	criteria Powerup Istechies IsPowerupRegeneration
-	response techies_PowerupIsPowerupRegeneration
-}
-
-Response techies_PowerupIsPowerupRegenerationChance_25%
-{
-	scene "scenes/techies/techies_tech_regen_02.vcd" nodelay 
-}
-
-Rule techies_PowerupIsPowerupRegenerationChance_25%_Rule
-{
-	criteria Powerup Istechies IsPowerupRegeneration Chance_25%
-	response techies_PowerupIsPowerupRegenerationChance_25%
-}
-
-Response techies_PowerupIsPowerupIllusion
-{
-	scene "scenes/techies/techies_tech_illus_01.vcd" nodelay 
-	scene "scenes/techies/techies_tech_illus_04.vcd" nodelay 
-}
-
-Rule techies_PowerupIsPowerupIllusion_Rule
-{
-	criteria Powerup Istechies IsPowerupIllusion
-	response techies_PowerupIsPowerupIllusion
-}
-
-Response techies_PowerupIsPowerupIllusionChance_5%
-{
-	scene "scenes/techies/techies_tech_illus_02.vcd" nodelay 
-	scene "scenes/techies/techies_tech_illus_03.vcd" nodelay 
-}
-
-Rule techies_PowerupIsPowerupIllusionChance_5%_Rule
-{
-	criteria Powerup Istechies IsPowerupIllusion Chance_5%
-	response techies_PowerupIsPowerupIllusionChance_5%
-}
-
-Response techies_PowerupIsPowerupInvisibility
-{
-	scene "scenes/techies/techies_tech_invis_01.vcd" nodelay 
-	scene "scenes/techies/techies_tech_invis_04.vcd" nodelay 
-}
-
-Rule techies_PowerupIsPowerupInvisibility_Rule
-{
-	criteria Powerup Istechies IsPowerupInvisibility
-	response techies_PowerupIsPowerupInvisibility
-}
-
-Response techies_PowerupIsPowerupInvisibilityChance_25%
-{
-	scene "scenes/techies/techies_tech_invis_02.vcd" nodelay 
-}
-
-Rule techies_PowerupIsPowerupInvisibilityChance_25%_Rule
-{
-	criteria Powerup Istechies IsPowerupInvisibility Chance_25%
-	response techies_PowerupIsPowerupInvisibilityChance_25%
-}
-
-Response techies_CooldownLittleNag
-{
-	scene "scenes/techies/techies_tech_notyet_01.vcd" nodelay 
-	scene "scenes/techies/techies_tech_notyet_04.vcd" nodelay 
-	scene "scenes/techies/techies_tech_notyet_07.vcd" nodelay 
-	scene "scenes/techies/techies_tech_notyet_10.vcd" nodelay 
-	scene "scenes/techies/techies_tech_notyet_13.vcd" nodelay 
-	scene "scenes/techies/techies_tech_notyet_16.vcd" nodelay 
-}
-
-Rule techies_CooldownLittleNag_Rule
-{
-	criteria Cooldown Istechies LittleNag
-	response techies_CooldownLittleNag
-}
-
-Response techies_CooldownMediumNag
-{
-	scene "scenes/techies/techies_tech_notyet_02.vcd" nodelay 
-	scene "scenes/techies/techies_tech_notyet_05.vcd" nodelay 
-	scene "scenes/techies/techies_tech_notyet_08.vcd" nodelay 
-	scene "scenes/techies/techies_tech_notyet_11.vcd" nodelay 
-	scene "scenes/techies/techies_tech_notyet_14.vcd" nodelay 
-	scene "scenes/techies/techies_tech_notyet_17.vcd" nodelay 
-}
-
-Rule techies_CooldownMediumNag_Rule
-{
-	criteria Cooldown Istechies MediumNag
-	response techies_CooldownMediumNag
-}
-
-Response techies_CooldownSuperNag
-{
-	scene "scenes/techies/techies_tech_notyet_03.vcd" nodelay 
-	scene "scenes/techies/techies_tech_notyet_06.vcd" nodelay 
-	scene "scenes/techies/techies_tech_notyet_09.vcd" nodelay 
-	scene "scenes/techies/techies_tech_notyet_12.vcd" nodelay 
-	scene "scenes/techies/techies_tech_notyet_15.vcd" nodelay 
-	scene "scenes/techies/techies_tech_notyet_18.vcd" nodelay 
-}
-
-Rule techies_CooldownSuperNag_Rule
-{
-	criteria Cooldown Istechies SuperNag
-	response techies_CooldownSuperNag
-}
-
-Response techies_NoManaLittleNag
-{
-	scene "scenes/techies/techies_tech_nomana_01.vcd" nodelay 
-	scene "scenes/techies/techies_tech_nomana_04.vcd" nodelay 
-	scene "scenes/techies/techies_tech_nomana_07.vcd" nodelay 
-	scene "scenes/techies/techies_tech_nomana_10.vcd" nodelay 
-	scene "scenes/techies/techies_tech_nomana_13.vcd" nodelay 
-	scene "scenes/techies/techies_tech_nomana_16.vcd" nodelay 
-}
-
-Rule techies_NoManaLittleNag_Rule
-{
-	criteria NoMana Istechies LittleNag
-	response techies_NoManaLittleNag
-}
-
-Response techies_NoManaMediumNag
-{
-	scene "scenes/techies/techies_tech_nomana_02.vcd" nodelay 
-	scene "scenes/techies/techies_tech_nomana_05.vcd" nodelay 
-	scene "scenes/techies/techies_tech_nomana_08.vcd" nodelay 
-	scene "scenes/techies/techies_tech_nomana_11.vcd" nodelay 
-	scene "scenes/techies/techies_tech_nomana_14.vcd" nodelay 
-	scene "scenes/techies/techies_tech_nomana_17.vcd" nodelay 
-}
-
-Rule techies_NoManaMediumNag_Rule
-{
-	criteria NoMana Istechies MediumNag
-	response techies_NoManaMediumNag
-}
-
-Response techies_NoManaSuperNag
-{
-	scene "scenes/techies/techies_tech_nomana_03.vcd" nodelay 
-	scene "scenes/techies/techies_tech_nomana_06.vcd" nodelay 
-	scene "scenes/techies/techies_tech_nomana_09.vcd" nodelay 
-	scene "scenes/techies/techies_tech_nomana_12.vcd" nodelay 
-	scene "scenes/techies/techies_tech_nomana_15.vcd" nodelay 
-	scene "scenes/techies/techies_tech_nomana_18.vcd" nodelay 
-}
-
-Rule techies_NoManaSuperNag_Rule
-{
-	criteria NoMana Istechies SuperNag
-	response techies_NoManaSuperNag
-}
-
-Response techies_Thanks
-{
-	scene "scenes/techies/techies_tech_thanks_01.vcd" nodelay 
-	scene "scenes/techies/techies_tech_thanks_02.vcd" nodelay 
-	scene "scenes/techies/techies_tech_thanks_04.vcd" nodelay 
-	scene "scenes/techies/techies_tech_thanks_05.vcd" nodelay 
-	scene "scenes/techies/techies_tech_thanks_08.vcd" nodelay 
-	scene "scenes/techies/techies_tech_thanks_09.vcd" nodelay 
-}
-
-Rule techies_Thanks_Rule
-{
-	criteria Thanks Istechies 
-	response techies_Thanks
-}
-
-Response techies_ThanksChance_5%
-{
-	scene "scenes/techies/techies_tech_thanks_03.vcd" nodelay 
-	scene "scenes/techies/techies_tech_thanks_07.vcd" nodelay 
-	scene "scenes/techies/techies_tech_thanks_10.vcd" nodelay 
-}
-
-Rule techies_ThanksChance_5%_Rule
-{
-	criteria Thanks Istechies Chance_5%
-	response techies_ThanksChance_5%
-}
-
-Response techies_PainChance_15%
-{
-	scene "scenes/techies/techies_tech_underattack_01.vcd" nodelay respeakdelay 120
-	scene "scenes/techies/techies_tech_underattack_02.vcd" nodelay respeakdelay 120
-}
-
-Rule techies_PainChance_15%_Rule
-{
-	criteria Pain Istechies Chance_15%
-	response techies_PainChance_15%
-}
-
-Response techies_PainIsTechSpeakTrioLow
-{
-	scene "scenes/techies/techies_tech_pain_01.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_02.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_03.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_04.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_05.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_06.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_07.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_08.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_09.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_10.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_11.vcd" nodelay 
-}
-
-Rule techies_PainIsTechSpeakTrioLow_Rule
-{
-	criteria Pain Istechies IsTechSpeakTrioLow
-	response techies_PainIsTechSpeakTrioLow
-}
-
-Response techies_PainIsTechSpeakTrioHigh
-{
-	scene "scenes/techies/techies_tech_pain_12.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_13.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_14.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_15.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_16.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_17.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_18.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_19.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_20.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_21.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_22.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_23.vcd" nodelay 
-}
-
-Rule techies_PainIsTechSpeakTrioHigh_Rule
-{
-	criteria Pain Istechies IsTechSpeakTrioHigh
-	response techies_PainIsTechSpeakTrioHigh
-}
-
-Response techies_PainIsTechSpeakTrioBarrel
-{
-	scene "scenes/techies/techies_tech_pain_25.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_26.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_27.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_28.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_29.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_30.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_31.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_32.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_33.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_34.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_35.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_36.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_37.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_38.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_39.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_40.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_41.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_42.vcd" nodelay 
-	scene "scenes/techies/techies_tech_pain_43.vcd" nodelay 
-}
-
-Rule techies_PainIsTechSpeakTrioBarrel_Rule
-{
-	criteria Pain Istechies IsTechSpeakTrioBarrel
-	response techies_PainIsTechSpeakTrioBarrel
-}
-
-Response techies_InTheBag
-{
-	scene "scenes/techies/techies_tech_inthebag_01.vcd" nodelay 
-	scene "scenes/techies/techies_tech_inthebag_02.vcd" nodelay 
-}
-
-Rule techies_InTheBag_Rule
-{
-	criteria InTheBag Istechies 
-	response techies_InTheBag
-}
-
-Response techies_Defeat
-{
-	scene "scenes/techies/techies_tech_lose_01.vcd" nodelay 
-	scene "scenes/techies/techies_tech_lose_02.vcd" nodelay 
-	scene "scenes/techies/techies_tech_lose_05.vcd" nodelay 
-	scene "scenes/techies/techies_tech_lose_07.vcd" nodelay 
-	scene "scenes/techies/techies_tech_lose_10.vcd" nodelay 
-}
-
-Rule techies_Defeat_Rule
-{
-	criteria Defeat Istechies 
-	response techies_Defeat
-}
-
-Response techies_DefeatChance_2%
-{
-	scene "scenes/techies/techies_tech_lose_03.vcd" nodelay 
-}
-
-Rule techies_DefeatChance_2%_Rule
-{
-	criteria Defeat Istechies Chance_2%
-	response techies_DefeatChance_2%
-}
-
-Response techies_DefeatChance_5%
-{
-	scene "scenes/techies/techies_tech_lose_06.vcd" nodelay 
-	scene "scenes/techies/techies_tech_lose_08.vcd" nodelay 
-	scene "scenes/techies/techies_tech_anger_27.vcd" nodelay 
-}
-
-Rule techies_DefeatChance_5%_Rule
-{
-	criteria Defeat Istechies Chance_5%
-	response techies_DefeatChance_5%
-}
-
-Response techies_Victory
-{
-	scene "scenes/techies/techies_tech_win_01.vcd" nodelay 
-	scene "scenes/techies/techies_tech_win_02.vcd" nodelay 
-	scene "scenes/techies/techies_tech_win_03.vcd" nodelay 
-	scene "scenes/techies/techies_tech_win_04.vcd" nodelay 
-	scene "scenes/techies/techies_tech_win_05.vcd" nodelay 
-}
-
-Rule techies_Victory_Rule
-{
-	criteria Victory Istechies 
-	response techies_Victory
-}
-
-Response techies_VictoryChance_5%
-{
-	scene "scenes/techies/techies_tech_win_06.vcd" nodelay 
-}
-
-Rule techies_VictoryChance_5%_Rule
-{
-	criteria Victory Istechies Chance_5%
-	response techies_VictoryChance_5%
-}
-
-Response techies_Select
-{
-	scene "scenes/techies/techies_tech_rare_01.vcd" nodelay 
-	scene "scenes/techies/techies_tech_rare_02.vcd" nodelay 
-	scene "scenes/techies/techies_tech_rare_04.vcd" nodelay 
-	scene "scenes/techies/techies_tech_rare_05.vcd" nodelay 
-}
-
-Rule techies_Select_Rule
-{
-	criteria Select Istechies 
-	response techies_Select
-}
-
-Response techies_EmoteIsEmoteLaughIsTechSpeakTrioLow
-{
-	scene "scenes/techies/techies_tech_move_23.vcd" nodelay 
-	scene "scenes/techies/techies_tech_move_24.vcd" nodelay 
-	scene "scenes/techies/techies_tech_move_45.vcd" nodelay 
-	scene "scenes/techies/techies_tech_move_46.vcd" nodelay 
-	scene "scenes/techies/techies_tech_move_47.vcd" nodelay 
-	scene "scenes/techies/techies_tech_move_48.vcd" nodelay 
-	scene "scenes/techies/techies_tech_attack_13.vcd" nodelay 
-	scene "scenes/techies/techies_tech_attack_14.vcd" nodelay 
-	scene "scenes/techies/techies_tech_attack_22.vcd" nodelay 
-	scene "scenes/techies/techies_tech_attack_23.vcd" nodelay 
-	scene "scenes/techies/techies_tech_kill_22.vcd" nodelay 
-}
-
-Rule techies_EmoteIsEmoteLaughIsTechSpeakTrioLow_Rule
-{
-	criteria Emote Istechies IsEmoteLaugh IsTechSpeakTrioLow
-	response techies_EmoteIsEmoteLaughIsTechSpeakTrioLow
-}
-
-Response techies_EmoteIsEmoteLaughIsTechSpeakTrioHigh
-{
-	scene "scenes/techies/techies_tech_move_26.vcd" nodelay 
-	scene "scenes/techies/techies_tech_move_28.vcd" nodelay 
-	scene "scenes/techies/techies_tech_move_51.vcd" nodelay 
-	scene "scenes/techies/techies_tech_move_52.vcd" nodelay 
-	scene "scenes/techies/techies_tech_move_53.vcd" nodelay 
-	scene "scenes/techies/techies_tech_attack_16.vcd" nodelay 
-	scene "scenes/techies/techies_tech_attack_24.vcd" nodelay 
-	scene "scenes/techies/techies_tech_attack_25.vcd" nodelay 
-	scene "scenes/techies/techies_tech_kill_17.vcd" nodelay 
-	scene "scenes/techies/techies_tech_kill_19.vcd" nodelay 
-	scene "scenes/techies/techies_tech_kill_21.vcd" nodelay 
-	scene "scenes/techies/techies_tech_kill_23.vcd" nodelay 
-}
-
-Rule techies_EmoteIsEmoteLaughIsTechSpeakTrioHigh_Rule
-{
-	criteria Emote Istechies IsEmoteLaugh IsTechSpeakTrioHigh
-	response techies_EmoteIsEmoteLaughIsTechSpeakTrioHigh
-}
-
-Response techies_EmoteIsEmoteLaughIsTechSpeakTrioBarrel
-{
-	scene "scenes/techies/techies_tech_move_30.vcd" nodelay speakonce
-	scene "scenes/techies/techies_tech_move_33.vcd" nodelay 
-}
-
-Rule techies_EmoteIsEmoteLaughIsTechSpeakTrioBarrel_Rule
-{
-	criteria Emote Istechies IsEmoteLaugh IsTechSpeakTrioBarrel
-	response techies_EmoteIsEmoteLaughIsTechSpeakTrioBarrel
-}
-
-Response techies_TauntIsTechiesTauntSwingAround
-{
-	scene "scenes/techies/techies_tech_move_39.vcd" nodelay 
-}
-
-Rule techies_TauntIsTechiesTauntSwingAround_Rule
-{
-	criteria Taunt Istechies IsTechiesTauntSwingAround
-	response techies_TauntIsTechiesTauntSwingAround
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vrfunknown:version{c1f07085-5299-4e8a-b7e9-1cbb66bbbe23} -->
+{
+	m_Includes = 
+	[
+		"scripts/talker/response_rules_shared.vrr",
+	]
+	m_ResponseGroups = 
+	[
+		
+		{
+			m_name = "techies_Spawn"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_spawn_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_spawn_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_spawn_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_spawn_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_spawn_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_spawn_06.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_CustomIsGameStart"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_begin_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_CustomIsTechiesArcanaTaunt"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_move_26.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_move_28.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_move_45.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_move_46.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_move_48.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_move_50.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_move_54.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_attack_13.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_attack_24.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_attack_25.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_CustomIsTechiesLoadoutSpawn"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_spawn_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_spawn_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_spawn_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_spawn_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_spawn_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_spawn_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_attack_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_cast_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_cast_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_cast_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_setmine_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_settrap_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_KillIsFirstBlood"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_firstblood_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_firstblood_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_KillIsFirstBloodChance_10%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_firstblood_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_KillIsTechiesSetMineChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_mineblowsup_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_mineblowsup_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_mineblowsup_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_mineblowsup_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_mineblowsup_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_mineblowsup_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_mineblowsup_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_mineblowsup_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_minekill_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_minekill_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_minekill_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_KillIsTechiesZapChance_75%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_trapgoesoff_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_trapgoesoff_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_trapgoesoff_07.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_trapgoesoff_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_trapgoesoff_10.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_KillIsTechiesSetMineChance_15%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_focuseddetonate_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_focuseddetonate_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_focuseddetonate_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_focuseddetonate_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_focuseddetonate_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_focuseddetonate_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_focuseddetonate_13.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_focuseddetonate_15.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_focuseddetonate_16.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_focuseddetonate_17.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_focuseddetonate_19.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_focuseddetonate_21.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_focuseddetonate_22.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_detonatekill_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_detonatekill_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_detonatekill_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_KillIsTechiesSetMineChance_5%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_focuseddetonate_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_focuseddetonate_18.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_Kill"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_levelup_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_levelup_14.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_kill_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_kill_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_kill_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_kill_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_kill_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_kill_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_kill_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_kill_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_kill_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_kill_12.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_kill_13.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_kill_17.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_kill_18.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_kill_19.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_kill_20.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_kill_21.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_kill_22.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_kill_23.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_KillChance_5%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_kill_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_kill_14.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_kill_16.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_KillIsEnemyAlchemistChance_20%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_rival_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_KillIsEnemyGyrocopterChance_20%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_rival_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_KillIsEnemyTinkerChance_20%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_rival_04.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_KillIsEnemyOgre_MagiChance_20%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_rival_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_rival_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_rival_08.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_KillIsEnemyAbyssal_UnderlordChance_20%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_rival_10.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_KillIsEnemyDoom_BringerChance_3%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_rival_11.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_KillIsEnemyWispChance_20%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_rival_13.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_MoveIsTechSpeakTrioLow"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_move_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_move_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_move_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_move_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_move_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_move_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_move_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_move_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_move_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_move_12.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_move_21.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_move_22.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_move_23.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_move_24.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_move_40.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_move_45.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_move_46.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_move_47.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_move_48.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_move_49.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_MoveIsTechSpeakTrioHigh"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_move_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_move_14.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_move_26.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_move_27.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_move_28.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_move_36.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_move_37.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_move_38.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_move_39.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_move_42.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_move_50.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_move_51.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_move_52.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_move_53.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_move_54.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_move_60.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_MoveIsTechSpeakTrioBarrel"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_move_16.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_move_17.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_move_18.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_move_19.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_move_20.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_move_30.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_move_32.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_move_33.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_move_34.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_move_43.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_move_44.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_move_56.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_AttackIsTechSpeakDuoLow"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_attack_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_attack_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_attack_13.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_attack_14.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_attack_15.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_attack_19.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_attack_21.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_attack_22.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_attack_23.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_AttackIsTechSpeakDuoHigh"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_attack_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_attack_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_attack_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_attack_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_attack_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_attack_12.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_attack_16.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_attack_20.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_attack_24.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_attack_25.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_CastExecuteIsTechiesSetMineIsTechSpeakDuoHigh"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_cast_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_cast_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_setmine_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_setmine_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_setmine_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_setmine_14.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_setmine_21.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_setmine_22.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_setmine_23.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_setmine_24.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_setmine_25.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_setmine_26.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_setmine_28.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_setmine_29.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_setmine_35.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_setmine_36.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_setmine_37.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_setmine_39.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_setmine_41.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_setmine_42.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_setmine_43.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_setmine_44.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_setmine_52.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_settrap_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_remotemines_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_remotemines_21.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_remotemines_22.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_remotemines_23.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_remotemines_28.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_remotemines_29.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_CastExecuteIsTechiesSetMineIsTechSpeakDuoLow"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_setmine_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_setmine_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_setmine_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_setmine_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_setmine_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_setmine_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_setmine_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_setmine_13.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_setmine_16.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_setmine_17.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_setmine_18.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_setmine_19.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_setmine_20.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_setmine_30.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_setmine_32.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_setmine_33.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_setmine_34.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_setmine_38.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_setmine_45.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_setmine_46.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_setmine_47.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_setmine_48.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_setmine_50.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_setmine_51.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_setmine_54.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_settrap_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_settrap_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_remotemines_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_remotemines_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_remotemines_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_remotemines_14.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_remotemines_17.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_remotemines_18.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_remotemines_19.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_remotemines_30.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_CastExecuteIsTechiesZapChance_75%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_settrap_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_settrap_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_settrap_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_settrap_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_settrap_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_settrap_11.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_CastExecuteIsTechiesSetMineIsTechSpeakDuoLowRMine01"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_remotemines_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_CastExecuteIsTechiesStickyBombIsTechSpeakDuoLow"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_remotemines_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_remotemines_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_remotemines_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_remotemines_13.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_remotemines_15.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_remotemines_20.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_remotemines_25.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_remotemines_26.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_remotemines_27.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_CastExecuteIsTechiesStickyBombIsTechSpeakDuoHigh"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_remotemines_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_remotemines_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_remotemines_16.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_CastExecuteIsTechiesZapChance_5%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_focuseddetonate_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_CastExecuteIsTechiesZapChance_1%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_12.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_13.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_14.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_15.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_16.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_17.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_18.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_19.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_20.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_21.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_22.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_23.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_25.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_26.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_27.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_28.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_29.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_30.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_31.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_32.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_33.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_34.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_35.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_36.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_37.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_38.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_39.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_40.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_41.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_42.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_43.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_DeathIsTechiesSuicideSuccess"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_suicidesquad_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_suicidesquad_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_suicidesquad_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_suicidesquad_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_suicidesquad_12.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_DeathIsTechiesSuicideFizzle"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_suicidesquad_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_suicidesquad_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_suicidesquad_13.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_DeathIsTechiesSuicideFizzleChance_15%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_suicidesquad_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_failure_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_DeathIsTechiesSuicideSuccessChance_15%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_focuseddetonate_14.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_Death"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_death_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_death_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_death_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_death_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_death_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_death_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_death_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_death_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_death_12.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_death_13.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_death_15.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_death_16.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_death_17.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_death_18.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_DeathIsReincarnating"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_fastres_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_DeathIsTechiesSuicideSuccessIsReincarnating"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_fastressuicide_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_DeathIsTechiesSuicideFizzleIsReincarnating"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_fastressuicide_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_LevelUp"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_levelup_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_levelup_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_levelup_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_levelup_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_levelup_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_levelup_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_levelup_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_levelup_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_levelup_12.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_levelup_13.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_levelup_15.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_levelup_17.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_levelup_18.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_levelup_19.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_levelup_20.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_levelup_21.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_LevelUpChance_5%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_levelup_22.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_levelup_24.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_AllyNearEarlyGameIsAllyAlchemist"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_ally_02.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_AllyNearEarlyGameIsAllyOgre_Magi"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_ally_03.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_AllyNearEarlyGameIsAllyJakiro"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_ally_04.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_AllyNearEarlyGameIsAllyPudge"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_ally_06.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_AllyNearEarlyGameIsAllyTiny"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_ally_07.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_AllyNearEarlyGameIsAllyDark_Seer"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_ally_08.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_AllyNearEarlyGameIsAllyTinkerChance_3%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_ally_09.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_LastHit"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_lasthit_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_lasthit_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_lasthit_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_lasthit_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_lasthit_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_lasthit_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_lasthit_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_lasthit_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_lasthit_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_lasthit_12.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_lasthit_13.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_lasthit_16.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_lasthit_17.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_lasthit_18.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_lasthit_19.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_lasthit_20.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_lasthit_21.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_LastHitChance_5%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_lasthit_10.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_RespawnIsTechiesRespawnDeath"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_respawn_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_respawn_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_respawn_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_respawn_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_respawn_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_respawn_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_respawn_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_respawn_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_respawn_12.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_RespawnIsTechiesRespawnSuicideChance_75%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_respawn_ssa_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_respawn_ssa_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_respawn_ssa_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_respawn_ssa_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_respawn_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_PurchaseIsExpensiveItem"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_purch_01.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_purch_02.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_purch_03.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_PurchaseIsUltimateScepter"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_scepter_01.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_scepter_02.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_scepter_03.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_PurchaseIsBlinkDagger"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_blink_01.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_blink_02.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_blink_03.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_blink_04.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_PurchaseIsNecronomiconChance_20%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_items_01.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_PurchaseIsInvisSwordChance_20%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_items_02.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_PurchaseIsMantaChance_20%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_items_03.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_PurchaseIsBootsOfTravelChance_20%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_items_04.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_items_05.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_PurchaseIsEulScepter"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_items_06.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_PurchaseIsSheepStick"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_items_07.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_PurchaseIsForceStaff"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_items_08.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_PurchaseIsBloodStone"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_items_09.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_PurchaseIsOrchid"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_items_10.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_PurchaseIsSphere"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_items_11.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_PurchaseIsShiva"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_items_12.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_PurchaseIsClaymoreChance_15%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_items_15.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_PurchaseIsNecronomicon"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_items_16.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_PurchaseIsInvisSword"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_items_17.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_PurchaseIsManta"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_items_18.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_Bottling"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_bottle_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_bottle_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_Deny"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_deny_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_deny_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_deny_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_deny_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_deny_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_deny_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_deny_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_deny_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_deny_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_deny_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_deny_12.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_deny_13.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_deny_14.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_deny_15.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_deny_17.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_deny_18.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_deny_19.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_deny_20.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_deny_21.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_deny_22.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_MissingIsLaneTop"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_lanemissing_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_lanemissing_04.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_MissingIsLaneMid"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_lanemissing_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_lanemissing_05.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_MissingIsLaneBot"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_lanemissing_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_lanemissing_06.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_ItemDropIsCommonDrop"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_itemcommon_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_ItemDropIsRareDropChance_10%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_itemmoderate_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_ItemDropIsRareDrop"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_itemmoderate_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_ItemDropIsUltraRareDrop"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_itemrare_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_Immortality"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_immort_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_ImmortalityChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_immort_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_PowerupIsPowerupArcane"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_itemmoderate_02.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 300.000000
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_PowerupIsPowerupBounty"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_lasthit_01.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 300.000000
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_PowerupIsPowerupHasteChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_haste_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_haste_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_PowerupIsPowerupHaste"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_haste_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_haste_04.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_PowerupIsPowerupDoubleDamage"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_doubdam_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_doubdam_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_PowerupIsPowerupDoubleDamageChance_5%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_doubdam_04.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_PowerupIsPowerupRegeneration"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_regen_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_regen_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_PowerupIsPowerupRegenerationChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_regen_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_PowerupIsPowerupIllusion"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_illus_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_illus_04.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_PowerupIsPowerupIllusionChance_5%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_illus_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_illus_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_PowerupIsPowerupInvisibility"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_invis_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_invis_04.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_PowerupIsPowerupInvisibilityChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_invis_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_CooldownLittleNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_notyet_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_notyet_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_notyet_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_notyet_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_notyet_13.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_notyet_16.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_CooldownMediumNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_notyet_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_notyet_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_notyet_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_notyet_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_notyet_14.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_notyet_17.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_CooldownSuperNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_notyet_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_notyet_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_notyet_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_notyet_12.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_notyet_15.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_notyet_18.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_NoManaLittleNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_nomana_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_nomana_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_nomana_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_nomana_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_nomana_13.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_nomana_16.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_NoManaMediumNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_nomana_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_nomana_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_nomana_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_nomana_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_nomana_14.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_nomana_17.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_NoManaSuperNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_nomana_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_nomana_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_nomana_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_nomana_12.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_nomana_15.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_nomana_18.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_Thanks"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_thanks_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_thanks_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_thanks_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_thanks_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_thanks_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_thanks_09.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_ThanksChance_5%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_thanks_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_thanks_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_thanks_10.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_PainChance_15%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_underattack_01.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 120.000000
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_underattack_02.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 120.000000
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_PainIsTechSpeakTrioLow"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_11.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_PainIsTechSpeakTrioHigh"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_12.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_13.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_14.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_15.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_16.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_17.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_18.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_19.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_20.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_21.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_22.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_23.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_PainIsTechSpeakTrioBarrel"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_25.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_26.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_27.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_28.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_29.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_30.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_31.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_32.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_33.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_34.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_35.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_36.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_37.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_38.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_39.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_40.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_41.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_42.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_pain_43.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_InTheBag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_inthebag_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_inthebag_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_Defeat"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_lose_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_lose_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_lose_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_lose_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_lose_10.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_DefeatChance_2%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_lose_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_DefeatChance_5%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_lose_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_lose_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_anger_27.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_Victory"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_win_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_win_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_win_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_win_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_win_05.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_VictoryChance_5%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_win_06.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_Select"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_rare_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_rare_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_rare_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_rare_05.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_EmoteIsEmoteLaughIsTechSpeakTrioLow"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_move_23.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_move_24.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_move_45.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_move_46.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_move_47.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_move_48.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_attack_13.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_attack_14.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_attack_22.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_attack_23.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_kill_22.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_EmoteIsEmoteLaughIsTechSpeakTrioHigh"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_move_26.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_move_28.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_move_51.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_move_52.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_move_53.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_attack_16.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_attack_24.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_attack_25.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_kill_17.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_kill_19.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_kill_21.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_kill_23.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_EmoteIsEmoteLaughIsTechSpeakTrioBarrel"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_move_30.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_move_33.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "techies_TauntIsTechiesTauntSwingAround"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/techies/techies_tech_move_39.vcd"
+				},
+			]
+		},
+	]
+	m_Requirements = 
+	[
+		
+		{
+			m_name = "Istechies"
+			m_matchKey = "classname"
+			m_matchExpr = "npc_dota_hero_techies"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsTechiesSetMine"
+			m_matchKey = "abilityname"
+			m_matchExpr = "techies_land_mines"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsTechiesStickyBomb"
+			m_matchKey = "abilityname"
+			m_matchExpr = "techies_sticky_bomb"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsTechiesZap"
+			m_matchKey = "abilityname"
+			m_matchExpr = "techies_reactive_tazer"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsTechiesStasisTrap"
+			m_matchKey = "abilityname"
+			m_matchExpr = "techies_stasis_trap"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsTechiesRemoteMineSet"
+			m_matchKey = "abilityname"
+			m_matchExpr = "techies_remote_mines"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsTechiesRemoteMineDet"
+			m_matchKey = "abilityname"
+			m_matchExpr = "techies_focused_detonate"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsTechiesArcanaTaunt"
+			m_matchKey = "istechiesminitaunt"
+			m_matchExpr = "yes"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsTechiesSuicideSuccess"
+			m_matchKey = "suicide_kills"
+			m_matchExpr = ">=1"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsTechiesSuicideFizzle"
+			m_matchKey = "suicide_kills"
+			m_matchExpr = "0"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsTechiesRespawnSuicide"
+			m_matchKey = "respawnFromSuicide"
+			m_matchExpr = ">=1"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsTechiesRespawnDeath"
+			m_matchKey = "respawnFromSuicide"
+			m_matchExpr = "0"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsTechiesTauntSwingAround"
+			m_matchKey = "taunt_type"
+			m_matchExpr = "swing_around"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsTechiesLoadoutSpawn"
+			m_matchKey = "special_spawn"
+			m_matchExpr = "techies_loadout_spawn"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsTechSpeakTrioHigh"
+			m_matchKey = "randomnum"
+			m_matchExpr = ">=46"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsTechSpeakTrioLow"
+			m_matchKey = "randomnum"
+			m_matchExpr = ">=6,<=45"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsTechSpeakTrioBarrel"
+			m_matchKey = "randomnum"
+			m_matchExpr = "<=5"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsTechSpeakDuoHigh"
+			m_matchKey = "randomnum"
+			m_matchExpr = ">=46"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsTechSpeakDuoLow"
+			m_matchKey = "randomnum"
+			m_matchExpr = "<=45"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsTechSpeakDuoLowRMine01"
+			m_matchKey = "randomnum"
+			m_matchExpr = "<=1"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+	]
+	m_Rules = 
+	[
+		
+		{
+			m_name = "techies_Spawn_Rule"
+			m_Requirements = 
+			[
+				"Spawn",
+				"Istechies",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_Spawn",
+			]
+		},
+		
+		{
+			m_name = "techies_CustomIsGameStart_Rule"
+			m_Requirements = 
+			[
+				"Custom",
+				"Istechies",
+				"IsGameStart",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_CustomIsGameStart",
+			]
+		},
+		
+		{
+			m_name = "techies_CustomIsTechiesArcanaTaunt_Rule"
+			m_Requirements = 
+			[
+				"Custom",
+				"Istechies",
+				"IsTechiesArcanaTaunt",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_CustomIsTechiesArcanaTaunt",
+			]
+		},
+		
+		{
+			m_name = "techies_CustomIsTechiesLoadoutSpawn_Rule"
+			m_Requirements = 
+			[
+				"Custom",
+				"Istechies",
+				"IsTechiesLoadoutSpawn",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_CustomIsTechiesLoadoutSpawn",
+			]
+		},
+		
+		{
+			m_name = "techies_KillIsFirstBlood_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Istechies",
+				"IsFirstBlood",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_KillIsFirstBlood",
+			]
+		},
+		
+		{
+			m_name = "techies_KillIsFirstBloodChance_10%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Istechies",
+				"IsFirstBlood",
+				"Chance_10%",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_KillIsFirstBloodChance_10%",
+			]
+		},
+		
+		{
+			m_name = "techies_KillIsTechiesSetMineChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Istechies",
+				"IsTechiesSetMine",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_KillIsTechiesSetMineChance_25%",
+			]
+		},
+		
+		{
+			m_name = "techies_KillIsTechiesZapChance_75%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Istechies",
+				"IsTechiesZap",
+				"Chance_75%",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_KillIsTechiesZapChance_75%",
+			]
+		},
+		
+		{
+			m_name = "techies_KillIsTechiesSetMineChance_15%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Istechies",
+				"IsTechiesSetMine",
+				"Chance_15%",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_KillIsTechiesSetMineChance_15%",
+			]
+		},
+		
+		{
+			m_name = "techies_KillIsTechiesSetMineChance_5%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Istechies",
+				"IsTechiesSetMine",
+				"Chance_5%",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_KillIsTechiesSetMineChance_5%",
+			]
+		},
+		
+		{
+			m_name = "techies_Kill_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Istechies",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_Kill",
+			]
+		},
+		
+		{
+			m_name = "techies_KillChance_5%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Istechies",
+				"Chance_5%",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_KillChance_5%",
+			]
+		},
+		
+		{
+			m_name = "techies_KillIsEnemyAlchemistChance_20%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Istechies",
+				"IsEnemyAlchemist",
+				"Chance_20%",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_KillIsEnemyAlchemistChance_20%",
+			]
+		},
+		
+		{
+			m_name = "techies_KillIsEnemyGyrocopterChance_20%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Istechies",
+				"IsEnemyGyrocopter",
+				"Chance_20%",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_KillIsEnemyGyrocopterChance_20%",
+			]
+		},
+		
+		{
+			m_name = "techies_KillIsEnemyTinkerChance_20%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Istechies",
+				"IsEnemyTinker",
+				"Chance_20%",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_KillIsEnemyTinkerChance_20%",
+			]
+		},
+		
+		{
+			m_name = "techies_KillIsEnemyOgre_MagiChance_20%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Istechies",
+				"IsEnemyOgre_Magi",
+				"Chance_20%",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_KillIsEnemyOgre_MagiChance_20%",
+			]
+		},
+		
+		{
+			m_name = "techies_KillIsEnemyAbyssal_UnderlordChance_20%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Istechies",
+				"IsEnemyAbyssal_Underlord",
+				"Chance_20%",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_KillIsEnemyAbyssal_UnderlordChance_20%",
+			]
+		},
+		
+		{
+			m_name = "techies_KillIsEnemyDoom_BringerChance_3%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Istechies",
+				"IsEnemyDoom_Bringer",
+				"Chance_3%",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_KillIsEnemyDoom_BringerChance_3%",
+			]
+		},
+		
+		{
+			m_name = "techies_KillIsEnemyWispChance_20%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Istechies",
+				"IsEnemyWisp",
+				"Chance_20%",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_KillIsEnemyWispChance_20%",
+			]
+		},
+		
+		{
+			m_name = "techies_MoveIsTechSpeakTrioLow_Rule"
+			m_Requirements = 
+			[
+				"Move",
+				"Istechies",
+				"IsTechSpeakTrioLow",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_MoveIsTechSpeakTrioLow",
+			]
+		},
+		
+		{
+			m_name = "techies_MoveIsTechSpeakTrioHigh_Rule"
+			m_Requirements = 
+			[
+				"Move",
+				"Istechies",
+				"IsTechSpeakTrioHigh",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_MoveIsTechSpeakTrioHigh",
+			]
+		},
+		
+		{
+			m_name = "techies_MoveIsTechSpeakTrioBarrel_Rule"
+			m_Requirements = 
+			[
+				"Move",
+				"Istechies",
+				"IsTechSpeakTrioBarrel",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_MoveIsTechSpeakTrioBarrel",
+			]
+		},
+		
+		{
+			m_name = "techies_AttackIsTechSpeakDuoLow_Rule"
+			m_Requirements = 
+			[
+				"Attack",
+				"Istechies",
+				"IsTechSpeakDuoLow",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_AttackIsTechSpeakDuoLow",
+			]
+		},
+		
+		{
+			m_name = "techies_AttackIsTechSpeakDuoHigh_Rule"
+			m_Requirements = 
+			[
+				"Attack",
+				"Istechies",
+				"IsTechSpeakDuoHigh",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_AttackIsTechSpeakDuoHigh",
+			]
+		},
+		
+		{
+			m_name = "techies_CastExecuteIsTechiesSetMineIsTechSpeakDuoHigh_Rule"
+			m_Requirements = 
+			[
+				"CastExecute",
+				"Istechies",
+				"IsTechiesSetMine",
+				"IsTechSpeakDuoHigh",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_CastExecuteIsTechiesSetMineIsTechSpeakDuoHigh",
+			]
+		},
+		
+		{
+			m_name = "techies_CastExecuteIsTechiesSetMineIsTechSpeakDuoLow_Rule"
+			m_Requirements = 
+			[
+				"CastExecute",
+				"Istechies",
+				"IsTechiesSetMine",
+				"IsTechSpeakDuoLow",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_CastExecuteIsTechiesSetMineIsTechSpeakDuoLow",
+			]
+		},
+		
+		{
+			m_name = "techies_CastExecuteIsTechiesZapChance_75%_Rule"
+			m_Requirements = 
+			[
+				"CastExecute",
+				"Istechies",
+				"IsTechiesZap",
+				"Chance_75%",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_CastExecuteIsTechiesZapChance_75%",
+			]
+		},
+		
+		{
+			m_name = "techies_CastExecuteIsTechiesSetMineIsTechSpeakDuoLowRMine01_Rule"
+			m_Requirements = 
+			[
+				"CastExecute",
+				"Istechies",
+				"IsTechiesSetMine",
+				"IsTechSpeakDuoLowRMine01",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_CastExecuteIsTechiesSetMineIsTechSpeakDuoLowRMine01",
+			]
+		},
+		
+		{
+			m_name = "techies_CastExecuteIsTechiesStickyBombIsTechSpeakDuoLow_Rule"
+			m_Requirements = 
+			[
+				"CastExecute",
+				"Istechies",
+				"IsTechiesStickyBomb",
+				"IsTechSpeakDuoLow",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_CastExecuteIsTechiesStickyBombIsTechSpeakDuoLow",
+			]
+		},
+		
+		{
+			m_name = "techies_CastExecuteIsTechiesStickyBombIsTechSpeakDuoHigh_Rule"
+			m_Requirements = 
+			[
+				"CastExecute",
+				"Istechies",
+				"IsTechiesStickyBomb",
+				"IsTechSpeakDuoHigh",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_CastExecuteIsTechiesStickyBombIsTechSpeakDuoHigh",
+			]
+		},
+		
+		{
+			m_name = "techies_CastExecuteIsTechiesZapChance_5%_Rule"
+			m_Requirements = 
+			[
+				"CastExecute",
+				"Istechies",
+				"IsTechiesZap",
+				"Chance_5%",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_CastExecuteIsTechiesZapChance_5%",
+			]
+		},
+		
+		{
+			m_name = "techies_CastExecuteIsTechiesZapChance_1%_Rule"
+			m_Requirements = 
+			[
+				"CastExecute",
+				"Istechies",
+				"IsTechiesZap",
+				"Chance_1%",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_CastExecuteIsTechiesZapChance_1%",
+			]
+		},
+		
+		{
+			m_name = "techies_DeathIsTechiesSuicideSuccess_Rule"
+			m_Requirements = 
+			[
+				"Death",
+				"Istechies",
+				"IsTechiesSuicideSuccess",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_DeathIsTechiesSuicideSuccess",
+			]
+		},
+		
+		{
+			m_name = "techies_DeathIsTechiesSuicideFizzle_Rule"
+			m_Requirements = 
+			[
+				"Death",
+				"Istechies",
+				"IsTechiesSuicideFizzle",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_DeathIsTechiesSuicideFizzle",
+			]
+		},
+		
+		{
+			m_name = "techies_DeathIsTechiesSuicideFizzleChance_15%_Rule"
+			m_Requirements = 
+			[
+				"Death",
+				"Istechies",
+				"IsTechiesSuicideFizzle",
+				"Chance_15%",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_DeathIsTechiesSuicideFizzleChance_15%",
+			]
+		},
+		
+		{
+			m_name = "techies_DeathIsTechiesSuicideSuccessChance_15%_Rule"
+			m_Requirements = 
+			[
+				"Death",
+				"Istechies",
+				"IsTechiesSuicideSuccess",
+				"Chance_15%",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_DeathIsTechiesSuicideSuccessChance_15%",
+			]
+		},
+		
+		{
+			m_name = "techies_Death_Rule"
+			m_Requirements = 
+			[
+				"Death",
+				"Istechies",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_Death",
+			]
+		},
+		
+		{
+			m_name = "techies_DeathIsReincarnating_Rule"
+			m_Requirements = 
+			[
+				"Death",
+				"Istechies",
+				"IsReincarnating",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_DeathIsReincarnating",
+			]
+		},
+		
+		{
+			m_name = "techies_DeathIsTechiesSuicideSuccessIsReincarnating_Rule"
+			m_Requirements = 
+			[
+				"Death",
+				"Istechies",
+				"IsTechiesSuicideSuccess",
+				"IsReincarnating",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_DeathIsTechiesSuicideSuccessIsReincarnating",
+			]
+		},
+		
+		{
+			m_name = "techies_DeathIsTechiesSuicideFizzleIsReincarnating_Rule"
+			m_Requirements = 
+			[
+				"Death",
+				"Istechies",
+				"IsTechiesSuicideFizzle",
+				"IsReincarnating",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_DeathIsTechiesSuicideFizzleIsReincarnating",
+			]
+		},
+		
+		{
+			m_name = "techies_LevelUp_Rule"
+			m_Requirements = 
+			[
+				"LevelUp",
+				"Istechies",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_LevelUp",
+			]
+		},
+		
+		{
+			m_name = "techies_LevelUpChance_5%_Rule"
+			m_Requirements = 
+			[
+				"LevelUp",
+				"Istechies",
+				"Chance_5%",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_LevelUpChance_5%",
+			]
+		},
+		
+		{
+			m_name = "techies_AllyNearEarlyGameIsAllyAlchemist_Rule"
+			m_Requirements = 
+			[
+				"AllyNear",
+				"Istechies",
+				"EarlyGame",
+				"IsAllyAlchemist",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_AllyNearEarlyGameIsAllyAlchemist",
+			]
+		},
+		
+		{
+			m_name = "techies_AllyNearEarlyGameIsAllyOgre_Magi_Rule"
+			m_Requirements = 
+			[
+				"AllyNear",
+				"Istechies",
+				"EarlyGame",
+				"IsAllyOgre_Magi",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_AllyNearEarlyGameIsAllyOgre_Magi",
+			]
+		},
+		
+		{
+			m_name = "techies_AllyNearEarlyGameIsAllyJakiro_Rule"
+			m_Requirements = 
+			[
+				"AllyNear",
+				"Istechies",
+				"EarlyGame",
+				"IsAllyJakiro",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_AllyNearEarlyGameIsAllyJakiro",
+			]
+		},
+		
+		{
+			m_name = "techies_AllyNearEarlyGameIsAllyPudge_Rule"
+			m_Requirements = 
+			[
+				"AllyNear",
+				"Istechies",
+				"EarlyGame",
+				"IsAllyPudge",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_AllyNearEarlyGameIsAllyPudge",
+			]
+		},
+		
+		{
+			m_name = "techies_AllyNearEarlyGameIsAllyTiny_Rule"
+			m_Requirements = 
+			[
+				"AllyNear",
+				"Istechies",
+				"EarlyGame",
+				"IsAllyTiny",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_AllyNearEarlyGameIsAllyTiny",
+			]
+		},
+		
+		{
+			m_name = "techies_AllyNearEarlyGameIsAllyDark_Seer_Rule"
+			m_Requirements = 
+			[
+				"AllyNear",
+				"Istechies",
+				"EarlyGame",
+				"IsAllyDark_Seer",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_AllyNearEarlyGameIsAllyDark_Seer",
+			]
+		},
+		
+		{
+			m_name = "techies_AllyNearEarlyGameIsAllyTinkerChance_3%_Rule"
+			m_Requirements = 
+			[
+				"AllyNear",
+				"Istechies",
+				"EarlyGame",
+				"IsAllyTinker",
+				"Chance_3%",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_AllyNearEarlyGameIsAllyTinkerChance_3%",
+			]
+		},
+		
+		{
+			m_name = "techies_LastHit_Rule"
+			m_Requirements = 
+			[
+				"LastHit",
+				"Istechies",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_LastHit",
+			]
+		},
+		
+		{
+			m_name = "techies_LastHitChance_5%_Rule"
+			m_Requirements = 
+			[
+				"LastHit",
+				"Istechies",
+				"Chance_5%",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_LastHitChance_5%",
+			]
+		},
+		
+		{
+			m_name = "techies_RespawnIsTechiesRespawnDeath_Rule"
+			m_Requirements = 
+			[
+				"Respawn",
+				"Istechies",
+				"IsTechiesRespawnDeath",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_RespawnIsTechiesRespawnDeath",
+			]
+		},
+		
+		{
+			m_name = "techies_RespawnIsTechiesRespawnSuicideChance_75%_Rule"
+			m_Requirements = 
+			[
+				"Respawn",
+				"Istechies",
+				"IsTechiesRespawnSuicide",
+				"Chance_75%",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_RespawnIsTechiesRespawnSuicideChance_75%",
+			]
+		},
+		
+		{
+			m_name = "techies_PurchaseIsExpensiveItem_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Istechies",
+				"IsExpensiveItem",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_PurchaseIsExpensiveItem",
+			]
+		},
+		
+		{
+			m_name = "techies_PurchaseIsUltimateScepter_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Istechies",
+				"IsUltimateScepter",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_PurchaseIsUltimateScepter",
+			]
+		},
+		
+		{
+			m_name = "techies_PurchaseIsBlinkDagger_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Istechies",
+				"IsBlinkDagger",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_PurchaseIsBlinkDagger",
+			]
+		},
+		
+		{
+			m_name = "techies_PurchaseIsNecronomiconChance_20%_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Istechies",
+				"IsNecronomicon",
+				"Chance_20%",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_PurchaseIsNecronomiconChance_20%",
+			]
+		},
+		
+		{
+			m_name = "techies_PurchaseIsInvisSwordChance_20%_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Istechies",
+				"IsInvisSword",
+				"Chance_20%",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_PurchaseIsInvisSwordChance_20%",
+			]
+		},
+		
+		{
+			m_name = "techies_PurchaseIsMantaChance_20%_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Istechies",
+				"IsManta",
+				"Chance_20%",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_PurchaseIsMantaChance_20%",
+			]
+		},
+		
+		{
+			m_name = "techies_PurchaseIsBootsOfTravelChance_20%_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Istechies",
+				"IsBootsOfTravel",
+				"Chance_20%",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_PurchaseIsBootsOfTravelChance_20%",
+			]
+		},
+		
+		{
+			m_name = "techies_PurchaseIsEulScepter_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Istechies",
+				"IsEulScepter",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_PurchaseIsEulScepter",
+			]
+		},
+		
+		{
+			m_name = "techies_PurchaseIsSheepStick_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Istechies",
+				"IsSheepStick",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_PurchaseIsSheepStick",
+			]
+		},
+		
+		{
+			m_name = "techies_PurchaseIsForceStaff_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Istechies",
+				"IsForceStaff",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_PurchaseIsForceStaff",
+			]
+		},
+		
+		{
+			m_name = "techies_PurchaseIsBloodStone_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Istechies",
+				"IsBloodStone",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_PurchaseIsBloodStone",
+			]
+		},
+		
+		{
+			m_name = "techies_PurchaseIsOrchid_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Istechies",
+				"IsOrchid",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_PurchaseIsOrchid",
+			]
+		},
+		
+		{
+			m_name = "techies_PurchaseIsSphere_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Istechies",
+				"IsSphere",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_PurchaseIsSphere",
+			]
+		},
+		
+		{
+			m_name = "techies_PurchaseIsShiva_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Istechies",
+				"IsShiva",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_PurchaseIsShiva",
+			]
+		},
+		
+		{
+			m_name = "techies_PurchaseIsClaymoreChance_15%_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Istechies",
+				"IsClaymore",
+				"Chance_15%",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_PurchaseIsClaymoreChance_15%",
+			]
+		},
+		
+		{
+			m_name = "techies_PurchaseIsNecronomicon_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Istechies",
+				"IsNecronomicon",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_PurchaseIsNecronomicon",
+			]
+		},
+		
+		{
+			m_name = "techies_PurchaseIsInvisSword_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Istechies",
+				"IsInvisSword",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_PurchaseIsInvisSword",
+			]
+		},
+		
+		{
+			m_name = "techies_PurchaseIsManta_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Istechies",
+				"IsManta",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_PurchaseIsManta",
+			]
+		},
+		
+		{
+			m_name = "techies_Bottling_Rule"
+			m_Requirements = 
+			[
+				"Bottling",
+				"Istechies",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_Bottling",
+			]
+		},
+		
+		{
+			m_name = "techies_Deny_Rule"
+			m_Requirements = 
+			[
+				"Deny",
+				"Istechies",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_Deny",
+			]
+		},
+		
+		{
+			m_name = "techies_MissingIsLaneTop_Rule"
+			m_Requirements = 
+			[
+				"Missing",
+				"Istechies",
+				"IsLaneTop",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_MissingIsLaneTop",
+			]
+		},
+		
+		{
+			m_name = "techies_MissingIsLaneMid_Rule"
+			m_Requirements = 
+			[
+				"Missing",
+				"Istechies",
+				"IsLaneMid",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_MissingIsLaneMid",
+			]
+		},
+		
+		{
+			m_name = "techies_MissingIsLaneBot_Rule"
+			m_Requirements = 
+			[
+				"Missing",
+				"Istechies",
+				"IsLaneBot",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_MissingIsLaneBot",
+			]
+		},
+		
+		{
+			m_name = "techies_ItemDropIsCommonDrop_Rule"
+			m_Requirements = 
+			[
+				"ItemDrop",
+				"Istechies",
+				"IsCommonDrop",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_ItemDropIsCommonDrop",
+			]
+		},
+		
+		{
+			m_name = "techies_ItemDropIsRareDropChance_10%_Rule"
+			m_Requirements = 
+			[
+				"ItemDrop",
+				"Istechies",
+				"IsRareDrop",
+				"Chance_10%",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_ItemDropIsRareDropChance_10%",
+			]
+		},
+		
+		{
+			m_name = "techies_ItemDropIsRareDrop_Rule"
+			m_Requirements = 
+			[
+				"ItemDrop",
+				"Istechies",
+				"IsRareDrop",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_ItemDropIsRareDrop",
+			]
+		},
+		
+		{
+			m_name = "techies_ItemDropIsUltraRareDrop_Rule"
+			m_Requirements = 
+			[
+				"ItemDrop",
+				"Istechies",
+				"IsUltraRareDrop",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_ItemDropIsUltraRareDrop",
+			]
+		},
+		
+		{
+			m_name = "techies_Immortality_Rule"
+			m_Requirements = 
+			[
+				"Immortality",
+				"Istechies",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_Immortality",
+			]
+		},
+		
+		{
+			m_name = "techies_ImmortalityChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Immortality",
+				"Istechies",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_ImmortalityChance_25%",
+			]
+		},
+		
+		{
+			m_name = "techies_PowerupIsPowerupArcane_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Istechies",
+				"IsPowerupArcane",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_PowerupIsPowerupArcane",
+			]
+		},
+		
+		{
+			m_name = "techies_PowerupIsPowerupBounty_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Istechies",
+				"IsPowerupBounty",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_PowerupIsPowerupBounty",
+			]
+		},
+		
+		{
+			m_name = "techies_PowerupIsPowerupHasteChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Istechies",
+				"IsPowerupHaste",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_PowerupIsPowerupHasteChance_25%",
+			]
+		},
+		
+		{
+			m_name = "techies_PowerupIsPowerupHaste_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Istechies",
+				"IsPowerupHaste",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_PowerupIsPowerupHaste",
+			]
+		},
+		
+		{
+			m_name = "techies_PowerupIsPowerupDoubleDamage_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Istechies",
+				"IsPowerupDoubleDamage",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_PowerupIsPowerupDoubleDamage",
+			]
+		},
+		
+		{
+			m_name = "techies_PowerupIsPowerupDoubleDamageChance_5%_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Istechies",
+				"IsPowerupDoubleDamage",
+				"Chance_5%",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_PowerupIsPowerupDoubleDamageChance_5%",
+			]
+		},
+		
+		{
+			m_name = "techies_PowerupIsPowerupRegeneration_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Istechies",
+				"IsPowerupRegeneration",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_PowerupIsPowerupRegeneration",
+			]
+		},
+		
+		{
+			m_name = "techies_PowerupIsPowerupRegenerationChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Istechies",
+				"IsPowerupRegeneration",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_PowerupIsPowerupRegenerationChance_25%",
+			]
+		},
+		
+		{
+			m_name = "techies_PowerupIsPowerupIllusion_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Istechies",
+				"IsPowerupIllusion",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_PowerupIsPowerupIllusion",
+			]
+		},
+		
+		{
+			m_name = "techies_PowerupIsPowerupIllusionChance_5%_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Istechies",
+				"IsPowerupIllusion",
+				"Chance_5%",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_PowerupIsPowerupIllusionChance_5%",
+			]
+		},
+		
+		{
+			m_name = "techies_PowerupIsPowerupInvisibility_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Istechies",
+				"IsPowerupInvisibility",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_PowerupIsPowerupInvisibility",
+			]
+		},
+		
+		{
+			m_name = "techies_PowerupIsPowerupInvisibilityChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Istechies",
+				"IsPowerupInvisibility",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_PowerupIsPowerupInvisibilityChance_25%",
+			]
+		},
+		
+		{
+			m_name = "techies_CooldownLittleNag_Rule"
+			m_Requirements = 
+			[
+				"Cooldown",
+				"Istechies",
+				"LittleNag",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_CooldownLittleNag",
+			]
+		},
+		
+		{
+			m_name = "techies_CooldownMediumNag_Rule"
+			m_Requirements = 
+			[
+				"Cooldown",
+				"Istechies",
+				"MediumNag",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_CooldownMediumNag",
+			]
+		},
+		
+		{
+			m_name = "techies_CooldownSuperNag_Rule"
+			m_Requirements = 
+			[
+				"Cooldown",
+				"Istechies",
+				"SuperNag",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_CooldownSuperNag",
+			]
+		},
+		
+		{
+			m_name = "techies_NoManaLittleNag_Rule"
+			m_Requirements = 
+			[
+				"NoMana",
+				"Istechies",
+				"LittleNag",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_NoManaLittleNag",
+			]
+		},
+		
+		{
+			m_name = "techies_NoManaMediumNag_Rule"
+			m_Requirements = 
+			[
+				"NoMana",
+				"Istechies",
+				"MediumNag",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_NoManaMediumNag",
+			]
+		},
+		
+		{
+			m_name = "techies_NoManaSuperNag_Rule"
+			m_Requirements = 
+			[
+				"NoMana",
+				"Istechies",
+				"SuperNag",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_NoManaSuperNag",
+			]
+		},
+		
+		{
+			m_name = "techies_Thanks_Rule"
+			m_Requirements = 
+			[
+				"Thanks",
+				"Istechies",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_Thanks",
+			]
+		},
+		
+		{
+			m_name = "techies_ThanksChance_5%_Rule"
+			m_Requirements = 
+			[
+				"Thanks",
+				"Istechies",
+				"Chance_5%",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_ThanksChance_5%",
+			]
+		},
+		
+		{
+			m_name = "techies_PainChance_15%_Rule"
+			m_Requirements = 
+			[
+				"Pain",
+				"Istechies",
+				"Chance_15%",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_PainChance_15%",
+			]
+		},
+		
+		{
+			m_name = "techies_PainIsTechSpeakTrioLow_Rule"
+			m_Requirements = 
+			[
+				"Pain",
+				"Istechies",
+				"IsTechSpeakTrioLow",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_PainIsTechSpeakTrioLow",
+			]
+		},
+		
+		{
+			m_name = "techies_PainIsTechSpeakTrioHigh_Rule"
+			m_Requirements = 
+			[
+				"Pain",
+				"Istechies",
+				"IsTechSpeakTrioHigh",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_PainIsTechSpeakTrioHigh",
+			]
+		},
+		
+		{
+			m_name = "techies_PainIsTechSpeakTrioBarrel_Rule"
+			m_Requirements = 
+			[
+				"Pain",
+				"Istechies",
+				"IsTechSpeakTrioBarrel",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_PainIsTechSpeakTrioBarrel",
+			]
+		},
+		
+		{
+			m_name = "techies_InTheBag_Rule"
+			m_Requirements = 
+			[
+				"InTheBag",
+				"Istechies",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_InTheBag",
+			]
+		},
+		
+		{
+			m_name = "techies_Defeat_Rule"
+			m_Requirements = 
+			[
+				"Defeat",
+				"Istechies",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_Defeat",
+			]
+		},
+		
+		{
+			m_name = "techies_DefeatChance_2%_Rule"
+			m_Requirements = 
+			[
+				"Defeat",
+				"Istechies",
+				"Chance_2%",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_DefeatChance_2%",
+			]
+		},
+		
+		{
+			m_name = "techies_DefeatChance_5%_Rule"
+			m_Requirements = 
+			[
+				"Defeat",
+				"Istechies",
+				"Chance_5%",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_DefeatChance_5%",
+			]
+		},
+		
+		{
+			m_name = "techies_Victory_Rule"
+			m_Requirements = 
+			[
+				"Victory",
+				"Istechies",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_Victory",
+			]
+		},
+		
+		{
+			m_name = "techies_VictoryChance_5%_Rule"
+			m_Requirements = 
+			[
+				"Victory",
+				"Istechies",
+				"Chance_5%",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_VictoryChance_5%",
+			]
+		},
+		
+		{
+			m_name = "techies_Select_Rule"
+			m_Requirements = 
+			[
+				"Select",
+				"Istechies",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_Select",
+			]
+		},
+		
+		{
+			m_name = "techies_EmoteIsEmoteLaughIsTechSpeakTrioLow_Rule"
+			m_Requirements = 
+			[
+				"Emote",
+				"Istechies",
+				"IsEmoteLaugh",
+				"IsTechSpeakTrioLow",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_EmoteIsEmoteLaughIsTechSpeakTrioLow",
+			]
+		},
+		
+		{
+			m_name = "techies_EmoteIsEmoteLaughIsTechSpeakTrioHigh_Rule"
+			m_Requirements = 
+			[
+				"Emote",
+				"Istechies",
+				"IsEmoteLaugh",
+				"IsTechSpeakTrioHigh",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_EmoteIsEmoteLaughIsTechSpeakTrioHigh",
+			]
+		},
+		
+		{
+			m_name = "techies_EmoteIsEmoteLaughIsTechSpeakTrioBarrel_Rule"
+			m_Requirements = 
+			[
+				"Emote",
+				"Istechies",
+				"IsEmoteLaugh",
+				"IsTechSpeakTrioBarrel",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_EmoteIsEmoteLaughIsTechSpeakTrioBarrel",
+			]
+		},
+		
+		{
+			m_name = "techies_TauntIsTechiesTauntSwingAround_Rule"
+			m_Requirements = 
+			[
+				"Taunt",
+				"Istechies",
+				"IsTechiesTauntSwingAround",
+			]
+			m_ResponseGroups = 
+			[
+				"techies_TauntIsTechiesTauntSwingAround",
+			]
+		},
+	]
 }
-

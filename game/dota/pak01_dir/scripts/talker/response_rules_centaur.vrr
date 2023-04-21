@@ -1,1334 +1,3886 @@
-#include "talker/response_rules_shared.vrr"
-
-criterion "Iscentaur" "classname" "npc_dota_hero_centaur" weight 5 required
-criterion "IsCentaurStomp" "abilityname" "centaur_hoof_stomp" weight 5 required
-criterion "IsCentaurEdge" "abilityname" "centaur_double_edge" weight 5 required
-criterion "NeutralCentaurKhan" "killedunitname" "npc_dota_neutral_centaur_khan" weight 5 required
-criterion "NeutralCentaurOutrunner" "killedunitname" "npc_dota_neutral_centaur_outrunner" weight 5 required
-criterion "IsCentaurLoadoutSpawn" "special_spawn" "centaur_loadout_spawn" weight 5 required
-
-Response centaur_Spawn
-{
-	scene "scenes/centaur/centaur_cent_spawn_01.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_spawn_02.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_spawn_03.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_spawn_06.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_spawn_07.vcd" nodelay 
-}
-
-Rule centaur_Spawn_Rule
-{
-	criteria Spawn Iscentaur 
-	response centaur_Spawn
-}
-
-Response centaur_CustomIsGameStart
-{
-	scene "scenes/centaur/centaur_cent_battlebegins_01.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_battlebegins_02.vcd" nodelay 
-}
-
-Rule centaur_CustomIsGameStart_Rule
-{
-	criteria Custom Iscentaur IsGameStart
-	response centaur_CustomIsGameStart
-}
-
-Response centaur_CustomIsCentaurLoadoutSpawn
-{
-	scene "scenes/centaur/centaur_cent_spawn_01.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_spawn_02.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_spawn_03.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_spawn_06.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_spawn_07.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_battlebegins_02.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_move_04.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_move_12.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_levelup_05.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_respawn_08.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_respawn_10.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_win_03.vcd" nodelay 
-}
-
-Rule centaur_CustomIsCentaurLoadoutSpawn_Rule
-{
-	criteria Custom Iscentaur IsCentaurLoadoutSpawn
-	response centaur_CustomIsCentaurLoadoutSpawn
-}
-
-Response centaur_KillIsFirstBlood
-{
-	scene "scenes/centaur/centaur_cent_firstblood_01.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_firstblood_02.vcd" nodelay 
-}
-
-Rule centaur_KillIsFirstBlood_Rule
-{
-	criteria Kill Iscentaur IsFirstBlood
-	response centaur_KillIsFirstBlood
-}
-
-Response centaur_KillIsCentaurEdgeChance_15%
-{
-	scene "scenes/centaur/centaur_cent_doub_edge_05.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_doub_edge_06.vcd" nodelay 
-}
-
-Rule centaur_KillIsCentaurEdgeChance_15%_Rule
-{
-	criteria Kill Iscentaur IsCentaurEdge Chance_15%
-	response centaur_KillIsCentaurEdgeChance_15%
-}
-
-Response centaur_KillIsCentaurStompChance_25%
-{
-	scene "scenes/centaur/centaur_cent_hoof_stomp_04.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_hoof_stomp_05.vcd" nodelay 
-}
-
-Rule centaur_KillIsCentaurStompChance_25%_Rule
-{
-	criteria Kill Iscentaur IsCentaurStomp Chance_25%
-	response centaur_KillIsCentaurStompChance_25%
-}
-
-Response centaur_Kill
-{
-	scene "scenes/centaur/centaur_cent_kill_01.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_kill_02.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_kill_03.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_kill_04.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_kill_05.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_kill_06.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_kill_07.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_kill_08.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_kill_09.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_kill_10.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_kill_11.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_kill_12.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_laugh_01.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_laugh_02.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_laugh_03.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_laugh_04.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_laugh_05.vcd" nodelay 
-}
-
-Rule centaur_Kill_Rule
-{
-	criteria Kill Iscentaur 
-	response centaur_Kill
-}
-
-Response centaur_KillIsEnemySkeleton_KingChance_25%
-{
-	scene "scenes/centaur/centaur_cent_rival_01.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_rival_02.vcd" nodelay 
-}
-
-Rule centaur_KillIsEnemySkeleton_KingChance_25%_Rule
-{
-	criteria Kill Iscentaur IsEnemySkeleton_King Chance_25%
-	response centaur_KillIsEnemySkeleton_KingChance_25%
-}
-
-Response centaur_KillIsEnemyAncient_ApparitionChance_25%
-{
-	scene "scenes/centaur/centaur_cent_rival_03.vcd" nodelay 
-}
-
-Rule centaur_KillIsEnemyAncient_ApparitionChance_25%_Rule
-{
-	criteria Kill Iscentaur IsEnemyAncient_Apparition Chance_25%
-	response centaur_KillIsEnemyAncient_ApparitionChance_25%
-}
-
-Response centaur_KillIsEnemyChaos_KnightChance_25%
-{
-	scene "scenes/centaur/centaur_cent_rival_04.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_rival_05.vcd" nodelay 
-}
-
-Rule centaur_KillIsEnemyChaos_KnightChance_25%_Rule
-{
-	criteria Kill Iscentaur IsEnemyChaos_Knight Chance_25%
-	response centaur_KillIsEnemyChaos_KnightChance_25%
-}
-
-Response centaur_KillIsEnemyOmniknightChance_15%
-{
-	scene "scenes/centaur/centaur_cent_rival_06.vcd" nodelay 
-}
-
-Rule centaur_KillIsEnemyOmniknightChance_15%_Rule
-{
-	criteria Kill Iscentaur IsEnemyOmniknight Chance_15%
-	response centaur_KillIsEnemyOmniknightChance_15%
-}
-
-Response centaur_KillIsEnemyRikiChance_15%
-{
-	scene "scenes/centaur/centaur_cent_rival_08.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_rival_09.vcd" nodelay 
-}
-
-Rule centaur_KillIsEnemyRikiChance_15%_Rule
-{
-	criteria Kill Iscentaur IsEnemyRiki Chance_15%
-	response centaur_KillIsEnemyRikiChance_15%
-}
-
-Response centaur_KillIsEnemyAxeChance_15%
-{
-	scene "scenes/centaur/centaur_cent_rival_10.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_rival_11.vcd" nodelay 
-}
-
-Rule centaur_KillIsEnemyAxeChance_15%_Rule
-{
-	criteria Kill Iscentaur IsEnemyAxe Chance_15%
-	response centaur_KillIsEnemyAxeChance_15%
-}
-
-Response centaur_KillIsEnemyBeastmasterChance_25%
-{
-	scene "scenes/centaur/centaur_cent_rival_12.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_rival_14.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_rival_15.vcd" nodelay 
-}
-
-Rule centaur_KillIsEnemyBeastmasterChance_25%_Rule
-{
-	criteria Kill Iscentaur IsEnemyBeastmaster Chance_25%
-	response centaur_KillIsEnemyBeastmasterChance_25%
-}
-
-Response centaur_KillIsEnemyTuskChance_25%
-{
-	scene "scenes/centaur/centaur_cent_rival_16.vcd" nodelay 
-}
-
-Rule centaur_KillIsEnemyTuskChance_25%_Rule
-{
-	criteria Kill Iscentaur IsEnemyTusk Chance_25%
-	response centaur_KillIsEnemyTuskChance_25%
-}
-
-Response centaur_KillIsEnemyLeshracChance_25%
-{
-	scene "scenes/centaur/centaur_cent_rival_19.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_rival_20.vcd" nodelay 
-}
-
-Rule centaur_KillIsEnemyLeshracChance_25%_Rule
-{
-	criteria Kill Iscentaur IsEnemyLeshrac Chance_25%
-	response centaur_KillIsEnemyLeshracChance_25%
-}
-
-Response centaur_KillIsEnemyLionChance_25%
-{
-	scene "scenes/centaur/centaur_cent_rival_21.vcd" nodelay 
-}
-
-Rule centaur_KillIsEnemyLionChance_25%_Rule
-{
-	criteria Kill Iscentaur IsEnemyLion Chance_25%
-	response centaur_KillIsEnemyLionChance_25%
-}
-
-Response centaur_KillIsEnemyEmber_SpiritChance_25%
-{
-	scene "scenes/centaur/centaur_cent_rival_22.vcd" nodelay 
-}
-
-Rule centaur_KillIsEnemyEmber_SpiritChance_25%_Rule
-{
-	criteria Kill Iscentaur IsEnemyEmber_Spirit Chance_25%
-	response centaur_KillIsEnemyEmber_SpiritChance_25%
-}
-
-Response centaur_KillIsEnemyWinter_WyvernChance_25%
-{
-	scene "scenes/centaur/centaur_cent_rival_23.vcd" nodelay 
-}
-
-Rule centaur_KillIsEnemyWinter_WyvernChance_25%_Rule
-{
-	criteria Kill Iscentaur IsEnemyWinter_Wyvern Chance_25%
-	response centaur_KillIsEnemyWinter_WyvernChance_25%
-}
-
-Response centaur_KillIsEnemyPhoenixChance_25%
-{
-	scene "scenes/centaur/centaur_cent_rival_24.vcd" nodelay 
-}
-
-Rule centaur_KillIsEnemyPhoenixChance_25%_Rule
-{
-	criteria Kill Iscentaur IsEnemyPhoenix Chance_25%
-	response centaur_KillIsEnemyPhoenixChance_25%
-}
-
-Response centaur_KillIsEnemyTerrorbladeChance_25%
-{
-	scene "scenes/centaur/centaur_cent_rival_25.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_rival_26.vcd" nodelay 
-}
-
-Rule centaur_KillIsEnemyTerrorbladeChance_25%_Rule
-{
-	criteria Kill Iscentaur IsEnemyTerrorblade Chance_25%
-	response centaur_KillIsEnemyTerrorbladeChance_25%
-}
-
-Response centaur_KillIsEnemyAbyssal_UnderlordChance_25%
-{
-	scene "scenes/centaur/centaur_cent_rival_27.vcd" nodelay 
-}
-
-Rule centaur_KillIsEnemyAbyssal_UnderlordChance_25%_Rule
-{
-	criteria Kill Iscentaur IsEnemyAbyssal_Underlord Chance_25%
-	response centaur_KillIsEnemyAbyssal_UnderlordChance_25%
-}
-
-Response centaur_KillIsEnemyArc_WardenChance_25%
-{
-	scene "scenes/centaur/centaur_cent_rival_28.vcd" nodelay 
-}
-
-Rule centaur_KillIsEnemyArc_WardenChance_25%_Rule
-{
-	criteria Kill Iscentaur IsEnemyArc_Warden Chance_25%
-	response centaur_KillIsEnemyArc_WardenChance_25%
-}
-
-Response centaur_KillIsEnemyBroodmotherChance_25%
-{
-	scene "scenes/centaur/centaur_cent_rival_29.vcd" nodelay 
-}
-
-Rule centaur_KillIsEnemyBroodmotherChance_25%_Rule
-{
-	criteria Kill Iscentaur IsEnemyBroodmother Chance_25%
-	response centaur_KillIsEnemyBroodmotherChance_25%
-}
-
-Response centaur_KillIsEnemyMagnataurChance_25%
-{
-	scene "scenes/centaur/centaur_cent_rival_30.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_rival_31.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_rival_32.vcd" nodelay 
-}
-
-Rule centaur_KillIsEnemyMagnataurChance_25%_Rule
-{
-	criteria Kill Iscentaur IsEnemyMagnataur Chance_25%
-	response centaur_KillIsEnemyMagnataurChance_25%
-}
-
-Response centaur_KillIsEnemyQueenofPainChance_25%
-{
-	scene "scenes/centaur/centaur_cent_rival_34.vcd" nodelay 
-}
-
-Rule centaur_KillIsEnemyQueenofPainChance_25%_Rule
-{
-	criteria Kill Iscentaur IsEnemyQueenofPain Chance_25%
-	response centaur_KillIsEnemyQueenofPainChance_25%
-}
-
-Response centaur_KillIsEnemyLycanChance_25%
-{
-	scene "scenes/centaur/centaur_cent_rival_35.vcd" nodelay 
-}
-
-Rule centaur_KillIsEnemyLycanChance_25%_Rule
-{
-	criteria Kill Iscentaur IsEnemyLycan Chance_25%
-	response centaur_KillIsEnemyLycanChance_25%
-}
-
-Response centaur_KillIsEnemyBristlebackChance_25%
-{
-	scene "scenes/centaur/centaur_cent_rival_36.vcd" nodelay 
-}
-
-Rule centaur_KillIsEnemyBristlebackChance_25%_Rule
-{
-	criteria Kill Iscentaur IsEnemyBristleback Chance_25%
-	response centaur_KillIsEnemyBristlebackChance_25%
-}
-
-Response centaur_KillIsEnemyWispChance_25%
-{
-	scene "scenes/centaur/centaur_cent_rival_37.vcd" nodelay 
-}
-
-Rule centaur_KillIsEnemyWispChance_25%_Rule
-{
-	criteria Kill Iscentaur IsEnemyWisp Chance_25%
-	response centaur_KillIsEnemyWispChance_25%
-}
-
-Response centaur_KillIsEnemyDisruptorChance_25%
-{
-	scene "scenes/centaur/centaur_cent_rival_38.vcd" nodelay 
-}
-
-Rule centaur_KillIsEnemyDisruptorChance_25%_Rule
-{
-	criteria Kill Iscentaur IsEnemyDisruptor Chance_25%
-	response centaur_KillIsEnemyDisruptorChance_25%
-}
-
-Response centaur_Move
-{
-	scene "scenes/centaur/centaur_cent_move_01.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_move_02.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_move_03.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_move_04.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_move_05.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_move_06.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_move_07.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_move_08.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_move_09.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_move_10.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_move_11.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_move_12.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_move_13.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_move_14.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_move_15.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_move_16.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_move_17.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_move_18.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_move_19.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_move_20.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_move_21.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_move_22.vcd" nodelay 
-}
-
-Rule centaur_Move_Rule
-{
-	criteria Move Iscentaur 
-	response centaur_Move
-}
-
-Response centaur_Attack
-{
-	scene "scenes/centaur/centaur_cent_attack_01.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_attack_02.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_attack_03.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_attack_04.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_attack_05.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_attack_06.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_attack_07.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_attack_08.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_attack_09.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_attack_10.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_attack_11.vcd" nodelay 
-}
-
-Rule centaur_Attack_Rule
-{
-	criteria Attack Iscentaur 
-	response centaur_Attack
-}
-
-Response centaur_CastOrder
-{
-	scene "scenes/centaur/centaur_cent_cast_01.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_cast_02.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_cast_03.vcd" nodelay 
-}
-
-Rule centaur_CastOrder_Rule
-{
-	criteria CastOrder Iscentaur 
-	response centaur_CastOrder
-}
-
-Response centaur_CastExecuteIsCentaurEdgeChance_75%
-{
-	scene "scenes/centaur/centaur_cent_doub_edge_01.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_doub_edge_02.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_doub_edge_03.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_doub_edge_04.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_doub_edge_09.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_doub_edge_10.vcd" nodelay 
-}
-
-Rule centaur_CastExecuteIsCentaurEdgeChance_75%_Rule
-{
-	criteria CastExecute Iscentaur IsCentaurEdge Chance_75%
-	response centaur_CastExecuteIsCentaurEdgeChance_75%
-}
-
-Response centaur_CastExecuteIsCentaurStompChance_50%
-{
-	scene "scenes/centaur/centaur_cent_hoof_stomp_01.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_hoof_stomp_02.vcd" nodelay 
-}
-
-Rule centaur_CastExecuteIsCentaurStompChance_50%_Rule
-{
-	criteria CastExecute Iscentaur IsCentaurStomp Chance_50%
-	response centaur_CastExecuteIsCentaurStompChance_50%
-}
-
-Response centaur_LevelUp
-{
-	scene "scenes/centaur/centaur_cent_levelup_01.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_levelup_02.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_levelup_03.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_levelup_04.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_levelup_05.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_levelup_06.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_levelup_07.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_levelup_08.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_levelup_09.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_levelup_10.vcd" nodelay 
-}
-
-Rule centaur_LevelUp_Rule
-{
-	criteria LevelUp Iscentaur 
-	response centaur_LevelUp
-}
-
-Response centaur_LastHitNeutralCentaurKhan
-{
-	scene "scenes/centaur/centaur_cent_rival_17.vcd" nodelay 
-}
-
-Rule centaur_LastHitNeutralCentaurKhan_Rule
-{
-	criteria LastHit Iscentaur NeutralCentaurKhan
-	response centaur_LastHitNeutralCentaurKhan
-}
-
-Response centaur_LastHitNeutralCentaurOutrunner
-{
-	scene "scenes/centaur/centaur_cent_rival_18.vcd" nodelay 
-}
-
-Rule centaur_LastHitNeutralCentaurOutrunner_Rule
-{
-	criteria LastHit Iscentaur NeutralCentaurOutrunner
-	response centaur_LastHitNeutralCentaurOutrunner
-}
-
-Response centaur_LastHit
-{
-	scene "scenes/centaur/centaur_cent_lasthit_01.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_lasthit_02.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_lasthit_03.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_lasthit_04.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_lasthit_05.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_lasthit_06.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_lasthit_07.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_lasthit_08.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_lasthit_09.vcd" nodelay 
-}
-
-Rule centaur_LastHit_Rule
-{
-	criteria LastHit Iscentaur 
-	response centaur_LastHit
-}
-
-Response centaur_AllyNearIsAllyInvokerEarlyGame
-{
-	scene "scenes/centaur/centaur_cent_ally_01.vcd" nodelay speakonce
-}
-
-Rule centaur_AllyNearIsAllyInvokerEarlyGame_Rule
-{
-	criteria AllyNear Iscentaur IsAllyInvoker EarlyGame
-	response centaur_AllyNearIsAllyInvokerEarlyGame
-}
-
-Response centaur_AllyNearIsAllyAntimageEarlyGame
-{
-	scene "scenes/centaur/centaur_cent_ally_02.vcd" nodelay speakonce
-}
-
-Rule centaur_AllyNearIsAllyAntimageEarlyGame_Rule
-{
-	criteria AllyNear Iscentaur IsAllyAntimage EarlyGame
-	response centaur_AllyNearIsAllyAntimageEarlyGame
-}
-
-Response centaur_AllyNearIsAllyLichEarlyGame
-{
-	scene "scenes/centaur/centaur_cent_ally_03.vcd" nodelay speakonce
-}
-
-Rule centaur_AllyNearIsAllyLichEarlyGame_Rule
-{
-	criteria AllyNear Iscentaur IsAllyLich EarlyGame
-	response centaur_AllyNearIsAllyLichEarlyGame
-}
-
-Response centaur_AllyNearIsAllyLionEarlyGame
-{
-	scene "scenes/centaur/centaur_cent_ally_04.vcd" nodelay speakonce
-}
-
-Rule centaur_AllyNearIsAllyLionEarlyGame_Rule
-{
-	criteria AllyNear Iscentaur IsAllyLion EarlyGame
-	response centaur_AllyNearIsAllyLionEarlyGame
-}
-
-Response centaur_AllyNearIsAllyEnchantressEarlyGame
-{
-	scene "scenes/centaur/centaur_cent_ally_05.vcd" nodelay speakonce
-	scene "scenes/centaur/centaur_cent_ally_06.vcd" nodelay speakonce
-}
-
-Rule centaur_AllyNearIsAllyEnchantressEarlyGame_Rule
-{
-	criteria AllyNear Iscentaur IsAllyEnchantress EarlyGame
-	response centaur_AllyNearIsAllyEnchantressEarlyGame
-}
-
-Response centaur_AllyNearIsAllyLeshracEarlyGame
-{
-	scene "scenes/centaur/centaur_cent_ally_07.vcd" nodelay speakonce
-}
-
-Rule centaur_AllyNearIsAllyLeshracEarlyGame_Rule
-{
-	criteria AllyNear Iscentaur IsAllyLeshrac EarlyGame
-	response centaur_AllyNearIsAllyLeshracEarlyGame
-}
-
-Response centaur_AllyNearIsAllyKeeper_of_the_LightEarlyGame
-{
-	scene "scenes/centaur/centaur_cent_ally_08.vcd" nodelay speakonce
-	scene "scenes/centaur/centaur_cent_ally_09.vcd" nodelay speakonce
-}
-
-Rule centaur_AllyNearIsAllyKeeper_of_the_LightEarlyGame_Rule
-{
-	criteria AllyNear Iscentaur IsAllyKeeper_of_the_Light EarlyGame
-	response centaur_AllyNearIsAllyKeeper_of_the_LightEarlyGame
-}
-
-Response centaur_AllyNearIsAllyArc_WardenEarlyGame
-{
-	scene "scenes/centaur/centaur_cent_ally_10.vcd" nodelay speakonce
-}
-
-Rule centaur_AllyNearIsAllyArc_WardenEarlyGame_Rule
-{
-	criteria AllyNear Iscentaur IsAllyArc_Warden EarlyGame
-	response centaur_AllyNearIsAllyArc_WardenEarlyGame
-}
-
-Response centaur_AllyNearIsAllyChaos_KnightEarlyGame
-{
-	scene "scenes/centaur/centaur_cent_ally_11.vcd" nodelay speakonce
-	scene "scenes/centaur/centaur_cent_ally_12.vcd" nodelay speakonce
-}
-
-Rule centaur_AllyNearIsAllyChaos_KnightEarlyGame_Rule
-{
-	criteria AllyNear Iscentaur IsAllyChaos_Knight EarlyGame
-	response centaur_AllyNearIsAllyChaos_KnightEarlyGame
-}
-
-Response centaur_AllyNearIsAllyMagnataurEarlyGame
-{
-	scene "scenes/centaur/centaur_cent_ally_13.vcd" nodelay speakonce
-	scene "scenes/centaur/centaur_cent_ally_14.vcd" nodelay speakonce
-	scene "scenes/centaur/centaur_cent_ally_15.vcd" nodelay speakonce
-}
-
-Rule centaur_AllyNearIsAllyMagnataurEarlyGame_Rule
-{
-	criteria AllyNear Iscentaur IsAllyMagnataur EarlyGame
-	response centaur_AllyNearIsAllyMagnataurEarlyGame
-}
-
-Response centaur_AllyNearIsAllyDisruptorEarlyGame
-{
-	scene "scenes/centaur/centaur_cent_ally_16.vcd" nodelay speakonce
-	scene "scenes/centaur/centaur_cent_ally_17.vcd" nodelay speakonce
-}
-
-Rule centaur_AllyNearIsAllyDisruptorEarlyGame_Rule
-{
-	criteria AllyNear Iscentaur IsAllyDisruptor EarlyGame
-	response centaur_AllyNearIsAllyDisruptorEarlyGame
-}
-
-Response centaur_Death
-{
-	scene "scenes/centaur/centaur_cent_death_01.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_death_02.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_death_03.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_death_04.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_death_05.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_death_06.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_death_07.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_death_08.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_death_09.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_death_10.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_death_11.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_death_12.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_death_13.vcd" nodelay 
-}
-
-Rule centaur_Death_Rule
-{
-	criteria Death Iscentaur 
-	response centaur_Death
-}
-
-Response centaur_DeathIsReincarnating
-{
-	scene "scenes/centaur/centaur_cent_fastres_01.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_fastres_02.vcd" nodelay 
-}
-
-Rule centaur_DeathIsReincarnating_Rule
-{
-	criteria Death Iscentaur IsReincarnating
-	response centaur_DeathIsReincarnating
-}
-
-Response centaur_Respawn
-{
-	scene "scenes/centaur/centaur_cent_respawn_01.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_respawn_02.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_respawn_03.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_respawn_04.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_respawn_05.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_respawn_06.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_respawn_07.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_respawn_08.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_respawn_09.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_respawn_10.vcd" nodelay 
-}
-
-Rule centaur_Respawn_Rule
-{
-	criteria Respawn Iscentaur 
-	response centaur_Respawn
-}
-
-Response centaur_Select
-{
-	scene "scenes/centaur/centaur_cent_ally_18.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_ally_19.vcd" nodelay 
-}
-
-Rule centaur_Select_Rule
-{
-	criteria Select Iscentaur 
-	response centaur_Select
-}
-
-Response centaur_PurchaseIsExpensiveItem
-{
-	scene "scenes/centaur/centaur_cent_purch_01.vcd" nodelay speakonce
-	scene "scenes/centaur/centaur_cent_purch_02.vcd" nodelay speakonce
-	scene "scenes/centaur/centaur_cent_purch_03.vcd" nodelay speakonce
-}
-
-Rule centaur_PurchaseIsExpensiveItem_Rule
-{
-	criteria Purchase Iscentaur IsExpensiveItem
-	response centaur_PurchaseIsExpensiveItem
-}
-
-Response centaur_PurchaseIsUltimateScepter
-{
-	scene "scenes/centaur/centaur_cent_scepter_01.vcd" nodelay speakonce
-	scene "scenes/centaur/centaur_cent_scepter_02.vcd" nodelay speakonce
-}
-
-Rule centaur_PurchaseIsUltimateScepter_Rule
-{
-	criteria Purchase Iscentaur IsUltimateScepter
-	response centaur_PurchaseIsUltimateScepter
-}
-
-Response centaur_PurchaseIsBlinkDagger
-{
-	scene "scenes/centaur/centaur_cent_blink_01.vcd" nodelay speakonce
-	scene "scenes/centaur/centaur_cent_blink_02.vcd" nodelay speakonce
-}
-
-Rule centaur_PurchaseIsBlinkDagger_Rule
-{
-	criteria Purchase Iscentaur IsBlinkDagger
-	response centaur_PurchaseIsBlinkDagger
-}
-
-Response centaur_PurchaseIsManta
-{
-	scene "scenes/centaur/centaur_cent_items_01.vcd" nodelay speakonce
-}
-
-Rule centaur_PurchaseIsManta_Rule
-{
-	criteria Purchase Iscentaur IsManta
-	response centaur_PurchaseIsManta
-}
-
-Response centaur_PurchaseIsHelmOftheDominator
-{
-	scene "scenes/centaur/centaur_cent_items_02.vcd" nodelay speakonce
-}
-
-Rule centaur_PurchaseIsHelmOftheDominator_Rule
-{
-	criteria Purchase Iscentaur IsHelmOftheDominator
-	response centaur_PurchaseIsHelmOftheDominator
-}
-
-Response centaur_PurchaseIsHeart
-{
-	scene "scenes/centaur/centaur_cent_items_03.vcd" nodelay speakonce
-}
-
-Rule centaur_PurchaseIsHeart_Rule
-{
-	criteria Purchase Iscentaur IsHeart
-	response centaur_PurchaseIsHeart
-}
-
-Response centaur_PurchaseIsAssaultCuirass
-{
-	scene "scenes/centaur/centaur_cent_items_04.vcd" nodelay speakonce
-}
-
-Rule centaur_PurchaseIsAssaultCuirass_Rule
-{
-	criteria Purchase Iscentaur IsAssaultCuirass
-	response centaur_PurchaseIsAssaultCuirass
-}
-
-Response centaur_PurchaseIsSatanic
-{
-	scene "scenes/centaur/centaur_cent_items_05.vcd" nodelay speakonce
-}
-
-Rule centaur_PurchaseIsSatanic_Rule
-{
-	criteria Purchase Iscentaur IsSatanic
-	response centaur_PurchaseIsSatanic
-}
-
-Response centaur_PurchaseIsSangeAndYasha
-{
-	scene "scenes/centaur/centaur_cent_items_06.vcd" nodelay speakonce
-}
-
-Rule centaur_PurchaseIsSangeAndYasha_Rule
-{
-	criteria Purchase Iscentaur IsSangeAndYasha
-	response centaur_PurchaseIsSangeAndYasha
-}
-
-Response centaur_PurchaseIsPipe
-{
-	scene "scenes/centaur/centaur_cent_items_07.vcd" nodelay speakonce
-}
-
-Rule centaur_PurchaseIsPipe_Rule
-{
-	criteria Purchase Iscentaur IsPipe
-	response centaur_PurchaseIsPipe
-}
-
-Response centaur_PurchaseIsVanguard
-{
-	scene "scenes/centaur/centaur_cent_items_08.vcd" nodelay speakonce
-}
-
-Rule centaur_PurchaseIsVanguard_Rule
-{
-	criteria Purchase Iscentaur IsVanguard
-	response centaur_PurchaseIsVanguard
-}
-
-Response centaur_PurchaseIsArcaneBoots
-{
-	scene "scenes/centaur/centaur_cent_items_09.vcd" nodelay speakonce
-}
-
-Rule centaur_PurchaseIsArcaneBoots_Rule
-{
-	criteria Purchase Iscentaur IsArcaneBoots
-	response centaur_PurchaseIsArcaneBoots
-}
-
-Response centaur_PurchaseIsShiva
-{
-	scene "scenes/centaur/centaur_cent_items_10.vcd" nodelay speakonce
-}
-
-Rule centaur_PurchaseIsShiva_Rule
-{
-	criteria Purchase Iscentaur IsShiva
-	response centaur_PurchaseIsShiva
-}
-
-Response centaur_PurchaseIsBloodStone
-{
-	scene "scenes/centaur/centaur_cent_items_11.vcd" nodelay speakonce
-}
-
-Rule centaur_PurchaseIsBloodStone_Rule
-{
-	criteria Purchase Iscentaur IsBloodStone
-	response centaur_PurchaseIsBloodStone
-}
-
-Response centaur_PurchaseIsEthereal
-{
-	scene "scenes/centaur/centaur_cent_items_12.vcd" nodelay speakonce
-	scene "scenes/centaur/centaur_cent_items_13.vcd" nodelay speakonce
-}
-
-Rule centaur_PurchaseIsEthereal_Rule
-{
-	criteria Purchase Iscentaur IsEthereal
-	response centaur_PurchaseIsEthereal
-}
-
-Response centaur_Bottling
-{
-	scene "scenes/centaur/centaur_cent_bottle_01.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_bottle_02.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_bottle_03.vcd" nodelay 
-}
-
-Rule centaur_Bottling_Rule
-{
-	criteria Bottling Iscentaur 
-	response centaur_Bottling
-}
-
-Response centaur_Deny
-{
-	scene "scenes/centaur/centaur_cent_deny_01.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_deny_02.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_deny_03.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_deny_04.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_deny_05.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_deny_06.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_deny_07.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_deny_08.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_deny_09.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_deny_10.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_deny_11.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_deny_12.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_deny_13.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_deny_14.vcd" nodelay 
-}
-
-Rule centaur_Deny_Rule
-{
-	criteria Deny Iscentaur 
-	response centaur_Deny
-}
-
-Response centaur_MissingIsLaneTop
-{
-	scene "scenes/centaur/centaur_cent_lane_missing_01.vcd" nodelay 
-}
-
-Rule centaur_MissingIsLaneTop_Rule
-{
-	criteria Missing Iscentaur IsLaneTop
-	response centaur_MissingIsLaneTop
-}
-
-Response centaur_MissingIsLaneMid
-{
-	scene "scenes/centaur/centaur_cent_lane_missing_02.vcd" nodelay 
-}
-
-Rule centaur_MissingIsLaneMid_Rule
-{
-	criteria Missing Iscentaur IsLaneMid
-	response centaur_MissingIsLaneMid
-}
-
-Response centaur_MissingIsLaneBot
-{
-	scene "scenes/centaur/centaur_cent_lane_missing_03.vcd" nodelay 
-}
-
-Rule centaur_MissingIsLaneBot_Rule
-{
-	criteria Missing Iscentaur IsLaneBot
-	response centaur_MissingIsLaneBot
-}
-
-Response centaur_ItemDropIsCommonDrop
-{
-	scene "scenes/centaur/centaur_cent_drop_common_01.vcd" nodelay 
-}
-
-Rule centaur_ItemDropIsCommonDrop_Rule
-{
-	criteria ItemDrop Iscentaur IsCommonDrop
-	response centaur_ItemDropIsCommonDrop
-}
-
-Response centaur_ItemDropIsRareDrop
-{
-	scene "scenes/centaur/centaur_cent_drop_medium_01.vcd" nodelay 
-}
-
-Rule centaur_ItemDropIsRareDrop_Rule
-{
-	criteria ItemDrop Iscentaur IsRareDrop
-	response centaur_ItemDropIsRareDrop
-}
-
-Response centaur_ItemDropIsUltraRareDrop
-{
-	scene "scenes/centaur/centaur_cent_drop_rare_01.vcd" nodelay 
-}
-
-Rule centaur_ItemDropIsUltraRareDrop_Rule
-{
-	criteria ItemDrop Iscentaur IsUltraRareDrop
-	response centaur_ItemDropIsUltraRareDrop
-}
-
-Response centaur_Immortality
-{
-	scene "scenes/centaur/centaur_cent_immort_01.vcd" nodelay 
-}
-
-Rule centaur_Immortality_Rule
-{
-	criteria Immortality Iscentaur 
-	response centaur_Immortality
-}
-
-Response centaur_ImmortalityChance_25%
-{
-	scene "scenes/centaur/centaur_cent_immort_02.vcd" nodelay 
-}
-
-Rule centaur_ImmortalityChance_25%_Rule
-{
-	criteria Immortality Iscentaur Chance_25%
-	response centaur_ImmortalityChance_25%
-}
-
-Response centaur_PowerupIsPowerupBounty
-{
-	scene "scenes/centaur/centaur_cent_drop_medium_01.vcd" nodelay respeakdelay 300
-}
-
-Rule centaur_PowerupIsPowerupBounty_Rule
-{
-	criteria Powerup Iscentaur IsPowerupBounty
-	response centaur_PowerupIsPowerupBounty
-}
-
-Response centaur_PowerupIsPowerupArcane
-{
-	scene "scenes/centaur/centaur_cent_happy_03.vcd" nodelay respeakdelay 300
-}
-
-Rule centaur_PowerupIsPowerupArcane_Rule
-{
-	criteria Powerup Iscentaur IsPowerupArcane
-	response centaur_PowerupIsPowerupArcane
-}
-
-Response centaur_PowerupIsPowerupHaste
-{
-	scene "scenes/centaur/centaur_cent_haste_01.vcd" nodelay 
-}
-
-Rule centaur_PowerupIsPowerupHaste_Rule
-{
-	criteria Powerup Iscentaur IsPowerupHaste
-	response centaur_PowerupIsPowerupHaste
-}
-
-Response centaur_PowerupIsPowerupInvisibilityChance_25%
-{
-	scene "scenes/centaur/centaur_cent_haste_02.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_invis_02.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_invis_03.vcd" nodelay 
-}
-
-Rule centaur_PowerupIsPowerupInvisibilityChance_25%_Rule
-{
-	criteria Powerup Iscentaur IsPowerupInvisibility Chance_25%
-	response centaur_PowerupIsPowerupInvisibilityChance_25%
-}
-
-Response centaur_PowerupIsPowerupDoubleDamage
-{
-	scene "scenes/centaur/centaur_cent_doubdam_01.vcd" nodelay 
-}
-
-Rule centaur_PowerupIsPowerupDoubleDamage_Rule
-{
-	criteria Powerup Iscentaur IsPowerupDoubleDamage
-	response centaur_PowerupIsPowerupDoubleDamage
-}
-
-Response centaur_PowerupIsPowerupDoubleDamageChance_25%
-{
-	scene "scenes/centaur/centaur_cent_doubdam_02.vcd" nodelay 
-}
-
-Rule centaur_PowerupIsPowerupDoubleDamageChance_25%_Rule
-{
-	criteria Powerup Iscentaur IsPowerupDoubleDamage Chance_25%
-	response centaur_PowerupIsPowerupDoubleDamageChance_25%
-}
-
-Response centaur_PowerupIsPowerupRegeneration
-{
-	scene "scenes/centaur/centaur_cent_regen_01.vcd" nodelay 
-}
-
-Rule centaur_PowerupIsPowerupRegeneration_Rule
-{
-	criteria Powerup Iscentaur IsPowerupRegeneration
-	response centaur_PowerupIsPowerupRegeneration
-}
-
-Response centaur_PowerupIsPowerupRegenerationChance_10%
-{
-	scene "scenes/centaur/centaur_cent_regen_02.vcd" nodelay 
-}
-
-Rule centaur_PowerupIsPowerupRegenerationChance_10%_Rule
-{
-	criteria Powerup Iscentaur IsPowerupRegeneration Chance_10%
-	response centaur_PowerupIsPowerupRegenerationChance_10%
-}
-
-Response centaur_PowerupIsPowerupIllusion
-{
-	scene "scenes/centaur/centaur_cent_illus_01.vcd" nodelay 
-}
-
-Rule centaur_PowerupIsPowerupIllusion_Rule
-{
-	criteria Powerup Iscentaur IsPowerupIllusion
-	response centaur_PowerupIsPowerupIllusion
-}
-
-Response centaur_PowerupIsPowerupIllusionChance_25%
-{
-	scene "scenes/centaur/centaur_cent_illus_03.vcd" nodelay 
-}
-
-Rule centaur_PowerupIsPowerupIllusionChance_25%_Rule
-{
-	criteria Powerup Iscentaur IsPowerupIllusion Chance_25%
-	response centaur_PowerupIsPowerupIllusionChance_25%
-}
-
-Response centaur_PowerupIsPowerupInvisibility
-{
-	scene "scenes/centaur/centaur_cent_invis_01.vcd" nodelay 
-}
-
-Rule centaur_PowerupIsPowerupInvisibility_Rule
-{
-	criteria Powerup Iscentaur IsPowerupInvisibility
-	response centaur_PowerupIsPowerupInvisibility
-}
-
-Response centaur_CooldownLittleNag
-{
-	scene "scenes/centaur/centaur_cent_notyet_01.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_notyet_04.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_notyet_07.vcd" nodelay 
-}
-
-Rule centaur_CooldownLittleNag_Rule
-{
-	criteria Cooldown Iscentaur LittleNag
-	response centaur_CooldownLittleNag
-}
-
-Response centaur_CooldownMediumNag
-{
-	scene "scenes/centaur/centaur_cent_notyet_02.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_notyet_05.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_notyet_08.vcd" nodelay 
-}
-
-Rule centaur_CooldownMediumNag_Rule
-{
-	criteria Cooldown Iscentaur MediumNag
-	response centaur_CooldownMediumNag
-}
-
-Response centaur_CooldownSuperNag
-{
-	scene "scenes/centaur/centaur_cent_notyet_03.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_notyet_06.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_notyet_09.vcd" nodelay 
-}
-
-Rule centaur_CooldownSuperNag_Rule
-{
-	criteria Cooldown Iscentaur SuperNag
-	response centaur_CooldownSuperNag
-}
-
-Response centaur_NoManaLittleNag
-{
-	scene "scenes/centaur/centaur_cent_nomana_01.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_nomana_04.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_nomana_07.vcd" nodelay 
-}
-
-Rule centaur_NoManaLittleNag_Rule
-{
-	criteria NoMana Iscentaur LittleNag
-	response centaur_NoManaLittleNag
-}
-
-Response centaur_NoManaMediumNag
-{
-	scene "scenes/centaur/centaur_cent_nomana_02.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_nomana_05.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_nomana_08.vcd" nodelay 
-}
-
-Rule centaur_NoManaMediumNag_Rule
-{
-	criteria NoMana Iscentaur MediumNag
-	response centaur_NoManaMediumNag
-}
-
-Response centaur_NoManaSuperNag
-{
-	scene "scenes/centaur/centaur_cent_nomana_03.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_nomana_06.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_nomana_09.vcd" nodelay 
-}
-
-Rule centaur_NoManaSuperNag_Rule
-{
-	criteria NoMana Iscentaur SuperNag
-	response centaur_NoManaSuperNag
-}
-
-Response centaur_Thanks
-{
-	scene "scenes/centaur/centaur_cent_thanks_01.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_thanks_02.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_thanks_03.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_thanks_04.vcd" nodelay 
-}
-
-Rule centaur_Thanks_Rule
-{
-	criteria Thanks Iscentaur 
-	response centaur_Thanks
-}
-
-Response centaur_Pain
-{
-	scene "scenes/centaur/centaur_cent_underattack_01.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_pain_01.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_pain_02.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_pain_03.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_pain_04.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_pain_05.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_pain_06.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_pain_07.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_pain_08.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_pain_09.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_pain_10.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_pain_11.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_pain_12.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_pain_13.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_pain_14.vcd" nodelay 
-}
-
-Rule centaur_Pain_Rule
-{
-	criteria Pain Iscentaur 
-	response centaur_Pain
-}
-
-Response centaur_PainChance_25%
-{
-	scene "scenes/centaur/centaur_cent_underattack_02.vcd" nodelay respeakdelay 120
-}
-
-Rule centaur_PainChance_25%_Rule
-{
-	criteria Pain Iscentaur Chance_25%
-	response centaur_PainChance_25%
-}
-
-Response centaur_InTheBag
-{
-	scene "scenes/centaur/centaur_cent_inthebag_01.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_inthebag_02.vcd" nodelay 
-}
-
-Rule centaur_InTheBag_Rule
-{
-	criteria InTheBag Iscentaur 
-	response centaur_InTheBag
-}
-
-Response centaur_Defeat
-{
-	scene "scenes/centaur/centaur_cent_lose_01.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_lose_02.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_lose_03.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_lose_04.vcd" nodelay 
-}
-
-Rule centaur_Defeat_Rule
-{
-	criteria Defeat Iscentaur 
-	response centaur_Defeat
-}
-
-Response centaur_Victory
-{
-	scene "scenes/centaur/centaur_cent_win_01.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_win_02.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_win_03.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_win_04.vcd" nodelay 
-}
-
-Rule centaur_Victory_Rule
-{
-	criteria Victory Iscentaur 
-	response centaur_Victory
-}
-
-Response centaur_EmoteIsEmoteLaugh
-{
-	scene "scenes/centaur/centaur_cent_laugh_01.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_laugh_02.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_laugh_03.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_laugh_04.vcd" nodelay 
-	scene "scenes/centaur/centaur_cent_laugh_05.vcd" nodelay 
-}
-
-Rule centaur_EmoteIsEmoteLaugh_Rule
-{
-	criteria Emote Iscentaur IsEmoteLaugh
-	response centaur_EmoteIsEmoteLaugh
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vrfunknown:version{c1f07085-5299-4e8a-b7e9-1cbb66bbbe23} -->
+{
+	m_Includes = 
+	[
+		"scripts/talker/response_rules_shared.vrr",
+	]
+	m_ResponseGroups = 
+	[
+		
+		{
+			m_name = "centaur_Spawn"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_spawn_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_spawn_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_spawn_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_spawn_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_spawn_07.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_CustomIsGameStart"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_battlebegins_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_battlebegins_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_CustomIsCentaurLoadoutSpawn"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_spawn_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_spawn_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_spawn_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_spawn_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_spawn_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_battlebegins_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_move_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_move_12.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_levelup_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_respawn_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_respawn_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_win_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_KillIsFirstBlood"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_firstblood_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_firstblood_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_KillIsCentaurEdgeChance_15%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_doub_edge_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_doub_edge_06.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_KillIsCentaurStompChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_hoof_stomp_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_hoof_stomp_05.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_Kill"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_kill_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_kill_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_kill_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_kill_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_kill_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_kill_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_kill_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_kill_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_kill_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_kill_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_kill_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_kill_12.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_laugh_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_laugh_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_laugh_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_laugh_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_laugh_05.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_KillIsEnemySkeleton_KingChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_rival_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_rival_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_KillIsEnemyAncient_ApparitionChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_rival_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_KillIsEnemyChaos_KnightChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_rival_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_rival_05.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_KillIsEnemyOmniknightChance_15%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_rival_06.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_KillIsEnemyRikiChance_15%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_rival_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_rival_09.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_KillIsEnemyAxeChance_15%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_rival_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_rival_11.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_KillIsEnemyBeastmasterChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_rival_12.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_rival_14.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_rival_15.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_KillIsEnemyTuskChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_rival_16.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_KillIsEnemyLeshracChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_rival_19.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_rival_20.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_KillIsEnemyLionChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_rival_21.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_KillIsEnemyEmber_SpiritChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_rival_22.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_KillIsEnemyWinter_WyvernChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_rival_23.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_KillIsEnemyPhoenixChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_rival_24.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_KillIsEnemyTerrorbladeChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_rival_25.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_rival_26.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_KillIsEnemyAbyssal_UnderlordChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_rival_27.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_KillIsEnemyArc_WardenChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_rival_28.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_KillIsEnemyBroodmotherChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_rival_29.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_KillIsEnemyMagnataurChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_rival_30.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_rival_31.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_rival_32.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_KillIsEnemyQueenofPainChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_rival_34.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_KillIsEnemyLycanChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_rival_35.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_KillIsEnemyBristlebackChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_rival_36.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_KillIsEnemyWispChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_rival_37.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_KillIsEnemyDisruptorChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_rival_38.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_Move"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_move_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_move_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_move_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_move_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_move_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_move_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_move_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_move_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_move_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_move_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_move_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_move_12.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_move_13.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_move_14.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_move_15.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_move_16.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_move_17.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_move_18.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_move_19.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_move_20.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_move_21.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_move_22.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_Attack"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_attack_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_attack_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_attack_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_attack_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_attack_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_attack_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_attack_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_attack_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_attack_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_attack_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_attack_11.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_CastOrder"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_cast_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_cast_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_cast_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_CastExecuteIsCentaurEdgeChance_75%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_doub_edge_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_doub_edge_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_doub_edge_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_doub_edge_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_doub_edge_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_doub_edge_10.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_CastExecuteIsCentaurStompChance_50%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_hoof_stomp_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_hoof_stomp_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_LevelUp"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_levelup_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_levelup_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_levelup_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_levelup_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_levelup_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_levelup_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_levelup_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_levelup_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_levelup_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_levelup_10.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_LastHitNeutralCentaurKhan"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_rival_17.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_LastHitNeutralCentaurOutrunner"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_rival_18.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_LastHit"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_lasthit_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_lasthit_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_lasthit_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_lasthit_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_lasthit_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_lasthit_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_lasthit_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_lasthit_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_lasthit_09.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_AllyNearIsAllyInvokerEarlyGame"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_ally_01.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_AllyNearIsAllyAntimageEarlyGame"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_ally_02.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_AllyNearIsAllyLichEarlyGame"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_ally_03.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_AllyNearIsAllyLionEarlyGame"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_ally_04.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_AllyNearIsAllyEnchantressEarlyGame"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_ally_05.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_ally_06.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_AllyNearIsAllyLeshracEarlyGame"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_ally_07.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_AllyNearIsAllyKeeper_of_the_LightEarlyGame"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_ally_08.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_ally_09.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_AllyNearIsAllyArc_WardenEarlyGame"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_ally_10.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_AllyNearIsAllyChaos_KnightEarlyGame"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_ally_11.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_ally_12.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_AllyNearIsAllyMagnataurEarlyGame"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_ally_13.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_ally_14.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_ally_15.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_AllyNearIsAllyDisruptorEarlyGame"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_ally_16.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_ally_17.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_Death"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_death_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_death_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_death_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_death_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_death_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_death_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_death_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_death_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_death_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_death_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_death_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_death_12.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_death_13.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_DeathIsReincarnating"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_fastres_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_fastres_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_Respawn"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_respawn_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_respawn_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_respawn_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_respawn_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_respawn_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_respawn_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_respawn_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_respawn_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_respawn_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_respawn_10.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_Select"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_ally_18.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_ally_19.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_PurchaseIsExpensiveItem"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_purch_01.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_purch_02.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_purch_03.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_PurchaseIsUltimateScepter"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_scepter_01.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_scepter_02.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_PurchaseIsBlinkDagger"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_blink_01.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_blink_02.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_PurchaseIsManta"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_items_01.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_PurchaseIsHelmOftheDominator"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_items_02.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_PurchaseIsHeart"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_items_03.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_PurchaseIsAssaultCuirass"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_items_04.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_PurchaseIsSatanic"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_items_05.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_PurchaseIsSangeAndYasha"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_items_06.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_PurchaseIsPipe"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_items_07.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_PurchaseIsVanguard"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_items_08.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_PurchaseIsArcaneBoots"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_items_09.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_PurchaseIsShiva"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_items_10.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_PurchaseIsBloodStone"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_items_11.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_PurchaseIsEthereal"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_items_12.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_items_13.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_Bottling"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_bottle_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_bottle_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_bottle_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_Deny"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_deny_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_deny_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_deny_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_deny_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_deny_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_deny_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_deny_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_deny_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_deny_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_deny_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_deny_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_deny_12.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_deny_13.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_deny_14.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_MissingIsLaneTop"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_lane_missing_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_MissingIsLaneMid"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_lane_missing_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_MissingIsLaneBot"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_lane_missing_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_ItemDropIsCommonDrop"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_drop_common_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_ItemDropIsRareDrop"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_drop_medium_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_ItemDropIsUltraRareDrop"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_drop_rare_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_Immortality"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_immort_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_ImmortalityChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_immort_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_PowerupIsPowerupBounty"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_drop_medium_01.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 300.000000
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_PowerupIsPowerupArcane"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_happy_03.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 300.000000
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_PowerupIsPowerupHaste"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_haste_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_PowerupIsPowerupInvisibilityChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_haste_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_invis_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_invis_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_PowerupIsPowerupDoubleDamage"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_doubdam_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_PowerupIsPowerupDoubleDamageChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_doubdam_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_PowerupIsPowerupRegeneration"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_regen_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_PowerupIsPowerupRegenerationChance_10%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_regen_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_PowerupIsPowerupIllusion"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_illus_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_PowerupIsPowerupIllusionChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_illus_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_PowerupIsPowerupInvisibility"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_invis_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_CooldownLittleNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_notyet_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_notyet_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_notyet_07.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_CooldownMediumNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_notyet_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_notyet_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_notyet_08.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_CooldownSuperNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_notyet_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_notyet_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_notyet_09.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_NoManaLittleNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_nomana_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_nomana_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_nomana_07.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_NoManaMediumNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_nomana_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_nomana_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_nomana_08.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_NoManaSuperNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_nomana_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_nomana_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_nomana_09.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_Thanks"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_thanks_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_thanks_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_thanks_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_thanks_04.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_Pain"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_underattack_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_pain_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_pain_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_pain_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_pain_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_pain_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_pain_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_pain_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_pain_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_pain_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_pain_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_pain_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_pain_12.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_pain_13.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_pain_14.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_PainChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_underattack_02.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 120.000000
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_InTheBag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_inthebag_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_inthebag_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_Defeat"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_lose_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_lose_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_lose_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_lose_04.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_Victory"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_win_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_win_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_win_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_win_04.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "centaur_EmoteIsEmoteLaugh"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_laugh_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_laugh_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_laugh_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_laugh_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/centaur/centaur_cent_laugh_05.vcd"
+				},
+			]
+		},
+	]
+	m_Requirements = 
+	[
+		
+		{
+			m_name = "Iscentaur"
+			m_matchKey = "classname"
+			m_matchExpr = "npc_dota_hero_centaur"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsCentaurStomp"
+			m_matchKey = "abilityname"
+			m_matchExpr = "centaur_hoof_stomp"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsCentaurEdge"
+			m_matchKey = "abilityname"
+			m_matchExpr = "centaur_double_edge"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "NeutralCentaurKhan"
+			m_matchKey = "killedunitname"
+			m_matchExpr = "npc_dota_neutral_centaur_khan"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "NeutralCentaurOutrunner"
+			m_matchKey = "killedunitname"
+			m_matchExpr = "npc_dota_neutral_centaur_outrunner"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsCentaurLoadoutSpawn"
+			m_matchKey = "special_spawn"
+			m_matchExpr = "centaur_loadout_spawn"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+	]
+	m_Rules = 
+	[
+		
+		{
+			m_name = "centaur_Spawn_Rule"
+			m_Requirements = 
+			[
+				"Spawn",
+				"Iscentaur",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_Spawn",
+			]
+		},
+		
+		{
+			m_name = "centaur_CustomIsGameStart_Rule"
+			m_Requirements = 
+			[
+				"Custom",
+				"Iscentaur",
+				"IsGameStart",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_CustomIsGameStart",
+			]
+		},
+		
+		{
+			m_name = "centaur_CustomIsCentaurLoadoutSpawn_Rule"
+			m_Requirements = 
+			[
+				"Custom",
+				"Iscentaur",
+				"IsCentaurLoadoutSpawn",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_CustomIsCentaurLoadoutSpawn",
+			]
+		},
+		
+		{
+			m_name = "centaur_KillIsFirstBlood_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Iscentaur",
+				"IsFirstBlood",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_KillIsFirstBlood",
+			]
+		},
+		
+		{
+			m_name = "centaur_KillIsCentaurEdgeChance_15%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Iscentaur",
+				"IsCentaurEdge",
+				"Chance_15%",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_KillIsCentaurEdgeChance_15%",
+			]
+		},
+		
+		{
+			m_name = "centaur_KillIsCentaurStompChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Iscentaur",
+				"IsCentaurStomp",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_KillIsCentaurStompChance_25%",
+			]
+		},
+		
+		{
+			m_name = "centaur_Kill_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Iscentaur",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_Kill",
+			]
+		},
+		
+		{
+			m_name = "centaur_KillIsEnemySkeleton_KingChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Iscentaur",
+				"IsEnemySkeleton_King",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_KillIsEnemySkeleton_KingChance_25%",
+			]
+		},
+		
+		{
+			m_name = "centaur_KillIsEnemyAncient_ApparitionChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Iscentaur",
+				"IsEnemyAncient_Apparition",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_KillIsEnemyAncient_ApparitionChance_25%",
+			]
+		},
+		
+		{
+			m_name = "centaur_KillIsEnemyChaos_KnightChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Iscentaur",
+				"IsEnemyChaos_Knight",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_KillIsEnemyChaos_KnightChance_25%",
+			]
+		},
+		
+		{
+			m_name = "centaur_KillIsEnemyOmniknightChance_15%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Iscentaur",
+				"IsEnemyOmniknight",
+				"Chance_15%",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_KillIsEnemyOmniknightChance_15%",
+			]
+		},
+		
+		{
+			m_name = "centaur_KillIsEnemyRikiChance_15%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Iscentaur",
+				"IsEnemyRiki",
+				"Chance_15%",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_KillIsEnemyRikiChance_15%",
+			]
+		},
+		
+		{
+			m_name = "centaur_KillIsEnemyAxeChance_15%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Iscentaur",
+				"IsEnemyAxe",
+				"Chance_15%",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_KillIsEnemyAxeChance_15%",
+			]
+		},
+		
+		{
+			m_name = "centaur_KillIsEnemyBeastmasterChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Iscentaur",
+				"IsEnemyBeastmaster",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_KillIsEnemyBeastmasterChance_25%",
+			]
+		},
+		
+		{
+			m_name = "centaur_KillIsEnemyTuskChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Iscentaur",
+				"IsEnemyTusk",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_KillIsEnemyTuskChance_25%",
+			]
+		},
+		
+		{
+			m_name = "centaur_KillIsEnemyLeshracChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Iscentaur",
+				"IsEnemyLeshrac",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_KillIsEnemyLeshracChance_25%",
+			]
+		},
+		
+		{
+			m_name = "centaur_KillIsEnemyLionChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Iscentaur",
+				"IsEnemyLion",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_KillIsEnemyLionChance_25%",
+			]
+		},
+		
+		{
+			m_name = "centaur_KillIsEnemyEmber_SpiritChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Iscentaur",
+				"IsEnemyEmber_Spirit",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_KillIsEnemyEmber_SpiritChance_25%",
+			]
+		},
+		
+		{
+			m_name = "centaur_KillIsEnemyWinter_WyvernChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Iscentaur",
+				"IsEnemyWinter_Wyvern",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_KillIsEnemyWinter_WyvernChance_25%",
+			]
+		},
+		
+		{
+			m_name = "centaur_KillIsEnemyPhoenixChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Iscentaur",
+				"IsEnemyPhoenix",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_KillIsEnemyPhoenixChance_25%",
+			]
+		},
+		
+		{
+			m_name = "centaur_KillIsEnemyTerrorbladeChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Iscentaur",
+				"IsEnemyTerrorblade",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_KillIsEnemyTerrorbladeChance_25%",
+			]
+		},
+		
+		{
+			m_name = "centaur_KillIsEnemyAbyssal_UnderlordChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Iscentaur",
+				"IsEnemyAbyssal_Underlord",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_KillIsEnemyAbyssal_UnderlordChance_25%",
+			]
+		},
+		
+		{
+			m_name = "centaur_KillIsEnemyArc_WardenChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Iscentaur",
+				"IsEnemyArc_Warden",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_KillIsEnemyArc_WardenChance_25%",
+			]
+		},
+		
+		{
+			m_name = "centaur_KillIsEnemyBroodmotherChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Iscentaur",
+				"IsEnemyBroodmother",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_KillIsEnemyBroodmotherChance_25%",
+			]
+		},
+		
+		{
+			m_name = "centaur_KillIsEnemyMagnataurChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Iscentaur",
+				"IsEnemyMagnataur",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_KillIsEnemyMagnataurChance_25%",
+			]
+		},
+		
+		{
+			m_name = "centaur_KillIsEnemyQueenofPainChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Iscentaur",
+				"IsEnemyQueenofPain",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_KillIsEnemyQueenofPainChance_25%",
+			]
+		},
+		
+		{
+			m_name = "centaur_KillIsEnemyLycanChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Iscentaur",
+				"IsEnemyLycan",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_KillIsEnemyLycanChance_25%",
+			]
+		},
+		
+		{
+			m_name = "centaur_KillIsEnemyBristlebackChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Iscentaur",
+				"IsEnemyBristleback",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_KillIsEnemyBristlebackChance_25%",
+			]
+		},
+		
+		{
+			m_name = "centaur_KillIsEnemyWispChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Iscentaur",
+				"IsEnemyWisp",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_KillIsEnemyWispChance_25%",
+			]
+		},
+		
+		{
+			m_name = "centaur_KillIsEnemyDisruptorChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Iscentaur",
+				"IsEnemyDisruptor",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_KillIsEnemyDisruptorChance_25%",
+			]
+		},
+		
+		{
+			m_name = "centaur_Move_Rule"
+			m_Requirements = 
+			[
+				"Move",
+				"Iscentaur",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_Move",
+			]
+		},
+		
+		{
+			m_name = "centaur_Attack_Rule"
+			m_Requirements = 
+			[
+				"Attack",
+				"Iscentaur",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_Attack",
+			]
+		},
+		
+		{
+			m_name = "centaur_CastOrder_Rule"
+			m_Requirements = 
+			[
+				"CastOrder",
+				"Iscentaur",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_CastOrder",
+			]
+		},
+		
+		{
+			m_name = "centaur_CastExecuteIsCentaurEdgeChance_75%_Rule"
+			m_Requirements = 
+			[
+				"CastExecute",
+				"Iscentaur",
+				"IsCentaurEdge",
+				"Chance_75%",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_CastExecuteIsCentaurEdgeChance_75%",
+			]
+		},
+		
+		{
+			m_name = "centaur_CastExecuteIsCentaurStompChance_50%_Rule"
+			m_Requirements = 
+			[
+				"CastExecute",
+				"Iscentaur",
+				"IsCentaurStomp",
+				"Chance_50%",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_CastExecuteIsCentaurStompChance_50%",
+			]
+		},
+		
+		{
+			m_name = "centaur_LevelUp_Rule"
+			m_Requirements = 
+			[
+				"LevelUp",
+				"Iscentaur",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_LevelUp",
+			]
+		},
+		
+		{
+			m_name = "centaur_LastHitNeutralCentaurKhan_Rule"
+			m_Requirements = 
+			[
+				"LastHit",
+				"Iscentaur",
+				"NeutralCentaurKhan",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_LastHitNeutralCentaurKhan",
+			]
+		},
+		
+		{
+			m_name = "centaur_LastHitNeutralCentaurOutrunner_Rule"
+			m_Requirements = 
+			[
+				"LastHit",
+				"Iscentaur",
+				"NeutralCentaurOutrunner",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_LastHitNeutralCentaurOutrunner",
+			]
+		},
+		
+		{
+			m_name = "centaur_LastHit_Rule"
+			m_Requirements = 
+			[
+				"LastHit",
+				"Iscentaur",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_LastHit",
+			]
+		},
+		
+		{
+			m_name = "centaur_AllyNearIsAllyInvokerEarlyGame_Rule"
+			m_Requirements = 
+			[
+				"AllyNear",
+				"Iscentaur",
+				"IsAllyInvoker",
+				"EarlyGame",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_AllyNearIsAllyInvokerEarlyGame",
+			]
+		},
+		
+		{
+			m_name = "centaur_AllyNearIsAllyAntimageEarlyGame_Rule"
+			m_Requirements = 
+			[
+				"AllyNear",
+				"Iscentaur",
+				"IsAllyAntimage",
+				"EarlyGame",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_AllyNearIsAllyAntimageEarlyGame",
+			]
+		},
+		
+		{
+			m_name = "centaur_AllyNearIsAllyLichEarlyGame_Rule"
+			m_Requirements = 
+			[
+				"AllyNear",
+				"Iscentaur",
+				"IsAllyLich",
+				"EarlyGame",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_AllyNearIsAllyLichEarlyGame",
+			]
+		},
+		
+		{
+			m_name = "centaur_AllyNearIsAllyLionEarlyGame_Rule"
+			m_Requirements = 
+			[
+				"AllyNear",
+				"Iscentaur",
+				"IsAllyLion",
+				"EarlyGame",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_AllyNearIsAllyLionEarlyGame",
+			]
+		},
+		
+		{
+			m_name = "centaur_AllyNearIsAllyEnchantressEarlyGame_Rule"
+			m_Requirements = 
+			[
+				"AllyNear",
+				"Iscentaur",
+				"IsAllyEnchantress",
+				"EarlyGame",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_AllyNearIsAllyEnchantressEarlyGame",
+			]
+		},
+		
+		{
+			m_name = "centaur_AllyNearIsAllyLeshracEarlyGame_Rule"
+			m_Requirements = 
+			[
+				"AllyNear",
+				"Iscentaur",
+				"IsAllyLeshrac",
+				"EarlyGame",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_AllyNearIsAllyLeshracEarlyGame",
+			]
+		},
+		
+		{
+			m_name = "centaur_AllyNearIsAllyKeeper_of_the_LightEarlyGame_Rule"
+			m_Requirements = 
+			[
+				"AllyNear",
+				"Iscentaur",
+				"IsAllyKeeper_of_the_Light",
+				"EarlyGame",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_AllyNearIsAllyKeeper_of_the_LightEarlyGame",
+			]
+		},
+		
+		{
+			m_name = "centaur_AllyNearIsAllyArc_WardenEarlyGame_Rule"
+			m_Requirements = 
+			[
+				"AllyNear",
+				"Iscentaur",
+				"IsAllyArc_Warden",
+				"EarlyGame",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_AllyNearIsAllyArc_WardenEarlyGame",
+			]
+		},
+		
+		{
+			m_name = "centaur_AllyNearIsAllyChaos_KnightEarlyGame_Rule"
+			m_Requirements = 
+			[
+				"AllyNear",
+				"Iscentaur",
+				"IsAllyChaos_Knight",
+				"EarlyGame",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_AllyNearIsAllyChaos_KnightEarlyGame",
+			]
+		},
+		
+		{
+			m_name = "centaur_AllyNearIsAllyMagnataurEarlyGame_Rule"
+			m_Requirements = 
+			[
+				"AllyNear",
+				"Iscentaur",
+				"IsAllyMagnataur",
+				"EarlyGame",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_AllyNearIsAllyMagnataurEarlyGame",
+			]
+		},
+		
+		{
+			m_name = "centaur_AllyNearIsAllyDisruptorEarlyGame_Rule"
+			m_Requirements = 
+			[
+				"AllyNear",
+				"Iscentaur",
+				"IsAllyDisruptor",
+				"EarlyGame",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_AllyNearIsAllyDisruptorEarlyGame",
+			]
+		},
+		
+		{
+			m_name = "centaur_Death_Rule"
+			m_Requirements = 
+			[
+				"Death",
+				"Iscentaur",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_Death",
+			]
+		},
+		
+		{
+			m_name = "centaur_DeathIsReincarnating_Rule"
+			m_Requirements = 
+			[
+				"Death",
+				"Iscentaur",
+				"IsReincarnating",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_DeathIsReincarnating",
+			]
+		},
+		
+		{
+			m_name = "centaur_Respawn_Rule"
+			m_Requirements = 
+			[
+				"Respawn",
+				"Iscentaur",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_Respawn",
+			]
+		},
+		
+		{
+			m_name = "centaur_Select_Rule"
+			m_Requirements = 
+			[
+				"Select",
+				"Iscentaur",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_Select",
+			]
+		},
+		
+		{
+			m_name = "centaur_PurchaseIsExpensiveItem_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Iscentaur",
+				"IsExpensiveItem",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_PurchaseIsExpensiveItem",
+			]
+		},
+		
+		{
+			m_name = "centaur_PurchaseIsUltimateScepter_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Iscentaur",
+				"IsUltimateScepter",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_PurchaseIsUltimateScepter",
+			]
+		},
+		
+		{
+			m_name = "centaur_PurchaseIsBlinkDagger_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Iscentaur",
+				"IsBlinkDagger",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_PurchaseIsBlinkDagger",
+			]
+		},
+		
+		{
+			m_name = "centaur_PurchaseIsManta_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Iscentaur",
+				"IsManta",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_PurchaseIsManta",
+			]
+		},
+		
+		{
+			m_name = "centaur_PurchaseIsHelmOftheDominator_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Iscentaur",
+				"IsHelmOftheDominator",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_PurchaseIsHelmOftheDominator",
+			]
+		},
+		
+		{
+			m_name = "centaur_PurchaseIsHeart_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Iscentaur",
+				"IsHeart",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_PurchaseIsHeart",
+			]
+		},
+		
+		{
+			m_name = "centaur_PurchaseIsAssaultCuirass_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Iscentaur",
+				"IsAssaultCuirass",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_PurchaseIsAssaultCuirass",
+			]
+		},
+		
+		{
+			m_name = "centaur_PurchaseIsSatanic_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Iscentaur",
+				"IsSatanic",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_PurchaseIsSatanic",
+			]
+		},
+		
+		{
+			m_name = "centaur_PurchaseIsSangeAndYasha_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Iscentaur",
+				"IsSangeAndYasha",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_PurchaseIsSangeAndYasha",
+			]
+		},
+		
+		{
+			m_name = "centaur_PurchaseIsPipe_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Iscentaur",
+				"IsPipe",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_PurchaseIsPipe",
+			]
+		},
+		
+		{
+			m_name = "centaur_PurchaseIsVanguard_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Iscentaur",
+				"IsVanguard",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_PurchaseIsVanguard",
+			]
+		},
+		
+		{
+			m_name = "centaur_PurchaseIsArcaneBoots_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Iscentaur",
+				"IsArcaneBoots",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_PurchaseIsArcaneBoots",
+			]
+		},
+		
+		{
+			m_name = "centaur_PurchaseIsShiva_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Iscentaur",
+				"IsShiva",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_PurchaseIsShiva",
+			]
+		},
+		
+		{
+			m_name = "centaur_PurchaseIsBloodStone_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Iscentaur",
+				"IsBloodStone",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_PurchaseIsBloodStone",
+			]
+		},
+		
+		{
+			m_name = "centaur_PurchaseIsEthereal_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Iscentaur",
+				"IsEthereal",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_PurchaseIsEthereal",
+			]
+		},
+		
+		{
+			m_name = "centaur_Bottling_Rule"
+			m_Requirements = 
+			[
+				"Bottling",
+				"Iscentaur",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_Bottling",
+			]
+		},
+		
+		{
+			m_name = "centaur_Deny_Rule"
+			m_Requirements = 
+			[
+				"Deny",
+				"Iscentaur",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_Deny",
+			]
+		},
+		
+		{
+			m_name = "centaur_MissingIsLaneTop_Rule"
+			m_Requirements = 
+			[
+				"Missing",
+				"Iscentaur",
+				"IsLaneTop",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_MissingIsLaneTop",
+			]
+		},
+		
+		{
+			m_name = "centaur_MissingIsLaneMid_Rule"
+			m_Requirements = 
+			[
+				"Missing",
+				"Iscentaur",
+				"IsLaneMid",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_MissingIsLaneMid",
+			]
+		},
+		
+		{
+			m_name = "centaur_MissingIsLaneBot_Rule"
+			m_Requirements = 
+			[
+				"Missing",
+				"Iscentaur",
+				"IsLaneBot",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_MissingIsLaneBot",
+			]
+		},
+		
+		{
+			m_name = "centaur_ItemDropIsCommonDrop_Rule"
+			m_Requirements = 
+			[
+				"ItemDrop",
+				"Iscentaur",
+				"IsCommonDrop",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_ItemDropIsCommonDrop",
+			]
+		},
+		
+		{
+			m_name = "centaur_ItemDropIsRareDrop_Rule"
+			m_Requirements = 
+			[
+				"ItemDrop",
+				"Iscentaur",
+				"IsRareDrop",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_ItemDropIsRareDrop",
+			]
+		},
+		
+		{
+			m_name = "centaur_ItemDropIsUltraRareDrop_Rule"
+			m_Requirements = 
+			[
+				"ItemDrop",
+				"Iscentaur",
+				"IsUltraRareDrop",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_ItemDropIsUltraRareDrop",
+			]
+		},
+		
+		{
+			m_name = "centaur_Immortality_Rule"
+			m_Requirements = 
+			[
+				"Immortality",
+				"Iscentaur",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_Immortality",
+			]
+		},
+		
+		{
+			m_name = "centaur_ImmortalityChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Immortality",
+				"Iscentaur",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_ImmortalityChance_25%",
+			]
+		},
+		
+		{
+			m_name = "centaur_PowerupIsPowerupBounty_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Iscentaur",
+				"IsPowerupBounty",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_PowerupIsPowerupBounty",
+			]
+		},
+		
+		{
+			m_name = "centaur_PowerupIsPowerupArcane_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Iscentaur",
+				"IsPowerupArcane",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_PowerupIsPowerupArcane",
+			]
+		},
+		
+		{
+			m_name = "centaur_PowerupIsPowerupHaste_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Iscentaur",
+				"IsPowerupHaste",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_PowerupIsPowerupHaste",
+			]
+		},
+		
+		{
+			m_name = "centaur_PowerupIsPowerupInvisibilityChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Iscentaur",
+				"IsPowerupInvisibility",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_PowerupIsPowerupInvisibilityChance_25%",
+			]
+		},
+		
+		{
+			m_name = "centaur_PowerupIsPowerupDoubleDamage_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Iscentaur",
+				"IsPowerupDoubleDamage",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_PowerupIsPowerupDoubleDamage",
+			]
+		},
+		
+		{
+			m_name = "centaur_PowerupIsPowerupDoubleDamageChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Iscentaur",
+				"IsPowerupDoubleDamage",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_PowerupIsPowerupDoubleDamageChance_25%",
+			]
+		},
+		
+		{
+			m_name = "centaur_PowerupIsPowerupRegeneration_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Iscentaur",
+				"IsPowerupRegeneration",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_PowerupIsPowerupRegeneration",
+			]
+		},
+		
+		{
+			m_name = "centaur_PowerupIsPowerupRegenerationChance_10%_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Iscentaur",
+				"IsPowerupRegeneration",
+				"Chance_10%",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_PowerupIsPowerupRegenerationChance_10%",
+			]
+		},
+		
+		{
+			m_name = "centaur_PowerupIsPowerupIllusion_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Iscentaur",
+				"IsPowerupIllusion",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_PowerupIsPowerupIllusion",
+			]
+		},
+		
+		{
+			m_name = "centaur_PowerupIsPowerupIllusionChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Iscentaur",
+				"IsPowerupIllusion",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_PowerupIsPowerupIllusionChance_25%",
+			]
+		},
+		
+		{
+			m_name = "centaur_PowerupIsPowerupInvisibility_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Iscentaur",
+				"IsPowerupInvisibility",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_PowerupIsPowerupInvisibility",
+			]
+		},
+		
+		{
+			m_name = "centaur_CooldownLittleNag_Rule"
+			m_Requirements = 
+			[
+				"Cooldown",
+				"Iscentaur",
+				"LittleNag",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_CooldownLittleNag",
+			]
+		},
+		
+		{
+			m_name = "centaur_CooldownMediumNag_Rule"
+			m_Requirements = 
+			[
+				"Cooldown",
+				"Iscentaur",
+				"MediumNag",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_CooldownMediumNag",
+			]
+		},
+		
+		{
+			m_name = "centaur_CooldownSuperNag_Rule"
+			m_Requirements = 
+			[
+				"Cooldown",
+				"Iscentaur",
+				"SuperNag",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_CooldownSuperNag",
+			]
+		},
+		
+		{
+			m_name = "centaur_NoManaLittleNag_Rule"
+			m_Requirements = 
+			[
+				"NoMana",
+				"Iscentaur",
+				"LittleNag",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_NoManaLittleNag",
+			]
+		},
+		
+		{
+			m_name = "centaur_NoManaMediumNag_Rule"
+			m_Requirements = 
+			[
+				"NoMana",
+				"Iscentaur",
+				"MediumNag",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_NoManaMediumNag",
+			]
+		},
+		
+		{
+			m_name = "centaur_NoManaSuperNag_Rule"
+			m_Requirements = 
+			[
+				"NoMana",
+				"Iscentaur",
+				"SuperNag",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_NoManaSuperNag",
+			]
+		},
+		
+		{
+			m_name = "centaur_Thanks_Rule"
+			m_Requirements = 
+			[
+				"Thanks",
+				"Iscentaur",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_Thanks",
+			]
+		},
+		
+		{
+			m_name = "centaur_Pain_Rule"
+			m_Requirements = 
+			[
+				"Pain",
+				"Iscentaur",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_Pain",
+			]
+		},
+		
+		{
+			m_name = "centaur_PainChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Pain",
+				"Iscentaur",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_PainChance_25%",
+			]
+		},
+		
+		{
+			m_name = "centaur_InTheBag_Rule"
+			m_Requirements = 
+			[
+				"InTheBag",
+				"Iscentaur",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_InTheBag",
+			]
+		},
+		
+		{
+			m_name = "centaur_Defeat_Rule"
+			m_Requirements = 
+			[
+				"Defeat",
+				"Iscentaur",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_Defeat",
+			]
+		},
+		
+		{
+			m_name = "centaur_Victory_Rule"
+			m_Requirements = 
+			[
+				"Victory",
+				"Iscentaur",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_Victory",
+			]
+		},
+		
+		{
+			m_name = "centaur_EmoteIsEmoteLaugh_Rule"
+			m_Requirements = 
+			[
+				"Emote",
+				"Iscentaur",
+				"IsEmoteLaugh",
+			]
+			m_ResponseGroups = 
+			[
+				"centaur_EmoteIsEmoteLaugh",
+			]
+		},
+	]
 }
-

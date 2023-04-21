@@ -1,1074 +1,3225 @@
-#include "talker/response_rules_shared.vrr"
-
-criterion "Isbatrider" "classname" "npc_dota_hero_batrider" weight 5 required
-criterion "IsAbilityFlameBreak" "abilityname" "batrider_flamebreak" weight 5 required
-criterion "IsAbilityFirefly" "abilityname" "batrider_firefly" weight 5 required
-criterion "IsAbilityLasso" "abilityname" "batrider_flaming_lasso" weight 5 required
-criterion "IsBatriderTauntHangLoose" "taunt_type" "hang_loose_gesture" weight 5 required
-criterion "IsBatriderLoadoutSpawn" "special_spawn" "batrider_loadout_spawn" weight 5 required
-
-Response batrider_Spawn
-{
-	scene "scenes/batrider/batrider_bat_spawn_01.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_spawn_02.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_spawn_03.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_spawn_04.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_spawn_05.vcd" nodelay 
-}
-
-Rule batrider_Spawn_Rule
-{
-	criteria Spawn Isbatrider 
-	response batrider_Spawn
-}
-
-Response batrider_CustomIsGameStart
-{
-	scene "scenes/batrider/batrider_bat_battlebegins_01.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_battlebegins_02.vcd" nodelay 
-}
-
-Rule batrider_CustomIsGameStart_Rule
-{
-	criteria Custom Isbatrider IsGameStart
-	response batrider_CustomIsGameStart
-}
-
-Response batrider_CustomIsBatriderLoadoutSpawn
-{
-	scene "scenes/batrider/batrider_bat_spawn_01.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_spawn_02.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_spawn_03.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_spawn_04.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_spawn_05.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_battlebegins_01.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_battlebegins_02.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_attack_02.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_attack_03.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_respawn_02.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_respawn_14.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_ability_lasso_04.vcd" nodelay 
-}
-
-Rule batrider_CustomIsBatriderLoadoutSpawn_Rule
-{
-	criteria Custom Isbatrider IsBatriderLoadoutSpawn
-	response batrider_CustomIsBatriderLoadoutSpawn
-}
-
-Response batrider_KillIsFirstBlood
-{
-	scene "scenes/batrider/batrider_bat_firstblood_01.vcd" nodelay 
-}
-
-Rule batrider_KillIsFirstBlood_Rule
-{
-	criteria Kill Isbatrider IsFirstBlood
-	response batrider_KillIsFirstBlood
-}
-
-Response batrider_KillIsAbilityFlameBreakChance_50%
-{
-	scene "scenes/batrider/batrider_bat_ability_flame_01.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_ability_flame_02.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_ability_flame_03.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_ability_flame_04.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_ability_flame_05.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_ability_flame_06.vcd" nodelay 
-}
-
-Rule batrider_KillIsAbilityFlameBreakChance_50%_Rule
-{
-	criteria Kill Isbatrider IsAbilityFlameBreak Chance_50%
-	response batrider_KillIsAbilityFlameBreakChance_50%
-}
-
-Response batrider_KillIsAbilityFireflyChance_50%
-{
-	scene "scenes/batrider/batrider_bat_ability_firefly_02.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_ability_firefly_05.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_ability_firefly_06.vcd" nodelay 
-}
-
-Rule batrider_KillIsAbilityFireflyChance_50%_Rule
-{
-	criteria Kill Isbatrider IsAbilityFirefly Chance_50%
-	response batrider_KillIsAbilityFireflyChance_50%
-}
-
-Response batrider_Kill
-{
-	scene "scenes/batrider/batrider_bat_kill_01.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_kill_02.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_kill_03.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_kill_04.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_kill_05.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_kill_06.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_kill_07.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_kill_08.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_kill_09.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_kill_10.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_kill_11.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_kill_12.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_kill_13.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_kill_14.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_kill_15.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_kill_16.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_kill_17.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_kill_18.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_kill_19.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_kill_20.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_laugh_01.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_laugh_02.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_laugh_03.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_laugh_04.vcd" nodelay 
-}
-
-Rule batrider_Kill_Rule
-{
-	criteria Kill Isbatrider 
-	response batrider_Kill
-}
-
-Response batrider_KillIsEnemyLinaChance_35%
-{
-	scene "scenes/batrider/batrider_bat_rival_01.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_rival_09.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_rival_10.vcd" nodelay 
-}
-
-Rule batrider_KillIsEnemyLinaChance_35%_Rule
-{
-	criteria Kill Isbatrider IsEnemyLina Chance_35%
-	response batrider_KillIsEnemyLinaChance_35%
-}
-
-Response batrider_KillIsEnemyQueenOfPainChance_35%
-{
-	scene "scenes/batrider/batrider_bat_rival_02.vcd" nodelay 
-}
-
-Rule batrider_KillIsEnemyQueenOfPainChance_35%_Rule
-{
-	criteria Kill Isbatrider IsEnemyQueenOfPain Chance_35%
-	response batrider_KillIsEnemyQueenOfPainChance_35%
-}
-
-Response batrider_KillIsEnemyDrowRangerChance_35%
-{
-	scene "scenes/batrider/batrider_bat_rival_03.vcd" nodelay 
-}
-
-Rule batrider_KillIsEnemyDrowRangerChance_35%_Rule
-{
-	criteria Kill Isbatrider IsEnemyDrowRanger Chance_35%
-	response batrider_KillIsEnemyDrowRangerChance_35%
-}
-
-Response batrider_KillIsEnemyVengefulSpiritChance_35%
-{
-	scene "scenes/batrider/batrider_bat_rival_05.vcd" nodelay 
-}
-
-Rule batrider_KillIsEnemyVengefulSpiritChance_35%_Rule
-{
-	criteria Kill Isbatrider IsEnemyVengefulSpirit Chance_35%
-	response batrider_KillIsEnemyVengefulSpiritChance_35%
-}
-
-Response batrider_KillIsEnemyEnchantressChance_35%
-{
-	scene "scenes/batrider/batrider_bat_rival_06.vcd" nodelay 
-}
-
-Rule batrider_KillIsEnemyEnchantressChance_35%_Rule
-{
-	criteria Kill Isbatrider IsEnemyEnchantress Chance_35%
-	response batrider_KillIsEnemyEnchantressChance_35%
-}
-
-Response batrider_KillIsEnemySpectreChance_35%
-{
-	scene "scenes/batrider/batrider_bat_rival_07.vcd" nodelay 
-}
-
-Rule batrider_KillIsEnemySpectreChance_35%_Rule
-{
-	criteria Kill Isbatrider IsEnemySpectre Chance_35%
-	response batrider_KillIsEnemySpectreChance_35%
-}
-
-Response batrider_KillIsEnemyCrystalMaidenChance_35%
-{
-	scene "scenes/batrider/batrider_bat_rival_08.vcd" nodelay 
-}
-
-Rule batrider_KillIsEnemyCrystalMaidenChance_35%_Rule
-{
-	criteria Kill Isbatrider IsEnemyCrystalMaiden Chance_35%
-	response batrider_KillIsEnemyCrystalMaidenChance_35%
-}
-
-Response batrider_KillIsEnemyTemplar_AssassinChance_35%
-{
-	scene "scenes/batrider/batrider_bat_rival_11.vcd" nodelay 
-}
-
-Rule batrider_KillIsEnemyTemplar_AssassinChance_35%_Rule
-{
-	criteria Kill Isbatrider IsEnemyTemplar_Assassin Chance_35%
-	response batrider_KillIsEnemyTemplar_AssassinChance_35%
-}
-
-Response batrider_KillIsEnemyDeath_ProphetChance_35%
-{
-	scene "scenes/batrider/batrider_bat_rival_12.vcd" nodelay 
-}
-
-Rule batrider_KillIsEnemyDeath_ProphetChance_35%_Rule
-{
-	criteria Kill Isbatrider IsEnemyDeath_Prophet Chance_35%
-	response batrider_KillIsEnemyDeath_ProphetChance_35%
-}
-
-Response batrider_KillIsEnemyMiranaChance_35%
-{
-	scene "scenes/batrider/batrider_bat_rival_13.vcd" nodelay 
-}
-
-Rule batrider_KillIsEnemyMiranaChance_35%_Rule
-{
-	criteria Kill Isbatrider IsEnemyMirana Chance_35%
-	response batrider_KillIsEnemyMiranaChance_35%
-}
-
-Response batrider_KillIsEnemyBroodmotherChance_35%
-{
-	scene "scenes/batrider/batrider_bat_rival_14.vcd" nodelay 
-}
-
-Rule batrider_KillIsEnemyBroodmotherChance_35%_Rule
-{
-	criteria Kill Isbatrider IsEnemyBroodmother Chance_35%
-	response batrider_KillIsEnemyBroodmotherChance_35%
-}
-
-Response batrider_KillIsEnemyPhantom_AssassinChance_35%
-{
-	scene "scenes/batrider/batrider_bat_rival_15.vcd" nodelay 
-}
-
-Rule batrider_KillIsEnemyPhantom_AssassinChance_35%_Rule
-{
-	criteria Kill Isbatrider IsEnemyPhantom_Assassin Chance_35%
-	response batrider_KillIsEnemyPhantom_AssassinChance_35%
-}
-
-Response batrider_KillIsEnemyNight_StalkerChance_35%
-{
-	scene "scenes/batrider/batrider_bat_rival_16.vcd" nodelay 
-}
-
-Rule batrider_KillIsEnemyNight_StalkerChance_35%_Rule
-{
-	criteria Kill Isbatrider IsEnemyNight_Stalker Chance_35%
-	response batrider_KillIsEnemyNight_StalkerChance_35%
-}
-
-Response batrider_KillIsEnemyStormSpiritChance_35%
-{
-	scene "scenes/batrider/batrider_bat_rival_17.vcd" nodelay 
-}
-
-Rule batrider_KillIsEnemyStormSpiritChance_35%_Rule
-{
-	criteria Kill Isbatrider IsEnemyStormSpirit Chance_35%
-	response batrider_KillIsEnemyStormSpiritChance_35%
-}
-
-Response batrider_KillIsEnemyPudgeChance_35%
-{
-	scene "scenes/batrider/batrider_bat_rival_18.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_rival_19.vcd" nodelay 
-}
-
-Rule batrider_KillIsEnemyPudgeChance_35%_Rule
-{
-	criteria Kill Isbatrider IsEnemyPudge Chance_35%
-	response batrider_KillIsEnemyPudgeChance_35%
-}
-
-Response batrider_KillIsEnemyFaceless_VoidChance_35%
-{
-	scene "scenes/batrider/batrider_bat_rival_21.vcd" nodelay 
-}
-
-Rule batrider_KillIsEnemyFaceless_VoidChance_35%_Rule
-{
-	criteria Kill Isbatrider IsEnemyFaceless_Void Chance_35%
-	response batrider_KillIsEnemyFaceless_VoidChance_35%
-}
-
-Response batrider_KillIsEnemyViperChance_35%
-{
-	scene "scenes/batrider/batrider_bat_rival_22.vcd" nodelay 
-}
-
-Rule batrider_KillIsEnemyViperChance_35%_Rule
-{
-	criteria Kill Isbatrider IsEnemyViper Chance_35%
-	response batrider_KillIsEnemyViperChance_35%
-}
-
-Response batrider_KillIsEnemyDragon_KnightChance_35%
-{
-	scene "scenes/batrider/batrider_bat_rival_23.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_rival_25.vcd" nodelay 
-}
-
-Rule batrider_KillIsEnemyDragon_KnightChance_35%_Rule
-{
-	criteria Kill Isbatrider IsEnemyDragon_Knight Chance_35%
-	response batrider_KillIsEnemyDragon_KnightChance_35%
-}
-
-Response batrider_KillIsEnemyJakiroChance_35%
-{
-	scene "scenes/batrider/batrider_bat_rival_24.vcd" nodelay 
-}
-
-Rule batrider_KillIsEnemyJakiroChance_35%_Rule
-{
-	criteria Kill Isbatrider IsEnemyJakiro Chance_35%
-	response batrider_KillIsEnemyJakiroChance_35%
-}
-
-Response batrider_Move
-{
-	scene "scenes/batrider/batrider_bat_move_01.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_move_02.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_move_03.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_move_04.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_move_05.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_move_06.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_move_07.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_move_08.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_move_09.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_move_10.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_move_11.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_move_12.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_move_13.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_move_14.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_move_15.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_move_16.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_move_17.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_move_18.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_move_19.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_move_20.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_move_21.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_move_22.vcd" nodelay 
-}
-
-Rule batrider_Move_Rule
-{
-	criteria Move Isbatrider 
-	response batrider_Move
-}
-
-Response batrider_Attack
-{
-	scene "scenes/batrider/batrider_bat_attack_01.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_attack_02.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_attack_03.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_attack_04.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_attack_05.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_attack_06.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_attack_07.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_attack_08.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_attack_09.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_attack_10.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_attack_11.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_attack_12.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_attack_13.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_attack_14.vcd" nodelay 
-}
-
-Rule batrider_Attack_Rule
-{
-	criteria Attack Isbatrider 
-	response batrider_Attack
-}
-
-Response batrider_CastOrder
-{
-	scene "scenes/batrider/batrider_bat_cast_01.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_cast_02.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_cast_03.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_cast_04.vcd" nodelay 
-}
-
-Rule batrider_CastOrder_Rule
-{
-	criteria CastOrder Isbatrider 
-	response batrider_CastOrder
-}
-
-Response batrider_CastExecuteIsAbilityFirefly
-{
-	scene "scenes/batrider/batrider_bat_ability_firefly_01.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_ability_firefly_04.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_ability_firefly_07.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_ability_firefly_08.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_ability_firefly_09.vcd" nodelay 
-}
-
-Rule batrider_CastExecuteIsAbilityFirefly_Rule
-{
-	criteria CastExecute Isbatrider IsAbilityFirefly
-	response batrider_CastExecuteIsAbilityFirefly
-}
-
-Response batrider_CastExecuteIsAbilityLasso
-{
-	scene "scenes/batrider/batrider_bat_ability_lasso_01.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_ability_lasso_02.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_ability_lasso_03.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_ability_lasso_04.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_ability_lasso_05.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_ability_lasso_06.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_ability_lasso_07.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_ability_lasso_08.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_ability_lasso_09.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_ability_lasso_10.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_ability_lasso_11.vcd" nodelay 
-}
-
-Rule batrider_CastExecuteIsAbilityLasso_Rule
-{
-	criteria CastExecute Isbatrider IsAbilityLasso
-	response batrider_CastExecuteIsAbilityLasso
-}
-
-Response batrider_LevelUp
-{
-	scene "scenes/batrider/batrider_bat_level_01.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_level_02.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_level_03.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_level_04.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_level_05.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_level_06.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_level_07.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_level_08.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_level_09.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_level_10.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_level_11.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_level_12.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_level_13.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_level_14.vcd" nodelay 
-}
-
-Rule batrider_LevelUp_Rule
-{
-	criteria LevelUp Isbatrider 
-	response batrider_LevelUp
-}
-
-Response batrider_LastHit
-{
-	scene "scenes/batrider/batrider_bat_lasthit_01.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_lasthit_02.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_lasthit_03.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_lasthit_04.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_lasthit_05.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_lasthit_06.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_lasthit_07.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_lasthit_08.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_lasthit_09.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_lasthit_10.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_lasthit_11.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_lasthit_12.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_lasthit_13.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_lasthit_14.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_lasthit_15.vcd" nodelay 
-}
-
-Rule batrider_LastHit_Rule
-{
-	criteria LastHit Isbatrider 
-	response batrider_LastHit
-}
-
-Response batrider_Death
-{
-	scene "scenes/batrider/batrider_bat_death_01.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_death_02.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_death_03.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_death_04.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_death_05.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_death_06.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_death_07.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_death_08.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_death_09.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_death_10.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_death_11.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_death_12.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_death_13.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_death_14.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_death_15.vcd" nodelay 
-}
-
-Rule batrider_Death_Rule
-{
-	criteria Death Isbatrider 
-	response batrider_Death
-}
-
-Response batrider_DeathIsReincarnating
-{
-	scene "scenes/batrider/batrider_bat_fastres_01.vcd" nodelay 
-}
-
-Rule batrider_DeathIsReincarnating_Rule
-{
-	criteria Death Isbatrider IsReincarnating
-	response batrider_DeathIsReincarnating
-}
-
-Response batrider_Respawn
-{
-	scene "scenes/batrider/batrider_bat_respawn_01.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_respawn_02.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_respawn_03.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_respawn_04.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_respawn_05.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_respawn_06.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_respawn_07.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_respawn_08.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_respawn_09.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_respawn_10.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_respawn_11.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_respawn_12.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_respawn_13.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_respawn_14.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_respawn_15.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_respawn_16.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_respawn_17.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_respawn_18.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_respawn_19.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_respawn_20.vcd" nodelay 
-}
-
-Rule batrider_Respawn_Rule
-{
-	criteria Respawn Isbatrider 
-	response batrider_Respawn
-}
-
-Response batrider_Select
-{
-	scene "scenes/batrider/batrider_bat_rare_01.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_rare_02.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_rare_03.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_rare_04.vcd" nodelay 
-}
-
-Rule batrider_Select_Rule
-{
-	criteria Select Isbatrider 
-	response batrider_Select
-}
-
-Response batrider_PurchaseIsExpensiveItem
-{
-	scene "scenes/batrider/batrider_bat_purch_01.vcd" nodelay speakonce
-	scene "scenes/batrider/batrider_bat_purch_02.vcd" nodelay speakonce
-	scene "scenes/batrider/batrider_bat_purch_03.vcd" nodelay speakonce
-	scene "scenes/batrider/batrider_bat_purch_04.vcd" nodelay speakonce
-}
-
-Rule batrider_PurchaseIsExpensiveItem_Rule
-{
-	criteria Purchase Isbatrider IsExpensiveItem
-	response batrider_PurchaseIsExpensiveItem
-}
-
-Response batrider_PurchaseIsBlinkDagger
-{
-	scene "scenes/batrider/batrider_bat_blink_01.vcd" nodelay speakonce
-	scene "scenes/batrider/batrider_bat_blink_02.vcd" nodelay speakonce
-}
-
-Rule batrider_PurchaseIsBlinkDagger_Rule
-{
-	criteria Purchase Isbatrider IsBlinkDagger
-	response batrider_PurchaseIsBlinkDagger
-}
-
-Response batrider_PurchaseIsUltimateScepter
-{
-	scene "scenes/batrider/batrider_bat_scepter_01.vcd" nodelay speakonce
-	scene "scenes/batrider/batrider_bat_scepter_02.vcd" nodelay speakonce
-}
-
-Rule batrider_PurchaseIsUltimateScepter_Rule
-{
-	criteria Purchase Isbatrider IsUltimateScepter
-	response batrider_PurchaseIsUltimateScepter
-}
-
-Response batrider_PurchaseIsForceStaff
-{
-	scene "scenes/batrider/batrider_bat_item_01.vcd" nodelay speakonce
-}
-
-Rule batrider_PurchaseIsForceStaff_Rule
-{
-	criteria Purchase Isbatrider IsForceStaff
-	response batrider_PurchaseIsForceStaff
-}
-
-Response batrider_PurchaseIsVanguard
-{
-	scene "scenes/batrider/batrider_bat_item_02.vcd" nodelay speakonce
-}
-
-Rule batrider_PurchaseIsVanguard_Rule
-{
-	criteria Purchase Isbatrider IsVanguard
-	response batrider_PurchaseIsVanguard
-}
-
-Response batrider_PurchaseIsArcaneBoots
-{
-	scene "scenes/batrider/batrider_bat_item_03.vcd" nodelay speakonce
-}
-
-Rule batrider_PurchaseIsArcaneBoots_Rule
-{
-	criteria Purchase Isbatrider IsArcaneBoots
-	response batrider_PurchaseIsArcaneBoots
-}
-
-Response batrider_Bottling
-{
-	scene "scenes/batrider/batrider_bat_bottle_01.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_bottle_02.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_bottle_03.vcd" nodelay 
-}
-
-Rule batrider_Bottling_Rule
-{
-	criteria Bottling Isbatrider 
-	response batrider_Bottling
-}
-
-Response batrider_Deny
-{
-	scene "scenes/batrider/batrider_bat_deny_01.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_deny_02.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_deny_03.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_deny_04.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_deny_05.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_deny_06.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_deny_07.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_deny_08.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_deny_09.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_deny_10.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_deny_11.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_deny_12.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_deny_13.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_deny_14.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_deny_15.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_deny_16.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_deny_17.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_deny_18.vcd" nodelay 
-}
-
-Rule batrider_Deny_Rule
-{
-	criteria Deny Isbatrider 
-	response batrider_Deny
-}
-
-Response batrider_Defeat
-{
-	scene "scenes/batrider/batrider_bat_lose_01.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_lose_02.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_lose_03.vcd" nodelay 
-}
-
-Rule batrider_Defeat_Rule
-{
-	criteria Defeat Isbatrider 
-	response batrider_Defeat
-}
-
-Response batrider_Victory
-{
-	scene "scenes/batrider/batrider_bat_win_01.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_win_02.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_win_03.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_win_04.vcd" nodelay 
-}
-
-Rule batrider_Victory_Rule
-{
-	criteria Victory Isbatrider 
-	response batrider_Victory
-}
-
-Response batrider_Immortality
-{
-	scene "scenes/batrider/batrider_bat_immort_01.vcd" nodelay 
-}
-
-Rule batrider_Immortality_Rule
-{
-	criteria Immortality Isbatrider 
-	response batrider_Immortality
-}
-
-Response batrider_ImmortalityChance_25%
-{
-	scene "scenes/batrider/batrider_bat_immort_02.vcd" nodelay 
-}
-
-Rule batrider_ImmortalityChance_25%_Rule
-{
-	criteria Immortality Isbatrider Chance_25%
-	response batrider_ImmortalityChance_25%
-}
-
-Response batrider_PowerupIsPowerupHaste
-{
-	scene "scenes/batrider/batrider_bat_haste_01.vcd" nodelay 
-}
-
-Rule batrider_PowerupIsPowerupHaste_Rule
-{
-	criteria Powerup Isbatrider IsPowerupHaste
-	response batrider_PowerupIsPowerupHaste
-}
-
-Response batrider_PowerupIsPowerupHasteChance_25%
-{
-	scene "scenes/batrider/batrider_bat_haste_02.vcd" nodelay 
-}
-
-Rule batrider_PowerupIsPowerupHasteChance_25%_Rule
-{
-	criteria Powerup Isbatrider IsPowerupHaste Chance_25%
-	response batrider_PowerupIsPowerupHasteChance_25%
-}
-
-Response batrider_PowerupIsPowerupBounty
-{
-	scene "scenes/batrider/batrider_bat_lasthit_14.vcd" nodelay respeakdelay 300
-}
-
-Rule batrider_PowerupIsPowerupBounty_Rule
-{
-	criteria Powerup Isbatrider IsPowerupBounty
-	response batrider_PowerupIsPowerupBounty
-}
-
-Response batrider_PowerupIsPowerupArcane
-{
-	scene "scenes/batrider/batrider_bat_happy_02.vcd" nodelay respeakdelay 300
-}
-
-Rule batrider_PowerupIsPowerupArcane_Rule
-{
-	criteria Powerup Isbatrider IsPowerupArcane
-	response batrider_PowerupIsPowerupArcane
-}
-
-Response batrider_PowerupIsPowerupArcaneChance_30%
-{
-	scene "scenes/batrider/batrider_bat_kill_11.vcd" nodelay speakonce
-}
-
-Rule batrider_PowerupIsPowerupArcaneChance_30%_Rule
-{
-	criteria Powerup Isbatrider IsPowerupArcane Chance_30%
-	response batrider_PowerupIsPowerupArcaneChance_30%
-}
-
-Response batrider_PowerupIsPowerupDoubleDamage
-{
-	scene "scenes/batrider/batrider_bat_doubdam_01.vcd" nodelay 
-}
-
-Rule batrider_PowerupIsPowerupDoubleDamage_Rule
-{
-	criteria Powerup Isbatrider IsPowerupDoubleDamage
-	response batrider_PowerupIsPowerupDoubleDamage
-}
-
-Response batrider_PowerupIsPowerupDoubleDamageChance_25%
-{
-	scene "scenes/batrider/batrider_bat_doubdam_02.vcd" nodelay 
-}
-
-Rule batrider_PowerupIsPowerupDoubleDamageChance_25%_Rule
-{
-	criteria Powerup Isbatrider IsPowerupDoubleDamage Chance_25%
-	response batrider_PowerupIsPowerupDoubleDamageChance_25%
-}
-
-Response batrider_PowerupIsPowerupRegeneration
-{
-	scene "scenes/batrider/batrider_bat_regen_01.vcd" nodelay 
-}
-
-Rule batrider_PowerupIsPowerupRegeneration_Rule
-{
-	criteria Powerup Isbatrider IsPowerupRegeneration
-	response batrider_PowerupIsPowerupRegeneration
-}
-
-Response batrider_PowerupIsPowerupRegenerationChance_25%
-{
-	scene "scenes/batrider/batrider_bat_regen_02.vcd" nodelay 
-}
-
-Rule batrider_PowerupIsPowerupRegenerationChance_25%_Rule
-{
-	criteria Powerup Isbatrider IsPowerupRegeneration Chance_25%
-	response batrider_PowerupIsPowerupRegenerationChance_25%
-}
-
-Response batrider_PowerupIsPowerupIllusion
-{
-	scene "scenes/batrider/batrider_bat_illus_01.vcd" nodelay 
-}
-
-Rule batrider_PowerupIsPowerupIllusion_Rule
-{
-	criteria Powerup Isbatrider IsPowerupIllusion
-	response batrider_PowerupIsPowerupIllusion
-}
-
-Response batrider_PowerupIsPowerupIllusionChance_25%
-{
-	scene "scenes/batrider/batrider_bat_illus_02.vcd" nodelay 
-}
-
-Rule batrider_PowerupIsPowerupIllusionChance_25%_Rule
-{
-	criteria Powerup Isbatrider IsPowerupIllusion Chance_25%
-	response batrider_PowerupIsPowerupIllusionChance_25%
-}
-
-Response batrider_PowerupIsPowerupInvisibility
-{
-	scene "scenes/batrider/batrider_bat_invis_01.vcd" nodelay 
-}
-
-Rule batrider_PowerupIsPowerupInvisibility_Rule
-{
-	criteria Powerup Isbatrider IsPowerupInvisibility
-	response batrider_PowerupIsPowerupInvisibility
-}
-
-Response batrider_PowerupIsPowerupInvisibilityChance_25%
-{
-	scene "scenes/batrider/batrider_bat_invis_02.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_invis_03.vcd" nodelay 
-}
-
-Rule batrider_PowerupIsPowerupInvisibilityChance_25%_Rule
-{
-	criteria Powerup Isbatrider IsPowerupInvisibility Chance_25%
-	response batrider_PowerupIsPowerupInvisibilityChance_25%
-}
-
-Response batrider_CooldownLittleNag
-{
-	scene "scenes/batrider/batrider_bat_notyet_01.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_notyet_02.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_notyet_03.vcd" nodelay 
-}
-
-Rule batrider_CooldownLittleNag_Rule
-{
-	criteria Cooldown Isbatrider LittleNag
-	response batrider_CooldownLittleNag
-}
-
-Response batrider_CooldownMediumNag
-{
-	scene "scenes/batrider/batrider_bat_notyet_04.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_notyet_05.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_notyet_06.vcd" nodelay 
-}
-
-Rule batrider_CooldownMediumNag_Rule
-{
-	criteria Cooldown Isbatrider MediumNag
-	response batrider_CooldownMediumNag
-}
-
-Response batrider_CooldownSuperNag
-{
-	scene "scenes/batrider/batrider_bat_notyet_07.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_notyet_08.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_notyet_09.vcd" nodelay 
-}
-
-Rule batrider_CooldownSuperNag_Rule
-{
-	criteria Cooldown Isbatrider SuperNag
-	response batrider_CooldownSuperNag
-}
-
-Response batrider_NoManaLittleNag
-{
-	scene "scenes/batrider/batrider_bat_nomana_01.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_nomana_02.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_nomana_03.vcd" nodelay 
-}
-
-Rule batrider_NoManaLittleNag_Rule
-{
-	criteria NoMana Isbatrider LittleNag
-	response batrider_NoManaLittleNag
-}
-
-Response batrider_NoManaMediumNag
-{
-	scene "scenes/batrider/batrider_bat_nomana_04.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_nomana_05.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_nomana_06.vcd" nodelay 
-}
-
-Rule batrider_NoManaMediumNag_Rule
-{
-	criteria NoMana Isbatrider MediumNag
-	response batrider_NoManaMediumNag
-}
-
-Response batrider_NoManaSuperNag
-{
-	scene "scenes/batrider/batrider_bat_nomana_07.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_nomana_08.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_nomana_09.vcd" nodelay 
-}
-
-Rule batrider_NoManaSuperNag_Rule
-{
-	criteria NoMana Isbatrider SuperNag
-	response batrider_NoManaSuperNag
-}
-
-Response batrider_Thanks
-{
-	scene "scenes/batrider/batrider_bat_thanks_01.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_thanks_02.vcd" nodelay 
-}
-
-Rule batrider_Thanks_Rule
-{
-	criteria Thanks Isbatrider 
-	response batrider_Thanks
-}
-
-Response batrider_PainChance_25%
-{
-	scene "scenes/batrider/batrider_bat_underattack_01.vcd" nodelay respeakdelay 120
-}
-
-Rule batrider_PainChance_25%_Rule
-{
-	criteria Pain Isbatrider Chance_25%
-	response batrider_PainChance_25%
-}
-
-Response batrider_Pain
-{
-	scene "scenes/batrider/batrider_bat_pain_01.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_pain_02.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_pain_03.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_pain_04.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_pain_05.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_pain_06.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_pain_07.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_pain_08.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_pain_09.vcd" nodelay 
-}
-
-Rule batrider_Pain_Rule
-{
-	criteria Pain Isbatrider 
-	response batrider_Pain
-}
-
-Response batrider_InTheBag
-{
-	scene "scenes/batrider/batrider_bat_inthebag_01.vcd" nodelay 
-}
-
-Rule batrider_InTheBag_Rule
-{
-	criteria InTheBag Isbatrider 
-	response batrider_InTheBag
-}
-
-Response batrider_ItemDropIsCommonDrop
-{
-	scene "scenes/batrider/batrider_bat_happy_01.vcd" nodelay 
-}
-
-Rule batrider_ItemDropIsCommonDrop_Rule
-{
-	criteria ItemDrop Isbatrider IsCommonDrop
-	response batrider_ItemDropIsCommonDrop
-}
-
-Response batrider_ItemDropIsRareDrop
-{
-	scene "scenes/batrider/batrider_bat_happy_02.vcd" nodelay 
-}
-
-Rule batrider_ItemDropIsRareDrop_Rule
-{
-	criteria ItemDrop Isbatrider IsRareDrop
-	response batrider_ItemDropIsRareDrop
-}
-
-Response batrider_ItemDropIsUltraRareDrop
-{
-	scene "scenes/batrider/batrider_bat_happy_03.vcd" nodelay 
-}
-
-Rule batrider_ItemDropIsUltraRareDrop_Rule
-{
-	criteria ItemDrop Isbatrider IsUltraRareDrop
-	response batrider_ItemDropIsUltraRareDrop
-}
-
-Response batrider_EmoteIsEmoteLaugh
-{
-	scene "scenes/batrider/batrider_bat_laugh_01.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_laugh_02.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_laugh_03.vcd" nodelay 
-	scene "scenes/batrider/batrider_bat_laugh_04.vcd" nodelay 
-}
-
-Rule batrider_EmoteIsEmoteLaugh_Rule
-{
-	criteria Emote Isbatrider IsEmoteLaugh
-	response batrider_EmoteIsEmoteLaugh
-}
-
-Response batrider_TauntIsBatriderTauntHangLoose
-{
-	scene "scenes/batrider/batrider_bat_level_11.vcd" nodelay 
-}
-
-Rule batrider_TauntIsBatriderTauntHangLoose_Rule
-{
-	criteria Taunt Isbatrider IsBatriderTauntHangLoose
-	response batrider_TauntIsBatriderTauntHangLoose
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vrfunknown:version{c1f07085-5299-4e8a-b7e9-1cbb66bbbe23} -->
+{
+	m_Includes = 
+	[
+		"scripts/talker/response_rules_shared.vrr",
+	]
+	m_ResponseGroups = 
+	[
+		
+		{
+			m_name = "batrider_Spawn"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_spawn_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_spawn_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_spawn_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_spawn_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_spawn_05.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "batrider_CustomIsGameStart"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_battlebegins_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_battlebegins_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "batrider_CustomIsBatriderLoadoutSpawn"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_spawn_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_spawn_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_spawn_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_spawn_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_spawn_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_battlebegins_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_battlebegins_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_attack_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_attack_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_respawn_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_respawn_14.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_ability_lasso_04.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "batrider_KillIsFirstBlood"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_firstblood_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "batrider_KillIsAbilityFlameBreakChance_50%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_ability_flame_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_ability_flame_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_ability_flame_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_ability_flame_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_ability_flame_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_ability_flame_06.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "batrider_KillIsAbilityFireflyChance_50%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_ability_firefly_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_ability_firefly_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_ability_firefly_06.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "batrider_Kill"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_kill_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_kill_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_kill_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_kill_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_kill_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_kill_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_kill_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_kill_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_kill_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_kill_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_kill_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_kill_12.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_kill_13.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_kill_14.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_kill_15.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_kill_16.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_kill_17.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_kill_18.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_kill_19.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_kill_20.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_laugh_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_laugh_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_laugh_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_laugh_04.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "batrider_KillIsEnemyLinaChance_35%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_rival_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_rival_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_rival_10.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "batrider_KillIsEnemyQueenOfPainChance_35%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_rival_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "batrider_KillIsEnemyDrowRangerChance_35%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_rival_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "batrider_KillIsEnemyVengefulSpiritChance_35%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_rival_05.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "batrider_KillIsEnemyEnchantressChance_35%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_rival_06.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "batrider_KillIsEnemySpectreChance_35%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_rival_07.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "batrider_KillIsEnemyCrystalMaidenChance_35%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_rival_08.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "batrider_KillIsEnemyTemplar_AssassinChance_35%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_rival_11.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "batrider_KillIsEnemyDeath_ProphetChance_35%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_rival_12.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "batrider_KillIsEnemyMiranaChance_35%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_rival_13.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "batrider_KillIsEnemyBroodmotherChance_35%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_rival_14.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "batrider_KillIsEnemyPhantom_AssassinChance_35%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_rival_15.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "batrider_KillIsEnemyNight_StalkerChance_35%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_rival_16.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "batrider_KillIsEnemyStormSpiritChance_35%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_rival_17.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "batrider_KillIsEnemyPudgeChance_35%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_rival_18.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_rival_19.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "batrider_KillIsEnemyFaceless_VoidChance_35%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_rival_21.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "batrider_KillIsEnemyViperChance_35%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_rival_22.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "batrider_KillIsEnemyDragon_KnightChance_35%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_rival_23.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_rival_25.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "batrider_KillIsEnemyJakiroChance_35%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_rival_24.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "batrider_Move"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_move_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_move_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_move_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_move_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_move_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_move_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_move_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_move_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_move_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_move_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_move_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_move_12.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_move_13.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_move_14.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_move_15.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_move_16.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_move_17.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_move_18.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_move_19.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_move_20.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_move_21.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_move_22.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "batrider_Attack"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_attack_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_attack_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_attack_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_attack_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_attack_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_attack_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_attack_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_attack_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_attack_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_attack_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_attack_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_attack_12.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_attack_13.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_attack_14.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "batrider_CastOrder"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_cast_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_cast_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_cast_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_cast_04.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "batrider_CastExecuteIsAbilityFirefly"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_ability_firefly_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_ability_firefly_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_ability_firefly_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_ability_firefly_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_ability_firefly_09.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "batrider_CastExecuteIsAbilityLasso"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_ability_lasso_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_ability_lasso_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_ability_lasso_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_ability_lasso_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_ability_lasso_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_ability_lasso_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_ability_lasso_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_ability_lasso_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_ability_lasso_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_ability_lasso_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_ability_lasso_11.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "batrider_LevelUp"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_level_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_level_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_level_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_level_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_level_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_level_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_level_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_level_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_level_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_level_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_level_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_level_12.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_level_13.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_level_14.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "batrider_LastHit"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_lasthit_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_lasthit_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_lasthit_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_lasthit_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_lasthit_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_lasthit_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_lasthit_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_lasthit_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_lasthit_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_lasthit_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_lasthit_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_lasthit_12.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_lasthit_13.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_lasthit_14.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_lasthit_15.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "batrider_Death"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_death_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_death_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_death_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_death_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_death_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_death_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_death_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_death_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_death_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_death_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_death_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_death_12.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_death_13.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_death_14.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_death_15.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "batrider_DeathIsReincarnating"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_fastres_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "batrider_Respawn"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_respawn_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_respawn_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_respawn_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_respawn_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_respawn_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_respawn_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_respawn_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_respawn_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_respawn_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_respawn_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_respawn_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_respawn_12.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_respawn_13.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_respawn_14.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_respawn_15.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_respawn_16.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_respawn_17.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_respawn_18.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_respawn_19.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_respawn_20.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "batrider_Select"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_rare_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_rare_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_rare_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_rare_04.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "batrider_PurchaseIsExpensiveItem"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_purch_01.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_purch_02.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_purch_03.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_purch_04.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "batrider_PurchaseIsBlinkDagger"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_blink_01.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_blink_02.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "batrider_PurchaseIsUltimateScepter"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_scepter_01.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_scepter_02.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "batrider_PurchaseIsForceStaff"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_item_01.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "batrider_PurchaseIsVanguard"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_item_02.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "batrider_PurchaseIsArcaneBoots"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_item_03.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "batrider_Bottling"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_bottle_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_bottle_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_bottle_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "batrider_Deny"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_deny_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_deny_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_deny_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_deny_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_deny_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_deny_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_deny_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_deny_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_deny_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_deny_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_deny_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_deny_12.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_deny_13.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_deny_14.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_deny_15.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_deny_16.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_deny_17.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_deny_18.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "batrider_Defeat"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_lose_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_lose_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_lose_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "batrider_Victory"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_win_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_win_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_win_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_win_04.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "batrider_Immortality"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_immort_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "batrider_ImmortalityChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_immort_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "batrider_PowerupIsPowerupHaste"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_haste_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "batrider_PowerupIsPowerupHasteChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_haste_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "batrider_PowerupIsPowerupBounty"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_lasthit_14.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 300.000000
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "batrider_PowerupIsPowerupArcane"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_happy_02.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 300.000000
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "batrider_PowerupIsPowerupArcaneChance_30%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_kill_11.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "batrider_PowerupIsPowerupDoubleDamage"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_doubdam_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "batrider_PowerupIsPowerupDoubleDamageChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_doubdam_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "batrider_PowerupIsPowerupRegeneration"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_regen_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "batrider_PowerupIsPowerupRegenerationChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_regen_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "batrider_PowerupIsPowerupIllusion"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_illus_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "batrider_PowerupIsPowerupIllusionChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_illus_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "batrider_PowerupIsPowerupInvisibility"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_invis_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "batrider_PowerupIsPowerupInvisibilityChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_invis_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_invis_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "batrider_CooldownLittleNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_notyet_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_notyet_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_notyet_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "batrider_CooldownMediumNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_notyet_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_notyet_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_notyet_06.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "batrider_CooldownSuperNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_notyet_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_notyet_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_notyet_09.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "batrider_NoManaLittleNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_nomana_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_nomana_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_nomana_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "batrider_NoManaMediumNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_nomana_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_nomana_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_nomana_06.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "batrider_NoManaSuperNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_nomana_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_nomana_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_nomana_09.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "batrider_Thanks"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_thanks_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_thanks_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "batrider_PainChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_underattack_01.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 120.000000
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "batrider_Pain"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_pain_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_pain_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_pain_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_pain_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_pain_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_pain_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_pain_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_pain_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_pain_09.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "batrider_InTheBag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_inthebag_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "batrider_ItemDropIsCommonDrop"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_happy_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "batrider_ItemDropIsRareDrop"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_happy_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "batrider_ItemDropIsUltraRareDrop"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_happy_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "batrider_EmoteIsEmoteLaugh"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_laugh_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_laugh_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_laugh_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_laugh_04.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "batrider_TauntIsBatriderTauntHangLoose"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/batrider/batrider_bat_level_11.vcd"
+				},
+			]
+		},
+	]
+	m_Requirements = 
+	[
+		
+		{
+			m_name = "Isbatrider"
+			m_matchKey = "classname"
+			m_matchExpr = "npc_dota_hero_batrider"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsAbilityFlameBreak"
+			m_matchKey = "abilityname"
+			m_matchExpr = "batrider_flamebreak"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsAbilityFirefly"
+			m_matchKey = "abilityname"
+			m_matchExpr = "batrider_firefly"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsAbilityLasso"
+			m_matchKey = "abilityname"
+			m_matchExpr = "batrider_flaming_lasso"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsBatriderTauntHangLoose"
+			m_matchKey = "taunt_type"
+			m_matchExpr = "hang_loose_gesture"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsBatriderLoadoutSpawn"
+			m_matchKey = "special_spawn"
+			m_matchExpr = "batrider_loadout_spawn"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+	]
+	m_Rules = 
+	[
+		
+		{
+			m_name = "batrider_Spawn_Rule"
+			m_Requirements = 
+			[
+				"Spawn",
+				"Isbatrider",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_Spawn",
+			]
+		},
+		
+		{
+			m_name = "batrider_CustomIsGameStart_Rule"
+			m_Requirements = 
+			[
+				"Custom",
+				"Isbatrider",
+				"IsGameStart",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_CustomIsGameStart",
+			]
+		},
+		
+		{
+			m_name = "batrider_CustomIsBatriderLoadoutSpawn_Rule"
+			m_Requirements = 
+			[
+				"Custom",
+				"Isbatrider",
+				"IsBatriderLoadoutSpawn",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_CustomIsBatriderLoadoutSpawn",
+			]
+		},
+		
+		{
+			m_name = "batrider_KillIsFirstBlood_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isbatrider",
+				"IsFirstBlood",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_KillIsFirstBlood",
+			]
+		},
+		
+		{
+			m_name = "batrider_KillIsAbilityFlameBreakChance_50%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isbatrider",
+				"IsAbilityFlameBreak",
+				"Chance_50%",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_KillIsAbilityFlameBreakChance_50%",
+			]
+		},
+		
+		{
+			m_name = "batrider_KillIsAbilityFireflyChance_50%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isbatrider",
+				"IsAbilityFirefly",
+				"Chance_50%",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_KillIsAbilityFireflyChance_50%",
+			]
+		},
+		
+		{
+			m_name = "batrider_Kill_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isbatrider",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_Kill",
+			]
+		},
+		
+		{
+			m_name = "batrider_KillIsEnemyLinaChance_35%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isbatrider",
+				"IsEnemyLina",
+				"Chance_35%",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_KillIsEnemyLinaChance_35%",
+			]
+		},
+		
+		{
+			m_name = "batrider_KillIsEnemyQueenOfPainChance_35%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isbatrider",
+				"IsEnemyQueenOfPain",
+				"Chance_35%",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_KillIsEnemyQueenOfPainChance_35%",
+			]
+		},
+		
+		{
+			m_name = "batrider_KillIsEnemyDrowRangerChance_35%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isbatrider",
+				"IsEnemyDrowRanger",
+				"Chance_35%",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_KillIsEnemyDrowRangerChance_35%",
+			]
+		},
+		
+		{
+			m_name = "batrider_KillIsEnemyVengefulSpiritChance_35%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isbatrider",
+				"IsEnemyVengefulSpirit",
+				"Chance_35%",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_KillIsEnemyVengefulSpiritChance_35%",
+			]
+		},
+		
+		{
+			m_name = "batrider_KillIsEnemyEnchantressChance_35%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isbatrider",
+				"IsEnemyEnchantress",
+				"Chance_35%",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_KillIsEnemyEnchantressChance_35%",
+			]
+		},
+		
+		{
+			m_name = "batrider_KillIsEnemySpectreChance_35%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isbatrider",
+				"IsEnemySpectre",
+				"Chance_35%",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_KillIsEnemySpectreChance_35%",
+			]
+		},
+		
+		{
+			m_name = "batrider_KillIsEnemyCrystalMaidenChance_35%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isbatrider",
+				"IsEnemyCrystalMaiden",
+				"Chance_35%",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_KillIsEnemyCrystalMaidenChance_35%",
+			]
+		},
+		
+		{
+			m_name = "batrider_KillIsEnemyTemplar_AssassinChance_35%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isbatrider",
+				"IsEnemyTemplar_Assassin",
+				"Chance_35%",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_KillIsEnemyTemplar_AssassinChance_35%",
+			]
+		},
+		
+		{
+			m_name = "batrider_KillIsEnemyDeath_ProphetChance_35%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isbatrider",
+				"IsEnemyDeath_Prophet",
+				"Chance_35%",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_KillIsEnemyDeath_ProphetChance_35%",
+			]
+		},
+		
+		{
+			m_name = "batrider_KillIsEnemyMiranaChance_35%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isbatrider",
+				"IsEnemyMirana",
+				"Chance_35%",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_KillIsEnemyMiranaChance_35%",
+			]
+		},
+		
+		{
+			m_name = "batrider_KillIsEnemyBroodmotherChance_35%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isbatrider",
+				"IsEnemyBroodmother",
+				"Chance_35%",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_KillIsEnemyBroodmotherChance_35%",
+			]
+		},
+		
+		{
+			m_name = "batrider_KillIsEnemyPhantom_AssassinChance_35%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isbatrider",
+				"IsEnemyPhantom_Assassin",
+				"Chance_35%",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_KillIsEnemyPhantom_AssassinChance_35%",
+			]
+		},
+		
+		{
+			m_name = "batrider_KillIsEnemyNight_StalkerChance_35%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isbatrider",
+				"IsEnemyNight_Stalker",
+				"Chance_35%",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_KillIsEnemyNight_StalkerChance_35%",
+			]
+		},
+		
+		{
+			m_name = "batrider_KillIsEnemyStormSpiritChance_35%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isbatrider",
+				"IsEnemyStormSpirit",
+				"Chance_35%",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_KillIsEnemyStormSpiritChance_35%",
+			]
+		},
+		
+		{
+			m_name = "batrider_KillIsEnemyPudgeChance_35%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isbatrider",
+				"IsEnemyPudge",
+				"Chance_35%",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_KillIsEnemyPudgeChance_35%",
+			]
+		},
+		
+		{
+			m_name = "batrider_KillIsEnemyFaceless_VoidChance_35%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isbatrider",
+				"IsEnemyFaceless_Void",
+				"Chance_35%",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_KillIsEnemyFaceless_VoidChance_35%",
+			]
+		},
+		
+		{
+			m_name = "batrider_KillIsEnemyViperChance_35%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isbatrider",
+				"IsEnemyViper",
+				"Chance_35%",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_KillIsEnemyViperChance_35%",
+			]
+		},
+		
+		{
+			m_name = "batrider_KillIsEnemyDragon_KnightChance_35%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isbatrider",
+				"IsEnemyDragon_Knight",
+				"Chance_35%",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_KillIsEnemyDragon_KnightChance_35%",
+			]
+		},
+		
+		{
+			m_name = "batrider_KillIsEnemyJakiroChance_35%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isbatrider",
+				"IsEnemyJakiro",
+				"Chance_35%",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_KillIsEnemyJakiroChance_35%",
+			]
+		},
+		
+		{
+			m_name = "batrider_Move_Rule"
+			m_Requirements = 
+			[
+				"Move",
+				"Isbatrider",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_Move",
+			]
+		},
+		
+		{
+			m_name = "batrider_Attack_Rule"
+			m_Requirements = 
+			[
+				"Attack",
+				"Isbatrider",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_Attack",
+			]
+		},
+		
+		{
+			m_name = "batrider_CastOrder_Rule"
+			m_Requirements = 
+			[
+				"CastOrder",
+				"Isbatrider",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_CastOrder",
+			]
+		},
+		
+		{
+			m_name = "batrider_CastExecuteIsAbilityFirefly_Rule"
+			m_Requirements = 
+			[
+				"CastExecute",
+				"Isbatrider",
+				"IsAbilityFirefly",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_CastExecuteIsAbilityFirefly",
+			]
+		},
+		
+		{
+			m_name = "batrider_CastExecuteIsAbilityLasso_Rule"
+			m_Requirements = 
+			[
+				"CastExecute",
+				"Isbatrider",
+				"IsAbilityLasso",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_CastExecuteIsAbilityLasso",
+			]
+		},
+		
+		{
+			m_name = "batrider_LevelUp_Rule"
+			m_Requirements = 
+			[
+				"LevelUp",
+				"Isbatrider",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_LevelUp",
+			]
+		},
+		
+		{
+			m_name = "batrider_LastHit_Rule"
+			m_Requirements = 
+			[
+				"LastHit",
+				"Isbatrider",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_LastHit",
+			]
+		},
+		
+		{
+			m_name = "batrider_Death_Rule"
+			m_Requirements = 
+			[
+				"Death",
+				"Isbatrider",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_Death",
+			]
+		},
+		
+		{
+			m_name = "batrider_DeathIsReincarnating_Rule"
+			m_Requirements = 
+			[
+				"Death",
+				"Isbatrider",
+				"IsReincarnating",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_DeathIsReincarnating",
+			]
+		},
+		
+		{
+			m_name = "batrider_Respawn_Rule"
+			m_Requirements = 
+			[
+				"Respawn",
+				"Isbatrider",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_Respawn",
+			]
+		},
+		
+		{
+			m_name = "batrider_Select_Rule"
+			m_Requirements = 
+			[
+				"Select",
+				"Isbatrider",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_Select",
+			]
+		},
+		
+		{
+			m_name = "batrider_PurchaseIsExpensiveItem_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isbatrider",
+				"IsExpensiveItem",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_PurchaseIsExpensiveItem",
+			]
+		},
+		
+		{
+			m_name = "batrider_PurchaseIsBlinkDagger_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isbatrider",
+				"IsBlinkDagger",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_PurchaseIsBlinkDagger",
+			]
+		},
+		
+		{
+			m_name = "batrider_PurchaseIsUltimateScepter_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isbatrider",
+				"IsUltimateScepter",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_PurchaseIsUltimateScepter",
+			]
+		},
+		
+		{
+			m_name = "batrider_PurchaseIsForceStaff_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isbatrider",
+				"IsForceStaff",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_PurchaseIsForceStaff",
+			]
+		},
+		
+		{
+			m_name = "batrider_PurchaseIsVanguard_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isbatrider",
+				"IsVanguard",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_PurchaseIsVanguard",
+			]
+		},
+		
+		{
+			m_name = "batrider_PurchaseIsArcaneBoots_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isbatrider",
+				"IsArcaneBoots",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_PurchaseIsArcaneBoots",
+			]
+		},
+		
+		{
+			m_name = "batrider_Bottling_Rule"
+			m_Requirements = 
+			[
+				"Bottling",
+				"Isbatrider",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_Bottling",
+			]
+		},
+		
+		{
+			m_name = "batrider_Deny_Rule"
+			m_Requirements = 
+			[
+				"Deny",
+				"Isbatrider",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_Deny",
+			]
+		},
+		
+		{
+			m_name = "batrider_Defeat_Rule"
+			m_Requirements = 
+			[
+				"Defeat",
+				"Isbatrider",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_Defeat",
+			]
+		},
+		
+		{
+			m_name = "batrider_Victory_Rule"
+			m_Requirements = 
+			[
+				"Victory",
+				"Isbatrider",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_Victory",
+			]
+		},
+		
+		{
+			m_name = "batrider_Immortality_Rule"
+			m_Requirements = 
+			[
+				"Immortality",
+				"Isbatrider",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_Immortality",
+			]
+		},
+		
+		{
+			m_name = "batrider_ImmortalityChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Immortality",
+				"Isbatrider",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_ImmortalityChance_25%",
+			]
+		},
+		
+		{
+			m_name = "batrider_PowerupIsPowerupHaste_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isbatrider",
+				"IsPowerupHaste",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_PowerupIsPowerupHaste",
+			]
+		},
+		
+		{
+			m_name = "batrider_PowerupIsPowerupHasteChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isbatrider",
+				"IsPowerupHaste",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_PowerupIsPowerupHasteChance_25%",
+			]
+		},
+		
+		{
+			m_name = "batrider_PowerupIsPowerupBounty_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isbatrider",
+				"IsPowerupBounty",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_PowerupIsPowerupBounty",
+			]
+		},
+		
+		{
+			m_name = "batrider_PowerupIsPowerupArcane_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isbatrider",
+				"IsPowerupArcane",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_PowerupIsPowerupArcane",
+			]
+		},
+		
+		{
+			m_name = "batrider_PowerupIsPowerupArcaneChance_30%_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isbatrider",
+				"IsPowerupArcane",
+				"Chance_30%",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_PowerupIsPowerupArcaneChance_30%",
+			]
+		},
+		
+		{
+			m_name = "batrider_PowerupIsPowerupDoubleDamage_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isbatrider",
+				"IsPowerupDoubleDamage",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_PowerupIsPowerupDoubleDamage",
+			]
+		},
+		
+		{
+			m_name = "batrider_PowerupIsPowerupDoubleDamageChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isbatrider",
+				"IsPowerupDoubleDamage",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_PowerupIsPowerupDoubleDamageChance_25%",
+			]
+		},
+		
+		{
+			m_name = "batrider_PowerupIsPowerupRegeneration_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isbatrider",
+				"IsPowerupRegeneration",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_PowerupIsPowerupRegeneration",
+			]
+		},
+		
+		{
+			m_name = "batrider_PowerupIsPowerupRegenerationChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isbatrider",
+				"IsPowerupRegeneration",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_PowerupIsPowerupRegenerationChance_25%",
+			]
+		},
+		
+		{
+			m_name = "batrider_PowerupIsPowerupIllusion_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isbatrider",
+				"IsPowerupIllusion",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_PowerupIsPowerupIllusion",
+			]
+		},
+		
+		{
+			m_name = "batrider_PowerupIsPowerupIllusionChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isbatrider",
+				"IsPowerupIllusion",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_PowerupIsPowerupIllusionChance_25%",
+			]
+		},
+		
+		{
+			m_name = "batrider_PowerupIsPowerupInvisibility_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isbatrider",
+				"IsPowerupInvisibility",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_PowerupIsPowerupInvisibility",
+			]
+		},
+		
+		{
+			m_name = "batrider_PowerupIsPowerupInvisibilityChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isbatrider",
+				"IsPowerupInvisibility",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_PowerupIsPowerupInvisibilityChance_25%",
+			]
+		},
+		
+		{
+			m_name = "batrider_CooldownLittleNag_Rule"
+			m_Requirements = 
+			[
+				"Cooldown",
+				"Isbatrider",
+				"LittleNag",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_CooldownLittleNag",
+			]
+		},
+		
+		{
+			m_name = "batrider_CooldownMediumNag_Rule"
+			m_Requirements = 
+			[
+				"Cooldown",
+				"Isbatrider",
+				"MediumNag",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_CooldownMediumNag",
+			]
+		},
+		
+		{
+			m_name = "batrider_CooldownSuperNag_Rule"
+			m_Requirements = 
+			[
+				"Cooldown",
+				"Isbatrider",
+				"SuperNag",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_CooldownSuperNag",
+			]
+		},
+		
+		{
+			m_name = "batrider_NoManaLittleNag_Rule"
+			m_Requirements = 
+			[
+				"NoMana",
+				"Isbatrider",
+				"LittleNag",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_NoManaLittleNag",
+			]
+		},
+		
+		{
+			m_name = "batrider_NoManaMediumNag_Rule"
+			m_Requirements = 
+			[
+				"NoMana",
+				"Isbatrider",
+				"MediumNag",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_NoManaMediumNag",
+			]
+		},
+		
+		{
+			m_name = "batrider_NoManaSuperNag_Rule"
+			m_Requirements = 
+			[
+				"NoMana",
+				"Isbatrider",
+				"SuperNag",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_NoManaSuperNag",
+			]
+		},
+		
+		{
+			m_name = "batrider_Thanks_Rule"
+			m_Requirements = 
+			[
+				"Thanks",
+				"Isbatrider",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_Thanks",
+			]
+		},
+		
+		{
+			m_name = "batrider_PainChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Pain",
+				"Isbatrider",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_PainChance_25%",
+			]
+		},
+		
+		{
+			m_name = "batrider_Pain_Rule"
+			m_Requirements = 
+			[
+				"Pain",
+				"Isbatrider",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_Pain",
+			]
+		},
+		
+		{
+			m_name = "batrider_InTheBag_Rule"
+			m_Requirements = 
+			[
+				"InTheBag",
+				"Isbatrider",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_InTheBag",
+			]
+		},
+		
+		{
+			m_name = "batrider_ItemDropIsCommonDrop_Rule"
+			m_Requirements = 
+			[
+				"ItemDrop",
+				"Isbatrider",
+				"IsCommonDrop",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_ItemDropIsCommonDrop",
+			]
+		},
+		
+		{
+			m_name = "batrider_ItemDropIsRareDrop_Rule"
+			m_Requirements = 
+			[
+				"ItemDrop",
+				"Isbatrider",
+				"IsRareDrop",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_ItemDropIsRareDrop",
+			]
+		},
+		
+		{
+			m_name = "batrider_ItemDropIsUltraRareDrop_Rule"
+			m_Requirements = 
+			[
+				"ItemDrop",
+				"Isbatrider",
+				"IsUltraRareDrop",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_ItemDropIsUltraRareDrop",
+			]
+		},
+		
+		{
+			m_name = "batrider_EmoteIsEmoteLaugh_Rule"
+			m_Requirements = 
+			[
+				"Emote",
+				"Isbatrider",
+				"IsEmoteLaugh",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_EmoteIsEmoteLaugh",
+			]
+		},
+		
+		{
+			m_name = "batrider_TauntIsBatriderTauntHangLoose_Rule"
+			m_Requirements = 
+			[
+				"Taunt",
+				"Isbatrider",
+				"IsBatriderTauntHangLoose",
+			]
+			m_ResponseGroups = 
+			[
+				"batrider_TauntIsBatriderTauntHangLoose",
+			]
+		},
+	]
 }
-

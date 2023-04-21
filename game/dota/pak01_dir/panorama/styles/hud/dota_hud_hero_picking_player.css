@@ -133,8 +133,7 @@ DOTAHudHeroPickingPlayer{
   width: 118px;
   height: 14px;
 
-  vertical-align: bottom;
-  margin-bottom: 30px;
+  margin-top: 68px;
   transform: translateX(14px);
   visibility: collapse;
 
@@ -924,4 +923,49 @@ DOTAHudHeroPickingPlayer{
  .CanReportDidNotPlayRole .LaneSelectionTriangle{
 
      visibility: visible;
+ }
+
+ #PickedParticlesContainer{
+
+  width: 100%;
+  height: 180px;
+  opacity-mask: url( "s2r://panorama/images/masks/left_right_blur_png.vtex");
+
+  transform: scale3d( 1, -1, 1 ) translateY( 0px );
+  opacity: 0;
+  visibility: collapse;
+ }
+  .PD__PlayerPicked #PickedParticlesContainer{
+   visibility: visible;
+   animation-name: AnimatePickedParticles;
+   animation-duration: 1.5s;
+   animation-timing-function: ease-out;
+  }
+
+  #PickedParticlesContainer .PickedParticles{
+   width: 100%;
+   height: 100%;
+  }
+
+
+ @keyframes 'AnimatePickedParticles'{
+
+  0%{
+
+   opacity: 0;
+   brightness: 1;
+  }
+
+  10%{
+
+   opacity: 1;
+   brightness: 3;
+   transform: scale3d( 1, -1, 1 ) translateY( 40px );
+  }
+
+  100%{
+
+         opacity: 0;
+   brightness: 1;
+  }
 }

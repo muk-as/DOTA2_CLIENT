@@ -5,6 +5,7 @@
 		<include src="s2r://panorama/styles/dashboard_page_shared.vcss_c" />
 		<include src="s2r://panorama/styles/dashboard_page_profile.vcss_c" />
 		<include src="s2r://panorama/styles/dashboard_page_profile_hero_stats.vcss_c" />
+		<include src="s2r://panorama/styles/dashboard_page_profile_stats_shared.vcss_c" />
 	</styles>
 	<DOTAProfileHeroStatsPage class="DashboardPage">
 		<Panel id="UserProfileBackground" class="UserCustomBackground" hittest="false" />
@@ -35,12 +36,24 @@
 						</Panel>
 					</Panel>
 					<Panel class="ProfileHeaderFiller" />
-					<Panel id="RankBox" class="TopBottomFlow">
-						<Panel class="LeftRightFlow">
+					<Panel id="MMRContainer" class="TopBottomFlow">
+						<Panel class="MMRValueContainer TopBottomFlow">
+							<Panel class="MMRNumberContainer">
+								<Label id="MMRTBD" class="MMRTBD MMRValue" text="#ranked_mmr_tbd" />
+								<Label id="MMRNumber" class="MMRValue" text="#ranked_mmr_value" />
+								<Label id="MMRCalibrating" class="MMRValue" text="#ranked_mmr_calibrating" />
+								<Label id="MMRNoData" class="MMRValue" text="#ranked_mmr_core_no_data" />
+							</Panel>
 							<Label id="MMRLabel" text="#ranked_mmr_label" />
-							<Label id="MMRValue" text="#ranked_mmr_value" />
-							<Label id="MMRCalibrating" text="#ranked_mmr_calibrating" />
-							<Label id="MMRNoData" text="#ranked_mmr_core_no_data" />
+						</Panel>
+						<Panel id="RankConfidenceContainer">
+							<Panel class="RankConfidenceProgressBarContainer TopBottomFlow">
+								<ProgressBar id="RankConfidenceProgressBar" onmouseover="UIShowTextTooltip( #ranked_mmr_confidence_tooltip )" onmouseout="UIHideTextTooltip()">
+									<Panel id="RankConfidenceCalibrationThreshold" />
+									<Label id="RankConfidenceProgressBarValue" text="#ranked_mmr_confidence_value" />
+								</ProgressBar>
+								<Label id="RankConfidenceProgressBarLabel" text="#ranked_mmr_confidence_label" />
+							</Panel>
 						</Panel>
 					</Panel>
 				</Panel>

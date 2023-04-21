@@ -76,7 +76,7 @@
 
  #IconContainer.StartAnim{
 
-  animation-name: switchAnim;
+
   animation-duration: 0.3s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: 1;
@@ -129,6 +129,7 @@
   animation-duration: 21.11s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
+  visibility:collapse;
  }
 
  #MainImage{
@@ -140,6 +141,7 @@
   saturation: 1.0;
   transition-duration: 0.0s;
   wash-color: #FFFFFFFF;
+  visibility:collapse;
  }
 
  #MainImage:hover{
@@ -156,6 +158,91 @@
   visibility: collapse;
  }
 
+ #ItemSetPreview{
+
+  width: 60%;
+  height: 100%;
+  margin-left: 0px;
+  margin-bottom: 100px;
+  vertical-align: middle;
+  horizontal-align: center;
+  opacity-mask: url( "s2r://panorama/images/masks/softedge_box_png.vtex") 1.0;
+ }
+  .Slot_type_courier #ItemSetPreview{
+   width: 100%;
+   height: 100%;
+   transform: scale3d(1.4, 1.4, 1);
+  }
+
+  .Slot_type_ward #ItemSetPreview{
+   width: 100%;
+   height: 100%;
+   margin-right: 160px;
+   transform: scale3d(1.1, 1.1, 1);
+   margin-bottom: 120px;
+  }
+
+
+ #ItemShadow{
+
+  width: 380px;
+  height: 70px;
+  horizontal-align: center;
+  vertical-align: center;
+  margin-top: 310px;
+  background-color: gradient( radial, 50% 50%, 0% 0%, 50% 50%, from( rgb(0, 0, 0) ), color-stop( 0.2, rgba(0, 0, 0, 1) ), to( rgba(0, 0, 0, 0) ) );
+  blur: gaussian( 24px );
+  opacity: 0.7;
+ }
+  .Slot_type_courier #ItemShadow{
+   margin-top: 190px;
+  }
+
+  .Slot_type_ward #ItemShadow{
+   margin-top: 240px;
+   height: 200px;
+  }
+
+
+ #Horizon{
+
+  width: 100%;
+  vertical-align: bottom;
+  height: 260px;
+  background-color: gradient( radial, 50% 0%, 0% 0%, 45% 100%, from( rgb(0, 0, 0) ), color-stop( 0.2, rgb(0, 0, 0) ), to( rgba(0, 0, 0, 0) ) );
+  opacity: 0.5;
+ }
+  .Slot_type_courier #Horizon{
+   margin-bottom: 70px;
+  }
+
+  .Slot_type_ward #Horizon{
+   margin-bottom: 120px;
+  }
+
+
+ #BackgroundFXWindow{
+
+  opacity: 0;
+  width: 840px;
+  height: 840px;
+  margin-top: -120px;
+  hue-rotation: 0deg;
+  saturation: 1;
+  horizontal-align: center;
+  opacity-mask: url( "s2r://panorama/images/masks/softedge_circle_png.vtex") 1.0;
+ }
+  .Slot_type_courier #BackgroundFXWindow{
+   margin-top: -70px;
+   transform: scale3d(0.8, 0.8, 1);
+  }
+
+  .Slot_type_ward #BackgroundFXWindow{
+   margin-top: 40px;
+   transform: scale3d(0.8, 0.8, 1);
+  }
+
+
  #BackgroundFXLarge{
 
   opacity: 0.1;
@@ -165,19 +252,6 @@
   vertical-align: middle;
   horizontal-align: center;
  }
-
- #BackgroundFXWindow{
-
-  opacity: 0;
-  width: 840px;
-  height: 840px;
-  margin-top: -120px;
-  margin-left: -220px;
-  hue-rotation: 0deg;
-  saturation: 1;
-  opacity-mask: url( "s2r://panorama/images/masks/softedge_circle_png.vtex") 1.0;
- }
-
 
  PopupItemReceived.ItemRarity_unknown #BackgroundFXWindow,PopupItemReceived.ItemRarity_common #BackgroundFXWindow{
                                                                         hue-rotation: 160deg; saturation: 0.5; opacity: 0.1;
@@ -229,7 +303,7 @@
   padding-left: 64px;
 
   width: 1024px;
-  height: 600px;
+  height: 680px;
 
   vertical-align: middle;
   horizontal-align: center;
@@ -257,21 +331,21 @@
   text-transform: uppercase;
   letter-spacing: 2px;
   color: white;
-  margin-top: 32px;
-  margin-left: 16px;
-  margin-right: 16px;
+  margin-top: 44px;
   text-align: center;
-  text-shadow: 0px 0px 22px 1.0 #98A0A4;
+  text-shadow: 0px 0px 48px 1.0 #bee9ff25;
  }
+
+
 
  #ItemName{
 
-  horizontal-align: left;
-  margin-left: 330px;
-  font-size: 28px;
+  font-size: 24px;
   text-transform: uppercase;
   letter-spacing: 2px;
   color: #E2AD5E;
+  font-weight: normal;
+  margin-bottom: 8px;
  }
 
  #ItemDescription{
@@ -307,26 +381,18 @@
 
  #ItemContainer{
 
-  height: 500px;
+  height: 100%;
   width: 100%;
   horizontal-align: center;
+  margin-bottom: 100px;
  }
 
  #HorizontalBand{
 
   transform: translateY( 0px );
-  height: 147px;
-  background-color: #651300;
-  background-color: gradient( linear, 0% 0%, 90% 100%, from( #3F4C53 ), to( #191e1e ) );
   horizontal-align: center;
-  margin-top: 220px;
-  margin-bottom: 53px;
-  padding-top: 16px;
-  padding-bottom: 16px;
+  vertical-align: bottom;
   width: 100%;
-  box-shadow: #000000cc 0px 0px 16px 0px ;
-  border-top: 2px solid black;
-  border-bottom: 2px solid black;
 
   transition-property: transform;
   transition-duration: 0.3s;
@@ -334,7 +400,7 @@
 
  .PopupPanel.Hidden #HorizontalBand{
 
-  transform: translateY(-200px );
+  transform: translateY(-20px );
  }
 
  .ItemOptions{
@@ -385,7 +451,7 @@
   padding-top: 6px;
   border-radius: 12px;
   margin-left: 1000px;
-  margin-bottom: 600px;
+  margin-bottom: 660px;
   border: 2px solid black;
   z-index: 2;
  }

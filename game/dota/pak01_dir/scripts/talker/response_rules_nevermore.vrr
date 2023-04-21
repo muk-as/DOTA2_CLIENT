@@ -1,1910 +1,5851 @@
-#include "talker/response_rules_shared.vrr"
-
-criterion "Isnevermore" "classname" "npc_dota_hero_Nevermore" weight 5 required
-criterion "IsPresenceOfDarkLord" "abilityname" "nevermore_dark_lord" weight 5 required
-criterion "IsNecromastery" "abilityname" "nevermore_necromastery" weight 5 required
-criterion "IsShortShadowRaze" "shadowraze" "1" weight 5 required
-criterion "IsMediumShadowRaze" "shadowraze" "2" weight 5 required
-criterion "IsLongShadowRaze" "shadowraze" "3" weight 5 required
-criterion "IsShadowRaze" "abilityname" "nevermore_shadowraze" weight 5 required
-criterion "IsRequiem" "abilityname" "nevermore_requiem" weight 5 required
-criterion "IsShadowFiendEconArcana" "customresponse" "arcana" weight 5 required
-criterion "IsShadowFiendEconTripleraze" "tripleraze" "1" weight 5 required
-criterion "IsShadowFiendArcanaIdle" "taunt_type" "sf_arcana_idle_rare" weight 5 required
-criterion "IsShadowFiendTauntSwagger" "taunt_type" "swag_gesture" weight 5 required
-criterion "IsShadowFiendLoadoutSpawn" "special_spawn" "shadowfiend_loadout_spawn" weight 5 required
-criterion "IsShadowFiendArcanaLoadoutSpawn" "special_spawn" "shadowfiend_arcana_loadout_spawn" weight 5 required
-
-Response nevermore_Spawn
-{
-	scene "scenes/nevermore/nevermore_nev_spawn_03.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_spawn_04.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_spawn_05.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_spawn_06.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_spawn_07.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_spawn_08.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_spawn_10.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_spawn_11.vcd" nodelay 
-}
-
-Rule nevermore_Spawn_Rule
-{
-	criteria Spawn Isnevermore 
-	response nevermore_Spawn
-}
-
-Response nevermore_SpawnIsShadowFiendEconArcana
-{
-	scene "scenes/nevermore/nevermore_nev_arc_spawn_03.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_spawn_04.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_spawn_05.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_spawn_06.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_spawn_07.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_spawn_08.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_spawn_10.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_spawn_11.vcd" nodelay 
-}
-
-Rule nevermore_SpawnIsShadowFiendEconArcana_Rule
-{
-	criteria Spawn Isnevermore IsShadowFiendEconArcana
-	response nevermore_SpawnIsShadowFiendEconArcana
-}
-
-Response nevermore_CustomIsGameStart
-{
-	scene "scenes/nevermore/nevermore_nev_spawn_09.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_battlebegins_01.vcd" nodelay 
-}
-
-Rule nevermore_CustomIsGameStart_Rule
-{
-	criteria Custom Isnevermore IsGameStart
-	response nevermore_CustomIsGameStart
-}
-
-Response nevermore_CustomIsShadowFiendLoadoutSpawn
-{
-	scene "scenes/nevermore/nevermore_nev_spawn_01.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_spawn_02.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_spawn_03.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_spawn_04.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_spawn_05.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_spawn_06.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_spawn_07.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_spawn_09.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_ability_presence_02.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_spawn_10.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_spawn_11.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_kill_02.vcd" nodelay 
-}
-
-Rule nevermore_CustomIsShadowFiendLoadoutSpawn_Rule
-{
-	criteria Custom Isnevermore IsShadowFiendLoadoutSpawn
-	response nevermore_CustomIsShadowFiendLoadoutSpawn
-}
-
-Response nevermore_CustomIsShadowFiendEconArcanaIsGameStart
-{
-	scene "scenes/nevermore/nevermore_nev_arc_spawn_09.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_battlebegins_01.vcd" nodelay 
-}
-
-Rule nevermore_CustomIsShadowFiendEconArcanaIsGameStart_Rule
-{
-	criteria Custom Isnevermore IsShadowFiendEconArcana IsGameStart
-	response nevermore_CustomIsShadowFiendEconArcanaIsGameStart
-}
-
-Response nevermore_CustomIsShadowFiendEconArcanaIsShadowFiendEconTriplerazeChance_15%
-{
-	scene "scenes/nevermore/nevermore_nev_arc_ability_shadow_14.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_ability_shadow_17.vcd" nodelay 
-}
-
-Rule nevermore_CustomIsShadowFiendEconArcanaIsShadowFiendEconTriplerazeChance_15%_Rule
-{
-	criteria Custom Isnevermore IsShadowFiendEconArcana IsShadowFiendEconTripleraze Chance_15%
-	response nevermore_CustomIsShadowFiendEconArcanaIsShadowFiendEconTriplerazeChance_15%
-}
-
-Response nevermore_CustomIsShadowFiendEconArcanaIsShadowFiendEconTripleraze
-{
-	scene "scenes/nevermore/nevermore_nev_arc_ability_shadow_24.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_ability_shadow_25.vcd" nodelay 
-}
-
-Rule nevermore_CustomIsShadowFiendEconArcanaIsShadowFiendEconTripleraze_Rule
-{
-	criteria Custom Isnevermore IsShadowFiendEconArcana IsShadowFiendEconTripleraze
-	response nevermore_CustomIsShadowFiendEconArcanaIsShadowFiendEconTripleraze
-}
-
-Response nevermore_CustomIsShadowFiendArcanaLoadoutSpawn
-{
-	scene "scenes/nevermore/nevermore_nev_arc_spawn_01.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_spawn_02.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_spawn_03.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_spawn_04.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_spawn_05.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_spawn_06.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_spawn_07.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_spawn_09.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_ability_presence_02.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_spawn_10.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_spawn_11.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_kill_02.vcd" nodelay 
-}
-
-Rule nevermore_CustomIsShadowFiendArcanaLoadoutSpawn_Rule
-{
-	criteria Custom Isnevermore IsShadowFiendArcanaLoadoutSpawn
-	response nevermore_CustomIsShadowFiendArcanaLoadoutSpawn
-}
-
-Response nevermore_KillIsFirstBlood
-{
-	scene "scenes/nevermore/nevermore_nev_firstblood_01.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_firstblood_02.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_firstblood_03.vcd" nodelay 
-}
-
-Rule nevermore_KillIsFirstBlood_Rule
-{
-	criteria Kill Isnevermore IsFirstBlood
-	response nevermore_KillIsFirstBlood
-}
-
-Response nevermore_Kill
-{
-	scene "scenes/nevermore/nevermore_nev_kill_01.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_kill_02.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_kill_03.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_kill_04.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_kill_05.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_kill_06.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_kill_07.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_kill_08.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_kill_09.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_kill_10.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_kill_11.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_kill_12.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_kill_13.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_laugh_03.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_laugh_04.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_laugh_05.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_laugh_08.vcd" nodelay 
-}
-
-Rule nevermore_Kill_Rule
-{
-	criteria Kill Isnevermore 
-	response nevermore_Kill
-}
-
-Response nevermore_KillIsEnemyLeshracChance_20%
-{
-	scene "scenes/nevermore/nevermore_nev_rival_01.vcd" nodelay 
-}
-
-Rule nevermore_KillIsEnemyLeshracChance_20%_Rule
-{
-	criteria Kill Isnevermore IsEnemyLeshrac Chance_20%
-	response nevermore_KillIsEnemyLeshracChance_20%
-}
-
-Response nevermore_KillIsEnemyDoom_BringerChance_20%
-{
-	scene "scenes/nevermore/nevermore_nev_rival_02.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_rival_03.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_rival_07.vcd" nodelay 
-}
-
-Rule nevermore_KillIsEnemyDoom_BringerChance_20%_Rule
-{
-	criteria Kill Isnevermore IsEnemyDoom_Bringer Chance_20%
-	response nevermore_KillIsEnemyDoom_BringerChance_20%
-}
-
-Response nevermore_KillIsEnemyShadow_DemonChance_20%
-{
-	scene "scenes/nevermore/nevermore_nev_rival_04.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_rival_05.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_rival_06.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_rival_08.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_rival_09.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_rival_10.vcd" nodelay 
-}
-
-Rule nevermore_KillIsEnemyShadow_DemonChance_20%_Rule
-{
-	criteria Kill Isnevermore IsEnemyShadow_Demon Chance_20%
-	response nevermore_KillIsEnemyShadow_DemonChance_20%
-}
-
-Response nevermore_KillIsEnemyWindrunnerChance_20%
-{
-	scene "scenes/nevermore/nevermore_nev_rival_13.vcd" nodelay 
-}
-
-Rule nevermore_KillIsEnemyWindrunnerChance_20%_Rule
-{
-	criteria Kill Isnevermore IsEnemyWindrunner Chance_20%
-	response nevermore_KillIsEnemyWindrunnerChance_20%
-}
-
-Response nevermore_KillIsShadowFiendEconArcanaIsFirstBlood
-{
-	scene "scenes/nevermore/nevermore_nev_arc_firstblood_01.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_firstblood_02.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_firstblood_03.vcd" nodelay 
-}
-
-Rule nevermore_KillIsShadowFiendEconArcanaIsFirstBlood_Rule
-{
-	criteria Kill Isnevermore IsShadowFiendEconArcana IsFirstBlood
-	response nevermore_KillIsShadowFiendEconArcanaIsFirstBlood
-}
-
-Response nevermore_KillIsShadowFiendEconArcana
-{
-	scene "scenes/nevermore/nevermore_nev_arc_kill_01.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_kill_02.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_kill_03.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_kill_04.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_kill_05.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_kill_06.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_kill_07.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_kill_08.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_kill_09.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_kill_10.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_kill_11.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_kill_12.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_kill_13.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_laugh_03.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_laugh_04.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_laugh_05.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_laugh_08.vcd" nodelay 
-}
-
-Rule nevermore_KillIsShadowFiendEconArcana_Rule
-{
-	criteria Kill Isnevermore IsShadowFiendEconArcana
-	response nevermore_KillIsShadowFiendEconArcana
-}
-
-Response nevermore_KillIsShadowFiendEconArcanaIsEnemyLeshracChance_20%
-{
-	scene "scenes/nevermore/nevermore_nev_arc_rival_01.vcd" nodelay 
-}
-
-Rule nevermore_KillIsShadowFiendEconArcanaIsEnemyLeshracChance_20%_Rule
-{
-	criteria Kill Isnevermore IsShadowFiendEconArcana IsEnemyLeshrac Chance_20%
-	response nevermore_KillIsShadowFiendEconArcanaIsEnemyLeshracChance_20%
-}
-
-Response nevermore_KillIsShadowFiendEconArcanaIsEnemyDoom_BringerChance_20%
-{
-	scene "scenes/nevermore/nevermore_nev_arc_rival_02.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_rival_03.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_rival_07.vcd" nodelay 
-}
-
-Rule nevermore_KillIsShadowFiendEconArcanaIsEnemyDoom_BringerChance_20%_Rule
-{
-	criteria Kill Isnevermore IsShadowFiendEconArcana IsEnemyDoom_Bringer Chance_20%
-	response nevermore_KillIsShadowFiendEconArcanaIsEnemyDoom_BringerChance_20%
-}
-
-Response nevermore_KillIsShadowFiendEconArcanaIsEnemyShadow_DemonChance_20%
-{
-	scene "scenes/nevermore/nevermore_nev_arc_rival_04.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_rival_05.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_rival_06.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_rival_08.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_rival_09.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_rival_10.vcd" nodelay 
-}
-
-Rule nevermore_KillIsShadowFiendEconArcanaIsEnemyShadow_DemonChance_20%_Rule
-{
-	criteria Kill Isnevermore IsShadowFiendEconArcana IsEnemyShadow_Demon Chance_20%
-	response nevermore_KillIsShadowFiendEconArcanaIsEnemyShadow_DemonChance_20%
-}
-
-Response nevermore_KillIsShadowFiendEconArcanaIsEnemyWindrunnerChance_20%
-{
-	scene "scenes/nevermore/nevermore_nev_arc_rival_13.vcd" nodelay 
-}
-
-Rule nevermore_KillIsShadowFiendEconArcanaIsEnemyWindrunnerChance_20%_Rule
-{
-	criteria Kill Isnevermore IsShadowFiendEconArcana IsEnemyWindrunner Chance_20%
-	response nevermore_KillIsShadowFiendEconArcanaIsEnemyWindrunnerChance_20%
-}
-
-Response nevermore_Move
-{
-	scene "scenes/nevermore/nevermore_nev_move_01.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_move_02.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_move_03.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_move_04.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_move_05.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_move_06.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_move_07.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_move_09.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_move_10.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_move_11.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_move_12.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_move_13.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_move_14.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_move_15.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_acknow_01.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_acknow_02.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_acknow_03.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_acknow_04.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_acknow_05.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_acknow_06.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_acknow_07.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_acknow_08.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_acknow_09.vcd" nodelay 
-}
-
-Rule nevermore_Move_Rule
-{
-	criteria Move Isnevermore 
-	response nevermore_Move
-}
-
-Response nevermore_MoveIsShadowFiendEconArcana
-{
-	scene "scenes/nevermore/nevermore_nev_arc_move_01.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_move_02.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_move_03.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_move_04.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_move_05.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_move_06.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_move_07.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_move_09.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_move_10.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_move_11.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_move_12.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_move_13.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_move_14.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_move_15.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_acknow_01.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_acknow_02.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_acknow_03.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_acknow_04.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_acknow_05.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_acknow_06.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_acknow_07.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_acknow_08.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_acknow_09.vcd" nodelay 
-}
-
-Rule nevermore_MoveIsShadowFiendEconArcana_Rule
-{
-	criteria Move Isnevermore IsShadowFiendEconArcana
-	response nevermore_MoveIsShadowFiendEconArcana
-}
-
-Response nevermore_Attack
-{
-	scene "scenes/nevermore/nevermore_nev_attack_01.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_attack_02.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_attack_03.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_attack_04.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_attack_05.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_attack_06.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_attack_07.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_attack_08.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_attack_09.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_attack_10.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_attack_11.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_attack_12.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_ability_shadow_12.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_ability_shadow_13.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_ability_shadow_15.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_ability_shadow_16.vcd" nodelay 
-}
-
-Rule nevermore_Attack_Rule
-{
-	criteria Attack Isnevermore 
-	response nevermore_Attack
-}
-
-Response nevermore_AttackIsShadowFiendEconArcana
-{
-	scene "scenes/nevermore/nevermore_nev_arc_attack_01.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_attack_02.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_attack_03.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_attack_04.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_attack_05.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_attack_06.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_attack_07.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_attack_08.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_attack_09.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_attack_10.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_attack_11.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_attack_12.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_ability_shadow_12.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_ability_shadow_13.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_ability_shadow_15.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_ability_shadow_16.vcd" nodelay 
-}
-
-Rule nevermore_AttackIsShadowFiendEconArcana_Rule
-{
-	criteria Attack Isnevermore IsShadowFiendEconArcana
-	response nevermore_AttackIsShadowFiendEconArcana
-}
-
-Response nevermore_CastOrder
-{
-	scene "scenes/nevermore/nevermore_nev_cast_01.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_cast_02.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_cast_03.vcd" nodelay 
-}
-
-Rule nevermore_CastOrder_Rule
-{
-	criteria CastOrder Isnevermore 
-	response nevermore_CastOrder
-}
-
-Response nevermore_CastOrderIsShadowFiendEconArcana
-{
-	scene "scenes/nevermore/nevermore_nev_arc_cast_01.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_cast_02.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_cast_03.vcd" nodelay 
-}
-
-Rule nevermore_CastOrderIsShadowFiendEconArcana_Rule
-{
-	criteria CastOrder Isnevermore IsShadowFiendEconArcana
-	response nevermore_CastOrderIsShadowFiendEconArcana
-}
-
-Response nevermore_LearnIsPresenceOfDarkLord
-{
-	scene "scenes/nevermore/nevermore_nev_ability_presence_01.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_ability_presence_02.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_ability_presence_03.vcd" nodelay 
-}
-
-Rule nevermore_LearnIsPresenceOfDarkLord_Rule
-{
-	criteria Learn Isnevermore IsPresenceOfDarkLord
-	response nevermore_LearnIsPresenceOfDarkLord
-}
-
-Response nevermore_LearnIsNecromastery
-{
-	scene "scenes/nevermore/nevermore_nev_ability_mastery_01.vcd" nodelay 
-}
-
-Rule nevermore_LearnIsNecromastery_Rule
-{
-	criteria Learn Isnevermore IsNecromastery
-	response nevermore_LearnIsNecromastery
-}
-
-Response nevermore_LearnIsShadowFiendEconArcanaIsPresenceOfDarkLord
-{
-	scene "scenes/nevermore/nevermore_nev_arc_ability_presence_01.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_ability_presence_02.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_ability_presence_03.vcd" nodelay 
-}
-
-Rule nevermore_LearnIsShadowFiendEconArcanaIsPresenceOfDarkLord_Rule
-{
-	criteria Learn Isnevermore IsShadowFiendEconArcana IsPresenceOfDarkLord
-	response nevermore_LearnIsShadowFiendEconArcanaIsPresenceOfDarkLord
-}
-
-Response nevermore_LearnIsShadowFiendEconArcanaIsNecromastery
-{
-	scene "scenes/nevermore/nevermore_nev_arc_ability_mastery_01.vcd" nodelay 
-}
-
-Rule nevermore_LearnIsShadowFiendEconArcanaIsNecromastery_Rule
-{
-	criteria Learn Isnevermore IsShadowFiendEconArcana IsNecromastery
-	response nevermore_LearnIsShadowFiendEconArcanaIsNecromastery
-}
-
-Response nevermore_CastExecuteIsShadowRazeIsShortShadowRaze
-{
-	scene "scenes/nevermore/nevermore_nev_ability_shadow_07.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_ability_shadow_18.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_ability_shadow_21.vcd" nodelay 
-}
-
-Rule nevermore_CastExecuteIsShadowRazeIsShortShadowRaze_Rule
-{
-	criteria CastExecute Isnevermore IsShadowRaze IsShortShadowRaze
-	response nevermore_CastExecuteIsShadowRazeIsShortShadowRaze
-}
-
-Response nevermore_CastExecuteIsShadowRazeIsMediumShadowRaze
-{
-	scene "scenes/nevermore/nevermore_nev_ability_shadow_08.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_ability_shadow_20.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_ability_shadow_22.vcd" nodelay 
-}
-
-Rule nevermore_CastExecuteIsShadowRazeIsMediumShadowRaze_Rule
-{
-	criteria CastExecute Isnevermore IsShadowRaze IsMediumShadowRaze
-	response nevermore_CastExecuteIsShadowRazeIsMediumShadowRaze
-}
-
-Response nevermore_CastExecuteIsShadowRazeIsLongShadowRaze
-{
-	scene "scenes/nevermore/nevermore_nev_ability_shadow_11.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_ability_shadow_19.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_ability_shadow_23.vcd" nodelay 
-}
-
-Rule nevermore_CastExecuteIsShadowRazeIsLongShadowRaze_Rule
-{
-	criteria CastExecute Isnevermore IsShadowRaze IsLongShadowRaze
-	response nevermore_CastExecuteIsShadowRazeIsLongShadowRaze
-}
-
-Response nevermore_CastExecuteIsRequiem
-{
-	scene "scenes/nevermore/nevermore_nev_ability_requiem_01.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_ability_requiem_02.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_ability_requiem_03.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_ability_requiem_04.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_ability_requiem_05.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_ability_requiem_06.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_ability_requiem_07.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_ability_requiem_08.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_ability_requiem_11.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_ability_requiem_12.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_ability_requiem_13.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_ability_requiem_14.vcd" nodelay 
-}
-
-Rule nevermore_CastExecuteIsRequiem_Rule
-{
-	criteria CastExecute Isnevermore IsRequiem
-	response nevermore_CastExecuteIsRequiem
-}
-
-Response nevermore_CastExecuteIsShadowFiendEconArcanaIsShadowRazeIsShortShadowRaze
-{
-	scene "scenes/nevermore/nevermore_nev_arc_ability_shadow_07.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_ability_shadow_18.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_ability_shadow_21.vcd" nodelay 
-}
-
-Rule nevermore_CastExecuteIsShadowFiendEconArcanaIsShadowRazeIsShortShadowRaze_Rule
-{
-	criteria CastExecute Isnevermore IsShadowFiendEconArcana IsShadowRaze IsShortShadowRaze
-	response nevermore_CastExecuteIsShadowFiendEconArcanaIsShadowRazeIsShortShadowRaze
-}
-
-Response nevermore_CastExecuteIsShadowFiendEconArcanaIsShadowRazeIsMediumShadowRaze
-{
-	scene "scenes/nevermore/nevermore_nev_arc_ability_shadow_08.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_ability_shadow_20.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_ability_shadow_22.vcd" nodelay 
-}
-
-Rule nevermore_CastExecuteIsShadowFiendEconArcanaIsShadowRazeIsMediumShadowRaze_Rule
-{
-	criteria CastExecute Isnevermore IsShadowFiendEconArcana IsShadowRaze IsMediumShadowRaze
-	response nevermore_CastExecuteIsShadowFiendEconArcanaIsShadowRazeIsMediumShadowRaze
-}
-
-Response nevermore_CastExecuteIsShadowFiendEconArcanaIsShadowRazeIsLongShadowRaze
-{
-	scene "scenes/nevermore/nevermore_nev_arc_ability_shadow_11.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_ability_shadow_19.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_ability_shadow_23.vcd" nodelay 
-}
-
-Rule nevermore_CastExecuteIsShadowFiendEconArcanaIsShadowRazeIsLongShadowRaze_Rule
-{
-	criteria CastExecute Isnevermore IsShadowFiendEconArcana IsShadowRaze IsLongShadowRaze
-	response nevermore_CastExecuteIsShadowFiendEconArcanaIsShadowRazeIsLongShadowRaze
-}
-
-Response nevermore_CastExecuteIsShadowFiendEconArcanaIsRequiem
-{
-	scene "scenes/nevermore/nevermore_nev_arc_ability_requiem_01.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_ability_requiem_02.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_ability_requiem_03.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_ability_requiem_04.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_ability_requiem_05.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_ability_requiem_06.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_ability_requiem_07.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_ability_requiem_08.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_ability_requiem_11.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_ability_requiem_12.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_ability_requiem_13.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_ability_requiem_14.vcd" nodelay 
-}
-
-Rule nevermore_CastExecuteIsShadowFiendEconArcanaIsRequiem_Rule
-{
-	criteria CastExecute Isnevermore IsShadowFiendEconArcana IsRequiem
-	response nevermore_CastExecuteIsShadowFiendEconArcanaIsRequiem
-}
-
-Response nevermore_Death
-{
-	scene "scenes/nevermore/nevermore_nev_death_01.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_death_03.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_death_04.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_death_05.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_death_06.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_death_07.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_death_08.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_death_09.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_death_10.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_death_11.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_death_12.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_death_13.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_death_15.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_death_16.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_death_17.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_death_18.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_death_19.vcd" nodelay 
-}
-
-Rule nevermore_Death_Rule
-{
-	criteria Death Isnevermore 
-	response nevermore_Death
-}
-
-Response nevermore_DeathIsReincarnating
-{
-	scene "scenes/nevermore/nevermore_nev_fastres_01.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_laugh_02.vcd" nodelay 
-}
-
-Rule nevermore_DeathIsReincarnating_Rule
-{
-	criteria Death Isnevermore IsReincarnating
-	response nevermore_DeathIsReincarnating
-}
-
-Response nevermore_DeathIsShadowFiendEconArcana
-{
-	scene "scenes/nevermore/nevermore_nev_arc_death_01.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_death_03.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_death_04.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_death_05.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_death_06.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_death_07.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_death_08.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_death_09.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_death_10.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_death_11.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_death_12.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_death_13.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_death_15.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_death_16.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_death_17.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_death_18.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_death_19.vcd" nodelay 
-}
-
-Rule nevermore_DeathIsShadowFiendEconArcana_Rule
-{
-	criteria Death Isnevermore IsShadowFiendEconArcana
-	response nevermore_DeathIsShadowFiendEconArcana
-}
-
-Response nevermore_DeathIsShadowFiendEconArcanaIsReincarnating
-{
-	scene "scenes/nevermore/nevermore_nev_arc_fastres_01.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_laugh_02.vcd" nodelay 
-}
-
-Rule nevermore_DeathIsShadowFiendEconArcanaIsReincarnating_Rule
-{
-	criteria Death Isnevermore IsShadowFiendEconArcana IsReincarnating
-	response nevermore_DeathIsShadowFiendEconArcanaIsReincarnating
-}
-
-Response nevermore_Respawn
-{
-	scene "scenes/nevermore/nevermore_nev_respawn_01.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_respawn_02.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_respawn_03.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_respawn_04.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_respawn_05.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_respawn_06.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_respawn_07.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_respawn_08.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_respawn_09.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_respawn_10.vcd" nodelay 
-}
-
-Rule nevermore_Respawn_Rule
-{
-	criteria Respawn Isnevermore 
-	response nevermore_Respawn
-}
-
-Response nevermore_RespawnIsShadowFiendEconArcana
-{
-	scene "scenes/nevermore/nevermore_nev_arc_respawn_01.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_respawn_02.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_respawn_03.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_respawn_04.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_respawn_05.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_respawn_06.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_respawn_07.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_respawn_08.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_respawn_09.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_respawn_10.vcd" nodelay 
-}
-
-Rule nevermore_RespawnIsShadowFiendEconArcana_Rule
-{
-	criteria Respawn Isnevermore IsShadowFiendEconArcana
-	response nevermore_RespawnIsShadowFiendEconArcana
-}
-
-Response nevermore_LevelUp
-{
-	scene "scenes/nevermore/nevermore_nev_level_01.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_level_03.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_level_04.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_level_06.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_level_07.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_level_08.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_level_09.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_level_10.vcd" nodelay 
-}
-
-Rule nevermore_LevelUp_Rule
-{
-	criteria LevelUp Isnevermore 
-	response nevermore_LevelUp
-}
-
-Response nevermore_LevelUpIsShadowFiendEconArcana
-{
-	scene "scenes/nevermore/nevermore_nev_arc_level_01.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_level_03.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_level_04.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_level_06.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_level_07.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_level_08.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_level_09.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_level_10.vcd" nodelay 
-}
-
-Rule nevermore_LevelUpIsShadowFiendEconArcana_Rule
-{
-	criteria LevelUp Isnevermore IsShadowFiendEconArcana
-	response nevermore_LevelUpIsShadowFiendEconArcana
-}
-
-Response nevermore_LastHit
-{
-	scene "scenes/nevermore/nevermore_nev_lasthit_01.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_lasthit_03.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_lasthit_04.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_lasthit_06.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_lasthit_07.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_happy_01.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_happy_02.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_happy_03.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_happy_04.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_happy_05.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_happy_06.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_happy_07.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_happy_08.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_happy_09.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_happy_10.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_happy_11.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_happy_12.vcd" nodelay 
-}
-
-Rule nevermore_LastHit_Rule
-{
-	criteria LastHit Isnevermore 
-	response nevermore_LastHit
-}
-
-Response nevermore_LastHitIsShadowFiendEconArcana
-{
-	scene "scenes/nevermore/nevermore_nev_arc_lasthit_01.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_lasthit_03.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_lasthit_04.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_lasthit_06.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_lasthit_07.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_happy_01.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_happy_02.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_happy_03.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_happy_04.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_happy_05.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_happy_06.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_happy_07.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_happy_08.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_happy_09.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_happy_10.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_happy_11.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_happy_12.vcd" nodelay 
-}
-
-Rule nevermore_LastHitIsShadowFiendEconArcana_Rule
-{
-	criteria LastHit Isnevermore IsShadowFiendEconArcana
-	response nevermore_LastHitIsShadowFiendEconArcana
-}
-
-Response nevermore_ItemDropIsUltraRareDrop
-{
-	scene "scenes/nevermore/nevermore_nev_lasthit_02.vcd" nodelay 
-}
-
-Rule nevermore_ItemDropIsUltraRareDrop_Rule
-{
-	criteria ItemDrop Isnevermore IsUltraRareDrop
-	response nevermore_ItemDropIsUltraRareDrop
-}
-
-Response nevermore_ItemDropIsRareDrop
-{
-	scene "scenes/nevermore/nevermore_nev_laugh_01.vcd" nodelay 
-}
-
-Rule nevermore_ItemDropIsRareDrop_Rule
-{
-	criteria ItemDrop Isnevermore IsRareDrop
-	response nevermore_ItemDropIsRareDrop
-}
-
-Response nevermore_ItemDropIsCommonDrop
-{
-	scene "scenes/nevermore/nevermore_nev_laugh_06.vcd" nodelay 
-}
-
-Rule nevermore_ItemDropIsCommonDrop_Rule
-{
-	criteria ItemDrop Isnevermore IsCommonDrop
-	response nevermore_ItemDropIsCommonDrop
-}
-
-Response nevermore_ItemDropIsShadowFiendEconArcanaIsUltraRareDrop
-{
-	scene "scenes/nevermore/nevermore_nev_arc_lasthit_02.vcd" nodelay 
-}
-
-Rule nevermore_ItemDropIsShadowFiendEconArcanaIsUltraRareDrop_Rule
-{
-	criteria ItemDrop Isnevermore IsShadowFiendEconArcana IsUltraRareDrop
-	response nevermore_ItemDropIsShadowFiendEconArcanaIsUltraRareDrop
-}
-
-Response nevermore_ItemDropIsShadowFiendEconArcanaIsRareDrop
-{
-	scene "scenes/nevermore/nevermore_nev_arc_laugh_01.vcd" nodelay 
-}
-
-Rule nevermore_ItemDropIsShadowFiendEconArcanaIsRareDrop_Rule
-{
-	criteria ItemDrop Isnevermore IsShadowFiendEconArcana IsRareDrop
-	response nevermore_ItemDropIsShadowFiendEconArcanaIsRareDrop
-}
-
-Response nevermore_ItemDropIsShadowFiendEconArcanaIsCommonDrop
-{
-	scene "scenes/nevermore/nevermore_nev_arc_laugh_06.vcd" nodelay 
-}
-
-Rule nevermore_ItemDropIsShadowFiendEconArcanaIsCommonDrop_Rule
-{
-	criteria ItemDrop Isnevermore IsShadowFiendEconArcana IsCommonDrop
-	response nevermore_ItemDropIsShadowFiendEconArcanaIsCommonDrop
-}
-
-Response nevermore_Deny
-{
-	scene "scenes/nevermore/nevermore_nev_deny_01.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_deny_02.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_deny_03.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_deny_04.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_deny_05.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_deny_07.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_deny_08.vcd" nodelay 
-}
-
-Rule nevermore_Deny_Rule
-{
-	criteria Deny Isnevermore 
-	response nevermore_Deny
-}
-
-Response nevermore_DenyIsShadowFiendEconArcana
-{
-	scene "scenes/nevermore/nevermore_nev_arc_deny_01.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_deny_02.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_deny_03.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_deny_04.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_deny_05.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_deny_07.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_deny_08.vcd" nodelay 
-}
-
-Rule nevermore_DenyIsShadowFiendEconArcana_Rule
-{
-	criteria Deny Isnevermore IsShadowFiendEconArcana
-	response nevermore_DenyIsShadowFiendEconArcana
-}
-
-Response nevermore_Select
-{
-	scene "scenes/nevermore/nevermore_nev_rare_01.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_rare_02.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_rare_03.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_rare_04.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_rare_05.vcd" nodelay 
-}
-
-Rule nevermore_Select_Rule
-{
-	criteria Select Isnevermore 
-	response nevermore_Select
-}
-
-Response nevermore_SelectIsShadowFiendEconArcana
-{
-	scene "scenes/nevermore/nevermore_nev_arc_rare_01.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_rare_02.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_rare_03.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_rare_04.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_rare_05.vcd" nodelay 
-}
-
-Rule nevermore_SelectIsShadowFiendEconArcana_Rule
-{
-	criteria Select Isnevermore IsShadowFiendEconArcana
-	response nevermore_SelectIsShadowFiendEconArcana
-}
-
-Response nevermore_PurchaseIsExpensiveItem
-{
-	scene "scenes/nevermore/nevermore_nev_purch_01.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_purch_02.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_purch_03.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_purch_04.vcd" nodelay 
-}
-
-Rule nevermore_PurchaseIsExpensiveItem_Rule
-{
-	criteria Purchase Isnevermore IsExpensiveItem
-	response nevermore_PurchaseIsExpensiveItem
-}
-
-Response nevermore_PurchaseIsUltimateScepter
-{
-	scene "scenes/nevermore/nevermore_nev_scepter_01.vcd" nodelay speakonce
-	scene "scenes/nevermore/nevermore_nev_scepter_02.vcd" nodelay speakonce
-}
-
-Rule nevermore_PurchaseIsUltimateScepter_Rule
-{
-	criteria Purchase Isnevermore IsUltimateScepter
-	response nevermore_PurchaseIsUltimateScepter
-}
-
-Response nevermore_PurchaseIsBlinkDagger
-{
-	scene "scenes/nevermore/nevermore_nev_blink_01.vcd" nodelay speakonce
-	scene "scenes/nevermore/nevermore_nev_blink_02.vcd" nodelay speakonce
-}
-
-Rule nevermore_PurchaseIsBlinkDagger_Rule
-{
-	criteria Purchase Isnevermore IsBlinkDagger
-	response nevermore_PurchaseIsBlinkDagger
-}
-
-Response nevermore_PurchaseIsBlackKingBar
-{
-	scene "scenes/nevermore/nevermore_nev_item_01.vcd" nodelay speakonce
-}
-
-Rule nevermore_PurchaseIsBlackKingBar_Rule
-{
-	criteria Purchase Isnevermore IsBlackKingBar
-	response nevermore_PurchaseIsBlackKingBar
-}
-
-Response nevermore_PurchaseIsInvisSword
-{
-	scene "scenes/nevermore/nevermore_nev_item_02.vcd" nodelay speakonce
-}
-
-Rule nevermore_PurchaseIsInvisSword_Rule
-{
-	criteria Purchase Isnevermore IsInvisSword
-	response nevermore_PurchaseIsInvisSword
-}
-
-Response nevermore_PurchaseIsManta
-{
-	scene "scenes/nevermore/nevermore_nev_item_03.vcd" nodelay speakonce
-}
-
-Rule nevermore_PurchaseIsManta_Rule
-{
-	criteria Purchase Isnevermore IsManta
-	response nevermore_PurchaseIsManta
-}
-
-Response nevermore_PurchaseIsButterfly
-{
-	scene "scenes/nevermore/nevermore_nev_item_04.vcd" nodelay speakonce
-}
-
-Rule nevermore_PurchaseIsButterfly_Rule
-{
-	criteria Purchase Isnevermore IsButterfly
-	response nevermore_PurchaseIsButterfly
-}
-
-Response nevermore_PurchaseIsSkadi
-{
-	scene "scenes/nevermore/nevermore_nev_item_05.vcd" nodelay speakonce
-}
-
-Rule nevermore_PurchaseIsSkadi_Rule
-{
-	criteria Purchase Isnevermore IsSkadi
-	response nevermore_PurchaseIsSkadi
-}
-
-Response nevermore_PurchaseIsDesolator
-{
-	scene "scenes/nevermore/nevermore_nev_item_06.vcd" nodelay speakonce
-}
-
-Rule nevermore_PurchaseIsDesolator_Rule
-{
-	criteria Purchase Isnevermore IsDesolator
-	response nevermore_PurchaseIsDesolator
-}
-
-Response nevermore_PurchaseIsSatanic
-{
-	scene "scenes/nevermore/nevermore_nev_item_07.vcd" nodelay speakonce
-}
-
-Rule nevermore_PurchaseIsSatanic_Rule
-{
-	criteria Purchase Isnevermore IsSatanic
-	response nevermore_PurchaseIsSatanic
-}
-
-Response nevermore_PurchaseIsAssaultCuirass
-{
-	scene "scenes/nevermore/nevermore_nev_item_08.vcd" nodelay speakonce
-}
-
-Rule nevermore_PurchaseIsAssaultCuirass_Rule
-{
-	criteria Purchase Isnevermore IsAssaultCuirass
-	response nevermore_PurchaseIsAssaultCuirass
-}
-
-Response nevermore_PurchaseIsShadowFiendEconArcanaIsExpensiveItem
-{
-	scene "scenes/nevermore/nevermore_nev_arc_purch_01.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_purch_02.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_purch_03.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_purch_04.vcd" nodelay 
-}
-
-Rule nevermore_PurchaseIsShadowFiendEconArcanaIsExpensiveItem_Rule
-{
-	criteria Purchase Isnevermore IsShadowFiendEconArcana IsExpensiveItem
-	response nevermore_PurchaseIsShadowFiendEconArcanaIsExpensiveItem
-}
-
-Response nevermore_PurchaseIsShadowFiendEconArcanaIsUltimateScepter
-{
-	scene "scenes/nevermore/nevermore_nev_arc_scepter_01.vcd" nodelay speakonce
-	scene "scenes/nevermore/nevermore_nev_arc_scepter_02.vcd" nodelay speakonce
-}
-
-Rule nevermore_PurchaseIsShadowFiendEconArcanaIsUltimateScepter_Rule
-{
-	criteria Purchase Isnevermore IsShadowFiendEconArcana IsUltimateScepter
-	response nevermore_PurchaseIsShadowFiendEconArcanaIsUltimateScepter
-}
-
-Response nevermore_PurchaseIsShadowFiendEconArcanaIsBlinkDagger
-{
-	scene "scenes/nevermore/nevermore_nev_arc_blink_01.vcd" nodelay speakonce
-	scene "scenes/nevermore/nevermore_nev_arc_blink_02.vcd" nodelay speakonce
-}
-
-Rule nevermore_PurchaseIsShadowFiendEconArcanaIsBlinkDagger_Rule
-{
-	criteria Purchase Isnevermore IsShadowFiendEconArcana IsBlinkDagger
-	response nevermore_PurchaseIsShadowFiendEconArcanaIsBlinkDagger
-}
-
-Response nevermore_PurchaseIsShadowFiendEconArcanaIsBlackKingBar
-{
-	scene "scenes/nevermore/nevermore_nev_arc_item_01.vcd" nodelay speakonce
-}
-
-Rule nevermore_PurchaseIsShadowFiendEconArcanaIsBlackKingBar_Rule
-{
-	criteria Purchase Isnevermore IsShadowFiendEconArcana IsBlackKingBar
-	response nevermore_PurchaseIsShadowFiendEconArcanaIsBlackKingBar
-}
-
-Response nevermore_PurchaseIsShadowFiendEconArcanaIsInvisSword
-{
-	scene "scenes/nevermore/nevermore_nev_arc_item_02.vcd" nodelay speakonce
-}
-
-Rule nevermore_PurchaseIsShadowFiendEconArcanaIsInvisSword_Rule
-{
-	criteria Purchase Isnevermore IsShadowFiendEconArcana IsInvisSword
-	response nevermore_PurchaseIsShadowFiendEconArcanaIsInvisSword
-}
-
-Response nevermore_PurchaseIsShadowFiendEconArcanaIsManta
-{
-	scene "scenes/nevermore/nevermore_nev_arc_item_03.vcd" nodelay speakonce
-}
-
-Rule nevermore_PurchaseIsShadowFiendEconArcanaIsManta_Rule
-{
-	criteria Purchase Isnevermore IsShadowFiendEconArcana IsManta
-	response nevermore_PurchaseIsShadowFiendEconArcanaIsManta
-}
-
-Response nevermore_PurchaseIsShadowFiendEconArcanaIsButterfly
-{
-	scene "scenes/nevermore/nevermore_nev_arc_item_04.vcd" nodelay speakonce
-}
-
-Rule nevermore_PurchaseIsShadowFiendEconArcanaIsButterfly_Rule
-{
-	criteria Purchase Isnevermore IsShadowFiendEconArcana IsButterfly
-	response nevermore_PurchaseIsShadowFiendEconArcanaIsButterfly
-}
-
-Response nevermore_PurchaseIsShadowFiendEconArcanaIsSkadi
-{
-	scene "scenes/nevermore/nevermore_nev_arc_item_05.vcd" nodelay speakonce
-}
-
-Rule nevermore_PurchaseIsShadowFiendEconArcanaIsSkadi_Rule
-{
-	criteria Purchase Isnevermore IsShadowFiendEconArcana IsSkadi
-	response nevermore_PurchaseIsShadowFiendEconArcanaIsSkadi
-}
-
-Response nevermore_PurchaseIsShadowFiendEconArcanaIsDesolator
-{
-	scene "scenes/nevermore/nevermore_nev_arc_item_06.vcd" nodelay speakonce
-}
-
-Rule nevermore_PurchaseIsShadowFiendEconArcanaIsDesolator_Rule
-{
-	criteria Purchase Isnevermore IsShadowFiendEconArcana IsDesolator
-	response nevermore_PurchaseIsShadowFiendEconArcanaIsDesolator
-}
-
-Response nevermore_PurchaseIsShadowFiendEconArcanaIsSatanic
-{
-	scene "scenes/nevermore/nevermore_nev_arc_item_07.vcd" nodelay speakonce
-}
-
-Rule nevermore_PurchaseIsShadowFiendEconArcanaIsSatanic_Rule
-{
-	criteria Purchase Isnevermore IsShadowFiendEconArcana IsSatanic
-	response nevermore_PurchaseIsShadowFiendEconArcanaIsSatanic
-}
-
-Response nevermore_PurchaseIsShadowFiendEconArcanaIsAssaultCuirass
-{
-	scene "scenes/nevermore/nevermore_nev_arc_item_08.vcd" nodelay speakonce
-}
-
-Rule nevermore_PurchaseIsShadowFiendEconArcanaIsAssaultCuirass_Rule
-{
-	criteria Purchase Isnevermore IsShadowFiendEconArcana IsAssaultCuirass
-	response nevermore_PurchaseIsShadowFiendEconArcanaIsAssaultCuirass
-}
-
-Response nevermore_MissingIsLaneTop
-{
-	scene "scenes/nevermore/nevermore_nev_lane_missing_01.vcd" nodelay 
-}
-
-Rule nevermore_MissingIsLaneTop_Rule
-{
-	criteria Missing Isnevermore IsLaneTop
-	response nevermore_MissingIsLaneTop
-}
-
-Response nevermore_MissingIsLaneMid
-{
-	scene "scenes/nevermore/nevermore_nev_lane_missing_02.vcd" nodelay 
-}
-
-Rule nevermore_MissingIsLaneMid_Rule
-{
-	criteria Missing Isnevermore IsLaneMid
-	response nevermore_MissingIsLaneMid
-}
-
-Response nevermore_MissingIsLaneBot
-{
-	scene "scenes/nevermore/nevermore_nev_lane_missing_03.vcd" nodelay 
-}
-
-Rule nevermore_MissingIsLaneBot_Rule
-{
-	criteria Missing Isnevermore IsLaneBot
-	response nevermore_MissingIsLaneBot
-}
-
-Response nevermore_MissingIsShadowFiendEconArcanaIsLaneTop
-{
-	scene "scenes/nevermore/nevermore_nev_arc_lane_missing_01.vcd" nodelay 
-}
-
-Rule nevermore_MissingIsShadowFiendEconArcanaIsLaneTop_Rule
-{
-	criteria Missing Isnevermore IsShadowFiendEconArcana IsLaneTop
-	response nevermore_MissingIsShadowFiendEconArcanaIsLaneTop
-}
-
-Response nevermore_MissingIsShadowFiendEconArcanaIsLaneMid
-{
-	scene "scenes/nevermore/nevermore_nev_arc_lane_missing_02.vcd" nodelay 
-}
-
-Rule nevermore_MissingIsShadowFiendEconArcanaIsLaneMid_Rule
-{
-	criteria Missing Isnevermore IsShadowFiendEconArcana IsLaneMid
-	response nevermore_MissingIsShadowFiendEconArcanaIsLaneMid
-}
-
-Response nevermore_MissingIsShadowFiendEconArcanaIsLaneBot
-{
-	scene "scenes/nevermore/nevermore_nev_arc_lane_missing_03.vcd" nodelay 
-}
-
-Rule nevermore_MissingIsShadowFiendEconArcanaIsLaneBot_Rule
-{
-	criteria Missing Isnevermore IsShadowFiendEconArcana IsLaneBot
-	response nevermore_MissingIsShadowFiendEconArcanaIsLaneBot
-}
-
-Response nevermore_Immortality
-{
-	scene "scenes/nevermore/nevermore_nev_immort_01.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_immort_03.vcd" nodelay 
-}
-
-Rule nevermore_Immortality_Rule
-{
-	criteria Immortality Isnevermore 
-	response nevermore_Immortality
-}
-
-Response nevermore_ImmortalityIsShadowFiendEconArcana
-{
-	scene "scenes/nevermore/nevermore_nev_arc_immort_01.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_immort_03.vcd" nodelay 
-}
-
-Rule nevermore_ImmortalityIsShadowFiendEconArcana_Rule
-{
-	criteria Immortality Isnevermore IsShadowFiendEconArcana
-	response nevermore_ImmortalityIsShadowFiendEconArcana
-}
-
-Response nevermore_PowerupIsPowerupHaste
-{
-	scene "scenes/nevermore/nevermore_nev_haste_01.vcd" nodelay 
-}
-
-Rule nevermore_PowerupIsPowerupHaste_Rule
-{
-	criteria Powerup Isnevermore IsPowerupHaste
-	response nevermore_PowerupIsPowerupHaste
-}
-
-Response nevermore_PowerupIsPowerupDoubleDamage
-{
-	scene "scenes/nevermore/nevermore_nev_doubdam_01.vcd" nodelay 
-}
-
-Rule nevermore_PowerupIsPowerupDoubleDamage_Rule
-{
-	criteria Powerup Isnevermore IsPowerupDoubleDamage
-	response nevermore_PowerupIsPowerupDoubleDamage
-}
-
-Response nevermore_PowerupIsPowerupRegeneration
-{
-	scene "scenes/nevermore/nevermore_nev_regen_01.vcd" nodelay 
-}
-
-Rule nevermore_PowerupIsPowerupRegeneration_Rule
-{
-	criteria Powerup Isnevermore IsPowerupRegeneration
-	response nevermore_PowerupIsPowerupRegeneration
-}
-
-Response nevermore_PowerupIsPowerupIllusion
-{
-	scene "scenes/nevermore/nevermore_nev_illus_01.vcd" nodelay 
-}
-
-Rule nevermore_PowerupIsPowerupIllusion_Rule
-{
-	criteria Powerup Isnevermore IsPowerupIllusion
-	response nevermore_PowerupIsPowerupIllusion
-}
-
-Response nevermore_PowerupIsPowerupInvisibility
-{
-	scene "scenes/nevermore/nevermore_nev_invis_01.vcd" nodelay 
-}
-
-Rule nevermore_PowerupIsPowerupInvisibility_Rule
-{
-	criteria Powerup Isnevermore IsPowerupInvisibility
-	response nevermore_PowerupIsPowerupInvisibility
-}
-
-Response nevermore_PowerupIsPowerupInvisibilityChance_25%
-{
-	scene "scenes/nevermore/nevermore_nev_invis_02.vcd" nodelay 
-}
-
-Rule nevermore_PowerupIsPowerupInvisibilityChance_25%_Rule
-{
-	criteria Powerup Isnevermore IsPowerupInvisibility Chance_25%
-	response nevermore_PowerupIsPowerupInvisibilityChance_25%
-}
-
-Response nevermore_PowerupIsPowerupBounty
-{
-	scene "scenes/nevermore/nevermore_nev_lasthit_03.vcd" nodelay respeakdelay 300
-}
-
-Rule nevermore_PowerupIsPowerupBounty_Rule
-{
-	criteria Powerup Isnevermore IsPowerupBounty
-	response nevermore_PowerupIsPowerupBounty
-}
-
-Response nevermore_PowerupIsShadowFiendEconArcanaIsPowerupHaste
-{
-	scene "scenes/nevermore/nevermore_nev_arc_haste_01.vcd" nodelay 
-}
-
-Rule nevermore_PowerupIsShadowFiendEconArcanaIsPowerupHaste_Rule
-{
-	criteria Powerup Isnevermore IsShadowFiendEconArcana IsPowerupHaste
-	response nevermore_PowerupIsShadowFiendEconArcanaIsPowerupHaste
-}
-
-Response nevermore_PowerupIsShadowFiendEconArcanaIsPowerupDoubleDamage
-{
-	scene "scenes/nevermore/nevermore_nev_arc_doubdam_01.vcd" nodelay 
-}
-
-Rule nevermore_PowerupIsShadowFiendEconArcanaIsPowerupDoubleDamage_Rule
-{
-	criteria Powerup Isnevermore IsShadowFiendEconArcana IsPowerupDoubleDamage
-	response nevermore_PowerupIsShadowFiendEconArcanaIsPowerupDoubleDamage
-}
-
-Response nevermore_PowerupIsShadowFiendEconArcanaIsPowerupRegeneration
-{
-	scene "scenes/nevermore/nevermore_nev_arc_regen_01.vcd" nodelay 
-}
-
-Rule nevermore_PowerupIsShadowFiendEconArcanaIsPowerupRegeneration_Rule
-{
-	criteria Powerup Isnevermore IsShadowFiendEconArcana IsPowerupRegeneration
-	response nevermore_PowerupIsShadowFiendEconArcanaIsPowerupRegeneration
-}
-
-Response nevermore_PowerupIsShadowFiendEconArcanaIsPowerupIllusion
-{
-	scene "scenes/nevermore/nevermore_nev_arc_illus_01.vcd" nodelay 
-}
-
-Rule nevermore_PowerupIsShadowFiendEconArcanaIsPowerupIllusion_Rule
-{
-	criteria Powerup Isnevermore IsShadowFiendEconArcana IsPowerupIllusion
-	response nevermore_PowerupIsShadowFiendEconArcanaIsPowerupIllusion
-}
-
-Response nevermore_PowerupIsShadowFiendEconArcanaIsPowerupInvisibility
-{
-	scene "scenes/nevermore/nevermore_nev_arc_invis_01.vcd" nodelay 
-}
-
-Rule nevermore_PowerupIsShadowFiendEconArcanaIsPowerupInvisibility_Rule
-{
-	criteria Powerup Isnevermore IsShadowFiendEconArcana IsPowerupInvisibility
-	response nevermore_PowerupIsShadowFiendEconArcanaIsPowerupInvisibility
-}
-
-Response nevermore_PowerupIsShadowFiendEconArcanaIsPowerupInvisibilityChance_25%
-{
-	scene "scenes/nevermore/nevermore_nev_arc_invis_02.vcd" nodelay 
-}
-
-Rule nevermore_PowerupIsShadowFiendEconArcanaIsPowerupInvisibilityChance_25%_Rule
-{
-	criteria Powerup Isnevermore IsShadowFiendEconArcana IsPowerupInvisibility Chance_25%
-	response nevermore_PowerupIsShadowFiendEconArcanaIsPowerupInvisibilityChance_25%
-}
-
-Response nevermore_PowerupIsShadowFiendEconArcanaIsPowerupBounty
-{
-	scene "scenes/nevermore/nevermore_nev_arc_lasthit_03.vcd" nodelay respeakdelay 300
-}
-
-Rule nevermore_PowerupIsShadowFiendEconArcanaIsPowerupBounty_Rule
-{
-	criteria Powerup Isnevermore IsShadowFiendEconArcana IsPowerupBounty
-	response nevermore_PowerupIsShadowFiendEconArcanaIsPowerupBounty
-}
-
-Response nevermore_PowerupIsPowerupArcane
-{
-	scene "scenes/nevermore/nevermore_nev_regen_02.vcd" nodelay respeakdelay 300
-}
-
-Rule nevermore_PowerupIsPowerupArcane_Rule
-{
-	criteria Powerup Isnevermore IsPowerupArcane
-	response nevermore_PowerupIsPowerupArcane
-}
-
-Response nevermore_PowerupIsShadowFiendEconArcanaIsPowerupArcane
-{
-	scene "scenes/nevermore/nevermore_nev_arc_regen_02.vcd" nodelay respeakdelay 300
-}
-
-Rule nevermore_PowerupIsShadowFiendEconArcanaIsPowerupArcane_Rule
-{
-	criteria Powerup Isnevermore IsShadowFiendEconArcana IsPowerupArcane
-	response nevermore_PowerupIsShadowFiendEconArcanaIsPowerupArcane
-}
-
-Response nevermore_Bottling
-{
-	scene "scenes/nevermore/nevermore_nev_bottle_01.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_bottle_02.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_bottle_03.vcd" nodelay 
-}
-
-Rule nevermore_Bottling_Rule
-{
-	criteria Bottling Isnevermore 
-	response nevermore_Bottling
-}
-
-Response nevermore_BottlingIsShadowFiendEconArcana
-{
-	scene "scenes/nevermore/nevermore_nev_arc_bottle_01.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_bottle_02.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_bottle_03.vcd" nodelay 
-}
-
-Rule nevermore_BottlingIsShadowFiendEconArcana_Rule
-{
-	criteria Bottling Isnevermore IsShadowFiendEconArcana
-	response nevermore_BottlingIsShadowFiendEconArcana
-}
-
-Response nevermore_CooldownLittleNag
-{
-	scene "scenes/nevermore/nevermore_nev_notyet_01.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_notyet_02.vcd" nodelay 
-}
-
-Rule nevermore_CooldownLittleNag_Rule
-{
-	criteria Cooldown Isnevermore LittleNag
-	response nevermore_CooldownLittleNag
-}
-
-Response nevermore_CooldownMediumNag
-{
-	scene "scenes/nevermore/nevermore_nev_notyet_03.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_notyet_04.vcd" nodelay 
-}
-
-Rule nevermore_CooldownMediumNag_Rule
-{
-	criteria Cooldown Isnevermore MediumNag
-	response nevermore_CooldownMediumNag
-}
-
-Response nevermore_CooldownSuperNag
-{
-	scene "scenes/nevermore/nevermore_nev_notyet_05.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_notyet_06.vcd" nodelay 
-}
-
-Rule nevermore_CooldownSuperNag_Rule
-{
-	criteria Cooldown Isnevermore SuperNag
-	response nevermore_CooldownSuperNag
-}
-
-Response nevermore_CooldownIsShadowFiendEconArcanaLittleNag
-{
-	scene "scenes/nevermore/nevermore_nev_arc_notyet_01.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_notyet_02.vcd" nodelay 
-}
-
-Rule nevermore_CooldownIsShadowFiendEconArcanaLittleNag_Rule
-{
-	criteria Cooldown Isnevermore IsShadowFiendEconArcana LittleNag
-	response nevermore_CooldownIsShadowFiendEconArcanaLittleNag
-}
-
-Response nevermore_CooldownIsShadowFiendEconArcanaMediumNag
-{
-	scene "scenes/nevermore/nevermore_nev_arc_notyet_03.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_notyet_04.vcd" nodelay 
-}
-
-Rule nevermore_CooldownIsShadowFiendEconArcanaMediumNag_Rule
-{
-	criteria Cooldown Isnevermore IsShadowFiendEconArcana MediumNag
-	response nevermore_CooldownIsShadowFiendEconArcanaMediumNag
-}
-
-Response nevermore_CooldownIsShadowFiendEconArcanaSuperNag
-{
-	scene "scenes/nevermore/nevermore_nev_arc_notyet_05.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_notyet_06.vcd" nodelay 
-}
-
-Rule nevermore_CooldownIsShadowFiendEconArcanaSuperNag_Rule
-{
-	criteria Cooldown Isnevermore IsShadowFiendEconArcana SuperNag
-	response nevermore_CooldownIsShadowFiendEconArcanaSuperNag
-}
-
-Response nevermore_NoManaLittleNag
-{
-	scene "scenes/nevermore/nevermore_nev_nomana_01.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_nomana_02.vcd" nodelay 
-}
-
-Rule nevermore_NoManaLittleNag_Rule
-{
-	criteria NoMana Isnevermore LittleNag
-	response nevermore_NoManaLittleNag
-}
-
-Response nevermore_NoManaMediumNag
-{
-	scene "scenes/nevermore/nevermore_nev_nomana_03.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_nomana_04.vcd" nodelay 
-}
-
-Rule nevermore_NoManaMediumNag_Rule
-{
-	criteria NoMana Isnevermore MediumNag
-	response nevermore_NoManaMediumNag
-}
-
-Response nevermore_NoManaSuperNag
-{
-	scene "scenes/nevermore/nevermore_nev_nomana_05.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_nomana_06.vcd" nodelay 
-}
-
-Rule nevermore_NoManaSuperNag_Rule
-{
-	criteria NoMana Isnevermore SuperNag
-	response nevermore_NoManaSuperNag
-}
-
-Response nevermore_NoManaIsShadowFiendEconArcanaLittleNag
-{
-	scene "scenes/nevermore/nevermore_nev_arc_nomana_01.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_nomana_02.vcd" nodelay 
-}
-
-Rule nevermore_NoManaIsShadowFiendEconArcanaLittleNag_Rule
-{
-	criteria NoMana Isnevermore IsShadowFiendEconArcana LittleNag
-	response nevermore_NoManaIsShadowFiendEconArcanaLittleNag
-}
-
-Response nevermore_NoManaIsShadowFiendEconArcanaMediumNag
-{
-	scene "scenes/nevermore/nevermore_nev_arc_nomana_03.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_nomana_04.vcd" nodelay 
-}
-
-Rule nevermore_NoManaIsShadowFiendEconArcanaMediumNag_Rule
-{
-	criteria NoMana Isnevermore IsShadowFiendEconArcana MediumNag
-	response nevermore_NoManaIsShadowFiendEconArcanaMediumNag
-}
-
-Response nevermore_NoManaIsShadowFiendEconArcanaSuperNag
-{
-	scene "scenes/nevermore/nevermore_nev_arc_nomana_05.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_nomana_06.vcd" nodelay 
-}
-
-Rule nevermore_NoManaIsShadowFiendEconArcanaSuperNag_Rule
-{
-	criteria NoMana Isnevermore IsShadowFiendEconArcana SuperNag
-	response nevermore_NoManaIsShadowFiendEconArcanaSuperNag
-}
-
-Response nevermore_PainChance_25%
-{
-	scene "scenes/nevermore/nevermore_nev_underattack_01.vcd" nodelay respeakdelay 120
-}
-
-Rule nevermore_PainChance_25%_Rule
-{
-	criteria Pain Isnevermore Chance_25%
-	response nevermore_PainChance_25%
-}
-
-Response nevermore_Pain
-{
-	scene "scenes/nevermore/nevermore_nev_pain_01.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_pain_02.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_pain_03.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_pain_04.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_pain_05.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_pain_06.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_pain_07.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_pain_08.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_pain_09.vcd" nodelay 
-}
-
-Rule nevermore_Pain_Rule
-{
-	criteria Pain Isnevermore 
-	response nevermore_Pain
-}
-
-Response nevermore_PainIsShadowFiendEconArcanaChance_25%
-{
-	scene "scenes/nevermore/nevermore_nev_arc_underattack_01.vcd" nodelay respeakdelay 120
-}
-
-Rule nevermore_PainIsShadowFiendEconArcanaChance_25%_Rule
-{
-	criteria Pain Isnevermore IsShadowFiendEconArcana Chance_25%
-	response nevermore_PainIsShadowFiendEconArcanaChance_25%
-}
-
-Response nevermore_PainIsShadowFiendEconArcana
-{
-	scene "scenes/nevermore/nevermore_nev_arc_pain_01.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_pain_02.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_pain_03.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_pain_04.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_pain_05.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_pain_06.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_pain_07.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_pain_08.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_pain_09.vcd" nodelay 
-}
-
-Rule nevermore_PainIsShadowFiendEconArcana_Rule
-{
-	criteria Pain Isnevermore IsShadowFiendEconArcana
-	response nevermore_PainIsShadowFiendEconArcana
-}
-
-Response nevermore_InTheBag
-{
-	scene "scenes/nevermore/nevermore_nev_inthebag_01.vcd" nodelay 
-}
-
-Rule nevermore_InTheBag_Rule
-{
-	criteria InTheBag Isnevermore 
-	response nevermore_InTheBag
-}
-
-Response nevermore_InTheBagIsShadowFiendEconArcana
-{
-	scene "scenes/nevermore/nevermore_nev_arc_inthebag_01.vcd" nodelay 
-}
-
-Rule nevermore_InTheBagIsShadowFiendEconArcana_Rule
-{
-	criteria InTheBag Isnevermore IsShadowFiendEconArcana
-	response nevermore_InTheBagIsShadowFiendEconArcana
-}
-
-Response nevermore_Thanks
-{
-	scene "scenes/nevermore/nevermore_nev_thanks_01.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_thanks_02.vcd" nodelay 
-}
-
-Rule nevermore_Thanks_Rule
-{
-	criteria Thanks Isnevermore 
-	response nevermore_Thanks
-}
-
-Response nevermore_ThanksIsShadowFiendEconArcana
-{
-	scene "scenes/nevermore/nevermore_nev_arc_thanks_01.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_thanks_02.vcd" nodelay 
-}
-
-Rule nevermore_ThanksIsShadowFiendEconArcana_Rule
-{
-	criteria Thanks Isnevermore IsShadowFiendEconArcana
-	response nevermore_ThanksIsShadowFiendEconArcana
-}
-
-Response nevermore_Defeat
-{
-	scene "scenes/nevermore/nevermore_nev_lose_01.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_lose_02.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_lose_03.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_lose_04.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_lose_05.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_lose_06.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_lose_07.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_lose_08.vcd" nodelay 
-}
-
-Rule nevermore_Defeat_Rule
-{
-	criteria Defeat Isnevermore 
-	response nevermore_Defeat
-}
-
-Response nevermore_DefeatIsShadowFiendEconArcana
-{
-	scene "scenes/nevermore/nevermore_nev_arc_lose_01.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_lose_02.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_lose_03.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_lose_04.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_lose_05.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_lose_06.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_lose_07.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_lose_08.vcd" nodelay 
-}
-
-Rule nevermore_DefeatIsShadowFiendEconArcana_Rule
-{
-	criteria Defeat Isnevermore IsShadowFiendEconArcana
-	response nevermore_DefeatIsShadowFiendEconArcana
-}
-
-Response nevermore_Victory
-{
-	scene "scenes/nevermore/nevermore_nev_win_02.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_win_03.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_win_04.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_win_07.vcd" nodelay 
-}
-
-Rule nevermore_Victory_Rule
-{
-	criteria Victory Isnevermore 
-	response nevermore_Victory
-}
-
-Response nevermore_VictoryIsShadowFiendEconArcana
-{
-	scene "scenes/nevermore/nevermore_nev_arc_win_02.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_win_03.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_win_04.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_win_07.vcd" nodelay 
-}
-
-Rule nevermore_VictoryIsShadowFiendEconArcana_Rule
-{
-	criteria Victory Isnevermore IsShadowFiendEconArcana
-	response nevermore_VictoryIsShadowFiendEconArcana
-}
-
-Response nevermore_EmoteIsEmoteLaugh
-{
-	scene "scenes/nevermore/nevermore_nev_laugh_01.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_laugh_02.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_laugh_03.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_laugh_04.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_laugh_05.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_laugh_06.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_laugh_07.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_laugh_08.vcd" nodelay 
-}
-
-Rule nevermore_EmoteIsEmoteLaugh_Rule
-{
-	criteria Emote Isnevermore IsEmoteLaugh
-	response nevermore_EmoteIsEmoteLaugh
-}
-
-Response nevermore_EmoteIsShadowFiendEconArcanaIsEmoteLaugh
-{
-	scene "scenes/nevermore/nevermore_nev_arc_laugh_01.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_laugh_02.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_laugh_03.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_laugh_04.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_laugh_05.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_laugh_06.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_laugh_07.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_laugh_08.vcd" nodelay 
-}
-
-Rule nevermore_EmoteIsShadowFiendEconArcanaIsEmoteLaugh_Rule
-{
-	criteria Emote Isnevermore IsShadowFiendEconArcana IsEmoteLaugh
-	response nevermore_EmoteIsShadowFiendEconArcanaIsEmoteLaugh
-}
-
-Response nevermore_TauntIsShadowFiendTauntSwagger
-{
-	scene "scenes/nevermore/nevermore_nev_laugh_01.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_laugh_07.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_laugh_08.vcd" nodelay 
-}
-
-Rule nevermore_TauntIsShadowFiendTauntSwagger_Rule
-{
-	criteria Taunt Isnevermore IsShadowFiendTauntSwagger
-	response nevermore_TauntIsShadowFiendTauntSwagger
-}
-
-Response nevermore_TauntIsShadowFiendEconArcanaIsShadowFiendArcanaIdle
-{
-	scene "scenes/nevermore/nevermore_nev_arc_laugh_03.vcd" nodelay weapondelay 300
-}
-
-Rule nevermore_TauntIsShadowFiendEconArcanaIsShadowFiendArcanaIdle_Rule
-{
-	criteria Taunt Isnevermore IsShadowFiendEconArcana IsShadowFiendArcanaIdle
-	response nevermore_TauntIsShadowFiendEconArcanaIsShadowFiendArcanaIdle
-}
-
-Response nevermore_TauntIsShadowFiendEconArcanaIsShadowFiendTauntSwagger
-{
-	scene "scenes/nevermore/nevermore_nev_arc_laugh_01.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_laugh_07.vcd" nodelay 
-	scene "scenes/nevermore/nevermore_nev_arc_laugh_08.vcd" nodelay 
-}
-
-Rule nevermore_TauntIsShadowFiendEconArcanaIsShadowFiendTauntSwagger_Rule
-{
-	criteria Taunt Isnevermore IsShadowFiendEconArcana IsShadowFiendTauntSwagger
-	response nevermore_TauntIsShadowFiendEconArcanaIsShadowFiendTauntSwagger
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vrfunknown:version{c1f07085-5299-4e8a-b7e9-1cbb66bbbe23} -->
+{
+	m_Includes = 
+	[
+		"scripts/talker/response_rules_shared.vrr",
+	]
+	m_ResponseGroups = 
+	[
+		
+		{
+			m_name = "nevermore_Spawn"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_spawn_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_spawn_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_spawn_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_spawn_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_spawn_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_spawn_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_spawn_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_spawn_11.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_SpawnIsShadowFiendEconArcana"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_spawn_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_spawn_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_spawn_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_spawn_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_spawn_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_spawn_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_spawn_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_spawn_11.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_CustomIsGameStart"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_spawn_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_battlebegins_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_CustomIsShadowFiendLoadoutSpawn"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_spawn_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_spawn_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_spawn_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_spawn_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_spawn_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_spawn_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_spawn_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_spawn_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_ability_presence_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_spawn_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_spawn_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_kill_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_CustomIsShadowFiendEconArcanaIsGameStart"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_spawn_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_battlebegins_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_CustomIsShadowFiendEconArcanaIsShadowFiendEconTriplerazeChance_15%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_ability_shadow_14.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_ability_shadow_17.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_CustomIsShadowFiendEconArcanaIsShadowFiendEconTripleraze"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_ability_shadow_24.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_ability_shadow_25.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_CustomIsShadowFiendArcanaLoadoutSpawn"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_spawn_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_spawn_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_spawn_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_spawn_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_spawn_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_spawn_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_spawn_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_spawn_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_ability_presence_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_spawn_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_spawn_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_kill_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_KillIsFirstBlood"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_firstblood_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_firstblood_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_firstblood_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_Kill"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_kill_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_kill_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_kill_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_kill_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_kill_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_kill_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_kill_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_kill_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_kill_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_kill_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_kill_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_kill_12.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_kill_13.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_laugh_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_laugh_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_laugh_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_laugh_08.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_KillIsEnemyLeshracChance_20%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_rival_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_KillIsEnemyDoom_BringerChance_20%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_rival_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_rival_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_rival_07.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_KillIsEnemyShadow_DemonChance_20%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_rival_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_rival_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_rival_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_rival_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_rival_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_rival_10.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_KillIsEnemyWindrunnerChance_20%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_rival_13.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_KillIsShadowFiendEconArcanaIsFirstBlood"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_firstblood_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_firstblood_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_firstblood_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_KillIsShadowFiendEconArcana"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_kill_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_kill_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_kill_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_kill_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_kill_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_kill_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_kill_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_kill_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_kill_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_kill_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_kill_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_kill_12.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_kill_13.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_laugh_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_laugh_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_laugh_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_laugh_08.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_KillIsShadowFiendEconArcanaIsEnemyLeshracChance_20%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_rival_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_KillIsShadowFiendEconArcanaIsEnemyDoom_BringerChance_20%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_rival_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_rival_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_rival_07.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_KillIsShadowFiendEconArcanaIsEnemyShadow_DemonChance_20%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_rival_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_rival_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_rival_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_rival_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_rival_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_rival_10.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_KillIsShadowFiendEconArcanaIsEnemyWindrunnerChance_20%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_rival_13.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_Move"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_move_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_move_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_move_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_move_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_move_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_move_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_move_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_move_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_move_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_move_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_move_12.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_move_13.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_move_14.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_move_15.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_acknow_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_acknow_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_acknow_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_acknow_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_acknow_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_acknow_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_acknow_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_acknow_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_acknow_09.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_MoveIsShadowFiendEconArcana"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_move_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_move_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_move_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_move_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_move_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_move_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_move_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_move_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_move_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_move_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_move_12.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_move_13.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_move_14.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_move_15.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_acknow_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_acknow_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_acknow_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_acknow_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_acknow_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_acknow_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_acknow_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_acknow_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_acknow_09.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_Attack"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_attack_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_attack_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_attack_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_attack_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_attack_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_attack_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_attack_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_attack_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_attack_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_attack_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_attack_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_attack_12.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_ability_shadow_12.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_ability_shadow_13.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_ability_shadow_15.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_ability_shadow_16.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_AttackIsShadowFiendEconArcana"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_attack_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_attack_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_attack_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_attack_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_attack_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_attack_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_attack_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_attack_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_attack_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_attack_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_attack_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_attack_12.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_ability_shadow_12.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_ability_shadow_13.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_ability_shadow_15.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_ability_shadow_16.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_CastOrder"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_cast_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_cast_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_cast_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_CastOrderIsShadowFiendEconArcana"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_cast_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_cast_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_cast_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_LearnIsPresenceOfDarkLord"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_ability_presence_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_ability_presence_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_ability_presence_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_LearnIsNecromastery"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_ability_mastery_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_LearnIsShadowFiendEconArcanaIsPresenceOfDarkLord"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_ability_presence_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_ability_presence_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_ability_presence_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_LearnIsShadowFiendEconArcanaIsNecromastery"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_ability_mastery_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_CastExecuteIsShadowRazeIsShortShadowRaze"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_ability_shadow_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_ability_shadow_18.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_ability_shadow_21.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_CastExecuteIsShadowRazeIsMediumShadowRaze"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_ability_shadow_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_ability_shadow_20.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_ability_shadow_22.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_CastExecuteIsShadowRazeIsLongShadowRaze"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_ability_shadow_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_ability_shadow_19.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_ability_shadow_23.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_CastExecuteIsRequiem"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_ability_requiem_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_ability_requiem_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_ability_requiem_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_ability_requiem_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_ability_requiem_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_ability_requiem_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_ability_requiem_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_ability_requiem_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_ability_requiem_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_ability_requiem_12.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_ability_requiem_13.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_ability_requiem_14.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_CastExecuteIsShadowFiendEconArcanaIsShadowRazeIsShortShadowRaze"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_ability_shadow_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_ability_shadow_18.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_ability_shadow_21.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_CastExecuteIsShadowFiendEconArcanaIsShadowRazeIsMediumShadowRaze"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_ability_shadow_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_ability_shadow_20.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_ability_shadow_22.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_CastExecuteIsShadowFiendEconArcanaIsShadowRazeIsLongShadowRaze"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_ability_shadow_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_ability_shadow_19.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_ability_shadow_23.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_CastExecuteIsShadowFiendEconArcanaIsRequiem"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_ability_requiem_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_ability_requiem_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_ability_requiem_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_ability_requiem_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_ability_requiem_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_ability_requiem_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_ability_requiem_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_ability_requiem_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_ability_requiem_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_ability_requiem_12.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_ability_requiem_13.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_ability_requiem_14.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_Death"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_death_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_death_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_death_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_death_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_death_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_death_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_death_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_death_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_death_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_death_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_death_12.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_death_13.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_death_15.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_death_16.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_death_17.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_death_18.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_death_19.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_DeathIsReincarnating"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_fastres_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_laugh_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_DeathIsShadowFiendEconArcana"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_death_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_death_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_death_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_death_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_death_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_death_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_death_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_death_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_death_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_death_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_death_12.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_death_13.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_death_15.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_death_16.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_death_17.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_death_18.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_death_19.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_DeathIsShadowFiendEconArcanaIsReincarnating"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_fastres_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_laugh_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_Respawn"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_respawn_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_respawn_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_respawn_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_respawn_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_respawn_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_respawn_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_respawn_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_respawn_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_respawn_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_respawn_10.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_RespawnIsShadowFiendEconArcana"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_respawn_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_respawn_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_respawn_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_respawn_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_respawn_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_respawn_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_respawn_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_respawn_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_respawn_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_respawn_10.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_LevelUp"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_level_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_level_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_level_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_level_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_level_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_level_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_level_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_level_10.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_LevelUpIsShadowFiendEconArcana"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_level_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_level_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_level_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_level_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_level_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_level_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_level_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_level_10.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_LastHit"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_lasthit_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_lasthit_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_lasthit_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_lasthit_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_lasthit_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_happy_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_happy_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_happy_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_happy_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_happy_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_happy_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_happy_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_happy_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_happy_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_happy_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_happy_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_happy_12.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_LastHitIsShadowFiendEconArcana"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_lasthit_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_lasthit_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_lasthit_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_lasthit_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_lasthit_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_happy_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_happy_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_happy_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_happy_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_happy_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_happy_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_happy_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_happy_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_happy_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_happy_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_happy_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_happy_12.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_ItemDropIsUltraRareDrop"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_lasthit_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_ItemDropIsRareDrop"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_laugh_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_ItemDropIsCommonDrop"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_laugh_06.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_ItemDropIsShadowFiendEconArcanaIsUltraRareDrop"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_lasthit_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_ItemDropIsShadowFiendEconArcanaIsRareDrop"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_laugh_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_ItemDropIsShadowFiendEconArcanaIsCommonDrop"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_laugh_06.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_Deny"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_deny_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_deny_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_deny_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_deny_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_deny_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_deny_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_deny_08.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_DenyIsShadowFiendEconArcana"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_deny_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_deny_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_deny_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_deny_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_deny_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_deny_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_deny_08.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_Select"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_rare_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_rare_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_rare_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_rare_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_rare_05.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_SelectIsShadowFiendEconArcana"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_rare_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_rare_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_rare_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_rare_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_rare_05.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_PurchaseIsExpensiveItem"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_purch_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_purch_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_purch_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_purch_04.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_PurchaseIsUltimateScepter"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_scepter_01.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_scepter_02.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_PurchaseIsBlinkDagger"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_blink_01.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_blink_02.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_PurchaseIsBlackKingBar"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_item_01.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_PurchaseIsInvisSword"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_item_02.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_PurchaseIsManta"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_item_03.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_PurchaseIsButterfly"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_item_04.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_PurchaseIsSkadi"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_item_05.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_PurchaseIsDesolator"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_item_06.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_PurchaseIsSatanic"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_item_07.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_PurchaseIsAssaultCuirass"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_item_08.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_PurchaseIsShadowFiendEconArcanaIsExpensiveItem"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_purch_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_purch_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_purch_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_purch_04.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_PurchaseIsShadowFiendEconArcanaIsUltimateScepter"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_scepter_01.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_scepter_02.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_PurchaseIsShadowFiendEconArcanaIsBlinkDagger"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_blink_01.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_blink_02.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_PurchaseIsShadowFiendEconArcanaIsBlackKingBar"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_item_01.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_PurchaseIsShadowFiendEconArcanaIsInvisSword"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_item_02.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_PurchaseIsShadowFiendEconArcanaIsManta"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_item_03.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_PurchaseIsShadowFiendEconArcanaIsButterfly"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_item_04.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_PurchaseIsShadowFiendEconArcanaIsSkadi"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_item_05.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_PurchaseIsShadowFiendEconArcanaIsDesolator"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_item_06.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_PurchaseIsShadowFiendEconArcanaIsSatanic"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_item_07.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_PurchaseIsShadowFiendEconArcanaIsAssaultCuirass"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_item_08.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_MissingIsLaneTop"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_lane_missing_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_MissingIsLaneMid"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_lane_missing_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_MissingIsLaneBot"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_lane_missing_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_MissingIsShadowFiendEconArcanaIsLaneTop"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_lane_missing_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_MissingIsShadowFiendEconArcanaIsLaneMid"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_lane_missing_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_MissingIsShadowFiendEconArcanaIsLaneBot"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_lane_missing_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_Immortality"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_immort_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_immort_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_ImmortalityIsShadowFiendEconArcana"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_immort_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_immort_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_PowerupIsPowerupHaste"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_haste_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_PowerupIsPowerupDoubleDamage"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_doubdam_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_PowerupIsPowerupRegeneration"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_regen_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_PowerupIsPowerupIllusion"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_illus_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_PowerupIsPowerupInvisibility"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_invis_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_PowerupIsPowerupInvisibilityChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_invis_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_PowerupIsPowerupBounty"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_lasthit_03.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 300.000000
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_PowerupIsShadowFiendEconArcanaIsPowerupHaste"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_haste_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_PowerupIsShadowFiendEconArcanaIsPowerupDoubleDamage"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_doubdam_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_PowerupIsShadowFiendEconArcanaIsPowerupRegeneration"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_regen_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_PowerupIsShadowFiendEconArcanaIsPowerupIllusion"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_illus_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_PowerupIsShadowFiendEconArcanaIsPowerupInvisibility"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_invis_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_PowerupIsShadowFiendEconArcanaIsPowerupInvisibilityChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_invis_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_PowerupIsShadowFiendEconArcanaIsPowerupBounty"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_lasthit_03.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 300.000000
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_PowerupIsPowerupArcane"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_regen_02.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 300.000000
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_PowerupIsShadowFiendEconArcanaIsPowerupArcane"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_regen_02.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 300.000000
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_Bottling"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_bottle_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_bottle_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_bottle_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_BottlingIsShadowFiendEconArcana"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_bottle_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_bottle_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_bottle_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_CooldownLittleNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_notyet_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_notyet_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_CooldownMediumNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_notyet_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_notyet_04.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_CooldownSuperNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_notyet_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_notyet_06.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_CooldownIsShadowFiendEconArcanaLittleNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_notyet_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_notyet_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_CooldownIsShadowFiendEconArcanaMediumNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_notyet_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_notyet_04.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_CooldownIsShadowFiendEconArcanaSuperNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_notyet_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_notyet_06.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_NoManaLittleNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_nomana_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_nomana_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_NoManaMediumNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_nomana_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_nomana_04.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_NoManaSuperNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_nomana_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_nomana_06.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_NoManaIsShadowFiendEconArcanaLittleNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_nomana_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_nomana_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_NoManaIsShadowFiendEconArcanaMediumNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_nomana_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_nomana_04.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_NoManaIsShadowFiendEconArcanaSuperNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_nomana_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_nomana_06.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_PainChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_underattack_01.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 120.000000
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_Pain"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_pain_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_pain_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_pain_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_pain_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_pain_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_pain_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_pain_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_pain_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_pain_09.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_PainIsShadowFiendEconArcanaChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_underattack_01.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 120.000000
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_PainIsShadowFiendEconArcana"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_pain_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_pain_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_pain_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_pain_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_pain_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_pain_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_pain_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_pain_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_pain_09.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_InTheBag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_inthebag_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_InTheBagIsShadowFiendEconArcana"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_inthebag_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_Thanks"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_thanks_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_thanks_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_ThanksIsShadowFiendEconArcana"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_thanks_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_thanks_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_Defeat"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_lose_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_lose_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_lose_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_lose_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_lose_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_lose_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_lose_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_lose_08.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_DefeatIsShadowFiendEconArcana"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_lose_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_lose_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_lose_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_lose_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_lose_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_lose_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_lose_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_lose_08.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_Victory"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_win_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_win_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_win_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_win_07.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_VictoryIsShadowFiendEconArcana"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_win_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_win_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_win_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_win_07.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_EmoteIsEmoteLaugh"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_laugh_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_laugh_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_laugh_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_laugh_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_laugh_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_laugh_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_laugh_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_laugh_08.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_EmoteIsShadowFiendEconArcanaIsEmoteLaugh"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_laugh_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_laugh_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_laugh_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_laugh_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_laugh_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_laugh_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_laugh_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_laugh_08.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_TauntIsShadowFiendTauntSwagger"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_laugh_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_laugh_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_laugh_08.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_TauntIsShadowFiendEconArcanaIsShadowFiendArcanaIdle"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_laugh_03.vcd"
+					m_params = 
+					{
+						m_weapondelay.start = 300.000000
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "nevermore_TauntIsShadowFiendEconArcanaIsShadowFiendTauntSwagger"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_laugh_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_laugh_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/nevermore/nevermore_nev_arc_laugh_08.vcd"
+				},
+			]
+		},
+	]
+	m_Requirements = 
+	[
+		
+		{
+			m_name = "Isnevermore"
+			m_matchKey = "classname"
+			m_matchExpr = "npc_dota_hero_Nevermore"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsPresenceOfDarkLord"
+			m_matchKey = "abilityname"
+			m_matchExpr = "nevermore_dark_lord"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsNecromastery"
+			m_matchKey = "abilityname"
+			m_matchExpr = "nevermore_necromastery"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsShortShadowRaze"
+			m_matchKey = "shadowraze"
+			m_matchExpr = "1"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsMediumShadowRaze"
+			m_matchKey = "shadowraze"
+			m_matchExpr = "2"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsLongShadowRaze"
+			m_matchKey = "shadowraze"
+			m_matchExpr = "3"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsShadowRaze"
+			m_matchKey = "abilityname"
+			m_matchExpr = "nevermore_shadowraze"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsRequiem"
+			m_matchKey = "abilityname"
+			m_matchExpr = "nevermore_requiem"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsShadowFiendEconArcana"
+			m_matchKey = "customresponse"
+			m_matchExpr = "arcana"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsShadowFiendEconTripleraze"
+			m_matchKey = "tripleraze"
+			m_matchExpr = "1"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsShadowFiendArcanaIdle"
+			m_matchKey = "taunt_type"
+			m_matchExpr = "sf_arcana_idle_rare"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsShadowFiendTauntSwagger"
+			m_matchKey = "taunt_type"
+			m_matchExpr = "swag_gesture"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsShadowFiendLoadoutSpawn"
+			m_matchKey = "special_spawn"
+			m_matchExpr = "shadowfiend_loadout_spawn"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsShadowFiendArcanaLoadoutSpawn"
+			m_matchKey = "special_spawn"
+			m_matchExpr = "shadowfiend_arcana_loadout_spawn"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+	]
+	m_Rules = 
+	[
+		
+		{
+			m_name = "nevermore_Spawn_Rule"
+			m_Requirements = 
+			[
+				"Spawn",
+				"Isnevermore",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_Spawn",
+			]
+		},
+		
+		{
+			m_name = "nevermore_SpawnIsShadowFiendEconArcana_Rule"
+			m_Requirements = 
+			[
+				"Spawn",
+				"Isnevermore",
+				"IsShadowFiendEconArcana",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_SpawnIsShadowFiendEconArcana",
+			]
+		},
+		
+		{
+			m_name = "nevermore_CustomIsGameStart_Rule"
+			m_Requirements = 
+			[
+				"Custom",
+				"Isnevermore",
+				"IsGameStart",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_CustomIsGameStart",
+			]
+		},
+		
+		{
+			m_name = "nevermore_CustomIsShadowFiendLoadoutSpawn_Rule"
+			m_Requirements = 
+			[
+				"Custom",
+				"Isnevermore",
+				"IsShadowFiendLoadoutSpawn",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_CustomIsShadowFiendLoadoutSpawn",
+			]
+		},
+		
+		{
+			m_name = "nevermore_CustomIsShadowFiendEconArcanaIsGameStart_Rule"
+			m_Requirements = 
+			[
+				"Custom",
+				"Isnevermore",
+				"IsShadowFiendEconArcana",
+				"IsGameStart",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_CustomIsShadowFiendEconArcanaIsGameStart",
+			]
+		},
+		
+		{
+			m_name = "nevermore_CustomIsShadowFiendEconArcanaIsShadowFiendEconTriplerazeChance_15%_Rule"
+			m_Requirements = 
+			[
+				"Custom",
+				"Isnevermore",
+				"IsShadowFiendEconArcana",
+				"IsShadowFiendEconTripleraze",
+				"Chance_15%",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_CustomIsShadowFiendEconArcanaIsShadowFiendEconTriplerazeChance_15%",
+			]
+		},
+		
+		{
+			m_name = "nevermore_CustomIsShadowFiendEconArcanaIsShadowFiendEconTripleraze_Rule"
+			m_Requirements = 
+			[
+				"Custom",
+				"Isnevermore",
+				"IsShadowFiendEconArcana",
+				"IsShadowFiendEconTripleraze",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_CustomIsShadowFiendEconArcanaIsShadowFiendEconTripleraze",
+			]
+		},
+		
+		{
+			m_name = "nevermore_CustomIsShadowFiendArcanaLoadoutSpawn_Rule"
+			m_Requirements = 
+			[
+				"Custom",
+				"Isnevermore",
+				"IsShadowFiendArcanaLoadoutSpawn",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_CustomIsShadowFiendArcanaLoadoutSpawn",
+			]
+		},
+		
+		{
+			m_name = "nevermore_KillIsFirstBlood_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isnevermore",
+				"IsFirstBlood",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_KillIsFirstBlood",
+			]
+		},
+		
+		{
+			m_name = "nevermore_Kill_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isnevermore",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_Kill",
+			]
+		},
+		
+		{
+			m_name = "nevermore_KillIsEnemyLeshracChance_20%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isnevermore",
+				"IsEnemyLeshrac",
+				"Chance_20%",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_KillIsEnemyLeshracChance_20%",
+			]
+		},
+		
+		{
+			m_name = "nevermore_KillIsEnemyDoom_BringerChance_20%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isnevermore",
+				"IsEnemyDoom_Bringer",
+				"Chance_20%",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_KillIsEnemyDoom_BringerChance_20%",
+			]
+		},
+		
+		{
+			m_name = "nevermore_KillIsEnemyShadow_DemonChance_20%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isnevermore",
+				"IsEnemyShadow_Demon",
+				"Chance_20%",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_KillIsEnemyShadow_DemonChance_20%",
+			]
+		},
+		
+		{
+			m_name = "nevermore_KillIsEnemyWindrunnerChance_20%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isnevermore",
+				"IsEnemyWindrunner",
+				"Chance_20%",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_KillIsEnemyWindrunnerChance_20%",
+			]
+		},
+		
+		{
+			m_name = "nevermore_KillIsShadowFiendEconArcanaIsFirstBlood_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isnevermore",
+				"IsShadowFiendEconArcana",
+				"IsFirstBlood",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_KillIsShadowFiendEconArcanaIsFirstBlood",
+			]
+		},
+		
+		{
+			m_name = "nevermore_KillIsShadowFiendEconArcana_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isnevermore",
+				"IsShadowFiendEconArcana",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_KillIsShadowFiendEconArcana",
+			]
+		},
+		
+		{
+			m_name = "nevermore_KillIsShadowFiendEconArcanaIsEnemyLeshracChance_20%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isnevermore",
+				"IsShadowFiendEconArcana",
+				"IsEnemyLeshrac",
+				"Chance_20%",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_KillIsShadowFiendEconArcanaIsEnemyLeshracChance_20%",
+			]
+		},
+		
+		{
+			m_name = "nevermore_KillIsShadowFiendEconArcanaIsEnemyDoom_BringerChance_20%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isnevermore",
+				"IsShadowFiendEconArcana",
+				"IsEnemyDoom_Bringer",
+				"Chance_20%",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_KillIsShadowFiendEconArcanaIsEnemyDoom_BringerChance_20%",
+			]
+		},
+		
+		{
+			m_name = "nevermore_KillIsShadowFiendEconArcanaIsEnemyShadow_DemonChance_20%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isnevermore",
+				"IsShadowFiendEconArcana",
+				"IsEnemyShadow_Demon",
+				"Chance_20%",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_KillIsShadowFiendEconArcanaIsEnemyShadow_DemonChance_20%",
+			]
+		},
+		
+		{
+			m_name = "nevermore_KillIsShadowFiendEconArcanaIsEnemyWindrunnerChance_20%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isnevermore",
+				"IsShadowFiendEconArcana",
+				"IsEnemyWindrunner",
+				"Chance_20%",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_KillIsShadowFiendEconArcanaIsEnemyWindrunnerChance_20%",
+			]
+		},
+		
+		{
+			m_name = "nevermore_Move_Rule"
+			m_Requirements = 
+			[
+				"Move",
+				"Isnevermore",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_Move",
+			]
+		},
+		
+		{
+			m_name = "nevermore_MoveIsShadowFiendEconArcana_Rule"
+			m_Requirements = 
+			[
+				"Move",
+				"Isnevermore",
+				"IsShadowFiendEconArcana",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_MoveIsShadowFiendEconArcana",
+			]
+		},
+		
+		{
+			m_name = "nevermore_Attack_Rule"
+			m_Requirements = 
+			[
+				"Attack",
+				"Isnevermore",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_Attack",
+			]
+		},
+		
+		{
+			m_name = "nevermore_AttackIsShadowFiendEconArcana_Rule"
+			m_Requirements = 
+			[
+				"Attack",
+				"Isnevermore",
+				"IsShadowFiendEconArcana",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_AttackIsShadowFiendEconArcana",
+			]
+		},
+		
+		{
+			m_name = "nevermore_CastOrder_Rule"
+			m_Requirements = 
+			[
+				"CastOrder",
+				"Isnevermore",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_CastOrder",
+			]
+		},
+		
+		{
+			m_name = "nevermore_CastOrderIsShadowFiendEconArcana_Rule"
+			m_Requirements = 
+			[
+				"CastOrder",
+				"Isnevermore",
+				"IsShadowFiendEconArcana",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_CastOrderIsShadowFiendEconArcana",
+			]
+		},
+		
+		{
+			m_name = "nevermore_LearnIsPresenceOfDarkLord_Rule"
+			m_Requirements = 
+			[
+				"Learn",
+				"Isnevermore",
+				"IsPresenceOfDarkLord",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_LearnIsPresenceOfDarkLord",
+			]
+		},
+		
+		{
+			m_name = "nevermore_LearnIsNecromastery_Rule"
+			m_Requirements = 
+			[
+				"Learn",
+				"Isnevermore",
+				"IsNecromastery",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_LearnIsNecromastery",
+			]
+		},
+		
+		{
+			m_name = "nevermore_LearnIsShadowFiendEconArcanaIsPresenceOfDarkLord_Rule"
+			m_Requirements = 
+			[
+				"Learn",
+				"Isnevermore",
+				"IsShadowFiendEconArcana",
+				"IsPresenceOfDarkLord",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_LearnIsShadowFiendEconArcanaIsPresenceOfDarkLord",
+			]
+		},
+		
+		{
+			m_name = "nevermore_LearnIsShadowFiendEconArcanaIsNecromastery_Rule"
+			m_Requirements = 
+			[
+				"Learn",
+				"Isnevermore",
+				"IsShadowFiendEconArcana",
+				"IsNecromastery",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_LearnIsShadowFiendEconArcanaIsNecromastery",
+			]
+		},
+		
+		{
+			m_name = "nevermore_CastExecuteIsShadowRazeIsShortShadowRaze_Rule"
+			m_Requirements = 
+			[
+				"CastExecute",
+				"Isnevermore",
+				"IsShadowRaze",
+				"IsShortShadowRaze",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_CastExecuteIsShadowRazeIsShortShadowRaze",
+			]
+		},
+		
+		{
+			m_name = "nevermore_CastExecuteIsShadowRazeIsMediumShadowRaze_Rule"
+			m_Requirements = 
+			[
+				"CastExecute",
+				"Isnevermore",
+				"IsShadowRaze",
+				"IsMediumShadowRaze",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_CastExecuteIsShadowRazeIsMediumShadowRaze",
+			]
+		},
+		
+		{
+			m_name = "nevermore_CastExecuteIsShadowRazeIsLongShadowRaze_Rule"
+			m_Requirements = 
+			[
+				"CastExecute",
+				"Isnevermore",
+				"IsShadowRaze",
+				"IsLongShadowRaze",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_CastExecuteIsShadowRazeIsLongShadowRaze",
+			]
+		},
+		
+		{
+			m_name = "nevermore_CastExecuteIsRequiem_Rule"
+			m_Requirements = 
+			[
+				"CastExecute",
+				"Isnevermore",
+				"IsRequiem",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_CastExecuteIsRequiem",
+			]
+		},
+		
+		{
+			m_name = "nevermore_CastExecuteIsShadowFiendEconArcanaIsShadowRazeIsShortShadowRaze_Rule"
+			m_Requirements = 
+			[
+				"CastExecute",
+				"Isnevermore",
+				"IsShadowFiendEconArcana",
+				"IsShadowRaze",
+				"IsShortShadowRaze",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_CastExecuteIsShadowFiendEconArcanaIsShadowRazeIsShortShadowRaze",
+			]
+		},
+		
+		{
+			m_name = "nevermore_CastExecuteIsShadowFiendEconArcanaIsShadowRazeIsMediumShadowRaze_Rule"
+			m_Requirements = 
+			[
+				"CastExecute",
+				"Isnevermore",
+				"IsShadowFiendEconArcana",
+				"IsShadowRaze",
+				"IsMediumShadowRaze",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_CastExecuteIsShadowFiendEconArcanaIsShadowRazeIsMediumShadowRaze",
+			]
+		},
+		
+		{
+			m_name = "nevermore_CastExecuteIsShadowFiendEconArcanaIsShadowRazeIsLongShadowRaze_Rule"
+			m_Requirements = 
+			[
+				"CastExecute",
+				"Isnevermore",
+				"IsShadowFiendEconArcana",
+				"IsShadowRaze",
+				"IsLongShadowRaze",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_CastExecuteIsShadowFiendEconArcanaIsShadowRazeIsLongShadowRaze",
+			]
+		},
+		
+		{
+			m_name = "nevermore_CastExecuteIsShadowFiendEconArcanaIsRequiem_Rule"
+			m_Requirements = 
+			[
+				"CastExecute",
+				"Isnevermore",
+				"IsShadowFiendEconArcana",
+				"IsRequiem",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_CastExecuteIsShadowFiendEconArcanaIsRequiem",
+			]
+		},
+		
+		{
+			m_name = "nevermore_Death_Rule"
+			m_Requirements = 
+			[
+				"Death",
+				"Isnevermore",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_Death",
+			]
+		},
+		
+		{
+			m_name = "nevermore_DeathIsReincarnating_Rule"
+			m_Requirements = 
+			[
+				"Death",
+				"Isnevermore",
+				"IsReincarnating",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_DeathIsReincarnating",
+			]
+		},
+		
+		{
+			m_name = "nevermore_DeathIsShadowFiendEconArcana_Rule"
+			m_Requirements = 
+			[
+				"Death",
+				"Isnevermore",
+				"IsShadowFiendEconArcana",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_DeathIsShadowFiendEconArcana",
+			]
+		},
+		
+		{
+			m_name = "nevermore_DeathIsShadowFiendEconArcanaIsReincarnating_Rule"
+			m_Requirements = 
+			[
+				"Death",
+				"Isnevermore",
+				"IsShadowFiendEconArcana",
+				"IsReincarnating",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_DeathIsShadowFiendEconArcanaIsReincarnating",
+			]
+		},
+		
+		{
+			m_name = "nevermore_Respawn_Rule"
+			m_Requirements = 
+			[
+				"Respawn",
+				"Isnevermore",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_Respawn",
+			]
+		},
+		
+		{
+			m_name = "nevermore_RespawnIsShadowFiendEconArcana_Rule"
+			m_Requirements = 
+			[
+				"Respawn",
+				"Isnevermore",
+				"IsShadowFiendEconArcana",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_RespawnIsShadowFiendEconArcana",
+			]
+		},
+		
+		{
+			m_name = "nevermore_LevelUp_Rule"
+			m_Requirements = 
+			[
+				"LevelUp",
+				"Isnevermore",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_LevelUp",
+			]
+		},
+		
+		{
+			m_name = "nevermore_LevelUpIsShadowFiendEconArcana_Rule"
+			m_Requirements = 
+			[
+				"LevelUp",
+				"Isnevermore",
+				"IsShadowFiendEconArcana",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_LevelUpIsShadowFiendEconArcana",
+			]
+		},
+		
+		{
+			m_name = "nevermore_LastHit_Rule"
+			m_Requirements = 
+			[
+				"LastHit",
+				"Isnevermore",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_LastHit",
+			]
+		},
+		
+		{
+			m_name = "nevermore_LastHitIsShadowFiendEconArcana_Rule"
+			m_Requirements = 
+			[
+				"LastHit",
+				"Isnevermore",
+				"IsShadowFiendEconArcana",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_LastHitIsShadowFiendEconArcana",
+			]
+		},
+		
+		{
+			m_name = "nevermore_ItemDropIsUltraRareDrop_Rule"
+			m_Requirements = 
+			[
+				"ItemDrop",
+				"Isnevermore",
+				"IsUltraRareDrop",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_ItemDropIsUltraRareDrop",
+			]
+		},
+		
+		{
+			m_name = "nevermore_ItemDropIsRareDrop_Rule"
+			m_Requirements = 
+			[
+				"ItemDrop",
+				"Isnevermore",
+				"IsRareDrop",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_ItemDropIsRareDrop",
+			]
+		},
+		
+		{
+			m_name = "nevermore_ItemDropIsCommonDrop_Rule"
+			m_Requirements = 
+			[
+				"ItemDrop",
+				"Isnevermore",
+				"IsCommonDrop",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_ItemDropIsCommonDrop",
+			]
+		},
+		
+		{
+			m_name = "nevermore_ItemDropIsShadowFiendEconArcanaIsUltraRareDrop_Rule"
+			m_Requirements = 
+			[
+				"ItemDrop",
+				"Isnevermore",
+				"IsShadowFiendEconArcana",
+				"IsUltraRareDrop",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_ItemDropIsShadowFiendEconArcanaIsUltraRareDrop",
+			]
+		},
+		
+		{
+			m_name = "nevermore_ItemDropIsShadowFiendEconArcanaIsRareDrop_Rule"
+			m_Requirements = 
+			[
+				"ItemDrop",
+				"Isnevermore",
+				"IsShadowFiendEconArcana",
+				"IsRareDrop",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_ItemDropIsShadowFiendEconArcanaIsRareDrop",
+			]
+		},
+		
+		{
+			m_name = "nevermore_ItemDropIsShadowFiendEconArcanaIsCommonDrop_Rule"
+			m_Requirements = 
+			[
+				"ItemDrop",
+				"Isnevermore",
+				"IsShadowFiendEconArcana",
+				"IsCommonDrop",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_ItemDropIsShadowFiendEconArcanaIsCommonDrop",
+			]
+		},
+		
+		{
+			m_name = "nevermore_Deny_Rule"
+			m_Requirements = 
+			[
+				"Deny",
+				"Isnevermore",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_Deny",
+			]
+		},
+		
+		{
+			m_name = "nevermore_DenyIsShadowFiendEconArcana_Rule"
+			m_Requirements = 
+			[
+				"Deny",
+				"Isnevermore",
+				"IsShadowFiendEconArcana",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_DenyIsShadowFiendEconArcana",
+			]
+		},
+		
+		{
+			m_name = "nevermore_Select_Rule"
+			m_Requirements = 
+			[
+				"Select",
+				"Isnevermore",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_Select",
+			]
+		},
+		
+		{
+			m_name = "nevermore_SelectIsShadowFiendEconArcana_Rule"
+			m_Requirements = 
+			[
+				"Select",
+				"Isnevermore",
+				"IsShadowFiendEconArcana",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_SelectIsShadowFiendEconArcana",
+			]
+		},
+		
+		{
+			m_name = "nevermore_PurchaseIsExpensiveItem_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isnevermore",
+				"IsExpensiveItem",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_PurchaseIsExpensiveItem",
+			]
+		},
+		
+		{
+			m_name = "nevermore_PurchaseIsUltimateScepter_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isnevermore",
+				"IsUltimateScepter",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_PurchaseIsUltimateScepter",
+			]
+		},
+		
+		{
+			m_name = "nevermore_PurchaseIsBlinkDagger_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isnevermore",
+				"IsBlinkDagger",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_PurchaseIsBlinkDagger",
+			]
+		},
+		
+		{
+			m_name = "nevermore_PurchaseIsBlackKingBar_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isnevermore",
+				"IsBlackKingBar",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_PurchaseIsBlackKingBar",
+			]
+		},
+		
+		{
+			m_name = "nevermore_PurchaseIsInvisSword_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isnevermore",
+				"IsInvisSword",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_PurchaseIsInvisSword",
+			]
+		},
+		
+		{
+			m_name = "nevermore_PurchaseIsManta_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isnevermore",
+				"IsManta",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_PurchaseIsManta",
+			]
+		},
+		
+		{
+			m_name = "nevermore_PurchaseIsButterfly_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isnevermore",
+				"IsButterfly",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_PurchaseIsButterfly",
+			]
+		},
+		
+		{
+			m_name = "nevermore_PurchaseIsSkadi_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isnevermore",
+				"IsSkadi",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_PurchaseIsSkadi",
+			]
+		},
+		
+		{
+			m_name = "nevermore_PurchaseIsDesolator_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isnevermore",
+				"IsDesolator",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_PurchaseIsDesolator",
+			]
+		},
+		
+		{
+			m_name = "nevermore_PurchaseIsSatanic_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isnevermore",
+				"IsSatanic",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_PurchaseIsSatanic",
+			]
+		},
+		
+		{
+			m_name = "nevermore_PurchaseIsAssaultCuirass_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isnevermore",
+				"IsAssaultCuirass",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_PurchaseIsAssaultCuirass",
+			]
+		},
+		
+		{
+			m_name = "nevermore_PurchaseIsShadowFiendEconArcanaIsExpensiveItem_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isnevermore",
+				"IsShadowFiendEconArcana",
+				"IsExpensiveItem",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_PurchaseIsShadowFiendEconArcanaIsExpensiveItem",
+			]
+		},
+		
+		{
+			m_name = "nevermore_PurchaseIsShadowFiendEconArcanaIsUltimateScepter_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isnevermore",
+				"IsShadowFiendEconArcana",
+				"IsUltimateScepter",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_PurchaseIsShadowFiendEconArcanaIsUltimateScepter",
+			]
+		},
+		
+		{
+			m_name = "nevermore_PurchaseIsShadowFiendEconArcanaIsBlinkDagger_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isnevermore",
+				"IsShadowFiendEconArcana",
+				"IsBlinkDagger",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_PurchaseIsShadowFiendEconArcanaIsBlinkDagger",
+			]
+		},
+		
+		{
+			m_name = "nevermore_PurchaseIsShadowFiendEconArcanaIsBlackKingBar_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isnevermore",
+				"IsShadowFiendEconArcana",
+				"IsBlackKingBar",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_PurchaseIsShadowFiendEconArcanaIsBlackKingBar",
+			]
+		},
+		
+		{
+			m_name = "nevermore_PurchaseIsShadowFiendEconArcanaIsInvisSword_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isnevermore",
+				"IsShadowFiendEconArcana",
+				"IsInvisSword",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_PurchaseIsShadowFiendEconArcanaIsInvisSword",
+			]
+		},
+		
+		{
+			m_name = "nevermore_PurchaseIsShadowFiendEconArcanaIsManta_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isnevermore",
+				"IsShadowFiendEconArcana",
+				"IsManta",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_PurchaseIsShadowFiendEconArcanaIsManta",
+			]
+		},
+		
+		{
+			m_name = "nevermore_PurchaseIsShadowFiendEconArcanaIsButterfly_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isnevermore",
+				"IsShadowFiendEconArcana",
+				"IsButterfly",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_PurchaseIsShadowFiendEconArcanaIsButterfly",
+			]
+		},
+		
+		{
+			m_name = "nevermore_PurchaseIsShadowFiendEconArcanaIsSkadi_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isnevermore",
+				"IsShadowFiendEconArcana",
+				"IsSkadi",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_PurchaseIsShadowFiendEconArcanaIsSkadi",
+			]
+		},
+		
+		{
+			m_name = "nevermore_PurchaseIsShadowFiendEconArcanaIsDesolator_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isnevermore",
+				"IsShadowFiendEconArcana",
+				"IsDesolator",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_PurchaseIsShadowFiendEconArcanaIsDesolator",
+			]
+		},
+		
+		{
+			m_name = "nevermore_PurchaseIsShadowFiendEconArcanaIsSatanic_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isnevermore",
+				"IsShadowFiendEconArcana",
+				"IsSatanic",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_PurchaseIsShadowFiendEconArcanaIsSatanic",
+			]
+		},
+		
+		{
+			m_name = "nevermore_PurchaseIsShadowFiendEconArcanaIsAssaultCuirass_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isnevermore",
+				"IsShadowFiendEconArcana",
+				"IsAssaultCuirass",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_PurchaseIsShadowFiendEconArcanaIsAssaultCuirass",
+			]
+		},
+		
+		{
+			m_name = "nevermore_MissingIsLaneTop_Rule"
+			m_Requirements = 
+			[
+				"Missing",
+				"Isnevermore",
+				"IsLaneTop",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_MissingIsLaneTop",
+			]
+		},
+		
+		{
+			m_name = "nevermore_MissingIsLaneMid_Rule"
+			m_Requirements = 
+			[
+				"Missing",
+				"Isnevermore",
+				"IsLaneMid",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_MissingIsLaneMid",
+			]
+		},
+		
+		{
+			m_name = "nevermore_MissingIsLaneBot_Rule"
+			m_Requirements = 
+			[
+				"Missing",
+				"Isnevermore",
+				"IsLaneBot",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_MissingIsLaneBot",
+			]
+		},
+		
+		{
+			m_name = "nevermore_MissingIsShadowFiendEconArcanaIsLaneTop_Rule"
+			m_Requirements = 
+			[
+				"Missing",
+				"Isnevermore",
+				"IsShadowFiendEconArcana",
+				"IsLaneTop",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_MissingIsShadowFiendEconArcanaIsLaneTop",
+			]
+		},
+		
+		{
+			m_name = "nevermore_MissingIsShadowFiendEconArcanaIsLaneMid_Rule"
+			m_Requirements = 
+			[
+				"Missing",
+				"Isnevermore",
+				"IsShadowFiendEconArcana",
+				"IsLaneMid",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_MissingIsShadowFiendEconArcanaIsLaneMid",
+			]
+		},
+		
+		{
+			m_name = "nevermore_MissingIsShadowFiendEconArcanaIsLaneBot_Rule"
+			m_Requirements = 
+			[
+				"Missing",
+				"Isnevermore",
+				"IsShadowFiendEconArcana",
+				"IsLaneBot",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_MissingIsShadowFiendEconArcanaIsLaneBot",
+			]
+		},
+		
+		{
+			m_name = "nevermore_Immortality_Rule"
+			m_Requirements = 
+			[
+				"Immortality",
+				"Isnevermore",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_Immortality",
+			]
+		},
+		
+		{
+			m_name = "nevermore_ImmortalityIsShadowFiendEconArcana_Rule"
+			m_Requirements = 
+			[
+				"Immortality",
+				"Isnevermore",
+				"IsShadowFiendEconArcana",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_ImmortalityIsShadowFiendEconArcana",
+			]
+		},
+		
+		{
+			m_name = "nevermore_PowerupIsPowerupHaste_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isnevermore",
+				"IsPowerupHaste",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_PowerupIsPowerupHaste",
+			]
+		},
+		
+		{
+			m_name = "nevermore_PowerupIsPowerupDoubleDamage_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isnevermore",
+				"IsPowerupDoubleDamage",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_PowerupIsPowerupDoubleDamage",
+			]
+		},
+		
+		{
+			m_name = "nevermore_PowerupIsPowerupRegeneration_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isnevermore",
+				"IsPowerupRegeneration",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_PowerupIsPowerupRegeneration",
+			]
+		},
+		
+		{
+			m_name = "nevermore_PowerupIsPowerupIllusion_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isnevermore",
+				"IsPowerupIllusion",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_PowerupIsPowerupIllusion",
+			]
+		},
+		
+		{
+			m_name = "nevermore_PowerupIsPowerupInvisibility_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isnevermore",
+				"IsPowerupInvisibility",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_PowerupIsPowerupInvisibility",
+			]
+		},
+		
+		{
+			m_name = "nevermore_PowerupIsPowerupInvisibilityChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isnevermore",
+				"IsPowerupInvisibility",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_PowerupIsPowerupInvisibilityChance_25%",
+			]
+		},
+		
+		{
+			m_name = "nevermore_PowerupIsPowerupBounty_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isnevermore",
+				"IsPowerupBounty",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_PowerupIsPowerupBounty",
+			]
+		},
+		
+		{
+			m_name = "nevermore_PowerupIsShadowFiendEconArcanaIsPowerupHaste_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isnevermore",
+				"IsShadowFiendEconArcana",
+				"IsPowerupHaste",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_PowerupIsShadowFiendEconArcanaIsPowerupHaste",
+			]
+		},
+		
+		{
+			m_name = "nevermore_PowerupIsShadowFiendEconArcanaIsPowerupDoubleDamage_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isnevermore",
+				"IsShadowFiendEconArcana",
+				"IsPowerupDoubleDamage",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_PowerupIsShadowFiendEconArcanaIsPowerupDoubleDamage",
+			]
+		},
+		
+		{
+			m_name = "nevermore_PowerupIsShadowFiendEconArcanaIsPowerupRegeneration_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isnevermore",
+				"IsShadowFiendEconArcana",
+				"IsPowerupRegeneration",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_PowerupIsShadowFiendEconArcanaIsPowerupRegeneration",
+			]
+		},
+		
+		{
+			m_name = "nevermore_PowerupIsShadowFiendEconArcanaIsPowerupIllusion_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isnevermore",
+				"IsShadowFiendEconArcana",
+				"IsPowerupIllusion",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_PowerupIsShadowFiendEconArcanaIsPowerupIllusion",
+			]
+		},
+		
+		{
+			m_name = "nevermore_PowerupIsShadowFiendEconArcanaIsPowerupInvisibility_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isnevermore",
+				"IsShadowFiendEconArcana",
+				"IsPowerupInvisibility",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_PowerupIsShadowFiendEconArcanaIsPowerupInvisibility",
+			]
+		},
+		
+		{
+			m_name = "nevermore_PowerupIsShadowFiendEconArcanaIsPowerupInvisibilityChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isnevermore",
+				"IsShadowFiendEconArcana",
+				"IsPowerupInvisibility",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_PowerupIsShadowFiendEconArcanaIsPowerupInvisibilityChance_25%",
+			]
+		},
+		
+		{
+			m_name = "nevermore_PowerupIsShadowFiendEconArcanaIsPowerupBounty_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isnevermore",
+				"IsShadowFiendEconArcana",
+				"IsPowerupBounty",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_PowerupIsShadowFiendEconArcanaIsPowerupBounty",
+			]
+		},
+		
+		{
+			m_name = "nevermore_PowerupIsPowerupArcane_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isnevermore",
+				"IsPowerupArcane",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_PowerupIsPowerupArcane",
+			]
+		},
+		
+		{
+			m_name = "nevermore_PowerupIsShadowFiendEconArcanaIsPowerupArcane_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isnevermore",
+				"IsShadowFiendEconArcana",
+				"IsPowerupArcane",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_PowerupIsShadowFiendEconArcanaIsPowerupArcane",
+			]
+		},
+		
+		{
+			m_name = "nevermore_Bottling_Rule"
+			m_Requirements = 
+			[
+				"Bottling",
+				"Isnevermore",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_Bottling",
+			]
+		},
+		
+		{
+			m_name = "nevermore_BottlingIsShadowFiendEconArcana_Rule"
+			m_Requirements = 
+			[
+				"Bottling",
+				"Isnevermore",
+				"IsShadowFiendEconArcana",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_BottlingIsShadowFiendEconArcana",
+			]
+		},
+		
+		{
+			m_name = "nevermore_CooldownLittleNag_Rule"
+			m_Requirements = 
+			[
+				"Cooldown",
+				"Isnevermore",
+				"LittleNag",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_CooldownLittleNag",
+			]
+		},
+		
+		{
+			m_name = "nevermore_CooldownMediumNag_Rule"
+			m_Requirements = 
+			[
+				"Cooldown",
+				"Isnevermore",
+				"MediumNag",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_CooldownMediumNag",
+			]
+		},
+		
+		{
+			m_name = "nevermore_CooldownSuperNag_Rule"
+			m_Requirements = 
+			[
+				"Cooldown",
+				"Isnevermore",
+				"SuperNag",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_CooldownSuperNag",
+			]
+		},
+		
+		{
+			m_name = "nevermore_CooldownIsShadowFiendEconArcanaLittleNag_Rule"
+			m_Requirements = 
+			[
+				"Cooldown",
+				"Isnevermore",
+				"IsShadowFiendEconArcana",
+				"LittleNag",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_CooldownIsShadowFiendEconArcanaLittleNag",
+			]
+		},
+		
+		{
+			m_name = "nevermore_CooldownIsShadowFiendEconArcanaMediumNag_Rule"
+			m_Requirements = 
+			[
+				"Cooldown",
+				"Isnevermore",
+				"IsShadowFiendEconArcana",
+				"MediumNag",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_CooldownIsShadowFiendEconArcanaMediumNag",
+			]
+		},
+		
+		{
+			m_name = "nevermore_CooldownIsShadowFiendEconArcanaSuperNag_Rule"
+			m_Requirements = 
+			[
+				"Cooldown",
+				"Isnevermore",
+				"IsShadowFiendEconArcana",
+				"SuperNag",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_CooldownIsShadowFiendEconArcanaSuperNag",
+			]
+		},
+		
+		{
+			m_name = "nevermore_NoManaLittleNag_Rule"
+			m_Requirements = 
+			[
+				"NoMana",
+				"Isnevermore",
+				"LittleNag",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_NoManaLittleNag",
+			]
+		},
+		
+		{
+			m_name = "nevermore_NoManaMediumNag_Rule"
+			m_Requirements = 
+			[
+				"NoMana",
+				"Isnevermore",
+				"MediumNag",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_NoManaMediumNag",
+			]
+		},
+		
+		{
+			m_name = "nevermore_NoManaSuperNag_Rule"
+			m_Requirements = 
+			[
+				"NoMana",
+				"Isnevermore",
+				"SuperNag",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_NoManaSuperNag",
+			]
+		},
+		
+		{
+			m_name = "nevermore_NoManaIsShadowFiendEconArcanaLittleNag_Rule"
+			m_Requirements = 
+			[
+				"NoMana",
+				"Isnevermore",
+				"IsShadowFiendEconArcana",
+				"LittleNag",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_NoManaIsShadowFiendEconArcanaLittleNag",
+			]
+		},
+		
+		{
+			m_name = "nevermore_NoManaIsShadowFiendEconArcanaMediumNag_Rule"
+			m_Requirements = 
+			[
+				"NoMana",
+				"Isnevermore",
+				"IsShadowFiendEconArcana",
+				"MediumNag",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_NoManaIsShadowFiendEconArcanaMediumNag",
+			]
+		},
+		
+		{
+			m_name = "nevermore_NoManaIsShadowFiendEconArcanaSuperNag_Rule"
+			m_Requirements = 
+			[
+				"NoMana",
+				"Isnevermore",
+				"IsShadowFiendEconArcana",
+				"SuperNag",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_NoManaIsShadowFiendEconArcanaSuperNag",
+			]
+		},
+		
+		{
+			m_name = "nevermore_PainChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Pain",
+				"Isnevermore",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_PainChance_25%",
+			]
+		},
+		
+		{
+			m_name = "nevermore_Pain_Rule"
+			m_Requirements = 
+			[
+				"Pain",
+				"Isnevermore",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_Pain",
+			]
+		},
+		
+		{
+			m_name = "nevermore_PainIsShadowFiendEconArcanaChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Pain",
+				"Isnevermore",
+				"IsShadowFiendEconArcana",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_PainIsShadowFiendEconArcanaChance_25%",
+			]
+		},
+		
+		{
+			m_name = "nevermore_PainIsShadowFiendEconArcana_Rule"
+			m_Requirements = 
+			[
+				"Pain",
+				"Isnevermore",
+				"IsShadowFiendEconArcana",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_PainIsShadowFiendEconArcana",
+			]
+		},
+		
+		{
+			m_name = "nevermore_InTheBag_Rule"
+			m_Requirements = 
+			[
+				"InTheBag",
+				"Isnevermore",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_InTheBag",
+			]
+		},
+		
+		{
+			m_name = "nevermore_InTheBagIsShadowFiendEconArcana_Rule"
+			m_Requirements = 
+			[
+				"InTheBag",
+				"Isnevermore",
+				"IsShadowFiendEconArcana",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_InTheBagIsShadowFiendEconArcana",
+			]
+		},
+		
+		{
+			m_name = "nevermore_Thanks_Rule"
+			m_Requirements = 
+			[
+				"Thanks",
+				"Isnevermore",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_Thanks",
+			]
+		},
+		
+		{
+			m_name = "nevermore_ThanksIsShadowFiendEconArcana_Rule"
+			m_Requirements = 
+			[
+				"Thanks",
+				"Isnevermore",
+				"IsShadowFiendEconArcana",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_ThanksIsShadowFiendEconArcana",
+			]
+		},
+		
+		{
+			m_name = "nevermore_Defeat_Rule"
+			m_Requirements = 
+			[
+				"Defeat",
+				"Isnevermore",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_Defeat",
+			]
+		},
+		
+		{
+			m_name = "nevermore_DefeatIsShadowFiendEconArcana_Rule"
+			m_Requirements = 
+			[
+				"Defeat",
+				"Isnevermore",
+				"IsShadowFiendEconArcana",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_DefeatIsShadowFiendEconArcana",
+			]
+		},
+		
+		{
+			m_name = "nevermore_Victory_Rule"
+			m_Requirements = 
+			[
+				"Victory",
+				"Isnevermore",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_Victory",
+			]
+		},
+		
+		{
+			m_name = "nevermore_VictoryIsShadowFiendEconArcana_Rule"
+			m_Requirements = 
+			[
+				"Victory",
+				"Isnevermore",
+				"IsShadowFiendEconArcana",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_VictoryIsShadowFiendEconArcana",
+			]
+		},
+		
+		{
+			m_name = "nevermore_EmoteIsEmoteLaugh_Rule"
+			m_Requirements = 
+			[
+				"Emote",
+				"Isnevermore",
+				"IsEmoteLaugh",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_EmoteIsEmoteLaugh",
+			]
+		},
+		
+		{
+			m_name = "nevermore_EmoteIsShadowFiendEconArcanaIsEmoteLaugh_Rule"
+			m_Requirements = 
+			[
+				"Emote",
+				"Isnevermore",
+				"IsShadowFiendEconArcana",
+				"IsEmoteLaugh",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_EmoteIsShadowFiendEconArcanaIsEmoteLaugh",
+			]
+		},
+		
+		{
+			m_name = "nevermore_TauntIsShadowFiendTauntSwagger_Rule"
+			m_Requirements = 
+			[
+				"Taunt",
+				"Isnevermore",
+				"IsShadowFiendTauntSwagger",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_TauntIsShadowFiendTauntSwagger",
+			]
+		},
+		
+		{
+			m_name = "nevermore_TauntIsShadowFiendEconArcanaIsShadowFiendArcanaIdle_Rule"
+			m_Requirements = 
+			[
+				"Taunt",
+				"Isnevermore",
+				"IsShadowFiendEconArcana",
+				"IsShadowFiendArcanaIdle",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_TauntIsShadowFiendEconArcanaIsShadowFiendArcanaIdle",
+			]
+		},
+		
+		{
+			m_name = "nevermore_TauntIsShadowFiendEconArcanaIsShadowFiendTauntSwagger_Rule"
+			m_Requirements = 
+			[
+				"Taunt",
+				"Isnevermore",
+				"IsShadowFiendEconArcana",
+				"IsShadowFiendTauntSwagger",
+			]
+			m_ResponseGroups = 
+			[
+				"nevermore_TauntIsShadowFiendEconArcanaIsShadowFiendTauntSwagger",
+			]
+		},
+	]
 }
-

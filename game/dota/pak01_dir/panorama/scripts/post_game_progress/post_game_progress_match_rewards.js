@@ -612,7 +612,7 @@ class AnimateMatchRewardsScreenAction extends RunSequentialActions
 					else
 					{
 						guildSection.SetDialogVariableInt( 'party_member_count', guildProgress.match_guild_points.party_guild_member_count );
-						pointsLabel = $.LocalizePlural( '#DOTA_MatchRewards_GuildMembersInParty:p', guildProgress.match_guild_points.party_guild_member_count, guildSection );
+						pointsLabel = $.Localize( '#DOTA_MatchRewards_GuildMembersInParty:p', guildProgress.match_guild_points.party_guild_member_count, guildSection );
 					}
 
 					this.actions.push( new AnimateGuildPointsRewardAction( guildSection, pointsLabel, nGuildPointsEarned, guildProgress.match_guild_points.match_completed_guild_points ) );

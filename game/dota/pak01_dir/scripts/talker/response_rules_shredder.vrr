@@ -1,1543 +1,4671 @@
-#include "talker/response_rules_shared.vrr"
-
-criterion "Isshredder" "classname" "npc_dota_hero_shredder" weight 5 required
-criterion "IsTimbWhirling" "abilityname" "shredder_whirling_death" weight 5 required
-criterion "IsTimbChain" "abilityname" "shredder_timber_chain" weight 5 required
-criterion "IsTimbArmor" "abilityname" "shredder_reactive_armor" weight 5 required
-criterion "IsTimbChakram" "abilityname" "shredder_chakram" weight 5 required
-criterion "IsTimbChackramReturn" "abilityname" "shredder_return_chakram" weight 5 required
-criterion "IsTimbTango" "abilityname" "item_tango" weight 5 required
-criterion "IsTimbChainPull" "timberchainhit" "yes" weight 5 required
-criterion "IsTimbChainMiss" "timberchainmiss" "yes" weight 5 required
-criterion "IsTimbIronBranch" "abilityname" "item_branches" weight 5 required
-criterion "IsTimbLoadoutSpawn" "special_spawn" "shredder_loadout_spawn" weight 5 required
-criterion "IsTimberStrider" "abilityname" "item_woodland_striders" weight 5 required
-criterion "IsTimberPlanting" "abilityname" "item_ironwood_tree" weight 5 required
-
-Response shredder_Spawn
-{
-	scene "scenes/shredder/shredder_timb_spawn_01.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_spawn_02.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_spawn_03.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_spawn_04.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_spawn_05.vcd" nodelay 
-}
-
-Rule shredder_Spawn_Rule
-{
-	criteria Spawn Isshredder 
-	response shredder_Spawn
-}
-
-Response shredder_CustomIsGameStart
-{
-	scene "scenes/shredder/shredder_timb_begin_01.vcd" nodelay 
-}
-
-Rule shredder_CustomIsGameStart_Rule
-{
-	criteria Custom Isshredder IsGameStart
-	response shredder_CustomIsGameStart
-}
-
-Response shredder_CustomIsTimbChainPullChance_50%
-{
-	scene "scenes/shredder/shredder_timb_timberchain_02.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_timberchain_04.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_timberchain_05.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_timberchain_07.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_timberchain_08.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_timberchain_09.vcd" nodelay 
-}
-
-Rule shredder_CustomIsTimbChainPullChance_50%_Rule
-{
-	criteria Custom Isshredder IsTimbChainPull Chance_50%
-	response shredder_CustomIsTimbChainPullChance_50%
-}
-
-Response shredder_CustomIsTimbChainMissChance_25%
-{
-	scene "scenes/shredder/shredder_timb_failure_01.vcd" nodelay respeakdelay 10
-	scene "scenes/shredder/shredder_timb_failure_02.vcd" nodelay respeakdelay 10
-	scene "scenes/shredder/shredder_timb_failure_03.vcd" nodelay respeakdelay 10
-}
-
-Rule shredder_CustomIsTimbChainMissChance_25%_Rule
-{
-	criteria Custom Isshredder IsTimbChainMiss Chance_25%
-	response shredder_CustomIsTimbChainMissChance_25%
-}
-
-Response shredder_CustomIsTimbLoadoutSpawn
-{
-	scene "scenes/shredder/shredder_timb_spawn_01.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_spawn_02.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_spawn_03.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_spawn_04.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_spawn_05.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_begin_01.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_move_08.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_attack_04.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_reactivearmor_03.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_levelup_05.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_levelup_06.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_kill_14.vcd" nodelay 
-}
-
-Rule shredder_CustomIsTimbLoadoutSpawn_Rule
-{
-	criteria Custom Isshredder IsTimbLoadoutSpawn
-	response shredder_CustomIsTimbLoadoutSpawn
-}
-
-Response shredder_KillIsFirstBlood
-{
-	scene "scenes/shredder/shredder_timb_firstblood_01.vcd" nodelay 
-}
-
-Rule shredder_KillIsFirstBlood_Rule
-{
-	criteria Kill Isshredder IsFirstBlood
-	response shredder_KillIsFirstBlood
-}
-
-Response shredder_Kill
-{
-	scene "scenes/shredder/shredder_timb_attack_03.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_kill_01.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_kill_02.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_kill_03.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_kill_05.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_kill_06.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_kill_07.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_kill_08.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_kill_09.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_kill_11.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_kill_12.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_kill_13.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_kill_14.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_kill_15.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_kill_16.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_deny_13.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_laugh_01.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_laugh_02.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_laugh_03.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_laugh_04.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_laugh_05.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_laugh_06.vcd" nodelay 
-}
-
-Rule shredder_Kill_Rule
-{
-	criteria Kill Isshredder 
-	response shredder_Kill
-}
-
-Response shredder_KillIsTimbChakramChance_20%
-{
-	scene "scenes/shredder/shredder_timb_chakram_01.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_chakram_04.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_chakramreturn_02.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_kill_04.vcd" nodelay 
-}
-
-Rule shredder_KillIsTimbChakramChance_20%_Rule
-{
-	criteria Kill Isshredder IsTimbChakram Chance_20%
-	response shredder_KillIsTimbChakramChance_20%
-}
-
-Response shredder_KillIsEnemyTroll_WarlordChance_35%
-{
-	scene "scenes/shredder/shredder_timb_kill_10.vcd" nodelay 
-}
-
-Rule shredder_KillIsEnemyTroll_WarlordChance_35%_Rule
-{
-	criteria Kill Isshredder IsEnemyTroll_Warlord Chance_35%
-	response shredder_KillIsEnemyTroll_WarlordChance_35%
-}
-
-Response shredder_KillChance_35%IsEnemyTreant
-{
-	scene "scenes/shredder/shredder_timb_rival_01.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_rival_02.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_rival_03.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_rival_04.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_rival_07.vcd" nodelay 
-}
-
-Rule shredder_KillChance_35%IsEnemyTreant_Rule
-{
-	criteria Kill Isshredder Chance_35% IsEnemyTreant
-	response shredder_KillChance_35%IsEnemyTreant
-}
-
-Response shredder_KillChance_35%IsEnemyFurion
-{
-	scene "scenes/shredder/shredder_timb_rival_05.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_rival_06.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_rival_07.vcd" nodelay 
-}
-
-Rule shredder_KillChance_35%IsEnemyFurion_Rule
-{
-	criteria Kill Isshredder Chance_35% IsEnemyFurion
-	response shredder_KillChance_35%IsEnemyFurion
-}
-
-Response shredder_KillChance_10%IsEnemyFaceless_Void
-{
-	scene "scenes/shredder/shredder_timb_rival_08.vcd" nodelay 
-}
-
-Rule shredder_KillChance_10%IsEnemyFaceless_Void_Rule
-{
-	criteria Kill Isshredder Chance_10% IsEnemyFaceless_Void
-	response shredder_KillChance_10%IsEnemyFaceless_Void
-}
-
-Response shredder_KillChance_35%IsEnemyFaceless_Void
-{
-	scene "scenes/shredder/shredder_timb_rival_09.vcd" nodelay 
-}
-
-Rule shredder_KillChance_35%IsEnemyFaceless_Void_Rule
-{
-	criteria Kill Isshredder Chance_35% IsEnemyFaceless_Void
-	response shredder_KillChance_35%IsEnemyFaceless_Void
-}
-
-Response shredder_KillChance_35%IsEnemyBane
-{
-	scene "scenes/shredder/shredder_timb_rival_10.vcd" nodelay 
-}
-
-Rule shredder_KillChance_35%IsEnemyBane_Rule
-{
-	criteria Kill Isshredder Chance_35% IsEnemyBane
-	response shredder_KillChance_35%IsEnemyBane
-}
-
-Response shredder_KillChance_10%IsEnemyBatrider
-{
-	scene "scenes/shredder/shredder_timb_rival_11.vcd" nodelay 
-}
-
-Rule shredder_KillChance_10%IsEnemyBatrider_Rule
-{
-	criteria Kill Isshredder Chance_10% IsEnemyBatrider
-	response shredder_KillChance_10%IsEnemyBatrider
-}
-
-Response shredder_KillChance_10%IsEnemyLina
-{
-	scene "scenes/shredder/shredder_timb_rival_11.vcd" nodelay 
-}
-
-Rule shredder_KillChance_10%IsEnemyLina_Rule
-{
-	criteria Kill Isshredder Chance_10% IsEnemyLina
-	response shredder_KillChance_10%IsEnemyLina
-}
-
-Response shredder_KillChance_20%IsEnemyQueenofPain
-{
-	scene "scenes/shredder/shredder_timb_rival_12.vcd" nodelay 
-}
-
-Rule shredder_KillChance_20%IsEnemyQueenofPain_Rule
-{
-	criteria Kill Isshredder Chance_20% IsEnemyQueenofPain
-	response shredder_KillChance_20%IsEnemyQueenofPain
-}
-
-Response shredder_KillChance_20%IsEnemyNaga_Siren
-{
-	scene "scenes/shredder/shredder_timb_rival_12.vcd" nodelay 
-}
-
-Rule shredder_KillChance_20%IsEnemyNaga_Siren_Rule
-{
-	criteria Kill Isshredder Chance_20% IsEnemyNaga_Siren
-	response shredder_KillChance_20%IsEnemyNaga_Siren
-}
-
-Response shredder_KillChance_35%IsEnemyInvoker
-{
-	scene "scenes/shredder/shredder_timb_rival_13.vcd" nodelay 
-}
-
-Rule shredder_KillChance_35%IsEnemyInvoker_Rule
-{
-	criteria Kill Isshredder Chance_35% IsEnemyInvoker
-	response shredder_KillChance_35%IsEnemyInvoker
-}
-
-Response shredder_KillChance_15%IsEnemyChaos_Knight
-{
-	scene "scenes/shredder/shredder_timb_rival_14.vcd" nodelay 
-}
-
-Rule shredder_KillChance_15%IsEnemyChaos_Knight_Rule
-{
-	criteria Kill Isshredder Chance_15% IsEnemyChaos_Knight
-	response shredder_KillChance_15%IsEnemyChaos_Knight
-}
-
-Response shredder_KillChance_15%IsEnemyPhantom_Lancer
-{
-	scene "scenes/shredder/shredder_timb_rival_14.vcd" nodelay 
-}
-
-Rule shredder_KillChance_15%IsEnemyPhantom_Lancer_Rule
-{
-	criteria Kill Isshredder Chance_15% IsEnemyPhantom_Lancer
-	response shredder_KillChance_15%IsEnemyPhantom_Lancer
-}
-
-Response shredder_KillChance_15%IsEnemyMeepo
-{
-	scene "scenes/shredder/shredder_timb_rival_14.vcd" nodelay 
-}
-
-Rule shredder_KillChance_15%IsEnemyMeepo_Rule
-{
-	criteria Kill Isshredder Chance_15% IsEnemyMeepo
-	response shredder_KillChance_15%IsEnemyMeepo
-}
-
-Response shredder_KillChance_35%IsEnemyEnchantress
-{
-	scene "scenes/shredder/shredder_timb_rival_15.vcd" nodelay 
-}
-
-Rule shredder_KillChance_35%IsEnemyEnchantress_Rule
-{
-	criteria Kill Isshredder Chance_35% IsEnemyEnchantress
-	response shredder_KillChance_35%IsEnemyEnchantress
-}
-
-Response shredder_KillIsEnemySnapfireChance_40%
-{
-	scene "scenes/shredder/shredder_timb_rival_16.vcd" nodelay speakonce
-	scene "scenes/shredder/shredder_timb_rival_17.vcd" nodelay speakonce
-	scene "scenes/shredder/shredder_timb_rival_18.vcd" nodelay speakonce
-	scene "scenes/shredder/shredder_timb_rival_19.vcd" nodelay speakonce
-	scene "scenes/shredder/shredder_timb_rival_20.vcd" nodelay speakonce
-}
-
-Rule shredder_KillIsEnemySnapfireChance_40%_Rule
-{
-	criteria Kill Isshredder IsEnemySnapfire Chance_40%
-	response shredder_KillIsEnemySnapfireChance_40%
-}
-
-Response shredder_KillIsEnemyMonkey_KingChance_40%
-{
-	scene "scenes/shredder/shredder_timb_rival_21.vcd" nodelay speakonce
-	scene "scenes/shredder/shredder_timb_rival_22.vcd" nodelay speakonce
-	scene "scenes/shredder/shredder_timb_rival_23.vcd" nodelay speakonce
-}
-
-Rule shredder_KillIsEnemyMonkey_KingChance_40%_Rule
-{
-	criteria Kill Isshredder IsEnemyMonkey_King Chance_40%
-	response shredder_KillIsEnemyMonkey_KingChance_40%
-}
-
-Response shredder_KillIsEnemyPangolinChance_40%
-{
-	scene "scenes/shredder/shredder_timb_rival_24.vcd" nodelay speakonce
-	scene "scenes/shredder/shredder_timb_rival_25.vcd" nodelay speakonce
-}
-
-Rule shredder_KillIsEnemyPangolinChance_40%_Rule
-{
-	criteria Kill Isshredder IsEnemyPangolin Chance_40%
-	response shredder_KillIsEnemyPangolinChance_40%
-}
-
-Response shredder_KillIsEnemyDark_WillowChance_40%
-{
-	scene "scenes/shredder/shredder_timb_rival_26.vcd" nodelay speakonce
-	scene "scenes/shredder/shredder_timb_rival_27.vcd" nodelay speakonce
-}
-
-Rule shredder_KillIsEnemyDark_WillowChance_40%_Rule
-{
-	criteria Kill Isshredder IsEnemyDark_Willow Chance_40%
-	response shredder_KillIsEnemyDark_WillowChance_40%
-}
-
-Response shredder_KillIsEnemyGrimstrokeChance_40%
-{
-	scene "scenes/shredder/shredder_timb_rival_28.vcd" nodelay speakonce
-	scene "scenes/shredder/shredder_timb_rival_30.vcd" nodelay speakonce
-}
-
-Rule shredder_KillIsEnemyGrimstrokeChance_40%_Rule
-{
-	criteria Kill Isshredder IsEnemyGrimstroke Chance_40%
-	response shredder_KillIsEnemyGrimstrokeChance_40%
-}
-
-Response shredder_KillIsEnemyMarsChance_40%
-{
-	scene "scenes/shredder/shredder_timb_rival_31.vcd" nodelay speakonce
-}
-
-Rule shredder_KillIsEnemyMarsChance_40%_Rule
-{
-	criteria Kill Isshredder IsEnemyMars Chance_40%
-	response shredder_KillIsEnemyMarsChance_40%
-}
-
-Response shredder_KillIsEnemyVoid_SpiritChance_40%
-{
-	scene "scenes/shredder/shredder_timb_rival_32.vcd" nodelay speakonce
-}
-
-Rule shredder_KillIsEnemyVoid_SpiritChance_40%_Rule
-{
-	criteria Kill Isshredder IsEnemyVoid_Spirit Chance_40%
-	response shredder_KillIsEnemyVoid_SpiritChance_40%
-}
-
-Response shredder_Move
-{
-	scene "scenes/shredder/shredder_timb_move_01.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_move_02.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_move_03.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_move_04.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_move_05.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_move_06.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_move_07.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_move_08.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_move_09.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_move_10.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_move_11.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_move_12.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_move_13.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_move_14.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_move_15.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_move_16.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_move_17.vcd" nodelay 
-}
-
-Rule shredder_Move_Rule
-{
-	criteria Move Isshredder 
-	response shredder_Move
-}
-
-Response shredder_Attack
-{
-	scene "scenes/shredder/shredder_timb_attack_01.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_attack_02.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_attack_04.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_attack_05.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_attack_06.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_attack_07.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_attack_08.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_attack_09.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_attack_10.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_attack_11.vcd" nodelay 
-}
-
-Rule shredder_Attack_Rule
-{
-	criteria Attack Isshredder 
-	response shredder_Attack
-}
-
-Response shredder_CastOrder
-{
-	scene "scenes/shredder/shredder_timb_cast_01.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_cast_02.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_cast_03.vcd" nodelay 
-}
-
-Rule shredder_CastOrder_Rule
-{
-	criteria CastOrder Isshredder 
-	response shredder_CastOrder
-}
-
-Response shredder_CastExecuteIsTimbWhirlingChance_15%
-{
-	scene "scenes/shredder/shredder_timb_whirlingdeath_03.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_whirlingdeath_04.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_whirlingdeath_06.vcd" nodelay 
-}
-
-Rule shredder_CastExecuteIsTimbWhirlingChance_15%_Rule
-{
-	criteria CastExecute Isshredder IsTimbWhirling Chance_15%
-	response shredder_CastExecuteIsTimbWhirlingChance_15%
-}
-
-Response shredder_CastExecuteIsTimbIronBranchChance_1%
-{
-	scene "scenes/shredder/shredder_timb_whirlingdeath_05.vcd" nodelay speakonce
-}
-
-Rule shredder_CastExecuteIsTimbIronBranchChance_1%_Rule
-{
-	criteria CastExecute Isshredder IsTimbIronBranch Chance_1%
-	response shredder_CastExecuteIsTimbIronBranchChance_1%
-}
-
-Response shredder_CastExecuteIsTimbChakramChance_50%
-{
-	scene "scenes/shredder/shredder_timb_chakram_02.vcd" nodelay weapondelay 5
-	scene "scenes/shredder/shredder_timb_chakram_03.vcd" nodelay weapondelay 5
-	scene "scenes/shredder/shredder_timb_chakram_06.vcd" nodelay weapondelay 5
-	scene "scenes/shredder/shredder_timb_chakram_07.vcd" nodelay weapondelay 5
-	scene "scenes/shredder/shredder_timb_chakram_08.vcd" nodelay weapondelay 5
-}
-
-Rule shredder_CastExecuteIsTimbChakramChance_50%_Rule
-{
-	criteria CastExecute Isshredder IsTimbChakram Chance_50%
-	response shredder_CastExecuteIsTimbChakramChance_50%
-}
-
-Response shredder_CastExecuteIsTimbChackramReturnChance_5%
-{
-	scene "scenes/shredder/shredder_timb_chakramreturn_01.vcd" nodelay weapondelay 5
-	scene "scenes/shredder/shredder_timb_chakramreturn_08.vcd" nodelay weapondelay 5
-	scene "scenes/shredder/shredder_timb_chakramreturn_09.vcd" nodelay weapondelay 5
-}
-
-Rule shredder_CastExecuteIsTimbChackramReturnChance_5%_Rule
-{
-	criteria CastExecute Isshredder IsTimbChackramReturn Chance_5%
-	response shredder_CastExecuteIsTimbChackramReturnChance_5%
-}
-
-Response shredder_CastExecuteIsTimbChackramReturn
-{
-	scene "scenes/shredder/shredder_timb_chakramreturn_03.vcd" nodelay weapondelay 5
-	scene "scenes/shredder/shredder_timb_chakramreturn_04.vcd" nodelay weapondelay 5
-	scene "scenes/shredder/shredder_timb_chakramreturn_05.vcd" nodelay weapondelay 5
-}
-
-Rule shredder_CastExecuteIsTimbChackramReturn_Rule
-{
-	criteria CastExecute Isshredder IsTimbChackramReturn
-	response shredder_CastExecuteIsTimbChackramReturn
-}
-
-Response shredder_CastExecuteIsTimbTangoChance_5%
-{
-	scene "scenes/shredder/shredder_timb_tango_01.vcd" nodelay speakonce
-	scene "scenes/shredder/shredder_timb_tango_05.vcd" nodelay speakonce
-}
-
-Rule shredder_CastExecuteIsTimbTangoChance_5%_Rule
-{
-	criteria CastExecute Isshredder IsTimbTango Chance_5%
-	response shredder_CastExecuteIsTimbTangoChance_5%
-}
-
-Response shredder_CastExecuteIsTimbTangoChance_15%
-{
-	scene "scenes/shredder/shredder_timb_tango_02.vcd" nodelay speakonce
-	scene "scenes/shredder/shredder_timb_tango_03.vcd" nodelay speakonce
-	scene "scenes/shredder/shredder_timb_tango_04.vcd" nodelay speakonce
-	scene "scenes/shredder/shredder_timb_tango_06.vcd" nodelay speakonce
-}
-
-Rule shredder_CastExecuteIsTimbTangoChance_15%_Rule
-{
-	criteria CastExecute Isshredder IsTimbTango Chance_15%
-	response shredder_CastExecuteIsTimbTangoChance_15%
-}
-
-Response shredder_CastExecuteIsTimberPlanting
-{
-	scene "scenes/shredder/shredder_timb_ah_02_03.vcd" nodelay respeakdelay 30
-}
-
-Rule shredder_CastExecuteIsTimberPlanting_Rule
-{
-	criteria CastExecute Isshredder IsTimberPlanting
-	response shredder_CastExecuteIsTimberPlanting
-}
-
-Response shredder_CastExecuteIsTimberStriderChance_30%
-{
-	scene "scenes/shredder/shredder_timb_melting_01_03.vcd" nodelay respeakdelay 60
-}
-
-Rule shredder_CastExecuteIsTimberStriderChance_30%_Rule
-{
-	criteria CastExecute Isshredder IsTimberStrider Chance_30%
-	response shredder_CastExecuteIsTimberStriderChance_30%
-}
-
-Response shredder_CastExecuteIsTimberStriderChance_75%
-{
-	scene "scenes/shredder/shredder_timb_slo_no_02.vcd" nodelay 
-}
-
-Rule shredder_CastExecuteIsTimberStriderChance_75%_Rule
-{
-	criteria CastExecute Isshredder IsTimberStrider Chance_75%
-	response shredder_CastExecuteIsTimberStriderChance_75%
-}
-
-Response shredder_Respawn
-{
-	scene "scenes/shredder/shredder_timb_reactivearmor_03.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_respawn_01.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_respawn_02.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_respawn_03.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_respawn_05.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_respawn_06.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_respawn_07.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_respawn_08.vcd" nodelay 
-}
-
-Rule shredder_Respawn_Rule
-{
-	criteria Respawn Isshredder 
-	response shredder_Respawn
-}
-
-Response shredder_RespawnChance_5%
-{
-	scene "scenes/shredder/shredder_timb_respawn_04.vcd" nodelay 
-}
-
-Rule shredder_RespawnChance_5%_Rule
-{
-	criteria Respawn Isshredder Chance_5%
-	response shredder_RespawnChance_5%
-}
-
-Response shredder_LevelUp
-{
-	scene "scenes/shredder/shredder_timb_levelup_02.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_levelup_03.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_levelup_04.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_levelup_05.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_levelup_06.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_levelup_07.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_levelup_08.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_levelup_09.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_levelup_10.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_levelup_11.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_levelup_12.vcd" nodelay 
-}
-
-Rule shredder_LevelUp_Rule
-{
-	criteria LevelUp Isshredder 
-	response shredder_LevelUp
-}
-
-Response shredder_AllyNearEarlyGameIsAllyTreant
-{
-	scene "scenes/shredder/shredder_timb_ally_01.vcd" nodelay speakonce
-}
-
-Rule shredder_AllyNearEarlyGameIsAllyTreant_Rule
-{
-	criteria AllyNear Isshredder EarlyGame IsAllyTreant
-	response shredder_AllyNearEarlyGameIsAllyTreant
-}
-
-Response shredder_AllyNearEarlyGameIsAllyFurion
-{
-	scene "scenes/shredder/shredder_timb_ally_02.vcd" nodelay speakonce
-}
-
-Rule shredder_AllyNearEarlyGameIsAllyFurion_Rule
-{
-	criteria AllyNear Isshredder EarlyGame IsAllyFurion
-	response shredder_AllyNearEarlyGameIsAllyFurion
-}
-
-Response shredder_AllyNearEarlyGameIsAllyAxe
-{
-	scene "scenes/shredder/shredder_timb_ally_03.vcd" nodelay speakonce
-}
-
-Rule shredder_AllyNearEarlyGameIsAllyAxe_Rule
-{
-	criteria AllyNear Isshredder EarlyGame IsAllyAxe
-	response shredder_AllyNearEarlyGameIsAllyAxe
-}
-
-Response shredder_AllyNearEarlyGameIsAllyPudge
-{
-	scene "scenes/shredder/shredder_timb_ally_04.vcd" nodelay speakonce
-}
-
-Rule shredder_AllyNearEarlyGameIsAllyPudge_Rule
-{
-	criteria AllyNear Isshredder EarlyGame IsAllyPudge
-	response shredder_AllyNearEarlyGameIsAllyPudge
-}
-
-Response shredder_AllyNearEarlyGameIsAllyBatrider
-{
-	scene "scenes/shredder/shredder_timb_ally_05.vcd" nodelay speakonce
-}
-
-Rule shredder_AllyNearEarlyGameIsAllyBatrider_Rule
-{
-	criteria AllyNear Isshredder EarlyGame IsAllyBatrider
-	response shredder_AllyNearEarlyGameIsAllyBatrider
-}
-
-Response shredder_AllyNearEarlyGameIsAllyPhantom_Lancer
-{
-	scene "scenes/shredder/shredder_timb_ally_06.vcd" nodelay speakonce
-}
-
-Rule shredder_AllyNearEarlyGameIsAllyPhantom_Lancer_Rule
-{
-	criteria AllyNear Isshredder EarlyGame IsAllyPhantom_Lancer
-	response shredder_AllyNearEarlyGameIsAllyPhantom_Lancer
-}
-
-Response shredder_AllyNearEarlyGameIsAllyEnchantress
-{
-	scene "scenes/shredder/shredder_timb_ally_07.vcd" nodelay speakonce
-}
-
-Rule shredder_AllyNearEarlyGameIsAllyEnchantress_Rule
-{
-	criteria AllyNear Isshredder EarlyGame IsAllyEnchantress
-	response shredder_AllyNearEarlyGameIsAllyEnchantress
-}
-
-Response shredder_AllyNearEarlyGameIsAllyEnigma
-{
-	scene "scenes/shredder/shredder_timb_ally_08.vcd" nodelay speakonce
-}
-
-Rule shredder_AllyNearEarlyGameIsAllyEnigma_Rule
-{
-	criteria AllyNear Isshredder EarlyGame IsAllyEnigma
-	response shredder_AllyNearEarlyGameIsAllyEnigma
-}
-
-Response shredder_AllyNearEarlyGameIsAllyDark_Seer
-{
-	scene "scenes/shredder/shredder_timb_ally_09.vcd" nodelay speakonce
-}
-
-Rule shredder_AllyNearEarlyGameIsAllyDark_Seer_Rule
-{
-	criteria AllyNear Isshredder EarlyGame IsAllyDark_Seer
-	response shredder_AllyNearEarlyGameIsAllyDark_Seer
-}
-
-Response shredder_AllyNearIsAllySnapfireEarlyGameChance_40%
-{
-	scene "scenes/shredder/shredder_timb_ally_11.vcd" nodelay speakonce
-	scene "scenes/shredder/shredder_timb_ally_12.vcd" nodelay speakonce
-	scene "scenes/shredder/shredder_timb_ally_13.vcd" nodelay speakonce
-	scene "scenes/shredder/shredder_timb_ally_14.vcd" nodelay speakonce
-}
-
-Rule shredder_AllyNearIsAllySnapfireEarlyGameChance_40%_Rule
-{
-	criteria AllyNear Isshredder IsAllySnapfire EarlyGame Chance_40%
-	response shredder_AllyNearIsAllySnapfireEarlyGameChance_40%
-}
-
-Response shredder_AllyNearIsAllyMonkey_KingEarlyGameChance_40%
-{
-	scene "scenes/shredder/shredder_timb_ally_15.vcd" nodelay speakonce
-	scene "scenes/shredder/shredder_timb_ally_16.vcd" nodelay speakonce
-}
-
-Rule shredder_AllyNearIsAllyMonkey_KingEarlyGameChance_40%_Rule
-{
-	criteria AllyNear Isshredder IsAllyMonkey_King EarlyGame Chance_40%
-	response shredder_AllyNearIsAllyMonkey_KingEarlyGameChance_40%
-}
-
-Response shredder_AllyNearIsAllyPangolinEarlyGameChance_40%
-{
-	scene "scenes/shredder/shredder_timb_ally_17.vcd" nodelay speakonce
-	scene "scenes/shredder/shredder_timb_ally_18.vcd" nodelay speakonce
-}
-
-Rule shredder_AllyNearIsAllyPangolinEarlyGameChance_40%_Rule
-{
-	criteria AllyNear Isshredder IsAllyPangolin EarlyGame Chance_40%
-	response shredder_AllyNearIsAllyPangolinEarlyGameChance_40%
-}
-
-Response shredder_AllyNearIsAllyDark_WillowEarlyGameChance_40%
-{
-	scene "scenes/shredder/shredder_timb_ally_19.vcd" nodelay speakonce
-	scene "scenes/shredder/shredder_timb_ally_20.vcd" nodelay speakonce
-}
-
-Rule shredder_AllyNearIsAllyDark_WillowEarlyGameChance_40%_Rule
-{
-	criteria AllyNear Isshredder IsAllyDark_Willow EarlyGame Chance_40%
-	response shredder_AllyNearIsAllyDark_WillowEarlyGameChance_40%
-}
-
-Response shredder_AllyNearIsAllyGrimstrokeEarlyGameChance_40%
-{
-	scene "scenes/shredder/shredder_timb_ally_21.vcd" nodelay speakonce
-}
-
-Rule shredder_AllyNearIsAllyGrimstrokeEarlyGameChance_40%_Rule
-{
-	criteria AllyNear Isshredder IsAllyGrimstroke EarlyGame Chance_40%
-	response shredder_AllyNearIsAllyGrimstrokeEarlyGameChance_40%
-}
-
-Response shredder_AllyNearIsAllyMarsEarlyGameChance_40%
-{
-	scene "scenes/shredder/shredder_timb_ally_22.vcd" nodelay speakonce
-}
-
-Rule shredder_AllyNearIsAllyMarsEarlyGameChance_40%_Rule
-{
-	criteria AllyNear Isshredder IsAllyMars EarlyGame Chance_40%
-	response shredder_AllyNearIsAllyMarsEarlyGameChance_40%
-}
-
-Response shredder_AllyNearIsAllySniperEarlyGameChance_40%
-{
-	scene "scenes/shredder/shredder_timb_ally_23.vcd" nodelay speakonce
-}
-
-Rule shredder_AllyNearIsAllySniperEarlyGameChance_40%_Rule
-{
-	criteria AllyNear Isshredder IsAllySniper EarlyGame Chance_40%
-	response shredder_AllyNearIsAllySniperEarlyGameChance_40%
-}
-
-Response shredder_AllyNearIsAllyRattletrapEarlyGameChance_40%
-{
-	scene "scenes/shredder/shredder_timb_ally_24.vcd" nodelay speakonce
-}
-
-Rule shredder_AllyNearIsAllyRattletrapEarlyGameChance_40%_Rule
-{
-	criteria AllyNear Isshredder IsAllyRattletrap EarlyGame Chance_40%
-	response shredder_AllyNearIsAllyRattletrapEarlyGameChance_40%
-}
-
-Response shredder_AllyNearIsAllyTechiesEarlyGameChance_40%
-{
-	scene "scenes/shredder/shredder_timb_ally_25.vcd" nodelay speakonce
-}
-
-Rule shredder_AllyNearIsAllyTechiesEarlyGameChance_40%_Rule
-{
-	criteria AllyNear Isshredder IsAllyTechies EarlyGame Chance_40%
-	response shredder_AllyNearIsAllyTechiesEarlyGameChance_40%
-}
-
-Response shredder_LastHit
-{
-	scene "scenes/shredder/shredder_timb_lasthit_01.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_lasthit_02.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_lasthit_03.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_lasthit_04.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_lasthit_05.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_lasthit_06.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_lasthit_07.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_lasthit_08.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_lasthit_09.vcd" nodelay 
-}
-
-Rule shredder_LastHit_Rule
-{
-	criteria LastHit Isshredder 
-	response shredder_LastHit
-}
-
-Response shredder_Death
-{
-	scene "scenes/shredder/shredder_timb_death_01.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_death_03.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_death_04.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_death_07.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_death_08.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_death_09.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_death_11.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_death_12.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_death_14.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_death_15.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_death_16.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_death_18.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_death_19.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_death_20.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_death_21.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_death_22.vcd" nodelay 
-}
-
-Rule shredder_Death_Rule
-{
-	criteria Death Isshredder 
-	response shredder_Death
-}
-
-Response shredder_DeathIsReincarnating
-{
-	scene "scenes/shredder/shredder_timb_fastres_01.vcd" nodelay 
-}
-
-Rule shredder_DeathIsReincarnating_Rule
-{
-	criteria Death Isshredder IsReincarnating
-	response shredder_DeathIsReincarnating
-}
-
-Response shredder_Select
-{
-	scene "scenes/shredder/shredder_timb_rare_01.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_rare_02.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_begin_01.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_reactivearmor_03.vcd" nodelay 
-}
-
-Rule shredder_Select_Rule
-{
-	criteria Select Isshredder 
-	response shredder_Select
-}
-
-Response shredder_PurchaseIsExpensiveItem
-{
-	scene "scenes/shredder/shredder_timb_purch_01.vcd" nodelay speakonce
-	scene "scenes/shredder/shredder_timb_purch_02.vcd" nodelay speakonce
-	scene "scenes/shredder/shredder_timb_purch_03.vcd" nodelay speakonce
-}
-
-Rule shredder_PurchaseIsExpensiveItem_Rule
-{
-	criteria Purchase Isshredder IsExpensiveItem
-	response shredder_PurchaseIsExpensiveItem
-}
-
-Response shredder_PurchaseIsUltimateScepter
-{
-	scene "scenes/shredder/shredder_timb_scepter_01.vcd" nodelay speakonce
-	scene "scenes/shredder/shredder_timb_scepter_02.vcd" nodelay speakonce
-}
-
-Rule shredder_PurchaseIsUltimateScepter_Rule
-{
-	criteria Purchase Isshredder IsUltimateScepter
-	response shredder_PurchaseIsUltimateScepter
-}
-
-Response shredder_PurchaseIsBlinkDagger
-{
-	scene "scenes/shredder/shredder_timb_blink_01.vcd" nodelay speakonce
-	scene "scenes/shredder/shredder_timb_blink_02.vcd" nodelay speakonce
-}
-
-Rule shredder_PurchaseIsBlinkDagger_Rule
-{
-	criteria Purchase Isshredder IsBlinkDagger
-	response shredder_PurchaseIsBlinkDagger
-}
-
-Response shredder_PurchaseIsBranchChance_10%
-{
-	scene "scenes/shredder/shredder_timb_items_01.vcd" nodelay speakonce
-}
-
-Rule shredder_PurchaseIsBranchChance_10%_Rule
-{
-	criteria Purchase Isshredder IsBranch Chance_10%
-	response shredder_PurchaseIsBranchChance_10%
-}
-
-Response shredder_PurchaseIsBloodStone
-{
-	scene "scenes/shredder/shredder_timb_items_02.vcd" nodelay speakonce
-}
-
-Rule shredder_PurchaseIsBloodStone_Rule
-{
-	criteria Purchase Isshredder IsBloodStone
-	response shredder_PurchaseIsBloodStone
-}
-
-Response shredder_PurchaseIsShiva
-{
-	scene "scenes/shredder/shredder_timb_items_03.vcd" nodelay speakonce
-}
-
-Rule shredder_PurchaseIsShiva_Rule
-{
-	criteria Purchase Isshredder IsShiva
-	response shredder_PurchaseIsShiva
-}
-
-Response shredder_PurchaseIsHeart
-{
-	scene "scenes/shredder/shredder_timb_items_04.vcd" nodelay speakonce
-}
-
-Rule shredder_PurchaseIsHeart_Rule
-{
-	criteria Purchase Isshredder IsHeart
-	response shredder_PurchaseIsHeart
-}
-
-Response shredder_PurchaseIsSphere
-{
-	scene "scenes/shredder/shredder_timb_items_05.vcd" nodelay speakonce
-}
-
-Rule shredder_PurchaseIsSphere_Rule
-{
-	criteria Purchase Isshredder IsSphere
-	response shredder_PurchaseIsSphere
-}
-
-Response shredder_PurchaseIsSheepStick
-{
-	scene "scenes/shredder/shredder_timb_items_06.vcd" nodelay speakonce
-}
-
-Rule shredder_PurchaseIsSheepStick_Rule
-{
-	criteria Purchase Isshredder IsSheepStick
-	response shredder_PurchaseIsSheepStick
-}
-
-Response shredder_PurchaseIsPipe
-{
-	scene "scenes/shredder/shredder_timb_items_07.vcd" nodelay speakonce
-}
-
-Rule shredder_PurchaseIsPipe_Rule
-{
-	criteria Purchase Isshredder IsPipe
-	response shredder_PurchaseIsPipe
-}
-
-Response shredder_PurchaseIsAssaultCuirass
-{
-	scene "scenes/shredder/shredder_timb_items_08.vcd" nodelay speakonce
-}
-
-Rule shredder_PurchaseIsAssaultCuirass_Rule
-{
-	criteria Purchase Isshredder IsAssaultCuirass
-	response shredder_PurchaseIsAssaultCuirass
-}
-
-Response shredder_PurchaseIsBladeMail
-{
-	scene "scenes/shredder/shredder_timb_items_09.vcd" nodelay speakonce
-}
-
-Rule shredder_PurchaseIsBladeMail_Rule
-{
-	criteria Purchase Isshredder IsBladeMail
-	response shredder_PurchaseIsBladeMail
-}
-
-Response shredder_PurchaseIsRadiance
-{
-	scene "scenes/shredder/shredder_timb_items_10.vcd" nodelay speakonce
-}
-
-Rule shredder_PurchaseIsRadiance_Rule
-{
-	criteria Purchase Isshredder IsRadiance
-	response shredder_PurchaseIsRadiance
-}
-
-Response shredder_PurchaseIsEulScepter
-{
-	scene "scenes/shredder/shredder_timb_items_11.vcd" nodelay speakonce
-}
-
-Rule shredder_PurchaseIsEulScepter_Rule
-{
-	criteria Purchase Isshredder IsEulScepter
-	response shredder_PurchaseIsEulScepter
-}
-
-Response shredder_PurchaseIsQuellingBlade
-{
-	scene "scenes/shredder/shredder_timb_items_12.vcd" nodelay speakonce
-}
-
-Rule shredder_PurchaseIsQuellingBlade_Rule
-{
-	criteria Purchase Isshredder IsQuellingBlade
-	response shredder_PurchaseIsQuellingBlade
-}
-
-Response shredder_PurchaseIsVanguard
-{
-	scene "scenes/shredder/shredder_timb_items_13.vcd" nodelay speakonce
-}
-
-Rule shredder_PurchaseIsVanguard_Rule
-{
-	criteria Purchase Isshredder IsVanguard
-	response shredder_PurchaseIsVanguard
-}
-
-Response shredder_PurchaseIsBlackKingBar
-{
-	scene "scenes/shredder/shredder_timb_items_14.vcd" nodelay speakonce
-}
-
-Rule shredder_PurchaseIsBlackKingBar_Rule
-{
-	criteria Purchase Isshredder IsBlackKingBar
-	response shredder_PurchaseIsBlackKingBar
-}
-
-Response shredder_Bottling
-{
-	scene "scenes/shredder/shredder_timb_bottle_01.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_bottle_02.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_bottle_03.vcd" nodelay 
-}
-
-Rule shredder_Bottling_Rule
-{
-	criteria Bottling Isshredder 
-	response shredder_Bottling
-}
-
-Response shredder_Deny
-{
-	scene "scenes/shredder/shredder_timb_deny_01.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_deny_02.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_deny_03.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_deny_04.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_deny_05.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_deny_06.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_deny_07.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_deny_08.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_deny_09.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_deny_10.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_deny_11.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_deny_12.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_deny_14.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_deny_16.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_deny_17.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_deny_18.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_deny_19.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_deny_20.vcd" nodelay 
-}
-
-Rule shredder_Deny_Rule
-{
-	criteria Deny Isshredder 
-	response shredder_Deny
-}
-
-Response shredder_MissingIsLaneTop
-{
-	scene "scenes/shredder/shredder_timb_lane_missing_01.vcd" nodelay 
-}
-
-Rule shredder_MissingIsLaneTop_Rule
-{
-	criteria Missing Isshredder IsLaneTop
-	response shredder_MissingIsLaneTop
-}
-
-Response shredder_MissingIsLaneMid
-{
-	scene "scenes/shredder/shredder_timb_lane_missing_02.vcd" nodelay 
-}
-
-Rule shredder_MissingIsLaneMid_Rule
-{
-	criteria Missing Isshredder IsLaneMid
-	response shredder_MissingIsLaneMid
-}
-
-Response shredder_MissingIsLaneBot
-{
-	scene "scenes/shredder/shredder_timb_lane_missing_03.vcd" nodelay 
-}
-
-Rule shredder_MissingIsLaneBot_Rule
-{
-	criteria Missing Isshredder IsLaneBot
-	response shredder_MissingIsLaneBot
-}
-
-Response shredder_ItemDropIsCommonDrop
-{
-	scene "scenes/shredder/shredder_timb_drop_common_01.vcd" nodelay 
-}
-
-Rule shredder_ItemDropIsCommonDrop_Rule
-{
-	criteria ItemDrop Isshredder IsCommonDrop
-	response shredder_ItemDropIsCommonDrop
-}
-
-Response shredder_ItemDropIsRareDrop
-{
-	scene "scenes/shredder/shredder_timb_drop_moderate_01.vcd" nodelay 
-}
-
-Rule shredder_ItemDropIsRareDrop_Rule
-{
-	criteria ItemDrop Isshredder IsRareDrop
-	response shredder_ItemDropIsRareDrop
-}
-
-Response shredder_ItemDropIsUltraRareDrop
-{
-	scene "scenes/shredder/shredder_timb_drop_rare_01.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_drop_rare_02.vcd" nodelay 
-}
-
-Rule shredder_ItemDropIsUltraRareDrop_Rule
-{
-	criteria ItemDrop Isshredder IsUltraRareDrop
-	response shredder_ItemDropIsUltraRareDrop
-}
-
-Response shredder_Immortality
-{
-	scene "scenes/shredder/shredder_timb_immort_01.vcd" nodelay 
-}
-
-Rule shredder_Immortality_Rule
-{
-	criteria Immortality Isshredder 
-	response shredder_Immortality
-}
-
-Response shredder_ImmortalityChance_25%
-{
-	scene "scenes/shredder/shredder_timb_immort_02.vcd" nodelay 
-}
-
-Rule shredder_ImmortalityChance_25%_Rule
-{
-	criteria Immortality Isshredder  Chance_25%
-	response shredder_ImmortalityChance_25%
-}
-
-Response shredder_PowerupIsPowerupHaste
-{
-	scene "scenes/shredder/shredder_timb_haste_01.vcd" nodelay 
-}
-
-Rule shredder_PowerupIsPowerupHaste_Rule
-{
-	criteria Powerup Isshredder IsPowerupHaste
-	response shredder_PowerupIsPowerupHaste
-}
-
-Response shredder_PowerupIsPowerupHasteChance_25%
-{
-	scene "scenes/shredder/shredder_timb_haste_02.vcd" nodelay 
-}
-
-Rule shredder_PowerupIsPowerupHasteChance_25%_Rule
-{
-	criteria Powerup Isshredder IsPowerupHaste Chance_25%
-	response shredder_PowerupIsPowerupHasteChance_25%
-}
-
-Response shredder_PowerupIsPowerupBounty
-{
-	scene "scenes/shredder/shredder_timb_lasthit_03.vcd" nodelay respeakdelay 300
-}
-
-Rule shredder_PowerupIsPowerupBounty_Rule
-{
-	criteria Powerup Isshredder IsPowerupBounty
-	response shredder_PowerupIsPowerupBounty
-}
-
-Response shredder_PowerupIsPowerupDoubleDamage
-{
-	scene "scenes/shredder/shredder_timb_doubdam_01.vcd" nodelay 
-}
-
-Rule shredder_PowerupIsPowerupDoubleDamage_Rule
-{
-	criteria Powerup Isshredder IsPowerupDoubleDamage
-	response shredder_PowerupIsPowerupDoubleDamage
-}
-
-Response shredder_PowerupIsPowerupDoubleDamageChance_25%
-{
-	scene "scenes/shredder/shredder_timb_doubdam_02.vcd" nodelay 
-}
-
-Rule shredder_PowerupIsPowerupDoubleDamageChance_25%_Rule
-{
-	criteria Powerup Isshredder IsPowerupDoubleDamage Chance_25%
-	response shredder_PowerupIsPowerupDoubleDamageChance_25%
-}
-
-Response shredder_PowerupIsPowerupRegeneration
-{
-	scene "scenes/shredder/shredder_timb_regen_01.vcd" nodelay 
-}
-
-Rule shredder_PowerupIsPowerupRegeneration_Rule
-{
-	criteria Powerup Isshredder IsPowerupRegeneration
-	response shredder_PowerupIsPowerupRegeneration
-}
-
-Response shredder_PowerupIsPowerupRegenerationChance_25%
-{
-	scene "scenes/shredder/shredder_timb_regen_02.vcd" nodelay 
-}
-
-Rule shredder_PowerupIsPowerupRegenerationChance_25%_Rule
-{
-	criteria Powerup Isshredder IsPowerupRegeneration Chance_25%
-	response shredder_PowerupIsPowerupRegenerationChance_25%
-}
-
-Response shredder_PowerupIsPowerupIllusion
-{
-	scene "scenes/shredder/shredder_timb_illus_01.vcd" nodelay 
-}
-
-Rule shredder_PowerupIsPowerupIllusion_Rule
-{
-	criteria Powerup Isshredder IsPowerupIllusion
-	response shredder_PowerupIsPowerupIllusion
-}
-
-Response shredder_PowerupIsPowerupIllusionChance_25%
-{
-	scene "scenes/shredder/shredder_timb_illus_02.vcd" nodelay 
-}
-
-Rule shredder_PowerupIsPowerupIllusionChance_25%_Rule
-{
-	criteria Powerup Isshredder IsPowerupIllusion Chance_25%
-	response shredder_PowerupIsPowerupIllusionChance_25%
-}
-
-Response shredder_PowerupIsPowerupInvisibility
-{
-	scene "scenes/shredder/shredder_timb_invis_01.vcd" nodelay 
-}
-
-Rule shredder_PowerupIsPowerupInvisibility_Rule
-{
-	criteria Powerup Isshredder IsPowerupInvisibility
-	response shredder_PowerupIsPowerupInvisibility
-}
-
-Response shredder_PowerupIsPowerupInvisibilityChance_25%
-{
-	scene "scenes/shredder/shredder_timb_invis_02.vcd" nodelay 
-}
-
-Rule shredder_PowerupIsPowerupInvisibilityChance_25%_Rule
-{
-	criteria Powerup Isshredder IsPowerupInvisibility Chance_25%
-	response shredder_PowerupIsPowerupInvisibilityChance_25%
-}
-
-Response shredder_PowerupIsPowerupArcane
-{
-	scene "scenes/shredder/shredder_timb_chakram_05.vcd" nodelay respeakdelay 300
-}
-
-Rule shredder_PowerupIsPowerupArcane_Rule
-{
-	criteria Powerup Isshredder IsPowerupArcane
-	response shredder_PowerupIsPowerupArcane
-}
-
-Response shredder_CooldownLittleNag
-{
-	scene "scenes/shredder/shredder_timb_notyet_01.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_notyet_04.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_notyet_07.vcd" nodelay 
-}
-
-Rule shredder_CooldownLittleNag_Rule
-{
-	criteria Cooldown Isshredder LittleNag
-	response shredder_CooldownLittleNag
-}
-
-Response shredder_CooldownMediumNag
-{
-	scene "scenes/shredder/shredder_timb_notyet_02.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_notyet_05.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_notyet_08.vcd" nodelay 
-}
-
-Rule shredder_CooldownMediumNag_Rule
-{
-	criteria Cooldown Isshredder MediumNag
-	response shredder_CooldownMediumNag
-}
-
-Response shredder_CooldownSuperNag
-{
-	scene "scenes/shredder/shredder_timb_notyet_03.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_notyet_06.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_notyet_09.vcd" nodelay 
-}
-
-Rule shredder_CooldownSuperNag_Rule
-{
-	criteria Cooldown Isshredder SuperNag
-	response shredder_CooldownSuperNag
-}
-
-Response shredder_NoManaLittleNag
-{
-	scene "scenes/shredder/shredder_timb_nomana_01.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_nomana_04.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_nomana_07.vcd" nodelay 
-}
-
-Rule shredder_NoManaLittleNag_Rule
-{
-	criteria NoMana Isshredder LittleNag
-	response shredder_NoManaLittleNag
-}
-
-Response shredder_NoManaMediumNag
-{
-	scene "scenes/shredder/shredder_timb_nomana_02.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_nomana_05.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_nomana_08.vcd" nodelay 
-}
-
-Rule shredder_NoManaMediumNag_Rule
-{
-	criteria NoMana Isshredder MediumNag
-	response shredder_NoManaMediumNag
-}
-
-Response shredder_NoManaSuperNag
-{
-	scene "scenes/shredder/shredder_timb_nomana_03.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_nomana_06.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_nomana_09.vcd" nodelay 
-}
-
-Rule shredder_NoManaSuperNag_Rule
-{
-	criteria NoMana Isshredder SuperNag
-	response shredder_NoManaSuperNag
-}
-
-Response shredder_Thanks
-{
-	scene "scenes/shredder/shredder_timb_thanks_01.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_thanks_02.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_thanks_03.vcd" nodelay 
-}
-
-Rule shredder_Thanks_Rule
-{
-	criteria Thanks Isshredder 
-	response shredder_Thanks
-}
-
-Response shredder_PainChance_25%
-{
-	scene "scenes/shredder/shredder_timb_underattack_01.vcd" nodelay respeakdelay 120
-}
-
-Rule shredder_PainChance_25%_Rule
-{
-	criteria Pain Isshredder Chance_25%
-	response shredder_PainChance_25%
-}
-
-Response shredder_Pain
-{
-	scene "scenes/shredder/shredder_timb_pain_01.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_pain_02.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_pain_03.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_pain_04.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_pain_05.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_pain_06.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_pain_07.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_pain_08.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_pain_09.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_pain_10.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_pain_11.vcd" nodelay 
-}
-
-Rule shredder_Pain_Rule
-{
-	criteria Pain Isshredder 
-	response shredder_Pain
-}
-
-Response shredder_InTheBag
-{
-	scene "scenes/shredder/shredder_timb_inthebag_01.vcd" nodelay 
-}
-
-Rule shredder_InTheBag_Rule
-{
-	criteria InTheBag Isshredder 
-	response shredder_InTheBag
-}
-
-Response shredder_Defeat
-{
-	scene "scenes/shredder/shredder_timb_lose_01.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_lose_02.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_lose_03.vcd" nodelay 
-}
-
-Rule shredder_Defeat_Rule
-{
-	criteria Defeat Isshredder 
-	response shredder_Defeat
-}
-
-Response shredder_Victory
-{
-	scene "scenes/shredder/shredder_timb_win_01.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_win_02.vcd" nodelay 
-}
-
-Rule shredder_Victory_Rule
-{
-	criteria Victory Isshredder 
-	response shredder_Victory
-}
-
-Response shredder_EmoteIsEmoteLaugh
-{
-	scene "scenes/shredder/shredder_timb_laugh_01.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_laugh_02.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_laugh_03.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_laugh_04.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_laugh_05.vcd" nodelay 
-	scene "scenes/shredder/shredder_timb_laugh_06.vcd" nodelay 
-}
-
-Rule shredder_EmoteIsEmoteLaugh_Rule
-{
-	criteria Emote Isshredder IsEmoteLaugh
-	response shredder_EmoteIsEmoteLaugh
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vrfunknown:version{c1f07085-5299-4e8a-b7e9-1cbb66bbbe23} -->
+{
+	m_Includes = 
+	[
+		"scripts/talker/response_rules_shared.vrr",
+	]
+	m_ResponseGroups = 
+	[
+		
+		{
+			m_name = "shredder_Spawn"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_spawn_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_spawn_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_spawn_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_spawn_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_spawn_05.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_CustomIsGameStart"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_begin_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_CustomIsTimbChainPullChance_50%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_timberchain_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_timberchain_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_timberchain_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_timberchain_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_timberchain_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_timberchain_09.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_CustomIsTimbChainMissChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_failure_01.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 10.000000
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_failure_02.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 10.000000
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_failure_03.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 10.000000
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_CustomIsTimbLoadoutSpawn"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_spawn_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_spawn_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_spawn_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_spawn_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_spawn_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_begin_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_move_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_attack_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_reactivearmor_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_levelup_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_levelup_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_kill_14.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_KillIsFirstBlood"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_firstblood_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_Kill"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_attack_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_kill_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_kill_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_kill_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_kill_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_kill_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_kill_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_kill_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_kill_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_kill_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_kill_12.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_kill_13.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_kill_14.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_kill_15.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_kill_16.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_deny_13.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_laugh_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_laugh_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_laugh_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_laugh_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_laugh_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_laugh_06.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_KillIsTimbChakramChance_20%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_chakram_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_chakram_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_chakramreturn_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_kill_04.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_KillIsEnemyTroll_WarlordChance_35%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_kill_10.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_KillChance_35%IsEnemyTreant"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_rival_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_rival_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_rival_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_rival_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_rival_07.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_KillChance_35%IsEnemyFurion"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_rival_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_rival_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_rival_07.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_KillChance_10%IsEnemyFaceless_Void"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_rival_08.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_KillChance_35%IsEnemyFaceless_Void"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_rival_09.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_KillChance_35%IsEnemyBane"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_rival_10.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_KillChance_10%IsEnemyBatrider"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_rival_11.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_KillChance_10%IsEnemyLina"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_rival_11.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_KillChance_20%IsEnemyQueenofPain"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_rival_12.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_KillChance_20%IsEnemyNaga_Siren"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_rival_12.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_KillChance_35%IsEnemyInvoker"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_rival_13.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_KillChance_15%IsEnemyChaos_Knight"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_rival_14.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_KillChance_15%IsEnemyPhantom_Lancer"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_rival_14.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_KillChance_15%IsEnemyMeepo"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_rival_14.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_KillChance_35%IsEnemyEnchantress"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_rival_15.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_KillIsEnemySnapfireChance_40%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_rival_16.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_rival_17.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_rival_18.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_rival_19.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_rival_20.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_KillIsEnemyMonkey_KingChance_40%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_rival_21.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_rival_22.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_rival_23.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_KillIsEnemyPangolinChance_40%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_rival_24.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_rival_25.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_KillIsEnemyDark_WillowChance_40%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_rival_26.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_rival_27.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_KillIsEnemyGrimstrokeChance_40%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_rival_28.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_rival_30.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_KillIsEnemyMarsChance_40%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_rival_31.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_KillIsEnemyVoid_SpiritChance_40%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_rival_32.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_Move"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_move_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_move_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_move_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_move_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_move_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_move_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_move_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_move_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_move_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_move_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_move_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_move_12.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_move_13.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_move_14.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_move_15.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_move_16.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_move_17.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_Attack"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_attack_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_attack_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_attack_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_attack_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_attack_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_attack_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_attack_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_attack_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_attack_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_attack_11.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_CastOrder"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_cast_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_cast_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_cast_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_CastExecuteIsTimbWhirlingChance_15%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_whirlingdeath_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_whirlingdeath_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_whirlingdeath_06.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_CastExecuteIsTimbIronBranchChance_1%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_whirlingdeath_05.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_CastExecuteIsTimbChakramChance_50%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_chakram_02.vcd"
+					m_params = 
+					{
+						m_weapondelay.start = 5.000000
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_chakram_03.vcd"
+					m_params = 
+					{
+						m_weapondelay.start = 5.000000
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_chakram_06.vcd"
+					m_params = 
+					{
+						m_weapondelay.start = 5.000000
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_chakram_07.vcd"
+					m_params = 
+					{
+						m_weapondelay.start = 5.000000
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_chakram_08.vcd"
+					m_params = 
+					{
+						m_weapondelay.start = 5.000000
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_CastExecuteIsTimbChackramReturnChance_5%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_chakramreturn_01.vcd"
+					m_params = 
+					{
+						m_weapondelay.start = 5.000000
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_chakramreturn_08.vcd"
+					m_params = 
+					{
+						m_weapondelay.start = 5.000000
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_chakramreturn_09.vcd"
+					m_params = 
+					{
+						m_weapondelay.start = 5.000000
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_CastExecuteIsTimbChackramReturn"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_chakramreturn_03.vcd"
+					m_params = 
+					{
+						m_weapondelay.start = 5.000000
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_chakramreturn_04.vcd"
+					m_params = 
+					{
+						m_weapondelay.start = 5.000000
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_chakramreturn_05.vcd"
+					m_params = 
+					{
+						m_weapondelay.start = 5.000000
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_CastExecuteIsTimbTangoChance_5%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_tango_01.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_tango_05.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_CastExecuteIsTimbTangoChance_15%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_tango_02.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_tango_03.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_tango_04.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_tango_06.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_CastExecuteIsTimberPlanting"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_ah_02_03.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 30.000000
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_CastExecuteIsTimberStriderChance_30%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_melting_01_03.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 60.000000
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_CastExecuteIsTimberStriderChance_75%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_slo_no_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_Respawn"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_reactivearmor_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_respawn_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_respawn_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_respawn_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_respawn_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_respawn_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_respawn_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_respawn_08.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_RespawnChance_5%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_respawn_04.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_LevelUp"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_levelup_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_levelup_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_levelup_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_levelup_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_levelup_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_levelup_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_levelup_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_levelup_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_levelup_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_levelup_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_levelup_12.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_AllyNearEarlyGameIsAllyTreant"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_ally_01.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_AllyNearEarlyGameIsAllyFurion"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_ally_02.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_AllyNearEarlyGameIsAllyAxe"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_ally_03.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_AllyNearEarlyGameIsAllyPudge"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_ally_04.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_AllyNearEarlyGameIsAllyBatrider"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_ally_05.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_AllyNearEarlyGameIsAllyPhantom_Lancer"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_ally_06.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_AllyNearEarlyGameIsAllyEnchantress"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_ally_07.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_AllyNearEarlyGameIsAllyEnigma"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_ally_08.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_AllyNearEarlyGameIsAllyDark_Seer"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_ally_09.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_AllyNearIsAllySnapfireEarlyGameChance_40%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_ally_11.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_ally_12.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_ally_13.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_ally_14.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_AllyNearIsAllyMonkey_KingEarlyGameChance_40%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_ally_15.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_ally_16.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_AllyNearIsAllyPangolinEarlyGameChance_40%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_ally_17.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_ally_18.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_AllyNearIsAllyDark_WillowEarlyGameChance_40%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_ally_19.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_ally_20.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_AllyNearIsAllyGrimstrokeEarlyGameChance_40%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_ally_21.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_AllyNearIsAllyMarsEarlyGameChance_40%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_ally_22.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_AllyNearIsAllySniperEarlyGameChance_40%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_ally_23.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_AllyNearIsAllyRattletrapEarlyGameChance_40%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_ally_24.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_AllyNearIsAllyTechiesEarlyGameChance_40%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_ally_25.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_LastHit"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_lasthit_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_lasthit_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_lasthit_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_lasthit_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_lasthit_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_lasthit_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_lasthit_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_lasthit_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_lasthit_09.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_Death"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_death_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_death_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_death_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_death_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_death_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_death_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_death_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_death_12.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_death_14.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_death_15.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_death_16.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_death_18.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_death_19.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_death_20.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_death_21.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_death_22.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_DeathIsReincarnating"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_fastres_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_Select"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_rare_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_rare_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_begin_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_reactivearmor_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_PurchaseIsExpensiveItem"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_purch_01.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_purch_02.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_purch_03.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_PurchaseIsUltimateScepter"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_scepter_01.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_scepter_02.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_PurchaseIsBlinkDagger"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_blink_01.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_blink_02.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_PurchaseIsBranchChance_10%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_items_01.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_PurchaseIsBloodStone"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_items_02.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_PurchaseIsShiva"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_items_03.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_PurchaseIsHeart"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_items_04.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_PurchaseIsSphere"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_items_05.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_PurchaseIsSheepStick"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_items_06.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_PurchaseIsPipe"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_items_07.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_PurchaseIsAssaultCuirass"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_items_08.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_PurchaseIsBladeMail"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_items_09.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_PurchaseIsRadiance"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_items_10.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_PurchaseIsEulScepter"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_items_11.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_PurchaseIsQuellingBlade"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_items_12.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_PurchaseIsVanguard"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_items_13.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_PurchaseIsBlackKingBar"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_items_14.vcd"
+					m_params = 
+					{
+						m_bSpeakOnce = true
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_Bottling"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_bottle_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_bottle_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_bottle_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_Deny"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_deny_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_deny_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_deny_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_deny_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_deny_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_deny_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_deny_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_deny_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_deny_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_deny_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_deny_11.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_deny_12.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_deny_14.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_deny_16.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_deny_17.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_deny_18.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_deny_19.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_deny_20.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_MissingIsLaneTop"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_lane_missing_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_MissingIsLaneMid"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_lane_missing_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_MissingIsLaneBot"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_lane_missing_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_ItemDropIsCommonDrop"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_drop_common_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_ItemDropIsRareDrop"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_drop_moderate_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_ItemDropIsUltraRareDrop"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_drop_rare_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_drop_rare_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_Immortality"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_immort_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_ImmortalityChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_immort_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_PowerupIsPowerupHaste"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_haste_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_PowerupIsPowerupHasteChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_haste_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_PowerupIsPowerupBounty"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_lasthit_03.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 300.000000
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_PowerupIsPowerupDoubleDamage"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_doubdam_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_PowerupIsPowerupDoubleDamageChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_doubdam_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_PowerupIsPowerupRegeneration"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_regen_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_PowerupIsPowerupRegenerationChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_regen_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_PowerupIsPowerupIllusion"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_illus_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_PowerupIsPowerupIllusionChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_illus_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_PowerupIsPowerupInvisibility"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_invis_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_PowerupIsPowerupInvisibilityChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_invis_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_PowerupIsPowerupArcane"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_chakram_05.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 300.000000
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_CooldownLittleNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_notyet_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_notyet_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_notyet_07.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_CooldownMediumNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_notyet_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_notyet_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_notyet_08.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_CooldownSuperNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_notyet_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_notyet_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_notyet_09.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_NoManaLittleNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_nomana_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_nomana_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_nomana_07.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_NoManaMediumNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_nomana_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_nomana_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_nomana_08.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_NoManaSuperNag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_nomana_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_nomana_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_nomana_09.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_Thanks"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_thanks_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_thanks_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_thanks_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_PainChance_25%"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_underattack_01.vcd"
+					m_params = 
+					{
+						m_respeakdelay.start = 120.000000
+					}
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_Pain"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_pain_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_pain_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_pain_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_pain_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_pain_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_pain_06.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_pain_07.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_pain_08.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_pain_09.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_pain_10.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_pain_11.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_InTheBag"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_inthebag_01.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_Defeat"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_lose_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_lose_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_lose_03.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_Victory"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_win_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_win_02.vcd"
+				},
+			]
+		},
+		
+		{
+			m_name = "shredder_EmoteIsEmoteLaugh"
+			m_responses = 
+			[
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_laugh_01.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_laugh_02.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_laugh_03.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_laugh_04.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_laugh_05.vcd"
+				},
+				
+				{
+					m_type = "SCENE"
+					m_value = "scenes/shredder/shredder_timb_laugh_06.vcd"
+				},
+			]
+		},
+	]
+	m_Requirements = 
+	[
+		
+		{
+			m_name = "Isshredder"
+			m_matchKey = "classname"
+			m_matchExpr = "npc_dota_hero_shredder"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsTimbWhirling"
+			m_matchKey = "abilityname"
+			m_matchExpr = "shredder_whirling_death"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsTimbChain"
+			m_matchKey = "abilityname"
+			m_matchExpr = "shredder_timber_chain"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsTimbArmor"
+			m_matchKey = "abilityname"
+			m_matchExpr = "shredder_reactive_armor"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsTimbChakram"
+			m_matchKey = "abilityname"
+			m_matchExpr = "shredder_chakram"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsTimbChackramReturn"
+			m_matchKey = "abilityname"
+			m_matchExpr = "shredder_return_chakram"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsTimbTango"
+			m_matchKey = "abilityname"
+			m_matchExpr = "item_tango"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsTimbChainPull"
+			m_matchKey = "timberchainhit"
+			m_matchExpr = "yes"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsTimbChainMiss"
+			m_matchKey = "timberchainmiss"
+			m_matchExpr = "yes"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsTimbIronBranch"
+			m_matchKey = "abilityname"
+			m_matchExpr = "item_branches"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsTimbLoadoutSpawn"
+			m_matchKey = "special_spawn"
+			m_matchExpr = "shredder_loadout_spawn"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsTimberStrider"
+			m_matchKey = "abilityname"
+			m_matchExpr = "item_woodland_striders"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+		
+		{
+			m_name = "IsTimberPlanting"
+			m_matchKey = "abilityname"
+			m_matchExpr = "item_ironwood_tree"
+			m_flWeight = 5.000000
+			m_bRequired = true
+		},
+	]
+	m_Rules = 
+	[
+		
+		{
+			m_name = "shredder_Spawn_Rule"
+			m_Requirements = 
+			[
+				"Spawn",
+				"Isshredder",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_Spawn",
+			]
+		},
+		
+		{
+			m_name = "shredder_CustomIsGameStart_Rule"
+			m_Requirements = 
+			[
+				"Custom",
+				"Isshredder",
+				"IsGameStart",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_CustomIsGameStart",
+			]
+		},
+		
+		{
+			m_name = "shredder_CustomIsTimbChainPullChance_50%_Rule"
+			m_Requirements = 
+			[
+				"Custom",
+				"Isshredder",
+				"IsTimbChainPull",
+				"Chance_50%",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_CustomIsTimbChainPullChance_50%",
+			]
+		},
+		
+		{
+			m_name = "shredder_CustomIsTimbChainMissChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Custom",
+				"Isshredder",
+				"IsTimbChainMiss",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_CustomIsTimbChainMissChance_25%",
+			]
+		},
+		
+		{
+			m_name = "shredder_CustomIsTimbLoadoutSpawn_Rule"
+			m_Requirements = 
+			[
+				"Custom",
+				"Isshredder",
+				"IsTimbLoadoutSpawn",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_CustomIsTimbLoadoutSpawn",
+			]
+		},
+		
+		{
+			m_name = "shredder_KillIsFirstBlood_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isshredder",
+				"IsFirstBlood",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_KillIsFirstBlood",
+			]
+		},
+		
+		{
+			m_name = "shredder_Kill_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isshredder",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_Kill",
+			]
+		},
+		
+		{
+			m_name = "shredder_KillIsTimbChakramChance_20%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isshredder",
+				"IsTimbChakram",
+				"Chance_20%",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_KillIsTimbChakramChance_20%",
+			]
+		},
+		
+		{
+			m_name = "shredder_KillIsEnemyTroll_WarlordChance_35%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isshredder",
+				"IsEnemyTroll_Warlord",
+				"Chance_35%",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_KillIsEnemyTroll_WarlordChance_35%",
+			]
+		},
+		
+		{
+			m_name = "shredder_KillChance_35%IsEnemyTreant_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isshredder",
+				"Chance_35%",
+				"IsEnemyTreant",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_KillChance_35%IsEnemyTreant",
+			]
+		},
+		
+		{
+			m_name = "shredder_KillChance_35%IsEnemyFurion_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isshredder",
+				"Chance_35%",
+				"IsEnemyFurion",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_KillChance_35%IsEnemyFurion",
+			]
+		},
+		
+		{
+			m_name = "shredder_KillChance_10%IsEnemyFaceless_Void_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isshredder",
+				"Chance_10%",
+				"IsEnemyFaceless_Void",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_KillChance_10%IsEnemyFaceless_Void",
+			]
+		},
+		
+		{
+			m_name = "shredder_KillChance_35%IsEnemyFaceless_Void_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isshredder",
+				"Chance_35%",
+				"IsEnemyFaceless_Void",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_KillChance_35%IsEnemyFaceless_Void",
+			]
+		},
+		
+		{
+			m_name = "shredder_KillChance_35%IsEnemyBane_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isshredder",
+				"Chance_35%",
+				"IsEnemyBane",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_KillChance_35%IsEnemyBane",
+			]
+		},
+		
+		{
+			m_name = "shredder_KillChance_10%IsEnemyBatrider_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isshredder",
+				"Chance_10%",
+				"IsEnemyBatrider",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_KillChance_10%IsEnemyBatrider",
+			]
+		},
+		
+		{
+			m_name = "shredder_KillChance_10%IsEnemyLina_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isshredder",
+				"Chance_10%",
+				"IsEnemyLina",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_KillChance_10%IsEnemyLina",
+			]
+		},
+		
+		{
+			m_name = "shredder_KillChance_20%IsEnemyQueenofPain_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isshredder",
+				"Chance_20%",
+				"IsEnemyQueenofPain",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_KillChance_20%IsEnemyQueenofPain",
+			]
+		},
+		
+		{
+			m_name = "shredder_KillChance_20%IsEnemyNaga_Siren_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isshredder",
+				"Chance_20%",
+				"IsEnemyNaga_Siren",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_KillChance_20%IsEnemyNaga_Siren",
+			]
+		},
+		
+		{
+			m_name = "shredder_KillChance_35%IsEnemyInvoker_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isshredder",
+				"Chance_35%",
+				"IsEnemyInvoker",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_KillChance_35%IsEnemyInvoker",
+			]
+		},
+		
+		{
+			m_name = "shredder_KillChance_15%IsEnemyChaos_Knight_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isshredder",
+				"Chance_15%",
+				"IsEnemyChaos_Knight",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_KillChance_15%IsEnemyChaos_Knight",
+			]
+		},
+		
+		{
+			m_name = "shredder_KillChance_15%IsEnemyPhantom_Lancer_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isshredder",
+				"Chance_15%",
+				"IsEnemyPhantom_Lancer",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_KillChance_15%IsEnemyPhantom_Lancer",
+			]
+		},
+		
+		{
+			m_name = "shredder_KillChance_15%IsEnemyMeepo_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isshredder",
+				"Chance_15%",
+				"IsEnemyMeepo",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_KillChance_15%IsEnemyMeepo",
+			]
+		},
+		
+		{
+			m_name = "shredder_KillChance_35%IsEnemyEnchantress_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isshredder",
+				"Chance_35%",
+				"IsEnemyEnchantress",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_KillChance_35%IsEnemyEnchantress",
+			]
+		},
+		
+		{
+			m_name = "shredder_KillIsEnemySnapfireChance_40%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isshredder",
+				"IsEnemySnapfire",
+				"Chance_40%",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_KillIsEnemySnapfireChance_40%",
+			]
+		},
+		
+		{
+			m_name = "shredder_KillIsEnemyMonkey_KingChance_40%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isshredder",
+				"IsEnemyMonkey_King",
+				"Chance_40%",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_KillIsEnemyMonkey_KingChance_40%",
+			]
+		},
+		
+		{
+			m_name = "shredder_KillIsEnemyPangolinChance_40%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isshredder",
+				"IsEnemyPangolin",
+				"Chance_40%",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_KillIsEnemyPangolinChance_40%",
+			]
+		},
+		
+		{
+			m_name = "shredder_KillIsEnemyDark_WillowChance_40%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isshredder",
+				"IsEnemyDark_Willow",
+				"Chance_40%",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_KillIsEnemyDark_WillowChance_40%",
+			]
+		},
+		
+		{
+			m_name = "shredder_KillIsEnemyGrimstrokeChance_40%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isshredder",
+				"IsEnemyGrimstroke",
+				"Chance_40%",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_KillIsEnemyGrimstrokeChance_40%",
+			]
+		},
+		
+		{
+			m_name = "shredder_KillIsEnemyMarsChance_40%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isshredder",
+				"IsEnemyMars",
+				"Chance_40%",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_KillIsEnemyMarsChance_40%",
+			]
+		},
+		
+		{
+			m_name = "shredder_KillIsEnemyVoid_SpiritChance_40%_Rule"
+			m_Requirements = 
+			[
+				"Kill",
+				"Isshredder",
+				"IsEnemyVoid_Spirit",
+				"Chance_40%",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_KillIsEnemyVoid_SpiritChance_40%",
+			]
+		},
+		
+		{
+			m_name = "shredder_Move_Rule"
+			m_Requirements = 
+			[
+				"Move",
+				"Isshredder",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_Move",
+			]
+		},
+		
+		{
+			m_name = "shredder_Attack_Rule"
+			m_Requirements = 
+			[
+				"Attack",
+				"Isshredder",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_Attack",
+			]
+		},
+		
+		{
+			m_name = "shredder_CastOrder_Rule"
+			m_Requirements = 
+			[
+				"CastOrder",
+				"Isshredder",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_CastOrder",
+			]
+		},
+		
+		{
+			m_name = "shredder_CastExecuteIsTimbWhirlingChance_15%_Rule"
+			m_Requirements = 
+			[
+				"CastExecute",
+				"Isshredder",
+				"IsTimbWhirling",
+				"Chance_15%",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_CastExecuteIsTimbWhirlingChance_15%",
+			]
+		},
+		
+		{
+			m_name = "shredder_CastExecuteIsTimbIronBranchChance_1%_Rule"
+			m_Requirements = 
+			[
+				"CastExecute",
+				"Isshredder",
+				"IsTimbIronBranch",
+				"Chance_1%",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_CastExecuteIsTimbIronBranchChance_1%",
+			]
+		},
+		
+		{
+			m_name = "shredder_CastExecuteIsTimbChakramChance_50%_Rule"
+			m_Requirements = 
+			[
+				"CastExecute",
+				"Isshredder",
+				"IsTimbChakram",
+				"Chance_50%",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_CastExecuteIsTimbChakramChance_50%",
+			]
+		},
+		
+		{
+			m_name = "shredder_CastExecuteIsTimbChackramReturnChance_5%_Rule"
+			m_Requirements = 
+			[
+				"CastExecute",
+				"Isshredder",
+				"IsTimbChackramReturn",
+				"Chance_5%",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_CastExecuteIsTimbChackramReturnChance_5%",
+			]
+		},
+		
+		{
+			m_name = "shredder_CastExecuteIsTimbChackramReturn_Rule"
+			m_Requirements = 
+			[
+				"CastExecute",
+				"Isshredder",
+				"IsTimbChackramReturn",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_CastExecuteIsTimbChackramReturn",
+			]
+		},
+		
+		{
+			m_name = "shredder_CastExecuteIsTimbTangoChance_5%_Rule"
+			m_Requirements = 
+			[
+				"CastExecute",
+				"Isshredder",
+				"IsTimbTango",
+				"Chance_5%",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_CastExecuteIsTimbTangoChance_5%",
+			]
+		},
+		
+		{
+			m_name = "shredder_CastExecuteIsTimbTangoChance_15%_Rule"
+			m_Requirements = 
+			[
+				"CastExecute",
+				"Isshredder",
+				"IsTimbTango",
+				"Chance_15%",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_CastExecuteIsTimbTangoChance_15%",
+			]
+		},
+		
+		{
+			m_name = "shredder_CastExecuteIsTimberPlanting_Rule"
+			m_Requirements = 
+			[
+				"CastExecute",
+				"Isshredder",
+				"IsTimberPlanting",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_CastExecuteIsTimberPlanting",
+			]
+		},
+		
+		{
+			m_name = "shredder_CastExecuteIsTimberStriderChance_30%_Rule"
+			m_Requirements = 
+			[
+				"CastExecute",
+				"Isshredder",
+				"IsTimberStrider",
+				"Chance_30%",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_CastExecuteIsTimberStriderChance_30%",
+			]
+		},
+		
+		{
+			m_name = "shredder_CastExecuteIsTimberStriderChance_75%_Rule"
+			m_Requirements = 
+			[
+				"CastExecute",
+				"Isshredder",
+				"IsTimberStrider",
+				"Chance_75%",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_CastExecuteIsTimberStriderChance_75%",
+			]
+		},
+		
+		{
+			m_name = "shredder_Respawn_Rule"
+			m_Requirements = 
+			[
+				"Respawn",
+				"Isshredder",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_Respawn",
+			]
+		},
+		
+		{
+			m_name = "shredder_RespawnChance_5%_Rule"
+			m_Requirements = 
+			[
+				"Respawn",
+				"Isshredder",
+				"Chance_5%",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_RespawnChance_5%",
+			]
+		},
+		
+		{
+			m_name = "shredder_LevelUp_Rule"
+			m_Requirements = 
+			[
+				"LevelUp",
+				"Isshredder",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_LevelUp",
+			]
+		},
+		
+		{
+			m_name = "shredder_AllyNearEarlyGameIsAllyTreant_Rule"
+			m_Requirements = 
+			[
+				"AllyNear",
+				"Isshredder",
+				"EarlyGame",
+				"IsAllyTreant",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_AllyNearEarlyGameIsAllyTreant",
+			]
+		},
+		
+		{
+			m_name = "shredder_AllyNearEarlyGameIsAllyFurion_Rule"
+			m_Requirements = 
+			[
+				"AllyNear",
+				"Isshredder",
+				"EarlyGame",
+				"IsAllyFurion",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_AllyNearEarlyGameIsAllyFurion",
+			]
+		},
+		
+		{
+			m_name = "shredder_AllyNearEarlyGameIsAllyAxe_Rule"
+			m_Requirements = 
+			[
+				"AllyNear",
+				"Isshredder",
+				"EarlyGame",
+				"IsAllyAxe",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_AllyNearEarlyGameIsAllyAxe",
+			]
+		},
+		
+		{
+			m_name = "shredder_AllyNearEarlyGameIsAllyPudge_Rule"
+			m_Requirements = 
+			[
+				"AllyNear",
+				"Isshredder",
+				"EarlyGame",
+				"IsAllyPudge",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_AllyNearEarlyGameIsAllyPudge",
+			]
+		},
+		
+		{
+			m_name = "shredder_AllyNearEarlyGameIsAllyBatrider_Rule"
+			m_Requirements = 
+			[
+				"AllyNear",
+				"Isshredder",
+				"EarlyGame",
+				"IsAllyBatrider",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_AllyNearEarlyGameIsAllyBatrider",
+			]
+		},
+		
+		{
+			m_name = "shredder_AllyNearEarlyGameIsAllyPhantom_Lancer_Rule"
+			m_Requirements = 
+			[
+				"AllyNear",
+				"Isshredder",
+				"EarlyGame",
+				"IsAllyPhantom_Lancer",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_AllyNearEarlyGameIsAllyPhantom_Lancer",
+			]
+		},
+		
+		{
+			m_name = "shredder_AllyNearEarlyGameIsAllyEnchantress_Rule"
+			m_Requirements = 
+			[
+				"AllyNear",
+				"Isshredder",
+				"EarlyGame",
+				"IsAllyEnchantress",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_AllyNearEarlyGameIsAllyEnchantress",
+			]
+		},
+		
+		{
+			m_name = "shredder_AllyNearEarlyGameIsAllyEnigma_Rule"
+			m_Requirements = 
+			[
+				"AllyNear",
+				"Isshredder",
+				"EarlyGame",
+				"IsAllyEnigma",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_AllyNearEarlyGameIsAllyEnigma",
+			]
+		},
+		
+		{
+			m_name = "shredder_AllyNearEarlyGameIsAllyDark_Seer_Rule"
+			m_Requirements = 
+			[
+				"AllyNear",
+				"Isshredder",
+				"EarlyGame",
+				"IsAllyDark_Seer",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_AllyNearEarlyGameIsAllyDark_Seer",
+			]
+		},
+		
+		{
+			m_name = "shredder_AllyNearIsAllySnapfireEarlyGameChance_40%_Rule"
+			m_Requirements = 
+			[
+				"AllyNear",
+				"Isshredder",
+				"IsAllySnapfire",
+				"EarlyGame",
+				"Chance_40%",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_AllyNearIsAllySnapfireEarlyGameChance_40%",
+			]
+		},
+		
+		{
+			m_name = "shredder_AllyNearIsAllyMonkey_KingEarlyGameChance_40%_Rule"
+			m_Requirements = 
+			[
+				"AllyNear",
+				"Isshredder",
+				"IsAllyMonkey_King",
+				"EarlyGame",
+				"Chance_40%",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_AllyNearIsAllyMonkey_KingEarlyGameChance_40%",
+			]
+		},
+		
+		{
+			m_name = "shredder_AllyNearIsAllyPangolinEarlyGameChance_40%_Rule"
+			m_Requirements = 
+			[
+				"AllyNear",
+				"Isshredder",
+				"IsAllyPangolin",
+				"EarlyGame",
+				"Chance_40%",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_AllyNearIsAllyPangolinEarlyGameChance_40%",
+			]
+		},
+		
+		{
+			m_name = "shredder_AllyNearIsAllyDark_WillowEarlyGameChance_40%_Rule"
+			m_Requirements = 
+			[
+				"AllyNear",
+				"Isshredder",
+				"IsAllyDark_Willow",
+				"EarlyGame",
+				"Chance_40%",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_AllyNearIsAllyDark_WillowEarlyGameChance_40%",
+			]
+		},
+		
+		{
+			m_name = "shredder_AllyNearIsAllyGrimstrokeEarlyGameChance_40%_Rule"
+			m_Requirements = 
+			[
+				"AllyNear",
+				"Isshredder",
+				"IsAllyGrimstroke",
+				"EarlyGame",
+				"Chance_40%",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_AllyNearIsAllyGrimstrokeEarlyGameChance_40%",
+			]
+		},
+		
+		{
+			m_name = "shredder_AllyNearIsAllyMarsEarlyGameChance_40%_Rule"
+			m_Requirements = 
+			[
+				"AllyNear",
+				"Isshredder",
+				"IsAllyMars",
+				"EarlyGame",
+				"Chance_40%",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_AllyNearIsAllyMarsEarlyGameChance_40%",
+			]
+		},
+		
+		{
+			m_name = "shredder_AllyNearIsAllySniperEarlyGameChance_40%_Rule"
+			m_Requirements = 
+			[
+				"AllyNear",
+				"Isshredder",
+				"IsAllySniper",
+				"EarlyGame",
+				"Chance_40%",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_AllyNearIsAllySniperEarlyGameChance_40%",
+			]
+		},
+		
+		{
+			m_name = "shredder_AllyNearIsAllyRattletrapEarlyGameChance_40%_Rule"
+			m_Requirements = 
+			[
+				"AllyNear",
+				"Isshredder",
+				"IsAllyRattletrap",
+				"EarlyGame",
+				"Chance_40%",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_AllyNearIsAllyRattletrapEarlyGameChance_40%",
+			]
+		},
+		
+		{
+			m_name = "shredder_AllyNearIsAllyTechiesEarlyGameChance_40%_Rule"
+			m_Requirements = 
+			[
+				"AllyNear",
+				"Isshredder",
+				"IsAllyTechies",
+				"EarlyGame",
+				"Chance_40%",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_AllyNearIsAllyTechiesEarlyGameChance_40%",
+			]
+		},
+		
+		{
+			m_name = "shredder_LastHit_Rule"
+			m_Requirements = 
+			[
+				"LastHit",
+				"Isshredder",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_LastHit",
+			]
+		},
+		
+		{
+			m_name = "shredder_Death_Rule"
+			m_Requirements = 
+			[
+				"Death",
+				"Isshredder",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_Death",
+			]
+		},
+		
+		{
+			m_name = "shredder_DeathIsReincarnating_Rule"
+			m_Requirements = 
+			[
+				"Death",
+				"Isshredder",
+				"IsReincarnating",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_DeathIsReincarnating",
+			]
+		},
+		
+		{
+			m_name = "shredder_Select_Rule"
+			m_Requirements = 
+			[
+				"Select",
+				"Isshredder",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_Select",
+			]
+		},
+		
+		{
+			m_name = "shredder_PurchaseIsExpensiveItem_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isshredder",
+				"IsExpensiveItem",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_PurchaseIsExpensiveItem",
+			]
+		},
+		
+		{
+			m_name = "shredder_PurchaseIsUltimateScepter_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isshredder",
+				"IsUltimateScepter",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_PurchaseIsUltimateScepter",
+			]
+		},
+		
+		{
+			m_name = "shredder_PurchaseIsBlinkDagger_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isshredder",
+				"IsBlinkDagger",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_PurchaseIsBlinkDagger",
+			]
+		},
+		
+		{
+			m_name = "shredder_PurchaseIsBranchChance_10%_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isshredder",
+				"IsBranch",
+				"Chance_10%",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_PurchaseIsBranchChance_10%",
+			]
+		},
+		
+		{
+			m_name = "shredder_PurchaseIsBloodStone_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isshredder",
+				"IsBloodStone",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_PurchaseIsBloodStone",
+			]
+		},
+		
+		{
+			m_name = "shredder_PurchaseIsShiva_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isshredder",
+				"IsShiva",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_PurchaseIsShiva",
+			]
+		},
+		
+		{
+			m_name = "shredder_PurchaseIsHeart_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isshredder",
+				"IsHeart",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_PurchaseIsHeart",
+			]
+		},
+		
+		{
+			m_name = "shredder_PurchaseIsSphere_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isshredder",
+				"IsSphere",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_PurchaseIsSphere",
+			]
+		},
+		
+		{
+			m_name = "shredder_PurchaseIsSheepStick_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isshredder",
+				"IsSheepStick",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_PurchaseIsSheepStick",
+			]
+		},
+		
+		{
+			m_name = "shredder_PurchaseIsPipe_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isshredder",
+				"IsPipe",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_PurchaseIsPipe",
+			]
+		},
+		
+		{
+			m_name = "shredder_PurchaseIsAssaultCuirass_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isshredder",
+				"IsAssaultCuirass",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_PurchaseIsAssaultCuirass",
+			]
+		},
+		
+		{
+			m_name = "shredder_PurchaseIsBladeMail_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isshredder",
+				"IsBladeMail",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_PurchaseIsBladeMail",
+			]
+		},
+		
+		{
+			m_name = "shredder_PurchaseIsRadiance_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isshredder",
+				"IsRadiance",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_PurchaseIsRadiance",
+			]
+		},
+		
+		{
+			m_name = "shredder_PurchaseIsEulScepter_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isshredder",
+				"IsEulScepter",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_PurchaseIsEulScepter",
+			]
+		},
+		
+		{
+			m_name = "shredder_PurchaseIsQuellingBlade_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isshredder",
+				"IsQuellingBlade",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_PurchaseIsQuellingBlade",
+			]
+		},
+		
+		{
+			m_name = "shredder_PurchaseIsVanguard_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isshredder",
+				"IsVanguard",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_PurchaseIsVanguard",
+			]
+		},
+		
+		{
+			m_name = "shredder_PurchaseIsBlackKingBar_Rule"
+			m_Requirements = 
+			[
+				"Purchase",
+				"Isshredder",
+				"IsBlackKingBar",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_PurchaseIsBlackKingBar",
+			]
+		},
+		
+		{
+			m_name = "shredder_Bottling_Rule"
+			m_Requirements = 
+			[
+				"Bottling",
+				"Isshredder",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_Bottling",
+			]
+		},
+		
+		{
+			m_name = "shredder_Deny_Rule"
+			m_Requirements = 
+			[
+				"Deny",
+				"Isshredder",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_Deny",
+			]
+		},
+		
+		{
+			m_name = "shredder_MissingIsLaneTop_Rule"
+			m_Requirements = 
+			[
+				"Missing",
+				"Isshredder",
+				"IsLaneTop",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_MissingIsLaneTop",
+			]
+		},
+		
+		{
+			m_name = "shredder_MissingIsLaneMid_Rule"
+			m_Requirements = 
+			[
+				"Missing",
+				"Isshredder",
+				"IsLaneMid",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_MissingIsLaneMid",
+			]
+		},
+		
+		{
+			m_name = "shredder_MissingIsLaneBot_Rule"
+			m_Requirements = 
+			[
+				"Missing",
+				"Isshredder",
+				"IsLaneBot",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_MissingIsLaneBot",
+			]
+		},
+		
+		{
+			m_name = "shredder_ItemDropIsCommonDrop_Rule"
+			m_Requirements = 
+			[
+				"ItemDrop",
+				"Isshredder",
+				"IsCommonDrop",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_ItemDropIsCommonDrop",
+			]
+		},
+		
+		{
+			m_name = "shredder_ItemDropIsRareDrop_Rule"
+			m_Requirements = 
+			[
+				"ItemDrop",
+				"Isshredder",
+				"IsRareDrop",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_ItemDropIsRareDrop",
+			]
+		},
+		
+		{
+			m_name = "shredder_ItemDropIsUltraRareDrop_Rule"
+			m_Requirements = 
+			[
+				"ItemDrop",
+				"Isshredder",
+				"IsUltraRareDrop",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_ItemDropIsUltraRareDrop",
+			]
+		},
+		
+		{
+			m_name = "shredder_Immortality_Rule"
+			m_Requirements = 
+			[
+				"Immortality",
+				"Isshredder",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_Immortality",
+			]
+		},
+		
+		{
+			m_name = "shredder_ImmortalityChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Immortality",
+				"Isshredder",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_ImmortalityChance_25%",
+			]
+		},
+		
+		{
+			m_name = "shredder_PowerupIsPowerupHaste_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isshredder",
+				"IsPowerupHaste",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_PowerupIsPowerupHaste",
+			]
+		},
+		
+		{
+			m_name = "shredder_PowerupIsPowerupHasteChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isshredder",
+				"IsPowerupHaste",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_PowerupIsPowerupHasteChance_25%",
+			]
+		},
+		
+		{
+			m_name = "shredder_PowerupIsPowerupBounty_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isshredder",
+				"IsPowerupBounty",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_PowerupIsPowerupBounty",
+			]
+		},
+		
+		{
+			m_name = "shredder_PowerupIsPowerupDoubleDamage_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isshredder",
+				"IsPowerupDoubleDamage",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_PowerupIsPowerupDoubleDamage",
+			]
+		},
+		
+		{
+			m_name = "shredder_PowerupIsPowerupDoubleDamageChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isshredder",
+				"IsPowerupDoubleDamage",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_PowerupIsPowerupDoubleDamageChance_25%",
+			]
+		},
+		
+		{
+			m_name = "shredder_PowerupIsPowerupRegeneration_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isshredder",
+				"IsPowerupRegeneration",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_PowerupIsPowerupRegeneration",
+			]
+		},
+		
+		{
+			m_name = "shredder_PowerupIsPowerupRegenerationChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isshredder",
+				"IsPowerupRegeneration",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_PowerupIsPowerupRegenerationChance_25%",
+			]
+		},
+		
+		{
+			m_name = "shredder_PowerupIsPowerupIllusion_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isshredder",
+				"IsPowerupIllusion",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_PowerupIsPowerupIllusion",
+			]
+		},
+		
+		{
+			m_name = "shredder_PowerupIsPowerupIllusionChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isshredder",
+				"IsPowerupIllusion",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_PowerupIsPowerupIllusionChance_25%",
+			]
+		},
+		
+		{
+			m_name = "shredder_PowerupIsPowerupInvisibility_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isshredder",
+				"IsPowerupInvisibility",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_PowerupIsPowerupInvisibility",
+			]
+		},
+		
+		{
+			m_name = "shredder_PowerupIsPowerupInvisibilityChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isshredder",
+				"IsPowerupInvisibility",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_PowerupIsPowerupInvisibilityChance_25%",
+			]
+		},
+		
+		{
+			m_name = "shredder_PowerupIsPowerupArcane_Rule"
+			m_Requirements = 
+			[
+				"Powerup",
+				"Isshredder",
+				"IsPowerupArcane",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_PowerupIsPowerupArcane",
+			]
+		},
+		
+		{
+			m_name = "shredder_CooldownLittleNag_Rule"
+			m_Requirements = 
+			[
+				"Cooldown",
+				"Isshredder",
+				"LittleNag",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_CooldownLittleNag",
+			]
+		},
+		
+		{
+			m_name = "shredder_CooldownMediumNag_Rule"
+			m_Requirements = 
+			[
+				"Cooldown",
+				"Isshredder",
+				"MediumNag",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_CooldownMediumNag",
+			]
+		},
+		
+		{
+			m_name = "shredder_CooldownSuperNag_Rule"
+			m_Requirements = 
+			[
+				"Cooldown",
+				"Isshredder",
+				"SuperNag",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_CooldownSuperNag",
+			]
+		},
+		
+		{
+			m_name = "shredder_NoManaLittleNag_Rule"
+			m_Requirements = 
+			[
+				"NoMana",
+				"Isshredder",
+				"LittleNag",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_NoManaLittleNag",
+			]
+		},
+		
+		{
+			m_name = "shredder_NoManaMediumNag_Rule"
+			m_Requirements = 
+			[
+				"NoMana",
+				"Isshredder",
+				"MediumNag",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_NoManaMediumNag",
+			]
+		},
+		
+		{
+			m_name = "shredder_NoManaSuperNag_Rule"
+			m_Requirements = 
+			[
+				"NoMana",
+				"Isshredder",
+				"SuperNag",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_NoManaSuperNag",
+			]
+		},
+		
+		{
+			m_name = "shredder_Thanks_Rule"
+			m_Requirements = 
+			[
+				"Thanks",
+				"Isshredder",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_Thanks",
+			]
+		},
+		
+		{
+			m_name = "shredder_PainChance_25%_Rule"
+			m_Requirements = 
+			[
+				"Pain",
+				"Isshredder",
+				"Chance_25%",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_PainChance_25%",
+			]
+		},
+		
+		{
+			m_name = "shredder_Pain_Rule"
+			m_Requirements = 
+			[
+				"Pain",
+				"Isshredder",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_Pain",
+			]
+		},
+		
+		{
+			m_name = "shredder_InTheBag_Rule"
+			m_Requirements = 
+			[
+				"InTheBag",
+				"Isshredder",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_InTheBag",
+			]
+		},
+		
+		{
+			m_name = "shredder_Defeat_Rule"
+			m_Requirements = 
+			[
+				"Defeat",
+				"Isshredder",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_Defeat",
+			]
+		},
+		
+		{
+			m_name = "shredder_Victory_Rule"
+			m_Requirements = 
+			[
+				"Victory",
+				"Isshredder",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_Victory",
+			]
+		},
+		
+		{
+			m_name = "shredder_EmoteIsEmoteLaugh_Rule"
+			m_Requirements = 
+			[
+				"Emote",
+				"Isshredder",
+				"IsEmoteLaugh",
+			]
+			m_ResponseGroups = 
+			[
+				"shredder_EmoteIsEmoteLaugh",
+			]
+		},
+	]
 }
-
