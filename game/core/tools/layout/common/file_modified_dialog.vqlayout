@@ -1,0 +1,40 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	size=[600,150]
+	windowTitle="External File Modification"
+	windowIcon="tools/images/common/save_sm.png"
+	contentsMargins=10
+	vbox =
+	[
+		{
+			hbox =
+			[
+				{ _class="QLabel" stretch=0 visible="%!local_unsaved_changes" pixmap="tools/images/common/icon_warning.png" },
+				{ _class="QLabel" stretch=1 visible="%!local_unsaved_changes" fontstyle="12px" wordWrap=true text="This file was modified externally.<br>Do you want to reload the file to get the external changes?" },
+				{ _class="QLabel" stretch=0 visible="%local_unsaved_changes"  pixmap="tools/images/common/icon_error.png" },
+				{ _class="QLabel" stretch=1 visible="%local_unsaved_changes"  fontstyle="12px" wordWrap=true text="This file was modified externally <font color=red>and also has unsaved changes</font> in this session.<br>Do you want discard the unsaved changes in this session and reload the file to get the external changes?" },
+			]
+		},
+		{ _class="QLabel" fontstyle="14px" fontfamily="Courier New" text="%modified_file_path" },
+		{
+			hbox =
+			[
+				{ _class="QPushButton" visible="%!local_unsaved_changes" text="Yes - Reload external changes"     icon="tools/images/common/reset_sm.png" fontstyle="12px bold"
+					connections=[
+						{ signal="clicked()" dest="!root" slot="accept()" },
+					]
+				},
+				{ _class="QPushButton" visible="%local_unsaved_changes" text="Yes - Reload and DISCARD unsaved changes"   icon="tools/images/common/icon_error_sm.png" fontstyle="12px bold"
+					connections=[
+						{ signal="clicked()" dest="!root" slot="accept()" },
+					]
+				},
+				{ _class="QPushButton" text="No - Ignore external changes" icon="tools/images/common/edit_sm.png" fontstyle="12px bold"
+					connections=[
+						{ signal="clicked()" dest="!root" slot="reject()" },
+					]
+				},
+			]
+		},
+	]
+}
