@@ -218,9 +218,9 @@
 11fogparams_t
 11locksound_t
 127.0.0.1
-12CBase
 12CBaseCubemap
 12CBaseDMStart
+12CBaseTrigger
 12CCLCMsg_Move
 12CChangeLevel
 12CCheckClient
@@ -6674,6 +6674,7 @@
 24CMsgSteamLearnDataObject
 24CMsgSteamLearnDataSource
 24CMsgSteamLearnMatchState
+24CMsgSteamLearnServerInfo
 24CMsgTimedRewardContainer
 24CNavVolumeSphericalShell
 24CNetworkFieldScratchData
@@ -10519,6 +10520,7 @@
 36CWorkshop_AddSpecialPayment_Response
 36CWorkshop_GetSpecialPayments_Request
 36IKV3TransferInterface_UtlSymbolLarge
+36INetworkSerializerBindingBuildFilter
 37CAttribute_ItemDynamicRecipeComponent
 37CContextualTipFlaskHealingInterrupted
 37CDOTAClientMsg_FillEmptySlotsWithBots
@@ -15836,7 +15838,6 @@
 8CUserCmd
 8CUtlSlot
 8D8c=t
-8D;5Al
 8E;7}3I
 8E;|$HD
 8INavDraw
@@ -28554,7 +28555,7 @@ CMsgGCToServerPingResponse
 CMsgGCToServerPredictionResult
 CMsgGCToServerRealtimeStatsStartStop
 CMsgGCToServerRecordTrainingData
-CMsgGCToServerSetSteamLearnDisable"y
+CMsgGCToServerSetSteamLearnDisable"M
 CMsgGCToServerSetSteamLearnInferencing
 CMsgGCToServerSetSteamLearnKeysChanged
 CMsgGCToServerUpdateSteamBroadcasting
@@ -28804,6 +28805,7 @@ CMsgSteamLearnDataSource
 CMsgSteamLearnDataSourceDescElement
 CMsgSteamLearnDataSourceDescObject
 CMsgSteamLearnHMACKeys
+CMsgSteamLearnHMACKeys"A
 CMsgSteamLearnItemPurchase
 CMsgSteamLearnMatchHero
 CMsgSteamLearnMatchHeroes
@@ -28811,6 +28813,7 @@ CMsgSteamLearnMatchInfo
 CMsgSteamLearnMatchInfoPlayer
 CMsgSteamLearnMatchState
 CMsgSteamLearnPreGameItemPurchases
+CMsgSteamLearnServerInfo
 CMsgSteamLearnWardPlacement
 CMsgSteamLearn_AccessData
 CMsgSteamLearn_BatchOperation_Request
@@ -29039,7 +29042,6 @@ CPathKeyFrame
 CPathParticleRope
 CPathParticleRopeAlias_path_particle_rope_clientside
 CPathTrack
-CPawnListGameSystem
 CPhysBallSocket
 CPhysBox
 CPhysConstraint
@@ -30396,7 +30398,6 @@ Current Pos: %3.3f
 Current Sub Directory : Save\%s
 Current ability is NULL
 Current name of the skybox texture
-Current project that we're test inferencing
 Current sound patches: %d
 Current time: %6.3f
 CurrentHealthPercentBasedDamage
@@ -33470,7 +33471,6 @@ Enable : %d SplitScreen %X
 Enable ImGui Input
 Enable Server ImGui
 Enable Spectator Hltv Replay when killed by bot
-Enable SteamLearn data assembly and messaging
 Enable all physics simulation
 Enable animation graph
 Enable animation sequence transitioner
@@ -36034,6 +36034,7 @@ H;CPw6I
 H;r(t*L
 H;rXt3H
 H=vmdlt%H
+H@Hc@8H
 HAS_LADDERS_AND_ELEVATORS
 HDR Color Scale: %0.3f
 HEARING
@@ -38179,7 +38180,6 @@ InputRunPrivateScript
 InputSave
 InputSaveDangerous
 InputScriptPlayerDeath
-InputSe
 InputService_001
 InputSet2DSkyboxFogFactor
 InputSet2DSkyboxFogFactorLerpTo
@@ -38272,6 +38272,7 @@ InputSetLightRadius
 InputSetLightWorld
 InputSetLightsBrightnessMultiplier
 InputSetLinearDampingRatio
+InputSetLinearForcePointAt
 InputSetLinearFrequency
 InputSetLogoLength
 InputSetMagnitude
@@ -41413,7 +41414,6 @@ Netscape Server Gated Crypto
 NetworkClientService_001
 NetworkMessagesVersion001
 NetworkP2PService_001
-NetworkSerializerBindingBuildFilter
 NetworkServerService_001
 NetworkService_001
 NetworkSystemVersion001
@@ -43481,6 +43481,8 @@ RopeMaterial
 RopeShader
 Roshan - %2.2f
 Roshan.Bash
+Roshan.Knockback
+Roshan.Knockback.Creep
 Roshan.PreAttack
 Roshan.Slam
 RoshanThink
@@ -46029,8 +46031,7 @@ SteamInternal_CreateInterface
 SteamInternal_FindOrCreateGameServerInterface
 SteamInternal_FindOrCreateUserInterface
 SteamLearn
-SteamLearn DISABLED for this server
-SteamLearn ENABLED for this server
+SteamLearn data submission %s for this server
 SteamLearn.BatchOperation#1
 SteamLearn.CacheData#1
 SteamLearn.RegisterDataSource#1
@@ -46038,6 +46039,8 @@ SteamLearn.SnapshotProject#1
 SteamLearn: Attempt to cache data to an uncached Data Source in CacheData
 SteamLearn: Attempt to snapshot data with invalid project id in SnapshotModel
 SteamLearn: CacheData Success
+SteamLearn: Disabling test inferencing for project id %u
+SteamLearn: Enabling test inferencing for project id %u
 SteamLearn: Invalid HMAC encoding for CacheData
 SteamLearn: Invalid HMAC encoding for RegisterDataSource
 SteamLearn: Invalid HMAC encoding for SnapshotModel
@@ -46804,6 +46807,7 @@ Trophy has multiple levels defined for score %d
 Trophy has no levels specified
 Trophy specifies both badge points to grant, and zero for the unit size
 TrophyLevel_t
+True/fa
 True/false if this aura provides buffs when the parent is dead
 True/false if this buff is removed when the duration expires
 True/false if this modifier can be purged
@@ -46812,7 +46816,6 @@ True/false if this modifier is active on illusions
 True/false if this modifier is an aura
 True/false if this modifier is considered a stun for purge reasons
 True/false if this modifier is removed when the parent dies
-True/false if this modifier should be displayed as a debuff
 True/false if this modifier should be displayed on the buff bar
 Trust Root
 Try a memory-test program.  I have used Memtest86
@@ -47817,6 +47820,7 @@ Whether a player has custom game host privileges (shuffle teams, etc
 Whether this weapon is safe to automatically switch to (should be false for eg. explosives that can the player may accidentally hurt themselves with
 Whether to reuse a unit's search cache every frame to avoid obstruction manager queries
 Whether to start a local game when the map loads
+Whether we should be submitting data to SteamLearn
 Which 'column' to display this weapon in the HUD
 Which 'row' to display this weapon in the HUD
 Which entity should we spew input for? (Useful for debugging bot input
@@ -49841,6 +49845,7 @@ alpha_wolf_command_aura
 alpha_wolf_critical_strike
 already_banned
 already_owned_grant_points
+alse if this modifier should be displayed as a debuff
 also_ignore_buffs_if_debuff_immune
 altItemIndex
 alternate icon
@@ -51081,6 +51086,7 @@ bonus_travel_speed
 bonus_turn_rate
 bonus_xp_assist
 bonus_xp_kill
+bonus_xpm
 bonuses
 bool RemovePositiveBuffs, bool RemoveDebuffs, bool BuffsCreatedThisFrameOnly, bool RemoveStuns, bool RemoveExceptions
 bool bAllow
@@ -54448,7 +54454,6 @@ eResult_ServerError
 eResult_Success
 eRollType
 eShopType
-eTrigger
 eUnlockEvent
 e_definiH
 earliest_common_match
@@ -54587,6 +54592,8 @@ empower_duration
 empowered_changed
 empowered_state
 empty member name
+enable_data_submission
+enable_inferencing
 enable_limit
 enable_offscreen_indicator
 enable_steering_limit
@@ -54964,7 +54971,6 @@ escalation_level3
 essence_item_id
 essence_stacks
 estimated_wait_seconds_remaining
-etLinearForcePointAt
 ethereal
 ethereal_damage_bonus
 eucountries
@@ -56651,6 +56657,7 @@ hQuery != k_UGCQueryHandleInvalid
 hQueryTable
 hResult
 hShrine
+hSoulClone
 hSource
 hSourceAbility
 hStarfallList
@@ -56658,7 +56665,6 @@ hStunnedEntities
 hSubquest
 hTarget
 hTargets
-hTemporarySoulClone
 hThinkFunc
 hTombstone
 hUnitsToHit
@@ -57040,7 +57046,7 @@ hmacWithSHA224
 hmacWithSHA256
 hmacWithSHA384
 hmacWithSHA512
-hmac_key
+hmac_keys
 hold time: %f
 holdInstructionCallIssuer
 holdInstructionCode
@@ -57799,6 +57805,7 @@ int targets [0=all, 1=enemy, 2=ally], bool bNow, bool bPermanent, bool bDeath
 int teamID
 int16[%u
 int32[%u
+int8[%u
 int_base
 int_damage_interval
 int_damage_multiplier
@@ -60656,6 +60663,7 @@ lerp_sound
 lerp_target
 lerp_target_attachment
 lerpdata_t
+les/econ/events/ti10/portal/portal_revealed_nothing_good_2.vpcf
 leshrac_diabolic_edict
 leshrac_greater_lightning_storm
 leshrac_lightning_storm
@@ -60976,7 +60984,6 @@ lycan_summon_wolves_critical_strike
 lycan_summon_wolves_invisibility
 lycan_wolf_bite
 m E9n4t
-m H;-hZ
 mXRecord
 m_16ByteOrLessStack out of space, falling through after %d entries, consider upping NETWORKFIELDSCRATCHDATA_16BYTE_COUNT
 m_AbilitiesPendingDelete
@@ -67402,7 +67409,7 @@ m_unPickOrder
 m_unPlayerID
 m_unPrimaryColor
 m_unRecommendedDistance
-m_unRiverAccountID
+m_unRiv
 m_unSecondaryColor
 m_unSelectedHeroBadgeXP
 m_unStatusEffectIndex
@@ -67805,6 +67812,7 @@ m_vecMins
 m_vecMoveAng
 m_vecMoveDir
 m_vecMoveDirParentSpace
+m_vecMuertaPartingShotSouls
 m_vecNeutralItemEquippedHistory
 m_vecNeutralItemsConsumed
 m_vecNeutralItemsEarned
@@ -67874,7 +67882,6 @@ m_vecTargetAssignments
 m_vecTargetedEntities
 m_vecTargets
 m_vecTeleportOrigin
-m_vecTemporarySouls
 m_vecTranslocatingAllies
 m_vecTreeCircleCenter
 m_vecTreeFires
@@ -73957,6 +73964,7 @@ parsing
 part_name
 participants
 participation_reward_action
+particl
 particle_can_freeze
 particle_clientside
 particle_combined
@@ -74132,7 +74140,6 @@ particles/econ/events/ti10/portal/portal_revealed_loot_variant_70.vpcf
 particles/econ/events/ti10/portal/portal_revealed_loot_variant_80.vpcf
 particles/econ/events/ti10/portal/portal_revealed_nothing_%s_%d.vpcf
 particles/econ/events/ti10/portal/portal_revealed_nothing_good_1.vpcf
-particles/econ/events/ti10/portal/portal_revealed_nothing_good_2.vpcf
 particles/econ/events/ti10/portal/portal_revealed_nothing_good_3.vpcf
 particles/econ/events/ti10/portal/portal_revealed_phoenix.vpcf
 particles/econ/events/ti10/portal/portal_revealed_trampoline%d.vpcf
@@ -77299,6 +77306,7 @@ projHandle
 proj_handle
 proj_index
 project_id
+project_ids
 projectileID
 projectile_amount
 projectile_bonus
@@ -78751,13 +78759,13 @@ sLilShredderBounceInfo
 sLoadoutItem
 sLock acquired: %s:%d
 sLockedSound
+sMuertaPartingShotSoulDef
 sOARecord
 sOHc{,H
 sObstructing nav
 sPIc|$,H
 sParticle
 sParticleTarget
-sPartingShotTemporarySoulDef
 sPendingTreeModelChange
 sPendingTreeRemoval
 sPlayerSnapshot
@@ -82051,7 +82059,7 @@ steam_clan_account_id
 steam_id
 steam_id_list
 steam_ids
-steam_learn_hmac_keys
+steam_learn_server_info
 steam_level
 steam_txn_id
 steam_txn_type
@@ -82062,8 +82070,7 @@ steamid_locks
 steamid_right
 steamids
 steamlearn_count
-steamlearn_enable
-steamlearn_inference_project
+steamlearn_data_submit_enable
 steamlearn_override_inference_keys
 steammessages.proto
 steammessages.proto"z
@@ -83443,7 +83450,7 @@ u8L9(u3M
 u8[A\A]A
 u:%02u:%02u
 u;Cx}XH
-u;Lc5f1
+u;Lc5V2
 u>HcO`H
 u@E;uDI
 uD[A\A]A
@@ -83481,7 +83488,6 @@ uint32_t google::protobuf::UnknownField::fixed32() const
 uint64_t google::protobuf::UnknownField::fixed64() const
 uint64_t google::protobuf::UnknownField::varint() const
 uint64s
-uint8[%u
 ujLcOXfE
 ukrainian
 ul[A\A]A
@@ -83897,6 +83903,7 @@ venomancer_plague_ward
 venomancer_poison_nova
 venomancer_poison_sting
 venomancer_venomous_gale
+verAccountID
 vermillion_robe_flames
 version
 version_max
@@ -84276,6 +84283,7 @@ with_announcement
 with_item
 with_scenario_save
 wlAUATSH
+wnListGameSystem
 wolf_duration
 wolf_index
 wolfform
