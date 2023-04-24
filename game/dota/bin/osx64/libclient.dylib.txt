@@ -248,6 +248,7 @@
 1000 frames: %5.1f fps, avg:%5.2fms +/- %-7.2f | min:%5.2fms, max:%5.2fms, frames: %u
 1000 server ticks: %5.1f tps, avg time:%5.2fms, total server ticks: %u
 10Attributes
+10CCallQueue18ParallelCallQueuedEPKcP11IThreadPool
 10CDOTAInput
 10CDOTALobby
 10CDOTAParty
@@ -745,7 +746,6 @@
 13CNetMessagePBILi380E25CDOTAClientMsg_RadarAlertL13SignonGroup_t14EL19NetChannelBufType_t1ELb1EE
 13CNetMessagePBILi381E30CDOTAClientMsg_TalentTreeAlertL13SignonGroup_t14EL19NetChannelBufType_t1ELb1EE
 13CNetMessagePBILi382E34CDOTAClientMsg_SetCavernMapVariantL13SignonGroup_t14EL19NetChannelBufType_t1ELb1EE
-13CNetMessagePBILi383E29CDOTAClientMsg_PauseGameOrderL13SignonGroup_t14EL19NetChannelBufType_t1ELb1EE
 13CNetMessagePBILi384E41CDOTAClientMsg_VersusScene_PlayerBehaviorL13SignonGroup_t14EL19NetChannelBufType_t1ELb1EE
 13CNetMessagePBILi385E27CDOTAClientMsg_PlayerBountyL13SignonGroup_t14EL19NetChannelBufType_t1ELb1EE
 13CNetMessagePBILi386E27CDOTAClientMsg_PlayerBountyL13SignonGroup_t14EL19NetChannelBufType_t1ELb1EE
@@ -5803,6 +5803,7 @@
 2 .CMsgDOTABotDebugInfo.Bot.Action
 2 .CMsgDOTADPCLeagueResults.Result
 2 .CMsgDOTADPCSearchResults.League
+2 .CMsgDOTADPCSearchResults.Player
 2 .CMsgDOTALeagueNode.MatchDetails
 2 .CMsgDOTAProfileCard.Slot.Trophy
 2 .CMsgGCHUpdateSession.ExtraField
@@ -11435,7 +11436,6 @@
 33CBattleBlessingBattlePassActivity
 33CCloud_EnumerateUserFiles_Request
 33CCustomTextureTeamLogoOnPropProxy
-33CDOTA
 33CDOTABroadcastMsg_LANLobbyRequest
 33CDOTAClientJobBattlepassChatWheel
 33CDOTAClientMsg_CameraZoomAmount_t
@@ -11607,6 +11607,7 @@
 33CDOTA_Modifier_PrimalBeast_Uproar
 33CDOTA_Modifier_Pudge_Swallow_Hide
 33CDOTA_Modifier_QueenOfPain_Arcana
+33CDOTA_Modifier_Rattletrap_CogPush
 33CDOTA_Modifier_Rattletrap_JetPack
 33CDOTA_Modifier_Royale_With_Cheese
 33CDOTA_Modifier_Rubick_Telekinesis
@@ -14109,6 +14110,7 @@
 3CHAT_MESSAGE_VICTORY_PREDICTION_SINGLE_USER_CONFIRM
 3CMsgClientToGCGetBattleReportAggregateStatsResponse
 3CMsgClientToGCRequestPrivateCoachingSessionResponse
+3CNetMessagePBILi383E29CDOTAClientMsg_PauseGameOrderL13SignonGroup_t14EL19NetChannelBufType_t1ELb1EE
 3CPlayer_GetMutualFriendsForIncomingInvites_Response
 3D Skybox (Tools
 3D Skybox (Tools/Forward
@@ -14172,7 +14174,6 @@
 3ultimate_scepter_consumed_alchemist_bonus_all_stats
 4#DOTA_Hero_Selection_AllDraft_TheyPicking_LosingGold
 4(Optional) Sorting method to use on returned values
-4,f;5hDs
 4.CPlayer_GetMutualFriendsForIncomingInvites_Response
 40 40 40 196
 400.0 -400.0 -50.0
@@ -17079,7 +17080,6 @@
 49C_DOTA_Ability_Shadow_Demon_Shadow_Poison_Release
 49C_DOTA_Ability_Special_Bonus_Cooldown_Reduction_6
 49C_DOTA_Ability_Special_Bonus_Cooldown_Reduction_8
-49C_DOTA_Ability_Special_Bonus_Magic_Resistance_100
 49C_DOTA_Ability_Special_Bonus_Respawn_Reduction_15
 49C_DOTA_Ability_Special_Bonus_Respawn_Reduction_20
 49C_DOTA_Ability_Special_Bonus_Respawn_Reduction_25
@@ -18927,7 +18927,6 @@
 7EResult
 7FFF00
 7H;1u H
-7Hc5~o
 7ICamera
 7INotify
 7If true, return key value tags in the returned details
@@ -21278,13 +21277,11 @@ AUASBTAp
 AUASBZARAZB
 AUATASARA
 AUATB[BRBZARAp
-AUATSPI
 AUA`%A`HAp
 AUA`SA`SA`SA`SA`SA`SA`TAp
 AUTOSPEED SLOWMO AT: %.1f (%.1f
 AUTOSPEED: %.1f (%.1f
 AUTOSPEED: GOT AN EVENT AT %.2f
-AVAUATSH
 AVAWATAp
 AVA`jARA`jASBRBRBRBRBRBRBRBRBTASASB`>A`3AXAp
 AVB`3ATARA`4A
@@ -21316,7 +21313,7 @@ AWAVATSHc
 AWAVATSI
 AWAVATSL
 AWAVATSLc
-AWAVATSLc%>Ia
+AWAVATSLc%nJa
 AWAVATSLc'M
 AWAVATSLc?M
 AWAVATSM
@@ -21359,6 +21356,7 @@ AWAVAUATSPL
 AWAVAUATSPLc
 AWAVAUATSPLc"L
 AWAVAUATSPLc'M
+AWAVAUATSPLc-;Oa
 AWAVAUATSPLcWxM
 AWAVAUATSPLcg
 AWAVAUATSPLco
@@ -21419,7 +21417,6 @@ A\A]A^A
 A]AWAWAWA[AWAWA
 A]B`iB`iA`jA`iB`jA`oA`kA`OA`kB`kB`kA`lB`lA`lB`lB`kA`OB`kA`OA`iAp
 A^AXAZA
-A_Modifier_Rattletrap_CogPush
 A___darwin_check_fd_set_overflow
 A`!AXB
 A`"A` B
@@ -22214,7 +22211,7 @@ ApplyOnItem
 ApplyOverrides_R: failed to find field '%s' in class '%s
 ApplyStyles
 Applying overrides for %s 0x%p
-Apr 21 2023
+Apr 23 2023
 Arc Warden
 ArcanaColumnVisible
 ArcanaContainer
@@ -25568,6 +25565,7 @@ CDOTA_Ability_Phoenix_IcarusDive
 CDOTA_Ability_Phoenix_LaunchFireSpirit
 CDOTA_Ability_Phoenix_SunRay
 CDOTA_Ability_Phoenix_Supernova
+CDOTA_Ability_PineCone_AcornShot
 CDOTA_Ability_PineCone_ShieldBash
 CDOTA_Ability_PluckFamango
 CDOTA_Ability_Plus_GuildBanner
@@ -26872,7 +26870,6 @@ CDOTA_Modifier_Aghsfort_Dawnbreaker_Luminosity_SolarBattery
 CDOTA_Modifier_Aghsfort_Dawnbreaker_SolarFlare_Debuff
 CDOTA_Modifier_Aghsfort_Dawnbreaker_Solar_Guardian_After_Land
 CDOTA_Modifier_Aghsfort_Dawnbreaker_Solar_Guardian_Disable
-CDOTA_Modifier_Aghsfort_Dawnbreaker_Solar_Guardian_Evasion
 CDOTA_Modifier_Aghsfort_Dawnbreaker_Solar_Guardian_Thinker
 CDOTA_Modifier_Aghsfort_Dawnbreaker_SunSentinelLuminosity_Attack_Buff
 CDOTA_Modifier_Aghsfort_Disruptor_Glimpse
@@ -32089,7 +32086,7 @@ CMsgRequestCrateEscalationLevelResponse
 CMsgRequestCrateItems
 CMsgRequestCrateItemsResponse
 CMsgRequestWeekendTourneySchedule
-CMsgResetStrangeGemCount
+CMsgRes
 CMsgResetStrangeGemCountResponse
 CMsgSDOAssert
 CMsgSDOAssert.Request
@@ -32799,6 +32796,7 @@ CTSQueue::Node_t *CTSQueue<ParticleSoundQueueEntry_t *, false>::Push(CTSQueue::N
 CTSQueue::Node_t *CTSQueue<std::__1::function<void ()> *, false>::Push(CTSQueue::Node_t *) [T = std::__1::function<void ()> *, bTestOptimizer = false
 CTakeDamageInfo
 CTakeDamageResult
+CTakeDamageSummaryScopeGuard
 CTempEnts::PhysicsProp: model %s not found
 CTextureBasedAnimatable
 CThreadeH
@@ -36412,7 +36410,6 @@ CanVoteMVP
 CanWatchLive
 Cancel
 Cancel any waiting cursors
-CancelButton
 CancelEntityIOEvents
 CancelIntroAnimation
 CancelInviteButton
@@ -37941,7 +37938,6 @@ D58A17
 D8pLt$H
 D9 ufzd
 D9$uVzT
-D9%lie
 D9(uFzD
 D9,u6z4
 D90u&z
@@ -44831,6 +44827,7 @@ DOTA_Meepo_Error_CanOnlyTargetMeepo
 DOTA_MegaKill_Default
 DOTA_MillionSuffix
 DOTA_MinimapRenderer
+DOTA_Modifier_Aghsfort_Dawnbreaker_Solar_Guardian_Evasion
 DOTA_Modifier_Alert
 DOTA_Modifier_Alert_%s_%s
 DOTA_Modifier_Alert_%s_BH_Track
@@ -47998,7 +47995,6 @@ EST5EDT
 ESearchResultsDesired
 ESetEncodingBitsEv
 ESetStyle
-EShareAbility
 ESourceEngine
 ESpecialPingValue
 ESplitScreenMessageType
@@ -48951,7 +48947,7 @@ FF7800
 FFADE_IN
 FFADE_MODULATE
 FFADE_OUT
-FFADE_PURGE
+FFADE_P
 FFADE_STAYOUT
 FFC0CB
 FFD700
@@ -50926,6 +50922,7 @@ GetModifierAttackSpeedReductionPercentage
 GetModifierAttackSpeed_Limit
 GetModifierAura
 GetModifierAvoidDamage
+GetModifierAvoidDamageAfterReductions
 GetModifierAvoidSpell
 GetModifierBaseAttackTimeConstant
 GetModifierBaseAttackTimeConstant_Adjust
@@ -55519,6 +55516,7 @@ MODIFIER_PROPERTY_ATTACK_RANGE_BONUS_UNIQUE
 MODIFIER_PROPERTY_ATTACK_WHILE_MOVING_TARGET
 MODIFIER_PROPERTY_AVOID_CONSTANT
 MODIFIER_PROPERTY_AVOID_DAMAGE
+MODIFIER_PROPERTY_AVOID_DAMAGE_AFTER_REDUCTIONS
 MODIFIER_PROPERTY_AVOID_SPELL
 MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE
 MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE
@@ -60215,6 +60213,7 @@ OPEN_PAREN
 OPTIONS
 OP_EQUAL
 ORGANIZATIONAL
+OTA_Ability_Special_Bonus_Magic_Resistance_100
 OTHER_ERROR
 OVERALL
 OVERHEAD_ALERT_BLOCK
@@ -61925,7 +61924,6 @@ PlayDisabled_NoRolesSelected
 PlayDisabled_NotRankedEligible
 PlayDisabled_TournamentClosed
 PlayDisabled_TournamentNotLeader
-PlayDisabled_TournamentPartyNotEligible
 PlayEntitySoundEvent
 PlayIndicator
 PlayLabel
@@ -62455,6 +62453,7 @@ PrecipitationType_t
 PredatorH
 PredictEnemyHeroes
 PredictEnemyHeroesStrategyControl
+PredictWinButton
 Prediction
 Prediction copy does not support FTYPEDESC_PTR(%s
 Prediction%d
@@ -63228,7 +63227,7 @@ RBRARARARARARARARARARARARARARARARARARARARARARB
 RBRARAp
 RBRATAp
 RBRBRAZARAZARAZARA[ARAZARASA
-RBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRCp WA`0BRA`jARA
+RBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRCp WA`0BRA`jARA
 RBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRC
 RBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBREp p
 RBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBp
@@ -67056,6 +67055,7 @@ StartSoundEventUnreliable
 StartTime=%u
 StartTouch
 StartTouch+Collision
+StartWatchingGame request LobbyID: %llu
 StartWatchingGame request SteamID: %s, watching SteamID: %s
 StartWatchingGame: Sending console command: %s
 Start_txt
@@ -67664,7 +67664,6 @@ TATATATATATATATAWASCRARARA`jARARA`jARARA`jARARA`jARARARA
 TATDp p(RDp
 TAUBUARA
 TAZBRBZA`RAVARARAp
-TA_Ability_PineCone_AcornShot
 TA`1ARAp
 TA`OARB`kA`OB`iB`iARARARARARARARARARARARARARARARARARARARARARARARARARA
 TBRASAXAXAYC
@@ -67905,7 +67904,6 @@ TagsPopup
 Take a single full body shot of each hero
 TakeDamageFlags_t
 TakeDamageInfo
-TakeDamageSummaryScopeGuard
 Takeover
 TakeoverActive
 Talent Sticker
@@ -70441,7 +70439,6 @@ WatchTournaments
 WatchableGameID
 WatchingDotaTVLive
 WatchingDotaTVReplay
-WatchingGame request LobbyID: %llu
 WatchingLive
 WatchingLiveWithDotaPlus
 WatchingReplay
@@ -71996,6 +71993,7 @@ ZN8netadr_t5ClearEv
 ZN8netadr_t5SetIPEj
 ZN8netadr_t7SetPortEt
 ZN8netadr_t7SetTypeE12netadrtype_t
+ZN8pano
 ZN8panorama12CDebugLayout16UpdateSearchTextERK10CUtlStringE3$_5
 ZN8panorama15CDelayLoadPanelC1EPNS_8CPanel2DEPKcE3$_0
 ZN8panorama8CPanel2D21IterateChildrenOfTypeI17CDOTA_UI_EconItemEEbRKNSt3__18functionIFbPT_EEEEUlPS0_E
@@ -72018,7 +72016,6 @@ ZN8panorama8CPanel2D29IterateChildrenTraverseOfTypeI18CDOTA_UI_QuestPathEEbRKNSt
 ZN8panorama8CPanel2D29IterateChildrenTraverseOfTypeI19CDOTA_UI_ScenePanelEEbRKNSt3__18functionIFbPT_EEEEUlPS0_E
 ZN8panorama8CPanel2D29IterateChildrenTraverseOfTypeI19CDOTA_UI_SortHeaderEEbRKNSt3__18functionIFbPT_EEEEUlPS0_E
 ZN8panorama8CPanel2D29IterateChildrenTraverseOfTypeI20CDOTA_Hud_FightRecapEEbRKNSt3__18functionIFbPT_EEEEUlPS0_E
-ZN8panorama8CPanel2D29IterateChildrenTraverseOfTypeI20CDOTA_UI_PlayerImageEEbRKNSt3__18functionIFbPT_EEEEUlPS0_E
 ZN8panorama8CPanel2D29IterateChildrenTraverseOfTypeI21CDOTA_DB_TreasureCellEEbRKNSt3__18functionIFbPT_EEEEUlPS0_E
 ZN8panorama8CPanel2D29IterateChildrenTraverseOfTypeI21CDOTA_UI_AbilityImageEEbRKNSt3__18functionIFbPT_EEEEUlPS0_E
 ZN8panorama8CPanel2D29IterateChildrenTraverseOfTypeI21CDOTA_UI_EconItemListEEbRKNSt3__18functionIFbPT_EEEEUlPS0_E
@@ -73792,6 +73789,7 @@ amount_wagered
 amp_per_charge
 amplitude
 an argument is not allowed for (*ACCEPT), (*FAIL), or (*COMMIT
+ancelButton
 anchor_angles
 anchor_position
 anchor_width_scale
@@ -74013,6 +74011,7 @@ arcana_votes_remaining
 arcane_fragment_cost
 arcane_fragments
 archer_attack_speed_pct
+areAbility
 areaMax
 areaMin
 areaRadius
@@ -81184,6 +81183,7 @@ e(E)u M)g
 e(E)u M)g(L
 e(E)} H
 e,/root
+e://{resources}/layout/hud/hud_simple_hero_description.xml
 eEXRImagH
 eEconItemOrigin
 eFromMemH
@@ -82926,7 +82926,6 @@ file://{resources}/layout/hud/dota_hud_wr_arcana.xml
 file://{resources}/layout/hud/dota_hud_xp.xml
 file://{resources}/layout/hud/hud_onstageroot.xml
 file://{resources}/layout/hud/hud_reborn.xml
-file://{resources}/layout/hud/hud_simple_hero_description.xml
 file://{resources}/layout/hud/tooltip_backpack.xml
 file://{resources}/layout/hud/tooltip_glyph.xml
 file://{resources}/layout/hud/tooltip_gold.xml
@@ -85554,7 +85553,6 @@ huskar_inner_fire
 huskar_inner_vitality
 huskar_life_break
 hype_loc
-h|D9-dV
 i < length
 i matching ent%s
 i(ERemoteStoragePublishedFileVisibility) Visibility of the published file (private, friends, public, etc
@@ -85662,7 +85660,7 @@ idle_to_run_injured
 ids_only
 ient datH
 ient heaH
-ier_phantom_assassin_ground_dagger
+ientSide
 if ( MediaSource.isTypeSupported( 'video/mp4;codecs="avc1.4d4032,mp4a.40.2
 if camera moves this much from last anchor update anchor
 if camera orientation changes this much update orientation
@@ -89867,6 +89865,7 @@ launched_attack
 lavender
 lavenderblush
 lawngreen
+layDisabled_TournamentPartyNotEligible
 layerName
 layout-position
 layout_file
@@ -91014,7 +91013,6 @@ m_bClientClothCreationSuppressed
 m_bClientOnly
 m_bClientRagdoll
 m_bClientReplacementModelNeedsRebuild
-m_bClientSide
 m_bClientSideAnimation
 m_bClientSideCustomTower
 m_bClientSidePredicted
@@ -93491,7 +93489,6 @@ m_iBattleCupWinStreak
 m_iBeamDamage
 m_iBlink
 m_iBonusCount
-m_iBonusDamage
 m_iBotDebugData
 m_iBounceRadius
 m_iBounces
@@ -99405,6 +99402,7 @@ modifier_phantom_assassin_blur_active
 modifier_phantom_assassin_coupdegrace
 modifier_phantom_assassin_fan_of_knives
 modifier_phantom_assassin_fan_of_knives_thinker
+modifier_phantom_assassin_ground_dagger
 modifier_phantom_assassin_phantom_strike
 modifier_phantom_assassin_stiflingdagger
 modifier_phantom_assassin_stiflingdagger_caster
@@ -101700,6 +101698,7 @@ oracle_fates_edict
 oracle_fortunes_end
 oracle_purifying_flames
 oracle_rain_of_destiny
+orama8CPanel2D29IterateChildrenTraverseOfTypeI20CDOTA_UI_PlayerImageEEbRKNSt3__18functionIFbPT_EEEEUlPS0_E
 orange power
 orangered
 orb_vision
@@ -102023,7 +102022,6 @@ p8RBRBRBRBp
 p8RBRBRBp
 p8RBRBRD
 p8RBRBp
-p8RBRCp
 p8RCp p
 p8RCp(p p
 p8REp p
@@ -104740,9 +104738,8 @@ pwatchvar
 pwrd_cyber_cafe_id
 pwrd_cyber_cafe_name
 py_generic_services
-p|D95Nv
-p|D95U
-p|D95x#s
+p|D95%C
+p|D95[/5
 p|G9t%0u
 p}?fff
 q(D;q,u
@@ -105295,7 +105292,6 @@ redeem_event_reward
 redeem_item_def
 redeemed
 redemption
-redictWinButton
 redirect_chance
 redirect_close_range
 redirect_range
@@ -107272,6 +107268,7 @@ set name> - show the page for testing a new item set
 set to the hero level you want them to be. -1 means use the actual data
 set to the number of relics you want to show up. -1 means use the actual data
 set to the sticker you want to show up. -1 means use the actual data
+setStrangeGemCount
 set_action
 set_cam_pos
 set_cam_speed
@@ -107347,7 +107344,6 @@ sfixed32
 sfixed64
 sfloat32 differs (net %g pred %g) diff(%g
 sfloat64 differs (net %g pred %g) diff(%g
-sgDOTADPCSearchResults.Player
 sguides/%s_%u.build
 shackle_count
 shackleshot
@@ -110597,7 +110593,9 @@ t#IcOP
 t#IcOX
 t#IcOh
 t#IcOp
+t$ D;5wn1
 t$ E+t
+t$ H;5G
 t$ IcT
 t$(A9D$(t
 t$(A9D$(u
@@ -110683,6 +110681,7 @@ t;HcH8H
 t<HcH8H
 t<HcHHH
 t<IcGPI
+t=0m5s
 t=<#umI
 t=HcG<H
 t=IcOTH
@@ -110725,7 +110724,6 @@ tPIcT$ E1
 tQIcU`H
 tQL9;uLH
 tR9WX~,HcG\H
-tRD9-h
 tRHcY8H
 tRI96vs
 tRI;^htwI;^p
@@ -110743,6 +110741,7 @@ tWL9;uRA
 tXI96vFI
 tXIc\$XH
 tY9WX~:HcG\H
+tZD9-WM
 tZE9}8~T
 tZHcp8H
 t[Mc,$D
@@ -110775,6 +110774,7 @@ talent_comment_0
 talent_comment_1
 talent_name
 talent_rates
+talent_skeleton_damage
 talent_title_%d
 talent_title_0
 talent_title_1
@@ -113591,8 +113591,7 @@ xvA9D$P~oE
 xvE9t$ ~oE
 x{97~wH
 x{9CP~vE
-x|D9=,K
-x|D9=V
+x|D9=\F
 x|F9|+0u>N
 x|F9|30ueJ
 x|G9|%0uYO
