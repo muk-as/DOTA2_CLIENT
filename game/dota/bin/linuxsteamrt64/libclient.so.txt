@@ -3229,6 +3229,7 @@
 16CModifierFactoryI41CDOTA_Modifier_Batrider_FlamingLasso_SelfE
 16CModifierFactoryI41CDOTA_Modifier_BlackDragon_DragonhideAuraE
 16CModifierFactoryI41CDOTA_Modifier_Bloodseeker_BloodMist_SlowE
+16CModifierFactoryI41CDOTA_Modifier_BountyHunter_WindWalk_FadeE
 16CModifierFactoryI41CDOTA_Modifier_BountyHunter_WindWalk_SlowE
 16CModifierFactoryI41CDOTA_Modifier_Broodmother_SpawnSpideriteE
 16CModifierFactoryI41CDOTA_Modifier_Broodmother_SpinWeb_SlowedE
@@ -5718,7 +5719,6 @@
 2 Arguments
 2 arguments expected: %s <map name> <override map name
 2 px horizontal radii 4px vertical elliptical corners on all sides
-2!.CMsg
 2!.CMsgAMSendEmail.ReplacementToken
 2!.CMsgAddSocketResponse.EAddSocket
 2!.CMsgBattleReport_HighlightRarity
@@ -5737,6 +5737,7 @@
 2!.CMsgGCMsgSetOptions.GCSQLVersion
 2!.CMsgGCMsgSetOptions.MessageRange
 2!.CMsgGCNotifications_Notification
+2!.CMsgGCToClientPartySearchInvites
 2!.CMsgGCToGCMasterSubscribeToCache"r
 2!.CMsgPracticeLobbyCreate.SaveGame
 2!.CMsgPrivateCoachingSessionMember
@@ -6029,7 +6030,6 @@
 2-.CMsgSearchForOpenGuildsResponse.SearchResult
 2-.CMsgTeamFanContentAutographStatus.TeamStatus
 2-.CUserMsg_ParticleManager.SetTextureAttribute
-2-.google.protobuf.GeneratedCodeInfo.Annotation
 2-.google.protobuf.UninterpretedOption.NamePart
 2..CDOTAClientMsg_ContextualTips_Subscribe_Entry"H
 2..CDOTAMatchMetadata.Team.CavernChallengeResult
@@ -12944,6 +12944,7 @@
 36IParticleCollectionNamedValueContext
 37CAttribute_ItemDynamicRecipeComponent
 37CCustomTextureTeamBaseLogoOnPropProxy
+37CDOTA
 37CDOTAClientMsg_DismissAllStatPopups_t
 37CDOTAClientMsg_FillEmptySlotsWithBots
 37CDOTAClientMsg_RequestBulkCombatLog_t
@@ -13093,7 +13094,6 @@
 37CDOTA_Modifier_Nian_GreaterBash_Speed
 37CDOTA_Modifier_NightStalker_Void_Zone
 37CDOTA_Modifier_Oracle_PurifyingFlames
-37CDOTA_Modifier_Pangolier_HeartPiercer
 37CDOTA_Modifier_Penta_Edged_Sword_Maim
 37CDOTA_Modifier_PersistentInvisibility
 37CDOTA_Modifier_Phoenix_FireSpiritBurn
@@ -14475,6 +14475,7 @@
 41CDOTA_Modifier_Batrider_FlamingLasso_Self
 41CDOTA_Modifier_BlackDragon_DragonhideAura
 41CDOTA_Modifier_Bloodseeker_BloodMist_Slow
+41CDOTA_Modifier_BountyHunter_WindWalk_Fade
 41CDOTA_Modifier_BountyHunter_WindWalk_Slow
 41CDOTA_Modifier_Broodmother_SpawnSpiderite
 41CDOTA_Modifier_Broodmother_SpinWeb_Slowed
@@ -17584,7 +17585,6 @@
 52CMsgClientToGCGetLimitedItemPurchaseQuantityResponse
 52CMsgClientToGCRequestAccountGuildPersonaInfoResponse
 52CMsgClientToGCRequestPlayerHeroRecentAccomplishments
-52CMsgGCToClientBattlePassRollupListResponse_EventInfo
 52CMsgGCToClientBattlePassRollup_Fall2016_Achievements
 52CMsgGCToClientBattlePassRollup_Winter2017_PlayerCard
 52CMsgGCToClientBattlePassRollup_Winter2017_Questlines
@@ -19889,6 +19889,7 @@ ACT_MP_GESTURE_VC_NODYES_ITEM2
 ACT_MP_GESTURE_VC_NODYES_MELEE
 ACT_MP_GESTURE_VC_NODYES_PDA
 ACT_MP_GESTURE_VC_NODYES_PRIMARY
+ACT_MP_GESTURE_VC_NODYES_SECONDARY
 ACT_MP_GESTURE_VC_THUMBSUP
 ACT_MP_GESTURE_VC_THUMBSUP_BUILDING
 ACT_MP_GESTURE_VC_THUMBSUP_ITEM1
@@ -20726,6 +20727,7 @@ A\A]A^Hc
 A\A]A^I
 A^A_]fH
 A^A_uoH
+A_Modifier_Pangolier_HeartPiercer
 AbandonGamePopup
 AbandonsDetails1
 AbandonsLabel
@@ -22827,6 +22829,7 @@ CDOTACandyShopController::EventDevGrantRerollCharges
 CDOTACandyShopController::EventDevShuffleExchange
 CDOTACandyShopDefinition
 CDOTACandyShopGameSystem
+CDOTACandyShopSchema: %s
 CDOTACandyShopSchema: Couldn't load resource %s
 CDOTACaptureSystem
 CDOTACavernCrawlController::EventWelcomeMessageReceived
@@ -26483,6 +26486,7 @@ CDOTA_Modifier_BountyHunter_Track
 CDOTA_Modifier_BountyHunter_TrackEffect
 CDOTA_Modifier_BountyHunter_Track_Bear_Trap
 CDOTA_Modifier_BountyHunter_WindWalk
+CDOTA_Modifier_BountyHunter_WindWalk_Fade
 CDOTA_Modifier_BountyHunter_WindWalk_Slow
 CDOTA_Modifier_Break
 CDOTA_Modifier_Brewmaster_BrewUp
@@ -26759,6 +26763,7 @@ CDOTA_Modifier_DrowRanger_WaveOfSilence
 CDOTA_Modifier_DrowRanger_WaveOfSilence_Buff
 CDOTA_Modifier_DrowRanger_WaveOfSilence_Knockback
 CDOTA_Modifier_Drow_Ranger_Glacier_Hilltop
+CDOTA_Modifier_Drow_Ranger_Glacier_Hilltop_Aura
 CDOTA_Modifier_Drow_Ranger_Glacier_Hilltop_Removal
 CDOTA_Modifier_Drow_Ranger_Glacier_Shard
 CDOTA_Modifier_Drow_Ranger_Multishot
@@ -30989,6 +30994,7 @@ CMsgGCToClientApplyRemoteConVars
 CMsgGCToClientArcanaVotesUpdate
 CMsgGCToClientBattlePassRollupListRequest
 CMsgGCToClientBattlePassRollupListResponse
+CMsgGCToClientBattlePassRollupListResponse_EventInfo
 CMsgGCToClientBattlePassRollupRequest
 CMsgGCToClientBattlePassRollupResponse
 CMsgGCToClientBattlePassRollup_Fall2016
@@ -36996,7 +37002,6 @@ Custom texture uploaded to cloud completed OK, assigned UGC ID %08X%08X
 CustomAlreadyClaimedButton
 CustomChallenge
 CustomChallengeHero
-CustomChallengeList
 CustomChannelKeys
 CustomChannelbarContainer
 CustomChatWheel
@@ -37212,7 +37217,6 @@ D9 u H9
 D9 ~*Lck(D9k8D
 D9$2t[L
 D92w8;Z
-D96t7H
 D9K8toH
 D9S8~DI
 D9Zl|?H
@@ -37250,9 +37254,9 @@ D:h$thH
 D:hPvbH
 D:{gtIH
 D;!ttHc
-D;%Be0
-D;%Fg0
-D;%Ji0
+D;%nc0
+D;%re0
+D;%vg0
 D;.t?fH
 D;4$}VD
 D;8tNH9
@@ -37754,7 +37758,6 @@ DOTACandyShopDebugGrantRerollCharges
 DOTACandyShopDevClearInventory
 DOTACandyShopDevGrantCandy
 DOTACandyShopDevShuffleExchange
-DOTACandyShopSchema: %s
 DOTACandyShopShowDebugContextMenu
 DOTACandyShopUserDataUpdated
 DOTACaptainBanInspectedHero
@@ -39522,6 +39525,7 @@ DOTAPlusShowRewardLog
 DOTAPlusStatus
 DOTAPlusSubscribe
 DOTAPlusSubscriptionStatusChanged
+DOTAPlusSuggestion
 DOTAPlusTimedStats
 DOTAPlusUseAssistantChanged
 DOTAPlusWeeklyChallenge
@@ -40571,6 +40575,7 @@ DOTAStatsRegion
 DOTASteamChatWithFriend
 DOTASteamChinaInfoClose
 DOTASteamOverlayFinished
+DOTASti
 DOTAStickerCollectionAddRow
 DOTAStickerCollectionBuyStickers
 DOTAStickerCollectionDeleteRow
@@ -40581,7 +40586,6 @@ DOTAStickerCollectionPageOrderUp
 DOTAStickerCollectionPlaceStickers
 DOTAStickerCollectionProgressTutorialState
 DOTAStickerCollectionResetStickers
-DOTAStickerCollectionSetFavoritePage
 DOTAStickerCollectionsPage
 DOTAStickerDetailsExit
 DOTAStickerDetailsGoToLoadout
@@ -42152,6 +42156,7 @@ DOTA_Chat_Paused
 DOTA_Chat_PenguinKilledPlayer
 DOTA_Chat_PickedUpAegis
 DOTA_Chat_PlayedLeftDisconnectedTooLong
+DOTA_Chat_PlayerAbandoned
 DOTA_Chat_PlayerAbandonedAFK
 DOTA_Chat_PlayerAbandonedDisconnectedTooLong
 DOTA_Chat_PlayerDenied
@@ -44133,7 +44138,6 @@ DOTA_MINIMAP_EVENT_BASE_GLYPHED
 DOTA_MINIMAP_EVENT_BASE_UNDER_ATTACK
 DOTA_MINIMAP_EVENT_CANCEL_TELEPORTING
 DOTA_MINIMAP_EVENT_ENEMY_TELEPORTING
-DOTA_MINIMAP_EVENT_HINT_LOCATION
 DOTA_MINIMAP_EVENT_MOVE_TO_TARGET
 DOTA_MINIMAP_EVENT_RADAR
 DOTA_MINIMAP_EVENT_RADAR_TARGET
@@ -45941,8 +45945,8 @@ DOTA_lobby_type_name_unranked
 DOTA_patch_note_neutral_item_general
 DOTA_practice_vs_bots_team_dire
 DOTA_practice_vs_bots_team_radiant
-DOTA_t
 DOTA_tooltip_econ_item_gift_allowed
+DOTA_tooltip_econ_item_gift_restriction_date
 DOTA_tooltip_econ_item_seasonal_accessible
 DOTA_tooltip_econ_item_trade_cooldown_date
 DOTA_tooltip_econ_item_trade_restriction_date
@@ -46566,6 +46570,7 @@ DireTeamInventoryContainer
 DireTeamLogo
 DireTeamPlayers
 DireTint
+DireTokensChanged
 DireTokensSpent
 DireTurn
 DireUGCImage
@@ -52076,7 +52081,7 @@ HideTips
 HideTopBar
 HideUndiscoveredNeutralItems
 HideVotingControls
-HideWhe
+HideWhenAltPressed
 HideWorldLayerAndDestroyEntities
 Hides the overlay
 Hides this layer
@@ -53274,6 +53279,7 @@ IsHexDebuff
 IsHexed
 IsHiddenAbilityCastable
 IsHiddenWhenStolen
+IsHighestDotaPlusSuggestion
 IsInAbilityLearnMode
 IsInAbilityPhase
 IsInBackpack
@@ -54749,6 +54755,7 @@ MHcKhIc
 MIDIChannelDropdown
 MIDIChannelSelect
 MIDIPanic
+MINIMAP_EVENT_HINT_LOCATION
 MISSING DESCRIPTION
 MISSINGLEAGUESUBSCRIPTION
 MIgnoreDataDescValidation
@@ -55773,7 +55780,6 @@ Modifier script %s failed to find class named %s
 ModifierNames
 ModifierOffsetTop
 ModifierVerticalSpacing
-Modifier_Drow_Ranger_Glacier_Hilltop_Aura
 Modifier_Pluck_Famango_Channel
 ModifyDamageReturn_t
 Mogul Khan
@@ -58777,7 +58783,6 @@ OPTIONS
 OP_EQUAL
 ORGANIZATIONAL
 ORIGIN
-OTA_Chat_PlayerAbandoned
 OTHER_ERROR
 OUTBUFF_FULL
 OUT_OF_RANGE
@@ -64517,6 +64522,7 @@ Source2EngineToServerStringTable001
 Source2EntitySystem
 Source2EntitySystemDeallocator
 Source2GameClients001
+Source2GameEntities001
 Source2Host001
 Source2Server001
 Source2V8System001
@@ -65594,7 +65600,6 @@ TYPE_SINT64
 TYPE_STRING
 TYPE_UINT32
 TYPE_UINT64
-T_MP_GESTURE_VC_NODYES_SECONDARY
 Tab Index
 TabBackward
 TabChat
@@ -66250,7 +66255,6 @@ Token Table Save/Restore overflow on token [%d
 Tokenizer::ParseFloat() passed text that could not have been tokenized as a float
 Tokenizer::ParseStringAppend() passed text that could not have been tokenized as a string
 Tokens/%s
-TokensChanged
 TokensTimeOver
 Too many 3d skyboxes! Cannot find a slot for skybox %s
 Too many color components: %d, max %d
@@ -70389,7 +70393,6 @@ a world layer in a dota map
 aCmodifier_item_necronomicon
 aZure : voiced postalveolar fricative
 a_fDecodedAlpha >= 0.0f
-a_hud_error_item_muted
 a_uiMultithreadingStride > 0
 a_uiRadius <= MAX_RADIUS
 aaaaaaaazzzzzzzz
@@ -73655,7 +73658,6 @@ cc_vr_font_size
 cc_vr_forward_offset
 cc_vr_vertical_offset
 cc_vr_width
-ccount_id
 cd_ban1
 cd_ban2
 cd_ban3
@@ -73680,7 +73682,6 @@ cdn.beta.steampowered.com
 cdn.dota2.com
 cdn.dota2.com.cn
 cdndelay
-ce2GameEntities001
 ceiling
 cell: (%d, %d, %d
 cellMarginRight
@@ -74475,7 +74476,6 @@ clip_theH
 clips_folder
 cloakfactor
 clock_time
-close() failed
 close_when_finished
 closecaption
 closed for reason
@@ -77267,6 +77267,7 @@ dota_hud_error_item_already_purchased
 dota_hud_error_item_cant_be_dropped
 dota_hud_error_item_cant_be_used_from_stash
 dota_hud_error_item_in_cooldown
+dota_hud_error_item_muted
 dota_hud_error_item_not_in_unit_inventory
 dota_hud_error_item_out_of_stock
 dota_hud_error_message
@@ -77858,6 +77859,7 @@ dota_plus_override_weekly_games_won
 dota_plus_override_weekly_reward_claimed
 dota_plus_progress
 dota_plus_shards
+dota_plus_suggestion
 dota_plus_timedstats_clientinterval
 dota_plus_timedstats_time_window
 dota_plus_use_assistant
@@ -78760,6 +78762,7 @@ dynamic_sticker_level
 dynstr
 dynsym
 e" must be followed by exponent
+e() failed
 e,/root
 e8IcE0I
 e8IcE0M
@@ -78943,7 +78946,6 @@ empowered_kills
 empowered_state
 empty member name
 empty_neutral
-enAltPressed
 enableRadialDistortion
 enable_all_regions
 enable_boneflex
@@ -78977,7 +78979,6 @@ encounters_explored
 end of input
 end of stream
 end-angle
-end-time
 endLerpTo
 end_action_id
 end_bags
@@ -79046,6 +79047,7 @@ ent_actornames_fontsize
 ent_call <funcname> <option:entname> calls function on current look target or filtername, checks on ent, then root, then mode, then map scope
 ent_debug_anim
 ent_debug_draw_thinkers
+ent_dota_fountain
 ent_dota_halloffame
 ent_dota_lightinfo
 ent_dota_neutral_item_stash
@@ -80596,7 +80598,6 @@ file://{resources}/layout/popups/popup_custom_game_join_failed.xml
 file://{resources}/layout/popups/popup_custom_game_workshop_vote.xml
 file://{resources}/layout/popups/popup_debug_versus_screen.xml
 file://{resources}/layout/popups/popup_debut_movie.xml
-file://{resources}/layout/popups/popup_effigy_editor.xml
 file://{resources}/layout/popups/popup_escalating_chances.xml
 file://{resources}/layout/popups/popup_event_dungeon_leaderboards.xml
 file://{resources}/layout/popups/popup_friend_picker.xml
@@ -81473,7 +81474,6 @@ g:dota_league_name:league_id
 g:dota_persona
 g@A9L$(tmH
 gA;T$x
-gGCToClientPartySearchInvites
 gHA9L$(tUH
 gO : upper-mid back rounded vowel
 gPA9L$(tUH
@@ -81985,6 +81985,7 @@ google.protobuf.FileOptions.php_namespace
 google.protobuf.FileOptions.ruby_package
 google.protobuf.FileOptions.swift_prefix
 google.protobuf.FloatValue
+google.protobuf.GeneratedCodeInfo.Annotation
 google.protobuf.GeneratedCodeInfo.Annotation.source_file
 google.protobuf.Int32Value
 google.protobuf.Int64Value
@@ -83088,8 +83089,9 @@ huskar_inner_fire
 huskar_inner_vitality
 huskar_life_break
 hype_loc
-h|D;-9o
-h|D;-eG
+h|D;-7Xr
+h|D;-IZ
+h|D;-eK
 i < length
 i matching ent%s
 i(ERemoteStoragePublishedFileVisibility) Visibility of the published file (private, friends, public, etc
@@ -83168,6 +83170,7 @@ ic>%s</ic
 ice_shaman_incendiary_bomb
 icefrog
 iceiceice
+ickerCollectionSetFavoritePage
 iconCount
 icon_editor
 icon_path
@@ -89799,6 +89802,7 @@ m_flLastChargeUseTime
 m_flLastCounterTime
 m_flLastCycle
 m_flLastDamageTime
+m_flLastDealtDamageTime
 m_flLastDispersionPulseEffectTime
 m_flLastDrumHitTime
 m_flLastEmitTime
@@ -94742,6 +94746,7 @@ modifier_bounty_hunter_track
 modifier_bounty_hunter_track_bear_trap
 modifier_bounty_hunter_track_effect
 modifier_bounty_hunter_wind_walk
+modifier_bounty_hunter_wind_walk_fade
 modifier_bounty_hunter_wind_walk_slow
 modifier_break
 modifier_brewmaster_brew_up
@@ -98464,6 +98469,7 @@ old_xpm_record
 oldlace
 oldteam
 olivedrab
+omChallengeList
 omni_slash_radius
 omniknight_angelic_flight
 omniknight_degen_aura
@@ -101335,7 +101341,6 @@ ptry < &a_phalf->m_atry[IndividualTrys::Half::MAX_TRYS
 ptry->m_fError < 3.40282346638528859812e+38F
 ptryBest1 != nullptr
 ptryBest2 != nullptr
-pts/event_games_staging.txt
 pts_to_next_level
 public
 public/appframework/tier1app.h
@@ -101457,15 +101462,11 @@ pwatchvar
 pwrd_cyber_cafe_id
 pwrd_cyber_cafe_name
 py_generic_services
-p|D;5-b
-p|D;547
-p|D;54A0
-p|D;5Bx
-p|D;5IJw
-p|D;5L
-p|D;5fB0
-p|D;5i?0
-p|D;5y0
+p|D;5-f
+p|D;5B5
+p|D;5M?0
+p|D;5U
+p|D;5n
 p|E;t$0
 q(HcI H
 q<@8p<t
@@ -102366,6 +102367,7 @@ resource_name
 resource_type
 resourcecompiler.exe
 resourcehandle
+resources}/layout/popups/popup_effigy_editor.xml
 respawn_base
 respawn_seconds
 respawn_seconds_max_level
@@ -103302,6 +103304,7 @@ save/scenario-%u-%llu-%d.%s
 save_game
 save_game_key
 save_id
+save_instances
 save_spew
 save_time
 save_to_attribute_table
@@ -103543,6 +103546,7 @@ scripts/emoticons_definitions_staging.txt
 scripts/event_definitions.txt
 scripts/event_definitions_staging.txt
 scripts/event_games.txt
+scripts/event_games_staging.txt
 scripts/events/cavern/international_2022.caverndef
 scripts/events/labyrinth/fall_2021.vdata
 scripts/events/plus_heroes/%s.eventactions
@@ -103756,6 +103760,7 @@ secondary_fade_delay
 secondary_leaver_count
 secondary_slow
 secondary_stats
+secondary_target_range_bonus
 secondarytarget
 seconds_ago
 seconds_dead
@@ -107209,15 +107214,11 @@ t%;2t%H
 t%HcC0A
 t&IcT$hA;T$x
 t'IcD$x
-t(D;%7w
 t(Lc#D;c
 t)D9s,t
 t)HcPt1
-t*D;%qz
 t*D;p,t
 t*Mc<$E
-t+D:%RX
-t+D:=RU
 t+H;y s
 t+HcPt1
 t+Mc7E;w
@@ -108059,6 +108060,7 @@ toD;` }vH
 toD;s4u
 toIcF I
 toLc#D;c
+toLc%Pv
 to_curve
 to_percentile
 toastAppearSound
@@ -108115,7 +108117,6 @@ tooltip_blessing_name
 tooltip_cave_in
 tooltip_class
 tooltip_deaths
-tooltip_econ_item_gift_restriction_date
 tooltip_game_mode
 tooltip_gpm
 tooltip_image
@@ -108587,7 +108588,7 @@ u<Icv`I
 u>HcO`H
 u@E;uDI
 u@E;uPD
-uAL;%Jt
+uAL;%*w
 uC[A\A]A
 uDIcU`I
 uD[A\A]A^A
@@ -109161,7 +109162,6 @@ vault_radius
 vault_speed
 vb phys
 vb'vb'v
-ve_instances
 vec3_invalid
 vec3_origin
 vecAbilitiesUsed
@@ -109992,9 +109992,7 @@ xp_value
 xpm_diff
 xstat64
 xwMcD$xD9
-x|D;=37
-x|D;=Cn
-x|D;=cW
+x|D;=Cy
 y(HcI H
 y0H9z0t
 y8H9z8t
