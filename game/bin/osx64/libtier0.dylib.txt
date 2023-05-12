@@ -1126,6 +1126,9 @@ CParticleSystemDefinition
 CPathHelperAnimNode
 CPathStatusCondition
 CPooledStdFunctionJob CUtlMemoryPool
+CPulseCell
+CPulseCell_Inflow_Wait
+CPulseNode
 CQuantizedFloatEncoder *CFloatEncoderRegistry::GetQuantizedFloatEncoderByReg(const QuantizedEncoderReg_t &) const
 CQuaternionAnimParameter
 CRC32_GetTableEntry
@@ -1274,6 +1277,7 @@ C_INIT_LifespanFromVelocity
 C_INIT_MakeShapes
 C_INIT_ModelCull
 C_INIT_MoveBetweenPoints
+C_INIT_NormalAlignToCP
 C_INIT_NormalOffset
 C_INIT_OffsetVectorToVector
 C_INIT_PositionOffset
@@ -1336,8 +1340,10 @@ C_OP_HSVShiftToCP
 C_OP_InheritFromParentParticles
 C_OP_InitSetSnapshotOnCP
 C_OP_InstantaneousEmitter
+C_OP_LockToBone
 C_OP_LockToSavedSequentialPath
 C_OP_MaintainEmitter
+C_OP_MoveToHitbox
 C_OP_MovementPlaceOnGround
 C_OP_MovementRotateParticleAroundAxis
 C_OP_NoiseEmitter
@@ -1478,6 +1484,8 @@ ConcatEPKcS1_z
 ConcatVEPKcS1_P13__va_list_tagb
 Conditional Error: %s
 ConfigAttachedModel
+Connection_Inparam
+Connection_Outflow
 Console
 ConsoleApplication
 ConsoleOnly
@@ -1908,6 +1916,7 @@ FloatEPKcf
 FloatEf
 FloatEv
 FloatValueEv
+Flow_Generic
 FlushEv
 Focused
 FontManager_001
@@ -2105,6 +2114,7 @@ IMobileEventListener::OnLowMemoryNotification
 INHERITABLE_BOOL_INHERIT
 INHERITABLE_BOOL_TRUE
 INTEGER
+IPulseSystem_001
 ITALIAN
 Iacute
 IcD$@H9
@@ -2127,6 +2137,7 @@ Illegal char string format specifier '%c' (%d) in '%s
 Illegal wchar_t string format specifier '%c' (%d) in '%s
 Import_GetICVarFactory
 InCurrentFile
+InDefault
 Incomplete binary block: blob %i/%i, ret=%zu, input %u/%u
 Incomplete binary block: output %u/%u bytes, input %u/%u bytes
 Incorrect accel
@@ -2137,6 +2148,8 @@ IndexFromName
 Indicate to a test script that a checkpoint has been reached
 IndicateActivity
 Indirect FDE pointer encoding is not supported
+Inflow
+Inflow_Generic
 Information
 InitEPKcS1_S1_j
 InitEPKcjjjj
@@ -2701,7 +2714,13 @@ Out of range abbrev code %llu
 Out of range abbrev tag %llu
 Out of range compilation unit code %llu
 Out of thread ids. Decrease the number of threads or increase MAX_RECYCLEABLE_THREAD_IDS so we can recycle more
+OutDefault
 OutSize
+Outflow
+Outflow_Generic
+Outflow_If
+Outflow_IntSwitch
+Outflow_Simultaneous
 P(IcG(I9
 P000PPP
 P10CUtlBuffer
@@ -2778,12 +2797,15 @@ PPPPPPP
 PROTECTED
 PT_TYPE_CONTROL_POINT
 PT_TYPE_CONTROL_POINT_RANGE
+PT_TYPE_INVALID
 PUEmulated
 PUTickFrequency
 PUTicksAreReliable
 PUUsage
+PVEC_TYPE_CP_DELTA
 PVEC_TYPE_CP_VALUE
 PVEC_TYPE_FLOAT_COMPONENTS
+PVEC_TYPE_INVALID
 PVEC_TYPE_LITERAL
 PVEC_TYPE_LITERAL_COLOR
 PVEC_TYPE_RANDOM_UNIFORM
@@ -3167,6 +3189,7 @@ RAUCSAp
 RAVARAVARAVARATAp
 RAYARAUBp
 RAZAUBSAp
+RBRARARARARARARARARARARARARARARARARARARAp
 RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(Q
 RD?4KF?=GH?9FJ?8HL
 RELEASE
@@ -3663,6 +3686,7 @@ Statement list without data4/sec_offset value
 StatsService_001
 StdIOFormatOutputStream
 SteamAudio001
+Step_Generic
 Stop has been called on thread
 StrAppendFormatEPKcz
 StrReplaceChar
@@ -4484,6 +4508,7 @@ VaPrintfEPKcP13__va_list_tag
 VaScanfEPKcP13__va_list_tag
 ValidatePathConcat
 ValueEi
+VariableDefinition
 VariantIndex
 VectorData_StatEntriesERPKvRj
 Verbosity
@@ -6242,6 +6267,8 @@ binary_zstd
 binarytohex
 blendamount
 blockLOS
+block_inflow_always
+block_outflow_always
 body_type
 bone_name
 bone_names
@@ -6512,6 +6539,7 @@ explosion_delay
 explosion_type
 explosive_damage
 explosive_radius
+expression_value
 f %f %f
 f %f %f %f
 f8E+f(A9
@@ -6539,6 +6567,7 @@ finalizeDictionary
 findflags
 finding patterns
 finited
+flDurationSec
 flMaxDistance
 flMinDistance
 flag: <+/->DoNotEcho                        // Enable/disable a flag to turn off echoing to the console
@@ -6644,6 +6673,8 @@ guard before
 guard both
 guard foH
 gxx_personality_v0
+hEntity
+hTarget
 hV_SplitStringOnSeparatorsPKcS0_R10CUtlVectorI
 h[A\A]A^A
 handindex
@@ -6842,6 +6873,7 @@ m_Attributes
 m_ChainData
 m_Children
 m_Choices
+m_Class
 m_Color
 m_ColorChoices
 m_ColorScale
@@ -6851,9 +6883,14 @@ m_Curve
 m_DataType
 m_DefaultSolverSettings
 m_DefaultTargetSettings
+m_DefaultValue
+m_DestBlock
+m_DestFlowNodeID
+m_DestInflowName
 m_DirectionSpace
 m_DisallowedSurfaceProperties
 m_DisplayName
+m_EHandle
 m_Elements
 m_Emitters
 m_EndEffectorBone
@@ -6863,11 +6900,15 @@ m_FloatComponentX
 m_FloatComponentY
 m_FloatComponentZ
 m_ForceGenerators
+m_FullType
+m_GenericNodeType
+m_GenericPorts
 m_IKChains
 m_IkChain
 m_IkChains
 m_Initializers
 m_InputValue
+m_IsTrue
 m_JointConstraintData
 m_JointConstraintPairs
 m_JointName
@@ -6876,23 +6917,33 @@ m_LiteralColor
 m_LocalCoordinateSystemSpeedMax
 m_LocalCoordinateSystemSpeedMin
 m_LocalSpaceTransform
+m_Message
 m_Modifiers
 m_MotorList
+m_NodeID
 m_Operators
+m_Param
 m_ParameterName
 m_Parameters
 m_PreEmissionOperators
 m_Renderers
 m_RequiredAttributes
+m_ReturnValue
 m_SelectionCriteria
 m_SolverSettingSource
 m_SolverType
 m_SourceName
+m_SourceOutflowName
+m_SourceOutparamName
+m_SwitchValue
+m_Target
 m_TargetName
 m_TargetSettingSource
 m_TargetSource
 m_TextureControls
+m_ThisInparamName
 m_TraceSpace
+m_TraceString
 m_TransformEnd
 m_TransformInput
 m_TransformStart
@@ -6901,6 +6952,7 @@ m_VariableName
 m_VariableValue
 m_Variables
 m_VecCoroutineStack.Count() > 1
+m_WakeResume
 m_actions
 m_additiveChildID
 m_additiveInput
@@ -6960,6 +7012,7 @@ m_bSlopeEnabled
 m_bTrailBias
 m_bUseHighestEndCP
 m_bUseOrientation
+m_bUseWorldLocation
 m_bViewModelEffect
 m_baseChildID
 m_baseInput
@@ -7019,6 +7072,7 @@ m_flDegrees
 m_flDegreesMax
 m_flDegreesMin
 m_flDuration
+m_flDurationSec
 m_flEmissionDuration
 m_flEmissionScale
 m_flEmitRate
@@ -7033,6 +7087,7 @@ m_flFinalTextureUVRotation
 m_flFixedCycleValue
 m_flHitBoxScale
 m_flHitboxScale
+m_flIdealWidth
 m_flInitFromKilledParentParticles
 m_flInitialRadius
 m_flInitialSpeedMax
@@ -7111,6 +7166,7 @@ m_flZoomAmount1
 m_flZoomMax
 m_flZoomScale
 m_groups
+m_hAlyx
 m_hMotionVectorsTexture
 m_hNormalTexture
 m_hSnapshot
@@ -7140,9 +7196,12 @@ m_nClusterSizeMax
 m_nClusterSizeMin
 m_nCollisionMode
 m_nControlPoint
+m_nControlPointCompare
+m_nControlPointLocal
 m_nControlPointNumber
 m_nControlPointNumberMax
 m_nControlPointRangeMax
+m_nDeltaControlPoint
 m_nElementID
 m_nEndCP
 m_nFeatheringMode
@@ -7152,6 +7211,7 @@ m_nFieldOutput
 m_nFirstMultipleOverride_BackwardCompat
 m_nFogType
 m_nHand
+m_nHeadLocation
 m_nIncrement
 m_nLightType
 m_nLocalSpaceCP
@@ -7184,11 +7244,13 @@ m_nSequenceCombineMode
 m_nSetMethod
 m_nSortMethod
 m_nStartCP
+m_nSwitchValue
 m_nTextureChannels
 m_nTextureType
 m_nTraceMissBehavior
 m_nTranslations == 1
 m_nType
+m_nValue
 m_nVectorAttribute
 m_nVectorComponent
 m_nViewModelEffect
@@ -7226,11 +7288,13 @@ m_subtractChildID
 m_subtractInputConnection
 m_tagBehaviors
 m_tagID
+m_transformInput
 m_useCurl
 m_vCPValueScale
 m_vDomainMaxs
 m_vDomainMins
 m_vEndTrailTintFactor
+m_vIdealSize
 m_vLiteralValue
 m_vOffsetMax
 m_vOffsetMin
@@ -7254,6 +7318,7 @@ m_vecSamplePosition
 m_vecScale
 m_vecTailColorScale
 m_vecTexturesInput
+m_velocityInput
 mach_absolute_time
 mach_task_self
 mach_timebase_info
@@ -7347,6 +7412,7 @@ nBufferPKcP10CUtlBufferi
 nLoadKV3From
 nMiniProfiler
 nOffset < m_nAllocationSize
+nSwitchValue
 nTries < 10000000
 nameFile
 nanosleep
@@ -7514,12 +7580,14 @@ p   0P
 p SAXCSBp
 p4 add -t binary "%s
 p4 edit -t binary "%s
-pA3QeL
 pA3QuW
 pA9F,rjI
 pFrameBottom > m_pStackHigh || pFrameTop < m_pStackLow
+pMessage
 pPP0@0@0P
+pSwitchValue
 pTarget
+pTraceString
 p[A\A^A
 pandEnvVars
 panorama
@@ -8101,7 +8169,13 @@ void ValidateStringFormatSpecifiers(const char
 void ValidateStringFormatSpecifiers(const wchar_t
 volatile
 vprintf
+vpulse1
+vpulse2
+vpulse3
+vpulse4
+vpulse5
 vpulse6
+vpulse_c1
 vr_carry_type
 vsmart;vsmart_template
 vsnprintf

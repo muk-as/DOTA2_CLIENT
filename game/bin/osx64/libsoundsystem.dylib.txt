@@ -64,6 +64,7 @@
 17CSosOperatorCurve
 17CSosOperatorDelta
 17CSosOperatorFloat
+17CSosOperatorFunc1
 17CSosOperatorNoise
 17CSosOperatorTimer
 17CSoundViewerState
@@ -83,6 +84,7 @@
 18CSosOperatorGroups
 18CSosOperatorRandom
 18CSosOperatorString
+18CSosOperatorSubmix
 18CSoundEventManager
 18CVSoundTypeManager
 18CWaveTmpFileWriter
@@ -195,7 +197,9 @@
 24CSosOperatorInRangeFloat
 24CSosOperatorLerpSpeakers
 24CSosOperatorMathAverage8
+24CSosOperatorQueueToTrack
 24CSosOperatorRandomFloat3
+24CSosOperatorSamplerEvent
 24CSosOperatorSetEventInfo
 24CSosOperatorSetOpVarVsnd
 24CSosOperatorSpatializeVR
@@ -306,7 +310,6 @@
 37CSosOperatorCalcWeightedAvgSerialVec3
 40CSchemaRegistration_soundsystem_lowlevel
 41CSosOperatorCalcInterpolatedRotationAngle
-4C17CSosOperatorFunc1
 4IcG(9
 8CSosEdit
 8IcD$lH
@@ -315,7 +318,6 @@
 9CSfxTable
 A+O0~ D
 A+t$8~1L
-A24CSosOperatorSamplerEvent
 A;@hu:H
 A;D$xsXI
 A;\$HsKI
@@ -433,7 +435,6 @@ BandPass
 Bandwidth
 Base: %s
 BaseStack
-Bcalc_occlusion_src1
 BduPzN
 Below Threshold(dB
 BenchmarkService001
@@ -568,7 +569,6 @@ CreateSimpleThread
 Cross 01
 Cross 02
 Crossfade Time (s
-Csos_goto
 CurTime: %f
 Currently gets info for a single operator field
 Currently sets a single float operator field
@@ -823,6 +823,7 @@ ID of the sound device to use
 IMSVu{A
 INSt3__117bad_function_callE
 INVALID
+IPulseSystem_001
 IcD$ I9
 IcD$(H9
 IcD$0H9
@@ -1112,10 +1113,10 @@ Prints the current stack execution list
 Prints the current state of the groups system
 Prints the current state of tool properties
 Prints the sizes of relevant sos classes
-Process
 ProcessSoundEvent:  %s unable to get referenced stack %s. Soundevent deleted and removed
 ProcessSoundEvent: %s Attempting to set more static groups than allowed
 ProcessSoundEvent: %s `field name %s either in public or event data on stack %s
+ProcessSoundEvent: %s field %s has a different number of atomic elements than the field data type. Skipping
 ProcessSoundEvent: %s field %s has more elements than stack %s has allocated and the field is not specified as soundevent_data. Element count constrained
 ProcessSoundEvent: %s found field %s with "data_type" during conversion comparison, which is no longer supported. Please add "soundevent_data" to stack %s
 ProcessSoundEvent: %s unable to find field name %s either in public or event data on stack %s
@@ -1715,6 +1716,7 @@ WARNING: Invalid vsnd version '%d' for file: %s
 WARNING: Stack %s Operator %s, opvar field %s overwriting existing parameter of the same name. THERE IS NO TYPE OR SIZE CHECKING IN PLACE, IT IS UP TO YOU TO MAKE SURE THEY ARE THE SAME
 WARNING: Stack %s had %i stack field overwrite warnings. Set "snd_sos_show_parameter_overwrite_warnings 1" and recompile for details
 WARNING: snd_sos_soundevent_profile disabled - ignoring
+WAVAUATSPI
 Wait: elapsed time: %f, next sync time: %f, local elapsed: %f, local sync: %f, length: %f, num loops: %i
 Wall: surface = %s (%.2f
 Warning
@@ -1735,7 +1737,6 @@ Won't age handle
 WorldRendererMgr001
 XAUATAp
 X[A\A]A^A
-Y@18CSosOperatorSubmix
 You must construct it with ORDERED_CONSTRUCT macro in the dependency resolution function
 Z10DevWarningPKcz
 Z13DebugPrintKV3PK10KeyValues3
@@ -2526,9 +2527,9 @@ itemName
 itemPos
 itemType
 itemTypeName
+kCreateInterface
 key_groups
 l=25CAutoFilterAudioProcessor
-lCreateInterface
 la_symbol_ptr
 left_front
 left_front1
@@ -3074,8 +3075,7 @@ p ^A^A^ARARARA^A
 p ^A^A^A^A^A
 p ^A^A^A^A^A^A^A^A^ARARARARARARARARARARARA^ARA^A^A^A^A^A^A^ARARARARARARARA^Ap
 p ^A^A^A^A^A^A^A^A^A^A^A^ARARARARARARARARARARARARARARARA^ARA^ARA^ARB^A
-pAmath_string
-pB24CSosOperatorQueueToTrack
+pBtrack_queue
 pPPpp0@`@0
 p[A\A^A
 p` @ ``  P
@@ -3202,7 +3202,6 @@ sOperator Stack: %s
 sOperator: %s
 sSize: %i
 sSoundEvent Hash: %d
-sSoundEvent: %s field %s has a different number of atomic elements than the field data type. Skipping
 s] %s : src %d : vol %.2f : time %.3f
 s_%s_linear
 s_%s_mapping_curve
@@ -3212,7 +3211,6 @@ s_random_max
 s_random_min
 s_random_variance
 s_seek_speed_filter
-sampler_event
 samplers
 scripts/soundmixers.txt
 scripts/vmidi/vmidi_manifest.txt
@@ -3516,7 +3514,6 @@ toolspreview
 total preset slots used: %d
 track_01
 track_name
-track_queue
 track_stop
 transmissionHigh
 trigger

@@ -1,6 +1,6 @@
 0 0 0 0
 0 0 0 255
-0HcC(H
+0IcD$(H
 0[A\A]A
 0x%08X %s
 1 for all asleep, 1 for all awake
@@ -20,6 +20,7 @@
 13IBaseSequence
 14CBaseAppSystemI18IParticleSystemMgrE
 14CEmptySequence
+14CParticleInput
 14CPulseGraphDef
 14C_INIT_InitVec
 14C_OP_ModelCull
@@ -69,10 +70,12 @@
 16C_OP_RenderBlobs
 16C_OP_RenderRopes
 16C_OP_RenderSound
+16C_OP_SetVariable
 16C_OP_VectorNoise
 16ISceneObjectDesc
 17CParticleFunction
 17CParticleSnapshot
+17CParticleVecInput
 17C_OP_DensityForce
 17C_OP_DistanceCull
 17C_OP_FadeInSimple
@@ -106,6 +109,8 @@
 18IParticleSystemMgr
 19CGenericExpr_Binary
 19CParticleCollection
+19CParticleFloatInput
+19CParticleModelInput
 19CParticleObjectDesc
 19CPulseCell_BaseFlow
 19CSchemaRegistration
@@ -128,6 +133,7 @@
 1D Luminance to Color Lookup
 20CBaseRendererSource2
 20CParticleTypeManager
+20CPerParticleVecInput
 20CPostConnectCallback
 20CPulseBreakpointInfo
 20CPulseCell_BaseValue
@@ -183,6 +189,7 @@
 21IPulseInstanceSaveAPI
 22CGeneralRandomRotation
 22CParticleFunctionForce
+22CPerParticleFloatInput
 22CPulseCell_Inflow_Wait
 22CSceneAnimatableObject
 22CSchemaInstallCallback
@@ -204,6 +211,7 @@
 22C_OP_SetFromCPSnapshot
 22C_OP_SetSimulationRate
 22C_OP_UpdateLightSource
+22IParticleEHandleHelper
 23CBasePulseGraphInstance
 23CControlPointEditorData
 23CGenericExpr_IntLiteral
@@ -225,6 +233,7 @@
 24CChildFunctionDefinition
 24CGenericExpr_BoolLiteral
 24CParticleFunctionEmitter
+24CParticleRemapFloatInput
 24CPulseCell_Inflow_Method
 24CPulseCell_Step_DebugLog
 24CPulseCell_Test_NoInflow
@@ -302,6 +311,7 @@
 26C_OP_SetControlPointToHand
 26C_OP_VelocityMatchingForce
 27CDefaultParticleSystemQuery
+27CParticleCollectionVecInput
 27CParticleFunctionConstraint
 27CParticleFunctionDefinition
 27CPulseCell_Inflow_GraphHook
@@ -345,6 +355,7 @@
 28C_OP_SetControlPointToPlayer
 28C_OP_SetPerChildControlPoint
 28IRefCountedParticleAttribute
+29CParticleCollectionFloatInput
 29CPulseCell_BaseYieldingInflow
 29CSchemaRegistration_particles
 29C_INIT_CreateSequentialPathV2
@@ -439,6 +450,7 @@
 32CParticleFunctionDefinitionTypedI16C_OP_RenderBlobsE
 32CParticleFunctionDefinitionTypedI16C_OP_RenderRopesE
 32CParticleFunctionDefinitionTypedI16C_OP_RenderSoundE
+32CParticleFunctionDefinitionTypedI16C_OP_SetVariableE
 32CParticleFunctionDefinitionTypedI16C_OP_VectorNoiseE
 32CParticleFunctionDefinitionTypedI17C_OP_DensityForceE
 32CParticleFunctionDefinitionTypedI17C_OP_DistanceCullE
@@ -797,6 +809,7 @@
 34C_OP_SetRandomControlPointPosition
 34C_OP_SetSingleControlPointPosition
 34IKV3TransferInterface_ResourceLoad
+35CParticleCollectionRendererVecInput
 35C_INIT_RemapInitialVisibilityScalar
 35C_OP_CPOffsetToPercentageBetweenCPs
 35C_OP_ConnectParentParticleToNearest
@@ -814,6 +827,7 @@
 36C_OP_RemapNamedModelElementOnceTimed
 36C_OP_SetParentControlPointsToChildCP
 36IKV3TransferInterface_UtlSymbolLarge
+37CParticleCollectionRendererFloatInput
 37CPulseCell_Test_MultiInflow_NoDefault
 37CSchemaRegistration_pulse_runtime_lib
 37C_INIT_RemapNamedModelElementToScalar
@@ -877,6 +891,7 @@
 8HcG0L
 8IcD$0H
 8[A\A]A^A
+8[A\A]H
 9C_OP_Cull
 9C_OP_Spin
 9Gx~xUH
@@ -887,6 +902,7 @@ A testing-only domain that draws on a 2D canvas with a LOGO-like 'turtle' cursor
 A8uTt)H
 A9\$p~2A
 A9^ |sA
+A;E0}6H
 A;Ep}\H
 AABB_t(min=%g, max=%g
 ABaseInstance%d
@@ -906,19 +922,21 @@ ASYNC_FIRE_AND_FORGET
 ASheetTexture
 ATSLc&H
 ATSLcgHH
+ATSxFHc
 ATTACHMENT_INFLUENCE_FLAGS_NONE
 AUATSHc
 AUATSLc'E
 AUATSLc/E
 AUATSfA
 AVAUATA
+AVAUATD
 AVAUATE1
 AVAUATI
 AVAUATL
 AVAUATLc
-AVAUATM
 AVAUATS
 AVAUATS1
+AVAUATSD
 AVAUATSH
 AVAUATSHc
 AVAUATSL
@@ -930,9 +948,9 @@ AWAVAUATA
 AWAVAUATD
 AWAVAUATE1
 AWAVAUATI
+AWAVAUATL
 AWAVAUATLc
 AWAVAUATS
-AWAVAUATS1
 AWAVAUATSH
 AWAVAUATSL
 AWAVAUD
@@ -952,7 +970,6 @@ Add Decay to Bounce
 Add to Current Value Raw
 Add to Initial Value
 Add vector to vector
-AddMultipleToTail
 AddonsChangeDefaultWritePath
 Address of m_Children.m_pHead: [%p
 Adjust heading (positive = right, negative = left
@@ -1030,6 +1047,7 @@ Bad KV3 data (%s
 Bad KV3 data for '%s': %s
 Bad KV3 data for resource: %s
 Bad Remap %d
+Bad VecInput %d
 Bad compression
 Bad sequence in GetSequenceActivityName() for model '%s
 BakedLODBuilderMgr001
@@ -1071,6 +1089,7 @@ Bone Weights
 BoneChannel
 BoneConstraintList
 Bool( %s
+Boolean
 Boundary Dampening
 Bounding Box
 Branch Behavior
@@ -1138,10 +1157,6 @@ CP#%d Relative Random Dir
 CP#%d.%s Speed
 CParticleCollection::CParticleCollection [%p
 CParticleCollection::GenerateSortedIndexList
-CParticleCollection::GetNamedTransformCurrentValue transform %s is not set
-CParticleCollection::GetNamedTransformPreviousValue transform %s is not set
-CParticleCollection::GetNamedVectorCurrentValue vector %s is not set
-CParticleCollection::GetNamedVectorPreviousValue vector %s is not set
 CParticleCollection::InitializeNewParticles
 CParticleCollection::Term [%p]: %s
 CParticleCollection::~CParticleCollection [%p
@@ -1159,7 +1174,9 @@ CParticleFunctionInitializer
 CParticleFunctionOperator
 CParticleFunctionPreEmission
 CParticleFunctionRenderer
+CParticleInput
 CParticleModelInput
+CParticleNamedValueRef
 CParticleProperty
 CParticleRemapFloatInput
 CParticleSnapshot::%s - Invalid attribute mapping specified (must be one-to-one
@@ -1170,6 +1187,7 @@ CParticleSystemMgr::CreateParticleCollection( Name String
 CParticleSystemMgr::FindParticleSystem
 CParticleSystemMgr::InitAttributeTable has an out-of-date attribute list! (element %d not set up
 CParticleTransformInput
+CParticleVariableRef
 CParticleVecInput
 CParticleVisibilityInputs
 CParticlelight
@@ -1255,7 +1273,6 @@ CSOAContainer::SetAttributeType - ERROR, trying to change type of previously-def
 CSpinUpdateBase
 CSplitScreenSlot
 CStrongHandle
-CTA9D$T
 CTSQueue corruption
 CTier2AppSystemDict::LoadStartupManifestGroup
 CTransform(origin=%? fwd=%?, lft=%?, up
@@ -1635,6 +1652,7 @@ C_OP_SetRandomControlPointPosition
 C_OP_SetSimulationRate
 C_OP_SetSingleControlPointPosition
 C_OP_SetToCP
+C_OP_SetVariable
 C_OP_SetVec
 C_OP_SetVectorAttributeToVectorExpression
 C_OP_SnapshotRigidSkinToBones
@@ -1677,6 +1695,7 @@ Capsule Light Controls
 Cast of %s loses value information (returning %s
 Causes all single-fire particle assertions to trigger once more
 Causes each execution cursor to pause at this node for a fixed period of time. Each cursor will wake up and resume execution when the time expires, unless aborted or early-woken
+CdA9D$d
 Cell%d - NULL
 Cell%d EditorID:%d [%s]: %s
 ChangeCallbackOnChange
@@ -1804,6 +1823,7 @@ Dedicated Particle Pool Count
 Default HSV Color
 DefaultTime
 Default_Keys
+Delta between CP#%d and CP%d
 DemoUpconverterVersion001
 Density value to map to max value
 Density value to map to min value
@@ -1984,7 +2004,6 @@ Failed to parse channel info
 Failed to read attribute
 Failed to save unsupported class
 Fake Ent-Fire
-Fd9Gdum
 FeatureID
 FeetSettings
 Fifty Percent/Zero Percent Distance
@@ -2107,14 +2126,14 @@ Glow Alpha
 Glow RGB
 Green Channel
 Green with Green as Alpha
-H#F@H#W@H9
-H#V@H#O@H9
+H#FPH#WPH9
+H#VPH#OPH9
 HBm_influenceFlags
-HHcC@H
 HITBOX_INDEX
 HITBOX_LERP_CONSTANT
 HITBOX_LERP_LIFETIME
 HITBOX_RELATIVE_XYZ
+HIcD$@H
 HSV Shift Control Point
 HSV Shift to control point
 H[A\A]A^A
@@ -2122,7 +2141,7 @@ HammerMapLoader001
 HandleInt
 HandleIntDerived
 Has Collision
-HcJLHcU
+HcJ\HcU
 HcP ;P
 HelpSystem_001
 Hitbox Index
@@ -2153,6 +2172,7 @@ INVALID INSTRUCTION %d
 IParticleCollection
 IParticleEffect
 IParticleSystemDefinition
+IPulseSystem_001
 IS_EFFECTS_LAYER
 IS_MBOIT_4_MOMENTS
 IS_MBOIT_PASS
@@ -2162,10 +2182,12 @@ IS_MODE_MIXED_RESOLUTION_STENCIL
 IS_MODE_MIXED_RESOLUTION_UPSAMPLE
 IS_MODE_PARTICLE_SHADOWS
 IS_PARTICLE_MIXED_RESOLUTION_LAYER
+IS_VIEW_MODEL_LAYER
 ITM_deregisterTMCloneTable
 ITM_registerTMCloneTable
 IcD$<A9
-IcEPIcT$P
+IcD$XH
+IcEPHcSP
 IcO8Ic_<I
 Ic^ A;^0
 If (R%d) Jump to Instr I%d
@@ -2357,6 +2379,7 @@ Lower pen
 Lumens Per Meter
 Luminance
 M A9\$p
+M$IcE E
 MANUAL_ANIMATION_FRAME
 MATCHFRAMEWORK_001
 MATERIAL_PROXY_STATUS_EFFECT
@@ -2396,12 +2419,18 @@ MODEL_RENDER_HELPER_PTR_4
 MObsoleteParticleFunction
 MParticleAdvancedField
 MParticleCustomFieldDefaultValue
+MParticleDomainBuiltinTag
+MParticleDomainHandles
+MParticleDomainTag
+MParticleFieldBindings
+MParticleHandleGetCallable
 MParticleHelpField
+MParticleInputOptional
 MParticleMaxVersion
 MParticleMinVersion
+MParticleNamedValueDeclaration
 MParticleReplacementOp
 MParticleRequireDefaultArrayEntry
-MParticleTransformInputOptional
 MPropertyAttributeChoiceName
 MPropertyAttributeEditor
 MPropertyAttributeRange
@@ -2442,6 +2471,9 @@ Maximum Count
 Maximum Trace Length
 Mc,$E;l
 Mc4$E;t
+McG E;G0L
+Mcg E;g0L
+Mco E;o0H
 MemAlloc_AllocAlignedFunc
 MemAlloc_AllocFunc
 MemAlloc_CallocFunc
@@ -2554,6 +2586,7 @@ Newline in string literal
 NextParticleSceneObject
 No Collision Behavior
 No DATA block for resource
+No closing */ before end of file
 No expression
 No input data for '%s'. (Empty buffer
 No know mod
@@ -2629,8 +2662,7 @@ P HcSPH
 P HcSxH
 P IcU0I
 P IcU@I
-P$HcP E
-P8H=vmdlt
+P8H=vmdl
 P8H=vpcft
 P8H=vpcft]E1
 PARENT_PARTICLE_INDEX
@@ -2901,6 +2933,7 @@ PVAL_STRING
 PVAL_TRANSFORM
 PVAL_VEC3
 PVEC_TYPE_COUNT
+PVEC_TYPE_CP_DELTA
 PVEC_TYPE_CP_RELATIVE_DIR
 PVEC_TYPE_CP_RELATIVE_POSITION
 PVEC_TYPE_CP_RELATIVE_RANDOM_DIR
@@ -2977,6 +3010,7 @@ ParticleLightUnitChoiceList_t
 ParticleLightingQuality_t
 ParticleLightnintBranchBehavior_t
 ParticleModelType_t
+ParticleNamedValueConfiguration_t
 ParticleNamedValueSource_t
 ParticleOmni2LightTypeChoiceList_t
 ParticleOrientationChoiceList_t
@@ -3001,6 +3035,7 @@ ParticleTraceMissBehavior_t
 ParticleTraceSet_t
 ParticleTransformType_t
 ParticleVRHandChoiceList_t
+ParticleVariableRef
 ParticleVecType_t
 Particlelib: Unsupported CPU or GPU for particle definition "%s
 Particles/Budget_ActualTraces
@@ -3072,6 +3107,7 @@ PointDefinitionWithTimeValues_t
 PointDefinition_t
 Pointers cannot be used as numeric values
 Position Control Point
+Position Offset
 Position On Grid
 Position Previous
 Position along epitrochoid
@@ -3132,6 +3168,7 @@ PulseRuntimeVarIndex_t
 PulseTestEHandle_t
 PulseValueType_t
 QAngle
+QIcO0Hc
 Quadratic/Linear Bias
 Quadrilaterals
 Quantize Float
@@ -3305,6 +3342,7 @@ Repeatedly Trigger Child Group
 Replace
 Replacement Options
 ReportClassError
+Resource
 ResourceCompiler/MeshCompiler/UseMikkTSpace
 ResourceCompilerSystem001
 ResourceHandleUtils001
@@ -3320,6 +3358,7 @@ Rope Spring constraint
 Rope Tesselation
 Ropes and Trails now properly use visibility settings for radius and alpha - previously settings here were ignored so systems which have this set will begin working on update.  Double-check your Rope/Trail Visibility Inputs
 Rotate vector random
+Rotation Offset
 Rotation basic
 Rotation from CP forward orientation
 Rotation orient initial rotation relative to CP
@@ -3522,6 +3561,7 @@ Set Self and Children
 Set Simulation Timescale
 Set System-Wide Float
 Set Value
+Set Variable
 Set Vector
 Set Velocity
 Set child control points from particle positions
@@ -3598,6 +3638,7 @@ Snapshot increment amount
 Snapshot load error for resource '%s': %s
 Snapshot start point
 Sort Method
+SoundEvent GUID
 SoundOpSystem001
 SoundOpSystemEdit001
 SoundPicker
@@ -3639,6 +3680,7 @@ Ss Pos and Dot OUT CP
 St11_Mutex_baseILN9__gnu_cxx12_Lock_policyE2EE
 St16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE2EE
 St19_Sp_make_shared_tag
+St23_Sp_counted_ptr_inplaceI32CParticleNamedValueStorageLayoutSaIS0_ELN9__gnu_cxx12_Lock_policyE2EE
 Stack depth limit hit (%d
 StandardLightingAttenuationStyle_t
 Start Radius
@@ -3657,9 +3699,8 @@ System Name
 Systems Measured: %d
 T$0A\A]A
 T$@HcC<J
-T$PIcEP
 T$hA9VPu
-T@Bad VecInput %d
+T@23CParticleTransformInput
 TD_OFFSET_NORMAL
 TD_OFFSET_PACKED
 TEXTURE_REPETITION_PARTICLE
@@ -3925,7 +3966,6 @@ V_vsnprintf
 Value at end of cycle
 Value at start of cycle
 Var( %s
-Variables
 VecInputMaterialVariable_t
 Vector Component
 Vector Field Grid Spacing Override
@@ -3999,7 +4039,6 @@ You must construct it with ORDERED_CONSTRUCT macro in the dependency resolution 
 Z Dimension Count
 Z Dimension Spacing
 Z axis scaling scalar field
-Z10DevWarningPKcz
 Z12LoadGameInfoPKc
 Z13DebugPrintKV3PK10KeyValues3
 Z13V_SplitStringPKcS0_R10CUtlVectorI10CUtlStringi10CUtlMemoryIS2_iEEb
@@ -4174,6 +4213,8 @@ ZN20CFormatStringElementC1EPKc
 ZN21CUtlScratchMemoryPool12AllocAlignedEii
 ZN21CUtlScratchMemoryPoolC1EjjPvb
 ZN21CUtlScratchMemoryPoolD1Ev
+ZN22CVariableBitStringBase6ResizeEi
+ZN22CVariableBitStringBase8FreeIntsEv
 ZN24CUniformRandomStreamImplI16CThreadNullMutexE11RandomFloatEff
 ZN24CUtlMemoryBlockAllocator12AllocAndCopyEPKcj
 ZN24CUtlMemoryBlockAllocator5PurgeEv
@@ -4252,6 +4293,7 @@ ZNSt14_Function_base13_Base_managerIZN10FuncInfo_tC4IiiiEEPFT_RKT0_RKT1_EEUlP10K
 ZNSt14_Function_base13_Base_managerIZN10FuncInfo_tC4IiiiEEPFT_T0_T1_EEUlP10KeyValues3PKS8_SB_E_E10_M_managerERSt9_Any_dataRKSE_St18_Manager_operation
 ZNSt14_Function_base13_Base_managerIZN10FuncInfo_tC4IiiiiEEPFT_RKT0_RKT1_RKT2_EEUlP10KeyValues3PKSF_SI_SI_E_E10_M_managerERSt9_Any_dataRKSL_St18_Manager_operation
 ZNSt14_Function_base13_Base_managerIZN18CNewParticleEffect7RestartEvEUlvE_E10_M_managerERSt9_Any_dataRKS4_St18_Manager_operation
+ZNSt15_Sp_counted_ptrIDnLN9__gnu_cxx12_Lock_policyE2EE10_M_disposeEv
 ZNSt15__exception_ptr13exception_ptr4swapERS0
 ZNSt15__exception_ptr13exception_ptrC1ERKS0
 ZNSt15__exception_ptr13exception_ptrD1Ev
@@ -4388,7 +4430,6 @@ avg_num_traces
 avg_render
 avg_sim
 b?/n3>j
-bHcKpIc
 bWantsFBCopyTexture
 baselayer
 basic_string::_S_construct null not valid
@@ -4482,7 +4523,6 @@ color tint
 color warp texture (3d
 color32
 comment
-comparison control point number
 comparison velocity
 component 0/1/2 X/Y/Z
 component scale factor
@@ -4539,7 +4579,6 @@ control point to scale duration
 control point to trace from
 control point with snapshot data
 control points to broadcast to children (n + 1
-control_point_number
 count back from last particle
 count to maintain
 cp field
@@ -4867,6 +4906,7 @@ hybrid ratio
 iA;T$8
 iA;T$P
 iA;T$h
+iIcO0Ic
 ignore delta time
 ignore normal
 ignore radius
@@ -4914,6 +4954,7 @@ input scale 2
 input scale control point
 input scale control point field
 input transform
+input transform for transforming local space bias vector
 input vector 1
 input vector 2
 input volume maximum
@@ -5036,6 +5077,7 @@ looks like this
 low violence definition
 lowprecisionuv
 lowprecisionuv1
+mIcO0Ic
 m_ActivityName
 m_Arg0Description
 m_Arg0Name
@@ -5044,6 +5086,7 @@ m_Arg1Description
 m_Arg1Name
 m_Arg1Type
 m_AttachmentName
+m_BoundEntityPath
 m_BoundingBoxMax
 m_BoundingBoxMin
 m_CallInfos
@@ -5062,12 +5105,15 @@ m_ColorFadeMax
 m_ColorFadeMin
 m_ColorMax
 m_ColorMin
+m_ConfigName
+m_ConfigValue
 m_ConstantColor
 m_ConstantNormal
 m_Constraints
 m_ControlPoint
 m_Curve
 m_DefaultCaseOutflow
+m_DefaultConfig
 m_DefaultHSVColor
 m_DefaultText
 m_DefaultValue
@@ -5137,6 +5183,7 @@ m_MaterialVecVars
 m_MaxForce
 m_MethodName
 m_ModelList
+m_NamedConfigs
 m_NamedValue
 m_NamedValueDomain
 m_NamedValueLocals
@@ -5189,6 +5236,7 @@ m_TransformStart
 m_TwistAxis
 m_UnyieldResume
 m_Value
+m_ValueType
 m_WakeResume
 m_WeightedList
 m_angOffset
@@ -5996,6 +6044,7 @@ m_flWorleySeed
 m_flYaw
 m_flZeroPercentFalloff
 m_flZoomScale
+m_floatInput
 m_fpointAngle
 m_fsizeOverall
 m_groundType
@@ -6103,7 +6152,6 @@ m_nColorCP
 m_nColorGemEnableCP
 m_nComponent
 m_nComponent1
-m_nComponent2
 m_nConstantSequenceNumber
 m_nConstantSequenceNumber1
 m_nControlPoint
@@ -6112,11 +6160,9 @@ m_nControlPoint2
 m_nControlPoint3
 m_nControlPoint4
 m_nControlPointAxis
-m_nControlPointCompare
 m_nControlPointForLinearDirection
 m_nControlPointInput1
 m_nControlPointInput2
-m_nControlPointLocal
 m_nControlPointNumber
 m_nControlPointNumberEnd
 m_nControlPointNumberStart
@@ -6125,6 +6171,7 @@ m_nCount
 m_nCropTextureOverride
 m_nCullControlPoint
 m_nCursorValueA
+m_nDeltaControlPoint
 m_nDensity
 m_nDesiredHitbox
 m_nDesiredVelocityCP
@@ -6410,6 +6457,7 @@ m_pTextureRoughness
 m_pTextureSelfIllum
 m_pTextureSpecularWarp
 m_pointList
+m_positionOffset
 m_previewModel
 m_previewState
 m_pszCullReplacementName
@@ -6419,15 +6467,19 @@ m_pszTimeOfDayParameter
 m_randomnessParameters
 m_renderRadius
 m_rimLightColor
+m_rotationOffset
 m_sequenceName
 m_specularColor
 m_spline
 m_stencilTestID
 m_stencilWriteID
+m_strAttachmentName
+m_strEntityScope
 m_strShaderOverride
 m_strVariable
 m_szRenderAttribute
 m_tangents
+m_transformInput
 m_vCPRelativeDir
 m_vCPRelativePosition
 m_vCPValueScale
@@ -6464,6 +6516,12 @@ m_vStartValue
 m_vVectorAttributeScale
 m_values
 m_varRegisters
+m_variableName
+m_variableReference
+m_variableReference.m_variableType != PVAL_FLOAT
+m_variableReference.m_variableType != PVAL_TRANSFORM
+m_variableReference.m_variableType != PVAL_VEC3
+m_variableType
 m_vecAbsVal
 m_vecAbsValInv
 m_vecAccel
@@ -6542,6 +6600,7 @@ m_vecTwistAxis
 m_vecWarpMax
 m_vecWarpMin
 m_vecWaveLength
+m_velocityInput
 m_vertexBuffers
 magnitude
 magnitude output component
@@ -6669,6 +6728,7 @@ model alpha
 model component scale
 model from renderer
 model hitbox scale
+model input
 model local offset
 model local rotation (pitch/yaw/roll
 model override economy loadout slot type
@@ -6682,6 +6742,7 @@ model_default_preview_sequence_name
 modulation
 moments
 moments_extra
+mponent2
 nSwitchValue
 nTries < 10000000
 near %s
@@ -6862,7 +6923,6 @@ particlecollection.h
 particlefield
 particlefield_alpha
 particlefield_domain
-particlefield_namedvaluetype
 particlefield_rotation
 particlefield_scalar
 particlefield_size_cull_bloat
@@ -7299,11 +7359,11 @@ t$@IcT$8H
 t$PA\A]A
 t&HcSx;S|}%H
 t/;w8t2;wHt=1
-t4Lc#D;c
+t2[A\A
 t4[A\A
 t6[A\A
 t7[A\A
-t<Lc#D;c
+t@Ic]HM
 t@~gLcm
 tID;kp}CMc
 tP;wp}XLc
@@ -7374,6 +7434,7 @@ trace to closest surface along all cardinal directions
 trace update rate
 trail_length
 transform input
+transform to offset positions from
 translucent
 travel time
 travel time scale field
@@ -7457,9 +7518,11 @@ vpcfAVAUATL
 vr camera right eye
 vt %f %f
 vulkan_disable_particle_descriptor_set
+w(HcG L
 w(Lc2D;r
 w,Lc"D;b
 w@IcW8L
+wIcO0Ic
 wait for children to finish
 warp amount
 warp max
@@ -7484,17 +7547,17 @@ write stencil on z-buffer test success
 written field
 x%9wH~ Hc
 x(Lc"D;b
-x(Lc#D;c
+x(Lc*D;j
 x(Lc+D;k
 x+Lc3D;s
 x,Lc"D;b
 x,Lc*D;j
 x,Lc+D;k
+x.Lc#D;c
 x/Lc"D;b
 x/Lc+D;k
 x3Lc"D;b
-x;Lc"E1
-xHcCpH
+xIcD$pH
 x[A\A]A^A
 xdLc"D;b
 xi9G0~dH
