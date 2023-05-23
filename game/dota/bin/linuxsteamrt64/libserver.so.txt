@@ -247,7 +247,6 @@
 12CMsgTEImpact
 12CMsgTESparks
 12CMsgVector2D
-12CMultiSource
 12CNETMsg_Tick
 12CNavDrawArea
 12CNavDrawMesh
@@ -4456,6 +4455,7 @@
 17CBaseCmdKeyValuesI32CSVCMsg_GameSessionConfigurationE
 17CBaseCmdKeyValuesI36CDOTAUserMsg_CustomHudElement_CreateE
 17CBaseCmdKeyValuesI36CDOTAUserMsg_CustomHudElement_ModifyE
+17CBaseMoveBehavior
 17CBasePlayerWeapon
 17CCLCMsg_VoiceData
 17CChoreoObjectBase
@@ -4824,6 +4824,7 @@
 18CSaveRestoreShared
 18CScenario_Position
 18CScriptTriggerHurt
+18CScriptTriggerOnce
 18CScriptTriggerPush
 18CSoundOpGameSystem
 18CSteamLearnManager
@@ -5753,7 +5754,7 @@
 21CLightQueryGameSystem
 21CLogicMeasureMovement
 21CMatchHeroSelectEvent
-21CMsgA
+21CMsgAddSocketResponse
 21CMsgDOTALeague_Player
 21CMsgDOTALeague_Stream
 21CMsgDetailedGameStats
@@ -13755,7 +13756,6 @@
 47CDOTA_Ability_Special_Bonus_Unique_Lone_Druid_6
 47CDOTA_Ability_Special_Bonus_Unique_Lone_Druid_7
 47CDOTA_Ability_Special_Bonus_Unique_Lone_Druid_8
-47CDOTA_Ability_Special_Bonus_Unique_Lone_Druid_9
 47CDOTA_Ability_Special_Bonus_Unique_Morphling_10
 47CDOTA_Ability_Special_Bonus_Unique_Naga_Siren_2
 47CDOTA_Ability_Special_Bonus_Unique_Naga_Siren_3
@@ -15205,6 +15205,7 @@
 57CMsgClientToGCGetGiftPermissionsResponse_FriendPermission
 57CMsgServerToGCMatchPlayerItemPurchaseHistory_ItemPurchase
 57CUserMsg_ParticleManager_ParticleFreezeTransitionOverride
+58CDOTA
 58CDOTA_Ability_AghsFort_Sand_King_BurrowStrike_Channel_Stop
 58CDOTA_Ability_AghsFort_Special_Clinkz_BurningBarrage_Singe
 58CDOTA_Ability_AghsFort_Special_Clinkz_SearingArrows_Ignite
@@ -15229,7 +15230,6 @@
 58CDOTA_Ability_Aghsfort_Special_Juggernaut_Blade_Fury_Force
 58CDOTA_Ability_Aghsfort_Special_Juggernaut_Omnislash_Ignite
 58CDOTA_Ability_Aghsfort_Special_Juggernaut_Omnislash_Shared
-58CDOTA_Ability_Aghsfort_Special_Lich_Frost_Nova_AOE_Attacks
 58CDOTA_Ability_Aghsfort_Special_Lich_Frost_Nova_Root_Disarm
 58CDOTA_Ability_Aghsfort_Special_Lina_FierySoul_Mini_Lagunas
 58CDOTA_Ability_Aghsfort_Special_Mars_Bulwark_Counter_Rebuke
@@ -15906,7 +15906,7 @@
 8CUserCmd
 8CUtlSlot
 8D8c=t
-8D;5Q^H
+8D;5a\H
 8E;7}3I
 8E;|$HD
 8HcG0L
@@ -17498,7 +17498,6 @@ ACT_WAVEFORM_END
 ACT_WAVEFORM_START
 ACT_ZOMBIE_LUNGE
 ACT_ZOMBIE_TRIP
-AClientMsg_MapLine
 AD Time Stamping
 ADDED %s (%s) to transition
 ADDONROOT
@@ -17720,6 +17719,7 @@ A\A]A^A_H
 A\A]A^H
 A\A]A^Hc
 A]A_uoH
+A_Ability_Aghsfort_Special_Lich_Frost_Nova_AOE_Attacks
 A_to_curve
 Ability
 Ability '%s' is unhidden in a slot > 5! This will cause issues in ability layout
@@ -18081,7 +18081,6 @@ AddRectangularOutlineBlocker( vMins, vMaxs, bClear ) : Sets or clears a blocker 
 AddResource
 AddRunePickup
 AddShopWhitelistItem
-AddSocketResponse
 AddSpeechBubble
 AddString
 AddToGestureSlot
@@ -19232,6 +19231,7 @@ CDOTAClientMsg_KillcamDamageTaken
 CDOTAClientMsg_KillcamDamageTaken_t
 CDOTAClientMsg_MakeTeamCaptain
 CDOTAClientMsg_MakeTeamCaptain_t
+CDOTAClientMsg_MapLine
 CDOTAClientMsg_MapLine_t
 CDOTAClientMsg_MapPing
 CDOTAClientMsg_MapPing_t
@@ -25280,7 +25280,6 @@ CDOTA_Modifier_Item_BlightedSpirit_Blight
 CDOTA_Modifier_Item_BlinkDagger
 CDOTA_Modifier_Item_Blood_Grenade
 CDOTA_Modifier_Item_Blood_Grenade_Debuff
-CDOTA_Modifier_Item_Blood_Grenade_Flight_Thinker
 CDOTA_Modifier_Item_Bloodstone
 CDOTA_Modifier_Item_Bloodstone_Active
 CDOTA_Modifier_Item_Bloodstone_Drained
@@ -36128,6 +36127,7 @@ Gets the current vision range
 Gets the deaths of the hero controlled by the specified PlayerID
 Gets the evasion resist of the unit
 Gets the extra offset to initial neutral creep spawn delay
+Gets the first courier useable by the specified player
 Gets the fixed respawn time
 Gets the game mode type
 Gets the game time -- matches the in-game clock.  Pauses with game pause
@@ -36647,7 +36647,6 @@ Hero_BountyHunter.Shuriken
 Hero_BountyHunter.Shuriken.Impact
 Hero_BountyHunter.Target
 Hero_BountyHunter.WindWalk
-Hero_Br
 Hero_BrewMaster.CinderBrew.Ignite
 Hero_Brewmaster.Brawler.Crit
 Hero_Brewmaster.CinderBrew
@@ -36656,6 +36655,7 @@ Hero_Brewmaster.CinderBrew.Target
 Hero_Brewmaster.CinderBrew.Target.Creep
 Hero_Brewmaster.DrunkenHaze.Cast
 Hero_Brewmaster.DrunkenHaze.Target
+Hero_Brewmaster.PrimalSplit.Cast
 Hero_Brewmaster.PrimalSplit.Return
 Hero_Brewmaster.PrimalSplit.Spawn
 Hero_Brewmaster.ThunderClap
@@ -37248,7 +37248,6 @@ Hero_NagaSiren.MirrorImage
 Hero_NagaSiren.ReelIn.Cast
 Hero_NagaSiren.RipTide.Cast
 Hero_NagaSiren.SongOfTheSiren
-Hero_Ne
 Hero_Necrolyte.DeathPulse
 Hero_Necrolyte.DeathSeeker
 Hero_Necrolyte.ReapersScythe.Cast
@@ -37257,6 +37256,7 @@ Hero_Necrolyte.SpiritForm.Cast
 Hero_Nevermore.RequiemOfSouls
 Hero_Nevermore.RequiemOfSouls.Damage
 Hero_Nevermore.RequiemOfSoulsCast
+Hero_Nevermore.Shadowraze
 Hero_Nightstalker.CripplingFear.Aura
 Hero_Nightstalker.Darkness
 Hero_Nightstalker.Darkness.Team
@@ -40680,6 +40680,7 @@ Modifier name %s is not lowercase
 Modifier script %s failed to find class named %s
 ModifierGainedData
 ModifierNames
+Modifier_Item_Blood_Grenade_Flight_Thinker
 Modifier_Pluck_Famango_Channel
 Modifies the number of valueless charges on this item
 Modify derived stat value constants. ( AttributeDerivedStat eStatType, float flNewValue
@@ -46087,6 +46088,7 @@ ShadowWaveEffectPotion.ShadowWave
 Shake the screen
 ShakeCommand_t
 ShakeRopes
+ShardBonus
 Shared cache for downloaded custom game data.  (Dedicated server only
 SharedObjectCache for %s (%d types
 SharedRandomAngle
@@ -46646,6 +46648,7 @@ T$`HcS`H
 T$hHcShH
 T$pHcSpH
 T$xHcSxH
+TA_Ability_Special_Bonus_Unique_Lone_Druid_9
 TD SUMMARY (%d summaries
 TD_OFFSET_NORMAL
 TD_OFFSET_PACKED
@@ -50311,6 +50314,7 @@ aihull_medium_tall
 aihull_small
 aihull_small_centered
 aihull_wide_human
+ailing_comments
 air_duration
 air_height
 airtime_duration
@@ -50612,7 +50616,6 @@ arrowstunduration
 artifact
 as_coach
 ascension_plasma_field
-aseMoveBehavior
 asn1 encoding routines
 asn1 length mismatch
 asn1_lib.c
@@ -50916,12 +50919,11 @@ autosave_fully_async
 autosavedangerous
 autosavedangerousissafe
 auxiliary_units_handles
-av_clear_selected_set
 available_at_event_level
 available_lane_creep_gold
 available_neutral_items
 avalanche_damage
-aveloci
+avelocity
 average
 average_client_simulate_time
 average_client_tick_time
@@ -52198,7 +52200,6 @@ chain_strikes
 chainfrost_damageratio
 chainparticle
 chains_damage
-challen
 challengePassword
 challenge_cave_in
 challenge_complete
@@ -53369,6 +53370,7 @@ death_prophet_spirit_siphon
 death_prophet_witchcraft
 death_time
 death_ward_ability
+debuff_delay
 debuff_limit
 debuff_radius
 debuff_spell_amp
@@ -55029,7 +55031,6 @@ ease_in_out
 easeinout
 easeout
 ebe2ca
-ebuff_delay
 ec_pre_comp
 ecdsa-with-Recommended
 ecdsa-with-SHA1
@@ -55511,7 +55512,6 @@ equip_regions_list
 equip_sound
 equipped_econ_items
 equipped_state
-er_orb_of_corrosion_debuff
 eresult
 eresult_deprecated
 errno_location
@@ -55611,7 +55611,6 @@ events/aghanim/interface/hazard_frontreduction
 events/aghanim/interface/hazard_silence
 eventsource
 eventtype
-evermore.Shadowraze
 every_n_attacks
 every_unit
 everyone_left
@@ -58715,6 +58714,7 @@ issuer_player_id_const
 issuer_player_index
 issuingDistributionPoint
 istechiesminitaunt
+iszInteractsWith
 iszString
 italian
 item_ability_id
@@ -61106,6 +61106,7 @@ lane_top_pathcorner_goodguys_2
 lane_top_pathcorner_goodguys_2b
 lane_top_pathcorner_goodguys_3
 lane_top_pathcorner_goodguys_4
+languag
 language
 language_code
 language_preference
@@ -62193,7 +62194,6 @@ m_SelectedHeroes
 m_SendTeamStatsTimer
 m_SequenceTransitioner
 m_SetDebugBits
-m_ShardBonus
 m_SharedCooldownList
 m_ShopType
 m_ShortName
@@ -66297,7 +66297,6 @@ m_iszIcon_Offscreen
 m_iszIcon_Onscreen
 m_iszIdle
 m_iszInteractsAs
-m_iszInteractsWith
 m_iszLandmarkName
 m_iszLastTarget
 m_iszLerpEffect
@@ -69326,7 +69325,6 @@ modfiier_rattletrap_cog_push
 modifer_change_tree_model_thinker
 modifer_hoodwink_acorn_shot_tree_thinker
 modifer_pine_cone_acorn_shot_tree_thinker
-modifie
 modifiedconvars_t
 modifier_731_teaser_stun
 modifier_731_teaser_thinker
@@ -71892,6 +71890,7 @@ modifier_oracle_fortunes_end_purge
 modifier_oracle_purifying_flames
 modifier_oracle_rain_of_destiny
 modifier_oracle_rain_of_destiny_aura
+modifier_orb_of_corrosion_debuff
 modifier_orb_of_destruction_debuff
 modifier_orb_of_revelations_reveal
 modifier_orchid_malevolence_debuff
@@ -73129,6 +73128,7 @@ nav_begin_selecting
 nav_bfs_debug
 nav_clear_attribute
 nav_clear_attributes
+nav_clear_selected_set
 nav_corner_adjust_adjacent
 nav_curve_alt
 nav_curve_iter
@@ -73523,7 +73523,6 @@ next_payment_date
 next_rarity
 nextthink
 nexttoken
-nge_instance_id
 nian_cast_ability
 nian_channel_roar
 nian_channel_roar_water
@@ -73962,6 +73961,7 @@ npc_dota_jungle_varmint
 npc_dota_lantern
 npc_dota_lesser_eidolon
 npc_dota_lich_ice_spire
+npc_dota_lone_druid_bear
 npc_dota_lone_druid_bear%1d
 npc_dota_lone_druid_bear%d
 npc_dota_looping_sound
@@ -74430,7 +74430,6 @@ ortholightheight
 ortholightwidth
 os_type
 osversion
-ota_lone_druid_bear
 other damage done: %d
 otherMailbox
 other_blocker
@@ -78805,7 +78804,6 @@ reward_normal_pts_escalation_amount
 reward_normal_pts_escalation_limit
 reward_premium_pts
 reward_sound
-rewmaster.PrimalSplit.Cast
 rf;C6I
 rfc822Mailbox
 rhHcR`H
@@ -79204,11 +79202,11 @@ s/varchanges_%s
 s0D9k4t
 s0D;s@A
 s0D;s@D
+s0Hc{@H
 s0Ic|$$H
 s0x%08X:%s = "%s
 s1Hc{<H
 s1_mapname
-s3Hc{@H
 s4zrup
 s4zwuu
 s:  %d:%f - %s origin changed ( %8.3f, %8.3f, %8.3f ) to ( %8.3f, %8.3f, %8.3f
@@ -83652,7 +83650,6 @@ the cutoff for where badge points stop granting (0 is disable this limit
 the date this trophy was introduced (YYYY-MM-DD or YYYY-MM-DD hh:mm:ss
 the date/time this mode ends (YYYY-MM-DD hh:mm:ss) UTC
 the date/time this mode starts (YYYY-MM-DD hh:mm:ss) UTC
-the first courier useable by the specified player
 the global scope
 the image used to represent this level
 the score at which this level is unlocked
@@ -83921,7 +83918,6 @@ trail_damage_per_second
 trail_damage_radius
 trail_move_slow
 trail_placement_duration
-trailing_comments
 trainer_pudge
 training_data_recorded
 trance_duration
@@ -84180,6 +84176,7 @@ uint8[%u
 ujLcOXfE
 ukrainian
 ul[A\A]A
+ultiSource
 ultimate_cooldown
 ultimate_scepter_consumed_alchemist_bonus_mana
 ultimate_state
@@ -84522,6 +84519,8 @@ value_override
 value_string
 value_uint32
 values_float
+values_scepter
+values_shard
 valve_dota_001.stinger.buy_back
 valve_dota_001.stinger.buy_back_player
 valve_dota_001.stinger.dire_lose
