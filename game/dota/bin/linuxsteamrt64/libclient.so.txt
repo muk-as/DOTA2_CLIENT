@@ -6823,10 +6823,10 @@
 22CLoadingScreenModifier
 22CMarketPriceAsyncCache
 22CMatchPlayerTimedStats
-22CMsgA
 22CMsgAMGetUserGameStats
 22CMsgAbandonCurrentGame
 22CMsgAccountGuildInvite
+22CMsgApplyRemoteConVars
 22CMsgBotWorldState_Unit
 22CMsgChatToxicityReport
 22CMsgClientToGCNameItem
@@ -11089,6 +11089,7 @@
 32CDOTA_Modifier_Mars_ArenaOfBlood
 32CDOTA_Modifier_Mars_Spear_Impale
 32CDOTA_Modifier_Medusa_ManaShield
+32CDOTA_Modifier_MonkeyKing_Bounce
 32CDOTA_Modifier_Morphling_Scepter
 32CDOTA_Modifier_Muerta_Gunslinger
 32CDOTA_Modifier_NagaSiren_Ensnare
@@ -21464,7 +21465,6 @@ ApplyLevelsFailedScreen
 ApplyLevelsScreen
 ApplyOnItem
 ApplyOverrides_R: failed to find field '%s' in class '%s
-ApplyRemoteConVars
 ApplyStyles
 Applying overrides for %s 0x%p
 Apr 20 2023
@@ -22341,7 +22341,6 @@ Bot Script
 Bot script ID to use for local games
 BotAttackScoreBonus
 BotContainer
-BotDebug: Draw MiniMap
 BotDifficultyDropdown_Easy
 BotDifficultyDropdown_Extra1
 BotDifficultyDropdown_Extra2
@@ -28961,7 +28960,6 @@ CDOTA_SimpleObstruction
 CDOTA_TeleportTimerManager
 CDOTA_TempTree
 CDOTA_Tiny_ScepterTree
-CDOTA_U
 CDOTA_UI_ArcanaVote::SubmitArcanaVotes
 CDOTA_UI_AvatarImage::LoadAvatarInternal
 CDOTA_UI_BracketPrediction::EventPredictionPicked
@@ -29012,6 +29010,7 @@ CDOTA_UnitInventory
 CDOTA_Unit_AghsFort_Creature_Batrider
 CDOTA_Unit_AghsFort_Creature_DragonKnight
 CDOTA_Unit_AghsFort_Creature_DungeonBat
+CDOTA_Unit_AghsFort_EarthSpiritBoss_Stone
 CDOTA_Unit_AghsFort_SpectralTusk_Tombstone
 CDOTA_Unit_Aghsfort_Aziyog_Underlord_Portal
 CDOTA_Unit_Announcer
@@ -37277,7 +37276,6 @@ D:h$thH
 D:hPvbH
 D:{gtIH
 D;!ttHc
-D;%LBo
 D;.t?fH
 D;4$}VD
 D;8tNH9
@@ -44217,7 +44215,6 @@ DOTA_Modifier_Alert_%s_%s
 DOTA_Modifier_Alert_%s_BH_Track
 DOTA_Modifier_Alert_%s_SB_ChargeOfDarknessTarget
 DOTA_Modifier_Alert_Time_Remaining
-DOTA_Modifier_MonkeyKing_Bounce
 DOTA_ModifyGold_AbandonedRedistribute
 DOTA_ModifyGold_AbilityCost
 DOTA_ModifyGold_AbilityGold
@@ -46179,6 +46176,7 @@ Debug utility for flare
 Debug utility for inventory
 Debug utility for swap
 Debug visualization of VR closed caption placement
+Debug: Draw MiniMap
 DebugAutoComplete
 DebugComputedName
 DebugComputedRow
@@ -52006,6 +52004,7 @@ Hero_razor.Attack.Melee
 Hero_razor.lightning
 Heroes Challenge Report
 Heroes Forward Invis
+Heroes Forward Translucent
 HeroesColumnsHeader
 HeroesFirstColumn
 HeroesFirstColumnHeader
@@ -52844,6 +52843,7 @@ InsertOrLookupMapValue
 InsertRowButton
 InspectHero
 InspectHeroAgility
+InspectHeroAll
 InspectHeroComplexity%d
 InspectHeroInWorld
 InspectHeroIntelligence
@@ -54771,7 +54771,6 @@ MD5_ProcessSingleBuffer
 MD5_PseudoRandom
 MELEE_CREEP_ACQUISITION_RANGE
 MEM_ERROR
-MESSAGE_HOLDOUT_TOWER_DESTROYED
 METALNESSBLENDTOFULL
 MEntitySubclassScopeFile
 MEnumFlagsWithOverlappingBits
@@ -67077,7 +67076,6 @@ UnitSilenced
 UnitSpecificKeybinds_t invalid index %d not >= 0 and < %d
 UnitStunned
 UnitType
-Unit_AghsFort_EarthSpiritBoss_Stone
 Universal
 Unknown
 Unknown APP0 marker (not JFIF), length %u
@@ -70540,6 +70538,7 @@ absorb_bonus_per_death
 absorb_per_hero_hit
 absorb_per_unit_hit
 absorigin
+absorigin_follow
 absorption_pct
 abyssal_underlord_atrophy_aura
 abyssal_underlord_cancel_dark_rift
@@ -72028,7 +72027,6 @@ associated_item_def
 associated_season
 associated_workshop_file_for_direct_payments
 associated_workshop_files
-ast_on_ally_gesture_time
 asterisk
 asyncDestroyDelay
 async_data_cache.h:869
@@ -73572,6 +73570,7 @@ cask_chance
 cask_cooldown
 cast_activity
 cast_animation
+cast_on_ally_gesture_time
 cast_pct_improvement
 cast_points
 cast_radius
@@ -74798,6 +74797,7 @@ composite -blend %d%%%% %s%04d.png %s%04d.png out\%s\%s%04d.png
 composite -blend %d%%%% %s%04d.tga %s%04d.tga out\%s\%s%04d.tga
 compositematerial_showdebugwindow
 compressed_msg
+compression
 compression" attribute not found in the header
 compressionMethod
 computed_mmr_max
@@ -81496,6 +81496,7 @@ furion_sprout
 furion_teleportation
 furion_wrath_of_nature
 futimes
+fx.cpp
 fx_blood.cpp
 fx_blood_bullet_impact
 fx_drawmetalspark
@@ -83132,6 +83133,7 @@ huskar_inner_fire
 huskar_inner_vitality
 huskar_life_break
 hype_loc
+h|D;-b3h
 i < length
 i matching ent%s
 i(ERemoteStoragePublishedFileVisibility) Visibility of the published file (private, friends, public, etc
@@ -83234,6 +83236,7 @@ if camera orientation changes this much update orientation
 if imgui should consume input
 if imgui should display
 if you ignore case and strip out the enum name prefix (if any). This is error-prone and can lead to undefined behavior. Please avoid doing this. If you are using allow_alias, please assign the same numeric value to both enums
+ifier_phoenix_sun_ray
 ignite_multicast_aoe
 ignore socket quality
 ignore-parent-flow
@@ -83777,7 +83780,6 @@ is not a proto3 enum, but is used in
 is not a type
 is not a valid identifier
 is not an enum type
-is not compatible with this reflection object (which is for type
 is not defined
 is not defined or is not an extension of
 is of enum type %s but is not declared as an enum field
@@ -96504,7 +96506,6 @@ modifier_phoenix_icarus_dive
 modifier_phoenix_icarus_dive_burn
 modifier_phoenix_sun
 modifier_phoenix_sun_debuff
-modifier_phoenix_sun_ray
 modifier_phoenix_sun_ray_slow
 modifier_phoenix_sun_ray_vision
 modifier_phoenix_supernova_hiding
@@ -97899,6 +97900,7 @@ north_south
 norwegian
 noscripting
 not bound
+not compatible with this reflection object (which is for type
 not enough elements in QAngle string
 not enough elements in Quaternion string
 not just within
@@ -97932,7 +97934,6 @@ npc_aghsfort_unit_undying_zombie
 npc_aghsfort_unit_undying_zombie_torso
 npc_aghsfort_witch_doctor_death_ward
 npc_dialog
-npc_dot
 npc_dota_ability_building
 npc_dota_aghsfort_arc_warden_boss
 npc_dota_aghsfort_clinkz_skeleton_archer
@@ -98059,6 +98060,7 @@ npc_dota_hero_crystal_maiden
 npc_dota_hero_dark_seer
 npc_dota_hero_dark_willow
 npc_dota_hero_dawnbreaker
+npc_dota_hero_dazzle
 npc_dota_hero_death_prophet
 npc_dota_hero_disruptor
 npc_dota_hero_doom_bringer
@@ -98526,7 +98528,6 @@ omniknight_degen_aura
 omniknight_guardian_angel
 omniknight_hammer_of_purity
 omniknight_purification
-ompression
 on_completion
 on_dismiss_class
 onactivate
@@ -101074,6 +101075,7 @@ power_treads_stat
 power_treads_str
 powershot_damage
 pp;^0t8H
+pportEventRequestResult_InvalidItemDef
 practice_password
 pre-transform-rotate2d
 pre-transform-scale2d
@@ -101513,11 +101515,15 @@ pwatchvar
 pwrd_cyber_cafe_id
 pwrd_cyber_cafe_name
 py_generic_services
-p|D;53x
-p|D;5Bz
-p|D;5Qv
-p|D;5Yo
-p|D;5t
+p|D;5#x
+p|D;5Av
+p|D;5F
+p|D;5Io
+p|D;5Iz
+p|D;5L
+p|D;5eUm
+p|D;5fy
+p|D;5x
 p|E;t$0
 q(HcI H
 q<@8p<t
@@ -102568,7 +102574,6 @@ right_panel
 right_swipe_time
 rightedge
 rightleft
-rigin_follow
 riki_blink_strike
 riki_permanent_invisibility
 riki_poison_dart
@@ -102616,7 +102621,6 @@ rocket_flare_interval
 rocket_flare_offset_pct
 rocket_flare_rockets
 rodata
-roes Forward Translucent
 role_flags
 role_handicaps
 role_id
@@ -107268,10 +107272,9 @@ t'IcD$x
 t(Lc#D;c
 t)D9s,t
 t)HcPt1
-t*D;5IN
+t*D;59N
 t*D;p,t
 t*Mc<$E
-t+D9%+E
 t+H;y s
 t+HcPt1
 t+Mc7E;w
@@ -107459,7 +107462,6 @@ taG : voiced velar stop
 taI94$H
 taM;4$L
 taM;<$L
-ta_hero_dazzle
 tab_image_override_name
 tabcycle
 tabindex
