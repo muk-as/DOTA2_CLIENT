@@ -88,6 +88,7 @@
 02d:%02d.%02d
 02i enabled(%s) blocked(%s) audible(%s) speaking(%s
 02i speaking(%s) above_threshold(%s
+02llu:%02llu:%02llu
 048<@DHLPTX\`dhlpt
 048<AEIMQUY]aeimquy
 04InitEPNS_8Block4x4EPNS_14ColorFloatRGBAENS_11ErrorMetricE
@@ -654,7 +655,6 @@
 13CMsgTransform
 13CMsgWatchGame
 13CMsgWebAPIKey
-13CNetM
 13CNetMessagePBILi102E24CUserMessageCloseCaptionL13SignonGroup_t13EL19NetChannelBufType_t1ELb1EE
 13CNetMessagePBILi103E30CUserMessageCloseCaptionDirectL13SignonGroup_t13EL19NetChannelBufType_t1ELb1EE
 13CNetMessagePBILi106E16CUserMessageFadeL13SignonGroup_t13EL19NetChannelBufType_t1ELb1EE
@@ -856,6 +856,7 @@
 13CNetMessagePBILi567E35CDOTAUserMessage_TeamCaptainChangedL13SignonGroup_t13EL19NetChannelBufType_t1ELb1EE
 13CNetMessagePBILi568E37CDOTAUserMsg_SendRoshanSpectatorPhaseL13SignonGroup_t13EL19NetChannelBufType_t1ELb1EE
 13CNetMessagePBILi569E30CDOTAUserMsg_ChatWheelCooldownL13SignonGroup_t13EL19NetChannelBufType_t1ELb1EE
+13CNetMessagePBILi570E33CDOTAUserMsg_DismissAllStatPopupsL13SignonGroup_t13EL19NetChannelBufType_t1ELb1EE
 13CNetMessagePBILi571E33CDOTAUserMsg_TE_DestroyProjectileL13SignonGroup_t13EL19NetChannelBufType_t1ELb1EE
 13CNetMessagePBILi572E30CDOTAUserMsg_HeroRelicProgressL13SignonGroup_t13EL19NetChannelBufType_t1ELb1EE
 13CNetMessagePBILi573E39CDOTAUserMsg_AbilityDraftRequestAbilityL13SignonGroup_t13EL19NetChannelBufType_t1ELb1EE
@@ -5151,6 +5152,7 @@
 17C_PointCameraVFOV
 17C_ServerPeerGroup
 17C_TEUnitAnimation
+17C_TriggerBuoyancy
 17DOTABotDifficulty
 17EBattleReportSort
 17EReadyCheckStatus
@@ -8859,6 +8861,7 @@
 26PublishedFileDetails_KVTag
 26TEBeamEntPoint_GameEvent_t
 26TEEnergySplash_GameEvent_t
+27.CMsgChatToxicityToxicPlayerMatchesReport.IndividualRow
 27.CMsgClientToGCCandyShopDevGrantCandyResponse.EResponse
 27.CMsgClientToGCCandyShopRerollRewardsResponse.EResponse
 27.CMsgClientToGCRequestGuildMembershipResponse.EResponse
@@ -9351,7 +9354,6 @@
 28CDOTA_Modifier_ElixerHealing
 28CDOTA_Modifier_FillerThinker
 28CDOTA_Modifier_Firework_Mine
-28CDOTA_Modifier_Followthrough
 28CDOTA_Modifier_IonShell_Slow
 28CDOTA_Modifier_Item_AeonDisk
 28CDOTA_Modifier_Item_Ballista
@@ -14368,6 +14370,7 @@
 40CInterpolatedVarProceduralUsingOwnerLerpI27AnimationOperationHistory_t25C_BaseAnimatingControllerE
 40CInterpolatedVarProceduralUsingOwnerLerpI27AnimationOperationHistory_t32C_BaseAnimatingOverlayControllerE
 40CMsgAvailablePredictions_MatchPrediction
+40CMsgChatToxicityToxicPlayerMatchesReport
 40CMsgClientToGCCandyShopDevClearInventory
 40CMsgClientToGCCandyShopDevGrantCandyBags
 40CMsgClientToGCCavernCrawlRequestMapState
@@ -17913,6 +17916,7 @@
 54CDOTA_Modifier_Winter2022_EnableFeedableRoshanInteract
 54CDOTA_Modifier_Winter_Wyvern_Winters_Curse_Kill_Credit
 54CInlineJob_CMsgGCToClientPrivateCoachingSessionUpdated
+54CMsgChatToxicityToxicPlayerMatchesReport_IndividualRow
 54CMsgClientToGCGetCurrentPrivateCoachingSessionResponse
 54CMsgClientToGCRequestPlusWeeklyChallengeResultResponse
 54CMsgClientToGCSelectCompendiumInGamePredictionResponse
@@ -18931,7 +18935,6 @@
 7EResult
 7FFF00
 7H;1u H
-7Hc5F[T
 7ICamera
 7INotify
 7If true, return key value tags in the returned details
@@ -18969,6 +18972,7 @@
 8Block4x4
 8CAmmoDef
 8CDOTAEgg
+8CDOTA_Modifier_Followthrough
 8CFXQueueI16ParticleParams_t19ImpactTraceParams_tE
 8CFXQueueI17PlaceDecalEvent_tiE
 8CHROMA_BLUE_WEIGHTE
@@ -21196,7 +21200,6 @@ ASSARAV
 ASYNC_FIRE_AND_FORGET
 ASetEncodingBits_PlanarEv
 ATARARAp
-ATARATB
 ATARAWAp
 ATATASB
 ATAUA`0A`1ATB
@@ -21316,6 +21319,7 @@ AWAVATSHc
 AWAVATSI
 AWAVATSL
 AWAVATSLc
+AWAVATSLc%N
 AWAVATSLc'M
 AWAVATSLc?M
 AWAVATSM
@@ -22514,6 +22518,7 @@ AutographOption
 AutographOwned
 AutographOwnedCenter
 AutographOwnedIcon
+AutographQuantity
 AutographStatus
 Autograph_Lv10
 Autograph_Lv20
@@ -22740,6 +22745,7 @@ BRARA`0BRBRA
 BRATARATARA
 BRATARATARAZBRA
 BRATARATARAZBZAp
+BRATARATB
 BRAUASA
 BRAZARAZARAZARAZARAp
 BRAZARAZARAp
@@ -31119,6 +31125,7 @@ CMsgCandyShopRewardData_EventPoints
 CMsgCandyShopRewardData_Item
 CMsgCandyShopUserData
 CMsgChatToxicityReport
+CMsgChatToxicityToxicPlayerMatchesReport
 CMsgClearDecalsForSkeletonInstanceEvent
 CMsgClearEntityDecalsEvent
 CMsgClearWorldDecalsEvent
@@ -32815,6 +32822,7 @@ CTimeline
 CTonemapController2
 CTransform
 CTransform-world
+CTriggerBuoyancy
 CTriggerCamera
 CTriggerLerpObject
 CTriggerVolume
@@ -36244,6 +36252,7 @@ C_TextureBasedAnimatable
 C_TintController
 C_TonemapController2
 C_TonemapController2Alias_env_tonemap_controller2
+C_TriggerBuoyancy
 C_TriggerCamera
 C_TriggerLerpObject
 C_TriggerVolume
@@ -37959,7 +37968,6 @@ D58A17
 D8pLt$H
 D9 ufzd
 D9$uVzT
-D9%-Vg
 D9(uFzD
 D9,u6z4
 D90u&z
@@ -45364,7 +45372,6 @@ DOTA_Profile_ProfilePage
 DOTA_Profile_Tooltip_LifetimeGames
 DOTA_Profile_TrophyPage
 DOTA_PublicTextBanned_Reports
-DOTA_PublicTextBanned_Reports_Avoid_Overflow
 DOTA_PurchaseBattlePassLevels
 DOTA_PurchaseError_Ok
 DOTA_PurchaseError_SteamOverlayDisabled
@@ -49923,7 +49930,6 @@ FullyInstalled
 Func( %s
 Function
 Function              %10s %10s %10s %10s
-Function requires %d arguments; only %d given
 FunctionInfo_t
 FuseFunctionIndex_t
 FuseVariableAccess_t
@@ -52922,7 +52928,6 @@ ID of the Cloud file to get details for
 IDEMPOTENCY_UNKNOWN
 IDEMPOTENT
 ID_CHAR
-ID_ORACLE_PA
 IENDt,A
 IEconItemDescription::YieldingFillOutEconItemDescription
 IEconItemInterface
@@ -53275,6 +53280,7 @@ IndirectVoxelDimZ
 IndividualItem
 IndividualProgress
 IndividualRankUpdate
+IndividualRow
 IndividualTrys
 Ineligible
 Inference
@@ -53874,6 +53880,7 @@ IsDataPending
 IsDataPending%d
 IsDayTime
 IsDebuff
+IsDebuffImmune
 IsDecompressing
 IsDecompressing%d
 IsDedicatedServer
@@ -56163,7 +56170,7 @@ Maximum think time in milliseconds, warning is printed if this is exceeded
 Maximum updates per second that the server will allow
 Maximum velocity for a drag scroll flick
 Maximum visible distance
-May 15 2023
+May 17 2023
 MaybeAllocateAligned cannot fail here
 Maynard Bot
 McB0IcI0
@@ -56241,7 +56248,6 @@ MessageIsUnlocked
 MessageLabel
 MessageLockStatus
 MessageOptions
-MessagePBILi570E33CDOTAUserMsg_DismissAllStatPopupsL13SignonGroup_t13EL19NetChannelBufType_t1ELb1EE
 MessageRange
 MessageSet is not supported in proto3
 MessageSets cannot have fields, only extensions
@@ -58186,6 +58192,7 @@ N7usercmd16CUserCmdBaseHostINS_17CProtoUserCmdBaseI15CDota2UserCmdPBEEEE
 N7usercmd17CProtoUserCmdBaseI15CDota2UserCmdPBEE
 N8;H8v]I
 N8;H8wKI
+N8f9H8t
 N8f9H8ug
 N8panorama10CCountdownE
 N8panorama10CScrollBarE
@@ -60246,7 +60253,6 @@ OPEN_PAREN
 OPTIONS
 OP_EQUAL
 ORGANIZATIONAL
-OTE_FAILED_CANNOT_KICK_ADMIN
 OTHER_ERROR
 OVERALL
 OVERHEAD_ALERT_BLOCK
@@ -62778,6 +62784,7 @@ PseudoModifiers
 PubMatch
 Public script scope
 PublicRadioButton
+PublicTextBanned_Reports_Avoid_Overflow
 PublicUniverse
 Publish
 PublishAllEnabled
@@ -63107,6 +63114,7 @@ RADIATION
 RANGED_CREEP_ACQUISITION_RANGE
 RANK_TIER_UPDATED
 RARARA
+RARARARA
 RARARARARA
 RARARARARARA
 RARARARARARARA
@@ -63157,7 +63165,6 @@ RARARARBRARARARARARARARA
 RARARARJRARARDR0
 RARARASARARARARARARARARARARARAp
 RARARASARAp
-RARARASC
 RARARATA
 RARARATARAp
 RARARATB` A
@@ -64106,6 +64113,7 @@ ReportsDetails1
 ReportsSection
 Request
 Request Initial Event Points
+Request list of spectator lobbies from GC
 RequestActionScoreByName
 RequestCoach
 RequestHeader
@@ -69818,6 +69826,7 @@ VN3Etc
 VOICEDATA_FORMAT_ENGINE
 VOICEDATA_FORMAT_STEAM
 VOOperatorStackManager
+VOTE_FAILED_CANNOT_KICK_ADMIN
 VOTE_FAILED_FAILED_RECENTLY
 VOTE_FAILED_GENERIC
 VOTE_FAILED_ISSUE_DISABLED
@@ -70329,6 +70338,7 @@ WATER_WAKE_NONE
 WATER_WAKE_RUNNING
 WATER_WAKE_WALKING
 WATER_WAKE_WATER_OVERHEAD
+WAVATSH
 WAVAVAVAVAVAVAVAVAVAVAVAVAVAVAVAVAVAVAVAVAVAVAVAVAVAVAVAVDRBRBRBRBRBRBRBRBRBVARAp
 WAWASAp
 WAWAWA
@@ -72841,6 +72851,7 @@ ad_special_bonus_gold_lvl20_l
 ad_special_bonus_gold_lvl20_r
 ad_special_bonus_gold_lvl25_l
 ad_special_bonus_gold_lvl25_r
+adcastTimelineEvent_HeroDeath
 add test object
 add_attribute
 add_categories
@@ -73039,6 +73050,7 @@ aghsfort_lich_frost_shield
 aghsfort_lich_ice_spire
 aghsfort_lich_sinister_gaze
 aghsfort_lifestealer_enraged_pulse
+aghsfort_lina_dragon_slave
 aghsfort_lina_fiery_soul
 aghsfort_lina_laguna_blade
 aghsfort_lina_light_strike_array
@@ -77898,7 +77910,6 @@ d] CLASS: %s, NAME: %s
 d] Decode %.3f
 d] EMPTY
 d] movespeed: %d, location (%2.2f %2.2f %2.2f), source %s, target %s, dodgeable %s, isattack %s, isevaded %s, expiretime %2.2f
-d_relics
 dac_dof_far_blurry
 dac_dof_far_crisp
 dac_dof_tilt_to_ground
@@ -81690,7 +81701,6 @@ escalation_level3
 essence_collected
 essence_gathered
 essence_item_id
-est list of spectator lobbies from GC
 estimated_filesize_mb
 estimated_market_price
 estimated_wait_seconds_remaining
@@ -82033,7 +82043,6 @@ fA;D$8u,M
 fAttackTimeRemaining
 fD9{$u'H
 fD9{|tTH
-fD;%uuG
 fDE;fHu
 fDamage
 fDistance
@@ -83441,6 +83450,7 @@ first_blood_time
 first_leaderboard_week
 first_leaver_accountid
 first_loot_list_override
+first_match_seen
 first_match_timestamp
 first_other_hero_id
 first_pick
@@ -83849,6 +83859,7 @@ friendrequestignore
 friends
 friends_id
 friends_in_open_lobbies
+friends_name
 friendship_age_requirement
 friendship_age_requirement_two_factor
 friendship_timestamps
@@ -84649,7 +84660,6 @@ grant_underdraft_gold
 grant_untradeable_items
 granted_item_defs
 granted_items
-graphQuantity
 graph_assists
 graph_data
 graph_deaths
@@ -85483,7 +85493,6 @@ href="event:UIPopupButtonClicked( DOTAShowProfilePage(%llu
 hscript
 hscript_lightbinding
 hscroll
-hsfort_lina_dragon_slave
 hsv-transform
 htarget
 http://%s
@@ -85606,8 +85615,7 @@ huskar_inner_fire
 huskar_inner_vitality
 huskar_life_break
 hype_loc
-h|D9-]G
-h|D9-cK
+h|D9-*Q
 i < length
 i matching ent%s
 i(ERemoteStoragePublishedFileVisibility) Visibility of the published file (private, friends, public, etc
@@ -89868,6 +89876,7 @@ last_kill_hero_name
 last_match
 last_match_id
 last_match_screen
+last_match_seen
 last_message_id
 last_playtime
 last_playtimes
@@ -90236,7 +90245,6 @@ llenge_BH
 llu-%s
 llu.dem
 llu.vpk
-llu:%02llu:%02llu
 llu:%d
 llu:%u
 load_captions
@@ -100639,7 +100647,7 @@ name_token
 nameable
 named_value
 navajowhite
-nds_name
+nction requires %d arguments; only %d given
 near %s
 near '%c
 near char(%#02X
@@ -101424,8 +101432,8 @@ num_matches_seen
 num_matches_to_search
 num_members
 num_messages
-num_messages_human_thinks_toxic
 num_messages_ml_thinks_toxic
+num_messages_toxic
 num_more_active_events_down
 num_more_active_events_up
 num_negative_reports_remaining
@@ -101918,6 +101926,7 @@ owned_packs
 owned_packs_count
 owned_quantity
 owned_relic_count
+owned_relics
 owned_tier
 owner_account_id
 owner_context
@@ -101944,7 +101953,7 @@ p OnInitAudioMainThread
 p Play
 p RARARA
 p RARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARA
-p RARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARB
+p RARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARB
 p RARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARASA
 p RBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBp
 p RCp p
@@ -104805,7 +104814,10 @@ pwatchvar
 pwrd_cyber_cafe_id
 pwrd_cyber_cafe_name
 py_generic_services
-p|D95X_p
+p|D95/8
+p|D95Cnp
+p|D95b%p
+p|D95pQp
 p|G9t%0u
 p}?fff
 q(D;q,u
@@ -105252,6 +105264,7 @@ rd;qdsDH
 rd;qdsLI
 rd;qdvDH
 rd;qdvLI
+rd_type
 reHcq`H
 re_turn
 ready_check
@@ -107410,7 +107423,6 @@ sfixed32
 sfixed64
 sfloat32 differs (net %g pred %g) diff(%g
 sfloat64 differs (net %g pred %g) diff(%g
-sgClientToGCRequestPlayerCoachMatches
 sguides/%s_%u.build
 shackle_count
 shackleshot
@@ -109871,7 +109883,6 @@ startTime
 start_action_id
 start_active
 start_at_attachment
-start_at_customorigin
 start_at_match_id
 start_at_origin
 start_bags
@@ -110657,9 +110668,8 @@ t#IcOP
 t#IcOX
 t#IcOh
 t#IcOp
-t$ D;5G
 t$ E+t
-t$ H;5g
+t$ H;5
 t$ IcT
 t$(A9D$(t
 t$(A9D$(u
@@ -110749,7 +110759,6 @@ t=0m5s
 t=<#umI
 t=HcG<H
 t=IcOTH
-t=L95zgT
 t=Mc}PM
 t>A9F,u8L
 t>Hcp8H
@@ -110792,7 +110801,6 @@ tR9WX~,HcG\H
 tRHcY8H
 tRI96vs
 tRI;^htwI;^p
-tRL95ygT
 tSH;C(A
 tSHcH H
 tSIcG8H
@@ -110813,6 +110821,7 @@ t[Mc,$D
 t\A9D$(uUA
 t_9w tZ9w$tU9w(tP9w,tK9w0tF9w4tA9w8t<9w<t79w@t29wDt-9wHt(9wLt#9wPt
 t_IcFPH9
+t_at_customorigin
 t`</uOH
 ta heighH
 taIcM`H
@@ -111198,7 +111207,6 @@ texturename
 texturewidth
 texturewidth and textureheight can be used to override the size of vector graphics. Default value of -1 indicates texture width/height to be determined from source file
 tgHcH8H
-tgL95xgT
 tgt_alpha
 tgtpath
 th or daH
@@ -112023,7 +112031,6 @@ tzD9#u_D9s
 tzHcQ8H
 t|A9_0~v
 t|HcH`H
-t|L95wgT
 u - %u
 u / %u
 u iterated blocks
@@ -113662,11 +113669,8 @@ xvA9D$P~oE
 xvE9t$ ~oE
 x{97~wH
 x{9CP~vE
-x|D9=H5o
-x|D9=V
-x|D9=iZ
-x|D9=|Z
-x|D9=|y
+x|D9=&Co
+x|D9=wi
 x|F9|+0u>N
 x|F9|30ueJ
 x|G9|%0uYO

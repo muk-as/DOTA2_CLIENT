@@ -486,6 +486,7 @@
 13CNetMessagePBILi540E26CDOTAUserMsg_QuickBuyAlertL13SignonGroup_t13EL19NetChannelBufType_t1ELb1EE
 13CNetMessagePBILi543E26CDOTAUserMsg_ModifierAlertL13SignonGroup_t13EL19NetChannelBufType_t1ELb1EE
 13CNetMessagePBILi544E24CDOTAUserMsg_HPManaAlertL13SignonGroup_t13EL19NetChannelBufType_t1ELb1EE
+13CNetMessagePBILi545E23CDOTAUserMsg_GlyphAlertL13SignonGroup_t13EL19NetChannelBufType_t1ELb1EE
 13CNetMessagePBILi547E38CDOTAUserMsg_SpectatorPlayerUnitOrdersL13SignonGroup_t13EL19NetChannelBufType_t1ELb1EE
 13CNetMessagePBILi548E17CBaseCmdKeyValuesI36CDOTAUserMsg_CustomHudElement_CreateEL13SignonGroup_t13EL19NetChannelBufType_t1ELb1EE
 13CNetMessagePBILi549E17CBaseCmdKeyValuesI36CDOTAUserMsg_CustomHudElement_ModifyEL13SignonGroup_t13EL19NetChannelBufType_t1ELb1EE
@@ -1023,7 +1024,6 @@
 15CTier3AppSystemI20ISource2GameEntitiesLx0EE
 15CTier3AppSystemI26IServerEntitySubclassUtilsLx0EE
 15CTier3AppSystemI27IServerResourceCompilerInfoLx0EE
-15CTier4AppSystemI18IGameConfigurationLi0EE
 15CTonemapTrigger
 15CTraceFilterLOS
 15CTriggerGravity
@@ -4443,6 +4443,7 @@
 16CSosFilterInfo_t
 16CSubtickMoveStep
 16CTEArmorRicochet
+16CTriggerBuoyancy
 16CTriggerCallback
 16CTriggerMultiple
 16CTriggerTeleport
@@ -6638,7 +6639,6 @@
 24CGameSystemStaticFactoryI19CSoundEmitterSystemS0_E
 24CGameSystemStaticFactoryI20CDOTAChallengeSystemS0_E
 24CGameSystemStaticFactoryI20CDOTACustomGameCacheS0_E
-24CGameSystemStaticFactoryI20CDOTA_CombatAnalyzerS0_E
 24CGameSystemStaticFactoryI20CNavSpaceBuildLockerS0_E
 24CGameSystemStaticFactoryI20CPlayerVoiceListenerS0_E
 24CGameSystemStaticFactoryI21CDOTAInventoryManagerS0_E
@@ -11553,7 +11553,6 @@
 3CHAT_MESSAGE_PLAYER_ABANDONED_DISCONNECTED_TOO_LONG
 3CHAT_MESSAGE_VICTORY_PREDICTION_SINGLE_USER_CONFIRM
 3CMsgServerToGCCloseCompendiumInGamePredictionVoting
-3CNetMessagePBILi545E23CDOTAUserMsg_GlyphAlertL13SignonGroup_t13EL19NetChannelBufType_t1ELb1EE
 3E9~Dr-A
 3GAME_PARTICLE_MANAGER_EVENT_SET_CONTROL_POINT_MODEL
 3GAME_PARTICLE_MANAGER_EVENT_SET_NAMED_VALUE_CONTEXT
@@ -17534,7 +17533,6 @@ ACT_WAVEFORM_END
 ACT_WAVEFORM_START
 ACT_ZOMBIE_LUNGE
 ACT_ZOMBIE_TRIP
-AClientMsg_RequestGraphUpdate_t
 ADDED %s (%s) to transition
 ADJACENCY
 AES for Intel AES-NI, CRYPTOGAMS by <appro@openssl.org
@@ -18004,10 +18002,11 @@ AWAVATSHc
 AWAVATSHc^XH
 AWAVATSI
 AWAVATSL
-AWAVATSLc%V
+AWAVATSLc
 AWAVATSLc?M
 AWAVATSM
 AWAVATSf
+AWAVAUA
 AWAVAUATS
 AWAVAUATS1
 AWAVAUATSD
@@ -18262,6 +18261,7 @@ AbilityUpgradeGoldCost
 AbilityUsageThink
 AbilityValueData
 AbilityValues
+Ability_AghsFort_Special_Viper_ChanneledViperStrike
 Aborting cache/install of UGC %llu
 AbsTagType(unknown
 AcceptUserInput
@@ -19736,6 +19736,7 @@ CDOTAClientMsg_RecordVote_t
 CDOTAClientMsg_RequestBulkCombatLog
 CDOTAClientMsg_RequestBulkCombatLog_t
 CDOTAClientMsg_RequestGraphUpdate
+CDOTAClientMsg_RequestGraphUpdate_t
 CDOTAClientMsg_RequestItemSuggestions"K
 CDOTAClientMsg_RequestItemSuggestions_t
 CDOTAClientMsg_RollDice
@@ -20583,7 +20584,6 @@ CDOTA_Ability_AghsFort_Special_Ursa_Overpower_Crit
 CDOTA_Ability_AghsFort_Special_Ursa_Overpower_Evasion
 CDOTA_Ability_AghsFort_Special_Ursa_Overpower_Taunt
 CDOTA_Ability_AghsFort_Special_Viper_ChainViperStrike
-CDOTA_Ability_AghsFort_Special_Viper_ChanneledViperStrike
 CDOTA_Ability_AghsFort_Special_Viper_CorrosiveSkinFlying
 CDOTA_Ability_AghsFort_Special_Viper_CorrosiveSkinSpeedSteal
 CDOTA_Ability_AghsFort_Special_Viper_CorrosiveSkin_Aura
@@ -27629,6 +27629,7 @@ CDOTA_TempTree
 CDOTA_Tiny_ScepterTree
 CDOTA_Tree
 CDOTA_Tutorial
+CDOTA_U
 CDOTA_UnitFilterCache
 CDOTA_UnitInventory
 CDOTA_Unit_AghsFort_Creature_Batrider
@@ -27761,7 +27762,6 @@ CDOTA_Unit_Hero_Spectre::UpdateArcanaKillstreak: Victim: %s Streak: %d Challenge
 CDOTA_Unit_Hero_SpiritBreaker
 CDOTA_Unit_Hero_StormSpirit
 CDOTA_Unit_Hero_Sven
-CDOTA_Unit_Hero_Techies
 CDOTA_Unit_Hero_TemplarAssassin
 CDOTA_Unit_Hero_Terrorblade
 CDOTA_Unit_Hero_Tidehunter
@@ -28509,7 +28509,6 @@ CHLTVServer: failed to serialize event '%s
 CHLTVServer: failed to serialize title '%s
 CHUNK_LEAP
 CHUNK_LEAP_COND
-CHUpdateSession
 CHandle
 CHandle< CBaseAnimating
 CHandle< CBaseEntity
@@ -29036,6 +29035,7 @@ CMsgGCHAccountVacStatusChange
 CMsgGCHAppCheersGetAllowedTypes
 CMsgGCHAppCheersGetAllowedTypesResponse
 CMsgGCHAppCheersReceived
+CMsgGCHUpdateSession
 CMsgGCHVacVerificationChange
 CMsgGCMsgMasterSetClientMsgRouting
 CMsgGCMsgMasterSetClientMsgRouting_Response
@@ -30100,6 +30100,7 @@ CTransform
 CTransform-world
 CTriggerActiveWeaponDetect
 CTriggerBrush
+CTriggerBuoyancy
 CTriggerCallback
 CTriggerCamera
 CTriggerDetectBulletFire
@@ -35263,6 +35264,7 @@ GameState
 GameState changed from %s to %s
 GameStats
 GameSystem2HostHook
+GameSystemStaticFactoryI20CDOTA_CombatAnalyzerS0_E
 GameTick_t
 GameTime
 GameTime_t
@@ -38958,7 +38960,6 @@ InputPauseAtNextInterrupt
 InputPausePlayback
 InputPauseSound
 InputPauseTimer
-InputPickRandom
 InputPickRandomShuffle
 InputPitch
 InputPitchShiftPlayback
@@ -39545,6 +39546,7 @@ IsDOTANPC
 IsDaynightCycleDisabled
 IsDaytime
 IsDebuff
+IsDebuffImmune
 IsDedicatedServer
 IsDisableHelpSetForPlayerID
 IsDisarmed
@@ -41050,7 +41052,7 @@ Maximum speed any ballistically moving object is allowed to attain per axis
 Maximum think time in milliseconds, warning is printed if this is exceeded
 Maximum updates per second that the server will allow
 MaximumTargets
-May 15 2023
+May 17 2023
 Maybe local angvel
 MaybeAllocateAligned cannot fail here
 MeasureReference
@@ -42576,6 +42578,7 @@ No unit specified
 No valid positions in history for BacktrackPlayer client ( %d
 NoAbilityName
 NoAnswer
+NoCooldown
 NoHealthBar
 NoSharedCooldownName
 NoTeamMoveTo
@@ -44406,7 +44409,6 @@ RagdollTouch
 Ragdoll_Prop with %d bones != %d shapes (%s
 Raise pen
 Raise the bottom of the drag select volume
-Raise the top of the drag select volume
 RampThink
 RampToDefaultFadeScale
 Ran out of %snetworkable entities! (See console spew for entity list summary
@@ -44570,7 +44572,6 @@ RemoveAllModifiers
 RemoveAllModifiersOfName
 RemoveAllSpawnedUnits
 RemoveAttribute
-RemoveAvoidanceZone
 RemoveBroadcastTeamTarget
 RemoveCSSClass
 RemoveCSSClasses
@@ -45116,6 +45117,7 @@ SHRINE_BASE_3
 SHRINE_JUNGLE_1
 SHRINE_JUNGLE_2
 SIDE_SHOP
+SIGNONS
 SIGNONSTATE_CHALLENGE
 SIGNONSTATE_CHANGELEVEL
 SIGNONSTATE_CONNECTED
@@ -45224,6 +45226,7 @@ STANCE_CURRENT
 STANCE_DEFAULT
 STARTING
 STARVE=%-2d targetq=%5.2f %s
+STATE_FULL
 STATE_PLAY_SCRIPT
 STATE_PLAY_SCRIPT_POST_IDLE
 STATE_PLAY_SCRIPT_POST_IDLE_DONE
@@ -48899,7 +48902,6 @@ Unit does not have enough mana to cast ability
 Unit does not have movement capability and target is out of attack range
 Unit is dead
 Unit is not an NPC
-Unit is not controllable by the ordering player
 Unit is obstructed
 Unit keyvalue %s must have subkeys
 Unit keyvalue %s references include_keys_from '%s' which appears lower in the file and could create circular reference loops
@@ -48917,6 +48919,7 @@ UnitRelationshipClass
 UnitSchemaFixedUp
 UnitShareMask_t
 UnitType
+Unit_Hero_Techies
 Unknown
 Unknown Ability Damage Type Value: %s
 Unknown Ability Target Flag Value: %s
@@ -49137,13 +49140,13 @@ VARARA`0ARAUARA`0ARARAp
 VARAUARA
 VARAUAp
 VARAVARAVARAVARB
-VARAVARA[ASC
+VARAVARA[ARA
 VARAVASC
 VARAVA\A]ATBRAZASASAp
 VARAWARB
 VARDUBpHRAp
 VASB`RA`RA
-VAUATSH
+VAUATSPI
 VAXAZAp
 VApplication001
 VAsyncFileSystem2_001
@@ -49464,7 +49467,6 @@ WARNING: item_generic '%s' - allowpickup callback '%s' not found
 WARNING: item_generic '%s' - allowpickup callback '%s' should return a bool
 WARNING: item_generic '%s' - cannot have a trigger radius without a pickup radius - disabling trigger behavior
 WARNING: item_generic '%s' - pickup radius of %f is larger than trigger radius of %f - disabling trigger behavior
-WAVATSI
 WAWAWA
 WAWAWAWAWAWAWAWAYAYAYAYAYAYAYAYA
 WAWBSAp
@@ -50594,7 +50596,6 @@ aghanim_spear
 aghanims_shard
 aghs_shard_damage
 aghs_shard_move_slow
-aghsfor
 aghsfort2_drow_ranger_frost_arrows
 aghsfort2_drow_ranger_marksmanship
 aghsfort2_drow_ranger_multishot
@@ -51339,6 +51340,7 @@ aghsfort_weaver_shukuchi
 aghsfort_weaver_the_swarm
 aghsfort_weaver_time_lapse
 aghsfort_wildwing_tornado_blast
+aghsfort_winter_wyvern_arctic_burn
 aghsfort_winter_wyvern_cold_embrace
 aghsfort_winter_wyvern_splinter_blast
 aghsfort_winter_wyvern_winters_curse
@@ -52749,7 +52751,6 @@ bonus_mana
 bonus_mana_regen
 bonus_mana_regen_pct
 bonus_max_attack_count
-bonus_max_mana_percentage
 bonus_move_speed
 bonus_move_speed_pct
 bonus_move_speed_per_stack
@@ -56688,6 +56689,7 @@ equip_regions_list
 equipped_econ_items
 equipped_state
 er none
+er4AppSystemI18IGameConfigurationLi0EE
 eresult
 eresult_deprecated
 erroffset passed as NULL
@@ -59310,6 +59312,7 @@ info_target_server_only
 info_teleport_destination
 info_visibility_box
 info_world_layer
+ing_damage_structure
 ingame_predictions_group_stage_periodic_resource
 ingame_predictions_main_event_periodic_resource
 ingame_predictions_qualifiers_periodic_resource
@@ -59614,6 +59617,7 @@ is not a type
 is not a valid identifier
 is not an enum type
 is not compatible with this reflection object (which is for type
+is not controllable by the ordering player
 is not defined
 is not defined or is not an extension of
 is resolved to
@@ -64596,7 +64600,6 @@ m_bNewChapter
 m_bNextRuneIsWater
 m_bNightmareAttack
 m_bNoCollision
-m_bNoCooldown
 m_bNoDepth
 m_bNoDmgForce
 m_bNoExpirationTime
@@ -70426,6 +70429,7 @@ max_level
 max_lob_travel_time
 max_lookouts
 max_mana
+max_mana_percentage
 max_mines
 max_model_scale
 max_move_speed_percent
@@ -70680,7 +70684,6 @@ miniboss_reflect
 miniboss_unyielding_shield
 minimap_radar.cycle
 minimap_radar.target
-minimap_select_dialog
 minimum number of players in the game to allow saves
 minimum_damage
 minimum_distance
@@ -76083,6 +76086,7 @@ output_type
 outputid
 outputs
 outside
+oveAvoidanceZone
 overhead_follow
 overkilled
 overlay
@@ -76770,7 +76774,6 @@ particles/frostivus_herofx/juggernaut_fs_omnislash_slashers.vpcf
 particles/frostivus_herofx/juggernaut_fs_omnislash_tgt.vpcf
 particles/frostivus_herofx/juggernaut_omnislash_ascension.vpcf
 particles/gameplay/tower_destruction_blast/tower_destruction_blast.vpcf
-particles/gameplay/tower_destruction_blast/tower_destruction_impact.vpcf
 particles/generic_fx/fx_electricspark.vpcf
 particles/generic_fx/fx_metalspark.vpcf
 particles/generic_fx/fx_sparks.vpcf
@@ -80766,7 +80769,6 @@ rsaz_512_sqr
 rsaz_avx2_eligible
 rt_birth_date
 rt_identity_linked
-rt_winter_wyvern_arctic_burn
 rtdelay
 rtime32_gc_welcome_timestamp
 rtime_oldest_date
@@ -81636,6 +81638,7 @@ scripts_dedicated/customgamesecretkey.txt
 scrollable
 sdk    : Rubikon build
 sdo_type
+se the top of the drag select volume
 seal_duration
 search_aoe
 search_distance
@@ -82169,6 +82172,7 @@ show_item_asset_loot_list
 show_level_rewards_event
 show_lpv_sample_grid
 show_message
+show_minimap_select_dialog
 show_no_other_dialogs
 show_progress_bar
 show_raw_values
@@ -84954,6 +84958,7 @@ t%IcN8
 t'HcN8
 t'IcNH
 t(D#C\L
+t(D9=aXn
 t(HcN8
 t(L;<2u"H
 t)IcOX
@@ -84976,6 +84981,7 @@ tDHcCPH
 tE[A\A^A
 tHIcG8H
 tOLc`8M
+tPickRandom
 tRE9>~M
 tRI96vs
 tTHcKHH
@@ -85340,6 +85346,7 @@ tickets_per_star
 tickets_required
 tickrate
 ticks_to_revive
+ticles/gameplay/tower_destruction_blast/tower_destruction_impact.vpcf
 tidebringer
 tidehunter_anchor_smash
 tidehunter_arm_of_the_deep
@@ -85686,6 +85693,7 @@ trigger_autosave
 trigger_boss_attackable
 trigger_boss_attackable_2
 trigger_brush
+trigger_buoyancy
 trigger_callback
 trigger_cd
 trigger_chance
@@ -86101,8 +86109,8 @@ utlstringtoken
 u~HcP`H
 v(IcV H
 v0IcV(H
-v8H;5*m
-v8H;58i
+v8H;5Jn
+v8H;5Xj
 v8IcV0H
 v8array
 v8callback
@@ -86954,8 +86962,6 @@ xp_reason
 xp_received
 xp_reward_details
 xtO<htO<X
-x|D9=[e
-x|D9=jO
 y=up=green, z=forward=blue, x=left=red
 y?IcE0H
 y_normal
