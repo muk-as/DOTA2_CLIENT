@@ -43,12 +43,9 @@
 04d%02d%02d%02d%02d%02dZ
 04i_%02i_%02i_%02i%02i%02i
 08@HPX`hpx
-08@HPX`j0Q
-08@HPXbp
-08@HPZ0Q
-08@HR0Q
-08@HRp
-08@J0Q
+08@HPX`j
+08@HPXb
+08@HPZ
 097unH
 0: Entity I/O
 0><[cZUg
@@ -103,7 +100,7 @@
 0Lcq`E3
 0NETWORK_DISCONNECT_REJECT_SERVERCDKEYAUTHINVALID
 0STEAMLEARN_CACHE_DATA_ERROR_UNCACHED_DATA_SOURCE
-0X`hpzp
+0X`hpz
 0enum $1
 0kKillEaterEventType_ArcWarden_TempestDoubleKills
 0kKillEaterEventType_ChaosKnight_RealityRiftKills
@@ -287,6 +284,7 @@
 2#.CMsgSteamLearnDataSourceDescObject
 2#.CMsgSteamLearnMatchState.TeamState
 2#.CSVCMsg_GameEventList.descriptor_t
+2#.ESteamLearnInferenceMetadataResult
 2#.google.protobuf.FieldOptions.CType
 2#GameUI_Disconnect_RemoteProblem_TimeoutConnecting
 2$.CDOTAMatchMetadata.Team.ActionGrant
@@ -492,6 +490,7 @@
 20.CMsgServerToGCCompendiumInGamePredictionResults
 20.CMsgSignOutGuildContractProgress.PlayerContract
 20.CMsgSteamLearn_InferenceBackend_Response.Output
+20.CMsgSteamLearn_InferenceMetadata_Response.Range
 20.CUserMessage_Inventory_Response.InventoryDetail
 20.CUserMsg_ParticleManager.UpdateParticleFallback
 20s = '%s
@@ -502,6 +501,8 @@
 21.CDOTAUserMsg_PredictionResult.Prediction.EResult
 21.CMsgClientToGCUnpackBundleResponse.EUnpackBundle
 21.CMsgDOTASeasonPredictions.Prediction.EAnswerType
+21.CMsgSteamLearn_InferenceMetadata_Response.KMeans
+21.CMsgSteamLearn_InferenceMetadata_Response.StdDev
 21.CUserMsg_ParticleManager.SetControlPointSnapshot
 21.CUserMsg_ParticleManager.UpdateParticleSetFrozen
 21.CUserMsg_ParticleManager.UpdateParticleTransform
@@ -525,11 +526,12 @@
 23.CMsgClientToGCUnlockItemStyleResponse.EUnlockStyle
 23.CMsgGCGetPlayerCardItemInfoResponse.PlayerCardInfo
 23.CMsgGameMatchSignOut.CTeam.CPlayer.CCustomGameData
+23.CMsgSteamLearn_InferenceMetadata_Response.RowRange
 23.CUserMessageCameraTransition.Transition_DataDriven
 23.CUserMessageCommandQueueState.command_queue_info_t
 23.CUserMsg_ParticleManager.SetParticleShouldCheckFoW
 23.CUserMsg_ParticleManager.SetSceneObjectGenericFlag
-230607205336Z0
+230609203611Z0
 23s %s Kx=%-8s Au=%-4s Enc=%-9s Mac=%-4s%s
 24.CDOTAMatchPrivateMetadata.Team.Player.CombatSegment
 24.CDOTAUserMsg_GuildChallenge_Progress.EChallengeType
@@ -555,6 +557,7 @@
 26.CUserMsg_ParticleManager.ChangeControlPointAttachment
 26.CUserMsg_ParticleManager.SetParticleNamedValueContext
 26.google.protobuf.EnumDescriptorProto.EnumReservedRange
+27.CMsgSteamLearn_InferenceMetadata_Response.CompactTable
 27.CUserMsg_ParticleManager.UpdateParticleOrient_OBSOLETE
 28.CDOTAUserMsg_StatsTeamMinuteDetails.LocationPerformance
 28.CMsgGCToGCGrantAccountRolledItems.Item.DynamicAttribute
@@ -563,6 +566,7 @@
 29.CMsgGCtoGCAssociatedExploiterAccountInfoResponse.Account
 29.CMsgServerToGCCavernCrawlIsHeroActiveResponse.MapResults
 29.CMsgServerToGCRequestBatchPlayerResourcesResponse.Result
+29.CMsgSteamLearn_InferenceMetadata_Response.KMeans.Cluster
 2: Scene Print
 2:.CMsgClientToGCCreateStaticRecipeResponse.AdditionalOutput
 2:.CMsgClientToGCGetGiftPermissionsResponse.FriendPermission
@@ -576,8 +580,10 @@
 2<.CMsgAdditionalLobbyStartupAccountData.ChatWheelMessageRange
 2<.CMsgAdditionalLobbyStartupAccountData.PingWheelMessageRange
 2<.CMsgGCToGCGrantAccountRolledItems.Item.AdditionalAuditEntry
+2<.CMsgSteamLearn_InferenceMetadata_Response.SnapshotHistogram
 2=.CDOTAMatchMetadata.GuildChallengeProgress.IndividualProgress
 2=.CMsgEconPlayerStrangeCountAdjustment.CStrangeCountAdjustment
+2=.CMsgSteamLearn_InferenceMetadata_Response.CompactTable.Entry
 2=.CWorkshop_SetItemPaymentRules_Request.PartnerItemPaymentRule
 2>.CDOTAMatchPrivateMetadata.Team.Player.BuffRecord.ByHeroTarget
 2>.CDOTAUserMsg_StatsMatchDetails.CDOTAUserMsg_StatsFightDetails
@@ -600,10 +606,12 @@
 2DigiCert Trusted G4 RSA4096 SHA256 TimeStamping CA0
 2E.CDOTAMatchPrivateMetadata.Team.Player.CombatSegment.HealingByAbility
 2E.CUserMsg_ParticleManager.SetParticleNamedValueContext.EHandleContext
+2F.CMsgSteamLearn_InferenceMetadata_Response.CompactTable.MapValuesEntry
 2G.CMsgSteamLearn_InferenceBackend_Response.CategoricalCrossEntropyOutputH
 2G.CMsgSteamLearn_InferenceBackend_Response.MutliBinaryCrossEntropyOutputH
 2GAME_PARTICLE_MANAGER_EVENT_UPDATE_ENTITY_POSITION
 2GG>!B
+2H.CMsgSteamLearn_InferenceMetadata_Response.CompactTable.MapMappingsEntry
 2H.CUserMsg_ParticleManager.SetParticleNamedValueContext.FloatContextValue
 2HcE,I
 2I.CUserMsg_ParticleManager.SetParticleNamedValueContext.VectorContextValue
@@ -667,7 +675,7 @@
 32.32s: %4.4s, counter % 4d, level %s
 331121235959Z0F1
 3333333
-3333333333333333UUUUUUUUUUUUUUUUm_iszInteractsAs
+3333333333333333UUUUUUUUUUUUUUUU
 33333333H
 33333333I
 33333333L
@@ -769,6 +777,8 @@
 5CProtoItemSocket_Strange_DESERIALIZE_FROM_STRING_ONLY
 5LEAGUE_AUDIT_ACTION_NODEGROUP_SET_SECONDARY_ADVANCING
 5STEAMLEARN_INFERENCE_ERROR_MISSING_CACHED_SCHEMA_DATA
+5STEAMLEARN_INFERENCE_METADATA_ERROR_INVALID_TIMESTAMP
+5STEAMLEARN_INFERENCE_METADATA_ERROR_NO_FETCH_ID_FOUND
 5STEAMLEARN_SNAPSHOT_PROJECT_ERROR_NO_PUBLISHED_CONFIG
 5STEAMLEARN_SNAPSHOT_PROJECT_ERROR_UNKNOWN_DATA_SOURCE
 5`q@roz
@@ -790,13 +800,14 @@
 62$|S)6f
 65535"j
 65535B
-6666666666666666\\\\\\\\\\\\\\\\modifier_aghsfort_explosive_barrel
+6666666666666666\\\\\\\\\\\\\\\\CDOTA_Modifier_Ascension_AcidBlood_Thinker
 6: Blind Zombie Sounds
 6A;7uLL
 6CHAT_MESSAGE_RANKED_GAME_STILL_SCORED_LEAVERS_GET_LOSS
 6GAME_PARTICLE_MANAGER_EVENT_FREEZE_TRANSITION_OVERRIDE
 6GAME_PARTICLE_MANAGER_EVENT_SET_CONTROL_POINT_SNAPSHOT
 6K;L#k
+6STEAMLEARN_INFERENCE_METADATA_ERROR_INVALID_PROJECT_ID
 6STEAMLEARN_REGISTER_DATA_SOURCE_RESULT_ERROR_FORBIDDEN
 6STEAMLEARN_REGISTER_DATA_SOURCE_RESULT_SUCCESS_CREATED
 6c&0|vvX
@@ -824,6 +835,7 @@
 7?7E7I7O7]7a7u7
 7?XEAVn
 7E9n$tqH
+7STEAMLEARN_INFERENCE_METADATA_ERROR_NO_PUBLISHED_CONFIG
 7http://cacerts.digicert.com/DigiCertAssuredIDRootCA.crt0E
 7kKillEaterEventType_Enigma_MidnightPulseBlackHoleCombos
 7k_EMsgClientToGCJoinPrivateCoachingSessionLobbyResponse
@@ -2238,6 +2250,7 @@ ACT_RUN_RPG_RELAXED
 ACT_RUN_SCARED
 ACT_RUN_STEALTH
 ACT_RUN_STEALTH_PISTOL
+ACT_RUN_STIMULATED
 ACT_SCRIPT_CUSTOM_0
 ACT_SCRIPT_CUSTOM_1
 ACT_SCRIPT_CUSTOM_10
@@ -2504,6 +2517,7 @@ ACT_WAVEFORM_START
 ACT_ZOMBIE_LUNGE
 ACT_ZOMBIE_TRIP
 ACUtlString@@QEBADH@Z
+ACompute LOD mask internally like since 2016, i.e. force all LOD groups' bones to compute
 AD Time Stamping
 ADDED %s (%s) to transition
 ADD_CERT_DIR
@@ -2958,6 +2972,7 @@ AV<lambda_a6fb983128c5af6e45c57d39c9941a68
 AV<lambda_ac69310fbe8273e0f356f00d3746b106
 AV<lambda_acabf505a3f6b7e12ddd7cc0debd82f5
 AV<lambda_ad9c09b90d4ce141f45e9abc7fa4c905
+AV<lambda_aea9113881e4e0ef3ec3d5f26d714d51
 AV<lambda_aecd16d967a638121f48b4e9f4299725
 AV<lambda_b025b0bc2203d32e5a5868488e128f8a
 AV<lambda_b3f69b517d093333ce97ca235ad4ee16
@@ -4052,6 +4067,7 @@ AV?$CModifierFactory@VCDOTA_Modifier_Aghsfort_Mars_ArenaOfBlood_AnimationAura
 AV?$CModifierFactory@VCDOTA_Modifier_Aghsfort_Mars_ArenaOfBlood_Buff
 AV?$CModifierFactory@VCDOTA_Modifier_Aghsfort_Mars_ArenaOfBlood_BuffAura
 AV?$CModifierFactory@VCDOTA_Modifier_Aghsfort_Mars_ArenaOfBlood_Fear
+AV?$CModifierFactory@VCDOTA_Modifier_Aghsfort_Mars_ArenaOfBlood_Leash
 AV?$CModifierFactory@VCDOTA_Modifier_Aghsfort_Mars_ArenaOfBlood_Marker
 AV?$CModifierFactory@VCDOTA_Modifier_Aghsfort_Mars_ArenaOfBlood_Spear
 AV?$CModifierFactory@VCDOTA_Modifier_Aghsfort_Mars_ArenaOfBlood_Thinker
@@ -7459,30 +7475,55 @@ AV?$CUtlVectorDataOps@V?$CUtlVectorEmbeddedNetworkVar@UFowBlocker_t@@VNetworkVar
 AV?$CUtlVectorDataOps@VCUtlStringList@@$0DF
 AV?$CUtlVectorPtrDataOps@V?$CUtlVector@URelationshipOverride_t@@HV?$CUtlMemory@URelationshipOverride_t@@H@@@@$09
 AV?$CUtlVectorPtrDataOps@V?$CUtlVector@VCUtlString@@HV?$CUtlMemory@VCUtlString@@H@@@@$0DF
-AV?$GCClientJobLambda@V<lambda_02f65c1595a656010eb5272f85897dc1>@@@GCSDK
-AV?$GCClientJobLambda@V<lambda_0c9bd663581437400f02180301ee1b4a>@@@GCSDK
+AV?$GCClientJobLambda@V<lambda_062b924864bf193835cc9d410357b97d>@@@GCSDK
+AV?$GCClientJobLambda@V<lambda_09611ff20ef47a0ba4c30ebdb173bf3e>@@@GCSDK
+AV?$GCClientJobLambda@V<lambda_0ab6a0fd9fcff5550b8ced6009b9a70a>@@@GCSDK
 AV?$GCClientJobLambda@V<lambda_0d335831b02b700b0ce733c600b74fe2>@@@GCSDK
+AV?$GCClientJobLambda@V<lambda_0dfb6fc07e780ebe69085218af4f31cd>@@@GCSDK
+AV?$GCClientJobLambda@V<lambda_0e8ec858afddc5598e5ba9266e74ba77>@@@GCSDK
 AV?$GCClientJobLambda@V<lambda_0f7fc6e3fd0fafacc38e072c0f12a6d0>@@@GCSDK
-AV?$GCClientJobLambda@V<lambda_11150462b8674af3e9a239904358b308>@@@GCSDK
 AV?$GCClientJobLambda@V<lambda_131fab7fcb8e26750297b2f76cdaca1a>@@@GCSDK
-AV?$GCClientJobLambda@V<lambda_25aa497e71331c42fb580dd652578cbb>@@@GCSDK
+AV?$GCClientJobLambda@V<lambda_14985832081afeb6c12efe890c4d8f22>@@@GCSDK
+AV?$GCClientJobLambda@V<lambda_214ebec01fe60f410158709f91f731f2>@@@GCSDK
+AV?$GCClientJobLambda@V<lambda_2602eab28380472b905eb1d8e6e6c911>@@@GCSDK
 AV?$GCClientJobLambda@V<lambda_26c70f497bcdb246a21428076a528ef6>@@@GCSDK
+AV?$GCClientJobLambda@V<lambda_28e1f035e2ef8fa9088769ce0c4ba54a>@@@GCSDK
 AV?$GCClientJobLambda@V<lambda_2b5f67179156739ee89562e5a287986a>@@@GCSDK
 AV?$GCClientJobLambda@V<lambda_2f2d8d6e1c45a5f41ce527ed654fd2d5>@@@GCSDK
+AV?$GCClientJobLambda@V<lambda_3162ff11c2a05cda419d7cff7c3fd7cd>@@@GCSDK
 AV?$GCClientJobLambda@V<lambda_36cfad19143eb81ba562f2e4a9824a45>@@@GCSDK
 AV?$GCClientJobLambda@V<lambda_38cd0c5f865c9d28b4952d7aa3ceb3b8>@@@GCSDK
 AV?$GCClientJobLambda@V<lambda_3faa7961bea4b3795313212104896a5c>@@@GCSDK
+AV?$GCClientJobLambda@V<lambda_4ba30f901453642d77f8f78143f07f11>@@@GCSDK
 AV?$GCClientJobLambda@V<lambda_4ce04ed5c7bfbd766f1cd2524865a365>@@@GCSDK
-AV?$GCClientJobLambda@V<lambda_549d6634b2b380acedb70c2729394a41>@@@GCSDK
+AV?$GCClientJobLambda@V<lambda_506a2aa2b484eaa5b5a83a1f15dab6bd>@@@GCSDK
+AV?$GCClientJobLambda@V<lambda_6ecbb1590cd62a05a5a71fcc55311e53>@@@GCSDK
 AV?$GCClientJobLambda@V<lambda_76f17408a149ac71b6e8603b84da623c>@@@GCSDK
+AV?$GCClientJobLambda@V<lambda_7899c3b84a0bbb56364b5e7b76dffa9b>@@@GCSDK
+AV?$GCClientJobLambda@V<lambda_7a49910b70758e371aec19bdde8f6729>@@@GCSDK
+AV?$GCClientJobLambda@V<lambda_837953b3f8f96f41c7f8206d0c2ed549>@@@GCSDK
+AV?$GCClientJobLambda@V<lambda_8a1d64689ab536f727e694b14124125b>@@@GCSDK
+AV?$GCClientJobLambda@V<lambda_8c6910b5a851726ee36375ba37d8fec7>@@@GCSDK
 AV?$GCClientJobLambda@V<lambda_9432074593df105e56fddf4d3c34e46f>@@@GCSDK
+AV?$GCClientJobLambda@V<lambda_96c83fe05ef82978d024d14da1e5a0e8>@@@GCSDK
+AV?$GCClientJobLambda@V<lambda_9af987671cdc1ae43ec9fcb35a4060a3>@@@GCSDK
+AV?$GCClientJobLambda@V<lambda_a3d1350ee35a6186e0390709db6ff69c>@@@GCSDK
+AV?$GCClientJobLambda@V<lambda_a461c70bb743b39b033aa3772bdd1626>@@@GCSDK
 AV?$GCClientJobLambda@V<lambda_ad201331204c83491149d30c1fc9bab1>@@@GCSDK
+AV?$GCClientJobLambda@V<lambda_af8709ae8e3adbe76ec0f9dfb667c9d3>@@@GCSDK
 AV?$GCClientJobLambda@V<lambda_b216105ab4f4e13a97f2e67141e6bede>@@@GCSDK
 AV?$GCClientJobLambda@V<lambda_b22357dc5d6c922b3d82e6a0baeb547b>@@@GCSDK
+AV?$GCClientJobLambda@V<lambda_b93a8b354b3a3ca16500822963c0cafd>@@@GCSDK
+AV?$GCClientJobLambda@V<lambda_bb64973e85ecd9e915f8ed79bbb9617d>@@@GCSDK
 AV?$GCClientJobLambda@V<lambda_c60df5bd9dadd72bbcf377e8777c2cd5>@@@GCSDK
-AV?$GCClientJobLambda@V<lambda_c8abfd7494124b48926d3476646d0c35>@@@GCSDK
+AV?$GCClientJobLambda@V<lambda_d2239204aad3b493b81dd1de8feeb546>@@@GCSDK
+AV?$GCClientJobLambda@V<lambda_d2ab4ddb270e3f4be452b792fb47566b>@@@GCSDK
+AV?$GCClientJobLambda@V<lambda_d5bcf6ebbe4e8479490cbe885e5220a5>@@@GCSDK
+AV?$GCClientJobLambda@V<lambda_deac5629822a5a2220097565d6eb64e2>@@@GCSDK
+AV?$GCClientJobLambda@V<lambda_df6ef171010b3ac61ba4c1bbf5133153>@@@GCSDK
+AV?$GCClientJobLambda@V<lambda_e20839f7ddcc06650cfdd714699b56c6>@@@GCSDK
 AV?$GCClientJobLambda@V<lambda_ee78421fdbc3b32b6058d2cd36f95488>@@@GCSDK
-AV?$GCClientJobLambda@V<lambda_f386f11e69d1d170ab5a28968182be5a>@@@GCSDK
+AV?$GCClientJobLambda@V<lambda_eeba1b4a1527a5560e2968027355ef8a>@@@GCSDK
 AV?$ISceneObjectDescBase@VCHeightMapSceneObject
 AV?$ISchemaAttributeTypeBase@I
 AV?$ISchemaAttributeTypeBase@M
@@ -7492,6 +7533,12 @@ AV?$ISchemaAttributeTypeBase@VCAttribute_ItemDynamicRecipeComponent
 AV?$ISchemaAttributeTypeBase@VCAttribute_Socket
 AV?$ISchemaAttributeTypeBase@VCAttribute_String
 AV?$ISchemaAttributeTypeBase@_K
+AV?$MapEntry@VCMsgSteamLearn_InferenceMetadata_Response_CompactTable_MapMappingsEntry_DoNotUse@@IVCMsgSteamLearn_InferenceMetadata_Response_CompactTable_Entry@@$0N@$0L@@internal@protobuf@google
+AV?$MapEntry@VCMsgSteamLearn_InferenceMetadata_Response_CompactTable_MapValuesEntry_DoNotUse@@IVCMsgSteamLearn_InferenceMetadata_Response_CompactTable_Entry@@$0N@$0L@@internal@protobuf@google
+AV?$MapEntryImpl@VCMsgSteamLearn_InferenceMetadata_Response_CompactTable_MapMappingsEntry_DoNotUse@@VMessage@protobuf@google@@IVCMsgSteamLearn_InferenceMetadata_Response_CompactTable_Entry@@$0N@$0L@@internal@protobuf@google
+AV?$MapEntryImpl@VCMsgSteamLearn_InferenceMetadata_Response_CompactTable_MapValuesEntry_DoNotUse@@VMessage@protobuf@google@@IVCMsgSteamLearn_InferenceMetadata_Response_CompactTable_Entry@@$0N@$0L@@internal@protobuf@google
+AV?$MapField@VCMsgSteamLearn_InferenceMetadata_Response_CompactTable_MapMappingsEntry_DoNotUse@@IVCMsgSteamLearn_InferenceMetadata_Response_CompactTable_Entry@@$0N@$0L@@internal@protobuf@google
+AV?$MapField@VCMsgSteamLearn_InferenceMetadata_Response_CompactTable_MapValuesEntry_DoNotUse@@IVCMsgSteamLearn_InferenceMetadata_Response_CompactTable_Entry@@$0N@$0L@@internal@protobuf@google
 AV?$RepeatedField@H@protobuf@google
 AV?$RepeatedField@I@protobuf@google
 AV?$RepeatedField@M@protobuf@google
@@ -7529,6 +7576,7 @@ AV?$TSocketIterator@VCItemSocket_AssetModifier
 AV?$TSocketIterator@VCItemSocket_Color
 AV?$TSocketIterator@VCItemSocket_Effect
 AV?$TSocketIterator@VCItemSocket_Strange
+AV?$TypeDefinedMapFieldBase@IVCMsgSteamLearn_InferenceMetadata_Response_CompactTable_Entry@@@internal@protobuf@google
 AV?$TypeDefinedMapFieldBase@VMapKey@protobuf@google@@VMapValueRef@23@@internal@protobuf@google
 AV?$Vector3DBase@M
 AV?$_Binder@U_Unforced@std@@P8CDOTAGCServerSystem@@EAA_NAEBVCMsgCustomGameInstallStatus@@@ZPEAV3@AEBU?$_Ph@$00@2@@std
@@ -7721,6 +7769,7 @@ AV?$basic_stringbuf@DU?$char_traits@D@std@@V?$allocator@D@2@@std
 AV?$basic_stringstream@DU?$char_traits@D@std@@V?$allocator@D@2@@std
 AV?$ctype@D@std
 AV?$map@HUExtension@ExtensionSet@internal@protobuf@google@@U?$less@H@std@@V?$allocator@U?$pair@$$CBHUExtension@ExtensionSet@internal@protobuf@google@@@std@@@7@@std
+AV?$map@IPEAXU?$less@I@std@@V?$MapAllocator@U?$pair@$$CBIPEAX@std@@@internal@protobuf@google@@@std
 AV?$map@V?$reference_wrapper@$$CBVMapKey@protobuf@google@@@std@@PEAXU?$less@VMapKey@protobuf@google@@@2@V?$MapAllocator@U?$pair@$$CBV?$reference_wrapper@$$CBVMapKey@protobuf@google@@@std@@PEAX@std@@@internal@protobuf@google@@@std
 AV?$num_put@DV?$ostreambuf_iterator@DU?$char_traits@D@std@@@std@@@std
 AV?$numpunct@D@std
@@ -14544,7 +14593,6 @@ AVCDOTA_Modifier_Item_RingOfTarrasque
 AVCDOTA_Modifier_Item_Ring_Of_Basilius
 AVCDOTA_Modifier_Item_Ring_Of_Basilius_Effect
 AVCDOTA_Modifier_Item_RobeOfMagi
-AVCDOTA_Modifier_Item_RodOfAtos
 AVCDOTA_Modifier_Item_SacredRelic
 AVCDOTA_Modifier_Item_SamplePicker
 AVCDOTA_Modifier_Item_Samurai_Tabi
@@ -15148,7 +15196,6 @@ AVCDOTA_Modifier_Obsidian_Destroyer_AstralImprisonment_Prison
 AVCDOTA_Modifier_Obsidian_Destroyer_Equilibrium
 AVCDOTA_Modifier_Obsidian_Destroyer_Equilibrium_Barrier
 AVCDOTA_Modifier_Obsidian_Destroyer_Equilibrium_BonusMana
-AVCDOTA_Modifier_Obsidian_Destroyer_Equilibrium_Buff
 AVCDOTA_Modifier_Obsidian_Destroyer_Equilibrium_Buff_Counter
 AVCDOTA_Modifier_Obsidian_Destroyer_Equilibrium_Debuff
 AVCDOTA_Modifier_Obsidian_Destroyer_Equilibrium_Debuff_Counter
@@ -17568,6 +17615,19 @@ AVCMsgSteamLearn_InferenceBackend_Response_BinaryCrossEntropyOutput
 AVCMsgSteamLearn_InferenceBackend_Response_CategoricalCrossEntropyOutput
 AVCMsgSteamLearn_InferenceBackend_Response_MutliBinaryCrossEntropyOutput
 AVCMsgSteamLearn_InferenceBackend_Response_Output
+AVCMsgSteamLearn_InferenceMetadataBackend_Request
+AVCMsgSteamLearn_InferenceMetadata_Request
+AVCMsgSteamLearn_InferenceMetadata_Response
+AVCMsgSteamLearn_InferenceMetadata_Response_CompactTable
+AVCMsgSteamLearn_InferenceMetadata_Response_CompactTable_Entry
+AVCMsgSteamLearn_InferenceMetadata_Response_CompactTable_MapMappingsEntry_DoNotUse
+AVCMsgSteamLearn_InferenceMetadata_Response_CompactTable_MapValuesEntry_DoNotUse
+AVCMsgSteamLearn_InferenceMetadata_Response_KMeans
+AVCMsgSteamLearn_InferenceMetadata_Response_KMeans_Cluster
+AVCMsgSteamLearn_InferenceMetadata_Response_Range
+AVCMsgSteamLearn_InferenceMetadata_Response_RowRange
+AVCMsgSteamLearn_InferenceMetadata_Response_SnapshotHistogram
+AVCMsgSteamLearn_InferenceMetadata_Response_StdDev
 AVCMsgSteamLearn_Inference_Request
 AVCMsgSteamLearn_Inference_Response
 AVCMsgSteamLearn_RegisterDataSource_Request
@@ -19409,7 +19469,6 @@ AddOutput
 AddOutput fired on entity "%s" with unknown output name "%s
 AddOutput fired with bad string. Format: outputname>targetname>inputname>parameter>delay>max times to fire (-1 == infinite
 AddParticle
-AddPtr@KeyValues@@QEAAXPEBDPEAX@Z
 AddQuest
 AddRealTimeCombatAnalyzerQuery
 AddRectangularBlocker
@@ -19462,6 +19521,7 @@ Adjust heading (positive = right, negative = left
 Adjust the amount of time the combo animation state persists after an attack starts. Set to -1 to disable attack combos entirely
 Aegis.Expire
 Aegis.Timer
+AfInitialStockDuration
 Affiliation Changed
 After an announcer has said an idle line, another can't play for at least this many seconds
 After this many seconds of being basically stationary, the ragdoll will go to sleep
@@ -19482,9 +19542,9 @@ Aghsfort_Abilty_Specials.Tusk.Snowball_Damage_End
 Aghsfort_Drow.Slip.Created
 Aghsfort_Juggernaut.Teleport
 AhHcI`Hk
+AiMaxCount
 Aim forced
 AimTargetManager
-Ainfo_game_event_proxy
 Alert the player when a creep becomes agro to their hero
 Alert the player when a tower becomes agro to their hero
 AlertNearbyUnits
@@ -19530,7 +19590,6 @@ Always spawn the same rune
 Always terminate after receiving a lobby, do not rehibernate
 AlwaysUpdateOff
 AlwaysUpdateOn
-Am_vWeatherWindDirection
 Ambient
 AmbientCubes
 AmmoFlags_t
@@ -19900,7 +19959,6 @@ BAD RECURSION DEPTH
 BAD-TYPE
 BADFUNCTIONPOINTER
 BARRACKS
-BARRACKS_BOT_MELEE
 BARRACKS_BOT_RANGED
 BARRACKS_MID_MELEE
 BARRACKS_MID_RANGED
@@ -19928,6 +19986,7 @@ BEST_OF_ONE
 BEST_OF_THREE
 BEST_OF_TWO
 BGCPostSchemaInitStartupChecks(): tool '%s' is invalid
+BHow long looping soundpatch captions should display for
 BIO lib
 BIO routines
 BIO_BER_GET_HEADER
@@ -20174,6 +20233,8 @@ BatchLimit
 BatchOperation
 BatchPlayerResources - Failed to get accounts
 BatchPlayerResources - Requested for %d accounts
+Batched CacheData response without corresponding waiting handle! (%d
+Batched Snapshot response without corresponding waiting handle! (%d
 BattlePointsPerContractMultipler
 BeamClipStyle_t
 BeamType_t
@@ -20201,7 +20262,6 @@ BenchSlot
 BenchmarkService001
 Best %s is %s
 Best remaining is %s in %s
-Bfunc_nav_markup
 Bidirectional_Messages
 Bidirectional_Messages_LowFrequency
 Big Number part of OpenSSL 1.0.2j  26 Sep 2016
@@ -20211,7 +20271,6 @@ BinLogAnd
 BinLogOr
 BinaryCrossEntropyOutput
 BinaryProperties_GetValue
-Binstanced_scripted_scene
 Biometric Info
 Bk_EMsgClientToGCGetAvailablePrivateCoachingSessionsSummaryResponse
 BlessingID_t
@@ -20230,9 +20289,9 @@ BlockDamage
 BlockNav
 Blocking load of scene from '%s
 Blocking nav: %s
+Blogic_npc_counter_aabb
 BloodImpact
 Blowfish part of OpenSSL 1.0.2j  26 Sep 2016
-Bm_pSceneNode
 Bodies: %d (%d
 Body Component Scriptdesc
 BodyGameSystem
@@ -20331,6 +20390,7 @@ BroadcasterDetails
 BroadcasterInfo
 BronzeTier
 BrushSolidities_e
+Bs_nDebugStateChange
 BuffRecord
 Buffer too small
 Build New Contacts: %6.3f [ms
@@ -20492,6 +20552,8 @@ C:\buildworker\source2_dota_rel_2019_win64\build\src\public\tier0\utlsymboltable
 C:\buildworker\source2_dota_rel_2019_win64\build\src\public\tier0\utlsymboltablelarge.h
 C:\buildworker\source2_dota_rel_2019_win64\build\src\public\tier0\utltshash.h
 C:\buildworker\source2_dota_rel_2019_win64\build\src\schemalib\schemaclassinfo.cpp
+C:\buildworker\source2_dota_rel_2019_win64\build\src\thirdparty\protobuf-3.21.8\src\google\protobuf\map_field.h
+C:\buildworker\source2_dota_rel_2019_win64\build\src\thirdparty\protobuf-3.21.8\src\google\protobuf\map_field_inl.h
 C:\buildworker\source2_dota_rel_2019_win64\build\src\tier0_perproject\cojob.cpp
 C:\buildworker\source2_dota_rel_2019_win64\build\src\tier0_perproject\cojobmgr.cpp
 C:\buildworker\source2_dota_rel_2019_win64\build\src\tier0_perproject\singletons.cpp
@@ -20802,7 +20864,6 @@ CDOTABehaviorCommandMoveToNPCToGive
 CDOTABehaviorCommandMoveToPosition
 CDOTABehaviorCommandMoveToPositionToCast
 CDOTABehaviorCommandMoveToPositionToDropItem
-CDOTABehaviorCommandMoveToRuneToTake
 CDOTABehaviorCommandMoveToTargetToAttack
 CDOTABehaviorCommandMoveToTargetToCast
 CDOTABehaviorCommandPatrol
@@ -24188,7 +24249,6 @@ CDOTA_Ability_Special_Bonus_Unique_Slardar_3
 CDOTA_Ability_Special_Bonus_Unique_Slardar_4
 CDOTA_Ability_Special_Bonus_Unique_Slardar_5
 CDOTA_Ability_Special_Bonus_Unique_Slardar_6
-CDOTA_Ability_Special_Bonus_Unique_Slardar_7
 CDOTA_Ability_Special_Bonus_Unique_Slardar_8
 CDOTA_Ability_Special_Bonus_Unique_Slark
 CDOTA_Ability_Special_Bonus_Unique_Slark_2
@@ -26392,7 +26452,6 @@ CDOTA_Modifier_Arc_Warden_Scepter
 CDOTA_Modifier_ArcaneBoots_ManaRegen
 CDOTA_Modifier_Armlet_UnholyStrength
 CDOTA_Modifier_Ascension_AcidBlood
-CDOTA_Modifier_Ascension_AcidBlood_Thinker
 CDOTA_Modifier_Ascension_Bulwark
 CDOTA_Modifier_Ascension_Meteoric_Land
 CDOTA_Modifier_Assassins_Dagger_Debuff
@@ -29020,6 +29079,7 @@ CDOTA_SuggestionManager::RequestSuggestedWardLocations
 CDOTA_SuggestionManager::RequestTopNItems
 CDOTA_SuggestionManager::RequestWinProbability
 CDOTA_SuggestionManager_Learn
+CDOTA_SuggestionManager_Learn::FetchInferenceMetadata
 CDOTA_SuggestionManager_Learn::GetItemSequences
 CDOTA_SuggestionManager_Learn::GetItemSequences inference 1 result %d
 CDOTA_SuggestionManager_Learn::GetItemSequences inference 2 result %d
@@ -29036,8 +29096,12 @@ CDOTA_SuggestionManager_Learn::GetSuggestedAbilities state for player %d is upda
 CDOTA_SuggestionManager_Learn::GetWardLocations
 CDOTA_SuggestionManager_Learn::GetWardLocations inference result %d
 CDOTA_SuggestionManager_Learn::GetWardLocations state for team %d is updated or cached, but no cached value
+CDOTA_SuggestionManager_Learn::GetWardPossibleLocations
+CDOTA_SuggestionManager_Learn::GetWardPossibleLocations inference metadata result %d
 CDOTA_SuggestionManager_Learn::GetWinProbability
 CDOTA_SuggestionManager_Learn::GetWinProbability inference result %d
+CDOTA_SuggestionManager_Learn::RequestNeutralItems
+CDOTA_SuggestionManager_Learn::RequestNeutralItems inference result %d
 CDOTA_SuggestionManager_Learn::RequestTopNItems
 CDOTA_SuggestionManager_Learn::RequestTopNItems inference result %d
 CDOTA_SuggestionServer
@@ -29843,6 +29907,7 @@ CHECK failed: output->message_info.prototype != nullptr
 CHECK failed: prototype != nullptr
 CHECK failed: target_ != NULL
 CHECK failed: this == other_mutator
+CHECK failed: this->MapFieldBase::repeated_field_ != nullptr
 CHECK failed: uninterpreted_options_field != nullptr
 CHECK failed: unknown_fields->SerializeToString(outstr
 CHECK_BITLEN_DSA
@@ -30001,6 +30066,7 @@ CJobImplClassMgr::BRouteMsgToJob() - continue job
 CJobImplClassMgr::BRouteMsgToJob() - job
 CJobImplClassMgr::PassMsgToJob() job %s received unexpected message %s when paused for %s
 CJobImplClassMgr::m_WorkThreadPool
+CKS_BOT_MELEE
 CKV3MemberNameWithStorage
 CKeepUpright
 CKeyValues3Context::Root
@@ -30220,7 +30286,6 @@ CModelState
 CModelState::DoSetupPhysics
 CModelState::SetupModel
 CModelState::SetupModel( %s '%s' @{%g,%g,%g}) cannot look at solid type because the entity class is not derived from CBaseEntity
-CModifierFactory@VCDOTA_Modifier_Aghsfort_Mars_ArenaOfBlood_Leash
 CModifierHandleTyped
 CModifierParams
 CMotionTransform
@@ -30802,7 +30867,6 @@ CMsgSteamLearnDataSource
 CMsgSteamLearnDataSourceDescElement
 CMsgSteamLearnDataSourceDescObject
 CMsgSteamLearnHMACKeys
-CMsgSteamLearnHMACKeys"A
 CMsgSteamLearnItemPurchase
 CMsgSteamLearnMatchHero
 CMsgSteamLearnMatchHeroes
@@ -30823,6 +30887,10 @@ CMsgSteamLearn_GetHMACKeys_Request
 CMsgSteamLearn_GetHMACKeys_Response
 CMsgSteamLearn_GetHMACKeys_Response"n
 CMsgSteamLearn_InferenceBackend_Response
+CMsgSteamLearn_InferenceMetadataBackend_Request
+CMsgSteamLearn_InferenceMetadata_Request
+CMsgSteamLearn_InferenceMetadata_Response
+CMsgSteamLearn_InferenceMetadata_Response"D
 CMsgSteamLearn_Inference_Request
 CMsgSteamLearn_Inference_Response
 CMsgSteamLearn_Inference_Response"N
@@ -31504,12 +31572,12 @@ CSoundscapeSystem::InitGlobalSoundscapes
 CSource1LegacyGameEventGameSystem
 CSource2GameClients::StartHLTVServer: game event %s not found
 CSource2GameEntities::CheckEntities: %d ents
-CSource2GameEntities::CheckTransmit(), C:\buildworker\source2_dota_rel_2019_win64\build\src\game\server\gameinterface.cpp:2950
-CSource2GameEntities::CheckTransmit(), C:\buildworker\source2_dota_rel_2019_win64\build\src\game\server\gameinterface.cpp:3059
+CSource2GameEntities::CheckTransmit(), C:\buildworker\source2_dota_rel_2019_win64\build\src\game\server\gameinterface.cpp:2956
+CSource2GameEntities::CheckTransmit(), C:\buildworker\source2_dota_rel_2019_win64\build\src\game\server\gameinterface.cpp:3065
 CSource2Server::GameFrame
 CSource2Server::GameServerSteamAPIActivated
 CSource2Server::GameServerSteamAPIDeactivated
-CSource2Server::GetEconItemsInfoForModel(1523): Cannot find a unit that uses model: "%s
+CSource2Server::GetEconItemsInfoForModel(1529): Cannot find a unit that uses model: "%s
 CSource2Server::GetLevelsFromSaveFile
 CSpawnGroupMgrGameSystem: flushed %d queued entity calls
 CSpawnGroupMgrGameSystem::ActivateSpawnGroup:  no such group %s
@@ -31524,16 +31592,14 @@ CSprite
 CSpriteAlias_env_glow
 CSpriteOriented
 CSteamLearnManager
-CSteamLearnManager::BRegisterDataSource Steam UM dispatch failed
-CSteamLearnManager::BRegisterDataSource attempting to register data source for %s with no HMAC key
 CSteamLearnManager::BSnapshotProject (batched) no HMAC secret for project %u
-CSteamLearnManager::BSnapshotProject Steam UM dispatch failed
 CSteamLearnManager::BSnapshotProject no submission HMAC secret for project %u, published version %u
-CSteamLearnManager::BSubmitToDataSource Steam UM dispatch failed
 CSteamLearnManager::BSubmitToDataSource no HMAC secret for data source %u
 CSteamLearnManager::BSubmitToDataSource no submission HMAC secret for data source %u
 CSteamLearnManager::BYieldingInference no HMAC secret for project %u, published version %u
-CSteamLearnManager::FrameUpdatePostEntityThink Steam UM dispatch failed
+CSteamLearnManager::PostInit (batch loop
+CSteamLearnManager::RegisterDataSource
+CSteamLearnManager::SubmitToDataSource
 CSteamUnifiedMessageDispatcher::SendMethod: Cannot invoke method without first registering listener
 CStopwatch
 CStopwatchBase
@@ -32236,11 +32302,12 @@ CloseThreadpoolTimer
 CloseThreadpoolWait
 CloseThreadpoolWork
 CloseToolhelp32Snapshot
+Cluster
 CmdLinkA
 CmdLinkA3
 CmdLinkAH
 Cn77Yn77Y
-Cnav_bfs_debug
+Cnav_pathfind_debug_log
 CoachRating_t
 Code Signing
 Code bug: Event Reward indicated success without initializing the reward definition
@@ -32320,6 +32387,7 @@ CommentaryMode
 CommentarySystem
 CommitTo@CMemoryStack@@AEIAA_NPEAE@Z
 Committing autosavedangerous
+CompactTable
 Companion
 CompanionOwner
 Compare
@@ -32343,7 +32411,6 @@ Component class %s needs its own datadesc (is using %s
 Components
 ComposeFileName@CBufferString@@QEAAPEBDPEBD0D@Z
 Compress@CLZSS@@QEAAPEAEPEAEHPEAI_N@Z
-Compute LOD mask internally like since 2016, i.e. force all LOD groups' bones to compute
 Compute the closest point on the OBB of an entity
 Compute the distance between two entity OBB. A negative return value indicates an input error. A return value of zero indicates that the OBBs are overlapping
 ConColorMsg@@YAXAEBVColor@@PEBDZZ
@@ -32712,6 +32779,7 @@ Cycles through different minimap debug modes
 Cycles through grid modes
 D#89D$Xt
 D#D)D;D?DEDKDQDSDYDeDoD
+D$ 9P s
 D$ A;G8
 D$ A;l
 D$ D;G0
@@ -32746,9 +32814,11 @@ D$0@8nW
 D$0@8w=u
 D$0BR(HH
 D$0D8w=u
+D$0D9P s
 D$0H9D$8
 D$0H9D$PuUH
 D$0H9D$Pu\H
+D$0H9L$0H
 D$0H9X s
 D$0H;D
 D$0H;D$P
@@ -32796,8 +32866,6 @@ D$8z\uZ
 D$<9D$4u
 D$<HcT$P3
 D$@17xbA
-D$@9D$@uA
-D$@9D$@uF
 D$@9D$@uH
 D$@9D$P
 D$@9D$h
@@ -32973,7 +33041,7 @@ D8{8u+H
 D8|$8ujL
 D8}xtAH
 D8}xtCH
-D9 }aD8
+D9 }aD8%p
 D9;~xff
 D9>|!Hc
 D9A(tFH
@@ -33063,6 +33131,7 @@ D9}P|EH
 D9}p|EH
 D9~ ~SE
 D9~Xu@D8~=u
+D;Q spH
 D;T$hr A
 D;q }pL9T$P
 D;q }uH
@@ -35772,6 +35841,7 @@ E8<$t#H
 E8AkFT<A
 E8HcE,H
 E8d7<u
+E8f:teH
 E8g0uYH
 E8gLt8I
 E8oBu_A
@@ -36171,6 +36241,7 @@ EStatID
 ESteamLearnCacheDataResult
 ESteamLearnDataType
 ESteamLearnGetHMACKeysResult
+ESteamLearnInferenceMetadataResult
 ESteamLearnInferenceResult
 ESteamLearnSnapshotProjectResult
 ESteammLearnRegisterDataSourceResult
@@ -37696,6 +37767,7 @@ GPH9CPt
 GRAPHICSTRING
 GREEVIL_CAMP
 GService for submitting data, training, and inferencing with SteamLearn
+GXD9wPt
 GXH9CXt
 GXHcWhH
 GXL9gPt,H
@@ -38586,7 +38658,7 @@ GetItemSlotType
 GetItemState
 GetItemStockCount
 GetItemStockTime
-GetKill
+GetKills
 GetKillsDoneToHero
 GetLabyrinthEventGameHeroUnlocks
 GetLaneFrontAmount
@@ -39401,6 +39473,7 @@ H8Hc@0H
 H99tAA
 H9;toH9x
 H9A u)M
+H9A(ugL
 H9D$ u
 H9D$ u2
 H9D$8teH
@@ -39540,6 +39613,7 @@ HHcC@H
 HHcD$@H
 HHcD$@Hk
 HHcD$@I
+HHcD$@L
 HHcL$@H
 HIERARCHY_ABSORIGIN
 HIERARCHY_ATTACHMENT
@@ -39578,7 +39652,7 @@ HOOKSHOT
 HP Regen: %f - MP Regen: %f
 HP to set when damaged below zero in Buddha Mode
 HPRegenGain
-HPX`hv
+HPX`hvp
 HParticleSystemDefinition
 HParticleSystemDefinitionStrong
 HPostProcessing
@@ -39726,6 +39800,7 @@ Hco ;o0
 Hco(;o8
 HcoP;o
 Hct$ H
+Hct$PHc
 Hct$`I
 Hcu@;uP
 HcydHcR
@@ -41171,7 +41246,6 @@ How long does this Ability channel
 How long does this Ability persist once cast
 How long in milliseconds before we warn about lock hold duration
 How long into the game we need to be before we boot players for being intentionally Idle
-How long looping soundpatch captions should display for
 How long to display screen message text
 How long to stay at the waiting-for-players UI after all players have loaded
 How long to wait after in state disconnect for league games, so DVR delayed folks can keep watching
@@ -41222,6 +41296,7 @@ I?ffffff
 IA5STRING
 IBody::PostureType
 ICC or token signature
+ICDOTA_Ability_Special_Bonus_Unique_Slardar_7
 ICEBLAST_DESTROY
 ICEBLAST_THINK
 ICEPATH
@@ -41452,7 +41527,6 @@ Ihttp://crl3.digicert.com/DigiCertTrustedG4RSA4096SHA256TimeStampingCA.crl0
 Il?333333c
 Illegal jstype for int64, uint64, sint64, fixed64 or sfixed64 field
 Illegal tier "%s" specified in rubick arcana file '%s
-Im_hPreviousTarget
 Image shown while customizing ping wheel
 ImmediateWake
 Immediately drop a carried item at a given position
@@ -41516,6 +41590,7 @@ IndirectVoxelDimY
 IndirectVoxelDimZ
 IndividualProgress
 Inference
+InferenceMetadata
 Inferred Ally Defense - %s from %s
 Inferred Assembling
 Inferred Defending %s Tower- %1.3f
@@ -42759,6 +42834,7 @@ Key '%s' unexpected data type
 Key Agreement
 Key Compromise
 Key Encipherment
+Key for overriding datasource registration key
 Key in map fields cannot be enum types
 Key in map fields cannot be float/double, bytes or message types
 Key: %s Value: %s
@@ -42831,6 +42907,7 @@ L$ USVWAVAWH
 L$ USVWH
 L$ USWAUH
 L$ UVATAUAVAWH
+L$ UVATAUAVH
 L$ UVAUAVAWH
 L$ UVWATAUAVAW
 L$ UVWATAUAVAWH
@@ -42848,6 +42925,7 @@ L$ VWATAVAW
 L$ VWAUH
 L$ VWAVH
 L$ WATAUAVAW
+L$ WATAUAWH
 L$ WAVAWH
 L$ u9H
 L$(HcD$ I
@@ -42876,6 +42954,7 @@ L$@9L$P
 L$@D8l$Ht
 L$@Hc9H
 L$@HcT$<H
+L$@Lc0HcD$0H
 L$@tGD
 L$DH;T$xt
 L$HA+G$L
@@ -42890,11 +42969,12 @@ L$PE8&t
 L$PtSA
 L$X+G$L
 L$X;L$h
+L$XH9L$XH
 L$XH;L
 L$`A8.t
 L$`D8g
+L$`H9L$`H
 L$`zluj
-L$dA;Ot
 L$dD;L$h
 L$h+G$3
 L$h+G$L
@@ -42940,7 +43020,6 @@ L9~@uqH9n8ukH
 L;l$ }9E
 L;{ u?M
 L?UUUUUUU
-L?env_tonemap_controller2
 L?n(Zy
 LABEL_OPTIONAL
 LABEL_REPEATED
@@ -43164,6 +43243,7 @@ Lc{ D;{0
 Lc{8D;{H
 Lc|$8A
 Lc|$XHc
+Lc|$XJ
 Lc~ D;~0
 Lc~8D;~H
 Lc~hD;~x
@@ -43980,6 +44060,7 @@ MapKey::GetUInt32Value
 MapKey::GetUInt64Value
 MapKey::type MapKey is not initialized
 MapListService_001
+MapMappingsEntry
 MapResults
 MapUnitName
 MapValueConstRef::GetBoolValue
@@ -44003,6 +44084,7 @@ MapValueRef::SetInt64Value
 MapValueRef::SetStringValue
 MapValueRef::SetUInt32Value
 MapValueRef::SetUInt64Value
+MapValuesEntry
 Margin desired = %0.2f, actual = %0.2f
 Mark object for debug
 Mark the ability button for this ability as needing a refresh
@@ -44092,7 +44174,7 @@ Maximum allowed physical items per player (purchasing disallowed when reached
 Maximum amount of zombies that can be spawned
 Maximum frametime to still play background expressions
 Maximum lag compensation in seconds
-Maximum number of steamlearn inferences that we can have in flight at once
+Maximum number of steamlearn requests that we can have in flight at once
 Maximum prop breakable piece count per frame (-1 = model default
 Maximum speed any ballistically moving object is allowed to attain per axis
 Maximum think time in milliseconds, warning is printed if this is exceeded
@@ -44141,6 +44223,7 @@ MeshGroupMasp : %llx
 MeshSystem001
 MeshUtils001
 Message
+Message class
 Message collision: %s redefined as %s
 Message does not support reflection (type
 Message is too deep, the parser exceeded the configured recursion limit of
@@ -45039,6 +45122,7 @@ OPEN_PAREN
 OPTIONS
 OP_EQUAL
 ORGANIZATIONAL
+OTA_Modifier_Obsidian_Destroyer_Equilibrium_Buff
 OTHERNAME
 OTHER_BLOCKER
 OUTPOST
@@ -45518,6 +45602,7 @@ OnTrigger10
 OnTrigger11
 OnTrigger12
 OnTrigger13
+OnTrigger14
 OnTrigger15
 OnTrigger16
 OnTrigger2
@@ -45862,6 +45947,7 @@ PHYSGUN
 PHcB(;B,u
 PHcChH
 PHcD$HH
+PHcD$HL
 PHcEHH
 PHc[HH
 PHc\$p
@@ -46866,7 +46952,6 @@ RFC 5639 curve over a 384 bit prime field
 RFC 5639 curve over a 512 bit prime field
 RHcl$HH
 RIPEMD160
-RK_DISCONNECT_STEAM_INUSE
 ROCKETFLARE
 ROLL_CREDITS
 ROLL_LATE_JOIN_LOGO
@@ -47006,7 +47091,6 @@ RUNE_STATUS_MISSING
 RUNE_STATUS_UNKNOWN
 RUNE_WATER
 RUNE_XP
-RUN_STIMULATED
 Radiant
 Radiant Kills State changed from %d to %d
 Radiant Only
@@ -47309,6 +47393,7 @@ RequestPause_t
 Requesting GC status
 Requesting account %d resources without rank
 Requesting account %d resources, including %s rank
+Requests the metadata that was generated from a specified fetch
 Require Explicit Policy
 Required fields are not allowed in proto3
 Required heroes in a playtest
@@ -47586,6 +47671,7 @@ RotationInterpolator
 RotationVector
 RotationVector-world
 RoutingMethod
+RowRange
 RtlCaptureContext
 RtlLookupFunctionEntry
 RtlPcToFileHeader
@@ -48011,6 +48097,11 @@ STEAMLEARN_INFERENCE_ERROR_INVALID_PROJECT_ID
 STEAMLEARN_INFERENCE_ERROR_INVALID_TIMESTAMP
 STEAMLEARN_INFERENCE_ERROR_NO_FETCH_ID_FOUND
 STEAMLEARN_INFERENCE_ERROR_NO_PUBLISHED_CONFIG
+STEAMLEARN_INFERENCE_ERROR_TOO_BUSY
+STEAMLEARN_INFERENCE_METADATA_ERROR
+STEAMLEARN_INFERENCE_METADATA_ERROR_FORBIDDEN
+STEAMLEARN_INFERENCE_METADATA_ERROR_INVALID_PUBLISHED_VERSION
+STEAMLEARN_INFERENCE_METADATA_SUCCESS
 STEAMLEARN_INFERENCE_SUCCESS
 STEAMLEARN_REGISTER_DATA_SOURCE_RESULT_DISABLED
 STEAMLEARN_REGISTER_DATA_SOURCE_RESULT_ERROR
@@ -50434,6 +50525,7 @@ Snap player eyes to specified pitch yaw <roll:optional> (must have sv_cheats
 SnapToStartPos
 Snapshot of the entire state of a Dota match
 Snapshot project id %u, published version %u, key '%s
+SnapshotHistogram
 SnapshotProject
 SnapshotProjectKeys
 Snapshots the current data for a project
@@ -50452,6 +50544,7 @@ SoloDesire
 Solve (%d active bodies in %d islands): %6.3f [ms
 SolveTOI (for %d active contacts): %6.3f [ms
 Some options could not be correctly parsed using the proto descriptors compiled into this binary
+Sorted Lane Preferences
 Sound played when pinging
 Sound volume: %.3f
 SoundCommand_t
@@ -50630,6 +50723,7 @@ Stack depth limit hit (%d
 Stack part of OpenSSL 1.0.2j  26 Sep 2016
 StackCount
 StacksWithOtherOwners
+Stamlearn %s request timed out for project %u
 StanceType_t
 Standing
 StandingEntry
@@ -50648,6 +50742,7 @@ Start continuously adding to the selected set
 Start continuously removing from the selected set
 Start dragging a selection area
 Start or stop continuously adding to the selected set
+Start or stop continuously removing from the selected set
 Start scene playback, takes activatorEntity as param
 Start this modifier's think function (OnIntervalThink) with the given interval (float).  To stop, call with -1
 Start: %3.0f
@@ -50748,28 +50843,25 @@ SteamLearn RegisterDataSource key '%s
 SteamLearn Snapshot project id %u, published version %u, key '%s
 SteamLearn SubmitToDataSource id %u, key '%s
 SteamLearn data submission %s for this server
-SteamLearn.BatchOperation#1
-SteamLearn.CacheData#1
-SteamLearn.Inference#1
-SteamLearn.RegisterDataSource#1
-SteamLearn.SnapshotProject#1
+SteamLearn timed out waiting for room to make '%s' request for project %u
+SteamLearn.%s#1
 SteamLearn: Attempt to cache data to an uncached Data Source in CacheData
 SteamLearn: Attempt to snapshot data with invalid project id in SnapshotModel
 SteamLearn: CacheData Success
 SteamLearn: Disabling test inferencing for project id %u
 SteamLearn: Enabling test inferencing for project id %u
 SteamLearn: Invalid HMAC encoding for CacheData
-SteamLearn: Invalid HMAC encoding for RegisterDataSource
+SteamLearn: Invalid HMAC encoding for RegisterDataSource (%s
 SteamLearn: Invalid HMAC encoding for SnapshotModel
-SteamLearn: Invalid data description supplied to RegisterDataSource
-SteamLearn: Invalid data description supplied to RegisterDataSource, does not match existing data description of this version
+SteamLearn: Invalid data description supplied to RegisterDataSource (%s
+SteamLearn: Invalid data description supplied to RegisterDataSource, does not match existing data description of this version (%s
 SteamLearn: Invalid keys supplied to CacheData
 SteamLearn: Invalid keys supplied to SnapshotModel
-SteamLearn: Invalid name supplied to RegisterDataSource
+SteamLearn: Invalid name supplied to RegisterDataSource (%s
 SteamLearn: Invalid timestamp for CacheData
-SteamLearn: Invalid timestamp for RegisterDataSource
+SteamLearn: Invalid timestamp for RegisterDataSource (%s
 SteamLearn: Invalid timestamp for SnapshotModel
-SteamLearn: Invalid version supplied to RegisterDataSource
+SteamLearn: Invalid version supplied to RegisterDataSource (%s
 SteamLearn: No published config in SnapshotModel
 SteamLearn: Registered Data Source (name %s, id %u
 SteamLearn: Snapshot Success (queued
@@ -50777,14 +50869,12 @@ SteamLearn: Snapshot Success (stored
 SteamLearn: Unknown data source supplied in CacheData
 SteamLearn: Unknown data source supplied in SnapshotModel
 SteamLearn: Unknown error in CacheData
-SteamLearn: Unknown error in RegisterDataSource
+SteamLearn: Unknown error in RegisterDataSource (%s
 SteamLearn: Unknown error in SnapshotModel
 SteamLearn: Unknown result from CacheData
-SteamLearn: Unknown result from RegisterDataSource
+SteamLearn: Unknown result from RegisterDataSource (%s
 SteamLearn: Unknown result from SnapshotModel
 SteamLearn: missing cache duration in SnapshotModel
-SteamLearn::BYieldingInference timed out inferencing project %u
-SteamLearn::BYieldingInference timed out waiting for room to inference project %u
 SteamMatchGameSearch001
 SteamMatchMaking009
 SteamMatchMakingServers002
@@ -50794,6 +50884,8 @@ SteamUnifiedMessages
 SteamUser021
 SteamUtils010
 Steam_Country_%s
+Steamlearn %s request for project %u completed, but no response waiting
+Steamlearn %s request timed out for project %u
 Step Softbodies: %6.3f [ms
 Step: %6.3f [ms
 StepSimulationFuncRotatingAnglesSerializer
@@ -50953,7 +51045,6 @@ T$8IcF
 T$8SUATAUAVAWH
 T$8SUATAUAVAWL
 T$@HcL$8H
-T$H@85o
 T$Hx/Hc
 T$PE9&~*L
 T$PH;T$p
@@ -50987,6 +51078,7 @@ T;D$Pt%H
 T;D$Xt$H
 T;Ept#H
 T;Ept$H
+TAUAVAWH
 TD SUMMARY (%d summaries
 TEAM_DIRE
 TEAM_NEUTRAL
@@ -51524,6 +51616,7 @@ Timed out waiting for State_Think_POST_GAME transition time to expire. Expires a
 TimedKillEvent_t
 TimedTeamStats_t
 TimelineCompression_t
+Timeout in seconds for backend requests
 Timeout to receive saved scenario from GC
 Timeout waiting for scenario message
 TimeoutThink
@@ -52388,6 +52481,7 @@ Usage: dota_grant_consumable_charges <player id> <item def> [charge amount
 Usage: dota_gridnav_perf_test < numPaths
 Usage: dota_kill_unit_by_name <unit name
 Usage: dota_record_hero [hero class] [persona
+Usage: dota_steamlearn_load_metadata [project_id]  [published_version
 Usage: ent_spew_derived_classes <classname
 Usage: global_set <globalname> <state>: Sets the state of the given env_global (0 = OFF, 1 = ON, 2 = DEAD
 Usage: in_forcebuttonstate <in-button-name> <0/1
@@ -53238,9 +53332,9 @@ a2i_ASN1_ENUMERATED
 a2i_ASN1_INTEGER
 a2i_ASN1_STRING
 a2i_GENERAL_NAME
+aGCDOTABehaviorCommandMoveToRuneToTake
 aGOST01
 aGOST94
-aGm_bDirectional
 aOpenSSL
 aRecord
 aaControls
@@ -54478,7 +54572,6 @@ always_send_to_servers
 always_unlocked
 always_visible
 am_blink
-ambda_aea9113881e4e0ef3ec3d5f26d714d51
 ambient
 ambient_effects
 ambient_effects_persona_1
@@ -55784,7 +55877,6 @@ block_targeting
 blocker
 blood_impact
 bloodimpact
-bloodseeker.rupture_FP
 bloodseeker_blood_bath
 bloodseeker_blood_mist
 bloodseeker_bloodrage
@@ -56186,6 +56278,7 @@ bs-BA-Latn
 bs-ba-latn
 bspline
 bucket sorting
+bucket_counts
 buckshot
 buddha_ignore_bots
 buddha_reset_hp
@@ -56908,6 +57001,7 @@ cloudrun_start
 clrcall
 cluster
 cluster_id
+clusters
 cm_captain_player_id
 cm_first_pick
 cm_penalty
@@ -56973,7 +57067,6 @@ coins_spent
 cointerface
 cojob_lock_hold_warning_threshold_ms
 cojob_max_no_yield_time_us
-col="%ssignature
 col_viz
 cold_attack_slow_melee
 cold_attack_slow_ranged
@@ -57045,6 +57138,7 @@ comms_blocks_mass
 comms_blocks_solo
 comms_reports_available
 community_market_item_remaps
+compact_tables
 companion
 compare
 compare game events across all mods
@@ -57901,6 +57995,7 @@ d$PD9d
 d$PD9d$`|OH
 d$PH9^pt{D
 d$XHc+L
+d$XHc5t
 d$XL9d$ht
 d$Xt\I
 d$Xt^I
@@ -58194,6 +58289,7 @@ data_bools
 data_compressed
 data_cp
 data_cp_value
+data_element_path
 data_extra
 data_floats
 data_int32s
@@ -58733,6 +58829,7 @@ dota_719
 dota_722
 dota_728
 dota_731_teaser_enabled
+dota_732
 dota_ability_channel_finished
 dota_ability_debug
 dota_ability_debug_disable
@@ -58822,7 +58919,6 @@ dota_bot_debug_potential_location
 dota_bot_debug_team
 dota_bot_debug_ward_spots
 dota_bot_disable
-dota_bot_disable_test
 dota_bot_disconnect_player
 dota_bot_dump_state
 dota_bot_failed_pathfind_warnings
@@ -59060,8 +59156,8 @@ dota_goodguys_tower3_top
 dota_goodguys_tower4_bot
 dota_goodguys_tower4_top
 dota_gotta_go_fast
+dota_gr
 dota_grant_consumable_charges
-dota_grant_event_action <playerid> <event id> <action id> <quantity
 dota_greevil_black_essence
 dota_greevil_blue_essence
 dota_greevil_green_essence
@@ -59588,6 +59684,7 @@ dota_start_auto_save_test
 dota_start_game
 dota_state_disconnect
 dota_statmanager_debug
+dota_steamlearn_load_metadata
 dota_strategy_time
 dota_suggest_abilities_use_steamlearn
 dota_suggest_disable
@@ -60196,6 +60293,7 @@ enable_offscreen_indicator
 enable_steering_limit
 enable_suspension_limit
 enable_swing_limit
+enable_test_inferencing
 enable_twist_limit
 enableangularconstraint
 enablecollision
@@ -60569,6 +60667,7 @@ env_sprite at setpos %0.0f %0.0f %0.0f has invalid glow size %f - clamping to %f
 env_sprite_oriented
 env_tilt
 env_tonemap_controller
+env_tonemap_controller2
 env_volumetric_fog_controller
 env_volumetric_fog_volume
 env_zoom
@@ -60591,6 +60690,7 @@ equip_regions
 equip_regions_list
 equipped_econ_items
 equipped_state
+er_crit_damage
 eresult
 eresult_deprecated
 err asn1 lib
@@ -60949,7 +61049,6 @@ fEndRadius
 fExpireTime
 fFadeIn
 fFadeOut
-fInitialStockDuration
 fLct$0
 fMaxSpeed
 fOriginalDamage
@@ -61038,7 +61137,6 @@ fallback_position
 falloff
 false"R
 false"d
-false:7
 false:A
 famango_rate
 famangos_gained
@@ -61085,8 +61183,10 @@ feedback_mana_burn_illusion_melee
 feedback_mana_burn_illusion_ranged
 feeding_detected
 fel_beast_haunt
+fetch_id
 ff;S.w`fA
 fff>fff>fff>fff
+fff?dota_bot_disable_test
 ffffff
 fffffff
 field missing
@@ -61680,6 +61780,7 @@ func_interaction_layer_clip: invalid interact-with attribute %s
 func_movelinear
 func_nav_avoidance_obstacle
 func_nav_blocker
+func_nav_markup
 func_nav_markup_game
 func_physbox
 func_physbox '%s' at (%.2f, %.2f, %.2f) with model '%s' has no physics
@@ -62056,7 +62157,6 @@ google.protobuf.UInt64Value
 google.protobuf.Value
 google.protobuf.bridge.MessageSet
 google/protobuf/descriptor.proto
-google/protobuf/descriptor.proto:9
 gost-mac
 gost2001
 gost2001cc
@@ -62236,7 +62336,6 @@ guildpattern
 guildprimarycolor
 guildsecondarycolor
 guildtier
-gularDampingRatio
 gush_damage
 gustdirchange
 gustduration
@@ -62528,6 +62627,7 @@ hero_bans
 hero_bloodseeker.bloodRite
 hero_bloodseeker.bloodRite.silence
 hero_bloodseeker.rupture.cast
+hero_bloodseeker.rupture_FP
 hero_candy_bucket
 hero_challenge_instances
 hero_controllable
@@ -62851,7 +62951,7 @@ http://ocsp.digicert.com0C
 http://ocsp.digicert.com0X
 http://www.digicert.com/CPS0
 https proxy request
-https://api.steampowered.com/ISteamLearnService/Inference/v1
+https://api.steampowered.com/ISteamLearnService/%s/v1
 hud_ping
 hud_skin
 hud_timer_show_tutorial_timer
@@ -62925,6 +63025,7 @@ iElement
 iFailType
 iFunction
 iGestureSlot >= 0 && iGestureSlot < GESTURE_SLOT_COUNT
+iGoldBounty
 iGoldBountyMax
 iGoldBountyMin
 iGoldChange
@@ -62934,7 +63035,6 @@ iHealAmount
 iKillerID
 iLevels
 iMagnitude
-iMaxCount
 iMaxStacks
 iMaxVal
 iMinVal
@@ -63372,6 +63472,7 @@ impale_damage
 impale_forward
 impaledLastFrame
 impetus
+implements neither SetCachedSize() nor ByteSize().  Must implement one or the other
 importance
 important
 imps_interval
@@ -63447,6 +63548,7 @@ indoor_outdoor_level
 inertiaScale
 inertiafactor
 inertiascale
+inference_metadata_result
 inference_result
 infernal_blade
 infest_duration_enemy
@@ -63474,6 +63576,7 @@ info_courier_spawn_radiant_5
 info_data
 info_dynamic_shadow_hint
 info_dynamic_shadow_hint_box
+info_game_event_proxy
 info_landmark
 info_nav_space
 info_null
@@ -63568,6 +63671,7 @@ inside block comment.  Block comments cannot be nested
 instance
 instance_data
 instance_id
+instanced_scripted_scene
 instances
 instant_wave
 instructor_close_lesson
@@ -63917,7 +64021,6 @@ is_hidden
 is_hidden_set
 is_hltv
 is_home_team
-is_illusion
 is_in_ability_phase
 is_in_steam_china
 is_initial_startup
@@ -66746,7 +66849,7 @@ l$`HcQXH
 l$dD9l$x
 l$hM9>t
 l$p;|$hud
-l$pD8=w
+l$pD8=gH
 l$pD9;~tf
 l$pD9l$x
 l$pLcopI
@@ -67130,6 +67233,7 @@ llu_%d.clog%s
 llu_%d.dem
 llu_%d.meta%s
 llu_%u.edem.battlepass
+llusion
 load_game_id
 load_master_item_schema
 loading
@@ -67229,7 +67333,6 @@ logic_measure_movement: Unable to find movement target entity %s
 logic_multilight_proxy
 logic_multilight_proxy '%s' was unable to find any lights matching it's name/class/radius
 logic_navigation
-logic_npc_counter_aabb
 logic_npc_counter_debug
 logic_npc_counter_obb
 logic_npc_counter_radius
@@ -68356,6 +68459,7 @@ m_bDidGiveOrder
 m_bDidSetAttackTarget
 m_bDidSwapSpiritForm
 m_bDiedInHook
+m_bDirectional
 m_bDirectionalRangedAttack
 m_bDirty
 m_bDirtyBoneMergeBoneToRoot
@@ -69830,10 +69934,10 @@ m_flAlphaScale
 m_flAlternateTicksFix
 m_flAmbient
 m_flAmmoMod
-m_flAng
 m_flAngRate
 m_flAngleSpeed
 m_flAngleSpeedThreshold
+m_flAngularDampingRatio
 m_flAngularDampingRatioX
 m_flAngularDampingRatioY
 m_flAngularDampingRatioZ
@@ -71203,6 +71307,7 @@ m_hPowerupRune_2
 m_hPreBear
 m_hPregameItemsSuggestion
 m_hPreviousHero
+m_hPreviousTarget
 m_hPrimary
 m_hPrimaryTarget
 m_hProcessedEnemies
@@ -71622,7 +71727,6 @@ m_iGlowTeam
 m_iGlowType
 m_iGoal
 m_iGoldBonusEarned
-m_iGoldBounty
 m_iGoldBountyMax
 m_iGoldBountyMin
 m_iGoldLossPrevented
@@ -72067,6 +72171,7 @@ m_iszHintTargetEntity
 m_iszIcon_Offscreen
 m_iszIcon_Onscreen
 m_iszIdle
+m_iszInteractsAs
 m_iszInteractsWith
 m_iszLandmarkName
 m_iszLastTarget
@@ -73430,6 +73535,7 @@ m_pReplyWhenAimed
 m_pReserveAmmo
 m_pReviveTarget
 m_pScene
+m_pSceneNode
 m_pSceneObject
 m_pShakeController
 m_pSink
@@ -74015,6 +74121,8 @@ m_vPathingSourcePos
 m_vPatrolPoints
 m_vPopupLocation
 m_vPosition
+m_vPossibleWardPlacement
+m_vPossibleWardRadii
 m_vPost1
 m_vPost2
 m_vPostForward
@@ -74096,6 +74204,7 @@ m_vWallLeft
 m_vWallRight
 m_vWallStartPosition
 m_vWaveAngle
+m_vWeatherWindDirection
 m_vWsKillDirection
 m_vWsKillOrigin
 m_vZombies
@@ -74492,9 +74601,9 @@ map_effects_item_defs
 map_entry
 map_entry should not be set explicitly. Use map<KeyType, ValueType> instead
 map_extension
-map_field
 map_key
 map_layout
+map_mappings
 map_name
 map_options
 map_override
@@ -74502,11 +74611,13 @@ map_results
 map_shutdown
 map_size
 map_value
+map_values
 map_variant
 map_variant_count
 mapline
 mapload
 mapname
+mapping
 maps/%s.gnv
 maps/%s/world_physics.vphys
 maps\%s.nav
@@ -74726,6 +74837,7 @@ max_reward_date
 max_rockets
 max_rotation
 max_rounds
+max_row
 max_self_damage
 max_sentry_charges
 max_shield
@@ -74764,6 +74876,7 @@ max_units
 max_usable_charges
 max_val
 max_value
+max_values
 max_vertical_move_time
 max_wait_for_rendering_to_complete_time
 maxchars
@@ -74961,6 +75074,7 @@ min_radius
 min_range
 min_raw_value
 min_rotation
+min_row
 min_shared_match_count
 min_skeleton_spawn
 min_slow
@@ -74972,6 +75086,7 @@ min_throw_duration
 min_travel_distance
 min_travel_time
 min_twist_angle
+min_value
 minblendrate
 mincpulevel
 minefield_duration
@@ -75402,6 +75517,7 @@ modifier_aghsfort_earth_spirit_boss_stone_thinker
 modifier_aghsfort_echo_slam_potion_debuff
 modifier_aghsfort_effigy
 modifier_aghsfort_enrage
+modifier_aghsfort_explosive_barrel
 modifier_aghsfort_firefly
 modifier_aghsfort_firefly_burn
 modifier_aghsfort_gyrocopter_call_down_slow
@@ -79087,6 +79203,7 @@ nav_begin_deselecting
 nav_begin_drag_deselecting
 nav_begin_drag_selecting
 nav_begin_selecting
+nav_bfs_debug
 nav_clear_attribute
 nav_clear_attributes
 nav_clear_selected_set
@@ -79181,7 +79298,6 @@ nav_pathfind_debug_draw
 nav_pathfind_debug_draw_costs
 nav_pathfind_debug_draw_errors
 nav_pathfind_debug_draw_total_costs
-nav_pathfind_debug_log
 nav_pathfind_inadmissable_heuristic_factor
 nav_raise_drag_volume_max
 nav_raise_drag_volume_min
@@ -80033,7 +80149,6 @@ npc_dota_hero_necrolyte
 npc_dota_hero_nevermore
 npc_dota_hero_night_stalker
 npc_dota_hero_nyx_assassin
-npc_dota_hero_obsidian_destroyer
 npc_dota_hero_ogre_magi
 npc_dota_hero_omniknight
 npc_dota_hero_oracle
@@ -80355,6 +80470,7 @@ num_adds
 num_bad_intervals
 num_bits
 num_bots
+num_buckets
 num_caltrops
 num_changed_entries
 num_chronod
@@ -80398,6 +80514,7 @@ o [%5d] '%s' (%s) [group entity
 o [no group entity
 o(H9o0u=H
 o2i_ECPublicKey
+o8IcGPL
 oBFX}k6U
 oHcEwL
 oMinghuaQu
@@ -80617,6 +80734,7 @@ ortholightwidth
 os.length <= (int)sizeof(ret->session_id
 os_type
 osversion
+ota_hero_obsidian_destroyer
 other damage done: %d
 otherCert
 otherCertFormat
@@ -84302,6 +84420,7 @@ projHandle
 proj_handle
 proj_index
 project_id
+project_id] [published_version] Test loads the inference metadata for the specified project
 project_ids
 projectile
 projectileID
@@ -84381,11 +84500,11 @@ protected
 proto text format> }". To set fields within it, use syntax like
 proto3_optional
 protobuf_field
-protoc
 protocol
 protocol error
 protocol is shutdown
 protocol not supported
+protocol="%ssignature
 protocolInformation
 provide parameters
 provider
@@ -84570,6 +84689,7 @@ pvsplayer
 pwrd_cyber_cafe_id
 pwrd_cyber_cafe_name
 py_generic_services
+p|D953
 p}?fff
 q @848u
 q not prime
@@ -84580,7 +84700,6 @@ q8D;p8t4
 q8D;r8tCH
 q@@8qAt
 qS>g?h3
-qT2F5Q
 qTm_fC
 qXHcI`I
 qangle_pitch_yaw
@@ -84709,6 +84828,7 @@ radiant_team_tag
 radiant_towers
 radiant_won
 radius: %f
+radius_80pct
 radius_end
 radius_explosion
 radius_grow
@@ -84775,6 +84895,7 @@ rank_wager_token
 rank_wagering_item
 rank_wagering_periodic_resource
 ranked_matchmaking_ban_until_date
+rant_event_action <playerid> <event id> <action id> <quantity
 rapiers_purchased
 rarities
 rat_pack
@@ -84837,6 +84958,7 @@ reason(%lu
 reason_code
 reason_const
 reasons
+receipt
 receipt decode error
 receiptsFrom
 receiptsTo
@@ -85288,7 +85410,6 @@ ricochet_fear_duration
 ricochet_radius_end
 ricochet_radius_start
 ricocheted
-rigger14
 right_click_jumping
 right_edge
 right_swipe_time
@@ -85412,6 +85533,7 @@ round_end
 round_start
 routing
 routing_app_id
+row_range
 rpg_example
 rr_dacmode
 rr_debugclassname
@@ -85441,7 +85563,6 @@ rsa_pss_saltlen
 rsaesOaep
 rsassaPss
 rsf;\$d
-rt or stop continuously removing from the selected set
 rt_birth_date
 rt_identity_linked
 rtc$IAA
@@ -85521,6 +85642,7 @@ s (PVS
 s (account %u) tried to execute invalid order (%d). %s
 s - %d
 s - %s %s
+s - %s - %2.2f
 s - %s - duration: %2.2f, createtime: %2.2f
 s - Active: %s
 s - Bad player ID %d
@@ -86025,7 +86147,6 @@ s_globalCount
 s_hype
 s_mega
 s_nCurrIterVal
-s_nDebugStateChange
 s_nNextChangeToken
 s_nSceneFlushCounter
 s_nWatchTransmitEntity
@@ -86194,7 +86315,6 @@ scepter_cleave_pct
 scepter_cleave_starting_width
 scepter_cooldown
 scepter_cooldown_reduction
-scepter_crit_damage
 scepter_damage_reduction_pct
 scepter_delay
 scepter_drag_speed
@@ -87216,7 +87336,6 @@ signature malloc failed
 signatureAlgorithm
 signed
 signed-data
-signed-receipt
 signedAttrs
 signedContentIdentifier
 signer certificate not found
@@ -87420,6 +87539,7 @@ snapfire_mortimer_kisses
 snapfire_scatterblast
 snapfire_spit_creep
 snapshot_file
+snapshot_histogram
 snapshot_name
 snapshot_project_keys
 snapshot_requests
@@ -89593,6 +89713,8 @@ status_resist
 status_resist_per_stack
 status_resistance
 std::nullptr_t
+std_dev
+std_devs
 stdcall
 stealAbilities
 steamID
@@ -89617,9 +89739,10 @@ steamids
 steamlearn_count
 steamlearn_data_submit_enable
 steamlearn_inference_http
-steamlearn_inference_max_in_flight
-steamlearn_inference_timeout_s
+steamlearn_max_in_flight
 steamlearn_override_inference_keys
+steamlearn_override_register_key
+steamlearn_request_timeout_s
 steammessages.proto
 steammessages.proto"z
 steammessages_int.proto
@@ -90159,7 +90282,6 @@ t$(HcL$ M
 t$(Lc2L
 t$(Lc|$ H
 t$*Lc7L
-t$,D;5Y
 t$0+odH
 t$0A_A
 t$0D9t$@|LH
@@ -90196,6 +90318,7 @@ t$@9t$P|LH
 t$@D8z=u
 t$@D9p0
 t$@D9t$P|LH
+t$@D;5h
 t$@D;s0
 t$@H9kpt
 t$@HcL$PA
@@ -90254,7 +90377,6 @@ t$`uaE3
 t$`uqH
 t$`u{E3
 t$`wAE
-t$dA9Gt
 t$dL9b u
 t$h9r@u`H
 t$hD8;toH
@@ -90264,6 +90386,7 @@ t$hHcD$`I
 t$hHcD$`L
 t$hHcL$`M
 t$hHcL$x
+t$hHct$PHc
 t$hLc7D;w
 t$p8_=u
 t$pD;t$x
@@ -90313,6 +90436,7 @@ t+@8~Hu
 t+E8&t&H
 t+HcL$P
 t,9uPu
+t,@8nhu
 t,D80t'H
 t,L9!t'I
 t-@8~Hu
@@ -90322,6 +90446,7 @@ t.LcL$pM
 t/D8;t*H
 t0;?ZlP*m
 t0L9s(t*E
+t198~)H
 t1@83t
 t1@88t
 t1E9fPt
@@ -90375,7 +90500,6 @@ tFD82tAH
 tFD88tAH
 tFH99tAH
 tGD;:~hIc
-tGH9-8T
 tGHcT$0A
 tHA80tCH
 tHHcKp
@@ -90425,7 +90549,7 @@ t`L90t
 ta9{p~XI
 taH99t\H
 table: %u members
-table_f
+table_flags
 table_id
 table_name
 table_t
@@ -91093,6 +91217,7 @@ tp_scrolls_purchased_4
 tp_scrolls_purchased_5
 tps_used
 tqL9mwukH
+tr@KeyValues@@QEAAXPEBDPEAX@Z
 trA96tmA
 track_caster_only
 track_failure
@@ -91266,7 +91391,7 @@ truncated
 trustRoot
 trusted
 ts datasign
-tsH9=:3
+tsD952
 tsa name mismatch
 tsa untrusted
 tst info setup error
@@ -91274,6 +91399,7 @@ tsunami_chance
 ttf9>to
 tuD80tpH
 tuD8;tpH
+tuL9=QUU
 tuLc|$THc3A
 turbo_mode
 turn on, off, or toggle origin changes on server for entity by index
@@ -91367,6 +91493,7 @@ u D8|$Pu
 u H9P r
 u HcA<H
 u"8D$@t
+u"@85{G
 u"L;B r
 u$D8r(t
 u%8]wu H
@@ -91929,6 +92056,7 @@ vForceLocationX
 vForceLocationY
 vForceLocationZ
 vHIcF@E3
+vHc\$PE3
 vLastPos
 vLeashLocation
 vLocation
@@ -92039,6 +92167,8 @@ valve_dota_001.stinger.dire_win
 valve_dota_001.stinger.radiant_lose
 valve_dota_001.stinger.radiant_win
 valve_dota_001.stinger.respawn
+valve_map_field
+valve_map_key
 valveextensions.proto
 vampiric_aura
 vampiric_aura_radius
@@ -92303,6 +92433,7 @@ ward_hp
 ward_index
 ward_kill_gold
 ward_loc
+ward_locs
 ward_onprojectilehit
 ward_placements
 ward_radius
@@ -92655,6 +92786,7 @@ xHcD$pH
 xHcD$pHk
 xHcD$pL
 xM9~8I
+xQ;T$x}K
 xQD;AH}KH
 xU;F`}PH
 xWI96tRI
@@ -92691,6 +92823,10 @@ xwA;Gx}qI
 xwHcKxH
 xy;Fh}tHc
 xy;Gh}tHc
+x|9=P35
+x|9=P:5
+x|9=P=5
+x|9=p65
 x|;Eh}wHc
 x~;Fh}yHc
 y=up=green, z=forward=blue, x=left=red
