@@ -522,7 +522,6 @@
 13CNetMessagePBILi607E31CDOTAUserMsg_EmptyItemSlotAlertL13SignonGroup_t13EL19NetChannelBufType_t1ELb1EE
 13CNetMessagePBILi608E28CDOTAUserMsg_AghsStatusAlertL13SignonGroup_t13EL19NetChannelBufType_t1ELb1EE
 13CNetMessagePBILi610E25CDOTAUserMsg_MutedPlayersL13SignonGroup_t13EL19NetChannelBufType_t1ELb1EE
-13CNetMessagePBILi610E25CDOTAUserMsg_MutedPlayersL13SignonGroup_t13EL19NetChannelBufType_t1ELb1EE16CProtobufBindingE
 13CNetMessagePBILi611E26CDOTAUserMsg_ContextualTipL13SignonGroup_t13EL19NetChannelBufType_t1ELb1EE
 13CNetMessagePBILi612E24CDOTAUserMsg_ChatMessageL13SignonGroup_t13EL19NetChannelBufType_t1ELb1EE
 13CNetMessagePBILi613E29CDOTAUserMsg_NeutralCampAlertL13SignonGroup_t13EL19NetChannelBufType_t1ELb1EE
@@ -8738,6 +8737,7 @@
 31CDOTA_Ability_Life_Stealer_Rage
 31CDOTA_Ability_Magnataur_Empower
 31CDOTA_Ability_Mars_ArenaOfBlood
+31CDOTA_Ability_Medusa_ManaShield
 31CDOTA_Ability_MonkeyKing_Spring
 31CDOTA_Ability_Muerta_Gunslinger
 31CDOTA_Ability_Muerta_TheCalling
@@ -23805,6 +23805,7 @@ CDOTA_Item_Yasha
 CDOTA_Item_Yasha_And_Kaya
 CDOTA_Jungle_Varmint_Dive
 CDOTA_Lamp_Use
+CDOTA_M
 CDOTA_MLBotManager
 CDOTA_MLUnitTracker::Update
 CDOTA_MapTree
@@ -25449,7 +25450,6 @@ CDOTA_Modifier_Item_Gungir
 CDOTA_Modifier_Item_HandOfMidas
 CDOTA_Modifier_Item_Harpoon
 CDOTA_Modifier_Item_Harpoon_EchoSabre_Component
-CDOTA_Modifier_Item_Harpoon_InternalCD
 CDOTA_Modifier_Item_Harpoon_Pull
 CDOTA_Modifier_Item_Harpoon_Slow
 CDOTA_Modifier_Item_Havoc_Hammer
@@ -33793,6 +33793,7 @@ Enabled: %s
 Enables debug spew for the stat manager. 0 = off, 1 = on, 2 = verbose
 Enables muerta easter egg hunt playtest
 Enables or disables buyback completely
+Enables or disables turbo couriers
 Enables player lag compensation
 Enables/Disables bots in custom games. Note: this will only work with default heroes in the dota map
 Enables/Disables tower backdoor protection
@@ -37678,6 +37679,7 @@ Hero_Techies.LandMine.Priming
 Hero_Techies.MinefieldSign.Detonate
 Hero_Techies.MinefieldSign.Trigger
 Hero_Techies.ReactiveTazer.Detonate
+Hero_Techies.RemoteMine.Activate
 Hero_Techies.RemoteMine.Detonate
 Hero_Techies.RemoteMine.Plant
 Hero_Techies.RemoteMine.Priming
@@ -38825,8 +38827,8 @@ InsertOrLookupMapValue
 InsideTransition
 InspectPathSegments: Seg (%d / %d), from Area %p, NumVerts = %d
 InspectPathSegments: Seg (%d / %d), to Area %p, NumVerts = %d
+Install
 Install DPC App
-Install a callback for whenever Roshan is killed
 Install a callback for whenever a courier is killed
 Install a callback for whenever a player chats
 Install a callback for whenever the specified player's units cast an ability or use an item
@@ -40754,6 +40756,7 @@ Modifier name %s is not lowercase
 Modifier script %s failed to find class named %s
 ModifierGainedData
 ModifierNames
+Modifier_Item_Harpoon_InternalCD
 Modifier_Pluck_Famango_Channel
 Modifies the number of valueless charges on this item
 Modify derived stat value constants. ( AttributeDerivedStat eStatType, float flNewValue
@@ -41180,6 +41183,7 @@ N13CNetMessagePBILi606E28CDOTAUserMsg_WRArcanaSummaryL13SignonGroup_t13EL19NetCh
 N13CNetMessagePBILi607E31CDOTAUserMsg_EmptyItemSlotAlertL13SignonGroup_t13EL19NetChannelBufType_t1ELb1EE16CProtobufBindingE
 N13CNetMessagePBILi608E28CDOTAUserMsg_AghsStatusAlertL13SignonGroup_t13EL19NetChannelBufType_t1ELb1EE16CProtobufBindingE
 N13CNetMessagePBILi609E29CDOTAUserMsg_PingConfirmationL13SignonGroup_t13EL19NetChannelBufType_t1ELb1EE16CProtobufBindingE
+N13CNetMessagePBILi610E25CDOTAUserMsg_MutedPlayersL13SignonGroup_t13EL19NetChannelBufType_t1ELb1EE16CProtobufBindingE
 N13CNetMessagePBILi611E26CDOTAUserMsg_ContextualTipL13SignonGroup_t13EL19NetChannelBufType_t1ELb1EE16CProtobufBindingE
 N13CNetMessagePBILi612E24CDOTAUserMsg_ChatMessageL13SignonGroup_t13EL19NetChannelBufType_t1ELb1EE16CProtobufBindingE
 N13CNetMessagePBILi613E29CDOTAUserMsg_NeutralCampAlertL13SignonGroup_t13EL19NetChannelBufType_t1ELb1EE16CProtobufBindingE
@@ -45501,7 +45505,6 @@ ServerMVP: Not calculating stats, missing gamerules or playerresource
 ServerMVP: Not calculating stats, this lobby is low pri
 ServerMVP: Submitting MVP stats for %d players in match %llu
 ServerResourceCompilerInfo_001
-ServerToGCGetStickerHeroesResponse
 ServerType
 ServiceDescriptorProto
 ServiceOptions
@@ -45616,7 +45619,6 @@ Set the damage gained per level on this creature
 Set the difficulty level of the custom game mode
 Set the disable resistance gained per level on this creature
 Set the effect used as a custom weather effect, when units are on non-default terrain, in this mode
-Set the forced selection entity for a player
 Set the health of this entity
 Set the hit points gained per level on this creature
 Set the hit points regen gained per level on this creature
@@ -46758,7 +46760,6 @@ T$`HcS`H
 T$hHcShH
 T$pHcSpH
 T$xHcSxH
-TA_Ability_Medusa_ManaShield
 TD SUMMARY (%d summaries
 TD_OFFSET_NORMAL
 TD_OFFSET_PACKED
@@ -49395,7 +49396,6 @@ ability_upgrades
 abilityentity
 abilitylevel
 abilityname
-ables or disables turbo couriers
 absolute_time
 absolute_timeout
 absolutetags
@@ -56842,6 +56842,7 @@ ghostship_speed
 ghostship_speed_scepter
 ghostship_width
 ghostship_width_scepter
+ght_score
 giant_wolf_critical_strike
 giant_wolf_intimidate
 gift__potential_targets
@@ -58173,6 +58174,7 @@ if we starve, we hold the faster time dilation for at least this many msecs
 if we starve, we increment target queue only this often, 0 to disable
 if you ignore case and strip out the enum name prefix (if any). This is error-prone and can lead to undefined behavior. Please avoid doing this. If you are using allow_alias, please assign the same numeric value to both enums
 ifA;L$.waf
+ifier_pet
 ignite_damage_percent
 ignite_duration
 ignite_multicast_aoe
@@ -60813,7 +60815,6 @@ k_EMsgPurchaseHeroRandomRelicResponse
 k_EMsgPurchaseItemWithEventPoints
 k_EMsgPurchaseItemWithEventPointsResponse
 k_EMsgResponseTeamFanfare
-k_EMsgS
 k_EMsgSQLAddDropRateBonus
 k_EMsgSQLDelayedGrantLeagueDrop
 k_EMsgSQLGCToGCGrantAccountFlag
@@ -60928,10 +60929,14 @@ k_EProfileCardSlotType_Team
 k_EProfileCardSlotType_Trophy
 k_EProtoExecutionSiteSteamClient
 k_EProtoExecutionSiteUnknown
+k_ERankType_BehaviorPrivate
+k_ERankType_BehaviorPublic
 k_ERankType_Casual
 k_ERankType_CasualGlicko
 k_ERankType_CasualLegacy
 k_ERankType_Invalid
+k_ERankType_Max
+k_ERankType_RankMax
 k_ERankType_Ranked
 k_ERankType_RankedGlicko
 k_ERankType_RankedLegacy
@@ -61149,6 +61154,7 @@ kv 0x%p AddRef refcount == %d
 kv 0x%p Release refcount == %d
 kv_data
 kv_juxtapose_illusion
+l a callback for whenever Roshan is killed
 l$(IcL$@I
 l$0E;l$@D
 l$0IcD$(M
@@ -61350,7 +61356,7 @@ lerp_sound
 lerp_target
 lerp_target_attachment
 lerpdata_t
-les/items_fx/harpoon_projectile.vpcf
+les/generic_gameplay/generic_silenced_lanecreeps.vpcf
 leshrac_diabolic_edict
 leshrac_greater_lightning_storm
 leshrac_lightning_storm
@@ -72049,7 +72055,6 @@ modifier_pangolier_swashbuckle_stunned
 modifier_passive_mango_tree
 modifier_penta_edged_sword_maim
 modifier_persistent_invisibility
-modifier_pet
 modifier_phantom_assassin_blur
 modifier_phantom_assassin_blur_active
 modifier_phantom_assassin_coupdegrace
@@ -74378,7 +74383,6 @@ o an intH
 o(D;o8D
 o0ATUSH
 o8D9h8tE
-o_Techies.RemoteMine.Activate
 obj_dat.c
 obj_lib.c
 objc_class_prefix
@@ -75157,7 +75161,6 @@ particles/generic_gameplay/generic_manaburn.vpcf
 particles/generic_gameplay/generic_minibash.vpcf
 particles/generic_gameplay/generic_purge.vpcf
 particles/generic_gameplay/generic_silenced.vpcf
-particles/generic_gameplay/generic_silenced_lanecreeps.vpcf
 particles/generic_gameplay/generic_sleep.vpcf
 particles/generic_gameplay/generic_slowed_cold.vpcf
 particles/generic_gameplay/generic_stunned.vpcf
@@ -75378,6 +75381,7 @@ particles/items_fx/ghost.vpcf
 particles/items_fx/glyph.vpcf
 particles/items_fx/glyph_creeps.vpcf
 particles/items_fx/guardian_shell_buff.vpcf
+particles/items_fx/harpoon_projectile.vpcf
 particles/items_fx/harpoon_pull.vpcf
 particles/items_fx/healing_clarity.vpcf
 particles/items_fx/healing_elixer.vpcf
@@ -79207,7 +79211,6 @@ s : canceled via player death
 s : removed for '%s
 s : stop scripted scene
 s <subclassname> [additional arguments
-s <target> [action] [value] [delay
 s Blocked by %s
 s DynamicAtr:%s = '%s
 s Error reloading ping wheel '%s
@@ -83382,6 +83385,7 @@ t%HcC0A
 t&IcT$hA;T$x
 t&Mc<$E
 t'L; u"L
+t(9=a$3
 t(IcD$8
 t(Lc#D;c
 t*Mc.E;n
@@ -83392,7 +83396,7 @@ t-<"tyD
 t-D;h,t
 t.<"tzD
 t/;w8t2;wHt=1
-t/D:%wG
+t/D:%7G
 t/Ic\$xA
 t0H9Q w*H
 t0Lcc(H
@@ -83514,6 +83518,7 @@ target6
 target7
 target8
 target: %3.2f, current %s] queue[ %s ], [tick %d of %d %s], dilation: %s %s
+target> [action] [value] [delay
 targetInformation
 targetName
 target_abort_distance
@@ -83795,6 +83800,7 @@ the cutoff for where badge points stop granting (0 is disable this limit
 the date this trophy was introduced (YYYY-MM-DD or YYYY-MM-DD hh:mm:ss
 the date/time this mode ends (YYYY-MM-DD hh:mm:ss) UTC
 the date/time this mode starts (YYYY-MM-DD hh:mm:ss) UTC
+the forced selection entity for a player
 the global scope
 the image used to represent this level
 the score at which this level is unlocked
@@ -85224,7 +85230,6 @@ xp_reason
 xp_received
 xp_reward_details
 xstat64
-x|D;=jZ
 y=up=green, z=forward=blue, x=left=red
 y_normal
 y_offset

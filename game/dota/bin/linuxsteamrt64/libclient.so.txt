@@ -1502,7 +1502,6 @@
 16CInterpolatedVarI6QAngleE
 16CLeagueInfoCache
 16CLoopModeFactoryI13CLoopModeGameE
-16CModi
 16CModifierFactoryI16CDOTA_Buff_WardsE
 16CModifierFactoryI18CDOTA_Modifier_LuaE
 16CModifierFactoryI18CDOTA_Modifier_PetE
@@ -4201,6 +4200,7 @@
 16CModifierFactoryI50CDOTA_Modifier_Furion_Arboreal_Might_Attack_DamageE
 16CModifierFactoryI50CDOTA_Modifier_Hoodwink_Sharpshooter_VisionThinkerE
 16CModifierFactoryI50CDOTA_Modifier_Invoker_SunStrike_Cataclysm_ThinkerE
+16CModifierFactoryI50CDOTA_Modifier_Item_Assault_Cuirass_Negative_ArmorE
 16CModifierFactoryI50CDOTA_Modifier_Item_HelmOfTheDominator_BonusHealthE
 16CModifierFactoryI50CDOTA_Modifier_Luna_LucentBeam_Damage_Buff_CounterE
 16CModifierFactoryI50CDOTA_Modifier_Muerta_PartingShot_ProjectileReturnE
@@ -5844,7 +5844,7 @@
 2$.google.protobuf.FileDescriptorProto
 2$.google.protobuf.UninterpretedOption
 2$.google.protobuf.UninterpretedOption"P
-2%.CDOTAMatchMetadata.Team.ItemPurchase
+2%.CDOT
 2%.CDOTAMatchMetadata.Team.SubChallenge
 2%.CDOTAMatchPrivateMetadata.StringName
 2%.CDOTAUserMsg_UnitEvent.RemoveGesture
@@ -10196,6 +10196,7 @@
 30CDOTA_Modifier_Item_MuertasGun
 30CDOTA_Modifier_Item_Ninja_Gear
 30CDOTA_Modifier_Item_PhaseBoots
+30CDOTA_Modifier_Item_Phylactery
 30CDOTA_Modifier_Item_Pirate_Hat
 30CDOTA_Modifier_Item_Repair_Kit
 30CDOTA_Modifier_Item_RobeOfMagi
@@ -10973,6 +10974,7 @@
 32CDOTAUserMsg_HighFiveLeftHanging
 32CDOTAUserMsg_HotPotato_Created_t
 32CDOTAUserMsg_MinimapDebugPoint_t
+32CDOTAUserMsg_PauseMinigameData_t
 32CDOTAUserMsg_QoP_ArcanaSummary_t
 32CDOTAUserMsg_SelectPenaltyGold_t
 32CDOTAUserMsg_StatsMatchDetails_t
@@ -19057,7 +19059,7 @@ A CSS class to assign to this slot
 A Dota NPC Hero
 A Dota NPC Unit
 A HTTP request object
-A Modif
+A Modifier that listens to MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE has to have a GetCritDamage implementation so we can know when to evaluate it. Value should be in 'times the original value format' e.g: 1.5 not 150
 A comma separated list of league ids to force public usage
 A directional light entity
 A file with this name is already in the pool
@@ -21191,6 +21193,7 @@ Added up to date partial of version %llu for %s from system %d
 AddedByExchangeRecipe
 Adding %s 0x%p as mutation of 0x%p
 Adding close event
+Adding listener %s
 Adding onopen event
 Adding open event
 Adding prereq
@@ -22344,6 +22347,7 @@ BonusArcanaVotes
 BonusChallengeGuildPoints
 BonusChallenges
 BonusEventPoints
+BonusNotReady
 BonusRankDoubleDown
 BonusSeason
 BonusTipValue
@@ -22776,6 +22780,7 @@ CBufferString
 CBulletWhizTimer
 CBuoyancyHelper
 CC Log %s]: d: %f, ls: %f, %s
+CCIR601 sampling not implemented yet
 CCLCMsg_BaselineAck
 CCLCMsg_ClientInfo
 CCLCMsg_ClientMessage
@@ -36157,6 +36162,7 @@ ChatWheelUnlockInfo_EventLevel
 ChatWheelUnlockInfo_GuildPercentile
 ChatWheelUnlockInfo_ItemDefLevel
 ChatWheelUnlockInfo_ShardsPurchase
+Chat_Autocomplete_PrivateChatKick
 CheatsToggleButton
 Check if a unit passes a set of filters. (hNPC, nTargetTeam, nTargetType, nTargetFlags, nTeam
 CheckBgColor
@@ -39911,12 +39917,12 @@ DOTAReplayPlayPauseToggle
 DOTAReplaySkipByIncrement
 DOTAReplaySkipForward
 DOTAReportPlayerButtonClicked
-DOTAReq
 DOTARequestCoach
 DOTARequestCoachConfirmed
 DOTARequestCoachingMenuVisible
 DOTARequestGuildStatusVisible
 DOTARequestMergeParties
+DOTARequestReplayAvailableNotification
 DOTAResetGemInSocket
 DOTAResetHelpTips
 DOTAResetItemSpecificBinds
@@ -41692,6 +41698,7 @@ DOTA_BuyBackStateAlert_Cooldown
 DOTA_BuyBackStateAlert_Gold
 DOTA_BuyBackStateAlert_Ready
 DOTA_BuyBackStateAlert_ReapersScythe
+DOTA_C
 DOTA_CHAT
 DOTA_CHAT_INFORMATIONAL
 DOTA_CHAT_MESSAGE
@@ -42114,7 +42121,6 @@ DOTA_Chat_Autocomplete_InviteFriends
 DOTA_Chat_Autocomplete_NoMatches
 DOTA_Chat_Autocomplete_PrivateChatDemote
 DOTA_Chat_Autocomplete_PrivateChatInvite
-DOTA_Chat_Autocomplete_PrivateChatKick
 DOTA_Chat_Autocomplete_PrivateChatPromote
 DOTA_Chat_Autocomplete_WhisperFriends
 DOTA_Chat_Bad
@@ -46117,7 +46123,6 @@ D_WRITE_DEST_ALPHA
 D_WRITE_LINEAR_DEPTH
 D_WRITE_WATER_FOG_TO_DEST_ALPHA
 Daily challenge: %s
-DailyBonusNotReady
 DailyHeroChallenge
 Daisy wheel input mode: RS | ABXY
 DaisyInputTypeABXY
@@ -47371,7 +47376,7 @@ EMatchBehaviorScoreVariance
 EMatchGroupServerStatus
 EMatchOutcome
 EMobilePaymentProvider
-EMsgClientToGCUpdatePartyBeacon
+EMsgGCToGCGetTopMatchesResponse
 ENSURE_SPECIAL_PRIVILEGES_FAILED
 ENT TEXT STICKY NAMES
 ENTITY1
@@ -49656,7 +49661,6 @@ GameInstructor
 GameInstructor/SaveToSavegames
 GameInstructor/SaveToSteamStats
 GameInstructorGameSystem
-GameIsOver
 GameLost
 GameManagedItems
 GameMode%d
@@ -52399,7 +52403,6 @@ IParticleEffect
 IParticleSnapshot
 IParticleSystemDefinition
 IPulseSystem_001
-IR601 sampling not implemented yet
 IRagdoll
 IS_EFFECTS_LAYER
 ISkeletonAnimationController
@@ -53810,6 +53813,7 @@ JustUpvoted
 Jv_RegisterClasses
 K 9HTt,I
 K [A\A]A
+K16CGCClientLinkJobI27CMsgIDLinkGCToGenericClientILj1ELj7666E31CMsgGCToClientPlayerBeaconStateEEE
 K8zvut
 K<znul
 K@zfud
@@ -55310,6 +55314,7 @@ Maeby Bot
 MagicBarrier
 MagicBarrierContainer
 MagicBarrierProgress
+MagicDamageCalculated
 MagicResistRow
 MagicalDamageBar
 MagicalResistance
@@ -56437,6 +56442,7 @@ N3Etc29Block4x4Encoding_RGBA8_OpaqueE
 N3Etc30Block4x4Encoding_RGB8A1_OpaqueE
 N3Etc34Block4x4Encoding_RGBA8_TransparentE
 N3Etc35Block4x4Encoding_RGB8A1_TransparentE
+N5GCSDK
 N5GCSDK10CGCPingJobE
 N5GCSDK10CMsgBase_tINS_12GCMsgHdrEx_tEEE
 N5GCSDK11CWorkThreadE
@@ -56802,7 +56808,6 @@ N5GCSDK16CGCClientLinkJobI27CMsgIDLinkGCToGenericClientILj1ELj2599E33CMsgGCToCli
 N5GCSDK16CGCClientLinkJobI27CMsgIDLinkGCToGenericClientILj1ELj4524E37CMsgGCToClientAggregateMetricsBackoffEEE
 N5GCSDK16CGCClientLinkJobI27CMsgIDLinkGCToGenericClientILj1ELj7529E27CMsgGCToClientTrophyAwardedEEE
 N5GCSDK16CGCClientLinkJobI27CMsgIDLinkGCToGenericClientILj1ELj7581E33CMsgGCToClientSteamDatagramTicketEEE
-N5GCSDK16CGCClientLinkJobI27CMsgIDLinkGCToGenericClientILj1ELj7666E31CMsgGCToClientPlayerBeaconStateEEE
 N5GCSDK16CGCClientLinkJobI27CMsgIDLinkGCToGenericClientILj1ELj7667E31CMsgGCToClientPartyBeaconUpdateEEE
 N5GCSDK16CGCClientLinkJobI27CMsgIDLinkGCToGenericClientILj1ELj7668E31CMsgGCToClientPartySearchInviteEEE
 N5GCSDK16CGCClientLinkJobI27CMsgIDLinkGCToGenericClientILj1ELj7680E32CMsgGCToClientPartySearchInvitesEEE
@@ -58866,7 +58871,6 @@ OPTIONS
 OP_EQUAL
 ORGANIZATIONAL
 ORIGIN
-OTA_Modifier_Item_Phylactery
 OTHER_ERROR
 OUTBUFF_FULL
 OUT_OF_RANGE
@@ -59075,7 +59079,6 @@ OnLevelChanged
 OnLightGroupChanged
 OnLocalPlayerScored
 OnLocalVelocityChanged
-OnMagicDamageCalculated
 OnMaigcDamageCalculated
 OnModelChanged
 OnModifierAdded
@@ -65484,6 +65487,7 @@ TAG_BAD_CHARACTERS
 TAG_EMPTY
 TAG_TAKEN
 TAG_TOO_LONG
+TAMatchMetadata.Team.ItemPurchase
 TARGET_ENGINE_MISMATCH
 TAWAVAUATSH
 TChinese
@@ -67549,6 +67553,7 @@ V8z3u1
 V@9Q0tFH
 V@IcW@I
 VAC_NOT_VERIFIED
+VAUATSH
 VApplication001
 VAsyncFileSystem2_001
 VAvi001
@@ -68509,7 +68514,6 @@ WorldRenderer/EnvironmentMapColorSpace
 WorldRenderer/EnvironmentMapFaceSize
 WorldRenderer/EnvironmentMapFormat
 WorldRenderer/EnvironmentMapMipProcessor
-WorldRenderer/EnvironmentMapRenderSize
 WorldRenderer/EnvironmentMapUseCubeArray
 WorldRendererMgr001
 WorldText: %s %f
@@ -76111,7 +76115,6 @@ digit_%d
 dimensions
 dimgray
 dimgrey
-ding listener %s
 dir.vpk
 dir_index
 dire_Votes
@@ -79858,7 +79861,6 @@ fiend_grip_damage
 fiend_grip_mana_drain
 fiend_grip_spread_radius
 fiend_grip_tick_interval
-fier that listens to MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE has to have a GetCritDamage implementation so we can know when to evaluate it. Value should be in 'times the original value format' e.g: 1.5 not 150
 fiery_soul_attack_speed_bonus
 fiery_soul_max_stacks
 fiery_soul_move_speed_bonus
@@ -83205,11 +83207,9 @@ huskar_inner_fire
 huskar_inner_vitality
 huskar_life_break
 hype_loc
-h|D;-5Z
-h|D;-7jh
-h|D;-bph
-h|D;-oY
-h|D;-v7
+h|D;-gV
+h|D;-oZ
+h|D;-yY
 i < length
 i matching ent%s
 i(ERemoteStoragePublishedFileVisibility) Visibility of the published file (private, friends, public, etc
@@ -83312,7 +83312,6 @@ if camera orientation changes this much update orientation
 if imgui should consume input
 if imgui should display
 if you ignore case and strip out the enum name prefix (if any). This is error-prone and can lead to undefined behavior. Please avoid doing this. If you are using allow_alias, please assign the same numeric value to both enums
-ifierFactoryI50CDOTA_Modifier_Item_Assault_Cuirass_Negative_ArmorE
 ignite_multicast_aoe
 ignore socket quality
 ignore-parent-flow
@@ -83695,7 +83694,6 @@ interval_time
 intro_anim
 intro_mode
 intro_select
-ints_to_spend
 inv_type
 invade_goal
 invalid
@@ -84744,9 +84742,9 @@ justify
 justify-letter-spacing
 justify_horizontal
 justify_vertical
+k D9-!80
 k is not followed by a braced, angle-bracketed, or quoted name
 k(D;k8D
-k-D:-290
 k0X[]A\A]A^A
 k4IcD$(A9
 k8D;kHD
@@ -86408,10 +86406,14 @@ k_EPurchaseHeroRelicResult_InvalidRelic
 k_EPurchaseHeroRelicResult_NotEnoughPoints
 k_EPurchaseHeroRelicResult_PurchaseNotAllowed
 k_EPurchaseHeroRelicResult_Success
+k_ERankType_BehaviorPrivate
+k_ERankType_BehaviorPublic
 k_ERankType_Casual
 k_ERankType_CasualGlicko
 k_ERankType_CasualLegacy
 k_ERankType_Invalid
+k_ERankType_Max
+k_ERankType_RankMax
 k_ERankType_Ranked
 k_ERankType_RankedGlicko
 k_ERankType_RankedLegacy
@@ -87237,6 +87239,7 @@ layoutfailed
 layoutfile
 lazy = true] can only be specified for submessage fields
 ld-linux-x86-64.so.2
+ldRenderer/EnvironmentMapRenderSize
 leader_account_id
 leader_id
 leader_name
@@ -87735,7 +87738,6 @@ lycan_summon_wolves
 lycan_summon_wolves_critical_strike
 lycan_summon_wolves_invisibility
 lycan_wolf_bite
-m8L;-"s
 m_16ByteOrLessStack out of space, falling through after %d entries, consider upping NETWORKFIELDSCRATCHDATA_16BYTE_COUNT
 m_AbilityDraftAbilities
 m_ActiveRingOwners
@@ -89282,7 +89284,6 @@ m_ctTimer
 m_currAbilityColorHSV1
 m_currAbilityColorHSV2
 m_currAbilityFXColorHSV
-m_current
 m_currentAnnouncer
 m_currentOp
 m_currentWindVector
@@ -101046,6 +101047,7 @@ points_scored
 points_small_cheese
 points_tipped
 points_to_grant
+points_to_spend
 points_total
 points_wagered
 points_won
@@ -101607,10 +101609,9 @@ pwatchvar
 pwrd_cyber_cafe_id
 pwrd_cyber_cafe_name
 py_generic_services
-p|D;5"W
-p|D;5>C
-p|D;5ZhI
-p|D;5[C
+p|D;5.U
+p|D;5K
+p|D;5x
 p|E;t$0
 q(HcI H
 q<@8p<t
@@ -101646,7 +101647,6 @@ quelling_bonus_ranged
 query_name
 query_values
 questIndex
-questReplayAvailableNotification
 quest_challenge
 quest_desc
 quest_hud_types_t
@@ -107365,7 +107365,6 @@ t%M;4$L
 t&IcT$hA;T$x
 t'IcD$x
 t(Lc#D;c
-t)D9=H
 t)D9s,t
 t)HcPt1
 t*D;p,t
@@ -110147,8 +110146,7 @@ xp_value
 xpm_diff
 xstat64
 xwMcD$xD9
-x|D;=RW
-x|D;=x4
+x|D;=Cj
 y(HcI H
 y0H9z0t
 y8H9z8t
