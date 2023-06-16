@@ -16801,8 +16801,12 @@
 		"DOTA_HUD_BottledRune"			"{s:player_name} 儲存了{s:rune_icon}{s:rune_name}"
 		"DOTA_HUD_RadiantCourierRespawned"	"{s:courier_icon}聖輝信使已重生"
 		"DOTA_HUD_DireCourierRespawned"		"{s:courier_icon}魔魘信使已重生"
+		"DOTA_HUD_BarracksKilled"		"{s:killer}{s:killed_icon}{s:team} {s:lane} {s:rax_type} 兵營{s:gold}"
+		"DOTA_HUD_RadiantCourierKilled"	"{s:killer}{s:killed_icon}{s:courier_icon}{s:owner} 的信使（聖輝）{s:gold}"
+		"DOTA_HUD_DireCourierKilled"	"{s:killer}{s:killed_icon}{s:courier_icon}{s:owner} 的信使（魔魘）{s:gold}"
 		"DOTA_HUD_Tower_Killed"			"{s:killer}{s:killed_icon}{s:tower_name}{s:gold}"
 		"DOTA_HUD_Shrine_Killed"		"{s:killer}{s:killed_icon}{s:shrine_name}{s:gold}"
+		"DOTA_HUD_Ward_Killed"			"{s:killer}{s:killed_icon}{s:ward_name}{s:gold}"
 		"DOTA_HUD_Ward_Killed_Bounty"	"{s:killer}{s:killed_icon}{s:ward_name}（{s:bounty_player} {s:gold}）"
 		"DOTA_HUD_RadiantGlyphUsed"		"{s:glyph_icon}聖輝的建築已被強化"
 		"DOTA_HUD_DireGlyphUsed"		"{s:glyph_icon}魔魘的建築已被強化"
@@ -16812,7 +16816,6 @@
 		"DOTA_HUD_KilledRoshanBad"		"魔魘方 {s:killed_icon}{s:roshan_icon}羅煞 {s:gold}"
 		"DOTA_HUD_KilledHUDFlippedRoshanGood"		"聖輝方 {s:killed_icon}{s:roshan_icon}羅煞 {s:gold}"
 		"DOTA_HUD_KilledHUDFlippedRoshanBad"		"魔魘方 {s:killed_icon}{s:roshan_icon}羅煞 {s:gold}"
-
 		"DOTA_HUD_ScanUsed"				"{s:team} {s:radar_icon} 掃描"
 		"DOTA_HUD_PickedUpAegis"		"{s:player_name} {s:aegis_icon} 不朽之守護"
 		"DOTA_HUD_DeniedAegis"			"{s:player_name} 反補了 {s:aegis_icon} 不朽之守護"
@@ -29887,6 +29890,7 @@
 	"DOTA_733_Update"	  "遊戲環節更新 7.33 版"
 	"DOTA_733b_Update"	  "遊戲環節更新 7.33b 版"
 	"DOTA_733c_Update"	  "遊戲環節更新 7.33c 版"
+	"DOTA_733d_Update"	  "遊戲環節更新 7.33d 版"
 
 	"DOTA_Settings_Tooltip_NetworkLatency" "如果您因為網路連線問題而遺失封包，將此選項設為「低」將增加延遲，但增進整體流暢度。"
 
@@ -30982,13 +30986,54 @@
 	"DOTA_TopBar_LaneSelectionSoftSupport"	"半輔助"
 	"DOTA_TopBar_LaneSelectionHardSupport"	"全輔助"
 
+    "DOTA_RR_RoleQueue"                     "選位"
+    "DOTA_RR_NoRoleQueue"                   "無選位機會"
+    "DOTA_RR_RolePerformanceTitle"			"積分選位表現配對"
+
+    "DOTA_RR_RoleHandicapTitle"				"積分選位表現"	
+    "DOTA_RR_RoleHandicapExplain"			"遊戲配對系統會在尋找比賽時，根據您歷來的積分選位比賽結果來調整您的積分，以將您在每個定位的個別表現納入考慮當中。這有助於找到公平的比賽，無論您的遊玩風格或正在遊玩的定位為何。"
+
+    "DOTA_Play_RR_Roles"                    "5 個定位已選 {d:party_role_total} 個"
+    "DOTA_Play_RR_PartyEligible"            "選位機會"
+    "DOTA_Play_RR_PartyQPEmpty"             "您的團隊中有人沒有選位機會。選滿所有定位以符合選位的資格。"
+    "DOTA_Play_RR_PartyGainingQP"           "您的團隊已選滿全 5 個定位。每位玩家將可獲得選位機會。"
+
     "DOTA_Play_RR_SoloEarningQP:p{earn_amount}"		"您將獲得 {d:earn_amount} 次選位機會。#|#您將獲得 {d:earn_amount} 次選位機會（落敗則減半）。"
     "DOTA_Play_RR_PartyEarningQP:p{earn_amount}"	"每個團隊成員將獲得 {d:earn_amount} 次選位機會。#|#每個團隊成員將獲得 {d:earn_amount} 次選位機會（落敗則減半）。"
+    "DOTA_Play_RR_FiveStack"                "滿人的團隊即符合積分選位資格。"
+    "DOTA_Play_RR_HighDemand"               "所有高需求定位已被選取。選滿所有定位以賺取更多選位機會。"
+
+	"DOTA_Play_RR_SoloSpendingQP"			"您將耗用一次選位機會。"
+	"DOTA_Play_RR_PartySpendingQP"			"每個團隊成員將耗用一次選位機會。"
+
+	"DOTA_Play_RR_SoloMissingQP"			"您必須至少選滿兩個輔助定位。"
+	"DOTA_Play_RR_SoloMissingQP_Tooltip"	"選滿兩個輔助定位會讓您參與這比賽的積分選位。選滿所有定位會讓您賺取選位機會，在未來可用作任何定位。"
+	"DOTA_Play_RR_PartyMissingQP"			"您的團隊需要選滿兩個輔助定位。"
+	"DOTA_Play_RR_PartyMissingQP_Tooltip"	"若您的團隊選滿兩個輔助定位，您便可參與積分選位。選滿所有定位會讓您賺取選位機會，在未來可用作任何定位。"
+
+    "DOTA_RR_NonEligibleWarningTitle"      "您沒有選位機會"
     "DOTA_RR_NonEligibleWarning"           "您是否希望選滿所有定位？<br>比賽配對系統會在這場比賽中為您分配定位，且您會獲得 {d:earn_amount} 次選位機會以在將來使用（落敗則減半）。"
+    "DOTA_RR_QueueAllRoles"                "選滿所有定位"
+	"DOTA_RR_QueueAllRoles_Supplement1"	    "（為未來的比賽賺取選位機會）"
+    "DOTA_RR_QueueNormalPriority"          "積分經典配對"
+	"DOTA_RR_QueueNormalPriority_Supplement1"	"（不會分配定位）"	
+
     "DOTA_RRParty_NonEligibleWarning:p{earn_amount}"	"您的團隊中有人沒有選位機會。<br>若選滿所有定位，每個玩家將可獲得 {d:earn_amount} 次選位機會以在將來使用。#|#您的團隊中有人沒有選位機會。<br>若選滿所有定位，每個玩家將可獲得 {d:earn_amount} 次選位機會以在將來使用（落敗則減半）。"
     "DOTA_RR_SoloEarningQP"			        "若選滿所有定位，您將獲得 {d:earn_amount} 次選位機會以在將來使用（落敗則減半）。"
     "DOTA_RR_PartyEarningQP:p{earn_amount}"	"因為您的團隊選滿所有定位，每位團隊成員將獲得 {d:earn_amount} 次選位機會。#|#因為您的團隊選滿所有定位，每位團隊成員將獲得 {d:earn_amount} 次選位機會（落敗則減半）。"
-    "DOTA_RR_GamesRemaining:p{games_remaining}" "剩餘 {d:games_remaining} 次選位機會#|#剩餘 {d:games_remaining} 次選位機會"
+    "DOTA_RR_FiveStack"				        "滿人的團隊即符合積分選位資格，但不會為未來比賽賺到更多選位機會。"
+    "DOTA_RR_SoloHighDemand"                "您已選取所有高需求定位。若希望為未來的比賽賺取額外選位機會，請選滿餘下的定位。"
+    "DOTA_RR_PartyHighDemand"               "您的團隊已選取所有高需求定位。若希望為未來的比賽賺取額外選位機會，請選滿餘下的定位。"
+
+	"DOTA_RR_HighDemandRole_Title"		    "高需求定位"
+	"DOTA_RR_HighDemandRole_Description"	"此為高需求定位。若您的團隊已選取所有高需求定位，則無需使用選位機會便可遊玩積分選位。"
+
+	"DOTA_RR_SoloSpendingQP"			    "您將耗用一次選位機會，並獲得自己選擇的定位。"
+	"DOTA_RR_PartySpendingQP"			    "每個團隊成員將耗用一次選位機會，並獲得自己選擇的定位。"
+	
+	"DOTA_RR_GamesRemaining_None_Party"		"您的團隊中有人沒有選位機會"
+	"DOTA_RR_GamesRemaining_None"			"沒有可用的選位機會"
+	"DOTA_RR_GamesRemaining:p{games_remaining}" "剩餘 {d:games_remaining} 次選位機會#|#剩餘 {d:games_remaining} 次選位機會"
 
 	"DOTA_RR_EarnGames:p{earn_amount}"		"獲得 {d:earn_amount} 次選位機會#|#獲得 {d:earn_amount} 次選位機會（落敗則減半）"
 	"DOTA_RR_SpendGames:p{spend_amount}"	"耗用 {d:spend_amount} 次選位機會#|#耗用 {d:spend_amount} 次選位機會"
