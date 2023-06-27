@@ -24,8 +24,8 @@ class AnimateHeroRelicProgressAction extends RunSequentialActions
 		this.panel = $.CreatePanel( 'Panel', this.containerPanel, '' );
 		this.panel.BLoadLayoutSnippet( 'SingleRelicProgress' );
 		this.panel.SetDialogVariableInt( 'relic_type', this.data.relic_type );
-		this.panel.SetDialogVariableInt( 'current_progress', this.data.starting_value );
-		this.panel.SetDialogVariableInt( 'increment', this.data.ending_value - this.data.starting_value );
+		this.panel.SetDialogVariable( 'current_progress', GameUI.ConstructNumberString( { Number: this.data.starting_value, PreferIntegral: true, Precision: 1 } ) );
+		this.panel.SetDialogVariable( 'increment', GameUI.ConstructNumberString( { Number: this.data.ending_value - this.data.starting_value, PreferIntegral: true, Precision: 1 } ) );
 		this.panel.SetDialogVariable( 'relic_level', nCurrentLevel > 0 ? nCurrentLevel.toString() : "-" );
 
 		switch ( this.data.primary_attribute )
@@ -254,8 +254,8 @@ function TestAnimateHeroRelics()
 					relic_type: 11,
 					relic_rarity: HERO_RELIC_RARITY_COMMON,
 					primary_attribute: DOTA_ATTRIBUTE_AGILITY,
-					starting_value: 25,
-					ending_value: 29,
+					starting_value: 121.5,
+					ending_value: 142,
 					value_per_level: 10,
 					xp_per_level: 5,
 				},
@@ -272,9 +272,9 @@ function TestAnimateHeroRelics()
 					relic_type: 13,
 					relic_rarity: HERO_RELIC_RARITY_COMMON,
 					primary_attribute: DOTA_ATTRIBUTE_AGILITY,
-					starting_value: 25,
-					ending_value: 29,
-					value_per_level: 10,
+					starting_value: 395013,
+					ending_value: 395013.5,
+					value_per_level: 10001,
 					xp_per_level: 5,
 				}
 			]
