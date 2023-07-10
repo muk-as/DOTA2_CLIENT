@@ -51,7 +51,6 @@
 0GAME_PARTICLE_MANAGER_EVENT_SET_SHOULD_CHECK_FOW
 0NETWORK_DISCONNECT_REJECT_SERVERCDKEYAUTHINVALID
 0STEAMLEARN_CACHE_DATA_ERROR_UNCACHED_DATA_SOURCE
-0YA1賣w
 0Y[]A\A]H
 0[A\A]A
 0[A\A^A
@@ -6538,6 +6537,7 @@
 24CGameMessageDelegateHookI28CDOTAClientMsg_HPManaAlert_tE
 24CGameMessageDelegateHookI28CDOTAClientMsg_QuestStatus_tE
 24CGameMessageDelegateHookI28CDOTAClientMsg_SwapRequest_tE
+24CGameMessageDelegateHookI29CDOTAClientMsg_AbilityAlert_tE
 24CGameMessageDelegateHookI29CDOTAClientMsg_DamageReport_tE
 24CGameMessageDelegateHookI29CDOTAClientMsg_DuelAccepted_tE
 24CGameMessageDelegateHookI29CDOTAClientMsg_PlayerBounty_tE
@@ -7328,6 +7328,7 @@
 27CDOTABotAbilityUsageFactoryI38CDOTA_Bot_AbilityUsage_Lich_ChainFrostE
 27CDOTABotAbilityUsageFactoryI39CDOTA_Bot_AbilityUsage_Lich_FrostShieldE
 27CDOTABotAbilityUsageFactoryI40CDOTA_Bot_AbilityUsage_Lich_SinisterGazeE
+27CDOTAClientMsg_AbilityAlert
 27CDOTAClientMsg_DamageReport
 27CDOTAClientMsg_DuelAccepted
 27CDOTAClientMsg_PlayerBounty
@@ -19397,6 +19398,8 @@ CDOTAChallengeSystem
 CDOTACheers
 CDOTACheersManager::Initialize
 CDOTAClientHardwareSpecs
+CDOTAClientMsg_AbilityAlert
+CDOTAClientMsg_AbilityAlert_t
 CDOTAClientMsg_AbilityDraftRequestAbility
 CDOTAClientMsg_AbilityDraftRequestAbility_t
 CDOTAClientMsg_AddCommunicationsBlockMarker
@@ -30912,8 +30915,8 @@ C耀B耀B耀B
 D$ A;G
 D$ H9D$(L
 D$ H9E
-D$$A9FL
 D$$rM
+D$(A;F8
 D$(D9
 D$(L9l
 D$(L9t
@@ -30944,6 +30947,7 @@ D$<8C<t!H
 D$<9C<t H
 D$<A9FP
 D$@9C@t H
+D$@A;F4
 D$@f9C@t"H
 D$B8CBt!H
 D$D9CDt H
@@ -30980,7 +30984,6 @@ D3t$<D1
 D3t$<F
 D9#~6H
 D9$9t[L
-D9%hej
 D9't3H
 D9't8Ic
 D92w8;Z
@@ -31399,6 +31402,7 @@ DOTA_CLICK_BEHAVIOR_RADAR
 DOTA_CLICK_BEHAVIOR_UNUSED
 DOTA_CLICK_BEHAVIOR_VECTOR_CAST
 DOTA_CLIENT_GCCLIENT
+DOTA_CM_AbilityAlert
 DOTA_CM_AbilityDraftRequestAbility
 DOTA_CM_AbilityLearnModeToggled
 DOTA_CM_AbilityStartUse
@@ -36548,8 +36552,6 @@ H;0t*A
 H;0teH
 H;2t-H
 H;7t:H
-H;=J3
-H;=ZB7
 H;D$pH
 H;ZPu
 H;wHu
@@ -41497,6 +41499,7 @@ N13CNetMessagePBILi800E30CDOTAClientMsg_PlayerDraftPickL13SignonGroup_t14EL19Net
 N13CNetMessagePBILi801E33CDOTAClientMsg_PlayerDraftSuggestL13SignonGroup_t14EL19NetChannelBufType_t1ELb1EE16CProtobufBindingE
 N13CNetMessagePBILi802E36CDOTAClientMsg_PlayerDraftPreferRoleL13SignonGroup_t14EL19NetChannelBufType_t1ELb1EE16CProtobufBindingE
 N13CNetMessagePBILi803E36CDOTAClientMsg_PlayerDraftPreferTeamL13SignonGroup_t14EL19NetChannelBufType_t1ELb1EE16CProtobufBindingE
+N13CNetMessagePBILi805E27CDOTAClientMsg_AbilityAlertL13SignonGroup_t14EL19NetChannelBufType_t1ELb1EE16CProtobufBindingE
 N13sky3dparams_t14NetworkVar_fogE
 N14AnimGraphUtils26CTraceFilterAnimGraphSlopeE
 N14CDOTAGameRules36NetworkVar_m_AssassinMiniGameNetDataE
@@ -48890,6 +48893,7 @@ YA1AVI
 YA1E1
 YA1Mc},H
 YA1SH
+YA1诊l
 YYYY-MM-DD Z0000
 YYYY-MM-DD hh:mm:ss
 YYYY-MM-DD hh:mm:ss Z0000
@@ -49726,6 +49730,7 @@ ability_effects_6
 ability_effects_7
 ability_effects_8
 ability_effects_9
+ability_entindex
 ability_events
 ability_gold
 ability_handle
@@ -62209,8 +62214,7 @@ lycan_summon_wolves_critical_strike
 lycan_summon_wolves_invisibility
 lycan_wolf_bite
 m E9n4t
-m H;-hG
-m8H;-R
+m8L;-z
 mIcO0Ic
 mXRecord
 m_16ByteOrLessStack out of space, falling through after %d entries, consider upping NETWORKFIELDSCRATCHDATA_16BYTE_COUNT
@@ -73678,6 +73682,7 @@ mute_impact_effects
 muteable
 muzzle
 mvp_data
+mxH;-0
 my_subclass_name
 mystery
 mystery_box
@@ -84087,6 +84092,7 @@ t-<"tyD
 t.<"tzD
 t/;w8t2;wHt=1
 t/A;D
+t/D:%7S
 t/Ic\$xA
 t0H9Q w*H
 t0Lcg H
@@ -84966,8 +84972,10 @@ type_name
 type_value
 tzAWAVAUATA
 tC A
-tр=9fM
-tр=YRR
+t̀=993
+tр=13c
+tр=9LR
+tр=yvU
 u I;]8tYH
 u%AUATUSH
 u-AWAVAUATUH
