@@ -143,7 +143,7 @@ var RunPageAnimation = function ()
  */
 var EndPageAnimation = function()
 {
-    $.Msg("Marci EndPageAnimation");
+    //$.Msg("Marci EndPageAnimation");
 
     PlayAndTrackSoundAction.StopAllTrackedSounds();
 

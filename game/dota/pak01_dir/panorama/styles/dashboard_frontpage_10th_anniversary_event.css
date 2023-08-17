@@ -1,0 +1,586 @@
+@define tileBackgroundColor:  #214036;
+ @define titleBackgroundColor: gradient( linear, 0% 0%, 0% 100%, from( #0B1B1Bcc ), to( #080F0Cee ) );
+ @define titleColor: gradient( linear, 0% 0%, 0% 100%, from( #FFE6A6 ), to( #998A63 ) );
+ @define dividerColor: gradient( linear, 0% 0%, 100% 0%, from( #FFE6A6 ), color-stop( 0.5, #4B4431 ), to( #998A63 ) );
+
+
+ DOTAFrontpage10thAnniversaryEvent{
+  opacity: 1;
+  height: 100%;
+  width: 354px;
+  height: 280px;
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-delay: 0s;
+  visibility: collapse;
+ }
+
+ @keyframes 'fadeIn'{
+  0%{
+   opacity: 0;
+  }
+
+  60%{
+   opacity: 0;
+  }
+
+  100%{
+   opacity: 1;
+  }
+ }
+
+
+
+ #BackgroundScene{
+
+  opacity: 0;
+  blur: gaussian( 0px);
+  transform: translatex(0px);
+  transition-duration: 0.6s;
+  transition-delay: 0.0s;
+  transition-property: opacity;
+ }
+
+ .OnHomePage #BackgroundScene{
+
+  opacity: 1;
+ }
+
+ #DashboardTitleContainer{
+
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transform: translatex(50px);
+  wash-color: #000000;
+
+  transition-duration: 0.5s;
+  transition-delay: 0.5s;
+  transition-property: opacity, transform, wash-color;
+  transition-timing-function: ease-in-out;
+ }
+
+
+ .OnHomePage #DashboardTitleContainer{
+
+  opacity: 1;
+  transform: translatex(0px);
+  wash-color: #ffffff;
+
+
+  transition-delay: 0.0s;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in;
+ }
+
+ #BGVignette{
+
+  width: 100%;
+  height: 100%;
+  background-image: url( "s2r://panorama/images/backgrounds/chest_vignette_psd.vtex");
+  background-size: 100%;
+ }
+  .TreasureTile #BGVignette{
+   visibility: collapse;
+  }
+
+
+ #DashboardTitleContainer .TreasureOverview{
+
+  width: 800px;
+  horizontal-align: center;
+  vertical-align: bottom;
+  margin-left: 0px;
+  margin-top: 0px;
+  padding-top: 0px;
+  margin-bottom: 100px;
+ }
+
+
+
+
+ .EventTile{
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+
+  background-image: url("s2r://panorama/images/events/10th_anniversary/10th_anniversary_cell_background_png.vtex");
+  background-size: cover;
+  overflow: clip;
+  border-radius: 1px;
+  transition-property: height;
+  transition-duration: 0.3s;
+  transition-timing-function: cubic-bezier(1, 0, 0, 1);
+  flow-children: down;
+  box-shadow: 0px 8px 16px -4px rgba(0, 0, 0, 0.5);
+  tooltip-position: bottom;
+ }
+  .EventTile #10thAnniversaryEventDate{
+   width: 100%;
+   text-align: center;
+   position: 0px 100px 0px;
+  }
+
+  .EventTile #TopRightGodRays{
+   ignore-parent-flow: true;
+   horizontal-align: center;
+   width: 100%;
+   height: 100%;
+   transform: translate3d( 0px, -40px, 0px ) scale3d(2.5, 2.5, 1);
+   opacity-mask: url( "s2r://panorama/images/masks/preview_rays_mask_psd.vtex");
+   hue-rotation: 30deg;
+   transition-property: opacity;
+   transition-duration: 0.6s;
+   opacity: 1;
+  }
+
+  .EventTile #TileParticles{
+   ignore-parent-flow: true;
+   horizontal-align: center;
+   vertical-align: center;
+   width: 600px;
+   height: 600px;
+   opacity-mask: url("s2r://panorama/images/masks/softedge_circle.png");
+   transform: translateY( 110% );
+  }
+
+  .EventTile .TitleContainer{
+   width: 100%;
+   flow-children: down;
+   margin-top: 16px;
+  }
+   .EventTile .TitleContainer Label{
+    horizontal-align: center;
+    text-align: center;
+   }
+
+
+   .EventTile .TitleContainer .YearLabel{
+    font-size: 16px;
+    font-weight: semi-bold;
+    letter-spacing: 1px;
+    color: #F7E6B5;
+    text-transform: uppercase;
+    text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.5);
+   }
+
+   .EventTile .TitleContainer .AnniversaryLabel{
+    font-size: 28px;
+    font-family: titleFont;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: gradient( linear, 0% 65%, 0% 100%, from( #FFFFFF ), color-stop( 0.2, #cfd7db ), to( #e1e8eb ) );
+    margin: -6px 0px;
+    text-transform: uppercase;
+    text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5);
+   }
+
+   .EventTile .TitleContainer .TreasureLabel{
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: #F7E6B5;
+    text-transform: uppercase;
+    text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.5);
+   }
+
+   .EventTile .TitleContainer .TreasureLabelContainer{
+    width: 100%;
+    padding: 0px 12px;
+    horizontal-align: center;
+    flow-children: right;
+   }
+    .EventTile .TitleContainer .TreasureLabelContainer .TreasureLabel{
+     margin: 0px 8px;
+    }
+
+    .EventTile .TitleContainer .TreasureLabelContainer .Dash{
+     width: fill-parent-flow(1);
+     height: 1px;
+     horizontal-align: center;
+     margin: 8px 0px 4px;
+     background-color: gradient( linear, 0% 0%, 100% 0%, from( #F7E6B500 ), color-stop( 0.4, #F7E6B5 ), color-stop( 0.6, #F7E6B5 ), to( #F7E6B500 ) );
+     opacity: 0.1;
+    }
+     .EventTile .TitleContainer .TreasureLabelContainer .Dash.Left{
+      background-color: gradient( linear, 0% 0%, 100% 0%, from( #F7E6B500 ), to( #F7E6B5 ) );
+     }
+
+     .EventTile .TitleContainer .TreasureLabelContainer .Dash.Right{
+      background-color: gradient( linear, 0% 0%, 100% 0%, from( #F7E6B5 ), to( #F7E6B500 ) );
+     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+  .EventTile .Description{
+   margin: 8px 0px;
+   text-align: center;
+   padding: 0px 12px;
+   max-height: 42px;
+   text-overflow: shrink;
+  }
+
+  .EventTile .EventTitle{
+   width: 100%;
+  }
+
+  .EventTile .EventBody{
+   width: 100%;
+   flow-children: down;
+  }
+   .EventTile .EventBody .EventTitle{
+    width: 100%;
+    color: gradient( linear, 0% 65%, 0% 100%, from( #FFFFFF ), color-stop( 0.2, #cfd7db ), to( #e1e8eb ) );
+    font-size: 18px;
+    line-height: 1.1;
+    text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.8);
+    font-family: titleFont;
+    font-weight: semi-bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 0px 0px 0px 0px;
+    text-overflow: clip;
+    text-align: center;
+    transform-origin: 0% 0%;
+    transition-property: transform;
+    transition-duration: 0.3s;
+    transition-timing-function: cubic-bezier(1, 0, 0, 1);
+    margin-top: 8px;
+    margin-bottom: 4px;
+   }
+
+
+  .EventTile .Divider{
+   horizontal-align: center;
+   width: 100%;
+   height: 4px;
+   background-color: dividerColor;
+  }
+
+  .EventTile #ViewTreasurePanel{
+   horizontal-align: center;
+   width: 100%;
+
+   ignore-parent-flow: true;
+   vertical-align: bottom;
+   padding: 0px 16px 16px;
+  }
+   .EventTile #ViewTreasurePanel.Inactive{
+    visibility: collapse;
+   }
+
+
+  .EventTile #ClaimTreasurePanel{
+   width: 100%;
+
+   flow-children: none;
+   ignore-parent-flow: true;
+   vertical-align: bottom;
+   padding: 0px 16px 16px;
+  }
+   .EventTile #ClaimTreasurePanel.Inactive{
+    visibility: collapse;
+   }
+
+   .EventTile #ClaimTreasurePanel .ClaimTreasure{
+    horizontal-align: center;
+    vertical-align: center;
+    z-index: 2;
+    width: 100%;
+   }
+
+
+
+
+
+ .ViewTreasureButtonContainer{
+  horizontal-align: center;
+ }
+
+
+ .ViewTreasure,.ClaimTreasure{
+
+  border-radius: 3px;
+  padding: 10px 28px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.3);
+  background-size: cover;
+  background-img-opacity: 0.3;
+  transition-property: background-color, border;
+  transition-duration: 0.1s;
+  transition-timing-function: ease;
+ }
+  .ViewTreasure Label,.ClaimTreasure Label{
+   color: white;
+   font-size: 20px;
+   font-weight: semi-bold;
+   horizontal-align: center;
+   vertical-align: middle;
+
+   text-transform: uppercase;
+   text-shadow: 0px 1px 6px #00000088;
+   letter-spacing: 1px;
+
+   transition-property: transform;
+   transition-duration: 0.05s;
+   transition-timing-function: ease;
+  }
+
+  .ViewTreasure.Disabled,.ViewTreasure:disabled,.ClaimTreasure.Disabled,.ClaimTreasure:disabled{
+
+   saturation: 0;
+   opacity: 0.2;
+  }
+   .ViewTreasure.Disabled Label,.ViewTreasure:disabled Label,.ClaimTreasure.Disabled Label,.ClaimTreasure:disabled Label{
+    opacity: 0.6;
+   }
+
+
+
+ .ClaimTreasure{
+  background-color: gradient( linear, 0% 0%, 0% 100%, from( #ffebb1 ), color-stop( 0.45, #c6a562 ), color-stop( 0.55, #ae9259 ), to( #dcb870 ) );
+
+  animation-name: GlowTreasureButtonPrimary;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
+  animation-direction: alternate;
+ }
+
+
+
+   .ClaimTreasure:hover:enabled:not(.Disabled) Label{
+    color: white;
+   }
+
+
+  .ClaimTreasure:active:enabled:not(.Disabled){
+   sound: "ui_generic_button_click";
+  }
+
+   .ClaimTreasure:active:enabled:not(.Disabled) Label{
+    transform: translateY( 1px );
+   }
+
+
+
+ .ViewTreasure{
+  background-color: gradient( linear, 0% 0%, 0% 100%, from( #3B3F70 ), to( #262848 ) );
+  border: 1px solid white;
+  border-brush: gradient( linear, 0% 0%, 0% 100%, from( #f7e7b573 ), to( #f7e7b519 ) );
+
+  width: fill-parent-flow(1);
+
+  transition-property: brightness;
+  transition-duration: 0.1s;
+ }
+  .ViewTreasure Label{
+   color: #FFFFFF;
+   font-size: 15px;
+   text-align: center;
+   text-overflow: shrink;
+   opacity: 0.8;
+  }
+
+  .ViewTreasure:hover:enabled:not(.Disabled){
+   brightness: 1.5;
+  }.ViewTreasure:hover:enabled:not(.Disabled) Label{
+    color: #FFFFFF;
+   }
+
+
+  .ViewTreasure:active:enabled:not(.Disabled){
+   sound: "ui_generic_button_click";
+  }
+   .ViewTreasure:active:enabled:not(.Disabled) Label{
+    transform: translateY( 1px );
+   }
+
+
+
+ #ProgressPanel{
+
+  width: 100%;
+  padding: 0px 0px 16px;
+  flow-children: down;
+ }
+
+ .PipContainer{
+  horizontal-align: center;
+ }
+
+
+ .PipFX{
+
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  vertical-align: center;
+  padding-bottom: 20px;
+  horizontal-align: center;
+  opacity-mask: url("s2r://panorama/images/masks/softedge_circle.png");
+ }
+  .Earned .PipFX{
+   opacity: 1;
+  }
+
+
+ .Pip{
+
+  vertical-align: center;
+  horizontal-align: center;
+  margin: 0px -1px;
+
+
+
+  width: 33px;
+  height: 55px;
+  margin: 0px -5px;
+  margin-top: -10px;
+  tooltip-position: top;
+
+  background-image: url("s2r://panorama/images/events/10th_anniversary/treasure_empty_png.vtex");
+  background-size: 80% 40%;
+
+  background-position: center;
+  background-repeat: no-repeat;
+ }
+
+
+
+
+
+  .Pip.Large{
+
+
+   background-image: url("s2r://panorama/images/events/10th_anniversary/treasure_large_empty_png.vtex");
+
+   width: 40px;
+   height: 70px;
+
+   margin-top: -12px;
+  }
+
+
+
+
+
+  .Pip.Earned{
+   animation-name: GlowEarnedPip;
+   animation-duration: 1s;
+   animation-iteration-count: infinite;
+   animation-timing-function: ease;
+   animation-direction: alternate;
+
+
+
+
+   background-image: url("s2r://panorama/images/events/10th_anniversary/treasure_earned_png.vtex");
+   background-size: 80% 40%;
+  }
+
+  .Pip.Large.Earned{
+
+
+   background-image: url("s2r://panorama/images/events/10th_anniversary/treasure_large_earned_png.vtex");
+  }
+
+  .Pip.HalfEarned{
+
+
+
+
+   background-image: url("s2r://panorama/images/events/10th_anniversary/treasure_halfearned_png.vtex");
+   background-size: 80% 40%;
+  }
+
+  .Pip.Large.HalfEarned{
+
+
+   background-image: url("s2r://panorama/images/events/10th_anniversary/treasure_large_halfearned_png.vtex");
+  }
+
+  .Pip.Claimed{
+
+
+
+   background-image: url("s2r://panorama/images/events/10th_anniversary/treasure_claimed_png.vtex");
+    background-size: 80% 40%;
+  }
+
+  .Pip.Large.Claimed{
+
+
+
+   background-image: url("s2r://panorama/images/events/10th_anniversary/treasure_large_claimed_png.vtex");
+    background-size: 80% 40%;
+  }
+
+
+ @keyframes 'GlowEarnedPip'{
+  0%{
+   brightness: 1;
+   img-shadow: 0px 0px 8px #ffe28b00;
+  }
+
+  100%{
+   brightness: 2.5;
+   img-shadow: 0px 0px 8px #ffe28b22;
+  }
+ }
+
+ @keyframes 'GlowTreasureButtonPrimary'{
+  0%{
+   box-shadow: 0px 0px 24px #ffe28b00;
+   brightness: 1;
+  }
+
+  100%{
+   box-shadow: 0px 0px 32px #ffe28b22;
+   brightness: 2;
+  }
+ }
+
+ @keyframes 'GlowTreasureButtonSecondary'{
+  0%{
+   box-shadow: 0px 0px 24px #8bffd800;
+   brightness: 1;
+  }
+
+  100%{
+   box-shadow: 0px 0px 32px #8bffd8;
+   brightness: 2.2;
+  }
+ }
+
+ @keyframes 'GlowTreasureText'{
+  0%{
+   text-shadow: 0px 0px 6px #8bffd800;
+   brightness: 1;
+  }
+
+  100%{
+   text-shadow: 0px 0px 12px #8bffd822;
+   brightness: 2.5;
+  }
+ }
+
+
+
+ #ProgressBarFX{
+  width: 100%;
+  height: 100%;
+ }
+
+ .EventActive{
+  visibility: visible;
+}

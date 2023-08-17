@@ -37,7 +37,6 @@
 0123456789:;<=>?@abcdefghijklmnopqrstuvwxyz[\]^_`ABCDEFGHIJKLMNOPQRSTUVWXYZ
 0123456789:;<=>?@abcdefghijklmnopqrstuvwxyz[\]^_`abcdefghijklmnopqrstuvwxyz
 0123456789abcdef
-0123pt
 02X%02X%02X%02X
 02X%02X%02x%02X
 02d: dur(%8.2f) amp(%8.2f) freq(%8.2f
@@ -47,6 +46,7 @@
 02llu:%02llu:%02llu
 048<@DHLPTX\`dhlpt
 04d %s :: %s (%03d
+09A0u
 0:%02d
 0<	vcH
 0=off, 1=on, 2=debug visualization
@@ -88,6 +88,7 @@
 0TEAM_INVITE_ERROR_INVITEE_INSUFFICIENT_PLAY_TIME
 0YA1AVAUATSL
 0YA1SI
+0YA1躍o
 0[A\A]A
 0[A\A]A^A
 0[]A\A]A^ÐAUATI
@@ -174,6 +175,7 @@
 10CMsgIDLinkILj1ELj16ELj2609E44CMsgClientToGCGetLimitedItemPurchaseQuantityE
 10CMsgIDLinkILj1ELj16ELj4523E30CMsgClientToGCAggregateMetricsE
 10CMsgIDLinkILj1ELj16ELj7078E26CMsgDOTASubmitPlayerReportE
+10CMsgIDLinkILj1ELj16ELj7082E28CMsgDOTASubmitPlayerReportV2E
 10CMsgIDLinkILj1ELj16ELj7359E24CMsgDOTAChatModeratorBanE
 10CMsgIDLinkILj1ELj16ELj7527E27CMsgClientToGCGetTrophyListE
 10CMsgIDLinkILj1ELj16ELj7536E29CMsgClientToGCGetBattleReportE
@@ -337,6 +339,8 @@
 10IGameEvent
 10LeagueID_t
 10PlayerID_t
+10th_anniversary_claim
+10th_anniversary_progress
 11AbilityID_t
 11CBaseCamera
 11CBaseLesson
@@ -4096,6 +4100,7 @@
 16CModifierFactoryI48CDOTA_Modifier_NagaSiren_SongOfTheSiren_IgnoreMeE
 16CModifierFactoryI48CDOTA_Modifier_PhantomLancer_Doppelwalk_IllusionE
 16CModifierFactoryI48CDOTA_Modifier_PhantomLancer_PhantomEdge_AgilityE
+16CModifierFactoryI48CDOTA_Modifier_Seasonal_10thAnniversary_PartyHatE
 16CModifierFactoryI48CDOTA_Modifier_Skywrath_Mage_Shard_Bonus_CounterE
 16CModifierFactoryI48CDOTA_Modifier_Skywrath_Mystic_Flare_Aura_EffectE
 16CModifierFactoryI48CDOTA_Modifier_Slark_EssenceShift_Permanent_BuffE
@@ -5276,6 +5281,7 @@
 18CMsgIDLinkResponseILj1ELj16ELj2003E26CMsgDevUnlockAllItemStylesLj2004E34CMsgDevUnlockAllItemStylesResponseE
 18CMsgIDLinkResponseILj1ELj16ELj2609E44CMsgClientToGCGetLimitedItemPurchaseQuantityLj2610E52CMsgClientToGCGetLimitedItemPurchaseQuantityResponseE
 18CMsgIDLinkResponseILj1ELj16ELj7078E26CMsgDOTASubmitPlayerReportLj7079E34CMsgDOTASubmitPlayerReportResponseE
+18CMsgIDLinkResponseILj1ELj16ELj7082E28CMsgDOTASubmitPlayerReportV2Lj7083E36CMsgDOTASubmitPlayerReportResponseV2E
 18CMsgIDLinkResponseILj1ELj16ELj7527E27CMsgClientToGCGetTrophyListLj7528E35CMsgClientToGCGetTrophyListResponseE
 18CMsgIDLinkResponseILj1ELj16ELj7536E29CMsgClientToGCGetBattleReportLj7537E37CMsgClientToGCGetBattleReportResponseE
 18CMsgIDLinkResponseILj1ELj16ELj7541E43CMsgClientToGCGetBattleReportAggregateStatsLj7542E51CMsgClientToGCGetBattleReportAggregateStatsResponseE
@@ -6089,6 +6095,7 @@
 2-.CMsgDOTARealtimeGameStats.BroadcasterDetails
 2-.CMsgDOTARealtimeGameStatsTerse.PlayerDetails
 2-.CMsgDOTASeasonPredictions.Prediction.Answers
+2-.CMsgDOTASubmitPlayerReportResponseV2.EResult
 2-.CMsgGCToClientBattlePassRollup_TI7.BattleCup
 2-.CMsgGCToClientQuestProgressUpdated.Challenge
 2-.CMsgInGamePrediction.ERandomSelectionGroup_t
@@ -9388,6 +9395,7 @@
 28CGCMsgMemCachedStatsResponse
 28CGCToGCMsgMasterAck_Response
 28CGenerateMipsProceduralLayer
+28CIngameEvent_10thAnniversary
 28CInlineJob_CMsgDOTATeamsInfo
 28CJoinGuildBattlePassActivity
 28CKillProcessIfItTakesTooLong
@@ -9410,6 +9418,7 @@
 28CMsgDOTAMatch_CustomGameData
 28CMsgDOTAOtherLeftChatChannel
 28CMsgDOTARewardTutorialPrizes
+28CMsgDOTASubmitPlayerReportV2
 28CMsgDOTATeamInfo_MemberStats
 28CMsgDotaScenario_HeroAbility
 28CMsgDotaScenario_HeroHeroInt
@@ -10194,6 +10203,7 @@
 30CDOTA_DB_Popup_JoinChatChannel
 30CDOTA_DB_Popup_ManageTeammates
 30CDOTA_DB_Popup_RankCalibration
+30CDOTA_DB_Popup_ReportPlayerNew
 30CDOTA_DB_Popup_WatchGameStatus
 30CDOTA_DB_RecentArmoryItemsMenu
 30CDOTA_DB_WatchDownloadsElement
@@ -11403,7 +11413,7 @@
 3333%3333
 3333%3333D
 333333
-333333)@CInlineJob_CMsgGCToClientArcanaVotesUpdate
+333333)@file://{resources}/layout/popups/popup_cavern_instructions.xml
 33333333H
 33333333I
 3333A
@@ -12422,6 +12432,7 @@
 35CMsgIDLinkGenericClientToGCResponseILj1ELj2003E26CMsgDevUnlockAllItemStylesLj2004E34CMsgDevUnlockAllItemStylesResponseE
 35CMsgIDLinkGenericClientToGCResponseILj1ELj2609E44CMsgClientToGCGetLimitedItemPurchaseQuantityLj2610E52CMsgClientToGCGetLimitedItemPurchaseQuantityResponseE
 35CMsgIDLinkGenericClientToGCResponseILj1ELj7078E26CMsgDOTASubmitPlayerReportLj7079E34CMsgDOTASubmitPlayerReportResponseE
+35CMsgIDLinkGenericClientToGCResponseILj1ELj7082E28CMsgDOTASubmitPlayerReportV2Lj7083E36CMsgDOTASubmitPlayerReportResponseV2E
 35CMsgIDLinkGenericClientToGCResponseILj1ELj7527E27CMsgClientToGCGetTrophyListLj7528E35CMsgClientToGCGetTrophyListResponseE
 35CMsgIDLinkGenericClientToGCResponseILj1ELj7536E29CMsgClientToGCGetBattleReportLj7537E37CMsgClientToGCGetBattleReportResponseE
 35CMsgIDLinkGenericClientToGCResponseILj1ELj7541E43CMsgClientToGCGetBattleReportAggregateStatsLj7542E51CMsgClientToGCGetBattleReportAggregateStatsResponseE
@@ -12921,6 +12932,7 @@
 36CMsgDOTALeagueNodeGroup_TeamStanding
 36CMsgDOTAPassportVoteGenericSelection
 36CMsgDOTASeasonPredictions_Prediction
+36CMsgDOTASubmitPlayerReportResponseV2
 36CMsgDOTATriviaQuestionAnswersSummary
 36CMsgDraftTrivia_DraftTriviaMatchInfo
 36CMsgEconPlayerStrangeCountAdjustment
@@ -13773,6 +13785,7 @@
 39CDOTA_Ability_UpheavalUrn_Reincarnation
 39CDOTA_Ability_Winter_Wyvern_Arctic_Burn
 39CDOTA_BaseNPC_Winter2022_FeedableRoshan
+39CDOTA_DB_Frontpage_10thAnniversaryEvent
 39CDOTA_DB_Page_BP_International2019_Home
 39CDOTA_DB_Page_BP_International2020_Home
 39CDOTA_DB_Page_BP_International2022_Base
@@ -14111,7 +14124,6 @@
 3GAME_PARTICLE_MANAGER_EVENT_SET_CONTROL_POINT_MODEL
 3GAME_PARTICLE_MANAGER_EVENT_SET_NAMED_VALUE_CONTEXT
 3STEAMLEARN_SNAPSHOT_PROJECT_ERROR_INVALID_TIMESTAMP
-3YA1fH
 3[A\A]A
 3[A\A]A^A
 3_star_action
@@ -14161,8 +14173,7 @@
 4$E;t
 4$HcÉU
 4$Lck L
-4(D9spt
-4(D;5JOH
+4(D;5J
 4(HcB
 4(Optional) Sorting method to use on returned values
 4*D9&tW
@@ -16477,6 +16488,7 @@
 47CDOTA_Ability_Aghsfort_TempBuff_CorpseExplosion
 47CDOTA_Ability_Alchemist_UnstableConcoctionThrow
 47CDOTA_Ability_Frostivus2018_Clinkz_Burning_Army
+47CDOTA_Ability_Seasonal_10thAnniversary_PartyHat
 47CDOTA_Ability_Special_Bonus_Unique_Grimstroke_1
 47CDOTA_Ability_Special_Bonus_Unique_Grimstroke_2
 47CDOTA_Ability_Special_Bonus_Unique_Grimstroke_3
@@ -16818,6 +16830,7 @@
 48CDOTA_Modifier_NagaSiren_SongOfTheSiren_IgnoreMe
 48CDOTA_Modifier_PhantomLancer_Doppelwalk_Illusion
 48CDOTA_Modifier_PhantomLancer_PhantomEdge_Agility
+48CDOTA_Modifier_Seasonal_10thAnniversary_PartyHat
 48CDOTA_Modifier_Skywrath_Mage_Shard_Bonus_Counter
 48CDOTA_Modifier_Skywrath_Mystic_Flare_Aura_Effect
 48CDOTA_Modifier_Slark_EssenceShift_Permanent_Buff
@@ -17074,6 +17087,7 @@
 49CDOTA_Modifier_Watch_Tower_Invulnerable_Temporary
 49CDOTA_Modifier_Weaver_Shukuchi_GeminateAttackMark
 49CDOTA_Modifier_Zuus_ThundergodsWrathVisionThinker
+49CDOTA_UI_10thAnniversaryEventTreasureDetailsPanel
 49CGCClientJobRequestStoreSalesDataUpToDateResponse
 49CHelpRequestLogs_UploadUserApplicationLog_Request
 49CInlineJob_CMsgGCToClientCandyShopUserDataUpdated
@@ -17871,6 +17885,7 @@
 53C_DOTA_Ability_AghsFort_Kunkka_Green_Around_the_Gills
 53C_DOTA_Ability_Aghsfort_PhantomAssassin_PhantomStrike
 53C_DOTA_Ability_Aghsfort_WitchDoctor_VoodooRestoration
+53C_DOTA_Ability_Special_Bonus_U
 53C_DOTA_Ability_Special_Bonus_Unique_Outworld_Devourer
 53C_DOTA_Ability_Special_Bonus_Unique_Vengeful_Spirit_1
 53C_DOTA_Ability_Special_Bonus_Unique_Vengeful_Spirit_2
@@ -17878,7 +17893,6 @@
 53C_DOTA_Ability_Special_Bonus_Unique_Vengeful_Spirit_4
 53C_DOTA_Ability_Special_Bonus_Unique_Vengeful_Spirit_5
 53C_DOTA_Ability_Special_Bonus_Unique_Vengeful_Spirit_6
-53C_DOTA_Ability_Special_Bonus_Unique_Vengeful_Spirit_7
 53C_DOTA_Ability_Special_Bonus_Unique_Vengeful_Spirit_8
 53C_DOTA_Ability_Special_Bonus_Unique_Vengeful_Spirit_9
 53C_PathParticleRopeAlias_path_particle_rope_clientside
@@ -18986,11 +19000,9 @@
 82CAFF
 82CDOTA_Modifier_AghsFort_Special_VoidSpirit_ResonantPulse_Suppression_MagicImmunity
 89 89 89
-89C(H
 8@%r8 8@-80(%rbx
 8@%rdi 8@%rsi
 8@%rdx 8@%rax
-8A9<$r
 8A9D$8
 8A9E8
 8A9F8
@@ -19080,7 +19092,6 @@
 9#DOTA_Hero_Selection_CaptainsMode_WaitingForChooseCaptain
 90wc9p
 94CDOTA_Ability_Aghsfort_Special_PhantomAssassin_Stifling_Dagger_No_Secondary_Dagger_Restriction
-98soIc
 9@SessionNone
 9B2C1229
 9Bpv:I
@@ -19089,7 +19100,6 @@
 9C tWI
 9C tYI
 9C tnI
-9C toH
 9C(t6~H1
 9C(tvI
 9C,toI
@@ -19179,10 +19189,8 @@
 9G tTH
 9G t^H
 9G tnH
-9G tqL
 9G tyL
 9G(tKH
-9G(t]H
 9GAME_PARTICLE_MANAGER_EVENT_SET_SCENE_OBJECT_GENERIC_FLAG
 9G\t5H
 9GuildID_t
@@ -19222,7 +19230,6 @@
 9w(t+U
 9w,u+UH
 9w8t[UH
-9wXtKUH
 9{PuGE
 A  t6I
 A CSS class to assign to rewards of this type
@@ -19263,7 +19270,6 @@ A(HcI H
 A(HcI L
 A(IcG A;G0
 A(t	A
-A*t$DL
 A+U@Hk
 A,A9E
 A1.0.2, 30-Dec-2001
@@ -19274,20 +19280,21 @@ A8A:E8
 A8D$2t
 A8D$4t
 A8D$@u
-A8D$zu
 A8\$(ty
 A8npt
 A9@Ht*D9sp
-A9D$ H
 A9D$ I
 A9D$ tEH
 A9D$ te
+A9D$ tqH
 A9D$$A
 A9D$$u
 A9D$(I
 A9D$(L
 A9D$(t#H
+A9D$(w
 A9D$)u
+A9D$,A
 A9D$,u
 A9D$0I
 A9D$0t
@@ -19323,7 +19330,6 @@ A9T$dtNA
 A9T$|A
 A9\$ ~BI
 A9\$0t
-A9\$8
 A9\$H~uI
 A9\$Pu
 A9\$P~eI
@@ -19357,7 +19363,6 @@ A;D$pt
 A;D$xA
 A;E uRI
 A;E(t6I
-A;EXt	A
 A;G0t3I
 A;G4t
 A;L$0u
@@ -19365,9 +19370,11 @@ A;P(tPA
 A;T$ t
 A;T$0s
 A;W8u	E9
+A;]4u
 A;_ t`I
 A;t$0t
 A;t$8t
+A;t$Dt
 A;u@}vI
 ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789
 ABGR8888
@@ -20790,6 +20797,7 @@ AT9G H
 ATASAR
 ATASARAQAPWH
 ATAUWL
+ATLc%@e
 ATS9w H
 ATSHc
 ATSHc@tH
@@ -20959,7 +20967,6 @@ AWAVSH
 AWAVfA
 AWAY BACK
 AWAY FRONT
-AXAYH9
 AXAYL
 AYAZL9
 AZA\A]A^A_]I
@@ -21001,7 +21008,6 @@ A\A]A^]Ð9w t
 A\A]A^]Ð9wXt
 A\A]A^]Ð@8w(tbUH
 A\A]A^]ÐH9w t
-A\A]A^]þvmatL
 A\A]A^ÐATU
 A\A]A^ÐATUI
 A\A]A^ÐATUSH
@@ -21568,6 +21574,8 @@ Ago : lower-mid central unrounded vowel
 Ago : mid-central unrounded vowel
 Agressif
 AhHcI`Hk
+AhHcq4H
+AhHcq`H
 Aim At
 AimTargetManager
 Aiushtha
@@ -22198,6 +22206,7 @@ B,A9D$,t
 B-Spline
 B09F0t
 B0A9D$0t
+B0H9F0
 B0HcR(H
 B0f9F0t
 B1g+ZH
@@ -22206,6 +22215,7 @@ B4A9D$4t
 B89F8t
 B8A9D$8t
 B8HcR0H
+B8I9D$8
 B;t 0A
 B;t"0A
 B<A8D$<t
@@ -22233,6 +22243,7 @@ BAdjustingVolume
 BAscendantHasClass
 BCDOTA_Modifier_DataDriven
 BCDOTA_Modifier_Sniper_Shrapnel_ChargeCounter
+BCInlineJob_CMsgGCToClientRankUpdate
 BCanSeeInParentScroll
 BDA9D$Dt
 BDownloading() = %d
@@ -22264,6 +22275,7 @@ BGRX8888_LINEAR
 BGTone1
 BGTone2
 BGrade
+BGuildBannerUpgrade
 BHasClass
 BHasDescendantKeyFocus
 BHasHoverStyle
@@ -22619,7 +22631,6 @@ BloomTexture
 BlurBackground
 BlurHorz
 BlurVert
-Bmodifier_attribute_bonus
 Bodies: %d (%d
 Body Component Scriptdesc
 BodyGameSystem
@@ -22952,7 +22963,6 @@ C7:00 PM
 C89CDH
 C8A9D$8t
 C8D;pXtdL
-C8I9D$8
 C8IcT$0I
 C8X[]A\A
 C8[]A
@@ -23157,6 +23167,7 @@ CCopyRecipientFilter
 CCustomNetTableManager
 CCustomTextureToolCache
 CD9CHH
+CDA9D$Dt
 CDA:D
 CDD9CHH
 CDOTAAbilitySchema::SetupItemSymbolsAndDictionary couldn't find 'ability_base' in abilities script files
@@ -25157,6 +25168,7 @@ CDOTA_Ability_SandKing_SandStorm
 CDOTA_Ability_SatyrHellcaller_UnholyAura
 CDOTA_Ability_SatyrTrickster_Purge
 CDOTA_Ability_Scout_Bonuses
+CDOTA_Ability_Seasonal_10thAnniversary_PartyHat
 CDOTA_Ability_Seasonal_Decorate_Tree
 CDOTA_Ability_Seasonal_Festive_Firework
 CDOTA_Ability_Seasonal_Firecrackers
@@ -27987,7 +27999,6 @@ CDOTA_Modifier_JungleSpirit_RiverRejuvenation_Regen
 CDOTA_Modifier_JungleSpirit_Storm_Cyclone
 CDOTA_Modifier_JungleVarmint_Creator
 CDOTA_Modifier_JungleVarmint_Dive
-CDOTA_Modifier_Jungle_Spirit
 CDOTA_Modifier_Jungle_Spirit_Ally_Alert
 CDOTA_Modifier_Jungle_Spirit_Jungle_Lumber_Lock
 CDOTA_Modifier_Jungle_Spirit_Jungle_Lumber_Lock_Immunity
@@ -28711,6 +28722,7 @@ CDOTA_Modifier_SatyrTrickster_Purge
 CDOTA_Modifier_ScoutBonuses
 CDOTA_Modifier_ScoutVisible
 CDOTA_Modifier_ScriptedMotionController
+CDOTA_Modifier_Seasonal_10thAnniversary_PartyHat
 CDOTA_Modifier_Seasonal_Diretide2020_HighFiveRequested
 CDOTA_Modifier_Seasonal_FestiveFirework
 CDOTA_Modifier_Seasonal_Firecrackers
@@ -30036,6 +30048,7 @@ CHAT_MESSAGE_PAUSE_COUNTDOWN
 CHAT_MESSAGE_PLAYER_ABANDONED
 CHAT_MESSAGE_PLAYER_ABANDONED_AFK
 CHAT_MESSAGE_PLAYER_ABANDONED_DISCONNECTED_TOO_LONG
+CHAT_MESSAGE_PLAYER_IN_GAME_BAN_TEXT
 CHAT_MESSAGE_PLAYER_LEFT
 CHAT_MESSAGE_PLAYER_LEFT_AFK
 CHAT_MESSAGE_PLAYER_LEFT_DISCONNECTED_TOO_LONG
@@ -30443,6 +30456,7 @@ CInfoPlayerStartGoodGuys
 CInfoTarget
 CInfoVisibilityBox
 CInfoWorldLayer
+CIngameEvent_10thAnniversary
 CIngameEvent_Base
 CIngameEvent_Diretide2020
 CIngameEvent_DotaPlus
@@ -30474,6 +30488,7 @@ CInlineJob_CMsgGCToClientAccountGuildEventDataUpdated
 CInlineJob_CMsgGCToClientActiveGuildChallengeUpdated
 CInlineJob_CMsgGCToClientActiveGuildContractsUpdated
 CInlineJob_CMsgGCToClientAggregateMetricsBackoff
+CInlineJob_CMsgGCToClientArcanaVotesUpdate
 CInlineJob_CMsgGCToClientCandyShopUserDataUpdated
 CInlineJob_CMsgGCToClientCavernCrawlMapPathCompleted
 CInlineJob_CMsgGCToClientCavernCrawlMapUpdated
@@ -30494,7 +30509,6 @@ CInlineJob_CMsgGCToClientPlayerBeaconState
 CInlineJob_CMsgGCToClientPlaytestStatus
 CInlineJob_CMsgGCToClientPrivateCoachingSessionUpdated
 CInlineJob_CMsgGCToClientQuestProgressUpdated
-CInlineJob_CMsgGCToClientRankUpdate
 CInlineJob_CMsgGCToClientRequestLaneSelection
 CInlineJob_CMsgGCToClientRequestMMInfo
 CInlineJob_CMsgGCToClientSteamDatagramTicket
@@ -31205,6 +31219,8 @@ CMsgDOTASubmitPlayerAvoidRequest
 CMsgDOTASubmitPlayerAvoidRequestResponse
 CMsgDOTASubmitPlayerReport
 CMsgDOTASubmitPlayerReportResponse
+CMsgDOTASubmitPlayerReportResponseV2
+CMsgDOTASubmitPlayerReportV2
 CMsgDOTASubmitTriviaQuestionAnswer
 CMsgDOTASubmitTriviaQuestionAnswerResponse
 CMsgDOTATeamInfo
@@ -32408,6 +32424,7 @@ CTFWearableItem
 CTSListBase: Misaligned list
 CTSQueue corruption
 CTSQueue: Misaligned queue
+CT[A\]H
 CTakeDamageInfo
 CTakeDamageResult
 CTakeDamageSummaryScopeGuard
@@ -37363,6 +37380,7 @@ Custom
 Custom Game
 Custom Game Win
 Custom Game name required for DOTA_GAMEMODE_EVENT Featured Game Mode with id %d. Ignoring definition
+Custom Post-Process Effect Material
 Custom Post-Process Material
 Custom Post-Process UI Material
 Custom game %llu timestamp %u CRC mismatch!  Lobby has %016llX, client invite has %016llX
@@ -37442,6 +37460,7 @@ CustomLoadingScreenContainer
 CustomLobbyPlayer
 CustomNetTable
 CustomNetTables
+CustomSpecialPostEffectMaterial
 CustomStat
 CustomTexture1
 CustomTextureTeamBannerLogoOnProp
@@ -37477,6 +37496,7 @@ CycleButton
 Cypriot
 Cyrillic
 D#\7PtK8
+D$ ;C8t
 D$ @ug1
 D$ A9D
 D$ A;E
@@ -37494,6 +37514,7 @@ D$$9D$L
 D$$9D$P
 D$$H9
 D$$H9;w
+D$(9C
 D$(D9
 D$(E9
 D$(I9D
@@ -37502,12 +37523,14 @@ D$(IcL$ H
 D$(L9l
 D$(L9t
 D$(dH3
+D$(zZuXH
 D$,A9D$(t
 D$,A9D$(tE
 D$,H9;w
 D$,PAVj
 D$09D$H
 D$0A8G0
+D$0D;hPt
 D$0Hc
 D$0Ic
 D$0IcT$(A
@@ -37517,6 +37540,7 @@ D$0t^H
 D$1@t^L
 D$2A\L
 D$4A9D$8tyH
+D$4A\L
 D$4t$H
 D$4u0
 D$4z8A
@@ -37534,15 +37558,19 @@ D$HIcD
 D$H[A
 D$H[A\A]A
 D$IIcD$pH
+D$K8CKt
+D$L9CLt
 D$LLcE
 D$Ot	8Eo
+D$P8CPt
 D$P9B
 D$PtFf
 D$PuXH
 D$T9CTt
 D$T9CTu
-D$Tu;I
+D$T:CTt6H
 D$Wt	8Eo
+D$X;CXA
 D$XF8,0tPH
 D$XH9CXt
 D$XH9D$8u
@@ -37618,7 +37646,6 @@ D9{ ~\H
 D9{(~ID
 D9{dXZr
 D:o0t
-D;%o8Y
 D;(tHA
 D;0t[D
 D;4$}VD
@@ -37759,6 +37786,8 @@ DOOR_STATE_CLOSING
 DOOR_STATE_OPEN
 DOOR_STATE_OPENING
 DOTA GameRules
+DOTA10thAnniversaryEventClaimReward
+DOTA10thAnniversaryTreasureDetails
 DOTA::FoW
 DOTAAbandonClicked
 DOTAAbandonConfirm
@@ -38727,6 +38756,7 @@ DOTAFriendsFilterToggled
 DOTAFriendsLobbyListUpdated
 DOTAFrontPageBattlePassClick
 DOTAFrontPageBattlePassClick() DOTAPlayPanelCloseButtonClicked( true
+DOTAFrontpage10thAnniversaryEvent
 DOTAFrontpageButtonTimerRefresh
 DOTAFrontpageCarousel
 DOTAFrontpageContents
@@ -40278,6 +40308,7 @@ DOTASelectTournamentTier
 DOTASelectedChatWheelBind
 DOTASelectedChatWheelTab
 DOTASelectedDivisionChanged
+DOTASelectedItemUpdated
 DOTASelectedPingWheelBind
 DOTASelectionPriorityChoice
 DOTASelectionPriorityChoice:%k_DOTASelectionPriorityChoice_Invalid
@@ -40337,6 +40368,7 @@ DOTASetPrimaryModelPrimarySlotIndex
 DOTASetQuickcastAbilityMode
 DOTASetQuickcastItemSpecificBind
 DOTASetRecentArmoryItemsMenuVisible
+DOTASetReportTimeAgo
 DOTASetSelectedHeroInspectTab
 DOTASetSelectedStrategyTab
 DOTASetShardsMenuVisible
@@ -41235,6 +41267,7 @@ DOTATransferAdminConfirmed( %u
 DOTATransferSeasonalRank
 DOTATreasureCell
 DOTATreasureDetailsPage
+DOTATreasureItemHovered
 DOTATreasureList
 DOTATreasureStickerPackDetailsPage
 DOTATreasureVotingChangePrimarySlotIndex
@@ -41543,6 +41576,8 @@ DOTAWraithKingPostGameProgressTestMovement
 DOTAXP
 DOTAZooCavernDebug
 DOTAZooRunInterruptLoadTest
+DOTA_10thAnniversary_ItemTooltip_%d
+DOTA_10thAnniversary_Tooltip
 DOTA_2013PassportSelectionIndices
 DOTA_AASystemSteam_Green
 DOTA_AASystemSteam_Red
@@ -42483,6 +42518,7 @@ DOTA_Chat_PlayerAbandonedDisconnectedTooLong
 DOTA_Chat_PlayerDenied
 DOTA_Chat_PlayerDraftPick_Dire
 DOTA_Chat_PlayerDraftPick_Radiant
+DOTA_Chat_PlayerInGameBanText
 DOTA_Chat_PlayerKilled
 DOTA_Chat_PlayerKilledAssist
 DOTA_Chat_PlayerKilledAssistNearby
@@ -44311,6 +44347,7 @@ DOTA_LOADOUT_TYPE_TAUNT
 DOTA_LOADOUT_TYPE_TAUNT_PERSONA_1
 DOTA_LOADOUT_TYPE_TELEPORT_EFFECT
 DOTA_LOADOUT_TYPE_TERRAIN
+DOTA_LOADOUT_TYPE_TORMENTOR
 DOTA_LOADOUT_TYPE_VERSUS_SCREEN
 DOTA_LOADOUT_TYPE_VOICE
 DOTA_LOADOUT_TYPE_VOICE_PERSONA_1
@@ -46284,6 +46321,7 @@ D_DOF_DOWNSAMPLE
 D_DOF_NEAR_COC
 D_DOF_SMALL_BLUR
 D_DOWNSAMPLE_FILTER
+D_ENABLE_DESATURATE
 D_ENABLE_DIFFUSE_CONTRIBUTION
 D_ENABLE_SPECULAR_CONTRIBUTION
 D_ENABLE_USER_CLIP_PLANE
@@ -46325,7 +46363,6 @@ D_TOOLS_VIEW
 D_TOP_DOWN_VIEW
 D_UNROLL_LOOPS
 D_USE_ALTERNATIVE_FOW_CAMERA_POSITION
-D_WATER_FADE
 D_WORLDSPACE_TEXCOORDS
 D_WRITE_COC
 D_WRITE_DEPTH
@@ -46735,6 +46772,7 @@ DiceRoll
 DiceRoll%d
 DiceRollColumn
 Did not find both an input and ouput field within root components block
+DidNotPlayRoleButton
 Didn't expect more than one scan
 Didn't find an entity of class %s at %d
 Didnt supply startpos and endpos to Script TraceLine call, failing, setting called to false
@@ -47395,11 +47433,11 @@ E(I9F
 E(I9G
 E,9C,t
 E09C0t
+E09F0t
 E0A8D$0t
 E0A8F0
 E0A8G0
 E0A;E
-E0E;E4L
 E0H9;w
 E1҉EčB
 E49C4t
@@ -47415,10 +47453,8 @@ E9.r%H
 E9/~HI
 E9/~gI
 E94$t[I
-E94$~c
 E97XZ~NI
 E97tcA
-E97~:I
 E97~oI
 E9>~AI
 E9>~CI
@@ -47455,7 +47491,6 @@ E;f@t<I
 E;l$ D
 E;l$4tJ
 E;l$8}8H
-E;l$Xt
 E;opt
 E;t$Du
 E;t$Tt#I
@@ -47702,7 +47737,7 @@ EST5EDT
 ESearchResultsDesired
 ESetStyle
 EShareAbility
-EShowingPreviousResults
+EShowSuggestItems
 ESourceEngine
 ESpecialPingValue
 ESplitScreenMessageType
@@ -47740,6 +47775,7 @@ EUnderDraftResponse"q
 EUnitType
 EUnlockStyle
 EUnpackBundle
+EVENT_ID_10TH_ANNIVERSARY
 EVENT_ID_COMPENDIUM_2014
 EVENT_ID_DIRETIDE
 EVENT_ID_DIRETIDE_2020
@@ -47940,7 +47976,6 @@ EffigyPreview
 EffigyReforgeButton
 EffigyZoomOut
 Egyptian_Hieroglyphs
-EhIcu4H
 Eiffel tower
 EightAbilities
 Elapsed
@@ -48523,6 +48558,7 @@ F8A;F
 F8HcF0M
 F8HcX
 F8IcV0H
+F8[A\A
 F9,8tFA
 F9A8E9
 F9\0 u
@@ -49191,6 +49227,7 @@ Fileshare call failed
 Fileshare upload failed, result = %d
 Filesize Cell
 Filetype Cell
+Fill GBuffers Desaturated
 Fill GBuffers Ground
 FillAttr
 FillBar%d
@@ -49767,7 +49804,6 @@ GROUP_STAGE
 GST-4GDT
 GService for submitting data, training, and inferencing with SteamLearn
 GT:FTu
-GX9p(u
 GXHcOPH
 G`D+c`A+E
 Ga>WebVTT Parse Error %d: %s:%u:%u - %s
@@ -51066,6 +51102,7 @@ GridSideShopItems
 GridStoppingFastMotion
 GridUpgradeItems
 GridUpgradesTab
+GriefingButton
 Grnd Spd: %8.3f (seq %8.3f) %s
 Ground Courier Only
 GroupConVarToggle
@@ -51098,7 +51135,6 @@ Guild perk %s is missing percentile
 Guild weekly leaderboard grant
 GuildActivity
 GuildBannerPreview
-GuildBannerUpgrade
 GuildChallenge
 GuildChallengeComplete
 GuildChallengeImage
@@ -51155,8 +51191,9 @@ Gujarati
 Gurmukhi
 Gus Bot
 GxHcG(D
-H	C@L
+H	C@L9
 H	CXH
+H I9M
 H#CDI
 H#CPH
 H#D$ L
@@ -51213,16 +51250,20 @@ H9z s
 H;2s&H
 H;2s]A
 H;:t7v
-H;=6cj
-H;=6gl
-H;=C8
-H;=DSc
-H;=F4j
-H;=F8l
-H;=H0C
-H;=VUk
-H;=fyo
-H;=xSG
+H;=2u
+H;=6Bp
+H;=F7n
+H;=F9o
+H;=FAj
+H;=FEl
+H;=FGm
+H;=Fhj
+H;=MP
+H;=T1W
+H;=Vtl
+H;=bmC
+H;=co
+H;=uud
 H;@XtJH
 H;E0sR
 H;G t`H;G
@@ -51248,6 +51289,7 @@ HERO_RELIC_RARITY_COMMON
 HERO_RELIC_RARITY_INVALID
 HERO_RELIC_RARITY_RARE
 HH9|$xL
+HHcGxH
 HHcwpH
 HIDE_ACTION_MINIMAP
 HIDE_ACTION_PANEL
@@ -51403,6 +51445,7 @@ H[]ÐAWAVAUATL
 H[]ÐUSH
 HadBadgeData
 HalfCreditAvailable
+HalfEarned
 Hammer ID: %s
 Hammer/DefaultTextureScale
 HammerMapLoader001
@@ -51574,6 +51617,7 @@ HasGuildLevel
 HasGuildReward
 HasHealthCost
 HasHero
+HasHeroIcon
 HasHeroImage
 HasHeroNotes
 HasHeroRelics
@@ -51610,6 +51654,7 @@ HasLastSeries
 HasLeaderboardRank
 HasLeague
 HasLeagueID
+HasLegacyItem
 HasLiveMatch
 HasLoadedScenario
 HasLocalPlayer
@@ -51794,8 +51839,11 @@ HaveActivePopups
 HavePlayersLastWeek
 Hazhadal
 Hc+HcC
-Hc5DA
-Hc5w+7
+Hc5	39
+Hc5Dz
+Hc5Td
+Hc5Zk
+Hc5yx
 Hc@ I
 Hc@(E1
 Hc@LHk
@@ -51833,13 +51881,11 @@ HcN H9
 HcO H9
 HcP`Hk
 HcR H
-HcS(;S8
 HcS4HcA
 HcS4HcwTH
 HcSxA9
 HcT$(L
 HcUȋE
-HcY<H
 HcYH;YX
 HcYH;YXE
 Hc[<5B7
@@ -52255,7 +52301,6 @@ Hex and octal numbers must be integers
 Hh#P\H
 Hh#p\H
 HhHc@`H
-HhHc@`Hk
 Hidden
 HiddenGem
 HiddenPanel
@@ -52467,6 +52512,8 @@ I9\$xu
 I9_(t8A
 I;4$sj
 I;E0tnH
+I;EPto
+I<CDOTA_Modifier_Jungle_Spirit
 I@A9O<u
 ICON_OFFSET
 ICON_RELATIVE_OFFSET
@@ -52628,6 +52675,7 @@ IcD$ I
 IcD$ L
 IcD$$I
 IcD$(1
+IcD$(H
 IcD$(I
 IcD$(L
 IcD$,A
@@ -52646,19 +52694,23 @@ IcD$HA9
 IcD$P
 IcD$P1
 IcD$P9
+IcD$PH
 IcD$PK
 IcD$PL
 IcD$PM
 IcD$XI
 IcD$`A
+IcD$`I
 IcD$hI
 IcD$pI
 IcD$xA
 IcD$xI
+IcD$xL
 IcE A9
 IcE L9
 IcEXL
 IcF L
+IcF8A;FH
 IcF@1
 IcFPA9
 IcG A;G0
@@ -52686,7 +52738,6 @@ IcN@A;NP
 IcN@Ic
 IcNHIc
 IcN`Hc
-IcNpIc
 IcO H9
 IcO8Hc
 IcOXHc
@@ -52713,11 +52764,11 @@ IcV A;V0
 IcV(IcF
 IcW A;W0
 Ic\$8M
-Ic\$@A9
+Ic\$HH
 Ic\$PA
 Ic]HA;]X
 Ic^PA
-Ic^xE9f
+Ic^pA
 Ic_ A;_0
 IceFrog
 Icon Target handle went invalid before the lesson started
@@ -52727,7 +52778,6 @@ IconLessonStopped
 IconPanel
 IconStyle
 Icp H9
-Icq H9
 Ict$hI
 Icu`1
 IdempotencyLevel
@@ -53130,7 +53180,6 @@ InstallClasses
 InstallSchemaBindings
 Instance %s needs complete limit updated
 Instance: %s
-InstanceBuffer
 InstantReplay
 Instructor.LessonStart
 InsufficentLevel
@@ -54005,7 +54054,6 @@ KICKED_FROM_QUEUE_EVENT_ENDING
 KICKED_FROM_QUEUE_EVENT_STARTING
 KICKED_FROM_TEAM
 KIcOPIc
-KMc&M
 KMeans
 KV3 save transfer failed: %s
 Kaithi
@@ -54086,7 +54134,6 @@ L$+8L
 L$,u7I
 L$0H9L
 L$4u7I
-L$4u;I
 L$8dH3
 L$Du;I
 L$HH;G
@@ -54376,7 +54423,6 @@ LayoutDirtied
 Lc!D;a
 Lc"D;b
 Lc#D;c
-Lc&HcG
 Lc(D;h
 Lc(E;l
 Lc)D;i
@@ -54401,7 +54447,6 @@ Lcg D;g0D
 Lcg8D;gHD
 LcgXD;ghD
 Lch E;i
-Lci(D;i8D
 Lck(D9k8D
 Lck(D;k8D
 Lck8D;kHD
@@ -54939,7 +54984,6 @@ M	gpM	gh
 M9D$(t
 M9}0u	M
 M9}@u	M
-M@A;MDH
 MADE_ADMIN
 MARK) must have an argument
 MASKMAP1
@@ -55747,10 +55791,12 @@ Maynard Bot
 Mc&E;f
 Mc'E;g
 Mc,$E;l
+Mc,$Lc
 Mc.E;n
 Mc/E;o
 Mc4$E;t
 Mc7D;5
+Mc7D;5Y2
 Mc7E;w
 Mc<$E
 McD$ A
@@ -55761,6 +55807,7 @@ McT$`I
 Mce(A
 McehfA
 McepE
+Mcf(A9
 Mcf8E;fHD
 Mcg E;g0
 Mcl$ E;l$0D
@@ -55773,7 +55820,6 @@ Mcl$XE;l$hD
 Mcl$`E;l$pD
 Mcl$x1
 Mcn E;n0
-Mcn<5B7
 McnPE;n`D
 Mco E;o0
 McoHE;oXD
@@ -55972,6 +56018,7 @@ MissingHeroesButton
 MissingHeroesList
 MissingRawBehaviorScore
 MixedShadowsChanged
+Mmodifier_attribute_bonus
 Mod: %i (%s, %s
 ModeColor
 ModeColor%d
@@ -57568,6 +57615,8 @@ N5GCSDK17GCClientJobLambdaIZN30CDOTA_DB_Page_OwnedItemDetails23OnItemChangeDescr
 N5GCSDK17GCClientJobLambdaIZN30CDOTA_DB_Page_OwnedItemDetails27OnItemResetGifterAttributesEvEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN30CDOTA_DB_Page_StoreBrowse_Base13DoStoreSearchEP20CEconItemSearchQueryEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN30CDOTA_DB_Popup_CompendiumLevel27EventAnimateCompendiumLevelEvEUlvE_EE
+N5GCSDK17GCClientJobLambdaIZN30CDOTA_DB_Popup_ReportPlayerNew12SubmitReportEjRK10CUtlVectorIhi10CUtlMemoryIhiEEybiEUlvE_EE
+N5GCSDK17GCClientJobLambdaIZN30CDOTA_DB_Popup_ReportPlayerNew35EventPlayerReportSubmitAvoidRequestERKN8panorama9CPanelPtrINS2_8IUIPanelEEEEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN30CDOTA_UI_Popup_AutographReward21EventSendBadgeMessageEvEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN30CDOTA_UI_Popup_BroadcasterFact12RequestStatsEvEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN30CDOTA_UI_Popup_Team_Management20OnTeamFileOpenDialogEiEUlvE_EE
@@ -58133,6 +58182,7 @@ N8panorama8CUIEventILb0EJ9MatchType18DOTA_GameMode_MaskEEE
 N8panorama8CUIEventILb0EJEEE
 N8panorama8CUIEventILb0EJN30CDOTA_DB_Popup_JoinChatChannel5ESortEEEE
 N8panorama8CUIEventILb0EJNS_13GamePadData_tEEEE
+N8panorama8CUIEventILb0EJNS_9CPanelPtrINS_8CPanel2DEEE23item_definition_index_tbEEE
 N8panorama8CUIEventILb0EJNS_9CPanelPtrINS_8CPanel2DEEEEEE
 N8panorama8CUIEventILb0EJNS_9CPanelPtrINS_8IUIPanelEEEPKcEEE
 N8panorama8CUIEventILb0EJP10CDOTA_BuffEEE
@@ -58941,6 +58991,7 @@ NoRewardType
 NoScore
 NoSearchMatches
 NoSearchResults
+NoSelection
 NoShardsPrice
 NoShowcase
 NoSlot
@@ -59705,12 +59756,14 @@ OverviewHeroReportPlayer
 OverviewHeroShowContextMenu
 OverviewHeroes
 OverviewStatHeroBadge
+OverwatchApplicableReport
 OverwatchAutoPlayToggle
 OverwatchControls
 OverwatchDownloadReplayButton
 OverwatchEnabled
 OverwatchMarkerRange
 OverwatchReportButton
+OverwatchReportToggle
 OverwatchReviewReplayButton
 OverwatchStatusLabel
 OwnGameplayInfo
@@ -59764,10 +59817,8 @@ P8H=vmdlu
 P8H=vtex
 P8t;A
 P9KeyValues
-P@A9T$ u
 P@H+P8H
 P@Hc@8H
-P@Hc@8Hk
 P@Hc@8I
 P@IcEHI
 P@IcG A;G0
@@ -60068,11 +60119,10 @@ PP13_SEL_TEAMCUP_PLAYER
 PP13_SEL_TEAMCUP_PLAYER_LOCK
 PP13_SEL_TEAMCUP_TEAM
 PP13_SEL_TEAMCUP_TEAM_LOCK
-PPA;E0u
 PPD9h<H
+PPD;h I
 PPD;h(I
 PPH9CPL
-PPH;CxH
 PPHc@HH
 PPI9D$@t*1
 PPK20CMsgInGamePrediction
@@ -60398,6 +60448,7 @@ PendingResponse
 PenguinKill
 PerFriendPreferences
 PerFriendPreferences"U
+PerLayerConstantBufferDota_t
 PerUnitHotkeysCheckBox
 PerUnitKeybindsActive
 PerVertexLighting
@@ -60454,7 +60505,6 @@ PersonalStatsBottomDisabled
 PersonalStatsTopDisabled
 PetLevelup_Rule_t
 PfA9\$~rHf
-PhHc@`H
 PhHc@`Hk
 PhHc@`I
 Phags_Pa
@@ -60554,6 +60604,7 @@ PipClaimable
 PipComplete
 PipGoal
 PipSnippet
+PipState
 PipUnclaimed
 PipValid
 Pip_%d
@@ -60931,6 +60982,7 @@ PopupMatchmakingRegionPing
 PopupMysteryBox
 PopupNewBattleReport
 PopupPartyInvite
+PopupPlayerBehaviorScore
 PopupPlusHeroLevelRewards
 PopupPlusStatus
 PopupProInfo
@@ -60946,6 +60998,7 @@ PopupRankedPhone
 PopupReadyCheck
 PopupReadyUpFail
 PopupReportPlayer
+PopupReportPlayerNew
 PopupSaveCustomHeroSet
 PopupSeasonalItemReceived
 PopupSettings
@@ -61487,9 +61540,11 @@ Pyrexae
 P|A;T$0
 Q(Optional) If supplied, the resulting published file's Id is appended to the URI
 Q<%g %g %g %g
+Q@1ۋq
 QAngle
 QAngle-world
 QCdota_hero_ability_points_changed
+QHcK(Ic
 QHcK0Ic
 QHcKpIc
 QReturns the Steam Level of a user, the Badge level for the game, and if it's foil
@@ -61658,6 +61713,8 @@ R8G8B8A8_ETC2_EAC
 R8G8B8_ETC2
 R8G8_UINT
 R8_UINT
+R8f9Q8r
+R8fA9V8s
 R@E9l
 RANDOM
 RANGED_CREEP_ACQUISITION_RANGE
@@ -62810,6 +62867,7 @@ Runs when the modifier is refreshed
 Runs when the think interval occurs
 Rylai
 S I+E
+S(9P4t
 S(H;P8
 S(HcC H
 S(t_HcL
@@ -63263,6 +63321,7 @@ ScoutState_t
 ScratchPadVisible
 ScreenActive
 ScreenNavButtons
+ScreenShakeForward
 ScreenShotRow
 ScreenXYToWorld
 ScreenshotImageContainer
@@ -64536,7 +64595,6 @@ ShowStickerButton
 ShowStickerbookNewPagePopup
 ShowStockAmount
 ShowStrAgiInt
-ShowSuggestItems
 ShowSuggestion
 ShowSummary
 ShowSummaryPanel
@@ -64580,6 +64638,7 @@ ShowingIntroPanel
 ShowingJustFinishedMatch
 ShowingLanguage
 ShowingLocalPlayerGuides
+ShowingPreviousResults
 ShowingQueryUnit
 ShowingStream
 Shows a page with two heroes side by side
@@ -64874,6 +64933,7 @@ Special value %s in %s has too many values
 SpecialBonusIntrinsicModifier
 SpecialCard
 SpecialPayment
+SpecialPostEffect
 SpecificPlayerButton
 Specified ability is not actually an ability
 Specifies a 'wash' color, which means a color that will be blended over the panel and all it's children at composition time, tinting them.  The alpha value of the color determines the intensity of the tinting.<br><br><b>Example:</b><pre>wash-color: #39b0d325;</pre
@@ -65676,6 +65736,7 @@ SubclassVDataChangeType_t
 SubmitButton
 SubmitConvictionButton
 SubmitIngamePrediction
+SubmitPlayerReportNew
 Submitting sticker team page order
 Submitting sticker team page order - SKIPPED
 SubpagePrimaryControls
@@ -65790,19 +65851,19 @@ SystemInputLanguageChanged
 T$ HcE
 T$ ~LH
 T$(H9P
+T$0A;T$4
 T$0Ic\$ 9
 T$0[A
 T$4u,I
-T$HH9P
 T$HIcL$`L
 T$HIc\$ A
 T$HdH3
 T$VH;G
 T$XdH3
+T$\tBH
 T$xA\A]A^A
 T$xdH3
 T:s:match_timestamp} {T:t:match_timestamp
-TA9F u
 TAG_BAD_CHARACTERS
 TAG_EMPTY
 TAG_TAKEN
@@ -66346,7 +66407,6 @@ TestingItemDef
 TestingSet
 Text description for the published file
 Text title for the published file
-TextButton
 TextCursorColor
 TextEntry.BgColor
 TextEntry.CursorColor
@@ -66849,6 +66909,8 @@ TowerName%d
 TowerState_t
 TowersGraphCanvas
 TowersGraphLabels
+ToxicTextButton
+ToxicVoiceButton
 Tracepoint
 TracerSound
 TracerSound_global_client
@@ -66873,6 +66935,7 @@ TransitionInitializer
 Transition_DataDriven
 TransitioningLayer_t
 Translucent Decal VB Slots Used: %d out of %d
+Translucent Forward Desaturated
 Translucent Screenspace
 TransmittingLoud
 TransmittingVoice
@@ -66964,6 +67027,7 @@ TreasureScene
 TreasureShardQuantityDropDown
 TreasureTeam%u
 TreasureTierList
+TreasureViewLegacyItemButton
 TreeHasHighlight
 TreeModelReplacement_t
 TreeView.BgColor
@@ -67745,6 +67809,7 @@ Use camera position/activity from the portrait setup
 Use compute shader for Bloom downsample
 Use deferred rendering for portraits
 Use dota_gamemode_ability_draft_set_draft_hero_and_team_clear to start over
+Use fake 10th anniversary data
 Use fake dummy data for profile cards instead of the real data from the GC
 Use fake map stats
 Use game events from script
@@ -67819,7 +67884,7 @@ UtlStringFastCompareLess
 UwvhZnfoJhs
 V(A\A]A^A
 V49W4u
-V89W8u
+V89W,t
 V8HcG
 V8IcE 9
 V8ParamToPanoramaType expected IUIPanel object to convert, but got some other invalid object
@@ -68258,6 +68323,7 @@ ViewingProgressSummary
 ViewingScreenshots
 ViewingSelf
 ViewportClientSystem
+ViewportExtents
 ViewportSize
 Viper
 Virtual array controller messed up
@@ -68504,6 +68570,7 @@ Water Blend Forward
 Water Fill GBuffers
 Water Forward
 Water: Level %0.3f
+WaterBlendLayer
 WaterExplosionEffect.Sound
 WaterLevel_t
 WaterSurfaceExplosion
@@ -68850,7 +68917,6 @@ YA1E1
 YA1SH
 YA1fA
 YA1fH
-YA1蝴o
 YHcCh1
 YHcCx1
 YHcKXIc
@@ -76880,6 +76946,7 @@ bHeartRegenApplied
 bHeroEffect
 bHoldingAlt
 bHoldingCtrl
+bIcD$(1
 bIcOhIc
 bIgnoreAllIfDebuffImmune
 bIgnoreBase
@@ -77906,7 +77973,9 @@ c,Ic_hA;_x
 c/c_ variants
 cAt : semi-low front unrounded vowel
 cHHcC@I
+cHcC(1
 cIcD$ 1
+cIcL$(Ic
 cIcO8Hc
 cIcO8Ic
 cPt:Lcu
@@ -78147,6 +78216,7 @@ caster_life_pct
 caster_name
 caster_player_id
 caster_real_name
+caster_strength
 caster_team
 caster_title
 caster_unit_type
@@ -80079,7 +80149,6 @@ d, Persona %s, %d
 d,Error parsing modifier
 d.%02d%s
 d2sc;*.json;*.d2scb
-d9Cdw
 d: %.2f %.2f %.2f
 d: %f %f %f
 d: %s
@@ -80102,6 +80171,7 @@ d="ShareH
 dA9D$d
 dA9Ed
 dA9Edw
+dA9EdwrL
 dBags
 dDailyBonusActive
 dDeaths
@@ -80459,6 +80529,7 @@ default_quest_id
 default_radius
 default_roshan
 default_spec_env_map
+default_tormentor
 default_value
 default_ward
 defaultascending
@@ -80851,6 +80922,7 @@ dota2
 dota2://matchid=%s&matchtime=%d
 dota://pUH
 dota_%s/gameinfo.gi
+dota_10th_anniversary_use_fake_data
 dota_1v1_skip_strategy
 dota_2_anime_style
 dota_2_global_offensive
@@ -82054,6 +82126,7 @@ dota_ignore_invites
 dota_ignore_nonfriend_invites
 dota_import_steam_inventory_layout
 dota_in_game_predictions
+dota_ingameevent_10th_anniversary
 dota_ingameevent_diretide2020
 dota_ingameevent_dota_plus
 dota_ingameevent_dota_prime
@@ -82342,6 +82415,10 @@ dota_minimap_simple_background
 dota_minimap_simple_colors
 dota_minimap_tower_defend_distance
 dota_minimap_use_dynamic_mesh
+dota_modelpreview_highlight_darken_factor
+dota_modelpreview_highlight_desaturation_factor
+dota_modelpreview_highlight_flatten_factor
+dota_modelpreview_highlight_transparency_factor
 dota_modifier_debug
 dota_modifiers.proto
 dota_mouse_spectator_window_lock
@@ -82562,6 +82639,7 @@ dota_post_game_radiant_team_name
 dota_post_game_radiant_team_name_victory
 dota_post_game_radiant_victory
 dota_post_game_reward_tracking_duration
+dota_post_game_use_new_reporting
 dota_postgame_time
 dota_powerup_rune_spawn_time
 dota_powerup_rune_spawn_time_initial
@@ -84180,7 +84258,6 @@ fAttackTimeRemaining
 fD9 tiL
 fD9/t0H
 fD92tiL
-fD9p.u
 fD9|$8
 fD; tKH
 fD;"t)H
@@ -84750,6 +84827,7 @@ file://{resources}/layout/dashboard.xml
 file://{resources}/layout/dashboard_background_last_match.xml
 file://{resources}/layout/dashboard_background_manager.xml
 file://{resources}/layout/dashboard_background_map_update_2023.xml
+file://{resources}/layout/dashboard_frontpage_10th_anniversary_event.xml
 file://{resources}/layout/dashboard_frontpage_muerta_event.xml
 file://{resources}/layout/dashboard_page_accomplishments_debug.xml
 file://{resources}/layout/dashboard_page_armory.xml
@@ -84883,6 +84961,7 @@ file://{resources}/layout/dota_hud_ti_onstage_overlay.xml
 file://{resources}/layout/dota_hud_ti_onstage_pods.xml
 file://{resources}/layout/dota_hud_ti_onstage_pods_hero.xml
 file://{resources}/layout/dota_hud_voice_chat.xml
+file://{resources}/layout/dota_ui_10th_anniversary_treasure_details.xml
 file://{resources}/layout/dota_ui_ability_build.xml
 file://{resources}/layout/dota_ui_aghs_description.xml
 file://{resources}/layout/dota_ui_creep_card.xml
@@ -85219,7 +85298,6 @@ file://{resources}/layout/popups/popup_broadcaster_toast_table.xml
 file://{resources}/layout/popups/popup_broadcaster_toasts.xml
 file://{resources}/layout/popups/popup_broadcaster_toasts_imageselection.xml
 file://{resources}/layout/popups/popup_cavern_crawl.xml
-file://{resources}/layout/popups/popup_cavern_instructions.xml
 file://{resources}/layout/popups/popup_chat_wheel_messages_unlocked.xml
 file://{resources}/layout/popups/popup_china_ssa.xml
 file://{resources}/layout/popups/popup_clip_builder_export_video.xml
@@ -85303,6 +85381,7 @@ file://{resources}/layout/popups/popup_ranked_phone.xml
 file://{resources}/layout/popups/popup_rate_coaching_session.xml
 file://{resources}/layout/popups/popup_ready_check.xml
 file://{resources}/layout/popups/popup_replay_pending.xml
+file://{resources}/layout/popups/popup_report_player_new.xml
 file://{resources}/layout/popups/popup_report_player_overwatch.xml
 file://{resources}/layout/popups/popup_request_coach.xml
 file://{resources}/layout/popups/popup_save_custom_hero_set.xml
@@ -89108,7 +89187,6 @@ itemstoscroll
 itemstyle
 itemwidth
 iteration
-ith_king_3
 itions.tH
 itions.tfD
 itions_sH
@@ -89135,10 +89213,8 @@ java_outer_classname
 java_package
 java_string_check_utf8
 javascript
-jjjjjj
 jjjjjjj
 jjjjjjjj
-jjjjjjjjj
 jklmnopqrstuvwxyzyxwvutsrqponmlkj
 job warning: Resuming job '%s (id: %lld)' due to timeout while paused for %s
 job_id_source
@@ -90469,6 +90545,8 @@ k_EMsgGCSubmitPlayerAvoidRequest
 k_EMsgGCSubmitPlayerAvoidRequestResponse
 k_EMsgGCSubmitPlayerReport
 k_EMsgGCSubmitPlayerReportResponse
+k_EMsgGCSubmitPlayerReportResponseV2
+k_EMsgGCSubmitPlayerReportV2
 k_EMsgGCTeamInvite_GCImmediateResponseToInviter
 k_EMsgGCTeamInvite_GCRequestToInvitee
 k_EMsgGCTeamInvite_GCResponseToInvitee
@@ -90710,6 +90788,7 @@ k_EMsgGCToServerAbilityDraftLobbyData
 k_EMsgGCToServerApplyRemoteConVars
 k_EMsgGCToServerCheerConfig
 k_EMsgGCToServerCheerScalesOverride
+k_EMsgGCToServerEvaluateToxicChat
 k_EMsgGCToServerGetCheerState
 k_EMsgGCToServerLobbyHeroBanRates
 k_EMsgGCToServerLobbyHeroRoleStats
@@ -90799,6 +90878,8 @@ k_EMsgServerToGCCloseCompendiumInGamePredictionVoting
 k_EMsgServerToGCCloseCompendiumInGamePredictionVotingResponse
 k_EMsgServerToGCCompendiumChosenInGamePredictions
 k_EMsgServerToGCCompendiumInGamePredictionResults
+k_EMsgServerToGCEvaluateToxicChat
+k_EMsgServerToGCEvaluateToxicChatResponse
 k_EMsgServerToGCGetCheerConfig
 k_EMsgServerToGCGetCheerConfigResponse
 k_EMsgServerToGCGetGuildContracts
@@ -91819,6 +91900,7 @@ left_member_indices
 left_swipe_time
 leftedge
 leftmove
+legacy item id
 legacy%d
 legacy_app_id
 legacy_authorized_public_ip
@@ -92254,8 +92336,6 @@ lycan_summon_wolves
 lycan_summon_wolves_critical_strike
 lycan_summon_wolves_invisibility
 lycan_wolf_bite
-m H;-Da
-m8L;->N
 mA9]$|gI
 mHcKpIc
 mIcG81
@@ -101369,6 +101449,7 @@ modifier_satyr_trickster_purge
 modifier_scout_bonuses
 modifier_scout_visible
 modifier_scripted_motion_controller
+modifier_seasonal_10th_anniversary_party_hat
 modifier_seasonal_cny_balloon_thinker
 modifier_seasonal_diretide2020_high_five_requested
 modifier_seasonal_dragon_thinker
@@ -102204,7 +102285,6 @@ muzzleflash_shotgun_player
 muzzleflash_smg1_player
 mvp_account_id
 mvp_data
-mxH;-t
 my_behavior_score
 my_coach_rating
 my_rank
@@ -102537,6 +102617,7 @@ night_stalker_darkness
 night_stalker_hunter_in_the_night
 night_vision_bonus
 nightstalker_night
+nique_Vengeful_Spirit_7
 nl_langinfo_l
 nmonqnmomnmomomno
 no API
@@ -103607,6 +103688,7 @@ p(Hc@ H
 p(IcD$ A;D$0
 p(IcG A;G0
 p0	H 9P(D
+p0Hc@(I
 p0I9t$0t
 p2p_Ping
 p2p_TextMessage
@@ -103781,6 +103863,8 @@ panorama/panorama_config.txt
 panorama/scripts
 panorama/styles
 panoramaDeferredView
+panoramaTexCoordOffset
+panoramaTexCoordScale
 panorama\images\teams\%d_png.vtex
 panorama\images\teams\%u_png.vtex
 panorama_async_compute_mipgen
@@ -105838,6 +105922,7 @@ possibly monitoring progress in detail with the -vv flag
 post-initialized
 post-process-fade
 post-process-material
+post_effect_shader
 post_params
 post_processing_volume
 post_reduction
@@ -106318,14 +106403,7 @@ pwrd_cyber_cafe_id
 pwrd_cyber_cafe_name
 py_generic_services
 p|D;5
-p|D;5,Z
-p|D;57
-p|D;5C
-p|D;5Oz
-p|D;5[Y3
-p|D;5e
-p|D;5j
-p|D;5δz
+p|D;5C8
 q0:Q2tm
 q8A;D
 q8H;q
@@ -106415,9 +106493,12 @@ quill_release_threshold
 quill_stack_damage
 quotation-mark
 r axis
+r)E;l$ H
 r0AUATE1
+r8f9q8
 r@modifier_spring2021_bomb_holder
 rBanned
+rIcL$(Ic
 rVv HcC
 r_AirboatViewDampenDamp
 r_AirboatViewDampenFreq
@@ -106453,6 +106534,7 @@ r_depth_of_field 2
 r_dof1_d0
 r_dof1_d1
 r_dota_allow_colorwarp
+r_dota_allow_desaturate_layers
 r_dota_allow_parallax_mapping
 r_dota_allow_particle_only_portraits
 r_dota_allow_wind_on_trees
@@ -107978,9 +108060,9 @@ s<span class="Match">%s</span>%s
 s<t~E
 s<u)LcC
 s<u+HcK
+s<u+LcS
 s?interpolation=lanczos-none&output-format=jpeg&output-quality=92&fit=inside|*:%d
 s?interpolation=lanczos-none&output-format=jpeg&output-quality=95&fit=inside|*:70
-s@D;sD
 s@H;sH
 sAbilityHistory
 sAbs Angles: (%.2f, %.2f, %.2f
@@ -108568,6 +108650,7 @@ season_treasure_description
 season_treasure_image
 season_treasure_item_def
 season_trophy_id
+seasonal_10th_anniversary_party_hat
 seasonal_decorate_tree
 seasonal_diretide2020_high_five
 seasonal_festive_firework
@@ -111054,11 +111137,11 @@ special_bonus_unique_witch_doctor_4
 special_bonus_unique_witch_doctor_5
 special_bonus_unique_witch_doctor_6
 special_bonus_unique_witch_doctor_7
-special_bonus_unique_wra
 special_bonus_unique_wraith_king_1
 special_bonus_unique_wraith_king_10
 special_bonus_unique_wraith_king_11
 special_bonus_unique_wraith_king_2
+special_bonus_unique_wraith_king_3
 special_bonus_unique_wraith_king_4
 special_bonus_unique_wraith_king_5
 special_bonus_unique_wraith_king_6
@@ -112093,7 +112176,6 @@ t!HcHt1
 t!HcIt1
 t!HcPt1
 t!I;4
-t"8C#H
 t#A:E#H
 t#A\A
 t#HcKPL
@@ -112104,7 +112186,7 @@ t$ A9^h~4Hk
 t$ IcD
 t$ u	H
 t$$A9D
-t$$t5H
+t$$tSH
 t$(A9D
 t$(IcT$@M
 t$(t0H
@@ -112143,17 +112225,14 @@ t%H92u
 t%HcGt1
 t%L; u
 t&D;h,t
-t&HcBt1
 t&HcI H
 t&HcR H
-t&HcÍX
 t'A;E8t!A
 t'H98u
 t(Hc@t1
 t(HcCh
 t*Hc@t1
 t+H;y s
-t+HcC
 t+HcD
 t+Lck E
 t,H97u
@@ -112169,6 +112248,7 @@ t/IcF8
 t/L; u
 t0HcRt1
 t0IcU8I
+t0Mc>E
 t1<)t
 t1HcGX
 t2<\th
@@ -112176,6 +112256,7 @@ t2Hc>A
 t2IcEh
 t2Mc.E;n
 t3HcOX
+t3Mc'D9%a
 t4D; u
 t4H)ЋI
 t4JcT0
@@ -112194,9 +112275,9 @@ t7H9pPt	1
 t8<"tD
 t8HcB8
 t8HcCh
-t8IcD
 t8Mc<$L
 t9D9k(u
+t9Hc@8
 t9HcCh
 t9Lcs8D;sHD
 t:<,t6L
@@ -112207,9 +112288,9 @@ t;Lc&D;f
 t;Lc+D;k
 t<9w@u
 t<A\H
-t<IcF8
 t<Mcu8E
 t=0m5s
+t=D9'u
 t=E9gPIc
 t=H;0u
 t=HcC8A
@@ -112217,8 +112298,6 @@ t=HcQ8H
 t>HcPt1
 t?A9D
 t?H90u
-t?Lc-hJ
-t?Lc-hL
 t@Mc4$E;t
 tBHcN8H
 tBIcG8
@@ -112230,14 +112309,12 @@ tDHc@p
 tDL;*u
 tDLcc E
 tD[A\A]A
-tED9'u
 tEHcx`H
 tEL;8u
 tGH;:uB
 tGHcB
 tGHcG8
 tGHcV8H
-tGfD;b u@H
 tHD; u
 tHcC01
 tHcSp
@@ -112299,7 +112376,6 @@ tSI;M
 tTHc@8
 tTI;4
 tUH;2
-tUI;4
 tVAVAUI
 tVMc.I
 tWAVAUATI
@@ -112334,6 +112410,7 @@ t]Hcp`H
 t]IcD
 t_HcC
 t_HcC8
+t_Hcx`E1
 t_IcE
 t_IcEh
 t`I9<$uZI
@@ -112466,6 +112543,7 @@ tdHcL
 td_example
 tdata
 te.proto
+teHc@`E1
 teL;"u
 teL;'u
 team ID
@@ -112733,7 +112811,6 @@ tfIcG
 tfLcx`L
 tgATUI
 tgIc_ I
-tgL;(u
 tgt_alpha
 tgtpath
 thAVAUA
@@ -112998,6 +113075,7 @@ tjf;2uefD
 tk1ҐI9
 tl92u
 tls_get_addr
+tnMcM`I
 to start from the outermost scope
 to_curve
 to_percentile
@@ -113345,8 +113423,10 @@ treasure_settings
 treasure_small
 treasuresPerCarouselItem
 treasures_available
+treasures_earned
 treasures_owned_count
 treasures_to_claim
+treasures_total
 tree_bonus_damage_pct
 tree_break
 tree_damage_scale
@@ -113419,7 +113499,7 @@ truncated
 trusted
 tryToUseExistingRenderTargets
 tsD;8u
-tsH;=\U
+tsH;=L
 ttLc E
 turbo_mode
 turkish
@@ -113445,6 +113525,7 @@ tutorial_cleanup_post
 tutorial_lesson
 tutorial_state
 tvD;(u
+tvE;|$8t
 tvMcL$`I
 tv_listen_voice_indices
 tv_listen_voice_indices_h
@@ -113488,7 +113569,6 @@ txting_type_fail
 txting_type_main
 txting_type_numbers
 txting_type_spacebar
-tyMc&A
 tyfD;j
 type != DATA_UPDATE_CREATED
 type %d
@@ -113538,8 +113618,8 @@ u(A\A
 u(Hcs
 u) %s
 u)9C(}1H
-u,HcS`H
 u,Hcw`H
+u,Icw`I
 u/H#D
 u1HcG8
 u2D	k
@@ -113579,7 +113659,7 @@ uLD	c
 uOHcS@H
 uPA9t$Ptd
 uPIcEHI
-uSHc5D.7
+uSHc5T98
 uXIcEPI
 uXL; uSH
 uX[A\A]A
@@ -113642,6 +113722,7 @@ ui.treasure_reveal
 ui.treasure_spin
 ui.trophy_levelup
 ui.weekend_tourney_ready_up
+ui/dota_hud_10th_anniversary_treasure_content
 uiTransparentPixels < PIXELS
 ui[A\A]A
 ui_aghs_blessing_locked_whoosh
@@ -113985,6 +114066,7 @@ use_period_as_action_range_offset
 use_premium_points
 use_secondary_color
 use_string
+use_treasure_detail_highlight
 use_whitelist
 usebroadcastcameraman
 used_by_heroes
@@ -114024,6 +114106,7 @@ utIct$pf
 utility_completed
 utlstringtoken
 uvHcG
+uv[A\A]A
 uxE9t$,t`H
 uxHcG
 uxIcEpI
@@ -114033,6 +114116,7 @@ u~L;(t3I
 v A9F
 v A9F M
 v axis
+v$A9F
 v(A9F
 v(A9t$8
 v-b334Z52zQ
@@ -114436,7 +114520,6 @@ wOD90}JH
 wPH+wHH
 wPtxH
 wXAUATI
-w`A9G
 w`v6f
 w`v9f
 wager_amount
@@ -114970,7 +115053,6 @@ x8D;xHD
 x8Hc@0I
 x@IcG A;G0
 x@Mct$ E;t$0
-xATSH
 xA\A]A^A
 xB;Wp}7H
 xB;zX}EHcJ\N
@@ -115017,7 +115099,6 @@ xp_value
 xpm_diff
 xyA9]h~sA9]||mI
 xzu{E1
-x|D;=ce
 y axis
 y=up=green, z=forward=blue, x=left=red
 yIcJpIc

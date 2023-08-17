@@ -15,12 +15,12 @@ $.Schedule(0.0, function () {
 //Light Triger
 /*$.Schedule(8.9, function () {
     $('#Model').FireEntityInput('light_hero', "TurnOn", '');
-    $.Msg("light triggered");
+    //$.Msg("light triggered");
 });*/
 
 var showcaseCameraMovement = function (cameraPos)
 {
-    $.Msg("Camera position = " + cameraPos);
+    //$.Msg("Camera position = " + cameraPos);
     if (cameraPos === 5) {
         $('#Model').FireEntityInput('debut_camera', 'SetAnimation', 'debut_camera_shield_bash_introframe');
         

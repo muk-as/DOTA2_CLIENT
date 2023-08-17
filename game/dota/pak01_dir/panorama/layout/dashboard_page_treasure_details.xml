@@ -11,7 +11,12 @@
 		<snippet name="TreasureItemInfo">
 			<Panel class="TreasureItemInfo" hittest="false">
 				<Panel id="TreasureItemSlotPreviewPips" />
-				<Label class="TreasureItemInfoLabel" text="{s:treasure_item_text}" hittest="false" />
+				<Panel class="HorizontalCenter VerticalBottom">
+					<Panel class="TreasureItemInfoLabels TopBottomFlow">
+						<Label class="TreasureItemInfoLabel" text="{s:treasure_item_text}" hittest="false" html="true" />
+						<Label class="TreasureItemRarityLabel" text="{s:treasure_item_rarity}" />
+					</Panel>
+				</Panel>
 				<Panel id="TreasureItemInfoIcon" class="EscalatingChancesIcon" onmouseover="UIShowTitleTextTooltip( #Crate_EscalatingOdds_Title, #Crate_EscalatingOdds_Text )" onmouseout="UIHideTitleTextTooltip()" />
 				<Panel id="TreasureItemInfoPopupIcon" class="EscalatingChancesPopupIcon" />
 			</Panel>
@@ -37,6 +42,7 @@
 	</snippets>
 	<DOTATreasureDetailsPage class="DashboardPage OpeningNone" defaultfocus="TreasureContents">
 		<Panel id="22069" class="TreasureDetailsBackground">
+			<DOTAScenePanel id="TopRightGodRays" map="scenes/loadout_preview_rays" camera="camera_1" hittest="false" particleonly="false" />
 			<DOTAParticleScenePanel class="CompendiumBGParticles" squarePixels="true" hittest="false" particleName="particles/ui/ui_compendium2021_bg.vpcf" particleonly="true" require-composition-layer="true" cameraOrigin="0 300 0" lookAt="0 0 0" fov="60" />
 			<Panel class="CompendiumLogoContainer">
 				<DOTAUIEconSetPreview id="TreasureModel" itemdef="22069" drawbackground="false" displaymode="loadout_small" suppress-intro-effects="true" hittest="false" hittestchildren="false" />
@@ -147,9 +153,9 @@
 								<Panel id="RarityBackgroundGradient" />
 								<DOTAScenePanel id="PreviewRaysSmall" map="scenes/loadout_preview_rays" camera="camera_1" hittest="false" particleonly="false" />
 								<Panel id="TreasureControlsRarityForeground">
-									<Label id="TreasureControlsRarityTitle" text="{s:treasure_item_description}" />
+									<Label id="TreasureControlsRarityTitle" text="{s:treasure_item_description}" html="true" />
 									<Panel class="LeftRightFlow">
-										<Label id="TreasureControlsRarityValue" text="{s:treasure_item_rarity}" />
+										<Label id="TreasureControlsRarityValue" text="{s:treasure_item_rarity}" html="true" />
 										<Panel id="TreasureControlsEscalatingChancesIcon" class="EscalatingChancesIcon" onmouseover="UIShowTitleTextTooltip( #Crate_EscalatingOdds_Title, #Crate_EscalatingOdds_Text )" onmouseout="UIHideTitleTextTooltip()" />
 										<Panel id="TreasureControlsEscalatingChancesPopupIcon" class="EscalatingChancesPopupIcon" />
 									</Panel>
@@ -448,7 +454,7 @@
 						</Panel>
 					</Panel>
 				</Panel>
-				<Panel id="TreasureExtraInfo" />
+				<Panel id="TreasureExtraInfo" hittest="false" />
 			</Panel>
 		</Panel>
 	</DOTATreasureDetailsPage>

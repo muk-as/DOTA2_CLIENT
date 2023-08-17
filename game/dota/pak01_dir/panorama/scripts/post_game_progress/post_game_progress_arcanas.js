@@ -20,7 +20,7 @@ class AnimateDrowRangerArcanaScreenAction extends RunSequentialActions
 		var endScore = this.data.arcana_progress.arcana_end_score;
 		var incrementScore = endScore - startScore;
 
-		$.Msg( "arcana progress drow ranger action deaths" + nDeaths );
+		//$.Msg( "arcana progress drow ranger action deaths" + nDeaths );
 
 		// Create the screen and do a bunch of initial setup
 		var panel = StartNewScreen( 'GenericArcanaProgressScreen' );
