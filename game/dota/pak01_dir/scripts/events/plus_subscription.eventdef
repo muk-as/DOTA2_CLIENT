@@ -42,7 +42,7 @@
 		{
 			"notification_id"	"0"
 			"message"	"#Notification_PlusDowntime_Grant7Days"
-			"link"		"DOTAShowArmoryPage()"
+			"link"		"DOTAShowArmory()"
 		}
 	}
 
@@ -296,6 +296,25 @@
 				"season_quests_action_prefix"	"season_summer_2023_"
 				"season_quests_title"			"#DOTA_PlusSeason_SeasonSummer2023_Quests"
 				"season_quests_subtitle"		"#DOTA_PlusSeason_SeasonSummer2023_Subtitle"
+			}
+		}
+		"fall_2023"
+		{
+  			"season_id"				"15"
+  			"season_loc_name"		"#DOTA_PlusSeason_SeasonFall2023_Name"
+ 			"season_start_time"		"1693609200" // 2023-09-01 16:00:00 PST
+  			"season_end_time"		"1701475200" // 2023-09-01 16:00:00 PST
+			//"season_treasure"
+			//{
+			//	"season_treasure_item_def"		"24147"
+			//	"season_treasure_image"			"file://{images}/econ/tools/plus_summer_2023_treasure_large.png"
+			//	"season_treasure_description"	"#DOTA_PlusSeason_SeasonSummer2023_TreasureDescription"
+			//}
+			"season_quests"
+			{
+				"season_quests_action_prefix"	"season_fall_2023_"
+				"season_quests_title"			"#DOTA_PlusSeason_SeasonFall2023_Quests"
+				"season_quests_subtitle"		"#DOTA_PlusSeason_SeasonFall2023_Subtitle"
 			}
 		}
 	}
@@ -638,6 +657,7 @@
 		"#include"		"scripts/events/plus_seasons/plus_season_winter_2022_quests.eventactions"
 		"#include"		"scripts/events/plus_seasons/plus_season_spring_2023_quests.eventactions"
 		"#include"		"scripts/events/plus_seasons/plus_season_summer_2023_quests.eventactions"
+		"#include"		"scripts/events/plus_seasons/plus_season_fall_2023_quests.eventactions"
 
 		// --------------------------------------------------------------------------
 		//  Chat Wheel
@@ -2024,7 +2044,40 @@
 			}
 		}
 
-
+		"august_2023_collectors_cache_recycling"
+		{
+			"action_id"					"50046"
+			"max_grants"				"999999"
+			"must_own_event"			"0"
+		}
+		"august_2023_collectors_cache_recycling_reward"
+		{
+			"action_id"					"50047"
+			"max_grants"				"999999"
+			"must_own_event"			"0"
+			"claimable_if_prerequisites_satisfied"	"1"
+			"prerequisite_actions"
+			{
+				"august_2023_collectors_cache_recycling" "6 + 6n"
+			}
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"grants"
+					{
+						"grant_item"	"24613"
+						"grant_points_custom"
+						{
+							"points"		"2000"
+							"audit_action"	"76"
+							"audit_data"	"12604"
+							"event_id"		"19"
+						}
+					}
+				}
+			}
+		}
 		// ----------------------------------------------------------------------------------------
 		//  Seasonal Quests
 		// 
@@ -4804,23 +4857,42 @@
 			//	"perk_value"		"337"
 			//}
 
-			"25_storm_impressed"
+			//"25_storm_impressed"
+			//{
+			//	"percentile"		"25"
+			//	"perk_type"			"Emoticon"
+			//	"perk_value"		"291"
+			//}
+			//"25_void_thumbsdown"
+			//{
+			//	"percentile"		"25"
+			//	"perk_type"			"Emoticon"
+			//	"perk_value"		"294"
+			//}
+			//"25_void_unimpressed"
+			//{
+			//	"percentile"		"25"
+			//	"perk_type"			"Emoticon"
+			//	"perk_value"		"295"
+			//}
+
+			"25_cozy_courier"
 			{
 				"percentile"		"25"
 				"perk_type"			"Emoticon"
-				"perk_value"		"291"
+				"perk_value"		"345"
 			}
-			"25_void_thumbsdown"
+			"25_lancer_sour"
 			{
 				"percentile"		"25"
 				"perk_type"			"Emoticon"
-				"perk_value"		"294"
+				"perk_value"		"346"
 			}
-			"25_void_unimpressed"
+			"25_party_phoenix"
 			{
 				"percentile"		"25"
 				"perk_type"			"Emoticon"
-				"perk_value"		"295"
+				"perk_value"		"349"
 			}
 
 		// 50th percentile
@@ -4854,21 +4926,21 @@
 			{
 				"percentile"		"50"
 				"perk_type"			"ChatWheel"
-				"perk_value"		"589"	// Guild_Lichsicle
+				"perk_value"		"603"	// Guild_Kotl_Mana
 			}
 
 			"50_spray_2"
 			{
 				"percentile"		"50"
 				"perk_type"			"ChatWheel"
-				"perk_value"		"590"	// Guild_Puck_Dagoned
+				"perk_value"		"604"	// Guild_Shadowfiend_Shrug
 			}
 
 			"50_spray_3"
 			{
 				"percentile"		"50"
 				"perk_type"			"ChatWheel"
-				"perk_value"		"591"	// Guild_Sven_Strength
+				"perk_value"		"605"	// Guild_Arc_Warden_Stab
 			}
 
 		// 75th percentile
@@ -4902,19 +4974,19 @@
 			{
 				"percentile"		"75"
 				"perk_type"			"ChatWheel"
-				"perk_value"		"592" // Guild_See_You_Later_Nerds
+				"perk_value"		"606" // Guild_Holy_Moly
 			}
 			"75_chatline_2"
 			{
 				"percentile"		"75"
 				"perk_type"			"ChatWheel"
-				"perk_value"		"593" // Guild_Que_Dota_E_Esse
+				"perk_value"		"607" // Guild_Da_Da_Da_Nyet
 			}
 			"75_chatline_3"
 			{
 				"percentile"		"75"
 				"perk_type"			"ChatWheel"
-				"perk_value"		"594" // Guild_Zai_Jian_Le_Bao_Bei
+				"perk_value"		"608" // Guild_321_Adios
 			}
 		}
 

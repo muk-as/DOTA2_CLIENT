@@ -7,6 +7,12 @@
   vertical-align: bottom;
 }
 
+  .IsPopup .SubpageRoot{
+   margin: 0px;
+   box-shadow: inset 1px 0px 0px rgba( 255, 255, 255, 0.01 );
+  }
+
+
  #SubpagePrimaryControls{
 
   width: 100%;
@@ -28,12 +34,17 @@
   margin-bottom: 20px;
  }
 
+  .IsPopup .Root{
+   margin: 0px;
+  }
+
+
  .InfoIcon{
 
-  wash-color: white;
+  wash-color: LightGrey;
   vertical-align: middle;
-  margin-bottom: 4px;
  }
+
 
  .HideIcon .InfoIcon{
 
@@ -50,6 +61,13 @@
    border: 2px solid black;
  }
 
+  .IsPopup #ItemEditBackground{
+   box-shadow: #00000000 0px 0px 0px ;
+    border: 0px;
+   background-color: DarkGreyGradientBackgroundColor;
+  }
+
+
 
  #ItemEditContainer{
 
@@ -61,15 +79,31 @@
 
      width: 100%;
   height: 90px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
  }
+
+  .IsPopup .Root #Banner{
+   height: 80px;
+  }
+
+
+
 
  .EconItemTitleBar{
 
      width: 100%;
-  height: 136px;
+  height: 160px;
   background-color: gradient( linear, 0% 0%, 100% 50%, from( #2b2e2fee ), to( #2b2e2f ) );
   border-top: 1px solid #ffffff05;
  }
+
+  .IsPopup .EconItemTitleBar{
+   border-top: 0px;
+  }
+
+
+
 
  .Root .ItemHeader{
 
@@ -111,7 +145,13 @@
   height: fit-children;
   width: fill-parent-flow( 1.0 );
      vertical-align: center;
+  margin-right: 16px;
  }
+
+
+
+
+
 
 
  .Root .CloseButton{
@@ -124,6 +164,11 @@
   height: 40px;
  }
 
+  .IsPopup .Root .CloseButton{
+   visibility: collapse;
+  }
+
+
  .Root .CloseButton:hover{
 
   background-color: #000000;
@@ -131,8 +176,13 @@
 
  .Root #RarityStripe{
 
-  height: 12px;
+  height: 10px;
  }
+
+  .IsPopup .Root #RarityStripe{
+   height: 6px;
+  }
+
 
  .BannerIcons{
 
@@ -180,65 +230,93 @@
   margin: 16px;
 
   background-color: #444455;
-  box-shadow: fill #00000088 1px 1px 8px 1px ;
+  box-shadow: 0px 0px 0px #00000000;
  }
 
  .ItemName{
 
-     padding-top: 4px;
   font-size: 28px;
+  line-height: 1.1;
   color: white;
-  padding-left: 8px;
-     margin-right: 4px;
-  background-color: #00000033;
   width: fill-parent-flow( 1.0 );
-  height: 42px;
+  text-overflow: shrink;
  }
+  .IsPopup .ItemName{
+   font-size: 28px;
+   height: 36px;
+  }
 
 
- .EditButton{
 
-  width: 42px;
-  height: 42px;
-  border: 1px solid black;
-  vertical-align: top;
-  margin: 0px;
-  margin-left: 4px;
-  wash-color: white;
+  .IsPopup .OriginalItemNameContaner{
+   margin-right: 80px;
+  }
 
-  background-color: gradient( linear, 0% 0%, 0% 100%, from( #35594A ), to( #35594A ) );
+
+ .EditableTitle{
+  background-color: #0000005a;
+  border-radius: 3px;
+  padding: 4px 12px 4px 4px;
+  margin: 6px 0px;
  }
+  .Root.CannotModify .EditableTitle{
+   background-color: #00000000;
+   border-radius: 3px;
+   padding: 0px;
+  }
 
- .EditButton:hover{
 
-  wash-color: white;
-  background-color: gradient( linear, 0% 0%, 0% 100%, from( #2F805B ), to( #5FBA94 ) );
- }
 
- .EditButton:active{
 
-  wash-color: white;
-  background-color: gradient( linear, 0% 0%, 0% 100%, from( #2F805B ), to( #35594A ) );
- }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
  .NameHeader{
 
-     width: 455px;
+     width: fill-parent-flow( 1 );
      margin-right: 4px;
  }
+  .IsPopup .NameHeader{
+   width: fit-children;
+  }
+
 
  .NameHeader Label{
 
-     font-size: 18px;
-  font-weight: thin;
+     font-size: 16px;
   margin-left: 0px;
+  color: LightGrey;
  }
 
  .NameHeader #Name{
 
-     font-size: 18px;
+     font-size: 16px;
      margin-top: 0px;
   margin-left: 0px;
+  color: LighterGrey;
+  max-width: 270px;
+  height: 20px;
+  text-overflow: shrink;
  }
 
  .NameResetButton.EditButton{
@@ -248,11 +326,20 @@
      margin-left: 5px;
      horizontal-align: right;
      vertical-align: center;
-  background-image: url("s2r://panorama/images/control_icons/ellipsis_psd.vtex");
+  background-image: url("s2r://panorama/images/control_icons/24px/reset.vsvg");
   background-size: 70% 140%;
   background-position: 55% 50%;
      margin-bottom: 3px;
  }
+  .IsPopup .NameResetButton.EditButton{
+   width: 24px;
+   height: 100%;
+   margin: 0px;
+   background-size: 100% 100%;
+   background-position: 50% 50%;
+      margin-bottom: 0px;
+  }
+
 
  .Root.CannotModify .InfoIcon{
 
@@ -269,6 +356,32 @@
      visibility: collapse;
  }
 
+ .NameChangeButton{
+  margin-left: 12px;
+ }
+
+ .NameChangeButtonIcon{
+  vertical-align: center;
+  width: 20px;
+  height: 20px;
+  wash-color: LighterGrey;
+  tooltip-position: top;
+  margin-left: 8px;
+
+  transition-property: wash-color;
+  transition-duration: 0.1s;
+  img-shadow: 0px 1px 4px black;
+ }
+  .NameChangeButtonIcon:hover{
+   wash-color: white;
+  }
+
+
+ .Root.CannotModify .NameChangeButtonIcon{
+
+     visibility: collapse;
+ }
+
  DOTAOwnedItemDetailsPage.HideOriginalName .NameHeader{
 
      visibility: collapse;
@@ -277,9 +390,6 @@
  .Root #Set{
 
      font-size: 18px;
-  font-weight: thin;
-
-     margin-top: 3px;
   margin-left: 0px;
  }
 
@@ -305,21 +415,21 @@
 
   vertical-align: top;
   horizontal-align: right;
-  margin: 9px;
-  width: 246px;
-
-  background-color: gradient( linear, 0% 0%, 0% 100%, from( #2B3D53 ), to( #3B5A6F ) );
-
-  border-top-color: #2F4E63;
-  border-left-color: #2B4A5F;
-  border-bottom-color: #244358;
-  border-right-color: #1C3B50;
+  margin: 8px;
+  width: 200px;
  }
 
- #ItemEditBody .ButtonBevel:hover{
 
-     background-color: gradient( linear, 0% 0%, 0% 100%, from( #3B5B86 ), to( #5B92BF ) );
- }
+
+
+
+
+
+
+
+
+
+
 
  .Root .ButtonBevel:disabled Label{
 
@@ -347,9 +457,8 @@
 
  #OriginalName{
 
-  letter-spacing: 2px;
-  text-transform: uppercase;
   margin: 0px;
+  margin-right: 4px;
  }
 
  #ItemEditBody{
@@ -358,15 +467,27 @@
   width: 100%;
   flow-children: down;
   overflow: clip scroll;
+  padding: 16px;
  }
+
+  .IsPopup #ItemEditBody{
+   box-shadow: inset 0px 1px 0px rgba( 255, 255, 255, 0.02 );
+  }
+
 
  #ItemEditFooter{
 
-  height: 72px;
+  height: 64px;
   width: 100%;
-  background-color: #141415;
-  border-top: 1px solid #222222;
+  background-color: #1d2023;
+  border-top: 1px solid rgba( 255, 255, 255, 0.01 );
+  box-shadow: 0px -1px 8px rgba(0, 0, 0, 0.6);
  }
+
+  .IsPopup #ItemEditFooter{
+   visibility: collapse;
+  }
+
 
  .FooterButtonContainer{
 
@@ -377,23 +498,32 @@
      vertical-align: center;
  }
 
+ #LoadoutButton{
+
+
+  min-width: 240px;
+ }
+
  .EditSection{
 
-  width: 95%;
-
-  margin: 16px;
-  padding: 8px;
+  width: fill-parent-flow( 1.0 );
+  margin: 4px 0px;
+  padding: 12px;
   padding-bottom: 4px;
-  background-color: #1D2124cd;
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
+  background-color: #00000058;
+  border: 1px solid rgba(0, 0, 0, 0.6);
  }
+
+  .IsPopup .EditSection{
+   padding: 12px 16px;
+  }
+
 
  .EditRow{
 
   width: 100%;
   min-height: 54px;
-  background-color: #15191C;
+  background-color: #0000008d;
   margin: 0px;
   margin-bottom: 2px;
  }
@@ -442,12 +572,14 @@
  .HeaderText{
 
   horizontal-align: left;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: 22px;
-  margin-top: 4px;
+  vertical-align: center;
   margin-left: 12px;
  }
+
+
+
+
+
 
 
  #BundlePanel{
@@ -529,6 +661,7 @@
  #ToggleSlotShuffleEnabled{
 
   visibility: collapse;
+  margin-top: 8px;
  }
 
  .GlobalItem #ToggleSlotShuffleEnabled{
@@ -625,11 +758,10 @@
   flow-children: right-wrap;
  }
 
-
  .EditSection .InfoIcon{
 
   horizontal-align: right;
-  margin-right: 272px;
+  margin-right: 220px;
   wash-color: #919294;
  }
 
@@ -752,4 +884,28 @@
   flow-children: right;
   margin: 9px;
   horizontal-align: right;
+ }
+
+ .TreasureSource{
+
+  visibility:collapse;
+ }
+
+ .InTreasure .TreasureSource:hover{
+
+  brightness:4;
+ }
+ .InTreasure .TreasureSource{
+
+  visibility:visible;
+ }
+
+ .CreationDate{
+
+  visibility: collapse;
+ }
+
+ .HasCreationDate:not(.NotPublic) .CreationDate{
+
+  visibility: visible;
 }

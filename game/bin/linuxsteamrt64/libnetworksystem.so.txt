@@ -18,6 +18,7 @@
 0123456789abcdef
 0<	vcH
 0NETWORK_DISCONNECT_REJECT_SERVERCDKEYAUTHINVALID
+0[A\A]A
 0[]A\A]A^ÐAUATI
 0enum $1
 0message $1
@@ -32,7 +33,6 @@
 10CMsg_CVars
 10ConCommand
 10IAppSystem
-10s % 5d % 5d % 5d: %-20s: 0x%p encoding field %s %s%s: %s
 10s % 5d no fastpath because field %s %s changed the array size from %d to %d
 10s % 5d no fastpath because field %s base depth is too large (pointer metadata change
 10s % 5d no fastpath because field %s not resolvable
@@ -140,6 +140,9 @@
 2/.google.protobuf.DescriptorProto.ExtensionRange
 2/.google.protobuf.MethodOptions.IdempotencyLevel
 20.20s
+20.20s %s is variant %d/%d of %s
+20.20s omit %d types for %s [convar net_max_polymorphic_spew=%d
+20.20s omit %s variants, already spewed
 20CCLCMsg_CmdKeyValues
 20CCLCMsg_FileCRCCheck
 20CCLCMsg_ListenEvents
@@ -182,6 +185,7 @@
 23CSVCMsg_GameEvent_key_t
 23INetworkMessageInternal
 23NetMessagePacketStart_t
+24.ProtoFlattenedSerializerField_t.polymorphic_field_t
 24CCLCMsg_RespondCvarValue
 25CCLCMsg_RconServerDetails
 25CConCommandMemberAccessorI16CNetworkMessagesE
@@ -198,6 +202,7 @@
 26CParallelProcessorAbstractI18CParallelProcessorIN37CBuildNetworkSerializerHierarchyOrder12BuildEntry_tE27CMemberFuncJobItemProcessorIS2_S1_S1_ELi1EEE
 26CSVCMsg_Sounds_sounddata_t
 26ICommandCompletionCallback
+26IPolymorphicMetadataHelper
 26NetMessageConnectionClosed
 26ProtoFlattenedSerializer_t
 27CBidirMsg_RebroadcastSource
@@ -236,6 +241,7 @@
 34CNETMsg_SpawnGroup_SetCreationTick
 34CSVCMsg_GameEventList_descriptor_t
 34NetMessageSplitscreenUserChanged_t
+3A;E\w
 3d % 8d [%8.3f
 3f %% of entities have non-zero metadata entries
 41CFlattenedSerializerReadFieldListListener
@@ -243,21 +249,27 @@
 43CSVCMsg_PacketEntities_alternate_baseline_t
 43CSVCMsg_PacketEntities_command_queue_info_t
 456789
+48CSerializedEntityPolymorphicFieldsMetadataHelper
 4?AUATL
+4@f94Gt
+4Af94Gt
 4AfA94@t
 4AfD94Ft
+4GfA94Dt
+4GfA94Ft
 4GfE9O
-4d classes
 50.50s: %2.2d bits == '%s
+51ProtoFlattenedSerializerField_t_polymorphic_field_t
 5d %-20s : [%-5d -> %-5d] %-5s bits:  %-32s %-80s : '%s' %s
 60.60s %6.6s %15.15s %5.5s %10.10s
 60.60s %6.6s %15.15s %5d %10d
+6?Generic
 6fA9tG
 75s %-75s offset %10.10s %9.9s %s
 8#GameUI_Disconnect_LocalProblem_HostedServerPrimaryRelay
 8.3f: %s: ParseMessagesDemo UNRELIABLE %d bytes
-8.3f: %s: ParseMessagesSNP RELIABLE %d bytes
-8.3f: %s: ParseMessagesSNP UNRELIABLE Seq=%d %d bytes
+8.3f: %s: ParseMessagesSNP RELIABLE%s %d bytes
+8.3f: %s: ParseMessagesSNP UNRELIABLE%s Seq=%d %d bytes
 8.3f: PollSocket(%d
 8@%r8 8@-80(%rbx
 8@%rdi 8@%rsi
@@ -285,14 +297,20 @@
 8ÐAVAUI
 8ÐAWAVAUATI
 8ÐAWAVAUATUSH
+9;r9H
 9F$}9H
-9O$HcG
 9p }CI9
 A file with this name is already in the pool
 A protocol message was rejected because it was too big (more than
 A(twUH
+A4IcW8I
+A8GDu
 A8npt
+A9D$Tt
+A9G0u
+A9w0fA
 A;D$hA
+A;E\w
 A;G\w
 ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789
 ABORTED
@@ -319,6 +337,7 @@ AUATSH
 AUATSHc
 AUATSI
 AUATSL
+AUATSf
 AUATUH
 AUATUI
 AUATUL
@@ -330,7 +349,7 @@ AUATUSI
 AUATUSL
 AUATUSQHcG
 AUATUSRH
-AVATSA
+AVARASQ
 AVATSI
 AVAUATA
 AVAUATD
@@ -361,6 +380,7 @@ AVAUI
 AVAUL
 AVAULc
 AVAUSH
+AVPAWL
 AWAVAUA
 AWAVAUATA
 AWAVAUATE
@@ -370,7 +390,6 @@ AWAVAUATL
 AWAVAUATLc
 AWAVAUATM
 AWAVAUATS
-AWAVAUATSD
 AWAVAUATSH
 AWAVAUATU
 AWAVAUATUH
@@ -381,6 +400,7 @@ AWAVAUATUS1
 AWAVAUATUSAPH
 AWAVAUATUSH
 AWAVAUATUSL
+AWAVAUE
 AWAVAUE1
 AWAVAUI
 AWAVAUL
@@ -449,7 +469,6 @@ A\A]ÐAWH
 A\A]ÐSH
 A\A]ÐUSH
 A\ÐATI
-A\ÐATUA
 A\ÐATUH
 A\ÐATUI
 A\ÐATUSH
@@ -492,6 +511,7 @@ AddUInt64
 Adding 0--%dms of additional latency to %g%% packets, for random reordering
 Adding additional packet lag of %dms (when received), Bernoulli loss of %g
 Af9<Bt
+AfA9<@t
 Ak- HnQ
 AlignedByteArray not properly aligned
 Allowing IP connections without auth
@@ -531,7 +551,7 @@ BakedLODBuilderMgr001
 BenchmarkService001
 BetaUniverse
 Bf9<C
-BfA9<At
+BfA9<@t
 Bidirectional_Messages
 Bidirectional_Messages_LowFrequency
 BinaryProperties_GetValue
@@ -552,15 +572,17 @@ Byte size calculation and serialization were inconsistent.  This may indicate a 
 C []A
 C [ÐAWAVAUATI
 C([ÐAVAUATUL
-C,D+C0A
+C(fA9E
 C0H;C8t
-C0I9Fht
-C0I9Fhu
 C0Z[]ÐH
 C0Z[]ÐUS
 C4;C8
+C4A;D$4
+C4HcS8H
 C8D;pXtdL
 C8HcS0H
+C8I9D$pt
+C8I9D$pu
 C8X[]A\A
 C8[]A
 C@t3H
@@ -604,6 +626,7 @@ CFlattenedSerializer::DumpSerializedEntityToConsole
 CFlattenedSerializer::Encode failure for entity %d
 CFlattenedSerializer::Encode overflow failure for entity %d max size is %d bytes
 CFlattenedSerializer::Encode writeBuf
+CFlattenedSerializer::EncodeField failed  %s %s[%d/%d] %s
 CFlattenedSerializer::EncodeField overflowed %s %s %s
 CFlattenedSerializer::EncodeField overflowed %s %s[%d/%d] %s
 CFlattenedSerializer::MaybeWriteFlattenedSerializers_R, skipping already wrote stable %s : %d
@@ -912,6 +935,7 @@ CHZ[]ÐUS
 CH[]A
 CH[ÐSH
 CH[ÐUSH
+CHandle
 CLC_Messages
 CMemAllocSystemInitialize
 CMergedEntityOffsetBuilder::Expecting at least one bit in offset
@@ -926,6 +950,7 @@ CMsgServerNetworkStats
 CMsgServerNetworkStats.Player
 CMsgServerNetworkStats.Port
 CMsgServerPeer
+CMsgServerPeer"N
 CMsgTransform
 CMsgVector
 CMsgVector"O
@@ -978,7 +1003,6 @@ CNetworkSystem::InitGameServer: CSteamGameServerAPIContext::Init OK
 CNetworkSystem::SendToNsAddress ISteamNetworkingSockets::SendMessageToConnection %s returned %d when sending %d bytes
 CNetworkSystem::Shutdown
 CNetworkSystem::ShutdownGameServer
-CNetworkUtlVectorBase
 CNetworkedQuantizedFloat
 CODE_SIZE
 COMPLEX
@@ -1039,9 +1063,10 @@ CSVCMsg_UpdateStringTable
 CSVCMsg_UserMessage
 CSVCMsg_VoiceData
 CSVCMsg_VoiceInit
-CSerializedEntities::CompareSerializedEntities field %d path's differ from '%s' to '%s
-CSerializedEntities::CompareSerializedEntities from field %s not present in to
-CSerializedEntities::CompareSerializedEntities to field %s not present in from
+CSerializedEntities::CompareSerializedEntities field %d path's differ from %s '%s' to %s '%s
+CSerializedEntities::CompareSerializedEntities from field %s '%s' not present in to
+CSerializedEntities::CompareSerializedEntities to field %s '%s' not present in from
+CSerializedEntities::CompareSerializedEntities:  from serializer is '%s' and to serializer is '%s', comparison doesn't make sense
 CSerializedEntities::CompareSerializedEntities:  to pointer is %s and from pointer is %s
 CSplitScreenSlot
 CStrongHandle
@@ -1055,6 +1080,7 @@ CUtlLinkedList overflow! (exhausted memory allocator
 CUtlRBTree overflow with %u elements
 CUtlString
 CUtlSymbolLarge
+CUtlVector
 CUtlVectorEmbeddedNetworkVar
 CXZ[]ÐUH
 C_NetworkUtlVectorBase
@@ -1080,6 +1106,7 @@ Cannot allocate abstract class
 Cannot call BuildFile on a DescriptorPool that uses a DescriptorDatabase.  You must instead find a way to get your file into the underlying database
 Cannot copy json_name to a proto of a different size
 Cannot deallocate abstract class
+Cannot deduce for class
 Cannot get here
 Cannot open file %s
 Cannot reconnect loopback after initializing steam networking
@@ -1105,6 +1132,7 @@ ChangeCallbackOnChangeUtlVectorSubfield
 Class                    = '%s
 Class,Field,Field Path,Decode Count,Total Bits,Avg Bits,Total Index Bits,Avg Index Bits,Priority,=SUM(E:E),Full Name,Notes
 ClearField
+ClientToolsInfo_001
 CloseSocket
 CloseSteamNetConnection handle #%u (userdata %d)%s
 Closing '%s' P2P listen socket
@@ -1116,6 +1144,7 @@ CmdLinkAH
 CommandLine
 Comment started here
 Complex
+Compress network traffic
 ComputeDepth
 ComputeOrderForPriority
 Config: %s, %i connections
@@ -1129,21 +1158,22 @@ Contact the program author for an update.  If you compiled the program yourself,
 Could not create an instance of
 Could not find type
 Couldn't parse default value
-Couldn't resolve offset %u in %s at path %s
 Couldn't resolve offset %u in %s at path (%d = '%s
 CreateHostedDedicatedServerListenSocket for socket '%s' failed /+/ port %u vport %d
-CreateSerializedEntityBlob:  removing %s from field path list, culled by another change
+CreateReplayCompatSerializerFromMeta creating fake serializer for %s
 Created poll group for socket '%s
 D$ A;G
 D$ H9D$(L
 D$ HcE
 D$(D9
 D$(E9
+D$(I9D
 D$(L9l
 D$(L9t
 D$(dH3
 D$(t Hc
 D$,PAVj
+D$0;F0u
 D$4A;E4
 D$8L;t$8t'A
 D$8dH3
@@ -1155,9 +1185,9 @@ D$XF8,0tPH
 D$XH9D$8u
 D$XZYH
 D$XdH3
-D$X~IH
 D$X~RI
 D$`tDH
+D$tI;D$ t+H9
 D8kpt
 D9e(~JH
 D9e4~ H
@@ -1209,6 +1239,7 @@ Dump non-loopback udp only
 E(H9E0sHL
 E(I9E0sHH
 E4;E8
+E9UXtaD
 E9w(~zI
 E9|$ ~AD
 E;e }7Mk
@@ -1218,6 +1249,7 @@ ED$`H9
 ENetworkDisconnectionReason
 EQueryCvarValueStatus
 ERROR! SendData %s data too big (%i
+ERROR: CUtlSymbolTableLarge element limit of %u exceeded
 ERROR: Field %s::%s unable to deduce unserializer for type (%s
 ESplitScreenMessageType
 EXPORTSYSTEM_INTERFACE_VERSION_001
@@ -1249,7 +1281,7 @@ Error parsing text-format
 Error processing network message %s! Channel is closing
 Error reporting not implemented
 Error while parsing option value for
-Error:  SkipPropData_ with pField == nullptr, %s unable to find field for path '%s', reding field %d starting at bit %d
+Error:  SkipPropData_ with invalid GetFieldAndBaseDepthByPath result (result.m_pField == nullptr), %s unable to find field for path '%s', reading field %d starting at bit %d
 Error: Components count + networkable data type must be the same for all instances of network field serializer (%s
 Error: Duplicate network array field serializer registered (%s
 Error: Duplicate network field change callback registered (%s
@@ -1297,11 +1329,14 @@ Extra connection [%s
 ExtractSubrange() when arena is non-nullptr is only supported when
 F ÐAWAVAUATI
 F(H9G(u]H
-F8H9B8u
+F(f9C
+F(fA9EV
+F4A9G4
 F8HcX
 FAILED_PRECONDITION
 FAKE array size
 FAKE pointer
+FATAL ERROR: CUtlSymbolTableLarge element limit of %u exceeded
 FATAL ERROR: unable to register all schema data: %s
 FDE9FHI
 FLT_MAX
@@ -1333,7 +1368,6 @@ Field %s tried to quantize an out-of-range value (%f, range is %f->%f), clamping
 Field %s was flagged QFE_ENCODE_INTEGERS_EXACTLY, but didn't specify enough bits, upping bitcount from %d to %d for range [%f->%f
 Field %s was flagged to both round up and down, these flags are mutually exclusive [%f->%f
 Field %s was flagged to encode zero exactly, but min/max range doesn't span zero [%f->%f
-Field %s::%s cannot be networked unless the file containing type %s has its $SchemaFile added to the VPC! (For a resource, this is the DECLARE_RESOURCE_TYPE macro
 Field %s::%s requested unknown user array network serializer %s
 Field %s::%s requested unknown user network serializer %s
 Field %s::%s specified an unknown field change callback %s
@@ -1343,7 +1377,7 @@ Field is repeated; the method requires a singular field
 Field is singular; the method requires a repeated field
 Field name "$0" is reserved
 Field name "$0" is reserved multiple times
-Field names match, but types do not to match %s::%s is type %s vs. type %s
+Field names match, but types do not to match %s::%s local type is '%s' vs. remote type is '%s
 Field number $0 has already been used in "$1" by field "$2
 Field numbers $0 through $1 are reserved for the protocol buffer library implementation
 Field numbers cannot be greater than $0
@@ -1375,6 +1409,7 @@ Files with optimize_for = LITE_RUNTIME cannot define services unless you set bot
 FindLessOrEqual
 FindOrCreateGroupId
 FindOrCreateNetMessage
+FindPolymorphicFieldInfoBySchemaBinding
 First argument to Swap() (of type
 First argument to SwapFields() (of type
 Fixed Array
@@ -1391,7 +1426,7 @@ G$}DH
 G(H;G0r
 G(H;G0sM
 G(H;G0sq
-G0A;G
+G(IcW8H
 G49F8up
 GCC: (SteamRT 10.3.0-3+steamrt3.1+bsrt3.1) 10.3.0
 GCC: (SteamRT 5.4.0-7.really.6+steamrt1.2+srt2) 5.4.1 20160803
@@ -1464,7 +1499,6 @@ GameUI_Disconnect_ServerShutdown
 GameUI_Disconnect_SnapshotError
 GameUI_Disconnect_SnapshotOverflow
 GameUI_Disconnect_SoundsMessage
-GameUI_Disconnect_Splitpacket_Send_Overflow
 GameUI_Disconnect_SteamDeny_BadAntiCheat
 GameUI_Disconnect_SteamDeny_Misc
 GameUI_Disconnect_SteamDropped
@@ -1504,7 +1538,6 @@ GameUI_ServerRequireSteams
 GatherAllFieldOffsets_R
 GatherAllFieldOffsets_R:  local offset of %s::%s %u is too large (%u max
 GeneratedCodeInfo
-Generic
 Get or set SteamNetworkingSockets options such as fake packet lag and loss
 GetBitRange
 GetBitRange( %d -> %d ) end is before or same as start
@@ -1547,7 +1580,6 @@ Group ID                 = %u
 GroupID
 Groups are not supported in proto3 syntax
 GtB<Tt>1
-GxIcWpL
 H	CXH
 H#D$ L
 H#D$0I
@@ -1556,7 +1588,6 @@ H+D$ I9
 H+D$8H
 H+K H+S
 H9B rv
-H9C(u*[D
 H9C0tAH
 H9D$(u"H
 H9D$0t
@@ -1566,17 +1597,18 @@ H9Q(t
 H9i v	H
 H9p sEI9
 H9p sMI9
-H9p tSH
+H9p tSL
 H9x0t
 H9z r
 H9z s
-H;=AR
-H;=tO
+H;-fe
+H;=Qh
 H;G t`H;G
 H;z H
 H;z t
 HD9ep
 HH9|$xL
+HHc@@M
 HHcG(H
 H[A\A]A^A
 H[]A\A]A^A_ÐATUI
@@ -1603,9 +1635,9 @@ HammerMapLoader001
 HasField
 Hc+HcC
 Hc@LHk
+HcBhD9
 HcE0L
-HcG8HcWhHc
-HcK(Ic
+HcG8HcWhHcOPHk
 HcS(A9
 HcT$(L
 Hck HcC$9
@@ -1614,7 +1646,6 @@ Hck(HcC,9
 Hck,HcC09
 HelpSystem_001
 Hex and octal numbers must be integers
-Hh#p\H
 Host game server ip
 HostStateMgr001
 H~[D9
@@ -1641,13 +1672,12 @@ ITM_registerTMCloneTable
 IcD$PM
 IcD$hI
 IcE(E1
-IcF(A;F8
-IcG8A9
-IcMpIc
+IcMpHc
 IcT$8I
 IcT$PI
 IcT$hI
-IcVPD
+IcT$pI
+IcWPD
 IdempotencyLevel
 If set, only net_showmsg spew for data inbound on this socket name e.g. client, server, etc
 If this is intended, set 'option allow_alias = true;' to the enum definition
@@ -1697,6 +1727,7 @@ Invalid wire type for CPPTYPE_MESSAGE
 Invalid wire type for CPPTYPE_UINT32
 Invalid wire type for CPPTYPE_UINT64
 InvokeMiniDumpHandler
+IsEqualSerializer
 J5`!gF
 JSType
 JS_NORMAL
@@ -1705,7 +1736,7 @@ JS_STRING
 January
 JiQNm
 K0A9L$0
-K0D;K@A
+K0D;K@teH
 Key in map fields cannot be enum types
 Key in map fields cannot be float/double, bytes or message types
 KeyValueCache001
@@ -1722,14 +1753,12 @@ L$xdH3
 L9s v
 L9s vm
 L9t$ t9H
-L9v ~FL
 L9|$(tLL
 L;#tGH
 L;$$tJA
 L;4$t0A
 L;4$toM
 L;4$trM
-L;=q3
 L;k s3H
 L;l$puYH
 L;o u
@@ -1753,17 +1782,16 @@ LC_TIME
 LHcK0Ic
 LITE_RUNTIME
 LOG_GENERAL
-LPATA
-LPAUA
 Latency: avg out %.2fs, in %.2fs
-Lc(D;h
+Lc#D;c
+Lc(D;o
 Lc+D;k
-Lcc D;c0D
+Lc3D;s
 Lcc Lck$I
 Lcc$Lck(I
-Lcc(D;c8D
 Lcc(Lck,I
 Lcc,Lck0I
+Lcs(D;s8D
 Leaked channel %s remote %s
 Lf9<Jt
 Like net_showmsg, but only spew reliable messages
@@ -1800,6 +1828,7 @@ MNetworkMaxValue
 MNetworkMinValue
 MNetworkOverride
 MNetworkOverride_Invalid
+MNetworkPolymorphic
 MNetworkPriority
 MNetworkRemoveAll
 MNetworkReplayCompatField
@@ -1816,7 +1845,6 @@ MNetworkVarTypeOverride
 MNetworkVarTypeOverride is referring to an unknown class name %s in class %s
 MNetworkVarsAtomic
 MNetworkVarsDisable
-MODEL_PROCESSING_SCRIPT_INTERFACE_001
 MODEL_PROCESSING_SERVICES_INTERFACE_001
 MResourceTypeForInfoType
 MSG_SPLITSCREEN_ADDUSER
@@ -1856,12 +1884,15 @@ MapValueRef::SetUInt32Value
 MapValueRef::SetUInt64Value
 MaterialUtils_001
 MathLib_Init
+Max polymorphic variants to spew when spewing a flattened serializer
 Maximum number of messages to allow waiting in queue after processing; exceeding this disconnects the client. 0 == no limit
 Maximum number of messages to process from a client in a single frame (0 == no limit
 MaybeAllocateAligned cannot fail here
 MbP?INetworkSystem::RegisterNetworkCategory: all categories must have ids between 0-31
 Mc,$E;l
 Mc.E;n
+Mc/E;o
+McR@E1
 Mcl$(L
 MemAlloc_StrDupFunc
 MergeDeltas
@@ -2136,7 +2167,6 @@ NETWORK_DISCONNECT_SHUTDOWN
 NETWORK_DISCONNECT_SNAPSHOTERROR
 NETWORK_DISCONNECT_SNAPSHOTOVERFLOW
 NETWORK_DISCONNECT_SOUNDSMSG_OVERFLOW
-NETWORK_DISCONNECT_SPLITPACKET_SEND_OVERFLOW
 NETWORK_DISCONNECT_STEAM_AUTHALREADYUSED
 NETWORK_DISCONNECT_STEAM_AUTHCANCELLED
 NETWORK_DISCONNECT_STEAM_AUTHINVALID
@@ -2157,6 +2187,7 @@ NETWORK_DISCONNECT_TICKMSG_OVERFLOW
 NETWORK_DISCONNECT_TIMEDOUT
 NETWORK_DISCONNECT_UNUSUAL
 NETWORK_DISCONNECT_USERCMD
+NETWORK_FIELD_CHANGED_ARRAY_NO_VALUE
 NETWORK_FIELD_CHANGED_ARRAY_WITH_VALUE
 NETWORK_FIELD_CHANGED_NO_VALUE
 NETWORK_FIELD_CHANGED_NO_VALUE_NO_CONTEXT
@@ -2238,6 +2269,7 @@ NSt8__detail15_BracketMatcherISt12regex_traitsIcELb1ELb1EEE
 NSt8ios_base7failureB5cxx11E
 NSt8ios_base7failureE
 NamePart
+NavGameTest001
 Need space between identifier and decimal point
 Need space between number and identifier
 Net Message Info: %s
@@ -2288,7 +2320,7 @@ Number of CFieldPath::Path_t      :  %d
 Number of CFieldPaths(Reconstruct):  %d
 Number of CSerializedEntities     :  %d
 Numbers starting with leading zero must be in octal
-NxHcvpH
+O$HcG
 ORIGIN
 OUT_OF_RANGE
 October
@@ -2307,11 +2339,12 @@ Outdent() without matching Indent
 Overrides IP for multihomed hosts
 P(Lcd
 P*u?H
-P4IcVPI
+P4IcWPI
 P@H+P8H
 PACKET_STATUS_DROPPED
 PACKET_STATUS_INVALID
 PACKET_STATUS_NORMAL
+PASAWA
 PAVAWj
 PERMISSION_DENIED
 PFT_SOUND
@@ -2332,9 +2365,11 @@ ParticleSystemMgr003
 Path_AddToTail failed for read only CFieldPath
 Path_AddToTail failed, depth already == DEFAULT_MAX_PATH_DEPTH(%d
 Path_PopLast failed for read only CFieldPath
+Path_Remove failed for read only CFieldPath
 Path_RemoveAll failed for read only CFieldPath
 Path_SetCount failed, depth already == DEFAULT_MAX_PATH_DEPTH(%d
 Peer To Peer
+Pfc=%d, m=%d, sum=%d (poly:%d), bits=%u
 PhysicsBuilderMgr001
 Plat_CPUTickFrequency
 Plat_DebugPrint
@@ -2421,6 +2456,7 @@ PushTwoPack5LeftDeltaOne
 PushTwoPack5LeftDeltaZero
 Px[]A
 QAngle
+QfA9<Pt
 Quaternion
 QuaternionStorage
 QueueCallback( %s ) '%s' using value type (%s) on struct field, ignoring
@@ -2460,6 +2496,7 @@ ReleaseMessage
 Releasing elements without transferring ownership is an unsafe operation.  Use UnsafeArenaExtractSubrange
 Remove
 RemoveArrayElementsOutsideOfArrayMetadataBounds:  %s [ent %d] removing change '%s' for field %s (value '%s') on array that has metadata with only %d array elements
+RemoveFakeFields(%s) restoring clone %s:%d with original at %s:%d
 RemoveLast
 Removed fake field %s at %d
 Removing Steam Net Connection for %s, handle #%u
@@ -2499,7 +2536,7 @@ SIGNONSTATE_NONE
 SIGNONSTATE_PRESPAWN
 SIGNONSTATE_SPAWN
 SL	C(H
-SPAWAU
+SPAWAUAVj
 SPAWN_GROUP_BLOCK_UNTIL_LOADED
 SPAWN_GROUP_CREATE_CLIENT_ONLY_ENTITIES
 SPAWN_GROUP_CREATE_NEW_SCENE_WORLD
@@ -2539,7 +2576,7 @@ Second argument to SwapFields() (of type
 Sending %d byte message to %s on socket %s
 September
 SerializedEntitiesVersion001
-ServerResourceCompilerInfo_001
+ServerToolsInfo_001
 ServiceDescriptorProto
 ServiceOptions
 SetAllocatedMessage
@@ -2565,6 +2602,7 @@ SetUInt32
 SetUInt64
 Setting FS %s field %s to %s
 Setting max routable payload size from %d to %d for %s
+ShJcD
 Shorthand for 'net_option FakePacketLag_Recv
 Should dedicated server listen for new-style P2P
 Should not reach here
@@ -2603,7 +2641,7 @@ Spew CSerializedEntity memory
 Spew CSerializedEntity metadata information
 Spew QoS interval data as we gather it
 Spew a warning if packet loss percentage is above this threshold
-Spew serializer counts
+Spew serializer counts, client only by default, specify server to spew server counts
 Spew serializer info
 St10bad_typeid
 St10ctype_base
@@ -2784,7 +2822,7 @@ SteamNetworkingSockets012
 SteamNetworkingSockets_LibV12
 SteamNetworkingUtils004
 SteamNetworkingUtils_LibV4
-SteamUser021
+SteamUser023
 SteamUtils010
 Stopping capture, %s samples written
 String field
@@ -2800,7 +2838,6 @@ T$HdH3
 T$VH;G
 T$XdH3
 T$hHcD
-T$xdH3
 TCP/UDP Disabled
 TD_OFFSET_NORMAL
 TD_OFFSET_PACKED
@@ -2880,6 +2917,7 @@ UNKNOWN_ENUM_VALUE_%s_%d
 UUUUUUU
 UUUUUUUUH
 UXA\A]A^A
+Unable to find polymorphic type for %s in %s
 Unable to unambiguously match %s::%s in %s, %d possible matches found
 Unexpected end of string
 Unexpected failure while serializing option submessage
@@ -2903,8 +2941,6 @@ Using Valve ICE implementation
 UtlMemory_Alloc
 UtlMemory_CalcNewAllocationCount
 UtlMemory_FailedAllocation
-V(IcN8I
-V@IcNPI
 VApplication001
 VAsyncFileSystem2_001
 VAvi001
@@ -2941,6 +2977,8 @@ VTT for
 V_DoubleToString_Unsafe
 V_Int32ToString_Unsafe
 V_Int64ToString_Unsafe
+V_LZ4_compress_fast
+V_LZ4_decompress_safe
 V_PrettifyNum
 V_StringParseError
 V_StringToBool
@@ -2961,7 +2999,6 @@ V_UInt64ToString_Unsafe
 V_atan2f
 V_atoi
 V_atoui64
-V_fmodf
 V_qsort_s
 V_sincosf
 V_snprintf
@@ -2999,9 +3036,12 @@ Vector2D
 Vector4D
 VisBuilder_001
 VoiceDataFormat_t
+Vrad3_001
 Vs>b*w2
 W(Hc_ H
 W(Hco H
+W0H+W8H
+W@IcOPI
 WARNING
 Warning
 Warning parsing text-format
@@ -3013,7 +3053,6 @@ WriteFieldList
 WriteFields
 WriteToBuffer Message %s is not initialized! Probably missing required fields
 Writing %d bits for path %s of serializer %s entity %d, this will fail to parse
-X[A\A
 X[A\A]A^A
 X[]A\A]A^A_ÐATUI
 X[]A\A]A^A_ÐAWAVAUATL
@@ -3031,8 +3070,7 @@ X[]ÐATUI
 X[]ÐAUATI
 X[]ÐAWAVAUATUSH
 X[]ÐUSH
-Y@CUtlVector
-YA1E1
+Y@CNetworkUtlVectorBase
 Y[]A\A]A^A_ÐAUATH
 Y[]A\A]ÐATUH
 Y[]A\A]ÐAVAUI
@@ -3052,7 +3090,6 @@ Z22Assert_ConditionFailedRK34_AssertCompileTimeConstantStruct_t
 Z22Assert_ConditionFailedRK34_AssertCompileTimeConstantStruct_tPKcz
 Z23_txnal_cow_string_c_strPKv
 Z23_txnal_sso_string_c_strPKv
-Z25V_SplitStringOnSeparatorsPKcS0_R10CUtlVectorIPci10CUtlMemoryIS2_iEE
 Z26_txnal_logic_error_get_msgPv
 Z27_txnal_cow_string_D1_commitPv
 Z28_txnal_runtime_error_get_msgPv
@@ -3279,7 +3316,7 @@ ZN22CThreadRWLock_FastReadC1Ev
 ZN22CVariableBitStringBase6ResizeEi
 ZN22CVariableBitStringBase8FreeIntsEv
 ZN24CUniformRandomStreamImplI16CThreadNullMutexEC1Ei
-ZN24CUtlMemoryBlockAllocator12AllocAndCopyEPKcj
+ZN24CUtlMemoryBlockAllocator5AllocEj
 ZN24CUtlMemoryBlockAllocator9RemoveAllEm
 ZN24CUtlMemoryBlockAllocatorC1Eij18RawAllocatorType_t
 ZN24CUtlMemoryBlockAllocatorD1Ev
@@ -3382,7 +3419,9 @@ ZNK10CUtlString12DottedAppendEPKc
 ZNK10CUtlString21IsEqual_CaseSensitiveEPKc
 ZNK10CUtlString27IsEqual_FastCaseInsensitiveEPKc
 ZNK10CUtlString5RightEi
+ZNK10CUtlString5SliceEii
 ZNK10CUtlStringeqERKS
+ZNK10CUtlStringixEi
 ZNK10CUtlStringplERKS
 ZNK10__cxxabiv117__class_type_info10__do_catchEPKSt9type_infoPPvj
 ZNK10__cxxabiv117__class_type_info11__do_upcastEPKS0_PKvRNS0_15__upcast_resultE
@@ -3404,7 +3443,7 @@ ZNK13CBufferString8EndsWithEPKc
 ZNK15CUtlSymbolTable4FindEPKc
 ZNK15CUtlSymbolTable6StringE10CUtlSymbol
 ZNK18CGridStringPrinter7NumRowsEv
-ZNK18CGridStringPrinter8GetLinesER10CUtlVectorI10CUtlStringi10CUtlMemoryIS1_iEE
+ZNK18CGridStringPrinter8GetLinesER10CUtlVectorI10CUtlStringi10CUtlMemoryIS1_iEEb
 ZNK8netadr_t10CompareAdrERKS_b
 ZNK8netadr_t11IsLocalhostEv
 ZNK8netadr_t18GetIPHostByteOrderEv
@@ -3649,6 +3688,7 @@ ZNKSt12__basic_fileIcE7is_openEv
 ZNKSt12regex_traitsIcE16lookup_classnameIPKcEENS0_10_RegexMaskET_S5_b
 ZNKSt12regex_traitsIcE16translate_nocaseEc
 ZNKSt12regex_traitsIcE17transform_primaryIPKcEESsT_S4
+ZNKSt12regex_traitsIcE17transform_primaryIPcEESsT_S3
 ZNKSt12regex_traitsIcE18lookup_collatenameIPKcEESsT_S4
 ZNKSt13bad_exception4whatEv
 ZNKSt13basic_filebufIcSt11char_traitsIcEE7is_openEv
@@ -4802,6 +4842,7 @@ ZNSsC1Ev
 ZNSsC1IN9__gnu_cxx17__normal_iteratorIPcSsEEEET_S4_RKSaIcE
 ZNSsC1IPKcEET_S2_RKSaIcE
 ZNSsC1IPcEET_S1_RKSaIcE
+ZNSsC1ISaIcEEEPKcRKS0
 ZNSsC2EOSs
 ZNSsC2EOSsRKSaIcE
 ZNSsC2EPKcRKSaIcE
@@ -4818,6 +4859,7 @@ ZNSsC2Ev
 ZNSsC2IN9__gnu_cxx17__normal_iteratorIPcSsEEEET_S4_RKSaIcE
 ZNSsC2IPKcEET_S2_RKSaIcE
 ZNSsC2IPcEET_S1_RKSaIcE
+ZNSsC2ISaIcEEEPKcRKS0
 ZNSsD1Ev
 ZNSsD2Ev
 ZNSsaSEOSs
@@ -5945,7 +5987,6 @@ ZNSt5ctypeIwEC2Em
 ZNSt5ctypeIwED0Ev
 ZNSt5ctypeIwED1Ev
 ZNSt5ctypeIwED2Ev
-ZNSt5dequeINSt8__detail9_StateSeqISt12regex_traitsIcEEESaIS4_EE12emplace_backIJS4_EEEvDpOT
 ZNSt5dequeINSt8__detail9_StateSeqISt12regex_traitsIcEEESaIS4_EE16_M_push_back_auxIJRKS4_EEEvDpOT
 ZNSt5dequeINSt8__detail9_StateSeqISt12regex_traitsIcEEESaIS4_EE17_M_reallocate_mapEmb
 ZNSt5dequeINSt8__detail9_StateSeqISt12regex_traitsIcEEESaIS4_EE9push_backERKS4
@@ -6018,7 +6059,6 @@ ZNSt6vectorISt4pairISsSsESaIS1_EE17_M_realloc_insertIJS1_EEEvN9__gnu_cxx17__norm
 ZNSt6vectorISt4pairIccESaIS1_EE17_M_realloc_insertIJS1_EEEvN9__gnu_cxx17__normal_iteratorIPS1_S3_EEDpOT
 ZNSt6vectorISt4pairIlS_ISt9sub_matchIPKcESaIS4_EEESaIS7_EE17_M_realloc_insertIJRlRKS6_EEEvN9__gnu_cxx17__normal_iteratorIPS7_S9_EEDpOT
 ZNSt6vectorISt9sub_matchIPKcESaIS3_EE14_M_fill_assignEmRKS3
-ZNSt6vectorIcSaIcEE12emplace_backIJcEEEvDpOT
 ZNSt6vectorIcSaIcEE17_M_realloc_insertIJcEEEvN9__gnu_cxx17__normal_iteratorIPcS1_EEDpOT
 ZNSt6vectorIcSaIcEE8_M_eraseEN9__gnu_cxx17__normal_iteratorIPcS1_EES5
 ZNSt6vectorIiSaIiEE17_M_realloc_insertIJRKiEEEvN9__gnu_cxx17__normal_iteratorIPiS1_EEDpOT
@@ -6619,10 +6659,17 @@ ZNSt8_Rb_treeIlSt4pairIKllESt10_Select1stIS2_ESt4lessIlESaIS2_EE24_M_get_insert_
 ZNSt8_Rb_treeIlSt4pairIKllESt10_Select1stIS2_ESt4lessIlESaIS2_EE29_M_get_insert_hint_unique_posESt23_Rb_tree_const_iteratorIS2_ERS1
 ZNSt8__detail12__prime_listE
 ZNSt8__detail15_BracketMatcherISt12regex_traitsIcELb0ELb0EE8_M_readyEv
+ZNSt8__detail15_BracketMatcherISt12regex_traitsIcELb0ELb0EED1Ev
+ZNSt8__detail15_BracketMatcherISt12regex_traitsIcELb0ELb0EED2Ev
 ZNSt8__detail15_BracketMatcherISt12regex_traitsIcELb0ELb1EE13_M_make_rangeEcc
+ZNSt8__detail15_BracketMatcherISt12regex_traitsIcELb0ELb1EE8_M_readyEv
 ZNSt8__detail15_BracketMatcherISt12regex_traitsIcELb0ELb1EED1Ev
 ZNSt8__detail15_BracketMatcherISt12regex_traitsIcELb0ELb1EED2Ev
+ZNSt8__detail15_BracketMatcherISt12regex_traitsIcELb1ELb0EE8_M_readyEv
+ZNSt8__detail15_BracketMatcherISt12regex_traitsIcELb1ELb0EED1Ev
+ZNSt8__detail15_BracketMatcherISt12regex_traitsIcELb1ELb0EED2Ev
 ZNSt8__detail15_BracketMatcherISt12regex_traitsIcELb1ELb1EE13_M_make_rangeEcc
+ZNSt8__detail15_BracketMatcherISt12regex_traitsIcELb1ELb1EE8_M_readyEv
 ZNSt8__detail15_BracketMatcherISt12regex_traitsIcELb1ELb1EED1Ev
 ZNSt8__detail15_BracketMatcherISt12regex_traitsIcELb1ELb1EED2Ev
 ZNSt8__detail4_NFAISt12regex_traitsIcEE15_M_insert_dummyEv
@@ -6889,7 +6936,6 @@ ZSt13__int_to_charIcmEiPT_T0_PKS0_St13_Ios_Fmtflagsb
 ZSt13__int_to_charIcyEiPT_T0_PKS0_St13_Ios_Fmtflagsb
 ZSt13__int_to_charIwmEiPT_T0_PKS0_St13_Ios_Fmtflagsb
 ZSt13__int_to_charIwyEiPT_T0_PKS0_St13_Ios_Fmtflagsb
-ZSt13binary_searchIN9__gnu_cxx17__normal_iteratorIPKcSt6vectorIcSaIcEEEEcEbT_S8_RKT0
 ZSt13get_terminatev
 ZSt13set_terminatePFvvE
 ZSt14__add_groupingIcEPT_S1_S0_PKcmPKS0_S5
@@ -6958,6 +7004,7 @@ ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6
 ZSt4endlIwSt11char_traitsIwEERSt13basic_ostreamIT_T0_ES6
 ZSt4endsIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6
 ZSt4endsIwSt11char_traitsIwEERSt13basic_ostreamIT_T0_ES6
+ZSt4findIN9__gnu_cxx17__normal_iteratorIPKSsSt6vectorISsSaISsEEEESsET_S8_S8_RKT0
 ZSt4wcin
 ZSt5flushIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6
 ZSt5flushIwSt11char_traitsIwEERSt13basic_ostreamIT_T0_ES6
@@ -7879,6 +7926,9 @@ ZZNSt13basic_filebufIcSt11char_traitsIcEE5closeEvEN14__close_sentryD2Ev
 ZZNSt13basic_filebufIwSt11char_traitsIwEE5closeEvEN14__close_sentryD1Ev
 ZZNSt13basic_filebufIwSt11char_traitsIwEE5closeEvEN14__close_sentryD2Ev
 ZZNSt19_Sp_make_shared_tag5_S_tiEvE5__tag
+ZZNSt8__detail9_CompilerISt12regex_traitsIcEE13_M_quantifierEvENKUlvE_clEv
+ZZNSt8__detail9_CompilerISt12regex_traitsIcEE18_M_expression_termILb0ELb0EEEbRSt4pairIbcERNS_15_BracketMatcherIS2_XT_EXT0_EEEENKUlcE_clEc
+ZZNSt8__detail9_CompilerISt12regex_traitsIcEE18_M_expression_termILb0ELb1EEEbRSt4pairIbcERNS_15_BracketMatcherIS2_XT_EXT0_EEEENKUlcE_clEc
 ZZNSt8__detail9_CompilerISt12regex_traitsIcEE18_M_expression_termILb1ELb0EEEbRSt4pairIbcERNS_15_BracketMatcherIS2_XT_EXT0_EEEENKUlcE_clEc
 ZZNSt8__detail9_CompilerISt12regex_traitsIcEE18_M_expression_termILb1ELb1EEEbRSt4pairIbcERNS_15_BracketMatcherIS2_XT_EXT0_EEEENKUlcE_clEc
 Z[]A\A]A^A_ÐATUH
@@ -7887,11 +7937,20 @@ Z[]A\A]A^A_ÐAWAVAUATUSH
 Z[]A\A]A^A_ÐAWAVI
 Z[]ÐATUH
 ZdaPv
+ZdaPvSt11align_val_t
+ZdaPvm
+ZdaPvmSt11align_val_t
 ZdlPv
 ZdlPvRKSt9nothrow_t
+ZdlPvSt11align_val_t
 ZdlPvm
+ZdlPvmSt11align_val_t
 ZnamRKSt9nothrow_t
+ZnamSt11align_val_t
+ZnamSt11align_val_tRKSt9nothrow_t
 ZnwmRKSt9nothrow_t
+ZnwmSt11align_val_t
+ZnwmSt11align_val_tRKSt9nothrow_t
 ZÐATUSH
 ZÐAUATI
 ZÐAVAUATUI
@@ -8006,8 +8065,9 @@ but only
 but was
 bytes
 bytes).  To increase the limit (or to disable these warnings), see CodedInputStream::SetTotalBytesLimit() in third_party/protobuf/io/coded_stream.h
-c D;c0D
 c [A\A]A
+c8L+c0I
+cPL+cHI
 cameraman_scoreboard
 can't reach here
 cannot be required
@@ -8051,6 +8111,7 @@ clc_ServerStatus
 clc_SplitPlayerConnect
 clc_SplitPlayerDisconnect
 clc_VoiceData
+clear deallocate
 client
 client_interpolation_amount
 client_streaming
@@ -8064,7 +8125,6 @@ cmd_info
 co_await
 code_filename
 code_path
-color
 color32
 colors
 com.google.protobufB
@@ -8077,6 +8137,7 @@ commands_queued
 comment
 commercial-at
 common/protobuf_helpers.cpp
+compressed
 computer_guid
 conflicts with an existing enum type
 conflicts with an existing field
@@ -8103,11 +8164,11 @@ covariant return thunk to
 cpu_usage
 create_on_client
 create_poll_group
+create_tables_skipped
 creationsequence
 csharp_namespace
 ctype_get_mb_cur_max
 cvar_name
-cxHcCpM
 cxa_allocate_dependent_exception
 cxa_allocate_exception
 cxa_atexit
@@ -8146,16 +8207,15 @@ d total
 d$0L+d$(H
 d$xPAQj
 d.%ds
-d:  %s %s [ptr 0x%p] 0x%p (%s) (%s *) %s '%s
+d:  %s %s [ptr 0x%p] 0x%p (%s) (%s *->%s *) %s '%s
 d:  %s (%s) [ptr 0x%p] %s%s '%s
 data.rel.ro
 data_ == other.data
 data_bits
 data_compressed
-data_table_name
 databytes
 deactivated
-deallocate
+deallocate %s
 decal_texture_index
 decimal128
 decimal32
@@ -8224,6 +8284,7 @@ encoder(%s
 encoding_stats
 entity_data
 entity_index
+entity_name
 entityfiltername
 entityhandle.h
 entitylumpname
@@ -8248,17 +8309,14 @@ extension_range
 eye_angles
 f %f %f %f
 f == nullptr || dynamic_cast<To>(f) != nullptr
-f8M+f0I
 fA	F`A
+fA9\$(fA
 fD9|$8
-fD;)tjD
 fD;*trH
-fPM+fHI
-failed to construct fake field from metadata %s::%s in %s
+failed to construct fake field from metadata %s::%s (%s) in %s
 failed to parse contents
 fakeplayer
 false
-fc=%d, m=%d, sum=%d (poly:%d), bits=%u
 fclose
 fdopen
 ffffff
@@ -8267,6 +8325,7 @@ field %s not present in %s
 field not in previous encoding
 field number
 field pointer
+field serializer '%s' already matched to meta variant %d, cloning serializer to allow matching to different meta variant %d
 field_full
 field_notes
 field_only
@@ -8578,7 +8637,6 @@ java_string_check_utf8
 json_name
 jstype
 jstype is only allowed on int64, uint64, sint64, fixed64 or sfixed64 fields
-k,D+k0A
 k0X[]A\A]A^A
 k8}.H
 kPH+kHH
@@ -8632,6 +8690,8 @@ loopback_t CUtlMemoryPool
 low_priority
 low_value
 lseek64
+m H;-h
+m8H;-r
 m_Value
 m_bCanStillRegisterCallbackPriorities
 m_bNeedsSort
@@ -8683,12 +8743,9 @@ msg_data
 msg_type
 mt19937
 must be unique within
-mxH;-H
 n L9l
 n8ATUH
-n8M+n0I
 nIndex != m_priorityToOrderMap.InvalidIndex
-nPM+nHI
 nPriority != NETWORK_FIELD_CHANGE_DEFAULT_PRIORITY
 nTries < 10000000
 name_part
@@ -8722,6 +8779,7 @@ net_listallmessages
 net_log_processing
 net_max_message_process_count
 net_max_message_queue_size
+net_max_polymorphic_spew
 net_maxroutable
 net_messageinfo
 net_messageinfo %s
@@ -8747,6 +8805,7 @@ net_spewcounts
 net_spewserializer
 net_status
 net_table_name
+net_use_packet_compression
 net_usesocketsforloopback
 net_validatemessages
 net_validatemessages = %d
@@ -8779,6 +8838,7 @@ newlocale
 next state only
 nl_langinfo_l
 no CSerializedEntity memory being used
+no context
 no failure reason set
 no fastpath
 no metadata
@@ -8817,7 +8877,10 @@ n潍n畔e敗d
 o(Lcw I
 o0ATUSH
 o8ATUI
+o8M+o0I
+o;=PN
 oHH+G8L
+oPM+oHI
 oXATUH
 o`ATUH
 objc_class_prefix
@@ -8826,6 +8889,7 @@ observer_target
 of the Protocol Buffer runtime library, but the installed version is
 of the Protocol Buffer runtime library, which is not compatible with the installed version
 ohATUH
+ohM9o`A
 once_proxy
 oneof_decl
 oneof_index
@@ -8849,8 +8913,10 @@ outgoing_sequence_start
 output specified is nullptr
 output_type
 override_operator_name
+oxIcGpI
 p<0tUw
 pEnd > *pStart
+pFSField
 pIcO Ic
 p[]A\ÐATUI
 package
@@ -8889,14 +8955,24 @@ players_networkids
 please implement MergeFrom for your type
 plt.got
 plus-sign
+pmInfoDest.m_pFlattenedSerializer
+pmInfoDest.m_unPolymorphicTypeId == pmInfoSource.m_unPolymorphicTypeId
+pmInfoSource.m_pFlattenedSerializer
 pointer field
 pointer to struct
+polymorphic
+polymorphic [forced
+polymorphic_field_serializer_name_sym
+polymorphic_field_serializer_version
+polymorphic_field_t
 polymorphic_id
+polymorphic_types
 position
 positive_int_value
 possible match: %s.%s
 posttoserver
 prediction_errors
+prediction_sync
 previous only
 previouslevel
 pri(%u
@@ -8923,6 +8999,7 @@ pthread_mutex_unlock
 pthread_mutexattr_init
 pthread_mutexattr_settype
 pthread_once
+ptr to %s [%u
 public/networksystem/serializedentity.h
 public/tier0/eventdispatcher.h
 public/tier0/tslist.h
@@ -8934,18 +9011,16 @@ public_dependency
 pure virtual method called
 py_generic_services
 p}?fff?H
-q8H;q
 q@H;qH
 q@I;qH
 qIcG81
 qangle
 qangle_pitch_yaw
+qangle_precise
 quality
 quaternion
 question-mark
-queued
 quotation-mark
-qxHcIpI
 r0AUATE1
 random_device could not be read
 random_device: rdrand failed
@@ -9005,6 +9080,10 @@ s %s = %s
 s %s preserve field %i %s at offset %u, removing from ignore list
 s %s:  [%d] %s queue %s [type %s] %son 0x%p [alloc %u] [order %d] %s
 s %s:  [%d] %s queue %s [type %s] 0x%p %s
+s '%s':  encoding mismatched %d vs. %d bits
+s (%s) SendMessage reliable failed with EResult: %d, bytes written %d
+s (%s) SendMessage unreliable failed with EResult: %d, bytes written %d
+s + % 4d classes
 s - Argument expected (message ID or name
 s - Invalid net message index: %d
 s - Unrecognized net message name: '%s
@@ -9012,8 +9091,6 @@ s -> %s
 s -> %s::%s is marked for networking but is not a CNetworkVar
 s : %s = '%s
 s Gathering field offsets in %s
-s SendMessage reliable failed with EResult: %d, bytes written %d
-s SendMessage unreliable failed with EResult: %d, bytes written %d
 s allocation count overflow
 s allocation count overflow( %llu > %llu
 s allocation count overflow( add %llu + current %llu > max %llu
@@ -9036,7 +9113,6 @@ s0x%p %s Initializing
 s1_mapname
 s:  %d : %s bits %d to %d [%d bits] : %s
 s:  %s
-s:  %s packet type '%s' %d/%d (%.1f
 s:  %s timing out, last received %f [%.2f seconds ago
 s:  (%d bits/%d bytes
 s:  CNetChan::Transmit( %s ) while suppressing transmit
@@ -9123,7 +9199,6 @@ shutdown
 signed enum
 signon_state
 signore offset %u in %s at path '%s
-simple
 simplified
 sincluding %s::%s to ensure entire chain to field
 singletons.cpp
@@ -9154,7 +9229,6 @@ spawngroupmanifest
 spawngroupownerhandle
 spawngroupparenthandle
 speaker_entity
-splitpacket
 sprintf
 sprintf_chk
 stack frames not accounted for stack unwind
@@ -9197,7 +9271,7 @@ strcoll_l
 strcpy
 strdup
 stream
-stream: %s local: %s) %s
+stream: %s%s local: %s%s
 strerror
 strftime_l
 string length exceeds max size
@@ -9271,7 +9345,6 @@ t$0t51
 t$8ZYI9
 t$;0u D
 t$@H;t$ t
-t$Ht	I
 t$P냐UH
 t+H;y s
 t+HcD
@@ -9279,7 +9352,6 @@ t2<\th
 t2Hc>A
 t5HcCh
 t8HcCh
-t;McUHE
 t>9p8u
 tIHcC
 tJHcC
@@ -9290,12 +9362,12 @@ tPL;b rJH
 tRHcC
 tRHcCH
 tSI;E
-tUH92
+tUH;2
 tVAVAUI
 tWAVAUATI
 tYAVAUATUSL
 t[ATUH
-t[IcE8
+t[L;7u
 t_IcE
 t`LcL
 taHct
@@ -9327,6 +9399,7 @@ tjf;2uefD
 tls_get_addr
 to missing
 to start from the outermost scope
+tools
 total: in %.1f, out %.1f MB
 total_data_in
 total_data_out
@@ -9338,6 +9411,7 @@ trailing_comments
 transaction_safe
 transform
 truncated
+txMc,$I
 txfD;i
 tyfD;j
 type does not match
@@ -9356,11 +9430,13 @@ typeinfo name for
 tzAWAVAUATA
 u %u %u %u
 u serializers with %u fields (approx memory %llu / %llu in fields ) bytes (field size %d, serializer size %d
+u(fA9t$(A
 u/H#D
-u6fE9e
 u8D	k
 u@I;uH
+uE[A\A]A
 uPIcEHI
+uR[A\A]A
 ua8CHtdH
 ubD9kH
 uc8EHtfH
@@ -9374,6 +9450,7 @@ uint64
 uint64_t google::protobuf::UnknownField::fixed64() const
 uint64_t google::protobuf::UnknownField::varint() const
 uint64s
+unable to find polymorphic type %s in %s, no likely matches found
 unable to match %s::%s (type %s) in %s, no likely matches found
 uncompressed_sample_offset
 uncompressed_size
@@ -9403,7 +9480,8 @@ upHcG
 update_baseline
 updated_entries
 uptime
-usage: %s <name
+usage: %s <client|server
+usage: %s <name> <server
 usage: %s classname fieldname
 usage: fs_spew_readfieldlist entindex <optional min change bytes
 use_valve_ice
@@ -9415,11 +9493,8 @@ userid
 uses the same enum value as
 using_varint_bitcounts
 utlvector
-utlvector count
 uvHcG
 uxHcG
-ű=bp
-uЋ=Vd
 v@RegisterConCommand: Unknown error registering con command "%s
 vIcL$pIc
 vPI;vX
@@ -9430,6 +9505,7 @@ val_long
 val_short
 val_string
 val_uint64
+valid poly %s [%u
 valve_map_field
 valve_map_key
 valveextensions.proto
@@ -9466,8 +9542,8 @@ vsnprintf_chk
 vt)<xtj
 w(AUATI
 w(HcG I
+w0E;w@A
 w@AUATL
-w@H;wHtoH
 wHAUATL
 wPH+wHH
 was already set
@@ -9506,17 +9582,15 @@ wrong submessage type
 wxHcGp
 x (int:%d, float:%f
 x%02x
-x%A;E
 xD;c|}wD
-xE8}pH
+xE8t$pH
 xHcGpL
 xIcEpL
+xIcFpL
 xX0123456789abcdef0123456789ABCDEF
 xX0123456789abcdefABCDEF
 x[A\A
-x[A\A]A^A
 x[]A\A]A^A_ÐAUATI
-xk;B`}fH
 yOk GU5T
 you_hear_them
 z0AUATI

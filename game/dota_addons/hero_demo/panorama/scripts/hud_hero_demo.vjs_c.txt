@@ -119,7 +119,7 @@ function OnSetPlayerHeroID( event_data )
 	{
 		var heroName = Players.GetPlayerSelectedHero( 0 );
 		$.Msg( 'HERO NAME = ' + heroName );
-		HeroDemoButton.SetDialogVariable( "hero_name", $.Localize( '#'+heroName ) );
+		HeroDemoButton.SetDialogVariable( "hero_name", GameUI.GetUnitNameLocalized( heroName ) );
 	}
 }
 GameEvents.Subscribe( "set_player_hero_id", OnSetPlayerHeroID );
@@ -145,7 +145,7 @@ function OnSetSpawnHeroID( event_data )
 	if ( SpawnHeroButton != null )
 	{
 		$.Msg( 'HERO NAME = ' + event_data.hero_name );
-		SpawnHeroButton.SetDialogVariable( "hero_name", $.Localize( '#'+event_data.hero_name ) );
+		SpawnHeroButton.SetDialogVariable( "hero_name", GameUI.GetUnitNameLocalized( event_data.hero_name ) );
 	}
 }
 GameEvents.Subscribe( "set_spawn_hero_id", OnSetSpawnHeroID );
@@ -169,10 +169,7 @@ GameEvents.Subscribe( "add_new_hero_entry", OnAddNewHeroEntry );
 function RemoveSelectedHeroes()
 {
 	var entities = Players.GetSelectedEntities( 0 );
-	$.Msg( "Entities = " + entities );
-
 	var numEntities = Object.keys( entities ).length;
-	$.Msg( "Num entities = " + numEntities );
 
 	var bDeletionAttempted = false;
     for ( var i = 0; i < numEntities; i++ )

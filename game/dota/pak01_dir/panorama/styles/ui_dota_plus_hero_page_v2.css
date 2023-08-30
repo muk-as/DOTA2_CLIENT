@@ -21,12 +21,29 @@
   flow-children: right;
  }
 
+ .HeroLevelProgressionContainer{
+  width: 100%;
+  flow-children: right;
+  z-index: 1;
+ }
+
+ #HeroBadgeProgression{
+  margin-top: -224px;
+  margin-left: -210px;
+  margin-bottom: -210px;
+  margin-right: -180px;
+  overflow: noclip;
+ }
+  .NoTier #HeroBadgeProgression{
+   visibility: collapse;
+  }
+
+
  #HeroLevelBarContainer{
 
-  margin-top: 12px;
   width: 100%;
-
   flow-children: right;
+  vertical-align: center;
  }
 
  .HeroLevelBarLockIcon{
@@ -53,7 +70,6 @@
  .HeroLevelBarMain{
 
   flow-children: down;
-  margin-bottom: 12px;
  }
 
  #NextHeroLevelRewards{
@@ -61,49 +77,8 @@
   flow-children: right;
  }
 
- #NextHeroLevelRewardsButton{
-
-  flow-children: right;
-  min-height: 21px;
- }
-
- #NextHeroLevelRewardsButton > Label,.MaxHeroLevelRewardsLabel{
-
-  text-transform: uppercase;
-  color: #ccc;
-  letter-spacing: 2px;
-  font-size: 16px;
- }
- #NextHeroLevelRewardsButton:hover > Label{
-
-  color: white;
- }
- #NextHeroLevelRewardsButton:active > Label{
-
-  color: #ddd;
- }
-
- #NextRewardsIcon{
-
-  width: 14px;
-  height: 14px;
-  vertical-align: middle;
-  margin-right: 6px;
-  transform: translateY( -2px );
-  wash-color: #ccc;
-
-  background-image: url( "s2r://panorama/images/control_icons/arrow_popout_png.vtex");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
- }
- #NextHeroLevelRewardsButton:hover #NextRewardsIcon{
-
-  wash-color: white;
- }
- #NextHeroLevelRewardsButton:active #NextRewardsIcon{
-
-  wash-color: #ddd;
+ .MaxHeroLevelRewardsLabel{
+  margin-right: 12px;
  }
 
  .MaxHeroLevel #NextHeroLevelRewardsButton > Label,.MaxHeroLevel #NextHeroLevelRewardsList,.MaxHeroLevelRewardsLabel{
@@ -121,13 +96,14 @@
  #NextHeroLevelRewardsList{
 
   flow-children: right;
+  vertical-align: center;
+  margin-left: 12px;
  }
 
  .NextHeroLevelReward{
 
-  width: 19px;
-  height: 19px;
-
+  width: 24px;
+  height: 24px;
   margin-left: 4px;
 
   background-repeat: no-repeat;
@@ -146,15 +122,15 @@
  #HeroLevelProgress{
 
   width: 100%;
-  height: 10px;
+  height: 8px;
   border: 0px;
   border-radius: 0px;
-  background-color: #3A474F;
+  background-color: #ddf2ff08;
+  margin-top: 8px;
  }
 
- #HeroLevelProgress .ProgressBarLeft{
-
-  background-color: gradient( linear, 0% 0%, 100% 0%, from( #ae9249 ), to( #e0c59a ) );
+ .SectionTitle{
+  margin-right: 8px;
  }
 
  .MaxHeroLevelWithoutSubscription .HeroLevelBarMain{
@@ -164,41 +140,23 @@
   opacity: 0.8;
  }
 
- #HeroLevelBarContainer .SectionTitle{
-
-  margin-left: 0px;
-  margin-top: 0px;
- }
-
- .SectionTitle{
-
-  font-size: 16px;
-  font-weight: bold;
-  color: white;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-left: 12px;
-  margin-top: 8px;
- }
-
  .SectionTitleGold{
 
-  font-size: 16px;
-  font-weight: bold;
+  margin-left: 12px;
   color: #dccd83;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-left: 6px;
-  margin-top: 0px;
  }
 
  #RelicsContainer{
 
-  margin-left: 8px;
-  height: 537px;
-  width: 392px;
+  margin-left: 4px;
+  height: 100%;
+  width: fill-parent-flow( 1 );
   flow-children: down;
-  background-color: gradient( linear, 0% 0%, 0% 100%, from( #222 ), to( #141c23 ) );
+  padding: 24px 40px 32px;
+ }
+
+ .RelicsTitle{
+  margin-right: 6px;
  }
 
  #RelicsContainer .SectionTitleGold{
@@ -228,18 +186,15 @@
 
  .RelicHelpText{
 
-  horizontal-align: center;
-  text-align: center;
-  color: #666;
-  margin-top: -10px;
-  margin-bottom: 8px;
-  font-size: 16px;
+  horizontal-align: right;
  }
 
  .RelicPurchaseButtons{
 
   flow-children: right;
   horizontal-align: center;
+  ignore-parent-flow: true;
+  vertical-align: bottom;
  }
 
  .RelicPurchaseButton{
@@ -322,59 +277,88 @@
 
 
  #RefreshButton{
-
-
-  height: 35px;
-  width: 220px;
   horizontal-align: center;
-  margin: 25px;
+
   opacity: 0;
+  ignore-parent-flow: true;
+  vertical-align: bottom;
  }
 
- #RefreshButton Label{
-
-  font-size: 14px;
-  color: #fff;
-  horizontal-align: center;
-  letter-spacing: 1px;
-  font-weight: bold;
-  vertical-align: center;
-  text-overflow: shrink;
-  height: 22px;
- }
 
  #ChallengesContainer{
-
-  height: 537px;
-  width: 400px;
-
-  background-color: gradient( linear, 0% 0%, 0% 100%, from( #222 ), to( #141c23 ) );
+  height: 100%;
+  width: fill-parent-flow( 1 );
  }
+
+
+
 
  #ChallengesMain{
 
   flow-children: down;
   width: 100%;
   height: 100%;
+  padding: 24px 40px;
+  border-right: 1px solid rgba(255, 255, 255, 0.02);
+  margin-right: 4px;
  }
 
  #ChallengesControl{
 
-  width: 355px;
-  height: 388px;
-  margin-right: 5px;
-  margin-top: 0px;
+  width: 100%;
+  margin-top: 24px;
  }
+  #ChallengesControl DOTAPlusHeroChallenge{
+   margin-bottom: 12px;
+  }
+
+
+ .ExtraXPLabelContainer{
+  horizontal-align: center;
+  flow-children: right;
+ }
+  .ExtraXPLabelContainer Label{
+   vertical-align: bottom;
+   color: gradient( linear, 0% 0%, 0% 100%, from( #c6a562 ), color-stop( 0.6, #FFF2CF ), color-stop( 0.8, #ae9259 ), to( #dcb870 ) );
+  }
+
+  .ExtraXPLabelContainer .ExtraXPLabel{
+   font-size: 72px;
+   font-weight: semi-bold;
+  }
+
+  .ExtraXPLabelContainer .ExtraXPLabelUnits{
+   margin-bottom: 16px;
+  }
+
+
 
  #ChallengeRefreshControl{
 
   height: 100%;
   width: 100%;
-  background-image: url( "s2r://panorama/images/dota_plus/challenge_bountyxp_png.vtex");
-  background-position: 100% 100%;
-  background-repeat: no-repeat;
-  background-size: contain;
  }
+
+
+
+
+  #ChallengeRefreshControl .ChallengeRefreshContent{
+   horizontal-align: center;
+   width: 100%;
+   height: 100%;
+   margin: 24px 72px 32px;
+  }
+
+
+ .GoldDash{
+  horizontal-align: center;
+  width: 80%;
+  height: 1px;
+  background-color: gradient( linear, 0% 0%, 100% 0%, from( #c6a56200 ), color-stop( 0.3, #c6a562 ), color-stop( 0.7, #c6a562 ), to( #c6a56200 ) );
+  margin: 8px 0px;
+  opacity: 0.2;
+ }
+
 
  #ChallengeInfoHeader{
 
@@ -478,8 +462,9 @@
  #ChallengeGemColumns{
 
   flow-children: right;
-  margin-top: 8px;
-  width: 800px;
+  margin-top: 16px;
+  width: 100%;
+  height: 100%;
  }
 
  #ChallengeGemColumns .DotaPlusUpsellTitle{
@@ -518,22 +503,19 @@
   line-height: 18px;
   vertical-align: bottom;
   text-overflow: shrink;
-  margin-left: 20px;
-  margin-bottom: 4px;
-  letter-spacing: 1px;
   font-weight: bold;
   color: #B78946;
  }
 
  .InfoIcon{
 
-  width: 14px;
-  height: 14px;
+  width: 16px;
+  height: 16px;
   background-image: url("s2r://panorama/images/status_icons/information_psd.vtex");
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: contain;
-  transform: translateY( 5px );
+  transform: translateY( 2px );
   wash-color: #ae9249;
  }
 
@@ -541,42 +523,42 @@
 
   width: 100%;
   height: 50px;
-
   vertical-align: bottom;
-  margin-bottom: 10px;
  }
 
  #RefreshImage{
 
-  width: 399px;
-  height: 197px;
+  width: 320px;
+  height: 150px;
   background-image: url( "s2r://panorama/images/dota_plus/challenge_stars_png.vtex");
-  background-size: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 
   horizontal-align: center;
-  margin-top: -10px;
+  margin-bottom: -16px;
  }
+
 
  .RefreshHeader{
 
   text-align: center;
   width: 100%;
   horizontal-align: center;
-
-  text-transform: uppercase;
-  color: white;
-  font-size: 30px;
-  letter-spacing: 2px;
-  margin-top: -20px;
  }
+
+
+
+
+
+
 
  .RefreshBody{
 
   text-align: center;
   horizontal-align: center;
-  width: 90%;
-  font-size: 14px;
-  margin: 5px;
+  width: 100%;
+  margin: 8px 0px 12px;
  }
 
  #PurchaseRelicButton .RelicsCurrencyIcon{

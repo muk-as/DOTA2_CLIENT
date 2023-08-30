@@ -1,0 +1,43 @@
+<!-- xml reconstructed by ValveResourceFormat: https://vrf.steamdb.info/ -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/ui_set_preview_controls.vcss_c" />
+	</styles>
+	<DOTASetPreviewControls class="HorizontalCenter">
+		<DOTAScenePanel id="BottomGodRays" map="scenes/loadout_preview_rays" camera="camera_1" hittest="false" particleonly="false" />
+		<Panel class="Container" hittest="false">
+			<Panel class="BackgroundShadow" hittest="false" />
+			<Panel id="PreviewEquippedContainer" hittest="false">
+				<Panel id="EquippedContainer" hittest="false">
+					<Label class="EquippedLabel VerticalCenter HorizontalCenter LabelLarge WhiteText" text="#DOTA_Loadout_Equipped" />
+					<Panel class="EquippedLabelContainer LeftRightFlow VerticalCenter HorizontalCenter">
+						<Label class="CurrentSetTitle TitleSmall VerticalCenter HorizontalCenter" text="{s:preview_set_name}" hittest="false" />
+						<Button id="SaveSetButton" class="ButtonPrimary LightGrey VerticalCenter" onactivate="DOTASetPreviewSaveAsCustomSet()">
+							<Label text="#DOTA_SavedSets_Save" />
+						</Button>
+					</Panel>
+				</Panel>
+				<Panel id="PreviewContainer">
+					<Label class="PreviewingLabel VerticalCenter HorizontalCenter LabelLarge WhiteText" text="#DOTA_Loadout_Previewing" />
+					<Panel id="UnownedItemsContainer" class="VerticalCenter HorizontalCenter" hittest="false">
+						<Panel id="UnownedItemsTilesContainer" />
+						<Button id="RevertButton" class="ButtonPrimary LightGrey VerticalCenter" onactivate="DOTASetPreviewRevert()">
+							<Label text="#DOTA_Loadout_RevertPreview" />
+						</Button>
+						<Button id="EquipAllButton" class="ButtonPrimary LightGrey VerticalCenter" onactivate="DOTASetPreviewEquipAll();">
+							<Label text="#DOTA_Loadout_Equip" />
+						</Button>
+					</Panel>
+				</Panel>
+			</Panel>
+			<Panel class="BottomDash" />
+			<Panel id="ControlsContainer" class="VerticalCenter HorizontalCenter" hittest="false">
+				<Button id="RandomizeButton" class="ButtonPrimary DarkGrey VerticalCenter" onactivate="DOTASetPreviewRandomizeSet()" onmouseover="UIShowTextTooltip( &apos;#DOTA_Loadout_RandomizeSetDescription&apos; )" onmouseout="UIHideTextTooltip()">
+					<Label text="#DOTA_Loadout_RandomizeSet" />
+				</Button>
+				<DemoModeButton id="DemoHeroButton" class="VerticalCenter" category="#DOTA_HeroLoadout_HeroFilterName" onactivate="DOTASetPreviewDemoHero()" />
+			</Panel>
+		</Panel>
+	</DOTASetPreviewControls>
+</root>

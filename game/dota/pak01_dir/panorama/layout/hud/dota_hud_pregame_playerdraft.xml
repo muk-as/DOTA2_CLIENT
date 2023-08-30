@@ -15,7 +15,7 @@
 				<Panel class="DraftPlayerBackground" />
 				<Panel class="DraftPlayerInfo" hittestchildren="false">
 					<DOTAAvatarImage id="Avatar" class="DraftPlayerAvatar" />
-					<DOTARankBadge id="Badge" class="DraftPlayerBadge" />
+					<DOTARankBadge id="Badge" class="DraftPlayerBadge" suppress-tooltip="true" />
 					<Label class="DraftPlayerName" text="{s:name}" />
 					<Label class="DraftPlayerPersona" html="true" text="{g:dota_persona:nl:nt:nc:account_id}" />
 				</Panel>
@@ -33,7 +33,7 @@
 						<Label class="DraftPlayerRoleText Role0" text="#DOTA_LaneSelectionSafelane" />
 						<Label class="DraftPlayerRoleText Role2" text="#DOTA_LaneSelectionMidlane" />
 						<Label class="DraftPlayerRoleText Role1" text="#DOTA_LaneSelectionOfflane" />
-						<Label class="DraftPlayerRoleText Role3" text="#DOTA_LaneSelectionSoftSupport" />
+						<Label class="DraftPlayerRoleText Role3" text="#DOTA_LaneSelectionSupport" />
 						<Label class="DraftPlayerRoleText Role4" text="#DOTA_LaneSelectionHardSupport" />
 						<Label class="DraftPlayerRoleText None" text="#DOTA_PlayerDraft_PreferredRole_None" />
 					</Panel>
@@ -65,7 +65,7 @@
 		<Panel class="PDIntro" hittestchildren="false">
 			<Panel class="PDIntroBadgeContainer">
 				<DOTAScenePanel class="PDIntroParticles" map="scenes/item_received" camera="shot_camera" particleonly="true" />
-				<DOTARankBadge id="PDIntroBadge" class="RankTier8" />
+				<DOTARankBadge id="PDIntroBadge" class="RankTier8" suppress-tooltip="true" />
 			</Panel>
 			<Label class="PDIntroTitle" text="#DOTA_PlayerDraft_Title" />
 			<Panel class="PDIntroDash" />
@@ -86,7 +86,7 @@
 			<DOTAScenePanel class="PDVsParticleBurst" map="scenes/item_received" camera="shot_camera" particleonly="true" />
 			<Panel id="RadiantCaptain" class="PDCaptain PDCaptain__Radiant" hittestchildren="false">
 				<DOTAAvatarImage id="Avatar" class="PDCaptainAvatar" />
-				<DOTARankBadge id="Badge" class="PDCaptainBadge" />
+				<DOTARankBadge id="Badge" class="PDCaptainBadge" suppress-tooltip="true" />
 				<Label class="PDCaptainName" text="{s:captain_name}" />
 				<Label class="PDCaptainPersona" html="true" text="{g:dota_persona:nl:nt:nc:captain_account_id}" />
 				<Panel class="LocalPlayerBadge Captain">
@@ -95,7 +95,7 @@
 			</Panel>
 			<Panel id="DireCaptain" class="PDCaptain PDCaptain__Dire" hittestchildren="false">
 				<DOTAAvatarImage id="Avatar" class="PDCaptainAvatar" />
-				<DOTARankBadge id="Badge" class="PDCaptainBadge" />
+				<DOTARankBadge id="Badge" class="PDCaptainBadge" suppress-tooltip="true" />
 				<Label class="PDCaptainName" text="{s:captain_name}" />
 				<Label class="PDCaptainPersona" html="true" text="{g:dota_persona:nl:nt:nc:captain_account_id}" />
 				<Panel class="LocalPlayerBadge Captain">
@@ -115,7 +115,10 @@
 			<Label class="PDBottomText PlayerOnly BodyLarge HorizontalCenter" html="true" text="#DOTA_PlayerDraft_Intro_Player_Desc" />
 		</Panel>
 		<Panel class="PDDraft">
-			<Panel id="PlayerList" class="PDPlayers" />
+			<Panel class="PDPlayers">
+				<Panel id="PlayerList" class="PDPlayerList" />
+				<Label class="PDRecommendInstructions HorizontalCenter BodySmall InGameOnly" text="#DOTA_PlayerDraft_RecommendInstructions" />
+			</Panel>
 			<Panel id="PickOrder" class="PDPickSequence">
 				<Panel class="PickSequenceItem Radiant Picked">
 					<Panel class="Top" />
@@ -153,8 +156,9 @@
 				</Panel>
 			</Panel>
 			<Panel class="PDDraftBottom">
-				<Panel class="PDDraftPrefs PlayerOnly">
-					<Label class="PDBottomText BodyLarge HorizontalCenter" text="#DOTA_PlayerDraft_SelectPreferences" />
+				<Panel class="PDDraftPrefs InGameOnly">
+					<Label class="PDBottomText LabelSelectPrefs HorizontalCenter NotPickedOnly" text="#DOTA_PlayerDraft_SelectPreferredTeamRole" />
+					<Label class="PDBottomText LabelSelectPrefs HorizontalCenter PickedOnly" text="#DOTA_PlayerDraft_SelectPreferredRole" />
 					<Panel class="PDDraftPrefsButtons">
 						<Panel class="PDDraftPrefsTeam NotPickedOnly">
 							<ToggleButton id="PreferTeamRadiant" class="PDDraftPrefsButton Radiant" text="#DOTA_PlayerDraft_RadiantTeam" onactivate="PregamePlayerDraftToggleTeam(2)" />
@@ -170,7 +174,7 @@
 							<ToggleButton id="PreferRole1" class="PDDraftPrefsButton Role1" onactivate="PregamePlayerDraftToggleRole(1)" onmouseover="UIShowTextTooltip( #DOTA_LaneSelectionOfflane )" onmouseout="UIHideTextTooltip()">
 								<Panel class="RoleImage" />
 							</ToggleButton>
-							<ToggleButton id="PreferRole3" class="PDDraftPrefsButton Role3" onactivate="PregamePlayerDraftToggleRole(3)" onmouseover="UIShowTextTooltip( #DOTA_LaneSelectionSoftSupport )" onmouseout="UIHideTextTooltip()">
+							<ToggleButton id="PreferRole3" class="PDDraftPrefsButton Role3" onactivate="PregamePlayerDraftToggleRole(3)" onmouseover="UIShowTextTooltip( #DOTA_LaneSelectionSupport )" onmouseout="UIHideTextTooltip()">
 								<Panel class="RoleImage" />
 							</ToggleButton>
 							<ToggleButton id="PreferRole4" class="PDDraftPrefsButton Role4" onactivate="PregamePlayerDraftToggleRole(4)" onmouseover="UIShowTextTooltip( #DOTA_LaneSelectionHardSupport )" onmouseout="UIHideTextTooltip()">
@@ -178,7 +182,6 @@
 							</ToggleButton>
 						</Panel>
 					</Panel>
-					<Label class="PDRecommendInstructions HorizontalCenter BodySmall" text="#DOTA_PlayerDraft_RecommendInstructions" />
 				</Panel>
 			</Panel>
 		</Panel>

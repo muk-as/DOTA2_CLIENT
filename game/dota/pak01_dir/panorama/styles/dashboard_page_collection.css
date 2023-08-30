@@ -1,0 +1,4567 @@
+@import  url( "s2r://panorama/styles/collection_shared.vcss_c");
+
+ @define FooterHeight: 144px;
+ @define QuickSearchFadeOutTime: 1.5s;
+ @define ViewerListTransitionDuration: 0.3s;
+
+ @define StickerSize_Large: 228px;
+
+ DOTACollectionPage,DOTACollectionPageHeroes,DOTACollectionPageGlobal,DOTACollectionPageGlobalWorldItems,DOTACollectionPageGlobalInterfaceItems,DOTACollectionPageTreasury,DOTACollectionPageShards,DOTACollectionPageBrowse,DOTACollectionPageBundles,DOTACollectionPageFeatured{
+
+
+
+
+
+
+
+
+
+     width: 100%;
+     height: 100%;
+     background-image: url( "s2r://panorama/images/backgrounds/generic_hero_background_png.vtex");
+     background-size: cover;
+     max-width: 2560px;
+     horizontal-align: center;
+ }
+
+ DOTACollectionPageShards{
+     background-image: url( "s2r://panorama/images/dota_plus/dota_plus_background_texture_large_png.vtex");
+ }
+
+ #SelectedHeroNameContainer{
+     flow-children: down;
+ }
+
+ #MainContentContainer{
+     width: 100%;
+     height: 100%;
+ }
+     .PopupBackgroundBlur #MainContentContainer{
+         blur: gaussian( 5 );
+         wash-color: #657b7baa;
+         saturation: 0.25;
+     }
+
+
+ #CollectionContent{
+
+     flow-children: right;
+     horizontal-align: center;
+     width: 100%;
+     max-width: 2088px;
+     height: 100%;
+     margin: 0px 60px;
+     padding-top: 130px;
+ }
+     #DOTACollectionPageFeatured #CollectionContent{
+         padding-top: 60px;
+     }
+
+     #DOTACollectionPageShards #CollectionContent{
+         padding-top: 90px;
+     }
+
+     .AspectRatio16x10 #CollectionContent{
+         margin: 0px 60px 0px 32px;
+     }
+
+
+ #ControlGroup{
+
+     height: 100%;
+     width: 300px;
+     margin-right: 32px;
+
+
+
+
+
+     flow-children: down;
+     horizontal-align: left;
+     vertical-align: center;
+ }
+     .AspectRatio16x10 #ControlGroup{
+         width:
+                
+                280px
+         ;
+     }
+ #HideUnplayedHeroesCheck{
+     ignore-parent-flow:
+                         
+                         true
+     ;
+     vertical-align:
+                     
+                     bottom
+     ;
+     margin-bottom:
+                    
+                    110px
+     ;
+     padding:
+              
+              8px
+                  
+                  12px
+     ;
+  background-color:
+                    
+                    #09121ef7
+  ;
+  border:
+          
+          1px
+              
+              solid
+                    
+                    rgb
+                       (
+                        0,
+                           
+                           0,
+                              
+                              0
+                               )
+  ;
+  border-radius:
+                 
+                 4px
+  ;
+     box-shadow:
+                 
+                 0px
+                     
+                     4px
+                         
+                         12px
+                              
+                              rgba
+                                  (
+                                   0,
+                                      
+                                      0,
+                                         
+                                         0,
+                                            
+                                            0.4
+                                               )
+     ;
+     opacity:
+              
+              0
+     ;
+     transform:
+                
+                translateY
+                          (
+                            
+                            12px
+                                 
+                                 )
+     ;
+     transition-property:
+                          
+                          opacity,
+                                   
+                                   transform
+     ;
+     transition-duration:
+                          
+                          0.2s
+     ;
+     transition-timing-function:
+                                 
+                                 cubic-bezier
+                                             (
+                                              0,
+                                                 
+                                                 0.9,
+                                                      
+                                                      0,
+                                                         
+                                                         0.9
+                                                            )
+     ;
+     visibility:
+                 
+                 collapse
+     ;
+ }
+     .CollectionGroup_Heroes #HideUnplayedHeroesCheck{
+         visibility:
+                     
+                     visible
+         ;
+     }
+ #ControlGroup:hover #HideUnplayedHeroesCheck{
+     transform:
+                
+                none
+     ;
+ }
+ #CollectionControlHeader{
+     width:
+            
+            100%
+     ;
+     margin:
+             
+             8px
+                 
+                 0px
+     ;
+ }
+ #CollectionControlBody{
+     width:
+            
+            100%
+     ;
+ }
+ #CosmeticTypeTabs{
+     vertical-align:
+                     
+                     center
+     ;
+     horizontal-align:
+                       
+                       center
+     ;
+     visibility:
+                 
+                 collapse
+     ;
+ }
+ .CollectionGroup_Heroes #CosmeticTypeTabs{
+     visibility:
+                 
+                 visible
+     ;
+ }
+ #ViewerGroup{
+     width:
+            
+            1470px
+     ;
+     height:
+             
+             100%
+     ;
+     horizontal-align:
+                       
+                       left
+     ;
+     vertical-align:
+                     
+                     center
+     ;
+     flow-children:
+                    
+                    down
+     ;
+ }
+     .AspectRatio16x10 #ViewerGroup{
+         width:
+                
+                1324px
+         ;
+     }
+     .AspectRatio21x9 #ViewerGroup{
+         width:
+                
+                1680px
+         ;
+     }
+     .CollectionGroup_Heroes.Items #ViewerGroup,.CollectionTab_Couriers #ViewerGroup,.CollectionTab_Wards #ViewerGroup,.CollectionTab_Terrain #ViewerGroup,.CollectionTab_Creeps #ViewerGroup,.CollectionTab_TowersRadiant #ViewerGroup,.CollectionTab_Emblems #ViewerGroup,.CollectionTab_Roshan #ViewerGroup,.CollectionTab_Treasures #ViewerGroup,.CollectionTab_Tormentor #ViewerGroup{
+         width:
+                
+                848px
+         ;
+     }
+         .AspectRatio16x10 .CollectionGroup_Heroes.Items #ViewerGroup,.AspectRatio16x10 .CollectionTab_Couriers #ViewerGroup,.AspectRatio16x10 .CollectionTab_Wards #ViewerGroup,.AspectRatio16x10 .CollectionTab_Terrain #ViewerGroup,.AspectRatio16x10 .CollectionTab_Creeps #ViewerGroup,.AspectRatio16x10 .CollectionTab_TowersRadiant #ViewerGroup,.AspectRatio16x10 .CollectionTab_Emblems #ViewerGroup,.AspectRatio16x10 .CollectionTab_Roshan #ViewerGroup,.AspectRatio16x10 .CollectionTab_Treasures #ViewerGroup,.AspectRatio16x10 .CollectionTab_Tormentor #ViewerGroup{
+             width:
+                    
+                    848px
+             ;
+         }
+         .AspectRatio21x9 .CollectionGroup_Heroes.Items #ViewerGroup,.AspectRatio21x9 .CollectionTab_Couriers #ViewerGroup,.AspectRatio21x9 .CollectionTab_Wards #ViewerGroup,.AspectRatio21x9 .CollectionTab_Terrain #ViewerGroup,.AspectRatio21x9 .CollectionTab_Creeps #ViewerGroup,.AspectRatio21x9 .CollectionTab_TowersRadiant #ViewerGroup,.AspectRatio21x9 .CollectionTab_Emblems #ViewerGroup,.AspectRatio21x9 .CollectionTab_Roshan #ViewerGroup,.AspectRatio21x9 .CollectionTab_Treasures #ViewerGroup,.AspectRatio21x9 .CollectionTab_Tormentor #ViewerGroup{
+             width:
+                    
+                    1054px
+             ;
+         }
+     .CollectionTab_Exclusive #ViewerGroup,.CollectionTab_Legacy #ViewerGroup{
+         width:
+                
+                956px
+         ;
+     }
+         .AspectRatio16x10 .CollectionTab_Exclusive #ViewerGroup,.AspectRatio16x10 .CollectionTab_Legacy #ViewerGroup{
+             width:
+                    
+                    956px
+             ;
+         }
+         .AspectRatio21x9 .CollectionTab_Exclusive #ViewerGroup,.AspectRatio21x9 .CollectionTab_Legacy #ViewerGroup{
+             width:
+                    
+                    1188px
+             ;
+         }
+ .TitleGroup{
+     width:
+            
+            100%
+     ;
+     margin:
+             
+             8px
+                 
+                 0px
+                     
+                     12px
+     ;
+     flow-children:
+                    
+                    right
+     ;
+ }
+ .CollectionGroup_Global.CollectionTab_Stickers .TitleGroupLeft,.CollectionGroup_Global.CollectionTab_ChatWheel .TitleGroupLeft{
+     width:
+            
+            100%
+     ;
+ }
+ .TitleGroupControls{
+     flow-children:
+                    
+                    right
+     ;
+     vertical-align:
+                     
+                     center
+     ;
+     horizontal-align:
+                       
+                       right
+     ;
+     visibility:
+                 
+                 collapse
+     ;
+ }
+ .TitleGroupControlsContainer{
+     vertical-align:
+                     
+                     center
+     ;
+     horizontal-align:
+                       
+                       right
+     ;
+     flow-children:
+                    
+                    right
+     ;
+ }
+ .CollectionGroup_Heroes.Items #HeroItemsTitleGroupControls,.CollectionGroup_Treasury #TreasuryTitleGroupControls,.CollectionGroup_Global #GlobalItemsTitleGroupControls,.CollectionGroup_Shards:not(.ChatWheel) #ShardsTitleGroupControls,.CollectionGroup_Global.CollectionTab_Stickers #StickersTitleGroupControls{
+     visibility:
+                 
+                 visible
+     ;
+ }
+ .CollectionGroup_Global.CollectionTab_Stickers #GlobalItemsTitleGroupControls,.CollectionGroup_Global.CollectionTab_ChatWheel #GlobalItemsTitleGroupControls{
+     visibility:
+                 
+                 collapse
+     ;
+ }
+ #CustomToggleButton{
+     visibility:
+                 
+                 collapse
+     ;
+ }
+ .CollectionGroup_Heroes.Sets #CustomToggleButton{
+     visibility:
+                 
+                 visible
+     ;
+ }
+ .CollectionGroup_Treasury.CollectionTab_Keys #UnavailableToggleButton,.CollectionGroup_Treasury.CollectionTab_Charms #UnavailableToggleButton,.CollectionGroup_Global.CollectionTab_Stickers #OwnedToggleButton,.CollectionGroup_Global.CollectionTab_Stickers #AvailableToggleButton,.CollectionGroup_Global.CollectionTab_Stickers #UnavailableToggleButton,.CollectionGroup_Global.CollectionTab_Stickers #UnavailableInfoIcon,.CollectionGroup_Global.CollectionTab_ChatWheel #UnavailableToggleButton{
+     visibility:
+                 
+                 collapse
+     ;
+ }
+ .CollectionGroup_Shards #Filters,.CollectionGroup_Global.CollectionTab_Stickers #Filters,.CollectionGroup_Global.CollectionTab_ChatWheel #Filters{
+     visibility:
+                 
+                 collapse
+     ;
+ }
+ .TitleGroupControlsLabel{
+     vertical-align:
+                     
+                     center
+     ;
+     margin-right:
+                   
+                   8px
+     ;
+     margin-left:
+                  
+                  8px
+     ;
+ }
+ .GroupByDropDown,.SortByDropDown,.FilterByDropDown{
+     width:
+            
+            180px
+     ;
+ }
+ .CollectionGroup_Shards #ItemsGroupTitle,.CollectionGroup_Browse.GroupByNone #ItemsGroupTitle,.CollectionGroup_Global.CollectionTab_ChatWheel #ItemsGroupTitle{
+     visibility:
+                 
+                 collapse
+     ;
+ }
+ #CollectionViewerBody{
+     width:
+            
+            100%
+     ;
+     height:
+             
+             100%
+     ;
+ }
+ #SceneActionsContainer{
+     horizontal-align:
+                       
+                       center
+     ;
+     vertical-align:
+                     
+                     bottom
+     ;
+     flow-children:
+                    
+                    down
+     ;
+     width:
+            
+            600px
+     ;
+     margin-bottom:
+                    
+                    16px
+     ;
+     visibility:
+                 
+                 collapse
+     ;
+ }
+     #SceneActionsContainer .Dash{
+         width:
+                
+                100%
+         ;
+         height:
+                 
+                 1px
+         ;
+         vertical-align:
+                         
+                         center
+         ;
+         opacity:
+                  
+                  0.02
+         ;
+         margin:
+                 
+                 12px
+                      
+                      0px
+         ;
+         background-color:
+                           
+                           gradient
+                                   (
+                                     
+                                     linear,
+                                             
+                                             0%
+                                                
+                                                0%,
+                                                    
+                                                    100%
+                                                         
+                                                         0%,
+                                                             
+                                                             from
+                                                                 (
+                                                                   
+                                                                   #FFFFFF00
+                                                                             
+                                                                             )
+                                                                              ,
+                                                                                
+                                                                                color-stop
+                                                                                          (
+                                                                                            
+                                                                                            0.3,
+                                                                                                 
+                                                                                                 #ffffff
+                                                                                                         
+                                                                                                         )
+                                                                                                          ,
+                                                                                                            
+                                                                                                            color-stop
+                                                                                                                      (
+                                                                                                                        
+                                                                                                                        0.7,
+                                                                                                                             
+                                                                                                                             #ffffff
+                                                                                                                                     
+                                                                                                                                     )
+                                                                                                                                      ,
+                                                                                                                                        
+                                                                                                                                        to
+                                                                                                                                          (
+                                                                                                                                            
+                                                                                                                                            #FFFFFF00
+                                                                                                                                                      
+                                                                                                                                                      )
+                                                                                                                                                        
+                                                                                                                                                        )
+         ;
+     }
+     #SceneActionsContainer Button{
+         min-width:
+                    
+                    160px
+         ;
+         margin:
+                 
+                 0px
+                     
+                     4px
+         ;
+     }
+     .CollectionGroup_Heroes #SceneActionsContainer{
+         visibility:
+                     
+                     visible
+         ;
+     }
+ #LargeModelLoadout{
+     visibility:
+                 
+                 collapse
+     ;
+ }
+ #SceneGroup{
+     width:
+            
+            100%
+     ;
+     height:
+             
+             100%
+     ;
+     transition-property:
+                          
+                          transform,
+                                     
+                                     opacity
+     ;
+     transition-duration:
+                          
+                          0.6s
+     ;
+     transition-delay:
+                       
+                       0.1s
+     ;
+     transition-timing-function:
+                                 
+                                 cubic-bezier
+                                             (
+                                               
+                                               0.5,
+                                                    
+                                                    0,
+                                                       
+                                                       0,
+                                                          
+                                                          1
+                                                            
+                                                            )
+     ;
+     opacity:
+              
+              0
+     ;
+     transform:
+                
+                translateX
+                          (
+                            
+                            650px
+                                  
+                                  )
+     ;
+ }
+     .AspectRatio16x10 #SceneGroup{
+         margin:
+                 
+                 20px
+                      
+                      0px
+         ;
+         transform:
+                    
+                    translateX
+                              (
+                                
+                                628px
+                                      
+                                      )
+         ;
+     }
+     .AspectRatio21x9 #SceneGroup{
+         transform:
+                    
+                    translateX
+                              (
+                                
+                                930px
+                                      
+                                      )
+         ;
+     }
+     .CollectionGroup_Heroes #SceneGroup,.CollectionTab_Couriers #SceneGroup,.CollectionTab_Creeps #SceneGroup,.CollectionTab_CreepsDire #SceneGroup,.CollectionTab_CreepsRadiant #SceneGroup,.CollectionTab_Emblems #SceneGroup,.CollectionTab_Roshan #SceneGroup,.CollectionTab_Tormentor #SceneGroup,.CollectionTab_SiegeCreepsDire #SceneGroup,.CollectionTab_SiegeCreepsRadiant #SceneGroup,.CollectionTab_Terrain #SceneGroup,.CollectionTab_TowersRadiant #SceneGroup,.CollectionTab_TowersDire #SceneGroup,.CollectionTab_Wards #SceneGroup,.CollectionTab_Exclusive #SceneGroup,.CollectionTab_Legacy #SceneGroup,.CollectionTab_Treasures #SceneGroup{
+         opacity:
+                  
+                  1
+         ;
+         transform:
+                    
+                    translateX
+                              (
+                                
+                                600px
+                                      
+                                      )
+         ;
+         transition-duration:
+                              
+                              0.1s
+         ;
+         transition-timing-function:
+                                     
+                                     ease-in
+         ;
+         transition-delay:
+                           
+                           0s
+         ;
+     }
+         .AspectRatio16x10 .CollectionGroup_Heroes #SceneGroup,.AspectRatio16x10 .CollectionTab_Couriers #SceneGroup,.AspectRatio16x10 .CollectionTab_Creeps #SceneGroup,.AspectRatio16x10 .CollectionTab_CreepsDire #SceneGroup,.AspectRatio16x10 .CollectionTab_CreepsRadiant #SceneGroup,.AspectRatio16x10 .CollectionTab_Emblems #SceneGroup,.AspectRatio16x10 .CollectionTab_Roshan #SceneGroup,.AspectRatio16x10 .CollectionTab_Tormentor #SceneGroup,.AspectRatio16x10 .CollectionTab_SiegeCreepsDire #SceneGroup,.AspectRatio16x10 .CollectionTab_SiegeCreepsRadiant #SceneGroup,.AspectRatio16x10 .CollectionTab_Terrain #SceneGroup,.AspectRatio16x10 .CollectionTab_TowersRadiant #SceneGroup,.AspectRatio16x10 .CollectionTab_TowersDire #SceneGroup,.AspectRatio16x10 .CollectionTab_Wards #SceneGroup,.AspectRatio16x10 .CollectionTab_Exclusive #SceneGroup,.AspectRatio16x10 .CollectionTab_Legacy #SceneGroup,.AspectRatio16x10 .CollectionTab_Treasures #SceneGroup{
+             transform:
+                        
+                        translateX
+                                  (
+                                    
+                                    570px
+                                          
+                                          )
+             ;
+         }
+         .AspectRatio21x9 .CollectionGroup_Heroes #SceneGroup,.AspectRatio21x9 .CollectionTab_Couriers #SceneGroup,.AspectRatio21x9 .CollectionTab_Creeps #SceneGroup,.AspectRatio21x9 .CollectionTab_CreepsDire #SceneGroup,.AspectRatio21x9 .CollectionTab_CreepsRadiant #SceneGroup,.AspectRatio21x9 .CollectionTab_Emblems #SceneGroup,.AspectRatio21x9 .CollectionTab_Roshan #SceneGroup,.AspectRatio21x9 .CollectionTab_Tormentor #SceneGroup,.AspectRatio21x9 .CollectionTab_SiegeCreepsDire #SceneGroup,.AspectRatio21x9 .CollectionTab_SiegeCreepsRadiant #SceneGroup,.AspectRatio21x9 .CollectionTab_Terrain #SceneGroup,.AspectRatio21x9 .CollectionTab_TowersRadiant #SceneGroup,.AspectRatio21x9 .CollectionTab_TowersDire #SceneGroup,.AspectRatio21x9 .CollectionTab_Wards #SceneGroup,.AspectRatio21x9 .CollectionTab_Exclusive #SceneGroup,.AspectRatio21x9 .CollectionTab_Legacy #SceneGroup,.AspectRatio21x9 .CollectionTab_Treasures #SceneGroup{
+             transform:
+                        
+                        translateX
+                                  (
+                                    
+                                    780px
+                                          
+                                          )
+             ;
+         }
+     #DOTACollectionPageShards #SceneGroup{
+         margin-left:
+                      
+                      100px
+         ;
+     }
+         .AspectRatio21x9 #DOTACollectionPageShards #SceneGroup{
+             margin-left:
+                          
+                          -40px
+             ;
+         }
+     #SceneGroup #CollectionSceneBody{
+         width:
+                
+                100%
+         ;
+         height:
+                 
+                 100%
+         ;
+         margin:
+                 
+                 30px
+                      
+                      0px
+                          
+                          50px
+         ;
+         horizontal-align:
+                           
+                           center
+         ;
+         vertical-align:
+                         
+                         center
+         ;
+         opacity-mask:
+                       
+                       url(
+                            "s2r://panorama/images/masks/hero_model_preview_mask_psd.vtex"
+                       )
+         ;
+     }
+         .CollectionTab_Exclusive #SceneGroup #CollectionSceneBody,.CollectionTab_Legacy #SceneGroup #CollectionSceneBody,.CollectionTab_Terrain #SceneGroup #CollectionSceneBody{
+             width:
+                    
+                    100%
+             ;
+         }
+         #SceneGroup #CollectionSceneBody #LargeModelPreview,#SceneGroup #CollectionSceneBody #LargeModelLoadout{
+             width:
+                    
+                    100%
+             ;
+             height:
+                     
+                     100%
+             ;
+             horizontal-align:
+                               
+                               center
+             ;
+             vertical-align:
+                             
+                             center
+             ;
+         }
+     #SceneGroup #SetPreviewControls{
+         vertical-align:
+                         
+                         bottom
+         ;
+         visibility:
+                     
+                     collapse
+         ;
+     }
+         #DOTACollectionPageHeroes #SceneGroup #SetPreviewControls{
+             visibility:
+                         
+                         visible
+             ;
+         }
+     #SceneGroup #TreasurePreview{
+         width:
+                
+                100%
+         ;
+         height:
+                 
+                 100%
+         ;
+         horizontal-align:
+                           
+                           center
+         ;
+         vertical-align:
+                         
+                         center
+         ;
+         visibility:
+                     
+                     collapse
+         ;
+     }
+         .CollectionTab_Treasures #SceneGroup #TreasurePreview{
+             visibility:
+                         
+                         visible
+             ;
+         }
+ .ViewerContainer{
+     width:
+            
+            100%
+     ;
+     height:
+             
+             100%
+     ;
+     flow-children:
+                    
+                    down
+     ;
+     margin-bottom:
+                    
+                    120px
+     ;
+     background-color:
+                       
+                       ItemsContainerBackgroundGradient
+     ;
+     box-shadow:
+                 
+                 0px
+                     
+                     28px
+                          
+                          120px
+                                
+                                -8px
+                                     
+                                     rgba
+                                         (
+                                          0,
+                                             
+                                             0,
+                                                
+                                                0,
+                                                   
+                                                   0.4
+                                                      )
+     ;
+ }
+     .AspectRatio21x9 .ViewerContainer{
+         margin-bottom:
+                        
+                        92px
+         ;
+     }
+ #ViewLoadoutButton{
+     ignore-parent-flow:
+                         
+                         true
+     ;
+     margin-right:
+                   
+                   60px
+     ;
+  margin-top:
+              
+              137px
+  ;
+     horizontal-align:
+                       
+                       right
+     ;
+     opacity:
+              
+              0
+     ;
+     transition-property:
+                          
+                          opacity
+     ;
+  transition-duration:
+                       
+                       0.2s
+  ;
+ }
+  .CollectionGroup_Heroes #ViewLoadoutButton{
+   opacity:
+            
+            1
+   ;
+  }
+ RadioButton{
+     margin-right:
+                   
+                   12px
+     ;
+ }
+     RadioButton .RadioBox{
+         vertical-align:
+                         
+                         center
+         ;
+     }
+     RadioButton Label{
+         margin-bottom:
+                        
+                        3px
+         ;
+     }
+ #CollectionTracker{
+     flow-children:
+                    
+                    down
+     ;
+     vertical-align:
+                     
+                     center
+     ;
+     margin-top:
+                 
+                 -1px
+     ;
+     visibility:
+                 
+                 collapse
+     ;
+ }
+     .CollectionGroup_Heroes.Sets #CollectionTracker{
+         visibility:
+                     
+                     visible
+         ;
+     }
+     #CollectionTracker .CollectionTitle{
+         horizontal-align:
+                           
+                           right
+         ;
+         margin-bottom:
+                        
+                        4px
+         ;
+         text-shadow:
+                      
+                      0px
+                          
+                          1px
+                              
+                              4px
+                                  
+                                  rgba
+                                      (
+                                       0,
+                                          
+                                          0,
+                                             
+                                             0,
+                                                
+                                                0.3
+                                                   )
+         ;
+     }
+     #CollectionTracker #CollectionPipsContainer{
+         flow-children:
+                        
+                        right
+         ;
+         horizontal-align:
+                           
+                           right
+         ;
+         padding:
+                  
+                  0px
+                      
+                      3px
+         ;
+         overflow:
+                   
+                   noclip
+         ;
+         width:
+                
+                fit-children
+         ;
+         max-width:
+                    
+                    240px
+         ;
+     }
+         #CollectionTracker #CollectionPipsContainer .CollectionPip{
+             width:
+                    
+                    fill-parent-flow
+                                    (
+                                     1
+                                      )
+             ;
+             max-width:
+                        
+                        16px
+             ;
+             height:
+                     
+                     8px
+             ;
+             margin-left:
+                          
+                          2px
+             ;
+             transform:
+                        
+                        skew
+                            (
+                              
+                              -15deg
+                                     
+                                     )
+             ;
+         }
+             #CollectionTracker #CollectionPipsContainer .CollectionPip.Unowned{
+                 background-color:
+                                   
+                                   rgba
+                                       (
+                                        0,
+                                           
+                                           0,
+                                              
+                                              0,
+                                                 
+                                                 0.7
+                                                    )
+                 ;
+                 border:
+                         
+                         1px
+                             
+                             solid
+                                   
+                                   rgba
+                                       (
+                                        222,
+                                             
+                                             231,
+                                                  
+                                                  255,
+                                                       
+                                                       0.08
+                                                           )
+                 ;
+             }
+             #CollectionTracker #CollectionPipsContainer .CollectionPip.Owned{
+                 background-color:
+                                   
+                                   gradient
+                                           (
+                                             
+                                             linear,
+                                                     
+                                                     0%
+                                                        
+                                                        0%,
+                                                            
+                                                            0%
+                                                               
+                                                               90%,
+                                                                    
+                                                                    from
+                                                                        (
+                                                                          
+                                                                          #d7e2eb
+                                                                                  
+                                                                                  )
+                                                                                   ,
+                                                                                     
+                                                                                     to
+                                                                                       (
+                                                                                         
+                                                                                         #7d898f
+                                                                                                 
+                                                                                                 )
+                                                                                                   
+                                                                                                   )
+                 ;
+                 border:
+                         
+                         1px
+                             
+                             solid
+                                   
+                                   rgb
+                                      (
+                                       0,
+                                          
+                                          0,
+                                             
+                                             0
+                                              )
+                 ;
+                 z-index:
+                          
+                          1
+                 ;
+                 animation-name:
+                                 
+                                 PulseCollectionPip
+                 ;
+                 animation-duration:
+                                     
+                                     1.0s
+                 ;
+                 animation-direction:
+                                      
+                                      alternate
+                 ;
+                 animation-iteration-count:
+                                            
+                                            infinite
+                 ;
+             }
+ @keyframes 'PulseCollectionPip'{
+  0%{
+         box-shadow:
+                     
+                     0px
+                         
+                         0px
+                             
+                             16px
+                                  
+                                  #73ABFF11
+         ;
+         brightness:
+                     
+                     1
+         ;
+  }
+  100%{
+         box-shadow:
+                     
+                     0px
+                         
+                         0px
+                             
+                             16px
+                                  
+                                  #73ABFF44
+         ;
+         brightness:
+                     
+                     3
+         ;
+  }
+ }
+ #ShuffleAllButton{
+     margin-right:
+                   
+                   -1px
+     ;
+     vertical-align:
+                     
+                     center
+     ;
+     margin-right:
+                   
+                   -1px
+     ;
+     height:
+             
+             32px
+     ;
+     padding-top:
+                  
+                  0px
+     ;
+     padding-bottom:
+                     
+                     0px
+     ;
+     border-radius:
+                    
+                    3px
+                        
+                        0px
+                            
+                            0px
+                                
+                                3px
+     ;
+     opacity:
+              
+              0
+     ;
+     transform:
+                
+                translateX
+                          (
+                            
+                            4px
+                                
+                                )
+     ;
+     transition-property:
+                          
+                          opacity,
+                                   
+                                   transform
+     ;
+     transition-timing-function:
+                                 
+                                 ease-out
+     ;
+     transition-duration:
+                          
+                          0.1s
+     ;
+ }
+     #ShuffleAllButton:hover{
+         z-index:
+                  
+                  1
+         ;
+     }
+     .CollectionGroup_Global.ShuffleAvailable.ShuffleEnabled #ShuffleAllButton{
+         opacity:
+                  
+                  1
+         ;
+         transform:
+                    
+                    none
+         ;
+     }
+     .AllItemsInShuffle #ShuffleAllButton{
+         background-color:
+                           
+                           gradient
+                                   (
+                                     
+                                     linear,
+                                             
+                                             0%
+                                                
+                                                -0%,
+                                                     
+                                                     0%
+                                                        
+                                                        120%,
+                                                              
+                                                              from
+                                                                  (
+                                                                    
+                                                                    #53607183
+                                                                              
+                                                                              )
+                                                                               ,
+                                                                                 
+                                                                                 to
+                                                                                   (
+                                                                                     
+                                                                                     #21242f86
+                                                                                               
+                                                                                               )
+                                                                                                 
+                                                                                                 )
+         ;
+     }
+         .AllItemsInShuffle #ShuffleAllButton Label{
+             color:
+                    
+                    white
+             ;
+             padding:
+                      
+                      0px
+                          
+                          8px
+             ;
+             margin-left:
+                          
+                          -8px
+             ;
+             margin-right:
+                           
+                           -8px
+             ;
+             text-shadow:
+                          
+                          0px
+                              
+                              0px
+                                  
+                                  12px
+                                       
+                                       rgba
+                                           (
+                                            153,
+                                                 
+                                                 194,
+                                                      
+                                                      255,
+                                                           
+                                                           1
+                                                            )
+             ;
+         }
+     #ShuffleAllButton Image{
+         margin-right:
+                       
+                       8px
+         ;
+     }
+ .ViewerListContainer{
+     width:
+            
+            100%
+     ;
+     height:
+             
+             100%
+     ;
+     opacity:
+              
+              0
+     ;
+     transition-property:
+                          
+                          opacity
+     ;
+     transition-duration:
+                          
+                          ViewerListTransitionDuration
+     ;
+ }
+     .ViewerListContainer.IsVisible{
+         opacity:
+                  
+                  1
+         ;
+     }
+ .ViewerList{
+     flow-children:
+                    
+                    down
+     ;
+     width:
+            
+            100%
+     ;
+     height:
+             
+             100%
+     ;
+     overflow:
+               
+               squish
+                      
+                      scroll
+     ;
+     padding:
+              
+              12px
+                   
+                   8px
+                       
+                       12px
+                            
+                            12px
+     ;
+     box-shadow:
+                 
+                 inset
+                       
+                       0px
+                           
+                           1px
+                               
+                               0px
+                                   
+                                   rgba
+                                       (
+                                        238,
+                                             
+                                             245,
+                                                  
+                                                  255,
+                                                       
+                                                       0.02
+                                                           )
+     ;
+ }
+     .ViewerList VerticalScrollBar{
+         opacity:
+                  
+                  0
+         ;
+         margin:
+                 
+                 0px
+                     
+                     0px
+                         
+                         0px
+         ;
+     }
+         .ViewerList:hover VerticalScrollBar{
+             opacity:
+                      
+                      1
+             ;
+         }
+ #ControlSearch{
+     width:
+            
+            fill-parent-flow
+                            (
+                              
+                              1.0
+                                  
+                                  )
+     ;
+     margin-bottom:
+                    
+                    4px
+     ;
+     margin-top:
+                 
+                 8px
+     ;
+     visibility:
+                 
+                 collapse
+     ;
+ }
+     .CollectionGroup_Heroes #ControlSearch,.CollectionGroup_Browse #ControlSearch{
+         visibility:
+                     
+                     visible
+         ;
+     }
+     #ControlSearch TextEntry{
+         width:
+                
+                100%
+         ;
+         background-color:
+                           
+                           black
+         ;
+         border-radius:
+                        
+                        4px
+         ;
+         border:
+                 
+                 0px
+         ;
+         background-color:
+                           
+                           #D2E2FF11
+         ;
+         height:
+                 
+                 fit-children
+         ;
+         padding:
+                  
+                  8px
+         ;
+         transition-property:
+                              
+                              border,
+                                      
+                                      background-color
+         ;
+         transition-duration:
+                              
+                              0.15s
+         ;
+     }
+         #ControlSearch TextEntry Label{
+             font-weight:
+                          
+                          normal
+             ;
+             margin-top:
+                         
+                         1px
+             ;
+             color:
+                    
+                    rgba
+                        (
+                         255,
+                              
+                              255,
+                                   
+                                   255,
+                                        
+                                        0.4
+                                           )
+             ;
+             transition-property:
+                                  
+                                  color
+             ;
+             transition-duration:
+                                  
+                                  0.1s
+             ;
+         }
+         #ControlSearch TextEntry:hover{
+             background-color:
+                               
+                               #d2e2ff22
+             ;
+         }
+     #ControlSearch #SearchButton{
+         visibility:
+                     
+                     visible
+         ;
+         background-image:
+                           
+                           url(
+                                "s2r://panorama/images/control_icons/icon_search_png.vtex"
+                           )
+         ;
+         background-repeat:
+                            
+                            no-repeat
+         ;
+         background-size:
+                          
+                          contain
+         ;
+         width:
+                
+                24px
+         ;
+         height:
+                 
+                 24px
+         ;
+         vertical-align:
+                         
+                         middle
+         ;
+         margin:
+                 
+                 0px
+                     
+                     8px
+         ;
+         margin-left:
+                      
+                      2px
+         ;
+         horizontal-align:
+                           
+                           right
+         ;
+         opacity:
+                  
+                  0.2
+         ;
+     }
+     #ControlSearch #ClearButton{
+         visibility:
+                     
+                     collapse
+         ;
+         background-image:
+                           
+                           url(
+                                "s2r://panorama/images/control_icons/x_close_filled_png.vtex"
+                           )
+         ;
+         background-repeat:
+                            
+                            no-repeat
+         ;
+         background-size:
+                          
+                          contain
+         ;
+         width:
+                
+                20px
+         ;
+         height:
+                 
+                 20px
+         ;
+         vertical-align:
+                         
+                         middle
+         ;
+         margin:
+                 
+                 0px
+                     
+                     8px
+         ;
+         margin-left:
+                      
+                      2px
+         ;
+         horizontal-align:
+                           
+                           right
+         ;
+         opacity:
+                  
+                  0.2
+         ;
+         transition-property:
+                              
+                              opacity,
+                                       
+                                       transform
+         ;
+         transition-duration:
+                              
+                              0.1s
+         ;
+     }
+         #ControlSearch #ClearButton:hover{
+             opacity:
+                      
+                      0.8
+             ;
+         }
+         #ControlSearch #ClearButton:active{
+             transform:
+                        
+                        scale3d
+                               (
+                                0.9,
+                                     
+                                     0.9,
+                                          
+                                          1
+                                           )
+             ;
+             opacity:
+                      
+                      0.6
+             ;
+         }
+         #ControlSearch.IsSearching #SearchButton{
+             visibility:
+                         
+                         collapse
+             ;
+         }
+         #ControlSearch.IsSearching #ClearButton{
+             visibility:
+                         
+                         visible
+             ;
+         }
+         #ControlSearch.IsSearching TextEntry{
+             border-color:
+                           
+                           #555555
+             ;
+             background-color:
+                               
+                               gradient
+                                       (
+                                         
+                                         linear,
+                                                 
+                                                 0%
+                                                    
+                                                    0%,
+                                                        
+                                                        0%
+                                                           
+                                                           100%,
+                                                                 
+                                                                 from
+                                                                     (
+                                                                       
+                                                                       #111111FF
+                                                                                 
+                                                                                 )
+                                                                                  ,
+                                                                                    
+                                                                                    to
+                                                                                      (
+                                                                                        
+                                                                                        #222222FF
+                                                                                                  
+                                                                                                  )
+                                                                                                    
+                                                                                                    )
+             ;
+         }
+ #CollectionTabGroups{
+     width:
+            
+            100%
+     ;
+     flow-children:
+                    
+                    down
+     ;
+     overflow:
+               
+               squish
+                      
+                      scroll
+     ;
+     opacity-mask:
+                   
+                   url(
+                        "s2r://panorama/images/masks/scrolling_side_nav_mask_psd.vtex"
+                   )
+     ;
+     padding-top:
+                  
+                  8px
+     ;
+     padding-bottom:
+                     
+                     FooterHeight
+     ;
+ }
+         #CollectionTabGroups:hover VerticalScrollBar{
+             opacity:
+                      
+                      0.3
+             ;
+         }
+     #CollectionTabGroups VerticalScrollBar{
+         margin:
+                 
+                 12px
+                      
+                      0px
+                          
+                          FooterHeight
+                                       
+                                       0px
+         ;
+         opacity:
+                  
+                  0
+         ;
+         transition-property:
+                              
+                              opacity,
+                                       
+                                       transform
+         ;
+         transition-duration:
+                              
+                              0.1s
+         ;
+     }
+     #CollectionTabGroups .CollectionTabGroup{
+         flow-children:
+                        
+                        down
+         ;
+         width:
+                
+                100%
+         ;
+         padding-bottom:
+                         
+                         12px
+         ;
+     }
+         #CollectionTabGroups .CollectionTabGroup #CollectionTabGroupName{
+             vertical-align:
+                             
+                             center
+             ;
+             text-shadow:
+                          
+                          0px
+                              
+                              1px
+                                  
+                                  4px
+                                      
+                                      black
+             ;
+             padding:
+                      
+                      6px
+                          
+                          12px
+             ;
+             width:
+                    
+                    100%
+             ;
+             transition-property:
+                                  
+                                  height,
+                                          
+                                          opacity
+             ;
+             transition-duration:
+                                  
+                                  0.2s
+             ;
+             opacity:
+                      
+                      1
+             ;
+             height:
+                     
+                     30px
+             ;
+         }
+             #CollectionTabGroups .CollectionTabGroup #CollectionTabGroupName:not(.FirstTabGroup){
+                 border-top:
+                             
+                             1px
+                                 
+                                 solid
+                                       
+                                       white
+                 ;
+                 border-brush:
+                               
+                               gradient
+                                       (
+                                         
+                                         linear,
+                                                 
+                                                 50%
+                                                     
+                                                     0%,
+                                                         
+                                                         80%
+                                                             
+                                                             0%,
+                                                                 
+                                                                 from
+                                                                     (
+                                                                       
+                                                                       #FFFFFF08
+                                                                                 
+                                                                                 )
+                                                                                  ,
+                                                                                    
+                                                                                    to
+                                                                                      (
+                                                                                        
+                                                                                        #FFFFFF00
+                                                                                                  
+                                                                                                  )
+                                                                                                    
+                                                                                                    )
+                 ;
+             }
+             .CollectionGroup_Heroes #CollectionTabGroups .CollectionTabGroup #CollectionTabGroupName{
+                 height:
+                         
+                         0px
+                 ;
+                 opacity:
+                          
+                          0
+                 ;
+             }
+             #CollectionTabGroups .CollectionTabGroup.HasNew #CollectionTabGroupName,#CollectionTabGroups .CollectionTabGroup.LetterTabGroup #CollectionTabGroupName{
+                 opacity:
+                          
+                          1
+                 ;
+                 height:
+                         
+                         30px
+                 ;
+             }
+         #CollectionTabGroups .CollectionTabGroup #CollectionTabs{
+             flow-children:
+                            
+                            down
+             ;
+             width:
+                    
+                    100%
+             ;
+         }
+     .TabItem:selected{
+         sound:
+                
+                "ui_generic_button_click"
+         ;
+     }
+ .CategorySelectionPanel{
+     width:
+            
+            100%
+     ;
+     flow-children:
+                    
+                    right
+     ;
+     padding:
+              
+              8px
+                  
+                  12px
+     ;
+     transition-property:
+                          
+                          background-color
+     ;
+     transition-duration:
+                          
+                          0s
+     ;
+ }
+     .CategorySelectionPanel .CategoryName{
+         vertical-align:
+                         
+                         center
+         ;
+         text-shadow:
+                      
+                      0px
+                          
+                          1px
+                              
+                              4px
+                                  
+                                  black
+         ;
+         width:
+                
+                80%
+         ;
+         text-overflow:
+                        
+                        shrink
+         ;
+         line-height:
+                      
+                      1
+         ;
+         transition-property:
+                              
+                              color
+         ;
+         transition-duration:
+                              
+                              0.1s
+         ;
+         margin-left:
+                      
+                      12px
+         ;
+     }
+     .CategorySelectionPanel #CategoryImage{
+         vertical-align:
+                         
+                         center
+         ;
+         width:
+                
+                20px
+         ;
+         height:
+                 
+                 20px
+         ;
+         wash-color:
+                     
+                     LighterGrey
+         ;
+         img-shadow:
+                     
+                     0px
+                         
+                         1px
+                             
+                             4px
+                                 
+                                 black
+         ;
+         transition-property:
+                              
+                              wash-color
+         ;
+         transition-duration:
+                              
+                              0.1s
+         ;
+     }
+     .CategorySelectionPanel #Count{
+         margin-left:
+                      
+                      2px
+         ;
+         vertical-align:
+                         
+                         center
+         ;
+         font-weight:
+                      
+                      normal
+         ;
+         opacity:
+                  
+                  0.5
+         ;
+         line-height:
+                      
+                      1
+         ;
+         height:
+                 
+                 24px
+         ;
+     }
+     .CategorySelectionPanel #PlusLogo{
+         height:
+                 
+                 24px
+         ;
+         visibility:
+                     
+                     collapse
+         ;
+     }
+     .CategorySelectionPanel.DotaPlusOnly #PlusLogo{
+         visibility:
+                     
+                     visible
+         ;
+     }
+     .CategorySelectionPanel:hover{
+         background-color:
+                           
+                           gradient
+                                   (
+                                     
+                                     linear,
+                                             
+                                             0%
+                                                
+                                                0%,
+                                                    
+                                                    95%
+                                                        
+                                                        0%,
+                                                            
+                                                            from
+                                                                (
+                                                                  
+                                                                  #96d5ff09
+                                                                            
+                                                                            )
+                                                                             ,
+                                                                               
+                                                                               to
+                                                                                 (
+                                                                                   
+                                                                                   #ffffff00
+                                                                                             
+                                                                                             )
+                                                                                               
+                                                                                               )
+         ;
+         transition-duration:
+                              
+                              0.1s
+         ;
+     }
+         #DOTACollectionPageShards .CategorySelectionPanel:hover{
+             background-color:
+                               
+                               gradient
+                                       (
+                                         
+                                         linear,
+                                                 
+                                                 0%
+                                                    
+                                                    0%,
+                                                        
+                                                        95%
+                                                            
+                                                            0%,
+                                                                
+                                                                from
+                                                                    (
+                                                                      
+                                                                      dotaPlusGold
+                                                                                  &
+                                                                                   11
+                                                                                      
+                                                                                      )
+                                                                                       ,
+                                                                                         
+                                                                                         to
+                                                                                           (
+                                                                                             
+                                                                                             #E5B55000
+                                                                                                       
+                                                                                                       )
+                                                                                                         
+                                                                                                         )
+             ;
+         }
+         .CategorySelectionPanel:hover #CategoryName{
+             color:
+                    
+                    LightestGrey
+             ;
+         }
+         .CategorySelectionPanel:hover #CategoryImage{
+             wash-color:
+                         
+                         LightestGrey
+             ;
+         }
+     .CategorySelectionPanel.Active{
+         background-color:
+                           
+                           gradient
+                                   (
+                                     
+                                     linear,
+                                             
+                                             0%
+                                                
+                                                0%,
+                                                    
+                                                    95%
+                                                        
+                                                        0%,
+                                                            
+                                                            from
+                                                                (
+                                                                  
+                                                                  #b4e1ff14
+                                                                            
+                                                                            )
+                                                                             ,
+                                                                               
+                                                                               to
+                                                                                 (
+                                                                                   
+                                                                                   #ffffff00
+                                                                                             
+                                                                                             )
+                                                                                               
+                                                                                               )
+         ;
+     }
+         #DOTACollectionPageShards .CategorySelectionPanel.Active{
+             background-color:
+                               
+                               gradient
+                                       (
+                                         
+                                         linear,
+                                                 
+                                                 0%
+                                                    
+                                                    0%,
+                                                        
+                                                        95%
+                                                            
+                                                            0%,
+                                                                
+                                                                from
+                                                                    (
+                                                                      
+                                                                      #E5B55022
+                                                                                
+                                                                                )
+                                                                                 ,
+                                                                                   
+                                                                                   to
+                                                                                     (
+                                                                                       
+                                                                                       #E5B55000
+                                                                                                 
+                                                                                                 )
+                                                                                                   
+                                                                                                   )
+             ;
+         }
+         .CategorySelectionPanel.Active #CategoryName{
+             color:
+                    
+                    white
+             ;
+             animation-name:
+                             
+                             GlowTextBright
+             ;
+    animation-duration:
+                        
+                        1s
+    ;
+    animation-iteration-count:
+                               
+                               infinite
+    ;
+    animation-timing-function:
+                               
+                               ease-in-out
+    ;
+    animation-direction:
+                         
+                         alternate-reverse
+    ;
+         }
+         .CategorySelectionPanel.Active #CategoryImage{
+             wash-color:
+                         
+                         white
+             ;
+             img-shadow:
+                         
+                         0px
+                             
+                             0px
+                                 
+                                 12px
+                                      
+                                      rgba
+                                          (
+                                           255,
+                                                
+                                                255,
+                                                     
+                                                     255,
+                                                          
+                                                          0.1
+                                                              
+                                                              )
+             ;
+         }
+     .CategorySelectionPanel:active{
+         sound:
+                
+                "ui_generic_button_click"
+         ;
+     }
+ .HeroSelectionPanel{
+     width:
+            
+            100%
+     ;
+     flow-children:
+                    
+                    right
+     ;
+     padding:
+              
+              6px
+     ;
+     transition-property:
+                          
+                          background-color,
+                                            
+                                            height,
+                                                    
+                                                    opacity
+     ;
+     transition-duration:
+                          
+                          0s,
+                              
+                              0.2s
+     ;
+ }
+     .HeroSelectionPanel #HeroName{
+         margin-left:
+                      
+                      12px
+         ;
+         vertical-align:
+                         
+                         center
+         ;
+         text-shadow:
+                      
+                      0px
+                          
+                          1px
+                              
+                              4px
+                                  
+                                  black
+         ;
+         text-overflow:
+                        
+                        shrink
+         ;
+         line-height:
+                      
+                      1
+         ;
+         margin-top:
+                     
+                     -1px
+         ;
+         max-width:
+                    
+                    89%
+         ;
+         transition-property:
+                              
+                              color
+         ;
+         transition-duration:
+                              
+                              0.1s
+         ;
+     }
+         .HeroSelectionPanel #HeroName .Count{
+             font-weight:
+                          
+                          normal
+             ;
+             color:
+                    
+                    LightGrey
+             ;
+         }
+     .HeroSelectionPanel #HeroImage{
+         vertical-align:
+                         
+                         center
+         ;
+         width:
+                
+                28px
+         ;
+         height:
+                 
+                 28px
+         ;
+     }
+     .HeroSelectionPanel #SetCount{
+         vertical-align:
+                         
+                         center
+         ;
+         font-weight:
+                      
+                      normal
+         ;
+         opacity:
+                  
+                  0.5
+         ;
+         margin-top:
+                     
+                     -1px
+         ;
+         height:
+                 
+                 24px
+         ;
+         visibility:
+                     
+                     collapse
+         ;
+     }
+     .HeroSelectionPanel:hover{
+         background-color:
+                           
+                           gradient
+                                   (
+                                     
+                                     linear,
+                                             
+                                             0%
+                                                
+                                                0%,
+                                                    
+                                                    95%
+                                                        
+                                                        0%,
+                                                            
+                                                            from
+                                                                (
+                                                                  
+                                                                  #96d5ff09
+                                                                            
+                                                                            )
+                                                                             ,
+                                                                               
+                                                                               to
+                                                                                 (
+                                                                                   
+                                                                                   #ffffff00
+                                                                                             
+                                                                                             )
+                                                                                               
+                                                                                               )
+         ;
+         transition-duration:
+                              
+                              0.1s
+         ;
+     }
+         .HeroSelectionPanel:hover #HeroName{
+             color:
+                    
+                    LightestGrey
+             ;
+         }
+             .HeroSelectionPanel:hover #HeroName .Count{
+                 color:
+                        
+                        LighterGrey
+                 ;
+             }
+     .HeroSelectionPanel.Active{
+         background-color:
+                           
+                           gradient
+                                   (
+                                     
+                                     linear,
+                                             
+                                             0%
+                                                
+                                                0%,
+                                                    
+                                                    95%
+                                                        
+                                                        0%,
+                                                            
+                                                            from
+                                                                (
+                                                                  
+                                                                  #b4e1ff14
+                                                                            
+                                                                            )
+                                                                             ,
+                                                                               
+                                                                               to
+                                                                                 (
+                                                                                   
+                                                                                   #ffffff00
+                                                                                             
+                                                                                             )
+                                                                                               
+                                                                                               )
+         ;
+     }
+         .HeroSelectionPanel.Active #HeroName{
+             color:
+                    
+                    white
+             ;
+             animation-name:
+                             
+                             GlowTextBright
+             ;
+    animation-duration:
+                        
+                        1s
+    ;
+    animation-iteration-count:
+                               
+                               infinite
+    ;
+    animation-timing-function:
+                               
+                               ease-in-out
+    ;
+    animation-direction:
+                         
+                         alternate-reverse
+    ;
+         }
+             .HeroSelectionPanel.Active #HeroName .Count{
+                 color:
+                        
+                        white
+                 ;
+             }
+     .HeroSelectionPanel:active{
+         sound:
+                
+                "ui_generic_button_click"
+         ;
+     }
+     .NewItemsTabGroup .HeroSelectionPanel{
+         height:
+                 
+                 0px
+         ;
+         opacity:
+                  
+                  0
+         ;
+     }
+         .NewItemsTabGroup .HeroSelectionPanel.HasNew{
+             height:
+                     
+                     40px
+             ;
+             opacity:
+                      
+                      1
+             ;
+         }
+ .NewBadgeCount{
+     ignore-parent-flow:
+                         
+                         true
+     ;
+     vertical-align:
+                     
+                     center
+     ;
+     horizontal-align:
+                       
+                       right
+     ;
+     margin-right:
+                   
+                   4px
+     ;
+     box-shadow:
+                 
+                 0px
+                     
+                     0px
+                         
+                         24px
+                              
+                              #60ff8205
+     ;
+     visibility:
+                 
+                 collapse
+     ;
+ }
+     .NewBadgeCount Label{
+         font-weight:
+                      
+                      semi-bold
+         ;
+         text-shadow:
+                      
+                      0px
+                          
+                          2px
+                              
+                              6px
+                                  
+                                  rgb
+                                     (
+                                      0,
+                                         
+                                         0,
+                                            
+                                            0
+                                             )
+         ;
+         color:
+                
+                white
+         ;
+         background-color:
+                           
+                           #59B76E
+         ;
+         border-radius:
+                        
+                        40px
+         ;
+         padding:
+                  
+                  0px
+                      
+                      8px
+                          
+                          2px
+                              
+                              9px
+         ;
+         box-shadow:
+                     
+                     0px
+                         
+                         3px
+                             
+                             6px
+                                 
+                                 rgba
+                                     (
+                                      0,
+                                         
+                                         0,
+                                            
+                                            0,
+                                               
+                                               0.4
+                                                  )
+         ;
+     }
+     .NewBadgeCount.HasNew{
+         visibility:
+                     
+                     visible
+         ;
+     }
+ .ItemsGroupPanel,.BundlesGroupPanel{
+     width:
+            
+            100%
+     ;
+     flow-children:
+                    
+                    down
+     ;
+     padding-bottom:
+                     
+                     24px
+     ;
+ }
+ #ItemsGroupTitle{
+     width:
+            
+            100%
+     ;
+     flow-children:
+                    
+                    right
+     ;
+     margin-bottom:
+                    
+                    0px
+     ;
+     margin-left:
+                  
+                  6px
+     ;
+     vertical-align:
+                     
+                     center
+     ;
+ }
+     #ItemsGroupTitle #ItemsGroupName,#ItemsGroupTitle #ItemsGroupOwnedCount{
+         vertical-align:
+                         
+                         center
+         ;
+     }
+ #ItemsGrid{
+     width:
+            
+            100%
+     ;
+     min-height:
+                 
+                 100px
+     ;
+     flow-children:
+                    
+                    right-wrap
+     ;
+ }
+ .NoResultsMessage{
+     width:
+            
+            100%
+     ;
+     padding:
+              
+              32px
+                   
+                   0px
+                       
+                       64px
+     ;
+     border-bottom:
+                    
+                    1px
+                        
+                        solid
+                              
+                              white
+     ;
+     border-brush:
+                   
+                   gradient
+                           (
+                             
+                             linear,
+                                     
+                                     0%
+                                        
+                                        0%,
+                                            
+                                            100%
+                                                 
+                                                 0%,
+                                                     
+                                                     from
+                                                         (
+                                                           
+                                                           #FFFFFF00
+                                                                     
+                                                                     )
+                                                                      ,
+                                                                        
+                                                                        color-stop
+                                                                                  (
+                                                                                    
+                                                                                    0.05,
+                                                                                          
+                                                                                          #ffffff06
+                                                                                                    
+                                                                                                    )
+                                                                                                     ,
+                                                                                                       
+                                                                                                       color-stop
+                                                                                                                 (
+                                                                                                                   
+                                                                                                                   0.95,
+                                                                                                                         
+                                                                                                                         #ffffff06
+                                                                                                                                   
+                                                                                                                                   )
+                                                                                                                                    ,
+                                                                                                                                      
+                                                                                                                                      to
+                                                                                                                                        (
+                                                                                                                                          
+                                                                                                                                          #FFFFFF00
+                                                                                                                                                    
+                                                                                                                                                    )
+                                                                                                                                                      
+                                                                                                                                                      )
+     ;
+     margin-right:
+                   
+                   16px
+     ;
+     margin-top:
+                 
+                 12px
+     ;
+     flow-children:
+                    
+                    down
+     ;
+     visibility:
+                 
+                 collapse
+     ;
+ }
+     .NoResults .NoResultsMessage{
+         visibility:
+                     
+                     visible
+         ;
+     }
+     .NoResultsMessage Label{
+         horizontal-align:
+                           
+                           center
+         ;
+         color:
+                
+                LightGrey
+         ;
+         opacity:
+                  
+                  0.5
+         ;
+     }
+     .NoResultsMessage .NoResultsIcon{
+         width:
+                
+                64px
+         ;
+         height:
+                 
+                 64px
+         ;
+         background-image:
+                           
+                           url(
+                               "s2r://panorama/images/control_icons/armory_new_icon.svg"
+                           )
+         ;
+         background-size:
+                          
+                          contain
+         ;
+         background-position:
+                              
+                              center
+         ;
+         horizontal-align:
+                           
+                           center
+         ;
+         wash-color:
+                     
+                     LightGrey
+         ;
+         opacity:
+                  
+                  0.5
+         ;
+     }
+ .StickerEntry{
+     width:
+            
+            StickerSize_Large
+     ;
+     height:
+             
+             StickerSize_Large
+     ;
+     brightness:
+                 
+                 1
+     ;
+  transition-property:
+                       
+                       transform,
+                                  
+                                  brightness,
+                                              
+                                              box-shadow
+  ;
+  transition-duration:
+                       
+                       0.2s
+  ;
+  transition-timing-function:
+                              
+                              cubic-bezier
+                                          (
+                                           0,
+                                              
+                                              0.9,
+                                                   
+                                                   0,
+                                                      
+                                                      0.9
+                                                         )
+  ;
+ }
+  .StickerEntry:hover{
+   transform:
+              
+              scale3d
+                     (
+                      1.08,
+                            
+                            1.08,
+                                  
+                                  1
+                                   )
+   ;
+   brightness:
+               
+               1.5
+   ;
+  }
+ #CustomContentContainer{
+     width:
+            
+            100%
+     ;
+ }
+     #CustomContentContainer .CustomContent{
+         width:
+                
+                100%
+         ;
+         box-shadow:
+                     
+                     inset
+                           
+                           0px
+                               
+                               1px
+                                   
+                                   0px
+                                       
+                                       rgba
+                                           (
+                                            238,
+                                                 
+                                                 245,
+                                                      
+                                                      255,
+                                                           
+                                                           0.02
+                                                               )
+         ;
+         padding:
+                  
+                  8px
+                      
+                      20px
+         ;
+         visibility:
+                     
+                     collapse
+         ;
+     }
+ #StickersContent{
+     flow-children:
+                    
+                    right
+     ;
+ }
+     #StickersContent #StickersActionButton{
+         ignore-parent-flow:
+                             
+                             true
+         ;
+         horizontal-align:
+                           
+                           right
+         ;
+     }
+     .CollectionGroup_Global.CollectionTab_Stickers #StickersContent{
+         visibility:
+                     
+                     visible
+         ;
+     }
+ #EmoticonsContent{
+     flow-children:
+                    
+                    right
+     ;
+ }
+     #EmoticonsContent #EmoticonList{
+         width:
+                
+                fill-parent-flow
+                                (
+                                  
+                                  1
+                                    
+                                    )
+         ;
+         margin:
+                 
+                 0px
+                     
+                     12px
+         ;
+     }
+     .CollectionGroup_Global.CollectionTab_Emoticons #EmoticonsContent{
+         visibility:
+                     
+                     visible
+         ;
+     }
+ .NewItemBadgeDot{
+     ignore-parent-flow:
+                         
+                         true
+     ;
+     border-radius:
+                    
+                    50%
+     ;
+     vertical-align:
+                     
+                     center
+     ;
+     horizontal-align:
+                       
+                       right
+     ;
+     width:
+            
+            6px
+     ;
+     height:
+             
+             6px
+     ;
+     background-color:
+                       
+                       #59B76E
+     ;
+     margin-left:
+                  
+                  4px
+     ;
+     visibility:
+                 
+                 collapse
+     ;
+     animation-name:
+                     
+                     GlowNewItemBadgeDot
+     ;
+     animation-duration:
+                         
+                         1s
+     ;
+     animation-iteration-count:
+                                
+                                infinite
+     ;
+     animation-timing-function:
+                                
+                                ease-in-out
+     ;
+     animation-direction:
+                          
+                          alternate-reverse
+     ;
+ }
+ .HasNew .NewItemBadgeDot{
+     visibility:
+                 
+                 visible
+     ;
+ }
+ @keyframes 'GlowNewItemBadgeDot'{
+  0%{
+   box-shadow:
+               
+               0px
+                   
+                   0px
+                       
+                       8px
+                           
+                           #60ff8211
+   ;
+         brightness:
+                     
+                     1
+         ;
+  }
+  100%{
+   box-shadow:
+               
+               0px
+                   
+                   0px
+                       
+                       12px
+                            
+                            #60ff8244
+   ;
+         brightness:
+                     
+                     2
+         ;
+  }
+ }
+ #HeroesGroup{
+     visibility:
+                 
+                 collapse
+     ;
+ }
+     DOTACollectionPageHeroes #ViewerGroup,DOTACollectionPageHeroes #LargeModelPreview{
+         visibility:
+                     
+                     collapse
+         ;
+     }
+     DOTACollectionPageHeroes #HeroesGroup,DOTACollectionPageHeroes #LargeModelLoadout{
+         visibility:
+                     
+                     visible
+         ;
+     }
+ #HeroesGroup{
+     height:
+             
+             fill-parent-flow
+                             (
+                              1
+                               )
+     ;
+     flow-children:
+                    
+                    down
+     ;
+     margin-bottom:
+                    
+                    120px
+     ;
+     width:
+            
+            806px
+     ;
+ }
+     .AspectRatio21x9 #HeroesGroup{
+         width:
+                
+                1034px
+         ;
+     }
+     .AspectRatio16x10 #HeroesGroup{
+         width:
+                
+                806px
+         ;
+     }
+     #HeroesGroup #CosmeticPicker{
+         height:
+                 
+                 100%
+         ;
+         width:
+                
+                100%
+         ;
+     }
+ #FeaturedGroup{
+     visibility:
+                 
+                 collapse
+     ;
+ }
+ #DOTACollectionPageFeatured{
+     width:
+            
+            100%
+     ;
+     height:
+             
+             100%
+     ;
+ }
+     #DOTACollectionPageFeatured #ViewerGroup{
+         visibility:
+                     
+                     collapse
+         ;
+     }
+     #DOTACollectionPageFeatured #FeaturedGroup{
+         ignore-parent-flow:
+                             
+                             true
+         ;
+         width:
+                
+                1540px
+         ;
+         horizontal-align:
+                           
+                           center
+         ;
+         visibility:
+                     
+                     visible
+         ;
+         flow-children:
+                        
+                        down
+         ;
+         overflow:
+                   
+                   squish
+                          
+                          scroll
+         ;
+         padding:
+                  
+                  64px
+                       
+                       80px
+                            
+                            140px
+         ;
+     }
+         #DOTACollectionPageFeatured #FeaturedGroup VerticalScrollBar{
+             opacity:
+                      
+                      0
+             ;
+         }
+         #DOTACollectionPageFeatured #FeaturedGroup .FeaturedItemsCarousel{
+             width:
+                    
+                    100%
+             ;
+             flow-children:
+                            
+                            down
+             ;
+             margin-bottom:
+                            
+                            20px
+             ;
+             margin-right:
+                           
+                           -80px
+             ;
+         }
+             #DOTACollectionPageFeatured #FeaturedGroup .FeaturedItemsCarousel #FeaturedItemsHeader{
+                 width:
+                        
+                        100%
+                 ;
+                 padding-left:
+                               
+                               6px
+                 ;
+                 margin-right:
+                               
+                               80px
+                 ;
+             }
+             #DOTACollectionPageFeatured #FeaturedGroup .FeaturedItemsCarousel #FeaturedItemsSubheader{
+                 width:
+                        
+                        100%
+                 ;
+                 flow-children:
+                                
+                                right
+                 ;
+                 padding-left:
+                               
+                               6px
+                 ;
+                 margin-right:
+                               
+                               80px
+                 ;
+                 margin-top:
+                             
+                             -2px
+                 ;
+             }
+                 #DOTACollectionPageFeatured #FeaturedGroup .FeaturedItemsCarousel #FeaturedItemsSubheader #FeaturedItemsSubtitle{
+                     vertical-align:
+                                     
+                                     center
+                     ;
+                     margin-right:
+                                   
+                                   5px
+                     ;
+                 }
+                 #DOTACollectionPageFeatured #FeaturedGroup .FeaturedItemsCarousel #FeaturedItemsSubheader #FeaturedItemsHeroesList{
+                     flow-children:
+                                    
+                                    right
+                     ;
+                     vertical-align:
+                                     
+                                     center
+                     ;
+                 }
+                     #DOTACollectionPageFeatured #FeaturedGroup .FeaturedItemsCarousel #FeaturedItemsSubheader #FeaturedItemsHeroesList DOTAHeroImage{
+                         height:
+                                 
+                                 24px
+                         ;
+                         margin-left:
+                                      
+                                      4px
+                         ;
+                         margin-right:
+                                       
+                                       4px
+                         ;
+                         box-shadow:
+                                     
+                                     6px
+                                         
+                                         6px
+                                             
+                                             24px
+                                                  
+                                                  -8px
+                                                       
+                                                       rgba
+                                                           (
+                                                            0,
+                                                               
+                                                               0,
+                                                                  
+                                                                  0,
+                                                                     
+                                                                     0.8
+                                                                        )
+                         ;
+                     }
+             #DOTACollectionPageFeatured #FeaturedGroup .FeaturedItemsCarousel #FeaturedItemsListContainer{
+                 width:
+                        
+                        100%
+                 ;
+             }
+                 #DOTACollectionPageFeatured #FeaturedGroup .FeaturedItemsCarousel #FeaturedItemsListContainer .FeaturedItemsList{
+                     width:
+                            
+                            100%
+                     ;
+                     overflow:
+                               
+                               clip
+                     ;
+                     flow-children:
+                                    
+                                    right
+                     ;
+                     opacity-mask:
+                                   
+                                   url(
+                                        "s2r://panorama/images/masks/softedge_right_png.vtex"
+                                   )
+                     ;
+                 }
+                     #DOTACollectionPageFeatured #FeaturedGroup .FeaturedItemsCarousel #FeaturedItemsListContainer .FeaturedItemsList .CarouselPage{
+                      flow-children:
+                                     
+                                     right
+                      ;
+                      width:
+                             
+                             100%
+                      ;
+                         overflow:
+                                   
+                                   clip
+                         ;
+                      transition-property:
+                                           
+                                           position
+                      ;
+                      transition-duration:
+                                           
+                                           0.5s
+                      ;
+                     }
+                         #DOTACollectionPageFeatured #FeaturedGroup .FeaturedItemsCarousel #FeaturedItemsListContainer .FeaturedItemsList .CarouselPage DOTAEconItemAnimated.Unavailable:not(.Owned){
+                          opacity:
+                                   
+                                   1.0
+                          ;
+                          brightness:
+                                      
+                                      1.0
+                          ;
+                         }
+             #DOTACollectionPageFeatured #FeaturedGroup .FeaturedItemsCarousel .FeaturedItemsListNav{
+                 horizontal-align:
+                                   
+                                   right
+                 ;
+             }
+     #DOTACollectionPageFeatured #SceneGroup,#DOTACollectionPageFeatured .TitleGroup,#DOTACollectionPageFeatured #Filters,#DOTACollectionPageFeatured #ControlGroup{
+         visibility:
+                     
+                     collapse
+         ;
+     }
+ @define BundleRowMargin:
+                          
+                          2px
+ ;
+ @define BundleRowHeight:
+                          
+                          60px
+ ;
+ @define BundleItemIconSize:
+                             
+                             40px
+ ;
+ @define BundleNameColumnWidth:
+                                
+                                250px
+ ;
+ @define BundleRarityColumnWidth:
+                                  
+                                  150px
+ ;
+ @define BundleDateColumnWidth:
+                                
+                                150px
+ ;
+ @define BundleUnbundleColumnWidth:
+                                    
+                                    150px
+ ;
+ #DOTACollectionPageBundles{
+     width:
+            
+            100%
+     ;
+     height:
+             
+             100%
+     ;
+ }
+     #DOTACollectionPageBundles #BundlesGroupHeader{
+         width:
+                
+                100%
+         ;
+         height:
+                 
+                 40px
+         ;
+         flow-children:
+                        
+                        right
+         ;
+     }
+         #DOTACollectionPageBundles #BundlesGroupHeader .BundleHeader{
+             height:
+                     
+                     100%
+             ;
+             background-color:
+                               
+                               #191e20
+             ;
+             border:
+                     
+                     1px
+                         
+                         solid
+                               
+                               #ffffff06
+             ;
+         }
+         #DOTACollectionPageBundles #BundlesGroupHeader #BundleIconHeader{
+             width:
+                    
+                    BundleRowHeight
+             ;
+         }
+         #DOTACollectionPageBundles #BundlesGroupHeader #BundleNameHeader{
+             width:
+                    
+                    BundleNameColumnWidth
+             ;
+         }
+         #DOTACollectionPageBundles #BundlesGroupHeader #BundleItemsHeader{
+             width:
+                    
+                    fill-parent-flow
+                                    (
+                                      
+                                      1.0
+                                          
+                                          )
+             ;
+         }
+         #DOTACollectionPageBundles #BundlesGroupHeader #BundleRarityHeader{
+             width:
+                    
+                    BundleRarityColumnWidth
+             ;
+         }
+         #DOTACollectionPageBundles #BundlesGroupHeader #BundleDateHeader{
+             width:
+                    
+                    BundleDateColumnWidth
+             ;
+         }
+         #DOTACollectionPageBundles #BundlesGroupHeader #BundleUnbundleHeader{
+             width:
+                    
+                    BundleUnbundleColumnWidth
+             ;
+         }
+         #DOTACollectionPageBundles #BundlesGroupHeader Label{
+             margin-left:
+                          
+                          10px
+             ;
+             vertical-align:
+                             
+                             center
+             ;
+             text-transform:
+                             
+                             uppercase
+             ;
+         }
+     #DOTACollectionPageBundles #BundlesList{
+         width:
+                
+                100%
+         ;
+         min-height:
+                     
+                     100px
+         ;
+         flow-children:
+                        
+                        down
+         ;
+     }
+     #DOTACollectionPageBundles .Bundle{
+         width:
+                
+                100%
+         ;
+         height:
+                 
+                 BundleRowHeight
+         ;
+         flow-children:
+                        
+                        right
+         ;
+         background-color:
+                           
+                           #FFFFFF02
+         ;
+         margin-top:
+                     
+                     BundleRowMargin
+         ;
+         margin-bottom:
+                        
+                        BundleRowMargin
+         ;
+         transition-property:
+                              
+                              brightness,
+                                          
+                                          transform,
+                                                     
+                                                     background-color
+         ;
+      transition-duration:
+                           
+                           0.1s
+      ;
+     }
+         #DOTACollectionPageBundles .Bundle:hover{
+             transform:
+                        
+                        scale3d
+                               (
+                                 
+                                 1.002,
+                                        
+                                        1.01,
+                                              
+                                              1
+                                                
+                                                )
+             ;
+             background-color:
+                               
+                               #FFFFFF09
+             ;
+         }
+         #DOTACollectionPageBundles .Bundle #NewBorder{
+             width:
+                    
+                    100%
+             ;
+             height:
+                     
+                     100%
+             ;
+             border:
+                     
+                     1.2px
+                           
+                           solid
+                                 
+                                 winnerGreen
+             ;
+             opacity:
+                      
+                      0
+             ;
+             ignore-parent-flow:
+                                 
+                                 true
+             ;
+         }
+         #DOTACollectionPageBundles .Bundle.New #NewBorder{
+             opacity:
+                      
+                      0.1
+             ;
+             animation-name:
+                             
+                             GlowNew
+             ;
+             animation-duration:
+                                 
+                                 1s
+             ;
+             animation-iteration-count:
+                                        
+                                        infinite
+             ;
+             animation-timing-function:
+                                        
+                                        ease-in-out
+             ;
+             animation-direction:
+                                  
+                                  alternate-reverse
+             ;
+         }
+         #DOTACollectionPageBundles .Bundle #BundleIconContainer{
+             height:
+                     
+                     BundleRowHeight
+             ;
+             width:
+                    
+                    BundleRowHeight
+             ;
+             padding:
+                      
+                      5px
+             ;
+         }
+             #DOTACollectionPageBundles .Bundle #BundleIconContainer #BundleIcon{
+                 height:
+                         
+                         100%
+                 ;
+                 width:
+                        
+                        100%
+                 ;
+                 margin:
+                         
+                         0px
+                 ;
+                 border:
+                         
+                         0px
+                 ;
+             }
+         #DOTACollectionPageBundles .Bundle #BundleName{
+             width:
+                    
+                    BundleNameColumnWidth
+             ;
+             max-width:
+                        
+                        BundleNameColumnWidth
+             ;
+         }
+         #DOTACollectionPageBundles .Bundle #BundleUnbundleButtonContainer{
+             width:
+                    
+                    BundleUnbundleColumnWidth
+             ;
+             height:
+                     
+                     100%
+             ;
+             padding:
+                      
+                      15px
+             ;
+         }
+             #DOTACollectionPageBundles .Bundle #BundleUnbundleButtonContainer #BundleUnbundleButton{
+                 width:
+                        
+                        100%
+                 ;
+                 height:
+                         
+                         100%
+                 ;
+                 padding:
+                          
+                          0px
+                              
+                              15px
+                 ;
+             }
+         #DOTACollectionPageBundles .Bundle .BundleRowTextLabel{
+             font-size:
+                        
+                        17px
+             ;
+             font-weight:
+                          
+                          light
+             ;
+             padding-left:
+                           
+                           10px
+             ;
+         }
+         #DOTACollectionPageBundles .Bundle .BundleRowTextLabelWhite{
+             color:
+                    
+                    #e5e5e5
+             ;
+         }
+         #DOTACollectionPageBundles .Bundle #BundleRarity{
+             width:
+                    
+                    BundleRarityColumnWidth
+             ;
+         }
+         #DOTACollectionPageBundles .Bundle #BundleDate{
+             width:
+                    
+                    BundleDateColumnWidth
+             ;
+         }
+         #DOTACollectionPageBundles .Bundle #BundleItemsContainer{
+             flow-children:
+                            
+                            right
+             ;
+             width:
+                    
+                    fill-parent-flow
+                                    (
+                                      
+                                      1.0
+                                          
+                                          )
+             ;
+         }
+             #DOTACollectionPageBundles .Bundle #BundleItemsContainer .BundleItem{
+                 height:
+                         
+                         BundleItemIconSize
+                 ;
+                 width:
+                        
+                        BundleItemIconSize
+                 ;
+                 margin:
+                         
+                         4px
+                 ;
+             }
+                 #DOTACollectionPageBundles .Bundle #BundleItemsContainer .BundleItem #BundleItemIcon{
+                     width:
+                            
+                            100%
+                     ;
+                     height:
+                             
+                             100%
+                     ;
+                     border:
+                             
+                             0px
+                     ;
+                     margin:
+                             
+                             0px
+                     ;
+                 }
+     #DOTACollectionPageBundles .BundleCell{
+         vertical-align:
+                         
+                         center
+         ;
+     }
+     #DOTACollectionPageBundles #ViewerGroup{
+         width:
+                
+                70%
+         ;
+         horizontal-align:
+                           
+                           center
+         ;
+     }
+     #DOTACollectionPageBundles #ControlGroup,#DOTACollectionPageBundles #SceneGroup,#DOTACollectionPageBundles #Filters,#DOTACollectionPageBundles #ItemsGroupTitle{
+         visibility:
+                     
+                     collapse
+         ;
+     }
+ @keyframes 'GlowNew'{
+  0%{
+   brightness:
+               
+               1
+   ;
+   opacity:
+            
+            0.1
+   ;
+  }
+  100%{
+   brightness:
+               
+               5
+   ;
+   opacity:
+            
+            0.3
+   ;
+  }
+ }
+ #DOTACollectionPageFilters{
+     width:
+            
+            100%
+     ;
+     height:
+             
+             100%
+     ;
+ }
+     #DOTACollectionPageFilters #ComingSoon_Filters{
+         vertical-align:
+                         
+                         center
+         ;
+         horizontal-align:
+                           
+                           center
+         ;
+         flow-children:
+                        
+                        down
+         ;
+         width:
+                
+                600px
+         ;
+         visibility:
+                     
+                     visible
+         ;
+     }
+         #DOTACollectionPageFilters #ComingSoon_Filters Label{
+             text-align:
+                         
+                         center
+             ;
+             margin-bottom:
+                            
+                            24px
+             ;
+         }
+         #DOTACollectionPageFilters #ComingSoon_Filters .Screengrab{
+             width:
+                    
+                    600px
+             ;
+             box-shadow:
+                         
+                         0px
+                             
+                             16px
+                                  
+                                  64px
+                                       
+                                       rgba
+                                           (
+                                            0,
+                                               
+                                               0,
+                                                  
+                                                  0,
+                                                     
+                                                     0.3
+                                                        )
+             ;
+             border:
+                     
+                     1px
+                         
+                         solid
+                               
+                               rgba
+                                   (
+                                    255,
+                                         
+                                         255,
+                                              
+                                              255,
+                                                   
+                                                   0.1
+                                                      )
+             ;
+         }
+     #DOTACollectionPageFilters #SceneGroup,#DOTACollectionPageFilters #CollectionContent{
+         visibility:
+                     
+                     collapse
+         ;
+     }
+ #ViewHeroLoadout{
+     visibility:
+                 
+                 collapse
+     ;
+     margin-left:
+                  
+                  12px
+     ;
+ }
+ .ChatWheelEntry{
+  flow-children:
+                 
+                 down
+  ;
+  width:
+         
+         150px
+  ;
+  height:
+          
+          156px
+  ;
+  padding:
+           
+           12px
+  ;
+  padding-top:
+               
+               24px
+  ;
+  border:
+          
+          1px
+              
+              solid
+                    
+                    #262626
+  ;
+  background-color:
+                    
+                    #0009
+  ;
+ }
+     .PlusNotSubscriber .ChatWheelEntry{
+      opacity:
+               
+               0.1
+      ;
+     }
+ .ChatWheelEntry #ChatWheelPlayButton{
+  width:
+         
+         36px
+  ;
+  height:
+          
+          36px
+  ;
+  horizontal-align:
+                    
+                    center
+  ;
+  background-image:
+                    
+                    url(
+                         "s2r://panorama/images/hud/reborn/icon_scoreboard_mute_sound_psd.vtex"
+                    )
+  ;
+  background-size:
+                   
+                   contain
+  ;
+  background-position:
+                       
+                       center
+  ;
+  background-repeat:
+                     
+                     no-repeat
+  ;
+ }
+ .ChatWheelEntry #ChatWheelPlayButton:hover{
+  brightness:
+              
+              2.0
+  ;
+ }
+ .ChatWheelEntry #ChatWheelPlayButton:active{
+  brightness:
+              
+              1.5
+  ;
+ }
+ .ChatWheelEntry .ChatWheelLabel{
+  horizontal-align:
+                    
+                    center
+  ;
+  text-align:
+              
+              center
+  ;
+  color:
+         
+         white
+  ;
+  margin-top:
+              
+              12px
+  ;
+  height:
+          
+          22px
+  ;
+  text-overflow:
+                 
+                 shrink
+  ;
+ }
+ .DotaPlusPurchaseButton{
+  horizontal-align:
+                    
+                    center
+  ;
+  padding:
+           
+           4px
+               
+               0px
+                   
+                   2px
+                       
+                       0px
+  ;
+  width:
+         
+         124px
+  ;
+  border-top:
+              
+              1px
+                  
+                  solid
+                        
+                        #ffffff22
+  ;
+  border-left:
+               
+               1px
+                   
+                   solid
+                         
+                         #ffffff11
+  ;
+  border-right:
+                
+                1px
+                    
+                    solid
+                          
+                          #00000044
+  ;
+  border-bottom:
+                 
+                 1px
+                     
+                     solid
+                           
+                           #00000088
+  ;
+     background-color:
+                       
+                       gradient
+                               (
+                                 
+                                 linear,
+                                         
+                                         0%
+                                            
+                                            0%,
+                                                
+                                                0%
+                                                   
+                                                   100%,
+                                                         
+                                                         from
+                                                             (
+                                                               
+                                                               #433620
+                                                                       
+                                                                       )
+                                                                        ,
+                                                                          
+                                                                          to
+                                                                            (
+                                                                              
+                                                                              #141b21
+                                                                                      
+                                                                                      )
+                                                                                        
+                                                                                        )
+     ;
+ }
+ .DotaPlusPurchaseButton:hover{
+  brightness:
+              
+              2.0
+  ;
+ }
+ .DotaPlusPurchaseButton:active{
+  brightness:
+              
+              1.5
+  ;
+ }
+ .DotaPlusPurchaseButton Label{
+  margin-left:
+               
+               2px
+  ;
+  margin-right:
+                
+                4px
+  ;
+  color:
+         
+         dotaPlusLightGold
+  ;
+  font-weight:
+               
+               semibold
+  ;
+  font-size:
+             
+             16px
+  ;
+  padding:
+           
+           0px
+  ;
+ }
+ .ChatWheelEntry.AlreadyOwned .DotaPlusPurchaseButton{
+  visibility:
+              
+              collapse
+  ;
+ }
+ .DotaPlusPurchaseButton .ButtonCenter{
+  horizontal-align:
+                    
+                    center
+  ;
+  flow-children:
+                 
+                 right
+  ;
+ }
+ .DotaPlusPurchaseButton .DotaPlusCurrencyIcon{
+  width:
+         
+         20px
+  ;
+  height:
+          
+          20px
+  ;
+  transform:
+             
+             translateY
+                       (
+                         
+                         1px
+                             
+                             )
+  ;
+  background-image:
+                    
+                    dotaPlusCurrencySmallIcon
+  ;
+  background-size:
+                   
+                   contain
+  ;
+  background-position:
+                       
+                       center
+  ;
+  background-repeat:
+                     
+                     no-repeat
+  ;
+ }
+ .ChatWheelEntry .ChatWheelAlreadyOwnedLabel{
+  horizontal-align:
+                    
+                    center
+  ;
+  text-transform:
+                  
+                  uppercase
+  ;
+  color:
+         
+         dotaPlusGold
+  ;
+  letter-spacing:
+                  
+                  1px
+  ;
+  font-size:
+             
+             20px
+  ;
+  visibility:
+              
+              collapse
+  ;
+ }
+ .ChatWheelEntry.AlreadyOwned .ChatWheelAlreadyOwnedLabel{
+  visibility:
+              
+              visible
+  ;
+ }
+ #BrowseFiltersContainer{
+     visibility:
+                 
+                 collapse
+     ;
+ }
+     DOTACollectionPageBrowse #SceneGroup,DOTACollectionPageBrowse #ControlGroup,DOTACollectionPageBrowse #FiltersContainer{
+         visibility:
+                     
+                     collapse
+         ;
+     }
+     DOTACollectionPageBrowse #ViewerGroup{
+         width:
+                
+                1804px
+         ;
+     }
+         .AspectRatio16x10 DOTACollectionPageBrowse #ViewerGroup{
+             width:
+                    
+                    1636px
+             ;
+         }
+         .AspectRatio21x9 DOTACollectionPageBrowse #ViewerGroup{
+             width:
+                    
+                    2090px
+             ;
+         }
+     DOTACollectionPageBrowse #BrowseTitleGroupControls,DOTACollectionPageBrowse #Filters,DOTACollectionPageBrowse #BrowseFiltersContainer{
+         visibility:
+                     
+                     visible
+         ;
+     }
+ #CustomBackgrounds{
+     width:
+            
+            100%
+     ;
+     height:
+             
+             100%
+     ;
+     margin-top:
+                 
+                 60px
+     ;
+ }
+     #CustomBackgrounds .ShardShop_Background{
+         width:
+                
+                100%
+         ;
+         height:
+                 
+                 100%
+         ;
+         visibility:
+                     
+                     collapse
+         ;
+     }
+         #DOTACollectionPageShards #CustomBackgrounds .ShardShop_Background{
+             visibility:
+                         
+                         visible
+             ;
+         }
+ #ShardsTabDescriptionLabel{
+     font-weight:
+                  
+                  normal
+     ;
+     text-transform:
+                     
+                     none
+     ;
+     color:
+            
+            dotaPlusGold
+     ;
+     letter-spacing:
+                     
+                     -0.4px
+     ;
+     opacity:
+              
+              0.8
+     ;
+     text-shadow:
+                  
+                  0px
+                      
+                      2px
+                          
+                          8px
+                              
+                              black
+     ;
+     brightness:
+                 
+                 1.5
+     ;
+     visibility:
+                 
+                 collapse
+     ;
+ }
+     #DOTACollectionPageShards #ShardsTabDescriptionLabel{
+         visibility:
+                     
+                     visible
+         ;
+     }
+ #ShardShop_SummaryContainer{
+     width:
+            
+            100%
+     ;
+     flow-children:
+                    
+                    down
+     ;
+     visibility:
+                 
+                 collapse
+     ;
+     margin-bottom:
+                    
+                    24px
+     ;
+     transform:
+                
+                translateX
+                          (
+                            
+                            -20px
+                                  
+                                  )
+     ;
+ }
+     #DOTACollectionPageShards #ShardShop_SummaryContainer{
+         visibility:
+                     
+                     visible
+         ;
+     }
+     #ShardShop_SummaryContainer .ShardShopTitle{
+         color:
+                
+                white
+         ;
+         color:
+                
+                gradient
+                        (
+                          
+                          linear,
+                                  
+                                  0%
+                                     
+                                     100%,
+                                           
+                                           0%
+                                              
+                                              0%,
+                                                  
+                                                  from
+                                                      (
+                                                        
+                                                        #F8E8B9
+                                                                
+                                                                )
+                                                                 ,
+                                                                   
+                                                                   color-stop
+                                                                             (
+                                                                               
+                                                                               0.7,
+                                                                                    
+                                                                                    #E4C269
+                                                                                           )
+                                                                                            ,
+                                                                                              
+                                                                                              to
+                                                                                                (
+                                                                                                  
+                                                                                                  #C79123
+                                                                                                          
+                                                                                                          )
+                                                                                                            
+                                                                                                            )
+         ;
+         text-shadow:
+                      
+                      0px
+                          
+                          4px
+                              
+                              12px
+                                   
+                                   rgba
+                                       (
+                                        0,
+                                           
+                                           0,
+                                              
+                                              0,
+                                                 
+                                                 0.5
+                                                    )
+         ;
+         text-transform:
+                         
+                         none
+         ;
+         font-size:
+                    
+                    42px
+         ;
+         font-weight:
+                      
+                      normal
+         ;
+         letter-spacing:
+                         
+                         -0.6px
+         ;
+         text-align:
+                     
+                     center
+         ;
+         horizontal-align:
+                           
+                           center
+         ;
+         width:
+                
+                90%
+         ;
+     }
+     #ShardShop_SummaryContainer .DotaPlusLogoContainer{
+         width:
+                
+                100%
+         ;
+         height:
+                 
+                 width-percentage
+                                 (
+                                   
+                                   100%
+                                        
+                                        )
+         ;
+         horizontal-align:
+                           
+                           center
+         ;
+         margin-top:
+                     
+                     -20px
+         ;
+         margin-bottom:
+                        
+                        -60px
+         ;
+     }
+         #ShardShop_SummaryContainer .DotaPlusLogoContainer .PlusLogo{
+             width:
+                    
+                    100%
+             ;
+             height:
+                     
+                     100%
+             ;
+         }
+         #ShardShop_SummaryContainer .DotaPlusLogoContainer .PlusLogoShadow{
+             width:
+                    
+                    100%
+             ;
+             height:
+                     
+                     100%
+             ;
+             margin-top:
+                         
+                         24px
+             ;
+             wash-color:
+                         
+                         black
+             ;
+             blur:
+                   
+                   gaussian
+                           (
+                             
+                             16px
+                                  
+                                  )
+             ;
+             opacity:
+                      
+                      0.6
+             ;
+         }
+     #ShardShop_SummaryContainer .ShardShop_Dash{
+         width:
+                
+                80px
+         ;
+         height:
+                 
+                 1px
+         ;
+         background-color:
+                           
+                           dotaPlusGold
+         ;
+         horizontal-align:
+                           
+                           center
+         ;
+         margin-top:
+                     
+                     12px
+         ;
+         opacity:
+                  
+                  0.2
+         ;
+}

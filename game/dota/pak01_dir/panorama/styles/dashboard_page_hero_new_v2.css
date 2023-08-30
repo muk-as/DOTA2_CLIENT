@@ -1,0 +1,6198 @@
+@define HeroCustomiseSlideDuration:  0.5s;
+ @define Loadout_Heroes_SetTile_Width: 246px;
+ @define Loadout_Heroes_SetTile_Height: 373px;
+ @define Loadout_Heroes_ItemTile_Width: 185px;
+ @define Loadout_Heroes_ItemTile_Height: 232px;
+
+ DOTAHeroPageNewV2{
+
+  width: 100%;
+  height: 100%;
+  horizontal-align: center;
+ }
+
+ #HeroSceneGroup{
+  width: 100%;
+  height: 100%;
+  max-width: 1920px;
+  horizontal-align: center;
+  vertical-align: center;
+
+  opacity-mask: url( "s2r://panorama/images/masks/hero_model_preview_mask_loadout_psd.vtex");
+
+  overflow: noclip;
+
+  transition-property: blur, opacity, transform;
+  transition-duration: 0.3s, 0.3s, HeroCustomiseSlideDuration;
+  transition-timing-function: ease-out, ease-out, cubic-bezier(0, 1, 0, 1);
+ }
+  .SubTabProgressionTabContents #HeroSceneGroup,.SubTabStatsTabContents #HeroSceneGroup,.SubTabGuidesTabContents #HeroSceneGroup,.SubTabGlobalStatsContents #HeroSceneGroup,.SubTabAboutTabContents #HeroSceneGroup,.SubTabChangesTabContents #HeroSceneGroup{
+
+
+
+
+
+   blur: gaussian( 12px );
+   opacity: 0.05;
+  }
+
+  .EnableHeroCustomize #HeroSceneGroup{
+   transform: translateX( -500px ) translateY( -40px );
+  }
+
+  #HeroSceneGroup .FootRuler{
+   width: 100%;
+   height: 2px;
+
+   vertical-align: bottom;
+   margin-bottom: 170px;
+  }
+
+
+ #HeroSceneBody{
+  width: 100%;
+  height: 1020px;
+  horizontal-align: center;
+  margin-top: 60px;
+
+  transition-property: transform;
+  transition-duration: HeroCustomiseSlideDuration;
+  transition-timing-function: cubic-bezier(0, 1, 0, 1);
+ }
+  .FullscreenPage #HeroSceneBody{
+   transform: scale3d( 1.2, 1.2, 1 );
+  }
+
+
+
+  .Status_Unavailable #HeroSceneBody{
+   opacity: 0.8;
+  }
+
+
+ #FocusedHeroSetPreviewOverlay{
+  vertical-align: bottom;
+  horizontal-align: right;
+  margin-right: 68px;
+  margin-bottom: 20px;
+
+  transition-property: transform, opacity;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in;
+ }
+  .EnableHeroCustomize #FocusedHeroSetPreviewOverlay,.FullscreenPage #FocusedHeroSetPreviewOverlay{
+
+   transform: scale3d( 0.95, 0.95, 1) translateY( -4px );
+   opacity: 0;
+   transition-duration: 0.5s;
+   transition-delay: 0.3s;
+   transition-timing-function: cubic-bezier(0, 1, 0, 1);
+  }
+
+
+ #FocusedHeroSetPreview{
+  height: 100%;
+  width: 100%;
+
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+  transition-property: transform;
+  transition-duration: HeroCustomiseSlideDuration;
+  transition-timing-function: cubic-bezier(0, 1, 0, 1);
+ }
+
+
+  .Status_Unavailable #FocusedHeroSetPreview{
+   brightness: 0.3;
+   saturation: 0.8;
+  }
+
+
+ .CurrentSetInfoContainer{
+  flow-children: down;
+  horizontal-align: center;
+  vertical-align: bottom;
+
+
+  opacity: 0;
+  transform: translateY( 16px );
+
+  transition-property: transform, opacity;
+  transition-duration: 0.3s;
+  transition-delay: 0.5s;
+  transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
+ }
+  .EnableHeroCustomize .CurrentSetInfoContainer{
+   opacity: 1;
+   transform: none;
+
+   transition-duration: 0s;
+   transition-delay: 0s;
+  }
+
+  .CurrentSetInfoContainer .CurrentSetTitle{
+   margin: 4px 0px;
+  }
+
+  .CurrentSetInfoContainer Label{
+   horizontal-align: center;
+   margin-bottom: 2px;
+   color: white;
+  }
+
+  .EnableHeroCustomize .CurrentSetInfoContainer{
+   transform: none;
+   opacity: 1;
+  }
+
+
+ #SaveSetButton{
+  visibility: collapse;
+  horizontal-align: center;
+  margin-top: 8px;
+ }
+
+ .EnableSaveAsCustomSet #SaveSetButton{
+  visibility: visible;
+  opacity: 1;
+ }
+
+ .BackgroundShadow{
+  width: 80%;
+  height: 100%;
+
+  horizontal-align: center;
+  vertical-align: bottom;
+
+  ignore-parent-flow: true;
+  blur: gaussian( 12px );
+  background-color: gradient( radial, 50% 50%, 0% 0%, 50% 50%, from( rgba(0, 0, 0, 0.7) ), color-stop(0.6, rgba(0, 0, 0, 0.5)), to( rgba(0, 0, 0, 0) ) );
+ }
+  .BackgroundShadow.Short{
+   height: 300px;
+   margin-bottom: 36px;
+  }
+
+
+
+
+   .EnableHeroCustomize #HeroSceneGroup #HeroSetsCarousel .CarouselItem{
+    opacity: 0;
+   }
+
+
+
+ #HeroPageContent{
+     width: 100%;
+     height: 100%;
+  max-width: 1920px;
+  horizontal-align: center;
+
+  transition-property: blur, opacity;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-out;
+ }
+  .SubTabProgressionTabContents #HeroPageContent,.SubTabStatsTabContents #HeroPageContent,.SubTabGuidesTabContents #HeroPageContent,.SubTabGlobalStatsContents #HeroPageContent,.SubTabAboutTabContents #HeroPageContent,.SubTabChangesTabContents #HeroPageContent{
+
+
+
+
+
+   blur: gaussian( 12px );
+   opacity: 0.05;
+  }
+
+
+ #LeftColumn,#RightColumn,#HeroName{
+
+
+  transition-property: transform, opacity, blur;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in;
+  margin-top: 212px;
+ }
+  .EnableHeroCustomize #LeftColumn,.EnableHeroCustomize #RightColumn,.EnableHeroCustomize #HeroName{
+   opacity: 0;
+   transform: translateX( -60px );
+
+   transition-duration: 0.4s;
+   transition-delay: 0.2s;
+   transition-timing-function: cubic-bezier(0, 1, 0, 1);
+  }
+
+
+ #HeroName{
+  margin-left: 100px;
+  width: 660px;
+  flow-children: right;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  transition-duration: 0.15s;
+  transition-delay: 0s;
+  transition-timing-function: ease-in;
+
+  opacity: 1;
+  transform: none;
+ }
+  #HeroName Label{
+   text-overflow:
+                  
+                  shrink
+   ;
+   color:
+          
+          white
+   ;
+   height:
+           
+           75px
+   ;
+  }
+  .FullscreenPage #HeroName{
+   opacity:
+            
+            0
+   ;
+   transform:
+              
+              translateX
+                        (
+                          
+                          -48px
+                                
+                                )
+   ;
+   transition-duration:
+                        
+                        0.4s
+   ;
+   transition-timing-function:
+                               
+                               cubic-bezier
+                                           (
+                                            0,
+                                               
+                                               1,
+                                                  
+                                                  0,
+                                                     
+                                                     1
+                                                      )
+   ;
+  }
+  .AspectRatio21x9 #HeroName{
+   margin-left:
+                
+                0px
+   ;
+  }
+  .AspectRatio16x10 #HeroName{
+   margin-left:
+                
+                60px
+   ;
+  }
+ #LeftColumn{
+  padding-top:
+               
+               75px
+  ;
+  flow-children:
+                 
+                 down
+  ;
+  margin-left:
+               
+               100px
+  ;
+  horizontal-align:
+                    
+                    left
+  ;
+  width:
+         
+         500px
+  ;
+  height:
+          
+          100%
+  ;
+  margin-bottom:
+                 
+                 150px
+  ;
+  transition-duration:
+                       
+                       0.15s
+  ;
+  transition-delay:
+                    
+                    0s
+  ;
+  transition-timing-function:
+                              
+                              ease-in
+  ;
+  opacity:
+           
+           1
+  ;
+  transform:
+             
+             none
+  ;
+ }
+  .AspectRatio21x9 #LeftColumn{
+   margin-left:
+                
+                0px
+   ;
+  }
+  .AspectRatio16x10 #LeftColumn{
+   margin-left:
+                
+                60px
+   ;
+  }
+  .FullscreenPage #LeftColumn{
+   opacity:
+            
+            0
+   ;
+   transform:
+              
+              translateX
+                        (
+                          
+                          -48px
+                                
+                                )
+   ;
+   transition-duration:
+                        
+                        0.4s
+   ;
+   transition-timing-function:
+                               
+                               cubic-bezier
+                                           (
+                                            0,
+                                               
+                                               1,
+                                                  
+                                                  0,
+                                                     
+                                                     1
+                                                      )
+   ;
+  }
+ #RightColumn{
+  flow-children:
+                 
+                 down
+  ;
+  margin-right:
+                
+                100px
+  ;
+  horizontal-align:
+                    
+                    right
+  ;
+  width:
+         
+         422px
+  ;
+  padding-top:
+               
+               12px
+  ;
+  transition-duration:
+                       
+                       0.15s
+  ;
+  transition-delay:
+                    
+                    0s
+  ;
+  transition-timing-function:
+                              
+                              ease-in
+  ;
+  opacity:
+           
+           1
+  ;
+  transform:
+             
+             none
+  ;
+ }
+  .AspectRatio21x9 #RightColumn{
+   margin-right:
+                 
+                 0px
+   ;
+  }
+  .AspectRatio16x10 #RightColumn{
+   margin-right:
+                 
+                 60px
+   ;
+  }
+  .FullscreenPage #RightColumn{
+   opacity:
+            
+            0
+   ;
+   transform:
+              
+              translateX
+                        (
+                          
+                          48px
+                               
+                               )
+   ;
+   transition-duration:
+                        
+                        0.4s
+   ;
+   transition-timing-function:
+                               
+                               cubic-bezier
+                                           (
+                                            0,
+                                               
+                                               1,
+                                                  
+                                                  0,
+                                                     
+                                                     1
+                                                      )
+   ;
+  }
+ #MiddleColumn{
+  height:
+          
+          100%
+  ;
+  horizontal-align:
+                    
+                    center
+  ;
+  opacity:
+           
+           1
+  ;
+  transform:
+             
+             none
+  ;
+  transition-property:
+                       
+                       transform,
+                                  
+                                  opacity
+  ;
+  transition-duration:
+                       
+                       0.15s
+  ;
+  transition-delay:
+                    
+                    0s
+  ;
+  transition-timing-function:
+                              
+                              cubic-bezier
+                                          (
+                                           0.8,
+                                                
+                                                0,
+                                                   
+                                                   1,
+                                                      
+                                                      0.2
+                                                         )
+  ;
+ }
+  .EnableHeroCustomize #MiddleColumn{
+   opacity:
+            
+            0
+   ;
+   transform:
+              
+              translateY
+                        (
+                          
+                          16px
+                               
+                               )
+   ;
+   transition-duration:
+                        
+                        0.3s
+   ;
+   transition-delay:
+                     
+                     0.4s
+   ;
+   transition-timing-function:
+                               
+                               cubic-bezier
+                                           (
+                                            0,
+                                               
+                                               0.9,
+                                                    
+                                                    0,
+                                                       
+                                                       0.9
+                                                          )
+   ;
+  }
+ #NewSetArrivalCapsuleContainer{
+  width:
+         
+         320px
+  ;
+  vertical-align:
+                  
+                  bottom
+  ;
+  flow-children:
+                 
+                 down
+  ;
+  visibility:
+              
+              collapse
+  ;
+ }
+  #NewSetArrivalCapsuleContainer .NewSetArrivalCapsule{
+   width:
+          
+          100%
+   ;
+   height:
+           
+           140px
+   ;
+  }
+    #NewSetArrivalCapsuleContainer .NewSetArrivalCapsule:hover .NewSetArrivalCapsuleContent{
+     background-color:
+                       
+                       gradient
+                               (
+                                 
+                                 radial,
+                                         
+                                         0%
+                                            
+                                            0%,
+                                                
+                                                0%
+                                                   
+                                                   0%,
+                                                       
+                                                       100%
+                                                            
+                                                            100%,
+                                                                  
+                                                                  from
+                                                                      (
+                                                                        
+                                                                        #282f3a
+                                                                                
+                                                                                )
+                                                                                 ,
+                                                                                   
+                                                                                   to
+                                                                                     (
+                                                                                       
+                                                                                       #0d1017
+                                                                                               
+                                                                                               )
+                                                                                                 
+                                                                                                 )
+     ;
+    }
+     #NewSetArrivalCapsuleContainer .NewSetArrivalCapsule:hover .NewSetArrivalCapsuleContent .NewSetArrivalSetName{
+      color:
+             
+             white
+      ;
+     }
+   #NewSetArrivalCapsuleContainer .NewSetArrivalCapsule .NewSetArrivalCapsuleContent{
+    width:
+           
+           100%
+    ;
+    height:
+            
+            100px
+    ;
+    vertical-align:
+                    
+                    bottom
+    ;
+    background-color:
+                      
+                      gradient
+                              (
+                                
+                                radial,
+                                        
+                                        0%
+                                           
+                                           0%,
+                                               
+                                               0%
+                                                  
+                                                  0%,
+                                                      
+                                                      100%
+                                                           
+                                                           100%,
+                                                                 
+                                                                 from
+                                                                     (
+                                                                       
+                                                                       #1f252e
+                                                                               
+                                                                               )
+                                                                                ,
+                                                                                  
+                                                                                  to
+                                                                                    (
+                                                                                      
+                                                                                      #050609
+                                                                                              
+                                                                                              )
+                                                                                                
+                                                                                                )
+    ;
+    box-shadow:
+                
+                inset
+                      
+                      0px
+                          
+                          0px
+                              
+                              1px
+                                  
+                                  0.5px
+                                        
+                                        rgba
+                                            (
+                                             255,
+                                                  
+                                                  255,
+                                                       
+                                                       255,
+                                                            
+                                                            0.03
+                                                                )
+    ;
+    transition-duration:
+                         
+                         0.1s
+    ;
+    transition-property:
+                         
+                         background-color
+    ;
+   }
+    #NewSetArrivalCapsuleContainer .NewSetArrivalCapsule .NewSetArrivalCapsuleContent .NewSetArrivalSetName{
+     margin-left:
+                  
+                  16px
+     ;
+     vertical-align:
+                     
+                     center
+     ;
+     width:
+            
+            60%
+     ;
+     max-height:
+                 
+                 44px
+     ;
+     margin-top:
+                 
+                 12px
+     ;
+     line-height:
+                  
+                  1.2
+     ;
+     transition-duration:
+                          
+                          0.1s
+     ;
+     transition-property:
+                          
+                          color
+     ;
+    }
+    #NewSetArrivalCapsuleContainer .NewSetArrivalCapsule .NewSetArrivalCapsuleContent .NewArrivalBadge{
+     flow-children:
+                    
+                    right
+     ;
+     padding-right:
+                    
+                    6px
+     ;
+    }
+     #NewSetArrivalCapsuleContainer .NewSetArrivalCapsule .NewSetArrivalCapsuleContent .NewArrivalBadge Label{
+      color:
+             
+             LightestGrey
+      ;
+      font-weight:
+                   
+                   semi-bold
+      ;
+      background-color:
+                        
+                        gradient
+                                (
+                                  
+                                  linear,
+                                          
+                                          0%
+                                             
+                                             0%,
+                                                 
+                                                 0%
+                                                    
+                                                    100%,
+                                                          
+                                                          from
+                                                              (
+                                                                
+                                                                #893CAD
+                                                                        
+                                                                        )
+                                                                         ,
+                                                                           
+                                                                           to
+                                                                             (
+                                                                               
+                                                                               #431172
+                                                                                       
+                                                                                       )
+                                                                                         
+                                                                                         )
+      ;
+      padding:
+               
+               3px
+                   
+                   12px
+                        
+                        4px
+                            
+                            16px
+      ;
+      text-shadow:
+                   
+                   0px
+                       
+                       1px
+                           
+                           6px
+                               
+                               black
+      ;
+      box-shadow:
+                  
+                  inset
+                        
+                        0px
+                            
+                            -1px
+                                 
+                                 0px
+                                     
+                                     rgba
+                                         (
+                                          0,0,0,0.6
+                                                   )
+      ;
+     }
+     #NewSetArrivalCapsuleContainer .NewSetArrivalCapsule .NewSetArrivalCapsuleContent .NewArrivalBadge .NewArrivalBadgeEdge{
+      width:
+             
+             12px
+      ;
+      height:
+              
+              100%
+      ;
+      background-color:
+                        
+                        gradient
+                                (
+                                  
+                                  linear,
+                                          
+                                          0%
+                                             
+                                             0%,
+                                                 
+                                                 0%
+                                                    
+                                                    100%,
+                                                          
+                                                          from
+                                                              (
+                                                                
+                                                                #893CAD
+                                                                        
+                                                                        )
+                                                                         ,
+                                                                           
+                                                                           to
+                                                                             (
+                                                                               
+                                                                               #431172
+                                                                                       
+                                                                                       )
+                                                                                         
+                                                                                         )
+      ;
+      transform:
+                 
+                 skew
+                     (
+                       
+                       -15deg
+                              
+                              )
+      ;
+      margin-left:
+                   
+                   -9px
+      ;
+      z-index:
+               
+               -1
+      ;
+     }
+   #NewSetArrivalCapsuleContainer .NewSetArrivalCapsule .NewSetArrivalModelContainer{
+    width:
+           
+           50%
+    ;
+    height:
+            
+            160px
+    ;
+    horizontal-align:
+                      
+                      right
+    ;
+   }
+    #NewSetArrivalCapsuleContainer .NewSetArrivalCapsule .NewSetArrivalModelContainer .NewSetArrivalModel{
+     width:
+            
+            100%
+     ;
+     height:
+             
+             140px
+     ;
+     background-color:
+                       
+                       rgba
+                           (
+                            255,
+                                 
+                                 0,
+                                    
+                                    255,
+                                         
+                                         0.1
+                                            )
+     ;
+    }
+  #NewSetArrivalCapsuleContainer .NewSetArrivalTreasureName{
+   margin-top:
+               
+               8px
+   ;
+  }
+ #ChangeModelTabsContainer{
+  flow-children:
+                 
+                 down
+  ;
+  width:
+         
+         100%
+  ;
+  visibility:
+              
+              collapse
+  ;
+ }
+  #ChangeModelTabsContainer #ChangeModelTabs{
+   margin-left:
+                
+                8px
+   ;
+  }
+  .HasMultipleModels #ChangeModelTabsContainer{
+   visibility:
+               
+               visible
+   ;
+  }
+ #HeroBadge{
+  margin-top:
+              
+              -220px
+  ;
+  margin-left:
+               
+               -304px
+  ;
+  margin-bottom:
+                 
+                 -210px
+  ;
+  margin-right:
+                
+                -190px
+  ;
+  overflow:
+            
+            noclip
+  ;
+  ignore-parent-flow:
+                      
+                      true
+  ;
+ }
+  .GrandmasterTier #HeroBadge{
+   margin-left:
+                
+                -330px
+   ;
+  }
+ .MaxHeroLevelWithoutSubscription #HeroBadge{
+  saturation:
+              
+              0.0
+  ;
+  wash-color:
+              
+              #999
+  ;
+ }
+ #HeroBadge.NoTier{
+  visibility:
+              
+              collapse
+  ;
+ }
+ #AttributeAndName{
+  margin-top:
+              
+              100px
+  ;
+  margin-left:
+               
+               10px
+  ;
+  flow-children:
+                 
+                 right
+  ;
+  vertical-align:
+                  
+                  center
+  ;
+ }
+ #HeroDescription{
+     flow-children:
+                    
+                    right
+     ;
+  margin-top:
+              
+              4px
+  ;
+  margin-bottom:
+                 
+                 8px
+  ;
+ }
+ #HeroComplexity{
+  height:
+          
+          100%
+  ;
+  margin-right:
+                
+                8px
+  ;
+  flow-children:
+                 
+                 right
+  ;
+  tooltip-position:
+                    
+                    bottom
+  ;
+  vertical-align:
+                  
+                  center
+  ;
+ }
+ .HeroComplexityPip{
+  width:
+         
+         20px
+  ;
+  height:
+          
+          20px
+  ;
+  background-image:
+                    
+                    url(
+                         "s2r://panorama/images/hero_complexity_empty_png.vtex"
+                    )
+  ;
+  background-size:
+                   
+                   90%
+  ;
+  background-position:
+                       
+                       center
+  ;
+  background-repeat:
+                     
+                     no-repeat
+  ;
+  margin-right:
+                
+                2px
+  ;
+  wash-color:
+              
+              #dedede
+  ;
+  vertical-align:
+                  
+                  center
+  ;
+ }
+ #HeroComplexityPip1,.Complexity2 #HeroComplexityPip2,.Complexity3 #HeroComplexityPip2,.Complexity3 #HeroComplexityPip3{
+  background-image:
+                    
+                    url(
+                         "s2r://panorama/images/hero_complexity_full_png.vtex"
+                    )
+  ;
+ }
+ .AttackTypeContainer{
+  vertical-align:
+                  
+                  center
+  ;
+  flow-children:
+                 
+                 right
+  ;
+  margin-right:
+                
+                16px
+  ;
+ }
+  .AttackTypeContainer Label{
+   vertical-align:
+                   
+                   center
+   ;
+  }
+  .AttackTypeContainer #HeroAttackTypeIcon{
+   width:
+          
+          32px
+   ;
+   height:
+           
+           32px
+   ;
+   margin-right:
+                 
+                 -2px
+   ;
+   wash-color:
+               
+               LightGrey
+   ;
+   tooltip-position:
+                     
+                     top
+   ;
+   tooltip-body-position:
+                          
+                          50%
+                              
+                              50%
+   ;
+   background-position:
+                        
+                        center
+   ;
+   background-repeat:
+                      
+                      no-repeat
+   ;
+   background-size:
+                    
+                    contain
+   ;
+   transition-property:
+                        
+                        wash-color
+   ;
+   transition-duration:
+                        
+                        0.1s
+   ;
+  }
+   .AttackTypeContainer #HeroAttackTypeIcon.Melee{
+    background-image:
+                      
+                      url(
+                           "s2r://panorama/images/control_icons/filter_melee_png.vtex"
+                      )
+    ;
+   }
+   .AttackTypeContainer #HeroAttackTypeIcon.Ranged{
+    background-image:
+                      
+                      url(
+                           "s2r://panorama/images/control_icons/filter_ranges_png.vtex"
+                      )
+    ;
+   }
+   .AttackTypeContainer #HeroAttackTypeIcon:hover{
+    wash-color:
+                
+                LighterGrey
+    ;
+   }
+ .HeroRolesContainer{
+  vertical-align:
+                  
+                  center
+  ;
+  flow-children:
+                 
+                 right
+  ;
+ }
+  .HeroRolesContainer Label{
+   vertical-align:
+                   
+                   center
+   ;
+  }
+  .HeroRolesContainer #HeroRoles{
+   vertical-align:
+                   
+                   center
+   ;
+   flow-children:
+                  
+                  right
+   ;
+  }
+   .HeroRolesContainer #HeroRoles .HeroRole{
+    width:
+           
+           32px
+    ;
+    height:
+            
+            32px
+    ;
+    margin-right:
+                  
+                  -2px
+    ;
+    wash-color:
+                
+                LightGrey
+    ;
+    tooltip-position:
+                      
+                      top
+    ;
+    tooltip-body-position:
+                           
+                           50%
+                               
+                               50%
+    ;
+    background-position:
+                         
+                         center
+    ;
+    background-repeat:
+                       
+                       no-repeat
+    ;
+    background-size:
+                     
+                     contain
+    ;
+    transition-property:
+                         
+                         wash-color
+    ;
+    transition-duration:
+                         
+                         0.1s
+    ;
+   }
+    .HeroRolesContainer #HeroRoles .HeroRole:hover{
+     wash-color:
+                 
+                 LighterGrey
+     ;
+    }
+    .HeroRolesContainer #HeroRoles .HeroRole.Carry{
+                 background-image:
+                                   
+                                   url(
+                                        "s2r://panorama/images/control_icons/filter_carry_png.vtex"
+                                   )
+                 ;
+    }
+    .HeroRolesContainer #HeroRoles .HeroRole.Durable{
+                  background-image:
+                                    
+                                    url(
+                                         "s2r://panorama/images/control_icons/filter_durable_png.vtex"
+                                    )
+                  ;
+    }
+    .HeroRolesContainer #HeroRoles .HeroRole.Disabler{
+                   background-image:
+                                     
+                                     url(
+                                          "s2r://panorama/images/control_icons/filter_disabler_png.vtex"
+                                     )
+                   ;
+    }
+    .HeroRolesContainer #HeroRoles .HeroRole.Pusher{
+                 background-image:
+                                   
+                                   url(
+                                        "s2r://panorama/images/control_icons/filter_pusher_png.vtex"
+                                   )
+                 ;
+    }
+    .HeroRolesContainer #HeroRoles .HeroRole.Escape{
+                 background-image:
+                                   
+                                   url(
+                                        "s2r://panorama/images/control_icons/filter_escape_png.vtex"
+                                   )
+                 ;
+    }
+    .HeroRolesContainer #HeroRoles .HeroRole.Nuker{
+                 background-image:
+                                   
+                                   url(
+                                        "s2r://panorama/images/control_icons/filter_nuker_png.vtex"
+                                   )
+                 ;
+    }
+    .HeroRolesContainer #HeroRoles .HeroRole.Initiator{
+                    background-image:
+                                      
+                                      url(
+                                           "s2r://panorama/images/control_icons/filter_initiator_png.vtex"
+                                      )
+                    ;
+    }
+    .HeroRolesContainer #HeroRoles .HeroRole.Support{
+                  background-image:
+                                    
+                                    url(
+                                         "s2r://panorama/images/control_icons/filter_support_png.vtex"
+                                    )
+                  ;
+    }
+ #MeleeButton{
+  background-image:
+                    
+                    url(
+                         "s2r://panorama/images/control_icons/filter_melee_png.vtex"
+                    )
+  ;
+ }
+ #RangedButton{
+  background-image:
+                    
+                    url(
+                         "s2r://panorama/images/control_icons/filter_ranges_png.vtex"
+                    )
+  ;
+ }
+ #HeroHeader{
+     flow-children:
+                    
+                    down
+     ;
+ }
+ .HeroInfo{
+  width:
+         
+         100%
+  ;
+     flow-children:
+                    
+                    down
+     ;
+  margin-bottom:
+                 
+                 12px
+  ;
+ }
+ .HeroTitleContainer{
+  flow-children:
+                 
+                 right
+  ;
+ }
+ .HeroActions{
+     flow-children:
+                    
+                    down
+     ;
+     margin-top:
+                 
+                 -5px
+     ;
+ }
+ #HeroAbilities{
+     flow-children:
+                    
+                    right-wrap
+     ;
+     vertical-align:
+                     
+                     center
+     ;
+  height:
+          
+          fit-children
+  ;
+  margin:
+          
+          12px
+               
+               0px
+                   
+                   0px
+  ;
+ }
+  .keeper_of_the_light #HeroAbilities,.ogre_magi #HeroAbilities{
+   width:
+          
+          400px
+   ;
+  }
+  .meepo #HeroAbilities{
+   width:
+          
+          320px
+   ;
+  }
+ #HeroAbilities > DOTAAbilityImage,#HeroAbilities > .StatBranch,#HeroAbilities > .ScepterDetails{
+     margin-right:
+                   
+                   8px
+     ;
+  margin-bottom:
+                 
+                 8px
+  ;
+     width:
+            
+            52px
+     ;
+     height:
+             
+             52px
+     ;
+  img-shadow:
+              
+              0px
+                  
+                  4px
+                      
+                      8px
+                          
+                          black
+  ;
+     tooltip-position:
+                       
+                       bottom
+     ;
+ }
+ #HeroAbilities > .StatBranch,#HeroAbilities > .ScepterDetails{
+  wash-color:
+              
+              #708D9F
+  ;
+ }
+ DOTAAbilityImage{
+     width:
+            
+            52px
+     ;
+     height:
+             
+             52px
+     ;
+     background-size:
+                      
+                      100%
+                           
+                           100%
+     ;
+     background-repeat:
+                        
+                        no-repeat
+     ;
+     tooltip-position:
+                       
+                       bottom
+     ;
+  transition-property:
+                       
+                       brightness
+  ;
+  transition-duration:
+                       
+                       0.1s
+  ;
+ }
+  DOTAAbilityImage:hover{
+   brightness:
+               
+               1.6
+   ;
+  }
+ .AbilityIconContainer{
+  width:
+         
+         52px
+  ;
+  height:
+          
+          76px
+  ;
+  margin-right:
+                
+                8px
+  ;
+  context-menu-position:
+                         
+                         bottom
+  ;
+ }
+ .AbilityIconContainer.HasItems{
+  transition-property:
+                       
+                       brightness
+  ;
+  transition-duration:
+                       
+                       0.2s
+  ;
+ }
+ .AbilityIconContainer.HasItems:hover{
+  brightness:
+              
+              1.5
+  ;
+ }
+ .AbilityIconContainer #dropdown{
+  width:
+         
+         100%
+  ;
+  height:
+          
+          16px
+  ;
+  vertical-align:
+                  
+                  top
+  ;
+  margin-top:
+              
+              52px
+  ;
+  background-color:
+                    
+                    gradient
+                            (
+                              
+                              linear,
+                                      
+                                      100%
+                                           
+                                           0%,
+                                               
+                                               0%
+                                                  
+                                                  0%,
+                                                      
+                                                      from
+                                                          (
+                                                            
+                                                            #000
+                                                                 
+                                                                 )
+                                                                  ,
+                                                                    
+                                                                    color-stop
+                                                                              (
+                                                                                
+                                                                                .4,
+                                                                                    
+                                                                                    #282a29
+                                                                                            
+                                                                                            )
+                                                                                             ,
+                                                                                               
+                                                                                               color-stop
+                                                                                                         (
+                                                                                                           
+                                                                                                           .5,
+                                                                                                               
+                                                                                                               #282a29
+                                                                                                                       
+                                                                                                                       )
+                                                                                                                        ,
+                                                                                                                          
+                                                                                                                          color-stop
+                                                                                                                                    (
+                                                                                                                                      
+                                                                                                                                      .6,
+                                                                                                                                          
+                                                                                                                                          #282a29
+                                                                                                                                                  
+                                                                                                                                                  )
+                                                                                                                                                   ,
+                                                                                                                                                     
+                                                                                                                                                     to
+                                                                                                                                                       (
+                                                                                                                                                         
+                                                                                                                                                         #000
+                                                                                                                                                              
+                                                                                                                                                              )
+                                                                                                                                                                
+                                                                                                                                                                )
+  ;
+  visibility:
+              
+              collapse
+  ;
+ }
+ .AbilityIconContainer.HasItems #dropdown{
+     animation-duration:
+                         
+                         1.0s
+     ;
+  animation-iteration-count:
+                             
+                             infinite
+  ;
+  opacity:
+           
+           1
+  ;
+  visibility:
+              
+              visible
+  ;
+ }
+ .AbilityIconContainer #dropdown #arrow{
+  width:
+         
+         16px
+  ;
+  height:
+          
+          16px
+  ;
+  background-repeat:
+                     
+                     no-repeat
+  ;
+  background-position:
+                       
+                       center
+                              
+                              center
+  ;
+  background-size:
+                   
+                   16px
+                        
+                        11px
+  ;
+  background-image:
+                    
+                    url(
+                         "s2r://panorama/images/control_icons/arrow_solid_down_png.vtex"
+                    )
+  ;
+  wash-color:
+              
+              #777
+  ;
+  horizontal-align:
+                    
+                    center
+  ;
+ }
+ #PrimaryAttribute{
+  vertical-align:
+                  
+                  center
+  ;
+  height:
+          
+          32px
+  ;
+  width:
+         
+         32px
+  ;
+  background-repeat:
+                     
+                     no-repeat
+  ;
+  background-size:
+                   
+                   contain
+  ;
+  vertical-align:
+                  
+                  center
+  ;
+  horizontal-align:
+                    
+                    right
+  ;
+  margin-right:
+                
+                12px
+  ;
+ }
+ DOTAHeroPageNewV2.Strength #PrimaryAttribute{
+                                                     background-image:
+                                                                       
+                                                                       url(
+                                                                            "s2r://panorama/images/primary_attribute_icons/primary_attribute_icon_strength_psd.vtex"
+                                                                       )
+                                                     ;
+ }
+ DOTAHeroPageNewV2.Agility #PrimaryAttribute{
+                                                     background-image:
+                                                                       
+                                                                       url(
+                                                                            "s2r://panorama/images/primary_attribute_icons/primary_attribute_icon_agility_psd.vtex"
+                                                                       )
+                                                     ;
+ }
+ .ColorBlindModeEnabled DOTAHeroPageNewV2.Agility #PrimaryAttribute{
+                                                                            background-image:
+                                                                                              
+                                                                                              url(
+                                                                                                   "s2r://panorama/images/primary_attribute_icons/primary_attribute_icon_agility_colorblind_psd.vtex"
+                                                                                              )
+                                                                            ;
+ }
+ DOTAHeroPageNewV2.Intelligence #PrimaryAttribute{
+                                                     background-image:
+                                                                       
+                                                                       url(
+                                                                            "s2r://panorama/images/primary_attribute_icons/primary_attribute_icon_intelligence_psd.vtex"
+                                                                       )
+                                                     ;
+ }
+ DOTAHeroPageNewV2.Universal #PrimaryAttribute{
+                                                  background-image:
+                                                                    
+                                                                    url(
+                                                                         "s2r://panorama/images/primary_attribute_icons/primary_attribute_icon_all_psd.vtex"
+                                                                    )
+                                                  ;
+ }
+ .FadedDash{
+  width:
+         
+         90%
+  ;
+  height:
+          
+          1px
+  ;
+  margin:
+          
+          24px
+               
+               0px
+  ;
+ }
+  .FadedDash.FadeRight{
+   background-color:
+                     
+                     gradient
+                             (
+                               
+                               linear,
+                                       
+                                       50%
+                                           
+                                           0%,
+                                               
+                                               100%
+                                                    
+                                                    0%,
+                                                        
+                                                        from
+                                                            (
+                                                              
+                                                              #FFFFFF06
+                                                                        
+                                                                        )
+                                                                         ,
+                                                                           
+                                                                           to
+                                                                             (
+                                                                               
+                                                                               #FFFFFF00
+                                                                                         
+                                                                                         )
+                                                                                           
+                                                                                           )
+   ;
+  }
+  .FadedDash.FadeLeft{
+   background-color:
+                     
+                     gradient
+                             (
+                               
+                               linear,
+                                       
+                                       0%
+                                          
+                                          0%,
+                                              
+                                              50%
+                                                  
+                                                  0%,
+                                                      
+                                                      from
+                                                          (
+                                                            
+                                                            #FFFFFF00
+                                                                      
+                                                                      )
+                                                                       ,
+                                                                         
+                                                                         to
+                                                                           (
+                                                                             
+                                                                             #FFFFFF06
+                                                                                       
+                                                                                       )
+                                                                                         
+                                                                                         )
+   ;
+  }
+ .SummaryHeroRolesContainer{
+  padding:
+           
+           6px
+               
+               0px
+                   
+                   12px
+  ;
+  border-bottom:
+                 
+                 1px
+                     
+                     solid
+                           
+                           white
+  ;
+  border-brush:
+                
+                gradient
+                        (
+                          
+                          linear,
+                                  
+                                  50%
+                                      
+                                      0%,
+                                          
+                                          100%
+                                               
+                                               0%,
+                                                   
+                                                   from
+                                                       (
+                                                         
+                                                         #FFFFFF08
+                                                                   
+                                                                   )
+                                                                    ,
+                                                                      
+                                                                      to
+                                                                        (
+                                                                          
+                                                                          #FFFFFF00
+                                                                                    
+                                                                                    )
+                                                                                      
+                                                                                      )
+  ;
+  width:
+         
+         100%
+  ;
+  visibility:
+              
+              collapse
+  ;
+ }
+  .SummaryHeroRolesContainer DOTAHeroRoles{
+   margin-bottom:
+                  
+                  0px
+   ;
+  }
+ #HeroStatsSummaryContainer{
+  margin:
+          
+          8px
+              
+              0px
+  ;
+  flow-children:
+                 
+                 right
+  ;
+  border-bottom:
+                 
+                 1px
+                     
+                     solid
+                           
+                           white
+  ;
+  border-top:
+              
+              1px
+                  
+                  solid
+                        
+                        white
+  ;
+  border-brush:
+                
+                gradient
+                        (
+                          
+                          linear,
+                                  
+                                  50%
+                                      
+                                      0%,
+                                          
+                                          100%
+                                               
+                                               0%,
+                                                   
+                                                   from
+                                                       (
+                                                         
+                                                         #FFFFFF06
+                                                                   
+                                                                   )
+                                                                    ,
+                                                                      
+                                                                      to
+                                                                        (
+                                                                          
+                                                                          #FFFFFF00
+                                                                                    
+                                                                                    )
+                                                                                      
+                                                                                      )
+  ;
+  width:
+         
+         100%
+  ;
+ }
+  #HeroStatsSummaryContainer .HeroStatsLeftCol{
+   flow-children:
+                  
+                  down
+   ;
+   border-right:
+                 
+                 1px
+                     
+                     solid
+                           
+                           #FFFFFF05
+   ;
+   padding:
+            
+            16px
+                 
+                 0px
+   ;
+   width:
+          
+          128px
+   ;
+  }
+   #HeroStatsSummaryContainer .HeroStatsLeftCol .HeroStatsIcon{
+    width:
+           
+           20px
+    ;
+    height:
+            
+            20px
+    ;
+   }
+   #HeroStatsSummaryContainer .HeroStatsLeftCol .AttributeContainer{
+    flow-children:
+                   
+                   down
+    ;
+    margin-bottom:
+                   
+                   8px
+    ;
+   }
+    #HeroStatsSummaryContainer .HeroStatsLeftCol .AttributeContainer .AttributeTitle{
+     margin-bottom:
+                    
+                    2px
+     ;
+    }
+    #HeroStatsSummaryContainer .HeroStatsLeftCol .AttributeContainer .AttributeValue{
+     letter-spacing:
+                     
+                     0.8px
+     ;
+    }
+  #HeroStatsSummaryContainer .HeroStatsRightCol{
+   flow-children:
+                  
+                  down
+   ;
+  }
+   #HeroStatsSummaryContainer .HeroStatsRightCol .DerivedStatsContainer{
+    flow-children:
+                   
+                   right
+    ;
+    margin-top:
+                
+                16px
+    ;
+    margin-left:
+                 
+                 16px
+    ;
+    padding-right:
+                   
+                   64px
+    ;
+   }
+    #HeroStatsSummaryContainer .HeroStatsRightCol .DerivedStatsContainer .DerivedStat{
+     flow-children:
+                    
+                    down
+     ;
+     width:
+            
+            fill-parent-flow
+                            (
+                              
+                              1.0
+                                  
+                                  )
+     ;
+     tooltip-position:
+                       
+                       top
+     ;
+    }
+     #HeroStatsSummaryContainer .HeroStatsRightCol .DerivedStatsContainer .DerivedStat Label{
+      horizontal-align:
+                        
+                        center
+      ;
+      color:
+             
+             LightestGrey
+      ;
+      opacity:
+               
+               0.8
+      ;
+      margin-top:
+                  
+                  2px
+      ;
+      font-size:
+                 
+                 16px
+      ;
+      height:
+              
+              18px
+      ;
+     }
+     #HeroStatsSummaryContainer .HeroStatsRightCol .DerivedStatsContainer .DerivedStat .HeroStatsIcon{
+      horizontal-align:
+                        
+                        center
+      ;
+      margin:
+              
+              0px
+      ;
+      width:
+             
+             20px
+      ;
+      height:
+              
+              20px
+      ;
+     }
+   #HeroStatsSummaryContainer .HeroStatsRightCol .HealthManaContainer{
+    flow-children:
+                   
+                   down
+    ;
+    width:
+           
+           100%
+    ;
+    margin-left:
+                 
+                 16px
+    ;
+    margin-top:
+                
+                8px
+    ;
+    margin-right:
+                  
+                  144px
+    ;
+   }
+    #HeroStatsSummaryContainer .HeroStatsRightCol .HealthManaContainer .HeroResourceRow{
+     margin:
+             
+             2px
+                 
+                 0px
+                     
+                     4px
+     ;
+    }
+ .StatHeader{
+  width:
+         
+         100%
+  ;
+  text-align:
+              
+              center
+  ;
+ }
+ .StatBody{
+  flow-children:
+                 
+                 right
+  ;
+  horizontal-align:
+                    
+                    center
+  ;
+  vertical-align:
+                  
+                  center
+  ;
+ }
+  .StatBody Label{
+   text-align:
+               
+               center
+   ;
+  }
+ #ViewArmoryButton{
+  horizontal-align:
+                    
+                    right
+  ;
+  margin-right:
+                
+                60px
+  ;
+  margin-top:
+              
+              137px
+  ;
+  transition-property:
+                       
+                       opacity
+  ;
+  transition-duration:
+                       
+                       0.2s
+  ;
+  transition-delay:
+                    
+                    0s
+  ;
+ }
+  .FullscreenPage #ViewArmoryButton,.EnableHeroCustomize #ViewArmoryButton,.SubTabProgressionTabContents #ViewArmoryButton,.SubTabStatsTabContents #ViewArmoryButton,.SubTabGuidesTabContents #ViewArmoryButton,.SubTabGlobalStatsContents #ViewArmoryButton,.SubTabAboutTabContents #ViewArmoryButton,.SubTabChangesTabContents #ViewArmoryButton{
+   opacity:
+            
+            0
+   ;
+   transition-delay:
+                     
+                     0.4s
+   ;
+   transition-duration:
+                        
+                        0.3s
+   ;
+  }
+ #DemoHeroButton{
+  margin-right:
+                
+                8px
+  ;
+  max-width:
+             
+             320px
+  ;
+  max-height:
+              
+              34px
+  ;
+ }
+ #GoToOldLoadoutButton{
+  visibility:
+              
+              collapse
+  ;
+  margin-top:
+              
+              24px
+  ;
+  padding:
+           
+           4px
+               
+               8px
+  ;
+  border-radius:
+                 
+                 3px
+  ;
+  border:
+          
+          1px
+              
+              solid
+                    
+                    rgba
+                        (
+                         255,
+                              
+                              255,
+                                   
+                                   255,
+                                        
+                                        0.2
+                                           )
+  ;
+  opacity:
+           
+           0.2
+  ;
+  transition-property:
+                       
+                       opacity
+  ;
+  transition-duration:
+                       
+                       0.1s
+  ;
+ }
+  #GoToOldLoadoutButton:hover{
+   opacity:
+            
+            0.4
+   ;
+  }
+ .MainBranch #GoToOldLoadoutButton{
+  visibility:
+              
+              visible
+  ;
+ }
+ .ActionButtonsContainer{
+  flow-children:
+                 
+                 right
+  ;
+  margin-top:
+              
+              24px
+  ;
+ }
+ #SetPanel{
+  horizontal-align:
+                    
+                    center
+  ;
+  vertical-align:
+                  
+                  bottom
+  ;
+  flow-children:
+                 
+                 down
+  ;
+  margin-bottom:
+                 
+                 150px
+  ;
+  visibility:
+              
+              collapse
+  ;
+ }
+ #NotPublicLabel{
+  visibility:
+              
+              collapse
+  ;
+  margin-top:
+              
+              16px
+  ;
+  opacity:
+           
+           0.5
+  ;
+ }
+  #NotPublicLabel.NotPublic{
+   visibility:
+               
+               visible
+   ;
+  }
+ .SetInfoDivider{
+  width:
+         
+         600px
+  ;
+  height:
+          
+          1px
+  ;
+  background-color:
+                    
+                    gradient
+                            (
+                              
+                              linear,
+                                      
+                                      0%
+                                         
+                                         0%,
+                                             
+                                             100%
+                                                  
+                                                  0%,
+                                                      
+                                                      from
+                                                          (
+                                                            
+                                                            #FFFFFF00
+                                                                      
+                                                                      )
+                                                                       ,
+                                                                         
+                                                                         color-stop
+                                                                                   (
+                                                                                     
+                                                                                     0.3,
+                                                                                          
+                                                                                          #ffffff
+                                                                                                  
+                                                                                                  )
+                                                                                                   ,
+                                                                                                     
+                                                                                                     color-stop
+                                                                                                               (
+                                                                                                                 
+                                                                                                                 0.7,
+                                                                                                                      
+                                                                                                                      #ffffff
+                                                                                                                              
+                                                                                                                              )
+                                                                                                                               ,
+                                                                                                                                 
+                                                                                                                                 to
+                                                                                                                                   (
+                                                                                                                                     
+                                                                                                                                     #FFFFFF00
+                                                                                                                                               
+                                                                                                                                               )
+                                                                                                                                                 
+                                                                                                                                                 )
+  ;
+  opacity:
+           
+           0.1
+  ;
+  margin:
+          
+          24px
+               
+               0px
+  ;
+ }
+ @keyframes 'GlowText'{
+  0%{
+   brightness:
+               
+               1
+   ;
+   text-shadow:
+                
+                0px
+                    
+                    0px
+                        
+                        8px
+                            
+                            #FFFFFF22
+   ;
+  }
+  100%{
+   brightness:
+               
+               2
+   ;
+   text-shadow:
+                
+                0px
+                    
+                    0px
+                        
+                        12px
+                             
+                             #FFFFFF55
+   ;
+  }
+ }
+ #EquippedSetSlotsContainer{
+  flow-children:
+                 
+                 right-wrap
+  ;
+  margin-top:
+              
+              16px
+  ;
+  margin-bottom:
+                 
+                 -8px
+  ;
+ }
+  #EquippedSetSlotsContainer .SetPreviewSlot{
+   width:
+          
+          76px
+   ;
+   height:
+           
+           76px
+   ;
+   margin:
+           
+           0px
+   ;
+   margin-right:
+                 
+                 8px
+   ;
+   margin-bottom:
+                  
+                  8px
+   ;
+   box-shadow:
+               
+               0px
+                   
+                   0px
+                       
+                       0px
+                           
+                           #00000000
+   ;
+  }
+ #StylesPanel{
+  flow-children:
+                 
+                 right
+  ;
+  margin:
+          
+          16px
+               
+               0px
+                   
+                   8px
+  ;
+  opacity:
+           
+           0
+  ;
+  visibility:
+              
+              collapse
+  ;
+ }
+  #StylesPanel Label{
+   margin-right:
+                 
+                 4px
+   ;
+   vertical-align:
+                   
+                   center
+   ;
+  }
+  .HasMultipleStyles #StylesPanel{
+   opacity:
+            
+            1
+   ;
+   visibility:
+               
+               visible
+   ;
+  }
+  .Status_SavedSet #StylesPanel{
+   opacity:
+            
+            0
+   ;
+   visibility:
+               
+               collapse
+   ;
+  }
+  #StylesPanel #StyleSelectorRadioButton{
+   margin-right:
+                 
+                 8px
+   ;
+  }
+ .SetRarityLabel{
+  font-weight:
+               
+               semi-bold
+  ;
+  brightness:
+              
+              1.2
+  ;
+ }
+  .Status_SavedSet .SetRarityLabel{
+   visibility:
+               
+               collapse
+   ;
+  }
+  .Rarity_common .SetRarityLabel{
+   color:
+          
+          rarity_color_common
+   ;
+  }
+  .Rarity_uncommon .SetRarityLabel{
+   color:
+          
+          rarity_color_uncommon
+   ;
+  }
+  .Rarity_rare .SetRarityLabel{
+   color:
+          
+          rarity_color_rare
+   ;
+  }
+  .Rarity_mythical .SetRarityLabel{
+   color:
+          
+          rarity_color_mythical
+   ;
+  }
+  .Rarity_legendary .SetRarityLabel{
+   color:
+          
+          rarity_color_legendary
+   ;
+  }
+  .Rarity_ancient .SetRarityLabel{
+   color:
+          
+          rarity_color_ancient
+   ;
+  }
+  .Rarity_immortal .SetRarityLabel{
+   color:
+          
+          rarity_color_immortal
+   ;
+  }
+  .Rarity_arcana .SetRarityLabel{
+   color:
+          
+          rarity_color_arcana
+   ;
+  }
+  .Rarity_seasonal .SetRarityLabel{
+   color:
+          
+          rarity_color_seasonal
+   ;
+  }
+ .Status_SavedSet .SetRarityLabel,.Status_Customized .SetRarityLabel{
+  visibility:
+              
+              collapse
+  ;
+ }
+ .SetRarityStrip{
+  width:
+         
+         2px
+  ;
+  height:
+          
+          100%
+  ;
+  ignore-parent-flow:
+                      
+                      true
+  ;
+ }
+  .Status_SavedSet .SetRarityStrip{
+   visibility:
+               
+               collapse
+   ;
+  }
+  .Rarity_common .SetRarityStrip{
+   background-color:
+                     
+                     rarity_color_common
+   ;
+  }
+  .Rarity_uncommon .SetRarityStrip{
+   background-color:
+                     
+                     rarity_color_uncommon
+   ;
+  }
+  .Rarity_rare .SetRarityStrip{
+   background-color:
+                     
+                     rarity_color_rare
+   ;
+  }
+  .Rarity_mythical .SetRarityStrip{
+   background-color:
+                     
+                     rarity_color_mythical
+   ;
+  }
+  .Rarity_legendary .SetRarityStrip{
+   background-color:
+                     
+                     rarity_color_legendary
+   ;
+  }
+  .Rarity_ancient .SetRarityStrip{
+   background-color:
+                     
+                     rarity_color_ancient
+   ;
+  }
+  .Rarity_immortal .SetRarityStrip{
+   background-color:
+                     
+                     rarity_color_immortal
+   ;
+  }
+  .Rarity_arcana .SetRarityStrip{
+   background-color:
+                     
+                     rarity_color_arcana
+   ;
+  }
+  .Rarity_seasonal .SetRarityStrip{
+   background-color:
+                     
+                     rarity_color_seasonal
+   ;
+  }
+ .SetNumberContainer{
+  margin-bottom:
+                 
+                 4px
+  ;
+  width:
+         
+         100%
+  ;
+ }
+ .SetNameContainer{
+  width:
+         
+         100%
+  ;
+ }
+ #HeroLevelBarContainer{
+  width:
+         
+         100%
+  ;
+  flow-children:
+                 
+                 right
+  ;
+  padding-bottom:
+                  
+                  24px
+  ;
+  margin-bottom:
+                 
+                 20px
+  ;
+  margin-right:
+                
+                12px
+  ;
+ }
+  .NoTier #HeroLevelBarContainer{
+   visibility:
+               
+               collapse
+   ;
+  }
+ .HeroLevelBarLockIcon{
+  width:
+         
+         25px
+  ;
+  height:
+          
+          25px
+  ;
+  background-image:
+                    
+                    url(
+                        "s2r://panorama/images/dota_plus/hero_progress_locked_png.vtex"
+                    )
+  ;
+  background-size:
+                   
+                   contain
+  ;
+  background-repeat:
+                     
+                     no-repeat
+  ;
+  background-position:
+                       
+                       center
+  ;
+  vertical-align:
+                  
+                  middle
+  ;
+  tooltip-position:
+                    
+                    left
+  ;
+  margin-right:
+                
+                5px
+  ;
+  img-shadow:
+              
+              0px
+                  
+                  0px
+                      
+                      15px
+                           
+                           3.0
+                               
+                               #000000
+  ;
+  visibility:
+              
+              collapse
+  ;
+ }
+ .MaxHeroLevelWithoutSubscription .HeroLevelBarLockIcon{
+  visibility:
+              
+              visible
+  ;
+ }
+ .HeroLevelBarMain{
+  width:
+         
+         100%
+  ;
+  flow-children:
+                 
+                 down
+  ;
+ }
+ #LevelProgressContainer{
+  flow-children:
+                 
+                 right
+  ;
+ }
+ .BrowseSetsLabel{
+  text-shadow:
+               
+               0px
+                   
+                   4px
+                       
+                       12px
+                            
+                            rgba
+                                (
+                                 0,
+                                    
+                                    0,
+                                       
+                                       0,
+                                          
+                                          0.8
+                                             )
+  ;
+  margin-bottom:
+                 
+                 8px
+  ;
+ }
+ .SetGroupTitleContainer{
+  horizontal-align:
+                    
+                    center
+  ;
+ }
+ #HeroLevelBarContainer .SectionTitle{
+  margin-left:
+               
+               0px
+  ;
+  margin-top:
+              
+              0px
+  ;
+ }
+ .SectionTitleGold{
+  color:
+         
+         #dccd83
+  ;
+ }
+ .LevelProgressXPValuesContainer{
+  width:
+         
+         100%
+  ;
+  flow-children:
+                 
+                 right
+  ;
+ }
+  .LevelProgressXPValuesContainer .CurrentLevelXPLabel{
+   font-weight:
+                
+                semi-bold
+   ;
+  }
+  .LevelProgressXPValuesContainer .NextLevelXPLabel{
+   margin-left:
+                
+                4px
+   ;
+  }
+ #NextHeroLevelRewards{
+  flow-children:
+                 
+                 right
+  ;
+ }
+ #NextHeroLevelRewardsButton{
+  flow-children:
+                 
+                 right
+  ;
+  min-height:
+              
+              21px
+  ;
+ }
+ #NextHeroLevelRewardsButton:hover > Label{
+  color:
+         
+         white
+  ;
+ }
+ #NextHeroLevelRewardsButton:active > Label{
+  color:
+         
+         #ddd
+  ;
+ }
+ #NextRewardsIcon{
+  width:
+         
+         14px
+  ;
+  height:
+          
+          14px
+  ;
+  vertical-align:
+                  
+                  middle
+  ;
+  margin-right:
+                
+                6px
+  ;
+  transform:
+             
+             translateY
+                       (
+                         
+                         -2px
+                              
+                              )
+  ;
+  wash-color:
+              
+              #ccc
+  ;
+  background-image:
+                    
+                    url(
+                         "s2r://panorama/images/control_icons/arrow_popout_png.vtex"
+                    )
+  ;
+  background-size:
+                   
+                   contain
+  ;
+  background-repeat:
+                     
+                     no-repeat
+  ;
+  background-position:
+                       
+                       center
+  ;
+ }
+ #NextHeroLevelRewardsButton:hover #NextRewardsIcon{
+  wash-color:
+              
+              white
+  ;
+ }
+ #NextHeroLevelRewardsButton:active #NextRewardsIcon{
+  wash-color:
+              
+              #ddd
+  ;
+ }
+ #HeroLevelProgress{
+  width:
+         
+         100%
+  ;
+  height:
+          
+          6px
+  ;
+  border:
+          
+          0px
+  ;
+  border-radius:
+                 
+                 0px
+  ;
+  background-color:
+                    
+                    #ddf2ff08
+  ;
+  margin:
+          
+          8px
+              
+              0px
+  ;
+ }
+ #ChallengesMain{
+  flow-children:
+                 
+                 down
+  ;
+  width:
+         
+         100%
+  ;
+  height:
+          
+          100%
+  ;
+ }
+ .ChallengeRefreshRequired #TitleSection{
+  visibility:
+              
+              collapse
+  ;
+ }
+ #ChallengesContainer{
+  height:
+          
+          537px
+  ;
+  width:
+         
+         100%
+  ;
+ }
+ #ChallengesUpsell{
+  margin-top:
+              
+              0px
+  ;
+  padding-top:
+               
+               12px
+  ;
+  visibility:
+              
+              collapse
+  ;
+ }
+ .MaxHeroLevelWithoutSubscription #ChallengesUpsell{
+  visibility:
+              
+              visible
+  ;
+ }
+ #ChallengesControl{
+  width:
+         
+         100%
+  ;
+  margin-top:
+              
+              0px
+  ;
+ }
+  #ChallengesControl DOTAPlusHeroChallenge{
+   margin-bottom:
+                  
+                  12px
+   ;
+  }
+ #ChallengeRefreshControl{
+  height:
+          
+          100%
+  ;
+  width:
+         
+         100%
+  ;
+  background-image:
+                    
+                    url(
+                         "s2r://panorama/images/dota_plus/challenge_bountyxp_png.vtex"
+                    )
+  ;
+  background-position:
+                       
+                       100%
+                            
+                            100%
+  ;
+  background-repeat:
+                     
+                     no-repeat
+  ;
+  background-size:
+                   
+                   contain
+  ;
+ }
+ #RefreshImage{
+  width:
+         
+         399px
+  ;
+  height:
+          
+          197px
+  ;
+  background-image:
+                    
+                    url(
+                         "s2r://panorama/images/dota_plus/challenge_stars_png.vtex"
+                    )
+  ;
+  background-size:
+                   
+                   100%
+  ;
+  horizontal-align:
+                    
+                    center
+  ;
+  margin-top:
+              
+              -10px
+  ;
+ }
+ #RefreshButton{
+  height:
+          
+          35px
+  ;
+  width:
+         
+         220px
+  ;
+  horizontal-align:
+                    
+                    center
+  ;
+  margin:
+          
+          25px
+  ;
+  opacity:
+           
+           0
+  ;
+ }
+ #RefreshButton Label{
+  font-size:
+             
+             14px
+  ;
+  color:
+         
+         #fff
+  ;
+  horizontal-align:
+                    
+                    center
+  ;
+  letter-spacing:
+                  
+                  1px
+  ;
+  font-weight:
+               
+               bold
+  ;
+  vertical-align:
+                  
+                  center
+  ;
+  text-overflow:
+                 
+                 shrink
+  ;
+  height:
+          
+          22px
+  ;
+ }
+ #ChallengeInfoHeader{
+  width:
+         
+         100%
+  ;
+  height:
+          
+          100%
+  ;
+ }
+ #ChallengeTimer{
+  width:
+         
+         100%
+  ;
+  height:
+          
+          50px
+  ;
+  vertical-align:
+                  
+                  bottom
+  ;
+  margin-bottom:
+                 
+                 10px
+  ;
+ }
+ #ChallengeRefreshNote{
+  width:
+         
+         160px
+  ;
+  font-size:
+             
+             16px
+  ;
+  line-height:
+               
+               18px
+  ;
+  vertical-align:
+                  
+                  bottom
+  ;
+  text-overflow:
+                 
+                 shrink
+  ;
+  margin-left:
+               
+               20px
+  ;
+  margin-bottom:
+                 
+                 4px
+  ;
+  letter-spacing:
+                  
+                  1px
+  ;
+  font-weight:
+               
+               bold
+  ;
+  color:
+         
+         #B78946
+  ;
+ }
+ .MaxHeroLevel #NextHeroLevelRewardsButton > Label,.MaxHeroLevel #NextHeroLevelRewardsList,.MaxHeroLevelRewardsLabel{
+  visibility:
+              
+              collapse
+  ;
+ }
+ .MaxHeroLevel .MaxHeroLevelRewardsLabel{
+  visibility:
+              
+              visible
+  ;
+ }
+ .ExitFullScreenLabel{
+  horizontal-align:
+                    
+                    center
+  ;
+  margin-top:
+              
+              20px
+  ;
+  opacity:
+           
+           0
+  ;
+ }
+  .FullscreenPage .ExitFullScreenLabel{
+   animation-name:
+                   
+                   ShowExitFullFullScreenLabel
+   ;
+   animation-duration:
+                       
+                       2.5s
+   ;
+   animation-delay:
+                    
+                    0.5s
+   ;
+   animation-timing-function:
+                              
+                              ease
+   ;
+  }
+ @keyframes 'ShowExitFullFullScreenLabel'{
+  0%{
+   opacity:
+            
+            0
+   ;
+   transform:
+              
+              translateY
+                        (
+                          
+                          -10px
+                                
+                                )
+   ;
+  }
+  20%{
+   opacity:
+            
+            1
+   ;
+   transform:
+              
+              translateY
+                        (
+                          
+                          0px
+                              
+                              )
+   ;
+  }
+  90%{
+   opacity:
+            
+            1
+   ;
+   transform:
+              
+              translateY
+                        (
+                          
+                          0px
+                              
+                              )
+   ;
+  }
+  100%{
+   opacity:
+            
+            0
+   ;
+   transform:
+              
+              translateY
+                        (
+                          
+                          -10px
+                                
+                                )
+   ;
+  }
+ }
+ #HeroLoadoutBackgroundImageContainer{
+  transition-property:
+                       
+                       transform,
+                                  
+                                  brightness
+  ;
+  transition-duration:
+                       
+                       1.2s
+  ;
+  transition-timing-function:
+                              
+                              cubic-bezier
+                                          (
+                                           0,
+                                              
+                                              1,
+                                                 
+                                                 0,
+                                                    
+                                                    1
+                                                     )
+  ;
+  transform:
+             
+             scale3d
+                    (
+                      
+                      1.04,
+                            
+                            1.04,
+                                  
+                                  1
+                                    
+                                    )
+  ;
+ }
+  .FullscreenPage #HeroLoadoutBackgroundImageContainer{
+   transform:
+              
+              scale3d
+                     (
+                       
+                       1,
+                          
+                          1,
+                             
+                             1
+                               
+                               )
+   ;
+  }
+  .SubTabProgressionTabContents #HeroLoadoutBackgroundImageContainer,.SubTabStatsTabContents #HeroLoadoutBackgroundImageContainer,.SubTabGuidesTabContents #HeroLoadoutBackgroundImageContainer,.SubTabGlobalStatsContents #HeroLoadoutBackgroundImageContainer,.SubTabAboutTabContents #HeroLoadoutBackgroundImageContainer,.SubTabChangesTabContents #HeroLoadoutBackgroundImageContainer{
+   brightness:
+               
+               0.5
+   ;
+  }
+ #HeroLoadoutBackgroundImage{
+  transition-property:
+                       
+                       transform,
+                                  
+                                  opacity,
+                                           
+                                           brightness,
+                                                       
+                                                       background-color
+  ;
+  transition-duration:
+                       
+                       HeroCustomiseSlideDuration,
+                                                   
+                                                   1s
+  ;
+  transition-timing-function:
+                              
+                              cubic-bezier
+                                          (
+                                           0,
+                                              
+                                              1,
+                                                 
+                                                 0,
+                                                    
+                                                    1
+                                                     )
+  ;
+  opacity:
+           
+           0.3
+  ;
+ }
+  .EnableHeroCustomize #HeroLoadoutBackgroundImage{
+   opacity:
+            
+            0.05
+   ;
+   transform:
+              
+              translateX
+                        (
+                          
+                          -60px
+                                
+                                )
+   ;
+  }
+  .broodmother #HeroLoadoutBackgroundImage{
+   opacity:
+            
+            0
+   ;
+  }
+ #HeroLoadoutBackground,#HeroLoadoutBackground2{
+  visibility:
+              
+              collapse
+  ;
+  width:
+         
+         100%
+  ;
+  height:
+          
+          100%
+  ;
+  transition-property:
+                       
+                       transform,
+                                  
+                                  opacity,
+                                           
+                                           brightness
+  ;
+  transition-duration:
+                       
+                       HeroCustomiseSlideDuration,
+                                                   
+                                                   1s
+  ;
+  transition-timing-function:
+                              
+                              cubic-bezier
+                                          (
+                                           0,
+                                              
+                                              1,
+                                                 
+                                                 0,
+                                                    
+                                                    1
+                                                     )
+  ;
+  blur:
+        
+        gaussian
+                (
+                 4px
+                    )
+  ;
+ }
+  .SubTabProgressionTabContents #HeroLoadoutBackground,.SubTabStatsTabContents #HeroLoadoutBackground,.SubTabGuidesTabContents #HeroLoadoutBackground,.SubTabGlobalStatsContents #HeroLoadoutBackground,.SubTabAboutTabContents #HeroLoadoutBackground,.SubTabChangesTabContents #HeroLoadoutBackground,.SubTabProgressionTabContents #HeroLoadoutBackground2,.SubTabStatsTabContents #HeroLoadoutBackground2,.SubTabGuidesTabContents #HeroLoadoutBackground2,.SubTabGlobalStatsContents #HeroLoadoutBackground2,.SubTabAboutTabContents #HeroLoadoutBackground2,.SubTabChangesTabContents #HeroLoadoutBackground2{
+   brightness:
+               
+               0.5
+   ;
+  }
+  #HeroLoadoutBackground.FadeIn,#HeroLoadoutBackground2.FadeIn{
+   opacity:
+            
+            1
+   ;
+  }
+  #HeroLoadoutBackground.FadeOut,#HeroLoadoutBackground2.FadeOut{
+   opacity:
+            
+            0
+   ;
+  }
+  .EnableHeroCustomize #HeroLoadoutBackground,.EnableHeroCustomize #HeroLoadoutBackground2{
+   opacity:
+            
+            0.1
+   ;
+   transform:
+              
+              translateX
+                        (
+                          
+                          -60px
+                                
+                                )
+   ;
+  }
+ .Wrapper{
+  width:
+         
+         100%
+  ;
+  flow-children:
+                 
+                 down
+  ;
+ }
+ #EquippedSetDetailsContainer{
+  width:
+         
+         100%
+  ;
+  flow-children:
+                 
+                 down
+  ;
+ }
+ .EquippedArmoryIcon{
+  ignore-parent-flow:
+                      
+                      true
+  ;
+  wash-color:
+              
+              LightestGrey
+  ;
+  margin-left:
+               
+               -72px
+  ;
+  margin-top:
+              
+              -38px
+  ;
+  padding:
+           
+           40px
+  ;
+ }
+ .EquippedBackgroundShard{
+  horizontal-align:
+                    
+                    center
+  ;
+  width:
+         
+         800px
+  ;
+  height:
+          
+          300px
+  ;
+  border:
+          
+          1px
+              
+              solid
+                    
+                    white
+  ;
+  border-brush:
+                
+                gradient
+                        (
+                          
+                          linear,
+                                  
+                                  0%
+                                     
+                                     0%,
+                                         
+                                         10%
+                                             
+                                             60%,
+                                                  
+                                                  from
+                                                      (
+                                                        
+                                                        #FFFFFF
+                                                                
+                                                                )
+                                                                 ,
+                                                                   
+                                                                   to
+                                                                     (
+                                                                       
+                                                                       #FFFFFF00
+                                                                                 
+                                                                                 )
+                                                                                   
+                                                                                   )
+  ;
+  background-color:
+                    
+                    gradient
+                            (
+                              
+                              linear,
+                                      
+                                      0%
+                                         
+                                         0%,
+                                             
+                                             16%
+                                                 
+                                                 60%,
+                                                      
+                                                      from
+                                                          (
+                                                            
+                                                            #ffffff27
+                                                                      
+                                                                      )
+                                                                       ,
+                                                                         
+                                                                         to
+                                                                           (
+                                                                             
+                                                                             #FFFFFF00
+                                                                                       
+                                                                                       )
+                                                                                         
+                                                                                         )
+  ;
+  opacity:
+           
+           0.05
+  ;
+  transform:
+             
+             skewX
+                  (
+                    
+                    -16deg
+                           
+                           )
+                             
+                             translateX
+                                       (
+                                         
+                                         750px
+                                               
+                                               )
+                                                 
+                                                 translateY
+                                                           (
+                                                             
+                                                             314px
+                                                                   
+                                                                   )
+  ;
+  transition-property:
+                       
+                       opacity,
+                                
+                                transform
+  ;
+  transition-duration:
+                       
+                       0.1s
+  ;
+  transition-delay:
+                    
+                    0s
+  ;
+ }
+  .AspectRatio16x10 .EquippedBackgroundShard{
+   transform:
+              
+              skewX
+                   (
+                     
+                     -16deg
+                            
+                            )
+                              
+                              translateX
+                                        (
+                                          
+                                          700px
+                                                
+                                                )
+                                                  
+                                                  translateY
+                                                            (
+                                                              
+                                                              314px
+                                                                    
+                                                                    )
+   ;
+  }
+  .NoTier .EquippedBackgroundShard{
+   transform:
+              
+              skewX
+                   (
+                     
+                     -16deg
+                            
+                            )
+                              
+                              translateX
+                                        (
+                                          
+                                          750px
+                                                
+                                                )
+                                                  
+                                                  translateY
+                                                            (
+                                                              
+                                                              196px
+                                                                    
+                                                                    )
+   ;
+  }
+   .AspectRatio16x10 .NoTier .EquippedBackgroundShard{
+    transform:
+               
+               skewX
+                    (
+                      
+                      -16deg
+                             
+                             )
+                               
+                               translateX
+                                         (
+                                           
+                                           700px
+                                                 
+                                                 )
+                                                   
+                                                   translateY
+                                                             (
+                                                               
+                                                               196px
+                                                                     
+                                                                     )
+    ;
+   }
+  .SubTabProgressionTabContents .EquippedBackgroundShard,.SubTabStatsTabContents .EquippedBackgroundShard,.SubTabGuidesTabContents .EquippedBackgroundShard,.SubTabGlobalStatsContents .EquippedBackgroundShard,.SubTabAboutTabContents .EquippedBackgroundShard,.SubTabChangesTabContents .EquippedBackgroundShard,.EnableHeroCustomize .EquippedBackgroundShard,.FullscreenPage .EquippedBackgroundShard{
+   opacity:
+            
+            0
+   ;
+   transition-duration:
+                        
+                        0.2s
+   ;
+   transition-delay:
+                     
+                     0.4s
+   ;
+  }
+ #ViewSetsButtonContainer{
+  margin-top:
+              
+              24px
+  ;
+  box-shadow:
+              
+              0px
+                  
+                  4px
+                      
+                      24px
+                           
+                           -2px
+                                
+                                rgba
+                                    (
+                                     0,
+                                        
+                                        0,
+                                           
+                                           0,
+                                              
+                                              0.4
+                                                 )
+  ;
+ }
+  #ViewSetsButtonContainer #ViewSetsButton{
+   padding:
+            
+            12px
+                 
+                 48px
+   ;
+   animation-name:
+                   
+                   PulseButton
+   ;
+   animation-duration:
+                       
+                       1s
+   ;
+   animation-delay:
+                    
+                    0s
+   ;
+   animation-timing-function:
+                              
+                              ease-in-out
+   ;
+   animation-iteration-count:
+                              
+                              infinite
+   ;
+   animation-direction:
+                        
+                        alternate-reverse
+   ;
+  }
+ @keyframes 'PulseButton'{
+  0%{
+   brightness:
+               
+               1
+   ;
+   box-shadow:
+               
+               inset
+                     
+                     0px
+                         
+                         0px
+                             
+                             0px
+                                 
+                                 #FFFFFF00
+   ;
+  }
+  100%{
+   brightness:
+               
+               4
+   ;
+   box-shadow:
+               
+               inset
+                     
+                     0px
+                         
+                         0px
+                             
+                             4px
+                                 
+                                 #C2D8FF22
+   ;
+  }
+ }
+ #RoleSymbol{
+  width:
+         
+         32px
+  ;
+  height:
+          
+          32px
+  ;
+ }
+ #EquippedSetName{
+  font-family:
+               
+               titleFont
+  ;
+  font-size:
+             
+             24px
+  ;
+  margin:
+          
+          6px
+              
+              0px
+                  
+                  0px
+  ;
+  opacity:
+           
+           0.9
+  ;
+ }
+ #HeroCustomize{
+  height:
+          
+          100%
+  ;
+  horizontal-align:
+                    
+                    center
+  ;
+  flow-children:
+                 
+                 down
+  ;
+  margin-left:
+               
+               824px
+  ;
+  opacity:
+           
+           0
+  ;
+  margin-top:
+              
+              62px
+  ;
+  transform:
+             
+             translateX
+                       (
+                         
+                         120px
+                               
+                               )
+                                 
+                                 scale3d
+                                        (
+                                         1.1,
+                                              
+                                              1.1,
+                                                   
+                                                   1
+                                                    )
+  ;
+  transition-property:
+                       
+                       transform,
+                                  
+                                  opacity
+  ;
+  transition-duration:
+                       
+                       HeroCustomiseSlideDuration
+  ;
+  transition-delay:
+                    
+                    0.2s
+  ;
+  transition-timing-function:
+                              
+                              cubic-bezier
+                                          (
+                                           0,
+                                              
+                                              1,
+                                                 
+                                                 0,
+                                                    
+                                                    1
+                                                     )
+  ;
+ }
+  .AspectRatio16x10 #HeroCustomize{
+   margin-left:
+                
+                630px
+   ;
+  }
+  .EnableHeroCustomize #HeroCustomize{
+   opacity:
+            
+            1
+   ;
+   transform:
+              
+              none
+   ;
+   transition-delay:
+                     
+                     0s
+   ;
+   transition-duration:
+                        
+                        0.2s
+   ;
+   transition-timing-function:
+                               
+                               ease-in
+   ;
+  }
+  .HeroCustomizeEnter #HeroCustomize{
+   sound:
+          
+          "ui_loadout_slide_in"
+   ;
+  }
+  .HeroCustomizeExit #HeroCustomize{
+   sound:
+          
+          "ui_loadout_slide_out"
+   ;
+  }
+ #PersonaToggleContainer{
+  horizontal-align:
+                    
+                    left
+  ;
+  margin-bottom:
+                 
+                 32px
+  ;
+  margin-left:
+               
+               -8px
+  ;
+  margin-top:
+              
+              -4px
+  ;
+  visibility:
+              
+              collapse
+  ;
+ }
+  .HasMultiplePersonas #PersonaToggleContainer{
+   visibility:
+               
+               visible
+   ;
+  }
+ .HeroPageNavigation{
+  margin-top:
+              
+              140px
+  ;
+  margin-left:
+               
+               32px
+  ;
+  flow-children:
+                 
+                 right
+  ;
+  transition-property:
+                       
+                       opacity
+  ;
+  transition-duration:
+                       
+                       0.2s
+  ;
+ }
+  .HeroPageNavigation .ButtonSeparator{
+   width:
+          
+          1px
+   ;
+   height:
+           
+           16px
+   ;
+   background-color:
+                     
+                     rgba
+                         (
+                          255,255,255,0.03
+                                          )
+   ;
+   vertical-align:
+                   
+                   center
+   ;
+   margin:
+           
+           0px
+               
+               16px
+   ;
+   margin-top:
+               
+               1px
+   ;
+  }
+  .FullscreenPage .HeroPageNavigation{
+   opacity:
+            
+            0
+   ;
+  }
+  .AspectRatio21x9 .HeroPageNavigation{
+   margin-left:
+                
+                0px
+   ;
+  }
+  .EnableHeroCustomize .HeroPageNavigation{
+   opacity:
+            
+            0
+   ;
+  }
+  .HeroPageNavigation .NextPrevHeroButton{
+   flow-children:
+                  
+                  right
+   ;
+   opacity:
+            
+            0.2
+   ;
+   transition-duration:
+                        
+                        0.1s
+   ;
+   transition-property:
+                        
+                        opacity,
+                                 
+                                 brightness,
+                                             
+                                             transform
+   ;
+  }
+   .HeroPageNavigation .NextPrevHeroButton:hover{
+    opacity:
+             
+             1
+    ;
+    brightness:
+                
+                1.5
+    ;
+   }
+   .HeroPageNavigation .NextPrevHeroButton:active{
+    transform:
+               
+               translateY
+                         (
+                           
+                           1px
+                               
+                               )
+    ;
+   }
+   .HeroPageNavigation .NextPrevHeroButton Label{
+    vertical-align:
+                    
+                    center
+    ;
+   }
+   .HeroPageNavigation .NextPrevHeroButton Image{
+    vertical-align:
+                    
+                    center
+    ;
+    margin:
+            
+            0px
+                
+                2px
+    ;
+    wash-color:
+                
+                LighterGrey
+    ;
+   }
+ .DoneCustomizingButton{
+  ignore-parent-flow:
+                      
+                      true
+  ;
+  horizontal-align:
+                    
+                    right
+  ;
+  vertical-align:
+                  
+                  top
+  ;
+  margin-top:
+              
+              36px
+  ;
+ }
+ #CosmeticPicker{
+  flow-children:
+                 
+                 right-wrap
+  ;
+  width:
+         
+         fill-parent-flow
+                         (
+                           
+                           1.0
+                               
+                               )
+  ;
+  height:
+          
+          100%
+  ;
+  width:
+         
+         974px
+  ;
+  margin:
+          
+          28px
+               
+               0px
+                   
+                   90px
+  ;
+ }
+         #CosmeticPicker:hover VerticalScrollBar{
+             opacity:
+                      
+                      1
+             ;
+         }
+     #CosmeticPicker VerticalScrollBar{
+         opacity:
+                  
+                  0
+         ;
+         transition-property:
+                              
+                              opacity,
+                                       
+                                       transform
+         ;
+         transition-duration:
+                              
+                              0.1s
+         ;
+     }
+ #HeroSlots{
+  horizontal-align:
+                    
+                    center
+  ;
+  flow-children:
+                 
+                 down
+  ;
+  margin-top:
+              
+              -1px
+  ;
+ }
+ .HighestRelicsContainer{
+  flow-children:
+                 
+                 down
+  ;
+  margin-right:
+                
+                60px
+  ;
+  margin-top:
+              
+              8px
+  ;
+ }
+ .HighestRelicsList{
+  margin-top:
+              
+              12px
+  ;
+  margin-left:
+               
+               -8px
+  ;
+ }
+ .HighestHeroRelic{
+  width:
+         
+         fill-parent-flow
+                         (
+                          1
+                           )
+  ;
+  height:
+          
+          100px
+  ;
+  tooltip-position:
+                    
+                    top
+  ;
+  tooltip-body-position:
+                         
+                         50%
+                             
+                             50%
+  ;
+  flow-children:
+                 
+                 down
+  ;
+ }
+  .HighestHeroRelic #RelicImage{
+   ui-scale:
+             
+             44%
+   ;
+   horizontal-align:
+                     
+                     center
+   ;
+   vertical-align:
+                   
+                   middle
+   ;
+  }
+  .HighestHeroRelic .HeroRelicLevel{
+   horizontal-align:
+                     
+                     center
+   ;
+   margin-top:
+               
+               2px
+   ;
+  }
+ .TabGroupContainer{
+  horizontal-align:
+                    
+                    center
+  ;
+ }
+ .DividerDash{
+  width:
+         
+         100%
+  ;
+  height:
+          
+          1px
+  ;
+  margin-bottom:
+                 
+                 16px
+  ;
+  background-color:
+                    
+                    rgba
+                        (
+                         255,
+                              
+                              255,
+                                   
+                                   255,
+                                        
+                                        0.01
+                                            )
+  ;
+ }
+  .DividerDash.Shorter{
+   margin-right:
+                 
+                 24px
+   ;
+  }
+ .Dash{
+  width:
+         
+         600px
+  ;
+  height:
+          
+          1px
+  ;
+  background-color:
+                    
+                    gradient
+                            (
+                              
+                              linear,
+                                      
+                                      0%
+                                         
+                                         0%,
+                                             
+                                             100%
+                                                  
+                                                  0%,
+                                                      
+                                                      from
+                                                          (
+                                                            
+                                                            #FFFFFF00
+                                                                      
+                                                                      )
+                                                                       ,
+                                                                         
+                                                                         color-stop
+                                                                                   (
+                                                                                     
+                                                                                     0.2,
+                                                                                          
+                                                                                          #ffffff
+                                                                                                  
+                                                                                                  )
+                                                                                                   ,
+                                                                                                     
+                                                                                                     color-stop
+                                                                                                               (
+                                                                                                                 
+                                                                                                                 0.8,
+                                                                                                                      
+                                                                                                                      #ffffff
+                                                                                                                              
+                                                                                                                              )
+                                                                                                                               ,
+                                                                                                                                 
+                                                                                                                                 to
+                                                                                                                                   (
+                                                                                                                                     
+                                                                                                                                     #FFFFFF00
+                                                                                                                                               
+                                                                                                                                               )
+                                                                                                                                                 
+                                                                                                                                                 )
+  ;
+  margin-top:
+              
+              16px
+  ;
+  opacity:
+           
+           0.08
+  ;
+ }
+ #TabContents{
+  padding-top:
+               
+               172px
+  ;
+  width:
+         
+         100%
+  ;
+  height:
+          
+          100%
+  ;
+  vertical-align:
+                  
+                  top
+  ;
+  horizontal-align:
+                    
+                    center
+  ;
+  flow-children:
+                 
+                 down
+  ;
+  transform:
+             
+             scale3d
+                    (
+                      
+                      0.96,
+                            
+                            0.96,
+                                  
+                                  1
+                                   )
+  ;
+  opacity:
+           
+           0
+  ;
+  transition-property:
+                       
+                       transform,
+                                  
+                                  opacity
+  ;
+  transition-duration:
+                       
+                       0.6s
+  ;
+  transition-timing-function:
+                              
+                              cubic-bezier
+                                          (
+                                           0,
+                                              
+                                              1,
+                                                 
+                                                 0,
+                                                    
+                                                    1
+                                                     )
+  ;
+ }
+  .SubTabProgressionTabContents #TabContents,.SubTabStatsTabContents #TabContents,.SubTabGuidesTabContents #TabContents,.SubTabGlobalStatsContents #TabContents,.SubTabAboutTabContents #TabContents,.SubTabChangesTabContents #TabContents{
+   transform:
+              
+              none
+   ;
+   opacity:
+            
+            1
+   ;
+   transition-duration:
+                        
+                        0.15s
+   ;
+   transition-timing-function:
+                               
+                               ease-in
+   ;
+  }
+  #TabContents .TabContentsContainer{
+   width:
+          
+          1400px
+   ;
+   padding:
+            
+            0px
+                
+                20px
+   ;
+   height:
+           
+           640px
+   ;
+   horizontal-align:
+                     
+                     center
+   ;
+  }
+ .TabContentsHeaderContainer{
+  horizontal-align:
+                    
+                    center
+  ;
+  flow-children:
+                 
+                 down
+  ;
+  margin-bottom:
+                 
+                 16px
+  ;
+ }
+  .TabContentsHeaderContainer .TabContentsHeroName{
+   horizontal-align:
+                     
+                     center
+   ;
+  }
+  .TabContentsHeaderContainer .TabContentsHeader{
+   color:
+          
+          white
+   ;
+   horizontal-align:
+                     
+                     center
+   ;
+  }
+ #ProgressionTabContents,#StatsTabContents,#GlobalStatsContents,#GuidesTabContents,#AboutTabContents,#ChangesTabContents{
+  opacity:
+           
+           0
+  ;
+  animation-duration:
+                      
+                      0.4s
+  ;
+ }
+  #ProgressionTabContents.AnimateLeftOut,#StatsTabContents.AnimateLeftOut,#GlobalStatsContents.AnimateLeftOut,#GuidesTabContents.AnimateLeftOut,#AboutTabContents.AnimateLeftOut,#ChangesTabContents.AnimateLeftOut{
+   animation-name:
+                   
+                   AnimateLeftOut
+   ;
+  }
+  #ProgressionTabContents.AnimateRightOut,#StatsTabContents.AnimateRightOut,#GlobalStatsContents.AnimateRightOut,#GuidesTabContents.AnimateRightOut,#AboutTabContents.AnimateRightOut,#ChangesTabContents.AnimateRightOut{
+   animation-name:
+                   
+                   AnimateRightOut
+   ;
+  }
+  #ProgressionTabContents.AnimateLeftIn,#StatsTabContents.AnimateLeftIn,#GlobalStatsContents.AnimateLeftIn,#GuidesTabContents.AnimateLeftIn,#AboutTabContents.AnimateLeftIn,#ChangesTabContents.AnimateLeftIn{
+   animation-name:
+                   
+                   AnimateLeftIn
+   ;
+   opacity:
+            
+            1
+   ;
+  }
+  #ProgressionTabContents.AnimateRightIn,#StatsTabContents.AnimateRightIn,#GlobalStatsContents.AnimateRightIn,#GuidesTabContents.AnimateRightIn,#AboutTabContents.AnimateRightIn,#ChangesTabContents.AnimateRightIn{
+   animation-name:
+                   
+                   AnimateRightIn
+   ;
+   opacity:
+            
+            1
+   ;
+  }
+ @keyframes 'AnimateLeftOut'{
+  0%{
+   transform:
+              
+              translateX
+                        (
+                          
+                          0px
+                              
+                              )
+   ;
+   opacity:
+            
+            1
+   ;
+  }
+  30%{
+   transform:
+              
+              translateX
+                        (
+                          
+                          -10px
+                                
+                                )
+   ;
+   opacity:
+            
+            0
+   ;
+  }
+  30.1%{
+   transform:
+              
+              translateX
+                        (
+                          
+                          20px
+                               
+                               )
+   ;
+   opacity:
+            
+            0
+   ;
+  }
+  100%{
+   transform:
+              
+              translateX
+                        (
+                          
+                          0px
+                              
+                              )
+   ;
+   opacity:
+            
+            0
+   ;
+  }
+ }
+ @keyframes 'AnimateLeftIn'{
+  0%{
+   transform:
+              
+              translateX
+                        (
+                          
+                          0px
+                              
+                              )
+   ;
+   opacity:
+            
+            0
+   ;
+  }
+  30%{
+   transform:
+              
+              translateX
+                        (
+                          
+                          -10px
+                                
+                                )
+   ;
+   opacity:
+            
+            0
+   ;
+  }
+  30.1%{
+   transform:
+              
+              translateX
+                        (
+                          
+                          20px
+                               
+                               )
+   ;
+   opacity:
+            
+            0
+   ;
+  }
+  100%{
+   transform:
+              
+              translateX
+                        (
+                          
+                          0px
+                              
+                              )
+   ;
+   opacity:
+            
+            1
+   ;
+  }
+ }
+ @keyframes 'AnimateRightOut'{
+  0%{
+   transform:
+              
+              translateX
+                        (
+                          
+                          0px
+                              
+                              )
+   ;
+   opacity:
+            
+            1
+   ;
+  }
+  30%{
+   transform:
+              
+              translateX
+                        (
+                          
+                          10px
+                               
+                               )
+   ;
+   opacity:
+            
+            0
+   ;
+  }
+  30.1%{
+   transform:
+              
+              translateX
+                        (
+                          
+                          -20px
+                                
+                                )
+   ;
+   opacity:
+            
+            0
+   ;
+  }
+  100%{
+   transform:
+              
+              translateX
+                        (
+                          
+                          0px
+                              
+                              )
+   ;
+   opacity:
+            
+            0
+   ;
+  }
+ }
+ @keyframes 'AnimateRightIn'{
+  0%{
+   transform:
+              
+              translateX
+                        (
+                          
+                          0px
+                              
+                              )
+   ;
+   opacity:
+            
+            0
+   ;
+  }
+  30%{
+   transform:
+              
+              translateX
+                        (
+                          
+                          10px
+                               
+                               )
+   ;
+   opacity:
+            
+            0
+   ;
+  }
+  30.1%{
+   transform:
+              
+              translateX
+                        (
+                          
+                          -20px
+                                
+                                )
+   ;
+   opacity:
+            
+            0
+   ;
+  }
+  100%{
+   transform:
+              
+              translateX
+                        (
+                          
+                          0px
+                              
+                              )
+   ;
+   opacity:
+            
+            1
+   ;
+  }
+ }
+ #ProgressionTabContents{
+  margin-bottom:
+                 
+                 0px
+  ;
+  width:
+         
+         100%
+  ;
+  height:
+          
+          100%
+  ;
+ }
+ #StatsTabContents{
+  flow-children:
+                 
+                 down
+  ;
+  width:
+         
+         100%
+  ;
+  height:
+          
+          100%
+  ;
+ }
+ #GlobalStatsContents{
+  width:
+         
+         100%
+  ;
+  height:
+          
+          100%
+  ;
+ }
+ #AboutTabContents{
+  flow-children:
+                 
+                 down
+  ;
+  width:
+         
+         100%
+  ;
+  height:
+          
+          100%
+  ;
+  horizontal-align:
+                    
+                    center
+  ;
+  vertical-align:
+                  
+                  top
+  ;
+  flow-children:
+                 
+                 right
+  ;
+ }
+ .HeroPortraitContainer{
+  width:
+         
+         460px
+  ;
+  height:
+          
+          100%
+  ;
+  overflow:
+            
+            clip
+  ;
+ }
+  .HeroPortraitContainer #HeroBackgroundImage{
+   width:
+          
+          100%
+   ;
+   height:
+           
+           100%
+   ;
+   wash-color:
+               
+               rgba
+                   (
+                    0,
+                       
+                       0,
+                          
+                          0,
+                             
+                             0.85
+                                 )
+   ;
+   background-size:
+                    
+                    cover
+   ;
+   background-position:
+                        
+                        center
+   ;
+  }
+  .HeroPortraitContainer #AboutHeroScenePanel{
+   width:
+          
+          140%
+   ;
+   height:
+           
+           140%
+   ;
+   margin-left:
+                
+                -20%
+   ;
+   margin-top:
+               
+               -15%
+   ;
+   overflow:
+             
+             noclip
+   ;
+  }
+ .InfoColumn{
+  width:
+         
+         420px
+  ;
+  flow-children:
+                 
+                 down
+  ;
+  overflow:
+            
+            squish
+                   
+                   scroll
+  ;
+  padding:
+           
+           40px
+                
+                0px
+                    
+                    100px
+                          
+                          40px
+  ;
+  opacity-mask:
+                
+                url(
+                     "s2r://panorama/images/masks/scrolling_side_nav_mask_psd.vtex"
+                )
+  ;
+ }
+  .InfoColumn VerticalScrollBar{
+   opacity:
+            
+            0
+   ;
+  }
+ #HeroStats{
+  width:
+         
+         fill-parent-flow
+                         (
+                           
+                           1.0
+                               
+                               )
+  ;
+  flow-children:
+                 
+                 right
+  ;
+  padding:
+           
+           40px
+                
+                32px
+  ;
+ }
+ .HeroStatsColumn{
+  width:
+         
+         50%
+  ;
+  flow-children:
+                 
+                 down
+  ;
+ }
+ .AboutContentBlock{
+  margin-bottom:
+                 
+                 16px
+  ;
+ }
+ .HeroRoleDetails{
+  width:
+         
+         100%
+  ;
+ }
+ .HeroStatsSection{
+  flow-children:
+                 
+                 down
+  ;
+  margin-bottom:
+                 
+                 8px
+  ;
+  width:
+         
+         100%
+  ;
+  tooltip-position:
+                    
+                    top
+  ;
+  tooltip-body-position:
+                         
+                         50%
+                             
+                             50%
+  ;
+ }
+ .HeroStatsHeader{
+  margin-bottom:
+                 
+                 8px
+  ;
+  color:
+         
+         #6b7da5
+  ;
+ }
+ .HeroStatsRow{
+  flow-children:
+                 
+                 down
+  ;
+  margin-bottom:
+                 
+                 8px
+  ;
+ }
+ .HeroAttributeStatsRow{
+  flow-children:
+                 
+                 right
+  ;
+  margin-bottom:
+                 
+                 8px
+  ;
+ }
+  .HeroAttributeStatsRow Label{
+   vertical-align:
+                   
+                   center
+   ;
+  }
+ .HeroStatsValueRow{
+  flow-children:
+                 
+                 right
+  ;
+ }
+  .HeroStatsValueRow Label{
+   color:
+          
+          LightestGrey
+   ;
+  }
+ .StatValueLabel{
+  color:
+         
+         LightGrey
+  ;
+ }
+ .HeroStatsIcon{
+  width:
+         
+         24px
+  ;
+  height:
+          
+          24px
+  ;
+  margin-right:
+                
+                8px
+  ;
+  vertical-align:
+                  
+                  center
+  ;
+  wash-color:
+              
+              LightestGrey
+  ;
+  background-size:
+                   
+                   contain
+  ;
+  background-repeat:
+                     
+                     no-repeat
+  ;
+  background-position:
+                       
+                       center
+  ;
+ }
+ #HeroOverview{
+  margin-bottom:
+                 
+                 24px
+  ;
+  letter-spacing:
+                  
+                  -0.3px
+  ;
+ }
+ .HeroResourceRow{
+  width:
+         
+         100%
+  ;
+  margin:
+          
+          4px
+              
+              0px
+                  
+                  12px
+  ;
+  background-color:
+                    
+                    white
+  ;
+  border-radius:
+                 
+                 3px
+  ;
+ }
+  .HeroResourceRow .MaxResource{
+   vertical-align:
+                   
+                   center
+   ;
+   horizontal-align:
+                     
+                     center
+   ;
+   color:
+          
+          white
+   ;
+   text-shadow:
+                
+                0px
+                    
+                    2px
+                        
+                        5px
+                            
+                            1
+                              
+                              black
+   ;
+   vertical-align:
+                   
+                   center
+   ;
+  }
+  .HeroResourceRow .ResourceRegen{
+   vertical-align:
+                   
+                   center
+   ;
+   horizontal-align:
+                     
+                     right
+   ;
+   color:
+          
+          rgba
+              (
+               255,
+                    
+                    255,
+                         
+                         255,
+                              
+                              0.8
+                                 )
+   ;
+   text-shadow:
+                
+                0px
+                    
+                    1px
+                        
+                        5px
+                            
+                            1
+                              
+                              black
+   ;
+   font-weight:
+                
+                semi-bold
+   ;
+   margin:
+           
+           -1px
+                
+                0px
+                    
+                    1px
+   ;
+   margin-right:
+                 
+                 8px
+   ;
+  }
+  .HeroResourceRow.Health{
+   background-color:
+                     
+                     GreenGradientBackgroundColor
+   ;
+  }
+  .HeroResourceRow.Mana{
+   background-color:
+                     
+                     BlueGradientBackgroundColor
+   ;
+  }
+ #ChangesTabContents{
+  flow-children:
+                 
+                 down
+  ;
+  height:
+          
+          100%
+  ;
+  width:
+         
+         100%
+  ;
+ }
+ @define LoadoutQuickSearchFadeOutTime:
+                                        
+                                        1.6s
+ ;
+ @define LoadoutQuickSearchResultsFadeOutTime:
+                                               
+                                               1.6s
+ ;
+ #QuickSearch{
+  z-index:
+           
+           1
+  ;
+  vertical-align:
+                  
+                  middle
+  ;
+  width:
+         
+         100%
+  ;
+  text-align:
+              
+              center
+  ;
+  text-overflow:
+                 
+                 clip
+  ;
+  font-size:
+             
+             100px
+  ;
+  font-weight:
+               
+               bold
+  ;
+  color:
+         
+         white
+  ;
+  letter-spacing:
+                  
+                  1px
+  ;
+  opacity:
+           
+           0
+  ;
+  font-family:
+               
+               titleFont
+  ;
+  transition-property:
+                       
+                       pre-transform-scale2d,
+                                              
+                                              opacity
+  ;
+  transition-duration:
+                       
+                       0.2s
+  ;
+  padding:
+           
+           24px
+  ;
+  text-shadow:
+               
+               0px
+                   
+                   8px
+                       
+                       48px
+                            
+                            black
+  ;
+  text-transform:
+                  
+                  uppercase
+  ;
+  margin-bottom:
+                 
+                 280px
+  ;
+ }
+ .QuickSearchUserAnimation{
+  animation-name:
+                  
+                  QuickSearchUserFadeOut
+  ;
+  animation-duration:
+                      
+                      LoadoutQuickSearchFadeOutTime
+  ;
+ }
+ @keyframes 'QuickSearchUserFadeOut'{
+  0%{
+   opacity:
+            
+            1.0
+   ;
+   blur:
+         
+         none
+   ;
+  }
+  70%{
+   opacity:
+            
+            1.0
+   ;
+   blur:
+         
+         none
+   ;
+  }
+  100%{
+   opacity:
+            
+            0.0
+   ;
+   blur:
+         
+         gaussian
+                 (
+                   
+                   4
+                     
+                     )
+   ;
+  }
+ }
+ #QuickSearchResultsContainer{
+  z-index:
+           
+           1
+  ;
+  vertical-align:
+                  
+                  top
+  ;
+  horizontal-align:
+                    
+                    center
+  ;
+  flow-children:
+                 
+                 down
+  ;
+  width:
+         
+         580px
+  ;
+  padding:
+           
+           48px
+  ;
+  opacity:
+           
+           0
+  ;
+  margin-top:
+              
+              432px
+  ;
+ }
+  #QuickSearchResultsContainer.Hidden{
+   opacity:
+            
+            0
+   ;
+  }
+  #QuickSearchResultsContainer .QuickSearchResult{
+   flow-children:
+                  
+                  right
+   ;
+   width:
+          
+          100%
+   ;
+   background-color:
+                     
+                     DarkGreyGradientBackgroundColor
+   ;
+   box-shadow:
+               
+               0px
+                   
+                   0px
+                       
+                       24px
+                            
+                            #00ffff00
+   ;
+   margin-bottom:
+                  
+                  6px
+   ;
+   transition-property:
+                        
+                        background-color,
+                                          
+                                          box-shadow,
+                                                      
+                                                      brightness,
+                                                                  
+                                                                  transform
+   ;
+   transition-duration:
+                        
+                        0.05s
+   ;
+  }
+   #QuickSearchResultsContainer .QuickSearchResult .SearchResultBorder{
+    width:
+           
+           100%
+    ;
+    height:
+            
+            100%
+    ;
+    border:
+            
+            0px
+                
+                solid
+                      
+                      #00FFFF
+    ;
+    ignore-parent-flow:
+                        
+                        true
+    ;
+    transition-property:
+                         
+                         border
+    ;
+    transition-duration:
+                         
+                         0.1s
+    ;
+   }
+   #QuickSearchResultsContainer .QuickSearchResult #QuickSearchHeroImage{
+    ui-scale:
+              
+              90%
+    ;
+   }
+   #QuickSearchResultsContainer .QuickSearchResult #QuickSearchHeroName{
+    margin-left:
+                 
+                 14px
+    ;
+    margin-bottom:
+                   
+                   2px
+    ;
+    vertical-align:
+                    
+                    middle
+    ;
+    font-size:
+               
+               20px
+    ;
+    transition-property:
+                         
+                         color
+    ;
+    transition-duration:
+                         
+                         0.2s
+    ;
+   }
+   #QuickSearchResultsContainer .QuickSearchResult:focus{
+    background-color:
+                      
+                      GreyGradientBackgroundColor
+    ;
+    box-shadow:
+                
+                0px
+                    
+                    0px
+                        
+                        32px
+                             
+                             #00ffff10
+    ;
+    brightness:
+                
+                1.2
+    ;
+    transform:
+               
+               scale3d
+                      (
+                        
+                        1.02,
+                              
+                              1.02,
+                                    
+                                    1
+                                      
+                                      )
+    ;
+    z-index:
+             
+             1
+    ;
+   }
+    #QuickSearchResultsContainer .QuickSearchResult:focus #QuickSearchHeroName{
+     color:
+            
+            white
+     ;
+    }
+    #QuickSearchResultsContainer .QuickSearchResult:focus .SearchResultBorder{
+     border:
+             
+             2px
+                 
+                 solid
+                       
+                       #8bf9ff
+     ;
+     animation-name:
+                     
+                     GlowFocusBorder
+     ;
+     animation-duration:
+                         
+                         0.6s
+     ;
+     animation-iteration-count:
+                                
+                                infinite
+     ;
+     animation-timing-function:
+                                
+                                ease-in
+     ;
+     animation-direction:
+                          
+                          alternate
+     ;
+    }
+ @keyframes 'GlowFocusBorder'{
+  0%{
+   opacity:
+            
+            1
+   ;
+  }
+  100%{
+   opacity:
+            
+            0.2
+   ;
+  }
+ }
+ .QuickSearchResultsFadeOutAnimation{
+  animation-name:
+                  
+                  QuickSearchResultsFadeOut
+  ;
+  animation-duration:
+                      
+                      LoadoutQuickSearchResultsFadeOutTime
+  ;
+ }
+ @keyframes 'QuickSearchResultsFadeOut'{
+  0%{
+   opacity:
+            
+            1
+   ;
+   blur:
+         
+         gaussian
+                 (
+                   
+                   0
+                     
+                     )
+   ;
+  }
+  70%{
+   opacity:
+            
+            1
+   ;
+   blur:
+         
+         gaussian
+                 (
+                   
+                   0
+                     
+                     )
+   ;
+  }
+  100%{
+   opacity:
+            
+            0
+   ;
+   blur:
+         
+         gaussian
+                 (
+                   
+                   4
+                     
+                     )
+   ;
+  }
+ }
+ #PersonaSelector{
+  margin-top:
+              
+              72px
+  ;
+  transform:
+             
+             translateY
+                       (
+                         
+                         -12px
+                               
+                               )
+  ;
+  opacity:
+           
+           0
+  ;
+  transition-property:
+                       
+                       opacity,
+                                
+                                transform
+  ;
+  transition-delay:
+                    
+                    0.7s
+  ;
+  transition-duration:
+                       
+                       0.2s
+  ;
+  transition-timing-function:
+                              
+                              cubic-bezier
+                                          (
+                                           0,
+                                              
+                                              1,
+                                                 
+                                                 0,
+                                                    
+                                                    1
+                                                     )
+  ;
+ }
+ .EnableHeroCustomize #PersonaSelector.HasMultiplePersonas{
+  transform:
+             
+             none
+  ;
+  opacity:
+           
+           1
+  ;
+  transition-delay:
+                    
+                    0s
+  ;
+  transition-duration:
+                       
+                       0.1s
+  ;
+  transition-timing-function:
+                              
+                              ease-in
+  ;
+ }
+ #PersonaSelector2{
+  margin-bottom:
+                 
+                 20px
+  ;
+  margin-left:
+               
+               -8px
+  ;
+  horizontal-align:
+                    
+                    left
+  ;
+ }
+ #LargeModelPreviewControls{
+  width:
+         
+         100%
+  ;
+  flow-children:
+                 
+                 right
+  ;
+  margin-top:
+              
+              24px
+  ;
+ }
+ #FullscreenButton,#DebutToolButton{
+  margin-right:
+                
+                8px
+  ;
+  tooltip-position:
+                    
+                    top
+  ;
+ }
+ #DebutToolButton{
+  visibility:
+              
+              collapse
+  ;
+ }
+ .MainBranch #DebutToolButton{
+  visibility:
+              
+              visible
+  ;
+ }
+ #AssignedSticker{
+  width:
+         
+         96px
+  ;
+  height:
+          
+          96px
+  ;
+  margin-top:
+              
+              -13px
+  ;
+  margin-bottom:
+                 
+                 -6px
+  ;
+  margin-left:
+               
+               -10px
+  ;
+  visibility:
+              
+              collapse
+  ;
+ }
+ .StickerVisible #AssignedSticker{
+  visibility:
+              
+              visible
+  ;
+ }
+ .StickerVisible .StickerOutline{
+  visibility:
+              
+              collapse
+  ;
+ }
+ .StickerOutline{
+  width:
+         
+         56px
+  ;
+  height:
+          
+          56px
+  ;
+  background-image:
+                    
+                    url(
+                        "s2r://panorama/images/stickers/sticker_outline_psd.vtex"
+                    )
+  ;
+  background-repeat:
+                     
+                     no-repeat
+  ;
+     background-size:
+                      
+                      contain
+     ;
+  transition-property:
+                       
+                       opacity,
+                                
+                                pre-transform-scale2d
+  ;
+  transition-duration:
+                       
+                       .21s
+  ;
+  transition-timing-function:
+                              
+                              ease-in-out
+  ;
+  opacity:
+           
+           .05
+  ;
+ }
+ .AssignStickerButton{
+  vertical-align:
+                  
+                  middle
+  ;
+  margin-left:
+               
+               6px
+  ;
+  margin-top:
+              
+              -1px
+  ;
+ }
+ .AssignStickerButton:hover .StickerOutline{
+  opacity:
+           
+           1
+  ;
+ }
+ #EditButton{
+  background-image:
+                    
+                    url(
+                        "s2r://panorama/images/control_icons/edit_png.vtex"
+                    )
+  ;
+  height:
+          
+          30px
+  ;
+  width:
+         
+         30px
+  ;
+  background-size:
+                   
+                   70%
+  ;
+  background-repeat:
+                    no-repeat
+  ;
+  background-position:
+                       
+                       50%
+                           
+                           50%
+  ;
+  margin-left:
+               
+               70px
+  ;
+  margin-top:
+              
+              -10px
+  ;
+  z-index:
+           
+           10000
+  ;
+  wash-color:
+              
+              #8c8
+  ;
+  opacity:
+          0
+  ;
+  transition-property:
+                      opacity
+  ;
+  transition-duration:
+                      0.3s
+  ;
+  border-radius:
+                8px
+  ;
+  background-color:
+                   #00000088
+  ;
+ }
+ .StickerVisible .ShowEdit #EditButton{
+  opacity:
+          1
+  ;
+ }
+ #FullscreenCloseButton{
+  horizontal-align:
+                    
+                    right
+  ;
+  width:
+         
+         48px
+  ;
+  height:
+          
+          48px
+  ;
+  margin-top:
+              
+              24px
+  ;
+  margin-right:
+                
+                24px
+  ;
+  wash-color:
+              
+              #fff
+  ;
+  background-color:
+                    
+                    #00000000
+  ;
+  background-size:
+                   
+                   50%
+  ;
+  width:
+         
+         32px
+  ;
+  height:
+          
+          32px
+  ;
+  background-image:
+                    
+                    url(
+                        "s2r://panorama/images/leaf_pages/debut_arcana_wraith_king/close_png.vtex"
+                    )
+  ;
+  background-size:
+                   
+                   32px
+  ;
+  transform:
+             
+             translateX
+                       (
+                         
+                         100px
+                               
+                               )
+  ;
+  transition-property:
+                       
+                       transform
+  ;
+  transition-duration:
+                       
+                       0.2s
+  ;
+ }
+  #FullscreenCloseButton.Show{
+   transform:
+              
+              translateX
+                        (
+                          
+                          0px
+                              
+                              )
+   ;
+  }
+ .LeftHitArea{
+  height:
+          
+          100%
+  ;
+  width:
+         
+         15%
+  ;
+  horizontal-align:
+                    
+                    right
+  ;
+  visibility:
+              
+              collapse
+  ;
+ }
+ .FullscreenPage .LeftHitArea{
+  visibility:
+              
+              visible
+  ;
+}

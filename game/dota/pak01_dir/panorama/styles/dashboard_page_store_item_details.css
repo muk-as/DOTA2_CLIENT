@@ -10,34 +10,46 @@ DOTAStoreItemDetailsPage{
   width: 60%;
   height: 100%;
  }
+  .IsPopup .ModelContainer{
+   width: 824px;
+  }
 
- .AspectRatio4x3 .ModelContainer{
 
-  width: 55%;
- }
 
- .AspectRatio21x9 .ModelContainer{
 
-  width: 30%;
-  horizontal-align: center;
- }
+
+
+
+
+
+
+
+
 
  #ModelPreview{
 
   width: 100%;
   height: 100%;
 
-  opacity-mask: url( "s2r://panorama/images/masks/hero_model_opacity_mask_png.vtex");
+
 
 
   transform: translateY( -70px ) translateX( -45px);
  }
+  .IsPopup #ModelPreview{
+   transform: translateX( 0px) translateY( 0px );
+  }
 
- .AspectRatio21x9 #ModelPreview{
 
-  opacity-mask: url( "s2r://panorama/images/masks/softedge_box_sharper_png.vtex");
-  transform: translateY( -70px ) translateX( 0px);
+ DOTAStoreItemDetailsPage:not(.IsPopup) #ModelPreview{
+  opacity-mask: url( "s2r://panorama/images/masks/hero_model_opacity_mask_png.vtex");
  }
+
+
+
+
+
+
 
  #HeroModelOverlay{
 
@@ -52,6 +64,10 @@ DOTAStoreItemDetailsPage{
   height: 100%;
   margin-bottom: 120px;
  }
+  .IsPopup .MainControls{
+   margin-bottom: 0px;
+  }
+
 
  .PrimaryControls{
 
@@ -60,6 +76,10 @@ DOTAStoreItemDetailsPage{
   width: fill-parent-flow( 1.0 );
   margin-right: 20px;
  }
+  .IsPopup .PrimaryControls{
+   margin-bottom: 16px;
+  }
+
 
  .Empty{
 
@@ -74,9 +94,17 @@ DOTAStoreItemDetailsPage{
   height: 100%;
   flow-children: down;
   background-color: gradient( linear, 0% 0%, 0% 100%, from( #2D2E30 ), to( #202529 ) );
-  box-shadow: #000000aa 0px 0px 12px 0px ;
+  box-shadow: #000000aa 0px 0px 12px 0px;
   border: 2px solid black;
  }
+  .IsPopup .BodyBox{
+   margin: 0px;
+   border: 0px;
+   box-shadow: 0px 0px 64px rgba( 0, 0, 0, 0.5 );
+   width: 656px;
+   background-color: DarkGreyGradientBackgroundColor;
+  }
+
 
  #ItemHeader{
 
@@ -99,6 +127,12 @@ DOTAStoreItemDetailsPage{
   width: 525px;
   vertical-align: center;
  }
+  .IsPopup #Title{
+   width: fill-parent-flow(1);
+   margin-right: 24px;
+   font-weight: semi-bold;
+  }
+
 
  .TitleContainer{
 
@@ -154,11 +188,23 @@ DOTAStoreItemDetailsPage{
   background-color: #000000bb;
   transition-property: background-color;
   }
+  .IsPopup .CloseButton{
+   visibility: collapse;
+  }
+
 
   .CloseButton:hover{
 
   background-color: #000000;
   }
+
+ #ItemIcon{
+  box-shadow: 0px 0px 0px #00000000;
+ }
+  .IsPopup #ItemIcon{
+   margin: 16px;
+  }
+
 
 
  #RarityStripe{
@@ -175,7 +221,7 @@ DOTAStoreItemDetailsPage{
   border-top: 1px solid black;
   border-bottom: 1px solid black;
   width: 100%;
-  height: 90px;
+  height: 80px;
  }
 
  #ItemHeader #HeroIcon{
@@ -198,7 +244,17 @@ DOTAStoreItemDetailsPage{
   visibility: collapse;
  }
 
- .HasCreationDate .CreationDate{
+ .HasCreationDate:not(.NotPublic) .CreationDate{
+
+  visibility: visible;
+ }
+
+ .NotPublicLabel{
+
+  visibility: collapse;
+ }
+
+ .NotPublic .NotPublicLabel{
 
   visibility: visible;
  }
@@ -222,6 +278,10 @@ DOTAStoreItemDetailsPage{
   flow-children: down;
   overflow: squish scroll;
  }
+  .IsPopup .SectionList{
+   padding: 16px;
+  }
+
 
  .SectionListFooter{
 
@@ -232,25 +292,34 @@ DOTAStoreItemDetailsPage{
  .Section{
 
   width: 100%;
-  margin-left: 8px;
-  margin-right: 8px;
-  margin-top: 8px;
-  background-color: #141415;
-  border-top: 1px solid #222222;
+
+
+
+
+
+  background-color: #00000058;
+  border: 1px solid rgba(0, 0, 0, 0.6);
   flow-children: down;
+  margin-bottom: 8px;
+  padding: 12px;
  }
+
+
+
+
 
  .SectionTitle{
 
   width: 100%;
-  margin-left: 6px;
-  margin-top: 6px;
  }
+
+
 
  .SectionTitle Label{
 
-  text-transform: uppercase;
-  color: #cccccc;
+
+
+  margin-bottom: 8px;
  }
 
 
@@ -265,13 +334,13 @@ DOTAStoreItemDetailsPage{
   visibility: visible;
  }
 
- .Description Label{
 
-  margin: 6px;
-  color: #738B8B;
-  width: 748px;
-  overflow: squish scroll;
- }
+
+
+
+
+
+
 
 
  #CustomControls{
@@ -311,8 +380,8 @@ DOTAStoreItemDetailsPage{
 
  .CarouselItem{
 
-  flow-children: right;
-  overflow: clip;
+  flow-children: right-wrap;
+
   width: 100%;
   transition-property: position, opacity;
   transition-duration: 0.3s;
@@ -329,7 +398,7 @@ DOTAStoreItemDetailsPage{
   margin-left: 6px;
   padding-bottom: 0px;
   width: 100%;
-  height: 170px;
+
   vertical-align: top;
  }
 
@@ -374,14 +443,21 @@ DOTAStoreItemDetailsPage{
   flow-children: right;
   overflow: scroll squish;
  }
+  #BundleIconList DOTAEconItem{
+   width: 64px;
+   height: 64px;
+   box-shadow: 0px 0px 0px #00000000;
+  }
+
 
  .BundleName{
 
-  font-size: 32px;
-  font-weight: bold;
-  color: white;
+
+
+
   vertical-align: center;
   visibility: collapse;
+  margin-left: 8px;
  }
 
  .InSingleContainer .BundleName{
@@ -408,7 +484,7 @@ DOTAStoreItemDetailsPage{
 
  .SubItemsAndAbilities .Section{
 
-  width: fill-parent-flow(1.0);
+  width: 100%;
  }
 
  #ItemIconList{
@@ -525,8 +601,8 @@ DOTAStoreItemDetailsPage{
  .Details #Modifiers{
 
   width: 100%;
-  margin-left: 8px;
-  margin-right: 8px;
+  margin-left: 0px;
+  margin-right: 0px;
   flow-children: down;
  }
 
@@ -543,12 +619,18 @@ DOTAStoreItemDetailsPage{
 
  .ItemEditFooter{
 
-  height: 72px;
+  height: 64px;
   width: 100%;
-  background-color: #141415;
-  border-top: 1px solid #222222;
   vertical-align: bottom;
+  background-color: #1d2023;
+  border-top: 1px solid rgba( 255, 255, 255, 0.01 );
+  box-shadow: 0px -1px 8px rgba(0, 0, 0, 0.6);
  }
+
+
+
+
+
 
  .FooterButtonContainer{
 
@@ -563,29 +645,30 @@ DOTAStoreItemDetailsPage{
 
   vertical-align: middle;
   horizontal-align: center;
-  min-width: 300px;
-  margin-right: 0px;
-  margin-left: 0px;
+  min-width: 240px;
  }
 
- .FooterButton Label{
 
-  font-size: 22px;
- }
+
+
+
+
+
+
 
  .LoadoutButton{
 
   visibility: collapse;
  }
 
- .ButtonBevel.LoadoutButton{
 
-  padding-top: 3px;
-  padding-bottom: 2px;
-  min-height: 0px;
- }
 
- .EnableLoadoutButton .LoadoutButton{
+
+
+
+
+
+ .EnableLoadoutButton:not(.IsPopup) .LoadoutButton{
 
   visibility: visible;
  }
@@ -595,6 +678,7 @@ DOTAStoreItemDetailsPage{
   visibility: collapse;
  }
 
+
  .EnableDemoButton .StoreDemoButton{
 
   visibility: visible;
@@ -602,7 +686,7 @@ DOTAStoreItemDetailsPage{
 
  .Spacer{
 
-  width: 24px;
+  width: 12px;
   height: 4px;
   visibility: collapse;
  }
@@ -835,19 +919,23 @@ DOTAStoreItemDetailsPage{
   horizontal-align: right;
   flow-children: right;
  }
+  .IsPopup .StorePurchaseButtons{
+   margin-top: 8px;
+  }
+
 
  #StoreItemGrant{
 
-  height: 39px;
+
   margin-right: 10px;
   tooltip-body-position: 50% 50%;
-  padding: 2px 12px;
 
-  background-color: gradient( linear, 0% 0%, 0% 100%, from( #2d4f86 ), to( #1b355e ) );
-  border-top: 1px solid #ffffff22;
-  border-left: 1px solid #ffffff11;
-  border-right: 1px solid #00000044;
-  border-bottom: 1px solid #00000088;
+
+
+
+
+
+
 
   visibility: collapse;
  }
@@ -857,36 +945,36 @@ DOTAStoreItemDetailsPage{
   visibility: visible;
  }
 
- #StoreItemGrant:hover{
-
-  brightness: 2.0;
- }
-
- #StoreItemGrant:active{
-
-  brightness: 1.5;
- }
 
 
- #StoreItemGrant > Label{
 
-  color: white;
-  text-transform: uppercase;
-  font-size: 22px;
-  vertical-align: middle;
-  text-align: center;
- }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
  #ViewInWorkshopAdmin{
-  height: 39px;
+
   margin-right: 10px;
   tooltip-body-position: 50% 50%;
-  padding: 2px 12px;
-  background-color: gradient( linear, 0% 0%, 0% 100%, from( #a35234 ), to( #713a25 ) );
-  border-top: 1px solid #ffffff22;
-  border-left: 1px solid #ffffff11;
-  border-right: 1px solid #00000044;
-  border-bottom: 1px solid #00000088;
+
+
+
+
+
+
   visibility: collapse;
  }
 
@@ -894,21 +982,21 @@ DOTAStoreItemDetailsPage{
   visibility: visible;
  }
 
- #ViewInWorkshopAdmin:hover{
-  brightness: 2.0;
- }
 
- #ViewInWorkshopAdmin:active{
-  brightness: 1.5;
- }
 
- #ViewInWorkshopAdmin > Label{
-  color: white;
-  text-transform: uppercase;
-  font-size: 22px;
-  vertical-align: middle;
-  text-align: center;
- }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
  #StoreItemPurchase{
 
@@ -958,4 +1046,35 @@ DOTAStoreItemDetailsPage{
  #StoreItemPurchaseAsGift:disabled{
 
   visibility: collapse;
+ }
+
+ #HeroBackgroundImage{
+  width: 840px;
+  height: 100%;
+  wash-color: rgba(0, 0, 0, 0.85);
+  background-size: cover;
+  background-position: center;
+  blur: gaussian (4px);
+  background-color: gradient( linear, 0% 50%, 0% 100%, from( #13171f ), to( #2B415A ) );
+
+  visibility: collapse;
+ }
+  .IsPopup #HeroBackgroundImage{
+   visibility: visible;
+  }
+
+
+ .TreasureSource{
+
+  visibility:collapse;
+ }
+
+ .InTreasure .TreasureSource{
+
+  visibility:visible;
+ }
+
+ .InTreasure .TreasureSource:hover{
+
+  brightness:4;
 }

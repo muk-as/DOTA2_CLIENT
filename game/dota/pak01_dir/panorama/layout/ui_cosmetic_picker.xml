@@ -1,0 +1,56 @@
+<!-- xml reconstructed by ValveResourceFormat: https://vrf.steamdb.info/ -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/collection_shared.vcss_c" />
+		<include src="s2r://panorama/styles/ui_cosmetic_picker.vcss_c" />
+	</styles>
+	<snippets>
+		<snippet name="AbilityCosmeticPickerGroup">
+			<Panel class="CosmeticPickerGroup">
+				<Panel class="GroupTitleContainer">
+					<DOTAAbilityImage id="AbilityImage" />
+					<Label class="GroupTitle TitleSmall LightestGreyText" text="{s:group_heading}" />
+				</Panel>
+				<DelayLoadList id="CosmeticPickerGroupContents" />
+			</Panel>
+		</snippet>
+	</snippets>
+	<DOTACosmeticPicker>
+		<Panel class="HeaderContainer">
+			<Panel class="TitleContainer">
+				<Label class="HeroTitle TitleMedium WhiteText" text="{s:customize_hero_title}" />
+				<Label class="SlotTitle TitleMedium LighterGreyText Opacity_80" text="{s:customize_slot_title}" />
+			</Panel>
+			<Panel id="CollectionTracker">
+				<Label class="CollectionTitle BodyMedium LighterGreyText" text="#DOTA_Collection_Progression" html="true" />
+				<Panel id="CollectionPipsContainer" />
+			</Panel>
+		</Panel>
+		<Panel class="ContentsContainer">
+			<Panel class="LeftColumn">
+				<Panel id="HeroSlots" />
+			</Panel>
+			<Panel class="RightColumn">
+				<Panel class="ItemStatusFilters">
+					<Panel class="FiltersContainer">
+						<ToggleButton id="OwnedFilterButton" class="FilterCheck" text="#DOTA_Loadout_Filter_Owned" onactivate="DOTACosmeticPickerFilterChanged()" />
+						<ToggleButton id="AvailableFilterButton" class="FilterCheck" text="#DOTA_Loadout_Filter_Available" onactivate="DOTACosmeticPickerFilterChanged()" />
+						<ToggleButton id="UnavailableFilterButton" class="FilterCheck" text="#DOTA_Loadout_Filter_Unavailable" onactivate="DOTACosmeticPickerFilterChanged()" />
+						<Panel class="InfoIcon" onmouseover="UIShowTextTooltip( &apos;#DOTA_Collection_UnavailableTooltip&apos; )" onmouseout="UIHideTextTooltip()" />
+					</Panel>
+					<ToggleButton id="NotPublicFilterButton" class="FilterCheck" text="Not public (VO)" onactivate="DOTACosmeticPickerFilterChanged()" unlocalized="true" />
+					<Panel class="Dash Right" />
+					<ToggleButton id="ShuffleToggleButton" class="IconToggleButton Shuffle" />
+					<DOTASettingsCheckbox id="StackDuplicatesToggleButton" class="IconToggleButton StackDuplicates" convar="dota_collections_stack_duplicates" onmouseover="UIShowTextTooltip( &apos;#DOTA_Collection_StackDuplicatesLabel&apos; )" onmouseout="UIHideTextTooltip()" />
+				</Panel>
+				<Panel id="CosmeticPickerContentsContainer" class="CosmeticPickerContentsContainer" />
+				<Panel id="AbililyEffectsContainer">
+					<Label class="AbilityEffectDescription LighterGreyText BodyMedium" text="#DOTA_Loadout_AbilityEffectOverrideDescription" />
+					<Panel id="CosmeticPickerContentsContainerGrouped" />
+				</Panel>
+			</Panel>
+			<Panel class="ViewerContainerBorder" hittest="false" />
+		</Panel>
+	</DOTACosmeticPicker>
+</root>

@@ -1,0 +1,242 @@
+DOTASetPreviewControls{
+  overflow: noclip;
+  width: 800px;
+  height: 400px;
+}
+  DOTASetPreviewControls .Container{
+   flow-children: down;
+   vertical-align: bottom;
+   horizontal-align: center;
+   margin-bottom: 90px;
+  }
+
+
+ DOTACollectionPageHeroes .Container{
+  margin-bottom: 120px;
+ }
+  .AspectRatio16x10 DOTACollectionPageHeroes .Container{
+   margin-bottom: 110px;
+  }
+
+
+ .CurrentSetTitle{
+  margin: 4px 0px;
+  color: white;
+  opacity: 0.8;
+  text-shadow: 0px 0px 12px rgba(0, 0, 0, 0.4);
+  text-transform: none;
+  letter-spacing: 0px;
+  font-weight: normal;
+  font-size: 18px;
+  letter-spacing: 0.2px;
+ }
+
+ #ControlsContainer{
+
+  flow-children: right;
+  vertical-align: bottom;
+ }
+
+ #SaveSetButton{
+  visibility: collapse;
+  margin-left: 12px;
+ }
+
+ .EnableSaveAsCustomSet #SaveSetButton{
+  visibility: visible;
+  opacity: 1;
+ }
+
+ #DemoHeroButton{
+  margin-left: 8px;
+ }
+
+ #RandomizeButton{
+  visibility: collapse;
+  tooltip-position: top;
+ }
+
+ .CanRandomize #RandomizeButton{
+  visibility: visible;
+  tooltip-position: top;
+ }
+
+ #BottomGodRays{
+  ignore-parent-flow: true;
+  horizontal-align: center;
+  vertical-align: bottom;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+
+  transform: rotateX( 180deg ) translate3d( -10px, 0px, 0px ) scale3d(1.5, 1, 1);
+  opacity-mask: url( "s2r://panorama/images/masks/preview_rays_mask_psd.vtex");
+
+  transition-property: opacity;
+  transition-duration: 0.6s;
+  opacity: 0;
+ }
+  .IsPreviewing #BottomGodRays{
+   opacity: 0.4;
+   transition-duration: 0.2s;
+
+   animation-name: FlashGodRays;
+   animation-duration: 2s;
+   animation-timing-function: ease-out;
+  }
+
+
+
+ @keyframes 'FlashGodRays'{
+
+     0%{
+   opacity: 0;
+     }
+
+  20%{
+   opacity: 1;
+  }
+
+     100%{
+   opacity: 0.4;
+     }
+ }
+
+ .EquippedLabel,.PreviewingLabel{
+
+  color: rgba(255, 255, 255, 1);
+  text-shadow: 0px 0px 12px rgba(224, 249, 255, 0.3);
+  margin-bottom: 4px;
+ }
+
+ .BottomDash{
+  width: 600px;
+  height: 1px;
+  background-color: gradient( linear, 10% 0%, 90% 0%, from( #FFFFFF00 ), color-stop( 0.3, #FFFFFF ), color-stop( 0.7, #FFFFFF ), to( #FFFFFF00 ) );
+  opacity: 0.04;
+  horizontal-align: center;
+  margin: 12px 0px;
+  padding: 0px 40px;
+ }
+
+ #PreviewEquippedContainer{
+  padding: 40px 0px;
+  margin-bottom: -40px;
+  horizontal-align: center;
+ }
+  #PreviewEquippedContainer #EquippedContainer{
+   flow-children: down;
+   horizontal-align: center;
+   vertical-align: bottom;
+
+   opacity: 1;
+   transform: none;
+
+   transition-property: opacity, transform;
+   transition-duration: 0.1s;
+   transition-delay: 0s;
+   transition-timing-function: ease-in;
+  }
+   .IsPreviewing #PreviewEquippedContainer #EquippedContainer{
+    opacity: 0;
+    transform: translateY( -16px );
+
+    transition-duration: 0.3s;
+
+    transition-delay: 0s;
+    transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
+   }
+
+   #PreviewEquippedContainer #EquippedContainer .EquippedLabelContainer{
+    height: 34px;
+   }
+
+
+
+  #PreviewEquippedContainer #PreviewContainer{
+   flow-children: down;
+   horizontal-align: center;
+   vertical-align: bottom;
+
+   opacity: 0;
+   transform: translateY( 16px );
+
+   transition-property: opacity, transform;
+   transition-duration: 0.3s;
+
+   transition-delay: 0s;
+   transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
+  }
+   .IsPreviewing #PreviewEquippedContainer #PreviewContainer{
+    opacity: 1;
+    transform: none;
+
+
+    transition-duration: 0s;
+    transition-delay: 0s;
+    transition-timing-function: ease-in;
+   }
+
+   #PreviewEquippedContainer #PreviewContainer #UnownedItemsContainer{
+    flow-children: right;
+    margin-top: 6px;
+   }
+    #PreviewEquippedContainer #PreviewContainer #UnownedItemsContainer #UnownedItemsTilesContainer{
+     flow-children: right;
+     margin-right: 8px;
+    }
+     #PreviewEquippedContainer #PreviewContainer #UnownedItemsContainer #UnownedItemsTilesContainer DOTAEconItem{
+      width: 36px;
+      height: 36px;
+      margin: 0px 1px;
+      box-shadow: none;
+     }
+
+
+
+
+
+
+ .BackgroundShadow{
+  width: 80%;
+  height: 100%;
+
+  horizontal-align: center;
+  vertical-align: bottom;
+
+  ignore-parent-flow: true;
+  blur: gaussian( 12px );
+  background-color: gradient( radial, 50% 50%, 0% 0%, 50% 50%, from( rgba(0, 0, 0, 0.7) ), color-stop(0.6, rgba(0, 0, 0, 0.5)), to( rgba(0, 0, 0, 0) ) );
+ }
+  .BackgroundShadow.Short{
+   height: 300px;
+   margin-bottom: 36px;
+  }
+
+
+ #EquipAllButton{
+  margin-left: 8px;
+  visibility: collapse;
+  animation-name: PulseButton;
+  animation-duration: 1s;
+  animation-delay: 0s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+ }
+  .EnableEquipAll #EquipAllButton{
+   visibility: visible;
+  }
+
+
+ @keyframes 'PulseButton'{
+  0%{
+   brightness: 1;
+   box-shadow: inset 0px 0px 12px #FFFFFF00;
+  }
+
+  100%{
+   brightness: 4;
+   box-shadow: inset 0px 0px 16px #C2D8FF22;
+  }
+}

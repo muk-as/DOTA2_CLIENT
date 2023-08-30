@@ -5,31 +5,52 @@
  DOTAPurchaseButton{
 
   flow-children: right;
+  padding: 6px 16px;
+  border-radius: 3px;
+  border: 1px solid white;
+  border-brush: WhiteGradientBorderMedium;
+  box-shadow: 0px 3px 6px -1px rgba(0, 0, 0, 0.4);
+     background-color: GreenGradientBackgroundColor;
 
-  border-top: 1px solid #ffffff22;
+  transition-property: border, brightness;
+  transition-duration: 0.1s;
+  transition-timing-function: ease;
+ }
+  DOTAPurchaseButton.Large{
+   border-radius: 3px;
+   padding: 10px 28px;
+  }
+   DOTAPurchaseButton.Large Label{
+    font-size: 19px;
+    line-height: 24px;
+    font-weight: normal;
+    font-weight: semi-bold;
+    margin: -1px 0px 1px;
+   }
 
 
-  border-bottom: 1px solid #00000088;
-  padding: 5px 14px 3px 14px;
-     min-width: 180px;
-  height: 39px;
 
-     background-color: gradient( linear, 0% 0%, 0% 100%, from( #60862d ), to( #3d5f1c ));
+ DOTAPurchaseButton.NoPrice.NoShardsPrice{
+  opacity: 0;
  }
 
  .Contents{
-
-     flow-children: right;
-     vertical-align: middle;
-     horizontal-align: center;
+  flow-children: right;
+  vertical-align: middle;
+  horizontal-align: center;
  }
+
 
  .Contents > Label{
 
      vertical-align: middle;
-  font-size: 18px;
+  font-size: 16px;
+  line-height: 20px;
   letter-spacing: 1px;
+  text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.6);
+  text-overflow: shrink;
  }
+
 
  #GiftIcon{
 
@@ -54,8 +75,8 @@
 
  #EventIcon{
 
-     width: 26px;
-     height: 26px;
+     width: 20px;
+     height: 20px;
      margin-right: 6px;
 
      vertical-align: middle;
@@ -80,13 +101,9 @@
 
  #SourceIconContainer{
 
-  width: 44px;
-  height: 26px;
-  margin-top: -2px;
      margin-right: elementMargin;
   vertical-align: middle;
   flow-children: right;
-
      visibility: collapse;
  }
 
@@ -96,7 +113,7 @@
      height: 14px;
      vertical-align: middle;
   horizontal-align: center;
-
+  visibility: collapse;
   wash-color: #ceffbb;
 
      background-repeat: no-repeat;
@@ -108,8 +125,8 @@
 
  #SourceIcon{
 
-     width: 22px;
-     height: 22px;
+     width: 20px;
+     height: 20px;
      vertical-align: middle;
   horizontal-align: center;
 
@@ -128,7 +145,7 @@
      background-image: url( "s2r://panorama/images/control_icons/brackets_png.vtex");
  }
 
- .InTreasure #SourceIconContainer,.AdditionalDropInTreasure #SourceIconContainer,.InBundle #SourceIconContainer{
+ DOTAPurchaseButton.InTreasure #SourceIconContainer,DOTAPurchaseButton.AdditionalDropInTreasure #SourceIconContainer,DOTAPurchaseButton.InBundle #SourceIconContainer{
 
 
 
@@ -147,7 +164,7 @@
 
   visibility: collapse;
  }
- .InTreasure #PurchaseSource,.AdditionalDropInTreasure #PurchaseSource,.InBundle #PurchaseSource,.EventReward.IndividualItem #PurchaseSource,.DotaPlus #PurchaseSource{
+ DOTAPurchaseButton.InTreasure #PurchaseSource,DOTAPurchaseButton.AdditionalDropInTreasure #PurchaseSource,DOTAPurchaseButton.InBundle #PurchaseSource,.EventReward.IndividualItem #PurchaseSource,.DotaPlus #PurchaseSource{
 
 
 
@@ -195,8 +212,8 @@
  #ShardsPrice{
 
   color: dotaPlusLightGold;
-  font-weight: semibold;
  }
+
  .NoShardsPrice #ShardsPrice{
 
   visibility: collapse;
@@ -205,12 +222,24 @@
 
   background-image: url( "s2r://panorama/images/dota_plus/currency_icon_png.vtex");
   visibility: visible;
-  margin-top: 1px;
-  margin-bottom: 2px;
  }
 
 
- .InTreasure #SaleAmount,.AdditionalDropInTreasure #SaleAmount,.InBundle #SaleAmount,.PurchaseSource #SaleAmount,.Addition #SaleRegularPrice,.AdditionalDropInTreasure #SaleRegularPrice,.InBundle #SaleRegularPrice,.PurchaseSource #SaleRegularPrice,.InTreasure #Price,.AdditionalDropInTreasure #Price,.InBundle #Price,.PurchaseSource #Price,.InTreasure #ShardsPrice,.AdditionalDropInTreasure #ShardsPrice,.InBundle #ShardsPrice,.PurchaseSource #ShardsPrice{
+
+
+ DOTAPurchaseButton.InTreasure #SaleAmount,DOTAPurchaseButton.AdditionalDropInTreasure #SaleAmount,DOTAPurchaseButton.InBundle #SaleAmount,.PurchaseSource #SaleAmount,.Addition #SaleRegularPrice,DOTAPurchaseButton.AdditionalDropInTreasure #SaleRegularPrice,DOTAPurchaseButton.InBundle #SaleRegularPrice,.PurchaseSource #SaleRegularPrice,DOTAPurchaseButton.InTreasure #Price,DOTAPurchaseButton.AdditionalDropInTreasure #Price,DOTAPurchaseButton.InBundle #Price,.PurchaseSource #Price,DOTAPurchaseButton.InTreasure #ShardsPrice,DOTAPurchaseButton.AdditionalDropInTreasure #ShardsPrice,DOTAPurchaseButton.InBundle #ShardsPrice,.PurchaseSource #ShardsPrice{
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -234,7 +263,8 @@
 
  DOTAPurchaseButton.Direct{
 
-     background-color: gradient( linear, 0% 0%, 0% 100%, from( #60862d ), to( #3d5f1c ) );
+
+  background-color: GreenGradientBackgroundColor;
  }
  DOTAPurchaseButton.Direct.InBundle{
 
@@ -246,7 +276,8 @@
  }
  DOTAPurchaseButton.Direct.AdditionalDropInTreasure{
 
-  background-color: gradient( linear, 0% 0%, 0% 100%, from( #3751a6 ), to( #1b2b5e ) );
+
+  background-color: gradient( linear, 0% 0%, 0% 100%, from( #3784a6 ), to( #215373 ) );
  }
 
  DOTAPurchaseButton.DotaPlus{
@@ -289,7 +320,8 @@
  DOTAPurchaseButton.ShardsPurchase{
 
      background-color: gradient( linear, 0% 0%, 0% 100%, from( #433620 ), to( #141b21 ) );
-  border-top: 1px solid #ffffff11;
+
+  border-brush: WhiteGradientBorderSoft;
  }
  DOTAPurchaseButton.Gift{
 
@@ -408,6 +440,14 @@
 
 
 
+
+ DOTAStoreItem DOTAPurchaseButton{
+  border-radius: 0px;
+  border-top: 1px solid #ffffff22;
+  border-bottom: 1px solid #00000088;
+     min-width: 180px;
+  height: 39px;
+ }
 
  DOTAStoreItem DOTAPurchaseButton .Contents > Label{
 

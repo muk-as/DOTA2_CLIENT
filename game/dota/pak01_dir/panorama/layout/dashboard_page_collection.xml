@@ -1,0 +1,266 @@
+<!-- xml reconstructed by ValveResourceFormat: https://vrf.steamdb.info/ -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/dashboard_page_shared.vcss_c" />
+		<include src="s2r://panorama/styles/dashboard_page_collection.vcss_c" />
+	</styles>
+	<snippets>
+		<snippet name="ViewerListContainer">
+			<Panel class="ViewerListContainer">
+				<Panel class="NoResultsMessage">
+					<Panel class="NoResultsIcon" />
+					<Label class="BodyMedium" text="#DOTA_Collection_NothingToDisplay_Message" />
+				</Panel>
+				<Panel id="ViewerList" class="ViewerList" sendchildscrolledintoviewevents="true" AllowOversized="1" />
+			</Panel>
+		</snippet>
+		<snippet name="StickerEntry">
+			<Panel class="StickerEntry">
+				<DOTAUIEconSetPreview id="StickerPreview" onmouseout="DOTAHideEconItemTooltip()" stickercamera="sticker_camera_close" rotateonmousemove="true" rotationlimits="2 -2 2 -2" stickeranim="stock_idle" yawaxis="pitch" pitchaxis="roll" />
+			</Panel>
+		</snippet>
+		<snippet name="ChatWheelEntry">
+			<Panel class="ChatWheelEntry">
+				<Button id="ChatWheelPlayButton" />
+				<Label class="ChatWheelLabel" text="{s:chat_wheel_label}" />
+				<Panel class="FillHeight" />
+				<Button id="ChatWheelPurchaseButton" class="DotaPlusPurchaseButton">
+					<Panel class="ButtonCenter">
+						<Panel class="DotaPlusCurrencyIcon" />
+						<Label text="{d:unlock_cost}" />
+					</Panel>
+				</Button>
+				<Label class="ChatWheelAlreadyOwnedLabel" text="#DOTA_PlusStore_ChatWheelOwned" />
+			</Panel>
+		</snippet>
+		<snippet name="HeroSelectionEntry">
+			<Panel class="HeroSelectionPanel CollectionTab" onmovedown="DOTACollectionSelectNextTab()" onmoveup="DOTACollectionSelectPrevTab()">
+				<DOTAHeroImage id="HeroImage" heroimagestyle="icon" />
+				<Label id="HeroName" class="LabelLarge LighterGreyText" text="{s:hero_name}" />
+				<Label id="SetCount" class="LabelLarge LightGreyText" text="({d:set_count})" />
+				<Panel id="NewBadgePanel" class="NewBadgeCount">
+					<Label class="LabelMedium" text="{d:new_item_count}" />
+				</Panel>
+			</Panel>
+		</snippet>
+		<snippet name="CategorySelectionEntry">
+			<Panel class="CategorySelectionPanel CollectionTab" onmovedown="DOTACollectionSelectNextTab()" onmoveup="DOTACollectionSelectPrevTab()">
+				<Image id="CategoryImage" />
+				<Label id="CategoryName" class="LabelLarge CategoryName LighterGreyText" text="{s:category_name}" />
+				<Image id="PlusLogo" src="s2r://panorama/images/dota_plus/dotaplus_logo_small_png.vtex" />
+				<Panel id="NewBadgePanel" class="NewBadgeCount">
+					<Label class="LabelMedium" text="{d:new_item_count}" />
+				</Panel>
+			</Panel>
+		</snippet>
+		<snippet name="ItemsGroupPanel">
+			<Panel class="ItemsGroupPanel" sendchildscrolledintoviewevents="true" AllowOversized="1">
+				<Panel id="ItemsGroupTitle">
+					<Label id="ItemsGroupName" class="LabelLarge LighterGreyText" text="{s:items_group_name}" />
+					<Label id="ItemsGroupOwnedCount" class="LabelMedium" text="({d:items_group_owned_count})" />
+					<Panel id="ItemsGroupShuffleToggle">
+						<ToggleButton id="ShuffleToggleButton" class="IconToggleButton Shuffle" onmouseover="UIShowTextTooltip( &apos;#DOTA_Loadout_ShuffleTooltip&apos; )" onmouseout="UIHideTextTooltip()" />
+					</Panel>
+				</Panel>
+				<DelayLoadList id="ItemsGrid" />
+			</Panel>
+		</snippet>
+		<snippet name="BundlesGroupPanel">
+			<Panel class="BundlesGroupPanel" sendchildscrolledintoviewevents="true" AllowOversized="1">
+				<Panel id="BundlesGroupHeader">
+					<Panel class="BundleHeader" id="BundleIconHeader" />
+					<Panel class="BundleHeader" id="BundleNameHeader">
+						<Label text="#DOTA_Collection_Bundles_NameHeader" />
+					</Panel>
+					<Panel class="BundleHeader" id="BundleItemsHeader">
+						<Label text="#DOTA_Collection_Bundles_ItemsHeader" />
+					</Panel>
+					<Panel class="BundleHeader" id="BundleRarityHeader">
+						<Label text="#DOTA_Collection_Bundles_RarityHeader" />
+					</Panel>
+					<Panel class="BundleHeader" id="BundleDateHeader">
+						<Label text="#DOTA_Collection_Bundles_DateHeader" />
+					</Panel>
+					<Panel class="BundleHeader" id="BundleUnbundleHeader" />
+				</Panel>
+				<DelayLoadList id="BundlesList" />
+			</Panel>
+		</snippet>
+		<snippet name="CollectionTabGroup">
+			<Panel class="CollectionTabGroup">
+				<Label id="CollectionTabGroupName" class="LabelSmall LightGreyText" />
+				<Panel id="CollectionTabs" />
+			</Panel>
+		</snippet>
+		<snippet name="BundleItem">
+			<Panel class="BundleItem">
+				<DOTAEconItem id="BundleItemIcon" />
+			</Panel>
+		</snippet>
+		<snippet name="FeaturedItemsCarousel">
+			<Panel class="FeaturedItemsCarousel">
+				<Panel id="FeaturedItemsHeader">
+					<Label id="FeaturedItemsTitle" class="LabelLarge LightestGreyText" />
+				</Panel>
+				<Panel id="FeaturedItemsSubheader">
+					<Label id="FeaturedItemsSubtitle" class="BodyMedium LighterGreyText VerticalCenter" />
+					<Panel id="FeaturedItemsHeroesList" />
+					<CarouselNav id="FeaturedItemsListNav" class="FeaturedItemsListNav" />
+				</Panel>
+				<Panel id="FeaturedItemsListContainer" class="TopBottomFlow">
+					<DOTACollectionFeaturedItemsCarousel id="FeaturedItemsList" class="LeftRightFlow FeaturedItemsList" panels-visible="5" setsperpage="5" />
+				</Panel>
+			</Panel>
+		</snippet>
+		<snippet name="Bundle">
+			<Panel class="Bundle">
+				<Panel id="BundleIconContainer">
+					<DOTAEconItem id="BundleIcon" class="BundleCell">
+						<Panel id="NewBorder" />
+					</DOTAEconItem>
+				</Panel>
+				<Label id="BundleName" class="BundleRowTextLabel BundleCell" />
+				<Panel id="BundleItemsContainer" class="BundleCell" />
+				<Label id="BundleRarity" class="BundleRowTextLabel BundleCell ItemRarityColor" text="#DOTA_tooltip_econ_item_rarity" />
+				<Label id="BundleDate" text="{T:s:bundle_date}" class="BundleRowTextLabel BundleCell" />
+				<Panel id="BundleUnbundleButtonContainer">
+					<Button id="BundleUnbundleButton" class="ButtonPrimary LightGrey BundleCell">
+						<Label text="#OpenBundle" />
+					</Button>
+				</Panel>
+				<Panel id="NewBorder" hittest="false" />
+			</Panel>
+		</snippet>
+	</snippets>
+	<DOTACollectionPage class="DashboardPage" acceptsfocus="true" onmovedown="DOTACollectionSelectNextTab()" onmoveup="DOTACollectionSelectPrevTab()">
+		<Panel id="MainContentContainer" hittest="false">
+			<Panel id="SceneGroup" hittest="false">
+				<Panel id="CollectionSceneBody" hittest="false">
+					<DOTALargeModelPreview id="LargeModelPreview" environment="full_body_loadout" />
+					<DOTALargeModelLoadout id="LargeModelLoadout" environment="full_body_loadout" />
+					<Panel class="FeetRuler" />
+					<Panel class="VerticalCenterRuler" />
+					<Panel class="HeadRuler" />
+				</Panel>
+				<DOTASetPreviewControls id="SetPreviewControls" hittest="false" />
+				<DOTATreasurePreview id="TreasurePreview" />
+			</Panel>
+			<Panel id="CollectionContent" hittest="false">
+				<Panel id="ControlGroup">
+					<Panel id="ShardShop_SummaryContainer">
+						<Panel class="DotaPlusLogoContainer">
+							<DOTAScenePanel class="PlusLogoShadow" camera="shot_camera" map="scenes/shards" renderdeferred="true" deferredalpha="true" antialias="true" hittest="false" particleonly="false" />
+							<DOTAScenePanel class="PlusLogo" camera="shot_camera" map="scenes/shards" renderdeferred="true" deferredalpha="true" antialias="true" hittest="false" particleonly="false" />
+						</Panel>
+						<Label class="ShardShopTitle TitleLarge" html="true" text="#DOTA_Collection_SpendYourShards" />
+						<Panel class="ShardShop_Dash" />
+					</Panel>
+					<Panel id="ControlSearch">
+						<TextEntry id="ControlSearchTextEntry" placeholder="#DOTA_Collection_SearchHeroListLabel" oninputsubmit="" oncancel="" onmovedown="DOTACollectionSelectNextTab()" onmoveup="DOTACollectionSelectPrevTab()" />
+						<Panel id="SearchButton" hittest="false" />
+						<Button id="ClearButton" />
+					</Panel>
+					<Panel id="CollectionControlBody">
+						<Panel id="CollectionTabGroups" />
+					</Panel>
+					<Panel id="HideUnplayedHeroesCheck">
+						<ToggleButton id="HideUnplayedHeroesToggleButton" onactivate="DOTACollectionRefresh()" text="#DOTA_Collection_HideUnPlayedHeroesLabel" />
+					</Panel>
+				</Panel>
+				<Panel id="ViewerGroup" hittest="false">
+					<Panel class="TitleGroup">
+						<Panel id="SelectedHeroNameContainer">
+							<Label class="SelectedHeroName TitleMedium WhiteText" text="{s:selected_tab_name}" />
+							<Label id="ShardsTabDescriptionLabel" class="PageSubTitle VerticalCenter TitleMedium LightestGreyText" />
+						</Panel>
+						<Panel class="TitleGroupControlsContainer">
+							<Panel id="HeroItemsTitleGroupControls" class="TitleGroupControls">
+								<Label class="TitleGroupControlsLabel" text="#DOTA_Collection_GroupByLabel" />
+								<DropDown id="HeroItemsGroupByDropDown" class="GroupByDropDown" oninputsubmit="DOTACollectionGroupByChanged()" />
+							</Panel>
+							<Panel id="GlobalItemsTitleGroupControls" class="TitleGroupControls">
+								<Label class="TitleGroupControlsLabel LighterGreyText" text="#DOTA_Collection_SortByLabel" />
+								<DropDown id="GlobalItemsSortByDropDown" class="SortByDropDown" oninputsubmit="DOTACollectionGroupByChanged()" />
+							</Panel>
+							<Panel id="TreasuryTitleGroupControls" class="TitleGroupControls">
+								<Label class="TitleGroupControlsLabel LighterGreyText" text="#DOTA_Collection_SortByLabel" />
+								<DropDown id="TreasurySortByDropDown" class="SortByDropDown" oninputsubmit="DOTACollectionSortByChanged()" />
+							</Panel>
+							<Panel id="ShardsTitleGroupControls" class="TitleGroupControls">
+								<Label class="TitleGroupControlsLabel LighterGreyText" text="#DOTA_Collection_SortByLabel" />
+								<DropDown id="ShardsItemsSortByDropDown" class="SortByDropDown" oninputsubmit="DOTACollectionSortByChanged()" />
+							</Panel>
+							<Panel id="StickersTitleGroupControls" class="TitleGroupControls">
+								<Label class="TitleGroupControlsLabel LighterGreyText" text="#DOTA_Collection_FilterLabel" />
+								<DropDown id="StickersFilterByDropDown" class="FilterByDropDown" oninputsubmit="DOTACollectionGroupByChanged()" />
+								<Label class="TitleGroupControlsLabel LighterGreyText" text="#DOTA_Collection_GroupByLabel" />
+								<DropDown id="StickersGroupByDropDown" class="GroupByDropDown" oninputsubmit="DOTACollectionGroupByChanged()" />
+								<Label class="TitleGroupControlsLabel LighterGreyText" text="#DOTA_Collection_SortByLabel" />
+								<DropDown id="StickersSortByDropDown" class="SortByDropDown" oninputsubmit="DOTACollectionGroupByChanged()" />
+							</Panel>
+							<Panel id="BrowseTitleGroupControls" class="TitleGroupControls">
+								<Label class="TitleGroupControlsLabel LighterGreyText" text="#DOTA_Collection_SortByLabel" />
+								<DropDown id="BrowseSortByDropDown" class="SortByDropDown" oninputsubmit="DOTACollectionGroupByChanged()" />
+								<Label class="TitleGroupControlsLabel LighterGreyText" text="#DOTA_Collection_GroupByLabel" />
+								<DropDown id="BrowseGroupByDropDown" class="GroupByDropDown" oninputsubmit="DOTACollectionGroupByChanged()" />
+							</Panel>
+						</Panel>
+					</Panel>
+					<Panel class="ViewerContainer">
+						<Panel class="ItemStatusFilters">
+							<Panel id="BrowseFiltersContainer" class="FiltersContainer VerticalCenter">
+								<ToggleButton id="BrowseDuplicatesToggleButton" text="#DOTA_Collection_Filter_Browse_Duplicates" onactivate="DOTACollectionFilterChanged()" />
+								<ToggleButton id="BrowseTradeableToggleButton" text="#DOTA_Collection_Filter_Browse_Tradeable" onactivate="DOTACollectionFilterChanged()" />
+								<ToggleButton id="BrowseMarketableToggleButton" text="#DOTA_Collection_Filter_Browse_Marketable" onactivate="DOTACollectionFilterChanged()" />
+								<ToggleButton id="BrowseGiftableToggleButton" text="#DOTA_Collection_Filter_Browse_Giftable" onactivate="DOTACollectionFilterChanged()" />
+								<ToggleButton id="BrowseBundlesButton" text="#DOTA_Collection_Filter_Browse_Bundles" onactivate="DOTACollectionFilterChanged()" />
+							</Panel>
+							<Panel id="FiltersContainer" class="FiltersContainer VerticalCenter">
+								<ToggleButton id="OwnedToggleButton" text="#DOTA_Collection_Filter_Owned" onactivate="DOTACollectionFilterChanged()" />
+								<ToggleButton id="AvailableToggleButton" text="#DOTA_Collection_Filter_Available" onactivate="DOTACollectionFilterChanged()" />
+								<ToggleButton id="UnavailableToggleButton" text="#DOTA_Collection_Filter_Unavailable" onactivate="DOTACollectionFilterChanged()" />
+								<Panel id="UnavailableInfoIcon" class="InfoIcon" onmouseover="UIShowTextTooltip( &apos;#DOTA_Collection_UnavailableTooltip&apos; )" onmouseout="UIHideTextTooltip()" />
+								<ToggleButton id="CustomToggleButton" text="#DOTA_Collection_Filter_Custom" onactivate="DOTACollectionFilterChanged()" />
+							</Panel>
+							<Panel class="Dash Right" />
+							<Button id="ShuffleAllButton" class="ButtonPrimary DarkGrey" onactivate="DOTACollectionGlobalToggleAllShuffle()">
+								<Label text="#DOTA_Collection_ShuffleAll" />
+							</Button>
+							<ToggleButton id="ShuffleToggleButton" class="IconToggleButton Shuffle" onmouseover="UIShowTextTooltip( &apos;#DOTA_Loadout_ShuffleTooltip&apos; )" onmouseout="UIHideTextTooltip()" />
+							<DOTASettingsCheckbox id="StackDuplicatesToggleButton" class="IconToggleButton StackDuplicates" convar="dota_collections_stack_duplicates" onmouseover="UIShowTextTooltip( &apos;#DOTA_Collection_StackDuplicatesLabel&apos; )" onmouseout="UIHideTextTooltip()" />
+						</Panel>
+						<Panel id="CustomContentContainer">
+							<Panel id="ShardShopContent" class="CustomContent" />
+							<Panel id="StickersContent" class="CustomContent">
+								<Label class="BodyMedium LightGreyText VerticalCenter" text="#DOTA_Armory_Stickers_Description" />
+								<Button id="StickersActionButton" class="ButtonPrimary DarkGrey" onactivate="DOTAShowStickerCollectionsPage()">
+									<Label text="#DOTA_TabName_StickerCollections" />
+									<Image src="s2r://panorama/images/control_icons/arrow_right_png.vtex" />
+								</Button>
+							</Panel>
+							<Panel id="EmoticonsContent" class="CustomContent">
+								<Label text="#DOTA_Armory_Emoticons_Description" class="BodyMedium LightGreyText VerticalCenter" />
+								<DOTAEmoticonPicker id="EmoticonList" class="HideBackground HideAlias" />
+								<Button id="CustomizeChatWheelButton" class="VerticalCenter ButtonPrimary DarkGrey" onactivate="DOTAShowSettingsPopupChatWheelPage();">
+									<Label text="#dota_chatwheel_customize" />
+									<Image src="s2r://panorama/images/control_icons/24px/arrow_top_right.vsvg" />
+								</Button>
+							</Panel>
+						</Panel>
+						<Panel id="CollectionViewerBody" />
+						<Panel class="ViewerContainerBorder" hittest="false" />
+					</Panel>
+				</Panel>
+				<Panel id="FeaturedGroup" />
+				<Panel id="HeroesGroup">
+					<DOTACosmeticPicker id="CosmeticPicker" />
+				</Panel>
+			</Panel>
+			<Button id="ViewLoadoutButton" class="ButtonPrimary DarkGrey" onactivate="DOTACollectionViewHeroLoadout()">
+				<Label text="#DOTA_Collection_Heroes_ViewLoadout" />
+			</Button>
+		</Panel>
+		<PopupManager id="PopupManager" />
+	</DOTACollectionPage>
+</root>

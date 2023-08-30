@@ -2,6 +2,10 @@
  @define editColorHover: #69bb71;
  @define editColorActive: #90ff9a;
 
+ @define colorBehaviorBad: #b7493a;
+ @define colorBehaviorWarning: #B78C3A;
+ @define colorBehaviorGood: #5bb73a;
+
  #DOTAProfilePage{
 
   width: 100%;
@@ -1526,12 +1530,12 @@
   vertical-align: bottom;
   horizontal-align: right;
   text-shadow: 1px 1px 2 #000;
-  margin-bottom: 2px;
+  margin-bottom: 8px;
  }
 
  #ConductSummaryLabel{
 
-  margin-top: 6px;
+  margin-top: 2px;
   color: #ddd;
   font-size: 16px;
   margin-left: 12px;
@@ -1542,10 +1546,11 @@
   text-shadow: 1px 1px 2 #000;
  }
 
- #BehaviorScoreLabel{
+ #BehaviorScoreLabel,#CommunicationScoreLabel{
+
 
   margin-top: 4px;
-  font-size: 20px;
+  font-size: 14px;
   font-weight: bold;
   color: white;
  }
@@ -1555,19 +1560,22 @@
   visibility: collapse;
  }
 
- .BehaviorGood #BehaviorScoreLabel{
+ .Score_Good #BehaviorScoreLabel,.Score_Good #CommunicationScoreLabel{
 
-  color: #83eb4a;
+
+  color: colorBehaviorGood;
  }
 
- .BehaviorWarning #BehaviorScoreLabel{
+ .Score_Warning #BehaviorScoreLabel,.Score_Warning #CommunicationScoreLabel{
 
-  color: #a5ada2;
+
+  color: colorBehaviorWarning;
  }
 
- .BehaviorBad #BehaviorScoreLabel{
+ .Score_Bad #BehaviorScoreLabel,.Score_Bad #CommunicationScoreLabel{
 
-     color: #ff4e16;
+
+     color: colorBehaviorBad;
  }
 
  #ConductSummaryShowLatestButton{
@@ -3161,36 +3169,44 @@
   opacity: 1;
  }
 
- #BehaviorImage{
+ .ScoreSection{
+  flow-children: down;
+ }
+  .ScoreSection .ScoreValueSection{
+   flow-children: right;
+  }
 
 
-  width: 32px;
-  height: 32px;
+ .ScoreImage{
+
+
+  width: 24px;
+  height: 24px;
   background-size: contain;
   background-repeat: no-repeat;
   margin-right: 4px;
  }
 
- .BehaviorGood #BehaviorImage{
+ .Score_Good .ScoreImage{
 
   background-image: url( "s2r://panorama/images/conduct/behavior_normal_png.vtex");
-  wash-color: #40ff24;
+  wash-color: colorBehaviorGood;
  }
 
- .BehaviorWarning #BehaviorImage{
+ .Score_Warning .ScoreImage{
 
   background-image: url( "s2r://panorama/images/conduct/behavior_neutral_png.vtex");
-  wash-color: #a5ada2;
+  wash-color: colorBehaviorWarning;
  }
 
 
- .BehaviorBad #BehaviorImage{
+ .Score_Bad .ScoreImage{
 
-  wash-color: #dd3310;
+  wash-color: colorBehaviorBad;
   background-image: url( "s2r://panorama/images/conduct/behavior_bad_png.vtex");
  }
 
- .GradeNotValid #BehaviorImage{
+ .GradeNotValid #BehaviorScoreImage{
 
   visibility: collapse;
  }

@@ -1,0 +1,5323 @@
+@define EconItemAnimated_ClearNewFlagDelay:  0.2s;
+
+ DOTAEconItemAnimated{
+
+  width: 276px;
+     height: 410px;
+  padding-bottom: 2px;
+  transition-property: brightness, transform;
+  transition-duration: 0.1s, 0.05s;
+
+  tooltip-position: left;
+ }
+  .FeaturedGlobalItem DOTAEconItemAnimated{
+   width: 229px;
+   height: 282px;
+  }
+
+  DOTAEconItemAnimated #AnimatedItemViewContainer,DOTAEconItemAnimated #StaticItemViewContainer{
+
+   visibility: collapse;
+  }
+
+
+   DOTAEconItemAnimated.Animated #ItemViewContainer{
+    width: 100%;
+    height: 100%;
+   }
+    DOTAEconItemAnimated.Animated #ItemViewContainer #AnimatedItemViewContainer{
+     width: 100%;
+     height: 100%;
+     visibility: visible;
+    }
+
+
+   DOTAEconItemAnimated.Animated #EconItemName{
+    vertical-align: bottom;
+    color: white;
+    text-shadow: 0px 2px 8px  black;
+    opacity: 0.6;
+   }
+
+
+
+   DOTAEconItemAnimated.Animated:not(.IsPortrait) #SceneContainer{
+    opacity-mask: url( "s2r://panorama/images/masks/set_thumbnail_mask_psd.vtex");
+   }
+
+
+
+   DOTAEconItemAnimated.AnimatedIcon #ItemViewContainer{
+    width: 100%;
+   }
+    DOTAEconItemAnimated.AnimatedIcon #ItemViewContainer #AnimatedItemViewContainer{
+     visibility: visible;
+     width: 100%;
+     height: width-percentage( 66.67% );
+     background-color: gradient( linear, 0% 50%, 0% 100%, from( #424142 ), to( #9D9D9D ) );
+    }
+     DOTAEconItemAnimated.AnimatedIcon #ItemViewContainer #AnimatedItemViewContainer #ScenePanel{
+      width: 100%;
+      height: 100%;
+      transform: translateX( 0% ) translateY( 0% );
+     }
+
+
+
+
+
+   DOTAEconItemAnimated.Static #ItemViewContainer{
+    width: 100%;
+   }
+    DOTAEconItemAnimated.Static #ItemViewContainer #StaticItemViewContainer{
+     visibility: visible;
+     width: 100%;
+     height: width-percentage( 66.67% );
+     background-color: gradient( linear, 0% 50%, 0% 100%, from( #424142 ), to( #9D9D9D ) );
+    }
+
+
+
+  DOTAEconItemAnimated #EconItemName{
+   width: 100%;
+   text-align: center;
+   text-overflow: ellipsis;
+   height: 20px;
+
+   transition-property: color;
+   transition-duration: 0.2s;
+   transition-timing-function: ease;
+  }
+
+  DOTAEconItemAnimated #EconItemSlotName{
+   text-align: center;
+   height: 16px;
+   width: 100%;
+
+   transition-property: color;
+   transition-duration: 0.2s;
+   transition-timing-function: ease;
+  }
+
+
+   DOTAEconItemAnimated.HideSlotInfo #EconItemSlotName{
+    visibility: collapse;
+   }
+
+
+  DOTAEconItemAnimated.Equipped{
+   animation-name: Flash;
+   animation-duration: 0.6s;
+   animation-timing-function: ease;
+  }
+
+  DOTAEconItemAnimated.IsPreviewing,DOTAEconItemAnimated:selected{
+
+   box-shadow: 0px 0px 80px -24px rgba(206, 229, 255, 0.1);
+
+   animation-name: PrevewingAnimation;
+   animation-duration: 0.8s;
+   animation-iteration-count: infinite;
+   animation-direction: alternate-reverse;
+
+   sound: "ui_generic_button_click";
+  }
+
+
+   DOTAEconItemAnimated:active{
+    transform: scale3d(0.985, 0.985, 1);
+    brightness: 0.5;
+   }
+
+
+
+
+ @keyframes 'PrevewingAnimation'{
+  0%{
+   box-shadow: 0px 0px 80px -24px rgba(206, 229, 255, 0.05);
+   brightness: 1;
+  }
+
+  100%{
+   box-shadow: 0px 0px 80px -24px rgba(206, 229, 255, 0.1);
+   brightness: 1.8;
+  }
+ }
+
+ DOTAHeroPageNewV2 .SingleItem #EconItemName,.CollectionGroup_Heroes .SingleItem #EconItemName{
+
+  line-height: 18px;
+  height: 36px;
+ }
+
+ EconItemImage{
+  transition-property: wash-color, saturation, brightness;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-out;
+ }
+
+ #EconItemIcon{
+  transition-property: transform, brightness;
+  transition-duration: 0.4s;
+  transition-timing-function: cubic-bezier(0, 1, 0, 1);
+
+  width: 100%;
+  transform: scale3d(1.04, 1.04, 0);
+ }
+
+ .StyledBorder2{
+  width: 100%;
+  height: 100%;
+  margin-bottom: 3px;
+  border: 6px solid rgb(14, 18, 40);
+  border-brush: gradient( linear, 0% 0%, 0% 100%, from( #000000ab ), to( #00000000 ) );
+  box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.4);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  visibility: collapse;
+ }
+  .Owned:not(.SingleItem) .StyledBorder2{
+   visibility:
+               
+               visible
+   ;
+  }
+  .Owned.IsPortrait:not(.SingleItem) .StyledBorder2{
+   visibility:
+               
+               collapse
+   ;
+  }
+  .EquippedItemsSet .StyledBorder2,.SavedSet .StyledBorder2{
+   margin-bottom:
+                  
+                  0px
+   ;
+  }
+ .Container{
+  width:
+         
+         100%
+  ;
+  height:
+          
+          100%
+  ;
+  margin:
+          
+          6px
+  ;
+  overflow:
+            
+            clip
+  ;
+  box-shadow:
+              
+              0px
+                  
+                  6px
+                      
+                      24px
+                           
+                           -8px
+                                
+                                rgba
+                                    (
+                                     0,
+                                        
+                                        0,
+                                           
+                                           0,
+                                              
+                                              0.8
+                                                 )
+  ;
+  transition-property:
+                       
+                       background-color
+  ;
+  transition-duration:
+                       
+                       0.2s
+  ;
+ }
+  .Animated .Container{
+   background-color:
+                     
+                     gradient
+                             (
+                               
+                               linear,
+                                       
+                                       0%
+                                          
+                                          40%,
+                                               
+                                               0%
+                                                  
+                                                  80%,
+                                                       
+                                                       from
+                                                           (
+                                                             
+                                                             #172931
+                                                                     
+                                                                     )
+                                                                      ,
+                                                                        
+                                                                        to
+                                                                          (
+                                                                            
+                                                                            #2B4F5A
+                                                                                    
+                                                                                    )
+                                                                                      
+                                                                                      )
+   ;
+  }
+  .Animated.Owned .Container{
+   background-color:
+                     
+                     gradient
+                             (
+                               
+                               linear,
+                                       
+                                       0%
+                                          
+                                          40%,
+                                               
+                                               0%
+                                                  
+                                                  80%,
+                                                       
+                                                       from
+                                                           (
+                                                             
+                                                             #1C2332
+                                                                     
+                                                                     )
+                                                                      ,
+                                                                        
+                                                                        to
+                                                                          (
+                                                                            
+                                                                            #2B415A
+                                                                                    
+                                                                                    )
+                                                                                      
+                                                                                      )
+   ;
+  }
+   .BaseSet .Container #BackgroundImage{
+    visibility:
+                
+                collapse
+    ;
+   }
+  .Static .Container,.AnimatedIcon .Container{
+   background-color:
+                     
+                     gradient
+                             (
+                               
+                               linear,
+                                       
+                                       0%
+                                          
+                                          20%,
+                                               
+                                               100%
+                                                    
+                                                    100%,
+                                                          
+                                                          from
+                                                              (
+                                                                
+                                                                #1D3C4A
+                                                                        
+                                                                        )
+                                                                         ,
+                                                                           
+                                                                           to
+                                                                             (
+                                                                               
+                                                                               #0A1B1C
+                                                                                       
+                                                                                       )
+                                                                                         
+                                                                                         )
+   ;
+  }
+  .Static.Owned .Container,.AnimatedIcon.Owned .Container{
+   background-color:
+                     
+                     gradient
+                             (
+                               
+                               linear,
+                                       
+                                       0%
+                                          
+                                          50%,
+                                               
+                                               100%
+                                                    
+                                                    100%,
+                                                          
+                                                          from
+                                                              (
+                                                                
+                                                                #111419
+                                                                        
+                                                                        )
+                                                                         ,
+                                                                           
+                                                                           to
+                                                                             (
+                                                                               
+                                                                               #000000
+                                                                                       
+                                                                                       )
+                                                                                         
+                                                                                         )
+   ;
+  }
+   .Container:hover .HeroBackgroundImage{
+    brightness:
+                
+                3
+    ;
+   }
+   .Container:hover #SceneContainer{
+    transform:
+               
+               scale3d
+                      (
+                        
+                        1.07,
+                              
+                              1.07,
+                                    
+                                    1
+                                      
+                                      )
+    ;
+   }
+   .Container:hover #EconItemIcon{
+    transform:
+               
+               scale3d
+                      (
+                       1.1,
+                            
+                            1.1,
+                                 
+                                 0
+                                  )
+    ;
+    brightness:
+                
+                2
+    ;
+   }
+   .Container:hover #ActionButton{
+    opacity:
+             
+             1
+    ;
+    transform:
+               
+               none
+    ;
+    transition-delay:
+                      
+                      0s
+    ;
+   }
+    .Container:hover #ActionButton:active{
+     sound:
+            
+            "ui_loadout_equipped"
+     ;
+    }
+   .Container:hover #EconItemName{
+    color:
+           
+           white
+    ;
+   }
+   .Container:hover #EconItemSlotName{
+    color:
+           
+           white
+    ;
+   }
+   .Static .Container:hover,.AnimatedIcon .Container:hover{
+    background-color:
+                      
+                      gradient
+                              (
+                                
+                                linear,
+                                        
+                                        0%
+                                           
+                                           20%,
+                                                
+                                                100%
+                                                     
+                                                     100%,
+                                                           
+                                                           from
+                                                               (
+                                                                 
+                                                                 #244756
+                                                                         
+                                                                         )
+                                                                          ,
+                                                                            
+                                                                            to
+                                                                              (
+                                                                                
+                                                                                #0E2527
+                                                                                        
+                                                                                        )
+                                                                                          
+                                                                                          )
+    ;
+   }
+   .Static.Owned .Container:hover,.AnimatedIcon.Owned .Container:hover{
+    background-color:
+                      
+                      gradient
+                              (
+                                
+                                linear,
+                                        
+                                        0%
+                                           
+                                           50%,
+                                                
+                                                100%
+                                                     
+                                                     100%,
+                                                           
+                                                           from
+                                                               (
+                                                                 
+                                                                 #1B1F27
+                                                                         
+                                                                         )
+                                                                          ,
+                                                                            
+                                                                            to
+                                                                              (
+                                                                                
+                                                                                #0A0B0D
+                                                                                        
+                                                                                        )
+                                                                                          
+                                                                                          )
+    ;
+   }
+    .Container.Owned.HasAction:not(.Equipped):hover #StatusLabelContainer{
+     opacity:
+              
+              0
+     ;
+     transition-delay:
+                       
+                       0.1s
+     ;
+     transition-duration:
+                          
+                          0.3s
+     ;
+    }
+ DOTAEconItemAnimated.Unavailable:not(.Owned){
+  opacity:
+           
+           0.8
+  ;
+  brightness:
+              
+              0.2
+  ;
+ }
+ #FocusedItemBorder{
+  width:
+         
+         100%
+  ;
+  height:
+          
+          100%
+  ;
+  margin-bottom:
+                 
+                 0px
+  ;
+  border:
+          
+          1.2px
+                
+                solid
+                      
+                      rgba
+                          (
+                           255,
+                                
+                                255,
+                                     
+                                     255,
+                                          
+                                          0.8
+                                             )
+  ;
+  background-color:
+                    
+                    rgba
+                        (
+                          
+                          255,
+                               
+                               255,
+                                    
+                                    255,
+                                         
+                                         0
+                                           
+                                           )
+  ;
+  opacity:
+           
+           0.1
+  ;
+  visibility:
+              
+              collapse
+  ;
+ }
+  .IsFocusedCollectionItem #FocusedItemBorder{
+   visibility:
+               
+               visible
+   ;
+   animation-name:
+                   
+                   FocusBorderAnimation
+   ;
+   animation-duration:
+                       
+                       3s
+   ;
+   animation-iteration-count:
+                              
+                              1
+   ;
+   animation-timing-function:
+                              
+                              ease
+   ;
+  }
+ @keyframes 'FocusBorderAnimation'{
+  0%{
+   opacity:
+            
+            1
+   ;
+  }
+  5%{
+   opacity:
+            
+            0
+   ;
+   background-color:
+                     
+                     rgba
+                         (
+                           
+                           255,
+                                
+                                255,
+                                     
+                                     255,
+                                          
+                                          0.02
+                                               
+                                               )
+   ;
+  }
+  10%{
+   opacity:
+            
+            1
+   ;
+  }
+  15%{
+   opacity:
+            
+            0
+   ;
+  }
+  20%{
+   opacity:
+            
+            1
+   ;
+  }
+  25%{
+   opacity:
+            
+            0
+   ;
+  }
+  30%{
+   opacity:
+            
+            1
+   ;
+  }
+  35%{
+   opacity:
+            
+            0
+   ;
+  }
+  40%{
+   opacity:
+            
+            1
+   ;
+  }
+  45%{
+   opacity:
+            
+            0
+   ;
+  }
+  50%{
+   opacity:
+            
+            1
+   ;
+  }
+  70%{
+   opacity:
+            
+            1
+   ;
+   background-color:
+                     
+                     rgba
+                         (
+                           
+                           255,
+                                
+                                255,
+                                     
+                                     255,
+                                          
+                                          0.02
+                                               
+                                               )
+   ;
+  }
+  100%{
+   opacity:
+            
+            0.2
+   ;
+   background-color:
+                     
+                     rgba
+                         (
+                           
+                           255,
+                                
+                                255,
+                                     
+                                     255,
+                                          
+                                          0
+                                            
+                                            )
+   ;
+  }
+ }
+ @keyframes 'Flash'{
+  0%{
+   brightness:
+               
+               1
+   ;
+  }
+  50%{
+   brightness:
+               
+               5
+   ;
+  }
+  100%{
+   brightness:
+               
+               1
+   ;
+  }
+ }
+ DOTAEconItemAnimated:disabled #ScenePanel,DOTAEconItemAnimated:disabled #HeroSetName{
+  visibility:
+              
+              collapse
+  ;
+ }
+ #EquippedBorder{
+  margin:
+          
+          6px
+              
+              6px
+                  
+                  9px
+                      
+                      6px
+  ;
+  width:
+         
+         100%
+  ;
+  height:
+          
+          100%
+  ;
+  border:
+          
+          0px
+              
+              solid
+                    
+                    white
+  ;
+  border-brush:
+                
+                gradient
+                        (
+                          
+                          linear,
+                                  
+                                  0%
+                                     
+                                     0%,
+                                         
+                                         0%
+                                            
+                                            100%,
+                                                  
+                                                  from
+                                                      (
+                                                        
+                                                        #C2CED4
+                                                                
+                                                                )
+                                                                 ,
+                                                                   
+                                                                   to
+                                                                     (
+                                                                       
+                                                                       #727D81
+                                                                               
+                                                                               )
+                                                                                 
+                                                                                 )
+  ;
+  opacity:
+           
+           0
+  ;
+  box-shadow:
+              
+              inset
+                    
+                    0px
+                        
+                        -1px
+                             
+                             0px
+                                 
+                                 0px
+                                     
+                                     rgba
+                                         (
+                                          0,
+                                             
+                                             0,
+                                                
+                                                0,
+                                                   
+                                                   1
+                                                    )
+  ;
+  transition-property:
+                       
+                       border,
+                               
+                               opacity
+  ;
+  transition-duration:
+                       
+                       0.2s
+  ;
+ }
+  .IsPreviewing #EquippedBorder,:selected #EquippedBorder{
+   opacity:
+            
+            0.8
+   ;
+   border:
+           
+           1px
+               
+               solid
+                     
+                     white
+   ;
+   border-bottom:
+                  
+                  2px
+                      
+                      solid
+                            
+                            white
+   ;
+  }
+  .Equipped #EquippedBorder{
+   opacity:
+            
+            1
+   ;
+   border:
+           
+           4px
+               
+               solid
+                     
+                     white
+   ;
+   border-bottom:
+                  
+                  5px
+                      
+                      solid
+                            
+                            white
+   ;
+   animation-name:
+                   
+                   Shimmer
+   ;
+   animation-duration:
+                       
+                       0.6s
+   ;
+   animation-timing-function:
+                              
+                              ease-out
+   ;
+  }
+  .EquippedItemsSet #EquippedBorder,.SavedSet #EquippedBorder{
+   margin-bottom:
+                  
+                  6px
+   ;
+   box-shadow:
+               
+               inset
+                     
+                     0px
+                         
+                         0px
+                             
+                             0px
+                                 
+                                 0px
+                                     
+                                     rgba
+                                         (
+                                          0,
+                                             
+                                             0,
+                                                
+                                                0,
+                                                   
+                                                   1
+                                                    )
+   ;
+  }
+ .Container:hover #EquippedBorder{
+  opacity:
+           
+           1
+  ;
+  border:
+          
+          4px
+              
+              solid
+                    
+                    white
+  ;
+ }
+ @keyframes 'Shimmer'{
+  0%{
+   background-color:
+                     
+                     gradient
+                             (
+                               
+                               linear,
+                                       
+                                       -50%
+                                            
+                                            -50%,
+                                                  
+                                                  0%
+                                                     
+                                                     0%,
+                                                         
+                                                         from
+                                                             (
+                                                               
+                                                               #FFFFFF00
+                                                                         
+                                                                         )
+                                                                          ,
+                                                                            
+                                                                            color-stop
+                                                                                      (
+                                                                                        
+                                                                                        0.5,
+                                                                                             
+                                                                                             #FFFFFF05
+                                                                                                       
+                                                                                                       )
+                                                                                                        ,
+                                                                                                          
+                                                                                                          to
+                                                                                                            (
+                                                                                                              
+                                                                                                              #FFFFFF00
+                                                                                                                        
+                                                                                                                        )
+                                                                                                                          
+                                                                                                                          )
+   ;
+  }
+  100%{
+   background-color:
+                     
+                     gradient
+                             (
+                               
+                               linear,
+                                       
+                                       100%
+                                            
+                                            100%,
+                                                  
+                                                  150%
+                                                       
+                                                       150%,
+                                                             
+                                                             from
+                                                                 (
+                                                                   
+                                                                   #FFFFFF00
+                                                                             
+                                                                             )
+                                                                              ,
+                                                                                
+                                                                                color-stop
+                                                                                          (
+                                                                                            
+                                                                                            0.5,
+                                                                                                 
+                                                                                                 #FFFFFF05
+                                                                                                           
+                                                                                                           )
+                                                                                                            ,
+                                                                                                              
+                                                                                                              to
+                                                                                                                (
+                                                                                                                  
+                                                                                                                  #FFFFFF00
+                                                                                                                            
+                                                                                                                            )
+                                                                                                                              
+                                                                                                                              )
+   ;
+  }
+ }
+ .PreviewingLabel{
+  horizontal-align:
+                    
+                    center
+  ;
+  color:
+         
+         rgba
+             (
+              255,
+                   
+                   255,
+                        
+                        255,
+                             
+                             0.6
+                                )
+  ;
+  opacity:
+           
+           0
+  ;
+  margin-top:
+              
+              12px
+  ;
+  text-shadow:
+               
+               0px
+                   
+                   2px
+                       
+                       8px
+                           
+                           rgba
+                               (
+                                0,
+                                   
+                                   0,
+                                      
+                                      0,
+                                         
+                                         0.8
+                                            )
+  ;
+  border-radius:
+                 
+                 2px
+  ;
+  font-weight:
+               
+               semi-bold
+  ;
+  transition-property:
+                       
+                       opacity
+  ;
+  transition-duration:
+                       
+                       0.2s
+  ;
+ }
+  .ItemRarity_arcana.FullSet .PreviewingLabel,.ItemRarity_immortal.FullSet .PreviewingLabel,.NewArrival .PreviewingLabel{
+   margin-top:
+               
+               40px
+   ;
+  }
+  .IsPreviewing .PreviewingLabel,:selected .PreviewingLabel{
+   opacity:
+            
+            1
+   ;
+  }
+ #ShuffledBorder{
+  width:
+         
+         100%
+  ;
+  height:
+          
+          100%
+  ;
+  border:
+          
+          0px
+              
+              solid
+                    
+                    rgba
+                        (
+                         255,
+                              
+                              255,
+                                   
+                                   255,
+                                        
+                                        0
+                                         )
+  ;
+  border-brush:
+                
+                gradient
+                        (
+                          
+                          linear,
+                                  
+                                  0%
+                                     
+                                     0%,
+                                         
+                                         0%
+                                            
+                                            100%,
+                                                  
+                                                  from
+                                                      (
+                                                        
+                                                        #96c5ff00
+                                                                  
+                                                                  )
+                                                                   ,
+                                                                     
+                                                                     to
+                                                                       (
+                                                                         
+                                                                         #12142d00
+                                                                                   
+                                                                                   )
+                                                                                     
+                                                                                     )
+  ;
+  opacity:
+           
+           0
+  ;
+  margin-bottom:
+                 
+                 4px
+  ;
+  transition-property:
+                       
+                       border,
+                               
+                               opacity,
+                                        
+                                        border-brush
+  ;
+  transition-duration:
+                       
+                       0.2s
+  ;
+ }
+ .ShuffleEnabled.Shuffled:not(.Equipped) #ShuffledBorder{
+  opacity:
+           
+           1
+  ;
+  border:
+          
+          4px
+              
+              solid
+                    
+                    white
+  ;
+  border-brush:
+                
+                gradient
+                        (
+                          
+                          linear,
+                                  
+                                  0%
+                                     
+                                     0%,
+                                         
+                                         0%
+                                            
+                                            100%,
+                                                  
+                                                  from
+                                                      (
+                                                        
+                                                        #96c5ff96
+                                                                  
+                                                                  )
+                                                                   ,
+                                                                     
+                                                                     to
+                                                                       (
+                                                                         
+                                                                         #12142d2d
+                                                                                   
+                                                                                   )
+                                                                                     
+                                                                                     )
+  ;
+  box-shadow:
+              
+              inset
+                    
+                    0px
+                        
+                        0px
+                            
+                            1px
+                                
+                                0.4px
+                                      
+                                      rgba
+                                          (
+                                           215,
+                                                
+                                                244,
+                                                     
+                                                     255,
+                                                          
+                                                          0.15
+                                                              )
+  ;
+  animation-name:
+                  
+                  Shimmer
+  ;
+  animation-duration:
+                      
+                      0.6s
+  ;
+  animation-timing-function:
+                             
+                             ease-out
+  ;
+ }
+ #ShuffleButton{
+  horizontal-align:
+                    
+                    right
+  ;
+  margin:
+          
+          8px
+  ;
+  tooltip-position:
+                    
+                    top
+  ;
+  opacity:
+           
+           0
+  ;
+  transition-property:
+                       
+                       opacity,
+                                
+                                background-color,
+                                                  
+                                                  brightness
+  ;
+  transition-duration:
+                       
+                       0.1s,
+                             
+                             0.2s
+  ;
+ }
+  .ShuffleEnabled #ShuffleButton{
+   opacity:
+            
+            1
+   ;
+   transform:
+              
+              none
+   ;
+  }
+  #ShuffleButton Image{
+   transition-property:
+                        
+                        img-shadow
+   ;
+   transition-duration:
+                        
+                        0.2s
+   ;
+  }
+   .ShuffleEnabled.Shuffled #ShuffleButton Image{
+    opacity:
+             
+             1
+    ;
+    wash-color:
+                
+                white
+    ;
+    img-shadow:
+                
+                0px
+                    
+                    0px
+                        
+                        16px
+                             
+                             #B4D1FF88
+    ;
+   }
+  .ShuffleDisabled #ShuffleButton{
+   opacity:
+            
+            0
+   ;
+  }
+ .Shuffled #ShuffleButton{
+  background-color:
+                    
+                    gradient
+                            (
+                              
+                              linear,
+                                      
+                                      0%
+                                         
+                                         -0%,
+                                              
+                                              0%
+                                                 
+                                                 120%,
+                                                       
+                                                       from
+                                                           (
+                                                             
+                                                             #697f9a
+                                                                     
+                                                                     )
+                                                                      ,
+                                                                        
+                                                                        to
+                                                                          (
+                                                                            
+                                                                            #242834
+                                                                                    
+                                                                                    )
+                                                                                      
+                                                                                      )
+  ;
+ }
+ .BottomStack{
+  width:
+         
+         100%
+  ;
+  height:
+          
+          5px
+  ;
+  vertical-align:
+                  
+                  bottom
+  ;
+  margin:
+          
+          0px
+              
+              6px
+  ;
+  flow-children:
+                 
+                 down
+  ;
+  visibility:
+              
+              collapse
+  ;
+ }
+  .BottomStack .Stack1{
+   width:
+          
+          100%
+   ;
+   height:
+           
+           2px
+   ;
+   margin:
+           
+           0px
+               
+               3px
+   ;
+   margin-bottom:
+                  
+                  1px
+   ;
+   brightness:
+               
+               0.4
+   ;
+   border-bottom:
+                  
+                  1px
+                      
+                      solid
+                            
+                            rgba
+                                (
+                                 255,
+                                      
+                                      255,
+                                           
+                                           255,
+                                                
+                                                0.2
+                                                   )
+   ;
+   border-brush:
+                 
+                 gradient
+                         (
+                           
+                           linear,
+                                   
+                                   0%
+                                      
+                                      0%,
+                                          
+                                          100%
+                                               
+                                               0%,
+                                                   
+                                                   from
+                                                       (
+                                                         
+                                                         #ffffff7e
+                                                                   
+                                                                   )
+                                                                    ,
+                                                                      
+                                                                      color-stop
+                                                                                (
+                                                                                  
+                                                                                  0.5,
+                                                                                       
+                                                                                       #ffffff
+                                                                                               
+                                                                                               )
+                                                                                                ,
+                                                                                                  
+                                                                                                  to
+                                                                                                    (
+                                                                                                      
+                                                                                                      #ffffff7e
+                                                                                                                
+                                                                                                                )
+                                                                                                                  
+                                                                                                                  )
+   ;
+  }
+  .BottomStack .Stack2{
+   width:
+          
+          100%
+   ;
+   height:
+           
+           2px
+   ;
+   margin:
+           
+           0px
+               
+               6px
+   ;
+   opacity:
+            
+            0.6
+   ;
+   brightness:
+               
+               0.4
+   ;
+   border-bottom:
+                  
+                  1px
+                      
+                      solid
+                            
+                            rgba
+                                (
+                                 255,
+                                      
+                                      255,
+                                           
+                                           255,
+                                                
+                                                0.3
+                                                   )
+   ;
+   border-brush:
+                 
+                 gradient
+                         (
+                           
+                           linear,
+                                   
+                                   0%
+                                      
+                                      0%,
+                                          
+                                          100%
+                                               
+                                               0%,
+                                                   
+                                                   from
+                                                       (
+                                                         
+                                                         #ffffff7e
+                                                                   
+                                                                   )
+                                                                    ,
+                                                                      
+                                                                      color-stop
+                                                                                (
+                                                                                  
+                                                                                  0.5,
+                                                                                       
+                                                                                       #ffffff
+                                                                                               
+                                                                                               )
+                                                                                                ,
+                                                                                                  
+                                                                                                  to
+                                                                                                    (
+                                                                                                      
+                                                                                                      #ffffff7e
+                                                                                                                
+                                                                                                                )
+                                                                                                                  
+                                                                                                                  )
+   ;
+   box-shadow:
+               
+               0px
+                   
+                   1px
+                       
+                       2px
+                           
+                           rgba
+                               (
+                                0,
+                                   
+                                   0,
+                                      
+                                      0,
+                                         
+                                         0.2
+                                            )
+   ;
+  }
+  .HasMultipleBundles .BottomStack{
+   visibility:
+               
+               visible
+   ;
+  }
+  .IsStack .BottomStack{
+   visibility:
+               
+               visible
+   ;
+  }
+ .ShowDuplicateBundlesButton{
+  horizontal-align:
+                    
+                    center
+  ;
+  vertical-align:
+                  
+                  bottom
+  ;
+  margin-bottom:
+                 
+                 -8px
+  ;
+  tooltip-position:
+                    
+                    top
+  ;
+  padding:
+           
+           1px
+               
+               12px
+                    
+                    2px
+  ;
+  visibility:
+              
+              collapse
+  ;
+ }
+  .HasMultipleBundles .ShowDuplicateBundlesButton{
+   visibility:
+               
+               visible
+   ;
+  }
+ .ShowDuplicateItemsButton{
+  horizontal-align:
+                    
+                    center
+  ;
+  vertical-align:
+                  
+                  bottom
+  ;
+  margin-bottom:
+                 
+                 -8px
+  ;
+  tooltip-position:
+                    
+                    top
+  ;
+  padding:
+           
+           1px
+               
+               12px
+                    
+                    2px
+  ;
+  visibility:
+              
+              collapse
+  ;
+ }
+  .IsStack .ShowDuplicateItemsButton{
+   visibility:
+               
+               visible
+   ;
+  }
+ #SceneContainer{
+  width:
+         
+         100%
+  ;
+  height:
+          
+          100%
+  ;
+  overflow:
+            
+            noclip
+  ;
+  transition-property:
+                       
+                       transform
+  ;
+  transition-duration:
+                       
+                       0.4s
+  ;
+  transition-timing-function:
+                              
+                              cubic-bezier
+                                          (
+                                           0,
+                                              
+                                              1,
+                                                 
+                                                 0,
+                                                    
+                                                    1
+                                                     )
+  ;
+ }
+ #HighQualitySetPortrait{
+  width:
+         
+         100%
+  ;
+  height:
+          
+          100%
+  ;
+  transition-property:
+                       
+                       opacity
+  ;
+  transition-duration:
+                       
+                       0.25s
+  ;
+ }
+ #LowQualitySetPortrait{
+  width:
+         
+         100%
+  ;
+  height:
+          
+          100%
+  ;
+ }
+ #LowQualityPreviewContainer{
+  width:
+         
+         100%
+  ;
+  height:
+          
+          100%
+  ;
+  transition-property:
+                       
+                       opacity
+  ;
+  transition-duration:
+                       
+                       0.5s
+  ;
+ }
+ #ScenePanel{
+  width:
+         
+         140%
+  ;
+  height:
+          
+          108%
+  ;
+  transform:
+             
+             translateY
+                       (
+                         
+                         -4%
+                             
+                             )
+                               
+                               translateX
+                                         (
+                                           
+                                           -20%
+                                                
+                                                )
+  ;
+  opacity:
+           
+           0
+  ;
+ }
+  :not(.IsPortrait) #ScenePanel{
+   transition-property:
+                        
+                        opacity
+   ;
+   transition-duration:
+                        
+                        1.0s
+   ;
+  }
+  .ContentSceneLoaded #ScenePanel,.IsPortrait #ScenePanel{
+   opacity:
+            
+            1
+   ;
+  }
+  .CollectionGroup_Global #ScenePanel{
+   width:
+          
+          100%
+   ;
+   height:
+           
+           70%
+   ;
+   transform:
+              
+              translateY
+                        (
+                          
+                          0%
+                             
+                             )
+                               
+                               translateX
+                                         (
+                                           
+                                           0%
+                                              
+                                              )
+   ;
+  }
+  .beastmaster #ScenePanel{
+                     margin-top:
+                                 
+                                 3%
+                     ;
+                                     height:
+                                             
+                                             100%
+                                     ;
+  }
+  .bloodseeker #ScenePanel{
+                     margin-top:
+                                 
+                                 -3%
+                     ;
+                                      margin-left:
+                                                   
+                                                   5%
+                                      ;
+                                                       height:
+                                                               
+                                                               100%
+                                                       ;
+  }
+  .bounty_hunter #ScenePanel{
+                      margin-top:
+                                  
+                                  -6%
+                      ;
+                                       height:
+                                               
+                                               116%
+                                       ;
+  }
+  .centaur #ScenePanel{
+                  margin-top:
+                              
+                              3%
+                  ;
+                                  margin-left:
+                                               
+                                               -3%
+                                  ;
+  }
+  .chaos_knight #ScenePanel{
+                     margin-top:
+                                 
+                                 8%
+                     ;
+                                     height:
+                                             
+                                             104%
+                                     ;
+  }
+  .chen #ScenePanel{
+               margin-top:
+                           
+                           -8%
+               ;
+                                height:
+                                        
+                                        116%
+                                ;
+  }
+  .death_prophet #ScenePanel{
+                      margin-top:
+                                  
+                                  6%
+                      ;
+  }
+  .disruptor #ScenePanel{
+                   margin-left:
+                                
+                                2%
+                   ;
+  }
+  .earth_spirit #ScenePanel{
+                     margin-top:
+                                 
+                                 4%
+                     ;
+                                     height:
+                                             
+                                             100%
+                                     ;
+  }
+  .earthshaker #ScenePanel{
+                     margin-top:
+                                 
+                                 0%
+                     ;
+                                     margin-left:
+                                                  
+                                                  2%
+                                     ;
+                                                      height:
+                                                              
+                                                              98%
+                                                      ;
+  }
+  .hoodwink #ScenePanel{
+                  margin-top:
+                              
+                              -10%
+                  ;
+                                    height:
+                                            
+                                            104%
+                                    ;
+  }
+  .life_stealer #ScenePanel{
+                     margin-top:
+                                 
+                                 -4%
+                     ;
+                                      height:
+                                              
+                                              104%
+                                      ;
+  }
+  .lone_druid #ScenePanel{
+                    margin-top:
+                                
+                                -5%
+                    ;
+                                     height:
+                                             
+                                             104%
+                                     ;
+  }
+  .mars #ScenePanel{
+               height:
+                       
+                       100%
+               ;
+  }
+  .meepo #ScenePanel{
+                margin-top:
+                            
+                            -10%
+                ;
+  }
+  .mirana #ScenePanel{
+                 margin-top:
+                             
+                             1%
+                 ;
+                                 margin-left:
+                                              
+                                              1%
+                                 ;
+                                                  height:
+                                                          
+                                                          104%
+                                                  ;
+  }
+  .nyx_assassin #ScenePanel{
+                     margin-top:
+                                 
+                                 -2%
+                     ;
+                                      margin-left:
+                                                   
+                                                   -2%
+                                      ;
+                                                        height:
+                                                                
+                                                                98%
+                                                        ;
+  }
+  .ogre_magi #ScenePanel{
+                   margin-top:
+                               
+                               4%
+                   ;
+                                   margin-left:
+                                                
+                                                3%
+                                   ;
+                                                    height:
+                                                            
+                                                            98%
+                                                    ;
+  }
+  .primal_beast #ScenePanel{
+                     margin-top:
+                                 
+                                 8%
+                     ;
+                                     margin-left:
+                                                  
+                                                  2%
+                                     ;
+                                                      height:
+                                                              
+                                                              90%
+                                                      ;
+  }
+  .pudge #ScenePanel{
+                height:
+                        
+                        98%
+                ;
+  }
+  .riki #ScenePanel{
+               margin-top:
+                           
+                           -8%
+               ;
+                                margin-left:
+                                             
+                                             3%
+                                ;
+                                                 height:
+                                                         
+                                                         120%
+                                                 ;
+  }
+  .silencer #ScenePanel{
+                  margin-left:
+                               
+                               8%
+                  ;
+  }
+  .slardar #ScenePanel{
+                  margin-top:
+                              
+                              2%
+                  ;
+                                  margin-left:
+                                               
+                                               8%
+                                  ;
+                                                   height:
+                                                           
+                                                           100%
+                                                   ;
+  }
+  .snapfire #ScenePanel{
+                  margin-top:
+                              
+                              4%
+                  ;
+                                  height:
+                                          
+                                          92%
+                                  ;
+  }
+  .spirit_breaker #ScenePanel{
+                       margin-top:
+                                   
+                                   -6%
+                       ;
+                                        margin-left:
+                                                     
+                                                     0%
+                                        ;
+                                                         height:
+                                                                 
+                                                                 100%
+                                                         ;
+  }
+  .tidehunter #ScenePanel{
+                    margin-top:
+                                
+                                4%
+                    ;
+                                    height:
+                                            
+                                            96%
+                                    ;
+  }
+  .tiny #ScenePanel{
+               margin-top:
+                           
+                           -4%
+               ;
+                                height:
+                                        
+                                        98%
+                                ;
+  }
+  .undying #ScenePanel{
+                  margin-top:
+                              
+                              8%
+                  ;
+                                  height:
+                                          
+                                          100%
+                                  ;
+  }
+  .venomancer #ScenePanel{
+                    margin-top:
+                                
+                                4%
+                    ;
+                                    margin-left:
+                                                 
+                                                 0%
+                                    ;
+                                                     height:
+                                                             
+                                                             96%
+                                                     ;
+  }
+  .weaver #ScenePanel{
+                 margin-top:
+                             
+                             -4%
+                 ;
+                                  height:
+                                          
+                                          100%
+                                  ;
+  }
+  .skeleton_king #ScenePanel{
+                      margin-top:
+                                  
+                                  0%
+                      ;
+                                      margin-left:
+                                                   
+                                                   4%
+                                      ;
+                                                       height:
+                                                               
+                                                               100%
+                                                       ;
+  }
+ #TooltipTriggerIcon{
+  opacity:
+           
+           0
+  ;
+  brightness:
+              
+              0.3
+  ;
+  transition-property:
+                       
+                       opacity,
+                                
+                                brightness
+  ;
+  transition-duration:
+                       
+                       0.2s
+  ;
+  tooltip-position:
+                    
+                    left
+  ;
+ }
+  #TooltipTriggerIcon:hover{
+   brightness:
+               
+               1
+   ;
+  }
+  .EquippedItemsSet #TooltipTriggerIcon,.BaseSet #TooltipTriggerIcon,.SavedSet #TooltipTriggerIcon{
+   visibility:
+               
+               collapse
+   ;
+  }
+ DOTAEconItemAnimated.TooltipTriggerIconEnabled:hover #TooltipTriggerIcon{
+  opacity:
+           
+           1
+  ;
+ }
+ #EditSavedSetButton{
+  flow-children:
+                 
+                 right
+  ;
+  horizontal-align:
+                    
+                    center
+  ;
+  margin-right:
+                
+                3px
+  ;
+  margin-bottom:
+                 
+                 3px
+  ;
+  tooltip-position:
+                    
+                    left
+  ;
+  visibility:
+              
+              collapse
+  ;
+ }
+  .SavedSet #EditSavedSetButton{
+   visibility:
+               
+               visible
+   ;
+  }
+ .AttributeIconContainer{
+  margin-top:
+              
+              8px
+  ;
+  margin-left:
+               
+               8px
+  ;
+ }
+  .IsPortrait .AttributeIconContainer{
+   visibility:
+               
+               collapse
+   ;
+  }
+ #OwnedCount{
+  background-color:
+                    
+                    #000000e8
+  ;
+     border-radius:
+                    
+                    3px
+     ;
+  padding:
+           
+           2px
+               
+               3px
+  ;
+  margin-right:
+                
+                3px
+  ;
+  tooltip-position:
+                    
+                    top
+  ;
+  visibility:
+              
+              collapse
+  ;
+ }
+ .HasDuplicates #OwnedCount{
+  visibility:
+              
+              visible
+  ;
+ }
+ #Bundle{
+  horizontal-align:
+                    
+                    left
+  ;
+  vertical-align:
+                  
+                  top
+  ;
+  background-color:
+                    
+                    #000000e8
+  ;
+     border-radius:
+                    
+                    3px
+     ;
+  flow-children:
+                 
+                 right
+  ;
+  box-shadow:
+              
+              inset
+                    
+                    0px
+                        
+                        0px
+                            
+                            0px
+                                
+                                1px
+                                    
+                                    rgba
+                                        (
+                                         255,
+                                              
+                                              255,
+                                                   
+                                                   255,
+                                                        
+                                                        0.06
+                                                            )
+  ;
+  tooltip-position:
+                    
+                    top
+  ;
+  margin-right:
+                
+                3px
+  ;
+  transition-property:
+                       
+                       box-shadow,
+                                   
+                                   background-color
+  ;
+  transition-duration:
+                       
+                       0.1s
+  ;
+  visibility:
+              
+              collapse
+  ;
+ }
+  #Bundle:hover{
+   background-color:
+                     
+                     DarkestGrey
+                                &
+                                 dd
+   ;
+   box-shadow:
+               
+               inset
+                     
+                     0px
+                         
+                         0px
+                             
+                             0px
+                                 
+                                 1px
+                                     
+                                     rgba
+                                         (
+                                          255,
+                                               
+                                               255,
+                                                    
+                                                    255,
+                                                         
+                                                         0.16
+                                                             )
+   ;
+  }
+   #Bundle:hover Label{
+    color:
+           
+           white
+    ;
+   }
+   #Bundle:hover .BundleIcon{
+    wash-color:
+                
+                white
+    ;
+   }
+  #Bundle .BundleIcon{
+   width:
+          
+          24px
+   ;
+   height:
+           
+           24px
+   ;
+   transition-property:
+                        
+                        wash-color
+   ;
+   transition-duration:
+                        
+                        0.1s
+   ;
+   background-image:
+                     
+                     url(
+                          "s2r://panorama/images/control_icons/brackets_png.vtex"
+                     )
+   ;
+   background-size:
+                    
+                    contain
+   ;
+   background-repeat:
+                      
+                      no-repeat
+   ;
+  }
+  #Bundle #BundleCount{
+   visibility:
+               
+               collapse
+   ;
+  }
+   .HasMultipleBundles #Bundle #BundleCount{
+    visibility:
+                
+                visible
+    ;
+   }
+  #Bundle Label{
+   margin:
+           
+           0px
+               
+               3px
+                   
+                   0px
+                       
+                       1px
+   ;
+   transition-property:
+                        
+                        color
+   ;
+   transition-duration:
+                        
+                        0.1s
+   ;
+  }
+ #Stack{
+  horizontal-align:
+                    
+                    left
+  ;
+  vertical-align:
+                  
+                  top
+  ;
+  background-color:
+                    
+                    #000000e8
+  ;
+     border-radius:
+                    
+                    3px
+     ;
+  flow-children:
+                 
+                 right
+  ;
+  box-shadow:
+              
+              inset
+                    
+                    0px
+                        
+                        0px
+                            
+                            0px
+                                
+                                1px
+                                    
+                                    rgba
+                                        (
+                                         255,
+                                              
+                                              255,
+                                                   
+                                                   255,
+                                                        
+                                                        0.06
+                                                            )
+  ;
+  tooltip-position:
+                    
+                    top
+  ;
+  margin-right:
+                
+                3px
+  ;
+  visibility:
+              
+              collapse
+  ;
+  min-width:
+             
+             24px
+  ;
+  transition-property:
+                       
+                       box-shadow,
+                                   
+                                   background-color
+  ;
+  transition-duration:
+                       
+                       0.1s
+  ;
+ }
+  #Stack:hover{
+   background-color:
+                     
+                     DarkestGrey
+                                &
+                                 dd
+   ;
+   box-shadow:
+               
+               inset
+                     
+                     0px
+                         
+                         0px
+                             
+                             0px
+                                 
+                                 1px
+                                     
+                                     rgba
+                                         (
+                                          255,
+                                               
+                                               255,
+                                                    
+                                                    255,
+                                                         
+                                                         0.16
+                                                             )
+   ;
+  }
+   #Stack:hover Label{
+    color:
+           
+           white
+    ;
+   }
+  #Stack Label{
+   margin:
+           
+           3px
+   ;
+   transition-property:
+                        
+                        color
+   ;
+   transition-duration:
+                        
+                        0.1s
+   ;
+   text-align:
+               
+               center
+   ;
+   horizontal-align:
+                     
+                     center
+   ;
+  }
+  .IsStack #Stack{
+   visibility:
+               
+               visible
+   ;
+  }
+ .IsInBundle #Bundle{
+  visibility:
+              
+              visible
+  ;
+ }
+ .InformationalImage{
+  height:
+          
+          22px
+  ;
+  vertical-align:
+                  
+                  center
+  ;
+  width:
+         
+         height-percentage
+                          (
+                            
+                            100%
+                                 
+                                 )
+  ;
+     background-color:
+                       
+                       DarkestGrey
+     ;
+  background-blur:
+                   
+                   gaussian
+                           (
+                             
+                             4px
+                                 
+                                 )
+  ;
+   background-repeat:
+                      
+                      no-repeat
+   ;
+  background-position:
+                       
+                       center
+  ;
+     border-radius:
+                    
+                    3px
+     ;
+  background-size:
+                   
+                   contain
+  ;
+  tooltip-position:
+                    
+                    top
+  ;
+  margin-right:
+                
+                2px
+  ;
+  margin-bottom:
+                 
+                 2px
+  ;
+  wash-color:
+              
+              LighterGrey
+  ;
+  img-shadow:
+              
+              0px
+                  
+                  1px
+                      
+                      4px
+                          
+                          black
+  ;
+  visibility:
+              
+              collapse
+  ;
+ }
+ .HighValueItem{
+  background-size:
+                   
+                   60%
+  ;
+     background-image:
+                       
+                       url(
+                            "s2r://panorama/images/control_icons/24px/high_value_item.vsvg"
+                       )
+     ;
+  wash-color:
+              
+              rgb
+                 (
+                  255,
+                       
+                       220,
+                            
+                            105
+                               )
+  ;
+  img-shadow:
+              
+              0px
+                  
+                  0px
+                      
+                      8px
+                          
+                          rgba
+                              (
+                               255,
+                                    
+                                    157,
+                                         
+                                         0,
+                                            
+                                            0.3
+                                               )
+  ;
+  animation-name:
+                  
+                  GlowHighValueIcon
+  ;
+  animation-duration:
+                      
+                      0.6s
+  ;
+  animation-iteration-count:
+                             
+                             infinite
+  ;
+  animation-timing-function:
+                             
+                             ease-in-out
+  ;
+  animation-direction:
+                       
+                       alternate-reverse
+  ;
+ }
+ .IsHighValue .HighValueItem{
+     visibility:
+                 
+                 visible
+     ;
+ }
+ @keyframes 'GlowHighValueIcon'{
+     100%{
+   brightness:
+               
+               1
+   ;
+     }
+  0%{
+   brightness:
+               
+               3
+   ;
+  }
+ }
+ .GemIcon{
+     background-image:
+                       
+                       url(
+                            "s2r://panorama/images/control_icons/socket_full_png.vtex"
+                       )
+     ;
+  background-size:
+                   
+                   90%
+  ;
+ }
+ .HasGems .GemIcon{
+     visibility:
+                 
+                 visible
+     ;
+ }
+ .RareGemIcon{
+     background-image:
+                       
+                       url(
+                            "s2r://panorama/images/control_icons/socket_rare_png.vtex"
+                       )
+     ;
+  background-size:
+                   
+                   90%
+  ;
+ }
+ .HasRareGems .RareGemIcon{
+     visibility:
+                 
+                 visible
+     ;
+ }
+ .EmptySocketIcon{
+     background-image:
+                       
+                       url(
+                            "s2r://panorama/images/control_icons/socket_empty_png.vtex"
+                       )
+     ;
+  background-size:
+                   
+                   90%
+  ;
+ }
+ .HasEmptySockets .EmptySocketIcon{
+     visibility:
+                 
+                 visible
+     ;
+ }
+ .MarketableIcon{
+     background-image:
+                       
+                       url(
+                            "s2r://panorama/images/control_icons/24px/marketable.vsvg"
+                       )
+     ;
+  background-size:
+                   
+                   70%
+  ;
+ }
+ .IsMarketable:not(.HasMarketPrice) .MarketableIcon{
+     visibility:
+                 
+                 visible
+     ;
+ }
+ .MarketPriceContainer{
+  visibility:
+              
+              collapse
+  ;
+ }
+ .HasMarketPrice .MarketPriceContainer{
+  height:
+          
+          22px
+  ;
+  vertical-align:
+                  
+                  center
+  ;
+     background-color:
+                       
+                       DarkestGrey
+     ;
+   background-repeat:
+                      
+                      no-repeat
+   ;
+  background-position:
+                       
+                       center
+  ;
+     border-radius:
+                    
+                    3px
+     ;
+  background-size:
+                   
+                   contain
+  ;
+  tooltip-position:
+                    
+                    top
+  ;
+  margin-right:
+                
+                2px
+  ;
+  margin-bottom:
+                 
+                 2px
+  ;
+  wash-color:
+              
+              LighterGrey
+  ;
+  img-shadow:
+              
+              0px
+                  
+                  1px
+                      
+                      4px
+                          
+                          black
+  ;
+  visibility:
+              
+              visible
+  ;
+ }
+  .HasMarketPrice .MarketPriceContainer #MarketIcon{
+   height:
+           
+           100%
+   ;
+   width:
+          
+          height-percentage
+                           (
+                             
+                             100%
+                                  
+                                  )
+   ;
+   background-image:
+                     
+                     url(
+                          "s2r://panorama/images/control_icons/24px/marketable.vsvg"
+                     )
+   ;
+   background-size:
+                    
+                    70%
+   ;
+   background-color:
+                     
+                     DarkestGrey
+   ;
+    background-repeat:
+                       
+                       no-repeat
+    ;
+   background-position:
+                        
+                        center
+   ;
+  }
+  .HasMarketPrice .MarketPriceContainer #MarketPrice{
+   color:
+          
+          LighterGrey
+   ;
+   margin-left:
+                
+                2px
+   ;
+   margin-right:
+                 
+                 4px
+   ;
+   letter-spacing:
+                   
+                   0px
+   ;
+  }
+   .HasHighMarketPrice .HasMarketPrice .MarketPriceContainer #MarketPrice{
+    color:
+           
+           rgb
+              (
+               255,
+                    
+                    220,
+                         
+                         105
+                            )
+    ;
+   }
+ .TradeableIcon{
+     background-image:
+                       
+                       url(
+                            "s2r://panorama/images/control_icons/24px/tradeable.vsvg"
+                       )
+     ;
+  background-size:
+                   
+                   70%
+  ;
+ }
+ DOTAEconItemAnimated.IsTradeable .TradeableIcon{
+     visibility:
+                 
+                 visible
+     ;
+ }
+ DOTAEconItemAnimated.Seasonal .Seasonal{
+     wash-color:
+                 
+                 #e54e42
+     ;
+  wash-color:
+              
+              #59e542
+  ;
+  wash-color:
+              
+              #59bfff
+  ;
+  visibility:
+              
+              collapse
+  ;
+ }
+ DOTAEconItemAnimated.Seasonal.Season_PlusSubscription .Seasonal{
+  visibility:
+              
+              visible
+  ;
+     background-image:
+                       
+                       url(
+                            "s2r://panorama/images/dotaplus_logo_small_png.vtex"
+                       )
+     ;
+  wash-color:
+              
+              white
+  ;
+ }
+ .Bundle{
+     background-image:
+                       
+                       url(
+                            "s2r://panorama/images/control_icons/24px/bundle.vsvg"
+                       )
+     ;
+  background-size:
+                   
+                   75%
+  ;
+ }
+ DOTAEconItemAnimated.IsInBundle .Bundle{
+  visibility:
+              
+              visible
+  ;
+ }
+ DOTAEconItemAnimated.IsBundle.SingleItem .Bundle{
+  visibility:
+              
+              visible
+  ;
+ }
+ .Locked{
+     background-image:
+                       
+                       url(
+                            "s2r://panorama/images/control_icons/24px/lock.vsvg"
+                       )
+     ;
+   background-repeat:
+                      
+                      no-repeat
+   ;
+  background-position:
+                       
+                       center
+  ;
+  background-size:
+                   
+                   80%
+  ;
+ }
+ DOTAEconItemAnimated.TreasureRequiresKey .Locked{
+  visibility:
+              
+              visible
+  ;
+ }
+ .Key{
+     background-image:
+                       
+                       url(
+                            "s2r://panorama/images/control_icons/icon_key_button_png.vtex"
+                       )
+     ;
+   background-repeat:
+                      
+                      no-repeat
+   ;
+  background-position:
+                       
+                       center
+  ;
+ }
+ DOTAEconItemAnimated.IsKey .Key{
+  visibility:
+              
+              visible
+  ;
+ }
+ #Equipped{
+  width:
+         
+         28px
+  ;
+  height:
+          
+          28px
+  ;
+  horizontal-align:
+                    
+                    right
+  ;
+  background-repeat:
+                     
+                     no-repeat
+  ;
+  background-position:
+                       
+                       right
+                             
+                             top
+  ;
+  background-size:
+                   
+                   100%
+  ;
+  wash-color:
+              
+              #B3DFDC
+  ;
+     background-image:
+                       
+                       url(
+                            "s2r://panorama/images/status_icons/econtooltip_equipped_psd.vtex"
+                       )
+     ;
+  wash-color:
+              
+              #C2CED4
+  ;
+  opacity:
+           
+           0
+  ;
+  transform:
+             
+             translate3d
+                        (
+                          
+                          20px,
+                                
+                                -20px,
+                                       
+                                       0px
+                                           
+                                           )
+  ;
+  transition-property:
+                       
+                       transform
+  ;
+  transition-duration:
+                       
+                       0.2s
+  ;
+ }
+  .Equipped #Equipped{
+   opacity:
+            
+            1
+   ;
+   transform:
+              
+              none
+   ;
+  }
+ #AvailableItemPurchaseButton{
+  vertical-align:
+                  
+                  bottom
+  ;
+  width:
+         
+         100%
+  ;
+  margin-top:
+              
+              8px
+  ;
+  padding-left:
+                
+                6px
+  ;
+  padding-right:
+                 
+                 6px
+  ;
+  max-height:
+              
+              34px
+  ;
+ }
+ .Unavailable #AvailableItemPurchaseButton{
+  visibility:
+              
+              collapse
+  ;
+ }
+ .Owned #AvailableItemPurchaseButton{
+  visibility:
+              
+              collapse
+  ;
+ }
+ #ItemInfoContainer{
+  vertical-align:
+                  
+                  bottom
+  ;
+  width:
+         
+         100%
+  ;
+  flow-children:
+                 
+                 down
+  ;
+  padding:
+           
+           8px
+               
+               12px
+                    
+                    16px
+  ;
+  horizontal-align:
+                    
+                    center
+  ;
+ }
+  .IsPortrait #ItemInfoContainer{
+   visibility:
+               
+               collapse
+   ;
+  }
+ .LoadingSpinnerPanel .Spinner{
+  horizontal-align:
+                    
+                    center
+  ;
+  vertical-align:
+                  
+                  center
+  ;
+  width:
+         
+         20px
+  ;
+  height:
+          
+          20px
+  ;
+ }
+ .LoadingSpinnerPanel{
+  visibility:
+              
+              collapse
+  ;
+  width:
+         
+         100%
+  ;
+  height:
+          
+          100%
+  ;
+ }
+ .StyleChanging .LoadingSpinnerPanel{
+  visibility:
+              
+              visible
+  ;
+ }
+ .ArcanaLabel,.ImmortalLabel{
+  font-weight:
+               
+               normal
+  ;
+  letter-spacing:
+                  
+                  0px
+  ;
+  font-size:
+             
+             16px
+  ;
+  horizontal-align:
+                    
+                    center
+  ;
+  padding:
+           
+           12px
+  ;
+  text-shadow:
+               
+               0px
+                   
+                   1px
+                       
+                       4px
+                           
+                           black
+  ;
+  color:
+         
+         rgba
+             (
+              255,
+                   
+                   255,
+                        
+                        255,
+                             
+                             0.8
+                                )
+  ;
+  text-transform:
+                  
+                  none
+  ;
+  opacity:
+           
+           0
+  ;
+  transition-property:
+                       
+                       opacity
+  ;
+  transition-duration:
+                       
+                       0s
+  ;
+  transition-delay:
+                    
+                    0s
+  ;
+ }
+ .ItemRarity_arcana.FullSet .ArcanaLabel{
+  opacity:
+           
+           1
+  ;
+  animation-name:
+                  
+                  GlowArcanaLabelText
+  ;
+  animation-duration:
+                      
+                      1s
+  ;
+  animation-iteration-count:
+                             
+                             infinite
+  ;
+  animation-timing-function:
+                             
+                             ease-in-out
+  ;
+  animation-direction:
+                       
+                       alternate-reverse
+  ;
+ }
+ .ItemRarity_immortal.FullSet .ImmortalLabel{
+  opacity:
+           
+           1
+  ;
+  animation-name:
+                  
+                  GlowImmortalLabelText
+  ;
+  animation-duration:
+                      
+                      1s
+  ;
+  animation-iteration-count:
+                             
+                             infinite
+  ;
+  animation-timing-function:
+                             
+                             ease-in-out
+  ;
+  animation-direction:
+                       
+                       alternate-reverse
+  ;
+ }
+ @keyframes 'GlowArcanaLabelText'{
+     0%{
+   text-shadow:
+                
+                0px
+                    
+                    0px
+                        
+                        8px
+                            
+                            rarity_color_arcana
+                                               &
+                                                11
+   ;
+   brightness:
+               
+               1
+   ;
+     }
+  100%{
+   text-shadow:
+                
+                0px
+                    
+                    0px
+                        
+                        12px
+                             
+                             rarity_color_arcana
+                                                &
+                                                 66
+   ;
+   brightness:
+               
+               1.5
+   ;
+  }
+ }
+ @keyframes 'GlowImmortalLabelText'{
+     0%{
+   text-shadow:
+                
+                0px
+                    
+                    0px
+                        
+                        8px
+                            
+                            rarity_color_immortal
+                                                 &
+                                                  11
+   ;
+   brightness:
+               
+               1
+   ;
+     }
+  100%{
+   text-shadow:
+                
+                0px
+                    
+                    0px
+                        
+                        12px
+                             
+                             rarity_color_immortal
+                                                  &
+                                                   66
+   ;
+   brightness:
+               
+               1.5
+   ;
+  }
+ }
+ #ArcanaBackgroundEffect{
+  vertical-align:
+                  
+                  middle
+  ;
+  horizontal-align:
+                    
+                    center
+  ;
+  wash-color:
+              
+              white
+  ;
+  overflow:
+            
+            noclip
+  ;
+  width:
+         
+         100%
+  ;
+  height:
+          
+          100%
+  ;
+  transform:
+             
+             scale3d
+                    (
+                      
+                      1,
+                         
+                         1,
+                            
+                            1
+                             )
+                               
+                               translateY
+                                         (
+                                           
+                                           -2px
+                                                
+                                                )
+  ;
+  transition-property:
+                       
+                       transform
+  ;
+  transition-duration:
+                       
+                       0.2s
+  ;
+  visibility:
+              
+              collapse
+  ;
+ }
+  .SingleItem #ArcanaBackgroundEffect{
+   transform:
+              
+              scale3d
+                     (
+                       
+                       1.02,
+                             
+                             1.02,
+                                   
+                                   1
+                                    )
+                                      
+                                      translateY
+                                                (
+                                                  
+                                                  0px
+                                                      
+                                                      )
+   ;
+  }
+  .SingleItem.Animated #ArcanaBackgroundEffect{
+   transform:
+              
+              scale3d
+                     (
+                       
+                       1.02,
+                             
+                             1.02,
+                                   
+                                   1
+                                    )
+                                      
+                                      translateY
+                                                (
+                                                  
+                                                  0px
+                                                      
+                                                      )
+   ;
+  }
+  .CollectionGroup_Heroes.Sets .Equipped #ArcanaBackgroundEffect{
+   transform:
+              
+              scale3d
+                     (
+                       
+                       0.98,
+                             
+                             0.98,
+                                   
+                                   1
+                                    )
+                                      
+                                      translateY
+                                                (
+                                                  
+                                                  -2px
+                                                       
+                                                       )
+   ;
+  }
+ .ItemRarity_arcana.ContentSceneLoaded #ArcanaBackgroundEffect{
+  visibility:
+              
+              visible
+  ;
+ }
+ .ItemRarity_immortal.ContentSceneLoaded #ArcanaBackgroundEffect{
+  hue-rotation:
+                
+                -90deg
+  ;
+  visibility:
+              
+              visible
+  ;
+ }
+ #ActionButton{
+  width:
+         
+         100%
+  ;
+  ignore-parent-flow:
+                      
+                      true
+  ;
+  vertical-align:
+                  
+                  bottom
+  ;
+  visibility:
+              
+              collapse
+  ;
+  opacity:
+           
+           0
+  ;
+  transform:
+             
+             translateY
+                       (
+                         
+                         3px
+                             
+                             )
+  ;
+  transition-property:
+                       
+                       opacity,
+                                
+                                transform
+  ;
+  transition-duration:
+                       
+                       0.15s
+  ;
+  transition-timing-function:
+                              
+                              ease-out
+  ;
+  transition-delay:
+                    
+                    0.05s
+  ;
+ }
+ .Owned.HasAction.ActivateBehavior_Detail #ActionButton,.Owned.HasAction.ActivateBehavior_Select #ActionButton{
+  visibility:
+              
+              visible
+  ;
+ }
+ #StatusLabelContainer{
+  border-top:
+              
+              1px
+                  
+                  solid
+                        
+                        white
+  ;
+  border-brush:
+                
+                gradient
+                        (
+                          
+                          linear,
+                                  
+                                  0%
+                                     
+                                     0%,
+                                         
+                                         100%
+                                              
+                                              0%,
+                                                  
+                                                  from
+                                                      (
+                                                        
+                                                        #FFFFFF00
+                                                                  
+                                                                  )
+                                                                   ,
+                                                                     
+                                                                     color-stop
+                                                                               (
+                                                                                 
+                                                                                 0.3,
+                                                                                      
+                                                                                      #ffffff04
+                                                                                                
+                                                                                                )
+                                                                                                 ,
+                                                                                                   
+                                                                                                   color-stop
+                                                                                                             (
+                                                                                                               
+                                                                                                               0.7,
+                                                                                                                    
+                                                                                                                    #ffffff04
+                                                                                                                              
+                                                                                                                              )
+                                                                                                                               ,
+                                                                                                                                 
+                                                                                                                                 to
+                                                                                                                                   (
+                                                                                                                                     
+                                                                                                                                     #FFFFFF00
+                                                                                                                                               
+                                                                                                                                               )
+                                                                                                                                                 
+                                                                                                                                                 )
+  ;
+  width:
+         
+         100%
+  ;
+  padding:
+           
+           6px
+               
+               0px
+  ;
+  margin-top:
+              
+              8px
+  ;
+  margin-bottom:
+                 
+                 1px
+  ;
+  transition-property:
+                       
+                       opacity
+  ;
+  transition-duration:
+                       
+                       0.1s
+  ;
+  transition-delay:
+                    
+                    0s
+  ;
+  transition-timing-function:
+                              
+                              ease-in
+  ;
+ }
+  .EmptyStatusLabel #StatusLabelContainer{
+   visibility:
+               
+               collapse
+   ;
+  }
+  #StatusLabelContainer .StatusLabel{
+   font-weight:
+                
+                semi-bold
+   ;
+   horizontal-align:
+                     
+                     center
+   ;
+   max-height:
+               
+               21px
+   ;
+   text-shadow:
+                
+                0px
+                    
+                    1px
+                        
+                        4px
+                            
+                            rgba
+                                (
+                                 0,
+                                    
+                                    0,
+                                       
+                                       0,
+                                          
+                                          0.2
+                                             )
+   ;
+   text-overflow:
+                  
+                  shrink
+   ;
+   color:
+          
+          rgba
+              (
+               255,
+                    
+                    255,
+                         
+                         255,
+                              
+                              0.5
+                                 )
+   ;
+   opacity:
+            
+            0
+   ;
+   transition-property:
+                        
+                        opacity
+   ;
+   transition-duration:
+                        
+                        0.2s
+   ;
+   padding:
+            
+            0px
+                
+                8px
+   ;
+  }
+   #StatusLabelContainer .StatusLabel.Visible{
+    transition-duration:
+                         
+                         0.2s
+    ;
+    opacity:
+             
+             1
+    ;
+   }
+   .Equipped #StatusLabelContainer .StatusLabel,#StatusLabelContainer .StatusLabel.StatusIsAction{
+    color:
+           
+           rgba
+               (
+                255,
+                     
+                     255,
+                          
+                          255,
+                               
+                               0.9
+                                  )
+    ;
+    text-shadow:
+                 
+                 0px
+                     
+                     0px
+                         
+                         12px
+                              
+                              rgba
+                                  (
+                                   224,
+                                        
+                                        249,
+                                             
+                                             255,
+                                                  
+                                                  0.4
+                                                     )
+    ;
+   }
+ #InspectButton{
+  vertical-align:
+                  
+                  top
+  ;
+  horizontal-align:
+                    
+                    right
+  ;
+  margin:
+          
+          6px
+  ;
+  opacity:
+           
+           0
+  ;
+  transition-property:
+                       
+                       opacity
+  ;
+  transition-duration:
+                       
+                       0.2s
+  ;
+  transition-timing-function:
+                              
+                              ease-out
+  ;
+ }
+ .CanInspect:hover #InspectButton{
+  opacity:
+           
+           1
+  ;
+ }
+ .DisableInspect #InspectButton{
+  visibility:
+              
+              collapse
+  ;
+ }
+ #BottomLayer{
+  vertical-align:
+                  
+                  bottom
+  ;
+  width:
+         
+         100%
+  ;
+  height:
+          
+          3px
+  ;
+  opacity:
+           
+           0.8
+  ;
+  box-shadow:
+              
+              0px
+                  
+                  -1px
+                       
+                       0px
+                           
+                           0px
+                               
+                               rgba
+                                   (
+                                    0,
+                                       
+                                       0,
+                                          
+                                          0,
+                                             
+                                             0.6
+                                                )
+  ;
+  border-top:
+              
+              1px
+                  
+                  solid
+                        
+                        rgba
+                            (
+                             255,
+                                  
+                                  255,
+                                       
+                                       255,
+                                            
+                                            0.05
+                                                )
+  ;
+ }
+  .ItemRarity_arcana #BottomLayer{
+   animation-name:
+                   
+                   GlowArcanaStrip
+   ;
+   animation-duration:
+                       
+                       1s
+   ;
+   animation-iteration-count:
+                              
+                              infinite
+   ;
+   animation-timing-function:
+                              
+                              ease-in-out
+   ;
+   animation-direction:
+                        
+                        alternate-reverse
+   ;
+  }
+  .ItemRarity_immortal #BottomLayer{
+   animation-name:
+                   
+                   GlowImmortalStrip
+   ;
+   animation-duration:
+                       
+                       1s
+   ;
+   animation-iteration-count:
+                              
+                              infinite
+   ;
+   animation-timing-function:
+                              
+                              ease-in-out
+   ;
+   animation-direction:
+                        
+                        alternate-reverse
+   ;
+  }
+  .EquippedItemsSet #BottomLayer,.SavedSet #BottomLayer{
+   visibility:
+               
+               collapse
+   ;
+  }
+ @keyframes 'GlowArcanaStrip'{
+     0%{
+   box-shadow:
+               
+               0px
+                   
+                   0px
+                       
+                       12px
+                            
+                            rarity_color_arcana
+                                               &
+                                                00
+   ;
+   brightness:
+               
+               1
+   ;
+     }
+  100%{
+   box-shadow:
+               
+               0px
+                   
+                   0px
+                       
+                       16px
+                            
+                            rarity_color_arcana
+                                               &
+                                                11
+   ;
+   brightness:
+               
+               3
+   ;
+  }
+ }
+ @keyframes 'GlowImmortalStrip'{
+     0%{
+   box-shadow:
+               
+               0px
+                   
+                   0px
+                       
+                       12px
+                            
+                            rarity_color_immortal
+                                                 &
+                                                  00
+   ;
+   brightness:
+               
+               1
+   ;
+     }
+  100%{
+   box-shadow:
+               
+               0px
+                   
+                   0px
+                       
+                       16px
+                            
+                            rarity_color_immortal
+                                                 &
+                                                  11
+   ;
+   brightness:
+               
+               3
+   ;
+  }
+ }
+ #BottomLayerOverlay{
+  width:
+         
+         100%
+  ;
+  height:
+          
+          100%
+  ;
+  transition-property:
+                       
+                       background-color
+  ;
+  transition-duration:
+                       
+                       0.28s
+  ;
+  transition-timing-function:
+                              
+                              ease-in-out
+  ;
+  background-color:
+                    
+                    gradient
+                            (
+                              
+                              linear,
+                                      
+                                      100%
+                                           
+                                           0%,
+                                               
+                                               0%
+                                                  
+                                                  0%,
+                                                      
+                                                      from
+                                                          (
+                                                            
+                                                            #000000aa
+                                                                      
+                                                                      )
+                                                                       ,
+                                                                         
+                                                                         color-stop
+                                                                                   (
+                                                                                     
+                                                                                     0.35,
+                                                                                           
+                                                                                           #00000000
+                                                                                                     
+                                                                                                     )
+                                                                                                      ,
+                                                                                                        
+                                                                                                        color-stop
+                                                                                                                  (
+                                                                                                                    
+                                                                                                                    0.65,
+                                                                                                                          
+                                                                                                                          #00000000
+                                                                                                                                    
+                                                                                                                                    )
+                                                                                                                                     ,
+                                                                                                                                       
+                                                                                                                                       to
+                                                                                                                                         (
+                                                                                                                                           
+                                                                                                                                           #000000aa
+                                                                                                                                                     
+                                                                                                                                                     )
+                                                                                                                                                       
+                                                                                                                                                       )
+  ;
+ }
+ .NotPublicLabel{
+  horizontal-align:
+                    
+                    center
+  ;
+  text-shadow:
+               
+               0px
+                   
+                   1px
+                       
+                       4px
+                           
+                           black
+  ;
+  margin-bottom:
+                 
+                 16px
+  ;
+  visibility:
+              
+              collapse
+  ;
+ }
+  .FullSet .NotPublicLabel{
+   margin-bottom:
+                  
+                  8px
+   ;
+  }
+  .NotPublic .NotPublicLabel{
+   visibility:
+               
+               visible
+   ;
+  }
+ #AbilityIconContainer{
+  vertical-align:
+                  
+                  bottom
+  ;
+  margin:
+          
+          8px
+  ;
+  box-shadow:
+              
+              0px
+                  
+                  3px
+                      
+                      6px
+                          
+                          -1px
+                               
+                               rgba
+                                   (
+                                    0,
+                                       
+                                       0,
+                                          
+                                          0,
+                                             
+                                             0.6
+                                                )
+  ;
+  tooltip-position:
+                    
+                    left
+  ;
+  transition-property:
+                       
+                       brightness
+  ;
+  transition-duration:
+                       
+                       0.2s
+  ;
+  transition-timing-function:
+                              
+                              ease
+  ;
+  visibility:
+              
+              collapse
+  ;
+ }
+  .AbilityEffectsEnabled #AbilityIconContainer{
+   visibility:
+               
+               visible
+   ;
+  }
+  #AbilityIconContainer #AbilityEquipped{
+   width:
+          
+          12px
+   ;
+   height:
+           
+           12px
+   ;
+   horizontal-align:
+                     
+                     right
+   ;
+   background-repeat:
+                      
+                      no-repeat
+   ;
+   background-position:
+                        
+                        right
+                              
+                              top
+   ;
+   background-size:
+                    
+                    100%
+   ;
+   wash-color:
+               
+               #B3DFDC
+   ;
+   background-image:
+                     
+                     url(
+                          "s2r://panorama/images/status_icons/econtooltip_equipped_psd.vtex"
+                     )
+   ;
+   wash-color:
+               
+               #C2CED4
+   ;
+   opacity:
+            
+            0
+   ;
+   transform:
+              
+              translate3d
+                         (
+                           
+                           20px,
+                                 
+                                 -20px,
+                                        
+                                        0px
+                                            
+                                            )
+   ;
+   transition-property:
+                        
+                        transform
+   ;
+   transition-duration:
+                        
+                        0.2s
+   ;
+  }
+  #AbilityIconContainer:hover{
+   brightness:
+               
+               1.2
+   ;
+  }
+  #AbilityIconContainer #AbilityIconImage{
+   width:
+          
+          36px
+   ;
+   border:
+           
+           1px
+               
+               solid
+                     
+                     white
+   ;
+   border-brush:
+                 
+                 LighterGreyGradientBackgroundColor
+   ;
+   height:
+           
+           width-percentage
+                           (
+                             
+                             100%
+                                  
+                                  )
+   ;
+  }
+   .AbilityEffectEquipped #AbilityIconContainer #AbilityEquipped{
+    transform:
+               
+               none
+    ;
+    opacity:
+             
+             1
+    ;
+   }
+   .AbilityEffectEquipped #AbilityIconContainer #AbilityIconImage{
+    border:
+            
+            2px
+                
+                solid
+                      
+                      white
+    ;
+    border-brush:
+                  
+                  gradient
+                          (
+                            
+                            linear,
+                                    
+                                    0%
+                                       
+                                       0%,
+                                           
+                                           0%
+                                              
+                                              100%,
+                                                    
+                                                    from
+                                                        (
+                                                          
+                                                          #C2CED4
+                                                                  
+                                                                  )
+                                                                   ,
+                                                                     
+                                                                     to
+                                                                       (
+                                                                         
+                                                                         #727D81
+                                                                                 
+                                                                                 )
+                                                                                   
+                                                                                   )
+    ;
+   }
+ #NewItemBadge{
+  horizontal-align:
+                    
+                    center
+  ;
+  flow-children:
+                 
+                 right
+  ;
+  opacity:
+           
+           0
+  ;
+  border-radius:
+                 
+                 2px
+  ;
+  margin-top:
+              
+              10px
+  ;
+  transition-property:
+                       
+                       opacity
+  ;
+  transition-duration:
+                       
+                       0.2s
+  ;
+  transition-timing-function:
+                              
+                              ease-in-out
+  ;
+ }
+  #NewItemBadge Label{
+   background-color:
+                     
+                     winnerGreenLow
+   ;
+   color:
+          
+          white
+   ;
+   text-shadow:
+                
+                0px
+                    
+                    0.5px
+                          
+                          5px
+                              
+                              0
+                                
+                                #000000b1
+   ;
+   padding:
+            
+            2px
+                
+                8px
+   ;
+   font-weight:
+                
+                semi-bold
+   ;
+  }
+  .New #NewItemBadge{
+   opacity:
+            
+            1
+   ;
+   animation-name:
+                   
+                   GlowNewBadge
+   ;
+   animation-duration:
+                       
+                       1s
+   ;
+   animation-iteration-count:
+                              
+                              infinite
+   ;
+   animation-timing-function:
+                              
+                              ease-in-out
+   ;
+   animation-direction:
+                        
+                        alternate-reverse
+   ;
+  }
+ @keyframes 'GlowNewBadge'{
+  0%{
+   box-shadow:
+               
+               0px
+                   
+                   0px
+                       
+                       12px
+                            
+                            winnerGreenLow
+                                          &
+                                           00
+   ;
+   brightness:
+               
+               1
+   ;
+  }
+  100%{
+   box-shadow:
+               
+               0px
+                   
+                   0px
+                       
+                       12px
+                            
+                            winnerGreenLow
+                                          &
+                                           11
+   ;
+   brightness:
+               
+               1.3
+   ;
+  }
+ }
+ #NewBorder{
+  width:
+         
+         100%
+  ;
+  height:
+          
+          100%
+  ;
+  border:
+          
+          1.2px
+                
+                solid
+                      
+                      winnerGreen
+  ;
+  opacity:
+           
+           0
+  ;
+  margin:
+          
+          6px
+              
+              6px
+                  
+                  10px
+                       
+                       6px
+  ;
+ }
+  .New #NewBorder{
+   opacity:
+            
+            0.1
+   ;
+   animation-name:
+                   
+                   GlowNewBorder
+   ;
+   animation-duration:
+                       
+                       1s
+   ;
+   animation-iteration-count:
+                              
+                              infinite
+   ;
+   animation-timing-function:
+                              
+                              ease-in-out
+   ;
+   animation-direction:
+                        
+                        alternate-reverse
+   ;
+  }
+ @keyframes 'GlowNewBorder'{
+  0%{
+   brightness:
+               
+               1
+   ;
+   opacity:
+            
+            0.1
+   ;
+  }
+  100%{
+   brightness:
+               
+               5
+   ;
+   opacity:
+            
+            0.3
+   ;
+  }
+ }
+ #NewArrivalItemBadge{
+  horizontal-align:
+                    
+                    center
+  ;
+  flow-children:
+                 
+                 right
+  ;
+  opacity:
+           
+           0
+  ;
+  border-radius:
+                 
+                 2px
+  ;
+  margin-top:
+              
+              10px
+  ;
+  box-shadow:
+              
+              0px
+                  
+                  1px
+                      
+                      4px
+                          
+                          rgba
+                              (
+                               0,
+                                  
+                                  0,
+                                     
+                                     0,
+                                        
+                                        0.4
+                                           )
+  ;
+  transition-property:
+                       
+                       opacity
+  ;
+  transition-duration:
+                       
+                       0.2s
+  ;
+  transition-timing-function:
+                              
+                              ease-in-out
+  ;
+ }
+  #NewArrivalItemBadge Label{
+   background-color:
+                     
+                     purpleColor
+   ;
+   color:
+          
+          rgba
+              (
+               255,255,255,0.8
+                              )
+   ;
+   color:
+          
+          #EDCEFF
+   ;
+   text-shadow:
+                
+                0px
+                    
+                    0.5px
+                          
+                          5px
+                              
+                              0
+                                
+                                #000000b1
+   ;
+   padding:
+            
+            2px
+                
+                6px
+   ;
+   font-weight:
+                
+                semi-bold
+   ;
+  }
+  .NewArrival #NewArrivalItemBadge{
+   opacity:
+            
+            1
+   ;
+   animation-name:
+                   
+                   GlowNewArrivalBadge
+   ;
+   animation-duration:
+                       
+                       1s
+   ;
+   animation-iteration-count:
+                              
+                              infinite
+   ;
+   animation-timing-function:
+                              
+                              ease-in-out
+   ;
+   animation-direction:
+                        
+                        alternate-reverse
+   ;
+  }
+ @keyframes 'GlowNewArrivalBadge'{
+  0%{
+   brightness:
+               
+               1
+   ;
+  }
+  100%{
+   brightness:
+               
+               1.3
+   ;
+  }
+ }
+ #NewArrivalBorder{
+  width:
+         
+         100%
+  ;
+  height:
+          
+          100%
+  ;
+  border:
+          
+          1.2px
+                
+                solid
+                      
+                      purpleColor
+  ;
+  opacity:
+           
+           0
+  ;
+  margin:
+          
+          6px
+              
+              6px
+                  
+                  10px
+                       
+                       6px
+  ;
+ }
+  .NewArrival #NewArrivalBorder{
+   opacity:
+            
+            0.1
+   ;
+   animation-name:
+                   
+                   GlowNewArrivalBorder
+   ;
+   animation-duration:
+                       
+                       1s
+   ;
+   animation-iteration-count:
+                              
+                              infinite
+   ;
+   animation-timing-function:
+                              
+                              ease-in-out
+   ;
+   animation-direction:
+                        
+                        alternate-reverse
+   ;
+  }
+ @keyframes 'GlowNewArrivalBorder'{
+  0%{
+   brightness:
+               
+               1
+   ;
+   opacity:
+            
+            0.1
+   ;
+  }
+  100%{
+   brightness:
+               
+               5
+   ;
+   opacity:
+            
+            0.3
+   ;
+  }
+ }
+ #MultiStyle{
+  border-radius:
+                 
+                 3px
+  ;
+  margin:
+          
+          6px
+  ;
+  background-color:
+                    
+                    rgba
+                        (
+                         0,
+                            
+                            0,
+                               
+                               0,
+                                  
+                                  0.0
+                                     )
+  ;
+  border:
+          
+          1px
+              
+              solid
+                    
+                    rgba
+                        (
+                         0,
+                            
+                            0,
+                               
+                               0,
+                                  
+                                  0.0
+                                     )
+  ;
+  vertical-align:
+                  
+                  bottom
+  ;
+  horizontal-align:
+                    
+                    center
+  ;
+  flow-children:
+                 
+                 right
+  ;
+  padding-left:
+                
+                6px
+  ;
+  transition-property:
+                       
+                       background-color
+  ;
+  transition-duration:
+                       
+                       0.1s
+  ;
+  transform:
+             
+             translateY
+                       (
+                         
+                         3px
+                             
+                             )
+  ;
+  visibility:
+              
+              collapse
+  ;
+ }
+  #MultiStyle Label{
+   vertical-align:
+                   
+                   center
+   ;
+  }
+ #MultiStyle:hover{
+  background-color:
+                    
+                    rgba
+                        (
+                         0,
+                            
+                            0,
+                               
+                               0,
+                                  
+                                  0.7
+                                     )
+  ;
+ }
+ #MultiStyle:active{
+  background-color:
+                    
+                    rgba
+                        (
+                         0,
+                            
+                            0,
+                               
+                               0,
+                                  
+                                  0.7
+                                     )
+  ;
+ }
+ DOTAEconItemAnimated.MultipleStyles:not(.HideAttributeIcons) #MultiStyle{
+  visibility:
+              
+              visible
+  ;
+ }
+ #MultiStyleIcon{
+  width:
+         
+         24px
+  ;
+  height:
+          
+          24px
+  ;
+  vertical-align:
+                  
+                  middle
+  ;
+     background-image:
+                       
+                       url(
+                            "s2r://panorama/images/control_icons/icon_multiple_styles_png.vtex"
+                       )
+     ;
+  background-size:
+                   
+                   contain
+  ;
+  background-repeat:
+                     
+                     no-repeat
+  ;
+  margin-left:
+               
+               3px
+  ;
+  margin-bottom:
+                 
+                 1px
+  ;
+ }
+ #MultiStyleSelectedStyle{
+  margin-left:
+               
+               4px
+  ;
+  color:
+         
+         #999
+  ;
+ }
+ #MultiStyle:hover #MultiStyleSelectedStyle{
+  color:
+         
+         #ccc
+  ;
+ }
+ #MultiStyleSelectedStyle .ActiveStyle{
+  color:
+         
+         white
+  ;
+ }
+ #MultiStyleDropDownIcon{
+  width:
+         
+         24px
+  ;
+  height:
+          
+          24px
+  ;
+  wash-color:
+              
+              #999
+  ;
+  vertical-align:
+                  
+                  middle
+  ;
+  background-image:
+                    
+                    url(
+                         "s2r://panorama/images/control_icons/chevron_down_png.vtex"
+                    )
+  ;
+  background-size:
+                   
+                   13px
+                        
+                        13px
+  ;
+  background-position:
+                       
+                       center
+  ;
+  background-repeat:
+                     
+                     no-repeat
+  ;
+ }
+ .MixedStyles #MultiStyleSelectedStyle,.MixedStyles #MultiStyleLabel{
+  visibility:
+              
+              collapse
+  ;
+ }
+ #StylesPanel{
+  visibility:
+              
+              collapse
+  ;
+  horizontal-align:
+                    
+                    center
+  ;
+  margin-bottom:
+                 
+                 16px
+  ;
+ }
+  .CollectionGroup_Global #StylesPanel{
+   margin-bottom:
+                  
+                  0px
+   ;
+  }
+  .HasMultipleStyles #StylesPanel{
+   visibility:
+               
+               visible
+   ;
+  }
+  #StylesPanel #StyleSelectorRadioButton{
+   ui-scale:
+             
+             80%
+   ;
+   padding:
+            
+            10px
+                 
+                 10px
+   ;
+   margin:
+           
+           0px
+               
+               -4px
+                    
+                    -4px
+   ;
+  }
+  .FullSet #StylesPanel{
+   margin-bottom:
+                  
+                  0px
+   ;
+  }
+ #TogglePreviewAudioButon{
+  vertical-align:
+                  
+                  bottom
+  ;
+  margin:
+          
+          8px
+  ;
+  visibility:
+              
+              collapse
+  ;
+  transition-property:
+                       
+                       background-color,
+                                         
+                                         border,
+                                                 
+                                                 brightness
+  ;
+  transition-duration:
+                       
+                       0s,
+                           
+                           0.1s,
+                                 
+                                 0.3s
+  ;
+ }
+  #TogglePreviewAudioButon .AnimatedAudioIcon{
+   visibility:
+               
+               collapse
+   ;
+   transition-property:
+                        
+                        transform,
+                                   
+                                   opacity
+   ;
+   transition-duration:
+                        
+                        0.1s
+   ;
+  }
+  #TogglePreviewAudioButon .PlayIcon{
+   visibility:
+               
+               visible
+   ;
+   transition-property:
+                        
+                        transform,
+                                   
+                                   opacity
+   ;
+   transition-duration:
+                        
+                        0.1s
+   ;
+  }
+  .AudioPreviewAvailable #TogglePreviewAudioButon{
+   visibility:
+               
+               visible
+   ;
+  }
+  .AudioPreviewActive #TogglePreviewAudioButon{
+   background-color:
+                     
+                     gradient
+                             (
+                               
+                               radial,
+                                       
+                                       50%
+                                           
+                                           50%,
+                                                
+                                                0%
+                                                   
+                                                   0%,
+                                                       
+                                                       60%
+                                                           
+                                                           80%,
+                                                                
+                                                                from
+                                                                    (
+                                                                      
+                                                                      rgb
+                                                                         (
+                                                                          43,
+                                                                              
+                                                                              69,
+                                                                                  
+                                                                                  90
+                                                                                    )
+                                                                                      
+                                                                                      )
+                                                                                       ,
+                                                                                         
+                                                                                         to
+                                                                                           (
+                                                                                             
+                                                                                             #172335
+                                                                                                     
+                                                                                                     )
+                                                                                                       
+                                                                                                       )
+   ;
+   brightness:
+               
+               5
+   ;
+  }
+   .AudioPreviewActive #TogglePreviewAudioButon .AnimatedAudioIcon{
+    visibility:
+                
+                visible
+    ;
+   }
+   .AudioPreviewActive #TogglePreviewAudioButon .PlayIcon{
+    visibility:
+                
+                collapse
+    ;
+   }
+ .HeroBackgroundImage{
+  width:
+         
+         100%
+  ;
+  height:
+          
+          100%
+  ;
+  wash-color:
+              
+              rgba
+                  (
+                   0,
+                      
+                      0,
+                         
+                         0,
+                            
+                            0.9
+                               )
+  ;
+  transition-property:
+                       
+                       brightness
+  ;
+  transition-duration:
+                       
+                       0.2s
+  ;
+  background-size:
+                   
+                   cover
+  ;
+  background-position:
+                       
+                       center
+  ;
+ }
+  .EquippedItemsSet .HeroBackgroundImage,.IsPortrait .HeroBackgroundImage{
+   visibility:
+               
+               collapse
+   ;
+}

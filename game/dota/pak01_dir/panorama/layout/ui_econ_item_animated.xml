@@ -1,0 +1,118 @@
+<!-- xml reconstructed by ValveResourceFormat: https://vrf.steamdb.info/ -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/collection_shared.vcss_c" />
+		<include src="s2r://panorama/styles/ui_econ_item_animated.vcss_c" />
+	</styles>
+	<DOTAEconItemAnimated require-composition-layer="true">
+		<Panel class="Container">
+			<Panel id="ItemViewContainer">
+				<Panel id="AnimatedItemViewContainer">
+					<Panel class="HeroBackgroundImage" />
+					<Panel class="StyledBorder2" hittest="false" />
+					<Panel id="SceneContainer">
+						<Image id="HighQualitySetPortrait" />
+						<DOTALargeModelPreview id="ScenePanel" require-composition-layer="true" />
+						<Panel id="LowQualityPreviewContainer">
+							<Panel class="HeroBackgroundImage" />
+							<Image id="LowQualitySetPortrait" />
+						</Panel>
+					</Panel>
+					<DOTAScenePanel hittest="false" id="ArcanaBackgroundEffect" map="scenes/armory/ui_armory_edges" camera="shot_camera" particleonly="true">
+						<Panel class="PopupPanelEffectsTest" />
+					</DOTAScenePanel>
+				</Panel>
+				<Panel id="StaticItemViewContainer">
+					<EconItemImage id="EconItemIcon" scaling="stretch-to-cover-preserve-aspect" />
+				</Panel>
+				<Panel id="NewItemBadge" hittest="false">
+					<Label class="LabelSmall" text="#DOTA_New" />
+				</Panel>
+				<Panel id="NewArrivalItemBadge" hittest="false">
+					<Label class="LabelSmall" text="#DOTA_New_Arrival" />
+				</Panel>
+				<Panel class="TopBottomFlow AttributeIconContainer">
+					<Panel class="MarketPriceContainer LeftRightFlow IconButton" onactivate="DOTAEconItemAnimatedSellItem()" onmouseover="UIShowTextTooltip( #DOTA_SetBundle_Tooltip_MarketPriceToolip )" onmouseout="UIHideTextTooltip(); DOTAEconItemAnimatedRetriggerOnMouseOver()">
+						<Panel id="MarketIcon" />
+						<Label id="MarketPrice" class="LabelSmall VerticalCenter" text="{m:MarketPrice}" />
+					</Panel>
+					<Panel id="EditSavedSetButton" class="ButtonPrimary DarkGrey Small" onmouseover="UIShowTextTooltip( #DOTA_SavedSets_Edit_Title )" onmouseout="UIHideTextTooltip(); DOTAEconItemAnimatedRetriggerOnMouseOver()">
+						<Image src="s2r://panorama/images/control_icons/24px/settings.vsvg" />
+					</Panel>
+					<Panel class="InformationalImage Seasonal" onmouseover="UIShowTextTooltip( #DOTA_EconItemSet_Tooltip_DotaPlus )" onmouseout="UIHideTextTooltip(); DOTAEconItemAnimatedRetriggerOnMouseOver()" />
+					<Panel class="InformationalImage Bundle" onmouseover="UIShowTextTooltip( #DOTA_EconItemSet_Tooltip_IsBundle )" onmouseout="UIHideTextTooltip(); DOTAEconItemAnimatedRetriggerOnMouseOver()" />
+					<Panel class="InformationalImage Treasure" onmouseover="UIShowTextTooltip( #DOTA_EconItemSet_Tooltip_IsTreasure )" onmouseout="UIHideTextTooltip(); DOTAEconItemAnimatedRetriggerOnMouseOver()" />
+					<Panel class="InformationalImage Locked" onmouseover="UIShowTextTooltip( #DOTA_EconItemSet_Tooltip_RequiresKey )" onmouseout="UIHideTextTooltip(); DOTAEconItemAnimatedRetriggerOnMouseOver()" />
+					<Panel class="InformationalImage Key" onmouseover="UIShowTextTooltip( #DOTA_EconItemSet_Tooltip_IsKey )" onmouseout="UIHideTextTooltip(); DOTAEconItemAnimatedRetriggerOnMouseOver()" />
+					<Panel class="InformationalImage MultiTeam" onmouseover="UIShowTextTooltip( #DOTA_EconItemSet_Tooltip_MultipleTeams )" onmouseout="UIHideTextTooltip(); DOTAEconItemAnimatedRetriggerOnMouseOver()" />
+					<Panel class="InformationalImage EmptySocketIcon" onmouseover="UIShowTextTooltip( #DOTA_EconItemSet_Tooltip_HasEmptySocket )" onmouseout="UIHideTextTooltip(); DOTAEconItemAnimatedRetriggerOnMouseOver()" />
+					<Panel class="InformationalImage GemIcon" onmouseover="UIShowTextTooltip( #DOTA_EconItemSet_Tooltip_HasCommonGem )" onmouseout="UIHideTextTooltip(); DOTAEconItemAnimatedRetriggerOnMouseOver()" />
+					<Panel class="InformationalImage RareGemIcon" onmouseover="UIShowTextTooltip( #DOTA_EconItemSet_Tooltip_HasRareGem )" onmouseout="UIHideTextTooltip(); DOTAEconItemAnimatedRetriggerOnMouseOver()" />
+					<Panel class="InformationalImage HighValueItem" onmouseover="UIShowTextTooltip( #DOTA_SetBundle_Tooltip_IsHighValueItem )" onmouseout="UIHideTextTooltip(); DOTAEconItemAnimatedRetriggerOnMouseOver()" />
+					<Panel class="InformationalImage MarketableIcon IconButton" onactivate="DOTAEconItemAnimatedSellItem()" onmouseover="UIShowTextTooltip( #DOTA_SetBundle_Tooltip_MarketableToolip )" onmouseout="UIHideTextTooltip(); DOTAEconItemAnimatedRetriggerOnMouseOver()" />
+					<Panel class="InformationalImage TradeableIcon" onmouseover="UIShowTextTooltip( #DOTA_SetBundle_Tooltip_TradeableToolip )" onmouseout="UIHideTextTooltip(); DOTAEconItemAnimatedRetriggerOnMouseOver()" />
+					<Button id="TooltipTriggerIcon" class="IconButton" onmouseover="DOTAEconItemAnimatedShowItemTooltip( 0 )" onmouseout="DOTAHideEconItemTooltip()" onactivate="DOTAEconItemAnimatedShowItemDetail()">
+						<Image src="s2r://panorama/images/control_icons/24px/info_ghost.vsvg" />
+					</Button>
+				</Panel>
+				<Button id="TogglePreviewAudioButon" class="ButtonPrimary DarkGrey" onactivate="DOTAEconItemAnimatedToggleAudioPreview()">
+					<Image class="PlayIcon" src="s2r://panorama/images/control_icons/24px/play.vsvg" />
+					<MoviePanel id="AnimatedAudioIcon" class="AnimatedAudioIcon" src="file://{resources}/videos/animated_icons/audio_playing.webm" repeat="true" autoplay="off" hittest="false" />
+				</Button>
+				<Panel id="AbilityIconContainer">
+					<DOTAAbilityImage id="AbilityIconImage" />
+					<Panel id="AbilityEquipped" hittest="false" />
+				</Panel>
+			</Panel>
+			<Panel id="Shuffled" onactivate="DOTAEconItemAnimatedToggleShuffle()" onmouseover="UIShowTextTooltip( &apos;#DOTA_Collection_ToggleShuffle_TooltipLabel&apos; )" onmouseout="UIHideTextTooltip()" />
+			<Panel id="Equipped" hittest="false" />
+			<Panel id="AlreadyOwnedIcon" onmouseover="UIShowTextTooltip( &apos;#DOTA_StoreItem_AlreadyOwned&apos; )" onmouseout="UIHideTextTooltip()" />
+			<Panel class="LoadingSpinnerPanel">
+				<Panel class="Spinner" />
+			</Panel>
+			<Panel id="ItemInfoContainer">
+				<Label text="Not public" class="NotPublicLabel LabelSmall WhiteText Opacity_60" unlocalized="true" />
+				<Panel id="StylesPanel">
+					<Panel id="StyleSelector" class="LeftRightFlow" />
+				</Panel>
+				<Label id="EconItemName" class="BodySmall LighterGreyText" text="{s:ItemName}" />
+				<Label id="EconItemSlotName" class="LabelSmall LightGreyText Opacity_50" text="{s:SlotName}" />
+				<DOTAPurchaseButton id="AvailableItemPurchaseButton" class="HidePurchaseMethod" />
+				<Panel id="StatusLabelContainer">
+					<Label id="StatusLabel0" class="StatusLabel LabelMedium" />
+					<Label id="StatusLabel1" class="StatusLabel LabelMedium" />
+				</Panel>
+				<Button id="ActionButton" class="ButtonPrimary DarkGrey" onactivate="DOTAEconItemAnimatedEquip()">
+					<Label text="{s:Action}" />
+				</Button>
+			</Panel>
+			<Panel id="ShuffledBorder" hittest="false" />
+			<Button id="InspectButton" class="ButtonPrimary Small DarkGrey" onactivate="DOTAUIEconItemLargeInspectPressed()">
+				<Image src="s2r://panorama/images/control_icons/24px/search.vsvg" />
+			</Button>
+			<Panel id="BottomLayer" class="ItemRarityBackgroundColor" hittest="false">
+				<Panel id="BottomLayerOverlay" hittest="false" />
+			</Panel>
+			<Label class="ArcanaLabel TitleSmall" text="#Rarity_Arcana" />
+			<Label class="ImmortalLabel TitleSmall" text="#Rarity_Immortal" />
+			<Label class="PreviewingLabel LabelSmall" text="#DOTA_Collection_Previewing" />
+			<Button id="ShuffleButton" class="ButtonPrimary DarkGrey Small" onactivate="DOTAEconItemAnimatedToggleShuffle()" onmouseover="UIShowTextTooltip( &apos;#DOTA_Collection_ToggleShuffle_TooltipLabel&apos; )" onmouseout="UIHideTextTooltip()">
+				<Image src="s2r://panorama/images/control_icons/24px/shuffle.vsvg" />
+			</Button>
+		</Panel>
+		<Panel class="BottomStack">
+			<Panel class="Stack1 ItemRarityBackgroundColor" />
+			<Panel class="Stack2 ItemRarityBackgroundColor" />
+		</Panel>
+		<Panel id="EquippedBorder" hittest="false" />
+		<Panel id="NewBorder" hittest="false" />
+		<Panel id="FocusedItemBorder" hittest="false" />
+		<Panel class="ShowDuplicateBundlesButton IconButton" onmouseover="UIShowTextTooltip( &apos;#DOTA_Collection_ShowAllOwnedItems_TooltipLabel&apos; )" onmouseout="UIHideTextTooltip() DOTAEconItemAnimatedRetriggerOnMouseOver()" onactivate="DOTAEconItemAnimatedShowItemStack(); DOTAEconItemAnimatedShowBundles()">
+			<Label id="BundleCount" class="LabelMedium LighterGreyText" text="#DOTA_Collection_BundleCountLabel" />
+		</Panel>
+		<Panel class="ShowDuplicateItemsButton IconButton" onmouseover="UIShowTextTooltip( &apos;#DOTA_Collection_ShowAllOwnedItems_TooltipLabel&apos; )" onmouseout="UIHideTextTooltip() DOTAEconItemAnimatedRetriggerOnMouseOver()" onactivate="DOTAEconItemAnimatedShowItemStack()">
+			<Label id="StackSize" class="LabelMedium LighterGreyText VerticalCenter" text="#DOTA_Collection_StackSizeLabel" />
+		</Panel>
+	</DOTAEconItemAnimated>
+</root>

@@ -4,7 +4,6 @@
 		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
 		<include src="s2r://panorama/styles/dashboard.vcss_c" />
 		<include src="s2r://panorama/styles/dashboard_search_results.vcss_c" />
-		<include src="s2r://panorama/styles/compendiums/compendium_styles.vcss_c" />
 	</styles>
 	<DOTADashboard class="InitialDisplay NoEmbedChatInPage" hittest="false">
 		<Panel id="DashboardCenter">
@@ -16,9 +15,6 @@
 				</Panel>
 				<Panel id="DashboardForeground" hittest="false">
 					<PageManager id="DashboardPages" hittest="false" />
-					<Panel id="ExpiredTag">
-						<Label text="#DOTA_BattlePass_Expired" />
-					</Panel>
 					<Panel id="DashboardPagesGuides" hittest="false">
 						<Panel id="Guide4x3" hittest="false" />
 					</Panel>
@@ -42,6 +38,9 @@
 					<DOTACustomLobby id="CustomLobby" />
 					<Panel id="FriendMenuContainer" hittest="false">
 						<DOTAFriendMenu id="FriendMenu" showLobbies="false" showBroadcastingParties="true" showBroadcastingPartiesAsRegularParties="true" />
+					</Panel>
+					<Panel id="MiniShowcaseEditContainer" hittest="false">
+						<DOTAMiniShowcaseEditControls id="MiniShowcaseEditControls" />
 					</Panel>
 					<Panel id="SocialControls" hittest="false">
 						<Panel id="FriendlistBottom">
@@ -168,6 +167,9 @@
 									<RadioButton id="TopBarStore" group="DashboardMainTabs" class="TopBarMenuItem" onactivate="DOTAShowPrimaryTabPage( TopBarStore );">
 										<Label class="TitleFont" text="#DOTA_MainMenu_Store" />
 									</RadioButton>
+									<RadioButton id="TopBarCollection" group="DashboardMainTabs" class="TopBarMenuItem" onactivate="DOTAShowPrimaryTabPage( TopBarCollection )">
+										<Label class="TitleFont" text="#DOTA_MainMenu_Armory" />
+									</RadioButton>
 									<RadioButton id="TopBarWatch" group="DashboardMainTabs" class="TopBarMenuItem" onactivate="DOTAShowPrimaryTabPage( TopBarWatch );" onmouseover="DOTASetWatchMenuVisible( true );" onmouseout="AsyncEvent( 0.0, DOTASetWatchMenuVisible( false ) );">
 										<Label class="TitleFont" text="#DOTA_MainMenu_Watch" />
 									</RadioButton>
@@ -176,9 +178,6 @@
 									</RadioButton>
 									<RadioButton id="TopBarMods" group="DashboardMainTabs" class="TopBarMenuItem" onactivate="DOTAShowPrimaryTabPage( TopBarMods )">
 										<Label class="TitleFont" text="#DOTA_MainMenu_Mods" />
-									</RadioButton>
-									<RadioButton id="TopBarCollection" group="DashboardMainTabs" class="TopBarMenuItem" onactivate="DOTAShowPrimaryTabPage( TopBarCollection )">
-										<Label class="TitleFont" text="Collection" />
 									</RadioButton>
 								</Panel>
 								<Panel id="TopBarRightButtons">
@@ -199,7 +198,7 @@
 											<Label id="NotificationButtonCountLabel" text="{d:dota_notification_count}" />
 										</Panel>
 									</Button>
-									<RadioButton id="TopBarArmory" group="DashboardMainTabs" class="TopBarSmallButton" onactivate="DOTAShowArmoryPage();" onmouseover="DOTASetRecentArmoryItemsMenuVisible( true ); AddStyle( TopBarArmoryHover, Hover ); UIHideTextTooltip();" onmouseout="AsyncEvent( 0.0, DOTASetRecentArmoryItemsMenuVisible( false ) ); RemoveStyle( TopBarArmoryHover, Hover )" />
+									<RadioButton id="TopBarArmory" group="DashboardMainTabs" class="TopBarSmallButton" onactivate="DOTAShowArmory();" onmouseover="DOTASetRecentArmoryItemsMenuVisible( true ); AddStyle( TopBarArmoryHover, Hover ); UIHideTextTooltip();" onmouseout="AsyncEvent( 0.0, DOTASetRecentArmoryItemsMenuVisible( false ) ); RemoveStyle( TopBarArmoryHover, Hover )" />
 									<DOTAPlusButton id="TopBarPlus" group="DashboardMainTabs" onmouseover="DOTASetPlusMenuVisible( true )" onmouseout="AsyncEvent( 0.0, DOTASetPlusMenuVisible( false ) )" />
 									<Button id="DOTAQuitButton" class="TopBarSmallButton" onactivate="DOTAQuit();" onmouseover="AddStyle( TopBarExitHover, Hover )" onmouseout="RemoveStyle( TopBarExitHover, Hover )" />
 								</Panel>
@@ -213,7 +212,7 @@
 											<Panel class="ViolatorRightPoint" />
 										</Panel>
 									</DOTAViolator>
-									<DOTADPCWatchTabViolator id="DPCWatchTabViolator" onactivate="DOTAShowPrimaryTabPage( TopBarWatch );" onmouseover="DOTASetWatchMenuVisible( true )" onmouseout="AsyncEvent( 0.0, DOTASetWatchMenuVisible( false ) )" />
+									<DOTADPCWatchTabViolator id="DPCWatchTabViolator" onactivate="DOTAShowPrimaryTabPage( TopBarWatch );" />
 								</Panel>
 							</Panel>
 						</Panel>

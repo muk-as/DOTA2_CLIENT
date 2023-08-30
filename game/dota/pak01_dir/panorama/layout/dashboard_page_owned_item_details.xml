@@ -18,17 +18,17 @@
 							<Panel class="ItemHeader">
 								<DOTAEconItem id="EditedItemIcon" />
 								<Panel id="ItemNameSection" class="TopBottomFlow">
-									<Panel class="LeftRightFlow">
+									<Panel class="LeftRightFlow OriginalItemNameContaner">
 										<Panel class="NameHeader LeftRightFlow">
-											<Label id="OriginalName" text="#DOTA_econ_item_details_original_name_label" />
-											<Label id="Name" text="#DOTA_econ_item_details_original_item_name" />
+											<Label id="OriginalName" class="BodySmall" text="#DOTA_econ_item_details_original_name_label" />
+											<Label id="Name" class="BodySmall" text="#DOTA_econ_item_details_original_item_name" />
 										</Panel>
 										<Button class="NameResetButton ControlIconButton EditButton" onactivate="DOTAItemResetName()" onmouseover="UIShowTextTooltip( #DOTA_econ_item_details_reset_name )" onmouseout="UIHideTextTooltip()" />
 									</Panel>
-									<Panel class="LeftRightFlow">
+									<Panel class="LeftRightFlow EditableTitle" onactivate="DOTAItemChangeName()">
 										<Label class="ItemName" text="#DOTA_econ_item_details_item_name" />
 										<Panel class="InfoIcon" onmouseover="UIShowTextTooltip( #DOTA_ItemNameChange_Tooltip )" onmouseout="UIHideTextTooltip()" />
-										<Button class="NameChangeButton ControlIconButton EditButton" onactivate="DOTAItemChangeName()" onmouseover="UIShowTextTooltip( #DOTA_econ_item_details_edit_name )" onmouseout="UIHideTextTooltip()" />
+										<Image class="NameChangeButtonIcon" src="s2r://panorama/images/control_icons/24px/edit.vsvg" onmouseover="UIShowTextTooltip( #DOTA_econ_item_details_edit_name )" onmouseout="UIHideTextTooltip()" />
 									</Panel>
 									<Label id="Set" html="true" text="#DOTA_tooltip_econ_item_set" />
 								</Panel>
@@ -46,6 +46,8 @@
 									<Label text="#DOTA_tooltip_econ_item_rarity_label" />
 									<Label id="Rarity" class="ItemRarityColor" text="#DOTA_tooltip_econ_item_rarity" />
 								</Panel>
+								<Label id="TreasureSource" onactivate="DOTAItemShowOriginalTreasure();UIPopupButtonClicked();" class="TreasureSource" text="#DOTA_econ_item_details_item_treasure_name" />
+								<Label class="CreationDate" text="#DOTA_econ_item_details_item_creation_date" />
 								<Label id="Slot" text="#DOTA_tooltip_econ_item_slot" />
 							</Panel>
 							<Panel id="AutographDetails">
@@ -56,62 +58,65 @@
 					<Panel id="ItemEditBody" class="TopDownFlow">
 						<Panel id="BundlePanel" class="EditSection TopBottomFlow">
 							<Panel class="EditSectionHeader LeftRightFlow">
-								<Label class="HeaderText" text="#DOTA_econ_item_details_bundle_header" />
+								<Label class="HeaderText LabelLarge LightestGreyText" text="#DOTA_econ_item_details_bundle_header" />
 								<CarouselNav class="BundleScrollControls" carouselid="BundleSetList" maxpips="20" />
 							</Panel>
 							<DOTAItemSubSetsCarousel id="BundleSetList" panels-visible="3" />
 							<Button class="ButtonBevel" onactivate="DOTAOwnedItemUnbundle()">
 								<Label text="#DOTA_econ_item_details_unbundle" />
 							</Button>
+							<Button class="ButtonBevel" onactivate="DOTAOwnedItemEquipBundle()">
+								<Label text="#DOTA_econ_item_details_equip" />
+							</Button>
 						</Panel>
 						<Panel id="EquipStatePanel" class="EditSection TopBottomFlow">
 							<Panel class="EditSectionHeader LeftRightFlow">
-								<Label class="HeaderText" text="#DOTA_econ_item_details_equip_header" />
+								<Label class="HeaderText LabelLarge LightestGreyText" text="#DOTA_econ_item_details_equip_header" />
 								<Panel class="EquipButtons">
-									<TextButton id="ToggleEquipButton" class="ButtonBevel" onactivate="DOTAItemToggleEquipState()" />
-									<TextButton id="ToggleSlotShuffleEnabled" class="ButtonBevel" onactivate="DOTAOwnedItemToggleSlotShuffleEnabled()" />
+									<TextButton id="ToggleEquipButton" class="ButtonPrimary Blue" onactivate="DOTAItemToggleEquipState()" />
+									<TextButton id="ToggleSlotShuffleEnabled" class="ButtonPrimary Blue" onactivate="DOTAOwnedItemToggleSlotShuffleEnabled()" />
 								</Panel>
 							</Panel>
 						</Panel>
 						<Panel class="EditSection TopBottomFlow ToolPanel">
 							<Panel class="EditSectionHeader LeftRightFlow">
-								<Label class="HeaderText" text="#DOTA_econ_item_details_tool_header" />
-								<Button id="ApplyTool" class="ButtonBevel" onactivate="DOTAItemApplyTool()">
+								<Label class="HeaderText LabelLarge LightestGreyText" text="#DOTA_econ_item_details_tool_header" />
+								<Button id="ApplyTool" class="ButtonBevel ButtonPrimary Blue" onactivate="DOTAItemApplyTool()">
 									<Label text="#DOTA_econ_item_details_apply_tool" />
 								</Button>
 							</Panel>
 						</Panel>
 						<Panel id="RareSocketPanel" class="EditSection TopBottomFlow">
 							<Panel class="EditSectionHeader LeftRightFlow">
-								<Label class="HeaderText" text="#DOTA_econ_item_details_rare_sockets_header" />
+								<Label class="HeaderText LabelLarge LightestGreyText" text="#DOTA_econ_item_details_rare_sockets_header" />
 								<Panel class="InfoIcon" onmouseover="UIShowTextTooltip( #DOTA_RareSocketing_Tooltip )" onmouseout="UIHideTextTooltip()" />
 							</Panel>
 							<Panel id="RareSocketList" />
 							<Panel class="EditSectionFooter">
 								<Label class="FooterText" text="#DOTA_econ_item_details_available_rare_gem_count" />
 								<Panel class="InfoIcon" onmouseover="UIShowTextTooltip( #DOTA_Socketing_ExtractRareGems_Tooltip )" onmouseout="UIHideTextTooltip()" />
-								<Button class="RemoveRareGemsButton ButtonBevel" onactivate="DOTAItemExtractRareGems()">
+								<Button class="RemoveRareGemsButton ButtonBevel ButtonPrimary Blue" onactivate="DOTAItemExtractRareGems()">
 									<Label text="#DOTA_econ_item_details_extract_rare_gems" />
 								</Button>
 							</Panel>
 						</Panel>
 						<Panel id="SocketPanel" class="EditSection TopBottomFlow">
 							<Panel class="EditSectionHeader LeftRightFlow">
-								<Label class="HeaderText" text="#DOTA_econ_item_details_sockets_header" />
+								<Label class="HeaderText LabelLarge LightestGreyText" text="#DOTA_econ_item_details_sockets_header" />
 								<Panel class="InfoIcon" onmouseover="UIShowTextTooltip( #DOTA_Socketing_Tooltip )" onmouseout="UIHideTextTooltip()" />
 							</Panel>
 							<Panel id="SocketList" />
 							<Panel class="EditSectionFooter">
 								<Label class="FooterText" text="#DOTA_econ_item_details_available_gem_count" />
 								<Panel class="InfoIcon AddSocketInfo" onmouseover="UIShowTextTooltip( #DOTA_Socketing_AddSocket_Tooltip )" onmouseout="UIHideTextTooltip()" />
-								<Button class="AddSocketButton ButtonBevel" onactivate="DOTAItemAddSocket()">
+								<Button class="AddSocketButton ButtonBevel ButtonPrimary Blue" onactivate="DOTAItemAddSocket()">
 									<Label text="#DOTA_econ_item_details_add_socket" />
 								</Button>
 							</Panel>
 						</Panel>
 						<Panel id="GiftPanel" class="EditSection TopBottomFlow">
 							<Panel class="EditSectionHeader">
-								<Label class="HeaderText" text="#DOTA_econ_item_details_gift_header" />
+								<Label class="HeaderText LabelLarge LightestGreyText" text="#DOTA_econ_item_details_gift_header" />
 								<Label class="GiftDate" text="#DOTA_tooltip_econ_item_gift_received_date" />
 							</Panel>
 							<Panel class="EditRow">
@@ -124,14 +129,14 @@
 								<Panel id="GiftDedicationBody">
 									<Label text="#DOTA_tooltip_econ_item_gift_dedication" />
 								</Panel>
-								<Button class="ButtonBevel" onactivate="DOTAItemResetGifterAttributes()">
+								<Button class="ButtonBevel ButtonPrimary Blue" onactivate="DOTAItemResetGifterAttributes()">
 									<Label text="#DOTA_econ_item_details_gift_clear_attributes" />
 								</Button>
 							</Panel>
 						</Panel>
 						<Panel class="EditSection TopBottomFlow StylesPanel">
 							<Panel class="EditSectionHeader">
-								<Label class="HeaderText" text="#DOTA_econ_item_details_styles_header" />
+								<Label class="HeaderText LabelLarge LightestGreyText" text="#DOTA_econ_item_details_styles_header" />
 							</Panel>
 							<Panel class="EditRow UneditableDescriptionRow AutoStyleDescription">
 								<Label class="UneditableDescription" html="true" text="#DOTA_econ_item_details_auto_style_description" />
@@ -140,7 +145,7 @@
 						</Panel>
 						<Panel class="EditSection TopBottomFlow PropertiesPanel">
 							<Panel class="EditSectionHeader">
-								<Label class="HeaderText" text="#DOTA_econ_item_details_properties_header" />
+								<Label class="HeaderText LabelLarge LightestGreyText" text="#DOTA_econ_item_details_properties_header" />
 							</Panel>
 							<Panel class="EditRow UneditableDescriptionRow">
 								<Label class="UneditableDescription" html="true" text="#DOTA_econ_item_details_item_uneditable_description" />
@@ -148,7 +153,7 @@
 						</Panel>
 						<Panel class="EditSection TopBottomFlow DescriptionPanel">
 							<Panel class="EditSectionHeader LeftRightFlow">
-								<Label class="HeaderText" text="#DOTA_econ_item_details_description_header" />
+								<Label class="HeaderText LabelLarge LightestGreyText" text="#DOTA_econ_item_details_description_header" />
 								<Panel class="InfoIcon" onmouseover="UIShowTextTooltip( #DOTA_ItemDescChange_Tooltip )" onmouseout="UIHideTextTooltip()" />
 							</Panel>
 							<Panel class="EditRow DescriptionRow">
@@ -156,10 +161,10 @@
 							</Panel>
 							<Panel class="EditSectionFooter">
 								<Panel class="DoubleButton">
-									<Button class="ResetDescription ButtonBevel HalfSizeButton ModCharge" onactivate="DOTAItemResetDescription()">
+									<Button class="ResetDescription ButtonBevel HalfSizeButton ModCharge ButtonPrimary Blue" onactivate="DOTAItemResetDescription()">
 										<Label text="#DOTA_econ_item_details_description_reset" />
 									</Button>
-									<Button class="ButtonBevel HalfSizeButton ModCharge" onactivate="DOTAItemChangeDescription()">
+									<Button class="ButtonBevel HalfSizeButton ModCharge ButtonPrimary Blue" onactivate="DOTAItemChangeDescription()">
 										<Label text="#DOTA_econ_item_details_description_edit" />
 									</Button>
 								</Panel>
@@ -168,13 +173,13 @@
 					</Panel>
 					<Panel id="ItemEditFooter">
 						<Panel class="FooterButtonContainer">
-							<Button class="FooterButton ButtonBevel LoadoutButton" onactivate="DOTAOwnedItemDetailsGoToLoadout()">
+							<Button id="LoadoutButton" class="ButtonPrimary LightGrey" onactivate="DOTAOwnedItemDetailsGoToLoadout()">
 								<Label text="#DOTA_econ_item_details_go_to_loadout" />
 							</Button>
 						</Panel>
 					</Panel>
 				</Panel>
-				<Panel id="EconItemOverlayAutograph">
+				<Panel id="EconItemOverlayAutograph" hittest="false">
 					<Image id="AutographImage" src="s2r://panorama/images/econ/autographs/281316113_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
 				</Panel>
 			</Panel>

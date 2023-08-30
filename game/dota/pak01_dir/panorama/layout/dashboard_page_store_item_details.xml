@@ -5,6 +5,7 @@
 		<include src="s2r://panorama/styles/dashboard_page_shared.vcss_c" />
 		<include src="s2r://panorama/styles/dashboard_page_store_item_details.vcss_c" />
 		<include src="s2r://panorama/styles/tooltips/tooltip_econ_item.vcss_c" />
+		<include src="s2r://panorama/styles/collection_shared.vcss_c" />
 	</styles>
 	<snippets>
 		<snippet name="DynamicStyleRow">
@@ -15,6 +16,7 @@
 		</snippet>
 	</snippets>
 	<DOTAStoreItemDetailsPage class="DashboardPage">
+		<Panel id="HeroBackgroundImage" />
 		<Panel class="ModelContainer" hittest="false">
 			<DOTALargeModelPreview id="ModelPreview" />
 			<DOTAHeroModelOverlay id="HeroModelOverlay" />
@@ -40,9 +42,9 @@
 					<Label id="ItemName" text="#DOTA_OwnedItemDetails_ItemName" />
 				</Panel>
 				<Panel class="StorePurchaseButtons" hittest="false">
-					<TextButton id="ViewInWorkshopAdmin" text="Workshop Admin" unlocalized="true" onactivate="DOTAStoreItemViewInWorkshopAdmin()" />
-					<TextButton id="StoreItemGrant" text="#DOTA_Grant" onactivate="DOTAStoreItemGrant()" />
-					<DOTAPurchaseButton id="StoreItemPurchase" itemsource="StoreItemDetails" />
+					<TextButton id="ViewInWorkshopAdmin" class="ButtonPrimary Orange Large" text="Workshop Admin" unlocalized="true" onactivate="DOTAStoreItemViewInWorkshopAdmin()" />
+					<TextButton id="StoreItemGrant" class="ButtonPrimary Purple Large" text="#DOTA_Grant" onactivate="DOTAStoreItemGrant()" />
+					<DOTAPurchaseButton id="StoreItemPurchase" class="Large" itemsource="StoreItemDetails" />
 					<Button id="StoreItemPurchaseAsGift" onmouseover="UIShowTextTooltip( #DOTA_PurchaseAsGift_Tooltip )" onmouseout="UIHideTextTooltip()">
 						<Panel class="GiftIcon" />
 					</Button>
@@ -68,7 +70,9 @@
 								<Label text="#DOTA_econ_item_details_rarity_label" />
 								<Label id="Rarity" class="ItemRarityColor" text="#DOTA_econ_item_details_item_rarity" />
 							</Panel>
+							<Label onactivate="DOTAStoreShowOriginalTreasure();UIPopupButtonClicked();" class="TreasureSource" text="#DOTA_econ_item_details_item_treasure_name" />
 							<Label class="CreationDate" text="#DOTA_econ_item_details_item_creation_date" />
+							<Label class="NotPublicLabel" text="Not Released to Public" />
 							<Label id="Slot" text="#DOTA_econ_item_details_item_slot" />
 						</Panel>
 					</Panel>
@@ -76,11 +80,11 @@
 				<Image id="EconBrandBanner" scaling="stretch-to-fit-preserve-aspect" />
 				<Panel class="SectionList">
 					<Panel class="Section Description">
-						<Label html="true" text="#DOTA_econ_item_details_item_description" />
+						<Label html="true" class="BodyMedium LighterGreyText" text="#DOTA_econ_item_details_item_description" />
 					</Panel>
 					<Panel class="Section SubItemSelector">
 						<Panel class="SectionTitle">
-							<Label text="#DOTA_store_item_details_included" />
+							<Label class="LabelLarge LightestGreyText" text="#DOTA_store_item_details_included" />
 							<CarouselNav id="StoreScrollControls" carouselid="StoreSetList" maxpips="20" />
 						</Panel>
 						<DOTAItemSubSetsCarousel id="StoreSetList" panels-visible="3" />
@@ -88,36 +92,36 @@
 					<Panel class="Details TopBottomFlow">
 						<Panel class="Section ContainedWithin">
 							<Panel class="SectionTitle">
-								<Label text="#DOTA_econ_item_details_contained_within" />
+								<Label class="LabelLarge LightestGreyText" text="#DOTA_econ_item_details_contained_within" />
 							</Panel>
 							<Panel class="BundleGroup">
 								<Panel id="BundleIconList" />
-								<Label class="BundleName" text="#DOTA_econ_item_details_owning_bundle_item_name" />
+								<Label class="BundleName BodyLarge LightestGreyText" text="#DOTA_econ_item_details_owning_bundle_item_name" />
 							</Panel>
 						</Panel>
 						<Panel class="SubItemsAndAbilities">
 							<Panel class="Section IndividualItems">
 								<Panel class="SectionTitle">
-									<Label text="#DOTA_econ_item_details_items_in_set" />
+									<Label class="LabelLarge LightestGreyText" text="#DOTA_econ_item_details_items_in_set" />
 								</Panel>
 								<Panel id="ItemIconList" />
 							</Panel>
 							<Panel class="Section AbilityIcons">
 								<Panel class="SectionTitle">
-									<Label text="#DOTA_econ_item_details_ability_icons" />
+									<Label class="LabelLarge LightestGreyText" text="#DOTA_econ_item_details_ability_icons" />
 								</Panel>
 								<Panel id="AbilityIconList" />
 							</Panel>
 						</Panel>
 						<Panel class="Section DynamicStyles">
 							<Panel class="SectionTitle">
-								<Label text="#DOTA_econ_item_details_dynamic_styles" />
+								<Label class="LabelLarge LightestGreyText" text="#DOTA_econ_item_details_dynamic_styles" />
 							</Panel>
 							<Panel id="DynamicStyleList" />
 						</Panel>
 						<Panel id="Modifiers" class="Section">
 							<Panel class="SectionTitle">
-								<Label text="#DOTA_econ_item_details_modifiers" />
+								<Label class="LabelLarge LightestGreyText" text="#DOTA_econ_item_details_modifiers" />
 							</Panel>
 							<Panel id="ModifiersList" class="ListContainer">
 								<Panel id="activity" class="ListedModifier">
@@ -215,7 +219,7 @@
 				</Panel>
 				<Panel class="ItemEditFooter">
 					<Panel class="FooterButtonContainer">
-						<Button class="FooterButton ButtonBevel LoadoutButton" onactivate="DOTAStoreItemDetailsGoToLoadout()">
+						<Button class="FooterButton LoadoutButton ButtonPrimary LightGrey" onactivate="DOTAStoreItemDetailsGoToLoadout()">
 							<Label text="#DOTA_econ_item_details_go_to_loadout" />
 						</Button>
 						<Panel class="Spacer" />

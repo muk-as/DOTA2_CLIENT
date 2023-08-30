@@ -8,6 +8,7 @@
 	</styles>
 	<scripts>
 		<include src="s2r://panorama/scripts/util.vts_c" />
+		<include src="s2r://panorama/scripts/common/async.vts_c" />
 		<include src="s2r://panorama/scripts/sequence_actions.vts_c" />
 		<include src="s2r://panorama/scripts/dota_sequence_actions.vts_c" />
 		<include src="s2r://panorama/scripts/leaf_pages/dashboard_page_debut_muerta.vts_c" />
@@ -34,7 +35,7 @@
 			</Panel>
 		</snippet>
 	</snippets>
-	<DOTAReferencePage class="DashboardPage" onnavigatedto="RunPageAnimation()" onnavigatedaway="EndPageAnimation()" oncancel="DOTAShowHomePage()" onload="LoadMuertaLogo()">
+	<DOTAReferencePage class="DashboardPage" onnavigatedto="StartMuertaDebut()" onnavigatedaway="EndMuertaDebut()" oncancel="DOTAShowHomePage()" onload="LoadMuertaLogo()">
 		<Panel id="MainContainer" hittest="false">
 			<Panel id="ModelContainer" hittest="false" />
 			<Panel id="BottomGradient" hittest="false" />
@@ -64,7 +65,7 @@
 					<Panel id="HeroButtons">
 						<Panel id="DemoButtons">
 							<DemoModeButton id="DemoHeroButton" category="#npc_dota_hero_muerta" onactivate="DOTADemoHero( npc_dota_hero_muerta, 0)" />
-							<TextButton class="DefaultButton FixedSize" onactivate="DOTAShowHeroPage( 138 );" text="#DOTA_HeroDemo_Button_ToLoadout" />
+							<TextButton class="DefaultButton FixedSize" onactivate="DOTAGoToHeroPage( 138 );" text="#DOTA_HeroDemo_Button_ToLoadout" />
 						</Panel>
 					</Panel>
 				</Panel>

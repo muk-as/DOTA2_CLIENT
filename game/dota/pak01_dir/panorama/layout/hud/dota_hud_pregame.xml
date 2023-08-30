@@ -54,7 +54,7 @@
 			</DOTAHeroPickingCaptainsModeHeroPickOption>
 		</snippet>
 	</snippets>
-	<DOTAHudPreGame class="Hidden" hittest="false">
+	<DOTAHudPreGame class="Hidden CanRandomize" hittest="false">
 		<Panel id="PreGameBackgroundImage" />
 		<Panel id="PregameBGStatic">
 			<DOTAParticleScenePanel id="PreGameBackgroundParticles" hittest="false" particleName="particles/ui/ui_aghs_pregamebg_ambient_mist.vpcf" particleonly="true" startActive="true" cameraOrigin="500 0 90" lookAt="0 0 90" fov="60" squarePixels="true" />
@@ -185,6 +185,7 @@
 					<DOTAHeroRelicsThumbnail id="StrategyHeroRelicsThumbnail" class="HeroRelicsThumbnail" />
 					<DOTAHeroBadge id="StrategyHeroBadge" />
 					<DOTALargeModelPreview id="HeroModel" />
+					<DOTALargeModelLoadout id="HeroModelLoadout" />
 					<DOTAHeroModelOverlay id="HeroModelOverlay" />
 					<DOTAHeroRelicsThumbnail id="StrategyHeroRelicsThumbnailTooltips" class="HeroRelicsThumbnail TooltipsOnly" />
 					<Panel id="HeroRelicsContainer" />
@@ -212,8 +213,12 @@
 							<Panel id="HeroLockedNav" class="LeftRightFlow">
 								<TextButton id="StrategyTabButton" text="#DOTA_Hero_Selection_StrategyTab" class="StrategyPhaseTab" onactivate="DOTASetSelectedStrategyTab( Strategy )" />
 								<Label text="/" class="StrategyPhaseTabSeparator" />
-								<TextButton id="LoadoutTabButton" text="#DOTA_Hero_Selection_LoadoutTab" class="StrategyPhaseTab" onactivate="DOTASetSelectedStrategyTab( Loadout )" />
-								<Label text="/" class="StrategyPhaseTabSeparator" />
+								<TextButton id="LoadoutTabButton" text="#DOTA_Hero_Selection_LoadoutTab" class="StrategyPhaseTab OldLoadoutOnly" onactivate="DOTASetSelectedStrategyTab( Loadout )" />
+								<Label text="/" class="StrategyPhaseTabSeparator OldLoadoutOnly" />
+								<TextButton id="HeroLoadoutTabButton" text="#DOTA_Hero_Selection_LoadoutTab" class="StrategyPhaseTab NewLoadoutOnly" onactivate="DOTASetSelectedStrategyTab( HeroLoadout )" />
+								<Label text="/" class="StrategyPhaseTabSeparator NewLoadoutOnly" />
+								<TextButton id="GlobalLoadoutTabButton" text="#DOTA_Hero_Selection_GlobalLoadoutTab" class="StrategyPhaseTab NewLoadoutOnly" onactivate="DOTASetSelectedStrategyTab( GlobalLoadout )" />
+								<Label text="/" class="StrategyPhaseTabSeparator NewLoadoutOnly" />
 								<TextButton id="GuidesTabButton" text="#DOTA_Hero_Selection_GuidesTab" class="StrategyPhaseTab" onactivate="DOTASetSelectedStrategyTab( Guides )" />
 							</Panel>
 							<Panel id="StrategyTab" class="StrategyTabContents">
@@ -399,6 +404,12 @@
 									</Panel>
 								</Panel>
 							</Panel>
+							<Panel id="HeroLoadoutTab" class="StrategyTabContents">
+								<DOTACosmeticPicker id="HeroCosmeticPicker" />
+							</Panel>
+							<Panel id="GlobalLoadoutTab" class="StrategyTabContents">
+								<DOTACosmeticPicker id="GlobalCosmeticPicker" />
+							</Panel>
 							<Panel id="GuidesTab" class="StrategyTabContents">
 								<DOTAGuideBrowser id="GuideBrowser" class="SmallMode" />
 							</Panel>
@@ -449,6 +460,10 @@
 				<DOTAHudHeroPickingPlayer class="Slot2" />
 				<DOTAHudHeroPickingPlayer class="Slot3" />
 				<DOTAHudHeroPickingPlayer class="Slot4" />
+				<Panel class="DraftPreferredRoles">
+					<Label class="DraftPreferredRolesLabel" text="#DOTA_PlayerDraft_PreferredRole" />
+					<Panel class="DraftPreferredRolesSeparator" />
+				</Panel>
 			</Panel>
 			<Panel id="RadiantCoachPlayer" class="CoachContainer">
 				<Panel class="CoachImage" />
@@ -506,6 +521,10 @@
 				<DOTAHudHeroPickingPlayer class="Slot7" />
 				<DOTAHudHeroPickingPlayer class="Slot8" />
 				<DOTAHudHeroPickingPlayer class="Slot9" />
+				<Panel class="DraftPreferredRoles">
+					<Label class="DraftPreferredRolesLabel" text="#DOTA_PlayerDraft_PreferredRole" />
+					<Panel class="DraftPreferredRolesSeparator" />
+				</Panel>
 			</Panel>
 			<Panel class="FillWidth" />
 		</Panel>
@@ -522,7 +541,7 @@
 			<Panel id="PreMinimapContainer" hittest="false">
 				<DOTAHeroPickingMinimap id="HeroPickMinimap" />
 			</Panel>
-			<Panel id="AvailableItemsContainer">
+			<Panel id="AvailableItemsContainer" class="OldLoadoutOnly">
 				<Panel id="AvailableItems">
 					<Carousel id="AvailableItemsCarousel" panels-visible="3" />
 					<Panel id="AvailableItemsFooter">
@@ -532,6 +551,7 @@
 					</Panel>
 				</Panel>
 			</Panel>
+			<DOTASetPreviewControls id="SetPreviewControls" class="NewLoadoutOnly" hittest="false" />
 			<Panel id="BottomPanels" hittest="false">
 				<DOTAFriendsAndFoes id="FriendsAndFoes" />
 				<DOTAHeroPickingTeamComposition class="TwoColumn" id="HeroPickTeamComposition" />
