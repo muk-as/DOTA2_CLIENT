@@ -3,14 +3,20 @@
  @define reserveTimeTextColor: #ccc;
  @define reserveTimeTimerColor: #789fd4;
 
- @define PreGame_Heroes_SetTile_Width: 256px;
- @define PreGame_Heroes_SetTile_Height: 385px;
+
+
+
+ @define PreGame_Heroes_SetTile_Width: 216px;
+ @define PreGame_Heroes_SetTile_Height: 324px;
 
  @define PreGame_Heroes_SetTile_Width_Popup: 231px;
  @define PreGame_Heroes_SetTile_Height_Popup: 340px;
 
- @define PreGame_Heroes_ItemTile_Width: 191px;
- @define PreGame_Heroes_ItemTile_Height: 218px;
+
+
+
+ @define PreGame_Heroes_ItemTile_Width: 162px;
+ @define PreGame_Heroes_ItemTile_Height: 198px;
 
  @define PreGame_Heroes_GlobalItemTile_Width: 162px;
  @define PreGame_Heroes_GlobalItemTile_Height: 198px;
@@ -4922,15 +4928,11 @@
  #HeroModelLoadout{
   width:
          
-         1100px
+         1080px
   ;
   height:
           
-          1100px
-  ;
-  margin-top:
-              
-              112px
+          1080px
   ;
   transform:
              
@@ -4940,68 +4942,86 @@
                          -80px
                                
                                )
+                                 
+                                 translateY
+                                           (
+                                             
+                                             100px
+                                                   
+                                                   )
+                                                     
+                                                     scale3d
+                                                            (
+                                                              
+                                                              1,
+                                                                 
+                                                                 1,
+                                                                    
+                                                                    1
+                                                                      
+                                                                      )
   ;
   visibility:
               
               collapse
   ;
- }
- #HeroModel{
   opacity-mask:
                 
                 url(
-                     "s2r://panorama/images/masks/hero_model_opacity_mask_psd.vtex"
+                     "s2r://panorama/images/masks/hero_model_preview_mask_pregame_psd.vtex"
                 )
-  ;
-  wash-color:
-              
-              black
   ;
   transition-property:
                        
-                       transform,
-                                  
-                                  wash-color,
-                                              
-                                              opacity
+                       transform
   ;
   transition-duration:
                        
-                       0.4s
+                       1s
   ;
   transition-timing-function:
                               
-                              ease-in-out
+                              cubic-bezier
+                                          (
+                                           0,
+                                              
+                                              1,
+                                                 
+                                                 0,
+                                                    
+                                                    1
+                                                     )
   ;
  }
- #HeroModelLoadout{
-  opacity-mask:
-                
-                url(
-                     "s2r://panorama/images/masks/softedge_box_left_displaced_png.vtex"
-                )
-  ;
-  wash-color:
+  .HeroLoadoutTabVisible #HeroModelLoadout{
+   transform:
               
-              black
-  ;
-  transition-property:
-                       
-                       transform,
+              translateX
+                        (
+                          
+                          -90px
+                                
+                                )
                                   
-                                  wash-color,
+                                  translateY
+                                            (
                                               
-                                              opacity
-  ;
-  transition-duration:
-                       
-                       0.4s
-  ;
-  transition-timing-function:
-                              
-                              ease-in-out
-  ;
- }
+                                              60px
+                                                   
+                                                   )
+                                                     
+                                                     scale3d
+                                                            (
+                                                              
+                                                              0.86,
+                                                                    
+                                                                    0.86,
+                                                                          
+                                                                          1
+                                                                            
+                                                                            )
+   ;
+  }
  .AspectRatio4x3 #HeroModel,.AspectRatio4x3 #HeroModelOverlay,.AspectRatio4x3 #HeroModelLoadout{
   transform:
              
@@ -5129,13 +5149,17 @@
   ;
   width:
          
-         634px
+         630px
   ;
  }
  .AspectRatio16x10 #SelectedHeroDetails,.AspectRatio16x10 #SelectedHeroAbilitiesHitTargets{
   margin-left:
                
                98px
+  ;
+  width:
+         
+         700px
   ;
  }
  .AspectRatio4x3 #SelectedHeroDetails,.AspectRatio4x3 #SelectedHeroAbilitiesHitTargets{
@@ -5147,7 +5171,7 @@
  #SelectedHeroDetails{
   margin-top:
               
-              128px
+              130px
   ;
  }
  #SelectedHeroAbilities{
@@ -5157,7 +5181,7 @@
   ;
   margin-top:
               
-              76px
+              80px
   ;
  }
  #SelectedHeroAbilitiesHitTargets{
@@ -5193,13 +5217,17 @@
   ;
   margin-right:
                 
-                12px
+                10px
   ;
  }
  #SelectedHeroAbilitiesHitTargets > Panel.StatBranch{
   margin-right:
                 
                 2px
+  ;
+  margin-top:
+              
+              4px
   ;
  }
  #SelectedHeroAbilities > .AbilityIconContainer{
@@ -5381,10 +5409,6 @@
               
               #6F819B
   ;
-  margin:
-          
-          2px
-  ;
  }
  #EnterBattle{
   color:
@@ -5404,14 +5428,70 @@
                3px
   ;
  }
+ .SelectedHeroNameContainer{
+  width:
+         
+         100%
+  ;
+  margin-top:
+              
+              20px
+  ;
+  margin-right:
+                
+                8px
+  ;
+  flow-children:
+                 
+                 right
+  ;
+ }
+ #PersonaSelector{
+  vertical-align:
+                  
+                  center
+  ;
+  transition-property:
+                       
+                       opacity
+  ;
+  transition-duration:
+                       
+                       0.2s
+  ;
+  transition-timing-function:
+                              
+                              cubic-bezier
+                                          (
+                                           0,
+                                              
+                                              1,
+                                                 
+                                                 0,
+                                                    
+                                                    1
+                                                     )
+  ;
+  margin-top:
+              
+              -1px
+  ;
+ }
  #SelectedHeroName,#CoachName{
   width:
          
-         684px
+         fill-parent-flow
+                         (
+                          1
+                           )
+  ;
+  margin-right:
+                
+                8px
   ;
   height:
           
-          64px
+          60px
   ;
   color:
          
@@ -5419,7 +5499,7 @@
   ;
   font-size:
              
-             62px
+             60px
   ;
   font-weight:
                
@@ -5437,10 +5517,6 @@
                  
                  shrink
   ;
-  margin-top:
-              
-              18px
-  ;
   font-family:
                
                titleFont
@@ -5449,13 +5525,11 @@
                
                0px
                    
-                   0px
+                   2px
                        
-                       4px
+                       8px
                            
-                           3.0
-                               
-                               #101010
+                           #000000
   ;
  }
  #CoachName,.IsCoach #SelectedHeroName{
@@ -6149,10 +6223,6 @@
                
                0px
   ;
-  font-weight:
-               
-               thinner
-  ;
  }
  .StrategyPhaseTab:hover > Label{
   color:
@@ -6494,11 +6564,11 @@
   ;
   margin-bottom:
                  
-                 60px
+                 196px
   ;
   margin-left:
                
-               90px
+               16px
   ;
   background-color:
                     
@@ -6719,9 +6789,13 @@
                   
                   2px
   ;
-  margin-bottom:
-                 
-                 8px
+  margin:
+          
+          2px
+              
+              0px
+                  
+                  8px
   ;
   text-shadow:
                
@@ -13895,11 +13969,16 @@
   ;
   margin-left:
                
-               22px
+               50px
   ;
-  margin-bottom:
-                 
-                 22px
+  transform:
+             
+             translateY
+                       (
+                         
+                         24px
+                              
+                              )
   ;
   width:
          
