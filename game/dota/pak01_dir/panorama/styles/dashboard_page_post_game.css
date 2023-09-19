@@ -4605,7 +4605,6 @@ DOTAPostGameOverviewHero.Expanded #MVPStarContainer
 	transition-property: background-color, wash-color, transform, opacity-mask, opacity, pre-transform-scale2d;
 	transition-duration: 1s;
 	transition-timing-function: ease-in-out;
-	visibility: collapse;
 }
 
 #OverviewHeroMVPButton:hover
@@ -4643,12 +4642,17 @@ DOTAPostGameOverviewHero #OverviewHeroReportButton
 	transition-property: background-color, wash-color, transform, opacity-mask, opacity, pre-transform-scale2d;
 	transition-duration: .2s;
 	transition-timing-function: ease-in-out;
+}
+
+DOTAPostGameOverviewHero.HideReport #OverviewHeroReportButton,DOTAPostGameOverviewHero.HideDislike #OverviewHeroDislikeButton
+{
 	visibility: collapse;
 }
 
 DOTAPostGameOverviewHero.CanReport #OverviewHeroReportButton
 {
-	visibility: visible;
+	opacity: 1.0;
+	brightness: 1.0;
 }
 
 DOTAPostGameOverviewHero #OverviewHeroDislikeButton
@@ -4663,21 +4667,21 @@ DOTAPostGameOverviewHero #OverviewHeroDislikeButton
 	transition-property: background-color, wash-color, transform, opacity-mask, opacity, pre-transform-scale2d;
 	transition-duration: .2s;
 	transition-timing-function: ease-in-out;
-	visibility: collapse;
-}
-
-DOTAPostGameOverviewHero.CanDislike #OverviewHeroDislikeButton
-{
-	visibility: visible;
 }
 
 .DrawerButton
 {
 	width: 25px;
 	height: 25px;
-	margin-left: 2px;
-	margin-right: 2px;
+	margin-left: 5px;
+	margin-right: 5px;
 	horizontal-align: center;
+}
+
+.DrawerButton:disabled
+{
+	opacity: 0.25;
+	brightness: 0.25;
 }
 
 #OverviewHeroCommendButton
@@ -4693,7 +4697,6 @@ DOTAPostGameOverviewHero.CanDislike #OverviewHeroDislikeButton
 	transition-property: background-color, wash-color, transform, opacity-mask, opacity, pre-transform-scale2d;
 	transition-duration: .2s;
 	transition-timing-function: ease-in-out;
-	visibility: collapse;
 }
 
 DOTAPostGameOverviewHero.CanCommend #OverviewHeroCommendButton
@@ -7555,7 +7558,7 @@ DOTASortHeader.SortAscending .SortDirectionArrow,DOTASortHeader.SortDescending .
 	visibility: collapse;
 }
 
-DOTAPostGameOverviewHero.CanReport:hover #ButtonDrawer,DOTAPostGameOverviewHero.CanCommend:hover #ButtonDrawer,DOTAPostGameOverviewHero.CanVoteMVP:hover #ButtonDrawer,DOTAPostGameOverviewHero.CanDislike:hover #ButtonDrawer,DOTAPostGameOverviewHero:hover #ButtonDrawer
+DOTAPostGameOverviewHero.ShowButtonDrawer:hover #ButtonDrawer
 {
 	visibility: visible;
 	opacity: 1.0;
