@@ -1,1161 +1,1062 @@
-@define topBarHeight:  125px;
- @define negTopBarHeight: -125px;
-
- .AghanimTopBar{
-
-  width: 1050px;
-
-  horizontal-align: center;
-  vertical-align: top;
-
-
-  background-size: contain;
-  background-repeat: no-repeat;
-  margin-top: -12px;
-  z-index: -100;
-
-  transition-property: opacity, transform;
-  transition-duration: .1s;
-  transition-timing-function: ease-in-out;
-  opacity: 1;
- }
-
- .AghanimEndGameCinematic .AghanimTopBar{
-
-  opacity:  0;
- }
-
- .ShopIsOpen .AghanimTopBar{
-
-  opacity: 0;
-  transform: translateY( negTopBarHeight );
- }
-
-
- #MovingOverlay{
-
-  width: 100%;
-  height: 100%;
-  horizontal-align: center;
-  vertical-align: top;
-  background-image: url( "s2r://panorama/images/interface/top_bar_active_masked_psd.vtex");
-
-  background-size: contain;
-  background-repeat: no-repeat;
-  transition-property: opacity;
-  transition-timing-function: ease-in;
-  transition-duration: .4s;
-  opacity: 0;
- }
-
- .Moving #MovingOverlay{
-
-  opacity: 1;
- }
-
- #KillCount{
-
-  color: white;
-  font-size: 36px;
-  font-weight: bold;
-     font-family: RadianceM;
-  height: 38px;
-  width: 50px;
-  text-align: center;
-  margin-top: 7px;
-  margin-left: 5px;
- }
-
- #RoshContainer{
-
-  horizontal-align: center;
-  width: 220px;
-  z-index: 500;
-  flow-children: down;
- }
-
- #CompetitionBlock{
-
-  margin: 5px;
-  width: 10%;
-  visibility: collapse;
- }
-
- #PlayersBlock{
-
-  flow-children: right;
-  horizontal-align:  right;
-
-  margin-right: 4px;
- }
-
- #EncounterTopBarInfo{
-
-  horizontal-align:  left;
-  height: 100%;
-  width:  100%;
- }
-
- #TopBarLeftFlare{
-
-     background-image: url( "s2r://panorama/images/hud/reborn/header_endcap_psd.vtex");
-     background-size: 100%;
-  background-repeat: no-repeat;
-     width: 50px;
-     height: 70px;
-     transform: scaleX(-1);
- }
-
-
- #PartyPortraits{
-
-  flow-children: right;
- }
-
- #TimeBlock{
-
-  width: 200px;
-  height: 100%;
-  flow-children: down;
- }
-
- #EnemyContainer{
-
-  margin-top: 12px;
-  flow-children: down;
-  horizontal-align: right;
-     margin-right: 55px;
-  height: 65px;
-  width: 500px;
- }
-
- .TeamRow{
-
-  flow-children: right;
-  horizontal-align: right;
- }
-
- .TeamContainer{
-
-  padding-top: 1px;
-  padding-left: -1px;
-  padding-right: -1px;
-  padding-bottom: -2px;
-  flow-children: right;
-  margin: 2px;
-  saturation: 0.95;
- }
-
- .TeamContainer.TeamEliminated{
-
-  saturation: 0.05;
- }
-
- .EnemyRemainingImage{
-
-  height: 26px;
-  width: 26px;
-  margin: 0px;
-  margin-left: -1px;
-  margin-right: -2px;
-  saturation: 0.01;
-  wash-color: grey;
- }
-
- .EnemyRemainingImage.Alive{
-
-  wash-color: none;
-  saturation: 1.0;
- }
-
- .EnemyRemainingImage.Eliminated{
-
-  wash-color: #880000;
- }
-
- #RoomInfo{
-
-  horizontal-align: right;
-  margin: 10px;
-  margin-bottom: 0px;
-  width: 40%;
-  visibility: collapse;
- }
-
- #GameTimer,#BestRunInfo,#BestRunRelInfo,#NewPersonalBest,#DepthLabel{
-
-
-
-
-
-   color: #bbbbbb;
-     font-weight: normal;
-     text-overflow: shrink;
-
-     horizontal-align: center;
-     vertical-align: top;
-     text-shadow: 0px 2px 4px 4.0 black;
-
-     font-family: Radiance,FZKai-Z03,TH Sarabun New,YDYGO 540;
-     font-size: 16px;
-     letter-spacing: 1px;
-     text-align: center;
- }
-
-
- .LevelNameDivider{
-
-  width:  5px;
-  height:  5px;
-  vertical-align: center;
-  margin-left:  5px;
-  margin-right:  5px;
-  margin-bottom: 1px;
-  background-color: #bbbbbb55;
-  border-radius: 50%;
- }
-
-
- .BestRunContainer{
-
-  visibility: collapse;
-  flow-children: right;
-  horizontal-align: center;
- }
-
- #BestRunInfo,#BestRunRelInfo,#NewPersonalBest{
-
-
-
-  font-size: 18px;
-  text-transform: uppercase;
- }
-
- #NewPersonalBest{
-
-  visibility: collapse;
- }
-
- .IsInTournamentMode.FasterRun #BestRunRelInfo{
-
-  color: #88FF88;
- }
-
- .IsInTournamentMode:not(.FasterRun) #BestRunRelInfo{
-
-  color: #FF8888;
- }
-
- #NewPersonalBest{
-
-  color: #88FF88;
- }
-
- .IsInTournamentMode.HasComparisonData .BestRunContainer,.IsInTournamentMode.DeepestRun #NewPersonalBest{
-
-
-  visibility: visible;
- }
-
- #RoshText{
-
-  font-size: 24px;
-  width: 100%;
-  text-align: center;
-  margin-top: 25px;
-  opacity: 0;
- }
-
- .AboutToMove #RoshText{
-
-  opacity: 1;
- }
-
- .RoomDifficultyIcon{
-
-  width: 20px;
-  height: 20px;
-  box-shadow: fill #000000af -3px -3px 6px 6px;
-  border-radius: 50%;
-  margin-left: 4px;
-  margin-right: 4px;
-
-  saturation: 1;
-  wash-color: #fff;
-  contrast: 1;
-  transform: translateY(0px);
-  opacity: 0;
-
-  transition-property: saturation, wash-color, transform, box-shadow, contrast;
-  transition-timing-function: ease-out;
-  transition-duration: .4s;
-
-  background-image: url( "s2r://panorama/images/interface/minimap_boss_icon_png.vtex");
-  background-position: center;
-  background-size: contain;
- }
-
- #DifficultyContainer{
-
-  horizontal-align: right;
-  vertical-align: center;
-  margin-top: 5px;
-  height: 100%;
- }
-
- #Difficulty1{
-
-  opacity: 1;
- }
-
- .2Skull #Difficulty2{
-
-  opacity: 1;
- }
-
- .3Skull #Difficulty3{
-
-  opacity: 1;
- }
-
- .4Skull #Difficulty4{
-
-  opacity: 1;
- }
-
- .5Skull #Difficulty5{
-
-  opacity: 1;
- }
-
-
- #TitleContainer{
-
-  width: 100%;
- }
-
- #RoomTitle,#RoomInstructions{
-
-
-  color: white;
-     font-weight: bold;
-
-     horizontal-align: left;
-     vertical-align: center;
-     text-shadow: 1px 1px 2px 2.0 #00000011;
-
-     font-family: Radiance,FZKai-Z03,TH Sarabun New,YDYGO 540;
-     font-size: 14px;
-     letter-spacing: 2px;
- }
-
-
- #RoomTitle{
-
-  font-size: 20px;
- }
-
-
- .ScoreContainer{
-
-  flow-children: down;
- }
-
- #EarnedBPContainer{
-
-  vertical-align: bottom;
-  width: 242px;
-  height: 45px;
-  margin-top: 10px;
-  margin-left: -5px;
-  horizontal-align: left;
-  flow-children: right;
-  padding: 8px 0;
-  background-color: gradient( linear, 0% 0%, 100% 0%, from( #000000EF ), to( #00000000 ) );
- }
-
- #EarnedBP,#EarnedBPAmount{
-
-
-  margin-left:2px;
-  color: #2faf69;
-     font-weight: bold;
-     text-shadow: 1px 1px 2px 2.0 #00000011;
-     font-family: Radiance,FZKai-Z03,TH Sarabun New,YDYGO 540;
-     font-size: 17px;
-     letter-spacing: 2px;
-  vertical-align: middle;
- }
-
- #EarnedBP{
-
-  margin-left: 5px;
- }
-
- #EarnedBPAmount{
-
-  color: white;
- }
-
- #BPIcon{
-
-  margin-left: 18px;
-  height: 20px;
-  width: 20px;
-  background-image: url( "s2r://panorama/images/compendium/international2018/totalpoints_psd.vtex");
-  background-position: center;
-  background-size: cover;
- }
-
- #RoshMovingFX{
-
-  height: 512px;
-  width: 512px;
-
-  horizontal-align: middle;
-  opacity: 0;
-  margin-top: -70px;
- }
-
-
- .Moving #RoshMovingFX{
-
-  opacity: 1;
- }
-
-
-
-
- #EnrageTimerContainer{
-
-  width: 600px;
-  horizontal-align: center;
-  margin-top: 60px;
-  visibility: collapse;
-  flow-children: down;
- }
-
- #EnrageTimerContainer.Visible{
-
-  visibility: visible;
- }
-
- #EnrageTimerHP{
-
-  width: 710px;
-  horizontal-align: center;
-  vertical-align: top;
-  flow-children: down;
- }
-
- #EnrageTimerLabel{
-
-  horizontal-align: center;
-  vertical-align: bottom;
-  text-align: center;
-  text-shadow: 1px 1px 2px 3.0 #000000;
-  font-size: 25px;
-  color: white;
- }
-
- #EnrageTimerProgressBar{
-
-  width: 80%;
-  border-radius: 4px;
-  border: 3px solid #444;
-  background-color: black;
-  height: 24px;
-  vertical-align: center;
-  horizontal-align: center;
-  box-shadow: fill #000 -3px -3px 6px 6px;
- }
-
-
- #EnrageTimerProgressBar_Left{
-
-  background-color: gradient( linear, 0% 0%, 0% 100%, from( #326114 ), color-stop( 0.3, #54BA07 ), color-stop( .5, #54BA07 ), to( #326114 ) );
-  box-shadow: inset #000 1px 1px 3px 3px;
-  border-radius: 2px;
- }
-
- #EnrageTimerProgressBar_Left{
-
-  background-color: gradient( linear, 0% 0%, 0% 100%, from( #320000 ), color-stop( 0.3, #ff4A07 ), color-stop( .5, #ff4A07 ), to( #320000 ) );
- }
-
- #EnrageTimerProgressBar_Right{
-
-  background-color: gradient( linear, 0% 0%, 100% 0%, from( #222222FF ), to( black ) );
- }
-
-
- .TopBarContainer{
-
-  width: 100%;
-  height: 150px;
- }
-
- .TopParticlesBg,.TopParticlesFg{
-
-
-  width: 100%;
-  height: 100%;
- }
-
-
-
-
-
-
-
-
-
-
-
- .TopBarNew{
-
-  margin-top: 12px;
-  height: topBarHeight;
-  width:  975px;
-  horizontal-align:  center;
- }
-
-
-
-
- .LeftSection,.RightSection{
-
-
-  height:  80px;
-  width:  350px;
- }
-
- .CenterSectionBG,.LeftSection,.RightSection{
-
-
-
-  background-size: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  img-shadow: 0px 0px 3px 1.0 #00000000;
- }
-
- .LeftSection{
-
-  horizontal-align:  left;
-  padding-right: 0px;
-  background-image: url( "s2r://panorama/images/hud/aghs_leftsection_psd.vtex");
- }
-
- .RightSection{
-
-  horizontal-align:  right;
-
-  background-image: url( "s2r://panorama/images/hud/aghs_rightsection_psd.vtex");
- }
-
- .CenterSection{
-
-  horizontal-align:  center;
-
-  height:  100%;
-  width:  275px;
- }
-
- .CenterSectionBG{
-
-  ignore-parent-flow: true;
-  flow-children:  down;
-
-  background-image: url( "s2r://panorama/images/hud/aghs_centersectionbg_psd.vtex");
-
-  height: 80px;
-  width:  100%;
- }
-
- .DepthAndTimer{
-
-  horizontal-align: center;
-  height: fit-children;
-  width: 100%;
-  flow-children: right;
-
-  margin-top: 2px;
- }
-
- .DepthAndTimerBG{
-
-  horizontal-align: center;
-
-  width: fit-children;
-  min-width:  120px;
-  flow-children: right;
-
-  padding-left: 8px;
-  padding-right: 8px;
-  padding-top: 3px;
-  padding-bottom: 2px;
-
-  background-color: #000000bb;
-  border-radius: 4px 4px 4px 4px;
-  box-shadow: inset #00000055 0px 1px 1px 1px;
- }
-
- #DepthLabel{
-
-
-  letter-spacing: 1px;
-  text-transform: uppercase;
-
-  horizontal-align: center;
-  text-align:  center;
-  padding-right: 4px;
-  text-overflow: shrink;
-  min-width:  50px;
- }
-
- #DepthLabel.ShowDepth{
-
-  visibility: visible;
- }
-
- #GameTimer{
-
-
-
-  text-align: left;
-  padding-left: 4px;
-  min-width:  50px;
-  text-align: center;
- }
-
- #GameTimer,.EncounterDepthLabel{
-
-
-  font-size: 16px;
-  font-weight: normal;
-
-  text-transform: uppercase;
- }
-
- .EncounterDepthLabel{
-
-  color: #cccccc;
-  text-align:  center;
-  font-weight:  bold;
-  margin-top:  20px;
- }
-
- .EncounterNameLabelNew{
-
-  width:  260px;
-  max-height: 28px;
-  font-size: 18px;
-  font-family: Radiance,FZKai-Z03,TH Sarabun New,YDYGO 540;
-  font-weight: bold;
-  text-shadow: 1px 3px 2px #000;
-
-  text-align: center;
-  horizontal-align:  center;
-  vertical-align: top;
-  padding:  1px;
-  padding-top: 0px;
-  text-transform: uppercase;
-  margin:  4px;
-  margin-top: 4px;
-
-  text-align: center;
-  letter-spacing: 2px;
-  color:  white;
-
-  text-overflow: shrink;
-
-  z-index: 5;
-  box-shadow: fill 1px 2px 0px #00000066;
- }
-
- .ROOM_TYPE_ENEMY .EncounterNameLabelNew{
-
-  background-color: gradient( linear, 0% 0%, 100% 0%, from( #3E64A400 ), color-stop (0.4, #3E64A4dd), color-stop (0.6, #3E64A4dd), to ( #3E64A400 ) );
- }
-
- .ROOM_TYPE_ENEMY.HardRoom .EncounterNameLabelNew{
-
-  background-color: gradient( linear, 0% 0%, 100% 0%, from( #7B010000 ), color-stop (0.4, #7B0100dd), color-stop (0.6, #7B0100dd), to ( #7B010000 ) );
- }
-
- .ROOM_TYPE_BOSS .EncounterNameLabelNew{
-
-  background-color: gradient( linear, 0% 0%, 100% 0%, from( #2B229200 ), color-stop (0.4, #2B2292dd), color-stop (0.6, #2B2292dd), to ( #2B229200 ) );
- }
-
- .ROOM_TYPE_TRANSITIONAL .EncounterNameLabelNew{
-
-  background-color: gradient( linear, 0% 0%, 100% 0%, from( #79570000 ), color-stop (0.4, #795700dd), color-stop (0.6, #795700dd), to ( #79570000 ) );
- }
-
- .ROOM_TYPE_STARTING .EncounterNameLabelNew{
-
-  background-color: gradient( linear, 0% 0%, 100% 0%, from( #002E8F00 ), color-stop (0.4, #002E8Fdd), color-stop (0.6, #002E8Fdd), to ( #002E8F00 ) );
- }
-
- .ROOM_TYPE_EVENT .EncounterNameLabelNew{
-
-  background-color: gradient( linear, 0% 0%, 100% 0%, from( #79570000 ), color-stop (0.4, #795700dd), color-stop (0.6, #795700dd), to ( #79570000 ) );
- }
-
- .ROOM_TYPE_TRAPS .EncounterNameLabelNew{
-
-  background-color: gradient( linear, 0% 0%, 100% 0%, from( #7D2D1400 ), color-stop (0.4, #7D2D14b9), color-stop (0.6, #7D2D14b9), to ( #7D2D1400 ) );
- }
-
- .ROOM_TYPE_BONUS .EncounterNameLabelNew,#BonusPanel .EncounterNameLabelNew{
-
-
-  background-color: gradient( linear, 0% 0%, 100% 0%, from( #79570000 ), color-stop (0.4, #795700dd), color-stop (0.6, #795700dd), to ( #79570000 ) );
- }
-
- #EncounterIconNew{
-
-  width: 64px;
-  height: 64px;
-  background-size: contain;
-  background-position: center;
-  background-image: url( "s2r://panorama/images/events/aghanim/aghanims_room_icon_png.vtex");
-  background-repeat: no-repeat;
-  vertical-align: top;
-  horizontal-align:  left;
-  margin:  10px;
-  margin-left:  8px;
-
-  z-index: 3;
-
-
-  img-shadow: 0px 3px 6px 3.0 black;
-  opacity: 1;
-  wash-color: #75819375;
- }
-
- .ROOM_TYPE_ENEMY #EncounterIconNew{
-
-  background-image: url( "s2r://panorama/images/events/aghanim/encounter_room_icon_png.vtex");
- }
-
- .ROOM_TYPE_ENEMY.HardRoom #EncounterIconNew{
-
-  background-image: url( "s2r://panorama/images/events/aghanim/encounter_room_elite_icon_png.vtex");
- }
-
- .ROOM_TYPE_BOSS #EncounterIconNew{
-
-  background-image: url( "s2r://panorama/images/events/aghanim/boss_room_icon_png.vtex");
- }
-
- .ROOM_TYPE_TRAPS #EncounterIconNew{
-
-  background-image: url( "s2r://panorama/images/events/aghanim/trap_room_icon_png.vtex");
- }
-
- .ROOM_TYPE_STARTING #EncounterIconNew{
-
-  background-image: url( "s2r://panorama/images/events/aghanim/aghanims_room_icon_png.vtex");
- }
-
- .ROOM_TYPE_TRANSITIONAL #EncounterIconNew{
-
-  background-image: url( "s2r://panorama/images/events/aghanim/empty_room_icon_png.vtex");
- }
-
- .ROOM_TYPE_BONUS #EncounterIconNew{
-
-  background-image: url( "s2r://panorama/images/events/aghanim/bonus_room_icon_png.vtex");
- }
-
- .ROOM_TYPE_EVENT #EncounterIconNew{
-
-  background-image: url( "s2r://panorama/images/events/aghanim/npc_special1_png.vtex");
- }
-
-
-
- #EncounterIconNew.CenterIcon{
-
-  ignore-parent-flow:  true;
-  horizontal-align:  center;
-  margin: 0px;
-  margin-top: 56px;
-  width: 64px;
-  height: 64px;
- }
-
- #EncounterObjectives{
-
-  width:  100%;
-  height:  100px;
-  margin-left:  68px;
-  padding:  4px;
-  flow-children:  down;
-  horizontal-align:  center;
-  text-overflow: shrink;
-  padding-top: 6px;
- }
-
-
-
-
- .ObjectiveConainer{
-
-  width:  220px;
-  height:  32px;
-  height: fit-children;
-  horizontal-align:  left;
-  vertical-align: center;
-  flow-children:  down;
-
-
-  margin-top: 3px;
-  margin-left: 2px;
-  text-overflow: shrink;
-
-  background-color: #000000bb;
-  border-radius: 4px 4px 4px 4px;
-  box-shadow: inset #000000 0px 1px 1px 1px;
- }
-
-
- .ObjectiveConainer.Simple,.ObjectiveConainer.Counter{
-
-
-  height: 20px;
- }
-
- .ObjectiveLabelNew{
-
-  width: 220px;
-  height: 17px;
-  font-size: 15px;
-  font-family: Radiance,FZKai-Z03,TH Sarabun New,YDYGO 540;
-
-  letter-spacing: 1px;
-
-  margin-top: 0px;
-
-
-  color: #bbbbbb;
-  padding: 0px;
-  text-align:  center;
-  text-transform: uppercase;
-  text-overflow: shrink;
-  padding-bottom: -4px;
-  padding-top: 2px;
- }
-
- #ObjectiveProgressBar{
-
-  height:  14px;
-  width:  220px;
-
-  horizontal-align:  left;
-  vertical-align:  center;
- }
-
- .ObjectiveProgressLabel{
-
-  font-family: Radiance,FZKai-Z03,TH Sarabun New,YDYGO 540;
-  font-weight: bold;
-  text-shadow: 1px 3px 2px #000;
-  font-size:  17px;
-
-  vertical-align: center;
-  horizontal-align:  center;
-  text-align:  center;
-  color:  #ffffff;
-  letter-spacing: 0px;
-  margin-top:  -2px;
- }
-
- .Simple #ObjectiveProgressBar,.Counter #ObjectiveProgressBar{
-
-
-  visibility: collapse;
- }
-
- #ObjectiveProgressBar_Left{
-
-
-  background-image: url( "s2r://panorama/images/interface/objectivebar_psd.vtex");
-  background-repeat: no-repeat;
-  background-size: 100%;
-  background-position: center;
-
-   border-radius: 2px;
-
-  background-color: gradient( linear, 0% 0%, 100% 0%, from( #7B010000 ), color-stop (0.0, #7B0100dd), color-stop (1.0, #D02B29aa), to ( #FF737300 ) );
- }
-
- #ObjectiveProgressBar_Right{
-
-
-  background-image: url( "s2r://panorama/images/interface/objectivebar_empty_psd.vtex");
-  background-repeat: no-repeat;
-  background-size: 100%;
-  background-position: center;
-
-  background-color: #000000cc;
-  border-radius: 0px 4px 4px 0px;
-  box-shadow: inset #000000 0px 1px 0px 1px;
- }
-
- .ObjectiveLabelNew .DifficultyImage{
-
-
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 48px;
-  height: 48px;
-  margin-top: 5px;
-  horizontal-align: center;
-  background-image: url( "s2r://panorama/images/events/aghanim/difficulty_1_png.vtex");
- }
-
- #DifficultyContainer.AscensionLevel0 .DifficultyImage{
-
-  background-image: url( "s2r://panorama/images/events/aghanim/difficulty_1_png.vtex");
- }
-
- #DifficultyContainer.AscensionLevel1 .DifficultyImage{
-
-  background-image: url( "s2r://panorama/images/events/aghanim/difficulty_2_png.vtex");
- }
-
- #DifficultyContainer.AscensionLevel2 .DifficultyImage{
-
-  background-image: url( "s2r://panorama/images/events/aghanim/difficulty_3_png.vtex");
- }
-
- #DifficultyContainer.AscensionLevel3 .DifficultyImage{
-
-  background-image: url( "s2r://panorama/images/events/aghanim/difficulty_4_png.vtex");
- }
-
- #DifficultyContainer.AscensionLevel4 .DifficultyImage{
-
-  background-image: url( "s2r://panorama/images/events/aghanim/difficulty_5_png.vtex");
- }
-
- .DifficultyModifiersContainer{
-
-  width:  100%;
-  height:  70px;
-
-  margin-top:  0px;
- }
-
- .ModifierIcon{
-
-  height:  32px;
-  width:  32px;
-  margin:  2px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-image: url( "s2r://panorama/images/events/aghanim/interface/hazard_chillingtouch_png.vtex");
-  visibility: visible;
-  vertical-align: center;
-  border-radius: 50%;
- }
-
- #EncounterModifiersContainer{
-
-  flow-children:  right;
-  horizontal-align:  center;
-  margin: 4px;
-  height:  80px;
-  margin-top: 40px;
- }
-
- .AscensionLevel1 #AscensionModifier1{
-
-  visibility: visible;
-  vertical-align: center;
-  horizontal-align:  center;
- }
-
- .AscensionLevel2 #AscensionModifier1{
-
-  visibility: visible;
-  horizontal-align: center;
-  margin-right: 34px;
- }
-
- .AscensionLevel2 #AscensionModifier2{
-
-  visibility: visible;
-  horizontal-align: center;
-  margin-right: 28px;
- }
-
- .AscensionLevel3 #AscensionModifier1{
-
-  horizontal-align: center;
-  visibility: visible;
-  margin-right: 55px;
-  margin-top: -20px;
- }
-
- .AscensionLevel3 #AscensionModifier2{
-
-  horizontal-align: center;
-  visibility: visible;
-  margin-right: 60px;
- }
-
- .AscensionLevel3 #AscensionModifier3{
-
-  horizontal-align: center;
-  visibility: visible;
-  margin-right: 65px;
-  margin-top: -20px;
- }
-
- .AscensionLevel4 #AscensionModifier1{
-
-  visibility: visible;
-  vertical-align: center;
-  horizontal-align:  center;
-  margin-right: 95px;
-  margin-top: -24px;
- }
-
- .AscensionLevel4 #AscensionModifier2{
-
-  visibility: visible;
-  vertical-align: center;
-  horizontal-align:  center;
-  margin-right: 100px;
- }
-
- .AscensionLevel4 #AscensionModifier3{
-
-  visibility: visible;
-  vertical-align: center;
-  horizontal-align:  center;
-  margin-right: 85px;
- }
-
- .AscensionLevel4 #AscensionModifier4{
-
-  visibility: visible;
-  vertical-align: center;
-  horizontal-align:  center;
-  margin-right: 90px;
-  margin-top: -24px;
- }
-
-
- .ModifierIcon.ascension_chilling_touch{
-
-  background-image: url(  "s2r://panorama/images/events/aghanim/interface/hazard_chillingtouch_png.vtex");
- }
-
- .ModifierIcon.aghsfort_ascension_firefly{
-
-  background-image: url( "s2r://panorama/images/events/aghanim/interface/hazard_firefly_png.vtex");
- }
-
- .ModifierIcon.ascension_plasma_field{
-
-  background-image: url( "s2r://panorama/images/events/aghanim/interface/hazard_deathexplode_png.vtex");
- }
-
- .ModifierIcon.ascension_flicker{
-
-  background-image: url( "s2r://panorama/images/events/aghanim/interface/hazard_teleport_png.vtex");
- }
-
- .ModifierIcon.ascension_drunken{
-
-  background-image: url(  "s2r://panorama/images/events/aghanim/interface/hazard_drunk_png.vtex");
- }
-
- .ModifierIcon.ascension_bulwark{
-
-  background-image: url( "s2r://panorama/images/events/aghanim/interface/hazard_frontreduction_png.vtex");
- }
-
- .ModifierIcon.ascension_magic_resist{
-
-  background-image: url( "s2r://panorama/images/events/aghanim/interface/hazard_magicresist_png.vtex");
- }
-
- .ModifierIcon.ascension_extra_fast{
-
-  background-image: url( "s2r://panorama/images/events/aghanim/interface/hazard_speed_png.vtex");
- }
-
- .ModifierIcon.ascension_vampiric{
-
-  background-image: url( "s2r://panorama/images/events/aghanim/interface/hazard_vampiric_png.vtex");
- }
-
- .ModifierIcon.ascension_armor{
-
-  background-image: url( "s2r://panorama/images/events/aghanim/interface/hazard_armor_png.vtex");
- }
-
- .ModifierIcon.ascension_damage{
-
-  background-image: url( "s2r://panorama/images/events/aghanim/interface/hazard_attack_png.vtex");
- }
-
- .ModifierIcon.ascension_attack_speed{
-
-  background-image: url( "s2r://panorama/images/events/aghanim/interface/hazard_enrage_2_png.vtex");
- }
-
- .ModifierIcon.ascension_magic_immunity{
-
-  background-image: url(  "s2r://panorama/images/events/aghanim/interface/hazard_magicimmune_png.vtex");
- }
-
- .ModifierIcon.ascension_armor_sapping{
-
-  background-image: url( "s2r://panorama/images/events/aghanim/interface/hazard_armorshred_png.vtex");
- }
-
- .ModifierIcon.ascension_heal_suppression{
-
-  background-image: url(  "s2r://panorama/images/events/aghanim/interface/hazard_healsupress_png.vtex");
- }
-
- .ModifierIcon.aghsfort_ascension_silence{
-
-  background-image: url( "s2r://panorama/images/events/aghanim/interface/hazard_silence_png.vtex");
- }
-
- .ModifierIcon.aghsfort_ascension_magnetic_field{
-
-  background-image: url(  "s2r://panorama/images/events/aghanim/interface/hazard_bubble_png.vtex");
- }
-
- .ModifierIcon.ascension_embiggen{
-
-  background-image: url( "s2r://panorama/images/events/aghanim/interface/hazard_embiggen_png.vtex");
- }
-
- .ModifierIcon.ascension_vengeance{
-
-  background-image: url(  "s2r://panorama/images/events/aghanim/interface/hazard_net_png.vtex");
- }
-
- .ModifierIcon.aghsfort_ascension_invis{
-
-  background-image: url(  "s2r://panorama/images/events/aghanim/interface/hazard_glimmer_png.vtex");
- }
-
- .ModifierIcon.ascension_meteoric{
-
-  background-image: url(  "s2r://panorama/images/events/aghanim/interface/hazard_meteor_png.vtex");
+/* Prettified by Source 2 Viewer 5.0.0.0 - https://valveresourceformat.github.io */
+
+@define topBarHeight: 125px;
+@define negTopBarHeight: -125px;
+.AghanimTopBar
+{
+	width: 1050px;
+	horizontal-align: center;
+	vertical-align: top;
+	background-size: contain;
+	background-repeat: no-repeat;
+	margin-top: -12px;
+	z-index: -100;
+	transition-property: opacity, transform;
+	transition-duration: .1s;
+	transition-timing-function: ease-in-out;
+	opacity: 1;
 }
+
+.AghanimEndGameCinematic .AghanimTopBar
+{
+	opacity: 0;
+}
+
+.ShopIsOpen .AghanimTopBar
+{
+	opacity: 0;
+	transform: translateY( negTopBarHeight );
+}
+
+#MovingOverlay
+{
+	width: 100%;
+	height: 100%;
+	horizontal-align: center;
+	vertical-align: top;
+	background-image: url("s2r://panorama/images/interface/top_bar_active_masked_psd.vtex");
+	background-size: contain;
+	background-repeat: no-repeat;
+	transition-property: opacity;
+	transition-timing-function: ease-in;
+	transition-duration: .4s;
+	opacity: 0;
+}
+
+.Moving #MovingOverlay
+{
+	opacity: 1;
+}
+
+#KillCount
+{
+	color: white;
+	font-size: 36px;
+	font-weight: bold;
+	font-family: RadianceM;
+	height: 38px;
+	width: 50px;
+	text-align: center;
+	margin-top: 7px;
+	margin-left: 5px;
+}
+
+#RoshContainer
+{
+	horizontal-align: center;
+	width: 220px;
+	z-index: 500;
+	flow-children: down;
+}
+
+#CompetitionBlock
+{
+	margin: 5px;
+	width: 10%;
+	visibility: collapse;
+}
+
+#PlayersBlock
+{
+	flow-children: right;
+	horizontal-align: right;
+	margin-right: 4px;
+}
+
+#EncounterTopBarInfo
+{
+	horizontal-align: left;
+	height: 100%;
+	width: 100%;
+}
+
+#TopBarLeftFlare
+{
+	background-image: url("s2r://panorama/images/hud/reborn/header_endcap_psd.vtex");
+	background-size: 100%;
+	background-repeat: no-repeat;
+	width: 50px;
+	height: 70px;
+	transform: scaleX(-1);
+}
+
+#PartyPortraits
+{
+	flow-children: right;
+}
+
+#TimeBlock
+{
+	width: 200px;
+	height: 100%;
+	flow-children: down;
+}
+
+#EnemyContainer
+{
+	margin-top: 12px;
+	flow-children: down;
+	horizontal-align: right;
+	margin-right: 55px;
+	height: 65px;
+	width: 500px;
+}
+
+.TeamRow
+{
+	flow-children: right;
+	horizontal-align: right;
+}
+
+.TeamContainer
+{
+	padding-top: 1px;
+	padding-left: -1px;
+	padding-right: -1px;
+	padding-bottom: -2px;
+	flow-children: right;
+	margin: 2px;
+	saturation: 0.95;
+}
+
+.TeamContainer.TeamEliminated
+{
+	saturation: 0.05;
+}
+
+.EnemyRemainingImage
+{
+	height: 26px;
+	width: 26px;
+	margin: 0px;
+	margin-left: -1px;
+	margin-right: -2px;
+	saturation: 0.01;
+	wash-color: grey;
+}
+
+.EnemyRemainingImage.Alive
+{
+	wash-color: none;
+	saturation: 1.0;
+}
+
+.EnemyRemainingImage.Eliminated
+{
+	wash-color: #880000;
+}
+
+#RoomInfo
+{
+	horizontal-align: right;
+	margin: 10px;
+	margin-bottom: 0px;
+	width: 40%;
+	visibility: collapse;
+}
+
+#GameTimer,#BestRunInfo,#BestRunRelInfo,#NewPersonalBest,#DepthLabel
+{
+	color: #bbbbbb;
+	font-weight: normal;
+	text-overflow: shrink;
+	horizontal-align: center;
+	vertical-align: top;
+	text-shadow: 0px 2px 4px 4.0 black;
+	font-family: Radiance,FZKai-Z03,TH Sarabun New,YDYGO 540;
+	font-size: 16px;
+	letter-spacing: 1px;
+	text-align: center;
+}
+
+.LevelNameDivider
+{
+	width: 5px;
+	height: 5px;
+	vertical-align: center;
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-bottom: 1px;
+	background-color: #bbbbbb55;
+	border-radius: 50%;
+}
+
+.BestRunContainer
+{
+	visibility: collapse;
+	flow-children: right;
+	horizontal-align: center;
+}
+
+#BestRunInfo,#BestRunRelInfo,#NewPersonalBest
+{
+	font-size: 18px;
+	text-transform: uppercase;
+}
+
+#NewPersonalBest
+{
+	visibility: collapse;
+}
+
+.IsInTournamentMode.FasterRun #BestRunRelInfo
+{
+	color: #88FF88;
+}
+
+.IsInTournamentMode:not(.FasterRun) #BestRunRelInfo
+{
+	color: #FF8888;
+}
+
+#NewPersonalBest
+{
+	color: #88FF88;
+}
+
+.IsInTournamentMode.HasComparisonData .BestRunContainer,.IsInTournamentMode.DeepestRun #NewPersonalBest
+{
+	visibility: visible;
+}
+
+#RoshText
+{
+	font-size: 24px;
+	width: 100%;
+	text-align: center;
+	margin-top: 25px;
+	opacity: 0;
+}
+
+.AboutToMove #RoshText
+{
+	opacity: 1;
+}
+
+.RoomDifficultyIcon
+{
+	width: 20px;
+	height: 20px;
+	box-shadow: fill #000000af -3px -3px 6px 6px;
+	border-radius: 50%;
+	margin-left: 4px;
+	margin-right: 4px;
+	saturation: 1;
+	wash-color: #fff;
+	contrast: 1;
+	transform: translateY(0px);
+	opacity: 0;
+	transition-property: saturation, wash-color, transform, box-shadow, contrast;
+	transition-timing-function: ease-out;
+	transition-duration: .4s;
+	background-image: url("s2r://panorama/images/interface/minimap_boss_icon_png.vtex");
+	background-position: center;
+	background-size: contain;
+}
+
+#DifficultyContainer
+{
+	horizontal-align: right;
+	vertical-align: center;
+	margin-top: 5px;
+	height: 100%;
+}
+
+#Difficulty1
+{
+	opacity: 1;
+}
+
+.2Skull #Difficulty2
+{
+	opacity: 1;
+}
+
+.3Skull #Difficulty3
+{
+	opacity: 1;
+}
+
+.4Skull #Difficulty4
+{
+	opacity: 1;
+}
+
+.5Skull #Difficulty5
+{
+	opacity: 1;
+}
+
+#TitleContainer
+{
+	width: 100%;
+}
+
+#RoomTitle,#RoomInstructions
+{
+	color: white;
+	font-weight: bold;
+	horizontal-align: left;
+	vertical-align: center;
+	text-shadow: 1px 1px 2px 2.0 #00000011;
+	font-family: Radiance,FZKai-Z03,TH Sarabun New,YDYGO 540;
+	font-size: 14px;
+	letter-spacing: 2px;
+}
+
+#RoomTitle
+{
+	font-size: 20px;
+}
+
+.ScoreContainer
+{
+	flow-children: down;
+}
+
+#EarnedBPContainer
+{
+	vertical-align: bottom;
+	width: 242px;
+	height: 45px;
+	margin-top: 10px;
+	margin-left: -5px;
+	horizontal-align: left;
+	flow-children: right;
+	padding: 8px 0;
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( #000000EF ), to( #00000000 ) );
+}
+
+#EarnedBP,#EarnedBPAmount
+{
+	margin-left:2px;
+	color: #2faf69;
+	font-weight: bold;
+	text-shadow: 1px 1px 2px 2.0 #00000011;
+	font-family: Radiance,FZKai-Z03,TH Sarabun New,YDYGO 540;
+	font-size: 17px;
+	letter-spacing: 2px;
+	vertical-align: middle;
+}
+
+#EarnedBP
+{
+	margin-left: 5px;
+}
+
+#EarnedBPAmount
+{
+	color: white;
+}
+
+#BPIcon
+{
+	margin-left: 18px;
+	height: 20px;
+	width: 20px;
+	background-image: url("s2r://panorama/images/compendium/international2018/totalpoints_psd.vtex");
+	background-position: center;
+	background-size: cover;
+}
+
+#RoshMovingFX
+{
+	height: 512px;
+	width: 512px;
+	horizontal-align: middle;
+	opacity: 0;
+	margin-top: -70px;
+}
+
+.Moving #RoshMovingFX
+{
+	opacity: 1;
+}
+
+#EnrageTimerContainer
+{
+	width: 600px;
+	horizontal-align: center;
+	margin-top: 60px;
+	visibility: collapse;
+	flow-children: down;
+}
+
+#EnrageTimerContainer.Visible
+{
+	visibility: visible;
+}
+
+#EnrageTimerHP
+{
+	width: 710px;
+	horizontal-align: center;
+	vertical-align: top;
+	flow-children: down;
+}
+
+#EnrageTimerLabel
+{
+	horizontal-align: center;
+	vertical-align: bottom;
+	text-align: center;
+	text-shadow: 1px 1px 2px 3.0 #000000;
+	font-size: 25px;
+	color: white;
+}
+
+#EnrageTimerProgressBar
+{
+	width: 80%;
+	border-radius: 4px;
+	border: 3px solid #444;
+	background-color: black;
+	height: 24px;
+	vertical-align: center;
+	horizontal-align: center;
+	box-shadow: fill #000 -3px -3px 6px 6px;
+}
+
+#EnrageTimerProgressBar_Left
+{
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #326114 ), color-stop( 0.3, #54BA07 ), color-stop( .5, #54BA07 ), to( #326114 ) );
+	box-shadow: inset #000 1px 1px 3px 3px;
+	border-radius: 2px;
+}
+
+#EnrageTimerProgressBar_Left
+{
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #320000 ), color-stop( 0.3, #ff4A07 ), color-stop( .5, #ff4A07 ), to( #320000 ) );
+}
+
+#EnrageTimerProgressBar_Right
+{
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( #222222FF ), to( black ) );
+}
+
+.TopBarContainer
+{
+	width: 100%;
+	height: 150px;
+}
+
+.TopParticlesBg,.TopParticlesFg
+{
+	width: 100%;
+	height: 100%;
+}
+
+.TopBarNew
+{
+	margin-top: 12px;
+	height: topBarHeight;
+	width: 975px;
+	horizontal-align: center;
+}
+
+.LeftSection,.RightSection
+{
+	height: 80px;
+	width: 350px;
+}
+
+.CenterSectionBG,.LeftSection,.RightSection
+{
+	background-size: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	img-shadow: 0px 0px 3px 1.0 #00000000;
+}
+
+.LeftSection
+{
+	horizontal-align: left;
+	padding-right: 0px;
+	background-image: url("s2r://panorama/images/hud/aghs_leftsection_psd.vtex");
+}
+
+.RightSection
+{
+	horizontal-align: right;
+	background-image: url("s2r://panorama/images/hud/aghs_rightsection_psd.vtex");
+}
+
+.CenterSection
+{
+	horizontal-align: center;
+	height: 100%;
+	width: 275px;
+}
+
+.CenterSectionBG
+{
+	ignore-parent-flow: true;
+	flow-children: down;
+	background-image: url("s2r://panorama/images/hud/aghs_centersectionbg_psd.vtex");
+	height: 80px;
+	width: 100%;
+}
+
+.DepthAndTimer
+{
+	horizontal-align: center;
+	height: fit-children;
+	width: 100%;
+	flow-children: right;
+	margin-top: 2px;
+}
+
+.DepthAndTimerBG
+{
+	horizontal-align: center;
+	width: fit-children;
+	min-width: 120px;
+	flow-children: right;
+	padding-left: 8px;
+	padding-right: 8px;
+	padding-top: 3px;
+	padding-bottom: 2px;
+	background-color: #000000bb;
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset #00000055 0px 1px 1px 1px;
+}
+
+#DepthLabel
+{
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	horizontal-align: center;
+	text-align: center;
+	padding-right: 4px;
+	text-overflow: shrink;
+	min-width: 50px;
+}
+
+#DepthLabel.ShowDepth
+{
+	visibility: visible;
+}
+
+#GameTimer
+{
+	text-align: left;
+	padding-left: 4px;
+	min-width: 50px;
+	text-align: center;
+}
+
+#GameTimer,.EncounterDepthLabel
+{
+	font-size: 16px;
+	font-weight: normal;
+	text-transform: uppercase;
+}
+
+.EncounterDepthLabel
+{
+	color: #cccccc;
+	text-align: center;
+	font-weight: bold;
+	margin-top: 20px;
+}
+
+.EncounterNameLabelNew
+{
+	width: 260px;
+	max-height: 28px;
+	font-size: 18px;
+	font-family: Radiance,FZKai-Z03,TH Sarabun New,YDYGO 540;
+	font-weight: bold;
+	text-shadow: 1px 3px 2px #000;
+	text-align: center;
+	horizontal-align: center;
+	vertical-align: top;
+	padding: 1px;
+	padding-top: 0px;
+	text-transform: uppercase;
+	margin: 4px;
+	margin-top: 4px;
+	text-align: center;
+	letter-spacing: 2px;
+	color: white;
+	text-overflow: shrink;
+	z-index: 5;
+	box-shadow: fill 1px 2px 0px #00000066;
+}
+
+.ROOM_TYPE_ENEMY .EncounterNameLabelNew
+{
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( #3E64A400 ), color-stop (0.4, #3E64A4dd), color-stop (0.6, #3E64A4dd), to ( #3E64A400 ) );
+}
+
+.ROOM_TYPE_ENEMY.HardRoom .EncounterNameLabelNew
+{
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( #7B010000 ), color-stop (0.4, #7B0100dd), color-stop (0.6, #7B0100dd), to ( #7B010000 ) );
+}
+
+.ROOM_TYPE_BOSS .EncounterNameLabelNew
+{
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( #2B229200 ), color-stop (0.4, #2B2292dd), color-stop (0.6, #2B2292dd), to ( #2B229200 ) );
+}
+
+.ROOM_TYPE_TRANSITIONAL .EncounterNameLabelNew
+{
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( #79570000 ), color-stop (0.4, #795700dd), color-stop (0.6, #795700dd), to ( #79570000 ) );
+}
+
+.ROOM_TYPE_STARTING .EncounterNameLabelNew
+{
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( #002E8F00 ), color-stop (0.4, #002E8Fdd), color-stop (0.6, #002E8Fdd), to ( #002E8F00 ) );
+}
+
+.ROOM_TYPE_EVENT .EncounterNameLabelNew
+{
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( #79570000 ), color-stop (0.4, #795700dd), color-stop (0.6, #795700dd), to ( #79570000 ) );
+}
+
+.ROOM_TYPE_TRAPS .EncounterNameLabelNew
+{
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( #7D2D1400 ), color-stop (0.4, #7D2D14b9), color-stop (0.6, #7D2D14b9), to ( #7D2D1400 ) );
+}
+
+.ROOM_TYPE_BONUS .EncounterNameLabelNew,#BonusPanel .EncounterNameLabelNew
+{
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( #79570000 ), color-stop (0.4, #795700dd), color-stop (0.6, #795700dd), to ( #79570000 ) );
+}
+
+#EncounterIconNew
+{
+	width: 64px;
+	height: 64px;
+	background-size: contain;
+	background-position: center;
+	background-image: url("s2r://panorama/images/events/aghanim/aghanims_room_icon_png.vtex");
+	background-repeat: no-repeat;
+	vertical-align: top;
+	horizontal-align: left;
+	margin: 10px;
+	margin-left: 8px;
+	z-index: 3;
+	img-shadow: 0px 3px 6px 3.0 black;
+	opacity: 1;
+	wash-color: #75819375;
+}
+
+.ROOM_TYPE_ENEMY #EncounterIconNew
+{
+	background-image: url("s2r://panorama/images/events/aghanim/encounter_room_icon_png.vtex");
+}
+
+.ROOM_TYPE_ENEMY.HardRoom #EncounterIconNew
+{
+	background-image: url("s2r://panorama/images/events/aghanim/encounter_room_elite_icon_png.vtex");
+}
+
+.ROOM_TYPE_BOSS #EncounterIconNew
+{
+	background-image: url("s2r://panorama/images/events/aghanim/boss_room_icon_png.vtex");
+}
+
+.ROOM_TYPE_TRAPS #EncounterIconNew
+{
+	background-image: url("s2r://panorama/images/events/aghanim/trap_room_icon_png.vtex");
+}
+
+.ROOM_TYPE_STARTING #EncounterIconNew
+{
+	background-image: url("s2r://panorama/images/events/aghanim/aghanims_room_icon_png.vtex");
+}
+
+.ROOM_TYPE_TRANSITIONAL #EncounterIconNew
+{
+	background-image: url("s2r://panorama/images/events/aghanim/empty_room_icon_png.vtex");
+}
+
+.ROOM_TYPE_BONUS #EncounterIconNew
+{
+	background-image: url("s2r://panorama/images/events/aghanim/bonus_room_icon_png.vtex");
+}
+
+.ROOM_TYPE_EVENT #EncounterIconNew
+{
+	background-image: url("s2r://panorama/images/events/aghanim/npc_special1_png.vtex");
+}
+
+#EncounterIconNew.CenterIcon
+{
+	ignore-parent-flow: true;
+	horizontal-align: center;
+	margin: 0px;
+	margin-top: 56px;
+	width: 64px;
+	height: 64px;
+}
+
+#EncounterObjectives
+{
+	width: 100%;
+	height: 100px;
+	margin-left: 68px;
+	padding: 4px;
+	flow-children: down;
+	horizontal-align: center;
+	text-overflow: shrink;
+	padding-top: 6px;
+}
+
+.ObjectiveConainer
+{
+	width: 220px;
+	height: 32px;
+	height: fit-children;
+	horizontal-align: left;
+	vertical-align: center;
+	flow-children: down;
+	margin-top: 3px;
+	margin-left: 2px;
+	text-overflow: shrink;
+	background-color: #000000bb;
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: inset #000000 0px 1px 1px 1px;
+}
+
+.ObjectiveConainer.Simple,.ObjectiveConainer.Counter
+{
+	height: 20px;
+}
+
+.ObjectiveLabelNew
+{
+	width: 220px;
+	height: 17px;
+	font-size: 15px;
+	font-family: Radiance,FZKai-Z03,TH Sarabun New,YDYGO 540;
+	letter-spacing: 1px;
+	margin-top: 0px;
+	color: #bbbbbb;
+	padding: 0px;
+	text-align: center;
+	text-transform: uppercase;
+	text-overflow: shrink;
+	padding-bottom: -4px;
+	padding-top: 2px;
+}
+
+#ObjectiveProgressBar
+{
+	height: 14px;
+	width: 220px;
+	horizontal-align: left;
+	vertical-align: center;
+}
+
+.ObjectiveProgressLabel
+{
+	font-family: Radiance,FZKai-Z03,TH Sarabun New,YDYGO 540;
+	font-weight: bold;
+	text-shadow: 1px 3px 2px #000;
+	font-size: 17px;
+	vertical-align: center;
+	horizontal-align: center;
+	text-align: center;
+	color: #ffffff;
+	letter-spacing: 0px;
+	margin-top: -2px;
+}
+
+.Simple #ObjectiveProgressBar,.Counter #ObjectiveProgressBar
+{
+	visibility: collapse;
+}
+
+#ObjectiveProgressBar_Left
+{
+	background-image: url("s2r://panorama/images/interface/objectivebar_psd.vtex");
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-position: center;
+	border-radius: 2px;
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( #7B010000 ), color-stop (0.0, #7B0100dd), color-stop (1.0, #D02B29aa), to ( #FF737300 ) );
+}
+
+#ObjectiveProgressBar_Right
+{
+	background-image: url("s2r://panorama/images/interface/objectivebar_empty_psd.vtex");
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-position: center;
+	background-color: #000000cc;
+	border-radius: 0px 4px 4px 0px;
+	box-shadow: inset #000000 0px 1px 0px 1px;
+}
+
+.ObjectiveLabelNew .DifficultyImage
+{
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 48px;
+	height: 48px;
+	margin-top: 5px;
+	horizontal-align: center;
+	background-image: url("s2r://panorama/images/events/aghanim/difficulty_1_png.vtex");
+}
+
+#DifficultyContainer.AscensionLevel0 .DifficultyImage
+{
+	background-image: url("s2r://panorama/images/events/aghanim/difficulty_1_png.vtex");
+}
+
+#DifficultyContainer.AscensionLevel1 .DifficultyImage
+{
+	background-image: url("s2r://panorama/images/events/aghanim/difficulty_2_png.vtex");
+}
+
+#DifficultyContainer.AscensionLevel2 .DifficultyImage
+{
+	background-image: url("s2r://panorama/images/events/aghanim/difficulty_3_png.vtex");
+}
+
+#DifficultyContainer.AscensionLevel3 .DifficultyImage
+{
+	background-image: url("s2r://panorama/images/events/aghanim/difficulty_4_png.vtex");
+}
+
+#DifficultyContainer.AscensionLevel4 .DifficultyImage
+{
+	background-image: url("s2r://panorama/images/events/aghanim/difficulty_5_png.vtex");
+}
+
+.DifficultyModifiersContainer
+{
+	width: 100%;
+	height: 70px;
+	margin-top: 0px;
+}
+
+.ModifierIcon
+{
+	height: 32px;
+	width: 32px;
+	margin: 2px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-image: url("s2r://panorama/images/events/aghanim/interface/hazard_chillingtouch_png.vtex");
+	visibility: visible;
+	vertical-align: center;
+	border-radius: 50%;
+}
+
+#EncounterModifiersContainer
+{
+	flow-children: right;
+	horizontal-align: center;
+	margin: 4px;
+	height: 80px;
+	margin-top: 40px;
+}
+
+.AscensionLevel1 #AscensionModifier1
+{
+	visibility: visible;
+	vertical-align: center;
+	horizontal-align: center;
+}
+
+.AscensionLevel2 #AscensionModifier1
+{
+	visibility: visible;
+	horizontal-align: center;
+	margin-right: 34px;
+}
+
+.AscensionLevel2 #AscensionModifier2
+{
+	visibility: visible;
+	horizontal-align: center;
+	margin-right: 28px;
+}
+
+.AscensionLevel3 #AscensionModifier1
+{
+	horizontal-align: center;
+	visibility: visible;
+	margin-right: 55px;
+	margin-top: -20px;
+}
+
+.AscensionLevel3 #AscensionModifier2
+{
+	horizontal-align: center;
+	visibility: visible;
+	margin-right: 60px;
+}
+
+.AscensionLevel3 #AscensionModifier3
+{
+	horizontal-align: center;
+	visibility: visible;
+	margin-right: 65px;
+	margin-top: -20px;
+}
+
+.AscensionLevel4 #AscensionModifier1
+{
+	visibility: visible;
+	vertical-align: center;
+	horizontal-align: center;
+	margin-right: 95px;
+	margin-top: -24px;
+}
+
+.AscensionLevel4 #AscensionModifier2
+{
+	visibility: visible;
+	vertical-align: center;
+	horizontal-align: center;
+	margin-right: 100px;
+}
+
+.AscensionLevel4 #AscensionModifier3
+{
+	visibility: visible;
+	vertical-align: center;
+	horizontal-align: center;
+	margin-right: 85px;
+}
+
+.AscensionLevel4 #AscensionModifier4
+{
+	visibility: visible;
+	vertical-align: center;
+	horizontal-align: center;
+	margin-right: 90px;
+	margin-top: -24px;
+}
+
+.ModifierIcon.ascension_chilling_touch
+{
+	background-image: url("s2r://panorama/images/events/aghanim/interface/hazard_chillingtouch_png.vtex");
+}
+
+.ModifierIcon.aghsfort_ascension_firefly
+{
+	background-image: url("s2r://panorama/images/events/aghanim/interface/hazard_firefly_png.vtex");
+}
+
+.ModifierIcon.ascension_plasma_field
+{
+	background-image: url("s2r://panorama/images/events/aghanim/interface/hazard_deathexplode_png.vtex");
+}
+
+.ModifierIcon.ascension_flicker
+{
+	background-image: url("s2r://panorama/images/events/aghanim/interface/hazard_teleport_png.vtex");
+}
+
+.ModifierIcon.ascension_drunken
+{
+	background-image: url("s2r://panorama/images/events/aghanim/interface/hazard_drunk_png.vtex");
+}
+
+.ModifierIcon.ascension_bulwark
+{
+	background-image: url("s2r://panorama/images/events/aghanim/interface/hazard_frontreduction_png.vtex");
+}
+
+.ModifierIcon.ascension_magic_resist
+{
+	background-image: url("s2r://panorama/images/events/aghanim/interface/hazard_magicresist_png.vtex");
+}
+
+.ModifierIcon.ascension_extra_fast
+{
+	background-image: url("s2r://panorama/images/events/aghanim/interface/hazard_speed_png.vtex");
+}
+
+.ModifierIcon.ascension_vampiric
+{
+	background-image: url("s2r://panorama/images/events/aghanim/interface/hazard_vampiric_png.vtex");
+}
+
+.ModifierIcon.ascension_armor
+{
+	background-image: url("s2r://panorama/images/events/aghanim/interface/hazard_armor_png.vtex");
+}
+
+.ModifierIcon.ascension_damage
+{
+	background-image: url("s2r://panorama/images/events/aghanim/interface/hazard_attack_png.vtex");
+}
+
+.ModifierIcon.ascension_attack_speed
+{
+	background-image: url("s2r://panorama/images/events/aghanim/interface/hazard_enrage_2_png.vtex");
+}
+
+.ModifierIcon.ascension_magic_immunity
+{
+	background-image: url("s2r://panorama/images/events/aghanim/interface/hazard_magicimmune_png.vtex");
+}
+
+.ModifierIcon.ascension_armor_sapping
+{
+	background-image: url("s2r://panorama/images/events/aghanim/interface/hazard_armorshred_png.vtex");
+}
+
+.ModifierIcon.ascension_heal_suppression
+{
+	background-image: url("s2r://panorama/images/events/aghanim/interface/hazard_healsupress_png.vtex");
+}
+
+.ModifierIcon.aghsfort_ascension_silence
+{
+	background-image: url("s2r://panorama/images/events/aghanim/interface/hazard_silence_png.vtex");
+}
+
+.ModifierIcon.aghsfort_ascension_magnetic_field
+{
+	background-image: url("s2r://panorama/images/events/aghanim/interface/hazard_bubble_png.vtex");
+}
+
+.ModifierIcon.ascension_embiggen
+{
+	background-image: url("s2r://panorama/images/events/aghanim/interface/hazard_embiggen_png.vtex");
+}
+
+.ModifierIcon.ascension_vengeance
+{
+	background-image: url("s2r://panorama/images/events/aghanim/interface/hazard_net_png.vtex");
+}
+
+.ModifierIcon.aghsfort_ascension_invis
+{
+	background-image: url("s2r://panorama/images/events/aghanim/interface/hazard_glimmer_png.vtex");
+}
+
+.ModifierIcon.ascension_meteoric
+{
+	background-image: url("s2r://panorama/images/events/aghanim/interface/hazard_meteor_png.vtex");
+}
+
