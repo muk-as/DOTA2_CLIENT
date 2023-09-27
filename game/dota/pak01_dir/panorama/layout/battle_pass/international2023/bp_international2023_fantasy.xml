@@ -1,0 +1,51 @@
+<!-- xml reconstructed by Source 2 Viewer 5.0.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/dashboard.vcss_c" />
+		<include src="s2r://panorama/styles/dashboard_page_shared.vcss_c" />
+		<include src="s2r://panorama/styles/battle_pass/international2023/bp_international2023_shared.vcss_c" />
+		<include src="s2r://panorama/styles/battle_pass/international2023/bp_international2023_fantasy.vcss_c" />
+	</styles>
+	<snippets>
+		<snippet name="PeriodTab">
+			<TabButton class="StageTab FixedWidth">
+				<Panel class="StageTabLeft">
+					<Label class="StageName" text="{s:stage_name}" />
+					<DOTACountdown id="LockCountdown" class="LeftRightFlow" server-time="true">
+						<Label class="StageLock LockUpcoming" text="#DOTA_FantasyRosterLockCountdown" />
+						<Label class="StageLock Locked" text="#DOTA_FantasyRosterLocked" />
+					</DOTACountdown>
+				</Panel>
+				<Panel class="StageTabRight" />
+			</TabButton>
+		</snippet>
+	</snippets>
+	<DOTABPInternational2023FantasyPage class="DashboardPage FullDashboardPage" dashboardclass="International2023BattlePassPage">
+		<DOTAScenePanel class="TopGodRays" map="scenes/loadout_preview_rays" camera="camera_1" hittest="false" particleonly="false" />
+		<Panel class="PageContents BPSharedPageContainer">
+			<Panel class="BPSharedHeaderContainer Thin">
+				<Label class="BPTitle" text="#DOTA_Compendium_SecondaryTabHeader_Fantasy" />
+				<Panel id="PeriodHeaderRow" class="HeaderRow" />
+				<Panel id="HelpPanel">
+					<Button id="CraftingHelpButton" class="ButtonPrimary DarkGrey" onactivate="FantasyCraftToggleHelp()">
+						<Label text="#DOTA_HowToPlay" />
+						<Image src="s2r://panorama/images/control_icons/24px/help.vsvg" />
+					</Button>
+					<Button id="CraftingResetButton" class="ButtonPrimary DarkGrey" onactivate="FantasyCraftResetTutorial()">
+						<Label text="#DOTA_FantasyCraft_ResetTutorial" />
+						<Image src="s2r://panorama/images/control_icons/24px/reset.vsvg" />
+					</Button>
+				</Panel>
+			</Panel>
+			<Panel id="PeriodBodyRow" class="Body" />
+			<Panel class="NoCompendiumView">
+				<Panel class="LockIconContainer">
+					<Image class="LockIcon" src="s2r://panorama/images/control_icons/24px/lock.vsvg" />
+				</Panel>
+				<Label class="LockedHeader" text="#DOTA_FantasyCraft_NoCompendium_Title" />
+				<Label class="HeaderDetails LighterGreyText Opacity_60" text="#DOTA_FantasyCraft_NoCompendium" />
+			</Panel>
+		</Panel>
+	</DOTABPInternational2023FantasyPage>
+</root>

@@ -269,7 +269,6 @@
 24C_OP_StopAfterCPDuration
 24C_OP_VectorFieldSnapshot
 24IPulseBreakpointInstance
-25CParticleBindingRealPulse
 25CParticleFunctionOperator
 25CParticleFunctionRenderer
 25CParticleSystemDefinition
@@ -361,6 +360,7 @@
 28C_OP_SetControlPointToCenter
 28C_OP_SetControlPointToPlayer
 28C_OP_SetPerChildControlPoint
+28C_OP_ShapeMatchingConstraint
 28IRefCountedParticleAttribute
 29CParticleCollectionFloatInput
 29CPulseCell_BaseYieldingInflow
@@ -663,6 +663,7 @@
 32CParticleFunctionDefinitionTypedI28C_OP_SetControlPointToCenterE
 32CParticleFunctionDefinitionTypedI28C_OP_SetControlPointToPlayerE
 32CParticleFunctionDefinitionTypedI28C_OP_SetPerChildControlPointE
+32CParticleFunctionDefinitionTypedI28C_OP_ShapeMatchingConstraintE
 32CParticleFunctionDefinitionTypedI29C_INIT_CreateSequentialPathV2E
 32CParticleFunctionDefinitionTypedI29C_INIT_DistanceToNeighborCullE
 32CParticleFunctionDefinitionTypedI29C_INIT_RemapQAnglesToRotationE
@@ -799,7 +800,7 @@
 32C_OP_SetControlPointFieldToWater
 32C_OP_SetControlPointToCPVelocity
 33333333H
-333?f
+333?H
 33CPulseCell_Step_TestDomainEntFire
 33C_INIT_InheritFromParentParticles
 33C_INIT_RandomAlphaWindowThreshold
@@ -873,7 +874,6 @@
 39C_OP_RemapDistanceToLineSegmentToVector
 3;CScs
 3L?Zb
-4$usH
 4(knN_p
 40C_INIT_InitSkinnedPositionFromCPSnapshot
 40C_OP_SetFloatAttributeToVectorExpression
@@ -909,12 +909,12 @@
 8@%r8 8@-80(%rbx
 8@%rdi 8@%rsi
 8@%rdx 8@%rax
+8C_OP_RemapSDFDistanceToScalarAttribute
 8HcG0L
 8LcwpE
 8[A\A
 8[A\A]A^A
 8]pt	8]q
-8m_nVectorFieldOutput
 8witJH
 9B(~wH
 9C4v'H
@@ -927,12 +927,11 @@
 A minimum on particle simulation time, particle simulation happening more frequently than this will lerp
 A testing-only domain that doesn't correspond to any in-engine use case
 A testing-only domain that draws on a 2D canvas with a LOGO-like 'turtle' cursor
-A+D$tA+T$t
 A1ËA(A
 A8D$U
 A8npt
-A9D$tA
 A9F4v4I
+A9T$t
 ACParticleSnapshot::%s - Invalid attribute mapping specified (must be one-to-one
 ADD_FLOAT
 ADD_INT
@@ -1003,11 +1002,13 @@ AWAVAUL
 AWAVAULc
 AWAVAUM
 AWAVE1
+AWAVfA
 A\A]A
 A\A]A^A
 A\A]A^A_ÐAUATUH
 A\A]A^ÐAUL
 A\A]H
+A\A^A
 A]A^A
 Absolute value (float
 Absolute value (int
@@ -1073,6 +1074,7 @@ Attempting to use invalid particle definition "%s
 August
 Author Texture As Gradient
 Average
+Average Hitbox Speed
 Avg Actual Traces
 Avg Intersection Tests
 Avg. Render (us
@@ -1082,6 +1084,7 @@ A A A
 A耀A耀A
 BBOX_DIMENSIONS
 BBoxVolumeType_t
+BC_OP_ParticlePhysics
 BLURFILTER_BOX
 BLURFILTER_GAUSSIAN
 BONE_INDICES
@@ -1134,6 +1137,7 @@ Break Value of >= 1
 Broken promise
 Browse to the particle in asset browser, right click and select Full Recompile
 Bump Strength
+C L9 t
 C t&D
 C%d:I%d {ID=%-3d
 CBasePulseGraphInstance
@@ -1177,8 +1181,6 @@ CP to set to surface current flow velocity
 CP to trace from
 CP visibility maximum
 CP visibility minimum
-CParticleBindingRealPulse
-CParticleBindingRealPulse!Graph_UpdateBoundValues
 CParticleCollection::CParticleCollection [%p
 CParticleCollection::GenerateSortedIndexList
 CParticleCollection::InitializeNewParticles
@@ -1551,7 +1553,6 @@ C_OP_OscillateScalarSimple
 C_OP_OscillateVector
 C_OP_OscillateVectorSimple
 C_OP_ParentVortices
-C_OP_ParticlePhysics
 C_OP_PerParticleForce
 C_OP_PercentageBetweenTransformLerpCPs
 C_OP_PercentageBetweenTransforms
@@ -1603,7 +1604,6 @@ C_OP_RemapNamedModelSequenceEndCap
 C_OP_RemapNamedModelSequenceOnceTimed
 C_OP_RemapParticleCountOnScalarEndCap
 C_OP_RemapParticleCountToScalar
-C_OP_RemapSDFDistanceToScalarAttribute
 C_OP_RemapSDFDistanceToVectorAttribute
 C_OP_RemapSDFGradientToVectorAttribute
 C_OP_RemapScalar
@@ -1701,6 +1701,7 @@ C_OP_SetToCP
 C_OP_SetVariable
 C_OP_SetVec
 C_OP_SetVectorAttributeToVectorExpression
+C_OP_ShapeMatchingConstraint
 C_OP_SnapshotRigidSkinToBones
 C_OP_SnapshotSkinToBones
 C_OP_Spin
@@ -1723,7 +1724,6 @@ C_OP_WorldTraceConstraint
 Calculate vector attribute
 Call C%d:I%d (%s
 CallInfo%d: %s
-Called to fetch all needed bound values from the attached targets, when dirty
 Called to invoke the graph
 Cancel any waiting cursors
 Cannot allocate abstract class
@@ -1789,6 +1789,7 @@ Constrain distance to control point
 Constrain distance to path between two control points
 Constrain distance to user specified path
 Constrain particles to a box
+Constrain particles to initial shape
 Control Point Orientation Amount (-1..1
 Control Point Providing Hitbox index
 Control Point Velocity Force
@@ -1930,6 +1931,7 @@ Drive CP from global sound float
 Dump all new particles, optional name substring
 Dump all simulating particles, optional name substring
 Duration value for path point
+Dynamic Entities Only
 Dynamic Fog No Shadows
 Dynamic Fog with Shadows
 E [A\A]A
@@ -1950,6 +1952,7 @@ EXPORTSYSTEM_INTERFACE_VERSION_001
 EarlyInit_Tier0
 EconItemToolModel_001
 Elapsed time = %f
+Em_flInput
 Emit continuously
 Emit continuously" and "Emit noise" no longer support "scale emission to used control points
 Emit instantaneously
@@ -1960,6 +1963,7 @@ Enable Cloth Simulation
 Enable Named Values (EXPERIMENTAL
 Enable children from parent particle count
 Enable multithreading to use std::thread
+Enable new paths in some particle operators
 Enable/disable particle rendering
 EnableAlphaTint
 EnableMixedResolution
@@ -1972,7 +1976,6 @@ EngineServiceMgr001
 EnsureCapacity
 EntFire,%d,%s,%s
 Entire Path
-Entities Only
 Entity Handle
 Entity Hitbox Cache Field (Requires Stick on Collision
 Entity Normal Cache Field (Requires Stick on Collision
@@ -2093,6 +2096,7 @@ G'@tJUH
 G(H;G0r
 G(H;G0sM
 G(H;G0sq
+G7@tJUH
 G8HcW0H
 GCC: (SteamRT 10.3.0-3+steamrt3.1+bsrt3.1) 10.3.0
 GCC: (SteamRT 9.3.0-13+steamrt1.2+srt1) 9.3.0
@@ -2107,7 +2111,6 @@ GLOBAL
 GLOBAL_H9
 GLOW_ALPHA
 GLOW_RGB
-GVWuÙ2
 GameResourceServiceClientV001
 GameResourceServiceServerV001
 GameSupportsLegacyShaders
@@ -2150,9 +2153,8 @@ H*0"ZOW
 H+D$8H
 H+K H+S
 H9D$xt
-H9F v7
+H;5s8I
 H;E0sR
-H;F s'Hi
 H;HxtLH
 HAT	KAT	KAT	KAT	K
 HBm_bUseShadowFastPath
@@ -2172,6 +2174,7 @@ HcCx;C|H
 HcG ;G$H
 HcK8Ic
 HelpSystem_001
+Hitbox Count
 Hitbox Index
 Hitbox Offset Position
 HitboxLerpType_t
@@ -2292,7 +2295,6 @@ IterateRows
 Iվ>YA1
 J5`!gF
 JUMP_COND
-JY5S3
 January
 JumpOrLeap( C%d:I%d
 KeyValueCache001
@@ -2484,8 +2486,8 @@ Maximum Trace Length
 Maximum distance
 Maximum of two values (float
 Maximum of two values (int
+Mc&E;f
 Mc.E;n
-Mc/E;o
 Mc7E;w
 Mc<$E
 Medium
@@ -2550,6 +2552,7 @@ Multiply
 Multiply # of rendered particles by this for perf testing
 Multiply x2
 Mx8KVu
+Mȋ59D2
 MоF"5PL
 N10__cxxabiv115__forced_unwindE
 N10__cxxabiv117__class_type_infoE
@@ -2584,7 +2587,6 @@ N9__gnu_cxx18stdio_sync_filebufIwSt11char_traitsIwEEE
 N9__gnu_cxx20recursive_init_errorE
 N9__gnu_cxx24__concurrence_lock_errorE
 N9__gnu_cxx26__concurrence_unlock_errorE
-ND$t1҉C
 NEGATE_FLOAT
 NEGATE_INT
 NETWORK_FIELD_LOWEST_PRIORITY
@@ -2730,6 +2732,7 @@ Output vector
 Output%d: '%s' (%s
 Overlay
 OverrideShaderMode
+P$Hcx E
 P8H=vmdlt
 PARENT_PARTICLE_INDEX
 PARTICLEBLEND_DARKEN
@@ -2783,8 +2786,10 @@ PARTICLE_FALLOFF_LINEAR
 PARTICLE_FOG_DISABLED
 PARTICLE_FOG_ENABLED
 PARTICLE_FOG_GAME_DEFAULT
+PARTICLE_HITBOX_AVERAGE_SPEED
 PARTICLE_HITBOX_BIAS_ENTITY
 PARTICLE_HITBOX_BIAS_HITBOX
+PARTICLE_HITBOX_COUNT
 PARTICLE_ID
 PARTICLE_LIGHTING_PER_PARTICLE
 PARTICLE_LIGHTING_PER_PIXEL
@@ -2869,6 +2874,7 @@ PARTICLE_TRACE_MISS_BEHAVIOR_TRACE_END
 PARTICLE_TRACE_SET_ALL
 PARTICLE_TRACE_SET_DYNAMIC
 PARTICLE_TRACE_SET_STATIC
+PARTICLE_TRACE_SET_STATIC_AND_KEYFRAMED
 PARTICLE_VRHAND_CP
 PARTICLE_VRHAND_CP_OBJECT
 PARTICLE_VRHAND_LEFT
@@ -2998,6 +3004,7 @@ PVAL_SNDEVT_GUID
 PVAL_STRING
 PVAL_TRANSFORM
 PVAL_VEC3
+PVEC_TYPE_CLOSEST_CAMERA_POSITION
 PVEC_TYPE_COUNT
 PVEC_TYPE_CP_DELTA
 PVEC_TYPE_CP_RELATIVE_DIR
@@ -3024,7 +3031,6 @@ Parent Map: %s
 Parent Particle Index
 Particle Alpha & Alpha Reference
 Particle Binding
-Particle Binding (Real
 Particle Error before emit: Effect %s, Function %s (%d, %d
 Particle Error: Effect %s, Operator %s (%d, %d
 Particle ID
@@ -3065,6 +3071,7 @@ ParticleFloatRandomMode_t
 ParticleFloatType_t
 ParticleFogType_t
 ParticleHitboxBiasType_t
+ParticleHitboxDataSelection_t
 ParticleImpulseType_t
 ParticleLightBehaviorChoiceList_t
 ParticleLightFogLightingMode_t
@@ -3213,7 +3220,6 @@ PulseServerEntities
 PulseTestEHandle_t
 PulseValueType_t
 Q)=root
-QIcL$ Ic
 Qkkbal
 Quadratic/Linear Bias
 Quadrilaterals
@@ -3278,13 +3284,13 @@ RegisterTestCheckpoint
 Reinitialize on endcap scalar random
 Relative probability
 Release
-Remap Average Hitbox Speed to CP
 Remap CP component to CP component
 Remap CP orientation to rotations
 Remap CP speed to CP
 Remap CP velocity to vector
 Remap Chladni Wave to Scalar
 Remap External Wind to Control Point
+Remap Hitbox Data to CP
 Remap QAngle in CP to rotations
 Remap SDF distance to scalar
 Remap SDF distance to vector
@@ -3531,6 +3537,7 @@ SSE and SSE2 are required
 SUB_FLOAT
 SUB_INT
 SYNC_WAIT_FOR_COMPLETION
+Satic World Only
 Saturate color pre alphablend
 Saturday
 Scalar random
@@ -3664,7 +3671,6 @@ Sim Time Min: %.2fms
 Simulation Options
 SimultaneousParallel (%d
 Sine of angle, in degrees (0 -> 0, 90 -> 1
-SkeletalInputSettings
 Skip rendering on mobile
 Snapshot Index T Value
 Snapshot Options
@@ -3844,6 +3850,7 @@ St9type_info
 Stack depth limit hit (%d
 StandardLightingAttenuationStyle_t
 Start Radius
+Static World and Kinematic/Keyframed Only
 StatsService_001
 SteamAudio001
 Stencil
@@ -3948,7 +3955,6 @@ Twist amount (-1..1
 Twist around axis
 Twist around axis" force now rotates around the specified control point instead of control point 0
 UNUSED
-UUUU3333
 UUUUUU
 UUUUUUUUH
 UUUUw
@@ -3965,7 +3971,6 @@ Unknown KV3 specific type %u
 Unknown error
 Unsupported KV3 basic type '%s' (%d
 Update lights
-UpdateBoundValues
 Usage: particle_profile <'systems'|'operators'> <num_frames
 Usage: particle_profile_spike <'systems'|'operators'> <spike_threshold_ms
 Use Default Cropping Behavior
@@ -4143,7 +4148,6 @@ Wednesday
 Wf9L$8
 Within-Cluster Fire Count Before Cooldown
 Within-Cluster Refire Time
-World Only
 World-Z Align
 WorldRendererMgr001
 Worley
@@ -4162,8 +4166,8 @@ Y axis scaling scalar field
 Y offset of center point
 Y>t$7
 Y?data_offset
-YA1ATI
 YA1ATL
+YIcL$ Ic
 Yield, Resume=%s
 You must construct it with ORDERED_CONSTRUCT macro in the dependency resolution function
 Y低T啓B
@@ -8734,7 +8738,6 @@ ZnamSt11align_val_tRKSt9nothrow_t
 ZnwmRKSt9nothrow_t
 ZnwmSt11align_val_t
 ZnwmSt11align_val_tRKSt9nothrow_t
-aIcN Ic
 accelerate position
 accept decals
 active_frame
@@ -9133,7 +9136,6 @@ dynsym
 eXIfoFFstIMEsPLTpHYshISTbKGDiTXtzTXttEXtsRGBsBITiCCPgAMAcHRMtRNSIDATPLTEIHDR
 ease in and out
 ease out
-edArgs
 eh_frame
 eh_frame_hdr
 ehandle
@@ -9145,6 +9147,7 @@ emission maximum
 emission minimum
 emission rate
 emission scale from killed parent particles
+emission scale from parent particle count
 emission start time
 emit particles for killed parent particles
 emitter lifetime end time (seconds
@@ -9324,6 +9327,7 @@ head taper scale
 header crc mismatch
 height override control point number
 hidden alias for
+hitbox data
 hitbox set
 hitbox shell thickness
 hitbox velocity inherited scale
@@ -9573,6 +9577,7 @@ m_Emitters
 m_EndingForce
 m_EntryChunk
 m_EventName
+m_ExpectedArgs
 m_ExpectedParamType
 m_FieldName
 m_FloatComponentX
@@ -9982,6 +9987,7 @@ m_bUseDeltaV
 m_bUseHLambert
 m_bUseLocalCoords
 m_bUseMixedResolutionRendering
+m_bUseNewCode
 m_bUseNormal
 m_bUseOrientation
 m_bUseOrigRadius
@@ -10216,7 +10222,6 @@ m_flInitialRestingLength
 m_flInitialSpeedMax
 m_flInitialSpeedMin
 m_flInnerConeAngle
-m_flInput
 m_flInput0
 m_flInput1
 m_flInput2
@@ -10353,6 +10358,7 @@ m_flOutputMax
 m_flOutputMin
 m_flOutputRemap
 m_flOverbrightFactor
+m_flParentParticleScale
 m_flParentRadiusScale
 m_flParticleDensity
 m_flParticleSimulationRate
@@ -10446,6 +10452,7 @@ m_flSelfIllumBlendToFull
 m_flShadowDensity
 m_flShakeDuration
 m_flShape
+m_flShapeRestorationTime
 m_flShellSize
 m_flSimulationScale
 m_flSkirt
@@ -10723,6 +10730,8 @@ m_nHeadLocationMax
 m_nHeadLocationMin
 m_nHeightCP
 m_nHeightControlPointNumber
+m_nHitboxDataType
+m_nHitboxDataType != PARTICLE_HITBOX_AVERAGE_SPEED
 m_nHitboxValueFromControlPointIndex
 m_nHorizCropField
 m_nIgnoreCP
@@ -10914,6 +10923,7 @@ m_nTonemapLevelField
 m_nTonemapWeightField
 m_nTraceMissBehavior
 m_nTraceSet
+m_nTraceSet == PARTICLE_TRACE_SET_STATIC
 m_nType
 m_nValue
 m_nVar
@@ -10922,6 +10932,7 @@ m_nVectorAttribute
 m_nVectorComponent
 m_nVectorFieldForOrientation
 m_nVectorFieldInput
+m_nVectorFieldOutput
 m_nVertCropField
 m_nViewModelEffect
 m_nViewModelEffect == INHERITABLE_BOOL_TRUE
@@ -11445,7 +11456,6 @@ particle neighbor increment amount
 particle number to read
 particle number/offset
 particle to use
-particle_debug_creation_filter
 particle_id
 particle_layer_id_whitelist
 particle_powsimd_random_range_exp
@@ -11588,6 +11598,7 @@ r_particle_max_draw_distance
 r_particle_max_texture_layers
 r_particle_min_timestep
 r_particle_mixed_resolution_viewstart
+r_particle_newcode
 r_particle_render_refreshes_sleep_timer
 r_particle_render_test
 r_particle_timescale
@@ -11806,6 +11817,7 @@ shader_extra_data_1
 shader_extra_data_2
 shadow color
 shake duration after end
+shape restoration time
 sheet animation time scale
 shstrtab
 shuffle
@@ -11935,7 +11947,6 @@ tGIcD
 tKATUH
 tKHcCP;CTH
 tO;wt}WLc
-tPMcl
 tVMc.I
 tWAVAUATI
 t[ATUH
@@ -12061,6 +12072,7 @@ use hmd orientation
 use local space
 use local system
 use max-luminance blending for sequence
+use new code
 use old code
 use only bounding box
 use particle count as density scale

@@ -1,5 +1,25 @@
 /* Prettified by Source 2 Viewer 5.0.0.0 - https://valveresourceformat.github.io */
 
+@define DataWidgetBackgroundColor: rgba(0, 6, 16, 0.95);
+.ShowcaseItem
+{
+	width: 100%;
+	height: 100%;
+}
+
+.State_Invalid .ShowcaseItem,.State_Failure .ShowcaseItem
+{
+	border: 1px solid #f40f0fff;
+	background-color: #f40f0f17;
+	border-radius: 3px;
+}
+
+.State_PartiallyInvalid .ShowcaseItem
+{
+	border: 1px solid #f4b30f81;
+	border-radius: 3px;
+}
+
 .Trophy
 {
 	width: 150px;
@@ -18,10 +38,16 @@
 	height: 100px;
 }
 
+.HeroIcon #HeroIcon
+{
+	width: 100%;
+	height: 100%;
+}
+
 .HeroModel
 {
-	width: 500px;
-	height: 400px;
+	width: 100%;
+	height: 100%;
 }
 
 .HeroModel #HeroSetPreview
@@ -29,6 +55,29 @@
 	width: 100%;
 	height: 100%;
 	opacity-mask: url("s2r://panorama/images/masks/softedge_box_png.vtex");
+}
+
+.State_Invalid .HeroModel #HeroSetPreview,.State_Failure .HeroModel #HeroSetPreview
+{
+	wash-color: #3c3c3c;
+}
+
+.WorldItem
+{
+	width: 100%;
+	height: 100%;
+}
+
+.WorldItem #WorldItemPreview
+{
+	width: 100%;
+	height: 100%;
+	opacity-mask: url("s2r://panorama/images/masks/softedge_box_png.vtex");
+}
+
+.State_Invalid .WorldItem #WorldItemPreview,.State_Failure .WorldItem #WorldItemPreview
+{
+	wash-color: #666;
 }
 
 .Sticker
@@ -51,8 +100,10 @@
 
 .ChatWheel #HeroImage
 {
-	width: 20px;
-	height: 20px;
+	vertical-align: middle;
+	height: 100%;
+	width: height-percentage( 100% );
+	max-height: 32px;
 	visibility: collapse;
 }
 
@@ -63,8 +114,10 @@
 
 .ChatWheel #ChatWheelSoundButton
 {
-	width: 20px;
-	height: 20px;
+	vertical-align: middle;
+	height: 100%;
+	width: height-percentage( 100% );
+	max-height: 32px;
 	visibility: collapse;
 	background-image: url("s2r://panorama/images/hud/reborn/icon_scoreboard_mute_sound_psd.vtex");
 	background-repeat: no-repeat;
@@ -91,8 +144,10 @@
 
 .ChatWheel .ChatWheelIcon
 {
-	width: 20px;
-	height: 20px;
+	vertical-align: middle;
+	height: 100%;
+	width: height-percentage( 100% );
+	max-height: 32px;
 	background-image: url("s2r://panorama/images/control_icons/chat_wheel_icon_png.vtex");
 	background-size: contain;
 	background-repeat: no-repeat;
@@ -107,15 +162,13 @@
 	visibility: collapse;
 }
 
-.ChatWheel.IsAllChat .ChatWheelAllLabel
-{
-	visibility: visible;
-}
-
 .ChatWheel .ChatWheelText
 {
 	color: white;
 	text-shadow: 2px 2px 4px black;
+	font-size: 64px;
+	text-overflow: shrink;
+	vertical-align: middle;
 }
 
 .Spray
@@ -233,5 +286,195 @@
 {
 	width: 100%;
 	height: 100%;
+	texture-sampling: point;
+}
+
+.StatWidget
+{
+	background-color: DataWidgetBackgroundColor;
+}
+
+.StatWidget .StatContainer
+{
+	horizontal-align: center;
+	vertical-align: center;
+	flow-children: down;
+	padding: 4px;
+}
+
+.StatWidget .StatContainer .StatTitle
+{
+	horizontal-align: center;
+	text-overflow: shrink;
+	color: LightGrey;
+	font-size: 9px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+.StatWidget .StatContainer .StatData
+{
+	horizontal-align: center;
+	text-overflow: shrink;
+	color: #eee;
+	font-size: 18px;
+	margin-top: -2px;
+	text-align: center;
+	font-family: titleFont;
+	font-weight: semi-bold;
+}
+
+.UserFeed
+{
+	height: 100%;
+	width: 100%;
+	background-color: DataWidgetBackgroundColor;
+}
+
+.UserFeed .SocialFeed
+{
+	width: 100%;
+	height: 100%;
+}
+
+.ProfilePanelTitleLabel
+{
+	color: #ffffff7b;
+	font-size: 14px;
+	font-weight: semi-bold;
+	text-transform: uppercase;
+	z-index: 2;
+	background-color: #00000088;
+	padding-left: 8px;
+	padding-right: 4px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	transition-property: opacity;
+	transition-duration: 0.3s;
+	transition-timing-function: ease-in-out;
+	letter-spacing: 1px;
+}
+
+@define SpiderColor: #FF943F;
+@define SpiderColorLocal: #8696F5;
+.SpiderGraphContainer
+{
+	height: 100%;
+	width: 100%;
+	background-color: DataWidgetBackgroundColor;
+}
+
+.SpiderGraphAsync
+{
+	width: 100%;
+	height: 100%;
+}
+
+.SpiderGraph
+{
+	horizontal-align: center;
+	vertical-align: center;
+	width: 320px;
+	height: 216px;
+	margin: 8px;
+	transition-property: opacity;
+	transition-duration: 0.3s;
+	transition-timing-function: ease-in-out;
+	opacity: 1;
+}
+
+.SG__Stats .SpiderGraph
+{
+	opacity: 0;
+}
+
+.SpiderGraphCompare
+{
+	vertical-align: bottom;
+	width: 100%;
+	ui-scale: 80%;
+}
+
+.SpiderGraphCompareButton
+{
+	horizontal-align: left;
+}
+
+.SG__LocalPlayer .SpiderGraphCompareButton
+{
+	visibility: collapse;
+}
+
+.SpiderGraphCompareButton Label
+{
+	color: #53545D;
+	font-size: 16px;
+	text-transform: uppercase;
+	vertical-align: center;
+	margin-bottom: 3px;
+}
+
+.SpiderGraphExpandStatsButton
+{
+	horizontal-align: right;
+	vertical-align: top;
+	visibility: collapse;
+}
+
+.SpiderGraphCompareLegend
+{
+	horizontal-align: right;
+	vertical-align: bottom;
+	flow-children: right;
+}
+
+.SpiderGraphCompareUser
+{
+	flow-children: right;
+	margin-left: 5px;
+	margin-bottom: 3px;
+}
+
+.SpiderGraphCompareUser__Self
+{
+	visibility: collapse;
+}
+
+.SG__Compare .SpiderGraphCompareUser__Self
+{
+	visibility: visible;
+}
+
+.SpiderGraphColorBox
+{
+	margin-left: 5px;
+	margin-right: 5px;
+	width: 10px;
+	height: 10px;
+	vertical-align: center;
+	border-radius: 50%;
+	background-color: SpiderColor;
+}
+
+.SpiderGraphCompareUser__Self .SpiderGraphColorBox
+{
+	background-color: SpiderColorLocal;
+}
+
+.SpiderGraphStats
+{
+	horizontal-align: center;
+	margin-top: 25px;
+	flow-children: down;
+	transition-property: opacity;
+	transition-duration: 0.3s;
+	transition-timing-function: ease-in-out;
+	opacity: 0;
+}
+
+.SG__Stats .SpiderGraphStats
+{
+	opacity: 1;
 }
 

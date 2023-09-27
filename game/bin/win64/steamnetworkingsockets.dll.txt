@@ -38,7 +38,6 @@
 0F2R0P4
 0M2~@p
 0_ËD$PH
-0`hpx
 0enum $1
 0k_ESteamDatagramMsg_GameserverSessionEstablished
 0k_ESteamDatagramMsg_LegacyGameserverRegistration
@@ -114,9 +113,9 @@
 22.CMsgSteamNetworkingP2PRendezvous.ConnectionClosed
 220323000000Z
 220801000000Z
-220921000000Z
 22dV::tN
-230713211822Z0
+230714000000Z
+230901214308Z0
 24.CMsgSteamNetworkingP2PRendezvous.ApplicationMessage
 241009235959Z0a1
 25.CMsgSteamDatagramClientSwitchedPrimary.RouterQuality
@@ -132,11 +131,11 @@
 3 G M Q _ c e i w
 3%3+3/353A3G3[3_3g3k3s3y3
 311109235959Z0b1
-331121235959Z0F1
 33333
 3333333
 3333D3
 33s?H
+341013235959Z0H1
 360428235959Z0i1
 370322235959Z0c1
 380115120000Z0b1
@@ -424,13 +423,17 @@ AULinkStatsTrackerEndToEnd@SteamNetworkingSocketsLib
 AULinkStatsTrackerRelayBase@SteamNetworkingSocketsLib
 AULinkStatsTrackerRelayServerSession@SteamNetworkingSocketsLib
 AUPostConnectionStateMsgTask@SteamNetworkingSocketsLib
+AURecvServerBrowserPacketTask@SteamNetworkingSocketsLib
 AUSendP2PRendezvousTask@SteamNetworkingSocketsLib
+AUSendServerBrowserPacketTask@SteamNetworkingSocketsLib
+AUServerBrowserPacketTask@SteamNetworkingSocketsLib
 AUSteamDatagramClientThinker@SteamNetworkingSocketsLib
 AUSteamNetworkingMessagesSession@SteamNetworkingSocketsLib
 AUTHORITY_INFO_ACCESS
 AUTHORITY_KEYID
 AV<lambda_436d24496487215312fd08115d699b18
 AV?$CQueuedTaskOnTarget@VCSteamNetworkConnectionPipe@SteamNetworkingSocketsLib@@@SteamNetworkingSocketsLib
+AV?$CQueuedTaskOnTarget@VCSteamNetworkListenSocketDirectUDP@SteamNetworkingSocketsLib@@@SteamNetworkingSocketsLib
 AV?$CQueuedTaskOnTarget@VCSteamNetworkingSocketsSteamBase@SteamNetworkingSocketsLib@@@SteamNetworkingSocketsLib
 AV?$CQueuedTaskOnTarget@VCSteamNetworkingUtilsSteamBase@SteamNetworkingSocketsLib@@@SteamNetworkingSocketsLib
 AV?$CSteamNetworkingSocketsCallResult@UHTTPRequestCompleted_t@@@SteamNetworkingSocketsLib
@@ -703,6 +706,7 @@ AVtype_info
 AXA9@Xs
 A^A]A
 A^A]A\H
+A^ÐWu
 A_A]A
 A_A^A
 A_A^A\H
@@ -792,7 +796,7 @@ Assertion Failed: !m_bConnectionInitiatedRemotely
 Assertion Failed: !m_bCryptKeysValid
 Assertion Failed: !m_bHaveLowLevelRef
 Assertion Failed: !m_connection.m_bConnectionInitiatedRemotely
-Assertion Failed: !m_connectionConfig.m_SymmetricConnect.IsLocked
+Assertion Failed: !m_connectionConfig.SymmetricConnect.IsLocked
 Assertion Failed: !m_fakeIPRefRemote.IsValid
 Assertion Failed: !m_identity.IsInvalid
 Assertion Failed: !m_identityRemote.IsFakeIP
@@ -852,7 +856,7 @@ Assertion Failed: !pMsg->m_linksSecondaryQueue.m_pQueue
 Assertion Failed: !pNext || pNext->m_pPrevTaskForTarget == pTask
 Assertion Failed: !pQueue->m_pFirst
 Assertion Failed: !pResult
-Assertion Failed: !pResult || pResult->m_connectionConfig.m_LocalVirtualPort.Get() == nLocalVirtualPort
+Assertion Failed: !pResult || pResult->m_connectionConfig.LocalVirtualPort.Get() == nLocalVirtualPort
 Assertion Failed: !pResult->m_pConnection || pResult->m_pConnection->m_pLock == pResult->m_pLock
 Assertion Failed: !pSendMessage->SNPSend_IsReliable
 Assertion Failed: !pServer->IsPrimaryTransport
@@ -1127,8 +1131,8 @@ Assertion Failed: m_connection.m_statsEndToEnd.m_usecInFlightReplyTimeout != 0
 Assertion Failed: m_connection.m_statsEndToEnd.m_usecTimeLastRecv > 0
 Assertion Failed: m_connection.m_statsEndToEnd.m_usecWhenTimeoutStarted > 0
 Assertion Failed: m_connection.m_unConnectionIDRemote != 0
-Assertion Failed: m_connectionConfig.m_ConnectionUserData.IsSet
-Assertion Failed: m_connectionConfig.m_LocalVirtualPort.IsLocked
+Assertion Failed: m_connectionConfig.ConnectionUserData.IsSet
+Assertion Failed: m_connectionConfig.LocalVirtualPort.IsLocked
 Assertion Failed: m_eActivityLevel == ELinkActivityLevel::Active
 Assertion Failed: m_eActivityLevel == ELinkActivityLevel::Disconnected
 Assertion Failed: m_eActivityLevel == ELinkActivityLevel::Idle
@@ -1507,6 +1511,8 @@ Assertion Failed: pOutFakeIP->IsFakeIP
 Assertion Failed: pOutputDigest
 Assertion Failed: pPayloadPtr <= helper.m_pPayloadEnd
 Assertion Failed: pPayloadPtr+pSeg->m_cbSegSize <= helper.m_pPayloadEnd
+Assertion Failed: pPing->m_nRouteFlags == 0
+Assertion Failed: pPing->m_nRoutePenalty == 0
 Assertion Failed: pPrimarySession->m_pServer->m_usecTimeLastRecv > 0
 Assertion Failed: pPriorityClass[i].m_nPriority < pPriorityClass[j].m_nPriority
 Assertion Failed: pPubKey->m_eTrust == k_ETrust_Revoked
@@ -1553,6 +1559,7 @@ Assertion Failed: pThis->m_nReplyTimeoutsSinceLastRecv == 0
 Assertion Failed: pTransport
 Assertion Failed: pTransport && pTransport->m_listRelaySessions.IsEmpty
 Assertion Failed: pVal->m_pInherit
+Assertion Failed: pViaRelayData->m_nAvail > 0
 Assertion Failed: pairInsertResult.second
 Assertion Failed: pchData
 Assertion Failed: pcubDecodedData
@@ -2418,7 +2425,6 @@ Cluster '%s' no longer has a selection penalty for load balancing purposes.  (As
 Cluster '%s' selection penalty for load balancing purposes changed from %dms to %dms.  (As per %s
 Cluster bookkeeping error
 Cluster is tagged to send to peer, but we don't know the ping time
-Co6EE
 Code Signing
 Cofactor
 Comment started here
@@ -2517,7 +2523,7 @@ D$0H;D$8u
 D$0H;G
 D$0fH
 D$0uAH
-D$4A"G
+D$4;D
 D$8@8pCu
 D$8HcJ
 D$8inf
@@ -2525,7 +2531,6 @@ D$8nan
 D$@9G t
 D$@Ich
 D$@L9@ r
-D$Ftr
 D$HHc
 D$HI;r
 D$HL9gXt
@@ -2569,7 +2574,6 @@ D8t$8t
 D8t$ht
 D8y@uNA
 D8|$0
-D8|$0A
 D8}?t	H
 D93t	H
 D9bt~1A
@@ -2712,11 +2716,11 @@ Diffie-Hellman based MAC
 Diffie-Hellman routines
 DigiCert Assured ID Root CA0
 DigiCert Inc1
-DigiCert Timestamp 2022 - 20
+DigiCert Timestamp 20230
 DigiCert Trusted Root G40
+DigiCert, Inc.1 0
 DigiCert, Inc.1;09
 DigiCert, Inc.1A0
-DigiCert1$0
 Digit is required after exponent in JSON number; found 0x%02x instead
 Digital Signature
 DirName
@@ -3450,7 +3454,7 @@ H9kPu H
 H9p s
 H9q s
 H9y t<L
-H9zhuBH
+H9zpuBH
 H9{8~3H
 H;D$Pu
 H;L$Ht
@@ -3492,6 +3496,7 @@ HMAC routines
 HMAC-MD5
 HMAC-SHA1
 HPX&9
+HPXfPo
 HTTP %d.  %s
 HTTPRequestCompleted_t
 HX9JXsbA
@@ -3835,14 +3840,12 @@ L$ UVWATAUAVAW
 L$ UVWATAUAVAWH
 L$ UVWAVAWH
 L$ UVWH
-L$ VWATAUAVAW
 L$ VWATAVAW
 L$ fff
 L$0E3
 L$0SUATAUAVAWE
 L$0SUATAUAVAWH
 L$0f;V
-L$4"H
 L$4+L$8
 L$4+L$H
 L$@D8
@@ -5059,7 +5062,6 @@ SUVWATAVH
 SUVWAUAVAW
 SUVWAUAVAWH
 SUVWAUAVH
-SUVWAUAW
 SUVWAV
 SUVWAVAWH
 SUVWAVH
@@ -5136,6 +5138,7 @@ SendMessageToUser
 SendMessages
 SendRateMax
 SendRateMin
+SendServerBrowserPacket
 SendTo
 SendUDPacket
 Sender sent abs latest recv pkt number using %llx mod %llx, next send %llx
@@ -5569,7 +5572,6 @@ USATAUAVH
 USATAVAWH
 USATAVH
 USATH
-USAUAWH
 USER32.dll
 USERNOTICE
 USVATAUAVAWH
@@ -5611,7 +5613,6 @@ UVWATAUAVAW
 UVWATAUAVAWE
 UVWATAUAVAWH
 UVWATAUAVH
-UVWATAUAW
 UVWATAUH
 UVWATAVH
 UVWATAWH
@@ -7000,7 +7001,8 @@ d$0D9p
 d$HI;D$X
 d$Px\L
 d$dD;d$ltY
-d$hD9%q
+d$hD9%q!6
+d$pu>H
 d$xL9d$PuIfD9d$XuA
 d%n %n
 d.allOrFirstTier
@@ -7767,7 +7769,6 @@ gپ9rK9J
 hA_A^A
 hA_A^A]A
 hHHHH
-hI9F t
 h`H(|sO
 has no field named
 has no value named
@@ -8535,6 +8536,7 @@ l$HA_A^A]A
 l$HtfH
 l$Pu%A
 l$xu!M
+l2|X/gGe
 ladder post failure
 ladder pre failure
 ladder step failure
@@ -8579,7 +8581,7 @@ length
 length too long
 level
 level_add_node
-lib Jul 13 2023 14:18:15
+lib Sep  1 2023 14:42:52
 lib(%lu
 libprotobuf %s %s:%d] %s
 lifetime
@@ -8794,6 +8796,7 @@ network_config_changed_different_cluster
 network_config_changed_removed
 network_config_version
 new CSteamNetworkConnectionPipe failed
+new failed
 new_dir
 newer crl not newer
 nextUpdate
@@ -9090,6 +9093,7 @@ pA^A]A
 pA_A]A
 pA_A^A
 pA_A^A]A
+pI9F t
 pSourceFunc
 pSpecified
 pU>\AL
@@ -10422,6 +10426,7 @@ t$ WAVAW
 t$ WAVAWH
 t$0Hc
 t$89CD
+t$89GD
 t$8H;|$Ht
 t$@Hc1L
 t$@fD
@@ -10442,7 +10447,7 @@ t0McF(IcN
 t1D8d$8t
 t3Ic.I
 t4H9i(t
-t?H95M
+t?H95
 tA8_:t
 tFH9)uAL
 tHcMo
@@ -10452,7 +10457,7 @@ tJH99uEL
 tQD8c:u0M
 tQH91uLL
 tRH+xP
-tUH959
+tUH95
 tUL97uPE
 tWLcD$PI
 t\lHBW
@@ -10599,7 +10604,6 @@ u.addressesOrRanges
 u.asIdsOrRanges
 u.inherit
 u.range
-u1H9=Q
 u8A_A^A]A
 uFH9;t
 uHfD9/A
@@ -10929,7 +10933,6 @@ x509_pubkey_decode
 xA_A]A
 xA_A^A]A
 xH9\$Pu?f9\$Xu8
-xJ>Hf
 xWI96tRI
 xXI96tSI
 xbox_pairwise_id

@@ -17,7 +17,7 @@
 00000000-0000-0000-0000-000000000000
 000000000000
 00000000000000000000000000000000000000000
-0000000000000000000@0@0@0@0@0
+00000000000000000000@0@0@0@0@0
 0000000000000000`0000000000000000000
 000000005
 0000000088888888
@@ -45,6 +45,7 @@
 0: read from NULL
 0: run all send jobs on main thread; 1: send jobs run asynchronously (except on dedicated server); 2: send jobs asynchronously; 3: send jobs run in parallel but block to not overlap the next tick; 4: main server clients' send jobs run in parallel, then HLTV server jobs; this approximately matches pre-async profile for a single HLTV server configuration
 0=Off, 1=Surface Wireframe, 2=Transparent Wireframe
+0=Off, 1=Visualize trace from camera, 2=Visualize occlusion
 0A;^4
 0Block4x4Encoding_R11
 0Block4x4Encoding_R11E
@@ -85,7 +86,6 @@
 10CVisRender
 10ConCommand
 10IVProfData
-11:31:42
 11CBugService
 11CDemoPacket
 11CDemoPlayer
@@ -111,6 +111,7 @@
 12CDelayedCallI16CHLTVServerAsyncNS0_13DumpMemCall_tEE
 12CDelayedCallI16CHLTVServerAsyncNS0_20StartBroadcastCall_tEE
 12CDelayedCallI16CHLTVServerAsyncNS0_20StartRecordingCall_tEE
+12CDelayedCallI16CHLTVServerAsyncNS0_22WriteDemoMessageCall_tEE
 12CDelayedCallI16CHLTVServerAsyncNS0_24StartAutoRecordingCall_tEE
 12CDelayedCallI16CHLTVServerAsyncNS0_28PrintBroadcastTVStatusCall_tEE
 12CDelayedCallI16CHLTVServerAsyncNS0_29AppendSpawnGroupMessageCall_tEE
@@ -147,6 +148,7 @@
 13CDelayedCall2I16CHLTVServerAsyncS0_NS0_13DumpMemCall_tE7empty_tE
 13CDelayedCall2I16CHLTVServerAsyncS0_NS0_20StartBroadcastCall_tE7empty_tE
 13CDelayedCall2I16CHLTVServerAsyncS0_NS0_20StartRecordingCall_tE7empty_tE
+13CDelayedCall2I16CHLTVServerAsyncS0_NS0_22WriteDemoMessageCall_tE7empty_tE
 13CDelayedCall2I16CHLTVServerAsyncS0_NS0_24StartAutoRecordingCall_tE7empty_tE
 13CDelayedCall2I16CHLTVServerAsyncS0_NS0_28PrintBroadcastTVStatusCall_tE7empty_tE
 13CDelayedCall2I16CHLTVServerAsyncS0_NS0_29AppendSpawnGroupMessageCall_tE7empty_tE
@@ -496,6 +498,7 @@
 16CScriptComponent
 16ICommandCallback
 16IDebugVisualizer
+16IDemoMessageSink
 16IGameEventSystem
 16ILoggingListener
 16ILoopModeFactory
@@ -706,6 +709,7 @@
 21NetMessagePacketStart
 21PerformFirstIterationEv
 21__basic_string_commonILb1EEE
+22:06:10
 22C2S_CONNECTION_Message
 22CCLCMsg_CmdKeyValues_t
 22CCLCMsg_FileCRCCheck_t
@@ -978,6 +982,7 @@
 3: infinite loop
 3;CScs
 3Block4x4Encoding_RGB8A1
+3E9~Dr-A
 3TryIndividualEbj
 3TwiddlePlanarEv
 3__assoc_stateIjEE
@@ -1144,7 +1149,6 @@ A#4$H
 A#4$L
 A+D$$Hc
 A+D$$Lc
-A+F$Lc
 A+G$Lc
 A+L$$Hc
 A+N$Hc
@@ -1157,6 +1161,7 @@ A4Block4x4Encoding_RGBA8_TransparentE
 A8\$lu
 A9Block4x4Encoding_RGBA8_OpaqueE
 A9D$Dr9
+A9EDsF1
 A9EP~yI
 A9_TvmI
 A;1u[A
@@ -1216,8 +1221,9 @@ ARAVASA
 ARAVBSB\A
 ARAXA
 ARAZAp
-ARA`WARARARARARARARARARA\KR0
+ARA`XARARARARARARARARARA\KR0
 ARBRAp
+ARBXA
 ARGB8888
 ASARARARARARARARARARAp
 ASARARARARARARARAp
@@ -1245,7 +1251,7 @@ AWAVATSD
 AWAVATSE
 AWAVATSH
 AWAVATSH9
-AWAVATSHcG`H
+AWAVATSHcGhH
 AWAVATSI
 AWAVATSL
 AWAVATSM
@@ -1292,7 +1298,7 @@ AWAVSPI
 AWAVSPL
 AWAVSPLc
 AWAVSPM
-A[ATARATARATARASAp
+A[ATARATARATARARAp
 A[ATAp
 A\A]A^A
 A\A]A^A_]ÐUAWAVAUATSH
@@ -1355,7 +1361,6 @@ Allow cheats on server
 Allow clients to use rcon commands on server
 Allow playback of demo even if game directories are not matched [may crash or fail to load
 AllowAddonDependencies
-Allows cameraman_override to have effect. When this is set, the primary interactive caster will have all the relevant fields present in all network packets, in every snapshot. This allows the secondary cameraman (-interactivecaster that connects to a tv port) to override those fields some seconds later regardless of whether they changed originally or not
 Allows the client to playback screenshot and jpeg commands in demos
 Allows the console to be activated
 Already recording
@@ -1411,7 +1416,6 @@ Attempted to switch to unknown loop "%s
 At~JH
 AudioLanguage
 AudioSubLanguage
-Aug 31 2023
 AutoBugComponent
 AutoBugProduct
 Automatically broadcasts all games as GOTV demos through Steam
@@ -1581,7 +1585,7 @@ CCLCMsg_ServerStatus
 CCLCMsg_SplitPlayerConnect
 CCLCMsg_SplitPlayerDisconnect
 CCLCMsg_VoiceData
-CChangeFrameList *GetMergedChangeFrameList(PackedEntity *, const PackedFieldPathVec_t &, uint32
+CChangeFrameList *CNetworkGameServerBase::GetMergedChangeFrameList(PackedEntity *, const PackedFieldPathVec_t &, uint32) const
 CChangeFrameList CUtlMemoryPoolMT
 CChangelevelGameClientPrerequisite
 CClockDriftMgr: SetClientTickInterval with bad tick interval %f
@@ -2269,11 +2273,12 @@ CSplitScreenService::OnProfileStorageAvailable
 CSplitScreenService::WriteConfigShutdown
 CSplitScreenSlot
 CStatsService
-CSteam3Client::Activate failed
 CSteam3Client::Activate succeeded.  SteamID is %s (%llu), AppID is %d
 CSteam3Client::OnGameServerChangeRequested:  no password ConVar
 CSteam3Client::Shutdown
+CSteam3ServerS1 is active at destruction - must be shut down properly in the main server shutdown sequence
 CSteam3ServerS1::ShutdownGameServer
+CSteamAPIContext failed
 CTSListBase: Misaligned list
 CTSQueue corruption
 CTSQueue: Misaligned queue
@@ -2463,7 +2468,7 @@ Commencing SourceTV connection retry to %s
 Comment : %s
 Comment started here
 Compacts the heap
-Completed SourceTV demo "%s", recording time %.1f
+Completed SourceTV demo "%s", recording time %.1f, size %d (%d per tick
 Completed demo '%s' [duration = %.2fs., frames = %d, ticks = %d
 Component %d: %dhx%dv q=%d
 Component %d: dc=%d ac=%d
@@ -2527,6 +2532,7 @@ CreateDebuggerWindow
 CreateInterface
 CreateNewThreadPool
 CreateSimpleThread
+CreateStringTable @%d
 Creating NetChan for user %d '%s' @ %s
 Current  :  %s
 Current Map: '%s
@@ -2543,7 +2549,6 @@ CustomGameServerAppID
 Cycle through specified convar values
 D$ E;t
 D$PIcT$$H
-D+=ap
 D16_SHADOW
 D19CTier1AppSystemDict
 D24FS8
@@ -2555,7 +2560,6 @@ D9s }FH
 D9{0}&9
 D;8|mH
 D;8~CH
-D;=eoA
 D;sxu%H
 DCT coefficient out of range
 DCT scaled block size %dx%d not supported
@@ -2589,6 +2593,7 @@ DIALOG_MENU
 DIALOG_MSG
 DIALOG_TEXT
 DIALOG_TYPE
+DLL load denials: %u, last '%s
 DXT1_ONEBITALPHA
 DXT5_NM
 Data center cluster this server lives in
@@ -2602,6 +2607,7 @@ DebugVisualizerMgr
 Debugger
 DeclareCurrentThreadIsMainThread
 DecodeClassBaseline: NULL instance baseline table
+DecodeDemoNetMessage Failed to parse spawn group message
 DecodePixels
 DecodePixels_PlanarEv
 Decrement the timescale by one step
@@ -2670,7 +2676,6 @@ Don't receive chat messages from other SourceTV spectators
 Double registration of demo custom data callback
 Double-save to Member '%s
 Draw alien blood
-Draw clusters in a sphere of radius around the camera
 Draw human blood
 Driver %s (vendorid %x, deviceid %x DXSupport Level %d
 Driver version below recommended version. Required: %d.%02d Got: %d.%02d
@@ -2694,7 +2699,6 @@ E)u I
 E+D$ L
 E0IcM8H
 E3__assoc_stateIjEE
-E4A;E0u}I
 E5basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEE
 E7bad_function_callE
 E8basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE
@@ -2703,6 +2707,7 @@ E;l$xu
 E;t$0u
 E;t$Hu
 E;wl~AH
+E;}xtL
 EDA;EHu
 EDemoCommands
 ENTITY_DORMANT
@@ -2777,6 +2782,7 @@ Engine2
 Engine2/AllowKeyChordBindings
 Engine2/AllowSaveGamesInMultiplayer
 Engine2/DefensiveConCommands
+Engine2/InitFilterTextEarly
 Engine2/MinimumDriverVersions
 Engine2/NoResetInputOnGameOverlay
 Engine2/PauseSinglePlayerOnGameOverlay
@@ -2846,7 +2852,6 @@ Error reporting not implemented
 Error text not found (please report
 Error trying to register a handler for an unknown game event type
 Error while parsing option value for
-Error writing offline user config file '%s
 Error writing user config file '%s
 Error: Unable to process input keybinding %s
 Escape key allowed to hide game UI
@@ -2942,6 +2947,7 @@ F [A\A^A
 F0I;F(sAH
 F0[A^]ÐUH
 F17CDemoPlaybackLoop
+F4A;F0
 F4A;F8
 F8Lc`\M
 F8[A\A^A
@@ -2968,6 +2974,7 @@ Failed to find "VTPause()" in "vtuneapi.dll
 Failed to find "VTResume()" in "vtuneapi.dll
 Failed to get requested UGC id %llu. Result %d
 Failed to init steam in anonymous mode
+Failed to initialize Steamworks SDK for gameserver.  %s
 Failed to initialize video
 Failed to load %s, which is the default rendersystem and should not fail to load. Please verify the game install in Steam
 Failed to load %s. Your launch options or video config may be incorrect or out-of-date.  Falling back to the default rendersystem %s
@@ -2982,8 +2989,10 @@ Failed to parse imported ConVar '%s' from string '%s
 Failed to parse input ConVar '%s' from string '%s
 Failed to parse network ConVar '%s' from string '%s
 Failed to read demo header on '%s
+Failed to read file %s, configFileType %d, nSlot %d
 Failed to save unsupported class
 Failed to serialize KV3 to JSON.  %s
+Failed to write file %s, configFileType %d, nSlot %d
 Features
 Ffffff
 Field
@@ -3387,7 +3396,6 @@ HammerMapLoader001
 HasField
 HasLegacyGameUI
 HasModAppSystems
-Hc5D3
 Hc8H;4
 Hc@8H9
 HcA D9
@@ -3425,6 +3433,7 @@ HcsxH
 HcۋGD
 Header "%s": %s
 Heap-like bytes:         %s
+Hello world
 HelpSystem_001
 Hex and octal numbers must be integers
 Hffff
@@ -3479,7 +3488,6 @@ IDEMPOTENCY_UNKNOWN
 IDEMPOTENT
 IEngineClient::RecordDemoCustomData(): Not recording a demo
 IHDRPLTEcHRMgAMAsBITsRGBbKGDtRNShISTpHYstIMEoFFseXIfiCCPtEXtzTXtiTXtsPLT
-IHandleEntity
 IMAGE_FORMAT_R11G11B10_FLOAT
 INETSUPPORT_001
 INVALID_CPPTYPE
@@ -3490,7 +3498,6 @@ IcD$ I
 IcD$ I9
 IcD$(H
 IcD$(I
-IcD$0H9
 IcD$4H9
 IcD$4I
 IcD$8H9
@@ -3524,6 +3531,7 @@ IcL$ H
 IcL$0H9
 IcL$hI
 IcM0H9
+IcN0H9
 IcN0H9ȋU
 IcT$8H
 Ic\$hH
@@ -3661,6 +3669,7 @@ KRARAp
 KRCYAp
 KRH`0AVARARARARARARARARA
 KRK`(ARARARARARARARARARA
+KX;A4u
 K]ÐUH
 Key in map fields cannot be enum types
 Key in map fields cannot be float/double, bytes or message types
@@ -3883,7 +3892,7 @@ MapValueRef::SetUInt64Value
 Marked tick %u in '%s
 Marker,GPUTimeAvgMS,GPUTimeRangeMS,GPUTimeMinMS,GPUTimeMaxMS
 Marks the current demo playback tick for later use
-Master "%s", delay %.0f
+Master "%s", delay %.0f, frames %d / ticks %d
 Match start status: %u/%u
 MatchSession
 Matchmaking failed; Waiting on %d/%d clients
@@ -4046,10 +4055,12 @@ N15CDemoStreamHttp16CFragmentRequestE
 N16CHLTVServerAsync10CAsyncCallINS_13DumpMemCall_tEEE
 N16CHLTVServerAsync10CAsyncCallINS_20StartBroadcastCall_tEEE
 N16CHLTVServerAsync10CAsyncCallINS_20StartRecordingCall_tEEE
+N16CHLTVServerAsync10CAsyncCallINS_22WriteDemoMessageCall_tEEE
 N16CHLTVServerAsync10CAsyncCallINS_24StartAutoRecordingCall_tEEE
 N16CHLTVServerAsync10CAsyncCallINS_28PrintBroadcastTVStatusCall_tEEE
 N16CHLTVServerAsync12CReverseCallINS_31OnStartedRecordingReverseCall_tEEE
 N16CHLTVServerAsync13CDeferredCallINS_29AppendSpawnGroupMessageCall_tEEE
+N16CHLTVServerAsync22CHLTVDemoRecorderProxyE
 N16CHLTVServerAsync22CSendClientMessagesJobE
 N17CServerSideClient14CSendJob_EmptyE
 N17CServerSideClient16CSendJob_RegularE
@@ -4224,6 +4235,7 @@ NETWORK_DISCONNECT_OVERFLOW
 NETWORK_DISCONNECT_PURESERVER_CLIENTEXTRA
 NETWORK_DISCONNECT_PURESERVER_MISMATCH
 NETWORK_DISCONNECT_RECONNECTION
+NETWORK_DISCONNECT_REJECT to %s: rejected by game rules with code %d
 NETWORK_DISCONNECT_REJECTED_BY_GAME
 NETWORK_DISCONNECT_REJECT_BACKGROUND_MAP
 NETWORK_DISCONNECT_REJECT_BADCHALLENGE
@@ -4362,6 +4374,7 @@ Nmalloc
 No # necessary
 No Active SourceTV servers found
 No HLTV server running
+No SteamGameServer
 No VConComm
 No active loop
 No client connection
@@ -4421,6 +4434,7 @@ OS type the engine is running on
 OVERFLOW range [% 5d->% 5d = % 5d cmds
 Obtained EMS handle %u
 Obtained XMS handle %u
+Offff
 Offffff
 OnClientAdvanceTick
 OnClientFrameSimulate
@@ -4531,6 +4545,7 @@ Package name is too long
 PackedEntity size=%s includes SerializedEntity size=%s
 Packet Entities has a larger spawn group creation sequence (%u) than we received, discarding, our max is %u
 Packet Entities has a larger spawn group creation sequence (%u) than we received, forcing to max %u
+PacketEntities @%d
 Panorama Anim Update
 Panorama Debugger
 Panorama HUD
@@ -4616,6 +4631,7 @@ Plat_GetDesktopBounds
 Plat_GetDesktopResolution
 Plat_GetEnv
 Plat_GetGameDirectory
+Plat_GetLastDllLoadDenial
 Plat_GetLocalTime
 Plat_GetMasterMobileEventHandler
 Plat_GetMiniDumpErrorString
@@ -4726,7 +4742,6 @@ Players: %i (%i bots) / %i humans
 Playing '%s
 Playing Broadcast (%s
 Playing Demo (%s
-Playing Demo File "%s
 Playing back demo: '%s' at tick %u
 Playing demo from '%s
 Pointers cannot be used as numeric values
@@ -4842,10 +4857,11 @@ RARARARARARARARARARARA
 RARARARARARARARARARAVAp
 RARARARARARARARARA[Ap
 RARARARARARARARARAp
-RARARATATARARARATATARARARATATARARARATATARARARATATARARARATA
+RARARARATAp
+RARARATATARARARATATARARARATATARARARATATARARARATATARARARATATARARARATA
 RARARAVAp
 RARARAWAp
-RARARAZBRB]AUAp
+RARARAZBRB\BUAp
 RARATAp
 RARATBp
 RARAVAp
@@ -4855,10 +4871,10 @@ RASARA
 RASARARAp
 RASARA`3BWA
 RASARAp
-RASASApXSBRBRBRBp
+RASAUBRBRBRBp
 RASAVAp
 RASBRAWAp
-RATARA[Ap
+RATARA\Ap
 RAWARARAWASARARARASBp
 RAYARAVARAYARAVARAYARAVARAYARAVARAYARAXARA
 RA\AVAp
@@ -5081,6 +5097,7 @@ SAVE/%s.hl2
 SAVE/%s.hl3
 SAWASAR
 SAWAVASAR
+SAp(pHp
 SBRARARARARARARARARAp
 SBSB]0
 SDL_VIDEO_ALLOW_SCREENSAVER
@@ -5150,11 +5167,12 @@ STEAMINVENTORY_INTERFACE_V003
 STEAMMUSICREMOTE_INTERFACE_VERSION001
 STEAMMUSIC_INTERFACE_VERSION001
 STEAMPARENTALSETTINGS_INTERFACE_VERSION001
+STEAMREMOTEPLAY_INTERFACE_VERSION002
 STEAMREMOTESTORAGE_INTERFACE_VERSION016
 STEAMSCREENSHOTS_INTERFACE_VERSION003
-STEAMUGC_INTERFACE_VERSION016
+STEAMUGC_INTERFACE_VERSION018
 STEAMUSERSTATS_INTERFACE_VERSION012
-STEAMVIDEO_INTERFACE_V002
+STEAMVIDEO_INTERFACE_V003
 STEAM] %s
 STEAM_ID_LAN
 STEAM_ID_PENDING
@@ -5162,6 +5180,7 @@ STRING
 STRING_PIECE
 SUNLIGHT/SHADOW ATLAS IN FULL USE HERE
 SV:  % 3d %40.40s not resolved
+SV:  %d/%s:  changes %d, expected %d
 SV:  %d/%s:  requested resolve all %d changes, actually resolved only %d changes
 SV:  %i player server started
 SV:  %s
@@ -5208,6 +5227,7 @@ SV:  WriteBaselines:  %d tables required %d bytes
 SV:  WriteClassInfosBuffer overflow
 SV:  addon='%s
 SV:  maxplayers set to %i
+SV: CNetworkGameServerBase::WriteDeltaEntity merging changes added in %d additional fields
 SV: Canceling k_EAuthSessionResponseAuthTicketCanceled for %s because %s
 SV: Cheat command '%s' ignored
 SV: Cheat command '%s' ignored. Set sv_cheats to 1 enable cheats
@@ -5228,9 +5248,8 @@ Save convars and config values
 Save the ban list to file
 Saved '%s' to SteamRemoteStorage, %d bytes OK
 Saved console spew to %s
-Saved offline user config file '%s
 Saved screenshot to %s
-Saved user config file '%s
+Saved user config file '%s': type %d
 Saves current key bindings to disk
 Saves out the user config values
 Scale used when displaying load-hit-stores (0 = use default
@@ -5290,6 +5309,7 @@ Sending S2C_CHALLENGE [%u auth %d] to %s
 Sending S2C_CONNECTION to %s [addons:'%s
 Sending connect to %s
 Sending voice from: %s - playerslot: %d [ xuid %llx
+Sep 26 2023
 Serialized Async Reads
 SerializedEntitiesVersion001
 SerializedEntityHandle_t CNetworkGameClientBase::DecodeClassBaseline(CEntityIndex, const CGameNetworkableClass *, int
@@ -5600,9 +5620,10 @@ Steam headless module not loaded
 Steam headless re-logged in OK
 Steam headless reset embedded client token
 Steam headless using stored credential info
+Steam init failed!  %s
+Steam text filtering initialized %s
 SteamAPI_GetHSteamUser
-SteamAPI_Init
-SteamAPI_Init not yet successful
+SteamAPI_Init failed.  %s
 SteamAPI_Init succeeded.  SteamID is %s (%llu), AppID is %d
 SteamAPI_InitAnonymousUser
 SteamAPI_RegisterCallResult
@@ -5629,16 +5650,22 @@ SteamGameServer_Init
 SteamGameServer_Init() OK, logging on to Steam
 SteamGameServer_RunCallbacks
 SteamGameServer_Shutdown
+SteamInput006
 SteamInternal_ContextInit
 SteamInternal_CreateInterface
 SteamInternal_FindOrCreateGameServerInterface
 SteamInternal_FindOrCreateUserInterface
-SteamInternal_GameServer_Init
+SteamInternal_GameServer_Init_V2
+SteamInternal_SteamAPI_Init
 SteamMatchGameSearch001
 SteamMatchMaking009
 SteamMatchMakingServers002
 SteamNetworking006
 SteamNetworkingIdentity_ToString
+SteamNetworkingMessages002
+SteamNetworkingSockets012
+SteamNetworkingUtils004
+SteamParties002
 SteamRun
 SteamRun failed, error %d
 SteamServersDisconnected
@@ -5651,7 +5678,6 @@ Stop recording movie frames
 Stopping
 Stops SourceTV demo recording
 Stops the SourceTV broadcast
-StoreDemoSpawnGroupMessage Failed to parse spawn group message
 StrReplaceChar
 Stream Re-sync @%d
 String Command
@@ -5696,12 +5722,11 @@ T$(L9
 T$Pffff
 T1HK;T2HuHI
 T>PfD9
-TARASAYA[ARARARATAp
+TARASAYA[ARAp
 TATBpHTATC
 TA[ARA\KR0
 TCSBWKp
 TGAWriter: Failed to serialize screenshot pixels (%d x %d, %s
-TODO demo file name
 TYPE_BOOL
 TYPE_BYTES
 TYPE_DOUBLE
@@ -5760,6 +5785,7 @@ This ZeroCopyOutputStream doesn't support aliasing. Reaching here usually means 
 This appears to be a value from a sibling type
 This convar is being accessed prior to ConVar_Register being called
 This device does not meet the minimum requirements. The game requires at least %s of device memory to run reliably, you may not be able to complete a game on this device
+This fixes bugs where pure calcdelta is used due to recipient changing but it doesn't pick up a field change where the value was changed back to same value as the from snapshot even though the destination fields change list does note the change. Set to 2 to spew any changes merged in by this fix
 This is a fade of current voices that is called when the game is disconnected. -1.f for no fade on disconnect
 This is a test of the emergency broadcast system
 This is necessary to run
@@ -5767,10 +5793,10 @@ This is not
 This number of relay client connections are reserved for SourceTV relays
 This probably means the engine crashed while recording the .dem file and it was not finalized
 This server is password protected for console access. Must send PASS command
-This server will operate in LAN mode only
 This soundevent is called to stop the desired soundevents when the game is disconnected
 ThreadGetCurrentId
 ThreadGetCurrentProcessHandle
+ThreadGetMainThreadId
 ThreadGetProcessPriority
 ThreadInMainThread
 ThreadNanoSleep
@@ -5879,7 +5905,6 @@ UUUUUUU
 UUUUUUUUH
 UUUUf9
 UVWQ8888
-Ufffff
 Uffffff
 Unable to %s, couldn't load class metadata from networking system
 Unable to Start Game
@@ -5897,7 +5922,6 @@ Unable to find headless SteamRun
 Unable to find in-place conversion path
 Unable to find service "%s" which is depended on by service "%s
 Unable to find service "%s" which must run before service "%s
-Unable to load Steam support library
 Unable to load steam headless module, error %d
 Unable to open '%s' for writing
 Unable to open logfiles at %s, logging disabled
@@ -5955,12 +5979,12 @@ Unsupported: type mismatch
 Untested Direct Routing
 Unwind_Resume
 Update self-referencing, connection dropped
+UpdateStringTable @%d
 Uptime( %f
 Usage
 Usage %s classname
 Usage %s substring
 Usage:  %s <cluster # |-1
-Usage:  %s <radius
 Usage:  %s <soundresource
 Usage:  %s <tablename | all> <sv | cl> <verbose | simple> <element
 Usage:  addip < minutes > < ipaddress
@@ -6013,7 +6037,7 @@ V8[A\A]A^A
 VARATA
 VARAUAUBZARA
 VARAVARAVARAVARAVARAVARA`KAVARARA
-VARAVARAVARAVARAVARB^C\A]Dp
+VARAVARAVARAVARAVARA^C\A]Dp
 VARAVARA`;ASA
 VASARA
 VA`RARA
@@ -6108,7 +6132,6 @@ V_UnqualifiedFileName
 V_acosf
 V_asinf
 V_atan2f
-V_atof
 V_atofloat32
 V_atoi
 V_atoui64
@@ -6174,7 +6197,6 @@ VerifyTest() vanilla result = Pass
 VersionDate
 VersionTime
 Virtual array controller messed up
-Vis debug sphere at %.3f, %.3f, %.3f
 VisBuilder_001
 Visibility %s
 Voice payload
@@ -6232,6 +6254,7 @@ When enabled, this allows for entity packing to use the property changes for bui
 When enabled, this will collect all information for relay sending into a single datagram to ensure that the data stays together through a potentially large number of relays
 When enabled, this will use a uniquely generated server code to authenticate relay connections. This code is coordinated via the GC or some external means rather than by clients directly
 When enabled, this will use a uniquely generated server code to authenticate relay to relay connections. This code is coordinated via the GC or some external means rather than by clients directly
+When r_low_latency is enabled, this moves the low latency sleep on tick frames to happen after client simulation
 When receiving packets out of sequence, wait this many seconds for missing sequences to arrive
 When the client is catching up in low frame rate situations, should we run client simulate more than once a frame
 When the client is catching up in low frame rate situations, should we run tick more than once a frame
@@ -7391,6 +7414,7 @@ conditional group contains more than two branches
 condump
 condump%03d.txt
 config
+configconflictresolutiondialog
 conflicts with an existing enum type
 conflicts with an existing field
 conflicts with an existing nested message type
@@ -7653,6 +7677,7 @@ engine_allow_multiple_ticks_per_frame
 engine_client_tick_pad_enable
 engine_cpu_info_extended
 engine_gcmessages.proto
+engine_low_latency_sleep_after_client_tick
 engine_max_resource_system_update_time
 engine_no_focus_sleep
 engine_no_focus_sleep_vconsole_suppress
@@ -7734,6 +7759,7 @@ failed to get memory
 failed to parse contents
 failure
 fakeView
+fake_test_config
 fakeplayer
 fallback, started with
 false
@@ -8083,7 +8109,6 @@ hscript
 hscript_lightbinding
 http Send %.3f ms ave, %.3f ms max
 http://localhost:8080
-hushsteam
 i %-15s
 i %i.%i.%i.%i : %.3f min
 i %s : %.3f min
@@ -8309,7 +8334,6 @@ jstype is only allowed on int64, uint64, sint64, fixed64 or sfixed64 fields
 j~hIc
 k E;/}yIc
 k is not followed by a braced, angle-bracketed, or quoted name
-k\r4A
 k_EUniverseBeta
 k_EUniverseDev
 k_EUniverseInternal
@@ -8328,6 +8352,7 @@ la_symbol_ptr
 landmarkname
 language
 last_cmd_number
+lastclouded
 launch_url
 launcherlanguage
 launchersublanguage
@@ -8525,6 +8550,7 @@ mat_luxels
 mat_max_lighting_complexity
 mat_overdraw
 mat_shading_complexity
+mat_show_distance_field
 mat_wireframe
 match_id
 materials
@@ -8753,7 +8779,7 @@ opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/engine2/gameeventsyste
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/engine2/hltvbroadcast.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/engine2/hltvclientstate.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/engine2/hltvdemo.cpp
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/engine2/hltvserver_async.cpp:965
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/engine2/hltvserver_async.cpp:1026
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/engine2/host.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/engine2/inputservice.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/engine2/loopmodeconsole.cpp
@@ -8766,16 +8792,16 @@ opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/engine2/networkgamecli
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/engine2/networkgameclient.cpp:1322
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/engine2/networkgameclient.cpp:1501
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/engine2/networkgameclient.cpp:1951
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/engine2/networkgameclient.cpp:2190
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/engine2/networkgameclient.cpp:2191
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/engine2/networkgameclientbase.cpp
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/engine2/networkgameclientbase.cpp:2664
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/engine2/networkgameserver.cpp:1246
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/engine2/networkgameclientbase.cpp:2677
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/engine2/networkgameserver.cpp:1193
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/engine2/networkgameserver_interface.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/engine2/networkgameserverbase.cpp
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/engine2/networkgameserverbase.cpp:2816
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/engine2/networkgameserverbase.cpp:5241
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/engine2/networkgameserverbase.cpp:5305
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/engine2/networkgameserverbase.cpp:5370
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/engine2/networkgameserverbase.cpp:2828
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/engine2/networkgameserverbase.cpp:5322
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/engine2/networkgameserverbase.cpp:5388
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/engine2/networkgameserverbase.cpp:5453
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/engine2/networkp2pservice.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/engine2/networkserverservice.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/engine2/networkstringtable.cpp
@@ -8784,14 +8810,15 @@ opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/engine2/pure_server.cp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/engine2/pvs.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/engine2/renderingworld.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/engine2/screenshot_service.cpp(358
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/engine2/serversideclient.cpp:106
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/engine2/serversideclient.cpp:109
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/engine2/serversideclientbase.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/engine2/soundservice.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/engine2/sv_alternatebaselinemgr.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/engine2/sv_ents_write.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/engine2/sv_packedentities.cpp
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/engine2/sv_packedentities.cpp:1015
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/engine2/sv_packedentities.cpp:1035
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/engine2/sv_packedentities.cpp:1017
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/engine2/sv_packedentities.cpp:997
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/engine2/sv_steamauth.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/mathlib/mathlib.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/public/appframework/materialsystem2app.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/tier0_perproject/singletons.cpp
@@ -8826,11 +8853,10 @@ oversubscribed dynamic bit lengths tree
 oversubscribed literal/length tree
 p REp p
 p p p(p p
-p(p RAp
 p(p(RCp p
 p(p(RDp
 p(p(pXppppp8RARARARARARARA^DTARAZARAp
-p(p(php
+p(p(ph
 p/ugH
 p0SBUBTCp
 p2p_listpeers
@@ -9241,6 +9267,7 @@ s <filename> [path id]: execute an async script and wait for it to finish
 s <millis>: pause an async script
 s <protected
 s = %s
+s = %s was changed between from/to ticks but is missed by CalcDelta (i.e., encoded values are same
 s = %zu (%6zu:%6zu
 s Build, service overhead %5f ms
 s ManifestUpdate
@@ -9405,6 +9432,7 @@ schema_description
 schema_friendly_name
 schema_suppress_enumerator
 schemasystem/schema_enable_defines.h
+scratch
 screenshot
 screenshot resampling failed (error code %d
 screenshot.jpg
@@ -9496,6 +9524,7 @@ shotrate
 show frame dispatch names
 show usercmd payload sizing info for packets with more than this many usercmds
 showDebugRenderTarget
+showDistanceField
 showLightmapTexels
 showQuadOverdraw
 showShadingComplexity
@@ -9571,6 +9600,7 @@ spec_replay_rate_limit
 spewserializers
 splitplayers
 splitscreen_mode
+splitscreen_testreadconfigconflict
 splitter
 src/shaders
 ss_active
@@ -9673,6 +9703,7 @@ subprocess
 subtype mismatch
 succeeded
 success
+successfully
 support for \P, \p, and \X has not been compiled
 sv_alternateticks
 sv_banid_dev_enabled
@@ -9711,6 +9742,7 @@ sv_maxclientframes
 sv_maxrate
 sv_maxreplay
 sv_memlimit
+sv_merge_changes_after_tick_with_calcdelta
 sv_metaduplication
 sv_minrate
 sv_mmqueue_reservation
@@ -9854,17 +9886,13 @@ t/H9D
 t/ffffff
 t1<-t-L
 t1A9]0
-t6D951
 t6H9D
 t7Hc9H9
 t9fff
 t:\HcP
 t:fff
-t:ffff
-t:ffffff
 t;fffff
 t<fff
-t<fffff
 t<ffffff
 t=fffff
 t=ffffff
@@ -9978,7 +10006,6 @@ tried to sprint to a non-client
 truncated
 turn on sse4.2 optimizations in the engine
 tv_advertise_watchable
-tv_allow_camera_man_override
 tv_autorecord
 tv_autoretry
 tv_broadcast
@@ -10038,6 +10065,8 @@ tv_port
 tv_port1
 tv_rate_multiplier
 tv_record
+tv_record starting the moment tv_record was executed, not tv_delay earlier
+tv_record_immediate
 tv_relay
 tv_relay %s
 tv_relay_hard_shutdown
@@ -10180,7 +10209,8 @@ u{ffff
 u}ffffff
 v3fffff
 v7fff
-v8H;5(3
+v8H;5:I
+v8H;5HE
 v:fff
 v:fffff
 v=fff
@@ -10272,7 +10302,6 @@ vis_debug_lock
 vis_debug_record_start
 vis_debug_record_stop
 vis_debug_show
-vis_debug_sphere
 vis_debug_sunclusters
 vis_debug_tracelos
 vis_enable
@@ -10298,11 +10327,13 @@ void CNetworkGameClientBase::ReadEnterPVS(CEntityReadInfo
 void CNetworkGameClientBase::ReadPacketEntities(CEntityReadInfo
 void CNetworkGameServerBase::EnsureInstanceBaseline(const CNetworkGameServerBase::PackEntityBaselineWork_t
 void CNetworkGameServerBase::PackEntity(CNetworkGameServerBase::EnsureBaselineHashtable_t &, CEntityIndex, const void *, const CGameNetworkableClass *, CInterlockedInt *, CChangeInfoAccessor *, const CEntityInstancePolymorphicMetadataHelper *, CFrameSnapshot
+void CNetworkGameServerBase::ValidateIncrementalChanges(const FlattenedSerializerHandle_t &, const CGameNetworkableClass *, const PackedFieldPathVec_t &, const void *, CEntityIndex, SerializedEntityHandle_t, int) const
 void CNetworkGameServerBase::WriteEnterPVS(CEntityWriteInfo
 void CNetworkStringTable::ParseUpdate(bf_read &, int
 void CNetworkStringTableContainer::WriteBaselines(bf_write &, int
 void CPacketEntitiesDiscardHelper::DiscardPacketEntities(CEntityReadInfo
 void CPostDataUpdateCallList::AddPostDataUpdateCall(CEntityIndex, DataUpdateType_t
+void CSteam3ServerS1::Activate(bool
 void CTier2AppSystemDict::MountAddonInternal(const char *, bool
 void CTier2AppSystemDict::SetAllowAddonChanges(bool
 void CTier2AppSystemDict::UnmountAddonInternal(const char *, bool
@@ -10326,7 +10357,6 @@ void InitSteamLogin_Internal(bool
 void MathLib_Init
 void ParallelFatalError(FatalErrorItem_t
 void ResetBreakpadAppId(bool
-void ValidateIncrementalChanges(const FlattenedSerializerHandle_t &, const CGameNetworkableClass *, const PackedFieldPathVec_t &, const void *, CEntityIndex, SerializedEntityHandle_t, int
 void WatchdogHandler
 void crash_error(const CCommandContext &, const CCommand
 void force_fatal_error(const CCommandContext &, const CCommand
@@ -10394,6 +10424,7 @@ width
 wild scan
 with %d x %d thumbnail image
 with bitrate=%dMbps
+with error
 work thread for decode
 world_offset_angle
 world_offset_pos

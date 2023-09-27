@@ -1,0 +1,86 @@
+<!-- xml reconstructed by Source 2 Viewer 5.0.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/dashboard_page_shared.vcss_c" />
+		<include src="s2r://panorama/styles/battle_pass/international2023/bp_international2023_shared.vcss_c" />
+		<include src="s2r://panorama/styles/battle_pass/international2023/bp_international2023_quests.vcss_c" />
+	</styles>
+	<snippets>
+		<snippet name="ChallengeTabSnippet">
+			<Panel class="ChallengeSelector">
+				<Panel class="ChallengeName">
+					<Label text="{s:challenge_name}" />
+				</Panel>
+			</Panel>
+		</snippet>
+		<snippet name="ChallengeContentsSnippet">
+			<Panel class="ChallengeQuests">
+				<DOTAInnerScrollingPanel id="ChallengeQuestList" />
+				<Panel class="ChallengeHeader" hittest="false">
+					<Panel id="StarsRewards">
+						<Panel class="ChallengeStatus">
+							<Label class="ChallengeAchievementsProgress" text="#DOTA_International2023_Quests_Progress_Label" />
+						</Panel>
+						<DOTAQuestPipBar_International2023 id="QuestPipBar" />
+					</Panel>
+				</Panel>
+			</Panel>
+		</snippet>
+		<snippet name="LockedQuestSnippet">
+			<Panel class="LockedQuest" onactivate="">
+				<Panel class="LockedQuestContainer">
+					<Panel class="LockIconContainer">
+						<Image class="LockIcon" src="s2r://panorama/images/control_icons/24px/lock.vsvg" />
+					</Panel>
+					<Label class="Title" text="#DOTA_International2023_Quests_LockedTitle" />
+					<Label class="LockedIconLabel HorizontalCenter LighterGreyText Opacity_60" text="#DOTA_International2023_Quests_UnlockQuest" html="true" />
+				</Panel>
+			</Panel>
+		</snippet>
+	</snippets>
+	<DOTABPInternational2023QuestsPage class="DashboardPage FullDashboardPage" dashboardclass="International2023BattlePassPage" AllowOversized="1">
+		<DOTAScenePanel class="TopGodRays" map="scenes/loadout_preview_rays" camera="camera_1" hittest="false" particleonly="false" />
+		<Panel class="BPSharedPageContainer">
+			<Panel class="BPSharedHeaderContainer">
+				<Label class="BPTitle" text="#DOTA_International2023_Quests_Title" />
+				<Panel id="ChallengeTabsContainer" hittest="true" />
+			</Panel>
+			<Panel id="ConsumablesOuter">
+				<Label id="ItemsTitle" class="SubTitle LabelMedium HorizontalCenter" text="#DOTA_International2023_Quests_ItemsTitle" />
+				<Panel id="ConsumablesContent" hittest="false">
+					<Panel id="ItemCullingBlade" class="ItemContainer" onactivate="DOTAInternational2023QuestActivateCullingBlade()" onmouseover="UIShowTextTooltip( #DOTA_International2023_Quests_ItemCullingBlade_Tooltip )" onmouseout="UIHideTextTooltip()">
+						<Button id="ItemCullingBladeImage" class="ItemImage" />
+						<Label class="ItemCount" text="{d:item_culling_blade_count}" />
+						<Label class="ItemLabel BodyMedium LightestGreyText" text="#DOTA_International2023_Quests_ItemCullingBlade" />
+					</Panel>
+					<Panel id="ItemReroll" class="ItemContainer" onactivate="DOTAInternational2023QuestActivateReroll()" onmouseover="UIShowTextTooltip( #DOTA_International2023_Quests_ItemReroll_Tooltip )" onmouseout="UIHideTextTooltip()">
+						<Button id="ItemRerollImage" class="ItemImage" />
+						<Label class="ItemCount" text="{d:item_reroll_count}" />
+						<Label class="ItemLabel BodyMedium LightestGreyText" text="#DOTA_International2023_Quests_ItemReroll" />
+					</Panel>
+				</Panel>
+			</Panel>
+			<Panel id="HowToPlayContainer" AllowOversized="1">
+				<Panel id="HowToPlay">
+					<Label id="HowToPlayTitle" text="#DOTA_International2023_Quests_HowToPlay" />
+					<Label id="HowToPlayDescription" text="#DOTA_International2023_Quests_HowToPlay_Description" html="true" />
+					<Button class="TutorialButton ButtonPrimary Large TI23Blue" onactivate="DOTAInternational2023QuestDismissHowToPlay()">
+						<Label text="#DOTA_FantasyCraft_Tutorial_Continue" />
+					</Button>
+				</Panel>
+			</Panel>
+			<Panel id="QuestsOuter" AllowOversized="1">
+				<Panel id="QuestsContent" AllowOversized="1">
+					<Panel id="QuestHiddenBackground" hittest="false" />
+					<DOTAInnerScrollingPanel id="ChallengeQuestsContainer" AllowOversized="1" />
+				</Panel>
+				<Panel id="NavButtons" hittest="false">
+					<Button id="PrevButton" class="ChallengePaginationButton Prev" onactivate="DOTAInternational2023QuestChangeSelectedQuest(-1)" />
+					<Button id="NextButton" class="ChallengePaginationButton Next" onactivate="DOTAInternational2023QuestChangeSelectedQuest(1)" />
+				</Panel>
+			</Panel>
+			<Panel class="Spinner MissingDataSpinner" />
+		</Panel>
+	</DOTABPInternational2023QuestsPage>
+</root>

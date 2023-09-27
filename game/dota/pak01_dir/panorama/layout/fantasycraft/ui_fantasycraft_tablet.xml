@@ -1,0 +1,79 @@
+<!-- xml reconstructed by Source 2 Viewer 5.0.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/dashboard_page_shared.vcss_c" />
+		<include src="s2r://panorama/styles/fantasycraft/ui_fantasycraft_tablet.vcss_c" />
+		<include src="s2r://panorama/styles/battle_pass/international2023/bp_international2023_shared.vcss_c" />
+	</styles>
+	<snippets>
+		<snippet name="GemSnippet">
+			<Panel class="FantasyGem">
+				<Panel class="GemStatIcon" />
+				<Panel class="GemContents">
+					<Panel class="Background" />
+					<Panel class="Details">
+						<Panel class="Header">
+							<Label id="GemStatLabel" class="GemStat" text="{s:gem_stat}" onmouseout="DOTAHideTextTooltip()" />
+							<Label class="GemTotal" text="{d:total_stat_value}%" onmouseover="DOTAShowTextTooltip( #DOTA_FantasyCraft_TotalStatBonusDesc )" onmouseout="DOTAHideTextTooltip()" />
+						</Panel>
+						<Panel class="Body">
+							<Panel id="GemQuality" class="GemAttribute" onmouseout="DOTAHideTextTooltip()">
+								<Label class="GemAttributeName" text="{s:gem_quality}" />
+								<Panel class="FillWidth" />
+								<Label class="GemAttributeQualityAmount" text="+{d:quality_quality_amount}%" />
+							</Panel>
+							<Panel id="GemShape" class="GemAttribute" onmouseout="DOTAHideTextTooltip()">
+								<Label class="GemAttributeName" id="GemShapeName" text="{s:gem_shape}" />
+								<Panel class="FillWidth" />
+								<Label class="GemAttributeQualityAmount" id="GemShapeAmount" text="{s:shape_quality_amount}" />
+							</Panel>
+							<Panel id="Score" class="GemAttribute" onmouseout="DOTAHideTextTooltip()">
+								<Label class="GemScore" text="{s:gem_score}" />
+							</Panel>
+						</Panel>
+					</Panel>
+				</Panel>
+			</Panel>
+		</snippet>
+		<snippet name="FantasyOperationSnippet">
+			<Panel class="FantasyOperation">
+				<TextButton class="PopupButton FantasyOperationButton" id="FantasyOperationButton" text="{s:operation_text}" onmouseout="FantasyCraftRemoveOperationHighlights()" />
+			</Panel>
+		</snippet>
+	</snippets>
+	<DOTAUIFantasyCraftTablet>
+		<AsyncDataPanel class="TabletDetails" state="{d:tablet_state}" loading-text="" error-text="">
+			<Panel class="AsyncSuccessContainer">
+				<Panel class="Ornament Top" />
+				<Panel class="FantasyTablet">
+					<Panel class="PlayerAndImages">
+						<Panel class="PlayerImages">
+							<Image id="TeamLogo" scaling="contain" />
+							<DOTAPlayerImage id="Headshot" scaling="stretch-to-fit-preserve-aspect" />
+						</Panel>
+						<Panel class="RoleAndName">
+							<Label class="RoleName" text="{s:tablet_role}" />
+							<Panel class="PlayerNameAndTitle">
+								<Label id="PlayerNameAndTitleLabel" text="#DOTA_FantasyCraft_Player" html="true" onmouseout="DOTAHideFantasyCraftPlayerTooltip()" />
+							</Panel>
+							<Button id="SelectTitleButton" class="CraftingOnly ButtonPrimary Purple">
+								<Label text="#DOTA_FantasyCraft_SelectTitles" />
+							</Button>
+						</Panel>
+						<Button id="SelectPlayerButton" class="CraftingOnly ButtonPrimary Purple">
+							<Label text="#DOTA_FantasyCraft_SelectPlayer" />
+						</Button>
+					</Panel>
+					<Panel class="TabletBorder" hittest="false" />
+				</Panel>
+				<Panel class="Ornament Bottom" />
+				<Panel class="FantasyGemHolderContainer">
+					<Panel class="WarbannerBackground" />
+					<Panel class="WarbannerBorder" />
+					<Panel id="FantasyGemHolder" />
+				</Panel>
+			</Panel>
+		</AsyncDataPanel>
+	</DOTAUIFantasyCraftTablet>
+</root>

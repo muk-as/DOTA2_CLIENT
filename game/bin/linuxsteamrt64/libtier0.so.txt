@@ -236,7 +236,6 @@
 8H9z(u
 8IProcess
 8[A\A]A^A
-8[A\A]D
 8]pt	8]q
 8fA99u
 8x-%4x-%4x-%2x%2x-%2x%2x%2x%2x%2x%2x
@@ -1739,13 +1738,8 @@ H+T$PI9
 H9D$xt
 H9E(sgL
 H;2uRE
-H;5.Z
-H;57u
-H;58u
-H;=Dt
-H;=dd
-H;=iB
-H;E0sR
+H;5j\C
+H;=2Y
 H;X0t	H
 H>*SL
 HEAP WARNING: memory block at %p appears to be corrupt
@@ -1787,7 +1781,6 @@ I9T$@I
 I;	wAH
 I;D$pt
 I;Ght	I
-I;_ht	I
 IAnimAction
 IAnimClipData
 IAnimClipDataManager
@@ -2007,7 +2000,7 @@ Invalid Mach-O header
 Invalid Mach-O program header %d
 Invalid Mach-O segment %d
 Invalid abbrev children setting %d
-Invalid alignment value %llu, must be a power of two and at least %llu
+Invalid alignment value %llu, must be a power of two
 Invalid arange debug info offset
 Invalid arange header address size
 Invalid arange header segment size
@@ -2079,10 +2072,8 @@ L$8A9\$X
 L$HH;G
 L$PI;L$(r0A
 L9D$HL
-L;%D5
-L;%f5
-L;-0H
-L;-EH
+L;%CaC
+L;-zR
 L;`ht	H
 L;cHt	H
 L;cpt	H
@@ -2657,6 +2648,7 @@ Plat_GetExecutablePathUTF8
 Plat_GetFileType
 Plat_GetGameDirectory
 Plat_GetGlobalListRegistry
+Plat_GetLastDllLoadDenial
 Plat_GetLastGameInstanceMutex
 Plat_GetLocalTime
 Plat_GetMasterMobileEventHandler
@@ -2772,6 +2764,7 @@ Plat_RemoveDirectoryTree
 Plat_RemoveEnv
 Plat_RemoveFile
 Plat_RenameFile
+Plat_ReportDllLoadDenial
 Plat_RequireSDL
 Plat_RestartCurrentProcess
 Plat_RestoreDenormalsAreZero
@@ -2981,10 +2974,9 @@ SAWAVAUH
 SCAN UNWIND: found reasonable frame pointer 0x%llx below retaddr, using
 SCAN UNWIND: found reasonable return address 0x%llx on the stack at 0x%llx
 SCHINESE
+SDL_AudioDevicePaused
 SDL_BlitSurfaceScaled
 SDL_ClearAudioStream
-SDL_ClearQueuedAudio
-SDL_CloseAudioDevice
 SDL_CloseJoystick
 SDL_CreateAudioStream
 SDL_CreateColorCursor
@@ -3002,9 +2994,12 @@ SDL_FlashWindow
 SDL_FlushAudioStream
 SDL_GL_SetAttribute
 SDL_GetAudioDeviceName
-SDL_GetAudioDeviceStatus
+SDL_GetAudioOutputDevices
 SDL_GetAudioStreamAvailable
 SDL_GetAudioStreamData
+SDL_GetAudioStreamDevice
+SDL_GetAudioStreamFormat
+SDL_GetAudioStreamQueued
 SDL_GetClipboardText
 SDL_GetClosestFullscreenDisplayMode
 SDL_GetCurrentAudioDriver
@@ -3034,12 +3029,10 @@ SDL_GetKeyName
 SDL_GetKeyboardFocus
 SDL_GetKeyboardState
 SDL_GetModState
-SDL_GetNumAudioDevices
 SDL_GetNumJoystickAxes
 SDL_GetNumJoystickButtons
 SDL_GetNumJoystickHats
 SDL_GetPowerInfo
-SDL_GetQueuedAudioSize
 SDL_GetRelativeMouseMode
 SDL_GetScancodeFromKey
 SDL_GetScancodeName
@@ -3063,23 +3056,23 @@ SDL_HideWindow
 SDL_Init
 SDL_InitSubSystem
 SDL_LoadBMP_RW
+SDL_LockAudioStream
 SDL_MOUSE_FOCUS_CLICKTHROUGH
 SDL_MinimizeWindow
-SDL_OpenAudioDevice
+SDL_OpenAudioDeviceStream
 SDL_OpenJoystick
 SDL_PauseAudioDevice
 SDL_PeepEvents
-SDL_PlayAudioDevice
 SDL_PollEvent
 SDL_PumpEvents
 SDL_PutAudioStreamData
-SDL_QueueAudio
 SDL_Quit
 SDL_QuitSubSystem
 SDL_RWFromFile
 SDL_RaiseWindow
 SDL_ResetKeyboard
 SDL_RestoreWindow
+SDL_ResumeAudioDevice
 SDL_ScreenKeyboardShown
 SDL_ScreenSaverEnabled
 SDL_SetClipboardText
@@ -3103,6 +3096,7 @@ SDL_ShowWindow
 SDL_StartTextInput
 SDL_StopTextInput
 SDL_TextInputActive
+SDL_UnlockAudioStream
 SDL_UpdateJoysticks
 SDL_VIDEO_MINIMIZE_ON_FOCUS_LOSS
 SDL_VIDEO_X11_NET_WM_PING
@@ -3495,6 +3489,7 @@ ThreadGetCurrentProcessHandle
 ThreadGetCurrentProcessId
 ThreadGetDebugNameForThreadHandle
 ThreadGetDebugNameForThreadId
+ThreadGetMainThreadId
 ThreadGetProcessExitCode
 ThreadGetProcessIdFromHandle
 ThreadGetProcessPriority
@@ -4142,6 +4137,7 @@ VmSize
 VoidFnPtrLookup_Tier0
 Vrad3_001
 W/q#IX
+WARNING: %s Denied a request to load '%s
 WARNING: CDirWatcher not implemented
 WARNING: Command buffer full... ignoring
 WARNING: Command too long... ignoring
@@ -4732,6 +4728,8 @@ ZN12CThreadEventC2Eb
 ZN12CThreadFiberC1Em
 ZN12CThreadFiberC2Em
 ZN12CThreadMutex7TryLockEPKci
+ZN12CThreadMutexC1EPKc
+ZN12CThreadMutexC2EPKc
 ZN12CThreadMutexD1Ev
 ZN12CThreadMutexD2Ev
 ZN12CThreadedJob5AbortEb
@@ -5261,6 +5259,8 @@ ZN28CCallStackStatsGatherer_Base27STUB_OnLinkedGathererPoppedERKS
 ZN28CCallStackStatsGatherer_Base27STUB_OnLinkedGathererPushedERKS_RK20CCallStackMarkerBase
 ZN28CCallStackStatsGatherer_Base28STUB_EvaluateGathererLinkageERS
 ZN28CCallStackStatsGatherer_Base29STUB_RemoveSharedInstanceDataERK43CallStackStatsGatherer_SharedInstanceData_t
+ZN28CThreadAccessValidationToken10BeginScopeENS_11EAccessTypeE
+ZN28CThreadAccessValidationToken8EndScopeENS_11EAccessTypeENS_13EAccessResultE
 ZN28CUtlBufferFormatOutputStream4PutCEc
 ZN28CUtlBufferFormatOutputStreamD0Ev
 ZN28CUtlBufferFormatOutputStreamD1Ev
@@ -10314,7 +10314,6 @@ f %f %f %f
 fA98u
 fA9]6r
 fD9#u
-fD9-6+4
 fD99u
 fD9|$8
 fD;)tjD
@@ -11173,6 +11172,7 @@ memstackstats_disable_pools
 memstacktraceframes
 memstats_%d.txt
 memstd.cpp
+memstd_force_passthrough
 menubar_item
 merged
 meshes
@@ -11505,6 +11505,7 @@ quantizedfloatencoderregistry.cpp
 quaternion
 queue force advance
 queue max wait
+r L;-iR
 r M9q M
 rT+6ZNw
 radius0
@@ -11843,15 +11844,12 @@ t$HSATPL
 t$XAWPASL
 t$XSATPL
 t$`AWATASL
-t&L;5/F
 t'D; u
-t)L;5BZ
 t0A+BHH
 t7L3MȋM
 tDE99L
 tKATUH
 tRUE1
-tTH;=u
 tWAVAUATI
 tZLck H
 t[ATUH
@@ -12078,7 +12076,6 @@ wcstoll
 wcstoull
 wcsxfrm_l
 wctype_l
-whH9WPvb
 width is not integer
 windows
 with base

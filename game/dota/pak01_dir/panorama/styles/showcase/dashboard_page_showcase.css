@@ -1,0 +1,800 @@
+/* Prettified by Source 2 Viewer 5.0.0.0 - https://valveresourceformat.github.io */
+
+@define colorBehaviorBad: #b7493a;
+@define colorBehaviorWarning: #B78C3A;
+@define colorBehaviorGood: #5bb73a;
+@define statusLabelsGap: 12px;
+Label
+{
+	color: LighterGrey;
+	font-size: 16px;
+}
+
+DOTAShowcasePage
+{
+	width: 100%;
+	height: 100%;
+	max-width: 1920px;
+	horizontal-align: center;
+}
+
+.PageContents
+{
+	flow-children: down;
+	width: 100%;
+	margin-top: 180px;
+	horizontal-align: center;
+}
+
+#MainEditControls
+{
+	horizontal-align: right;
+	vertical-align: top;
+	margin-top: 150px;
+	margin-right: 60px;
+	flow-children: right;
+	visibility: collapse;
+}
+
+.ViewingSelf:not(.SaveInProgress) #MainEditControls
+{
+	visibility: visible;
+}
+
+#MainEditControls Button,#MainEditControls TextButton
+{
+	margin-left: 6px;
+	tooltip-position: bottom;
+}
+
+#MainEditControls Button
+{
+	padding-right: 16px;
+	padding-left: 16px;
+}
+
+#MainEditControls .ControlDivider
+{
+	width: 1px;
+	height: 100%;
+	background-color: rgba(255, 255, 255, 0.04);
+	margin-left: 12px;
+	margin-right: 6px;
+}
+
+#ItemEditControls
+{
+	horizontal-align: center;
+	vertical-align: bottom;
+	margin-bottom: 120px;
+	flow-children: right;
+	background-color: #000000f5;
+	border-radius: 6px;
+	padding: 6px;
+	context-menu-position: top;
+	context-menu-body-position: 0% 0%;
+	box-shadow: inset 0px 0px 0px 1px black;
+	opacity: 0;
+	transform: translateY( 12px );
+	transition-property: opacity, transform;
+	transition-duration: 0.25s;
+	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
+}
+
+.AspectRatio16x10 #ItemEditControls
+{
+	margin-bottom: 160px;
+}
+
+.IsEditing #ItemEditControls
+{
+	opacity: 1;
+	transform: none;
+	transition-duration: 0.1s;
+	transition-timing-function: ease-in;
+}
+
+#ItemEditControls Button,#ItemEditControls TextButton
+{
+	tooltip-position: top;
+	padding-left: 12px;
+	padding-right: 12px;
+	vertical-align: center;
+	box-shadow: none;
+	context-menu-position: top;
+	context-menu-body-position: 0% 0%;
+}
+
+#ItemEditControls Button:hover,#ItemEditControls TextButton:hover
+{
+	z-index: 1;
+}
+
+#ItemEditControls .SliderContainer
+{
+	vertical-align: center;
+	flow-children: right;
+	tooltip-position: top;
+	padding: 2px 12px;
+}
+
+#ItemEditControls .SliderContainer Slider
+{
+	vertical-align: center;
+	margin: 0px;
+	width: 160px;
+}
+
+#ItemEditControls .SliderContainer Image
+{
+	vertical-align: center;
+	margin-right: 12px;
+	width: 20px;
+	height: width-percentage( 100% );
+	wash-color: LightestGrey;
+}
+
+#ItemEditControls #SendToBackButton
+{
+	border-radius: 3px 0px 0px 3px;
+}
+
+#ItemEditControls #MoveBackwardButton
+{
+	border-radius: 0px;
+}
+
+#ItemEditControls #MoveForwardButton
+{
+	border-radius: 0px;
+}
+
+#ItemEditControls #SendToFrontButton
+{
+	border-radius: 0px 3px 3px 0px;
+}
+
+#ItemEditControls #SendToBackButton,#ItemEditControls #MoveBackwardButton,#ItemEditControls #MoveForwardButton
+{
+	margin-right: -1px;
+}
+
+#ItemEditControls #FlipHorizontallyButton,#ItemEditControls #DeleteItemButton,#ItemEditControls #LayerButton
+{
+	margin-right: 6px;
+}
+
+#ItemEditControls #CustomizeAppearanceButton
+{
+	margin-left: 6px;
+	visibility: collapse;
+}
+
+.AllowCustomizeAppearance #ItemEditControls #CustomizeAppearanceButton
+{
+	visibility: visible;
+}
+
+#ItemEditControls #MoreOptionsButton
+{
+	margin-left: 6px;
+	visibility: collapse;
+}
+
+.AllowCustomizeAppearance #ItemEditControls #MoreOptionsButton
+{
+	visibility: visible;
+}
+
+#ItemEditControls #FlipHorizontallyButton
+{
+	visibility: collapse;
+}
+
+.AllowFlipHorizontally #ItemEditControls #FlipHorizontallyButton
+{
+	visibility: visible;
+}
+
+#ItemEditControls #LayerButton
+{
+	flow-children: right;
+	vertical-align: center;
+	context-menu-position: top;
+	width: fit-children;
+	padding: 4px 16px 6px 12px;
+	border-radius: 3px;
+	background-color: DarkerGrey&00;
+	box-shadow: inset 0px 0px 0px 1px rgba(255, 255, 255, 0);
+	opacity: 0.5;
+	transition-property: opacity, background-color, box-shadow;
+	transition-duration: 0.1s;
+}
+
+#ItemEditControls #LayerButton Label,#ItemEditControls #LayerButton Panel
+{
+	vertical-align: center;
+}
+
+#ItemEditControls #LayerButton Label
+{
+	color: white;
+}
+
+#ItemEditControls #LayerButton:hover
+{
+	opacity: 1.0;
+	background-color: DarkerGrey&44;
+	box-shadow: inset 0px 0px 0px 1px rgba(255, 255, 255, 0.02);
+}
+
+#ItemEditControls #LayerButton #LayerButtonIcon
+{
+	width: 12px;
+	height: 12px;
+	margin-bottom: -2px;
+	margin-right: 8px;
+	vertical-align: middle;
+	background-image: url("s2r://panorama/images/control_icons/arrow_solid_right_png.vtex");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	transition-property: transform;
+	transition-duration: 0.1s;
+}
+
+#ItemEditControls #LayerButton.MissingShowcaseItemName #LayerButtonItemName
+{
+	visibility: collapse;
+}
+
+#ItemEditControls Slider
+{
+	margin-right: 10px;
+	width: 150px;
+}
+
+#ShowcaseBudgetProgressBar
+{
+	horizontal-align: center;
+	vertical-align: bottom;
+	margin-bottom: 118px;
+	width: 400px;
+	margin-left: 1360px;
+	padding: 12px;
+	opacity: 0;
+	transform: translateY( 12px );
+	transition-property: opacity, transform;
+	transition-duration: 0.25s;
+	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
+}
+
+.IsEditing #ShowcaseBudgetProgressBar
+{
+	opacity: 1;
+	transform: none;
+	transition-duration: 0.1s;
+	transition-timing-function: ease-in;
+}
+
+.AspectRatio16x10 #ShowcaseBudgetProgressBar
+{
+	margin-bottom: 160px;
+	margin-left: 1200px;
+}
+
+#HeaderNameContainer
+{
+	margin-top: 140px;
+	horizontal-align: center;
+	width: 1392px;
+	height: 146px;
+}
+
+#HeaderNameContainer #AvatarImage
+{
+	height: 100%;
+	width: height-percentage( 100% );
+	transition-property: border;
+	transition-duration: .2s;
+	transition-timing-function: ease-in-out;
+	border-radius: 4px;
+	width: 136px;
+	height: 136px;
+	box-shadow: 0px 4px 32px -6px rgba(0, 0, 0, 0.8);
+}
+
+#HeaderNameContainer .RankBadge
+{
+	width: 100px;
+	height: 100px;
+	margin-top: -10px;
+	z-index: 2;
+}
+
+#HeaderNameContainer #ProfileMainCorner
+{
+	width: 100%;
+}
+
+#HeaderNameContainer #ProfileMainCorner .MainNameLine
+{
+	z-index: 2;
+	margin-bottom: -12px;
+	margin-top:-5px;
+}
+
+#HeaderNameContainer #ProfileMainCorner .MainNameLine #FavoriteTeam
+{
+	width: 32px;
+	height: 32px;
+	visibility: collapse;
+	vertical-align:center;
+	margin-left:5px;
+}
+
+#HeaderNameContainer #ProfileMainCorner .MainNameLine #FavoriteTeam.HasTeamCrest
+{
+	visibility: visible;
+}
+
+#HeaderNameContainer #ProfileMainCorner .MainNameLine #ProfileName
+{
+	width: fit-children;
+	vertical-align: middle;
+	white-space: nowrap;
+	height: 48px;
+	margin-bottom: 10px;
+}
+
+#HeaderNameContainer #ProfileMainCorner .MainNameLine #ProfileName Label
+{
+	max-width: 800px;
+	font-size: 40px;
+	font-weight: normal;
+	white-space: nowrap;
+	text-overflow: shrink;
+	max-height: 64px;
+	text-shadow: 0px 2px 8px #000000;
+}
+
+#HeaderNameContainer #ProfileMainCorner .MainNameLine #ProfileNickname
+{
+	width: fit-children;
+	margin-left: 10px;
+	margin-bottom: 12px;
+	vertical-align: bottom;
+}
+
+#HeaderNameContainer #ProfileMainCorner .MainNameLine #ProfileNickname Label
+{
+	font-size: 20px;
+	white-space: nowrap;
+	text-shadow: 0px 2px 8px #000000;
+}
+
+#HeaderNameContainer #ProfileMainCorner .MainNameLine #ProfileNickname Label .PersonaName
+{
+	color: #ccc;
+	text-shadow: 0px 2px 8px #000000;
+}
+
+#HeaderNameContainer #ProfileMainCorner .StatusLine
+{
+	margin-top: 4px;
+}
+
+#HeaderNameContainer #ProfileMainCorner .StatusLine Panel
+{
+	vertical-align: center;
+}
+
+#HeaderNameContainer #ProfileMainCorner .StatusLine Label
+{
+	vertical-align: center;
+	text-shadow: 0px 1px 5px #000000;
+}
+
+#HeaderNameContainer #ProfileMainCorner .StatusLine #UserRichPresence
+{
+	margin-right: statusLabelsGap;
+}
+
+#HeaderNameContainer #ProfileMainCorner .StatusLine #UserRichPresence.ProfileUserRichPresence Label
+{
+	text-transform: uppercase;
+	font-size: 16px;
+	brightness: 2;
+}
+
+#HeaderNameContainer #ProfileMainCorner .StatusLine #SteamFriends
+{
+	flow-children: right;
+	margin-right: statusLabelsGap;
+}
+
+#HeaderNameContainer #ProfileMainCorner .StatusLine #SteamFriends #FriendsIDLabel
+{
+	font-size: 16px;
+	horizontal-align: left;
+	color: LighterGrey;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+#HeaderNameContainer #ProfileMainCorner .StatusLine #SteamFriends #FriendsID
+{
+	font-size: 16px;
+	horizontal-align: left;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: LighterGrey;
+}
+
+#HeaderNameContainer #ProfileMainCorner .StatusLine #PlusStatus
+{
+	flow-children: right;
+	margin-right: statusLabelsGap;
+}
+
+#HeaderNameContainer #ProfileMainCorner .StatusLine #PlusStatus Image
+{
+	width: 16px;
+	height: 18px;
+	margin-right: 4px;
+}
+
+#HeaderNameContainer #ProfileMainCorner .StatusLine #PlusStatus #PlusStatusLabel
+{
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+#HeaderNameContainer #ProfileMainCorner .StatusLine #MemberSince
+{
+	flow-children: right;
+	margin-right: statusLabelsGap;
+}
+
+#HeaderNameContainer #ProfileMainCorner .StatusLine #MemberSince .MemberSince
+{
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: dotaPlusGold;
+	brightness: 1.5;
+}
+
+#HeaderNameContainer #ProfileMainCorner .StatusLine #MemberSince .MemberDate
+{
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+#HeaderNameContainer #ProfileActionButtons
+{
+	flow-children: right;
+	margin-top: -6px;
+	margin-left: 16px;
+	width: fit-children;
+}
+
+#HeaderNameContainer #ProfileActionButtons Button
+{
+	tooltip-position: top;
+	tooltip-body-position: 50% 50%;
+	visibility: collapse;
+}
+
+#HeaderNameContainer #ProfileActionButtons Button.Visible
+{
+	visibility: visible;
+}
+
+#HeaderNameContainer #ProfileActionButtons Button:hover
+{
+	wash-color: #ffffffff;
+}
+
+#BehaviorStatus
+{
+	flow-children: down;
+	vertical-align: center;
+	padding-right: 24px;
+	margin-right: 24px;
+	border-right: 1px solid rgba(255, 255, 255, 0.02);
+	visibility: collapse;
+	transition-property: brightness;
+	transition-duration: 0.1s;
+}
+
+.BehaviorScoreAvailable.IsViewing:not(.BehaviorScoreLoading) #BehaviorStatus
+{
+	visibility: visible;
+}
+
+#BehaviorStatus:hover
+{
+	brightness: 1.5;
+}
+
+#BehaviorStatus #ScoresContainer
+{
+	flow-children: right;
+}
+
+#BehaviorStatus #CommunicationScoreSection
+{
+	margin-right: 10px;
+}
+
+#BehaviorStatus #CommunicationScoreSection,#BehaviorStatus #BehaviorScoreSection
+{
+	flow-children: right;
+	horizontal-align: right;
+	tooltip-position: bottom;
+}
+
+#BehaviorStatus #CommunicationScoreSection #BehaviorScoreImage,#BehaviorStatus #CommunicationScoreSection #CommunicationScoreImage,#BehaviorStatus #BehaviorScoreSection #BehaviorScoreImage,#BehaviorStatus #BehaviorScoreSection #CommunicationScoreImage
+{
+	width: 24px;
+	height: 24px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	margin-right: 4px;
+	vertical-align: center;
+}
+
+#BehaviorStatus #CommunicationScoreSection #BehaviorScoreLabel,#BehaviorStatus #CommunicationScoreSection #CommunicationScoreLabel,#BehaviorStatus #BehaviorScoreSection #BehaviorScoreLabel,#BehaviorStatus #BehaviorScoreSection #CommunicationScoreLabel
+{
+	vertical-align: center;
+}
+
+#PlusStatus,#MemberSince
+{
+	visibility: collapse;
+}
+
+.ViewingPlusSubscriber #PlusStatus,.ViewingPlusSubscriber #MemberSince
+{
+	visibility: visible;
+}
+
+.ViewingPlusSubscriber #PlusStatus,.ViewingPlusSubscriber #MemberSince
+{
+	visibility: visible;
+}
+
+.ShowIfItemSelected
+{
+	visibility:collapse;
+}
+
+.IsItemSelected .ShowIfItemSelected
+{
+	visibility: visible;
+}
+
+.ShowIfNothingSelected
+{
+	visibility:collapse;
+}
+
+.IsNothingSelected .ShowIfNothingSelected
+{
+	visibility: visible;
+}
+
+.ShowIfViewingOther
+{
+	visibility: collapse;
+}
+
+.ViewingOther .ShowIfViewingOther
+{
+	visibility: visible;
+}
+
+.ShowIfEditing
+{
+	visibility: collapse;
+}
+
+.IsEditing .ShowIfEditing
+{
+	visibility: visible;
+}
+
+.HideIfEditing
+{
+	visibility:collapse;
+}
+
+.IsViewing .HideIfEditing
+{
+	visibility: visible;
+}
+
+.ShowcaseData
+{
+	width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	background-size: cover;
+	opacity-mask: url("s2r://panorama/images/masks/showcase_fade_psd.vtex");
+}
+
+.ShowcaseData .ShowcaseMain
+{
+	width: 100%;
+	height: 100%;
+}
+
+.ShowcaseData .ShowcaseMain #ShowcaseContents
+{
+	width: 1920px;
+	height: 1080px;
+	vertical-align: center;
+	horizontal-align: center;
+	overflow: noclip;
+}
+
+.SaveInProgressIndicator
+{
+	flow-children: right;
+	horizontal-align: right;
+	vertical-align: top;
+	margin-top: 150px;
+	margin-right: 60px;
+	visibility: collapse;
+}
+
+.SaveInProgress .SaveInProgressIndicator
+{
+	visibility: visible;
+}
+
+.SaveInProgressIndicator .Spinner
+{
+	wash-color: winnerGreen;
+}
+
+.SaveInProgressIndicator Label
+{
+	margin-left: 8px;
+	vertical-align: middle;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	color: winnerGreen;
+}
+
+.InviteIconButton
+{
+	height: 24px;
+	width: 24px;
+	margin-right: 8px;
+	margin-top: 4px;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	background-size: 60% 60%;
+	background-color: gradient( linear, 0% 100%, 0% 0%, from( #3E4B51 ), to( #5C9C68 ) );
+	wash-color: #ABEAA8;
+	border-radius: 3px;
+	transition-property: wash-color;
+	transition-duration: 0.2s;
+}
+
+.InviteIconButton:hover
+{
+	wash-color: #ffffff;
+}
+
+#ActionInviteToParty
+{
+	background-image: url("s2r://panorama/images/control_icons/plus_png.vtex");
+}
+
+#ActionViewGuild
+{
+	background-size: 100% 100%;
+	background-color: none;
+	background-image: url("s2r://panorama/images/guilds/guild_view_icon_psd.vtex");
+	wash-color: #888888ff;
+	margin-top: 3px;
+}
+
+Button.SimpleIconButton
+{
+	flow-children: right;
+	transition-duration: 0.1s;
+	transition-property: wash-color;
+	height: 28px;
+	width: 28px;
+	wash-color: #888888ff;
+	margin-right: 8px;
+}
+
+Button.SimpleIconButton:hover
+{
+	wash-color: #ffffffff;
+}
+
+Button.SimpleIconButton Image
+{
+	height: 100%;
+	width: height-percentage( 100% );
+}
+
+Button.SimpleIconButtonPending
+{
+	flow-children: right;
+	transition-duration: 0.1s;
+	transition-property: wash-color;
+	height: 28px;
+	width: 28px;
+	wash-color: #eeee82ff;
+	margin-right: 8px;
+}
+
+Button.SimpleIconButtonPending:hover
+{
+	wash-color: #ffffffff;
+}
+
+Button.SimpleIconButtonSteam
+{
+	flow-children: right;
+	transition-duration: 0.1s;
+	transition-property: wash-color;
+	height: 20px;
+	margin-right: 4px;
+	visibility: visible;
+	margin-left: -1px;
+	tooltip-position: left;
+}
+
+Button.SimpleIconButtonSteam:hover
+{
+	wash-color: #ffffff;
+	color: #ffffff;
+}
+
+Button.SimpleIconButtonSteam Image
+{
+	width: 20px;
+	margin-right: 4px;
+}
+
+.Score_Good #BehaviorScoreLabel,.Score_Good #CommunicationScoreLabel
+{
+	color: colorBehaviorGood;
+}
+
+.Score_Warning #BehaviorScoreLabel,.Score_Warning #CommunicationScoreLabel
+{
+	color: colorBehaviorWarning;
+}
+
+.Score_Bad #BehaviorScoreLabel,.Score_Bad #CommunicationScoreLabel
+{
+	color: colorBehaviorBad;
+}
+
+.Score_Good #BehaviorScoreImage,.Score_Good #CommunicationScoreImage
+{
+	wash-color: colorBehaviorGood;
+	background-image: url("s2r://panorama/images/conduct/behavior_normal_png.vtex");
+}
+
+.Score_Warning #BehaviorScoreImage,.Score_Warning #CommunicationScoreImage
+{
+	wash-color: colorBehaviorWarning;
+	background-image: url("s2r://panorama/images/conduct/behavior_neutral_png.vtex");
+}
+
+.Score_Bad #BehaviorScoreImage,.Score_Bad #CommunicationScoreImage
+{
+	wash-color: colorBehaviorBad;
+	background-image: url("s2r://panorama/images/conduct/behavior_bad_png.vtex");
+}
+

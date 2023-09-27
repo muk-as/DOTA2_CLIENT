@@ -1,0 +1,149 @@
+<!-- xml reconstructed by Source 2 Viewer 5.0.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/popups/popups_shared.vcss_c" />
+		<include src="s2r://panorama/styles/showcase/showcase_shared.vcss_c" />
+		<include src="s2r://panorama/styles/showcase/popup_showcase_add_item_v2.vcss_c" />
+	</styles>
+	<snippets>
+		<snippet name="Tab">
+			<Panel class="Tab">
+				<Image id="TabImage" />
+				<Label id="TabName" class="LabelLarge CategoryName LighterGreyText" />
+				<Image id="PlusLogo" src="s2r://panorama/images/dota_plus/dotaplus_logo_small_png.vtex" />
+			</Panel>
+		</snippet>
+		<snippet name="StickerEntry">
+			<Panel class="StickerEntry">
+				<DOTAUIEconSetPreview class="HideStickerbacks" id="StickerPreview" onmouseout="DOTAHideEconItemTooltip()" stickercamera="sticker_camera_close" rotateonmousemove="false" rotationlimits="2 -2 2 -2" stickeranim="stock_idle" yawaxis="pitch" pitchaxis="roll" />
+			</Panel>
+		</snippet>
+		<snippet name="LoadingScreenEntry">
+			<Panel class="LoadingScreenEntry">
+				<Image id="LoadingScreenPreview">
+					<Label id="LoadingScreenName" class="BodySmall" />
+				</Image>
+			</Panel>
+		</snippet>
+		<snippet name="ArmoryItemEntry">
+			<Panel class="ArmoryItemEntry">
+				<DOTAEconItem id="ItemPreview" />
+			</Panel>
+		</snippet>
+		<snippet name="SprayEntry">
+			<Panel class="SprayEntry">
+				<Image id="SprayImage" />
+			</Panel>
+		</snippet>
+		<snippet name="HeroEntry">
+			<Panel class="HeroEntry">
+				<Panel class="HeroEntryButtonContent">
+					<DOTAHeroImage id="HeroImage" heroimagestyle="portrait" scaling="stretch-to-cover-preserve-aspect" />
+				</Panel>
+				<Panel class="HeroEntryActiveBorder" hittest="false" />
+			</Panel>
+		</snippet>
+		<snippet name="WorldItemEntry">
+			<Panel class="WorldItemEntry">
+				<DOTAEconItemAnimated id="WorldItemPreview" />
+			</Panel>
+		</snippet>
+		<snippet name="HeroSetEntry">
+			<Panel class="HeroSetEntry">
+				<DOTAEconItemAnimated id="HeroSetPreview" />
+			</Panel>
+		</snippet>
+		<snippet name="TrophyEntry">
+			<Panel class="TrophyEntry" hittest="false">
+				<DOTATrophyImage id="TrophyImage" />
+			</Panel>
+		</snippet>
+		<snippet name="ChatWheelEntry">
+			<Panel class="ChatWheelEntry">
+				<DOTAHeroImage id="HeroImage" heroimagestyle="icon" />
+				<Button id="ChatWheelSoundButton" />
+				<Panel class="ChatWheelIcon" />
+				<Label class="ChatWheelAllLabel" text="#dota_all_chat_label" />
+				<Label class="ChatWheelText" text="{s:chat_wheel_text}" />
+			</Panel>
+		</snippet>
+		<snippet name="HeroIconEntry">
+			<Panel class="HeroIconEntry">
+				<DOTAHeroImage id="HeroIcon" heroimagestyle="icon" />
+			</Panel>
+		</snippet>
+	</snippets>
+	<PopupShowcaseAddItemV2 class="PopupPanel Hidden" popupbackground="dim" oncancel="UIPopupButtonClicked()">
+		<Panel id="Contents">
+			<Panel id="Header">
+				<Label id="TitleAddItem" class="Title" text="#DOTA_Showcase_AddItem_Title" />
+				<Label id="TitleSelectBackground" class="Title" text="#DOTA_Showcase_SelectBackground_Title" />
+				<Label id="TitleSelectHeroSet" class="Title" text="#DOTA_Showcase_SelectHeroSet_Title" />
+				<DOTAShowcaseBudgetProgressBar id="ShowcaseBudgetProgressBar" class="ShowIfEditing" />
+				<Panel id="ControlSearch">
+					<TextEntry id="ControlSearchTextEntry" placeholder="#DOTA_Showcase_AddItem_Search" oninputsubmit="" oncancel="" onmovedown="DOTACollectionSelectNextTab()" onmoveup="DOTACollectionSelectPrevTab()" />
+					<Panel id="SearchButton" hittest="false" />
+					<Button id="ClearButton" />
+				</Panel>
+				<Button id="CloseButton" class="ButtonPrimary Large DarkGrey" onactivate="UIPopupButtonClicked()">
+					<Image src="s2r://panorama/images/control_icons/24px/x_close.vsvg" />
+				</Button>
+			</Panel>
+			<Panel id="Body">
+				<Panel id="TabList" />
+				<Panel id="ItemsContainer" sendchildscrolledintoviewevents="true" AllowOversized="1">
+					<Panel class="NoResultsMessage">
+						<Panel class="NoResultsIcon" />
+						<Label class="BodyMedium" text="#DOTA_Collection_NothingToDisplay_Message" />
+					</Panel>
+					<DelayLoadList id="StickerList" />
+					<DelayLoadList id="SprayList" />
+					<DelayLoadList id="HeroList" />
+					<DelayLoadList id="ArmoryItemList" />
+					<DelayLoadList id="LoadingScreenList" />
+					<DelayLoadList id="WardList" />
+					<DelayLoadList id="CourierList" />
+					<DelayLoadList id="HeroSetList" />
+					<DelayLoadList id="ChatWheelList" />
+					<Panel id="HeroIconList" />
+					<Panel id="TrophiesListContainer">
+						<AsyncDataPanel class="TrophiesAsyncData" state="{d:trophies_state}">
+							<DelayLoadList id="TrophiesList" class="AsyncSuccessContainer" />
+						</AsyncDataPanel>
+					</Panel>
+					<Panel id="EmoticonList">
+						<DOTAEmoticonPicker id="EmoticonPicker" />
+					</Panel>
+					<Panel id="WidgetList">
+						<Button id="SpiderGraphButton" class="SpiderGraphContainer WidgetContainer" onactivate="DOTAShowcaseAddItemV2Widget( &apos;SpiderGraph&apos; )">
+							<Label id="SpiderGraph" class="WhiteText" text="#DOTA_Showcase_WidgetType_SpiderGraph" />
+						</Button>
+						<Button id="UserFeedButton" class="UserFeedContainer WidgetContainer" onactivate="DOTAShowcaseAddItemV2Widget( &apos;UserFeed&apos; )">
+							<Label id="UserFeed" class="WhiteText" text="#DOTA_Showcase_WidgetType_UserFeed" />
+						</Button>
+						<Button class="LastPlayedHeroContainer WidgetContainer" onactivate="DOTAShowcaseAddItemV2Widget( &apos;RecentMatchHero&apos; )">
+							<DOTAScenePanel id="LastPlayedHero" />
+							<Label class="WhiteText" text="#DOTA_Showcase_WidgetType_RecentMatchHero" />
+						</Button>
+						<Button id="StatWins" class="StatContainer WidgetContainer" onactivate="DOTAShowcaseAddItemV2Widget( &apos;StatWins&apos; )">
+							<Label class="WhiteText" text="#DOTA_ProfileCard_StatTitle_Wins" />
+						</Button>
+						<Button id="StatCommends" class="StatContainer WidgetContainer" onactivate="DOTAShowcaseAddItemV2Widget( &apos;StatCommends&apos; )">
+							<Label class="WhiteText" text="#DOTA_ProfileCard_StatTitle_Commends" />
+						</Button>
+						<Button id="StatGamesPlayed" class="StatContainer WidgetContainer" onactivate="DOTAShowcaseAddItemV2Widget( &apos;StatGamesPlayed&apos; )">
+							<Label class="WhiteText" text="#DOTA_ProfileCard_StatTitle_GamesPlayed" />
+						</Button>
+						<Button id="StatFirstMatchDate" class="StatContainer WidgetContainer" onactivate="DOTAShowcaseAddItemV2Widget( &apos;StatFirstMatchDate&apos; )">
+							<Label class="WhiteText" text="#DOTA_ProfileCard_StatTitle_FirstMatchDate" />
+						</Button>
+						<Button id="StatGamesMVP" class="StatContainer WidgetContainer" onactivate="DOTAShowcaseAddItemV2Widget( &apos;StatGamesMVP&apos; )">
+							<Label class="WhiteText" text="#DOTA_ProfileCard_StatTitle_MatchMVP" />
+						</Button>
+					</Panel>
+				</Panel>
+			</Panel>
+		</Panel>
+	</PopupShowcaseAddItemV2>
+</root>

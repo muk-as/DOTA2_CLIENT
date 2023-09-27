@@ -22,6 +22,7 @@
 		<include src="s2r://panorama/scripts/post_game_progress/post_game_progress_spring2021.vts_c" />
 		<include src="s2r://panorama/scripts/post_game_progress/post_game_progress_fall2021.vjs_c" />
 		<include src="s2r://panorama/scripts/post_game_progress/post_game_progress_battle_pass_2022.vts_c" />
+		<include src="s2r://panorama/scripts/post_game_progress/post_game_progress_international2023.vts_c" />
 		<include src="s2r://panorama/scripts/post_game_progress/post_game_progress_sequence.vts_c" />
 	</scripts>
 	<snippets>
@@ -840,6 +841,39 @@
 				</Panel>
 			</Panel>
 		</snippet>
+		<snippet name="International2023Progress">
+			<Panel class="ProgressScreen" onactivate="StartSkippingAhead()">
+				<Panel class="International2023Progress">
+					<DOTAScenePanel class="TopGodRays" map="scenes/loadout_preview_rays" camera="camera_1" hittest="false" particleonly="false" />
+					<Image id="TILogoShield" scaling="stretch-to-fit-preserve-aspect" src="s2r://panorama/images/compendium/international2023/ti2023_shield_png.vtex" />
+					<Label id="Header" text="#DOTA_International2023_Quests_Title" />
+					<Panel id="HeroList" class="QuestHeroList" />
+					<Panel id="ResultsFooter">
+						<Label id="QuestProgress" class="LabelExtraLarge" text="#DOTA_International2023_Quests_Postgame_Progress" />
+						<Label id="QuestComplete" class="LabelExtraLarge" text="#DOTA_International2023_Quests_Postgame_Complete" />
+					</Panel>
+					<Panel id="QuestReward">
+						<Panel class="RewardLabelContainer">
+							<Panel class="Dash Left" />
+							<Label class="RewardLabel LabelMedium" text="#DOTA_International2023_Quests_Postgame_Reward_Label" />
+							<Panel class="Dash Right" />
+						</Panel>
+						<Label class="RewardAmountLabel TitleExtraLarge" text="#DOTA_International2023_Quests_Postgame_Reward" />
+					</Panel>
+				</Panel>
+			</Panel>
+		</snippet>
+		<snippet name="International2023Hero">
+			<Panel class="QuestHero">
+				<DOTAHeroMovie id="QuestHeroMovie" />
+				<Panel class="QuestCompleteBorder" hittest="false" />
+				<Image class="CompletedCheckIcon" src="s2r://panorama/images/control_icons/24px/check_corner_topright.vsvg" />
+				<Image class="HalfCompletedCheckIcon" src="s2r://panorama/images/control_icons/24px/check_circle_half.vsvg" />
+				<DOTAScenePanel class="CompletedFX" map="backgrounds/accept_popup_test" camera="shot_camera" particleonly="true" />
+				<DOTAScenePanel class="CompletedFXParticles" map="scenes/10th_anniversary/10th_anniversary_dashboard_highlight" hittest="false" particleonly="true" />
+				<Label class="NewlyCompletedLabel LabelLarge" text="#DOTA_Spring2021PostGame_Complete" />
+			</Panel>
+		</snippet>
 		<snippet name="CavernCrawlProgress">
 			<Panel class="ProgressScreen" onactivate="StartSkippingAhead()">
 				<DOTACavernCrawlPostGameProgress id="CavernCrawl" />
@@ -1148,6 +1182,7 @@
 			<TextButton class="PopupButton" text="Spring 2021" unlocalized="true" onactivate="TestAnimateSpring2021()" />
 			<TextButton class="PopupButton" text="Fall 2021" unlocalized="true" onactivate="TestAnimateFall2021()" />
 			<TextButton class="PopupButton" text="BP 2022" unlocalized="true" onactivate="TestAnimateBattlePass2022()" />
+			<TextButton class="PopupButton" text="International 2023" unlocalized="true" onactivate="TestAnimateInternational2023()" />
 			<TextButton class="PopupButton Blue" text="Reset" unlocalized="true" onactivate="ResetScreens()" />
 			<TextButton class="PopupButton Blue" text="Exit" unlocalized="true" onactivate="HideProgress()" />
 		</Panel>

@@ -6100,6 +6100,8 @@ DOTAEventCrestImage.Quality2
 @define YellowGradientBackgroundColor_Inverted: gradient( linear, 0% 0%, 0% 100%, from( #A67D2A ), to( #E9BA52 ) );
 @define GoldGradientBackgroundColor: gradient( linear, 0% 0%, 0% 100%, from( #ffebb1 ), color-stop( 0.45, #c6a562 ), color-stop( 0.55, #ae9259 ), to( #dcb870 ) );
 @define GoldGradientBackgroundColor_Inverted: gradient( linear, 0% 0%, 0% 100%, from( #dcb870 ), color-stop( 0.45, #ae9259 ), color-stop( 0.55, #c6a562 ), to( #ffebb1 ) );
+@define PlatinumGradientBackgroundColor: gradient( linear, 0% 0%, 0% 100%, from( #F4E6D0 ), color-stop( 0.45, #D1B992 ), color-stop( 0.55, #9D937F ), to( #D1B992 ) );
+@define PlatinumGradientBackgroundColor_Inverted: gradient( linear, 0% 0%, 0% 100%, from( #D1B992 ), color-stop( 0.45, #9D937F ), color-stop( 0.55, #D1B992 ), to( #F4E6D0 ) );
 @define DarkGreyGradientBackgroundColor: gradient( linear, 0% 0%, 0% 100%, from( #262C30 ), to( #121719 ) );
 @define DarkGreyGradientBackgroundColor_Inverted: gradient( linear, 0% 0%, 0% 100%, from( #121719 ), to( #262C30 ) );
 @define GreyGradientBackgroundColor: gradient( linear, 0% 0%, 0% 100%, from( #373F43 ), to( #21272A ) );
@@ -6181,7 +6183,7 @@ DOTAEventCrestImage.Quality2
 
 .LabelExtraExtraLarge
 {
-	font-size: 32px;
+	font-size: 30px;
 	line-height: 36px;
 	font-weight: semi-bold;
 	letter-spacing: 1.5px;
@@ -6226,11 +6228,11 @@ DOTAEventCrestImage.Quality2
 	flow-children: right;
 	background-image: url("s2r://panorama/images/backgrounds/background_play_button_2x.png");
 	background-size: cover;
-	background-img-opacity: 0.5;
+	background-img-opacity: 0.3;
 	border-radius: 3px;
 	padding: 0px 16px;
 	height: 34px;
-	transition-property: background-color, border, brightness;
+	transition-property: background-color, border, brightness, opacity, transform;
 	transition-duration: 0.1s;
 	transition-timing-function: ease;
 	background-color: LightGreyGradientBackgroundColor;
@@ -6311,8 +6313,7 @@ DOTAEventCrestImage.Quality2
 	font-size: 14px;
 	line-height: 16px;
 	font-weight: normal;
-	font-weight: semi-bold;
-	color: LighterGrey;
+	margin: 0px;
 }
 
 .ButtonPrimary.Small Image,.ButtonPrimary.Small MoviePanel
@@ -6326,12 +6327,13 @@ DOTAEventCrestImage.Quality2
 .ButtonPrimary.Disabled,.ButtonPrimary:disabled
 {
 	saturation: 0;
-	opacity: 0.4;
+	opacity: 0.3;
+	brightness: 0.5;
 }
 
 .ButtonPrimary.Disabled Label,.ButtonPrimary:disabled Label
 {
-	opacity: 0.6;
+	opacity: 1;
 }
 
 .ButtonPrimary.LightGrey
@@ -6365,6 +6367,17 @@ DOTAEventCrestImage.Quality2
 .ButtonPrimary.Blue:active:enabled:not(.Disabled)
 {
 	background-color: BlueGradientBackgroundColor_Inverted;
+}
+
+.ButtonPrimary.TI23Blue
+{
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #2D9ED0 ), to( #0A5993 ) );
+	border-brush: WhiteGradientBorderStrong;
+}
+
+.ButtonPrimary.TI23Blue:active:enabled:not(.Disabled)
+{
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #0A5993 ), to( #2D9ED0 ) );
 }
 
 .ButtonPrimary.Green
@@ -6431,6 +6444,22 @@ DOTAEventCrestImage.Quality2
 .ButtonPrimary.Gold:active:enabled:not(.Disabled)
 {
 	background-color: GoldGradientBackgroundColor_Inverted;
+}
+
+.ButtonPrimary.Platinum
+{
+	background-color: PlatinumGradientBackgroundColor;
+	border-brush: WhiteGradientBorderStrong;
+}
+
+.ButtonPrimary.Platinum Label
+{
+	opacity: 1;
+}
+
+.ButtonPrimary.Platinum:active:enabled:not(.Disabled)
+{
+	background-color: PlatinumGradientBackgroundColor_Inverted;
 }
 
 .ButtonPrimary:active:enabled:not(.Disabled)
@@ -6695,5 +6724,10 @@ DOTAEventCrestImage.Quality2
 .TabGroupContainer .TabItem:selected .TabItemIcon
 {
 	wash-color: white;
+}
+
+DOTAEmoticon
+{
+	texture-sampling: point;
 }
 

@@ -27,6 +27,7 @@
 21CSchemaType_Atomic_TT
 22CSchemaInstallCallback
 22CSchemaSystemTypeScope
+22CSchemaType_Atomic_TTF
 22CSchemaType_FixedArray
 22ISchemaSystemTypeScope
 23CKV3TransferContextBase
@@ -45,17 +46,15 @@
 39CExampleSchemaVData_PolymorphicDerivedA
 39CExampleSchemaVData_PolymorphicDerivedB
 40s = 0x%016llX (%lld
-4ffffff
 5&YA1A
 5s: %s (%.3f%% of all %s bindings
 60s %-25s %-25s
 60s %-25s %-25s %s
-6ffffff
 8[A\A]A^A
 APPSYSTEM: In ConnectInterfaces(), s_nRegistrationCount is %d
-ARARASBRAZBVBUAXAVAp
 ARARAp
 ARASAV
+ARBRASBRAZBVBUAXAVAp
 AVSH9w
 AWAVATS
 AWAVATSA
@@ -102,6 +101,7 @@ BenchmarkService001
 Binary
 BinaryProperties_GetValue
 Binding for '%s' is not a class
+C I9F
 CBitVec
 CBitVecEnum
 CBufferString
@@ -134,6 +134,7 @@ CSoundEventName
 CSplitScreenSlot
 CTransform
 CUtlBinaryBlock
+CUtlDict
 CUtlIncrementalVector
 CUtlMap
 CUtlOrderedMap
@@ -179,6 +180,8 @@ ERROR: Inconsistent class handle for CSchemaType '%s' vs. '%s' ('%s:%s' vs. '%s:
 ERROR: Inconsistent enum ID '%d': shared by '%s' and '%s' (hash collision
 ERROR: Mismatched compile/runtime hash '%s' (%d != %d
 ERROR: Schema mismatches reported! Aborting to prevent data corruption
+ERROR: Schema registration error - class '%s' is marked as MModuleLocalTypeScope in module '%s' but contains member '%s' with a type from module '%s
+ERROR: Schema registration error - class '%s' is marked as MModuleLocalTypeScope in module '%s' but derives from class '%s' in module '%s
 ERROR: Schema registration error - class '%s' is not marked as MGlobalTypeScope but derives from globally-scoped class '%s
 ERROR: Schema registration error - class '%s' is not marked as MModuleLocalTypeScope but contains member '%s' with locally-scoped type '%s
 ERROR: Schema registration error - class '%s' is not marked as MModuleLocalTypeScope but derives from locally-scoped class '%s
@@ -196,6 +199,8 @@ Enumerator Name
 Enumerator Value
 Exiting due to fatal schema validation errors, see log output
 ExternalReference
+F( size=%d
+F(;C(u3I
 F@f;C
 FATAL ERROR: CUtlSymbolTableLarge element limit of %u exceeded
 FATAL ERROR: unable to register all schema data: %s
@@ -394,7 +399,7 @@ Opaque Indirection
 OpaqueType
 Ordered constructor wrapped type has no default constructor
 OuterOffset
-P00@`@0@ppP0@@0
+P00@`@0@ppP0
 PanoramaTextServices001
 PanoramaUIClient001
 PanoramaUIEngine001
@@ -654,7 +659,7 @@ gxx_personality_v0
 h[A\A]A^A
 include
 invalid
-jGetResourceManifest
+kGetResourceManifest
 la_symbol_ptr
 layout
 libschemasystem.dylib
@@ -708,7 +713,8 @@ opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/schemasystem/schemamis
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/schemasystem/schemasystem.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/tier0_perproject/singletons.cpp
 p RBRARAp8p
-p RBRBRBRASASBRASASASASBRASASASBRBRBRBRBRCRASASAp
+p RBRBRBRASASBRASASASASBRBRASASASBRBRBRBRBRCRASASAp
+p0@@0
 p8SBRASAp
 panorama_image
 public/tier0/utltshash.h
@@ -733,8 +739,10 @@ s:%s needs base %s:%s to be registered
 s< %d
 s< %s
 s< %s, %s
+s< %s, %s, F( size=%d
 schema_all_list_bindings
 schema_all_list_bindings <substring> - List all scopes registered schema bindings (classes & enums). If no substring, list them all
+schema_check_local_cross_depend
 schema_detailed_class_layout
 schema_detailed_class_layout "%s
 schema_detailed_class_layout <class_name> - Print a detailed memory layout of the class (including inline structs
@@ -747,7 +755,6 @@ schema_meta_stats
 schema_meta_stats [<options>]- Print a summary of schemasystem metadata statistics
 schema_stats
 schema_stats - Print a summary of various schemasystem statistics
-schema_validate_enum_scope
 schemalib
 schemasystem
 schemasystem/schemasystem.h
@@ -774,6 +781,7 @@ t#fff
 t$ffff
 t-E#H\L
 t-ffff
+t.M9l
 t/ffffff
 tFfffff
 tools
@@ -789,31 +797,32 @@ usr/lib/libSystem.B.dylib
 usr/lib/libc++.1.dylib
 usr/lib/libiconv.2.dylib
 u{ffff
-vInstallSchemaBindings
 virtual CSchemaClassInfo *CSchemaSystemTypeScope::InstallSchemaClassBinding(const char *, CSchemaClassInfo
 virtual SchemaTypeHandle_t CSchemaSystemTypeScope::Type_DeclaredClass(const char
 virtual SchemaTypeHandle_t CSchemaSystemTypeScope::Type_DeclaredEnum(const char
 virtual void CSchemaSystem::ValidateClasses(SchemaClassInfoData_t *const
 virtual void CSchemaSystem::VerifySchemaBindingConsistency(bool
 void CSchemaClassInfo::ReportClassError(const char *) const
-void CSchemaSystemTypeScope::RegisterAtomicType(AtomicTypeIntrospectionHandle_t
-void CSchemaType_DeclaredClass::SetClass(ClassIntrospectionHandle_t
+void CSchemaSystemTypeScope::RegisterAtomicType(SchemaAtomicTypeInfoHandle_t
+void CSchemaType_DeclaredClass::SetClass(SchemaClassInfoHandle_t
 void CUtlMemory_RawAllocator<CUtlHashtableEntry<unsigned int>>::EnsureCapacity(int) [T = CUtlHashtableEntry<unsigned int
 void CUtlMemory_RawAllocator<unsigned int>::EnsureCapacity(int) [T = unsigned int
 void CUtlMemory_RawAllocator<unsigned int>::Grow(int) [T = unsigned int
 void ConnectInterfaceSingletons(CreateInterfaceFn *, int
 void MathLib_Init
-void PromoteUnresolvedAndGlobalTypes(CSchemaPtrMap<TTypeMapKey, TSchemaTypeSubclass *> &, CSchemaPtrMap<TTypeMapKey, TSchemaTypeSubclass *> &, ISchemaSystemTypeScope *, const TExtraWork) [TTypeMapKey = AtomicTypeInfo_I_t, TSchemaTypeSubclass = CSchemaType_Atomic_I, TExtraWork = (lambda at /opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/schemasystem/schemasystem.cpp:1837:104
-void PromoteUnresolvedAndGlobalTypes(CSchemaPtrMap<TTypeMapKey, TSchemaTypeSubclass *> &, CSchemaPtrMap<TTypeMapKey, TSchemaTypeSubclass *> &, ISchemaSystemTypeScope *, const TExtraWork) [TTypeMapKey = AtomicTypeInfo_TT_t, TSchemaTypeSubclass = CSchemaType_Atomic_TT, TExtraWork = (lambda at /opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/schemasystem/schemasystem.cpp:1836:106
-void PromoteUnresolvedAndGlobalTypes(CSchemaPtrMap<TTypeMapKey, TSchemaTypeSubclass *> &, CSchemaPtrMap<TTypeMapKey, TSchemaTypeSubclass *> &, ISchemaSystemTypeScope *, const TExtraWork) [TTypeMapKey = AtomicTypeInfo_T_t, TSchemaTypeSubclass = CSchemaType_Atomic_CollectionOfT, TExtraWork = (lambda at /opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/schemasystem/schemasystem.cpp:1835:127
-void PromoteUnresolvedAndGlobalTypes(CSchemaPtrMap<TTypeMapKey, TSchemaTypeSubclass *> &, CSchemaPtrMap<TTypeMapKey, TSchemaTypeSubclass *> &, ISchemaSystemTypeScope *, const TExtraWork) [TTypeMapKey = AtomicTypeInfo_T_t, TSchemaTypeSubclass = CSchemaType_Atomic_T, TExtraWork = (lambda at /opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/schemasystem/schemasystem.cpp:1834:104
-void PromoteUnresolvedAndGlobalTypes(CSchemaPtrMap<TTypeMapKey, TSchemaTypeSubclass *> &, CSchemaPtrMap<TTypeMapKey, TSchemaTypeSubclass *> &, ISchemaSystemTypeScope *, const TExtraWork) [TTypeMapKey = SchemaTypeHandle_t, TSchemaTypeSubclass = CSchemaType_Ptr, TExtraWork = (lambda at /opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/schemasystem/schemasystem.cpp:1832:95
-void PromoteUnresolvedAndGlobalTypes(CSchemaPtrMap<TTypeMapKey, TSchemaTypeSubclass *> &, CSchemaPtrMap<TTypeMapKey, TSchemaTypeSubclass *> &, ISchemaSystemTypeScope *, const TExtraWork) [TTypeMapKey = TypeAndCountInfo_t, TSchemaTypeSubclass = CSchemaType_FixedArray, TExtraWork = (lambda at /opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/schemasystem/schemasystem.cpp:1852:108
-void PromoteUnresolvedAndGlobalTypes(CSchemaPtrMap<TTypeMapKey, TSchemaTypeSubclass *> &, CSchemaPtrMap<TTypeMapKey, TSchemaTypeSubclass *> &, ISchemaSystemTypeScope *, const TExtraWork) [TTypeMapKey = int, TSchemaTypeSubclass = CSchemaType_Atomic, TExtraWork = (lambda at /opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/schemasystem/schemasystem.cpp:1833:100
-void PromoteUnresolvedAndGlobalTypes(CSchemaPtrMap<TTypeMapKey, TSchemaTypeSubclass *> &, CSchemaPtrMap<TTypeMapKey, TSchemaTypeSubclass *> &, ISchemaSystemTypeScope *, const TExtraWork) [TTypeMapKey = int, TSchemaTypeSubclass = CSchemaType_Bitfield, TExtraWork = (lambda at /opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/schemasystem/schemasystem.cpp:1853:104
-void PromoteUnresolvedAndGlobalTypes(CSchemaPtrMap<TTypeMapKey, TSchemaTypeSubclass *> &, CSchemaPtrMap<TTypeMapKey, TSchemaTypeSubclass *> &, ISchemaSystemTypeScope *, const TExtraWork) [TTypeMapKey = unsigned int, TSchemaTypeSubclass = CSchemaType_DeclaredClass, TExtraWork = (lambda at /opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/schemasystem/schemasystem.cpp:1839:113
-void PromoteUnresolvedAndGlobalTypes(CSchemaPtrMap<TTypeMapKey, TSchemaTypeSubclass *> &, CSchemaPtrMap<TTypeMapKey, TSchemaTypeSubclass *> &, ISchemaSystemTypeScope *, const TExtraWork) [TTypeMapKey = unsigned int, TSchemaTypeSubclass = CSchemaType_DeclaredEnum, TExtraWork = (lambda at /opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/schemasystem/schemasystem.cpp:1845:111
+void PromoteUnresolvedAndGlobalTypes(CSchemaPtrMap<TTypeMapKey, TSchemaTypeSubclass *> &, CSchemaPtrMap<TTypeMapKey, TSchemaTypeSubclass *> &, ISchemaSystemTypeScope *, const TExtraWork) [TTypeMapKey = AtomicTypeInfo_I_t, TSchemaTypeSubclass = CSchemaType_Atomic_I, TExtraWork = (lambda at /opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/schemasystem/schemasystem.cpp:1926:104
+void PromoteUnresolvedAndGlobalTypes(CSchemaPtrMap<TTypeMapKey, TSchemaTypeSubclass *> &, CSchemaPtrMap<TTypeMapKey, TSchemaTypeSubclass *> &, ISchemaSystemTypeScope *, const TExtraWork) [TTypeMapKey = AtomicTypeInfo_TTF_t, TSchemaTypeSubclass = CSchemaType_Atomic_TTF, TExtraWork = (lambda at /opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/schemasystem/schemasystem.cpp:1925:107
+void PromoteUnresolvedAndGlobalTypes(CSchemaPtrMap<TTypeMapKey, TSchemaTypeSubclass *> &, CSchemaPtrMap<TTypeMapKey, TSchemaTypeSubclass *> &, ISchemaSystemTypeScope *, const TExtraWork) [TTypeMapKey = AtomicTypeInfo_TT_t, TSchemaTypeSubclass = CSchemaType_Atomic_TT, TExtraWork = (lambda at /opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/schemasystem/schemasystem.cpp:1924:106
+void PromoteUnresolvedAndGlobalTypes(CSchemaPtrMap<TTypeMapKey, TSchemaTypeSubclass *> &, CSchemaPtrMap<TTypeMapKey, TSchemaTypeSubclass *> &, ISchemaSystemTypeScope *, const TExtraWork) [TTypeMapKey = AtomicTypeInfo_T_t, TSchemaTypeSubclass = CSchemaType_Atomic_CollectionOfT, TExtraWork = (lambda at /opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/schemasystem/schemasystem.cpp:1923:127
+void PromoteUnresolvedAndGlobalTypes(CSchemaPtrMap<TTypeMapKey, TSchemaTypeSubclass *> &, CSchemaPtrMap<TTypeMapKey, TSchemaTypeSubclass *> &, ISchemaSystemTypeScope *, const TExtraWork) [TTypeMapKey = AtomicTypeInfo_T_t, TSchemaTypeSubclass = CSchemaType_Atomic_T, TExtraWork = (lambda at /opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/schemasystem/schemasystem.cpp:1922:104
+void PromoteUnresolvedAndGlobalTypes(CSchemaPtrMap<TTypeMapKey, TSchemaTypeSubclass *> &, CSchemaPtrMap<TTypeMapKey, TSchemaTypeSubclass *> &, ISchemaSystemTypeScope *, const TExtraWork) [TTypeMapKey = SchemaMetaInfoHandle_t<CSchemaType>, TSchemaTypeSubclass = CSchemaType_Ptr, TExtraWork = (lambda at /opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/schemasystem/schemasystem.cpp:1920:95
+void PromoteUnresolvedAndGlobalTypes(CSchemaPtrMap<TTypeMapKey, TSchemaTypeSubclass *> &, CSchemaPtrMap<TTypeMapKey, TSchemaTypeSubclass *> &, ISchemaSystemTypeScope *, const TExtraWork) [TTypeMapKey = TypeAndCountInfo_t, TSchemaTypeSubclass = CSchemaType_FixedArray, TExtraWork = (lambda at /opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/schemasystem/schemasystem.cpp:1941:108
+void PromoteUnresolvedAndGlobalTypes(CSchemaPtrMap<TTypeMapKey, TSchemaTypeSubclass *> &, CSchemaPtrMap<TTypeMapKey, TSchemaTypeSubclass *> &, ISchemaSystemTypeScope *, const TExtraWork) [TTypeMapKey = int, TSchemaTypeSubclass = CSchemaType_Atomic, TExtraWork = (lambda at /opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/schemasystem/schemasystem.cpp:1921:100
+void PromoteUnresolvedAndGlobalTypes(CSchemaPtrMap<TTypeMapKey, TSchemaTypeSubclass *> &, CSchemaPtrMap<TTypeMapKey, TSchemaTypeSubclass *> &, ISchemaSystemTypeScope *, const TExtraWork) [TTypeMapKey = int, TSchemaTypeSubclass = CSchemaType_Bitfield, TExtraWork = (lambda at /opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/schemasystem/schemasystem.cpp:1942:104
+void PromoteUnresolvedAndGlobalTypes(CSchemaPtrMap<TTypeMapKey, TSchemaTypeSubclass *> &, CSchemaPtrMap<TTypeMapKey, TSchemaTypeSubclass *> &, ISchemaSystemTypeScope *, const TExtraWork) [TTypeMapKey = unsigned int, TSchemaTypeSubclass = CSchemaType_DeclaredClass, TExtraWork = (lambda at /opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/schemasystem/schemasystem.cpp:1928:113
+void PromoteUnresolvedAndGlobalTypes(CSchemaPtrMap<TTypeMapKey, TSchemaTypeSubclass *> &, CSchemaPtrMap<TTypeMapKey, TSchemaTypeSubclass *> &, ISchemaSystemTypeScope *, const TExtraWork) [TTypeMapKey = unsigned int, TSchemaTypeSubclass = CSchemaType_DeclaredEnum, TExtraWork = (lambda at /opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/schemasystem/schemasystem.cpp:1934:111
 void ValidateAtomicType(const char *, CSchemaType_Atomic
+wInstallSchemaBindings
 whfffff
 wpfffff
 xEA9@`~?I

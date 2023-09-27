@@ -1,0 +1,174 @@
+<!-- xml reconstructed by Source 2 Viewer 5.0.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/dashboard_page_shared.vcss_c" />
+		<include src="s2r://panorama/styles/showcase/showcase_shared.vcss_c" />
+		<include src="s2r://panorama/styles/showcase/dashboard_page_showcase.vcss_c" />
+	</styles>
+	<script><![CDATA[
+		var Resolve = function( strEvent )
+		{
+			for ( var i = 0; i < arguments.length; i++ )
+			{
+				// Resolve any string that looks like a dialog variable
+				if ( ( typeof arguments[i] === 'string' ) && ( arguments[i][0] == '{' ) )
+				{
+					arguments[i] = $.Localize( arguments[i], $.GetContextPanel() );
+				}
+			}
+			$.DispatchEvent.apply( $, arguments );
+		};
+	]]></script>
+	<DOTAShowcasePage class="DashboardPage">
+		<AsyncDataPanel class="ShowcaseData" state="{d:showcase_state}" loading-text="#DOTA_Showcase_Loading" error-text="#DOTA_Showcase_LoadFailed">
+			<Panel class="AsyncSuccessContainer ShowcaseMain">
+				<DOTAShowcaseContents id="ShowcaseContents" />
+			</Panel>
+		</AsyncDataPanel>
+		<Panel id="HeaderNameContainer" hittest="false">
+			<Panel class="LeftRightFlow FullWidth FullHeight" hittest="false">
+				<DOTAAvatarImage id="AvatarImage" />
+				<DOTARankBadge id="RankBadge" class="RankBadge" />
+				<Panel id="ProfileMainCorner" class="TopBottomFlow" hittest="false">
+					<Panel class="MainNameLine LeftRightFlow" hittest="false">
+						<DOTABattleCupVictoryIcon id="BattleCupVictoryIcon" class="BattleCupVictoryIconLarge" />
+						<DOTAEventCrestImage id="FavoriteTeam" />
+						<DOTAUserName id="ProfileName" hittestchildren="false" />
+						<DOTAUserName id="ProfileNickname" class="ProfileNickname" />
+					</Panel>
+					<Panel class="StatusLine LeftRightFlow">
+						<DOTAUserRichPresence id="UserRichPresence" class="ProfileUserRichPresence" />
+						<Panel id="SteamFriends" acceptsfocus="true">
+							<Button class="SimpleIconButtonSteam" id="ViewSteamProfile" onactivate="Resolve( &apos;DOTAViewSteamProfile&apos;, &apos;{s:steam_id}&apos; );" onmouseout="UIHideTextTooltip();" onmouseover="UIShowTextTooltip( #DOTA_Profile_ViewSteamProfile );">
+								<Image id="SteamLogo" src="s2r://panorama/images/profile/icon_steam_psd.vtex" />
+								<Label id="FriendsIDLabel" text="#DOTA_Friends_ID" />
+							</Button>
+							<Label id="FriendsID" text="{s:account_id}" acceptsfocus="true" allowtextselection="true" />
+						</Panel>
+						<Panel id="PlusStatus" acceptsfocus="true">
+							<Image id="PlusLogo" src="s2r://panorama/images/dota_plus/dotaplus_logo_small_png.vtex" />
+							<Label id="PlusStatusLabel" text="#dota_Plus_Subscriber" />
+						</Panel>
+						<Panel id="MemberSince" acceptsfocus="true">
+							<Label class="MemberSince" text="#DOTA_Home_Plus_MemberSince" />
+							<Label class="MemberDate" text="{T:s:plus_original_start_date}" />
+						</Panel>
+						<Panel id="ProfileActionButtons">
+							<Button id="ActionInviteToParty" class="InviteIconButton" onactivate="Resolve( &apos;DOTAInviteToParty&apos;, &apos;{s:steam_id}&apos; );" onmouseout="UIHideTextTooltip();" onmouseover="UIShowTextTooltip( #DOTA_ChatCommand_InviteToParty_Name );" />
+							<Button id="ActionViewGuild" class="InviteIconButton" onactivate="Resolve( &apos;DOTAViewUserGuild&apos;, &apos;{s:steam_id}&apos; );" onmouseout="UIHideTextTooltip();" onmouseover="UIShowTextTooltip( #DOTA_PlayerContextMenu_ViewGuild );" />
+							<Button id="ActionInviteToGuild" class="InviteIconButton" onactivate="Resolve( &apos;DOTAInviteUserToGuild&apos;, &apos;{s:steam_id}&apos; );" onmouseout="UIHideTextTooltip();" onmouseover="UIShowTextTooltip( #DOTA_PlayerContextMenu_InviteToGuild );" />
+							<Button class="SimpleIconButton" id="ActionSpectateGame" onactivate="Resolve( &apos;DOTASpectateFriend&apos;, &apos;{s:steam_id}&apos;, false );" onmouseout="UIHideTextTooltip();" onmouseover="UIShowTextTooltip( #DOTA_PlayerContextMenu_Spectate );">
+								<Image src="s2r://panorama/images/profile/icon_spectate_psd.vtex" />
+							</Button>
+							<Button class="SimpleIconButton" id="ActionSendMessage" onactivate="Resolve( &apos;DOTAChatWithPlayer&apos;, &apos;{s:steam_id}&apos; );" onmouseout="UIHideTextTooltip();" onmouseover="UIShowTextTooltip( #DOTA_Profile_SendMessage );">
+								<Image src="s2r://panorama/images/profile/icon_send_message_psd.vtex" />
+								<Label text="#DOTA_PlayerContextMenu_ChatWithPlayer" />
+							</Button>
+							<Button class="SimpleIconButton" id="ActionAddFriend" onactivate="Resolve( &apos;DOTAAddSteamFriend&apos;, &apos;{s:steam_id}&apos; );" onmouseout="UIHideTextTooltip();" onmouseover="UIShowTextTooltip( #DOTA_PlayerContextMenu_AddFriend );">
+								<Image src="s2r://panorama/images/profile/icon_add_friend_psd.vtex" />
+							</Button>
+							<Button class="SimpleIconButton" id="ActionRemoveFriend" onactivate="Resolve( &apos;DOTARemoveSteamFriend&apos;, &apos;{s:steam_id}&apos; );" onmouseout="UIHideTextTooltip();" onmouseover="UIShowTextTooltip( #DOTA_PlayerContextMenu_RemoveFriend );">
+								<Image src="s2r://panorama/images/profile/icon_remove_friend_psd.vtex" />
+							</Button>
+							<Button class="SimpleIconButtonPending" id="ActionAcceptFriendRequest" onactivate="Resolve( &apos;DOTAAcceptSteamFriendRequest&apos;, &apos;{s:steam_id}&apos; );" onmouseout="UIHideTextTooltip();" onmouseover="UIShowTextTooltip( #DOTA_PlayerContextMenu_AcceptFriendRequest );">
+								<Image src="s2r://panorama/images/profile/icon_add_friend_psd.vtex" />
+							</Button>
+							<Button class="SimpleIconButtonPending" id="ActionIgnoreFriendRequest" onactivate="Resolve( &apos;DOTAIgnoreSteamFriendRequest&apos;, &apos;{s:steam_id}&apos; );" onmouseout="UIHideTextTooltip();" onmouseover="UIShowTextTooltip( #DOTA_PlayerContextMenu_IgnoreFriendRequest );">
+								<Image src="s2r://panorama/images/profile/icon_remove_friend_psd.vtex" />
+							</Button>
+							<Panel id="FavoriteStatus" class="" onactivate="DOTAShowcaseToggleFavoriteFriend()">
+								<Panel id="FavoriteFilled" class="FavoriteIcon" onmouseover="UIShowTextTooltip( #DOTA_Friends_RemoveFromFavoritesLabel )" onmouseout="UIHideTextTooltip()" />
+								<Panel id="FavoriteOutline" class="FavoriteIcon" onmouseover="UIShowTextTooltip( #DOTA_Friends_AddToFavoritesLabel )" onmouseout="UIHideTextTooltip()" />
+							</Panel>
+						</Panel>
+					</Panel>
+				</Panel>
+			</Panel>
+		</Panel>
+		<Panel id="MainEditControls">
+			<Panel id="BehaviorStatus" class="HideIfEditing" onactivate="DOTAConductShowBehaviorReport()">
+				<Label id="BehaviorSummaryLabel" class="LabelMedium" text="#DOTA_PlayerBehaviorSummary_Popup_Title" />
+				<Panel id="ScoresContainer">
+					<Panel id="CommunicationScoreSection" class="ScoreSection" onmouseover="UIShowTextTooltip( #DOTA_PlayerBehaviorSummary_Popup_CommunicationScoreTitle )" onmouseout="UIHideTextTooltip()">
+						<Panel id="CommunicationScoreImage" class="ScoreImage" />
+						<Label id="CommunicationScoreLabel" class="LabelExtraLarge" text="{d:communication_score}" />
+					</Panel>
+					<Panel id="BehaviorScoreSection" onmouseover="UIShowTextTooltip( #DOTA_PlayerBehaviorSummary_Popup_BehaviorScoreTitle )" onmouseout="UIHideTextTooltip()">
+						<Panel id="BehaviorScoreImage" class="ScoreImage" />
+						<Label id="BehaviorScoreLabel" class="LabelExtraLarge" text="{d:behavior_score}" />
+					</Panel>
+				</Panel>
+			</Panel>
+			<Button id="UndoButton" class="ButtonPrimary LightGrey Large" onactivate="DOTAShowcaseUndo( ShowcaseContents )" onmouseover="UIShowTextTooltip( &apos;#DOTA_Showcase_Undo_Title&apos; )" onmouseout="UIHideTextTooltip()">
+				<Image src="s2r://panorama/images/control_icons/24px/undo.vsvg" />
+			</Button>
+			<Button id="AddItemButton" class="ShowIfEditing ButtonPrimary LightGrey Large" onactivate="DOTAShowcaseAddNewItem()" onmouseover="UIShowTextTooltip( &apos;#DOTA_Showcase_AddItem_Title&apos; )" onmouseout="UIHideTextTooltip()">
+				<Image src="s2r://panorama/images/control_icons/24px/plus.vsvg" />
+			</Button>
+			<Button id="ChooseBackgroundButton" class="ShowIfEditing ButtonPrimary LightGrey Large" onactivate="DOTAShowcaseChooseBackground()" onmouseover="UIShowTextTooltip( &apos;#DOTA_Showcase_ChooseBackground_Title&apos; )" onmouseout="UIHideTextTooltip()">
+				<Image src="s2r://panorama/images/control_icons/24px/loading_screens.vsvg" />
+			</Button>
+			<Button id="ClearAllButton" class="ShowIfEditing ButtonPrimary LightGrey Large" onactivate="DOTAShowcaseClearAll()" onmouseover="UIShowTextTooltip( &apos;#DOTA_Showcase_ClearAll_Title&apos; )" onmouseout="UIHideTextTooltip()">
+				<Image src="s2r://panorama/images/control_icons/exit_circle_psd.vtex" />
+			</Button>
+			<Panel class="ControlDivider ShowIfEditing" />
+			<TextButton class="ShowIfEditing SaveChangesButton NavButton ButtonPrimary Blue Large" text="#DOTA_Showcase_Save" onactivate="DOTAShowcaseStopEditing( true )" />
+			<TextButton class="ShowIfEditing CancelButton NavButton ButtonPrimary DarkGrey Large" text="#DOTA_Showcase_Cancel" onactivate="DOTAShowcaseStopEditing( false )" />
+			<TextButton id="EditProfileShowcaseButton" class="HideIfEditing EditShowcaseButton NavButton ButtonPrimary LightGrey Large" text="#DOTA_Showcase_EditProfile" onactivate="DOTAShowcaseStartEditing()" />
+		</Panel>
+		<Panel class="SaveInProgressIndicator">
+			<Panel class="Spinner" />
+			<Label text="#DOTA_Showcase_Saving" />
+		</Panel>
+		<Panel id="ReportControls" class="ShowIfViewingOther">
+			<Button id="ReportButton" class="ButtonPrimary DarkGrey" onactivate="DOTAReportShowcase()" onmouseover="UIShowTextTooltip( &apos;#DOTA_Showcase_Tooltip_Report_Profile&apos; )" onmouseout="UIHideTextTooltip()">
+				<Image src="s2r://panorama/images/control_icons/24px/flag.vsvg" />
+			</Button>
+		</Panel>
+		<Panel id="ItemEditControls">
+			<Button id="LayerButton" onactivate="DOTAShowcaseShowLayerList()" onmouseover="UIShowTextTooltip( &apos;#DOTA_Showcase_Tooltip_SelectLayer&apos; )" onmouseout="UIHideTextTooltip()">
+				<Panel id="LayerButtonIcon" />
+				<Image id="LayerItemImage" />
+				<Label class="BodyMedium" text="{s:showcase_item_case_name}" />
+				<Label class="BodyMedium" id="LayerButtonItemName" text=" - {s:showcase_item_name}" />
+			</Button>
+			<Button id="DeleteItemButton" class="ShowIfItemSelected ButtonPrimary DarkGrey" onactivate="DOTAShowcaseSelectedItemDelete( ShowcaseContents )" onmouseover="UIShowTextTooltip( &apos;#DOTA_Showcase_ContextMenu_DeleteItem&apos; )" onmouseout="UIHideTextTooltip()">
+				<Image src="s2r://panorama/images/control_icons/24px/trash.vsvg" />
+			</Button>
+			<Button id="FlipHorizontallyButton" class="ShowIfItemSelected ButtonPrimary DarkGrey" onactivate="DOTAShowcaseSelectedItemFlipHorizontally( ShowcaseContents )" onmouseover="UIShowTextTooltip( &apos;#DOTA_Showcase_Tooltip_Flip_Horizontally&apos; )" onmouseout="UIHideTextTooltip()">
+				<Image src="s2r://panorama/images/control_icons/24px/mirror_horizontal.vsvg" />
+			</Button>
+			<Button id="SendToBackButton" class="ShowIfItemSelected ButtonPrimary DarkGrey" onactivate="DOTAShowcaseSelectedItemSendToBack( ShowcaseContents )" onmouseover="UIShowTextTooltip( &apos;#DOTA_Showcase_Tooltip_Send_Back&apos; )" onmouseout="UIHideTextTooltip()">
+				<Image src="s2r://panorama/images/control_icons/24px/send_to_back.vsvg" />
+			</Button>
+			<Button id="MoveBackwardButton" class="ShowIfItemSelected ButtonPrimary DarkGrey" onactivate="DOTAShowcaseSelectedItemMoveBackward( ShowcaseContents )" onmouseover="UIShowTextTooltip( &apos;#DOTA_Showcase_Tooltip_Move_Back&apos; )" onmouseout="UIHideTextTooltip()">
+				<Image src="s2r://panorama/images/control_icons/24px/send_backwards.vsvg" />
+			</Button>
+			<Button id="MoveForwardButton" class="ShowIfItemSelected ButtonPrimary DarkGrey" onactivate="DOTAShowcaseSelectedItemMoveForward( ShowcaseContents )" onmouseover="UIShowTextTooltip( &apos;#DOTA_Showcase_Tooltip_Move_Forward&apos; )" onmouseout="UIHideTextTooltip()">
+				<Image src="s2r://panorama/images/control_icons/24px/send_forwards.vsvg" />
+			</Button>
+			<Button id="SendToFrontButton" class="ShowIfItemSelected ButtonPrimary DarkGrey" onactivate="DOTAShowcaseSelectedItemSendToFront( ShowcaseContents )" onmouseover="UIShowTextTooltip( &apos;#DOTA_Showcase_Tooltip_Send_Front&apos; )" onmouseout="UIHideTextTooltip()">
+				<Image src="s2r://panorama/images/control_icons/24px/send_to_front.vsvg" />
+			</Button>
+			<Button id="CustomizeAppearanceButton" class="ShowIfItemSelected ButtonPrimary DarkGrey" onactivate="DOTAShowcaseSelectedItemCustomizeAppearance( ShowcaseContents )">
+				<Label text="#DOTA_Showcase_PickSet_Label" />
+			</Button>
+			<Button id="MoreOptionsButton" class="ShowIfItemSelected ButtonPrimary DarkGrey" onactivate="DOTAShowcaseShowMoreOptions()" onmouseover="UIShowTextTooltip( &apos;#DOTA_Showcase_Tooltip_More_Options&apos; )" onmouseout="UIHideTextTooltip()">
+				<Image src="s2r://panorama/images/control_icons/24px/other.vsvg" />
+			</Button>
+			<Panel class="SliderContainer ShowIfNothingSelected" onmouseover="UIShowTextTooltip( &apos;#DOTA_Showcase_Tooltip_Blur&apos; )" onmouseout="UIHideTextTooltip()">
+				<Image src="s2r://panorama/images/control_icons/24px/blur.vsvg" />
+				<Slider id="BackgroundBlurSlider" class="HorizontalSlider" direction="horizontal" />
+			</Panel>
+			<Panel class="SliderContainer ShowIfNothingSelected" onmouseover="UIShowTextTooltip( &apos;#DOTA_Showcase_Tooltip_Darken&apos; )" onmouseout="UIHideTextTooltip()">
+				<Image src="s2r://panorama/images/control_icons/24px/brightness.vsvg" />
+				<Slider id="BackgroundDimSlider" class="HorizontalSlider" direction="horizontal" />
+			</Panel>
+			<Button id="ChooseBackgroundButtonSmall" class="ShowIfNothingSelected ButtonPrimary DarkGrey" onactivate="DOTAShowcaseChooseBackground()">
+				<Label text="#DOTA_Showcase_PickBackground_Label" />
+			</Button>
+		</Panel>
+		<DOTAShowcaseBudgetProgressBar id="ShowcaseBudgetProgressBar" class="ShowIfEditing" />
+	</DOTAShowcasePage>
+</root>

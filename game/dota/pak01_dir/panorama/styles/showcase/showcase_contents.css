@@ -1,9 +1,15 @@
 /* Prettified by Source 2 Viewer 5.0.0.0 - https://valveresourceformat.github.io */
 
+@define ShowcaseContents_GizmoSize: 15px;
 DOTAShowcaseContents #ShowcaseBackground
 {
-	width: 100%;
-	height: 100%;
+	vertical-align: center;
+	horizontal-align: center;
+}
+
+DOTAShowcasePage DOTAShowcaseContents #ShowcaseBackground
+{
+	margin-top: 60px;
 }
 
 DOTAShowcaseContents #ShowcaseForeground
@@ -13,43 +19,140 @@ DOTAShowcaseContents #ShowcaseForeground
 	overflow: clip;
 }
 
+DOTAShowcaseContents #ShowcaseForeground #ShowcaseCanvas
+{
+	width: 1828px;
+	height: 760px;
+	border-top: 1px solid #ffffff;
+	border-brush: gradient( linear, 20% 0%, 100% 0%, from( #FFFFFF00 ), color-stop( 0, #FFFFFF ), color-stop( 0.7, #FFFFFF ), to( #FFFFFF00 ) );
+	transition-property: opacity, border, border-brush;
+	transition-duration: 0.2s;
+	opacity: 0.08;
+	visibility: collapse;
+}
+
+.IsEditing DOTAShowcaseContents #ShowcaseForeground #ShowcaseCanvas
+{
+	border: 1px solid #ffffff;
+	border-brush: gradient( linear, 0% 0%, 100% 0%, from( #FFFFFF ), color-stop( 0.2, #FFFFFF ), color-stop( 0.8, #FFFFFF ), to( #FFFFFF ) );
+	opacity: 0.2;
+}
+
+DOTAShowcaseContents #ShowcaseForeground #ShowcaseForegroundItemContainer
+{
+	overflow: clip;
+	width: 100%;
+	height: 100%;
+}
+
+DOTAShowcaseContents.ShowcaseType_Profile #ShowcaseForeground #ShowcaseCanvas
+{
+	visibility: visible;
+}
+
+.MiniShowcaseBorder
+{
+	width: 100%;
+	height: 100%;
+	border: 3px solid white;
+	border-brush: gradient( linear, 0% 0%, 0% 100%, from( LightestGrey ), to( LightGrey ) );
+	visibility: collapse;
+	opacity: 0;
+	transition-property: opacity, border;
+	transition-duration: 0.1s;
+	transition-delay: 1.2s;
+}
+
+.ShowcaseType_MiniProfile.IsEditing .MiniShowcaseBorder
+{
+	visibility: visible;
+	opacity: 1;
+}
+
+DOTAShowcasePage .HeaderTopShadow
+{
+	width: 100%;
+	height: 380px;
+	background-color: gradient(linear, 0% 0%, 0% 100%, from( black ), color-stop( 0.6, black ), to( DarkestGrey&00 ));
+	blur: gaussian( 8px );
+	opacity: 0.7;
+}
+
+.ShowcaseItemWidget
+{
+	ignore-parent-flow: true;
+}
+
+.ShowcaseLayerListOpen .ShowcaseItemWidget:not(.IsHighlightedShowcaseItem)
+{
+	brightness: 0.4;
+	opacity: 0.5;
+}
+
+.IsEditing .ShowcaseItemWidget.IsHighlightedShowcaseItem
+{
+	box-shadow: hollow 0px 0px 0px 1px #327bff99;
+	brightness: 1.4;
+}
+
 @keyframes 'SelectedGlow'
 {
 	0%
 	{
-		box-shadow: hollow 0px 0px 8px #ff0;
+		brightness: 1.0;
 	}
 	
 	100%
 	{
-		box-shadow: hollow 0px 0px 16px #ff0;
+		brightness: 3.0;
 	}
 	
 }
 
-.ShowcaseItemWidget:selected
+@define gismoHighlightColor: #45A6FF;
+#ShowcaseGizmos
 {
-	animation-name: SelectedGlow;
-	animation-duration: 0.7s;
-	animation-iteration-count: infinite;
-	animation-direction: alternate;
+	visibility: collapse;
+	width: 100%;
+	height: 100%;
+	overflow: clip;
 }
 
-.ShowcaseItemWidget:selected #Resize
+.IsEditing.HasShowcaseItemSelect:not(.ShowcaseLayerListOpen) #ShowcaseGizmos
 {
-	opacity: 1.0;
+	visibility: visible;
 }
 
-.ShowcaseItemWidget #Resize
+#ShowcaseGizmos #ShowcaseMoveGizmo
 {
-	horizontal-align: right;
-	vertical-align: bottom;
-	width: 24px;
-	height: 24px;
-	border-right: 4px solid #00bbac;
-	border-bottom: 4px solid #00bbac;
-	opacity: 0.0;
-	transition-property: opacity;
-	transition-duration: 0.2s;
+	overflow: noclip;
+	border: 1px solid gismoHighlightColor;
+}
+
+#ShowcaseGizmos .ShowcaseResizeGizmo
+{
+	border: 2px solid gismoHighlightColor;
+	background-color: #FFFFFFFF;
+	width: ShowcaseContents_GizmoSize;
+	height: ShowcaseContents_GizmoSize;
+	border-radius: 2px;
+	box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+#ShowcaseGizmos .ShowcaseResizeGizmo:hover
+{
+	border: 2px solid white;
+	background-color: gismoHighlightColor;
+	brightness: 1.5;
+}
+
+#ShowcaseGizmos #ShowcaseRotationGizmo
+{
+	border: 1px solid gismoHighlightColor;
+	background-color: #FFFFFFFF;
+	width: ShowcaseContents_GizmoSize;
+	height: ShowcaseContents_GizmoSize;
+	border-radius: 50%;
+	visibility: collapse;
 }
 

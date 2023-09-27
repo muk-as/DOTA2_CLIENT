@@ -1,0 +1,96 @@
+<!-- xml reconstructed by Source 2 Viewer 5.0.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/dashboard_page_shared.vcss_c" />
+		<include src="s2r://panorama/styles/showcase/showcase_shared.vcss_c" />
+		<include src="s2r://panorama/styles/showcase/dashboard_page_showcase_admin_report_review.vcss_c" />
+	</styles>
+	<snippets>
+		<snippet name="RecentReport">
+			<Panel class="RecentReport TableEntry">
+				<Panel class="Column ReporterColumn">
+					<DOTAAvatarImage id="ReporterAvatarImage" />
+					<Label text="{g:dota_persona:reporter_account_id}" html="true" />
+				</Panel>
+				<Panel class="Column ShowcaseTypeColumn">
+					<Label text="{s:report_showcase_type}" />
+				</Panel>
+				<Panel class="Column ReportTimestampColumn">
+					<Label text="{t:report_timestamp}" />
+				</Panel>
+				<Panel class="Column ReportCommentColumn">
+					<Label text="{s:report_comment}" />
+				</Panel>
+			</Panel>
+		</snippet>
+		<snippet name="RecentAudit">
+			<Panel class="RecentAudit TableEntry">
+				<Panel class="Column AuditActionColumn">
+					<Label text="{s:audit_action}" />
+				</Panel>
+				<Panel class="Column TimestampColumn">
+					<Label text="{t:audit_timestamp}" />
+				</Panel>
+				<Panel class="Column ShowcaseTypeColumn">
+					<Label text="{s:audit_showcase_type}" />
+				</Panel>
+				<Panel class="Column AuditDataColumn">
+					<Label text="{s:audit_data}" />
+				</Panel>
+			</Panel>
+		</snippet>
+	</snippets>
+	<DOTAShowcaseAdminReportReviewPage class="DashboardPage">
+		<Panel class="PageContents">
+			<Label class="PageTitle" text="Admin: Review Showcase" />
+			<AsyncDataPanel class="UserDetailsContainer" state="{d:user_details_state}">
+				<Panel class="AsyncSuccessContainer">
+					<Panel class="Header">
+						<Label class="Reviewing" text="Reviewing" />
+						<DOTAAvatarImage id="AvatarImage" />
+						<Label class="PersonaName" text="{g:dota_persona:account_id}" html="true" />
+						<Label class="ShowcaseType" text="{s:showcase_type}" />
+					</Panel>
+					<Panel class="ViewButtons">
+						<TextButton class="PopupButton" text="View Mini Profile Showcase" onactivate="DOTAShowcaseAdminReportReviewViewShowcase( k_eShowcaseType_MiniProfile )" />
+						<TextButton class="PopupButton" text="View Profile Showcase" onactivate="DOTAShowcaseAdminReportReviewViewShowcase( k_eShowcaseType_Profile )" />
+					</Panel>
+					<Panel id="ActionButtons">
+						<TextButton class="ActionButton PopupButton Red" text="Convict" onactivate="DOTAShowcaseAdminReportReviewConvict()" onmouseover="UIShowTextTooltip( &apos;Use this if the showcase is inappropriate. This will reset all of the user\&apos;s showcases and prevent them from editing them for some time.&apos; )" onmouseout="UIHideTextTooltip()" />
+						<TextButton class="ActionButton PopupButton Green" text="Exonerate" onactivate="DOTAShowcaseAdminReportReviewExonerate()" onmouseover="UIShowTextTooltip( &apos;Use this if the showcase is ok. This will remove them from the rollups for some time.&apos; )" onmouseout="UIHideTextTooltip()" />
+						<TextButton class="ActionButton PopupButton" text="Reset Showcase" onactivate="DOTAShowcaseAdminReportReviewReset()" onmouseover="UIShowTextTooltip( &apos;Manually reset this showcase to the default. Does not apply any locks or penalties.&apos; )" onmouseout="UIHideTextTooltip()" />
+						<TextEntry id="LockTimestampEntry" />
+						<TextButton class="ActionButton PopupButton" text="Apply Lock" onactivate="DOTAShowcaseAdminReportReviewApplyLock()" onmouseover="UIShowTextTooltip( &apos;Manually adjust the unix timestamp that the user is locked from editing until. Set to 0 to remove the lock.&apos; )" onmouseout="UIHideTextTooltip()" />
+						<Panel class="ActionWorking">
+							<Panel class="Spinner" />
+							<Label text="Working..." />
+						</Panel>
+					</Panel>
+					<Panel class="DataTables">
+						<Panel class="DataTable RecentReportsTable">
+							<Label class="TableTitle" text="Recent Reports" />
+							<Panel class="TableHeader">
+								<Label class="Column ReporterColumn" text="Reporter" />
+								<Label class="Column ShowcaseTypeColumn" text="Type" />
+								<Label class="Column ReportTimestampColumn" text="Timestamp" />
+								<Label class="Column ReportCommentColumn" text="Comment" />
+							</Panel>
+							<Panel class="TableEntries" id="RecentReportsList" />
+						</Panel>
+						<Panel class="DataTable RecentAuditTable">
+							<Label class="TableTitle" text="Audit Entries" />
+							<Panel class="TableHeader">
+								<Label class="Column AuditActionColumn" text="Action" />
+								<Label class="Column TimestampColumn" text="Timestamp" />
+								<Label class="Column ShowcaseTypeColumn" text="Type" />
+								<Label class="Column AuditDataColumn" text="Audit Data" />
+							</Panel>
+							<Panel class="TableEntries" id="RecentAuditList" />
+						</Panel>
+					</Panel>
+				</Panel>
+			</AsyncDataPanel>
+		</Panel>
+	</DOTAShowcaseAdminReportReviewPage>
+</root>

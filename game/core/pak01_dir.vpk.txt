@@ -1,6 +1,6 @@
 --- Files in package:
-	vmat_c: 514 files
-	vtex_c: 481 files
+	vmat_c: 517 files
+	vtex_c: 482 files
 	vpcf_c: 52 files
 	vmdl_c: 50 files
 	vsnd_c: 37 files
@@ -27,7 +27,7 @@ panorama/default_keybinds.cfg crc=0xec015dce size=764
 panorama/window_keybinds.cfg crc=0x00 size=0
 panorama/browser/webkit.css crc=0x653610e0 size=2436
 vr_fidelity_levels.csv crc=0x56755937 size=2130
-resource/core.gameevents crc=0x16ca5213 size=17018
+resource/core.gameevents crc=0xbcc4207e size=17114
 resource/bugreporter.res crc=0x17e96be8 size=79
 resource/clientscheme.res crc=0x91c13cb0 size=15227
 resource/colorpicker.res crc=0x3d009bed size=7865
@@ -132,6 +132,7 @@ materials/dev/cmaa2_cs.vmat_c crc=0xfc81b2d7 size=1031
 materials/dev/color_purple.vmat_c crc=0x98c1d64c size=5608
 materials/dev/combine_colorcorrection_lut_cs.vmat_c crc=0x1ad784ef size=1984
 materials/dev/compute_reactive_mask.vmat_c crc=0x9fc6f6da size=1322
+materials/dev/compute_smooth_normals_cs.vmat_c crc=0xe660ab98 size=1087
 materials/dev/convolve_environment_map.vmat_c crc=0x8b82c362 size=2504
 materials/dev/copytexture.vmat_c crc=0xce0726b size=1041
 materials/dev/copytextureload.vmat_c crc=0xe00adac7 size=1378
@@ -267,6 +268,7 @@ materials/dev/upsample_fsr.vmat_c crc=0x3edf6dc6 size=1328
 materials/dev/upsample_rcas.vmat_c crc=0xc5c9594d size=1328
 materials/dev/visualize_aggregate.vmat_c crc=0xa7b7819e size=1399
 materials/dev/visualize_depth.vmat_c crc=0x701ca55 size=2464
+materials/dev/visualize_distance_field.vmat_c crc=0x54b04e40 size=1402
 materials/dev/visualize_implicit.vmat_c crc=0x7fb2ed6b size=1467
 materials/dev/visualize_implicit_wireframe.vmat_c crc=0x76d814d size=1499
 materials/dev/visualize_quad_overdraw.vmat_c crc=0x2e1a22ce size=1005
@@ -546,8 +548,9 @@ materials/tools/toolsblocksound.vmat_c crc=0x8de5af6c size=6608
 materials/tools/toolsclip.vmat_c crc=0xaf819500 size=3080
 materials/tools/toolscontrolclip.vmat_c crc=0x3ae44093 size=6088
 materials/tools/toolsfog.vmat_c crc=0xdfcffa3d size=6560
+materials/tools/toolsignorenpc.vmat_c crc=0xa7a8c6fb size=3253
 materials/tools/toolsinvisible.vmat_c crc=0xb3e4c65b size=3128
-materials/tools/toolsinvisibleladder.vmat_c crc=0x57017f7b size=3195
+materials/tools/toolsinvisibleladder.vmat_c crc=0xcbb47a50 size=3109
 materials/tools/toolslightmapres.vmat_c crc=0xa0b02550 size=3096
 materials/tools/toolslightvolumeboundary.vmat_c crc=0xb88aa093 size=6176
 materials/tools/toolsmarkupvolumeai.vmat_c crc=0x9be5f64a size=3288
@@ -712,7 +715,7 @@ panorama/panorama.vrman_c crc=0x4c6f0366 size=449
 resourcemanifests/addon_resources.vrman_c crc=0x6af7e63b size=475
 soundevents/soundevents_manifest.vrman_c crc=0x9a3b72ff size=480
 soundevents/soundevents_manifest_core.vrman_c crc=0x17b30e8 size=474
-soundevents/soundevents_manifest_core_tools.vrman_c crc=0x1334c34a size=1121
+soundevents/soundevents_manifest_core_tools.vrman_c crc=0xd1b8a8cd size=1585
 soundevents/soundevents_manifest_tools.vrman_c crc=0xe3fdd345 size=502
 soundstacks/soundstacks_manifest.vrman_c crc=0xab29bae5 size=480
 soundstacks/soundstacks_manifest_core.vrman_c crc=0xd83e56ef size=1405
@@ -757,7 +760,7 @@ sounds/tools/sfm/postroll.vsnd_c crc=0xad7db0fc size=894800
 sounds/tools/sfm/preroll.vsnd_c crc=0x7e11d89e size=903632
 sounds/tools/sfm/snap.vsnd_c crc=0x3c9705f size=984
 soundevents/soundevents_addon.vsndevts_c crc=0x76f99deb size=568
-soundevents/soundevents_core.vsndevts_c crc=0xa771efca size=2182
+soundevents/soundevents_core.vsndevts_c crc=0xa9c7eddb size=2185
 soundevents/soundevents_diagnostics.vsndevts_c crc=0x9d9d04a4 size=7856
 soundevents/soundevents_examples.vsndevts_c crc=0x47eccc65 size=1101
 soundevents/soundevents_soundscapes_core.vsndevts_c crc=0x95fd7da8 size=12344
@@ -1199,6 +1202,7 @@ materials/tools/toolsblocksound_color_png_3d4f675a.vtex_c crc=0x6194960d size=13
 materials/tools/toolsclip_color_tga_45a33376.vtex_c crc=0x234e3fa8 size=7508
 materials/tools/toolscontrolclip_color_tga_104e6095.vtex_c crc=0x308f1609 size=4492
 materials/tools/toolsfog_color_tga_7b8dd86d.vtex_c crc=0xdb918b4a size=7508
+materials/tools/toolsignorenpc_color_tga_719bfdd6.vtex_c crc=0xea4684b size=4812
 materials/tools/toolsinvisible_color_tga_dc3f6c04.vtex_c crc=0xf78cd801 size=7556
 materials/tools/toolsinvisibleladder_color_tga_dd58c82d.vtex_c crc=0x3643cafd size=7604
 materials/tools/toolslightmapres_color_tga_3915f391.vtex_c crc=0x52f1556e size=7572
@@ -1243,8 +1247,8 @@ textures/dev/ao_proxy_lut_selfshadow.vtex_c crc=0x74a3d053 size=2852
 textures/dev/arhosek_skymodel_limb_darkening_datasets.vtex_c crc=0xc83fdbb0 size=2268
 textures/dev/arhosek_skymodel_solar_datasets.vtex_c crc=0x94768279 size=81204
 textures/dev/blue_noise_256.vtex_c crc=0xeb315605 size=263908
-textures/dev/brdf_lut.vtex_c crc=0xfaf27cd6 size=99336
-textures/dev/brdf_multiscatter_lut.vtex_c crc=0xbcb5d81f size=9976
+textures/dev/brdf_lut.vtex_c crc=0xf200701b size=99336
+textures/dev/brdf_multiscatter_lut.vtex_c crc=0xca96c334 size=9976
 textures/dev/checkerboard.vtex_c crc=0x3705b161 size=34516
 textures/dev/ggx_integrate_brdf_lut.vtex_c crc=0xc6ab814 size=263940
 textures/dev/ggx_integrate_brdf_lut_schlick.vtex_c crc=0x6ba3c916 size=263988
@@ -1271,6 +1275,6 @@ panorama/layout/popups/popup_generic_no_dim.vxml_c crc=0xec3747e7 size=1753
 panorama/layout/popups/popup_generic_text_entry.vxml_c crc=0x1f23bd98 size=1730
 panorama/layout/popups/popup_manager.vxml_c crc=0x955cde32 size=1408
 panorama/layout/tooltips/tooltip_base.vxml_c crc=0x9c255685 size=1512
-panorama/layout/tooltips/tooltip_text.vxml_c crc=0xef91f287 size=1287
-panorama/layout/tooltips/tooltip_title_image_text.vxml_c crc=0xef74d277 size=1362
-panorama/layout/tooltips/tooltip_title_text.vxml_c crc=0xd27e3563 size=1325
+panorama/layout/tooltips/tooltip_text.vxml_c crc=0x19fa3d62 size=1284
+panorama/layout/tooltips/tooltip_title_image_text.vxml_c crc=0x95b5f14e size=1359
+panorama/layout/tooltips/tooltip_title_text.vxml_c crc=0x363e5b2d size=1322

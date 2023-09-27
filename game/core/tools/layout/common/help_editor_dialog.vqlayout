@@ -1,0 +1,102 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	vbox=
+	[
+		{ _class="QLabel" text="Custom Help Strings" foreground=[150,150,235] fontstyle="14px bold" align="center" },
+		{
+			_class="QGroupBox"
+			background=[50,50,100]
+			autoFillBackground=true
+			grid =
+			[
+				[
+					{ _class="QLabel" text="Friendly Name" foreground=[150,150,235] },
+					{ _class="QLineEdit" name="friendly_name_edit" background=[50,50,100] stretch=1 },
+				],
+				[
+					{ _class="QLabel" text="Tooltip Override" foreground=[150,150,235] },
+					{ _class="QLineEdit" name="short_help_edit" background=[50,50,100] },
+				],
+
+				[
+					{
+						colspan=2
+						vbox=
+						[
+							{
+								hbox=
+								[
+									{ _class="QLabel" text="Help Text" foreground=[150,150,235] stretch=1 },
+									{
+										_class="QToolBar"
+										actions=
+										[
+											{ _class="CQBindableCommandAction" binding="help_editor:InsertBold"       text="Insert Bold"        icon="game:tools/images/helpsystem/edit_help_insert_bold.png"       },
+											{ _class="CQBindableCommandAction" binding="help_editor:InsertItalic"     text="Insert Italic"      icon="game:tools/images/helpsystem/edit_help_insert_italic.png"     },
+											{ _class="CQBindableCommandAction" binding="help_editor:InsertUnderlined" text="Insert Underlined"  icon="game:tools/images/helpsystem/edit_help_insert_underline.png"  },
+											{ _class="CQBindableCommandAction" binding="help_editor:InsertImage"      text="Insert Image"       icon="game:tools/images/helpsystem/edit_help_insert_image.png"      },
+											{ _class="CQBindableCommandAction" binding="help_editor:InsertLink"       text="Insert Link"        icon="game:tools/images/helpsystem/edit_help_insert_link.png"       },
+											{ _class="CQBindableCommandAction" binding="help_editor:InsertAssetLink"  text="Insert Asset Link"  icon="game:tools/images/helpsystem/edit_help_insert_asset_link.png" },
+										]
+									},
+								]
+							},
+							{ _class="CQTextEditSuppressShortcuts" name="long_help_edit" background=[50,50,100] },
+						]
+					}
+				],
+			]
+		},
+
+		{
+			hbox =
+			[
+				{ stretch = 1 },
+				{ _class = "CQBindableCommandToolButton" name = "save_button" focusPolicy = "NoFocus" binding="help_editor:Save" text = "Save" mode = "COMMAND_TEXT_MODE_BUTTON" toolButtonStyle = "ToolButtonTextBesideIcon" icon = "tools/images/common/save_sm.png" },
+				{ _class = "CQBindableCommandToolButton" focusPolicy = "NoFocus" binding="help_editor:Cancel" text = "Cancel" mode = "COMMAND_TEXT_MODE_BUTTON" toolButtonStyle = "ToolButtonTextBesideIcon" icon = "tools/images/common/cancel_sm.png" },
+			]
+		},
+
+		{ spacing = 10 },
+		{ _class="QLabel" text="Help Preview" foreground=[100,135,100] fontstyle="14px bold" align="center" },
+		{
+			_class="QGroupBox"
+			background=[20,50,20]
+			autoFillBackground=true
+			grid =
+			[
+				[
+					{ _class="QLabel" text="Tooltip Preview" foreground=[100,135,100] },
+					{ _class="QLabel" text="Help Widget Preview" foreground=[100,135,100] },
+				],
+				[
+					{ _class="QTextBrowser" name="short_help_preview" readOnly=true fixed_size=[300,100] verticalScrollBarPolicy="ScrollBarAlwaysOff" },
+					{ _class="QTextBrowser" name="long_help_preview" readOnly=true },
+				],
+			]
+		},
+
+		{ spacing = 15 },
+		{ _class="QLabel" text="Entry Info" fontstyle="14px bold" align="center" },
+		{
+			grid =
+			[
+				[
+					{ _class="QLabel" text="Context" fontstyle="bold" },
+					{ _class="QLineEdit" name="helpcontext_name" readOnly=true fontfamily="Courier New" fontstyle="italic" },
+				],
+				[
+					{ _class="QLabel" text="File" fontstyle="bold" },
+					{ _class="QLineEdit" name="helpcontext_path" readOnly=true fontfamily="Courier New" fontstyle="italic" },
+				],
+				[
+					{ _class="QLabel" text="Help ID" fontstyle="bold" },
+					{ _class="QLineEdit" name="helpid" readOnly=true fontfamily="Courier New" fontstyle="italic" },
+				],
+			]
+		},
+		{ _class="QLabel" visible="%has_reference_help" text="Reference Help" fontstyle="bold italic" },
+		{ _class="QLabel" visible="%has_reference_help" fontstyle="10px italic" text="This is the baseline help string from code or an FGD file" },
+		{ _class="QTextEdit" visible="%has_reference_help" fontfamily="Courier New" name="long_reference_help" readOnly=true },
+	]
+}

@@ -1,0 +1,211 @@
+<!-- xml reconstructed by Source 2 Viewer 5.0.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/dashboard.vcss_c" />
+		<include src="s2r://panorama/styles/dashboard_page_shared.vcss_c" />
+		<include src="s2r://panorama/styles/battle_pass/international2023/bp_international2023_shared.vcss_c" />
+		<include src="s2r://panorama/styles/battle_pass/international2023/bp_international2023_fantasy_period.vcss_c" />
+	</styles>
+	<snippets>
+		<snippet name="FantasyOperationSnippet">
+			<Panel class="FantasyOperation">
+				<TextButton class="ButtonPrimary TI23Blue FantasyOperationButton" id="FantasyOperationButton" text="{s:operation_text}" onmouseout="FantasyCraftRemoveOperationHighlights()" />
+			</Panel>
+		</snippet>
+		<snippet name="ResultTabletSnippet">
+			<Panel class="BottomTopFlow ResultsTablet">
+				<Panel class="TabletPeriodScoreHolder">
+					<Label text="Score:" />
+					<Label text="{f:period_score_player}" />
+				</Panel>
+				<DOTAUIFantasyCraftTablet id="PlayerTablet" />
+			</Panel>
+		</snippet>
+		<snippet name="LeaderboardRow">
+			<Panel class="LeaderboardRow">
+				<DOTAAvatarImage id="LeaderListAvatar" nocompendiumborder="true" />
+				<Label class="LeaderListName" text="{g:dota_persona:account_id}" html="true" />
+				<Label class="LeaderListValue" text="{s:score}" />
+			</Panel>
+		</snippet>
+		<snippet name="PlayerSelectTile">
+			<Panel class="PlayerChoice">
+				<Label id="PlayerTitle" class="FantasyPlayerTitle LabelLarge LightestGreyText" text="{s:tablet_player}" html="true" />
+				<Panel class="PlayerImages">
+					<DOTAPlayerImage id="PlayerImage" scaling="stretch-to-fit-preserve-aspect" />
+					<Image id="TeamLogo" />
+				</Panel>
+				<Button id="DraftPlayerButton" class="ButtonPrimary TI23Blue VerticalCenter">
+					<Label text="#DOTA_FantasyCraft_Operation_ChoosePlayer" />
+				</Button>
+				<Panel class="ChoiceBorder" hittest="false" />
+			</Panel>
+		</snippet>
+	</snippets>
+	<DOTABPInternational2023FantasyPeriod>
+		<Panel id="StarterPanel" class="MainView">
+			<Panel class="SubTitleContainer">
+				<Panel class="Dash Left" />
+				<Label class="SubTitle LabelLarge" text="Welcome to Fantasy!" />
+				<Panel class="Dash Right" />
+			</Panel>
+			<Label class="Title" text="#DOTA_Fantasycraft_StarterTitle" />
+			<Panel id="PlayerSelectContainer" />
+			<Label class="StartFootnote BodyMedium LightGreyText" text="#DOTA_FantasyCraft_Tutorial_CreateRoster_Footer" />
+			<TextButton id="CreateTabletButton" class="ButtonPrimary TI23Blue Large" text="#DOTA_UI_Confirmation_Continue" onactivate="FantasyCraftCreateTablets()" />
+		</Panel>
+		<AsyncDataPanel id="CraftingPanel" state="{d:crafting_load_state}" loading-text="" error-text="">
+			<Panel class="AsyncSuccessContainer MainView">
+				<Panel id="CraftingTabletList" />
+				<Panel class="CraftingFooter">
+					<Panel class="CraftingTitleContainer">
+						<Label class="CraftingTitle LabelLarge VerticalCenter" html="true" text="#DOTA_FantasyCraft_CraftPlayer" />
+					</Panel>
+					<TextButton class="TutorialButton ButtonPrimary Large TI23Blue UpgradeFlow" text="#DOTA_FantasyCraft_UpgradeTablets" onactivate="FantasyCraftUpgradeTablets()" />
+					<Panel class="OperationsHolderContainer NoUpgradeFlow">
+						<Panel id="OperationsHolder" />
+						<Panel class="CraftingStatus NoUpgradeFlow">
+							<Button class="RerollButton ButtonPrimary TI23Blue" onactivate="FantasyCraftRerollOperations()">
+								<Label text="#DOTA_FantasyCraft_Reroll" />
+							</Button>
+							<Image class="RerollIcon VerticalCenter" src="s2r://panorama/images/control_icons/24px/refresh.vsvg" />
+							<Label id="TokensAvailableText" class="LabelMedium LightestGreyText VerticalCenter" text="#DOTA_FantasyCraft_TokensAvailable" />
+							<Label id="NoOperationsText" class="LabelLarge LightestGreyText VerticalCenter" text="#DOTA_FantasyCraft_NoTokens" />
+						</Panel>
+					</Panel>
+				</Panel>
+			</Panel>
+			<Panel class="AsyncLoadingContainer MainView">
+				<Panel class="LoadingSpinnerPanel">
+					<Panel class="Spinner" />
+				</Panel>
+			</Panel>
+			<Panel class="AsyncFailureContainer FailureContainer">
+				<Panel class="LockIconContainer">
+					<Image class="LockIcon" src="s2r://panorama/images/control_icons/24px/x_close_filled.vsvg" />
+				</Panel>
+				<Label class="LockedHeader" text="#DOTA_FantasyCraft_LoadFail_Title" />
+				<Label class="HeaderDetails LighterGreyText Opacity_60" text="#DOTA_FantasyCraft_LoadFail_Body" />
+			</Panel>
+		</AsyncDataPanel>
+		<Panel id="ResultsPanel" class="MainView">
+			<Panel class="ResultContentRow Tablets">
+				<Panel id="ResultsTabletDisplay" class="MiniTabletView LeftRightFlow" />
+			</Panel>
+			<Panel class="ResultContentRow Leaderboard">
+				<Panel id="LeaderboardContainerFriends" class="LeaderboardContainer">
+					<Panel class="LeaderListHeader">
+						<Label class="ScoreBoardType" text="#DOTA_FantasyLeaderboardHeaderFriends" />
+						<Label class="TotalScore" text="#DOTA_FantasyLeaderboardPeriodScore" />
+					</Panel>
+					<DelayLoadList id="LeaderListFriends" class="LeaderList" itemwidth="200px" itemheight="26px" />
+				</Panel>
+				<Panel id="LeaderboardContainerGlobal" class="LeaderboardContainer">
+					<Panel class="LeaderListHeader">
+						<Label class="ScoreBoardType" text="#DOTA_FantasyLeaderboardHeaderGlobal" />
+						<Label class="TotalScore" text="#DOTA_FantasyLeaderboardPeriodScore" />
+					</Panel>
+					<DelayLoadList id="LeaderListGlobal" class="LeaderList" itemwidth="200px" itemheight="26px" />
+				</Panel>
+				<Panel class="PeriodRewards">
+					<Label class="PeriodRewardsLabel" text="#DOTA_FantasyPeriodScore" />
+					<Panel class="PeriodRewardsList">
+						<Panel class="ScoreContainer">
+							<Label class="ScoreLabel" text="#DOTA_FantasyScoreTotalTotal" />
+							<Label class="Value" text="{s:total_score}" />
+						</Panel>
+						<Panel class="ScoreContainer">
+							<Label class="ScoreLabel" text="#DOTA_FantasyScoreTotalPercentile" />
+							<Label class="Value" text="{s:total_percentile}" />
+						</Panel>
+					</Panel>
+				</Panel>
+			</Panel>
+		</Panel>
+		<Panel id="LockedPanel" class="MainView">
+			<Panel class="LockIconContainer">
+				<Image class="LockIcon" src="s2r://panorama/images/control_icons/24px/lock.vsvg" />
+			</Panel>
+			<Label class="LockedHeader" text="#DOTA_FantasyCraft_PeriodLockedTitle" />
+			<Label class="HeaderDetails LighterGreyText Opacity_60" text="#DOTA_FantasyCraft_PeriodLockedBody" />
+		</Panel>
+		<Panel id="TutorialPanel" class="TutorialOnly">
+			<Panel class="TutorialSegment Show_ShowRoster">
+				<Panel class="ShowRosterMid">
+					<Label class="LabelExtraLarge LightestGreyText TitleTutorialInitial" text="#DOTACavernCrawl_Tutorial_Title" />
+					<Label class="TutorialText" text="#DOTA_FantasyCraft_Tutorial_ShowRoster" />
+					<Button class="TutorialButton ButtonPrimary Large TI23Blue" onactivate="FantasyCraftCompleteTutorial( 0 )">
+						<Label text="#DOTA_FantasyCraft_Tutorial_Continue" />
+					</Button>
+				</Panel>
+			</Panel>
+			<Panel class="TutorialSegment Show_UpgradeRoster">
+				<Panel class="UpgradeMid">
+					<Label class="TutorialTitle" text="#DOTA_FantasyCraft_Tutorial_Upgrade_Title" />
+					<Label class="TutorialText" text="#DOTA_FantasyCraft_Tutorial_Upgrade_Body" />
+					<Button class="TutorialButton ButtonPrimary Large TI23Blue" onactivate="FantasyCraftCompleteTutorial( 1 )">
+						<Label text="#DOTA_FantasyCraft_Tutorial_Continue" />
+					</Button>
+				</Panel>
+			</Panel>
+			<Panel class="TutorialSegment Show_ViewTablet">
+				<Panel class="ViewTabletLeft">
+					<Label class="LabelExtraLarge LightestGreyText TitleTutorialInitial" text="#DOTACavernCrawl_Tutorial_Title" />
+					<Label class="TutorialText TitleTutorialInitial" text="#DOTA_FantasyCraft_Tutorial_ViewTablet_Body" />
+					<Label class="TutorialText TutorialViewTitle" text="#DOTA_FantasyCraft_Tutorial_ViewTablet_YourTitles" />
+					<Label class="TutorialListText TutorialViewTitle" html="true" text="#DOTA_FantasyCraft_PlayerTooltip_Prefix" />
+					<Label class="TutorialListText TutorialViewTitle" html="true" text="#DOTA_FantasyCraft_PlayerTooltip_Suffix" />
+					<Button class="TutorialButton ButtonPrimary Large TI23Blue" onactivate="FantasyCraftAdvanceTitleTutorial()">
+						<Label text="#DOTA_FantasyCraft_Tutorial_Continue" />
+					</Button>
+				</Panel>
+			</Panel>
+			<Panel class="TutorialSegment Show_Emblems">
+				<Panel class="EmblemRight">
+					<Label class="LabelExtraLarge LightestGreyText TitleTutorialInitial" text="#DOTACavernCrawl_Tutorial_Title" />
+					<Label class="TutorialText EmblemTutorialInitial" text="#DOTA_FantasyCraft_Tutorial_Emblems_Body" />
+					<Label class="TutorialListText EmblemTutorialInitial" text="#DOTA_FantasyCraft_Tutorial_Emblems_Type" />
+					<Label class="TutorialListText TutorialStat" text="#DOTA_FantasyCraft_Tutorial_Emblems_Stat" />
+					<Label class="TutorialListText TutorialQuality" text="#DOTA_FantasyCraft_Tutorial_Emblems_Quality" />
+					<Label class="TutorialListText TutorialTrait" text="#DOTA_FantasyCraft_Tutorial_Emblems_Trait" />
+					<Button class="TutorialButton ButtonPrimary Large TI23Blue" onactivate="FantasyCraftAdvanceEmblemTutorial()">
+						<Label text="#DOTA_FantasyCraft_Tutorial_Continue" />
+					</Button>
+				</Panel>
+			</Panel>
+			<Panel class="TutorialSegment Show_Operations">
+				<Panel class="OperationsMid">
+					<Label class="TutorialText" text="#DOTA_FantasyCraft_Tutorial_Operations_Body" />
+					<Button class="TutorialButton ButtonPrimary Large TI23Blue" onactivate="FantasyCraftCompleteTutorial( 4 )">
+						<Label text="#DOTA_GotIt" />
+					</Button>
+				</Panel>
+			</Panel>
+			<Panel class="TutorialSegment Show_TutorialResults">
+				<Panel class="ResultsMid">
+					<Label class="TutorialText" text="#DOTA_FantasyCraft_Tutorial_Results_Body" />
+					<Button class="TutorialButton ButtonPrimary Large TI23Blue" onactivate="FantasyCraftCompleteTutorial( 5 )">
+						<Label text="#DOTA_FantasyCraft_Tutorial_Continue" />
+					</Button>
+				</Panel>
+			</Panel>
+			<Panel class="TutorialSegment Show_TutorialLocked">
+				<Panel class="LockedMid">
+					<Label class="TutorialText Center" text="#DOTA_FantasyCraft_Tutorial_Locked_Body" />
+					<Button class="TutorialButton Center ButtonPrimary Large TI23Blue" onactivate="FantasyCraftCompleteTutorial( 6 )">
+						<Label text="#DOTA_FantasyCraft_Tutorial_Continue" />
+					</Button>
+				</Panel>
+			</Panel>
+			<Panel class="TutorialSegment Show_ForgotTokens">
+				<Panel class="OperationsMid">
+					<Label class="TutorialText" text="#DOTA_FantasyCraft_Tutorial_ForgotTokens_Body" />
+					<Button class="TutorialButton ButtonPrimary Large TI23Blue" onactivate="FantasyCraftCompleteTutorial( 7 )">
+						<Label text="#DOTA_GotIt" />
+					</Button>
+				</Panel>
+			</Panel>
+		</Panel>
+	</DOTABPInternational2023FantasyPeriod>
+</root>

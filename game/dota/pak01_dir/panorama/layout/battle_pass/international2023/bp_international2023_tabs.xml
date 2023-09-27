@@ -1,0 +1,85 @@
+<!-- xml reconstructed by Source 2 Viewer 5.0.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/dashboard.vcss_c" />
+		<include src="s2r://panorama/styles/battle_pass/international2023/bp_international2023_shared.vcss_c" />
+		<include src="s2r://panorama/styles/battle_pass/international2023/bp_international2023_tabs.vcss_c" />
+	</styles>
+	<Panel class="SecondaryTabSet">
+		<Panel class="LogoContainer" onactivate="DOTAShowBPInternational2023HomePage()">
+			<Image class="Logo" scaling="stretch-to-fit-preserve-aspect" src="s2r://panorama/images/logos/ti_logo_2023_png.vtex" />
+			<Label class="Title" text="#FrontPage_Compendium_Points_Header" />
+			<Panel id="StarsContainer">
+				<Panel class="CompendiumStar" />
+				<Panel class="CompendiumStar" />
+				<Panel class="CompendiumStar" />
+				<Panel class="CompendiumStar" />
+				<Panel class="CompendiumStar" />
+			</Panel>
+		</Panel>
+		<Panel class="TopBorder" />
+		<Panel class="SecondaryTabsContainer">
+			<RadioButton id="International2023Rewards" class="SecondaryTabButton" group="SecondaryTabGroup" text="Rewards" onactivate="DOTAShowBPInternational2023RewardsPage()" />
+			<Label class="SectionHeader" text="#DOTA_Compendium2023_Participate" />
+			<RadioButton id="International2023Quests" class="SecondaryTabButton" group="SecondaryTabGroup" text="#DOTA_International2023_Quests_Title" onactivate="DOTAShowBPInternational2023QuestsPage()" />
+			<RadioButton id="International2023Fantasy" class="SecondaryTabButton" group="SecondaryTabGroup" text="#DOTA_Compendium_SecondaryTabHeader_Fantasy" onactivate="DOTAShowBPInternational2023FantasyPage()" />
+			<RadioButton id="International2023Predictions" class="SecondaryTabButton" group="SecondaryTabGroup" text="#DOTA_OraclesChallenge_OraclesChallenge" onactivate="DOTAShowBPInternational2023PredictionsPage()" />
+			<RadioButton id="International2023Bingo" class="SecondaryTabButton" group="SecondaryTabGroup" text="#DOTA_Bingo_Title" onactivate="DOTAShowBPInternational2023BingoPage()" />
+			<Label class="SectionHeader" text="#DOTA_Compendium2023_TheEvent" />
+			<RadioButton id="International2023Talent" class="SecondaryTabButton" group="SecondaryTabGroup" text="#DOTA_Compendium_SecondaryTabHeader_Casters" onactivate="DOTAShowBPInternational2023TalentComingSoonPage()" />
+			<RadioButton id="International2023SupportersClubs" class="SecondaryTabButton" group="SecondaryTabGroup" text="#DOTA_DPCFanContent_SupportersClubs" onactivate="DOTAShowBPInternational2023SupportersClub()" />
+			<Button id="International2023Watch" class="SecondaryTabButton">
+				<Label text="#DOTA_CompendiumTeam_Game_Watch" />
+				<Image src="s2r://panorama/images/control_icons/24px/arrow_top_right.vsvg" />
+			</Button>
+			<Button id="International2023Pubstomps" class="SecondaryTabButton">
+				<Label text="#DOTA_Compendium2023_Pubstomps" />
+				<Image src="s2r://panorama/images/control_icons/24px/arrow_top_right.vsvg" />
+			</Button>
+		</Panel>
+		<Panel id="LeftPanel" hittest="false">
+			<Panel id="BPLevelEntry" onactivate="DOTAShowBPInternational2023RewardsPage()">
+				<Panel id="LevelDetails">
+					<Panel id="LevelButtons" class="TopBottomFlow">
+						<TextButton id="PurchaseBattlePassButton" class="BattlePassBrightButton" onactivate="DOTAPurchaseEventAccess( EVENT_ID_INTERNATIONAL_2023, false )" text="#DOTA_TI6_BattlePass_Purchase" />
+						<TextButton id="PurchaseLevelsButton" class="BattlePassBrightButton Small" onactivate="DOTAPurchaseEventLevelsSource( EVENT_ID_INTERNATIONAL_2023, BattlePass )" text="#DOTA_TI6_BattlePass_PurchaseLevels" />
+						<TextButton id="ActivateBattlePassButton" class="BattlePassBrightButton" onactivate="DOTAActivateEventFromArmory( EVENT_ID_INTERNATIONAL_2023 )" text="#DOTA_ActivateBattlePass" />
+					</Panel>
+					<Panel id="EventEnded">
+						<Label class="EndedTitle" text="#DOTA_Nemestice2021_Ended" />
+						<Label class="EndedDate" text="{t:l:event_end_date}" />
+					</Panel>
+					<ProgressBar id="LevelProgressBar">
+						<DOTAParticleScenePanel id="ProgressBurner" hittest="false" particleName="particles/ui/ui_progressbar_burner.vpcf" particleonly="true" cameraOrigin="-350 0 0" lookAt="0 -350 0" fov="90" squarePixels="true" />
+					</ProgressBar>
+					<Panel class="PointsLogContainer">
+						<Panel class="PointIcon" />
+						<Label id="PointsNeeded" class="" html="true" text="&lt;b&gt;{d:level_progress}&lt;/b&gt; / {d:points_per_level}" />
+						<Button id="PointsInfo" class="ButtonPrimary TI23Blue Small" onactivate="DOTAShowBattlePassLog( EVENT_ID_INTERNATIONAL_2023 );">
+							<Label text="#DOTA_BattlePassLog_Title_Short" />
+						</Button>
+					</Panel>
+				</Panel>
+				<DOTAEventLevelShield id="LevelShield" class="Season_International2023 LargeStack" />
+			</Panel>
+			<Panel id="GiftEntry">
+				<Button id="GiftBattlePassButton" class="ButtonPrimary TI23Blue Small" onactivate="DOTAPurchaseEventAccess( EVENT_ID_INTERNATIONAL_2023, true )">
+					<Label text="#DOTA_GiftACompendium" />
+				</Button>
+				<Panel id="GiftProgressBar" onmouseover="UIShowTextTooltip( &apos;#DOTA_Compendium_GiftRewardInfo&apos; )" onmouseout="UIHideTextTooltip()">
+					<Panel class="FillWidth" />
+					<Panel class="GiftsIcon" id="Level1" />
+					<Panel class="GiftsIcon" id="Level2" />
+					<Panel class="GiftsIcon" id="Level3" />
+					<Panel class="GiftsIcon" id="Level4" />
+					<Panel class="GiftsIcon" id="Level5" />
+					<Panel class="FillWidth" />
+				</Panel>
+			</Panel>
+			<Panel id="FriendsEntry">
+				<DOTALeaderboard id="FriendsLeaderboard" class="Slanted" eventid="EVENT_ID_INTERNATIONAL_2023" showlevel="true" pointsheader="#DOTA_SeasonPass_Friends_Leaderboard_Level" />
+			</Panel>
+		</Panel>
+	</Panel>
+</root>

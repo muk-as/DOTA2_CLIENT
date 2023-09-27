@@ -1,0 +1,74 @@
+<!-- xml reconstructed by Source 2 Viewer 5.0.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/dashboard_page_shared.vcss_c" />
+		<include src="s2r://panorama/styles/battle_pass/international2023/bp_international2023_shared.vcss_c" />
+		<include src="s2r://panorama/styles/battle_pass/international2023/bp_international2023_fantasytitle_popup.vcss_c" />
+	</styles>
+	<snippets>
+		<snippet name="TitleChoice">
+			<Panel class="TitleChoice">
+				<Panel class="TitleChoiceInfoContainer">
+					<Label id="PlayerTitle" class="FantasyPlayerTitle BodyLarge LightestGreyText" text="#DOTA_FantasyCraft_Player" html="true" />
+					<Label class="FantasyPlayerTitle LighterGreyText" text="#DOTA_FantasyCraft_TitleTooltip" html="true" />
+				</Panel>
+				<Panel class="TitleChoiceBorder" hittest="false" />
+			</Panel>
+		</snippet>
+	</snippets>
+	<PopupFantasyCraftTitle class="FantasyCraftChoice" popupbackground="blur">
+		<Panel class="Header">
+			<Label class="PlayerChoiceTitle LabelExtraExtraLarge LightestGreyText" text="#DOTA_FantasyCraft_SelectTitles" />
+			<Button id="CloseButton" class="ButtonPrimary DarkGrey" onactivate="UIPopupButtonClicked()">
+				<Image src="s2r://panorama/images/control_icons/24px/x_close.vsvg" />
+			</Button>
+		</Panel>
+		<Panel class="Body">
+			<Panel class="BodyColumn">
+				<Panel class="NoTitles">
+					<Label class="TokenSpendDescription BodyLarge" text="#DOTA_FantasyCraft_GenerateTitlesExplainer" />
+					<Panel class="LeftRightFlow HorizontalCenter">
+						<Image class="RerollIcon VerticalCenter" src="s2r://panorama/images/control_icons/24px/refresh.vsvg" />
+						<Label id="TokensLabel" class="LabelLarge LightestGreyText" text="#DOTA_FantasyCraft_TokensAvailable" />
+					</Panel>
+					<Button id="GenerateNoOptions" class="ButtonPrimary Large TI23Blue" onactivate="FantasyCraftGenerateTitles()">
+						<Label text="#DOTA_FantasyCraft_GenerateTitles" />
+					</Button>
+				</Panel>
+				<Panel class="HasTitles">
+					<Panel id="ChoiceHolder">
+						<Panel id="Choices" />
+					</Panel>
+					<Button id="ConfirmChoice" class="ButtonPrimary TI23Blue Large" onactivate="FantasyCraftConfirmTitle() UIPopupButtonClicked()">
+						<Label text="#DOTA_Confirm" />
+					</Button>
+					<Panel class="ControlButtons">
+						<Panel class="LeftRightFlow HorizontalCenter">
+							<Button id="GenerateHasOptions" class="ButtonPrimary Purple" onactivate="FantasyCraftGenerateTitles()">
+								<Label text="#DOTA_FantasyCraft_RerollTitles" />
+							</Button>
+							<Image class="RerollIcon VerticalCenter" src="s2r://panorama/images/control_icons/24px/refresh.vsvg" />
+							<Label id="TokensLabel" class="LabelLarge LightestGreyText" text="#DOTA_FantasyCraft_TokensAvailable" />
+						</Panel>
+					</Panel>
+				</Panel>
+			</Panel>
+			<Panel class="PlayerColumn">
+				<Panel class="PlayerAndImages">
+					<Panel class="PlayerImages">
+						<Image id="TeamLogo" scaling="contain" />
+						<DOTAPlayerImage id="Headshot" scaling="stretch-to-fit-preserve-aspect" />
+					</Panel>
+					<Panel class="RoleAndName">
+						<Panel class="PlayerNameAndTitle">
+							<Label id="PlayerTitleLabel" class="BodyLarge" text="#DOTA_FantasyCraft_Player" html="true" onmouseout="DOTAHideFantasyCraftPlayerTooltip()" />
+							<Label class="BodyMedium" html="true" text="#DOTA_FantasyCraft_PlayerTooltip_Prefix" />
+							<Label class="BodyMedium" html="true" text="#DOTA_FantasyCraft_PlayerTooltip_Suffix" />
+						</Panel>
+					</Panel>
+				</Panel>
+			</Panel>
+		</Panel>
+	</PopupFantasyCraftTitle>
+</root>

@@ -568,7 +568,6 @@ A\A]A^A_ÐUSH
 A\A]A^H
 A\A]A^L
 A\A]A^Ë81
-A\A]A^ÐATU1
 A\A]A^ÐATUSH
 A\A]A^ÐAUATL
 A\A]A^ÐAVAUATA
@@ -712,7 +711,7 @@ Assertion Failed: !m_bConnectionInitiatedRemotely
 Assertion Failed: !m_bCryptKeysValid
 Assertion Failed: !m_bHaveLowLevelRef
 Assertion Failed: !m_connection.m_bConnectionInitiatedRemotely
-Assertion Failed: !m_connectionConfig.m_SymmetricConnect.IsLocked
+Assertion Failed: !m_connectionConfig.SymmetricConnect.IsLocked
 Assertion Failed: !m_fakeIPRefRemote.IsValid
 Assertion Failed: !m_identity.IsInvalid
 Assertion Failed: !m_identityRemote.IsFakeIP
@@ -772,7 +771,7 @@ Assertion Failed: !pMsg->m_linksSecondaryQueue.m_pQueue
 Assertion Failed: !pNext || pNext->m_pPrevTaskForTarget == pTask
 Assertion Failed: !pQueue->m_pFirst
 Assertion Failed: !pResult
-Assertion Failed: !pResult || pResult->m_connectionConfig.m_LocalVirtualPort.Get() == nLocalVirtualPort
+Assertion Failed: !pResult || pResult->m_connectionConfig.LocalVirtualPort.Get() == nLocalVirtualPort
 Assertion Failed: !pResult->m_pConnection || pResult->m_pConnection->m_pLock == pResult->m_pLock
 Assertion Failed: !pSendMessage->SNPSend_IsReliable
 Assertion Failed: !pServer->IsPrimaryTransport
@@ -1056,8 +1055,8 @@ Assertion Failed: m_connection.m_statsEndToEnd.m_usecInFlightReplyTimeout != 0
 Assertion Failed: m_connection.m_statsEndToEnd.m_usecTimeLastRecv > 0
 Assertion Failed: m_connection.m_statsEndToEnd.m_usecWhenTimeoutStarted > 0
 Assertion Failed: m_connection.m_unConnectionIDRemote != 0
-Assertion Failed: m_connectionConfig.m_ConnectionUserData.IsSet
-Assertion Failed: m_connectionConfig.m_LocalVirtualPort.IsLocked
+Assertion Failed: m_connectionConfig.ConnectionUserData.IsSet
+Assertion Failed: m_connectionConfig.LocalVirtualPort.IsLocked
 Assertion Failed: m_eActivityLevel == ELinkActivityLevel::Active
 Assertion Failed: m_eActivityLevel == ELinkActivityLevel::Disconnected
 Assertion Failed: m_eActivityLevel == ELinkActivityLevel::Idle
@@ -1438,6 +1437,8 @@ Assertion Failed: pOutFakeIP->IsFakeIP
 Assertion Failed: pOutputDigest
 Assertion Failed: pPayloadPtr <= helper.m_pPayloadEnd
 Assertion Failed: pPayloadPtr+pSeg->m_cbSegSize <= helper.m_pPayloadEnd
+Assertion Failed: pPing->m_nRouteFlags == 0
+Assertion Failed: pPing->m_nRoutePenalty == 0
 Assertion Failed: pPrimarySession->m_pServer->m_usecTimeLastRecv > 0
 Assertion Failed: pPriorityClass[i].m_nPriority < pPriorityClass[j].m_nPriority
 Assertion Failed: pPubKey->m_eTrust == k_ETrust_Revoked
@@ -1485,6 +1486,7 @@ Assertion Failed: pToken
 Assertion Failed: pTransport
 Assertion Failed: pTransport && pTransport->m_listRelaySessions.IsEmpty
 Assertion Failed: pVal->m_pInherit
+Assertion Failed: pViaRelayData->m_nAvail > 0
 Assertion Failed: pairInsertResult.second
 Assertion Failed: pchData
 Assertion Failed: pchEncodedData
@@ -1791,7 +1793,6 @@ C(H1CHM
 C(H9C0sHL
 C(HcU H
 C0H9C8
-C0HcU(H
 C0X[]A\A
 C0Z[]ÐH
 C4[]A
@@ -2614,11 +2615,13 @@ D$0A	l
 D$0D;cl
 D$0H)D$8H
 D$0H+D$(L9
+D$0HcL$<A
 D$0HcM
 D$0fE
 D$0r	H
 D$0~IL
 D$2sdpif
+D$4IcT$<I
 D$8;C
 D$8H9D$H
 D$8H;D$@u
@@ -2658,6 +2661,7 @@ D$`uVE1
 D$hH9D$`H
 D$hH;D$p
 D$hdH3
+D$pH9D
 D$pfA
 D$vHcD$0
 D$wM9
@@ -2682,7 +2686,7 @@ D3t$<D1
 D3t$<F
 D7q/;M
 D9+t H
-D9=i=I
+D9=Y?I
 D9c,~ZMi
 D9c4~)Ik
 D9c8~BMi
@@ -2700,6 +2704,9 @@ D9eh~"1
 D9et~"1
 D9e|~mH
 D:c	rT
+D;-D9I
+D;-RJI
+D;5MEI
 D;cXs
 D;e }&D
 D;e,D
@@ -3487,7 +3494,6 @@ H9D$(H
 H9D$(t
 H9D$0t
 H9D$PH
-H9E8tOH
 H9PHv>H
 H9l$(H
 H9p s[L9
@@ -3501,7 +3507,6 @@ H;2s!H
 H;2s"H
 H;2sPH
 H;2t'H
-H;=QqD
 H;D$0u
 H;D$p
 H;L$Pf
@@ -3554,7 +3559,6 @@ HcD$tH
 HcD$xH
 HcE0L
 HcL$$D
-HcL$,D
 HcL$@D
 HcS A;T$ u
 HcS,Hc
@@ -3839,6 +3843,7 @@ L$8dH3
 L$@E9
 L$HdH3
 L$Nf3F
+L$PubH
 L$XJ1L
 L$XdH3
 L$hH)L
@@ -3853,13 +3858,14 @@ L3|$hL1
 L9#tEH
 L9CLr
 L9D$X
-L9bhtz
+L9bptz
 L9d$ H
 L9g tV
 L9l$PH
 L9t$(s
 L9t$(tCD
 L9|$8rBH
+L;%mjF
 L;4$tlM
 L;4$trM
 L;X ~&L
@@ -3877,6 +3883,7 @@ LEGACY_GOST_PKCS12
 LITE_RUNTIME
 LagPacket
 Lagged packet remains in queue after socket destroyed or queued for destruction
+LcD$<A9
 LcT$(D
 LcT$,D
 LcfDH
@@ -4068,6 +4075,7 @@ N25SteamNetworkingSocketsLib18CHTTPRequest_SteamE
 N25SteamNetworkingSocketsLib19CQueuedTaskOnTargetINS_27CSteamNetworkConnectionPipeEEE
 N25SteamNetworkingSocketsLib19CQueuedTaskOnTargetINS_30CSteamNetworkingUtilsSteamBaseEEE
 N25SteamNetworkingSocketsLib19CQueuedTaskOnTargetINS_32CSteamNetworkingSocketsSteamBaseEEE
+N25SteamNetworkingSocketsLib19CQueuedTaskOnTargetINS_34CSteamNetworkListenSocketDirectUDPEEE
 N25SteamNetworkingSocketsLib20CConnectionTransportE
 N25SteamNetworkingSocketsLib20LinkStatsTrackerBaseE
 N25SteamNetworkingSocketsLib21CDedicatedBoundSocketE
@@ -4078,6 +4086,7 @@ N25SteamNetworkingSocketsLib22ScheduledMethodThinkerINS_27CConnectionTransportP2
 N25SteamNetworkingSocketsLib22ScheduledMethodThinkerINS_27CConnectionTransportSDRBaseEEE
 N25SteamNetworkingSocketsLib23CConnectionTransportUDPE
 N25SteamNetworkingSocketsLib23CSteamNetworkingSocketsE
+N25SteamNetworkingSocketsLib23ServerBrowserPacketTaskE
 N25SteamNetworkingSocketsLib24CMessagesEndPointSessionE
 N25SteamNetworkingSocketsLib24CSDRServerPhysicalSocketE
 N25SteamNetworkingSocketsLib24CSteamNetworkingMessagesE
@@ -4097,6 +4106,8 @@ N25SteamNetworkingSocketsLib27CConnectionTransportSDRBaseE
 N25SteamNetworkingSocketsLib27CConnectionTransportUDPBaseE
 N25SteamNetworkingSocketsLib27CSteamNetworkConnectionBaseE
 N25SteamNetworkingSocketsLib27CSteamNetworkConnectionPipeE
+N25SteamNetworkingSocketsLib27RecvServerBrowserPacketTaskE
+N25SteamNetworkingSocketsLib27SendServerBrowserPacketTaskE
 N25SteamNetworkingSocketsLib28CSteamNetworkListenSocketP2PE
 N25SteamNetworkingSocketsLib29CSteamNetworkListenSocketBaseE
 N25SteamNetworkingSocketsLib30CSteamNetworkingUtilsSteamBaseE
@@ -4548,7 +4559,6 @@ P2P_Transport_ICE_Enable
 P2P_Transport_ICE_Implementation
 P2P_Transport_ICE_Penalty
 P2P_Transport_SDR_Penalty
-P89W8s
 PAGN_4
 PARAMETERS
 PBE-MD2-DES
@@ -4717,6 +4727,7 @@ PSPECIFIED
 PSS parameter restrictions
 PUBKEY
 PUBLIC KEY
+PX9WXs
 Packet is %d bytes, must be padded to at least %d bytes
 Packet lag time must be positive
 Packet of size %d is too small
@@ -5204,6 +5215,7 @@ SendMessageToUser
 SendMessages
 SendRateMax
 SendRateMin
+SendServerBrowserPacket
 SendUDPacket
 Sender sent abs latest recv pkt number using %llx mod %llx, next send %llx
 Sender sent abs unreliable message number using %llx mod %llx, highest seen %llx
@@ -7388,13 +7400,13 @@ dynamic_cast
 dynstr
 dynsym
 e" must be followed by exponent
-e0Ict
 e2e.life
 e2e.rate
 e2e_quality_local
 e2e_quality_remote
 e2e_quality_remote_instantaneous_time
 e2e_quality_remote_lifetime_time
+e8Ict
 eContent
 eContentType
 ec group new by name failure
@@ -7771,7 +7783,6 @@ gettimeofday
 getting socktype
 getuid
 gf2m not supported
-gfffE1
 gfffMc
 gfffUSH
 gffffE
@@ -7950,7 +7961,6 @@ gپ9rK9J
 h L+m(M
 hH+D$pH
 hH+FpH
-hH9E t
 hHHHH
 h[]A\A]A^A_ÐAWAVAUATI
 h[]A\A]A^A_ÐAWAVAUATUH
@@ -8581,6 +8591,7 @@ jurisdictionLocalityName
 jurisdictionST
 jurisdictionStateOrProvinceName
 k L9l
+k0HcC@L
 k4[]A
 k_ESteamDatagramMsg_ClientPingSampleReply
 k_ESteamDatagramMsg_ClientPingSampleRequest
@@ -8724,7 +8735,7 @@ length too long
 length_ >= n
 level_add_node
 lf%n %n
-lib Jul 13 2023 21:18:10
+lib Sep  1 2023 21:42:57
 lib(%lu
 libc.so.6
 libm.so.6
@@ -8950,6 +8961,7 @@ network_config_changed_different_cluster
 network_config_changed_removed
 network_config_version
 new CSteamNetworkConnectionPipe failed
+new failed
 new_dir
 newer crl not newer
 nextUpdate
@@ -9093,7 +9105,8 @@ o2i_ECPublicKey
 o2i_SCT
 o2i_SCT_LIST
 o2i_SCT_signature
-o8H;-R
+o8H;-2
+o8H;-M
 oCP)Kp)St
 oD$ fD
 oD$@fA
@@ -9222,6 +9235,7 @@ p2p_routing_summary
 p2p_share_ip
 p2p_via_peer_relay_pop_id
 p8I;t
+pH9E t
 pSourceFunc
 pSpecified
 pU>\AL
@@ -10580,7 +10594,7 @@ t$(dH34
 t$8USL
 t$8dH34
 t$@fD
-t$HA9D$L
+t$HA9D$T
 t$HdH34
 t$I;4
 t$XdH34
@@ -10610,13 +10624,11 @@ t8HcT
 t9;H r4
 t<Hcv
 t=D9t$ u6Mc
-tCH;-BJ6
 tDHcZ 1
 tEL9d$ vF
 tH[]A\L
 tIHcD
 tJHc0H
-tMHcC
 tR<]tN
 tTH;E
 tUHcY H

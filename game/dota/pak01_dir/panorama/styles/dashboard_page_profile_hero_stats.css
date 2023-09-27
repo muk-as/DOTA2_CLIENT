@@ -12,7 +12,122 @@ DOTAProfileHeroStatsPage
 	width: 1392px;
 	height: fill-parent-flow( 1.0 );
 	horizontal-align: center;
-	padding: 10px 0px 10px 0px;
+	padding: 0px 0px 10px 0px;
+}
+
+#FrostedContainer,#TeammateStats
+{
+	flow-children: down;
+	width: 1392px;
+	horizontal-align: center;
+	padding: 0px 0px 10px 0px;
+}
+
+.Hidden
+{
+	visibility: collapse;
+}
+
+#HistoryMainContents
+{
+	flow-children: down;
+	transition-property: opacity;
+}
+
+#StatsContents
+{
+	width:100%;
+	height: fill-parent-flow(1);
+	transition-property: opacity;
+	transition-duration: 0.2s;
+	transition-timing-function: ease;
+	background-color: #000000b9;
+}
+
+#StatsContents.ChildExpanded
+{
+	opacity: 0;
+}
+
+.TabGroupContainer
+{
+	horizontal-align: center;
+	vertical-align: center;
+	flow-children: right;
+	border-radius: 80px;
+	border: 1px solid rgba(255, 255, 255, 0.015);
+	background-color: rgba(255, 255, 255, 0.01);
+	padding: 2px 0px;
+	margin: 0px 4px;
+}
+
+.TabGroupContainer .TabItem
+{
+	padding: 6px 16px;
+	border-radius: 80px;
+	margin: 0px 2px;
+	border: 1px solid;
+	border-brush: gradient( linear, 0% 0%, 0% 100%, from( #DAE2E511 ), to( #B0BCC211 ) );
+	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0);
+	border-color: transparent;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #44505500 ), to( #2F363A00 ) );
+	transition-property: color, border, background-color, box-shadow, text-shadow;
+	transition-duration: 0.2s;
+	transition-timing-function: ease;
+}
+
+.TabGroupContainer .TabItem Label
+{
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	text-shadow: 0px 0px 12px rgba(132, 185, 255, 0);
+	color: #768e8d;
+	text-align: center;
+	height: 20px;
+	transition-property: color, text-shadow;
+	transition-duration: 0.2s;
+	transition-timing-function: ease;
+}
+
+.TabGroupContainer .TabItem .TabItemIcon
+{
+	width: 20px;
+	height: 20px;
+	background-size: cover;
+	wash-color: #768e8d;
+	img-shadow: 0px 0px 12px rgba(197, 222, 255, 0);
+	transition-property: wash-color, img-shadow;
+	transition-duration: 0.2s;
+	transition-timing-function: ease;
+}
+
+.TabGroupContainer .TabItem:hover Label
+{
+	color: white;
+	text-shadow: 0px 0px 12px rgba(197, 222, 255, 0.3);
+}
+
+.TabGroupContainer .TabItem:hover .TabItemIcon
+{
+	wash-color: white;
+}
+
+.TabGroupContainer .TabItem:selected
+{
+	border-color: white;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #445055 ), to( #2F363A ) );
+	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.TabGroupContainer .TabItem:selected Label
+{
+	color: white;
+	text-shadow: 0px 2px 4px rgba(0, 0, 0, 1);
+}
+
+.TabGroupContainer .TabItem:selected .TabItemIcon
+{
+	wash-color: white;
 }
 
 #FrostedContainer
@@ -56,13 +171,18 @@ DOTAProfileHeroStatsPage
 	background-color: gradient( linear, 0% 0%, 0% 100%, from( #000f ), color-stop( 0.1, #000a ), color-stop( 0.3, #0000 ), color-stop( 0.7, #0000 ), color-stop( 0.85, #0004 ), to( #000c ) );
 }
 
-#HeroStatsHeaderRow
+.HeroStatsHeaderRow
 {
 	flow-children: right;
 	margin-bottom: 4px;
+	text-transform: uppercase;
+	font-size: 17px;
+	font-weight: thin;
+	width:100%;
+	background-color: #000a;
 }
 
-#HeroStatsHeaderRow DOTASortHeader Label
+.HeroStatsHeaderRow DOTASortHeader Label
 {
 	text-transform: uppercase;
 	font-size: 17px;
@@ -70,18 +190,18 @@ DOTAProfileHeroStatsPage
 	color: #cccccc;
 }
 
-#HeroStatsHeaderRow DOTASortHeader .SortDirectionArrow
+.HeroStatsHeaderRow DOTASortHeader .SortDirectionArrow
 {
 	margin-left: 0px;
 	wash-color: #cccccc;
 }
 
-#HeroStatsHeaderRow DOTASortHeader:hover Label
+.HeroStatsHeaderRow DOTASortHeader:hover Label
 {
 	color: white;
 }
 
-#HeroStatsHeaderRow DOTASortHeader:hover .SortDirectionArrow
+.HeroStatsHeaderRow DOTASortHeader:hover .SortDirectionArrow
 {
 	wash-color: white;
 }
@@ -97,7 +217,7 @@ DOTAProfileHeroStatsPage
 {
 	height: 48px;
 	transition-property: position;
-	transition-duration: 0.3s;
+	transition-duration: 0.1s;
 }
 
 DOTAHeroStatRow
@@ -123,11 +243,12 @@ DOTAHeroStatRow
 
 .SimpleStatColumnHeader
 {
+	vertical-align: middle;
 	flow-children: down;
-	background-color: #000a;
-	margin-right: 10px;
+	color: #b6cecd;
 	padding-top: 4px;
 	padding-bottom: 1px;
+	text-transform: uppercase;
 }
 
 .SimpleStatColumnHeader .BlockName
@@ -362,6 +483,11 @@ DOTAHeroStatRow Label.SimpleStatColumn.BestXPM
 	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
 }
 
+.HaveDotaPlus #DotaPlusStatsBanner
+{
+	visibility: collapse;
+}
+
 .PageVisible #DotaPlusStatsBanner
 {
 	transform: none;
@@ -441,5 +567,1018 @@ DOTAHeroStatRow Label.SimpleStatColumn.BestXPM
 #DotaPlusStatsBanner #DismissButton:active
 {
 	transform: translateY(1px);
+}
+
+#RecentGames
+{
+	width: 100%;
+	height:100%;
+	flow-children: down;
+	opacity: 1;
+	transition-property: opacity;
+	transition-duration: .2s;
+	transition-timing-function: ease-in-out;
+	margin-top: 0px;
+}
+
+.Hidden #RecentGames
+{
+	opacity: 1;
+}
+
+#RecentGamesTable
+{
+	flow-children: down;
+	overflow: clip scroll;
+	width: 100%;
+	height:100%;
+}
+
+#RecentGamesTable VerticalScrollBar
+{
+	background-color: none;
+}
+
+#RecentGamesTable VerticalScrollBar .ScrollThumb
+{
+	background-color: #566767;
+	border-top: 1px solid #aaaaaa22;
+	border-right: 1px solid #000000aa;
+}
+
+#LoadMore
+{
+	margin: 10px 10px 10px 10px;
+	width: 100%;
+	visibility: visible;
+}
+
+#LoadMore Label
+{
+	horizontal-align: center;
+	color: #7894a7;
+}
+
+#LoadMore:hover Label
+{
+	color: #ffffff;
+}
+
+#LoadingMore
+{
+	margin: 10px 10px 10px 10px;
+	horizontal-align: center;
+	visibility: collapse;
+	color: #777777;
+}
+
+#RecentGames.LoadingMore #LoadMore
+{
+	visibility: collapse;
+}
+
+#RecentGames.LoadingMore #LoadingMore
+{
+	visibility: visible;
+}
+
+.RecentGameWeekendTourneyHeader
+{
+	background-color: #5e3106;
+	border-top: 2px solid #a4751009;
+	border-left: 2px solid #a4751022;
+	border-bottom: 2px solid #a4751003;
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( #d6a03133 ), color-stop( 0.1, #9a520c33 ), to( #000000 ) );
+	transition-property: background-color;
+	transition-duration: .1s;
+}
+
+.RecentGame.Odd.WeekendTourney
+{
+	background-color: black;
+	transition-property: background-color;
+	transition-duration: .1s;
+}
+
+.RecentGame.Even.WeekendTourney
+{
+	background-color: #000000bb;
+	transition-property: background-color;
+	transition-duration: .1s;
+}
+
+.RecentGame.Odd.WeekendTourney:hover
+{
+	background-color: #222;
+}
+
+.RecentGame.Even.WeekendTourney:hover
+{
+	background-color: #222;
+}
+
+.RecentGameWeekendTourneyHeader .TourneyTitle
+{
+	color: white;
+	font-weight: bold;
+	margin-right: 5px;
+	margin-left: -2px;
+}
+
+.RecentGameWeekendTourneyHeader .TourneyDivision
+{
+	color: #ffffff33;
+	margin-right: 5px;
+	font-weight: bold;
+}
+
+.RecentGameWeekendTourneyHeader .TourneyTier
+{
+	color: white;
+	margin-right: 5px;
+	font-weight: bold;
+}
+
+.RecentGameWeekendTourneyHeader #TourneyShowBracketButton
+{
+	color: red;
+	margin-right: 15px;
+	horizontal-align: right;
+	transition-property: brightness;
+	transition-duration: .2s;
+}
+
+.RecentGameWeekendTourneyHeader #TourneyShowBracketButton:hover
+{
+	brightness: 2;
+}
+
+Panel.RecentGamesHeader,Panel.RecentGameWeekendTourneyHeader,Panel.RecentGame
+{
+	width: 100%;
+	flow-children: right;
+	padding-left: 0px;
+}
+
+Panel.RecentGame
+{
+	padding-right: 20px;
+}
+
+Panel.RecentGamesHeader
+{
+	background-color: #48575e10;
+}
+
+Panel.RecentGame:hover
+{
+	background-color: #768E8D11;
+}
+
+Panel.RecentGame.Odd
+{
+	background-color: #48575e07;
+}
+
+Panel.RecentGame.Odd:hover
+{
+	background-color: #667E7D11;
+}
+
+Panel.RecentGamesHeader Label,Panel.RecentGameWeekendTourneyHeader Label,Panel.RecentGame Label
+{
+	font-size: 16px;
+	vertical-align: middle;
+}
+
+.RecentGamesHeader
+{
+	padding-left: 0px;
+}
+
+Panel.RecentGamesHeader Label
+{
+	margin-top: 13px;
+	margin-bottom: 6px;
+	color: #768e8d;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+Panel.RecentGameWeekendTourneyHeader Label
+{
+	margin-top: 13px;
+	margin-bottom: 6px;
+	color: #666;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+Panel.RecentGameWeekendTourneyHeader Label
+{
+	margin-top: 6px;
+	margin-bottom: 3px;
+}
+
+Panel.RecentGameWeekendTourneyHeader
+{
+	margin-top: 20px;
+}
+
+Panel.BottomMatchInTourney
+{
+	margin-bottom: 20px;
+}
+
+#RecentGamesOptionsButton
+{
+	margin-top: 11px;
+	margin-bottom: 8px;
+	width: 40px;
+	height: 20px;
+	background-size: 20px;
+	flow-children: right;
+	wash-color: #768e8d;
+	transition-property: wash-color;
+	transition-duration: 0.3s;
+}
+
+.SelfOnly
+{
+	visibility: collapse;
+}
+
+DOTAProfileHeroStatsPage.LocalUser .SelfOnly
+{
+	visibility: visible;
+}
+
+.SelfOrFriend
+{
+	visibility: collapse;
+}
+
+DOTAProfileHeroStatsPage.Friend .SelfOrFriend,DOTAProfileHeroStatsPage.LocalUser .SelfOrFriend
+{
+	visibility: visible;
+}
+
+#RecentGamesOptionsButton.Active
+{
+	wash-color: #ffffff;
+	animation-direction: reverse;
+}
+
+#RecentGamesOptionsButton:hover
+{
+	brightness: 2;
+}
+
+#RecentGamesOptionsContainer
+{
+	z-index: 1;
+	horizontal-align: center;
+	margin-left: 1130px;
+	margin-top: 62px;
+	background-color: gradient( linear, 0% 0%, 0% 5%, from( #232326 ), to( #1c1d20 ) );
+	border: 2px solid #32383677;
+	box-shadow: fill #00000099 0px 0px 8px 4px;
+	padding: 7px 9px 7px 9px;
+	opacity: 0.0;
+	transition-property: opacity;
+	transition-duration: 0.3s;
+	flow-children: down;
+	z-index: 5;
+}
+
+#RecentGamesOptionsContainer.Active
+{
+	opacity: 1.0;
+}
+
+Panel.RecentGame Label
+{
+	color: #BBBBBB;
+}
+
+#RecentGames Label.TimestampDate
+{
+	vertical-align: middle;
+	text-align: center;
+}
+
+#RecentGames Label.TimestampTime
+{
+	text-align: center;
+	width: 100px;
+	padding-right: 20px;
+	vertical-align: middle;
+}
+
+#HeroIcon
+{
+	margin-top: 7px;
+	margin-bottom: 7px;
+	width: 50px;
+	height: 29px;
+}
+
+.HeroNameRecentGamesColumn
+{
+	width: 350px;
+	padding-left: 50px;
+	padding-right: 6px;
+	flow-children: right;
+	horizontal-align: center;
+}
+
+.TimestampColumn
+{
+	width: 300px;
+	padding-right: 6px;
+	flow-children: right;
+	vertical-align: middle;
+}
+
+.ResultColumn
+{
+	width: 250px;
+	padding-right: 6px;
+}
+
+.PerformanceColumn
+{
+	width: 150px;
+	padding-right: 6px;
+}
+
+.DurationColumn
+{
+	width: 200px;
+	padding-right: 6px;
+}
+
+.GameTypeColumn
+{
+	padding-right: 6px;
+	width: fill-parent-flow( 1.0 );
+}
+
+#RecentGames Label.HeroName
+{
+	padding-left: 8px;
+	width: 235px;
+	white-space: nowrap;
+}
+
+#RecentGames Panel.RecentGamesHeader Label.HeroName
+{
+	padding-left: 0px;
+	width: 185px;
+}
+
+#RecentGames Label.Result
+{
+	width: 110px;
+	padding-left: 10px;
+	text-align: left;
+}
+
+#RecentGames .RecentGame.Won Label.ResultColumn
+{
+	color: #74b14aff;
+}
+
+#RecentGames .RecentGame.Lost Label.ResultColumn
+{
+	color: #d84535ff;
+}
+
+#RecentGames .RecentGame.Abandoned Label.ResultColumn
+{
+	color: #f56200ff;
+}
+
+#RecentGames .RecentGame.Practice Label.ResultColumn
+{
+	opacity: 0.0;
+}
+
+#RecentGames Label.Duration
+{
+	width: 80px;
+	text-align: left;
+}
+
+#RecentGames .RecentGamesHeader Label.GameType
+{
+	width: 105px;
+	padding-left: 10px;
+}
+
+#RecentGames Label.GameType
+{
+	width: 100px;
+	padding-left: 10px;
+}
+
+.LoadingSpinnerPanel .Spinner
+{
+	horizontal-align: center;
+	margin-top: 15px;
+}
+
+.LoadingSpinnerPanel
+{
+	visibility: collapse;
+	width: 100%;
+	height: 100%;
+}
+
+#RecentGames.Loading .LoadingSpinnerPanel
+{
+	visibility: visible;
+}
+
+#TeammateStats.Loading .LoadingSpinnerPanel
+{
+	visibility: visible;
+}
+
+.TeammateStatsHeader
+{
+	width: 100%;
+	flow-children: right;
+	padding-left: 20px;
+	background-color: #000a;
+}
+
+.TeammateStatsHeader .SortDirectionArrow
+{
+	margin-left: 0px;
+	margin-top: 8px;
+	width: 16px;
+	height: 16px;
+}
+
+.TeammateStatsHeader Label
+{
+	font-size: 18px;
+	vertical-align: middle;
+	margin-top: 13px;
+	margin-bottom: 6px;
+	color: #768e8d;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	horizontal-align: right;
+}
+
+.TeammateStatsHeader DOTASortHeader:hover Label
+{
+	color: #b6cecd;
+}
+
+.TeammateStatsHeader .MostRecentMatch Label
+{
+	horizontal-align: right;
+	margin-right: 24px;
+}
+
+.TeammateStatsHeader .MostRecentMatch .SortDirectionArrow
+{
+	horizontal-align: right;
+	margin-right: 6px;
+}
+
+#TeammateStats Label.Teammate
+{
+	width: 286px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	padding-left: 9px;
+}
+
+#TeammateStats .TeammateStatsHeader .Teammate
+{
+	width: 320px;
+}
+
+#TeammateStats .GamesCount
+{
+	width: 180px;
+	text-align: left;
+}
+
+#TeammateStats .TeammateStatsRow .GamesCount
+{
+	margin-lefT: 6px;
+}
+
+#TeammateStats .TeammateStatsRow .GamesCount
+{
+	font-family: monospaceNumbersFont;
+	padding-right: 14px;
+}
+
+#TeammateStats .TeammateStatsHeader .WinsLosses
+{
+	padding-right: 5px;
+	width: 150px;
+}
+
+#TeammateStats Label.WinsLosses
+{
+	width: 70px;
+	width: 120px;
+	text-align: left;
+	padding-right: 17px;
+	margin-right: 10px;
+	margin-left: 4px;
+}
+
+#TeammateStats .TeammateStatsRow .WinsLosses
+{
+	font-family: monospaceNumbersFont;
+}
+
+#TeammateStats .WinsLosses i
+{
+	font-style: normal;
+	color: #d84535ff;
+}
+
+#TeammateStats .PositiveWinsLosses .WinsLosses i
+{
+	font-style: normal;
+	color: #74b14aff;
+}
+
+#TeammateStats .TeammateStatsHeader .WinRate
+{
+	width: 170px;
+	margin-right: 5px;
+}
+
+#TeammateStats .TeammateStatsRow Label.WinRate
+{
+	width: 185px;
+	text-align: left;
+	padding-right: 31px;
+	padding-left: 15px;
+}
+
+#TeammateStats .TeammateStatsHeader .Rating
+{
+	width: 230px;
+	text-align: center;
+	margin-right: 30px;
+}
+
+#TeammateStats .TeammateStatsRow #RatingProgressBar
+{
+	width: 240px;
+	vertical-align: middle;
+	height: 16px;
+	border-radius: 0px;
+	border-color: #3B5D6B33;
+	margin-bottom: 2px;
+}
+
+#TeammateStats .TeammateStatsRow #RatingProgressBar_Left
+{
+	background-color: #3B5D6B;
+	box-shadow: none;
+	border-radius: 0px;
+}
+
+#TeammateStats .TeammateStatsHeader .MostRecentMatch
+{
+	padding-right: 10px;
+	width: 230px;
+	flow-children: none;
+}
+
+#TeammateStats Label.MostRecentMatch
+{
+	width: 235px;
+	text-align: right;
+}
+
+#TeammateStats VerticalScrollBar
+{
+	background-color: #000000;
+}
+
+#TeammateStats VerticalScrollBar:active .ScrollThumb
+{
+	background-color: #566767;
+}
+
+#TeammateStats VerticalScrollBar .ScrollThumb
+{
+	background-color: #566767;
+	border: 0px solid #000;
+	border-top: 1px solid #aaaaaa22;
+	border-right: 1px solid #000000aa;
+}
+
+#TeammateStats .TeammateStatsRow Label.MostRecentMatch
+{
+	color: #b4c5c4;
+	font-weight: thinner;
+}
+
+#TeammateStats .TeammateStatsRow Label.MostRecentMatch:hover
+{
+	color: #ffffff;
+}
+
+#TeammateStatsTable
+{
+	flow-children: down;
+	overflow: clip scroll;
+	width: 100%;
+	height: 636px;
+}
+
+.TeammateStatsRow
+{
+	width: 100%;
+	flow-children: right;
+	padding-left: 20px;
+	padding-right: 20px;
+	transition-property: position;
+	transition-duration: 0.1s;
+}
+
+.TeammateStatsRow Label
+{
+	font-size: 18px;
+	vertical-align: middle;
+	color: #BBBBBB;
+}
+
+.TeammateStatsRow.Odd
+{
+	background-color: #48575e27;
+}
+
+.TeammateStatsRow DOTAAvatarImage
+{
+	height: 29px;
+	width: 29px;
+	margin-top: 7px;
+	margin-bottom: 7px;
+}
+
+#AllHeroChallengeBanner
+{
+	margin-bottom: 0px;
+	z-index: 100;
+	width: 100%;
+	background-color: #000000d2;
+	width: 100%;
+	height: 80px;
+	border: 1px solid transparent;
+	opacity: 1;
+	transition-property: height, background-color, transform, opacity, width;
+	transition-duration: .3s;
+	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
+}
+
+#AllHeroChallengeBanner.Expanded
+{
+	height: 100%;
+	width: 100%;
+	opacity: 1;
+}
+
+.MoreDetailsButton:hover .Expand,.MoreDetailsButton:hover .Collapse,#AllHeroChallengeBanner:hover .MoreDetailsButton .Expand,#AllHeroChallengeBanner:hover .MoreDetailsButton .Collapse
+{
+	border-color: #fff3;
+	background-color: #888;
+}
+
+#AllHeroChallenge
+{
+	width: 100%;
+	height: 100%;
+	flow-children: down;
+	padding:0px;
+	margin-left: 220px;
+	margin-right: 220px;
+	opacity: 1.0;
+	transition-property: opacity;
+	transition-duration: 0.2s;
+}
+
+#AllHeroChallenge.TabEnabled
+{
+	visibility: visible;
+}
+
+#AllHeroChallenge.Loading
+{
+	opacity: 0.0;
+}
+
+#AHCHeader
+{
+	width: 100%;
+	horizontal-align: center;
+	flow-children: right;
+	transition-property: transform;
+	transition-duration: .2s;
+	transition-timing-function: ease-in-out;
+	transform: translateX(-2px);
+}
+
+.Expanded #AHCHeader
+{
+	transform: translateX(0px);
+}
+
+#AHCCurrentHero
+{
+	width: 55px;
+	height: 64px;
+	background-color: black;
+	margin-top: 1px;
+	margin-right: 6px;
+	border: 1px solid black;
+	transition-property: width, height;
+	transition-duration: .2s;
+	transition-timing-function: ease-in-out;
+}
+
+#AHCTopStats
+{
+	vertical-align: center;
+	horizontal-align: right;
+	width: 390px;
+	flow-children: down;
+}
+
+#AHCTopStats Label
+{
+	font-size: 14px;
+	margin-top: -2px;
+}
+
+#AllHeroChallenge Panel.AHCStat
+{
+	flow-children: right;
+	width: 100%;
+}
+
+#AHCTopStats .SubHeader,#AHCTopStats Panel.AHCStat .Left
+{
+	color: #758498;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+#AHCTopStats Panel.AHCStat .Right
+{
+	color: #a6a8a9;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+.BigHeroName
+{
+	color: #ffffff;
+	text-transform: uppercase;
+	font-size: 22px;
+	letter-spacing: 1px;
+	margin-top: -6px;
+	margin-bottom: -4px;
+	padding-left: 10px;
+	padding-right: 20px;
+	padding-top: 5px;
+}
+
+Panel.AHCStat Panel.Middle
+{
+	width: fill-parent-flow( 1.0 );
+	height: 1px;
+	vertical-align: middle;
+	background-color: #353a3e;
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-bottom: 3px;
+}
+
+Panel.AHCStat .Right
+{
+	text-align: right;
+}
+
+.ACExpander
+{
+	height: 8px;
+	transition-property: height;
+	transition-duration: .2s;
+	transition-timing-function: ease-in-out;
+}
+
+.Expanded .ACExpander
+{
+	height: 6px;
+}
+
+#AHCHeroGrid
+{
+	margin-top: 10px;
+	margin-bottom: 0px;
+	height: fit-children;
+	width: 100%;
+	flow-children: down;
+	opacity: 0;
+	transition-property: opacity;
+	transition-duration: .2s;
+	transition-timing-function: ease-in-out;
+}
+
+.AHCStat.ProgressStat
+{
+	opacity: 1;
+	height: 16px;
+	transition-property: opacity, height;
+	transition-duration: .2s;
+	transition-timing-function: ease-in-out;
+}
+
+.Expanded .AHCStat.ProgressStat
+{
+	height: 0px;
+	opacity: 0;
+}
+
+.Expanded #AHCHeroGrid
+{
+	opacity: 1;
+}
+
+#AHCHeroGrid .GridRow
+{
+	horizontal-align: center;
+	flow-children: right;
+	width: fit-children;
+	height: fit-children;
+	margin-top: 2px;
+}
+
+#AHCHeroGrid DOTAHeroImage
+{
+	width: 54px;
+	height: 53px;
+	border: 1px solid black;
+	margin-right: 2px;
+	saturation: 0.8;
+	brightness: 1.7;
+}
+
+#AHCHeroGrid DOTAHeroImage.Completed
+{
+	saturation: 0.0;
+	brightness: 0.2;
+}
+
+#AHCHeroGrid DOTAHeroImage.Active
+{
+	animation-name: ActiveHeroIconPulse;
+	animation-duration: 1.0s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	z-index: 1;
+}
+
+@keyframes 'ActiveHeroIconPulse'
+{
+	0%
+	{
+		box-shadow: 0px 0px 10px #33FF88AA;
+		saturation: 0.7;
+		brightness: 3.5;
+		wash-color: #33FFAACC;
+	}
+	
+	50%
+	{
+		box-shadow: 0px 0px 17px #33FF88CC;
+		saturation: 0.4;
+		brightness: 3.8;
+		wash-color: #33FFAACC;
+	}
+	
+	100%
+	{
+		box-shadow: 0px 0px 10px #33FF88AA;
+		saturation: 0.7;
+		brightness: 3.5;
+		wash-color: #33FFAACC;
+	}
+	
+}
+
+#AHCHeroGrid .GridRow.ActiveRow
+{
+	z-index: 1;
+}
+
+#AHCHeroGrid .GridRow.ActiveRow DOTAHeroImage
+{
+	height: 50px;
+}
+
+#AHCFooter
+{
+	margin-top:10px;
+	flow-children: right;
+}
+
+#AHCFooter .SubHeader
+{
+	color: #8595ab;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+.SubHeader.CurrentHero
+{
+	visibility: collapse;
+}
+
+#AHCFooter Label
+{
+	font-size: 14px;
+}
+
+#AHCBottomStats
+{
+	width: 483px;
+	flow-children: down;
+}
+
+#AHCBottomStats Panel.AHCStat .Left
+{
+	color: #575758;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 12px;
+}
+
+#AHCBottomStats Panel.AHCStat .Right
+{
+	color: #bcbcbc;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 12px;
+}
+
+.AHCBottomBreak
+{
+	height: 2px;
+}
+
+#AHCRewardFiller
+{
+	height: 1px;
+	width: fill-parent-flow( 1.0 );
+}
+
+#AHCReward
+{
+	margin-right: 18px;
+	width: 160px;
+	height: 153px;
+	flow-children: down;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #00000000 ), color-stop( 0.6, #00000000 ), color-stop( 0.925, #33333366 ), to( #33333366 ) );
+}
+
+#AHCReward Label
+{
+	margin-top: -1px;
+}
+
+#AHCReward Label.SubHeader
+{
+	margin-bottom: 3px;
+}
+
+#AHCReward Label.Dark
+{
+	color: #545455;
+	letter-spacing: 1px;
+}
+
+#AHCRewardTrophy
+{
+	height: 85px;
+	width: 85px;
+	margin-top: 0px;
+	margin-left: 75px;
+	margin-bottom: 4px;
 }
 

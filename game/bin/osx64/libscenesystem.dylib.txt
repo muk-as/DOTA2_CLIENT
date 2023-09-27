@@ -23,6 +23,7 @@
 000000005
 00010203040506070809101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899
 000@ @p
+000`PPp
 00@000
 00P000
 0123456789abcdef
@@ -42,6 +43,7 @@
 04d: scrollable region
 05d] [%s] Hello, current time is %.1f, here's a word: '%s
 06f ns
+07		 9
 08dx.geo
 0: spheres, 1: cubes
 0@PPPP0@PPPP0@   @                 0 0 00 00@0000     @  @0@pP
@@ -83,7 +85,6 @@
 10IAppSystem
 10ISceneView
 10f grams
-11CDefaultPVS
 11CNETMsg_NOP
 11CRefCountedI20CRefCountServiceBaseI6CRefMTEE
 11CSceneLayer
@@ -156,6 +157,7 @@
 18CEnvMapSceneObject
 18CNETMsg_Disconnect
 18CRenderingPipeline
+18CSceneSkyBoxObject
 18IModelRenderHelper
 18IMultipleWorkerJob
 18IRenderingPipeline
@@ -224,7 +226,9 @@
 20ISceneObjectDescBaseI28CBindlessFastPathSceneObjectE
 20ISceneObjectDescBaseI28CSceneLightProbeVolumeObjectE
 20ISceneObjectDescBaseI33CAmbientOcclusionProxySceneObjectE
+20ISceneObjectDescBaseI33CDistanceFieldInstanceSceneObjectE
 20ISceneObjectDescBaseIN23CCharacterDecalRenderer26CCharacterDecalSceneObjectEE
+20fD9
 21CAggregateSceneObject
 21CResolveLayerRenderer
 21CSceneBarnLightObject
@@ -334,6 +338,7 @@
 333?333?333?333
 333?ff
 33CAmbientOcclusionProxySceneObject
+33CDistanceFieldInstanceSceneObject
 33CNETMsg_SpawnGroup_ManifestUpdate
 33s?33s
 34CNETMsg_SpawnGroup_SetCreationTick
@@ -341,6 +346,7 @@
 35CInputLayoutRegistration_sm_hLayout
 35CSceneLPVSampleGridObjectDescriptor
 37CAmbientOcclusionProxySceneObjectDesc
+37CDistanceFieldInstanceSceneObjectDesc
 38IMaxSwapChainDimensionsChangedListener
 3d: %s
 3f, %.3f, %.3f
@@ -353,8 +359,6 @@
 433333
 4444<*Z
 4:H;1u
-4Cfff
-4H[]ÐUH
 4fffff
 4ffffff
 5&YA1A
@@ -364,7 +368,7 @@
 511CRenderMesh
 515kQi
 5<se[i
-5?33s
+5?33s?11CDefaultPVS
 5?fff
 5[A\A^A
 5` E]i
@@ -389,11 +393,11 @@
 8CUtlGrid
 8E8|50u"E8D51u
 8I9|$8L
-8Mc4$D
 8NETWORK_DISCONNECT_LOCALPROBLEM_HOSTEDSERVERPRIMARYRELAY
 8[A\A]A^A
 8[A^A
 8basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE
+8fffff
 8ffffff
 9C`}iA
 9G ~#H
@@ -409,13 +413,10 @@ A protocol message was rejected because it was too big (more than
 A#4$L
 A+L$$Hc
 A+N$Hc
-A+u8~7I
-A+u8~9I
 A0 Row 0
 A0 Row 1
 A1 Row 0
 A1 Row 1
-A18CSceneSkyBoxObject
 A23CKV3TransferSaveContext
 A9D5(I
 A9K u'A
@@ -471,15 +472,15 @@ ARARARAVARAp
 ARARAVARATARARARATARATARAZA
 ARARAVARATAp
 ARARAVARAWBp
+ARARAVARAp TARAp
 ARARAZAp
 ARARAp
 ARASSATAWAV
 ARASSAVAW
 ARAVASAp
-ARAVAUASASASC
+ARAVAUASASASB
 ARAVAp
 ARAZARAp
-ARBRAp
 ARGB8888
 ASASAp
 ASBRAVB\A
@@ -545,8 +546,8 @@ AWPAUATASH
 A[ATAp
 A\A]A^A
 A\A^A
-A`!A`WAYA`&BRBRBRBRBRBRBRBRB
 A`TARARARARARARARARARARARARARARARARARARARARARARARARARARARARAp
+A`WAYA`&BRBRBRBRBRBRBRBRB
 A`dARARARARARARARARARARARARARARARARARARARARARARARARARARARAXAp
 Abibliophobia
 About Dear ImGui
@@ -620,8 +621,6 @@ Amplitude
 An extra line here
 And now some textured buttons
 AnimGraphEditorUtils001
-AnimVRFinger_t
-AnimVRHand_t
 AnimatableSceneObjectDesc
 Animate
 Animated title %c %d###AnimatedTitle
@@ -817,6 +816,7 @@ B~>m9w>e
 B저B저B저B
 C$;CXuHL
 C(HcK0H
+C(~2D
 C++ lambdas can be passed as function pointers as well
 C+D.0
 C+D70
@@ -865,15 +865,13 @@ CDebugLayerRenderer::ShowRenderTargets GetMode("Default") == NULL? Can't Render 
 CDebugTextObjectDesc
 CDirectionalLightObjectDesc
 CDirectionalLightObjectDescGpu
+CDistanceFieldInstanceSceneObjectDesc
 CDrawCullingData
 CEHandleNetworkableInt
 CEntityMsg
 CEnvMapLightObjectDesc
 CEnvMapLightObjectDescCPU
 CEnvMapLightObjectDescGpu
-CFingerBone
-CFingerChain
-CFingerSource
 CFootDefinition
 CHECK failed: !HasUnknownFieldsTag
 CHECK failed: !InRealOneof(field
@@ -1248,11 +1246,12 @@ CUtlRBTree overflow with %u elements
 CUtlString
 CUtlVector
 CUtlVectorFixedGrowable
-CVrSkeletalInputSettings
-CWristBone
 CX;C\unD
 C`L9(t+I
 Cache: %.1f MB
+Cached Fog Shadow
+CachedShadowDepthBuffer
+CachedShadowDepthBufferNoCmp
 Call set methods to initialize MapKey
 Callback %p, user_data %p
 Caller should provide us with *buffer_ when buffer is non-empty
@@ -1522,13 +1521,11 @@ D$PI+FP
 D$XH;E
 D$XtBL
 D'0C:D
-D+0B:D3
+D/0C:D
 D16_SHADOW
 D24FS8
 D24X8_SHADOW
-D269A0
 D32FS8
-D3e u)H
 D8J0u
 D8Q0u*A
 D8W0u
@@ -1538,8 +1535,9 @@ D90u	H
 D9;tqL
 D9KXt
 D9c$}zIc
-D;5_bK
+D;5}xE
 D;cP}:Mk
+D;e u0H
 D=1D:F1u.H
 DDDDUUUUDDDDUUUU
 DEFAULT_WRITE_PATH
@@ -1668,6 +1666,7 @@ Display all characters as
 Display headers
 DisplaySafeAreaPadding
 Distance to cull the AO proxy as a factor of size
+DistanceFieldAtlas.vtex
 DoNotCastShadows
 Dock node
 DockId: %X%s
@@ -1805,6 +1804,7 @@ EndMarker
 EndTimestamp
 Engine2/RenderingPipeline
 Engine2/RenderingPipeline/AmbientOcclusionProxies
+Engine2/RenderingPipeline/DistanceField
 Engine2/RenderingPipeline/OpaqueFade
 Engine2/RenderingPipeline/ShadowDepthCullFront
 EngineServiceMgr001
@@ -1895,7 +1895,6 @@ Extensions in proto3 are only allowed for defining options
 Extensions of MessageSets must be optional messages
 Extensions to non-lite types can only be declared in non-lite files.  Note that you cannot extend a non-lite type to contain a lite type, but the reverse is allowed
 Eـ8.uCH
-Eހ=YS
 F H+p(H
 F Hcv
 F LcN
@@ -2030,6 +2029,7 @@ FontManager_001
 Fonts##Selector
 For envmaps in low quality shader mode, how much of the fade region to scale the envmap box by
 Force respect TTL even when clearing scopes
+ForceEnableShadowCasting
 ForceFullResolve
 ForceShadowsFromNonShadowCastingGeometry
 Forces all ray traced geometry to use default hit shaders instead of specialized ones
@@ -2466,6 +2466,7 @@ IcD$(H
 IcD$(H9
 IcD$(I
 IcD$0H
+IcD$0H9
 IcD$4H9
 IcD$4I
 IcD$LH
@@ -2784,7 +2785,6 @@ Keys pressed
 Keys release
 Kfffff
 Kzf;Kx
-L	d2P
 L$1A8M1u
 L$9A	F(H
 L*Si	LSi	LSi	LSi	L
@@ -3365,7 +3365,7 @@ NSt3__110__function6__baseIFvP25CSceneLightObjectInternalEEE
 NSt3__110__function6__baseIFvP28CSceneLightProbeVolumeObjectEEE
 NSt3__110__function6__baseIFvvEEE
 NSt3__110__function6__funcIPFvP12CSceneObjectENS_9allocatorIS5_EES4_EE
-NSt3__110__function6__funcIZL29InitForFrustum_DebugRendering17ESceneObjectFlagsS2_P10CSceneViewE4$_19NS_9allocatorIS5_EEFvP25CSceneLightObjectInternalEEE
+NSt3__110__function6__funcIZL29InitForFrustum_DebugRendering17ESceneObjectFlagsS2_P10CSceneViewE4$_20NS_9allocatorIS5_EEFvP25CSceneLightObjectInternalEEE
 NSt3__110__function6__funcIZN12CSceneSystem11RenderAViewEP10CSceneViewfP24ConstantBufferHandle_t__R26SceneSystemPerFrameStats_tE3$_2NS_9allocatorIS9_EEFvvEEE
 NSt3__110__function6__funcIZN12CSceneSystem11RenderAViewEP10CSceneViewfP24ConstantBufferHandle_t__R26SceneSystemPerFrameStats_tE3$_3NS_9allocatorIS9_EEFvvEEE
 NSt3__110__function6__funcIZN12CSceneSystem17Thread_RenderViewEP10CSceneViewE4$_12NS_9allocatorIS5_EEFvvEEE
@@ -3610,7 +3610,7 @@ Owned
 OwnedByApp
 P       P`  0 0    00000@@@     0000@@0@@0@@    0
 P IcF H9
-P IcM H
+P IcM(H
 P fff
 P(ffffff
 P000`000`00
@@ -3823,7 +3823,7 @@ R:%0.3f
 R?vlD
 RARARA
 RARARARARARARARARARARARARARASAp
-RARARARARARA\AVAp
+RARARARARARA\A
 RARASAp
 RARA\Ap
 RARKRGVARARA
@@ -3833,7 +3833,6 @@ RAZARAp
 RA`/A`@GTCp TCp
 RA`GARARARARARARARA\0
 RAp RAp
-RAp TARAp
 RCTATBSBVATATASBUB
 RE;4$}LH
 REACTION
@@ -4014,6 +4013,7 @@ S(A;U
 S(Hcs0H
 S(Mc9I
 S(Mc?I
+S9O<~=H
 S9O<~>H
 S: %7.3f
 S:%0.3f
@@ -4305,7 +4305,6 @@ SizeRef=%i,%i%n
 Sizing
 Sizing Policy
 Sizing policies
-SkeletalInputSettings
 SkeletonBoneBounds_t
 SkinnedObject
 SkinningCS_Dispatch
@@ -4457,6 +4456,7 @@ T$18Q1u
 T$18S1u
 T$1A8U1u
 T%0D8W0u
+T169P0
 T: %7.3f
 TAB/SHIFT+TAB to cycle through keyboard editable fields
 TARATARATARA`_Ap
@@ -4519,6 +4519,7 @@ Target %d "%s": [FMT-> %s] [MSAA-> %s] [%s size : %d %d
 Target RowBg0 to override the alternating odd/even colors
 Target RowBg1 to blend with them
 Tell debugoverlay to not draw any entries that have aged out by the time of rendering. Useful if sim runs more often than rendering
+TempBufferStartIndex
 Template view factory "%s" was registered twice
 Test of different widgets react and impact the work rectangle growing when horizontal scrolling is enabled
 Test paragraph %d
@@ -4785,7 +4786,6 @@ V( fD
 V0A8W0u"A
 V1A8W1u
 V:%0.3f
-V< fA
 VApplication001
 VAsyncFileSystem2_001
 VAvi001
@@ -4914,7 +4914,6 @@ VerticalScrolling
 Verts: %.1fK
 Verts: %.1fM
 Verts: %d
-Vfffff
 View "%s": %d layers
 View "%s": %d render target usage
 View "%s": %d render targets
@@ -5133,7 +5132,7 @@ ZARAZARAp
 ZARAZAp
 ZC8L4Zt
 ZC8L4Zu
-ZL29InitForFrustum_DebugRendering17ESceneObjectFlagsS_P10CSceneViewE4$_19
+ZL29InitForFrustum_DebugRendering17ESceneObjectFlagsS_P10CSceneViewE4$_20
 ZN10CUtlBuffer12SetBigEndianEb
 ZN10CUtlBuffer18AddNullTerminationEv
 ZN10CUtlBuffer3PutEPKvi
@@ -5727,7 +5726,7 @@ f(x) = sin(x)+1
 f(x) = sin(x+.5)*100+200 (Y3
 f(x) = x
 f9K*r~I
-fA9D$*r!I
+fA9E*r I
 fA9S(u
 fPO9|, uvK
 failed to parse contents
@@ -5743,7 +5742,6 @@ fff?fff?I
 fff?fff?fff
 fffff
 fffff0
-fffffX
 ffffff
 fffffff
 fffffv
@@ -6299,30 +6297,22 @@ m_drawBounds
 m_drawCalls
 m_dynamicParams
 m_dynamicTextureParams
-m_eHand
 m_eRbfType
 m_elems
-m_fingers
 m_flAlpha
 m_flBindPoseDirectionMS
 m_flEndcapAreaPercentage
 m_flFalloff
-m_flFingerScaleRatio
-m_flFingerWeight
 m_flFootLength
 m_flLightColorToRadiance
 m_flMax
-m_flMaxAngle
 m_flMin
-m_flMinAngle
 m_flRadius
 m_flRealTime
 m_flRemap
 m_flShape
 m_flShapeRadius
 m_flSphereRadius
-m_flSplayMaxAngle
-m_flSplayMinAngle
 m_flTraceHeight
 m_flTraceRadius
 m_flUvDensity
@@ -6332,7 +6322,6 @@ m_flexControllers
 m_floatAttributes
 m_floatParams
 m_hBuffer
-m_hingeAxis
 m_hitboxsets
 m_indexBuffer
 m_influenceFlags
@@ -6349,7 +6338,6 @@ m_mToClipSpace
 m_material
 m_materialName
 m_meshlets
-m_metacarpalBoneName
 m_modelName
 m_morphSet
 m_nBaseVertex
@@ -6361,7 +6349,6 @@ m_nCookie
 m_nDepth
 m_nEntIndex
 m_nEntityIndex
-m_nFingerIndex
 m_nFirstMeshlet
 m_nFlags
 m_nFormat
@@ -6394,8 +6381,6 @@ m_nVertexCount
 m_nViewId
 m_nWidth
 m_name
-m_outerKnuckle1
-m_outerKnuckle2
 m_outputMorph
 m_outputTransformList
 m_outputWeightList
@@ -6426,19 +6411,15 @@ m_stringAttributes
 m_targets
 m_textureAttributes
 m_textureParams
-m_tipParentBoneName
 m_toeBoneName
 m_vAngleFade
 m_vBallOffset
 m_vBasePosition
-m_vCapsulePos1
-m_vCapsulePos2
 m_vCenter
 m_vColor
 m_vConeApex
 m_vDistanceFade
 m_vExtent
-m_vForwardLS
 m_vHeelOffset
 m_vInfluenceOffsets
 m_vInfluenceRotations
@@ -6451,10 +6432,7 @@ m_vNormal
 m_vOffset
 m_vPosition
 m_vSkirt
-m_vSplayHingeAxis
 m_vTintColor
-m_vTipOffset
-m_vUpLS
 m_vUpVector
 m_value
 m_vecCenter
@@ -6463,7 +6441,6 @@ m_vectorAttributes
 m_vectorParams
 m_vertexBuffers
 m_viewId
-m_wristBones
 mach_absolute_time
 main.c
 malloc
@@ -6502,6 +6479,7 @@ materials/deferred_lights/spotlight_shadowed.vmat
 materials/deferred_lights/sunlight.vmat
 materials/dev/aoproxy_splat.vmat
 materials/dev/compute_depthbin_cullbits.vmat
+materials/dev/compute_smooth_normals_cs.vmat
 materials/dev/compute_tile_cullbits.vmat
 materials/dev/cs_parallel_sort.vmat
 materials/dev/cs_volumetric_fog.vmat
@@ -6665,8 +6643,8 @@ opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/scenesystem/scenelpvde
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/scenesystem/sceneobject_methods.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/scenesystem/sceneraytracing.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/scenesystem/scenesystem.cpp
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/scenesystem/scenesystem.cpp(5878): Expecting 1 renderable pass for material "%s" but found %d
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/scenesystem/scenesystem.cpp:3667
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/scenesystem/scenesystem.cpp(5892): Expecting 1 renderable pass for material "%s" but found %d
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/scenesystem/scenesystem.cpp:3680
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/scenesystem/sceneview.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/scenesystem/sceneviewdebugoverlays.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/scenesystem/scratchrendertargetsystem.cpp
@@ -6771,7 +6749,6 @@ public/tier0/utltshash.h
 public_dependency
 py_generic_services
 q HcY$D
-q*IcT
 q=j>e
 qangle
 qsort
@@ -6816,6 +6793,7 @@ r_shadows
 r_size_cull_threshold_fade
 r_size_cull_threshold_shadow
 r_skinning_enabled
+r_smooth_morph_normals
 r_ssao_bias
 r_ssao_blur
 r_ssao_radius
@@ -6888,7 +6866,7 @@ s = %s,%s
 s GetOnDiskTextureDesc failed
 s LcS
 s [%s
-s agg [%s fragments, %s meshlets
+s agg [%s fragments (%s merged draws), %s meshlets
 s allocation count overflow
 s allocation count overflow( %llu > %llu
 s allocation count overflow( add %llu + current %llu > max %llu
@@ -6907,6 +6885,8 @@ s/AsyncComputeSemaphoreWait
 s/DockSpace_%08X
 s/PrimaryContext
 s1_mapname
+s8~,H
+s8~>I
 s: %.3f
 s: %d
 s: %d entries, %d bytes
@@ -6927,6 +6907,7 @@ s][0x%08X,%d
 s][Data
 savegamefilename
 savegamename
+sc_aggregate_fragment_merging
 sc_aggregate_gpu_culling
 sc_aggregate_gpu_culling_conservative_bounds
 sc_aggregate_gpu_culling_show_culled
@@ -7102,6 +7083,7 @@ slider u64 reverse
 slider u8 full
 slider u8 reverse
 sm_hLayout
+smoothnormalsscratchbuffer
 snprintf
 some more text
 source
@@ -7213,6 +7195,7 @@ t,@HcU
 t-E#H\L
 t-ffffff
 t/98u+LcX
+t0@B;t
 t4E#>H
 t5AVASARAWS
 t5fffff
@@ -7331,6 +7314,7 @@ td>TOOLS_UNLIT_LAYER</td
 td>TRACK_LAST_DRAW_FRAME</td
 td>VIEWMODEL_LAYER</td
 td>WANTS_FRAMEBUFFER_COPY_TEXTURE</td
+tdE9w
 tesidx
 tests1
 texcoord
@@ -7403,7 +7387,6 @@ translucentScreenspace
 truncated
 trying to move layer %s after unfound layer %s
 trying to move non existent layer
-tyE9w
 type does not match
 type or int32_t
 type() == TYPE_FIXED32
@@ -7455,13 +7438,10 @@ usr/lib/libc++.1.dylib
 usr/lib/libiconv.2.dylib
 utffff
 uvtangent
-uyzwHcU
 u{ffff
 u}ffffff
 uϋM 9H
 v3fffff
-v8H;5b
-v8H;5p
 v:fff
 v:fffff
 v;fffff
@@ -7477,6 +7457,7 @@ vMfffff
 vNfff
 vOn?vOn?M
 vPIcVHH
+vVfffff
 vXfffff
 vYfffff
 v[fff
@@ -7504,6 +7485,8 @@ vertexbuffer
 vertical
 vffffff
 view.bIsToolView
+viewModelFarPlane
+viewModelNearPlane
 viewport TopLeftX: %d TopLeftY: %d Width: %d Height: %d
 virtual bool CVConCommandMessageScene::MessageData(uint32, uint16, uint32, byte *, uint32
 virtual void CSceneSystem::BeginRenderingViews(IRenderDevice *, bool
@@ -7615,7 +7598,6 @@ worldgroupname
 worldname
 wpfffff
 wrong submessage type
-wxH;5
 x"A9Ol
 x%A;Gh
 x%ixAA
@@ -7645,6 +7627,7 @@ xxx,yyy"  display lines containing "xxx" or "yyy
 y-axis
 yP}8Hk
 yd;~d
+yffff
 yfffff
 you can drag analog signals over the rising/falling digital edge
 your cursor horizontally instead of using the Columns() API
