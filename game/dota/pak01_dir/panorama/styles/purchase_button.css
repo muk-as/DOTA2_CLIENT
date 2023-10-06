@@ -4,7 +4,7 @@
 DOTAPurchaseButton
 {
 	flow-children: right;
-	padding: 0px 16px;
+	padding: 0px 8px;
 	border-radius: 3px;
 	border: 1px solid white;
 	border-brush: WhiteGradientBorderMedium;
@@ -14,6 +14,11 @@ DOTAPurchaseButton
 	transition-property: border, brightness;
 	transition-duration: 0.1s;
 	transition-timing-function: ease;
+}
+
+DOTAPurchaseButton Label
+{
+	max-height: 20px;
 }
 
 DOTAPurchaseButton.Large
@@ -30,6 +35,7 @@ DOTAPurchaseButton.Large Label
 	font-weight: normal;
 	font-weight: semi-bold;
 	margin: -1px 0px 1px;
+	max-height: 24px;
 }
 
 DOTAPurchaseButton.NoPrice.NoShardsPrice:not(.BaseEventReward)
@@ -92,7 +98,7 @@ DOTAPurchaseButton.Gift #GiftIcon
 	margin-right: elementMargin;
 }
 
-.HidePurchaseMethod:not(.BaseEventReward) #PurchaseMethod
+.HidePurchaseMethod:not(.BaseEventReward) #PurchaseMethod,.IconButton #PurchaseMethod
 {
 	visibility: collapse;
 }
@@ -157,7 +163,7 @@ DOTAPurchaseButton.InTreasure #SourceIconContainer,DOTAPurchaseButton.Additional
 	visibility: collapse;
 }
 
-DOTAPurchaseButton.InTreasure #PurchaseSource,DOTAPurchaseButton.AdditionalDropInTreasure #PurchaseSource,DOTAPurchaseButton.InBundle #PurchaseSource,.EventReward.IndividualItem #PurchaseSource,.DotaPlus #PurchaseSource
+DOTAPurchaseButton.InTreasure:not(.IconButton) #PurchaseSource,DOTAPurchaseButton.AdditionalDropInTreasure:not(.IconButton) #PurchaseSource,DOTAPurchaseButton.InBundle:not(.IconButton) #PurchaseSource,.EventReward.IndividualItem:not(.IconButton) #PurchaseSource,.DotaPlus:not(.IconButton) #PurchaseSource
 {
 	visibility: visible;
 }
@@ -185,7 +191,7 @@ DOTAPurchaseButton.InTreasure #PurchaseSource,DOTAPurchaseButton.AdditionalDropI
 	visibility: visible;
 }
 
-.HideSaleAmount #SaleAmount,.HideSaleRegularPrice #SaleRegularPrice,.NoRegularPrice #SaleRegularPrice
+.HideSaleAmount #SaleAmount,.HideSaleRegularPrice #SaleRegularPrice,.NoRegularPrice #SaleRegularPrice,.IconButton #SaleAmount,.IconButton #SaleRegularPrice
 {
 	visibility: collapse;
 }
@@ -200,6 +206,11 @@ DOTAPurchaseButton.InTreasure #PurchaseSource,DOTAPurchaseButton.AdditionalDropI
 	visibility: collapse;
 }
 
+.IconButton #Price
+{
+	text-overflow: ellipsis;
+}
+
 #ShardsPrice
 {
 	color: dotaPlusLightGold;
@@ -210,10 +221,20 @@ DOTAPurchaseButton.InTreasure #PurchaseSource,DOTAPurchaseButton.AdditionalDropI
 	visibility: collapse;
 }
 
+.IconButton #ShardsPrice
+{
+	visibility: collapse;
+}
+
 DOTAPurchaseButton.ShardsPurchase #EventIcon
 {
 	background-image: url("s2r://panorama/images/dota_plus/currency_icon_png.vtex");
 	visibility: visible;
+}
+
+DOTAPurchaseButton.ShardsPurchase.IconButton #EventIcon
+{
+	margin-right: 0px;
 }
 
 DOTAPurchaseButton.InTreasure #SaleAmount,DOTAPurchaseButton.AdditionalDropInTreasure #SaleAmount,DOTAPurchaseButton.InBundle #SaleAmount,.PurchaseSource #SaleAmount,.Addition #SaleRegularPrice,DOTAPurchaseButton.AdditionalDropInTreasure #SaleRegularPrice,DOTAPurchaseButton.InBundle #SaleRegularPrice,.PurchaseSource #SaleRegularPrice,DOTAPurchaseButton.InTreasure #Price,DOTAPurchaseButton.AdditionalDropInTreasure #Price,DOTAPurchaseButton.InBundle #Price,.PurchaseSource #Price,DOTAPurchaseButton.InTreasure #ShardsPrice,DOTAPurchaseButton.AdditionalDropInTreasure #ShardsPrice,DOTAPurchaseButton.InBundle #ShardsPrice,.PurchaseSource #ShardsPrice
