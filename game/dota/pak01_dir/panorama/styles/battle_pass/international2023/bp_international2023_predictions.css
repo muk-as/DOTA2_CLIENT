@@ -22,10 +22,8 @@ DOTABPInternational2023PredictionsPage.DashboardPage
 	opacity: 0;
 }
 
-.MainContents .Body
+.MainContents .BodyContainer
 {
-	overflow: scroll;
-	flow-children: right;
 	width: 100%;
 	height: fill-parent-flow(1);
 	border: 1px solid rgba(255, 255, 255, 0.15);
@@ -34,40 +32,35 @@ DOTABPInternational2023PredictionsPage.DashboardPage
 	background-color: gradient( linear, 0% 0%, 0% 100%, from( primaryColor6 ), to( rgba(0, 0, 0, 1) ) );
 }
 
+.MainContents .Body
+{
+	overflow: scroll;
+	flow-children: right;
+	width: 100%;
+	height: fill-parent-flow(1);
+}
+
 .MainContents .Body TabContents
 {
 	padding: 24px 48px 48px;
 }
 
-.MainContents .Body .Stage
+.MainContents .Body .UnavailableContainer
 {
-	flow-children: right;
-	visibility: collapse;
-}
-
-.MainContents .Body .Stage:selected
-{
-	visibility: visible;
-}
-
-.MainContents .Body .Stage .UnavailableContainer
-{
+	width: 100%;
 	height: fit-children;
-	width: fit-children;
 	vertical-align: center;
 	horizontal-align: center;
 	flow-children: down;
-	margin-top: 180px;
-	margin-left: 380px;
 	visibility: visible;
 }
 
-.Available .MainContents .Body .Stage .UnavailableContainer
+.Available.HasCompendium .MainContents .Body .UnavailableContainer
 {
 	visibility: collapse;
 }
 
-.MainContents .Body .Stage .UnavailableContainer .LockedHeader
+.MainContents .Body .UnavailableContainer .LockedHeader
 {
 	horizontal-align: center;
 	vertical-align: middle;
@@ -81,7 +74,12 @@ DOTABPInternational2023PredictionsPage.DashboardPage
 	color: gradient( linear, 0% 0%, 0% 100%, from( primaryColor1 ), to( primaryColor2 ) );
 }
 
-.MainContents .Body .Stage .UnavailableContainer .LockIconContainer
+.MainContents .Body .UnavailableContainer #LockedReasonLabel
+{
+	horizontal-align: center;
+}
+
+.MainContents .Body .UnavailableContainer .LockIconContainer
 {
 	horizontal-align: center;
 	padding: 32px;
@@ -91,9 +89,20 @@ DOTABPInternational2023PredictionsPage.DashboardPage
 	transform: rotateZ( 45deg );
 }
 
-.MainContents .Body .Stage .UnavailableContainer .LockIconContainer .LockIcon
+.MainContents .Body .UnavailableContainer .LockIconContainer .LockIcon
 {
 	transform: rotateZ( -45deg );
+}
+
+.MainContents .Body .Stage
+{
+	flow-children: right;
+	visibility: collapse;
+}
+
+.MainContents .Body .Stage:selected
+{
+	visibility: visible;
 }
 
 .MainContents .Body .Stage .StageColumns
@@ -221,28 +230,14 @@ DOTABPInternational2023PredictionsPage.DashboardPage
 	background-color: gradient( linear, 0% 0%, 0% 100%, from( primaryColor5&99 ), to( primaryColor6 ));
 	border: 2px solid rgba(255, 255, 255, 1);
 	border-brush: gradient( linear, 0% 0%, 0% 100%, from( secondaryColor1 ), to( secondaryColor3 ));
-	box-shadow: 0px 4px 12px rgba( 0, 0, 0, 0.2);
+	box-shadow: 0px 12px 48px -8px rgba( 0, 0, 0, 0.6);
 	vertical-align: center;
-}
-
-.MainContents .Body .DayContainer.DisplayOnly
-{
-	border: 0px;
-	background-color: #00000000;
-	box-shadow: none;
-}
-
-.MainContents .Body .DayContainer.DisplayOnly .DayHeader
-{
-	background-color: #00000000;
-	border: 0px;
-	box-shadow: none;
 }
 
 .MainContents .Body .DayContainer.Inactive
 {
-	opacity: 0.4;
-	brightness: 0.6;
+	brightness: 0.2;
+	saturation: 0.8;
 }
 
 .MainContents .Body .DayContainer .DayHeader
@@ -297,23 +292,48 @@ DOTABPInternational2023PredictionsPage.DashboardPage
 	margin-bottom: 8px;
 }
 
-#PlayoffsTabContents #PlayoffsColumn2
+#PlayoffsTabContents #PlayoffsColumn2 .EmptyDay
 {
-	vertical-align: center;
+	width: 100%;
+	height: 340px;
+	margin-bottom: 16px;
 }
 
-#PlayoffsTabContents .Divider
+#PlayoffsTabContents #PlayoffsColumn2 .EmptyDay .LeftRightLinesContainer
 {
-	width: 3px;
-	height: 100%;
-	margin: 0px 24px;
-	border-right: 1px solid white;
-	border-brush: gradient( linear, 0% 0%, 0% 100%, from( primaryColor6&00 ), color-stop( 0.5, primaryColor4 ), to( primaryColor6&00 ) );
+	vertical-align: center;
+	opacity: 0.2;
+	margin-top: -2px;
+}
+
+#PlayoffsTabContents #PlayoffsColumn3
+{
+	vertical-align: top;
 }
 
 #PlayoffsTabContents .DayContents
 {
 	padding: 8px;
+}
+
+#PlayoffsTabContents #PlayoffsLinesColumn1
+{
+	width: 48px;
+	height: 50%;
+	opacity: 0.2;
+	margin-bottom: 30px;
+	vertical-align: center;
+	flow-children: down;
+}
+
+#PlayoffsTabContents #PlayoffsLinesColumn2
+{
+	width: 48px;
+	height: 50%;
+	opacity: 0.2;
+	margin-bottom: 30px;
+	vertical-align: center;
+	flow-children: down;
 }
 
 #MainEventTabContents .StageColumns
@@ -361,20 +381,25 @@ DOTABPInternational2023PredictionsPage.DashboardPage
 	padding: 8px;
 }
 
+#MainEventTabContents #FinalsUB
+{
+	overflow: noclip;
+}
+
 #MainEventTabContents #FinalsUB .LinesContainer
 {
 	width: 302px;
-	border-brush: gradient( linear, 0% 0%, 100% 0%, from( secondaryColor3&00 ), color-stop( 0.15, secondaryColor1 ), color-stop( 0.85, secondaryColor1 ), to( secondaryColor3&00 ) );
+}
+
+#MainEventTabContents #FinalsUB .DoubleLinesContainer
+{
+	width: 24px;
+	margin-left: -24px;
 }
 
 #MainEventTabContents #FinalsUB .ForkContainer
 {
-	width: 360px;
-}
-
-#MainEventTabContents #FinalsUB .ForkContainer .Fork1
-{
-	border-brush: gradient( linear, 85% 0%, 100% 0%, from( secondaryColor1 ), to( secondaryColor3&00 ) );
+	width: 654px;
 }
 
 .GroupTeamSlot
@@ -505,11 +530,9 @@ International2023PredictionGroup .GroupTeamSlot.NoTeam .TeamName,International20
 {
 	width: 48px;
 	height: 1px;
-	margin-left: 4px;
-	margin-right: 4px;
 	vertical-align: center;
 	opacity: 0.2;
-	background-color: gradient( linear, 0% 0%, 100% 0%, from( secondaryColor3&00 ), color-stop( 0.5, secondaryColor1 ), to( secondaryColor3&00 ) );
+	background-color: secondaryColor1;
 	margin-bottom: 30px;
 }
 
@@ -518,8 +541,6 @@ International2023PredictionGroup .GroupTeamSlot.NoTeam .TeamName,International20
 	width: 48px;
 	height: 100%;
 	flow-children: right;
-	margin-left: 4px;
-	margin-right: 4px;
 	vertical-align: center;
 	opacity: 0.2;
 	margin-bottom: 30px;
@@ -529,8 +550,7 @@ International2023PredictionGroup .GroupTeamSlot.NoTeam .TeamName,International20
 {
 	width: 24px;
 	height: 100%;
-	border: 1px solid white;
-	border-brush: gradient( linear, 0% 0%, 100% 0%, from( secondaryColor3&00 ), to( secondaryColor1 ) );
+	border: 1px solid secondaryColor1;
 	border-left: 0px;
 }
 
@@ -538,8 +558,7 @@ International2023PredictionGroup .GroupTeamSlot.NoTeam .TeamName,International20
 {
 	width: fill-parent-flow(1);
 	height: 50%;
-	border-bottom: 1px solid white;
-	border-brush: gradient( linear, 0% 0%, 100% 0%, from( secondaryColor1 ), to( secondaryColor3&00 ) );
+	border-bottom: 1px solid secondaryColor1;
 }
 
 .ForkContainer.Height_20
@@ -577,52 +596,103 @@ International2023PredictionGroup .GroupTeamSlot.NoTeam .TeamName,International20
 	height: 80%;
 }
 
-.LinesContainer
+.TopLeftBottomRightLinesContainer
+{
+	width: 100%;
+	height: fill-parent-flow(1);
+	flow-children: right;
+	margin-bottom: 12px;
+}
+
+.TopLeftBottomRightLinesContainer .LeftLine
+{
+	width: fill-parent-flow( 1 );
+	height: 100%;
+	border-top: 1px solid secondaryColor1;
+	border-right: 1px solid secondaryColor1;
+}
+
+.TopLeftBottomRightLinesContainer .RightLine
+{
+	width: fill-parent-flow( 1 );
+	height: 100%;
+	border-bottom: 1px solid secondaryColor1;
+}
+
+.BottomLeftTopRightLinesContainer
+{
+	width: 100%;
+	height: fill-parent-flow(1);
+	flow-children: right;
+	margin-bottom: 12px;
+}
+
+.BottomLeftTopRightLinesContainer .LeftLine
+{
+	width: fill-parent-flow( 1 );
+	height: 100%;
+	border-bottom: 1px solid secondaryColor1;
+	border-right: 1px solid secondaryColor1;
+}
+
+.BottomLeftTopRightLinesContainer .RightLine
+{
+	width: fill-parent-flow( 1 );
+	height: 100%;
+	border-top: 1px solid secondaryColor1;
+}
+
+.LeftRightLinesContainer
+{
+	width: 100%;
+	height: 1px;
+	background-color: secondaryColor1;
+	margin-bottom: 12px;
+}
+
+.DoubleLinesContainer
 {
 	width: 48px;
 	height: 100%;
 	flow-children: right;
-	margin-left: 4px;
-	margin-right: 4px;
 	vertical-align: center;
 	opacity: 0.2;
-	border-top: 1px solid white;
-	border-bottom: 1px solid white;
-	border-brush: gradient( linear, 0% 0%, 100% 0%, from( secondaryColor3&00 ), color-stop( 0.5, secondaryColor1 ), to( secondaryColor3&00 ) );
+	border-top: 1px solid secondaryColor1;
+	border-bottom: 1px solid secondaryColor1;
 	margin-bottom: 30px;
 }
 
-.LinesContainer.Height_20
+.DoubleLinesContainer.Height_20
 {
 	height: 20%;
 }
 
-.LinesContainer.Height_30
+.DoubleLinesContainer.Height_30
 {
 	height: 30%;
 }
 
-.LinesContainer.Height_40
+.DoubleLinesContainer.Height_40
 {
 	height: 40%;
 }
 
-.LinesContainer.Height_50
+.DoubleLinesContainer.Height_50
 {
 	height: 50%;
 }
 
-.LinesContainer.Height_60
+.DoubleLinesContainer.Height_60
 {
 	height: 60%;
 }
 
-.LinesContainer.Height_70
+.DoubleLinesContainer.Height_70
 {
 	height: 70%;
 }
 
-.LinesContainer.Height_80
+.DoubleLinesContainer.Height_80
 {
 	height: 80%;
 }
@@ -750,5 +820,30 @@ BracketPrediction.TI2023
 {
 	margin: 8px;
 	width: 220px;
+}
+
+.PredictionsBackgroundImage
+{
+	width: 1200px;
+	height: 100%;
+	horizontal-align: center;
+	ignore-parent-flow: true;
+	background-image: url("s2r://panorama/images/compendium/international2023/oracle_background_png.vtex");
+	background-size: cover;
+	background-position: center;
+	opacity: 0.3;
+	wash-color: primaryColor2&99;
+	opacity-mask: url("s2r://panorama/images/masks/hero_model_preview_mask_loadout_psd.vtex");
+	transform: translateX( 430px );
+}
+
+.PredictionsBackgroundImage .CompediumBackgroundParticles
+{
+	width: 160%;
+	height: 160%;
+	brightness: 6;
+	horizontal-align: center;
+	vertical-align: center;
+	overflow: noclip;
 }
 

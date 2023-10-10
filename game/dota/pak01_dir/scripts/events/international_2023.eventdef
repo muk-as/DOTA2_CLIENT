@@ -1538,84 +1538,82 @@
 		// --------------------------------------------------------------------
 		// Fantasy
 		// --------------------------------------------------------------------
-		"fantasy_level"
-		{
-			"action_id"		"1"
-			"max_grants"		"1000000"
-			"rewards"
-			{
-				"1 + 4n"
-				{
-					"reward_name"		"#DOTA_DPCFantasy_Reward"
-					"grants"
-					{
-						"grant_points"		"300"						
-					}
-				}
-				"2 + 4n"
-				{
-					"reward_name"		"#DOTA_DPCFantasy_Reward"
-					"grants"
-					{
-						"grant_points"		"300"						
-					}
-				}
-				"3 + 4n"
-				{
-					"reward_name"		"#DOTA_DPCFantasy_Reward"
-					"grants"
-					{
-						"grant_points"		"300"						
-					}
-				}
-				"4 + 4n"
-				{
-					"reward_name"		"#DOTA_DPCFantasy_Reward"
-					"grants"
-					{
-						"grant_points"		"600"						
-					}
-				}
-			}
-		}
-		"period_end_reward_0"
+		"fantasy_period_end_reward_0"
 		{
 			"action_id"		"600"
 			"max_grants"		"0"
-			"season_action"		"period_end_reward_0"
+			"season_action"		"fantasy_period_end_reward_0"
 		}
-		"period_end_reward_25"
-		{
-			"action_id"		"604"
-			"max_grants"		"0"
-			"season_action"		"period_end_reward_25"
-		}
-		"period_end_reward_50"
+		"fantasy_period_end_reward_25"
 		{
 			"action_id"		"601"
 			"max_grants"		"0"
-			"season_action"		"period_end_reward_50"
+			"season_action"		"fantasy_period_end_reward_25"
 		}
-		"period_end_reward_75"
+		"fantasy_period_end_reward_50"
 		{
 			"action_id"		"602"
 			"max_grants"		"0"
-			"season_action"		"period_end_reward_75"
+			"season_action"		"fantasy_period_end_reward_50"
 		}
-		"period_end_reward_90"
+		"fantasy_period_end_reward_75"
 		{
 			"action_id"		"603"
 			"max_grants"		"0"
-			"season_action"		"period_end_reward_90"
+			"season_action"		"fantasy_period_end_reward_75"
 		}
-		"period_end_reward_99"
+		"fantasy_period_end_reward_90"
+		{
+			"action_id"		"604"
+			"max_grants"		"0"
+			"season_action"		"fantasy_period_end_reward_90"
+		}
+		"fantasy_period_end_reward_99"
 		{
 			"action_id"		"605"
 			"max_grants"		"0"
-			"season_action"		"period_end_reward_99"
+			"season_action"		"fantasy_period_end_reward_99"
 		}
-		"#include"		"scripts/events/fantasy/dpc_fantasy_season_period.eventactions"
-		"#include"		"scripts/events/fantasy/dpc_fantasy_major_period.eventactions"
+
+		// These exist so we can alias into the correct event action for claiming
+		"fantasy_period_end_reward_0_claimable"
+		{
+			"action_id"		"606"
+			"max_grants"		"0"
+			"season_action"		"fantasy_period_end_reward_0_claimable"
+		}
+		"fantasy_period_end_reward_25_claimable"
+		{
+			"action_id"		"607"
+			"max_grants"		"0"
+			"season_action"		"fantasy_period_end_reward_25_claimable"
+		}
+		"fantasy_period_end_reward_50_claimable"
+		{
+			"action_id"		"608"
+			"max_grants"		"0"
+			"season_action"		"fantasy_period_end_reward_50_claimable"
+		}
+		"fantasy_period_end_reward_75_claimable"
+		{
+			"action_id"		"609"
+			"max_grants"		"0"
+			"season_action"		"fantasy_period_end_reward_75_claimable"
+		}
+		"fantasy_period_end_reward_90_claimable"
+		{
+			"action_id"		"610"
+			"max_grants"		"0"
+			"season_action"		"fantasy_period_end_reward_90_claimable"
+		}
+		"fantasy_period_end_reward_99_claimable"
+		{
+			"action_id"		"611"
+			"max_grants"		"0"
+			"season_action"		"fantasy_period_end_reward_99_claimable"
+		}
+		
+		"#include"		"scripts/events/fantasy/dpc_fantasy_period_claimable.eventactions"
 		
 		// --------------------------------------------------------------------
 		// Bingo
@@ -1635,6 +1633,37 @@
 						"grant_points"		"1000"						
 					}
 				}
+			}
+		}
+	}
+
+	"seasons"
+	{
+		"period1"
+		{
+			"season_id"		"1"
+			"season_loc_name"		"#DOTA_TeamFandom_Period1_Name"
+			"season_quests"
+			{
+				"season_quests_action_prefix"		"period1_"
+			}
+		}
+		"period2"
+		{
+			"season_id"		"2"
+			"season_loc_name"		"#DOTA_TeamFandom_Period2_Name"
+			"season_quests"
+			{
+				"season_quests_action_prefix"		"period2_"
+			}
+		}
+		"period3"
+		{
+			"season_id"		"3"
+			"season_loc_name"		"#DOTA_TeamFandom_Period3_Name"
+			"season_quests"
+			{
+				"season_quests_action_prefix"		"period3_"
 			}
 		}
 	}
@@ -1670,10 +1699,20 @@
 			{
 				"0"			"600"
 				"25"		"601"
-				"50"		"601"
-				"75"		"602"
-				"90"		"603"
-				"99"		"603"
+				"50"		"602"
+				"75"		"603"
+				"90"		"604"
+				"99"		"605"
+			}
+
+			"end_of_period_claims"
+			{
+				"0"			"606"
+				"25"		"607"
+				"50"		"608"
+				"75"		"609"
+				"90"		"610"
+				"99"		"611"
 			}
 		}
 

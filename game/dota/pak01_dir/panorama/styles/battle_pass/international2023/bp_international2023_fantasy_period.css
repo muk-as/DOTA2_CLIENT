@@ -356,6 +356,14 @@ DOTABPInternational2023FantasyPeriod
 {
 	margin-left: 2px;
 	margin-right: 2px;
+	font-family: titleFont;
+	font-size: 24px;
+	color: LightestGrey;
+}
+
+.TabletPeriodScoreHolder .ScoreLabel
+{
+	color: LightGrey;
 }
 
 .PeriodPercentileReward
@@ -409,57 +417,64 @@ DOTABPInternational2023FantasyPeriod
 	text-overflow: shrink;
 }
 
-.PeriodRewards
+.PeriodRewardsColumn
 {
 	width: fill-parent-flow( 1.0 );
-	margin: 0px 60px;
-	height: fit-children;
-	padding: 4px;
+	height: 100%;
+	flow-children: down;
+}
+
+.PeriodRewards
+{
+	width: 100%;
+	height: 100%;
+	padding: 4px 20px;
 	padding-bottom: 10px;
 	flow-children: down;
-	background-color: gradient( linear, 0% 0%, 0% 100%, from( #8dc0f211 ), color-stop( 0.004, #0e1318cc), to( #0e1318dd ) );
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( primaryColor6 ), to( primaryColor7&00 ) );
+	border-top: 1px solid white;
+	border-brush: gradient( linear, 0% 0%, 100% 0%, from( primaryColor4&22 ), color-stop( 0.5, primaryColor3 ), to( primaryColor4&22 ) );
 }
 
 .PeriodRewardsLabel
 {
 	text-transform: uppercase;
 	font-size: 14px;
-	color: bluegreyTextReg&88;
+	color: LightGrey;
 	width: 100%;
 	text-align: center;
 	letter-spacing: 2px;
-	padding: 4px 4px 2px 4px;
+	padding: 4px 4px 8px 4px;
 }
 
 .PeriodRewardsList
 {
 	width: 100%;
-	height: fit-children;
 	flow-children: down;
 }
 
 .PeriodRewardsList .ScoreContainer
 {
 	width: 100%;
-	height: 40px;
 	flow-children: right;
 	vertical-align: center;
-	padding: 0px 20px;
+	padding: 6px 0px;
+	border-top: 1px solid primaryColor5;
 }
 
 .PeriodRewardsList .ScoreContainer Label
 {
-	height: 30px;
 	vertical-align: center;
 	width: fill-parent-flow( 1.0 );
+	font-size: 20px;
 }
 
 .PeriodRewardsList .ScoreContainer .ScoreLabel
 {
 	vertical-align: center;
 	text-align: left;
-	font-size: 20px;
-	color: #CCC;
+	color: LighterGrey;
+	font-family: titleFont;
 }
 
 .PeriodRewardsList .ScoreContainer .Value
@@ -468,6 +483,7 @@ DOTABPInternational2023FantasyPeriod
 	text-align: right;
 	font-size: 24px;
 	color: white;
+	height: 28px;
 }
 
 .LeaderboardContainer
@@ -476,28 +492,37 @@ DOTABPInternational2023FantasyPeriod
 	height: 100%;
 	padding: 8px;
 	flow-children: down;
-	background-color: gradient( linear, 0% 0%, 0% 100%, from( #8dc0f211 ), color-stop( 0.004, #0e1318cc), to( #0e1318dd ) );
+	background-color: gradient( linear, 0% 40%, 0% 100%, from( primaryColor6 ), to( primaryColor7&00 ) );
+	border-top: 1px solid white;
+	border-brush: gradient( linear, 0% 0%, 100% 0%, from( primaryColor4&22 ), color-stop( 0.5, primaryColor3 ), to( primaryColor4&22 ) );
 }
 
 #LeaderboardContainerGlobal
 {
-	margin: 0px 16px;
+	margin: 0px 8px;
+}
+
+.LeaderList
+{
+	width: 100%;
+	flow-children: down;
 }
 
 .LeaderListHeader
 {
 	width: 100%;
+	margin-bottom: 8px;
 }
 
 .LeaderListHeader Label
 {
 	text-transform: uppercase;
 	font-size: 14px;
-	color: bluegreyTextReg&88;
+	color: LightGrey;
 	letter-spacing: 2px;
 }
 
-.LeaderListHeader Label.TotalScore
+.LeaderListHeader .TotalScore
 {
 	horizontal-align: right;
 	text-align: right;
@@ -506,30 +531,38 @@ DOTABPInternational2023FantasyPeriod
 .LeaderboardRow
 {
 	width: 100%;
-	margin-bottom: 2px;
+	margin-bottom: 4px;
+	background-color: primaryColor5;
+	flow-children: right;
+	padding-right: 4px;
 }
 
-#LeaderListAvatar
+.LeaderboardRow #LeaderListAvatar
 {
 	width: 24px;
 	height: 24px;
 	vertical-align: middle;
+	background-color: rgba( 0, 0, 0, 0.5 );
+	margin-right: 6px;
 }
 
-.LeaderListName
+.LeaderboardRow .LeaderListName
 {
-	height: 22px;
+	color: LightestGrey;
+	vertical-align: center;
 }
 
-.LeaderListName .PersonaName
+.LeaderboardRow .LeaderListName .PersonaName
 {
 	color: #bbbbbb;
 }
 
-.LeaderListValue
+.LeaderboardRow .LeaderListValue
 {
 	horizontal-align: right;
 	text-align: right;
+	color: LightestGrey;
+	vertical-align: center;
 }
 
 .ResultContentRow
@@ -915,6 +948,36 @@ DOTABPInternational2023FantasyPeriod
 	visibility: visible;
 	horizontal-align: center;
 	vertical-align: center;
+}
+
+.RewardsButton
+{
+	margin-top: 12px;
+	width: 100%;
+	horizontal-align: left;
+	animation-name: GlowUnclaimedRewardsBadge;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
+	animation-direction: alternate-reverse;
+	visibility: collapse;
+}
+
+.RewardsButton.Center
+{
+	horizontal-align: center;
+}
+
+.HasUnclaimedRewards .RewardsButton
+{
+	visibility: visible;
+}
+
+.ClaimingInProgress .RewardsButton
+{
+	brightness: 0.4;
+	saturation: 1;
+	opacity: 1;
 }
 
 .Tutorial_ViewTablet #tablet_1:not(.Selected),.Tutorial_ViewTablet #tablet_2:not(.Selected),.Tutorial_ViewTablet #tablet_3:not(.Selected),.Tutorial_Emblems #tablet_1:not(.Selected),.Tutorial_Emblems #tablet_2:not(.Selected),.Tutorial_Emblems #tablet_3:not(.Selected),.Tutorial_Operations #tablet_1,.Tutorial_Operations #tablet_2,.Tutorial_Operations #tablet_3,.Tutorial_ForgotTokens #tablet_1,.Tutorial_ForgotTokens #tablet_2,.Tutorial_ForgotTokens #tablet_3 .Tutorial_ShowRoster #tablet_1,.Tutorial_ShowRoster #tablet_2,.Tutorial_ShowRoster #tablet_3
