@@ -645,6 +645,15 @@ DOTAUIFantasyCraftTablet .FantasyGemHolderContainer #FantasyGemHolder .FantasyGe
 	margin-bottom: 20px;
 }
 
+.InvalidPlayer #SelectPlayerButton
+{
+	animation-name: GlowPrimaryButton;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
+	animation-direction: alternate-reverse;
+}
+
 .FullTabletView #GemMiniProfile
 {
 	visibility: collapse;
@@ -901,5 +910,93 @@ DOTAUIFantasyCraftTablet .FantasyGem .GemContents .Header .gem_value_changed,DOT
 {
 	horizontal-align: center;
 	margin-top: 12px;
+}
+
+#InvalidPlayerAlert
+{
+	horizontal-align: left;
+	width: 40px;
+	height: 40px;
+	margin-left: 15%;
+	visibility: collapse;
+}
+
+.CraftingEnabled .InvalidPlayer #InvalidPlayerAlert
+{
+	visibility: visible;
+}
+
+#InvalidPlayerAlert .InfoIcon
+{
+	horizontal-align: center;
+	vertical-align: center;
+	wash-color: #bb5c2c;
+}
+
+#InvalidPlayerAlert.ViewedAlert .InfoIcon
+{
+	wash-color: grey;
+}
+
+#InvalidPlayerAlert .InfoIcon.Shadow
+{
+	margin-left: 10px;
+	margin-top: 4px;
+	wash-color: black;
+}
+
+#InvalidPlayerAlert.ViewedAlert .InfoIcon.Shadow
+{
+	wash-color: black;
+}
+
+.HeroGameplayUpdatePulse
+{
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	border: 3px solid #bb5c2c;
+	opacity: 0;
+	transition-property: opacity, transform;
+	animation-name: pulsealert;
+	animation-duration: 1.01s;
+	animation-timing-function: ease-in;
+	animation-iteration-count: infinite;
+	overflow: noclip;
+}
+
+.ViewedAlert .HeroGameplayUpdatePulse
+{
+	visibility: collapse;
+}
+
+@keyframes 'pulsealert'
+{
+	0%
+	{
+		opacity: 1;
+		pre-transform-scale2d: 0.001;
+	}
+	
+	60%
+	{
+		opacity: 1;
+	}
+	
+	95%
+	{
+		opacity: 0;
+	}
+	
+	99%
+	{
+		pre-transform-scale2d: .9;
+	}
+	
+	100%
+	{
+		pre-transform-scale2d: 0.001;
+	}
+	
 }
 
