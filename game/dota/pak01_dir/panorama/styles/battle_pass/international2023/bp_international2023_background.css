@@ -1100,17 +1100,6 @@ DOTABPBackgroundInternational2023
 	height: 434px;
 }
 
-#VideoPlayer .VideoPlayerContainer .FootageContainer
-{
-	horizontal-align: center;
-}
-
-.ShowCountdown #VideoPlayer .VideoPlayerContainer .FootageContainer
-{
-	opacity: 0.1;
-	blur: gaussian( 24px );
-}
-
 .ShowVideoPlayer #VideoPlayer
 {
 	visibility: visible;
@@ -1362,11 +1351,142 @@ DOTABPBackgroundInternational2023
 	text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.5);
 }
 
+.FootageContainer
+{
+	width: 100%;
+	height: 100%;
+	horizontal-align: center;
+	visibility: collapse;
+}
+
+.WantsLiveVideo .FootageContainer
+{
+	visibility: visible;
+}
+
+.LiveContainer
+{
+	horizontal-align: center;
+	height: 100%;
+	width: height-percentage( 177.777% );
+	visibility: collapse;
+}
+
+.LiveVideo_Active .LiveContainer
+{
+	visibility: visible;
+}
+
+.LiveContainer #LiveStream
+{
+	height: 100%;
+	width: 100%;
+}
+
+.LiveContainer .OverlayPanel
+{
+	flow-children: right;
+	padding: 8px;
+	horizontal-align: right;
+	opacity: 0.0;
+	transition-property: opacity;
+	transition-duration: 0.2s;
+}
+
+.LiveContainer .OverlayPanel .OverlayButton
+{
+	width: 32px;
+	height: 32px;
+	margin: 8px;
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+	wash-color: #ccc;
+	transition-property: wash-color;
+	transition-duration: 0.2s;
+}
+
+.LiveContainer .OverlayPanel .OverlayButton:hover
+{
+	wash-color: white;
+}
+
+.LiveContainer .OverlayPanel .OverlayButton:active
+{
+	wash-color: #aaa;
+}
+
+.LiveContainer .OverlayPanel .OverlayButton.BrowserButton
+{
+	background-image: url("s2r://panorama/images/control_icons/arrow_popout_png.vtex");
+}
+
+.LiveContainer .OverlayPanel .OverlayButton.HideButton
+{
+	background-image: url("s2r://panorama/images/control_icons/x_close_filled_png.vtex");
+}
+
+.LiveContainer:hover .OverlayPanel
+{
+	opacity: 1.0;
+	transform: none;
+}
+
+.NotLiveContainer
+{
+	horizontal-align: center;
+	height: 100%;
+	width: height-percentage( 177.777% );
+	background-image: url("s2r://panorama/images/compendium/international2023/stream_not_live_background_jpg.vtex");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	visibility: collapse;
+}
+
+.LiveVideo_NotActive .NotLiveContainer
+{
+	visibility: visible;
+}
+
+.LiveBlockedContainer
+{
+	height: 100%;
+	width: 100%;
+	flow-children: down;
+	visibility: collapse;
+}
+
+.LiveVideo_SpoilerBlocked .LiveBlockedContainer
+{
+	visibility: visible;
+}
+
+.LiveBlockedContainer .LiveBlockedCenter
+{
+	vertical-align: middle;
+	width: 100%;
+	flow-children: down;
+}
+
+.LiveBlockedContainer .LiveBlockedCenter .LiveBlockedDay
+{
+	horizontal-align: center;
+	text-align: center;
+	ui-scale: 200%;
+}
+
+.LiveBlockedContainer .LiveBlockedCenter .ButtonPrimary
+{
+	horizontal-align: center;
+	margin-top: 8px;
+}
+
 .LiveFeedCountdownContainer
 {
 	vertical-align: center;
-	horizontal-align: center;
 	flow-children: down;
+	width: 100%;
 	visibility: collapse;
 }
 
@@ -1378,6 +1498,7 @@ DOTABPBackgroundInternational2023
 
 .LiveFeedCountdownContainer .CountdownText
 {
+	text-align: center;
 	font-family: titleFont;
 	font-size: 44px;
 	margin-top: 8px;
@@ -1392,5 +1513,15 @@ DOTABPBackgroundInternational2023
 .ShowCountdown .LiveFeedCountdownContainer
 {
 	visibility: visible;
+}
+
+.CountdownActive .CountDownActiveText,.CountdownAfterEnd .CountDownCompleteText
+{
+	visibility: visible;
+}
+
+.CountdownAfterEnd .CountDownActiveText,.CountdownActive .CountDownCompleteText
+{
+	visibility: collapse;
 }
 

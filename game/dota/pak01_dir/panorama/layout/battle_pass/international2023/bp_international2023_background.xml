@@ -28,6 +28,83 @@
 			<DOTAScenePanel class="TopRightGodRays Small" map="scenes/loadout_preview_rays" camera="camera_1" hittest="false" particleonly="false" />
 		</Panel>
 		<Panel class="MainContents">
+			<Panel id="VideoPlayer">
+				<Panel id="GroupStageHeaderContainer">
+					<Label class="VideoCompendiumTitle" text="#FrontPage_Compendium_Points_Header" />
+					<Panel class="RoadToInternationalContainer">
+						<Panel class="DPCLogoContainer">
+							<Panel class="Dash Left" />
+							<Image class="DPCLogo" scaling="stretch-to-fit-preserve-aspect" src="s2r://panorama/images/logos/dpc-logo.vsvg" />
+							<Panel class="Dash Right" />
+						</Panel>
+						<Label class="RoadToLabel TitleSmall" text="#DOTA_Compendium2023_RoadToLabel" />
+						<Label class="TheInternationalLabel TitleSmall" text="#DOTA_International2023_MainEvent" />
+					</Panel>
+					<Panel id="GroupStageDates">
+						<Label class="EventTitle LabelLarge" text="#DOTA_International2023_GroupStage" />
+						<Label class="Dates LabelMedium" text="#DOTA_International2023_GroupStage_Dates" />
+						<Label class="Location LabelMedium" text="#DOTA_International2023_GroupStage_Location" />
+					</Panel>
+				</Panel>
+				<Panel id="PlayoffsHeaderContainer">
+					<Label class="VideoCompendiumTitle" text="#FrontPage_Compendium_Points_Header" />
+					<Panel class="RoadToInternationalContainer">
+						<Panel class="DPCLogoContainer">
+							<Panel class="Dash Left" />
+							<Image class="DPCLogo" scaling="stretch-to-fit-preserve-aspect" src="s2r://panorama/images/logos/dpc-logo.vsvg" />
+							<Panel class="Dash Right" />
+						</Panel>
+						<Label class="RoadToLabel TitleSmall" text="#DOTA_Compendium2023_RoadToLabel" />
+						<Label class="TheInternationalLabel TitleSmall" text="#DOTA_International2023_MainEvent" />
+					</Panel>
+					<Panel id="PlayoffsDates">
+						<Label class="EventTitle LabelLarge" text="#DOTA_International2023_Playoffs" />
+						<Label class="Dates LabelMedium" text="#DOTA_International2023_Playoffs_Dates" />
+						<Label class="Location LabelMedium" text="#DOTA_International2023_Playoffs_Location" />
+					</Panel>
+				</Panel>
+				<Panel id="MainEventHeaderContainer">
+					<Label class="VideoCompendiumTitle" text="#FrontPage_Compendium_Points_Header" />
+					<Panel id="MainEventLogoContainer">
+						<Image class="TILogo" scaling="stretch-to-fit-preserve-aspect" src="s2r://panorama/images/logos/ti_logo_light.vsvg" />
+						<Panel id="StarsContainerSmall">
+							<Panel class="CompendiumStarSmall" />
+							<Panel class="CompendiumStarSmall" />
+							<Panel class="CompendiumStarSmall" />
+							<Panel class="CompendiumStarSmall" />
+							<Panel class="CompendiumStarSmall" />
+						</Panel>
+					</Panel>
+					<Panel id="MainEventDates">
+						<Label class="EventTitle LabelLarge" text="#DOTA_International2023_MainEvent" />
+						<Label class="Dates LabelMedium" text="#DOTA_International2023_MainEvent_Dates" />
+						<Label class="Location LabelMedium" text="#DOTA_International2023_MainEvent_Location" />
+					</Panel>
+				</Panel>
+				<Panel class="VideoPlayerContainer">
+					<Panel class="FootageContainer">
+						<Panel class="LiveContainer">
+							<DOTALiveStream id="LiveStream" />
+							<Panel class="OverlayPanel" hittest="false">
+								<Button id="ExternalBrowserButton" class="BrowserButton OverlayButton" onactivate="DOTAInternational2023ExternalWatchStream()" />
+								<Button id="HideButton" class="HideButton OverlayButton" onactivate="DOTAInternational2023ToggleSpoilerBlock()" />
+							</Panel>
+						</Panel>
+						<Panel class="NotLiveContainer" />
+						<Panel class="LiveBlockedContainer">
+							<Panel class="LiveBlockedCenter">
+								<Label class="LiveBlockedDay LabelLarge WhiteText" text="{s:broadcast_day}" />
+								<TextButton class="ButtonPrimary Large TI23Blue" text="#DOTATournamentMatchListWatchLive" onactivate="DOTAInternational2023ToggleSpoilerBlock()" />
+							</Panel>
+						</Panel>
+					</Panel>
+					<DOTACountdown id="LiveStreamCountdown" class="LiveFeedCountdownContainer">
+						<Label class="LabelLarge WhiteText" text="{s:broadcast_day}" />
+						<Label class="CountDownActiveText CountdownText" text="#DOTA_Frontpage_TI10Upcoming_StartsIn" />
+						<Label class="CountDownCompleteText CountdownText" text="#DOTA_Frontpage_TI10Upcoming_StartingSoon" />
+					</DOTACountdown>
+				</Panel>
+			</Panel>
 			<Panel class="Header">
 				<Label class="Title" text="#FrontPage_Compendium_Points_Header" />
 				<Panel id="StarsContainer">
