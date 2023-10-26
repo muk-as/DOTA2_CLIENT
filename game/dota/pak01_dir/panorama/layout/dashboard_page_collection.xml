@@ -17,13 +17,14 @@
 		</snippet>
 		<snippet name="StickerEntry">
 			<Panel class="StickerEntry">
-				<DOTAUIEconSetPreview id="StickerPreview" onmouseout="DOTAHideEconItemTooltip()" stickercamera="sticker_camera_close" rotateonmousemove="true" rotationlimits="2 -2 2 -2" stickeranim="stock_idle" yawaxis="pitch" pitchaxis="roll" />
+				<DOTAUIEconSetPreview id="StickerPreview" class="HideStickerbacks" onmouseout="DOTAHideEconItemTooltip()" stickercamera="sticker_camera_close" rotateonmousemove="true" rotationlimits="2 -2 2 -2" stickeranim="stock_idle" yawaxis="pitch" pitchaxis="roll" />
 				<Panel class="StackCount">
 					<Label text="{d:stack_count}" />
 				</Panel>
 				<Panel id="NewItemBadge" hittest="false">
 					<Label class="LabelSmall" text="#DOTA_New" />
 				</Panel>
+				<DOTAPurchaseButton id="StickerPurchaseButton" />
 			</Panel>
 		</snippet>
 		<snippet name="SingleHeroRelicsButton">
@@ -209,7 +210,7 @@
 						<Panel class="ShardShop_Dash" />
 						<Button id="RewardLogButton" onactivate="DOTAPlusShowRewardLog()" onmouseover="UIShowTextTooltip( &apos;#DOTA_Plus_RewardsLog&apos; )" onmouseout="UIHideTextTooltip()" />
 					</Panel>
-					<Panel id="ControlSearch">
+					<Panel id="ControlSearch" class="SearchBox">
 						<TextEntry id="ControlSearchTextEntry" placeholder="#DOTA_Collection_SearchHeroListLabel" oninputsubmit="" oncancel="" onmovedown="DOTACollectionSelectNextTab()" onmoveup="DOTACollectionSelectPrevTab()" />
 						<Panel id="SearchButton" hittest="false" />
 						<Button id="ClearButton" />
@@ -247,12 +248,26 @@
 								<TextEntry id="ShardsRelicsSearchTextEntry" placeholder="#DOTA_Collection_SearchHeroListLabel" />
 							</Panel>
 							<Panel id="StickersTitleGroupControls" class="TitleGroupControls">
-								<Label class="TitleGroupControlsLabel LighterGreyText" text="#DOTA_Collection_FilterLabel" />
-								<DropDown id="StickersFilterByDropDown" class="FilterByDropDown" oninputsubmit="DOTACollectionGroupByChanged()" />
-								<Label class="TitleGroupControlsLabel LighterGreyText" text="#DOTA_Collection_GroupByLabel" />
-								<DropDown id="StickersGroupByDropDown" class="GroupByDropDown" oninputsubmit="DOTACollectionGroupByChanged()" />
-								<Label class="TitleGroupControlsLabel LighterGreyText" text="#DOTA_Collection_SortByLabel" />
-								<DropDown id="StickersSortByDropDown" class="SortByDropDown" oninputsubmit="DOTACollectionGroupByChanged()" />
+								<Panel id="StickersTitleGroupControlsLeft">
+									<Panel id="StickersControlSearch" class="SearchBox">
+										<TextEntry id="SearchStickersTextEntry" placeholder="#DOTA_Collection_SearchAllItemsListLabel" oninputsubmit="" oncancel="" />
+										<Panel id="SearchButton" hittest="false" />
+									</Panel>
+								</Panel>
+								<Panel id="StickersTitleGroupControlsRight">
+									<Panel class="DropDownContainer">
+										<Label class="TitleGroupControlsLabel LighterGreyText" text="#DOTA_Collection_QualityFilterLabel" />
+										<DropDown id="StickersQualityFilterByDropDown" class="FilterByDropDown" oninputsubmit="DOTACollectionGroupByChanged()" />
+									</Panel>
+									<Panel class="DropDownContainer">
+										<Label class="TitleGroupControlsLabel LighterGreyText" text="#DOTA_Collection_TypeFilterLabel" />
+										<DropDown id="StickersTypeFilterByDropDown" class="FilterByDropDown" oninputsubmit="DOTACollectionGroupByChanged()" />
+									</Panel>
+									<Panel class="DropDownContainer">
+										<Label class="TitleGroupControlsLabel LighterGreyText" text="#DOTA_Collection_GroupByLabel" />
+										<DropDown id="StickersGroupByDropDown" class="GroupByDropDown" oninputsubmit="DOTACollectionGroupByChanged()" />
+									</Panel>
+								</Panel>
 							</Panel>
 							<Panel id="BrowseTitleGroupControls" class="TitleGroupControls">
 								<Label class="TitleGroupControlsLabel LighterGreyText" text="#DOTA_Collection_SortByLabel" />
@@ -288,11 +303,9 @@
 						<Panel id="CustomContentContainer">
 							<Panel id="ShardShopContent" class="CustomContent" />
 							<Panel id="StickersContent" class="CustomContent">
-								<Label class="BodyMedium LightGreyText VerticalCenter" text="#DOTA_Armory_Stickers_Description" />
-								<Button id="StickersActionButton" class="ButtonPrimary DarkGrey" onactivate="DOTAShowBPInternational2022StickerCollectionsPage()">
-									<Label text="#DOTA_TabName_StickerCollections" />
-									<Image src="s2r://panorama/images/control_icons/arrow_right_png.vtex" />
-								</Button>
+								<Image class="BattlePass2022_Badge" src="s2r://panorama/images/badges/international_2022_compendium_badge_png.vtex" />
+								<Label class="BodyMedium VerticalCenter" text="#DOTA_Armory_Stickers_Description" onactivate="DOTAShowBPInternational2022StickerCollectionsPage()" />
+								<Image class="LinkArrow" src="s2r://panorama/images/control_icons/24px/arrow_right.vsvg" />
 							</Panel>
 							<Panel id="EmoticonsContent" class="CustomContent">
 								<Label text="#DOTA_Armory_Emoticons_Description" class="BodyMedium LightGreyText VerticalCenter" />
