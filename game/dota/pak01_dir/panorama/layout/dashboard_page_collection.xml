@@ -81,6 +81,7 @@
 		<snippet name="ItemsGroupPanel">
 			<Panel class="ItemsGroupPanel" sendchildscrolledintoviewevents="true" AllowOversized="1">
 				<Panel id="ItemsGroupTitle">
+					<DOTAHeroImage id="ItemsGroupHeroImage" heroimagestyle="icon" />
 					<Label id="ItemsGroupName" class="LabelLarge LighterGreyText" text="{s:items_group_name}" />
 					<Label id="ItemsGroupOwnedCount" class="LabelMedium" text="({d:items_group_owned_count})" />
 					<Panel id="ItemsGroupShuffleToggle">
@@ -270,22 +271,40 @@
 								</Panel>
 							</Panel>
 							<Panel id="BrowseTitleGroupControls" class="TitleGroupControls">
-								<Label class="TitleGroupControlsLabel LighterGreyText" text="#DOTA_Collection_SortByLabel" />
-								<DropDown id="BrowseSortByDropDown" class="SortByDropDown" oninputsubmit="DOTACollectionGroupByChanged()" />
-								<Label class="TitleGroupControlsLabel LighterGreyText" text="#DOTA_Collection_GroupByLabel" />
-								<DropDown id="BrowseGroupByDropDown" class="GroupByDropDown" oninputsubmit="DOTACollectionGroupByChanged()" />
+								<Panel id="BrowseTitleGroupControlsLeft">
+									<Panel id="BrowseControlSearch" class="SearchBox">
+										<TextEntry id="SearchAllItemsTextEntry" placeholder="#DOTA_Collection_SearchAllItemsListLabel" oninputsubmit="" oncancel="" />
+										<Panel id="SearchButton" hittest="false" />
+									</Panel>
+									<ToggleButton class="CheckBox" id="DevModeToggle" onactivate="DOTACollectionBrowseDevModeToggle()">
+										<Label text="Developer Mode (VO)" />
+									</ToggleButton>
+								</Panel>
+								<Panel id="BrowseTitleGroupControlsRight">
+									<Panel class="DropDownContainer">
+										<Label class="TitleGroupControlsLabel LighterGreyText" text="#DOTA_Collection_FilterLabel" />
+										<DropDown id="FilterDropDown" oninputsubmit="DOTACollectionGlobalUpdateFilter()" />
+									</Panel>
+									<Button id="EditFilter" onactivate="DOTACollectionGlobalEditFilter()" class="ButtonPrimary LightGrey">
+										<Label text="#DOTA_Armory_EditFilter" />
+									</Button>
+									<Panel id="BrowseSortByDropDownContainer" class="DropDownContainer">
+										<Label class="TitleGroupControlsLabel LighterGreyText" text="#DOTA_Collection_SortByLabel" />
+										<DropDown id="BrowseSortByDropDown" class="SortByDropDown" oninputsubmit="DOTACollectionGroupByChanged()" />
+									</Panel>
+									<Panel id="BrowseGroupByDropDownContainer" class="DropDownContainer">
+										<Label class="TitleGroupControlsLabel LighterGreyText" text="#DOTA_Collection_GroupByLabel" />
+										<DropDown id="BrowseGroupByDropDown" class="GroupByDropDown" oninputsubmit="DOTACollectionGroupByChanged()" />
+									</Panel>
+									<ToggleButton id="GroupByTypeToggleButton" text="#DOTA_Armory_Category_View" />
+									<DOTASettingsCheckbox id="StackDuplicatesToggleButton" class="IconToggleButton StackDuplicates" convar="dota_collections_stack_duplicates" onmouseover="UIShowTextTooltip( &apos;#DOTA_Collection_StackDuplicatesLabel&apos; )" onmouseout="UIHideTextTooltip()" />
+								</Panel>
 							</Panel>
 						</Panel>
 					</Panel>
 					<Panel class="ViewerContainer">
 						<Panel class="ItemStatusFilters">
-							<Panel id="BrowseFiltersContainer" class="FiltersContainer VerticalCenter">
-								<ToggleButton id="BrowseDuplicatesToggleButton" text="#DOTA_Collection_Filter_Browse_Duplicates" onactivate="DOTACollectionFilterChanged()" />
-								<ToggleButton id="BrowseTradeableToggleButton" text="#DOTA_Collection_Filter_Browse_Tradeable" onactivate="DOTACollectionFilterChanged()" />
-								<ToggleButton id="BrowseMarketableToggleButton" text="#DOTA_Collection_Filter_Browse_Marketable" onactivate="DOTACollectionFilterChanged()" />
-								<ToggleButton id="BrowseGiftableToggleButton" text="#DOTA_Collection_Filter_Browse_Giftable" onactivate="DOTACollectionFilterChanged()" />
-								<ToggleButton id="BrowseBundlesButton" text="#DOTA_Collection_Filter_Browse_Bundles" onactivate="DOTACollectionFilterChanged()" />
-							</Panel>
+							<Panel id="BrowseFiltersContainer" class="FiltersContainer VerticalCenter" />
 							<Panel id="FiltersContainer" class="FiltersContainer VerticalCenter">
 								<ToggleButton id="OwnedToggleButton" text="#DOTA_Collection_Filter_Owned" onactivate="DOTACollectionFilterChanged()" />
 								<ToggleButton id="AvailableToggleButton" text="#DOTA_Collection_Filter_Available" onactivate="DOTACollectionFilterChanged()" />

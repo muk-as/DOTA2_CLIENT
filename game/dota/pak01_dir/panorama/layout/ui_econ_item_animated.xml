@@ -33,7 +33,7 @@
 					<Label class="LabelSmall" text="#DOTA_New_Arrival" />
 				</Panel>
 				<Panel class="TopBottomFlow AttributeIconContainer">
-					<Panel class="MarketPriceContainer LeftRightFlow IconButton" onactivate="DOTAEconItemAnimatedSellItem()" onmouseover="UIShowTextTooltip( #DOTA_SetBundle_Tooltip_MarketPriceToolip )" onmouseout="UIHideTextTooltip(); DOTAEconItemAnimatedRetriggerOnMouseOver()">
+					<Panel class="MarketPriceContainer LeftRightFlow IconButton" onactivate="DOTAEconItemAnimatedSellItem()" onmouseover="UIShowTextTooltip( #DOTA_SetBundle_Tooltip_MarketPriceButtonToolip )" onmouseout="UIHideTextTooltip(); DOTAEconItemAnimatedRetriggerOnMouseOver()">
 						<Panel id="MarketIcon" />
 						<Label id="MarketPrice" class="LabelSmall VerticalCenter" text="{m:MarketPrice}" />
 					</Panel>
@@ -75,6 +75,15 @@
 				<Label text="Not public" class="NotPublicLabel LabelSmall WhiteText Opacity_60" unlocalized="true" />
 				<Panel id="StylesPanel">
 					<Panel id="StyleSelector" class="LeftRightFlow" />
+					<Panel id="LargeStyleSelector" class="LargeStyleSelector">
+						<Button class="IconButton Circle VerticalCenter" onactivate="DOTAEconItemAnimatedIncrementStyle( -1 )" ondblclick="DOTAEconItemAnimatedControlDoubleClicked()">
+							<Image src="s2r://panorama/images/control_icons/24px/chevron_left.vsvg" />
+						</Button>
+						<Label id="StyleIndexLabel" class="BodySmall LightestGreyText VerticalCenter" text="{d:selected_style_index} / {d:style_count}" />
+						<Button class="IconButton Circle VerticalCenter" onactivate="DOTAEconItemAnimatedIncrementStyle( 1 )" ondblclick="DOTAEconItemAnimatedControlDoubleClicked()">
+							<Image src="s2r://panorama/images/control_icons/24px/chevron_right.vsvg" />
+						</Button>
+					</Panel>
 				</Panel>
 				<Label id="EconItemName" class="BodySmall LighterGreyText" text="{s:ItemName}" />
 				<Label id="EconItemSlotName" class="LabelSmall LightGreyText Opacity_50" text="{s:SlotName}" />
@@ -88,7 +97,7 @@
 				</Button>
 			</Panel>
 			<Panel id="ShuffledBorder" hittest="false" />
-			<Button id="InspectButton" class="ButtonPrimary Small DarkGrey" onactivate="DOTAUIEconItemLargeInspectPressed()">
+			<Button id="InspectButton" class="ButtonPrimary Small DarkGrey" onactivate="DOTAEconItemAnimatedShowItemDetail()">
 				<Image src="s2r://panorama/images/control_icons/24px/search.vsvg" />
 			</Button>
 			<Panel id="BottomLayer" class="ItemRarityBackgroundColor" hittest="false">
