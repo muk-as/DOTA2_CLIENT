@@ -475,36 +475,39 @@ DOTABPBackgroundInternational2023
 {
 	width: 100%;
 	padding-top: -32px;
-	margin-bottom: -64px;
+	margin-bottom: -88px;
 }
 
 .PointsSection .PointsSectionContainer
 {
 	vertical-align: center;
 	flow-children: right;
-	border: 1px solid rgba(255, 255, 255, 0.5);
-	border-brush: gradient( linear, 0% 0%, 0% 100%, from( primaryColor3 ), to( primaryColor4 ) );
 	background-color: gradient( linear, 0% 0%, 0% 100%, from( primaryColor4&EE ), to( primaryColor5&EE ) );
 	border-radius: 4px;
 	box-shadow: 0px 4px 32px -4px rgba(0, 0, 0, 0.4);
-	padding: 0px 24px 0px 130px;
 	width: 100%;
+}
+
+.PointsSection .PointsSectionContainer .PointsSectionBorder
+{
+	border: 1px solid rgba(255, 255, 255, 0.03);
+	width: 100%;
+	height: 100%;
+	ignore-parent-flow: true;
 }
 
 .PointsSection .PointsSectionContainer .ProgressContainer
 {
 	width: fill-parent-flow( 1 );
 	flow-children: down;
-	margin-right: 24px;
-	padding: 12px;
-	padding-right: 24px;
-	border-right: 1px solid rgba(255, 255, 255, 0.5);
-	border-brush: gradient( linear, 0% 0%, 0% 100%, from( primaryColor3 ), to( primaryColor4 ) );
+	padding: 12px 16px 12px 140px;
 }
 
-.PointsSection .PointsSectionContainer .ProgressContainer .CompendiumLevelLabel
+.PointsSection .PointsSectionContainer .ProgressContainer .CompendiumLevelLabel,.PointsSection .PointsSectionContainer .ProgressContainer .CompendiumLevelLabelShort
 {
 	text-shadow: textShadowMedium;
+	text-overflow: shrink;
+	height: 24px;
 }
 
 .PointsSection .PointsSectionContainer .ProgressContainer #CurrentLevelProgressBar
@@ -544,6 +547,7 @@ DOTABPBackgroundInternational2023
 	color: gradient( linear, 0% 0%, 0% 100%, from( secondaryColor1 ), to( secondaryColor3 ) );
 	text-shadow: textShadowSmall;
 	brightness: 2;
+	letter-spacing: 1px;
 }
 
 .PointsSection .PointsSectionContainer .ProgressContainer .PointsAndLogContainer #PointsLogButton
@@ -553,10 +557,96 @@ DOTABPBackgroundInternational2023
 	border-brush: WhiteGradientBorderSoft;
 }
 
-.PointsSection .PointsSectionContainer #LevelButtons
+.PointsSection .PointsSectionContainer .ProgressContainer .PointsAndLogContainer #PurchaseLevelsButton
 {
-	vertical-align: center;
+	margin-left: 8px;
+}
+
+.PointsSection .PointsSectionContainer #UnappliedActionsContainer
+{
+	height: 100%;
+	max-width: 260px;
+	padding: 0px 16px;
+	margin-left: 8px;
+	border-left: 1px solid rgba(255, 255, 255, 0.5);
+	border-brush: gradient( linear, 0% 0%, 0% 100%, from( primaryColor3 ), to( primaryColor4 ) );
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( secondaryColor1 ), to( secondaryColor3 ) );
+	visibility: collapse;
+}
+
+.HasUnclaimedRewards .PointsSection .PointsSectionContainer #UnappliedActionsContainer,.HasUnclaimedLevels .PointsSection .PointsSectionContainer #UnappliedActionsContainer,.HasUnclaimedBoosters .PointsSection .PointsSectionContainer #UnappliedActionsContainer
+{
+	visibility: visible;
+	animation-name: PulseUnclaimedRewardsBadge;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
+	animation-direction: alternate-reverse;
+}
+
+.PointsSection .PointsSectionContainer #UnappliedActionsContainer .UnappliedAction
+{
+	flow-children: down;
+	vertical-align: middle;
+	margin-top: -2px;
+	visibility: collapse;
+}
+
+.PointsSection .PointsSectionContainer #UnappliedActionsContainer .UnappliedAction .Text
+{
+	horizontal-align: middle;
 	flow-children: right;
+	margin-right: 4px;
+}
+
+.PointsSection .PointsSectionContainer #UnappliedActionsContainer .UnappliedAction .Text .Icon
+{
+	width: 20px;
+	height: 20px;
+	vertical-align: middle;
+	wash-color: primaryColor3;
+	margin-right: 3px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.PointsSection .PointsSectionContainer #UnappliedActionsContainer .UnappliedAction .Text .NumberValue
+{
+	font-size: 30px;
+	font-weight: bold;
+	color: black;
+	text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.2);
+}
+
+.PointsSection .PointsSectionContainer #UnappliedActionsContainer .UnappliedAction .Description
+{
+	font-size: 14px;
+	text-transform: uppercase;
+	color: black;
+	margin-top: -4px;
+	font-weight: semi-bold;
+	text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.2);
+}
+
+.PointsSection .PointsSectionContainer #UnappliedActionsContainer .UnappliedRewards .Icon
+{
+	background-image: url("s2r://panorama/images/control_icons/24px/rewards.vsvg");
+}
+
+.PointsSection .PointsSectionContainer #UnappliedActionsContainer .UnappliedLevels .Icon
+{
+	background-image: url("s2r://panorama/images/control_icons/24px/apply_levels.vsvg");
+}
+
+.PointsSection .PointsSectionContainer #UnappliedActionsContainer .UnappliedBoosters .Icon
+{
+	background-image: url("s2r://panorama/images/control_icons/24px/boosters.vsvg");
+}
+
+.HasUnclaimedRewards .PointsSection .PointsSectionContainer #UnappliedActionsContainer .UnappliedRewards,.HasUnclaimedLevels .PointsSection .PointsSectionContainer #UnappliedActionsContainer .UnappliedLevels,.HasUnclaimedBoosters .PointsSection .PointsSectionContainer #UnappliedActionsContainer .UnappliedBoosters
+{
+	visibility: visible;
 }
 
 .PointsSection .CurrentLevelShieldContainer
@@ -1141,7 +1231,7 @@ DOTABPBackgroundInternational2023
 
 .OwnsEvent #EventChampionsContainer
 {
-	height: 520px;
+	height: 546px;
 }
 
 #EventChampionsContainer .EventChampionsContent
@@ -1168,7 +1258,7 @@ DOTABPBackgroundInternational2023
 
 .OwnsEvent #EventChampionsContainer .EventChampionsContent .LogoSmall
 {
-	width: 320px;
+	width: 300px;
 }
 
 .OwnsEvent #EventChampionsContainer .EventChampionsContent .LogoStars
@@ -1181,7 +1271,7 @@ DOTABPBackgroundInternational2023
 #EventChampionsContainer .EventChampionsContent .ChampionsTitle
 {
 	horizontal-align: center;
-	font-size: 56px;
+	font-size: 52px;
 	font-family: titleFont;
 	letter-spacing: -1px;
 	text-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
@@ -1189,7 +1279,7 @@ DOTABPBackgroundInternational2023
 	margin-top: 8px;
 	text-overflow: shrink;
 	text-align: center;
-	height: 82px;
+	max-height: 76px;
 }
 
 #EventChampionsContainer .EventChampionsContent .ChampionsDescription

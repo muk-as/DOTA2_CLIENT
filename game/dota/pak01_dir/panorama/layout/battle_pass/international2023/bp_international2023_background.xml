@@ -176,12 +176,34 @@
 							<Panel class="PointIcon" />
 							<Label class="PointsLabel LabelLarge VerticalCenter LightestGreyText Opacity_80" html="true" text="&lt;b&gt;{d:current_level_progress}&lt;/b&gt; / {d:max_level_progress}" />
 							<TextButton id="PointsLogButton" text="#DOTA_BattlePassLog_Title_Short" class="ButtonPrimary TI23Blue Small" onactivate="DOTAShowBattlePassLog( EVENT_ID_INTERNATIONAL_2023 )" />
+							<TextButton id="PurchaseLevelsButton" text="#DOTA_ProfileCard_Event_BuyLevels" class="ButtonPrimary TI23Blue Small" onactivate="DOTAPurchaseEventLevelsSource( EVENT_ID_INTERNATIONAL_2023, BattlePass )" />
 						</Panel>
 						<ProgressBar id="CurrentLevelProgressBar" />
 					</Panel>
-					<Panel id="LevelButtons">
-						<TextButton id="PurchaseLevelsButton" class="ButtonPrimary TI23Blue" onactivate="DOTAPurchaseEventLevelsSource( EVENT_ID_INTERNATIONAL_2023, BattlePass )" text="#DOTA_TI6_BattlePass_PurchaseLevels" />
+					<Panel id="UnappliedActionsContainer">
+						<Panel class="UnappliedAction UnappliedRewards">
+							<Panel class="Text">
+								<Panel class="Icon" />
+								<Label class="NumberValue" text="{d:unclaimed_rewards}" />
+							</Panel>
+							<Label class="Description" text="{s:unclaimed_rewards_text}" />
+						</Panel>
+						<Panel class="UnappliedAction UnappliedLevels">
+							<Panel class="Text">
+								<Panel class="Icon" />
+								<Label class="NumberValue" text="{d:unclaimed_levels}" />
+							</Panel>
+							<Label class="Description" text="{s:unclaimed_levels_text}" />
+						</Panel>
+						<Panel class="UnappliedAction UnappliedBoosters">
+							<Panel class="Text">
+								<Panel class="Icon" />
+								<Label class="NumberValue" text="{d:unclaimed_boosters}" />
+							</Panel>
+							<Label class="Description" text="{s:unclaimed_boosters_text}" />
+						</Panel>
 					</Panel>
+					<Panel class="PointsSectionBorder" hittest="false" />
 				</Panel>
 				<Panel class="CurrentLevelShieldContainer">
 					<DOTAScenePanel id="EventLevelParticles" map="backgrounds/accept_popup_test" camera="shot_camera" particleonly="true" />
