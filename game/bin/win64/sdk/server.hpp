@@ -64208,7 +64208,7 @@ public:
 
 // Registered binary: server.dll (project 'server')
 // Alignment: 8
-// Size: 0x570
+// Size: 0x568
 // Has VTable
 // 
 // MPulseBindableTarget
@@ -64216,7 +64216,6 @@ public:
 class CDOTA_Ability_VengefulSpirit_Magic_Missile : public CDOTABaseAbility
 {
 public:
-	bool m_bShouldBounce; // 0x568	
 };
 
 // Registered binary: server.dll (project 'server')
@@ -73462,12 +73461,12 @@ public:
 
 // Registered binary: server.dll (project 'server')
 // Alignment: 8
-// Size: 0x12c8
+// Size: 0x1380
 // Has VTable
 class CDOTA_Modifier_FacelessVoid_Chronosphere_Freeze : public CDOTA_Buff
 {
 public:
-	// No schema binary for binding
+	CUtlVectorFixedGrowable< CHandle< CDOTABaseAbility > > m_vecAbilities; // 0x12c8	
 };
 
 // Registered binary: server.dll (project 'server')

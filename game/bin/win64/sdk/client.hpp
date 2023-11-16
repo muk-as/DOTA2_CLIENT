@@ -79026,7 +79026,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x5b8
+// Size: 0x5b0
 // Has VTable
 // 
 // MPulseBindableTarget
@@ -79034,7 +79034,6 @@ public:
 class C_DOTA_Ability_VengefulSpirit_Magic_Missile : public C_DOTABaseAbility
 {
 public:
-	bool m_bShouldBounce; // 0x5b0	
 };
 
 // Registered binary: client.dll (project 'client')
