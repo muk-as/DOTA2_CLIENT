@@ -94169,7 +94169,8 @@ public:
 	float max_threshold_duration; // 0x12f4	
 	int32_t shard_bonus_damage_pct; // 0x12f8	
 	int32_t shard_heal_pct; // 0x12fc	
-	bool m_bIsReflection; // 0x1300	
+	float shard_creep_penalty; // 0x1300	
+	bool m_bIsReflection; // 0x1304	
 };
 
 // Registered binary: server.dll (project 'server')
