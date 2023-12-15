@@ -101263,7 +101263,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x648
+// Size: 0x650
 // Has VTable
 // 
 // MPulseBindableTarget
@@ -101271,6 +101271,7 @@ public:
 class C_DOTA_Item_Safety_Bubble : public C_DOTA_Item
 {
 public:
+	bool m_bUnequipped; // 0x648	
 };
 
 // Registered binary: client.dll (project 'client')

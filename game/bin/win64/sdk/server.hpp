@@ -112150,7 +112150,7 @@ public:
 
 // Registered binary: server.dll (project 'server')
 // Alignment: 8
-// Size: 0x610
+// Size: 0x618
 // Has VTable
 // 
 // MPulseBindableTarget
@@ -112158,6 +112158,7 @@ public:
 class CDOTA_Item_Safety_Bubble : public CDOTA_Item
 {
 public:
+	bool m_bUnequipped; // 0x610	
 };
 
 // Registered binary: server.dll (project 'server')
