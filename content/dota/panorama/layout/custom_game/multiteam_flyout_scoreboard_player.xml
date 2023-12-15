@@ -1,27 +1,12 @@
 <root>
-    <styles>
+	<styles>
  		<include src="file://{resources}/styles/dotastyles.css" />
 		<include src="file://{resources}/styles/custom_game/shared_scoreboard_styles.css" />
-        <include src="file://{resources}/styles/custom_game/multiteam_flyout_scoreboard.css" />
-    </styles>
-	<script>
-		function ToggleMute()
-		{
-			var playerId = $.GetContextPanel().GetAttributeInt( "player_id", -1 );
-			if ( playerId !== -1 )
-			{
-				var newIsMuted = !Game.IsPlayerMuted( playerId );
-				Game.SetPlayerMuted( playerId, newIsMuted );
-				$.GetContextPanel().SetHasClass( "player_muted", newIsMuted );
-			}
-		}
-
-		(function()
-		{
-			var playerId = $.GetContextPanel().GetAttributeInt( "player_id", -1 );
-			$.GetContextPanel().SetHasClass( "player_muted", Game.IsPlayerMuted( playerId ) );
-		})();
-	</script>
+		<include src="file://{resources}/styles/custom_game/multiteam_flyout_scoreboard.css" />
+	</styles>
+	<scripts>
+		<include src="file://{resources}/scripts/custom_game/multiteam_flyout_scoreboard_player.js" />
+	</scripts>
 	<Panel class="PlayerRow">
 		<Panel id="PlayerRowContainer">
 			<Panel id="Hero" class="ScoreCol_Hero ScoreboardPanel">
@@ -50,5 +35,3 @@
 		<Panel id="UltimateIndicator" class="UltimateIndicatorShared" />
 	</Panel>
 </root>
-
-

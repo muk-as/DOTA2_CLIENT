@@ -7,39 +7,9 @@
 		<include src="s2r://panorama/styles/dashboard_page_post_game.vcss_c" />
 		<include src="s2r://panorama/styles/battle_pass/international2022/bp_international2022_shared_part2.vcss_c" />
 	</styles>
-	<script><![CDATA[
-		function AdvanceTimeline()
-		{
-			if ( !g_bPlaying )
-				return false;
-
-			$( '#DetailsHeatmapsTimelineSlider' ).value += 0.0001;
-			if ( $( '#DetailsHeatmapsTimelineSlider' ).value >= 1.0 )
-			{
-				g_bPlaying = false;
-				return true;
-			}
-
-			$.Schedule( 0.01, AdvanceTimeline );
-			return true;
-		};
-
-		var g_bPlaying = false;
-		function TogglePlayPause()
-		{
-			g_bPlaying = !g_bPlaying;
-			if ( g_bPlaying )
-			{
-				if ( $( '#DetailsHeatmapsTimelineSlider' ).value >= 1.0 )
-				{
-					$( '#DetailsHeatmapsTimelineSlider' ).value = 0.0;
-				}
-				AdvanceTimeline();
-			}
-		};
-    
-    $("#CustomGameOverviewTeamScores").text = "<font class='FontTeam2'>16</font> - <font class='FontTeam3'>16</font> - <font class='FontTeam6'>16</font>";
-	]]></script>
+	<scripts>
+		<include src="s2r://panorama/scripts/dashboard_page_post_game.vjs_c" />
+	</scripts>
 	<snippets>
 		<snippet name="CustomGamePlayerRowLegend">
 			<Panel class="CustomGamePlayerRowLegend">

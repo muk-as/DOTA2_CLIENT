@@ -5,24 +5,9 @@
 		<include src="s2r://panorama/styles/custom_game/shared_scoreboard_styles.vcss_c" />
 		<include src="s2r://panorama/styles/custom_game/multiteam_flyout_scoreboard.vcss_c" />
 	</styles>
-	<script><![CDATA[
-		function ToggleMute()
-		{
-			var playerId = $.GetContextPanel().GetAttributeInt( "player_id", -1 );
-			if ( playerId !== -1 )
-			{
-				var newIsMuted = !Game.IsPlayerMuted( playerId );
-				Game.SetPlayerMuted( playerId, newIsMuted );
-				$.GetContextPanel().SetHasClass( "player_muted", newIsMuted );
-			}
-		}
-
-		(function()
-		{
-			var playerId = $.GetContextPanel().GetAttributeInt( "player_id", -1 );
-			$.GetContextPanel().SetHasClass( "player_muted", Game.IsPlayerMuted( playerId ) );
-		})();
-	]]></script>
+	<scripts>
+		<include src="s2r://panorama/scripts/custom_game/multiteam_flyout_scoreboard_player.vjs_c" />
+	</scripts>
 	<Panel class="PlayerRow">
 		<Panel id="PlayerRowContainer">
 			<Panel id="Hero" class="ScoreCol_Hero ScoreboardPanel">

@@ -6,20 +6,9 @@
 		<include src="s2r://panorama/styles/showcase/showcase_shared.vcss_c" />
 		<include src="s2r://panorama/styles/showcase/dashboard_page_showcase.vcss_c" />
 	</styles>
-	<script><![CDATA[
-		var Resolve = function( strEvent )
-		{
-			for ( var i = 0; i < arguments.length; i++ )
-			{
-				// Resolve any string that looks like a dialog variable
-				if ( ( typeof arguments[i] === 'string' ) && ( arguments[i][0] == '{' ) )
-				{
-					arguments[i] = $.Localize( arguments[i], $.GetContextPanel() );
-				}
-			}
-			$.DispatchEvent.apply( $, arguments );
-		};
-	]]></script>
+	<scripts>
+		<include src="s2r://panorama/scripts/showcase/dashboard_page_showcase.vjs_c" />
+	</scripts>
 	<DOTAShowcasePage class="DashboardPage">
 		<AsyncDataPanel class="ShowcaseData" state="{d:showcase_state}" loading-text="#DOTA_Showcase_Loading" error-text="#DOTA_Showcase_LoadFailed">
 			<Panel class="AsyncSuccessContainer ShowcaseMain">
@@ -85,6 +74,7 @@
 					</Panel>
 				</Panel>
 			</Panel>
+			<Label id="PendingApprovalLabel" text="#DOTA_Showcase_PendingApproval" onmouseover="UIShowTextTooltip( #DOTA_Showcase_PendingApproval_Tooltip )" onmouseout="UIHideTextTooltip()" />
 		</Panel>
 		<Panel id="MainEditControls">
 			<Panel id="BehaviorStatus" class="HideIfEditing" onactivate="DOTAConductShowBehaviorReport()">
@@ -100,8 +90,11 @@
 					</Panel>
 				</Panel>
 			</Panel>
-			<Button id="UndoButton" class="ButtonPrimary LightGrey Large" onactivate="DOTAShowcaseUndo( ShowcaseContents )" onmouseover="UIShowTextTooltip( &apos;#DOTA_Showcase_Undo_Title&apos; )" onmouseout="UIHideTextTooltip()">
+			<Button id="UndoButton" class="ShowIfEditing ButtonPrimary LightGrey Large" onactivate="DOTAShowcaseUndo( ShowcaseContents )" onmouseover="UIShowTextTooltip( &apos;#DOTA_Showcase_Undo_Title&apos; )" onmouseout="UIHideTextTooltip()">
 				<Image src="s2r://panorama/images/control_icons/24px/undo.vsvg" />
+			</Button>
+			<Button id="GridSnapButton" class="ShowIfEditing ButtonPrimary LightGrey Large" onactivate="DOTAShowcaseToggleDefaultGridSnap( ShowcaseContents )" onmouseover="UIShowTextTooltip( &apos;#DOTA_Showcase_GridSnap_Title&apos; )" onmouseout="UIHideTextTooltip()">
+				<Image src="s2r://panorama/images/topbar/guides_png.vtex" />
 			</Button>
 			<Button id="AddItemButton" class="ShowIfEditing ButtonPrimary LightGrey Large" onactivate="DOTAShowcaseAddNewItem()" onmouseover="UIShowTextTooltip( &apos;#DOTA_Showcase_AddItem_Title&apos; )" onmouseout="UIHideTextTooltip()">
 				<Image src="s2r://panorama/images/control_icons/24px/plus.vsvg" />
@@ -152,7 +145,7 @@
 				<Image src="s2r://panorama/images/control_icons/24px/send_to_front.vsvg" />
 			</Button>
 			<Button id="CustomizeAppearanceButton" class="ShowIfItemSelected ButtonPrimary DarkGrey" onactivate="DOTAShowcaseSelectedItemCustomizeAppearance( ShowcaseContents )">
-				<Label text="#DOTA_Showcase_PickSet_Label" />
+				<Label text="#DOTA_Showcase_Customize_Label" />
 			</Button>
 			<Button id="MoreOptionsButton" class="ShowIfItemSelected ButtonPrimary DarkGrey" onactivate="DOTAShowcaseShowMoreOptions()" onmouseover="UIShowTextTooltip( &apos;#DOTA_Showcase_Tooltip_More_Options&apos; )" onmouseout="UIHideTextTooltip()">
 				<Image src="s2r://panorama/images/control_icons/24px/other.vsvg" />

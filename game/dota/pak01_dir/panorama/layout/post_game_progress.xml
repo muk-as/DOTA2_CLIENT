@@ -23,6 +23,7 @@
 		<include src="s2r://panorama/scripts/post_game_progress/post_game_progress_fall2021.vjs_c" />
 		<include src="s2r://panorama/scripts/post_game_progress/post_game_progress_battle_pass_2022.vts_c" />
 		<include src="s2r://panorama/scripts/post_game_progress/post_game_progress_international2023.vts_c" />
+		<include src="s2r://panorama/scripts/post_game_progress/post_game_progress_frostivus2023.vts_c" />
 		<include src="s2r://panorama/scripts/post_game_progress/post_game_progress_sequence.vts_c" />
 	</scripts>
 	<snippets>
@@ -874,6 +875,77 @@
 				<Label class="NewlyCompletedLabel LabelLarge" text="#DOTA_Spring2021PostGame_Complete" />
 			</Panel>
 		</snippet>
+		<snippet name="Frostivus2023MatchDailyBonusProgress">
+			<Panel id="Frostivus2023MatchDailyBonusProgress" class="Frostivus2023ProgressTypeContainer">
+				<Panel class="Frostivus2023ProgressTitleContainer DailyBonus">
+					<Panel class="ProgressLogo" />
+					<Label class="ProgressTypeTitle" text="#DOTA_BattlePassPostGame_DailyBonus" />
+					<Label class="PointsLabel" text="{d:points_granted}" />
+				</Panel>
+			</Panel>
+		</snippet>
+		<snippet name="Frostivus2023MatchGameResultProgress">
+			<Panel id="Frostivus2023MatchGameResultProgress" class="Frostivus2023ProgressTypeContainer">
+				<Panel class="Frostivus2023ProgressTitleContainer GameResult">
+					<Panel class="ProgressLogo" />
+					<Label class="ProgressTypeTitle IsWin" text="#DOTA_BattlePassPostGame_Win" />
+					<Label class="ProgressTypeTitle IsLoss" text="#DOTA_BattlePassPostGame_Loss" />
+					<Label class="ProgressTypeTitle IsTurboWin" text="#DOTA_BattlePassPostGame_TurboWin" />
+					<Label class="ProgressTypeTitle IsTurboLoss" text="#DOTA_BattlePassPostGame_TurboLoss" />
+					<Label class="PointsLabel" text="{d:points_granted}" />
+				</Panel>
+			</Panel>
+		</snippet>
+		<snippet name="Frostivus2023MatchTipsProgress">
+			<Panel id="Frostivus2023MatchTipsProgress" class="Frostivus2023ProgressTypeContainer">
+				<Panel class="Frostivus2023ProgressTitleContainer Tips">
+					<Panel class="ProgressLogo" />
+					<Label class="ProgressTypeTitle" text="#DOTA_BattlePassPostGame_TipsReceived" />
+					<Label class="PointsLabel" text="{d:points_granted}" />
+				</Panel>
+			</Panel>
+		</snippet>
+		<snippet name="Frostivus2023Progress">
+			<Panel class="ProgressScreen" onactivate="StartSkippingAhead()">
+				<Panel class="Frostivus2023Background" />
+				<Panel id="Frostivus2023ProgressMain" hittest="false">
+					<Panel class="Frostivus2023ProgressTitle">
+						<Panel class="Frostivus2023ProgressTitleGlowContainer">
+							<Label class="Frostivus2023ProgressTitleText" text="#DOTA_Frostivus2023PostGame_Progress" />
+						</Panel>
+						<Panel class="Frostivus2023Logo" />
+					</Panel>
+					<Panel id="Frostivus2023ProgressCore" class="SeasonalPassProgressCore" />
+					<Panel id="Frostivus2023ProgressCenter" class="LeftRightFlow SeasonalPassProgressCenter">
+						<Panel id="BattlePassProgressCenter">
+							<Panel class="BattlePassProgressBarTop">
+								<Panel class="TreasureRewardContainer">
+									<DOTAScenePanel id="ChestBackgroundParticles" map="backgrounds/accept_popup_test" camera="shot_camera" particleonly="true" />
+									<Panel id="TreasureRewardIcon" onmouseover="DOTAShowEconItemTooltip( 23685, -1, -1 )" onmouseout="DOTAHideEconItemTooltip()" onactivate="DOTAShowItemDefPage( 23685 )" />
+								</Panel>
+								<Panel class="FrostivusProgressContainer">
+									<Panel class="BattlePassPointsTotalContainer">
+										<Label class="BattlePassPointsTotalTitle" text="#DOTA_PostGame_PointsEarned" />
+										<Panel class="BattlePassPointsTotalGlowContainer">
+											<Label class="BattlePassPointsTotal" text="+{d:total_points_gained}" />
+										</Panel>
+									</Panel>
+									<Panel id="BattleLevelProgressContainer">
+										<Panel class="ProgressBarContainer">
+											<Label class="BattlePassProgressLevelProgressTitle" text="#DOTA_PostGame_RewardProgress" />
+											<ProgressBarWithMiddle id="BattleLevelProgress" min="0" max="1000" />
+											<Panel id="BattleLevelProgressSection">
+												<Label class="BattlePassLevelProgressBP" text="#DOTA_BattlePass_BPProgress" />
+											</Panel>
+										</Panel>
+									</Panel>
+								</Panel>
+							</Panel>
+						</Panel>
+					</Panel>
+				</Panel>
+			</Panel>
+		</snippet>
 		<snippet name="CavernCrawlProgress">
 			<Panel class="ProgressScreen" onactivate="StartSkippingAhead()">
 				<DOTACavernCrawlPostGameProgress id="CavernCrawl" />
@@ -1180,9 +1252,9 @@
 			<TextButton class="PopupButton" text="Event Points" unlocalized="true" onactivate="TestAnimateEventPointsProgress()" />
 			<TextButton class="PopupButton" text="Diretide 2020" unlocalized="true" onactivate="TestAnimateDiretideProgress()" />
 			<TextButton class="PopupButton" text="Spring 2021" unlocalized="true" onactivate="TestAnimateSpring2021()" />
-			<TextButton class="PopupButton" text="Fall 2021" unlocalized="true" onactivate="TestAnimateFall2021()" />
 			<TextButton class="PopupButton" text="BP 2022" unlocalized="true" onactivate="TestAnimateBattlePass2022()" />
 			<TextButton class="PopupButton" text="International 2023" unlocalized="true" onactivate="TestAnimateInternational2023()" />
+			<TextButton class="PopupButton" text="Frostivus 2023" unlocalized="true" onactivate="TestAnimateFrostivus2023()" />
 			<TextButton class="PopupButton Blue" text="Reset" unlocalized="true" onactivate="ResetScreens()" />
 			<TextButton class="PopupButton Blue" text="Exit" unlocalized="true" onactivate="HideProgress()" />
 		</Panel>

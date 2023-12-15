@@ -4,20 +4,9 @@
 		<include src="s2r://panorama/styles/custom_game/cavern_scoreboard.vcss_c" />
 		<include src="s2r://panorama/styles/custom_game/cavern_top_bar.vcss_c" />
 	</styles>
-	<script><![CDATA[
-		function ToggleMute()
-		{
-
-			var nPlayerID = $.GetContextPanel().GetAttributeInt( "player_id", -1 );
-			if ( nPlayerID !== -1 )
-			{
-				$.Msg( "Player ID: " + nPlayerID );
-				var newIsMuted = !Game.IsPlayerMuted( nPlayerID );
-				Game.SetPlayerMuted( nPlayerID, newIsMuted );
-				$.GetContextPanel().SetHasClass( "player_muted", newIsMuted );
-			}
-		}
-	]]></script>
+	<scripts>
+		<include src="s2r://panorama/scripts/custom_game/cavern_scoreboard_player.vjs_c" />
+	</scripts>
 	<Panel class="PlayerRow LeftRightFlow">
 		<Panel id="TeamColorBand" />
 		<DOTAHeroImage heroid="22" id="PlayerHeroIcon" hittest="false" class="PlayerHeroIcon" heroimagestyle="icon" scaling="stretch-to-cover-preserve-aspect" />

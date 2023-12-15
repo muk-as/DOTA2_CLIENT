@@ -7,53 +7,9 @@
 		<include src="s2r://panorama/styles/popups/popup_settings.vcss_c" />
 		<include src="s2r://panorama/styles/ranked_phone.vcss_c" />
 	</styles>
-	<script><![CDATA[
-		function updateMinimapPreview()
-		{
-		var minimapPanel = $( "#MinimapContainer" );
-		if ( !minimapPanel )
-		return;
-
-		minimapPanel.SetHasClass( "SimpleColors", $("#dota_minimap_simple_colors").checked );
-		minimapPanel.SetHasClass( "UseHeroIcons", $("#dota_minimap_show_hero_icon").checked );
-		minimapPanel.SetHasClass( "SwapToggle", $("#dota_minimap_always_draw_hero_icons").checked );
-		minimapPanel.SetHasClass( "NoBackground", $("#dota_minimap_hide_background").checked );
-		minimapPanel.SetHasClass( "SimpleBackground", $("#dota_minimap_simple_background").checked );
-		minimapPanel.SetHasClass( "ExtraLargeMinimap", $("#dota_hud_extra_large_minimap").checked );
-
-		var heroSizePanel = $( "#dota_minimap_hero_size" );
-		var iconValue = heroSizePanel.value;
-		var minScale = 0.22;
-		var maxScale = .92;
-		var iconScale = ( ( iconValue - heroSizePanel.min )  / ( heroSizePanel.max - heroSizePanel.min ) ) * ( maxScale - minScale ) + minScale;
-
-		var heroRegEx = /Hero\d+$/;
-
-		for ( var i = 0; i < minimapPanel.GetChildCount(); ++i )
-			{
-				var childPanel = minimapPanel.GetChild( i );
-				if ( !heroRegEx.test( childPanel.id ) )
-					continue;
-				
-				childPanel.style.preTransformScale2d = iconScale;
-			}
-		}
-		
-		function changeActiveTab( nTab )
-		{
-			$.DispatchEvent( 'DOTASetActiveTab', nTab );
-			
-			var disableShowingAdvanced = [ 'InGameSubTab', 'HotkeysBottomNav', 'OptionsTabContent', 'OptionsBottomNav' ];
-			for ( var i = 0; i < disableShowingAdvanced.length; ++i )
-			{
-				var panel = $('#' + disableShowingAdvanced[ i ] );
-				if ( panel )
-				{
-					panel.RemoveClass( 'ShowingAdvanced' );
-				}
-			}
-		}
-	]]></script>
+	<scripts>
+		<include src="s2r://panorama/scripts/popups/popup_settings.vjs_c" />
+	</scripts>
 	<snippets>
 		<snippet name="HotkeysTabContent">
 			<Panel class="SettingsSecondaryPanel">
@@ -1078,7 +1034,7 @@
 						<Panel id="GameOptions" class="SettingsSection">
 							<Label text="#dota_settings_game" class="SectionHeader" />
 							<Panel class="SectionHeaderLine" />
-							<DOTASettingsEnum id="AutoAttackOptions" convar="dota_player_units_auto_attack_mode" text="#dota_settings_autoattack">
+							<DOTASettingsEnum id="AutoAttackOptions" convar="dota_player_units_auto_attack_mode" text="#dota_settings_autoattack" onvaluechanged="updateMinimapPreview()">
 								<RadioButton text="#dota_settings_autoattack_never" value="0" class="EnumButton" group="unit_attack" onmouseover="UIShowTextTooltipStyled( #DOTA_Settings_Tooltip_AutoattackNever, OptionsTooltip)" onmouseout="UIHideTextTooltip()" />
 								<RadioButton text="#dota_settings_autoattack_after_spellcast" value="1" class="EnumButton" group="unit_attack" onmouseover="UIShowTextTooltipStyled( #DOTA_Settings_Tooltip_AutoattackAfterSpell, OptionsTooltip)" onmouseout="UIHideTextTooltip()" />
 								<RadioButton text="#dota_settings_autoattack_always" value="2" class="EnumButton" group="unit_attack" onmouseover="UIShowTextTooltipStyled( #DOTA_Settings_Tooltip_AutoattackAlways, OptionsTooltip)" onmouseout="UIHideTextTooltip()" />
@@ -1089,7 +1045,7 @@
 							<DOTASettingsCheckbox convar="dota_player_multipler_orders" text="#dota_settings_unifiedorders" onmouseover="UIShowTextTooltipStyled( #DOTA_Settings_Tooltip_UnifiedOrders, OptionsTooltip)" onmouseout="UIHideTextTooltip()" />
 							<DOTASettingsCheckbox convar="dota_player_teleport_requires_halt" text="#dota_settings_teleportrequireshalt" onmouseover="UIShowTextTooltipStyled( #DOTA_Settings_Tooltip_TeleportStop, OptionsTooltip)" onmouseout="UIHideTextTooltip()" />
 							<DOTASettingsCheckbox convar="dota_player_channels_require_stop" text="#dota_settings_channelrequireshalt" onmouseover="UIShowTextTooltipStyled( #DOTA_Settings_Tooltip_ChannelStop, OptionsTooltip)" onmouseout="UIHideTextTooltip()" />
-							<DOTASettingsEnum convar="dota_force_right_click_attack" text="#dota_settings_force_right_click_attack">
+							<DOTASettingsEnum convar="dota_force_right_click_attack" text="#dota_settings_force_right_click_attack" onvaluechanged="updateMinimapPreview()">
 								<RadioButton text="#dota_settings_force_right_click_attack_0" class="EnumButton" group="force_right_click_attack" value="0" onmouseover="UIShowTextTooltipStyled( #DOTA_Settings_Tooltip_Force_Right_Click_Attack_0, OptionsTooltip)" onmouseout="UIHideTextTooltip()" />
 								<RadioButton text="#dota_settings_force_right_click_attack_1" class="EnumButton" group="force_right_click_attack" value="1" onmouseover="UIShowTextTooltipStyled( #DOTA_Settings_Tooltip_Force_Right_Click_Attack, OptionsTooltip)" onmouseout="UIHideTextTooltip()" />
 								<RadioButton text="#dota_settings_force_right_click_attack_2" class="EnumButton" group="force_right_click_attack" value="2" onmouseover="UIShowTextTooltipStyled( #DOTA_Settings_Tooltip_Force_Right_Click_Attack_2, OptionsTooltip)" onmouseout="UIHideTextTooltip()" />
@@ -1113,10 +1069,20 @@
 						<Panel id="MinimapOptions" class="SettingsSection">
 							<Label text="#dota_settings_minimap" class="SectionHeader" />
 							<Panel class="SectionHeaderLine LeftRightFlow" />
-							<Panel id="MinimapPreview">
+							<Panel id="MinimapPreview" class="AltUp">
 								<Panel id="MinimapContainer">
 									<Panel id="MinimapImageBlank" />
 									<Panel id="MinimapImage" />
+									<Panel id="Hero1Arrow" class="MinimapTeam MinimapArrow" />
+									<Panel id="Hero2Arrow" class="MinimapTeam MinimapArrow" />
+									<Panel id="Hero3Arrow" class="MinimapTeam MinimapArrow" />
+									<Panel id="Hero4Arrow" class="MinimapTeam MinimapArrow" />
+									<Panel id="Hero5Arrow" class="MinimapTeam MinimapArrow" />
+									<Panel id="Hero6Arrow" class="MinimapEnemy MinimapArrow" />
+									<Panel id="Hero7Arrow" class="MinimapEnemy MinimapArrow" />
+									<Panel id="Hero8Arrow" class="MinimapEnemy MinimapArrow" />
+									<Panel id="Hero9Arrow" class="MinimapEnemy MinimapArrow" />
+									<Panel id="Hero10Arrow" class="MinimapEnemy MinimapArrow" />
 									<Panel id="Hero2" class="MinimapTeam MinimapIcon" />
 									<Panel id="Hero3" class="MinimapTeam MinimapIcon" />
 									<Panel id="Hero4" class="MinimapTeam MinimapIcon" />
@@ -1138,22 +1104,62 @@
 									<Label id="Hero10Label" class="MinimapLabel EnemyLabel" text="#npc_dota_hero_bounty_hunter" />
 									<Panel id="Hero1" class="MinimapIcon MinimapTeam" />
 								</Panel>
-								<Button id="AltKeycontainer" onmouseover="AddStyle( MinimapPreview, AltDown )" onmouseout="RemoveStyle( MinimapPreview, AltDown )">
+								<Button id="AltKeycontainer" onmouseover="AddStyle( MinimapPreview, AltDown ); RemoveStyle( MinimapPreview, AltUp )" onmouseout="RemoveStyle( MinimapPreview, AltDown ); AddStyle( MinimapPreview, AltUp )">
 									<Panel id="AltKey">
 										<Label text="#DOTA_Keybind_ALT" />
 									</Panel>
 								</Button>
 								<Label id="AltKeyPressed" text="#dota_settings_minimap_AltDown" />
 							</Panel>
-							<DOTASettingsCheckbox id="dota_minimap_simple_colors" convar="dota_minimap_simple_colors" text="#dota_settings_minimapsimplecolors" onmouseover="UIShowTextTooltipStyled( #DOTA_Settings_Tooltip_MinimapSimple, OptionsTooltip)" onmouseout="UIHideTextTooltip()" onactivate="updateMinimapPreview()" />
-							<DOTASettingsCheckbox id="dota_minimap_hide_background" convar="dota_minimap_hide_background" text="#dota_settings_minimaphidebackground" onactivate="updateMinimapPreview()" />
-							<DOTASettingsCheckbox id="dota_minimap_simple_background" convar="dota_minimap_simple_background" text="#dota_settings_minimapsimplebackground" onactivate="updateMinimapPreview()" />
-							<DOTASettingsCheckbox id="dota_hud_extra_large_minimap" convar="dota_hud_extra_large_minimap" text="#dota_settings_minimapextralarge" onactivate="updateMinimapPreview()" />
-							<DOTASettingsCheckbox id="dota_minimap_show_hero_icon" convar="dota_minimap_show_hero_icon" text="#dota_settings_minimapshowheroicon" onmouseover="UIShowTextTooltipStyled( #DOTA_Settings_Tooltip_MinimapDrawHeroes, OptionsTooltip)" onmouseout="UIHideTextTooltip()" onactivate="updateMinimapPreview()" />
-							<DOTASettingsCheckbox id="dota_minimap_always_draw_hero_icons" convar="dota_minimap_always_draw_hero_icons" text="#dota_settings_minimapalwaysshowname" onactivate="updateMinimapPreview()" onmouseover="UIShowTextTooltipStyled( #DOTA_Settings_Tooltip_InvertToggle, OptionsTooltip)" onmouseout="UIHideTextTooltip()" />
-							<DOTASettingsCheckbox convar="dota_hud_flip" text="#dota_settings_minimapflip" />
+							<Panel class="MinimapOptionsRow">
+								<Panel class="MinimapOptionsContainer">
+									<Panel class="ContainerHeader">
+										<Label text="#dota_settings_minimap_heroes" />
+									</Panel>
+									<DOTASettingsEnum id="PrimaryMinimapSetting" convar="dota_minimap_primary_option" onvaluechanged="updateMinimapPreview()">
+										<RadioButton id="primary_minimap_setting_heroes_icon_with_arrow" text="#dota_settings_minimap_heroes_icon_with_arrow" value="0" class="EnumButton" group="primary_minimap_setting" />
+										<RadioButton id="primary_minimap_setting_heroes_icon" text="#dota_settings_minimap_heroes_icon" value="3" class="EnumButton" group="primary_minimap_setting" />
+										<RadioButton id="primary_minimap_setting_heroes_arrow_player_colors" text="#dota_settings_minimap_heroes_arrow_player_colors" value="1" class="EnumButton" group="primary_minimap_setting" />
+										<RadioButton id="primary_minimap_setting_heroes_arrow_team_colors" text="#dota_settings_minimap_heroes_arrow_team_colors" value="2" class="EnumButton" group="primary_minimap_setting" />
+									</DOTASettingsEnum>
+								</Panel>
+								<Panel class="MinimapOptionsContainer">
+									<Panel class="ContainerHeader">
+										<Label text="#dota_settings_minimap_alt_heroes" />
+									</Panel>
+									<DOTASettingsEnum id="SecondaryMinimapSetting" convar="dota_minimap_secondary_option" onvaluechanged="updateMinimapPreview()">
+										<RadioButton id="secondary_minimap_setting_heroes_icon_with_arrow" text="#dota_settings_minimap_heroes_icon_with_arrow" value="0" class="EnumButton" group="secondary_minimap_setting" />
+										<RadioButton id="secondary_minimap_setting_heroes_icon" text="#dota_settings_minimap_heroes_icon" value="3" class="EnumButton" group="secondary_minimap_setting" />
+										<RadioButton id="secondary_minimap_setting_heroes_arrow_player_colors" text="#dota_settings_minimap_heroes_arrow_player_colors" value="1" class="EnumButton" group="secondary_minimap_setting" />
+										<RadioButton id="secondary_minimap_setting_heroes_arrow_team_colors" text="#dota_settings_minimap_heroes_arrow_team_colors" value="2" class="EnumButton" group="secondary_minimap_setting" />
+									</DOTASettingsEnum>
+								</Panel>
+							</Panel>
 							<DOTASettingsSlider id="dota_minimap_hero_size" convar="dota_minimap_hero_size" min="300" max="1200" percentage="true" value100percent="600" text="#dota_settings_minimap_hero_size" onvaluechanged="updateMinimapPreview()" />
 							<Panel class="SliderTick" />
+							<Panel class="MinimapOptionsRow">
+								<Panel class="MinimapOptionsContainer">
+									<Panel class="ContainerHeader">
+										<Label text="#dota_settings_minimap_background" />
+									</Panel>
+									<DOTASettingsEnum id="MinimapBackgroundSetting" convar="dota_minimap_background_option" onvaluechanged="updateMinimapPreview()">
+										<RadioButton id="dota_settings_minimap_background_none" text="#dota_settings_minimap_background_none" value="0" class="EnumButton" group="minimap_background" />
+										<RadioButton id="dota_settings_minimap_background_simple" text="#dota_settings_minimap_background_simple" value="1" class="EnumButton" group="minimap_background" />
+										<RadioButton text="#dota_settings_minimap_background_realistic" value="2" class="EnumButton" group="unit_attack" />
+									</DOTASettingsEnum>
+								</Panel>
+								<Panel class="MinimapOptionsContainer">
+									<Panel class="ContainerHeader">
+										<Label text="#dota_settings_minimap_position" />
+									</Panel>
+									<DOTASettingsEnum id="MinimapPositionSetting" convar="dota_minimap_position_option">
+										<RadioButton text="#dota_settings_minimap_position_left" value="0" class="EnumButton" group="minimap_position" />
+										<RadioButton text="#dota_settings_minimap_position_right" value="1" class="EnumButton" group="minimap_position" />
+									</DOTASettingsEnum>
+								</Panel>
+							</Panel>
+							<DOTASettingsCheckbox id="dota_hud_extra_large_minimap" convar="dota_hud_extra_large_minimap" text="#dota_settings_minimapextralarge" onactivate="updateMinimapPreview()" />
+							<DOTASettingsCheckbox convar="dota_minimap_hero_scalar" text="#dota_settings_minimap_hero_scalar" onmouseover="UIShowTextTooltipStyled( #DOTA_Settings_Tooltip_MinimapDynamicScale, OptionsTooltip)" onmouseout="UIHideTextTooltip()" />
 						</Panel>
 					</Panel>
 					<Panel id="Column2" class="SettingsColumn">
@@ -1258,7 +1264,6 @@
 									<Panel id="MiscConvarsList">
 										<DOTASettingsSlider convar="dota_minimap_misclick_time" min="0.0" max="0.5" displayprecision="2" text="#dota_settings_minimap_misclick_time" onmouseover="UIShowTextTooltipStyled( #DOTA_Settings_Tooltip_MinimapMisclick, OptionsTooltip)" onmouseout="UIHideTextTooltip()" />
 										<DOTASettingsSlider convar="dota_ability_self_cast_timeout" min="0.0" max="2.0" displayprecision="2" text="#dota_settings_ability_self_cast_timeout" onmouseover="UIShowTextTooltipStyled( #DOTA_Settings_Tooltip_SelfCastTimeout, OptionsTooltip)" onmouseout="UIHideTextTooltip()" />
-										<DOTASettingsCheckbox convar="dota_minimap_hero_scalar" text="#dota_settings_minimap_hero_scalar" onmouseover="UIShowTextTooltipStyled( #DOTA_Settings_Tooltip_MinimapDynamicScale, OptionsTooltip)" onmouseout="UIHideTextTooltip()" />
 										<DOTASettingsCheckbox convar="dota_continue_click_movement_after_cast_cancel" text="#dota_settings_continue_click_after_cast_cancel" onmouseover="UIShowTextTooltipStyled( #dota_settings_continue_click_after_cast_cancel_tooltip, OptionsTooltip)" onmouseout="UIHideTextTooltip()" />
 										<DOTASettingsCheckbox convar="dota_camera_deatheffect" text="#dota_settings_cameradeadcolorshift" />
 										<DOTASettingsCheckbox convar="dota_hud_netgraph" text="#dota_settings_networkhud" onmouseover="UIShowTextTooltipStyled( #DOTA_Settings_Tooltip_NetworkInformation, OptionsTooltip)" onmouseout="UIHideTextTooltip()" />
@@ -1304,6 +1309,7 @@
 									<RadioButton group="AspectRatioButtons" class="OptionsCheckBox" onactivate="DOTASetAspectRatio(0);" id="4x3Button" text="#dota_settings_aspectratio43" />
 									<RadioButton group="AspectRatioButtons" class="OptionsCheckBox" onactivate="DOTASetAspectRatio(1);" id="16x9Button" text="#dota_settings_aspectratio169" />
 									<RadioButton group="AspectRatioButtons" class="OptionsCheckBox" onactivate="DOTASetAspectRatio(2);" id="16x10Button" text="#dota_settings_aspectratio1610" />
+									<RadioButton group="AspectRatioButtons" class="OptionsCheckBox" onactivate="DOTASetAspectRatio(3);" id="21x9Button" text="#dota_settings_aspectratio219" />
 								</Panel>
 								<Panel class="LeftRightFlow">
 									<Panel class="TopBottomFlow" id="ResolutionPanel">
@@ -1643,7 +1649,7 @@
 		</snippet>
 		<snippet name="ChatWheelUnlockInfo_EventGeneric">
 			<Panel class="ChatWheelUnlockInfo_EventGeneric">
-				<Panel id="LockIcon" onmouseout="UIHideTextTooltip()" onmouseover="UIShowTextTooltip( {s:unlock_explain} )" />
+				<Panel id="LockIcon" onmouseout="UIHideTextTooltip()" />
 			</Panel>
 		</snippet>
 		<snippet name="ItemSpecificBindEntry">

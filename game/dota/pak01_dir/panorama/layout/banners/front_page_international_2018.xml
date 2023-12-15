@@ -6,36 +6,9 @@
 		<include src="s2r://panorama/styles/battle_pass/international2018/bp_international2018_shared.vcss_c" />
 		<include src="s2r://panorama/styles/banners/front_page_international_2018.vcss_c" />
 	</styles>
-	<script><![CDATA[
-		function SetGrimstrokeVisible( bVisible )
-		{
-			$.GetContextPanel().SetHasClass( "GrimstrokeVisible", bVisible );
-		}
-		function ToggleGrimstrokeVisible()
-		{
-			$.GetContextPanel().ToggleClass( "GrimstrokeVisible" );
-		}
-
-		function SetGrimstrokeHighlighted( bHighlighted )
-		{
-			$.GetContextPanel().SetHasClass( "GrimstrokeHighlighted", bHighlighted );
-		}
-
-		var g_fCarouselAutoScrollDelay = 10.0;
-		function DoCarouselToggle()
-		{
-			if ( !$.GetContextPanel().BHasClass( "GrimstrokeHighlighted" ) )
-			{
-				ToggleGrimstrokeVisible();
-			}
-		
-			$.Schedule( g_fCarouselAutoScrollDelay, DoCarouselToggle );
-		}
-		$.Schedule( g_fCarouselAutoScrollDelay, function()
-		{
-			DoCarouselToggle();
-		} );
-	]]></script>
+	<scripts>
+		<include src="s2r://panorama/scripts/banners/front_page_international_2018.vjs_c" />
+	</scripts>
 	<Panel class="FrontpageTakeover GrimstrokeVisible">
 		<Panel id="MainContents">
 			<Panel id="Header">

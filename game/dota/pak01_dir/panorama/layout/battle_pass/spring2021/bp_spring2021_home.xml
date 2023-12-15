@@ -7,69 +7,9 @@
 		<include src="s2r://panorama/styles/battle_pass/spring2021/bp_spring2021_home.vcss_c" />
 		<include src="s2r://panorama/styles/battle_pass/spring2021/bp_spring2021_reward_list.vcss_c" />
 	</styles>
-	<script><![CDATA[
-			function OnMouseOverArcana()
-			{				
-				var arcanaScenePanel = $( '#Arcana' );
-				var now = Game.Time();
-				if ( now - OnMouseOverArcana.flLastTriggerTime > 5 )
-				{
-					OnMouseOverArcana.flLastTriggerTime = now;
-					arcanaScenePanel.FireEntityInput( 'ArcanaModel', 'StartGestureOverride', 'ACT_DOTA_BATTLEPASS_IDLE');
-				}
-				
-				var glowPanel = $( '#ArcanaGlow' );
-				var infoPanel = $( '#ArcanaInfo' );
-
-				arcanaScenePanel.ToggleClass('Hovered');
-				glowPanel.ToggleClass('Hovered');
-				infoPanel.ToggleClass('Hovered');
-			}
-			OnMouseOverArcana.flLastTriggerTime = 0;
-
-			function OnMouseOutArcana()
-			{
-				var arcanaScenePanel = $( '#Arcana' );
-				//arcanaScenePanel.FireEntityInput( 'ArcanaModel', 'StartGestureOverride', 'ACT_DOTA_LOADOUT');
-
-				var glowPanel = $( '#ArcanaGlow' );
-				var infoPanel = $( '#ArcanaInfo' );
-
-				arcanaScenePanel.ToggleClass('Hovered');
-				glowPanel.ToggleClass('Hovered');
-				infoPanel.ToggleClass('Hovered');
-			}
-			function OnMouseOverPersona()
-			{
-				var personaScenePanel = $( '#Persona' );
-				var now = Game.Time();
-				if ( now - OnMouseOverPersona.flLastTriggerTime > 8 )
-				{
-					OnMouseOverPersona.flLastTriggerTime = now;
-					personaScenePanel.FireEntityInput( 'PersonaModel', 'StartGestureOverride', 'ACT_DOTA_BATTLEPASS_IDLE');
-				}
-
-				var glowPanel = $( '#PersonaGlow' );
-				var infoPanel = $( '#PersonaInfo' );
-
-				personaScenePanel.ToggleClass('Hovered');
-				glowPanel.ToggleClass('Hovered');
-				infoPanel.ToggleClass('Hovered');
-			}
-			OnMouseOverPersona.flLastTriggerTime = 0;			
-			function OnMouseOutPersona()
-			{
-				var personaScenePanel = $( '#Persona' );
-				//personaScenePanel.FireEntityInput( 'PersonaModel', 'StartGestureOverride', 'ACT_DOTA_LOADOUT');
-
-				var glowPanel = $( '#PersonaGlow' );
-				var infoPanel = $( '#PersonaInfo' );
-
-				personaScenePanel.ToggleClass('Hovered');
-				glowPanel.ToggleClass('Hovered');
-				infoPanel.ToggleClass('Hovered');
-			}
-	]]></script>
+	<scripts>
+		<include src="s2r://panorama/scripts/battle_pass/spring2021/bp_spring2021_home.vjs_c" />
+	</scripts>
 	<DOTABPSpring2021HomePage class="DashboardPage FullDashboardPage" dashboardclass="Spring2021BattlePassPage Spring2021BPHome">
 		<Panel class="BPContainer">
 			<Panel id="BPHomeSlantedBG" />

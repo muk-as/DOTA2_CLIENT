@@ -1,0 +1,37 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	windowTitle = "Asset Info"
+	windowIcon = "game:tools/images/common/icon_info_sm.png"
+	vbox=
+	[
+		{
+			hbox=
+			[
+				{ _class="QLineEdit" visible="%?asset_name" text="%asset_name" readOnly=true fontstyle="14px bold" stretch=1 },
+				{ _class="QToolButton" toolTip="Copy List To Clipboard" icon="tools/images/common/copy.png" connections=[ { signal="clicked()" dest="!root" slot="OnCopyList()" }, ] },
+			]
+		},
+		{ _class="QLabel" visible="%?info_description" text="%info_description" fontstyle="12px bold" },
+		{
+			_class="QTableWidget"
+			name="info_table"
+			stretch=1
+			sortingEnabled=true
+			showGrid=true
+			editTriggers = "QAbstractItemView::NoEditTriggers"
+			selectionBehavior = "QAbstractItemView::SelectRows"
+			horizontal_header =
+			{
+				_class="QHeaderViewHorizontal" 
+				visible = true
+				defaultSectionSize = 250
+				defaultAlignment = "AlignLeft"
+			}
+			vertical_header = 
+			{
+				_class="QHeaderViewVertical" 
+				visible = false
+			}
+		},
+	]
+}

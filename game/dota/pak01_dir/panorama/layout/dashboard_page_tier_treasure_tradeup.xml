@@ -8,9 +8,9 @@
 	</styles>
 	<snippets>
 		<snippet name="FilterButton">
-			<Button>
-				<Label class="TreasureRarityFilterName RarityHexText" text="#DOTA_Treasure_TierListTierAndCount" />
-			</Button>
+			<RadioButton class="TreasureRarityFilterButton" group="TierFilter">
+				<Label class="TreasureRarityFilterName RarityHexText" text="{s:tier_label} ({d:tier_numitems})" />
+			</RadioButton>
 		</snippet>
 		<snippet name="RecyclableItem">
 			<Panel class="RecyclableItem">
@@ -25,7 +25,7 @@
 								<Label class="HeroName" text="{s:hero_name}" />
 								<Label class="ItemSlot" text="{s:slot_name}" />
 							</Panel>
-							<Button id="ItemDetailsButton" class="TreasureTextLink Small" scrollparenttofitwhenfocused="false">
+							<Button id="ItemDetailsButton" class="TextButton Small" scrollparenttofitwhenfocused="false">
 								<Label id="ItemDetailsLink" text="#DOTA_Treasure_ItemDetailsButtonActionLabel" />
 								<Image src="s2r://panorama/images/control_icons/chevron_right_png.vtex" />
 							</Button>
@@ -35,7 +35,7 @@
 								<Label text="#DOTA_CrateRecycle_AllAddedShort" />
 							</Panel>
 							<Panel class="ItemAvailableState">
-								<Button id="AddToListButton" class="TreasureButtonSecondary" scrollparenttofitwhenfocused="false">
+								<Button id="AddToListButton" class="ButtonPrimary DarkGrey" scrollparenttofitwhenfocused="false">
 									<Label text="#DOTA_CrateRecycle_AddToTrade" />
 								</Button>
 								<Label id="AddToListOwnedCount" class="Owned" text="#DOTA_CrateRecycle_NumOwned" />
@@ -68,16 +68,11 @@
 		</snippet>
 	</snippets>
 	<DOTATierTreasureTradeUp class="DashboardPage">
-		<Panel id="BackgroundContainer">
-			<Panel class="BackgroundGradient" />
-		</Panel>
+		<Panel id="TreasureExtraInfo" />
 		<Panel class="HeroContainer">
 			<Panel class="HeroShadow" />
 			<DOTALargeModelPreview id="TreasureItemPreview" hittest="false" hittestchildren="false" />
 		</Panel>
-		<DOTAScenePanel id="BackgroundSceneForeground" map="scenes/diretide/diretide_chest_foreground" deferredalpha="true" renderdeferred="false" particleonly="false" light="light_hero" camera="herocamera" hittest="false" antialias="true" />
-		<DOTAScenePanel id="BackgroundSceneFog" map="scenes/diretide/diretide_chest_fog" renderdeferred="true" light="light_hero" camera="herocamera" hittest="false" particleonly="true" antialias="true" />
-		<Panel id="ChestVignette" hittest="false" />
 		<Panel class="PageContentContainer LeftRightFlow">
 			<Panel class="ContainerTopBorder" />
 			<Panel class="LeftContainer ContainerColumn">
@@ -103,7 +98,7 @@
 				</Panel>
 				<Panel id="RecyclingItemList" class="RecyclingList" />
 				<Panel class="RecycleButtonContainer">
-					<Button id="RecycleButton" class="TreasureButtonPrimary" onactivate="DOTATierTreasureRecycle()">
+					<Button id="RecycleButton" class="ButtonPrimary Large" onactivate="DOTATierTreasureRecycle()">
 						<Label class="RecycleButtonLabel" text="#DOTA_CrateTradeUpButton" />
 					</Button>
 				</Panel>

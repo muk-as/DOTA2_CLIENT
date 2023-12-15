@@ -5,21 +5,9 @@
 		<include src="s2r://panorama/styles/popups/popups_shared.vcss_c" />
 		<include src="s2r://panorama/styles/popups/popup_custom_test.vcss_c" />
 	</styles>
-	<script><![CDATA[
-		var SetupPopup = function()
-		{
-			/*
-				var strPopupValue = $.GetContextPanel().GetAttributeString( "popupvalue", "(not found)" );
-				$.GetContextPanel().SetDialogVariable( "popupvalue", strPopupValue );
-			*/
-		};
-		
-		var ConfirmClicked = function()
-		{ 
-			$.DispatchEvent( "DOTAHUDGameDisconnect", $.GetContextPanel());
-			$.DispatchEvent( "UIPopupButtonClicked", '' ); return false;	
-		};
-	]]></script>
+	<scripts>
+		<include src="s2r://panorama/scripts/popups/popup_confirm_close_replay.vjs_c" />
+	</scripts>
 	<PopupCustomLayout class="PopupPanel Hidden" popupbackground="dim" oncancel="UIPopupButtonClicked()" onload="SetupPopup()">
 		<Label class="PopupTitle" text="#DOTA_Spectator_ConfirmDisconnectTitle" />
 		<Label class="PopupMessage" text="#DOTA_Spectator_ConfirmDisconnectMessage" />

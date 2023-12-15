@@ -15,6 +15,16 @@ DOTAAbilityPanel.Hidden
 	width: 0px;
 }
 
+.SomeItemContextMenuOpen #ItemImage
+{
+	brightness: 0.1;
+}
+
+.SomeItemContextMenuOpen .ShowingItemContextMenu #ItemImage
+{
+	brightness: 1.0;
+}
+
 #UpgradeOverlay
 {
 	background-image: url("s2r://panorama/images/hud/learnspell_png.vtex");
@@ -100,9 +110,8 @@ DOTAAbilityPanel.Hidden
 	opacity: 1.0;
 }
 
-#SilencedOverlay
+#AbilityDisabledOverlay
 {
-	background-image: url("s2r://panorama/images/hud/reborn/spells_silenced_psd.vtex");
 	background-size: 100% 100%;
 	width: 100%;
 	height: 100%;
@@ -114,14 +123,37 @@ DOTAAbilityPanel.Hidden
 	transition-duration: .22s;
 }
 
-.silenced #SilencedOverlay
+.unitmuted.InventoryItem #AbilityDisabledOverlay
 {
+	background-image: url("s2r://panorama/images/hud/reborn/spells_silenced_item_psd.vtex");
 	opacity: 1.0;
 	pre-transform-scale2d: 1;
 }
 
-.unitmuted.InventoryItem #SilencedOverlay
+.passives_disabled #AbilityDisabledOverlay
 {
+	background-image: url("s2r://panorama/images/hud/reborn/passives_broken_psd.vtex");
+	opacity: 1.0;
+	pre-transform-scale2d: 1;
+}
+
+.rooted_or_leashed #AbilityDisabledOverlay
+{
+	background-image: url("s2r://panorama/images/hud/reborn/spells_silenced_psd.vtex");
+	opacity: 1.0;
+	pre-transform-scale2d: 1;
+}
+
+.disarmed #AbilityDisabledOverlay
+{
+	background-image: url("s2r://panorama/images/hud/reborn/spells_silenced_psd.vtex");
+	opacity: 1.0;
+	pre-transform-scale2d: 1;
+}
+
+.silenced #AbilityDisabledOverlay
+{
+	background-image: url("s2r://panorama/images/hud/reborn/spells_silenced_psd.vtex");
 	opacity: 1.0;
 	pre-transform-scale2d: 1;
 }
@@ -503,6 +535,18 @@ DOTAAbilityPanel.Hidden
 	saturation: 0;
 	wash-color: #1569be;
 	contrast: .7;
+}
+
+.silenced #AbilityImage,.unitmuted #AbilityImage,.rooted_or_leashed #AbilityImage,.disarmed #AbilityImage
+{
+	saturation: 0.5;
+	brightness: 0.7;
+}
+
+.passives_disabled #AbilityImage
+{
+	saturation: 0.4;
+	brightness: 0.7;
 }
 
 .potential_upgrade.no_level #AbilityImage

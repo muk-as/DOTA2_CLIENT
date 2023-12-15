@@ -5,40 +5,9 @@
 		<include src="s2r://panorama/styles/hudstyles.vcss_c" />
 		<include src="s2r://panorama/styles/hud/dota_hud_shop.vcss_c" />
 	</styles>
-	<script><![CDATA[
-		function SetSearchFocus()
-		{
-			$( "#SearchTextEntry" ).SetFocus();
-		}
-
-		function ClearSearch()
-		{
-			$.DispatchEvent( "DOTAShopCancelSearch" );
-			$( "#SearchTextEntry" ).text = "";
-		}
-		
-		function UpdateSelectedTab()
-		{
-			var strTabClass = '';
-			if ( $( '#GridBasicsTab' ).checked )
-			{
-				strTabClass = 'ShowBasicItemsTab';
-			}
-			else if ( $( '#GridUpgradesTab' ).checked )
-			{
-				strTabClass = 'ShowUpgradeItemsTab';
-			}
-			
-			$( '#GridMainShop' ).SwitchClass( 'selected_shop_tab', strTabClass );
-		}
-		
-		$.Schedule( 0.0, function ()
-		{
-			$.RegisterEventHandler( 'TabSelected', $( '#GridMainShop' ), function () { UpdateSelectedTab(); } );
-			UpdateSelectedTab();
-		} );
-		
-	]]></script>
+	<scripts>
+		<include src="s2r://panorama/scripts/hud/dota_hud_shop.vjs_c" />
+	</scripts>
 	<snippets>
 		<snippet name="ShopItemsLayout">
 			<Panel class="ShopItemRowContainer">

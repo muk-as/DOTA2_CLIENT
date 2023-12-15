@@ -5,16 +5,9 @@
 		<include src="s2r://panorama/styles/popups/popups_shared.vcss_c" />
 		<include src="s2r://panorama/styles/popups/popup_accept_match.vcss_c" />
 	</styles>
-	<script><![CDATA[
-		$.Schedule( 0.0, function ()
-		{
-			if ( !$.GetContextPanel().BHasClass( 'BattleCup' ) )
-				return;
-		
-			$.DispatchEventAsync( .9, 'PlaySoundEffect', "ui.weekend_tournament_team_icon_stamp" );
-			$.DispatchEventAsync( 2.7, 'PlaySoundEffect', "ui.weekend_tournament_team_icon_stamp" );
-		} );
-	]]></script>
+	<scripts>
+		<include src="s2r://panorama/scripts/popups/popup_accept_match.vjs_c" />
+	</scripts>
 	<PopupAcceptMatch class="PopupPanelEffects Hidden" popupbackground="dim" defaultfocus="Button0" hittest="false">
 		<DOTAScenePanel id="ModelUIAccept" map="backgrounds/accept_popup_test" camera="shot_camera" hittest="false" particleonly="true" />
 		<Panel id="MinimizeClickCatcher" onactivate="ToggleMinimized()" />

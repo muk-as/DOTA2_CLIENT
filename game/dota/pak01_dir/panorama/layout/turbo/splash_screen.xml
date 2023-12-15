@@ -4,36 +4,9 @@
 		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
 		<include src="s2r://panorama/styles/turbo/splash_screen.vcss_c" />
 	</styles>
-	<script><![CDATA[
-		function HideSplashScreen()
-		{
-			$('#splash_screen').style.visibility = 'collapse';
-		}
-		
-		function DismissSplashScreenInSoManySeconds( nSeconds )
-		{
-			if( nSeconds < 0 )
-			{
-				HideSplashScreen();
-			}
-			else
-			{
-				$('#splash_screen_hide_button').SetDialogVariableInt('seconds', nSeconds);
-				
-				if(Game.GetState() == 7) // Pregame
-				{
-					nSeconds = nSeconds - 1;
-				}
-			
-				$.Schedule( 1.0, function() {
-					DismissSplashScreenInSoManySeconds( nSeconds );
-				} );			
-				
-			}
-		}
-		
-		DismissSplashScreenInSoManySeconds( 10 );
-	]]></script>
+	<scripts>
+		<include src="s2r://panorama/scripts/turbo/splash_screen.vjs_c" />
+	</scripts>
 	<Panel>
 		<Panel id="splash_screen_container">
 			<Panel id="splash_screen_contents">

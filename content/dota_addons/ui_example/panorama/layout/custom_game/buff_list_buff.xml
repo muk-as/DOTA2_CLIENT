@@ -3,28 +3,9 @@
 		<include src="file://{resources}/styles/dotastyles.css" />
 		<include src="file://{resources}/styles/custom_game/buff_list.css" />
 	</styles>
-	<script>
-		function OnBuffClicked()
-		{
-			var queryUnit = $.GetContextPanel().data().m_QueryUnit;
-			var buffSerial = $.GetContextPanel().data().m_BuffSerial;
-			var alertBuff = GameUI.IsAltDown();
-			Players.BuffClicked( queryUnit, buffSerial, alertBuff );
-		}
-
-		function BuffShowTooltip()
-		{
-			var queryUnit = $.GetContextPanel().data().m_QueryUnit;
-			var buffSerial = $.GetContextPanel().data().m_BuffSerial;
-			var isEnemy = Entities.IsEnemy( queryUnit );
-			$.DispatchEvent( "DOTAShowBuffTooltip", $.GetContextPanel(), queryUnit, buffSerial, isEnemy );
-		}
-
-		function BuffHideTooltip()
-		{
-			$.DispatchEvent( "DOTAHideBuffTooltip", $.GetContextPanel() );
-		}
-	</script>
+	<scripts>
+		<include src="file://{resources}/scripts/custom_game/buff_list_buff.js" />
+	</scripts>
 	<Panel class="BuffRoot" hittest="false">
 		<Button id="BuffFrame"
 							onactivate="OnBuffClicked()"
@@ -39,4 +20,3 @@
 		</Button>
 	</Panel>
 </root>
-

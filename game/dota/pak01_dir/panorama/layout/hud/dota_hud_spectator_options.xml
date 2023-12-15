@@ -5,16 +5,9 @@
 		<include src="s2r://panorama/styles/hudstyles.vcss_c" />
 		<include src="s2r://panorama/styles/hud/dota_hud_spectator_options.vcss_c" />
 	</styles>
-	<script><![CDATA[
-		var ToggleChatEnabled = function()
-		{
-			$.DispatchEvent( 'DOTASetSpectatorChatEnabled', $( '#SpectatorChatToggleButton' ).checked );
-		}
-		var ToggleBroadcastControls = function()
-		{
-			$.GetContextPanel().ToggleClass( 'ExpandBroadcastControls' );
-		}
-	]]></script>
+	<scripts>
+		<include src="s2r://panorama/scripts/hud/dota_hud_spectator_options.vjs_c" />
+	</scripts>
 	<DOTASpectatorOptions class="Hidden" acceptsfocus="false" hittest="false">
 		<Button id="SpectatorOptionsVisibilityButton" onactivate="ToggleStyle(&apos;SpectatorOptionsContainer&apos;,&apos;Hidden&apos;); ToggleStyle(&apos;SpectatorOptionsVisibilityButton&apos;,&apos;Hidden&apos;); ToggleStyle(&apos;SpectatorCloseButton&apos;,&apos;Hidden&apos;);" />
 		<Button id="SpectatorCloseButton" onactivate="UIShowCustomLayoutPopupParameters( PopupConfirmCloseReplay, file://{resources}/layout/popups/popup_confirm_close_replay.xml" />

@@ -5,31 +5,9 @@
 		<include src="s2r://panorama/styles/popups/popups_shared.vcss_c" />
 		<include src="s2r://panorama/styles/battle_pass/international2017/bp_international2017_campaigndetails.vcss_c" />
 	</styles>
-	<script><![CDATA[
-
-		g_nCurrentPageClick = 0;
-		
-		var onPageClick = function()
-		{
-			if ( g_nCurrentPageClick > 25 )
-			{
-				removePageClasses();
-				return;
-			}
-			g_nCurrentPageClick = g_nCurrentPageClick + 1;
-			$( '#ComicPageBox' ).SetHasClass( 'CC' + g_nCurrentPageClick, true );
-		};		
-		
-		var removePageClasses = function()
-		{
-			for (i = 0; i < g_nCurrentPageClick + 1; i++) 
-			{ 
-				$( '#ComicPageBox' ).RemoveClass( 'CC' + i );
-			}
-			g_nCurrentPageClick = 0;
-		};	
-	
-	]]></script>
+	<scripts>
+		<include src="s2r://panorama/scripts/battle_pass/international2017/bp_international2017_comic_popup.vjs_c" />
+	</scripts>
 	<Popup class="PopupPanel Popup687 Hidden" popupbackground="dim" oncancel="UIPopupButtonClicked()">
 		<Panel id="IntroComicContainer" onactivate="onPageClick();">
 			<Panel id="ComicPageBox">

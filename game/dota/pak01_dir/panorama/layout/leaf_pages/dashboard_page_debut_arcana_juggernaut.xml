@@ -6,40 +6,9 @@
 		<include src="s2r://panorama/styles/leaf_pages/dashboard_page_debut_styles.vcss_c" />
 		<include src="s2r://panorama/styles/leaf_pages/dashboard_page_debut_arcana_juggernaut.vcss_c" />
 	</styles>
-	<script><![CDATA[
-   	
-		var g_nCurrentStyle = 0;
-		$.Msg ( g_nCurrentStyle.toString() );
-		var g_arrTransitionNextEvents = [
-			function() {
-				$.DispatchEvent( 'DOTAGlobalSceneSetCameraEntity', 'JuggernautArcanaScene', 'herocamera', 1.6 ); 
-				$.DispatchEvent( 'DOTAGlobalSceneSetRootEntity', 'JuggernautArcanaScene', 'root' );
-				$( '#MainContainer' ).SetHasClass( 'Style1Visible', true );
-				$( '#MainContainer' ).SetHasClass( 'Style2Visible', false );
-			},
-			function() {
-				$.DispatchEvent( 'DOTAGlobalSceneSetCameraEntity', 'JuggernautArcanaScene', 'camera_style2', 1.6 ); 
-				$.DispatchEvent( 'DOTAGlobalSceneSetRootEntity', 'JuggernautArcanaScene', 'root_style2' ); 
-				$( '#MainContainer' ).SetHasClass( 'Style2Visible', true );
-				$( '#MainContainer' ).SetHasClass( 'Style1Visible', false );				
-			},
-		];
-
-		var onNextStyle = function()
-		{
-			
-			g_nCurrentStyle = g_nCurrentStyle + 1;
-			if ( g_nCurrentStyle == 2 )
-			{
-				g_nCurrentStyle = 0;
-			}
-			
-			g_arrTransitionNextEvents[ g_nCurrentStyle ]();
-			$.Msg ( g_nCurrentStyle.toString() );
-		};
-	
-	
-  ]]></script>
+	<scripts>
+		<include src="s2r://panorama/scripts/leaf_pages/dashboard_page_debut_arcana_juggernaut.vjs_c" />
+	</scripts>
 	<DOTAReferencePage class="DashboardPage BGDark">
 		<Panel id="MainContainer" class="DebutJuggernaut Initialize Style1Visible" onload="AsyncEvent( 4, AddStyle( TakeoverPageLeft, Initialize ) ); AsyncEvent( 4, AddStyle( InformationBody, Initialize ) ); AsyncEvent( 2.0, PlaySoundEffect( jug_arcana_debut_takeover_stinger  ) ); AsyncEvent( 0.4, PlaySoundEffect( jug_arcana_debut_takeover_vo ) ); AsyncEvent( 0.9, PlaySoundEffect( jug_arcana_debut_takeover_sfx  ) );">
 			<Panel id="TakeoverPageLeft" class="TakeOverPage">

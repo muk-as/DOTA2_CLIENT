@@ -8,38 +8,9 @@
 		<include src="s2r://panorama/styles/battle_pass/international2019/bp_international2019_shared.vcss_c" />
 		<include src="s2r://panorama/styles/battle_pass/international2019/bp_international2019_background.vcss_c" />
 	</styles>
-	<script><![CDATA[
-		var UpdateTrophyLevel = function( nTrophyLevel )
-		{
-			if ( nTrophyLevel >= 1 )
-			{
-				$.DispatchEvent( 'DOTASceneFireEntityInput', $( '#flag1' ), 'flag', 'Skin', ( nTrophyLevel - 1 )+ "" );
-			}
-			else
-			{
-				$.DispatchEvent( 'DOTASceneFireEntityInput', $( '#flag1' ), 'flag', 'Skin', nTrophyLevel + "" );
-			}
-		}
-
-		var SetCurrentTrophyLevel = function()
-		{
-			var nTrophyLevel = GetCurrentEventTrophyLevel();
-			UpdateTrophyLevel( nTrophyLevel );
-		}
-		
-		var UpdateScene = function( bCompendium )
-		{
-			$.DispatchEvent( 'DOTAGlobalSceneSetCameraEntity', 'CompendiumBackgroundScene', ( bCompendium ? 'camera_2' : 'camera_1' ), 2.1 ); 
-		}
-		
-		$.Schedule( 0.0, function()
-		{
-			$.RegisterForUnhandledEvent( 'DOTAEventTrophyLevelUpdated', function( eEvent, nTrophyLevel ) { UpdateTrophyLevel( nTrophyLevel ); } );
-			$.RegisterForUnhandledEvent( 'DOTASeasonPassPageChanged', function( bCompendium ) { UpdateScene( bCompendium ); } );
-			$.RegisterEventHandler( 'DOTAScenePanelSceneLoaded', $( '#flag1' ), function() { SetCurrentTrophyLevel(); } );
-		});
-
-	]]></script>
+	<scripts>
+		<include src="s2r://panorama/scripts/battle_pass/international2019/bp_international2019_background.vjs_c" />
+	</scripts>
 	<Panel>
 		<Panel id="CompendiumBG" class="FullScreenBackground" />
 		<Panel class="Vignette" />

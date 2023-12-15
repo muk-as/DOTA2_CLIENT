@@ -5,24 +5,9 @@
 		<include src="s2r://panorama/styles/popups/popups_shared.vcss_c" />
 		<include src="s2r://panorama/styles/popups/popup_report_player_new.vcss_c" />
 	</styles>
-	<script><![CDATA[
-		var SetupPopup = function()
-		{
-			var panel = $.GetContextPanel();
-			var strFriendly = panel.GetAttributeString( "friendly", "" );
-			if( strFriendly == "1" )
-			{
-				panel.RemoveClass( "Report_Negative" );
-				panel.AddClass( "Report_Positive" );
-			}
-			var strShowRole = panel.GetAttributeString( "showrole", "" );
-			if( strShowRole == "1" )
-			{
-				panel.AddClass( "Report_EnableDidNotPlayRole" );
-			}
-		};
-
-	]]></script>
+	<scripts>
+		<include src="s2r://panorama/scripts/popups/popup_report_player_new.vjs_c" />
+	</scripts>
 	<PopupReportPlayerNew class="Report PopupPanel Hidden Report_Negative" popupbackground="dim" oncancel="UIPopupButtonClicked()" onload="SetupPopup();">
 		<Panel class="Report_Title">
 			<Panel class="Report_Title_Left">

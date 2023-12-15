@@ -5,26 +5,9 @@
 		<include src="s2r://panorama/styles/dashboard_page_shared.vcss_c" />
 		<include src="s2r://panorama/styles/dashboard_page_weekendtourney.vcss_c" />
 	</styles>
-	<script><![CDATA[
-		var FadeInLoading = function ()
-		{
-			$( '#ContainerLoading' ).RemoveClass( "FadeIn" );
-			$( '#ContainerLoading' ).AddClass( "FadeIn" );
-		};
-		
-		var SwitchTab = function( strTabID )
-		{
-			var tabContents = $( '#ContainerDetails' );
-			for ( var i = 0; i < tabContents.GetChildCount(); ++i )
-			{
-				var child = tabContents.GetChild( i );
-				if ( !child.BHasClass( 'DetailsPanel' ) )
-					continue;
-
-				child.SetHasClass( 'TabSelected', child.id == strTabID );
-			}
-		}
-	]]></script>
+	<scripts>
+		<include src="s2r://panorama/scripts/dashboard_page_weekendtourney.vjs_c" />
+	</scripts>
 	<DOTAWeekendTourneyPage class="DashboardPage" onpagesetupsuccess="FadeInLoading();" dashboardclass="WeekendTourneyPageOpen">
 		<Panel id="ContainerLoading">
 			<Panel class="Spinner Shadow" />

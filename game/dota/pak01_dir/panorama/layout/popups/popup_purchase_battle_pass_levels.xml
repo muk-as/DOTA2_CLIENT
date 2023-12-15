@@ -6,45 +6,9 @@
 		<include src="s2r://panorama/styles/battle_pass/current_battle_pass.vcss_c" />
 		<include src="s2r://panorama/styles/popups/popup_purchase_battle_pass_levels.vcss_c" />
 	</styles>
-	<script><![CDATA[
-		var UpdateAfterPurchaseLevels = function()
-		{
-			var nCurrentLevel = $.GetContextPanel().GetAttributeInt( "current_level", 0 );
-			var nCurrentEvent = $.GetContextPanel().GetAttributeInt( "current_event", 0 );
-			var nPurchasedLevelAmount = $( '#LevelsTable' ).totalLevels;
-			$( '#AfterPurchaseLevelShield' ).SetEventLevel( nCurrentEvent, nCurrentLevel + nPurchasedLevelAmount );
-			$( '#PurchaseButton' ).enabled = nPurchasedLevelAmount > 0;
-			$.GetContextPanel().SetHasClass( 'ShowAfterPurchaseLevel', nPurchasedLevelAmount > 0 );
-		}
-		
-		var UpdateActivateLevelsNextButton = function()
-		{
-			var bApplyLevels = $( '#ApplyLevelsButton' ).checked;
-			$( '#ApplyLevelsNextButton' ).text = bApplyLevels ? $.Localize( "#DOTA_ActivateLevels" ) : $.Localize( "#DOTA_SaveForLater" );;
-		}
-		
-		var OnActivateLevelsNextButton = function()
-		{
-			var bApplyLevels = $( '#ApplyLevelsButton' ).checked;
-			if ( bApplyLevels )
-			{
-				$.DispatchEvent( 'DOTAPurchaseBattlePassLevelsApplyLevels' );
-			}
-			else
-			{
-				$.DispatchEvent( 'DOTAPurchaseBattlePassLevelsClose' );
-			}
-		}
-		
-		$.Schedule( 0.0, function()
-		{
-			$.RegisterEventHandler( 'DOTAPurchaseEventLevelsTableQuantityChanged', $( '#LevelsTable' ), function( table ) { UpdateAfterPurchaseLevels(); } );
-
-			UpdateAfterPurchaseLevels();
-			UpdateActivateLevelsNextButton();
-		});
-		
-	]]></script>
+	<scripts>
+		<include src="s2r://panorama/scripts/popups/popup_purchase_battle_pass_levels.vjs_c" />
+	</scripts>
 	<PopupPurchaseBattlePassLevels class="PopupPanel Hidden" popupbackground="dim" oncancel="DOTAPurchaseBattlePassLevelsClose()">
 		<Panel id="Header">
 			<Panel id="HeaderTitleContainer">

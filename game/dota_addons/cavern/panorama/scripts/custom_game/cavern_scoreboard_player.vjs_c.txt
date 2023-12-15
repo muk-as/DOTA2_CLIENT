@@ -1,0 +1,11 @@
+function ToggleMute()
+{
+	var nPlayerID = $.GetContextPanel().GetAttributeInt( "player_id", -1 );
+	if ( nPlayerID !== -1 )
+	{
+		$.Msg( "Player ID: " + nPlayerID );
+		var newIsMuted = !Game.IsPlayerMuted( nPlayerID );
+		Game.SetPlayerMuted( nPlayerID, newIsMuted );
+		$.GetContextPanel().SetHasClass( "player_muted", newIsMuted );
+	}
+}

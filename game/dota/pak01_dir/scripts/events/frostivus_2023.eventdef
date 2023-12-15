@@ -1,0 +1,549 @@
+"EVENT_ID_FROSTIVUS_2023"
+{
+	"season_name"	"#DOTA_EventName_Frostivus"
+	"season_class"	"Season_Frostivus"
+	
+	"show_home_page_event"	"DOTAShowHomePage()"
+
+	"is_major"		"0"
+	"has_bracket_data" "0"
+	"must_be_owned"		"0"
+	"default_event_points"	"0"
+	"event_end_time"	"1705010400"        // Thursday, January 11, 2024 2:00:00 PM GMT-08:00
+ 	"expiration_date"	"1706220000"        // Thursday, January 25, 2024 2:00:00 PM GMT-08:00
+
+	"points_per_level"		"1000"
+	"show_battle_level"		"0"
+	"effects_item_def"		"17528"
+
+    // Naughty/Nice tipping
+	"tipping_periodic_resource" "frostivus_tipping_tokens"
+   	"tip_amounts"
+	{
+		"0"
+		{
+			"tip_amount"	"0"  // Tipping grants the tips_received action, but no event points.
+			"particle"		""
+		}
+	}
+    "tip_button_name"   "#DOTA_Frostivus_Tip"
+    "tip_notification"  "#DOTA_Frostivus_TipNotification"
+
+	"game_secondary_abilities"
+	{
+		"seasonal_throw_snowball" "1"
+		"seasonal_summon_snowman" "1"
+		"seasonal_festive_firework" "1"
+		"seasonal_summon_penguin" "1"
+
+		"seasonal_party_hat" "2"
+	}
+
+	"event_actions"
+	{
+		"win_matches"
+		{
+			"action_id"					"1"
+			"max_grants"				"10000"
+			"rewards"
+			{
+				"1+1n"
+				{
+					"grants"
+					{
+						"grant_action_custom"
+						{
+							"action"	"reward_tracking"
+							"count"		"500"
+						}
+						"grant_periodic_action"
+						{
+							"action"	"bonus_progress"
+							"count"		"1"
+							"periodic_resource"	"frostivus_daily_bonus"
+						}
+					}
+				}
+			}
+		}
+
+		"win_turbo_matches"
+		{
+			"action_id"					"2"
+			"max_grants"				"10000"
+			"rewards"
+			{
+				"1+1n"
+				{
+					"grants"
+					{
+						"grant_action_custom"
+						{
+							"action"	"reward_tracking"
+							"count"		"250"
+						}
+						"grant_periodic_action"
+						{
+							"action"	"bonus_progress"
+							"count"		"1"
+							"periodic_resource"	"frostivus_daily_bonus"
+						}
+					}
+				}
+			}
+		}
+
+		"lose_matches"
+		{
+			"action_id"					"3"
+			"max_grants"				"10000"
+			"rewards"
+			{
+				"1+1n"
+				{
+					"grants"
+					{
+						"grant_action_custom"
+						{
+							"action"	"reward_tracking"
+							"count"		"150"
+						}
+					}
+				}
+			}
+		}
+
+		"lose_turbo_matches"
+		{
+			"action_id"					"4"
+			"max_grants"				"10000"
+			"rewards"
+			{
+				"1+1n"
+				{
+					"grants"
+					{
+						"grant_action_custom"
+						{
+							"action"	"reward_tracking"
+							"count"		"75"
+						}
+					}
+				}
+			}
+		}
+
+		"tips_received"
+		{
+			"action_id"		"5"
+			"max_grants"	"1000000"
+
+           	"rewards"
+			{
+				"1 + 1n"
+				{
+					"grants"
+					{
+						"grant_action_custom"
+						{
+							"action"	"reward_tracking"
+							"count"		"25"
+						}
+					}
+				}
+			}
+		}
+
+		// placeholder -- needed for tipping to work properly
+		"tip_amount_upgrades"
+		{
+			"action_id"		"6"
+			"max_grants"	"0"
+        }
+
+		"bonus_progress"
+		{
+			"action_id"		"7"
+			"max_grants"	"1000"
+           	"rewards"
+			{
+				"1 + 1n"
+				{
+					"grants"
+					{
+						"grant_action_custom"
+						{
+							"action"	"reward_tracking"
+							"count"		"2000"
+						}
+					}
+				}
+			}
+		}	
+
+		"low_quality_gift"
+		{
+			"action_id"		"100"
+			"required_item_def"			"23803" // Low Quality Frostivus Gift
+		
+			"rewards"
+			{
+				"1+1n"
+				{
+					"grants"
+					{
+						"grant_loot_list"	"frostivus_2023_low_quality_gift"
+					}
+				}
+			}
+		}
+
+		"regular_quality_gift"
+		{
+			"action_id"		"101"
+			"required_item_def"			"23804" // Regular Quality Frostivus Gift
+		
+			"rewards"
+			{
+				"1+1n"
+				{
+					"grants"
+					{
+						"grant_loot_list"	"frostivus_2023_regular_quality_gift"
+					}
+				}
+			}
+		}
+
+		"high_quality_gift"
+		{
+			"action_id"		"102"
+			"required_item_def"			"24117" // High Quality Frostivus Gift
+
+		
+			"rewards"
+			{
+				"1+1n"
+				{
+					"grants"
+					{
+						"grant_loot_list"	"frostivus_2023_high_quality_gift"
+					}
+				}
+			}
+		}
+
+		"you_have_been_very_naughty"
+		{
+			"action_id"		"104"
+			"required_item_def"			"25609" // Awful Quality Frostivus Gift
+	
+			"rewards"
+			{
+				"1+1n"
+				{
+					"grants"
+					{
+						"grant_item"		"24120"	// Toxic Lump of Coal
+					}
+				}
+			}
+		}
+
+		"you_have_been_very_very_naughty"
+		{
+			"action_id"		"105"
+			"required_item_def"			"24122"
+		
+			"rewards"
+			{
+				"1+1n"
+				{
+					"grants"
+					{
+						"grant_game_ban"	"0"
+						"grant_item"		"25606"	// Highly Toxic Lump of Coal
+					}
+				}
+			}
+		}
+
+
+		///
+		/// Tracking
+		/// 
+		"reward_tracking"
+		{
+			"action_id" "200"
+			"max_grants" "10000000"
+			"rewards"
+			{
+				"1000" {}
+				"3000" {}
+				"6000" {}
+				"10000 + 4000n" {}
+			}
+		}
+
+        ///
+        /// Rewards
+        ///
+
+		"reward_claim"
+		{
+			"action_id"	"201"
+			"max_grants" "99999"
+			"claimable_if_prerequisites_satisfied"	"1"
+			"prerequisite_actions"
+			{
+				"reward_tracking"	"auto"
+			}
+
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_action"				"reward_treasure"
+						"grant_chat_wheel_messages" "639"	// Frostivus Spray - Ancient Chocolate
+					}
+				}
+
+				"2"
+				{
+					"grants"
+					{
+						"grant_action"				"reward_treasure"
+						"grant_emoticon"			"355"	// Emoticon :frostivus_spoonbox:
+					}
+				}
+
+				"3"
+				{
+					"grants"
+					{
+						"grant_action"				"reward_treasure"
+						"grant_chat_wheel_messages" "640"	// Frostivus Spray - Cookie Seer
+					}
+				}
+
+				"4"
+				{
+					"grants"
+					{
+						"grant_action"				"reward_treasure"
+						"grant_item"				"24175"	// Frostivus Loading screen 1 (Greevil Chimney)
+					}
+				}
+
+				"5"
+				{
+					"grants"
+					{
+						"grant_action"				"reward_treasure"
+						"grant_chat_wheel_messages" "641"	// Frostivus Spray - Enchantress
+					}
+				}
+
+				"6"
+				{
+					"grants"
+					{
+						"grant_action"				"reward_treasure"
+						"grant_emoticon"			"357"	// Emoticon :frostivus_meangreen:
+					}
+				}
+
+				"7"
+				{
+					"grants"
+					{
+						"grant_action"				"reward_treasure"
+						"grant_chat_wheel_messages" "642"	// Frostivus Spray - Hoodcracker
+					}
+				}
+
+				"8"
+				{
+					"grants"
+					{
+						"grant_action"				"reward_treasure"
+						"grant_emoticon"			"356"	// Emoticon :frostivus_shardstocking:
+					}
+				}
+
+				"9"
+				{
+					"grants"
+					{
+						"grant_action"				"reward_treasure"
+						"grant_chat_wheel_messages" "645"	// Frostivus Spray - Sniper
+					}
+				}
+
+				"10"
+				{
+					"grants"
+					{
+						"grant_action"				"reward_treasure"
+						"grant_item"				"26936"	// Frostivus Loading Screen 2 (Snowman Forest)
+					}
+				}
+
+				"11"
+				{
+					"grants"
+					{
+						"grant_action"				"reward_treasure"
+						"grant_chat_wheel_messages" "644"	// Frostivus Spray - Pudge's Lap
+					}
+				}
+
+				"12"
+				{
+					"grants"
+					{
+						"grant_action"				"reward_treasure"
+						"grant_emoticon"			"358"	// Emoticon :frostivus_bauble:
+					}
+				}
+
+				"13"
+				{
+					"grants"
+					{
+						"grant_action"				"reward_treasure"
+						"grant_chat_wheel_messages" "643"	// Frostivus Spray - Necro Claus
+					}
+				}
+
+				"14"
+				{
+					"grants"
+					{
+						"grant_action"				"reward_treasure"
+						"grant_item"				"26938"	// Frostivus Loading screen 3 (Greevil Tree)
+					}
+				}
+
+				"15"
+				{
+					"grants"
+					{
+						"grant_action"				"reward_treasure"
+						"grant_chat_wheel_messages" "646"	// Frostivus Spray - Cool King
+					}
+				}
+
+				"16"
+				{
+					"grants"
+					{
+						"grant_action"				"reward_treasure"
+						"grant_emoticon"			"359"	// Emoticon :frostivus_stringlights:
+					}
+				}
+
+				"17"
+				{
+					"grants"
+					{
+						"grant_action"				"reward_treasure"
+						"grant_item"				"24201"	// Frostivus 2023 Ward
+					}
+				}
+
+				"18 + 1n"
+				{
+					"grants"
+					{
+						"grant_action"				"reward_treasure"
+					}
+				}
+			}
+		}
+
+		// Grant the treasure from a secondary action to hide it from the reward tracking code
+		// so we can give it custom ui instead of DotaEconItem
+		"reward_treasure"
+		{
+			"action_id"	"202"
+			"max_grants" "99999"
+			"rewards"
+			{
+				"1+1n"
+				{
+					"grants"
+					{
+						"grant_item"				"23685" // Frostivus Treasure
+					}
+				}
+
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"				"40008" // Frostivus Sticker - Ancient Chocolate
+					}
+				}
+
+				"3"
+				{
+					"grants"
+					{
+						"grant_item"				"40007" // Frostivus Sticker - Cookie Seer
+					}
+				}
+
+				"5"
+				{
+					"grants"
+					{
+						"grant_item"				"40006" // Frostivus Sticker - Enchantress
+					}
+				}
+
+				"7"
+				{
+					"grants"
+					{
+						"grant_item"				"40004" // Frostivus Sticker - Hoodcracker
+					}
+				}
+
+				"9"
+				{
+					"grants"
+					{
+						"grant_item"				"40003" // Frostivus Sticker - Sniper
+					}
+				}
+
+				"11"
+				{
+					"grants"
+					{
+						"grant_item"				"40010" // Frostivus Sticker - Pudges Lap
+					}
+				}
+
+				"13"
+				{
+					"grants"
+					{
+						"grant_item"				"40009" // Frostivus Sticker - Necro Claus
+					}
+				}
+
+				"15"
+				{
+					"grants"
+					{
+						"grant_item"				"40011" // Frostivus Sticker - Cool King
+					}
+				}
+			}
+		}
+	}
+}

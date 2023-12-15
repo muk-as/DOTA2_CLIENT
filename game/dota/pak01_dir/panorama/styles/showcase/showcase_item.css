@@ -1,6 +1,12 @@
 /* Prettified by Source 2 Viewer 6.0.0.0 - https://valveresourceformat.github.io */
 
 @define DataWidgetBackgroundColor: rgba(0, 6, 16, 0.95);
+DOTAShowcaseItem
+{
+	context-menu-position: left top;
+	context-menu-body-position: 50% 50%;
+}
+
 .ShowcaseItem
 {
 	width: 100%;
@@ -18,6 +24,11 @@
 {
 	border: 1px solid #f4b30f81;
 	border-radius: 3px;
+}
+
+.FlippedHorizontally .ChatWheelText,.FlippedHorizontally #HeroName,.FlippedHorizontally #HeroBadge
+{
+	pre-transform-scale2d: -1.0, 1.0;
 }
 
 .Trophy
@@ -46,8 +57,45 @@
 
 .HeroModel
 {
+	overflow: noclip;
 	width: 100%;
 	height: 100%;
+}
+
+.HeroModel.ShowingHeroCard #HeroModelSection
+{
+	visibility: collapse;
+}
+
+.HeroModel.ShowingHeroCard #HeroCardSection
+{
+	visibility: visible;
+}
+
+.HeroModel.ShowingHeroCard #HeroRelics
+{
+	margin-bottom: 30px;
+}
+
+.HeroModel #HeroModelSection
+{
+	width:100%;
+	height:100%;
+	visibility: visible;
+}
+
+.HeroModel #HeroModelSection #HeroBadge.Bottom
+{
+	margin-bottom: 40px;
+}
+
+.HeroModel #HeroCardSection
+{
+	overflow: noclip;
+	height: 100%;
+	width: height-percentage( 75% );
+	visibility:collapse;
+	horizontal-align: middle;
 }
 
 .HeroModel #HeroSetPreview
@@ -60,6 +108,217 @@
 .State_Invalid .HeroModel #HeroSetPreview,.State_Failure .HeroModel #HeroSetPreview
 {
 	wash-color: #3c3c3c;
+}
+
+.HeroModel #HeroBadge
+{
+	ui-scale: 70%;
+	ignore-parent-flow: true;
+	horizontal-align: middle;
+	vertical-align: middle;
+}
+
+.HeroModel #HeroBadge.NoTier
+{
+	visibility: collapse;
+}
+
+.HeroModel #HeroBadge.Left
+{
+	horizontal-align: left;
+}
+
+.HeroModel #HeroBadge.Right
+{
+	horizontal-align: right;
+}
+
+.HeroModel #HeroBadge.Top
+{
+	vertical-align: top;
+}
+
+.HeroModel #HeroBadge.Bottom
+{
+	vertical-align: bottom;
+}
+
+.HeroModel #HeroCardSection #HeroBadge
+{
+	overflow: noclip;
+}
+
+.HeroModel #HeroCardSection #HeroBadge.Left
+{
+	transform: translateX( -30px);
+}
+
+.HeroModel #HeroCardSection #HeroBadge.Right
+{
+	transform: translateX( 30px);
+}
+
+.HeroModel #HeroCardSection #HeroBadge.Top
+{
+	transform: translateY( -30px);
+}
+
+.HeroModel #HeroCardSection #HeroBadge.Bottom
+{
+	transform: translateY( 30px);
+}
+
+.HeroModel #HeroCardSection #HeroBadge.Left.Top
+{
+	transform: translate3d(-30px,-30px,0px);
+}
+
+.HeroModel #HeroCardSection #HeroBadge.Right.Top
+{
+	transform: translate3d(30px,-30px,0px);
+}
+
+.HeroModel #HeroCardSection #HeroBadge.Left.Bottom
+{
+	transform: translate3d(-30px,30px,0px);
+}
+
+.HeroModel #HeroCardSection #HeroBadge.Right.Bottom
+{
+	transform: translate3d(30px,30px,0px);
+}
+
+.HeroModel #HeroRelics
+{
+	horizontal-align: center;
+	vertical-align:bottom;
+	flow-children:right;
+	margin-top: -6px;
+	margin-bottom: 8px;
+	margin-right: 12px;
+	margin-left: 7px;
+}
+
+.HeroModel #HeroRelics.Disabled
+{
+	visibility:collapse;
+}
+
+.HeroModel #HeroRelics DOTAHeroRelicImage
+{
+	margin-left: -11px;
+	ui-scale: 16%;
+	tooltip-position:top;
+	tooltip-body-position: 50% 50%;
+	transform: translateY( 6px);
+}
+
+.HeroModel #HeroRelics DOTAHeroRelicImage.RareRelic
+{
+	ui-scale: 25%;
+	margin-left: -8px;
+	transform:none;
+}
+
+.HeroModel #HeroRelics DOTAHeroRelicImage#Normal0,.HeroModel #HeroRelics DOTAHeroRelicImage#Rare0
+{
+	margin-left: 0px;
+}
+
+.HeroModel #HeroRelics DOTAHeroRelicImage#Normal1,.HeroModel #HeroRelics DOTAHeroRelicImage#Normal3,.HeroModel #HeroRelics DOTAHeroRelicImage#Normal5,.HeroModel #HeroRelics DOTAHeroRelicImage#Normal7,.HeroModel #HeroRelics DOTAHeroRelicImage#Normal9
+{
+	margin-top: 11px;
+}
+
+.HeroCard
+{
+	border: 2px solid black;
+	height: 100%;
+	width: height-percentage( 75% );
+	horizontal-align: center;
+	vertical-align: center;
+}
+
+#ImageContainer
+{
+	width: 100%;
+	height: 100%;
+}
+
+#ImageContainer #HeroImage
+{
+	vertical-align: bottom;
+	horizontal-align: right;
+}
+
+#ImageContainer #HeroImage.Disabled
+{
+	visibility:collapse;
+}
+
+#ImageContainer #HeroPortraitAndBackground
+{
+	opacity: 1.0;
+	width:100%;
+	height:100%;
+}
+
+#ImageContainer #HeroPortraitAndBackground.Disabled
+{
+	visibility:collapse;
+}
+
+#ImageContainer #HeroMovie
+{
+	horizontal-align: right;
+}
+
+#ImageContainer #HeroMovie.Disabled
+{
+	visibility:collapse;
+}
+
+#ImageContainer #HeroImage,#ImageContainer #HeroMovie,#ImageContainer #HeroPortrait
+{
+	width: 100%;
+	height: 100%;
+	visibility: visible;
+}
+
+#ImageContainer #HeroBackgroundImage
+{
+	width: 100%;
+	height: 100%;
+}
+
+#HeroName
+{
+	width: 100%;
+	text-transform: uppercase;
+	text-align: center;
+	background-color: #000c;
+	padding: 5px 4px 2px 4px;
+	vertical-align: bottom;
+	letter-spacing: 2px;
+	font-size: 16px;
+	color: white;
+}
+
+.HideName #HeroName
+{
+	visibility: collapse;
+}
+
+#HeroBadge.NoTier
+{
+	visibility: collapse;
+}
+
+.HeroCard #HeroBadge
+{
+	ui-scale: 70%;
+	margin-left: -30px;
+	margin-top: -30px;
 }
 
 .WorldItem

@@ -8,17 +8,9 @@
 		<include src="s2r://panorama/styles/hud/dota_hud_stat_branch.vcss_c" />
 		<include src="s2r://panorama/styles/hud/dota_hud_ability_panel.vcss_c" />
 	</styles>
-	<script><![CDATA[
-	function EventAbilityLearnModeToggled( bInLearnMode )
-	{
-		$.GetContextPanel().SetHasClass( "AbilityLearnMode", bInLearnMode );
-	}
-
-	(function()
-	{
-		$.RegisterForUnhandledEvent( "DOTAHUDAbilityLearnModeToggled", EventAbilityLearnModeToggled );
-	})();
-	]]></script>
+	<scripts>
+		<include src="s2r://panorama/scripts/hud/hud_reborn.vjs_c" />
+	</scripts>
 	<DOTAHud hittest="false" disallowedstyleflags="hover,descendantfocus">
 		<Panel id="HUDElements" hittest="false" disallowedstyleflags="hover,descendantfocus">
 			<DOTAHUDContextualTips id="ContextualTips" />
@@ -37,6 +29,7 @@
 			<DOTAHUDCursorCooldown id="CursorCooldown" hittest="false" class="VisGroup_Top" />
 			<DOTAChat id="HudChat" class="HudChat VisGroup_Top" chatstyle="hud" oncancel="DOTAChatCancelMessageMode()" hittest="false" />
 			<DOTAHUDNeutralCampPullTimes id="NeutralCampPullTimes" />
+			<DOTAHUDTeleportTime id="TeleportChannelTime" />
 			<DOTAHUDRuneSpawnTimes id="RuneSpawnTimes" />
 			<DOTAHUDNeutralCreepGoldBounty id="NeutralCreepGoldBounty" />
 			<DOTAHUDLaneCreepGoldBounty id="LaneCreepGoldBounty" />

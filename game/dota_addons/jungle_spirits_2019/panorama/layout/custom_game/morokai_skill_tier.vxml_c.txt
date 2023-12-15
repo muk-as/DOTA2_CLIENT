@@ -4,34 +4,9 @@
 		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
 		<include src="s2r://panorama/styles/hud_jungle_spirits_2019.vcss_c" />
 	</styles>
-	<script><![CDATA[
-		function OnSkillTierAbilityClicked()
-		{
-			$.Msg( "OnSkillTierAbilityClicked" );	
-			var nGemsCount = 0;
-			var nLocalPlayerHeroEntIndex = Players.GetPlayerHeroEntityIndex( Players.GetLocalPlayer() );
-			var data = CustomNetTables.GetTableValue( "jungle_spirits_gems_info", nLocalPlayerHeroEntIndex.toString() );
-			if ( data !== undefined )
-			{
-				nGemsCount = data["gems_count"];
-				//$.Msg( "GemsCount = " + nGemsCount );
-			}
-
-			var abilityPanel =  $.GetContextPanel().FindChildInLayoutFile( "Ability" );
-			var nUpgradeCost = abilityPanel.GetAttributeInt( "UpgradeCost", -1 );
-			if ( nUpgradeCost > nGemsCount )
-			{
-				GameUI.SendCustomHUDError( "#hud_error_not_enough_gems", "General.NoGold" );
-				return;
-			}
-
-			var data = [];
-			data["PlayerID"] = Players.GetLocalPlayer();
-			data["BranchID"] = abilityPanel.GetAttributeInt( "BranchID", -1 );
-			data["LearnMode"] = true;
-			GameEvents.SendCustomGameEventToServer( "branch_button_clicked", data );
-		}
-	]]></script>
+	<scripts>
+		<include src="s2r://panorama/scripts/custom_game/morokai_skill_tier.vjs_c" />
+	</scripts>
 	<Panel class="SkillTier" hittest="false">
 		<Panel id="Path" class="SkillPath" />
 		<Panel class="AbilityContainer">

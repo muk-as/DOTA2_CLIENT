@@ -299,7 +299,7 @@ function OnBossUpdated( )
 		$( "#BossHealthBarContainer").SetHasClass( "Visible", CurrentBoss.active == true && g_bInBossCamera == false );
 		g_nBossEntIndex = CurrentBoss.ent_index
 
-		$( "#BossLabel" ).text = $.Localize( '#' + CurrentBoss.unit_name )
+		$( "#BossLabel" ).text = $.Localize( GetUnitNameLocalized( CurrentBoss.unit_name ) )
 
 		$( "#BossHealthBarContainer").SwitchClass( "class", "Boss_"+CurrentBoss.unit_name )
 
@@ -1092,7 +1092,7 @@ function OnInteractWithEventNPC( data )
 	EventDialogPanel.SetAttributeInt( "store_room", data[ "interaction_limit" ] == -1 ? 1 : 0 );
 	EventDialogPanel.SetAttributeInt( "interaction_limit", data[ "interaction_limit" ] );
 	EventDialogPanel.SetAttributeInt( "interact_npc_ent_index", nInteractEntIndex );
-	EventDialogPanel.SetDialogVariable( "event_npc_name",  $.Localize( '#' + szUnitName, EventDialogPanel ) );
+	EventDialogPanel.SetDialogVariable( "event_npc_name",  GameUI.GetUnitNameLocalized( szUnitName ) );
 	$( "#EventNPCScenePanel" ).SetUnit( szUnitName, "default_camera", true );	
 	if ( pJoyFocusPanel !== null )
 		Game.SetJoyFocusPanel( pJoyFocusPanel );

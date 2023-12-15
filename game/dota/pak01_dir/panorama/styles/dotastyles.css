@@ -985,7 +985,6 @@ RadioButton > Label
 {
 	color: baseText;
 	margin-left: 4px;
-	font-size: 16px;
 	transition-property: color;
 	transition-duration: 0.2s;
 	transition-timing-function: linear;
@@ -2549,6 +2548,7 @@ ProgressBar .ProgressBarNotch.Hidden
 @define rarity_color_immortal: #e4ae39;
 @define rarity_color_arcana: #ade55c;
 @define rarity_color_seasonal: #fff34f;
+@define rarity_color_seasonal_frostivus: #ccddff;
 .ItemRarity_common .ItemRarityBackgroundColor,.ItemRarity_common.ItemRarityBackgroundColor,.BaseSet .ItemRarityBackgroundColor,.BaseSet.ItemRarityBackgroundColor
 {
 	background-color: rarity_color_common;
@@ -2592,6 +2592,11 @@ ProgressBar .ProgressBarNotch.Hidden
 .ItemRarity_seasonal .ItemRarityBackgroundColor,.ItemRarity_seasonal.ItemRarityBackgroundColor
 {
 	background-color: rarity_color_seasonal;
+}
+
+.Season_Frostivus .ItemRarity_seasonal .ItemRarityBackgroundColor,.Season_Frostivus .ItemRarity_seasonal.ItemRarityBackgroundColor
+{
+	background-color: rarity_color_seasonal_frostivus;
 }
 
 .ItemRarity_common .ItemRarityColor,.ItemRarity_common.ItemRarityColor,a.ItemRarity_common.ItemRarityColor
@@ -2639,6 +2644,11 @@ ProgressBar .ProgressBarNotch.Hidden
 	color: rarity_color_seasonal;
 }
 
+.Season_Frostivus .ItemRarity_seasonal .ItemRarityColor,.Season_Frostivus .ItemRarity_seasonal.ItemRarityColor,.Season_Frostivus a.ItemRarity_seasonal.ItemRarityColor
+{
+	color: rarity_color_seasonal_frostivus;
+}
+
 .ItemRarity_common:hover .ItemRarityColor,.ItemRarity_common.ItemRarityColor:hover,a.ItemRarity_common.ItemRarityColor:hover
 {
 	text-decoration: none;
@@ -2680,6 +2690,22 @@ ProgressBar .ProgressBarNotch.Hidden
 }
 
 .ItemRarity_seasonal:hover .ItemRarityColor,.ItemRarity_seasonal.ItemRarityColor:hover,a.ItemRarity_seasonal.ItemRarityColor:hover
+{
+	text-decoration: none;
+}
+
+@define quality_color_unusual: #8650AC;
+.ItemQuality_unusual .ItemQualityBackgroundColor,.ItemQuality_unusual.ItemQualityBackgroundColor,.BaseSet .ItemQualityBackgroundColor,.BaseSet.ItemQualityBackgroundColor
+{
+	background-color: quality_color_unusual;
+}
+
+.ItemQuality_unusual .ItemQualityColor,.ItemQuality_unusual.ItemQualityColor,.BaseSet .ItemQualityColor,.BaseSet.ItemQualityColor
+{
+	color: quality_color_unusual;
+}
+
+.ItemQuality_unusual:hover .ItemQualityColor,.ItemQuality_unusual.ItemQualityColor:hover,a.ItemQuality_unusual.ItemQualityColor:hover
 {
 	text-decoration: none;
 }
@@ -6102,6 +6128,8 @@ DOTAEventCrestImage.Quality2
 @define GoldGradientBackgroundColor_Inverted: gradient( linear, 0% 0%, 0% 100%, from( #dcb870 ), color-stop( 0.45, #ae9259 ), color-stop( 0.55, #c6a562 ), to( #ffebb1 ) );
 @define PlatinumGradientBackgroundColor: gradient( linear, 0% 0%, 0% 100%, from( #F4E6D0 ), color-stop( 0.45, #D1B992 ), color-stop( 0.55, #9D937F ), to( #D1B992 ) );
 @define PlatinumGradientBackgroundColor_Inverted: gradient( linear, 0% 0%, 0% 100%, from( #D1B992 ), color-stop( 0.45, #9D937F ), color-stop( 0.55, #D1B992 ), to( #F4E6D0 ) );
+@define ShardsGradientBackgroundColor: gradient( linear, 0% 0%, 0% 100%, from( #433620 ), to( #141b21 ) );
+@define ShardsGradientBackgroundColor_Inverted: gradient( linear, 0% 0%, 0% 100%, from( #141b21 ), to( #433620 ) );
 @define DarkGreyGradientBackgroundColor: gradient( linear, 0% 0%, 0% 100%, from( #262C30 ), to( #121719 ) );
 @define DarkGreyGradientBackgroundColor_Inverted: gradient( linear, 0% 0%, 0% 100%, from( #121719 ), to( #262C30 ) );
 @define GreyGradientBackgroundColor: gradient( linear, 0% 0%, 0% 100%, from( #373F43 ), to( #21272A ) );
@@ -6117,6 +6145,59 @@ DOTAEventCrestImage.Quality2
 {
 	background-color: gradient( radial, 0% 0%, 0% 0%, 100% 100%, from( #181d25 ), to( #050609 ) );
 	border: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+.BodyExtraLarge
+{
+	font-size: 26px;
+	line-height: 32px;
+}
+
+.BodyLarge
+{
+	font-size: 22px;
+	line-height: 26px;
+}
+
+.BodyMedium
+{
+	font-size: 18px;
+	line-height: 24px;
+}
+
+.BodySmall
+{
+	font-size: 16px;
+	line-height: 20px;
+}
+
+.BodyTitleExtraLarge,.BodyTitleLarge,.BodyTitleMedium,.BodyTitleSmall
+{
+	font-family: titleFont;
+}
+
+.BodyTitleExtraLarge
+{
+	font-size: 26px;
+	line-height: 32px;
+}
+
+.BodyTitleLarge
+{
+	font-size: 22px;
+	line-height: 26px;
+}
+
+.BodyTitleMedium
+{
+	font-size: 18px;
+	line-height: 24px;
+}
+
+.BodyTitleSmall
+{
+	font-size: 16px;
+	line-height: 20px;
 }
 
 .TitleExtraLarge,.TitleLarge,.TitleMedium,.TitleSmall
@@ -6149,30 +6230,6 @@ DOTAEventCrestImage.Quality2
 {
 	font-size: 17px;
 	line-height: 1.2;
-}
-
-.BodyExtraLarge
-{
-	font-size: 26px;
-	line-height: 32px;
-}
-
-.BodyLarge
-{
-	font-size: 22px;
-	line-height: 26px;
-}
-
-.BodyMedium
-{
-	font-size: 18px;
-	line-height: 24px;
-}
-
-.BodySmall
-{
-	font-size: 16px;
-	line-height: 20px;
 }
 
 .LabelExtraExtraLarge,.LabelExtraLarge,.LabelLarge,.LabelMedium,.LabelSmall
@@ -6245,6 +6302,13 @@ DOTAEventCrestImage.Quality2
 	padding: 0px 24px;
 }
 
+.ButtonPrimary.Circle
+{
+	border-radius: 120px;
+	width: 34px;
+	padding: 2px;
+}
+
 .ButtonPrimary Label
 {
 	color: white;
@@ -6307,6 +6371,13 @@ DOTAEventCrestImage.Quality2
 	wash-color: white;
 }
 
+.ButtonPrimary.Large.Circle
+{
+	border-radius: 120px;
+	width: 48px;
+	padding: 6px;
+}
+
 .ButtonPrimary.Large.Wide
 {
 	padding: 0px 40px;
@@ -6339,16 +6410,11 @@ DOTAEventCrestImage.Quality2
 	padding: 0px 16px;
 }
 
-.ButtonPrimary.Disabled,.ButtonPrimary:disabled
+.ButtonPrimary.Small.Circle
 {
-	saturation: 0;
-	opacity: 0.3;
-	brightness: 0.5;
-}
-
-.ButtonPrimary.Disabled Label,.ButtonPrimary:disabled Label
-{
-	opacity: 1;
+	border-radius: 120px;
+	width: 24px;
+	padding: 2px;
 }
 
 .ButtonPrimary.LightGrey
@@ -6461,6 +6527,28 @@ DOTAEventCrestImage.Quality2
 	background-color: GoldGradientBackgroundColor_Inverted;
 }
 
+.ButtonPrimary.Gold Label
+{
+	opacity: 1;
+}
+
+.ButtonPrimary.Shards
+{
+	background-color: ShardsGradientBackgroundColor;
+	border-brush: WhiteGradientBorderSoft;
+}
+
+.ButtonPrimary.Shards:active:enabled:not(.Disabled)
+{
+	background-color: ShardsGradientBackgroundColor_Inverted;
+}
+
+.ButtonPrimary.Shards Label
+{
+	color: dotaPlusLightGold;
+	opacity: 1;
+}
+
 .ButtonPrimary.Platinum
 {
 	background-color: PlatinumGradientBackgroundColor;
@@ -6515,6 +6603,18 @@ DOTAEventCrestImage.Quality2
 .ButtonPrimary:active:enabled:not(.Disabled) Image,.ButtonPrimary:active:enabled:not(.Disabled) MoviePanel
 {
 	transform: translateY( 0.5px );
+}
+
+.ButtonPrimary.Disabled,.ButtonPrimary:disabled
+{
+	saturation: 0;
+	opacity: 0.3;
+	brightness: 0.5;
+}
+
+.ButtonPrimary.Disabled Label,.ButtonPrimary:disabled Label
+{
+	opacity: 1;
 }
 
 .IconButton
@@ -6593,6 +6693,101 @@ DOTAEventCrestImage.Quality2
 	transform: translateY( 0.5px );
 }
 
+.TextButton
+{
+	border-radius: 3px;
+	flow-children: right;
+	transition-property: transform;
+	transition-duration: 0.05s;
+	transition-timing-function: ease;
+}
+
+.TextButton Label
+{
+	color: #6BCAFF;
+	transition-property: transform, color;
+	transition-duration: 0.1s;
+	transition-timing-function: ease;
+}
+
+.TextButton Image
+{
+	wash-color: #6BCAFF;
+	width: 20px;
+	height: 20px;
+	transition-property: wash-color;
+	transition-duration: 0.1s;
+	transition-timing-function: ease;
+}
+
+.TextButton.Small Image
+{
+	width: 16px;
+	height: 16px;
+}
+
+.TextButton.Small Label
+{
+	font-size: 16px;
+	font-weight: normal;
+}
+
+.TextButton:hover:enabled:not(.Disabled)
+{
+	color: white;
+}
+
+.TextButton:hover:enabled:not(.Disabled) Image
+{
+	wash-color: white;
+}
+
+.TextButton:hover:enabled:not(.Disabled) Label
+{
+	color: #FFFFFF;
+}
+
+.TextButton:active:enabled:not(.Disabled)
+{
+	sound: "ui_generic_button_click";
+	transform: translateY( 1px );
+}
+
+.TreasureGrantButton
+{
+	border: 1px solid #ffffff22;
+	border-radius: 3px;
+	opacity: 0.2;
+	padding: 2px 6px;
+	visibility: collapse;
+	margin-right: 8px;
+	transition-property: opacity;
+	transition-duration: 0.1s;
+}
+
+.TreasureGrantButton Label
+{
+	text-transform: uppercase;
+	font-size: 14px;
+	transition-property: transform;
+	transition-duration: 0.05s;
+}
+
+.TreasureGrantButton:hover
+{
+	opacity: 1;
+}
+
+.TreasureGrantButton:active Label
+{
+	transform: translateY( 0.8px );
+}
+
+.MainBranch .TreasureGrantButton
+{
+	visibility: visible;
+}
+
 @keyframes 'GlowImageBright'
 {
 	100%
@@ -6629,14 +6824,14 @@ DOTAEventCrestImage.Quality2
 {
 	0%
 	{
-		box-shadow: 0px 0px 24px #8bffd800;
+		box-shadow: 0px 0px 24px #FFFFFF00;
 		brightness: 1;
 	}
 	
 	100%
 	{
-		box-shadow: 0px 0px 32px #8bffd822;
-		brightness: 2.5;
+		box-shadow: 0px 0px 32px #FFFFFF11;
+		brightness: 2;
 	}
 	
 }
@@ -6664,6 +6859,11 @@ DOTAEventCrestImage.Quality2
 	border: 1px solid rgba(0, 0, 0, 0.2);
 	background-color: rgba(0, 0, 0, 0.7);
 	padding: 2px 0px;
+}
+
+.TabGroupContainer .RadioBox
+{
+	visibility: collapse;
 }
 
 .TabGroupContainer.MinWidth .TabItem
