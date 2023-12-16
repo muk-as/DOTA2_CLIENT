@@ -13652,7 +13652,7 @@ public:
 // Has Trivial Constructor
 // Has Trivial Destructor
 // 
-// MResourceTypeForInfoType "vcompmat@‘øú"
+// MResourceTypeForInfoType "vcompmat@rúú"
 class InfoForResourceTypeCCompositeMaterialKit
 {
 private:
