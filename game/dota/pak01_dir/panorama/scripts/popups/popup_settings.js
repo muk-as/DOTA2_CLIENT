@@ -25,14 +25,16 @@ function updateMinimapPreview()
 	var iconScale = ( ( iconValue - heroSizePanel.min )  / ( heroSizePanel.max - heroSizePanel.min ) ) * ( maxScale - minScale ) + minScale;
 
 	var heroRegEx = /Hero\d+$/;
+	var heroArrowRegEx = /Hero\d+Arrow$/;
 
 	for ( var i = 0; i < minimapPanel.GetChildCount(); ++i )
 	{
 		var childPanel = minimapPanel.GetChild( i );
-		if ( !heroRegEx.test( childPanel.id ) )
-			continue;
-		
-		childPanel.style.preTransformScale2d = iconScale;
+		if (heroRegEx.test(childPanel.id) ) {
+			childPanel.style.preTransformScale2d = iconScale;
+		} else if (heroArrowRegEx.test(childPanel.id)) {
+			childPanel.style.preTransformScale2d = iconScale * 2.2;
+		}
 	}
 }
 

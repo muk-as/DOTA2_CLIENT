@@ -79979,7 +79979,11 @@ private:
 public:
 	CUtlVector< CHandle< CBaseEntity > > m_hTrackingProjectileHits; // 0x588	
 	CUtlVector< CHandle< CBaseEntity > > m_hUnitsHit; // 0x5a0	
-	CHandle< CBaseEntity > m_hTrackingTarget; // 0x5b8	
+	bool m_bIsThinkHit; // 0x5b8	
+private:
+	[[maybe_unused]] uint8_t __pad05b9[0x3]; // 0x5b9
+public:
+	CHandle< CBaseEntity > m_hTrackingTarget; // 0x5bc	
 };
 
 // Registered binary: server.dll (project 'server')
@@ -112415,14 +112419,12 @@ public:
 	int32_t projectile_speed; // 0x131c	
 	int32_t bonus_intellect; // 0x1320	
 	int32_t bonus_attack_speed; // 0x1324	
-	int32_t mana_cost; // 0x1328	
-	int32_t slow_duration; // 0x132c	
-	int32_t spell_amp_duration; // 0x1330	
-	int32_t damage_penalty; // 0x1334	
-	int32_t passive_cooldown; // 0x1338	
-private:
-	[[maybe_unused]] uint8_t __pad133c[0x4]; // 0x133c
-public:
+	float bonus_mana_regen; // 0x1328	
+	int32_t mana_cost; // 0x132c	
+	int32_t slow_duration; // 0x1330	
+	int32_t spell_amp_duration; // 0x1334	
+	int32_t damage_penalty; // 0x1338	
+	int32_t passive_cooldown; // 0x133c	
 	CUtlVector< int16 > m_InFlightWitchBladeAttackRecords; // 0x1340	
 };
 
@@ -112534,12 +112536,14 @@ public:
 
 // Registered binary: server.dll (project 'server')
 // Alignment: 8
-// Size: 0x1320
+// Size: 0x1328
 // Has VTable
 class CDOTA_Modifier_Item_Angels_Demise_Slow : public CDOTA_Buff
 {
 public:
 	int32_t slow; // 0x1318	
+	int32_t spell_crit_multiplier; // 0x131c	
+	int32_t spell_crit_flat; // 0x1320	
 };
 
 // Registered binary: server.dll (project 'server')
