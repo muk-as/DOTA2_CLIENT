@@ -139,7 +139,7 @@
 						<Label class="UnlockChestExplain HasChest" text="#DOTA_Treasure_UnlockChestExplain_HasChest" html="true" />
 						<Panel class="TreasureMarketPurchaseRow LeftRightFlow">
 							<Panel class="BuyOnMarketLabel" onmouseover="UIShowTextTooltip( #DOTA_tooltip_treasure_marketprice_disclaimer )" onmouseout="UIHideTextTooltip()">
-								<Label class="CratePriceLabelDisclaimer" text="#DOTA_Sticker_BuyOnMarket" />
+								<Label class="CratePriceLabelDisclaimer LighterGreyText" text="#DOTA_Sticker_BuyOnMarket" />
 							</Panel>
 							<Button class="ButtonPrimary DarkGrey" onactivate="DOTATierTreasurePurchaseSelectedTreasureOnMarket()">
 								<Label class="CratePriceLabel" text="{m:treasure_price}" />
@@ -193,10 +193,16 @@
 		<Panel class="ItemInfoColumn">
 			<Label id="TreasureOpeningMessage" html="true" />
 			<Panel id="ItemDetails" class="ItemDetails">
-				<Label class="CurrentlyViewingLabel" text="{s:treasure_item_text}" />
+				<Panel class="ItemDetailsHeader">
+					<Label class="CurrentItemTierLabel LabelLarge LightestGreyText" text="{s:treasure_item_text}" />
+					<Panel id="ItemTradeUpContainer">
+						<Label class="DuplicateLabel LighterGreyText" text="#DOTA_Treasure_ItemsOwned" />
+						<TextButton id="TradeUpButton" class="ButtonPrimary DarkGrey" text="#DOTA_TabName_Recycle" onactivate="DOTATierTreasureTradeUpSelectedTreasureItem()" />
+					</Panel>
+				</Panel>
 				<Panel id="ItemDetailsContainer" class="ItemDetailsContainer">
 					<Panel id="ItemNameContainer" class="ItemNameContainer">
-						<Label id="UnitName" class="UnitName" text="{s:unit_name}" />
+						<Label id="UnitName" class="UnitName LabelMedium" text="{s:unit_name}" />
 						<Label id="ItemName" class="ItemName" text="{g:dota_item_name:selected_item_def}" />
 					</Panel>
 					<Panel id="ItemDetailsRow" class="ItemDetailsRow">
@@ -235,32 +241,24 @@
 					</Panel>
 				</Panel>
 			</Panel>
-			<Panel id="ItemTradeUpContainer">
-				<Label class="DuplicateLabel" text="#DOTA_Treasure_ItemsOwned" />
-				<TextButton id="TradeUpButton" class="ButtonPrimary DarkGrey" text="#DOTA_TabName_Recycle" onactivate="DOTATierTreasureTradeUpSelectedTreasureItem()" />
-			</Panel>
-			<Panel id="ArcanaPersonaItemDetails" class="ItemDetails">
-				<Panel id="ArcanaPersonaItemDetailsContainer" class="ItemDetailsContainer">
-					<Panel id="ArcanaPersonaItemNameContainer" class="ItemNameContainer">
-						<Panel class="UnitNameContainer">
-							<Label id="UnitName" class="UnitName" text="{s:arcana_persona_unit_name}" />
-							<Label class="ArcanaPersonaLabel" text="{s:arcana_persona_label}" />
-						</Panel>
-						<Label id="ItemName" class="ItemName" text="{g:dota_item_name:arcana_persona_item_def}" />
-					</Panel>
-					<Panel id="ArcanaPersonaItemDetailsRow" class="ItemDetailsRow">
-						<TextButton id="ArcanaPersonaItemDetailsButton" class="ItemDetailsButton TextButton">
-							<Label id="ArcanaPersonaItemDetailsLink" class="ItemDetailsLink" text="#DOTA_Treasure_ItemDetailsButtonActionLabel" />
-							<Image src="s2r://panorama/images/control_icons/chevron_right_png.vtex" />
-						</TextButton>
-					</Panel>
+			<Panel id="ArcanaPersonaItemDetails">
+				<Panel class="UnitHeroImageContainer">
+					<DOTAHeroImage id="HeroArcanaPersonaImage" />
+				</Panel>
+				<Panel class="UnitNameContainer">
+					<Label class="LabelSmall LighterGreyText" text="#DOTA_Compendium2023_Includes" />
+					<Label class="ArcanaPersonaLabel" text="{s:arcana_persona_unit_name} {s:arcana_persona_label}" />
+					<TextButton id="ArcanaPersonaItemDetailsButton" class="ItemDetailsButton TextButton">
+						<Label id="ArcanaPersonaItemDetailsLink" class="ItemDetailsLink" text="#DOTA_Treasure_ItemDetailsButtonActionLabel" />
+						<Image src="s2r://panorama/images/control_icons/chevron_right_png.vtex" />
+					</TextButton>
 				</Panel>
 			</Panel>
 			<Panel id="TreasureItemPreviewMovieContainer" hittest="false">
 				<Panel class="Spinner" />
-				<Panel class="TopBottomFlow">
+				<Panel class="">
 					<Movie id="ItemPreviewMovie" controls="none" autoplay="onload" repeat="true" />
-					<Label id="ItemPreviewMovieLabel" class="MovieLabel" text="#DOTA_Ability_Movie_Label" />
+					<Label id="ItemPreviewMovieLabel" class="MovieLabel LabelSmall LightestGreyText" text="#DOTA_Ability_Movie_Label" />
 				</Panel>
 			</Panel>
 		</Panel>

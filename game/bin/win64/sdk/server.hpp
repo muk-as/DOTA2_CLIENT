@@ -43632,7 +43632,8 @@ public:
 		uint8_t m_bMarkedForDeletion: 1; 		
 		uint8_t m_bAuraIsHeal: 1; 		
 		uint8_t m_bProvidedByAura: 1; 		
-		uint32_t __pad4: 19;
+		uint8_t m_bCurrentlyInAuraRange: 1; 		
+		uint32_t __pad4: 18;
 	}; // 24 bits
 	bool m_bPurgedDestroy; // 0x93	
 	GameTime_t m_flPreviousTick; // 0x94	
