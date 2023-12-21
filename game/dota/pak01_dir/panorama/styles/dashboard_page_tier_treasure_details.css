@@ -272,14 +272,109 @@ DOTATierTreasureDetails
 
 #TreasureDetails #TreasureDetailsContents .TradeUpInformationContainer
 {
-	width: 80%;
+	width: 400px;
 	padding: 16px 0px;
 	flow-children: down;
 }
 
-#TreasureDetails #TreasureDetailsContents .TradeUpInformationContainer Label
+#TreasureDetails #TreasureDetailsContents .TradeUpInformationContainer .TradeUpInformationLabel
 {
-	margin-bottom: 4px;
+	margin-bottom: 12px;
+}
+
+#TreasureDetails #TreasureDetailsContents .TradeUpInformationContainer #RecycleButton
+{
+	horizontal-align: center;
+}
+
+#TreasureDetails #TreasureDetailsContents .TradeUpInformationContainer .TradeUpTierContainer
+{
+	flow-children: down;
+	width: 100%;
+}
+
+#TreasureDetails #TreasureDetailsContents .TradeUpInformationContainer .TradeUpTierContainer .TradeUpTier
+{
+	width: 100%;
+	padding: 6px 0px 6px 4px;
+	flow-children: right;
+	border-top: 1px solid rgba(255, 255, 255, 0.03);
+	border-brush: gradient( linear, 40% 0%, 90% 0%, from( white ), to( rgba(255, 255, 255, 0) ) );
+}
+
+#TreasureDetails #TreasureDetailsContents .TradeUpInformationContainer .TradeUpTierContainer .TradeUpTier Label
+{
+	vertical-align: center;
+}
+
+#TreasureDetails #TreasureDetailsContents .TradeUpInformationContainer .TradeUpTierContainer .TradeUpTier .TradeUpTierCountLabel
+{
+	width: 34px;
+	padding: 1px 0px 3px;
+	text-overflow: shrink;
+	color: white;
+	text-shadow: 0px 1.5px 8px rgba(0, 0, 0, 1);
+	vertical-align: center;
+	font-weight: semi-bold;
+	text-align: center;
+	border-radius: 40px;
+	margin-right: 6px;
+	letter-spacing: 0px;
+}
+
+#TreasureDetails #TreasureDetailsContents .TradeUpInformationContainer .TradeUpTierContainer .TradeUpTier #TradeUpTierButton
+{
+	visibility: collapse;
+	margin-left: 8px;
+}
+
+#TreasureDetails #TreasureDetailsContents .TradeUpInformationContainer .TradeUpTierContainer .TradeUpTier.TradeUpTier__Tier1 .TradeUpTierCountLabel
+{
+	background-color: CrateTierOne_textcolor;
+}
+
+#TreasureDetails #TreasureDetailsContents .TradeUpInformationContainer .TradeUpTierContainer .TradeUpTier.TradeUpTier__Tier1 .TradeUpTierLabel
+{
+	color: CrateTierOne_textcolor;
+}
+
+#TreasureDetails #TreasureDetailsContents .TradeUpInformationContainer .TradeUpTierContainer .TradeUpTier.TradeUpTier__Tier2 .TradeUpTierCountLabel
+{
+	background-color: CrateTierTwo_textcolor;
+}
+
+#TreasureDetails #TreasureDetailsContents .TradeUpInformationContainer .TradeUpTierContainer .TradeUpTier.TradeUpTier__Tier2 .TradeUpTierLabel
+{
+	color: CrateTierTwo_textcolor;
+}
+
+#TreasureDetails #TreasureDetailsContents .TradeUpInformationContainer .TradeUpTierContainer .TradeUpTier.TradeUpTier__Tier3 .TradeUpTierCountLabel
+{
+	background-color: CrateTierThree_textcolor;
+}
+
+#TreasureDetails #TreasureDetailsContents .TradeUpInformationContainer .TradeUpTierContainer .TradeUpTier.TradeUpTier__Tier3 .TradeUpTierLabel
+{
+	color: CrateTierThree_textcolor;
+}
+
+#TreasureDetails #TreasureDetailsContents .TradeUpInformationContainer .TradeUpTierContainer .TradeUpTier.TradeUpTier__Empty
+{
+	visibility: collapse;
+}
+
+#TreasureDetails #TreasureDetailsContents .TradeUpInformationContainer .TradeUpTierContainer .TradeUpTier.TradeUpTier__RecyclingAvailable .TradeUpTierCountLabel
+{
+	animation-name: GlowOwnedTierItemsCount;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
+	animation-direction: alternate-reverse;
+}
+
+#TreasureDetails #TreasureDetailsContents .TradeUpInformationContainer .TradeUpTierContainer .TradeUpTier.TradeUpTier__RecyclingAvailable #TradeUpTierButton
+{
+	visibility: visible;
 }
 
 #TreasureDetails #TreasureDetailsContents .TreasureGrantButtonsContainer
@@ -298,6 +393,22 @@ DOTATierTreasureDetails
 .OpeningInProgress #TreasureDetails #TreasureDetailsBlocker,.OpeningFinished #TreasureDetails #TreasureDetailsBlocker
 {
 	visibility: visible;
+}
+
+@keyframes 'GlowOwnedTierItemsCount'
+{
+	0%
+	{
+		brightness: 1;
+		box-shadow: 0px 0px 8px #FFFFFF00;
+	}
+	
+	100%
+	{
+		brightness: 1.5;
+		box-shadow: 0px 0px 10px #FFFFFF11;
+	}
+	
 }
 
 .ItemInfoColumn
@@ -1219,8 +1330,8 @@ DOTATierTreasureDetails
 	text-overflow: shrink;
 	text-align: center;
 	letter-spacing: 1px;
-	max-width: 100px;
-	max-height: 34px;
+	max-width: 120px;
+	max-height: 31px;
 	font-weight: semi-bold;
 	line-height: 1;
 	brightness: 1.3;

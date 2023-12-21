@@ -53,9 +53,14 @@
 				</Panel>
 			</Panel>
 		</snippet>
-		<snippet name="TreasureItem">
-			<Panel class="TreasureItem">
-				<DOTAEconItemDiretide id="TreasureItemEconImage" class="DisableInspect" />
+		<snippet name="TradeUpTier">
+			<Panel class="TradeUpTier">
+				<Label class="TradeUpTierCountLabel LabelMedium" text="{d:trade_up_tier_count}" />
+				<Label class="TradeUpTierLabel LabelSmall" text="#TierItemsCount" />
+				<Button id="TradeUpTierButton" class="ButtonPrimary DarkGrey Small" onactivate="DOTATierTreasureAutoTradeUp()">
+					<Label class="LabelSmall" text="#DOTA_TabName_Recycle" />
+					<Image src="s2r://panorama/images/control_icons/24px/arrow_top_right.vsvg" />
+				</Button>
 			</Panel>
 		</snippet>
 		<snippet name="TreasureTierList">
@@ -177,11 +182,8 @@
 					<Panel class="Dash" />
 				</Panel>
 				<Panel class="TradeUpInformationContainer">
-					<Label class="LighterGreyText" text="#DOTA_Treasure_TradeUpDescription" />
-					<TextButton class="TextButton" onactivate="DOTATierTreasureShowTradeUpPage()">
-						<Label id="ItemDetailsLink" text="#DOTA_TabName_Recycle" />
-						<Image src="s2r://panorama/images/control_icons/24px/chevron_right.vsvg" />
-					</TextButton>
+					<Label class="TradeUpInformationLabel LighterGreyText" html="true" text="#DOTA_Treasure_TradeUpDescription" />
+					<Panel id="TradeUpTiers" class="TradeUpTierContainer" />
 				</Panel>
 				<Panel class="TreasureGrantButtonsContainer LeftRightFlow">
 					<TextButton id="TreasureGrantButton" class="TreasureGrantButton" text="Grant Chest" unlocalized="true" onactivate="DOTATierTreasureGrantSelectedTreasure()" />
@@ -197,7 +199,10 @@
 					<Label class="CurrentItemTierLabel LabelLarge LightestGreyText" text="{s:treasure_item_text}" />
 					<Panel id="ItemTradeUpContainer">
 						<Label class="DuplicateLabel LighterGreyText" text="#DOTA_Treasure_ItemsOwned" />
-						<TextButton id="TradeUpButton" class="ButtonPrimary DarkGrey" text="#DOTA_TabName_Recycle" onactivate="DOTATierTreasureTradeUpSelectedTreasureItem()" />
+						<Button id="TradeUpButton" class="ButtonPrimary DarkGrey" text="#DOTA_TabName_Recycle" onactivate="DOTATierTreasureTradeUpSelectedTreasureItem()">
+							<Label class="LabelSmall" text="#DOTA_TabName_Recycle" />
+							<Image src="s2r://panorama/images/control_icons/24px/arrow_top_right.vsvg" />
+						</Button>
 					</Panel>
 				</Panel>
 				<Panel id="ItemDetailsContainer" class="ItemDetailsContainer">
