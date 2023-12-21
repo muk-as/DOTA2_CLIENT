@@ -4587,7 +4587,7 @@ enum class EGCBaseMsg : uint32_t
 
 // Registered binary: server.dll (project 'server')
 // Alignment: 4
-// Size: 0x126
+// Size: 0x128
 enum class modifierfunction : uint32_t
 {
 	// MScriptDescription "GetModifierPreAttack_BonusDamage"
@@ -5174,7 +5174,11 @@ enum class modifierfunction : uint32_t
 	MODIFIER_PROPERTY_FORCE_MAX_HEALTH = 0x122,
 	// MScriptDescription "GetModifierAoEBonusConstant"
 	MODIFIER_PROPERTY_AOE_BONUS_CONSTANT = 0x123,
-	MODIFIER_FUNCTION_LAST = 0x124,
+	// MScriptDescription "OnTakeDamagePostUnavoidableBlock"
+	MODIFIER_EVENT_ON_TAKEDAMAGE_POST_UNAVOIDABLE_BLOCK = 0x124,
+	// MScriptDescription "OnMuteDamageAbilities"
+	MODIFIER_EVENT_ON_MUTE_DAMAGE_ABILITIES = 0x125,
+	MODIFIER_FUNCTION_LAST = 0x126,
 	MODIFIER_FUNCTION_INVALID = 0xffff,
 };
 
@@ -13652,7 +13656,7 @@ public:
 // Has Trivial Constructor
 // Has Trivial Destructor
 // 
-// MResourceTypeForInfoType "vcompmat@ÿú"
+// MResourceTypeForInfoType "vcompmat@ôû"
 class InfoForResourceTypeCCompositeMaterialKit
 {
 private:
@@ -40566,7 +40570,7 @@ public:
 
 // Registered binary: server.dll (project 'server')
 // Alignment: 8
-// Size: 0x1318
+// Size: 0x1338
 // Has VTable
 // Is Abstract
 class CDOTA_Buff : public CHorizontalMotionController
@@ -40621,9 +40625,9 @@ public:
 	CUtlVector< CDOTA_BuffParticle > m_iParticles; // 0xa0	
 	CUtlVector< CHandle< CBaseEntity > > m_hAuraUnits; // 0xb8	
 private:
-	[[maybe_unused]] uint8_t __pad00d0[0x1240]; // 0xd0
+	[[maybe_unused]] uint8_t __pad00d0[0x1260]; // 0xd0
 public:
-	HSCRIPT m_hScriptScope; // 0x1310	
+	HSCRIPT m_hScriptScope; // 0x1330	
 };
 
 // Registered binary: server.dll (project 'server')
