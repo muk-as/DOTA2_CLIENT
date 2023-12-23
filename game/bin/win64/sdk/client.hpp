@@ -4,7 +4,7 @@
 
 // /////////////////////////////////////////////////////////////
 // Binary: client.dll
-// Classes count: 7803
+// Classes count: 7804
 // Enums count: 69
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
@@ -37713,6 +37713,16 @@ class CDOTA_Modifier_Desolator_Corruption : public CDOTA_Buff
 {
 public:
 	int32_t corruption_armor; // 0x1338	
+};
+
+// Registered binary: client.dll (project 'client')
+// Alignment: 8
+// Size: 0x1338
+// Has VTable
+class CDOTA_Modifier_Item_Revenants_Brooch_Active : public CDOTA_Buff_Item
+{
+public:
+	// No schema binary for binding
 };
 
 // Registered binary: client.dll (project 'client')

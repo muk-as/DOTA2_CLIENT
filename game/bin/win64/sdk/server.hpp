@@ -4,7 +4,7 @@
 
 // /////////////////////////////////////////////////////////////
 // Binary: server.dll
-// Classes count: 8258
+// Classes count: 8259
 // Enums count: 330
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
@@ -65910,7 +65910,7 @@ public:
 	float fiery_soul_stack_duration; // 0x1344	
 	ParticleIndex_t m_nFXIndex; // 0x1348	
 	GameTime_t m_flFierySoulDieTime; // 0x134c	
-	GameTime_t m_flLastFierySoalFullStackTime; // 0x1350	
+	GameTime_t m_flLastFierySoulFullStackTime; // 0x1350	
 };
 
 // Registered binary: server.dll (project 'server')
@@ -102639,6 +102639,16 @@ public:
 class CDOTA_Item_Revenants_Brooch : public CDOTA_Item
 {
 public:
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1338
+// Has VTable
+class CDOTA_Modifier_Item_Revenants_Brooch_Active : public CDOTA_Buff_Item
+{
+public:
+	// No schema binary for binding
 };
 
 // Registered binary: server.dll (project 'server')
