@@ -431,7 +431,12 @@ DOTATierTreasureDetails
 	margin-right: 240px;
 }
 
-.TreasureHexFocused:not(.OpeningFinished) .ItemInfoColumn
+.OpeningInProgress .ItemInfoColumn
+{
+	opacity: 0;
+}
+
+.TreasureHexFocused .ItemInfoColumn
 {
 	opacity: 0;
 	transform: translateY( 32px );
@@ -483,8 +488,6 @@ DOTATierTreasureDetails
 	padding: 16px 16px 20px 24px;
 	background-color: rgba(0, 0, 0, 0.6);
 	border-left: 3px solid rgba(255, 255, 255, 0.8);
-	transition-property: opacity;
-	transition-duration: 0.25s;
 }
 
 .Selected__TreasureItemRarity_Crate_Tier1 .ItemInfoColumn .ItemDetails
@@ -510,11 +513,6 @@ DOTATierTreasureDetails
 .Selected__TreasureItemRarity_Crate_Tier5 .ItemInfoColumn .ItemDetails,.Selected__TreasureItemRarity_CosmicallyRare .ItemInfoColumn .ItemDetails
 {
 	border-brush: CrateTierFive_textcolor;
-}
-
-.OpeningInProgress .ItemInfoColumn .ItemDetails
-{
-	opacity: 0;
 }
 
 .OpeningFailed .ItemInfoColumn .ItemDetails
@@ -584,7 +582,7 @@ DOTATierTreasureDetails
 	visibility: visible;
 }
 
-.TreasureHexFocused .ItemInfoColumn .ItemDetails .ItemDetailsHeader #ItemTradeUpContainer,.OpeningInProgress .ItemInfoColumn .ItemDetails .ItemDetailsHeader #ItemTradeUpContainer,.OpeningInProgress .ItemInfoColumn .ItemDetails .ItemDetailsHeader #ItemTradeUpContainer
+.TreasureHexFocused .ItemInfoColumn .ItemDetails .ItemDetailsHeader #ItemTradeUpContainer,.OpeningInProgress .ItemInfoColumn .ItemDetails .ItemDetailsHeader #ItemTradeUpContainer
 {
 	visibility: collapse;
 }
@@ -1057,11 +1055,7 @@ DOTATierTreasureDetails
 
 .OpeningFinished #TreasureContentsContainer
 {
-	width: 190px;
-	opacity-mask: none;
-	horizontal-align: center;
-	z-index: 1;
-	opacity-mask: url("s2r://panorama/images/masks/softedge_horizontal_png.vtex");
+	opacity: 0;
 }
 
 #TreasureContentsContainer #TreasureContents
@@ -1070,11 +1064,6 @@ DOTATierTreasureDetails
 	flow-children: right;
 	width: 100%;
 	margin-bottom: 8px;
-}
-
-.OpeningFinished #TreasureContentsContainer #TreasureContents
-{
-	opacity: 0;
 }
 
 #TreasureContentsContainer #TreasureRarityFilter
@@ -1142,7 +1131,7 @@ DOTATierTreasureDetails
 
 .OpeningFinished .TreasureItem
 {
-	opacity: 0;
+	opacity: 1;
 }
 
 .TreasureItem #ItemSelect
@@ -1296,6 +1285,12 @@ DOTATierTreasureDetails
 .TreasureItem.Focused #TreasureItemPreview
 {
 	transform: scale3d( 1, 1, 1) translateY( -16px );
+}
+
+.TreasureItem.Received #TreasureItemPreview
+{
+	brightness: 0.5;
+	saturation: 0.8;
 }
 
 .TreasureItem:hover
@@ -1544,7 +1539,7 @@ DOTATierTreasureDetails
 	transition-delay: 0s;
 }
 
-.OpeningInProgress #TreasureContentsPagination,.OpeningFinished #TreasureContentsPagination
+.OpeningAny #TreasureContentsPagination
 {
 	opacity: 0;
 	transform: translateY( 16px );
