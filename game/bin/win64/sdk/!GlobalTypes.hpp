@@ -8280,7 +8280,7 @@ enum class DOTA_HOLDOUT_TOWER_TYPE : uint32_t
 
 // Registered binary: server.dll (project 'server')
 // Alignment: 8
-// Size: 0x2b
+// Size: 0x2c
 enum class DOTA_ABILITY_BEHAVIOR : uint64_t
 {
 	DOTA_ABILITY_BEHAVIOR_NONE = 0x0,
@@ -8326,6 +8326,7 @@ enum class DOTA_ABILITY_BEHAVIOR : uint64_t
 	DOTA_ABILITY_BEHAVIOR_IGNORE_MUTED = 0x8000000000,
 	DOTA_ABILITY_BEHAVIOR_ALT_CASTABLE = 0x10000000000,
 	DOTA_ABILITY_BEHAVIOR_BREAK_DISABLES = 0x20000000000,
+	DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS = 0x40000000000,
 };
 
 // Registered binary: server.dll (project 'server')
@@ -13656,7 +13657,7 @@ public:
 // Has Trivial Constructor
 // Has Trivial Destructor
 // 
-// MResourceTypeForInfoType "vcompmat@cû"
+// MResourceTypeForInfoType "vcompmat@Hû"
 class InfoForResourceTypeCCompositeMaterialKit
 {
 private:
