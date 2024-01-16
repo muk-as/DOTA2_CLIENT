@@ -5355,7 +5355,7 @@ enum class DOTASelectionPriorityRules : uint32_t
 
 // Registered binary: server.dll (project 'server')
 // Alignment: 4
-// Size: 0xf
+// Size: 0x10
 enum class DOTACommType_t : uint32_t
 {
 	DOTA_COMM_TYPE_NONE = 0x0,
@@ -5373,6 +5373,7 @@ enum class DOTACommType_t : uint32_t
 	DOTA_COMM_TYPE_DROPS = 0xc,
 	DOTA_COMM_TYPE_NEWPLAYER_EXPERT = 0xd,
 	DOTA_COMM_TYPE_COACHED = 0xe,
+	DOTA_COMM_TYPE_MAPDRAWING = 0xf,
 };
 
 // Registered binary: server.dll (project 'server')
@@ -10508,16 +10509,17 @@ enum class DOTALobbyReadyState : uint32_t
 
 // Registered binary: server.dll (project 'server')
 // Alignment: 4
-// Size: 0x7
+// Size: 0x8
 enum class DOTACommLevel_t : uint32_t
 {
 	DOTA_COMM_LEVEL_NONE = 0x0,
 	DOTA_COMM_LEVEL_COOLDOWN = 0x1,
 	DOTA_COMM_LEVEL_PINGS = 0x2,
-	DOTA_COMM_LEVEL_CHAT = 0x3,
-	DOTA_COMM_LEVEL_TIPPING = 0x4,
-	DOTA_COMM_LEVEL_VOICE = 0x5,
-	DOTA_COMM_LEVEL_ALLIED_ABILITY = 0x6,
+	DOTA_COMM_LEVEL_MAPDRAWING = 0x3,
+	DOTA_COMM_LEVEL_CHAT = 0x4,
+	DOTA_COMM_LEVEL_TIPPING = 0x5,
+	DOTA_COMM_LEVEL_VOICE = 0x6,
+	DOTA_COMM_LEVEL_ALLIED_ABILITY = 0x7,
 };
 
 // Registered binary: server.dll (project 'server')
@@ -13657,7 +13659,7 @@ public:
 // Has Trivial Constructor
 // Has Trivial Destructor
 // 
-// MResourceTypeForInfoType "vcompmat@!û"
+// MResourceTypeForInfoType "vcompmat@Hû"
 class InfoForResourceTypeCCompositeMaterialKit
 {
 private:
