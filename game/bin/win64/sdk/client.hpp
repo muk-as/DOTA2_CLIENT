@@ -22884,7 +22884,7 @@ public:
 	float damage; // 0x1338	
 	int32_t shard_armor_reduction; // 0x133c	
 	int32_t shard_building_dmg_pct; // 0x1340	
-	int32_t movement_speed; // 0x1344	
+	float movement_speed; // 0x1344	
 	int32_t magic_resistance; // 0x1348	
 };
 
@@ -42640,7 +42640,7 @@ class CDOTA_Modifier_Item_Doubloon : public CDOTA_Buff_Item
 public:
 	float conversion_pct; // 0x1338	
 	int32_t bonus_health_regen; // 0x133c	
-	int32_t bonus_mana_regen; // 0x1340	
+	float bonus_mana_regen; // 0x1340	
 };
 
 // Registered binary: client.dll (project 'client')
