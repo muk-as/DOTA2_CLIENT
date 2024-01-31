@@ -18018,7 +18018,7 @@ public:
 
 // Registered binary: server.dll (project 'server')
 // Alignment: 8
-// Size: 0xe270
+// Size: 0xe318
 // Has VTable
 // 
 // MPulseBindableTarget
@@ -18098,110 +18098,111 @@ public:
 	bool m_bRankCalibrated[24]; // 0x39f8	
 	bool m_bLowPriority[24]; // 0x3a10	
 	bool m_bWasHeroPickDotaPlusSuggestion[24]; // 0x3a28	
-	bool m_bIdleInFountain[24]; // 0x3a40	
-	bool m_bLoggedInElsewhere[24]; // 0x3a58	
-	bool m_bPlayerLoadedCompletely[64]; // 0x3a70	
-	int32_t m_iDisconnectionReason[64]; // 0x3ab0	
+	GameTime_t m_flLastActiveTime[24]; // 0x3a40	
+	float m_flIdleTime[24]; // 0x3aa0	
+	bool m_bLoggedInElsewhere[24]; // 0x3b00	
+	bool m_bPlayerLoadedCompletely[64]; // 0x3b18	
+	int32_t m_iDisconnectionReason[64]; // 0x3b58	
 private:
-	[[maybe_unused]] uint8_t __pad3bb0[0x600]; // 0x3bb0
+	[[maybe_unused]] uint8_t __pad3c58[0x600]; // 0x3c58
 public:
-	uint64_t m_SelectedGuide[64]; // 0x41b0	
-	bool m_bIsUsingPlusGuide[64]; // 0x43b0	
-	int32_t m_iCustomTeamAssignments[24]; // 0x43f0	
-	CUtlVector< float32 > m_vecPlayerLevelUpTimes[24]; // 0x4450	
-	int32_t m_iManaSpent[64][6]; // 0x4690	
-	int32_t m_iNeutralOption[64][6][6]; // 0x4c90	
-	bool m_bLeaverAlreadyDetected; // 0x7090	
+	uint64_t m_SelectedGuide[64]; // 0x4258	
+	bool m_bIsUsingPlusGuide[64]; // 0x4458	
+	int32_t m_iCustomTeamAssignments[24]; // 0x4498	
+	CUtlVector< float32 > m_vecPlayerLevelUpTimes[24]; // 0x44f8	
+	int32_t m_iManaSpent[64][6]; // 0x4738	
+	int32_t m_iNeutralOption[64][6][6]; // 0x4d38	
+	bool m_bLeaverAlreadyDetected; // 0x7138	
 private:
-	[[maybe_unused]] uint8_t __pad7091[0x427]; // 0x7091
+	[[maybe_unused]] uint8_t __pad7139[0x427]; // 0x7139
 public:
-	CUtlVector< TimedKillEvent_t > m_TimedKillList; // 0x74b8	
-	CUtlVector< TimedKillEvent_t > m_TimedAssistList; // 0x74d0	
-	CUtlVector< TimedKillEvent_t > m_TimedDeathList; // 0x74e8	
-	uint32_t m_unLastHeroPickOrder; // 0x7500	
-	int32_t m_iBountyGoldEarned[24]; // 0x7504	
-	int32_t m_iRangeCreepUpgradeGoldEarned[24]; // 0x7564	
-	int32_t m_iObserverWardsDestroyed[24]; // 0x75c4	
-	int32_t m_iReliableGoldEarned[24]; // 0x7624	
-	int32_t m_iGoldLossPrevented[24]; // 0x7684	
+	CUtlVector< TimedKillEvent_t > m_TimedKillList; // 0x7560	
+	CUtlVector< TimedKillEvent_t > m_TimedAssistList; // 0x7578	
+	CUtlVector< TimedKillEvent_t > m_TimedDeathList; // 0x7590	
+	uint32_t m_unLastHeroPickOrder; // 0x75a8	
+	int32_t m_iBountyGoldEarned[24]; // 0x75ac	
+	int32_t m_iRangeCreepUpgradeGoldEarned[24]; // 0x760c	
+	int32_t m_iObserverWardsDestroyed[24]; // 0x766c	
+	int32_t m_iReliableGoldEarned[24]; // 0x76cc	
+	int32_t m_iGoldLossPrevented[24]; // 0x772c	
 private:
-	[[maybe_unused]] uint8_t __pad76e4[0x5c]; // 0x76e4
+	[[maybe_unused]] uint8_t __pad778c[0x5c]; // 0x778c
 public:
-	CUtlVector< CHandle< CDOTA_Unit_Courier > > m_hTeamCouriers[15]; // 0x7740	
-	CUtlVector< CHandle< CDOTA_Unit_Courier > > m_hPlayerCouriers[64]; // 0x78a8	
-	float m_flAvailableLaneGold[15]; // 0x7ea8	
+	CUtlVector< CHandle< CDOTA_Unit_Courier > > m_hTeamCouriers[15]; // 0x77e8	
+	CUtlVector< CHandle< CDOTA_Unit_Courier > > m_hPlayerCouriers[64]; // 0x7950	
+	float m_flAvailableLaneGold[15]; // 0x7f50	
 private:
-	[[maybe_unused]] uint8_t __pad7ee4[0x4]; // 0x7ee4
+	[[maybe_unused]] uint8_t __pad7f8c[0x4]; // 0x7f8c
 public:
-	CUtlVector< DamageShareEvent_t > m_DamageShareList[24]; // 0x7ee8	
-	DamageShareEvent_t m_AbsorbedDamageRollup[24][25]; // 0x8128	
-	AbilityID_t m_playerAbilityUpgradeOrder[24][25]; // 0x9d48	
-	int32_t m_playerAbilityUpgradeTimes[24][25]; // 0xa6a8	
-	int32_t m_playerAbilityUpgradeCount[24]; // 0xb008	
+	CUtlVector< DamageShareEvent_t > m_DamageShareList[24]; // 0x7f90	
+	DamageShareEvent_t m_AbsorbedDamageRollup[24][25]; // 0x81d0	
+	AbilityID_t m_playerAbilityUpgradeOrder[24][25]; // 0x9df0	
+	int32_t m_playerAbilityUpgradeTimes[24][25]; // 0xa750	
+	int32_t m_playerAbilityUpgradeCount[24]; // 0xb0b0	
 private:
-	[[maybe_unused]] uint8_t __padb068[0x40]; // 0xb068
+	[[maybe_unused]] uint8_t __padb110[0x40]; // 0xb110
 public:
-	int32_t m_fullUpdateCount[64]; // 0xb0a8	
-	int32_t m_iCouriersDeployed[24]; // 0xb1a8	
-	int32_t m_iCouriersPotentiallyKilled[24]; // 0xb208	
-	int32_t m_iCommandsIssued[24]; // 0xb268	
-	uint32_t m_hHeroSpawnGroup[24]; // 0xb2c8	
+	int32_t m_fullUpdateCount[64]; // 0xb150	
+	int32_t m_iCouriersDeployed[24]; // 0xb250	
+	int32_t m_iCouriersPotentiallyKilled[24]; // 0xb2b0	
+	int32_t m_iCommandsIssued[24]; // 0xb310	
+	uint32_t m_hHeroSpawnGroup[24]; // 0xb370	
 private:
-	[[maybe_unused]] uint8_t __padb328[0x17c0]; // 0xb328
+	[[maybe_unused]] uint8_t __padb3d0[0x17c0]; // 0xb3d0
 public:
-	float m_fNextLaneDetectionUpdate; // 0xcae8	
-	float m_fNextTimedHeroStatsUpdate; // 0xcaec	
+	float m_fNextLaneDetectionUpdate; // 0xcb90	
+	float m_fNextTimedHeroStatsUpdate; // 0xcb94	
 private:
-	[[maybe_unused]] uint8_t __padcaf0[0x2a0]; // 0xcaf0
+	[[maybe_unused]] uint8_t __padcb98[0x2a0]; // 0xcb98
 public:
-	bool m_bInitializedLaneWaypoints; // 0xcd90	
+	bool m_bInitializedLaneWaypoints; // 0xce38	
 private:
-	[[maybe_unused]] uint8_t __padcd91[0x757]; // 0xcd91
+	[[maybe_unused]] uint8_t __padce39[0x757]; // 0xce39
 public:
-	uint32_t m_nLastWardSuggestionBuildingState; // 0xd4e8	
-	uint32_t m_nLastWardSuggestionUpdateNum; // 0xd4ec	
-	bool m_bLastWardSuggestionRoshanAlive; // 0xd4f0	
-	bool bDoFinalPregameSuggestion[10]; // 0xd4f1	
+	uint32_t m_nLastWardSuggestionBuildingState; // 0xd590	
+	uint32_t m_nLastWardSuggestionUpdateNum; // 0xd594	
+	bool m_bLastWardSuggestionRoshanAlive; // 0xd598	
+	bool bDoFinalPregameSuggestion[10]; // 0xd599	
 private:
-	[[maybe_unused]] uint8_t __padd4fb[0x1]; // 0xd4fb
+	[[maybe_unused]] uint8_t __padd5a3[0x1]; // 0xd5a3
 public:
-	int32_t m_hAbilitiesSuggestion[10]; // 0xd4fc	
-	int32_t m_hPregameItemsSuggestion[10]; // 0xd524	
-	int32_t m_hItemsSuggestion[10]; // 0xd54c	
-	int32_t m_hTopNItemsSuggestion[10]; // 0xd574	
-	int32_t m_hNeutralItemsSuggestion[10][5]; // 0xd59c	
-	int32_t m_hLanesSuggestion[15]; // 0xd664	
-	int32_t m_hWinProbabilitySuggestion; // 0xd6a0	
-	int32_t m_hHeroSuggestion[10]; // 0xd6a4	
-	int32_t m_hWardLocationsSuggestion[15]; // 0xd6cc	
-	float m_fNextCreepDistanceUpdate; // 0xd708	
-	float m_fCreepDistanceSafe[15]; // 0xd70c	
-	float m_fCreepDistanceMid[15]; // 0xd748	
-	float m_fCreepDistanceOff[15]; // 0xd784	
-	GameTime_t m_fLastSuggestionTime; // 0xd7c0	
-	bool m_bHasRevealedAnonymizedEnemyPlayerInfo; // 0xd7c4	
+	int32_t m_hAbilitiesSuggestion[10]; // 0xd5a4	
+	int32_t m_hPregameItemsSuggestion[10]; // 0xd5cc	
+	int32_t m_hItemsSuggestion[10]; // 0xd5f4	
+	int32_t m_hTopNItemsSuggestion[10]; // 0xd61c	
+	int32_t m_hNeutralItemsSuggestion[10][5]; // 0xd644	
+	int32_t m_hLanesSuggestion[15]; // 0xd70c	
+	int32_t m_hWinProbabilitySuggestion; // 0xd748	
+	int32_t m_hHeroSuggestion[10]; // 0xd74c	
+	int32_t m_hWardLocationsSuggestion[15]; // 0xd774	
+	float m_fNextCreepDistanceUpdate; // 0xd7b0	
+	float m_fCreepDistanceSafe[15]; // 0xd7b4	
+	float m_fCreepDistanceMid[15]; // 0xd7f0	
+	float m_fCreepDistanceOff[15]; // 0xd82c	
+	GameTime_t m_fLastSuggestionTime; // 0xd868	
+	bool m_bHasRevealedAnonymizedEnemyPlayerInfo; // 0xd86c	
 private:
-	[[maybe_unused]] uint8_t __padd7c5[0x603]; // 0xd7c5
+	[[maybe_unused]] uint8_t __padd86d[0x603]; // 0xd86d
 public:
-	PlayerID_t m_nRequestedBotPlayerID; // 0xddc8	
-	float m_fNextCombatLogLocationUpdateTime; // 0xddcc	
-	float m_fNextAPMUpdateTime; // 0xddd0	
+	PlayerID_t m_nRequestedBotPlayerID; // 0xde70	
+	float m_fNextCombatLogLocationUpdateTime; // 0xde74	
+	float m_fNextAPMUpdateTime; // 0xde78	
 private:
-	[[maybe_unused]] uint8_t __padddd4[0x4]; // 0xddd4
+	[[maybe_unused]] uint8_t __padde7c[0x4]; // 0xde7c
 public:
-	CUtlVector< uint32 > m_vecPendingPlayerResourceRequests; // 0xddd8	
-	int32_t m_iRampages[24]; // 0xddf0	
-	int32_t m_iTripleKills[24]; // 0xde50	
-	int32_t m_iCouriersKilled[24]; // 0xdeb0	
-	int32_t m_iAegisesSnatched[24]; // 0xdf10	
-	int32_t m_iCheesesEaten[24]; // 0xdf70	
-	int32_t m_iRapiersPurchased[24]; // 0xdfd0	
-	float m_flPushingDamage[24]; // 0xe030	
-	int32_t m_iRoshanKillsNight[24]; // 0xe090	
-	int32_t m_iRoshanKillsDay[24]; // 0xe0f0	
-	int32_t m_iPortalsUsed[24]; // 0xe150	
-	int32_t m_iWisdomRunesGained[24]; // 0xe1b0	
-	int32_t m_iShieldRunesGained[24]; // 0xe210	
+	CUtlVector< uint32 > m_vecPendingPlayerResourceRequests; // 0xde80	
+	int32_t m_iRampages[24]; // 0xde98	
+	int32_t m_iTripleKills[24]; // 0xdef8	
+	int32_t m_iCouriersKilled[24]; // 0xdf58	
+	int32_t m_iAegisesSnatched[24]; // 0xdfb8	
+	int32_t m_iCheesesEaten[24]; // 0xe018	
+	int32_t m_iRapiersPurchased[24]; // 0xe078	
+	float m_flPushingDamage[24]; // 0xe0d8	
+	int32_t m_iRoshanKillsNight[24]; // 0xe138	
+	int32_t m_iRoshanKillsDay[24]; // 0xe198	
+	int32_t m_iPortalsUsed[24]; // 0xe1f8	
+	int32_t m_iWisdomRunesGained[24]; // 0xe258	
+	int32_t m_iShieldRunesGained[24]; // 0xe2b8	
 	
 	// Static fields:
 	static uint64_t &Get_s_unLobbySteamID(){return *reinterpret_cast<uint64_t*>(interfaces::g_schema->FindTypeScopeForModule("server.dll")->FindDeclaredClass("CDOTA_PlayerResource")->m_static_fields[0]->m_instance);};
