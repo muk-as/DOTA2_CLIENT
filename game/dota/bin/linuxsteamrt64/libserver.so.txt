@@ -175,8 +175,8 @@
 11CBaseToggle
 11CCallResultI14CJobCallResultI24SteamUGCQueryCompleted_tES1_E
 11CCallResultI18CScriptHTTPRequest22HTTPRequestCompleted_tE
-11CCallResultI18CSteamLearnManager22HTTPRequestCompleted_tE
 11CCallResultI19CDOTA_TeamCommander24SteamUGCQueryCompleted_tE
+11CCallResultI29CSteamServiceMethodHTTPHelper22HTTPRequestCompleted_tE
 11CDOTACheers
 11CDemoPacket
 11CEconEntity
@@ -5266,6 +5266,7 @@
 2!.CMsgSignOutGameplayStats.CPlayer
 2!.CMsgSource1LegacyGameEvent.key_t
 2!.CMsgSteamLearn_CacheData_Request
+2!.CMsgSteamLearn_Inference_Request
 2!.CSVCMsg_GameSessionConfiguration
 2!.ESteamLearnSnapshotProjectResult
 2!.google.protobuf.EnumValueOptions
@@ -5281,6 +5282,7 @@
 2".CMsgGCMsgMasterSetDirectory.SubGC
 2".CMsgSetItemPositions.ItemPosition
 2".CMsgSteamLearn_CacheData_Response
+2".CMsgSteamLearn_Inference_Response
 2#.CDOTAMatchMetadata.Team.CandyGrant
 2#.CDOTAMatchMetadata.Team.PlayerKill
 2#.CDOTAUserMsg_CompendiumStatePlayer
@@ -7800,6 +7802,7 @@
 27CSoundAreaEntityOrientedBox
 27CSoundEventPathCornerEntity
 27CSoundOpvarSetOBBWindEntity
+27CSteamServiceMethodUMHelper
 27CUserMessageServerFrameTime
 27IComputeWorldOriginCallback
 27IDOTABotAbilityUsageFactory
@@ -11900,7 +11903,6 @@
 3l$8D1
 3ultimate_scepter_consumed_alchemist_bonus_all_stats
 4$A\A]A
-4$E;t
 4(fD;&tKH
 4*D9&tW
 40CColorCorrectionMaterialOverrideModifier
@@ -14744,8 +14746,10 @@
 4k_EMsgGCToClientCollectorsCacheAvailableDataResponse
 5&YA1A
 5'YA1i
+5,¸YA1
 5,¸YD1
 5,¸YE1
+5,¸Yi
 5.3f:%s: adding layer %d (order %d): %s : cycle %5.3f (weight %5.3f
 50.50s: %2.2d bits == '%s
 50CDOTAMatchPrivateMetadata_Team_Player_GoldReceived
@@ -16478,6 +16482,7 @@ A9D$`t
 A9\$4t
 A9\$8A
 A9\$h
+A9] t
 A9](tY
 A9^8~wI
 A9_ ~NI
@@ -18038,6 +18043,8 @@ ASYNC_FIRE_AND_FORGET
 ATASAR
 ATAUP1
 ATAUWL
+ATLc%{Y
+ATS;wH
 ATSHc
 ATSHcG
 ATSHcGP
@@ -18105,6 +18112,7 @@ AVATSH
 AVATSI
 AVATSL
 AVAUATA
+AVAUATD
 AVAUATE1
 AVAUATH
 AVAUATI
@@ -18146,10 +18154,10 @@ AVAUH
 AVAUI
 AVAUL
 AVAULc
-AVAULc-1
 AVAUSH
 AVAUSL
 AVAUfA
+AVAWAUA
 AWAVATI
 AWAVATL
 AWAVATSH
@@ -18936,6 +18944,7 @@ AttackRangeActivityModifiers
 AttackReady
 AttackSpeedActivityModifiers
 Attacker
+Attempt to BYldSteamLearnBatchedUMRequest with a method that cannot be batched: '%s
 Attempt to CTensorFlowSession::SetInput() while in YieldingRun
 Attempt to CTensorFlowSession::SetOutput() while in YieldingRun
 Attempt to add decrement unknown item stock info (%s
@@ -18957,7 +18966,7 @@ Attempt to set '%s' in inventory slot already occupied by '%s
 Attempt to set bot script prior to bot VM being created
 Attempt to set unknown item stock info
 Attempt to spawn the appropriate couriers for this mode
-Attempt to submit data for protobuf class that hasn't had its data source registered
+Attempt to submit data for protobuf class that hasn't had its data source registered (%s
 Attempted to ConvertToCopiedData for unsupported type (%d
 Attempted to add a debughistory line to category %d. Valid categories are %d to %d
 Attempted to alias unknown class %s using same designer name "%s
@@ -19153,6 +19162,10 @@ BYieldingEstablishClientConnection: Failed to init client socket
 BYieldingEstablishClientConnection: Socket connect error on port %d: %d
 BYieldingEstablishClientConnection: Unable to read handshake data from client socket! (Port: %d
 BYieldingEstablishClientConnection: Unable to write handshake data to client socket! (Port: %d
+BYldUMRequest %s/%s request failed to send UM for proto %s
+BYldUMRequest %s/%s request timed out (%2.4f seconds) waiting for max-in-flight for proto %s
+BYldUMRequest %s/%s request timed out (%2.4f seconds) waiting for response for proto %s
+BYldUMRequest %s/%s with invalid handle on response
 Back compat: Is this entity a player pawn *or* controller
 BackUp() can not exceed the size of the last Next() call
 BackUp() can only be called after Next
@@ -19226,6 +19239,7 @@ BatchOperation
 BatchPlayerResources - Failed to get accounts
 BatchPlayerResources - Requested for %d accounts
 Batched CacheData response without corresponding waiting handle! (%d
+Batched Inference response without corresponding waiting handle! (%d
 Batched Snapshot response without corresponding waiting handle! (%d
 Battle Cup Points
 Battle Report
@@ -30390,15 +30404,17 @@ CSprite
 CSpriteAlias_env_glow
 CSpriteOriented
 CSteamLearnManager
-CSteamLearnManager::BSnapshotProject (batched) no HMAC secret for project %u
 CSteamLearnManager::BSnapshotProject no submission HMAC secret for project %u, published version %u
-CSteamLearnManager::BSubmitToDataSource no HMAC secret for data source %u
 CSteamLearnManager::BSubmitToDataSource no submission HMAC secret for data source %u
 CSteamLearnManager::BYieldingGetInferenceMetadata no HMAC secret for project %u, published version %u
 CSteamLearnManager::BYieldingInference no HMAC secret for project %u, published version %u
+CSteamLearnManager::Inference (batched) no HMAC secret for project %u
 CSteamLearnManager::PostInit (batch loop
 CSteamLearnManager::RegisterDataSource
+CSteamLearnManager::SnapshotProject (batched) no HMAC secret for project %u
 CSteamLearnManager::SubmitToDataSource
+CSteamLearnManager::SubmitToDataSource no HMAC secret for data source %u
+CSteamServiceMethodHTTPHelper call %s: Failed to parse proto body
 CSteamUnifiedMessageDispatcher::SendMethod: Cannot invoke method without first registering listener
 CStopwatch
 CStopwatchBase
@@ -31483,6 +31499,7 @@ D$LA\A]A
 D$Ot	8Eo
 D$PIcL$HH
 D$PuXH
+D$PuyH
 D$Wt	8Eo
 D$XF8,0tPH
 D$XH9D$8u
@@ -31502,9 +31519,8 @@ D8kpt
 D9 ~9H
 D9&~jMc
 D90w*D9x
-D9@0t0H
 D9BDt
-D9I0u]D;Q4uWH
+D9J0u}D9R4uwH
 D9c0~FH
 D9e(~JH
 D9e4~ H
@@ -31517,6 +31533,7 @@ D;&t9H
 D;)tCA
 D;4$}VD
 D;9t6HcQxH
+D;=zaZ
 D;c4|	E1
 D;k }3H
 D;k }:H
@@ -34040,7 +34057,7 @@ E4A9G,t
 E89F8t!H
 E8A9G0t
 E9'~NI
-E9.tfA
+E9(tfA
 E94$t
 E97XZ~NI
 E97tcA
@@ -34059,6 +34076,7 @@ E;l$ t$D
 E;l$8}8H
 E;l$XH
 E;t$DE
+E;t$d
 E<uvH
 E@A9G@t
 EAddGem
@@ -34990,6 +35008,7 @@ FIPS routines
 FIRST_BLOOD
 FLOAT vaH
 FLOW_BLOCKED
+FL[A\A]A
 FL_FULL_EDICT_CHANGED
 FORCEDCROUCH_CROUCHED
 FORCEDCROUCH_NONE
@@ -37111,15 +37130,11 @@ H9z s
 H;2s&H
 H;2t-H
 H;8t1H
-H;=6n
-H;=9fr
-H;=Awj
-H;=Fa
-H;=Fb
-H;=Fy3
-H;=Ymr
-H;=aPr
-H;=nVr
+H;8tzD
+H;=6a
+H;=F7
+H;=O1l
+H;=Ybz
 H;@XtJH
 H;D$pH
 H;E0sR
@@ -37333,13 +37348,11 @@ HcSl;Sp
 HcT$(L
 HcUȋE
 HcV\H94
-Hc_ ;_0
 Hck HcC$9
 Hck$HcC(9
 Hck(HcC,9
 Hck,HcC09
 Hcs ;0
-Hcs0H
 HcËM̋4
 Header
 Heal this unit
@@ -39003,6 +39016,7 @@ IcUpHc
 Ic\$8Hi
 Ic](A9
 Ic](A;]8A
+Ic^xA
 Ic_PA
 Ic_XA;_hf
 Ice_Explosion_Decal
@@ -40326,16 +40340,16 @@ L9s vm
 L9t$ t9H
 L9v ~FL
 L9|$(tLL
+L; t&I
 L; tPH
 L; uiI
 L;#tGH
 L;$$tJA
-L;%YJr
-L;%yLr
 L;4$t0A
 L;4$toM
 L;4$trM
 L;7t!A
+L;8t&I
 L;8t+I
 L;k s3H
 L;l$puYH
@@ -41740,7 +41754,6 @@ MvpAccoladeType
 MvpDatum
 Mystery Box Reward
 Mystery Item Granted
-M̾"YA1
 N H1P H
 N(H1P(H
 N0H1P0H
@@ -42915,7 +42928,7 @@ No Lane
 No Name
 No Outputs
 No Selection
-No SteamHTTP or SteamGameServerHTTP in CSteamLearnManager::BYieldingInference
+No SteamHTTP or SteamGameServerHTTP in CSteamServiceMethodHTTPHelper::BYldHTTPRequest
 No Targets Found
 No area with id %d
 No available heroes
@@ -43053,6 +43066,7 @@ OCSP Signing
 OCSP lib
 OCSP routines
 OCSPSigning
+ODE9OHI
 OE A9w
 OFFLANE
 OFFSET_INVALID
@@ -43545,7 +43559,7 @@ PEvent
 PFT_SOUND
 PGDInstruction_t
 PH9CPu
-PH;=Ao
+PH;=an
 PH;k u'H
 PHASE_Ban
 PHASE_CLOSE
@@ -47580,15 +47594,12 @@ SteamInternal_CreateInterface
 SteamInternal_FindOrCreateGameServerInterface
 SteamInternal_FindOrCreateUserInterface
 SteamLearn
-SteamLearn %s request failed to send UM for project %u
 SteamLearn RegisterDataSource key '%s
 SteamLearn Snapshot project id %u, published version %u, key '%s
 SteamLearn SubmitToDataSource id %u, key '%s
 SteamLearn data submission %s for this server
 SteamLearn error for project %u (toobusy: %s), existing error count %d, retrying no sooner than %2.2fs
 SteamLearn error for project %u, but before existing retry delay, ignoring
-SteamLearn timed out waiting for room to make '%s' request for project %u
-SteamLearn.%s#1
 SteamLearn: Attempt to cache data to an uncached Data Source in CacheData
 SteamLearn: Attempt to snapshot data with invalid project id in SnapshotModel
 SteamLearn: CacheData Success
@@ -47626,11 +47637,8 @@ SteamUnifiedMessages
 SteamUser023
 SteamUtils010
 Steam_Country_%s
-Steamlearn %s request for project %u completed, but no response waiting
-Steamlearn %s request timed out for project %u
-Steamlearn UM %s request (handle %llu) for project %u completed, (%2.2fms from function start, %2.2fms from request start, %2.2f from wait start
-Steamlearn UM %s request (handle %llu) timed out for project %u (%2.2fms from function start, %2.2fms from request start, %2.2f from wait start
-Steamlearn UM %s request issued (handle %llu) for project %u, %d initial requests in flight
+Steamlearn %s completed, but no response waiting
+Steamlearn %s request (handle %u) timed out (%2.2fs
 Step Softbodies: %6.3f [ms
 Step: %6.3f [ms
 StepSimulationFuncRotatingAnglesSerializer
@@ -48917,6 +48925,7 @@ VDataNodePicker(//m_mapBlessings
 VDataReload:%s
 VEngineCvar007
 VFileSystem017
+VH[A\A]A
 VHcK8Ic
 VHcKPIc
 VHfD;"t)H
@@ -49502,7 +49511,6 @@ XP per min: %u  Gold per min: %u  Claimed Farm: %u  Support Gold %u
 XPAmount
 XPEarned
 XPReceived
-XXHc@PM
 X[A\A
 X[A\A]A^A
 X[]A\A]A^A_ÐATUI
@@ -49521,7 +49529,6 @@ X[]ÐATUI
 X[]ÐAUATI
 X[]ÐAWAVAUATUSH
 X[]ÐUSH
-X`Hc@XL
 Xbox VDP is not supported on this platform
 Y(9Z(r
 Y@CDOTA_Modifier_Track_Order_Issuer
@@ -49535,6 +49542,7 @@ YA1Ei
 YA1Lc
 YA1Mcn
 YA1SH
+YA1蔚W
 YHcCx1
 YIcL$ Ic
 YYYY-MM-DD Z0000
@@ -56703,6 +56711,7 @@ bHeartRegenApplied
 bHeroEffect
 bHeroes
 bHidden
+bIcO8Hc
 bIcOhIc
 bIdleAcquire
 bIgnoreAllIfDebuffImmune
@@ -57624,7 +57633,6 @@ bzip2/libbzip2: internal error number %d
 c [%2.2f] Adding buff '%s' index: %d to '%s' (stack %d
 c [%2.2f] Refreshing buff '%s' to '%s'. - Stack Count: %d
 c [%2.2f] Removing buff '%s' index: %d to '%s
-c(D;c,u
 c0D;c4
 c2onb191v4
 c2onb191v5
@@ -58080,7 +58088,6 @@ citadel
 ckPoint H
 ck_afterH
 ck_alwayH9
-ck_neverH9
 cl_cq_min_queue
 cl_imgui_set_selection %i
 cl_interp
@@ -59980,6 +59987,7 @@ dota_hud_error_aghsfort_lina_no_fiery_soul_stacks
 dota_hud_error_already_capturing
 dota_hud_error_already_lit
 dota_hud_error_already_roared
+dota_hud_error_autoattack_never
 dota_hud_error_broodmother_sticky_snare_line_intersection
 dota_hud_error_can_only_use_on_river
 dota_hud_error_cannot_dominate
@@ -60785,7 +60793,6 @@ eKeypoints
 eLocation
 ePE_FirstBlood
 ePE_Killstreak_godlike
-eP[A\A]A
 eQueryCvarValueStatus_CvarNotFound
 eQueryCvarValueStatus_CvarProtected
 eQueryCvarValueStatus_NotACvar
@@ -61555,6 +61562,7 @@ f(Mce0I
 f, %f, %f
 f0E;f@D
 f0tAL9
+f8A\A]A
 f90uGH
 f9C.r7f
 f9C.rVf
@@ -63031,6 +63039,7 @@ hEntity to follow, string BoneOrAttachName
 hEventPointData
 hFunction
 hGivenToNPC
+hHc_HH
 hHeroOwner
 hIllusion
 hImpaledTargetList
@@ -63547,7 +63556,7 @@ hscript_lightbinding
 htarget
 http://%s
 http://localhost%s
-https://api.steampowered.com/ISteamLearnService/%s/v1
+https://api.steampowered.com/I%sService/%s/v%u
 hud_ping
 hud_skin
 hud_timer_show_tutorial_timer
@@ -64097,6 +64106,8 @@ indoor_outdoor_level
 inertiafactor
 inertiascale
 inference_metadata_result
+inference_requests
+inference_responses
 inference_result
 infest_duration_enemy
 infinity
@@ -65153,13 +65164,13 @@ jurisdictionStateOrProvinceName
 just happens to cross-check the results of huge numbers of
 justify_horizontal
 justify_vertical
-k Mcl
 k(IcF M
 k0D;k@D
 k0HcC(M
 k0X[]A\A]A^A
 k8}.H
 kBEAMCLIPSTYLE_NUMBITS
+kDD9kHH
 kEconItemOrigin_Achievement
 kEconItemOrigin_AssassinEventReward
 kEconItemOrigin_CDKey
@@ -67632,8 +67643,7 @@ lycan_summon_wolves_critical_strike
 lycan_summon_wolves_invisibility
 lycan_wolf_bite
 m E9n4t
-m8H;-J
-m8L;-JU
+m8L;-JT
 mIcG81
 mXRecord
 m_16ByteOrLessStack out of space, falling through after %d entries, consider upping NETWORKFIELDSCRATCHDATA_16BYTE_COUNT
@@ -79326,7 +79336,7 @@ mute_impact_effects
 muteable
 muzzle
 mvp_data
-mxH;-h
+mxH;-X
 mystery
 mystery_box
 n ATSH
@@ -80956,6 +80966,7 @@ owning_player_id
 p H;w t#H
 p Hc@(H
 p wRL
+p(Lc@ H
 p,A9_P
 p0	H 9P(D
 p0D;p@D
@@ -89828,6 +89839,7 @@ s}SAVE/%s.%s
 s}SAVE/%s.sav
 t	A\A
 t	H;h H
+t ;56
 t I;u
 t!A\E1
 t!I;4
@@ -89846,6 +89858,7 @@ t$@IcD$8I
 t$H;7u
 t$HIcD$@I
 t$I;u
+t$Lc#D;c
 t$PIcD$HI
 t$P냐UH
 t$P냐UI
@@ -89894,6 +89907,7 @@ t;Lc+D;k
 t=%8.2f id=%d n='%-16s' minq=%d targetq=%.2f c=%d starve=%d maxstarve=%d maxbloat=%d avgq=%.2f faster=%d normal=%d slower=%d qinfo=%s %s
 t=%8.2f name=%-16s %s
 t=<"tyD
+t><"tJD
 t>Lc#D;c
 t?A\A
 t?L; u
@@ -89913,6 +89927,7 @@ tIHcC8
 tJHcC
 tJHcC0
 tJHcC8
+tJHcCH
 tJHcCP
 tJI;4
 tJI;E
@@ -90119,7 +90134,7 @@ tax_usd
 tbHcGPI
 tc[A\A]A
 tchinese
-tdHcC
+tdD9(u	E
 tdHcL
 td_example
 tdata
@@ -90794,6 +90809,7 @@ txn_country_code
 txn_id
 tx~nHc
 ty '%s',H
+tyIcE
 tyfD;j
 type != DATA_UPDATE_CREATED
 type %d
@@ -91820,7 +91836,6 @@ x509_store
 x<;7}8UH
 x@Ic] A;]0
 x@Mct$ E;t$0
-xA\A]A^A
 xB;Wp}7H
 xD;c|}wD
 xE8t$pH
@@ -91851,8 +91866,6 @@ xp_per_use
 xp_reason
 xp_received
 xp_reward_details
-x|D;=jN
-y(LcI H
 y.JcT8
 y=up=green, z=forward=blue, x=left=red
 yOk GU5T
@@ -91870,6 +91883,7 @@ ynormal
 you_hear_them
 yrIcD
 z HcCx
+z(LcJ H
 z(u&E1
 z0AUATI
 z0IcA@A9
