@@ -337,6 +337,11 @@ public:
 	CUtlVector< uint8 > m_sceneObjectLayerIndices; // 0xd8	
 	CUtlVector< uint8 > m_overlayLayerIndices; // 0xf0	
 	CUtlString m_grassFileName; // 0x108	
+	// -> m_nLightmapVersionNumber - 0x110
+	// -> m_nLightmapGameVersionNumber - 0x114
+	// -> m_vLightmapUvScale - 0x118
+	// -> m_bHasLightmaps - 0x120
+	// -> m_lightMaps - 0x128
 	BakedLightingInfo_t m_nodeLightingInfo; // 0x110	
 };
 
@@ -387,8 +392,18 @@ public:
 struct World_t
 {
 public:
+	// -> m_flMinDrawVolumeSize - 0x0
+	// -> m_bBuildBakedLighting - 0x4
+	// -> m_vLightmapUvScale - 0x8
+	// -> m_nCompileTimestamp - 0x10
+	// -> m_nCompileFingerprint - 0x18
 	WorldBuilderParams_t m_builderParams; // 0x0	
 	CUtlVector< NodeData_t > m_worldNodes; // 0x20	
+	// -> m_nLightmapVersionNumber - 0x38
+	// -> m_nLightmapGameVersionNumber - 0x3c
+	// -> m_vLightmapUvScale - 0x40
+	// -> m_bHasLightmaps - 0x48
+	// -> m_lightMaps - 0x50
 	BakedLightingInfo_t m_worldLightingInfo; // 0x38	
 	CUtlVector< CStrongHandleCopyable< InfoForResourceTypeCEntityLump > > m_entityLumps; // 0x68	
 };
@@ -508,6 +523,9 @@ public:
 	CEntityIdentity* m_pNext; // 0x60	
 	CEntityIdentity* m_pPrevByClass; // 0x68	
 	CEntityIdentity* m_pNextByClass; // 0x70	
+	
+	// Datamap fields:
+	// void m_pAttributes; // 0x48
 };
 
 // Registered binary: worldrenderer.dll (project 'entity2')

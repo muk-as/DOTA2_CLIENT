@@ -13659,7 +13659,7 @@ public:
 // Has Trivial Constructor
 // Has Trivial Destructor
 // 
-// MResourceTypeForInfoType "vcompmat@û"
+// MResourceTypeForInfoType "vcompmat"
 class InfoForResourceTypeCCompositeMaterialKit
 {
 private:
@@ -14942,16 +14942,37 @@ public:
 private:
 	[[maybe_unused]] uint8_t __pad0041[0x3]; // 0x41
 public:
+	// -> m_blendMode - 0x44
+	// -> m_flBloomStrength - 0x48
+	// -> m_flScreenBloomStrength - 0x4c
+	// -> m_flBlurBloomStrength - 0x50
+	// -> m_flBloomThreshold - 0x54
+	// -> m_flBloomThresholdWidth - 0x58
+	// -> m_flSkyboxBloomStrength - 0x5c
+	// -> m_flBloomStartValue - 0x60
+	// -> m_flBlurWeight[5] - 0x64
+	// -> m_vBlurTint[5] - 0x78
 	PostProcessingBloomParameters_t m_bloomParams; // 0x44	
 	bool m_bHasVignetteParams; // 0xb4	
 private:
 	[[maybe_unused]] uint8_t __pad00b5[0x3]; // 0xb5
 public:
+	// -> m_flVignetteStrength - 0xb8
+	// -> m_vCenter - 0xbc
+	// -> m_flRadius - 0xc4
+	// -> m_flRoundness - 0xc8
+	// -> m_flFeather - 0xcc
+	// -> m_vColorTint - 0xd0
 	PostProcessingVignetteParameters_t m_vignetteParams; // 0xb8	
 	bool m_bHasLocalContrastParams; // 0xdc	
 private:
 	[[maybe_unused]] uint8_t __pad00dd[0x3]; // 0xdd
 public:
+	// -> m_flLocalContrastStrength - 0xe0
+	// -> m_flLocalContrastEdgeStrength - 0xe4
+	// -> m_flLocalContrastVignetteStart - 0xe8
+	// -> m_flLocalContrastVignetteEnd - 0xec
+	// -> m_flLocalContrastVignetteBlur - 0xf0
 	PostProcessingLocalContrastParameters_t m_localConstrastParams; // 0xe0	
 	int32_t m_nColorCorrectionVolumeDim; // 0xf4	
 	CUtlBinaryBlock m_colorCorrectionVolumeData; // 0xf8	
@@ -15174,6 +15195,8 @@ class CAnimUpdateNodeBase
 private:
 	[[maybe_unused]] uint8_t __pad0000[0x18]; // 0x0
 public:
+	// -> m_path[11] - 0x18
+	// -> m_nCount - 0x44
 	CAnimNodePath m_nodePath; // 0x18	
 	AnimNodeNetworkMode m_networkMode; // 0x48	
 private:
@@ -15852,6 +15875,8 @@ class CSolveIKChainUpdateNode : public CUnaryUpdateNode
 {
 public:
 	CUtlVector< CSolveIKTargetHandle_t > m_targetHandles; // 0x68	
+	// -> m_ChainsToSolveData - 0x80
+	// -> m_bMatchTargetOrientation - 0x98
 	SolveIKChainPoseOpFixedSettings_t m_opFixedData; // 0x80	
 };
 
@@ -16332,6 +16357,8 @@ public:
 	CAnimGraphSettingsManager m_settings; // 0x78	
 	CSmartPtr< CStaticPoseCacheBuilder > m_pStaticPoseCache; // 0xa8	
 	CSmartPtr< CAnimSkeleton > m_pSkeleton; // 0xb0	
+	// -> m_path[11] - 0xb8
+	// -> m_nCount - 0xe4
 	CAnimNodePath m_rootNodePath; // 0xb8	
 };
 
@@ -16487,6 +16514,8 @@ public:
 	CUtlString m_boneName; // 0x0	
 	CUtlString m_parentName; // 0x8	
 	matrix3x4_t m_invBindPose; // 0x10	
+	// -> m_vecCenter - 0x40
+	// -> m_vecSize - 0x4c
 	SkeletonBoneBounds_t m_bbox; // 0x40	
 	float m_flSphereRadius; // 0x58	
 };
@@ -16587,6 +16616,11 @@ struct VPhysXBodyPart_t
 public:
 	uint32_t m_nFlags; // 0x0	
 	float m_flMass; // 0x4	
+	// -> m_spheres - 0x8
+	// -> m_capsules - 0x20
+	// -> m_hulls - 0x38
+	// -> m_meshes - 0x50
+	// -> m_CollisionAttributeIndices - 0x68
 	VPhysics2ShapeDef_t m_rnShape; // 0x8	
 	uint16_t m_nCollisionAttributeIndex; // 0x80	
 	uint16_t m_nReserved; // 0x82	
@@ -16634,6 +16668,9 @@ private:
 public:
 	CUtlVectorFixedGrowable< CSceneObjectData > m_sceneObjects; // 0x10	
 	CUtlVector< CBaseConstraint* > m_constraints; // 0xa0	
+	// -> m_bones - 0xb8
+	// -> m_boneParents - 0xe8
+	// -> m_nBoneWeightCount - 0x100
 	CRenderSkeleton m_skeleton; // 0xb8	
 };
 
@@ -16806,6 +16843,12 @@ public:
 	CUtlVector< CStrongHandle< InfoForResourceTypeCAnimationGroup > > m_includedGroupArray_Handle; // 0x78	
 	// MKV3TransferName "m_directHSeqGroup"
 	CStrongHandle< InfoForResourceTypeCSequenceGroupData > m_directHSeqGroup_Handle; // 0x90	
+	// -> m_name - 0x98
+	// -> m_boneArray - 0xa8
+	// -> m_userArray - 0xc0
+	// -> m_morphArray - 0xd8
+	// -> m_nChannelElements - 0xf0
+	// -> m_dataChannelArray - 0xf8
 	CAnimKeyData m_decodeKey; // 0x98	
 	CUtlVector< CBufferString > m_szScripts; // 0x110	
 };
@@ -16897,6 +16940,12 @@ public:
 class CSeqMultiFetch
 {
 public:
+	// -> m_bRealtime - 0x0
+	// -> m_bCylepose - 0x1
+	// -> m_b0D - 0x2
+	// -> m_b1D - 0x3
+	// -> m_b2D - 0x4
+	// -> m_b2D_TRI - 0x5
 	CSeqMultiFetchFlag m_flags; // 0x0	
 	CUtlVector< int16 > m_localReferenceArray; // 0x8	
 	int32_t m_nGroupSize[2]; // 0x20	
@@ -17743,6 +17792,17 @@ class CLookAtUpdateNode : public CUnaryUpdateNode
 private:
 	[[maybe_unused]] uint8_t __pad0068[0x8]; // 0x68
 public:
+	// -> m_attachment - 0x70
+	// -> m_damping - 0xf0
+	// -> m_bones - 0x100
+	// -> m_flYawLimit - 0x118
+	// -> m_flPitchLimit - 0x11c
+	// -> m_flHysteresisInnerAngle - 0x120
+	// -> m_flHysteresisOuterAngle - 0x124
+	// -> m_bRotateYawForward - 0x128
+	// -> m_bMaintainUpDirection - 0x129
+	// -> m_bTargetIsPosition - 0x12a
+	// -> m_bUseHysteresis - 0x12b
 	LookAtOpFixedSettings_t m_opFixedSettings; // 0x70	
 private:
 	[[maybe_unused]] uint8_t __pad0130[0x8]; // 0x130
@@ -17851,6 +17911,14 @@ class CAimMatrixUpdateNode : public CUnaryUpdateNode
 private:
 	[[maybe_unused]] uint8_t __pad0068[0x8]; // 0x68
 public:
+	// -> m_attachment - 0x70
+	// -> m_damping - 0xf0
+	// -> m_poseCacheHandles[10] - 0x100
+	// -> m_eBlendMode - 0x128
+	// -> m_fAngleIncrement - 0x12c
+	// -> m_nSequenceMaxFrame - 0x130
+	// -> m_nBoneMaskIndex - 0x134
+	// -> m_bTargetIsPosition - 0x138
 	AimMatrixOpFixedSettings_t m_opFixedSettings; // 0x70	
 private:
 	[[maybe_unused]] uint8_t __pad0140[0x8]; // 0x140
@@ -18404,13 +18472,36 @@ public:
 	// MKV3TransferName "description"
 	CUtlString m_description; // 0x20	
 	// MKV3TransferName "physics"
+	// -> m_friction - 0x28
+	// -> m_elasticity - 0x2c
+	// -> m_density - 0x30
+	// -> m_thickness - 0x34
+	// -> m_softContactFrequency - 0x38
+	// -> m_softContactDampingRatio - 0x3c
+	// -> m_wheelDrag - 0x40
 	CPhysSurfacePropertiesPhysics m_physics; // 0x28	
 private:
 	[[maybe_unused]] uint8_t __pad0044[0x4]; // 0x44
 public:
 	// MKV3TransferName "audiosounds"
+	// -> m_impactSoft - 0x48
+	// -> m_impactHard - 0x50
+	// -> m_scrapeSmooth - 0x58
+	// -> m_scrapeRough - 0x60
+	// -> m_bulletImpact - 0x68
+	// -> m_rolling - 0x70
+	// -> m_break - 0x78
+	// -> m_strain - 0x80
 	CPhysSurfacePropertiesSoundNames m_audioSounds; // 0x48	
 	// MKV3TransferName "audioparams"
+	// -> m_reflectivity - 0x88
+	// -> m_hardnessFactor - 0x8c
+	// -> m_roughnessFactor - 0x90
+	// -> m_roughThreshold - 0x94
+	// -> m_hardThreshold - 0x98
+	// -> m_hardVelocityThreshold - 0x9c
+	// -> m_flStaticImpactVolume - 0xa0
+	// -> m_flOcclusionFactor - 0xa4
 	CPhysSurfacePropertiesAudio m_audioParams; // 0x88	
 };
 
@@ -18440,6 +18531,9 @@ public:
 class CStateMachineComponentUpdater : public CAnimComponentUpdater
 {
 public:
+	// -> m_states - 0x38
+	// -> m_transitions - 0x50
+	// -> m_startStateIndex - 0x80
 	CAnimStateMachineUpdater m_stateMachine; // 0x30	
 };
 
@@ -18525,6 +18619,9 @@ class CStateMachineUpdateNode : public CAnimUpdateNodeBase
 private:
 	[[maybe_unused]] uint8_t __pad0058[0x10]; // 0x58
 public:
+	// -> m_states - 0x70
+	// -> m_transitions - 0x88
+	// -> m_startStateIndex - 0xb8
 	CAnimStateMachineUpdater m_stateMachine; // 0x68	
 	CUtlVector< CStateNodeStateData > m_stateData; // 0xc0	
 	CUtlVector< CStateNodeTransitionData > m_transitionData; // 0xd8	
@@ -18704,6 +18801,8 @@ private:
 	[[maybe_unused]] uint8_t __pad0058[0x4]; // 0x58
 public:
 	int32_t m_frameCorners[3][3]; // 0x5c	
+	// -> m_nIndex - 0x80
+	// -> m_eType - 0x82
 	CPoseHandle m_poses[9]; // 0x80	
 private:
 	[[maybe_unused]] uint8_t __pad00a4[0x4]; // 0xa4
@@ -19033,6 +19132,9 @@ class CMotionSearchNode
 {
 public:
 	CUtlVector< CMotionSearchNode* > m_children; // 0x0	
+	// -> m_centroidVectors - 0x18
+	// -> m_nCentroids - 0x30
+	// -> m_nDimensions - 0x34
 	CVectorQuantizer m_quantizer; // 0x18	
 	CUtlVector< CUtlVector< SampleCode > > m_sampleCodes; // 0x38	
 	CUtlVector< CUtlVector< int32 > > m_sampleIndices; // 0x50	
@@ -19048,6 +19150,8 @@ public:
 class CMotionMatchingUpdateNode : public CLeafUpdateNode
 {
 public:
+	// -> m_groups - 0x58
+	// -> m_nDimensionCount - 0x70
 	CMotionDataSet m_dataSet; // 0x58	
 	CUtlVector< CSmartPtr< CMotionMetricEvaluator > > m_metrics; // 0x78	
 	CUtlVector< float32 > m_weights; // 0x90	
@@ -19183,7 +19287,14 @@ public:
 class CMotionSearchDB
 {
 public:
+	// -> m_children - 0x0
+	// -> m_quantizer - 0x18
+	// -> m_sampleCodes - 0x38
+	// -> m_sampleIndices - 0x50
+	// -> m_selectableSamples - 0x68
 	CMotionSearchNode m_rootNode; // 0x0	
+	// -> m_subQuantizers - 0x80
+	// -> m_nDimensions - 0x98
 	CProductQuantizer m_residualQuantizer; // 0x80	
 	CUtlVector< MotionDBIndex > m_codeIndices; // 0xa0	
 };
@@ -19245,6 +19356,8 @@ public:
 private:
 	[[maybe_unused]] uint8_t __pad0032[0x86]; // 0x32
 public:
+	// -> m_hBuffer - 0xb8
+	// -> m_nBindOffsetBytes - 0xc8
 	CRenderBufferBinding m_indexBuffer; // 0xb8	
 private:
 	[[maybe_unused]] uint8_t __pad00d0[0x10]; // 0xd0
@@ -19304,6 +19417,8 @@ private:
 	[[maybe_unused]] uint8_t __pad0068[0x8]; // 0x68
 public:
 	CUtlVector< HSequence > m_clips; // 0x70	
+	// -> m_nIndex - 0x88
+	// -> m_eType - 0x8a
 	CPoseHandle m_hBasePoseCacheHandle; // 0x88	
 	CAnimParamHandle m_facingTarget; // 0x8c	
 private:
@@ -19507,6 +19622,14 @@ public:
 private:
 	[[maybe_unused]] uint8_t __pad001b[0x5]; // 0x1b
 public:
+	// -> m_flags - 0x20
+	// -> m_localReferenceArray - 0x28
+	// -> m_nGroupSize[2] - 0x40
+	// -> m_nLocalPose[2] - 0x48
+	// -> m_poseKeyArray0 - 0x50
+	// -> m_poseKeyArray1 - 0x68
+	// -> m_nLocalCyclePoseParameter - 0x80
+	// -> m_bCalculatePoseParameters - 0x84
 	CSeqMultiFetch m_fetch; // 0x20	
 	int32_t m_nLocalWeightlist; // 0x88	
 private:
@@ -19636,6 +19759,8 @@ public:
 class FootFixedSettings
 {
 public:
+	// -> m_flTraceHeight - 0x0
+	// -> m_flTraceRadius - 0x4
 	TraceSettings_t m_traceSettings; // 0x0	
 	VectorAligned m_vFootBaseBindPosePositionMS; // 0x10	
 	float m_flFootBaseLength; // 0x20	
@@ -19780,7 +19905,12 @@ public:
 class CMeshletDescriptor
 {
 public:
+	// -> m_nPackedMin - 0x0
+	// -> m_nPackedMax - 0x4
 	PackedAABB_t m_PackedAABB; // 0x0	
+	// -> m_vConeApex - 0x8
+	// -> m_ConeAxis[3] - 0x14
+	// -> m_ConeCutoff - 0x17
 	CDrawCullingData m_CullingData; // 0x8	
 };
 
@@ -19834,6 +19964,13 @@ class CFootPinningUpdateNode : public CUnaryUpdateNode
 private:
 	[[maybe_unused]] uint8_t __pad0068[0x8]; // 0x68
 public:
+	// -> m_footInfo - 0x70
+	// -> m_flBlendTime - 0x88
+	// -> m_flLockBreakDistance - 0x8c
+	// -> m_flMaxLegTwist - 0x90
+	// -> m_nHipBoneIndex - 0x94
+	// -> m_bApplyLegTwistLimits - 0x98
+	// -> m_bApplyFootRotationLimits - 0x99
 	FootPinningPoseOpFixedData_t m_poseOpFixedData; // 0x70	
 	FootPinningTimingSource m_eTimingSource; // 0xa0	
 private:
@@ -19907,6 +20044,14 @@ class CSeqAutoLayer
 public:
 	int16_t m_nLocalReference; // 0x0	
 	int16_t m_nLocalPose; // 0x2	
+	// -> m_bPost - 0x4
+	// -> m_bSpline - 0x5
+	// -> m_bXFade - 0x6
+	// -> m_bNoBlend - 0x7
+	// -> m_bLocal - 0x8
+	// -> m_bPose - 0x9
+	// -> m_bFetchFrame - 0xa
+	// -> m_bSubtract - 0xb
 	CSeqAutoLayerFlag m_flags; // 0x4	
 	float m_start; // 0xc	
 	float m_peak; // 0x10	
@@ -19951,6 +20096,8 @@ class CSingleFrameUpdateNode : public CLeafUpdateNode
 {
 public:
 	CUtlVector< CSmartPtr< CAnimActionUpdater > > m_actions; // 0x58	
+	// -> m_nIndex - 0x70
+	// -> m_eType - 0x72
 	CPoseHandle m_hPoseCacheHandle; // 0x70	
 	HSequence m_hSequence; // 0x74	
 	float m_flCycle; // 0x78	
@@ -20014,6 +20161,10 @@ class CFollowAttachmentUpdateNode : public CUnaryUpdateNode
 private:
 	[[maybe_unused]] uint8_t __pad0068[0x8]; // 0x68
 public:
+	// -> m_attachment - 0x70
+	// -> m_boneIndex - 0xf0
+	// -> m_bMatchTranslation - 0xf4
+	// -> m_bMatchRotation - 0xf5
 	FollowAttachmentSettings_t m_opFixedData; // 0x70	
 };
 
@@ -20091,6 +20242,13 @@ public:
 	int32_t m_nFrames; // 0x10	
 	int32_t m_nFramesPerBlock; // 0x14	
 	CUtlVector< CAnimFrameBlockAnim > m_frameblockArray; // 0x18	
+	// -> m_boneArray - 0x30
+	// -> m_morphArray - 0x48
+	// -> m_userArray - 0x60
+	// -> m_bHasRotationBitArray - 0x78
+	// -> m_bHasMovementBitArray - 0x90
+	// -> m_bHasMorphBitArray - 0xa8
+	// -> m_bHasUserBitArray - 0xc0
 	CAnimEncodeDifference m_usageDifferences; // 0x30	
 };
 
@@ -20220,6 +20378,12 @@ public:
 private:
 	[[maybe_unused]] uint8_t __pad0095[0x3]; // 0x95
 public:
+	// -> m_nEntityIndex - 0x98
+	// -> m_modelName - 0xa0
+	// -> m_poseParams - 0xa8
+	// -> m_decodeOps - 0xc0
+	// -> m_internalOps - 0xd8
+	// -> m_decodedAnims - 0xf0
 	AnimationDecodeDebugDumpElement_t m_DecodeDump; // 0x98	
 };
 
@@ -20305,10 +20469,17 @@ struct ChainToSolveData_t
 {
 public:
 	int32_t m_nChainIndex; // 0x0	
+	// -> m_SolverType - 0x4
+	// -> m_nNumIterations - 0x8
 	IKSolverSettings_t m_SolverSettings; // 0x4	
 private:
 	[[maybe_unused]] uint8_t __pad000c[0x4]; // 0xc
 public:
+	// -> m_TargetSource - 0x10
+	// -> m_Bone - 0x18
+	// -> m_AnimgraphParameterNamePosition - 0x28
+	// -> m_AnimgraphParameterNameOrientation - 0x2c
+	// -> m_TargetCoordSystem - 0x30
 	IKTargetSettings_t m_TargetSettings; // 0x10	
 	SolveIKChainAnimNodeDebugSetting m_DebugSetting; // 0x38	
 	float m_flDebugNormalizedValue; // 0x3c	
@@ -20338,6 +20509,16 @@ struct PermModelData_t
 {
 public:
 	CUtlString m_name; // 0x0	
+	// -> m_nFlags - 0x8
+	// -> m_vHullMin - 0xc
+	// -> m_vHullMax - 0x18
+	// -> m_vViewMin - 0x24
+	// -> m_vViewMax - 0x30
+	// -> m_flMass - 0x3c
+	// -> m_vEyePosition - 0x40
+	// -> m_flMaxEyeDeflection - 0x4c
+	// -> m_sSurfaceProperty - 0x50
+	// -> m_keyValueText - 0x58
 	PermModelInfo_t m_modelInfo; // 0x8	
 	CUtlVector< PermModelExtPart_t > m_ExtParts; // 0x60	
 	CUtlVector< CStrongHandle< InfoForResourceTypeCRenderMesh > > m_refMeshes; // 0x78	
@@ -20352,6 +20533,13 @@ public:
 	CUtlVector< CUtlString > m_meshGroups; // 0x150	
 	CUtlVector< MaterialGroup_t > m_materialGroups; // 0x168	
 	uint64_t m_nDefaultMeshGroupMask; // 0x180	
+	// -> m_boneName - 0x188
+	// -> m_nParent - 0x1a0
+	// -> m_boneSphere - 0x1b8
+	// -> m_nFlag - 0x1d0
+	// -> m_bonePosParent - 0x1e8
+	// -> m_boneRotParent - 0x200
+	// -> m_boneScaleParent - 0x218
 	ModelSkeletonData_t m_modelSkeleton; // 0x188	
 	CUtlVector< int16 > m_remappingTable; // 0x230	
 	CUtlVector< uint16 > m_remappingTableStarts; // 0x248	
@@ -20485,6 +20673,9 @@ public:
 class CMotionGraphGroup
 {
 public:
+	// -> m_rootNode - 0x0
+	// -> m_residualQuantizer - 0x80
+	// -> m_codeIndices - 0xa0
 	CMotionSearchDB m_searchDB; // 0x0	
 	CUtlVector< CSmartPtr< CMotionGraph > > m_motionGraphs; // 0xb8	
 	CUtlVector< CMotionGraphConfig > m_motionGraphConfigs; // 0xd0	
@@ -20503,6 +20694,8 @@ class CMotionGraphConfig
 public:
 	float m_paramValues[4]; // 0x0	
 	float m_flDuration; // 0x10	
+	// -> m_nGroup - 0x14
+	// -> m_nMotion - 0x16
 	MotionIndex m_nMotionIndex; // 0x14	
 	int32_t m_nSampleStart; // 0x18	
 	int32_t m_nSampleCount; // 0x1c	
@@ -20559,12 +20752,25 @@ class CAnimDesc
 {
 public:
 	CBufferString m_name; // 0x0	
+	// -> m_bLooping - 0x10
+	// -> m_bAllZeros - 0x11
+	// -> m_bHidden - 0x12
+	// -> m_bDelta - 0x13
+	// -> m_bLegacyWorldspace - 0x14
+	// -> m_bModelDoc - 0x15
+	// -> m_bImplicitSeqIgnoreDelta - 0x16
+	// -> m_bAnimGraphAdditive - 0x17
 	CAnimDesc_Flag m_flags; // 0x10	
 	float fps; // 0x18	
 private:
 	[[maybe_unused]] uint8_t __pad001c[0x4]; // 0x1c
 public:
 	// MKV3TransferName "m_pData"
+	// -> m_fileName - 0x20
+	// -> m_nFrames - 0x30
+	// -> m_nFramesPerBlock - 0x34
+	// -> m_frameblockArray - 0x38
+	// -> m_usageDifferences - 0x50
 	CAnimEncodedFrames m_Data; // 0x20	
 	CUtlVector< CAnimMovement > m_movementArray; // 0xf8	
 	CUtlVector< CAnimEventDefinition > m_eventArray; // 0x110	
@@ -20578,6 +20784,8 @@ private:
 public:
 	CUtlVector< Vector > m_vecBoneWorldMin; // 0x178	
 	CUtlVector< Vector > m_vecBoneWorldMax; // 0x190	
+	// -> m_flFadeInTime - 0x1a8
+	// -> m_flFadeOutTime - 0x1ac
 	CAnimSequenceParams m_sequenceParams; // 0x1a8	
 };
 
@@ -20676,6 +20884,15 @@ public:
 class CFootStride
 {
 public:
+	// -> m_vStancePositionMS - 0x0
+	// -> m_vMidpointPositionMS - 0xc
+	// -> m_flStanceDirectionMS - 0x18
+	// -> m_vToStrideStartPos - 0x1c
+	// -> m_stanceCycle - 0x28
+	// -> m_footLiftCycle - 0x2c
+	// -> m_footOffCycle - 0x30
+	// -> m_footStrikeCycle - 0x34
+	// -> m_footLandCycle - 0x38
 	CFootCycleDefinition m_definition; // 0x0	
 	CFootTrajectories m_trajectories; // 0x40	
 };
@@ -21311,6 +21528,8 @@ public:
 	fltx4 w1; // 0x30	
 	fltx4 w2; // 0x40	
 	fltx4 v1x; // 0x50	
+	// -> x - 0x60
+	// -> y - 0x70
 	FourVectors2D v2; // 0x60	
 };
 
@@ -21398,6 +21617,10 @@ public:
 	uint16_t nNodeY0[4]; // 0x18	
 	uint16_t nNodeY1[4]; // 0x20	
 	uint16_t nDummy[4]; // 0x28	
+	// -> x - 0x30
+	// -> y - 0x40
+	// -> z - 0x50
+	// -> w - 0x60
 	FourQuaternions qAdjust; // 0x30	
 };
 
@@ -21547,6 +21770,8 @@ struct FeCollisionPlane_t
 public:
 	uint16_t nCtrlParent; // 0x0	
 	uint16_t nChildNode; // 0x2	
+	// -> m_vNormal - 0x4
+	// -> m_flOffset - 0x10
 	RnPlane_t m_Plane; // 0x4	
 	float flStrength; // 0x14	
 };
@@ -21944,7 +22169,16 @@ struct constraint_hingeparams_t
 public:
 	Vector worldPosition; // 0x0	
 	Vector worldAxisDirection; // 0xc	
+	// -> flMinRotation - 0x18
+	// -> flMaxRotation - 0x1c
+	// -> flMotorTargetAngSpeed - 0x20
+	// -> flMotorMaxTorque - 0x24
 	constraint_axislimit_t hingeAxis; // 0x18	
+	// -> strength - 0x28
+	// -> forceLimit - 0x2c
+	// -> torqueLimit - 0x30
+	// -> bodyMassScale[2] - 0x34
+	// -> isActive - 0x3c
 	constraint_breakableparams_t constraint; // 0x28	
 };
 
@@ -22136,6 +22370,16 @@ public:
 struct RnMeshDesc_t : public RnShapeDesc_t
 {
 public:
+	// -> m_vMin - 0x10
+	// -> m_vMax - 0x1c
+	// -> m_Nodes - 0x28
+	// -> m_Vertices - 0x40
+	// -> m_Triangles - 0x58
+	// -> m_Wings - 0x70
+	// -> m_Materials - 0x88
+	// -> m_vOrthographicAreas - 0xa0
+	// -> m_nFlags - 0xac
+	// -> m_nDebugFlags - 0xb0
 	RnMesh_t m_Mesh; // 0x10	
 };
 
@@ -22147,6 +22391,8 @@ public:
 struct RnSphereDesc_t : public RnShapeDesc_t
 {
 public:
+	// -> m_vCenter - 0x10
+	// -> m_flRadius - 0x1c
 	RnSphere_t m_Sphere; // 0x10	
 };
 
@@ -22158,6 +22404,8 @@ public:
 struct RnCapsuleDesc_t : public RnShapeDesc_t
 {
 public:
+	// -> m_vCenter[2] - 0x10
+	// -> m_flRadius - 0x28
 	RnCapsule_t m_Capsule; // 0x10	
 };
 
@@ -22184,6 +22432,18 @@ public:
 struct RnHullDesc_t : public RnShapeDesc_t
 {
 public:
+	// -> m_vCentroid - 0x10
+	// -> m_flMaxAngularRadius - 0x1c
+	// -> m_Bounds - 0x20
+	// -> m_vOrthographicAreas - 0x38
+	// -> m_MassProperties - 0x44
+	// -> m_flVolume - 0x74
+	// -> m_Vertices - 0x78
+	// -> m_Edges - 0x90
+	// -> m_Faces - 0xa8
+	// -> m_Planes - 0xc0
+	// -> m_nFlags - 0xd8
+	// -> m_pRegionSVM - 0xe0
 	RnHull_t m_Hull; // 0x10	
 };
 
@@ -22740,6 +23000,16 @@ public:
 private:
 	[[maybe_unused]] uint8_t __pad0021[0x3]; // 0x21
 public:
+	// -> m_fldbGainInput - 0x24
+	// -> m_fldbGainOutput - 0x28
+	// -> m_fldbThresholdBelow - 0x2c
+	// -> m_fldbThresholdAbove - 0x30
+	// -> m_flRatioBelow - 0x34
+	// -> m_flRatioAbove - 0x38
+	// -> m_flAttackTimeMS - 0x3c
+	// -> m_flReleaseTimeMS - 0x40
+	// -> m_bEnable - 0x44
+	// -> m_bSolo - 0x45
 	VMixDynamicsBand_t m_bandDesc[3]; // 0x24	
 };
 
@@ -22788,8 +23058,16 @@ private:
 	[[maybe_unused]] uint8_t __pad0015[0x3]; // 0x15
 public:
 	// MPropertyFriendlyName "Match Rules"
+	// -> m_matchSoundEventName - 0x28
+	// -> m_matchSoundEventSubString - 0x30
+	// -> m_flEntIndex - 0x38
+	// -> m_flOpvar - 0x3c
 	CSosGroupMatchPattern m_matchPattern; // 0x18	
 	// MPropertyFriendlyName "Branch Rules"
+	// -> m_bMatchEventName - 0x48
+	// -> m_bMatchEventSubString - 0x49
+	// -> m_bMatchEntIndex - 0x4a
+	// -> m_bMatchOpvar - 0x4b
 	CSosGroupBranchPattern m_branchPattern; // 0x40	
 private:
 	[[maybe_unused]] uint8_t __pad0050[0x60]; // 0x50
@@ -23317,6 +23595,11 @@ public:
 	CUtlVector< uint8 > m_sceneObjectLayerIndices; // 0xd8	
 	CUtlVector< uint8 > m_overlayLayerIndices; // 0xf0	
 	CUtlString m_grassFileName; // 0x108	
+	// -> m_nLightmapVersionNumber - 0x110
+	// -> m_nLightmapGameVersionNumber - 0x114
+	// -> m_vLightmapUvScale - 0x118
+	// -> m_bHasLightmaps - 0x120
+	// -> m_lightMaps - 0x128
 	BakedLightingInfo_t m_nodeLightingInfo; // 0x110	
 };
 
@@ -23345,8 +23628,18 @@ public:
 struct World_t
 {
 public:
+	// -> m_flMinDrawVolumeSize - 0x0
+	// -> m_bBuildBakedLighting - 0x4
+	// -> m_vLightmapUvScale - 0x8
+	// -> m_nCompileTimestamp - 0x10
+	// -> m_nCompileFingerprint - 0x18
 	WorldBuilderParams_t m_builderParams; // 0x0	
 	CUtlVector< NodeData_t > m_worldNodes; // 0x20	
+	// -> m_nLightmapVersionNumber - 0x38
+	// -> m_nLightmapGameVersionNumber - 0x3c
+	// -> m_vLightmapUvScale - 0x40
+	// -> m_bHasLightmaps - 0x48
+	// -> m_lightMaps - 0x50
 	BakedLightingInfo_t m_worldLightingInfo; // 0x38	
 	CUtlVector< CStrongHandleCopyable< InfoForResourceTypeCEntityLump > > m_entityLumps; // 0x68	
 };
@@ -23455,6 +23748,8 @@ public:
 	uint32_t m_nSubSceneObject; // 0x4	
 	uint32_t m_nDrawCallIndex; // 0x8	
 	MeshDrawPrimitiveFlags_t m_nAdditionalMeshDrawPrimitiveFlags; // 0xc	
+	// -> m_hBuffer - 0x10
+	// -> m_nBindOffsetBytes - 0x20
 	CRenderBufferBinding m_extraBufferBinding; // 0x10	
 };
 
@@ -30165,6 +30460,8 @@ class C_OP_SetVariable : public CParticleFunctionPreEmission
 {
 public:
 	// MPropertyFriendlyName "Variable"
+	// -> m_variableName - 0x1d0
+	// -> m_variableType - 0x208
 	CParticleVariableRef m_variableReference; // 0x1d0	
 	// MPropertyFriendlyName "Value"
 	// MPropertySuppressExpr "m_variableReference.m_variableType != PVAL_TRANSFORM"
@@ -33116,6 +33413,12 @@ public:
 	// MPropertySuppressField
 	PulseValueType_t m_ValueType; // 0xc	
 	// MPropertySuppressField
+	// -> m_ConfigName - 0x10
+	// -> m_ConfigValue - 0x18
+	// -> m_iAttachType - 0x28
+	// -> m_BoundEntityPath - 0x30
+	// -> m_strEntityScope - 0x38
+	// -> m_strAttachmentName - 0x40
 	ParticleNamedValueConfiguration_t m_DefaultConfig; // 0x10	
 	// MPropertySuppressField
 	CUtlVector< ParticleNamedValueConfiguration_t > m_NamedConfigs; // 0x48	
@@ -33850,10 +34153,16 @@ public:
 	// MPropertyFriendlyName "input scale 2"
 	float m_flInputScale2; // 0x1d8	
 	// MPropertyFriendlyName "control point input 1"
+	// -> m_controlPointNameString - 0x1dc
+	// -> m_vOffsetFromControlPoint - 0x1e0
+	// -> m_bOffsetInLocalSpace - 0x1ec
 	ControlPointReference_t m_nControlPointInput1; // 0x1dc	
 	// MPropertyFriendlyName "control point scale 1"
 	float m_flControlPointScale1; // 0x1f0	
 	// MPropertyFriendlyName "control point input 2"
+	// -> m_controlPointNameString - 0x1f4
+	// -> m_vOffsetFromControlPoint - 0x1f8
+	// -> m_bOffsetInLocalSpace - 0x204
 	ControlPointReference_t m_nControlPointInput2; // 0x1f4	
 	// MPropertyFriendlyName "control point scale 2"
 	float m_flControlPointScale2; // 0x208	
@@ -37222,6 +37531,10 @@ private:
 	[[maybe_unused]] uint8_t __pad0054[0x4]; // 0x54
 public:
 	CBaseFlex* m_pOuter; // 0x58	
+	
+	// Datamap fields:
+	// void m_pSink; // 0x8
+	// void m_ConceptHistories; // 0x10
 };
 
 // Registered binary: server.dll (project 'server')
@@ -37491,6 +37804,9 @@ public:
 	RotationVector m_angular; // 0x18	
 	Vector m_linearSave; // 0x24	
 	RotationVector m_angularSave; // 0x30	
+	
+	// Datamap fields:
+	// bool m_bLocalSpace; // 0x8
 };
 
 // Registered binary: server.dll (project 'server')
@@ -37523,6 +37839,10 @@ private:
 	[[maybe_unused]] uint8_t __pad0014[0x4]; // 0x14
 public:
 	ResponseFollowup* m_pFollowup; // 0x18	
+	
+	// Datamap fields:
+	// int32_t delay; // 0x0
+	// int32_t respeakdelay; // 0x4
 };
 
 // Registered binary: server.dll (project 'server')
@@ -38062,6 +38382,9 @@ public:
 	CUtlStringToken m_nContext; // 0x10	
 	GameTick_t m_nNextThinkTick; // 0x14	
 	GameTick_t m_nLastThinkTick; // 0x18	
+	
+	// Datamap fields:
+	// void m_think; // 0x0
 };
 
 // Registered binary: server.dll (project 'server')
@@ -38398,6 +38721,9 @@ public:
 private:
 	[[maybe_unused]] uint8_t __pad0141[0x7]; // 0x141
 public:
+	// -> odds - 0x158
+	// -> flags - 0x15a
+	// -> m_pFollowup - 0x160
 	ResponseParams m_Params; // 0x148	
 	float m_fMatchScore; // 0x168	
 private:
@@ -38405,6 +38731,14 @@ private:
 public:
 	char* m_szSpeakerContext; // 0x170	
 	char* m_szWorldContext; // 0x178	
+	// -> followup_concept - 0x180
+	// -> followup_contexts - 0x188
+	// -> followup_delay - 0x190
+	// -> followup_target - 0x194
+	// -> followup_entityiotarget - 0x19c
+	// -> followup_entityioinput - 0x1a4
+	// -> followup_entityiodelay - 0x1ac
+	// -> bFired - 0x1b0
 	ResponseFollowup m_Followup; // 0x180	
 private:
 	[[maybe_unused]] uint8_t __pad01b1[0x7]; // 0x1b1
@@ -38933,6 +39267,9 @@ private:
 	[[maybe_unused]] uint8_t __pad0044[0x4]; // 0x44
 public:
 	CUtlVector< CHandle< CPointCommentaryNode > > m_vecNodes; // 0x48	
+	
+	// Datamap fields:
+	// void m_ModifiedConvars; // 0x20
 };
 
 // Registered binary: server.dll (project 'server')
@@ -39298,7 +39635,15 @@ class CSoundPatch
 private:
 	[[maybe_unused]] uint8_t __pad0000[0x8]; // 0x0
 public:
+	// -> m_current - 0x8
+	// -> m_target - 0xc
+	// -> m_rate - 0x10
+	// -> m_forceupdate - 0x14
 	CSoundEnvelope m_pitch; // 0x8	
+	// -> m_current - 0x18
+	// -> m_target - 0x1c
+	// -> m_rate - 0x20
+	// -> m_forceupdate - 0x24
 	CSoundEnvelope m_volume; // 0x18	
 private:
 	[[maybe_unused]] uint8_t __pad0028[0x8]; // 0x28
@@ -39310,6 +39655,8 @@ public:
 	CEntityIndex m_soundEntityIndex; // 0x44	
 	Vector m_soundOrigin; // 0x48	
 	int32_t m_isPlaying; // 0x54	
+	// -> m_Flags - 0x60
+	// -> m_Recipients - 0x68
 	CCopyRecipientFilter m_Filter; // 0x58	
 	float m_flCloseCaptionDuration; // 0x80	
 	bool m_bUpdatedSoundOrigin; // 0x84	
@@ -39320,6 +39667,9 @@ public:
 	
 	// Static fields:
 	static int32_t &Get_g_SoundPatchCount(){return *reinterpret_cast<int32_t*>(interfaces::g_schema->FindTypeScopeForModule("!GlobalTypes")->FindDeclaredClass("CSoundPatch")->m_static_fields[0]->m_instance);};
+	
+	// Datamap fields:
+	// void m_guid; // 0x28
 };
 
 // Registered binary: server.dll (project 'server')
@@ -39424,6 +39774,13 @@ public:
 	SimpleConstraintSoundProfile::SimpleConstraintsSoundProfileKeypoints_t eKeypoints; // 0x8	
 	float m_keyPoints[2]; // 0xc	
 	float m_reversalSoundThresholds[3]; // 0x14	
+	
+	// Datamap fields:
+	// float m_keyPoints[0]; // 0xc
+	// float m_keyPoints[1]; // 0x10
+	// float m_reversalSoundThresholds[0]; // 0x14
+	// float m_reversalSoundThresholds[1]; // 0x18
+	// float m_reversalSoundThresholds[2]; // 0x1c
 };
 
 // Registered binary: server.dll (project 'server')
@@ -39494,6 +39851,16 @@ struct ConceptHistory_t
 {
 public:
 	float timeSpoken; // 0x0	
+	// -> m_Type - 0x8
+	// -> m_szResponseName[192] - 0x9
+	// -> m_szMatchingRule[128] - 0xc9
+	// -> m_Params - 0x150
+	// -> m_fMatchScore - 0x170
+	// -> m_szSpeakerContext - 0x178
+	// -> m_szWorldContext - 0x180
+	// -> m_Followup - 0x188
+	// -> m_pchCriteriaNames - 0x1c0
+	// -> m_pchCriteriaValues - 0x1d8
 	CRR_Response m_response; // 0x8	
 };
 
@@ -39602,12 +39969,24 @@ class CResponseQueue::CDeferredResponse
 private:
 	[[maybe_unused]] uint8_t __pad0000[0x10]; // 0x0
 public:
+	// -> m_nNumPrefixedContexts - 0x38
+	// -> m_bOverrideOnAppend - 0x3c
 	CResponseCriteriaSet m_contexts; // 0x10	
 	float m_fDispatchTime; // 0x40	
 	CHandle< CBaseEntity > m_hIssuer; // 0x44	
 private:
 	[[maybe_unused]] uint8_t __pad0048[0x8]; // 0x48
 public:
+	// -> m_Type - 0x50
+	// -> m_szResponseName[192] - 0x51
+	// -> m_szMatchingRule[128] - 0x111
+	// -> m_Params - 0x198
+	// -> m_fMatchScore - 0x1b8
+	// -> m_szSpeakerContext - 0x1c0
+	// -> m_szWorldContext - 0x1c8
+	// -> m_Followup - 0x1d0
+	// -> m_pchCriteriaNames - 0x208
+	// -> m_pchCriteriaValues - 0x220
 	CRR_Response m_response; // 0x50	
 	bool m_bResponseValid; // 0x238	
 };
@@ -39883,6 +40262,8 @@ public:
 	TrackedStatExpressionData_t m_expressionData; // 0x10	
 	// MPropertyDescription "For k_eMatchTrackedStatImpl_PlayerAggregate or k_eMatchTrackedStatImpl_TeamAggregate, what is the aggregate information."
 	// MPropertySuppressExpr "m_eStatImpl != k_eMatchTrackedStatImpl_PlayerAggregate && m_eStatImpl != k_eMatchTrackedStatImpl_TeamAggregate"
+	// -> m_strIndividualStat - 0x20
+	// -> m_eAggregate - 0x28
 	TrackedStatAggregateData_t m_aggregateData; // 0x20	
 };
 
@@ -40073,6 +40454,8 @@ public:
 	TrackedStatExpressionData_t m_expressionData; // 0x10	
 	// MPropertyDescription "For k_eTeamTrackedStatImpl_PlayerAggregate, what is the aggregate information."
 	// MPropertySuppressExpr "m_eStatImpl != k_eTeamTrackedStatImpl_PlayerAggregate"
+	// -> m_strIndividualStat - 0x20
+	// -> m_eAggregate - 0x28
 	TrackedStatAggregateData_t m_aggregateData; // 0x20	
 };
 
@@ -40084,6 +40467,8 @@ struct SummaryTakeDamageInfo_t
 public:
 	int32_t nSummarisedCount; // 0x0	
 	CTakeDamageInfo info; // 0x8	
+	// -> m_nHealthLost - 0xb0
+	// -> m_nDamageTaken - 0xb4
 	CTakeDamageResult result; // 0xb0	
 	CHandle< CBaseEntity > hTarget; // 0xb8	
 };
@@ -40225,7 +40610,13 @@ public:
 	float m_Values[20]; // 0x34	
 	int32_t m_nBonusesCount; // 0x84	
 	DOTASpecialAbilityBonus_t m_Bonuses[4]; // 0x88	
+	// -> m_pszName - 0xc8
+	// -> m_vecValues - 0xd0
+	// -> m_eOperation - 0xe8
 	DOTALevelingAbilityBonus_t m_ScepterBonus; // 0xc8	
+	// -> m_pszName - 0xf0
+	// -> m_vecValues - 0xf8
+	// -> m_eOperation - 0x110
 	DOTALevelingAbilityBonus_t m_ShardBonus; // 0xf0	
 	int32_t m_nDamageTypeField; // 0x118	
 	bool m_bSpellDamageField; // 0x11c	
@@ -40267,10 +40658,16 @@ class ConstraintSoundInfo
 private:
 	[[maybe_unused]] uint8_t __pad0000[0x8]; // 0x0
 public:
+	// -> m_prevSample - 0x8
+	// -> m_fPrevSampleTime - 0x14
+	// -> m_fIdealSampleRate - 0x18
 	VelocitySampler m_vSampler; // 0x8	
 private:
 	[[maybe_unused]] uint8_t __pad001c[0x4]; // 0x1c
 public:
+	// -> eKeypoints - 0x28
+	// -> m_keyPoints[2] - 0x2c
+	// -> m_reversalSoundThresholds[3] - 0x34
 	SimpleConstraintSoundProfile m_soundProfile; // 0x20	
 	Vector m_forwardAxis; // 0x40	
 private:
@@ -40284,6 +40681,11 @@ public:
 	CUtlSymbolLarge m_iszReversalSounds[3]; // 0x68	
 	bool m_bPlayTravelSound; // 0x80	
 	bool m_bPlayReversalSound; // 0x81	
+	
+	// Datamap fields:
+	// CUtlSymbolLarge m_iszReversalSounds[0]; // 0x68
+	// CUtlSymbolLarge m_iszReversalSounds[1]; // 0x70
+	// CUtlSymbolLarge m_iszReversalSounds[2]; // 0x78
 };
 
 // Registered binary: server.dll (project 'server')
@@ -40318,6 +40720,9 @@ private:
 public:
 	Quaternion m_qStartRot; // 0x20	
 	ParticleIndex_t m_nFXIndex; // 0x30	
+	
+	// Datamap fields:
+	// void m_nSound; // 0x34
 };
 
 // Registered binary: server.dll (project 'server')
@@ -41532,6 +41937,10 @@ public:
 private:
 	[[maybe_unused]] uint8_t __pad002c[0x4]; // 0x2c
 public:
+	// -> m_vColor - 0x30
+	// -> m_flHorzSize - 0x3c
+	// -> m_flVertSize - 0x40
+	// -> m_hMaterial - 0x48
 	CGlowSprite m_Sprites[4]; // 0x30	
 	int32_t m_nSprites; // 0xb0	
 	float m_flProxyRadius; // 0xb4	
@@ -41677,6 +42086,10 @@ private:
 	[[maybe_unused]] uint8_t __pad0038[0x58]; // 0x38
 public:
 	int32_t m_nDecalMaterialIndex; // 0x90	
+	
+	// Datamap fields:
+	// void m_decalEvent; // 0x38
+	// void m_hProjectedDecal; // 0x20
 };
 
 // Registered binary: client.dll (project 'client')

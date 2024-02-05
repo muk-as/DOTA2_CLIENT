@@ -1174,6 +1174,12 @@ public:
 private:
 	[[maybe_unused]] uint8_t __pad0095[0x3]; // 0x95
 public:
+	// -> m_nEntityIndex - 0x98
+	// -> m_modelName - 0xa0
+	// -> m_poseParams - 0xa8
+	// -> m_decodeOps - 0xc0
+	// -> m_internalOps - 0xd8
+	// -> m_decodedAnims - 0xf0
 	AnimationDecodeDebugDumpElement_t m_DecodeDump; // 0x98	
 };
 
@@ -1354,6 +1360,13 @@ public:
 	int32_t m_nFrames; // 0x10	
 	int32_t m_nFramesPerBlock; // 0x14	
 	CUtlVector< CAnimFrameBlockAnim > m_frameblockArray; // 0x18	
+	// -> m_boneArray - 0x30
+	// -> m_morphArray - 0x48
+	// -> m_userArray - 0x60
+	// -> m_bHasRotationBitArray - 0x78
+	// -> m_bHasMovementBitArray - 0x90
+	// -> m_bHasMorphBitArray - 0xa8
+	// -> m_bHasUserBitArray - 0xc0
 	CAnimEncodeDifference m_usageDifferences; // 0x30	
 };
 
@@ -1398,12 +1411,25 @@ class CAnimDesc
 {
 public:
 	CBufferString m_name; // 0x0	
+	// -> m_bLooping - 0x10
+	// -> m_bAllZeros - 0x11
+	// -> m_bHidden - 0x12
+	// -> m_bDelta - 0x13
+	// -> m_bLegacyWorldspace - 0x14
+	// -> m_bModelDoc - 0x15
+	// -> m_bImplicitSeqIgnoreDelta - 0x16
+	// -> m_bAnimGraphAdditive - 0x17
 	CAnimDesc_Flag m_flags; // 0x10	
 	float fps; // 0x18	
 private:
 	[[maybe_unused]] uint8_t __pad001c[0x4]; // 0x1c
 public:
 	// MKV3TransferName "m_pData"
+	// -> m_fileName - 0x20
+	// -> m_nFrames - 0x30
+	// -> m_nFramesPerBlock - 0x34
+	// -> m_frameblockArray - 0x38
+	// -> m_usageDifferences - 0x50
 	CAnimEncodedFrames m_Data; // 0x20	
 	CUtlVector< CAnimMovement > m_movementArray; // 0xf8	
 	CUtlVector< CAnimEventDefinition > m_eventArray; // 0x110	
@@ -1417,6 +1443,8 @@ private:
 public:
 	CUtlVector< Vector > m_vecBoneWorldMin; // 0x178	
 	CUtlVector< Vector > m_vecBoneWorldMax; // 0x190	
+	// -> m_flFadeInTime - 0x1a8
+	// -> m_flFadeOutTime - 0x1ac
 	CAnimSequenceParams m_sequenceParams; // 0x1a8	
 };
 
@@ -1547,6 +1575,12 @@ public:
 	CUtlVector< CStrongHandle< InfoForResourceTypeCAnimationGroup > > m_includedGroupArray_Handle; // 0x78	
 	// MKV3TransferName "m_directHSeqGroup"
 	CStrongHandle< InfoForResourceTypeCSequenceGroupData > m_directHSeqGroup_Handle; // 0x90	
+	// -> m_name - 0x98
+	// -> m_boneArray - 0xa8
+	// -> m_userArray - 0xc0
+	// -> m_morphArray - 0xd8
+	// -> m_nChannelElements - 0xf0
+	// -> m_dataChannelArray - 0xf8
 	CAnimKeyData m_decodeKey; // 0x98	
 	CUtlVector< CBufferString > m_szScripts; // 0x110	
 };
@@ -1581,6 +1615,14 @@ class CSeqAutoLayer
 public:
 	int16_t m_nLocalReference; // 0x0	
 	int16_t m_nLocalPose; // 0x2	
+	// -> m_bPost - 0x4
+	// -> m_bSpline - 0x5
+	// -> m_bXFade - 0x6
+	// -> m_bNoBlend - 0x7
+	// -> m_bLocal - 0x8
+	// -> m_bPose - 0x9
+	// -> m_bFetchFrame - 0xa
+	// -> m_bSubtract - 0xb
 	CSeqAutoLayerFlag m_flags; // 0x4	
 	float m_start; // 0xc	
 	float m_peak; // 0x10	
@@ -1664,6 +1706,12 @@ public:
 class CSeqMultiFetch
 {
 public:
+	// -> m_bRealtime - 0x0
+	// -> m_bCylepose - 0x1
+	// -> m_b0D - 0x2
+	// -> m_b1D - 0x3
+	// -> m_b2D - 0x4
+	// -> m_b2D_TRI - 0x5
 	CSeqMultiFetchFlag m_flags; // 0x0	
 	CUtlVector< int16 > m_localReferenceArray; // 0x8	
 	int32_t m_nGroupSize[2]; // 0x20	
@@ -1722,6 +1770,14 @@ public:
 private:
 	[[maybe_unused]] uint8_t __pad001b[0x5]; // 0x1b
 public:
+	// -> m_flags - 0x20
+	// -> m_localReferenceArray - 0x28
+	// -> m_nGroupSize[2] - 0x40
+	// -> m_nLocalPose[2] - 0x48
+	// -> m_poseKeyArray0 - 0x50
+	// -> m_poseKeyArray1 - 0x68
+	// -> m_nLocalCyclePoseParameter - 0x80
+	// -> m_bCalculatePoseParameters - 0x84
 	CSeqMultiFetch m_fetch; // 0x20	
 	int32_t m_nLocalWeightlist; // 0x88	
 private:
@@ -2057,6 +2113,11 @@ struct VPhysXBodyPart_t
 public:
 	uint32_t m_nFlags; // 0x0	
 	float m_flMass; // 0x4	
+	// -> m_spheres - 0x8
+	// -> m_capsules - 0x20
+	// -> m_hulls - 0x38
+	// -> m_meshes - 0x50
+	// -> m_CollisionAttributeIndices - 0x68
 	VPhysics2ShapeDef_t m_rnShape; // 0x8	
 	uint16_t m_nCollisionAttributeIndex; // 0x80	
 	uint16_t m_nReserved; // 0x82	
@@ -2372,13 +2433,36 @@ public:
 	// MKV3TransferName "description"
 	CUtlString m_description; // 0x20	
 	// MKV3TransferName "physics"
+	// -> m_friction - 0x28
+	// -> m_elasticity - 0x2c
+	// -> m_density - 0x30
+	// -> m_thickness - 0x34
+	// -> m_softContactFrequency - 0x38
+	// -> m_softContactDampingRatio - 0x3c
+	// -> m_wheelDrag - 0x40
 	CPhysSurfacePropertiesPhysics m_physics; // 0x28	
 private:
 	[[maybe_unused]] uint8_t __pad0044[0x4]; // 0x44
 public:
 	// MKV3TransferName "audiosounds"
+	// -> m_impactSoft - 0x48
+	// -> m_impactHard - 0x50
+	// -> m_scrapeSmooth - 0x58
+	// -> m_scrapeRough - 0x60
+	// -> m_bulletImpact - 0x68
+	// -> m_rolling - 0x70
+	// -> m_break - 0x78
+	// -> m_strain - 0x80
 	CPhysSurfacePropertiesSoundNames m_audioSounds; // 0x48	
 	// MKV3TransferName "audioparams"
+	// -> m_reflectivity - 0x88
+	// -> m_hardnessFactor - 0x8c
+	// -> m_roughnessFactor - 0x90
+	// -> m_roughThreshold - 0x94
+	// -> m_hardThreshold - 0x98
+	// -> m_hardVelocityThreshold - 0x9c
+	// -> m_flStaticImpactVolume - 0xa0
+	// -> m_flOcclusionFactor - 0xa4
 	CPhysSurfacePropertiesAudio m_audioParams; // 0x88	
 };
 
@@ -2512,6 +2596,16 @@ struct PermModelData_t
 {
 public:
 	CUtlString m_name; // 0x0	
+	// -> m_nFlags - 0x8
+	// -> m_vHullMin - 0xc
+	// -> m_vHullMax - 0x18
+	// -> m_vViewMin - 0x24
+	// -> m_vViewMax - 0x30
+	// -> m_flMass - 0x3c
+	// -> m_vEyePosition - 0x40
+	// -> m_flMaxEyeDeflection - 0x4c
+	// -> m_sSurfaceProperty - 0x50
+	// -> m_keyValueText - 0x58
 	PermModelInfo_t m_modelInfo; // 0x8	
 	CUtlVector< PermModelExtPart_t > m_ExtParts; // 0x60	
 	CUtlVector< CStrongHandle< InfoForResourceTypeCRenderMesh > > m_refMeshes; // 0x78	
@@ -2526,6 +2620,13 @@ public:
 	CUtlVector< CUtlString > m_meshGroups; // 0x150	
 	CUtlVector< MaterialGroup_t > m_materialGroups; // 0x168	
 	uint64_t m_nDefaultMeshGroupMask; // 0x180	
+	// -> m_boneName - 0x188
+	// -> m_nParent - 0x1a0
+	// -> m_boneSphere - 0x1b8
+	// -> m_nFlag - 0x1d0
+	// -> m_bonePosParent - 0x1e8
+	// -> m_boneRotParent - 0x200
+	// -> m_boneScaleParent - 0x218
 	ModelSkeletonData_t m_modelSkeleton; // 0x188	
 	CUtlVector< int16 > m_remappingTable; // 0x230	
 	CUtlVector< uint16 > m_remappingTableStarts; // 0x248	
@@ -2770,6 +2871,8 @@ public:
 	CUtlString m_boneName; // 0x0	
 	CUtlString m_parentName; // 0x8	
 	matrix3x4_t m_invBindPose; // 0x10	
+	// -> m_vecCenter - 0x40
+	// -> m_vecSize - 0x4c
 	SkeletonBoneBounds_t m_bbox; // 0x40	
 	float m_flSphereRadius; // 0x58	
 };
@@ -2826,6 +2929,8 @@ public:
 private:
 	[[maybe_unused]] uint8_t __pad0032[0x86]; // 0x32
 public:
+	// -> m_hBuffer - 0xb8
+	// -> m_nBindOffsetBytes - 0xc8
 	CRenderBufferBinding m_indexBuffer; // 0xb8	
 private:
 	[[maybe_unused]] uint8_t __pad00d0[0x10]; // 0xd0
@@ -2844,6 +2949,9 @@ class CMeshletDescriptor
 {
 public:
 	PackedAABB_t m_PackedAABB; // 0x0	
+	// -> m_vConeApex - 0x8
+	// -> m_ConeAxis[3] - 0x14
+	// -> m_ConeCutoff - 0x17
 	CDrawCullingData m_CullingData; // 0x8	
 };
 
@@ -2948,6 +3056,9 @@ private:
 public:
 	CUtlVectorFixedGrowable< CSceneObjectData > m_sceneObjects; // 0x10	
 	CUtlVector< CBaseConstraint* > m_constraints; // 0xa0	
+	// -> m_bones - 0xb8
+	// -> m_boneParents - 0xe8
+	// -> m_nBoneWeightCount - 0x100
 	CRenderSkeleton m_skeleton; // 0xb8	
 };
 
@@ -3438,6 +3549,15 @@ public:
 class CFootStride
 {
 public:
+	// -> m_vStancePositionMS - 0x0
+	// -> m_vMidpointPositionMS - 0xc
+	// -> m_flStanceDirectionMS - 0x18
+	// -> m_vToStrideStartPos - 0x1c
+	// -> m_stanceCycle - 0x28
+	// -> m_footLiftCycle - 0x2c
+	// -> m_footOffCycle - 0x30
+	// -> m_footStrikeCycle - 0x34
+	// -> m_footLandCycle - 0x38
 	CFootCycleDefinition m_definition; // 0x0	
 	CFootTrajectories m_trajectories; // 0x40	
 };
@@ -4503,6 +4623,9 @@ class CMotionSearchNode
 {
 public:
 	CUtlVector< CMotionSearchNode* > m_children; // 0x0	
+	// -> m_centroidVectors - 0x18
+	// -> m_nCentroids - 0x30
+	// -> m_nDimensions - 0x34
 	CVectorQuantizer m_quantizer; // 0x18	
 	CUtlVector< CUtlVector< SampleCode > > m_sampleCodes; // 0x38	
 	CUtlVector< CUtlVector< int32 > > m_sampleIndices; // 0x50	
@@ -4517,7 +4640,14 @@ public:
 class CMotionSearchDB
 {
 public:
+	// -> m_children - 0x0
+	// -> m_quantizer - 0x18
+	// -> m_sampleCodes - 0x38
+	// -> m_sampleIndices - 0x50
+	// -> m_selectableSamples - 0x68
 	CMotionSearchNode m_rootNode; // 0x0	
+	// -> m_subQuantizers - 0x80
+	// -> m_nDimensions - 0x98
 	CProductQuantizer m_residualQuantizer; // 0x80	
 	CUtlVector< MotionDBIndex > m_codeIndices; // 0xa0	
 };
@@ -4530,6 +4660,9 @@ public:
 class CMotionGraphGroup
 {
 public:
+	// -> m_rootNode - 0x0
+	// -> m_residualQuantizer - 0x80
+	// -> m_codeIndices - 0xa0
 	CMotionSearchDB m_searchDB; // 0x0	
 	CUtlVector< CSmartPtr< CMotionGraph > > m_motionGraphs; // 0xb8	
 	CUtlVector< CMotionGraphConfig > m_motionGraphConfigs; // 0xd0	
@@ -5383,6 +5516,9 @@ public:
 class CStateMachineComponentUpdater : public CAnimComponentUpdater
 {
 public:
+	// -> m_states - 0x38
+	// -> m_transitions - 0x50
+	// -> m_startStateIndex - 0x80
 	CAnimStateMachineUpdater m_stateMachine; // 0x30	
 };
 
@@ -5412,6 +5548,8 @@ class CAnimUpdateNodeBase
 private:
 	[[maybe_unused]] uint8_t __pad0000[0x18]; // 0x0
 public:
+	// -> m_path[11] - 0x18
+	// -> m_nCount - 0x44
 	CAnimNodePath m_nodePath; // 0x18	
 	AnimNodeNetworkMode m_networkMode; // 0x48	
 private:
@@ -5618,6 +5756,8 @@ public:
 class FootFixedSettings
 {
 public:
+	// -> m_flTraceHeight - 0x0
+	// -> m_flTraceRadius - 0x4
 	TraceSettings_t m_traceSettings; // 0x0	
 	VectorAligned m_vFootBaseBindPosePositionMS; // 0x10	
 	float m_flFootBaseLength; // 0x20	
@@ -5708,6 +5848,8 @@ public:
 class CMotionMatchingUpdateNode : public CLeafUpdateNode
 {
 public:
+	// -> m_groups - 0x58
+	// -> m_nDimensionCount - 0x70
 	CMotionDataSet m_dataSet; // 0x58	
 	CUtlVector< CSmartPtr< CMotionMetricEvaluator > > m_metrics; // 0x78	
 	CUtlVector< float32 > m_weights; // 0x90	
@@ -5886,6 +6028,9 @@ class CStateMachineUpdateNode : public CAnimUpdateNodeBase
 private:
 	[[maybe_unused]] uint8_t __pad0058[0x10]; // 0x58
 public:
+	// -> m_states - 0x70
+	// -> m_transitions - 0x88
+	// -> m_startStateIndex - 0xb8
 	CAnimStateMachineUpdater m_stateMachine; // 0x68	
 	CUtlVector< CStateNodeStateData > m_stateData; // 0xc0	
 	CUtlVector< CStateNodeTransitionData > m_transitionData; // 0xd8	
@@ -6023,6 +6168,8 @@ public:
 	CAnimGraphSettingsManager m_settings; // 0x78	
 	CSmartPtr< CStaticPoseCacheBuilder > m_pStaticPoseCache; // 0xa8	
 	CSmartPtr< CAnimSkeleton > m_pSkeleton; // 0xb0	
+	// -> m_path[11] - 0xb8
+	// -> m_nCount - 0xe4
 	CAnimNodePath m_rootNodePath; // 0xb8	
 };
 
@@ -6063,6 +6210,8 @@ class CMotionGraphConfig
 public:
 	float m_paramValues[4]; // 0x0	
 	float m_flDuration; // 0x10	
+	// -> m_nGroup - 0x14
+	// -> m_nMotion - 0x16
 	MotionIndex m_nMotionIndex; // 0x14	
 	int32_t m_nSampleStart; // 0x18	
 	int32_t m_nSampleCount; // 0x1c	
@@ -6078,6 +6227,8 @@ class CSingleFrameUpdateNode : public CLeafUpdateNode
 {
 public:
 	CUtlVector< CSmartPtr< CAnimActionUpdater > > m_actions; // 0x58	
+	// -> m_nIndex - 0x70
+	// -> m_eType - 0x72
 	CPoseHandle m_hPoseCacheHandle; // 0x70	
 	HSequence m_hSequence; // 0x74	
 	float m_flCycle; // 0x78	
@@ -6221,10 +6372,17 @@ struct ChainToSolveData_t
 {
 public:
 	int32_t m_nChainIndex; // 0x0	
+	// -> m_SolverType - 0x4
+	// -> m_nNumIterations - 0x8
 	IKSolverSettings_t m_SolverSettings; // 0x4	
 private:
 	[[maybe_unused]] uint8_t __pad000c[0x4]; // 0xc
 public:
+	// -> m_TargetSource - 0x10
+	// -> m_Bone - 0x18
+	// -> m_AnimgraphParameterNamePosition - 0x28
+	// -> m_AnimgraphParameterNameOrientation - 0x2c
+	// -> m_TargetCoordSystem - 0x30
 	IKTargetSettings_t m_TargetSettings; // 0x10	
 	SolveIKChainAnimNodeDebugSetting m_DebugSetting; // 0x38	
 	float m_flDebugNormalizedValue; // 0x3c	
@@ -6285,6 +6443,14 @@ class CAimMatrixUpdateNode : public CUnaryUpdateNode
 private:
 	[[maybe_unused]] uint8_t __pad0068[0x8]; // 0x68
 public:
+	// -> m_attachment - 0x70
+	// -> m_damping - 0xf0
+	// -> m_poseCacheHandles[10] - 0x100
+	// -> m_eBlendMode - 0x128
+	// -> m_fAngleIncrement - 0x12c
+	// -> m_nSequenceMaxFrame - 0x130
+	// -> m_nBoneMaskIndex - 0x134
+	// -> m_bTargetIsPosition - 0x138
 	AimMatrixOpFixedSettings_t m_opFixedSettings; // 0x70	
 private:
 	[[maybe_unused]] uint8_t __pad0140[0x8]; // 0x140
@@ -6447,6 +6613,10 @@ class CFollowAttachmentUpdateNode : public CUnaryUpdateNode
 private:
 	[[maybe_unused]] uint8_t __pad0068[0x8]; // 0x68
 public:
+	// -> m_attachment - 0x70
+	// -> m_boneIndex - 0xf0
+	// -> m_bMatchTranslation - 0xf4
+	// -> m_bMatchRotation - 0xf5
 	FollowAttachmentSettings_t m_opFixedData; // 0x70	
 };
 
@@ -6462,6 +6632,8 @@ private:
 	[[maybe_unused]] uint8_t __pad0068[0x8]; // 0x68
 public:
 	CUtlVector< HSequence > m_clips; // 0x70	
+	// -> m_nIndex - 0x88
+	// -> m_eType - 0x8a
 	CPoseHandle m_hBasePoseCacheHandle; // 0x88	
 	CAnimParamHandle m_facingTarget; // 0x8c	
 private:
@@ -6520,6 +6692,13 @@ class CFootPinningUpdateNode : public CUnaryUpdateNode
 private:
 	[[maybe_unused]] uint8_t __pad0068[0x8]; // 0x68
 public:
+	// -> m_footInfo - 0x70
+	// -> m_flBlendTime - 0x88
+	// -> m_flLockBreakDistance - 0x8c
+	// -> m_flMaxLegTwist - 0x90
+	// -> m_nHipBoneIndex - 0x94
+	// -> m_bApplyLegTwistLimits - 0x98
+	// -> m_bApplyFootRotationLimits - 0x99
 	FootPinningPoseOpFixedData_t m_poseOpFixedData; // 0x70	
 	FootPinningTimingSource m_eTimingSource; // 0xa0	
 private:
@@ -6626,6 +6805,17 @@ class CLookAtUpdateNode : public CUnaryUpdateNode
 private:
 	[[maybe_unused]] uint8_t __pad0068[0x8]; // 0x68
 public:
+	// -> m_attachment - 0x70
+	// -> m_damping - 0xf0
+	// -> m_bones - 0x100
+	// -> m_flYawLimit - 0x118
+	// -> m_flPitchLimit - 0x11c
+	// -> m_flHysteresisInnerAngle - 0x120
+	// -> m_flHysteresisOuterAngle - 0x124
+	// -> m_bRotateYawForward - 0x128
+	// -> m_bMaintainUpDirection - 0x129
+	// -> m_bTargetIsPosition - 0x12a
+	// -> m_bUseHysteresis - 0x12b
 	LookAtOpFixedSettings_t m_opFixedSettings; // 0x70	
 private:
 	[[maybe_unused]] uint8_t __pad0130[0x8]; // 0x130
@@ -6737,6 +6927,8 @@ class CSolveIKChainUpdateNode : public CUnaryUpdateNode
 {
 public:
 	CUtlVector< CSolveIKTargetHandle_t > m_targetHandles; // 0x68	
+	// -> m_ChainsToSolveData - 0x80
+	// -> m_bMatchTargetOrientation - 0x98
 	SolveIKChainPoseOpFixedSettings_t m_opFixedData; // 0x80	
 };
 

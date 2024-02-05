@@ -2810,6 +2810,12 @@ public:
 	// MPropertySuppressField
 	PulseValueType_t m_ValueType; // 0xc	
 	// MPropertySuppressField
+	// -> m_ConfigName - 0x10
+	// -> m_ConfigValue - 0x18
+	// -> m_iAttachType - 0x28
+	// -> m_BoundEntityPath - 0x30
+	// -> m_strEntityScope - 0x38
+	// -> m_strAttachmentName - 0x40
 	ParticleNamedValueConfiguration_t m_DefaultConfig; // 0x10	
 	// MPropertySuppressField
 	CUtlVector< ParticleNamedValueConfiguration_t > m_NamedConfigs; // 0x48	
@@ -10364,10 +10370,16 @@ public:
 	// MPropertyFriendlyName "input scale 2"
 	float m_flInputScale2; // 0x1d8	
 	// MPropertyFriendlyName "control point input 1"
+	// -> m_controlPointNameString - 0x1dc
+	// -> m_vOffsetFromControlPoint - 0x1e0
+	// -> m_bOffsetInLocalSpace - 0x1ec
 	ControlPointReference_t m_nControlPointInput1; // 0x1dc	
 	// MPropertyFriendlyName "control point scale 1"
 	float m_flControlPointScale1; // 0x1f0	
 	// MPropertyFriendlyName "control point input 2"
+	// -> m_controlPointNameString - 0x1f4
+	// -> m_vOffsetFromControlPoint - 0x1f8
+	// -> m_bOffsetInLocalSpace - 0x204
 	ControlPointReference_t m_nControlPointInput2; // 0x1f4	
 	// MPropertyFriendlyName "control point scale 2"
 	float m_flControlPointScale2; // 0x208	
@@ -10735,6 +10747,8 @@ class C_OP_SetVariable : public CParticleFunctionPreEmission
 {
 public:
 	// MPropertyFriendlyName "Variable"
+	// -> m_variableName - 0x1d0
+	// -> m_variableType - 0x208
 	CParticleVariableRef m_variableReference; // 0x1d0	
 	// MPropertyFriendlyName "Value"
 	// MPropertySuppressExpr "m_variableReference.m_variableType != PVAL_TRANSFORM"

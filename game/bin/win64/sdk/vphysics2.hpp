@@ -82,7 +82,16 @@ struct constraint_hingeparams_t
 public:
 	Vector worldPosition; // 0x0	
 	Vector worldAxisDirection; // 0xc	
+	// -> flMinRotation - 0x18
+	// -> flMaxRotation - 0x1c
+	// -> flMotorTargetAngSpeed - 0x20
+	// -> flMotorMaxTorque - 0x24
 	constraint_axislimit_t hingeAxis; // 0x18	
+	// -> strength - 0x28
+	// -> forceLimit - 0x2c
+	// -> torqueLimit - 0x30
+	// -> bodyMassScale[2] - 0x34
+	// -> isActive - 0x3c
 	constraint_breakableparams_t constraint; // 0x28	
 };
 
@@ -407,6 +416,8 @@ public:
 	fltx4 w1; // 0x30	
 	fltx4 w2; // 0x40	
 	fltx4 v1x; // 0x50	
+	// -> x - 0x60
+	// -> y - 0x70
 	FourVectors2D v2; // 0x60	
 };
 
@@ -1141,6 +1152,8 @@ struct FeCollisionPlane_t
 public:
 	uint16_t nCtrlParent; // 0x0	
 	uint16_t nChildNode; // 0x2	
+	// -> m_vNormal - 0x4
+	// -> m_flOffset - 0x10
 	RnPlane_t m_Plane; // 0x4	
 	float flStrength; // 0x14	
 };
@@ -1291,6 +1304,8 @@ public:
 struct RnSphereDesc_t : public RnShapeDesc_t
 {
 public:
+	// -> m_vCenter - 0x10
+	// -> m_flRadius - 0x1c
 	RnSphere_t m_Sphere; // 0x10	
 };
 
@@ -1302,6 +1317,8 @@ public:
 struct RnCapsuleDesc_t : public RnShapeDesc_t
 {
 public:
+	// -> m_vCenter[2] - 0x10
+	// -> m_flRadius - 0x28
 	RnCapsule_t m_Capsule; // 0x10	
 };
 
@@ -1313,6 +1330,18 @@ public:
 struct RnHullDesc_t : public RnShapeDesc_t
 {
 public:
+	// -> m_vCentroid - 0x10
+	// -> m_flMaxAngularRadius - 0x1c
+	// -> m_Bounds - 0x20
+	// -> m_vOrthographicAreas - 0x38
+	// -> m_MassProperties - 0x44
+	// -> m_flVolume - 0x74
+	// -> m_Vertices - 0x78
+	// -> m_Edges - 0x90
+	// -> m_Faces - 0xa8
+	// -> m_Planes - 0xc0
+	// -> m_nFlags - 0xd8
+	// -> m_pRegionSVM - 0xe0
 	RnHull_t m_Hull; // 0x10	
 };
 
@@ -1324,6 +1353,16 @@ public:
 struct RnMeshDesc_t : public RnShapeDesc_t
 {
 public:
+	// -> m_vMin - 0x10
+	// -> m_vMax - 0x1c
+	// -> m_Nodes - 0x28
+	// -> m_Vertices - 0x40
+	// -> m_Triangles - 0x58
+	// -> m_Wings - 0x70
+	// -> m_Materials - 0x88
+	// -> m_vOrthographicAreas - 0xa0
+	// -> m_nFlags - 0xac
+	// -> m_nDebugFlags - 0xb0
 	RnMesh_t m_Mesh; // 0x10	
 };
 

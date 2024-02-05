@@ -368,8 +368,16 @@ private:
 	[[maybe_unused]] uint8_t __pad0015[0x3]; // 0x15
 public:
 	// MPropertyFriendlyName "Match Rules"
+	// -> m_matchSoundEventName - 0x28
+	// -> m_matchSoundEventSubString - 0x30
+	// -> m_flEntIndex - 0x38
+	// -> m_flOpvar - 0x3c
 	CSosGroupMatchPattern m_matchPattern; // 0x18	
 	// MPropertyFriendlyName "Branch Rules"
+	// -> m_bMatchEventName - 0x48
+	// -> m_bMatchEventSubString - 0x49
+	// -> m_bMatchEntIndex - 0x4a
+	// -> m_bMatchOpvar - 0x4b
 	CSosGroupBranchPattern m_branchPattern; // 0x40	
 private:
 	[[maybe_unused]] uint8_t __pad0050[0x60]; // 0x50
@@ -767,6 +775,16 @@ public:
 private:
 	[[maybe_unused]] uint8_t __pad0021[0x3]; // 0x21
 public:
+	// -> m_fldbGainInput - 0x24
+	// -> m_fldbGainOutput - 0x28
+	// -> m_fldbThresholdBelow - 0x2c
+	// -> m_fldbThresholdAbove - 0x30
+	// -> m_flRatioBelow - 0x34
+	// -> m_flRatioAbove - 0x38
+	// -> m_flAttackTimeMS - 0x3c
+	// -> m_flReleaseTimeMS - 0x40
+	// -> m_bEnable - 0x44
+	// -> m_bSolo - 0x45
 	VMixDynamicsBand_t m_bandDesc[3]; // 0x24	
 };
 

@@ -1626,6 +1626,9 @@ public:
 	CEntityIdentity* m_pNext; // 0x60	
 	CEntityIdentity* m_pPrevByClass; // 0x68	
 	CEntityIdentity* m_pNextByClass; // 0x70	
+	
+	// Datamap fields:
+	// void m_pAttributes; // 0x48
 };
 
 // Registered binary: client.dll (project 'entity2')
@@ -1743,6 +1746,8 @@ public:
 	// MNetworkChangeCallback "gameSceneNodeHierarchyParentChanged"
 	// MNetworkPriority "32"
 	// MNetworkVarEmbeddedFieldOffsetDelta "8"
+	// -> m_hOwner - 0x78
+	// -> m_name - 0x7c
 	CGameSceneNodeHandle m_hParent; // 0x70	
 	// MNetworkEnable
 	// MNetworkPriority "32"
@@ -1820,6 +1825,25 @@ public:
 	float m_flZOffset; // 0x134	
 	// MNetworkDisable
 	Vector m_vRenderOrigin; // 0x138	
+	
+	// Datamap fields:
+	// void m_bDirtyHierarchy; // -0x1
+	// void m_bDirtyBoneMergeInfo; // -0x1
+	// void m_bNetworkedPositionChanged; // -0x1
+	// void m_bNetworkedAnglesChanged; // -0x1
+	// void m_bNetworkedScaleChanged; // -0x1
+	// void m_bWillBeCallingPostDataUpdate; // -0x1
+	// void m_bNotifyBoneTransformsChanged; // -0x1
+	// void m_nLatchAbsOrigin; // -0x1
+	// void m_bDirtyBoneMergeBoneToRoot; // -0x1
+	// CHandle< CBaseEntity > parentname; // 0x7fffffff
+	// bool useLocalOffset; // 0x7fffffff
+	// bool useParentRenderBounds; // 0x7fffffff
+	// bool positionInLocalSpace; // 0x7fffffff
+	// Vector scales; // 0x7fffffff
+	// Vector local.scales; // 0x7fffffff
+	// float scale; // 0x7fffffff
+	// float ModelScale; // 0x7fffffff
 };
 
 // Registered binary: client.dll (project 'client')
@@ -2130,6 +2154,10 @@ public:
 	// Static fields:
 	static EntComponentInfo_t &Get_s_EntComponentInfo(){return *reinterpret_cast<EntComponentInfo_t*>(interfaces::g_schema->FindTypeScopeForModule("client.dll")->FindDeclaredClass("CLightComponent")->m_static_fields[0]->m_instance);};
 	static int32_t &Get_entity_component_error_class_decl_says_contained_but_impl_is_referenced(){return *reinterpret_cast<int32_t*>(interfaces::g_schema->FindTypeScopeForModule("client.dll")->FindDeclaredClass("CLightComponent")->m_static_fields[1]->m_instance);};
+	
+	// Datamap fields:
+	// SHIM m_bRenderSpecular; // 0xd4
+	// SHIM m_bCastShadows; // 0xc4
 };
 
 // Registered binary: client.dll (project 'client')
@@ -2177,6 +2205,9 @@ private:
 	[[maybe_unused]] uint8_t __pad0000[0x18]; // 0x0
 public:
 	float m_flFluidDensity; // 0x18	
+	
+	// Datamap fields:
+	// void m_pController; // 0x8
 };
 
 // Registered binary: client.dll (project 'client')
@@ -2392,6 +2423,9 @@ public:
 	float m_flUpMove; // 0x1ac	
 	Vector m_vecLastMovementImpulses; // 0x1b0	
 	QAngle m_vecOldViewAngles; // 0x1bc	
+	
+	// Datamap fields:
+	// void m_pButtonPressedCmdNumber; // 0x80
 };
 
 // Registered binary: client.dll (project 'client')
@@ -2448,6 +2482,9 @@ private:
 	[[maybe_unused]] uint8_t __pad01fc[0xc]; // 0x1fc
 public:
 	int32_t m_nStepside; // 0x208	
+	
+	// Datamap fields:
+	// void m_pSurfaceData; // 0x200
 };
 
 // Registered binary: client.dll (project 'client')
@@ -2655,6 +2692,9 @@ public:
 	int8_t m_nForceLOD; // 0x223	
 	// MNetworkDisable
 	int8_t m_nClothUpdateFlags; // 0x224	
+	
+	// Datamap fields:
+	// void m_pVPhysicsAggregate; // 0xe0
 };
 
 // Registered binary: client.dll (project 'client')
@@ -2717,6 +2757,13 @@ private:
 	[[maybe_unused]] uint8_t __pad0150[0x10]; // 0x150
 public:
 	// MNetworkEnable
+	// -> m_hModel - 0x200
+	// -> m_ModelName - 0x208
+	// -> m_bClientClothCreationSuppressed - 0x248
+	// -> m_MeshGroupMask - 0x2e0
+	// -> m_nIdealMotionType - 0x382
+	// -> m_nForceLOD - 0x383
+	// -> m_nClothUpdateFlags - 0x384
 	CModelState m_modelState; // 0x160	
 	// MNetworkEnable
 	bool m_bIsAnimationEnabled; // 0x390	
@@ -2737,6 +2784,11 @@ public:
 	CUtlStringToken m_materialGroup; // 0x394	
 	// MNetworkEnable
 	uint8_t m_nHitboxSet; // 0x398	
+	
+	// Datamap fields:
+	// Vector velocity; // 0x7fffffff
+	// Vector rotationAxis; // 0x7fffffff
+	// float rotationSpeed; // 0x7fffffff
 };
 
 // Registered binary: client.dll (project 'client')
@@ -2749,6 +2801,12 @@ class CBodyComponentSkeletonInstance : public CBodyComponent
 {
 public:
 	// MNetworkEnable
+	// -> m_modelState - 0x1b0
+	// -> m_bIsAnimationEnabled - 0x3e0
+	// -> m_bUseParentRenderBounds - 0x3e1
+	// -> m_bDisableSolidCollisionsForHierarchy - 0x3e2
+	// -> m_materialGroup - 0x3e4
+	// -> m_nHitboxSet - 0x3e8
 	CSkeletonInstance m_skeletonInstance; // 0x50	
 	// MNetworkDisable
 	// MNetworkChangeAccessorFieldPathIndex
@@ -2834,6 +2892,10 @@ public:
 	float m_flPrevCycleFromDiscontinuity; // 0x20	
 	// MNetworkDisable
 	float m_flPrevCycleForAnimEventDetection; // 0x24	
+	
+	// Datamap fields:
+	// CUtlString sequenceName; // 0x7fffffff
+	// int32_t sequence; // 0x7fffffff
 };
 
 // Registered binary: client.dll (project 'client')
@@ -2915,6 +2977,13 @@ public:
 	AnimationUpdateListHandle_t m_hAnimationUpdate; // 0x104	
 	// MNetworkDisable
 	HSequence m_hLastAnimEventSequence; // 0x108	
+	
+	// Datamap fields:
+	// void m_pAnimGraphInstance; // 0x80
+	// float m_flCachedSequenceCycleRate; // 0x68
+	// bool m_bNotifyWhenSequenceFinished; // 0x70
+	// void m_iv_AnimOpHistory; // 0x110
+	// bool useClientSideAnimation; // 0x7fffffff
 };
 
 // Registered binary: client.dll (project 'client')
@@ -3440,6 +3509,16 @@ public:
 	static bool &Get_s_bComputingInterpolatedValues(){return *reinterpret_cast<bool*>(interfaces::g_schema->FindTypeScopeForModule("client.dll")->FindDeclaredClass("C_BaseEntity")->m_static_fields[9]->m_instance);};
 	static bool &Get_s_bPreventingSetAnimRunAnimEvents(){return *reinterpret_cast<bool*>(interfaces::g_schema->FindTypeScopeForModule("client.dll")->FindDeclaredClass("C_BaseEntity")->m_static_fields[10]->m_instance);};
 	static CUtlVector< C_BaseEntity* > &Get_gm_UsableObjects(){return *reinterpret_cast<CUtlVector< C_BaseEntity* >*>(interfaces::g_schema->FindTypeScopeForModule("client.dll")->FindDeclaredClass("C_BaseEntity")->m_static_fields[11]->m_instance);};
+	
+	// Datamap fields:
+	// CUtlSymbolLarge m_iszPrivateVScripts; // 0x8
+	// void m_CScriptComponent; // 0x28
+	// CUtlSymbolLarge subclass_name; // 0x7fffffff
+	// void m_pSubclassVData; // 0x360
+	// QAngle angles; // 0x7fffffff
+	// Vector origin; // 0x7fffffff
+	// CStrongHandle< InfoForResourceTypeCModel > model; // 0x7fffffff
+	// CUtlString ownername; // 0x7fffffff
 };
 
 // Registered binary: client.dll (project 'client')
@@ -3625,6 +3704,9 @@ public:
 	CHandle< C_BaseEntity > m_hOldAttached; // 0x560	
 	// MNetworkEnable
 	bool m_bCheapEffect; // 0x564	
+	
+	// Datamap fields:
+	// void m_hEffect; // 0x540
 };
 
 // Registered binary: client.dll (project 'client')
@@ -3873,6 +3955,10 @@ public:
 private:
 	[[maybe_unused]] uint8_t __pad002c[0x4]; // 0x2c
 public:
+	// -> m_vColor - 0x30
+	// -> m_flHorzSize - 0x3c
+	// -> m_flVertSize - 0x40
+	// -> m_hMaterial - 0x48
 	CGlowSprite m_Sprites[4]; // 0x30	
 	int32_t m_nSprites; // 0xb0	
 	float m_flProxyRadius; // 0xb4	
@@ -3914,6 +4000,9 @@ class CSkyboxReference : public C_BaseEntity
 public:
 	WorldGroupId_t m_worldGroupId; // 0x538	
 	CHandle< C_SkyCamera > m_hSkyCamera; // 0x53c	
+	
+	// Datamap fields:
+	// const char * worldGroupID; // 0x7fffffff
 };
 
 // Registered binary: client.dll (project 'client')
@@ -4028,6 +4117,14 @@ private:
 public:
 	// MNetworkEnable
 	// MNetworkChangeCallback "CollisionAttributeChanged"
+	// -> m_nInteractsAs - 0x18
+	// -> m_nInteractsWith - 0x20
+	// -> m_nInteractsExclude - 0x28
+	// -> m_nEntityId - 0x30
+	// -> m_nOwnerId - 0x34
+	// -> m_nHierarchyId - 0x38
+	// -> m_nCollisionGroup - 0x3a
+	// -> m_nCollisionFunctionMask - 0x3b
 	VPhysicsCollisionAttribute_t m_collisionAttribute; // 0x10	
 	// MNetworkEnable
 	// MNetworkChangeCallback "OnUpdateOBB"
@@ -4094,6 +4191,10 @@ private:
 	[[maybe_unused]] uint8_t __pad0038[0x58]; // 0x38
 public:
 	int32_t m_nDecalMaterialIndex; // 0x90	
+	
+	// Datamap fields:
+	// void m_decalEvent; // 0x38
+	// void m_hProjectedDecal; // 0x20
 };
 
 // Registered binary: client.dll (project 'client')
@@ -4387,6 +4488,11 @@ private:
 public:
 	// MNetworkEnable
 	// MNetworkUserGroup "LocalPlayerAndObserversExclusive"
+	// -> localSound[8] - 0x98
+	// -> soundscapeIndex - 0xf8
+	// -> localBits - 0xfc
+	// -> soundscapeEntityListIndex - 0x100
+	// -> soundEventHash - 0x104
 	audioparams_t m_audio; // 0x90	
 	// MNetworkEnable
 	// MNetworkUserGroup "LocalPlayerAndObserversExclusive"
@@ -4420,6 +4526,12 @@ class C_SkyCamera : public C_BaseEntity
 {
 public:
 	// MNetworkEnable
+	// -> scale - 0x540
+	// -> origin - 0x544
+	// -> bClip3DSkyBoxNearToWorldFar - 0x550
+	// -> flClip3DSkyBoxNearToWorldFarOffset - 0x554
+	// -> fog - 0x558
+	// -> m_nWorldGroupID - 0x5c0
 	sky3dparams_t m_skyboxData; // 0x538	
 	// MNetworkEnable
 	CUtlStringToken m_skyboxSlotToken; // 0x5c8	
@@ -4428,6 +4540,20 @@ private:
 	[[maybe_unused]] uint8_t __pad05cd[0x3]; // 0x5cd
 public:
 	C_SkyCamera* m_pNext; // 0x5d0	
+	
+	// Datamap fields:
+	// int16_t m_skyboxData.scale; // 0x540
+	// Vector m_skyboxData.origin; // 0x544
+	// bool m_skyboxData.bClip3DSkyBoxNearToWorldFar; // 0x550
+	// float m_skyboxData.flClip3DSkyBoxNearToWorldFarOffset; // 0x554
+	// bool m_skyboxData.fog.enable; // 0x5bc
+	// bool m_skyboxData.fog.blend; // 0x5bd
+	// Vector m_skyboxData.fog.dirPrimary; // 0x560
+	// Color m_skyboxData.fog.colorPrimary; // 0x56c
+	// Color m_skyboxData.fog.colorSecondary; // 0x570
+	// float m_skyboxData.fog.start; // 0x57c
+	// float m_skyboxData.fog.end; // 0x580
+	// float m_skyboxData.fog.maxdensity; // 0x588
 };
 
 // Registered binary: client.dll (project 'client')
@@ -4707,6 +4833,8 @@ private:
 public:
 	char* m_pszGrayedOutReason; // 0x50	
 	// MNetworkEnable
+	// -> m_Attributes - 0x60
+	// -> m_pManager - 0xb0
 	CAttributeList m_AttributeList; // 0x58	
 };
 
@@ -4880,11 +5008,26 @@ private:
 	[[maybe_unused]] uint8_t __pad00c4[0x14]; // 0xc4
 public:
 	// MNetworkDisable
+	// -> m_currentOp - 0xe0
+	// -> m_flCurrentPlaybackRate - 0x108
+	// -> m_flCurrentAnimTime - 0x10c
+	// -> m_transitioningLayers[4] - 0x110
+	// -> m_pOwner - 0x230
 	C_CSequenceTransitioner2 m_SequenceTransitioner; // 0xd8	
 	// MNetworkDisable
 	HSequence m_hLastAnimEventSequence; // 0x298	
 	// MNetworkDisable
 	AnimationUpdateListHandle_t m_ClientSideAnimationListHandle; // 0x29c	
+	
+	// Datamap fields:
+	// float m_flCachedSequenceCycleRate; // 0xc4
+	// float m_flCachedGroundSpeed; // 0xc8
+	// float m_flCachedOneMinusLastVisibleCycle; // 0xcc
+	// bool m_bModelHasNoPoseParams; // 0xd0
+	// bool m_bNotifyWhenSequenceFinished; // 0xd1
+	// void m_iv_AnimOpHistory; // 0x2a0
+	// void m_iv_flPoseParameter; // 0x2f0
+	// bool useClientSideAnimation; // 0x7fffffff
 };
 
 // Registered binary: client.dll (project 'client')
@@ -4900,6 +5043,9 @@ public:
 	// MNetworkUserGroup "overlay_vars"
 	// MNetworkChangeCallback "OnOverlaysChanged2"
 	C_UtlVectorEmbeddedNetworkVar< CAnimationLayer > m_AnimOverlay; // 0x348	
+	
+	// Datamap fields:
+	// void m_iv_AnimOverlay; // 0x398
 };
 
 // Registered binary: client.dll (project 'client')
@@ -4983,6 +5129,10 @@ public:
 	uint32_t m_unOccluderID; // 0x53c	
 	bool m_bBlockingGridNav; // 0x540	
 	bool m_bPrevEnabled; // 0x541	
+	
+	// Datamap fields:
+	// bool StartDisabled; // 0x7fffffff
+	// bool block_fow; // 0x7fffffff
 };
 
 // Registered binary: client.dll (project 'client')
@@ -5664,6 +5814,8 @@ public:
 	// MNetworkEnable
 	C_UtlVectorEmbeddedNetworkVar< CDOTA_ItemStockInfo > m_vecItemStockInfo; // 0x780	
 	// MNetworkEnable
+	// -> nAssassinState - 0x7d8
+	// -> nVictimHeroID - 0x7da
 	DOTA_AssassinMinigameNetworkState m_AssassinMiniGameNetData; // 0x7d0	
 	// MNetworkEnable
 	int32_t m_nGameWinner; // 0x7e0	
@@ -42863,6 +43015,12 @@ public:
 	static C_GlobalLight* &Get_sm_pGlobalLight(){return *reinterpret_cast<C_GlobalLight**>(interfaces::g_schema->FindTypeScopeForModule("client.dll")->FindDeclaredClass("C_GlobalLight")->m_static_fields[0]->m_instance);};
 	static CUtlStringToken &Get_sm_pSkyboxSlots(){return *reinterpret_cast<CUtlStringToken*>(interfaces::g_schema->FindTypeScopeForModule("client.dll")->FindDeclaredClass("C_GlobalLight")->m_static_fields[1]->m_instance);};
 	static CUtlVector< C_GlobalLight* > &Get_sm_nonPrimaryGlobalLights(){return *reinterpret_cast<CUtlVector< C_GlobalLight* >*>(interfaces::g_schema->FindTypeScopeForModule("client.dll")->FindDeclaredClass("C_GlobalLight")->m_static_fields[2]->m_instance);};
+	
+	// Datamap fields:
+	// CGlobalLightBase CGlobalLightBase; // 0x540
+	// void InputTurnOn; // 0x0
+	// void InputTurnOff; // 0x0
+	// float InputSetLightScale; // 0x0
 };
 
 // Registered binary: client.dll (project 'client')
@@ -42902,6 +43060,11 @@ public:
 	uint32_t m_nFlags; // 0x34	
 	// MNetworkEnable
 	char m_ProjectedTextureName[512]; // 0x38	
+	
+	// Datamap fields:
+	// float m_flAnimatedNoiseFrequency; // 0x25c
+	// float m_flAnimatedNoiseSpeed; // 0x260
+	// float m_flAnimatedNoiseMin; // 0x264
 };
 
 // Registered binary: client.dll (project 'client')
@@ -44468,6 +44631,15 @@ public:
 	// MNetworkEnable
 	int32_t m_iWardsDestroyed; // 0x10c	
 	// MNetworkEnable
+	// -> m_SharedCooldownList - 0x118
+	// -> m_hItems[19] - 0x130
+	// -> m_bItemQueried[21] - 0x17c
+	// -> m_iParity - 0x194
+	// -> m_hInventoryParent - 0x198
+	// -> m_bIsActive - 0x19c
+	// -> m_bStashEnabled - 0x19d
+	// -> m_hTransientCastItem - 0x1a0
+	// -> m_bSendChangedMsg - 0x1c0
 	C_DOTA_UnitInventory m_PreGameInventory; // 0x110	
 	// MNetworkEnable
 	int32_t m_nKillsPerOpposingTeamMember[24]; // 0x1c8	
@@ -45206,6 +45378,11 @@ private:
 public:
 	uint32_t m_hDecalSpawnGroupHandle; // 0x580	
 	uint32_t m_hDynamicPropSpawnGroupHandle; // 0x584	
+	
+	// Datamap fields:
+	// int32_t m_Quality; // 0x540
+	// int32_t m_DisplayMode; // 0x544
+	// int32_t m_SubPage; // 0x548
 };
 
 // Registered binary: client.dll (project 'client')
@@ -64182,6 +64359,10 @@ private:
 public:
 	// MNetworkEnable
 	bool m_bEnabled; // 0x1649	
+	
+	// Datamap fields:
+	// void m_pEnvMap; // 0x1638
+	// void m_pLightProbeVolume; // 0x1640
 };
 
 // Registered binary: client.dll (project 'client')
@@ -64262,6 +64443,9 @@ private:
 public:
 	// MNetworkEnable
 	bool m_bEnabled; // 0x628	
+	
+	// Datamap fields:
+	// void m_pSceneObject; // 0x620
 };
 
 // Registered binary: client.dll (project 'client')
@@ -64344,6 +64528,10 @@ public:
 	// MNetworkEnable
 	bool m_bHasHeightFogEnd; // 0x580	
 	bool m_bFirstTime; // 0x581	
+	
+	// Datamap fields:
+	// bool InputEnable; // 0x0
+	// bool InputDisable; // 0x0
 };
 
 // Registered binary: client.dll (project 'client')
@@ -64421,6 +64609,9 @@ private:
 public:
 	// MNetworkEnable
 	bool m_bEnabled; // 0x1589	
+	
+	// Datamap fields:
+	// void m_pSceneObject; // 0x1580
 };
 
 // Registered binary: client.dll (project 'client')
@@ -64455,6 +64646,13 @@ public:
 	bool m_bStartDisabled; // 0x548	
 	// MNetworkEnable
 	bool m_bIsEnabled; // 0x549	
+	
+	// Datamap fields:
+	// bool InputEnable; // 0x0
+	// bool InputDisable; // 0x0
+	// float InputSetPlayerVisibilityStrength; // 0x0
+	// float InputSetPlayerFogDistanceMultiplier; // 0x0
+	// float InputSetPlayerFogMaxDensityMultiplier; // 0x0
 };
 
 // Registered binary: client.dll (project 'client')
@@ -64491,6 +64689,17 @@ public:
 	float m_flExposureAdaptationSpeedDown; // 0x550	
 	// MNetworkEnable
 	float m_flTonemapEVSmoothingRange; // 0x554	
+	
+	// Datamap fields:
+	// void InputEnable; // 0x0
+	// void InputDisable; // 0x0
+	// float InputSetMinExposure; // 0x0
+	// float InputSetMaxExposure; // 0x0
+	// float InputSetPercentTarget; // 0x0
+	// float InputSetPercentBrightPixels; // 0x0
+	// float InputSetMinAverageLuminosity; // 0x0
+	// float InputSetExposureAdaptationSpeedUp; // 0x0
+	// float InputSetExposureAdaptationSpeedDown; // 0x0
 };
 
 // Registered binary: client.dll (project 'client')
@@ -64591,6 +64800,17 @@ public:
 	// MNetworkEnable
 	int32_t m_nForceRefreshCount; // 0x5b0	
 	bool m_bFirstTime; // 0x5b4	
+	
+	// Datamap fields:
+	// void InputSetToDefaults; // 0x0
+	// float InputSetScattering; // 0x0
+	// float InputSetAnisotropy; // 0x0
+	// float InputSetFadeSpeed; // 0x0
+	// float InputSetDrawDistance; // 0x0
+	// bool EnableIndirect; // 0x0
+	// bool InputEnable; // 0x0
+	// bool InputDisable; // 0x0
+	// void ForceRefresh; // 0x0
 };
 
 // Registered binary: client.dll (project 'client')
@@ -64630,6 +64850,10 @@ public:
 	int32_t m_nFalloffShape; // 0x55c	
 	// MNetworkEnable
 	float m_flFalloffExponent; // 0x560	
+	
+	// Datamap fields:
+	// bool InputEnable; // 0x0
+	// bool InputDisable; // 0x0
 };
 
 // Registered binary: client.dll (project 'client')
@@ -64650,6 +64874,26 @@ private:
 	[[maybe_unused]] uint8_t __pad05a1[0x3]; // 0x5a1
 public:
 	int32_t m_iChangedVariables; // 0x5a4	
+	
+	// Datamap fields:
+	// float InputSetStartDist; // 0x0
+	// float InputSetEndDist; // 0x0
+	// float InputSetMaxDensity; // 0x0
+	// void InputTurnOn; // 0x0
+	// void InputTurnOff; // 0x0
+	// Color InputSetColor; // 0x0
+	// Color InputSetColorSecondary; // 0x0
+	// int32_t InputSetFarZ; // 0x0
+	// CUtlSymbolLarge InputSetAngles; // 0x0
+	// float InputSet2DSkyboxFogFactor; // 0x0
+	// Color InputSetColorLerpTo; // 0x0
+	// Color InputSetColorSecondaryLerpTo; // 0x0
+	// float InputSetStartDistLerpTo; // 0x0
+	// float InputSetEndDistLerpTo; // 0x0
+	// float InputSetMaxDensityLerpTo; // 0x0
+	// float InputSet2DSkyboxFogFactorLerpTo; // 0x0
+	// void InputStartFogTransition; // 0x0
+	// void C_FogControllerSetLerpValues; // 0x0
 };
 
 // Registered binary: client.dll (project 'client')
@@ -64697,6 +64941,10 @@ public:
 	Vector m_vBoxSize; // 0x540	
 	// MNetworkEnable
 	bool m_bEnabled; // 0x54c	
+	
+	// Datamap fields:
+	// void InputEnable; // 0x0
+	// void InputDisable; // 0x0
 };
 
 // Registered binary: client.dll (project 'client')
@@ -64728,6 +64976,14 @@ private:
 public:
 	uint32_t m_hLayerSpawnGroup; // 0x574	
 	bool m_bWorldLayerActuallyVisible; // 0x578	
+	
+	// Datamap fields:
+	// void ShowWorldLayer; // 0x0
+	// void HideWorldLayer; // 0x0
+	// void SpawnEntities; // 0x0
+	// void DestroyEntities; // 0x0
+	// void ShowWorldLayerAndSpawnEntities; // 0x0
+	// void HideWorldLayerAndDestroyEntities; // 0x0
 };
 
 // Registered binary: client.dll (project 'client')
@@ -64828,6 +65084,21 @@ private:
 	[[maybe_unused]] uint8_t __pad0595[0x3]; // 0x595
 public:
 	C_PointCamera* m_pNext; // 0x598	
+	
+	// Datamap fields:
+	// CUtlSymbolLarge InputChangeFOV; // 0x0
+	// void InputSetOnAndTurnOthersOff; // 0x0
+	// void InputSetOn; // 0x0
+	// void InputSetOff; // 0x0
+	// void InputForceActive; // 0x0
+	// void InputForceInactive; // 0x0
+	// void InputEnableDOF; // 0x0
+	// void InputDisableDOF; // 0x0
+	// float InputSetDOFNearBlurry; // 0x0
+	// float InputSetDOFNearCrisp; // 0x0
+	// float InputSetDOFFarCrisp; // 0x0
+	// float InputSetDOFFarBlurry; // 0x0
+	// float InputSetDOFTiltToGround; // 0x0
 };
 
 // Registered binary: client.dll (project 'client')
@@ -64841,6 +65112,11 @@ class C_PointCameraVFOV : public C_PointCamera
 {
 public:
 	float m_flVerticalFOV; // 0x5a0	
+	
+	// Datamap fields:
+	// float m_flDofFarCrisp; // 0x580
+	// float m_flDofFarBlurry; // 0x584
+	// float m_flDofTiltToGround; // 0x588
 };
 
 // Registered binary: client.dll (project 'client')
@@ -64868,6 +65144,10 @@ public:
 	CUtlVector< CEntityHandle > m_SpawnedEntityHandles; // 0x5a0	
 	HSCRIPT m_ScriptSpawnCallback; // 0x5b8	
 	HSCRIPT m_ScriptCallbackScope; // 0x5c0	
+	
+	// Datamap fields:
+	// void InputForceSpawn; // 0x0
+	// void InputDeleteCreatedSpawnGroups; // 0x0
 };
 
 // Registered binary: client.dll (project 'client')
@@ -64897,6 +65177,9 @@ public:
 	CUtlSymbolLarge m_iszSoundAreaType; // 0x548	
 	// MNetworkEnable
 	Vector m_vPos; // 0x550	
+	
+	// Datamap fields:
+	// void m_nGUID; // 0x53c
 };
 
 // Registered binary: client.dll (project 'client')
@@ -64992,6 +65275,8 @@ public:
 private:
 	[[maybe_unused]] uint8_t __pad0544[0x4]; // 0x544
 public:
+	// -> needsprocessing - 0x548
+	// -> command_number - 0x5b8
 	C_CommandContext m_CommandContext; // 0x548	
 	uint64_t m_nInButtonsWhichAreToggles; // 0x5c0	
 	// MNetworkEnable
@@ -65034,6 +65319,13 @@ public:
 	
 	// Static fields:
 	static bool &Get_sm_bRunningPredictedClientStringCommands(){return *reinterpret_cast<bool*>(interfaces::g_schema->FindTypeScopeForModule("client.dll")->FindDeclaredClass("CBasePlayerController")->m_static_fields[0]->m_instance);};
+	
+	// Datamap fields:
+	// bool fakeclient; // 0x7fffffff
+	// bool is_hltv; // 0x7fffffff
+	// const char * playername; // 0x7fffffff
+	// bool reserving; // 0x7fffffff
+	// void m_pCurrentCommand; // 0x680
 };
 
 // Registered binary: client.dll (project 'client')
@@ -65175,6 +65467,16 @@ public:
 	// MNetworkEnable
 	CCollisionProperty m_Collision; // 0x618	
 	// MNetworkEnable
+	// -> m_fGlowColor - 0x6d0
+	// -> m_iGlowType - 0x6f8
+	// -> m_iGlowTeam - 0x6fc
+	// -> m_nGlowRange - 0x700
+	// -> m_nGlowRangeMin - 0x704
+	// -> m_glowColorOverride - 0x708
+	// -> m_bFlashing - 0x70c
+	// -> m_flGlowTime - 0x710
+	// -> m_flGlowStartTime - 0x714
+	// -> m_bGlowing - 0x718
 	CGlowProperty m_Glow; // 0x6c8	
 	// MNetworkEnable
 	float m_flGlowBackfaceMult; // 0x720	
@@ -65217,6 +65519,20 @@ public:
 	CClientAlphaProperty* m_pClientAlphaProperty; // 0x7a8	
 	Color m_ClientOverrideTint; // 0x7b0	
 	bool m_bUseClientOverrideTint; // 0x7b4	
+	
+	// Datamap fields:
+	// int32_t InputAlpha; // 0x0
+	// Color InputColor; // 0x0
+	// int32_t InputSkin; // 0x0
+	// CUtlString add_attribute; // 0x7fffffff
+	// void m_Ropes; // 0x568
+	// Color rendercolor32; // 0x7fffffff
+	// Color rendercolor; // 0x7fffffff
+	// int32_t renderamt; // 0x7fffffff
+	// Vector mins; // 0x7fffffff
+	// Vector maxs; // 0x7fffffff
+	// const char * skin; // 0x7fffffff
+	// CUtlString bodygroups; // 0x7fffffff
 };
 
 // Registered binary: client.dll (project 'client')
@@ -65260,6 +65576,14 @@ public:
 	bool m_bTriggerOnce; // 0x58a	
 	bool m_bFastRetrigger; // 0x58b	
 	bool m_bPassthoughCaller; // 0x58c	
+	
+	// Datamap fields:
+	// void InputEnable; // 0x0
+	// void InputEnableRefire; // 0x0
+	// void InputDisable; // 0x0
+	// void InputToggle; // 0x0
+	// void InputTrigger; // 0x0
+	// void InputCancelPending; // 0x0
 };
 
 // Registered binary: client.dll (project 'client')
@@ -65341,6 +65665,17 @@ private:
 public:
 	bool m_bOldActive; // 0xd50	
 	bool m_bOldFrozen; // 0xd51	
+	
+	// Datamap fields:
+	// void InputStart; // 0x0
+	// void InputStop; // 0x0
+	// void InputStopEndCap; // 0x0
+	// void InputDestroy; // 0x0
+	// CUtlSymbolLarge InputSetControlPoint; // 0x0
+	// void C_ParticleSystemStartParticleSystemThink; // 0x0
+	// CUtlString cpoint%d_value[64]; // 0x7fffffff
+	// void m_pEffect; // 0xd30
+	// void m_iOldEffectIndex; // 0xd58
 };
 
 // Registered binary: client.dll (project 'client')
@@ -65404,6 +65739,16 @@ public:
 	C_NetworkUtlVectorBase< bool > m_PathNodes_PinEnabled; // 0x5e0	
 	// MNetworkEnable
 	C_NetworkUtlVectorBase< float32 > m_PathNodes_RadiusScale; // 0x5f8	
+	
+	// Datamap fields:
+	// CUtlSymbolLarge pathNodes; // 0x7fffffff
+	// void InputStart; // 0x0
+	// void InputStop; // 0x0
+	// void InputStopEndCap; // 0x0
+	// void InputDestroy; // 0x0
+	// CUtlSymbolLarge InputDisablePin; // 0x0
+	// float InputSetRadius; // 0x0
+	// float InputSetSlack; // 0x0
 };
 
 // Registered binary: client.dll (project 'client')
@@ -65662,6 +66007,13 @@ public:
 	PointWorldTextJustifyVertical_t m_nJustifyVertical; // 0xa28	
 	// MNetworkEnable
 	PointWorldTextReorientMode_t m_nReorientMode; // 0xa2c	
+	
+	// Datamap fields:
+	// void InputEnable; // 0x0
+	// void InputDisable; // 0x0
+	// void InputToggle; // 0x0
+	// CUtlSymbolLarge InputSetMessage; // 0x0
+	// int32_t InputSetIntMessage; // 0x0
 };
 
 // Registered binary: client.dll (project 'client')
@@ -66618,6 +66970,9 @@ public:
 	bool m_bDisableMipGen; // 0xa17	
 	// MNetworkEnable
 	int32_t m_nExplicitImageLayout; // 0xa18	
+	
+	// Datamap fields:
+	// CStrongHandle< InfoForResourceTypeIMaterial2 > m_hPanelOverrideMaterial; // 0x998
 };
 
 // Registered binary: client.dll (project 'client')
@@ -66652,6 +67007,11 @@ class C_PointClientUIWorldTextPanel : public C_PointClientUIWorldPanel
 public:
 	// MNetworkEnable
 	char m_messageText[512]; // 0xa20	
+	
+	// Datamap fields:
+	// void InputToggle; // 0x0
+	// CUtlSymbolLarge InputSetMessage; // 0x0
+	// int32_t InputSetIntMessage; // 0x0
 };
 
 // Registered binary: client.dll (project 'client')
@@ -66745,6 +67105,10 @@ private:
 	[[maybe_unused]] uint8_t __pad07c9[0xf]; // 0x7c9
 public:
 	bool m_bSuppressAnimEventSounds; // 0x7d8	
+	
+	// Datamap fields:
+	// float InputSetPlaybackRate; // 0x0
+	// bool InputDisableAnimEventSounds; // 0x0
 };
 
 // Registered binary: client.dll (project 'client')
@@ -101442,6 +101806,14 @@ public:
 class C_EnvDeferredLight : public C_ModelPointEntity
 {
 public:
+	// Datamap fields:
+	// CDeferredLightBase CDeferredLightBase; // 0x7c0
+	// void InputTurnOn; // 0x0
+	// void InputTurnOff; // 0x0
+	// Color InputSetLightColor; // 0x0
+	// float InputSetLightIntensity; // 0x0
+	// CUtlSymbolLarge InputSetLightIntensityOverTime; // 0x0
+	// float InputSetLightRadius; // 0x0
 };
 
 // Registered binary: client.dll (project 'client')
@@ -102180,6 +102552,10 @@ public:
 	
 	// Static fields:
 	static CUtlVector< CInfoDynamicShadowHint* > &Get_m_AllHints(){return *reinterpret_cast<CUtlVector< CInfoDynamicShadowHint* >*>(interfaces::g_schema->FindTypeScopeForModule("client.dll")->FindDeclaredClass("CInfoDynamicShadowHint")->m_static_fields[0]->m_instance);};
+	
+	// Datamap fields:
+	// void InputEnable; // 0x0
+	// void InputDisable; // 0x0
 };
 
 // Registered binary: client.dll (project 'client')
@@ -102461,6 +102837,11 @@ public:
 	Color m_ColorTint; // 0xd74	
 	// MNetworkEnable
 	CStrongHandle< InfoForResourceTypeCTextureBase > m_hTextureOverride; // 0xd78	
+	
+	// Datamap fields:
+	// float InputSetScale; // 0x0
+	// float InputSetAlphaScale; // 0x0
+	// Color InputSetColorTint; // 0x0
 };
 
 // Registered binary: client.dll (project 'client')
@@ -102500,6 +102881,12 @@ public:
 	float m_flStartTime; // 0x7e8	
 	// MNetworkEnable
 	float m_flStartFrame; // 0x7ec	
+	
+	// Datamap fields:
+	// void InputStart; // 0x0
+	// void InputStop; // 0x0
+	// void InputEnable; // 0x0
+	// void InputDisable; // 0x0
 };
 
 // Registered binary: client.dll (project 'client')
@@ -102580,6 +102967,12 @@ private:
 	[[maybe_unused]] uint8_t __pad0819[0xf]; // 0x819
 public:
 	bool m_bHasAnimatedMaterialAttributes; // 0x828	
+	
+	// Datamap fields:
+	// float InputSetPlaybackRate; // 0x0
+	// CUtlSymbolLarge InputSetBodyGroup; // 0x0
+	// CUtlSymbolLarge InputSetAnimGraphParameter; // 0x0
+	// bool InputDisableAnimEventSounds; // 0x0
 };
 
 // Registered binary: client.dll (project 'client')
@@ -102602,6 +102995,10 @@ private:
 	[[maybe_unused]] uint8_t __pad07e9[0x3]; // 0x7e9
 public:
 	matrix3x4_t m_mPreferredCatchTransform; // 0x7ec	
+	
+	// Datamap fields:
+	// void health; // 0x7fffffff
+	// CUtlSymbolLarge propdata_override; // 0x7fffffff
 };
 
 // Registered binary: client.dll (project 'client')
@@ -102660,6 +103057,15 @@ public:
 	CHandle< C_BaseEntity > m_hFlareEnt; // 0x928	
 	// MNetworkEnable
 	bool m_noGhostCollision; // 0x92c	
+	
+	// Datamap fields:
+	// void InputBreak; // 0x0
+	// int32_t InputSetHealth; // 0x0
+	// int32_t InputAddHealth; // 0x0
+	// int32_t InputRemoveHealth; // 0x0
+	// void C_BreakablePropBreakThink; // 0x0
+	// void C_BreakablePropRampToDefaultFadeScale; // 0x0
+	// uint32_t m_nExplosionType; // 0x8ec
 };
 
 // Registered binary: client.dll (project 'client')
@@ -102711,6 +103117,32 @@ public:
 	int32_t m_iCachedFrameCount; // 0xa38	
 	Vector m_vecCachedRenderMins; // 0xa3c	
 	Vector m_vecCachedRenderMaxs; // 0xa48	
+	
+	// Datamap fields:
+	// CUtlSymbolLarge InputSetAnimationLooping; // 0x0
+	// CUtlSymbolLarge InputSetAnimationNoResetLooping; // 0x0
+	// CUtlSymbolLarge InputSetDefaultAnimationLooping; // 0x0
+	// CUtlSymbolLarge InputSetAnimationNotLooping; // 0x0
+	// CUtlSymbolLarge InputSetAnimationNoResetNotLooping; // 0x0
+	// CUtlSymbolLarge InputSetDefaultAnimationNotLooping; // 0x0
+	// CUtlSymbolLarge InputSetAnimation; // 0x0
+	// CUtlSymbolLarge InputSetAnimationNoReset; // 0x0
+	// CUtlSymbolLarge InputSetDefaultAnimation; // 0x0
+	// void InputTurnOn; // 0x0
+	// void InputTurnOff; // 0x0
+	// void InputTurnOn; // 0x0
+	// void InputTurnOff; // 0x0
+	// void InputEnableCollision; // 0x0
+	// void InputDisableCollision; // 0x0
+	// float InputSetPlaybackRate; // 0x0
+	// void InputStartGlowing; // 0x0
+	// void InputStopGlowing; // 0x0
+	// Vector InputSetGlowOverride; // 0x0
+	// int32_t InputSetGlowRange; // 0x0
+	// void C_DynamicPropAnimThink; // 0x0
+	// void C_DynamicPropAnimgraphTickThink; // 0x0
+	// int32_t health; // 0x7fffffff
+	// bool HoldAnimation; // 0x7fffffff
 };
 
 // Registered binary: client.dll (project 'client')
@@ -102849,6 +103281,9 @@ public:
 	// MNetworkEnable
 	CHandle< C_BaseEntity > m_hViewPosition; // 0x828	
 	bool m_bRestartAfterRestore; // 0x82c	
+	
+	// Datamap fields:
+	// void m_sndCommentary; // 0x820
 };
 
 // Registered binary: client.dll (project 'client')
@@ -102916,6 +103351,11 @@ public:
 private:
 	[[maybe_unused]] uint8_t __pad08f8[0x10]; // 0x8f8
 public:
+	// -> m_sClassName - 0x908
+	// -> m_flAmount - 0x920
+	// -> m_bRequired - 0x924
+	// -> m_bBasechecked - 0x925
+	// -> m_bValid - 0x926
 	C_BaseFlex::Emphasized_Phoneme m_PhonemeClasses[3]; // 0x908	
 };
 
@@ -102949,6 +103389,9 @@ public:
 	float m_flScaleEnd[10]; // 0x998	
 	GameTime_t m_flScaleTimeStart[10]; // 0x9c0	
 	GameTime_t m_flScaleTimeEnd[10]; // 0x9e8	
+	
+	// Datamap fields:
+	// Color m_clrRender; // 0x5a4
 };
 
 // Registered binary: client.dll (project 'client')
@@ -103042,6 +103485,15 @@ public:
 	Vector m_vecDamagePosition; // 0x968	
 	Vector m_vecDamageDirection; // 0x974	
 	int32_t m_nDamageType; // 0x980	
+	
+	// Datamap fields:
+	// bool forcemotiondisabled; // 0x7fffffff
+	// bool phys_start_asleep; // 0x7fffffff
+	// float fademaxdist; // 0x7fffffff
+	// float fademindist; // 0x7fffffff
+	// float fadescale; // 0x7fffffff
+	// float scale; // 0x7fffffff
+	// const char * skin; // 0x7fffffff
 };
 
 // Registered binary: client.dll (project 'client')
@@ -103692,6 +104144,12 @@ private:
 public:
 	// MNetworkEnable
 	// MNetworkUserGroup "LocalPlayerExclusive"
+	// -> scale - 0xa70
+	// -> origin - 0xa74
+	// -> bClip3DSkyBoxNearToWorldFar - 0xa80
+	// -> flClip3DSkyBoxNearToWorldFarOffset - 0xa84
+	// -> fog - 0xa88
+	// -> m_nWorldGroupID - 0xaf0
 	sky3dparams_t m_skybox3d; // 0xa68	
 	// MNetworkEnable
 	// MNetworkUserGroup "LocalPlayerExclusive"
@@ -103708,6 +104166,9 @@ public:
 	// MNetworkChangeCallback "OnControllerChanged"
 	CHandle< CBasePlayerController > m_hController; // 0xb2c	
 	bool m_bIsSwappingToPredictableController; // 0xb30	
+	
+	// Datamap fields:
+	// void m_hPawnListEntry; // 0xb32
 };
 
 // Registered binary: client.dll (project 'client')
@@ -103748,6 +104209,9 @@ public:
 class CDOTAPlayerPawn : public C_BasePlayerPawn
 {
 public:
+	// Datamap fields:
+	// CDOTAPlayer_CameraServices m_pCameraServices; // 0xa30
+	// CDOTAPlayer_MovementServices m_pMovementServices; // 0xa38
 };
 
 // Registered binary: client.dll (project 'client')
@@ -104097,8 +104561,24 @@ public:
 	// MNetworkPriority "32"
 	int32_t m_iTaggedAsVisibleByTeam; // 0xc0c	
 	// MNetworkEnable
+	// -> m_bCompactBuffListPending - 0xc38
+	// -> m_nHasTruesightForTeam - 0xea4
+	// -> m_nHasTruesightForTeamValid - 0xea6
+	// -> m_nProvidesFOWPositionForTeam - 0xea8
+	// -> m_nProvidesFOWPositionForTeamValid - 0xeaa
+	// -> m_iBuffIndex - 0xeac
+	// -> m_iLockRefCount - 0xeb0
 	CDOTA_ModifierManager m_ModifierManager; // 0xc10	
 	// MNetworkEnable
+	// -> m_SharedCooldownList - 0xec0
+	// -> m_hItems[19] - 0xed8
+	// -> m_bItemQueried[21] - 0xf24
+	// -> m_iParity - 0xf3c
+	// -> m_hInventoryParent - 0xf40
+	// -> m_bIsActive - 0xf44
+	// -> m_bStashEnabled - 0xf45
+	// -> m_hTransientCastItem - 0xf48
+	// -> m_bSendChangedMsg - 0xf68
 	C_DOTA_UnitInventory m_Inventory; // 0xeb8	
 private:
 	[[maybe_unused]] uint8_t __pad0f70[0x8]; // 0xf70
@@ -104347,6 +104827,15 @@ private:
 	[[maybe_unused]] uint8_t __pad173b[0x15]; // 0x173b
 public:
 	bool m_bShowCannotBeDisabledIcon; // 0x1750	
+	
+	// Datamap fields:
+	// int32_t InputSetStyleOverride; // 0x0
+	// CUtlSymbolLarge InputSetAutoStyleCriteria; // 0x0
+	// uint8_t m_iTeamNum; // 0x3bf
+	// CHandle< CBaseEntity > econ_owner; // 0x7fffffff
+	// int32_t EconItemCount; // 0x7fffffff
+	// bool inPortrait; // 0x7fffffff
+	// bool EnableAutoStyles; // 0x7fffffff
 };
 
 // Registered binary: client.dll (project 'client')
@@ -105059,6 +105548,29 @@ private:
 public:
 	ParticleIndex_t m_nPortraitParticle; // 0x19f8	
 	int32_t m_nCourierType; // 0x19fc	
+	
+	// Datamap fields:
+	// CUtlSymbolLarge activity_modifier; // 0x7fffffff
+	// bool skip_pet_spawn; // 0x7fffffff
+	// int32_t item_def0; // 0x7fffffff
+	// int32_t item_def1; // 0x7fffffff
+	// int32_t item_def2; // 0x7fffffff
+	// int32_t item_def3; // 0x7fffffff
+	// int32_t item_def4; // 0x7fffffff
+	// int32_t item_def5; // 0x7fffffff
+	// int32_t item_def6; // 0x7fffffff
+	// int32_t item_def7; // 0x7fffffff
+	// int32_t model_index; // 0x7fffffff
+	// bool StartDisabled; // 0x7fffffff
+	// CUtlString activity; // 0x7fffffff
+	// int32_t style_index0; // 0x7fffffff
+	// int32_t style_index1; // 0x7fffffff
+	// int32_t style_index2; // 0x7fffffff
+	// int32_t style_index3; // 0x7fffffff
+	// int32_t style_index4; // 0x7fffffff
+	// int32_t style_index5; // 0x7fffffff
+	// int32_t style_index6; // 0x7fffffff
+	// int32_t style_index7; // 0x7fffffff
 };
 
 // Registered binary: client.dll (project 'client')
@@ -106291,6 +106803,10 @@ public:
 class CDOTA_Unit_Announcer : public C_DOTA_BaseNPC
 {
 public:
+	// -> m_strAnnouncerName - 0x1778
+	// -> m_strAnnouncerVoiceFile - 0x1780
+	// -> m_nAnnouncerItemId - 0x1788
+	// -> m_bItemOwnedByLocalPlayer - 0x1790
 	CAnnouncerDescriptor m_currentAnnouncer; // 0x1770	
 };
 
