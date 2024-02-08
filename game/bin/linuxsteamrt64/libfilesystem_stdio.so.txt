@@ -303,7 +303,6 @@ AVAUATA
 AVAUATD
 AVAUATE1
 AVAUATI
-AVAUATLc
 AVAUATM
 AVAUATSH
 AVAUATSL
@@ -364,7 +363,6 @@ Addreffing existing VPK file: %s
 Affiliation Changed
 AlignedByteArray not properly aligned
 Alignment
-Allowing insert of dupe without explicit dupe insertion. Fix code callpoint to allow dupes
 AnimGraphEditorUtils001
 AnimationSystemUtils_001
 AnimationSystem_001
@@ -518,7 +516,6 @@ BinaryProperties_GetValue
 Biometric Info
 Blocked change to read-only path %s
 Buffer too small
-BuildHashTables
 C!FReQ
 C%C'C3C7C9COCWCiC
 CA Compromise
@@ -709,7 +706,6 @@ COpenSSLConnection
 COpenSSLContext
 CPHcSd
 CPHcsd
-CPackedStore
 CRC32_ProcessBuffer
 CRL Sign
 CRL has expired
@@ -745,7 +741,7 @@ Certificate
 Certificate Hold
 Certificate Sign
 Cessation Of Operation
-Chunk not found %d
+Chunk hash not found
 Clear the list of files that have been opened
 ClientToolsInfo_001
 Cn77Yn77Y
@@ -753,12 +749,12 @@ Code Signing
 Cofactor
 CommandLine
 Complex
-ConnectInterfaceSingletons
 Content being marked corrupt.  bMissingFilesOnly = %s, pFile specified as '%s', reason: '%s
 Content file %s is corrupt (Chunk: %s). Verify integrity of game files
+Content file %s is corrupt. Hashing could not be verified. Verify integrity of game files
 Content file %s is corrupt. Verify integrity of game files
-Content is corrupt
-Content is corrupt. Verify integrity of game files
+Content file %s is corrupt; Chunk hash not found (expected: %d, found: %d
+Content file %s is corrupt; signature couldn't be verified. Verify integrity of game files
 Content-Disposition: attachment
 Content-Length: %d
 Content-Transfer-Encoding: base64%s
@@ -1263,6 +1259,7 @@ Enter PEM pass phrase
 Enterprises
 Eric Young's PKCS#1 RSA
 Error in encoding
+Error reading from loaded packed store "%s
 Excluded
 Expecting
 Experimental
@@ -1306,6 +1303,7 @@ FS:  Tried to Write NULL file pointer inside valid file handle
 FS: Specified two path IDs (%s, %s
 FV|FgUV
 Failed
+Failed to load file (%s
 Failed to load module %s
 Failed to read
 Failed to read %d bytes
@@ -1318,6 +1316,8 @@ Filesystem
 FindLessOrEqual
 FlattenedSerializersVersion001
 FontManager_001
+Found existing value when inserting into dict - replacing existing value with new value. If this is intended behavior, use InsertOrReplace. If leaving existing values alone is intended, use InsertIfNotFound
+Found existing value when inserting into tree - replacing existing value with new value. If this is intended behavior, use InsertOrReplace. If leaving existing values alone is intended, use InsertIfNotFound. If duplicate entries are intended, use InsertWithDupes
 Fract
 From Steam: [%s]\%s
 G0t+L9
@@ -1547,7 +1547,6 @@ L;l$PA
 L;t$ w
 LINEBUFFER_CTRL
 LOAD_IV
-LOG_GENERAL
 LONG_C2I
 Lc7D;w
 LcD$ H
@@ -1983,7 +1982,6 @@ PhysicsBuilderMgr001
 Plat_CreateDirectory
 Plat_DebugPrint
 Plat_DebugString
-Plat_ExitProcess
 Plat_FatalErrorFunc
 Plat_FileSize
 Plat_FloatTime
@@ -2000,7 +1998,6 @@ Plat_RemoveDirectory
 Plat_RemoveFile
 Plat_RenameFile
 Plat_SetFileReadOnly
-Plat_ShouldCollectMiniDumpsForFatalErrors
 Plat_TickDiffMicroSec
 Plat_TickDiffMicroSecF
 Plat_TranslateSymbolicLinks
@@ -2354,6 +2351,7 @@ Set fs_report_long_reads 1 before loading to use this. Prints a list of files th
 Show the filesystem path
 Signature Algorithm
 Signature failed for %s (reason: %d
+Signature verification failed
 Signature verified for %s
 Signature was invalid for %s (reason: %d), allowing anyways
 Size of per file buffers. 0 for none
@@ -2489,7 +2487,6 @@ TS_VERIFY
 TS_VERIFY_CERT
 TS_VERIFY_CTX_new
 T`00P`00P
-TestHashChunkFraction
 TestScriptMgr001
 TextLayout_001
 This convar is being accessed prior to ConVar_Register being called
@@ -2596,6 +2593,7 @@ VScriptDbg
 VScriptManager010
 VStringTokenSystem001
 VTT for
+V_FileBase
 V_FixDoubleSlashes
 V_GetErrno
 V_GetFileExtension
@@ -2619,6 +2617,7 @@ V_StringToUint64
 V_StringToVector
 V_StringToVector2D
 V_StringToVector4D
+V_StripFilename
 V_UnqualifiedFileName
 V_atoi
 V_fclose
@@ -2631,6 +2630,7 @@ V_fread
 V_fseeki64
 V_ftelli64
 V_fwrite
+V_hextobinary
 V_qsort
 V_qsort_s
 V_setvbuf
@@ -2644,7 +2644,6 @@ Validity
 Vector Permutation AES for x86_64/SSSE3, Mike Hamburg (Stanford University
 Verify error
 Verify failure
-VerifyPackRead
 Verifying - %s
 VggjeK uO5n
 VisBuilder_001
@@ -2992,6 +2991,7 @@ ZN13CThreadRWLock12LockForWriteEPKci
 ZN14CThreadBarrier13ArriveAndWaitEv
 ZN14CThreadBarrierC1Ej
 ZN14CThreadBarrierD1Ev
+ZN15CKeyValues_Data18Internal_GetStringEPKcPcm
 ZN15CUtlSymbolTable9AddStringEPKcPb
 ZN15CUtlSymbolTableC1Eiib
 ZN15CUtlSymbolTableC2Eiib
@@ -3026,8 +3026,11 @@ ZN7CThread6OnExitEv
 ZN7CThread7SetNameEPKc
 ZN7CThreadC2Ev
 ZN7CThreadD2Ev
+ZN9KeyValues10GetNextKeyEv
 ZN9KeyValues12LoadFromFileEP11IFileSystemPKcS3_PFbS3_PvES4_S3
+ZN9KeyValues14GetFirstSubKeyEv
 ZN9KeyValuesC1EPKcP16IKeyValuesSystemb
+ZN9KeyValuesD1Ev
 ZN9KeyValuesnwEm
 ZN9__gnu_cxx15__concat_size_tEPcmm
 ZN9__gnu_cxx15__snprintf_liteEPcmPKcP13__va_list_tag
@@ -3072,6 +3075,8 @@ ZNK10__cxxabiv121__vmi_class_type_info20__do_find_public_srcElPKvPKNS_17__class_
 ZNK15CUtlSymbolTable4FindEPKc
 ZNK15CUtlSymbolTable6StringE10CUtlSymbol
 ZNK23CUtlFilenameSymbolTable12FindFileNameEPKc
+ZNK9KeyValues11GetDataTypeEPKc
+ZNK9KeyValues7GetNameEv
 ZNK9__gnu_cxx24__concurrence_lock_error4whatEv
 ZNK9__gnu_cxx26__concurrence_unlock_error4whatEv
 ZNKSs11_M_disjunctEPKc
@@ -3841,7 +3846,6 @@ asn_mime.c
 asn_pack.c
 associatedDomain
 associatedName
-async_memory_map
 asyncfilesystem2.cpp
 attempt to reuse session in different context
 attrib
@@ -4757,7 +4761,8 @@ f	D$ L
 f %f %f %f
 f elapsed w/o i/o
 f33Uf33U
-fD9 t/H
+fD9,Bu
+fE;n@u
 fPec_oct.c
 fS{ggRcjh
 f_int.c
@@ -5372,6 +5377,7 @@ l$ L+l$0
 l$0fD
 l$0t'I
 l$8H3D$0H3l
+l$@fD9
 l$XH;l
 lZrNlZrN
 lambda
@@ -5815,6 +5821,7 @@ padding check failed
 pagerTelephoneNumber
 pak%02d.vpk
 pak*_dir.vpk
+pakxx=off
 parameter encoding error
 parse tlsext
 partyName
@@ -5984,6 +5991,7 @@ public key no rsa
 public key not rsa
 public-key
 public/tier0/threadtoolstypes.h
+public/tier0/utldict.h
 public/tier0/utlrbtree.h
 public/tier0/utlsortvector.h
 public/tier0/utlsymboltable.h
@@ -6465,7 +6473,6 @@ simpleSecurityObject
 singleExtensions
 singleLevelQuality
 singleRequestExtensions
-singletons.cpp
 sizeof
 slot full
 smime text error
@@ -6672,6 +6679,7 @@ strstr
 strtol
 strtoul
 st~<zt
+subdirectory
 subgroup factor
 subgroup order
 subject
@@ -6802,7 +6810,6 @@ tsa name mismatch
 tsa untrusted
 tst info setup error
 tv[]A\A]A
-twfD;8u
 tyHcD
 type not compressed data
 type not constructed
@@ -6869,6 +6876,7 @@ uncompressedSize
 undefined
 undefined generator
 undefined order
+unexpected
 unexpected eoc
 unexpected message
 unexpected record
@@ -7054,6 +7062,8 @@ versionMadeBy
 versionNeededToExtract
 vfprintf_chk
 volatile
+vpk.signatures
+vpkname
 vv == NULL
 w``u N
 waLct$0H
@@ -7116,7 +7126,6 @@ x509_vfy.c
 x509_vpm.c
 x509name.c
 xDۆxD
-x[A\A]A^A
 x_crl.c
 x_info.c
 x_long.c
@@ -7125,7 +7134,6 @@ x_pkey.c
 x_pubkey.c
 x_x509.c
 xg-9Ja
-xk;B`}fH
 xrJ:DCG
 xstat
 y@ hHv

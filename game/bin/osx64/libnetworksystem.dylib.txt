@@ -3,7 +3,7 @@
 0  reserved
 0 0 0 255
 0 00 00 00 00 00 00 00 00 00 00 00 00 00 0
-0 0P`p0
+0 0P`p@00
 0 bit issue, changes
 0 bit issue, spot 1
 0 bit issue, spot 2
@@ -15,14 +15,11 @@
 0$1 = $2
 0$1$2 $3 = $4
 0.00.0
-00000000
-00000000000000000000@000 00
+0000 p
 000000005
-0000@P
-0000P
 00010203040506070809101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899
 0123456789abcdef
-0@pp0000`@00.#1
+0@0000 00
 0A;^4
 0Bp>*C
 0BxD*C
@@ -50,11 +47,11 @@
 11CNETMsg_NOP
 11CRefCountedI20CRefCountServiceBaseI6CRefMTEE
 11INetChannel
-12.12s %21.21s[%d
 12CCLCMsg_Move
 12CMsgVector2D
 12CNETMsg_Tick
 12CSVCMsg_Menu
+12s @ %s
 13CMsgTransform
 13CNetMessagePBILi35E25CCLCMsg_RconServerDetailsL13SignonGroup_t0EL19NetChannelBufType_t1ELb0EE
 13CNetMessagePBILi3E23CNETMsg_SplitScreenUserL13SignonGroup_t11EL19NetChannelBufType_t1ELb0EE
@@ -103,7 +100,6 @@
 17CSVCMsg_VoiceInit
 18CCLCMsg_ClientInfo
 18CCLCMsg_HltvReplay
-18CCLCMsg_ServerPing
 18CNETMsg_Disconnect
 18CSVCMsg_HLTVStatus
 18CSVCMsg_HltvReplay
@@ -117,7 +113,6 @@
 19CSerializedEntities
 19ISerializedEntities
 19NetMessagePacketEnd
-1ffff
 1t'<0u
 2	.CMsgRGBA
 2 .ProtoFlattenedSerializerField_t
@@ -178,6 +173,7 @@
 21NetMessagePacketEnd_t
 21NetMessagePacketStart
 21__basic_string_commonILb1EEE
+22.CSVCMsg_PacketEntities.non_transmitted_entities_t
 22CDecodeSerializerStack
 22CEncodeSerializerStack
 22CMsgServerNetworkStats
@@ -266,6 +262,7 @@
 43CSVCMsg_PacketEntities_command_queue_info_t
 4444<*Z
 48CSerializedEntityPolymorphicFieldsMetadataHelper
+49CSVCMsg_PacketEntities_non_transmitted_entities_t
 4;p0H
 4;x0H
 4PfA;4Pu
@@ -278,9 +275,10 @@
 60.60s %6.6s %15.15s %5.5s %10.10s
 60.60s %6.6s %15.15s %5d %10d
 6?32CNetworkFieldSerializerAllocator
-6ffff
 75s %-75s offset %10.10s %9.9s %s
 7H;1u H
+7ffff
+7fffff
 8#GameUI_Disconnect_LocalProblem_HostedServerPrimaryRelay
 8)u}M
 8.3f: %s: ParseMessagesDemo UNRELIABLE %d bytes
@@ -294,13 +292,13 @@
 8[A\A]A^A
 8[A^A
 8basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE
-8fffff
 9basic_ostringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE
 9ffffff
 A file with this name is already in the pool
 A protocol message was rejected because it was too big (more than
 A+v ~	I
 A9D$Dr9
+A;D$0
 A;D$Xu
 A;D$h~DH
 A;Fh~DH
@@ -320,7 +318,7 @@ ARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARAR
 ARAUASASB
 ASASAp
 ATARARATA\Ap
-AUASASASASASASASASA
+AUASASASASASASASASB
 AUAUASBUAp
 AUB`)ASASBp
 AWARATAp
@@ -369,7 +367,7 @@ AWAVSPf
 A[ATAp
 A\A]A^A
 A\A^A
-A\CXCRCXCRCXCRCXCRCXCRCXCRCXCRCXCRCXCRCXCRCXCRCXCRCXCRCXCRCXCRCXCRCXCRCXCRESE
+A\CXCRCXCRCXCRCXCRCXCRCXCRCXCRCXCRCXCRCXCRCXCRCXCRCXCRCXCRCXCRCXCRCXCRCXCRCSE
 A`"ARARARARARARAp
 A`TARARARARARARARARARARARARARARARARARARARARARARARARARARARARAp
 A`dARARARARARARARARARARARARARARARARARARARARARARARARARARARAXAp
@@ -387,13 +385,12 @@ AddOrUpdateFieldMetadata:  adding/updating %s with invalid array count %d
 AddString
 AddUInt32
 AddUInt64
-Adding 0--%dms of additional latency to %g%% packets, for random reordering
-Adding additional packet lag of %dms (when received), Bernoulli loss of %g
+Adding 0--%dms of additional latency to %g%% packets, for jitter / random reordering
+Adding additional packet lag of %dms (%dms send, %dms recv), Bernoulli loss of %g
 Afffff
 Ah~KH
 AlignedByteArray not properly aligned
 Allowing IP connections without auth
-Allowing insert of dupe without explicit dupe insertion. Fix code callpoint to allow dupes
 Already saw decimal point or exponent; can't have another one
 An old command that has been renamed to 'net_option
 AnimGraphEditorUtils001
@@ -408,6 +405,7 @@ AssetPreviewSystem_001
 AssetRenameSystem_001
 AssetSystem001
 AssetSystemTest001
+AssignRangeMultipler with bitcount=32
 AssociateNetMessageGroupIdWithChannelCategory: Couldn't find or create group %s
 AssociateNetMessageGroupIdWithChannelCategory: Trying to use an unregistered netchannel category
 AssociateNetMessageWithAllChannelCategories: Passed in an invalid net message handle
@@ -442,17 +440,16 @@ BuildMergedSerializedEntity:  problem writing %s:  %d bits [%d to %d] is < 1 bit
 BuildOutputString:  change %s to %d
 Builtin
 C$;CXuHL
-C(A;F
-C+t, ~7K
+C+t/ ~7K
 C0+K,9
+C0A;F0
 C0[A\A^A
-C8A;F8uc
+C4A;F4
 C8D9hXtPH
 C8H9C0
 C8[A\A^A
 C8fA;G8t
-C<A:F
-C@A;F@uZA
+C@A;F@uw
 CBidirMsg_RebroadcastGameEvent
 CBidirMsg_RebroadcastSource
 CCLCMsg_BaselineAck
@@ -468,12 +465,12 @@ CCLCMsg_Move
 CCLCMsg_RconServerDetails
 CCLCMsg_RequestPause
 CCLCMsg_RespondCvarValue
-CCLCMsg_ServerPing"P
 CCLCMsg_ServerStatus
 CCLCMsg_SplitPlayerConnect
 CCLCMsg_SplitPlayerDisconnect
 CCLCMsg_VoiceData
 CCommand::Tokenize: Encountered command which overflows the tokenizer buffer.. Skipping
+CDA:FD
 CDeltaCalculator::FieldCalcDelta fromBits
 CDeltaCalculator::FieldCalcDelta toBits
 CEHandleNetworkableInt
@@ -507,6 +504,8 @@ CFlattenedSerializer::WriteFieldList fieldDataBuf
 CFlattenedSerializer::[ent %d] Decode path %s array index %d out of range %d for field %s::%s [%d] %s
 CFlattenedSerializers::BuildMergedSerializedEntity fieldDataBuf
 CFlattenedSerializers::SpewSerializer: called with NULL serializer
+CGlobalSymbol
+CHA;FHun
 CHECK failed: !HasUnknownFieldsTag
 CHECK failed: !InRealOneof(field
 CHECK failed: !TableEntryIsTree(b) && !TableEntryIsTree(b ^ 1
@@ -770,16 +769,14 @@ CNETMsg_SpawnGroup_Unload
 CNETMsg_SplitScreenUser
 CNETMsg_StringCmd
 CNETMsg_Tick
+CNetChan::BUF_RELIABLE
+CNetChan::BUF_UNRELIABLE
+CNetChan::BUF_VOICE
 CNetChan::SendNetMessage: SerializeAbstract for message %s failed
 CNetChan::SendNetMessage: Trying to send message %s, which is an invalid category for this channel
 CNetChan::SendNetMessage: Unable to send message %s, buffer is full
-CNetChan::SetMaxBufferSize: cant preserve exiting data %i>%i
 CNetChan::Setup for %s
 CNetChan::UpdateMessageStats, bit counter about to roll over with addition of %d bits, resetting to zero
-CNetChan::m_StreamReliable
-CNetChan::m_StreamUnreliable
-CNetChan::m_StreamVoice
-CNetChan_TransmitBits->send
 CNetworkFieldChangedEventQueue::QueueChange:  ran out of scratch data space
 CNetworkMessages::AllocateAndCopyConstructNetMessageAbstract unable to allocate unknown message type
 CNetworkMessages::AllocateUnserializedMessage unable to allocate unknown message type
@@ -795,12 +792,9 @@ CNetworkSystem::BufferToBufferDecompress with improperly sized dest buffer (%u i
 CNetworkSystem::BufferToBufferDecompress with improperly sized dest buffer (%u in, %u needed
 CNetworkSystem::CleanupDebugOutputFunction
 CNetworkSystem::CloseAllSockets
-CNetworkSystem::EReceiveDatagramResult CNetworkSystem::ReceiveDatagram(const int, NetPacket_t
-CNetworkSystem::FlushPeerToPeerChannels
-CNetworkSystem::Init() m_SteamAPIContextClient.Init ( ) failed (no Steam
-CNetworkSystem::InitGameServer: CSteamGameServerAPIContext::Init Failed
-CNetworkSystem::InitGameServer: CSteamGameServerAPIContext::Init OK
-CNetworkSystem::SendToNsAddress ISteamNetworkingSockets::SendMessageToConnection %s returned %d when sending %d bytes
+CNetworkSystem::Init() failed - no SteamNetworking
+CNetworkSystem::InitGameServer: SteamGameServerNetworking() NULL
+CNetworkSystem::InitGameServer: SteamGameServerNetworking() OK
 CNetworkSystem::Shutdown
 CNetworkSystem::ShutdownGameServer
 CNetworkUtlVectorBase
@@ -878,6 +872,13 @@ CTSQueue::Node_t *CTSQueue<CNetworkFieldPointerAllocationQueueInfo_t, false>::Pu
 CTSQueue::Node_t *CTSQueue<CNetworkMessageSignalQueue<CEventIDManager_NetChan>::QueuedMessage_t, false>::Push(CTSQueue::Node_t *) [T = CNetworkMessageSignalQueue<CEventIDManager_NetChan>::QueuedMessage_t, bTestOptimizer = false
 CTransform
 CUtlBinaryBlock
+CUtlDict::IndexType_t CUtlDict<CFlattenedSerializer *>::Insert(const char *, const T &) [T = CFlattenedSerializer *, L = CDefFastCaselessStringLess
+CUtlDict::IndexType_t CUtlDict<CNetworkSerializer *>::Insert(const char *, const T &) [T = CNetworkSerializer *, L = CDefFastCaselessStringLess
+CUtlDict::IndexType_t CUtlDict<CSchemaClassField_Dynamic *>::Insert(const char *, const T &) [T = CSchemaClassField_Dynamic *, L = CDefFastCaselessStringLess
+CUtlDict::IndexType_t CUtlDict<CWriteSerializersStableVersionDatabase::OrderedVariants_t *>::Insert(const char *, const T &) [T = CWriteSerializersStableVersionDatabase::OrderedVariants_t *, L = CDefFastCaselessStringLess
+CUtlDict::IndexType_t CUtlDict<NetworkFieldSerializerGroup_t *>::Insert(const char *, const T &) [T = NetworkFieldSerializerGroup_t *, L = CDefFastCaselessStringLess
+CUtlDict::IndexType_t CUtlDict<bool>::Insert(const char *) [T = bool, L = CDefFastCaselessStringLess
+CUtlDict::IndexType_t CUtlDict<empty_t>::Insert(const char *) [T = empty_t, L = CDefFastCaselessStringLess
 CUtlLeanVectorImpl::IndexType_t CUtlLeanVectorImpl<CUtlLeanVectorFixedGrowableBase<CFieldPath::Path_t, 6>, CFieldPath::Path_t>::AddMultipleToTail(int) [B = CUtlLeanVectorFixedGrowableBase<CFieldPath::Path_t, 6>, T = CFieldPath::Path_t, I = short
 CUtlLeanVectorImpl::IndexType_t CUtlLeanVectorImpl<CUtlLeanVectorFixedGrowableBase<unsigned int, 3>, unsigned int>::AddMultipleToTail(int) [B = CUtlLeanVectorFixedGrowableBase<unsigned int, 3>, T = unsigned int, I = short
 CUtlLinkedList overflow! (exhausted index range
@@ -913,6 +914,8 @@ Cannot open file %s
 Cannot reconnect loopback after initializing steam networking
 Cannot register change callback priorities at this stage! Must do it earlier
 Cannot show available settings until SteamNetworkingUtils initialized
+Cannot show net_fakelag until SteamNetworkingUtils initialized
+Cannot show net_fakeloss until SteamNetworkingUtils initialized
 Cannot show values of SteamNetworkingSockets configuration values until initialized
 Cannot skip field value, unexpected token
 Cannot use priority equal to NETWORK_FIELD_CHANGE_DEFAULT_PRIORITY
@@ -925,6 +928,8 @@ ChangeAccessorFieldPathIndex_t
 Ch~AH
 Ch~DH
 Class                    = '%s
+Class does not allow allocation from its schema binding
+Class does not allow deallocation from its schema binding
 Class,Field,Field Path,Decode Count,Total Bits,Avg Bits,Total Index Bits,Avg Index Bits,Priority,=SUM(E:E),Full Name,Notes
 ClearField
 ClientToolsInfo_001
@@ -960,7 +965,6 @@ D$P[A\A^A
 D$XI;D
 D5LI;D
 D5XuHK
-D9c8tf;Ch
 D;c8~!H
 DIALOG_ASKCONNECT
 DIALOG_ENTRY
@@ -996,6 +1000,7 @@ Double-save to Member '%s
 Dump UDP packets summary to console
 Dump non-loopback udp only
 E#D$XI
+E+D$ L
 E0A;A0
 E4A;A4u
 E9~Dr
@@ -1012,7 +1017,6 @@ ESplitScreenMessageType
 EXPORTSYSTEM_INTERFACE_VERSION_001
 EarlyInit_Tier0
 EconItemToolModel_001
-Efffff
 Enable optimization of slow path that makes HLTV CPU consumption high in AnimGraph-using mods. Will switch to this on by default soon
 Encode
 Encountered 2 fields "%s" and "%s" in struct "%s" using the same change callback with different change callback types
@@ -1080,14 +1084,13 @@ Extensions in proto3 are only allowed for defining options
 Extensions of MessageSets must be optional messages
 Extensions to non-lite types can only be declared in non-lite files.  Note that you cannot extend a non-lite type to contain a lite type, but the reverse is allowed
 Extra connection [%s
+EЋủ0D
 Eـ8.uCH
 F H+p(H
 F,E+F0A
 F0I;F(sAH
 F0[A^]ÐUH
-F0u|zz
 F4A;F8
-F4unzl
 F8Lc`\M
 F<A;G<~4H
 F<fff
@@ -1109,7 +1112,6 @@ Failed to start listening for SDR on port %d.  Waiting and will retry
 Failed to unserialize message %s: expected message ID %u, encountered %u
 FakeLag
 FakeLoss
-FakePacketLag_Recv
 FakeReorderDelay
 FakeReorderPct
 Fatal error, demo file includes a field in array that is not parseable %s = (%s::%s
@@ -1167,6 +1169,8 @@ Fixed Array
 FlattenedSerializersVersion001
 FontManager_001
 For servers behind NAT/DHCP meant to be exposed to the public internet, this is the public facing ip address string: ("x.x.x.x
+Found existing value when inserting into dict - replacing existing value with new value. If this is intended behavior, use InsertOrReplace. If leaving existing values alone is intended, use InsertIfNotFound
+Found existing value when inserting into tree - replacing existing value with new value. If this is intended behavior, use InsertOrReplace. If leaving existing values alone is intended, use InsertIfNotFound. If duplicate entries are intended, use InsertWithDupes
 Found invalid proto option data for
 G H+x(H
 G Mcw$D9
@@ -1322,7 +1326,6 @@ Group                    = '%s
 Group ID                 = %u
 GroupID
 Groups are not supported in proto3 syntax
-H"B:L
 H*NLFPFFLF
 H+3t1I
 H+N0HcR
@@ -1331,7 +1334,6 @@ H97t4M
 H9y t
 H9z t
 H;C@t8I
-H;CLu
 H;CPt H
 HMc<$D
 H[A\A]A^A
@@ -1357,9 +1359,7 @@ HasField
 Hc@0H9
 Hc@0I9
 Hc@8H9
-Hc@hI9
-HcA I9
-HcA(H9
+HcA H9
 HcA0I9
 HcA4I9
 HcC(I9
@@ -1376,28 +1376,20 @@ Hex and octal numbers must be integers
 Hffffff
 Host game server ip
 HostStateMgr001
-I CUtlRBTree<CNetChan::SplitPlayer_t, unsigned short, bool (*)(const CNetChan::SplitPlayer_t &, const CNetChan::SplitPlayer_t &)>::Insert(const T &, ERBTreeInsertBehavior) [T = CNetChan::SplitPlayer_t, I = unsigned short, L = bool (*)(const CNetChan::SplitPlayer_t &, const CNetChan::SplitPlayer_t &), M = CUtlMemory<UtlRBTreeNode_t<CNetChan::SplitPlayer_t, unsigned short>, unsigned short
-I CUtlRBTree<CUtlMap<SchemaMetaInfoHandle_t<CSchemaType>, NetworkFieldSerializerGroup_t *, unsigned short, bool (*)(const SchemaMetaInfoHandle_t<CSchemaType> &, const SchemaMetaInfoHandle_t<CSchemaType> &)>::Node_t, unsigned short, CUtlMap<SchemaMetaInfoHandle_t<CSchemaType>, NetworkFieldSerializerGroup_t *, unsigned short, bool (*)(const SchemaMetaInfoHandle_t<CSchemaType> &, const SchemaMetaInfoHandle_t<CSchemaType> &)>::CKeyLess>::Insert(T &&, ERBTreeInsertBehavior) [T = CUtlMap<SchemaMetaInfoHandle_t<CSchemaType>, NetworkFieldSerializerGroup_t *, unsigned short, bool (*)(const SchemaMetaInfoHandle_t<CSchemaType> &, const SchemaMetaInfoHandle_t<CSchemaType> &)>::Node_t, I = unsigned short, L = CUtlMap<SchemaMetaInfoHandle_t<CSchemaType>, NetworkFieldSerializerGroup_t *, unsigned short, bool (*)(const SchemaMetaInfoHandle_t<CSchemaType> &, const SchemaMetaInfoHandle_t<CSchemaType> &)>::CKeyLess, M = CUtlMemory<UtlRBTreeNode_t<CUtlMap<SchemaMetaInfoHandle_t<CSchemaType>, NetworkFieldSerializerGroup_t *, unsigned short, bool (*)(const SchemaMetaInfoHandle_t<CSchemaType> &, const SchemaMetaInfoHandle_t<CSchemaType> &)>::Node_t, unsigned short>, unsigned short
-I CUtlRBTree<CUtlMap<const IProtobufBinding *, CUtlVector<CEventDispatcher_Base::EventListenerInfo_t>, unsigned int, bool (*)(const IProtobufBinding *const &, const IProtobufBinding *const &)>::Node_t, unsigned int, CUtlMap<const IProtobufBinding *, CUtlVector<CEventDispatcher_Base::EventListenerInfo_t>, unsigned int, bool (*)(const IProtobufBinding *const &, const IProtobufBinding *const &)>::CKeyLess>::Insert(T &&, ERBTreeInsertBehavior) [T = CUtlMap<const IProtobufBinding *, CUtlVector<CEventDispatcher_Base::EventListenerInfo_t>, unsigned int, bool (*)(const IProtobufBinding *const &, const IProtobufBinding *const &)>::Node_t, I = unsigned int, L = CUtlMap<const IProtobufBinding *, CUtlVector<CEventDispatcher_Base::EventListenerInfo_t>, unsigned int, bool (*)(const IProtobufBinding *const &, const IProtobufBinding *const &)>::CKeyLess, M = CUtlMemory<UtlRBTreeNode_t<CUtlMap<const IProtobufBinding *, CUtlVector<CEventDispatcher_Base::EventListenerInfo_t>, unsigned int, bool (*)(const IProtobufBinding *const &, const IProtobufBinding *const &)>::Node_t, unsigned int>, unsigned int
-I CUtlRBTree<CUtlMap<const char *, CFlattenedSerializer *, int, CDefFastCaselessStringLess>::Node_t, int, CUtlMap<const char *, CFlattenedSerializer *, int, CDefFastCaselessStringLess>::CKeyLess>::Insert(T &&, ERBTreeInsertBehavior) [T = CUtlMap<const char *, CFlattenedSerializer *, int, CDefFastCaselessStringLess>::Node_t, I = int, L = CUtlMap<const char *, CFlattenedSerializer *, int, CDefFastCaselessStringLess>::CKeyLess, M = CUtlMemory<UtlRBTreeNode_t<CUtlMap<const char *, CFlattenedSerializer *, int, CDefFastCaselessStringLess>::Node_t, int
-I CUtlRBTree<CUtlMap<const char *, CNetworkSerializer *, int, CDefFastCaselessStringLess>::Node_t, int, CUtlMap<const char *, CNetworkSerializer *, int, CDefFastCaselessStringLess>::CKeyLess>::Insert(T &&, ERBTreeInsertBehavior) [T = CUtlMap<const char *, CNetworkSerializer *, int, CDefFastCaselessStringLess>::Node_t, I = int, L = CUtlMap<const char *, CNetworkSerializer *, int, CDefFastCaselessStringLess>::CKeyLess, M = CUtlMemory<UtlRBTreeNode_t<CUtlMap<const char *, CNetworkSerializer *, int, CDefFastCaselessStringLess>::Node_t, int
-I CUtlRBTree<CUtlMap<const char *, CSchemaClassField_Dynamic *, int, CDefFastCaselessStringLess>::Node_t, int, CUtlMap<const char *, CSchemaClassField_Dynamic *, int, CDefFastCaselessStringLess>::CKeyLess>::Insert(T &&, ERBTreeInsertBehavior) [T = CUtlMap<const char *, CSchemaClassField_Dynamic *, int, CDefFastCaselessStringLess>::Node_t, I = int, L = CUtlMap<const char *, CSchemaClassField_Dynamic *, int, CDefFastCaselessStringLess>::CKeyLess, M = CUtlMemory<UtlRBTreeNode_t<CUtlMap<const char *, CSchemaClassField_Dynamic *, int, CDefFastCaselessStringLess>::Node_t, int
-I CUtlRBTree<CUtlMap<const char *, CWriteSerializersStableVersionDatabase::OrderedVariants_t *, int, CDefFastCaselessStringLess>::Node_t, int, CUtlMap<const char *, CWriteSerializersStableVersionDatabase::OrderedVariants_t *, int, CDefFastCaselessStringLess>::CKeyLess>::Insert(T &&, ERBTreeInsertBehavior) [T = CUtlMap<const char *, CWriteSerializersStableVersionDatabase::OrderedVariants_t *, int, CDefFastCaselessStringLess>::Node_t, I = int, L = CUtlMap<const char *, CWriteSerializersStableVersionDatabase::OrderedVariants_t *, int, CDefFastCaselessStringLess>::CKeyLess, M = CUtlMemory<UtlRBTreeNode_t<CUtlMap<const char *, CWriteSerializersStableVersionDatabase::OrderedVariants_t *, int, CDefFastCaselessStringLess>::Node_t, int
-I CUtlRBTree<CUtlMap<const char *, NetworkFieldSerializerGroup_t *, int, CDefFastCaselessStringLess>::Node_t, int, CUtlMap<const char *, NetworkFieldSerializerGroup_t *, int, CDefFastCaselessStringLess>::CKeyLess>::Insert(T &&, ERBTreeInsertBehavior) [T = CUtlMap<const char *, NetworkFieldSerializerGroup_t *, int, CDefFastCaselessStringLess>::Node_t, I = int, L = CUtlMap<const char *, NetworkFieldSerializerGroup_t *, int, CDefFastCaselessStringLess>::CKeyLess, M = CUtlMemory<UtlRBTreeNode_t<CUtlMap<const char *, NetworkFieldSerializerGroup_t *, int, CDefFastCaselessStringLess>::Node_t, int
-I CUtlRBTree<CUtlMap<const char *, bool, int, CDefFastCaselessStringLess>::Node_t, int, CUtlMap<const char *, bool, int, CDefFastCaselessStringLess>::CKeyLess>::Insert(T &&, ERBTreeInsertBehavior) [T = CUtlMap<const char *, bool, int, CDefFastCaselessStringLess>::Node_t, I = int, L = CUtlMap<const char *, bool, int, CDefFastCaselessStringLess>::CKeyLess, M = CUtlMemory<UtlRBTreeNode_t<CUtlMap<const char *, bool, int, CDefFastCaselessStringLess>::Node_t, int
-I CUtlRBTree<CUtlMap<const char *, const CFlattenedSerializer *, int, CDefFastCaselessStringLess>::Node_t, int, CUtlMap<const char *, const CFlattenedSerializer *, int, CDefFastCaselessStringLess>::CKeyLess>::Insert(T &&, ERBTreeInsertBehavior) [T = CUtlMap<const char *, const CFlattenedSerializer *, int, CDefFastCaselessStringLess>::Node_t, I = int, L = CUtlMap<const char *, const CFlattenedSerializer *, int, CDefFastCaselessStringLess>::CKeyLess, M = CUtlMemory<UtlRBTreeNode_t<CUtlMap<const char *, const CFlattenedSerializer *, int, CDefFastCaselessStringLess>::Node_t, int
-I CUtlRBTree<CUtlMap<const char *, empty_t, int, CDefFastCaselessStringLess>::Node_t, int, CUtlMap<const char *, empty_t, int, CDefFastCaselessStringLess>::CKeyLess>::Insert(T &&, ERBTreeInsertBehavior) [T = CUtlMap<const char *, empty_t, int, CDefFastCaselessStringLess>::Node_t, I = int, L = CUtlMap<const char *, empty_t, int, CDefFastCaselessStringLess>::CKeyLess, M = CUtlMemory<UtlRBTreeNode_t<CUtlMap<const char *, empty_t, int, CDefFastCaselessStringLess>::Node_t, int
-I CUtlRBTree<CUtlMap<const char *, unsigned int, int, CDefFastCaselessStringLess>::Node_t, int, CUtlMap<const char *, unsigned int, int, CDefFastCaselessStringLess>::CKeyLess>::Insert(T &&, ERBTreeInsertBehavior) [T = CUtlMap<const char *, unsigned int, int, CDefFastCaselessStringLess>::Node_t, I = int, L = CUtlMap<const char *, unsigned int, int, CDefFastCaselessStringLess>::CKeyLess, M = CUtlMemory<UtlRBTreeNode_t<CUtlMap<const char *, unsigned int, int, CDefFastCaselessStringLess>::Node_t, int
-I CUtlRBTree<CUtlMap<int, INetworkMessageInternal *, unsigned short, bool (*)(const int &, const int &)>::Node_t, unsigned short, CUtlMap<int, INetworkMessageInternal *, unsigned short, bool (*)(const int &, const int &)>::CKeyLess>::Insert(T &&, ERBTreeInsertBehavior) [T = CUtlMap<int, INetworkMessageInternal *, unsigned short, bool (*)(const int &, const int &)>::Node_t, I = unsigned short, L = CUtlMap<int, INetworkMessageInternal *, unsigned short, bool (*)(const int &, const int &)>::CKeyLess, M = CUtlMemory<UtlRBTreeNode_t<CUtlMap<int, INetworkMessageInternal *, unsigned short, bool (*)(const int &, const int &)>::Node_t, unsigned short>, unsigned short
-I CUtlRBTree<CUtlMap<int, int, unsigned short, bool (*)(const int &, const int &)>::Node_t, unsigned short, CUtlMap<int, int, unsigned short, bool (*)(const int &, const int &)>::CKeyLess>::Insert(T &&, ERBTreeInsertBehavior) [T = CUtlMap<int, int, unsigned short, bool (*)(const int &, const int &)>::Node_t, I = unsigned short, L = CUtlMap<int, int, unsigned short, bool (*)(const int &, const int &)>::CKeyLess, M = CUtlMemory<UtlRBTreeNode_t<CUtlMap<int, int, unsigned short, bool (*)(const int &, const int &)>::Node_t, unsigned short>, unsigned short
-I CUtlRBTree<CUtlMap<ns_address, int, int, SteamNetConnection_t::ns_address_less>::Node_t, int, CUtlMap<ns_address, int, int, SteamNetConnection_t::ns_address_less>::CKeyLess>::Insert(T &&, ERBTreeInsertBehavior) [T = CUtlMap<ns_address, int, int, SteamNetConnection_t::ns_address_less>::Node_t, I = int, L = CUtlMap<ns_address, int, int, SteamNetConnection_t::ns_address_less>::CKeyLess, M = CUtlMemory<UtlRBTreeNode_t<CUtlMap<ns_address, int, int, SteamNetConnection_t::ns_address_less>::Node_t, int
-I CUtlRBTree<CUtlMap<unsigned int, CUtlString, unsigned short, bool (*)(const unsigned int &, const unsigned int &)>::Node_t, unsigned short, CUtlMap<unsigned int, CUtlString, unsigned short, bool (*)(const unsigned int &, const unsigned int &)>::CKeyLess>::Insert(T &&, ERBTreeInsertBehavior) [T = CUtlMap<unsigned int, CUtlString, unsigned short, bool (*)(const unsigned int &, const unsigned int &)>::Node_t, I = unsigned short, L = CUtlMap<unsigned int, CUtlString, unsigned short, bool (*)(const unsigned int &, const unsigned int &)>::CKeyLess, M = CUtlMemory<UtlRBTreeNode_t<CUtlMap<unsigned int, CUtlString, unsigned short, bool (*)(const unsigned int &, const unsigned int &)>::Node_t, unsigned short>, unsigned short
-I CUtlRBTree<CUtlMap<unsigned int, ConnectionStats_t, int, CDefLess<unsigned int>>::Node_t, int, CUtlMap<unsigned int, ConnectionStats_t, int, CDefLess<unsigned int>>::CKeyLess>::Insert(T &&, ERBTreeInsertBehavior) [T = CUtlMap<unsigned int, ConnectionStats_t, int, CDefLess<unsigned int>>::Node_t, I = int, L = CUtlMap<unsigned int, ConnectionStats_t, int, CDefLess<unsigned int>>::CKeyLess, M = CUtlMemory<UtlRBTreeNode_t<CUtlMap<unsigned int, ConnectionStats_t, int, CDefLess<unsigned int>>::Node_t, int
-I CUtlRBTree<CUtlMap<unsigned int, SchemaMetaInfoHandle_t<CSchemaType>, unsigned short, bool (*)(const unsigned int &, const unsigned int &)>::Node_t, unsigned short, CUtlMap<unsigned int, SchemaMetaInfoHandle_t<CSchemaType>, unsigned short, bool (*)(const unsigned int &, const unsigned int &)>::CKeyLess>::Insert(T &&, ERBTreeInsertBehavior) [T = CUtlMap<unsigned int, SchemaMetaInfoHandle_t<CSchemaType>, unsigned short, bool (*)(const unsigned int &, const unsigned int &)>::Node_t, I = unsigned short, L = CUtlMap<unsigned int, SchemaMetaInfoHandle_t<CSchemaType>, unsigned short, bool (*)(const unsigned int &, const unsigned int &)>::CKeyLess, M = CUtlMemory<UtlRBTreeNode_t<CUtlMap<unsigned int, SchemaMetaInfoHandle_t<CSchemaType>, unsigned short, bool (*)(const unsigned int &, const unsigned int &)>::Node_t, unsigned short>, unsigned short
-I CUtlRBTree<CUtlMap<unsigned int, int, int, CDefLess<unsigned int>>::Node_t, int, CUtlMap<unsigned int, int, int, CDefLess<unsigned int>>::CKeyLess>::Insert(T &&, ERBTreeInsertBehavior) [T = CUtlMap<unsigned int, int, int, CDefLess<unsigned int>>::Node_t, I = int, L = CUtlMap<unsigned int, int, int, CDefLess<unsigned int>>::CKeyLess, M = CUtlMemory<UtlRBTreeNode_t<CUtlMap<unsigned int, int, int, CDefLess<unsigned int>>::Node_t, int
-I CUtlRBTree<OverrideWork_t, unsigned short, bool (*)(const OverrideWork_t &, const OverrideWork_t &)>::Insert(const T &, ERBTreeInsertBehavior) [T = OverrideWork_t, I = unsigned short, L = bool (*)(const OverrideWork_t &, const OverrideWork_t &), M = CUtlMemory<UtlRBTreeNode_t<OverrideWork_t, unsigned short>, unsigned short
-I CUtlRBTree<int, unsigned short, bool (*)(const int &, const int &)>::Insert(const T &, ERBTreeInsertBehavior) [T = int, I = unsigned short, L = bool (*)(const int &, const int &), M = CUtlMemory<UtlRBTreeNode_t<int, unsigned short>, unsigned short
-I CUtlRBTree<void *, int, CDefLess<void *>>::Insert(T &&, ERBTreeInsertBehavior) [T = void *, I = int, L = CDefLess<void *>, M = CUtlMemory<UtlRBTreeNode_t<void *, int
+I CUtlRBTree<CNetChan::SplitPlayer_t, unsigned short, bool (*)(const CNetChan::SplitPlayer_t &, const CNetChan::SplitPlayer_t &)>::Insert(const T &) [T = CNetChan::SplitPlayer_t, I = unsigned short, L = bool (*)(const CNetChan::SplitPlayer_t &, const CNetChan::SplitPlayer_t &), M = CUtlMemory<UtlRBTreeNode_t<CNetChan::SplitPlayer_t, unsigned short>, unsigned short
+I CUtlRBTree<CUtlMapBase<SchemaMetaInfoHandle_t<CSchemaType>, NetworkFieldSerializerGroup_t *, unsigned short, bool (*)(const SchemaMetaInfoHandle_t<CSchemaType> &, const SchemaMetaInfoHandle_t<CSchemaType> &)>::Node_t, unsigned short, CUtlMapBase<SchemaMetaInfoHandle_t<CSchemaType>, NetworkFieldSerializerGroup_t *, unsigned short, bool (*)(const SchemaMetaInfoHandle_t<CSchemaType> &, const SchemaMetaInfoHandle_t<CSchemaType> &)>::CKeyLess>::Insert(T &&) [T = CUtlMapBase<SchemaMetaInfoHandle_t<CSchemaType>, NetworkFieldSerializerGroup_t *, unsigned short, bool (*)(const SchemaMetaInfoHandle_t<CSchemaType> &, const SchemaMetaInfoHandle_t<CSchemaType> &)>::Node_t, I = unsigned short, L = CUtlMapBase<SchemaMetaInfoHandle_t<CSchemaType>, NetworkFieldSerializerGroup_t *, unsigned short, bool (*)(const SchemaMetaInfoHandle_t<CSchemaType> &, const SchemaMetaInfoHandle_t<CSchemaType> &)>::CKeyLess, M = CUtlMemory<UtlRBTreeNode_t<CUtlMapBase<SchemaMetaInfoHandle_t<CSchemaType>, NetworkFieldSerializerGroup_t *, unsigned short, bool (*)(const SchemaMetaInfoHandle_t<CSchemaType> &, const SchemaMetaInfoHandle_t<CSchemaType> &)>::Node_t, unsigned short>, unsigned short
+I CUtlRBTree<CUtlMapBase<const IProtobufBinding *, CUtlVector<CEventDispatcher_Base::EventListenerInfo_t>, unsigned int, bool (*)(const IProtobufBinding *const &, const IProtobufBinding *const &)>::Node_t, unsigned int, CUtlMapBase<const IProtobufBinding *, CUtlVector<CEventDispatcher_Base::EventListenerInfo_t>, unsigned int, bool (*)(const IProtobufBinding *const &, const IProtobufBinding *const &)>::CKeyLess>::Insert(T &&) [T = CUtlMapBase<const IProtobufBinding *, CUtlVector<CEventDispatcher_Base::EventListenerInfo_t>, unsigned int, bool (*)(const IProtobufBinding *const &, const IProtobufBinding *const &)>::Node_t, I = unsigned int, L = CUtlMapBase<const IProtobufBinding *, CUtlVector<CEventDispatcher_Base::EventListenerInfo_t>, unsigned int, bool (*)(const IProtobufBinding *const &, const IProtobufBinding *const &)>::CKeyLess, M = CUtlMemory<UtlRBTreeNode_t<CUtlMapBase<const IProtobufBinding *, CUtlVector<CEventDispatcher_Base::EventListenerInfo_t>, unsigned int, bool (*)(const IProtobufBinding *const &, const IProtobufBinding *const &)>::Node_t, unsigned int>, unsigned int
+I CUtlRBTree<CUtlMapBase<const char *, const CFlattenedSerializer *, int, CDefFastCaselessStringLess>::Node_t, int, CUtlMapBase<const char *, const CFlattenedSerializer *, int, CDefFastCaselessStringLess>::CKeyLess>::Insert(T &&) [T = CUtlMapBase<const char *, const CFlattenedSerializer *, int, CDefFastCaselessStringLess>::Node_t, I = int, L = CUtlMapBase<const char *, const CFlattenedSerializer *, int, CDefFastCaselessStringLess>::CKeyLess, M = CUtlMemory<UtlRBTreeNode_t<CUtlMapBase<const char *, const CFlattenedSerializer *, int, CDefFastCaselessStringLess>::Node_t, int
+I CUtlRBTree<CUtlMapBase<int, INetworkMessageInternal *, unsigned short, bool (*)(const int &, const int &)>::Node_t, unsigned short, CUtlMapBase<int, INetworkMessageInternal *, unsigned short, bool (*)(const int &, const int &)>::CKeyLess>::Insert(T &&) [T = CUtlMapBase<int, INetworkMessageInternal *, unsigned short, bool (*)(const int &, const int &)>::Node_t, I = unsigned short, L = CUtlMapBase<int, INetworkMessageInternal *, unsigned short, bool (*)(const int &, const int &)>::CKeyLess, M = CUtlMemory<UtlRBTreeNode_t<CUtlMapBase<int, INetworkMessageInternal *, unsigned short, bool (*)(const int &, const int &)>::Node_t, unsigned short>, unsigned short
+I CUtlRBTree<CUtlMapBase<int, int, unsigned short, bool (*)(const int &, const int &)>::Node_t, unsigned short, CUtlMapBase<int, int, unsigned short, bool (*)(const int &, const int &)>::CKeyLess>::Insert(T &&) [T = CUtlMapBase<int, int, unsigned short, bool (*)(const int &, const int &)>::Node_t, I = unsigned short, L = CUtlMapBase<int, int, unsigned short, bool (*)(const int &, const int &)>::CKeyLess, M = CUtlMemory<UtlRBTreeNode_t<CUtlMapBase<int, int, unsigned short, bool (*)(const int &, const int &)>::Node_t, unsigned short>, unsigned short
+I CUtlRBTree<CUtlMapBase<ns_address, int, int, SteamNetConnection_t::ns_address_less>::Node_t, int, CUtlMapBase<ns_address, int, int, SteamNetConnection_t::ns_address_less>::CKeyLess>::Insert(T &&) [T = CUtlMapBase<ns_address, int, int, SteamNetConnection_t::ns_address_less>::Node_t, I = int, L = CUtlMapBase<ns_address, int, int, SteamNetConnection_t::ns_address_less>::CKeyLess, M = CUtlMemory<UtlRBTreeNode_t<CUtlMapBase<ns_address, int, int, SteamNetConnection_t::ns_address_less>::Node_t, int
+I CUtlRBTree<CUtlMapBase<unsigned int, CUtlString, unsigned short, bool (*)(const unsigned int &, const unsigned int &)>::Node_t, unsigned short, CUtlMapBase<unsigned int, CUtlString, unsigned short, bool (*)(const unsigned int &, const unsigned int &)>::CKeyLess>::Insert(T &&) [T = CUtlMapBase<unsigned int, CUtlString, unsigned short, bool (*)(const unsigned int &, const unsigned int &)>::Node_t, I = unsigned short, L = CUtlMapBase<unsigned int, CUtlString, unsigned short, bool (*)(const unsigned int &, const unsigned int &)>::CKeyLess, M = CUtlMemory<UtlRBTreeNode_t<CUtlMapBase<unsigned int, CUtlString, unsigned short, bool (*)(const unsigned int &, const unsigned int &)>::Node_t, unsigned short>, unsigned short
+I CUtlRBTree<CUtlMapBase<unsigned int, ConnectionStats_t, int, CDefLess<unsigned int>>::Node_t, int, CUtlMapBase<unsigned int, ConnectionStats_t, int, CDefLess<unsigned int>>::CKeyLess>::Insert(T &&) [T = CUtlMapBase<unsigned int, ConnectionStats_t, int, CDefLess<unsigned int>>::Node_t, I = int, L = CUtlMapBase<unsigned int, ConnectionStats_t, int, CDefLess<unsigned int>>::CKeyLess, M = CUtlMemory<UtlRBTreeNode_t<CUtlMapBase<unsigned int, ConnectionStats_t, int, CDefLess<unsigned int>>::Node_t, int
+I CUtlRBTree<CUtlMapBase<unsigned int, SchemaMetaInfoHandle_t<CSchemaType>, unsigned short, bool (*)(const unsigned int &, const unsigned int &)>::Node_t, unsigned short, CUtlMapBase<unsigned int, SchemaMetaInfoHandle_t<CSchemaType>, unsigned short, bool (*)(const unsigned int &, const unsigned int &)>::CKeyLess>::Insert(T &&) [T = CUtlMapBase<unsigned int, SchemaMetaInfoHandle_t<CSchemaType>, unsigned short, bool (*)(const unsigned int &, const unsigned int &)>::Node_t, I = unsigned short, L = CUtlMapBase<unsigned int, SchemaMetaInfoHandle_t<CSchemaType>, unsigned short, bool (*)(const unsigned int &, const unsigned int &)>::CKeyLess, M = CUtlMemory<UtlRBTreeNode_t<CUtlMapBase<unsigned int, SchemaMetaInfoHandle_t<CSchemaType>, unsigned short, bool (*)(const unsigned int &, const unsigned int &)>::Node_t, unsigned short>, unsigned short
+I CUtlRBTree<CUtlMapBase<unsigned int, int, int, CDefLess<unsigned int>>::Node_t, int, CUtlMapBase<unsigned int, int, int, CDefLess<unsigned int>>::CKeyLess>::Insert(T &&) [T = CUtlMapBase<unsigned int, int, int, CDefLess<unsigned int>>::Node_t, I = int, L = CUtlMapBase<unsigned int, int, int, CDefLess<unsigned int>>::CKeyLess, M = CUtlMemory<UtlRBTreeNode_t<CUtlMapBase<unsigned int, int, int, CDefLess<unsigned int>>::Node_t, int
+I CUtlRBTree<OverrideWork_t, unsigned short, bool (*)(const OverrideWork_t &, const OverrideWork_t &)>::Insert(const T &) [T = OverrideWork_t, I = unsigned short, L = bool (*)(const OverrideWork_t &, const OverrideWork_t &), M = CUtlMemory<UtlRBTreeNode_t<OverrideWork_t, unsigned short>, unsigned short
+I CUtlRBTree<int, unsigned short, bool (*)(const int &, const int &)>::Insert(const T &) [T = int, I = unsigned short, L = bool (*)(const int &, const int &), M = CUtlMemory<UtlRBTreeNode_t<int, unsigned short>, unsigned short
+I CUtlRBTree<void *, int, CDefLess<void *>>::Insert(T &&) [T = void *, I = int, L = CDefLess<void *>, M = CUtlMemory<UtlRBTreeNode_t<void *, int
 I96v`A
 I;D$PtjH
 ID                       = %u
@@ -1412,40 +1404,40 @@ IPulseSystem_001
 IcD$ H
 IcD$ I
 IcD$(H
+IcD$(H9
 IcD$(I
 IcD$0H9
-IcD$0I
 IcD$4H9
 IcD$4I
 IcD$LH
 IcD$LfA
 IcD$PI
+IcD$`H9
+IcD$`I9
 IcD$hH
 IcD$hI
-IcD$hI9
 IcD$pI
 IcD$tI
 IcD$xI
 IcD$|I
 IcE(H9
 IcE(I9
+IcE0H9
 IcE0I9
-IcEhI9
+IcE`I9
 IcG I9
 IcG(H9
 IcG(I9
 IcG,H9
 IcG0H9
 IcG0I9
-IcGhH9
 IcGhI9
 IcL$0H9
-IcL$TI
+IcL$L9
 IcL$hI
 IcM0H9
 IcN0H9ȋU
 IcN8D9
-IcT$(H
 IcT$8H
 Ic\$LL
 Ic\$hH
@@ -1476,6 +1468,8 @@ Invalid escape sequence in string literal
 Invalid file descriptor data passed to EncodedDescriptorDatabase::Add
 Invalid float number
 Invalid key for map field
+Invalid net_fakelag value '%s
+Invalid net_fakeloss value '%s
 Invalid package name
 Invalid proto descriptor for file
 Invalid public dependency index
@@ -1493,13 +1487,11 @@ JSType
 JS_NORMAL
 JS_NUMBER
 JS_STRING
-Jc\ (H
 Jffffff
 K]ÐUH
 Key in map fields cannot be enum types
 Key in map fields cannot be float/double, bytes or message types
 KeyValueCache001
-Kfffff
 L$9A	F(H
 L9+tHH
 L9+trH
@@ -1507,16 +1499,15 @@ L93v"I
 L9;tAH
 L;8t"I
 L;sxtKL
-L?333
 LABEL_OPTIONAL
 LABEL_REPEATED
 LABEL_REQUIRED
 LINKEDIT
 LITE_RUNTIME
 LOG_GENERAL
-Latency: avg out %.2fs, in %.2fs
 LcC0L9
 Leaked channel %s remote %s
+Lffff
 Like net_showmsg, but only spew reliable messages
 List all registered net messages
 Localize_001
@@ -1529,6 +1520,7 @@ LoggingSystem_Log
 LoggingSystem_RegisterLoggingChannel
 LookupMapValue
 Loss:    avg out %.1f, in %.1f
+M"B:L8
 M9&v`A
 M9'v_Hc
 M9'v`H
@@ -1575,6 +1567,7 @@ MODEL_PROCESSING_SERVICES_INTERFACE_001
 MResourceTypeForInfoType
 MSG_SPLITSCREEN_ADDUSER
 MSG_SPLITSCREEN_REMOVEUSER
+MakeGlobalSymbol
 MakeSerializersMatchByMeta failed for %s
 MapBegin
 MapEnd
@@ -1630,7 +1623,6 @@ Messages can't have default values
 Method      : google::protobuf::Reflection
 MethodDescriptorProto
 MethodOptions
-Mffff
 Missing field: FileDescriptorProto.name
 Missing name
 ModelDocUtils001
@@ -1639,6 +1631,7 @@ Multiple steam net connections from %s
 MutableMessage
 MutableRawRepeatedField
 MutableRepeatedMessage
+MЈA,ffff
 N,E+N0A
 N13CNetMessagePBILi0E11CNETMsg_NOPL13SignonGroup_t11EL19NetChannelBufType_t1ELb0EE16CProtobufBindingE
 N13CNetMessagePBILi1E18CNETMsg_DisconnectL13SignonGroup_t11EL19NetChannelBufType_t1ELb0EE16CProtobufBindingE
@@ -1917,9 +1910,11 @@ Need space between identifier and decimal point
 Need space between number and identifier
 Net Message Info: %s
 Net graph %s
-Net packet timing values don't make sense.  Send time=%llu, Recv time=%llu, Now=%llu, Peer delay=%d
 Net status for host %s
 NetChan %s ProcessMessages has taken more than %dms to process %d messages.  (Current message type: '%s
+NetChan %s ProcessMessages tok %dms to process %d messages
+NetChanTransmitReliable
+NetChanTransmitUnreliable
 NetChannel '%s
 NetMessage '%s' still using auto-assigned, has to generate id from name CUtlStringToken hashcode = %d
 NetMessageConnectionClosed
@@ -1928,6 +1923,7 @@ NetMessagePacketEnd
 NetMessagePacketStart
 NetMessageSplitscreenUserChanged
 NetSteamConn
+Netchan [%s] already associated with hconn #%u, but now we are getting messages on new hconn #%u using the same 'from' address
 Network System Initialized
 Network field tried to use a priority that has not been registered
 Network socket '%s' opened on port %d
@@ -1955,6 +1951,9 @@ Non-repeated field
 NonTopoComplex
 NonTopoComplexPack4Bits
 NonTopoPenultimatePluseOne
+Not allowed to change net_fakelag
+Not allowed to change net_fakeloss
+Not allowed to change net_option '%s
 Not safe to 'new' this class due to alignment requirements
 Not supported
 Note that enum values use C++ scoping rules, meaning that enum values are siblings of their type, not children of it.  Therefore
@@ -1991,7 +1990,6 @@ P@P0000@P@P00000000
 PACKET_STATUS_DROPPED
 PACKET_STATUS_INVALID
 PACKET_STATUS_NORMAL
-PARAWASA
 PASARH
 PFT_SOUND
 PLACEHOLDER_VALUE
@@ -2015,6 +2013,7 @@ Path_SetCount failed, depth already == DEFAULT_MAX_PATH_DEPTH(%d
 Peer To Peer
 Pffffff
 PhysicsBuilderMgr001
+Ping:    avg %.2fs
 Plat_CPUTickFrequency
 Plat_DebugPrint
 Plat_ExitProcess
@@ -2025,7 +2024,6 @@ Plat_IsInDebugSession
 Plat_IsInTestMode
 Plat_NonFatalErrorFunc
 Plat_RelativeTicks
-Plat_ShouldCollectMiniDumpsForFatalErrors
 Plat_TickDiffMilliSecF
 Plat_USTime
 Player
@@ -2067,7 +2065,7 @@ Problem
 Problem     : Enum value did not match field type
 Problem     : Field is not the right type for this message
 ProcessOverride encountered unknown directive NetworkOverrideType_t(%d
-ProcessPacketSNP %s:%s packet %i at %i
+ProcessPacket %s:%s packet %i at %i
 Processing
 PropertyEditorSystem_001
 Proto
@@ -2109,7 +2107,7 @@ RASARA
 RASARAp
 RASAUASASASASBUAp
 RATARARARBTCp TCp
-RAUARAUARAUARAUARAUARAUARAUARAUARAUARAUARARAUAUARAUARAUARAUAUASASASB`)Ap
+RAUARAUARAUARAUARAUARAUARAUARAUARAUARAUARARAUAUARAUARAUARAUAUASASB`)Ap
 RBRBVEp
 RBSDp(p(p
 RE;4$}LH
@@ -2141,6 +2139,7 @@ Remove
 RemoveArrayElementsOutsideOfArrayMetadataBounds:  %s [ent %d] removing change '%s' for field %s (value '%s') on array that has metadata with only %d array elements
 RemoveFakeFields(%s) restoring clone %s:%d with original at %s:%d
 Removed fake field %s at %d
+Removed fake polymorphic serializer %s for field %s
 Removing Steam Net Connection for %s, handle #%u
 RenderDevice003
 RenderDeviceMgr001
@@ -2150,7 +2149,6 @@ RenderUtils_001
 Repeated fields can't have default values
 ReplayEventType_t
 RequestPause_t
-Requested max packet size before packets are 'split
 Requested size is too large to fit into size_t
 Required fields are not allowed in proto3
 Reserved numbers must be positive integers
@@ -2188,19 +2186,6 @@ SPAWN_GROUP_LOAD_ENTITIES_FROM_SAVE
 SPAWN_GROUP_LOAD_STREAMING_DATA
 SPAWN_GROUP_SYNCHRONOUS_SPAWN
 SSE and SSE2 are required
-STEAMAPPLIST_INTERFACE_VERSION001
-STEAMAPPS_INTERFACE_VERSION008
-STEAMHTMLSURFACE_INTERFACE_VERSION_005
-STEAMHTTP_INTERFACE_VERSION003
-STEAMINVENTORY_INTERFACE_V003
-STEAMMUSICREMOTE_INTERFACE_VERSION001
-STEAMMUSIC_INTERFACE_VERSION001
-STEAMPARENTALSETTINGS_INTERFACE_VERSION001
-STEAMREMOTESTORAGE_INTERFACE_VERSION016
-STEAMSCREENSHOTS_INTERFACE_VERSION003
-STEAMUGC_INTERFACE_VERSION018
-STEAMUSERSTATS_INTERFACE_VERSION012
-STEAMVIDEO_INTERFACE_V003
 STRING
 STRING_PIECE
 SVC_Messages
@@ -2212,7 +2197,6 @@ SchemaSystem_001
 SchemaTestExternal_One_001
 SchemaTestExternal_Two_001
 Second argument to Swap() (of type
-Sending %d byte message to %s on socket %s
 SerializedEntitiesVersion001
 ServerToolsInfo_001
 ServiceDescriptorProto
@@ -2229,8 +2213,8 @@ SetString
 SetUInt32
 SetUInt64
 Setting FS %s field %s to %s
-Setting max routable payload size from %d to %d for %s
-Shorthand for 'net_option FakePacketLag_Recv
+Shortcut to set both FakePacketLag_Recv and FakePacketLag_Send net options
+Shortcut to set both FakePacketLoss_Recv and FakePacketLoss_Send net options
 Should dedicated server listen for new-style P2P
 Should not reach here
 Show connectionless UDP traffic
@@ -2281,8 +2265,6 @@ SteamAPI_RegisterCallback
 SteamAPI_UnregisterCallResult
 SteamAPI_UnregisterCallback
 SteamAudio001
-SteamClient020
-SteamController008
 SteamDatagramClient_Init
 SteamDatagramClient_Init failed.  %s
 SteamDatagramClient_InitSteam failed.  %s
@@ -2295,20 +2277,14 @@ SteamDatagramServer_Kill
 SteamDatagram_Internal_SteamAPIKludge
 SteamDatagram_SetAppID
 SteamDatagram_SetUniverse
-SteamFriends017
 SteamGameServer014
 SteamGameServerNetworkingSockets_LibV12
-SteamGameServerStats001
 SteamGameServer_GetHSteamPipe
 SteamGameServer_GetHSteamUser
-SteamInput006
 SteamInternal_ContextInit
 SteamInternal_CreateInterface
 SteamInternal_FindOrCreateGameServerInterface
 SteamInternal_FindOrCreateUserInterface
-SteamMatchGameSearch001
-SteamMatchMaking009
-SteamMatchMakingServers002
 SteamNetSockets
 SteamNetworking006
 SteamNetworkingMessages002
@@ -2381,17 +2357,15 @@ ToolService_001
 Tried to copy from a message with a different type. to
 Tried to merge messages of different types
 Tried to register a non-generated type with the generated type registry
-Tried to send ad-hoc to address %s, but address is not in list of steam net connections
 Type appears to be in generated pool but wasn't
 Type is already registered
 U%08x
 UARARA
 UARARARAUAUARAUARAUARAUARASAp
-UASASASASB`eBp
-UASASB`AAUASASASASAp
+UASASASASB`XBp
+UASASASB`:AUASASASASAp
 UBUAUAp
 UDP -> %s: sz=%5i seq=%5i ack=%5i rel=%1i tm=%8.3f
-UDP -> %s: sz=%i OOB (%d
 UDP <- %s: sz=%5i seq=%5i ack=%5i rel=%1i tm=%8.3f
 UDP <- %s: sz=%i OOB (%d
 UNKNOWN
@@ -2414,7 +2388,6 @@ Unsupported: type mismatch
 Unwind_Resume
 Usage: net_captureculldata <file path
 Usage: net_option <setting> [<value
-Use network sockets layer even for listen server local player's packets (multiplayer only
 Using Valve ICE implementation
 UtlMemory_Alloc
 UtlMemory_CalcNewAllocationCount
@@ -2442,6 +2415,7 @@ VFileSystem017
 VMaterialSystem2_001
 VMediaFoundation001
 VOICEDATA_FORMAT_ENGINE
+VOICEDATA_FORMAT_OPUS
 VOICEDATA_FORMAT_STEAM
 VP4003
 VPhysics2_Handle_Interface_001
@@ -2453,7 +2427,7 @@ VScript
 VScriptDbg
 VScriptManager010
 VStringTokenSystem001
-VTfffff
+VXfffff
 V_DoubleToString_Unsafe
 V_Int32ToString_Unsafe
 V_Int64ToString_Unsafe
@@ -2809,10 +2783,9 @@ average metadata list is %f entries
 average non-zero list would be %f entries
 avg_data_in
 avg_data_out
-avg_latency_in
+avg_engine_latency_out
 avg_latency_local
 avg_latency_net
-avg_latency_out
 avg_latency_peer
 avg_loss_in
 avg_loss_out
@@ -2821,6 +2794,8 @@ avg_packet_loss
 avg_packet_out
 avg_packets_in
 avg_packets_out
+avg_ping_ms
+bXMcpXD
 backing paths
 baseline
 baseline_index
@@ -2840,13 +2815,11 @@ binary_blob
 bit %d - %d (%d bits/%d bytes
 bit_count
 bitcount=%d
-bool CFlattenedSerializer::Decode(const CFlattenedSerializerSpewVerbosity &, CSerializedEntity *, void *, int, NetworkSerializationMode_t, INetworkFieldChangedEventQueue *, FlattenedSerializersDecodeFlags_t, int) const
 bool CFlattenedSerializer::IsEqualSerializer(const CFlattenedSerializer *) const
-bool CFlattenedSerializer::MergeDeltas(const CFlattenedSerializerSpewVerbosity &, CSerializedEntity *, CSerializedEntity *, CSerializedEntity *, int, NetworkSerializationMode_t, PackedFieldPathVec_t *) const
 bool CFlattenedSerializer::WriteFieldList(const FlattenedSerializerHandle_t &, const CFlattenedSerializerSpewVerbosity &, bf_write &, CSerializedEntity *, int, NetworkSerializationMode_t, const PackedFieldPathVec_t *, CPlayerSlot) const
 bool CNetChan::ParseMessages(bf_read &, NetChannelBufType_t
 bool CNetChan::ProcessMessages
-bool CNetworkSerializer::InitField(NetworkFieldSerializerInfo_t *, int, NetworkValidationMode_t, const char *, const FieldMetaInfo_t &, int, CDataparserBuilder &, bool, INetworkSerializerBindingBuildFilter *, int) const
+bool CNetworkSystem::GetPacket(int, NetPacket_t
 both states
 boxed_type
 buftype
@@ -2986,6 +2959,7 @@ descriptor_t
 descriptors
 details
 determinH
+dev_padding
 dfffff
 dialog_type
 diff_encode_field
@@ -3020,6 +2994,7 @@ encode_flags
 encoder
 encoder(%s
 encoding_stats
+engine_latency_ms
 entity_data
 entity_index
 entityfiltername
@@ -3037,6 +3012,8 @@ eventsource
 exceeded maximum protobuf size of 2GB
 exclude
 excluding
+expected_long_tick
+expected_long_tick_reason
 extend .$0
 extendee
 extension
@@ -3079,6 +3056,7 @@ flags=%d
 flat_end
 float32
 float64
+float64 CQuantizedFloatEncoder::AssignRangeMultiplier(uint32, float64
 flow: in %.1f, out %.1f kB/s
 foo = value
 for field
@@ -3241,6 +3219,8 @@ has no value named
 has not been loaded
 has the same name as
 has_network_encoding_data
+has_pvs_vis_bits
+header_count
 hfffff
 high_value
 hltv_replay_flags
@@ -3308,7 +3288,6 @@ is_ambient
 is_background_map
 is_bot
 is_dedicated
-is_delta
 is_end
 is_extension
 is_headless
@@ -3322,7 +3301,6 @@ is_sentence
 is_transition
 ishltv
 jGetResourceManifest
-jXMcpXD
 java_generate_equals_and_hash
 java_generic_services
 java_multiple_files
@@ -3340,15 +3318,19 @@ lE9>s
 lHcW H
 la_symbol_ptr
 landmarkname
-last_cmd_number
-latency: %.1f, loss %.2f
+last_cmd_number_executed
+last_cmd_number_recv_delta
+last_cmd_recv_margin
+latency: net %.0f  engine %.0f  local %.0f  peer %.0f
 latency_seconds
 lazy = true] can only be specified for submessage fields
 leading_comments
 leading_detached_comments
+legacy_is_delta
 length_ >= n
 length_delimited
 leveltransition
+lffffff
 libnetworksystem.dylib
 libprotobuf %s %s:%d] %s
 listen
@@ -3359,6 +3341,9 @@ localnamefixup
 location
 loopback:%d
 loopback_t CUtlMemoryPool
+loss: in %.1f%%, out %.1f
+loss_in
+loss_out
 low_priority
 low_value
 m$`< uMH
@@ -3416,6 +3401,7 @@ msg_data
 msg_type
 must be unique within
 n9W$|iH
+nBits != 32
 nDE;nHu
 nIndex != m_priorityToOrderMap.InvalidIndex
 nPriority != NETWORK_FIELD_CHANGE_DEFAULT_PRIORITY
@@ -3445,6 +3431,9 @@ net_connections_stats
 net_culloptimization
 net_detailed_canpacket_log
 net_fakelag
+net_fakelag = %dms  (net_option FakePacketLag_Send = %dms, net_option FakePacketLag_Recv = %dms
+net_fakeloss
+net_fakeloss = %g%%  (net_option FakePacketLoss_Send = %g%%, net_option FakePacketLoss_Recv = %g
 net_filelogging
 net_fs_showindirections
 net_listallmessages
@@ -3452,7 +3441,6 @@ net_log_processing
 net_max_message_process_count
 net_max_message_queue_size
 net_max_polymorphic_spew
-net_maxroutable
 net_messageinfo
 net_messageinfo %s
 net_no_parallel_build
@@ -3477,8 +3465,8 @@ net_spewcounts
 net_spewserializer
 net_status
 net_table_name
+net_use_delta_property_fastpath
 net_use_packet_compression
-net_usesocketsforloopback
 net_validatemessages
 net_validatemessages = %d
 net_why_field_excluded
@@ -3505,14 +3493,14 @@ next state only
 nfffff
 nl_symbol_ptr
 no CSerializedEntity memory being used
-no context
 no failure reason set
 no fastpath
 no metadata
 no_standard_descriptor_accessor
 no_steam_server
-nodns
 non-parallel
+non_transmitted_entities
+non_transmitted_entities_t
 normal
 noscale
 not found
@@ -3528,6 +3516,7 @@ num_clients
 num_commands
 num_elements
 num_entries
+num_packets
 num_server_players
 num_spectators
 num_tv_relays
@@ -3540,8 +3529,6 @@ oneof_index
 online: %.3f seconds
 opaque
 operator
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/common/protobuf_helpers.cpp
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/mathlib/mathlib.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/networksystem/buildhierarchystruct.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/networksystem/dt_instrumentation.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/networksystem/flattenedserializer.cpp
@@ -3552,8 +3539,6 @@ opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/networksystem/networkm
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/networksystem/networkserializer.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/networksystem/networksystem.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/networksystem/verbosespewbuilder.cpp
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/schemalib/schemaclassinfo.cpp
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/tier0_perproject/singletons.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/tier2/fieldpathpacker.cpp
 optimize_for
 option json_name is not allowed on extension fields
@@ -3574,18 +3559,20 @@ output_type
 override_operator_name
 p p p(p p
 p p8p0p
+p(p p(p
 p/ugH
 p8SBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp@p
 pDfff
 pEnd > *pStart
 pFSField
-pPp(pXp
+pXp(pXp
 p[A\A^A
 p`p``p`ppp
 package
 packed
 packed = true] can only be specified for repeated primitive fields
 packet_loss_pct
+packet_offsets
 packet_status
 packets: in %.1f/s, out %.1f/s
 parallel
@@ -3607,7 +3594,6 @@ php_generic_services
 php_metadata_namespace
 php_namespace
 ping_avg_ms
-ping_stddev_ms
 placeholder.proto
 player_index
 player_slot
@@ -3633,8 +3619,7 @@ positive_int_value
 possible match: %s.%s
 posttoserver
 pp`pp`p
-ppp``pp
-pppp```pp
+pppp``pp
 prediction_errors
 prediction_sync
 previous only
@@ -3662,7 +3647,9 @@ pthread_mutexattr_settype
 ptr to %s [%u
 public/networksystem/serializedentity.h
 public/tier0/eventdispatcher.h
+public/tier0/quantizedfloatencoder.h
 public/tier0/tslist.h
+public/tier0/utldict.h
 public/tier0/utlrbtree.h
 public/tier0/utlsignalslot.h
 public/tier0/utlsortvector.h
@@ -3670,7 +3657,6 @@ public/tier0/utlsymboltable.h
 public/tier0/utltshash.h
 public_dependency
 py_generic_services
-p}?fff
 qangle
 qangle_pitch_yaw
 qangle_precise
@@ -3720,8 +3706,6 @@ s %s preserve field %i %s at offset %u, removing from ignore list
 s %s:  [%d] %s queue %s [type %s] %son 0x%p [alloc %u] [order %d] %s
 s %s:  [%d] %s queue %s [type %s] 0x%p %s
 s '%s':  encoding mismatched %d vs. %d bits
-s (%s) SendMessage reliable failed with EResult: %d, bytes written %d
-s (%s) SendMessage unreliable failed with EResult: %d, bytes written %d
 s + % 4d classes
 s - Argument expected (message ID or name
 s - Invalid net message index: %d
@@ -3730,6 +3714,7 @@ s -> %s
 s -> %s::%s is marked for networking but is not a CNetworkVar
 s : %s = '%s
 s Gathering field offsets in %s
+s SendMessages %s failed with EResult %d
 s [%u
 s allocation count overflow
 s allocation count overflow( %llu > %llu
@@ -3740,6 +3725,7 @@ s encoding as %d bits
 s had %d different permutations
 s has MNetworkBitCount (or other float field tags) but is type cat '%s' (type %s
 s has duplicate fields
+s has flag %s
 s rebuild %s::%s at %u
 s ~	H
 s!fake
@@ -3754,16 +3740,15 @@ s0x%p %s Initializing
 s1_mapname
 s:  %d : %s bits %d to %d [%d bits] : %s
 s:  %s
-s:  %s timing out, last received %f [%.2f seconds ago
 s:  (%d bits/%d bytes
 s:  CNetChan::Transmit( %s ) while suppressing transmit
-s:  CNetChan::TransmitSNP(%s) SinceLastSend=%.1fs, Sent=%d, pending R/U=%d/%d, queueTime=%.1fms
-s:  NetChan QoS flow %s: %4dms latency, %5d/%5d dropped (%.1f
+s:  CNetChan::Transmit(%s) SinceLastSend=%.1fs, Sent=%d, pending R/U=%d/%d, queueTime=%.1fms
+s:  NetChan QoS flow %s: %4dms engine latency, %5d/%5d dropped (%.1f
 s:  NetChan Setting Timeout to %4.2f seconds
 s:  couldn't find serializer %s in %s
 s:  encodeded data mismatched %d bits
 s:  encoding mismatched %d vs. %d bits
-s:  high packet loss detected flow %s: %4dms latency, %5d/%5d dropped (%.1f
+s:  high packet loss detected flow %s: %4dms engine latency, %5d/%5d dropped (%.1f
 s:  in serializer '%s' couldn't find field %s::%s, possibly already marked MNetworkExclude
 s:  metadata( %d: '% -10s' %s = %u
 s:  specified different usergroup proxy functions for '%s
@@ -3773,24 +3758,29 @@ s: !CanPacket() - m_bSuppressingTransmit
 s: %s
 s: Invalid capacity %u
 s: Invalid grow amount %d
-s: SendMessage reliable failed with k_EResultLimitExceeded, crashing connection
-s: SendMessage unreliable failed with k_EResultLimitExceeded, crashing connection
+s: SendMessage %s failed with k_EResultLimitExceeded, crashing connection
+s: SendMessage reliable failed AllocateMessage (%d
+s: SendMessage unreliable failed AllocateMessage (%d
 s: Unsupported raw allocator type %u
 s: field %s has MNetworkSendProxyRecipientsFilter but is not declared using CNetworkVarEmbeddedNotFlattened
 s: field %s has MNetworkSendProxyRecipientsFilter but type '%s' is not declared DECLARE_EMBEDDED_NETWORKVAR_NOTFLATTENED
 s: rebasing delegate [ 0x%p -> 0x%p
 s: recreation removing deallocation
 s: shrinking removes delegate [0x%p
+s: timing out, last received %f [%.2f seconds ago
+s::%s has more than one MNetworkChangeCallback that requires passing network value into handler, this is unsupported
 s::%s was in the original serializer at offset %u but that offset isn't in the ignore list
 s::%s:%u (%s ) already encountered at %s::%s:%u (%s
 s:Dropped %i packets at %i
-s<E9>u7H
+s=E9>u8L
 s@H+s8H
 sApplying %s
 sCull fields for %s
 sCulled %s::%s
 sPK9L& uvO
 sProcess includes/excludes %s %s [%d fields
+s] Calculated recv margin is %lld usec, which is suspicious, discarding
+s] setting extremely high timeout
 sample_rate
 savegamefilename
 savegamename
@@ -3840,7 +3830,6 @@ sincluding %s::%s to ensure entire chain to field
 sint32
 sint64
 size too big
-skipping MatchToSerializerByMeta for %s
 sky_name
 slowdown_length
 slowdown_rate
@@ -3866,7 +3855,6 @@ stack frames not accounted for stack unwind
 stack_chk_fail
 stack_chk_guard
 starved_command_ticks
-static void CProtobufLogHandler::LogHandler(google::protobuf::LogLevel, const char *, int, const std::string
 status_code
 stderrp
 steam_id
@@ -3941,15 +3929,15 @@ t	L9+u
 t	L93u
 t ffff
 t fffff
+t!HcNH
 t!fff
 t"M9,$tZI
-t"fffff
-t#HcNH
 t#I;8t
 t#IcN
 t#IcN8
 t#fff
 t$ H;5
+t$4A;L$0H
 t$G~1A
 t$HcK
 t$IcN
@@ -3957,15 +3945,11 @@ t$IcN0
 t$IcN8
 t$IcNH
 t$IcO
-t$fff
 t$ffff
-t%ffff
 t&fffff
-t&ffffff
 t'fff
+t'ffffff
 t(ffff
-t+fffff
-t,HcN0
 t,fff
 t-E#H\L
 t-ffff
@@ -3985,9 +3969,9 @@ tDfff
 tDffffff
 tEfff
 tEffff
+tFffff
 tFfffff
-tGfff
-tGffffff
+tGfffff
 tOfC9|3
 tPffff
 tRI96vs
@@ -3995,8 +3979,8 @@ tUI96vvH
 tUI96vvHcC
 t[I96
 t^I96
-t_IcD$HI
 t`</uOH
+t`IcEHI
 table_id
 target struct
 target_entity
@@ -4041,9 +4025,9 @@ u serializers with %u fields (approx memory %llu / %llu in fields ) bytes (field
 u(fffff
 u8IcE0M
 u<fffff
-uJfff
 uLA;uP
 uMffff
+uRIcE0H
 uVHct
 ubHct
 uint16
@@ -4051,7 +4035,6 @@ uint32
 uint64
 uint64s
 uint8 CNetworkMessages::FindOrCreateGroupId(const char
-unable to find polymorphic type %s in %s, no likely matches found
 unable to match %s::%s (type %s) in %s, no likely matches found
 uncompressed_sample_offset
 uncompressed_size
@@ -4103,6 +4086,7 @@ valveextensions.proto
 var_encoder_sym
 var_name
 var_name_sym
+var_serializer_sym
 var_type_sym
 varint
 vector
@@ -4113,7 +4097,6 @@ vectors
 version
 view_offset
 virtual NetMessageHandle_t CNetworkMessages::FindOrCreateNetMessage(int, const IProtobufBinding *, uint32, INetworkSerializerBindingBuildFilter *, bool, bool
-virtual bool CNetworkFieldChangedEventQueue::QueueChange(int, const CFieldPath &, const char *, void *, void *, void *&, int, NetworkFieldChangedDelegateType_t, CUtlAbstractDelegate, int, const INetworkFieldChangedEventQueue::ChangeQueueArrayContext_t
 virtual bool CNetworkFieldChangedEventQueue::QueueReplayCompatFieldChange(int, const CFieldPath &, const char *, void *, void *, int, CUtlAbstractDelegate, NetworkReplayCompatFieldFlags_t, const ReplayChangeEntry_t
 virtual int CNetworkMessages::ComputeOrderForPriority(int) const
 virtual void CNetworkMessages::RegisterFieldChangeCallbackPriority(int
@@ -4123,29 +4106,24 @@ virtual void CNetworkMessages::RegisterNetworkFieldSerializer(const char *, Netw
 virtual void CNetworkSystem::InitGameServer
 virtual void CNetworkSystem::InitSteamNetworking
 voice_data
-void AddFieldPathAndOffset(const CFlattenedSerializer *, int, PackedFieldPathVec_t *, CUtlVector<uint32> *, PackedFieldPath_t, uint32
+voice_level
 void CDecodeStack::Push(void *, int, int, const CFieldPath &, const FlattenedSerializerField_t *, const NetworkFieldSerializerInfo_t *, const CFlattenedSerializer *, uint8 *, int, NetworkSerializationMode_t, bool, INetworkFieldChangedEventQueue *, int, bool
-void CFlattenedSerializer::BuildHierarchy_IterateFields(const CUtlString &, int, CFieldPath &, CSendNode *, const CNetworkSerializer *, CUtlVector<FlattenedSerializerField_t> &, CUtlVector<CFlattenedSerializer *> &, CBuildHierarchyStruct *, CUtlVector<CFlattenedSerializer::FlattenedHierarchyProp_t> &, FieldOffsetType_t, PropProxyIndex_t
 void CFlattenedSerializer::BuildHierarchy_R(const CUtlString &, int, CFieldPath &, CSendNode *, const CNetworkSerializer *, CUtlVector<FlattenedSerializerField_t> &, CUtlVector<CFlattenedSerializer *> &, CBuildHierarchyStruct *, FieldOffsetType_t, PropProxyIndex_t
-void CFlattenedSerializer::GatherAllFieldOffsets_R(int, OffsetIgnore_t *, uint32
-void CFlattenedSerializer::SkipPropData_(FSSpewContext_t &, const CFieldPath &, SkipPropDataParams_t &, const GetFieldByPathResult_t &) const
 void CMergedEntityOffsetBuilder::AddToTail(uint32
 void CNetworkMessages::ConfirmAllMessageHandlersInstalled(const char *, int, CUtlVector<NetMessageHandle_t
 void CNetworkSerializer::AssignSharedChangeCallbackIndex(CUtlVector<CNetworkSerializer::ChangeCallbackInfo_t> &, int, NetworkFieldSerializerInfo_t
-void CSchemaClassInfo::ReportClassError(const char *) const
 void CSendNode::SetRecursiveProxyIndices_R(const char *, uint16
 void CSerializedEntityFieldIterator::GetBitRange(int32 *, int32 *) const
 void CUtlLeanVectorFixedGrowableBase<CEncodeSerializerStack, 6>::EnsureCapacity(int, bool) [T = CEncodeSerializerStack, N = 6, I = short
 void CUtlLeanVectorFixedGrowableBase<CFieldPath::Path_t, 6>::EnsureCapacity(int, bool) [T = CFieldPath::Path_t, N = 6, I = short
 void CUtlLeanVectorFixedGrowableBase<CFieldPathReconstruct_t, 3>::EnsureCapacity(int, bool) [T = CFieldPathReconstruct_t, N = 3, I = short
+void CUtlLeanVectorFixedGrowableBase<const ChangeCallback_t *, 2>::EnsureCapacity(int, bool) [T = const ChangeCallback_t *, N = 2, I = short
 void CUtlLeanVectorFixedGrowableBase<std::pair<const CFlattenedSerializer *, const void *>, 6>::EnsureCapacity(int, bool) [T = std::pair<const CFlattenedSerializer *, const void *>, N = 6, I = short
 void CUtlLeanVectorFixedGrowableBase<unsigned int, 3>::EnsureCapacity(int, bool) [T = unsigned int, N = 3, I = short
 void CUtlMemory_RawAllocator<CUtlHashtableEntry<unsigned int>>::EnsureCapacity(int) [T = CUtlHashtableEntry<unsigned int
 void CUtlMemory_RawAllocator<CUtlHashtableEntry<unsigned int>>::SetRawAllocatorType(RawAllocatorType_t) [T = CUtlHashtableEntry<unsigned int
 void CUtlMemory_RawAllocator<unsigned int>::EnsureCapacity(int) [T = unsigned int
 void CUtlMemory_RawAllocator<unsigned int>::Grow(int) [T = unsigned int
-void ConnectInterfaceSingletons(CreateInterfaceFn *, int
-void MathLib_Init
 volume
 vpIcVhH
 vsnprintf
@@ -4168,10 +4146,9 @@ worldname
 wpfffff
 writing (in %s
 wrong submessage type
-wxH;5
 x (int:%d, float:%f
 x%A;Gh
-x&D95G
+x&D95W
 x8HcN H
 x@HcV$H
 xA;^|tII
@@ -4182,5 +4159,4 @@ xPHcV,H
 x[A\A]A^A
 x[A^A
 y/fffff
-yffffff
 you_hear_them

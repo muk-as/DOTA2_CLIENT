@@ -1,4 +1,4 @@
-/* Prettified by Source 2 Viewer 6.0.0.0 - https://valveresourceformat.github.io */
+/* Prettified by Source 2 Viewer 8.0.0.0 - https://valveresourceformat.github.io */
 
 @define fullPreviewTransitionDuration: 1s;
 @define openTreasureRotationSpeed: 40.0;
@@ -70,7 +70,7 @@ DOTATreasureDetailsPage
 #TreasureDetails
 {
 	flow-children: down;
-	margin-right: 100px;
+	margin-right: 60px;
 	margin-top: 20px;
 	horizontal-align: right;
 	visibility: collapse;
@@ -115,9 +115,28 @@ DOTATreasureDetailsPage
 
 #TreasureImage
 {
-	width: 86px;
+	width: 100px;
 	height: width-percentage( 65% );
 	tooltip-position: left;
+}
+
+#TreasureModelContainer
+{
+	visibility: collapse;
+	width: 110px;
+	height: 72px;
+	overflow: noclip;
+	background-size: cover;
+}
+
+#TreasureModelContainer .TreasureModelSmall
+{
+	width: 300px;
+	height: 120px;
+	horizontal-align: center;
+	vertical-align: center;
+	overflow: noclip;
+	margin-top: 2px;
 }
 
 .GrantButton
@@ -151,9 +170,16 @@ DOTATreasureDetailsPage
 	margin-bottom: 1px;
 }
 
+.TreasureGrantActions
+{
+	flow-children: right;
+	margin-top: 8px;
+}
+
 #TreasureGrantButton,#KeyGrantButton
 {
 	visibility: collapse;
+	margin-right: 4px;
 }
 
 .MainBranch #TreasureGrantButton
@@ -169,18 +195,21 @@ DOTATreasureDetailsPage
 #TreasureIdentity
 {
 	flow-children: down;
+	width: fill-parent-flow( 1 );
 }
 
 #TreasureName
 {
 	margin-right: 5px;
 	font-size: 28px;
-	line-height: 28px;
-	margin-top: -6px;
-	font-weight: bold;
-	color: white;
-	text-transform: uppercase;
-	width: 340px;
+	line-height: 130%;
+	margin-top: -2px;
+	color: gradient( linear, 0% 0%, 0% 100%, from( white ), to( LightestGrey ) );
+	opacity: 0.8;
+	text-shadow: 0px 2px 12px rgba(0, 0, 0, 0.6);
+	font-family: titleFont;
+	width: 100%;
+	letter-spacing: -0.4px;
 }
 
 .TreasureSeasonBar
@@ -1427,7 +1456,7 @@ DOTATreasureDetailsPage.FullPreviewMode:not(.CanHaveDuplicates) #TreasureContent
 	saturation: .6;
 	transform: scale3d( 0.7, 0.7, 1.0 );
 	blur: gaussian( 3 );
-	transition-property: position, transform, brightness, opacity, saturation, blur, pre-transform-scale2d;
+	transition-property: transform, position, brightness, opacity, saturation, blur, pre-transform-scale2d;
 	transition-duration: 0.35s;
 }
 
@@ -2670,7 +2699,7 @@ DOTATreasureDetailsPage.FullPreviewMode #TreasureContents .TreasureItem:hover
 
 #TreasureOpeningResultArmoryItem
 {
-	width: 350px;
+	width: fill-parent-flow(1);
 }
 
 #TreasureOpeningBottom
@@ -2940,7 +2969,7 @@ DOTATreasureDetailsPage.FullPreviewMode #TreasureContents .TreasureItem:hover
 
 #TreasureRecycling
 {
-	background-color: #0006;
+	background-color: #000000aa;
 	margin-top: 15px;
 	margin-left: 20px;
 	flow-children: down;
@@ -3148,6 +3177,7 @@ DOTATreasureDetailsPage.FullPreviewMode #TreasureContents .TreasureItem:hover
 	transform: translateY( -4px );
 	vertical-align: center;
 	horizontal-align: left;
+	width: fill-parent-flow(1.0);
 }
 
 #RecyclingPunchCard .StampPanel:selected
@@ -3373,7 +3403,7 @@ DOTATreasureDetailsPage.FullPreviewMode #TreasureContents .TreasureItem:hover
 DOTAPunchCard .StampPanel
 {
 	background-image: url("s2r://panorama/images/punch_card/punch_card_arrow_smelting_pip_off_psd.vtex");
-	width: 75px;
+	width: fill-parent-flow(1.0);
 	height: 62.25px;
 	margin-left: -37.5px;
 }
@@ -3541,31 +3571,6 @@ DOTAPunchCard .StampPanel:selected
 	opacity: .5;
 }
 
-.DashboardPage.PageVisible.treasure_itemdef_22069 .TreasureDetailsBackground
-{
-	height: 100%;
-	background-image: url("s2r://panorama/images/compendium/international2020/compendium/compendium_bg_psd.vtex");
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: 25% 0%;
-	horizontal-align: center;
-	transform-origin: 0 0;
-	transition-property: transform, opacity, blur;
-	transition-duration: .86s;
-	transition-timing-function: ease-in;
-	visibility: visible;
-}
-
-.DashboardPage.PageVisible.FullPreviewMode .TreasureDetailsBackground
-{
-	blur: gaussian(0px);
-}
-
-.DashboardPage.PageVisible:not(.FullPreviewMode) .TreasureDetailsBackground
-{
-	blur: gaussian(3px);
-}
-
 .CompendiumBGParticles
 {
 	height: 150px;
@@ -3671,6 +3676,11 @@ DOTAPunchCard .StampPanel:selected
 	background-image: url("s2r://panorama/images/dpc/dpc_logo_color.vsvg");
 }
 
+#TopRightGodRays
+{
+	visibility: collapse;
+}
+
 .treasure_itemdef_27048 .TreasureItemInfoLabels,.treasure_itemdef_29300 .TreasureItemInfoLabels
 {
 	min-height: 250px;
@@ -3708,21 +3718,6 @@ DOTAPunchCard .StampPanel:selected
 	visibility: collapse;
 }
 
-#TopRightGodRays
-{
-	visibility: collapse;
-	transform: translateY(-90px) translateX(0px);
-	horizontal-align: center;
-	width: 100%;
-	height: 100%;
-	transform: rotateZ( 45deg ) translate3d( 320px, -120px, 0px ) scale3d(1.2, 1.2, 1.2);
-	opacity-mask: url("s2r://panorama/images/masks/preview_rays_mask_psd.vtex");
-	hue-rotation: 30deg;
-	transition-property: opacity;
-	transition-duration: 0.6s;
-	opacity: 1;
-}
-
 .treasure_itemdef_29300 #TreasureContents
 {
 	transform-origin: 1% 95%;
@@ -3754,6 +3749,16 @@ DOTAPunchCard .StampPanel:selected
 .treasure_itemdef_29300 #TopRightGodRays,.treasure_itemdef_27048 #TopRightGodRays
 {
 	visibility: visible;
+	transform: translateY(-90px) translateX(0px);
+	horizontal-align: center;
+	width: 100%;
+	height: 100%;
+	transform: rotateZ( 45deg ) translate3d( 320px, -120px, 0px ) scale3d(1.2, 1.2, 1.2);
+	opacity-mask: url("s2r://panorama/images/masks/preview_rays_mask_psd.vtex");
+	hue-rotation: 30deg;
+	transition-property: opacity;
+	transition-duration: 0.6s;
+	opacity: 1;
 }
 
 .treasure_itemdef_29300 #TreasureExtraInfo,.treasure_itemdef_27048 #TreasureExtraInfo
@@ -3898,5 +3903,143 @@ DOTAPunchCard .StampPanel:selected
 .treasure_itemdef_29300 .TreasureItem #TreasureItemHitTarget,.treasure_itemdef_27048 .TreasureItem #TreasureItemHitTarget
 {
 	tooltip-position: top;
+}
+
+.FullPreviewMode.treasure_itemdef_27046 .TreasureDetailsBackground
+{
+	blur: gaussian( 0px );
+	transform: none;
+}
+
+.treasure_itemdef_27046 #TopRightGodRays
+{
+	visibility: visible;
+	horizontal-align: center;
+	width: 100%;
+	height: 100%;
+	transform: rotateZ( -45deg ) translate3d( -300px, -320px, 0px ) scale3d( 1.1, 1.1, 1 );
+	opacity-mask: url("s2r://panorama/images/masks/preview_rays_mask_psd.vtex");
+	hue-rotation: 15deg;
+	saturation: 0.6;
+	brightness: 0.8;
+	-s2-mix-blend-mode: screen;
+	transition-property: opacity;
+	transition-duration: 0.5s;
+}
+
+.treasure_itemdef_27046 .CompendiumLogoContainer,.treasure_itemdef_27046 .CompendiumBGParticles,.treasure_itemdef_27046 .TreasureSeasonBar
+{
+	visibility: collapse;
+}
+
+.treasure_itemdef_27046 .BottomGradient
+{
+	visibility: collapse;
+}
+
+.treasure_itemdef_27046 #TreasureExtraInfo
+{
+	margin: 0px;
+	width: 100%;
+}
+
+.treasure_itemdef_27046 .TreasureDetailsBackground
+{
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #320F15 ), to( #000000 ) );
+	background-image: url("s2r://panorama/images/events/newbloom/2024/newbloom2024_treasure_background_png.vtex");
+	background-size: cover;
+	visibility: visible;
+	transition-property: blur, transform;
+	transition-duration: 0.8s;
+	transition-timing-function: ease;
+	blur: gaussian( 6px );
+	transform: scale3d( 1.05, 1.05, 1 ) translateY( -8px );
+	transition-timing-function: cubic-bezier(1,0,0,1);
+}
+
+.treasure_itemdef_27046 #TreasureDetails #TreasureHelp
+{
+	background-color: none;
+	margin-top: -8px;
+	transition-property: background-color;
+	transition-duration: 0.1s;
+}
+
+.treasure_itemdef_27046 #TreasureDetails #TreasureHelp #TreasureHelpIcon
+{
+	margin-left: 0px;
+	margin-right: 8px;
+	width: 20px;
+	height: 20px;
+	wash-color: Grey;
+}
+
+.treasure_itemdef_27046 #TreasureDetails #TreasureHelp #TreasureHelpHeader
+{
+	text-transform: none;
+}
+
+.treasure_itemdef_27046 #TreasureDetails #TreasureHelp:hover
+{
+	background-color: rgba(0, 0, 0, 0.9);
+}
+
+.treasure_itemdef_27046 #OwnedTreasures
+{
+	box-shadow: 0px 8px 48px -4px rgba(0, 0, 0, 0.4);
+}
+
+.treasure_itemdef_27046 .SmokeFX
+{
+	visibility: visible;
+}
+
+.treasure_itemdef_27046 #TreasureModelContainer
+{
+	background-image: url("s2r://panorama/images/events/newbloom/2024/treasure_icon_bacbkground_png.vtex");
+}
+
+.treasure_itemdef_27046 #TreasureModelContainer #NewBloomTreasureModel
+{
+	visibility: visible;
+}
+
+.treasure_itemdef_27046 #TreasureContentsContainer
+{
+	opacity-mask: url("s2r://panorama/images/masks/80_20_psd.vtex");
+	opacity-mask-position: 0% -10%;
+}
+
+.FullPreviewMode.treasure_itemdef_27046 #TreasureContentsContainer
+{
+	opacity-mask-position: 0% 0%;
+}
+
+.treasure_itemdef_27046 DOTATreasureDetailsPage.FullPreviewMode #TreasureContents .TreasureItem,.treasure_itemdef_27046 #TreasureContents .TreasureItem.Focused
+{
+	transform: translateY( -0px ) translateX(0px) scale3d(1.16, 1.16, 1);
+}
+
+.SmokeFX
+{
+	width: 100%;
+	height: 100%;
+	horizontal-align: center;
+	vertical-align: bottom;
+	wash-color: rgb(72, 54, 66);
+	opacity-mask: url("s2r://panorama/images/masks/hero_model_preview_mask_loadout_psd.vtex");
+	margin-top: 120px;
+	opacity: 0.5;
+	transition-property: opacity;
+	transition-duration: 0.3s;
+	transition-delay: 0s;
+	visibility: collapse;
+}
+
+.FullPreviewMode .SmokeFX
+{
+	opacity: 0;
+	transition-duration: 1s;
+	transition-delay: 1s;
 }
 

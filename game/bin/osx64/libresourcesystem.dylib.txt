@@ -68,7 +68,6 @@
 39CExampleSchemaVData_PolymorphicDerivedB
 4$fff
 4fffff
-4瀉5逊5
 5&YA1A
 5,¸YBi
 5,¸YH
@@ -81,11 +80,10 @@
 7ffffff
 8[A\A]A^A
 8[A^A
-8ffffff
 AABB_t
 APPSYSTEM: In ConnectInterfaces(), s_nRegistrationCount is %d
 ARARARAp
-AUASASCRAp
+AUASASBRAp
 AUASAp
 AWAVATS
 AWAVATS9w0}9A
@@ -114,9 +112,7 @@ AWAVSPM
 A\A]A^A
 A\A]A^A_]ËC E1
 A\A^A
-Affffff
 AlignedByteArray not properly aligned
-Allowing insert of dupe without explicit dupe insertion. Fix code callpoint to allow dupes
 An attempt was made to create a resource manifest with debug name "%s" while the resource system was shutting down
 AnimGraphEditorUtils001
 AnimationSystemUtils_001
@@ -185,6 +181,7 @@ C`L9(t+I
 Cannot allocate abstract class
 Cannot deduce for class
 Cast of %s loses value information (returning %s
+Class does not allow allocation from its schema binding
 ClientToolsInfo_001
 CmdLinkAH
 CommandLine
@@ -215,6 +212,7 @@ Encountered nonexistent %s: %016llX (file "%s
 EngineServiceMgr001
 Error initializing resource manager for resource type "%lld
 Error loading resource "%s" (Invalid header version: %d != %d
+Error loading resource "%s" file size %d > allocated buffer size %d
 Error loading resource manifest "%s" (No DATA block
 FAIL ] - Manifest contains an illegal resource name "%s
 FATAL ERROR: %s resource '%s' (%016llX) is the wrong resource type! (This is likely caused by a hash collision between the strings '%s' and '%s
@@ -243,6 +241,7 @@ FIELD_ENGINE_TIME
 FIELD_FLOAT32
 FIELD_FLOAT64
 FIELD_FUNCTION
+FIELD_GLOBALSYMBOL
 FIELD_HMATERIAL
 FIELD_HMODEL
 FIELD_HPARTICLESYSTEMDEFINITION
@@ -316,6 +315,7 @@ FlattenedSerializersVersion001
 FontManager_001
 Forcing all resource loads to fail: "%s
 Forgot to remove resource type manager for type %s
+Found existing value when inserting into tree - replacing existing value with new value. If this is intended behavior, use InsertOrReplace. If leaving existing values alone is intended, use InsertIfNotFound. If duplicate entries are intended, use InsertWithDupes
 FourQuaternions
 FunctionInfo_t
 FuseFunctionIndex_t
@@ -359,9 +359,11 @@ HammerMapLoader001
 HcK<I9
 HelpSystem_001
 HostStateMgr001
-I CUtlRBTree<CUtlMap<KV3MetatextType_t, CBufferString, int, CDefLess<KV3MetatextType_t>>::Node_t, int, CUtlMap<KV3MetatextType_t, CBufferString, int, CDefLess<KV3MetatextType_t>>::CKeyLess>::Insert(T &&, ERBTreeInsertBehavior) [T = CUtlMap<KV3MetatextType_t, CBufferString, int, CDefLess<KV3MetatextType_t>>::Node_t, I = int, L = CUtlMap<KV3MetatextType_t, CBufferString, int, CDefLess<KV3MetatextType_t>>::CKeyLess, M = CUtlMemory<UtlRBTreeNode_t<CUtlMap<KV3MetatextType_t, CBufferString, int, CDefLess<KV3MetatextType_t>>::Node_t, int
+I CUtlRBTree<CUtlMapBase<KV3MetatextType_t, CBufferString, int, CDefLess<KV3MetatextType_t>>::Node_t, int, CUtlMapBase<KV3MetatextType_t, CBufferString, int, CDefLess<KV3MetatextType_t>>::CKeyLess>::Insert(T &&) [T = CUtlMapBase<KV3MetatextType_t, CBufferString, int, CDefLess<KV3MetatextType_t>>::Node_t, I = int, L = CUtlMapBase<KV3MetatextType_t, CBufferString, int, CDefLess<KV3MetatextType_t>>::CKeyLess, M = CUtlMemory<UtlRBTreeNode_t<CUtlMapBase<KV3MetatextType_t, CBufferString, int, CDefLess<KV3MetatextType_t>>::Node_t, int
 I9T<Hu
 I9t<Pu
+IKV3TransferInterface_ResourceLoad
+IKV3TransferInterface_UtlSymbolLarge
 INSt3__117bad_function_callE
 INVALID
 IPulseSystem_001
@@ -381,10 +383,13 @@ InfoForResourceTypeCDOTANovelsList
 InfoForResourceTypeCDOTAPatchNotesList
 InfoForResourceTypeCDotaItemDefinitionResource
 InfoForResourceTypeCEntityLump
+InfoForResourceTypeCGcExportableExternalData
 InfoForResourceTypeCJavaScriptResource
 InfoForResourceTypeCModel
 InfoForResourceTypeCMorphSetData
 InfoForResourceTypeCNmClip
+InfoForResourceTypeCNmGraph
+InfoForResourceTypeCNmGraphDataSet
 InfoForResourceTypeCNmSkeleton
 InfoForResourceTypeCPanoramaDynamicImages
 InfoForResourceTypeCPanoramaLayout
@@ -403,6 +408,7 @@ InfoForResourceTypeCVMixListResource
 InfoForResourceTypeCVPhysXSurfacePropertiesList
 InfoForResourceTypeCVSoundEventScriptList
 InfoForResourceTypeCVSoundStackScriptList
+InfoForResourceTypeCVoiceContainerBase
 InfoForResourceTypeCVoxelVisibility
 InfoForResourceTypeCWorldNode
 InfoForResourceTypeIAnimGraphModelBinding
@@ -414,7 +420,6 @@ InfoForResourceTypeIVectorGraphic
 InfoForResourceTypeManifestTestResource_t
 InfoForResourceTypeProceduralTestResource_t
 InfoForResourceTypeTestResource_t
-InfoForResourceTypeVSound_t
 InfoForResourceTypeWorld_t
 InputService_001
 InputStackSystemVersion001
@@ -459,7 +464,7 @@ MeshUtils001
 ModelDocUtils001
 N25CAsyncResourceDataRequest23CAsyncProcessDataThreadE
 NSt3__110__function6__baseIFvP18IAsyncReadRequest220AsyncRequestStatus_tEEE
-NSt3__110__function6__funcIZN25CAsyncResourceDataRequest15InitForFileReadEPK21ResourceBindingBase_tb30ResourceManifestLoadPriority_tbPKcE3$_0NS_9allocatorIS9_EEFvP18IAsyncReadRequest220AsyncRequestStatus_tEEE
+NSt3__110__function6__funcIZN25CAsyncResourceDataRequest15InitForFileReadEPK21ResourceBindingBase_t30ResourceManifestLoadPriority_tbPKcE3$_0NS_9allocatorIS9_EEFvP18IAsyncReadRequest220AsyncRequestStatus_tEEE
 NSt3__117bad_function_callE
 NavGameTest001
 NetworkClientService_001
@@ -475,7 +480,8 @@ OPH;ZP
 OnAsyncProcessResourceData
 Only wrote %d (of %d) values when saving map
 Ordered constructor wrapped type has no default constructor
-P0 @@pp@@0
+P0 @@pp@@0p
+P@P0000@P@P0000
 PH;xP
 PPH;QP
 P[A\A^A
@@ -493,7 +499,6 @@ Plat_IsInDebugSession
 Plat_MicroSecTickDiff
 Plat_NonFatalErrorFunc
 Plat_RelativeTicks
-Plat_ShouldCollectMiniDumpsForFatalErrors
 Plat_TickDiffMilliSec
 Plat_TickDiffMilliSecF
 Plat_TickDiffSecF
@@ -507,8 +512,8 @@ RARAZBVBUAXAVAp
 RASARAp
 RASBp p
 RATBSAZBSC
-RAWBRA`_AVAYAXASBZAp
-RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RARAp
+RAWBRA`aAVAYAXASBZAp
+RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RARBp
 READ_ONLY
 RESOURCE LOADING STATS
 RESOURCE STREAMING STATS
@@ -674,7 +679,7 @@ WARNING: resource '%s' is an unrecognized resource type
 WRITABLE
 Warning
 WorldRendererMgr001
-XB`.B\ASARA`cBSASAp
+XB`1A\ASARA`iBSASAp
 X[A\A]A^A
 You must construct it with ORDERED_CONSTRUCT macro in the dependency resolution function
 Z14V_stristr_fastPKcS0
@@ -697,7 +702,6 @@ ZN10CUtlString15FreeMemoryBlockEv
 ZN10CUtlString3SetEPKc
 ZN10CUtlString5PurgeEv
 ZN10CUtlString7AcquireEP13CBufferStringb
-ZN10CUtlString9SetDirectEPKci
 ZN10CVProfNode10EnterScopeEv
 ZN10CVProfNode10GetSubNodeEPKciS1_i
 ZN10CVProfNode9ExitScopeEv
@@ -746,7 +750,7 @@ ZN24CUtlMemoryBlockAllocator5AllocEj
 ZN24CUtlMemoryBlockAllocator5PurgeEv
 ZN24CUtlMemoryBlockAllocatorC1Eij18RawAllocatorType_t
 ZN24CUtlMemoryBlockAllocatorD1Ev
-ZN25CAsyncResourceDataRequest15InitForFileReadEPK21ResourceBindingBase_tb30ResourceManifestLoadPriority_tbPKcE3$_0
+ZN25CAsyncResourceDataRequest15InitForFileReadEPK21ResourceBindingBase_t30ResourceManifestLoadPriority_tbPKcE3$_0
 ZN7CThread15IsThreadRunningEv
 ZN7CThread21WaitForCreateCompleteEP12CThreadEvent
 ZN7CThread4InitEv
@@ -821,7 +825,6 @@ error_resource
 exit_on_resource_load_failure
 f %f %f
 f %f %f %f
-f0Lc{0E
 fffff
 ffffff
 fieldtype_t
@@ -836,6 +839,7 @@ gcc_except_tab__TEXT
 generic
 generic_data_type
 gxx_personality_v0
+h[A\A]A^A
 include
 int CUtlSortVector<CResourceManifest::LoadingResourceReference_t>::Find(const TKey &) const [T = CResourceManifest::LoadingResourceReference_t, LessFunc = CUtlSortVectorDefaultLess<CResourceManifest::LoadingResourceReference_t>, BaseVector = CUtlVector<CResourceManifest::LoadingResourceReference_t>, TKey = CResourceManifest::LoadingResourceReference_t
 int CUtlSortVector<CResourceManifest::LoadingResourceReference_t>::FindLessOrEqual(const TKey &, bool *) const [T = CResourceManifest::LoadingResourceReference_t, LessFunc = CUtlSortVectorDefaultLess<CResourceManifest::LoadingResourceReference_t>, BaseVector = CUtlVector<CResourceManifest::LoadingResourceReference_t>, TKey = CResourceManifest::LoadingResourceReference_t
@@ -894,13 +898,11 @@ opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/resourcesystem/loading
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/resourcesystem/profilehelpers.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/resourcesystem/resourcesystem.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/resourcesystem/streamingresourcedata.cpp
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/schemalib/schemaclassinfo.cpp
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/tier0_perproject/singletons.cpp
+p  p pP
 p8RCp p
 p8SATARAp8p
 panorama_image
 pointer
-ppppppppppppppppppppppppppppppppppppppppp@P@P0000@P@P0000
 pthread_mutex_destroy
 pthread_mutex_init
 pthread_mutex_lock
@@ -971,6 +973,7 @@ t?ffff
 tFffff
 table: %u members
 tools
+tools_resource_listeners_default_deferred
 uint16
 uint32
 uint64
@@ -983,22 +986,20 @@ usr/lib/libc++.1.dylib
 usr/lib/libiconv.2.dylib
 u{ffff
 vanmgrphvcdlist
-vdacdefsvcompmatvsmart
+vdacdefsvcompmatvgcxdatavsmart
 vector2
 vector3
 vector4
 virtual ResourceHandle_t CResourceSystem::BlockingLoadResourceByNameIntoJustInTimeManifest(const CResourceName &, const char
 virtual ResourceHandle_t CResourceSystem::FindOrRegisterResourceByName(const CResourceName &, bool
-virtual void CResourceSystem::DeleteResource(ResourceHandle_t
-virtual void CResourceSystem::ForceSynchronizationAndBlockUntilManifestLoaded(HResourceManifest
 virtual void CResourceSystem::InstallTypeManager(ResourceType_t, IResourceTypeManager *, const char *, const char
+vnmclip
+vnmgraphvnmdset
+vnmskel
 void CResourceSystem::MaybeExitBecauseOfResourceLoadFailure(const char
-void CResourceSystem::Update_Internal(int, ResourceSystemUpdateMode_t, bool, bool
-void CSchemaClassInfo::ReportClassError(const char *) const
 void CUtlMemory_RawAllocator<CUtlHashtableEntry<unsigned int>>::EnsureCapacity(int) [T = CUtlHashtableEntry<unsigned int
 void CUtlMemory_RawAllocator<unsigned int>::EnsureCapacity(int) [T = unsigned int
 void CUtlMemory_RawAllocator<unsigned int>::Grow(int) [T = unsigned int
-void ConnectInterfaceSingletons(CreateInterfaceFn *, int
 vptest
 vpulse
 vsndevtsvsndstckvsnd

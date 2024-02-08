@@ -1,4 +1,4 @@
-/* Prettified by Source 2 Viewer 6.0.0.0 - https://valveresourceformat.github.io */
+/* Prettified by Source 2 Viewer 8.0.0.0 - https://valveresourceformat.github.io */
 
 @import url("s2r://panorama/styles/battle_pass/current_battle_pass.vcss_c");
 DOTAScoreboard
@@ -105,6 +105,17 @@ DOTAScoreboard
 }
 
 .ShowTipping .TippingColumn
+{
+	visibility: visible;
+}
+
+.GiftingColumn
+{
+	width: 100px;
+	visibility: collapse;
+}
+
+.ShowGifting .GiftingColumn
 {
 	visibility: visible;
 }
@@ -549,13 +560,19 @@ DOTAScoreboardPlayer .ReportControlsContents
 	flow-children: down;
 }
 
+#GiftControls
+{
+	vertical-align: middle;
+	flow-children: down;
+}
+
 #BountyControls
 {
 	vertical-align: middle;
 	flow-children: down;
 }
 
-#TipsAvailable
+#TipsAvailable,#GiftsAvailable
 {
 	margin-top: 4px;
 	width: 100px;
@@ -584,7 +601,7 @@ DOTAScoreboardPlayer .ReportControlsContents
 	margin-bottom: 3px;
 }
 
-.LocalPlayer #TipsAvailable,.LocalPlayer #BountiesAvailable,.IsActiveBounty:not(.IsBountyCancelable) #BountyTimer,.IsActiveBounty.IsBountyCancelable #BountyCancelTimer
+.LocalPlayer #TipsAvailable,.LocalPlayer #GiftsAvailable,.LocalPlayer #BountiesAvailable,.IsActiveBounty:not(.IsBountyCancelable) #BountyTimer,.IsActiveBounty.IsBountyCancelable #BountyCancelTimer
 {
 	visibility: visible;
 }
@@ -594,7 +611,7 @@ DOTAScoreboardPlayer .ReportControlsContents
 	color: white;
 }
 
-#TipsCooldown
+#TipsCooldown,#GiftsCooldown
 {
 	width: 100px;
 	text-align: center;
@@ -610,7 +627,12 @@ DOTAScoreboardPlayer .ReportControlsContents
 	visibility: visible;
 }
 
-#TipButton,#BountyButton,#BountyCancelButton
+.LocalPlayer.GiftingOnCooldown #GiftsCooldown
+{
+	visibility: visible;
+}
+
+#TipButton,#GiftButton,#BountyButton,#BountyCancelButton
 {
 	vertical-align: middle;
 	padding: 2px 4px 1px 2px;
@@ -636,12 +658,12 @@ DOTAScoreboardPlayer .ReportControlsContents
 	visibility: visible;
 }
 
-.LocalPlayer #TipButton,.LocalPlayer #BountyButton,.LocalPlayer #BountyCancelButton,.IsTeammate #BountyButton,.IsInvalidTeam #BountyButton,.HasActiveBounty #BountyButton,.IsBountyCancelable #BountyButton
+.LocalPlayer #TipButton,.LocalPlayer #GiftButton,.LocalPlayer #BountyButton,.LocalPlayer #BountyCancelButton,.IsTeammate #BountyButton,.IsInvalidTeam #BountyButton,.HasActiveBounty #BountyButton,.IsBountyCancelable #BountyButton
 {
 	visibility: collapse;
 }
 
-#TipButton Label,#BountyButton Label,#BountyCancelButton Label
+#TipButton Label,#GiftButton Label,#BountyButton Label,#BountyCancelButton Label
 {
 	font-size: 14px;
 	letter-spacing: 1px;
@@ -1323,5 +1345,25 @@ DOTAScoreboardPlayer .ArcanaColumn
 #TeamCrest.HasTeamCrest
 {
 	visibility:visible;
+}
+
+#NestedMenuButtons #GiftEnvelopeAllButton
+{
+	opacity: 0.4;
+	margin-right: 16px;
+	margin-top: 2px;
+	visibility: collapse;
+}
+
+.ShowGifting #NestedMenuButtons #GiftEnvelopeAllButton
+{
+	visibility: visible;
+}
+
+#NestedMenuButtons #GiftEnvelopeAllButton Image
+{
+	wash-color: white;
+	ui-scale: 80%;
+	margin-right: 4px;
 }
 

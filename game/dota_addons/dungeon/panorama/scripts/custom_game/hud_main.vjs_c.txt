@@ -686,3 +686,121 @@ function UpdateCryptHoldout()
 
 CustomNetTables.SubscribeNetTableListener( "crypt_holdout", UpdateCryptHoldout )
 
+
+
+Game.SetDotaRefractHeroes(true);
+
+var g_bLargeOverlayMap = false;
+var k_flMapScaleFactor = 2.4;
+var onToggleOverlayMapSize = function () {
+	g_bLargeOverlayMap = !g_bLargeOverlayMap;
+	$('#OverlayMapContainer').SetHasClass('LargeOverlayMap', g_bLargeOverlayMap);
+
+	// Fix the scale based on whether we are big or small now.
+	if (!g_bLargeOverlayMap) {
+		$.Schedule(0.2, ScaleDownOverlayMap);
+	}
+	else {
+		$('#OverlayMap').mapscale = ($('#OverlayMap').mapscale / k_flMapScaleFactor);
+	}
+
+	$.Msg("New Map Scale: " + $('#OverlayMap').mapscale);
+};
+
+
+(function () {
+	Game.AddCommand("ToggleOverlayMapSize", onToggleOverlayMapSize, "", 0);
+	var szName = "materials/overviews/" + Game.GetMapInfo().map_display_name + ".vtex";
+	$.Msg(szName);
+	$('#OverlayMap').maptexture = szName;
+})();
+
+
+var ScaleDownOverlayMap = function () {
+	$('#OverlayMap').mapscale = ($('#OverlayMap').mapscale * k_flMapScaleFactor)
+}
+
+var ScrollHover = function () {
+	var scenePanel = $('#TPScroll');
+	var offscreenPanel = scenePanel.GetPanoramaSurfacePanel();
+
+	offscreenPanel.AddClass("ScrollHovered");
+	$.DispatchEvent('DOTAGlobalSceneFireEntityInput', 'TPScroll', 'hoverFX', 'start', 0);
+}
+
+var ScrollUnHover = function () {
+	var scenePanel = $('#TPScroll');
+	var offscreenPanel = scenePanel.GetPanoramaSurfacePanel();
+	offscreenPanel.RemoveClass("ScrollHovered");
+	$.DispatchEvent('DOTAGlobalSceneFireEntityInput', 'TPScroll', 'hoverFX', 'stop', 0);
+}
+
+var ScrollActivate = function () {
+	var scenePanel = $('#TPScroll');
+	var scenePanelContainer = $('#TPScrollContainer');
+	var offscreenPanel = scenePanel.GetPanoramaSurfacePanel();
+	offscreenPanel.AddClass("ScrollActivated");
+	var hitBoxPanel = $('#TPScrollHitbox');
+	hitBoxPanel.RemoveClass("MakeVisible");
+	var clickHint = $('#ClickHint');
+	clickHint.AddClass("QuickHide");
+	scenePanelContainer.AddClass("TransitionToGame");
+
+	$.DispatchEvent('DOTAGlobalSceneFireEntityInput', 'TPScroll', 'hoverFX', 'stop', 0);
+	$.DispatchEvent('DOTAGlobalSceneFireEntityInput', 'TPScroll', 'activateFX', 'start', 0);
+	$.DispatchEventAsync(2.5, 'DOTAGlobalSceneFireEntityInput', 'TPScroll', 'scroll', 'SetAnimation', 'scroll_activate');
+	$.DispatchEventAsync(2.6, 'DOTAGlobalSceneFireEntityInput', 'TPScroll', 'rain_impact', 'stop', 0);
+	$.DispatchEvent('DOTAGlobalSceneSetRootEntity', 'TPScroll', 'rootend');
+	$.Schedule(5.0, KillScrollPanel);
+
+
+	GameEvents.SendCustomGameEventToServer("scroll_clicked", { ent_index: Players.GetPlayerHeroEntityIndex(Game.GetLocalPlayerID()) })
+}
+
+var g_ClickCount = 0;
+
+var KillScrollPanel = function () {
+	var scenePanelContainer = $('#TPScrollContainer');
+	scenePanelContainer.AddClass("CollapsePanel");
+
+	var scenePanel = $('#TPScroll');
+	scenePanel.SetReadyForDisplay(false);
+}
+
+var ImpatientClicks = function () {
+	g_ClickCount = g_ClickCount + 1;
+
+	if (g_ClickCount > 4) {
+		var clickHint = $('#ClickHint');
+		clickHint.AddClass("GiveHint");
+	}
+
+}
+
+// If more than a minute has passed already in the game, don't show the TP
+// Scroll at all. This works for spectators joining the game later as well
+// as players reconnecting to the game.
+if (Game.GetDOTATime(false, true) >= 60.0 || Game.GetMapInfo().map_display_name == "ep_2") {
+	$.Schedule(0.5, KillScrollPanel);
+	if (Game.GetMapInfo().map_display_name == "ep_2") {
+		$('#DungeonHUDContents').SetHasClass("ShowAct2Intro", true);
+	}
+}
+else {
+	// Otherwise, schedule the button to be active and stuff.
+
+	$.Schedule(3.6, function () {
+		var hitBoxPanel = $('#TPScrollHitbox');
+		hitBoxPanel.AddClass("MakeVisible");
+
+		$('#TPScroll').SetDialogVariable("hero_name", Players.GetPlayerSelectedHero(Game.GetLocalPlayerID()));
+	});
+
+	$.Schedule(20, function () {
+		var clickHint = $('#ClickHint');
+		clickHint.AddClass("GiveHint");
+	});
+}
+
+// If a user skips around in the DVR, just kill the TP scroll
+GameEvents.Subscribe("demo_skip", KillScrollPanel);

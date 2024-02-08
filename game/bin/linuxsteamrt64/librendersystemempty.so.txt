@@ -19,7 +19,6 @@
 14CReadGPUBuffer
 14CSwapChainBase
 14IRenderContext
-15CRenderPassDesc
 15CRenderResource
 15CSwapChainEmpty
 15CTier0AppSystemI12IRenderUtilsLx0EE
@@ -127,8 +126,6 @@ A]A^A
 Accum
 Adapter: %d
 Adobe APP14 marker: version %d, flags 0x%04x 0x%04x, transform %d
-AllocTextureId
-AllocateAndUploadSequenceData
 Allow immediately loading mips of textures (when possible) when their headers are loaded, saving IO & reducing latency
 AnimGraphEditorUtils001
 AnimationSystemUtils_001
@@ -216,8 +213,6 @@ Component %d: %dhx%dv q=%d
 Component %d: dc=%d ac=%d
 Component index %d: mismatching sampling ratio %d:%d, %d:%d, %c
 Compressed texture decoded in %.2f ms
-ConnectInterfaceSingletons
-ConvertGammaToLinear
 Copyright (C) 2010, Thomas G. Lane, Guido Vollbeding
 Corrupt JPEG data: %u extraneous bytes before marker 0x%02x
 Corrupt JPEG data: bad Huffman code
@@ -262,6 +257,7 @@ Direct3D 11
 Discarding abandoned streaming texture load for %s
 Display GPU memory usage
 Display fallback texture as orange
+Don't support DXLevel < 100
 Driver Name:  %s
 Driver Version: %s
 Dumps state of texture streaming at the next frame boundary
@@ -453,6 +449,7 @@ LC_TIME
 LINEAR_D24S8
 LOG_GENERAL
 LcK<Hc
+LegacyUserSettingsPathID
 LoadEXRImageFromMemory() failed! Error message: %s
 LoadStreamingData
 Loaded video settings config from '%s
@@ -476,9 +473,8 @@ MN_OnResourceLoadFailed
 MODEL_PROCESSING_SERVICES_INTERFACE_001
 MapListService_001
 MaterialUtils_001
-MathLib_Init
 MaxDeviceID
-Maximum resolution for top mip level in streaming textures. -1 = ignored
+Maximum resolution for top mip level in streaming textures
 Maximum supported image dimension is %u pixels
 MemAlloc_AllocFunc
 MemAlloc_FreeFunc
@@ -589,7 +585,6 @@ ParticleSystemMgr003
 PhysicsBuilderMgr001
 Plat_CPUTickFrequency
 Plat_DebugPrint
-Plat_ExitProcess
 Plat_FatalErrorFunc
 Plat_FloatTime
 Plat_GetClockStart
@@ -605,7 +600,6 @@ Plat_IsInDebugSession
 Plat_NeedsLowFragmentation
 Plat_OsSpecificHandleToPlatWindow
 Plat_ReconfigureWindow
-Plat_ShouldCollectMiniDumpsForFatalErrors
 Plat_WindowToOsSpecificHandle
 PooledDynamicConstantBuffer
 PostProcessingSystem_001
@@ -624,14 +618,18 @@ R11_EAC
 R16G16_UINT
 R16_UINT
 R32G32_UINT
+R32_SINT
 R32_UINT
 R8G8B8A8_ETC2_EAC
 R8G8B8_ETC2
 R8G8_UINT
 R8_UINT
 RENDERDOC_GetAPI
+RENDER_BUFFER_ACCELERATION_STRUCTURE
 RENDER_BUFFER_APPEND_CONSUME_BUFFER
 RENDER_BUFFER_BYTEADDRESS_BUFFER
+RENDER_BUFFER_PER_FRAME_WRITE_ONCE
+RENDER_BUFFER_SHADER_BINDING_TABLE
 RENDER_BUFFER_STRUCTURED_BUFFER
 RENDER_BUFFER_UAV_COUNTER
 RENDER_BUFFER_UAV_DRAW_INDIRECT_ARGS
@@ -948,7 +946,6 @@ Unsupported color conversion request
 Unsupported marker type 0x%02x
 Upper limit on texture pool size
 UserSettingsFileEx
-UserSettingsPathID
 UtlMemory_Alloc
 UtlMemory_CalcNewAllocationCount
 UtlMemory_FailedAllocation
@@ -994,6 +991,7 @@ V_StringToUint64
 V_StringToVector
 V_StringToVector2D
 V_StringToVector4D
+V_ZSTD_decompress
 V_fpclassifyd
 V_fprintf
 V_log2_uint
@@ -1045,7 +1043,6 @@ Z11g_nTailMaskIiE
 Z14GetGameInfoIntPKci
 Z14V_stristr_fastPKcS0
 Z15GetGameInfoBoolPKcb
-Z17LoggingSystem_Logi17LoggingSeverity_tRK14LeafCodeInfo_tPKcz
 Z20_txnal_cow_string_D1Pv
 Z20g_flSequentialFloatsIDv4_fE
 Z20g_flSequentialFloatsIfE
@@ -5370,7 +5367,6 @@ deleted virtual method called
 dev/random
 dev/urandom
 dgettext
-disallowhwmorph
 displayWindow
 displayWindow" attribute not found in the header
 dl_iterate_phdr
@@ -5495,7 +5491,6 @@ m_pSemantic
 m_pSemanticName
 makemelast
 malloc
-mathlib.cpp
 max megabytes
 max megatexels
 max_processor_count
@@ -5565,12 +5560,14 @@ pure virtual method called
 qangle
 r_async_shader_compile_notify_frequency
 r_fallback_texture_orange
+r_flush_on_pooled_ib_resize
 r_fullscreen_gamma
 r_gpu_mem_stats
 r_max_device_threads
 r_max_texture_pool_size
 r_renderdoc_capture_frame
 r_renderdoc_open_captures
+r_renderdoc_validation_error_capture_limit
 r_texture_hookup_uses_threadpool
 r_texture_nonstreaming_load
 r_texture_pool_size
@@ -5595,6 +5592,7 @@ rela.dyn
 rela.plt
 renderdevicebase.cpp
 renderdoc
+renderdoc_capture_validation_errors
 renderstatehelper.h
 rendersystem (%s) tracked resources
 rendersystemempty
@@ -5647,10 +5645,8 @@ setting.shaderquality
 shaderstats
 shadowTargetSize
 shadowTargetSize forcing nPoolSizeInMb size to %d from %d, bLarge %d, avail %lld
-sheetcache.cpp
 sheetcachetexture_.vtex
 shstrtab
-singletons.cpp
 sizeof
 sprintf
 stapsdt
@@ -5703,15 +5699,15 @@ terminate called after throwing an instance of
 terminate called recursively
 terminate called without an active exception
 texturebase.cpp
-texturebase.cpp(2440):Error loading texture: %s
-texturebase.cpp(3457):ResourceHandleToData( %s ) failed! Falling back to error texture
-texturebase.cpp(3489):ResourceHandleToData( %s ) failed! Falling back to error texture
-texturebase.cpp(3509):ResourceHandleToData( %s ) failed! Falling back to error texture
-texturebase.cpp(3527):ResourceHandleToData( %s ) failed! Falling back to error texture
-texturebase.cpp(3546):ResourceHandleToData( %s ) failed! Falling back to error texture
-texturebase.cpp(3567):ResourceHandleToData( %s ) failed! Falling back to error texture
-texturebase.cpp(3578):ResourceHandleToData( %s ) failed! Falling back to error texture
-texturebase.cpp(3589):ResourceHandleToData( %s ) failed! Falling back to error texture
+texturebase.cpp(2433):Error loading texture: %s
+texturebase.cpp(3450):ResourceHandleToData( %s ) failed! Falling back to error texture
+texturebase.cpp(3482):ResourceHandleToData( %s ) failed! Falling back to error texture
+texturebase.cpp(3502):ResourceHandleToData( %s ) failed! Falling back to error texture
+texturebase.cpp(3520):ResourceHandleToData( %s ) failed! Falling back to error texture
+texturebase.cpp(3539):ResourceHandleToData( %s ) failed! Falling back to error texture
+texturebase.cpp(3560):ResourceHandleToData( %s ) failed! Falling back to error texture
+texturebase.cpp(3571):ResourceHandleToData( %s ) failed! Falling back to error texture
+texturebase.cpp(3582):ResourceHandleToData( %s ) failed! Falling back to error texture
 threads
 throw
 tls_get_addr

@@ -1,4 +1,4 @@
-/* Prettified by Source 2 Viewer 6.0.0.0 - https://valveresourceformat.github.io */
+/* Prettified by Source 2 Viewer 8.0.0.0 - https://valveresourceformat.github.io */
 
 #DOTAStatBranch
 {
@@ -463,43 +463,63 @@ DOTAStatBranch:not(.ShowStatBranchAsTooltip) .BranchActive .ReqLabel
 
 .StatHotkey
 {
+	visibility: collapse;
+}
+
+DOTAStatBranch:not(.ShowStatBranchAsTooltip) .RightBranchActive .RightBranch.StatHotkey
+{
+	visibility: visible;
+}
+
+DOTAStatBranch:not(.ShowStatBranchAsTooltip) .LeftBranchActive .LeftBranch.StatHotkey
+{
+	visibility: visible;
+}
+
+DOTAStatBranch:not(.ShowStatBranchAsTooltip) .AttributeChoiceActive .StatChoice.StatHotkey
+{
+	visibility: visible;
+}
+
+#LowerTalentArea
+{
+	horizontal-align:center;
+	vertical-align: bottom;
+	width:420px;
+	height: 63px;
+}
+
+#LowerTalentArea .StatHotkey
+{
 	min-width: 17px;
 	min-height: 17px;
 	background-color: #212726;
-	visibility: collapse;
-	border-radius: 4px;
+	border-radius: 0px 0px 4px 4px;
 	border: 1px solid black;
 }
 
-DOTAStatBranch:not(.ShowStatBranchAsTooltip) .StatBranchActive.could_level_up .StatHotkey
+#LowerTalentArea .StatHotkey.LeftBranch
 {
-	visibility: visible;
-}
-
-DOTAStatBranch:not(.ShowStatBranchAsTooltip) .BranchActive.RightBranchActive .RightBranch .StatHotkey
-{
-	visibility: visible;
-}
-
-DOTAStatBranch:not(.ShowStatBranchAsTooltip) .BranchActive.LeftBranchActive .LeftBranch .StatHotkey
-{
-	visibility: visible;
-}
-
-.RightBranch .StatHotkey
-{
-	horizontal-align: right;
-	margin-right: 2px;
-}
-
-.LeftBranch .StatHotkey
-{
+	margin-left: 9px;
 	horizontal-align: left;
-	margin-left: 2px;
 }
 
-.StatHotkey Label
+#LowerTalentArea .StatHotkey.RightBranch
 {
+	margin-right: 9px;
+	horizontal-align: right;
+}
+
+#LowerTalentArea .StatHotkey.StatChoice
+{
+	border-radius: 4px;
+	horizontal-align: center;
+	transform: translateY( 3px );
+}
+
+#LowerTalentArea .StatHotkey Label
+{
+	horizontal-align:center;
 	color: white;
 	text-shadow: 1px 1px 2px 2 #000000;
 	font-size: 14px;
@@ -507,7 +527,13 @@ DOTAStatBranch:not(.ShowStatBranchAsTooltip) .BranchActive.LeftBranchActive .Lef
 	vertical-align: center;
 	text-align: center;
 	margin-bottom: -2px;
-	width: 100%;
+	width: fit-children;
+	ignore-parent-flow: true;
+}
+
+#LowerTalentArea #StatUpgradeOption .StatHotkey
+{
+	horizontal-align: center;
 }
 
 .RecommendedUpgradePct
@@ -604,7 +630,7 @@ DOTAStatBranch:not(.ShowStatBranchAsTooltip) .BranchActive.LeftBranchActive .Lef
 
 #StatUpgradeOption
 {
-	width: 300px;
+	width: 209px;
 	height: 48px;
 	border: 1px solid #1B2325;
 	background-color: #222;

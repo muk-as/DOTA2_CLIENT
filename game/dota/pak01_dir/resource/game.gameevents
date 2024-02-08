@@ -706,6 +706,7 @@
 	"dota_assist_earned"
 	{
 		"entindex_hero"		"short"
+		"playerid_victim"	"short"
 	}
 	"bindpanel_open"
 	{
@@ -1299,6 +1300,33 @@
 		"userid"			"short"
 		"item_ability_id"	"short"
 	}
+	// Generalized and smooth camera overrides
+	"dota_custom_camera_updated"
+	{
+		"flags"					"int"	// DOTACustomCameraEventFlags_t 
+		"zoom"					"float"
+		"x"						"float"
+		"y"						"float"
+		"extra_yaw"				"float"
+		"pitch"					"float"
+		"duration"				"float"
+		"player_id"				"int"	// Only used if associated flag is set.
+	}
+	"dota_event_game_camera_zoom_updated"
+	{
+		"zoom"				"int"  
+		"duration"			"float"   // 0 - instantaneous camera update.
+	}
+	"dota_event_game_camera_position_updated"
+	{
+		"x"					"float"
+		"y"					"float"
+		"duration"			"float"   // 0 - instantaneous camera update.
+	}
+	"dota_custom_camera_pitch_updated"
+	{
+		"pitch"				"float"
+	}
 	"colorblind_mode_changed"
 	{
 	}
@@ -1472,6 +1500,12 @@
 	"chat_members_changed"	// the specified channel has had players leave or join
 	{
 		"channel"	"byte"
+	}
+
+	"dota_hero_on_gain_aggro"		// An NPC has gained aggro (is attacking) a hero
+	{
+		"entindex_attacker"		"int"
+		"entindex_hero"			"int"
 	}
 }
 

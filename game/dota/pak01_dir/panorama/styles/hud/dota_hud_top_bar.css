@@ -1,4 +1,4 @@
-/* Prettified by Source 2 Viewer 6.0.0.0 - https://valveresourceformat.github.io */
+/* Prettified by Source 2 Viewer 8.0.0.0 - https://valveresourceformat.github.io */
 
 @import url("s2r://panorama/styles/battle_pass/current_battle_pass.vcss_c");
 DOTATopBar
@@ -1698,10 +1698,8 @@ DOTATopBarPlayer.GrandmasterTier #HeroBadgeOverlay
 
 #TipButton
 {
-	vertical-align: bottom;
-	margin-bottom: 75px;
 	overflow: clip;
-	max-width: 60px;
+	width: 58px;
 	max-height: 20px;
 	padding: 2px 4px 1px 4px;
 	min-width: 0px;
@@ -1802,12 +1800,12 @@ DOTATopBarPlayer.GrandmasterTier #HeroBadgeOverlay
 	visibility: visible;
 }
 
-#TopBarRadiantPlayersContainer #TipButton
+#TopBarRadiantPlayersContainer .TipGiftContainer
 {
 	margin-left: 6px;
 }
 
-#TopBarDirePlayersContainer #TipButton
+#TopBarDirePlayersContainer .TipGiftContainer
 {
 	margin-right: 6px;
 }
@@ -1822,6 +1820,44 @@ DOTATopBarPlayer.GrandmasterTier #HeroBadgeOverlay
 	opacity: 1;
 }
 
+.TipGiftContainer
+{
+	flow-children: down;
+	margin-top: 68px;
+}
+
+#GiftButton
+{
+	visibility: collapse;
+	opacity: 0;
+	height: 20px;
+	width: 58px;
+	horizontal-align: center;
+	margin-top: 4px;
+	border-radius: 2px;
+}
+
+#GiftButton:disabled
+{
+	saturation: 0.0;
+	wash-color: #555;
+}
+
+.GiftsAvailable #GiftButton
+{
+	visibility: visible;
+}
+
+.AltPressed DOTATopBarPlayer.PlayerGiftable #GiftButton
+{
+	opacity: 0.2;
+}
+
+.AltPressed DOTATopBarPlayer.PlayerGiftable #GiftButton:hover
+{
+	opacity: 1;
+}
+
 .AltPressed DOTATopBarPlayer.PlayerBountiable #BountyButton
 {
 	opacity: 0.5;
@@ -1832,7 +1868,7 @@ DOTATopBarPlayer.GrandmasterTier #HeroBadgeOverlay
 	opacity: 1;
 }
 
-.LocalPlayer #TipButton
+.LocalPlayer #TipButton,.LocalPlayer #GiftButton
 {
 	visibility: collapse;
 }
@@ -1974,6 +2010,11 @@ DOTATopBarPlayer.GrandmasterTier #HeroBadgeOverlay
 .TipsAvailable .TPIndicator
 {
 	margin-bottom: 20px;
+}
+
+.GiftsAvailable .TPIndicator
+{
+	margin-bottom: 0px;
 }
 
 .TPIndicator.HasTP

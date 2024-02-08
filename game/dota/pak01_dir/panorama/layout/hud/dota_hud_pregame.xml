@@ -1,4 +1,4 @@
-<!-- xml reconstructed by Source 2 Viewer 6.0.0.0 - https://valveresourceformat.github.io -->
+<!-- xml reconstructed by Source 2 Viewer 8.0.0.0 - https://valveresourceformat.github.io -->
 <root>
 	<styles>
 		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
@@ -219,12 +219,10 @@
 							<Panel id="HeroLockedNav" class="LeftRightFlow">
 								<TextButton id="StrategyTabButton" text="#DOTA_Hero_Selection_StrategyTab" class="StrategyPhaseTab" onactivate="DOTASetSelectedStrategyTab( Strategy )" />
 								<Label text="/" class="StrategyPhaseTabSeparator" />
-								<TextButton id="LoadoutTabButton" text="#DOTA_Hero_Selection_LoadoutTab" class="StrategyPhaseTab OldLoadoutOnly" onactivate="DOTASetSelectedStrategyTab( Loadout )" />
-								<Label text="/" class="StrategyPhaseTabSeparator OldLoadoutOnly" />
-								<TextButton id="HeroLoadoutTabButton" text="#DOTA_Hero_Selection_LoadoutTab" class="StrategyPhaseTab NewLoadoutOnly" onactivate="DOTASetSelectedStrategyTab( HeroLoadout )" />
-								<Label text="/" class="StrategyPhaseTabSeparator NewLoadoutOnly" />
-								<TextButton id="GlobalLoadoutTabButton" text="#DOTA_Hero_Selection_GlobalLoadoutTab" class="StrategyPhaseTab NewLoadoutOnly" onactivate="DOTASetSelectedStrategyTab( GlobalLoadout )" />
-								<Label text="/" class="StrategyPhaseTabSeparator NewLoadoutOnly" />
+								<TextButton id="HeroLoadoutTabButton" text="#DOTA_Hero_Selection_LoadoutTab" class="StrategyPhaseTab" onactivate="DOTASetSelectedStrategyTab( HeroLoadout )" />
+								<Label text="/" class="StrategyPhaseTabSeparator" />
+								<TextButton id="GlobalLoadoutTabButton" text="#DOTA_Hero_Selection_GlobalLoadoutTab" class="StrategyPhaseTab" onactivate="DOTASetSelectedStrategyTab( GlobalLoadout )" />
+								<Label text="/" class="StrategyPhaseTabSeparator" />
 								<TextButton id="GuidesTabButton" text="#DOTA_Hero_Selection_GuidesTab" class="StrategyPhaseTab" onactivate="DOTASetSelectedStrategyTab( Guides )" />
 							</Panel>
 							<Panel id="StrategyTab" class="StrategyTabContents">
@@ -351,60 +349,6 @@
 													<Label class="StrategyControlTitle" text="#dota_item_build_common_shared_items" />
 												</Panel>
 												<Panel id="TeamSharedItemsContainer" />
-											</Panel>
-										</Panel>
-									</Panel>
-								</Panel>
-							</Panel>
-							<Panel id="LoadoutTab" class="StrategyTabContents">
-								<Panel class="LoadoutPanelHeader">
-									<Label text="#DOTA_Hero_Selection_HeroLoadout" class="LoadoutCategoryTitle" />
-								</Panel>
-								<Panel id="HeroLoadoutItems">
-									<DOTAHeroSetPicker id="HeroLoadoutSetPicker" />
-									<Panel id="HeroLoadoutSlots" />
-								</Panel>
-								<Panel id="GlobalLoadoutSlots">
-									<Panel class="LoadoutPanelHeader">
-										<Label text="#DOTA_Hero_Selection_GlobalLoadout" class="LoadoutCategoryTitle" />
-										<Panel class="FillWidth" />
-										<Label id="GlobalLoadoutChangeNotImmediate" text="#DOTA_Hero_Selection_TerrainChangesDelayed" />
-									</Panel>
-									<Panel id="GlobalLoadoutItems">
-										<Panel class="GlobalLoadoutSlotCategory">
-											<Label class="LoadoutCategoryTitle SubCategory" text="#DOTA_Armory_Category_CouriersAndWards" />
-											<Panel class="GlobalLoadoutSlotCategoryItems">
-												<Panel id="Diretide2020GlobalButton" onactivate="DOTAShowDiretide2020CosmeticsPage()">
-													<Panel id="HexIconGleam" hittest="false" />
-													<Panel id="Diretide2020Image" />
-													<Panel id="Diretide2020Logo" />
-												</Panel>
-												<DOTAHeroSlotItemPicker heroid="1000" slottype="courier" />
-												<DOTAHeroSlotItemPicker heroid="1000" slottype="ward" />
-											</Panel>
-										</Panel>
-										<Panel class="GlobalLoadoutSlotCategory">
-											<Label class="LoadoutCategoryTitle SubCategory" text="#DOTA_Armory_Category_Audio" />
-											<Panel class="GlobalLoadoutSlotCategoryItems">
-												<DOTAHeroSlotItemPicker heroid="1000" slottype="music" />
-												<DOTAHeroSlotItemPicker heroid="1000" slottype="announcer" />
-												<DOTAHeroSlotItemPicker heroid="1000" slottype="mega_kills" />
-											</Panel>
-										</Panel>
-										<Panel class="GlobalLoadoutSlotCategory">
-											<Label class="LoadoutCategoryTitle SubCategory" text="#DOTA_GlobalItems_World" />
-											<Panel class="GlobalLoadoutSlotCategoryItems">
-												<DOTAHeroSlotItemPicker heroid="1000" slottype="terrain" />
-												<DOTAHeroSlotItemPicker heroid="1000" slottype="weather" />
-												<DOTAHeroSlotItemPicker heroid="1000" slottype="heroic_statue" />
-											</Panel>
-										</Panel>
-										<Panel class="GlobalLoadoutSlotCategory">
-											<Label class="LoadoutCategoryTitle SubCategory" text="#DOTA_GlobalItems_Interface" />
-											<Panel class="GlobalLoadoutSlotCategoryItems">
-												<DOTAHeroSlotItemPicker heroid="1000" slottype="hud_skin" />
-												<DOTAHeroSlotItemPicker heroid="1000" slottype="cursor_pack" />
-												<DOTAHeroSlotItemPicker heroid="1000" slottype="loading_screen" />
 											</Panel>
 										</Panel>
 									</Panel>
@@ -547,17 +491,7 @@
 			<Panel id="PreMinimapContainer" hittest="false">
 				<DOTAHeroPickingMinimap id="HeroPickMinimap" />
 			</Panel>
-			<Panel id="AvailableItemsContainer" class="OldLoadoutOnly">
-				<Panel id="AvailableItems">
-					<Carousel id="AvailableItemsCarousel" panels-visible="3" />
-					<Panel id="AvailableItemsFooter">
-						<Label id="AvailableItemsTitle" text="#DOTA_Hero_Selection_AvailableForPurchase" />
-						<Panel class="FillWidth" />
-						<CarouselNav carouselid="AvailableItemsCarousel" />
-					</Panel>
-				</Panel>
-			</Panel>
-			<DOTASetPreviewControls id="SetPreviewControls" class="NewLoadoutOnly" hittest="false" />
+			<DOTASetPreviewControls id="SetPreviewControls" hittest="false" />
 			<Panel id="BottomPanels" hittest="false">
 				<DOTAFriendsAndFoes id="FriendsAndFoes" />
 				<DOTAHeroPickingTeamComposition class="TwoColumn" id="HeroPickTeamComposition" />
