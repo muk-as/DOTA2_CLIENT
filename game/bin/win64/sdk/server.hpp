@@ -3702,7 +3702,7 @@ enum class ELeagueNodeType : uint32_t
 
 // Registered binary: server.dll (project 'server')
 // Alignment: 4
-// Size: 0x37b
+// Size: 0x37a
 enum class EDOTAGCMsg : uint32_t
 {
 	k_EMsgGCDOTABase = 0x1b58,
@@ -4525,7 +4525,7 @@ enum class EDOTAGCMsg : uint32_t
 	k_EMsgGCToClientCollectorsCacheAvailableDataResponse = 0x22a8,
 	k_EMsgClientToGCUploadMatchClip = 0x22a9,
 	k_EMsgGCToClientUploadMatchClipResponse = 0x22aa,
-	k_EMsgGCToServerSetSteamLearnKeysChanged = 0x22ac,
+	k_EMsgGCToServerSteamLearnAccessTokensChanged = 0x22ac,
 	k_EMsgSignOutMuertaMinigame = 0x22ad,
 	k_EMsgGCToServerLobbyHeroRoleStats = 0x22ae,
 	k_EMsgClientToGCRankRequest = 0x22af,
@@ -4534,7 +4534,6 @@ enum class EDOTAGCMsg : uint32_t
 	k_EMsgSignOutMapStats = 0x22b2,
 	k_EMsgClientToGCMapStatsRequest = 0x22b3,
 	k_EMsgGCToClientMapStatsResponse = 0x22b4,
-	k_EMsgGCToServerSetSteamLearnInferencing = 0x22b5,
 	k_EMsgClientToGCShowcaseGetUserData = 0x22b6,
 	k_EMsgClientToGCShowcaseGetUserDataResponse = 0x22b7,
 	k_EMsgClientToGCShowcaseSetUserData = 0x22b8,

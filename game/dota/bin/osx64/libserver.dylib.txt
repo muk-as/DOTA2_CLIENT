@@ -167,6 +167,7 @@
 0ultimate_scepter_consumed_alchemist_bonus_health
 0x" must be followed by hex digits
 0x%08X
+0〃1〃2
 1 255
 1 = force cl_predict to 1
 1 = let clients set cl_predict to anything
@@ -4513,7 +4514,7 @@
 1v1mid
 1ҐL98t
 1Ґf9<Vt
-1退1逃2逃3
+1怀1老1退1
 2	.CMsgRGBA
 2	.CMvpData
 2 .CCommunity_ClanAnnouncementInfo"p
@@ -4555,6 +4556,7 @@
 2!.CMsgSteamLearn_CacheData_Request
 2!.CMsgSteamLearn_Inference_Request
 2!.CSVCMsg_GameSessionConfiguration
+2!.ESteamLearnGetAccessTokensResult
 2!.ESteamLearnSnapshotProjectResult
 2!.google.protobuf.EnumValueOptions
 2".CDOTAClientMsg_UpdateQuickBuyItem"1
@@ -4635,8 +4637,8 @@
 2%.CMsgMatchConsumableUsage.PlayerUsage
 2%.CMsgSOCacheSubscribed.SubscribedType
 2%.CMsgSource1LegacyGameEventList.key_t"K
-2%.CMsgSteamLearnHMACKeys.CacheDataKeys
 2%.CMsgSteamLearnMatchState.PlayerStateB
+2%.CMsgSteamLearnServerInfo.ProjectInfo
 2%.CMsgSteamLearnWardPlacement.Location
 2%.CMsgSteamLearnWardPlacement.LocationB
 2%.CMsgStickerbookTeamPageOrderSequence
@@ -4730,7 +4732,6 @@
 2+.CMsgResetStrangeGemCountResponse.EResetGem
 2+.CMsgServerToGCMatchStateHistory.MatchState
 2+.CMsgSignOutUpdatePlayerChallenge.Challenge
-2+.CMsgSteamLearnHMACKeys.SnapshotProjectKeys
 2+.CSerializedCombatLog.Dictionary.DictString
 2+.CUserMsg_ParticleManager.ParticleCanFreeze
 2+.CUserMsg_ParticleManager.UpdateParticleEnt
@@ -4789,6 +4790,8 @@
 20.CDOTAUserMsg_StatsHeroPositionInfo.PositionPair
 20.CMsgServerToGCCompendiumInGamePredictionResults
 20.CMsgSignOutGuildContractProgress.PlayerContract
+20.CMsgSteamLearnAccessTokens.CacheDataAccessToken
+20.CMsgSteamLearnAccessTokens.InferenceAccessToken
 20.CMsgSteamLearn_InferenceBackend_Response.Output
 20.CMsgSteamLearn_InferenceMetadata_Response.Range
 20.CUserMessage_Inventory_Response.InventoryDetail
@@ -5493,7 +5496,6 @@
 22CMsgSignOutPlayerStats
 22CMsgSosStartSoundEvent
 22CMsgSteamLearnDataList
-22CMsgSteamLearnHMACKeys
 22CMsgStickerbookSticker
 22CNavBreadthFirstSearch
 22CNavObstructionManager
@@ -6489,7 +6491,6 @@
 25CMsgSosStopSoundEventHash
 25CMsgSteamLearnDataElement
 25CMsgSteamLearnMatchHeroes
-25CMsgSteamLearn_AccessData
 25CNETMsg_SpawnGroup_Unload
 25CNavMeshGameEventListener
 25CNavObstacleConnectionMgr
@@ -6531,6 +6532,7 @@
 25TEPlayerDecal_GameEvent_t
 26.CMsgDOTARealtimeGameStats.GraphData.TeamLocationStats
 26.CMsgGameMatchSignOut.CTeam.CPlayer.HeroDamageReceived
+26.CMsgSteamLearnAccessTokens.SnapshotProjectAccessToken
 26.CUserMsg_ParticleManager.ChangeControlPointAttachment
 26.CUserMsg_ParticleManager.SetParticleNamedValueContext
 26.google.protobuf.EnumDescriptorProto.EnumReservedRange
@@ -6756,6 +6758,7 @@
 26CMsgSosSetSoundEventParams
 26CMsgSource1LegacyGameEvent
 26CMsgSteamLearnAbilitySkill
+26CMsgSteamLearnAccessTokens
 26CMsgSteamLearnItemPurchase
 26CNavLinkMovementDataSchema
 26CParallelProcessorAbstractI18CParallelProcessorI24QueryCacheUpdateRecord_t21CFuncJobItemProcessorIS1_ELi1EEE
@@ -7656,6 +7659,7 @@
 2:.CMsgClientToGCCreateStaticRecipeResponse.AdditionalOutput
 2:.CMsgClientToGCGetGiftPermissionsResponse.FriendPermission
 2:.CMsgServerToGCMatchPlayerItemPurchaseHistory.ItemPurchase
+2:.CMsgSteamLearn_InferenceBackend_Response.RegressionOutputH
 2:.CUserMsg_ParticleManager.ParticleFreezeTransitionOverride
 2;.CMsgDOTALiveScoreboardUpdate.Team.Player.DOTAUltimateState
 2;.CMsgNotificationOfSuspiciousActivity.MultipleGameInstances
@@ -9469,7 +9473,6 @@
 34CMsgSteamLearnDataSourceDescObject
 34CMsgSteamLearnMatchState_TeamState
 34CMsgSteamLearnPreGameItemPurchases
-34CMsgSteamLearn_GetHMACKeys_Request
 34CNETMsg_SpawnGroup_SetCreationTick
 34CParticleCollectionBindingInstance
 34CPulseCell_Inflow_EntOutputHandler
@@ -9785,7 +9788,6 @@
 35CMsgSerializedSOCache_Cache_Version
 35CMsgServerToGCRerollPlayerChallenge
 35CMsgSteamLearnDataSourceDescElement
-35CMsgSteamLearn_GetHMACKeys_Response
 35CPortraitBackgroundParticleModifier
 35CSosFilterSetSoundEventFieldsInfo_t
 35CSurfacePropReloadableDataTableBase
@@ -10083,8 +10085,8 @@
 36CMsgServerToGCPlayerChallengeHistory
 36CMsgServerToGCRequestStatus_Response
 36CMsgSource1LegacyGameEventList_key_t
-36CMsgSteamLearnHMACKeys_CacheDataKeys
 36CMsgSteamLearnMatchState_PlayerState
+36CMsgSteamLearnServerInfo_ProjectInfo
 36CMsgSteamLearnWardPlacement_Location
 36CMsgStickerbookTeamPageOrderSequence
 36CNetworkSerializerBindingBuildFilter
@@ -10653,12 +10655,11 @@
 38CMsgGCToGCGrantAccountRolledItems_Item
 38CMsgGCToGCStoreProcessCDKeyTransaction
 38CMsgGCToServerCheerData_CheerTypeCount
-38CMsgGCToServerSetSteamLearnInferencing
-38CMsgGCToServerSetSteamLearnKeysChanged
 38CMsgGameMatchSignOutPermissionResponse
 38CMsgLookupMultipleAccountNamesResponse
 38CMsgServerToGCGetStickerHeroesResponse
 38CMsgSteamLearn_BatchOperation_Response
+38CMsgSteamLearn_GetAccessTokens_Request
 38CMsgSteamLearn_SnapshotProject_Request
 38CRagdollPropAlias_physics_prop_ragdoll
 38CSoundEventEntityAlias_snd_event_point
@@ -10939,6 +10940,7 @@
 39CMsgServerToGCKillSummaries_KillSummary
 39CMsgServerToGCVictoryPredictions_Record
 39CMsgSignOutTextMuteInfo_TextMuteMessage
+39CMsgSteamLearn_GetAccessTokens_Response
 39CMsgSteamLearn_SnapshotProject_Response
 39CSpawnGroupCompletionCallbackGameSystem
 39CUserMsg_ParticleManager_CreateParticle
@@ -11810,7 +11812,6 @@
 42CMsgGameMatchSignOut_CSocialFeedMatchEvent
 42CMsgServerToGCMatchStateHistory_MatchState
 42CMsgSignOutUpdatePlayerChallenge_Challenge
-42CMsgSteamLearnHMACKeys_SnapshotProjectKeys
 42CMsgSteamLearn_RegisterDataSource_Response
 42CSerializedCombatLog_Dictionary_DictString
 42CUserMsg_ParticleManager_ParticleCanFreeze
@@ -12115,6 +12116,7 @@
 43CMsgGCRequestStoreSalesDataUpToDateResponse
 43CMsgGCToGCCompendiumInGamePredictionResults
 43CMsgGCToGCSOCacheSubscribe_CMsgHaveVersions
+43CMsgGCToServerSteamLearnAccessTokensChanged
 43CMsgGameDataItemAbilityList_ItemAbilityInfo
 43CMsgGameMatchSignoutResponse_PlayerMetadata
 43CMsgServerToGCMatchStateHistory_PlayerState
@@ -13004,6 +13006,8 @@
 47CMsgServerToGCCompendiumChosenInGamePredictions
 47CMsgServerToGCCompendiumInGamePredictionResults
 47CMsgSignOutGuildContractProgress_PlayerContract
+47CMsgSteamLearnAccessTokens_CacheDataAccessToken
+47CMsgSteamLearnAccessTokens_InferenceAccessToken
 47CMsgSteamLearn_InferenceBackend_Response_Output
 47CMsgSteamLearn_InferenceMetadataBackend_Request
 47CMsgSteamLearn_InferenceMetadata_Response_Range
@@ -13309,8 +13313,6 @@
 49CDOTA_Modifier_Watch_Tower_Invulnerable_Temporary
 49CDOTA_Modifier_Weaver_Shukuchi_GeminateAttackMark
 49CDOTA_Modifier_Zuus_ThundergodsWrathVisionThinker
-49CInlineJob_CMsgGCToServerSetSteamLearnInferencing
-49CInlineJob_CMsgGCToServerSetSteamLearnKeysChanged
 49CMsgAMGetUserGameStatsResponse_Achievement_Blocks
 49CMsgDOTARealtimeGameStats_GraphData_LocationStats
 49CMsgLobbyFeaturedGamemodeProgress_AccountProgress
@@ -13674,6 +13676,7 @@
 53CInfoSpawnGroupLoadUnloadAlias_info_spawngroup_unload
 53CMsgDOTARealtimeGameStats_GraphData_TeamLocationStats
 53CMsgGameMatchSignOut_CTeam_CPlayer_HeroDamageReceived
+53CMsgSteamLearnAccessTokens_SnapshotProjectAccessToken
 53CProtoItemSocket_Strange_DESERIALIZE_FROM_STRING_ONLY
 53CUserMsg_ParticleManager_ChangeControlPointAttachment
 53CUserMsg_ParticleManager_SetParticleNamedValueContext
@@ -13706,6 +13709,7 @@
 54CDOTA_Modifier_Special_Bonus_Unique_Beastmaster_5_Aura
 54CDOTA_Modifier_Special_Bonus_Unique_Beastmaster_6_Aura
 54CDOTA_Modifier_Winter_Wyvern_Winters_Curse_Kill_Credit
+54CInlineJob_CMsgGCToServerSteamLearnAccessTokensChanged
 54CMsgSteamLearn_InferenceMetadata_Response_CompactTable
 54CUserMsg_ParticleManager_UpdateParticleOrient_OBSOLETE
 55CDOTAUserMsg_StatsTeamMinuteDetails_LocationPerformance
@@ -13792,6 +13796,7 @@
 57CMsgClientToGCCreateStaticRecipeResponse_AdditionalOutput
 57CMsgClientToGCGetGiftPermissionsResponse_FriendPermission
 57CMsgServerToGCMatchPlayerItemPurchaseHistory_ItemPurchase
+57CMsgSteamLearn_InferenceBackend_Response_RegressionOutput
 57CUserMsg_ParticleManager_ParticleFreezeTransitionOverride
 5822CCompressedStaticFloat
 58CDOTA_Ability_Special_Bonus_Unique_Bulwark_DamageReduction
@@ -13899,7 +13904,6 @@
 65CDOTAUserMsg_StatsMatchDetails_CDOTAUserMsg_StatsFightTeamDetails
 65CDOTA_Modifier_AbyssalUnderlord_AtrophyAura_Permanent_HeroDmgBuff
 65CMsgSteamLearn_InferenceBackend_Response_BinaryCrossEntropyOutput
-6666666666666666
 66CDOTA_Ability_Special_Bonus_Unique_Dawnbreaker_Fire_wreath_Charges
 66CDOTA_Ability_Special_Bonus_Unique_Hoodwink_SharpshooterPureDamage
 67CDOTAMatchPrivateMetadata_Team_Player_CombatSegment_DamageByAbility
@@ -13923,7 +13927,6 @@
 6STEAMLEARN_INFERENCE_METADATA_ERROR_INVALID_PROJECT_ID
 6STEAMLEARN_REGISTER_DATA_SOURCE_RESULT_ERROR_FORBIDDEN
 6STEAMLEARN_REGISTER_DATA_SOURCE_RESULT_SUCCESS_CREATED
-6YA1计9
 6d unresolved strings
 6ffff
 6fffff
@@ -15935,7 +15938,7 @@ ARATARATARATARA
 ARATARATARATARATARATARATARATARATARATARATARATARATARATARA
 ARATARATARATARAZARAp
 ARATARATARATATA
-ARATARA[ARATARATARATARATARATARATARA
+ARATARA[ARATARATARATARATARATARA
 ARATARA`5ATBp
 ARATARB
 ARATAWAU
@@ -16146,7 +16149,6 @@ ASARAp
 ASASASASASARBVAp
 ASASASASAUAUARA[BRA`4ARA[ARATARATARATARATARAWARAUCRA`$ARARATARAVARAVARAWARARBVARAVARAVARAVARB
 ASASASAYC
-ASASASBRAp
 ASASBZARAp
 ASATASASBRASASASASASASASASASASASASASASASASASASASASASB[BRA^A`4ARA[ARA[ARA[ARAVBRBp
 ASATAp
@@ -16205,7 +16207,6 @@ AVATATATAUC
 AVATAXA
 AVA`/A`4A
 AVA`7ATA`6A
-AVS95C
 AVS97~=I
 AVS9w4t'A
 AVS9w8t'A
@@ -16233,7 +16234,7 @@ AWAVATSHc^XH
 AWAVATSI
 AWAVATSL
 AWAVATSLc
-AWAVATSLc%~P
+AWAVATSLc%^G
 AWAVATSLc?A9
 AWAVATSLcG
 AWAVATSM
@@ -16296,7 +16297,7 @@ AWAWAWARAp
 AWAWAWA[AYA
 AWA`IA]A
 AWCSAZA`(A`(A`(A`(Ap
-AXARARA[ARATARA\Ap
+AXARARA[ARATARB\Ap
 AYATA
 AYAYAYA` AYAYAYA` A` AYAYAYA` AYAYAYA` AYA` A` AYAYAYAYA` AYAYAYA` AYAYAYA` AYAYAYA` A` AYAYA` A` AYAYAYA` A` AYAYA` AYAYAYAYA` A` AYAYAYAYA` AYAYAYAYA` A` A` AYAYAYAYA
 AZARA
@@ -16328,7 +16329,7 @@ A`5AUASB
 A`6ATA
 A`6AUAp
 A`=AZA`4AXAp
-A`?ARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARA
+A`?ARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARB
 A`EAZAp
 A`bARBSAYB
 A`bAYA
@@ -16369,9 +16370,9 @@ A`kATA
 A`oARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARC
 A`pATA`xAVA`xAVATATASA
 A`qA`TBRARARATBRA`DASARAVAp
-A`wARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARA
 A`xAVARA
 A`yAVAXA
+A`zARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARA
 A`~AVA[Ap
 Abilities
 Ability
@@ -17917,8 +17918,6 @@ CConstraintSlave
 CConstraintTarget
 CCopyRecipientFilter
 CCredits
-CCrypto::GenerateHMAC
-CCrypto::GenerateRandomBlock
 CCustomGameData
 CCustomGameEventManager
 CCustomGameEventManager::ScriptSend_ServerToPlayer - Invalid player
@@ -25555,8 +25554,7 @@ CInlineJob_CMsgGCToServerEvaluateToxicChat
 CInlineJob_CMsgGCToServerGetCheerState
 CInlineJob_CMsgGCToServerLobbyHeroBanRates
 CInlineJob_CMsgGCToServerRecordTrainingData
-CInlineJob_CMsgGCToServerSetSteamLearnInferencing
-CInlineJob_CMsgGCToServerSetSteamLearnKeysChanged
+CInlineJob_CMsgGCToServerSteamLearnAccessTokensChanged
 CInlineJob_CMsgGCToServerUpdateSteamBroadcasting
 CInlineJob_CMsgHeroRoleAllRanksStats
 CInstallUGCJob::CInstallUGCJob(const CUtlVector<InstallCustomGameCacheInfo_t> &, std::function<bool (const CMsgCustomGameInstallStatus
@@ -26028,8 +26026,7 @@ CMsgGCToServerPingResponse
 CMsgGCToServerPredictionResult
 CMsgGCToServerRealtimeStatsStartStop
 CMsgGCToServerRecordTrainingData
-CMsgGCToServerSetSteamLearnInferencing
-CMsgGCToServerSetSteamLearnKeysChanged
+CMsgGCToServerSteamLearnAccessTokensChanged
 CMsgGCToServerUpdateSteamBroadcasting
 CMsgGCTopCustomGamesList
 CMsgGCUpdateSubGCSessionInfo
@@ -26271,8 +26268,9 @@ CMsgSource1LegacyListenEvents
 CMsgSpendWager
 CMsgSpendWager.Player
 CMsgSteamLearnAbilitySkill
+CMsgSteamLearnAccessTokens
 CMsgSteamLearnData
-CMsgSteamLearnData"Z
+CMsgSteamLearnData"q
 CMsgSteamLearnDataElement
 CMsgSteamLearnDataList
 CMsgSteamLearnDataObject
@@ -26280,8 +26278,6 @@ CMsgSteamLearnDataObject"j
 CMsgSteamLearnDataSource
 CMsgSteamLearnDataSourceDescElement
 CMsgSteamLearnDataSourceDescObject
-CMsgSteamLearnHMACKeys
-CMsgSteamLearnHMACKeys"A
 CMsgSteamLearnItemPurchase
 CMsgSteamLearnMatchHero
 CMsgSteamLearnMatchHeroes
@@ -26293,15 +26289,14 @@ CMsgSteamLearnPlayerTimedStats
 CMsgSteamLearnPreGameItemPurchases
 CMsgSteamLearnServerInfo
 CMsgSteamLearnWardPlacement
-CMsgSteamLearn_AccessData
 CMsgSteamLearn_BatchOperation_Request
 CMsgSteamLearn_BatchOperation_Response
 CMsgSteamLearn_BatchOperation_Response"W
 CMsgSteamLearn_CacheData_Request
 CMsgSteamLearn_CacheData_Response
-CMsgSteamLearn_GetHMACKeys_Request
-CMsgSteamLearn_GetHMACKeys_Response
-CMsgSteamLearn_GetHMACKeys_Response"n
+CMsgSteamLearn_GetAccessTokens_Request
+CMsgSteamLearn_GetAccessTokens_Response
+CMsgSteamLearn_GetAccessTokens_Response"r
 CMsgSteamLearn_InferenceBackend_Response
 CMsgSteamLearn_InferenceMetadataBackend_Request
 CMsgSteamLearn_InferenceMetadata_Request
@@ -26318,7 +26313,7 @@ CMsgSteamLearn_SnapshotProject_Response
 CMsgStickerHero
 CMsgStickerHero"Y
 CMsgStickerHeroes
-CMsgStickerHeroes"8
+CMsgStickerHeroes"a
 CMsgStickerbook
 CMsgStickerbookPage
 CMsgStickerbookSticker
@@ -26941,15 +26936,15 @@ CSpriteAlias_env_glow
 CSpriteOriented
 CSteamLearnManager
 CSteamLearnManager::BSnapshotProject no submission HMAC secret for project %u, published version %u
-CSteamLearnManager::BSubmitToDataSource no submission HMAC secret for data source %u
+CSteamLearnManager::BSubmitToDataSource no submission access token for data source %u
 CSteamLearnManager::BYieldingGetInferenceMetadata no HMAC secret for project %u, published version %u
-CSteamLearnManager::BYieldingInference no HMAC secret for project %u, published version %u
-CSteamLearnManager::Inference (batched) no HMAC secret for project %u
+CSteamLearnManager::BYieldingInference no access token for project %u, published version %u
+CSteamLearnManager::Inference (batched) no access token for project %u
 CSteamLearnManager::PostInit (batch loop
 CSteamLearnManager::RegisterDataSource
-CSteamLearnManager::SnapshotProject (batched) no HMAC secret for project %u
+CSteamLearnManager::SnapshotProject (batched) no access token for project %u
 CSteamLearnManager::SubmitToDataSource
-CSteamLearnManager::SubmitToDataSource no HMAC secret for data source %u
+CSteamLearnManager::SubmitToDataSource no access code for data source %u
 CSteamServiceMethodHTTPHelper call %s: Failed to parse proto body
 CSteamUnifiedMessageDispatcher::SendMethod: Cannot invoke method without first registering listener
 CStopwatch
@@ -27218,7 +27213,7 @@ C`A;F
 C`L9(t+I
 Cache hit.  CRC matches
 CacheData
-CacheDataKeys
+CacheDataAccessToken
 Calc Detour
 CalcAnimationState
 CalcClosestPointOnEntityOBB
@@ -27484,6 +27479,7 @@ CenterCameraOnUnit
 CenterCameraOnUnit( nPlayerId, hUnit ): Centers each players' camera on a unit
 Certain speech concepts will not be said more than once per (n) seconds. Set to 0 to disable
 Cf9C.r=f
+Cfffff
 Cffffff
 ChA;Fh
 ChD90
@@ -28104,6 +28100,7 @@ D$(HiM
 D$(fff
 D$0AkFT<A
 D$0D9
+D$0HcX
 D$0Ic\$(H
 D$0fE
 D$7[A\A^A
@@ -28137,6 +28134,7 @@ D0u\H
 D1 Lct1
 D3T$ M
 D3\$$I9
+D3t$$1
 D3t$$D1
 D3t$(D
 D3t$01
@@ -28148,7 +28146,6 @@ D8 t-I
 D8+t#H
 D83t&H
 D9 ~wI
-D9%VW
 D9,:t
 D90u@H
 D90|IH
@@ -28170,8 +28167,8 @@ D9y\uYH
 D9{0u
 D9{8t!L
 D9{8t$L
-D;-Ol
-D;=Bw
+D;5-k
+D;=LB5
 D;Z s%E1
 D;`Du
 D;sHt
@@ -30723,7 +30720,6 @@ DynamicHud_SetVisible
 DynamicLightThink
 DynamicMeshDeformParams_t
 E  tKI
-E ffffff
 E+D$ H
 E+D$ L
 E+D$8L
@@ -30999,7 +30995,7 @@ ESplitScreenMessageType
 EStatID
 ESteamLearnCacheDataResult
 ESteamLearnDataType
-ESteamLearnGetHMACKeysResult
+ESteamLearnGetAccessTokensResult
 ESteamLearnInferenceMetadataResult
 ESteamLearnInferenceResult
 ESteamLearnSnapshotProjectResult
@@ -31264,7 +31260,6 @@ Encountered unknown entity i/o target type
 Encountered unknown enum value %s for field %s
 Encountered unknown resource type "%s" for resource "%s
 Encrypt the question_value and correct_answer_index fields of trivia questions
-Encryption
 End  : %3.0f
 End Script Dump
 End the tutorial
@@ -31587,6 +31582,7 @@ EЊC8<"t
 EЊC8<"u
 EЊCh<"t
 EЊCh<"u
+EЋ=M6U
 EЦT\sH
 Eـ8.uCH
 F  uBE1
@@ -31980,7 +31976,7 @@ Favorites
 FavoritesKV
 FdA;F4
 FeaturedGamemodeProgress
-Feb 12 2024
+Feb 13 2024
 FeetSettings
 Fetching info about latest revision
 Ff9C.r@f
@@ -33004,6 +33000,7 @@ GetAbsoluteNoDamageMagical
 GetAbsoluteNoDamagePhysical
 GetAbsoluteNoDamagePure
 GetAbsorbSpell
+GetAccessTokens
 GetAcquisitionRange
 GetActiveMode
 GetActiveModeDesire
@@ -33303,7 +33300,6 @@ GetGoldSpentOnSupport
 GetGraphParameter
 GetGroundHeight
 GetGroundPosition
-GetHMACKeys
 GetHUDVisible
 GetHasteFactor
 GetHealing
@@ -34138,6 +34134,7 @@ GuildChallengeProgress: QueryID(%d) challenge %s - %s
 GuildContractID_t
 GuildID_t
 GuildTagDecoration
+G怀G老G退G
 G耀G耀G耀G
 H HcQPI9
 H*NLFPFFLF
@@ -34147,7 +34144,6 @@ H+^8H
 H90t!H
 H90t'H
 H97t4M
-H9=_84
 H9B t
 H9C8t(fffff
 H9D$@H
@@ -36241,7 +36237,6 @@ IcD$(H9
 IcD$(I
 IcD$(I9
 IcD$0H
-IcD$0H9
 IcD$0I9
 IcD$4H9
 IcD$4I
@@ -36493,6 +36488,7 @@ IndirectVoxelDimY
 IndirectVoxelDimZ
 IndividualProgress
 Inference
+InferenceAccessToken
 InferenceMetadata
 Inferred Ally Defense - %s from %s
 Inferred Assembling
@@ -37963,7 +37959,7 @@ LaunchHeight
 LaunchLoot
 LaunchLootInitialHeight
 LaunchLootRequiredHeight
-Lc=mw
+Lc%*PM
 Lc@(Ii
 Lcc D
 LcpHIi
@@ -39668,9 +39664,8 @@ N5GCSDK12CProtoBufMsgI36CMsgGCToServerRealtimeStatsStartStopEE
 N5GCSDK12CProtoBufMsgI37CMsgGCToServerUpdateSteamBroadcastingEE
 N5GCSDK12CProtoBufMsgI37CMsgGameMatchSignOutPermissionRequestEE
 N5GCSDK12CProtoBufMsgI37CMsgServerToGCCavernCrawlIsHeroActiveEE
-N5GCSDK12CProtoBufMsgI38CMsgGCToServerSetSteamLearnInferencingEE
-N5GCSDK12CProtoBufMsgI38CMsgGCToServerSetSteamLearnKeysChangedEE
 N5GCSDK12CProtoBufMsgI38CMsgGameMatchSignOutPermissionResponseEE
+N5GCSDK12CProtoBufMsgI43CMsgGCToServerSteamLearnAccessTokensChangedEE
 N5GCSDK12CProtoBufMsgI45CMsgServerToGCCavernCrawlIsHeroActiveResponseEE
 N5GCSDK12CProtoBufMsgI51CMsgServerToGCCloseCompendiumInGamePredictionVotingEE
 N5GCSDK12CProtoBufMsgI59CMsgServerToGCCloseCompendiumInGamePredictionVotingResponseEE
@@ -39690,9 +39685,8 @@ N5GCSDK16CGCClientLinkJobI27CMsgIDLinkGCToGenericClientILj2ELj8812E23CMsgGCToSer
 N5GCSDK16CGCClientLinkJobI27CMsgIDLinkGCToGenericClientILj2ELj8813E25CMsgGCToServerCheerConfigEEE
 N5GCSDK16CGCClientLinkJobI27CMsgIDLinkGCToGenericClientILj2ELj8817E33CMsgGCToServerCheerScalesOverrideEEE
 N5GCSDK16CGCClientLinkJobI27CMsgIDLinkGCToGenericClientILj2ELj8818E27CMsgGCToServerGetCheerStateEEE
-N5GCSDK16CGCClientLinkJobI27CMsgIDLinkGCToGenericClientILj2ELj8876E38CMsgGCToServerSetSteamLearnKeysChangedEEE
+N5GCSDK16CGCClientLinkJobI27CMsgIDLinkGCToGenericClientILj2ELj8876E43CMsgGCToServerSteamLearnAccessTokensChangedEEE
 N5GCSDK16CGCClientLinkJobI27CMsgIDLinkGCToGenericClientILj2ELj8878E25CMsgHeroRoleAllRanksStatsEEE
-N5GCSDK16CGCClientLinkJobI27CMsgIDLinkGCToGenericClientILj2ELj8885E38CMsgGCToServerSetSteamLearnInferencingEEE
 N5GCSDK16CGCReportPrinter13IReportOutputE
 N5GCSDK16CProtoBufMsgBase20IProtoBufSendHandlerE
 N5GCSDK16CProtoBufMsgBaseE
@@ -39713,8 +39707,7 @@ N5GCSDK17CGCClientProtoJobI31CMsgGCToServerLobbyHeroBanRatesEE
 N5GCSDK17CGCClientProtoJobI32CMsgGCToServerRecordTrainingDataEE
 N5GCSDK17CGCClientProtoJobI33CMsgGCToServerCheerScalesOverrideEE
 N5GCSDK17CGCClientProtoJobI37CMsgGCToServerUpdateSteamBroadcastingEE
-N5GCSDK17CGCClientProtoJobI38CMsgGCToServerSetSteamLearnInferencingEE
-N5GCSDK17CGCClientProtoJobI38CMsgGCToServerSetSteamLearnKeysChangedEE
+N5GCSDK17CGCClientProtoJobI43CMsgGCToServerSteamLearnAccessTokensChangedEE
 N5GCSDK17GCClientJobLambdaIZL28dota_load_demo_mode_scenarioRK15CCommandContextRK8CCommandE3$_1EE
 N5GCSDK17GCClientJobLambdaIZN14CDOTAGameRules20ClientMsg_GiftPlayerE12CEntityIndexRK27CDOTAClientMsg_GiftPlayer_tE3$_3EE
 N5GCSDK17GCClientJobLambdaIZN14CDOTAGameRules21UpdatePlayerAccoladesE10PlayerID_tE3$_8EE
@@ -39741,6 +39734,7 @@ N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18SubmitToDataSourceI26CMsgStea
 N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18SubmitToDataSourceI26CMsgSteamLearnItemPurchaseEEvRK10CUtlVectorIyi10CUtlMemoryIyiEERKT_bEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18SubmitToDataSourceI27CMsgSteamLearnWardPlacementEEvRK10CUtlVectorIyi10CUtlMemoryIyiEERKT_bEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18SubmitToDataSourceI29CMsgSteamLearnMatchInfoPlayerEEvRK10CUtlVectorIyi10CUtlMemoryIyiEERKT_bEUlvE_EE
+N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18SubmitToDataSourceI30CMsgSteamLearnPlayerTimedStatsEEvRK10CUtlVectorIyi10CUtlMemoryIyiEERKT_bEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18SubmitToDataSourceI33CMsgSteamLearnNeutralItemPurchaseEEvRK10CUtlVectorIyi10CUtlMemoryIyiEERKT_bEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18SubmitToDataSourceI34CMsgSteamLearnPreGameItemPurchasesEEvRK10CUtlVectorIyi10CUtlMemoryIyiEERKT_bEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager8PostInitEvE3$_1EE
@@ -41457,6 +41451,7 @@ PP@@0
 PP@PPPPP@P@P
 PP@`p@0
 PPA;FHu
+PPPP0PPP
 PPPPP
 PPPPP0PP`0````000  00  `000`@00 @  0
 PPPPP@P
@@ -41532,7 +41527,6 @@ PVSManagerGameSystem
 PVSModifier
 PXD90~cH
 PXD98~CI
-PY		PZ
 P[A\A^A
 P`0000  p
 P`P00
@@ -41906,6 +41900,7 @@ Pottery.Large
 Pottery.Medium
 Pottery.Small
 Power: %2.0f/%2.0f, Tankiness: %2.2f, Lifesteal: %d, Block: %d
+Pp		pr
 Pp 000
 Pp P``p
 Pp000
@@ -42008,6 +42003,7 @@ Processing item %s
 ProcsMagicStick
 Progress updated to %d
 Progress: %d
+ProjectInfo
 ProjectileCollisionSize
 ProjectileDodge
 ProjectileManager
@@ -42172,7 +42168,7 @@ RARARARARARARARA
 RARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARA
 RARARARARARARARARARARARARARARARARAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYARARARARARARARARARARARARARARARARARAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYARARARARARARARARARARARARARARARARARAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYARARARARARARARARARARARARARARARARARARA]ARARAp
 RARARARARARARARARARARARA`4ARARARARARARARARARARARARATAp
-RARARARARARARARARARAp
+RARARARARARARARARAp
 RARARARARARAVA`4AVA^A`4AUARAp
 RARARARARARBRBp
 RARARARARAZAp
@@ -42339,7 +42335,7 @@ RCRBRBp
 RCRBRC
 RCRCp p
 RCp(p0p
-RCp(ppRFp(p p
+RCp(ppRFp(p
 RDRA[Cp p
 RDRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRC
 RDRBRBRBRBRBRBRBRBRBRBRBRBRBp
@@ -42591,6 +42587,7 @@ RegisterMobileEventListener
 RegisterScriptHandle called with invalid team id: %d
 RegisterSpawnGroupFilterProxy
 RegisterStringToken
+RegressionOutput
 RegrowAllTrees
 ReincarnateSuppressFX
 ReincarnateTime
@@ -43368,7 +43365,8 @@ STEAMLEARN_DATATYPE_INT32
 STEAMLEARN_DATATYPE_INVALID
 STEAMLEARN_DATATYPE_OBJECT
 STEAMLEARN_DATATYPE_STRING
-STEAMLEARN_GET_HMAC_KEYS_SUCCESS
+STEAMLEARN_GET_ACCESS_TOKENS_ERROR
+STEAMLEARN_GET_ACCESS_TOKENS_SUCCESS
 STEAMLEARN_INFERENCE_ERROR
 STEAMLEARN_INFERENCE_ERROR_FORBIDDEN
 STEAMLEARN_INFERENCE_ERROR_INVALID_PROJECT_ID
@@ -44512,6 +44510,7 @@ SendProxyNeverSend_RecipientsFilter
 SendProxyNoPlayerEntities_RecipientsFilter
 SendQueryUGCRequest failed
 SendReason
+SendSteamLearnMatchInfo:: submitting PlayerTimedStats for PlayerID: %d
 SendToConsole
 SendToServerConsole
 Send_ServerToAllClients
@@ -45583,10 +45582,9 @@ Snap player eyes and orientation to specified pitch yaw <roll:optional> (must ha
 Snap player eyes to specified pitch yaw <roll:optional> (must have sv_cheats
 SnapToStartPos
 Snapshot of the entire state of a Dota match
-Snapshot project id %u, published version %u, key '%s
 SnapshotHistogram
 SnapshotProject
-SnapshotProjectKeys
+SnapshotProjectAccessToken
 Snapshots the current data for a project
 SndEmitterSystem
 SndSosTriggerOpvarWaitOver
@@ -45911,10 +45909,6 @@ SteamInternal_CreateInterface
 SteamInternal_FindOrCreateGameServerInterface
 SteamInternal_FindOrCreateUserInterface
 SteamLearn
-SteamLearn RegisterDataSource key '%s
-SteamLearn Snapshot project id %u, published version %u, key '%s
-SteamLearn SubmitToDataSource id %u, key '%s
-SteamLearn data submission %s for this server
 SteamLearn error for project %u (toobusy: %s), existing error count %d, retrying no sooner than %2.2fs
 SteamLearn error for project %u, but before existing retry delay, ignoring
 SteamLearn: Attempt to cache data to an uncached Data Source in CacheData
@@ -46031,7 +46025,6 @@ SubclassID_RecipientsFilter
 SubclassVDataChangeType_t
 Subdiv
 Subject
-SubmitToDataSource id %u, key '%s
 Submitting crash report message
 Subquest: Could not identify buyable item: %s
 SubscribedType
@@ -46705,8 +46698,7 @@ Tried to call SetMass() on %s but it has no physics
 Tried to change invalid tracking projectile speed
 Tried to copy from a message with a different type. to
 Tried to destroy (from script) a networked entity (%d/%s) on the client, the server controls lifespan, ignoring
-Tried to get SteamLearn ProjectID for %u
-Tried to get SteamLearn Published Version for %u
+Tried to get SteamLearn ProjectID for unknown %u
 Tried to hibernate while installing UGC
 Tried to install UGC when already busy doing soemthing else
 Tried to load a polymorphic pointer with no '%s' key
@@ -47908,9 +47900,12 @@ Y?33s
 Y@29CDOTA_Unit_Hero_PhantomLancer
 Y@A;YDtGI
 Y@A;YDu
-YA1耽5
-YA1诠Z
-YA1趋w
+YA1肌9
+YA1能8
+YA1菌i
+YA1衣w
+YA1讥m
+YA1轰u
 YARATASCRARARAp
 YARAYARAYARAYARAYARAYARAYARAYARAYARAYARAYARA
 YARAYARA\BZARAp
@@ -48259,7 +48254,6 @@ ZN6ActionI13CDOTA_BaseNPCE9OnContactEP11CBaseEntityP10CGameTraceEUlPS1_P18EventD
 ZN6ActionI13CDOTA_BaseNPCE9OnDeAggroEP11CBaseEntityEUlPS1_P18EventDesiredResultIS0_EE
 ZN6ActionI13CDOTA_BaseNPCE9OnInjuredERK15CTakeDamageInfoEUlPS1_P18EventDesiredResultIS0_EE
 ZN6ActionI13CDOTA_BaseNPCE9OnUnStuckEvEUlPS1_P18EventDesiredResultIS0_EE
-ZN7CSHAStrC1ERA20_Kh
 ZN7CThread15IsThreadRunningEv
 ZN7CThread21WaitForCreateCompleteEP12CThreadEvent
 ZN7CThread4InitEv
@@ -48645,8 +48639,8 @@ accept
 acceptdamagefromheldobjects
 accepted
 accepter_player_id
-access_data
 access_token
+access_tokens
 accessor_ == other.accessor
 accolades
 account_creation_time
@@ -49594,6 +49588,7 @@ axe_slow_duration
 axe_speed
 axe_spread
 axe_width
+a怀b老b怀c老c
 b IncludePregameTime b IncludeNegativeTime) Returns the actual DOTA in-game clock time
 bActivated
 bActive
@@ -50659,7 +50654,7 @@ c(D;c,t
 c(D;c,u{E
 c4IcG(D9
 cable_dynamic
-cache_data_keys
+cache_data_access_tokens
 cache_data_requests
 cache_data_responses
 cache_data_result
@@ -51646,7 +51641,6 @@ ctStunTimer
 ctTimer
 ctrl_held
 ctrl_is_down
-cubDest >= 0
 cubemapfogenddistance
 cubemapfogfalloffexponent
 cubemapfogheightend
@@ -52268,7 +52262,6 @@ details
 detection_type
 determinH
 detonate_delay
-dev/urandom
 dev_auto_draft_test
 dev_block_gc_hello
 dev_force_server_type
@@ -53329,7 +53322,6 @@ dota_suggest_learn_spew_win_probability
 dota_suggest_learn_toobusy_backoff_s
 dota_suggest_learn_wards_disable
 dota_suggest_learn_win_probability_interval
-dota_suggest_use_steamlearn
 dota_suggest_wards_disable
 dota_suggestion_quick_buy_and_neutral_timeout
 dota_suppress_invalid_orders
@@ -53818,7 +53810,6 @@ empty member name
 enable
 enableRendering
 enable_data_submission
-enable_inferencing
 enable_limit
 enable_offscreen_indicator
 enable_steering_limit
@@ -54407,7 +54398,6 @@ eye_angles
 eyes_follow
 eyes_radius
 eȋs8A9
-e、f퀄f、g
 f %f %f
 f %f %f %f
 f %f %f %f %f %f %f
@@ -54445,11 +54435,11 @@ fA9\$6
 fAttackTimeRemaining
 fC9L%H
 fC9\f`t
+fD9-bc8
 fD94Qr:1
 fD94QtEH
 fD9c"~"H
 fD9tA`t'I
-fD;5Ztk
 fD;n@s
 fD;s@sKH
 fDamage
@@ -56353,7 +56343,6 @@ hltv_replay_flags
 hltv_spectate
 hltv_title
 hltv_versioninfo
-hmac_keys
 hold time: %f
 hold_time
 holdevent
@@ -56776,7 +56765,9 @@ indoor_outdoor_level
 inertiaScale
 inertiafactor
 inertiascale
+inference_access_tokens
 inference_metadata_result
+inference_published_version
 inference_requests
 inference_responses
 inference_result
@@ -58058,9 +58049,7 @@ items_t
 items_to_be_purchased
 items_unusual_lists
 itemshoppinglist
-i怀i老i退i
 j55_j55
-jGets the HMAC keys needed for registering data sources, submitting data to them, and snapshotting projects
 jHcO H
 j[A\A^A
 j_̛j_̛T~FbT~Fb
@@ -59586,8 +59575,7 @@ k_EMsgGCToServerPredictionResult
 k_EMsgGCToServerRealtimeStatsStartStop
 k_EMsgGCToServerRecordTrainingData
 k_EMsgGCToServerScenarioSave
-k_EMsgGCToServerSetSteamLearnInferencing
-k_EMsgGCToServerSetSteamLearnKeysChanged
+k_EMsgGCToServerSteamLearnAccessTokensChanged
 k_EMsgGCToServerSubmitCheerData
 k_EMsgGCToServerUpdateSteamBroadcasting
 k_EMsgGCTopCustomGamesList
@@ -71424,6 +71412,7 @@ nFirstFreeIndex < MAGIC_STICK_MAX_ENTITIES_TO_CHECK
 nFlags
 nFoWID
 nFxIndex
+nGets the access tokens needed for registering data sources, submitting data to them, and snapshotting projects
 nGroup
 nHPGain
 nHealth
@@ -72661,6 +72650,7 @@ nyx_assassin_mana_burn
 nyx_assassin_spiked_carapace
 nyx_assassin_unburrow
 nyx_assassin_vendetta
+n퀄p〇s、t
 o [%5d] '%s' (%s) [group entity
 o [no group entity
 o(D;o,u
@@ -72671,7 +72661,7 @@ o8E;o
 o@D;oDu
 oD$@fA
 oD$`fE
-oD9%yw
+oD9%yk
 oL$ fA
 oL$PfA
 oL$`fA
@@ -72821,7 +72811,6 @@ opt/buildbot/buildworker/source2_dota_rel_osx64/build/_build_/game/server/_vpc_s
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/_build_/game/server/_vpc_server_dota/unity/osx64/_schema_/release/../../../../../../../../src/game/shared/props_shared.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/_build_/game/server/_vpc_server_dota/unity/osx64/_schema_/release/../../../../../../../../src/game/shared/vscriptgamesystem.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/../src/mathlib/extended/generic_expr.g
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/common/crypto.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/entity2/entity2_networking.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/entity2/entityclass.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/entity2/entitykeyvalues.cpp
@@ -72983,7 +72972,7 @@ owning_camp_position
 owning_player_id
 p   `00
 p  p pP
-p RARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARA
+p RARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARB
 p RAUFp
 p RAp
 p RAp p
@@ -73270,6 +73259,7 @@ pWhitelistKeyValues
 pWorldObject
 pXRBRBRBRD
 pXRCp p
+pXRCp p p
 pX^ASA
 pXp(p(RGpXp0p
 pXp(pXp
@@ -76473,6 +76463,7 @@ proj_handle
 proj_index
 project_id
 project_id] [published_version] Test loads the inference metadata for the specified project
+project_infos
 projectile
 projectileID
 projectile_bonus
@@ -76628,7 +76619,6 @@ publish_timestamp
 published_file_id
 published_version
 publisher_group_id
-publisher_id
 puck_dream_coil
 puck_ethereal_jaunt
 puck_illusory_orb
@@ -76890,7 +76880,6 @@ random_attibutes_only_pick_one
 random_attributes
 random_seed
 random_spawn_chance
-random_value
 randomizecycle
 randomnum
 randomseed
@@ -77054,11 +77043,12 @@ region_pings
 region_select_flags
 regional_prices
 regions
-register_data_source_key
+register_data_source_access_token
 registered
 registered_players
 registers
 registration_period
+regression
 regular
 regular expression is too large
 reincarnate
@@ -78019,7 +78009,6 @@ s_bNetworkVarValidate
 s_bPreventingSetAnimRunAnimEvents
 s_bUseNetworkVars
 s_bUsingPVSConvars
-s_dev_urandom_fd >= 0
 s_fff
 s_hype
 s_mega
@@ -79203,7 +79192,8 @@ snapfire_spit_creep
 snapshot_file
 snapshot_histogram
 snapshot_name
-snapshot_project_keys
+snapshot_project_access_tokens
+snapshot_published_version
 snapshot_requests
 snapshot_responses
 snapshot_result
@@ -81088,7 +81078,6 @@ state> Turn on/off simulated GC communications failure (GC is down in a way that
 state_invisible
 state_values
 static
-static bool CCrypto::GenerateRandomBlock(void *, int
 static bool CEntityComponent::CAllocator<CBodyComponentBaseAnimGraph>::Allocate(CEntityIdentity *, COMPONENT_TYPE **) [COMPONENT_TYPE = CBodyComponentBaseAnimGraph
 static bool CEntityComponent::CAllocator<CBodyComponentBaseAnimating>::Allocate(CEntityIdentity *, COMPONENT_TYPE **) [COMPONENT_TYPE = CBodyComponentBaseAnimating
 static bool CEntityComponent::CAllocator<CBodyComponentBaseAnimatingOverlay>::Allocate(CEntityIdentity *, COMPONENT_TYPE **) [COMPONENT_TYPE = CBodyComponentBaseAnimatingOverlay
@@ -81165,8 +81154,8 @@ steamlearn_count
 steamlearn_data_submit_enable
 steamlearn_inference_http
 steamlearn_max_in_flight
-steamlearn_override_inference_keys
-steamlearn_override_register_key
+steamlearn_override_inference_access_tokens
+steamlearn_override_register_access_token
 steamlearn_request_timeout_s
 steamlearn_spew_um_times
 steammessages.proto
@@ -81646,6 +81635,7 @@ szReplaysPath = %s
 szUnitName
 s}SAVE/%s.%s
 s}SAVE/%s.sav
+s态s耀s态t退t
 t	IcL
 t	L9+u
 t	L93u
@@ -81754,7 +81744,6 @@ t'HcN8
 t'IcNH
 t'fffff
 t'ffffff
-t(D9=&U
 t(IcL
 t(IcL$X
 t(fff
@@ -81875,7 +81864,6 @@ tZM9u
 t[9w tV9w$tQ9w(tL9w,tG9w0tB9w4t=9w8t89w<t39w@t.9wDt)9wHt$9wLt
 t[I94
 t[I96
-t[M94
 t[M9u
 t[fff
 t\;V rWH
@@ -82742,6 +82730,7 @@ two_factor_enabled_time
 twofactor_enabled
 txn_country_code
 txn_id
+tyL92v[H
 tyMc|$ D
 type %d
 type does not match
@@ -83004,7 +82993,6 @@ upmove
 uptime
 uptodate_subscribed_caches
 urH91umH9w ugL9
-urandom_result > 0 || ( urandom_result < 0 && errno == EINTR
 urn_of_shadows_used
 ursa_earthshock
 ursa_enrage
@@ -83083,6 +83071,7 @@ v0IcV(H
 v8D;s<t
 v8D;s<u
 v8H;5
+v8H;5H
 v8IcV0H
 v8array
 v8callback
@@ -83946,7 +83935,7 @@ xp_reason
 xp_received
 xp_reward_details
 xtO<htO<X
-xxD9%nw
+xxD9%nk
 x|D9=0
 x|D9=n
 y#fffff
