@@ -14,7 +14,7 @@
 				<Panel id="Horizon" />
 				<DOTAScenePanel id="BackgroundFXWindow" map="scenes/item_received" camera="shot_camera" particleonly="true" />
 				<Label id="ItemPanelTitle" class="PopupTitle" text="{s:banner_text}" html="true" />
-				<Panel id="IconContainer" hittestchildren="false">
+				<Panel id="IconContainer" hittestchildren="false" hittest="false">
 					<Panel id="ItemShadow" />
 					<DOTAUIEconSetPreview class="ItemSetPreview" id="ItemSetPreview_1" allowrotation="true" antialias="true" drawbackground="false" displaymode="loadout_small" suppress-intro-effects="true" />
 					<DOTAUIEconSetPreview class="ItemSetPreview" id="ItemSetPreview_2" allowrotation="true" antialias="true" drawbackground="false" displaymode="loadout_small" suppress-intro-effects="true" />
@@ -23,8 +23,19 @@
 					</Panel>
 				</Panel>
 				<Panel id="ItemContainer">
-					<Panel id="HorizontalBand" class="ShowGroupMemberNames HideEmptyGroupMembers">
+					<Panel id="HorizontalBand">
 						<Label id="ItemName" class="PopupTitle" text="{s:item_name}" />
+						<Panel id="GiftInfo">
+							<Panel class="GiftSenderInfo">
+								<Panel class="Dash Left" />
+								<Label class="GiftSenderTitle" text="#DOTA_econ_item_details_gift_label" />
+								<Label class="GiftSenderName" html="true" text="#DOTA_tooltip_econ_item_gifter" />
+								<Panel class="Dash Right" />
+							</Panel>
+							<Panel class="GiftDedication">
+								<Label class="GiftDedicationLabel" text="#DOTA_GiftDedication" />
+							</Panel>
+						</Panel>
 						<Label id="ItemDescription" text="{s:item_description}" class="Hide" />
 					</Panel>
 				</Panel>

@@ -70,7 +70,6 @@ PopupItemReceived.PopupPanel.Hidden
 {
 	width: 100%;
 	height: 100%;
-	z-index: 3;
 }
 
 #IconContainer.StartAnim
@@ -434,18 +433,17 @@ PopupItemReceived #Body
 	letter-spacing: 2px;
 	color: #E2AD5E;
 	font-weight: normal;
-	margin-bottom: 8px;
+	margin: 0px;
 }
 
 #ItemDescription
 {
 	horizontal-align: center;
 	text-align: center;
-	margin-top: 40px;
-	vertical-align: top;
 	max-width: 800px;
 	padding: 15px;
 	border-radius: 8px;
+	margin-top: 8px;
 	font-size: 21px;
 	font-weight: thin;
 	color: #CCCCCC;
@@ -477,7 +475,7 @@ PopupItemReceived #Body
 	height: 100%;
 	width: 100%;
 	horizontal-align: center;
-	margin-bottom: 100px;
+	margin-bottom: 90px;
 }
 
 #HorizontalBand
@@ -488,12 +486,105 @@ PopupItemReceived #Body
 	width: 100%;
 	transition-property: transform;
 	transition-duration: 0.3s;
-	margin-bottom: 10px;
+	margin-bottom: 12px;
+	flow-children: down;
 }
 
 .PopupPanel.Hidden #HorizontalBand
 {
 	transform: translateY(-20px );
+}
+
+#GiftInfo
+{
+	horizontal-align: center;
+	width: 720px;
+	flow-children: down;
+}
+
+#GiftInfo.Hidden
+{
+	visibility: collapse;
+}
+
+.GiftSenderInfo
+{
+	horizontal-align: center;
+	flow-children: right;
+	width: 100%;
+}
+
+.GiftSenderInfo .Dash
+{
+	width: fill-parent-flow( 1 );
+	height: 1px;
+	vertical-align: center;
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( LightGrey ), to( LightGrey&00 ) );
+	margin: 6px 12px 0px 8px;
+	opacity: 0.2;
+}
+
+.GiftSenderInfo .Dash.Left
+{
+	transform: scaleX( -1 );
+}
+
+.GiftSenderTitle
+{
+	color: LightestGrey;
+	opacity: 0.6;
+	font-size: 16px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	margin-top: 13px;
+}
+
+.GiftSenderName
+{
+	color: LightestGrey;
+	margin-left: 3px;
+	opacity: 0.8;
+	font-size: 32px;
+	margin-top: -2px;
+}
+
+.GiftSenderDedicationBar
+{
+	width: fill-parent-flow( 1.0 );
+	background-color: #555757;
+	vertical-align: middle;
+	margin-left: 6px;
+	height: 1px;
+	visibility: collapse;
+}
+
+#GiftInfo.HasDedication .GiftSenderDedicationBar
+{
+	visibility: visible;
+}
+
+.GiftDedication
+{
+	width: 100%;
+	visibility: collapse;
+}
+
+#GiftInfo.HasDedication .GiftDedication
+{
+	visibility: visible;
+}
+
+.GiftDedicationLabel
+{
+	text-align: center;
+	width: 100%;
+	max-height: 64px;
+	text-overflow: shrink;
+	margin: 4px 8px;
+	font-size: 22px;
+	font-style: italic;
+	color: LighterGrey;
+	letter-spacing: -0.3px;
 }
 
 .ItemOptions
@@ -506,8 +597,8 @@ PopupItemReceived #Body
 
 .PopupButton
 {
-	margin-left: 16px;
-	margin-right: 16px;
+	margin-left: 8px;
+	margin-right: 8px;
 	width: 228px;
 	vertical-align: bottom;
 }
