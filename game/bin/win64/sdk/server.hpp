@@ -39655,12 +39655,12 @@ public:
 
 // Registered binary: server.dll (project 'server')
 // Alignment: 8
-// Size: 0x588
+// Size: 0x590
 // Has VTable
 class CDOTA_Ability_ForestTrollHighPriest_Heal : public CDOTABaseAbility
 {
 public:
-	// No schema binary for binding
+	GameTime_t m_flTargetTime; // 0x588	
 };
 
 // Registered binary: server.dll (project 'server')
@@ -55531,7 +55531,8 @@ public:
 class CDOTA_Modifier_Furion_Sprout_Damage : public CDOTA_Buff
 {
 public:
-	int32_t sprout_damage; // 0x1318	
+	int32_t sprout_damage_per_second; // 0x1318	
+	float sprout_damage_inteval; // 0x131c	
 };
 
 // Registered binary: server.dll (project 'server')
@@ -79005,8 +79006,9 @@ public:
 	int32_t bonus_health; // 0x1318	
 	int32_t bonus_mana; // 0x131c	
 	int32_t bonus_aoe; // 0x1320	
-	float spell_lifesteal; // 0x1324	
-	float lifesteal_multiplier; // 0x1328	
+	int32_t bonus_mp_regen; // 0x1324	
+	float spell_lifesteal; // 0x1328	
+	float lifesteal_multiplier; // 0x132c	
 };
 
 // Registered binary: server.dll (project 'server')
@@ -79507,12 +79509,14 @@ public:
 
 // Registered binary: server.dll (project 'server')
 // Alignment: 8
-// Size: 0x1320
+// Size: 0x1328
 // Has VTable
 class CDOTA_Modifier_Item_Vladmir : public CDOTA_Buff_Item
 {
 public:
 	int32_t aura_radius; // 0x1318	
+	int32_t armor; // 0x131c	
+	float mana_regen; // 0x1320	
 };
 
 // Registered binary: server.dll (project 'server')
@@ -82042,7 +82046,7 @@ public:
 	int32_t mana_regen_multiplier; // 0x1344	
 	int32_t bonus_magic_resist; // 0x1348	
 	float duration; // 0x134c	
-	int32_t proc_damage; // 0x1350	
+	int32_t passive_proc_damage; // 0x1350	
 	int32_t proc_chance; // 0x1354	
 	float bonus_health_regen; // 0x1358	
 };

@@ -268,7 +268,6 @@
 60.60s %6.6s %15.15s %5.5s %10.10s
 60.60s %6.6s %15.15s %5d %10d
 6?Generic
-6fA9tG
 75s %-75s offset %10.10s %9.9s %s
 8#GameUI_Disconnect_LocalProblem_HostedServerPrimaryRelay
 8.3f: %s: ParseMessagesDemo UNRELIABLE %d bytes
@@ -469,6 +468,7 @@ A\A]ÐSH
 A\A]ÐUSH
 A\]ÐUHc
 A\ÐATI
+A\ÐATUA
 A\ÐATUH
 A\ÐATUI
 A\ÐATUSH
@@ -1587,6 +1587,7 @@ H+D$ I9
 H+D$8H
 H+K H+S
 H9B rv
+H9C(u*[D
 H9C0tAH
 H9D$(u"H
 H9D$0t
@@ -1599,8 +1600,8 @@ H9p sMI9
 H9p tSL
 H9z r
 H9z s
-H;-vv
-H;=le
+H;=R4
+H;E0sR
 H;G t`H;G
 H;z H
 H;z t
@@ -1756,6 +1757,7 @@ L$xdH3
 L9s v
 L9s vm
 L9t$ t9H
+L9v ~FL
 L9|$(tLL
 L;#tGH
 L;$$tJA
@@ -1892,6 +1894,7 @@ Mc.E;n
 Mc/E;o
 McQHD1
 Mcl$(L
+Measured RTT to %d SDR points of presence
 MemAlloc_StrDupFunc
 MeshSystem001
 MeshUtils001
@@ -2299,6 +2302,7 @@ NetworkSystem
 NetworkSystem/CreateListenSocketP2P
 NetworkSystemVersion001
 Networking Reliable
+No SteamNetworkingUtils
 No active net channels
 No default value
 No field named "uninterpreted_option" in the Options proto
@@ -2326,6 +2330,7 @@ Numbers starting with leading zero must be in octal
 O$HcG
 ORIGIN
 OUT_OF_RANGE
+Obtained direct RTT measurements to relays in %d POPs.  Closest %d are
 October
 Oneof must have at least one field
 OneofDescriptorProto
@@ -2348,7 +2353,6 @@ PACKET_STATUS_DROPPED
 PACKET_STATUS_INVALID
 PACKET_STATUS_NORMAL
 PASAWA
-PAVAWj
 PERMISSION_DENIED
 PFT_SOUND
 PH;k u'H
@@ -2421,6 +2425,7 @@ Ports
 PostProcessingSystem_001
 PrefetchType
 PrefetchType"h
+Print current ping times to SDR points of presence, and selected route
 Print detailed network statistics for each network connection
 Problem
 Problem     : Enum value did not match field type
@@ -2528,6 +2533,8 @@ S0H+S8M
 SAPu(H
 SAPu,H
 SDR connect
+SDR ping location: %s
+SDR relay network status: %s (%d %d %d
 SENTINEL
 SIGNONSTATE_CHALLENGE
 SIGNONSTATE_CHANGELEVEL
@@ -2817,6 +2824,7 @@ T$HdH3
 T$VH;G
 T$XdH3
 T$hHcD
+T$xdH3
 TCP/UDP Disabled
 TD_OFFSET_NORMAL
 TD_OFFSET_PACKED
@@ -2854,6 +2862,7 @@ This appears to be a value from a sibling type
 This can't happen; base64 decoder state
 This convar is being accessed prior to ConVar_Register being called
 This is not
+This list may include POPs without any gameservers
 This program requires version
 This program was compiled against version
 This shouldn't be called if all the sizes are equal
@@ -2895,6 +2904,7 @@ UUUUUUU
 UUUUUUUUH
 UXA\A]A^A
 Unable to find polymorphic type for %s in %s
+Unable to get SDR ping location
 Unable to unambiguously match %s::%s in %s, %d possible matches found
 Unexpected end of string
 Unexpected failure while serializing option submessage
@@ -3192,6 +3202,7 @@ ZGVZNKSt8__detail11_AnyMatcherISt12regex_traitsIcELb0ELb1ELb1EEclEcE5__nul
 ZN10CUtlBuffer10ParseTokenEPK14characterset_tPcib
 ZN10CUtlBuffer18AddNullTerminationEv
 ZN10CUtlBuffer3PutEPKvi
+ZN10CUtlBuffer6PrintfEPKcz
 ZN10CUtlBuffer9PutStringEPKc
 ZN10CUtlBufferC1EPKvii
 ZN10CUtlBufferC1Eiii
@@ -8227,6 +8238,7 @@ dimensions
 disabled
 discarded_command_ticks
 dl_iterate_phdr
+dms faster than direct ping of %dms
 dollar-sign
 double_value
 dropped
@@ -8290,6 +8302,7 @@ eye_angles
 f %f %f %f
 f == nullptr || dynamic_cast<To>(f) != nullptr
 fA	F`A
+fD97tMH
 fD9c(fD
 fD9|$8
 fD;*trH
@@ -8679,8 +8692,6 @@ loss_out
 low_priority
 low_value
 lseek64
-m H;-h
-m8H;-r
 m_Value
 m_arBuf[ BUF_VOICE ].m_stream
 m_bCanStillRegisterCallbackPriorities
@@ -8732,6 +8743,7 @@ msg_data
 msg_type
 mt19937
 must be unique within
+mxH;-H
 n L9l
 n8ATUH
 nBits != 32
@@ -8780,6 +8792,7 @@ net_option
 net_option %s = %s
 net_option settings will not apply to loopback listenservers. To run a listenserver without loopback. Select your map with "map foo loopback=0
 net_p2p_listen_dedicated
+net_print_sdr_ping_times
 net_public_adr
 net_qosinterval_spew
 net_qospacketloss_percentage_threshold
@@ -9122,6 +9135,9 @@ s:  specified different usergroup proxy functions for '%s
 s:  value %u: count %d
 s: !CanPacket() - SNPQueueTime=%.1fms
 s: !CanPacket() - m_bSuppressingTransmit
+s: %dms
+s: %dms via %s (front=%dms, back=%dms)%s
+s: %dms via direct route
 s: %s
 s: Invalid capacity %u
 s: Invalid grow amount %d
@@ -9355,6 +9371,7 @@ tM;2uID
 tMHcC8
 tPATUH
 tPL;b rJH
+tQD95
 tRHcC
 tRHcCH
 tSI;M
@@ -9538,7 +9555,6 @@ vt)<xtj
 w(AUATI
 w(HcG I
 w@AUATL
-w@I;wH
 wHAUATL
 wPH+wHH
 was already set
@@ -9555,7 +9571,6 @@ wcsnrtombs
 wcsxfrm_l
 wctype_l
 weak_dependency
-whIcG`I
 which is
 which is a proto3 message type
 which is not defined or is not an extension of
