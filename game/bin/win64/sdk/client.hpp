@@ -6568,7 +6568,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0xb8
+// Size: 0xd0
 // Has VTable
 // 
 // MNetworkExcludeByName "m_hInventoryParent"
@@ -37216,7 +37216,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x518
+// Size: 0x530
 // Has VTable
 // 
 // MNetworkVarNames "int m_iReliableGold"
@@ -37444,71 +37444,71 @@ public:
 	// -> m_bSendChangedMsg - 0x1c0
 	C_DOTA_UnitInventory m_PreGameInventory; // 0x110	
 	// MNetworkEnable
-	int32_t m_nKillsPerOpposingTeamMember[24]; // 0x1c8	
+	int32_t m_nKillsPerOpposingTeamMember[24]; // 0x1e0	
 	// MNetworkEnable
-	AbilityID_t m_iSuggestedAbilities[5]; // 0x228	
+	AbilityID_t m_iSuggestedAbilities[5]; // 0x240	
 	// MNetworkEnable
-	float m_fSuggestedAbilityWeights[5]; // 0x23c	
-	// MNetworkEnable
-	// MNetworkChangeCallback "OnSuggestedItemsChanged"
-	AbilityID_t m_iSuggestedPregameItems[15]; // 0x250	
+	float m_fSuggestedAbilityWeights[5]; // 0x254	
 	// MNetworkEnable
 	// MNetworkChangeCallback "OnSuggestedItemsChanged"
-	AbilityID_t m_iSuggestedItemSequences[30]; // 0x28c	
+	AbilityID_t m_iSuggestedPregameItems[15]; // 0x268	
 	// MNetworkEnable
 	// MNetworkChangeCallback "OnSuggestedItemsChanged"
-	WeightedAbilitySuggestion_t m_iSuggestedWeightedItems[15]; // 0x304	
+	AbilityID_t m_iSuggestedItemSequences[30]; // 0x2a4	
 	// MNetworkEnable
 	// MNetworkChangeCallback "OnSuggestedItemsChanged"
-	WeightedAbilitySuggestion_t m_iSuggestedTopNItems[3]; // 0x37c	
+	WeightedAbilitySuggestion_t m_iSuggestedWeightedItems[15]; // 0x31c	
 	// MNetworkEnable
 	// MNetworkChangeCallback "OnSuggestedItemsChanged"
-	WeightedAbilitySuggestion_t m_iSuggestedNeutralItems[25]; // 0x394	
+	WeightedAbilitySuggestion_t m_iSuggestedTopNItems[3]; // 0x394	
 	// MNetworkEnable
-	uint32_t m_iSuggestedHeroes[10]; // 0x45c	
+	// MNetworkChangeCallback "OnSuggestedItemsChanged"
+	WeightedAbilitySuggestion_t m_iSuggestedNeutralItems[25]; // 0x3ac	
 	// MNetworkEnable
-	float m_flSuggestedHeroesWeights[10]; // 0x484	
+	uint32_t m_iSuggestedHeroes[10]; // 0x474	
 	// MNetworkEnable
-	int32_t m_iDamageByTypeReceivedPreReduction[3]; // 0x4ac	
+	float m_flSuggestedHeroesWeights[10]; // 0x49c	
 	// MNetworkEnable
-	int32_t m_iDamageByTypeReceivedPostReduction[3]; // 0x4b8	
+	int32_t m_iDamageByTypeReceivedPreReduction[3]; // 0x4c4	
 	// MNetworkEnable
-	int32_t m_iOutgoingDamageByTypePreReduction[3]; // 0x4c4	
+	int32_t m_iDamageByTypeReceivedPostReduction[3]; // 0x4d0	
 	// MNetworkEnable
-	int32_t m_iOutgoingDamageByTypePostReduction[3]; // 0x4d0	
+	int32_t m_iOutgoingDamageByTypePreReduction[3]; // 0x4dc	
 	// MNetworkEnable
-	int32_t m_iCommandsIssued; // 0x4dc	
+	int32_t m_iOutgoingDamageByTypePostReduction[3]; // 0x4e8	
 	// MNetworkEnable
-	int32_t m_iGoldSpentOnConsumables; // 0x4e0	
+	int32_t m_iCommandsIssued; // 0x4f4	
 	// MNetworkEnable
-	int32_t m_iGoldSpentOnItems; // 0x4e4	
+	int32_t m_iGoldSpentOnConsumables; // 0x4f8	
 	// MNetworkEnable
-	int32_t m_iGoldSpentOnBuybacks; // 0x4e8	
+	int32_t m_iGoldSpentOnItems; // 0x4fc	
 	// MNetworkEnable
-	int32_t m_iGoldLostToDeath; // 0x4ec	
+	int32_t m_iGoldSpentOnBuybacks; // 0x500	
 	// MNetworkEnable
-	bool m_bIsNewPlayer; // 0x4f0	
+	int32_t m_iGoldLostToDeath; // 0x504	
 	// MNetworkEnable
-	bool m_bIsGuidePlayer; // 0x4f1	
+	bool m_bIsNewPlayer; // 0x508	
+	// MNetworkEnable
+	bool m_bIsGuidePlayer; // 0x509	
 private:
-	[[maybe_unused]] uint8_t __pad04f2[0x6]; // 0x4f2
+	[[maybe_unused]] uint8_t __pad050a[0x6]; // 0x50a
 public:
 	// MNetworkEnable
 	// MNetworkEncoder "fixed64"
 	// MNetworkChangeCallback "OnPlayerSteamIDsChanged"
-	uint64_t m_iPlayerSteamID; // 0x4f8	
+	uint64_t m_iPlayerSteamID; // 0x510	
 	// MNetworkEnable
-	int32_t m_iSmokesUsed; // 0x500	
+	int32_t m_iSmokesUsed; // 0x518	
 	// MNetworkEnable
-	int32_t m_iNeutralTokensFound; // 0x504	
+	int32_t m_iNeutralTokensFound; // 0x51c	
 	// MNetworkEnable
-	int32_t m_iWatchersTaken; // 0x508	
+	int32_t m_iWatchersTaken; // 0x520	
 	// MNetworkEnable
-	int32_t m_iLotusesTaken; // 0x50c	
+	int32_t m_iLotusesTaken; // 0x524	
 	// MNetworkEnable
-	int32_t m_iTormentorKills; // 0x510	
+	int32_t m_iTormentorKills; // 0x528	
 	// MNetworkEnable
-	int32_t m_iCourierKills; // 0x514	
+	int32_t m_iCourierKills; // 0x52c	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -77286,7 +77286,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1780
+// Size: 0x1798
 // Has VTable
 // 
 // MNetworkExcludeByName "m_blinktoggle"
@@ -77586,256 +77586,256 @@ public:
 	// -> m_bSendChangedMsg - 0xf78
 	C_DOTA_UnitInventory m_Inventory; // 0xec8	
 private:
-	[[maybe_unused]] uint8_t __pad0f80[0x8]; // 0xf80
+	[[maybe_unused]] uint8_t __pad0f98[0x8]; // 0xf98
 public:
 	// MNetworkEnable
 	// MNetworkChangeCallback "OnUnitStateChanged"
 	// MNetworkPriority "32"
-	uint64_t m_nUnitState64; // 0xf88	
+	uint64_t m_nUnitState64; // 0xfa0	
 private:
-	[[maybe_unused]] uint8_t __pad0f90[0x8]; // 0xf90
+	[[maybe_unused]] uint8_t __pad0fa8[0x8]; // 0xfa8
 public:
-	uint64_t m_nUnitDebuffState; // 0xf98	
-	bool m_bHasInventory; // 0xfa0	
+	uint64_t m_nUnitDebuffState; // 0xfb0	
+	bool m_bHasInventory; // 0xfb8	
 private:
-	[[maybe_unused]] uint8_t __pad0fa1[0x3]; // 0xfa1
+	[[maybe_unused]] uint8_t __pad0fb9[0x3]; // 0xfb9
 public:
-	int32_t m_iAcquisitionRange; // 0xfa4	
-	int32_t m_FoWViewID; // 0xfa8	
-	int32_t m_iPrevHealthPct; // 0xfac	
-	int32_t m_iPrevLifeState; // 0xfb0	
-	int32_t m_iPrevTeam; // 0xfb4	
-	bool m_bPrevProvidesVision; // 0xfb8	
+	int32_t m_iAcquisitionRange; // 0xfbc	
+	int32_t m_FoWViewID; // 0xfc0	
+	int32_t m_iPrevHealthPct; // 0xfc4	
+	int32_t m_iPrevLifeState; // 0xfc8	
+	int32_t m_iPrevTeam; // 0xfcc	
+	bool m_bPrevProvidesVision; // 0xfd0	
 private:
-	[[maybe_unused]] uint8_t __pad0fb9[0x7]; // 0xfb9
+	[[maybe_unused]] uint8_t __pad0fd1[0x7]; // 0xfd1
 public:
-	uint64_t m_nPrevControllableMask; // 0xfc0	
+	uint64_t m_nPrevControllableMask; // 0xfd8	
 private:
-	[[maybe_unused]] uint8_t __pad0fc8[0x8]; // 0xfc8
+	[[maybe_unused]] uint8_t __pad0fe0[0x8]; // 0xfe0
 public:
-	CountdownTimer m_TagTime; // 0xfd0	
-	CountdownTimer m_ClickedTime; // 0xfe8	
-	GameTime_t m_flIdleRunPoseStartTime[2]; // 0x1000	
-	float m_flIdleRunPoseDuration[2]; // 0x1008	
-	bool m_bAnimationTransitionActive; // 0x1010	
+	CountdownTimer m_TagTime; // 0xfe8	
+	CountdownTimer m_ClickedTime; // 0x1000	
+	GameTime_t m_flIdleRunPoseStartTime[2]; // 0x1018	
+	float m_flIdleRunPoseDuration[2]; // 0x1020	
+	bool m_bAnimationTransitionActive; // 0x1028	
 private:
-	[[maybe_unused]] uint8_t __pad1011[0x3]; // 0x1011
+	[[maybe_unused]] uint8_t __pad1029[0x3]; // 0x1029
 public:
-	int32_t m_nAnimationTransitionPoseParameters[2]; // 0x1014	
-	int32_t m_nAnimationTransitionInjuredPoseParameters[2]; // 0x101c	
-	int32_t m_nAnimationTransitionAggressivePoseParameters[2]; // 0x1024	
+	int32_t m_nAnimationTransitionPoseParameters[2]; // 0x102c	
+	int32_t m_nAnimationTransitionInjuredPoseParameters[2]; // 0x1034	
+	int32_t m_nAnimationTransitionAggressivePoseParameters[2]; // 0x103c	
 private:
-	[[maybe_unused]] uint8_t __pad102c[0x5c]; // 0x102c
+	[[maybe_unused]] uint8_t __pad1044[0x5c]; // 0x1044
 public:
-	GameTime_t m_flTimeSinceLastAbilityNag; // 0x1088	
+	GameTime_t m_flTimeSinceLastAbilityNag; // 0x10a0	
 	// MNetworkEnable
 	// MNetworkPriority "32"
-	int32_t m_iAttackCapabilities; // 0x108c	
+	int32_t m_iAttackCapabilities; // 0x10a4	
 	// MNetworkEnable
 	// MNetworkPriority "32"
-	int32_t m_iSpecialAbility; // 0x1090	
-	int32_t m_iMoveCapabilities; // 0x1094	
+	int32_t m_iSpecialAbility; // 0x10a8	
+	int32_t m_iMoveCapabilities; // 0x10ac	
 	// MNetworkEnable
-	PlayerID_t m_nPlayerOwnerID; // 0x1098	
+	PlayerID_t m_nPlayerOwnerID; // 0x10b0	
 	// MNetworkEnable
-	GameTime_t m_flLastDamageTime; // 0x109c	
+	GameTime_t m_flLastDamageTime; // 0x10b4	
 	// MNetworkEnable
-	GameTime_t m_flLastAttackTime; // 0x10a0	
+	GameTime_t m_flLastAttackTime; // 0x10b8	
 private:
-	[[maybe_unused]] uint8_t __pad10a4[0x4]; // 0x10a4
+	[[maybe_unused]] uint8_t __pad10bc[0x4]; // 0x10bc
 public:
-	CUtlSymbolLarge m_iszMinimapIcon; // 0x10a8	
+	CUtlSymbolLarge m_iszMinimapIcon; // 0x10c0	
 private:
-	[[maybe_unused]] uint8_t __pad10b0[0x8]; // 0x10b0
+	[[maybe_unused]] uint8_t __pad10c8[0x8]; // 0x10c8
 public:
-	float m_flMinimapIconSize; // 0x10b8	
-	bool m_bMinimapDisableTint; // 0x10bc	
-	bool m_bMinimapDisableRotation; // 0x10bd	
-	Color m_colorHeroGlow; // 0x10be	
+	float m_flMinimapIconSize; // 0x10d0	
+	bool m_bMinimapDisableTint; // 0x10d4	
+	bool m_bMinimapDisableRotation; // 0x10d5	
+	Color m_colorHeroGlow; // 0x10d6	
 private:
-	[[maybe_unused]] uint8_t __pad10c2[0x2]; // 0x10c2
+	[[maybe_unused]] uint8_t __pad10da[0x2]; // 0x10da
 public:
-	int32_t m_iNearShopMask; // 0x10c4	
-	int32_t m_nPoseParameterTurn; // 0x10c8	
-	int32_t m_nPoseParameterRun; // 0x10cc	
-	float m_flLean; // 0x10d0	
-	float m_flRun; // 0x10d4	
+	int32_t m_iNearShopMask; // 0x10dc	
+	int32_t m_nPoseParameterTurn; // 0x10e0	
+	int32_t m_nPoseParameterRun; // 0x10e4	
+	float m_flLean; // 0x10e8	
+	float m_flRun; // 0x10ec	
 	// MNetworkEnable
 	// MNetworkPriority "32"
-	int32_t m_anglediff; // 0x10d8	
-	bool m_bInfoKeyActive; // 0x10dc	
-	bool m_bNewUpdateAssetModifiersNetworked; // 0x10dd	
+	int32_t m_anglediff; // 0x10f0	
+	bool m_bInfoKeyActive; // 0x10f4	
+	bool m_bNewUpdateAssetModifiersNetworked; // 0x10f5	
 private:
-	[[maybe_unused]] uint8_t __pad10de[0x2]; // 0x10de
+	[[maybe_unused]] uint8_t __pad10f6[0x2]; // 0x10f6
 public:
-	GameTick_t m_nAssetModifiersLastUpdatedTick; // 0x10e0	
-	bool m_bSuppressGlow; // 0x10e4	
-	bool m_bWasSinking; // 0x10e5	
+	GameTick_t m_nAssetModifiersLastUpdatedTick; // 0x10f8	
+	bool m_bSuppressGlow; // 0x10fc	
+	bool m_bWasSinking; // 0x10fd	
 private:
-	[[maybe_unused]] uint8_t __pad10e6[0x2]; // 0x10e6
+	[[maybe_unused]] uint8_t __pad10fe[0x2]; // 0x10fe
 public:
-	float m_flRangeDisplayDist; // 0x10e8	
+	float m_flRangeDisplayDist; // 0x1100	
 private:
-	[[maybe_unused]] uint8_t __pad10ec[0x1e4]; // 0x10ec
+	[[maybe_unused]] uint8_t __pad1104[0x1e4]; // 0x1104
 public:
-	CUtlSymbolLarge m_szDefaultIdle; // 0x12d0	
-	CUtlSymbolLarge m_szDefaultRareIdle; // 0x12d8	
-	CountdownTimer m_damagetimer; // 0x12e0	
-	Vector m_vRenderOrigin; // 0x12f8	
-	float m_fZDelta; // 0x1304	
-	GameTime_t m_flDeathTime; // 0x1308	
-	bool m_bBaseStatsChanged; // 0x130c	
-	bool m_bNeedsSoundEmitterRefresh; // 0x130d	
+	CUtlSymbolLarge m_szDefaultIdle; // 0x12e8	
+	CUtlSymbolLarge m_szDefaultRareIdle; // 0x12f0	
+	CountdownTimer m_damagetimer; // 0x12f8	
+	Vector m_vRenderOrigin; // 0x1310	
+	float m_fZDelta; // 0x131c	
+	GameTime_t m_flDeathTime; // 0x1320	
+	bool m_bBaseStatsChanged; // 0x1324	
+	bool m_bNeedsSoundEmitterRefresh; // 0x1325	
 private:
-	[[maybe_unused]] uint8_t __pad130e[0x2]; // 0x130e
+	[[maybe_unused]] uint8_t __pad1326[0x2]; // 0x1326
 public:
 	// MNetworkEnable
-	float m_flPhysicalArmorValue; // 0x1310	
+	float m_flPhysicalArmorValue; // 0x1328	
 	// MNetworkEnable
-	float m_flMagicalResistanceValue; // 0x1314	
-	int32_t m_nPrevSequenceParity; // 0x1318	
+	float m_flMagicalResistanceValue; // 0x132c	
+	int32_t m_nPrevSequenceParity; // 0x1330	
 private:
-	[[maybe_unused]] uint8_t __pad131c[0xa4]; // 0x131c
+	[[maybe_unused]] uint8_t __pad1334[0xa4]; // 0x1334
 public:
-	float m_flPrevInvisLevel; // 0x13c0	
+	float m_flPrevInvisLevel; // 0x13d8	
 private:
-	[[maybe_unused]] uint8_t __pad13c4[0x4]; // 0x13c4
+	[[maybe_unused]] uint8_t __pad13dc[0x4]; // 0x13dc
 public:
-	CStrongHandle< InfoForResourceTypeCModel > m_nOriginalModelIndex; // 0x13c8	
-	CStrongHandle< InfoForResourceTypeCModel > m_nClientOriginalModelIndex; // 0x13d0	
-	CStrongHandle< InfoForResourceTypeCModel > m_nClientReplacementModelIndex; // 0x13d8	
-	bool m_bClientReplacementModelNeedsRebuild; // 0x13e0	
+	CStrongHandle< InfoForResourceTypeCModel > m_nOriginalModelIndex; // 0x13e0	
+	CStrongHandle< InfoForResourceTypeCModel > m_nClientOriginalModelIndex; // 0x13e8	
+	CStrongHandle< InfoForResourceTypeCModel > m_nClientReplacementModelIndex; // 0x13f0	
+	bool m_bClientReplacementModelNeedsRebuild; // 0x13f8	
 private:
-	[[maybe_unused]] uint8_t __pad13e1[0x3]; // 0x13e1
+	[[maybe_unused]] uint8_t __pad13f9[0x3]; // 0x13f9
 public:
-	int32_t m_nClientReplacementModelReloadCount; // 0x13e4	
+	int32_t m_nClientReplacementModelReloadCount; // 0x13fc	
 	// MNetworkEnable
 	// MNetworkChangeCallback "OnUnitModelVariantChanged"
-	int8_t m_nUnitModelVariant; // 0x13e8	
-	int8_t m_nUnitModelVariantCount; // 0x13e9	
+	int8_t m_nUnitModelVariant; // 0x1400	
+	int8_t m_nUnitModelVariantCount; // 0x1401	
 private:
-	[[maybe_unused]] uint8_t __pad13ea[0x2]; // 0x13ea
+	[[maybe_unused]] uint8_t __pad1402[0x2]; // 0x1402
 public:
-	int32_t m_iPrevSequence; // 0x13ec	
-	char* m_pLastWeatherEffectName; // 0x13f0	
+	int32_t m_iPrevSequence; // 0x1404	
+	char* m_pLastWeatherEffectName; // 0x1408	
 private:
-	[[maybe_unused]] uint8_t __pad13f8[0x8]; // 0x13f8
+	[[maybe_unused]] uint8_t __pad1410[0x8]; // 0x1410
 public:
-	CountdownTimer m_VoiceBackgroundSoundTimer; // 0x1400	
+	CountdownTimer m_VoiceBackgroundSoundTimer; // 0x1418	
 	// MNetworkEnable
-	bool m_bIsWaitingToSpawn; // 0x1418	
+	bool m_bIsWaitingToSpawn; // 0x1430	
 private:
-	[[maybe_unused]] uint8_t __pad1419[0x7]; // 0x1419
+	[[maybe_unused]] uint8_t __pad1431[0x7]; // 0x1431
 public:
 	// MNetworkEnable
-	int64_t m_nTotalDamageTaken; // 0x1420	
+	int64_t m_nTotalDamageTaken; // 0x1438	
 	// MNetworkEnable
 	// MNetworkBitCount "18"
 	// MNetworkMinValue "-100.000000"
 	// MNetworkMaxValue "1000.000000"
 	// MNetworkChangeCallback "OnManaRegenChanged"
-	float m_flManaRegen; // 0x1428	
+	float m_flManaRegen; // 0x1440	
 	// MNetworkEnable
 	// MNetworkBitCount "18"
 	// MNetworkMinValue "-100.000000"
 	// MNetworkMaxValue "1000.000000"
 	// MNetworkChangeCallback "OnHealthRegenChanged"
-	float m_flHealthRegen; // 0x142c	
+	float m_flHealthRegen; // 0x1444	
 	// MNetworkEnable
-	bool m_bIsMoving; // 0x1430	
+	bool m_bIsMoving; // 0x1448	
 private:
-	[[maybe_unused]] uint8_t __pad1431[0x3]; // 0x1431
+	[[maybe_unused]] uint8_t __pad1449[0x3]; // 0x1449
 public:
 	// MNetworkEnable
-	float m_fRevealRadius; // 0x1434	
+	float m_fRevealRadius; // 0x144c	
 	// MNetworkEnable
-	bool m_bCanUseWards; // 0x1438	
+	bool m_bCanUseWards; // 0x1450	
 	// MNetworkEnable
-	bool m_bCanUseAllItems; // 0x1439	
+	bool m_bCanUseAllItems; // 0x1451	
 private:
-	[[maybe_unused]] uint8_t __pad143a[0x2]; // 0x143a
+	[[maybe_unused]] uint8_t __pad1452[0x2]; // 0x1452
 public:
 	// MNetworkEnable
-	int32_t m_iXPBounty; // 0x143c	
+	int32_t m_iXPBounty; // 0x1454	
 	// MNetworkEnable
-	int32_t m_iXPBountyExtra; // 0x1440	
+	int32_t m_iXPBountyExtra; // 0x1458	
 	// MNetworkEnable
-	int32_t m_iGoldBountyMin; // 0x1444	
+	int32_t m_iGoldBountyMin; // 0x145c	
 	// MNetworkEnable
-	int32_t m_iGoldBountyMax; // 0x1448	
+	int32_t m_iGoldBountyMax; // 0x1460	
 	// MNetworkEnable
-	CHandle< C_BaseEntity > m_hOwnerNPC; // 0x144c	
+	CHandle< C_BaseEntity > m_hOwnerNPC; // 0x1464	
 	// MNetworkEnable
-	CHandle< C_BaseEntity > m_hGoalEntity; // 0x1450	
+	CHandle< C_BaseEntity > m_hGoalEntity; // 0x1468	
 	// MNetworkEnable
-	CHandle< C_DOTA_NeutralSpawner > m_hNeutralSpawner; // 0x1454	
-	CStrongHandle< InfoForResourceTypeIMaterial2 > m_hClientOverrideMaterial; // 0x1458	
-	bool m_bCombinerMaterialOverrideListChanged; // 0x1460	
+	CHandle< C_DOTA_NeutralSpawner > m_hNeutralSpawner; // 0x146c	
+	CStrongHandle< InfoForResourceTypeIMaterial2 > m_hClientOverrideMaterial; // 0x1470	
+	bool m_bCombinerMaterialOverrideListChanged; // 0x1478	
 private:
-	[[maybe_unused]] uint8_t __pad1461[0x3]; // 0x1461
+	[[maybe_unused]] uint8_t __pad1479[0x3]; // 0x1479
 public:
-	int32_t m_nBaseModelMeshCount; // 0x1464	
-	CUtlVector< CStrongHandleCopyable< InfoForResourceTypeIMaterial2 > > m_combinerMaterialOverrideList; // 0x1468	
-	int8_t m_nArcanaLevel; // 0x1480	
-	int8_t m_nDefaultArcanaLevel; // 0x1481	
-	Color m_defaultColorGemColor; // 0x1482	
+	int32_t m_nBaseModelMeshCount; // 0x147c	
+	CUtlVector< CStrongHandleCopyable< InfoForResourceTypeIMaterial2 > > m_combinerMaterialOverrideList; // 0x1480	
+	int8_t m_nArcanaLevel; // 0x1498	
+	int8_t m_nDefaultArcanaLevel; // 0x1499	
+	Color m_defaultColorGemColor; // 0x149a	
 private:
-	[[maybe_unused]] uint8_t __pad1486[0x1a]; // 0x1486
+	[[maybe_unused]] uint8_t __pad149e[0x1a]; // 0x149e
 public:
-	bool m_bHasBuiltWearableSpawnList; // 0x14a0	
-	bool m_bHasCostume; // 0x14a1	
-	bool m_bRecreateParticleSystemsOnModifiersChange; // 0x14a2	
+	bool m_bHasBuiltWearableSpawnList; // 0x14b8	
+	bool m_bHasCostume; // 0x14b9	
+	bool m_bRecreateParticleSystemsOnModifiersChange; // 0x14ba	
 private:
-	[[maybe_unused]] uint8_t __pad14a3[0x19]; // 0x14a3
+	[[maybe_unused]] uint8_t __pad14bb[0x19]; // 0x14bb
 public:
-	float m_flAdditionalSinkDelay; // 0x14bc	
+	float m_flAdditionalSinkDelay; // 0x14d4	
 private:
-	[[maybe_unused]] uint8_t __pad14c0[0x100]; // 0x14c0
+	[[maybe_unused]] uint8_t __pad14d8[0x100]; // 0x14d8
 public:
 	// MNetworkEnable
 	// MNetworkPriority "32"
-	int32_t m_NetworkActivity; // 0x15c0	
-	int32_t m_PrevNetworkActivity; // 0x15c4	
+	int32_t m_NetworkActivity; // 0x15d8	
+	int32_t m_PrevNetworkActivity; // 0x15dc	
 	// MNetworkEnable
 	// MNetworkPriority "32"
-	int32_t m_NetworkSequenceIndex; // 0x15c8	
+	int32_t m_NetworkSequenceIndex; // 0x15e0	
 	// MNetworkEnable
-	bool m_bShouldDoFlyHeightVisual; // 0x15cc	
+	bool m_bShouldDoFlyHeightVisual; // 0x15e4	
 private:
-	[[maybe_unused]] uint8_t __pad15cd[0x3]; // 0x15cd
+	[[maybe_unused]] uint8_t __pad15e5[0x3]; // 0x15e5
 public:
 	// MNetworkEnable
-	float m_flStartSequenceCycle; // 0x15d0	
+	float m_flStartSequenceCycle; // 0x15e8	
 private:
-	[[maybe_unused]] uint8_t __pad15d4[0x4]; // 0x15d4
+	[[maybe_unused]] uint8_t __pad15ec[0x4]; // 0x15ec
 public:
-	CUtlVector< CUtlSymbol > m_ActivityModifiers; // 0x15d8	
-	CHandle< C_SceneEntity > m_hBackgroundSceneEnt; // 0x15f0	
-	CHandle< C_SceneEntity > m_hSpeakingSceneEnt; // 0x15f4	
+	CUtlVector< CUtlSymbol > m_ActivityModifiers; // 0x15f0	
+	CHandle< C_SceneEntity > m_hBackgroundSceneEnt; // 0x1608	
+	CHandle< C_SceneEntity > m_hSpeakingSceneEnt; // 0x160c	
 private:
-	[[maybe_unused]] uint8_t __pad15f8[0x10]; // 0x15f8
+	[[maybe_unused]] uint8_t __pad1610[0x10]; // 0x1610
 public:
-	CUtlVector< CHandle< C_EconWearable > > m_hOldWearables; // 0x1608	
-	CUtlVector< CUtlStringToken > m_hOldWearableSkins; // 0x1620	
+	CUtlVector< CHandle< C_EconWearable > > m_hOldWearables; // 0x1620	
+	CUtlVector< CUtlStringToken > m_hOldWearableSkins; // 0x1638	
 	// MNetworkEnable
-	char m_CustomHealthLabel[256]; // 0x1638	
+	char m_CustomHealthLabel[256]; // 0x1650	
 	// MNetworkEnable
-	Color m_CustomHealthLabelColor; // 0x1738	
-	item_definition_index_t m_nWearableDefIndex; // 0x173c	
+	Color m_CustomHealthLabelColor; // 0x1750	
+	item_definition_index_t m_nWearableDefIndex; // 0x1754	
 private:
-	[[maybe_unused]] uint8_t __pad1740[0x1]; // 0x1740
+	[[maybe_unused]] uint8_t __pad1758[0x1]; // 0x1758
 public:
-	Color m_gibTintColor; // 0x1741	
-	bool m_bForceMaterialCombine; // 0x1745	
-	bool m_bShouldDrawParticlesWhileHidden; // 0x1746	
-	bool m_bIsClientThinkPending; // 0x1747	
-	bool m_bActivityModifiersDirty; // 0x1748	
-	bool m_bUnitModelVariantChanged; // 0x1749	
-	bool m_bWearablesAreTaunting; // 0x174a	
+	Color m_gibTintColor; // 0x1759	
+	bool m_bForceMaterialCombine; // 0x175d	
+	bool m_bShouldDrawParticlesWhileHidden; // 0x175e	
+	bool m_bIsClientThinkPending; // 0x175f	
+	bool m_bActivityModifiersDirty; // 0x1760	
+	bool m_bUnitModelVariantChanged; // 0x1761	
+	bool m_bWearablesAreTaunting; // 0x1762	
 private:
-	[[maybe_unused]] uint8_t __pad174b[0x15]; // 0x174b
+	[[maybe_unused]] uint8_t __pad1763[0x15]; // 0x1763
 public:
-	bool m_bShowCannotBeDisabledIcon; // 0x1760	
+	bool m_bShowCannotBeDisabledIcon; // 0x1778	
 	
 	// Datamap fields:
 	// int32_t InputSetStyleOverride; // 0x0
@@ -77849,65 +77849,9 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1780
+// Size: 0x1798
 // Has VTable
 class C_DOTA_BaseNPC_Additive : public C_DOTA_BaseNPC
-{
-public:
-	// No schema binary for binding
-};
-
-// Registered binary: client.dll (project 'client')
-// Alignment: 8
-// Size: 0x17e8
-// Has VTable
-// 
-// MNetworkExcludeByName "m_angRotation"
-// MNetworkExcludeByName "m_angRotation[0]"
-// MNetworkExcludeByName "m_angRotation[1]"
-// MNetworkVarNames "int m_iDamageLevel"
-class C_DOTA_BaseNPC_Building : public C_DOTA_BaseNPC
-{
-public:
-	// MNetworkEnable
-	int32_t m_iDamageLevel; // 0x1780	
-	ParticleIndex_t m_nAmbientFXIndex; // 0x1784	
-	ParticleIndex_t m_nTPFXIndex; // 0x1788	
-	ParticleIndex_t m_nStatusFXIndex; // 0x178c	
-	// MNetworkEnable
-	CStrongHandle< InfoForResourceTypeIParticleSystemDefinition > m_nFXIndex; // 0x1790	
-	// MNetworkEnable
-	CStrongHandle< InfoForResourceTypeIParticleSystemDefinition > m_nFXIndexDestruction; // 0x1798	
-	// MNetworkEnable
-	QAngle m_angInitialAngles; // 0x17a0	
-	// MNetworkEnable
-	HSequence m_hHeroStatueSequence; // 0x17ac	
-	// MNetworkEnable
-	HSequence m_hConstantLayerSequence; // 0x17b0	
-	// MNetworkEnable
-	float m_fHeroStatueCycle; // 0x17b4	
-	// MNetworkEnable
-	int32_t m_iHeroStatueStatusEffectIndex; // 0x17b8	
-	// MNetworkEnable
-	bool m_bHeroStatue; // 0x17bc	
-	// MNetworkEnable
-	bool m_bBattleCup; // 0x17bd	
-	// MNetworkEnable
-	char m_HeroStatueInscription[32]; // 0x17be	
-private:
-	[[maybe_unused]] uint8_t __pad17de[0x2]; // 0x17de
-public:
-	// MNetworkEnable
-	PlayerID_t m_iHeroStatueOwnerPlayerID; // 0x17e0	
-	// MNetworkEnable
-	Color m_ParticleTintColor; // 0x17e4	
-};
-
-// Registered binary: client.dll (project 'client')
-// Alignment: 8
-// Size: 0x17e8
-// Has VTable
-class C_DOTA_BaseNPC_Filler : public C_DOTA_BaseNPC_Building
 {
 public:
 	// No schema binary for binding
@@ -77918,24 +77862,80 @@ public:
 // Size: 0x1800
 // Has VTable
 // 
+// MNetworkExcludeByName "m_angRotation"
+// MNetworkExcludeByName "m_angRotation[0]"
+// MNetworkExcludeByName "m_angRotation[1]"
+// MNetworkVarNames "int m_iDamageLevel"
+class C_DOTA_BaseNPC_Building : public C_DOTA_BaseNPC
+{
+public:
+	// MNetworkEnable
+	int32_t m_iDamageLevel; // 0x1798	
+	ParticleIndex_t m_nAmbientFXIndex; // 0x179c	
+	ParticleIndex_t m_nTPFXIndex; // 0x17a0	
+	ParticleIndex_t m_nStatusFXIndex; // 0x17a4	
+	// MNetworkEnable
+	CStrongHandle< InfoForResourceTypeIParticleSystemDefinition > m_nFXIndex; // 0x17a8	
+	// MNetworkEnable
+	CStrongHandle< InfoForResourceTypeIParticleSystemDefinition > m_nFXIndexDestruction; // 0x17b0	
+	// MNetworkEnable
+	QAngle m_angInitialAngles; // 0x17b8	
+	// MNetworkEnable
+	HSequence m_hHeroStatueSequence; // 0x17c4	
+	// MNetworkEnable
+	HSequence m_hConstantLayerSequence; // 0x17c8	
+	// MNetworkEnable
+	float m_fHeroStatueCycle; // 0x17cc	
+	// MNetworkEnable
+	int32_t m_iHeroStatueStatusEffectIndex; // 0x17d0	
+	// MNetworkEnable
+	bool m_bHeroStatue; // 0x17d4	
+	// MNetworkEnable
+	bool m_bBattleCup; // 0x17d5	
+	// MNetworkEnable
+	char m_HeroStatueInscription[32]; // 0x17d6	
+private:
+	[[maybe_unused]] uint8_t __pad17f6[0x2]; // 0x17f6
+public:
+	// MNetworkEnable
+	PlayerID_t m_iHeroStatueOwnerPlayerID; // 0x17f8	
+	// MNetworkEnable
+	Color m_ParticleTintColor; // 0x17fc	
+};
+
+// Registered binary: client.dll (project 'client')
+// Alignment: 8
+// Size: 0x1800
+// Has VTable
+class C_DOTA_BaseNPC_Filler : public C_DOTA_BaseNPC_Building
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: client.dll (project 'client')
+// Alignment: 8
+// Size: 0x1818
+// Has VTable
+// 
 // MNetworkVarNames "string_t m_szOutpostName"
 // MNetworkVarNames "string_t m_szInteractAbilityName"
 class C_DOTA_BaseNPC_Watch_Tower : public C_DOTA_BaseNPC_Building
 {
 public:
-	ParticleIndex_t m_iRangeFX; // 0x17e8	
+	ParticleIndex_t m_iRangeFX; // 0x1800	
 private:
-	[[maybe_unused]] uint8_t __pad17ec[0x4]; // 0x17ec
+	[[maybe_unused]] uint8_t __pad1804[0x4]; // 0x1804
 public:
 	// MNetworkEnable
-	CUtlSymbolLarge m_szOutpostName; // 0x17f0	
+	CUtlSymbolLarge m_szOutpostName; // 0x1808	
 	// MNetworkEnable
-	CUtlSymbolLarge m_szInteractAbilityName; // 0x17f8	
+	CUtlSymbolLarge m_szInteractAbilityName; // 0x1810	
 };
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x17e8
+// Size: 0x1800
 // Has VTable
 class C_DOTA_BaseNPC_MangoTree : public C_DOTA_BaseNPC_Building
 {
@@ -77945,7 +77945,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1780
+// Size: 0x1798
 // Has VTable
 class C_DOTA_NPC_BaseBlocker : public C_DOTA_BaseNPC_Additive
 {
@@ -77955,7 +77955,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1808
+// Size: 0x1820
 // Has VTable
 // 
 // MNetworkVarNames "string_t m_szInteractAbilityName"
@@ -77963,26 +77963,26 @@ class C_DOTA_NPC_Lantern : public C_DOTA_BaseNPC_Building
 {
 public:
 	// MNetworkEnable
-	CUtlSymbolLarge m_szInteractAbilityName; // 0x17e8	
-	CNewParticleEffect* m_pVisionRangeFX; // 0x17f0	
-	ParticleIndex_t m_iFxIndex; // 0x17f8	
-	int32_t m_nPreviewViewer; // 0x17fc	
-	int32_t m_nTeamNumberShown; // 0x1800	
+	CUtlSymbolLarge m_szInteractAbilityName; // 0x1800	
+	CNewParticleEffect* m_pVisionRangeFX; // 0x1808	
+	ParticleIndex_t m_iFxIndex; // 0x1810	
+	int32_t m_nPreviewViewer; // 0x1814	
+	int32_t m_nTeamNumberShown; // 0x1818	
 };
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x17f0
+// Size: 0x1808
 // Has VTable
 class C_DOTA_BaseNPC_Healer : public C_DOTA_BaseNPC_Building
 {
 public:
-	ParticleIndex_t m_iRangeFX; // 0x17e8	
+	ParticleIndex_t m_iRangeFX; // 0x1800	
 };
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1858
+// Size: 0x1870
 // Has VTable
 // 
 // MNetworkVarNames "EHANDLE m_hTowerAttackTarget"
@@ -77990,53 +77990,53 @@ public:
 class C_DOTA_BaseNPC_Tower : public C_DOTA_BaseNPC_Building
 {
 public:
-	ParticleIndex_t m_nAltHeldRangeFX; // 0x17e8	
-	bool m_bWasInRange; // 0x17ec	
+	ParticleIndex_t m_nAltHeldRangeFX; // 0x1800	
+	bool m_bWasInRange; // 0x1804	
 private:
-	[[maybe_unused]] uint8_t __pad17ed[0x3]; // 0x17ed
+	[[maybe_unused]] uint8_t __pad1805[0x3]; // 0x1805
 public:
-	ParticleIndex_t m_iRangeFX; // 0x17f0	
-	ParticleIndex_t m_iPulseFX; // 0x17f4	
-	uint8_t m_unTowerTier; // 0x17f8	
+	ParticleIndex_t m_iRangeFX; // 0x1808	
+	ParticleIndex_t m_iPulseFX; // 0x180c	
+	uint8_t m_unTowerTier; // 0x1810	
 private:
-	[[maybe_unused]] uint8_t __pad17f9[0x3]; // 0x17f9
+	[[maybe_unused]] uint8_t __pad1811[0x3]; // 0x1811
 public:
-	float m_fTowerAggroDangerAmount; // 0x17fc	
-	float m_flControlledUnitInRangeAmount; // 0x1800	
-	float m_flControlledUnitTargettedAmount; // 0x1804	
-	ParticleIndex_t m_iAnticipationFX; // 0x1808	
+	float m_fTowerAggroDangerAmount; // 0x1814	
+	float m_flControlledUnitInRangeAmount; // 0x1818	
+	float m_flControlledUnitTargettedAmount; // 0x181c	
+	ParticleIndex_t m_iAnticipationFX; // 0x1820	
 private:
-	[[maybe_unused]] uint8_t __pad180c[0x4]; // 0x180c
+	[[maybe_unused]] uint8_t __pad1824[0x4]; // 0x1824
 public:
-	CUtlSymbolLarge m_szAnticipationFXName; // 0x1810	
-	CHandle< C_BaseEntity > m_hPrevTowerAttackTarget; // 0x1818	
+	CUtlSymbolLarge m_szAnticipationFXName; // 0x1828	
+	CHandle< C_BaseEntity > m_hPrevTowerAttackTarget; // 0x1830	
 	// MNetworkEnable
-	CHandle< C_BaseEntity > m_hTowerAttackTarget; // 0x181c	
+	CHandle< C_BaseEntity > m_hTowerAttackTarget; // 0x1834	
 	// MNetworkEnable
-	CHandle< C_BaseEntity > m_hTowerHighFiveTarget; // 0x1820	
-	int32_t m_iPoseParameterAim; // 0x1824	
-	QAngle m_angDefaultCustomTowerAngle; // 0x1828	
-	float m_flLastAimYaw; // 0x1834	
-	bool m_bClientSideCustomTower; // 0x1838	
+	CHandle< C_BaseEntity > m_hTowerHighFiveTarget; // 0x1838	
+	int32_t m_iPoseParameterAim; // 0x183c	
+	QAngle m_angDefaultCustomTowerAngle; // 0x1840	
+	float m_flLastAimYaw; // 0x184c	
+	bool m_bClientSideCustomTower; // 0x1850	
 private:
-	[[maybe_unused]] uint8_t __pad1839[0x7]; // 0x1839
+	[[maybe_unused]] uint8_t __pad1851[0x7]; // 0x1851
 public:
-	CountdownTimer m_IdleRareAnimationTime; // 0x1840	
+	CountdownTimer m_IdleRareAnimationTime; // 0x1858	
 };
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1860
+// Size: 0x1878
 // Has VTable
 class C_DOTA_BaseNPC_HoldoutTower : public C_DOTA_BaseNPC_Tower
 {
 public:
-	DOTA_HOLDOUT_TOWER_TYPE m_iTowerType; // 0x1858	
+	DOTA_HOLDOUT_TOWER_TYPE m_iTowerType; // 0x1870	
 };
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1860
+// Size: 0x1878
 // Has VTable
 // 
 // MNetworkIncludeByName "CGameSceneNode::m_angRotation"
@@ -78047,7 +78047,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1860
+// Size: 0x1878
 // Has VTable
 class C_DOTA_BaseNPC_HoldoutTower_LightFast : public C_DOTA_BaseNPC_HoldoutTower
 {
@@ -78057,7 +78057,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1860
+// Size: 0x1878
 // Has VTable
 class C_DOTA_BaseNPC_HoldoutTower_HeavySlow : public C_DOTA_BaseNPC_HoldoutTower
 {
@@ -78067,7 +78067,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1860
+// Size: 0x1878
 // Has VTable
 class C_DOTA_BaseNPC_HoldoutTower_ReduceSpeed : public C_DOTA_BaseNPC_HoldoutTower
 {
@@ -78077,7 +78077,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x17e8
+// Size: 0x1800
 // Has VTable
 class C_DOTA_BaseNPC_Barracks : public C_DOTA_BaseNPC_Building
 {
@@ -78087,7 +78087,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x17e8
+// Size: 0x1800
 // Has VTable
 class C_DOTA_BaseNPC_Fort : public C_DOTA_BaseNPC_Building
 {
@@ -78097,7 +78097,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x17e8
+// Size: 0x1800
 // Has VTable
 class C_DOTA_BaseNPC_Effigy_Statue : public C_DOTA_BaseNPC_Building
 {
@@ -78107,7 +78107,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x17e8
+// Size: 0x1800
 // Has VTable
 class C_DOTA_BaseNPC_Effigy_BattleCup : public C_DOTA_BaseNPC_Building
 {
@@ -78117,22 +78117,22 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1788
+// Size: 0x17a0
 // Has VTable
 class C_DOTA_BaseNPC_RotatableBuilding : public C_DOTA_BaseNPC
 {
 public:
 	// MNetworkEnable
 	// MNetworkAlias "m_hHeroStatueSequence"
-	HSequence m_hObsoleteHeroStatueSequence; // 0x1780	
+	HSequence m_hObsoleteHeroStatueSequence; // 0x1798	
 	// MNetworkEnable
 	// MNetworkAlias "m_hConstantLayerSequence"
-	HSequence m_hObsoleteConstantLayerSequence; // 0x1784	
+	HSequence m_hObsoleteConstantLayerSequence; // 0x179c	
 };
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 // 
 // MNetworkVarNames "int m_iCurrentXP"
@@ -78157,96 +78157,96 @@ public:
 class C_DOTA_BaseNPC_Hero : public C_DOTA_BaseNPC_Additive
 {
 private:
-	[[maybe_unused]] uint8_t __pad1780[0x8]; // 0x1780
+	[[maybe_unused]] uint8_t __pad1798[0x8]; // 0x1798
 public:
 	// MNetworkEnable
 	// MNetworkPriority "32"
-	int32_t m_iCurrentXP; // 0x1788	
+	int32_t m_iCurrentXP; // 0x17a0	
 	// MNetworkEnable
 	// MNetworkChangeCallback "OnAbilityPointsChanged"
-	int32_t m_iAbilityPoints; // 0x178c	
+	int32_t m_iAbilityPoints; // 0x17a4	
 	// MNetworkEnable
-	GameTime_t m_flRespawnTime; // 0x1790	
+	GameTime_t m_flRespawnTime; // 0x17a8	
 	// MNetworkEnable
-	float m_flRespawnTimePenalty; // 0x1794	
-	// MNetworkEnable
-	// MNetworkChangeCallback "OnBaseStatChanged"
-	float m_flStrength; // 0x1798	
+	float m_flRespawnTimePenalty; // 0x17ac	
 	// MNetworkEnable
 	// MNetworkChangeCallback "OnBaseStatChanged"
-	float m_flAgility; // 0x179c	
+	float m_flStrength; // 0x17b0	
 	// MNetworkEnable
 	// MNetworkChangeCallback "OnBaseStatChanged"
-	float m_flIntellect; // 0x17a0	
+	float m_flAgility; // 0x17b4	
 	// MNetworkEnable
 	// MNetworkChangeCallback "OnBaseStatChanged"
-	float m_flStrengthTotal; // 0x17a4	
+	float m_flIntellect; // 0x17b8	
 	// MNetworkEnable
 	// MNetworkChangeCallback "OnBaseStatChanged"
-	float m_flAgilityTotal; // 0x17a8	
+	float m_flStrengthTotal; // 0x17bc	
 	// MNetworkEnable
 	// MNetworkChangeCallback "OnBaseStatChanged"
-	float m_flIntellectTotal; // 0x17ac	
+	float m_flAgilityTotal; // 0x17c0	
 	// MNetworkEnable
-	GameTime_t m_flDeathTime; // 0x17b0	
+	// MNetworkChangeCallback "OnBaseStatChanged"
+	float m_flIntellectTotal; // 0x17c4	
 	// MNetworkEnable
-	int32_t m_iRecentDamage; // 0x17b4	
-	float m_fPainFactor; // 0x17b8	
-	float m_fTargetPainFactor; // 0x17bc	
-	bool m_bLifeState; // 0x17c0	
+	GameTime_t m_flDeathTime; // 0x17c8	
+	// MNetworkEnable
+	int32_t m_iRecentDamage; // 0x17cc	
+	float m_fPainFactor; // 0x17d0	
+	float m_fTargetPainFactor; // 0x17d4	
+	bool m_bLifeState; // 0x17d8	
 private:
-	[[maybe_unused]] uint8_t __pad17c1[0x3]; // 0x17c1
+	[[maybe_unused]] uint8_t __pad17d9[0x3]; // 0x17d9
 public:
-	ParticleIndex_t m_nFXStunIndex; // 0x17c4	
-	ParticleIndex_t m_nFXSilenceIndex; // 0x17c8	
-	ParticleIndex_t m_nFXDeathIndex; // 0x17cc	
+	ParticleIndex_t m_nFXStunIndex; // 0x17dc	
+	ParticleIndex_t m_nFXSilenceIndex; // 0x17e0	
+	ParticleIndex_t m_nFXDeathIndex; // 0x17e4	
 private:
-	[[maybe_unused]] uint8_t __pad17d0[0x20]; // 0x17d0
-public:
-	// MNetworkEnable
-	PlayerID_t m_iPlayerID; // 0x17f0	
-	// MNetworkEnable
-	CHandle< C_DOTA_BaseNPC_Hero > m_hReplicatingOtherHeroModel; // 0x17f4	
-	// MNetworkEnable
-	bool m_bReincarnating; // 0x17f8	
-	// MNetworkEnable
-	bool m_bCustomKillEffect; // 0x17f9	
-private:
-	[[maybe_unused]] uint8_t __pad17fa[0x2]; // 0x17fa
+	[[maybe_unused]] uint8_t __pad17e8[0x20]; // 0x17e8
 public:
 	// MNetworkEnable
-	GameTime_t m_flSpawnedAt; // 0x17fc	
+	PlayerID_t m_iPlayerID; // 0x1808	
 	// MNetworkEnable
-	bool m_bScriptDisableRespawns; // 0x1800	
+	CHandle< C_DOTA_BaseNPC_Hero > m_hReplicatingOtherHeroModel; // 0x180c	
+	// MNetworkEnable
+	bool m_bReincarnating; // 0x1810	
+	// MNetworkEnable
+	bool m_bCustomKillEffect; // 0x1811	
 private:
-	[[maybe_unused]] uint8_t __pad1801[0x3]; // 0x1801
+	[[maybe_unused]] uint8_t __pad1812[0x2]; // 0x1812
 public:
 	// MNetworkEnable
-	int32_t m_iPrimaryAttribute; // 0x1804	
-	int32_t m_nLastDrawnHealth; // 0x1808	
-	float m_flHurtAmount; // 0x180c	
-	GameTime_t m_flLastHurtTime; // 0x1810	
-	float m_flHurtDecayRate; // 0x1814	
-	GameTime_t m_flLastHealTime; // 0x1818	
-	GameTime_t m_flLastTreeShakeTime; // 0x181c	
-	CountdownTimer m_CenterOnHeroCooldownTimer; // 0x1820	
+	GameTime_t m_flSpawnedAt; // 0x1814	
+	// MNetworkEnable
+	bool m_bScriptDisableRespawns; // 0x1818	
 private:
-	[[maybe_unused]] uint8_t __pad1838[0x208]; // 0x1838
+	[[maybe_unused]] uint8_t __pad1819[0x3]; // 0x1819
 public:
-	CStrongHandle< InfoForResourceTypeCModel > m_CombinedModels[4]; // 0x1a40	
-	int32_t m_nCurrentCombinedModelIndex; // 0x1a60	
-	int32_t m_nPendingCombinedModelIndex; // 0x1a64	
-	int32_t m_iHeroID; // 0x1a68	
-	float m_flCheckLegacyItemsAt; // 0x1a6c	
-	bool m_bDisplayAdditionalHeroes; // 0x1a70	
+	// MNetworkEnable
+	int32_t m_iPrimaryAttribute; // 0x181c	
+	int32_t m_nLastDrawnHealth; // 0x1820	
+	float m_flHurtAmount; // 0x1824	
+	GameTime_t m_flLastHurtTime; // 0x1828	
+	float m_flHurtDecayRate; // 0x182c	
+	GameTime_t m_flLastHealTime; // 0x1830	
+	GameTime_t m_flLastTreeShakeTime; // 0x1834	
+	CountdownTimer m_CenterOnHeroCooldownTimer; // 0x1838	
 private:
-	[[maybe_unused]] uint8_t __pad1a71[0xf]; // 0x1a71
+	[[maybe_unused]] uint8_t __pad1850[0x208]; // 0x1850
 public:
-	CStrongHandle< InfoForResourceTypeCModel > m_CombinedParticleModels[4]; // 0x1a80	
-	CUtlVector< ParticleIndex_t > m_vecAttachedParticleIndeces; // 0x1aa0	
-	CUtlVector< CHandle< C_BaseEntity > > m_hPets; // 0x1ab8	
-	ParticleIndex_t m_nKillStreakFX; // 0x1ad0	
-	int32_t m_nKillStreakFXTier; // 0x1ad4	
+	CStrongHandle< InfoForResourceTypeCModel > m_CombinedModels[4]; // 0x1a58	
+	int32_t m_nCurrentCombinedModelIndex; // 0x1a78	
+	int32_t m_nPendingCombinedModelIndex; // 0x1a7c	
+	int32_t m_iHeroID; // 0x1a80	
+	float m_flCheckLegacyItemsAt; // 0x1a84	
+	bool m_bDisplayAdditionalHeroes; // 0x1a88	
+private:
+	[[maybe_unused]] uint8_t __pad1a89[0xf]; // 0x1a89
+public:
+	CStrongHandle< InfoForResourceTypeCModel > m_CombinedParticleModels[4]; // 0x1a98	
+	CUtlVector< ParticleIndex_t > m_vecAttachedParticleIndeces; // 0x1ab8	
+	CUtlVector< CHandle< C_BaseEntity > > m_hPets; // 0x1ad0	
+	ParticleIndex_t m_nKillStreakFX; // 0x1ae8	
+	int32_t m_nKillStreakFXTier; // 0x1aec	
 	struct 
 	{
 		uint8_t m_bBuybackDisabled: 1; 		
@@ -78265,7 +78265,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1788
+// Size: 0x17a0
 // Has VTable
 // 
 // MNetworkVarNames "float m_flAim"
@@ -78273,12 +78273,12 @@ class C_DOTA_BaseNPC_Creep : public C_DOTA_BaseNPC_Additive
 {
 public:
 	// MNetworkEnable
-	float m_flAim; // 0x1780	
+	float m_flAim; // 0x1798	
 };
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1788
+// Size: 0x17a0
 // Has VTable
 // 
 // MNetworkExcludeByName "m_CollisionGroup"
@@ -78316,7 +78316,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1788
+// Size: 0x17a0
 // Has VTable
 class C_DOTA_BaseNPC_Creep_Siege : public C_DOTA_BaseNPC_Creep_Lane
 {
@@ -78326,17 +78326,17 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1790
+// Size: 0x17a8
 // Has VTable
 class C_DOTA_BaseNPC_Creep_Neutral : public C_DOTA_BaseNPC_Creep
 {
 public:
-	CUtlString m_sDisplayName; // 0x1788	
+	CUtlString m_sDisplayName; // 0x17a0	
 };
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1788
+// Size: 0x17a0
 // Has VTable
 class C_DOTA_BaseNPC_Creep_Talking : public C_DOTA_BaseNPC_Creep
 {
@@ -78346,7 +78346,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1790
+// Size: 0x17a8
 // Has VTable
 // 
 // MNetworkVarNames "bool m_bIsCurrentlyChanneling"
@@ -78355,35 +78355,35 @@ class C_DOTA_BaseNPC_Creature : public C_DOTA_BaseNPC_Creep
 {
 public:
 	// MNetworkEnable
-	bool m_bIsCurrentlyChanneling; // 0x1788	
+	bool m_bIsCurrentlyChanneling; // 0x17a0	
 private:
-	[[maybe_unused]] uint8_t __pad1789[0x3]; // 0x1789
+	[[maybe_unused]] uint8_t __pad17a1[0x3]; // 0x17a1
 public:
 	// MNetworkEnable
-	float m_flChannelCycle; // 0x178c	
+	float m_flChannelCycle; // 0x17a4	
 };
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1830
+// Size: 0x1848
 // Has VTable
 class C_DOTA_BaseNPC_NeutralItemStash : public C_DOTA_BaseNPC_Building
 {
 private:
-	[[maybe_unused]] uint8_t __pad17e8[0x10]; // 0x17e8
+	[[maybe_unused]] uint8_t __pad1800[0x10]; // 0x1800
 public:
-	CUtlVector< ParticleIndex_t > m_vecNewItemFX; // 0x17f8	
-	bool m_bHasFoundProps; // 0x1810	
-	bool m_bDidHaveNewItems; // 0x1811	
+	CUtlVector< ParticleIndex_t > m_vecNewItemFX; // 0x1810	
+	bool m_bHasFoundProps; // 0x1828	
+	bool m_bDidHaveNewItems; // 0x1829	
 private:
-	[[maybe_unused]] uint8_t __pad1812[0x6]; // 0x1812
+	[[maybe_unused]] uint8_t __pad182a[0x6]; // 0x182a
 public:
-	CUtlVector< CHandle< C_DynamicPropClientside > > m_vecProps; // 0x1818	
+	CUtlVector< CHandle< C_DynamicPropClientside > > m_vecProps; // 0x1830	
 };
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1790
+// Size: 0x17a8
 // Has VTable
 class C_DOTA_BaseNPC_Trap_Ward : public C_DOTA_BaseNPC_Creature
 {
@@ -78393,7 +78393,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1828
+// Size: 0x1840
 // Has VTable
 // 
 // MNetworkVarNames "DOTA_SHOP_TYPE m_ShopType"
@@ -78401,28 +78401,28 @@ class C_DOTA_BaseNPC_Shop : public C_DOTA_BaseNPC_Building
 {
 public:
 	// MNetworkEnable
-	DOTA_SHOP_TYPE m_ShopType; // 0x17e8	
+	DOTA_SHOP_TYPE m_ShopType; // 0x1800	
 private:
-	[[maybe_unused]] uint8_t __pad17ec[0x24]; // 0x17ec
+	[[maybe_unused]] uint8_t __pad1804[0x24]; // 0x1804
 public:
-	ParticleIndex_t m_nShopFX; // 0x1810	
-	Vector m_vShopFXOrigin; // 0x1814	
-	float m_flLastSpeech; // 0x1820	
+	ParticleIndex_t m_nShopFX; // 0x1828	
+	Vector m_vShopFXOrigin; // 0x182c	
+	float m_flLastSpeech; // 0x1838	
 };
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x17f0
+// Size: 0x1808
 // Has VTable
 class C_DOTA_BaseNPC_HallofFame : public C_DOTA_BaseNPC_Building
 {
 public:
-	int32_t m_HallofFame; // 0x17e8	
+	int32_t m_HallofFame; // 0x1800	
 };
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x17e8
+// Size: 0x1800
 // Has VTable
 class C_DOTA_BaseNPC_Promo : public C_DOTA_BaseNPC_Building
 {
@@ -78432,57 +78432,57 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x17c8
+// Size: 0x17e0
 // Has VTable
 class C_PortraitHero : public C_DOTA_BaseNPC
 {
 public:
-	int32_t m_nHeroID; // 0x1780	
-	int32_t m_actQueuedActivity; // 0x1784	
-	char m_szQueuedActivityModifier[64]; // 0x1788	
+	int32_t m_nHeroID; // 0x1798	
+	int32_t m_actQueuedActivity; // 0x179c	
+	char m_szQueuedActivityModifier[64]; // 0x17a0	
 };
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 16
-// Size: 0x1ae0
+// Size: 0x1b00
 // Has VTable
 class C_PortraitWorldUnit : public C_DOTA_BaseNPC
 {
 public:
-	bool m_bSuppressIntroEffects; // 0x1780	
-	bool m_bIsAlternateLoadout; // 0x1781	
-	bool m_bSpawnBackgroundModels; // 0x1782	
-	bool m_bDeferredPortrait; // 0x1783	
-	bool m_bShowParticleAssetModifiers; // 0x1784	
-	bool m_bIgnorePortraitInfo; // 0x1785	
-	bool m_bFlyingCourier; // 0x1786	
-	bool m_bDisableDefaultModifiers; // 0x1787	
-	int32_t m_nEffigyStatusEffect; // 0x1788	
-private:
-	[[maybe_unused]] uint8_t __pad178c[0x4]; // 0x178c
-public:
-	CUtlSymbolLarge m_effigySequenceName; // 0x1790	
-	float m_flStartingAnimationCycle; // 0x1798	
-	float m_flAnimationPlaybackSpeed; // 0x179c	
-	float m_flRareLoadoutAnimChance; // 0x17a0	
+	bool m_bSuppressIntroEffects; // 0x1798	
+	bool m_bIsAlternateLoadout; // 0x1799	
+	bool m_bSpawnBackgroundModels; // 0x179a	
+	bool m_bDeferredPortrait; // 0x179b	
+	bool m_bShowParticleAssetModifiers; // 0x179c	
+	bool m_bIgnorePortraitInfo; // 0x179d	
+	bool m_bFlyingCourier; // 0x179e	
+	bool m_bDisableDefaultModifiers; // 0x179f	
+	int32_t m_nEffigyStatusEffect; // 0x17a0	
 private:
 	[[maybe_unused]] uint8_t __pad17a4[0x4]; // 0x17a4
 public:
-	CUtlVector< CUtlSymbolLarge > m_vecActivityModifiers; // 0x17a8	
-	DOTAPortraitEnvironmentType_t m_environment; // 0x17c0	
+	CUtlSymbolLarge m_effigySequenceName; // 0x17a8	
+	float m_flStartingAnimationCycle; // 0x17b0	
+	float m_flAnimationPlaybackSpeed; // 0x17b4	
+	float m_flRareLoadoutAnimChance; // 0x17b8	
 private:
-	[[maybe_unused]] uint8_t __pad17c4[0x4]; // 0x17c4
+	[[maybe_unused]] uint8_t __pad17bc[0x4]; // 0x17bc
 public:
-	StartupBehavior_t m_nStartupBehavior; // 0x17c8	
+	CUtlVector< CUtlSymbolLarge > m_vecActivityModifiers; // 0x17c0	
+	DOTAPortraitEnvironmentType_t m_environment; // 0x17d8	
 private:
-	[[maybe_unused]] uint8_t __pad17cc[0x1e4]; // 0x17cc
+	[[maybe_unused]] uint8_t __pad17dc[0x4]; // 0x17dc
 public:
-	CUtlSymbolLarge m_cameraName; // 0x19b0	
+	StartupBehavior_t m_nStartupBehavior; // 0x17e0	
 private:
-	[[maybe_unused]] uint8_t __pad19b8[0x50]; // 0x19b8
+	[[maybe_unused]] uint8_t __pad17e4[0x1e4]; // 0x17e4
 public:
-	ParticleIndex_t m_nPortraitParticle; // 0x1a08	
-	int32_t m_nCourierType; // 0x1a0c	
+	CUtlSymbolLarge m_cameraName; // 0x19c8	
+private:
+	[[maybe_unused]] uint8_t __pad19d0[0x50]; // 0x19d0
+public:
+	ParticleIndex_t m_nPortraitParticle; // 0x1a20	
+	int32_t m_nCourierType; // 0x1a24	
 	
 	// Datamap fields:
 	// CUtlSymbolLarge activity_modifier; // 0x7fffffff
@@ -78510,7 +78510,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1780
+// Size: 0x1798
 // Has VTable
 class C_DOTA_BaseNPC_Seasonal_Snowman : public C_DOTA_BaseNPC_Additive
 {
@@ -78520,7 +78520,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1780
+// Size: 0x1798
 // Has VTable
 class CDOTA_BaseNPC_Seasonal_Penguin : public C_DOTA_BaseNPC_Additive
 {
@@ -78530,7 +78530,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1780
+// Size: 0x1798
 // Has VTable
 class CDOTA_BaseNPC_Seasonal_Dragon : public C_DOTA_BaseNPC_Additive
 {
@@ -78540,7 +78540,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1780
+// Size: 0x1798
 // Has VTable
 class CDOTA_BaseNPC_Seasonal_CNY_Balloon : public C_DOTA_BaseNPC_Additive
 {
@@ -78550,7 +78550,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1780
+// Size: 0x1798
 // Has VTable
 class CDOTA_BaseNPC_Seasonal_TI9_Balloon : public C_DOTA_BaseNPC_Additive
 {
@@ -78560,7 +78560,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1780
+// Size: 0x1798
 // Has VTable
 class CDOTA_BaseNPC_Seasonal_TI9_Drums : public C_DOTA_BaseNPC_Additive
 {
@@ -78570,7 +78570,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1780
+// Size: 0x1798
 // Has VTable
 class CDOTA_BaseNPC_Seasonal_TI9_Monkey : public C_DOTA_BaseNPC_Additive
 {
@@ -78580,7 +78580,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1780
+// Size: 0x1798
 // Has VTable
 class CDOTA_BaseNPC_Seasonal_TI11_Balloon : public C_DOTA_BaseNPC_Additive
 {
@@ -78590,7 +78590,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1780
+// Size: 0x1798
 // Has VTable
 class CDOTA_BaseNPC_Seasonal_TI11_Balloon_Dire : public CDOTA_BaseNPC_Seasonal_TI11_Balloon
 {
@@ -78600,18 +78600,18 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x17f0
+// Size: 0x1808
 // Has VTable
 class CDOTA_BaseNPC_CustomEffigy : public C_DOTA_BaseNPC_Building
 {
 public:
-	uint32_t m_unStatusEffectIndex; // 0x17e8	
-	CHandle< C_BaseEntity > m_hPedestal; // 0x17ec	
+	uint32_t m_unStatusEffectIndex; // 0x1800	
+	CHandle< C_BaseEntity > m_hPedestal; // 0x1804	
 };
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1780
+// Size: 0x1798
 // Has VTable
 class CDOTA_BaseNPC_JungleVarmint : public C_DOTA_BaseNPC_Additive
 {
@@ -78621,17 +78621,17 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x17f0
+// Size: 0x1808
 // Has VTable
 class C_DOTA_Unit_Twin_Gate : public C_DOTA_BaseNPC_Building
 {
 public:
-	CHandle< C_BaseEntity > m_hOtherPortal; // 0x17e8	
+	CHandle< C_BaseEntity > m_hOtherPortal; // 0x1800	
 };
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1780
+// Size: 0x1798
 // Has VTable
 class CIngameEvent_MuertaReleaseSpring2023_DummyModifierHolder : public C_DOTA_BaseNPC_Additive
 {
@@ -78641,7 +78641,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1780
+// Size: 0x1798
 // Has VTable
 class C_DOTA_NPC_DataDriven : public C_DOTA_BaseNPC_Additive
 {
@@ -78651,7 +78651,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class CDOTA_Unit_Hero_AncientApparition : public C_DOTA_BaseNPC_Hero
 {
@@ -78661,7 +78661,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_AntiMage : public C_DOTA_BaseNPC_Hero
 {
@@ -78671,7 +78671,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_Bane : public C_DOTA_BaseNPC_Hero
 {
@@ -78681,7 +78681,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_Pudge : public C_DOTA_BaseNPC_Hero
 {
@@ -78691,27 +78691,27 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae8
+// Size: 0x1b00
 // Has VTable
 class C_DOTA_Unit_Hero_Juggernaut : public C_DOTA_BaseNPC_Hero
 {
 public:
-	uint32_t m_unOmniKills; // 0x1ae0	
+	uint32_t m_unOmniKills; // 0x1af8	
 };
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae8
+// Size: 0x1b00
 // Has VTable
 class C_DOTA_Unit_Hero_Nevermore : public C_DOTA_BaseNPC_Hero
 {
 public:
-	ParticleIndex_t m_nFXDeath; // 0x1ae0	
+	ParticleIndex_t m_nFXDeath; // 0x1af8	
 };
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_SandKing : public C_DOTA_BaseNPC_Hero
 {
@@ -78721,7 +78721,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_Mirana : public C_DOTA_BaseNPC_Hero
 {
@@ -78731,7 +78731,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_Sven : public C_DOTA_BaseNPC_Hero
 {
@@ -78741,7 +78741,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1b10
+// Size: 0x1b28
 // Has VTable
 // 
 // MNetworkVarNames "int32 m_vecInitialHeroKillBitmask"
@@ -78749,18 +78749,18 @@ public:
 class C_DOTA_Unit_Hero_SkeletonKing : public C_DOTA_BaseNPC_Hero
 {
 public:
-	int32_t m_nSkeletonWarriors; // 0x1ae0	
+	int32_t m_nSkeletonWarriors; // 0x1af8	
 	// MNetworkEnable
 	// MNetworkChangeCallback "OnSKArcanaProgressChanged"
-	int32_t m_vecInitialHeroKillBitmask[5]; // 0x1ae4	
+	int32_t m_vecInitialHeroKillBitmask[5]; // 0x1afc	
 	// MNetworkEnable
 	// MNetworkChangeCallback "OnSKArcanaProgressChanged"
-	int32_t m_vecInGameHeroKillBitmask[5]; // 0x1af8	
+	int32_t m_vecInGameHeroKillBitmask[5]; // 0x1b10	
 };
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_StormSpirit : public C_DOTA_BaseNPC_Hero
 {
@@ -78770,7 +78770,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_DrowRanger : public C_DOTA_BaseNPC_Hero
 {
@@ -78780,17 +78780,17 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae8
+// Size: 0x1b00
 // Has VTable
 class C_DOTA_Unit_Hero_Earthshaker : public C_DOTA_BaseNPC_Hero
 {
 public:
-	ParticleIndex_t m_nFXDeath; // 0x1ae0	
+	ParticleIndex_t m_nFXDeath; // 0x1af8	
 };
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_VengefulSpirit : public C_DOTA_BaseNPC_Hero
 {
@@ -78800,18 +78800,18 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae8
+// Size: 0x1b00
 // Has VTable
 class C_DOTA_Unit_Hero_CrystalMaiden : public C_DOTA_BaseNPC_Hero
 {
 public:
-	int32_t m_iParticleMouthIndex; // 0x1ae0	
-	int32_t m_iParticleHandRIndex; // 0x1ae4	
+	int32_t m_iParticleMouthIndex; // 0x1af8	
+	int32_t m_iParticleHandRIndex; // 0x1afc	
 };
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_Axe : public C_DOTA_BaseNPC_Hero
 {
@@ -78821,7 +78821,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_Bloodseeker : public C_DOTA_BaseNPC_Hero
 {
@@ -78831,17 +78831,17 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae8
+// Size: 0x1b00
 // Has VTable
 class C_DOTA_Unit_Hero_PhantomLancer : public C_DOTA_BaseNPC_Hero
 {
 public:
-	bool m_bInventoryEnabled; // 0x1ae0	
+	bool m_bInventoryEnabled; // 0x1af8	
 };
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1af0
+// Size: 0x1b08
 // Has VTable
 // 
 // MNetworkVarNames "int m_nTargetAngle"
@@ -78849,19 +78849,19 @@ public:
 class C_DOTA_Unit_Hero_Razor : public C_DOTA_BaseNPC_Hero
 {
 public:
-	int32_t m_iPoseParameterAim; // 0x1ae0	
-	int32_t m_iPoseParameterRange; // 0x1ae4	
+	int32_t m_iPoseParameterAim; // 0x1af8	
+	int32_t m_iPoseParameterRange; // 0x1afc	
 	// MNetworkEnable
 	// MNetworkPriority "32"
-	int32_t m_nTargetAngle; // 0x1ae8	
+	int32_t m_nTargetAngle; // 0x1b00	
 	// MNetworkEnable
 	// MNetworkPriority "32"
-	int32_t m_nTargetRange; // 0x1aec	
+	int32_t m_nTargetRange; // 0x1b04	
 };
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_Lina : public C_DOTA_BaseNPC_Hero
 {
@@ -78871,7 +78871,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_Morphling : public C_DOTA_BaseNPC_Hero
 {
@@ -78881,7 +78881,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1780
+// Size: 0x1798
 // Has VTable
 class C_DOTA_Unit_ZeusCloud : public C_DOTA_BaseNPC_Additive
 {
@@ -78891,7 +78891,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_Zuus : public C_DOTA_BaseNPC_Hero
 {
@@ -78901,17 +78901,17 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae8
+// Size: 0x1b00
 // Has VTable
 class C_DOTA_Unit_Hero_Kunkka : public C_DOTA_BaseNPC_Hero
 {
 public:
-	int32_t m_nFXIndex; // 0x1ae0	
+	int32_t m_nFXIndex; // 0x1af8	
 };
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1af0
+// Size: 0x1b08
 // Has VTable
 // 
 // MNetworkVarNames "CHandle< CDOTA_BaseNPC> m_hIllusionOwner"
@@ -78919,17 +78919,17 @@ public:
 class C_DOTA_Unit_Hero_Tiny : public C_DOTA_BaseNPC_Hero
 {
 public:
-	CHandle< C_BaseEntity > m_hTreeWearable; // 0x1ae0	
-	ParticleIndex_t m_nFXIndexScepterAmbient; // 0x1ae4	
+	CHandle< C_BaseEntity > m_hTreeWearable; // 0x1af8	
+	ParticleIndex_t m_nFXIndexScepterAmbient; // 0x1afc	
 	// MNetworkEnable
-	CHandle< C_DOTA_BaseNPC > m_hIllusionOwner; // 0x1ae8	
+	CHandle< C_DOTA_BaseNPC > m_hIllusionOwner; // 0x1b00	
 	// MNetworkEnable
-	bool m_bIllusionHasTree; // 0x1aec	
+	bool m_bIllusionHasTree; // 0x1b04	
 };
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_Puck : public C_DOTA_BaseNPC_Hero
 {
@@ -78939,7 +78939,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1af0
+// Size: 0x1b08
 // Has VTable
 // 
 // MNetworkVarNames "int m_nTargetAngle"
@@ -78948,14 +78948,14 @@ class C_DOTA_Unit_Hero_Windrunner : public C_DOTA_BaseNPC_Hero
 public:
 	// MNetworkEnable
 	// MNetworkPriority "32"
-	int32_t m_nTargetAngle; // 0x1ae0	
-	int32_t m_iPoseParameterAim; // 0x1ae4	
-	ParticleIndex_t m_nFXDeath; // 0x1ae8	
+	int32_t m_nTargetAngle; // 0x1af8	
+	int32_t m_iPoseParameterAim; // 0x1afc	
+	ParticleIndex_t m_nFXDeath; // 0x1b00	
 };
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_Lich : public C_DOTA_BaseNPC_Hero
 {
@@ -78965,7 +78965,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1780
+// Size: 0x1798
 // Has VTable
 class C_DOTA_NPC_Lich_Ice_Spire : public C_DOTA_BaseNPC_Additive
 {
@@ -78975,7 +78975,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1790
+// Size: 0x17a8
 // Has VTable
 // 
 // MNetworkVarNames "CHandle< CBaseEntity> m_hTarget"
@@ -78984,14 +78984,14 @@ class C_DOTA_Unit_Tidehunter_Anchor : public C_DOTA_BaseNPC_Additive
 {
 public:
 	// MNetworkEnable
-	CHandle< C_BaseEntity > m_hTarget; // 0x1780	
+	CHandle< C_BaseEntity > m_hTarget; // 0x1798	
 	// MNetworkEnable
-	Vector m_vProjectilePosition; // 0x1784	
+	Vector m_vProjectilePosition; // 0x179c	
 };
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_Tidehunter : public C_DOTA_BaseNPC_Hero
 {
@@ -79001,18 +79001,18 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1790
+// Size: 0x17a8
 // Has VTable
 class C_DOTA_BaseNPC_ShadowShaman_SerpentWard : public C_DOTA_BaseNPC_Additive
 {
 public:
-	QAngle m_angle; // 0x1780	
-	int32_t m_iPoseParameterAim; // 0x178c	
+	QAngle m_angle; // 0x1798	
+	int32_t m_iPoseParameterAim; // 0x17a4	
 };
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_ShadowShaman : public C_DOTA_BaseNPC_Hero
 {
@@ -79022,7 +79022,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae8
+// Size: 0x1b00
 // Has VTable
 class C_DOTA_Unit_Hero_Riki : public C_DOTA_BaseNPC_Hero
 {
@@ -79032,7 +79032,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_Enigma : public C_DOTA_BaseNPC_Hero
 {
@@ -79042,7 +79042,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_Tinker : public C_DOTA_BaseNPC_Hero
 {
@@ -79052,7 +79052,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_WitchDoctor : public C_DOTA_BaseNPC_Hero
 {
@@ -79062,7 +79062,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1790
+// Size: 0x17a8
 // Has VTable
 // 
 // MNetworkVarNames "int m_nTargetType"
@@ -79070,16 +79070,16 @@ public:
 class C_DOTA_NPC_WitchDoctor_Ward : public C_DOTA_BaseNPC_Additive
 {
 public:
-	ParticleIndex_t m_nFXSkullIndex; // 0x1780	
+	ParticleIndex_t m_nFXSkullIndex; // 0x1798	
 	// MNetworkEnable
-	int32_t m_nTargetType; // 0x1784	
+	int32_t m_nTargetType; // 0x179c	
 	// MNetworkEnable
-	int32_t m_nTargetFlags; // 0x1788	
+	int32_t m_nTargetFlags; // 0x17a0	
 };
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_Sniper : public C_DOTA_BaseNPC_Hero
 {
@@ -79089,7 +79089,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae8
+// Size: 0x1b00
 // Has VTable
 class C_DOTA_Unit_Hero_Necrolyte : public C_DOTA_BaseNPC_Hero
 {
@@ -79099,7 +79099,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_Slardar : public C_DOTA_BaseNPC_Hero
 {
@@ -79109,7 +79109,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_Ursa : public C_DOTA_BaseNPC_Hero
 {
@@ -79119,31 +79119,31 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae8
+// Size: 0x1b00
 // Has VTable
 class C_DOTA_Unit_Hero_Lion : public C_DOTA_BaseNPC_Hero
 {
 public:
-	uint32_t m_unFingerPrestigeKills; // 0x1ae0	
+	uint32_t m_unFingerPrestigeKills; // 0x1af8	
 };
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x17b0
+// Size: 0x17c8
 // Has VTable
 class CDOTA_Unit_Announcer : public C_DOTA_BaseNPC
 {
 public:
-	// -> m_strAnnouncerName - 0x1788
-	// -> m_strAnnouncerVoiceFile - 0x1790
-	// -> m_nAnnouncerItemId - 0x1798
-	// -> m_bItemOwnedByLocalPlayer - 0x17a0
-	CAnnouncerDescriptor m_currentAnnouncer; // 0x1780	
+	// -> m_strAnnouncerName - 0x17a0
+	// -> m_strAnnouncerVoiceFile - 0x17a8
+	// -> m_nAnnouncerItemId - 0x17b0
+	// -> m_bItemOwnedByLocalPlayer - 0x17b8
+	CAnnouncerDescriptor m_currentAnnouncer; // 0x1798	
 };
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1780
+// Size: 0x1798
 // Has VTable
 class CDOTA_Unit_CustomGameAnnouncer : public C_DOTA_BaseNPC
 {
@@ -79153,7 +79153,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1878
+// Size: 0x1890
 // Has VTable
 // 
 // MNetworkVarNames "PlayerID_t m_nSoleControllingPlayer"
@@ -79164,29 +79164,29 @@ public:
 class C_DOTA_Unit_Courier : public C_DOTA_BaseNPC_Additive
 {
 public:
-	bool m_bUnitRespawned; // 0x1780	
-	bool m_bPreUpdateFlyingCourier; // 0x1781	
+	bool m_bUnitRespawned; // 0x1798	
+	bool m_bPreUpdateFlyingCourier; // 0x1799	
 private:
-	[[maybe_unused]] uint8_t __pad1782[0x2]; // 0x1782
+	[[maybe_unused]] uint8_t __pad179a[0x2]; // 0x179a
 public:
 	// MNetworkEnable
-	PlayerID_t m_nSoleControllingPlayer; // 0x1784	
+	PlayerID_t m_nSoleControllingPlayer; // 0x179c	
 	// MNetworkEnable
-	bool m_bFlyingCourier; // 0x1788	
+	bool m_bFlyingCourier; // 0x17a0	
 private:
-	[[maybe_unused]] uint8_t __pad1789[0x3]; // 0x1789
+	[[maybe_unused]] uint8_t __pad17a1[0x3]; // 0x17a1
 public:
 	// MNetworkEnable
-	GameTime_t m_flRespawnTime; // 0x178c	
+	GameTime_t m_flRespawnTime; // 0x17a4	
 	// MNetworkEnable
-	CourierState_t m_nCourierState; // 0x1790	
+	CourierState_t m_nCourierState; // 0x17a8	
 	// MNetworkEnable
-	CHandle< C_BaseEntity > m_hCourierStateEntity; // 0x1794	
+	CHandle< C_BaseEntity > m_hCourierStateEntity; // 0x17ac	
 };
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1878
+// Size: 0x1890
 // Has VTable
 // 
 // MNetworkVarNames "PlayerID_t m_nSoleControllingPlayer"
@@ -79196,23 +79196,23 @@ public:
 class C_DOTA_Unit_Scout : public C_DOTA_BaseNPC_Additive
 {
 public:
-	bool m_bUnitRespawned; // 0x1780	
+	bool m_bUnitRespawned; // 0x1798	
 private:
-	[[maybe_unused]] uint8_t __pad1781[0x3]; // 0x1781
+	[[maybe_unused]] uint8_t __pad1799[0x3]; // 0x1799
 public:
 	// MNetworkEnable
-	PlayerID_t m_nSoleControllingPlayer; // 0x1784	
+	PlayerID_t m_nSoleControllingPlayer; // 0x179c	
 	// MNetworkEnable
-	GameTime_t m_flRespawnTime; // 0x1788	
+	GameTime_t m_flRespawnTime; // 0x17a0	
 	// MNetworkEnable
-	ScoutState_t m_nScoutState; // 0x178c	
+	ScoutState_t m_nScoutState; // 0x17a4	
 	// MNetworkEnable
-	CHandle< C_BaseEntity > m_hScoutStateEntity; // 0x1790	
+	CHandle< C_BaseEntity > m_hScoutStateEntity; // 0x17a8	
 };
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x17e8
+// Size: 0x1800
 // Has VTable
 class C_DOTA_Unit_Fountain : public C_DOTA_BaseNPC_Building
 {
@@ -79222,28 +79222,28 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x17b0
+// Size: 0x17c8
 // Has VTable
 // 
 // MNetworkVarNames "bool m_bGoldenRoshan"
 class C_DOTA_Unit_Roshan : public C_DOTA_BaseNPC_Additive
 {
 public:
-	int32_t m_iKillerTeam; // 0x1780	
-	int32_t m_iLastHealthPercent; // 0x1784	
-	ParticleIndex_t m_nFXIndex; // 0x1788	
+	int32_t m_iKillerTeam; // 0x1798	
+	int32_t m_iLastHealthPercent; // 0x179c	
+	ParticleIndex_t m_nFXIndex; // 0x17a0	
 private:
-	[[maybe_unused]] uint8_t __pad178c[0x4]; // 0x178c
+	[[maybe_unused]] uint8_t __pad17a4[0x4]; // 0x17a4
 public:
-	CUtlVector< CHandle< C_BaseEntity > > m_hAttackingHeroes; // 0x1790	
+	CUtlVector< CHandle< C_BaseEntity > > m_hAttackingHeroes; // 0x17a8	
 	// MNetworkEnable
-	bool m_bGoldenRoshan; // 0x17a8	
-	bool m_bIsNightTimeMode; // 0x17a9	
+	bool m_bGoldenRoshan; // 0x17c0	
+	bool m_bIsNightTimeMode; // 0x17c1	
 };
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x17a0
+// Size: 0x17b8
 // Has VTable
 // 
 // MNetworkVarNames "int m_nTimesSpawned"
@@ -79251,14 +79251,14 @@ class C_DOTA_Unit_Miniboss : public C_DOTA_BaseNPC_Additive
 {
 public:
 	// MNetworkEnable
-	int32_t m_nTimesSpawned; // 0x1780	
-	int32_t m_nTempViewer; // 0x1784	
-	CUtlVector< CHandle< C_BaseEntity > > m_hAttackingHeroes; // 0x1788	
+	int32_t m_nTimesSpawned; // 0x1798	
+	int32_t m_nTempViewer; // 0x179c	
+	CUtlVector< CHandle< C_BaseEntity > > m_hAttackingHeroes; // 0x17a0	
 };
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1790
+// Size: 0x17a8
 // Has VTable
 class C_DOTA_Unit_Nian : public C_DOTA_BaseNPC_Creature
 {
@@ -79268,7 +79268,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1788
+// Size: 0x17a0
 // Has VTable
 class C_DOTA_BaseNPC_Warlock_Golem : public C_DOTA_BaseNPC_Creep
 {
@@ -79278,7 +79278,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_Warlock : public C_DOTA_BaseNPC_Hero
 {
@@ -79288,7 +79288,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1788
+// Size: 0x17a0
 // Has VTable
 class CODTA_Unit_Warlock_Imp : public C_DOTA_BaseNPC_Creep
 {
@@ -79298,7 +79298,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_Beastmaster : public C_DOTA_BaseNPC_Hero
 {
@@ -79308,7 +79308,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1788
+// Size: 0x17a0
 // Has VTable
 class C_DOTA_Unit_Hero_Beastmaster_Beasts : public C_DOTA_BaseNPC_Creep_Talking
 {
@@ -79318,7 +79318,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1788
+// Size: 0x17a0
 // Has VTable
 class C_DOTA_Unit_Hero_Beastmaster_Hawk : public C_DOTA_Unit_Hero_Beastmaster_Beasts
 {
@@ -79328,7 +79328,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1788
+// Size: 0x17a0
 // Has VTable
 class C_DOTA_Unit_Hero_Beastmaster_Boar : public C_DOTA_Unit_Hero_Beastmaster_Beasts
 {
@@ -79338,7 +79338,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_QueenOfPain : public C_DOTA_BaseNPC_Hero
 {
@@ -79348,18 +79348,18 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1790
+// Size: 0x17a8
 // Has VTable
 class C_DOTA_BaseNPC_Venomancer_PlagueWard : public C_DOTA_BaseNPC_Additive
 {
 public:
-	QAngle m_angle; // 0x1780	
-	int32_t m_iPoseParameterAim; // 0x178c	
+	QAngle m_angle; // 0x1798	
+	int32_t m_iPoseParameterAim; // 0x17a4	
 };
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_Venomancer : public C_DOTA_BaseNPC_Hero
 {
@@ -79369,7 +79369,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_FacelessVoid : public C_DOTA_BaseNPC_Hero
 {
@@ -79379,7 +79379,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_DeathProphet : public C_DOTA_BaseNPC_Hero
 {
@@ -79389,7 +79389,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_Pugna : public C_DOTA_BaseNPC_Hero
 {
@@ -79399,26 +79399,26 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae8
+// Size: 0x1b00
 // Has VTable
 // 
 // MNetworkVarNames "uint32 m_nArcanaLevel"
 class C_DOTA_Unit_Hero_PhantomAssassin : public C_DOTA_BaseNPC_Hero
 {
 public:
-	ParticleIndex_t m_nFXDeath; // 0x1ae0	
+	ParticleIndex_t m_nFXDeath; // 0x1af8	
 	// MNetworkEnable
-	uint32_t m_nArcanaLevel; // 0x1ae4	
+	uint32_t m_nArcanaLevel; // 0x1afc	
 };
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1788
+// Size: 0x17a0
 // Has VTable
 class CDOTA_BaseNPC_Phantom_Assassin_GroundDagger : public C_DOTA_BaseNPC_Additive
 {
 public:
-	ParticleIndex_t m_nFXIndex; // 0x1780	
+	ParticleIndex_t m_nFXIndex; // 0x1798	
 	
 	// Static fields:
 	static char* &Get_PARTICLE_SPAWN(){return *reinterpret_cast<char**>(interfaces::g_schema->FindTypeScopeForModule("client.dll")->FindDeclaredClass("CDOTA_BaseNPC_Phantom_Assassin_GroundDagger")->m_static_fields[0]->m_instance);};
@@ -79426,17 +79426,17 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1828
+// Size: 0x1840
 // Has VTable
 class C_DOTA_PhantomAssassin_Gravestone : public C_DOTA_BaseNPC_Additive
 {
 public:
-	PlayerID_t m_nVictimPlayerID; // 0x1780	
+	PlayerID_t m_nVictimPlayerID; // 0x1798	
 };
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_TemplarAssassin : public C_DOTA_BaseNPC_Hero
 {
@@ -79446,7 +79446,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1780
+// Size: 0x1798
 // Has VTable
 class C_DOTA_Unit_TemplarAssassin_PsionicTrap : public C_DOTA_BaseNPC
 {
@@ -79456,7 +79456,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_Viper : public C_DOTA_BaseNPC_Hero
 {
@@ -79466,7 +79466,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1af8
+// Size: 0x1b10
 // Has VTable
 // 
 // MNetworkVarNames "float m_flDamageTaken"
@@ -79477,19 +79477,19 @@ class C_DOTA_Unit_TargetDummy : public C_DOTA_BaseNPC_Hero
 {
 public:
 	// MNetworkEnable
-	float m_flDamageTaken; // 0x1ae0	
+	float m_flDamageTaken; // 0x1af8	
 	// MNetworkEnable
-	float m_flLastHit; // 0x1ae4	
+	float m_flLastHit; // 0x1afc	
 	// MNetworkEnable
-	GameTime_t m_flStartDamageTime; // 0x1ae8	
+	GameTime_t m_flStartDamageTime; // 0x1b00	
 	// MNetworkEnable
-	GameTime_t m_flLastTargetDummyDamageTime; // 0x1aec	
-	bool m_bIsMoving; // 0x1af0	
+	GameTime_t m_flLastTargetDummyDamageTime; // 0x1b04	
+	bool m_bIsMoving; // 0x1b08	
 };
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1890
+// Size: 0x18a8
 // Has VTable
 // 
 // MNetworkVarNames "char m_pszNetworkedSoundLoop"
@@ -79497,18 +79497,18 @@ public:
 class C_DOTA_Unit_LoopingSound : public C_DOTA_BaseNPC_Additive
 {
 private:
-	[[maybe_unused]] uint8_t __pad1780[0x8]; // 0x1780
+	[[maybe_unused]] uint8_t __pad1798[0x8]; // 0x1798
 public:
-	int32_t m_nPrevLoopingSoundParity; // 0x1788	
+	int32_t m_nPrevLoopingSoundParity; // 0x17a0	
 	// MNetworkEnable
-	char m_pszNetworkedSoundLoop[256]; // 0x178c	
+	char m_pszNetworkedSoundLoop[256]; // 0x17a4	
 	// MNetworkEnable
-	int32_t m_nLoopingSoundParity; // 0x188c	
+	int32_t m_nLoopingSoundParity; // 0x18a4	
 };
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_Luna : public C_DOTA_BaseNPC_Hero
 {
@@ -79518,7 +79518,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_DragonKnight : public C_DOTA_BaseNPC_Hero
 {
@@ -79528,7 +79528,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_Dazzle : public C_DOTA_BaseNPC_Hero
 {
@@ -79538,7 +79538,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_Leshrac : public C_DOTA_BaseNPC_Hero
 {
@@ -79548,7 +79548,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_Rattletrap : public C_DOTA_BaseNPC_Hero
 {
@@ -79558,7 +79558,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_Furion : public C_DOTA_BaseNPC_Hero
 {
@@ -79568,7 +79568,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_Life_Stealer : public C_DOTA_BaseNPC_Hero
 {
@@ -79578,17 +79578,17 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae8
+// Size: 0x1b00
 // Has VTable
 class C_DOTA_Unit_Hero_DarkSeer : public C_DOTA_BaseNPC_Hero
 {
 public:
-	ParticleIndex_t m_nNormalPunchBuffIndex; // 0x1ae0	
+	ParticleIndex_t m_nNormalPunchBuffIndex; // 0x1af8	
 };
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1780
+// Size: 0x1798
 // Has VTable
 class C_DOTA_BaseNPC_Clinkz_Skeleton_Army : public C_DOTA_BaseNPC
 {
@@ -79598,7 +79598,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_Clinkz : public C_DOTA_BaseNPC_Hero
 {
@@ -79608,7 +79608,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_Omniknight : public C_DOTA_BaseNPC_Hero
 {
@@ -79618,7 +79618,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_Enchantress : public C_DOTA_BaseNPC_Hero
 {
@@ -79628,7 +79628,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_Huskar : public C_DOTA_BaseNPC_Hero
 {
@@ -79638,7 +79638,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_NightStalker : public C_DOTA_BaseNPC_Hero
 {
@@ -79648,7 +79648,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_Broodmother : public C_DOTA_BaseNPC_Hero
 {
@@ -79658,7 +79658,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1788
+// Size: 0x17a0
 // Has VTable
 class C_DOTA_Unit_Broodmother_Spiderling : public C_DOTA_BaseNPC_Creep_Talking
 {
@@ -79668,18 +79668,18 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1790
+// Size: 0x17a8
 // Has VTable
 class C_DOTA_Unit_Broodmother_Web : public C_DOTA_BaseNPC_Additive
 {
 public:
-	ParticleIndex_t m_nFXIndex; // 0x1780	
-	Vector m_vecOrigin; // 0x1784	
+	ParticleIndex_t m_nFXIndex; // 0x1798	
+	Vector m_vecOrigin; // 0x179c	
 };
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1780
+// Size: 0x1798
 // Has VTable
 class C_DOTA_NPC_BroodmotherStickyWeb : public C_DOTA_BaseNPC_Additive
 {
@@ -79689,7 +79689,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_BountyHunter : public C_DOTA_BaseNPC_Hero
 {
@@ -79699,7 +79699,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_Weaver : public C_DOTA_BaseNPC_Hero
 {
@@ -79709,7 +79709,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_Jakiro : public C_DOTA_BaseNPC_Hero
 {
@@ -79719,7 +79719,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_Batrider : public C_DOTA_BaseNPC_Hero
 {
@@ -79729,7 +79729,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_Chen : public C_DOTA_BaseNPC_Hero
 {
@@ -79739,7 +79739,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1af0
+// Size: 0x1b08
 // Has VTable
 // 
 // MNetworkVarNames "uint8 m_unCurrentArcanaKillStreak"
@@ -79751,24 +79751,24 @@ class C_DOTA_Unit_Hero_Spectre : public C_DOTA_BaseNPC_Hero
 public:
 	// MNetworkEnable
 	// MNetworkChangeCallback "OnSpectreArcanaProgressChanged"
-	uint8_t m_unCurrentArcanaKillStreak; // 0x1ae0	
+	uint8_t m_unCurrentArcanaKillStreak; // 0x1af8	
 	// MNetworkEnable
 	// MNetworkChangeCallback "OnSpectreArcanaProgressChanged"
-	uint8_t m_unBestArcanaKillStreak; // 0x1ae1	
+	uint8_t m_unBestArcanaKillStreak; // 0x1af9	
 private:
-	[[maybe_unused]] uint8_t __pad1ae2[0x2]; // 0x1ae2
+	[[maybe_unused]] uint8_t __pad1afa[0x2]; // 0x1afa
 public:
 	// MNetworkEnable
 	// MNetworkChangeCallback "OnSpectreArcanaProgressChanged"
-	PlayerID_t m_nVictimPlayerID; // 0x1ae4	
+	PlayerID_t m_nVictimPlayerID; // 0x1afc	
 	// MNetworkEnable
 	// MNetworkChangeCallback "OnSpectreArcanaProgressChanged"
-	bool m_bArcanaKillstreakRecordBroken; // 0x1ae8	
+	bool m_bArcanaKillstreakRecordBroken; // 0x1b00	
 };
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_DoomBringer : public C_DOTA_BaseNPC_Hero
 {
@@ -79778,7 +79778,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_SpiritBreaker : public C_DOTA_BaseNPC_Hero
 {
@@ -79788,7 +79788,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class CDOTA_Unit_Hero_Gyrocopter : public C_DOTA_BaseNPC_Hero
 {
@@ -79798,7 +79798,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class CDOTA_Unit_Hero_Alchemist : public C_DOTA_BaseNPC_Hero
 {
@@ -79808,7 +79808,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_Invoker : public C_DOTA_BaseNPC_Hero
 {
@@ -79818,7 +79818,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1788
+// Size: 0x17a0
 // Has VTable
 class C_DOTA_BaseNPC_Invoker_Forged_Spirit : public C_DOTA_BaseNPC_Creep
 {
@@ -79828,7 +79828,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_Silencer : public C_DOTA_BaseNPC_Hero
 {
@@ -79838,17 +79838,17 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae8
+// Size: 0x1b00
 // Has VTable
 class C_DOTA_Unit_Hero_Obsidian_Destroyer : public C_DOTA_BaseNPC_Hero
 {
 public:
-	ParticleIndex_t m_nFXDeath; // 0x1ae0	
+	ParticleIndex_t m_nFXDeath; // 0x1af8	
 };
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_Brewmaster : public C_DOTA_BaseNPC_Hero
 {
@@ -79858,49 +79858,49 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1790
+// Size: 0x17a8
 // Has VTable
 class C_DOTA_Unit_Brewmaster_PrimalEarth : public C_DOTA_BaseNPC_Creep
 {
 public:
-	ParticleIndex_t m_nFXEarthAmbient1; // 0x1788	
-	ParticleIndex_t m_nFXEarthAmbient2; // 0x178c	
+	ParticleIndex_t m_nFXEarthAmbient1; // 0x17a0	
+	ParticleIndex_t m_nFXEarthAmbient2; // 0x17a4	
 };
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1790
+// Size: 0x17a8
 // Has VTable
 class C_DOTA_Unit_Brewmaster_PrimalStorm : public C_DOTA_BaseNPC_Creep
 {
 public:
-	ParticleIndex_t m_nFXStormAmbient1; // 0x1788	
-	ParticleIndex_t m_nFXStormAmbient2; // 0x178c	
+	ParticleIndex_t m_nFXStormAmbient1; // 0x17a0	
+	ParticleIndex_t m_nFXStormAmbient2; // 0x17a4	
 };
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1790
+// Size: 0x17a8
 // Has VTable
 class C_DOTA_Unit_Brewmaster_PrimalFire : public C_DOTA_BaseNPC_Creep
 {
 public:
-	ParticleIndex_t m_nFXAmbient; // 0x1788	
+	ParticleIndex_t m_nFXAmbient; // 0x17a0	
 };
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1790
+// Size: 0x17a8
 // Has VTable
 class C_DOTA_Unit_Brewmaster_PrimalVoid : public C_DOTA_BaseNPC_Creep
 {
 public:
-	ParticleIndex_t m_nFXAmbient; // 0x1788	
+	ParticleIndex_t m_nFXAmbient; // 0x17a0	
 };
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_Lycan : public C_DOTA_BaseNPC_Hero
 {
@@ -79910,7 +79910,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_Shadow_Demon : public C_DOTA_BaseNPC_Hero
 {
@@ -79920,7 +79920,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae8
+// Size: 0x1b00
 // Has VTable
 // 
 // MNetworkVarNames "bool m_bShouldRespawn"
@@ -79929,14 +79929,14 @@ class C_DOTA_Unit_SpiritBear : public C_DOTA_BaseNPC_Hero
 {
 public:
 	// MNetworkEnable
-	bool m_bShouldRespawn; // 0x1ae0	
+	bool m_bShouldRespawn; // 0x1af8	
 	// MNetworkEnable
-	bool m_bStolen; // 0x1ae1	
+	bool m_bStolen; // 0x1af9	
 };
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_LoneDruid : public C_DOTA_BaseNPC_Hero
 {
@@ -79946,7 +79946,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_ChaosKnight : public C_DOTA_BaseNPC_Hero
 {
@@ -79956,7 +79956,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae8
+// Size: 0x1b00
 // Has VTable
 // 
 // MNetworkIncludeByName "m_bIsIllusion"
@@ -79965,12 +79965,12 @@ class C_DOTA_Unit_Hero_Meepo : public C_DOTA_BaseNPC_Hero
 {
 public:
 	// MNetworkEnable
-	int32_t m_nWhichMeepo; // 0x1ae0	
+	int32_t m_nWhichMeepo; // 0x1af8	
 };
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_Treant : public C_DOTA_BaseNPC_Hero
 {
@@ -79980,7 +79980,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1780
+// Size: 0x1798
 // Has VTable
 class C_DOTA_NPC_Treant_EyesInTheForest : public C_DOTA_BaseNPC_Additive
 {
@@ -79990,7 +79990,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_Ogre_Magi : public C_DOTA_BaseNPC_Hero
 {
@@ -80000,7 +80000,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1780
+// Size: 0x1798
 // Has VTable
 class C_DOTA_Unit_Undying_Tombstone : public C_DOTA_BaseNPC_Additive
 {
@@ -80010,18 +80010,18 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x17a8
+// Size: 0x17c0
 // Has VTable
 class C_DOTA_Unit_Undying_Zombie : public C_DOTA_BaseNPC_Creep
 {
 public:
-	CountdownTimer m_ctRespawn; // 0x1788	
-	C_DOTA_BaseNPC* m_pTombstone; // 0x17a0	
+	CountdownTimer m_ctRespawn; // 0x17a0	
+	C_DOTA_BaseNPC* m_pTombstone; // 0x17b8	
 };
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_Undying : public C_DOTA_BaseNPC_Hero
 {
@@ -80031,7 +80031,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1b58
+// Size: 0x1b70
 // Has VTable
 // 
 // MNetworkVarNames "Vector m_stolenAbilityColorHSV1"
@@ -80042,30 +80042,30 @@ class C_DOTA_Unit_Hero_Rubick : public C_DOTA_BaseNPC_Hero
 public:
 	// MNetworkEnable
 	// MNetworkChangeCallback "OnAbilityColorChanged"
-	Vector m_stolenAbilityColorHSV1; // 0x1ae0	
+	Vector m_stolenAbilityColorHSV1; // 0x1af8	
 	// MNetworkEnable
 	// MNetworkChangeCallback "OnAbilityColorChanged"
-	Vector m_stolenAbilityColorHSV2; // 0x1aec	
+	Vector m_stolenAbilityColorHSV2; // 0x1b04	
 	// MNetworkEnable
 	// MNetworkChangeCallback "OnAbilityColorChanged"
-	Vector m_stolenAbilityFXColorHSV; // 0x1af8	
+	Vector m_stolenAbilityFXColorHSV; // 0x1b10	
 	// MNetworkDisable
-	bool m_bHasInitializedAbilityColors; // 0x1b04	
+	bool m_bHasInitializedAbilityColors; // 0x1b1c	
 private:
-	[[maybe_unused]] uint8_t __pad1b05[0x3]; // 0x1b05
+	[[maybe_unused]] uint8_t __pad1b1d[0x3]; // 0x1b1d
 public:
-	Vector m_startAbilityColorHSV1; // 0x1b08	
-	Vector m_startAbilityColorHSV2; // 0x1b14	
-	Vector m_startAbilityFXColorHSV; // 0x1b20	
-	Vector m_currAbilityColorHSV1; // 0x1b2c	
-	Vector m_currAbilityColorHSV2; // 0x1b38	
-	Vector m_currAbilityFXColorHSV; // 0x1b44	
-	GameTime_t m_flStartTime; // 0x1b50	
+	Vector m_startAbilityColorHSV1; // 0x1b20	
+	Vector m_startAbilityColorHSV2; // 0x1b2c	
+	Vector m_startAbilityFXColorHSV; // 0x1b38	
+	Vector m_currAbilityColorHSV1; // 0x1b44	
+	Vector m_currAbilityColorHSV2; // 0x1b50	
+	Vector m_currAbilityFXColorHSV; // 0x1b5c	
+	GameTime_t m_flStartTime; // 0x1b68	
 };
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_Disruptor : public C_DOTA_BaseNPC_Hero
 {
@@ -80075,7 +80075,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_Nyx_Assassin : public C_DOTA_BaseNPC_Hero
 {
@@ -80085,7 +80085,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_Naga_Siren : public C_DOTA_BaseNPC_Hero
 {
@@ -80095,7 +80095,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1780
+// Size: 0x1798
 // Has VTable
 class C_DOTA_Unit_IngisFatuus : public C_DOTA_BaseNPC_Additive
 {
@@ -80105,7 +80105,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_KeeperOfTheLight : public C_DOTA_BaseNPC_Hero
 {
@@ -80115,27 +80115,27 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1af8
+// Size: 0x1b10
 // Has VTable
 class C_DOTA_Unit_Hero_Wisp : public C_DOTA_BaseNPC_Hero
 {
 public:
-	ParticleIndex_t m_nAmbientFXIndex; // 0x1ae0	
-	ParticleIndex_t m_nStunnedFXIndex; // 0x1ae4	
-	ParticleIndex_t m_nTalkFXIndex; // 0x1ae8	
-	ParticleIndex_t m_nIllusionFXIndex; // 0x1aec	
-	bool m_bParticleHexed; // 0x1af0	
-	bool m_bParticleStunned; // 0x1af1	
-	bool m_bDetermineAmbientEffect; // 0x1af2	
+	ParticleIndex_t m_nAmbientFXIndex; // 0x1af8	
+	ParticleIndex_t m_nStunnedFXIndex; // 0x1afc	
+	ParticleIndex_t m_nTalkFXIndex; // 0x1b00	
+	ParticleIndex_t m_nIllusionFXIndex; // 0x1b04	
+	bool m_bParticleHexed; // 0x1b08	
+	bool m_bParticleStunned; // 0x1b09	
+	bool m_bDetermineAmbientEffect; // 0x1b0a	
 private:
-	[[maybe_unused]] uint8_t __pad1af3[0x1]; // 0x1af3
+	[[maybe_unused]] uint8_t __pad1b0b[0x1]; // 0x1b0b
 public:
-	float m_flPrevHealth; // 0x1af4	
+	float m_flPrevHealth; // 0x1b0c	
 };
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1780
+// Size: 0x1798
 // Has VTable
 class C_DOTA_Wisp_Spirit : public C_DOTA_BaseNPC
 {
@@ -80145,7 +80145,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_Visage : public C_DOTA_BaseNPC_Hero
 {
@@ -80155,17 +80155,17 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1790
+// Size: 0x17a8
 // Has VTable
 class C_DOTA_Unit_VisageFamiliar : public C_DOTA_BaseNPC_Creep
 {
 public:
-	ParticleIndex_t m_nFXAmbient; // 0x1788	
+	ParticleIndex_t m_nFXAmbient; // 0x17a0	
 };
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_Slark : public C_DOTA_BaseNPC_Hero
 {
@@ -80175,7 +80175,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_Medusa : public C_DOTA_BaseNPC_Hero
 {
@@ -80185,7 +80185,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_TrollWarlord : public C_DOTA_BaseNPC_Hero
 {
@@ -80195,7 +80195,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class CDOTA_Unit_Hero_Centaur : public C_DOTA_BaseNPC_Hero
 {
@@ -80205,7 +80205,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_Magnataur : public C_DOTA_BaseNPC_Hero
 {
@@ -80215,7 +80215,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_Shredder : public C_DOTA_BaseNPC_Hero
 {
@@ -80225,7 +80225,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_Bristleback : public C_DOTA_BaseNPC_Hero
 {
@@ -80235,7 +80235,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_Tusk : public C_DOTA_BaseNPC_Hero
 {
@@ -80245,17 +80245,17 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1790
+// Size: 0x17a8
 // Has VTable
 class C_DOTA_BaseNPC_Tusk_Sigil : public C_DOTA_BaseNPC_Additive
 {
 public:
-	QAngle m_angInitialAngles; // 0x1780	
+	QAngle m_angInitialAngles; // 0x1798	
 };
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_Skywrath_Mage : public C_DOTA_BaseNPC_Hero
 {
@@ -80265,7 +80265,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class CDOTA_Unit_Hero_Abaddon : public C_DOTA_BaseNPC_Hero
 {
@@ -80275,7 +80275,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1780
+// Size: 0x1798
 // Has VTable
 class CDOTA_Unit_Elder_Titan_AncestralSpirit : public C_DOTA_BaseNPC_Additive
 {
@@ -80285,7 +80285,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class CDOTA_Unit_Hero_Elder_Titan : public C_DOTA_BaseNPC_Hero
 {
@@ -80295,37 +80295,37 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae8
+// Size: 0x1b00
 // Has VTable
 class C_DOTA_Unit_Hero_Legion_Commander : public C_DOTA_BaseNPC_Hero
 {
 public:
-	uint32_t m_unDuelsWon; // 0x1ae0	
+	uint32_t m_unDuelsWon; // 0x1af8	
 };
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae8
+// Size: 0x1b00
 // Has VTable
 class C_DOTA_Unit_Hero_Techies : public C_DOTA_BaseNPC_Hero
 {
 public:
-	bool m_bLastDeathFromSuicide; // 0x1ae0	
+	bool m_bLastDeathFromSuicide; // 0x1af8	
 };
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1788
+// Size: 0x17a0
 // Has VTable
 class C_DOTA_NPC_TechiesMines : public C_DOTA_BaseNPC_Additive
 {
 public:
-	ParticleIndex_t m_iRangeFX; // 0x1780	
+	ParticleIndex_t m_iRangeFX; // 0x1798	
 };
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1780
+// Size: 0x1798
 // Has VTable
 class C_DOTA_NPC_Techies_Minefield_Sign : public C_DOTA_BaseNPC_Additive
 {
@@ -80335,7 +80335,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_EmberSpirit : public C_DOTA_BaseNPC_Hero
 {
@@ -80345,7 +80345,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1780
+// Size: 0x1798
 // Has VTable
 class C_DOTA_Unit_Earth_Spirit_Stone : public C_DOTA_BaseNPC
 {
@@ -80355,7 +80355,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_EarthSpirit : public C_DOTA_BaseNPC_Hero
 {
@@ -80365,45 +80365,45 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae8
+// Size: 0x1b00
 // Has VTable
 class CDOTA_Unit_Hero_AbyssalUnderlord : public C_DOTA_BaseNPC_Hero
 {
 public:
-	ParticleIndex_t m_iRangeFX; // 0x1ae0	
+	ParticleIndex_t m_iRangeFX; // 0x1af8	
 };
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x17f0
+// Size: 0x1808
 // Has VTable
 class C_DOTA_Unit_Underlord_Portal : public C_DOTA_BaseNPC_Building
 {
 public:
-	CHandle< C_BaseEntity > m_hOtherPortal; // 0x17e8	
+	CHandle< C_BaseEntity > m_hOtherPortal; // 0x1800	
 };
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1af8
+// Size: 0x1b10
 // Has VTable
 // 
 // MNetworkVarNames "uint32 m_nArcanaColor"
 class C_DOTA_Unit_Hero_Terrorblade : public C_DOTA_BaseNPC_Hero
 {
 public:
-	ParticleIndex_t m_nFXDeath; // 0x1ae0	
+	ParticleIndex_t m_nFXDeath; // 0x1af8	
 private:
-	[[maybe_unused]] uint8_t __pad1ae4[0x4]; // 0x1ae4
+	[[maybe_unused]] uint8_t __pad1afc[0x4]; // 0x1afc
 public:
-	CUtlString m_szResponseCriteria; // 0x1ae8	
+	CUtlString m_szResponseCriteria; // 0x1b00	
 	// MNetworkEnable
-	uint32_t m_nArcanaColor; // 0x1af0	
+	uint32_t m_nArcanaColor; // 0x1b08	
 };
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_Phoenix : public C_DOTA_BaseNPC_Hero
 {
@@ -80413,39 +80413,39 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae8
+// Size: 0x1b00
 // Has VTable
 class C_DOTA_Unit_Hero_Oracle : public C_DOTA_BaseNPC_Hero
 {
 public:
-	ParticleIndex_t m_nFXDeath; // 0x1ae0	
+	ParticleIndex_t m_nFXDeath; // 0x1af8	
 };
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae8
+// Size: 0x1b00
 // Has VTable
 class C_DOTA_Unit_Hero_Winter_Wyvern : public C_DOTA_BaseNPC_Hero
 {
 public:
-	ParticleIndex_t m_nFXDeath; // 0x1ae0	
+	ParticleIndex_t m_nFXDeath; // 0x1af8	
 };
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1af0
+// Size: 0x1b08
 // Has VTable
 class CDOTA_Unit_Hero_ArcWarden : public C_DOTA_BaseNPC_Hero
 {
 public:
-	ParticleIndex_t m_nTalkFXIndex; // 0x1ae0	
-	ParticleIndex_t m_nFXDeath; // 0x1ae4	
-	ParticleIndex_t m_nTempestFX; // 0x1ae8	
+	ParticleIndex_t m_nTalkFXIndex; // 0x1af8	
+	ParticleIndex_t m_nFXDeath; // 0x1afc	
+	ParticleIndex_t m_nTempestFX; // 0x1b00	
 };
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1af0
+// Size: 0x1b08
 // Has VTable
 // 
 // MNetworkVarNames "DotaTreeId_t m_nTreeDisguise"
@@ -80453,21 +80453,21 @@ public:
 class C_DOTA_Unit_Hero_MonkeyKing : public C_DOTA_BaseNPC_Hero
 {
 public:
-	bool mb_MonkeyHasArcana; // 0x1ae0	
+	bool mb_MonkeyHasArcana; // 0x1af8	
 private:
-	[[maybe_unused]] uint8_t __pad1ae1[0x3]; // 0x1ae1
+	[[maybe_unused]] uint8_t __pad1af9[0x3]; // 0x1af9
 public:
 	// MNetworkEnable
-	uint32_t m_nTreeDisguise; // 0x1ae4	
+	uint32_t m_nTreeDisguise; // 0x1afc	
 	// MNetworkEnable
 	// MNetworkChangeCallback "OnPerchedTreeChanged"
-	uint32_t m_nPerchedTree; // 0x1ae8	
-	CHandle< C_BaseEntity > m_hTreeDisguiseEnt; // 0x1aec	
+	uint32_t m_nPerchedTree; // 0x1b00	
+	CHandle< C_BaseEntity > m_hTreeDisguiseEnt; // 0x1b04	
 };
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_Pangolier : public C_DOTA_BaseNPC_Hero
 {
@@ -80477,7 +80477,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_DarkWillow : public C_DOTA_BaseNPC_Hero
 {
@@ -80487,7 +80487,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1780
+// Size: 0x1798
 // Has VTable
 class C_DOTA_DarkWillow_Creature : public C_DOTA_BaseNPC
 {
@@ -80497,17 +80497,17 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae8
+// Size: 0x1b00
 // Has VTable
 class CDOTA_Unit_Hero_Grimstroke : public C_DOTA_BaseNPC_Hero
 {
 public:
-	ParticleIndex_t m_nFXDeath; // 0x1ae0	
+	ParticleIndex_t m_nFXDeath; // 0x1af8	
 };
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1780
+// Size: 0x1798
 // Has VTable
 class CDOTA_Unit_Grimstroke_InkCreature : public C_DOTA_BaseNPC
 {
@@ -80517,7 +80517,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class CDOTA_Unit_Hero_Mars : public C_DOTA_BaseNPC_Hero
 {
@@ -80527,7 +80527,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class CDOTA_Unit_Hero_Snapfire : public C_DOTA_BaseNPC_Hero
 {
@@ -80537,7 +80537,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class CDOTA_Unit_Hero_Void_Spirit : public C_DOTA_BaseNPC_Hero
 {
@@ -80547,7 +80547,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class C_DOTA_Unit_Hero_Hoodwink : public C_DOTA_BaseNPC_Hero
 {
@@ -80557,7 +80557,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae8
+// Size: 0x1b00
 // Has VTable
 // 
 // MNetworkVarNames "int m_nAttackState"
@@ -80565,12 +80565,12 @@ class CDOTA_Unit_Hero_Dawnbreaker : public C_DOTA_BaseNPC_Hero
 {
 public:
 	// MNetworkEnable
-	int32_t m_nAttackState; // 0x1ae0	
+	int32_t m_nAttackState; // 0x1af8	
 };
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class CDOTA_Unit_Hero_Marci : public C_DOTA_BaseNPC_Hero
 {
@@ -80580,7 +80580,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1ae0
+// Size: 0x1af8
 // Has VTable
 class CDOTA_Unit_Hero_PrimalBeast : public C_DOTA_BaseNPC_Hero
 {
@@ -80590,7 +80590,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1af0
+// Size: 0x1b08
 // Has VTable
 // 
 // MNetworkVarNames "EHANDLE m_hDoubleShotTarget"
@@ -80599,13 +80599,13 @@ class C_DOTA_Unit_Hero_Muerta : public C_DOTA_BaseNPC_Hero
 public:
 	// MNetworkEnable
 	// MNetworkPriority "32"
-	CHandle< C_BaseEntity > m_hDoubleShotTarget; // 0x1ae0	
-	QAngle m_qStartAngle; // 0x1ae4	
+	CHandle< C_BaseEntity > m_hDoubleShotTarget; // 0x1af8	
+	QAngle m_qStartAngle; // 0x1afc	
 };
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1780
+// Size: 0x1798
 // Has VTable
 class CDOTA_Muerta_Revenant : public C_DOTA_BaseNPC
 {
@@ -80615,34 +80615,34 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1798
+// Size: 0x17b0
 // Has VTable
 class CDOTA_NPC_Observer_Ward : public C_DOTA_BaseNPC_Additive
 {
 public:
-	int32_t m_iDuration; // 0x1780	
+	int32_t m_iDuration; // 0x1798	
 private:
-	[[maybe_unused]] uint8_t __pad1784[0x4]; // 0x1784
+	[[maybe_unused]] uint8_t __pad179c[0x4]; // 0x179c
 public:
-	CNewParticleEffect* m_pVisionRangeFX; // 0x1788	
-	int32_t m_nPreviewViewer; // 0x1790	
+	CNewParticleEffect* m_pVisionRangeFX; // 0x17a0	
+	int32_t m_nPreviewViewer; // 0x17a8	
 };
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x17a8
+// Size: 0x17c0
 // Has VTable
 class CDOTA_NPC_Observer_Ward_TrueSight : public CDOTA_NPC_Observer_Ward
 {
 public:
-	int32_t m_iTrueSight; // 0x1798	
-	CEntityHandle m_hCasterEntity; // 0x179c	
-	CEntityHandle m_hAbilityEntity; // 0x17a0	
+	int32_t m_iTrueSight; // 0x17b0	
+	CEntityHandle m_hCasterEntity; // 0x17b4	
+	CEntityHandle m_hAbilityEntity; // 0x17b8	
 };
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1780
+// Size: 0x1798
 // Has VTable
 class C_DOTA_Unit_Roshans_Banner : public C_DOTA_BaseNPC_Additive
 {
@@ -80652,27 +80652,27 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x17c8
+// Size: 0x17e0
 // Has VTable
 class C_DOTA_PortraitEntity : public C_DOTA_BaseNPC
 {
 public:
-	CountdownTimer m_PetIdleTimer; // 0x1780	
-	ParticleIndex_t m_nMouthFX; // 0x1798	
-	int32_t m_nMouthControlPoint; // 0x179c	
-	ParticleIndex_t m_iPortraitParticle; // 0x17a0	
-	int32_t m_PortraitActivity; // 0x17a4	
-	CUtlVector< CUtlSymbol > m_CustomActivityModifiers; // 0x17a8	
-	bool m_bIsSimulationActive; // 0x17c0	
+	CountdownTimer m_PetIdleTimer; // 0x1798	
+	ParticleIndex_t m_nMouthFX; // 0x17b0	
+	int32_t m_nMouthControlPoint; // 0x17b4	
+	ParticleIndex_t m_iPortraitParticle; // 0x17b8	
+	int32_t m_PortraitActivity; // 0x17bc	
+	CUtlVector< CUtlSymbol > m_CustomActivityModifiers; // 0x17c0	
+	bool m_bIsSimulationActive; // 0x17d8	
 private:
-	[[maybe_unused]] uint8_t __pad17c1[0x3]; // 0x17c1
+	[[maybe_unused]] uint8_t __pad17d9[0x3]; // 0x17d9
 public:
-	CEntityHandle m_hAppearanceFromNPC; // 0x17c4	
+	CEntityHandle m_hAppearanceFromNPC; // 0x17dc	
 };
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x17c8
+// Size: 0x17e0
 // Has VTable
 class C_DOTA_PortraitEntity_FullBody : public C_DOTA_PortraitEntity
 {
@@ -80682,7 +80682,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x17b0
+// Size: 0x17c8
 // Has VTable
 class CDOTA_Unit_Announcer_Killing_Spree : public CDOTA_Unit_Announcer
 {
