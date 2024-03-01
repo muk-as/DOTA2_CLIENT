@@ -4,8 +4,8 @@
 
 // /////////////////////////////////////////////////////////////
 // Binary: server.dll
-// Classes count: 6621
-// Enums count: 332
+// Classes count: 6814
+// Enums count: 334
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
@@ -8800,6 +8800,28 @@ enum class FowBlockerShape_t : uint32_t
 {
 	FOW_BLOCKER_SHAPE_RECTANGLE = 0x0,
 	FOW_BLOCKER_SHAPE_RECTANGLE_OUTLINE = 0x1,
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 4
+// Size: 0x3
+enum class CDOTA_BaseNPC_AghsFort_Watch_Tower__ExitDirection_t : uint32_t
+{
+	EXIT_DIRECTION_LEFT = 0x0,
+	EXIT_DIRECTION_TOP = 0x1,
+	EXIT_DIRECTION_RIGHT = 0x2,
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 4
+// Size: 0x5
+enum class TowerState_t : uint32_t
+{
+	TOWER_STATE_ACTIVE = 0x0,
+	TOWER_STATE_SELECTED = 0x1,
+	TOWER_STATE_INACTIVE = 0x2,
+	TOWER_STATE_NO_BEAM_MOVEMENT = 0x3,
+	TOWER_STATE_ACTIVE_CHANNELED = 0x4,
 };
 
 // Registered binary: server.dll (project 'server')
@@ -30350,6 +30372,799 @@ class CDOTA_Item_BagOfGold : public CDOTA_Item
 {
 public:
 	// No schema binary for binding
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x590
+// Has VTable
+class CDOTA_Ability_AghsFort_Tower_BlastWave : public CDOTABaseAbility
+{
+public:
+	ParticleIndex_t m_nPreviewFX; // 0x588	
+	float duration; // 0x58c	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x588
+// Has VTable
+class CDOTA_Ability_Aghsfort_TempBuff_CorpseExplosion : public CDOTABaseAbility
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x588
+// Has VTable
+class CDOTA_Ability_Aghsfort_Reward_HPAura : public CDOTABaseAbility
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x588
+// Has VTable
+class CDOTA_Ability_Aghsfort_Reward_CritAura : public CDOTABaseAbility
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x588
+// Has VTable
+class CDOTA_Ability_Aghsfort_Reward_MagicResistAura : public CDOTABaseAbility
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x588
+// Has VTable
+class CDOTA_Ability_Aghsfort_Reward_ArmorAura : public CDOTABaseAbility
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x588
+// Has VTable
+class CDOTA_Ability_AghsFort_Ascension_PlasmaField : public CDOTABaseAbility
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x588
+// Has VTable
+class CDOTA_Ability_Ascension_Bulwark : public CDOTABaseAbility
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x588
+// Has VTable
+class CDOTA_Ability_Ascension_AcidBlood : public CDOTABaseAbility
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x588
+// Has VTable
+class CDOTA_Ability_AghsFort_Ascension_Firefly : public CDOTABaseAbility
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x590
+// Has VTable
+class CDOTA_Ability_AghsFort_Ascension_Silence : public CDOTABaseAbility
+{
+public:
+	ParticleIndex_t m_nPreviewFX; // 0x588	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x588
+// Has VTable
+class CDOTA_Ability_AghsFort_Ascension_MagneticField : public CDOTABaseAbility
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x590
+// Has VTable
+class CDOTA_Ability_AghsFort_Ascension_Invis : public CDOTABaseAbility
+{
+public:
+	float warning_duration; // 0x588	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x5a0
+// Has VTable
+class CDOTA_Ability_Morty_Hop : public CDOTABaseAbility
+{
+public:
+	float max_distance; // 0x588	
+	Vector m_vTarget; // 0x58c	
+	int32_t m_iTrackerProjectile; // 0x598	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x588
+// Has VTable
+class CDOTA_Ability_Morty_Hop_Launch : public CDOTABaseAbility
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x588
+// Has VTable
+class CDOTA_Ability_AghsFort_ExplosiveBarrel : public CDOTABaseAbility
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x658
+// Has VTable
+class CDOTA_Ability_AghsFort_Ravage_Potion : public CDOTA_Item
+{
+public:
+	CUtlVector< CHandle< CBaseEntity > > m_hEntsHit; // 0x630	
+	int32_t damage; // 0x648	
+	float duration; // 0x64c	
+	float spend_charge_delay; // 0x650	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x650
+// Has VTable
+class CDOTA_Ability_AghsFort_Dragon_Potion : public CDOTA_Item
+{
+public:
+	int32_t bonus_movement_speed; // 0x630	
+	int32_t bonus_attack_damage; // 0x634	
+	int32_t bonus_attack_range; // 0x638	
+	int32_t magic_resistance; // 0x63c	
+	int32_t model_scale; // 0x640	
+	int32_t skin_number; // 0x644	
+	bool flying_movement; // 0x648	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x638
+// Has VTable
+class CDOTA_Ability_AghsFort_Arcanist_Potion : public CDOTA_Item
+{
+public:
+	int32_t cooldown_reduction_pct; // 0x630	
+	int32_t manacost_reduction_pct; // 0x634	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x648
+// Has VTable
+class CDOTA_Ability_AghsFort_EchoSlamPotion : public CDOTA_Item
+{
+public:
+	int32_t echo_slam_damage_range; // 0x630	
+	int32_t echo_slam_echo_search_range; // 0x634	
+	int32_t echo_slam_echo_range; // 0x638	
+	int32_t echo_slam_echo_damage; // 0x63c	
+	int32_t echo_slam_initial_damage; // 0x640	
+	float spend_charge_delay; // 0x644	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x630
+// Has VTable
+class CDOTA_Ability_AghsFort_ShadowWaveEffectPotion : public CDOTA_Item
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x630
+// Has VTable
+class CDOTA_Item_AghsFort_RefresherOrb_Shard : public CDOTA_Item
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x588
+// Has VTable
+class CDOTA_Ability_Aghsfort_Minor_Stats_Upgrade : public CDOTABaseAbility
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x630
+// Has VTable
+class CDOTA_Item_Aghsfort_BootsOfTravel : public CDOTA_Item
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x630
+// Has VTable
+class CDOTA_Item_Aghsfort_BootsOfTravel_2 : public CDOTA_Item_Aghsfort_BootsOfTravel
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x588
+// Has VTable
+class CDOTA_Ability_AghsFort_RestorativeFlower : public CDOTABaseAbility
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x5b0
+// Has VTable
+class CDOTA_Ability_AghsFort_StonehallGeneral_OverwhelmingOdds : public CDOTABaseAbility
+{
+public:
+	int32_t max_steps; // 0x588	
+	Vector m_vTarget; // 0x58c	
+	Vector m_vDir; // 0x598	
+	int32_t m_nSteps; // 0x5a4	
+	GameTime_t m_flChannelStartTime; // 0x5a8	
+	ParticleIndex_t m_nFXIndex; // 0x5ac	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x590
+// Has VTable
+class CDOTA_Ability_AghsFort_Spectre_ActiveDispersion : public CDOTABaseAbility
+{
+public:
+	ParticleIndex_t m_nPreviewFX; // 0x588	
+	float duration; // 0x58c	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x5a8
+// Has VTable
+class CDOTA_Ability_AghsFort_RockGolem_Smash : public CDOTABaseAbility
+{
+public:
+	ParticleIndex_t m_nPreviewFX; // 0x588	
+	Vector m_vTargetLoc; // 0x58c	
+private:
+	[[maybe_unused]] uint8_t __pad0598[0x8]; // 0x598
+public:
+	int32_t radius; // 0x5a0	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x590
+// Has VTable
+class CDOTA_Ability_AghsFort_Creature_Phoenix_FireSpirits : public CDOTABaseAbility
+{
+public:
+	int32_t hp_cost_perc; // 0x588	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x5a0
+// Has VTable
+class CDOTA_Ability_AghsFort_Creature_Phoenix_LaunchFireSpirit : public CDOTABaseAbility
+{
+public:
+	int32_t spirit_speed; // 0x588	
+	float duration; // 0x58c	
+	int32_t radius; // 0x590	
+	int32_t hp_cost_perc; // 0x594	
+	ParticleIndex_t m_nFXIndex; // 0x598	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x590
+// Has VTable
+class CDOTA_Ability_AghsFort_Creature_Phoenix_Supernova : public CDOTABaseAbility
+{
+public:
+	ParticleIndex_t m_nPreviewFX; // 0x588	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x588
+// Has VTable
+class CDOTA_Ability_PudgeMiniboss_HatefulStrike : public CDOTABaseAbility
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x588
+// Has VTable
+class CDOTA_Ability_PudgeMiniboss_ArmorCorruption : public CDOTABaseAbility
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x5b8
+// Has VTable
+class CDOTA_Ability_AghsFort_Wave_Blast : public CDOTABaseAbility
+{
+public:
+	int32_t damage; // 0x588	
+	float knockback_duration; // 0x58c	
+	float disarm_duration; // 0x590	
+private:
+	[[maybe_unused]] uint8_t __pad0594[0x4]; // 0x594
+public:
+	CUtlVector< CHandle< CBaseEntity > > m_hHitEntities; // 0x598	
+	ParticleIndex_t m_nPreviewFX; // 0x5b0	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x588
+// Has VTable
+class CDOTA_Ability_AghsFort_Waveblaster_Leap : public CDOTABaseAbility
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x5a0
+// Has VTable
+class CDOTA_Ability_AghsFort_Creature_Impale : public CDOTABaseAbility
+{
+public:
+	ParticleIndex_t m_nPreviewFX; // 0x588	
+	int32_t width; // 0x58c	
+	float duration; // 0x590	
+	int32_t length; // 0x594	
+	int32_t speed; // 0x598	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x588
+// Has VTable
+class CDOTA_Ability_AghsFort_Creature_SpikedCarapace : public CDOTABaseAbility
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x590
+// Has VTable
+class CDOTA_Ability_Creature_Flamestrike : public CDOTABaseAbility
+{
+public:
+	ParticleIndex_t m_nPreviewFX; // 0x588	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x5a8
+// Has VTable
+class CDOTA_Ability_AghsFort_DragonKnight_BreatheFire : public CDOTABaseAbility
+{
+public:
+	ParticleIndex_t m_nPreviewFX; // 0x588	
+	int32_t start_radius; // 0x58c	
+	int32_t end_radius; // 0x590	
+	Vector m_vStartPos; // 0x594	
+	GameTime_t m_fStartTime; // 0x5a0	
+	float m_fTotalTime; // 0x5a4	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x588
+// Has VTable
+class CDOTA_Ability_AghsFort_Gyrocopter_Multi_Homing_Missile : public CDOTABaseAbility
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x590
+// Has VTable
+class CDOTA_Ability_PineCone_ShieldBash : public CDOTABaseAbility
+{
+public:
+	ParticleIndex_t m_nPreviewFX; // 0x588	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x5c0
+// Has VTable
+// 
+// MNetworkVarNames "DotaTreeId_t m_nAcornTree"
+class CDOTA_Ability_PineCone_AcornShot : public CDOTABaseAbility
+{
+private:
+	[[maybe_unused]] uint8_t __pad0588[0x20]; // 0x588
+public:
+	// MNetworkEnable
+	uint32_t m_nAcornTree; // 0x5a8	
+	float projectile_speed; // 0x5ac	
+	float bounce_delay; // 0x5b0	
+	int32_t bounce_range; // 0x5b4	
+	int32_t bounce_count; // 0x5b8	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x588
+// Has VTable
+class CDOTA_Ability_AghsFort_Lifestealer_Enraged_Pulse : public CDOTABaseAbility
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x5f0
+// Has VTable
+class CDOTA_Ability_Aghanim_UrnUpheaval : public CDOTABaseAbility
+{
+public:
+	Vector m_vPosition; // 0x588	
+	float aoe; // 0x594	
+	float slow_rate; // 0x598	
+	float slow_rate_duration; // 0x59c	
+	float duration; // 0x5a0	
+	float max_slow; // 0x5a4	
+	float burn_damage; // 0x5a8	
+	float m_flCurrentSlow; // 0x5ac	
+	ParticleIndex_t m_nFXIndex; // 0x5b0	
+private:
+	[[maybe_unused]] uint8_t __pad05b4[0x4]; // 0x5b4
+public:
+	CountdownTimer m_SlowTimer; // 0x5b8	
+	CountdownTimer m_timer; // 0x5d0	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x588
+// Has VTable
+class CDOTA_Ability_UpheavalUrn_Reincarnation : public CDOTABaseAbility
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x588
+// Has VTable
+class CDOTA_Ability_AghanimsFortress_SkeletonKing_VampiricAura : public CDOTABaseAbility
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x5c8
+// Has VTable
+class CDOTA_Ability_AghsFort_Shadow_Demon_Shadow_Poison : public CDOTABaseAbility
+{
+public:
+	CUtlVector< CHandle< CBaseEntity > > m_hPoisonedUnits; // 0x588	
+	int32_t radius; // 0x5a0	
+private:
+	[[maybe_unused]] uint8_t __pad05a4[0x4]; // 0x5a4
+public:
+	CUtlVector< CHandle< CBaseEntity > > m_hHitUnits; // 0x5a8	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x588
+// Has VTable
+class CDOTA_Ability_AghsFort_Shadow_Demon_Shadow_Poison_Release : public CDOTABaseAbility
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x590
+// Has VTable
+// 
+// MNetworkVarNames "EHANDLE m_hShackleTarget"
+class CDOTA_Ability_AghsFort_ShadowShaman_Shackles : public CDOTABaseAbility
+{
+public:
+	// MNetworkEnable
+	CHandle< CBaseEntity > m_hShackleTarget; // 0x588	
+	ParticleIndex_t nShackleFXIndex; // 0x58c	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x5e0
+// Has VTable
+class CDOTA_Ability_Aghanim_Spear : public CDOTABaseAbility
+{
+public:
+	CUtlVector< CHandle< CBaseEntity > > hAlreadyHitList; // 0x588	
+	CUtlVector< int32 > m_vecProjectileHandles; // 0x5a0	
+private:
+	[[maybe_unused]] uint8_t __pad05b8[0x8]; // 0x5b8
+public:
+	Vector m_vTarget; // 0x5c0	
+	Vector m_vSourcePosition; // 0x5cc	
+	int32_t damage; // 0x5d8	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x5a0
+// Has VTable
+class CDOTA_Ability_Aghsfort_Wildwing_Tornado_Blast : public CDOTABaseAbility
+{
+public:
+	float disable_duration; // 0x588	
+	float damage; // 0x58c	
+	ParticleIndex_t m_nPreviewFX; // 0x590	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x588
+// Has VTable
+class CDOTA_Ability_AghsFort_TreantMiniboss_NaturesGuise : public CDOTABaseAbility
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x590
+// Has VTable
+class CDOTA_Ability_AghsFort_Creature_Venomancer_PoisonNova : public CDOTABaseAbility
+{
+public:
+	ParticleIndex_t m_nFXPreview; // 0x588	
+	int32_t radius; // 0x58c	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x588
+// Has VTable
+class CDOTA_AghsFort_Ability_Creature_Venomancer_PoisonSting : public CDOTABaseAbility
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x590
+// Has VTable
+class CDOTA_Ability_Aghsfort_Aziyog_Underlord_Firestorm : public CDOTABaseAbility
+{
+public:
+	ParticleIndex_t m_nFXIndex; // 0x588	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x590
+// Has VTable
+class CDOTA_Ability_Aghsfort_Aziyog_Underlord_Portal_Warp : public CDOTABaseAbility
+{
+public:
+	CHandle< CBaseEntity > m_hTarget; // 0x588	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x590
+// Has VTable
+class CDOTA_Ability_Aghsfort_Aziyog_Underlord_Dark_Portal : public CDOTABaseAbility
+{
+public:
+	float duration; // 0x588	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x590
+// Has VTable
+class CDOTA_Aghsfort_Ability_CrystalMaiden_CrystalNova : public CDOTABaseAbility
+{
+public:
+	int32_t nova_damage; // 0x588	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x590
+// Has VTable
+class CDOTA_Aghsfort_AbilityCrystalMaiden_FreezingField : public CDOTABaseAbility
+{
+public:
+	ParticleIndex_t m_nWarningFX; // 0x588	
+	ParticleIndex_t m_nRadiusFX; // 0x58c	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x5a0
+// Has VTable
+class CDOTA_Aghsfort_Ability_Creature_Magnus_Push_Skewer : public CDOTABaseAbility
+{
+public:
+	int32_t skewer_radius; // 0x588	
+	int32_t skewer_speed; // 0x58c	
+	int32_t range; // 0x590	
+	int32_t tree_radius; // 0x594	
+	int32_t m_nProjectileID; // 0x598	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x590
+// Has VTable
+class CDOTA_Aghsfort_Ability_Hoodwink_HuntersBoomerang : public CDOTABaseAbility
+{
+public:
+	int32_t min_distance; // 0x588	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x588
+// Has VTable
+class CDOTA_Ability_Aghsfort_Pugna_Grandmaster_NetherWard : public CDOTABaseAbility
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x590
+// Has VTable
+class CDOTA_Ability_AghsFort_AssaultCaptain_SearingChains : public CDOTABaseAbility
+{
+public:
+	ParticleIndex_t m_nWarningFX; // 0x588	
+	ParticleIndex_t m_nRadiusFX; // 0x58c	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x588
+// Has VTable
+class CDOTA_Ability_AghsFort_AssaultCaptain_SunRay : public CDOTABaseAbility
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x5a8
+// Has VTable
+class CDOTA_Ability_AghsFort_TrapRoom_Hookshot : public CDOTABaseAbility
+{
+public:
+	ParticleIndex_t m_nFXIndex; // 0x588	
+	Vector m_vProjectileVelocity; // 0x58c	
+	bool m_bRetract; // 0x598	
+private:
+	[[maybe_unused]] uint8_t __pad0599[0xb]; // 0x599
+public:
+	CHandle< CBaseEntity > m_hSourceCaster; // 0x5a4	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x4e8
+// Has VTable
+class CDOTA_AghsFort_BossPreview : public CBaseEntity
+{
+public:
+	CUtlSymbolLarge m_strBossUnit; // 0x4c8	
+	CUtlSymbolLarge m_strModelName; // 0x4d0	
+	float m_flBossModelScale; // 0x4d8	
+	float m_flExtraModelScale; // 0x4dc	
+	int32_t m_nEncounterType; // 0x4e0	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x598
+// Has VTable
+// 
+// MNetworkVarNames "CHandle<CDOTA_BaseNPC> m_hTarget"
+class CDOTA_Ability_AghsFort_Capture : public CDOTABaseAbility
+{
+public:
+	// MNetworkEnable
+	CHandle< CDOTA_BaseNPC > m_hTarget; // 0x588	
+private:
+	[[maybe_unused]] uint8_t __pad058c[0x4]; // 0x58c
+public:
+	CDOTA_Buff* m_pMyBuff; // 0x590	
 };
 
 // Registered binary: server.dll (project 'server')
@@ -90597,6 +91412,1659 @@ public:
 
 // Registered binary: server.dll (project 'server')
 // Alignment: 8
+// Size: 0x1368
+// Has VTable
+class CDOTA_Modifier_AghsFort_Tower_BlastWave_Thinker : public CDOTA_Buff
+{
+public:
+	float damage_pct; // 0x1318	
+	float m_fCurRadius; // 0x131c	
+	GameTime_t m_fLastThink; // 0x1320	
+private:
+	[[maybe_unused]] uint8_t __pad1324[0x4]; // 0x1324
+public:
+	CountdownTimer m_ViewerTimer; // 0x1328	
+	ParticleIndex_t m_nFXIndex; // 0x1340	
+private:
+	[[maybe_unused]] uint8_t __pad1344[0x4]; // 0x1344
+public:
+	CUtlVector< CHandle< CBaseEntity > > m_EntitiesHit; // 0x1348	
+	int32_t speed; // 0x1360	
+	int32_t radius; // 0x1364	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1320
+// Has VTable
+class CDOTA_Modifier_Aghsfort_TempBuff_CorpseExplosion_Aura : public CDOTA_Buff
+{
+public:
+	int32_t radius; // 0x1318	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1328
+// Has VTable
+class CDOTA_Modifier_Aghsfort_TempBuff_CorpseExplosion_Debuff : public CDOTA_Buff
+{
+public:
+	int32_t corpse_explosion_radius; // 0x1318	
+	int32_t corpse_explosion_damage_pct; // 0x131c	
+	int32_t corpse_explosion_chance_pct; // 0x1320	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1320
+// Has VTable
+class CDOTA_Modifier_Aghsfort_Reward_HPAura : public CDOTA_Buff
+{
+public:
+	int32_t radius; // 0x1318	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1320
+// Has VTable
+class CDOTA_Modifier_Aghsfort_Reward_HPAura_Bonus : public CDOTA_Buff
+{
+public:
+	float bonus_hp; // 0x1318	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1320
+// Has VTable
+class CDOTA_Modifier_Aghsfort_Reward_CritAura : public CDOTA_Buff
+{
+public:
+	int32_t radius; // 0x1318	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1320
+// Has VTable
+class CDOTA_Modifier_Aghsfort_Reward_CritAura_Bonus : public CDOTA_Buff
+{
+public:
+	int32_t crit_chance; // 0x1318	
+	int32_t crit_multiplier; // 0x131c	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1320
+// Has VTable
+class CDOTA_Modifier_Aghsfort_Reward_MagicResistAura : public CDOTA_Buff
+{
+public:
+	int32_t radius; // 0x1318	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1320
+// Has VTable
+class CDOTA_Modifier_Aghsfort_Reward_MagicResistAura_Bonus : public CDOTA_Buff
+{
+public:
+	int32_t bonus_magical_armor; // 0x1318	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1320
+// Has VTable
+class CDOTA_Modifier_Aghsfort_Reward_ArmorAura : public CDOTA_Buff
+{
+public:
+	int32_t radius; // 0x1318	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1320
+// Has VTable
+class CDOTA_Modifier_Aghsfort_Reward_ArmorAura_Bonus : public CDOTA_Buff
+{
+public:
+	int32_t bonus_armor; // 0x1318	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1380
+// Has VTable
+class CDOTA_Modifier_AghsFort_Ascension_PlasmaField_Thinker : public CDOTA_Buff
+{
+public:
+	float m_fLastRadius; // 0x1318	
+	float m_fCurRadius; // 0x131c	
+	GameTime_t m_fLastThink; // 0x1320	
+	bool m_bWindingUp; // 0x1324	
+private:
+	[[maybe_unused]] uint8_t __pad1325[0x3]; // 0x1325
+public:
+	CountdownTimer m_ViewerTimer; // 0x1328	
+	ParticleIndex_t m_nFXIndex; // 0x1340	
+private:
+	[[maybe_unused]] uint8_t __pad1344[0x4]; // 0x1344
+public:
+	CUtlVector< CHandle< CBaseEntity > > m_EntitiesHit; // 0x1348	
+	int32_t speed; // 0x1360	
+	int32_t radius; // 0x1364	
+	int32_t damage_min; // 0x1368	
+	int32_t damage_max; // 0x136c	
+	int32_t slow_min; // 0x1370	
+	int32_t slow_max; // 0x1374	
+	float slow_duration; // 0x1378	
+	float windup_time; // 0x137c	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1320
+// Has VTable
+class CDOTA_Modifier_AghsFort_Ascension_PlasmaField_Slow : public CDOTA_Buff
+{
+public:
+	int32_t slow_amount; // 0x1318	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1328
+// Has VTable
+class CDOTA_Modifier_Ascension_Bulwark : public CDOTA_Buff
+{
+public:
+	float physical_damage_reduction; // 0x1318	
+	float physical_damage_reduction_side; // 0x131c	
+	float forward_angle; // 0x1320	
+	float side_angle; // 0x1324	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1328
+// Has VTable
+class CDOTA_Modifier_Ascension_AcidBlood_Thinker : public CDOTA_Buff
+{
+public:
+	int32_t damage; // 0x1318	
+	int32_t radius; // 0x131c	
+	ParticleIndex_t m_nFXIndex; // 0x1320	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1320
+// Has VTable
+class CDOTA_Modifier_Ascension_AcidBlood : public CDOTA_Buff
+{
+public:
+	int32_t armor_reduction; // 0x1318	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1370
+// Has VTable
+class CDOTA_Modifier_AghsFort_Firefly : public CDOTA_Buff
+{
+public:
+	float pool_duration; // 0x1318	
+	int32_t radius; // 0x131c	
+	int32_t m_ifirefly_Active; // 0x1320	
+	int32_t tree_radius; // 0x1324	
+	int32_t damage_pct_per_second; // 0x1328	
+	int32_t movement_speed; // 0x132c	
+	float trail_placement_duration; // 0x1330	
+	float burn_linger_duration; // 0x1334	
+	bool m_bActive; // 0x1338	
+private:
+	[[maybe_unused]] uint8_t __pad1339[0x3]; // 0x1339
+public:
+	ParticleIndex_t m_nFXIndex; // 0x133c	
+	ParticleIndex_t m_nFXIndexB; // 0x1340	
+	GameTime_t m_flStartTime; // 0x1344	
+	Vector m_vLastFirePoolLoc; // 0x1348	
+private:
+	[[maybe_unused]] uint8_t __pad1354[0x4]; // 0x1354
+public:
+	CUtlVector< Vector > m_vFirePoolLocations; // 0x1358	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1328
+// Has VTable
+class CDOTA_Modifier_AghsFort_Firefly_Burn : public CDOTA_Buff
+{
+public:
+	int32_t damage_pct_per_second; // 0x1318	
+	int32_t movement_speed; // 0x131c	
+	float tick_interval; // 0x1320	
+	GameTime_t m_fNextDamageTick; // 0x1324	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1318
+// Has VTable
+class CDOTA_Modifier_AghsFort_Ascension_Silence_Charge : public CDOTA_Buff
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1318
+// Has VTable
+class CDOTA_Modifier_AghsFort_Ascension_Silence : public CDOTA_Buff
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1318
+// Has VTable
+class CDOTA_Modifier_AghsFort_Ascension_Silence_Display : public CDOTA_Buff
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1328
+// Has VTable
+class CDOTA_Modifier_AghsFort_Ascension_MagneticField_Thinker_Evasion : public CDOTA_Buff
+{
+private:
+	[[maybe_unused]] uint8_t __pad1318[0x8]; // 0x1318
+public:
+	int32_t radius; // 0x1320	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1320
+// Has VTable
+class CDOTA_Modifier_AghsFort_Ascension_MagneticField_Evasion : public CDOTA_Buff
+{
+public:
+	int32_t evasion_chance; // 0x1318	
+	int32_t radius; // 0x131c	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1318
+// Has VTable
+class CDOTA_Modifier_AghsFort_Ascension_Invis_Warning : public CDOTA_Buff
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1328
+// Has VTable
+class CDOTA_Modifier_AghsFort_Ascension_Invis : public CDOTA_Modifier_PersistentInvisibility
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1328
+// Has VTable
+class CDOTA_Modifier_Ascension_Meteoric_Land : public CDOTA_Buff
+{
+public:
+	int32_t impact_radius; // 0x1318	
+	float land_time; // 0x131c	
+	float burn_duration; // 0x1320	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1318
+// Has VTable
+class CDOTA_Modifier_Morty_Hop_Controller : public CDOTA_Buff
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1358
+// Has VTable
+class CDOTA_Modifier_Morty_Hop : public CDOTA_Buff
+{
+public:
+	Vector m_vStartPosition; // 0x1318	
+	Vector m_vTargetPosition; // 0x1324	
+	float m_flCurrentTimeHoriz; // 0x1330	
+	float m_flCurrentTimeVert; // 0x1334	
+	float m_flZCoefficientA; // 0x1338	
+	float m_flZCoefficientB; // 0x133c	
+	bool m_bInterrupted; // 0x1340	
+private:
+	[[maybe_unused]] uint8_t __pad1341[0x3]; // 0x1341
+public:
+	float duration; // 0x1344	
+	int32_t height; // 0x1348	
+	int32_t damage; // 0x134c	
+	int32_t damage_radius; // 0x1350	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1338
+// Has VTable
+class CDOTA_Modifier_AghsFort_ExplosiveBarrel : public CDOTA_Buff
+{
+public:
+	ParticleIndex_t m_nPreviewFX; // 0x1318	
+	int32_t radius; // 0x131c	
+	int32_t damage; // 0x1320	
+	int32_t vision_radius; // 0x1324	
+	float vision_duration; // 0x1328	
+	int32_t model_scale; // 0x132c	
+	bool bExploding; // 0x1330	
+private:
+	[[maybe_unused]] uint8_t __pad1331[0x3]; // 0x1331
+public:
+	float stun_duration; // 0x1334	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1358
+// Has VTable
+class CDOTA_Modifier_AghsFort_PlayerTransform : public CDOTA_Buff
+{
+public:
+	itemid_t m_nCourierItemId; // 0x1318	
+	CUtlString m_ModelNameOfDisguise; // 0x1320	
+private:
+	[[maybe_unused]] uint8_t __pad1328[0x8]; // 0x1328
+public:
+	int32_t m_nMoveSpeed; // 0x1330	
+	int32_t m_nDisguisedSpeed; // 0x1334	
+	ParticleIndex_t m_nDisguiseEffectIndex; // 0x1338	
+	CHandle< CBaseEntity > m_hCourier; // 0x133c	
+	bool m_bIsFlyingCourier; // 0x1340	
+private:
+	[[maybe_unused]] uint8_t __pad1341[0x7]; // 0x1341
+public:
+	char* s_pszDonkeyDisguise; // 0x1348	
+	float invul_duration; // 0x1350	
+	bool m_bParticlesSpawned; // 0x1354	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1328
+// Has VTable
+class CDOTA_Modifier_AghsFort_Ravage_Potion : public CDOTA_Buff
+{
+public:
+	int32_t damage; // 0x1318	
+	float m_flStartZ; // 0x131c	
+	float m_flCurTime; // 0x1320	
+	bool m_bDamageApplied; // 0x1324	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1348
+// Has VTable
+class CDOTA_Modifier_AghsFort_DragonPotion : public CDOTA_Buff_Item
+{
+public:
+	int32_t m_iOriginalAttackCapabilities; // 0x1318	
+private:
+	[[maybe_unused]] uint8_t __pad131c[0x4]; // 0x131c
+public:
+	CUtlSymbolLarge m_iszRangedAttackEffect; // 0x1320	
+	int32_t bonus_movement_speed; // 0x1328	
+	int32_t bonus_attack_damage; // 0x132c	
+	int32_t bonus_attack_range; // 0x1330	
+	int32_t attack_projectile_speed; // 0x1334	
+	int32_t magic_resistance; // 0x1338	
+	int32_t model_scale; // 0x133c	
+	int32_t skin_number; // 0x1340	
+	bool flying_movement; // 0x1344	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1320
+// Has VTable
+class CDOTA_Modifier_AghsFort_Arcanist_Potion : public CDOTA_Buff
+{
+public:
+	int32_t m_nCooldownReductionPct; // 0x1318	
+	int32_t m_nManaCostReductionPct; // 0x131c	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1318
+// Has VTable
+class CDOTA_Modifier_AghsFort_EchoSlamPotion_Debuff : public CDOTA_Buff
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1318
+// Has VTable
+class CDOTA_Modifier_AghsFort_Potion_SpendCharge : public CDOTA_Buff_Item
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1338
+// Has VTable
+class CDOTA_Modifier_AghsFort_TorrentEffectPotion_Thinker : public CDOTA_Buff_Item
+{
+public:
+	float m_fProcChance; // 0x1318	
+	int32_t m_nRadius; // 0x131c	
+	int32_t m_nMovespeedBonus; // 0x1320	
+	float m_fStunDuration; // 0x1324	
+	float m_fSlowDuration; // 0x1328	
+	float m_fDelay; // 0x132c	
+	int32_t m_nTorrentDamage; // 0x1330	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1328
+// Has VTable
+class CDOTA_Modifier_AghsFort_TorrentEffectPotion_Torrent : public CDOTA_Buff_Item
+{
+public:
+	int32_t m_nTorrentDamage; // 0x1318	
+	float m_flStartZ; // 0x131c	
+	float m_flCurTime; // 0x1320	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1320
+// Has VTable
+class CDOTA_Modifier_AghsFort_TorrentEffectPotion_Torrent_Slow : public CDOTA_Buff
+{
+public:
+	int32_t m_nMovespeedBonus; // 0x1318	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1358
+// Has VTable
+class CDOTA_Modifier_AghsFort_ShadowWaveEffectPotion : public CDOTA_Buff_Item
+{
+public:
+	int32_t m_iCurJumpCount; // 0x1318	
+	Vector m_vCurTargetLoc; // 0x131c	
+	CUtlVector< CHandle< CBaseEntity > > m_hHitEntities; // 0x1328	
+	float m_fProcChance; // 0x1340	
+	int32_t m_nCastRange; // 0x1344	
+	int32_t m_nBounceRadius; // 0x1348	
+	int32_t m_nDamageRadius; // 0x134c	
+	int32_t m_nDamage; // 0x1350	
+	int32_t m_nMaxTargets; // 0x1354	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1358
+// Has VTable
+class CDOTA_Modifier_Aghsfort_Minor_Stats_Upgrade : public CDOTA_Buff
+{
+public:
+	int32_t bonus_all_stats; // 0x1318	
+	int32_t bonus_primary_stat; // 0x131c	
+	int32_t bonus_movespeed; // 0x1320	
+	int32_t bonus_hp_regen; // 0x1324	
+	int32_t bonus_armor; // 0x1328	
+	int32_t bonus_attack_damage; // 0x132c	
+	int32_t bonus_cast_range; // 0x1330	
+	int32_t bonus_spell_amp; // 0x1334	
+	int32_t bonus_health; // 0x1338	
+	int32_t bonus_mana; // 0x133c	
+	int32_t bonus_attack_speed; // 0x1340	
+	int32_t bonus_heal_amp; // 0x1344	
+	int32_t bonus_mana_regen; // 0x1348	
+	int32_t bonus_evasion; // 0x134c	
+	int32_t bonus_magic_resist; // 0x1350	
+	int32_t bonus_lifesteal; // 0x1354	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1318
+// Has VTable
+class CDOTA_Modifier_Aghsfort_AggroOverride : public CDOTA_Buff
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1320
+// Has VTable
+class CDOTA_Modifier_AghsFort_SwampSickness : public CDOTA_Buff
+{
+public:
+	int32_t slow_percent; // 0x1318	
+	bool m_bInRiver; // 0x131c	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1338
+// Has VTable
+class CDOTA_Modifier_AghsFort_RestorativeFlower : public CDOTA_Buff
+{
+public:
+	int32_t radius; // 0x1318	
+	int32_t heal; // 0x131c	
+	int32_t vision_radius; // 0x1320	
+	float vision_duration; // 0x1324	
+	int32_t model_scale; // 0x1328	
+	bool bExploding; // 0x132c	
+private:
+	[[maybe_unused]] uint8_t __pad132d[0x3]; // 0x132d
+public:
+	float stun_duration; // 0x1330	
+	ParticleIndex_t m_nFXAmbient; // 0x1334	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1340
+// Has VTable
+class CDOTA_Modifier_AghsFort_StonehallGeneral_OverwhelmingOdds_Thinker : public CDOTA_Buff
+{
+public:
+	int32_t radius; // 0x1318	
+	int32_t max_steps; // 0x131c	
+	float damage_interval; // 0x1320	
+	int32_t m_nNumSteps; // 0x1324	
+	int32_t m_nRadiusStep; // 0x1328	
+	ParticleIndex_t m_nFXIndex; // 0x132c	
+	Vector m_vDir; // 0x1330	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1340
+// Has VTable
+class CDOTA_Modifier_Boss_DarkWillow_Bedlam : public CDOTA_Buff
+{
+public:
+	float m_flRotation; // 0x1318	
+	CHandle< CBaseEntity > m_hWisp; // 0x131c	
+	GameTime_t m_flLastAttack; // 0x1320	
+	bool reversed; // 0x1324	
+private:
+	[[maybe_unused]] uint8_t __pad1325[0x3]; // 0x1325
+public:
+	int32_t roaming_radius; // 0x1328	
+	int32_t attack_radius; // 0x132c	
+	float roaming_seconds_per_rotation; // 0x1330	
+	float attack_interval; // 0x1334	
+	bool m_bSetupWarning; // 0x1338	
+private:
+	[[maybe_unused]] uint8_t __pad1339[0x3]; // 0x1339
+public:
+	ParticleIndex_t m_nPreviewFX; // 0x133c	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1318
+// Has VTable
+class CDOTA_Modifier_Aghsfort_Enrage : public CDOTA_Buff
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1320
+// Has VTable
+class CDOTA_Modifier_AghsFort_Spectre_ActiveDispersion : public CDOTA_Buff
+{
+public:
+	int32_t damage_reflection_pct; // 0x1318	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1370
+// Has VTable
+class CDOTA_Modifier_AghsFort_Spectre_ActiveDispersion_Thinker : public CDOTA_Buff
+{
+public:
+	float m_fDamage; // 0x1318	
+	float m_fLastRadius; // 0x131c	
+	float m_fCurRadius; // 0x1320	
+	GameTime_t m_fLastThink; // 0x1324	
+	bool m_bContracting; // 0x1328	
+private:
+	[[maybe_unused]] uint8_t __pad1329[0x7]; // 0x1329
+public:
+	CountdownTimer m_ViewerTimer; // 0x1330	
+	ParticleIndex_t m_nFXIndex; // 0x1348	
+private:
+	[[maybe_unused]] uint8_t __pad134c[0x4]; // 0x134c
+public:
+	CUtlVector< CHandle< CBaseEntity > > m_EntitiesHit; // 0x1350	
+	int32_t speed; // 0x1368	
+	int32_t radius; // 0x136c	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1318
+// Has VTable
+class CDOTA_Modifier_AghsFort_RockGolem_Avalanche_Stun : public CDOTA_Modifier_Stunned
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1350
+// Has VTable
+class CDOTA_Modifier_AghsFort_RockGolem_Avalanche : public CDOTA_Buff
+{
+public:
+	CUtlVector< CDOTA_BaseNPC* > m_pHeroesHit; // 0x1318	
+	int32_t radius; // 0x1330	
+	float total_duration; // 0x1334	
+	float stun_duration; // 0x1338	
+	int32_t tick_count; // 0x133c	
+	int32_t m_damage; // 0x1340	
+	int32_t m_nTicks; // 0x1344	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1320
+// Has VTable
+class CDOTA_Modifier_AghsFort_Creature_Phoenix_FireSpiritCount : public CDOTA_Buff
+{
+public:
+	int32_t spirit_count; // 0x1318	
+	ParticleIndex_t m_nFXIndex; // 0x131c	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1340
+// Has VTable
+class CDOTA_Modifier_AghsFort_Creature_Phoenix_Sun : public CDOTA_Buff
+{
+public:
+	int32_t aura_radius; // 0x1318	
+	float stun_duration; // 0x131c	
+	int32_t max_hero_attacks; // 0x1320	
+	int32_t max_hero_attacks_scepter; // 0x1324	
+	int32_t max_hero_attacks_required; // 0x1328	
+	float caster_life_pct; // 0x132c	
+	CHandle< CBaseEntity > m_hSecondaryTarget; // 0x1330	
+	int32_t m_iAttackCount; // 0x1334	
+	int32_t creep_attacks_count; // 0x1338	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1328
+// Has VTable
+class CDOTA_Modifier_PudgeMiniboss_HatefulStrike : public CDOTA_Buff
+{
+public:
+	ParticleIndex_t m_nFXIndex; // 0x1318	
+	int32_t maxhp_percent_damage; // 0x131c	
+	int32_t every_n_attacks; // 0x1320	
+	bool crit_active; // 0x1324	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1320
+// Has VTable
+class CDOTA_Modifier_PudgeMiniboss_ArmorCorruption : public CDOTA_Buff
+{
+public:
+	float armor_reduction_per_stack; // 0x1318	
+	float stack_duration; // 0x131c	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1320
+// Has VTable
+class CDOTA_Modifier_PudgeMiniboss_ArmorCorruptionDebuff : public CDOTA_Buff
+{
+public:
+	float armor_reduction_per_stack; // 0x1318	
+	float stack_duration; // 0x131c	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1318
+// Has VTable
+class CDOTA_Modifier_PudgeMiniboss_ArmorCorruptionStack : public CDOTA_Buff
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1330
+// Has VTable
+class CDOTA_Modifier_Wave_Blast_Knockback : public CDOTA_Buff
+{
+public:
+	float disarm_duration; // 0x1318	
+	Vector m_vPushDir; // 0x131c	
+	GameTime_t m_flStartTime; // 0x1328	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1318
+// Has VTable
+class CDOTA_Modifier_Wave_Blast_Disarm : public CDOTA_Modifier_Disarmed
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1350
+// Has VTable
+class CDOTA_Modifier_AghsFort_Waveblaster_Leap : public CDOTA_Buff
+{
+public:
+	float m_flTotalTime; // 0x1318	
+	float m_flInitialVelocity; // 0x131c	
+	Vector m_vStartPosition; // 0x1320	
+	Vector m_vTargetHorizontalDirection; // 0x132c	
+	float m_flCurrentTimeHoriz; // 0x1338	
+	float m_flCurrentTimeVert; // 0x133c	
+	bool m_bInterrupted; // 0x1340	
+private:
+	[[maybe_unused]] uint8_t __pad1341[0x3]; // 0x1341
+public:
+	float leap_speed; // 0x1344	
+	float leap_acceleration; // 0x1348	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x5b8
+// Has VTable
+class CDOTA_Ability_AghsFort_Morphling_Waveform : public CDOTABaseAbility
+{
+private:
+	[[maybe_unused]] uint8_t __pad0588[0x10]; // 0x588
+public:
+	int32_t m_nProjectileID; // 0x598	
+	Vector m_vProjectileLocation; // 0x59c	
+	CHandle< CBaseEntity > m_hHitHero; // 0x5a8	
+	bool m_bGrantedGem; // 0x5ac	
+private:
+	[[maybe_unused]] uint8_t __pad05ad[0x3]; // 0x5ad
+public:
+	ParticleIndex_t m_nPreviewFX; // 0x5b0	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1318
+// Has VTable
+class CDOTA_Modifier_AghsFort_Morphling_Waveform : public CDOTA_Buff
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1328
+// Has VTable
+class CDOTA_Modifier_AghsFort_Creature_Impale : public CDOTA_Buff
+{
+public:
+	float m_flStartZ; // 0x1318	
+	float m_flCurTime; // 0x131c	
+	float m_flDuration; // 0x1320	
+	bool m_bDamageApplied; // 0x1324	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1338
+// Has VTable
+class CDOTA_Modifier_AghsFort_Creature_SpikedCarapace : public CDOTA_Buff
+{
+public:
+	float stun_duration; // 0x1318	
+private:
+	[[maybe_unused]] uint8_t __pad131c[0x4]; // 0x131c
+public:
+	CUtlVector< CHandle< CBaseEntity > > m_vecAlreadyAppliedDebuff; // 0x1320	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x5e8
+// Has VTable
+class CDOTA_Ability_Aghsfort_Walrus_Pudge_Harpoon : public CDOTABaseAbility
+{
+private:
+	[[maybe_unused]] uint8_t __pad0588[0x10]; // 0x588
+public:
+	Vector m_vProjectileLocation; // 0x598	
+	float hook_speed; // 0x5a4	
+	int32_t hook_width; // 0x5a8	
+	int32_t hook_distance; // 0x5ac	
+	bool m_bRetracting; // 0x5b0	
+	bool m_bDiedInHook; // 0x5b1	
+private:
+	[[maybe_unused]] uint8_t __pad05b2[0x2]; // 0x5b2
+public:
+	CHandle< CBaseEntity > m_hVictim; // 0x5b4	
+	Vector m_vTargetPosition; // 0x5b8	
+	Vector m_vCasterPosition; // 0x5c4	
+	bool m_bChainDetached; // 0x5d0	
+private:
+	[[maybe_unused]] uint8_t __pad05d1[0x3]; // 0x5d1
+public:
+	ParticleIndex_t m_iChainParticle; // 0x5d4	
+	int32_t m_iHookParticle; // 0x5d8	
+	int32_t m_nManaCost; // 0x5dc	
+	CHandle< CBaseEntity > m_hSourceCaster; // 0x5e0	
+	ParticleIndex_t m_nPreviewFX; // 0x5e4	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1318
+// Has VTable
+class CDOTA_Modifier_Aghsfort_Walrus_Pudge_Harpoon_PathingFix : public CDOTA_Buff
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1318
+// Has VTable
+class CDOTA_Modifier_Aghsfort_Walrus_Pudge_Harpoon : public CDOTA_Buff
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1330
+// Has VTable
+class CDOTA_Modifier_Creature_Flamestrike : public CDOTA_Buff
+{
+public:
+	int32_t impact_radius; // 0x1318	
+	float ground_burn_duration; // 0x131c	
+	float damage; // 0x1320	
+	int32_t vision_distance; // 0x1324	
+	float vision_duration; // 0x1328	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1328
+// Has VTable
+class CDOTA_Modifier_Creature_Flamestrike_Ground : public CDOTA_Buff
+{
+public:
+	float burn_interval; // 0x1318	
+	int32_t burn_radius; // 0x131c	
+	int32_t burn_dps; // 0x1320	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1318
+// Has VTable
+class CDOTA_Modifier_AghsFort_DragonKnight_BreatheFire_Debuff : public CDOTA_Buff
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1320
+// Has VTable
+class CDOTA_Modifier_PineCone_ShieldBash_Slow : public CDOTA_Buff
+{
+public:
+	int32_t knockback_slow; // 0x1318	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1320
+// Has VTable
+class CDOTA_Modifier_PineCone_ShieldBash_Crit : public CDOTA_Buff
+{
+public:
+	int32_t crit_mult; // 0x1318	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1320
+// Has VTable
+class CDOTA_Modifier_PineCone_AcornShot_DelayThinker : public CDOTA_Buff
+{
+public:
+	CHandle< CBaseEntity > m_hTarget; // 0x1318	
+	int32_t m_nSourceProjectileHandle; // 0x131c	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1320
+// Has VTable
+class CDOTA_Modifier_PineCone_AcornShot_TreeThinker : public CDOTA_Buff
+{
+public:
+	CHandle< CDOTA_TempTree > m_hTree; // 0x1318	
+	int32_t fow_viewer; // 0x131c	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1320
+// Has VTable
+class CDOTA_Modifier_PineCone_AcornShot_BonusDamage : public CDOTA_Buff
+{
+public:
+	int32_t acorn_shot_damage; // 0x1318	
+	int32_t base_damage_pct; // 0x131c	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1320
+// Has VTable
+class CDOTA_Modifier_PineCone_AcornShot_Slow : public CDOTA_Buff
+{
+public:
+	int32_t slow; // 0x1318	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1320
+// Has VTable
+class CDOTA_Modifier_AghsFort_Lifestealer_Enraged_Pulse : public CDOTA_Buff
+{
+public:
+	int32_t slow; // 0x1318	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1320
+// Has VTable
+class CDOTA_Modifier_UrnUpheaval : public CDOTA_Buff
+{
+public:
+	int32_t m_iSlow; // 0x1318	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1320
+// Has VTable
+class CDOTA_Modifier_UpheavalUrn_Reincarnation : public CDOTA_Buff
+{
+public:
+	float reincarnate_time; // 0x1318	
+	GameTime_t m_fLastReincarnationTime; // 0x131c	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1318
+// Has VTable
+class CDOTA_Modifier_AghsFort_SkeletonKing_VampiricAura : public CDOTA_Buff
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1330
+// Has VTable
+class CDOTA_Modifier_AghsFort_Shadow_Demon_Shadow_Poison : public CDOTA_Buff
+{
+public:
+	float stack_damage; // 0x1318	
+	float bonus_stack_damage; // 0x131c	
+	int32_t max_multiply_stacks; // 0x1320	
+	int32_t release_at_max_stacks; // 0x1324	
+	ParticleIndex_t m_nFXStackIndex; // 0x1328	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1330
+// Has VTable
+class CDOTA_Modifier_AghsFort_ShadowShaman_Shackles : public CDOTA_Buff
+{
+public:
+	float tick_interval; // 0x1318	
+	float total_damage; // 0x131c	
+	float channel_time; // 0x1320	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x5b8
+// Has VTable
+// 
+// MNetworkVarNames "CHandle< CBaseEntity> m_hTarget"
+class CDOTA_Ability_Aghsfort_Elemental_Wisp_Tether : public CDOTABaseAbility
+{
+private:
+	[[maybe_unused]] uint8_t __pad0588[0x10]; // 0x588
+public:
+	// MNetworkEnable
+	CHandle< CBaseEntity > m_hTarget; // 0x598	
+	Vector m_vProjectileLocation; // 0x59c	
+	bool m_bProjectileActive; // 0x5a8	
+private:
+	[[maybe_unused]] uint8_t __pad05a9[0x3]; // 0x5a9
+public:
+	int32_t latch_distance; // 0x5ac	
+	int32_t m_iProjectileIndex; // 0x5b0	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1368
+// Has VTable
+class CDOTA_Modifier_Aghsfort_Elemental_Wisp_Tether : public CDOTA_Buff
+{
+public:
+	bool m_bInManaGained; // 0x1318	
+private:
+	[[maybe_unused]] uint8_t __pad1319[0x3]; // 0x1319
+public:
+	CHandle< CBaseEntity > m_hTarget; // 0x131c	
+	CUtlVector< CHandle< CBaseEntity > > hStunnedEntities; // 0x1320	
+	float slow_duration; // 0x1338	
+	int32_t movespeed; // 0x133c	
+	int32_t self_bonus; // 0x1340	
+	bool m_bIsInRange; // 0x1344	
+private:
+	[[maybe_unused]] uint8_t __pad1345[0x3]; // 0x1345
+public:
+	int32_t radius; // 0x1348	
+	int32_t latch_distance; // 0x134c	
+	float m_flHealthHealed; // 0x1350	
+	float m_flManaHealed; // 0x1354	
+	float tether_heal_amp; // 0x1358	
+	GameTime_t m_flHealMessageTime; // 0x135c	
+	GameTime_t m_flManaMessageTime; // 0x1360	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1328
+// Has VTable
+class CDOTA_Modifier_Aghsfort_Elemental_Wisp_Tether_Haste : public CDOTA_Buff
+{
+public:
+	int32_t movement_speed; // 0x1318	
+	int32_t attack_speed; // 0x131c	
+	int32_t health_regen; // 0x1320	
+	int32_t status_resist; // 0x1324	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1320
+// Has VTable
+class CDOTA_Modifier_Aghsfort_Elemental_Wisp_Tether_Slow : public CDOTA_Buff
+{
+public:
+	int32_t slow; // 0x1318	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1330
+// Has VTable
+class CDOTA_Modifier_Aghsfort_Wildwing_Tornado_Blast_Debuff : public CDOTA_Buff
+{
+public:
+	GameTime_t m_flStartTime; // 0x1318	
+	Vector m_vStartPos; // 0x131c	
+	float m_flCurTime; // 0x1328	
+	float m_flHeightT; // 0x132c	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1360
+// Has VTable
+class CDOTA_Modifier_AghsFort_TreantMiniboss_NaturesGuise : public CDOTA_Buff
+{
+public:
+	CountdownTimer m_RevealTimer; // 0x1318	
+	CountdownTimer m_InvisAttackTimer; // 0x1330	
+	CountdownTimer m_CooldownTimer; // 0x1348	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1320
+// Has VTable
+class CDOTA_Modifier_AghsFort_TreantMiniboss_NaturesGuise_Tree_Walking : public CDOTA_Buff
+{
+public:
+	int32_t movement_bonus; // 0x1318	
+	int32_t regen_amp; // 0x131c	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1328
+// Has VTable
+class CDOTA_Modifier_AghsFort_TreantMiniboss_NaturesGuise_Invis : public CDOTA_Modifier_Invisible
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1318
+// Has VTable
+class CDOTA_Modifier_AghsFort_TreantMiniboss_NaturesGuise_NearTreeDisplay : public CDOTA_Buff
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1320
+// Has VTable
+class CDOTA_Modifier_AghsFort_TreantMiniboss_NaturesGuise_Root : public CDOTA_Buff
+{
+public:
+	float m_iEntangleDamage; // 0x1318	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1348
+// Has VTable
+class CDOTA_Modifier_AghsFort_PoisonNova_Creature_Thinker : public CDOTA_Buff
+{
+public:
+	float m_fCurRadius; // 0x1318	
+	GameTime_t m_fLastThink; // 0x131c	
+	CUtlVector< CHandle< CBaseEntity > > m_entitiesHit; // 0x1320	
+	int32_t speed; // 0x1338	
+	int32_t radius; // 0x133c	
+	int32_t start_radius; // 0x1340	
+	float duration; // 0x1344	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1320
+// Has VTable
+class CDOTA_Modifier_AghsFort_Creature_Venomancer_PoisonNova : public CDOTA_Buff
+{
+public:
+	int32_t damage; // 0x1318	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1320
+// Has VTable
+class CDOTA_Modifier_AghsFort_Creature_Venomancer_PoisonSting_Applier : public CDOTA_Buff
+{
+public:
+	float duration; // 0x1318	
+	int32_t damage; // 0x131c	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1328
+// Has VTable
+class CDOTA_Modifier_AghsFort_Venomancer_PoisonSting : public CDOTA_Buff
+{
+public:
+	int32_t m_iDamage; // 0x1318	
+	int32_t movement_speed; // 0x131c	
+	int32_t m_nTicksRemaining; // 0x1320	
+	float m_flAttackDamage; // 0x1324	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1338
+// Has VTable
+class CDOTA_Modifier_Aghsfort_Aziyog_Underlord_Firestorm_Thinker : public CDOTA_Buff
+{
+public:
+	int32_t wave_damage; // 0x1318	
+	int32_t wave_count; // 0x131c	
+	int32_t radius; // 0x1320	
+	int32_t summon_count; // 0x1324	
+	float wave_interval; // 0x1328	
+	float burn_duration; // 0x132c	
+	float first_wave_delay; // 0x1330	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1320
+// Has VTable
+class CDOTA_Modifier_Aghsfort_Aziyog_Underlord_Firestorm_Burn : public CDOTA_Buff
+{
+public:
+	float burn_damage; // 0x1318	
+	float burn_interval; // 0x131c	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1320
+// Has VTable
+class CDOTA_Modifier_Aghsfort_Aziyog_Underlord_Portal_Warp_Channel_Soundstop : public CDOTA_Buff
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1358
+// Has VTable
+class CDOTA_Modifier_Aghsfort_Aziyog_Underlord_Portal_Warp_Channel : public CDOTA_Buff
+{
+public:
+	ParticleIndex_t m_nfxTargetTp; // 0x1318	
+	ParticleIndex_t m_nfxTargetTp2; // 0x131c	
+	ParticleIndex_t m_nfxAmbientFx; // 0x1320	
+	ParticleIndex_t m_nfxPortal1; // 0x1324	
+	ParticleIndex_t m_nfxPortal2; // 0x1328	
+private:
+	[[maybe_unused]] uint8_t __pad132c[0x8]; // 0x132c
+public:
+	CHandle< CBaseEntity > m_hPortal; // 0x1334	
+	Vector m_vStartPosition; // 0x1338	
+	float m_flTotalTime; // 0x1344	
+	float m_flElapsedTimePortion; // 0x1348	
+	float animation_rate; // 0x134c	
+	int32_t stop_distance; // 0x1350	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1320
+// Has VTable
+class CDOTA_Modifier_Aghsfort_Aziyog_Underlord_Portal_FX : public CDOTA_Buff
+{
+public:
+	ParticleIndex_t m_nPortalAmbientFX; // 0x1318	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x5f0
+// Has VTable
+// 
+// MNetworkVarNames "int m_nConsecutiveHits"
+class CDOTA_Ability_Aghsfort_Bonus_Pudge_MeatHook : public CDOTABaseAbility
+{
+private:
+	[[maybe_unused]] uint8_t __pad0588[0x10]; // 0x588
+public:
+	Vector m_vProjectileLocation; // 0x598	
+	float hook_speed; // 0x5a4	
+	int32_t hook_width; // 0x5a8	
+	int32_t hook_distance; // 0x5ac	
+	bool m_bRetracting; // 0x5b0	
+	bool m_bDiedInHook; // 0x5b1	
+private:
+	[[maybe_unused]] uint8_t __pad05b2[0x2]; // 0x5b2
+public:
+	CHandle< CBaseEntity > m_hVictim; // 0x5b4	
+	Vector m_vTargetPosition; // 0x5b8	
+	Vector m_vCasterPosition; // 0x5c4	
+	bool m_bChainDetached; // 0x5d0	
+private:
+	[[maybe_unused]] uint8_t __pad05d1[0x3]; // 0x5d1
+public:
+	ParticleIndex_t m_iChainParticle; // 0x5d4	
+	int32_t m_iHookParticle; // 0x5d8	
+	int32_t m_nManaCost; // 0x5dc	
+	CHandle< CBaseEntity > m_hSourceCaster; // 0x5e0	
+	int32_t m_nNextConsecutiveHitCount; // 0x5e4	
+	// MNetworkEnable
+	int32_t m_nConsecutiveHits; // 0x5e8	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1318
+// Has VTable
+class CDOTA_Modifier_Aghsfort_Bonus_Pudge_Meat_Hook : public CDOTA_Buff
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1348
+// Has VTable
+class CDOTA_Modifier_AghsFort_AmoebaBoss_Summoned_Knockback : public CDOTA_Modifier_Knockback
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1320
+// Has VTable
+class CDOTA_Aghsfort_Modifier_Magnus_Push_Skewer_Movement : public CDOTA_Buff
+{
+public:
+	int32_t m_nProjectileID; // 0x1318	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x13a8
+// Has VTable
+class CDOTA_Modifier_Aghsfort_Hoodwink_ArcingBoomerang : public CDOTA_Buff
+{
+public:
+	Vector m_vLeftControl; // 0x1318	
+	Vector m_vRightControl; // 0x1324	
+	Vector m_vTargetLoc; // 0x1330	
+	Vector m_vOriginalTargetLoc; // 0x133c	
+	Vector m_vSourceLoc; // 0x1348	
+	float m_flDuration; // 0x1354	
+	GameTime_t m_flDieTime; // 0x1358	
+	bool m_bReturning; // 0x135c	
+private:
+	[[maybe_unused]] uint8_t __pad135d[0x3]; // 0x135d
+public:
+	int32_t m_nFramesToWait; // 0x1360	
+	CHandle< CBaseEntity > m_hBoomerang; // 0x1364	
+	ParticleIndex_t m_nBoomerangFXIndex; // 0x1368	
+	ParticleIndex_t m_nOldBoomerangFXindex; // 0x136c	
+	CUtlVector< CHandle< CBaseEntity > > m_vecUniqueHitList; // 0x1370	
+	int32_t radius; // 0x1388	
+	int32_t spread; // 0x138c	
+	int32_t damage; // 0x1390	
+	float min_throw_duration; // 0x1394	
+	float max_throw_duration; // 0x1398	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1328
+// Has VTable
+class CDOTA_Modifier_Aghsfort_Pugna_Grandmaster_NetherWard : public CDOTA_Buff
+{
+public:
+	int32_t radius; // 0x1318	
+	float mana_multiplier; // 0x131c	
+	float mana_drained_per_attack; // 0x1320	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1390
+// Has VTable
+class CDOTA_Modifier_AghsFort_AssaultCaptain_SunRay : public CDOTA_Buff
+{
+public:
+	int32_t hp_cost_perc_per_second; // 0x1318	
+	int32_t beam_range; // 0x131c	
+	int32_t base_damage; // 0x1320	
+	int32_t base_heal; // 0x1324	
+	float tick_interval; // 0x1328	
+	float forward_move_speed; // 0x132c	
+	float turn_rate_initial; // 0x1330	
+	float turn_rate; // 0x1334	
+	int32_t radius; // 0x1338	
+	int32_t self_turn_rate_percent; // 0x133c	
+	float m_flCurrentTime; // 0x1340	
+	GameTime_t m_flLastDamageTime; // 0x1344	
+	float m_flAccumulatedSelfDamage; // 0x1348	
+	bool m_bMovingForward; // 0x134c	
+	bool m_bTurningFast; // 0x134d	
+private:
+	[[maybe_unused]] uint8_t __pad134e[0x2]; // 0x134e
+public:
+	float m_flFacingTarget; // 0x1350	
+	float hp_perc_damage; // 0x1354	
+	float hp_perc_heal; // 0x1358	
+	ParticleIndex_t m_nBeamFXIndex; // 0x135c	
+	CHandle< CBaseEntity > m_hVisionThinkers[8]; // 0x1360	
+	CHandle< CBaseEntity > m_hBeamEnd; // 0x1380	
+	bool m_bCreatedVisionThinkers; // 0x1384	
+private:
+	[[maybe_unused]] uint8_t __pad1385[0x3]; // 0x1385
+public:
+	CHandle< CBaseEntity > m_hBeamEndSound; // 0x1388	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1330
+// Has VTable
+class CDOTA_Modifier_AghsFort_BossWinterWyvern_Cold_Embrace_Thinker : public CDOTA_Buff
+{
+public:
+	int32_t freeze_radius; // 0x1318	
+	int32_t freeze_damage; // 0x131c	
+	float freeze_debuff_duration; // 0x1320	
+	float freeze_delay; // 0x1324	
+	ParticleIndex_t m_nFXIndex; // 0x1328	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1320
+// Has VTable
+class CDOTA_Modifier_AghsFort_BossWinterWyvern_Cold_Embrace_Debuff : public CDOTA_Buff
+{
+public:
+	int32_t linger_movement_slow; // 0x1318	
+	int32_t linger_damage; // 0x131c	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1318
+// Has VTable
+class CDOTA_Modifier_AghsFort_Blessings_Debuff_Duration_Increase : public CDOTA_Buff
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1338
+// Has VTable
+class CDOTA_Modifier_AghsFort_TrapRoom_Hookshot : public CDOTA_Buff
+{
+public:
+	CHandle< CBaseEntity > m_hTarget; // 0x1318	
+	Vector m_vStartPosition; // 0x131c	
+private:
+	[[maybe_unused]] uint8_t __pad1328[0x8]; // 0x1328
+public:
+	int32_t speed; // 0x1330	
+	float duration; // 0x1334	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x5e8
+// Has VTable
+class CDOTA_Ability_AghsFort_TrapRoom_MeatHook : public CDOTABaseAbility
+{
+private:
+	[[maybe_unused]] uint8_t __pad0588[0x10]; // 0x588
+public:
+	Vector m_vProjectileLocation; // 0x598	
+	float hook_speed; // 0x5a4	
+	int32_t hook_width; // 0x5a8	
+	int32_t hook_distance; // 0x5ac	
+	bool m_bRetracting; // 0x5b0	
+	bool m_bDiedInHook; // 0x5b1	
+private:
+	[[maybe_unused]] uint8_t __pad05b2[0x2]; // 0x5b2
+public:
+	CHandle< CBaseEntity > m_hVictim; // 0x5b4	
+	Vector m_vTargetPosition; // 0x5b8	
+	Vector m_vCasterPosition; // 0x5c4	
+	bool m_bChainDetached; // 0x5d0	
+private:
+	[[maybe_unused]] uint8_t __pad05d1[0x3]; // 0x5d1
+public:
+	ParticleIndex_t m_iChainParticle; // 0x5d4	
+	int32_t m_iHookParticle; // 0x5d8	
+	int32_t m_nManaCost; // 0x5dc	
+	CHandle< CBaseEntity > m_hSourceCaster; // 0x5e0	
+	int32_t m_nNextConsecutiveHitCount; // 0x5e4	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1318
+// Has VTable
+class CDOTA_Modifier_AghsFort_TrapRoom_MeatHook_PathingFix : public CDOTA_Buff
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1318
+// Has VTable
+class CDOTA_Modifier_AghsFort_TrapRoom_MeatHook : public CDOTA_Buff
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1318
+// Has VTable
+class CDOTA_Modifier_Effigy_AghsFort : public CDOTA_Buff
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1318
+// Has VTable
+class CDOTA_Modifier_AghsFort_Watch_Tower_Capturing : public CDOTA_Buff
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1360
+// Has VTable
+class CDOTA_Modifier_AghsFort_Watch_Tower : public CDOTA_Buff
+{
+public:
+	TowerState_t m_nState; // 0x1318	
+	float m_flYaw; // 0x131c	
+	int32_t m_nCaptureDuration; // 0x1320	
+	GameTime_t m_flEffectiveCaptureStartTime; // 0x1324	
+	int32_t m_nCapturingPlayerCount; // 0x1328	
+	float m_flCaptureProgress; // 0x132c	
+	int32_t m_iCapturingTeam; // 0x1330	
+	ParticleIndex_t m_nFxOutpostAmbient; // 0x1334	
+	GameTime_t m_flDestroyTime; // 0x1338	
+	GameTime_t m_flAutoChannelCompleteTime; // 0x133c	
+	bool m_bAscensionLevelPicker; // 0x1340	
+private:
+	[[maybe_unused]] uint8_t __pad1341[0x3]; // 0x1341
+public:
+	int32_t m_nEliteChallengeLevel; // 0x1344	
+	CUtlString m_strNextRoomName; // 0x1348	
+	CUtlString m_strNextEncounterName; // 0x1350	
+	bool m_bStartedBeamFacing; // 0x1358	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
 // Size: 0x1330
 // Has VTable
 class CDOTA_Modifier_Plus_HighFiveRequested : public CDOTA_Buff
@@ -98859,6 +101327,132 @@ public:
 // Size: 0x1780
 // Has VTable
 class CDOTA_BaseNPC_Seasonal_TI9_Monkey : public CDOTA_BaseNPC_Additive
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1780
+// Has VTable
+class CDOTA_Unit_AghsFort_SpectralTusk_Tombstone : public CDOTA_BaseNPC_Additive
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1900
+// Has VTable
+class CDOTA_Unit_AghsFort_Creature_DragonKnight : public CDOTA_BaseNPC_Creature
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1788
+// Has VTable
+class CDOTA_Unit_Aghsfort_Aziyog_Underlord_Portal : public CDOTA_BaseNPC_Additive
+{
+public:
+	CHandle< CBaseEntity > m_hOtherPortal; // 0x1780	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1908
+// Has VTable
+class CDOTA_Unit_AghsFort_Creature_DungeonBat : public CDOTA_BaseNPC_Creature
+{
+public:
+	ParticleIndex_t m_nFXAmbient; // 0x1900	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1900
+// Has VTable
+class CDOTA_Unit_AghsFort_Creature_Batrider : public CDOTA_BaseNPC_Creature
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1890
+// Has VTable
+class CDOTA_BaseNPC_Effigy_AghsFort : public CDOTA_BaseNPC_Building
+{
+public:
+	uint32_t m_unStatusEffectIndex; // 0x1888	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x18f8
+// Has VTable
+// 
+// MNetworkVarNames "int m_nEncounterType"
+// MNetworkVarNames "bool m_bIsEliteEncounter"
+// MNetworkVarNames "bool m_bIsAscensionLevelPicker"
+// MNetworkVarNames "string_t m_strEncounterName"
+// MNetworkVarNames "string_t m_strAscensionAbilities"
+// MNetworkVarNames "EHANDLE m_hEffigy"
+// MNetworkVarNames "CHandle<CBaseAnimating> m_hRoomGate"
+// MNetworkVarNames "bool m_bIsBeingChanneled"
+// MNetworkVarNames "float m_flGoalCaptureProgress"
+class CDOTA_BaseNPC_AghsFort_Watch_Tower : public CDOTA_BaseNPC_Building
+{
+private:
+	[[maybe_unused]] uint8_t __pad1888[0x10]; // 0x1888
+public:
+	int32_t m_nOptionNumber; // 0x1898	
+	float m_flMovePlayersRadius; // 0x189c	
+	CDOTA_BaseNPC_AghsFort_Watch_Tower::ExitDirection_t m_nExitDirection; // 0x18a0	
+	Vector m_vExitLocation; // 0x18a4	
+	int32_t m_nPathSelectedID; // 0x18b0	
+	// MNetworkEnable
+	int32_t m_nEncounterType; // 0x18b4	
+	// MNetworkEnable
+	bool m_bIsEliteEncounter; // 0x18b8	
+	// MNetworkEnable
+	bool m_bIsAscensionLevelPicker; // 0x18b9	
+private:
+	[[maybe_unused]] uint8_t __pad18ba[0x6]; // 0x18ba
+public:
+	// MNetworkEnable
+	CUtlSymbolLarge m_strEncounterName; // 0x18c0	
+	// MNetworkEnable
+	CUtlSymbolLarge m_strAscensionAbilities; // 0x18c8	
+	// MNetworkEnable
+	CHandle< CBaseEntity > m_hEffigy; // 0x18d0	
+	int32_t m_nDepth; // 0x18d4	
+	CHandle< CDOTA_BaseNPC_Effigy_AghsFort > m_hPedestal; // 0x18d8	
+	CHandle< CBaseEntity > m_hParticleSystem; // 0x18dc	
+private:
+	[[maybe_unused]] uint8_t __pad18e0[0x8]; // 0x18e0
+public:
+	// MNetworkEnable
+	CHandle< CBaseAnimatingActivity > m_hRoomGate; // 0x18e8	
+	// MNetworkEnable
+	bool m_bIsBeingChanneled; // 0x18ec	
+private:
+	[[maybe_unused]] uint8_t __pad18ed[0x3]; // 0x18ed
+public:
+	// MNetworkEnable
+	float m_flGoalCaptureProgress; // 0x18f0	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1780
+// Has VTable
+class CDOTA_Unit_CustomGameAnnouncerAghanim : public CDOTA_BaseNPC
 {
 public:
 	// No schema binary for binding

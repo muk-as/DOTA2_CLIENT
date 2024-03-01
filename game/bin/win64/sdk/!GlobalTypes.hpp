@@ -5,7 +5,7 @@
 // /////////////////////////////////////////////////////////////
 // Binary: !GlobalTypes
 // Classes count: 1470
-// Enums count: 583
+// Enums count: 584
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
@@ -3601,6 +3601,18 @@ enum class ShakeCommand_t : uint32_t
 	SHAKE_FREQUENCY = 0x3,
 	SHAKE_START_RUMBLEONLY = 0x4,
 	SHAKE_START_NORUMBLE = 0x5,
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 4
+// Size: 0x5
+enum class TowerState_t : uint32_t
+{
+	TOWER_STATE_ACTIVE = 0x0,
+	TOWER_STATE_SELECTED = 0x1,
+	TOWER_STATE_INACTIVE = 0x2,
+	TOWER_STATE_NO_BEAM_MOVEMENT = 0x3,
+	TOWER_STATE_ACTIVE_CHANNELED = 0x4,
 };
 
 // Registered binary: server.dll (project 'server')
