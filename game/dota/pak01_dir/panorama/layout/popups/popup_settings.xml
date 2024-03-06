@@ -1606,6 +1606,72 @@
 				</Panel>
 			</Panel>
 		</snippet>
+		<snippet name="LabsTabContent">
+			<Panel class="SettingsSecondaryPanel">
+				<Panel class="SettingsColumnContainer" id="AccountSettings">
+					<Panel class="SettingsColumnFillSpace">
+						<Panel class="VerticalSpacer Small" />
+						<Panel class="SettingsSection">
+							<Panel class="SettingsOptionWithDescriptionContainer">
+								<Panel class="SettingsOptionsContainer">
+									<Panel class="MultiStringTitleContainer">
+										<Label text="#dota_settings_hotkeys" class="SectionHeader Blue" />
+										<Label text=" / " class="SectionHeader" />
+										<Label text="#dota_settings_unitactions" class="SectionHeader" />
+									</Panel>
+									<DOTASettingsKeyBinder text="#DOTA_Hotkeys_Tooltip_FilterEnemy" bind="FilterEnemy" />
+									<DOTASettingsKeyBinder text="#DOTA_Hotkeys_Tooltip_FilterAlly" bind="FilterAlly" />
+									<DOTASettingsKeyBinder text="#DOTA_Hotkeys_Tooltip_FilterHero" bind="FilterHero" />
+									<DOTASettingsKeyBinder text="#DOTA_Hotkeys_Tooltip_FilterNonHero" bind="FilterNonHero" />
+								</Panel>
+								<Label class="SettingsDescription" text="#DOTA_Hotkeys_Tooltip_ModifierKeysDescription" />
+							</Panel>
+						</Panel>
+						<Panel class="VerticalSpacer" />
+						<Panel class="SettingsSection">
+							<Panel class="SectionHeaderLine" />
+							<Panel class="SettingsOptionWithDescriptionContainer">
+								<Panel class="SettingsOptionsContainer">
+									<Panel class="MultiStringTitleContainer">
+										<Label text="#dota_settings_hotkeys" class="SectionHeader Blue" />
+										<Label text=" / " class="SectionHeader" />
+										<Label text="#dota_settings_interface" class="SectionHeader" />
+									</Panel>
+									<DOTASettingsKeyBinder text="#dota_settings_show_overlay_map" bind="OverlayMapToggle" onmouseover="UIShowTextTooltipStyled( #DOTA_Hotkeys_Tooltip_OverlayMapSettings, BindingsTooltip)" onmouseout="UIHideTextTooltip()" />
+								</Panel>
+								<Label class="SettingsDescription" text="#DOTA_Hotkeys_Tooltip_OverlayMapDescription" />
+							</Panel>
+						</Panel>
+						<Panel class="VerticalSpacer" />
+						<Panel class="SettingsSection">
+							<Panel class="SectionHeaderLine" />
+							<Panel class="SettingsOptionWithDescriptionContainer">
+								<Panel class="SettingsOptionsContainer">
+									<Panel class="MultiStringTitleContainer">
+										<Label text="#dota_settings_options" class="SectionHeader Blue" />
+										<Label text=" / " class="SectionHeader" />
+										<Label text="#dota_settings_interface" class="SectionHeader" />
+									</Panel>
+									<DOTASettingsCheckbox convar="dota_hud_healthbar_experimental_local_color_white" text="#dota_settings_differentiate_your_healthbar" />
+								</Panel>
+								<Label class="SettingsDescription" text="#DOTA_Hotkeys_Tooltip_HighVisibilityHeroNameplateDescription" />
+							</Panel>
+						</Panel>
+					</Panel>
+					<Panel class="DotaLabsMessageContainer">
+						<Panel class="DotaLabsLogoContainer">
+							<Image src="s2r://panorama/images/logos/dota_labs_logo_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+							<Panel class="DotaLabsTextContainer">
+								<Label class="TitleMedium Dota" text="#Dota_PostGame_DOTA" />
+								<Label class="TitleMedium Labs" text="#dota_settings_labs" />
+							</Panel>
+						</Panel>
+						<Panel class="LabsDash" />
+						<Label class="BodyMedium" text="#dota_settings_labs_description" />
+					</Panel>
+				</Panel>
+			</Panel>
+		</snippet>
 		<snippet name="ChatWheelCategory">
 			<Panel class="ChatWheelCategory">
 				<Panel id="ChatWheelHeader">
@@ -1701,8 +1767,12 @@
 			<RadioButton id="AccountTabButton" class="SettingsNavBarButton" group="SettingsTopMenu" onactivate="changeActiveTab( 5 )">
 				<Label text="#dota_settings_account" />
 			</RadioButton>
+			<Label class="SettingsTabSeparator" text="/" />
+			<RadioButton id="LabsTabButton" class="SettingsNavBarButton" group="SettingsTopMenu" onactivate="changeActiveTab( 6 )">
+				<Label text="#dota_settings_labs" />
+			</RadioButton>
 			<Panel class="SettingsTabFiller" />
-			<RadioButton id="AboutTabButton" class="SettingsNavBarButton" group="SettingsTopMenu" onactivate="changeActiveTab( 6 )">
+			<RadioButton id="AboutTabButton" class="SettingsNavBarButton" group="SettingsTopMenu" onactivate="changeActiveTab( 7 )">
 				<Label text="#dota_settings_about" />
 			</RadioButton>
 		</Panel>
@@ -1712,6 +1782,7 @@
 		<Panel id="VideoTabContent" class="HideSection" tabsnippet="VideoTabContent" />
 		<Panel id="AudioTabContent" class="HideSection" tabsnippet="AudioTabContent" />
 		<Panel id="AccountTabContent" class="HideSection" tabsnippet="AccountTabContent" />
+		<Panel id="LabsTabContent" class="HideSection" tabsnippet="LabsTabContent" />
 		<Panel id="AboutTabContent" class="HideSection" tabsnippet="AboutTabContent" />
 	</PopupSettings>
 </root>
