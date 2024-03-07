@@ -57885,7 +57885,7 @@ public:
 	int32_t bonus_movement_speed; // 0x1318	
 	int32_t enchant_health; // 0x131c	
 	int32_t enchant_armor; // 0x1320	
-	int32_t enchant_damage; // 0x1324	
+	float enchant_damage; // 0x1324	
 };
 
 // Registered binary: server.dll (project 'server')
@@ -67969,7 +67969,7 @@ public:
 class CDOTA_Modifier_Shredder_WhirlingDeath_Debuff : public CDOTA_Buff
 {
 public:
-	int32_t stat_loss_pct; // 0x1318	
+	float stat_loss_pct; // 0x1318	
 	int32_t stat_loss_univ; // 0x131c	
 	int32_t iPrimaryAttribute; // 0x1320	
 	float flStatLossStr; // 0x1324	
