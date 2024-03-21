@@ -16,16 +16,60 @@
 				<Label id="TitleLabel" text="#dota_accept_match_title" />
 				<Label id="MessageLabel" text="#dota_accept_match_subtitle" />
 			</Panel>
-			<Panel id="ButtonContainer">
-				<Button id="Button0" class="LargeButton" onactivate="DOTAPlayAcceptMatch() AddStyle( PopupAcceptDeclineMatchPanel, Accepted ) AddStyle( PopupReadyUpPlayersPanel, Accepted )">
-					<Label text="#dota_accept_match_accept_button" />
-				</Button>
-				<Panel class="DeclineContainer">
-					<Panel class="InfoIcon" onmouseover="UIShowTextTooltip( #dota_accept_match_decline_info )" onmouseout="UIHideTextTooltip()" />
-					<Button id="Button1" onactivate="DOTAPlayDeclineMatch()">
-						<Label text="#dota_accept_match_decline" />
-					</Button>
+			<Panel id="MatchDetails" class="MatchDetails">
+				<Panel class="TopDash" />
+				<Panel class="MatchDetailsBorder" hittest="false" />
+				<Panel class="MatchDetailsContent">
+					<Label id="OverallQuality" html="true" text="#DOTA_Match_OverallQuality" />
+					<Label id="OverallTeamQuality" html="true" text="#DOTA_Match_OverallTeamQuality" />
+					<Panel class="MatchInfoBlocksContainer">
+						<Panel class="MatchInfoBlock Block1">
+							<Label class="LabelMedium BlockTitle" text="#DOTA_Match_Region_Title" />
+							<Panel class="LeftRightFlow">
+								<Image class="LocationIcon" src="s2r://panorama/images/control_icons/24px/location.vsvg" />
+								<Label id="MatchRegionLabel" html="true" text="#DOTA_Match_Region_Ping_Label" />
+							</Panel>
+						</Panel>
+						<Panel class="MatchInfoBlock Block2">
+							<Label class="LabelMedium BlockTitle" text="#DOTA_Match_SkillRange_Title" />
+							<Label html="true" text="#DOTA_Match_SkillRange_Label" />
+							<Label html="true" class="MyParty" text="#DOTA_Match_PartySkillRange_Label" />
+						</Panel>
+						<Panel class="MatchInfoBlock Block3">
+							<Label class="LabelMedium BlockTitle" text="#DOTA_Match_Behavior_Title" />
+							<Label html="true" text="#DOTA_Match_Behavior_Label" />
+							<Label html="true" class="MyParty" text="#DOTA_Match_PartyBehavior_Label" />
+						</Panel>
+					</Panel>
+					<Panel class="ActionsContainer">
+						<Label class="BodyMedium ActionDecsriptionLabel" text="#DOTA_Match_SkipActionDescription" />
+						<Button class="ButtonPrimary LightGrey" onactivate="DOTAPlayDeclineAndRequeueMatch()">
+							<Label text="#DOTA_Match_SkipButton_Label" />
+						</Button>
+					</Panel>
 				</Panel>
+				<Panel class="FeatureFooter">
+					<Panel class="FeatureFooterContents">
+						<Panel class="PlusInfo">
+							<Panel class="PlusLogo" />
+							<Label class="PlusText" text="#DOTA_PlusStore_PlusRequired" />
+						</Panel>
+						<Image class="Pip" src="s2r://panorama/images/control_icons/24px/complexity.vsvg" />
+						<Panel class="LabsInfo" onmouseover="UIShowTextTooltip( #dota_settings_labs_description_tooltip )" onmouseout="UIHideTextTooltip()">
+							<Panel class="LabsLogo" />
+							<Label class="LabsText" html="true" text="#dota_labs_logo_label" />
+						</Panel>
+					</Panel>
+				</Panel>
+			</Panel>
+			<Button id="Button0" class="LargeButton" onactivate="DOTAPlayAcceptMatch() AddStyle( PopupAcceptDeclineMatchPanel, Accepted ) AddStyle( PopupReadyUpPlayersPanel, Accepted )">
+				<Label text="#dota_accept_match_accept_button" />
+			</Button>
+			<Panel class="DeclineContainer">
+				<Panel class="InfoIcon" onmouseover="UIShowTextTooltip( #dota_accept_match_decline_info )" onmouseout="UIHideTextTooltip()" />
+				<Button id="Button1" onactivate="DOTAPlayDeclineMatch()">
+					<Label text="#dota_accept_match_decline" />
+				</Button>
 			</Panel>
 		</Panel>
 		<Panel id="PopupReadyUpPlayersPanel" class="PopupAcceptMatchPanel" hittest="true" onactivate="">

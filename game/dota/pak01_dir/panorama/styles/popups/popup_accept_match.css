@@ -1,4 +1,4 @@
-/* Prettified by Source 2 Viewer 6.0.0.0 - https://valveresourceformat.github.io */
+/* Prettified by Source 2 Viewer 8.0.0.0 - https://valveresourceformat.github.io */
 
 .PopupPanelEffects
 {
@@ -22,14 +22,21 @@
 	opacity: 1;
 	width: 70%;
 	height: 70%;
-	opacity-mask: url("s2r://panorama/images/masks/softedge_box_png.vtex");
-	transform: translateZ( -300px );
+	opacity-mask: url("s2r://panorama/images/masks/sun_burst_png.vtex");
+	transform: translateZ( -100px );
 	horizontal-align: center;
 	vertical-align: center;
 	transition-property: pre-transform-scale2d, opacity;
 	transition-duration: 0.5s;
 	transition-timing-function: ease-in;
 	transition-delay: 0.0s;
+}
+
+.ShowMatchQualityInfo #ModelUIAccept
+{
+	transform: translateZ( 0px );
+	width: 85%;
+	height: 85%;
 }
 
 .BattleCup #ModelUIAccept
@@ -70,10 +77,9 @@
 	border-radius: 0px;
 	background-color: black;
 	padding: 0px;
-	background-image: url("s2r://panorama/images/textures/popup_rock_bg_psd.vtex");
-	background-size: auto 100%;
-	background-position: 50% 0%;
-	background-repeat: no-repeat;
+	background-image: url("s2r://panorama/images/textures/popup_rock_bg_square_png.vtex");
+	background-size: cover;
+	background-position: center;
 	box-shadow: #83d79500 0px 0px 0px 0px;
 	pre-transform-scale2d: 1;
 	width: 768px;
@@ -121,7 +127,7 @@
 	animation-timing-function: linear;
 	animation-iteration-count: 1;
 	animation-direction: normal;
-	box-shadow: #83d79544 0px 0px 12px 0px ;
+	box-shadow: #83d79544 0px 0px 16px 0px ;
 }
 
 .Minimized #PopupAcceptDeclineMatchPanel
@@ -360,8 +366,9 @@
 	animation-timing-function: linear;
 	animation-iteration-count: 1;
 	animation-direction: normal;
-	transform: rotateX( 88deg ) translateY( -132px ) translateZ( -140px );
+	transform: rotateX( 90deg ) translateY( -132px ) translateZ( -140px );
 	box-shadow: #83d79500 0px 0px 0px 0px;
+	opacity: 0;
 }
 
 @keyframes 'logo-slam-0'
@@ -736,8 +743,8 @@
 	border-right: 2px solid #00000088;
 	border-left: 2px solid #48d07d11;
 	border-bottom: 2px solid #00000088;
+	margin-top: 120px;
 	horizontal-align: center;
-	vertical-align: center;
 }
 
 #Button0:hover
@@ -770,6 +777,11 @@
 	horizontal-align: right;
 	vertical-align: bottom;
 	margin-right: 20px;
+}
+
+.ShowMatchQualityInfo .DeclineContainer
+{
+	visibility: collapse;
 }
 
 .InfoIcon
@@ -946,5 +958,266 @@
 .Minimized #MinimizeClickCatcher
 {
 	visibility: collapse;
+}
+
+.ShowMatchQualityInfo #MatchDetails
+{
+	visibility: visible;
+}
+
+.HasParty #MatchDetails .MyParty
+{
+	visibility: visible;
+}
+
+#MatchDetails
+{
+	visibility: collapse;
+	vertical-align: bottom;
+	flow-children: down;
+	margin: 16px;
+	margin-top: 220px;
+	width: 100%;
+	background-color: gradient( linear, 0% 0%, 0% 80%, from( #423621 ), to( dotaPlusCharcoal ) );
+	box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.5);
+}
+
+#MatchDetails .TopDash
+{
+	width: 100%;
+	height: 2px;
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( dotaPlusGold ), color-stop( 0.5, dotaPlusLightGold ), to( dotaPlusGold ) );
+	ignore-parent-flow: true;
+}
+
+#MatchDetails .MatchDetailsBorder
+{
+	width: 100%;
+	height: 100%;
+	border: 1px solid rgba(255, 255, 255, 0.015);
+	ignore-parent-flow: true;
+}
+
+#MatchDetails .MatchDetailsContent
+{
+	flow-children: down;
+	padding: 16px 0px 20px;
+	width: 100%;
+}
+
+#MatchDetails .MatchInfoBlocksContainer
+{
+	flow-children: right;
+	width: 100%;
+	margin: 12px 0px;
+	padding: 0px 24px;
+	border: 1px solid rgba(255, 255, 255, 0.04);
+	border-brush: gradient( linear, 0% 0%, 100% 0%, from( #FFFFFF00 ), color-stop( 0.1, #FFFFFF ), color-stop( 0.9, #FFFFFF ), to( #FFFFFF00 ) );
+	border-left: 0px;
+	border-right: 0px;
+}
+
+#MatchDetails .MatchInfoBlocksContainer .MatchInfoBlock
+{
+	flow-children: down;
+	width: fill-parent-flow( 1 );
+	padding: 8px 12px 12px;
+	border-left: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+#MatchDetails .MatchInfoBlocksContainer .MatchInfoBlock.Block1
+{
+	border-left: 0px;
+}
+
+#MatchDetails .MatchInfoBlocksContainer .MatchInfoBlock .BlockTitle
+{
+	color: whitesmoke;
+	font-weight: semi-bold;
+	letter-spacing: 2px;
+	margin-bottom: 2px;
+}
+
+#MatchDetails .MatchInfoBlocksContainer .MatchInfoBlock Label
+{
+	color: LighterGrey;
+}
+
+#MatchDetails .ActionsContainer
+{
+	flow-children: right;
+	margin-top: 6px;
+}
+
+#MatchDetails .ActionsContainer Button,#MatchDetails .ActionsContainer Label
+{
+	vertical-align: center;
+}
+
+#MatchDetails .ActionsContainer .ActionDecsriptionLabel
+{
+	margin-bottom: 4px;
+	color: LighterGrey;
+	opacity: 0.8;
+	margin-right: 12px;
+}
+
+#MatchDetails #OverallQuality
+{
+	font-size: 28px;
+	letter-spacing: -0.5px;
+}
+
+#MatchDetails #OverallTeamQuality
+{
+	font-size: 20px;
+}
+
+#MatchDetails .LocationIcon
+{
+	width: 16px;
+	height: width-percentage( 100% );
+	vertical-align: center;
+	margin-right: 4px;
+	wash-color: LighterGrey;
+}
+
+#MatchDetails #MatchRegionLabel
+{
+	max-height: 40px;
+	text-overflow: shrink;
+}
+
+#MatchDetails Panel
+{
+	horizontal-align: center;
+}
+
+#MatchDetails .MyParty
+{
+	font-size: 16px;
+	opacity: 0.8;
+	visibility: collapse;
+}
+
+#MatchDetails Label
+{
+	text-align: center;
+	color: LightestGrey;
+	horizontal-align: center;
+	text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.6);
+	text-overflow: shrink;
+}
+
+#MatchDetails Label .good
+{
+	color: #6fc06f;
+	font-weight: semi-bold;
+}
+
+#MatchDetails Label .ok
+{
+	color: #e8bf67;
+	font-weight: semi-bold;
+}
+
+#MatchDetails Label .bad
+{
+	color: #eb5f5f;
+	font-weight: semi-bold;
+}
+
+#MatchDetails #PenaltyLabel
+{
+	margin-top: 40px;
+}
+
+#MatchDetails .FeatureFooter
+{
+	flow-children: right;
+	width: 100%;
+	padding: 8px;
+	background-color: rgba(0, 0, 0, 0.6);
+	margin: 0px 1px;
+	margin-bottom: -1px;
+}
+
+#MatchDetails .FeatureFooter .FeatureFooterContents
+{
+	flow-children: right;
+	horizontal-align: center;
+}
+
+#MatchDetails .FeatureFooter .Pip
+{
+	width: 8px;
+	height: 8px;
+	vertical-align: center;
+	wash-color: DarkGrey;
+	margin: 0px 8px;
+}
+
+#MatchDetails .FeatureFooter .PlusInfo
+{
+	flow-children: right;
+	horizontal-align: left;
+}
+
+#MatchDetails .FeatureFooter .PlusInfo .PlusLogo
+{
+	width: 20px;
+	height: 20px;
+	background-image: dotaPlusLogoSmall;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+#MatchDetails .FeatureFooter .PlusInfo .PlusText
+{
+	vertical-align: middle;
+	margin: 0px 0px 0px 4px;
+	text-transform: uppercase;
+	font-size: 16px;
+	color: Grey;
+	letter-spacing: 1px;
+	width: fit-children;
+}
+
+#MatchDetails .FeatureFooter .LabsInfo
+{
+	horizontal-align: left;
+	flow-children: right;
+}
+
+#MatchDetails .FeatureFooter .LabsInfo .LabsLogo
+{
+	width: 24px;
+	height: 24px;
+	background-image: url("s2r://panorama/images/logos/dota_labs_logo_png.vtex");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	margin-top: -5px;
+	margin-left: -2px;
+}
+
+#MatchDetails .FeatureFooter .LabsInfo .LabsText
+{
+	color: gradient( linear, 0% 10%, 0% 100%, from( LightestGrey ), to( LightGrey ) );
+	vertical-align: center;
+	font-family: titleFont;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 13px;
+	line-height: 1.1;
+	text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.4);
+	opacity: 0.8;
+}
+
+#MatchDetails .FeatureFooter .LabsInfo .LabsText b
+{
+	color: gradient( linear, 0% 10%, 0% 100%, from( #21d6e7 ), color-stop( 0.5, #34ade4 ), to( #5275c1 ) );
+	font-weight: semi-bold;
 }
 

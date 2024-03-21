@@ -4785,7 +4785,7 @@ enum class EGCBaseMsg : uint32_t
 
 // Registered binary: server.dll (project 'server')
 // Alignment: 4
-// Size: 0x126
+// Size: 0x127
 enum class modifierfunction : uint32_t
 {
 	// MScriptDescription "GetModifierPreAttack_BonusDamage"
@@ -5372,7 +5372,9 @@ enum class modifierfunction : uint32_t
 	MODIFIER_EVENT_ON_TAKEDAMAGE_POST_UNAVOIDABLE_BLOCK = 0x122,
 	// MScriptDescription "OnMuteDamageAbilities"
 	MODIFIER_EVENT_ON_MUTE_DAMAGE_ABILITIES = 0x123,
-	MODIFIER_FUNCTION_LAST = 0x124,
+	// MScriptDescription "GetSuppressCrit"
+	MODIFIER_PROPERTY_SUPPRESS_CRIT = 0x124,
+	MODIFIER_FUNCTION_LAST = 0x125,
 	MODIFIER_FUNCTION_INVALID = 0xffff,
 };
 
@@ -6735,7 +6737,7 @@ enum class ScriptedMoveType_t : uint32_t
 
 // Registered binary: server.dll (project 'server')
 // Alignment: 4
-// Size: 0x9
+// Size: 0xa
 enum class DOTALeaverStatus_t : uint32_t
 {
 	DOTA_LEAVER_NONE = 0x0,
@@ -6747,6 +6749,7 @@ enum class DOTALeaverStatus_t : uint32_t
 	DOTA_LEAVER_NEVER_CONNECTED_TOO_LONG = 0x6,
 	DOTA_LEAVER_FAILED_TO_READY_UP = 0x7,
 	DOTA_LEAVER_DECLINED = 0x8,
+	DOTA_LEAVER_DECLINED_REQUEUE = 0x9,
 };
 
 // Registered binary: server.dll (project 'server')
@@ -6884,7 +6887,7 @@ enum class ECustomGameInstallStatus : uint32_t
 
 // Registered binary: server.dll (project 'server')
 // Alignment: 4
-// Size: 0x37a
+// Size: 0x37b
 enum class EDOTAGCMsg : uint32_t
 {
 	k_EMsgGCDOTABase = 0x1b58,
@@ -7777,6 +7780,7 @@ enum class EDOTAGCMsg : uint32_t
 	k_EMsgServerToGCNewBloomGiftResponse = 0x2301,
 	k_EMsgClientToGCNewBloomGift = 0x2305,
 	k_EMsgClientToGCNewBloomGiftResponse = 0x2306,
+	k_EMsgClientToGCSetBannedHeroes = 0x2309,
 };
 
 // Registered binary: server.dll (project 'server')
@@ -10814,12 +10818,13 @@ enum class CreatureAbilityType : uint32_t
 
 // Registered binary: server.dll (project 'server')
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class DOTALobbyReadyState : uint32_t
 {
 	DOTALobbyReadyState_UNDECLARED = 0x0,
 	DOTALobbyReadyState_ACCEPTED = 0x1,
 	DOTALobbyReadyState_DECLINED = 0x2,
+	DOTALobbyReadyState_DECLINED_REQUEUE = 0x3,
 };
 
 // Registered binary: server.dll (project 'server')
@@ -42482,7 +42487,7 @@ public:
 
 // Registered binary: server.dll (project 'server')
 // Alignment: 8
-// Size: 0x1318
+// Size: 0x1328
 // Has VTable
 // Is Abstract
 class CDOTA_Buff : public CHorizontalMotionController
@@ -42537,9 +42542,9 @@ public:
 	CUtlVector< CDOTA_BuffParticle > m_iParticles; // 0xa0	
 	CUtlVector< CHandle< CBaseEntity > > m_hAuraUnits; // 0xb8	
 private:
-	[[maybe_unused]] uint8_t __pad00d0[0x1240]; // 0xd0
+	[[maybe_unused]] uint8_t __pad00d0[0x1250]; // 0xd0
 public:
-	HSCRIPT m_hScriptScope; // 0x1310	
+	HSCRIPT m_hScriptScope; // 0x1320	
 };
 
 // Registered binary: server.dll (project 'server')
