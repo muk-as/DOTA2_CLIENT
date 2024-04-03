@@ -55622,13 +55622,14 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x5c8
+// Size: 0x5d0
 // Has VTable
 class CDOTA_Ability_Lamp_Use : public C_DOTABaseAbility
 {
 public:
 	GameTime_t m_flLastCaptureTime; // 0x5c0	
-	ParticleIndex_t m_nChannelFXIndex; // 0x5c4	
+	CHandle< C_DOTA_BaseNPC > m_hTarget; // 0x5c4	
+	ParticleIndex_t m_nChannelFXIndex; // 0x5c8	
 };
 
 // Registered binary: client.dll (project 'client')

@@ -40006,13 +40006,14 @@ public:
 
 // Registered binary: server.dll (project 'server')
 // Alignment: 8
-// Size: 0x590
+// Size: 0x598
 // Has VTable
 class CDOTA_Ability_Lamp_Use : public CDOTABaseAbility
 {
 public:
 	GameTime_t m_flLastCaptureTime; // 0x588	
-	ParticleIndex_t m_nChannelFXIndex; // 0x58c	
+	CHandle< CDOTA_BaseNPC > m_hTarget; // 0x58c	
+	ParticleIndex_t m_nChannelFXIndex; // 0x590	
 };
 
 // Registered binary: server.dll (project 'server')
