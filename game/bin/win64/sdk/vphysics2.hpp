@@ -10,6 +10,7 @@
 // /////////////////////////////////////////////////////////////
 
 // Registered binary: vphysics2.dll (project 'physicslib')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class JointAxis_t : uint32_t
@@ -21,8 +22,9 @@ enum class JointAxis_t : uint32_t
 };
 
 // Registered binary: vphysics2.dll (project 'physicslib')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class JointMotion_t : uint32_t
 {
 	JOINT_MOTION_FREE = 0x0,

@@ -10,8 +10,9 @@
 // /////////////////////////////////////////////////////////////
 
 // Registered binary: soundsystem.dll (project 'soundsystem')
+// Enumerator count: 30
 // Alignment: 4
-// Size: 0x1e
+// Size: 0x4
 enum class soundlevel_t : uint32_t
 {
 	SNDLVL_NONE = 0x0,
@@ -47,8 +48,9 @@ enum class soundlevel_t : uint32_t
 };
 
 // Registered binary: soundsystem.dll (project 'soundsystem')
+// Enumerator count: 6
 // Alignment: 4
-// Size: 0x6
+// Size: 0x4
 enum class ActionType_t : uint32_t
 {
 	// MPropertyFriendlyName "None"
@@ -66,8 +68,9 @@ enum class ActionType_t : uint32_t
 };
 
 // Registered binary: soundsystem.dll (project 'soundsystem')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class SosActionStopType_t : uint32_t
 {
 	// MPropertyFriendlyName "None"
@@ -79,8 +82,9 @@ enum class SosActionStopType_t : uint32_t
 };
 
 // Registered binary: soundsystem.dll (project 'soundsystem')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class SosActionSortType_t : uint32_t
 {
 	// MPropertyFriendlyName "Highest"
@@ -90,8 +94,9 @@ enum class SosActionSortType_t : uint32_t
 };
 
 // Registered binary: soundsystem.dll (project 'soundsystem')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class SosGroupType_t : uint32_t
 {
 	// MPropertyFriendlyName "Dynamic"
@@ -101,8 +106,9 @@ enum class SosGroupType_t : uint32_t
 };
 
 // Registered binary: soundsystem.dll (project 'soundsystem')
+// Enumerator count: 6
 // Alignment: 4
-// Size: 0x6
+// Size: 0x4
 enum class SosEditItemType_t : uint32_t
 {
 	SOS_EDIT_ITEM_TYPE_SOUNDEVENTS = 0x0,
@@ -114,8 +120,9 @@ enum class SosEditItemType_t : uint32_t
 };
 
 // Registered binary: soundsystem.dll (project 'soundsystem_lowlevel')
+// Enumerator count: 10
 // Alignment: 2
-// Size: 0xa
+// Size: 0x2
 enum class VMixFilterType_t : uint16_t
 {
 	FILTER_UNKNOWN = 0xffffffffffffffff,
@@ -131,8 +138,9 @@ enum class VMixFilterType_t : uint16_t
 };
 
 // Registered binary: soundsystem.dll (project 'soundsystem_lowlevel')
+// Enumerator count: 9
 // Alignment: 1
-// Size: 0x9
+// Size: 0x1
 enum class VMixFilterSlope_t : uint8_t
 {
 	FILTER_SLOPE_1POLE_6dB = 0x0,
@@ -147,8 +155,9 @@ enum class VMixFilterSlope_t : uint8_t
 };
 
 // Registered binary: soundsystem.dll (project 'soundsystem_lowlevel')
+// Enumerator count: 30
 // Alignment: 2
-// Size: 0x1e
+// Size: 0x2
 enum class VMixProcessorType_t : uint16_t
 {
 	VPROCESSOR_UNKNOWN = 0x0,
@@ -184,8 +193,9 @@ enum class VMixProcessorType_t : uint16_t
 };
 
 // Registered binary: soundsystem.dll (project 'soundsystem_lowlevel')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class VMixLFOShape_t : uint32_t
 {
 	LFO_SHAPE_SINE = 0x0,
@@ -196,8 +206,9 @@ enum class VMixLFOShape_t : uint32_t
 };
 
 // Registered binary: soundsystem.dll (project 'soundsystem_lowlevel')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class VMixPannerType_t : uint32_t
 {
 	PANNER_TYPE_LINEAR = 0x0,
@@ -205,8 +216,9 @@ enum class VMixPannerType_t : uint32_t
 };
 
 // Registered binary: soundsystem.dll (project 'soundsystem_lowlevel')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class VMixSubgraphSwitchInterpolationType_t : uint32_t
 {
 	SUBGRAPH_INTERPOLATION_TEMPORAL_CROSSFADE = 0x0,
@@ -215,8 +227,9 @@ enum class VMixSubgraphSwitchInterpolationType_t : uint32_t
 };
 
 // Registered binary: soundsystem.dll (project 'soundsystem_lowlevel')
+// Enumerator count: 6
 // Alignment: 4
-// Size: 0x6
+// Size: 0x4
 enum class VMixChannelOperation_t : uint32_t
 {
 	VMIX_CHAN_STEREO = 0x0,

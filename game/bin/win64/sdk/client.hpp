@@ -4,14 +4,15 @@
 
 // /////////////////////////////////////////////////////////////
 // Binary: client.dll
-// Classes count: 6362
+// Classes count: 6,362
 // Enums count: 69
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class C_BaseCombatCharacter__WaterWakeMode_t : uint32_t
 {
 	WATER_WAKE_NONE = 0x0,
@@ -22,8 +23,9 @@ enum class C_BaseCombatCharacter__WaterWakeMode_t : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class P2P_Messages : uint32_t
 {
 	p2p_TextMessage = 0x100,
@@ -34,8 +36,9 @@ enum class P2P_Messages : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class ETournamentTemplate : uint32_t
 {
 	k_ETournamentTemplate_None = 0x0,
@@ -43,8 +46,9 @@ enum class ETournamentTemplate : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 10
 // Alignment: 4
-// Size: 0xa
+// Size: 0x4
 enum class ETournamentGameState : uint32_t
 {
 	k_ETournamentGameState_Unknown = 0x0,
@@ -60,8 +64,9 @@ enum class ETournamentGameState : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 21
 // Alignment: 4
-// Size: 0x15
+// Size: 0x4
 enum class ETournamentTeamState : uint32_t
 {
 	k_ETournamentTeamState_Unknown = 0x0,
@@ -88,8 +93,9 @@ enum class ETournamentTeamState : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 12
 // Alignment: 4
-// Size: 0xc
+// Size: 0x4
 enum class ETournamentState : uint32_t
 {
 	k_ETournamentState_Unknown = 0x0,
@@ -107,8 +113,9 @@ enum class ETournamentState : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 14
 // Alignment: 4
-// Size: 0xe
+// Size: 0x4
 enum class ETournamentNodeState : uint32_t
 {
 	k_ETournamentNodeState_Unknown = 0x0,
@@ -128,8 +135,9 @@ enum class ETournamentNodeState : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 10
 // Alignment: 4
-// Size: 0xa
+// Size: 0x4
 enum class EDOTAGroupMergeResult : uint32_t
 {
 	k_EDOTAGroupMergeResult_OK = 0x0,
@@ -145,8 +153,9 @@ enum class EDOTAGroupMergeResult : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class EPartyBeaconType : uint32_t
 {
 	k_EPartyBeaconType_Available = 0x0,
@@ -154,6 +163,7 @@ enum class EPartyBeaconType : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class CMsgDOTARequestMatches_SkillLevel : uint32_t
@@ -165,8 +175,9 @@ enum class CMsgDOTARequestMatches_SkillLevel : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class DOTA_WatchReplayType : uint32_t
 {
 	DOTA_WATCH_REPLAY_NORMAL = 0x0,
@@ -174,6 +185,7 @@ enum class DOTA_WatchReplayType : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class EItemEditorReservationResult : uint32_t
@@ -185,6 +197,7 @@ enum class EItemEditorReservationResult : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class EWeekendTourneyRichPresenceEvent : uint32_t
@@ -196,8 +209,9 @@ enum class EWeekendTourneyRichPresenceEvent : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 6
 // Alignment: 4
-// Size: 0x6
+// Size: 0x4
 enum class EDOTATriviaAnswerResult : uint32_t
 {
 	k_EDOTATriviaAnswerResult_Success = 0x0,
@@ -209,8 +223,9 @@ enum class EDOTATriviaAnswerResult : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 8
 // Alignment: 4
-// Size: 0x8
+// Size: 0x4
 enum class EPurchaseHeroRelicResult : uint32_t
 {
 	k_EPurchaseHeroRelicResult_Success = 0x0,
@@ -224,8 +239,9 @@ enum class EPurchaseHeroRelicResult : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 7
 // Alignment: 4
-// Size: 0x7
+// Size: 0x4
 enum class EDevEventRequestResult : uint32_t
 {
 	k_EDevEventRequestResult_Success = 0x0,
@@ -238,8 +254,9 @@ enum class EDevEventRequestResult : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 14
 // Alignment: 4
-// Size: 0xe
+// Size: 0x4
 enum class ESupportEventRequestResult : uint32_t
 {
 	k_ESupportEventRequestResult_Success = 0x0,
@@ -259,8 +276,9 @@ enum class ESupportEventRequestResult : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 12
 // Alignment: 4
-// Size: 0xc
+// Size: 0x4
 enum class EUnderDraftResponse : uint32_t
 {
 	k_eInternalError = 0x0,
@@ -278,8 +296,9 @@ enum class EUnderDraftResponse : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 6
 // Alignment: 4
-// Size: 0x6
+// Size: 0x4
 enum class EDOTADraftTriviaAnswerResult : uint32_t
 {
 	k_EDOTADraftTriviaAnswerResult_Success = 0x0,
@@ -291,8 +310,9 @@ enum class EDOTADraftTriviaAnswerResult : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 67
 // Alignment: 4
-// Size: 0x43
+// Size: 0x4
 enum class CMsgBattleReport_HighlightType : uint32_t
 {
 	// MPropertySuppressEnumerator
@@ -432,8 +452,9 @@ enum class CMsgBattleReport_HighlightType : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class CMsgBattleReport_HighlightCategory : uint32_t
 {
 	// MPropertyFriendlyName "General"
@@ -445,8 +466,9 @@ enum class CMsgBattleReport_HighlightCategory : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 6
 // Alignment: 4
-// Size: 0x6
+// Size: 0x4
 enum class CMsgBattleReport_Role : uint32_t
 {
 	// MPropertySuppressEnumerator
@@ -464,8 +486,9 @@ enum class CMsgBattleReport_Role : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class CMsgBattleReport_CompareContext : uint32_t
 {
 	// MPropertySuppressEnumerator
@@ -481,8 +504,9 @@ enum class CMsgBattleReport_CompareContext : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 6
 // Alignment: 4
-// Size: 0x6
+// Size: 0x4
 enum class CMsgBattleReport_HighlightTier : uint32_t
 {
 	// MPropertyFriendlyName "Tier Low"
@@ -500,8 +524,9 @@ enum class CMsgBattleReport_HighlightTier : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class CMsgBattleReport_HighlightRarity : uint32_t
 {
 	// MPropertyFriendlyName "Common"
@@ -513,8 +538,9 @@ enum class CMsgBattleReport_HighlightRarity : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class CMsgBattleReport_EOutcome : uint32_t
 {
 	k_eWin = 0x0,
@@ -522,6 +548,7 @@ enum class CMsgBattleReport_EOutcome : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class CMsgBattleReport_ELaneOutcome : uint32_t
@@ -533,8 +560,9 @@ enum class CMsgBattleReport_ELaneOutcome : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 9
 // Alignment: 4
-// Size: 0x9
+// Size: 0x4
 enum class ECandyShopAuditAction : uint32_t
 {
 	k_ECandyShopAuditAction_Invalid = 0x0,
@@ -549,6 +577,7 @@ enum class ECandyShopAuditAction : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class ECandyShopRewardType : uint32_t
@@ -560,6 +589,7 @@ enum class ECandyShopRewardType : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class ECoachTeammateRating : uint32_t
@@ -571,8 +601,9 @@ enum class ECoachTeammateRating : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 6
 // Alignment: 4
-// Size: 0x6
+// Size: 0x4
 enum class EPrivateCoachingSessionState : uint32_t
 {
 	k_ePrivateCoachingSessionState_Invalid = 0x0,
@@ -584,8 +615,9 @@ enum class EPrivateCoachingSessionState : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class EPrivateCoachingSessionMemberFlag : uint32_t
 {
 	k_EPrivateCoachingSessionMemberFlag_Requester = 0x1,
@@ -594,8 +626,9 @@ enum class EPrivateCoachingSessionMemberFlag : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class EPlayerCoachMatchFlag : uint32_t
 {
 	k_EPlayerCoachMatchFlag_EligibleForRewards = 0x1,
@@ -603,8 +636,9 @@ enum class EPlayerCoachMatchFlag : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 96
 // Alignment: 4
-// Size: 0x60
+// Size: 0x4
 enum class DOTA_2013PassportSelectionIndices : uint32_t
 {
 	PP13_SEL_ALLSTAR_PLAYER_0 = 0x0,
@@ -706,8 +740,9 @@ enum class DOTA_2013PassportSelectionIndices : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 26
 // Alignment: 4
-// Size: 0x1a
+// Size: 0x4
 enum class EGuildAuditAction : uint32_t
 {
 	k_EGuildAuditAction_Invalid = 0x0,
@@ -739,8 +774,9 @@ enum class EGuildAuditAction : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class EGuildChatType : uint32_t
 {
 	k_EGuildChatType_Unspecified = 0x0,
@@ -749,8 +785,9 @@ enum class EGuildChatType : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 9
 // Alignment: 4
-// Size: 0x9
+// Size: 0x4
 enum class EGuildEventAuditAction : uint32_t
 {
 	k_EGuildEventAuditAction_Invalid = 0x0,
@@ -765,8 +802,9 @@ enum class EGuildEventAuditAction : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 39
 // Alignment: 4
-// Size: 0x27
+// Size: 0x4
 enum class EStartFindingMatchResult : uint32_t
 {
 	k_EStartFindingMatchResult_Invalid = 0x0,
@@ -811,8 +849,9 @@ enum class EStartFindingMatchResult : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 6
 // Alignment: 4
-// Size: 0x6
+// Size: 0x4
 enum class EShowcaseHeroPlusFlag : uint32_t
 {
 	k_eShowcaseHeroPlusFlag_None = 0x0,
@@ -824,8 +863,9 @@ enum class EShowcaseHeroPlusFlag : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class EShowcaseType : uint32_t
 {
 	k_eShowcaseType_Invalid = 0x0,
@@ -836,8 +876,9 @@ enum class EShowcaseType : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 6
 // Alignment: 4
-// Size: 0x6
+// Size: 0x4
 enum class EShowcaseItemState : uint32_t
 {
 	k_eShowcaseItemState_Ok = 0x0,
@@ -849,8 +890,9 @@ enum class EShowcaseItemState : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 8
 // Alignment: 4
-// Size: 0x8
+// Size: 0x4
 enum class EShowcaseAuditAction : uint32_t
 {
 	k_eShowcaseAuditAction_Invalid = 0x0,
@@ -864,8 +906,9 @@ enum class EShowcaseAuditAction : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class EShowcaseItemFlag : uint32_t
 {
 	k_eShowcaseItemFlag_None = 0x0,
@@ -873,8 +916,9 @@ enum class EShowcaseItemFlag : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 6
 // Alignment: 4
-// Size: 0x6
+// Size: 0x4
 enum class EShowcaseItemFlag_Hero : uint32_t
 {
 	k_eShowcaseItemFlag_Hero_None = 0x0,
@@ -886,8 +930,9 @@ enum class EShowcaseItemFlag_Hero : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 14
 // Alignment: 4
-// Size: 0xe
+// Size: 0x4
 enum class ETeamInviteResult : uint32_t
 {
 	TEAM_INVITE_SUCCESS = 0x0,
@@ -907,8 +952,9 @@ enum class ETeamInviteResult : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 12
 // Alignment: 4
-// Size: 0xc
+// Size: 0x4
 enum class ETournamentEvent : uint32_t
 {
 	k_ETournamentEvent_None = 0x0,
@@ -926,8 +972,9 @@ enum class ETournamentEvent : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class ETeamFanContentStatus : uint32_t
 {
 	TEAM_FAN_CONTENT_STATUS_INVALID = 0x0,
@@ -936,8 +983,9 @@ enum class ETeamFanContentStatus : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 9
 // Alignment: 4
-// Size: 0x9
+// Size: 0x4
 enum class ETeamFanContentAssetType : uint32_t
 {
 	k_eFanContentAssetType_LogoPNG = 0x1,
@@ -952,8 +1000,9 @@ enum class ETeamFanContentAssetType : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class ETeamFanContentAssetStatus : uint32_t
 {
 	k_eFanContentAssetStatus_None = 0x0,
@@ -962,6 +1011,7 @@ enum class ETeamFanContentAssetStatus : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class PlayerOrderIssuer_t : uint32_t
@@ -973,8 +1023,9 @@ enum class PlayerOrderIssuer_t : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class OrderQueueBehavior_t : uint32_t
 {
 	DOTA_ORDER_QUEUE_DEFAULT = 0x0,
@@ -983,8 +1034,9 @@ enum class OrderQueueBehavior_t : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class NeutralCampStackPullAlarmType_t : uint32_t
 {
 	DOTA_NEUTRAL_CAMP_STACK_PULL_ALARM_TYPE_STACK = 0x1,
@@ -992,8 +1044,9 @@ enum class NeutralCampStackPullAlarmType_t : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 8
 // Alignment: 4
-// Size: 0x8
+// Size: 0x4
 enum class DOTAKeybindTemplate_t : uint32_t
 {
 	DOTA_KEYBIND_TEMPLATE_ARROW = 0x0,
@@ -1007,8 +1060,9 @@ enum class DOTAKeybindTemplate_t : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 245
 // Alignment: 4
-// Size: 0xf5
+// Size: 0x4
 enum class DOTAKeybindCommand_t : uint32_t
 {
 	DOTA_KEYBIND_NONE = 0x0,
@@ -1259,6 +1313,7 @@ enum class DOTAKeybindCommand_t : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class ECandyShopRewardOptionType : uint32_t
@@ -1270,8 +1325,9 @@ enum class ECandyShopRewardOptionType : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class StartupBehavior_t : uint32_t
 {
 	UNIT_STARTUP_BEHAVIOR_DEFAULT = 0x0,
@@ -1279,8 +1335,9 @@ enum class StartupBehavior_t : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class PortraitDisplayMode_t : uint32_t
 {
 	PORTRAIT_DISPLAY_MODE_INVALID = 0xffffffffffffffff,
@@ -1291,8 +1348,9 @@ enum class PortraitDisplayMode_t : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 6
 // Alignment: 4
-// Size: 0x6
+// Size: 0x4
 enum class PortraitScale_t : uint32_t
 {
 	PORTRAIT_SCALE_INVALID = 0xffffffffffffffff,
@@ -1304,8 +1362,9 @@ enum class PortraitScale_t : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class PortraitUnitDirection_t : uint32_t
 {
 	PORTRAIT_UNIT_DIRECTION_INVALID = 0xffffffffffffffff,
@@ -1314,8 +1373,9 @@ enum class PortraitUnitDirection_t : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 10
 // Alignment: 4
-// Size: 0xa
+// Size: 0x4
 enum class DotaCustomUIType_t : uint32_t
 {
 	DOTA_CUSTOM_UI_TYPE_HUD = 0x0,
@@ -1331,8 +1391,9 @@ enum class DotaCustomUIType_t : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 19
 // Alignment: 4
-// Size: 0x13
+// Size: 0x4
 enum class SteamUGCQuery : uint32_t
 {
 	RankedByVote = 0x0,
@@ -1357,8 +1418,9 @@ enum class SteamUGCQuery : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 14
 // Alignment: 4
-// Size: 0xe
+// Size: 0x4
 enum class SteamUGCMatchingUGCType : uint32_t
 {
 	Items = 0x0,
@@ -1378,8 +1440,9 @@ enum class SteamUGCMatchingUGCType : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class SteamUniverse : uint32_t
 {
 	Invalid = 0x0,
@@ -1390,6 +1453,7 @@ enum class SteamUniverse : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class PlayerUltimateStateOrTime_t : uint32_t
@@ -1401,8 +1465,9 @@ enum class PlayerUltimateStateOrTime_t : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class CDOTA_BaseNPC_AghsFort_Watch_Tower__ExitDirection_t : uint32_t
 {
 	EXIT_DIRECTION_LEFT = 0x0,
@@ -1411,8 +1476,9 @@ enum class CDOTA_BaseNPC_AghsFort_Watch_Tower__ExitDirection_t : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class ERoadToTIQuestType : uint32_t
 {
 	k_RoadToTIQuestType_Match = 0x0,
@@ -1420,8 +1486,9 @@ enum class ERoadToTIQuestType : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class EHighlightScoreComparison : uint32_t
 {
 	// MPropertyFriendlyName "Less Than"
@@ -1437,6 +1504,7 @@ enum class EHighlightScoreComparison : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class EHighlightNumberFormat : uint32_t
@@ -1452,8 +1520,9 @@ enum class EHighlightNumberFormat : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 25
 // Alignment: 4
-// Size: 0x19
+// Size: 0x4
 enum class EHeroSelectionText : uint32_t
 {
 	k_EHeroSelectionText_Invalid = 0xffffffffffffffff,

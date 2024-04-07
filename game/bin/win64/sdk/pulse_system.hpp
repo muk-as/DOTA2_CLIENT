@@ -10,8 +10,9 @@
 // /////////////////////////////////////////////////////////////
 
 // Registered binary: pulse_system.dll (project 'pulse_runtime_lib')
+// Enumerator count: 61
 // Alignment: 2
-// Size: 0x3d
+// Size: 0x2
 enum class PulseInstructionCode_t : uint16_t
 {
 	INVALID = 0x0,
@@ -78,8 +79,9 @@ enum class PulseInstructionCode_t : uint16_t
 };
 
 // Registered binary: pulse_system.dll (project 'pulse_runtime_lib')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class PulseMethodCallMode_t : uint32_t
 {
 	// MPropertyFriendlyName "Wait For Completion"
@@ -91,8 +93,9 @@ enum class PulseMethodCallMode_t : uint32_t
 };
 
 // Registered binary: pulse_system.dll (project 'pulse_runtime_lib')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class PulseCursorExecResult_t : uint32_t
 {
 	Succeeded = 0x0,
@@ -101,6 +104,7 @@ enum class PulseCursorExecResult_t : uint32_t
 };
 
 // Registered binary: pulse_system.dll (project 'pulse_runtime_lib')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class PulseCursorCancelPriority_t : uint32_t
@@ -119,8 +123,9 @@ enum class PulseCursorCancelPriority_t : uint32_t
 };
 
 // Registered binary: pulse_system.dll (project 'pulse_runtime_lib')
+// Enumerator count: 18
 // Alignment: 4
-// Size: 0x12
+// Size: 0x4
 enum class PulseValueType_t : uint32_t
 {
 	PVAL_INVALID = 0xffffffffffffffff,
@@ -157,8 +162,9 @@ enum class PulseValueType_t : uint32_t
 };
 
 // Registered binary: pulse_system.dll (project 'pulse_runtime_lib')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class PulseTestEnumColor_t : uint32_t
 {
 	// MPropertyFriendlyName "Black"
@@ -174,8 +180,9 @@ enum class PulseTestEnumColor_t : uint32_t
 };
 
 // Registered binary: pulse_system.dll (project 'pulse_runtime_lib')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class PulseTestEnumShape_t : uint32_t
 {
 	// MPropertyFriendlyName "Circle"

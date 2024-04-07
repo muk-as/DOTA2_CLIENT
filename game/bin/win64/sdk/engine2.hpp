@@ -10,8 +10,9 @@
 // /////////////////////////////////////////////////////////////
 
 // Registered binary: engine2.dll (project 'engine2')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class SpawnDebugOverrideState_t : uint32_t
 {
 	SPAWN_DEBUG_OVERRIDE_NONE = 0x0,
@@ -20,8 +21,9 @@ enum class SpawnDebugOverrideState_t : uint32_t
 };
 
 // Registered binary: engine2.dll (project 'engine2')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class SpawnDebugRestrictionOverrideState_t : uint32_t
 {
 	SPAWN_DEBUG_RESTRICT_NONE = 0x0,
@@ -32,8 +34,9 @@ enum class SpawnDebugRestrictionOverrideState_t : uint32_t
 };
 
 // Registered binary: engine2.dll (project 'entity2')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class EntityDormancyType_t : uint32_t
 {
 	ENTITY_NOT_DORMANT = 0x0,
@@ -42,6 +45,7 @@ enum class EntityDormancyType_t : uint32_t
 };
 
 // Registered binary: engine2.dll (project 'entity2')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class EntityIOTargetType_t : uint32_t

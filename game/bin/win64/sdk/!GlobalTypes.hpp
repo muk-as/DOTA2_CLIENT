@@ -4,14 +4,15 @@
 
 // /////////////////////////////////////////////////////////////
 // Binary: !GlobalTypes
-// Classes count: 1470
+// Classes count: 1,470
 // Enums count: 584
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
 // Registered binary: schemasystem.dll (project 'schemasystem')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class ThreeState_t : uint32_t
 {
 	TRS_FALSE = 0x0,
@@ -20,8 +21,9 @@ enum class ThreeState_t : uint32_t
 };
 
 // Registered binary: schemasystem.dll (project 'schemasystem')
+// Enumerator count: 81
 // Alignment: 1
-// Size: 0x51
+// Size: 0x1
 enum class fieldtype_t : uint8_t
 {
 	FIELD_VOID = 0x0,
@@ -108,8 +110,9 @@ enum class fieldtype_t : uint8_t
 };
 
 // Registered binary: resourcesystem.dll (project 'mathlib_extended')
+// Enumerator count: 2
 // Alignment: 1
-// Size: 0x2
+// Size: 0x1
 enum class FuseVariableAccess_t : uint8_t
 {
 	WRITABLE = 0x0,
@@ -117,8 +120,9 @@ enum class FuseVariableAccess_t : uint8_t
 };
 
 // Registered binary: resourcesystem.dll (project 'mathlib_extended')
+// Enumerator count: 9
 // Alignment: 1
-// Size: 0x9
+// Size: 0x1
 enum class FuseVariableType_t : uint8_t
 {
 	INVALID = 0x0,
@@ -133,8 +137,9 @@ enum class FuseVariableType_t : uint8_t
 };
 
 // Registered binary: rendersystemdx11.dll (project 'rendersystemdx11')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class RenderSlotType_t : uint32_t
 {
 	RENDER_SLOT_INVALID = 0xffffffffffffffff,
@@ -143,6 +148,7 @@ enum class RenderSlotType_t : uint32_t
 };
 
 // Registered binary: rendersystemdx11.dll (project 'rendersystemdx11')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class InputLayoutVariation_t : uint32_t
@@ -154,8 +160,9 @@ enum class InputLayoutVariation_t : uint32_t
 };
 
 // Registered binary: rendersystemdx11.dll (project 'rendersystemdx11')
+// Enumerator count: 8
 // Alignment: 1
-// Size: 0x8
+// Size: 0x1
 enum class RenderMultisampleType_t : uint8_t
 {
 	RENDER_MULTISAMPLE_INVALID = 0xffffffffffffffff,
@@ -169,8 +176,9 @@ enum class RenderMultisampleType_t : uint8_t
 };
 
 // Registered binary: rendersystemdx11.dll (project 'rendersystemdx11')
+// Enumerator count: 12
 // Alignment: 4
-// Size: 0xc
+// Size: 0x4
 enum class RenderBufferFlags_t : uint32_t
 {
 	RENDER_BUFFER_USAGE_VERTEX_BUFFER = 0x1,
@@ -188,8 +196,9 @@ enum class RenderBufferFlags_t : uint32_t
 };
 
 // Registered binary: rendersystemdx11.dll (project 'rendersystemdx11')
+// Enumerator count: 13
 // Alignment: 4
-// Size: 0xd
+// Size: 0x4
 enum class RenderPrimitiveType_t : uint32_t
 {
 	RENDER_PRIM_POINTS = 0x0,
@@ -208,8 +217,9 @@ enum class RenderPrimitiveType_t : uint32_t
 };
 
 // Registered binary: engine2.dll (project 'engine2')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class SpawnDebugRestrictionOverrideState_t : uint32_t
 {
 	SPAWN_DEBUG_RESTRICT_NONE = 0x0,
@@ -220,8 +230,9 @@ enum class SpawnDebugRestrictionOverrideState_t : uint32_t
 };
 
 // Registered binary: engine2.dll (project 'engine2')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class SpawnDebugOverrideState_t : uint32_t
 {
 	SPAWN_DEBUG_OVERRIDE_NONE = 0x0,
@@ -230,6 +241,7 @@ enum class SpawnDebugOverrideState_t : uint32_t
 };
 
 // Registered binary: engine2.dll (project 'entity2')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class EntityIOTargetType_t : uint32_t
@@ -241,8 +253,9 @@ enum class EntityIOTargetType_t : uint32_t
 };
 
 // Registered binary: engine2.dll (project 'entity2')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class EntityDormancyType_t : uint32_t
 {
 	ENTITY_NOT_DORMANT = 0x0,
@@ -251,6 +264,7 @@ enum class EntityDormancyType_t : uint32_t
 };
 
 // Registered binary: materialsystem2.dll (project 'materialsystem2')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class HorizJustification_e : uint32_t
@@ -262,8 +276,9 @@ enum class HorizJustification_e : uint32_t
 };
 
 // Registered binary: materialsystem2.dll (project 'materialsystem2')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class BloomBlendMode_t : uint32_t
 {
 	BLOOM_BLEND_ADD = 0x0,
@@ -272,8 +287,9 @@ enum class BloomBlendMode_t : uint32_t
 };
 
 // Registered binary: materialsystem2.dll (project 'materialsystem2')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class ViewFadeMode_t : uint32_t
 {
 	VIEW_FADE_CONSTANT_COLOR = 0x0,
@@ -282,8 +298,9 @@ enum class ViewFadeMode_t : uint32_t
 };
 
 // Registered binary: materialsystem2.dll (project 'materialsystem2')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class LayoutPositionType_e : uint32_t
 {
 	LAYOUTPOSITIONTYPE_VIEWPORT_RELATIVE = 0x0,
@@ -292,6 +309,7 @@ enum class LayoutPositionType_e : uint32_t
 };
 
 // Registered binary: materialsystem2.dll (project 'materialsystem2')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class VertJustification_e : uint32_t
@@ -303,8 +321,9 @@ enum class VertJustification_e : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animationsystem')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class MoodType_t : uint32_t
 {
 	// MPropertyFriendlyName "Head"
@@ -314,8 +333,9 @@ enum class MoodType_t : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class JumpCorrectionMethod : uint32_t
 {
 	// MPropertyFriendlyName "Scale Animation Motion"
@@ -325,8 +345,9 @@ enum class JumpCorrectionMethod : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class BinaryNodeChildOption : uint32_t
 {
 	// MPropertyFriendlyName "Child 1"
@@ -336,8 +357,9 @@ enum class BinaryNodeChildOption : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'modellib')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class ModelConfigAttachmentType_t : uint32_t
 {
 	MODEL_CONFIG_ATTACHMENT_INVALID = 0xffffffffffffffff,
@@ -348,6 +370,7 @@ enum class ModelConfigAttachmentType_t : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class BoneMaskBlendSpace : uint32_t
@@ -363,6 +386,7 @@ enum class BoneMaskBlendSpace : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class IkTargetType : uint32_t
@@ -378,8 +402,9 @@ enum class IkTargetType : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
+// Enumerator count: 13
 // Alignment: 4
-// Size: 0xd
+// Size: 0x4
 enum class AnimVectorSource : uint32_t
 {
 	// MPropertyFriendlyName "Move Direction"
@@ -411,6 +436,7 @@ enum class AnimVectorSource : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class ChoiceMethod : uint32_t
@@ -422,8 +448,9 @@ enum class ChoiceMethod : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
+// Enumerator count: 8
 // Alignment: 4
-// Size: 0x8
+// Size: 0x4
 enum class FootFallTagFoot_t : uint32_t
 {
 	// MPropertyFriendlyName "Left"
@@ -445,8 +472,9 @@ enum class FootFallTagFoot_t : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animationsystem')
+// Enumerator count: 7
 // Alignment: 4
-// Size: 0x7
+// Size: 0x4
 enum class AnimationSnapshotType_t : uint32_t
 {
 	ANIMATION_SNAPSHOT_SERVER_SIMULATION = 0x0,
@@ -459,6 +487,7 @@ enum class AnimationSnapshotType_t : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class AimMatrixBlendMode : uint32_t
@@ -474,8 +503,9 @@ enum class AimMatrixBlendMode : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class FacingMode : uint32_t
 {
 	// MPropertyFriendlyName "Manual"
@@ -487,8 +517,9 @@ enum class FacingMode : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
+// Enumerator count: 3
 // Alignment: 1
-// Size: 0x3
+// Size: 0x1
 enum class VelocityMetricMode : uint8_t
 {
 	// MPropertyFriendlyName "Direction Only"
@@ -500,8 +531,9 @@ enum class VelocityMetricMode : uint8_t
 };
 
 // Registered binary: animationsystem.dll (project 'modellib')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class VPhysXJoint_t__Flags_t : uint32_t
 {
 	JOINT_FLAGS_NONE = 0x0,
@@ -510,8 +542,9 @@ enum class VPhysXJoint_t__Flags_t : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class FieldNetworkOption : uint32_t
 {
 	// MPropertyFriendlyName "Auto"
@@ -523,8 +556,9 @@ enum class FieldNetworkOption : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animationsystem')
+// Enumerator count: 18
 // Alignment: 4
-// Size: 0x12
+// Size: 0x4
 enum class ParticleAttachment_t : uint32_t
 {
 	PATTACH_INVALID = 0xffffffffffffffff,
@@ -548,8 +582,9 @@ enum class ParticleAttachment_t : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animlib')
+// Enumerator count: 3
 // Alignment: 1
-// Size: 0x3
+// Size: 0x1
 enum class CNmBoneMask__WeightInfo_t : uint8_t
 {
 	Zero = 0x0,
@@ -558,8 +593,9 @@ enum class CNmBoneMask__WeightInfo_t : uint8_t
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class SelectorTagBehavior_t : uint32_t
 {
 	// MPropertyFriendlyName "Active While Current"
@@ -571,8 +607,9 @@ enum class SelectorTagBehavior_t : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animationsystem')
+// Enumerator count: 13
 // Alignment: 4
-// Size: 0xd
+// Size: 0x4
 enum class AnimParamButton_t : uint32_t
 {
 	// MPropertyFriendlyName "None"
@@ -604,6 +641,7 @@ enum class AnimParamButton_t : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animationsystem')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class SeqPoseSetting_t : uint32_t
@@ -615,8 +653,9 @@ enum class SeqPoseSetting_t : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
+// Enumerator count: 3
 // Alignment: 2
-// Size: 0x3
+// Size: 0x2
 enum class AnimScriptType : uint16_t
 {
 	ANIMSCRIPT_TYPE_INVALID = 0xffffffffffffffff,
@@ -625,8 +664,9 @@ enum class AnimScriptType : uint16_t
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class IkEndEffectorType : uint32_t
 {
 	// MPropertyFriendlyName "Attachment"
@@ -636,8 +676,9 @@ enum class IkEndEffectorType : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class StanceOverrideMode : uint32_t
 {
 	Sequence = 0x0,
@@ -645,8 +686,9 @@ enum class StanceOverrideMode : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class JiggleBoneSimSpace : uint32_t
 {
 	// MPropertyFriendlyName "Local Space"
@@ -658,8 +700,9 @@ enum class JiggleBoneSimSpace : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animationsystem')
+// Enumerator count: 6
 // Alignment: 4
-// Size: 0x6
+// Size: 0x4
 enum class AnimationProcessingType_t : uint32_t
 {
 	ANIMATION_PROCESSING_SERVER_SIMULATION = 0x0,
@@ -671,8 +714,9 @@ enum class AnimationProcessingType_t : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class DampingSpeedFunction : uint32_t
 {
 	NoDamping = 0x0,
@@ -681,8 +725,9 @@ enum class DampingSpeedFunction : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class FootPinningTimingSource : uint32_t
 {
 	FootMotion = 0x0,
@@ -691,8 +736,9 @@ enum class FootPinningTimingSource : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animlib')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class NmFrameSnapEventMode_t : uint32_t
 {
 	Floor = 0x0,
@@ -700,8 +746,9 @@ enum class NmFrameSnapEventMode_t : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class FootLockSubVisualization : uint32_t
 {
 	// MPropertyFriendlyName "Reachability Analysis"
@@ -711,8 +758,9 @@ enum class FootLockSubVisualization : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animationsystem')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class FootstepLandedFootSoundType_t : uint32_t
 {
 	FOOTSOUND_Left = 0x0,
@@ -721,8 +769,9 @@ enum class FootstepLandedFootSoundType_t : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animlib')
+// Enumerator count: 4
 // Alignment: 1
-// Size: 0x4
+// Size: 0x1
 enum class NmFootPhase_t : uint8_t
 {
 	LeftFootDown = 0x0,
@@ -732,6 +781,7 @@ enum class NmFootPhase_t : uint8_t
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class IKChannelMode : uint32_t
@@ -747,8 +797,9 @@ enum class IKChannelMode : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class ResetCycleOption : uint32_t
 {
 	Beginning = 0x0,
@@ -759,6 +810,7 @@ enum class ResetCycleOption : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'modellib')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class MorphBundleType_t : uint32_t
@@ -770,8 +822,9 @@ enum class MorphBundleType_t : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'modellib')
+// Enumerator count: 22
 // Alignment: 4
-// Size: 0x16
+// Size: 0x4
 enum class ModelSkeletonData_t__BoneFlags_t : uint32_t
 {
 	FLAG_NO_BONE_FLAGS = 0x0,
@@ -799,8 +852,9 @@ enum class ModelSkeletonData_t__BoneFlags_t : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animlib')
+// Enumerator count: 6
 // Alignment: 1
-// Size: 0x6
+// Size: 0x1
 enum class NmFootPhaseCondition_t : uint8_t
 {
 	LeftFootDown = 0x0,
@@ -812,6 +866,7 @@ enum class NmFootPhaseCondition_t : uint8_t
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class StateActionBehavior : uint32_t
@@ -823,6 +878,7 @@ enum class StateActionBehavior : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class BlendKeyType : uint32_t
@@ -838,6 +894,7 @@ enum class BlendKeyType : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'modellib')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class VPhysXConstraintParams_t__EnumFlags0_t : uint32_t
@@ -849,8 +906,9 @@ enum class VPhysXConstraintParams_t__EnumFlags0_t : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class ChoiceBlendMethod : uint32_t
 {
 	// MPropertyFriendlyName "Single Blend Time"
@@ -860,8 +918,9 @@ enum class ChoiceBlendMethod : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class ChoiceChangeMethod : uint32_t
 {
 	OnReset = 0x0,
@@ -870,8 +929,9 @@ enum class ChoiceChangeMethod : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class Blend2DMode : uint32_t
 {
 	// MPropertyFriendlyName "General"
@@ -881,8 +941,9 @@ enum class Blend2DMode : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
+// Enumerator count: 6
 // Alignment: 4
-// Size: 0x6
+// Size: 0x4
 enum class IKSolverType : uint32_t
 {
 	// MPropertyFriendlyName "Perlin"
@@ -900,8 +961,9 @@ enum class IKSolverType : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animationsystem')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class RagdollPoseControl : uint32_t
 {
 	Absolute = 0x0,
@@ -909,8 +971,9 @@ enum class RagdollPoseControl : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
+// Enumerator count: 37
 // Alignment: 4
-// Size: 0x25
+// Size: 0x4
 enum class AnimValueSource : uint32_t
 {
 	// MPropertyFriendlyName "Move Heading"
@@ -990,8 +1053,9 @@ enum class AnimValueSource : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
+// Enumerator count: 3
 // Alignment: 1
-// Size: 0x3
+// Size: 0x1
 enum class PoseType_t : uint8_t
 {
 	POSETYPE_STATIC = 0x0,
@@ -1000,6 +1064,7 @@ enum class PoseType_t : uint8_t
 };
 
 // Registered binary: animationsystem.dll (project 'modellib')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class ModelBoneFlexComponent_t : uint32_t
@@ -1011,8 +1076,9 @@ enum class ModelBoneFlexComponent_t : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'modellib')
+// Enumerator count: 8
 // Alignment: 4
-// Size: 0x8
+// Size: 0x4
 enum class MeshDrawPrimitiveFlags_t : uint32_t
 {
 	MESH_DRAW_FLAGS_NONE = 0x0,
@@ -1026,6 +1092,7 @@ enum class MeshDrawPrimitiveFlags_t : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'modellib')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class MorphFlexControllerRemapType_t : uint32_t
@@ -1037,8 +1104,9 @@ enum class MorphFlexControllerRemapType_t : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animationsystem')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class AnimParamNetworkSetting : uint32_t
 {
 	// MPropertyFriendlyName "Auto"
@@ -1050,8 +1118,9 @@ enum class AnimParamNetworkSetting : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'modellib')
+// Enumerator count: 15
 // Alignment: 4
-// Size: 0xf
+// Size: 0x4
 enum class PermModelInfo_t__FlagEnum : uint32_t
 {
 	FLAG_TRANSLUCENT = 0x1,
@@ -1072,8 +1141,9 @@ enum class PermModelInfo_t__FlagEnum : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class IKTargetSource : uint32_t
 {
 	// MPropertyFriendlyName "Bone"
@@ -1084,8 +1154,9 @@ enum class IKTargetSource : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animationsystem')
+// Enumerator count: 9
 // Alignment: 1
-// Size: 0x9
+// Size: 0x1
 enum class AnimParamType_t : uint8_t
 {
 	ANIMPARAM_UNKNOWN = 0x0,
@@ -1100,8 +1171,9 @@ enum class AnimParamType_t : uint8_t
 };
 
 // Registered binary: animationsystem.dll (project 'modellib')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class VPhysXBodyPart_t__VPhysXFlagEnum_t : uint32_t
 {
 	FLAG_STATIC = 0x1,
@@ -1112,8 +1184,9 @@ enum class VPhysXBodyPart_t__VPhysXFlagEnum_t : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class AnimNodeNetworkMode : uint32_t
 {
 	// MPropertyFriendlyName "Server Authoritative"
@@ -1123,8 +1196,9 @@ enum class AnimNodeNetworkMode : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'modellib')
+// Enumerator count: 26
 // Alignment: 4
-// Size: 0x1a
+// Size: 0x4
 enum class FlexOpCode_t : uint32_t
 {
 	FLEX_OP_CONST = 0x1,
@@ -1156,8 +1230,9 @@ enum class FlexOpCode_t : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class StepPhase : uint32_t
 {
 	// MPropertyFriendlyName "On Ground"
@@ -1167,8 +1242,9 @@ enum class StepPhase : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class EDemoBoneSelectionMode : uint32_t
 {
 	// MPropertyFriendlyName "Capture All Bones"
@@ -1178,8 +1254,9 @@ enum class EDemoBoneSelectionMode : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animlib')
+// Enumerator count: 4
 // Alignment: 1
-// Size: 0x4
+// Size: 0x1
 enum class NmTransitionRuleCondition_t : uint8_t
 {
 	// MPropertyFriendlyName "Any Allowed"
@@ -1193,8 +1270,9 @@ enum class NmTransitionRuleCondition_t : uint8_t
 };
 
 // Registered binary: animationsystem.dll (project 'animationsystem')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class AnimPoseControl : uint32_t
 {
 	// MPropertyFriendlyName "None"
@@ -1206,8 +1284,9 @@ enum class AnimPoseControl : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class MatterialAttributeTagType_t : uint32_t
 {
 	// MPropertyFriendlyName "Value"
@@ -1217,8 +1296,9 @@ enum class MatterialAttributeTagType_t : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'modellib')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class VPhysXAggregateData_t__VPhysXFlagEnum_t : uint32_t
 {
 	FLAG_IS_POLYSOUP_GEOMETRY = 0x1,
@@ -1227,8 +1307,9 @@ enum class VPhysXAggregateData_t__VPhysXFlagEnum_t : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class IKTargetCoordinateSystem : uint32_t
 {
 	// MPropertyFriendlyName "World Space"
@@ -1239,8 +1320,9 @@ enum class IKTargetCoordinateSystem : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'modellib')
+// Enumerator count: 5
 // Alignment: 1
-// Size: 0x5
+// Size: 0x1
 enum class MovementGait_t : uint8_t
 {
 	// MPropertyFriendlyName "None"
@@ -1256,8 +1338,9 @@ enum class MovementGait_t : uint8_t
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
+// Enumerator count: 7
 // Alignment: 4
-// Size: 0x7
+// Size: 0x4
 enum class SolveIKChainAnimNodeDebugSetting : uint32_t
 {
 	// MPropertyFriendlyName "None"
@@ -1277,8 +1360,9 @@ enum class SolveIKChainAnimNodeDebugSetting : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class BinaryNodeTiming : uint32_t
 {
 	// MPropertyFriendlyName "Use Child1"
@@ -1290,8 +1374,9 @@ enum class BinaryNodeTiming : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animlib')
+// Enumerator count: 3
 // Alignment: 1
-// Size: 0x3
+// Size: 0x1
 enum class NmTransitionRule_t : uint8_t
 {
 	// MPropertyFriendlyName "Fully Allowed"
@@ -1303,8 +1388,9 @@ enum class NmTransitionRule_t : uint8_t
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class CAnimationGraphVisualizerPrimitiveType : uint32_t
 {
 	ANIMATIONGRAPHVISUALIZERPRIMITIVETYPE_Text = 0x0,
@@ -1315,6 +1401,7 @@ enum class CAnimationGraphVisualizerPrimitiveType : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animationsystem')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class BoneTransformSpace_t : uint32_t
@@ -1330,8 +1417,9 @@ enum class BoneTransformSpace_t : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animationsystem')
+// Enumerator count: 17
 // Alignment: 4
-// Size: 0x11
+// Size: 0x4
 enum class SeqCmd_t : uint32_t
 {
 	SeqCmd_Nop = 0x0,
@@ -1354,6 +1442,7 @@ enum class SeqCmd_t : uint32_t
 };
 
 // Registered binary: vphysics2.dll (project 'physicslib')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class JointAxis_t : uint32_t
@@ -1365,8 +1454,9 @@ enum class JointAxis_t : uint32_t
 };
 
 // Registered binary: vphysics2.dll (project 'physicslib')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class JointMotion_t : uint32_t
 {
 	JOINT_MOTION_FREE = 0x0,
@@ -1375,8 +1465,9 @@ enum class JointMotion_t : uint32_t
 };
 
 // Registered binary: soundsystem.dll (project 'soundsystem')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class SosGroupType_t : uint32_t
 {
 	// MPropertyFriendlyName "Dynamic"
@@ -1386,8 +1477,9 @@ enum class SosGroupType_t : uint32_t
 };
 
 // Registered binary: soundsystem.dll (project 'soundsystem_lowlevel')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class VMixSubgraphSwitchInterpolationType_t : uint32_t
 {
 	SUBGRAPH_INTERPOLATION_TEMPORAL_CROSSFADE = 0x0,
@@ -1396,8 +1488,9 @@ enum class VMixSubgraphSwitchInterpolationType_t : uint32_t
 };
 
 // Registered binary: soundsystem.dll (project 'soundsystem')
+// Enumerator count: 6
 // Alignment: 4
-// Size: 0x6
+// Size: 0x4
 enum class ActionType_t : uint32_t
 {
 	// MPropertyFriendlyName "None"
@@ -1415,8 +1508,9 @@ enum class ActionType_t : uint32_t
 };
 
 // Registered binary: soundsystem.dll (project 'soundsystem_lowlevel')
+// Enumerator count: 9
 // Alignment: 1
-// Size: 0x9
+// Size: 0x1
 enum class VMixFilterSlope_t : uint8_t
 {
 	FILTER_SLOPE_1POLE_6dB = 0x0,
@@ -1431,8 +1525,9 @@ enum class VMixFilterSlope_t : uint8_t
 };
 
 // Registered binary: soundsystem.dll (project 'soundsystem_lowlevel')
+// Enumerator count: 6
 // Alignment: 4
-// Size: 0x6
+// Size: 0x4
 enum class VMixChannelOperation_t : uint32_t
 {
 	VMIX_CHAN_STEREO = 0x0,
@@ -1444,8 +1539,9 @@ enum class VMixChannelOperation_t : uint32_t
 };
 
 // Registered binary: soundsystem.dll (project 'soundsystem_lowlevel')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class VMixPannerType_t : uint32_t
 {
 	PANNER_TYPE_LINEAR = 0x0,
@@ -1453,8 +1549,9 @@ enum class VMixPannerType_t : uint32_t
 };
 
 // Registered binary: soundsystem.dll (project 'soundsystem')
+// Enumerator count: 30
 // Alignment: 4
-// Size: 0x1e
+// Size: 0x4
 enum class soundlevel_t : uint32_t
 {
 	SNDLVL_NONE = 0x0,
@@ -1490,8 +1587,9 @@ enum class soundlevel_t : uint32_t
 };
 
 // Registered binary: soundsystem.dll (project 'soundsystem_lowlevel')
+// Enumerator count: 30
 // Alignment: 2
-// Size: 0x1e
+// Size: 0x2
 enum class VMixProcessorType_t : uint16_t
 {
 	VPROCESSOR_UNKNOWN = 0x0,
@@ -1527,8 +1625,9 @@ enum class VMixProcessorType_t : uint16_t
 };
 
 // Registered binary: soundsystem.dll (project 'soundsystem')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class SosActionSortType_t : uint32_t
 {
 	// MPropertyFriendlyName "Highest"
@@ -1538,8 +1637,9 @@ enum class SosActionSortType_t : uint32_t
 };
 
 // Registered binary: soundsystem.dll (project 'soundsystem')
+// Enumerator count: 6
 // Alignment: 4
-// Size: 0x6
+// Size: 0x4
 enum class SosEditItemType_t : uint32_t
 {
 	SOS_EDIT_ITEM_TYPE_SOUNDEVENTS = 0x0,
@@ -1551,8 +1651,9 @@ enum class SosEditItemType_t : uint32_t
 };
 
 // Registered binary: soundsystem.dll (project 'soundsystem')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class SosActionStopType_t : uint32_t
 {
 	// MPropertyFriendlyName "None"
@@ -1564,8 +1665,9 @@ enum class SosActionStopType_t : uint32_t
 };
 
 // Registered binary: soundsystem.dll (project 'soundsystem_lowlevel')
+// Enumerator count: 10
 // Alignment: 2
-// Size: 0xa
+// Size: 0x2
 enum class VMixFilterType_t : uint16_t
 {
 	FILTER_UNKNOWN = 0xffffffffffffffff,
@@ -1581,8 +1683,9 @@ enum class VMixFilterType_t : uint16_t
 };
 
 // Registered binary: soundsystem.dll (project 'soundsystem_lowlevel')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class VMixLFOShape_t : uint32_t
 {
 	LFO_SHAPE_SINE = 0x0,
@@ -1593,8 +1696,9 @@ enum class VMixLFOShape_t : uint32_t
 };
 
 // Registered binary: scenesystem.dll (project 'scenesystem')
+// Enumerator count: 4
 // Alignment: 1
-// Size: 0x4
+// Size: 0x1
 enum class DisableShadows_t : uint8_t
 {
 	kDisableShadows_None = 0x0,
@@ -1604,8 +1708,9 @@ enum class DisableShadows_t : uint8_t
 };
 
 // Registered binary: worldrenderer.dll (project 'worldrenderer')
+// Enumerator count: 13
 // Alignment: 4
-// Size: 0xd
+// Size: 0x4
 enum class ObjectTypeFlags_t : uint32_t
 {
 	OBJECT_TYPE_NONE = 0x0,
@@ -1624,6 +1729,7 @@ enum class ObjectTypeFlags_t : uint32_t
 };
 
 // Registered binary: pulse_system.dll (project 'pulse_runtime_lib')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class PulseCursorCancelPriority_t : uint32_t
@@ -1642,8 +1748,9 @@ enum class PulseCursorCancelPriority_t : uint32_t
 };
 
 // Registered binary: pulse_system.dll (project 'pulse_runtime_lib')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class PulseTestEnumColor_t : uint32_t
 {
 	// MPropertyFriendlyName "Black"
@@ -1659,8 +1766,9 @@ enum class PulseTestEnumColor_t : uint32_t
 };
 
 // Registered binary: pulse_system.dll (project 'pulse_runtime_lib')
+// Enumerator count: 61
 // Alignment: 2
-// Size: 0x3d
+// Size: 0x2
 enum class PulseInstructionCode_t : uint16_t
 {
 	INVALID = 0x0,
@@ -1727,8 +1835,9 @@ enum class PulseInstructionCode_t : uint16_t
 };
 
 // Registered binary: pulse_system.dll (project 'pulse_runtime_lib')
+// Enumerator count: 18
 // Alignment: 4
-// Size: 0x12
+// Size: 0x4
 enum class PulseValueType_t : uint32_t
 {
 	PVAL_INVALID = 0xffffffffffffffff,
@@ -1765,8 +1874,9 @@ enum class PulseValueType_t : uint32_t
 };
 
 // Registered binary: pulse_system.dll (project 'pulse_runtime_lib')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class PulseCursorExecResult_t : uint32_t
 {
 	Succeeded = 0x0,
@@ -1775,8 +1885,9 @@ enum class PulseCursorExecResult_t : uint32_t
 };
 
 // Registered binary: pulse_system.dll (project 'pulse_runtime_lib')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class PulseMethodCallMode_t : uint32_t
 {
 	// MPropertyFriendlyName "Wait For Completion"
@@ -1788,8 +1899,9 @@ enum class PulseMethodCallMode_t : uint32_t
 };
 
 // Registered binary: pulse_system.dll (project 'pulse_runtime_lib')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class PulseTestEnumShape_t : uint32_t
 {
 	// MPropertyFriendlyName "Circle"
@@ -1801,8 +1913,9 @@ enum class PulseTestEnumShape_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class TextureRepetitionMode_t : uint32_t
 {
 	// MPropertyFriendlyName "Per-Particle"
@@ -1812,8 +1925,9 @@ enum class TextureRepetitionMode_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class ParticleOrientationSetMode_t : uint32_t
 {
 	// MPropertyFriendlyName "Set From Velocity"
@@ -1823,6 +1937,7 @@ enum class ParticleOrientationSetMode_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class ParticleLightTypeChoiceList_t : uint32_t
@@ -1838,8 +1953,9 @@ enum class ParticleLightTypeChoiceList_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class ParticleLightFogLightingMode_t : uint32_t
 {
 	// MPropertyFriendlyName "None"
@@ -1851,8 +1967,9 @@ enum class ParticleLightFogLightingMode_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class ParticleOmni2LightTypeChoiceList_t : uint32_t
 {
 	// MPropertyFriendlyName "Point"
@@ -1862,8 +1979,9 @@ enum class ParticleOmni2LightTypeChoiceList_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class SpriteCardShaderType_t : uint32_t
 {
 	// MPropertyFriendlyName "Default"
@@ -1873,8 +1991,9 @@ enum class SpriteCardShaderType_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 6
 // Alignment: 4
-// Size: 0x6
+// Size: 0x4
 enum class ParticleImpulseType_t : uint32_t
 {
 	// MPropertyFriendlyName "None"
@@ -1892,8 +2011,9 @@ enum class ParticleImpulseType_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class ClosestPointTestType_t : uint32_t
 {
 	// MPropertyFriendlyName "Box"
@@ -1905,8 +2025,9 @@ enum class ClosestPointTestType_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class ParticleEndcapMode_t : uint32_t
 {
 	// MPropertyFriendlyName "Always Enabled"
@@ -1918,8 +2039,9 @@ enum class ParticleEndcapMode_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class ParticleSortingChoiceList_t : uint32_t
 {
 	// MPropertyFriendlyName "Distance - Nearest"
@@ -1929,8 +2051,9 @@ enum class ParticleSortingChoiceList_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class ParticleCollisionMode_t : uint32_t
 {
 	// MPropertyFriendlyName "Per-Particle Trace"
@@ -1946,8 +2069,9 @@ enum class ParticleCollisionMode_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 6
 // Alignment: 4
-// Size: 0x6
+// Size: 0x4
 enum class ParticleOrientationChoiceList_t : uint32_t
 {
 	// MPropertyFriendlyName "Screen Align"
@@ -1965,8 +2089,9 @@ enum class ParticleOrientationChoiceList_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class ParticleHitboxDataSelection_t : uint32_t
 {
 	// MPropertyFriendlyName "Average Hitbox Speed"
@@ -1976,8 +2101,9 @@ enum class ParticleHitboxDataSelection_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particleslib')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class ParticleTransformType_t : uint32_t
 {
 	PT_TYPE_INVALID = 0x0,
@@ -1988,8 +2114,9 @@ enum class ParticleTransformType_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 15
 // Alignment: 4
-// Size: 0xf
+// Size: 0x4
 enum class SpriteCardTextureChannel_t : uint32_t
 {
 	// MPropertyFriendlyName "RGB"
@@ -2025,6 +2152,7 @@ enum class SpriteCardTextureChannel_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class ParticleAlphaReferenceType_t : uint32_t
@@ -2040,8 +2168,9 @@ enum class ParticleAlphaReferenceType_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 10
 // Alignment: 4
-// Size: 0xa
+// Size: 0x4
 enum class SpriteCardTextureType_t : uint32_t
 {
 	// MPropertyFriendlyName "Diffuse Texture"
@@ -2067,8 +2196,9 @@ enum class SpriteCardTextureType_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class BBoxVolumeType_t : uint32_t
 {
 	// MPropertyFriendlyName "Bounding Box Volume"
@@ -2080,6 +2210,7 @@ enum class BBoxVolumeType_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class ParticleDetailLevel_t : uint32_t
@@ -2095,8 +2226,9 @@ enum class ParticleDetailLevel_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class ParticleSequenceCropOverride_t : uint32_t
 {
 	// MPropertyFriendlyName "Use Default Cropping Behavior"
@@ -2108,8 +2240,9 @@ enum class ParticleSequenceCropOverride_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class ParticleFalloffFunction_t : uint32_t
 {
 	// MPropertyFriendlyName "Constant - No Falloff"
@@ -2121,8 +2254,9 @@ enum class ParticleFalloffFunction_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class ParticleLightUnitChoiceList_t : uint32_t
 {
 	// MPropertyFriendlyName "Candelas"
@@ -2132,8 +2266,9 @@ enum class ParticleLightUnitChoiceList_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particleslib')
+// Enumerator count: 19
 // Alignment: 4
-// Size: 0x13
+// Size: 0x4
 enum class ParticleVecType_t : uint32_t
 {
 	PVEC_TYPE_INVALID = 0xffffffffffffffff,
@@ -2158,6 +2293,7 @@ enum class ParticleVecType_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particleslib')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class PFNoiseModifier_t : uint32_t
@@ -2169,6 +2305,7 @@ enum class PFNoiseModifier_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particleslib')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class ParticleFloatRandomMode_t : uint32_t
@@ -2180,8 +2317,9 @@ enum class ParticleFloatRandomMode_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class ParticleDepthFeatheringMode_t : uint32_t
 {
 	// MPropertyFriendlyName "Off"
@@ -2193,8 +2331,9 @@ enum class ParticleDepthFeatheringMode_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class MaterialProxyType_t : uint32_t
 {
 	// MPropertyFriendlyName "Status Effect"
@@ -2204,8 +2343,9 @@ enum class MaterialProxyType_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class ParticleLightnintBranchBehavior_t : uint32_t
 {
 	// MPropertyFriendlyName "Branch Towards Current Direction"
@@ -2215,8 +2355,9 @@ enum class ParticleLightnintBranchBehavior_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 7
 // Alignment: 4
-// Size: 0x7
+// Size: 0x4
 enum class ParticleOutputBlendMode_t : uint32_t
 {
 	// MPropertyFriendlyName "Alpha Blend"
@@ -2236,8 +2377,9 @@ enum class ParticleOutputBlendMode_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class SnapshotIndexType_t : uint32_t
 {
 	// MPropertyFriendlyName "Increment Index"
@@ -2247,6 +2389,7 @@ enum class SnapshotIndexType_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particleslib')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class ParticleFloatInputMode_t : uint32_t
@@ -2258,8 +2401,9 @@ enum class ParticleFloatInputMode_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class ParticleSelection_t : uint32_t
 {
 	// MPropertyFriendlyName "First/Oldest Particle"
@@ -2271,8 +2415,9 @@ enum class ParticleSelection_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 7
 // Alignment: 4
-// Size: 0x7
+// Size: 0x4
 enum class ParticleTextureLayerBlendType_t : uint32_t
 {
 	// MPropertyFriendlyName "Multiply"
@@ -2292,6 +2437,7 @@ enum class ParticleTextureLayerBlendType_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class ParticleTraceSet_t : uint32_t
@@ -2307,8 +2453,9 @@ enum class ParticleTraceSet_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particleslib')
+// Enumerator count: 8
 // Alignment: 4
-// Size: 0x8
+// Size: 0x4
 enum class ParticleFloatMapType_t : uint32_t
 {
 	PF_MAP_TYPE_INVALID = 0xffffffffffffffff,
@@ -2322,8 +2469,9 @@ enum class ParticleFloatMapType_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class ParticleLightBehaviorChoiceList_t : uint32_t
 {
 	// MPropertyFriendlyName "Follow Direction"
@@ -2335,8 +2483,9 @@ enum class ParticleLightBehaviorChoiceList_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class ParticleTopology_t : uint32_t
 {
 	// MPropertyFriendlyName "Points"
@@ -2352,8 +2501,9 @@ enum class ParticleTopology_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class ParticleAttrBoxFlags_t : uint32_t
 {
 	// MPropertyFriendlyName "None"
@@ -2363,8 +2513,9 @@ enum class ParticleAttrBoxFlags_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class AnimationType_t : uint32_t
 {
 	// MPropertyFriendlyName "Fixed Rate"
@@ -2376,8 +2527,9 @@ enum class AnimationType_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class HitboxLerpType_t : uint32_t
 {
 	// MPropertyFriendlyName "Lerp from Start/End Time"
@@ -2387,8 +2539,9 @@ enum class HitboxLerpType_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class ParticleRotationLockType_t : uint32_t
 {
 	// MPropertyFriendlyName "Don't Set"
@@ -2400,8 +2553,9 @@ enum class ParticleRotationLockType_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 9
 // Alignment: 4
-// Size: 0x9
+// Size: 0x4
 enum class VectorExpressionType_t : uint32_t
 {
 	// MPropertyFriendlyName "Uninitialized"
@@ -2425,8 +2579,9 @@ enum class VectorExpressionType_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class ParticleFogType_t : uint32_t
 {
 	// MPropertyFriendlyName "Use Game Default"
@@ -2438,8 +2593,9 @@ enum class ParticleFogType_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 7
 // Alignment: 4
-// Size: 0x7
+// Size: 0x4
 enum class VectorFloatExpressionType_t : uint32_t
 {
 	// MPropertyFriendlyName "Uninitialized"
@@ -2459,8 +2615,9 @@ enum class VectorFloatExpressionType_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 12
 // Alignment: 4
-// Size: 0xc
+// Size: 0x4
 enum class ParticlePinDistance_t : uint32_t
 {
 	// MPropertyFriendlyName "Don't Break"
@@ -2490,8 +2647,9 @@ enum class ParticlePinDistance_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 6
 // Alignment: 4
-// Size: 0x6
+// Size: 0x4
 enum class ParticleControlPointAxis_t : uint32_t
 {
 	// MPropertyFriendlyName "X Axis"
@@ -2509,8 +2667,9 @@ enum class ParticleControlPointAxis_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class ParticleHitboxBiasType_t : uint32_t
 {
 	// MPropertyFriendlyName "Bias relative to Entity"
@@ -2520,8 +2679,9 @@ enum class ParticleHitboxBiasType_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class ParticleDirectionNoiseType_t : uint32_t
 {
 	// MPropertyFriendlyName "Perlin"
@@ -2533,6 +2693,7 @@ enum class ParticleDirectionNoiseType_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particleslib')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class PFNoiseType_t : uint32_t
@@ -2544,8 +2705,9 @@ enum class PFNoiseType_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class ParticleLightingQuality_t : uint32_t
 {
 	// MPropertyFriendlyName "Per-Particle Lighting"
@@ -2557,8 +2719,9 @@ enum class ParticleLightingQuality_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particleslib')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class ParticleModelType_t : uint32_t
 {
 	PM_TYPE_INVALID = 0x0,
@@ -2569,8 +2732,9 @@ enum class ParticleModelType_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class ParticleParentSetMode_t : uint32_t
 {
 	// MPropertyFriendlyName "Set Self and Children"
@@ -2582,8 +2746,9 @@ enum class ParticleParentSetMode_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class StandardLightingAttenuationStyle_t : uint32_t
 {
 	// MPropertyFriendlyName "Quadratic/Linear Bias"
@@ -2593,8 +2758,9 @@ enum class StandardLightingAttenuationStyle_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class BlurFilterType_t : uint32_t
 {
 	// MPropertyFriendlyName "Gaussian"
@@ -2604,8 +2770,9 @@ enum class BlurFilterType_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 14
 // Alignment: 4
-// Size: 0xe
+// Size: 0x4
 enum class SpriteCardPerParticleScale_t : uint32_t
 {
 	// MPropertyFriendlyName "None"
@@ -2639,8 +2806,9 @@ enum class SpriteCardPerParticleScale_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 9
 // Alignment: 4
-// Size: 0x9
+// Size: 0x4
 enum class ScalarExpressionType_t : uint32_t
 {
 	// MPropertyFriendlyName "Uninitialized"
@@ -2664,6 +2832,7 @@ enum class ScalarExpressionType_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class DetailCombo_t : uint32_t
@@ -2679,8 +2848,9 @@ enum class DetailCombo_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 13
 // Alignment: 4
-// Size: 0xd
+// Size: 0x4
 enum class ParticleColorBlendType_t : uint32_t
 {
 	// MPropertyFriendlyName "Multiply"
@@ -2712,8 +2882,9 @@ enum class ParticleColorBlendType_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class ParticleColorBlendMode_t : uint32_t
 {
 	// MPropertyFriendlyName "Replace"
@@ -2729,8 +2900,9 @@ enum class ParticleColorBlendMode_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particleslib')
+// Enumerator count: 6
 // Alignment: 4
-// Size: 0x6
+// Size: 0x4
 enum class PFNoiseTurbulence_t : uint32_t
 {
 	PF_NOISE_TURB_NONE = 0x0,
@@ -2742,8 +2914,9 @@ enum class PFNoiseTurbulence_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 6
 // Alignment: 4
-// Size: 0x6
+// Size: 0x4
 enum class ParticlePostProcessPriorityGroup_t : uint32_t
 {
 	// MPropertyFriendlyName "Level Volume"
@@ -2761,8 +2934,9 @@ enum class ParticlePostProcessPriorityGroup_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particleslib')
+// Enumerator count: 24
 // Alignment: 4
-// Size: 0x18
+// Size: 0x4
 enum class ParticleFloatType_t : uint32_t
 {
 	PF_TYPE_INVALID = 0xffffffffffffffff,
@@ -2792,8 +2966,9 @@ enum class ParticleFloatType_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class InheritableBoolType_t : uint32_t
 {
 	// MPropertyFriendlyName "Inherit from Parent"
@@ -2805,8 +2980,9 @@ enum class InheritableBoolType_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class PetGroundType_t : uint32_t
 {
 	PET_GROUND_NONE = 0x0,
@@ -2815,6 +2991,7 @@ enum class PetGroundType_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class ParticleVRHandChoiceList_t : uint32_t
@@ -2830,8 +3007,9 @@ enum class ParticleVRHandChoiceList_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 7
 // Alignment: 4
-// Size: 0x7
+// Size: 0x4
 enum class PFuncVisualizationType_t : uint32_t
 {
 	// MPropertyFriendlyName "Visualization Sphere Wireframe"
@@ -2851,8 +3029,9 @@ enum class PFuncVisualizationType_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class ParticleTraceMissBehavior_t : uint32_t
 {
 	// MPropertyFriendlyName "Do Nothing"
@@ -2864,8 +3043,9 @@ enum class ParticleTraceMissBehavior_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particleslib')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class ParticleFloatBiasType_t : uint32_t
 {
 	PF_BIAS_TYPE_INVALID = 0xffffffffffffffff,
@@ -2876,6 +3056,7 @@ enum class ParticleFloatBiasType_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class MissingParentInheritBehavior_t : uint32_t
@@ -2891,8 +3072,9 @@ enum class MissingParentInheritBehavior_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 7
 // Alignment: 4
-// Size: 0x7
+// Size: 0x4
 enum class Detail2Combo_t : uint32_t
 {
 	// MPropertyFriendlyName "Uninitialized"
@@ -2912,8 +3094,9 @@ enum class Detail2Combo_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 6
 // Alignment: 4
-// Size: 0x6
+// Size: 0x4
 enum class ParticleSetMethod_t : uint32_t
 {
 	// MPropertyFriendlyName "Set Value"
@@ -2931,8 +3114,9 @@ enum class ParticleSetMethod_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 13
 // Alignment: 1
-// Size: 0xd
+// Size: 0x1
 enum class MoveType_t : uint8_t
 {
 	MOVETYPE_NONE = 0x0,
@@ -2951,8 +3135,9 @@ enum class MoveType_t : uint8_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class DOTA_ITEM_STATE : uint32_t
 {
 	DOTA_ITEM_NEEDS_EQUIPPED = 0x0,
@@ -2960,8 +3145,9 @@ enum class DOTA_ITEM_STATE : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class EOverrideBlockLOS_t : uint32_t
 {
 	BLOCK_LOS_DEFAULT = 0x0,
@@ -2970,8 +3156,9 @@ enum class EOverrideBlockLOS_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 25
 // Alignment: 4
-// Size: 0x19
+// Size: 0x4
 enum class DOTAChatChannelType_t : uint32_t
 {
 	DOTAChannelType_Regional = 0x0,
@@ -3002,8 +3189,9 @@ enum class DOTAChatChannelType_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 7
 // Alignment: 4
-// Size: 0x7
+// Size: 0x4
 enum class ELeagueRegion : uint32_t
 {
 	LEAGUE_REGION_UNSET = 0x0,
@@ -3016,8 +3204,9 @@ enum class ELeagueRegion : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class DOTALobbyVisibility : uint32_t
 {
 	DOTALobbyVisibility_Public = 0x0,
@@ -3026,8 +3215,9 @@ enum class DOTALobbyVisibility : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 34
 // Alignment: 4
-// Size: 0x22
+// Size: 0x4
 enum class DotaDefaultUIElement_t : uint32_t
 {
 	DOTA_DEFAULT_UI_INVALID = 0xffffffffffffffff,
@@ -3067,8 +3257,9 @@ enum class DotaDefaultUIElement_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 8
 // Alignment: 4
-// Size: 0x8
+// Size: 0x4
 enum class EFantasyOperationTarget : uint32_t
 {
 	k_eFantasyOperationTarget_None = 0x0,
@@ -3082,6 +3273,7 @@ enum class EFantasyOperationTarget : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class SPELL_DISPELLABLE_TYPES : uint32_t
@@ -3093,8 +3285,9 @@ enum class SPELL_DISPELLABLE_TYPES : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 17
 // Alignment: 4
-// Size: 0x11
+// Size: 0x4
 enum class DOTA_SHOP_CATEGORY : uint32_t
 {
 	DOTA_SHOP_CATEGORY_NONE = 0xffffffffffffffff,
@@ -3117,6 +3310,7 @@ enum class DOTA_SHOP_CATEGORY : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class ETeamTrackedStatImpl : uint32_t
@@ -3128,8 +3322,9 @@ enum class ETeamTrackedStatImpl : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 7
 // Alignment: 4
-// Size: 0x7
+// Size: 0x4
 enum class ObserverMode_t : uint32_t
 {
 	OBS_MODE_NONE = 0x0,
@@ -3142,8 +3337,9 @@ enum class ObserverMode_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 7
 // Alignment: 4
-// Size: 0x7
+// Size: 0x4
 enum class EBaseClientMessages : uint32_t
 {
 	CM_CustomGameEvent = 0x118,
@@ -3156,8 +3352,9 @@ enum class EBaseClientMessages : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 22
 // Alignment: 4
-// Size: 0x16
+// Size: 0x4
 enum class EHeroStatType : uint32_t
 {
 	k_EHeroStatType_None = 0x0,
@@ -3185,8 +3382,9 @@ enum class EHeroStatType : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class DOTA_MODIFIER_ENTRY_TYPE : uint32_t
 {
 	DOTA_MODIFIER_ENTRY_TYPE_ACTIVE = 0x1,
@@ -3194,8 +3392,9 @@ enum class DOTA_MODIFIER_ENTRY_TYPE : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 7
 // Alignment: 4
-// Size: 0x7
+// Size: 0x4
 enum class MatchType : uint32_t
 {
 	MATCH_TYPE_CASUAL = 0x0,
@@ -3208,8 +3407,9 @@ enum class MatchType : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class CanPlaySequence_t : uint32_t
 {
 	CANNOT_PLAY = 0x0,
@@ -3218,8 +3418,9 @@ enum class CanPlaySequence_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 8
 // Alignment: 4
-// Size: 0x8
+// Size: 0x4
 enum class MatchLanguages : uint32_t
 {
 	MATCH_LANGUAGE_INVALID = 0x0,
@@ -3233,8 +3434,9 @@ enum class MatchLanguages : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 7
 // Alignment: 4
-// Size: 0x7
+// Size: 0x4
 enum class GCConnectionStatus : uint32_t
 {
 	GCConnectionStatus_HAVE_SESSION = 0x0,
@@ -3247,8 +3449,9 @@ enum class GCConnectionStatus : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 10
 // Alignment: 4
-// Size: 0xa
+// Size: 0x4
 enum class Disposition_t : uint32_t
 {
 	D_ER = 0x0,
@@ -3264,8 +3467,9 @@ enum class Disposition_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class ValueRemapperHapticsType_t : uint32_t
 {
 	HaticsType_Default = 0x0,
@@ -3273,8 +3477,9 @@ enum class ValueRemapperHapticsType_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 26
 // Alignment: 4
-// Size: 0x1a
+// Size: 0x4
 enum class DOTA_GameMode : uint32_t
 {
 	DOTA_GAMEMODE_NONE = 0x0,
@@ -3306,6 +3511,7 @@ enum class DOTA_GameMode : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class EMatchBehaviorScoreVariance : uint32_t
@@ -3317,8 +3523,9 @@ enum class EMatchBehaviorScoreVariance : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 11
 // Alignment: 4
-// Size: 0xb
+// Size: 0x4
 enum class DOTASpeechType_t : uint32_t
 {
 	DOTA_SPEECH_USER_INVALID = 0x0,
@@ -3335,8 +3542,9 @@ enum class DOTASpeechType_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class EReadyCheckStatus : uint32_t
 {
 	k_EReadyCheckStatus_Unknown = 0x0,
@@ -3345,8 +3553,9 @@ enum class EReadyCheckStatus : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class LuaModifierType : uint32_t
 {
 	LUA_MODIFIER_MOTION_NONE = 0x0,
@@ -3357,8 +3566,9 @@ enum class LuaModifierType : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 13
 // Alignment: 4
-// Size: 0xd
+// Size: 0x4
 enum class TakeDamageFlags_t : uint32_t
 {
 	DFLAG_NONE = 0x0,
@@ -3379,8 +3589,9 @@ enum class TakeDamageFlags_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 18
 // Alignment: 4
-// Size: 0x12
+// Size: 0x4
 enum class WeaponSound_t : uint32_t
 {
 	WEAPON_SOUND_EMPTY = 0x0,
@@ -3405,8 +3616,9 @@ enum class WeaponSound_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class ValueRemapperInputType_t : uint32_t
 {
 	InputType_PlayerShootPosition = 0x0,
@@ -3414,8 +3626,9 @@ enum class ValueRemapperInputType_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 12
 // Alignment: 4
-// Size: 0xc
+// Size: 0x4
 enum class DOTA_RUNES : uint32_t
 {
 	DOTA_RUNE_INVALID = 0xffffffffffffffff,
@@ -3433,8 +3646,9 @@ enum class DOTA_RUNES : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 9
 // Alignment: 4
-// Size: 0x9
+// Size: 0x4
 enum class EBroadcastTimelineEvent : uint32_t
 {
 	EBroadcastTimelineEvent_MatchStarted = 0x1,
@@ -3449,8 +3663,9 @@ enum class EBroadcastTimelineEvent : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class ELeagueDivision : uint32_t
 {
 	LEAGUE_DIVISION_UNSET = 0x0,
@@ -3459,8 +3674,9 @@ enum class ELeagueDivision : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class ShadowType_t : uint32_t
 {
 	SHADOWS_NONE = 0x0,
@@ -3468,8 +3684,9 @@ enum class ShadowType_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class ModifyDamageReturn_t : uint32_t
 {
 	CONTINUE_TO_APPLY_DAMAGE = 0x0,
@@ -3477,8 +3694,9 @@ enum class ModifyDamageReturn_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class ELobbyMemberCoachRequestState : uint32_t
 {
 	k_eLobbyMemberCoachRequestState_None = 0x0,
@@ -3487,8 +3705,9 @@ enum class ELobbyMemberCoachRequestState : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 6
 // Alignment: 4
-// Size: 0x6
+// Size: 0x4
 enum class GCProtoBufMsgSrc : uint32_t
 {
 	GCProtoBufMsgSrc_Unspecified = 0x0,
@@ -3500,8 +3719,9 @@ enum class GCProtoBufMsgSrc : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 25
 // Alignment: 4
-// Size: 0x19
+// Size: 0x4
 enum class EGCMsgInitiateTradeResponse : uint32_t
 {
 	k_EGCMsgInitiateTradeResponse_Accepted = 0x0,
@@ -3532,8 +3752,9 @@ enum class EGCMsgInitiateTradeResponse : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class PortraitSummonsDisplayMode_t : uint32_t
 {
 	PORTRAIT_SUMMONS_DISPLAY_MODE_INVALID = 0xffffffffffffffff,
@@ -3544,8 +3765,9 @@ enum class PortraitSummonsDisplayMode_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class BrushSolidities_e : uint32_t
 {
 	BRUSHSOLID_TOGGLE = 0x0,
@@ -3554,8 +3776,9 @@ enum class BrushSolidities_e : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class TRAIN_CODE : uint32_t
 {
 	TRAIN_SAFE = 0x0,
@@ -3564,8 +3787,9 @@ enum class TRAIN_CODE : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 6
 // Alignment: 4
-// Size: 0x6
+// Size: 0x4
 enum class DOTA_ABILITY_TARGET_TYPE : uint32_t
 {
 	DOTA_ABILITY_TARGET_NONE = 0x0,
@@ -3577,8 +3801,9 @@ enum class DOTA_ABILITY_TARGET_TYPE : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 7
 // Alignment: 4
-// Size: 0x7
+// Size: 0x4
 enum class ELeagueStatus : uint32_t
 {
 	LEAGUE_STATUS_UNSET = 0x0,
@@ -3591,8 +3816,9 @@ enum class ELeagueStatus : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 6
 // Alignment: 4
-// Size: 0x6
+// Size: 0x4
 enum class ShakeCommand_t : uint32_t
 {
 	SHAKE_START = 0x0,
@@ -3604,8 +3830,9 @@ enum class ShakeCommand_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class TowerState_t : uint32_t
 {
 	TOWER_STATE_ACTIVE = 0x0,
@@ -3616,8 +3843,9 @@ enum class TowerState_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 125
 // Alignment: 4
-// Size: 0x7d
+// Size: 0x4
 enum class EGCItemMsg : uint32_t
 {
 	k_EMsgGCBase = 0x3e8,
@@ -3748,8 +3976,9 @@ enum class EGCItemMsg : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class quest_hud_types_t : uint32_t
 {
 	QUEST_HUD_TYPE_DEFAULT = 0x0,
@@ -3760,8 +3989,9 @@ enum class quest_hud_types_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 7
 // Alignment: 4
-// Size: 0x7
+// Size: 0x4
 enum class DOTA_PURGE_FLAGS : uint32_t
 {
 	DOTA_PURGE_FLAG_NONE = 0x0,
@@ -3774,8 +4004,9 @@ enum class DOTA_PURGE_FLAGS : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class EHapticPulseType : uint32_t
 {
 	VR_HAND_HAPTIC_PULSE_LIGHT = 0x0,
@@ -3784,8 +4015,9 @@ enum class EHapticPulseType : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class PointWorldTextJustifyHorizontal_t : uint32_t
 {
 	POINT_WORLD_TEXT_JUSTIFY_HORIZONTAL_LEFT = 0x0,
@@ -3794,8 +4026,9 @@ enum class PointWorldTextJustifyHorizontal_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class EFantasyStatType : uint32_t
 {
 	k_eFantasyStatType_Player = 0x0,
@@ -3804,8 +4037,9 @@ enum class EFantasyStatType : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 6
 // Alignment: 4
-// Size: 0x6
+// Size: 0x4
 enum class EGCPlatform : uint32_t
 {
 	k_eGCPlatform_None = 0x0,
@@ -3817,8 +4051,9 @@ enum class EGCPlatform : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class EEventActionScoreMode : uint32_t
 {
 	k_eEventActionScoreMode_Add = 0x0,
@@ -3826,8 +4061,9 @@ enum class EEventActionScoreMode : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class PingConfirmationIconType : uint32_t
 {
 	PING_CONFIRMATION_STATE_ICON_TYPE_ATTACK = 0x0,
@@ -3836,8 +4072,9 @@ enum class PingConfirmationIconType : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class PointTemplateOwnerSpawnGroupType_t : uint32_t
 {
 	INSERT_INTO_POINT_TEMPLATE_SPAWN_GROUP = 0x0,
@@ -3846,8 +4083,9 @@ enum class PointTemplateOwnerSpawnGroupType_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 26
 // Alignment: 4
-// Size: 0x1a
+// Size: 0x4
 enum class ETEProtobufIds : uint32_t
 {
 	TE_EffectDispatchId = 0x190,
@@ -3879,6 +4117,7 @@ enum class ETEProtobufIds : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class ValueRemapperOutputType_t : uint32_t
@@ -3890,16 +4129,18 @@ enum class ValueRemapperOutputType_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 1
 // Alignment: 4
-// Size: 0x1
+// Size: 0x4
 enum class PrefetchType : uint32_t
 {
 	PFT_SOUND = 0x0,
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 7
 // Alignment: 4
-// Size: 0x7
+// Size: 0x4
 enum class IChoreoServices__ChoreoState_t : uint32_t
 {
 	STATE_PRE_SCRIPT = 0x0,
@@ -3912,8 +4153,9 @@ enum class IChoreoServices__ChoreoState_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 6
 // Alignment: 1
-// Size: 0x6
+// Size: 0x1
 enum class MoveCollide_t : uint8_t
 {
 	MOVECOLLIDE_DEFAULT = 0x0,
@@ -3925,8 +4167,9 @@ enum class MoveCollide_t : uint8_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 9
 // Alignment: 4
-// Size: 0x9
+// Size: 0x4
 enum class EGCMsgResponse : uint32_t
 {
 	k_EGCMsgResponseOK = 0x0,
@@ -3941,8 +4184,9 @@ enum class EGCMsgResponse : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class attributeprovidertypes_t : uint32_t
 {
 	PROVIDER_GENERIC = 0x0,
@@ -3950,8 +4194,9 @@ enum class attributeprovidertypes_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class PointWorldTextJustifyVertical_t : uint32_t
 {
 	POINT_WORLD_TEXT_JUSTIFY_VERTICAL_BOTTOM = 0x0,
@@ -3960,8 +4205,9 @@ enum class PointWorldTextJustifyVertical_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class EReadyCheckRequestResult : uint32_t
 {
 	k_EReadyCheckRequestResult_Success = 0x0,
@@ -3972,8 +4218,9 @@ enum class EReadyCheckRequestResult : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 18
 // Alignment: 4
-// Size: 0x12
+// Size: 0x4
 enum class DOTATeam_t : uint32_t
 {
 	DOTA_TEAM_FIRST = 0x2,
@@ -3997,8 +4244,9 @@ enum class DOTATeam_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 48
 // Alignment: 4
-// Size: 0x30
+// Size: 0x4
 enum class EEvent : uint32_t
 {
 	EVENT_ID_NONE = 0x0,
@@ -4052,6 +4300,7 @@ enum class EEvent : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class ELeaguePhase : uint32_t
@@ -4063,8 +4312,9 @@ enum class ELeaguePhase : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 12
 // Alignment: 4
-// Size: 0xc
+// Size: 0x4
 // 
 // MEnumFlagsWithOverlappingBits
 enum class DOTA_UNIT_TARGET_TYPE : uint32_t
@@ -4084,8 +4334,9 @@ enum class DOTA_UNIT_TARGET_TYPE : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 22
 // Alignment: 4
-// Size: 0x16
+// Size: 0x4
 enum class DamageTypes_t : uint32_t
 {
 	DMG_GENERIC = 0x0,
@@ -4115,8 +4366,9 @@ enum class DamageTypes_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 9
 // Alignment: 1
-// Size: 0x9
+// Size: 0x1
 enum class SolidType_t : uint8_t
 {
 	SOLID_NONE = 0x0,
@@ -4131,8 +4383,9 @@ enum class SolidType_t : uint8_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class DOTA_CM_PICK : uint32_t
 {
 	DOTA_CM_RANDOM = 0x0,
@@ -4141,8 +4394,9 @@ enum class DOTA_CM_PICK : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 11
 // Alignment: 4
-// Size: 0xb
+// Size: 0x4
 enum class DOTAPostGameColumn_t : uint32_t
 {
 	DOTA_POST_GAME_COLUMN_LEVEL = 0x0,
@@ -4159,8 +4413,9 @@ enum class DOTAPostGameColumn_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 10
 // Alignment: 4
-// Size: 0xa
+// Size: 0x4
 enum class DOTAPortraitEnvironmentType_t : uint32_t
 {
 	DOTA_PORTRAIT_ENVIRONMENT_INVALID = 0xffffffffffffffff,
@@ -4176,8 +4431,9 @@ enum class DOTAPortraitEnvironmentType_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 20
 // Alignment: 4
-// Size: 0x14
+// Size: 0x4
 enum class Fantasy_Scoring : uint32_t
 {
 	FANTASY_SCORING_KILLS = 0x0,
@@ -4203,8 +4459,9 @@ enum class Fantasy_Scoring : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 6
 // Alignment: 4
-// Size: 0x6
+// Size: 0x4
 enum class EPlayerTrackedStatImpl : uint32_t
 {
 	k_ePlayerTrackedStatImpl_Invalid = 0x0,
@@ -4216,8 +4473,9 @@ enum class EPlayerTrackedStatImpl : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class Fantasy_Roles : uint32_t
 {
 	FANTASY_ROLE_UNDEFINED = 0x0,
@@ -4228,8 +4486,9 @@ enum class Fantasy_Roles : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class DOTA_CHAT_INFORMATIONAL : uint32_t
 {
 	INFO_COOP_BATTLE_POINTS_RULES = 0x1,
@@ -4240,8 +4499,9 @@ enum class DOTA_CHAT_INFORMATIONAL : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 13
 // Alignment: 4
-// Size: 0xd
+// Size: 0x4
 enum class ENewBloomGiftingResponse : uint32_t
 {
 	kENewBloomGifting_Success = 0x0,
@@ -4260,8 +4520,9 @@ enum class ENewBloomGiftingResponse : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class quest_text_replace_values_t : uint32_t
 {
 	QUEST_TEXT_REPLACE_VALUE_CURRENT_VALUE = 0x0,
@@ -4272,6 +4533,7 @@ enum class quest_text_replace_values_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class PetLevelup_Rule_t : uint32_t
@@ -4283,8 +4545,9 @@ enum class PetLevelup_Rule_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class Bidirectional_Messages : uint32_t
 {
 	bi_RebroadcastGameEvent = 0x10,
@@ -4293,6 +4556,7 @@ enum class Bidirectional_Messages : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class EDPCFavoriteType : uint32_t
@@ -4304,16 +4568,18 @@ enum class EDPCFavoriteType : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 1
 // Alignment: 4
-// Size: 0x1
+// Size: 0x4
 enum class navproperties_t : uint32_t
 {
 	NAV_IGNORE = 0x1,
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 10
 // Alignment: 4
-// Size: 0xa
+// Size: 0x4
 enum class Fantasy_Selection_Mode : uint32_t
 {
 	FANTASY_SELECTION_INVALID = 0x0,
@@ -4329,8 +4595,9 @@ enum class Fantasy_Selection_Mode : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 22
 // Alignment: 4
-// Size: 0x16
+// Size: 0x4
 enum class DOTA_UNIT_TARGET_FLAGS : uint32_t
 {
 	DOTA_UNIT_TARGET_FLAG_NONE = 0x0,
@@ -4358,8 +4625,9 @@ enum class DOTA_UNIT_TARGET_FLAGS : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 8
 // Alignment: 4
-// Size: 0x8
+// Size: 0x4
 enum class attackfail : uint32_t
 {
 	DOTA_ATTACK_RECORD_FAIL_NO = 0x0,
@@ -4373,8 +4641,9 @@ enum class attackfail : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 14
 // Alignment: 4
-// Size: 0xe
+// Size: 0x4
 enum class DOTA_GameState : uint32_t
 {
 	DOTA_GAMERULES_STATE_INIT = 0x0,
@@ -4394,8 +4663,9 @@ enum class DOTA_GameState : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class ELeagueNodeType : uint32_t
 {
 	INVALID_NODE_TYPE = 0x0,
@@ -4406,8 +4676,9 @@ enum class ELeagueNodeType : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class SimpleConstraintSoundProfile__SimpleConstraintsSoundProfileKeypoints_t : uint32_t
 {
 	kMIN_THRESHOLD = 0x0,
@@ -4416,8 +4687,9 @@ enum class SimpleConstraintSoundProfile__SimpleConstraintsSoundProfileKeypoints_
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 63
 // Alignment: 4
-// Size: 0x3f
+// Size: 0x4
 enum class DOTA_HeroPickState : uint32_t
 {
 	DOTA_HEROPICK_STATE_NONE = 0x0,
@@ -4486,8 +4758,9 @@ enum class DOTA_HeroPickState : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 7
 // Alignment: 4
-// Size: 0x7
+// Size: 0x4
 enum class PlayerConnectedState : uint32_t
 {
 	PlayerNeverConnected = 0xffffffffffffffff,
@@ -4500,8 +4773,9 @@ enum class PlayerConnectedState : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class ChatIgnoreType_t : uint32_t
 {
 	CHAT_IGNORE_NONE = 0x0,
@@ -4510,8 +4784,9 @@ enum class ChatIgnoreType_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class DoorState_t : uint32_t
 {
 	DOOR_STATE_CLOSED = 0x0,
@@ -4522,8 +4797,9 @@ enum class DoorState_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 6
 // Alignment: 4
-// Size: 0x6
+// Size: 0x4
 enum class LatchDirtyPermission_t : uint32_t
 {
 	LATCH_DIRTY_DISALLOW = 0x0,
@@ -4535,8 +4811,9 @@ enum class LatchDirtyPermission_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class subquest_text_replace_values_t : uint32_t
 {
 	SUBQUEST_TEXT_REPLACE_VALUE_CURRENT_VALUE = 0x0,
@@ -4545,8 +4822,9 @@ enum class subquest_text_replace_values_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 27
 // Alignment: 4
-// Size: 0x1b
+// Size: 0x4
 enum class RumbleEffect_t : uint32_t
 {
 	RUMBLE_INVALID = 0xffffffffffffffff,
@@ -4581,8 +4859,9 @@ enum class RumbleEffect_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 16
 // Alignment: 4
-// Size: 0x10
+// Size: 0x4
 enum class vote_create_failed_t : uint32_t
 {
 	VOTE_FAILED_GENERIC = 0x0,
@@ -4604,8 +4883,9 @@ enum class vote_create_failed_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 20
 // Alignment: 1
-// Size: 0x14
+// Size: 0x1
 enum class RenderFx_t : uint8_t
 {
 	kRenderFxNone = 0x0,
@@ -4631,8 +4911,9 @@ enum class RenderFx_t : uint8_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 10
 // Alignment: 4
-// Size: 0xa
+// Size: 0x4
 enum class DOTABotDifficulty : uint32_t
 {
 	BOT_DIFFICULTY_PASSIVE = 0x0,
@@ -4648,8 +4929,9 @@ enum class DOTABotDifficulty : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class ECustomGameWhitelistState : uint32_t
 {
 	CUSTOM_GAME_WHITELIST_STATE_UNKNOWN = 0x0,
@@ -4658,8 +4940,9 @@ enum class ECustomGameWhitelistState : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 11
 // Alignment: 4
-// Size: 0xb
+// Size: 0x4
 enum class ERankType : uint32_t
 {
 	k_ERankType_Invalid = 0x0,
@@ -4676,8 +4959,9 @@ enum class ERankType : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 11
 // Alignment: 4
-// Size: 0xb
+// Size: 0x4
 enum class AttributeDerivedStats : uint32_t
 {
 	DOTA_ATTRIBUTE_STRENGTH_DAMAGE = 0x0,
@@ -4694,8 +4978,9 @@ enum class AttributeDerivedStats : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 45
 // Alignment: 4
-// Size: 0x2d
+// Size: 0x4
 enum class DOTA_COMBATLOG_TYPES : uint32_t
 {
 	DOTA_COMBATLOG_INVALID = 0xffffffffffffffff,
@@ -4746,8 +5031,9 @@ enum class DOTA_COMBATLOG_TYPES : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class CRR_Response__ResponseEnum_t : uint32_t
 {
 	MAX_RESPONSE_NAME = 0xc0,
@@ -4755,8 +5041,9 @@ enum class CRR_Response__ResponseEnum_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 22
 // Alignment: 4
-// Size: 0x16
+// Size: 0x4
 enum class EGCBaseMsg : uint32_t
 {
 	k_EMsgGCInviteToParty = 0x1195,
@@ -4784,8 +5071,9 @@ enum class EGCBaseMsg : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 295
 // Alignment: 4
-// Size: 0x127
+// Size: 0x4
 enum class modifierfunction : uint32_t
 {
 	// MScriptDescription "GetModifierPreAttack_BonusDamage"
@@ -5379,8 +5667,9 @@ enum class modifierfunction : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class PartnerAccountType : uint32_t
 {
 	PARTNER_NONE = 0x0,
@@ -5389,8 +5678,9 @@ enum class PartnerAccountType : uint32_t
 };
 
 // Registered binary: server.dll (project 'navlib')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class NavDirType : uint32_t
 {
 	NORTH = 0x0,
@@ -5401,8 +5691,9 @@ enum class NavDirType : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class subquest_player_stat_types_t : uint32_t
 {
 	SUBQUEST_PLAYER_STAT_GOLD = 0x0,
@@ -5413,8 +5704,9 @@ enum class subquest_player_stat_types_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class ValueRemapperRatchetType_t : uint32_t
 {
 	RatchetType_Absolute = 0x0,
@@ -5422,8 +5714,9 @@ enum class ValueRemapperRatchetType_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 15
 // Alignment: 4
-// Size: 0xf
+// Size: 0x4
 enum class DOTA_GC_TEAM : uint32_t
 {
 	DOTA_GC_TEAM_GOOD_GUYS = 0x0,
@@ -5444,8 +5737,9 @@ enum class DOTA_GC_TEAM : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class WeaponSwitchReason_t : uint32_t
 {
 	eDrawn = 0x0,
@@ -5454,8 +5748,9 @@ enum class WeaponSwitchReason_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class ObstructionRelationshipClass_t : uint32_t
 {
 	DOTA_OBSTRUCTION_RELATIONSHIP_NONE = 0x0,
@@ -5466,8 +5761,9 @@ enum class ObstructionRelationshipClass_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 48
 // Alignment: 4
-// Size: 0x30
+// Size: 0x4
 enum class eEconItemOrigin : uint32_t
 {
 	kEconItemOrigin_Invalid = 0xffffffffffffffff,
@@ -5521,8 +5817,9 @@ enum class eEconItemOrigin : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class TrackOrientationType_t : uint32_t
 {
 	TrackOrientation_Fixed = 0x0,
@@ -5531,8 +5828,9 @@ enum class TrackOrientationType_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class PointTemplateClientOnlyEntityBehavior_t : uint32_t
 {
 	CREATE_FOR_CURRENTLY_CONNECTED_CLIENTS_ONLY = 0x0,
@@ -5540,8 +5838,9 @@ enum class PointTemplateClientOnlyEntityBehavior_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class EMatchTrackedStatImpl : uint32_t
 {
 	k_eMatchTrackedStatImpl_Invalid = 0x0,
@@ -5552,8 +5851,9 @@ enum class EMatchTrackedStatImpl : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class DOTASelectionPriorityRules : uint32_t
 {
 	k_DOTASelectionPriorityRules_Manual = 0x0,
@@ -5561,8 +5861,9 @@ enum class DOTASelectionPriorityRules : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 16
 // Alignment: 4
-// Size: 0x10
+// Size: 0x4
 enum class DOTACommType_t : uint32_t
 {
 	DOTA_COMM_TYPE_NONE = 0x0,
@@ -5584,8 +5885,9 @@ enum class DOTACommType_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class EntitySubclassScope_t : uint32_t
 {
 	SUBCLASS_SCOPE_NONE = 0xffffffffffffffff,
@@ -5596,8 +5898,9 @@ enum class EntitySubclassScope_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class ReplayEventType_t : uint32_t
 {
 	REPLAY_EVENT_CANCEL = 0x0,
@@ -5608,8 +5911,9 @@ enum class ReplayEventType_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class ESourceEngine : uint32_t
 {
 	k_ESE_Source1 = 0x0,
@@ -5617,8 +5921,9 @@ enum class ESourceEngine : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 29
 // Alignment: 4
-// Size: 0x1d
+// Size: 0x4
 enum class UnitFilterResult : uint32_t
 {
 	UF_SUCCESS = 0x0,
@@ -5653,8 +5958,9 @@ enum class UnitFilterResult : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 7
 // Alignment: 4
-// Size: 0x7
+// Size: 0x4
 enum class BeamType_t : uint32_t
 {
 	BEAM_INVALID = 0x0,
@@ -5667,8 +5973,9 @@ enum class BeamType_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 6
 // Alignment: 4
-// Size: 0x6
+// Size: 0x4
 enum class EOverwatchReportReason : uint32_t
 {
 	k_EOverwatchReportReason_Unknown = 0x0,
@@ -5680,8 +5987,9 @@ enum class EOverwatchReportReason : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 6
 // Alignment: 4
-// Size: 0x6
+// Size: 0x4
 enum class HierarchyType_t : uint32_t
 {
 	HIERARCHY_NONE = 0x0,
@@ -5693,8 +6001,9 @@ enum class HierarchyType_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 13
 // Alignment: 4
-// Size: 0xd
+// Size: 0x4
 enum class EBaseGameEvents : uint32_t
 {
 	GE_VDebugGameSessionIDEvent = 0xc8,
@@ -5713,8 +6022,9 @@ enum class EBaseGameEvents : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class AmmoFlags_t : uint32_t
 {
 	AMMO_FORCE_DROP_IF_CARRIED = 0x1,
@@ -5725,8 +6035,9 @@ enum class AmmoFlags_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class EProjectionEvent : uint32_t
 {
 	ePE_FirstBlood = 0x0,
@@ -5734,8 +6045,9 @@ enum class EProjectionEvent : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 14
 // Alignment: 4
-// Size: 0xe
+// Size: 0x4
 enum class EGCMsgUseItemResponse : uint32_t
 {
 	k_EGCMsgUseItemResponse_ItemUsed = 0x0,
@@ -5755,8 +6067,9 @@ enum class EGCMsgUseItemResponse : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 40
 // Alignment: 8
-// Size: 0x28
+// Size: 0x8
 enum class DebugOverlayBits_t : uint64_t
 {
 	// MPropertyFriendlyName "Ent Text"
@@ -5880,8 +6193,9 @@ enum class DebugOverlayBits_t : uint64_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 7
 // Alignment: 4
-// Size: 0x7
+// Size: 0x4
 enum class EDotaEntityMessages : uint32_t
 {
 	DOTA_UNIT_SPEECH = 0x0,
@@ -5894,8 +6208,9 @@ enum class EDotaEntityMessages : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class PointWorldTextReorientMode_t : uint32_t
 {
 	POINT_WORLD_TEXT_REORIENT_NONE = 0x0,
@@ -5903,8 +6218,9 @@ enum class PointWorldTextReorientMode_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class DOTA_ThreatLevel : uint32_t
 {
 	DOTA_THREATLEVEL_Ultra = 0x0,
@@ -5915,8 +6231,9 @@ enum class DOTA_ThreatLevel : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 6
 // Alignment: 4
-// Size: 0x6
+// Size: 0x4
 enum class ScoutState_t : uint32_t
 {
 	SCOUT_STATE_INIT = 0xffffffffffffffff,
@@ -5928,8 +6245,9 @@ enum class ScoutState_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 20
 // Alignment: 4
-// Size: 0x14
+// Size: 0x4
 enum class EPlayerVoiceListenState : uint32_t
 {
 	kPVLS_None = 0x0,
@@ -5955,8 +6273,9 @@ enum class EPlayerVoiceListenState : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 8
 // Alignment: 4
-// Size: 0x8
+// Size: 0x4
 enum class EFantasyMutationOperation : uint32_t
 {
 	k_eFantasyMutationOperation_RollEverything = 0x0,
@@ -5970,6 +6289,7 @@ enum class EFantasyMutationOperation : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class LobbyDotaTVDelay : uint32_t
@@ -5981,8 +6301,9 @@ enum class LobbyDotaTVDelay : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 12
 // Alignment: 4
-// Size: 0xc
+// Size: 0x4
 enum class DotaGestureSlot_t : uint32_t
 {
 	GESTURE_SLOT_NONE = 0xffffffffffffffff,
@@ -6000,8 +6321,9 @@ enum class DotaGestureSlot_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 14
 // Alignment: 4
-// Size: 0xe
+// Size: 0x4
 enum class HitGroup_t : uint32_t
 {
 	HITGROUP_INVALID = 0xffffffffffffffff,
@@ -6021,8 +6343,9 @@ enum class HitGroup_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 18
 // Alignment: 8
-// Size: 0x12
+// Size: 0x8
 enum class InputBitMask_t : uint64_t
 {
 	// MEnumeratorIsNotAFlag
@@ -6049,8 +6372,9 @@ enum class InputBitMask_t : uint64_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class DOTABehaviorLevel_t : uint32_t
 {
 	DOTA_BEHAVIOR_LEVEL_NONE = 0x0,
@@ -6061,8 +6385,9 @@ enum class DOTABehaviorLevel_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 7
 // Alignment: 4
-// Size: 0x7
+// Size: 0x4
 // 
 // MEnumFlagsWithOverlappingBits
 enum class DAMAGE_TYPES : uint32_t
@@ -6077,8 +6402,9 @@ enum class DAMAGE_TYPES : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 10
 // Alignment: 4
-// Size: 0xa
+// Size: 0x4
 enum class ELeagueTier : uint32_t
 {
 	LEAGUE_TIER_UNSET = 0x0,
@@ -6094,8 +6420,9 @@ enum class ELeagueTier : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 8
 // Alignment: 4
-// Size: 0x8
+// Size: 0x4
 enum class ESOMsg : uint32_t
 {
 	k_ESOMsg_Create = 0x15,
@@ -6109,8 +6436,9 @@ enum class ESOMsg : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class FowBlockerShape_t : uint32_t
 {
 	FOW_BLOCKER_SHAPE_RECTANGLE = 0x0,
@@ -6118,8 +6446,9 @@ enum class FowBlockerShape_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class Bidirectional_Messages_LowFrequency : uint32_t
 {
 	bi_RelayInfo = 0x2bc,
@@ -6127,8 +6456,9 @@ enum class Bidirectional_Messages_LowFrequency : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class EMobilePaymentProvider : uint32_t
 {
 	k_EMobilePaymentProvider_Invalid = 0x0,
@@ -6137,8 +6467,9 @@ enum class EMobilePaymentProvider : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class ERoshanSpawnPhase : uint32_t
 {
 	ROSHAN_SPAWN_PHASE_ALIVE = 0x0,
@@ -6147,8 +6478,9 @@ enum class ERoshanSpawnPhase : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class modifierremove : uint32_t
 {
 	DOTA_BUFF_REMOVE_ALL = 0x0,
@@ -6157,8 +6489,9 @@ enum class modifierremove : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class EntityDisolveType_t : uint32_t
 {
 	ENTITY_DISSOLVE_INVALID = 0xffffffffffffffff,
@@ -6169,8 +6502,9 @@ enum class EntityDisolveType_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class EStickerbookPageType : uint32_t
 {
 	STICKER_PAGE_GENERIC = 0x0,
@@ -6179,8 +6513,9 @@ enum class EStickerbookPageType : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 14
 // Alignment: 4
-// Size: 0xe
+// Size: 0x4
 enum class EDOTAGCSessionNeed : uint32_t
 {
 	k_EDOTAGCSessionNeed_Unknown = 0x0,
@@ -6200,14 +6535,16 @@ enum class EDOTAGCSessionNeed : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 1
 // Alignment: 4
-// Size: 0x1
+// Size: 0x4
 enum class EGCEconBaseMsg : uint32_t
 {
 	k_EMsgGCGenericResult = 0xa13,
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class AmmoPosition_t : uint32_t
@@ -6219,6 +6556,7 @@ enum class AmmoPosition_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class EPoorNetworkConditionsType : uint32_t
@@ -6230,8 +6568,9 @@ enum class EPoorNetworkConditionsType : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class EClientUIEvent : uint32_t
 {
 	EClientUIEvent_Invalid = 0x0,
@@ -6240,8 +6579,9 @@ enum class EClientUIEvent : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 17
 // Alignment: 4
-// Size: 0x11
+// Size: 0x4
 enum class CLC_Messages : uint32_t
 {
 	clc_ClientInfo = 0x14,
@@ -6264,8 +6604,9 @@ enum class CLC_Messages : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 18
 // Alignment: 4
-// Size: 0x12
+// Size: 0x4
 enum class EBadgeType : uint32_t
 {
 	k_EBadgeType_Invalid = 0x0,
@@ -6289,8 +6630,9 @@ enum class EBadgeType : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 8
 // Alignment: 4
-// Size: 0x8
+// Size: 0x4
 enum class CourierState_t : uint32_t
 {
 	COURIER_STATE_INIT = 0xffffffffffffffff,
@@ -6304,8 +6646,9 @@ enum class CourierState_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class WorldTextPanelVerticalAlign_t : uint32_t
 {
 	WORLDTEXT_VERTICAL_ALIGN_TOP = 0x0,
@@ -6314,8 +6657,9 @@ enum class WorldTextPanelVerticalAlign_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 7
 // Alignment: 4
-// Size: 0x7
+// Size: 0x4
 enum class DOTAInventoryFlags_t : uint32_t
 {
 	DOTA_INVENTORY_ALLOW_NONE = 0x0,
@@ -6328,8 +6672,9 @@ enum class DOTAInventoryFlags_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 7
 // Alignment: 4
-// Size: 0x7
+// Size: 0x4
 enum class DOTAConnectionState_t : uint32_t
 {
 	DOTA_CONNECTION_STATE_UNKNOWN = 0x0,
@@ -6342,8 +6687,9 @@ enum class DOTAConnectionState_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 158
 // Alignment: 4
-// Size: 0x9e
+// Size: 0x4
 enum class EDotaUserMessages : uint32_t
 {
 	DOTA_UM_AddUnitToSelection = 0x1d0,
@@ -6507,8 +6853,9 @@ enum class EDotaUserMessages : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 6
 // Alignment: 1
-// Size: 0x6
+// Size: 0x1
 enum class WaterLevel_t : uint8_t
 {
 	WL_NotInWater = 0x0,
@@ -6520,8 +6867,9 @@ enum class WaterLevel_t : uint8_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 10
 // Alignment: 4
-// Size: 0xa
+// Size: 0x4
 enum class ELeagueNodeGroupType : uint32_t
 {
 	INVALID_GROUP_TYPE = 0x0,
@@ -6537,8 +6885,9 @@ enum class ELeagueNodeGroupType : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class ScriptedConflictResponse_t : uint32_t
 {
 	SS_CONFLICT_ENQUEUE = 0x0,
@@ -6546,8 +6895,9 @@ enum class ScriptedConflictResponse_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class RequestPause_t : uint32_t
 {
 	RP_PAUSE = 0x0,
@@ -6556,8 +6906,9 @@ enum class RequestPause_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class EChatSpecialPrivileges : uint32_t
 {
 	k_EChatSpecialPrivileges_None = 0x0,
@@ -6566,8 +6917,9 @@ enum class EChatSpecialPrivileges : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class DOTA_ROSHAN_PHASE : uint32_t
 {
 	k_SRSP_ROSHAN_ALIVE = 0x0,
@@ -6576,8 +6928,9 @@ enum class DOTA_ROSHAN_PHASE : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class EDOTAPlayerMMRType : uint32_t
 {
 	k_EDOTAPlayerMMRType_Invalid = 0x0,
@@ -6586,8 +6939,9 @@ enum class EDOTAPlayerMMRType : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class EDOTAVersusScenePlayerBehavior : uint32_t
 {
 	VS_PLAYER_BEHAVIOR_PLAY_ACTIVITY = 0x1,
@@ -6596,8 +6950,9 @@ enum class EDOTAVersusScenePlayerBehavior : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class Fantasy_Gem_Type : uint32_t
 {
 	FANTASY_GEM_TYPE_RUBY = 0x0,
@@ -6606,8 +6961,9 @@ enum class Fantasy_Gem_Type : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 86
 // Alignment: 4
-// Size: 0x56
+// Size: 0x4
 enum class DotaPseudoRandomType : uint32_t
 {
 	DOTA_PSEUDO_RANDOM_NONE = 0x0,
@@ -6699,8 +7055,9 @@ enum class DotaPseudoRandomType : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 6
 // Alignment: 4
-// Size: 0x6
+// Size: 0x4
 enum class PetCoopStates_t : uint32_t
 {
 	COOP_IGNORE = 0x0,
@@ -6712,8 +7069,9 @@ enum class PetCoopStates_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 6
 // Alignment: 1
-// Size: 0x6
+// Size: 0x1
 enum class EDOTASpecialBonusOperation : uint8_t
 {
 	SPECIAL_BONUS_ADD = 0x0,
@@ -6725,6 +7083,7 @@ enum class EDOTASpecialBonusOperation : uint8_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class ScriptedMoveType_t : uint32_t
@@ -6736,8 +7095,9 @@ enum class ScriptedMoveType_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 10
 // Alignment: 4
-// Size: 0xa
+// Size: 0x4
 enum class DOTALeaverStatus_t : uint32_t
 {
 	DOTA_LEAVER_NONE = 0x0,
@@ -6753,8 +7113,9 @@ enum class DOTALeaverStatus_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 8
 // Alignment: 4
-// Size: 0x8
+// Size: 0x4
 enum class SpawnGroupFlags_t : uint32_t
 {
 	SPAWN_GROUP_LOAD_ENTITIES_FROM_SAVE = 0x1,
@@ -6768,8 +7129,9 @@ enum class SpawnGroupFlags_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class AbilityLearnResult_t : uint32_t
 {
 	ABILITY_CAN_BE_UPGRADED = 0x0,
@@ -6780,6 +7142,7 @@ enum class AbilityLearnResult_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class ScriptedOnDeath_t : uint32_t
@@ -6791,8 +7154,9 @@ enum class ScriptedOnDeath_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class eRollType : uint32_t
 {
 	ROLL_NONE = 0xffffffffffffffff,
@@ -6803,16 +7167,18 @@ enum class eRollType : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 1
 // Alignment: 4
-// Size: 0x1
+// Size: 0x4
 enum class SVC_Messages_LowFrequency : uint32_t
 {
 	svc_dummy = 0x258,
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 6
 // Alignment: 4
-// Size: 0x6
+// Size: 0x4
 enum class Attributes : uint32_t
 {
 	DOTA_ATTRIBUTE_STRENGTH = 0x0,
@@ -6824,8 +7190,9 @@ enum class Attributes : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class EStickerbookAuditAction : uint32_t
 {
 	STICKERBOOK_AUDIT_CREATE_PAGE = 0x0,
@@ -6836,8 +7203,9 @@ enum class EStickerbookAuditAction : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 6
 // Alignment: 4
-// Size: 0x6
+// Size: 0x4
 enum class EPlayerChallengeHistoryType : uint32_t
 {
 	k_EPlayerChallengeHistoryType_Invalid = 0x0,
@@ -6849,6 +7217,7 @@ enum class EPlayerChallengeHistoryType : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class CommandExecMode_t : uint32_t
@@ -6860,8 +7229,9 @@ enum class CommandExecMode_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class EDotaBroadcastMessages : uint32_t
 {
 	DOTA_BM_LANLobbyRequest = 0x1,
@@ -6869,8 +7239,9 @@ enum class EDotaBroadcastMessages : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 10
 // Alignment: 4
-// Size: 0xa
+// Size: 0x4
 enum class ECustomGameInstallStatus : uint32_t
 {
 	k_ECustomGameInstallStatus_Unknown = 0x0,
@@ -6886,8 +7257,9 @@ enum class ECustomGameInstallStatus : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 891
 // Alignment: 4
-// Size: 0x37b
+// Size: 0x4
 enum class EDOTAGCMsg : uint32_t
 {
 	k_EMsgGCDOTABase = 0x1b58,
@@ -7784,8 +8156,9 @@ enum class EDOTAGCMsg : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 30
 // Alignment: 4
-// Size: 0x1e
+// Size: 0x4
 enum class PARTICLE_MESSAGE : uint32_t
 {
 	GAME_PARTICLE_MANAGER_EVENT_CREATE = 0x0,
@@ -7821,6 +8194,7 @@ enum class PARTICLE_MESSAGE : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class WeaponAttackType_t : uint32_t
@@ -7832,6 +8206,7 @@ enum class WeaponAttackType_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class BeamClipStyle_t : uint32_t
@@ -7843,8 +8218,9 @@ enum class BeamClipStyle_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 9
 // Alignment: 4
-// Size: 0x9
+// Size: 0x4
 enum class EInButtonState : uint32_t
 {
 	IN_BUTTON_UP = 0x0,
@@ -7859,8 +8235,9 @@ enum class EInButtonState : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 6
 // Alignment: 4
-// Size: 0x6
+// Size: 0x4
 enum class EBaseEntityMessages : uint32_t
 {
 	EM_PlayJingle = 0x88,
@@ -7872,8 +8249,9 @@ enum class EBaseEntityMessages : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 9
 // Alignment: 4
-// Size: 0x9
+// Size: 0x4
 enum class EHighPriorityMMState : uint32_t
 {
 	k_EHighPriorityMM_Unknown = 0x0,
@@ -7888,8 +8266,9 @@ enum class EHighPriorityMMState : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 13
 // Alignment: 4
-// Size: 0xd
+// Size: 0x4
 enum class NET_Messages : uint32_t
 {
 	net_NOP = 0x0,
@@ -7908,6 +8287,7 @@ enum class NET_Messages : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class EOverwatchConviction : uint32_t
@@ -7919,6 +8299,7 @@ enum class EOverwatchConviction : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class DOTALowPriorityBanType : uint32_t
@@ -7930,8 +8311,9 @@ enum class DOTALowPriorityBanType : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 19
 // Alignment: 4
-// Size: 0x13
+// Size: 0x4
 enum class EMatchOutcome : uint32_t
 {
 	k_EMatchOutcome_Unknown = 0x0,
@@ -7956,8 +8338,9 @@ enum class EMatchOutcome : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 12
 // Alignment: 4
-// Size: 0xc
+// Size: 0x4
 enum class Hull_t : uint32_t
 {
 	HULL_HUMAN = 0x0,
@@ -7975,8 +8358,9 @@ enum class Hull_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 6
 // Alignment: 4
-// Size: 0x6
+// Size: 0x4
 enum class EDOTAStatPopupTypes : uint32_t
 {
 	k_EDOTA_SPT_Textline = 0x0,
@@ -7988,8 +8372,9 @@ enum class EDOTAStatPopupTypes : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 7
 // Alignment: 4
-// Size: 0x7
+// Size: 0x4
 enum class EDOTA_ModifyXP_Reason : uint32_t
 {
 	DOTA_ModifyXP_Unspecified = 0x0,
@@ -8002,6 +8387,7 @@ enum class EDOTA_ModifyXP_Reason : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class ValueRemapperMomentumType_t : uint32_t
@@ -8013,8 +8399,9 @@ enum class ValueRemapperMomentumType_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 34
 // Alignment: 4
-// Size: 0x22
+// Size: 0x4
 enum class DOTAHUDVisibility_t : uint32_t
 {
 	DOTA_HUD_VISIBILITY_INVALID = 0xffffffffffffffff,
@@ -8054,8 +8441,9 @@ enum class DOTAHUDVisibility_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 41
 // Alignment: 4
-// Size: 0x29
+// Size: 0x4
 enum class dotaunitorder_t : uint32_t
 {
 	DOTA_UNIT_ORDER_NONE = 0x0,
@@ -8102,8 +8490,9 @@ enum class dotaunitorder_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class EDOTAMatchPlayerTimeCustomStat : uint32_t
 {
 	k_EDOTA_MatchPlayerTimeCustomStat_HPRegenUnderT1Towers = 0x1,
@@ -8112,8 +8501,9 @@ enum class EDOTAMatchPlayerTimeCustomStat : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class MoveLinearAuthoredPos_t : uint32_t
 {
 	MOVELINEAR_AUTHORED_AT_START_POSITION = 0x0,
@@ -8122,6 +8512,7 @@ enum class MoveLinearAuthoredPos_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class ECrowdLevel : uint32_t
@@ -8133,8 +8524,9 @@ enum class ECrowdLevel : uint32_t
 };
 
 // Registered binary: server.dll (project 'navlib')
+// Enumerator count: 19
 // Alignment: 4
-// Size: 0x13
+// Size: 0x4
 enum class NavAttributeEnum : uint32_t
 {
 	NAV_MESH_AVOID = 0x80,
@@ -8159,8 +8551,9 @@ enum class NavAttributeEnum : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 6
 // Alignment: 4
-// Size: 0x6
+// Size: 0x4
 enum class DOTAModifierAttribute_t : uint32_t
 {
 	MODIFIER_ATTRIBUTE_NONE = 0x0,
@@ -8172,8 +8565,9 @@ enum class DOTAModifierAttribute_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class VoiceDataFormat_t : uint32_t
 {
 	VOICEDATA_FORMAT_STEAM = 0x0,
@@ -8182,8 +8576,9 @@ enum class VoiceDataFormat_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class DOTAUnitAttackCapability_t : uint32_t
 {
 	DOTA_UNIT_CAP_NO_ATTACK = 0x0,
@@ -8194,8 +8589,9 @@ enum class DOTAUnitAttackCapability_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 8
 // Alignment: 4
-// Size: 0x8
+// Size: 0x4
 enum class TOGGLE_STATE : uint32_t
 {
 	TS_AT_TOP = 0x0,
@@ -8209,6 +8605,7 @@ enum class TOGGLE_STATE : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class PerformanceMode_t : uint32_t
@@ -8220,8 +8617,9 @@ enum class PerformanceMode_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 6
 // Alignment: 1
-// Size: 0x6
+// Size: 0x1
 enum class CavernCrawlChallengeType_t : uint8_t
 {
 	CAVERN_CRAWL_CHALLENGE_TYPE_INVALID = 0x0,
@@ -8233,8 +8631,9 @@ enum class CavernCrawlChallengeType_t : uint8_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class EFantasyStatMatchMode : uint32_t
 {
 	k_FantasyStatMatchMode_Any = 0x0,
@@ -8242,8 +8641,9 @@ enum class EFantasyStatMatchMode : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 14
 // Alignment: 4
-// Size: 0xe
+// Size: 0x4
 enum class DOTAMinimapEvent_t : uint32_t
 {
 	DOTA_MINIMAP_EVENT_ANCIENT_UNDER_ATTACK = 0x2,
@@ -8263,8 +8663,9 @@ enum class DOTAMinimapEvent_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class ForcedCrouchState_t : uint32_t
 {
 	FORCEDCROUCH_NONE = 0x0,
@@ -8273,8 +8674,9 @@ enum class ForcedCrouchState_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 6
 // Alignment: 4
-// Size: 0x6
+// Size: 0x4
 enum class DOTA_MOTION_CONTROLLER_PRIORITY : uint32_t
 {
 	DOTA_MOTION_CONTROLLER_PRIORITY_LOWEST = 0x0,
@@ -8286,8 +8688,9 @@ enum class DOTA_MOTION_CONTROLLER_PRIORITY : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class HeroPickType : uint32_t
 {
 	HERO_PICK = 0x0,
@@ -8295,8 +8698,9 @@ enum class HeroPickType : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 18
 // Alignment: 4
-// Size: 0x12
+// Size: 0x4
 enum class EDOTATriviaQuestionCategory : uint32_t
 {
 	k_EDOTATriviaQuestionCategory_AbilityIcon = 0x0,
@@ -8320,8 +8724,9 @@ enum class EDOTATriviaQuestionCategory : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 42
 // Alignment: 4
-// Size: 0x2a
+// Size: 0x4
 enum class ELeagueAuditAction : uint32_t
 {
 	LEAGUE_AUDIT_ACTION_INVALID = 0x0,
@@ -8369,8 +8774,9 @@ enum class ELeagueAuditAction : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class DOTAPostGameLayout_t : uint32_t
 {
 	DOTA_POST_GAME_LAYOUT_DOUBLE_COLUMN = 0x0,
@@ -8379,8 +8785,9 @@ enum class DOTAPostGameLayout_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 13
 // Alignment: 1
-// Size: 0xd
+// Size: 0x1
 enum class RenderMode_t : uint8_t
 {
 	kRenderNormal = 0x0,
@@ -8399,8 +8806,9 @@ enum class RenderMode_t : uint8_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class EHeroRelicRarity : uint32_t
 {
 	HERO_RELIC_RARITY_INVALID = 0xffffffffffffffff,
@@ -8409,8 +8817,9 @@ enum class EHeroRelicRarity : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 7
 // Alignment: 4
-// Size: 0x7
+// Size: 0x4
 enum class ETourneyQueueDeadlineState : uint32_t
 {
 	k_ETourneyQueueDeadlineState_Normal = 0x0,
@@ -8423,8 +8832,9 @@ enum class ETourneyQueueDeadlineState : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class ESplitScreenMessageType : uint32_t
 {
 	MSG_SPLITSCREEN_ADDUSER = 0x0,
@@ -8432,8 +8842,9 @@ enum class ESplitScreenMessageType : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 13
 // Alignment: 4
-// Size: 0xd
+// Size: 0x4
 enum class EGCBaseClientMsg : uint32_t
 {
 	k_EMsgGCPingRequest = 0xbb9,
@@ -8452,8 +8863,9 @@ enum class EGCBaseClientMsg : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class DamageCategory_t : uint32_t
 {
 	DOTA_DAMAGE_CATEGORY_SPELL = 0x0,
@@ -8461,8 +8873,9 @@ enum class DamageCategory_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class DOTAAbilitySpeakTrigger_t : uint32_t
 {
 	DOTA_ABILITY_SPEAK_START_ACTION_PHASE = 0x0,
@@ -8470,8 +8883,9 @@ enum class DOTAAbilitySpeakTrigger_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class DOTASelectionPriorityChoice : uint32_t
 {
 	k_DOTASelectionPriorityChoice_Invalid = 0x0,
@@ -8482,8 +8896,9 @@ enum class DOTASelectionPriorityChoice : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class EntFinderMethod_t : uint32_t
 {
 	ENT_FIND_METHOD_NEAREST = 0x0,
@@ -8492,8 +8907,9 @@ enum class EntFinderMethod_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 16
 // Alignment: 4
-// Size: 0x10
+// Size: 0x4
 enum class DOTA_POSITION_CATEGORY : uint32_t
 {
 	DOTA_POSITION_NONE = 0x0,
@@ -8515,8 +8931,9 @@ enum class DOTA_POSITION_CATEGORY : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 8
 // Alignment: 4
-// Size: 0x8
+// Size: 0x4
 enum class SignonState_t : uint32_t
 {
 	SIGNONSTATE_NONE = 0x0,
@@ -8530,8 +8947,9 @@ enum class SignonState_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class TrainVelocityType_t : uint32_t
 {
 	TrainVelocity_Instantaneous = 0x0,
@@ -8540,8 +8958,9 @@ enum class TrainVelocityType_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 13
 // Alignment: 4
-// Size: 0xd
+// Size: 0x4
 enum class CLICK_BEHAVIORS : uint32_t
 {
 	DOTA_CLICK_BEHAVIOR_NONE = 0x0,
@@ -8560,8 +8979,9 @@ enum class CLICK_BEHAVIORS : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class DOTA_HOLDOUT_TOWER_TYPE : uint32_t
 {
 	DOTA_HOLDOUT_TOWER_NONE = 0x0,
@@ -8572,8 +8992,9 @@ enum class DOTA_HOLDOUT_TOWER_TYPE : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 44
 // Alignment: 8
-// Size: 0x2c
+// Size: 0x8
 enum class DOTA_ABILITY_BEHAVIOR : uint64_t
 {
 	DOTA_ABILITY_BEHAVIOR_NONE = 0x0,
@@ -8623,8 +9044,9 @@ enum class DOTA_ABILITY_BEHAVIOR : uint64_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class LobbyDotaPauseSetting : uint32_t
 {
 	LobbyDotaPauseSetting_Unlimited = 0x0,
@@ -8633,8 +9055,9 @@ enum class LobbyDotaPauseSetting : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class Touch_t : uint32_t
 {
 	touch_none = 0x0,
@@ -8645,8 +9068,9 @@ enum class Touch_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 7
 // Alignment: 4
-// Size: 0x7
+// Size: 0x4
 enum class EProfileCardSlotType : uint32_t
 {
 	k_EProfileCardSlotType_Empty = 0x0,
@@ -8659,8 +9083,9 @@ enum class EProfileCardSlotType : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class CommandEntitySpecType_t : uint32_t
 {
 	SPEC_SEARCH = 0x0,
@@ -8668,8 +9093,9 @@ enum class CommandEntitySpecType_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class ESpecialPingValue : uint32_t
 {
 	k_ESpecialPingValue_NoData = 0x3ffe,
@@ -8677,8 +9103,9 @@ enum class ESpecialPingValue : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 7
 // Alignment: 4
-// Size: 0x7
+// Size: 0x4
 enum class IChoreoServices__ScriptState_t : uint32_t
 {
 	SCRIPT_PLAYING = 0x0,
@@ -8691,6 +9118,7 @@ enum class IChoreoServices__ScriptState_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class ABILITY_TYPES : uint32_t
@@ -8702,8 +9130,9 @@ enum class ABILITY_TYPES : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 111
 // Alignment: 4
-// Size: 0x6f
+// Size: 0x4
 enum class DOTA_CHAT_MESSAGE : uint32_t
 {
 	CHAT_MESSAGE_INVALID = 0xffffffffffffffff,
@@ -8820,8 +9249,9 @@ enum class DOTA_CHAT_MESSAGE : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class modifierpriority : uint32_t
 {
 	MODIFIER_PRIORITY_LOW = 0x0,
@@ -8832,6 +9262,7 @@ enum class modifierpriority : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class EQueryCvarValueStatus : uint32_t
@@ -8843,8 +9274,9 @@ enum class EQueryCvarValueStatus : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 6
 // Alignment: 4
-// Size: 0x6
+// Size: 0x4
 enum class SPELL_IMMUNITY_TYPES : uint32_t
 {
 	SPELL_IMMUNITY_NONE = 0x0,
@@ -8856,8 +9288,9 @@ enum class SPELL_IMMUNITY_TYPES : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 49
 // Alignment: 4
-// Size: 0x31
+// Size: 0x4
 enum class GameAnimEventIndex_t : uint32_t
 {
 	AE_EMPTY = 0x0,
@@ -8912,8 +9345,9 @@ enum class GameAnimEventIndex_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 17
 // Alignment: 4
-// Size: 0x11
+// Size: 0x4
 enum class BaseExplosionTypes_t : uint32_t
 {
 	// MPropertyFriendlyName "Default"
@@ -8953,8 +9387,9 @@ enum class BaseExplosionTypes_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 15
 // Alignment: 4
-// Size: 0xf
+// Size: 0x4
 enum class DOTAJoinLobbyResult : uint32_t
 {
 	DOTA_JOIN_RESULT_SUCCESS = 0x0,
@@ -8975,6 +9410,7 @@ enum class DOTAJoinLobbyResult : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class DOTA_NO_BATTLE_POINTS_REASONS : uint32_t
@@ -8986,8 +9422,9 @@ enum class DOTA_NO_BATTLE_POINTS_REASONS : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 // 
 // MEnumFlagsWithOverlappingBits
 enum class DOTA_UNIT_TARGET_TEAM : uint32_t
@@ -9000,8 +9437,9 @@ enum class DOTA_UNIT_TARGET_TEAM : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 12
 // Alignment: 4
-// Size: 0xc
+// Size: 0x4
 enum class DOTA_TournamentEvents : uint32_t
 {
 	TE_FIRST_BLOOD = 0x0,
@@ -9019,8 +9457,9 @@ enum class DOTA_TournamentEvents : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class DOTACustomHeroPickRulesPhase_t : uint32_t
 {
 	PHASE_Ban = 0x0,
@@ -9028,8 +9467,9 @@ enum class DOTACustomHeroPickRulesPhase_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class filter_t : uint32_t
 {
 	FILTER_AND = 0x0,
@@ -9037,8 +9477,9 @@ enum class filter_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 6
 // Alignment: 4
-// Size: 0x6
+// Size: 0x4
 enum class DOTA_REPLAY_STATE_EVENT : uint32_t
 {
 	DOTA_REPLAY_STATE_EVENT_GAME_START = 0x1,
@@ -9050,6 +9491,7 @@ enum class DOTA_REPLAY_STATE_EVENT : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class Class_T : uint32_t
@@ -9061,8 +9503,9 @@ enum class Class_T : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 50
 // Alignment: 4
-// Size: 0x32
+// Size: 0x4
 enum class EBaseUserMessages : uint32_t
 {
 	UM_AchievementEvent = 0x65,
@@ -9118,8 +9561,9 @@ enum class EBaseUserMessages : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 23
 // Alignment: 4
-// Size: 0x17
+// Size: 0x4
 enum class SoundFlags_t : uint32_t
 {
 	// MPropertySuppressEnumerator
@@ -9156,8 +9600,9 @@ enum class SoundFlags_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class AnimLoopMode_t : uint32_t
 {
 	// MPropertySuppressEnumerator
@@ -9170,8 +9615,9 @@ enum class AnimLoopMode_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 16
 // Alignment: 4
-// Size: 0x10
+// Size: 0x4
 enum class DOTA_ABILITY_PING_TYPE : uint32_t
 {
 	ABILITY_PING_READY = 0x1,
@@ -9193,8 +9639,9 @@ enum class DOTA_ABILITY_PING_TYPE : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class EDOTAMMRBoostType : uint32_t
 {
 	k_EDOTAMMRBoostType_None = 0x0,
@@ -9203,8 +9650,9 @@ enum class EDOTAMMRBoostType : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 6
 // Alignment: 4
-// Size: 0x6
+// Size: 0x4
 enum class ScriptedMoveTo_t : uint32_t
 {
 	CINE_MOVETO_WAIT = 0x0,
@@ -9216,8 +9664,9 @@ enum class ScriptedMoveTo_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class EPartyMatchmakingFlags : uint32_t
 {
 	k_EPartyMatchmakingFlags_None = 0x0,
@@ -9225,8 +9674,9 @@ enum class EPartyMatchmakingFlags : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class AbilityBarType_t : uint32_t
 {
 	ABILITY_BAR_TYPE_MAIN = 0x0,
@@ -9235,8 +9685,9 @@ enum class AbilityBarType_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 13
 // Alignment: 4
-// Size: 0xd
+// Size: 0x4
 enum class DOTACustomCameraEventFlags_t : uint32_t
 {
 	k_ECustomCameraEventFlags_Zoom = 0x1,
@@ -9255,8 +9706,9 @@ enum class DOTACustomCameraEventFlags_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 12
 // Alignment: 4
-// Size: 0xc
+// Size: 0x4
 enum class Materials : uint32_t
 {
 	matGlass = 0x0,
@@ -9274,8 +9726,9 @@ enum class Materials : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 6
 // Alignment: 4
-// Size: 0x6
+// Size: 0x4
 enum class DOTAMusicStatus_t : uint32_t
 {
 	DOTA_MUSIC_STATUS_NONE = 0x0,
@@ -9287,8 +9740,9 @@ enum class DOTAMusicStatus_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 14
 // Alignment: 2
-// Size: 0xe
+// Size: 0x2
 enum class EFantasyMutationTarget : uint16_t
 {
 	k_eFantasyMutationTarget_None = 0x0,
@@ -9308,8 +9762,9 @@ enum class EFantasyMutationTarget : uint16_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 8
 // Alignment: 4
-// Size: 0x8
+// Size: 0x4
 enum class MLBot_MessageId : uint32_t
 {
 	mlbot_MatchMetadata = 0x1,
@@ -9323,8 +9778,9 @@ enum class MLBot_MessageId : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class ShopItemViewMode_t : uint32_t
 {
 	SHOP_VIEW_MODE_LIST = 0x0,
@@ -9332,8 +9788,9 @@ enum class ShopItemViewMode_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class ELaneSelection : uint32_t
 {
 	k_ELaneSelection_SAFELANE = 0x0,
@@ -9344,8 +9801,9 @@ enum class ELaneSelection : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 7
 // Alignment: 4
-// Size: 0x7
+// Size: 0x4
 enum class DOTAProjectileAttachment_t : uint32_t
 {
 	DOTA_PROJECTILE_ATTACHMENT_NONE = 0x0,
@@ -9358,8 +9816,9 @@ enum class DOTAProjectileAttachment_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 15
 // Alignment: 4
-// Size: 0xf
+// Size: 0x4
 enum class DOTAScriptInventorySlot_t : uint32_t
 {
 	DOTA_ITEM_SLOT_1 = 0x0,
@@ -9380,8 +9839,9 @@ enum class DOTAScriptInventorySlot_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 3
 // Alignment: 1
-// Size: 0x3
+// Size: 0x1
 enum class DamageOptions_t : uint8_t
 {
 	DAMAGE_NO = 0x0,
@@ -9390,8 +9850,9 @@ enum class DamageOptions_t : uint8_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 25
 // Alignment: 4
-// Size: 0x19
+// Size: 0x4
 enum class DOTA_OVERHEAD_ALERT : uint32_t
 {
 	OVERHEAD_ALERT_GOLD = 0x0,
@@ -9422,8 +9883,9 @@ enum class DOTA_OVERHEAD_ALERT : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class DOTA_LANE : uint32_t
 {
 	DOTA_LANE_NONE = 0x0,
@@ -9434,8 +9896,9 @@ enum class DOTA_LANE : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 11
 // Alignment: 4
-// Size: 0xb
+// Size: 0x4
 enum class EDPCPushNotification : uint32_t
 {
 	DPC_PUSH_NOTIFICATION_MATCH_STARTING = 0x1,
@@ -9452,8 +9915,9 @@ enum class EDPCPushNotification : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 102
 // Alignment: 4
-// Size: 0x66
+// Size: 0x4
 enum class EDotaClientMessages : uint32_t
 {
 	DOTA_CM_MapLine = 0x12d,
@@ -9561,8 +10025,9 @@ enum class EDotaClientMessages : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 8
 // Alignment: 4
-// Size: 0x8
+// Size: 0x4
 enum class ItemQuality_t : uint32_t
 {
 	DOTA_ITEM_QUALITY_CONSUMABLE = 0x0,
@@ -9576,6 +10041,7 @@ enum class ItemQuality_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class PortraitSoundMode_t : uint32_t
@@ -9587,8 +10053,9 @@ enum class PortraitSoundMode_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 9
 // Alignment: 4
-// Size: 0x9
+// Size: 0x4
 enum class ELaneSelectionFlags : uint32_t
 {
 	k_ELaneSelectionFlags_SAFELANE = 0x1,
@@ -9603,8 +10070,9 @@ enum class ELaneSelectionFlags : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 105
 // Alignment: 4
-// Size: 0x69
+// Size: 0x4
 enum class DOTASlotType_t : uint32_t
 {
 	DOTA_LOADOUT_TYPE_INVALID = 0xffffffffffffffff,
@@ -9715,8 +10183,9 @@ enum class DOTASlotType_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 1024
 // Alignment: 4
-// Size: 0x400
+// Size: 0x4
 enum class BaseActivity_t : uint32_t
 {
 	ACT_RESET = 0x0,
@@ -10746,8 +11215,9 @@ enum class BaseActivity_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 30
 // Alignment: 4
-// Size: 0x1e
+// Size: 0x4
 enum class SVC_Messages : uint32_t
 {
 	svc_ServerInfo = 0x28,
@@ -10783,8 +11253,9 @@ enum class SVC_Messages : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class IBody__PostureType : uint32_t
 {
 	STAND = 0x0,
@@ -10795,8 +11266,9 @@ enum class IBody__PostureType : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class CHeadLookParams__HeadLookPriority_t : uint32_t
 {
 	BORING = 0x0,
@@ -10807,8 +11279,9 @@ enum class CHeadLookParams__HeadLookPriority_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class CreatureAbilityType : uint32_t
 {
 	CREATURE_ABILITY_OFFENSIVE = 0x0,
@@ -10817,6 +11290,7 @@ enum class CreatureAbilityType : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class DOTALobbyReadyState : uint32_t
@@ -10828,8 +11302,9 @@ enum class DOTALobbyReadyState : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 8
 // Alignment: 4
-// Size: 0x8
+// Size: 0x4
 enum class DOTACommLevel_t : uint32_t
 {
 	DOTA_COMM_LEVEL_NONE = 0x0,
@@ -10843,8 +11318,9 @@ enum class DOTACommLevel_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class LifeState_t : uint32_t
 {
 	LIFE_ALIVE = 0x0,
@@ -10855,8 +11331,9 @@ enum class LifeState_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 10
 // Alignment: 1
-// Size: 0xa
+// Size: 0x1
 enum class SurroundingBoundsType_t : uint8_t
 {
 	USE_OBB_COLLISION_BOUNDS = 0x0,
@@ -10872,8 +11349,9 @@ enum class SurroundingBoundsType_t : uint8_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class DOTAUnitMoveCapability_t : uint32_t
 {
 	DOTA_UNIT_CAP_MOVE_NONE = 0x0,
@@ -10882,8 +11360,9 @@ enum class DOTAUnitMoveCapability_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 22
 // Alignment: 4
-// Size: 0x16
+// Size: 0x4
 enum class EDOTA_ModifyGold_Reason : uint32_t
 {
 	DOTA_ModifyGold_Unspecified = 0x0,
@@ -10911,8 +11390,9 @@ enum class EDOTA_ModifyGold_Reason : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class Fantasy_Team_Slots : uint32_t
 {
 	FANTASY_SLOT_NONE = 0x0,
@@ -10923,8 +11403,9 @@ enum class Fantasy_Team_Slots : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 9
 // Alignment: 1
-// Size: 0x9
+// Size: 0x1
 enum class ItemFlagTypes_t : uint8_t
 {
 	ITEM_FLAG_NONE = 0x0,
@@ -10939,8 +11420,9 @@ enum class ItemFlagTypes_t : uint8_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 9
 // Alignment: 4
-// Size: 0x9
+// Size: 0x4
 enum class DOTA_SHOP_TYPE : uint32_t
 {
 	DOTA_SHOP_HOME = 0x0,
@@ -10955,8 +11437,9 @@ enum class DOTA_SHOP_TYPE : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 61
 // Alignment: 4
-// Size: 0x3d
+// Size: 0x4
 enum class modifierstate : uint32_t
 {
 	MODIFIER_STATE_ROOTED = 0x0,
@@ -11023,8 +11506,9 @@ enum class modifierstate : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 3
 // Alignment: 1
-// Size: 0x3
+// Size: 0x1
 enum class BeginDeathLifeStateTransition_t : uint8_t
 {
 	NO_CHANGE_IN_LIFESTATE = 0x0,
@@ -11033,8 +11517,9 @@ enum class BeginDeathLifeStateTransition_t : uint8_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 6
 // Alignment: 4
-// Size: 0x6
+// Size: 0x4
 enum class ETrackedStatAggregate : uint32_t
 {
 	k_eTrackedStatAggregate_Invalid = 0x0,
@@ -11046,6 +11531,7 @@ enum class ETrackedStatAggregate : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class TrainOrientationType_t : uint32_t
@@ -11057,6 +11543,7 @@ enum class TrainOrientationType_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class EPingSource : uint32_t
@@ -11068,8 +11555,9 @@ enum class EPingSource : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 8
 // Alignment: 4
-// Size: 0x8
+// Size: 0x4
 enum class DOTALimits_t : uint32_t
 {
 	// MScriptDescription "Max number of players connected to the server including spectators."
@@ -11091,8 +11579,9 @@ enum class DOTALimits_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 19
 // Alignment: 4
-// Size: 0x13
+// Size: 0x4
 enum class DOTADamageFlag_t : uint32_t
 {
 	DOTA_DAMAGE_FLAG_NONE = 0x0,
@@ -11117,8 +11606,9 @@ enum class DOTADamageFlag_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 20
 // Alignment: 4
-// Size: 0x14
+// Size: 0x4
 enum class EDemoCommands : uint32_t
 {
 	DEM_Error = 0xffffffffffffffff,
@@ -11144,8 +11634,9 @@ enum class EDemoCommands : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class ELeagueBroadcastProvider : uint32_t
 {
 	LEAGUE_BROADCAST_UNKNOWN = 0x0,
@@ -11156,8 +11647,9 @@ enum class ELeagueBroadcastProvider : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 11
 // Alignment: 1
-// Size: 0xb
+// Size: 0x1
 enum class CavernCrawlItemType_t : uint8_t
 {
 	CAVERN_CRAWL_ITEM_TYPE_INVALID = 0xff,
@@ -11174,8 +11666,9 @@ enum class CavernCrawlItemType_t : uint8_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class DOTAMatchVote : uint32_t
 {
 	DOTAMatchVote_INVALID = 0x0,
@@ -11184,8 +11677,9 @@ enum class DOTAMatchVote : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 27
 // Alignment: 4
-// Size: 0x1b
+// Size: 0x4
 enum class DOTA_BOT_MODE : uint32_t
 {
 	DOTA_BOT_MODE_NONE = 0x0,
@@ -11218,8 +11712,9 @@ enum class DOTA_BOT_MODE : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 3
 // Alignment: 1
-// Size: 0x3
+// Size: 0x1
 enum class SequenceFinishNotifyState_t : uint8_t
 {
 	eDoNotNotify = 0x0,
@@ -11228,8 +11723,9 @@ enum class SequenceFinishNotifyState_t : uint8_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 265
 // Alignment: 4
-// Size: 0x109
+// Size: 0x4
 enum class GameActivity_t : uint32_t
 {
 	ACT_DOTA_IDLE = 0x5dc,
@@ -11500,8 +11996,9 @@ enum class GameActivity_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class EShareAbility : uint32_t
 {
 	ITEM_FULLY_SHAREABLE = 0x0,
@@ -11510,8 +12007,9 @@ enum class EShareAbility : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class DOTA_PlayerDraftState : uint32_t
 {
 	DOTA_PLAYERDRAFT_STATE_INACTIVE = 0x0,
@@ -11522,8 +12020,9 @@ enum class DOTA_PlayerDraftState : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class WorldTextPanelHorizontalAlign_t : uint32_t
 {
 	WORLDTEXT_HORIZONTAL_ALIGN_LEFT = 0x0,
@@ -11532,8 +12031,9 @@ enum class WorldTextPanelHorizontalAlign_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class EMatchGroupServerStatus : uint32_t
 {
 	k_EMatchGroupServerStatus_OK = 0x0,
@@ -11542,8 +12042,9 @@ enum class EMatchGroupServerStatus : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 6
 // Alignment: 4
-// Size: 0x6
+// Size: 0x4
 enum class ELaneType : uint32_t
 {
 	LANE_TYPE_UNKNOWN = 0x0,
@@ -11555,8 +12056,9 @@ enum class ELaneType : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class DIALOG_TYPE : uint32_t
 {
 	DIALOG_MSG = 0x0,
@@ -11567,8 +12069,9 @@ enum class DIALOG_TYPE : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class WorldTextPanelOrientation_t : uint32_t
 {
 	WORLDTEXT_ORIENTATION_DEFAULT = 0x0,
@@ -11577,8 +12080,9 @@ enum class WorldTextPanelOrientation_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 118
 // Alignment: 4
-// Size: 0x76
+// Size: 0x4
 enum class ENetworkDisconnectionReason : uint32_t
 {
 	NETWORK_DISCONNECT_INVALID = 0x0,
@@ -11702,8 +12206,9 @@ enum class ENetworkDisconnectionReason : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class ObserverInterpState_t : uint32_t
 {
 	OBSERVER_INTERP_NONE = 0x0,
@@ -11712,8 +12217,9 @@ enum class ObserverInterpState_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class EconEntityParticleDisableMode_t : uint32_t
 {
 	ECON_ENTITY_PARTICLES_ENABLED = 0x0,
@@ -11722,8 +12228,9 @@ enum class EconEntityParticleDisableMode_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class Explosions : uint32_t
 {
 	expRandom = 0x0,
@@ -11732,8 +12239,9 @@ enum class Explosions : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class StanceType_t : uint32_t
 {
 	// MPropertySuppressEnumerator
@@ -11749,8 +12257,9 @@ enum class StanceType_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class SubclassVDataChangeType_t : uint32_t
 {
 	SUBCLASS_VDATA_CREATED = 0x0,
@@ -11759,8 +12268,9 @@ enum class SubclassVDataChangeType_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class TimelineCompression_t : uint32_t
 {
 	TIMELINE_COMPRESSION_SUM = 0x0,
@@ -11771,8 +12281,9 @@ enum class TimelineCompression_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class LessonPanelLayoutFileTypes_t : uint32_t
 {
 	LAYOUT_HAND_DEFAULT = 0x0,
@@ -11781,8 +12292,9 @@ enum class LessonPanelLayoutFileTypes_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class SceneOnPlayerDeath_t : uint32_t
 {
 	SCENE_ONPLAYERDEATH_DO_NOTHING = 0x0,
@@ -11790,8 +12302,9 @@ enum class SceneOnPlayerDeath_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 121
 // Alignment: 4
-// Size: 0x79
+// Size: 0x4
 enum class DOTA_INVALID_ORDERS : uint32_t
 {
 	DOTA_ORDER_SUCCESS = 0xffffffffffffffff,
@@ -11918,8 +12431,9 @@ enum class DOTA_INVALID_ORDERS : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class ELeagueTierCategory : uint32_t
 {
 	LEAGUE_TIER_CATEGORY_AMATEUR = 0x1,
@@ -11928,8 +12442,9 @@ enum class ELeagueTierCategory : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
+// Enumerator count: 7
 // Alignment: 4
-// Size: 0x7
+// Size: 0x4
 enum class EFantasyShapeBehavior : uint32_t
 {
 	// MPropertySuppressEnumerator
@@ -11944,8 +12459,9 @@ enum class EFantasyShapeBehavior : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 10
 // Alignment: 4
-// Size: 0xa
+// Size: 0x4
 enum class DotaCustomUIType_t : uint32_t
 {
 	DOTA_CUSTOM_UI_TYPE_HUD = 0x0,
@@ -11961,8 +12477,9 @@ enum class DotaCustomUIType_t : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class P2P_Messages : uint32_t
 {
 	p2p_TextMessage = 0x100,
@@ -11973,8 +12490,9 @@ enum class P2P_Messages : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class ETeamFanContentStatus : uint32_t
 {
 	TEAM_FAN_CONTENT_STATUS_INVALID = 0x0,
@@ -11983,6 +12501,7 @@ enum class ETeamFanContentStatus : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class PlayerUltimateStateOrTime_t : uint32_t
@@ -11994,8 +12513,9 @@ enum class PlayerUltimateStateOrTime_t : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 12
 // Alignment: 4
-// Size: 0xc
+// Size: 0x4
 enum class ETournamentState : uint32_t
 {
 	k_ETournamentState_Unknown = 0x0,
@@ -12013,8 +12533,9 @@ enum class ETournamentState : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class CMsgBattleReport_EOutcome : uint32_t
 {
 	k_eWin = 0x0,
@@ -12022,8 +12543,9 @@ enum class CMsgBattleReport_EOutcome : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class EShowcaseItemFlag : uint32_t
 {
 	k_eShowcaseItemFlag_None = 0x0,
@@ -12031,8 +12553,9 @@ enum class EShowcaseItemFlag : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class NeutralCampStackPullAlarmType_t : uint32_t
 {
 	DOTA_NEUTRAL_CAMP_STACK_PULL_ALARM_TYPE_STACK = 0x1,
@@ -12040,8 +12563,9 @@ enum class NeutralCampStackPullAlarmType_t : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class EPlayerCoachMatchFlag : uint32_t
 {
 	k_EPlayerCoachMatchFlag_EligibleForRewards = 0x1,
@@ -12049,8 +12573,9 @@ enum class EPlayerCoachMatchFlag : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 6
 // Alignment: 4
-// Size: 0x6
+// Size: 0x4
 enum class EDOTADraftTriviaAnswerResult : uint32_t
 {
 	k_EDOTADraftTriviaAnswerResult_Success = 0x0,
@@ -12062,8 +12587,9 @@ enum class EDOTADraftTriviaAnswerResult : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class OrderQueueBehavior_t : uint32_t
 {
 	DOTA_ORDER_QUEUE_DEFAULT = 0x0,
@@ -12072,8 +12598,9 @@ enum class OrderQueueBehavior_t : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class ERoadToTIQuestType : uint32_t
 {
 	k_RoadToTIQuestType_Match = 0x0,
@@ -12081,8 +12608,9 @@ enum class ERoadToTIQuestType : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class EPrivateCoachingSessionMemberFlag : uint32_t
 {
 	k_EPrivateCoachingSessionMemberFlag_Requester = 0x1,
@@ -12091,8 +12619,9 @@ enum class EPrivateCoachingSessionMemberFlag : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class CMsgBattleReport_HighlightCategory : uint32_t
 {
 	// MPropertyFriendlyName "General"
@@ -12104,8 +12633,9 @@ enum class CMsgBattleReport_HighlightCategory : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 8
 // Alignment: 4
-// Size: 0x8
+// Size: 0x4
 enum class EPurchaseHeroRelicResult : uint32_t
 {
 	k_EPurchaseHeroRelicResult_Success = 0x0,
@@ -12119,8 +12649,9 @@ enum class EPurchaseHeroRelicResult : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class CMsgBattleReport_CompareContext : uint32_t
 {
 	// MPropertySuppressEnumerator
@@ -12136,8 +12667,9 @@ enum class CMsgBattleReport_CompareContext : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class ETeamFanContentAssetStatus : uint32_t
 {
 	k_eFanContentAssetStatus_None = 0x0,
@@ -12146,8 +12678,9 @@ enum class ETeamFanContentAssetStatus : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class PortraitDisplayMode_t : uint32_t
 {
 	PORTRAIT_DISPLAY_MODE_INVALID = 0xffffffffffffffff,
@@ -12158,8 +12691,9 @@ enum class PortraitDisplayMode_t : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 6
 // Alignment: 4
-// Size: 0x6
+// Size: 0x4
 enum class EShowcaseItemFlag_Hero : uint32_t
 {
 	k_eShowcaseItemFlag_Hero_None = 0x0,
@@ -12171,6 +12705,7 @@ enum class EShowcaseItemFlag_Hero : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class PlayerOrderIssuer_t : uint32_t
@@ -12182,8 +12717,9 @@ enum class PlayerOrderIssuer_t : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 14
 // Alignment: 4
-// Size: 0xe
+// Size: 0x4
 enum class ETeamInviteResult : uint32_t
 {
 	TEAM_INVITE_SUCCESS = 0x0,
@@ -12203,8 +12739,9 @@ enum class ETeamInviteResult : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 6
 // Alignment: 4
-// Size: 0x6
+// Size: 0x4
 enum class EPrivateCoachingSessionState : uint32_t
 {
 	k_ePrivateCoachingSessionState_Invalid = 0x0,
@@ -12216,8 +12753,9 @@ enum class EPrivateCoachingSessionState : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 9
 // Alignment: 4
-// Size: 0x9
+// Size: 0x4
 enum class EGuildEventAuditAction : uint32_t
 {
 	k_EGuildEventAuditAction_Invalid = 0x0,
@@ -12232,8 +12770,9 @@ enum class EGuildEventAuditAction : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class SteamUniverse : uint32_t
 {
 	Invalid = 0x0,
@@ -12244,8 +12783,9 @@ enum class SteamUniverse : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 10
 // Alignment: 4
-// Size: 0xa
+// Size: 0x4
 enum class ETournamentGameState : uint32_t
 {
 	k_ETournamentGameState_Unknown = 0x0,
@@ -12261,6 +12801,7 @@ enum class ETournamentGameState : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class ECandyShopRewardType : uint32_t
@@ -12272,6 +12813,7 @@ enum class ECandyShopRewardType : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class EHighlightNumberFormat : uint32_t
@@ -12287,8 +12829,9 @@ enum class EHighlightNumberFormat : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 8
 // Alignment: 4
-// Size: 0x8
+// Size: 0x4
 enum class DOTAKeybindTemplate_t : uint32_t
 {
 	DOTA_KEYBIND_TEMPLATE_ARROW = 0x0,
@@ -12302,8 +12845,9 @@ enum class DOTAKeybindTemplate_t : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 12
 // Alignment: 4
-// Size: 0xc
+// Size: 0x4
 enum class EUnderDraftResponse : uint32_t
 {
 	k_eInternalError = 0x0,
@@ -12321,8 +12865,9 @@ enum class EUnderDraftResponse : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 6
 // Alignment: 4
-// Size: 0x6
+// Size: 0x4
 enum class EShowcaseHeroPlusFlag : uint32_t
 {
 	k_eShowcaseHeroPlusFlag_None = 0x0,
@@ -12334,8 +12879,9 @@ enum class EShowcaseHeroPlusFlag : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 14
 // Alignment: 4
-// Size: 0xe
+// Size: 0x4
 enum class ETournamentNodeState : uint32_t
 {
 	k_ETournamentNodeState_Unknown = 0x0,
@@ -12355,8 +12901,9 @@ enum class ETournamentNodeState : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 6
 // Alignment: 4
-// Size: 0x6
+// Size: 0x4
 enum class EDOTATriviaAnswerResult : uint32_t
 {
 	k_EDOTATriviaAnswerResult_Success = 0x0,
@@ -12368,8 +12915,9 @@ enum class EDOTATriviaAnswerResult : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 39
 // Alignment: 4
-// Size: 0x27
+// Size: 0x4
 enum class EStartFindingMatchResult : uint32_t
 {
 	k_EStartFindingMatchResult_Invalid = 0x0,
@@ -12414,8 +12962,9 @@ enum class EStartFindingMatchResult : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 6
 // Alignment: 4
-// Size: 0x6
+// Size: 0x4
 enum class CMsgBattleReport_HighlightTier : uint32_t
 {
 	// MPropertyFriendlyName "Tier Low"
@@ -12433,8 +12982,9 @@ enum class CMsgBattleReport_HighlightTier : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 14
 // Alignment: 4
-// Size: 0xe
+// Size: 0x4
 enum class SteamUGCMatchingUGCType : uint32_t
 {
 	Items = 0x0,
@@ -12454,8 +13004,9 @@ enum class SteamUGCMatchingUGCType : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 96
 // Alignment: 4
-// Size: 0x60
+// Size: 0x4
 enum class DOTA_2013PassportSelectionIndices : uint32_t
 {
 	PP13_SEL_ALLSTAR_PLAYER_0 = 0x0,
@@ -12557,8 +13108,9 @@ enum class DOTA_2013PassportSelectionIndices : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class PortraitUnitDirection_t : uint32_t
 {
 	PORTRAIT_UNIT_DIRECTION_INVALID = 0xffffffffffffffff,
@@ -12567,8 +13119,9 @@ enum class PortraitUnitDirection_t : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 9
 // Alignment: 4
-// Size: 0x9
+// Size: 0x4
 enum class ECandyShopAuditAction : uint32_t
 {
 	k_ECandyShopAuditAction_Invalid = 0x0,
@@ -12583,6 +13136,7 @@ enum class ECandyShopAuditAction : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class ECoachTeammateRating : uint32_t
@@ -12594,6 +13148,7 @@ enum class ECoachTeammateRating : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class EWeekendTourneyRichPresenceEvent : uint32_t
@@ -12605,8 +13160,9 @@ enum class EWeekendTourneyRichPresenceEvent : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 26
 // Alignment: 4
-// Size: 0x1a
+// Size: 0x4
 enum class EGuildAuditAction : uint32_t
 {
 	k_EGuildAuditAction_Invalid = 0x0,
@@ -12638,8 +13194,9 @@ enum class EGuildAuditAction : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 245
 // Alignment: 4
-// Size: 0xf5
+// Size: 0x4
 enum class DOTAKeybindCommand_t : uint32_t
 {
 	DOTA_KEYBIND_NONE = 0x0,
@@ -12890,8 +13447,9 @@ enum class DOTAKeybindCommand_t : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 19
 // Alignment: 4
-// Size: 0x13
+// Size: 0x4
 enum class SteamUGCQuery : uint32_t
 {
 	RankedByVote = 0x0,
@@ -12916,8 +13474,9 @@ enum class SteamUGCQuery : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 21
 // Alignment: 4
-// Size: 0x15
+// Size: 0x4
 enum class ETournamentTeamState : uint32_t
 {
 	k_ETournamentTeamState_Unknown = 0x0,
@@ -12944,6 +13503,7 @@ enum class ETournamentTeamState : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class ECandyShopRewardOptionType : uint32_t
@@ -12955,8 +13515,9 @@ enum class ECandyShopRewardOptionType : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 6
 // Alignment: 4
-// Size: 0x6
+// Size: 0x4
 enum class CMsgBattleReport_Role : uint32_t
 {
 	// MPropertySuppressEnumerator
@@ -12974,8 +13535,9 @@ enum class CMsgBattleReport_Role : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class EGuildChatType : uint32_t
 {
 	k_EGuildChatType_Unspecified = 0x0,
@@ -12984,8 +13546,9 @@ enum class EGuildChatType : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 7
 // Alignment: 4
-// Size: 0x7
+// Size: 0x4
 enum class EDevEventRequestResult : uint32_t
 {
 	k_EDevEventRequestResult_Success = 0x0,
@@ -12998,8 +13561,9 @@ enum class EDevEventRequestResult : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 67
 // Alignment: 4
-// Size: 0x43
+// Size: 0x4
 enum class CMsgBattleReport_HighlightType : uint32_t
 {
 	// MPropertySuppressEnumerator
@@ -13139,8 +13703,9 @@ enum class CMsgBattleReport_HighlightType : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class ETournamentTemplate : uint32_t
 {
 	k_ETournamentTemplate_None = 0x0,
@@ -13148,8 +13713,9 @@ enum class ETournamentTemplate : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class CMsgBattleReport_HighlightRarity : uint32_t
 {
 	// MPropertyFriendlyName "Common"
@@ -13161,8 +13727,9 @@ enum class CMsgBattleReport_HighlightRarity : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 14
 // Alignment: 4
-// Size: 0xe
+// Size: 0x4
 enum class ESupportEventRequestResult : uint32_t
 {
 	k_ESupportEventRequestResult_Success = 0x0,
@@ -13182,8 +13749,9 @@ enum class ESupportEventRequestResult : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 6
 // Alignment: 4
-// Size: 0x6
+// Size: 0x4
 enum class EShowcaseItemState : uint32_t
 {
 	k_eShowcaseItemState_Ok = 0x0,
@@ -13195,8 +13763,9 @@ enum class EShowcaseItemState : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 25
 // Alignment: 4
-// Size: 0x19
+// Size: 0x4
 enum class EHeroSelectionText : uint32_t
 {
 	k_EHeroSelectionText_Invalid = 0xffffffffffffffff,
@@ -13227,6 +13796,7 @@ enum class EHeroSelectionText : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class EItemEditorReservationResult : uint32_t
@@ -13238,8 +13808,9 @@ enum class EItemEditorReservationResult : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 8
 // Alignment: 4
-// Size: 0x8
+// Size: 0x4
 enum class EShowcaseAuditAction : uint32_t
 {
 	k_eShowcaseAuditAction_Invalid = 0x0,
@@ -13253,8 +13824,9 @@ enum class EShowcaseAuditAction : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class EPartyBeaconType : uint32_t
 {
 	k_EPartyBeaconType_Available = 0x0,
@@ -13262,8 +13834,9 @@ enum class EPartyBeaconType : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 10
 // Alignment: 4
-// Size: 0xa
+// Size: 0x4
 enum class EDOTAGroupMergeResult : uint32_t
 {
 	k_EDOTAGroupMergeResult_OK = 0x0,
@@ -13279,8 +13852,9 @@ enum class EDOTAGroupMergeResult : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 6
 // Alignment: 4
-// Size: 0x6
+// Size: 0x4
 enum class PortraitScale_t : uint32_t
 {
 	PORTRAIT_SCALE_INVALID = 0xffffffffffffffff,
@@ -13292,8 +13866,9 @@ enum class PortraitScale_t : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 12
 // Alignment: 4
-// Size: 0xc
+// Size: 0x4
 enum class ETournamentEvent : uint32_t
 {
 	k_ETournamentEvent_None = 0x0,
@@ -13311,8 +13886,9 @@ enum class ETournamentEvent : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class DOTA_WatchReplayType : uint32_t
 {
 	DOTA_WATCH_REPLAY_NORMAL = 0x0,
@@ -13320,8 +13896,9 @@ enum class DOTA_WatchReplayType : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class EShowcaseType : uint32_t
 {
 	k_eShowcaseType_Invalid = 0x0,
@@ -13332,8 +13909,9 @@ enum class EShowcaseType : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class EHighlightScoreComparison : uint32_t
 {
 	// MPropertyFriendlyName "Less Than"
@@ -13349,6 +13927,7 @@ enum class EHighlightScoreComparison : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class CMsgBattleReport_ELaneOutcome : uint32_t
@@ -13360,8 +13939,9 @@ enum class CMsgBattleReport_ELaneOutcome : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 9
 // Alignment: 4
-// Size: 0x9
+// Size: 0x4
 enum class ETeamFanContentAssetType : uint32_t
 {
 	k_eFanContentAssetType_LogoPNG = 0x1,
@@ -13376,8 +13956,9 @@ enum class ETeamFanContentAssetType : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class StartupBehavior_t : uint32_t
 {
 	UNIT_STARTUP_BEHAVIOR_DEFAULT = 0x0,
@@ -13385,6 +13966,7 @@ enum class StartupBehavior_t : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class CMsgDOTARequestMatches_SkillLevel : uint32_t
@@ -13396,8 +13978,9 @@ enum class CMsgDOTARequestMatches_SkillLevel : uint32_t
 };
 
 // Registered binary: panorama.dll (project 'panorama_content')
+// Enumerator count: 15
 // Alignment: 4
-// Size: 0xf
+// Size: 0x4
 enum class EStyleNodeType : uint32_t
 {
 	ROOT = 0x0,
@@ -13418,8 +14001,9 @@ enum class EStyleNodeType : uint32_t
 };
 
 // Registered binary: panorama.dll (project 'panorama_content')
+// Enumerator count: 13
 // Alignment: 4
-// Size: 0xd
+// Size: 0x4
 enum class ELayoutNodeType : uint32_t
 {
 	ROOT = 0x0,

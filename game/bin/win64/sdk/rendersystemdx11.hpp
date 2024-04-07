@@ -10,8 +10,9 @@
 // /////////////////////////////////////////////////////////////
 
 // Registered binary: rendersystemdx11.dll (project 'rendersystemdx11')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class RenderSlotType_t : uint32_t
 {
 	RENDER_SLOT_INVALID = 0xffffffffffffffff,
@@ -20,8 +21,9 @@ enum class RenderSlotType_t : uint32_t
 };
 
 // Registered binary: rendersystemdx11.dll (project 'rendersystemdx11')
+// Enumerator count: 12
 // Alignment: 4
-// Size: 0xc
+// Size: 0x4
 enum class RenderBufferFlags_t : uint32_t
 {
 	RENDER_BUFFER_USAGE_VERTEX_BUFFER = 0x1,
@@ -39,8 +41,9 @@ enum class RenderBufferFlags_t : uint32_t
 };
 
 // Registered binary: rendersystemdx11.dll (project 'rendersystemdx11')
+// Enumerator count: 13
 // Alignment: 4
-// Size: 0xd
+// Size: 0x4
 enum class RenderPrimitiveType_t : uint32_t
 {
 	RENDER_PRIM_POINTS = 0x0,
@@ -59,6 +62,7 @@ enum class RenderPrimitiveType_t : uint32_t
 };
 
 // Registered binary: rendersystemdx11.dll (project 'rendersystemdx11')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class InputLayoutVariation_t : uint32_t
@@ -70,8 +74,9 @@ enum class InputLayoutVariation_t : uint32_t
 };
 
 // Registered binary: rendersystemdx11.dll (project 'rendersystemdx11')
+// Enumerator count: 8
 // Alignment: 1
-// Size: 0x8
+// Size: 0x1
 enum class RenderMultisampleType_t : uint8_t
 {
 	RENDER_MULTISAMPLE_INVALID = 0xffffffffffffffff,

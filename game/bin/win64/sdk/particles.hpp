@@ -10,8 +10,9 @@
 // /////////////////////////////////////////////////////////////
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 6
 // Alignment: 4
-// Size: 0x6
+// Size: 0x4
 enum class ParticleControlPointAxis_t : uint32_t
 {
 	// MPropertyFriendlyName "X Axis"
@@ -29,8 +30,9 @@ enum class ParticleControlPointAxis_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 6
 // Alignment: 4
-// Size: 0x6
+// Size: 0x4
 enum class ParticleImpulseType_t : uint32_t
 {
 	// MPropertyFriendlyName "None"
@@ -48,8 +50,9 @@ enum class ParticleImpulseType_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class ParticleFalloffFunction_t : uint32_t
 {
 	// MPropertyFriendlyName "Constant - No Falloff"
@@ -61,8 +64,9 @@ enum class ParticleFalloffFunction_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class AnimationType_t : uint32_t
 {
 	// MPropertyFriendlyName "Fixed Rate"
@@ -74,8 +78,9 @@ enum class AnimationType_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class ClosestPointTestType_t : uint32_t
 {
 	// MPropertyFriendlyName "Box"
@@ -87,8 +92,9 @@ enum class ClosestPointTestType_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class InheritableBoolType_t : uint32_t
 {
 	// MPropertyFriendlyName "Inherit from Parent"
@@ -100,8 +106,9 @@ enum class InheritableBoolType_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class ParticleHitboxBiasType_t : uint32_t
 {
 	// MPropertyFriendlyName "Bias relative to Entity"
@@ -111,8 +118,9 @@ enum class ParticleHitboxBiasType_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class ParticleAttrBoxFlags_t : uint32_t
 {
 	// MPropertyFriendlyName "None"
@@ -122,8 +130,9 @@ enum class ParticleAttrBoxFlags_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 7
 // Alignment: 4
-// Size: 0x7
+// Size: 0x4
 enum class PFuncVisualizationType_t : uint32_t
 {
 	// MPropertyFriendlyName "Visualization Sphere Wireframe"
@@ -143,8 +152,9 @@ enum class PFuncVisualizationType_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class PetGroundType_t : uint32_t
 {
 	PET_GROUND_NONE = 0x0,
@@ -153,8 +163,9 @@ enum class PetGroundType_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class SpriteCardShaderType_t : uint32_t
 {
 	// MPropertyFriendlyName "Default"
@@ -164,8 +175,9 @@ enum class SpriteCardShaderType_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class ParticleTopology_t : uint32_t
 {
 	// MPropertyFriendlyName "Points"
@@ -181,6 +193,7 @@ enum class ParticleTopology_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class ParticleDetailLevel_t : uint32_t
@@ -196,6 +209,7 @@ enum class ParticleDetailLevel_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class ParticleTraceSet_t : uint32_t
@@ -211,8 +225,9 @@ enum class ParticleTraceSet_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class ParticleCollisionMode_t : uint32_t
 {
 	// MPropertyFriendlyName "Per-Particle Trace"
@@ -228,8 +243,9 @@ enum class ParticleCollisionMode_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class ParticleColorBlendMode_t : uint32_t
 {
 	// MPropertyFriendlyName "Replace"
@@ -245,8 +261,9 @@ enum class ParticleColorBlendMode_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 7
 // Alignment: 4
-// Size: 0x7
+// Size: 0x4
 enum class Detail2Combo_t : uint32_t
 {
 	// MPropertyFriendlyName "Uninitialized"
@@ -266,6 +283,7 @@ enum class Detail2Combo_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class DetailCombo_t : uint32_t
@@ -281,8 +299,9 @@ enum class DetailCombo_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 9
 // Alignment: 4
-// Size: 0x9
+// Size: 0x4
 enum class ScalarExpressionType_t : uint32_t
 {
 	// MPropertyFriendlyName "Uninitialized"
@@ -306,8 +325,9 @@ enum class ScalarExpressionType_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 9
 // Alignment: 4
-// Size: 0x9
+// Size: 0x4
 enum class VectorExpressionType_t : uint32_t
 {
 	// MPropertyFriendlyName "Uninitialized"
@@ -331,8 +351,9 @@ enum class VectorExpressionType_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 7
 // Alignment: 4
-// Size: 0x7
+// Size: 0x4
 enum class VectorFloatExpressionType_t : uint32_t
 {
 	// MPropertyFriendlyName "Uninitialized"
@@ -352,6 +373,7 @@ enum class VectorFloatExpressionType_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class MissingParentInheritBehavior_t : uint32_t
@@ -367,8 +389,9 @@ enum class MissingParentInheritBehavior_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class HitboxLerpType_t : uint32_t
 {
 	// MPropertyFriendlyName "Lerp from Start/End Time"
@@ -378,8 +401,9 @@ enum class HitboxLerpType_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class ParticleSelection_t : uint32_t
 {
 	// MPropertyFriendlyName "First/Oldest Particle"
@@ -391,8 +415,9 @@ enum class ParticleSelection_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 12
 // Alignment: 4
-// Size: 0xc
+// Size: 0x4
 enum class ParticlePinDistance_t : uint32_t
 {
 	// MPropertyFriendlyName "Don't Break"
@@ -422,8 +447,9 @@ enum class ParticlePinDistance_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 13
 // Alignment: 4
-// Size: 0xd
+// Size: 0x4
 enum class ParticleColorBlendType_t : uint32_t
 {
 	// MPropertyFriendlyName "Multiply"
@@ -455,8 +481,9 @@ enum class ParticleColorBlendType_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 6
 // Alignment: 4
-// Size: 0x6
+// Size: 0x4
 enum class ParticleSetMethod_t : uint32_t
 {
 	// MPropertyFriendlyName "Set Value"
@@ -474,8 +501,9 @@ enum class ParticleSetMethod_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class ParticleDirectionNoiseType_t : uint32_t
 {
 	// MPropertyFriendlyName "Perlin"
@@ -487,8 +515,9 @@ enum class ParticleDirectionNoiseType_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class ParticleRotationLockType_t : uint32_t
 {
 	// MPropertyFriendlyName "Don't Set"
@@ -500,8 +529,9 @@ enum class ParticleRotationLockType_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class ParticleEndcapMode_t : uint32_t
 {
 	// MPropertyFriendlyName "Always Enabled"
@@ -513,8 +543,9 @@ enum class ParticleEndcapMode_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class ParticleLightingQuality_t : uint32_t
 {
 	// MPropertyFriendlyName "Per-Particle Lighting"
@@ -526,8 +557,9 @@ enum class ParticleLightingQuality_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class StandardLightingAttenuationStyle_t : uint32_t
 {
 	// MPropertyFriendlyName "Quadratic/Linear Bias"
@@ -537,8 +569,9 @@ enum class StandardLightingAttenuationStyle_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class ParticleTraceMissBehavior_t : uint32_t
 {
 	// MPropertyFriendlyName "Do Nothing"
@@ -550,8 +583,9 @@ enum class ParticleTraceMissBehavior_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class ParticleOrientationSetMode_t : uint32_t
 {
 	// MPropertyFriendlyName "Set From Velocity"
@@ -561,8 +595,9 @@ enum class ParticleOrientationSetMode_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class ParticleLightnintBranchBehavior_t : uint32_t
 {
 	// MPropertyFriendlyName "Branch Towards Current Direction"
@@ -572,8 +607,9 @@ enum class ParticleLightnintBranchBehavior_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class ParticleLightFogLightingMode_t : uint32_t
 {
 	// MPropertyFriendlyName "None"
@@ -585,8 +621,9 @@ enum class ParticleLightFogLightingMode_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class ParticleSequenceCropOverride_t : uint32_t
 {
 	// MPropertyFriendlyName "Use Default Cropping Behavior"
@@ -598,8 +635,9 @@ enum class ParticleSequenceCropOverride_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class ParticleParentSetMode_t : uint32_t
 {
 	// MPropertyFriendlyName "Set Self and Children"
@@ -611,8 +649,9 @@ enum class ParticleParentSetMode_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class MaterialProxyType_t : uint32_t
 {
 	// MPropertyFriendlyName "Status Effect"
@@ -622,8 +661,9 @@ enum class MaterialProxyType_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class BBoxVolumeType_t : uint32_t
 {
 	// MPropertyFriendlyName "Bounding Box Volume"
@@ -635,8 +675,9 @@ enum class BBoxVolumeType_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class ParticleHitboxDataSelection_t : uint32_t
 {
 	// MPropertyFriendlyName "Average Hitbox Speed"
@@ -646,8 +687,9 @@ enum class ParticleHitboxDataSelection_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class SnapshotIndexType_t : uint32_t
 {
 	// MPropertyFriendlyName "Increment Index"
@@ -657,8 +699,9 @@ enum class SnapshotIndexType_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 6
 // Alignment: 4
-// Size: 0x6
+// Size: 0x4
 enum class ParticleOrientationChoiceList_t : uint32_t
 {
 	// MPropertyFriendlyName "Screen Align"
@@ -676,8 +719,9 @@ enum class ParticleOrientationChoiceList_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 7
 // Alignment: 4
-// Size: 0x7
+// Size: 0x4
 enum class ParticleOutputBlendMode_t : uint32_t
 {
 	// MPropertyFriendlyName "Alpha Blend"
@@ -697,6 +741,7 @@ enum class ParticleOutputBlendMode_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class ParticleAlphaReferenceType_t : uint32_t
@@ -712,8 +757,9 @@ enum class ParticleAlphaReferenceType_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class BlurFilterType_t : uint32_t
 {
 	// MPropertyFriendlyName "Gaussian"
@@ -723,6 +769,7 @@ enum class BlurFilterType_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class ParticleLightTypeChoiceList_t : uint32_t
@@ -738,8 +785,9 @@ enum class ParticleLightTypeChoiceList_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class ParticleLightUnitChoiceList_t : uint32_t
 {
 	// MPropertyFriendlyName "Candelas"
@@ -749,8 +797,9 @@ enum class ParticleLightUnitChoiceList_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class ParticleOmni2LightTypeChoiceList_t : uint32_t
 {
 	// MPropertyFriendlyName "Point"
@@ -760,8 +809,9 @@ enum class ParticleOmni2LightTypeChoiceList_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class ParticleLightBehaviorChoiceList_t : uint32_t
 {
 	// MPropertyFriendlyName "Follow Direction"
@@ -773,8 +823,9 @@ enum class ParticleLightBehaviorChoiceList_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class ParticleDepthFeatheringMode_t : uint32_t
 {
 	// MPropertyFriendlyName "Off"
@@ -786,6 +837,7 @@ enum class ParticleDepthFeatheringMode_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class ParticleVRHandChoiceList_t : uint32_t
@@ -801,8 +853,9 @@ enum class ParticleVRHandChoiceList_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class ParticleSortingChoiceList_t : uint32_t
 {
 	// MPropertyFriendlyName "Distance - Nearest"
@@ -812,8 +865,9 @@ enum class ParticleSortingChoiceList_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 10
 // Alignment: 4
-// Size: 0xa
+// Size: 0x4
 enum class SpriteCardTextureType_t : uint32_t
 {
 	// MPropertyFriendlyName "Diffuse Texture"
@@ -839,8 +893,9 @@ enum class SpriteCardTextureType_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 15
 // Alignment: 4
-// Size: 0xf
+// Size: 0x4
 enum class SpriteCardTextureChannel_t : uint32_t
 {
 	// MPropertyFriendlyName "RGB"
@@ -876,8 +931,9 @@ enum class SpriteCardTextureChannel_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 14
 // Alignment: 4
-// Size: 0xe
+// Size: 0x4
 enum class SpriteCardPerParticleScale_t : uint32_t
 {
 	// MPropertyFriendlyName "None"
@@ -911,8 +967,9 @@ enum class SpriteCardPerParticleScale_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 7
 // Alignment: 4
-// Size: 0x7
+// Size: 0x4
 enum class ParticleTextureLayerBlendType_t : uint32_t
 {
 	// MPropertyFriendlyName "Multiply"
@@ -932,8 +989,9 @@ enum class ParticleTextureLayerBlendType_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 6
 // Alignment: 4
-// Size: 0x6
+// Size: 0x4
 enum class ParticlePostProcessPriorityGroup_t : uint32_t
 {
 	// MPropertyFriendlyName "Level Volume"
@@ -951,8 +1009,9 @@ enum class ParticlePostProcessPriorityGroup_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class ParticleFogType_t : uint32_t
 {
 	// MPropertyFriendlyName "Use Game Default"
@@ -964,8 +1023,9 @@ enum class ParticleFogType_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particles')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class TextureRepetitionMode_t : uint32_t
 {
 	// MPropertyFriendlyName "Per-Particle"
@@ -975,8 +1035,9 @@ enum class TextureRepetitionMode_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particleslib')
+// Enumerator count: 24
 // Alignment: 4
-// Size: 0x18
+// Size: 0x4
 enum class ParticleFloatType_t : uint32_t
 {
 	PF_TYPE_INVALID = 0xffffffffffffffff,
@@ -1006,8 +1067,9 @@ enum class ParticleFloatType_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particleslib')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class ParticleFloatBiasType_t : uint32_t
 {
 	PF_BIAS_TYPE_INVALID = 0xffffffffffffffff,
@@ -1018,6 +1080,7 @@ enum class ParticleFloatBiasType_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particleslib')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class PFNoiseType_t : uint32_t
@@ -1029,6 +1092,7 @@ enum class PFNoiseType_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particleslib')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class PFNoiseModifier_t : uint32_t
@@ -1040,8 +1104,9 @@ enum class PFNoiseModifier_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particleslib')
+// Enumerator count: 6
 // Alignment: 4
-// Size: 0x6
+// Size: 0x4
 enum class PFNoiseTurbulence_t : uint32_t
 {
 	PF_NOISE_TURB_NONE = 0x0,
@@ -1053,6 +1118,7 @@ enum class PFNoiseTurbulence_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particleslib')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class ParticleFloatRandomMode_t : uint32_t
@@ -1064,6 +1130,7 @@ enum class ParticleFloatRandomMode_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particleslib')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class ParticleFloatInputMode_t : uint32_t
@@ -1075,8 +1142,9 @@ enum class ParticleFloatInputMode_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particleslib')
+// Enumerator count: 8
 // Alignment: 4
-// Size: 0x8
+// Size: 0x4
 enum class ParticleFloatMapType_t : uint32_t
 {
 	PF_MAP_TYPE_INVALID = 0xffffffffffffffff,
@@ -1090,8 +1158,9 @@ enum class ParticleFloatMapType_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particleslib')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class ParticleTransformType_t : uint32_t
 {
 	PT_TYPE_INVALID = 0x0,
@@ -1102,8 +1171,9 @@ enum class ParticleTransformType_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particleslib')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class ParticleModelType_t : uint32_t
 {
 	PM_TYPE_INVALID = 0x0,
@@ -1114,8 +1184,9 @@ enum class ParticleModelType_t : uint32_t
 };
 
 // Registered binary: particles.dll (project 'particleslib')
+// Enumerator count: 19
 // Alignment: 4
-// Size: 0x13
+// Size: 0x4
 enum class ParticleVecType_t : uint32_t
 {
 	PVEC_TYPE_INVALID = 0xffffffffffffffff,

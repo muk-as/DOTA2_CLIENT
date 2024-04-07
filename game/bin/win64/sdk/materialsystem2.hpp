@@ -10,6 +10,7 @@
 // /////////////////////////////////////////////////////////////
 
 // Registered binary: materialsystem2.dll (project 'materialsystem2')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class HorizJustification_e : uint32_t
@@ -21,6 +22,7 @@ enum class HorizJustification_e : uint32_t
 };
 
 // Registered binary: materialsystem2.dll (project 'materialsystem2')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class VertJustification_e : uint32_t
@@ -32,8 +34,9 @@ enum class VertJustification_e : uint32_t
 };
 
 // Registered binary: materialsystem2.dll (project 'materialsystem2')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class LayoutPositionType_e : uint32_t
 {
 	LAYOUTPOSITIONTYPE_VIEWPORT_RELATIVE = 0x0,
@@ -42,8 +45,9 @@ enum class LayoutPositionType_e : uint32_t
 };
 
 // Registered binary: materialsystem2.dll (project 'materialsystem2')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class BloomBlendMode_t : uint32_t
 {
 	BLOOM_BLEND_ADD = 0x0,
@@ -52,8 +56,9 @@ enum class BloomBlendMode_t : uint32_t
 };
 
 // Registered binary: materialsystem2.dll (project 'materialsystem2')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class ViewFadeMode_t : uint32_t
 {
 	VIEW_FADE_CONSTANT_COLOR = 0x0,

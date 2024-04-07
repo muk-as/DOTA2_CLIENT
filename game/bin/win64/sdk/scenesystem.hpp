@@ -10,8 +10,9 @@
 // /////////////////////////////////////////////////////////////
 
 // Registered binary: scenesystem.dll (project 'scenesystem')
+// Enumerator count: 4
 // Alignment: 1
-// Size: 0x4
+// Size: 0x1
 enum class DisableShadows_t : uint8_t
 {
 	kDisableShadows_None = 0x0,

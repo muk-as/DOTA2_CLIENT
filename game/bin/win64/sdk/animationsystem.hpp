@@ -10,8 +10,9 @@
 // /////////////////////////////////////////////////////////////
 
 // Registered binary: animationsystem.dll (project 'animationsystem')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class MoodType_t : uint32_t
 {
 	// MPropertyFriendlyName "Head"
@@ -21,8 +22,9 @@ enum class MoodType_t : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animationsystem')
+// Enumerator count: 6
 // Alignment: 4
-// Size: 0x6
+// Size: 0x4
 enum class AnimationProcessingType_t : uint32_t
 {
 	ANIMATION_PROCESSING_SERVER_SIMULATION = 0x0,
@@ -34,8 +36,9 @@ enum class AnimationProcessingType_t : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animationsystem')
+// Enumerator count: 7
 // Alignment: 4
-// Size: 0x7
+// Size: 0x4
 enum class AnimationSnapshotType_t : uint32_t
 {
 	ANIMATION_SNAPSHOT_SERVER_SIMULATION = 0x0,
@@ -48,8 +51,9 @@ enum class AnimationSnapshotType_t : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animationsystem')
+// Enumerator count: 17
 // Alignment: 4
-// Size: 0x11
+// Size: 0x4
 enum class SeqCmd_t : uint32_t
 {
 	SeqCmd_Nop = 0x0,
@@ -72,6 +76,7 @@ enum class SeqCmd_t : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animationsystem')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class SeqPoseSetting_t : uint32_t
@@ -83,8 +88,9 @@ enum class SeqPoseSetting_t : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animationsystem')
+// Enumerator count: 18
 // Alignment: 4
-// Size: 0x12
+// Size: 0x4
 enum class ParticleAttachment_t : uint32_t
 {
 	PATTACH_INVALID = 0xffffffffffffffff,
@@ -108,8 +114,9 @@ enum class ParticleAttachment_t : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animationsystem')
+// Enumerator count: 9
 // Alignment: 1
-// Size: 0x9
+// Size: 0x1
 enum class AnimParamType_t : uint8_t
 {
 	ANIMPARAM_UNKNOWN = 0x0,
@@ -124,6 +131,7 @@ enum class AnimParamType_t : uint8_t
 };
 
 // Registered binary: animationsystem.dll (project 'animationsystem')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class BoneTransformSpace_t : uint32_t
@@ -139,8 +147,9 @@ enum class BoneTransformSpace_t : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animationsystem')
+// Enumerator count: 13
 // Alignment: 4
-// Size: 0xd
+// Size: 0x4
 enum class AnimParamButton_t : uint32_t
 {
 	// MPropertyFriendlyName "None"
@@ -172,8 +181,9 @@ enum class AnimParamButton_t : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animationsystem')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class AnimParamNetworkSetting : uint32_t
 {
 	// MPropertyFriendlyName "Auto"
@@ -185,8 +195,9 @@ enum class AnimParamNetworkSetting : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animationsystem')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class FootstepLandedFootSoundType_t : uint32_t
 {
 	FOOTSOUND_Left = 0x0,
@@ -195,8 +206,9 @@ enum class FootstepLandedFootSoundType_t : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animationsystem')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class AnimPoseControl : uint32_t
 {
 	// MPropertyFriendlyName "None"
@@ -208,8 +220,9 @@ enum class AnimPoseControl : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animationsystem')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class RagdollPoseControl : uint32_t
 {
 	Absolute = 0x0,
@@ -217,8 +230,9 @@ enum class RagdollPoseControl : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'modellib')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class VPhysXBodyPart_t__VPhysXFlagEnum_t : uint32_t
 {
 	FLAG_STATIC = 0x1,
@@ -229,6 +243,7 @@ enum class VPhysXBodyPart_t__VPhysXFlagEnum_t : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'modellib')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class VPhysXConstraintParams_t__EnumFlags0_t : uint32_t
@@ -240,8 +255,9 @@ enum class VPhysXConstraintParams_t__EnumFlags0_t : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'modellib')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class VPhysXJoint_t__Flags_t : uint32_t
 {
 	JOINT_FLAGS_NONE = 0x0,
@@ -250,8 +266,9 @@ enum class VPhysXJoint_t__Flags_t : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'modellib')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class VPhysXAggregateData_t__VPhysXFlagEnum_t : uint32_t
 {
 	FLAG_IS_POLYSOUP_GEOMETRY = 0x1,
@@ -260,8 +277,9 @@ enum class VPhysXAggregateData_t__VPhysXFlagEnum_t : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'modellib')
+// Enumerator count: 8
 // Alignment: 4
-// Size: 0x8
+// Size: 0x4
 enum class MeshDrawPrimitiveFlags_t : uint32_t
 {
 	MESH_DRAW_FLAGS_NONE = 0x0,
@@ -275,8 +293,9 @@ enum class MeshDrawPrimitiveFlags_t : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'modellib')
+// Enumerator count: 22
 // Alignment: 4
-// Size: 0x16
+// Size: 0x4
 enum class ModelSkeletonData_t__BoneFlags_t : uint32_t
 {
 	FLAG_NO_BONE_FLAGS = 0x0,
@@ -304,8 +323,9 @@ enum class ModelSkeletonData_t__BoneFlags_t : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'modellib')
+// Enumerator count: 15
 // Alignment: 4
-// Size: 0xf
+// Size: 0x4
 enum class PermModelInfo_t__FlagEnum : uint32_t
 {
 	FLAG_TRANSLUCENT = 0x1,
@@ -326,6 +346,7 @@ enum class PermModelInfo_t__FlagEnum : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'modellib')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class ModelBoneFlexComponent_t : uint32_t
@@ -337,8 +358,9 @@ enum class ModelBoneFlexComponent_t : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'modellib')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class ModelConfigAttachmentType_t : uint32_t
 {
 	MODEL_CONFIG_ATTACHMENT_INVALID = 0xffffffffffffffff,
@@ -349,8 +371,9 @@ enum class ModelConfigAttachmentType_t : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'modellib')
+// Enumerator count: 26
 // Alignment: 4
-// Size: 0x1a
+// Size: 0x4
 enum class FlexOpCode_t : uint32_t
 {
 	FLEX_OP_CONST = 0x1,
@@ -382,6 +405,7 @@ enum class FlexOpCode_t : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'modellib')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class MorphFlexControllerRemapType_t : uint32_t
@@ -393,6 +417,7 @@ enum class MorphFlexControllerRemapType_t : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'modellib')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class MorphBundleType_t : uint32_t
@@ -404,8 +429,9 @@ enum class MorphBundleType_t : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'modellib')
+// Enumerator count: 5
 // Alignment: 1
-// Size: 0x5
+// Size: 0x1
 enum class MovementGait_t : uint8_t
 {
 	// MPropertyFriendlyName "None"
@@ -421,8 +447,9 @@ enum class MovementGait_t : uint8_t
 };
 
 // Registered binary: animationsystem.dll (project 'animlib')
+// Enumerator count: 3
 // Alignment: 1
-// Size: 0x3
+// Size: 0x1
 enum class CNmBoneMask__WeightInfo_t : uint8_t
 {
 	Zero = 0x0,
@@ -431,8 +458,9 @@ enum class CNmBoneMask__WeightInfo_t : uint8_t
 };
 
 // Registered binary: animationsystem.dll (project 'animlib')
+// Enumerator count: 4
 // Alignment: 1
-// Size: 0x4
+// Size: 0x1
 enum class NmFootPhase_t : uint8_t
 {
 	LeftFootDown = 0x0,
@@ -442,8 +470,9 @@ enum class NmFootPhase_t : uint8_t
 };
 
 // Registered binary: animationsystem.dll (project 'animlib')
+// Enumerator count: 6
 // Alignment: 1
-// Size: 0x6
+// Size: 0x1
 enum class NmFootPhaseCondition_t : uint8_t
 {
 	LeftFootDown = 0x0,
@@ -455,8 +484,9 @@ enum class NmFootPhaseCondition_t : uint8_t
 };
 
 // Registered binary: animationsystem.dll (project 'animlib')
+// Enumerator count: 3
 // Alignment: 1
-// Size: 0x3
+// Size: 0x1
 enum class NmTransitionRule_t : uint8_t
 {
 	// MPropertyFriendlyName "Fully Allowed"
@@ -468,8 +498,9 @@ enum class NmTransitionRule_t : uint8_t
 };
 
 // Registered binary: animationsystem.dll (project 'animlib')
+// Enumerator count: 4
 // Alignment: 1
-// Size: 0x4
+// Size: 0x1
 enum class NmTransitionRuleCondition_t : uint8_t
 {
 	// MPropertyFriendlyName "Any Allowed"
@@ -483,8 +514,9 @@ enum class NmTransitionRuleCondition_t : uint8_t
 };
 
 // Registered binary: animationsystem.dll (project 'animlib')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class NmFrameSnapEventMode_t : uint32_t
 {
 	Floor = 0x0,
@@ -492,6 +524,7 @@ enum class NmFrameSnapEventMode_t : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class IKChannelMode : uint32_t
@@ -507,8 +540,9 @@ enum class IKChannelMode : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class EDemoBoneSelectionMode : uint32_t
 {
 	// MPropertyFriendlyName "Capture All Bones"
@@ -518,8 +552,9 @@ enum class EDemoBoneSelectionMode : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
+// Enumerator count: 37
 // Alignment: 4
-// Size: 0x25
+// Size: 0x4
 enum class AnimValueSource : uint32_t
 {
 	// MPropertyFriendlyName "Move Heading"
@@ -599,8 +634,9 @@ enum class AnimValueSource : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
+// Enumerator count: 13
 // Alignment: 4
-// Size: 0xd
+// Size: 0x4
 enum class AnimVectorSource : uint32_t
 {
 	// MPropertyFriendlyName "Move Direction"
@@ -632,8 +668,9 @@ enum class AnimVectorSource : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class DampingSpeedFunction : uint32_t
 {
 	NoDamping = 0x0,
@@ -642,8 +679,9 @@ enum class DampingSpeedFunction : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class AnimNodeNetworkMode : uint32_t
 {
 	// MPropertyFriendlyName "Server Authoritative"
@@ -653,6 +691,7 @@ enum class AnimNodeNetworkMode : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class StateActionBehavior : uint32_t
@@ -664,8 +703,9 @@ enum class StateActionBehavior : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class FieldNetworkOption : uint32_t
 {
 	// MPropertyFriendlyName "Auto"
@@ -677,8 +717,9 @@ enum class FieldNetworkOption : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
+// Enumerator count: 8
 // Alignment: 4
-// Size: 0x8
+// Size: 0x4
 enum class FootFallTagFoot_t : uint32_t
 {
 	// MPropertyFriendlyName "Left"
@@ -700,8 +741,9 @@ enum class FootFallTagFoot_t : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class MatterialAttributeTagType_t : uint32_t
 {
 	// MPropertyFriendlyName "Value"
@@ -711,8 +753,9 @@ enum class MatterialAttributeTagType_t : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
+// Enumerator count: 3
 // Alignment: 1
-// Size: 0x3
+// Size: 0x1
 enum class VelocityMetricMode : uint8_t
 {
 	// MPropertyFriendlyName "Direction Only"
@@ -724,6 +767,7 @@ enum class VelocityMetricMode : uint8_t
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class AimMatrixBlendMode : uint32_t
@@ -739,6 +783,7 @@ enum class AimMatrixBlendMode : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class BoneMaskBlendSpace : uint32_t
@@ -754,8 +799,9 @@ enum class BoneMaskBlendSpace : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class JiggleBoneSimSpace : uint32_t
 {
 	// MPropertyFriendlyName "Local Space"
@@ -767,8 +813,9 @@ enum class JiggleBoneSimSpace : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
+// Enumerator count: 7
 // Alignment: 4
-// Size: 0x7
+// Size: 0x4
 enum class SolveIKChainAnimNodeDebugSetting : uint32_t
 {
 	// MPropertyFriendlyName "None"
@@ -788,8 +835,9 @@ enum class SolveIKChainAnimNodeDebugSetting : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
+// Enumerator count: 3
 // Alignment: 2
-// Size: 0x3
+// Size: 0x2
 enum class AnimScriptType : uint16_t
 {
 	ANIMSCRIPT_TYPE_INVALID = 0xffffffffffffffff,
@@ -798,8 +846,9 @@ enum class AnimScriptType : uint16_t
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class BinaryNodeTiming : uint32_t
 {
 	// MPropertyFriendlyName "Use Child1"
@@ -811,8 +860,9 @@ enum class BinaryNodeTiming : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class BinaryNodeChildOption : uint32_t
 {
 	// MPropertyFriendlyName "Child 1"
@@ -822,6 +872,7 @@ enum class BinaryNodeChildOption : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class BlendKeyType : uint32_t
@@ -837,8 +888,9 @@ enum class BlendKeyType : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class Blend2DMode : uint32_t
 {
 	// MPropertyFriendlyName "General"
@@ -848,6 +900,7 @@ enum class Blend2DMode : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class ChoiceMethod : uint32_t
@@ -859,8 +912,9 @@ enum class ChoiceMethod : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class ChoiceChangeMethod : uint32_t
 {
 	OnReset = 0x0,
@@ -869,8 +923,9 @@ enum class ChoiceChangeMethod : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class ChoiceBlendMethod : uint32_t
 {
 	// MPropertyFriendlyName "Single Blend Time"
@@ -880,8 +935,9 @@ enum class ChoiceBlendMethod : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class FootLockSubVisualization : uint32_t
 {
 	// MPropertyFriendlyName "Reachability Analysis"
@@ -891,8 +947,9 @@ enum class FootLockSubVisualization : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class FootPinningTimingSource : uint32_t
 {
 	FootMotion = 0x0,
@@ -901,8 +958,9 @@ enum class FootPinningTimingSource : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class StepPhase : uint32_t
 {
 	// MPropertyFriendlyName "On Ground"
@@ -912,8 +970,9 @@ enum class StepPhase : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class JumpCorrectionMethod : uint32_t
 {
 	// MPropertyFriendlyName "Scale Animation Motion"
@@ -923,8 +982,9 @@ enum class JumpCorrectionMethod : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class SelectorTagBehavior_t : uint32_t
 {
 	// MPropertyFriendlyName "Active While Current"
@@ -936,8 +996,9 @@ enum class SelectorTagBehavior_t : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class StanceOverrideMode : uint32_t
 {
 	Sequence = 0x0,
@@ -945,8 +1006,9 @@ enum class StanceOverrideMode : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class ResetCycleOption : uint32_t
 {
 	Beginning = 0x0,
@@ -957,8 +1019,9 @@ enum class ResetCycleOption : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
+// Enumerator count: 2
 // Alignment: 4
-// Size: 0x2
+// Size: 0x4
 enum class IkEndEffectorType : uint32_t
 {
 	// MPropertyFriendlyName "Attachment"
@@ -968,6 +1031,7 @@ enum class IkEndEffectorType : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
+// Enumerator count: 4
 // Alignment: 4
 // Size: 0x4
 enum class IkTargetType : uint32_t
@@ -983,8 +1047,9 @@ enum class IkTargetType : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
+// Enumerator count: 3
 // Alignment: 1
-// Size: 0x3
+// Size: 0x1
 enum class PoseType_t : uint8_t
 {
 	POSETYPE_STATIC = 0x0,
@@ -993,8 +1058,9 @@ enum class PoseType_t : uint8_t
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
+// Enumerator count: 5
 // Alignment: 4
-// Size: 0x5
+// Size: 0x4
 enum class CAnimationGraphVisualizerPrimitiveType : uint32_t
 {
 	ANIMATIONGRAPHVISUALIZERPRIMITIVETYPE_Text = 0x0,
@@ -1005,8 +1071,9 @@ enum class CAnimationGraphVisualizerPrimitiveType : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class FacingMode : uint32_t
 {
 	// MPropertyFriendlyName "Manual"
@@ -1018,8 +1085,9 @@ enum class FacingMode : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
+// Enumerator count: 6
 // Alignment: 4
-// Size: 0x6
+// Size: 0x4
 enum class IKSolverType : uint32_t
 {
 	// MPropertyFriendlyName "Perlin"
@@ -1037,8 +1105,9 @@ enum class IKSolverType : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class IKTargetSource : uint32_t
 {
 	// MPropertyFriendlyName "Bone"
@@ -1049,8 +1118,9 @@ enum class IKTargetSource : uint32_t
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
+// Enumerator count: 3
 // Alignment: 4
-// Size: 0x3
+// Size: 0x4
 enum class IKTargetCoordinateSystem : uint32_t
 {
 	// MPropertyFriendlyName "World Space"

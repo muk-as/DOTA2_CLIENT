@@ -10,8 +10,9 @@
 // /////////////////////////////////////////////////////////////
 
 // Registered binary: panorama.dll (project 'panorama_content')
+// Enumerator count: 13
 // Alignment: 4
-// Size: 0xd
+// Size: 0x4
 enum class ELayoutNodeType : uint32_t
 {
 	ROOT = 0x0,
@@ -30,8 +31,9 @@ enum class ELayoutNodeType : uint32_t
 };
 
 // Registered binary: panorama.dll (project 'panorama_content')
+// Enumerator count: 15
 // Alignment: 4
-// Size: 0xf
+// Size: 0x4
 enum class EStyleNodeType : uint32_t
 {
 	ROOT = 0x0,
