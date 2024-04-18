@@ -2,9 +2,9 @@
 0 0 0 255
 0 = use biquad instead of svf, 1 = use vectorized svf, 2 = use scalar svf
 0V[$0
+0V\a\apV\a
 0]T30
 0ffff
-0r\a\bPr\a
 10IAppSystem
 11CSteamAudio
 11ISteamAudio
@@ -13,22 +13,26 @@
 15CTier1AppSystemI11ISteamAudioLx0EE
 15CTier2AppSystemI11ISteamAudioLx0EE
 16CDirectProcessor
-16CReverbProcessor
+16CImpulseResponse
 16CSteamAudioScene
 16IDirectProcessor
-16IReverbProcessor
+16IImpulseResponse
 16ISourceProcessor
 16ISteamAudioScene
 17CPathingProcessor
 17CSteamAudioProbes
+17CSteamAudioSource
 17IPathingProcessor
 17ISteamAudioProbes
+17ISteamAudioSource
 18CSource3DProcessor
 1ffffff
 1؉G03G
 20CPostConnectCallback
 21CSurfacePropDataTableI19CSteamAudioMaterialE
+22CHybridReverbProcessor
 22CSchemaInstallCallback
+22IHybridReverbProcessor
 23CSteamAudioMaterialList
 25CSurfacePropDataTableBase
 2fffff
@@ -67,7 +71,7 @@ A3O\bA3W\f
 A3O\bA3W\fE
 A3O\bA3W\fM
 A3\aA3
-A;_HtB
+A;^HtB
 AES for x86_64, CRYPTOGAMS by <appro@openssl.org
 AES-NI GCM module for x86_64, CRYPTOGAMS by <appro@openssl.org
 AESNI-CBC+SHA1 stitch for x86_64, CRYPTOGAMS by <appro@openssl.org
@@ -90,6 +94,7 @@ AWAVAUATSPA
 AWAVAUATSPD
 AWAVAUATSPH
 AWAVAUATSPI
+AWAVAUATSPL
 AWAVAUATSPM
 AWAVSA
 AWAVSH
@@ -100,6 +105,7 @@ AWAVSPI
 AWAVSPL
 AWAVSPM
 A_A^A]A
+A`2CVA\\Ap\bRARARARARARAp\bRAp\bRA^0
 Adjust overall volume of the default HRTF by the specified gain (dB
 AlignedByteArray not properly aligned\n
 Ambisonics order to use for convolution reverb. 0th order = 1 channel, 1st order = 4 channels
@@ -120,7 +126,6 @@ A~oUHI
 A~ou8gI
 A~ou\bI
 A~ouhI
-B`/Cp\bRARARARARARA^0
 BakePathData: Cancelled\n
 BakePathData: Max probes (%u) limit exceeded (%d). Bake cancelled.\n
 BakePathData: Saved %llu bytes.\n
@@ -137,6 +142,8 @@ Bffff
 BinaryProperties_GetValue
 CCņCCŚMMךMM
 CDirectProcessor::CDirectProcessor(IPLContext, const IPLAudioSettings &, int
+CHybridReverbProcessor::CHybridReverbProcessor(IPLContext, const IPLAudioSettings &, int, int, IPLReflectionsPartitioner2
+CImpulseResponse::CImpulseResponse(IPLContext, IPLAudioSettings &, float, int
 CMemAllocSystemInitialize
 CUtlBlockMemory overflow!\n
 C`L9(t+I
@@ -156,6 +163,7 @@ Content file %s is corrupt. Hashing could not be verified. Verify integrity of g
 Content file %s is corrupt. Verify integrity of game files.\n
 Content file %s is corrupt; Chunk hash not found (expected: %d, found: %d)\n
 Content file %s is corrupt; signature couldn't be verified. Verify integrity of game files\n
+Continue using previous prrobes if probe lookup for reverb fails
 Could not load custom hrtf properties file. %s
 CreateInterface
 CreateSimpleThread
@@ -526,8 +534,11 @@ USATAVAWH
 UUUUUUUUH
 UUUUUUUUUUUUUUUU3333333333333333
 U\f2>Y
+Unable to create Ambisonics decode effect [%d]\n
 Unable to create custom HRTF [%s]\n
 Unable to create direct effect [%d]\n
+Unable to create impulse response [%d]\n
+Unable to create reflections effect [%d]\n
 Unable to create scene: %d.\n
 Unable to create serialized object for scene export.\n
 Unable to create static mesh: %d.\n
@@ -597,8 +608,7 @@ Warning
 WorldRendererMgr001
 X,,tX,,t4
 X[A^A
-X\a\apY\a
-X\v=ja\a
+X\v=Zc\a
 Z13FioCreateFilePKc15EFioAccessFlags14EFioShareFlags14EFioCreateModejPi
 Z14V_stristr_fastPKcS0
 Z15LoadKV3FromFileP18CKeyValues3ContextP10CUtlStringPKcS4_RK7KV3ID_t
@@ -623,6 +633,11 @@ ZN10CUtlString6FormatEPKcz
 ZN10CUtlString7AcquireEP13CBufferStringb
 ZN10CUtlString9SetDirectEPKci
 ZN10CUtlStringaSERK13CBufferString
+ZN11CTSListBase11InternalPopEv
+ZN11CTSListBase12InternalPushEP13TSLNodeBase_t
+ZN11CTSListBase6DetachEv
+ZN11CTSListBaseC1Ev
+ZN11CTSListBaseC2Ev
 ZN12CThreadEvent3SetEv
 ZN12CThreadEvent5CheckEv
 ZN12CThreadEvent5ResetEv
@@ -700,7 +715,7 @@ ZnwmSt11align_val_tRKSt9nothrow_t
 ZwKiZwKi
 a p`PPp@P@P0000@P@P00000
 a256_enc
-a\tPa\a\bpa\a\b
+a\a #\a
 acm64
 adecrypt
 aencrypt_blocks
@@ -806,6 +821,7 @@ effffff
 elect_w
 enable_dc_correction_for_phase_interpolation
 enable_paths_from_all_source_probes
+enable_reverb_probe_caching_for_missing_probes
 encrypt
 encrypt_key
 f %f %f
@@ -851,7 +867,6 @@ invalid_hitbox
 iplAirAbsorptionCalculate
 iplAmbisonicsDecodeEffectApply
 iplAmbisonicsDecodeEffectCreate
-iplAmbisonicsDecodeEffectRelease
 iplBinauralEffectApply
 iplBinauralEffectCreate
 iplBinauralEffectRelease
@@ -868,6 +883,15 @@ iplEmbreeDeviceCreate
 iplEmbreeDeviceRelease
 iplHRTFCreate
 iplHRTFRelease
+iplImpulseResponse2AddChannel
+iplImpulseResponse2AddSample
+iplImpulseResponse2Create
+iplImpulseResponse2Release
+iplImpulseResponse2Reset
+iplImpulseResponse2SetChannel
+iplImpulseResponse2SetSample
+iplImpulseResponse2Swap
+iplImpulseResponse2SwapSource
 iplPathBakerBake
 iplPathBakerCancelBake
 iplPathEffectApply
@@ -892,11 +916,21 @@ iplProbeNeighborhoodCreate
 iplProbeNeighborhoodRelease
 iplProbeNeighborhoodReset
 iplProbeNeighborhoodResize
-iplReflectionEffectApply
-iplReflectionEffectCreate
-iplReflectionEffectRelease
 iplReflectionsBakerBake
 iplReflectionsBakerCancelBake
+iplReflectionsEffect2Apply
+iplReflectionsEffect2Create
+iplReflectionsEffect2Release
+iplReflectionsEffect2SetBuffer
+iplReflectionsEffect2SetFloat
+iplReflectionsEffect2SetInt32
+iplReflectionsPartitioner2AddTask
+iplReflectionsPartitioner2Commit
+iplReflectionsPartitioner2Create
+iplReflectionsPartitioner2Release
+iplReflectionsPartitioner2RemoveTask
+iplReflectionsPartitioner2Retain
+iplReflectionsPartitioner2RunTasks
 iplSceneCommit
 iplSceneCreate
 iplSceneRelease
@@ -1078,6 +1112,7 @@ snd_steamaudio_enable_custom_hrtf
 snd_steamaudio_enable_pathing
 snd_steamaudio_enable_perspective_correction
 snd_steamaudio_enable_probeneighborhood_caching
+snd_steamaudio_enable_reverb_probe_caching_for_missing_probes
 snd_steamaudio_enable_spatial_blend_fix
 snd_steamaudio_halton_sequence
 snd_steamaudio_hybrid_reverb_overlap
@@ -1139,7 +1174,6 @@ t$@fD
 t,HcCP;C8s#H
 tGL;GP
 tJA9\\$\b~Cffff
-t\e1ۋ=r
 t\tL9+u
 t\tL93u
 tcE;o\b}8E

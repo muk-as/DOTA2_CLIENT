@@ -24,6 +24,7 @@
 		<include src="s2r://panorama/scripts/post_game_progress/post_game_progress_battle_pass_2022.vts_c" />
 		<include src="s2r://panorama/scripts/post_game_progress/post_game_progress_international2023.vts_c" />
 		<include src="s2r://panorama/scripts/post_game_progress/post_game_progress_frostivus2023.vts_c" />
+		<include src="s2r://panorama/scripts/post_game_progress/post_game_progress_crownfall.vts_c" />
 		<include src="s2r://panorama/scripts/post_game_progress/post_game_progress_sequence.vts_c" />
 	</scripts>
 	<snippets>
@@ -947,6 +948,76 @@
 				</Panel>
 			</Panel>
 		</snippet>
+		<snippet name="CrownfallRewardTokenContainer">
+			<Panel class="CrownfallTokenContainer">
+				<DOTAScenePanel class="TokenParticles" map="backgrounds/accept_popup_test" camera="shot_camera" particleonly="true" />
+				<DOTACrownfallToken id="CrownfallToken" class="LargeToken" tooltipstyle="none" />
+				<DOTAScenePanel class="TokenBurstParticles" map="scenes/treasure_opened_generic" camera="shot_cam" particleonly="true" />
+				<Label text="{s:token_name}" class="TokenName" />
+			</Panel>
+		</snippet>
+		<snippet name="CrownfallRerollIcon">
+			<Panel class="CrownfallRerollIcon">
+				<Panel class="CrownfallRerollHalfIcon" />
+			</Panel>
+		</snippet>
+		<snippet name="CrownfallProgress">
+			<Panel class="ProgressScreen" onactivate="StartSkippingAhead()">
+				<Panel class="BackgroundImageContainer">
+					<Panel class="BackgroundTexture" />
+				</Panel>
+				<DOTAParticleScenePanel class="SmokeFX Bottom" hittest="false" particleName="particles/ui/battle_pass/ui_bp_2022_diretide_home_background.vpcf" require-composition-layer="true" renderdeferred="true" particleonly="false" startActive="true" cameraOrigin="200 0 0" lookAt="0 0 0" fov="60" squarePixels="true" />
+				<Panel class="BottomGradient" hittest="false" />
+				<Panel id="CrownfallProgressMain">
+					<Panel id="CrownfallProgressTitle">
+						<Image class="CrownfallLogo en" src="s2r://panorama/images/events/crownfall/logos/crownfall_logo_en_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+					</Panel>
+					<Panel id="CrownfallProgressRewards">
+						<Label class="ActText TitleExtraLarge" text="{s:act_name}" />
+						<Label class="WinText HorizontalCenter" text="#DOTA_Crownfall_PostGame_WinEarned" />
+						<Label class="LossText HorizontalCenter" text="#DOTA_Crownfall_PostGame_LossEarned" />
+						<Panel id="TokenList" class="CrownfallTokenList" />
+						<Panel id="DashDivider" />
+						<Panel id="OverworldClaimable">
+							<Image class="Emblem Left" src="s2r://panorama/images/events/crownfall/emblems/emblem_edge_png.vtex" />
+							<Label text="#DOTA_Crownfall_PostGame_UnclaimedMapProgress" />
+							<Image class="Emblem Right" src="s2r://panorama/images/events/crownfall/emblems/emblem_edge_png.vtex" />
+						</Panel>
+					</Panel>
+					<Panel class="CrownfallProgressCandy">
+						<Panel class="DashDotDivider">
+							<Panel class="Dash Left" />
+							<Panel class="ShortcutContainer">
+								<Image class="ShortcutBackground" src="s2r://panorama/images/events/crownfall/overworld/nodes/node_background_encounter_png.vtex" />
+								<Image class="ShortcutBackgroundInner" src="s2r://panorama/images/events/crownfall/overworld/nodes/node_background_encounter_inner_png.vtex" />
+								<Image class="ShortcutIcon" />
+							</Panel>
+							<Panel class="Dash Right" />
+						</Panel>
+						<Label class="Title TitleMedium" text="#DOTA_CandyShop_Crownfall_Title" />
+						<Panel id="CrownfallRerollProgress" />
+						<Panel class="CrownfallWeeklyProgress Active">
+							<Label class="RerollProgressLabel" text="#DOTA_CandyShop_Crownfall_PostGame_RerollsEarned" />
+						</Panel>
+						<Panel class="CrownfallWeeklyProgress Complete">
+							<DOTACountdown id="CrownfallRerollCountdown" server-time="true">
+								<Label class="RerollProgressLabel" html="true" text="#DOTA_CandyShop_Crownfall_PostGame_WeeklyProgressComplete" />
+							</DOTACountdown>
+						</Panel>
+						<Panel class="CrownfallWeeklyProgress Capped">
+							<Panel class="WeeklyProgressCap">
+								<Label class="RerollCapText" text="#DOTA_CandyShop_Crownfall_PostGame_RerollCap" />
+								<Label class="RerollCapText RerollCapUnlockedShop" text="#DOTA_CandyShop_Crownfall_PostGame_RerollCapUnlocked" />
+								<Label class="RerollCapText RerollCapLockedShop" text="#DOTA_CandyShop_Crownfall_PostGame_ShopLocked" />
+							</Panel>
+						</Panel>
+						<Panel class="CrownfallWeeklyProgress LockedShop">
+							<Label class="RerollProgressLabel" text="#DOTA_CandyShop_Crownfall_PostGame_ShopLocked" />
+						</Panel>
+					</Panel>
+				</Panel>
+			</Panel>
+		</snippet>
 		<snippet name="CavernCrawlProgress">
 			<Panel class="ProgressScreen" onactivate="StartSkippingAhead()">
 				<DOTACavernCrawlPostGameProgress id="CavernCrawl" />
@@ -1024,12 +1095,12 @@
 		</snippet>
 		<snippet name="MVP2MapRadiant">
 			<Panel>
-				<DOTAScenePanel id="MVPMap" map="scenes/mvp/mvp_ti10_radiant" light="versus_light" deferredalpha="false" renderdeferred="true" particleonly="false" />
+				<DOTAScenePanel id="MVPMap" map="scenes/mvp/mvp_ti10_radiant" light="versus_light" deferredalpha="false" renderdeferred="true" particleonly="false" pin-fov="vertical" />
 			</Panel>
 		</snippet>
 		<snippet name="MVP2MapDire">
 			<Panel>
-				<DOTAScenePanel id="MVPMap" map="scenes/mvp/mvp_ti10_dire" light="versus_light" pin-fov="vertical" deferredalpha="false" renderdeferred="true" particleonly="false" />
+				<DOTAScenePanel id="MVPMap" map="scenes/mvp/mvp_ti10_dire" light="versus_light" deferredalpha="false" renderdeferred="true" particleonly="false" pin-fov="vertical" />
 			</Panel>
 		</snippet>
 		<snippet name="MVP2Screen">
@@ -1256,6 +1327,7 @@
 			<TextButton class="PopupButton" text="BP 2022" unlocalized="true" onactivate="TestAnimateBattlePass2022()" />
 			<TextButton class="PopupButton" text="International 2023" unlocalized="true" onactivate="TestAnimateInternational2023()" />
 			<TextButton class="PopupButton" text="Frostivus 2023" unlocalized="true" onactivate="TestAnimateFrostivus2023()" />
+			<TextButton class="PopupButton" text="Crownfall" unlocalized="true" onactivate="TestAnimateCrownfall()" />
 			<TextButton class="PopupButton Blue" text="Reset" unlocalized="true" onactivate="ResetScreens()" />
 			<TextButton class="PopupButton Blue" text="Exit" unlocalized="true" onactivate="HideProgress()" />
 		</Panel>

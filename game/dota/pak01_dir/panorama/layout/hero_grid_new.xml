@@ -36,6 +36,7 @@
 						<Panel id="GuildContractIcon" />
 						<Panel id="CavernIcon" />
 						<Panel id="EventIcon" />
+						<Panel id="OverworldTokens" />
 					</Panel>
 					<Panel id="RecommendHeroIcon" />
 					<Panel id="AvoidHeroIcon" />
@@ -111,7 +112,7 @@
 						<Label text="{s:selected_config_name}" />
 						<Panel id="ArrangeButtonIcon" />
 					</Button>
-					<TextButton id="EditCurrentConfigButton" text="#DOTA_Edit" onactivate="DOTAHeroGridStartEditing()" />
+					<TextButton class="ButtonPrimary DarkGrey" id="EditCurrentConfigButton" text="#DOTA_Edit" onactivate="DOTAHeroGridStartEditing()" />
 				</Panel>
 				<Panel class="FillWidth" />
 				<Panel id="Filters">
@@ -178,7 +179,21 @@
 							<Button id="RoadToTIHeroesButton" class="FilterButton" onmouseover="UIShowTitleTextTooltip( &apos;#DOTA_HeroGrid_RoadToTI&apos;, &apos;#DOTA_HeroGrid_RoadToTI_Description&apos; )" onmouseout="UIHideTitleTextTooltip()" onactivate="DOTAHeroGridToggleRoadToTIFilter()" />
 						</Panel>
 					</Panel>
-					<Panel id="ShowStickers" onactivate="DOTAHeroGridToggleStickers()" onmouseover="DOTAHeroGridShowStickers(); UIShowTitleTextTooltip( &apos;#DOTA_HeroGrid_Stickers&apos;, &apos;#DOTA_HeroGrid_StickersDescription&apos; );" onmouseout="DOTAHeroGridHideStickers(); UIHideTitleTextTooltip();" />
+					<Panel id="StickersCategory" class="FilterCategory">
+						<Label class="FilterCategoryTitle" text="#DOTA_TabName_Stickers" />
+						<Panel id="ShowStickers" onactivate="DOTAHeroGridToggleStickers()" onmouseover="DOTAHeroGridShowStickers(); UIShowTitleTextTooltip( &apos;#DOTA_HeroGrid_Stickers&apos;, &apos;#DOTA_HeroGrid_StickersDescription&apos; );" onmouseout="DOTAHeroGridHideStickers(); UIHideTitleTextTooltip();" />
+					</Panel>
+					<Panel id="OverworldContainer" class="FilterCategory">
+						<Label class="FilterCategoryTitle" text="#DOTA_Crownfall_Filters_TokensNeeded" />
+						<Panel class="FilterCategoryItems" onmouseover="UIShowTitleTextTooltip( &apos;#DOTA_HeroGrid_Overworld&apos;, &apos;#DOTA_HeroGrid_Overworld_Description&apos; )" onmouseout="UIHideTitleTextTooltip()" onactivate="DOTAHeroGridToggleOverworldFilter()">
+							<Button id="OverworldButton" class="FilterButton" />
+							<Panel class="CrownfallLogoContainer">
+								<DOTAScenePanel id="CrownfallLogoParticles" map="backgrounds/accept_popup_test" camera="shot_camera" particleonly="true" />
+								<Image class="CrownfallLogoText" src="s2r://panorama/images/events/crownfall/logos/crownfall_logo_text_en_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+								<Image class="CrownfallLogoTextCN" src="s2r://panorama/images/events/crownfall/logos/crownfall_logo_text_cn_psd.vtex" scaling="stretch-to-fit-preserve-aspect" />
+							</Panel>
+						</Panel>
+					</Panel>
 				</Panel>
 			</Panel>
 			<Panel id="EditModeControls">

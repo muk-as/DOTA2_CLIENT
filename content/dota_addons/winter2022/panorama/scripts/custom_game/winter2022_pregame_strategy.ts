@@ -1,4 +1,4 @@
-/// <reference path="../../../../../dota/panorama/scripts/dota.d.ts" />
+/// <reference path="../winter2022.d.ts" />
 
 //-----------------------------------------------------------------------------------------
 const g_sDiretideTips = [

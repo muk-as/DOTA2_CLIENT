@@ -1,5 +1,5 @@
-/// <reference path="../../../../../dota/panorama/scripts/dota.d.ts" />
-/// <reference path="../../../../../dota/panorama/scripts/util.ts" />
+/// <reference path="../winter2022.d.ts" />
+/// <reference path="util.ts" />
 /// <reference path="winter2022_shared.ts" />
 
 let strCurrentInstanceMessageClass = "";

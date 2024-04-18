@@ -17,20 +17,24 @@
 15CTier1AppSystemI11ISteamAudioLx0EE
 15CTier2AppSystemI11ISteamAudioLx0EE
 16CDirectProcessor
-16CReverbProcessor
+16CImpulseResponse
 16CSteamAudioScene
 16IDirectProcessor
-16IReverbProcessor
+16IImpulseResponse
 16ISourceProcessor
 16ISteamAudioScene
 17CPathingProcessor
 17CSteamAudioProbes
+17CSteamAudioSource
 17IPathingProcessor
 17ISteamAudioProbes
+17ISteamAudioSource
 18CSource3DProcessor
 20CPostConnectCallback
 21CSurfacePropDataTableI19CSteamAudioMaterialE
+22CHybridReverbProcessor
 22CSchemaInstallCallback
+22IHybridReverbProcessor
 23CSteamAudioMaterialList
 25CSurfacePropDataTableBase
 33333333H
@@ -38,7 +42,6 @@
 3d] [ Pathing: Invalid baked data version found. Please rebake. ] %s
 3d] [ Reverb  %6.2f MB %6u %4.1f %4.1f %7d %4d %2.1f %d ] %s
 3d] [ Reverb: Invalid baked data version found. Please rebake. ] %s
-5BppEi
 5lu file=%s, line=%d
 60-G/0
 6L&S0g
@@ -132,6 +135,7 @@ AssetRenameSystem_001
 AssetSystem001
 AssetSystemTest001
 Authority Information Access
+B0]T30L
 BF-CBC
 BF-CFB
 BF-ECB
@@ -186,6 +190,8 @@ CAST5-OFB
 CCUNGH
 CCf_Hi
 CDirectProcessor
+CHybridReverbProcessor
+CImpulseResponse
 CMS routines
 CMemAllocSystemInitialize
 CONF lib
@@ -208,12 +214,12 @@ Content file %s is corrupt. Hashing could not be verified. Verify integrity of g
 Content file %s is corrupt. Verify integrity of game files
 Content file %s is corrupt; Chunk hash not found (expected: %d, found: %d
 Content file %s is corrupt; signature couldn't be verified. Verify integrity of game files
+Continue using previous prrobes if probe lookup for reverb fails
 Could not load custom hrtf properties file. %s
 CreateInterface
 CreateSimpleThread
 D$ t|L
 D$(dH3
-D40]T30L
 DES-CDMF
 DES-CFB
 DES-CFB1
@@ -702,8 +708,11 @@ Trust Root
 UStwHc
 UUUUUU
 UUUUUUUUH
+Unable to create Ambisonics decode effect [%d
 Unable to create custom HRTF [%s
 Unable to create direct effect [%d
+Unable to create impulse response [%d
+Unable to create reflections effect [%d
 Unable to create scene: %d
 Unable to create serialized object for scene export
 Unable to create static mesh: %d
@@ -765,6 +774,7 @@ V_strnicmp_fast
 V_tanf
 VisBuilder_001
 Vrad3_001
+W1rGP1
 Warning
 WorldRendererMgr001
 X500algorithms
@@ -915,6 +925,11 @@ ZN10__cxxabiv120__si_class_type_infoD0Ev
 ZN10__cxxabiv120__si_class_type_infoD1Ev
 ZN10__cxxabiv120__si_class_type_infoD2Ev
 ZN10__cxxabiv120__unexpected_handlerE
+ZN11CTSListBase11InternalPopEv
+ZN11CTSListBase12InternalPushEP13TSLNodeBase_t
+ZN11CTSListBase6DetachEv
+ZN11CTSListBaseC1Ev
+ZN11CTSListBaseC2Ev
 ZN12CThreadEvent3SetEv
 ZN12CThreadEvent5CheckEv
 ZN12CThreadEvent5ResetEv
@@ -1986,6 +2001,7 @@ emailAddress
 emailProtection
 enable_dc_correction_for_phase_interpolation
 enable_paths_from_all_source_probes
+enable_reverb_probe_caching_for_missing_probes
 encrypted track 2
 engine
 engine routines
@@ -2076,7 +2092,7 @@ holdInstructionReject
 homePostalAddress
 homeTelephoneNumber
 houseIdentifier
-i2t<f2
+i2t<f2R
 iA5StringSyntax
 id-DHBasedMac
 id-Gost28147-89-CryptoPro-A-ParamSet
@@ -2327,7 +2343,6 @@ ioctlsocket
 iplAirAbsorptionCalculate
 iplAmbisonicsDecodeEffectApply
 iplAmbisonicsDecodeEffectCreate
-iplAmbisonicsDecodeEffectRelease
 iplBinauralEffectApply
 iplBinauralEffectCreate
 iplBinauralEffectRelease
@@ -2344,6 +2359,15 @@ iplEmbreeDeviceCreate
 iplEmbreeDeviceRelease
 iplHRTFCreate
 iplHRTFRelease
+iplImpulseResponse2AddChannel
+iplImpulseResponse2AddSample
+iplImpulseResponse2Create
+iplImpulseResponse2Release
+iplImpulseResponse2Reset
+iplImpulseResponse2SetChannel
+iplImpulseResponse2SetSample
+iplImpulseResponse2Swap
+iplImpulseResponse2SwapSource
 iplPathBakerBake
 iplPathBakerCancelBake
 iplPathEffectApply
@@ -2368,11 +2392,21 @@ iplProbeNeighborhoodCreate
 iplProbeNeighborhoodRelease
 iplProbeNeighborhoodReset
 iplProbeNeighborhoodResize
-iplReflectionEffectApply
-iplReflectionEffectCreate
-iplReflectionEffectRelease
 iplReflectionsBakerBake
 iplReflectionsBakerCancelBake
+iplReflectionsEffect2Apply
+iplReflectionsEffect2Create
+iplReflectionsEffect2Release
+iplReflectionsEffect2SetBuffer
+iplReflectionsEffect2SetFloat
+iplReflectionsEffect2SetInt32
+iplReflectionsPartitioner2AddTask
+iplReflectionsPartitioner2Commit
+iplReflectionsPartitioner2Create
+iplReflectionsPartitioner2Release
+iplReflectionsPartitioner2RemoveTask
+iplReflectionsPartitioner2Retain
+iplReflectionsPartitioner2RunTasks
 iplSceneCommit
 iplSceneCreate
 iplSceneRelease
@@ -2604,6 +2638,7 @@ public/tier0/threadtoolstypes.h
 public/tier0/utlrbtree.h
 public/tier0/utlsortvector.h
 pure virtual method called
+qa1-x]1
 qangle
 qcStatements
 qualityLabelledData
@@ -2870,6 +2905,7 @@ snd_steamaudio_enable_custom_hrtf
 snd_steamaudio_enable_pathing
 snd_steamaudio_enable_perspective_correction
 snd_steamaudio_enable_probeneighborhood_caching
+snd_steamaudio_enable_reverb_probe_caching_for_missing_probes
 snd_steamaudio_enable_spatial_blend_fix
 snd_steamaudio_halton_sequence
 snd_steamaudio_hybrid_reverb_overlap
@@ -2995,7 +3031,6 @@ typeinfo name for
 u%AUATUSH
 u-AWAVAUATUH
 u/H#D
-u0+!n0
 u8AVAUATUSH
 uint16
 uint32
@@ -3020,7 +3055,6 @@ userClass
 userId
 userPassword
 uxHcG
-v1-x]1rGP1
 vector
 vector2
 vector3
@@ -3054,4 +3088,5 @@ x509_info
 x509_pkey
 x509_req
 x509_store
+y0+!n0
 zlib compression

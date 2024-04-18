@@ -1,0 +1,665 @@
+/* Prettified by Source 2 Viewer 0.0.0.0 - https://valveresourceformat.github.io */
+
+@define introWidth: 1280px;
+.PopupPanel.StoryRecap
+{
+	background-color: #00000000;
+	border: 0px;
+	box-shadow: 0px 0px 0px #00000000;
+	width: introWidth;
+	padding: 0px;
+	margin-top: 60px;
+	animation-name: none;
+}
+
+.TitleContainer
+{
+	horizontal-align: center;
+	width: fit-children;
+	height: fit-children;
+	min-height: 50px;
+	transform: translateY( 270px );
+	margin-top: 24px;
+	margin-bottom: -48px;
+	transition-property: opacity, transform;
+	transition-timing-function: cubic-bezier( 1, 0, 0, 1 );
+	transition-duration: 1s, 0.5s;
+	transition-delay: 0s, 1s;
+	opacity: 0;
+}
+
+.Loaded:not(.ShowStoryPage) .TitleContainer
+{
+	opacity: 1;
+	transform: none;
+	transition-delay: 0s;
+}
+
+.ShowStoryPage .TitleContainer
+{
+	transform: translateY( 270px );
+	opacity: 1;
+	transition-delay: 0s;
+}
+
+.ShowStoryPage.StoryPageLoaded .TitleContainer
+{
+	transform: none;
+}
+
+.TitleContainer .HowToPlayTitle
+{
+	color: gradient( linear, 0% 37%, 0% 100%, from( #FFF2DF ), color-stop( 0.47, #DDAF6B ), color-stop( 0.53, #7F5F2F ), to( #AC803F ) );
+	horizontal-align: center;
+	opacity: 0;
+}
+
+.TitleContainer .StoryTitle
+{
+	color: gradient( linear, 0% 37%, 0% 100%, from( #FFF2DF ), color-stop( 0.47, #DDAF6B ), color-stop( 0.53, #7F5F2F ), to( #AC803F ) );
+	horizontal-align: center;
+	opacity: 0;
+}
+
+.Loaded:not(.ShowStoryPage) .TitleContainer .HowToPlayTitle
+{
+	opacity: 1;
+}
+
+.ShowComicPage .TitleContainer .StoryTitle,.ShowStoryPage .TitleContainer .StoryTitle
+{
+	opacity: 1;
+}
+
+.DashDotDivider
+{
+	width: introWidth;
+	transition-property: opacity, transform;
+	transition-timing-function: cubic-bezier( 1, 0, 0, 1 );
+	transition-duration: 0.5s;
+	transition-delay: 1s;
+}
+
+.DashDotDivider.Top
+{
+	transform: translateY( 270px );
+}
+
+.DashDotDivider.Bottom
+{
+	transform: translateY( -260px );
+}
+
+.Loaded:not(.ShowStoryPage) .DashDotDivider
+{
+	opacity: 1;
+	transform: none;
+	transition-delay: 0s;
+}
+
+.ShowStoryPage .DashDotDivider
+{
+	opacity: 1;
+	transition-delay: 0s;
+}
+
+.ShowStoryPage.StoryPageLoaded .DashDotDivider
+{
+	transform: none;
+}
+
+.ContentContainer
+{
+	width: 100%;
+	height: 600px;
+	padding: 0px 140px;
+	opacity-mask: url("s2r://panorama/images/masks/fade_left_right_edge_mask_png.vtex");
+	opacity: 0;
+	transform: scale3d( 0.9, 0.9, 1 );
+	transition-property: opacity, transform;
+	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
+	transition-duration: 1s, 0.5s;
+	transition-delay: 1.4s;
+}
+
+.Loaded .ContentContainer
+{
+	opacity: 1;
+	transform: none;
+}
+
+.Columns
+{
+	width: introWidth;
+	flow-children: right;
+	vertical-align: center;
+	transition-property: transform, opacity;
+	transition-timing-function: ease-in;
+	transition-duration: 0.15s;
+	transform: translateX( 0px );
+}
+
+.ShowComicPage .Columns,.ShowStoryPage .Columns
+{
+	transform: translateX( -200px );
+	opacity: 0;
+}
+
+.Columns .ColumnContainer
+{
+	width: fill-parent-flow( 1 );
+	flow-children: down;
+	transition-property: opacity, blur;
+	transition-duration: 0.5s;
+	opacity: 0.3;
+	blur: gaussian( 1.5px );
+}
+
+.Columns .ColumnContainer .ColumnMedia
+{
+	width: 205px;
+	height: 264px;
+	horizontal-align: center;
+	transition-property: transform;
+	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
+	transition-duration: 0.3s;
+	transform: scale3d( 0.8, 0.8, 1 ) translateY( 8px );
+	border: 1px solid gold2;
+	box-shadow: 0px 3px 3px 1px #54250a;
+}
+
+.Columns .ColumnContainer .ColumnImage
+{
+	horizontal-align: center;
+	ignore-parent-flow: true;
+	width: 100%;
+	height: 100%;
+}
+
+.Columns .ColumnContainer .ColumnVideo
+{
+	ignore-parent-flow: true;
+	width: 100%;
+	height: 100%;
+	horizontal-align: center;
+	opacity: 0;
+	transition-property: opacity;
+	transition-duration: 0.3s;
+}
+
+.Columns .ColumnContainer .ColumnVideo.MovieError
+{
+	visibility: collapse;
+}
+
+.Columns .ColumnContainer .ColumnTitle,.Columns .ColumnContainer .ColumnText
+{
+	width: 100%;
+	vertical-align: middle;
+	text-align: center;
+	color: LightGrey;
+	margin-left: 16px;
+	margin-right: 16px;
+}
+
+.Columns .ColumnContainer .ColumnTitle b,.Columns .ColumnContainer .ColumnText b
+{
+	color: white;
+}
+
+.Columns .ColumnContainer .ColumnTitle
+{
+	font-family: titleFont;
+	font-weight: bold;
+	letter-spacing: 1.5px;
+	text-transform: uppercase;
+	font-size: 22px;
+	color: white;
+	text-shadow: 0px 2px 8px black;
+	margin-top: 24px;
+}
+
+.Columns .ColumnContainer .ColumnText
+{
+	margin-top: 12px;
+	opacity: 0;
+}
+
+.Columns .ColumnContainer.Column1
+{
+	opacity: 1;
+	blur: gaussian( 0px );
+}
+
+.Columns .ColumnContainer.Column1 .ColumnMedia
+{
+	transform: none;
+}
+
+.Columns .ColumnContainer.Column1 .ColumnVideo
+{
+	opacity: 1;
+}
+
+.Columns .ColumnContainer.Column1 Label
+{
+	opacity: 1;
+}
+
+.ShowColumn2 .Columns .ColumnContainer.Column2
+{
+	opacity: 1;
+	blur: gaussian( 0px );
+}
+
+.ShowColumn2 .Columns .ColumnContainer.Column2 .ColumnMedia
+{
+	transform: none;
+}
+
+.ShowColumn2 .Columns .ColumnContainer.Column2 .ColumnVideo
+{
+	opacity: 1;
+}
+
+.ShowColumn2 .Columns .ColumnContainer.Column2 Label
+{
+	opacity: 1;
+}
+
+.ShowColumn3 .Columns .ColumnContainer.Column3
+{
+	opacity: 1;
+	blur: gaussian( 0px );
+}
+
+.ShowColumn3 .Columns .ColumnContainer.Column3 .ColumnMedia
+{
+	transform: none;
+}
+
+.ShowColumn3 .Columns .ColumnContainer.Column3 .ColumnVideo
+{
+	opacity: 1;
+}
+
+.ShowColumn3 .Columns .ColumnContainer.Column3 Label
+{
+	opacity: 1;
+}
+
+.Columns .ColumnContainer .CharacterImage
+{
+	width: 100%;
+}
+
+.Comic
+{
+	ignore-parent-flow: true;
+	vertical-align: center;
+	margin-top: 24px;
+	flow-children: down;
+	width: 100%;
+	transition-property: transform, opacity;
+	transition-duration: 0.4s;
+	transition-delay: 0.15s;
+	transition-timing-function: cubic-bezier(0, 1, 0, 1);
+	opacity: 0;
+	transform: translateX( 400px );
+}
+
+.ShowComicPage .Comic
+{
+	opacity: 1;
+	transform: translateX( 0px );
+}
+
+.ShowComicPage .Comic .ImageContainer
+{
+	transform: scale3d( 1, 1, 1 );
+}
+
+.ShowComicPage .Comic #ViewComicButton
+{
+	transform: none;
+	opacity: 1;
+}
+
+.Comic #ViewComicButton
+{
+	width: 210px;
+	horizontal-align: center;
+	margin-top: -28px;
+	transition-property: transform, opacity;
+	transition-duration: 0.5s;
+	transition-delay: 0.4s;
+	transition-timing-function: cubic-bezier(0, 1, 0, 1);
+	transform: translateY( 16px );
+	opacity: 0;
+}
+
+.Comic .ComicText
+{
+	horizontal-align: center;
+	text-align: center;
+	font-family: Reaver;
+	font-size: 24px;
+	color: LightestGrey;
+	margin-bottom: 12px;
+}
+
+.Comic .ImageContainer
+{
+	horizontal-align: center;
+	height: 400px;
+	transition-property: transform;
+	transition-duration: 0.5s;
+	transition-delay: 0.15s;
+	transition-timing-function: cubic-bezier(0, 1, 0, 1);
+	transform: scale3d( 0.8, 0.8, 1 );
+}
+
+.Comic .ImageContainer .CoverImage
+{
+	horizontal-align: center;
+}
+
+#ProceedStoryButton
+{
+	width: 300px;
+	opacity: 0;
+	transform: translateY( 24px );
+	transition-property: opacity, transform;
+	transition-timing-function: cubic-bezier( 0, 1, 0, 1 );
+	transition-duration: 0.4s;
+	transition-delay: 1.7s;
+}
+
+.Loaded:not(.ShowStoryPage) #ProceedStoryButton,.StoryPageLoaded #ProceedStoryButton
+{
+	opacity: 1;
+	transform: none;
+	transition-delay: 0s;
+}
+
+.CharacterImageContainer
+{
+	width: 320px;
+	height: 360px;
+	z-index: 1;
+	horizontal-align: center;
+	transition-property: opacity, transform, saturation, brightness;
+	transition-duration: 0.3s;
+}
+
+.CharacterImageContainer .ActorShadow
+{
+	width: 100%;
+	height: width-percentage( 100% );
+	background-image: url("s2r://panorama/images/events/crownfall/visual_novel/shadow_png.vtex");
+	background-size: cover;
+	margin-top: 72px;
+}
+
+.CharacterImageContainer .ActorBackground
+{
+	width: 160px;
+	height: 160px;
+	horizontal-align: center;
+	vertical-align: center;
+	margin-top: 88px;
+	transform: rotateZ( 45deg );
+	background-size: cover;
+	background-image: url("s2r://materials/portraits_card/portrait_backgrounds/storm_spirit_psd.vtex");
+}
+
+.Character1 .CharacterImageContainer .ActorBackground
+{
+	background-image: url("s2r://materials/portraits_card/portrait_backgrounds/dark_seer_psd.vtex");
+}
+
+.Character2 .CharacterImageContainer .ActorBackground
+{
+	background-image: url("s2r://materials/portraits_card/portrait_backgrounds/storm_spirit_psd.vtex");
+}
+
+.Character3 .CharacterImageContainer .ActorBackground
+{
+	background-image: url("s2r://materials/portraits_card/portrait_backgrounds/queenofpain_psd.vtex");
+}
+
+.CharacterImageContainer .ActorBorder
+{
+	width: 100%;
+	height: width-percentage( 100% );
+	vertical-align: bottom;
+	background-size: cover;
+	transition-property: opacity, transform;
+	transition-duration: 0.6s;
+}
+
+.CharacterImageContainer .ActorBorder.Under
+{
+	background-image: url("s2r://panorama/images/events/crownfall/visual_novel/border_under_png.vtex");
+}
+
+.CharacterImageContainer .ActorBorder.Over
+{
+	background-image: url("s2r://panorama/images/events/crownfall/visual_novel/border_over_png.vtex");
+}
+
+.CharacterImageContainer .PictureMask
+{
+	width: 100%;
+	height: 100%;
+	opacity-mask: url("s2r://panorama/images/events/crownfall/visual_novel/portrait_mask_png.vtex");
+}
+
+.CharacterImageContainer .PictureMask .AnimationContainer
+{
+	width: 100%;
+	height: 100%;
+}
+
+.CharacterImageContainer .PictureMask .AnimationContainer .ActorPicture
+{
+	width:100%;
+	height:100%;
+}
+
+.CharacterImageContainer .ActorNameContainer
+{
+	horizontal-align: center;
+	vertical-align: bottom;
+	min-width: 164px;
+	margin-bottom: 14px;
+}
+
+.CharacterImageContainer .ActorNameContainer .ActorName
+{
+	color: white;
+	text-shadow: 0px 2px 8px black;
+	horizontal-align: center;
+	margin-top: 10px;
+	padding: 0px 36px;
+	transition-property: opacity;
+}
+
+.CharacterImageContainer .ActorNameContainer .ActorNameBackground
+{
+	flow-children: right;
+	width: 100%;
+}
+
+.CharacterImageContainer .ActorNameContainer .ActorNameBackground .Edge
+{
+	width: 40px;
+	height: 64px;
+	background-image: url("s2r://panorama/images/events/crownfall/visual_novel/name_container_edge_png.vtex");
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.CharacterImageContainer .ActorNameContainer .ActorNameBackground .Edge.Right
+{
+	transform: scaleX( -1 );
+}
+
+.CharacterImageContainer .ActorNameContainer .ActorNameBackground .Middle
+{
+	width: 24px;
+	height: 64px;
+	background-image: url("s2r://panorama/images/events/crownfall/visual_novel/name_container_middle_png.vtex");
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.CharacterImageContainer .ActorNameContainer .ActorNameBackground .Fill
+{
+	width: fill-parent-flow( 1 );
+	height: 64px;
+	background-image: url("s2r://panorama/images/events/crownfall/visual_novel/name_container_fill_png.vtex");
+	background-size: contain;
+}
+
+.Story
+{
+	height: 100%;
+	flow-children: down;
+	opacity: 0;
+	transition-property: transform, opacity;
+	transition-duration: 0.45s;
+	transition-delay: 0.3s;
+}
+
+.ShowStoryPage.StoryPageLoaded:not(.ShowComicPage) .Story
+{
+	opacity: 1;
+	transition-delay: 0s;
+	transition-duration: 0.15s;
+}
+
+.ShowComicPage .Story
+{
+	transform: translateX( -200px );
+}
+
+.Story .StorySoFarText
+{
+	width: 80%;
+	margin-top: 20px;
+	horizontal-align: center;
+	text-align: center;
+	color: #ccc;
+	font-size: 26px;
+	font-family: titleFont;
+	opacity: 0;
+	animation-name: FadeInStoryText;
+	animation-duration: 0.8s;
+	animation-delay: 0.5s;
+	animation-fill-mode: forwards;
+}
+
+.Story .Characters
+{
+	width: introWidth;
+	flow-children: right;
+	vertical-align: bottom;
+	transition-property: transform, opacity;
+	transition-timing-function: ease-in;
+	transition-duration: 0.5s;
+	opacity: 0;
+	transform: translateY( 100px );
+}
+
+.ShowStoryPage .Story .Characters
+{
+	opacity: 1;
+	transform: translateX( 0px );
+}
+
+.ShowComicPage .Story .Characters
+{
+	opacity: 0;
+}
+
+.Story .Characters .CharacterInfo
+{
+	width: fill-parent-flow( 1 );
+	flow-children: down;
+	transition-property: opacity, blur;
+	transition-duration: 0.5s;
+}
+
+.Story .Characters .CharacterInfo .CharacterImageContainer
+{
+	transition-property: transform;
+	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
+	transition-duration: 0.3s;
+}
+
+.Story .Characters .CharacterInfo .CharacterTitle,.Story .Characters .CharacterInfo .CharacterText
+{
+	width: 100%;
+	vertical-align: middle;
+	text-align: center;
+	color: LightGrey;
+	margin-left: 16px;
+	margin-right: 16px;
+}
+
+.Story .Characters .CharacterInfo .CharacterTitle b,.Story .Characters .CharacterInfo .CharacterText b
+{
+	color: white;
+}
+
+.Story .Characters .CharacterInfo .CharacterTitle
+{
+	font-family: Reaver;
+	font-size: 22px;
+	color: LightestGrey;
+	opacity: 0.2;
+}
+
+.Story .Characters .CharacterInfo .CharacterText
+{
+	margin-top: 12px;
+	opacity: 0;
+}
+
+.Story .Characters .CharacterInfo.Character1
+{
+	opacity: 1;
+	blur: gaussian( 0px );
+}
+
+.Story .Characters .CharacterInfo.Character1 .CharacterImageContainer
+{
+	transform: none;
+}
+
+.Story .Characters .CharacterInfo.Character1 Label
+{
+	opacity: 1;
+}
+
+.Story .Characters .CharacterInfo .CharacterImage
+{
+	width: 100%;
+}
+
+@keyframes 'FadeInStoryText'
+{
+	0%
+	{
+		opacity: 0;
+		transform: translateY( -10px);
+	}
+	
+	100%
+	{
+		opacity: 1;
+	}
+	
+}
+

@@ -1,0 +1,81 @@
+<!-- xml reconstructed by Source 2 Viewer 0.0.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/popups/popups_shared.vcss_c" />
+		<include src="s2r://panorama/styles/battle_pass/crownfall/bp_crownfall_shared.vcss_c" />
+		<include src="s2r://panorama/styles/battle_pass/crownfall/bp_popup_crownfall_encounter_token_quest.vcss_c" />
+		<include src="s2r://panorama/styles/battle_pass/crownfall/bp_tooltip_crownfall_node.vcss_c" />
+	</styles>
+	<snippets>
+		<snippet name="ModelReward">
+			<Panel class="ModelReward" hittest="false">
+				<DOTAUIEconSetPreview id="ModelPreview" drawbackground="false" displaymode="loadout_small" suppress-intro-effects="true" hittest="false" hittestchildren="false" />
+				<Panel class="Details">
+					<Label class="ItemName BodyMedium" text="{s:item_name}" />
+				</Panel>
+			</Panel>
+		</snippet>
+		<snippet name="EconItemReward">
+			<Panel class="EconItemReward">
+				<Panel class="ImageContainer">
+					<EconItemImage id="ItemImage" />
+					<Label class="Quantity" text="x{d:quantity}" />
+				</Panel>
+				<Panel class="Details">
+					<Label class="ItemName BodyMedium" text="{s:item_name}" />
+				</Panel>
+			</Panel>
+		</snippet>
+		<snippet name="ImageReward">
+			<Panel class="ImageReward" hittest="false">
+				<Image id="ItemImage" hittest="false" scaling="cover" />
+			</Panel>
+		</snippet>
+		<snippet name="EmoticonReward">
+			<Panel class="EmoticonReward" hittest="false" hittestchildren="false">
+				<DOTAEmoticon id="Emoticon" />
+			</Panel>
+		</snippet>
+		<snippet name="CandyShopRerollChargesReward">
+			<Panel class="BundleItem CandyShopRerollChargesItem">
+				<Panel class="CandyShopRerollChargeImage" />
+				<Label text="#DOTA_Crownfall_Encounter_TokenQuest_CandyShopRerollRefresh" />
+			</Panel>
+		</snippet>
+	</snippets>
+	<Panel class="PopupPanel Encounter GoldBorder TokenQuest Hidden" allows_popups="1" oncancel="UIPopupButtonClicked()">
+		<Panel class="ContentsWrapper">
+			<Panel class="Contents">
+				<Panel class="VisualNovelBackground" />
+				<Panel class="BodyContainer">
+					<AsyncDataPanel class="" state="{d:encounter_state}">
+						<Panel class="AsyncSuccessContainer">
+							<Panel class="CenterContainer">
+								<Panel class="Tokens" id="CostTokensContainer" />
+								<Image class="TradeArrow" src="s2r://panorama/images/control_icons/24px/arrow_right.vsvg" />
+								<Panel id="RewardContainer" />
+							</Panel>
+							<Panel class="Actions">
+								<DOTACrownfallButton text="#DOTA_Crownfall_Encounter_Chapter1_TokenQuest_ClaimButton" id="ClaimRewardButton" class="ClaimRewardButton" onactivate="DOTACrownfallEncounterTokenQuestClaimReward()" />
+								<DOTACrownfallButton class="LeaveButton GlowButton" text="#DOTA_Crownfall_Encounter_Leave" onactivate="UIPopupButtonClicked()" />
+							</Panel>
+						</Panel>
+						<Panel class="AsyncLoadingContainer">
+							<Panel class="Spinner" />
+						</Panel>
+						<Panel class="AsyncFailureContainer">
+							<Panel class="Spinner" />
+						</Panel>
+					</AsyncDataPanel>
+				</Panel>
+			</Panel>
+		</Panel>
+		<Panel id="VisualNovelContainer" />
+		<Panel id="CloseButtonContainer">
+			<Panel class="CloseButtonBackground" onactivate="UIPopupButtonClicked()" onmouseover="AddStyle( CloseButtonContainer, Hovered );" onmouseout="RemoveStyle( CloseButtonContainer, Hovered );" />
+			<Panel class="CloseButtonBackgroundHover" hittest="false" />
+			<Image class="CloseIcon" src="s2r://panorama/images/control_icons/24px/x_close.vsvg" hittest="false" />
+		</Panel>
+	</Panel>
+</root>

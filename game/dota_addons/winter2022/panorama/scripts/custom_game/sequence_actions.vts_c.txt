@@ -1,0 +1,756 @@
+"use strict";
+/// <reference path="../winter2022.d.ts" />
+/// <reference path="util.ts" />
+/**
+ * Call RunSingleAction to start a single action and continue ticking it until it's done
+ */
+function RunSingleAction(action) {
+    action.start();
+    UpdateSingleActionUntilFinished(action);
+}
+/**
+ * asynchronously tick a single action until it's finished, then call finish on it.
+ */
+function UpdateSingleActionUntilFinished(action) {
+    function callback() {
+        if (!action.update()) {
+            action.finish();
+        }
+        else {
+            $.Schedule(0.0, callback);
+        }
+    }
+    ;
+    callback();
+}
+/** Empty sequence action implementation useful for creating new actions that only implement a few of the functions */
+class BaseAction {
+    start() { }
+    update() { return false; }
+    finish() { }
+}
+/**
+ * Action to run a group of other actions in sequence
+ */
+class RunSequentialActions {
+    actions;
+    currentActionIndex = 0;
+    currentActionStarted = false;
+    constructor(actions = []) {
+        this.actions = actions;
+    }
+    start() {
+        this.currentActionIndex = 0;
+        this.currentActionStarted = false;
+    }
+    update() {
+        while (this.currentActionIndex < this.actions.length) {
+            if (!this.currentActionStarted) {
+                this.actions[this.currentActionIndex].start();
+                this.currentActionStarted = true;
+            }
+            if (!this.actions[this.currentActionIndex].update()) {
+                this.actions[this.currentActionIndex].finish();
+                this.currentActionIndex++;
+                this.currentActionStarted = false;
+            }
+            else {
+                return true;
+            }
+        }
+        return false;
+    }
+    finish() {
+        while (this.currentActionIndex < this.actions.length) {
+            if (!this.currentActionStarted) {
+                this.actions[this.currentActionIndex].start();
+                this.currentActionStarted = true;
+                this.actions[this.currentActionIndex].update();
+            }
+            this.actions[this.currentActionIndex].finish();
+            this.currentActionIndex++;
+            this.currentActionStarted = false;
+        }
+    }
+}
+/**
+ * Action to run multiple actions all at once. The action is complete once all sub actions are done.
+ */
+class RunParallelActions {
+    actions;
+    actionsFinished = [];
+    constructor(actions = []) {
+        this.actions = actions;
+    }
+    start() {
+        this.actionsFinished = new Array(this.actions.length).fill(false);
+        this.actions.forEach(a => a.start());
+    }
+    update() {
+        let anyTicking = false;
+        this.actions.forEach((action, index) => {
+            if (!this.actionsFinished[index]) {
+                if (!action.update()) {
+                    action.finish();
+                    this.actionsFinished[index] = true;
+                }
+                else {
+                    anyTicking = true;
+                }
+            }
+        });
+        return anyTicking;
+    }
+    finish() {
+        this.actions.forEach((action, index) => {
+            if (!this.actionsFinished[index]) {
+                action.finish();
+                this.actionsFinished[index] = true;
+            }
+        });
+    }
+}
+/**
+ * Action to run actions looping infinitely until finish is called.
+ */
+class RunLoopingActions {
+    actions;
+    currentActionIndex = 0;
+    currentActionStarted = false;
+    isStopped = false;
+    constructor(actions = []) {
+        this.actions = actions;
+    }
+    start() {
+        this.currentActionIndex = 0;
+        this.currentActionStarted = false;
+    }
+    update() {
+        while (this.currentActionIndex < this.actions.length) {
+            if (!this.currentActionStarted) {
+                this.actions[this.currentActionIndex].start();
+                this.currentActionStarted = true;
+            }
+            if (!this.actions[this.currentActionIndex].update()) {
+                this.actions[this.currentActionIndex].finish();
+                this.currentActionIndex++;
+                this.currentActionIndex = this.currentActionIndex % this.actions.length;
+                this.currentActionStarted = false;
+            }
+            else {
+                return true;
+            }
+        }
+        return false;
+    }
+    finish() {
+        while (this.currentActionIndex < this.actions.length) {
+            if (!this.currentActionStarted) {
+                this.actions[this.currentActionIndex].start();
+                this.currentActionStarted = true;
+                this.actions[this.currentActionIndex].update();
+            }
+            this.actions[this.currentActionIndex].finish();
+            this.currentActionIndex++;
+            this.currentActionStarted = false;
+        }
+    }
+}
+/**
+ * Action to wait for some amount of seconds before resuming
+ */
+class WaitAction {
+    seconds;
+    endTimestamp = 0;
+    constructor(seconds) {
+        this.seconds = seconds;
+    }
+    start() { this.endTimestamp = Game.Time() + this.seconds; }
+    ;
+    update() { return Game.Time() < this.endTimestamp; }
+    finish() { }
+}
+/**
+ * Action to run multiple actions in parallel, but with a slight stagger start between each of them.
+ */
+class RunStaggeredActions {
+    staggerSeconds;
+    actions;
+    par;
+    constructor(staggerSeconds, actions = []) {
+        this.staggerSeconds = staggerSeconds;
+        this.actions = actions;
+    }
+    start() {
+        const parallelActions = this.actions.map((action, index) => {
+            if (index === 0) {
+                return action;
+            }
+            return new RunSequentialActions([new WaitAction(index * this.staggerSeconds), action]);
+        });
+        this.par = new RunParallelActions(parallelActions);
+        this.par.start();
+    }
+    update() { return this.par.update(); }
+    finish() { return this.par.finish(); }
+}
+/**
+ * Runs a set of actions but stops as soon as any of them are finished.
+ * `continueOtherActions` is a bool that determines whether to continue ticking the remaining actions, or whether to just finish them immediately.
+ */
+class RunUntilSingleActionFinishedAction {
+    continueOtherActions;
+    actions;
+    actionsFinished = [];
+    constructor(continueOtherActions = false, actions = []) {
+        this.continueOtherActions = continueOtherActions;
+        this.actions = actions;
+    }
+    start() {
+        this.actionsFinished = new Array(this.actions.length).fill(false);
+        this.actions.forEach(a => a.start());
+    }
+    update() {
+        if (this.actions.length == 0)
+            return false;
+        let anyFinished = false;
+        this.actions.forEach((action, index) => {
+            if (!action.update()) {
+                action.finish();
+                this.actionsFinished[index] = true;
+                anyFinished = true;
+            }
+        });
+        return !anyFinished;
+    }
+    finish() {
+        this.actions.forEach((action, index) => {
+            if (!this.actionsFinished[index]) {
+                if (this.continueOtherActions)
+                    UpdateSingleActionUntilFinished(action);
+                else
+                    action.finish();
+            }
+        });
+    }
+}
+class WaitForConditionAction extends BaseAction {
+    f;
+    argsArray;
+    constructor(f, ...argsArray) {
+        super();
+        this.f = f;
+        this.argsArray = argsArray;
+    }
+    update() {
+        return !this.f.apply(null, this.argsArray);
+    }
+}
+/** Action to wait a single frame */
+class WaitOneFrameAction extends BaseAction {
+    updated = false;
+    update() {
+        if (this.updated)
+            return false;
+        this.updated = true;
+        return true;
+    }
+}
+/**
+ * Run an action until it's complete, or until it hits a timeout.
+ * `continueAfterTimeout` is a bool determining whether to continue ticking the action after it has timed out
+ */
+class ActionWithTimeout {
+    action;
+    timeoutDuration;
+    continueAfterTimeout;
+    allAction;
+    constructor(action, timeoutDuration, continueAfterTimeout) {
+        this.action = action;
+        this.timeoutDuration = timeoutDuration;
+        this.continueAfterTimeout = !!continueAfterTimeout;
+    }
+    start() {
+        this.allAction = new RunUntilSingleActionFinishedAction(this.continueAfterTimeout, [this.action, new WaitAction(this.timeoutDuration)]);
+        this.allAction.start();
+    }
+    update() {
+        return this.allAction.update();
+    }
+    finish() {
+        this.allAction.finish();
+    }
+}
+/**
+ * Action that simply runs a passed in function.
+ * You may include extra arguments and they will be passed to the called function.
+ */
+class RunFunctionAction extends BaseAction {
+    f;
+    argsArray;
+    constructor(f, ...argsArray) {
+        super();
+        this.f = f;
+        this.argsArray = argsArray;
+    }
+    update() {
+        this.f.apply(null, this.argsArray);
+        return false;
+    }
+}
+/**
+ * Action that calls $.DispatchEvent.
+ * You may include extra arguments and they will be passed to event.
+ */
+class DispatchEventAction extends RunFunctionAction {
+    eventName;
+    constructor(eventName, ...argsArray) {
+        super(() => $.DispatchEvent(eventName, ...argsArray));
+        this.eventName = eventName;
+    }
+}
+/** Action that waits for a specific event type to be fired on the given panel. */
+class WaitForEventAction extends BaseAction {
+    panel;
+    eventName;
+    receievedEvent = false;
+    constructor(panel, eventName) {
+        super();
+        this.panel = panel;
+        this.eventName = eventName;
+    }
+    start() {
+        $.RegisterEventHandler(this.eventName, this.panel, () => this.receievedEvent = true);
+    }
+    update() {
+        return !this.receievedEvent;
+    }
+}
+/** Action to print a debug message */
+class PrintAction extends RunFunctionAction {
+    msg;
+    constructor(msg) {
+        super(() => $.Msg(this.msg));
+        this.msg = msg;
+    }
+}
+/** Action to add a class to a panel */
+class AddClassAction extends RunFunctionAction {
+    constructor(panel, panelClass) {
+        super(() => {
+            if (panel != null)
+                panel.AddClass(panelClass);
+        });
+    }
+}
+/** Action to remove a class from a panel */
+class RemoveClassAction extends RunFunctionAction {
+    constructor(panel, panelClass) {
+        super(() => {
+            if (panel != null)
+                panel.RemoveClass(panelClass);
+        });
+    }
+}
+/** Switch a class on a panel */
+class SwitchClassAction extends RunFunctionAction {
+    constructor(panel, panelSlot, panelClass) {
+        super(() => {
+            if (panel != null)
+                panel.SwitchClass(panelSlot, panelClass);
+        });
+    }
+}
+/** Action to trigger a class on a panel */
+class TriggerClassAction extends RunFunctionAction {
+    constructor(panel, panelClass) {
+        super(() => {
+            if (panel != null)
+                panel.TriggerClass(panelClass);
+        });
+    }
+}
+/** Action to wait for a class to appear on a panel */
+class WaitForClassAction extends WaitForConditionAction {
+    constructor(panel, panelClass) {
+        super(() => {
+            return !!(panel && panel.IsValid() && panel.BHasClass(panelClass));
+        });
+    }
+}
+/** Action to set an integer dialog variable */
+class SetDialogVariableIntAction extends RunFunctionAction {
+    constructor(panel, dialogVariable, value) {
+        super(() => {
+            if (panel != null)
+                panel.SetDialogVariableInt(dialogVariable, value);
+        });
+    }
+}
+/** Action to animate an integer dialog variable over some duration of seconds */
+class AnimateDialogVariableIntAction {
+    panel;
+    dialogVariable;
+    startValue;
+    endValue;
+    seconds;
+    startTimestamp = 0;
+    endTimestamp = 0;
+    constructor(panel, dialogVariable, startValue, endValue, seconds) {
+        this.panel = panel;
+        this.dialogVariable = dialogVariable;
+        this.startValue = startValue;
+        this.endValue = endValue;
+        this.seconds = seconds;
+    }
+    start() {
+        this.startTimestamp = Game.Time();
+        this.endTimestamp = this.startTimestamp + this.seconds;
+    }
+    update() {
+        const now = Game.Time();
+        if (now >= this.endTimestamp)
+            return false;
+        const ratio = (now - this.startTimestamp) / (this.endTimestamp - this.startTimestamp);
+        if (this.panel && this.panel.IsValid())
+            this.panel.SetDialogVariableInt(this.dialogVariable, Math.floor(this.startValue + (this.endValue - this.startValue) * ratio));
+        return true;
+    }
+    finish() {
+        if (this.panel && this.panel.IsValid())
+            this.panel.SetDialogVariableInt(this.dialogVariable, this.endValue);
+    }
+}
+/** Action to set a string dialog variable */
+class SetDialogVariableStringAction extends RunFunctionAction {
+    constructor(panel, dialogVariable, value) {
+        super(() => {
+            if (panel != null && panel.IsValid())
+                panel.SetDialogVariable(dialogVariable, value);
+        });
+    }
+}
+/** Action to set a progress bar's value */
+class SetProgressBarValueAction extends RunFunctionAction {
+    constructor(progressBar, value) {
+        super(() => progressBar.value = value);
+    }
+}
+/** Action to animate a progress bar */
+class AnimateProgressBarAction {
+    progressBar;
+    startValue;
+    endValue;
+    seconds;
+    startTimestamp = 0;
+    endTimestamp = 0;
+    constructor(progressBar, startValue, endValue, seconds) {
+        this.progressBar = progressBar;
+        this.startValue = startValue;
+        this.endValue = endValue;
+        this.seconds = seconds;
+    }
+    start() {
+        this.startTimestamp = Game.Time();
+        this.endTimestamp = this.startTimestamp + this.seconds;
+    }
+    update() {
+        const now = Game.Time();
+        if (now >= this.endTimestamp)
+            return false;
+        const ratio = (now - this.startTimestamp) / (this.endTimestamp - this.startTimestamp);
+        this.progressBar.value = this.startValue + (this.endValue - this.startValue) * ratio;
+        return true;
+    }
+    finish() {
+        this.progressBar.value = this.endValue;
+    }
+}
+/** Action to set a progress bar with middle's upper and lower values */
+class SetProgressBarWithMiddleValueAction extends RunFunctionAction {
+    constructor(progressBar, upperValue, lowerValue) {
+        super(() => {
+            progressBar.uppervalue = upperValue;
+            progressBar.lowervalue = lowerValue;
+        });
+    }
+}
+/** Action to animate a progress bar with middle */
+class AnimateProgressBarWithMiddleAction {
+    progressBar;
+    startValue;
+    endValue;
+    seconds;
+    startTimestamp = 0;
+    endTimestamp = 0;
+    constructor(progressBar, startValue, endValue, seconds) {
+        this.progressBar = progressBar;
+        this.startValue = startValue;
+        this.endValue = endValue;
+        this.seconds = seconds;
+    }
+    start() {
+        this.startTimestamp = Game.Time();
+        this.endTimestamp = this.startTimestamp + this.seconds;
+    }
+    update() {
+        const now = Game.Time();
+        if (now >= this.endTimestamp)
+            return false;
+        const ratio = (now - this.startTimestamp) / (this.endTimestamp - this.startTimestamp);
+        this.progressBar.uppervalue = this.startValue + (this.endValue - this.startValue) * ratio;
+        return true;
+    }
+    finish() {
+        this.progressBar.uppervalue = this.endValue;
+    }
+}
+/** Convenience  */
+function PlaySoundEffect(soundName) {
+    $.DispatchEvent('PlaySoundEffect', soundName);
+}
+/** Action to play a sound effect */
+class PlaySoundEffectAction extends RunFunctionAction {
+    constructor(soundName) {
+        super(() => PlaySoundEffect(soundName));
+    }
+}
+class PlaySoundAction extends RunFunctionAction {
+    constructor(soundName) {
+        super(() => PlayUISoundScript(soundName));
+    }
+}
+class PlaySoundForDurationAction extends RunSequentialActions {
+    soundName;
+    duration;
+    soundEventGuid = 0;
+    constructor(soundName, duration) {
+        super([
+            new RunFunctionAction(() => this.soundEventGuid = PlayUISoundScript(soundName)),
+            new WaitAction(duration),
+            new RunFunctionAction(() => StopUISoundScript(this.soundEventGuid))
+        ]);
+        this.soundName = soundName;
+        this.duration = duration;
+    }
+}
+class PlaySoundUntilFinishedAction extends RunSequentialActions {
+    soundName;
+    soundEventGuid = 0;
+    constructor(soundName) {
+        super([
+            new RunFunctionAction(() => this.soundEventGuid = PlayUISoundScript(soundName)),
+            new WaitForConditionAction(() => !IsUISoundScriptPlaying(this.soundEventGuid))
+        ]);
+        this.soundName = soundName;
+    }
+}
+/** Base class that you can override an `applyProgress` to do a simple Lerp over X seconds. */
+class LerpAction {
+    seconds;
+    startTimestamp = 0;
+    endTimestamp = 0;
+    constructor(seconds) {
+        this.seconds = seconds;
+    }
+    start() {
+        this.startTimestamp = Game.Time();
+        this.endTimestamp = this.startTimestamp + this.seconds;
+    }
+    update() {
+        const now = Game.Time();
+        if (now >= this.endTimestamp)
+            return false;
+        const ratio = (now - this.startTimestamp) / (this.endTimestamp - this.startTimestamp);
+        this.applyProgress(ratio);
+        return true;
+    }
+    finish() {
+        this.applyProgress(1.0);
+    }
+    applyProgress(progress) {
+        // Override this method to apply your progress
+    }
+}
+/**
+ * Runs a contained action, except that it's immediately aborted if the passed-in guard function ever returns false -- not even finishing the contained action.
+ * Alternatively you can keep a reference to the GuardedAction and just set guardFailed to true to trigger this abort.
+ */
+class GuardedAction {
+    action;
+    guard;
+    guardFailed = false;
+    constructor(action, guard) {
+        this.action = action;
+        this.guard = guard;
+    }
+    TriggerFailure() {
+        this.guardFailed = true;
+    }
+    checkGuardFailure() {
+        if (this.guardFailed) {
+            return true;
+        }
+        if (this.guard && !this.guard()) {
+            this.guardFailed = true;
+        }
+        return this.guardFailed;
+    }
+    start() {
+        if (!this.checkGuardFailure())
+            this.action.start();
+    }
+    update() {
+        return !this.checkGuardFailure() || this.action.update();
+    }
+    finish() {
+        if (!this.checkGuardFailure())
+            this.action.finish();
+    }
+}
+class PlayMovieAction extends RunSequentialActions {
+    constructor(moviePanel) {
+        let isMovieFinished = false;
+        $.RegisterEventHandler('MoviePlayerPlaybackEnded', moviePanel, () => isMovieFinished = true);
+        super([
+            new RunFunctionAction(() => moviePanel.Play()),
+            new WaitForConditionAction(() => isMovieFinished)
+        ]);
+    }
+}
+/// <reference path="dota.d.ts" />
+/// <reference path="util.ts" />
+/// <reference path="sequence_actions.ts" />
+// Dota specific sequence actions
+// Depends on util.ts and sequence_actions.ts being included first in the XML layout file
+/**
+ * Action to lerp the rotation parameters of a Scene Panel_t
+ */
+class LerpRotateAction extends LerpAction {
+    panel;
+    yawMinStart;
+    yawMaxStart;
+    pitchMinStart;
+    pitchMaxStart;
+    yawMinEnd;
+    yawMaxEnd;
+    pitchMinEnd;
+    pitchMaxEnd;
+    seconds;
+    constructor(panel, yawMinStart, yawMaxStart, pitchMinStart, pitchMaxStart, yawMinEnd, yawMaxEnd, pitchMinEnd, pitchMaxEnd, seconds) {
+        super(seconds);
+        this.panel = panel;
+        this.yawMinStart = yawMinStart;
+        this.yawMaxStart = yawMaxStart;
+        this.pitchMinStart = pitchMinStart;
+        this.pitchMaxStart = pitchMaxStart;
+        this.yawMinEnd = yawMinEnd;
+        this.yawMaxEnd = yawMaxEnd;
+        this.pitchMinEnd = pitchMinEnd;
+        this.pitchMaxEnd = pitchMaxEnd;
+        this.seconds = seconds;
+    }
+    applyProgress(progress) {
+        this.panel.SetRotateParams(Lerp(progress, this.yawMinStart, this.yawMinEnd), Lerp(progress, this.yawMaxStart, this.yawMaxEnd), Lerp(progress, this.pitchMinStart, this.pitchMinEnd), Lerp(progress, this.pitchMaxStart, this.pitchMaxEnd));
+    }
+}
+/** Action to lerp the Depth of Field parameters of a Scene Panel_t */
+class LerpDepthOfFieldAction extends LerpAction {
+    panel;
+    cameraName;
+    nearBlurryDistanceStart;
+    nearCrispDistanceStart;
+    farCrispDistanceStart;
+    farBlurryDistanceStart;
+    nearBlurryDistanceEnd;
+    nearCrispDistanceEnd;
+    farCrispDistanceEnd;
+    farBlurryDistanceEnd;
+    seconds;
+    constructor(panel, cameraName, nearBlurryDistanceStart, nearCrispDistanceStart, farCrispDistanceStart, farBlurryDistanceStart, nearBlurryDistanceEnd, nearCrispDistanceEnd, farCrispDistanceEnd, farBlurryDistanceEnd, seconds) {
+        super(seconds);
+        this.panel = panel;
+        this.cameraName = cameraName;
+        this.nearBlurryDistanceStart = nearBlurryDistanceStart;
+        this.nearCrispDistanceStart = nearCrispDistanceStart;
+        this.farCrispDistanceStart = farCrispDistanceStart;
+        this.farBlurryDistanceStart = farBlurryDistanceStart;
+        this.nearBlurryDistanceEnd = nearBlurryDistanceEnd;
+        this.nearCrispDistanceEnd = nearCrispDistanceEnd;
+        this.farCrispDistanceEnd = farCrispDistanceEnd;
+        this.farBlurryDistanceEnd = farBlurryDistanceEnd;
+        this.seconds = seconds;
+    }
+    applyProgress(progress) {
+        this.panel.FireEntityInput(this.cameraName, 'SetDOFNearBlurry', Lerp(progress, this.nearBlurryDistanceStart, this.nearBlurryDistanceEnd));
+        this.panel.FireEntityInput(this.cameraName, 'SetDOFNearCrisp', Lerp(progress, this.nearCrispDistanceStart, this.nearCrispDistanceEnd));
+        this.panel.FireEntityInput(this.cameraName, 'SetDOFFarCrisp', Lerp(progress, this.farCrispDistanceStart, this.farCrispDistanceEnd));
+        this.panel.FireEntityInput(this.cameraName, 'SetDOFFarBlurry', Lerp(progress, this.farBlurryDistanceStart, this.farBlurryDistanceEnd));
+    }
+}
+/** Action to fire entity input on a scene panel */
+class FireEntityInputAction extends RunFunctionAction {
+    constructor(scenePanel, entityName, entityInput, entityInputValue) {
+        super(() => {
+            scenePanel.FireEntityInput(entityName, entityInput, entityInputValue);
+        });
+    }
+}
+/** Action to animate an entity input value */
+class AnimateEntityInputAction {
+    scenePanel;
+    entityName;
+    entityInput;
+    startValue;
+    endValue;
+    seconds;
+    startTimestamp = 0;
+    endTimestamp = 0;
+    constructor(scenePanel, entityName, entityInput, startValue, endValue, seconds) {
+        this.scenePanel = scenePanel;
+        this.entityName = entityName;
+        this.entityInput = entityInput;
+        this.startValue = startValue;
+        this.endValue = endValue;
+        this.seconds = seconds;
+    }
+    start() {
+        this.startTimestamp = Game.Time();
+        this.endTimestamp = this.startTimestamp + this.seconds;
+    }
+    update() {
+        const now = Game.Time();
+        if (now >= this.endTimestamp)
+            return false;
+        this.scenePanel.FireEntityInput(this.entityName, this.entityInput, RemapValClamped(now, this.startTimestamp, this.endTimestamp, this.startValue, this.endValue));
+        return true;
+    }
+    finish() {
+        this.scenePanel.FireEntityInput(this.entityName, this.entityInput, this.endValue);
+    }
+}
+/** Starts ducking all UI music. Quack */
+class StartDuckingUIMusicAction extends RunFunctionAction {
+    constructor(panel) {
+        super(() => { SetDuckingUIMusic(panel, true); });
+    }
+}
+/** Stops ducking all UI music. Quack */
+class StopDuckingUIMusicAction extends RunFunctionAction {
+    constructor(panel) {
+        super(() => { SetDuckingUIMusic(panel, false); });
+    }
+}
+const g_trackedSoundEvents = [];
+/** Helper action that keeps track of any sounds that are playing.
+ *  Call `StopAllTrackedSounds` when the page is closing to stop them. */
+class PlayAndTrackSoundAction extends RunFunctionAction {
+    constructor(soundName) {
+        super(() => g_trackedSoundEvents.push(PlayUISoundScript(soundName)));
+    }
+    static StopAllTrackedSounds() {
+        g_trackedSoundEvents.forEach(handle => StopUISoundScript(handle));
+        g_trackedSoundEvents.length = 0;
+    }
+}
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic2VxdWVuY2VfYWN0aW9ucy5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uLy4uL2RvdGFfYWRkb25zL3dpbnRlcjIwMjIvcGFub3JhbWEvc2NyaXB0cy9jdXN0b21fZ2FtZS9zZXF1ZW5jZV9hY3Rpb25zLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7QUFBQSwyQ0FBMkM7QUFDM0MsZ0NBQWdDO0FBd0JoQzs7R0FFRztBQUNILFNBQVMsZUFBZSxDQUFHLE1BQXVCO0lBRWpELE1BQU0sQ0FBQyxLQUFLLEVBQUUsQ0FBQztJQUNmLCtCQUErQixDQUFFLE1BQU0sQ0FBRSxDQUFDO0FBQzNDLENBQUM7QUFFRDs7R0FFRztBQUNILFNBQVMsK0JBQStCLENBQUcsTUFBdUI7SUFFakUsU0FBUyxRQUFRO1FBRWhCLElBQUssQ0FBQyxNQUFNLENBQUMsTUFBTSxFQUFFLEVBQ3JCO1lBQ0MsTUFBTSxDQUFDLE1BQU0sRUFBRSxDQUFDO1NBQ2hCO2FBRUQ7WUFDQyxDQUFDLENBQUMsUUFBUSxDQUFFLEdBQUcsRUFBRSxRQUFRLENBQUUsQ0FBQztTQUM1QjtJQUNGLENBQUM7SUFBQSxDQUFDO0lBQ0YsUUFBUSxFQUFFLENBQUM7QUFDWixDQUFDO0FBRUQsc0hBQXNIO0FBQ3RILE1BQU0sVUFBVTtJQUVmLEtBQUssS0FBWSxDQUFDO0lBQ2xCLE1BQU0sS0FBZSxPQUFPLEtBQUssQ0FBQyxDQUFDLENBQUM7SUFDcEMsTUFBTSxLQUFZLENBQUM7Q0FDbkI7QUFFRDs7R0FFRztBQUNILE1BQU0sb0JBQW9CO0lBRXpCLE9BQU8sQ0FBb0I7SUFDM0Isa0JBQWtCLEdBQUcsQ0FBQyxDQUFDO0lBQ3ZCLG9CQUFvQixHQUFHLEtBQUssQ0FBQztJQUU3QixZQUFhLFVBQTZCLEVBQUU7UUFFM0MsSUFBSSxDQUFDLE9BQU8sR0FBRyxPQUFPLENBQUM7SUFDeEIsQ0FBQztJQUVELEtBQUs7UUFFSixJQUFJLENBQUMsa0JBQWtCLEdBQUcsQ0FBQyxDQUFD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

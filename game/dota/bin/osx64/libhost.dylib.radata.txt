@@ -14,6 +14,7 @@
 0(45
 00000000-0000-0000-0000-000000000000
 00010203040506070809101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899
+0123456789
 0123456789abcdef
 048
 048<@D
@@ -801,8 +802,8 @@ Hex and octal numbers must be integers
 Host
 HostStateMgr001
 HostUtils001
-I CUtlRBTree<CDiffInfo, int, bool (*)(const CDiffInfo &, const CDiffInfo &)>::Insert(const T &) [T = CDiffInfo, I = int, L = bool (*)(const CDiffInfo &, const CDiffInfo &), M = CUtlMemory<UtlRBTreeNode_t<CDiffInfo, int
-I CUtlRBTree<CUtlMapBase<unsigned int, CDotaTreeMap::TreeMapChunkInfo_t, unsigned short, bool (*)(const unsigned int &, const unsigned int &)>::Node_t, unsigned short, CUtlMapBase<unsigned int, CDotaTreeMap::TreeMapChunkInfo_t, unsigned short, bool (*)(const unsigned int &, const unsigned int &)>::CKeyLess>::Insert(T &&) [T = CUtlMapBase<unsigned int, CDotaTreeMap::TreeMapChunkInfo_t, unsigned short, bool (*)(const unsigned int &, const unsigned int &)>::Node_t, I = unsigned short, L = CUtlMapBase<unsigned int, CDotaTreeMap::TreeMapChunkInfo_t, unsigned short, bool (*)(const unsigned int &, const unsigned int &)>::CKeyLess, M = CUtlMemory<UtlRBTreeNode_t<CUtlMapBase<unsigned int, CDotaTreeMap::TreeMapChunkInfo_t, unsigned short, bool (*)(const unsigned int &, const unsigned int &)>::Node_t, unsigned short>, unsigned short
+I CUtlRBTree<CDiffInfo, CLessFunc<&CDiffInfo::Less>>::Insert(const T &) [T = CDiffInfo, L = CLessFunc<&CDiffInfo::Less>, I = int, M = CUtlMemory<UtlRBTreeNode_t<CDiffInfo, int
+I CUtlRBTree<CUtlOrderedMapBase<unsigned int, CDotaTreeMap::TreeMapChunkInfo_t, CDefLess<unsigned int>, int>::Node_t, CUtlOrderedMapBase<unsigned int, CDotaTreeMap::TreeMapChunkInfo_t, CDefLess<unsigned int>, int>::CKeyLess>::Insert(T &&) [T = CUtlOrderedMapBase<unsigned int, CDotaTreeMap::TreeMapChunkInfo_t, CDefLess<unsigned int>, int>::Node_t, L = CUtlOrderedMapBase<unsigned int, CDotaTreeMap::TreeMapChunkInfo_t, CDefLess<unsigned int>, int>::CKeyLess, I = int, M = CUtlMemory<UtlRBTreeNode_t<CUtlOrderedMapBase<unsigned int, CDotaTreeMap::TreeMapChunkInfo_t, CDefLess<unsigned int>, int>::Node_t, int
 IDEMPOTENCY_UNKNOWN
 IGameSystem::Init( %-80s ) %8.3f msec
 IGameSystem::PostInit( %-80s ) %8.3f msec
@@ -1736,7 +1737,9 @@ m_attachments
 m_bCanBatchWithDynamicShaderConstants
 m_bClamp
 m_bComputeDynamicMeshTensionAfterAnimation
+m_bDisableSmoothVertexCacheNormals
 m_bDrawLast
+m_bEnableSimulation
 m_bHasBakedLightingFromLightMap
 m_bHasBakedLightingFromVertexStream
 m_bIgnoreRotation
@@ -1780,6 +1783,7 @@ m_flWeight
 m_floatAttributes
 m_floatParams
 m_hBuffer
+m_hSimParamsMat
 m_hairs
 m_hitboxsets
 m_indexBuffer
@@ -1799,7 +1803,6 @@ m_morphSet
 m_nAttachBoneIdx
 m_nAttachMeshDrawCallIdx
 m_nAttachMeshIdx
-m_nBaseTriIdx
 m_nBaseVertex
 m_nBindOffsetBytes
 m_nBoneHash
@@ -1810,7 +1813,7 @@ m_nFlags
 m_nGroomGroupID
 m_nGroupId
 m_nGuideHairCount
-m_nGuideIdx
+m_nGuideHairIndices_nSurfaceTriIndex
 m_nHairCount
 m_nHitBoxIndex
 m_nIndexCount
@@ -1819,8 +1822,9 @@ m_nMax
 m_nMin
 m_nNameHash
 m_nNumMeshlets
-m_nPackedBaseMeshUv
-m_nPad
+m_nPackedBaseUv
+m_nPackedSurfaceNormalOs
+m_nPackedSurfaceTangentOs
 m_nPrimitiveType
 m_nSegmentsPerHairStrand
 m_nShapeType
@@ -1861,10 +1865,9 @@ m_textureAttributes
 m_textureParams
 m_toeBoneName
 m_vBallOffset
-m_vBaseBarycentric
 m_vBasePosition
 m_vConeApex
-m_vGuideBarycentric
+m_vGuideBary_vBaseBary
 m_vHeelOffset
 m_vInfluenceOffsets
 m_vInfluenceRotations

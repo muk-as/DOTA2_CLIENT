@@ -1,4 +1,4 @@
-/// <reference path="../../../../../dota/panorama/scripts/dota.d.ts" />
+/// <reference path="../winter2022.d.ts" />
 
 //-----------------------------------------------------------------------------------------
 $.Schedule( 2.0, function () 
@@ -34,5 +34,5 @@ function OnGameInfoDontShowAgain()
 	g_bDontShowCheckBox = !g_bDontShowCheckBox;
 	Game.Winter2022SetShowGameInfo( !g_bDontShowCheckBox );
 
-	$.GetContextPanel().FindChildInLayoutFile( "DontShowAgainButton" )!.SetHasClass( "CheckboxActive", g_bDontShowCheckBox );
+	$.GetContextPanel().FindChildInLayoutFile( "DontShowAgainButton" ).SetHasClass( "CheckboxActive", g_bDontShowCheckBox );
 }

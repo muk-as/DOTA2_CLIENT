@@ -1,0 +1,184 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	windowTitle ="%root_asset_unqualified_name"
+	windowIcon = "game:tools/images/assetbrowser/reference_visualization.png"
+	size = [ 1000, 800 ]
+	vbox=
+	[
+		{
+			_class="QWidget"
+			hbox=
+			[
+				{
+					_class="CQBindableCommandToolButton"
+					name="navigate_back_button"
+					binding="asset_graph:NavigateHistoryBack"
+					icon = "tools/images/common/control_first.png"
+					mode="COMMAND_TEXT_MODE_BUTTON"
+				},
+				{
+					_class="CQBindableCommandToolButton"
+					name="navigate_forward_button"
+					binding="asset_graph:NavigateHistoryForward"
+					icon = "tools/images/common/control_last.png"
+					mode="COMMAND_TEXT_MODE_BUTTON"
+				},
+				{ _class="QLabel" text="%root_asset_name" fontstyle="18px bold" foreground=[200,200,200] },
+			]
+		},
+		{
+			_class="QWidget"
+			hbox=
+			[
+				{
+					_class="QWidget"
+					name="filter_bar_container"
+					hbox=[]
+				},
+				{ _class="QLabel" visible="%?filter_result_info" text="%filter_result_info" fontstyle="14px bold" },
+			]
+		},
+		{
+			_class="CQAssetGraphCanvasView"
+			name="GraphView"
+			stretch = 1
+			children=
+			[
+				{
+					_class="QGroupBox"
+					position=[10,10]
+					autoFillBackground=true
+					contentsMargins=5
+					grid =
+					[
+						[
+							{
+								_class="QLabel"
+								pixmap="tools/images/common/icon_info.png"
+								fixed_size=[16,16]
+								scaledContents=true
+								toolTip="A strong reference causes the target to be automatically\nloaded when the referring resource loads."
+							},
+							{
+								_class="QCheckBox"
+								name="include_strong_refs"
+								text="Show Strong\nReferences"
+								checked=true
+							},
+							{
+								_class="QLabel"
+								name="label_include_strong_refs"
+								fixed_size=[24,5]
+							},
+						],
+						[
+							{
+								_class="QLabel"
+								pixmap="tools/images/common/icon_info.png"
+								fixed_size=[16,16]
+								scaledContents=true
+								toolTip="A weak reference (also known as a 'name reference') will\nnot automatically load, and must be explicitly precached\nby code before it's loaded."
+							},
+							{
+								_class="QCheckBox"
+								name="include_weak_refs"
+								text="Show Weak\nReferences"
+								checked=true
+							},
+							{
+								_class="QLabel"
+								name="label_include_weak_refs"
+								fixed_size=[24,5]
+							},
+						],
+						[
+							{
+								_class="QLabel"
+								pixmap="tools/images/common/icon_info.png"
+								fixed_size=[16,16]
+								scaledContents=true
+								toolTip="A compile dependency is an input file that is read as part\nof compiling a resource. If the file changes later then tools-mode or\ncontentbuilder will automatically recompile the referencing file."
+							},
+							{
+								_class="QCheckBox"
+								name="include_deps"
+								text="Show Compile\nDependencies"
+								checked=true
+							},
+							{
+								_class="QLabel"
+								name="label_include_deps"
+								fixed_size=[24,5]
+							},
+						],
+						[
+							{
+								_class="QGroupBox"
+								title="Traversal Limits"
+								colspan=3
+								vbox =
+								[
+									{
+										hbox =
+										[
+											{
+												_class="QLabel"
+												pixmap="tools/images/assetbrowser/graph_overflow_forward_depth.png"
+												fixed_size=[16,16]
+												scaledContents=true
+												toolTip="The number of connections that will be chased from the root asset.\n(Limit is for visualization UI performance - ignored when searching the graph.)"
+											},
+											{
+												_class="QLabel"
+												text="Depth"
+											},
+											{ stretch = 1 },
+											{
+												_class="CQBindableCommandToolButton"
+												name="decrease_depth_button"
+												text="Decrease the max distance from the root asset"
+												binding="asset_graph:DecreaseMaxDepth"
+												icon = "tools/images/common/subtract_sm.png"
+												mode="COMMAND_TEXT_MODE_BUTTON"
+											},
+											{
+												_class="CQBindableCommandToolButton"
+												text="Increase the max distance from the root asset"
+												name="increase_depth_button"
+												binding="asset_graph:IncreaseMaxDepth"
+												icon = "tools/images/common/add_sm.png"
+												mode="COMMAND_TEXT_MODE_BUTTON"
+											},
+										]
+									},
+									{
+										hbox =
+										[
+											{
+												_class="QLabel"
+												pixmap="tools/images/assetbrowser/graph_overflow_forward_links.png"
+												fixed_size=[16,16]
+												scaledContents=true
+												toolTip="The maximum number of incoming or outgoing connections that will be\nvisualized for a single asset in the graph.\n(Limit is for visualization UI performance - ignored when searching the graph.)"
+											},
+											{
+												_class="QLabel"
+												text="Links"
+											},
+											{ stretch = 1 },
+											{
+												_class="QLineEdit"
+												name="max_links_edit"
+												text="1234"
+											},
+										]
+									},
+								]
+							},
+						]
+					]
+				},
+			]
+		},
+	]
+}

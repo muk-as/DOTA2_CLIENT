@@ -1,0 +1,526 @@
+/* Prettified by Source 2 Viewer 0.0.0.0 - https://valveresourceformat.github.io */
+
+DOTAOverworldInventory
+{
+	width: fit-children;
+	height: fit-children;
+}
+
+.InventoryBackground
+{
+	flow-children: right;
+	vertical-align: center;
+	width: 100%;
+}
+
+.InventoryBackground .BgEdge
+{
+	width: 40px;
+	height: 66px;
+	background-image: url("s2r://panorama/images/events/crownfall/overworld/tokens_bg_edge_png.vtex");
+	background-size: cover;
+}
+
+.InventoryBackground .BgEdge.Right
+{
+	transform: scaleX( -1 );
+}
+
+.InventoryBackground .BgFill
+{
+	width: fill-parent-flow( 1 );
+	height: 66px;
+	background-image: url("s2r://panorama/images/events/crownfall/overworld/tokens_bg_fill_png.vtex");
+	background-size: contain;
+}
+
+.InventoryBackground .CloseButton
+{
+	width: 24px;
+	height: 24px;
+	margin: 0px;
+	margin-top: 2px;
+	margin-right: 10px;
+	ignore-parent-flow: true;
+	horizontal-align: right;
+	vertical-align: top;
+	background-color: black;
+	background-size: 16px 16px;
+	z-index: 3;
+	visibility: collapse;
+	border-radius: 50%;
+	border: 2px solid white;
+	border-brush: gradient( linear, 0% 0%, 0% 100%, from( gold1 ), color-stop( 0.5, gold2 ), to( gold3 ) );
+}
+
+.InventoryWrapper
+{
+	horizontal-align: center;
+	vertical-align: bottom;
+	margin-bottom: 110px;
+	z-index: 1;
+}
+
+#InventoryContainer
+{
+	width: fit-children;
+	height: fit-children;
+	flow-children: down;
+	vertical-align: top;
+	margin: 0px 40px;
+	margin-top: 8px;
+	min-width: 400px;
+	min-height: 48px;
+}
+
+.OverworldInventory.AsyncContainer
+{
+	width: fit-children;
+	height: fit-children;
+	flow-children: right;
+}
+
+#InventoryContainer .AsyncContainer.AsyncLoadingContainer .Wrapper .Spinner
+{
+	width: 24px;
+	height: 24px;
+	margin-bottom: -4px;
+}
+
+#ItemList
+{
+	horizontal-align: center;
+	flow-children: right;
+}
+
+.InfoIcon
+{
+	vertical-align: center;
+	margin-top: -4px;
+	margin-right: 0px;
+}
+
+.TokensTitle
+{
+	text-shadow: 0px 2px 8px black;
+	vertical-align: center;
+}
+
+.TestItems
+{
+	horizontal-align: right;
+	vertical-align: bottom;
+	flow-children: down;
+	width: 100%;
+	margin-bottom: 2px;
+	margin-right: 15px;
+}
+
+.TestItem.InventoryItem
+{
+	width: 30px;
+	height: 30px;
+	margin-top: 2px;
+	margin-bottom: 2px;
+	tooltip-position: left;
+	tooltip-body-position: 50% 50%;
+}
+
+.TestItem .InventoryCount
+{
+	visibility: visible;
+}
+
+.InventoryItem
+{
+	padding-top: 4px;
+	tooltip-position: top;
+	overflow: noclip;
+	transition-property: transform;
+	transition-duration: 0.05s;
+}
+
+.InventoryItem:active DOTACrownfallToken
+{
+	transform: translateY( 1px );
+	brightness: 0.5;
+}
+
+.InventoryItem.Selected
+{
+	z-index: 1;
+}
+
+.InventoryItem .ItemContent
+{
+	height: 80px;
+	padding: 0px 2px;
+	margin: 0px -14.5px;
+	transition-property: saturation, brightness;
+	transition-duration: 0.3s;
+}
+
+.InventoryItem DOTACrownfallToken
+{
+	horizontal-align: center;
+	margin-bottom: 3px;
+}
+
+.InventoryItem .ItemName
+{
+	vertical-align: center;
+	width: 100px;
+	font-size: 16px;
+	color: LighterGrey;
+	text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
+	text-overflow: shrink;
+	visibility: collapse;
+}
+
+.InventoryItem .DebugActions
+{
+	flow-children: right;
+	vertical-align: bottom;
+	horizontal-align: center;
+	overflow: noclip;
+	margin-top: 80px;
+	box-shadow: 0px 8px 32px -2px rgba(0, 0, 0, 0.6);
+	visibility: collapse;
+}
+
+.InventoryItem:hover .DebugActions
+{
+	visibility: visible;
+}
+
+.InventoryItem.Selectable
+{
+	opacity: 1.0;
+}
+
+.InventoryItem.Unselectable
+{
+	opacity: 0.04;
+}
+
+.TokensShadowContainer
+{
+	width: 100%;
+	height: 100%;
+}
+
+.TokensShadowContainer .TokensShadow
+{
+	margin-top: 72px;
+	height: 300px;
+	width: 134%;
+	overflow: noclip;
+	vertical-align: center;
+	horizontal-align: center;
+	opacity: 0.8;
+}
+
+.DebugButton
+{
+	font-size: 16px;
+	color: LightGrey;
+	text-align: center;
+	text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
+	border: 1px solid Grey;
+	padding: 6px 12px;
+	margin-right: -1px;
+	background-color: #400040;
+}
+
+.DebugButton:hover:enabled
+{
+	background-color: #5a005a;
+	color: LightestGrey;
+}
+
+#TokenDebugActions .DebugButton
+{
+	font-size: 12px;
+	padding: 4px;
+	visibility: visible;
+}
+
+.PlaytestOpen #TokenDebugActions .DebugButton
+{
+	visibility: collapse;
+}
+
+.InventoryItem:disabled
+{
+	saturation: 0;
+	brightness: 0.4;
+}
+
+.Empty .InventoryCount
+{
+	visibility: collapse;
+}
+
+.InfoContainer
+{
+	horizontal-align: center;
+	vertical-align: bottom;
+	flow-children: right;
+	opacity: 0.8;
+	margin-bottom: 116px;
+	visibility: collapse;
+}
+
+.InfoContainer Label
+{
+	color: LightestGrey;
+	text-shadow: 0px 2px 12px black;
+}
+
+.InfoContainer .Icon
+{
+	margin-right: 6px;
+	width: 16px;
+	height: width-percentage( 100% );
+	vertical-align: center;
+	margin-top: 1px;
+	wash-color: LightestGrey;
+}
+
+.TitleContainer
+{
+	margin: -6px 6px 0px 8px;
+	flow-children: down;
+	vertical-align: center;
+}
+
+.TitleContainer .TokensTitle
+{
+	horizontal-align: center;
+	font-size: 16px;
+}
+
+.TitleContainer .TokensTitle.ActLabel
+{
+	margin-bottom: -3px;
+	font-size: 14px;
+	letter-spacing: 2px;
+}
+
+.Small
+{
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#Inventory.Small
+{
+	width: 64px;
+}
+
+.Small .InventoryCount
+{
+	width: fit-children;
+}
+
+.Small .InventoryItem .ItemDivider,.Small .Title,.Small .ItemName,.Small .DebugButton,.Small #DebugPanel
+{
+	visibility: collapse;
+}
+
+#HeroTray
+{
+	width: 700px;
+	min-height: 160px;
+	horizontal-align: center;
+	vertical-align: bottom;
+	margin-bottom: 180px;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( charcoalLight ), to( charcoalDark ) );
+	opacity: 1;
+	transform: none;
+	transition-property: opacity, transform;
+	transition-duration: 0.1s;
+	transition-timing-function: ease-in;
+}
+
+.NoTokensSelected #HeroTray
+{
+	opacity: 0;
+	transform: translateY( 24px );
+	transition-duration: 0.25s;
+	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
+}
+
+.AnimTray #HeroTray
+{
+	animation-name: HeroTrayBounce;
+	animation-iteration-count: 1;
+	animation-duration: 0.2s;
+}
+
+#HeroTray #CloseButtonContainer
+{
+	ui-scale: 76%;
+}
+
+#HeroTray .TopGoldDash
+{
+	width: 100%;
+	height: 2px;
+}
+
+#HeroTray .TrayContainer
+{
+	padding: 16px 16px 24px;
+	width: 100%;
+	flow-children: down;
+}
+
+#HeroTray .Instructions,#HeroTray .NoHeroesLabel
+{
+	horizontal-align: center;
+	text-align: center;
+	text-shadow: 0px 2px 8px black;
+}
+
+#HeroTray .Instructions .TokenName,#HeroTray .NoHeroesLabel .TokenName
+{
+	color: white;
+}
+
+#HeroTray.NoHeroes .Instructions,#HeroTray.NoHeroes #HeroOptionContainer,#HeroTray:not(.NoHeroes) .NoHeroesLabel
+{
+	visibility: collapse;
+}
+
+#HeroTray .NoHeroesLabel
+{
+	horizontal-align: center;
+}
+
+#HeroTray #HeroOptionContainer
+{
+	flow-children: right;
+	horizontal-align: center;
+}
+
+#HeroTray #HeroOptionContainer .HeroOptions
+{
+	flow-children: down;
+	horizontal-align: center;
+	margin: 8px 4px 0px;
+	max-width: 500px;
+	width: fill-parent-flow( 0.5 );
+}
+
+#HeroTray #HeroOptionContainer .HeroOptions.Group1
+{
+	width: fill-parent-flow( 1 );
+}
+
+#HeroTray #HeroOptionContainer .HeroOptions.Group3
+{
+	width: fill-parent-flow( 0.4 );
+}
+
+#HeroTray #HeroOptionContainer .HeroOptions .SectionHeader
+{
+	horizontal-align: center;
+	flow-children: right;
+	margin-bottom: 4px;
+	overflow: noclip;
+	width: 100%;
+}
+
+#HeroTray #HeroOptionContainer .HeroOptions .SectionHeader .Divider
+{
+	height: 1px;
+	width: fill-parent-flow( 1 );
+	vertical-align: center;
+	margin: 0px 4px;
+	background-color: gradient( linear, 70% 0%, 100% 0%, from( LightGrey ), to( LightGrey&00 ) );
+	background-color: LightGrey;
+	opacity: 0.15;
+}
+
+#HeroTray #HeroOptionContainer .HeroOptions .SectionHeader .Divider.Flip
+{
+	transform: scaleX( -1 );
+}
+
+#HeroTray #HeroOptionContainer .HeroOptions .SectionHeader #TokenContainer
+{
+	flow-children: right;
+	ui-scale: 80%;
+}
+
+#HeroTray #HeroOptionContainer .HeroOptions .SectionHeader #TokenContainer DOTACrownfallToken
+{
+	margin: -14px;
+}
+
+#HeroTray #HeroOptionContainer .HeroOptions #HeroBlock
+{
+	flow-children: right-wrap;
+	horizontal-align: center;
+}
+
+#HeroTray #HeroOptionContainer .HeroOptions #HeroBlock DOTAHeroImage
+{
+	width: 36px;
+	height: width-percentage( 100% );
+	margin: 3px;
+	tooltip-position: top;
+}
+
+.HeroGrid .InventoryWrapper
+{
+	margin-bottom: 0px;
+}
+
+.HeroGrid .TokensShadowContainer
+{
+	visibility: collapse;
+}
+
+.HeroGrid #DebugPanel
+{
+	visibility: collapse;
+}
+
+.HeroGrid #HeroTray
+{
+	visibility: collapse;
+}
+
+.HeroGrid .CloseButton
+{
+	visibility: visible;
+}
+
+.NoTokensSelected.HeroGrid .CloseButton
+{
+	visibility: collapse;
+}
+
+#NoHeroesViewInStoreButton
+{
+	visibility: collapse;
+	horizontal-align: center;
+	margin-top: 10px;
+}
+
+.NoHeroes.PremiumSelected #NoHeroesViewInStoreButton
+{
+	visibility: visible;
+}
+
+@keyframes 'HeroTrayBounce'
+{
+	50%
+	{
+		transform: translateY( 2px );
+	}
+	
+}
+

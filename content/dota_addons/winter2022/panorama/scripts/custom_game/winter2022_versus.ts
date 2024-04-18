@@ -1,7 +1,6 @@
-/// <reference path="../../../../../dota/panorama/scripts/dota.d.ts" />
-/// <reference path="../../../../../dota/panorama/scripts/sequence_actions.ts" />
-/// <reference path="../../../../../dota/panorama/scripts/dota_sequence_actions.ts" />
-/// <reference path="../../../../../dota/panorama/scripts/hud/versus/dota_hud_versus_scene_shared.ts" />
+/// <reference path="../winter2022.d.ts" />
+/// <reference path="sequence_actions.ts" />
+/// <reference path="dota_hud_versus_scene_shared.ts" />
 
 // Called from C++ when the scene starts
 function PlayScene(): void

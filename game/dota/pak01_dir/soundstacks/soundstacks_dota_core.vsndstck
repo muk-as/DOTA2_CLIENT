@@ -1594,6 +1594,11 @@
 							value0 = "sounds/common/null.vsnd"
 						}
 					}
+					dont_stop_layers = 
+					{
+						data_type = "float"
+						value = "1.000000"
+					}
 					soundevent_layer2_on = 
 					{
 						data_type = "float"
@@ -2089,12 +2094,20 @@
 			},
 			
 			{
+				name = "vsnd_playing_and_unstopped"
+				operator = "math_float"
+				apply = "min"
+				input2 = "@start_vsnd.output_voice_playing"
+				input1 = "@get_event_info.output_unstopped"
+			},
+			
+			{
 				name = "start_layer2"
 				operator = "soundevent_start"
-				input_spawn_oneshots = "1.000000"
-				execute_once = "true"
+				input_spawn_oneshots = "@public.dont_stop_layers"
+				execute_once = "@public.dont_stop_layers"
 				input_execute = "@public.soundevent_layer2_on"
-				input_start = "1"
+				input_start = "@vsnd_playing_and_unstopped.output"
 				soundevent_name = "@public.soundevent_layer2"
 				pass_opvar_args = "true"
 				operator_variables = 
@@ -2111,10 +2124,10 @@
 			{
 				name = "start_layer3"
 				operator = "soundevent_start"
-				input_spawn_oneshots = "1.000000"
-				execute_once = "true"
-				input_execute = "@public.soundevent_layer3_on"
-				input_start = "1"
+				input_spawn_oneshots = "@public.dont_stop_layers"
+				execute_once = "@public.dont_stop_layers"
+				input_execute = "@public.soundevent_layer2_on"
+				input_start = "@vsnd_playing_and_unstopped.output"
 				soundevent_name = "@public.soundevent_layer3"
 				pass_opvar_args = "true"
 				operator_variables = 

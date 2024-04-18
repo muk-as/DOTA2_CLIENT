@@ -12,21 +12,25 @@
 15CTier1AppSystemI11ISteamAudioLx0EE
 15CTier2AppSystemI11ISteamAudioLx0EE
 16CDirectProcessor
-16CReverbProcessor
+16CImpulseResponse
 16CSteamAudioScene
 16IDirectProcessor
-16IReverbProcessor
+16IImpulseResponse
 16ISourceProcessor
 16ISteamAudioScene
 17CPathingProcessor
 17CSteamAudioProbes
+17CSteamAudioSource
 17IPathingProcessor
 17ISteamAudioProbes
+17ISteamAudioSource
 18CSource3DProcessor
 1ffffff
 20CPostConnectCallback
 21CSurfacePropDataTableI19CSteamAudioMaterialE
+22CHybridReverbProcessor
 22CSchemaInstallCallback
+22IHybridReverbProcessor
 23CSteamAudioMaterialList
 256_enc
 25CSurfacePropDataTableBase
@@ -51,7 +55,7 @@
 8[A\A]A^A
 8[A^A
 9ffff
-A;_HtB
+A;^HtB
 AES for Intel AES-NI, CRYPTOGAMS by <appro@openssl.org
 AES for x86_64, CRYPTOGAMS by <appro@openssl.org
 AES-NI GCM module for x86_64, CRYPTOGAMS by <appro@openssl.org
@@ -75,6 +79,7 @@ AWAVAUATSPA
 AWAVAUATSPD
 AWAVAUATSPH
 AWAVAUATSPI
+AWAVAUATSPL
 AWAVAUATSPM
 AWAVSA
 AWAVSH
@@ -87,6 +92,7 @@ AWAVSPM
 A\A]A^A
 A\A^A
 A_A^A]A
+A`2CVA\Ap
 Adjust overall volume of the default HRTF by the specified gain (dB
 AlignedByteArray not properly aligned
 Ambisonics order to use for convolution reverb. 0th order = 1 channel, 1st order = 4 channels
@@ -119,6 +125,8 @@ Bffff
 BinaryProperties_GetValue
 CCņCCŚMMךMM
 CDirectProcessor::CDirectProcessor(IPLContext, const IPLAudioSettings &, int
+CHybridReverbProcessor::CHybridReverbProcessor(IPLContext, const IPLAudioSettings &, int, int, IPLReflectionsPartitioner2
+CImpulseResponse::CImpulseResponse(IPLContext, IPLAudioSettings &, float, int
 CMemAllocSystemInitialize
 CUtlBlockMemory overflow
 C`L9(t+I
@@ -139,6 +147,7 @@ Content file %s is corrupt. Hashing could not be verified. Verify integrity of g
 Content file %s is corrupt. Verify integrity of game files
 Content file %s is corrupt; Chunk hash not found (expected: %d, found: %d
 Content file %s is corrupt; signature couldn't be verified. Verify integrity of game files
+Continue using previous prrobes if probe lookup for reverb fails
 Could not load custom hrtf properties file. %s
 CreateInterface
 CreateSimpleThread
@@ -197,7 +206,6 @@ GetCPUInformation
 GetResourceManifest
 GetResourceManifestCount
 GetResourceManifests
-H[A\A]A^A
 H__ZdaPv
 H__ZdaPvSt11align_val_t
 H__ZdaPvm
@@ -319,7 +327,7 @@ Probes: Probe Batch is null
 PropertyEditorSystem_001
 P~AeS~AeS
 QZ^&A
-RARARARARARA^0
+RARARARARARAp
 RASBUAp
 RATARARAU0
 RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBQ
@@ -449,8 +457,11 @@ USATAUAVAWH
 USATAVAWH
 UUUUUUUUH
 UUUUUUUUUUUUUUUU3333333333333333
+Unable to create Ambisonics decode effect [%d
 Unable to create custom HRTF [%s
 Unable to create direct effect [%d
+Unable to create impulse response [%d
+Unable to create reflections effect [%d
 Unable to create scene: %d
 Unable to create serialized object for scene export
 Unable to create static mesh: %d
@@ -545,6 +556,11 @@ ZN10CUtlString6FormatEPKcz
 ZN10CUtlString7AcquireEP13CBufferStringb
 ZN10CUtlString9SetDirectEPKci
 ZN10CUtlStringaSERK13CBufferString
+ZN11CTSListBase11InternalPopEv
+ZN11CTSListBase12InternalPushEP13TSLNodeBase_t
+ZN11CTSListBase6DetachEv
+ZN11CTSListBaseC1Ev
+ZN11CTSListBaseC2Ev
 ZN12CThreadEvent3SetEv
 ZN12CThreadEvent5CheckEv
 ZN12CThreadEvent5ResetEv
@@ -712,6 +728,7 @@ ecp_nistz256_to_mont
 elect_w
 enable_dc_correction_for_phase_interpolation
 enable_paths_from_all_source_probes
+enable_reverb_probe_caching_for_missing_probes
 encrypt
 encrypt_blocks
 encrypt_key
@@ -755,7 +772,6 @@ invalid_hitbox
 iplAirAbsorptionCalculate
 iplAmbisonicsDecodeEffectApply
 iplAmbisonicsDecodeEffectCreate
-iplAmbisonicsDecodeEffectRelease
 iplBinauralEffectApply
 iplBinauralEffectCreate
 iplBinauralEffectRelease
@@ -772,6 +788,15 @@ iplEmbreeDeviceCreate
 iplEmbreeDeviceRelease
 iplHRTFCreate
 iplHRTFRelease
+iplImpulseResponse2AddChannel
+iplImpulseResponse2AddSample
+iplImpulseResponse2Create
+iplImpulseResponse2Release
+iplImpulseResponse2Reset
+iplImpulseResponse2SetChannel
+iplImpulseResponse2SetSample
+iplImpulseResponse2Swap
+iplImpulseResponse2SwapSource
 iplPathBakerBake
 iplPathBakerCancelBake
 iplPathEffectApply
@@ -796,11 +821,21 @@ iplProbeNeighborhoodCreate
 iplProbeNeighborhoodRelease
 iplProbeNeighborhoodReset
 iplProbeNeighborhoodResize
-iplReflectionEffectApply
-iplReflectionEffectCreate
-iplReflectionEffectRelease
 iplReflectionsBakerBake
 iplReflectionsBakerCancelBake
+iplReflectionsEffect2Apply
+iplReflectionsEffect2Create
+iplReflectionsEffect2Release
+iplReflectionsEffect2SetBuffer
+iplReflectionsEffect2SetFloat
+iplReflectionsEffect2SetInt32
+iplReflectionsPartitioner2AddTask
+iplReflectionsPartitioner2Commit
+iplReflectionsPartitioner2Create
+iplReflectionsPartitioner2Release
+iplReflectionsPartitioner2RemoveTask
+iplReflectionsPartitioner2Retain
+iplReflectionsPartitioner2RunTasks
 iplSceneCommit
 iplSceneCreate
 iplSceneRelease
@@ -962,6 +997,7 @@ snd_steamaudio_enable_custom_hrtf
 snd_steamaudio_enable_pathing
 snd_steamaudio_enable_perspective_correction
 snd_steamaudio_enable_probeneighborhood_caching
+snd_steamaudio_enable_reverb_probe_caching_for_missing_probes
 snd_steamaudio_enable_spatial_blend_fix
 snd_steamaudio_halton_sequence
 snd_steamaudio_hybrid_reverb_overlap

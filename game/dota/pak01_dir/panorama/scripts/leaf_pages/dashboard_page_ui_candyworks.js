@@ -38,6 +38,7 @@ var RunPageAnimation = function () {
     //
     // handle rackfocus
     //
+    /**
     seq.actions.push( new RunFunctionAction( function() { 
         let debug = false;
 
@@ -106,25 +107,20 @@ var RunPageAnimation = function () {
 
         } // if debug
     }));
+    */
 
-    //
-    // queue camera playback
-    //
-    seq.actions.push( new RunFunctionAction( function() { 
-        $('#ModelBackground').FireEntityInput('hero_camera_driver', 'SetAnimGraphParameter', 'sequence=truck');
 
-    } ) );
-
+    seq.actions.push(new AddClassAction($.GetContextPanel(), 'BackgroundLoaded'));
     seq.actions.push(new AddClassAction($('#MainContainer'), 'Initialize'));
     seq.actions.push(new AddClassAction($('#ModelBackground'), 'Initialize'));
     // seq.actions.push(new AddClassAction($('#ModelForeground'), 'Initialize'));
 
-    seq.actions.push(new WaitAction(4.0));
+    seq.actions.push(new WaitAction(0.0));
 
     //
     // Switch cameras to enable mouse hover parallax
     //
-    seq.actions.push(new RunFunctionAction(function () { $.DispatchEvent('DOTAGlobalSceneSetCameraEntity', 'ModelBackground', 'hero_camera_post', 0.2); }))
+    seq.actions.push(new RunFunctionAction(function () { $.DispatchEvent('DOTAGlobalSceneSetCameraEntity', 'ModelBackground', 'hero_camera_post', 2.2); }))
     seq.actions.push(new RunFunctionAction(function () { $.DispatchEvent('DOTAGlobalSceneSetRootEntity', 'ModelBackground', 'root_post'); }))
     seq.actions.push(new LerpRotateAction($('#ModelBackground'), 0, 0, 0, 0, -0.13, 0.13, -0.03, 0.03, 0.0));
 
@@ -135,16 +131,23 @@ var RunPageAnimation = function () {
 
 /**
  * post-callback assigned when leaving the debut
+ * (unused for candyworks?)
  */
 var EndPageAnimation = function () {
     if (seq != undefined) {
         seq.finish();
     }
 
-    $('#MainContainer').RemoveClass('Initialize');
-    $('#ModelBackground').RemoveClass('Initialize');
-    // $('#ModelForeground').RemoveClass('Initialize');
+    if ($('#MainContainer')) {
+        $('#MainContainer').RemoveClass('Initialize');
+    }
 
-    //$.DispatchEvent('DOTAShowHomePage');
+    if ($('#ModelBackground')) {
+        $('#ModelBackground').RemoveClass('Initialize');
+    }
+
+    //if ($('#ModelForeground')) {
+    //    $('#ModelForeground').RemoveClass('Initialize');
+    //}
 }
 

@@ -19,6 +19,7 @@
 0A_A]A
 0A_A^A
 0A_A^A]A
+0CTSListBase@@QEAA@XZ
 0CThreadEvent@@QEAA@PEBD_N1@Z
 0CThreadMutex@@QEAA@PEBD@Z
 0CThreadRWLock_FastRead@@QEAA@XZ
@@ -41,6 +42,7 @@
 130801120000Z
 14 (default
 14s.%03dZ
+1CTSListBase@@QEAA@XZ
 1CThreadEvent@@QEAA@XZ
 1CThreadMutex@@QEAA@XZ
 1CThreadSemaphore@@QEAA@XZ
@@ -54,7 +56,7 @@
 220801000000Z
 230714000000Z
 23s %s Kx=%-8s Au=%-4s Enc=%-9s Mac=%-4s%s
-240229214637Z0
+240418074943Z0
 241009235959Z0a1
 2DigiCert Trusted G4 RSA4096 SHA256 TimeStamping CA
 2DigiCert Trusted G4 RSA4096 SHA256 TimeStamping CA0
@@ -99,6 +101,7 @@
 6-9'6-9
 6666666666666666jjjjjjjjjjjjjjjj
 6OB,n
+7	V_sincosf
 7?7E7I7O7]7a7u7
 7http://cacerts.digicert.com/DigiCertAssuredIDRootCA.crt0E
 8!83858A8G8K8S8W8_8e8o8q8}8
@@ -330,24 +333,28 @@ AV?$CTier1AppSystem@VISteamAudio@@$0A
 AV?$CTier2AppSystem@VISteamAudio@@$0A
 AVAWE3
 AVCDirectProcessor
+AVCHybridReverbProcessor
+AVCImpulseResponse
 AVCPathingProcessor
 AVCPostConnectCallback
-AVCReverbProcessor
 AVCSchemaInstallCallback
 AVCSource3DProcessor
 AVCSteamAudio
 AVCSteamAudioMaterialList
 AVCSteamAudioProbes
 AVCSteamAudioScene
+AVCSteamAudioSource
 AVCSurfacePropDataTableBase
 AVIAppSystem
 AVIDirectProcessor
+AVIHybridReverbProcessor
+AVIImpulseResponse
 AVIPathingProcessor
-AVIReverbProcessor
 AVISourceProcessor
 AVISteamAudio
 AVISteamAudioProbes
 AVISteamAudioScene
+AVISteamAudioSource
 AVbad_alloc@std
 AVbad_array_new_length@std
 AVbad_exception@std
@@ -592,6 +599,8 @@ CHECK_NAME_CONSTRAINTS
 CHECK_PADDING_MD
 CHECK_POLICY
 CHECK_SUITEB_CIPHER_LIST
+CHybridReverbProcessor::CHybridReverbProcessor
+CImpulseResponse::CImpulseResponse
 CKeyValues3Context::Root
 CLIENT_CERTIFICATE
 CLIENT_FINISHED
@@ -763,7 +772,6 @@ CT Certificate SCTs
 CT Precertificate Poison
 CT Precertificate SCTs
 CT Precertificate Signer
-CTSListBase: Misaligned list
 CUtlBlockMemory overflow
 CUtlSortVector<struct ChunkHashFraction_t,class ChunkHashFractionLess_t,class CUtlVector<struct ChunkHashFraction_t,int,class CUtlMemory<struct ChunkHashFraction_t,int> > >::Find
 Camellia for x86_64 by <appro@openssl.org
@@ -804,6 +812,7 @@ Content-Type: %ssignature
 Content-Type: application/ocsp-request
 Content-Type: multipart/signed
 Content-Type: text/plain
+Continue using previous prrobes if probe lookup for reverb fails
 CorExitProcess
 Could not load custom hrtf properties file. %s
 CreateEventW
@@ -826,6 +835,7 @@ D$(SUATAUAVAWH
 D$08\$0t
 D$0@8
 D$0HcH
+D$18F(u
 D$8D9~Pu=L
 D$8D9~PuCH
 D$8E3
@@ -1075,6 +1085,7 @@ Default
 DeleteCriticalSection
 DemoUpconverterVersion001
 DeregisterEventSource
+Detach@CTSListBase@@QEAAPEAUTSLNodeBase_t@@XZ
 Different CRL scope
 Diffie-Hellman based MAC
 Diffie-Hellman part of OpenSSL 1.0.2j  26 Sep 2016
@@ -1424,6 +1435,7 @@ FreeInts@CVariableBitStringBase@@AEAAXXZ
 FreeLibrary
 FreeMemoryBlock@CUtlString@@AEAAXXZ
 Friday
+G	V_stricmp_fast
 G1rGP1
 GD$8E3
 GENERALIZEDTIME
@@ -2180,6 +2192,7 @@ Plat_RegisterModule
 Policy Qualifier CPS
 Policy Qualifier User Notice
 Polynomial
+Pop@CTSListBase@@QEAAPEAUTSLNodeBase_t@@XZ
 PostProcessingSystem_001
 Prime
 Private
@@ -2201,6 +2214,7 @@ Public-Key
 Public-Key: (%d bit
 Purge@CBufferString@@QEAAXH@Z
 Purge@CUtlMemoryBlockAllocator@@QEAAXXZ
+Push@CTSListBase@@QEAAXPEAUTSLNodeBase_t@@@Z
 Put@CUtlBuffer@@QEAAXPEBXH@Z
 PxHcD
 P~AeS~AeS
@@ -2394,7 +2408,6 @@ RtlPcToFileHeader
 RtlUnwind
 RtlUnwindEx
 RtlVirtualUnwind
-S	Warning
 S/MIME
 S/MIME CA
 S/MIME Capabilities
@@ -2689,6 +2702,7 @@ Superseded
 SurfacePropertiesList
 SystemTimeToFileTime
 SystemTimeToTzSpecificLocalTime
+T	V_tanf
 T$ D)s
 T$(3D$@3\$D3L$H3T$LM
 T$8SUATAUAVAWH
@@ -2796,6 +2810,7 @@ U%04lX
 U)l:T^8rv
 U<E3M E3E$E3](E3U,A3
 UATAUAVAWH
+UATAV
 UATAW
 UAVAWH
 UI_ctrl
@@ -2828,6 +2843,7 @@ USVWAVH
 USVWH
 USWATAUAVAWH
 USWATAUAWH
+USWATAUH
 USWATAWH
 UTCTIME
 UTF-16LEUNICODE
@@ -2855,8 +2871,11 @@ UVWAVAW
 UWATAVAW
 UWATAVAWH
 UWATAW
+Unable to create Ambisonics decode effect [%d
 Unable to create custom HRTF [%s
 Unable to create direct effect [%d
+Unable to create impulse response [%d
+Unable to create reflections effect [%d
 Unable to create scene: %d
 Unable to create serialized object for scene export
 Unable to create static mesh: %d
@@ -2953,11 +2972,11 @@ V_atoi
 V_powf
 V_qsort
 V_qsort_s
-V_sincosf
-V_stricmp_fast
 V_stristr_fast@@YAPEBDPEBD0@Z
+V_strncmp
+V_strncpy
+V_strnicmp_fast
 V_strnlen@@YAHPEBDH@Z
-V_tanf
 Validity
 Valve Corp.0
 Valve Corp.1
@@ -3001,6 +3020,7 @@ WTLS curvs over a 224 bit prime field
 Wait@CThreadSyncObject@@QEAA_NI@Z
 WaitForSingleObjectEx
 WakeAllConditionVariable
+Warning
 Washington1
 Wednesday
 WideCharToMultiByte
@@ -4200,6 +4220,7 @@ empty file structure
 empty srtp protection profile list
 enable_dc_correction_for_phase_interpolation
 enable_paths_from_all_source_probes
+enable_reverb_probe_caching_for_missing_probes
 enc->iv_len <= (int)sizeof(iv
 enc_data
 enc_digest
@@ -4837,7 +4858,6 @@ ioctlsocket
 iplAirAbsorptionCalculate
 iplAmbisonicsDecodeEffectApply
 iplAmbisonicsDecodeEffectCreate
-iplAmbisonicsDecodeEffectRelease
 iplBinauralEffectApply
 iplBinauralEffectCreate
 iplBinauralEffectRelease
@@ -4854,6 +4874,15 @@ iplEmbreeDeviceCreate
 iplEmbreeDeviceRelease
 iplHRTFCreate
 iplHRTFRelease
+iplImpulseResponse2AddChannel
+iplImpulseResponse2AddSample
+iplImpulseResponse2Create
+iplImpulseResponse2Release
+iplImpulseResponse2Reset
+iplImpulseResponse2SetChannel
+iplImpulseResponse2SetSample
+iplImpulseResponse2Swap
+iplImpulseResponse2SwapSource
 iplPathBakerBake
 iplPathBakerCancelBake
 iplPathEffectApply
@@ -4878,11 +4907,21 @@ iplProbeNeighborhoodCreate
 iplProbeNeighborhoodRelease
 iplProbeNeighborhoodReset
 iplProbeNeighborhoodResize
-iplReflectionEffectApply
-iplReflectionEffectCreate
-iplReflectionEffectRelease
 iplReflectionsBakerBake
 iplReflectionsBakerCancelBake
+iplReflectionsEffect2Apply
+iplReflectionsEffect2Create
+iplReflectionsEffect2Release
+iplReflectionsEffect2SetBuffer
+iplReflectionsEffect2SetFloat
+iplReflectionsEffect2SetInt32
+iplReflectionsPartitioner2AddTask
+iplReflectionsPartitioner2Commit
+iplReflectionsPartitioner2Create
+iplReflectionsPartitioner2Release
+iplReflectionsPartitioner2RemoveTask
+iplReflectionsPartitioner2Retain
+iplReflectionsPartitioner2RunTasks
 iplSceneCommit
 iplSceneCreate
 iplSceneRelease
@@ -5171,7 +5210,6 @@ n >= 0
 n does not equal p q
 nSRecord
 nStf,a
-nVˢA9l
 name constraints minimum and maximum not supported
 name too long
 name translation failed
@@ -6102,6 +6140,7 @@ snd_steamaudio_enable_custom_hrtf
 snd_steamaudio_enable_pathing
 snd_steamaudio_enable_perspective_correction
 snd_steamaudio_enable_probeneighborhood_caching
+snd_steamaudio_enable_reverb_probe_caching_for_missing_probes
 snd_steamaudio_enable_spatial_blend_fix
 snd_steamaudio_halton_sequence
 snd_steamaudio_hybrid_reverb_overlap
@@ -6368,6 +6407,7 @@ t$ WATAWH
 t$ WAUAV
 t$ WAVAW
 t$(E3
+t$(Lc2L
 t$8Hc
 t$8Lcu
 t$;)u L
@@ -6384,7 +6424,6 @@ tA8_:t
 tIHcX H
 tQD8c:u0M
 tTL9q t-H
-tUH95eF
 tag mismatch
 tag value too high
 targetInformation
@@ -6474,7 +6513,6 @@ type not primitive
 type_id
 typeof
 t~H9}Pt_H9
-u	_V_strncmp
 u$D8r(t
 u(f9Q
 u3HcH<H
@@ -6660,7 +6698,6 @@ uz-uz-latn
 u{L9mHu
 u~9t$Xt
 u͋C$9C rgH
-v	_V_strncpy
 v2!L.2
 v2i_ASN1_BIT_STRING
 v2i_GENERAL_NAMES
@@ -6753,7 +6790,6 @@ wrong type
 wrong version number
 www.digicert.com1!0
 www.digicert.com1$0
-x	_V_strnicmp_fast
 x ATAVAWH
 x AUAVAWH
 x UAVAWH

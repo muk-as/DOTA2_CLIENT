@@ -1,0 +1,617 @@
+<!-- xml reconstructed by Source 2 Viewer 0.0.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/dashboard_page_shared.vcss_c" />
+		<include src="s2r://panorama/styles/battle_pass/crownfall/bp_crownfall_shared.vcss_c" />
+		<include src="s2r://panorama/styles/battle_pass/crownfall/bp_page_crownfall_store.vcss_c" />
+	</styles>
+	<scripts>
+		<include src="s2r://panorama/scripts/util.vts_c" />
+		<include src="s2r://panorama/scripts/sequence_actions.vts_c" />
+		<include src="s2r://panorama/scripts/battle_pass/crownfall/bp_page_crownfall_store.vts_c" />
+	</scripts>
+	<DOTABPCrownfallStorePage class="DashboardPage" onload="OnPageLoad()">
+		<DOTAScenePanel id="DiscountModePageFX" hittest="false" antialias="true" camera="camera" light="light" renderdeferred="false" particleonly="false" map="scenes/events/crownfall/discount_fx_background" />
+		<Panel class="Header">
+			<Panel class="TitleContainer">
+				<Label class="Title" text="#DOTA_Crownfall_Store_Title" />
+				<Label class="Description" text="#DOTA_Crownfall_Store_Description" />
+			</Panel>
+			<Panel class="CoinsSection" onmouseover="UIShowTextTooltip( #DOTA_CrownfallStore_CoinsInfo )" onmouseout="UIHideTextTooltip()">
+				<AnimatedImageStrip id="CoinsIcon" src="s2r://panorama/images/emoticons/crownfall/props/prop_reward_coin_idle_png.vtex" />
+				<Panel class="CoinMeter" />
+				<Panel class="CoinText">
+					<Panel class="CoinTextCenter">
+						<Label class="CurrentCoins" text="{d:coin_quantity}" />
+						<Label class="CoinsThreshold" text="/{d:coin_threshold}" />
+					</Panel>
+				</Panel>
+				<DOTAParticleScenePanel id="DiscountModeActivateFX" hittest="false" particleName="particles/ui/events/discountmode_button.vpcf" squarePixels="true" particleonly="true" startActive="true" cameraOrigin="0 0 310" lookAt="0 0 0" fov="40" />
+				<Panel class="ActivateContainer">
+					<DOTACrownfallButton class="activateButton" text="#DOTA_CrownfallStore_ActivateDiscount" onactivate="DOTACrownfallStoreToggleDiscountActive() " />
+					<DOTACrownfallButton class="deactivateButton" text="#DOTA_CrownfallStore_DeactivateDiscount" onactivate="DOTACrownfallStoreToggleDiscountActive()" />
+				</Panel>
+			</Panel>
+		</Panel>
+		<Panel class="StoreContents" hittest="false">
+			<Carousel id="StoreCarousel" focus="center" hittest="false">
+				<Panel id="StoreItemOverview" class="StoreItem StoreItemOverview" hittest="false" acceptsfocus="true">
+					<Panel class="StoreItemMain">
+						<Panel class="StoreCells">
+							<Panel class="StoreCell ArcanaCell Venge" itemdef="22722" onactivate="DOTAShowBPCrownfallStoreItem( 22722 )">
+								<Image class="CellBackground" src="s2r://panorama/images/events/crownfall/store/venge_cell_background_png.vtex" scaling="cover" />
+								<DOTAUIEconSetPreview class="ArcanaModel" activity-modifier="takeover" itemdef="22722" cameraOrigin="0 0 0" rotation="-10" drawbackground="false" require-composition-layer="true" suppress-intro-effects="true" />
+								<DOTAScenePanel class="ArcanaParticles" map="backgrounds/accept_popup_test" camera="shot_camera" particleonly="true" />
+								<Panel class="CellFooter">
+									<Label class="CellTitle" text="#DOTA_CrownfallStore_VengefulSpiritArcana_Name" />
+									<Label class="CellSubtitle" text="#DOTA_CrownfallStore_VengefulSpiritArcana_Subtitle" />
+									<Panel class="Dash" />
+									<Panel class="CellPrices">
+										<Label class="CellPrice DefaultPrice" text="{s:default_price}" />
+										<Label class="CellPrice DiscountPrice" text="{s:discount_price}" />
+									</Panel>
+								</Panel>
+								<Panel class="ArcanaRarityStrip" hittest="false">
+									<Panel class="ArcanaRarityOverlay" hittest="false" />
+								</Panel>
+								<Panel class="CellBorder" hittest="false" />
+							</Panel>
+							<Panel class="StoreCell ArcanaCell Skywrath" itemdef="22277" onactivate="DOTAShowBPCrownfallStoreItem( 22277 )">
+								<Image class="CellBackground" src="s2r://panorama/images/events/crownfall/store/skywrath_cell_background_png.vtex" scaling="cover" />
+								<DOTAUIEconSetPreview class="ArcanaModel" activity-modifier="takeover" itemdef="22277" cameraOrigin="0 0 0" rotation="-40" drawbackground="false" require-composition-layer="true" suppress-intro-effects="true" />
+								<DOTAScenePanel class="ArcanaParticles" map="backgrounds/accept_popup_test" camera="shot_camera" particleonly="true" />
+								<Panel class="CellFooter">
+									<Label class="CellTitle" text="#DOTA_CrownfallStore_SkywrathMageArcana_Name" />
+									<Label class="CellSubtitle" text="#DOTA_CrownfallStore_SkywrathMageArcana_Subtitle" />
+									<Panel class="Dash" />
+									<Panel class="CellPrices">
+										<Label class="CellPrice DefaultPrice" text="{s:default_price}" />
+										<Label class="CellPrice DiscountPrice" text="{s:discount_price}" />
+									</Panel>
+								</Panel>
+								<Panel class="ArcanaRarityStrip" hittest="false">
+									<Panel class="ArcanaRarityOverlay" hittest="false" />
+								</Panel>
+								<Panel class="CellBorder" hittest="false" />
+							</Panel>
+							<Panel class="StoreCellColumn">
+								<Panel class="StoreCellRow">
+									<Panel class="StoreCell TreasureCell Treasure1Cell" onactivate="DOTAShowBPCrownfallStoreItem( 30937 )">
+										<Panel class="FloorShadow" />
+										<DOTAUIEconSetPreview class="TreasureModel" pin-fov="vertical" itemdef="30937" cameraOrigin="0 0 0" rotation="0" drawbackground="false" require-composition-layer="true" suppress-intro-effects="true" />
+										<DOTAScenePanel class="TreasureParticles" map="backgrounds/accept_popup_test" camera="shot_camera" particleonly="true" />
+										<Panel class="CellFooter">
+											<Label class="CellTitle" text="#DOTA_Item_Crownfall_Treasure_I" />
+											<Panel class="Dash" />
+											<Panel class="TreasurePrices">
+												<Panel class="TreasurePrice" itemdef="30937">
+													<Panel class="TreasureAmount">
+														<Label text="1" />
+														<Panel class="TreasureIcon" />
+													</Panel>
+													<Panel class="CellPrices">
+														<Label class="CellPrice DefaultPrice" text="{s:default_price}" />
+														<Label class="CellPrice DiscountPrice" text="{s:discount_price}" />
+													</Panel>
+												</Panel>
+												<Panel class="TreasurePrice" itemdef="31121">
+													<Panel class="TreasureAmount">
+														<Label text="9" />
+														<Panel class="TreasureIcon" />
+													</Panel>
+													<Panel class="CellPrices">
+														<Label class="CellPrice DefaultPrice" text="{s:default_price}" />
+														<Label class="CellPrice DiscountPrice" text="{s:discount_price}" />
+													</Panel>
+												</Panel>
+											</Panel>
+										</Panel>
+										<Panel class="CellBorder" hittest="false" />
+									</Panel>
+									<Panel class="StoreCell TreasureCell Treasure2Cell" onactivate="DOTAShowBPCrownfallStoreItem( 30938 )">
+										<Panel class="FloorShadow" />
+										<DOTAUIEconSetPreview class="TreasureModel" pin-fov="vertical" itemdef="30938" cameraOrigin="0 0 0" rotation="0" drawbackground="false" require-composition-layer="true" suppress-intro-effects="true" />
+										<DOTAScenePanel class="TreasureParticles" map="backgrounds/accept_popup_test" camera="shot_camera" particleonly="true" />
+										<Panel class="CellFooter">
+											<Label class="CellTitle" text="#DOTA_Item_Crownfall_Treasure_II" />
+											<Panel class="Dash" />
+											<Panel class="TreasurePrices">
+												<Panel class="TreasurePrice" itemdef="30938">
+													<Panel class="TreasureAmount">
+														<Label text="1" />
+														<Panel class="TreasureIcon" />
+													</Panel>
+													<Panel class="CellPrices">
+														<Label class="CellPrice DefaultPrice" text="{s:default_price}" />
+														<Label class="CellPrice DiscountPrice" text="{s:discount_price}" />
+													</Panel>
+												</Panel>
+												<Panel class="TreasurePrice" itemdef="31122">
+													<Panel class="TreasureAmount">
+														<Label text="9" />
+														<Panel class="TreasureIcon" />
+													</Panel>
+													<Panel class="CellPrices">
+														<Label class="CellPrice DefaultPrice" text="{s:default_price}" />
+														<Label class="CellPrice DiscountPrice" text="{s:discount_price}" />
+													</Panel>
+												</Panel>
+											</Panel>
+										</Panel>
+										<Panel class="CellBorder" hittest="false" />
+									</Panel>
+								</Panel>
+								<Panel class="StoreCellRow">
+									<Panel class="StoreCell SuperBundle" itemdef="27458" onactivate="DOTAShowBPCrownfallStoreItem( 27458 )">
+										<Image class="CellBackground" src="s2r://panorama/images/events/crownfall/store/store_cell_background_png.vtex" scaling="cover" />
+										<Image class="CellImage" src="s2r://panorama/images/events/crownfall/store/store_overview_super_bundle_psd.vtex" scaling="stretch-to-fit-preserve-aspect" />
+										<Panel class="CellFooter">
+											<Label class="CellTitle" text="#DOTA_CrownfallStore_RoyalBundle_Name" />
+											<Label class="CellSubtitle" text="#DOTA_CrownfallStore_RoyalBundle_Desc" />
+											<Panel class="Dash" />
+											<Panel class="CellPrices">
+												<Label class="CellPrice DefaultPrice" text="{s:default_price}" />
+												<Label class="CellPrice DiscountPrice" text="{s:discount_price}" />
+											</Panel>
+										</Panel>
+										<Panel class="CellBorder" hittest="false" />
+									</Panel>
+									<Panel class="StoreCell PremiumPass" itemdef="30943" onactivate="DOTAShowBPCrownfallStoreItem( 30943 )">
+										<Image class="CellBackground" src="s2r://panorama/images/events/crownfall/store/store_cell_background_png.vtex" scaling="cover" />
+										<Image class="CellImage" src="s2r://panorama/images/events/crownfall/store/store_overview_event_pass_act1_web_psd.vtex" scaling="stretch-to-fit-preserve-aspect" />
+										<Panel class="CellFooter">
+											<Label class="CellTitle" text="#DOTA_CrownfallStore_Act1Pass_Name" />
+											<Label class="CellSubtitle" text="#DOTA_CrownfallStore_Act1Pass_Desc" />
+											<Panel class="Dash" />
+											<Panel class="CellPrices">
+												<Label class="CellPrice DefaultPrice" text="{s:default_price}" />
+												<Label class="CellPrice DiscountPrice" text="{s:discount_price}" />
+											</Panel>
+										</Panel>
+										<Panel class="CellBorder" hittest="false" />
+									</Panel>
+								</Panel>
+							</Panel>
+						</Panel>
+					</Panel>
+				</Panel>
+				<Panel id="Act1Pass" class="StoreItem StoreItemActPass" hittest="false" itemdef="30943" acceptsfocus="true">
+					<Panel class="StoreItemMain">
+						<Panel class="TopBorder" />
+						<Panel class="ItemHeader">
+							<Label class="ItemTitle" text="#DOTA_CrownfallStore_Act1Pass_Name" />
+							<Label class="ItemSubtitle" text="#DOTA_CrownfallStore_Act1Pass_Desc" />
+						</Panel>
+						<Panel class="ItemDetails">
+							<Panel class="BgGlow" />
+							<Panel class="FloorShadows">
+								<Panel class="ShadowCreepsSiege" />
+								<Panel class="ShadowCreeps" />
+								<Panel class="ShadowBackpacks" />
+							</Panel>
+							<Panel class="PackImage" />
+							<Carousel class="CreepsContainer" panels-visible="1" autoscroll-delay="5.0s,0.3s">
+								<DOTAScenePanel map="maps/backgrounds/dashboard_background_crownfall_creeps_dire.vmap" deferredalpha="true" pin-fov="vertical" camera="hero_camera" light="hero_light" antialias="true" particleonly="false" />
+								<DOTAScenePanel map="maps/backgrounds/dashboard_background_crownfall_creeps_radiant.vmap" deferredalpha="true" pin-fov="vertical" camera="hero_camera" light="hero_light" antialias="true" particleonly="false" />
+							</Carousel>
+							<Panel class="PackContents">
+								<Label class="IncludesLabel" text="#DOTA_CrownfallStore_Act1Pass_Includes" />
+								<Label class="PackItem" text="#DOTA_CrownfallStore_Act1Pass_Tokens" html="true">
+									<DOTACrownfallToken id="PathfinderToken" overworld_id="1" token_id="19" />
+								</Label>
+								<Label class="PackItem" text="#DOTA_CrownfallStore_Act1Pass_Creeps" />
+							</Panel>
+						</Panel>
+						<Panel class="QuestList">
+							<Panel class="Quest Quest1">
+								<Panel class="QuestHeader">
+									<Panel class="QuestIcon" onmouseover="UIShowTextTooltip( &apos;#DOTA_CrownfallStore_ViewOnMap&apos; )" onmouseout="UIHideTextTooltip()" onactivate="DOTAShowCrownfallOverworldPathPage( 1, 24 )">
+										<Image class="MapIcon" src="s2r://panorama/images/control_icons/24px/location.vsvg" />
+									</Panel>
+									<DOTACrownfallToken class="ViewMapToken" overworld_id="1" token_id="19" hittest="false" hittestchildren="false" />
+									<Panel class="QuestHeaderDetails">
+										<Label class="QuestLabel" text="#DOTA_CrownfallStore_SideQuest" />
+										<Label class="QuestTitle" text="#DOTA_VisualNovel_act1_Heading_meepo01" />
+									</Panel>
+								</Panel>
+								<Panel class="DashDotDivider">
+									<Panel class="Dash Left" />
+									<Panel class="Dot" />
+									<Panel class="Dash Right" />
+								</Panel>
+								<Panel class="RewardsTitle" onmouseover="UIShowTextTooltip( &apos;#DOTA_CrownfallStore_QuestRewards_Tooltip&apos; )" onmouseout="UIHideTextTooltip()">
+									<Label text="#DOTA_CrownfallStore_QuestRewards" />
+									<Panel class="InfoIcon" />
+								</Panel>
+								<Panel class="MinorRewards">
+									<Panel class="MinorReward">
+										<AnimatedImageStrip class="RewardTypeIcon Coin" src="s2r://panorama/images/emoticons/crownfall/props/prop_reward_coin_idle_png.vtex" framewidth="120px" frametime="75ms" defaultframe="1" scaling="cover" />
+										<Label class="Quantity" text="x6" />
+									</Panel>
+									<Panel class="MinorReward">
+										<AnimatedImageStrip class="RewardTypeIcon Candy" src="s2r://panorama/images/emoticons/crownfall/props/prop_reward_candy_sack_idle_png.vtex" framewidth="120px" frametime="75ms" defaultframe="1" scaling="cover" />
+										<Label class="Quantity" text="x10" />
+									</Panel>
+									<Panel class="MinorReward">
+										<AnimatedImageStrip class="RewardTypeIcon Bauble" src="s2r://panorama/images/emoticons/crownfall/props/prop_reward_gift_idle_png.vtex" framewidth="120px" frametime="75ms" defaultframe="1" scaling="cover" />
+										<Label class="Quantity" text="x3" />
+									</Panel>
+									<Panel class="MinorReward">
+										<AnimatedImageStrip class="RewardTypeIcon StyleUnlock" src="s2r://panorama/images/emoticons/crownfall/props/prop_reward_style_idle_png.vtex" framewidth="120px" frametime="75ms" defaultframe="1" scaling="cover" />
+										<Label class="Quantity" text="x1" />
+									</Panel>
+									<Panel class="MinorReward Encounter">
+										<Panel class="EncounterReward PrisonBreak">
+											<Panel class="NodeBackground" />
+											<Panel class="NodeBackgroundInner" hittest="false" />
+											<Panel class="NodeIcon Shadow" hittest="false" />
+											<Panel class="NodeIcon" hittest="false" />
+										</Panel>
+									</Panel>
+								</Panel>
+								<Panel class="MajorRewards">
+									<Panel class="MajorReward Treasure Treasure1" onmouseover="DOTAShowEconItemTooltip( 30937, -1, -1 )" onmouseout="DOTAHideEconItemTooltip()" onactivate="DOTAShowItemDefPage( 30937 )">
+										<Panel class="FloorShadow" />
+										<DOTAUIEconSetPreview itemdef="30937" drawbackground="false" />
+										<Label class="Quantity" text="x2" />
+									</Panel>
+									<Panel class="MajorReward Treasure Treasure2" onmouseover="DOTAShowEconItemTooltip( 30938, -1, -1 )" onmouseout="DOTAHideEconItemTooltip()" onactivate="DOTAShowItemDefPage( 30938 )">
+										<Panel class="FloorShadow" />
+										<DOTAUIEconSetPreview itemdef="30938" drawbackground="false" />
+										<Label class="Quantity" text="x1" />
+									</Panel>
+								</Panel>
+							</Panel>
+							<Panel class="Quest Quest2">
+								<Panel class="QuestHeader">
+									<Panel class="QuestIcon" onmouseover="UIShowTextTooltip( &apos;#DOTA_CrownfallStore_ViewOnMap&apos; )" onmouseout="UIHideTextTooltip()" onactivate="DOTAShowCrownfallOverworldPathPage( 1, 47 )">
+										<Image class="MapIcon" src="s2r://panorama/images/control_icons/24px/location.vsvg" />
+									</Panel>
+									<DOTACrownfallToken class="ViewMapToken" overworld_id="1" token_id="19" hittest="false" hittestchildren="false" />
+									<Panel class="QuestHeaderDetails">
+										<Label class="QuestLabel" text="#DOTA_CrownfallStore_SideQuest" />
+										<Label class="QuestTitle" text="#DOTA_VisualNovel_act1_Heading_Riki01" />
+									</Panel>
+								</Panel>
+								<Panel class="DashDotDivider">
+									<Panel class="Dash Left" />
+									<Panel class="Dot" />
+									<Panel class="Dash Right" />
+								</Panel>
+								<Panel class="RewardsTitle" onmouseover="UIShowTextTooltip( &apos;#DOTA_CrownfallStore_QuestRewards_Tooltip&apos; )" onmouseout="UIHideTextTooltip()">
+									<Label text="#DOTA_CrownfallStore_QuestRewards" />
+									<Panel class="InfoIcon" />
+								</Panel>
+								<Panel class="MinorRewards">
+									<Panel class="MinorReward">
+										<AnimatedImageStrip class="RewardTypeIcon Coin" src="s2r://panorama/images/emoticons/crownfall/props/prop_reward_coin_idle_png.vtex" framewidth="120px" frametime="75ms" defaultframe="1" scaling="cover" />
+										<Label class="Quantity" text="x4" />
+									</Panel>
+									<Panel class="MinorReward">
+										<AnimatedImageStrip class="RewardTypeIcon Candy" src="s2r://panorama/images/emoticons/crownfall/props/prop_reward_candy_sack_idle_png.vtex" framewidth="120px" frametime="75ms" defaultframe="1" scaling="cover" />
+										<Label class="Quantity" text="x10" />
+									</Panel>
+									<Panel class="MinorReward">
+										<AnimatedImageStrip class="RewardTypeIcon Bauble" src="s2r://panorama/images/emoticons/crownfall/props/prop_reward_gift_idle_png.vtex" framewidth="120px" frametime="75ms" defaultframe="1" scaling="cover" />
+										<Label class="Quantity" text="x1" />
+									</Panel>
+									<Panel class="MinorReward">
+										<AnimatedImageStrip class="RewardTypeIcon StyleUnlock" src="s2r://panorama/images/emoticons/crownfall/props/prop_reward_style_idle_png.vtex" framewidth="120px" frametime="75ms" defaultframe="1" scaling="cover" />
+										<Label class="Quantity" text="x1" />
+									</Panel>
+									<Panel class="MinorReward Encounter">
+										<Panel class="EncounterReward SrangeVendor">
+											<Panel class="NodeBackground" />
+											<Panel class="NodeBackgroundInner" hittest="false" />
+											<Panel class="NodeIcon Shadow" hittest="false" />
+											<Panel class="NodeIcon" hittest="false" />
+										</Panel>
+									</Panel>
+								</Panel>
+								<Panel class="MajorRewards">
+									<Panel class="MajorReward Hero" onmouseover="DOTAShowEconItemTooltip( 29465, -1, -1 )" onmouseout="DOTAHideEconItemTooltip()" onactivate="DOTAShowItemDefPage( 29465 )">
+										<Panel class="FloorShadow" />
+										<DOTAUIEconSetPreview class="HeroModel" itemdef="29465" cameraOrigin="0 0 0" rotation="-10" drawbackground="false" require-composition-layer="true" suppress-intro-effects="true" />
+									</Panel>
+								</Panel>
+							</Panel>
+						</Panel>
+						<Panel class="ActionButtons">
+							<Panel class="ActPassPurchaseControls">
+								<Panel class="LoadInProgress">
+									<Panel class="Spinner" />
+									<Label text="#DOTA_CrownfallStore_ActPass_CheckingOwnership" />
+								</Panel>
+								<Label class="LoadingFailedLabel" text="#DOTA_CrownfallStore_ActPass_LoadingFailed" />
+								<Panel class="AlreadyOwned">
+									<Panel class="Checkmark" />
+									<Label text="#DOTA_CrownfallStore_ActPass_AlreadyOwned" />
+								</Panel>
+								<TextButton class="ActivateButton PopupButton Green" text="#DOTA_CrownfallStore_ActPass_ActivateNow" onactivate="DOTAConsumeEconItemByDef( 30943 )" />
+								<DOTACrownfallPurchaseButton class="PurchaseButton" itemdef="30943" consumeafterpurchase="true" />
+							</Panel>
+							<Button class="GiftButton ButtonPrimary Green" onactivate="DOTACrownfallStorePurchaseItemAsGift( 30943 )">
+								<Label text="#DOTA_Treasure_Gift" />
+								<Image src="s2r://panorama/images/control_icons/gift_png.vtex" />
+							</Button>
+						</Panel>
+					</Panel>
+				</Panel>
+				<Panel class="StoreItem StoreItemArcana StoreItemVengeArcana" hittest="false" itemdef="22722" acceptsfocus="true">
+					<Panel class="StoreItemMain">
+						<DOTAScenePanel id="VengefulSpiritSceneBackground" class="ArcanaScene" hittest="false" pin-fov="horizontal" map="backgrounds/hero_showcase_venge_arcana_env_only" camera="herocamera" light="light_hero" renderdeferred="true" deferredalpha="true" renderwaterreflections="true" rotateonmousemove="true" yawmin="-4.0" yawmax="0.6" pitchmin="-0.6" pitchmax="0.6" antialias="true" particleonly="false" />
+						<Panel class="TopBorder" />
+					</Panel>
+					<DOTAScenePanel id="VengefulSpiritScene" class="ArcanaScene" pin-fov="horizontal" map="backgrounds/hero_showcase_venge_arcana_hero_only" camera="herocamera" light="light_hero" hittest="false" renderdeferred="false" deferredalpha="true" rotateonmousemove="true" yawmin="-4.0" yawmax="0.6" pitchmin="-0.6" pitchmax="0.6" antialias="true" particleonly="false" />
+					<Panel class="StoreItemMain">
+						<Panel class="ItemHeader">
+							<Label class="ItemTitle" text="#DOTA_CrownfallStore_VengefulSpiritArcana_Name" />
+							<Label class="ItemSubtitle" text="#DOTA_CrownfallStore_VengefulSpiritArcana_Subtitle" />
+						</Panel>
+						<Panel class="ItemDetails">
+							<Label class="ItemLore" text="#Debut_Arcana_Venge_Lore" />
+							<MoviePanel class="GameplayVideo" src="file://{resources}/videos/promo/venge_arcana.webm" repeat="true" autoplay="onload" />
+							<Label class="FeatureHeader" html="true" text="#Debut_Arcana_Venge_Feature_1_Title" />
+							<Label class="FeatureText" text="#Debut_Arcana_Venge_Feature_1_Desc" />
+							<Label class="FeatureHeader" html="true" text="#Debut_Arcana_Venge_Feature_2_Title" />
+							<Label class="FeatureText" text="#Debut_Arcana_Venge_Feature_2_Desc" />
+							<Label class="FeatureHeader" html="true" text="#Debut_Arcana_Venge_Feature_3_Title" />
+							<Label class="FeatureText" text="#Debut_Arcana_Venge_Feature_3_Desc" />
+							<Panel class="HeroImages">
+								<Panel class="HeroPortrait" />
+								<Panel class="HeroIcons" />
+								<Panel class="HeroAbilities" />
+							</Panel>
+							<Label class="FeatureHeader" html="true" text="#Debut_Arcana_Venge_Feature_4_Title" />
+							<Label class="FeatureText" text="#Debut_Arcana_Venge_Feature_4_Desc" />
+							<Label class="FeatureHeader" html="true" text="#Debut_Arcana_Venge_Feature_5_Title" />
+							<Label class="FeatureText" text="#Debut_Arcana_Venge_Feature_5_Desc" />
+						</Panel>
+						<Panel class="ActionButtons">
+							<DOTACrownfallPurchaseButton class="ActionButton" itemdef="22722" />
+							<Button class="GiftButton ButtonPrimary Green" onactivate="DOTACrownfallStorePurchaseItemAsGift( 22722 )">
+								<Label text="#DOTA_Treasure_Gift" />
+								<Image src="s2r://panorama/images/control_icons/gift_png.vtex" />
+							</Button>
+							<DemoModeButton id="DemoHeroButton" category="#Rarity_Arcana" onactivate="DOTADemoHero( npc_dota_hero_vengefulspirit, 22722 )" />
+							<Button class="InspectButton ButtonPrimary LightGrey" onactivate="DOTAShowItemDefPage( 22722 )">
+								<Image src="s2r://panorama/images/control_icons/24px/info_ghost.vsvg" />
+							</Button>
+						</Panel>
+						<Panel class="ArcanaStyleButtons">
+							<RadioButton group="venge_style_buttons" selected="true" onactivate="DOTACrownfallStoreSetVengefulSpiritArcanaStyle( 0 )">
+								<Panel class="StyleButtonText">
+									<Label class="StyleName" text="#DOTA_Style_Vengeful_Spirit_Arcana_Style0" />
+								</Panel>
+							</RadioButton>
+							<RadioButton group="venge_style_buttons" onactivate="DOTACrownfallStoreSetVengefulSpiritArcanaStyle( 1 )">
+								<Panel class="StyleButtonText">
+									<Label class="StyleName" text="#DOTA_Style_Vengeful_Spirit_Arcana_Style1" />
+									<Label class="StyleUnlock" text="#DOTA_CrownfallStore_ArcanaStyleUnlock_1" />
+								</Panel>
+							</RadioButton>
+							<RadioButton group="venge_style_buttons" onactivate="DOTACrownfallStoreSetVengefulSpiritArcanaStyle( 2 )">
+								<Panel class="StyleButtonText">
+									<Label class="StyleName" text="#DOTA_Style_Vengeful_Spirit_Arcana_Style2" />
+									<Label class="StyleUnlock" text="#DOTA_CrownfallStore_ArcanaStyleUnlock_2" />
+								</Panel>
+							</RadioButton>
+						</Panel>
+					</Panel>
+				</Panel>
+				<Panel class="StoreItem StoreItemArcana StoreItemSkywrathArcana" hittest="false" itemdef="22277" acceptsfocus="true">
+					<Panel class="StoreItemMain">
+						<DOTAScenePanel id="SkywrathMageSceneBackground" class="ArcanaScene" hittest="false" pin-fov="horizontal" map="backgrounds/hero_showcase_skywrath_arcana_env_only" camera="herocamera" light="light_hero" renderdeferred="true" deferredalpha="true" renderwaterreflections="true" rotateonmousemove="true" yawmin="-4.0" yawmax="0.6" pitchmin="-0.6" pitchmax="0.6" antialias="true" particleonly="false" />
+						<Panel class="TopBorder" />
+					</Panel>
+					<DOTAScenePanel id="SkywrathMageScene" class="ArcanaScene" pin-fov="horizontal" map="backgrounds/hero_showcase_skywrath_arcana_hero_only" camera="herocamera" light="light_hero" hittest="false" renderdeferred="false" deferredalpha="true" rotateonmousemove="true" yawmin="-4.0" yawmax="0.6" pitchmin="-0.6" pitchmax="0.6" antialias="true" particleonly="false" />
+					<Panel class="StoreItemMain">
+						<Panel class="ItemHeader">
+							<Label class="ItemTitle" text="#DOTA_CrownfallStore_SkywrathMageArcana_Name" />
+							<Label class="ItemSubtitle" text="#DOTA_CrownfallStore_SkywrathMageArcana_Subtitle" />
+						</Panel>
+						<Panel class="ItemDetails">
+							<Label class="ItemLore" text="#Debut_Arcana_Skywrath_Lore" />
+							<MoviePanel class="GameplayVideo" src="file://{resources}/videos/promo/skywrath_arcana.webm" repeat="true" autoplay="onload" />
+							<Label class="FeatureHeader" html="true" text="#Debut_Arcana_Skywrath_Feature_1_Title" />
+							<Label class="FeatureText" text="#Debut_Arcana_Skywrath_Feature_1_Desc" />
+							<Label class="FeatureHeader" html="true" text="#Debut_Arcana_Skywrath_Feature_2_Title" />
+							<Label class="FeatureText" text="#Debut_Arcana_Skywrath_Feature_2_Desc" />
+							<Label class="FeatureHeader" html="true" text="#Debut_Arcana_Skywrath_Feature_3_Title" />
+							<Label class="FeatureText" text="#Debut_Arcana_Skywrath_Feature_3_Desc" />
+							<Panel class="HeroImages">
+								<Panel class="HeroPortrait" />
+								<Panel class="HeroIcons" />
+								<Panel class="HeroAbilities" />
+							</Panel>
+							<Label class="FeatureHeader" html="true" text="#Debut_Arcana_Skywrath_Feature_4_Title" />
+							<Label class="FeatureText" text="#Debut_Arcana_Skywrath_Feature_4_Desc" />
+							<Label class="FeatureHeader" html="true" text="#Debut_Arcana_Skywrath_Feature_5_Title" />
+							<Label class="FeatureText" text="#Debut_Arcana_Skywrath_Feature_5_Desc" />
+						</Panel>
+						<Panel class="ActionButtons">
+							<DOTACrownfallPurchaseButton itemdef="22277" />
+							<Button class="GiftButton ButtonPrimary Green" onactivate="DOTACrownfallStorePurchaseItemAsGift( 22277 )">
+								<Label text="#DOTA_Treasure_Gift" />
+								<Image src="s2r://panorama/images/control_icons/gift_png.vtex" />
+							</Button>
+							<DemoModeButton id="DemoHeroButton" category="#Rarity_Arcana" onactivate="DOTADemoHero( npc_dota_hero_skywrath_mage, 22277 )" />
+							<Button class="InspectButton ButtonPrimary LightGrey" onactivate="DOTAShowItemDefPage( 22277 )">
+								<Image src="s2r://panorama/images/control_icons/24px/info_ghost.vsvg" />
+							</Button>
+						</Panel>
+						<Panel class="ArcanaStyleButtons">
+							<RadioButton group="skywrath_style_buttons" selected="true" onactivate="DOTACrownfallStoreSetSkywrathMageArcanaStyle( 0 )">
+								<Panel class="StyleButtonText">
+									<Label class="StyleName" text="#DOTA_Style_Skywrath_Mage_Arcana_Style0" />
+								</Panel>
+							</RadioButton>
+							<RadioButton group="skywrath_style_buttons" onactivate="DOTACrownfallStoreSetSkywrathMageArcanaStyle( 1 )">
+								<Panel class="StyleButtonText">
+									<Label class="StyleName" text="#DOTA_Style_Skywrath_Mage_Arcana_Style1" />
+									<Label class="StyleUnlock" text="#DOTA_CrownfallStore_ArcanaStyleUnlock_1" />
+								</Panel>
+							</RadioButton>
+						</Panel>
+					</Panel>
+				</Panel>
+				<Panel class="StoreItem StoreItemTreasure" hittest="false" itemdef="30937" acceptsfocus="true">
+					<Panel class="StoreItemMain">
+						<Panel class="TopBorder" />
+						<Panel class="FloorShadow" />
+						<DOTAUIEconSetPreview id="TreasureModel" pin-fov="vertical" drawbackground="false" itemdef="30937" hittest="false" hittestchildren="false" />
+						<Panel class="ItemHeader">
+							<Label class="ItemTitle" text="#DOTA_Item_Crownfall_Treasure_I" />
+							<Label class="ItemSubtitle" text="" />
+						</Panel>
+					</Panel>
+					<Panel class="StoreItemMainForeground">
+						<DOTAScenePanel id="TreasurePreview" onload="RunPageAnimation()" hittest="false" pin-fov="vertical" map="maps/backgrounds/dashboard_background_loadout_treasure_crownfall_i" light="hero_light" camera="hero_camera" particleonly="false" />
+						<Panel class="ActionButtons">
+							<Panel class="PurchaseButtons">
+								<DOTACrownfallPurchaseButton itemdef="30937" text="#DOTA_Purchase_One" />
+								<DOTACrownfallPurchaseButton id="PurchaseButton2" itemdef="31121" text="#DOTA_Purchase_Nine" consumeafterpurchase="true" />
+							</Panel>
+							<TextButton class="ButtonPrimary Green" text="#DOTA_Treasure_ViewTreasure" onactivate="DOTAShowItemDefPage( 30937 )" />
+						</Panel>
+					</Panel>
+				</Panel>
+				<Panel class="StoreItem StoreItemTreasure" hittest="false" itemdef="30938" acceptsfocus="true">
+					<Panel class="StoreItemMain">
+						<Panel class="TopBorder" />
+						<Panel class="FloorShadow" />
+						<DOTAUIEconSetPreview id="TreasureModel" pin-fov="vertical" drawbackground="false" itemdef="30938" hittest="false" hittestchildren="false" />
+						<Panel class="ItemHeader">
+							<Label class="ItemTitle" text="#DOTA_Item_Crownfall_Treasure_II" />
+							<Label class="ItemSubtitle" text="" />
+						</Panel>
+					</Panel>
+					<Panel class="StoreItemMainForeground">
+						<DOTAScenePanel id="TreasurePreviewii" onload="RunPageAnimationii()" hittest="false" pin-fov="vertical" map="maps/backgrounds/dashboard_background_loadout_treasure_crownfall_ii" light="hero_light" camera="hero_camera" particleonly="false" />
+						<Panel class="ActionButtons">
+							<Panel class="PurchaseButtons">
+								<DOTACrownfallPurchaseButton itemdef="30938" text="#DOTA_Purchase_One" />
+								<DOTACrownfallPurchaseButton id="PurchaseButton2" itemdef="31122" text="#DOTA_Purchase_Nine" consumeafterpurchase="true" />
+							</Panel>
+							<TextButton class="ButtonPrimary Green" text="#DOTA_Treasure_ViewTreasure" onactivate="DOTAShowItemDefPage( 30938 )" />
+						</Panel>
+					</Panel>
+				</Panel>
+				<Panel class="StoreItem StoreItemBundle" hittest="false" itemdef="27458" acceptsfocus="true">
+					<Panel class="StoreItemMain">
+						<Panel class="TopBorder" />
+						<Panel class="ItemHeader">
+							<Label class="ItemTitle" text="#DOTA_CrownfallStore_RoyalBundle_Name" />
+							<Label class="ItemSubtitle" text="" />
+						</Panel>
+						<Panel class="ItemDetailsContainer">
+							<Panel class="ItemDetails">
+								<Panel class="BundleFeature">
+									<Panel class="BundleFeatureImage">
+										<AnimatedImageStrip class="CandySackIcon" src="s2r://panorama/images/emoticons/crownfall/props/prop_reward_candy_sack_idle_png.vtex" framewidth="120px" frametime="75ms" defaultframe="1" scaling="cover" />
+									</Panel>
+									<Panel class="BundleFeatureText">
+										<Label class="Quantity" text="x30" />
+										<Label class="BundleFeatureTitle" text="#DOTA_CrownfallStore_CandySacks_Name" />
+										<Label class="BundleFeatureDetail" text="#DOTA_CrownfallStore_CandySacks_Desc" />
+									</Panel>
+								</Panel>
+								<Panel class="BundleFeature">
+									<Panel class="BundleFeatureImage">
+										<Image class="RollIcon" src="s2r://panorama/images/events/crownfall/store/bunlde_item_reroll_dice_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+									</Panel>
+									<Panel class="BundleFeatureText">
+										<Label class="Quantity" text="x10" />
+										<Label class="BundleFeatureTitle" text="#DOTA_CrownfallStore_CandyRerolls_Name" />
+										<Label class="BundleFeatureDetail" text="#DOTA_CrownfallStore_CandyRerolls_Desc" />
+									</Panel>
+								</Panel>
+								<Panel class="BundleFeature">
+									<Panel class="BundleFeatureImage">
+										<Image class="TokenIcon" src="s2r://panorama/images/events/crownfall/store/bunlde_item_double_down_coin_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+									</Panel>
+									<Panel class="BundleFeatureText">
+										<Label class="Quantity" text="x20" />
+										<Label class="BundleFeatureTitle" text="#DOTA_CrownfallStore_DoubleDownTokens_Name" />
+										<Label class="BundleFeatureDetail" text="#DOTA_CrownfallStore_DoubleDownTokens_Desc" />
+									</Panel>
+								</Panel>
+							</Panel>
+						</Panel>
+						<Panel class="BundleImageContainer">
+							<Panel class="BgGlow" />
+							<Image class="BundleImage" src="s2r://panorama/images/events/crownfall/store/store_overview_super_bundle_psd.vtex" scaling="stretch-to-fit-preserve-aspect" />
+							<Panel class="FloorShadow" />
+						</Panel>
+						<Panel class="ActionButtons">
+							<DOTACrownfallPurchaseButton itemdef="27458" consumeafterpurchase="true" />
+						</Panel>
+					</Panel>
+				</Panel>
+			</Carousel>
+			<Panel id="StoreNav" class="StoreNav">
+				<Panel class="StoreNavCategory Overview">
+					<Panel class="CategoryContents">
+						<Panel class="StoreNavItem" onmouseover="UIShowTextTooltip( &apos;#DOTA_CrownfallStore_Category_Overview&apos; )" onmouseout="UIHideTextTooltip()" onactivate="DOTAShowBPCrownfallStoreItem( 0 )">
+							<Panel class="NavItemBg" />
+							<Image src="s2r://panorama/images/events/crownfall/store/carousel_icons/overview_png.vtex" />
+						</Panel>
+					</Panel>
+					<Label class="CategoryTitle" text="#DOTA_CrownfallStore_Category_Overview" />
+				</Panel>
+				<Panel class="StoreNavCategory Packs">
+					<Panel class="CategoryContents">
+						<Panel class="StoreNavItem" onmouseover="UIShowTextTooltip( &apos;#DOTA_CrownfallStore_Act1Pass_Name&apos; )" onmouseout="UIHideTextTooltip()" onactivate="DOTAShowBPCrownfallStoreItem( 30943 )" itemdef="30943">
+							<Panel class="NavItemBg" />
+							<Image src="s2r://panorama/images/events/crownfall/store/carousel_icons/packs_png.vtex" />
+						</Panel>
+					</Panel>
+					<Label class="CategoryTitle" text="#DOTA_CrownfallStore_Category_Packs" />
+				</Panel>
+				<Panel class="StoreNavCategory Arcanas">
+					<Panel class="CategoryContents">
+						<Panel class="StoreNavItem Vengeful" onmouseover="UIShowTextTooltip( &apos;#DOTA_CrownfallStore_VengefulSpiritArcana_Subtitle&apos; )" onmouseout="UIHideTextTooltip()" onactivate="DOTAShowBPCrownfallStoreItem( 22722 )" itemdef="22722">
+							<Panel class="NavItemBg" />
+						</Panel>
+						<Panel class="StoreNavItem Skywrath" onmouseover="UIShowTextTooltip( &apos;#DOTA_CrownfallStore_SkywrathMageArcana_Subtitle&apos; )" onmouseout="UIHideTextTooltip()" onactivate="DOTAShowBPCrownfallStoreItem( 22277 )" itemdef="22277">
+							<Panel class="NavItemBg" />
+						</Panel>
+					</Panel>
+					<Label class="CategoryTitle" text="#DOTA_CrownfallStore_Category_Arcana" />
+				</Panel>
+				<Panel class="StoreNavCategory Treasures">
+					<Panel class="CategoryContents">
+						<Panel class="StoreNavItem" onmouseover="UIShowTextTooltip( &apos;#DOTA_Item_Crownfall_Treasure_I&apos; )" onmouseout="UIHideTextTooltip()" onactivate="DOTAShowBPCrownfallStoreItem( 30937 )" itemdef="30937">
+							<Panel class="NavItemBg" />
+							<Image src="s2r://panorama/images/events/crownfall/store/carousel_icons/treasure_1_png.vtex" />
+						</Panel>
+						<Panel class="StoreNavItem" onmouseover="UIShowTextTooltip( &apos;#DOTA_Item_Crownfall_Treasure_II&apos; )" onmouseout="UIHideTextTooltip()" onactivate="DOTAShowBPCrownfallStoreItem( 30938 )" itemdef="30938">
+							<Panel class="NavItemBg" />
+							<Image src="s2r://panorama/images/events/crownfall/store/carousel_icons/treasure_2_png.vtex" />
+						</Panel>
+					</Panel>
+					<Label class="CategoryTitle" text="#DOTA_CrownfallStore_Category_Treasures" />
+				</Panel>
+				<Panel class="StoreNavCategory Bundles">
+					<Panel class="CategoryContents">
+						<Panel class="StoreNavItem" onmouseover="UIShowTextTooltip( &apos;#DOTA_CrownfallStore_RoyalBundle_Name&apos; )" onmouseout="UIHideTextTooltip()" onactivate="DOTAShowBPCrownfallStoreItem( 27458 )" itemdef="27458">
+							<Panel class="NavItemBg" />
+							<Image src="s2r://panorama/images/events/crownfall/store/carousel_icons/bundles_png.vtex" />
+						</Panel>
+					</Panel>
+					<Label class="CategoryTitle" text="#DOTA_CrownfallStore_Category_Bundles" />
+				</Panel>
+			</Panel>
+			<Panel class="DashDotDivider">
+				<Panel class="Dash Left" />
+				<Panel class="Dot" />
+				<Panel class="Dash Right" />
+			</Panel>
+		</Panel>
+		<DOTAScenePanel id="DiscountModePageFXForeground" deferredalpha="true" antialias="true" hittest="false" camera="camera" light="light" renderdeferred="true" particleonly="false" map="scenes/events/crownfall/discount_fx_foreground" />
+		<Panel class="DiscountActiveContainer">
+			<Label text="#DOTA_DiscountActive" />
+		</Panel>
+	</DOTABPCrownfallStorePage>
+</root>

@@ -89,7 +89,6 @@
 16ILoggingListener
 17CGlobalThreadPool
 17CThreadSyncObject
-18CCountedStringPool
 18CThreadManualEvent
 18CUtlCharConversion
 18CUtlJSONConversion
@@ -97,7 +96,6 @@
 18CVNullSymbolModule
 18IMemAlloc_Internal
 18IMultipleWorkerJob
-195GF
 19CDmSymbolTableLarge
 19CExecMultiWorkerJob
 19CUtlNoEscConversion
@@ -114,6 +112,7 @@
 20CRefCountServiceBaseI6CRefMTE
 20CThreadedTraverseJob
 20IMobileEventListener
+21CCountedStringPool_CI
 21CPooledStdFunctionJob
 21CUtlCStringConversion
 21CUtlStringTokenSystem
@@ -123,7 +122,6 @@
 22CPerfTraceDepotDefault
 22CSimpleLoggingListener
 22CVImageHlpBinaryModule
-22IFiberThreadWorkerPool
 22ILoggingResponsePolicy
 24CStdIOFormatOutputStream
 24CThreadCrossProcessMutex
@@ -243,6 +241,7 @@
 8E8<$u
 8H9z(u
 8IProcess
+8VBKVt
 8[A\A]A^A
 8]pt	8]q
 8fA99u
@@ -306,6 +305,7 @@ AE_NPC_SET_INTERACTION_CANTDIE
 AE_NPC_START_POWERED_RAGDOLL
 AE_NPC_WEAPON_FIRE
 AE_PASSENGER_PHYSICS_PUSH
+AE_PULSE_GRAPH
 AE_SCRIPT_EVENT_FIREEVENT
 AE_SV_BODYGROUP_SET_VALUE
 AE_SV_DUSTTRAIL
@@ -342,6 +342,7 @@ AUATUL
 AUATUSH
 AVAUAT
 AVAUATA
+AVAUATD
 AVAUATE1
 AVAUATI
 AVAUATL
@@ -453,8 +454,11 @@ AnimBlendLayerPoseParam
 AnimCommonParams
 AnimCycleOverride
 AnimDelta
+AnimEventOutflows
 AnimFile
 AnimForceBonePosition
+AnimForceBoneScaleLerp
+AnimForceBoneScaleSet
 AnimGraphEditorUtils001
 AnimIkLockLocal
 AnimLayer
@@ -471,7 +475,6 @@ AnimationSystem_001
 AppendConcat
 AppendConcatV
 AppendFormatV
-AppendMiniProfilerToList
 ApplyDiffs
 Arenas
 Aring
@@ -542,6 +545,7 @@ BentNormalData
 BinaryProperties_GetValue
 BlendList
 BlibSDL3.so.0
+Blob size is larger than remaining bytes.  Blob %i/%i Blob Size: %u Bytes Remaining: %d
 Block-level external sequence producer returned an error code
 BodyGroup
 BodyGroupChoice
@@ -858,7 +862,6 @@ CDistanceRemainingMetric
 CDwarfVector capacity overflow
 CEmitTagAction
 CEnumAnimParameter
-CExecMultiWorkerJob CUtlMemoryPool
 CExpressionAction
 CFA advance has a zero size
 CFA advances off the end of the FDE
@@ -911,7 +914,6 @@ CJiggleBoneAnimNode
 CJumpHelperAnimNode
 CKeyValuesSystem::m_Strings
 CKeyValuesSystem::m_pMemPool
-CKeyValuesSystemBase::hash_item_t CUtlMemoryPool
 CLIENTCMD_CAN_EXECUTE
 CLIENTDLL
 CLeanMatrixAnimNode
@@ -981,13 +983,13 @@ CPathHelperAnimNode
 CPathMetric
 CPathStatusCondition
 CPlayerInputAnimMotor
-CPooledStdFunctionJob CUtlMemoryPool
 CProxyAnimNodeBase
 CPulseCell
 CPulseCell_Inflow_Wait
 CPulseCell_Outflow_NPCScriptedFaceEntity
 CPulseCell_Outflow_NPCScriptedMoveTo
 CPulseCell_Outflow_NPCUseScriptedAbility
+CPulseDocNodeDynamicOutflowsAttr
 CPulseNode
 CQuaternionAnimParameter
 CRC32_GetTableEntry
@@ -1086,6 +1088,7 @@ CSubGraphManagerConstPtr
 CSubGraphManagerPtr
 CSubtractAnimNode
 CTSList
+CTSListBase: Misaligned list
 CTSQueue
 CTSQueue corruption
 CTagCondition
@@ -1095,7 +1098,6 @@ CTestScriptMgr::InsertCommandsBeforeCheckpoint() before checkpoint "%s
 CTestScriptMgr::LoopCount( %s ): no loop with this name exists
 CTestScriptMgr::LoopForNumSeconds( %s ): no loop with this name exists
 CTestScriptMgr::StartLoop( %s ): loop already exists
-CThreadPool::CSerialJobExecutor CUtlMemoryPoolMT
 CThreadPool::Start called and it was already initialized
 CThreadedJob
 CThreadedTraverseJob
@@ -1104,6 +1106,7 @@ CTimeRemainingMetric
 CToggleComponentAction
 CTurnHelperAnimNode
 CTwoBoneIKAnimNode
+CURVE_TANGENT_LINEAR
 CUtlBlockMemory overflow
 CUtlFixedMemory overflow
 CUtlLinkedList overflow! (exhausted index range
@@ -1398,8 +1401,8 @@ D"A/oyu
 D$ HcE
 D$(E9
 D$,PAVj
+D$8IcD
 D$?t	8Co
-D$@AVH
 D$Ot	8Eo
 D$PHcM
 D$Wt	8Eo
@@ -1415,7 +1418,6 @@ D3Y8D3Y D3Y
 D3Z4D3Z,A
 D3Z<D3Z$D3Z
 D8kpt
-D9{,tFL
 DAMAGEORDEATH_INTERRUPTABILITY
 DEATH_INTERRUPTABILITY
 DEBUG_EXITPROCESS
@@ -1470,6 +1472,7 @@ DWARF: trying file %s
 DWARF: unable to find debug info for %s, attempting to fall back to the primary file regardless of debug info
 DWARF: unable to find matching separate debug info for %s, check the primary file for debug info
 DWARF_LOCAL_TRANSLATE
+DWARF_SYMBOL_PATH
 DZP(7
 Data corruption detected
 Debug server download process failed with exit code %d
@@ -1580,7 +1583,7 @@ External sequences are not valid
 F(I;F0sQD
 F8A+F(9
 F8A;FH
-F@IcV8H
+F@IcV8L
 FAIL: !IsEmpty
 FAIL: !Validate
 FAIL: Not all items popped
@@ -1666,6 +1669,7 @@ Float array only parsed %u value(s) when expecting %u
 Float value %f above maximum %f
 Float value %f below minimum %f
 Flow_Generic
+Folder
 FontManager_001
 Found Application AutoArgs file '%s
 Found a '%s' token implying the start of a conditional.  KV3 doesn't support this - use bIgnoreConditionals or modify the source file
@@ -1730,7 +1734,6 @@ GetDefaultMiniDumpTypeFlags
 GetDisableFocusBasedPriorityBoost
 GetDmElementTypeSymbolMap
 GetFileAndLineFromAddress
-GetHardwareClockReliably
 GetInsertPtr
 GetJSONCharConversion
 GetJobManualEventFromPool
@@ -1761,12 +1764,12 @@ H+D$PH9
 H+D$PI9
 H+E(L9
 H+T$PI9
-H95)E
-H9=o-4
+H9=Mr4
 H9D$xt
 H9E(sgL
 H;2uRE
-H;5:wC
+H;=Yx
+H;E0sR
 H;X0t	H
 H>*SL
 HEAP WARNING: memory block at %p appears to be corrupt
@@ -1786,10 +1789,8 @@ H^zvd
 HammerMapLoader001
 HcC(L9
 HcChD9
-HcK(E1
 HcK8Ic
 HcKHXZ
-HcS H
 Header of Literals' block doesn't respect format specification
 Heap-like bytes: %s
 Heap: standard allocator
@@ -1912,7 +1913,6 @@ IEEE 754r decimal floating point (32 bits
 IEEE 754r decimal floating point (64 bits
 IEEE 754r half-precision floating point (16 bits
 IGraphMotionItem
-IHcK0Ic
 IHcKHIc
 IHcK`Ic
 IJumpHelperAnimNode
@@ -2111,7 +2111,6 @@ L$8A9\$X
 L$HH;G
 L$PI;L$(r0A
 L9D$HL
-L;%6u
 L;`ht	H
 L;cHt	H
 L;cpt	H
@@ -2306,7 +2305,6 @@ MaterialUtils_001
 Max committed memory: %u KB out of %d KB
 Maximum thread-cached size class
 Mc,$E;l
-Mc.E;n
 MemAlloc_AllocFunc
 MemAlloc_CallocFunc
 MemAlloc_FreeFunc
@@ -2321,7 +2319,6 @@ Merged arenas stats
 MeshSystem001
 MeshUtils001
 Message: %s
-MicroProfilerAddTS
 MiniDumpAdditionalStringData_t
 MiniDumpCommentEnsureOSDescription
 MiniDumpExceptionHandler
@@ -2338,6 +2335,17 @@ Missing file '%s
 ModelDocUtils001
 Module %s is a debug build
 Monday
+MorphCombinationShapeList
+MorphControlList
+MorphControlPairList
+MorphDominanceList
+MorphDominator
+MorphIncrementalControl
+MorphIncrementalControlList
+MorphIncrementalShape
+MorphRuleList
+MorphStereoControlList
+MorphSuppressedShape
 Multiple -testscript commandline arguments are from different directories. The current system only supports 1 directory. Currently "%s
 Multiple abstract origin attrs
 Multiple call file attrs
@@ -2360,6 +2368,9 @@ N10__cxxabiv117__class_type_infoE
 N10__cxxabiv119__foreign_exceptionE
 N10__cxxabiv120__si_class_type_infoE
 N10__cxxabiv121__vmi_class_type_infoE
+N10moodycamel15ConcurrentQueueIP12CThreadedJobNS_28ConcurrentQueueDefaultTraitsEE12ProducerBaseE
+N10moodycamel15ConcurrentQueueIP12CThreadedJobNS_28ConcurrentQueueDefaultTraitsEE16ImplicitProducerE
+N10moodycamel7details35ConcurrentQueueProducerTypelessBaseE
 N11CThreadPool18CSerialJobExecutorE
 N11TSListTests8CListOpsE
 N11TSListTests8CTestOpsE
@@ -2499,7 +2510,6 @@ Operation on NULL destination buffer
 Ordered constructor wrapped type has no default constructor
 Out of keyvalue string space
 Out of logging channels
-Out of memory allocation hash_item_t
 Out of range abbrev code %llu
 Out of range abbrev tag %llu
 Out of range compilation unit code %llu
@@ -2518,7 +2528,6 @@ P D9c
 P H9P L
 P H9Q L
 P H9W L
-P IcE(I9
 P8E3P$E3P
 PARTICLE_DEPTH_FEATHERING_OFF
 PARTICLE_DEPTH_FEATHERING_ON_OPTIONAL
@@ -2584,6 +2593,8 @@ PROTECTED
 PT_TYPE_CONTROL_POINT
 PT_TYPE_CONTROL_POINT_RANGE
 PT_TYPE_INVALID
+PVAL_EHANDLE
+PVAL_ENTITY_NAME
 PVEC_TYPE_CP_DELTA
 PVEC_TYPE_CP_VALUE
 PVEC_TYPE_FLOAT_COMPONENTS
@@ -2887,7 +2898,6 @@ Plat_localtime64
 Plat_mktime64
 Plat_timegm64
 PopCoroutineStack
-PopMiniProfilerTS
 PostProcessingSystem_001
 Prediction
 PreviewAttachmentModel
@@ -2907,7 +2917,6 @@ PropertyEditorSystem_001
 PulseEntFireMode_t::HANDLE
 Purge passes: %lu (%lu / sec
 Purges: %lu (%lu / sec
-PushMiniProfilerTS
 PushPopThread
 PushThread
 Q H9P L
@@ -2979,7 +2988,6 @@ RemoveAssertionCallback
 RemoveAt
 RemoveAtUTF8
 RemoveBoneAndChildren
-RemoveMiniProfilerFromList
 Removing string token database entry "%s" for reason "%s
 RenderDevice003
 RenderDeviceMgr001
@@ -3095,6 +3103,7 @@ SDL_GetProperty
 SDL_GetPropertyType
 SDL_GetRelativeMouseMode
 SDL_GetScancodeFromKey
+SDL_GetScancodeFromName
 SDL_GetScancodeName
 SDL_GetTicksNS
 SDL_GetWindowFlags
@@ -3110,10 +3119,11 @@ SDL_GetWindowTitle
 SDL_HasClipboardText
 SDL_HasScreenKeyboardSupport
 SDL_HideWindow
+SDL_IOFromFile
 SDL_Init
 SDL_InitHapticRumble
 SDL_InitSubSystem
-SDL_LoadBMP_RW
+SDL_LoadBMP_IO
 SDL_LockAudioStream
 SDL_MOUSE_FOCUS_CLICKTHROUGH
 SDL_MinimizeWindow
@@ -3128,7 +3138,6 @@ SDL_PumpEvents
 SDL_PutAudioStreamData
 SDL_Quit
 SDL_QuitSubSystem
-SDL_RWFromFile
 SDL_RaiseWindow
 SDL_ResetKeyboard
 SDL_RestoreWindow
@@ -3800,6 +3809,10 @@ VPhysics2_Interface_001
 VProcessUtils002
 VProf spike "%s" from %f to %f ms
 VProfService_001
+VProf_AssignNextTimespanId
+VProf_EnterScopeAdHoc
+VProf_ExitScope
+VProf_FindOrCreateCounter
 VRenderDeviceSetupV001
 VSNAPFile
 VScriptManager010
@@ -4715,8 +4728,8 @@ ZN10CUtlStringpLEc
 ZN10CUtlStringpLEd
 ZN10CUtlStringpLEi
 ZN10CVProfNode10EnterScopeEv
-ZN10CVProfNode10GetSubNodeEPKciS1_i
 ZN10CVProfNode15SetCurFrameTimeEm
+ZN10CVProfNode17FindOrCreateChildEPKcR24VProfBudgetGroupCallSite
 ZN10CVProfNode22s_iCurrentUniqueNodeIDE
 ZN10CVProfNode5PauseEv
 ZN10CVProfNode5ResetEv
@@ -4724,6 +4737,10 @@ ZN10CVProfNode6ResumeEv
 ZN10CVProfNode9ExitScopeEv
 ZN10CVProfNode9MarkFrameEv
 ZN10CVProfNode9ResetPeakEv
+ZN10CVProfNodeC1EPKcPS_R24VProfBudgetGroupCallSite
+ZN10CVProfNodeC1EPKcR24VProfBudgetGroupCallSited
+ZN10CVProfNodeC2EPKcPS_R24VProfBudgetGroupCallSite
+ZN10CVProfNodeC2EPKcR24VProfBudgetGroupCallSited
 ZN10CVProfNodeD1Ev
 ZN10CVProfNodeD2Ev
 ZN10__cxxabiv111__terminateEPFvvE
@@ -4761,13 +4778,15 @@ ZN11CPathString3SetEPKcS1
 ZN11CPathString5ResetEv
 ZN11CPathStringD1Ev
 ZN11CPathStringD2Ev
-ZN11CStringPool4FindEPKc
-ZN11CStringPool7FreeAllEv
-ZN11CStringPool8AllocateEPKc
-ZN11CStringPoolC1E16StringPoolCase_t
-ZN11CStringPoolC2E16StringPoolCase_t
-ZN11CStringPoolD1Ev
-ZN11CStringPoolD2Ev
+ZN11CTSListBase11InternalPopEv
+ZN11CTSListBase12InternalPushEP13TSLNodeBase_t
+ZN11CTSListBase6DetachEv
+ZN11CTSListBaseC1Ev
+ZN11CTSListBaseC2Ev
+ZN11CTSListBaseD1Ev
+ZN11CTSListBaseD2Ev
+ZN11CThreadPool16SuspendExecutionEvEUlvE
+ZN11CThreadPool4StopEiEUlvE
 ZN12CDirIterator19CurrentFileFullPathEv
 ZN12CDirIterator19SplitPathAndPatternEPKcP10CUtlStringS3
 ZN12CDirIterator4InitEPKcS1_S1_j
@@ -4935,6 +4954,13 @@ ZN14CStrAutoEncode7SetCopyEPKci
 ZN14CStrAutoEncode7SetCopyEPKti
 ZN14CStrAutoEncode7SetCopyEPKwi
 ZN14CStrAutoEncode9InitEmptyEv
+ZN14CStringPool_CI4FindEPKc
+ZN14CStringPool_CI7FreeAllEv
+ZN14CStringPool_CI8AllocateEPKc
+ZN14CStringPool_CIC1Ev
+ZN14CStringPool_CIC2Ev
+ZN14CStringPool_CID1Ev
+ZN14CStringPool_CID2Ev
 ZN14CThreadBarrier13ArriveAndWaitEv
 ZN14CThreadBarrierC1Ej
 ZN14CThreadBarrierC2Ej
@@ -5029,6 +5055,26 @@ ZN16CUtl3DAllocator25ResetEiii
 ZN16CUtl3DAllocator26Free3DERK8Rect3D_t
 ZN16CUtl3DAllocator2C1Ev
 ZN16CUtl3DAllocator2C2Ev
+ZN16VProfScopeHelperILi0ELb0EE18EnterScopeInternalEPKc
+ZN16VProfScopeHelperILi0ELb0EE29EnterScopeInternalBudgetFlagsEPKcR24VProfBudgetGroupCallSite
+ZN16VProfScopeHelperILi0ELb1EE18EnterScopeInternalEPKc
+ZN16VProfScopeHelperILi0ELb1EE29EnterScopeInternalBudgetFlagsEPKcR24VProfBudgetGroupCallSite
+ZN16VProfScopeHelperILi1ELb0EE18EnterScopeInternalEPKc
+ZN16VProfScopeHelperILi1ELb0EE29EnterScopeInternalBudgetFlagsEPKcR24VProfBudgetGroupCallSite
+ZN16VProfScopeHelperILi1ELb1EE18EnterScopeInternalEPKc
+ZN16VProfScopeHelperILi1ELb1EE29EnterScopeInternalBudgetFlagsEPKcR24VProfBudgetGroupCallSite
+ZN16VProfScopeHelperILi2ELb0EE18EnterScopeInternalEPKc
+ZN16VProfScopeHelperILi2ELb0EE29EnterScopeInternalBudgetFlagsEPKcR24VProfBudgetGroupCallSite
+ZN16VProfScopeHelperILi2ELb1EE18EnterScopeInternalEPKc
+ZN16VProfScopeHelperILi2ELb1EE29EnterScopeInternalBudgetFlagsEPKcR24VProfBudgetGroupCallSite
+ZN16VProfScopeHelperILi3ELb0EE18EnterScopeInternalEPKc
+ZN16VProfScopeHelperILi3ELb0EE29EnterScopeInternalBudgetFlagsEPKcR24VProfBudgetGroupCallSite
+ZN16VProfScopeHelperILi3ELb1EE18EnterScopeInternalEPKc
+ZN16VProfScopeHelperILi3ELb1EE29EnterScopeInternalBudgetFlagsEPKcR24VProfBudgetGroupCallSite
+ZN16VProfScopeHelperILi4ELb0EE18EnterScopeInternalEPKc
+ZN16VProfScopeHelperILi4ELb0EE29EnterScopeInternalBudgetFlagsEPKcR24VProfBudgetGroupCallSite
+ZN16VProfScopeHelperILi4ELb1EE18EnterScopeInternalEPKc
+ZN16VProfScopeHelperILi4ELb1EE29EnterScopeInternalBudgetFlagsEPKcR24VProfBudgetGroupCallSite
 ZN17CCallStackCapture7CaptureEPFiyPPviiEjj
 ZN17CCallStackCaptureC1EPFiyPPviiEjj
 ZN17CCallStackCaptureC2EPFiyPPviiEjj
@@ -5081,16 +5127,6 @@ ZN17CUtlInplaceBuffer17InplaceGetLinePtrEPPcPi
 ZN17CUtlInplaceBuffer17InplaceGetLinePtrEv
 ZN17CUtlInplaceBufferC1Eiii
 ZN17CUtlInplaceBufferC2Eiii
-ZN18CCountedStringPool15ReferenceStringEPKc
-ZN18CCountedStringPool17DereferenceStringEPKc
-ZN18CCountedStringPool17RestoreFromBufferER10CUtlBuffer
-ZN18CCountedStringPool21ReferenceStringHandleEPKc
-ZN18CCountedStringPool7FreeAllEv
-ZN18CCountedStringPoolC1E16StringPoolCase_t
-ZN18CCountedStringPoolC2E16StringPoolCase_t
-ZN18CCountedStringPoolD0Ev
-ZN18CCountedStringPoolD1Ev
-ZN18CCountedStringPoolD2Ev
 ZN18CGridStringPrinter15SetColumnHeaderEiPKc
 ZN18CGridStringPrinter17SetWordWrapColumnEibb
 ZN18CGridStringPrinter19SetUseHeaderDividerEb
@@ -5114,12 +5150,11 @@ ZN18CUtlCharConversionC1EcPKciPKNS_17ConversionArray_tE
 ZN18CUtlCharConversionC2EcPKciPKNS_17ConversionArray_tE
 ZN18CUtlMemoryPoolBase10AddNewBlobEv
 ZN18CUtlMemoryPoolBase13ClearDestructEPFvPvE
-ZN18CUtlMemoryPoolBase13InternalClearEPNS_5CBlobEPNS_10FreeList_tE
 ZN18CUtlMemoryPoolBase21ResetAllocationCountsEv
+ZN18CUtlMemoryPoolBase24IterateAllocationsUnsafeEPFvPvS0_ES0
 ZN18CUtlMemoryPoolBase4FreeEPv
 ZN18CUtlMemoryPoolBase4InitEiii20MemoryPoolGrowType_tPKc19MemAllocAttribute_t
 ZN18CUtlMemoryPoolBase5AllocEv
-ZN18CUtlMemoryPoolBase5ClearEv
 ZN18CUtlMemoryPoolBase9AllocZeroEv
 ZN18CUtlMemoryPoolBaseC1Eiii20MemoryPoolGrowType_tPKc19MemAllocAttribute_t
 ZN18CUtlMemoryPoolBaseC2Eiii20MemoryPoolGrowType_tPKc19MemAllocAttribute_t
@@ -5173,6 +5208,16 @@ ZN20CFormatStringElement12ParseElementEPKc
 ZN20CFormatStringElement18EnforceTypeAndSizeEPKcS1
 ZN20CFormatStringElementC1EPKc
 ZN20CFormatStringElementC2EPKc
+ZN21CCountedStringPool_CI15ReferenceStringEPKc
+ZN21CCountedStringPool_CI17DereferenceStringEPKc
+ZN21CCountedStringPool_CI17RestoreFromBufferER10CUtlBuffer
+ZN21CCountedStringPool_CI21ReferenceStringHandleEPKc
+ZN21CCountedStringPool_CI7FreeAllEv
+ZN21CCountedStringPool_CIC1Ev
+ZN21CCountedStringPool_CIC2Ev
+ZN21CCountedStringPool_CID0Ev
+ZN21CCountedStringPool_CID1Ev
+ZN21CCountedStringPool_CID2Ev
 ZN21CEventDispatcher_Base15IterateListenerERNS_23DelegateIterator_Base_tE
 ZN21CEventDispatcher_Base18FindInsertionPointERK10CUtlVectorINS_19EventListenerInfo_tEi10CUtlMemoryIS1_iEEi
 ZN21CEventDispatcher_Base20IterateListeners_EndERNS_23DelegateIterator_Base_tE
@@ -5460,19 +5505,24 @@ ZN9CVProfile11FreeNodes_REP10CVProfNode
 ZN9CVProfile12OutputReportEPKci
 ZN9CVProfile12OutputReportERK21VProfReportSettings_tPKci
 ZN9CVProfile13ResetCountersE14CounterGroup_t
+ZN9CVProfile14EnterScopeNodeEP10CVProfNode
 ZN9CVProfile15HideBudgetGroupEib
 ZN9CVProfile15SetOutputStreamEPFvPKczE
+ZN9CVProfile15s_pBudgetGroupsE
 ZN9CVProfile18AddBudgetGroupNameEPKci
 ZN9CVProfile18GenerateDataReportEP10CUtlVectorI21VProfDataReportItem_ti10CUtlMemoryIS1_iEE
 ZN9CVProfile18GetNumBudgetGroupsEv
 ZN9CVProfile19FindBudgetGroupNameEPKc
 ZN9CVProfile19FindOrCreateCounterEPKc14CounterGroup_t
 ZN9CVProfile19GetBudgetGroupColorEiRiS0_S0_S0
+ZN9CVProfile19s_nBudgetGroupNamesE
 ZN9CVProfile20AssignNextTimespanIdEv
+ZN9CVProfile21CheckInitBudgetGroupsEv
+ZN9CVProfile28s_nBudgetGroupNamesAllocatedE
 ZN9CVProfile30BudgetGroupNameToBudgetGroupIDEPKc
 ZN9CVProfile30BudgetGroupNameToBudgetGroupIDEPKci
 ZN9CVProfile30CalcBudgetGroupTimes_RecursiveEP10CVProfNodePjif
-ZN9CVProfile38RegisterNumBudgetGroupsChangedCallBackEPFvvE
+ZN9CVProfile31FindOrAddBudgetGroupAndAddFlagsER24VProfBudgetGroupCallSite
 ZN9CVProfile4TermEv
 ZN9CVProfile8FindNodeEP10CVProfNodePKc
 ZN9CVProfile8SumTimesEPK10CVProfNodeiR20CVProfSummingContext
@@ -5657,6 +5707,7 @@ ZN9__gnu_cxxeqIPcSsEEbRKNS_17__normal_iteratorIT_T0_EES7
 ZN9__gnu_cxxeqIPwNSt7__cxx1112basic_stringIwSt11char_traitsIwESaIwEEEEEbRKNS_17__normal_iteratorIT_T0_EESD
 ZN9__gnu_cxxeqIPwSbIwSt11char_traitsIwESaIwEEEEbRKNS_17__normal_iteratorIT_T0_EESB
 ZNK10CUtlString12DottedAppendEPKc
+ZNK10CUtlString13RemoveFromEndEPKcb
 ZNK10CUtlString13StripFilenameEv
 ZNK10CUtlString14MatchesPatternERKS_i
 ZNK10CUtlString14StripExtensionEv
@@ -5683,8 +5734,6 @@ ZNK10CUtlStringplEPKc
 ZNK10CUtlStringplERKS
 ZNK10CUtlStringplEi
 ZNK10CUtlSymbol8FormatToEP19IFormatOutputStream20CFormatStringElement
-ZNK10CVProfNode10GetSubNodeEPKciS1
-ZNK10CVProfNode10GetSubNodeEPKciS1_i
 ZNK10MD5Value_t6IsZeroEv
 ZNK10__cxxabiv117__class_type_info10__do_catchEPKSt9type_infoPPvj
 ZNK10__cxxabiv117__class_type_info11__do_upcastEPKS0_PKvRNS0_15__upcast_resultE
@@ -5697,7 +5746,6 @@ ZNK10__cxxabiv120__si_class_type_info20__do_find_public_srcElPKvPKNS_17__class_t
 ZNK10__cxxabiv121__vmi_class_type_info11__do_upcastEPKNS_17__class_type_infoEPKvRNS1_15__upcast_resultE
 ZNK10__cxxabiv121__vmi_class_type_info12__do_dyncastElNS_17__class_type_info10__sub_kindEPKS1_PKvS4_S6_RNS1_16__dyncast_resultE
 ZNK10__cxxabiv121__vmi_class_type_info20__do_find_public_srcElPKvPKNS_17__class_type_infoES2
-ZNK11CStringPool5CountEv
 ZNK12CMemoryStack13PrintContentsEv
 ZNK12CMemoryStack7GetSizeEv
 ZNK13CBufferString10StartsWithEPKc
@@ -5715,6 +5763,7 @@ ZNK13CVertexKDTree7NearestERK5Vec3DIfE
 ZNK14CStrAutoEncode12PopulateUTF8Ev
 ZNK14CStrAutoEncode13PopulateUTF16Ev
 ZNK14CStrAutoEncode13PopulateUTF32Ev
+ZNK14CStringPool_CI5CountEv
 ZNK15CKeyValues_Data15Internal_GetIntEv
 ZNK15CKeyValues_Data15Internal_GetPtrEv
 ZNK15CKeyValues_Data15ResolveIntValueEv
@@ -5750,12 +5799,6 @@ ZNK16CMiniDumpComment22GetAvailableBufferSizeEv
 ZNK16LoggingChannel_t6HasTagEPKc
 ZNK17CThreadLocalScope18IsLocalThreadScopeEv
 ZNK17CThreadSyncObjectntEv
-ZNK18CCountedStringPool10FindStringEPKc
-ZNK18CCountedStringPool11SpewStringsEv
-ZNK18CCountedStringPool12SaveToBufferER10CUtlBuffer
-ZNK18CCountedStringPool14HandleToStringEt
-ZNK18CCountedStringPool16FindStringHandleEPKc
-ZNK18CCountedStringPool4HashEPKc
 ZNK18CGridStringPrinter10NumColumnsEv
 ZNK18CGridStringPrinter10SimpleSpewEiPKc
 ZNK18CGridStringPrinter15GetColumnHeaderEi
@@ -5769,6 +5812,12 @@ ZNK19CModuleListSnapshot13GetNextModuleEPPKvPPKcPPvPm
 ZNK19IFormatOutputStream17RemainingCapacityEv
 ZNK19IFormatOutputStream6IsFullEv
 ZNK20CCallStackMarkerBase35TestMarkerAgainstCapturedStackIndexEPKPKvii
+ZNK21CCountedStringPool_CI10FindStringEPKc
+ZNK21CCountedStringPool_CI11SpewStringsEv
+ZNK21CCountedStringPool_CI12SaveToBufferER10CUtlBuffer
+ZNK21CCountedStringPool_CI14HandleToStringEt
+ZNK21CCountedStringPool_CI16FindStringHandleEPKc
+ZNK21CCountedStringPool_CI4HashEPKc
 ZNK21CUtlScratchMemoryPool12TotalMemFreeEv
 ZNK21CUtlScratchMemoryPool15AllocationCountEv
 ZNK21CUtlScratchMemoryPool20GetCurrentAllocPointEv
@@ -8802,6 +8851,7 @@ ZNSt8Catalogs6_M_addEPKcSt6locale
 ZNSt8Catalogs8_M_eraseEi
 ZNSt8CatalogsD1Ev
 ZNSt8CatalogsD2Ev
+ZNSt8_Rb_treeIPK10CVProfNodeSt4pairIKS2_dESt10_Select1stIS5_ESt4lessIS2_ESaIS5_EE17_M_emplace_uniqueIJS3_IS2_dEEEES3_ISt17_Rb_tree_iteratorIS5_EbEDpOT
 ZNSt8_Rb_treeIPKcSt4pairIKS1_yESt10_Select1stIS4_ESt4lessIS1_ESaIS4_EE17_M_emplace_uniqueIJS2_IS1_mEEEES2_ISt17_Rb_tree_iteratorIS4_EbEDpOT
 ZNSt8__detail15_List_node_base10_M_reverseEv
 ZNSt8__detail15_List_node_base11_M_transferEPS0_S1
@@ -10319,6 +10369,7 @@ dmg.bullets
 dmg.club
 dmg.explosive
 dmg.fire
+domain_value
 donotecho
 dss allocation precedence
 duplocale
@@ -10336,6 +10387,7 @@ eDamageOrDeath
 eDeath
 eGeneral
 eIDor
+eXA\A]A
 eacute
 ecirc
 edata_cache
@@ -10351,6 +10403,7 @@ empty_slabs
 enable_limit
 enabled
 encoding
+end_frame
 english
 entity_name
 environ
@@ -10391,11 +10444,11 @@ extents_muzzy
 extents_retained
 f %f %f %f
 fA98u
-fA9]6r
+fA9]&r
 fD9#u
 fD99u
 fD9|$8
-fD;)tjD
+fD;'t+H
 fE9 u
 faceMergeAngle
 failed to dlopen "%s" error=%s
@@ -10447,6 +10500,7 @@ func+child       func
 fxstat64
 g&yR?V
 g8D+g(A9
+gHD9kd~&Ic
 g_BitBuf_BitWriteMasks
 g_BitBuf_ExtraMasks
 g_BitStringEndMasks
@@ -10459,16 +10513,9 @@ g_VProfNodeSpikeReporting
 g_VProfSignalSpike
 g_bPlatCPUTicksAreReliable
 g_bUpdateStringTokenDatabase
-g_nMiniProfilerFrame
-g_nMiniProfilerGenericCounters
-g_pAssertMiniProfilers
 g_pFiberJobPool
-g_pGenericMicroProfilers
-g_pGlobalMiniProfilers
-g_pLastMiniProfiler
 g_pMemAlloc
 g_pPerfTraceDepot
-g_pRootMiniProfiler
 g_pScheduledFunctions
 g_pThreadPool
 game/bin
@@ -10556,6 +10603,7 @@ including user space up to 63 bits
 incorrect data check
 incorrect header check
 incorrect length check
+incremental_shapes
 init_array
 inset_bottom
 inset_left
@@ -10667,11 +10715,12 @@ l$0H;T$8trH
 l$0fE
 l;9ăB
 lambda
-lambdfD
+lambdf
 large
 last_sniff
 ld-linux-x86-64.so.2
 ldquo
+lerp_curve
 lg_san_uaf_align
 lg_tcache_max
 libc.so.6
@@ -10732,7 +10781,7 @@ lsquo
 lxstat64
 m4v&f
 m?H5p
-m[-BGFjE
+m[-BGFjD
 m_AllowedSurfaceProperties
 m_Arg0
 m_Arg0Name
@@ -10765,6 +10814,7 @@ m_DestInflowName
 m_DirectionSpace
 m_DisallowedSurfaceProperties
 m_DisplayName
+m_DomainValue
 m_EHandle
 m_Elements
 m_Emitters
@@ -10772,11 +10822,13 @@ m_EndEffectorBone
 m_EndEffectorTargetBone
 m_EntityNPC
 m_EntityTarget
+m_EventName
 m_ExpectedArg0Name
 m_ExpectedArg0Type
 m_ExpectedArg1Name
 m_ExpectedArg1Type
 m_ExpectedArgs
+m_ExpectedRuntimeType
 m_Expression
 m_FloatComponentX
 m_FloatComponentY
@@ -10811,6 +10863,8 @@ m_OnCanceled
 m_OnFailedToPerform
 m_OnFinished
 m_Operators
+m_OutflowDefs
+m_OutflowID
 m_Param
 m_ParamAbilityName
 m_ParamStopRadius
@@ -11112,6 +11166,7 @@ m_nFirstMultipleOverride_BackwardCompat
 m_nFogType
 m_nHand
 m_nHeadLocation
+m_nIncomingTangent
 m_nIncrement
 m_nLightType
 m_nLocalSpaceCP
@@ -11128,6 +11183,7 @@ m_nOpStrengthScaleSeed
 m_nOpTimeOffsetSeed
 m_nOpTimeScaleSeed
 m_nOrientationType
+m_nOutgoingTangent
 m_nOutputBlendMode
 m_nOutputField
 m_nOverrideCP
@@ -11197,6 +11253,7 @@ m_subtractInputConnection
 m_tagBehaviors
 m_tagID
 m_tags
+m_tangents
 m_transformInput
 m_useCurl
 m_vCPValueScale
@@ -11321,6 +11378,8 @@ modeldoc30
 modeldoc31
 modeldoc32
 modeldoc33
+modeldoc34
+modeldoc35
 modeldoc4
 modeldoc5
 modeldoc6
@@ -11508,6 +11567,8 @@ parse error
 particles
 pb>pAf
 pclose
+peak_frame
+peak_scale
 per_user
 percpu
 persistent
@@ -11591,7 +11652,6 @@ pthread_setaffinity_np
 pthread_setname_np
 pthread_setspecific
 pthread_sigmask
-pthread_yield
 ptr( 0x%p
 ptrace
 public/tier0/globallist.h
@@ -11613,7 +11673,8 @@ quaternion
 queue force advance
 queue max wait
 r M9q M
-r<H;5
+r9L;-2
+r<H;5E
 rT+6ZNw
 radius0
 radius1
@@ -11801,7 +11862,9 @@ stackstats
 stacktools.cpp
 stapsdt
 stapsdt.base
+start_frame
 start_resource_profiling
+start_scale
 static_cast
 statistics
 stats.active
@@ -11929,6 +11992,7 @@ strxfrm_l
 st~<zt
 subclass
 suppress
+suppressed_shapes
 surface_prop
 sw7rfB
 sweeps
@@ -11946,15 +12010,18 @@ sysinfo
 system
 szlig
 t$(tQL
-t$8A\H
 t$;0u D
 t$@IcT$8H
 t$HSATPL
 t$XAWPASL
 t$XSATPL
 t$`AWATASL
+t&L;5
 t'D; u
+t)L;5R
+t6<\t2H
 t7L3MȋM
+t=fD;s
 tAD8;u
 tAE99L
 tKATUH
@@ -11962,16 +12029,19 @@ tRUE1
 tWAVAUATI
 tZLck H
 t[ATUH
+t[LcL
 t`LcL
 table: %u members
 tableLog requires too much memory : unsupported
+taf;0u\fD
+tail_frame
+tcLcL
 tcache_bytes
 tcache_list
 tcache_ql
 tcache_stashed_bytes
 tcaches
 tdata
-tef;0u`fD
 temp_unserialization_member
 template parameter object for
 terminate called after throwing an instance of
@@ -12001,7 +12071,6 @@ to@:1t
 too many length or distance symbols
 tools
 tools_stall_monitor_break_on_unknown_cause
-tor fD
 total
 total_wait_ns
 total_wait_time
@@ -12013,9 +12082,7 @@ transform
 trust_madvise
 tsd_nominal_tsds_lock
 tt<\u
-tu<+u
 turn_rate
-txfD;i
 tyM9<$u
 type info for
 type info name for
@@ -12079,6 +12146,7 @@ utlobjectregistry.cpp
 utlstringtokensystem.cpp
 uuid_generate
 uuids
+uvHcG
 uxHcG
 uȋS,9U
 vARr5U)e
@@ -12156,6 +12224,8 @@ vprof.cpp
 vpulse
 vpulse1
 vpulse10
+vpulse11
+vpulse12
 vpulse2
 vpulse3
 vpulse4
@@ -12173,6 +12243,7 @@ w <Xt|<hu7H
 w+OQvr
 wBH9E
 waitpid
+wakeup job
 warning
 warning : ZSTD_compressBegin_usingCDict failed
 warning : could not compress sample size %u

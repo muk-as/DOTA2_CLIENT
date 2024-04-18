@@ -409,6 +409,7 @@
 @define diretideFont: Creepster,Valve Radus,Radiance,FZKai-Z03,TH Sarabun New,YDYGO 540;
 @define diretideFontX: UnifrakturCook,Valve Radus,Radiance,FZKai-Z03,TH Sarabun New,YDYGO 540;
 @define diretideFontXX: Grenze,Valve Radus,Radiance,FZKai-Z03,TH Sarabun New,YDYGO 540;
+@define comicFont: Bangers,Radiance,FZLanTingHei-R-GBK,TH Sarabun New,YDYGO 540,Gulim,MingLiU;
 Label,TextEntry
 {
 	font-family: defaultFont;
@@ -6316,7 +6317,7 @@ DOTAEventCrestImage.Quality2
 	color: white;
 	font-size: 16px;
 	line-height: 20px;
-	opacity: 0.6;
+	opacity: 0.8;
 	color: white;
 	text-align: center;
 	horizontal-align: center;
@@ -6345,7 +6346,7 @@ DOTAEventCrestImage.Quality2
 
 .ButtonPrimary Image
 {
-	img-shadow: 0px 2px 8px rgba(0, 0, 0, 0.3);
+	img-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3);
 	wash-color: LightestGrey;
 }
 
@@ -6645,6 +6646,11 @@ DOTAEventCrestImage.Quality2
 .ButtonPrimary.Disabled Label,.ButtonPrimary:disabled Label
 {
 	opacity: 1;
+}
+
+.StoreItem.StoreItemArcana .ButtonPrimary
+{
+	height: 42px;
 }
 
 .IconButton
@@ -6981,6 +6987,113 @@ DOTAEventCrestImage.Quality2
 DOTAEmoticon
 {
 	texture-sampling: point;
+}
+
+@keyframes 'arrowprogressbar_arrow_scroll_right'
+{
+	0%
+	{
+		transform: translateX(-8px);
+	}
+	
+	100%
+	{
+		transform: translateX(0px);
+	}
+	
+}
+
+@keyframes 'arrowprogressbar_arrow_scroll_left'
+{
+	0%
+	{
+		transform: translateX(0px);
+	}
+	
+	100%
+	{
+		transform: translateX(-8px);
+	}
+	
+}
+
+ProgressBarWithMiddle.AnimatedArrowProgressBar
+{
+	height: 25px;
+	border: 3px solid #111617;
+	padding: -2px;
+	border-radius: 3px;
+	background-color: #3E464A;
+}
+
+ProgressBarWithMiddle.AnimatedArrowProgressBar .ProgressBarLeft
+{
+	border-radius: 2px;
+	border: 2px solid black;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #EFF2FA ), to( #BFCBE7 ) );
+	transition-property: position,width;
+	transition-duration: 0.2s;
+	transition-timing-function: ease-out;
+}
+
+ProgressBarWithMiddle.AnimatedArrowProgressBar .ProgressBarMiddle
+{
+	padding-left: -2px;
+	padding-right: -2px;
+	overflow: noclip;
+	flow-children: right;
+	transition-property: position,width;
+	transition-duration: 0.2s;
+	transition-timing-function: ease-out;
+}
+
+ProgressBarWithMiddle.AnimatedArrowProgressBar .ProgressBarMiddle .ProgressBarMiddleContent
+{
+	width: fill-parent-flow(1.0);
+	height: 100%;
+	max-width: 300px;
+	max-height: 50px;
+	transition-property: background-color;
+	transition-duration: 0.2s;
+	transition-timing-function: ease-out;
+	background-color: gradient( linear, 0% 100%, 0% 0%, from( #AFDF8F ), to( #6BCB6B ) );
+	border-radius: 2px;
+	border: 2px solid black;
+	overflow: clip;
+}
+
+ProgressBarWithMiddle.AnimatedArrowProgressBar .ProgressBarMiddle .ProgressBarMiddleScroll
+{
+	width: 350px;
+	height: 100%;
+	background-image: url("s2r://panorama/images/control_icons/arrow_solid_right_png.vtex");
+	background-size: 10px 14px;
+	background-repeat: repeat no-repeat;
+	background-position: 50% 25%;
+	opacity: 0.4;
+	wash-color: #d0ffd0;
+	animation-name: arrowprogressbar_arrow_scroll_right;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-duration: 0.3s;
+}
+
+ProgressBarWithMiddle.AnimatedArrowProgressBar .ProgressBarRight
+{
+	background-color: #00000000;
+}
+
+ProgressBarWithMiddle.AnimatedArrowProgressBar.ScrollLeft .ProgressBarMiddle .ProgressBarMiddleContent
+{
+	background-color: gradient( linear, 0% 100%, 0% 0%, from( #813403 ), to( #DD3C1C ) );
+}
+
+ProgressBarWithMiddle.AnimatedArrowProgressBar.ScrollLeft .ProgressBarMiddle .ProgressBarMiddleScroll
+{
+	background-image: url("s2r://panorama/images/control_icons/arrow_solid_left_png.vtex");
+	animation-name: arrowprogressbar_arrow_scroll_left;
+	opacity: 0.35;
+	wash-color: #ff9090;
 }
 
 .IsSteamChina .HideForSteamChina

@@ -1,0 +1,655 @@
+/* Prettified by Source 2 Viewer 0.0.0.0 - https://valveresourceformat.github.io */
+
+@import url("s2r://panorama/styles/battle_pass/crownfall/bp_crownfall_shared.vcss_c");
+@define CrownfallProgressFadeTime: 0.25s;
+.CrownfallProgress
+{
+	color: gradient( linear, 0% 100%, 0% 0%, from( #a6e5e8 ), to( #24addf ) );
+	color: highlightGradient;
+	font-weight: bold;
+}
+
+.BackgroundImageContainer
+{
+	background-image: url("s2r://panorama/images/events/crownfall/backgrounds/bg_png.vtex");
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	opacity: 0.3;
+}
+
+.BackgroundImageContainer .BackgroundTexture
+{
+	opacity-mask: url("s2r://panorama/images/events/crownfall/masks/texture_mask_png.vtex");
+	background-image: url("s2r://panorama/images/events/crownfall/backgrounds/the_eyrie_hero_art_png.vtex");
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	opacity: 0.5;
+	opacity-mask-position: 0% -20%;
+	-s2-mix-blend-mode: screen;
+	wash-color: rgba(8, 0, 255, 0.6);
+}
+
+.SmokeFX
+{
+	width: 100%;
+	height: 100%;
+	horizontal-align: center;
+}
+
+.SmokeFX.Bottom
+{
+	vertical-align: bottom;
+	transform: translateY( 200px );
+	wash-color: rgb(54, 79, 128);
+}
+
+.BottomGradient
+{
+	vertical-align: bottom;
+	width: 100%;
+	height: 340px;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #00000000 ), to( #000000 ) );
+}
+
+#CrownfallProgressMain
+{
+	width: 1000px;
+	horizontal-align: center;
+	overflow: noclip;
+	margin-top: 60px;
+	flow-children: down;
+	transform: translateY( 48px );
+	transition-property: transform;
+	transition-duration: 0.6s;
+	transition-timing-function: cubic-bezier(0, 1, 0, 1);
+}
+
+.ShowCandyworks #CrownfallProgressMain
+{
+	transform: translateY( 0px );
+}
+
+#CrownfallProgressMain #CrownfallProgressTitle
+{
+	horizontal-align: center;
+	flow-children: right;
+	transition-property: opacity, transform;
+	transition-duration: 0.6s;
+	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
+	opacity: 0;
+	transform: scale3d( 0.8, 0.8, 1 );
+}
+
+#CrownfallProgressMain #CrownfallProgressTitle .CrownfallLogo
+{
+	width: 560px;
+	margin-bottom: -24px;
+	height: width-percentage(50%);
+	vertical-align: middle;
+}
+
+#CrownfallProgressMain #CrownfallProgressTitle.ShowLogo
+{
+	opacity: 1;
+	transform: none;
+}
+
+#CrownfallProgressMain .Dash
+{
+	opacity: 0.4;
+}
+
+#CrownfallProgressMain #CrownfallProgressRewards
+{
+	flow-children: down;
+	horizontal-align: center;
+	width: 100%;
+	height: fit-children;
+	margin: -24px 0px 0px;
+	padding-top: 24px;
+	border-top: 1px solid white;
+	border-brush: gradient( linear, 0% 0%, 100% 0%, from( rgba(255, 255, 255, 0) ), color-stop( 0.3, #BA8C47 ), color-stop( 0.5, #ebc386 ), color-stop( 0.7, #BA8C47 ), to( rgba(255, 255, 255, 0) ) );
+	background-color: gradient( radial, 50% 0%, 0% 0%, 50% 80%, from( rgba(60, 93, 134, 0.4) ), to( gold3&00 ) );
+	opacity: 0;
+	transform: translateY( 24px );
+	transition-property: opacity, transform;
+	transition-duration: 0.6s;
+	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
+}
+
+#CrownfallProgressMain #CrownfallProgressRewards.ShowRewards
+{
+	opacity: 1;
+	transform: none;
+}
+
+#CrownfallProgressMain #CrownfallProgressRewards .WinText,#CrownfallProgressMain #CrownfallProgressRewards .LossText
+{
+	font-size: 24px;
+	line-height: 1.3;
+	font-family: reaver;
+	letter-spacing: -0.2px;
+	color: LightestGrey;
+	text-shadow: 0px 3px 12px black;
+	width: 540px;
+	text-align: center;
+	margin: -2px 0px -20px;
+	opacity: 0.9;
+}
+
+#CrownfallProgressMain #CrownfallProgressRewards .WinText
+{
+	visibility: collapse;
+}
+
+.DidWin #CrownfallProgressMain #CrownfallProgressRewards .WinText
+{
+	visibility: visible;
+}
+
+#CrownfallProgressMain #CrownfallProgressRewards .LossText
+{
+	visibility: visible;
+}
+
+.DidWin #CrownfallProgressMain #CrownfallProgressRewards .LossText
+{
+	visibility: collapse;
+}
+
+#CrownfallProgressMain #CrownfallProgressRewards .DashDotDivider .ActText
+{
+	margin: 0px 16px;
+	horizontal-align: center;
+	color: gradient( linear, 0% 35%, 0% 100%, from( #FFF2DF ), color-stop( 0.48, #ebc386 ), color-stop( 0.52, #BA8C47 ), to( #8d6c3a ) );
+	text-shadow: 0px 4px 12px rgba(0, 0, 0, 0.548);
+}
+
+#CrownfallProgressMain #CrownfallProgressRewards .ActText
+{
+	horizontal-align: center;
+	color: gradient( linear, 0% 35%, 0% 100%, from( #FFF2DF ), color-stop( 0.48, #ebc386 ), color-stop( 0.52, #BA8C47 ), to( #8d6c3a ) );
+	text-shadow: 0px 4px 12px rgba(0, 0, 0, 0.548);
+	font-size: 44px;
+}
+
+#CrownfallProgressMain #CrownfallProgressRewards .CrownfallTokenList
+{
+	horizontal-align: center;
+	flow-children: right;
+	overflow: noclip;
+}
+
+#CrownfallProgressMain #CrownfallProgressRewards .CrownfallTokenList.HighlightTokenReceived .CrownfallTokenContainer DOTACrownfallToken
+{
+	transform: scale3d( 0.8, 0.8, 1);
+	opacity: 0.6;
+}
+
+#CrownfallProgressMain #CrownfallProgressRewards .CrownfallTokenList.HighlightTokenReceived .CrownfallTokenContainer:not(.Empty)
+{
+	animation-name: PulseProgressAvailableLabel;
+	animation-duration: 0.8s;
+	animation-direction: alternate;
+	animation-iteration-count: infinite;
+}
+
+#CrownfallProgressMain #CrownfallProgressRewards .CrownfallTokenList.HighlightTokenReceived .CrownfallTokenContainer:not(.Empty) DOTACrownfallToken
+{
+	animation-name: PulseHighlightedToken;
+	animation-duration: 0.3s;
+	animation-iteration-count: 2;
+	transform: none;
+	opacity: 1;
+}
+
+#CrownfallProgressMain #CrownfallProgressRewards .CrownfallTokenList.HighlightTokenReceived .CrownfallTokenContainer:not(.Empty) .TokenParticles
+{
+	visibility: visible;
+	opacity: 1;
+	transform: none;
+}
+
+#CrownfallProgressMain #CrownfallProgressRewards .CrownfallTokenList.HighlightTokenReceived .CrownfallTokenContainer:not(.Empty) .TokenBurstParticles
+{
+	visibility: visible;
+}
+
+#CrownfallProgressMain #CrownfallProgressRewards .CrownfallTokenList.HighlightTokenReceived .CrownfallTokenContainer:not(.Empty) .TokenName
+{
+	color: rgba(255, 255, 255, 0.941);
+}
+
+#CrownfallProgressMain #CrownfallProgressRewards .CrownfallTokenList .CrownfallTokenContainer
+{
+	flow-children: down;
+	opacity: 0;
+	margin: -40px -60px;
+	transition-property: opacity;
+	transition-duration: 0.3s;
+	transition-timing-function: ease-in;
+}
+
+#CrownfallProgressMain #CrownfallProgressRewards .CrownfallTokenList .CrownfallTokenContainer.ShowToken
+{
+	opacity: 1;
+}
+
+#CrownfallProgressMain #CrownfallProgressRewards .CrownfallTokenList .CrownfallTokenContainer DOTACrownfallToken
+{
+	ui-scale: 320%;
+	margin: 32px;
+	transform: scale3d( 0.9, 0.9, 1);
+	transition-property: opacity, transform;
+	transition-duration: 1s;
+	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
+}
+
+#CrownfallProgressMain #CrownfallProgressRewards .CrownfallTokenList .CrownfallTokenContainer .TokenName
+{
+	font-family: titleFont;
+	color: LightGrey;
+	text-shadow: 0px 2px 8px black;
+	font-size: 20px;
+	horizontal-align: center;
+	margin-top: -68px;
+	transition-property: color;
+	transition-duration: 0.3s;
+}
+
+#CrownfallProgressMain #CrownfallProgressRewards .CrownfallTokenList .CrownfallTokenContainer .TokenCount
+{
+	font-size: 30px;
+	horizontal-align: center;
+}
+
+#CrownfallProgressMain #CrownfallProgressRewards .CrownfallTokenList .CrownfallTokenContainer .TokenParticles
+{
+	width: 150%;
+	height: 180%;
+	horizontal-align: center;
+	vertical-align: center;
+	ignore-parent-flow: true;
+	opacity-mask: url("s2r://panorama/images/masks/sun_burst_png.vtex");
+	brightness: 2;
+	hue-rotation: 100deg;
+	transition-property: opacity, transform;
+	transition-duration: 1s;
+	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
+	opacity: 0;
+	transform: scale3d( 0.5, 0.5, 1 );
+	visibility: collapse;
+}
+
+#CrownfallProgressMain #CrownfallProgressRewards .CrownfallTokenList .CrownfallTokenContainer .TokenBurstParticles
+{
+	width: 150%;
+	height: 180%;
+	horizontal-align: center;
+	vertical-align: center;
+	ignore-parent-flow: true;
+	brightness: 2;
+	hue-rotation: 100deg;
+	transition-property: opacity;
+	transition-duration: 1s;
+	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
+	opacity: 0;
+	visibility: collapse;
+}
+
+#CrownfallProgressMain #CrownfallProgressRewards .CrownfallTokenList .CrownfallTokenContainer.Empty
+{
+	brightness: 0.2;
+	saturation: 0.4;
+}
+
+#CrownfallProgressMain #CrownfallProgressRewards #OverworldClaimable
+{
+	flow-children: right;
+	horizontal-align: center;
+	visibility: collapse;
+	padding: 4px 80px 0px;
+	margin: 32px 0px 0px;
+	border-top: 1px solid gold3&22;
+	border-brush: gradient( linear, 0% 0%, 100% 0%, from( rgba(255, 255, 255, 0) ), color-stop( 0.2, rgba(255, 255, 255, 0.5) ), color-stop( 0.5, rgba(255, 255, 255, 1) ), color-stop( 0.8, rgba(255, 255, 255, 0.5) ), to( rgba(255, 255, 255, 0) ) );
+	background-color: gradient( radial, 50% 0%, 0% 0%, 40% 100%, from( gold2&08 ), to( gold3&00 ) );
+	opacity: 0;
+	transform: scale3d( 2.8, 2.8, 1 );
+	transition-property: transform, opacity;
+	transition-duration: 0.4s;
+	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
+}
+
+#CrownfallProgressMain #CrownfallProgressRewards #OverworldClaimable .Emblem
+{
+	width: 40px;
+	height: width-percentage( 100% );
+	vertical-align: center;
+	opacity: 0;
+	transform: translateX( 120px );
+	transition-property: opacity, transform;
+	transition-duration: 0.4s;
+	transition-delay: 0.4s;
+	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
+}
+
+#CrownfallProgressMain #CrownfallProgressRewards #OverworldClaimable .Emblem.Right
+{
+	transform: translateX( 80px ) scaleX( -1 );
+}
+
+#CrownfallProgressMain #CrownfallProgressRewards #OverworldClaimable.claimable
+{
+	visibility: visible;
+}
+
+#CrownfallProgressMain #CrownfallProgressRewards #OverworldClaimable.ShowProgressAvailable
+{
+	transform: none;
+	opacity: 1;
+}
+
+#CrownfallProgressMain #CrownfallProgressRewards #OverworldClaimable.ShowProgressAvailable Label
+{
+	opacity: 1;
+	animation-name: PulseProgressAvailableLabel;
+	animation-duration: 0.8s;
+	animation-direction: alternate;
+	animation-iteration-count: infinite;
+}
+
+#CrownfallProgressMain #CrownfallProgressRewards #OverworldClaimable.ShowProgressAvailable .Emblem
+{
+	opacity: 1;
+	transform: none;
+}
+
+#CrownfallProgressMain #CrownfallProgressRewards #OverworldClaimable.ShowProgressAvailable .Emblem.Right
+{
+	transform: scaleX( -1 );
+}
+
+#CrownfallProgressMain #CrownfallProgressRewards #OverworldClaimable Label
+{
+	vertical-align: center;
+	font-size: 16px;
+	font-weight: semi-bold;
+	color: LightestGrey;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	padding: 8px;
+	opacity: 0;
+	transition-property: opacity;
+	transition-duration: 0.4s;
+	transition-delay: 0.6s;
+}
+
+#CrownfallProgressMain .CrownfallProgressCandy
+{
+	flow-children: down;
+	horizontal-align: center;
+	width: 100%;
+	margin-top: 16px;
+	transition-property: opacity, transform;
+	transition-duration: 0.5s;
+	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
+	opacity: 0;
+	transform: translateY( 24px );
+}
+
+.ShowCandyworks #CrownfallProgressMain .CrownfallProgressCandy
+{
+	opacity: 1;
+	transform: none;
+}
+
+#CrownfallProgressMain .CrownfallProgressCandy .DashDotDivider
+{
+	width: 80%;
+}
+
+#CrownfallProgressMain .CrownfallProgressCandy .DashDotDivider .Dash
+{
+	opacity: 0.2;
+}
+
+#CrownfallProgressMain .CrownfallProgressCandy .DashDotDivider .ShortcutBackground,#CrownfallProgressMain .CrownfallProgressCandy .DashDotDivider .ShortcutBackgroundInner
+{
+	width: 80px;
+	height: width-percentage( 100% );
+	horizontal-align: center;
+	vertical-align: center;
+	transition-property: brightness, wash-color;
+	transition-duration: 0.1s;
+}
+
+#CrownfallProgressMain .CrownfallProgressCandy .DashDotDivider .ShortcutBackgroundInner
+{
+	wash-color: #32404f;
+}
+
+#CrownfallProgressMain .CrownfallProgressCandy .DashDotDivider .ShortcutIcon
+{
+	width: 24px;
+	height: width-percentage( 100% );
+	horizontal-align: center;
+	vertical-align: center;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( gold1 ), to( gold3 ) );
+	opacity-mask: url("s2r://panorama/images/events/crownfall/overworld/nodes/icons/encounter_candy_png.vtex");
+}
+
+#CrownfallProgressMain .CrownfallProgressCandy .Title
+{
+	horizontal-align: center;
+	color: gradient( linear, 0% 35%, 0% 100%, from( #FFF2DF ), color-stop( 0.48, #ebc386 ), color-stop( 0.52, #BA8C47 ), to( #8d6c3a ) );
+	margin: 4px 0px;
+	font-size: 20px;
+}
+
+#CrownfallProgressMain .CrownfallProgressCandy #CrownfallRerollProgress
+{
+	flow-children: right;
+	horizontal-align: center;
+	padding: 6px 0px 12px;
+}
+
+#CrownfallProgressMain .CrownfallProgressCandy #CrownfallRerollProgress .CrownfallRerollIcon
+{
+	width: 40px;
+	height: 40px;
+	margin: 0px -2px;
+	background-color: LighterGrey;
+	opacity-mask: url("s2r://panorama/images/events/crownfall/control_icons/reroll_crownfall_png.vtex");
+	transform: scaleX( 0.7 ) scaleY( 0.7 );
+	opacity-brush: gradient( linear, 0% 0%, 100% 100%, from( #fefefeff ), color-stop(0.0,#fefefeff), color-stop(0.0,#555555ff), to( #555555ff ) );
+}
+
+#CrownfallProgressMain .CrownfallProgressCandy #CrownfallRerollProgress .CrownfallRerollIcon.TransitionsEnabled
+{
+	transition-property: transform, opacity-brush;
+	transition-duration: 0.3s, 0.3s;
+	transition-timing-function: ease-out, ease-out;
+}
+
+#CrownfallProgressMain .CrownfallProgressCandy #CrownfallRerollProgress .CrownfallRerollIcon.RerollHalfActive
+{
+	opacity-brush: gradient( linear, 0% 0%, 100% 0%, from( #fefefeff ), color-stop(0.5,#fefefeff), color-stop(0.5,#555555ff), to( #555555ff ) );
+}
+
+#CrownfallProgressMain .CrownfallProgressCandy #CrownfallRerollProgress .CrownfallRerollIcon.RerollActive
+{
+	opacity-brush: gradient( linear, 0% 0%, 100% 0%, from( #fefefeff ), color-stop(1.0,#fefefeff), color-stop(1.0,#555555ff), to( #555555ff ) );
+}
+
+#CrownfallProgressMain .CrownfallProgressCandy #CrownfallRerollProgress .CrownfallRerollIcon.RerollHighlightNew
+{
+	transform: none;
+	margin: 0px 2px;
+	background-color: gradient( linear, 0% 10%, 0% 90%, from( #FFF2DF ), color-stop( 0.48, #ebc386 ), color-stop( 0.52, #BA8C47 ), to( #8d6c3a ) );
+}
+
+#CrownfallProgressMain .CrownfallProgressCandy .RerollProgressLabel
+{
+	font-size: 16px;
+	color: LighterGrey;
+	vertical-align: center;
+	opacity: 0.6;
+	text-shadow: 0px 2px 8px black;
+}
+
+#CrownfallProgressMain .CrownfallProgressCandy .RerollTurboHalfIcon
+{
+	width: 25px;
+	height: 25px;
+	background-image: url("s2r://panorama/images/control_icons/wagertoken_psd.vtex");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	vertical-align: center;
+}
+
+#CrownfallProgressMain .CrownfallProgressCandy .RerollTurboHalfReward
+{
+	font-size: 18px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	vertical-align: center;
+}
+
+@keyframes 'PulseProgressAvailable'
+{
+	0%
+	{
+		transform: scale3d( 1, 1, 1 );
+	}
+	
+	15%
+	{
+		transform: scale3d( 1.1, 1.1, 1 );
+	}
+	
+	30%
+	{
+		transform: scale3d( 1, 1, 1 );
+	}
+	
+	45%
+	{
+		transform: scale3d( 1.1, 1.1, 1 );
+	}
+	
+	0%
+	{
+		transform: scale3d( 1, 1, 1 );
+	}
+	
+}
+
+@keyframes 'PulseProgressAvailableLabel'
+{
+	0%
+	{
+		text-shadow: 0px 0px 12px gold1&00;
+		brightness: 1;
+	}
+	
+	100%
+	{
+		text-shadow: 0px 0px 16px gold2&44;
+		brightness: 1.5;
+	}
+	
+}
+
+@keyframes 'PulseHighlightedToken'
+{
+	0%
+	{
+		transform: scale3d( 1, 1, 1 );
+	}
+	
+	50%
+	{
+		transform: scale3d( 1.15, 1.15, 1 );
+		brightness: 2;
+	}
+	
+	0%
+	{
+		transform: scale3d( 1, 1, 1 );
+	}
+	
+}
+
+.CrownfallWeeklyProgress
+{
+	flow-children: right;
+	horizontal-align: center;
+	max-width: 500px;
+	visibility: collapse;
+	opacity: 0;
+	transition-property: opacity;
+	transition-duration: 0.5s;
+	transition-timing-function: ease-in-out;
+}
+
+.CrownfallWeeklyProgress .WeeklyProgressCap
+{
+	flow-children: down;
+	background-color: #0008;
+	border: 3px solid #555;
+	border-radius: 3px;
+	padding: 5px;
+	min-width: 400px;
+}
+
+.CrownfallWeeklyProgress .WeeklyProgressCap .RerollCapText
+{
+	font-size: 16px;
+	horizontal-align: center;
+	text-align: center;
+	text-overflow: shrink;
+}
+
+.WeeklyResourceRemaining .CrownfallWeeklyProgress.Active,.WeeklyResourceExhausted .CrownfallWeeklyProgress.Complete,.RerollsCapped .CrownfallWeeklyProgress.Capped,.CandyworksLocked.WeeklyResourceExhausted .CrownfallWeeklyProgress.LockedShop,.CandyworksLocked.WeeklyResourceRemaining:not(.RerollsCapped) .CrownfallWeeklyProgress.LockedShop
+{
+	visibility: visible;
+	opacity: 1;
+}
+
+.RerollCapUnlockedShop
+{
+	visibility: visible;
+}
+
+.CandyworksLocked .RerollCapUnlockedShop
+{
+	visibility: collapse;
+}
+
+.RerollCapLockedShop
+{
+	visibility: collapse;
+}
+
+.CandyworksLocked .RerollCapLockedShop
+{
+	visibility: visible;
+}
+
+@keyframes 'GlowText'
+{
+	0%
+	{
+		brightness: 0.7;
+	}
+	
+	100%
+	{
+		brightness: 1.2;
+	}
+	
+}
+

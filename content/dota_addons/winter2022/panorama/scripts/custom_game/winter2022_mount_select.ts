@@ -1,4 +1,4 @@
-/// <reference path="../../../../../dota/panorama/scripts/dota.d.ts" />
+/// <reference path="../winter2022.d.ts" />
 /// <reference path="winter2022_shared.ts" />
 
 type MountChoices_t = { [index: string]: string; };
