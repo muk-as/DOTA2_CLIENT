@@ -915,6 +915,7 @@
 13CNetMessagePBILi806E27CDOTAClientMsg_AbilityAlertL13SignonGroup_t14EL19NetChannelBufType_t1ELb1EE
 13CNetMessagePBILi807E25CDOTAClientMsg_GiftPlayerL13SignonGroup_t14EL19NetChannelBufType_t1ELb1EE
 13CNetMessagePBILi808E27CDOTAClientMsg_GiftEveryoneL13SignonGroup_t14EL19NetChannelBufType_t1ELb1EE
+13CNetMessagePBILi809E42CDOTAClientMsg_SelectOverworldTokenRewardsL13SignonGroup_t14EL19NetChannelBufType_t1ELb1EE
 13CNoClipCamera
 13CPortraitData
 13CSVCMsg_Print
@@ -1618,6 +1619,7 @@
 16CClientMessagePBILi806E27CDOTAClientMsg_AbilityAlertL19NetChannelBufType_t1EE
 16CClientMessagePBILi807E25CDOTAClientMsg_GiftPlayerL19NetChannelBufType_t1EE
 16CClientMessagePBILi808E27CDOTAClientMsg_GiftEveryoneL19NetChannelBufType_t1EE
+16CClientMessagePBILi809E42CDOTAClientMsg_SelectOverworldTokenRewardsL19NetChannelBufType_t1EE
 16CClientThinkList
 16CClientToolsInfo
 16CComicBookSchema
@@ -14110,6 +14112,7 @@
 4$HcÉU
 4$Lck(L
 4(D9spt
+4(D;5byY
 4(HcB
 4(Optional) Sorting method to use on returned values
 4(fD;&tKH
@@ -14747,6 +14750,7 @@
 4294967295B
 42CDOTAClientMsg_BroadcasterUsingCameraman_t
 42CDOTAClientMsg_HelpTipSystemStateChanged_t
+42CDOTAClientMsg_SelectOverworldTokenRewards
 42CDOTAMatchMetadata_Team_StrangeGemProgress
 42CDOTAPatchNotesTypeManagerHookupGameSystem
 42CDOTASaveGame_SaveInstance_PlayerPositions
@@ -15353,6 +15357,7 @@
 44CBaseSerializerMatchToMetaReplayCompatHelper
 44CDOTABroadcastMsg_LANLobbyReply_CLobbyMember
 44CDOTAClientMsg_AddCommunicationsReportMarker
+44CDOTAClientMsg_SelectOverworldTokenRewards_t
 44CDOTAMatchMetadata_Team_PeriodicResourceData
 44CDOTAVisualNovelsTypeManagerHookupGameSystem
 44CDOTA_Ability_AghsFort_Ascension_PlasmaField
@@ -22779,6 +22784,8 @@ CDOTAClientMsg_SalutePlayer
 CDOTAClientMsg_SalutePlayer_t
 CDOTAClientMsg_SearchString
 CDOTAClientMsg_SearchString_t
+CDOTAClientMsg_SelectOverworldTokenRewards
+CDOTAClientMsg_SelectOverworldTokenRewards_t
 CDOTAClientMsg_SendStatPopup
 CDOTAClientMsg_SendStatPopup_t
 CDOTAClientMsg_SetCavernMapVariant
@@ -36215,6 +36222,7 @@ D$tI;D$ t+H9
 D$tu;I
 D$xA9D$t
 D$xH	D$@H	l$8H
+D$xdH3
 D$xt)I9|$0t"I9|$@t
 D$xtyH
 D+M P1
@@ -36262,8 +36270,9 @@ D9't3H
 D9't:H
 D9(t8D
 D90tkD
-D95b;G
-D95m<G
+D95B5G
+D95EH
+D95M6G
 D98tKL
 D98t^D
 D98tdL
@@ -36314,7 +36323,7 @@ D9{du	9Ch
 D:/generated_set_portraits.txt
 D:o8t
 D; t.L
-D;%X7
+D;%81
 D;(tHA
 D;)te;E
 D;,$rP1
@@ -41413,6 +41422,7 @@ DOTA_CM_RequestItemSuggestions
 DOTA_CM_RollDice
 DOTA_CM_SalutePlayer
 DOTA_CM_SearchString
+DOTA_CM_SelectOverworldTokenRewards
 DOTA_CM_SendStatPopup
 DOTA_CM_SetCavernMapVariant
 DOTA_CM_SetDesiredWardPlacement
@@ -51839,20 +51849,17 @@ H;2s&H
 H;2t-H
 H;2t?sDI9
 H;:t7r
-H;=5nI
-H;=64
-H;=6Gu
-H;=6fy
-H;=AFN
-H;=CEF
-H;=F0w
-H;=V v
-H;=V3
-H;=VGy
-H;=Vnw
-H;=WVI
-H;=aCF
-H;=jaF
+H;=3vI
+H;=60
+H;=6Ju
+H;=6Sy
+H;=6ou
+H;=Fn
+H;=ebH
+H;=lPN
+H;=vau
+H;=vxv
+H;=vzy
 H;@XtJH
 H;D$pH
 H;E0sR
@@ -52509,8 +52516,7 @@ HavePlayersLastWeek
 Hazhadal
 Hc+HcC
 Hc0A;t
-Hc5#9M
-Hc5<4M
+Hc5_FM
 Hc@(E1
 Hc@8M
 Hc@LHk
@@ -52544,6 +52550,7 @@ HcG@H
 HcGHD9
 HcK H9
 HcK Ic
+HcK(A9
 HcK(Ic
 HcK0Ic
 HcK8Ic
@@ -53303,6 +53310,7 @@ I96v3I
 I96v;I
 I9<$vB
 I9<$vJ
+I9@(tJA
 I9D$(t
 I9D$pt
 I9V(u51
@@ -53515,7 +53523,6 @@ IcD$ A9
 IcD$ A;D$0
 IcD$ H
 IcD$ I
-IcD$ L
 IcD$(1
 IcD$(H
 IcD$(L
@@ -53539,9 +53546,11 @@ IcD$PL
 IcD$PM
 IcD$X1
 IcD$X9
+IcD$XH
 IcD$XM
 IcD$`1
 IcD$`A
+IcD$`H
 IcD$`I
 IcD$`M
 IcD$h1
@@ -53591,7 +53600,6 @@ IcMPIc
 IcMxIc
 IcN H9
 IcN Ic
-IcN(Ic
 IcN8Ic
 IcN@A;NP
 IcN@Ic
@@ -55064,7 +55072,6 @@ KICKED_FROM_QUEUE_EVENT_ENDING
 KICKED_FROM_QUEUE_EVENT_STARTING
 KICKED_FROM_TEAM
 KIcOXIc
-KMc&M
 KMeans
 KPA;Klt
 KV3 save transfer failed: %s
@@ -55188,7 +55195,7 @@ L&&jL&&jl66Zl66Z~??A~??A
 L+L$ 1
 L9+tiM9
 L90tmH
-L9=ip
+L9=Ij
 L9C t#H
 L9chtmH
 L9l$(u
@@ -55198,13 +55205,12 @@ L9t$ t9H
 L9|$(tLL
 L;#tGH
 L;$$tJA
-L;%R5N
-L;%s5l
 L;(t3I
 L;0t0H
 L;4$t0A
 L;4$toM
 L;4$trM
+L;5X4h
 L;Hht H
 L;_0UH
 L;d$ w
@@ -55494,6 +55500,7 @@ Lc+D;k
 Lc0D;p
 Lc1D;q
 Lc3D;s
+Lc5i-5
 Lc8D;x
 LcD$ H
 LcK<Hc
@@ -57827,6 +57834,7 @@ N13CNetMessagePBILi805E27CDOTAClientMsg_AbilityAlertL13SignonGroup_t14EL19NetCha
 N13CNetMessagePBILi806E27CDOTAClientMsg_AbilityAlertL13SignonGroup_t14EL19NetChannelBufType_t1ELb1EE16CProtobufBindingE
 N13CNetMessagePBILi807E25CDOTAClientMsg_GiftPlayerL13SignonGroup_t14EL19NetChannelBufType_t1ELb1EE16CProtobufBindingE
 N13CNetMessagePBILi808E27CDOTAClientMsg_GiftEveryoneL13SignonGroup_t14EL19NetChannelBufType_t1ELb1EE16CProtobufBindingE
+N13CNetMessagePBILi809E42CDOTAClientMsg_SelectOverworldTokenRewardsL13SignonGroup_t14EL19NetChannelBufType_t1ELb1EE16CProtobufBindingE
 N13sky3dparams_t14NetworkVar_fogE
 N14AnimGraphUtils26CTraceFilterAnimGraphSlopeE
 N14CGameSceneNode20NetworkVar_m_hParentE
@@ -61792,7 +61800,7 @@ PFv12ResourceId_tE
 PFvP12CSceneObjectE
 PFvRK36SpecificUpdateArcanaUICallbackData_tE
 PGDInstruction_t
-PH;=a|r
+PH;=aur
 PH;k u'H
 PHASE_Ban
 PHASE_INVALID
@@ -72507,7 +72515,6 @@ Z9V_strnlenPKci
 Z9sug_QuhVc
 Z@tyM9
 ZD$4AVAWRH
-ZD$8讽e
 ZEo^m
 ZFP compH
 ZFP compression is not supported
@@ -87693,6 +87700,7 @@ dynamic_sticker_level
 dynlock
 dynstr
 dynsym
+d､d､d
 e" must be followed by exponent
 e,/root
 e-reversH9
@@ -88713,16 +88721,18 @@ f9C8tmH
 f9Gvr(f
 f9w(t
 f9w0t
-f;5	ie
-f;5Ik
-f;5Ims
-f;5Ire
-f;5Y2
-f;5Yu
-f;5ihe
-f;5ije
-f;5in
-f;5yX
+f;5	2
+f;5)1
+f;5)e
+f;5)gs
+f;5)le
+f;59o
+f;5I0
+f;5Ibe
+f;5Ide
+f;5Ih
+f;5YR
+f;5iee
 f;J8t_H
 f;W8s f
 f;y u
@@ -88744,7 +88754,8 @@ fD9|$8
 fD;)tjD
 fD;)trD
 fD;*trH
-fD;50t
+fD;50
+fD;5`i
 fDBq3ZYbdyo
 fDistance
 fDurationMultiplier
@@ -92601,6 +92612,7 @@ huskar_life_break
 hxA;\$8
 hype_loc
 hyphen
+h|D;-u6
 h|E;l
 i < length
 i <= EVP_MAX_MD_SIZE
@@ -94584,7 +94596,6 @@ justify_vertical
 k is not followed by a braced, angle-bracketed, or quoted name
 k(9C(tpI
 k(D9s
-k-D:-2l
 k0Mcl$0
 k0X[]A\A]A^A
 k8}.H
@@ -98053,7 +98064,6 @@ lycan_summon_wolves
 lycan_summon_wolves_critical_strike
 lycan_summon_wolves_invisibility
 lycan_wolf_bite
-m8L;-n
 mCStorePlus
 mNKNmu-EwkQ
 mPG@j^h
@@ -104501,6 +104511,7 @@ models/heroes/techies/fx_techiesfx_mine.vmdl
 models/heroes/techies/fx_techiesfx_stasis.vmdl
 models/heroes/techies/techies_sign.vmdl
 models/heroes/terrorblade/demon.vmdl
+models/heroes/tiny/tiny_tree/tiny_tree.vmdl
 models/heroes/undying/undying_flesh_golem.vmdl
 models/heroes/wisp/wisp_additive.vmdl
 models/heroes/wisp/wisp_effigy.vmdl
@@ -112074,11 +112085,10 @@ pwrd_cyber_cafe_name
 py_generic_services
 p|D;5
 p|D;5G
+p|D;5H
 p|D;5N
-p|D;5g
-p|D;5h
+p|D;5W'y
 p|D;5w
-p|D;5w-y
 p|E;t
 p耀p耀p耀p
 q not prime
@@ -118920,6 +118930,7 @@ tNL9c0t L9c@tj
 tN}FHc
 tOH90u
 tOHcC
+tOI;4
 tOI;7
 tOO : high back rounded vowel
 tOfD; u
@@ -119848,6 +119859,7 @@ token_count
 token_counts
 token_english
 token_id
+token_ids
 token_inventory
 token_name
 token_name_%d
@@ -120496,7 +120508,7 @@ uP[A\A
 uP[A\A]A
 uR[A\A]A
 uSHc5
-uSHc5D
+uSHc5t
 uXA9t$XA
 uXHcNHH
 uXIcEPI
@@ -121465,6 +121477,7 @@ visualzdelta
 vmap_c
 vmatu5H
 vmdl_c
+vmdl胸Q
 vnfA9p
 vod_url
 voice_all_icons
@@ -122270,6 +122283,7 @@ xrJ:DCG
 xstat
 xyA9]p~sA9
 xzu{E1
+x|D;=qO
 y axis
 y,9q0t
 y=up=green, z=forward=blue, x=left=red

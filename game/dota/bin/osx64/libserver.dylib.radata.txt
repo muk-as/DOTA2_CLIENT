@@ -6058,6 +6058,7 @@
 24CGameMessageDelegateHookI42CDOTAClientMsg_HelpTipSystemStateChanged_tE
 24CGameMessageDelegateHookI43CDOTAClientMsg_AbilityDraftRequestAbility_tE
 24CGameMessageDelegateHookI43CDOTAClientMsg_VersusScene_PlayerBehavior_tE
+24CGameMessageDelegateHookI44CDOTAClientMsg_SelectOverworldTokenRewards_tE
 24CGameMessageDelegateHookI45CDOTAClientMsg_AddCommunicationsBlockMarker_tE
 24CGameMessageDelegateHookI46CDOTAClientMsg_AddCommunicationsReportMarker_tE
 24CGameMessageDelegateHookI55CDOTAClientMsg_BroadcasterUsingAssistedCameraOperator_tE
@@ -11719,6 +11720,7 @@
 41CTraceFilterSkipPlayersAndNPCsAndChildren
 41CUserMessage_NotifyResponseFound_Criteria
 41CWorkshop_GetPackageDailyRevenue_Response
+42CDOTAClientMsg_SelectOverworldTokenRewards
 42CDOTAMatchMetadata_Team_StrangeGemProgress
 42CDOTASaveGame_SaveInstance_PlayerPositions
 42CDOTA_Ability_AbyssalUnderlord_AtrophyAura
@@ -16524,7 +16526,6 @@ Added new event! index %ld - time %f - priority %d\n
 Added subscription message of version %llu for %s from system %d\n
 Added up to date partial of version %llu for %s from system %d\n
 Added\n
-Adding CMsgSteamLearnPlayerTimedStats_StatBucket[%d] for PlayerID: %d -\n%s\n
 Adding Idle Event: Priority %d - Target: %s - max dist: %f\n
 Adding New Music Element!\n
 Adding listener %s\n
@@ -17729,6 +17730,7 @@ CDOTAClientMsg_RollDice
 CDOTAClientMsg_RollDice_t
 CDOTAClientMsg_SalutePlayer_t
 CDOTAClientMsg_SearchString_t
+CDOTAClientMsg_SelectOverworldTokenRewards_t
 CDOTAClientMsg_SendStatPopup
 CDOTAClientMsg_SendStatPopup_t
 CDOTAClientMsg_SetCavernMapVariant_t
@@ -28153,6 +28155,7 @@ DOTA_CM_RequestItemSuggestions
 DOTA_CM_RollDice
 DOTA_CM_SalutePlayer
 DOTA_CM_SearchString
+DOTA_CM_SelectOverworldTokenRewards
 DOTA_CM_SendStatPopup
 DOTA_CM_SetCavernMapVariant
 DOTA_CM_SetDesiredWardPlacement
@@ -38679,6 +38682,7 @@ N13CNetMessagePBILi805E27CDOTAClientMsg_AbilityAlertL13SignonGroup_t14EL19NetCha
 N13CNetMessagePBILi806E27CDOTAClientMsg_AbilityAlertL13SignonGroup_t14EL19NetChannelBufType_t1ELb1EE16CProtobufBindingE
 N13CNetMessagePBILi807E25CDOTAClientMsg_GiftPlayerL13SignonGroup_t14EL19NetChannelBufType_t1ELb1EE16CProtobufBindingE
 N13CNetMessagePBILi808E27CDOTAClientMsg_GiftEveryoneL13SignonGroup_t14EL19NetChannelBufType_t1ELb1EE16CProtobufBindingE
+N13CNetMessagePBILi809E42CDOTAClientMsg_SelectOverworldTokenRewardsL13SignonGroup_t14EL19NetChannelBufType_t1ELb1EE16CProtobufBindingE
 N13sky3dparams_t14NetworkVar_fogE
 N14AnimGraphUtils26CTraceFilterAnimGraphSlopeE
 N14CDOTAGameRules36NetworkVar_m_AssassinMiniGameNetDataE
@@ -47771,6 +47775,7 @@ b"T\n
 b"T\n'CDOTAUserMessage_RequestItemSuggestions
 b"U\n
 b"V\n
+b"V\n*CDOTAClientMsg_SelectOverworldTokenRewards
 b"X\n\nCMsgTEFizz
 b"Z\n
 b"\\\n"CMsgOverworldEncounterProgressData
@@ -66241,6 +66246,7 @@ models/heroes/techies/fx_techiesfx_stasis.vmdl
 models/heroes/techies/techies_sign.vmdl
 models/heroes/terrorblade/demon.vmdl
 models/heroes/tiny/tiny_04/tiny_04.vmdl
+models/heroes/tiny/tiny_tree/tiny_tree.vmdl
 models/heroes/undying/undying_flesh_golem.vmdl
 models/heroes/wisp/wisp_additive.vmdl
 models/heroes/wisp/wisp_effigy.vmdl
@@ -69774,6 +69780,7 @@ n#CMsgSteamLearnDataSourceDescElement
 n#CUSTOM_GAME_WHITELIST_STATE_UNKNOWN
 n#CUserMessageCloseCaptionPlaceholder
 n#CWorkshop_AddSpecialPayment_Request
+n#DOTA_CM_SelectOverworldTokenRewards
 n#DOTA_COMBATLOG_MODIFIER_STACK_EVENT
 n#DOTA_GAMERULES_STATE_HERO_SELECTION
 n#DOTA_GAMERULES_STATE_SCENARIO_SETUP
@@ -72504,6 +72511,7 @@ n\tteam_slot
 n\ttgt_alpha
 n\ttickcount
 n\ttimestamp
+n\ttoken_ids
 n\ttrophy_id
 n\tturn_rate
 n\ttype_name

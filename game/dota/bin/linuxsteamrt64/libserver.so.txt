@@ -6142,6 +6142,7 @@
 24CGameMessageDelegateHookI42CDOTAClientMsg_HelpTipSystemStateChanged_tE
 24CGameMessageDelegateHookI43CDOTAClientMsg_AbilityDraftRequestAbility_tE
 24CGameMessageDelegateHookI43CDOTAClientMsg_VersusScene_PlayerBehavior_tE
+24CGameMessageDelegateHookI44CDOTAClientMsg_SelectOverworldTokenRewards_tE
 24CGameMessageDelegateHookI45CDOTAClientMsg_AddCommunicationsBlockMarker_tE
 24CGameMessageDelegateHookI46CDOTAClientMsg_AddCommunicationsReportMarker_tE
 24CGameMessageDelegateHookI55CDOTAClientMsg_BroadcasterUsingAssistedCameraOperator_tE
@@ -11771,6 +11772,7 @@
 41CWorkshop_GetPackageDailyRevenue_Response
 4294967295
 4294967295B
+42CDOTAClientMsg_SelectOverworldTokenRewards
 42CDOTAMatchMetadata_Team_StrangeGemProgress
 42CDOTASaveGame_SaveInstance_PlayerPositions
 42CDOTA_Ability_AbyssalUnderlord_AtrophyAura
@@ -14299,7 +14301,6 @@
 80CDOTAMatchPrivateMetadata_Team_Player_CombatSegment_DamageByAbility_ByHeroTarget
 80CMsgSteamLearn_InferenceMetadata_Response_CompactTable_MapMappingsEntry_DoNotUse
 81CDOTAMatchPrivateMetadata_Team_Player_CombatSegment_HealingByAbility_ByHeroTarget
-88ubH9
 8@%r8 8@-80(%rbx
 8@%rdi 8@%rsi
 8@%rdx 8@%rax
@@ -16147,6 +16148,7 @@ AVAUH
 AVAUI
 AVAUL
 AVAULc
+AVAULc-Q
 AVAUSH
 AVAWAUA
 AWAVATI
@@ -16672,7 +16674,6 @@ Added guild %u challenge %u for %d accounts
 Added new event! index %ld - time %f - priority %d
 Added subscription message of version %llu for %s from system %d
 Added up to date partial of version %llu for %s from system %d
-Adding CMsgSteamLearnPlayerTimedStats_StatBucket[%d] for PlayerID: %d
 Adding Idle Event: Priority %d - Target: %s - max dist: %f
 Adding New Music Element
 Adding listener %s
@@ -17458,10 +17459,8 @@ C0Z[]ÐH
 C0Z[]ÐUS
 C0[A\A]A
 C4;C8
-C4A9D$4t
 C4ssA
 C8;C<u
-C8A9D$8t
 C8D;pXtdL
 C8I9D$8
 C8IcT$0I
@@ -17469,7 +17468,6 @@ C8IcW 9
 C8X[]A\A
 C8[]A
 C8u*fA
-C<A9D$<t
 C<D8{Pt
 C@;CDL
 C@A9D$@t
@@ -17940,6 +17938,8 @@ CDOTAClientMsg_SalutePlayer
 CDOTAClientMsg_SalutePlayer_t
 CDOTAClientMsg_SearchString
 CDOTAClientMsg_SearchString_t
+CDOTAClientMsg_SelectOverworldTokenRewards
+CDOTAClientMsg_SelectOverworldTokenRewards_t
 CDOTAClientMsg_SendStatPopup
 CDOTAClientMsg_SendStatPopup_t
 CDOTAClientMsg_SetCavernMapVariant
@@ -28652,6 +28652,7 @@ DOTA_CM_RequestItemSuggestions
 DOTA_CM_RollDice
 DOTA_CM_SalutePlayer
 DOTA_CM_SearchString
+DOTA_CM_SelectOverworldTokenRewards
 DOTA_CM_SendStatPopup
 DOTA_CM_SetCavernMapVariant
 DOTA_CM_SetDesiredWardPlacement
@@ -30725,6 +30726,7 @@ E;l$8}8H
 E;n s=I
 E;t$DE
 E;t$d
+E;u(A
 E<uvH
 EAddGem
 EAddSocket
@@ -32216,7 +32218,6 @@ G49F8up
 G4A9D$4t
 G4A9F4t
 G4s*H
-G8A9D$8t
 G8A9D$8t"I
 G8A9F8t
 G8R8_G8B8_UNORM
@@ -33848,19 +33849,21 @@ H9p sMI9
 H9w t:H9w(t$H9w0tNH9w8tXH9w@t2H9wHt\H9wPtf
 H9z r
 H9z s
-H;-Fv
+H;-MYb
+H;-ewb
 H;2s&H
 H;2s]A
 H;2t-H
 H;8tzD
-H;=D7
-H;=d6
-H;=fb
-H;=ko
+H;=3b
+H;=L0
+H;=aU
+H;=ku
 H;@XtJH
 H;D$pH
 H;E0sR
 H;G t`H;G
+H;G(tp
 H;z H
 H;z t
 H<E:J
@@ -37076,6 +37079,7 @@ L9|$(tLL
 L; tPH
 L;#tGH
 L;$$tJA
+L;%hzJ
 L;4$t0A
 L;4$toM
 L;4$trM
@@ -37264,6 +37268,7 @@ LaunchLootRequiredHeight
 LaunchSpear
 Lc!D;a
 Lc#D;c
+Lc%X'V
 Lc'D;g
 Lc+D;k
 Lc.Lc
@@ -38494,6 +38499,7 @@ MvpDatum
 Mystery Box Reward
 Mystery Item Granted
 MysteryItemRewardData
+MﾊAﾊ5
 N H1P H
 N(A;N,H
 N(H1P(H
@@ -38848,6 +38854,7 @@ N13CNetMessagePBILi805E27CDOTAClientMsg_AbilityAlertL13SignonGroup_t14EL19NetCha
 N13CNetMessagePBILi806E27CDOTAClientMsg_AbilityAlertL13SignonGroup_t14EL19NetChannelBufType_t1ELb1EE16CProtobufBindingE
 N13CNetMessagePBILi807E25CDOTAClientMsg_GiftPlayerL13SignonGroup_t14EL19NetChannelBufType_t1ELb1EE16CProtobufBindingE
 N13CNetMessagePBILi808E27CDOTAClientMsg_GiftEveryoneL13SignonGroup_t14EL19NetChannelBufType_t1ELb1EE16CProtobufBindingE
+N13CNetMessagePBILi809E42CDOTAClientMsg_SelectOverworldTokenRewardsL13SignonGroup_t14EL19NetChannelBufType_t1ELb1EE16CProtobufBindingE
 N13sky3dparams_t14NetworkVar_fogE
 N14AnimGraphUtils26CTraceFilterAnimGraphSlopeE
 N14CDOTAGameRules36NetworkVar_m_AssassinMiniGameNetDataE
@@ -40378,7 +40385,7 @@ PFT_SOUND
 PFv31SoundOpvarManagerSettableData_tP34CSoundOpvarSetPointStackCollectionE
 PGDInstruction_t
 PH9CPu
-PH;=)EJ
+PH;=INJ
 PH;k u'H
 PHASE_Ban
 PHASE_Pick
@@ -46279,6 +46286,7 @@ X(Hc@ I
 X0uB[A
 X24_TYPELESS_G8_UINT
 X32_TYPELESS_G8X24_UINT
+X4Lc-Z
 X500algorithms
 X509 V3 routines
 X509 lib
@@ -59480,6 +59488,7 @@ huskar_life_break
 hype_loc
 hyphen
 hypothermia
+h|D;-dr
 i : %s (ground %i %s
 i < length
 i links
@@ -63656,7 +63665,8 @@ lycan_summon_wolves_critical_strike
 lycan_summon_wolves_invisibility
 lycan_wolf_bite
 m E9n4t
-m8L;-bNb
+m H;-phb
+m8L;-"Rb
 mIcG81
 mXRecord
 m_16ByteOrLessStack out of space, falling through after %d entries, consider upping NETWORKFIELDSCRATCHDATA_16BYTE_COUNT
@@ -71431,6 +71441,7 @@ models/heroes/techies/fx_techiesfx_stasis.vmdl
 models/heroes/techies/techies_sign.vmdl
 models/heroes/terrorblade/demon.vmdl
 models/heroes/tiny/tiny_04/tiny_04.vmdl
+models/heroes/tiny/tiny_tree/tiny_tree.vmdl
 models/heroes/undying/undying_flesh_golem.vmdl
 models/heroes/wisp/wisp_additive.vmdl
 models/heroes/wisp/wisp_effigy.vmdl
@@ -84667,6 +84678,7 @@ t1D;cXt
 t1Lcs8D;sHD
 t2<\th
 t2Hc>A
+t4[A\A]A
 t5E;4$t
 t5HcCh
 t5[A\A]A
@@ -85241,6 +85253,7 @@ token_count
 token_counts
 token_english
 token_id
+token_ids
 token_inventory
 token_name
 token_offer
@@ -86615,7 +86628,6 @@ xp_reason
 xp_received
 xp_reward_details
 xzIcT
-x|D;=z0
 y0IcD
 y=up=green, z=forward=blue, x=left=red
 yIcJpIc
