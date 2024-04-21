@@ -4,8 +4,8 @@
 
 // /////////////////////////////////////////////////////////////
 // Binary: networksystem.dll
-// Classes count: 1
-// Enums count: 0
+// Classes count: 0 (Allocated) | 1 (Unallocated)
+// Enums count: 0 (Allocated) | 0 (Unallocated)
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 

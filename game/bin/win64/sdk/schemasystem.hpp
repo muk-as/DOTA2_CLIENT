@@ -4,21 +4,10 @@
 
 // /////////////////////////////////////////////////////////////
 // Binary: schemasystem.dll
-// Classes count: 7
-// Enums count: 2
+// Classes count: 0 (Allocated) | 7 (Unallocated)
+// Enums count: 0 (Allocated) | 2 (Unallocated)
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
-
-// Registered binary: schemasystem.dll (project 'schemasystem')
-// Enumerator count: 3
-// Alignment: 4
-// Size: 0x4
-enum class ThreeState_t : uint32_t
-{
-	TRS_FALSE = 0x0,
-	TRS_TRUE = 0x1,
-	TRS_NONE = 0x2,
-};
 
 // Registered binary: schemasystem.dll (project 'schemasystem')
 // Enumerator count: 81
@@ -110,6 +99,31 @@ enum class fieldtype_t : uint8_t
 };
 
 // Registered binary: schemasystem.dll (project 'schemasystem')
+// Enumerator count: 3
+// Alignment: 4
+// Size: 0x4
+enum class ThreeState_t : uint32_t
+{
+	TRS_FALSE = 0x0,
+	TRS_TRUE = 0x1,
+	TRS_NONE = 0x2,
+};
+
+// Registered binary: schemasystem.dll (project 'resourcefile')
+// Alignment: 8
+// Size: 0x1
+// Has Trivial Constructor
+// Has Trivial Destructor
+// 
+// MResourceTypeForInfoType "vrman"
+class InfoForResourceTypeCResourceManifestInternal
+{
+private:
+	[[maybe_unused]] uint8_t __pad0000[0x1]; // 0x0
+public:
+};
+
+// Registered binary: schemasystem.dll (project 'schemasystem')
 // Alignment: 8
 // Size: 0x180
 class CSchemaSystemInternalRegistration
@@ -150,48 +164,6 @@ public:
 
 // Registered binary: schemasystem.dll (project 'resourcefile')
 // Alignment: 8
-// Size: 0x1
-// Has Trivial Constructor
-// Has Trivial Destructor
-// 
-// MResourceTypeForInfoType "vrman"
-class InfoForResourceTypeCResourceManifestInternal
-{
-private:
-	[[maybe_unused]] uint8_t __pad0000[0x1]; // 0x0
-public:
-};
-
-// Registered binary: schemasystem.dll (project 'resourcefile')
-// Alignment: 8
-// Size: 0x8
-// Has Trivial Destructor
-// 
-// MIsBoxedIntegerType
-struct ResourceId_t
-{
-public:
-	uint64_t m_Value; // 0x0	
-	
-	// Static fields:
-	static bool &Get_IS_TYPESAFE_INTEGER(){return *reinterpret_cast<bool*>(interfaces::g_schema->FindTypeScopeForModule("schemasystem.dll")->FindDeclaredClass("ResourceId_t")->m_static_fields[0]->m_instance);};
-};
-
-// Registered binary: schemasystem.dll (project 'resourcefile')
-// Alignment: 4
-// Size: 0x8
-// Has Trivial Destructor
-// 
-// MGetKV3ClassDefaults
-class CExampleSchemaVData_Monomorphic
-{
-public:
-	int32_t m_nExample1; // 0x0	
-	int32_t m_nExample2; // 0x4	
-};
-
-// Registered binary: schemasystem.dll (project 'resourcefile')
-// Alignment: 8
 // Size: 0x10
 // Has VTable
 // 
@@ -226,5 +198,33 @@ class CExampleSchemaVData_PolymorphicDerivedB : public CExampleSchemaVData_Polym
 {
 public:
 	int32_t m_nDerivedB; // 0x10	
+};
+
+// Registered binary: schemasystem.dll (project 'resourcefile')
+// Alignment: 8
+// Size: 0x8
+// Has Trivial Destructor
+// 
+// MIsBoxedIntegerType
+struct ResourceId_t
+{
+public:
+	uint64_t m_Value; // 0x0	
+	
+	// Static fields:
+	static bool &Get_IS_TYPESAFE_INTEGER(){return *reinterpret_cast<bool*>(interfaces::g_schema->FindTypeScopeForModule("schemasystem.dll")->FindDeclaredClass("ResourceId_t")->m_static_fields[0]->m_instance);};
+};
+
+// Registered binary: schemasystem.dll (project 'resourcefile')
+// Alignment: 4
+// Size: 0x8
+// Has Trivial Destructor
+// 
+// MGetKV3ClassDefaults
+class CExampleSchemaVData_Monomorphic
+{
+public:
+	int32_t m_nExample1; // 0x0	
+	int32_t m_nExample2; // 0x4	
 };
 

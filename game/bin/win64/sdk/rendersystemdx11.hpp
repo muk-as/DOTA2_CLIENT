@@ -4,41 +4,10 @@
 
 // /////////////////////////////////////////////////////////////
 // Binary: rendersystemdx11.dll
-// Classes count: 3
-// Enums count: 5
+// Classes count: 0 (Allocated) | 3 (Unallocated)
+// Enums count: 0 (Allocated) | 5 (Unallocated)
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
-
-// Registered binary: rendersystemdx11.dll (project 'rendersystemdx11')
-// Enumerator count: 3
-// Alignment: 4
-// Size: 0x4
-enum class RenderSlotType_t : uint32_t
-{
-	RENDER_SLOT_INVALID = 0xffffffffffffffff,
-	RENDER_SLOT_PER_VERTEX = 0x0,
-	RENDER_SLOT_PER_INSTANCE = 0x1,
-};
-
-// Registered binary: rendersystemdx11.dll (project 'rendersystemdx11')
-// Enumerator count: 12
-// Alignment: 4
-// Size: 0x4
-enum class RenderBufferFlags_t : uint32_t
-{
-	RENDER_BUFFER_USAGE_VERTEX_BUFFER = 0x1,
-	RENDER_BUFFER_USAGE_INDEX_BUFFER = 0x2,
-	RENDER_BUFFER_USAGE_SHADER_RESOURCE = 0x4,
-	RENDER_BUFFER_USAGE_UNORDERED_ACCESS = 0x8,
-	RENDER_BUFFER_BYTEADDRESS_BUFFER = 0x10,
-	RENDER_BUFFER_STRUCTURED_BUFFER = 0x20,
-	RENDER_BUFFER_APPEND_CONSUME_BUFFER = 0x40,
-	RENDER_BUFFER_UAV_COUNTER = 0x80,
-	RENDER_BUFFER_UAV_DRAW_INDIRECT_ARGS = 0x100,
-	RENDER_BUFFER_ACCELERATION_STRUCTURE = 0x200,
-	RENDER_BUFFER_SHADER_BINDING_TABLE = 0x400,
-	RENDER_BUFFER_PER_FRAME_WRITE_ONCE = 0x800,
-};
 
 // Registered binary: rendersystemdx11.dll (project 'rendersystemdx11')
 // Enumerator count: 13
@@ -62,15 +31,23 @@ enum class RenderPrimitiveType_t : uint32_t
 };
 
 // Registered binary: rendersystemdx11.dll (project 'rendersystemdx11')
-// Enumerator count: 4
+// Enumerator count: 12
 // Alignment: 4
 // Size: 0x4
-enum class InputLayoutVariation_t : uint32_t
+enum class RenderBufferFlags_t : uint32_t
 {
-	INPUT_LAYOUT_VARIATION_DEFAULT = 0x0,
-	INPUT_LAYOUT_VARIATION_STREAM1_INSTANCEID = 0x1,
-	INPUT_LAYOUT_VARIATION_STREAM1_INSTANCEID_MORPH_VERT_ID = 0x2,
-	INPUT_LAYOUT_VARIATION_MAX = 0x3,
+	RENDER_BUFFER_USAGE_VERTEX_BUFFER = 0x1,
+	RENDER_BUFFER_USAGE_INDEX_BUFFER = 0x2,
+	RENDER_BUFFER_USAGE_SHADER_RESOURCE = 0x4,
+	RENDER_BUFFER_USAGE_UNORDERED_ACCESS = 0x8,
+	RENDER_BUFFER_BYTEADDRESS_BUFFER = 0x10,
+	RENDER_BUFFER_STRUCTURED_BUFFER = 0x20,
+	RENDER_BUFFER_APPEND_CONSUME_BUFFER = 0x40,
+	RENDER_BUFFER_UAV_COUNTER = 0x80,
+	RENDER_BUFFER_UAV_DRAW_INDIRECT_ARGS = 0x100,
+	RENDER_BUFFER_ACCELERATION_STRUCTURE = 0x200,
+	RENDER_BUFFER_SHADER_BINDING_TABLE = 0x400,
+	RENDER_BUFFER_PER_FRAME_WRITE_ONCE = 0x800,
 };
 
 // Registered binary: rendersystemdx11.dll (project 'rendersystemdx11')
@@ -90,19 +67,26 @@ enum class RenderMultisampleType_t : uint8_t
 };
 
 // Registered binary: rendersystemdx11.dll (project 'rendersystemdx11')
-// Alignment: 8
-// Size: 0x38
-// Has Trivial Destructor
-struct RenderInputLayoutField_t
+// Enumerator count: 4
+// Alignment: 4
+// Size: 0x4
+enum class InputLayoutVariation_t : uint32_t
 {
-public:
-	uint8_t m_pSemanticName[32]; // 0x0	
-	int32_t m_nSemanticIndex; // 0x20	
-	uint32_t m_Format; // 0x24	
-	int32_t m_nOffset; // 0x28	
-	int32_t m_nSlot; // 0x2c	
-	RenderSlotType_t m_nSlotType; // 0x30	
-	int32_t m_nInstanceStepRate; // 0x34	
+	INPUT_LAYOUT_VARIATION_DEFAULT = 0x0,
+	INPUT_LAYOUT_VARIATION_STREAM1_INSTANCEID = 0x1,
+	INPUT_LAYOUT_VARIATION_STREAM1_INSTANCEID_MORPH_VERT_ID = 0x2,
+	INPUT_LAYOUT_VARIATION_MAX = 0x3,
+};
+
+// Registered binary: rendersystemdx11.dll (project 'rendersystemdx11')
+// Enumerator count: 3
+// Alignment: 4
+// Size: 0x4
+enum class RenderSlotType_t : uint32_t
+{
+	RENDER_SLOT_INVALID = 0xffffffffffffffff,
+	RENDER_SLOT_PER_VERTEX = 0x0,
+	RENDER_SLOT_PER_INSTANCE = 0x1,
 };
 
 // Registered binary: rendersystemdx11.dll (project 'rendersystemdx11')
@@ -125,5 +109,21 @@ struct VsInputSignature_t
 {
 public:
 	CUtlVector< VsInputSignatureElement_t > m_elems; // 0x0	
+};
+
+// Registered binary: rendersystemdx11.dll (project 'rendersystemdx11')
+// Alignment: 8
+// Size: 0x38
+// Has Trivial Destructor
+struct RenderInputLayoutField_t
+{
+public:
+	uint8_t m_pSemanticName[32]; // 0x0	
+	int32_t m_nSemanticIndex; // 0x20	
+	uint32_t m_Format; // 0x24	
+	int32_t m_nOffset; // 0x28	
+	int32_t m_nSlot; // 0x2c	
+	RenderSlotType_t m_nSlotType; // 0x30	
+	int32_t m_nInstanceStepRate; // 0x34	
 };
 
