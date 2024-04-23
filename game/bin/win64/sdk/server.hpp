@@ -4354,7 +4354,7 @@ enum class PARTICLE_MESSAGE : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
-// Enumerator count: 921
+// Enumerator count: 923
 // Alignment: 4
 // Size: 0x4
 enum class EDOTAGCMsg : uint32_t
@@ -5280,6 +5280,8 @@ enum class EDOTAGCMsg : uint32_t
 	k_EMsgOverworldEncounterProgressData = 0x2312,
 	k_EMsgClientToGCOverworldFeedback = 0x2313,
 	k_EMsgClientToGCOverworldFeedbackResponse = 0x2314,
+	k_EMsgClientToGCOverworldVisitEncounter = 0x2315,
+	k_EMsgClientToGCOverworldVisitEncounterResponse = 0x2316,
 };
 
 // Registered binary: server.dll (project 'server')
@@ -8601,7 +8603,7 @@ enum class quest_hud_types_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
-// Enumerator count: 130
+// Enumerator count: 131
 // Alignment: 4
 // Size: 0x4
 enum class EGCItemMsg : uint32_t
@@ -8736,6 +8738,7 @@ enum class EGCItemMsg : uint32_t
 	k_EMsgGCToClientInFlightChargesUpdated = 0xa36,
 	k_EMsgClientToGCPurchaseChargeCostItems = 0xa37,
 	k_EMsgClientToGCPurchaseChargeCostItemsResponse = 0xa38,
+	k_EMsgClientToGCCancelUnfinalizedTransactions = 0xa39,
 };
 
 // Registered binary: server.dll (project 'server')

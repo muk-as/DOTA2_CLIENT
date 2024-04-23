@@ -7178,6 +7178,7 @@
 27TEArmorRicochet_GameEvent_t
 28.CDOTAUserMsg_StatsTeamMinuteDetails.LocationPerformance
 28.CMsgClientToGCOverworldDevGrantTokensResponse.EResponse
+28.CMsgClientToGCOverworldVisitEncounterResponse.EResponse
 28.CMsgClientToGCPurchaseChargeCostItemsResponse.EResponse
 28.CMsgGCToGCGrantAccountRolledItems.Item.DynamicAttribute
 28.CMsgServerToGCGetGuildContractsResponse.ContractDetails
@@ -10500,6 +10501,7 @@
 37CMsgAdditionalLobbyStartupAccountData
 37CMsgClientToGCCreateStaticRecipe_Item
 37CMsgClientToGCOverworldDevGrantTokens
+37CMsgClientToGCOverworldVisitEncounter
 37CMsgClientToGCPurchaseChargeCostItems
 37CMsgClientToGCUnlockItemStyleResponse
 37CMsgDOTARealtimeGameStats_AbilityList
@@ -12325,6 +12327,7 @@
 43CInlineJob_CMsgGCToServerRecordTrainingData
 43CMsgAMSendEmail_PersonaNameReplacementToken
 43CMsgClientToGCAggregateMetrics_SingleMetric
+43CMsgClientToGCCancelUnfinalizedTransactions
 43CMsgClientToGCOverworldClaimEncounterReward
 43CMsgClientToGCOverworldCompletePathResponse
 43CMsgClientToGCOverworldDevResetNodeResponse
@@ -12838,6 +12841,7 @@
 45CDefaultResponseSystemSaveRestoreBlockHandler
 45CEnvSoundscapeProxyAlias_snd_soundscape_proxy
 45CMsgClientToGCOverworldDevGrantTokensResponse
+45CMsgClientToGCOverworldVisitEncounterResponse
 45CMsgClientToGCPurchaseChargeCostItemsResponse
 45CMsgCustomGameWhitelistForEdit_WhitelistEntry
 45CMsgDOTARealtimeGameStatsTerse_PickBanDetails
@@ -14301,6 +14305,7 @@
 80CDOTAMatchPrivateMetadata_Team_Player_CombatSegment_DamageByAbility_ByHeroTarget
 80CMsgSteamLearn_InferenceMetadata_Response_CompactTable_MapMappingsEntry_DoNotUse
 81CDOTAMatchPrivateMetadata_Team_Player_CombatSegment_HealingByAbility_ByHeroTarget
+88ubH9
 8@%r8 8@-80(%rbx
 8@%rdi 8@%rsi
 8@%rdx 8@%rax
@@ -25749,6 +25754,7 @@ CMsgClearWorldDecalsEvent
 CMsgClientHello
 CMsgClientPingData
 CMsgClientToGCAggregateMetrics
+CMsgClientToGCCancelUnfinalizedTransactions
 CMsgClientToGCCreateStaticRecipe
 CMsgClientToGCCreateStaticRecipeResponse
 CMsgClientToGCEquipItems
@@ -25781,6 +25787,8 @@ CMsgClientToGCOverworldMoveToNode
 CMsgClientToGCOverworldMoveToNodeResponse
 CMsgClientToGCOverworldTradeTokens
 CMsgClientToGCOverworldTradeTokensResponse
+CMsgClientToGCOverworldVisitEncounter
+CMsgClientToGCOverworldVisitEncounterResponse
 CMsgClientToGCPackBundle
 CMsgClientToGCPackBundleResponse
 CMsgClientToGCPurchaseChargeCostItems
@@ -33848,15 +33856,15 @@ H9p sMI9
 H9w t:H9w(t$H9w0tNH9w8tXH9w@t2H9wHt\H9wPtf
 H9z r
 H9z s
-H;-khb
-H;-rrb
 H;2s&H
-H;2s]A
 H;2t-H
 H;8tzD
-H;=6x
-H;=jM
-H;=rBJ
+H;=Cp
+H;=DH
+H;=dG
+H;=fs
+H;=loD
+H;=q6C
 H;@XtJH
 H;D$pH
 H;E0sR
@@ -37067,7 +37075,6 @@ L90tmH
 L9C t#H
 L9cHfD
 L9cHu
-L9p }kH
 L9s v
 L9s vm
 L9t$ t9H
@@ -37077,7 +37084,6 @@ L9|$(tLL
 L; tPH
 L;#tGH
 L;$$tJA
-L;%An
 L;4$t0A
 L;4$toM
 L;4$trM
@@ -37266,6 +37272,7 @@ LaunchLootRequiredHeight
 LaunchSpear
 Lc!D;a
 Lc#D;c
+Lc%L*Q
 Lc'D;g
 Lc+D;k
 Lc.Lc
@@ -38496,6 +38503,7 @@ MvpDatum
 Mystery Box Reward
 Mystery Item Granted
 MysteryItemRewardData
+MﾊAﾊ5
 N H1P H
 N(A;N,H
 N(H1P(H
@@ -40381,6 +40389,7 @@ PFT_SOUND
 PFv31SoundOpvarManagerSettableData_tP34CSoundOpvarSetPointStackCollectionE
 PGDInstruction_t
 PH9CPu
+PH;=)VJ
 PH;k u'H
 PHASE_Ban
 PHASE_Pick
@@ -44584,7 +44593,6 @@ T$HdH3
 T$VH;G
 T$XdH3
 T$xA\A]A^A
-T$xdH3
 TD_OFFSET_NORMAL
 TD_OFFSET_PACKED
 TEAM_DIRE
@@ -46327,6 +46335,7 @@ X[]A\A]A^A_ÐAWAVAUATUSH
 X[]A\A]A^A_ÐAWAVI
 X[]A\A]ÐATUH
 X[]A\A]ÐAUATI
+X[]A\A]ÐAUATL
 X[]A\A]ÐAUATUSH
 X[]A\A]ÐAVAUATUH
 X[]A\A]ÐAWAVAUATI
@@ -56509,6 +56518,7 @@ dota_tormentor_respawn_time
 dota_tormentor_spawn_time
 dota_tournament_item_event
 dota_tournament_override
+dota_tower_deny
 dota_tower_kill
 dota_track_chat_mutes
 dota_tracked_stats_dump
@@ -61640,6 +61650,7 @@ k_EMsgClientToGCBingoGetUserDataResponse
 k_EMsgClientToGCCancelInviteToGuild
 k_EMsgClientToGCCancelInviteToGuildResponse
 k_EMsgClientToGCCancelPartyInvites
+k_EMsgClientToGCCancelUnfinalizedTransactions
 k_EMsgClientToGCCandyShopDevClearInventory
 k_EMsgClientToGCCandyShopDevClearInventoryResponse
 k_EMsgClientToGCCandyShopDevGrantCandy
@@ -61837,6 +61848,8 @@ k_EMsgClientToGCOverworldMoveToNode
 k_EMsgClientToGCOverworldMoveToNodeResponse
 k_EMsgClientToGCOverworldTradeTokens
 k_EMsgClientToGCOverworldTradeTokensResponse
+k_EMsgClientToGCOverworldVisitEncounter
+k_EMsgClientToGCOverworldVisitEncounterResponse
 k_EMsgClientToGCPackBundle
 k_EMsgClientToGCPackBundleResponse
 k_EMsgClientToGCPingData
@@ -62871,6 +62884,7 @@ k_UnpackBundle_Failed_ItemIsNotBundle
 k_UnpackBundle_Failed_SOCacheError
 k_UnpackBundle_Failed_UnableToDeleteItem
 k_UnpackBundle_Succeeded
+k_eAlreadyVisited
 k_eDisabled
 k_eEncounterMissingRewards
 k_eEventActionScoreMode_Add
@@ -63657,8 +63671,7 @@ lycan_summon_wolves_critical_strike
 lycan_summon_wolves_invisibility
 lycan_wolf_bite
 m E9n4t
-m H;-x)b
-m8H;-28b
+m8L;-b_b
 mIcG81
 mXRecord
 m_16ByteOrLessStack out of space, falling through after %d entries, consider upping NETWORKFIELDSCRATCHDATA_16BYTE_COUNT
@@ -76069,6 +76082,7 @@ p(Hc@ Hk
 p(Lc@ H
 p(Mct$ E;t$0
 p,A9_P
+p0D;p@D
 p<0tUw
 p@Ic] A;]0
 p@Lc@8H
@@ -79610,7 +79624,6 @@ pvsplayer
 pwrd_cyber_cafe_id
 pwrd_cyber_cafe_name
 py_generic_services
-p|D;5
 qangle
 qangle_pitch_yaw
 qcStatements
@@ -79667,7 +79680,6 @@ quill_stack_damage
 quill_stack_duration
 quill_stacks
 quotation-mark
-qﾊeﾊYﾊM
 r Ic@@A9
 r0AUATE1
 rFC822localPart
@@ -84711,7 +84723,6 @@ tJHcCP
 tJIcE
 tJvBHc
 tKD; A
-tKI;M
 tK}CHc
 tLHcC
 tLHcC8
@@ -85933,7 +85944,6 @@ utIct$Pf
 utlstringtoken
 uuD9c }_A
 uvHcG
-uwL;5
 uwMc7E;w
 uxHcG
 uxIcEpI
@@ -86175,6 +86185,7 @@ vision_range_daytime
 vision_range_nighttime
 vision_width
 visionrange
+visited
 vismon_poll_frequency
 vismon_trace_limit
 visual_height
@@ -86645,6 +86656,7 @@ z(HcR I
 z(LcJ H
 z(u&E1
 z0AUATI
+z0IcA@A9
 z>{0x%x
 z@HcR8I
 zDuBE1

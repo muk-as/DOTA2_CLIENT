@@ -383,6 +383,7 @@
 10CMsgIDLinkILj1ELj16ELj8970E34CMsgClientToGCOverworldTradeTokensE
 10CMsgIDLinkILj1ELj16ELj8975E34CMsgClientToGCUpdateComicBookStatsE
 10CMsgIDLinkILj1ELj16ELj8979E31CMsgClientToGCOverworldFeedbackE
+10CMsgIDLinkILj1ELj16ELj8981E37CMsgClientToGCOverworldVisitEncounterE
 10CMsgQAngle
 10CMsgTEDust
 10CMsgTEFizz
@@ -4993,6 +4994,7 @@
 18CMsgIDLinkResponseILj1ELj16ELj8965E26CMsgClientToGCNewBloomGiftLj8966E34CMsgClientToGCNewBloomGiftResponseE
 18CMsgIDLinkResponseILj1ELj16ELj8970E34CMsgClientToGCOverworldTradeTokensLj8971E42CMsgClientToGCOverworldTradeTokensResponseE
 18CMsgIDLinkResponseILj1ELj16ELj8979E31CMsgClientToGCOverworldFeedbackLj8980E39CMsgClientToGCOverworldFeedbackResponseE
+18CMsgIDLinkResponseILj1ELj16ELj8981E37CMsgClientToGCOverworldVisitEncounterLj8982E45CMsgClientToGCOverworldVisitEncounterResponseE
 18CMsgNotifyWatchdog
 18CMsgPackageLicense
 18CMsgProfileRequest
@@ -8991,6 +8993,7 @@
 28.CMsgClientToGCCavernCrawlRequestMapStateResponse.Result
 28.CMsgClientToGCClaimLeaderboardRewardsResponse.EResponse
 28.CMsgClientToGCOverworldDevGrantTokensResponse.EResponse
+28.CMsgClientToGCOverworldVisitEncounterResponse.EResponse
 28.CMsgClientToGCPlaceCollectionStickersResponse.EResponse
 28.CMsgClientToGCPlayerCardSpecificPurchaseResponse.Result
 28.CMsgClientToGCPurchaseChargeCostItemsResponse.EResponse
@@ -12528,6 +12531,7 @@
 35CMsgIDLinkGenericClientToGCResponseILj1ELj8965E26CMsgClientToGCNewBloomGiftLj8966E34CMsgClientToGCNewBloomGiftResponseE
 35CMsgIDLinkGenericClientToGCResponseILj1ELj8970E34CMsgClientToGCOverworldTradeTokensLj8971E42CMsgClientToGCOverworldTradeTokensResponseE
 35CMsgIDLinkGenericClientToGCResponseILj1ELj8979E31CMsgClientToGCOverworldFeedbackLj8980E39CMsgClientToGCOverworldFeedbackResponseE
+35CMsgIDLinkGenericClientToGCResponseILj1ELj8981E37CMsgClientToGCOverworldVisitEncounterLj8982E45CMsgClientToGCOverworldVisitEncounterResponseE
 35CMsgInGamePrediction_QueryKeyValues
 35CMsgJoinableCustomGameModesResponse
 35CMsgLobbyPlayerPlusSubscriptionData
@@ -13243,6 +13247,7 @@
 37CMsgClientToGCKickGuildMemberResponse
 37CMsgClientToGCModifyGuildRoleResponse
 37CMsgClientToGCOverworldDevGrantTokens
+37CMsgClientToGCOverworldVisitEncounter
 37CMsgClientToGCPurchaseChargeCostItems
 37CMsgClientToGCRemoveGuildRoleResponse
 37CMsgClientToGCRequestPlayerCoachMatch
@@ -14112,7 +14117,7 @@
 4$HcÉU
 4$Lck(L
 4(D9spt
-4(D;5byY
+4(D;5b
 4(HcB
 4(Optional) Sorting method to use on returned values
 4(fD;&tKH
@@ -15221,6 +15226,7 @@
 43CInlineJob_CMsgGCToClientPartySearchInvites
 43CMsgAMSendEmail_PersonaNameReplacementToken
 43CMsgClientToGCAggregateMetrics_SingleMetric
+43CMsgClientToGCCancelUnfinalizedTransactions
 43CMsgClientToGCCandyShopDevResetShopResponse
 43CMsgClientToGCCreateStickerbookPageResponse
 43CMsgClientToGCDeleteStickerbookPageResponse
@@ -15846,6 +15852,7 @@
 45CMsgClientToGCJoinPrivateCoachingSessionLobby
 45CMsgClientToGCOrderStickerbookTeamPageRequest
 45CMsgClientToGCOverworldDevGrantTokensResponse
+45CMsgClientToGCOverworldVisitEncounterResponse
 45CMsgClientToGCPlaceCollectionStickersResponse
 45CMsgClientToGCPlaceStickersResponse_EResponse
 45CMsgClientToGCPurchaseChargeCostItemsResponse
@@ -17811,6 +17818,7 @@
 80CMsgSteamLearn_InferenceMetadata_Response_CompactTable_MapMappingsEntry_DoNotUse
 81CDOTAMatchPrivateMetadata_Team_Player_CombatSegment_HealingByAbility_ByHeroTarget
 82CAFF
+88ubH9
 89 89 89
 8@%r8 8@-80(%rbx
 8@%rdi 8@%rsi
@@ -18026,6 +18034,7 @@
 9STEAMLEARN_REGISTER_DATA_SOURCE_RESULT_ERROR_DATA_INVALID
 9STEAMLEARN_REGISTER_DATA_SOURCE_RESULT_ERROR_INVALID_NAME
 9STEAMLEARN_SNAPSHOT_PROJECT_ERROR_INVALID_DATA_SOURCE_KEY
+9YA1芯o
 9_l|0L
 9_l|3I
 9_l|AI
@@ -21594,6 +21603,7 @@ BUMP_WITH_TIMEOUT_WHEN_LEARNED
 BXHcRPH
 BY_FILE_CTRL
 BYieldingRunJobFromMsg
+BYieldingShowEncounter_VisitEncounter
 BYldFinalizePurchase
 BYldGetInternationalSeriesList failed to get a list of series
 BYldPromptYesNo
@@ -24463,6 +24473,7 @@ CDOTA_DB_Play::Update
 CDOTA_DB_PopupSettings::EventDOTARecalibrateMMR
 CDOTA_DB_PopupSettings::PopulateHotKeysTemplates
 CDOTA_DB_PopupSettings::PopulateResolutionDropDown
+CDOTA_DB_Popup_BP_Crownfall_Encounter_Fishing::UpdateLeaderboard( %d
 CDOTA_DB_Popup_BP_Crownfall_Visual_Novel::EventSwitchDialogue( %s
 CDOTA_DB_Popup_BP_International2023_TalentBundles::EventPurchaseBundle
 CDOTA_DB_Popup_BP_International2023_Welcome::EventClaimRewards
@@ -29101,6 +29112,7 @@ CMsgClientToGCBingoGetUserData
 CMsgClientToGCBingoGetUserDataResponse
 CMsgClientToGCCancelInviteToGuild
 CMsgClientToGCCancelInviteToGuildResponse
+CMsgClientToGCCancelUnfinalizedTransactions
 CMsgClientToGCCandyShopDevClearInventory
 CMsgClientToGCCandyShopDevGrantCandy
 CMsgClientToGCCandyShopDevGrantCandyBags
@@ -29262,6 +29274,8 @@ CMsgClientToGCOverworldMoveToNode
 CMsgClientToGCOverworldMoveToNodeResponse
 CMsgClientToGCOverworldTradeTokens
 CMsgClientToGCOverworldTradeTokensResponse
+CMsgClientToGCOverworldVisitEncounter
+CMsgClientToGCOverworldVisitEncounterResponse
 CMsgClientToGCPackBundle
 CMsgClientToGCPackBundleResponse
 CMsgClientToGCPlaceCollectionStickersRequest
@@ -36270,9 +36284,8 @@ D9't3H
 D9't:H
 D9(t8D
 D90tkD
-D95B5G
-D95EH
-D95M6G
+D95BOG
+D95MPG
 D98tKL
 D98t^D
 D98tdL
@@ -36323,7 +36336,6 @@ D9{du	9Ch
 D:/generated_set_portraits.txt
 D:o8t
 D; t.L
-D;%81
 D;(tHA
 D;)te;E
 D;,$rP1
@@ -51848,17 +51860,18 @@ H;2s&H
 H;2t-H
 H;2t?sDI9
 H;:t7r
-H;=3uI
-H;=60
-H;=6Ju
-H;=6Sy
-H;=6ou
-H;=Fn
-H;=eaH
-H;=lON
-H;=vau
-H;=vxv
-H;=vzy
+H;=66
+H;=6hv
+H;=6m
+H;=FN
+H;=Fhu
+H;=Fyx
+H;=IGn
+H;=V9w
+H;=ezH
+H;=f2v
+H;=fIv
+H;=lhN
 H;@XtJH
 H;D$pH
 H;E0sR
@@ -52515,7 +52528,11 @@ HavePlayersLastWeek
 Hazhadal
 Hc+HcC
 Hc0A;t
-Hc5_FM
+Hc5&?F
+Hc52{M
+Hc5CyM
+Hc5\tM
+Hc5y$9
 Hc@(E1
 Hc@8M
 Hc@LHk
@@ -53309,7 +53326,6 @@ I96v3I
 I96v;I
 I9<$vB
 I9<$vJ
-I9@(tJA
 I9D$(t
 I9D$pt
 I9V(u51
@@ -53599,6 +53615,7 @@ IcMPIc
 IcMxIc
 IcN H9
 IcN Ic
+IcN(Ic
 IcN8Ic
 IcN@A;NP
 IcN@Ic
@@ -55071,6 +55088,7 @@ KICKED_FROM_QUEUE_EVENT_ENDING
 KICKED_FROM_QUEUE_EVENT_STARTING
 KICKED_FROM_TEAM
 KIcOXIc
+KMc&M
 KMeans
 KPA;Klt
 KV3 save transfer failed: %s
@@ -55194,7 +55212,6 @@ L&&jL&&jl66Zl66Z~??A~??A
 L+L$ 1
 L9+tiM9
 L90tmH
-L9=Ij
 L9C t#H
 L9chtmH
 L9l$(u
@@ -55209,7 +55226,6 @@ L;0t0H
 L;4$t0A
 L;4$toM
 L;4$trM
-L;5X4h
 L;Hht H
 L;_0UH
 L;d$ w
@@ -55493,13 +55509,14 @@ LayoutDirtied
 Lc!D;a
 Lc"D;b
 Lc#D;c
+Lc%IF
 Lc(D;h
 Lc)D;i
 Lc+D;k
 Lc0D;p
 Lc1D;q
 Lc3D;s
-Lc5i-5
+Lc59L5
 Lc8D;x
 LcD$ H
 LcK<Hc
@@ -58273,6 +58290,7 @@ N5GCSDK12CProtoBufMsgI42CMsgGCToClientAccountGuildEventDataUpdatedEE
 N5GCSDK12CProtoBufMsgI42CMsgGCToClientBattlePassRollupListResponseEE
 N5GCSDK12CProtoBufMsgI42CMsgGCToClientFindTopSourceTVGamesResponseEE
 N5GCSDK12CProtoBufMsgI42CMsgGCToClientRequestLaneSelectionResponseEE
+N5GCSDK12CProtoBufMsgI43CMsgClientToGCCancelUnfinalizedTransactionsEE
 N5GCSDK12CProtoBufMsgI43CMsgGCRequestStoreSalesDataUpToDateResponseEE
 N5GCSDK12CProtoBufMsgI43CMsgGCToClientPrivateCoachingSessionUpdatedEE
 N5GCSDK12CProtoBufMsgI43CMsgGCToClientSocialFeedPostCommentResponseEE
@@ -58821,6 +58839,7 @@ N5GCSDK17GCClientJobLambdaIZN22CDOTA_UI_Overworld_Map15EventSelectNodeE17Overwor
 N5GCSDK17GCClientJobLambdaIZN22CDOTA_UI_Overworld_Map17EventCompletePathE17OverworldPathID_tEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN22CDOTA_UI_Overworld_Map18EventDebugResetAllEvEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN22CDOTA_UI_Overworld_Map19EventShowNodeDialogE17OverworldNodeID_tEUlvE_EE
+N5GCSDK17GCClientJobLambdaIZN22CDOTA_UI_Overworld_Map22BYieldingShowEncounterEPN8panorama8CPanel2DEPK24CDOTAOverworldDefinitionPK18CDOTAOverworldNodeEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN22CDOTA_UI_Overworld_Map24EventDebugClearInventoryEvEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN22CDOTA_UI_Overworld_Map24EventDebugGrantAllTokensEvEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN22CDOTA_UI_Overworld_Map26EventDebugCompleteAllPathsEvEUlvE_EE
@@ -61799,7 +61818,6 @@ PFv12ResourceId_tE
 PFvP12CSceneObjectE
 PFvRK36SpecificUpdateArcanaUICallbackData_tE
 PGDInstruction_t
-PH;=atr
 PH;k u'H
 PHASE_Ban
 PHASE_INVALID
@@ -88719,18 +88737,10 @@ f9C8tmH
 f9Gvr(f
 f9w(t
 f9w0t
-f;5	2
-f;5)1
-f;5)e
-f;5)gs
-f;5)le
-f;59o
-f;5I0
-f;5Ibe
-f;5Ide
-f;5Ih
-f;5YR
-f;5iee
+f;5I{e
+f;5I|e
+f;5I~e
+f;5Yl
 f;J8t_H
 f;W8s f
 f;y u
@@ -88752,8 +88762,6 @@ fD9|$8
 fD;)tjD
 fD;)trD
 fD;*trH
-fD;50
-fD;5`i
 fDBq3ZYbdyo
 fDistance
 fDurationMultiplier
@@ -92610,7 +92618,8 @@ huskar_life_break
 hxA;\$8
 hype_loc
 hyphen
-h|D;-u6
+h|D;-5P
+h|D;-iP
 h|E;l
 i < length
 i <= EVP_MAX_MD_SIZE
@@ -95316,6 +95325,7 @@ k_EMsgClientToGCBingoGetUserDataResponse
 k_EMsgClientToGCCancelInviteToGuild
 k_EMsgClientToGCCancelInviteToGuildResponse
 k_EMsgClientToGCCancelPartyInvites
+k_EMsgClientToGCCancelUnfinalizedTransactions
 k_EMsgClientToGCCandyShopDevClearInventory
 k_EMsgClientToGCCandyShopDevClearInventoryResponse
 k_EMsgClientToGCCandyShopDevGrantCandy
@@ -95513,6 +95523,8 @@ k_EMsgClientToGCOverworldMoveToNode
 k_EMsgClientToGCOverworldMoveToNodeResponse
 k_EMsgClientToGCOverworldTradeTokens
 k_EMsgClientToGCOverworldTradeTokensResponse
+k_EMsgClientToGCOverworldVisitEncounter
+k_EMsgClientToGCOverworldVisitEncounterResponse
 k_EMsgClientToGCPackBundle
 k_EMsgClientToGCPackBundleResponse
 k_EMsgClientToGCPingData
@@ -96688,6 +96700,7 @@ k_eAlreadyReported
 k_eAlreadyResponded
 k_eAlreadySubmitted
 k_eAlreadyUnfavorited
+k_eAlreadyVisited
 k_eAverageAssists
 k_eAverageBountyRunesTaken
 k_eAverageCampsStacked
@@ -97314,7 +97327,6 @@ killer_id> <victim_id
 killer_multikill
 killer_name
 killer_player_id
-killer_playerid
 killer_release
 killer_streak
 killer_team
@@ -112083,10 +112095,9 @@ pwrd_cyber_cafe_id
 pwrd_cyber_cafe_name
 py_generic_services
 p|D;5
-p|D;5G
-p|D;5H
-p|D;5N
-p|D;5W'y
+p|D;5U
+p|D;5W
+p|D;5f
 p|D;5w
 p|E;t
 p耀p耀p耀p
@@ -121470,6 +121481,7 @@ vision_range_daytime
 vision_range_nighttime
 vision_width
 visionrange
+visited
 visitor_class
 visual_height
 visualzdelta
@@ -122281,7 +122293,6 @@ xrJ:DCG
 xstat
 xyA9]p~sA9
 xzu{E1
-x|D;=qO
 y axis
 y,9q0t
 y=up=green, z=forward=blue, x=left=red
@@ -122316,6 +122327,7 @@ youtubevideoid
 ysAbilitH
 ysCameraH
 ysItems
+yｰZｰB
 z [A\A]A^A
 z axis
 z'u%A

@@ -7082,6 +7082,7 @@
 27SCLModifierStackEventFields
 27TEArmorRicochet_GameEvent_t
 28.CMsgClientToGCOverworldDevGrantTokensResponse.EResponse
+28.CMsgClientToGCOverworldVisitEncounterResponse.EResponse
 28.CMsgClientToGCPurchaseChargeCostItemsResponse.EResponse
 28CBoneConstraintPoseSpaceBone
 28CCompressedStaticFullVector3
@@ -7684,6 +7685,7 @@
 2\n-kKillEaterEvent_ShadowFiend_RequiemMultiKills
 2\n-kKillEaterEvent_VengefulSpirit_EnemiesStunned
 2\n-k_EHeroStatType_BattleHungerPotentialDuration
+2\n-k_EMsgClientToGCCancelUnfinalizedTransactions
 2\n-k_EMsgClientToGCCandyShopDevResetShopResponse
 2\n-k_EMsgClientToGCCreateStickerbookPageResponse
 2\n-k_EMsgClientToGCDeleteStickerbookPageResponse
@@ -10418,6 +10420,7 @@
 37CMsgAdditionalLobbyStartupAccountData
 37CMsgClientToGCCreateStaticRecipe_Item
 37CMsgClientToGCOverworldDevGrantTokens
+37CMsgClientToGCOverworldVisitEncounter
 37CMsgClientToGCPurchaseChargeCostItems
 37CMsgClientToGCUnlockItemStyleResponse
 37CMsgDOTARealtimeGameStats_AbilityList
@@ -12272,6 +12275,7 @@
 43CInlineJob_CMsgGCToServerRecordTrainingData
 43CMsgAMSendEmail_PersonaNameReplacementToken
 43CMsgClientToGCAggregateMetrics_SingleMetric
+43CMsgClientToGCCancelUnfinalizedTransactions
 43CMsgClientToGCOverworldClaimEncounterReward
 43CMsgClientToGCOverworldCompletePathResponse
 43CMsgClientToGCOverworldDevResetNodeResponse
@@ -12784,6 +12788,7 @@
 45CDefaultResponseSystemSaveRestoreBlockHandler
 45CEnvSoundscapeProxyAlias_snd_soundscape_proxy
 45CMsgClientToGCOverworldDevGrantTokensResponse
+45CMsgClientToGCOverworldVisitEncounterResponse
 45CMsgClientToGCPurchaseChargeCostItemsResponse
 45CMsgCustomGameWhitelistForEdit_WhitelistEntry
 45CMsgDOTARealtimeGameStatsTerse_PickBanDetails
@@ -13568,6 +13573,7 @@
 4\n/k_EMsgClientToGCJoinPrivateCoachingSessionLobby
 4\n/k_EMsgClientToGCOrderStickerbookTeamPageRequest
 4\n/k_EMsgClientToGCOverworldDevGrantTokensResponse
+4\n/k_EMsgClientToGCOverworldVisitEncounterResponse
 4\n/k_EMsgClientToGCPlaceCollectionStickersResponse
 4\n/k_EMsgClientToGCPurchaseChargeCostItemsResponse
 4\n/k_EMsgClientToGCRequestEventTipsSummaryResponse
@@ -16710,7 +16716,7 @@ ApplyMotionController
 ApplyVerticalMotionController
 ApplyWearableModifiers
 ApproachBrightnessThink
-Apr 19 2024
+Apr 22 2024
 ArcanistPotion.Activate
 Are blacklisted heroes hidden, or just dimmed, in hero picking
 Are cheats enabled on the server
@@ -47763,6 +47769,7 @@ b"G\n\eCDOTAUserMsg_InvalidCommand
 b"H\n5CDOTAClientMsg_BroadcasterUsingAssistedCameraOperator
 b"H\n\eCDOTAClientMsg_PlayerBounty
 b"I\n
+b"K\n
 b"L\n
 b"M\n CDOTAClientMsg_GuideSelectOption
 b"N\n
@@ -47778,13 +47785,13 @@ b"V\n
 b"V\n*CDOTAClientMsg_SelectOverworldTokenRewards
 b"X\n\nCMsgTEFizz
 b"Z\n
-b"\\\n"CMsgOverworldEncounterProgressData
 b"a\n\eCDOTAClientMsg_SalutePlayer
 b"i\n
 b"j\n
 b"k\n
 b"k\n"CNETMsg_SpawnGroup_SetCreationTick
 b"l\n\nServerType
+b"m\n"CMsgOverworldEncounterProgressData
 b"n\n
 b"q\n CDOTAUserMsg_CombatHeroPositions
 b"q\n!CDOTAClientMsg_UpdateQuickBuyItem
@@ -51434,6 +51441,7 @@ dota_tormentor_respawn_time
 dota_tormentor_spawn_time
 dota_tournament_item_event
 dota_tournament_override
+dota_tower_deny
 dota_tower_kill
 dota_track_chat_mutes
 dota_tracked_stats_dump
@@ -56363,6 +56371,7 @@ k_EMsgClientToGCBingoGetUserDataResponse
 k_EMsgClientToGCCancelInviteToGuild
 k_EMsgClientToGCCancelInviteToGuildResponse
 k_EMsgClientToGCCancelPartyInvites
+k_EMsgClientToGCCancelUnfinalizedTransactions
 k_EMsgClientToGCCandyShopDevClearInventory
 k_EMsgClientToGCCandyShopDevClearInventoryResponse
 k_EMsgClientToGCCandyShopDevGrantCandy
@@ -56560,6 +56569,8 @@ k_EMsgClientToGCOverworldMoveToNode
 k_EMsgClientToGCOverworldMoveToNodeResponse
 k_EMsgClientToGCOverworldTradeTokens
 k_EMsgClientToGCOverworldTradeTokensResponse
+k_EMsgClientToGCOverworldVisitEncounter
+k_EMsgClientToGCOverworldVisitEncounterResponse
 k_EMsgClientToGCPackBundle
 k_EMsgClientToGCPackBundleResponse
 k_EMsgClientToGCPingData
@@ -57556,6 +57567,7 @@ k_UnlockStyle_Failed_CantCommit
 k_UnlockStyle_Failed_OtherError
 k_UnlockStyle_Succeeded
 k_UnpackBundle_Succeeded
+k_eAlreadyVisited
 k_eEncounterMissingRewards
 k_eEventActionScoreMode_Add
 k_eEventActionScoreMode_Min
@@ -70243,6 +70255,7 @@ n'k_EMsgClientToGCGetHeroStickersResponse
 n'k_EMsgClientToGCKickGuildMemberResponse
 n'k_EMsgClientToGCModifyGuildRoleResponse
 n'k_EMsgClientToGCOverworldDevGrantTokens
+n'k_EMsgClientToGCOverworldVisitEncounter
 n'k_EMsgClientToGCPurchaseChargeCostItems
 n'k_EMsgClientToGCRemoveGuildRoleResponse
 n'k_EMsgClientToGCRequestEventTipsSummary
@@ -70539,6 +70552,7 @@ n,steammessages_steamlearn.steamworkssdk.proto
 n------- SERVER SOUNDSCAPES -------\n
 n-CDOTAClientMsg_ContextualTips_Subscribe_Entry
 n-CMsgClientToGCOverworldDevGrantTokensResponse
+n-CMsgClientToGCOverworldVisitEncounterResponse
 n-CMsgClientToGCPurchaseChargeCostItemsResponse
 n-CMsgServerToGCCavernCrawlIsHeroActiveResponse
 n-NETWORK_DISCONNECT_REJECT_INVALIDSTEAMCERTLEN
@@ -70978,6 +70992,7 @@ n\avariant
 n\avectors
 n\aversion
 n\avisible
+n\avisited
 n\avod_url
 n\awinners
 n\axnormal
@@ -77698,6 +77713,7 @@ r"8\n
 r"9\n
 r":\n"CWorkshop_GetContributors_Response
 r";\n CMsgServerGCUpdateSpectatorCount
+r"=\n+CMsgClientToGCCancelUnfinalizedTransactions
 r"A\n
 r"A\n.CMsgGCToGCStoreProcessCDKeyTransactionResponse
 r"C\n
@@ -77750,11 +77766,11 @@ r"o\n
 r"p\n+CMsgGCToGCCompendiumInGamePredictionResults
 r"q\n
 r"r\n
-r"r\n!CMsgClientToGCOverworldMoveToNode
 r"s\n#CMsgServerToGCRerollPlayerChallenge
 r"s\n\rCMsgTEBubbles
 r"t\n
 r"u\n
+r"v\n%CMsgClientToGCOverworldVisitEncounter
 r"x\n'CMsgClearDecalsForSkeletonInstanceEvent
 r"y\n\tEResponse
 r"z\n
@@ -82465,6 +82481,7 @@ t"a\n$CDOTAUserMsg_CustomHudElement_Create
 t"c\n
 t"m\n
 t"m\n%CWorkshop_GetItemDailyRevenue_Request
+t"r\n!CMsgClientToGCOverworldMoveToNode
 t"s\n
 t"sourcefile" "%s"\n
 t"u\n!CNETMsg_SpawnGroup_ManifestUpdate
