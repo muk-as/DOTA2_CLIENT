@@ -4,7 +4,7 @@
 
 // /////////////////////////////////////////////////////////////
 // Binary: server.dll
-// Classes count: 6,585 (Allocated) | 6,826 (Unallocated)
+// Classes count: 6,586 (Allocated) | 6,827 (Unallocated)
 // Enums count: 3 (Allocated) | 341 (Unallocated)
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
@@ -30683,6 +30683,16 @@ class CDOTA_Modifier_Rattletrap_Cog_Leash : public CDOTA_Buff
 {
 public:
 	int32_t leash; // 0x1338	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1338
+// Has VTable
+class CDOTA_Modifier_TargetDummy_Unkillable : public CDOTA_Buff
+{
+public:
+	// No schema binary for binding
 };
 
 // Registered binary: server.dll (project 'server')
