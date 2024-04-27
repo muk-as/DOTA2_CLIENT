@@ -2346,7 +2346,7 @@ enum class EBaseEntityMessages : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
-// Enumerator count: 131
+// Enumerator count: 132
 // Alignment: 4
 // Size: 0x4
 enum class EGCItemMsg : uint32_t
@@ -2482,6 +2482,7 @@ enum class EGCItemMsg : uint32_t
 	k_EMsgClientToGCPurchaseChargeCostItems = 0xa37,
 	k_EMsgClientToGCPurchaseChargeCostItemsResponse = 0xa38,
 	k_EMsgClientToGCCancelUnfinalizedTransactions = 0xa39,
+	k_EMsgClientToGCCancelUnfinalizedTransactionsResponse = 0xa3a,
 };
 
 // Registered binary: particles.dll (project 'particles')
