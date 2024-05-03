@@ -8940,7 +8940,7 @@ enum class EBroadcastTimelineEvent : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
-// Enumerator count: 15
+// Enumerator count: 16
 // Alignment: 4
 // Size: 0x4
 enum class EOverworldAuditAction : uint32_t
@@ -8960,6 +8960,7 @@ enum class EOverworldAuditAction : uint32_t
 	k_eOverworldAuditAction_TokenTraderGained = 0xc,
 	k_eOverworldAuditAction_EncounterRewardTokenCost = 0xd,
 	k_eOverworldAuditAction_EncounterRewardTokenReward = 0xe,
+	k_eOverworldAuditAction_SupportGrantTokens = 0x10,
 };
 
 // Registered binary: server.dll (project 'server')

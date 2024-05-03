@@ -9670,7 +9670,7 @@ enum class PortraitSummonsDisplayMode_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
-// Enumerator count: 15
+// Enumerator count: 16
 // Alignment: 4
 // Size: 0x4
 enum class EOverworldAuditAction : uint32_t
@@ -9690,6 +9690,7 @@ enum class EOverworldAuditAction : uint32_t
 	k_eOverworldAuditAction_TokenTraderGained = 0xc,
 	k_eOverworldAuditAction_EncounterRewardTokenCost = 0xd,
 	k_eOverworldAuditAction_EncounterRewardTokenReward = 0xe,
+	k_eOverworldAuditAction_SupportGrantTokens = 0x10,
 };
 
 // Registered binary: rendersystemdx11.dll (project 'rendersystemdx11')
@@ -27110,7 +27111,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x38
+// Size: 0x60
 // 
 // MGetKV3ClassDefaults
 // MVDataRoot
@@ -27120,7 +27121,7 @@ public:
 	// MVDataUniqueMonotonicInt "_editor/next_id_hero_reward"
 	uint8_t m_unHeroID; // 0x0	
 	// MPropertyDescription
-	CUtlVector< CUtlString > m_vecTokenNames; // 0x20	
+	CUtlVector< CUtlString > m_vecTokenNames; // 0x48	
 };
 
 // Registered binary: particles.dll (project 'particles')

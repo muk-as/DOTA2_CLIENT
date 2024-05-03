@@ -83322,7 +83322,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x38
+// Size: 0x60
 // 
 // MGetKV3ClassDefaults
 // MVDataRoot
@@ -83332,7 +83332,7 @@ public:
 	// MVDataUniqueMonotonicInt "_editor/next_id_hero_reward"
 	uint8_t m_unHeroID; // 0x0	
 	// MPropertyDescription
-	CUtlVector< CUtlString > m_vecTokenNames; // 0x20	
+	CUtlVector< CUtlString > m_vecTokenNames; // 0x48	
 };
 
 // Registered binary: client.dll (project 'client')
