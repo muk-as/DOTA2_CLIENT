@@ -31606,6 +31606,7 @@ public:
 	// int32_t item_def6; // 0x7fffffff
 	// int32_t item_def7; // 0x7fffffff
 	// int32_t model_index; // 0x7fffffff
+	// int32_t skin_override; // 0x7fffffff
 	// bool StartDisabled; // 0x7fffffff
 	// CUtlString activity; // 0x7fffffff
 	// int32_t style_index0; // 0x7fffffff
