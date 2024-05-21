@@ -44,7 +44,6 @@
 0123456789:<>@BDFHJLNPRTVXZ\^`bdfhjlnprtwz
 0123456789ABCDEF
 0123456789abcdef
-0123P
 019lu
 02X%02X%02X%02X
 02X%02X%02x%02X
@@ -97,7 +96,6 @@
 0CMsgGCtoGCAssociatedExploiterAccountInfoResponse
 0CMsgServerToGCRequestPlayerRecentAccomplishments
 0CPlayer_UpdateSteamAnnouncementLastRead_Response
-0D;- Hn
 0GAME_PARTICLE_MANAGER_EVENT_SET_SHOULD_CHECK_FOW
 0H9X0
 0HcB M
@@ -143,6 +141,7 @@
 0k_EMsgClientToGCCreateTeamPlayerCardPackResponse
 0k_EMsgClientToGCGetCurrentPrivateCoachingSession
 0k_EMsgClientToGCOrderStickerbookTeamPageResponse
+0k_EMsgClientToGCOverworldGetDynamicImageResponse
 0k_EMsgClientToGCRequestGuildEventMembersResponse
 0k_EMsgClientToGCRequestPlusWeeklyChallengeResult
 0k_EMsgClientToGCSelectCompendiumInGamePrediction
@@ -387,6 +386,7 @@
 10CMsgIDLinkILj1ELj16ELj8979E31CMsgClientToGCOverworldFeedbackE
 10CMsgIDLinkILj1ELj16ELj8981E37CMsgClientToGCOverworldVisitEncounterE
 10CMsgIDLinkILj1ELj16ELj8985E30CMsgClientToGCDotaLabsFeedbackE
+10CMsgIDLinkILj1ELj16ELj8988E38CMsgClientToGCOverworldGetDynamicImageE
 10CMsgQAngle
 10CMsgTEDust
 10CMsgTEFizz
@@ -1326,6 +1326,7 @@
 15CAsyncDataCacheIi37CMsgClientToGCGetAllHeroOrderResponseE
 15CAsyncDataCacheIi40CMsgGCToClientGetFilteredPlayersResponseE
 15CAsyncDataCacheIi42CMsgAvailablePrivateCoachingSessionSummaryE
+15CAsyncDataCacheIi46CMsgClientToGCOverworldGetDynamicImageResponseE
 15CAsyncDataCacheIi47CMsgClientToGCRequestPlayerCoachMatchesResponseE
 15CAsyncDataCacheIi48CMsgGCToClientRequestActiveBeaconPartiesResponseE
 15CAsyncDataCacheIj13CContestVotesE
@@ -5000,6 +5001,7 @@
 18CMsgIDLinkResponseILj1ELj16ELj8979E31CMsgClientToGCOverworldFeedbackLj8980E39CMsgClientToGCOverworldFeedbackResponseE
 18CMsgIDLinkResponseILj1ELj16ELj8981E37CMsgClientToGCOverworldVisitEncounterLj8982E45CMsgClientToGCOverworldVisitEncounterResponseE
 18CMsgIDLinkResponseILj1ELj16ELj8985E30CMsgClientToGCDotaLabsFeedbackLj8986E38CMsgClientToGCDotaLabsFeedbackResponseE
+18CMsgIDLinkResponseILj1ELj16ELj8988E38CMsgClientToGCOverworldGetDynamicImageLj8989E46CMsgClientToGCOverworldGetDynamicImageResponseE
 18CMsgNotifyWatchdog
 18CMsgPackageLicense
 18CMsgProfileRequest
@@ -7770,6 +7772,7 @@
 25.CMsgClientToGCCandyShopGetUserDataResponse.EResponse
 25.CMsgClientToGCDeclineInviteToGuildResponse.EResponse
 25.CMsgClientToGCOverworldDevResetAllResponse.EResponse
+25.CMsgClientToGCOverworldGetDynamicImageResponse.Image
 25.CMsgClientToGCOverworldGetUserDataResponse.EResponse
 25.CMsgClientToGCOverworldTradeTokensResponse.EResponse
 25.CMsgClientToGCShowcaseAdminConvictResponse.EResponse
@@ -9865,6 +9868,7 @@
 2B.CMsgGCToClientBattlePassRollup_International2016.FantasyChallenge
 2B.CMsgGCToClientCollectorsCacheAvailableDataResponse.Vote.EVoteType
 2B.CMsgSteamLearn_InferenceBackend_Response.BinaryCrossEntropyOutputH
+2C.CMsgClientToGCOverworldGetDynamicImageResponse.EDynamicImageFormat
 2C.CMsgClientToGCRequestPlayerRecentAccomplishmentsResponse.EResponse
 2C.CMsgClientToGCSubmitPrivateCoachingSessionRatingResponse.EResponse
 2C.CMsgServerToGCRequestPlayerRecentAccomplishmentsResponse.EResponse
@@ -10780,6 +10784,7 @@
 31CMsgSearchForOpenGuildsResponse
 31CMsgSerializedSOCache_TypeCache
 31CMsgShowcaseItem_ChatWheel_Data
+31COverworldUserDynamicImageCache
 31CPanoramaScript_CustomNetTables
 31CParallelProcessorAbstract_Base
 31CPlayerHeroAccomplishmentsCache
@@ -12540,6 +12545,7 @@
 35CMsgIDLinkGenericClientToGCResponseILj1ELj8979E31CMsgClientToGCOverworldFeedbackLj8980E39CMsgClientToGCOverworldFeedbackResponseE
 35CMsgIDLinkGenericClientToGCResponseILj1ELj8981E37CMsgClientToGCOverworldVisitEncounterLj8982E45CMsgClientToGCOverworldVisitEncounterResponseE
 35CMsgIDLinkGenericClientToGCResponseILj1ELj8985E30CMsgClientToGCDotaLabsFeedbackLj8986E38CMsgClientToGCDotaLabsFeedbackResponseE
+35CMsgIDLinkGenericClientToGCResponseILj1ELj8988E38CMsgClientToGCOverworldGetDynamicImageLj8989E46CMsgClientToGCOverworldGetDynamicImageResponseE
 35CMsgInGamePrediction_QueryKeyValues
 35CMsgJoinableCustomGameModesResponse
 35CMsgLobbyPlayerPlusSubscriptionData
@@ -13600,6 +13606,7 @@
 38CMsgClientToGCDotaLabsFeedbackResponse
 38CMsgClientToGCGetQuestProgressResponse
 38CMsgClientToGCIntegrityStatus_keyvalue
+38CMsgClientToGCOverworldGetDynamicImage
 38CMsgClientToGCRequestGuildDataResponse
 38CMsgClientToGCRequestGuildEventMembers
 38CMsgClientToGCRequestGuildFeedResponse
@@ -16147,6 +16154,7 @@
 46CMsgClientToGCGetDPCFavoritesResponse_Favorite
 46CMsgClientToGCGetOWMatchDetailsResponse_Marker
 46CMsgClientToGCOrderStickerbookTeamPageResponse
+46CMsgClientToGCOverworldGetDynamicImageResponse
 46CMsgClientToGCPlaceStickersRequest_StickerItem
 46CMsgClientToGCRequestGuildEventMembersResponse
 46CMsgClientToGCRequestPlusWeeklyChallengeResult
@@ -16691,7 +16699,6 @@
 48C_DOTA_Ability_Special_Bonus_Unique_Windranger_8
 48C_DOTA_Ability_Special_Bonus_Unique_Windranger_9
 48HcA
-48HcA M
 48HcB
 49CDOTA_Ability_AghsFort_Creature_Phoenix_Supernova
 49CDOTA_Ability_Aghsfort_Aziyog_Underlord_Firestorm
@@ -17305,6 +17312,7 @@
 52CMsgClientToGCFantasyCraftingDevModifyTabletResponse
 52CMsgClientToGCFantasyCraftingGenerateTabletsResponse
 52CMsgClientToGCGetLimitedItemPurchaseQuantityResponse
+52CMsgClientToGCOverworldGetDynamicImageResponse_Image
 52CMsgClientToGCRequestAccountGuildPersonaInfoResponse
 52CMsgClientToGCRequestPlayerHeroRecentAccomplishments
 52CMsgGCToClientBattlePassRollupListResponse_EventInfo
@@ -17406,6 +17414,7 @@
 54CDOTA_DB_Page_BP_International2019_CollectorsCacheVote
 54CDOTA_DB_Page_BP_International2020_CollectorsCacheVote
 54CDOTA_DB_Page_BP_International2022_CollectorsCacheVote
+54CDOTA_DB_Popup_BP_Crownfall_Encounter_RipplesInTheDark
 54CDOTA_DB_Tooltip_BP_International2023_BingoStatTooltip
 54CDOTA_Modifier_AghsFort_Creature_Venomancer_PoisonNova
 54CDOTA_Modifier_ArcWarden_MagneticField_Thinker_Evasion
@@ -17873,6 +17882,7 @@
 8Gets the list of nicknames this user has for other users
 8H9{0u
 8Hc@0I
+8HcA M
 8HcC0H
 8HcG0L
 8IRestore
@@ -17927,6 +17937,7 @@
 8ÐAVAUI
 8ÐAWAVAUATI
 8ÐAWAVAUATUSH
+8ｭTｭu
 9#9%9)9/9=9A9M9[9k9y9}9
 9#DOTA_Hero_Selection_CaptainsMode_WaitingForChooseCaptain
 90wc9p
@@ -29292,6 +29303,8 @@ CMsgClientToGCOverworldDevResetNodeResponse
 CMsgClientToGCOverworldFeedback
 CMsgClientToGCOverworldFeedbackResponse
 CMsgClientToGCOverworldFeedbackResponse: %s
+CMsgClientToGCOverworldGetDynamicImage
+CMsgClientToGCOverworldGetDynamicImageResponse
 CMsgClientToGCOverworldGetUserData
 CMsgClientToGCOverworldGetUserDataResponse
 CMsgClientToGCOverworldMoveToNode
@@ -36262,7 +36275,6 @@ D$tI;D$ t+H9
 D$tu;I
 D$xA9D$t
 D$xH	D$@H	l$8H
-D$xdH3
 D$xt)I9|$0t"I9|$@t
 D$xtyH
 D+M P1
@@ -36311,16 +36323,13 @@ D9't+H
 D9't3H
 D9't:H
 D9(t8D
-D9-%In
 D90tkD
-D95RuG
-D95]vG
 D98tKL
 D98t^D
 D98tdL
 D98tqL
 D9;~BL
-D9=USn
+D9=5hn
 D9@D|Nt<H
 D9BDt
 D9H(t5D
@@ -36365,7 +36374,7 @@ D9{du	9Ch
 D:/generated_set_portraits.txt
 D:o8t
 D; t.L
-D;%me
+D;%mz
 D;(tHA
 D;)te;E
 D;,$rP1
@@ -36748,6 +36757,7 @@ DOTABPCrownfallCollectorsCacheVotePage
 DOTABPCrownfallEncounterChooseHeroPopup
 DOTABPCrownfallEncounterFishingPopup
 DOTABPCrownfallEncounterItsDangerousPopup
+DOTABPCrownfallEncounterRipplesInTheDark
 DOTABPCrownfallEncounterSimpleCustomPopup
 DOTABPCrownfallEncounterStoryRecapAct1Popup
 DOTABPCrownfallEncounterTokenQuestPopup
@@ -38875,6 +38885,7 @@ DOTAOverworldNodeDebugShowDialogue
 DOTAOverworldNodeDebugShowEncounter
 DOTAOverworldReloaded
 DOTAOverworldUserDataUpdated
+DOTAOverworldUserDynamicImageDataUpdated
 DOTAOwnedItemDemo
 DOTAOwnedItemDetailsExit
 DOTAOwnedItemDetailsGoToLoadout
@@ -47706,6 +47717,7 @@ EDotaBroadcastMessages
 EDotaClientMessages
 EDotaEntityMessages
 EDotaUserMessages
+EDynamicImageFormat
 EEqJb3wXvdo
 EErrorCode
 EEvent
@@ -51900,26 +51912,18 @@ H9wHt
 H9wxt
 H9z r
 H9z s
-H;-9BN
+H;-vUN
 H;0t7H
 H;1t's,H
 H;2s&H
-H;2s]A
 H;2t-H
 H;2t?sDI9
 H;:t7r
-H;=66
-H;=6Jx
-H;=6ix
-H;=6m
-H;=9Zl
-H;=9jN
-H;=F3y
-H;=FJw
-H;=YON
-H;=vaw
-H;=vkz
-H;=vxw
+H;=7xh
+H;=AWN
+H;=EwN
+H;=NBx
+H;=xGO
 H;@XtJH
 H;D$pH
 H;E0sR
@@ -52576,10 +52580,8 @@ HavePlayersLastWeek
 Hazhadal
 Hc+HcC
 Hc0A;t
-Hc5E=K
-Hc5FED
-Hc5f'N
-Hc5w%N
+Hc5<X
+Hc5RtL
 Hc@(E1
 Hc@8M
 Hc@LHk
@@ -53635,7 +53637,6 @@ IcFH1
 IcFPA9
 IcG A;G0
 IcG A;G0tf
-IcG L9
 IcG(Mcl
 IcG81
 IcG@1
@@ -55243,7 +55244,6 @@ L$8uvA
 L$<Lcc
 L$HH;G
 L$HdH3
-L$Hu%A
 L$XJ1L
 L$XJcD1
 L$XdH3
@@ -55269,8 +55269,8 @@ L9t$ t9H
 L9|$(tLL
 L;#tGH
 L;$$tJA
-L;%5mo
 L;(t3I
+L;-kaN
 L;0t0H
 L;4$t0A
 L;4$toM
@@ -57941,6 +57941,7 @@ N24CParallelProcessLauncher18CParallelLambdaJobIZN17CRenderGameSystem17OnClientP
 N24CParallelProcessLauncher18CParallelLambdaJobIZN18CPhysicsGameSystem27PushDynamicTransformsWorkerEP22VPhysXWorldStepResultsEUliE_EE
 N24CParallelProcessLauncher18CParallelLambdaJobIZN20CAnimGraphGameSystem25UpdateAnimGraphAnimationsE22AnimationAdvanceType_tRK23CUtlVectorFixedGrowableIP14CBaseAnimGraphLm2048EiEEUliE0_EE
 N24CParallelProcessLauncher18CParallelLambdaJobIZN34CEntityKeyValuesSaveRestoreOpsBase19BuildKeyValuesCacheEP20CGameSaveRestoreInfoEUliE_EE
+N24CParallelProcessLauncher18CParallelLambdaJobIZN54CDOTA_DB_Popup_BP_Crownfall_Encounter_RipplesInTheDark16EventFrameUpdateEvEUliE_EE
 N24CParallelProcessLauncher18CParallelLambdaJobIZNK13FloatBitMap_t20WriteInMemoryEXRFastER10CUtlBufferEUliE_EE
 N25C_BaseAnimatingController22NetworkVar_m_baseLayerE
 N25g_pCollectionTreasuryTabsMUlPK19CDOTAItemDefinitionE0_E
@@ -58722,6 +58723,9 @@ N5GCSDK17GCClientJobLambdaIZN15CAsyncDataCacheIi40CMsgGCToClientGetFilteredPlaye
 N5GCSDK17GCClientJobLambdaIZN15CAsyncDataCacheIi42CMsgAvailablePrivateCoachingSessionSummaryE16BatchRequestDataEPKiiEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN15CAsyncDataCacheIi42CMsgAvailablePrivateCoachingSessionSummaryE18RequestCurrentDataERKiEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN15CAsyncDataCacheIi42CMsgAvailablePrivateCoachingSessionSummaryE20ScheduleBatchRequestEfEUlvE_EE
+N5GCSDK17GCClientJobLambdaIZN15CAsyncDataCacheIi46CMsgClientToGCOverworldGetDynamicImageResponseE16BatchRequestDataEPKiiEUlvE_EE
+N5GCSDK17GCClientJobLambdaIZN15CAsyncDataCacheIi46CMsgClientToGCOverworldGetDynamicImageResponseE18RequestCurrentDataERKiEUlvE_EE
+N5GCSDK17GCClientJobLambdaIZN15CAsyncDataCacheIi46CMsgClientToGCOverworldGetDynamicImageResponseE20ScheduleBatchRequestEfEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN15CAsyncDataCacheIi47CMsgClientToGCRequestPlayerCoachMatchesResponseE16BatchRequestDataEPKiiEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN15CAsyncDataCacheIi47CMsgClientToGCRequestPlayerCoachMatchesResponseE18RequestCurrentDataERKiEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN15CAsyncDataCacheIi47CMsgClientToGCRequestPlayerCoachMatchesResponseE20ScheduleBatchRequestEfEUlvE_EE
@@ -65217,6 +65221,7 @@ RightTeamVisible
 Rigid Entity Decals: %d
 Rigwarl
 RimLight
+RipplesInTheDarkImage
 RiverRunes
 RiverVialButtons
 RiverVialButtons2
@@ -72733,6 +72738,7 @@ ZN10CCallQueue18ParallelCallQueuedEPKcP11IThreadPool
 ZN10CUtlBuffer10ParseTokenEPK14characterset_tPcib
 ZN10CUtlBuffer11GetOverflowEi
 ZN10CUtlBuffer11WriteToFileEPKcb
+ZN10CUtlBuffer12AssumeMemoryEPviii
 ZN10CUtlBuffer12DetachMemoryEv
 ZN10CUtlBuffer12SetBigEndianEb
 ZN10CUtlBuffer13EatWhiteSpaceEv
@@ -88802,9 +88808,9 @@ f9C8tmH
 f9Gvr(f
 f9w(t
 f9w0t
-f;5937
-f;59h
-f;5Yb
+f;59#t
+f;5I"3
+f;5Yw
 f;J8t_H
 f;W8s f
 f;y u
@@ -89293,6 +89299,7 @@ file://{resources}/layout/battle_pass/crownfall/bp_popup_crownfall_encounter_%s.
 file://{resources}/layout/battle_pass/crownfall/bp_popup_crownfall_encounter_choose_hero.xml
 file://{resources}/layout/battle_pass/crownfall/bp_popup_crownfall_encounter_fishing.xml
 file://{resources}/layout/battle_pass/crownfall/bp_popup_crownfall_encounter_its_dangerous.xml
+file://{resources}/layout/battle_pass/crownfall/bp_popup_crownfall_encounter_ripples_in_the_dark.xml
 file://{resources}/layout/battle_pass/crownfall/bp_popup_crownfall_encounter_story_recap_act1.xml
 file://{resources}/layout/battle_pass/crownfall/bp_popup_crownfall_encounter_token_quest.xml
 file://{resources}/layout/battle_pass/crownfall/bp_popup_crownfall_encounter_token_trader.xml
@@ -91017,6 +91024,7 @@ game/client/dota/dota_material_proxies.cpp
 game/client/dota/dota_minimap_helpers.cpp
 game/client/dota/external_webapi_integration.cpp
 game/client/dota/keybindings.cpp
+game/client/dota/panorama/crownfall/dota_db_popup_bp_crownfall_encounter_simple_custom.cpp:452
 game/client/dota/panorama/dota_db_play.cpp:5067
 game/client/dota/panorama/dota_db_play.cpp:5114
 game/client/dota/panorama/dota_event_user_data.cpp
@@ -91917,6 +91925,7 @@ hCurrentEntity
 hEntity
 hHc@`Hk
 hHcKPIc
+hHc[`H
 hHeroOwner
 hIcD$`L
 hIllusion
@@ -92682,8 +92691,6 @@ huskar_life_break
 hxA;\$8
 hype_loc
 hyphen
-h|D;-5q
-h|D;-iq
 h|E;l
 i < length
 i <= EVP_MAX_MD_SIZE
@@ -93115,8 +93122,10 @@ imageIndex
 imageSize
 image_banner
 image_bits
+image_bytes
 image_flipped
 image_height
+image_id
 image_inventory
 image_inventory_overlay
 image_name
@@ -95584,6 +95593,8 @@ k_EMsgClientToGCOverworldDevResetPath
 k_EMsgClientToGCOverworldDevResetPathResponse
 k_EMsgClientToGCOverworldFeedback
 k_EMsgClientToGCOverworldFeedbackResponse
+k_EMsgClientToGCOverworldGetDynamicImage
+k_EMsgClientToGCOverworldGetDynamicImageResponse
 k_EMsgClientToGCOverworldGetUserData
 k_EMsgClientToGCOverworldGetUserDataResponse
 k_EMsgClientToGCOverworldMoveToNode
@@ -96825,6 +96836,7 @@ k_eContractSlotCooldown
 k_eContractSlotLockedDotaPlus
 k_eContractSlotLockedGuild
 k_eContractSlotTimeError
+k_eData
 k_eDescriptionInvalid
 k_eDireGameCount
 k_eDireWinRate
@@ -97138,6 +97150,7 @@ k_eOverworldNodeState_Invalid
 k_eOverworldNodeState_Locked
 k_eOverworldNodeState_Unlocked
 k_eOwnership
+k_ePNG
 k_ePageTypeMismatch
 k_ePathAlreadyUnlocked
 k_ePathIsLocked
@@ -97274,6 +97287,7 @@ k_eUnableToGetAggregates
 k_eUnableToGetPlusSubInfo
 k_eUnableToLoadBattleReport
 k_eUnableToSaveBattleReport
+k_eUnknown
 k_eUnknownLaneOutcome
 k_eUnknownReport
 k_eUnknownRole
@@ -97448,6 +97462,7 @@ l$0tTH
 l$8H3D$0H3l
 l$@IcD$8I
 l$HE;l$XD
+l$HIcD$@I
 l$PIcD$HI
 l$XH;l
 l$XIcD$PI
@@ -98142,7 +98157,9 @@ lycan_summon_wolves
 lycan_summon_wolves_critical_strike
 lycan_summon_wolves_invisibility
 lycan_wolf_bite
-m8L;-NE
+m H;-T
+m H;-tk
+m8H;-&7
 mCStorePlus
 mNKNmu-EwkQ
 mPG@j^h
@@ -109308,7 +109325,6 @@ pDescription
 pEt : lower-mid front unrounded vowel
 pEventName
 pField
-pH955W
 pHHc@@A
 pHc@hI
 pHhXpHhX
@@ -112165,10 +112181,12 @@ pwrd_cyber_cafe_id
 pwrd_cyber_cafe_name
 py_generic_services
 p|D;5
-p|D;5%H
-p|D;5&GO
-p|D;5=Tn
-p|D;5_Un
+p|D;5.Ca
+p|D;5?jn
+p|D;5_g
+p|D;5f
+p|D;5gin
+p|D;5w
 p|E;t
 p耀p耀p耀p
 q not prime
@@ -113153,6 +113171,10 @@ resource/ti10_compendium_caster_list.txt
 resource/ti11_compendium_caster_list.txt
 resource/ti12_compendium_caster_list.txt
 resource/ti9_compendium_caster_list.txt
+resource\cache\fow_cache_01.bin
+resource\cache\fow_cache_02.bin
+resource\cache\fow_cache_04.bin
+resource\images\ripples_in_the_dark\magic.png
 resource_name
 resource_type
 resourcecompiler.exe
@@ -114056,6 +114078,7 @@ s<br><br
 s<span class="Match">%s</span>%s
 s<t~E
 s<u)LcC
+s<u+LcS
 s=%(nh0
 s?interpolation=lanczos-none&output-format=jpeg&output-quality=92&fit=inside|*:%d
 s?interpolation=lanczos-none&output-format=jpeg&output-quality=95&fit=inside|*:70
@@ -118967,6 +118990,7 @@ tGfD; u
 tGfD;8u
 tGfD;b u@H
 tHD; u
+tHHcG8
 tHLcc E
 tHcSp
 tIHcC
@@ -120593,7 +120617,7 @@ uPM+uHI
 uP[A\A
 uP[A\A]A
 uR[A\A]A
-uSHc54-H
+uSHc54BH
 uXA9t$XA
 uXHcNHH
 uXIcEPI
@@ -122320,7 +122344,6 @@ xIcEh1
 xT9pXt
 xX0123456789abcdef0123456789ABCDEF
 xX0123456789abcdefABCDEF
-xXuYE1
 xY9GH~TH
 x[A\A
 x[A\A]A^A

@@ -4354,7 +4354,7 @@ enum class PARTICLE_MESSAGE : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
-// Enumerator count: 925
+// Enumerator count: 927
 // Alignment: 4
 // Size: 0x4
 enum class EDOTAGCMsg : uint32_t
@@ -5284,6 +5284,8 @@ enum class EDOTAGCMsg : uint32_t
 	k_EMsgClientToGCOverworldVisitEncounterResponse = 0x2316,
 	k_EMsgClientToGCDotaLabsFeedback = 0x2319,
 	k_EMsgClientToGCDotaLabsFeedbackResponse = 0x231a,
+	k_EMsgClientToGCOverworldGetDynamicImage = 0x231c,
+	k_EMsgClientToGCOverworldGetDynamicImageResponse = 0x231d,
 };
 
 // Registered binary: server.dll (project 'server')
