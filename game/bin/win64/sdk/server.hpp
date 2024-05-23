@@ -4,7 +4,7 @@
 
 // /////////////////////////////////////////////////////////////
 // Binary: server.dll
-// Classes count: 6,738 (Allocated) | 6,984 (Unallocated)
+// Classes count: 6,737 (Allocated) | 6,983 (Unallocated)
 // Enums count: 3 (Allocated) | 347 (Unallocated)
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
@@ -12294,7 +12294,7 @@ public:
 class CDOTA_Modifier_DragonKnight_Inherited_Vigor : public CDOTA_Buff
 {
 public:
-	int32_t base_health_regen; // 0x1598	
+	float base_health_regen; // 0x1598	
 	float base_armor; // 0x159c	
 	float level_mult; // 0x15a0	
 	float regen_and_armor_multiplier_during_dragon_form; // 0x15a4	
@@ -20191,17 +20191,6 @@ class CDOTA_Modifier_Spectre_Spectral_Dagger_Illusions : public CDOTA_Buff
 {
 public:
 	// No schema binary for binding
-};
-
-// Registered binary: server.dll (project 'server')
-// Alignment: 8
-// Size: 0x15a0
-// Has VTable
-class CDOTA_Modifier_Plague_Wards_Bonus : public CDOTA_Buff
-{
-public:
-	int32_t ward_hp; // 0x1598	
-	int32_t ward_damage; // 0x159c	
 };
 
 // Registered binary: server.dll (project 'server')
@@ -33561,7 +33550,7 @@ public:
 	int32_t start_radius; // 0x638	
 	int32_t end_radius; // 0x63c	
 	int32_t damage; // 0x640	
-	int32_t bonus_damage_per_target; // 0x644	
+	float bonus_damage_per_target; // 0x644	
 	float vector_deg_turn_divisor; // 0x648	
 	float vision_duration; // 0x64c	
 };
@@ -46648,7 +46637,7 @@ class CDOTA_Modifier_Leshrac_Lightning_Storm : public CDOTA_Buff
 {
 public:
 	int32_t damage; // 0x1598	
-	int32_t radius; // 0x159c	
+	float radius; // 0x159c	
 	int32_t jump_count; // 0x15a0	
 	float slow_duration; // 0x15a4	
 	float jump_delay; // 0x15a8	
@@ -69767,7 +69756,7 @@ class CDOTA_Modifier_Enigma_Event_Horizon_Aura : public CDOTA_Buff
 {
 public:
 	int32_t radius; // 0x1598	
-	int32_t vision_cone; // 0x159c	
+	float vision_cone; // 0x159c	
 };
 
 // Registered binary: server.dll (project 'server')
