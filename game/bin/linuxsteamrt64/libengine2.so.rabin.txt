@@ -1,3 +1,4 @@
+0  @PE\b
 0  extend .$1 {\n
 0  extensions $1 to $2;\n
 0  reserved
@@ -31,18 +32,19 @@
 08@P`p
 08@lmnHP\b\t\n\v\f\r
 08H@\a\b\t\n\v\f\r
-08dhi@HPlX
+08dhi@HPlXp
 09LWiv
 0: Force z prepass off. 1: Force on. -1: Don't force
 0: Use normals reconstructed from depth. 1: Output correct normals in z prepass
 0: run all send jobs on main thread; 1: send jobs run asynchronously (except on dedicated server); 2: send jobs asynchronously; 3: send jobs run in parallel but block to not overlap the next tick; 4: main server clients' send jobs run in parallel, then HLTV server jobs; this approximately matches pre-async profile for a single HLTV server configuration
 0:<\n\fdelta_ignore
+0;x\f
 0<\aw>H
 0<\tvcH
 0<\tw/H
 0<\tw\nH
 0=Off, 1=Surface Wireframe, 2=Transparent Wireframe
-0=Off, 1=Visualize trace from camera, 2=Visualize occlusion
+0=Off, 1=Visualize trace from camera, 2=Visualize occlusion, 3=Visualize far field trace from camera
 0@Thv
 0A;F\b
 0A\\A
@@ -52,7 +54,6 @@
 0H`\b 8Ph
 0HcC H
 0HcC,H
-0L*S3P
 0L9l$\b
 0[]A\\A]A^ÐAUATI
 0[]A\\ÐAUATI
@@ -71,7 +72,6 @@
 0}~NU\v
 1 = Pause the game when pressing ~ to open the console. CTRL+~ opens the console without pause
 1 = Unpause the game when pressing ~ to close the console. 0 = Leave the game paused
-1!9Q5F
 1.2.11
 10CEntityMsg
 10CHLTVFrame
@@ -535,7 +535,7 @@
 17IEnginePVSManager
 17IEngineServiceMgr
 17IGameEventWatcher
-18:42:59
+18:48:53
 18>BFJMPSVX[]_acegiklnpqstvwyz
 18CBannedUsersFilter
 18CBaseEngineServiceI12IToolServiceE
@@ -560,7 +560,6 @@
 18CDemoAnimationData
 18CGameUIRenderLayer
 18CLoopModeLevelLoad
-18CNETMsg_Disconnect
 18CNetworkGameClient
 18CNetworkGameServer
 18CNetworkP2PService
@@ -612,18 +611,20 @@
 1Ia\t!9Qi
 1\n-NETWORK_DISCONNECT_DIRECT_CONNECT_RESERVATION
 1\n\fsplitplayers
-1\v=%mU
-1\v=2r
-1\v=7n
-1\v=<tL
-1\v=MZL
-1\v=[1P
-1\v=\fTH
-1\v=bjM
-1\v=g}P
-1\v=y~P
+1\v==tZ
+1\v=QLR
+1\v=RYS
+1\v=T>R
+1\v=WjU
+1\v=^mF
+1\v=_hV
+1\v=lEF
+1\v=mdR
+1\v=u>S
 1s3\t\b\b
-1Ƀ=\nYJ
+1}1帚Y
+1Ƀ=JHP
+1Ƀ=zHP
 1ɉw E9
 1҃|$8 D
 1ҋH ;M
@@ -637,7 +638,6 @@
 2).google.protobuf.FileOptions.OptimizeMode
 2*.google.protobuf.FieldDescriptorProto.Type
 2+.google.protobuf.FieldDescriptorProto.Label
-2+i)\tSC
 2/.google.protobuf.MethodOptions.IdempotencyLevel
 200000
 20CCLCMsg_ClientInfo_t
@@ -785,6 +785,7 @@
 25CConnectRelayPrerequisite
 25CDemoStringTables_items_t
 25CDemoStringTables_table_t
+25CNETMsg_Disconnect_Legacy
 25CNETMsg_SpawnGroup_Load_t
 25CNETMsg_SpawnGroup_Unload
 25CSVCMsg_Broadcast_Command
@@ -800,8 +801,7 @@
 26CParallelProcessorAbstractI18CParallelProcessorI11CrashItem_t21CFuncJobItemProcessorIS1_ELi1EEE
 26CParallelProcessorAbstractI18CParallelProcessorI16FatalErrorItem_t21CFuncJobItemProcessorIS1_ELi1EEE
 26CParallelProcessorAbstractI18CParallelProcessorI28ReadPacketEntitiesWorkItem_t27CMemberFuncJobItemProcessorIS1_18CNetworkGameClientS3_ELi1EEE
-26CParallelProcessorAbstractI18CParallelProcessorIi23CLambdaJobItemProcessorIiELi1EEE
-26CParallelProcessorAbstractI18CParallelProcessorIi27CMemberFuncJobItemProcessorIi22CNetworkGameClientBaseS2_ELi1EEE
+26CParallelProcessorAbstractI18CParallelProcessorIP28ReadPacketEntitiesWorkItem_t27CMemberFuncJobItemProcessorIS2_18CNetworkGameClientS4_ELi1EEE
 26CParallelProcessorAbstractI48CReadPacketEntities_ParallelProcessingControllerE
 26CPipedCommandLogRedirector
 26CSVCMsg_Sounds_sounddata_t
@@ -901,6 +901,7 @@
 2f. Retrying sync\n
 2f. Set playcast URL %s\n
 2f. Waiting %.2f seconds\n
+2f}#b\ta
 2i/%2i on map %s
 2i:%02i:%02i
 30CBidirMsg_RebroadcastGameEvent
@@ -920,7 +921,6 @@
 31ISceneViewDebugOverlaysListener
 31ISpawnGroupPrerequisiteRegistry
 31ProtoFlattenedSerializerField_t
-32.32s: % 4d->% 4d: min: %8.3f (ms) max: %8.3f (ms) average: %8.3f (ms) : ~ per entity %8.3f\n
 32CBidirMsg_RebroadcastGameEvent_t
 32CEntityComponentHelperReferencedI16CScriptComponentE
 32CEntityMETAAutoCompletionFunctor
@@ -976,18 +976,18 @@
 3\n\bNamePart
 3d %3d %3d %3d %3d %3d %3d %3d
 3d: e=%.3f rms=%.6f %u\n
-3dSkyboxFrustum
+3dSkyboxFog
 3dSkyboxWorldOffset
 3f min
 3f tick %d: CurPlat %.3fms - %.3fms CmdTime (%d) = %.2fms IntoTick.  +SlowFrame %.2f = %.2f.  +%.2fms RemBefore = %d ticks + %.1fms RemAfter.  RealFrameTime=%.1fms, LateSendBudget=%.1fms\n
 3i.%3i.%3i.%3i
 3jx\tM
+3q2śH
 4-\rS(W
 4.2f FPS %4.3f ms\n
 40CBreakpadPassiveAssertionFailureListener
 40CGameInfo_CDotaGameInfo_CHeroSelectEvent
 40CRenderDevicePresentCallbackClientServer
-40M\v
 40s %-12s %-12s %-12s %-12s %-12s\n
 40ҽ40
 40ҽͬe
@@ -1023,6 +1023,7 @@
 4d : %s matched to %s\n
 4d frame cache   = %12s bytes\n
 4d\t%32s\t%12s\n
+4fffffffffffffff
 4i %8s %4d %4d %10s %6d
 4s %8s %4s %4s %10s %6s
 4u %4u %4u %4u %4u %4u %4u %4u
@@ -1052,6 +1053,7 @@
 5?KYks
 5EPX_f
 5FSgr
+5J5J5J5J5J5J5J5J5J5J5J5J5J5J5J5Jx
 5Me\r%=Um
 5QbcP<61
 5\n\vnested_type
@@ -1073,6 +1075,7 @@
 6uu?Lԗ>0|t?z7
 6uu?uj
 7&F|If
+7.2fms %s\n
 7?NWlv
 7@Qhq\\1@NWgyxeH\\_bpdgc
 7CP4File
@@ -1089,6 +1092,7 @@
 80<@DHL
 81ҾIGUBL
 88ubH9
+8;x8w
 8>0RF
 8@%r8 8@-80(%rbx
 8@%rdi 8@%rsi
@@ -1132,7 +1136,6 @@
 8ÐAVAUI
 8ÐAWAVAUATI
 8ÐAWAVAUATUSH
-9%&dPp
 9*ubC
 93vˋBD
 97tdUH
@@ -1167,11 +1170,11 @@
 9ILoopType
 9IRegistry
 9JYiy
-9P<~FH
 9VS^AF
 9\n\noneof_decl
 9\n\vplayer_info
 9e@\f
+9g̠\\2w
 9p |\fH
 9p }CI9
 9r |\fH
@@ -1223,12 +1226,36 @@ A;E\b~HH
 A;E\fv
 A;F\b
 A;G\b
+A;V$rDA
 A;uh}hI
 A<5vw[1
 A<8wtH
 A<8w{H
+AB64ToARGB
+AB64ToARGBRow_AVX2
+AB64ToARGBRow_Any_AVX2
+AB64ToARGBRow_Any_SSSE3
+AB64ToARGBRow_C
+AB64ToARGBRow_SSSE3
 ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789
 ABGR8888
+ABGRToAR30Row_AVX2
+ABGRToAR30Row_Any_AVX2
+ABGRToAR30Row_Any_SSSE3
+ABGRToAR30Row_C
+ABGRToAR30Row_SSSE3
+ABGRToARGB
+ABGRToI420
+ABGRToUVRow_AVX2
+ABGRToUVRow_Any_AVX2
+ABGRToUVRow_Any_SSSE3
+ABGRToUVRow_C
+ABGRToUVRow_SSSE3
+ABGRToYRow_AVX2
+ABGRToYRow_Any_AVX2
+ABGRToYRow_Any_SSSE3
+ABGRToYRow_C
+ABGRToYRow_SSSE3
 ABORTED
 ACCEPT
 AConnection to Steam servers lost.\n
@@ -1237,10 +1264,207 @@ AK.Ô3
 ALIGN_TYPE is wrong, please fix
 ALREADY_EXISTS
 APPSYSTEM: In ConnectInterfaces(), s_nRegistrationCount is %d!\n
+AR30ToAB30
+AR30ToAB30Row_C
+AR30ToABGR
+AR30ToABGRRow_C
+AR30ToARGB
+AR30ToARGBRow_C
+AR64Shuffle
+AR64ShuffleRow_C
+AR64ToAB64
+AR64ToARGB
+AR64ToARGBRow_AVX2
+AR64ToARGBRow_Any_AVX2
+AR64ToARGBRow_Any_SSSE3
+AR64ToARGBRow_C
+AR64ToARGBRow_SSSE3
 ARAWSASA
+ARGB1555ToARGB
+ARGB1555ToARGBRow_Any_SSE2
+ARGB1555ToARGBRow_C
+ARGB1555ToARGBRow_SSE2
+ARGB1555ToI420
+ARGB1555ToUVRow_C
+ARGB1555ToYRow_C
+ARGB4444ToARGB
+ARGB4444ToARGBRow_Any_SSE2
+ARGB4444ToARGBRow_C
+ARGB4444ToARGBRow_SSE2
+ARGB4444ToI420
+ARGB4444ToUVRow_C
+ARGB4444ToYRow_C
 ARGB8888
+ARGBAdd
+ARGBAddRow_AVX2
+ARGBAddRow_Any_AVX2
+ARGBAddRow_Any_SSE2
+ARGBAddRow_C
+ARGBAddRow_SSE2
+ARGBAffineRow_C
+ARGBAffineRow_SSE2
+ARGBAttenuate
+ARGBAttenuateRow_AVX2
+ARGBAttenuateRow_Any_AVX2
+ARGBAttenuateRow_Any_SSSE3
+ARGBAttenuateRow_C
+ARGBAttenuateRow_SSSE3
+ARGBBlendRow_C
+ARGBBlendRow_SSSE3
+ARGBBlur
+ARGBColorMatrix
+ARGBColorMatrixRow_C
+ARGBColorMatrixRow_SSSE3
+ARGBColorTable
+ARGBColorTableRow_C
+ARGBColorTableRow_X86
+ARGBComputeCumulativeSum
+ARGBCopy
+ARGBCopyAlpha
+ARGBCopyAlphaRow_AVX2
+ARGBCopyAlphaRow_Any_AVX2
+ARGBCopyAlphaRow_Any_SSE2
+ARGBCopyAlphaRow_C
+ARGBCopyAlphaRow_SSE2
+ARGBCopyYToAlpha
+ARGBCopyYToAlphaRow_AVX2
+ARGBCopyYToAlphaRow_Any_AVX2
+ARGBCopyYToAlphaRow_Any_SSE2
+ARGBCopyYToAlphaRow_C
+ARGBCopyYToAlphaRow_SSE2
+ARGBExtractAlpha
+ARGBExtractAlphaRow_AVX2
+ARGBExtractAlphaRow_Any_AVX2
+ARGBExtractAlphaRow_Any_SSE2
+ARGBExtractAlphaRow_C
+ARGBExtractAlphaRow_SSE2
+ARGBGray
+ARGBGrayRow_C
+ARGBGrayRow_SSSE3
+ARGBGrayTo
+ARGBInterpolate
+ARGBLumaColorTable
+ARGBLumaColorTableRow_C
+ARGBLumaColorTableRow_SSSE3
+ARGBMirror
+ARGBMirrorRow_AVX2
+ARGBMirrorRow_Any_AVX2
+ARGBMirrorRow_Any_SSE2
+ARGBMirrorRow_C
+ARGBMirrorRow_SSE2
+ARGBMultiply
+ARGBMultiplyRow_AVX2
+ARGBMultiplyRow_Any_AVX2
+ARGBMultiplyRow_Any_SSE2
+ARGBMultiplyRow_C
+ARGBMultiplyRow_SSE2
+ARGBPolynomial
+ARGBPolynomialRow_AVX2
+ARGBPolynomialRow_C
+ARGBPolynomialRow_SSE2
+ARGBQuantize
+ARGBQuantizeRow_C
+ARGBQuantizeRow_SSE2
+ARGBRect
+ARGBSepia
+ARGBSepiaRow_C
+ARGBSepiaRow_SSSE3
+ARGBSetRow_C
+ARGBSetRow_X86
+ARGBShade
+ARGBShadeRow_C
+ARGBShadeRow_SSE2
+ARGBShuffle
+ARGBShuffleRow_AVX2
+ARGBShuffleRow_Any_AVX2
+ARGBShuffleRow_Any_SSSE3
+ARGBShuffleRow_C
+ARGBShuffleRow_SSSE3
+ARGBSobel
+ARGBSobelToPlane
+ARGBSobelXY
+ARGBSubtract
+ARGBSubtractRow_AVX2
+ARGBSubtractRow_Any_AVX2
+ARGBSubtractRow_Any_SSE2
+ARGBSubtractRow_C
+ARGBSubtractRow_SSE2
+ARGBToAB64Row_AVX2
+ARGBToAB64Row_Any_AVX2
+ARGBToAB64Row_Any_SSSE3
+ARGBToAB64Row_C
+ARGBToAB64Row_SSSE3
+ARGBToABGR
+ARGBToAR30Row_AVX2
+ARGBToAR30Row_Any_AVX2
+ARGBToAR30Row_Any_SSSE3
+ARGBToAR30Row_C
+ARGBToAR30Row_SSSE3
+ARGBToAR64Row_AVX2
+ARGBToAR64Row_Any_AVX2
+ARGBToAR64Row_Any_SSSE3
+ARGBToAR64Row_C
+ARGBToAR64Row_SSSE3
+ARGBToARGB1555Row_Any_SSE2
+ARGBToARGB1555Row_C
+ARGBToARGB1555Row_SSE2
+ARGBToARGB4444Row_Any_SSE2
+ARGBToARGB4444Row_C
+ARGBToARGB4444Row_SSE2
+ARGBToBGRA
+ARGBToI420
+ARGBToRAWRow_AVX2
+ARGBToRAWRow_Any_AVX2
+ARGBToRAWRow_Any_SSSE3
+ARGBToRAWRow_C
+ARGBToRAWRow_SSSE3
+ARGBToRGB24Row_AVX2
+ARGBToRGB24Row_Any_AVX2
+ARGBToRGB24Row_Any_SSSE3
+ARGBToRGB24Row_C
+ARGBToRGB24Row_SSSE3
+ARGBToRGB565DitherRow_AVX2
+ARGBToRGB565DitherRow_Any_AVX2
+ARGBToRGB565DitherRow_Any_SSE2
+ARGBToRGB565DitherRow_C
+ARGBToRGB565DitherRow_SSE2
+ARGBToRGB565Row_Any_SSE2
+ARGBToRGB565Row_C
+ARGBToRGB565Row_SSE2
+ARGBToUV444Row_Any_SSSE3
+ARGBToUV444Row_C
+ARGBToUV444Row_SSSE3
+ARGBToUVJRow_AVX2
+ARGBToUVJRow_Any_AVX2
+ARGBToUVJRow_Any_SSSE3
+ARGBToUVJRow_C
+ARGBToUVJRow_SSSE3
+ARGBToUVRowMatrix_C
+ARGBToUVRow_AVX2
+ARGBToUVRow_Any_AVX2
+ARGBToUVRow_Any_SSSE3
+ARGBToUVRow_C
+ARGBToUVRow_SSSE3
+ARGBToYJRow_AVX2
+ARGBToYJRow_Any_AVX2
+ARGBToYJRow_Any_SSSE3
+ARGBToYJRow_C
+ARGBToYJRow_SSSE3
+ARGBToYRowMatrix_C
+ARGBToYRow_AVX2
+ARGBToYRow_Any_AVX2
+ARGBToYRow_Any_SSSE3
+ARGBToYRow_C
+ARGBToYRow_SSSE3
+ARGBUnattenuate
+ARGBUnattenuateRow_AVX2
+ARGBUnattenuateRow_Any_AVX2
+ARGBUnattenuateRow_Any_SSE2
+ARGBUnattenuateRow_C
+ARGBUnattenuateRow_SSE2
 ASARAPL
 ASCII//TRANSLIT
+ASEs implemented
 ATAVAV
 ATLcO\bS
 ATSHc
@@ -1327,7 +1551,7 @@ AVAUI
 AVAUL
 AVAULc
 AVAUSH
-AVI recording failed! Missing expected pixels!\n
+AVI not supported on this platform\n
 AWAVATSH
 AWAVAUA
 AWAVAUAT
@@ -1369,6 +1593,11 @@ AWAVfI
 AXAYuH
 AXAYu\eL
 AYAZA9
+AYUVToNV12
+AYUVToNV21
+AYUVToUVRow_C
+AYUVToVURow_C
+AYUVToYRow_C
 A\\A]A^A_ÐATUH
 A\\A]A^A_ÐATUI
 A\\A]A^A_ÐAUATI
@@ -1521,6 +1750,11 @@ AmmoIndex_t
 Amount of time after the talker starts talking we should keep listening regardless of how loud they are speaking
 Amount of time the talker is silent before we infer that they are no longer talking
 Amount of time we buffer outgoing audio to detect an onset
+Android420ToABGR
+Android420ToARGB
+Android420ToARGBMatrix
+Android420ToI420
+Android420ToI420Rotate
 AnimGraphEditorUtils001
 AnimationSystemUtils_001
 AnimationSystem_001
@@ -1541,10 +1775,10 @@ Application transferred too few scanlines
 Application transferred too many scanlines
 Application unable to load gameinfo.gi file from directory "%s"\n%s
 ApplicationInfo
-Apr 29 2024
 Ar)/G
 Arabic
 Arithmetic table 0x%02x was not defined
+ArmCpuCaps
 Armenian
 As the clock offset goes from cl_clock_correction_adjustment_min_offset to this value (in milliseconds), it moves towards applying cl_clock_correction_adjustment_max_amount of adjustment. That way, the response is small when the offset is small
 Assert if peak memory use is over the limit
@@ -1594,15 +1828,21 @@ BGRA1010102
 BGRA4444
 BGRA8888
 BGRA8888_LINEAR
+BGRAToARGB
+BGRAToI420
+BGRAToUVRow_Any_SSSE3
+BGRAToUVRow_C
+BGRAToUVRow_SSSE3
+BGRAToYRow_Any_SSSE3
+BGRAToYRow_C
+BGRAToYRow_SSSE3
 BGRX8888
 BGRX8888_LINEAR
 BIV_o
 BKbhTb~XBK
 BNW^h
-BQ]H"l\t
 BQͱL\b
 BROADCAST
-BReceived packet entities while connecting!\n
 BSR_ANYCRLF
 BSR_UNICODE
 BUYbp
@@ -1655,6 +1895,12 @@ Bind all keys to their default values
 Bind keys based on keyboard position instead of key name
 BindToggle <key> <cvar>: invalid syntax specified\n
 BitBuf Error
+BlendPlane
+BlendPlaneRow_AVX2
+BlendPlaneRow_Any_AVX2
+BlendPlaneRow_Any_SSSE3
+BlendPlaneRow_C
+BlendPlaneRow_SSSE3
 Blink specified convar value between two values at the specified duration
 Body (%d bytes): %s\n
 Bogus DAC index %d
@@ -1722,6 +1968,8 @@ Bvirtual void Etc::Block4x4Encoding_RGBA8_Transparent::PerformIteration(float
 By default, player must maintain a reliable connection to Steam servers. When player Steam session drops, enforce it: 2 = instantly kick, 1 = kick at next spawn, 0 = do not kick
 Bypass secure challenge on TV port
 Byte size calculation and serialization were inconsistent.  This may indicate a bug in protocol buffers or it may be caused by concurrent modification of
+ByteToFloat
+ByteToFloatRow_C
 B~?Nd
 C IcT
 C []A
@@ -2347,7 +2595,7 @@ CMsgServerPeer"N\n
 CMsgVoiceAudio
 CMsg_CVars.CVar
 CNETMsg_DebugOverlay
-CNETMsg_Disconnect
+CNETMsg_Disconnect_Legacy
 CNETMsg_SetConVar
 CNETMsg_SignonState
 CNETMsg_SpawnGroup_Load
@@ -2363,6 +2611,7 @@ CNetworkClientSpawnGroup_WaitForAssetLoadPrerequisite
 CNetworkClientSpawnGroup_WaitForChildSpawnGroups
 CNetworkClientSpawnGroup_WaitForOwnerSpawnGroupPrerequisite
 CNetworkGameClient::Clear setting state to SIGNONSTATE_CONNECTED\n
+CNetworkGameClient::ClientSidePredict
 CNetworkGameClient::FinishSignonState_New() setting state to %s:%d\n
 CNetworkGameClient::ProcessClassInfo: create on client %s\n
 CNetworkGameClient::ProcessClassInfo: creating client serializers from local server serializers (crc %u, server api %s)\n
@@ -2377,6 +2626,7 @@ CNetworkGameClientBase::LinkClasses took %.3f msec\n
 CNetworkGameClientBase::ProcessClassInfo parsing %d server classes\n
 CNetworkGameClientBase::SynchronizeAndBlockUntilLoaded
 CNetworkGameServer::ActivateServer
+CNetworkGameServer::PackEntities
 CNetworkGameServerBase
 CNetworkGameServerBase::ConnectClient( name='%s', remote='%s' )\n
 CNetworkGameServerBase::ReplyConnection
@@ -2438,7 +2688,6 @@ CPlayDemoClientPrerequisite
 CPostDataUpdateCallList::AddPostDataUpdateCall: overflowed m_PostDataUpdateCalls
 CPtGHcS$L
 CQ disabled, re-syncing usercmd and simulation clock remainders\n
-CQ enabled, server will control time dilation\n
 CQ enabled, using client-controlled JIT async send mode\n
 CRC32_ProcessBuffer
 CReadPacketEntities_ParallelProcessingController
@@ -2672,6 +2921,7 @@ CheckServerReservationUpdate: %d conn periodic update\n
 CheckTimeouts: Disconnecting client: %s %s, after a netchan-decided timeout of %0.2fs with no acks received\n
 CheckTimeouts: Disconnecting client: %s %s, after a server-decided timeout of %0.2fs with no acks received\n
 Cherokee
+ClampFloatToZero_SSE2
 Clamping split screen users to 1 due to -tools mode.\n
 Clear console output
 Clear console output from all views
@@ -2696,7 +2946,7 @@ Client Simulation
 Client interpolation. . :%s (cl_interp_ratio = %g)\n
 Client is running in anonymous mode.  Many steam features will not work\n
 Client missing networkable entity class %s\n
-Client recv margin. . . :%s (%.1fms + %.1fms due to frame quantization)\n
+Client recv margin. . . :%s (+ %.1fms frame quant hidden by interp = %.1fms)\n
 Client sim + other . . .:%s\n
 Client with SteamID %s tried to send ClientInfo with SteamID %s\n
 Client:  %s\n
@@ -2706,6 +2956,7 @@ ClientActive
 ClientCommand, 0 length string supplied.\n
 ClientCommandTick
 ClientFrame
+ClientPredictionPostNetupdate
 ClientPutInServer
 ClientPutInServer - no player in save game
 ClientSendMove
@@ -2729,7 +2980,6 @@ CmdLinkAHǅ0
 Collect CPU usage stats
 Command Line
 Command Queue
-Command interval set to %.3fms, server requested time dilation @ %+.1f%%\n
 CommandLine
 Commencing SourceTV connection retry to %s\n
 Comment : %s\n
@@ -2743,6 +2993,8 @@ Component %d: %dhx%dv q=%d
 Component %d: dc=%d ac=%d
 Component index %d: mismatching sampling ratio %d:%d, %d:%d, %c
 ComputeClientPacks
+ComputeCumulativeSumRow_C
+ComputeCumulativeSumRow_SSE2
 Computer Name, %s, Map Name, %s\n
 ConDMsg
 ConVars
@@ -2760,12 +3012,27 @@ Connectionless
 Connections will be restricted to LAN only.     *\n
 Console initialized.\n
 ConsoleStartup
+ConsoleVisible
 ConstructFakeClientClassesListFromServerClasses
 ConstructFakeClientClassesListFromServerClasses failed to build classes\n
 Contact the program author for an update.  If you compiled the program yourself, make sure that your headers are from the same version of Protocol Buffers as your link-time library.  (Version verification failed in
 Controls VTune's sampling
 Convar %s is already registered but not as user info value\n
 Convar %s is marked as cheat and cheats are off\n
+Convert16To8Plane
+Convert16To8Row_AVX2
+Convert16To8Row_Any_AVX2
+Convert16To8Row_Any_SSSE3
+Convert16To8Row_C
+Convert16To8Row_SSSE3
+Convert8To16Plane
+Convert8To16Row_AVX2
+Convert8To16Row_Any_AVX2
+Convert8To16Row_Any_SSE2
+Convert8To16Row_C
+Convert8To16Row_SSE2
+ConvertToLSBPlane_16
+ConvertToMSBPlane_16
 Coptic
 CopyEntityBaseline
 CopyExistingEntity: invalid recv table for ent %d.\n
@@ -2779,6 +3046,14 @@ CopyNewEntity: invalid class index (%d), classname '%s'\n
 CopyNewEntity: invalid class index (%d), out of range %d\n
 CopyNewEntity: invalid serializer for ent %d.\n
 CopyNewEntity: m_nNewEntity >= MAX_NETWORKABLE_ENTITY_COUNT
+CopyPlane_16
+CopyRow_16_C
+CopyRow_AVX
+CopyRow_Any_AVX
+CopyRow_Any_SSE2
+CopyRow_C
+CopyRow_ERMS
+CopyRow_SSE2
 Copyright (C) 2010, Thomas G. Lane, Guido Vollbeding
 Corrupt JPEG data: %u extraneous bytes before marker 0x%02x
 Corrupt JPEG data: bad Huffman code
@@ -2802,6 +3077,8 @@ CreateSimpleThread
 CreateStringTable
 CreateStringTable @%d\n
 Creating NetChan for user %d '%s' @ %s\n
+CumulativeSumToAverageRow_C
+CumulativeSumToAverageRow_SSE2
 Cuneiform
 Current  :  %s\n
 Current Map: '%s'\n
@@ -2836,6 +3113,7 @@ D$ t|L
 D$ u5I
 D$$9D$L
 D$$9D$P
+D$$HcЋD
 D$(A\tE\bI
 D$(D9
 D$(E9
@@ -2855,10 +3133,13 @@ D$09D$L
 D$0;D$H
 D$0Hǅp
 D$0fH
+D$0y$A
+D$0y\tA
 D$4A9F
 D$4H)C
 D$8A9D$@D
 D$8A9D$\\u
+D$8HcЋD$<Hc
 D$8I9D
 D$8L;t$8t'A
 D$8Lck
@@ -2873,11 +3154,13 @@ D$?t\t8Co
 D$@fH
 D$DA9
 D$HE9
+D$HHcЋD$LHc
 D$Ot\t8Eo
 D$PuIA
 D$PuXH
 D$Wt\f9
 D$Wt\t8Eo
+D$X1\vD
 D$X9D$H
 D$XF8,0tPH
 D$XH9D$8u\eH
@@ -2897,7 +3180,7 @@ D$\bH9l$\b
 D$\bH9l$\bunH
 D$\bHcl
 D$\bHǃH
-D$\bI9E(u
+D$\bI9E u
 D$\bIcl
 D$\bL
 D$\bL9d
@@ -2928,7 +3211,6 @@ D$hAǄ$D
 D$hAǄ$P
 D$l[A
 D$tI;D$ t+H9
-D$tLcD$0L
 D$xdH3
 D$xr\eH
 D)\tG
@@ -2944,7 +3226,6 @@ D8*AWH
 D8:uhH9U
 D8kpt\nD8kq
 D9 tvL
-D9%FG
 D9(tLH
 D93űC
 D9@\b~0
@@ -3019,6 +3300,7 @@ DebugUI
 DebugVisualizerMgr
 December
 DeclareCurrentThreadIsMainThread
+DecodeClassBaseline
 DecodeClassBaseline: NULL instance baseline table
 DecodeDemoNetMessage Failed to parse spawn group message\n
 Decrement the timescale by one step
@@ -3093,7 +3375,12 @@ Display information about the specified key or button
 DisplayMessage
 Displays list of maps
 Displays perf statistics information
+DivideRow_16_AVX2
+DivideRow_16_Any_AVX2
+DivideRow_16_C
 Division or mod by zero: dividend.hi
+DofApertureDiameter
+DofFocusedDistance
 DofRanges
 DofTiltToGround
 Don't lookup extension types if they aren't present (1
@@ -3124,11 +3411,14 @@ Duplicate connection allowed\n
 Duplicate engine service named "%s" registered!\n
 Duplicate loop named "%s" registered!\n
 D։QLH
+E HcЋE
 E Ic]`B
 E [A\\A]A
 E$H9;w
 E(9C A
+E(;E0u0
 E(H9E0sHL
+E(HcЋE
 E(I9E0sHH
 E+F A+>L
 E+K Hc
@@ -3189,13 +3479,13 @@ EXECUTABLE_PATH
 EXPORTSYSTEM_INTERFACE_VERSION_001
 E\aaW,L
 E\bA9D$\b
-E\bH9C
 E\b}5Lc
 E\n NETWORK_DISCONNECT_REJECT_BANNED
 E\n\aclass_t
 E\n\f\a\bD\vH
 E\n\rtarget_entity
 E\r<6Hc
+E\v=$eR
 E`u2M9t$HtQM
 Each frame will render %d times*\n
 EarlyInit_Tier0
@@ -3217,9 +3507,8 @@ Enable fog
 Enable framerate-related warnings, such as sv_long_frame_ms.  Disabling warnings is useful when running in situations such a debug where a slow frame rate is expected
 Enable instanced baselines. Saves network overhead
 Enable instant replay recording
+Enable logging about events that disable frame time warnings
 Enable multithreading to use std::thread
-Enable new client clock synchronization strategy that tries to achieve a certain client recv margin
-Enable new method for pacing out usercommands that keeps a packet prepared at all times, and tries to send it to achieve a desired server recv margin
 Enable precomputed visibility when true
 Enable rendering of translucent geometry
 Enable the rendering of panorama UI
@@ -3347,7 +3636,6 @@ EventClientPostOutput_t
 EventClientPostSimulate_t
 EventClientPreOutput_t
 EventClientPreSimulate_t
-EventClientPredictionPostNetupdate_t
 EventClientProcessGameInput_t
 EventClientProcessInput_t
 EventClientProcessNetworking_t
@@ -3374,6 +3662,7 @@ Events
 Evictions/m
 Exceeds Maximum Package Depth
 Excessive frame time of %.2fms (due to '%s') clamped.  Acting as if the frame only took %.2fms\n
+Excessive frame time of %.2fms clamped.  Acting as if the frame only took %.2fms.  (Last amnesty was '%s', %.2fs ago)\n
 Excessive frame time of %.2fms clamped.  Acting as if the frame only took %.2fms\n
 ExecGameTypeCfg
 Executable Location
@@ -3417,7 +3706,10 @@ Extra arguments given after name\n
 ExtractSubrange() when arena is non-nullptr is only supported when
 EȋMPH
 EȨ@uH\f
+EЋE HcЋE
+EЋEЉE
 EԹ;BWu
+E؋E0;E
 F EiɅJ
 F ÐAWAVAUATI
 F$A+F H
@@ -3514,6 +3806,7 @@ FIELD_VOID
 FIELD_WORLD_GROUP_ID
 FIXME:  SOSGetOpvarFloat API not ported\n
 FIXME:  SOSSetOpvarFloat API not ported\n
+FPS: Avg=%.1f, P1=%.1f\n
 FRAME_NET_BLOCKING_LOAD_SPAWN_GROUP
 FRAME_NET_POST_PROCESS_NETWORKING
 FRAME_NET_PRE_PROCESS_NETWORKING
@@ -3555,6 +3848,7 @@ F\b9G\btBL
 F\bH9G\btHH
 F\bHc
 F\fH9G\f
+F\ftRA;F
 F\n%NETWORK_DISCONNECT_DISCONNECT_BY_USER
 F\n\foptimize_for
 F\r<GtB<Tt>1
@@ -3594,6 +3888,7 @@ Failed to save unsupported class
 Failed to serialize KV3 to JSON.  %s\n
 Failed to serialize one usercommand
 Failed to set network config: %s\n
+Failed to start recording movie: %s.*: %s\n
 Failed to write file %s, configFileType %d, nSlot %d\n
 FastHexToBuffer() wants non-negative integers, not
 Features
@@ -3660,7 +3955,11 @@ Fire a fatal error
 Fire an assertion failure
 First argument to Swap() (of type
 First argument to SwapFields() (of type
-FirstInput -> NetSend . :%s\n
+FirstInput -> NetSend . :%s (pessimistic measurement, typically = 1 tick - half frame time)\n
+FixedDiv1_C
+FixedDiv1_X86
+FixedDiv_C
+FixedDiv_X86
 FixupResourceName: Illegal full path passed in ("%s")!\n
 FixupResourceName: Illegal path, missing extension passed in ("%s")!\n
 FlattenedSerializersVersion001
@@ -3702,6 +4001,9 @@ Frame Boundary
 Frame not displayable
 Frame rate limiter while the game UI is displayed.  0=no limit.  Does not apply to dedicated server
 Frame rate limiter.  0=no limit.  Does not apply to dedicated server
+Frame rate warnings DISABLED (%s).\n
+Frame rate warnings ENABLED after %d frames (%.1fms), most recent amnesty was '%s'\n
+Frame rate warnings ENABLED after %d+%d frames (%.1fms), most recent amnesty was '%s'\n
 Frame samples:\n
 Frame setup failed
 Frames: %u\n
@@ -3725,7 +4027,6 @@ G(H9G s
 G(H;G0r
 G(H;G0sM
 G(H;G0sq
-G0A9G4
 G0HcGHL
 G49F8up
 G89G@}<M
@@ -3737,14 +4038,15 @@ G@\bt*H
 G@\bt2H
 G@\bt\vH
 GAMEBIN
+GAME_RESOURCE_MANIFEST_HANDLE_INVALID
 GBufferDepthTexture
 GBufferNormalSpecExpTexture
 GCC: (SteamRT 10.3.0-3+steamrt3.1+bsrt3.1) 10.3.0
+GCC: (SteamRT 4.8.4-1ubuntu15~12.04+steamrt1.2+srt2) 4.8.4
 GCC: (SteamRT 5.4.0-7.really.6+steamrt1.2+srt2) 5.4.1 20160803
 GCC: (SteamRT 9.3.0-13+steamrt1.2+srt1) 9.3.0
 GCC: (crosstool-NG 1.17.0) 4.6.3
 GDE9GHI
-GGAME_RESOURCE_MANIFEST_HANDLE_INVALID
 GHAUATUL
 GHH9p
 GHH;F\b
@@ -3789,6 +4091,7 @@ G\bH;V\bt6I;P
 G\bH;V\btpI;P
 G\bH;wHH
 G\bH;x\btHH
+G\bI9D
 G\bIcD$hA;D$x
 G\bL;B\bu
 G\bfD;W
@@ -3913,6 +4216,11 @@ GameUI_ServerRejectServerFull
 GameUI_ServerRejectSteam
 GameUI_ServerReject_InvalidKeyLength
 Gathering State For Bug Report....\n
+GaussCol_C
+GaussCol_F32_C
+GaussPlane_F32
+GaussRow_C
+GaussRow_F32_C
 General_UnableToStartGame
 Generate a minidump comment and spew the results to the console
 Generate a report to the console
@@ -3923,6 +4231,7 @@ Generic
 Genut\f
 Georgian
 Get request X-Origin-Auth string
+GetARGBBlend
 GetAddonsContentDirectory: Failed to find CONTENTADDONS search path.\n
 GetAddonsDirectory: Failed to find ADDONS search path.\n
 GetAppWindow() returned NULL\n
@@ -3967,6 +4276,7 @@ GetStringReference
 GetUInt32
 GetUInt64
 GetUserSetting: cvar '%s' unknown.\n
+GetXCR0
 Gf95)1&!\ry9I
 GhHcW`H
 Ght\tv\vH
@@ -3984,6 +4294,7 @@ Gujarati
 Gurmukhi
 Gx\btfH
 G|u0J\n
+H!\rp
 H#D$ L\t
 H#D$0I
 H#D$8A
@@ -4013,9 +4324,29 @@ H+l$XHcD$lH9
 H+l$\bL
 H+s\b;s
 H+w\bH9
-H0H;\r-N
+H010ToAB30
+H010ToABGR
+H010ToAR30
+H010ToARGB
+H0H;\r L
+H0H;\r}K
 H19\b
+H210ToAB30
+H210ToABGR
+H210ToAR30
+H210ToARGB
 H3V\bH1
+H420ToAB30
+H420ToABGR
+H420ToAR30
+H420ToARGB
+H420ToRAW
+H420ToRGB24
+H420ToRGB565
+H422ToABGR
+H422ToARGB
+H444ToABGR
+H444ToARGB
 H98t\vH
 H9;vb
 H9B rv
@@ -4064,38 +4395,36 @@ H9z s
 H9{\btMH
 H9~\bt\b
 H;2s]A
-H;=6FM
-H;=7D9
-H;=FvU
-H;=HGH
-H;=HNH
-H;=Jn
-H;=O0H
-H;=O9
-H;=O\aH
-H;=QR\e
-H;=Uz
-H;=V1F
-H;=V1N
-H;=ZCH
-H;=ZKH
-H;=ZOH
-H;=ZPH
-H;=\bEH
-H;=\eXH
-H;=\eZH
-H;=\viU
-H;=fJ\e
-H;=fuM
-H;=kQH
-H;=p\vH
-H;=v3M
-H;=vOM
-H;=xHH
-H;=zDH
-H;=zR
-H;=zRH
-H;=zSH
+H;5\r
+H;= Rb
+H;=05N
+H;=2DM
+H;=2Sb
+H;=2Tb
+H;=2Ub
+H;=7\eN
+H;=9JF
+H;=B1N
+H;=Bmb
+H;=BqK
+H;=C6N
+H;=CrR
+H;=D7b
+H;=NfS
+H;=Rq
+H;=S7N
+H;=UP
+H;=Vl
+H;=YAM
+H;=\b9b
+H;=b2N
+H;=b9N
+H;=c8N
+H;=cvR
+H;=n1J
+H;=rPb
+H;=v4M
+H;=w8b
 H;D$HH
 H;E0sR
 H;G s@L
@@ -4107,8 +4436,7 @@ H;S sJH
 H;S srL
 H;U(v*H
 H;W\bv
-H;\rC@9
-H;\rK\f
+H;\rv
 H;l$\bt=I9
 H;t$@t\bH
 H;z H
@@ -4118,7 +4446,6 @@ H;|$ t\tH
 H;|$\bunH
 H;|$\bupH
 H@9H8
-HA \aJ\f  B
 HCperforce.inf
 HD9ep
 HH+W\bHcG
@@ -4145,7 +4472,6 @@ HRt1Hk
 HSCRIPT-light
 HSCRIPT-new
 HSR_GAME_REMOTE_CHANGELEVEL_RECONNECT
-HTD\v4\t
 HTX( 0L8@P
 HVDataResource
 H[]A\\A]A^A_ÐATUSH
@@ -4174,7 +4500,18 @@ H\fA9I\f
 H\fA9J\fA
 H\f}4H
 H\n\f\a\bC\v
+H\n`8\n
 H\tʋL
+HalfFloatPlane
+HalfFloatRow_AVX2
+HalfFloatRow_Any_AVX2
+HalfFloatRow_Any_SSE2
+HalfFloatRow_C
+HalfFloatRow_SSE2
+HalfMergeUVPlane
+HalfMergeUVRow_AVX2
+HalfMergeUVRow_C
+HalfMergeUVRow_SSSE3
 HammerMapLoader001
 Hangul
 Hanunoo
@@ -4202,7 +4539,6 @@ HcK\bLk
 HcK\bMc
 HcK`Mc
 HcKpIc
-HcL$pIc
 HcO4McB
 HcO@A9
 HcOPH
@@ -4210,22 +4546,16 @@ HcP\bH
 HcT$(L
 HcT$4Mc
 HcW\bD
-Hc\r#ET
-Hc\r1]U
-Hc\r1dS
-Hc\r3RT
-Hc\r5mS
-Hc\r:oS
-Hc\rGGT
-Hc\rO>T
-Hc\rZPT
-Hc\r\ePT
-Hc\r\riS
-Hc\rbET
-Hc\rgIT
-Hc\rj5T
-Hc\rkTT
-Hc\rrRT
+Hc\r-YY
+Hc\r7NY
+Hc\r:'Z
+Hc\rB0Z
+Hc\rEVY
+Hc\rIUY
+Hc\rYXY
+Hc\rZ2Z
+Hc\r\e2Z
+Hc\rg4Z
 Hck HcC$9
 Hck$HcC(9
 Hck(HcC,9
@@ -4236,15 +4566,19 @@ Hcs(H9
 HcsxA
 Hct$\fH
 Hcx\fH
+HcȋE(H
 Hcɉ_<Hk
 HcЉD$8
 HcЉD$x
+HcЋD$,H
+HcЋD$<H
+HcЋD$L
+HcЋD$LH
 HcЋEP1
 HcӉD$\f
 HcՉD$ L
 Header "%s": %s\n
 Heap is corrupt\n
-Heap-like bytes:         %s\n
 Hebrew
 Hello world
 HelpSystem_001
@@ -4281,6 +4615,7 @@ How often to flash demo recording/playback overlay (0 - disable overlay, -1 - sh
 Hs\aE1
 Huffman code size table overflow
 Huffman table 0x%02x was not defined
+HŉC0y\a
 H؋Eȍx3
 I!\nX-G
 I%2,k"Q
@@ -4291,6 +4626,205 @@ I+\tI
 I+t$\bA;t
 I+u\bA;u
 I+v\bA;v
+I010AlphaToARGBMatrix
+I010Copy
+I010ToAB30
+I010ToABGR
+I010ToAR30
+I010ToAR30Matrix
+I010ToARGB
+I010ToARGBMatrix
+I010ToI420
+I010ToP010
+I012ToAR30Matrix
+I012ToARGBMatrix
+I012ToI420
+I012ToP012
+I210AlphaToARGBMatrix
+I210AlphaToARGBRow_AVX2
+I210AlphaToARGBRow_Any_AVX2
+I210AlphaToARGBRow_Any_SSSE3
+I210AlphaToARGBRow_C
+I210AlphaToARGBRow_SSSE3
+I210ToAB30
+I210ToABGR
+I210ToAR30
+I210ToAR30Matrix
+I210ToAR30Row_AVX2
+I210ToAR30Row_Any_AVX2
+I210ToAR30Row_Any_SSSE3
+I210ToAR30Row_C
+I210ToAR30Row_SSSE3
+I210ToARGB
+I210ToARGBMatrix
+I210ToARGBRow_AVX2
+I210ToARGBRow_Any_AVX2
+I210ToARGBRow_Any_SSSE3
+I210ToARGBRow_C
+I210ToARGBRow_SSSE3
+I210ToI010
+I210ToI422
+I210ToP210
+I212ToAR30Row_AVX2
+I212ToAR30Row_Any_AVX2
+I212ToAR30Row_Any_SSSE3
+I212ToAR30Row_C
+I212ToAR30Row_SSSE3
+I212ToARGBRow_AVX2
+I212ToARGBRow_Any_AVX2
+I212ToARGBRow_Any_SSSE3
+I212ToARGBRow_C
+I212ToARGBRow_SSSE3
+I212ToI422
+I212ToP212
+I400Mirror
+I400ToARGB
+I400ToARGBMatrix
+I400ToARGBRow_AVX2
+I400ToARGBRow_Any_AVX2
+I400ToARGBRow_Any_SSE2
+I400ToARGBRow_C
+I400ToARGBRow_SSE2
+I400ToI400
+I400ToI420
+I400ToNV21
+I410AlphaToARGBMatrix
+I410AlphaToARGBRow_AVX2
+I410AlphaToARGBRow_Any_AVX2
+I410AlphaToARGBRow_Any_SSSE3
+I410AlphaToARGBRow_C
+I410AlphaToARGBRow_SSSE3
+I410ToAR30Matrix
+I410ToAR30Row_AVX2
+I410ToAR30Row_Any_AVX2
+I410ToAR30Row_Any_SSSE3
+I410ToAR30Row_C
+I410ToAR30Row_SSSE3
+I410ToARGBMatrix
+I410ToARGBRow_AVX2
+I410ToARGBRow_Any_AVX2
+I410ToARGBRow_Any_SSSE3
+I410ToARGBRow_C
+I410ToARGBRow_SSSE3
+I410ToI010
+I410ToI444
+I412ToI444
+I420AlphaToABGR
+I420AlphaToARGB
+I420AlphaToARGBMatrix
+I420Blend
+I420Copy
+I420Interpolate
+I420Mirror
+I420Rect
+I420Scale
+I420Scale_12
+I420Scale_16
+I420ToAB30
+I420ToABGR
+I420ToAR30
+I420ToAR30Matrix
+I420ToARGB
+I420ToARGB1555
+I420ToARGB4444
+I420ToARGBMatrix
+I420ToBGRA
+I420ToI400
+I420ToRAW
+I420ToRGB24
+I420ToRGB24Matrix
+I420ToRGB565
+I420ToRGB565Dither
+I420ToRGB565Matrix
+I420ToRGBA
+I420ToRGBAMatrix
+I422AlphaToABGR
+I422AlphaToARGB
+I422AlphaToARGBMatrix
+I422AlphaToARGBRow_AVX2
+I422AlphaToARGBRow_Any_AVX2
+I422AlphaToARGBRow_Any_SSSE3
+I422AlphaToARGBRow_C
+I422AlphaToARGBRow_SSSE3
+I422Copy
+I422ToABGR
+I422ToAR30Row_AVX2
+I422ToAR30Row_Any_AVX2
+I422ToAR30Row_Any_SSSE3
+I422ToAR30Row_C
+I422ToAR30Row_SSSE3
+I422ToARGB
+I422ToARGB1555Row_AVX2
+I422ToARGB1555Row_Any_AVX2
+I422ToARGB1555Row_Any_SSSE3
+I422ToARGB1555Row_C
+I422ToARGB1555Row_SSSE3
+I422ToARGB4444Row_AVX2
+I422ToARGB4444Row_Any_AVX2
+I422ToARGB4444Row_Any_SSSE3
+I422ToARGB4444Row_C
+I422ToARGB4444Row_SSSE3
+I422ToARGBMatrix
+I422ToARGBRow_AVX2
+I422ToARGBRow_Any_AVX2
+I422ToARGBRow_Any_SSSE3
+I422ToARGBRow_C
+I422ToARGBRow_SSSE3
+I422ToBGRA
+I422ToI420
+I422ToNV21
+I422ToRGB24Row_AVX2
+I422ToRGB24Row_Any_AVX2
+I422ToRGB24Row_Any_SSSE3
+I422ToRGB24Row_C
+I422ToRGB24Row_SSSE3
+I422ToRGB565
+I422ToRGB565Row_AVX2
+I422ToRGB565Row_Any_AVX2
+I422ToRGB565Row_Any_SSSE3
+I422ToRGB565Row_C
+I422ToRGB565Row_SSSE3
+I422ToRGBA
+I422ToRGBAMatrix
+I422ToRGBARow_AVX2
+I422ToRGBARow_Any_AVX2
+I422ToRGBARow_Any_SSSE3
+I422ToRGBARow_C
+I422ToRGBARow_SSSE3
+I422ToUYVYRow_AVX2
+I422ToUYVYRow_Any_AVX2
+I422ToUYVYRow_Any_SSE2
+I422ToUYVYRow_C
+I422ToUYVYRow_SSE2
+I422ToYUY2Row_AVX2
+I422ToYUY2Row_Any_AVX2
+I422ToYUY2Row_Any_SSE2
+I422ToYUY2Row_C
+I422ToYUY2Row_SSE2
+I444AlphaToABGR
+I444AlphaToARGB
+I444AlphaToARGBMatrix
+I444AlphaToARGBRow_AVX2
+I444AlphaToARGBRow_Any_AVX2
+I444AlphaToARGBRow_Any_SSSE3
+I444AlphaToARGBRow_C
+I444AlphaToARGBRow_SSSE3
+I444Copy
+I444Rotate
+I444Scale
+I444Scale_12
+I444Scale_16
+I444ToABGR
+I444ToARGB
+I444ToARGBMatrix
+I444ToARGBRow_AVX2
+I444ToARGBRow_Any_AVX2
+I444ToARGBRow_Any_SSSE3
+I444ToARGBRow_C
+I444ToARGBRow_SSSE3
+I444ToI420
+I444ToNV12
+I444ToNV21
 I96v3I
 I9<$vB
 I9<$vJ
@@ -4321,6 +4855,8 @@ ID filter list has %i entries\n
 ID: %i, "%s" %s, Time %s, %s, In %.1f, Out %.1f.\n
 IDEMPOTENCY_UNKNOWN
 IEngineClient::RecordDemoCustomData(): Not recording a demo.\n
+IMAGE_FORMAT_IMC2
+IMAGE_FORMAT_NV12
 IMAGE_FORMAT_R11G11B10_FLOAT
 INETSUPPORT_001
 INTERNAL
@@ -4362,9 +4898,9 @@ IcL$\bHc
 IcM Ic
 IcM\bIc
 IcMhHc
+IcMpIc
 IcMxIc
 IcN Ic
-IcNpIc
 IcOHIc
 IcT$8I
 IcT$HH
@@ -4395,7 +4931,7 @@ Icv(H9
 Icw(H9
 IdempotencyLevel
 Idle (%s
-If a server frame takes longer than N ms, complain about it.  (Dedicated server only.)  See also engine_enable_frametime_warnings
+If a server frame takes longer than N ms, complain about it.  (Dedicated server only.)  See also engine_frametime_warnings_enable
 If in replay, jumps back to live
 If non-zero, client binds port to specific address.  Usually you should leave this blank to use a different random system-assigned port for each connection
 If set to 1, the server calculates data and fills packets to bots. Used for perf testing
@@ -4439,6 +4975,7 @@ Index must be in range of repeated field values
 Index out-of-bounds (field is empty
 Indicates whether or not the tv should use delta frames for storage of intermediate frames. This takes more CPU but significantly less memory
 Inherited
+InitCpuFlags
 InitSteamLogin_Internal
 Initial Window
 InitializeDummyRow
@@ -4466,6 +5003,13 @@ Insufficient memory (case %d
 Integer out of range
 Intentionally vague touch behavior for %p\n
 Interpolate entities on the client
+InterpolatePlane
+InterpolateRow_16_C
+InterpolateRow_AVX2
+InterpolateRow_Any_AVX2
+InterpolateRow_Any_SSSE3
+InterpolateRow_C
+InterpolateRow_SSSE3
 Interpreting bind command as
 Interpreting non ascii codepoint %d
 Interval time in seconds to write full updates to demo
@@ -4515,8 +5059,19 @@ Is the server pausable
 Issue an rcon command
 IԉT$DD
 IՉT$8B
-J@L;\rb
-J@L;\rqw
+J400ToARGB
+J400ToARGBRow_Any_SSE2
+J400ToARGBRow_C
+J400ToARGBRow_SSE2
+J420ToABGR
+J420ToARGB
+J420ToRAW
+J420ToRGB24
+J420ToRGB565
+J422ToABGR
+J422ToARGB
+J444ToABGR
+J444ToARGB
 JD;t$H
 JFIF APP0 marker: version %d.%02d, density %dx%d  %d
 JFIF extension marker: JPEG-compressed thumbnail image, length %u
@@ -4627,10 +5182,7 @@ L9v ~FL
 L9|$(tLL
 L9|$HJ
 L9|$\bu
-L;%5nH
-L;%NnH
-L;%eR
-L;%lm
+L;%dlb
 L;4$t0A
 L;4$toM
 L;4$trM
@@ -4641,6 +5193,7 @@ L;l$puYH
 L;o u
 L;p }&H
 L;{ u$I
+L>fff
 LABEL_OPTIONAL
 LABEL_REPEATED
 LABEL_REQUIRED
@@ -4669,6 +5222,7 @@ LOG_DEVELOPER
 LOG_DEVELOPER_CONSOLE
 LOG_DEVELOPER_VERBOSE
 LOG_GENERAL
+LOG_VPROF
 L\n!NETWORK_DISCONNECT_HLTVRESTRICTED
 L\n!NETWORK_DISCONNECT_KICKED_SUICIDE
 L\n!NETWORK_DISCONNECT_LOOPDEACTIVATE
@@ -4789,6 +5343,8 @@ LoggingSystem_SetMaxLogCaptureLines
 LoggingSystem_UnregisterLoggingListener
 Logic problem? szsrc
 LookupMapValue
+Loongson-2K
+Loongson-3
 Loop "%s" contains a circular dependency with service "%s"!\n
 Loop named "%s" failed to init!\n
 LoopModeConsole
@@ -4805,6 +5361,7 @@ Lɟ?ff
 Lԗ>qxs
 M$4tu
 M+t$8M
+M9&vkI
 M94$t\vM9t$\b
 M9<$vrA
 M9l$0A
@@ -4824,6 +5381,7 @@ META for '%s'\n
 MNetworkBitCount
 MNetworkChangeAccessorFieldPathIndex
 MNetworkChangeCallback
+MNetworkChangeTag
 MNetworkDisable
 MNetworkEnable
 MNetworkEncoder
@@ -4839,7 +5397,7 @@ MOBILE_FPS_CONTROL: If true we increase framerate limit during touch
 MOBILE_FPS_CONTROL: If true we increase framerate limit while charging
 MOBILE_FPS_CONTROL: Mobile FPS limit - 15, 30, 60
 MODEL_PROCESSING_SERVICES_INTERFACE_001
-MP4 recording failed! Missing expected pixels!\n
+MP4 not supported on this platform\n
 MSAADefaultNonVR
 MSG_SPLITSCREEN_ADDUSER
 MSG_SPLITSCREEN_REMOVEUSER
@@ -4898,6 +5456,7 @@ MapValueRef::SetUInt64Value
 Marked tick %u in '%s'\n
 Marker,GPUTimeAvgMS,GPUTimeRangeMS,GPUTimeMinMS,GPUTimeMaxMS\n
 Marks the current demo playback tick for later use
+MaskCpuFlags
 Master "%s", delay %.0f, frames %d / ticks %d\n
 Match start status: %u/%u\n
 MatchSession
@@ -4923,6 +5482,7 @@ Maximum queries per second to respond to from a single IP address
 Maximum queries per second to respond to from anywhere
 Maximum replay time in seconds
 Maximum supported image dimension is %u pixels
+May 22 2024
 MaybeAllocateAligned cannot fail here
 MbP?genericprecache
 Mc&E;f
@@ -4948,6 +5508,48 @@ MemAlloc_FreeFunc
 MemAlloc_StrDupFunc
 Members/numSlots
 Memory load: %u%%\n
+MergeAR64Plane
+MergeAR64Row_AVX2
+MergeAR64Row_Any_AVX2
+MergeAR64Row_C
+MergeARGB16To8Plane
+MergeARGB16To8Row_AVX2
+MergeARGB16To8Row_Any_AVX2
+MergeARGB16To8Row_C
+MergeARGBPlane
+MergeARGBPlaneAlpha
+MergeARGBPlaneOpaque
+MergeARGBRow_AVX2
+MergeARGBRow_Any_AVX2
+MergeARGBRow_Any_SSE2
+MergeARGBRow_C
+MergeARGBRow_SSE2
+MergeRGBPlane
+MergeRGBRow_Any_SSSE3
+MergeRGBRow_C
+MergeRGBRow_SSSE3
+MergeUVPlane_16
+MergeUVRow_16_AVX2
+MergeUVRow_16_Any_AVX2
+MergeUVRow_16_C
+MergeUVRow_Any_AVX2
+MergeUVRow_Any_SSE2
+MergeUVRow_SSE2
+MergeXR30Plane
+MergeXR30Row_AVX2
+MergeXR30Row_Any_AVX2
+MergeXR30Row_C
+MergeXR64Row_AVX2
+MergeXR64Row_Any_AVX2
+MergeXR64Row_C
+MergeXRGB16To8Row_AVX2
+MergeXRGB16To8Row_Any_AVX2
+MergeXRGB16To8Row_C
+MergeXRGBRow_AVX2
+MergeXRGBRow_Any_AVX2
+MergeXRGBRow_Any_SSE2
+MergeXRGBRow_C
+MergeXRGBRow_SSE2
 Meroitic_Cursive
 Meroitic_Hieroglyphs
 MeshSystem001
@@ -4976,6 +5578,16 @@ Minimum allowable pause between replay requests in seconds
 Minimum frame time: %f ms (%f FPS)\n
 MinimumPhysicalMemoryMB
 MinorVersion
+MipsCpuCaps
+MirrorPlane
+MirrorSplitUVRow_C
+MirrorSplitUVRow_SSSE3
+MirrorUVPlane
+MirrorUVRow_AVX2
+MirrorUVRow_Any_AVX2
+MirrorUVRow_Any_SSSE3
+MirrorUVRow_C
+MirrorUVRow_SSSE3
 Misc: rate %i update %g latency %i msec\n
 Miscellaneous marker 0x%02x, length %u
 Mismatched CTier2AppSystemDict::SetAllowAddonChanges!!!\n
@@ -4984,7 +5596,7 @@ Missing Huffman code table entry
 Missing button or key name\n
 Missing field: FileDescriptorProto.name
 Missing name
-MlV\rH}St
+MlV\rH}Rt(Ս@\f
 MnZ/rs
 MobileClientVersion
 Mod doesn't support SourceTV. No director module found.\n
@@ -4998,15 +5610,23 @@ Mounting addon '%s'\n
 Mouse Control
 Moves the camera position + orientation to the named entity
 Moves the camera position + orientation to the specified position
+Movie recording failed! Missing expected pixels!\n
 Multiple extension registrations for type
 Multiply requested rate by this value to adjust Dota TV send rate
 Multiply specified convar value
+MultiplyRow_16_AVX2
+MultiplyRow_16_Any_AVX2
+MultiplyRow_16_C
 MutableMessage
 MutableRawRepeatedField
 MutableRepeatedMessage
 Myanmar
 MċE\tK\b9
+MĺVUUU
+MЋUԋu؋E
 MЍ\f6Hc
+MкVUUU
+MԺVUUU
 N is not supported in a class
 N.]UYJ
 N10__cxxabiv115__forced_unwindE
@@ -5108,9 +5728,16 @@ N21CGameResourceManifest37CCallbackInternal_Steam_OnUGCDownloadE
 N24CFieldPathHuffmanEncoder12InternalNodeE
 N24CFieldPathHuffmanEncoder5INodeE
 N24CFieldPathHuffmanEncoder8LeafNodeE
+N24CParallelProcessLauncher18CParallelLambdaJobIZ11ParallelForILb1EZN11ImageLoaderL14ConvertFromBC7I10BGRA8888_tEEbPKhPT_iiEUliE_EviiPKcT0_ii13JobPriority_tEUliE_EE
+N24CParallelProcessLauncher18CParallelLambdaJobIZ11ParallelForILb1EZN11ImageLoaderL14ConvertFromBC7I10RGBA8888_tEEbPKhPT_iiEUliE_EviiPKcT0_ii13JobPriority_tEUliE_EE
+N24CParallelProcessLauncher18CParallelLambdaJobIZ11ParallelForILb1EZN11ImageLoaderL15ConvertFromBC6hI10BGRA8888_tLb1EEEbPKhPT_iiEUliE_EviiPKcT0_ii13JobPriority_tEUliE_EE
+N24CParallelProcessLauncher18CParallelLambdaJobIZ11ParallelForILb1EZN11ImageLoaderL15ConvertFromBC6hI10RGBA8888_tLb1EEEbPKhPT_iiEUliE_EviiPKcT0_ii13JobPriority_tEUliE_EE
+N24CParallelProcessLauncher18CParallelLambdaJobIZ11ParallelForILb1EZN11ImageLoaderL15ConvertFromBC6hI15RGBA16161616F_tLb0EEEbPKhPT_iiEUliE_EviiPKcT0_ii13JobPriority_tEUliE_EE
+N24CParallelProcessLauncher18CParallelLambdaJobIZ11ParallelForILb1EZN11ImageLoaderL15ConvertFromBC6hI15RGBA32323232F_tLb0EEEbPKhPT_iiEUliE_EviiPKcT0_ii13JobPriority_tEUliE_EE
+N24CParallelProcessLauncher18CParallelLambdaJobIZ15ParallelForEachIR10CUtlVectorI10PackWork_ti10CUtlMemoryIS3_iEEZN18CNetworkGameServer19PackEntities_NormalERS2_IPK20Entity2Networkable_tiS4_ISB_iEEiPP17CServerSideClientR7CBitVecILi16384EEP14CFrameSnapshotEUlRKS3_E_EvOT_PKcT0_ii13JobPriority_tEUliE_EE
+N24CParallelProcessLauncher18CParallelLambdaJobIZ15ParallelForEachIR10CUtlVectorIN22CNetworkGameServerBase24PackEntityBaselineWork_tEi10CUtlMemoryIS4_iEEZN18CNetworkGameServer19PackEntities_NormalERS2_IPK20Entity2Networkable_tiS5_ISC_iEEiPP17CServerSideClientR7CBitVecILi16384EEP14CFrameSnapshotEUlRKS4_E0_EvOT_PKcT0_ii13JobPriority_tEUliE_EE
+N24CParallelProcessLauncher18CParallelLambdaJobIZ15ParallelForEachIR10CUtlVectorIii10CUtlMemoryIiiEEZN22CNetworkGameClientBase18CopyEntityBaselineEiiEUliE_EvOT_PKcT0_ii13JobPriority_tEUliE_EE
 N24CParallelProcessLauncher18CParallelLambdaJobIZN16CHLTVServerAsync27ExpandDeltaFrameToFullFrameEP17SHLTVDeltaFrame_tEUliE_EE
-N24CParallelProcessLauncher18CParallelLambdaJobIZN18CNetworkGameServer19PackEntities_NormalER10CUtlVectorIPK20Entity2Networkable_ti10CUtlMemoryIS5_iEEiPP17CServerSideClientR7CBitVecILi16384EEP14CFrameSnapshotEUliE0_EE
-N24CParallelProcessLauncher18CParallelLambdaJobIZN18CNetworkGameServer19PackEntities_NormalER10CUtlVectorIPK20Entity2Networkable_ti10CUtlMemoryIS5_iEEiPP17CServerSideClientR7CBitVecILi16384EEP14CFrameSnapshotEUliE_EE
 N24InputAudioStreamParams_t10m_callbackMUlP17IAudioInputStreamiE_E
 N3Etc16Block4x4EncodingE
 N3Etc20Block4x4Encoding_R11E
@@ -5279,6 +5906,7 @@ NETWORK_FIELD_CHANGED_ARRAY_WITH_VALUE
 NETWORK_FIELD_CHANGED_NO_VALUE
 NETWORK_FIELD_CHANGED_NO_VALUE_NO_CONTEXT
 NETWORK_FIELD_CHANGED_REPLAY_COMPAT
+NETWORK_FIELD_CHANGED_TAG
 NETWORK_FIELD_CHANGED_TYPE_NONE
 NETWORK_FIELD_CHANGED_WITH_VALUE
 NETWORK_FIELD_CHANGES_OFTEN_PRIORITY
@@ -5380,6 +6008,57 @@ NSt8__detail15_BracketMatcherISt12regex_traitsIcELb1ELb1EEE
 NSt8ios_base7failureB5cxx11E
 NSt8ios_base7failureE
 NULL VP8Io parameter in VP8Decode
+NV12Copy
+NV12Mirror
+NV12Scale
+NV12ToABGR
+NV12ToARGB
+NV12ToARGBMatrix
+NV12ToARGBRow_AVX2
+NV12ToARGBRow_Any_AVX2
+NV12ToARGBRow_Any_SSSE3
+NV12ToARGBRow_C
+NV12ToARGBRow_SSSE3
+NV12ToI420
+NV12ToI420Rotate
+NV12ToNV24
+NV12ToRAW
+NV12ToRGB24
+NV12ToRGB24Matrix
+NV12ToRGB24Row_AVX2
+NV12ToRGB24Row_Any_AVX2
+NV12ToRGB24Row_Any_SSSE3
+NV12ToRGB24Row_C
+NV12ToRGB24Row_SSSE3
+NV12ToRGB565
+NV12ToRGB565Matrix
+NV12ToRGB565Row_AVX2
+NV12ToRGB565Row_Any_AVX2
+NV12ToRGB565Row_Any_SSSE3
+NV12ToRGB565Row_C
+NV12ToRGB565Row_SSSE3
+NV16ToNV24
+NV21Copy
+NV21ToABGR
+NV21ToARGB
+NV21ToARGBMatrix
+NV21ToARGBRow_AVX2
+NV21ToARGBRow_Any_AVX2
+NV21ToARGBRow_Any_SSSE3
+NV21ToARGBRow_C
+NV21ToARGBRow_SSSE3
+NV21ToI420
+NV21ToNV12
+NV21ToRAW
+NV21ToRGB24
+NV21ToRGB24Matrix
+NV21ToRGB24Row_AVX2
+NV21ToRGB24Row_Any_AVX2
+NV21ToRGB24Row_Any_SSSE3
+NV21ToRGB24Row_C
+NV21ToRGB24Row_SSSE3
+NV21ToYUV24
+NV21ToYUV24Row_C
 NV_NULL
 N\\O\\NZOt)s(r
 N\bI;P\b
@@ -5439,6 +6118,7 @@ No previous spawn group\n
 No pushed values to pop\n
 No server loaded\n
 No toolframework)\n
+No vprof lite data recorded\n
 NoChan
 NoDefaultModPath
 NoKeyBindings
@@ -5501,6 +6181,7 @@ O`uQ1
 Obtained EMS handle %u
 Obtained XMS handle %u
 October
+Ok GU5T
 Ol_Chiki
 Old_Italic
 Old_Persian
@@ -5517,7 +6198,6 @@ OnClientPostOutput
 OnClientPostSimulate
 OnClientPreOutput
 OnClientPreSimulate
-OnClientPredictionPostNetupdate
 OnClientProcessGameInput
 OnClientProcessInput
 OnClientProcessNetworking
@@ -5583,7 +6263,7 @@ P A9\\$\bI
 P A9^\b
 P D9cP
 P HcC
-P Hǃ@G
+P HǃHG
 P HǃX6
 P Hǃ\b7
 P Hǃp6
@@ -5594,11 +6274,39 @@ P IǄ$x\v
 P Iǅ\b\v
 P(HcH0M
 P(Lcd$\bL
+P*EDd
 P*u?H
+P010ToAR30Matrix
+P010ToARGBMatrix
+P010ToP410
 P0D9{\b~6L
 P0tpHi
+P210ToAR30Matrix
+P210ToAR30Row_AVX2
+P210ToAR30Row_Any_AVX2
+P210ToAR30Row_Any_SSSE3
+P210ToAR30Row_C
+P210ToAR30Row_SSSE3
+P210ToARGBMatrix
+P210ToARGBRow_AVX2
+P210ToARGBRow_Any_AVX2
+P210ToARGBRow_Any_SSSE3
+P210ToARGBRow_C
+P210ToARGBRow_SSSE3
+P210ToP410
+P410ToAR30Row_AVX2
+P410ToAR30Row_Any_AVX2
+P410ToAR30Row_Any_SSSE3
+P410ToAR30Row_C
+P410ToAR30Row_SSSE3
+P410ToARGBRow_AVX2
+P410ToARGBRow_Any_AVX2
+P410ToARGBRow_Any_SSSE3
+P410ToARGBRow_C
+P410ToARGBRow_SSSE3
 P8HcCh
 P8HcH
+P@AǄ$8K
 P@H+P8H
 P@H+P8L
 PAQAQL
@@ -5612,7 +6320,6 @@ PEvent
 PH;k u'H
 PHcKHIc
 PHcǍT
-PHhFQ\n
 PL;c u'H
 PLACEHOLDER_VALUE
 PLATFORM
@@ -5646,6 +6353,7 @@ P\n\f\a\bJ\vL
 P\v\a\n
 P`<%uFI
 P`<%uOH
+PackEntities_Normal EnsureInstanceBaseline
 PackEntity: SnagChangeFrameList returned null
 PackEntity: ent(%d) at tick %d Encountered field %s in diff change that was not in the incremental change. This can lead to values not making it down to the client\n
 PackEntity: ent(%d) at tick %d Encountered field %s in incremental change that was not in the diff change. This can lead to slight network inefficiency\n
@@ -5685,10 +6393,9 @@ Paused: %s
 Pauses demo playback
 Pauses demo playback at server tick
 Pauses instant replay
-Peak heap-like bytes:    %s\n
-Peak private bytes:      %s\n
 Peak resident memory:    %s\n
 Perf stats buffer full, no more data will be collected.\n
+Performance report --\n
 Performs a bind <key> "increment var <cvar> 0 1 1
 PfA+DW
 Phags_Pa
@@ -5698,7 +6405,6 @@ PhysicsBuilderMgr001
 Plain assert text (has prefix)\n
 Plain general text (no prefix)\n
 Plat_AlertUser
-Plat_ApproximateProcessMemoryUsage
 Plat_AttachDebuggerToProcess
 Plat_BeginWatchdogTimer
 Plat_CPUTickFrequency
@@ -5725,9 +6431,7 @@ Plat_GetComputerName
 Plat_GetCrtEnv
 Plat_GetCurrentDirectory
 Plat_GetCurrentFrame
-Plat_GetCurrentHeapLikeBytes
 Plat_GetCurrentHibernationState
-Plat_GetCurrentPrivateBytes
 Plat_GetCurrentRSS
 Plat_GetDPI
 Plat_GetDefaultMonitorIndex
@@ -5777,6 +6481,7 @@ Plat_MilliSecTickDiff
 Plat_MinimizeWindow
 Plat_NeedsLowFragmentation
 Plat_NonFatalErrorFunc
+Plat_OnExecutableExitingMain
 Plat_QueueSteamLoginWithAccessCode
 Plat_RefreshDPI
 Plat_RegisterSignalHandler
@@ -5812,6 +6517,7 @@ Plat_UUIDToString
 Plat_UnloadModule
 Plat_UnloadSDL
 Plat_WindowToOsSpecificHandle
+Plat_localtime64
 Platform the engine is running on
 Play a broadcast
 Play a demo and report performance info
@@ -5863,6 +6569,7 @@ PrecacheDecal called with no server
 PrecacheEntitiesAndConfirmResourcesAreLoaded
 PrecacheGeneric called with no server
 PrecacheSound %s failed\n
+Prediction
 Premature end of JPEG file
 Premature end of input file
 Premature end-of-file encountered
@@ -5874,6 +6581,7 @@ Prescale the clock by this amount
 PreserveEnt
 Print CPU configuration information
 Print a message about problems with ticks and interpolation.  0=never, 1=warnings, 2=all, even if hidden by interpolation
+Print a performance report from the current data in the vprof 'lite' profiler
 Print callstack every time CNetworkGameServerBase::WriteEntityUpdate takes more than this amount of milliseconds
 Print connection status
 Print demo sequence list
@@ -5891,9 +6599,9 @@ Prints out the current render coordination state
 Prints server performance variables
 Priority boost already disabled.\n
 Priority boost already enabled.\n
-Private bytes:           %s\n
 Private:  %s\n
 ProcesPacketEntitiesWorkItems_Combined
+ProcesPacketEntitiesWorkItems_Combined_Sort
 ProcesPacketEntitiesWorkItems_Decode
 ProcesPacketEntitiesWorkItems_ReadFieldList
 Process priority: %s, main thread priority: %s\n
@@ -5927,7 +6635,7 @@ ProtoFlattenedSerializer_t
 Protobuf: %s(%d): %s\n
 Protocol Buffer map usage error:\n
 Protocol Buffer reflection usage error:\n  Method      : google::protobuf::Reflection
-Pt[<RuύB
+PtZ<Ru
 PuPHc
 Public :  %s\n
 Pure server CRC check: client %s passed check for [%s]\\%s\n
@@ -5968,6 +6676,7 @@ QueueMatchPlayer overwriting connection from client [U:1:%d] %08X:%08X %s -> %s\
 QueuePostDataUpdates
 Queued   :  %s\n
 Quit after a game has been relayed, do not hibernate
+Quit after recording requested, quitting now.\n
 Quit the game
 Quits game after demo playback
 Quitting
@@ -5979,12 +6688,39 @@ R16_UINT
 R32G32_UINT
 R32_SINT
 R32_UINT
+R89Q8v\fH
+R8A9S8v\fH
 R8G8B8A8_ETC2_EAC
 R8G8B8_ETC2
 R8G8_UINT
 R8_UINT
 R;876
 R?jjU
+RAWToARGB
+RAWToARGBRow_Any_SSSE3
+RAWToARGBRow_C
+RAWToARGBRow_SSSE3
+RAWToI420
+RAWToJ400
+RAWToJ420
+RAWToRGB24
+RAWToRGB24Row_Any_SSSE3
+RAWToRGB24Row_C
+RAWToRGB24Row_SSSE3
+RAWToRGBA
+RAWToRGBARow_Any_SSSE3
+RAWToRGBARow_C
+RAWToRGBARow_SSSE3
+RAWToUVJRow_C
+RAWToUVRowMatrix_C
+RAWToUVRow_C
+RAWToYJRow_AVX2
+RAWToYJRow_Any_AVX2
+RAWToYJRow_Any_SSSE3
+RAWToYJRow_C
+RAWToYJRow_SSSE3
+RAWToYRowMatrix_C
+RAWToYRow_C
 RCON Cmd: recv error (%s)\n
 RDTSC
 RDTSCP
@@ -6005,8 +6741,36 @@ RG11_EAC
 RG1616
 RG1616F
 RG3232F
+RGB24Mirror
+RGB24MirrorRow_Any_SSSE3
+RGB24MirrorRow_C
+RGB24MirrorRow_SSSE3
+RGB24ToARGB
+RGB24ToARGBRow_Any_SSSE3
+RGB24ToARGBRow_C
+RGB24ToARGBRow_SSSE3
+RGB24ToI420
+RGB24ToJ400
+RGB24ToJ420
+RGB24ToUVJRow_C
+RGB24ToUVRowMatrix_C
+RGB24ToUVRow_C
+RGB24ToYJRow_AVX2
+RGB24ToYJRow_Any_AVX2
+RGB24ToYJRow_Any_SSSE3
+RGB24ToYJRow_C
+RGB24ToYJRow_SSSE3
+RGB24ToYRowMatrix_C
+RGB24ToYRow_C
 RGB323232F
 RGB565
+RGB565ToARGB
+RGB565ToARGBRow_Any_SSE2
+RGB565ToARGBRow_C
+RGB565ToARGBRow_SSE2
+RGB565ToI420
+RGB565ToUVRow_C
+RGB565ToYRow_C
 RGB888
 RGBA1010102
 RGBA16161616
@@ -6014,6 +6778,23 @@ RGBA16161616F
 RGBA32323232F
 RGBA32323232_UINT
 RGBA8888_LINEAR
+RGBA8888_UINT
+RGBAToARGB
+RGBAToI420
+RGBAToUVJRow_C
+RGBAToUVRowMatrix_C
+RGBAToUVRow_Any_SSSE3
+RGBAToUVRow_C
+RGBAToUVRow_SSSE3
+RGBAToYJRow_AVX2
+RGBAToYJRow_Any_AVX2
+RGBAToYJRow_Any_SSSE3
+RGBAToYJRow_C
+RGBAToYJRow_SSSE3
+RGBAToYRowMatrix_C
+RGBAToYRow_Any_SSSE3
+RGBAToYRow_C
+RGBAToYRow_SSSE3
 RGBX8888
 RIFFH
 RJ}?H
@@ -6021,7 +6802,6 @@ RP_TOGGLEPAUSE
 R\b9r\bt\a9
 R\bD9W\bu
 R\bE9Q\bu\a
-R\e \e1
 R\fA9Q\f
 R\fA9R\f
 RandomFloat
@@ -6039,6 +6819,7 @@ ReadDemoHeader: %s has invalid demo header.\n
 ReadDemoHeader: invalid pBuffer.\n
 ReadOnly
 ReadPacket
+ReadPacketEntities
 ReadPacketEntities:  buffer read overflow\n
 ReadPreserveEnt: u.m_nNewEntity == MAX_SNAPSHOT_ENTITIES
 ReadUserCmd
@@ -6048,6 +6829,7 @@ Received acknowledgement tick=%d after the full frame of %d, discarding current 
 Received connection rejection that didn't match my challenge, ignoring.\n
 Received delta packet entities while spawing!\n
 Received new full frame at tick %d!  Had %d chunks of previous frame %d!\n
+Received packet entities while connecting!\n
 Received section %d but wanted section %d, removing full frame\n
 Received signon %i when at %i\n
 Received wrong spawn count %i when at %i\n
@@ -6125,6 +6907,8 @@ RenderDeviceMgr001
 RenderHardwareConfig002
 RenderService::OnClientOutput
 RenderService_001
+RenderSystem/VulkanOnly
+RenderSystem/VulkanOnlyTestProbability
 RenderSystemChange_No
 RenderSystemChange_Text
 RenderSystemChange_Title
@@ -6190,6 +6974,10 @@ Retrying connection to %s, server requires lobby reservation but is unreserved.\
 ReturnJobManualEventToPool
 RevisionVersion
 Root entity class
+RotatePlane
+RotatePlane180
+RotatePlane270
+RotatePlane90
 RotationVector
 RotationVector-world
 Route voice between splitscreen players on same system
@@ -6198,9 +6986,9 @@ Run heap check at a specified interval
 Run heap check at end of every frame
 Running SteamAPI_RunCallbacks for first time\n
 Running [%s
+S$r:E1
 S(;S,}9Lc
 S(t_HcL
-S,r2E1
 S0D)ȉC
 S0H+S8M
 S0IcE0A9
@@ -6281,7 +7069,6 @@ SSE and SSE2 are required
 SSE4.1
 SSE4.2
 STEAM
-STEAMAPPLIST_INTERFACE_VERSION001
 STEAMAPPS_INTERFACE_VERSION008
 STEAMAUTH: Client %s not immediately kicked because sv_steamauth_enforce=%d\n
 STEAMAUTH: Client %s received failure code %d\n
@@ -6295,9 +7082,9 @@ STEAMPARENTALSETTINGS_INTERFACE_VERSION001
 STEAMREMOTEPLAY_INTERFACE_VERSION002
 STEAMREMOTESTORAGE_INTERFACE_VERSION016
 STEAMSCREENSHOTS_INTERFACE_VERSION003
-STEAMUGC_INTERFACE_VERSION018
+STEAMUGC_INTERFACE_VERSION019
 STEAMUSERSTATS_INTERFACE_VERSION012
-STEAMVIDEO_INTERFACE_V003
+STEAMVIDEO_INTERFACE_V002
 STEAM] %s\n
 STEAM_ID_LAN
 STEAM_ID_PENDING
@@ -6390,6 +7177,201 @@ Saves current key bindings to disk
 Saves out the user config values
 Scale used when displaying load-hit-stores (0 = use default
 Scale used when displaying time (0 = use default
+ScaleARGBCols64_C
+ScaleARGBColsUp2_C
+ScaleARGBColsUp2_SSE2
+ScaleARGBCols_C
+ScaleARGBCols_SSE2
+ScaleARGBFilterCols64_C
+ScaleARGBFilterCols_C
+ScaleARGBFilterCols_SSSE3
+ScaleARGBRowDown2Box_Any_SSE2
+ScaleARGBRowDown2Box_C
+ScaleARGBRowDown2Box_SSE2
+ScaleARGBRowDown2Linear_Any_SSE2
+ScaleARGBRowDown2Linear_C
+ScaleARGBRowDown2Linear_SSE2
+ScaleARGBRowDown2_Any_SSE2
+ScaleARGBRowDown2_C
+ScaleARGBRowDown2_SSE2
+ScaleARGBRowDownEvenBox_Any_SSE2
+ScaleARGBRowDownEvenBox_C
+ScaleARGBRowDownEvenBox_SSE2
+ScaleARGBRowDownEven_Any_SSE2
+ScaleARGBRowDownEven_C
+ScaleARGBRowDownEven_SSE2
+ScaleAddRow_16_C
+ScaleAddRow_AVX2
+ScaleAddRow_Any_AVX2
+ScaleAddRow_Any_SSE2
+ScaleAddRow_C
+ScaleAddRow_SSE2
+ScaleColsUp2_16_C
+ScaleColsUp2_C
+ScaleColsUp2_SSE2
+ScaleCols_16_C
+ScaleCols_C
+ScaleFilterCols64_16_C
+ScaleFilterCols64_C
+ScaleFilterCols_16_C
+ScaleFilterCols_C
+ScaleFilterCols_SSSE3
+ScaleFilterReduce
+ScaleMaxSamples_C
+ScalePlane
+ScalePlaneBilinearDown
+ScalePlaneBilinearDown_16
+ScalePlaneBilinearUp
+ScalePlaneBilinearUp_16
+ScalePlaneUp2_12_Bilinear
+ScalePlaneUp2_12_Linear
+ScalePlaneUp2_16_Bilinear
+ScalePlaneUp2_16_Linear
+ScalePlaneUp2_Bilinear
+ScalePlaneUp2_Linear
+ScalePlaneVertical
+ScalePlaneVertical_16
+ScalePlane_12
+ScalePlane_16
+ScaleRowDown2Box_16_C
+ScaleRowDown2Box_AVX2
+ScaleRowDown2Box_Any_AVX2
+ScaleRowDown2Box_Any_SSSE3
+ScaleRowDown2Box_C
+ScaleRowDown2Box_Odd_AVX2
+ScaleRowDown2Box_Odd_C
+ScaleRowDown2Box_Odd_SSSE3
+ScaleRowDown2Box_SSSE3
+ScaleRowDown2Linear_16_C
+ScaleRowDown2Linear_AVX2
+ScaleRowDown2Linear_Any_AVX2
+ScaleRowDown2Linear_Any_SSSE3
+ScaleRowDown2Linear_C
+ScaleRowDown2Linear_SSSE3
+ScaleRowDown2_16_C
+ScaleRowDown2_AVX2
+ScaleRowDown2_Any_AVX2
+ScaleRowDown2_Any_SSSE3
+ScaleRowDown2_C
+ScaleRowDown2_SSSE3
+ScaleRowDown34_0_Box_16_C
+ScaleRowDown34_0_Box_Any_SSSE3
+ScaleRowDown34_0_Box_C
+ScaleRowDown34_0_Box_SSSE3
+ScaleRowDown34_16_C
+ScaleRowDown34_1_Box_16_C
+ScaleRowDown34_1_Box_Any_SSSE3
+ScaleRowDown34_1_Box_C
+ScaleRowDown34_1_Box_SSSE3
+ScaleRowDown34_Any_SSSE3
+ScaleRowDown34_C
+ScaleRowDown34_SSSE3
+ScaleRowDown38_16_C
+ScaleRowDown38_2_Box_16_C
+ScaleRowDown38_2_Box_Any_SSSE3
+ScaleRowDown38_2_Box_C
+ScaleRowDown38_2_Box_SSSE3
+ScaleRowDown38_3_Box_16_C
+ScaleRowDown38_3_Box_Any_SSSE3
+ScaleRowDown38_3_Box_C
+ScaleRowDown38_3_Box_SSSE3
+ScaleRowDown38_Any_SSSE3
+ScaleRowDown38_C
+ScaleRowDown38_SSSE3
+ScaleRowDown4Box_16_C
+ScaleRowDown4Box_AVX2
+ScaleRowDown4Box_Any_AVX2
+ScaleRowDown4Box_Any_SSSE3
+ScaleRowDown4Box_C
+ScaleRowDown4Box_SSSE3
+ScaleRowDown4_16_C
+ScaleRowDown4_AVX2
+ScaleRowDown4_Any_AVX2
+ScaleRowDown4_Any_SSSE3
+ScaleRowDown4_C
+ScaleRowDown4_SSSE3
+ScaleRowUp2_16_C
+ScaleRowUp2_Bilinear_12_AVX2
+ScaleRowUp2_Bilinear_12_Any_AVX2
+ScaleRowUp2_Bilinear_12_Any_SSSE3
+ScaleRowUp2_Bilinear_12_SSSE3
+ScaleRowUp2_Bilinear_16_AVX2
+ScaleRowUp2_Bilinear_16_Any_AVX2
+ScaleRowUp2_Bilinear_16_Any_C
+ScaleRowUp2_Bilinear_16_Any_SSSE3
+ScaleRowUp2_Bilinear_16_C
+ScaleRowUp2_Bilinear_16_SSE2
+ScaleRowUp2_Bilinear_AVX2
+ScaleRowUp2_Bilinear_Any_AVX2
+ScaleRowUp2_Bilinear_Any_C
+ScaleRowUp2_Bilinear_Any_SSE2
+ScaleRowUp2_Bilinear_Any_SSSE3
+ScaleRowUp2_Bilinear_C
+ScaleRowUp2_Bilinear_SSE2
+ScaleRowUp2_Bilinear_SSSE3
+ScaleRowUp2_Linear_12_AVX2
+ScaleRowUp2_Linear_12_Any_AVX2
+ScaleRowUp2_Linear_12_Any_SSSE3
+ScaleRowUp2_Linear_12_SSSE3
+ScaleRowUp2_Linear_16_AVX2
+ScaleRowUp2_Linear_16_Any_AVX2
+ScaleRowUp2_Linear_16_Any_C
+ScaleRowUp2_Linear_16_Any_SSE2
+ScaleRowUp2_Linear_16_C
+ScaleRowUp2_Linear_16_SSE2
+ScaleRowUp2_Linear_AVX2
+ScaleRowUp2_Linear_Any_AVX2
+ScaleRowUp2_Linear_Any_C
+ScaleRowUp2_Linear_Any_SSE2
+ScaleRowUp2_Linear_Any_SSSE3
+ScaleRowUp2_Linear_C
+ScaleRowUp2_Linear_SSE2
+ScaleRowUp2_Linear_SSSE3
+ScaleSamples_C
+ScaleSlope
+ScaleSumSamples_C
+ScaleUVBilinearUp2
+ScaleUVBilinearUp2_16
+ScaleUVCols64_C
+ScaleUVColsUp2_C
+ScaleUVCols_C
+ScaleUVFilterCols64_C
+ScaleUVFilterCols_C
+ScaleUVLinearUp2
+ScaleUVLinearUp2_16
+ScaleUVRowDown2Box_AVX2
+ScaleUVRowDown2Box_Any_AVX2
+ScaleUVRowDown2Box_Any_SSSE3
+ScaleUVRowDown2Box_C
+ScaleUVRowDown2Box_SSSE3
+ScaleUVRowDown2Linear_C
+ScaleUVRowDown2_C
+ScaleUVRowDownEvenBox_C
+ScaleUVRowDownEven_C
+ScaleUVRowUp2_Bilinear_16_AVX2
+ScaleUVRowUp2_Bilinear_16_Any_AVX2
+ScaleUVRowUp2_Bilinear_16_Any_C
+ScaleUVRowUp2_Bilinear_16_Any_SSE2
+ScaleUVRowUp2_Bilinear_16_C
+ScaleUVRowUp2_Bilinear_16_SSE2
+ScaleUVRowUp2_Bilinear_AVX2
+ScaleUVRowUp2_Bilinear_Any_AVX2
+ScaleUVRowUp2_Bilinear_Any_C
+ScaleUVRowUp2_Bilinear_Any_SSSE3
+ScaleUVRowUp2_Bilinear_C
+ScaleUVRowUp2_Bilinear_SSSE3
+ScaleUVRowUp2_Linear_16_AVX2
+ScaleUVRowUp2_Linear_16_Any_AVX2
+ScaleUVRowUp2_Linear_16_Any_C
+ScaleUVRowUp2_Linear_16_Any_SSE2
+ScaleUVRowUp2_Linear_16_C
+ScaleUVRowUp2_Linear_16_SSE2
+ScaleUVRowUp2_Linear_AVX2
+ScaleUVRowUp2_Linear_Any_AVX2
+ScaleUVRowUp2_Linear_Any_C
+ScaleUVRowUp2_Linear_Any_SSSE3
+ScaleUVRowUp2_Linear_C
+ScaleUVRowUp2_Linear_SSSE3
 Scan script does not transmit all data
 SceneSystem_002
 SceneUtils_001
@@ -6545,6 +7527,7 @@ SetHibernating(true
 SetInt32
 SetInt64
 SetParentSpawnGroup
+SetPlane
 SetRepeatedBool
 SetRepeatedDouble
 SetRepeatedEnum
@@ -6554,6 +7537,8 @@ SetRepeatedInt64
 SetRepeatedString
 SetRepeatedUInt32
 SetRepeatedUInt64
+SetRow_Any_X86
+SetRow_ERMS
 SetString
 SetUILanguageOnSteamDropDown
 SetUInt32
@@ -6630,6 +7615,19 @@ Sleeping
 Smoothing not supported with nonstandard sampling ratios
 Snapshots broadcast per second
 Snapshots broadcast per second, GOTV[1
+SobelRow_Any_SSE2
+SobelRow_C
+SobelRow_SSE2
+SobelToPlaneRow_Any_SSE2
+SobelToPlaneRow_C
+SobelToPlaneRow_SSE2
+SobelXRow_C
+SobelXRow_SSE2
+SobelXYRow_Any_SSE2
+SobelXYRow_C
+SobelXYRow_SSE2
+SobelYRow_C
+SobelYRow_SSE2
 Socket ProcessAccept Error: %s\n
 Socket accept ioctl(FIONBIO) failed (%i)\n
 Socket bind failed (%s)\n
@@ -6719,9 +7717,44 @@ Spew world groups (client
 Spew world groups (server
 Spews information about all CUtlLRUCaches
 Split
+SplitARGBPlane
+SplitARGBPlaneAlpha
+SplitARGBPlaneOpaque
+SplitARGBRow_AVX2
+SplitARGBRow_Any_AVX2
+SplitARGBRow_Any_SSE2
+SplitARGBRow_Any_SSSE3
+SplitARGBRow_C
+SplitARGBRow_SSE2
+SplitARGBRow_SSSE3
+SplitRGBPlane
+SplitRGBRow_Any_SSSE3
+SplitRGBRow_C
+SplitRGBRow_SSSE3
+SplitRotateUV
+SplitRotateUV180
+SplitRotateUV270
+SplitRotateUV90
 SplitScreen
 SplitScreenAggregation
 SplitScreenService_001
+SplitTransposeUV
+SplitUVPlane
+SplitUVPlane_16
+SplitUVRow_16_AVX2
+SplitUVRow_16_Any_AVX2
+SplitUVRow_16_C
+SplitUVRow_AVX2
+SplitUVRow_Any_AVX2
+SplitUVRow_Any_SSE2
+SplitUVRow_SSE2
+SplitXRGBRow_AVX2
+SplitXRGBRow_Any_AVX2
+SplitXRGBRow_Any_SSE2
+SplitXRGBRow_Any_SSSE3
+SplitXRGBRow_C
+SplitXRGBRow_SSE2
+SplitXRGBRow_SSSE3
 Ss=%d, Se=%d, Ah=%d, Al=%d
 Ss?гY>Y
 St10bad_typeid
@@ -6926,7 +7959,7 @@ SteamAPI_UseBreakpadCrashHandler
 SteamAPI_WriteMiniDump
 SteamAppId
 SteamAudio001
-SteamClient020
+SteamClient021
 SteamController008
 SteamDatagram_SetNetworkConfig
 SteamFriends017
@@ -6983,10 +8016,17 @@ Successfully disabled priority boost.\n
 Successfully enabled priority boost.\n
 Suffix to append to the console log, may be changed to reopen the log
 Suggested field numbers for
+Summary of %d frames.  (%d frames excluded from analysis.)\n
 Sundanese
 Sunday
 SupportedLanguages
 Suspension not allowed here
+SwapUVPlane
+SwapUVRow_AVX2
+SwapUVRow_Any_AVX2
+SwapUVRow_Any_SSSE3
+SwapUVRow_C
+SwapUVRow_SSSE3
 Switch to loop '%s' failed\n
 SwitchToLoop %s requested:  id [%u] addons [%s]\n
 Syloti_Nagri
@@ -7008,6 +8048,7 @@ SystemLoad %.3f - %.3f, retrieval cost %sns\n
 SystemLoad unavailable\n
 T$ t\fH
 T$ ~LH
+T$(Hc
 T$(L9t
 T$0uZH
 T$8XZL
@@ -7045,7 +8086,7 @@ TIcM\bHc
 TK\eR/x
 TLS init function for
 TLS wrapper function for
-TUUBk
+TTUBk
 TV client has no downstream TV sink\n
 TV: No game server to record demo.\n
 TV[%u]: Only TV Master can record demos instantly.\n
@@ -7127,6 +8168,7 @@ Threshold of screen size percentage below which objects get culled
 Threshold of shadow map size percentage below which objects get culled
 Thursday
 Tibetan
+Tier0GenericMiniDumpHandler_SetOptions
 Tifinagh
 Time before we consider a mic stalled out and need to reset it
 Time in seconds before mmqueue reservation expires
@@ -7185,6 +8227,17 @@ Transition Return (%s [loading save game :%s
 Transition Return (%s [returning to :%s
 TranslucentDebugDraw
 Transmit all entities (not only director view
+TransposePlane
+TransposeUVWx8_Any_SSE2
+TransposeUVWx8_C
+TransposeUVWx8_SSE2
+TransposeUVWxH_C
+TransposeWx8_Any_SSSE3
+TransposeWx8_C
+TransposeWx8_Fast_Any_SSSE3
+TransposeWx8_Fast_SSSE3
+TransposeWx8_SSSE3
+TransposeWxH_C
 Tried to copy from a message with a different type. to
 Tried to create string table '%s' at wrong time\n
 Tried to create string table '%s' twice\n
@@ -7204,7 +8257,20 @@ Type is already registered
 T~YRVr
 U%08x
 U(;U,}fLc
-U8^aUR
+U010ToAB30
+U010ToABGR
+U010ToAR30
+U010ToARGB
+U210ToAB30
+U210ToABGR
+U210ToAR30
+U210ToARGB
+U420ToABGR
+U420ToARGB
+U422ToABGR
+U422ToARGB
+U444ToABGR
+U444ToARGB
 U?:CU?K
 UH.f}ᨐ2
 UHcK Ic
@@ -7226,8 +8292,34 @@ USRLOCAL%s
 UUUUUUU
 UUUUUUUUH
 UUUUw
+UVScale
+UVScale_16
 UVWQ8888
 UXA\\A]A^A
+UYVYToARGB
+UYVYToARGBRow_AVX2
+UYVYToARGBRow_Any_AVX2
+UYVYToARGBRow_Any_SSSE3
+UYVYToARGBRow_C
+UYVYToARGBRow_SSSE3
+UYVYToI420
+UYVYToI422
+UYVYToNV12
+UYVYToUV422Row_AVX2
+UYVYToUV422Row_Any_AVX2
+UYVYToUV422Row_Any_SSE2
+UYVYToUV422Row_C
+UYVYToUV422Row_SSE2
+UYVYToUVRow_AVX2
+UYVYToUVRow_Any_AVX2
+UYVYToUVRow_Any_SSE2
+UYVYToUVRow_C
+UYVYToUVRow_SSE2
+UYVYToYRow_AVX2
+UYVYToYRow_Any_AVX2
+UYVYToYRow_Any_SSE2
+UYVYToYRow_C
+UYVYToYRow_SSE2
 U\bHcB\f
 U\n"NETWORK_DISCONNECT_REMOTE_BADCRYPT
 U\n&NETWORK_DISCONNECT_REPLAY_INCOMPATIBLE
@@ -7368,6 +8460,10 @@ UtlMemory_CalcNewAllocationCount
 UtlMemory_FailedAllocation
 U}g7x
 UȉEȋC
+U؉MԋE
+U؉MԋM
+U؉MԋMԺVUUU
+U܉M؋U
 V(B8\f2
 V(I;V0s
 V/?[w8rV
@@ -7411,6 +8507,10 @@ VProf off.\n
 VProf on.\n
 VProf peaks reset.\n
 VProf reset.\n
+VProfLite_GetBudgetGroupCurrentFrameTime
+VProfLite_GetEnabled
+VProfLite_GetHistoricalData
+VProfLite_NextFrame
 VProfService_001
 VProf_AssignNextTimespanId
 VProf_FindOrCreateCounter
@@ -7701,6 +8801,7 @@ Writing perf stats
 Wrong JPEG library version: library is %d, caller expects %d
 Wrote vis errors to %s\n
 Wrote_Screenshot
+X&xXuePy
 X-Origin-Auth
 X-Origin-Auth header of the broadcast POSTs
 X-Origin-Auth header of the broadcast1 POSTs
@@ -7751,7 +8852,31 @@ Y?'WY
 YA1E1
 YD$,ZY
 YHcK`Ic
-YM̋=pdK
+YUY2ToARGB
+YUY2ToARGBRow_AVX2
+YUY2ToARGBRow_Any_AVX2
+YUY2ToARGBRow_Any_SSSE3
+YUY2ToARGBRow_C
+YUY2ToARGBRow_SSSE3
+YUY2ToI420
+YUY2ToI422
+YUY2ToNV12
+YUY2ToUV422Row_AVX2
+YUY2ToUV422Row_Any_AVX2
+YUY2ToUV422Row_Any_SSE2
+YUY2ToUV422Row_C
+YUY2ToUV422Row_SSE2
+YUY2ToUVRow_AVX2
+YUY2ToUVRow_Any_AVX2
+YUY2ToUVRow_Any_SSE2
+YUY2ToUVRow_C
+YUY2ToUVRow_SSE2
+YUY2ToY
+YUY2ToYRow_AVX2
+YUY2ToYRow_Any_AVX2
+YUY2ToYRow_Any_SSE2
+YUY2ToYRow_C
+YUY2ToYRow_SSE2
 Y[]A\\A]A^A_ÐAUATH
 Y[]A\\A]ÐAUATI
 Y[]A\\A]ÐAVAUI
@@ -7771,6 +8896,7 @@ Y^[ÐAWAVH
 You have been kicked and banned %s by the server.\n
 Your current chat group is "%s"\n
 Yt?\f:u
+Y~魑3E
 Yىt$TD
 Z* ,\t\a\vm8
 Z-google.golang.org/protobuf/types/descriptorpb
@@ -8018,12 +9144,6 @@ ZN11CTSListBase12InternalPushEP13TSLNodeBase_t
 ZN11CTSListBase6DetachEv
 ZN11CTSListBaseC1Ev
 ZN11CTSListBaseC2Ev
-ZN11ImageLoaderL14ConvertFromBC7I10BGRA8888_tEEbPKhPT_iiEUlRiE
-ZN11ImageLoaderL14ConvertFromBC7I10RGBA8888_tEEbPKhPT_iiEUlRiE
-ZN11ImageLoaderL15ConvertFromBC6hI10BGRA8888_tLb1EEEbPKhPT_iiEUlRiE
-ZN11ImageLoaderL15ConvertFromBC6hI10RGBA8888_tLb1EEEbPKhPT_iiEUlRiE
-ZN11ImageLoaderL15ConvertFromBC6hI15RGBA16161616F_tLb0EEEbPKhPT_iiEUlRiE
-ZN11ImageLoaderL15ConvertFromBC6hI15RGBA32323232F_tLb0EEEbPKhPT_iiEUlRiE
 ZN12CSplitString9ConstructEPKcPS1_ib
 ZN12CThreadEvent3SetEv
 ZN12CThreadEventC1Eb
@@ -8049,7 +9169,6 @@ ZN13CBufferString16MakeRelativePathEPKcS1_b
 ZN13CBufferString16RemoveDotSlashesEc
 ZN13CBufferString18StripTrailingSlashEv
 ZN13CBufferString5PurgeEi
-ZN13CBufferString6ConcatEPKcS1_z
 ZN13CBufferString6FormatEPKcz
 ZN13CBufferString6InsertEiPKcib
 ZN13CBufferString6SetPtrEPciibb
@@ -8123,7 +9242,7 @@ ZN17CThreadSyncObject8WaitImplEj
 ZN17CThreadSyncObjectD2Ev
 ZN18CGridStringPrinter15SetColumnHeaderEiPKc
 ZN18CGridStringPrinter9SetStringEiiPKc
-ZN18CNetworkGameClient34ProcessReadPacketEntitiesWorkItemsE13RPEStatType_tR15CEntityReadInfoEUlvE
+ZN18CNetworkGameClient34ProcessReadPacketEntitiesWorkItemsE13RPEStatType_tR15CEntityReadInfoEUlvE0
 ZN18CScreenshotService15OnFrameBoundaryERK20EventFrameBoundary_tEUlvE
 ZN18CScreenshotService21WriteScreenshotToFileEPKcS1_R10CUtlBufferbbbEUlPKvE0
 ZN18CStableSymbolTable5GetIdEPKcPb
@@ -8188,7 +9307,7 @@ ZN8netadr_t7SetPortEt
 ZN8netadr_t7SetTypeE12netadrtype_t
 ZN9CVProfile12OutputReportERK21VProfReportSettings_tPKci
 ZN9CVProfile13ResetCountersE14CounterGroup_t
-ZN9CVProfile15s_pBudgetGroupsE
+ZN9CVProfile18GetBudgetGroupNameEi
 ZN9CVProfile18GetNumBudgetGroupsEv
 ZN9CVProfile19GetBudgetGroupColorEiRiS0_S0_S0
 ZN9CVProfile30BudgetGroupNameToBudgetGroupIDEPKc
@@ -12940,6 +14059,8 @@ ZZNSt8__detail9_CompilerISt12regex_traitsIcEE18_M_expression_termILb0ELb0EEEbRSt
 ZZNSt8__detail9_CompilerISt12regex_traitsIcEE18_M_expression_termILb0ELb1EEEbRSt4pairIbcERNS_15_BracketMatcherIS2_XT_EXT0_EEEENKUlcE_clEc
 ZZNSt8__detail9_CompilerISt12regex_traitsIcEE18_M_expression_termILb1ELb0EEEbRSt4pairIbcERNS_15_BracketMatcherIS2_XT_EXT0_EEEENKUlcE_clEc
 ZZNSt8__detail9_CompilerISt12regex_traitsIcEE18_M_expression_termILb1ELb1EEEbRSt4pairIbcERNS_15_BracketMatcherIS2_XT_EXT0_EEEENKUlcE_clEc
+ZZZZZZZZZZZZZZZ
+ZZZZZZZZZZZZZZZZ
 Z[]A\\A]A^A_ÐAWAVAUATI
 Z[]A\\A]A^A_ÐAWAVAUATUSH
 Z[]A\\A]A^A_ÐAWAVI
@@ -12972,6 +14093,7 @@ ZnwmRKSt9nothrow_t
 ZnwmSt11align_val_t
 ZnwmSt11align_val_tRKSt9nothrow_t
 Zq",9\fB
+ZË\rix
 ZÐATUI
 ZÐATUSH
 ZÐAUATI
@@ -12980,13 +14102,16 @@ a L\f
 a numbered reference must not be zero
 a protocol buffer. Use the 'bytes' type if you intend to send raw bytes
 a-JCN\e
+a0oEL]5
 a< t\f
 a?wSa
 a@u@H
 a@ukH
+aARAQE1
 aD8z\a
 aD\a$\ad\a
 aD\t\b\a
+aFG-a1S
 aH9G\bt
 aH9G\bt:H9S\bu
 aH9G\bt\v
@@ -13071,6 +14196,7 @@ args were given.  Full format string was
 arguments
 array: %u elements
 arraycount
+asimd
 assert_fail
 assertion expected after
 asset
@@ -13095,7 +14221,7 @@ autosavedangerous
 avg_engine_latency_out
 avg_packets_in
 avg_packets_out
-avi = .avi vido and audio\n
+avi = .avi video and audio (unavailable on this platform)\n
 avisound
 ax\n\f\a\bD\v
 az7u5
@@ -13105,6 +14231,7 @@ aÐATUH
 aÐAUATI
 b"S\n\nCEntityMsg
 b"k\n"CNETMsg_SpawnGroup_SetCreationTick
+b#jEc2
 b'9&o
 b,p\tX4
 b0xNA;;|E
@@ -13122,7 +14249,6 @@ bA9D$\b
 bA9G\b
 bA;L$T
 bAUATUSH
-bAVAUATSH
 bA\\A
 bA\\A]A
 bAƇ 3
@@ -13134,8 +14260,7 @@ bE1\vK
 bH9H\bt
 bH9H\bt\bH
 bH9H\bu
-bH;5W
-bH;5\a
+bH;5OO
 bH;l$\b
 bH\vH\v$\t
 bHcD$4
@@ -13152,6 +14277,7 @@ bLco8E
 bO\b5\b9\v
 bT$=H;G
 bT$VH;G
+bT\t" \n
 bWEBP
 bX[]ÐUSH
 bZÐSH
@@ -13165,7 +14291,7 @@ b\f#<Sl
 b\fH0<=D
 b\n\f\a\bE\va
 b\n\t2\tL\t
-b\tЈC(A
+b\tЈC0A
 b\tЉD$H
 b\tЉD$X
 b\tщL$H1
@@ -13187,6 +14313,7 @@ banid: disabled on server (sv_banid_enabled = false)\n
 banlist
 banned_ip.cfg
 banned_user.cfg
+basefilename
 baseline counter change %d:%s [%d changes] to %d:%s [%d changes]\n
 baseline_index
 basespawngroup.h
@@ -13266,6 +14393,7 @@ bn0s}Q_@r~aoPq
 bool google::protobuf::internal::RepeatedFieldRefIterator<T>::operator!=(const google::protobuf::internal::RepeatedFieldRefIterator<T>&) const [with T = google::protobuf::Message
 boolean
 border
+bpp >= 1 && bpp <= 4
 branch gameinfo
 breakimmediately
 bss_start
@@ -13364,6 +14492,7 @@ celt_lcg_rand
 celt_lpc
 celt_pitch_xcorr_c
 celt_preemphasis
+centerShift
 cfg %s
 cfg/%s%s
 cfg/boot.vcfg
@@ -13406,7 +14535,6 @@ cl_clock_recvmargin: %s, running at %.3f%%\n
 cl_clock_recvmargin_adjust_limit_slowdown
 cl_clock_recvmargin_adjust_limit_speedup
 cl_clock_recvmargin_desired
-cl_clock_recvmargin_enable
 cl_clock_recvmargin_minsamples_slowdown
 cl_clock_recvmargin_minsamples_speedup
 cl_clock_recvmargin_spew_interval
@@ -13434,13 +14562,11 @@ cl_log_tick
 cl_log_tick_skips
 cl_parallel_readpacketentities
 cl_parallel_readpacketentities_threshold
-cl_parallel_readpacketentities_type
 cl_playback_screenshots
 cl_precacheinfo
 cl_precacheinfo:  not connected\n
 cl_predict
 cl_predict_after_every_createmove
-cl_profilereadpacketentities
 cl_resend
 cl_sendtable_cache_filename
 cl_showdemooverlay
@@ -13452,7 +14578,6 @@ cl_tickpacket_desired_queuelength
 cl_tickpacket_recvmargin: %s, running at %.3f%%\n
 cl_tickpacket_recvmargin_adjust_limit
 cl_tickpacket_recvmargin_desired
-cl_tickpacket_recvmargin_enable
 cl_tickpacket_recvmargin_minsamples
 cl_tickpacket_recvmargin_spew_interval
 cl_tickpacket_recvmargin_timeconstant
@@ -13463,7 +14588,7 @@ cl_ticktiming
 cl_ticktiming <N>   [summary|detail]   Print stats periodically, every N ticks.\n
 cl_ticktiming print [summary|detail]   Print stats now.  Default detail level is 'detail'\n
 cl_ticktiming usage:\n
-cl_ticktiming. . . . . TOTAL:%s (directly measured, may not be sum of below)\n
+cl_ticktiming. . . . . TOTAL:%s (may not be sum of below due to rounding and averaging)\n
 cl_ticktiming: bad argument '%s'\n
 cl_ticktiming:%7.1f  =%7.1f out (%4.1f +%6.1f +%4.1f)  +%5.1f sim  +%7.1f in (%5.1f +%5.1f +%5.1f +%5.1f +%4.1f +%4.1f)\n
 cl_timeout
@@ -13492,7 +14617,6 @@ clc_SplitPlayerConnect
 clc_SplitPlayerDisconnect
 clear deallocate
 clearColor
-clearTargets
 clearall
 clearalpha
 client
@@ -13533,7 +14657,6 @@ comb_filter_const_sse
 command "%s
 command line arguments:\n
 command_number
-command_queue_desired_size
 command_queue_info
 command_queue_info_t
 commands_queued
@@ -13604,6 +14727,8 @@ corrupted stream
 couldn't Open demo file '%s'.\n
 covariant return thunk to
 cpMcf
+cpu model
+cpu_info
 cpu_level
 cpu_usage
 cpuinfo
@@ -13623,6 +14748,7 @@ creationsequence
 csharp_namespace
 cstrike
 cstring
+ctA(pyt
 ct_init: 256+dist != 512
 ct_init: dist != 256
 ct_init: length != 256
@@ -13676,7 +14802,6 @@ d snapshot creation ticks referred\n
 d spawn groups
 d$$E19
 d$(tUI
-d$(tWI
 d$(tYI
 d$09l
 d$0L+d$(H
@@ -13770,6 +14895,10 @@ demoprocessor
 demorestart
 demoui
 denormalise_bands
+depth <= 16
+depth >= 1
+depth >= 10
+depth >= 8
 detail
 details
 detexConvertPixels: Too many temporary buffers needed
@@ -13805,16 +14934,26 @@ downmix_int
 dqe-KO{/3
 dr^3c0
 driver
+dst_height > 0
+dst_width % 2 == 0) && (dst_width >= 0
+dst_width % 3 == 0
+dst_width % 3 == 0) && (dst_width > 0
+dst_width > 0
 dual_inner_prod_sse
 dummy
-dump rpe
 dump the text currently in the console to condumpXX.log
 dump took %.1fms)\n
 dumpstringtable
 dumpvidmemstats
 duplocale
+dx != __null
+dx == 65536 * 2
+dx == 65536 * 4
 dxlevel
 dxwarp
+dy != __null
+dy & 0x1ffff) == 0
+dy & 0x3ffff) == 0
 dynamic
 dynamic_cast
 dynstr
@@ -13867,6 +15006,8 @@ ec_laplace_encode
 ec_tell_frac
 echoln
 edata
+eeeeeeeeeeeeeee
+eeeeeeeeeeeeeeee
 efficiency class %lld
 effortblocks = %d\n
 eg: 'demo_goto 6666' or 'demo_gototick 25%%' or 'demo_gototick 42min'\n
@@ -13894,7 +15035,9 @@ engine_allow_multiple_simulates_per_frame
 engine_allow_multiple_ticks_per_frame
 engine_client_tick_pad_enable
 engine_cpu_info_extended
-engine_enable_frametime_warnings
+engine_frametime_amnesty_debug
+engine_frametime_print_report
+engine_frametime_warnings_enable
 engine_gcmessages.proto
 engine_latency_ms
 engine_low_latency_sleep_after_client_tick
@@ -13928,6 +15071,7 @@ errno_location
 erroffset passed as NULL
 error_if_idle
 events
+evidence
 ewh/?y
 exceeded maximum protobuf size of 2GB
 exclamation-mark
@@ -13943,6 +15087,7 @@ expected_long_tick_reason
 expensive
 extend .$0 {\n
 extension_range
+eҷqn\bt\e
 f %f %f %f
 f -> %f
 f == nullptr || dynamic_cast<To>(f) != nullptr
@@ -13951,6 +15096,7 @@ f FRAME end %d ticks (%.2fms elapsed)\n
 f FRAME start %d ticks\n
 f Long frame (%s): %.2fms elapsed, %.2fms sim time, %d ticks, %d..%d.\n
 f Player [%s][%d][adr:%s] was sent a datagram %d bits (%8.3f bytes)\n
+f UNEXPECTED LONG FRAME DETECTED: %.2fms elapsed, %.2fms sim time, %d ticks, %d..%d.  (Last amnesty was '%s', %.2fs ago)\n
 f UNEXPECTED LONG FRAME DETECTED: %.2fms elapsed, %.2fms sim time, %d ticks, %d..%d.\n
 f"H9OP
 f#MrUg
@@ -13969,13 +15115,13 @@ f?3Jf?6
 fA9@\f
 fA9A\f
 fA9B\f
-fA9D$0
 fA9F v\v
 fA9{\fr
 fA;E\b
 fA\tF`A\bVbH
 fB?ȀA
 fCEntityIndex
+fC]dCz&D
 fD9k,E
 fD9y\bt|H
 fD9y\nu
@@ -14042,7 +15188,13 @@ fini_array
 finish
 finished\n
 firstspawngroup
+fixed_invtbl8
 fj".T\\CMek2>x
+flc_columns
+flc_count
+flc_file_ids
+flc_file_list
+flc_lines
 float Etc::Block4x4Encoding::CalcPixelError(Etc::ColorFloatRGBA, float, Etc::ColorFloatRGBA
 float Etc::Block4x4Encoding::GetError
 float128
@@ -14050,8 +15202,8 @@ float32
 float32-quantized
 float64
 floatbitmap.cpp
-floatbitmap.cpp(325): Conversion not supported yet!\n
-floatbitmap.cpp(968): Unsupported color format "%s", skipping!\n
+floatbitmap.cpp(316): Conversion not supported yet!\n
+floatbitmap.cpp(959): Unsupported color format "%s", skipping!\n
 floorf
 flushlog
 fog_enable
@@ -14115,6 +15267,7 @@ fullpath
 fullscreen
 function
 futimes
+fwwwwwwwwwwwwwww
 fxstat64
 f})IcO\bH
 fʋQ\bA;U
@@ -14124,6 +15277,7 @@ g is not followed by a braced, angle-bracketed, or quoted name/number or by a pl
 g(2'H
 g)>3j
 g: FilterTime took target %g as time base instead of actual %g, diff %g\n
+g@>6\a7
 gC СN
 gC\bru&o
 gXD+g
@@ -14342,6 +15496,7 @@ h[]A\\A]A^A_ÐAWAVI
 h[]A\\A]A^A_ÐAWAVL
 h[]A\\A]A^A_ÐAWAVM
 h[]ÐUSH
+h\\FU8^a\n
 h\n,NETWORK_DISCONNECT_REMOTE_TIMEOUT_CONNECTING
 h\n\vDIALOG_TYPE
 h\vtFH
@@ -14354,6 +15509,7 @@ header crc mismatch
 heapcheck
 heartbeat\n
 height
+height > 0
 hero_picker
 hidden
 hidden alias for
@@ -14373,6 +15529,11 @@ hltv_update_stats
 hltvclientstate.cpp
 hltvserver_async.cpp:1069
 hmpsv
+home/saml/dev/steam/thirdpartycode/nonredist/libyuv/libyuv/source/planar_functions.cc
+home/saml/dev/steam/thirdpartycode/nonredist/libyuv/libyuv/source/row_common.cc
+home/saml/dev/steam/thirdpartycode/nonredist/libyuv/libyuv/source/scale.cc
+home/saml/dev/steam/thirdpartycode/nonredist/libyuv/libyuv/source/scale_common.cc
+home/saml/dev/steam/thirdpartycode/nonredist/libyuv/libyuv/source/scale_uv.cc
 home/timo/source2/main/src/thirdparty/etc2comp/EtcLib/./EtcCodec/EtcBlock4x4Encoding.h
 home/timo/source2/main/src/thirdparty/etc2comp/EtcLib/Etc/EtcImage.cpp
 home/timo/source2/main/src/thirdparty/etc2comp/EtcLib/EtcCodec/EtcBlock4x4.cpp
@@ -14454,6 +15615,7 @@ iRed1 >= (signed)(0 + a_uiRadius) && iRed1 <= (signed)(31 - a_uiRadius
 iRed2 < 0 || iRed2 > 31
 iRed2 >= (signed)(0 + a_uiRadius) && iRed2 <= (signed)(31 - a_uiRadius
 iRed2 >= 0 && iRed2 <= 31
+iboxwidth > 0
 iconv_close
 iconv_open
 idempotency_level
@@ -14646,8 +15808,28 @@ k is not followed by a braced, angle-bracketed, or quoted name
 k8}.H
 k=E.x=i
 k?P+k
+kBgrF709Constants
+kBgrH709Constants
+kBgrI601Constants
+kBgrJPEGConstants
 kPH+kHH
 kP}+H
+kRgbF709Constants
+kRgbH709Constants
+kRgbI601Constants
+kRgbJPEGConstants
+kYuv2020Constants
+kYuvF709Constants
+kYuvH709Constants
+kYuvI601Constants
+kYuvJPEGConstants
+kYuvV2020Constants
+kYvu2020Constants
+kYvuF709Constants
+kYvuH709Constants
+kYvuI601Constants
+kYvuJPEGConstants
+kYvuV2020Constants
 k\ft^Ic\f
 k_EUniverseBeta
 k_EUniverseDev
@@ -14664,6 +15846,7 @@ keys   :\n%s\n
 kickid
 kickid_hltv
 kmmxv\fqsuwc;Wo?opP
+kzBB-1\\\v
 l!;b\tF
 l$ LcM
 l$0H;T$8trH
@@ -14684,6 +15867,7 @@ l?O#m
 l?\eyl
 lA9<$tpI
 lN1\v}\by
+l\eЕW5\v
 l`UROM=;98310
 lambda
 landmarkname
@@ -14752,10 +15936,11 @@ localhost
 localization %s
 localize
 localnamefixup
-localtime
 log:  unknown parameter %s, 'on' and 'off' are valid\n
 long double
 lookbehind assertion is not fixed length
+loongson-ext
+loongson-mmi
 loop_dump
 loopback:%d
 loopkeys
@@ -14773,8 +15958,8 @@ lrucache_stats
 lseek64
 lu\tI
 l|)9lC
+m H;-`d
 m#R;cv
-m8L;-Bk4
 mQN\aKN
 m\bu\eH9
 m\n\f\a\bE\vc\n\f\a\bB\v
@@ -14920,6 +16105,7 @@ mat_overdraw
 mat_shading_complexity
 mat_shadowmap_luxels
 mat_show_distance_field
+mat_viewportscale
 mat_wireframe
 materials
 materials/console_background.vmat
@@ -14975,6 +16161,7 @@ models
 more < 2
 mouse_disableinput
 movie/%04d_%02d_%02d_%02d_%02d_%02d/%s
+mp4 = .mp4 video and audio (unavailable on this platform)\n
 mp_disable_autokick
 mp_disable_autokick %d\n
 mt19937
@@ -14984,7 +16171,7 @@ multvar
 multvar: cvar "%s" not found\n
 multvar: no varname specified!\n
 must be unique within
-mxH;-\b04
+mxH;-P\b
 m۶m۶\rM
 m۶m۶mH
 m۶m۶mL
@@ -15052,7 +16239,6 @@ nHcP4I
 nK*\aݗ4
 nL4=nL4=nL4=nL4=IM
 nL;H\bt
-nN\t{E\e
 nParsing attempt
 nProcess Memory:\nWorking set: %.2f MiB\nPeak working set: %.2f MiB\n
 nRT_p
@@ -15100,8 +16286,8 @@ n\avectors
 n\aversion
 n\bATUH
 n\bATUSH
+n\bJ\vL
 n\bLocation
-n\b\b"TB\fIB
 n\bbaseline
 n\bcdndelay
 n\bclass_id
@@ -15312,7 +16498,6 @@ n\rthey_hear_you
 n\rtick_interval
 n\rtotal_data_in
 n\ryou_hear_them
-n\t-1 = use default (parallel controller split)\n\t0 = single threaded combined (i.e., ReadFieldList and Decode combined into one call)\n\t1 = single threaded split (first pass ReadFieldList, second pass Decode)\n\t2 = worker thread for decode (main thread does ReadFieldList, worker thread does Decode)\n\t3 = parallel combined (threadpool does read/decode on work items in parallel)\n\t4 = parallel split\n\t5 = parallel controller combined (like parallel, but uses a parallelcontroller so each thread in pool can share a single SerializedEntity\n\t6 = parallel controller split\n
 n\tCGameInfo
 n\tDEM_Error
 n\tbit_count
@@ -15416,7 +16601,7 @@ ndyn trees: dyn %ld, stat %ld
 need dictionary
 negative_int_value
 net_DebugOverlay
-net_Disconnect
+net_Disconnect_Legacy
 net_SignonState
 net_SpawnGroup_Load
 net_SpawnGroup_LoadCompleted
@@ -15553,6 +16738,7 @@ o\bATUI
 o\bATUSH
 o\bA]A
 o\bHc\aI
+o\bIcU\bI
 o\bM+/H
 o\n\f\a\bD\vv\n\f\a\bB\vD
 o\v3b
@@ -15651,6 +16837,7 @@ override_operator_name
 oversubscribed distance tree
 oversubscribed dynamic bit lengths tree
 oversubscribed literal/length tree
+overwatch
 oz>!km
 p2p_listpeers
 p2p_ping "%s
@@ -15666,17 +16853,14 @@ pHcK0Ic
 pServerClass
 pYa(bu
 p\bA9p\bu\a
-p\bHc\r
-p\bHc\r+mS
-p\bHc\rGiS
-p\bHc\rQbS
-p\bHc\rT
-p\bHc\rXjS
-p\bHc\r\vcS
+p\bHc\r ZY
+p\bHc\r7
+p\bHc\rP
+p\bHc\r\e
+p\bHc\r\eOY
+p\bHc\rgYY
 p\bHc\rk
-p\bHc\rkdS
-p\bHc\romS
-p\bHc\rtoS
+p\bHc\rqNY
 p\n\f\a\bA\v
 p\n\f\a\bE\v
 package $0;\n\n
@@ -15690,10 +16874,6 @@ panoconsole
 panorama
 panorama_debugger.cfg
 panoramauiclient
-parallel combined
-parallel controller combined
-parallel controller split
-parallel split
 parameter file(s):  %s\n
 parentheses are too deeply nested
 parentheses are too deeply nested (stack check
@@ -15738,7 +16918,6 @@ playdemo <demoname> [\n
 player
 player %d]: Key "%s" is not bound.\n
 player0_using_joystick
-playerIndex
 playercount
 playerlist
 players  : %i humans, %i bots (%i max) (%s) (%s)\n
@@ -15784,7 +16963,6 @@ profile
 profilemapload
 profilemapload_noquit
 progress_enable
-projectionArea
 promptperfectworld
 protected command line arguments (stripped from above):\n
 proto text format> }". To set fields within it, use syntax like
@@ -15852,11 +17030,14 @@ q\ra\fQ\vU\r{\r
 qangle
 qfefkv
 qke_XRLF@93
+qqqqqqqqqqqqqqq
+qqqqqqqqqqqqqqqq
 quality %d
 quant_all_bands
 quaternion
 question-mark
 queuing %s for async execution\n
+quit = quit when movie recording stops\n
 quitonservershutdown
 quotation-mark
 qxs?L
@@ -15866,11 +17047,13 @@ r%AȄx
 r&x\aq
 r+گ\n\eL6
 r0AUATE1
+r89s8w
 r:\b16777215B
 r?dar?\n
 rF`JXKXWJYB[Cd;l2x(z%a+N2SNTQXKVJWGZI]J]Jm(r$u"u
 rJRTS\\Rg>`H`CeIkHq7v4}4v4u7
 rT@}a
+rZ,ƼS
 r\bI)ԐL
 r\f\n\f\a\bF\v
 r\n\f\a\bE\v
@@ -15998,6 +17181,7 @@ removeip:  filter removed for %s\n
 removeip:  invalid slot %i\n
 removeip: "<><><>" was unbanned by "%s" (IP "%s")\n
 removing old session %s:%d\n
+render3DSkybox
 renderDecals
 renderReflectiveObjects
 renderSSAO
@@ -16083,14 +17267,15 @@ root_keyname
 rotation_vector
 round_start_ticks
 roundf
-rpestats
 rpt/%04d_%02d_%02d
 rs_recommend_gen
 rs_reset
 run prediction after every CreateMove instead of only after CreateMove for the final tick in a frame
 run_analysis
 run_perftest
-r̤9ϔwl
+r̤9ϔvl
+s    Avg    P99        N    Avg    P99\n
+s  All frames         Active frames   \n
 s "%s
 s % 2i : %s\n
 s %d\n
@@ -16157,13 +17342,14 @@ s" connected%s.\n
 s" disconnected\n
 s" handled event %s (%d) %llu %d %d\n
 s%03i.dem
-s%04d.jpg
-s%04d.png
-s%04d.tga
+s%08d.jpg
+s%08d.png
+s%08d.tga
 s%5d c%5d t%6.3f] Client read networking\n
 s%5d c%5d t%6.3f] Rendering  rendertime %.3f [dt %.2fms]\n
 s%5d c%5d t%6.3f] SentTickAsync   cmds %d...%d   seqnum %d   delay %.2fms\n
 s%5d c%5d t%6.3f] SentTickSync   cmds %d...%d   seqnum %d\n
+s%7.2f%7.2f%9d%7.2f%7.2f\n
 s%c%s
 s%s%s%s
 s' already awaiting full update\n
@@ -16178,6 +17364,7 @@ s/s%llut%llu
 s/screenshot%04d.jpg
 s49s0u
 s8;C@J
+s8;p8w
 s8H;s@I
 s8H;s@t[H
 s:  AsyncLoadSpawnGroup -- spawn group already in the loading queue\n
@@ -16269,6 +17456,7 @@ s\bD9q\b
 s\bE9t$\b
 s\b[A
 s\fA9w\frVH
+s\fH+uȋS
 s\n        {\n
 s\n    {\n
 s] %d - %s (refcount %d)\n
@@ -16290,6 +17478,8 @@ savegame ignored during demo playback
 savegame not allowed for player %d:'%s
 savegame not allowed in multiplayer games
 savegamefilename
+scale <= 32768
+scale >= 256
 scale32
 scan code
 scancode
@@ -16304,7 +17494,7 @@ screenshot resampling failed (error code %d)\n
 screenshot.jpg
 screenshot_height
 screenshot_prefix
-screenshot_service.cpp(358
+screenshot_service.cpp(361
 screenshot_subdir
 screenshot_width
 scripts/cheatcodes.txt
@@ -16337,11 +17527,11 @@ server has %d orphaned classes\n
 server orphan %s: client class associated %s\n
 server tick
 server_cmd_queue
-server_cmd_queue_desired
 server_cmd_recv_margin
 server_cvar: "%s" "%s"\n
 server_ip_address
 server_query_info
+server_start_tick
 server_starved_and_added_usercmds
 server_streaming
 server_tick
@@ -16586,8 +17776,6 @@ silk_uniform8_iCDF
 silk_warped_autocorrelation_FLP
 simple
 sincos
-singlethreaded combined
-singlethreaded split
 sint32
 sint64
 size too big
@@ -16644,6 +17832,11 @@ splitter
 spreading_decision
 sprintf_chk
 src/shaders
+src_height != 0
+src_height == ((dst_height + 1) / 2
+src_width != 0
+src_width == ((dst_width + 1) / 2
+src_width > 0
 ss_active
 ss_add
 ss_dead
@@ -16812,8 +18005,6 @@ sv_mmqueue_reservation_extended_timeout
 sv_mmqueue_reservation_timeout
 sv_networkvar_perfieldtracking
 sv_networkvar_validate
-sv_packedentities.cpp:1021
-sv_packedentities.cpp:1041
 sv_packstats
 sv_parallel_packentities
 sv_parallel_sendsnapshot
@@ -16893,6 +18084,7 @@ syscall
 system/network
 s{E\a
 s}cfg/%s
+sǍiScT
 t ?m-\e?a
 t H9j w
 t I;u
@@ -16920,7 +18112,6 @@ t$8j\fH
 t$;0u D
 t$@H;t$ t
 t$@IcD$8I
-t$@IcT$8H
 t$P냐UH
 t$P룐UH
 t$X\vt$p
@@ -16950,7 +18141,6 @@ t);y }\fH
 t)\tG*O
 t*HcL
 t*USPH
-t+9X\bu
 t+H;y s\fH
 t+HcD$\f
 t,M9l
@@ -17003,7 +18193,7 @@ tJ\nI&\f
 tKATUH
 tKI;E
 tKI;M
-tK\r;nU
+tK\rKN
 tL<Gt\b<T
 tLI;\f
 tLVRenderDeviceSetupV001
@@ -17016,6 +18206,7 @@ tOI;M
 tOI;\f
 tPATUH
 tPHcC
+tPI;M
 tPI;\f
 tPL9'u
 tPL;b rJH
@@ -17102,6 +18293,7 @@ t\n\vresource_name
 t\rIc
 t\rIc|$8
 t\r[A
+t\tA\\A
 t\tAƄ$q
 t\tH;h H
 t\tL9"u
@@ -17125,7 +18317,6 @@ ta\n\f\a\bA\v
 table %32.32s  %5i\n
 table: %u members
 tables
-taf;0u\\fD
 tcE1䋽l
 tcLcL\b\bM
 tcLcL\n\bL
@@ -17169,7 +18360,6 @@ tiATUL
 tick mark is locked\n
 tick mark is unlocked\n
 tick_interval
-time_dilation_percent
 timedemo
 timedemo <demoname> <optional stats.txt> : gets demo speeds\n
 timedemo_end
@@ -17204,6 +18394,7 @@ too many named subpatterns (maximum 10000
 toolframework2
 tools
 toolsVisMaxLightingComplexity
+toolsVisMode
 toolsonly
 total sec
 total_data_out
@@ -17335,8 +18526,7 @@ typeinfo for
 typeinfo name for
 tzAWAVAUATA
 tǋT$PL
-tЈC(1
-t؋=VZG
+tЈC01
 u CPU%s
 u [A\\A]A
 u iterated blocks\n
@@ -17358,8 +18548,8 @@ u@IcE8I
 u@IcU8H
 uE[A\\A]A
 uFIcW\bA9R\bu<I
-uF_iM,E
-uGL;%\bG\e
+uF_iL,E
+uGL;% G
 uI[A\\A]A
 uK[A\\A]A
 uMD\tc
@@ -17393,8 +18583,12 @@ uidev
 uint16
 uint32
 uint32_t google::protobuf::UnknownField::fixed32() const
+uint32_t libyuv::SumPixels(int, const uint16_t
+uint32_t libyuv::SumPixels_16(int, const uint32_t
 uint64_t google::protobuf::UnknownField::fixed64() const
 uint64_t google::protobuf::UnknownField::varint() const
+uintptr_t)(src_height) & ((2)-1
+uintptr_t)(src_width) & ((2)-1
 ujHcG
 unable to get demo version from '%s'.\n
 unable to load demo upconverter (%s)\n
@@ -17496,7 +18690,12 @@ uv[A\\A]A
 uxHcG\bIc
 u~D\tc
 u~HcG\bIc
+uĉU\tM
 uȉC\bIc
+uȉUĉM
+uЉỦM
+uԉUЉM
+u؉UԉM
 uڋS\bA9T$\bu
 uދC\bD9
 v AUATI
@@ -17538,7 +18737,6 @@ v2\e.CSVCMsg_Sounds.sounddata_t
 v2\e.ProtoFlattenedSerializer_t
 v2\f.CDemoPacket"S\n\rCDemoSaveGame
 v2\n.CGameInfo"\e\n\vCDemoPacket
-v2\rOn
 v2\t.CMsgRGBA
 v2\v.CMsgQAngle
 v2\v.CMsgQAngle"4\n
@@ -17555,9 +18753,9 @@ v><vt
 v@%s down %s impdown %s impup %s frac: %.2f (%d events)\n
 v@I;vH
 vAVAUATUH
+vAuh2
 vCPlayerSlot
 vD$0t\a
-vD$pt\a
 vH\vH\vH\v
 vH\vH\vH\vm\vm\vH\vm\vm\vm\v
 vH\vH\vd\n
@@ -17693,6 +18891,61 @@ void google::protobuf::FieldDescriptorProto::_internal_set_label(google::protobu
 void google::protobuf::FieldDescriptorProto::_internal_set_type(google::protobuf::FieldDescriptorProto_Type
 void google::protobuf::io::CodedInputStream::UnsafeDecrementRecursionDepth
 void google::protobuf::stringpiece_internal::StringPiece::remove_prefix(google::protobuf::stringpiece_internal::StringPiece::size_type
+void libyuv::Convert16To8Row_C(const uint16_t*, uint8_t*, int, int
+void libyuv::MergeAR64Row_C(const uint16_t*, const uint16_t*, const uint16_t*, const uint16_t*, uint16_t*, int, int
+void libyuv::MergeARGB16To8Row_C(const uint16_t*, const uint16_t*, const uint16_t*, const uint16_t*, uint8_t*, int, int
+void libyuv::MergeARGBPlaneAlpha(const uint8_t*, int, const uint8_t*, int, const uint8_t*, int, const uint8_t*, int, uint8_t*, int, int, int
+void libyuv::MergeARGBPlaneOpaque(const uint8_t*, int, const uint8_t*, int, const uint8_t*, int, uint8_t*, int, int, int
+void libyuv::MergeUVPlane_16(const uint16_t*, int, const uint16_t*, int, uint16_t*, int, int, int, int
+void libyuv::MergeUVRow_16_C(const uint16_t*, const uint16_t*, uint16_t*, int, int
+void libyuv::MergeXR30Row_C(const uint16_t*, const uint16_t*, const uint16_t*, uint8_t*, int, int
+void libyuv::MergeXR64Row_C(const uint16_t*, const uint16_t*, const uint16_t*, uint16_t*, int, int
+void libyuv::MergeXRGB16To8Row_C(const uint16_t*, const uint16_t*, const uint16_t*, uint8_t*, int, int
+void libyuv::ScaleAddRow_16_C(const uint16_t*, uint32_t*, int
+void libyuv::ScaleAddRow_C(const uint8_t*, uint16_t*, int
+void libyuv::ScalePlaneDown34(int, int, int, int, int, int, const uint8_t*, uint8_t*, libyuv::FilterMode
+void libyuv::ScalePlaneDown34_16(int, int, int, int, int, int, const uint16_t*, uint16_t*, libyuv::FilterMode
+void libyuv::ScalePlaneDown38(int, int, int, int, int, int, const uint8_t*, uint8_t*, libyuv::FilterMode
+void libyuv::ScalePlaneDown38_16(int, int, int, int, int, int, const uint16_t*, uint16_t*, libyuv::FilterMode
+void libyuv::ScalePlaneUp2_12_Bilinear(int, int, int, int, int, int, const uint16_t*, uint16_t
+void libyuv::ScalePlaneUp2_12_Linear(int, int, int, int, int, int, const uint16_t*, uint16_t
+void libyuv::ScalePlaneUp2_16_Bilinear(int, int, int, int, int, int, const uint16_t*, uint16_t
+void libyuv::ScalePlaneUp2_16_Linear(int, int, int, int, int, int, const uint16_t*, uint16_t
+void libyuv::ScalePlaneUp2_Bilinear(int, int, int, int, int, int, const uint8_t*, uint8_t
+void libyuv::ScalePlaneUp2_Linear(int, int, int, int, int, int, const uint8_t*, uint8_t
+void libyuv::ScalePlaneVertical(int, int, int, int, int, const uint8_t*, uint8_t*, int, int, int, int, libyuv::FilterMode
+void libyuv::ScalePlaneVertical_16(int, int, int, int, int, const uint16_t*, uint16_t*, int, int, int, int, libyuv::FilterMode
+void libyuv::ScaleRowDown34_0_Box_16_C(const uint16_t*, ptrdiff_t, uint16_t*, int
+void libyuv::ScaleRowDown34_0_Box_C(const uint8_t*, ptrdiff_t, uint8_t*, int
+void libyuv::ScaleRowDown34_16_C(const uint16_t*, ptrdiff_t, uint16_t*, int
+void libyuv::ScaleRowDown34_1_Box_16_C(const uint16_t*, ptrdiff_t, uint16_t*, int
+void libyuv::ScaleRowDown34_1_Box_C(const uint8_t*, ptrdiff_t, uint8_t*, int
+void libyuv::ScaleRowDown34_C(const uint8_t*, ptrdiff_t, uint8_t*, int
+void libyuv::ScaleRowDown38_16_C(const uint16_t*, ptrdiff_t, uint16_t*, int
+void libyuv::ScaleRowDown38_2_Box_16_C(const uint16_t*, ptrdiff_t, uint16_t*, int
+void libyuv::ScaleRowDown38_2_Box_C(const uint8_t*, ptrdiff_t, uint8_t*, int
+void libyuv::ScaleRowDown38_3_Box_16_C(const uint16_t*, ptrdiff_t, uint16_t*, int
+void libyuv::ScaleRowDown38_3_Box_C(const uint8_t*, ptrdiff_t, uint8_t*, int
+void libyuv::ScaleRowDown38_C(const uint8_t*, ptrdiff_t, uint8_t*, int
+void libyuv::ScaleRowUp2_Bilinear_16_C(const uint16_t*, ptrdiff_t, uint16_t*, ptrdiff_t, int
+void libyuv::ScaleRowUp2_Bilinear_C(const uint8_t*, ptrdiff_t, uint8_t*, ptrdiff_t, int
+void libyuv::ScaleRowUp2_Linear_16_C(const uint16_t*, uint16_t*, int
+void libyuv::ScaleRowUp2_Linear_C(const uint8_t*, uint8_t*, int
+void libyuv::ScaleSlope(int, int, int, int, libyuv::FilterMode, int*, int*, int*, int
+void libyuv::ScaleUVBilinearUp2(int, int, int, int, int, int, const uint8_t*, uint8_t
+void libyuv::ScaleUVBilinearUp2_16(int, int, int, int, int, int, const uint16_t*, uint16_t
+void libyuv::ScaleUVDown2(int, int, int, int, int, int, const uint8_t*, uint8_t*, int, int, int, int, libyuv::FilterMode
+void libyuv::ScaleUVDown4Box(int, int, int, int, int, int, const uint8_t*, uint8_t*, int, int, int, int
+void libyuv::ScaleUVDownEven(int, int, int, int, int, int, const uint8_t*, uint8_t*, int, int, int, int, libyuv::FilterMode
+void libyuv::ScaleUVLinearUp2(int, int, int, int, int, int, const uint8_t*, uint8_t
+void libyuv::ScaleUVLinearUp2_16(int, int, int, int, int, int, const uint16_t*, uint16_t
+void libyuv::ScaleUVRowUp2_Bilinear_16_C(const uint16_t*, ptrdiff_t, uint16_t*, ptrdiff_t, int
+void libyuv::ScaleUVRowUp2_Bilinear_C(const uint8_t*, ptrdiff_t, uint8_t*, ptrdiff_t, int
+void libyuv::ScaleUVRowUp2_Linear_16_C(const uint16_t*, uint16_t*, int
+void libyuv::ScaleUVRowUp2_Linear_C(const uint8_t*, uint8_t*, int
+void libyuv::SplitARGBPlaneAlpha(const uint8_t*, int, uint8_t*, int, uint8_t*, int, uint8_t*, int, uint8_t*, int, int, int
+void libyuv::SplitARGBPlaneOpaque(const uint8_t*, int, uint8_t*, int, uint8_t*, int, uint8_t*, int, int, int
+void libyuv::SplitUVRow_16_C(const uint16_t*, uint16_t*, uint16_t*, int, int
 volatile
 volume
 volumeFogRenderer0
@@ -17742,6 +18995,7 @@ w?\n\bw?n
 w@AUATL
 w@H;wHtoH
 w@I;wH
+w@IcW8H
 wHAUATL
 wPH+wHH
 wXI9wP
@@ -17800,13 +19054,13 @@ wmemcpy
 wmemmove
 wmemset
 wn>Jj
-work thread for decode
 world_offset_angle
 world_offset_pos
 worldgroupname
 worldrenderer
 worldwide
 wph_YSNHB<6
+wpp >= 1 && wpp <= 2
 writeid
 writeip
 writekeybindings
@@ -17818,15 +19072,17 @@ wrote CSVCMsg_FlattenedSerializer_t to '%s'\n
 wsqnmcb_OD420
 wt\b<a
 wwgEbDgxvvfGb
+wwwwwwwwwwwwwwww
 wy[i=2\f
+x != __null
 x A;U\f
 x%02x
 x(\at2L
 x(\btJL
 x0Ysqx
 x0s\v
-x7A9EP~1Hc
 x;D;c8}5H
+x<A9EP~6Hc
 x?M\fo>\t
 x?sMx
 x@\a\tA
@@ -17858,14 +19114,17 @@ xnbUH<1
 xrga[UNHB<6
 xstat64
 xuidReserve
+xxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxx
+y != __null
 y<\rE5B
 y?$Cz
 y?M\fo
 y?Zzy
 y?srz
-yOk GU5T
 yslf`ZTMGA;5
 z0AUATI
+z89y8w
 z?Mbz?H5z
 zCuAL9
 zEOnProfileStorageAvailable

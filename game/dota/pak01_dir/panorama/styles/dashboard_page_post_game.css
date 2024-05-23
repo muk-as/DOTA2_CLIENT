@@ -3984,18 +3984,18 @@ DOTAPostGameOverviewHero.Expanded #PartyIndex
 {
 	vertical-align: bottom;
 	margin: 0px;
-	margin-bottom: 26px;
 }
 
 .OverviewHeroPlayerNameExpanded Label,#BotPlayerName
 {
 	horizontal-align: left;
-	color: #99B3B3;
-	font-size: 38px;
+	color: LightestGrey;
 	font-weight: thin;
-	text-shadow: 1px 1px 3px 3.0 #000000;
+	font-size: 36px;
+	text-shadow: 0px 4px 12px #000000;
 	text-overflow: shrink;
 	margin-right: 4px;
+	letter-spacing: -0.7px;
 }
 
 .IndividualStatsContainer #BotPlayerName
@@ -5373,6 +5373,11 @@ DOTAPostGameOverviewHero.HasReported #OverviewHeroCommendButton,DOTAPostGameOver
 	background-color: gradient( linear, 0% 0%, 100% 0%, from( #781c8199 ), to( #781c81ff ) );
 }
 
+.XPReceivedRow.Abilities #RowBar
+{
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( #d8af3d99 ), to( #d8af3dff ) );
+}
+
 #GoldReceivedCanvas
 {
 	width: 300px;
@@ -6134,12 +6139,18 @@ DOTAPostGameKillMatrixRow.Victim_0_Active #VictimDeathCount0,DOTAPostGameKillMat
 	opacity: 1;
 }
 
+.PlayerDetailsContainer
+{
+	flow-children: down;
+}
+
 #IndividualStatsHeader
 {
 	width: 384px;
 	height: 120px;
 	overflow: noclip;
 	opacity: 0;
+	flow-children: right;
 	transition-property: opacity, transform;
 	transition-duration: 0.24s;
 	transition-delay: HeroTransitionDuration;
@@ -6434,9 +6445,10 @@ ProgressBar.PlayStyleBar
 
 #AvatarNameContainer
 {
-	border-radius: 12px;
 	vertical-align: bottom;
 	flow-children: right;
+	padding-bottom: 12px;
+	padding-left: 12px;
 	width: 100%;
 	background-color: black;
 	background-color: gradient( linear, 0% 100%, 0% 0%, from( #000000ff ), to( #00000000 ) );
@@ -6447,8 +6459,8 @@ ProgressBar.PlayStyleBar
 	width: 64px;
 	height: 64px;
 	border: 1px solid #222222;
-	margin: 8px;
-	border-bottom-left-radius: 8px;
+	vertical-align: center;
+	margin-top: 8px;
 	background-image: url("s2r://panorama/images/bot_icon_easy_png.vtex");
 	background-size: contain;
 	horizontal-align: center;
@@ -7051,9 +7063,8 @@ DOTAPostGameOverviewHero.Expanded #MainHeroImage
 	padding-top: 3px;
 	padding-right: 1px;
 	box-shadow: fill 0px 0px 12px #000000;
-	margin-left: 12px;
-	margin-top: -3px;
 	text-align: center;
+	ui-scale: 90%;
 }
 
 .NameAndHero
@@ -7173,14 +7184,46 @@ DOTAPostGameOverviewHero.Expanded #MainHeroImage
 .NameAndHero Label
 {
 	vertical-align: middle;
-	padding-left: 12px;
+	padding-left: 10px;
 	padding-right: 12px;
-	font-size: 22px;
-	font-weight: thin;
-	letter-spacing: 1px;
+	font-size: 20px;
+	margin-bottom: -1px;
+	text-shadow: 0px 2px 8px black;
 }
 
 .LocalPlayer .NameAndHero Label
+{
+	color: white;
+	font-weight: bold;
+	brightness: 1;
+}
+
+#LvlHero
+{
+	horizontal-align: left;
+	vertical-align: bottom;
+}
+
+#LvlHero .HeroLevelLabel
+{
+	background-color: black;
+	width: 36px;
+	height: 36px;
+	color: #E7D291;
+	background-color: #825404;
+	background-color: transparent;
+	border: 1px solid #E7D29188;
+	border-radius: 50%;
+	font-size: 18px;
+	padding: 0px;
+	padding-top: 6px;
+	padding-right: 1px;
+	box-shadow: fill 0px 0px 12px #000000;
+	text-align: center;
+	margin-right: 8px;
+}
+
+.LocalPlayer #LvlHero Label
 {
 	color: white;
 	font-weight: bold;
@@ -7203,11 +7246,18 @@ DOTAPostGameOverviewHero.Expanded #MainHeroImage
 {
 	font-size: 14px;
 	text-transform: uppercase;
-	color: #6D726B;
+	color: LightGrey;
 	text-overflow: shrink;
-	padding-left: 6px;
+	padding-left: 4px;
 	font-weight: normal;
-	margin-bottom: 4px;
+	letter-spacing: 0.5px;
+}
+
+.PinnedPlayerRow #FacetIcon
+{
+	ui-scale: 86%;
+	margin-right: 6px;
+	margin-left: 12px;
 }
 
 .PinnedTeam
@@ -7221,7 +7271,6 @@ DOTAPostGameOverviewHero.Expanded #MainHeroImage
 	margin-top: 6px;
 	font-size: 26px;
 	letter-spacing: 1px;
-	font-weight: thin;
 	vertical-align: middle;
 	width: 174px;
 	text-overflow: shrink;
@@ -7903,23 +7952,16 @@ DOTAPostGameOverviewHero.Expanded #HeroItemsContainer
 	border: 1px solid red;
 }
 
-#LvlHero
-{
-	horizontal-align: left;
-	vertical-align: bottom;
-	margin-left: 86px;
-	margin-bottom: 2px;
-}
-
-#HeroLevel,#HeroName
+#HeroName
 {
 	text-transform: uppercase;
-	font-size: 18px;
-	letter-spacing: 2px;
-	color: #6A9561;
+	font-size: 14px;
+	letter-spacing: 1.5px;
+	color: LighterGrey;
+	margin-bottom: 1px;
+	margin-top: -1px;
 	opacity: 0;
 	text-align: left;
-	margin-bottom: 4px;
 	text-shadow: 1px 1px 3px 3 #000000ff;
 	transition-property: opacity, transform;
 	transition-duration: 0.3s;
@@ -7932,6 +7974,12 @@ DOTAPostGameOverviewHero.Expanded #HeroItemsContainer
 	transition-duration: 0.12s;
 	transition-delay: 0s;
 	horizontal-align: left;
+}
+
+#HeroNameFacetContainer
+{
+	flow-children: down;
+	margin-left: 4px;
 }
 
 #ReloadPageButton

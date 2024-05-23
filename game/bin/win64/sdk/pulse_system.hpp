@@ -4,13 +4,13 @@
 
 // /////////////////////////////////////////////////////////////
 // Binary: pulse_system.dll
-// Classes count: 0 (Allocated) | 103 (Unallocated)
+// Classes count: 0 (Allocated) | 108 (Unallocated)
 // Enums count: 0 (Allocated) | 9 (Unallocated)
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
 // Registered binary: pulse_system.dll (project 'pulse_runtime_lib')
-// Enumerator count: 4
+// Enumerator count: 6
 // Alignment: 4
 // Size: 0x4
 enum class EPulseGraphExecutionHistoryFlag : uint32_t
@@ -21,6 +21,8 @@ enum class EPulseGraphExecutionHistoryFlag : uint32_t
 	CURSOR_ADD_TAG = 0x1,
 	CURSOR_REMOVE_TAG = 0x2,
 	CURSOR_RETIRED = 0x4,
+	REQUIREMENT_PASS = 0x8,
+	REQUIREMENT_FAIL = 0x10,
 };
 
 // Registered binary: pulse_system.dll (project 'pulse_runtime_lib')
@@ -69,6 +71,7 @@ enum class PulseCursorExecResult_t : uint32_t
 // Size: 0x4
 enum class PulseValueType_t : uint32_t
 {
+	// MPropertyFriendlyName "Void"
 	PVAL_INVALID = 0xffffffffffffffff,
 	// MPropertyFriendlyName "Boolean"
 	PVAL_BOOL = 0x0,
@@ -92,9 +95,13 @@ enum class PulseValueType_t : uint32_t
 	PVAL_SNDEVT_GUID = 0x9,
 	// MPropertyFriendlyName "Entity Name"
 	PVAL_ENTITY_NAME = 0xa,
+	// MPropertyFriendlyName "Opaque Handle"
 	PVAL_OPAQUE_HANDLE = 0xb,
+	// MPropertyFriendlyName "Typesafe Int"
 	PVAL_TYPESAFE_INT = 0xc,
+	// MPropertySuppressEnumerator
 	PVAL_CURSOR_FLOW = 0xd,
+	// MPropertyFriendlyName "Any"
 	PVAL_ANY = 0xe,
 	// MPropertyFriendlyName "Schema Enum"
 	PVAL_SCHEMA_ENUM = 0xf,
@@ -107,7 +114,7 @@ enum class PulseValueType_t : uint32_t
 };
 
 // Registered binary: pulse_system.dll (project 'pulse_runtime_lib')
-// Enumerator count: 66
+// Enumerator count: 73
 // Alignment: 2
 // Size: 0x2
 enum class PulseInstructionCode_t : uint16_t
@@ -147,37 +154,44 @@ enum class PulseInstructionCode_t : uint16_t
 	REINTERPRET_INSTANCE = 0x20,
 	GET_BLACKBOARD_REFERENCE = 0x21,
 	SET_BLACKBOARD_REFERENCE = 0x22,
-	LAST_SERIALIZED_CODE = 0x23,
-	NEGATE_INT = 0x24,
-	NEGATE_FLOAT = 0x25,
-	ADD_INT = 0x26,
-	ADD_FLOAT = 0x27,
-	ADD_STRING = 0x28,
-	SUB_INT = 0x29,
-	SUB_FLOAT = 0x2a,
-	MUL_INT = 0x2b,
-	MUL_FLOAT = 0x2c,
-	DIV_INT = 0x2d,
-	DIV_FLOAT = 0x2e,
-	MOD_INT = 0x2f,
-	MOD_FLOAT = 0x30,
-	LT_INT = 0x31,
-	LT_FLOAT = 0x32,
-	LTE_INT = 0x33,
-	LTE_FLOAT = 0x34,
-	EQ_BOOL = 0x35,
-	EQ_INT = 0x36,
-	EQ_FLOAT = 0x37,
-	EQ_STRING = 0x38,
-	EQ_ENTITY_NAME = 0x39,
-	EQ_EHANDLE = 0x3a,
-	NE_BOOL = 0x3b,
-	NE_INT = 0x3c,
-	NE_FLOAT = 0x3d,
-	NE_STRING = 0x3e,
-	NE_ENTITY_NAME = 0x3f,
-	NE_EHANDLE = 0x40,
-	GET_CONST_INLINE_STORAGE = 0x41,
+	REQUIREMENT_RESULT = 0x23,
+	LAST_SERIALIZED_CODE = 0x24,
+	NEGATE_INT = 0x25,
+	NEGATE_FLOAT = 0x26,
+	ADD_INT = 0x27,
+	ADD_FLOAT = 0x28,
+	ADD_STRING = 0x29,
+	SUB_INT = 0x2a,
+	SUB_FLOAT = 0x2b,
+	MUL_INT = 0x2c,
+	MUL_FLOAT = 0x2d,
+	DIV_INT = 0x2e,
+	DIV_FLOAT = 0x2f,
+	MOD_INT = 0x30,
+	MOD_FLOAT = 0x31,
+	LT_INT = 0x32,
+	LT_FLOAT = 0x33,
+	LTE_INT = 0x34,
+	LTE_FLOAT = 0x35,
+	EQ_BOOL = 0x36,
+	EQ_INT = 0x37,
+	EQ_FLOAT = 0x38,
+	EQ_STRING = 0x39,
+	EQ_ENTITY_NAME = 0x3a,
+	EQ_EHANDLE = 0x3b,
+	EQ_PANEL_HANDLE = 0x3c,
+	EQ_OPAQUE_HANDLE = 0x3d,
+	EQ_TEST_HANDLE = 0x3e,
+	NE_BOOL = 0x3f,
+	NE_INT = 0x40,
+	NE_FLOAT = 0x41,
+	NE_STRING = 0x42,
+	NE_ENTITY_NAME = 0x43,
+	NE_EHANDLE = 0x44,
+	NE_PANEL_HANDLE = 0x45,
+	NE_OPAQUE_HANDLE = 0x46,
+	NE_TEST_HANDLE = 0x47,
+	GET_CONST_INLINE_STORAGE = 0x48,
 };
 
 // Registered binary: pulse_system.dll (project 'pulse_runtime_lib')
@@ -238,6 +252,7 @@ struct CPulse_OutflowConnection;
 struct PulseRuntimeChunkIndex_t;
 struct PulseRegisterMap_t;
 struct PulseDocNodeID_t;
+struct GameTime_t;
 struct PulseCursorID_t;
 struct PulseGraphInstanceID_t;
 struct CPulse_BlackboardReference;
@@ -366,7 +381,7 @@ public:
 
 // Registered binary: pulse_system.dll (project 'pulse_runtime_lib')
 // Alignment: 8
-// Size: 0x60
+// Size: 0x58
 // 
 // MGetKV3ClassDefaults
 class CPulse_Chunk
@@ -602,14 +617,14 @@ public:
 
 // Registered binary: pulse_system.dll (project 'pulse_runtime_lib')
 // Alignment: 8
-// Size: 0x98
+// Size: 0xa0
 // Has VTable
 // 
 // MPulseInternal_IsCursor
 class CPulseExecCursor
 {
 private:
-	[[maybe_unused]] uint8_t __pad0000[0x98]; // 0x0
+	[[maybe_unused]] uint8_t __pad0000[0xa0]; // 0x0
 public:
 };
 
@@ -637,6 +652,17 @@ private:
 	[[maybe_unused]] uint8_t __pad004c[0x4]; // 0x4c
 public:
 	CPulse_ResumePoint m_WaitComplete; // 0x50	
+};
+
+// Registered binary: pulse_system.dll (project 'pulse_runtime_lib')
+// Alignment: 8
+// Size: 0x48
+// Has VTable
+// 
+// MGetKV3ClassDefaults
+class CPulseCell_BaseRequirement : public CPulseCell_Base
+{
+public:
 };
 
 // Registered binary: pulse_system.dll (project 'pulse_runtime_lib')
@@ -831,6 +857,19 @@ public:
 };
 
 // Registered binary: pulse_system.dll (project 'pulse_runtime_lib')
+// Alignment: 4
+// Size: 0x8
+// Has Trivial Destructor
+// 
+// MGetKV3ClassDefaults
+struct CPulseCell_BaseLerp__CursorState_t
+{
+public:
+	GameTime_t m_StartTime; // 0x0	
+	GameTime_t m_EndTime; // 0x4	
+};
+
+// Registered binary: pulse_system.dll (project 'pulse_runtime_lib')
 // Alignment: 8
 // Size: 0x20
 // 
@@ -896,6 +935,25 @@ public:
 	CUtlSymbolLarge m_TargetEntity; // 0x8	
 	CUtlSymbolLarge m_TargetInput; // 0x10	
 	CUtlSymbolLarge m_Param; // 0x18	
+};
+
+// Registered binary: pulse_system.dll (project 'pulse_runtime_lib')
+// Alignment: 8
+// Size: 0x50
+// Has VTable
+// 
+// MGetKV3ClassDefaults
+// MCellForDomain
+// MPulseCellMethodBindings
+// MPulseCellOutflowHookInfo
+// MPropertyFriendlyName "Limit Count"
+// MPropertyDescription "Skip this node after the limit. Check Type does not apply, the limit will always be checked."
+// MPulseRequirementPass
+class CPulseCell_LimitCount : public CPulseCell_BaseRequirement
+{
+public:
+	// MPropertyFlattenIntoParentRow
+	int32_t m_nLimitCount; // 0x48	
 };
 
 // Registered binary: pulse_system.dll (project 'pulse_runtime_lib')
@@ -1492,6 +1550,18 @@ public:
 };
 
 // Registered binary: pulse_system.dll (project 'pulse_runtime_lib')
+// Alignment: 4
+// Size: 0x4
+// Has Trivial Destructor
+// 
+// MGetKV3ClassDefaults
+struct CPulseCell_LimitCount__InstanceState_t
+{
+public:
+	int32_t m_nCurrentCount; // 0x0	
+};
+
+// Registered binary: pulse_system.dll (project 'pulse_runtime_lib')
 // Alignment: 8
 // Size: 0x48
 // Has VTable
@@ -1557,7 +1627,7 @@ public:
 
 // Registered binary: pulse_system.dll (project 'pulse_runtime_lib')
 // Alignment: 8
-// Size: 0xa0
+// Size: 0xa8
 // Has VTable
 // 
 // MPulseLibraryBindings
@@ -1565,8 +1635,8 @@ public:
 class CTestDomainDerived_Cursor : public CPulseExecCursor
 {
 public:
-	int32_t m_nCursorValueA; // 0x98	
-	int32_t m_nCursorValueB; // 0x9c	
+	int32_t m_nCursorValueA; // 0xa0	
+	int32_t m_nCursorValueB; // 0xa4	
 };
 
 // Registered binary: pulse_system.dll (project 'pulse_runtime_lib')
@@ -1722,6 +1792,19 @@ public:
 
 // Registered binary: pulse_system.dll (project 'pulse_runtime_lib')
 // Alignment: 8
+// Size: 0x78
+// Has VTable
+// Is Abstract
+// 
+// MGetKV3ClassDefaults
+class CPulseCell_BaseLerp : public CPulseCell_BaseYieldingInflow
+{
+public:
+	CPulse_ResumePoint m_WakeResume; // 0x48	
+};
+
+// Registered binary: pulse_system.dll (project 'pulse_runtime_lib')
+// Alignment: 8
 // Size: 0xa8
 // Has VTable
 // 
@@ -1857,7 +1940,7 @@ public:
 
 // Registered binary: pulse_system.dll (project 'pulse_runtime_lib')
 // Alignment: 8
-// Size: 0xb0
+// Size: 0xb8
 // Has VTable
 // 
 // MPulseLibraryBindings
@@ -1865,9 +1948,9 @@ public:
 class CPulseTurtleGraphicsCursor : public CPulseExecCursor
 {
 public:
-	Color m_Color; // 0x98	
-	Vector2D m_vPos; // 0x9c	
-	float m_flHeadingDeg; // 0xa4	
-	bool m_bPenUp; // 0xa8	
+	Color m_Color; // 0xa0	
+	Vector2D m_vPos; // 0xa4	
+	float m_flHeadingDeg; // 0xac	
+	bool m_bPenUp; // 0xb0	
 };
 

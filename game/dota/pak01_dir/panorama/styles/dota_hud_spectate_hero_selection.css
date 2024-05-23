@@ -1068,7 +1068,7 @@ DOTASpectateHeroSelection.Hidden
 	background-color: none;
 }
 
-.Hero #AsLabel,.Hero #PlayerName
+.Hero #AsLabel,.Hero #PlayerName,.Hero #VariantName
 {
 	font-size: 22px;
 	width: 100%;
@@ -1098,7 +1098,14 @@ DOTASpectateHeroSelection.Hidden
 	transition-timing-function: ease-in-out;
 }
 
-.DOTA_GAMEMODE_ALL_DRAFT .Hero #PlayerName,.DOTA_GAMEMODE_AP .Hero #PlayerName,.DOTA_GAMEMODE_TURBO .Hero #PlayerName,.DOTA_GAMEMODE_MUTATION .Hero #PlayerName,.Hero.ValidHero.PlayerIsAssigned #AsLabel,.Hero.ValidHero.PlayerIsAssigned #PlayerName
+.Hero #VariantName
+{
+	horizontal-align: center;
+	vertical-align: top;
+	margin-bottom: 0px;
+}
+
+.DOTA_GAMEMODE_ALL_DRAFT .Hero #PlayerName,.DOTA_GAMEMODE_AP .Hero #PlayerName,.DOTA_GAMEMODE_TURBO .Hero #PlayerName,.DOTA_GAMEMODE_MUTATION .Hero #PlayerName,.Hero.ValidHero.PlayerIsAssigned #AsLabel,.Hero.ValidHero.PlayerIsAssigned #PlayerName,.Hero.ValidHero.PlayerIsAssigned #VariantName
 {
 	opacity: 1;
 	pre-transform-scale2d: 1;
@@ -1202,28 +1209,37 @@ DOTASpectateHeroSelection.Hidden
 
 #HeroFooter
 {
-	width: 100%;
-	height: 52px;
+	width: fit-children;
+	height: fit-children;
 	vertical-align: bottom;
 	horizontal-align: center;
 	visibility: collapse;
-	margin-bottom: 64px;
+	flow-children: up;
 	opacity: 0;
-	pre-transform-scale2d: .5;
-	transform: translateY(52px);
 	transition-property: opacity, transform, pre-transform-scale2d;
 	transition-duration: .28s;
 	transition-timing-function: ease-in-out;
+	background-color: #000000d1;
+	border-radius: 4px;
+}
+
+#HeroFacet
+{
+	ui-scale: 125%;
+	padding-right: 4px;
+	horizontal-align: center;
 }
 
 #Abilities
 {
+	pre-transform-scale2d: .5;
 	background-color: #000a;
 	border-radius: 12px;
 	padding: 4px;
 	horizontal-align: center;
 	vertical-align: middle;
 	flow-children: right;
+	visibility: collapse;
 }
 
 .Hero:hover #HeroFooter
@@ -1280,6 +1296,7 @@ DOTASpectateHeroSelection.Hidden
 .Hero.ValidHero #HeroHeader,.Hero.ValidHero #HeroFooter
 {
 	visibility: visible;
+	opacity: 1;
 }
 
 .ForceCompilation

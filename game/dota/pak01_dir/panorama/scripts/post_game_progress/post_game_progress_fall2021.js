@@ -282,7 +282,7 @@ class AnimateFall2021ScreenAction extends RunSequentialActions
         panel.SetDialogVariableInt( 'active_week', this.data.fall_2021_progress.active_season_id );
 
         var levelShield = panel.FindChildInLayoutFile( 'Fall2021LevelShield' );
-        levelShield.SetEventPoints( this.data.fall_2021_progress.battle_points_event_id, this.data.fall_2021_progress.battle_points_start );
+        //levelShield.SetEventPoints( this.data.fall_2021_progress.battle_points_event_id, this.data.fall_2021_progress.battle_points_start );
 
         // Setup the sequence of actions to animate the screen
         this.seq = new RunSequentialActions();

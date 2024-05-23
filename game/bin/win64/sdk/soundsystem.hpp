@@ -4,8 +4,8 @@
 
 // /////////////////////////////////////////////////////////////
 // Binary: soundsystem.dll
-// Classes count: 0 (Allocated) | 57 (Unallocated)
-// Enums count: 0 (Allocated) | 16 (Unallocated)
+// Classes count: 0 (Allocated) | 63 (Unallocated)
+// Enums count: 0 (Allocated) | 18 (Unallocated)
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
@@ -19,6 +19,19 @@ enum class EMode_t : uint32_t
 	Peak = 0x0,
 	// MPropertyFriendlyName "RMS"
 	RMS = 0x1,
+};
+
+// Registered binary: soundsystem.dll (project 'soundsystem_voicecontainers')
+// Enumerator count: 5
+// Alignment: 1
+// Size: 0x1
+enum class EWaveform : uint8_t
+{
+	Sine = 0x0,
+	Square = 0x1,
+	Saw = 0x2,
+	Triangle = 0x3,
+	Noise = 0x4,
 };
 
 // Registered binary: soundsystem.dll (project 'soundsystem_lowlevel')
@@ -62,7 +75,7 @@ enum class SosActionStopType_t : uint32_t
 	SOS_STOPTYPE_NONE = 0x0,
 	// MPropertyFriendlyName "Elapsed Time"
 	SOS_STOPTYPE_TIME = 0x1,
-	// MPropertyFriendlyName "Opvar"
+	// MPropertyFriendlyName "Opvar Float"
 	SOS_STOPTYPE_OPVAR = 0x2,
 };
 
@@ -209,6 +222,27 @@ enum class VMixChannelOperation_t : uint32_t
 };
 
 // Registered binary: soundsystem.dll (project 'soundsystem_voicecontainers')
+// Enumerator count: 13
+// Alignment: 1
+// Size: 0x1
+enum class EMidiNote : uint8_t
+{
+	C = 0x0,
+	C_Sharp = 0x1,
+	D = 0x2,
+	D_Sharp = 0x3,
+	E = 0x4,
+	F = 0x5,
+	F_Sharp = 0x6,
+	G = 0x7,
+	G_Sharp = 0x8,
+	A = 0x9,
+	A_Sharp = 0xa,
+	B = 0xb,
+	Count = 0xc,
+};
+
+// Registered binary: soundsystem.dll (project 'soundsystem_voicecontainers')
 // Enumerator count: 4
 // Alignment: 1
 // Size: 0x1
@@ -238,7 +272,7 @@ enum class VMixFilterSlope_t : uint8_t
 };
 
 // Registered binary: soundsystem.dll (project 'soundsystem')
-// Enumerator count: 7
+// Enumerator count: 8
 // Alignment: 4
 // Size: 0x4
 enum class ActionType_t : uint32_t
@@ -255,8 +289,10 @@ enum class ActionType_t : uint32_t
 	SOS_ACTION_SET_SOUNDEVENT_PARAM = 0x4,
 	// MPropertyFriendlyName "Soundevent Cluster"
 	SOS_ACTION_SOUNDEVENT_CLUSTER = 0x5,
-	// MPropertyFriendlyName "Value Integrator"
-	SOS_ACTION_VALUE_INTEGRATOR = 0x6,
+	// MPropertyFriendlyName "Soundevent Priority"
+	SOS_ACTION_SOUNDEVENT_PRIORITY = 0x6,
+	// MPropertyFriendlyName "Count Envelope"
+	SOS_ACTION_COUNT_ENVELOPE = 0x7,
 };
 
 // Registered binary: soundsystem.dll (project 'soundsystem_lowlevel')
@@ -282,27 +318,12 @@ enum class SosGroupType_t : uint32_t
 	SOS_GROUPTYPE_STATIC = 0x1,
 };
 
+struct CVoiceContainerStaticAdditiveSynth::CGainScalePerInstance;
 struct VMixFilterDesc_t;
 struct CSosGroupMatchPattern;
 struct CSosGroupBranchPattern;
 struct CVSound;
 struct CAudioMorphData;
-
-// Registered binary: soundsystem.dll (project 'soundsystem_lowlevel')
-// Alignment: 4
-// Size: 0x10
-// Has Trivial Constructor
-// Has Trivial Destructor
-// 
-// MGetKV3ClassDefaults
-struct VMixFreeverbDesc_t
-{
-public:
-	float m_flRoomSize; // 0x0	
-	float m_flDamp; // 0x4	
-	float m_flWidth; // 0x8	
-	float m_flLateReflections; // 0xc	
-};
 
 // Registered binary: soundsystem.dll (project 'soundsystem_voicecontainers')
 // Alignment: 8
@@ -335,6 +356,57 @@ public:
 	CUtlBinaryBlock m_encodedHeader; // 0x58	
 };
 
+// Registered binary: soundsystem.dll (project 'soundsystem_lowlevel')
+// Alignment: 4
+// Size: 0x10
+// Has Trivial Constructor
+// Has Trivial Destructor
+// 
+// MGetKV3ClassDefaults
+struct VMixFreeverbDesc_t
+{
+public:
+	float m_flRoomSize; // 0x0	
+	float m_flDamp; // 0x4	
+	float m_flWidth; // 0x8	
+	float m_flLateReflections; // 0xc	
+};
+
+// Registered binary: soundsystem.dll (project 'soundsystem_voicecontainers')
+// Alignment: 4
+// Size: 0x10
+// Has Trivial Destructor
+// 
+// MGetKV3ClassDefaults
+class CVoiceContainerStaticAdditiveSynth::CGainScalePerInstance
+{
+public:
+	// MPropertyFriendlyName "Quietest Volume"
+	float m_flMinVolume; // 0x0	
+	// MPropertyFriendlyName "# Instances Playing Until We Get Louder Than Quietest Volume"
+	int32_t m_nInstancesAtMinVolume; // 0x4	
+	// MPropertyFriendlyName "Loudest Volume"
+	float m_flMaxVolume; // 0x8	
+	// MPropertyFriendlyName "# Instances Playing Required To Reach Loudest Volume"
+	int32_t m_nInstancesAtMaxVolume; // 0xc	
+};
+
+// Registered binary: soundsystem.dll (project 'soundsystem_voicecontainers')
+// Alignment: 8
+// Size: 0x60
+// 
+// MGetKV3ClassDefaults
+class CVoiceContainerStaticAdditiveSynth::CTone
+{
+public:
+	// MPropertyFriendlyName "Harmonics"
+	CUtlVector< CVoiceContainerStaticAdditiveSynth::CHarmonic > m_harmonics; // 0x0	
+	// MPropertyFriendlyName "Envelope"
+	CPiecewiseCurve m_curve; // 0x18	
+	// MPropertyFriendlyName "Play All Instances In Sync"
+	bool m_bSyncInstances; // 0x58	
+};
+
 // Registered binary: soundsystem.dll (project 'soundsystem_voicecontainers')
 // Alignment: 8
 // Size: 0xf0
@@ -343,6 +415,7 @@ public:
 // MGetKV3ClassDefaults
 // MVDataRoot
 // MVDataNodeType
+// MFgdFromSchemaEditablePolymorphicThisClass
 // MVDataFileExtension
 // MPropertyFriendlyName "VSND Container"
 // MPropertyDescription "Voice Container Base"
@@ -394,8 +467,32 @@ class CVoiceContainerDefault : public CVoiceContainerBase
 public:
 	// MPropertyFriendlyName "Vsnd"
 	// MPropertyDescription "Load the audio content into the kv3 content"
-	// MVSndPropertyGuaranteeConstant
 	CStrongHandle< InfoForResourceTypeCVoiceContainerBase > m_vsndReference; // 0xf0	
+};
+
+// Registered binary: soundsystem.dll (project 'soundsystem_voicecontainers')
+// Alignment: 8
+// Size: 0x218
+// Has VTable
+// 
+// MGetKV3ClassDefaults
+// MPropertyFriendlyName "Random Smapler Container"
+// MPropertyDescription "Trash Synth"
+class CVoiceContainerRandomSampler : public CVoiceContainerBase
+{
+public:
+	float m_flAmplitude; // 0xf0	
+	float m_flAmplitudeJitter; // 0xf4	
+	float m_flTimeJitter; // 0xf8	
+	float m_flMaxLength; // 0xfc	
+	int32_t m_nNumDelayVariations; // 0x100	
+private:
+	[[maybe_unused]] uint8_t __pad0104[0x4]; // 0x104
+public:
+	CUtlVector< CStrongHandle< InfoForResourceTypeCVoiceContainerBase > > m_grainResources; // 0x108	
+	
+	// Static fields:
+	static int32_t &Get_nInstancesFixed(){return *reinterpret_cast<int32_t*>(interfaces::g_schema->FindTypeScopeForModule("soundsystem.dll")->FindDeclaredClass("CVoiceContainerRandomSampler")->m_static_fields[0]->m_instance);};
 };
 
 // Registered binary: soundsystem.dll (project 'soundsystem')
@@ -431,17 +528,6 @@ public:
 	ActionType_t m_actionType; // 0x10	
 	// MPropertySuppressField
 	ActionType_t m_actionInstanceType; // 0x14	
-};
-
-// Registered binary: soundsystem.dll (project 'soundsystem')
-// Alignment: 8
-// Size: 0x18
-// Has VTable
-// 
-// MGetKV3ClassDefaults
-class CSosGroupActionLeakyIntegratorSchema : public CSosGroupActionSchema
-{
-public:
 };
 
 // Registered binary: soundsystem.dll (project 'soundsystem')
@@ -537,6 +623,25 @@ public:
 	float m_flStrength; // 0x4	
 };
 
+// Registered binary: soundsystem.dll (project 'soundsystem')
+// Alignment: 8
+// Size: 0x38
+// Has VTable
+// 
+// MGetKV3ClassDefaults
+class CSosGroupActionSoundeventPrioritySchema : public CSosGroupActionSchema
+{
+public:
+	// MPropertyFriendlyName "Priority Value, typically 0.0 to 1.0"
+	CUtlString m_priorityValue; // 0x18	
+	// MPropertyFriendlyName "Priority-Based Volume Multiplier, 0.0 to 1.0"
+	CUtlString m_priorityVolumeScalar; // 0x20	
+	// MPropertyFriendlyName "Contribute to the priority system, but volume is unaffected by it (bool)"
+	CUtlString m_priorityContributeButDontRead; // 0x28	
+	// MPropertyFriendlyName "Don't contribute to the priority system, but volume is affected by it (bool)"
+	CUtlString m_bPriorityReadButDontContribute; // 0x30	
+};
+
 // Registered binary: soundsystem.dll (project 'soundsystem_voicecontainers')
 // Alignment: 8
 // Size: 0x100
@@ -550,15 +655,12 @@ class CVoiceContainerRealtimeFMSineWave : public CVoiceContainerBase
 public:
 	// MPropertyFriendlyName "Frequency (Hz)"
 	// MPropertyDescription "The frequency of this sine tone."
-	// MVSndPropertyControlledAtRuntime
 	float m_flCarrierFrequency; // 0xf0	
 	// MPropertyFriendlyName "Mod Frequency (Hz)"
 	// MPropertyDescription "The frequency of the sine tone modulating this sine tone."
-	// MVSndPropertyControlledAtRuntime
 	float m_flModulatorFrequency; // 0xf4	
 	// MPropertyFriendlyName "Mod Amount (Hz)"
 	// MPropertyDescription "The amount the modulating sine tone modulates this sine tone."
-	// MVSndPropertyControlledAtRuntime
 	float m_flModulatorAmount; // 0xf8	
 };
 
@@ -664,13 +766,15 @@ public:
 	bool m_bMatchEventSubString; // 0x9	
 	// MPropertyFriendlyName "Source Entity Index"
 	bool m_bMatchEntIndex; // 0xa	
-	// MPropertyFriendlyName "Operator Variable"
+	// MPropertyFriendlyName "Opvar Float"
 	bool m_bMatchOpvar; // 0xb	
+	// MPropertyFriendlyName "Opvar String"
+	bool m_bMatchString; // 0xc	
 };
 
 // Registered binary: soundsystem.dll (project 'soundsystem')
 // Alignment: 8
-// Size: 0x28
+// Size: 0x30
 // Has VTable
 // 
 // MGetKV3ClassDefaults
@@ -681,10 +785,12 @@ public:
 	CUtlString m_matchSoundEventName; // 0x10	
 	// MPropertyFriendlyName "Sub-String"
 	CUtlString m_matchSoundEventSubString; // 0x18	
-	// MPropertyFriendlyName "Entity Index"
+	// MPropertyFriendlyName "Source Entity Index"
 	float m_flEntIndex; // 0x20	
-	// MPropertyFriendlyName "Operator Variable Value"
+	// MPropertyFriendlyName "Opvar Float"
 	float m_flOpvar; // 0x24	
+	// MPropertyFriendlyName "Opvar String"
+	CUtlString m_opvarString; // 0x28	
 };
 
 // Registered binary: soundsystem.dll (project 'soundsystem_lowlevel')
@@ -756,6 +862,20 @@ public:
 	float m_flEaseOut; // 0x64	
 };
 
+// Registered binary: soundsystem.dll (project 'soundsystem_voicecontainers')
+// Alignment: 8
+// Size: 0x120
+// Has VTable
+// 
+// MGetKV3ClassDefaults
+// MPropertyFriendlyName "Additive Synth Container"
+// MPropertyDescription "This is a static additive synth that can scale components of the synth based on how many instances are running."
+class CVoiceContainerStaticAdditiveSynth : public CVoiceContainerBase
+{
+public:
+	CUtlVector< CVoiceContainerStaticAdditiveSynth::CTone > m_tones; // 0xf0	
+};
+
 // Registered binary: soundsystem.dll (project 'soundsystem')
 // Alignment: 8
 // Size: 0x20
@@ -774,48 +894,20 @@ public:
 
 // Registered binary: soundsystem.dll (project 'soundsystem_voicecontainers')
 // Alignment: 8
-// Size: 0x108
+// Size: 0x118
 // Has VTable
 // 
 // MGetKV3ClassDefaults
-// MPropertyFriendlyName "Blend Container"
-// MPropertyDescription "Mixes two sounds in real time"
-class CVoiceContainerBlend : public CVoiceContainerBase
+// MPropertyFriendlyName "Blender"
+// MPropertyDescription "Feeds two vsounds into a voice graph."
+class CVoiceContainerBlender : public CVoiceContainerBase
 {
 public:
-	// MPropertyFriendlyName "First Sound"
-	CStrongHandle< InfoForResourceTypeCVoiceContainerBase > m_hSoundOne; // 0xf0	
-	// MPropertyFriendlyName "Second Sound"
-	CStrongHandle< InfoForResourceTypeCVoiceContainerBase > m_hSoundTwo; // 0xf8	
-	// MPropertyFriendlyName "Blend Amount (0-1)"
-	// MPropertyDescription "When set to zero, Only play First Sound. When set to 1, only play Second Sound. In between, we linearly mix the two."
-	// MVSndPropertyControlledAtRuntime
-	float m_flBlendAmount; // 0x100	
-};
-
-// Registered binary: soundsystem.dll (project 'soundsystem_voicecontainers')
-// Alignment: 8
-// Size: 0x218
-// Has VTable
-// 
-// MGetKV3ClassDefaults
-// MPropertyFriendlyName "Random Smapler Container"
-// MPropertyDescription "Trash Synth"
-class CVoiceContainerRandomSampler : public CVoiceContainerBase
-{
-public:
-	float m_flAmplitude; // 0xf0	
-	float m_flAmplitudeJitter; // 0xf4	
-	float m_flTimeJitter; // 0xf8	
-	float m_flMaxLength; // 0xfc	
-	int32_t m_nNumDelayVariations; // 0x100	
-private:
-	[[maybe_unused]] uint8_t __pad0104[0x4]; // 0x104
-public:
-	CUtlVector< CStrongHandle< InfoForResourceTypeCVoiceContainerBase > > m_grainResources; // 0x108	
-	
-	// Static fields:
-	static int32_t &Get_nInstancesFixed(){return *reinterpret_cast<int32_t*>(interfaces::g_schema->FindTypeScopeForModule("soundsystem.dll")->FindDeclaredClass("CVoiceContainerRandomSampler")->m_static_fields[0]->m_instance);};
+	CStrongHandle< InfoForResourceTypeCVoiceContainerBase > m_firstSound; // 0xf0	
+	CUtlString m_firstSoundTrackName; // 0xf8	
+	CStrongHandle< InfoForResourceTypeCVoiceContainerBase > m_secondSound; // 0x100	
+	CUtlString m_secondSoundTrackName; // 0x108	
+	CUtlString m_graphName; // 0x110	
 };
 
 // Registered binary: soundsystem.dll (project 'soundsystem_lowlevel')
@@ -987,7 +1079,7 @@ public:
 
 // Registered binary: soundsystem.dll (project 'soundsystem')
 // Alignment: 8
-// Size: 0xd8
+// Size: 0xe0
 // 
 // MGetKV3ClassDefaults
 // MPropertyElementNameFn
@@ -1015,20 +1107,22 @@ public:
 	// -> m_matchSoundEventSubString - 0x30
 	// -> m_flEntIndex - 0x38
 	// -> m_flOpvar - 0x3c
+	// -> m_opvarString - 0x40
 	CSosGroupMatchPattern m_matchPattern; // 0x18	
 	// MPropertyFriendlyName "Branch Rules"
-	// -> m_bMatchEventName - 0x48
-	// -> m_bMatchEventSubString - 0x49
-	// -> m_bMatchEntIndex - 0x4a
-	// -> m_bMatchOpvar - 0x4b
-	CSosGroupBranchPattern m_branchPattern; // 0x40	
+	// -> m_bMatchEventName - 0x50
+	// -> m_bMatchEventSubString - 0x51
+	// -> m_bMatchEntIndex - 0x52
+	// -> m_bMatchOpvar - 0x53
+	// -> m_bMatchString - 0x54
+	CSosGroupBranchPattern m_branchPattern; // 0x48	
 	// MPropertyFriendlyName "Member Lifespan Time"
-	float m_flLifeSpanTime; // 0x50	
+	float m_flLifeSpanTime; // 0x58	
 private:
-	[[maybe_unused]] uint8_t __pad0054[0x64]; // 0x54
+	[[maybe_unused]] uint8_t __pad005c[0x64]; // 0x5c
 public:
 	// MPropertyFriendlyName "Actions"
-	CSosGroupActionSchema* m_vActions[4]; // 0xb8	
+	CSosGroupActionSchema* m_vActions[4]; // 0xc0	
 };
 
 // Registered binary: soundsystem.dll (project 'soundsystem')
@@ -1276,6 +1370,36 @@ public:
 
 // Registered binary: soundsystem.dll (project 'soundsystem_voicecontainers')
 // Alignment: 8
+// Size: 0x68
+// 
+// MGetKV3ClassDefaults
+class CVoiceContainerStaticAdditiveSynth::CHarmonic
+{
+public:
+	// MPropertyFriendlyName "Waveform"
+	EWaveform m_nWaveform; // 0x0	
+	// MPropertyFriendlyName "Note"
+	EMidiNote m_nFundamental; // 0x1	
+private:
+	[[maybe_unused]] uint8_t __pad0002[0x2]; // 0x2
+public:
+	// MPropertyFriendlyName "Octave"
+	int32_t m_nOctave; // 0x4	
+	// MPropertyFriendlyName "Cents To Detune ( -100:100 )"
+	float m_flCents; // 0x8	
+	// MPropertyFriendlyName "Phase ( 0 - 1 )"
+	float m_flPhase; // 0xc	
+	// MPropertyFriendlyName "Envelope (Relative to Tone Envelope)"
+	CPiecewiseCurve m_curve; // 0x10	
+	// -> m_flMinVolume - 0x50
+	// -> m_nInstancesAtMinVolume - 0x54
+	// -> m_flMaxVolume - 0x58
+	// -> m_nInstancesAtMaxVolume - 0x5c
+	CVoiceContainerStaticAdditiveSynth::CGainScalePerInstance m_volumeScaling; // 0x50	
+};
+
+// Registered binary: soundsystem.dll (project 'soundsystem_voicecontainers')
+// Alignment: 8
 // Size: 0x130
 // Has VTable
 // 
@@ -1309,6 +1433,48 @@ public:
 	int32_t m_nMaxCount; // 0x18	
 	// MPropertyFriendlyName "Max Time"
 	float m_flMaxDuration; // 0x1c	
+};
+
+// Registered binary: soundsystem.dll (project 'soundsystem')
+// Alignment: 8
+// Size: 0x40
+// Has VTable
+// 
+// MGetKV3ClassDefaults
+class CSosGroupActionMemberCountEnvelopeSchema : public CSosGroupActionSchema
+{
+public:
+	// MPropertyFriendlyName "Min Threshold Count"
+	int32_t m_nBaseCount; // 0x18	
+	// MPropertyFriendlyName "Max Target Count"
+	int32_t m_nTargetCount; // 0x1c	
+	// MPropertyFriendlyName "Threshold Value"
+	float m_flBaseValue; // 0x20	
+	// MPropertyFriendlyName "Target Value"
+	float m_flTargetValue; // 0x24	
+	// MPropertyFriendlyName "Attack"
+	float m_flAttack; // 0x28	
+	// MPropertyFriendlyName "Decay"
+	float m_flDecay; // 0x2c	
+	// MPropertyFriendlyName "Result Variable Name"
+	CUtlString m_resultVarName; // 0x30	
+	// MPropertyFriendlyName "Save Result to Group"
+	bool m_bSaveToGroup; // 0x38	
+};
+
+// Registered binary: soundsystem.dll (project 'soundsystem_voicecontainers')
+// Alignment: 8
+// Size: 0x108
+// Has VTable
+// 
+// MGetKV3ClassDefaults
+// MPropertyFriendlyName "Container Switch"
+// MPropertyDescription "An array of containers"
+class CVoiceContainerSwitch : public CVoiceContainerBase
+{
+public:
+	// MPropertyFriendlyName "Container List"
+	CUtlVector< CVoiceContainerBase* > m_soundsToPlay; // 0xf0	
 };
 
 // Registered binary: soundsystem.dll (project 'soundsystem')
@@ -1386,7 +1552,6 @@ class CVoiceContainerAmpedDecayingSineWave : public CVoiceContainerDecayingSineW
 public:
 	// MPropertyFriendlyName "Attenuation Amount (dB)"
 	// MPropertyDescription "The amount of attenuation ."
-	// MVSndPropertyControlledAtRuntime
 	float m_flGainAmount; // 0xf8	
 };
 

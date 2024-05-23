@@ -134,13 +134,18 @@
 	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
 }
 
+.HasScrap #CrownfallProgressMain #CrownfallProgressRewards
+{
+	padding-top: 10px;
+}
+
 #CrownfallProgressMain #CrownfallProgressRewards.ShowRewards
 {
 	opacity: 1;
 	transform: none;
 }
 
-#CrownfallProgressMain #CrownfallProgressRewards .WinText,#CrownfallProgressMain #CrownfallProgressRewards .LossText,#CrownfallProgressMain #CrownfallProgressRewards .TurboDisclaimer
+#CrownfallProgressMain #CrownfallProgressRewards .WinText,#CrownfallProgressMain #CrownfallProgressRewards .LossText,#CrownfallProgressMain #CrownfallProgressRewards .LossTextTurbo,#CrownfallProgressMain #CrownfallProgressRewards .TurboDisclaimer
 {
 	font-size: 24px;
 	line-height: 1.3;
@@ -174,6 +179,12 @@
 	visibility: collapse;
 }
 
+#CrownfallProgressMain #CrownfallProgressRewards .LossTextTurbo
+{
+	visibility: collapse;
+	margin-bottom: -12px;
+}
+
 #CrownfallProgressMain #CrownfallProgressRewards .TurboDisclaimer
 {
 	visibility: collapse;
@@ -184,6 +195,16 @@
 }
 
 #CrownfallProgressMain #CrownfallProgressRewards.IsTurboGame .TurboDisclaimer
+{
+	visibility: visible;
+}
+
+.DidLose #CrownfallProgressMain #CrownfallProgressRewards.IsTurboGame .LossText
+{
+	visibility: collapse;
+}
+
+.DidLose #CrownfallProgressMain #CrownfallProgressRewards.IsTurboGame .LossTextTurbo
 {
 	visibility: visible;
 }
@@ -351,6 +372,11 @@
 	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
 }
 
+.HasScrap #CrownfallProgressMain #CrownfallProgressRewards #OverworldClaimable
+{
+	margin-top: 18px;
+}
+
 #CrownfallProgressMain #CrownfallProgressRewards #OverworldClaimable .Emblem
 {
 	width: 40px;
@@ -384,7 +410,7 @@
 {
 	opacity: 1;
 	animation-name: PulseProgressAvailableLabel;
-	animation-duration: 0.8s;
+	animation-duration: 0.4s;
 	animation-direction: alternate;
 	animation-iteration-count: infinite;
 }
@@ -426,6 +452,11 @@
 	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
 	opacity: 0;
 	transform: translateY( 24px );
+}
+
+.HasScrap #CrownfallProgressMain .CrownfallProgressCandy
+{
+	margin-top: 0px;
 }
 
 .ShowCandyworks #CrownfallProgressMain .CrownfallProgressCandy
@@ -666,6 +697,47 @@
 .CandyworksLocked .RerollCapLockedShop
 {
 	visibility: visible;
+}
+
+#ScrapRow
+{
+	transition-property: opacity, transform;
+	transition-duration: 0.5s;
+	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
+	opacity: 0;
+	transform: translateY( 24px );
+}
+
+.ShowScrap #ScrapRow
+{
+	opacity: 1;
+	transform: none;
+}
+
+#ScrapRow .ScrapText
+{
+	font-size: 16px;
+	color: LighterGrey;
+	vertical-align: center;
+	opacity: 0.6;
+	text-shadow: 0px 2px 8px black;
+}
+
+#ScrapRow #ScrapList.CrownfallTokenList .CrownfallTokenContainer
+{
+	opacity: 1;
+	margin: -40px -45px;
+}
+
+#ScrapRow #ScrapList.CrownfallTokenList .CrownfallTokenContainer .TokenName
+{
+	visibility: collapse;
+}
+
+#ScrapRow #ScrapList.CrownfallTokenList .CrownfallTokenContainer DOTACrownfallToken
+{
+	ui-scale: 120%;
+	margin: 32px;
 }
 
 @keyframes 'GlowText'

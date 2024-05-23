@@ -3,45 +3,142 @@
 .CrownfallStoreCell
 {
 	background-color: gradient( linear, 0% 0%, 0% 100%, from( #1a2d43 ), to( #05080d ) );
-	border: 1px solid white;
+	border: 1px solid rgba(255, 255, 255, 0.5);
 	border-brush: gradient( linear, 0% 0%, 50% 100%, from( #9ccaff37 ), to( #88aeff02 ) );
-	padding: 16px 16px;
+	height: 300px;
 }
 
-.CrownfallStoreCell .BackgroundImage
+.CellBackground
 {
 	width: 100%;
 	height: 100%;
-	margin-top: 10px;
-	background-image: url("s2r://panorama/images/events/crownfall/store/store_splash2_psd.vtex");
+	background-image: url("s2r://panorama/images/events/crownfall/store/store_cell_background_png.vtex");
 	background-size: cover;
+	background-position: center;
+}
+
+.CellContent
+{
+	width: 100%;
+	height: 100%;
+	flow-children: down;
+	padding: 16px 16px 12px 16px;
+}
+
+.CellContent .CellTitle
+{
+	text-shadow: 0px 2px 8px black;
+	color: gradient( linear, 0% 0%, 0% 100%, from( white ), to( LighterGrey ) );
+	margin-bottom: 2px;
+	font-family: titleFont;
+	font-size: 24px;
+	horizontal-align: center;
+	text-align: center;
+	width: 100%;
+	text-overflow: shrink;
+	height: 36px;
+}
+
+.CellContent .StoreItems
+{
+	width: 100%;
+	height: fill-parent-flow( 1.0 );
+	flow-children: right;
+	margin-bottom: 8px;
+}
+
+.CellContent .StoreItems .StoreItem
+{
+	height: 100%;
+	width: fill-parent-flow( 1.0 );
+	overflow: clip;
+	border-bottom: 1px solid #ccc1;
+	padding-bottom: 4px;
+	transition-property: brightness;
+	transition-duration: 0.2s;
+}
+
+.CellContent .StoreItems .StoreItem:hover
+{
+	brightness: 2.0;
+}
+
+.CellContent .StoreItems .StoreItem:active
+{
+	brightness: 1.5;
+}
+
+.CellContent .StoreItems .StoreItem .StoreItemImage
+{
+	width: 100%;
+	height: 100%;
+	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center;
 }
 
-.CrownfallStoreCell .CellTitle
-{
-	horizontal-align: center;
-	text-align: center;
-	font-size: 20px;
-	width: 80%;
-	margin: 8px 0px 0px;
-	text-shadow: 0px 2px 8px black;
-	color: gradient( linear, 0% 0%, 0% 100%, from( white ), to( LighterGrey ) );
-	margin-bottom: 12px;
-}
-
-.CrownfallStoreCell .Footer
+.CellContent .StoreItems .StoreItem .StoreItemLabel
 {
 	width: 100%;
-	flow-children: down;
 	vertical-align: bottom;
+	text-align: center;
+	font-size: 15px;
+	color: #ccc;
+	text-shadow: 2px 2px 4px black;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	padding: 0px 2px;
 }
 
-.CrownfallStoreCell .Footer #ViewStoreButton
+.CellContent .StoreItems .StoreItem.Act2PathfinderPack
+{
+	margin-right: 8px;
+}
+
+.CellContent .StoreItems .StoreItem.Act2PathfinderPack .StoreItemImage
+{
+	width: 80%;
+	margin-top: -12px;
+	horizontal-align: center;
+	background-image: url("s2r://panorama/images/events/crownfall/store/frontpage_act2_pack_png.vtex");
+	animation-name: BobPack;
+	animation-duration: 1.5s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-timing-function: ease-in-out;
+}
+
+.CellContent .StoreItems .StoreItem.Treasure3
+{
+	margin-left: 8px;
+}
+
+.CellContent .StoreItems .StoreItem.Treasure3 .StoreItemImage
 {
 	horizontal-align: center;
-	width: 100%;
+	height: 150%;
+	transform: translateX( 10px ) translateY( -60px );
+}
+
+.CellContent #ViewStoreButton
+{
+	horizontal-align: center;
+	min-width: 200px;
+	margin-bottom: 4px;
+}
+
+@keyframes 'BobPack'
+{
+	0%
+	{
+		transform: translateY( 0px );
+	}
+	
+	100%
+	{
+		transform: translateY( -8px );
+	}
+	
 }
 
 @keyframes 'DiscountGlow'
@@ -62,14 +159,15 @@
 {
 	width: 100%;
 	text-align: center;
-	margin-bottom: 20px;
+	margin-bottom: 6px;
 	letter-spacing: 2px;
 	text-transform: uppercase;
 	color: white;
 	font-weight: bold;
-	font-size: 24px;
+	font-size: 14px;
+	margin-top: 4px;
 	animation-name: DiscountGlow;
-	animation-duration: 0.5s;
+	animation-duration: 0.7s;
 	animation-iteration-count: infinite;
 	animation-direction: alternate;
 	visibility: collapse;

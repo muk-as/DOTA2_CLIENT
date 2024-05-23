@@ -1,23 +1,25 @@
-var UpdateTrophyLevel = function( nTrophyLevel )
+const EVENT_ID_INTERNATIONAL_2016 = 14;
+var UpdateBadgeTier = function ( nBadgeTier )
 {
-	if ( nTrophyLevel >= 1 )
+	if ( nBadgeTier >= 1 )
 	{
-		$.DispatchEvent( 'DOTASceneFireEntityInput', $( '#flag1' ), 'flag', 'Skin', ( nTrophyLevel - 1 )+ "" );
+		$.DispatchEvent( 'DOTASceneFireEntityInput', $( '#flag1' ), 'flag', 'Skin', ( nBadgeTier - 1 )+ "" );
 	}
 	else
 	{
-		$.DispatchEvent( 'DOTASceneFireEntityInput', $( '#flag1' ), 'flag', 'Skin', nTrophyLevel + "" );
+		$.DispatchEvent( 'DOTASceneFireEntityInput', $( '#flag1' ), 'flag', 'Skin', nBadgeTier + "" );
 	}
 }
 
-var SetCurrentTrophyLevel = function()
+var SetCurrentBadgeTier = function()
 {
-	var nTrophyLevel = GetCurrentEventTrophyLevel();
-	UpdateTrophyLevel( nTrophyLevel );
+	// deprecated GetEventBadgeTier( EVENT_ID_INTERNATIONAL_2016 )
+	var nBadgeTier = 0;
+	UpdateBadgeTier( nBadgeTier );
 }
 
 $.Schedule( 0.0, function()
 {
-	$.RegisterForUnhandledEvent( 'DOTAEventTrophyLevelUpdated', function( eEvent, nTrophyLevel ) { UpdateTrophyLevel( nTrophyLevel ); } );
-	$.RegisterEventHandler( 'DOTAScenePanelSceneLoaded', $( '#flag1' ), function() { SetCurrentTrophyLevel(); } );
+	//$.RegisterForUnhandledEvent( 'DOTAEventBadgeTierUpdated', function ( eEvent, nBadgeTier ) { UpdateBadgeTier( nBadgeTier ); } );
+	$.RegisterEventHandler( 'DOTAScenePanelSceneLoaded', $( '#flag1' ), function () { SetCurrentBadgeTier(); } );
 });

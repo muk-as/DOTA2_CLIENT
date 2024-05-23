@@ -372,7 +372,6 @@ declare interface DOTAGuildImage_t extends Panel_t
 
 declare interface DOTAEventLevelShield_t extends Panel_t
 {
-	SetEventPoints ( nEvent: number, nEventPoints: number ): void;
 	SetEventLevel ( nEvent: number, nEventLevel: number ): void;
 }
 

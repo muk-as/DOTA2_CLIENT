@@ -77,6 +77,26 @@ Label
 	flow-children: right;
 }
 
+.MinAbilityTooltip #AbilityHeader,.MinAbilityTooltip #AbilityTarget
+{
+	visibility: collapse;
+}
+
+.MinAbilityTooltip .DependentAbility #AbilityTarget
+{
+	visibility: visible;
+}
+
+.MinAbilityTooltip .DependentAbility #AbilityTarget Label
+{
+	visibility: collapse;
+}
+
+.MinAbilityTooltip .DependentAbility #AbilityTarget #AbilityDependency
+{
+	visibility: visible;
+}
+
 #AbilitySubHeader
 {
 	width: 100%;
@@ -486,7 +506,12 @@ DOTAGameItemsPage.NeutralItemsOnly #AbilityCoreDetails
 	padding-right: 8px;
 	padding-top: 6px;
 	padding-bottom: 8px;
-	margin-bottom: 12px;
+	margin-bottom: 8px;
+}
+
+.HasFacet #AbilityDescriptionContainer Label
+{
+	margin-bottom: 0px;
 }
 
 .HideLore #AbilityDescriptionContainer Label
@@ -624,6 +649,11 @@ DOTAGameItemsPage.NeutralItemsOnly #AbilityCoreDetails
 {
 	padding-left: 8px;
 	color: #596e89;
+}
+
+.MinAbilityTooltip #AbilityExtraAttributes:not(.Hidden)
+{
+	visibility: visible;
 }
 
 #AbilityCharges
@@ -838,7 +868,7 @@ h1
 	font-weight: semi-bold;
 }
 
-#CurrentItemCosts .Cooldown,#CurrentItemCosts .ManaCost,#CurrentItemCosts .HealthCost
+#CurrentItemCosts .Cooldown,#CurrentItemCosts .ManaCost,#CurrentItemCosts .HealthCost,#CurrentItemCosts .CastRange
 {
 	visibility: collapse;
 }
@@ -858,6 +888,11 @@ h1
 	visibility: visible;
 }
 
+.HasCastRange #CurrentItemCosts .CastRange
+{
+	visibility: visible;
+}
+
 .IsItem #AbilityCosts
 {
 	visibility: collapse;
@@ -868,28 +903,32 @@ h1
 	visibility: collapse;
 }
 
-.Cooldown
+.Cooldown,.ManaCost,.HealthCost,.CastRange
 {
-	background-image: url("s2r://panorama/images/status_icons/ability_cooldown_icon_psd.vtex");
 	text-overflow: shrink;
 	margin-left: 5px;
 	margin-right: 2px;
+	background-size: 20px;
+}
+
+.Cooldown
+{
+	background-image: url("s2r://panorama/images/status_icons/ability_cooldown_icon_psd.vtex");
 }
 
 .ManaCost
 {
-	margin-left: 5px;
-	margin-right: 2px;
-	text-overflow: shrink;
 	background-image: url("s2r://panorama/images/status_icons/ability_manacost_icon_psd.vtex");
 }
 
 .HealthCost
 {
-	margin-left: 5px;
-	margin-right: 2px;
-	text-overflow: shrink;
 	background-image: url("s2r://panorama/images/status_icons/ability_healthcost_icon_psd.vtex");
+}
+
+.CastRange
+{
+	background-image: url("s2r://panorama/images/status_icons/ability_castrange_icon_psd.vtex");
 }
 
 #AbilityLore
@@ -904,7 +943,7 @@ h1
 	margin-left: 1px;
 }
 
-.HideLore #AbilityLore
+.HideLore #AbilityLore,.MinAbilityTooltip #AbilityLore
 {
 	visibility: collapse;
 }
@@ -917,6 +956,11 @@ DOTAGameItemsPage .IsRecipe #AbilityLore,.ShowScepterOnly #AbilityLore
 #AbilityUpgradeLevel
 {
 	color: #ffcc33;
+}
+
+.DependentAbility #AbilityUpgradeLevel
+{
+	visibility: collapse;
 }
 
 .AbilityBuildHeader
@@ -1092,6 +1136,35 @@ DOTAAbilityGuideBuilder #AbilityBuildCommentEdit
 #CurrentAbilityCosts #CurrentAbilityHealthCost
 {
 	background-image: url("s2r://panorama/images/status_icons/ability_healthcost_icon_psd.vtex");
+}
+
+#AbilitySecondRowContainer
+{
+	width: 100%;
+	flow-children: right;
+}
+
+#CurrentAbilityCosts2
+{
+	flow-children: right;
+	horizontal-align: right;
+	vertical-align: center;
+}
+
+#CurrentAbilityCosts2 Label
+{
+	color: #596e89;
+	font-size: 16px;
+	background-position: 0% 50%;
+	background-repeat: no-repeat;
+	padding-left: 25px;
+	margin-left: 10px;
+}
+
+#CurrentAbilityCosts2 #CurrentAbilityCastRange
+{
+	background-image: url("s2r://panorama/images/status_icons/ability_castrange_icon_psd.vtex");
+	text-overflow: shrink;
 }
 
 #AbilityCosts
@@ -1314,6 +1387,151 @@ DOTAAbilityGuideBuilder #AbilityBuildCommentEdit
 #UpgradeProgressBar .ProgressBarRight
 {
 	background-color: gradient( linear, 0% 0%, 100% 0%, from( #000 ), color-stop( 0.99, #200 ), to( #2000 ) );
+}
+
+.FacetDescriptionContainer
+{
+	width: 100%;
+	height: fit-children;
+	flow-children: down;
+	padding-left: 8px;
+}
+
+.FacetDescriptionContainer #FacetDescriptionLabel
+{
+	padding-left: 0px;
+	margin-left: 0px;
+	margin-bottom: 12px;
+}
+
+.FacetHeader
+{
+	width: 100%;
+	height: fit-children;
+	flow-children: right;
+}
+
+.FacetHeader Label
+{
+	text-transform: uppercase;
+}
+
+.FacetHeader #FacetHeaderName
+{
+	color: LightestGrey;
+	font-weight: semi-bold;
+	width: fit-children;
+	font-family: titleFont;
+	padding: 0px;
+	margin-bottom: 0px;
+	font-size: 12px;
+	letter-spacing: 0.5px;
+	vertical-align: center;
+}
+
+.FacetHeader #FacetHeaderDesc
+{
+	color: #596e89;
+	width: fit-children;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
+	margin-bottom: 0px;
+	font-size: 14px;
+	vertical-align: center;
+}
+
+.FacetHeader .HorizontalRule
+{
+	width: fill-parent-flow( 1.0 );
+	background-color: #29353b;
+	height: 1px;
+	vertical-align: center;
+	margin-left: 4px;
+	margin-right: 4px;
+}
+
+.FacetHeader .FacetContainer
+{
+	width: 20px;
+	height: 20px;
+	margin: 4px 2px;
+	border-radius: 1px;
+	horizontal-align: center;
+	border: 1px solid rgba(255, 255, 255, 0.06);
+	box-shadow: 0px 3px 12px -2px rgba(0, 0, 0, 0.8);
+	overflow: clip;
+}
+
+.FacetHeader .FacetContainer .FacetBackground
+{
+	width: 32px;
+	height: 32px;
+	transform: rotateZ( -90deg );
+	brightness: 1.2;
+	horizontal-align: center;
+	vertical-align: center;
+}
+
+.FacetHeader .FacetContainer .FacetBackgroundTexture
+{
+	width: 100%;
+	height: 100%;
+	background-image: url("s2r://panorama/images/hud/facets/ripple_texture_png.vtex");
+	background-size: cover;
+	background-position: center;
+	-s2-mix-blend-mode: screen;
+	horizontal-align: right;
+}
+
+.FacetHeader .FacetContainer .FacetShine
+{
+	width: 32px;
+	height: 32px;
+	background-color: gradient( radial, 0% 0%, 0% 0%, 80% 80%, from( rgb(255, 255, 255) ), to( rgba(255, 255, 255, 0) ) );
+	horizontal-align: center;
+	vertical-align: center;
+	blur: gaussian(6px);
+	opacity: 0.4;
+}
+
+.FacetHeader .FacetContainer #FacetIcon
+{
+	width: 16px;
+	height: 16px;
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	horizontal-align: center;
+	vertical-align: center;
+	img-shadow: 0px 2px 8px black;
+}
+
+.InlineIcon
+{
+	width: 16px;
+	height: 16px;
+	margin: 2px;
+}
+
+.FadedInlineIcon
+{
+	width: 16px;
+	height: 16px;
+	margin: 2px;
+	saturation: .5;
+	brightness: .3;
+}
+
+.FacetIcon
+{
+	width: 15px;
+	height: 15px;
+	margin: 2px;
+	margin-left: 3px;
+	border-radius: 2px;
+	padding: 1px;
 }
 
 #AbilityVideoContainer

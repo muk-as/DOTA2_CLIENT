@@ -31,7 +31,7 @@ enum class RenderPrimitiveType_t : uint32_t
 };
 
 // Registered binary: rendersystemdx11.dll (project 'rendersystemdx11')
-// Enumerator count: 12
+// Enumerator count: 13
 // Alignment: 4
 // Size: 0x4
 enum class RenderBufferFlags_t : uint32_t
@@ -48,6 +48,7 @@ enum class RenderBufferFlags_t : uint32_t
 	RENDER_BUFFER_ACCELERATION_STRUCTURE = 0x200,
 	RENDER_BUFFER_SHADER_BINDING_TABLE = 0x400,
 	RENDER_BUFFER_PER_FRAME_WRITE_ONCE = 0x800,
+	RENDER_BUFFER_POOL_ALLOCATED = 0x1000,
 };
 
 // Registered binary: rendersystemdx11.dll (project 'rendersystemdx11')

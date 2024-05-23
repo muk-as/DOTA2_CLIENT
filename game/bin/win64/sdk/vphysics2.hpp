@@ -164,7 +164,7 @@ public:
 
 // Registered binary: vphysics2.dll (project 'physicslib')
 // Alignment: 8
-// Size: 0x618
+// Size: 0x620
 // 
 // MGetKV3ClassDefaults
 struct PhysFeModelDesc_t
@@ -271,8 +271,9 @@ public:
 	float m_flQuadVelocitySmoothRate; // 0x608	
 	float m_flAddWorldCollisionRadius; // 0x60c	
 	float m_flDefaultVolumetricSolveAmount; // 0x610	
-	uint16_t m_nRodVelocitySmoothIterations; // 0x614	
-	uint16_t m_nQuadVelocitySmoothIterations; // 0x616	
+	float m_flMotionSmoothCDT; // 0x614	
+	uint16_t m_nRodVelocitySmoothIterations; // 0x618	
+	uint16_t m_nQuadVelocitySmoothIterations; // 0x61a	
 };
 
 // Registered binary: vphysics2.dll (project 'physicslib')

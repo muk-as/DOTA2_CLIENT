@@ -418,6 +418,39 @@ DOTATeamCheersDisplay
 	contrast: 1;
 }
 
+.NoVision
+{
+	background-color: #000000EE;
+	width: 66px;
+	height: 36px;
+	margin-top: 4px;
+	vertical-align: top;
+	transition-duration: .3s;
+	transition-property: opacity;
+	z-index: 10;
+	opacity: 0;
+}
+
+.NoVision .VisionIcon
+{
+	width: 100%;
+	height: 100%;
+	horizontal-align: center;
+	vertical-align: center;
+	background-image: url("s2r://panorama/images/hud/facets/icons/no_vision_png.vtex");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-size: 25px 25px;
+	background-position: 50% 50%;
+	wash-color: #9F3C3C;
+	brightness: 2;
+}
+
+.VisionBroken .NoVision
+{
+	opacity: 1;
+}
+
 .CoachImage
 {
 	width: 55px;
@@ -1213,7 +1246,7 @@ DOTATopBarPlayer.GrandmasterTier #HeroBadgeOverlay
 {
 	width: 100%;
 	height: 4px;
-	z-index: 5;
+	z-index: 7;
 	background-image: url("s2r://panorama/images/hud/reborn/topbar_playerslot_vignette_psd.vtex");
 	background-size: 92% 100%;
 	background-repeat: no-repeat;
@@ -1245,6 +1278,47 @@ DOTATopBarPlayer.GrandmasterTier #HeroBadgeOverlay
 	z-index: 3;
 	margin-top: 4px;
 	visibility: collapse;
+}
+
+DOTAFacetIcon
+{
+	z-index: 6;
+	opacity: 0;
+	margin-left: -1px;
+	transform: translateY( -12px );
+	tooltip-position: bottom;
+	transition-property: pre-transform-scale2d, opacity, transform;
+	transition-duration: .1s;
+	transition-timing-function: ease-out;
+}
+
+.AltPressed DOTAFacetIcon
+{
+	opacity: 1;
+	transform: translateY( 4px );
+}
+
+.AltPressed DOTAFacetIcon .HasFacet
+{
+	visibility: visible;
+}
+
+#TopBarDirePlayersContainer DOTAFacetIcon
+{
+	horizontal-align: right;
+	margin-left: 0px;
+	margin-right: -1px;
+}
+
+#TopBarDirePlayersContainer DOTAFacetIcon
+{
+	horizontal-align: right;
+	transform: translateY( -12px ) scaleX( -1 );
+}
+
+.AltPressed #TopBarDirePlayersContainer DOTAFacetIcon
+{
+	transform: translateY( 4px ) scaleX( -1 );
 }
 
 .DrowArcanaRevengeTarget #PlayerOverlay

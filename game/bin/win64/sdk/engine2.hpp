@@ -4,7 +4,7 @@
 
 // /////////////////////////////////////////////////////////////
 // Binary: engine2.dll
-// Classes count: 4 (Allocated) | 49 (Unallocated)
+// Classes count: 4 (Allocated) | 48 (Unallocated)
 // Enums count: 0 (Allocated) | 4 (Unallocated)
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
@@ -350,18 +350,6 @@ struct EventPreDataUpdate_t
 {
 public:
 	int32_t m_nCount; // 0x0	
-};
-
-// Registered binary: engine2.dll (project 'engine2')
-// Alignment: 8
-// Size: 0x1
-// Has Trivial Destructor
-struct EventClientPredictionPostNetupdate_t
-{
-private:
-	[[maybe_unused]] uint8_t __pad0000[0x1]; // 0x0
-public:
-	// No schema binary for binding
 };
 
 // Registered binary: engine2.dll (project 'engine2')

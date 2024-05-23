@@ -2228,19 +2228,25 @@ DOTAHudPreGame.Universal #PrimaryAttribute
 	margin-top: 206px;
 }
 
-#SelectedHeroAbilities > .AbilityIconContainer,#SelectedHeroAbilities > .StatBranch,#SelectedHeroAbilities > .ScepterDetails,#SelectedHeroAbilitiesHitTargets > Panel
+#SelectedHeroAbilitiesHitTargets
+{
+	opacity: 0;
+}
+
+#SelectedHeroAbilities > .AbilityIconContainer,#SelectedHeroAbilities > .StatBranch,#SelectedHeroAbilities > .ScepterDetails,#SelectedHeroAbilities > .InnateAbility,#SelectedHeroAbilitiesHitTargets > Panel
 {
 	width: 48px;
 	height: 48px;
-	background-size: 44px 44px;
 	background-position: 0px 0px;
 	margin-right: 10px;
 }
 
-#SelectedHeroAbilitiesHitTargets > Panel.StatBranch
+#SelectedHeroAbilitiesHitTargets > Panel.StatBranch,#SelectedHeroAbilitiesHitTargets > Panel.ScepterDetails
 {
 	margin-right: 2px;
 	margin-top: 4px;
+	wash-color: #708D9F;
+	img-shadow: 0px 2px 12px black;
 }
 
 #SelectedHeroAbilities > .AbilityIconContainer
@@ -2297,7 +2303,228 @@ DOTAHudPreGame.Universal #PrimaryAttribute
 
 #SelectedHeroAbilities > .StatBranch,#SelectedHeroAbilities > .ScepterDetails
 {
-	wash-color: #6F819B;
+	wash-color: #798798;
+	img-shadow: 0px 4px 12px black;
+}
+
+.FacetHelpPopupContainer
+{
+	margin-left: 240px;
+	margin-bottom: 200px;
+	vertical-align: bottom;
+	padding: 48px 24px;
+	transition-property: opacity, transform;
+	transition-duration: 0.5s;
+	transition-delay: 1.4s;
+	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
+	opacity: 0;
+	transform: translateY( -56px );
+}
+
+.StrategyVisible.FacetHelpVisible:not(.IsAbilityDraft) .FacetHelpPopupContainer
+{
+	opacity: 1;
+	transform: none;
+	transition-duration: 0.25s;
+	transition-delay: 0s;
+	transition-timing-function: ease-in;
+}
+
+.FacetHelpPopup
+{
+	width: 400px;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #1F2936 ), to( #121925 ) );
+	border: 1px solid #2A333F;
+	border-top: 2px solid white;
+	flow-children: down;
+	box-shadow: 0px 12px 48px -4px rgba(0, 0, 0, 0.6);
+	animation-name: BobFacetReminder;
+	animation-duration: 0.8s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease;
+	animation-direction: alternate;
+}
+
+.FacetHelpPopup .TextContainer
+{
+	margin-top: 24px;
+	width: 100%;
+	padding-left: 32px;
+	padding-right: 32px;
+}
+
+.FacetHelpPopup .TextContainer Label
+{
+	font-size: 20px;
+	font-family: titleFont;
+	text-shadow: 0px 2px 8px #000000;
+	color: rgba(255, 255, 255, 0.913);
+	horizontal-align: center;
+	text-align: center;
+}
+
+.FacetHelpPopup .ButtonPrimary
+{
+	margin-top: 16px;
+	margin-bottom: 32px;
+	horizontal-align: center;
+	min-width: 220px;
+	animation-name: GlowFacetReminderButton;
+	animation-duration: 0.8s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease;
+	animation-direction: alternate;
+}
+
+.FacetHelpPopup .GlimmerShine
+{
+	width: 100%;
+	height: 100%;
+	ignore-parent-flow: true;
+	animation-name: Shimmer;
+	animation-duration: 3.2s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
+	animation-delay: 0.8s;
+}
+
+@keyframes 'Shimmer'
+{
+	0%
+	{
+		background-color: gradient( linear, -50% -50%, 0% 0%, from( #FFFFFF00 ), color-stop( 0.5, #729FBF22 ), to( #FFFFFF00 ) );
+	}
+	
+	25%
+	{
+		background-color: gradient( linear, 100% 100%, 150% 150%, from( #FFFFFF00 ), color-stop( 0.5, #729FBF11 ), to( #FFFFFF00 ) );
+	}
+	
+	100%
+	{
+		background-color: gradient( linear, 100% 100%, 150% 150%, from( #FFFFFF00 ), color-stop( 0.5, #729FBF11 ), to( #FFFFFF00 ) );
+	}
+	
+}
+
+@keyframes 'BobFacetReminder'
+{
+	0%
+	{
+		transform: translateY( 4px );
+	}
+	
+	100%
+	{
+		transform: translateY( -4px );
+	}
+	
+}
+
+@keyframes 'GlowFacetReminderButton'
+{
+	0%
+	{
+		box-shadow: 0px 0px 24px #FFFFFF00;
+		brightness: 1;
+	}
+	
+	100%
+	{
+		box-shadow: 0px 0px 32px #4D8DBC22;
+		brightness: 2;
+	}
+	
+}
+
+.SelectedHeroFacets
+{
+	width: 700px;
+	vertical-align: bottom;
+	margin-bottom: 0px;
+	margin-left: 110px;
+	padding: 0px 24px;
+	opacity: 1;
+	transform: none;
+	transition-property: opacity, transform;
+	transition-duration: 0.2s;
+	transition-timing-function: ease-in-out;
+}
+
+.SelectedHeroFacets .FacetsContainer
+{
+	flow-children: down;
+	horizontal-align: center;
+	vertical-align: center;
+	padding-bottom: 60px;
+	background-color: gradient( radial, 50% 0%, 0% 0%, 40% 100%, from( rgba(86, 101, 123, 0.132) ), to( rgba(44, 58, 65, 0) ) );
+	border-top: 1px solid rgba(223, 233, 255, 0.02);
+	border-brush: gradient( linear, 10% 0%, 90% 0%, from( rgba(255, 255, 255, 0) ), color-stop( 0.5, rgb(255, 255, 255) ), to( rgba(255, 255, 255, 0) ) );
+	width: 100%;
+	padding-top: 24px;
+}
+
+.SelectedHeroFacets .FacetsContainer Label
+{
+	text-transform: uppercase;
+	font-size: 28px;
+	letter-spacing: 0.3px;
+	text-shadow: 0px 2px 8px #000000;
+	color: #aabdd7;
+	horizontal-align: center;
+	margin-bottom: 16px;
+	font-weight: thin;
+	animation-name: GlowFacetPickerLabel;
+	animation-duration: 0.8s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
+	animation-direction: alternate-reverse;
+}
+
+.SelectedHeroFacets #FacetPicker
+{
+	horizontal-align: center;
+	ui-scale: 120%;
+	margin-top: -12px;
+}
+
+.SelectedHeroFacets .Shadow
+{
+	width: 90%;
+	height: 280px;
+	horizontal-align: center;
+	vertical-align: bottom;
+	margin-top: -20px;
+	background-color: gradient( radial, 50% 50%, 0% 0%, 50% 50%, from( rgb(0, 0, 0) ), color-stop( 0.2, rgb(0, 0, 0), to( rgba(0, 0, 0, 0) ) );
+	blur: gaussian( 24px );
+	opacity: 0.9;
+}
+
+@keyframes 'GlowFacetPickerLabel'
+{
+	0%
+	{
+		text-shadow: 0px 0px 12px #A9C7f100;
+		brightness: 1;
+	}
+	
+	100%
+	{
+		text-shadow: 0px 0px 12px #A9C7f133;
+		brightness: 1.8;
+	}
+	
+}
+
+.StrategyVisible.HeroLoadoutTabVisible .SelectedHeroFacets
+{
+	opacity: 0;
+	transform: translateY( -24px );
+}
+
+.NoVariants .SelectedHeroFacets
+{
+	visibility: collapse;
 }
 
 #EnterBattle
@@ -3341,7 +3568,7 @@ DOTAPreGameTeamItem > #HeroImage
 
 #InventoryStrategyControl
 {
-	margin-top: 46px;
+	margin-top: 25px;
 }
 
 #StartingItemsInventory
@@ -5379,7 +5606,8 @@ DOTAHudPreGame.aghanim #RadiantTeamPlayers .Slot4
 	width: 820px;
 	height: 250px;
 	opacity: 0;
-	transition-property: opacity;
+	transform: translateY( 24px );
+	transition-property: opacity, transform;
 	transition-duration: 0.2s;
 	transition-timing-function: ease-in-out;
 }
@@ -5393,11 +5621,46 @@ DOTAHudPreGame.aghanim #RadiantTeamPlayers .Slot4
 .StrategyVisible.HeroLoadoutTabVisible #SetPreviewControls
 {
 	opacity: 1;
-	transition-delay: 0s;
+	transform: none;
 }
 
 .IsAbilityDraft #SetPreviewControls
 {
 	visibility: collapse;
+}
+
+.AbilityDraftFacets
+{
+	width: fit-children;
+	height: fit-children;
+	horizontal-align: right;
+	background-color: transparent;
+	flow-children: down;
+	margin-left: 16px;
+	vertical-align: top;
+}
+
+.AbilityDraftFacets #HeaderRow
+{
+	width: fit-children;
+	height: fit-children;
+	horizontal-align: center;
+	margin-bottom: 8px;
+	background-color: transparent;
+}
+
+.AbilityDraftFacets #HeaderRow Label
+{
+	text-transform: uppercase;
+}
+
+.NoVariants .SelectedHeroFacets,.NoVariants .AbilityDraftFacets,.AbilityDraftFacets,.IsAbilityDraft .SelectedHeroFacets
+{
+	visibility: collapse;
+}
+
+.IsAbilityDraft .AbilityDraftFacets
+{
+	visibility: visible;
 }
 

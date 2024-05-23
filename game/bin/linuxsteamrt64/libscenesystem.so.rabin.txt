@@ -39,14 +39,13 @@
 0<\tvyH
 0<\tw/H
 0<\tw\nH
+0A;F\b
 0AERROR: Docking is not enabled! See Demo > Configuration
 0A\\A
 0A\\A]A^A
 0Ces-8R
-0G9|0G9|0G9|0G9
 0G??Ou
 0HPX8
-0IǄ$P\r
 0L*S3P
 0L9l$\b
 0LF?H
@@ -62,6 +61,7 @@
 0oneof $1
 0option $1;\n
 0rpc $1($4.$2) returns ($5.$3
+0s0G9|0G9|0G9|0G9|X9
 0x" must be followed by hex digits
 0x%08X "%s" Pos (%d,%d) Size (%d,%d) Collapsed=%d
 0x%08X,%d
@@ -142,7 +142,6 @@
 18C6FaceSkyboxObject
 18CEnvMapSceneObject
 18CMonitorObjectDesc
-18CNETMsg_Disconnect
 18CRenderingPipeline
 18CSceneSkyBoxObject
 18IModelRenderHelper
@@ -152,6 +151,7 @@
 19CDebugLayerRenderer
 19CNETMsg_SignonState
 19CRayTraceSceneWorld
+19CRenderGraphBuilder
 19CRenderingPipelines
 19CScalableAORenderer
 19CSceneMonitorObject
@@ -235,13 +235,13 @@
 25CConCommandMemberAccessorI12CSceneSystemE
 25CEnvMapLightObjectDescGPU
 25CInstancedMeshSceneObject
+25CNETMsg_Disconnect_Legacy
 25CNETMsg_SpawnGroup_Unload
 25CRenderingPipelineFactoryI25CRenderingPipelineForwardE
 25CRenderingPipelineForward
 25CSceneLPVSampleGridObject
 25IRenderingPipelineFactory
 26CAnimatableSceneObjectDesc
-26CHairShadowCatcherRenderer
 26CParallelProcessorAbstractI18CParallelProcessorIP12CSceneObject21CFuncJobItemProcessorIS2_ELi1EEE
 26ICommandCompletionCallback
 27CDirectionalLightObjectDesc
@@ -269,6 +269,7 @@
 3) Or click this button
 3. I am not selectable
 30CDirectionalLightObjectDescGPU
+30CLightProbeVolumeObjectDescGPU
 30CProjectedDecalSceneObjectDesc
 30CSVCMsgList_GameEvents_event_t
 30ISceneLightProbeVolumeListener
@@ -383,11 +384,11 @@
 8CUtlGrid
 8H9C8
 8H9X8
+8H9{8u
 8I#W@t
 8I9}8H
 8LcwpE
 8McD$$A
-8O5u%UH
 8[]A\\A]A^A_ÐAUATI
 8[]A\\A]A^A_ÐAWAVAUATL
 8[]A\\A]A^A_ÐAWAVAUATUSH
@@ -405,7 +406,6 @@
 8]pt\t8]q
 8kEp0F
 8kExPD
-8p5u&H
 8t$HcP
 8wPu\nQ
 8zYuW
@@ -421,10 +421,13 @@
 9HP~>Hk
 9HP~AHc
 9ISequence
+9O0u&UH
 9VS^AF
 9\n\noneof_decl
 9p |\fH
 9p }CI9
+9p(u0H
+9p0u!H
 9p0~$H
 9pP~>Hk
 9pP~AHc
@@ -461,6 +464,7 @@ A9L$Lw
 A9T$l
 A9\\$ u\tA
 A9\\$P~3I
+A9]P~,I
 A9|$\ft
 A9|$\fu
 A:%0.3f
@@ -501,9 +505,7 @@ AO Proxies: %d (%d drawcalls)\n
 AOProxies
 APPSYSTEM: In ConnectInterfaces(), s_nRegistrationCount is %d!\n
 ARAQAPWL
-ARAUAQM
 ARGB8888
-ASAQAPWH
 ASARAPM
 ASARAQAPWH
 ASARAQAPWL
@@ -623,7 +625,7 @@ AWAVSH
 AWAVfA
 AXAYE1
 AXAYu\eL
-AXHǃ8M
+AYHǃxM
 A\\A]A^A_ÐATUH
 A\\A]A^A_ÐATUI
 A\\A]A^A_ÐAUATI
@@ -758,6 +760,7 @@ All primitives
 All those beautiful files will be deleted.\nThis operation cannot be undone!\n\n
 AllHovered: %s
 AllocateRenderTarget: Does not work to pass pOtherView == this!\n
+Allow dynamic BLAS creation for geometry going through the compute shader skinning path
 Allow stationary/dynamic lights to cast shadows
 Allow time-sliced shadow buffer rendering when enabled via gameinfo.gi
 Allow use of dithered lod transitions
@@ -850,7 +853,6 @@ B5G6R5_UNORM
 B8G8R8A8_UNORM
 B8G8R8X8_UNORM
 B:%0.3f
-B@I9C@u
 BBBBBBBB
 BC1_TYPELESS
 BC1_UNORM
@@ -878,7 +880,6 @@ BGRA8888_LINEAR
 BGRX8888
 BGRX8888_LINEAR
 BLAS %d
-BP;APu
 BPUNCTUAL
 BUYbp
 B\bH;F\btMI
@@ -923,7 +924,6 @@ Bias for LOD selection of instanced meshes
 Bias for LOD selection of instanced meshes in shadowmaps
 Bias for size culling instanced meshes in shadowmaps
 Bias for size culling of instanced meshes
-BinCullParams_t
 BinaryProperties_GetValue
 BindBakedLightingInfoInPerViewLightingConstants
 Blah blah blah
@@ -993,6 +993,7 @@ C0Z[]ÐUS
 C0Z[]ÐUSH
 C4;C8
 C6FaceSkyboxObjectDesc
+C8:N4L
 C8D;pXtdL
 C8HcMčp
 C8I+A8
@@ -1004,10 +1005,13 @@ C@I+A@H
 C@I+G
 C@I+G@H
 C@I9B@u
+C@I9C@u
 C@Z[]ÐUSH
 C@[ÐATUH
+C@t3H
 CANCELLED
 CAggregateSceneObject
+CAggregateSceneObjectDesc
 CAmbientOcclusionProxySceneObjectDesc
 CAnimationDecodeContext::AddAnimationDecodeDesc ran out of allocator memory (1)\n
 CAnimationDecodeContext::AddAnimationDecodeDesc ran out of allocator memory (2)\n
@@ -1332,6 +1336,7 @@ CLHcCPD
 CLOSE
 CLightObjectDesc
 CLightProbeVolumeObjectDesc
+CLightProbeVolumeObjectDescGpu
 CMT usage is %.2f percent (%d texels) in %fms\n
 CMTNormalWrinkle
 CMTPositionSpeed
@@ -1345,7 +1350,7 @@ CMsgQuaternion
 CMsgQuaternion"6\n\bCMsgRGBA
 CMsg_CVars.CVar
 CNETMsg_DebugOverlay
-CNETMsg_Disconnect
+CNETMsg_Disconnect_Legacy
 CNETMsg_SetConVar
 CNETMsg_SignonState
 CNETMsg_SpawnGroup_Load
@@ -1444,7 +1449,6 @@ C\b@t\bH
 C\bE9gp
 C\bHc8E
 C\bI9D$\b
-C\bI9D$\bt\a
 C\b[A
 C\b[ÐAUATI
 C\bfD93D
@@ -1534,6 +1538,7 @@ Clamp integers to 0..50
 ClassId=0x%08X\n
 ClassId=0x%X
 Classic
+Clear %s
 Clear nodes
 Clear settings
 ClearField
@@ -1678,6 +1683,7 @@ CubeMapDebugColors
 Cucumber
 CullCameraForwardWs
 CullCameraPositionWs
+CullParams_t
 CullStats
 CullViewIsOrthographic
 CullViewOrigin
@@ -1709,8 +1715,6 @@ CustomTexture2
 Cxf9Cz
 Cycles focus between the game window and undocked imgui windows
 Czf9Cx
-C{CAggregateSceneObjectDesc
-C{QRPH
 D$ A;G
 D$ H9D$(L
 D$ HcE
@@ -1730,6 +1734,7 @@ D$(y\aHc
 D$,PAVj\aH
 D$,PAVj\fH
 D$0Hǅp
+D$0Lck
 D$0v7f
 D$4H)C
 D$8I+E8
@@ -1764,11 +1769,12 @@ D$\bE9l
 D$\bH
 D$\bH+C\bI
 D$\bH9C0tAH
-D$\bH9C\bt\a
+D$\bH9C\bt\n
 D$\bH9l$\b
 D$\bH9l$\bunH
 D$\bHcE
 D$\bHcl
+D$\bI9B\bt\n
 D$\bIcl
 D$\bL
 D$\bL9d
@@ -1852,11 +1858,14 @@ D_ATTACHED_TO_SURFACE
 D_BAKED_LIGHTING_FROM_LIGHTMAP
 D_BAKED_LIGHTING_FROM_PROBE
 D_BAKED_LIGHTING_FROM_VERTEX_STREAM
+D_COLLISION_ENABLED
 D_COMPRESSED_NORMALS_AND_TANGENTS
 D_COMPUTE_TENSION
 D_CULL_NON_MOVING_OBJECTS
 D_DEBUG_DRAW_MESHLETS
 D_DEBUG_OUTPUT_STATS
+D_DRAW_QUADS
+D_ENABLE_INDIRECT
 D_ENABLE_VOLUMETRIC_FOG
 D_FAST_CONSERVATIVE_BOUNDS
 D_FLOAT_INTERMEDIATE_TEXTURES
@@ -1872,7 +1881,6 @@ D_PASS
 D_SCENE_DEPTH_MSAA
 D_SELF_SHADOW
 D_SUBGROUP_SIZE_32
-D_TEMPORAL_INTEGRATE
 D_VARIANT
 D_VISUALIZE_SCENEOBJECTS
 D_VIS_CULLING
@@ -2027,6 +2035,7 @@ Dump the objects in a sceneworld into a 3d geoview buffer (Usage: sc_dumpworld3d
 Dumping Scene World %d: 0x%p '%s': %d objects --\n
 Dynamic Decals
 Dynamic Shadow
+DynamicBLASTriangles
 Dynamically adjust shadow resolution
 E I+D
 E I+G
@@ -2050,6 +2059,8 @@ E9t$\bE
 E9|$ ~AD
 E9}Hv3D
 E9ȉV\f
+E;7r͋S
+E;7rҋS
 E;e }7Mk
 E;eP}4Mk
 E;eh}7M
@@ -2137,6 +2148,7 @@ Error reporting not implemented
 Error while parsing option value for
 Error: View "%s", layer "%s", render target "%s": \nAttempted to bind the back buffers of two different swap chains in a single layer!\n
 Error: View "%s", layer "%s", render target "%s": \n\tAttempted to set up a render target output w/ MSAA %d where the color targets have different MSAA settings %d!\n
+Error: View "%s", layer "%s", render target "%s": \n\tIt is illegal to do a non-MSAA write to a MSAA back buffer or HRenderTexture!\n
 Error: View "%s", layer "%s": \n\tIt is illegal to indicate LAYERFLAGS_DOESNT_MODIFY_COLOR_BUFFERS but also do a color clear or discard!\n
 Error: View "%s", layer "%s": \n\tIt is illegal to indicate LAYERFLAGS_DOESNT_MODIFY_DEPTH_STENCIL_BUFFER but also do a depth/stencil clear or discard!\n
 Error: View "%s", layer "%s": \n\tIt is illegal to indicate LAYERFLAGS_PRESERVE_COLOR_BUFFERS but also do a color clear or use LAYERFLAGS_DISCARD_COLOR_BUFFERS!\n
@@ -2165,9 +2177,11 @@ Examples
 Exceeded compacted draws buffer size [buffer %i, used %i], @peted should implement resizing\n
 Exceeded maximum number of environment maps: %i added to world, %i maximum\n
 Exceeded maximum number visible environment maps: %i, %i maximum\n
+Exceeded maximum number visible lpvs: %i, %i maximum\n
 Exceeding number of envmaps: MAX %i, found %i\n
 Exceeding number of lpvs: MAX %i, found %i\n
 Exceeds Maximum Package Depth
+Exec RenderGraph
 Expanded map entry type
 Expect a decimal number, got
 Expected
@@ -2206,11 +2220,11 @@ Extensions of MessageSets must be optional messages
 Extensions to non-lite types can only be declared in non-lite files.  Note that you cannot extend a non-lite type to contain a lite type, but the reverse is allowed
 ExtractSubrange() when arena is non-nullptr is only supported when
 EȨ@uH\f
-Eؾ-YA1H
-Eؾ6YA1H
 F H9G u
 F ÐAWAVAUATI
-F(H9G(tC
+F(H9G(tT
+F(H9G(tf
+F(H9G(th
 F(H9G(u]H
 F(I;F0sQD
 F8HcX
@@ -2285,6 +2299,7 @@ FileDescriptorProto
 FileDescriptorSet
 Files that do not use optimize_for = LITE_RUNTIME cannot import files which do use this option.  This file is not lite, but it imports
 Files with optimize_for = LITE_RUNTIME cannot define services unless you set both options cc_generic_services and java_generic_services to false
+Fill %s
 Fill Button
 FillAlpha
 FillButton
@@ -2410,9 +2425,9 @@ G@\bt"H
 G@\bt*H
 G@\bt2H
 G@\bt\vH
+GBufferDepth
 GCC: (SteamRT 10.3.0-3+steamrt3.1+bsrt3.1) 10.3.0
 GCC: (SteamRT 5.4.0-7.really.6+steamrt1.2+srt2) 5.4.1 20160803
-GError: View "%s", layer "%s", render target "%s": \n\tIt is illegal to do a non-MSAA write to a MSAA back buffer or HRenderTexture!\n
 GHAUATUL
 GHH+BH
 GLIBC_2.14
@@ -2585,6 +2600,7 @@ GetUInt64
 Ght\tv\vH
 Global Alpha
 GlobalEnvironmentMapConstantBuffer_t
+GlobalStats
 Glt6M
 Glyphs
 Glyphs (%d
@@ -2633,7 +2649,7 @@ H+l$\bL
 H+s\b;s
 H+w\bH9
 H-scrollbar
-H0H;\rz
+H0H;\rb
 H19\b
 H3~?\fY\r
 H9B rv
@@ -2684,6 +2700,8 @@ H9ǉJ,u
 H: %.3f, S: %.3f, V: %.3f
 H: %.3f, S: %.3f, V: %.3f, A: %.3f
 H:%0.3f
+H;=FfS
+H;=Y32
 H;D$HH
 H;E0sR
 H;G t`H;G
@@ -2741,10 +2759,12 @@ H\fA9N\fu
 H\n\f\a\bC\v
 H\tʋL
 Haddock
+Hair Shadow
 HairColorCombo
 HairColorTexture
 HairCountToDensityScale
 HairDensityTexture
+HairDensityVolumeTexture_%i
 HairLengthScale
 HairLightingTexture
 HairRendererManifest
@@ -2753,7 +2773,6 @@ HairShadowTexture
 HairThickness
 HairVolumeTexDim
 Half of available width.\n(~ right-cursor_pos)\n(works within a column set
-HalfVoxelSize
 Hammer/BakeOnlyCubemaps
 Hammer/UsesBakedLighting
 HammerMapLoader001
@@ -2772,6 +2791,7 @@ HcC$Hc
 HcC,Hc
 HcCTHcSP
 HcD$\bH
+HcD00H
 HcE(Lc
 HcE0L
 HcE\b
@@ -2790,6 +2810,9 @@ HcO Hk
 HcQ\fHk
 HcR\bfD
 HcT$(L
+Hc\r@6\e
+Hc\rCGC
+Hc\rdt\e
 Hck HcC$9
 Hck$HcC(9
 Hck(HcC,9
@@ -2832,6 +2855,7 @@ Here we toggle the casing of the first character on every edits + count edits
 Here, all circle data is stored in a single interleaved buffer
 Hex Only
 Hex and octal numbers must be integers
+Hh#p\\H
 Hidden
 HiddenTabBar=%d%n
 HiddenTabBar=1
@@ -2876,6 +2900,7 @@ I am a tooltip
 I am a tooltip over a popup
 I am an odd tab
 I am the last one here
+I#D$8t
 I+D$8I
 I+D$\bH9
 I+D$\bI9
@@ -2886,6 +2911,7 @@ I.w? F
 I9<$vJ
 I9@\bt7
 I9@\bu
+I9C@u
 I9D$8u
 I9Y8tRH
 I9\\$ u@H
@@ -2900,6 +2926,8 @@ IDEMPOTENCY_UNKNOWN
 IDHcy@E
 IF\f2\t
 IIIIIII
+IMAGE_FORMAT_IMC2
+IMAGE_FORMAT_NV12
 IMAGE_FORMAT_R11G11B10_FLOAT
 IMWINDOW
 INTERNAL
@@ -3067,6 +3095,7 @@ In front-to-back order
 In the Advanced demo we override the policy of each column so those table-wide settings have less effect that typical
 In the color list:\nLeft-click on color square to open color picker,\nRight-click to open edit options menu
 In the color list:\nLeft-click on colored square to open color picker,\nRight-click to open edit options menu
+InLightingTexture
 Inactive
 IndentDisable
 IndentEnable
@@ -3088,6 +3117,7 @@ InlayText
 InnerClipRect
 InnerRect
 Input %d: '%s', Oversample: (%d,%d), PixelSnapH: %d, Offset: (%.1f,%.1f
+Input %s %s never created/provided but is used by: %s\n
 Input Assembly Primitives - the number of primitives (triangles) processed by the input assembly stage
 Input Assembly Vertices - the number of vertices processed by the input assembly stage
 Input flags
@@ -3184,12 +3214,12 @@ ItemSpacing
 Items (%d
 Items (1,000 pts each
 I|?ff6
-J(udD;r0u^L9z8u
 J5`!gF
-J@L;\r1g1
+J@I9K
 JDHcr@E
 JDLcB@E
 JSType
+J\b[A
 J\n NETWORK_DISCONNECT_SNAPSHOTERROR
 J\n'NETWORK_DISCONNECT_DISCONNECT_BY_SERVER
 J\n\eENetworkDisconnectionReason
@@ -3201,8 +3231,8 @@ Joint Indices (%d) Out Of Range for UINT10: Skinning will not work!\n
 Joint Indices (%d) Out Of Range for UINT8: Skinning will not work!\n
 K'D#c
 K(Ic0L
+K0D;K@teH
 K=Other
-K@I9J@uHM
 KC\f\vD$LD
 KE(;E
 KKKKKKK
@@ -3278,7 +3308,7 @@ L9t$ t9H
 L9t$\bM
 L9v ~FL
 L9|$(tLL
-L;%\f4R
+L;%\rgS
 L;4$t0A
 L;4$toM
 L;4$trM
@@ -3356,17 +3386,17 @@ LegendText
 Lettuce
 Light Bounds Debugger
 Light Cookies
+LightBinnerGpuTileSizePixels
 LightCookieTexture
 LightProbeVolumeDebugColors
 LightProbeVolumeDebugColors_%s
-LightProbeVolumeDesc
 LightSim_Albedo
 LightSim_DiffuseAlbedoTexture
 LightSim_Opacity
 LightSim_Opacity_A
 LightmapUV
 LightmapUVW
-Lights in view (unshadowed+shadowed): %d+%d omni, %d+%d spot, %d+%d barn %d env\n
+Lights in view (unshadowed+shadowed): %d+%d omni, %d+%d spot, %d+%d barn %d env %d lpv\n
 Like this one
 Line %d
 Line %d Column %d
@@ -3516,6 +3546,8 @@ Max: %.1f
 Max: %.2f
 Max: %d units
 Max: (%.2f, %.2f
+MaxRootBoneAngularSpeed
+MaxRootBoneSpeed
 MaxThreadGroups
 MaybeAllocateAligned cannot fail here
 Mc,$E;l
@@ -3525,6 +3557,7 @@ Mcd$pH
 Mcl$\bE
 Mcl$xE
 Mct$\bE
+Mct$`H
 Mc҉W\bC
 MemAlloc_StrDupFunc
 Menu inside a regular window
@@ -3542,6 +3575,7 @@ Meshbuilder2
 Meshbuilder2IndexData
 Meshbuilder2VertexData
 Meshes: %d
+MeshletData
 MeshletIndexCopyLoops
 Message class
 Message does not support reflection (type
@@ -3641,8 +3675,8 @@ MyPopup
 MyStr
 MyTabBar
 MċE\tK\b9
-N H9O uRH
-N(H9O(u\\H
+N H9O uBI
+N(H9O(uLH
 N(H9O@uI
 N-gon sides
 N10__cxxabiv115__forced_unwindE
@@ -3659,10 +3693,26 @@ N12_GLOBAL__N_117io_error_categoryE
 N12_GLOBAL__N_121system_error_categoryE
 N12_GLOBAL__N_122generic_error_categoryE
 N19CRayTraceSceneWorld9CPipelineE
+N19CRenderGraphBuilder12NopGraphPassE
+N19CRenderGraphBuilder15FillCBGraphPassE
+N19CRenderGraphBuilder16ClearRTGraphPassE
+N19CRenderGraphBuilder17DispatchGraphPassE
+N19CRenderGraphBuilder19FillBufferGraphPassE
+N19CRenderGraphBuilder20CRenderGraphRendererE
+N19CRenderGraphBuilder21ClearUAVUintGraphPassE
+N19CRenderGraphBuilder21IGraphResourceManagerE
+N19CRenderGraphBuilder22ClearUAVFloatGraphPassE
+N19CRenderGraphBuilder22SetBufferDataGraphPassE
+N19CRenderGraphBuilder23ReadbackBufferGraphPassE
+N19CRenderGraphBuilder27PooledBufferResourceManagerE
+N19CRenderGraphBuilder28PooledTextureResourceManagerE
+N19CRenderGraphBuilder34ScratchRenderTargetResourceManagerE
+N19CRenderGraphBuilder4PassE
+N19CRenderGraphBuilder9GraphPassE
 N19IRayTraceSceneWorld9IPipelineE
 N23CCharacterDecalRenderer26CCharacterDecalSceneObjectE
 N23CCharacterDecalRenderer27CCharacterDecalRendererDescE
-N24CParallelProcessLauncher18CParallelLambdaJobIZ11ParallelForILb1EZN25CAggregateSceneObjectDesc21OnBeginRenderingFrameEvEUliE_EviiPKcT0_iii13JobPriority_tEUliE_EE
+N24CParallelProcessLauncher18CParallelLambdaJobIZ11ParallelForILb1EZN25CAggregateSceneObjectDesc21OnBeginRenderingFrameEvEUliE_EviiPKcT0_ii13JobPriority_tEUliE_EE
 N24CParallelProcessLauncher18CParallelLambdaJobIZN12CSceneSystem15Thread_CullViewEP10CSceneViewP13CViewDrawListEUliE_EE
 N6google8protobuf10TextFormat17BaseTextGeneratorE
 N6google8protobuf10TextFormat17FieldValuePrinterE
@@ -3916,7 +3966,6 @@ NavWindowingList
 NavWindowingTarget: '%s
 Need space between identifier and decimal point
 Need space between number and identifier
-NeedsLightProbe
 NeedsStaticLPV
 Nested tables
 NetworkClientService_001
@@ -3994,7 +4043,7 @@ Notes
 November
 NumCullRequests
 NumFragments
-NumKeysIndex
+NumKeysBuffer
 NumRequests
 Number of cascades in sunlight shadow
 Number of contexts created
@@ -4073,7 +4122,6 @@ OrthoLight
 OrthographicView
 Other
 Out Mem
-OutLightingFroxelTexture
 OutScatteringTexture
 Outdent() without matching Indent
 Outer size
@@ -4086,10 +4134,12 @@ Output flags
 OutputIndices
 Outside
 Overlapping
+OverlayProjectionDirection
 Override CSM cross fade amount
 Override CSM distance fade
 Override Cascades that will render static objects with lb_csm_override_staticgeo_cascades_value
 Override Streaming GPU Memory
+Override bulb radius for CSM
 Override default setting for HDR rendering. -1 default, 0 NoHdr, 1 Hdr, 2 Hdr 1010102 3 Hdr 111110
 Override height of shadow atlas texture
 Override maximum visible barn lights
@@ -4104,21 +4154,21 @@ Owned
 OwnedByApp
 P A9\\$\bI
 P HcC
-P Hǃ8M
-P HǃPM
+P Hǃ@O
 P HǃXN
-P HǃpM
-P HǃpN
-P HǃxB
+P HǃXO
+P Hǃ\b
+P HǃxM
 P IcD
+P IǄ$0
 P IǄ$8
 P IǄ$P
 P IǄ$X
 P IǄ$h
 P IǄ$h\b
-P IǄ$pM
 P IǄ$x
-P IǅXd
+P Iǅ8h
+P Iǅxd
 P(HcH0M
 P(Lcd$\bL
 P*u?H
@@ -4138,6 +4188,7 @@ PERMISSION_DENIED
 PFvP12CSceneObjectE
 PH9x\b
 PH;k u'H
+PHcK`Ic
 PL;c u'H
 PLACEHOLDER_VALUE
 PRESS SPACE TO DISABLE
@@ -4146,8 +4197,8 @@ PSInvocations
 P[]A\\ÐAWAVAUATI
 P\b)SHH
 P\bH9F\b
-P\bHcCPH
 P\bHcG0Hk
+P\bIcFPH
 P\bu\nH
 P\n#NETWORK_DISCONNECT_BADRELAYPASSWORD
 P\n#NETWORK_DISCONNECT_RELIABLEOVERFLOW
@@ -4295,8 +4346,10 @@ Protocol Buffer map usage error:\n
 Protocol Buffer reflection usage error:\n  Method      : google::protobuf::Reflection
 Px[]A
 QDHcy@E
+QFullCurrFrameFromPrevFrame
 QHcK0Ic
 QHcK8Ic
+QWorldFromObj
 Q\n&NETWORK_DISCONNECT_REJECT_BADCHALLENGE
 Q\n&NETWORK_DISCONNECT_TEMPENTMSG_OVERFLOW
 Q\n*NETWORK_DISCONNECT_CLIENT_CONSISTENCY_FAIL
@@ -4399,6 +4452,7 @@ RGBA32323232F
 RGBA32323232_UINT
 RGBA8888
 RGBA8888_LINEAR
+RGBA8888_UINT
 RGBX8888
 R\e \e1
 RandomFloat
@@ -4415,6 +4469,7 @@ Reached impossible case in HasBit
 Reached maximum recursion limit for nested messages
 Read FAQ and docs/FONTS.md for details on font loading
 Read the FAQ at http://www.dearimgui.org/faq
+ReadbackBuffer
 Realtime Plots
 Rebuild
 Rebuild all
@@ -4556,6 +4611,7 @@ SAPu,H
 SCROLLX
 SCROLLY
 SDr3Y
+SH9W8H
 SHIFT
 SHcGhH
 SHcGxH
@@ -4616,6 +4672,7 @@ Scatter
 Scatter Plot
 Scatter Plots
 Scene World %3d: 0x%p %40s [%4d objects
+SceneDepth
 SceneGfxResources_RayTracing
 SceneLPVDebugGridObjectDesc
 SceneLPVDebugGridObjectVB
@@ -4648,12 +4705,14 @@ SceneSystem/FrameBufferCopyFormat
 SceneSystem/GPU Profiler
 SceneSystem/GpuLightBinner
 SceneSystem/GpuLightBinnerBinEnvMaps
+SceneSystem/GpuLightBinnerBinLPVs
 SceneSystem/GpuLightBinnerSupportViewModelCascade
 SceneSystem/HDRFrameBuffer
 SceneSystem/LayerBatchThreshold
 SceneSystem/LayerBatchThresholdFullsort
-SceneSystem/LightBinner/Debug Dynamic Shadow Atlas
 SceneSystem/LightBinner/Debug Light Bounds
+SceneSystem/LightBinner/Debug Shadow Atlas
+SceneSystem/LightBinner/Debug ShadowTile Atlas
 SceneSystem/LightBinner/Debug Silhouettes
 SceneSystem/LightBinner/Debug Tiles
 SceneSystem/LightBinner/Debug Visualize Shadowed Lights
@@ -4717,7 +4776,6 @@ ScrollbarSize
 Scrolling
 Scrolling Text %d
 ScrollingRegion
-SdfAtlas
 SdfCollisionConstants
 Second argument to Swap() (of type
 Second argument to SwapFields() (of type
@@ -4730,7 +4788,7 @@ See the ShowDemoWindow() code in imgui_demo.cpp. <- you are here
 See the ShowDemoWindow() code in implot_demo.cpp. <- you are here
 SegmentCount
 SegmentIndexBuffer
-SegmentsPerGroup
+SegmentsPerStrand
 Select
 Selectable
 Selectable (span row
@@ -4766,6 +4824,7 @@ Set to zero
 SetAllocatedMessage
 SetBool
 SetColorEditOptions() is designed to allow you to set boot-time default.\nWe don't have Push/Pop functions because you can force options on a per-widget basis if needed,and the user can change non-forced ones with the options menu.\nWe don't have a getter to avoidencouraging you to persistently save values that aren't forward-compatible
+SetContents %s
 SetDouble
 SetEnum
 SetFloat
@@ -4817,6 +4876,9 @@ ShadowDe
 ShadowDeH
 ShadowMapMaxSize
 ShadowMapSizeQuantization
+ShadowTile Atlas Debugger
+ShadowTiles: %02i%% lights used, %s conservative, %s final\n
+ShadowTiles: %02i%% tiles used, %s all lit, %s all shadow, %s penumbra\n
 Shape %i\nStrength %.2f\nExponent %.2f
 Short Text
 Should not reach here
@@ -4854,10 +4916,12 @@ Signal 2
 Signal 3
 SignonState_t
 SimBuffer
+SimStrandsPerGroup
+SimThreadsPerGroup
+SimThreadsPerStrand
 Simple overlay\nin the corner of the screen.\n(right-click to change position
 SimplePostProcessingLayer
 Simplified docking mode: disable window splitting, so docking is limited to merging multiple windows together into tab-bars
-SimulatedSegmentsPerStrand
 Single call to TextUnformatted
 Size all columns to default###SizeAll
 Size all columns to fit###SizeAll
@@ -5025,6 +5089,7 @@ St21__ctype_abstract_baseIcE
 St21__ctype_abstract_baseIwE
 St23_Sp_counted_ptr_inplaceI10CUtlVectorI20CMeshDrawPrimitive_ti10CUtlMemoryIS1_iEESaIS4_ELN9__gnu_cxx12_Lock_policyE2EE
 St23_Sp_counted_ptr_inplaceI13CViewDrawListSaIS0_ELN9__gnu_cxx12_Lock_policyE2EE
+St23_Sp_counted_ptr_inplaceI19CRenderGraphBuilderSaIS0_ELN9__gnu_cxx12_Lock_policyE2EE
 St23_Sp_counted_ptr_inplaceI23CSceneViewDebugOverlaysSaIS0_ELN9__gnu_cxx12_Lock_policyE2EE
 St23_Sp_counted_ptr_inplaceINSt8__detail4_NFAISt12regex_traitsIcEEESaIS4_ELN9__gnu_cxx12_Lock_policyE2EE
 St23__codecvt_abstract_baseIDiDu11__mbstate_tE
@@ -5033,6 +5098,7 @@ St23__codecvt_abstract_baseIDsDu11__mbstate_tE
 St23__codecvt_abstract_baseIDsc11__mbstate_tE
 St23__codecvt_abstract_baseIcc11__mbstate_tE
 St23__codecvt_abstract_baseIwc11__mbstate_tE
+St23enable_shared_from_thisI19CRenderGraphBuilderE
 St25__codecvt_utf8_utf16_baseIDiE
 St25__codecvt_utf8_utf16_baseIDsE
 St25__codecvt_utf8_utf16_baseIwE
@@ -5099,7 +5165,6 @@ StrandCullThreshold
 StrandDepth
 StrandIB
 StrandVB
-StrandsPerGroup
 StrandsPerTextureRow
 Strawberry
 Streamed
@@ -5310,7 +5375,6 @@ Threshold of indirect draws when we will do compaction
 Thursday
 Tick Labels
 Tick Marks
-TileCullParams_t
 Tilefish
 Time Formatted Axes
 Time Series
@@ -5399,6 +5463,7 @@ U(;U,}fLc
 U+%04X..U+%04X (%d %s
 U8^aUR
 UH.f}ᨐ2
+UHcGPI
 UNAUTHENTICATED
 UNAVAILABLE
 UNHIDE
@@ -5487,7 +5552,6 @@ UtlMemory_CalcNewAllocationCount
 UtlMemory_FailedAllocation
 V(B8\f2
 V(I;V0s
-V09W0t
 V:%0.3f
 VApplication001
 VAsyncFileSystem2_001
@@ -5627,11 +5691,13 @@ View2
 Viewport #%d, ID: 0x%08X, FrontMostStampCount = %08d, Window: "%s
 Viewport #%d, ID: 0x%08X, Parent: 0x%08X, Window: "%s
 Viewport: %d%s, ViewportId: 0x%08X, ViewportPos: (%.1f,%.1f
+ViewportHeight
 ViewportId=0x%08X
 ViewportId=0x%08X\n
 ViewportMonitor: %d
 ViewportPos=%d,%d\n
 ViewportPos=%i,%i
+ViewportWidth
 ViewportWidthForLOD
 Viewports (%d
 ViewportsEnable
@@ -5646,8 +5712,11 @@ VisualizeSceneObjectsMode
 Voltage
 VolumeMaxs
 VolumeMins
+VolumetricFogConstantBuffer_t
 VolumetricFogManifest
 VolumetricFogVolumes
+VoxSFromSs
+VoxSFromWs
 VoxelSpaceFromWorldSpace
 Vrad3_001
 Vs>b*w2
@@ -5767,6 +5836,7 @@ XContext
 XIcE\b1
 XXXXXXX-    X    -           X           -XXXXXXX          -          XXXXXXX-     XX          ..-         -X.....X-   X.X   -          X.X          -X.....X          -          X.....X-    X..X         ---         -XXX.XXX-  X...X  -         X...X         -X....X           -           X....X-    X..X         X           -  X.X  - X.....X -        X.....X        -X...X            -            X...X-    X..X         XX          -  X.X  -X.......X-       X.......X       -X..X.X           -           X.X..X-    X..X         X.X         -  X.X  -XXXX.XXXX-       XXXX.XXXX       -X.X X.X          -          X.X X.X-    X..XXX       X..X        -  X.X  -   X.X   -          X.X          -XX   X.X         -         X.X   XX-    X..X..XXX    X...X       -  X.X  -   X.X   -    XX    X.X    XX    -      X.X        -        X.X      -    X..X..X..XX  X....X      -  X.X  -   X.X   -   X.X    X.X    X.X   -       X.X       -       X.X       -    X..X..X..X.X X.....X     -  X.X  -   X.X   -  X..X    X.X    X..X  -        X.X      -      X.X        -XXX X..X..X..X..XX......X    -  X.X  -   X.X   - X...XXXXXX.XXXXXX...X -         X.X   XX-XX   X.X         -X..XX........X..XX.......X   -  X.X  -   X.X   -X.....................X-          X.X X.X-X.X X.X          -X...X...........XX........X  -  X.X  -   X.X   - X...XXXXXX.XXXXXX...X -           X.X..X-X..X.X           - X..............XX.........X -XXX.XXX-   X.X   -  X..X    X.X    X..X  -            X...X-X...X            -  X.............XX..........X-X.....X-   X.X   -   X.X    X.X    X.X   -           X....X-X....X           -  X.............XX......XXXXX-XXXXXXX-   X.X   -    XX    X.X    XX    -          X.....X-X.....X          -   X............XX...X..X    ---------   X.X   -          X.X          -          XXXXXXX-XXXXXXX          -   X...........X X..X X..X   -       -XXXX.XXXX-       XXXX.XXXX       -------------------------------------    X..........X X.X  X..X   -       -X.......X-       X.......X       -    XX           XX    -           -    X..........X XX    X..X  -       - X.....X -        X.....X        -   X.X           X.X   -           -     X........X        X..X          -  X...X  -         X...X         -  X..X           X..X  -           -     X........X         XX           -   X.X   -          X.X          - X...XXXXXXXXXXXXX...X -           -     XXXXXXXXXX  ------------        -    X    -           X           -X.....................X-           ------------------                    ----------------------------------- X...XXXXXXXXXXXXX...X -                                                                                   -  X..X           X..X  -                                                                                   -   X.X           X.X   -                                                                                   -    XX           XX
 XYZ[\\`dh
+XZIcG0H
 X[]A\\A]A^A_ÐAWAVAUATL
 X[]A\\A]A^A_ÐAWAVAUATUS1
 X[]A\\A]A^A_ÐAWAVAUATUSH
@@ -5796,6 +5866,7 @@ Y-Axis 2
 Y-Axis 3
 Y. q\n\f\a\bA\v
 Y@6IImGui
+YA1E1
 YA1SH
 YAxis2
 YAxis3
@@ -6069,7 +6140,6 @@ ZN13CBufferString12SetExtensionEPKcb
 ZN13CBufferString13AppendFormatVEPKcP13__va_list_tag
 ZN13CBufferString13FixupPathNameEc
 ZN13CBufferString5PurgeEi
-ZN13CBufferString6ConcatEPKcS1_z
 ZN13CBufferString6FormatEPKcz
 ZN13CBufferString6InsertEiPKcib
 ZN13CBufferString6SetPtrEPciibb
@@ -8297,6 +8367,7 @@ ZNSt14overflow_errorC2ERKSs
 ZNSt14overflow_errorD0Ev
 ZNSt14overflow_errorD1Ev
 ZNSt14overflow_errorD2Ev
+ZNSt15_Sp_counted_ptrIDnLN9__gnu_cxx12_Lock_policyE2EE10_M_disposeEv
 ZNSt15basic_streambufIcSt11char_traitsIcEE10pubseekoffElSt12_Ios_SeekdirSt13_Ios_Openmode
 ZNSt15basic_streambufIcSt11char_traitsIcEE10pubseekposESt4fposI11__mbstate_tESt13_Ios_Openmode
 ZNSt15basic_streambufIcSt11char_traitsIcEE12__safe_gbumpEl
@@ -8508,6 +8579,7 @@ ZNSt15underflow_errorC2ERKSs
 ZNSt15underflow_errorD0Ev
 ZNSt15underflow_errorD1Ev
 ZNSt15underflow_errorD2Ev
+ZNSt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE2EE10_M_destroyEv
 ZNSt16__numpunct_cacheIcE8_M_cacheERKSt6locale
 ZNSt16__numpunct_cacheIcEC1Em
 ZNSt16__numpunct_cacheIcEC2Em
@@ -10761,6 +10833,7 @@ ZnamSt11align_val_tRKSt9nothrow_t
 ZnwmRKSt9nothrow_t
 ZnwmSt11align_val_t
 ZnwmSt11align_val_tRKSt9nothrow_t
+Zoom %f\n
 ZÐATUI
 ZÐATUSH
 ZÐAUATI
@@ -10768,13 +10841,14 @@ ZÐAVAUATUI
 a protocol buffer. Use the 'bytes' type if you intend to send raw bytes
 a<#viD
 a<~u I
+aAXƃlM
 aH9G\bt
 aH9G\bt:H9S\bu
 aH9G\bt\v
 aH9G\bu
 aH;G\bH
 aH;G\bSs
-aIǄ$HO
+aIǄ$hO
 aY\a@\aR
 aaa1.c
 aaa2.cpp
@@ -10814,6 +10888,7 @@ array: %u elements
 assert_fail
 asterisk
 at'H9U
+at4E1
 atpUSH
 avg %f
 avg lum: average scene luminance, calculated using average of pixels that fall within\nmat_tonemap_force_log_lum_min, mat_tonemap_force_log_lum_max.\n(defaults 0.5,0.5 so average is half of pixels either side
@@ -10833,8 +10908,11 @@ b?,eY
 b@80u
 b@UUUUUU
 bA8^nA
+bA9;t
 bASARWH
 bAUATUSH
+bAVAUATI
+bAVAUI
 bA\\A]A
 bBQ]H"l\t
 bD$/u)H
@@ -10849,13 +10927,13 @@ bH;l$\b
 bHcD$4
 bI9D$\b
 bI9\\$8u
+bIcN0A
 bIcV8H
 bL$HH;G
 bLc/E
 bLc7HcW
 bLcoXE
 bLcohE
-bMcE\fA
 bNdFbNdFbNdFbNdF
 bPHhFQ\n
 bReflectDynamicObjectsOnly
@@ -10966,7 +11044,6 @@ cannot create std::vector larger than max_size
 cannot determine missing fields for lite message
 canvas
 carriage-return
-castshadowmode
 cc_enable_arenas
 cc_generic_services
 ccc1.c
@@ -11027,7 +11104,6 @@ const google::protobuf::internal::ExtensionSet::KeyValue* google::protobuf::inte
 const string& google::protobuf::UnknownField::length_delimited() const
 const_cast
 construction vtable for
-contactshadow
 contains invalid UTF-8 data when
 contains null character
 copy_rt
@@ -11220,6 +11296,7 @@ e#GameUI_Disconnect_SteamVAC
 e#GameUI_Disconnect_TimedOut
 e#GameUI_ServerRequireSteams
 e#Valve_Reject_Single_Player
+eHcK0Ic
 e\n\f\a\bD\vb
 e\n\f\a\bD\vc
 edit me
@@ -11336,6 +11413,7 @@ fffffД@fffff
 fflush
 field number
 fileno
+fillcb
 filmic curve\n           linear scale\n(whitepoint scaled to 1.0
 filmic curve\n (log scale
 fini_array
@@ -11343,6 +11421,11 @@ fish_hat.c
 fish_hat.h
 fish_hat.inl
 flags3
+flc_columns
+flc_count
+flc_file_ids
+flc_file_list
+flc_lines
 float (indented)##1b
 float (indented)##2b
 float (indented)##3b
@@ -11396,6 +11479,7 @@ g_globalLateBoundBindlessSet
 g_lightBinnerGpuSet
 g_pMemAlloc
 g_pThreadPool
+g_tLastFrameFogVolume
 gcc_except_table
 gcclibcxx_demangle_callback
 generatecullrequests
@@ -11573,6 +11657,7 @@ hairquadindexbuffer
 hairsegmentdepth
 hairsegmentindexbuffer
 hairshadingatlas
+hairsim_force_fixed_timestep
 hairsim_reset
 hairsimvelocityvolume
 has no field named
@@ -11605,7 +11690,6 @@ i textures
 i tiles used, %i tiles rendered, %i tiles recycled, %i failed in %ix%i atlas
 i)H\e
 i>Label Layer</i
-iHc\r"0E
 i] %s %s\n
 iconv_close
 iconv_open
@@ -11788,6 +11872,7 @@ lb_csm_distance_fade_override
 lb_csm_draw_alpha_tested
 lb_csm_draw_translucent
 lb_csm_fov_override
+lb_csm_override_bulb_radius
 lb_csm_override_staticgeo_cascades
 lb_csm_override_staticgeo_cascades_value
 lb_csm_receiver_plane_depth_bias
@@ -11796,6 +11881,7 @@ lb_cubemap_normalization_max
 lb_cubemap_normalization_roughness_begin
 lb_debug_light_bounds
 lb_debug_shadow_atlas
+lb_debug_shadowtile_atlas
 lb_debug_silhouette
 lb_debug_tiles
 lb_debug_visualize_shadowed_lights
@@ -11874,6 +11960,7 @@ longeeer
 lowprecisionuv
 lowprecisionuv1
 lseek64
+m8L;-\n
 mQNr7
 m\bu\eH9
 m\n\f\a\bE\vc\n\f\a\bB\v
@@ -11890,9 +11977,9 @@ m_Targets
 m_TextureId
 m_ViewName
 m_Views
+m_bBakedTwoSided
 m_bBonesInWorldSpace
 m_bCanBatchWithDynamicShaderConstants
-m_bDisableSmoothVertexCacheNormals
 m_bDrawLast
 m_bHasBakedLightingFromLightMap
 m_bHasBakedLightingFromVertexStream
@@ -12059,7 +12146,6 @@ min, max scale: min/max exposure scale clamps, set using min/max exposure bright
 min_client_limit
 min_row_height = %.2f
 mindate
-minroughness
 mintime
 mktime
 model_default_preview_sequence_name
@@ -12249,7 +12335,7 @@ n\vsource_file
 n\vspawn_count
 negative_int_value
 net_DebugOverlay
-net_Disconnect
+net_Disconnect_Legacy
 net_SignonState
 net_SpawnGroup_Load
 net_SpawnGroup_LoadCompleted
@@ -12289,6 +12375,7 @@ number
 number-sign
 nxnstripped
 nƾ3YA1
+n˾/YA1
 nΨ t f
 nϨ t(f
 o(Lcw I
@@ -12305,6 +12392,7 @@ o\bATUSH
 o\bA]A
 o\bE9l$\bE
 o\bM+/H
+o\fwӺ\f
 o\n\f\a\bD\vv\n\f\a\bB\vD
 o`ATUH
 objc_class_prefix
@@ -12327,14 +12415,13 @@ outer_child
 outer_size
 output specified is nullptr
 output_type
-p0A9w0u
-p8I9w8
+p0A9v0u
+p8I9v8
 p<0tUw
 pDHcH
 pH;|$Pt
 pObj->HasFlags( SCENEOBJECTFLAG_DELETED
 pObj->IsDeleted
-p\bI9w\bt\f
 p\fA8uxuǋx
 p\n\f\a\bA\v
 p\vA9^\bv2Lc
@@ -12386,7 +12473,6 @@ preserveColorBuffers
 prev layer not found
 preview
 previewbaked
-previewindexed
 previewing_picker
 previous
 printf_chk
@@ -12543,6 +12629,7 @@ roughness for LPV debug grid
 row bg target
 row bg type
 row_min_height
+rtx_dynamic_blas
 rtx_force_default_hitgroup
 rtx_random_samples.vtex
 r̤9ϔwl
@@ -12700,8 +12787,8 @@ scenesysDodecahedron
 scenesysPyramid
 scenesystem
 scenesystem.cpp
-scenesystem.cpp(5323): Expecting 1 renderable pass for material "%s" but found %d!\n
-scenesystem.cpp:3444
+scenesystem.cpp(5331): Expecting 1 renderable pass for material "%s" but found %d!\n
+scenesystem.cpp:3452
 scenesystemdebug
 scenesysteminstancedata
 scenesystemtransformdata
@@ -12731,7 +12818,6 @@ setvbuf
 sfixed32
 sfixed64
 shaded pass
-shadowmapsize
 shd %i
 show_headers
 show_table_rects_type
@@ -12918,6 +13004,7 @@ t$\b~KH
 t$\f9t$\b
 t$\ftDH
 t$pIcT$h
+t%HcA0H
 t%HcC H
 t%L92u
 t%L; u
@@ -12945,6 +13032,7 @@ t5HcCh
 t5L;"u
 t6Hc>;{\f}.HcK\bH
 t6Lc\aD;C\f}-HcK\bH
+t7L9 u
 t7L9(u
 t8HcCh
 t9<\at5L
@@ -12953,6 +13041,7 @@ t=HcS H
 t=IcF L
 t>vTU
 tALc"D9b
+tBL;%U
 tC\f~iL
 tD333
 tEXx!H
@@ -12960,6 +13049,7 @@ tFIcU`H
 tGH9\bu
 tGL9 u
 tGL90u
+tIIcN\bM
 tJHcC
 tKATUH
 tKHcC(L
@@ -12991,7 +13081,6 @@ tYAVAUATUSL
 tYIcN\bM
 tYL97u
 t[ATUH
-t\\Hc\r4o
 t\aH9p\bu
 t\aH;0u
 t\aI;D$(u
@@ -13031,7 +13120,6 @@ t\nH;w
 t\nI;x
 t\nL9r8
 t\nM9}0
-t\n[A
 t\n\v../public/tier0/utlrbtree.h
 t\rH;0u
 t\rIc
@@ -13051,6 +13139,7 @@ t\tviewport TopLeftX: %d TopLeftY: %d Width: %d Height: %d\n
 t\v9q H
 t\vL;#tGH
 t\vM9l$0
+t\v[A
 taHct$\b
 ta\n\f\a\bA\v
 table
@@ -13168,6 +13257,7 @@ this is a 300-wide button
 this is a tree node
 throw
 tiATUL
+tile cull items
 timegm
 timestampmgr.cpp
 tint_color
@@ -13181,6 +13271,7 @@ tools.toolsmaterial
 toupper
 towlower_l
 towupper_l
+tqHc\r
 tr><td><b>Excluded obj flags</b></td><td>0x%llx</td
 tr><td><b>Frustum Override Count</b></td><td>%d</td></tr
 tr><td><b>Required obj flags</b><td>0x%llx</td
@@ -13189,22 +13280,22 @@ tr><td><b>m_flTonemapScaleOveride</b></td><td>%.3f</td></tr
 tr><td><b>m_nClearFlags</b></td><td>0x%x</td
 tr><td><b>m_nLayerFlags</b></td><td>0x%llx</td
 tr><td><b>m_nObjectMatchID</b></b></td><td>0x%x</td></tr
-tr><td><b>m_viewConstantBufferData.m_flFarPlane</b></td><td>%.3f</td></tr
-tr><td><b>m_viewConstantBufferData.m_flFogExponent</b></td><td>%.3f</td></tr
-tr><td><b>m_viewConstantBufferData.m_flFogMaxDensity</b></td><td>%.3f</td></tr
-tr><td><b>m_viewConstantBufferData.m_flInvFogRange</b></td><td>%.3f</td></tr
-tr><td><b>m_viewConstantBufferData.m_flNearPlane</b></td><td>%.3f</td></tr
-tr><td><b>m_viewConstantBufferData.m_flNegFogStartOverFogRange</b></td><td>%.3f</td></tr
-tr><td><b>m_viewConstantBufferData.m_flTime</b></td><td>%.3f</td></tr
-tr><td><b>m_viewConstantBufferData.m_flToneMapScalarLinear</b></td><td>%.3f</td></tr
-tr><td><b>m_viewConstantBufferData.m_flViewportMaxZ</b></td><td>%.3f</td></tr
-tr><td><b>m_viewConstantBufferData.m_flViewportMinZ</b></td><td>%.3f</td></tr
-tr><td><b>m_viewConstantBufferData.m_vCameraDirWs</b></td><td>[%.3f %.3f %.3f]</td></tr
-tr><td><b>m_viewConstantBufferData.m_vCameraPositionWs</b></td><td>[%.3f %.3f %.3f]</td></tr
-tr><td><b>m_viewConstantBufferData.m_vCameraUpDirWs</b></td><td>[%.3f %.3f %.3f]</td></tr
-tr><td><b>m_viewConstantBufferData.m_vClipPlane0</b></td><td>[%.3f %.3f %.3f %.3f]</td></tr
-tr><td><b>m_viewConstantBufferData.m_vFogColor</b></td><td>[%.3f %.3f %.3f]</td></tr
-tr><td><b>m_viewConstantBufferData.m_vInvProjRow3</b></td><td>[%.3f %.3f %.3f %.3f]</td></tr
+tr><td><b>m_viewConstantBufferData.g_flFarPlane</b></td><td>%.3f</td></tr
+tr><td><b>m_viewConstantBufferData.g_flFogExponent</b></td><td>%.3f</td></tr
+tr><td><b>m_viewConstantBufferData.g_flFogMaxDensity</b></td><td>%.3f</td></tr
+tr><td><b>m_viewConstantBufferData.g_flInvFogRange</b></td><td>%.3f</td></tr
+tr><td><b>m_viewConstantBufferData.g_flNearPlane</b></td><td>%.3f</td></tr
+tr><td><b>m_viewConstantBufferData.g_flNegFogStartOverFogRange</b></td><td>%.3f</td></tr
+tr><td><b>m_viewConstantBufferData.g_flTime</b></td><td>%.3f</td></tr
+tr><td><b>m_viewConstantBufferData.g_flToneMapScalarLinear</b></td><td>%.3f</td></tr
+tr><td><b>m_viewConstantBufferData.g_flViewportMaxZ</b></td><td>%.3f</td></tr
+tr><td><b>m_viewConstantBufferData.g_flViewportMinZ</b></td><td>%.3f</td></tr
+tr><td><b>m_viewConstantBufferData.g_vCameraDirWs</b></td><td>[%.3f %.3f %.3f]</td></tr
+tr><td><b>m_viewConstantBufferData.g_vCameraPositionWs</b></td><td>[%.3f %.3f %.3f]</td></tr
+tr><td><b>m_viewConstantBufferData.g_vCameraUpDirWs</b></td><td>[%.3f %.3f %.3f]</td></tr
+tr><td><b>m_viewConstantBufferData.g_vClipPlane0</b></td><td>[%.3f %.3f %.3f %.3f]</td></tr
+tr><td><b>m_viewConstantBufferData.g_vFogColor</b></td><td>[%.3f %.3f %.3f]</td></tr
+tr><td><b>m_viewConstantBufferData.g_vInvProjRow3</b></td><td>[%.3f %.3f %.3f %.3f]</td></tr
 trailing_comments
 transaction_safe
 transformbuffer
@@ -13234,6 +13325,7 @@ tzAWAVAUATA
 t{L;3w
 tʈPd뻐UH
 tʉP\bD
+tʋ=G\bC
 tˋC\f;C\b
 tЈGۋF܉G
 u/H#D
@@ -13247,6 +13339,7 @@ uAIǄ$p
 uE[A\\A]A
 uF_iM,E
 uFn\e_rG
+uGL;%5
 uHHcG01
 uLHcG01
 uP[A\\A]A
@@ -13257,17 +13350,23 @@ u\bA\\A
 u\b[A
 u\eI9
 u\f;r\bA
-u\fIǄ$pA
+u\fIǄ$8N
+u\fIǄ$H
+u\fIǄ$X
 u\f[A
 u\nE;w
 u\n[A
+u\rI9
 u\tAƄ$S
 u\tHcD
 u\t[A
-u\vHǃXO
-u\vHǃ\b
+u\vHǃ A
+u\vHǃ0E
+u\vHǃ8N
+u\vHǃH
 u\vHǃh
-u\vIǆXO
+u\vIǅX
+u\vIǆX
 u\vIǆ\b
 u\vIǇ\b
 u\v[A
@@ -13324,13 +13423,15 @@ utils/volumetricfog.cpp
 uvHcG\bIc
 uvtangent
 uxHcG\bIc
+uzHǃ0E
+u{IǇ0E
 u~D\tc
 u~HcG\bIc
+uŋF\\9G
 uʾ+YA1
 uˋC49E
 uˋK\fA9N\fu
 uӋC09E
-uӋF\\9G
 uր9#tq
 uۋC,9E
 uߋ@49
@@ -13372,6 +13473,7 @@ vD$0t\a
 vOn?H
 vPI;vX
 vUgYk
+v\bH9s\b
 v\n\anet_NOP
 v\r<Dt!1
 value
@@ -13405,7 +13507,6 @@ volatile
 volume_fog_debug_volumes
 volume_fog_depth
 volume_fog_depth_warp
-volume_fog_disable
 volume_fog_dither_scale
 volume_fog_enable_jitter
 volume_fog_force_indirect_lpvs
@@ -13427,7 +13528,6 @@ w/ default threshold: (%.1f, %.1f
 w/ large threshold: %d
 w/ zero threshold: %d
 w/ zero threshold: (%.1f, %.1f
-w5@8s5u
 w: %5.1f
 w?\fvC
 w@AUATL
@@ -13439,10 +13539,11 @@ wXAUATI
 w\b@82
 w\bATUI
 w\bAUATI
+w\bAUATSH
 w\bAUATUSH
 w\bE9t$\bE
-w\bH9s\bu
 w\ePATL
+w\fwӺ\f
 w\f};HcO\bE1
 w\n\f\a\bA\v
 was already set
@@ -13503,8 +13604,12 @@ wt\b<a
 wy[i=2\f
 x%02x
 x%ixAA
+x(A9~(u
+x(A9~h
 x-axis
+x0A9~p
 x4HcP0
+x8I9~x
 x? ^W
 x?"TA
 x?F%U
@@ -13520,6 +13625,9 @@ xY{[xY{[xY{[xY0
 x[]A\\A]A^A_ÐAUATI
 x[]ÐATUI
 x[]ÐUSH
+x\bI9~H
+x\bI9~\b
+x\e;p
 xdigit
 xf9{z
 xk;B`}fH

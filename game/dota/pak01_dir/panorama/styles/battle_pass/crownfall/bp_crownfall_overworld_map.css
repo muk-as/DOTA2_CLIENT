@@ -58,8 +58,6 @@
 
 .TutorialContainer
 {
-	x: 940px;
-	y: 2020px;
 	width: 560px;
 	transition-property: transform, opacity;
 	transition-duration: 0.3s;
@@ -67,6 +65,18 @@
 	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
 	opacity: 0;
 	transform: translateY( -32px );
+}
+
+.Act1 .TutorialContainer
+{
+	x: 940px;
+	y: 2020px;
+}
+
+.Act2 .TutorialContainer
+{
+	x: 2300px;
+	y: 500px;
 }
 
 .IntroState2 .TutorialContainer,.IntroState3 .TutorialContainer
@@ -219,6 +229,13 @@
 	height: 100%;
 }
 
+.IsDragging
+{
+	width: 25px;
+	height: 25px;
+	background-color: green;
+}
+
 .DragZoomSlowTransition
 {
 	transition-duration: 0.2s;
@@ -234,6 +251,16 @@
 	transition-duration: 1.5s;
 }
 
+.MapTransition .DragZoomSlowTransition
+{
+	transition-duration: 0.0s;
+}
+
+.DragZoomFastTransition
+{
+	transition-duration: 0.0s;
+}
+
 .Node
 {
 	width: 128px;
@@ -246,6 +273,17 @@
 	width: 180px;
 	height: 240px;
 	transform: translate3d( -90px, -120px, 0px );
+}
+
+.Node.Invisible
+{
+	visibility: collapse;
+}
+
+.EditMode .Node.Invisible
+{
+	visibility: visible;
+	opacity: 0.5;
 }
 
 .Node #NodeBackground
@@ -466,7 +504,7 @@
 	visibility: visible;
 }
 
-.Node.EncounterNode.its_dangerous .NodeIcon
+.Node.EncounterNode.its_dangerous .NodeIcon,.Node.EncounterNode.return_of_threebeard .NodeIcon
 {
 	opacity-mask: url("s2r://panorama/images/events/crownfall/overworld/nodes/icons/encounter_owl_png.vtex");
 }
@@ -482,7 +520,7 @@
 	opacity-mask: url("s2r://panorama/images/events/crownfall/overworld/nodes/icons/encounter_trader_png.vtex");
 }
 
-.Node.EncounterNode.fishing .NodeIcon
+.Node.EncounterNode.fishing .NodeIcon,.Node.EncounterNode.sand_fishing .NodeIcon
 {
 	opacity-mask: url("s2r://panorama/images/events/crownfall/overworld/nodes/icons/encounter_fish_png.vtex");
 }
@@ -502,7 +540,7 @@
 	brightness: 0.3;
 }
 
-.Node.EncounterNode.strange_vendor .NodeIcon
+.Node.EncounterNode.strange_vendor .NodeIcon,.Node.EncounterNode.token_transmuter .NodeIcon
 {
 	width: 36px;
 	opacity-mask: url("s2r://panorama/images/events/crownfall/overworld/nodes/icons/encounter_mysterytoken_png.vtex");
@@ -522,6 +560,31 @@
 .Node.EncounterNode.candlemaker .NodeIcon
 {
 	opacity-mask: url("s2r://panorama/images/events/crownfall/overworld/nodes/icons/encounter_candle_png.vtex");
+}
+
+.Node.EncounterNode.secret_admirer .NodeIcon
+{
+	opacity-mask: url("s2r://panorama/images/events/crownfall/overworld/nodes/icons/encounter_mail_png.vtex");
+}
+
+.Node.EncounterNode.pit_fighter .NodeIcon
+{
+	opacity-mask: url("s2r://panorama/images/events/crownfall/overworld/nodes/icons/encounter_pit_png.vtex");
+}
+
+.Node.EncounterNode.flappy_skywrath_act2 .NodeIcon
+{
+	opacity-mask: url("s2r://panorama/images/events/crownfall/overworld/nodes/icons/encounter_bat_png.vtex");
+}
+
+.Node.EncounterNode.clickable_hunt .NodeIcon
+{
+	opacity-mask: url("s2r://panorama/images/events/crownfall/tokens/snapfire_png.vtex");
+}
+
+.Node.EncounterNode.comet_crater .NodeIcon
+{
+	opacity-mask: url("s2r://panorama/images/events/crownfall/overworld/nodes/icons/encounter_comet_png.vtex");
 }
 
 .Node #NodeContents
@@ -605,6 +668,11 @@
 .Node #NodeContents .EconItemReward #AnimatedImage
 {
 	visibility: visible;
+}
+
+.Node #NodeContents .EconItemReward.BigCandySack
+{
+	border-radius: 0%;
 }
 
 .Node #NodeContents .ImageReward
@@ -1189,6 +1257,12 @@ DOTACrownfallToken
 	animation-delay: 0.2s;
 }
 
+.SlowCharacterMovement .PartyCharacter.PartyMember3
+{
+	transition-delay: 0.6s;
+	animation-delay: 0.4s;
+}
+
 .FastCharacterMovement .PartyCharacter
 {
 	animation-delay: 0s;
@@ -1206,6 +1280,12 @@ DOTACrownfallToken
 	transform: translate3d( 40px, 0px, 0px);
 }
 
+.FastCharacterMovement .PartyCharacter.PartyMember3
+{
+	transition-delay: 0.0s;
+	transform: translate3d( 80px, 0px, 0px);
+}
+
 .HeroesTravelling .PartyCharacter
 {
 	animation-name: fadeIn;
@@ -1219,6 +1299,11 @@ DOTACrownfallToken
 .PartyMember2
 {
 	animation-delay: 0.6s;
+}
+
+.PartyMember3
+{
+	animation-delay: 0.8s;
 }
 
 .CharacterIcon
@@ -1244,6 +1329,39 @@ DOTACrownfallToken
 .CharacterBakeet
 {
 	margin-left: 46px;
+}
+
+.CharacterCentaur
+{
+	margin-top: -35px;
+}
+
+.CharacterWarlock
+{
+	margin-left: 106px;
+	margin-top: -30px;
+}
+
+.CharacterGolem
+{
+	margin-left: 66px;
+	margin-top: -50px;
+}
+
+.CharacterSnapfire
+{
+	margin-left: 116px;
+}
+
+.CharacterMortimer
+{
+	margin-left: 96px;
+	margin-top: -50px;
+}
+
+.CharacterBatrider
+{
+	margin-left: 76px;
 }
 
 .IntroState2 .StartPath .UnlockLabel,.IntroState3 .StartPath .UnlockLabel,.IntroState4 .StartPath .UnlockLabel

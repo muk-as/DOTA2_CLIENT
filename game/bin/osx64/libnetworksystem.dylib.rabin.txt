@@ -17,7 +17,6 @@
 0$1 = $2
 0$1$2 $3 = $4
 0.00.0
-0000 p
 000000005
 00010203040506070809101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899
 0123456789:;<=>?DEFGHIJKLMNOPRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz
@@ -32,6 +31,7 @@
 0A;^4
 0Bp>*C
 0BxD*C
+0C\b\b`C\b
 0E16CNetworkMessages
 0HPX8
 0[A^A
@@ -89,6 +89,7 @@
 15CTier1AppSystemI14INetworkSystemLx0EE
 15CTier2AppSystemI14INetworkSystemLx0EE
 15INetChannelInfo
+16CDeltaCalculator
 16CSVCMsg_BSPDecal
 16CSVCMsg_FixAngle
 16CSVCMsg_PeerList
@@ -109,7 +110,6 @@
 17CSVCMsg_VoiceInit
 18CCLCMsg_ClientInfo
 18CCLCMsg_HltvReplay
-18CNETMsg_Disconnect
 18CSVCMsg_HLTVStatus
 18CSVCMsg_HltvReplay
 18CSVCMsg_ServerInfo
@@ -184,6 +184,7 @@
 25CCLCMsg_RconServerDetails
 25CConCommandMemberAccessorI16CNetworkMessagesE
 25CFieldShadowSpewCollector
+25CNETMsg_Disconnect_Legacy
 25CNETMsg_SpawnGroup_Unload
 25CNETMsg_SplitScreenUser_t
 25CSVCMsg_Broadcast_Command
@@ -193,8 +194,6 @@
 25CSVCMsg_UpdateStringTable
 25IFieldShadowSpewCollector
 26CCLCMsg_SplitPlayerConnect
-26CParallelProcessorAbstractI18CParallelProcessorI30BuildFlattenedSerializerInfo_t27CMemberFuncJobItemProcessorIS1_37CBuildNetworkSerializerHierarchyOrderS3_ELi1EEE
-26CParallelProcessorAbstractI18CParallelProcessorIN37CBuildNetworkSerializerHierarchyOrder12BuildEntry_tE27CMemberFuncJobItemProcessorIS2_S1_S1_ELi1EEE
 26CSVCMsg_Sounds_sounddata_t
 26ICommandCompletionCallback
 26IPolymorphicMetadataHelper
@@ -221,13 +220,12 @@
 2\r.PrefetchType"h\n
 2basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEE
 2ffff
-2fffff
 2ffffff
 30CBidirMsg_RebroadcastGameEvent
 30CNetworkFieldChangedEventQueue
 30CSVCMsgList_GameEvents_event_t
 30INetworkFieldChangedEventQueue
-31CParallelProcessorAbstract_Base
+30ISerializedEntityErrorSpewHook
 31CSVCMsg_HltvFixupOperatorStatus
 31ProtoFlattenedSerializerField_t
 32CFlattenedSerializerSpewFunc_Log
@@ -255,7 +253,7 @@
 4444<*Z
 48CSerializedEntityPolymorphicFieldsMetadataHelper
 49CSVCMsg_PacketEntities_non_transmitted_entities_t
-4;p0H
+4;V0H
 4;x0H
 4IcF\bHk
 4PfA;4Pu\nH
@@ -327,7 +325,6 @@ A;D$h~DH
 A;Fh~DH
 A;Gx~UH
 A;G|~LH
-A;L$0H
 A;L$\b}DA
 A;L$\b}FA
 A;M\f
@@ -347,10 +344,10 @@ ARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARAR
 ARAUASASB
 ARAp\bRAp\bRAUAUAp\bRB
 ATARARATA\\Ap\b]Ap\b
-AUASASASASASASASASB
-AUB`)ASASBp\bRASARAp\bRA
-AVAWS
-AWARATAp\bRATARARARBTCp TCp\bp(p p
+AUASASASASASASASASA
+AUASB
+AUB`*ASASASBp\bRASARAp\bRA
+AWARATAp\bRATARARARDTCp TCp\bp(p p
 AWAVATS
 AWAVATS1
 AWAVATSA
@@ -465,8 +462,11 @@ Boolean default must be true or false
 BtB<buݿ0
 Buffer overflow in net channel %s
 BuildDelta
+BuildDeltaProperites_Old
 BuildDeltaProperties fieldDataBuf
+BuildDeltaProperties_New
 BuildEntityClassNetworkSerializer
+BuildMergedSerializedEntity with bogus offsets!\n
 BuildMergedSerializedEntity:  delta header with corrupt array count [ ent %d ]:  entry %d/%d == %u
 BuildMergedSerializedEntity:  ignoring %s, was in previous state only, now outside of valid range for root field %s [array count %d, base index %d]\n
 BuildMergedSerializedEntity:  problem writing %s:  %d bits [%d to %d] is < 1 bit!\n
@@ -485,6 +485,7 @@ C8fA;G8t
 C<A;E
 C@A;F@uw
 CBidirMsg_RebroadcastGameEvent
+CBuildNetworkSerializerHierarchyOrder::ComputeDepth
 CCLCMsg_BaselineAck
 CCLCMsg_ClientInfo
 CCLCMsg_ClientMessage
@@ -503,6 +504,8 @@ CCLCMsg_SplitPlayerDisconnect
 CCLCMsg_VoiceData
 CCommand::Tokenize: Encountered command which overflows the tokenizer buffer.. Skipping!\n
 CDA:FD
+CDeltaCalculator::ErrorMsg %s %d\n
+CDeltaCalculator::ErrorMsg: %s\n
 CDeltaCalculator::FieldCalcDelta fromBits
 CDeltaCalculator::FieldCalcDelta toBits
 CEHandleNetworkableInt
@@ -778,7 +781,7 @@ CMsgServerPeer"N\n
 CMsgVoiceAudio
 CMsg_CVars.CVar
 CNETMsg_DebugOverlay
-CNETMsg_Disconnect
+CNETMsg_Disconnect_Legacy
 CNETMsg_SetConVar
 CNETMsg_SignonState
 CNETMsg_SpawnGroup_Load
@@ -800,6 +803,7 @@ CNetworkMessages::DeallocateUnserializedMessage unable to deallocate unknown mes
 CNetworkMessages::FindOrCreateGroupId: Too many network groups!\n
 CNetworkMessages::FindOrCreateNetMessage: It is illegal to register new net messages after serialization!\n
 CNetworkMessages::FindOrCreateNetMessage: Message %s is expected to have already been registered!\n
+CNetworkMessages::InitNetworkChangeTag - missing m_NetworkChangeTagCallback, should have been installed by CEntitySystem::Init call to g_pNetworkMessages->RegisterNetworkChangeTagCallback
 CNetworkMessages::Serialize attempted to serialize a non-serializeable message [%s]!\n
 CNetworkMessages::Unserialize encountered unknown network message type %u!\n
 CNetworkSerializer: Unable to find network encoder named %s!\n
@@ -871,6 +875,8 @@ CSerializedEntities::CompareSerializedEntities from field %s '%s' not present in
 CSerializedEntities::CompareSerializedEntities to field %s '%s' not present in from\n
 CSerializedEntities::CompareSerializedEntities:  from serializer is '%s' and to serializer is '%s', comparison doesn't make sense!\n
 CSerializedEntities::CompareSerializedEntities:  to pointer is %s and from pointer is %s\n
+CSerializedEntity::SetFieldInfo with bogus offsets!\n
+CSerializedEntity::SetPackedFieldOffsets with bogus offsets!\n
 CSplitScreenSlot
 CSplitScreenSlot"*\n
 CStrongHandle
@@ -952,7 +958,6 @@ CmdLinkAH
 CommandLine
 Comment started here
 Compress network traffic
-ComputeDepth
 Config: %s, %i connections\n
 ConnectSocket(%s) failed\n
 ConnectToHostedDedicatedServer(%s) failed\n
@@ -976,7 +981,6 @@ D$SA\t
 D$XA\t
 D$XI;D
 D$\bI
-D$\bIcދT
 D$\bJ9D
 D$\fA9D
 D$xA\t
@@ -986,7 +990,6 @@ D3\fIct
 D5LI;D$\fu
 D81u\vH
 D94\v}\vH
-D9="I
 D9d\b\bu\aD9d\b\fu
 D9s\f}\vH
 D9t\b\bu\aD9t\b\fu
@@ -1005,6 +1008,7 @@ DTI: was unable to open file '%s' for write!\n
 DTI: wrote client stats into %s. Session duration = %0.2f seconds, rowcount %d.\n
 D\b-H9E
 Data:    net total out  %.1f, in %.1f kB/s\n
+Deadlock
 DebugCallback
 Declared Class
 Declared Enum
@@ -1024,7 +1028,9 @@ Don't bother compressing packets below this size
 Double-save to Member '%s
 Dump UDP packets summary to console
 Dump non-loopback udp only
+E I;G u\nI
 E#D$XI
+E(I;G(ttH
 E(ffffff
 E+D$ L
 E0A;A0
@@ -1118,8 +1124,8 @@ Extensions in proto3 are only allowed for defining options
 Extensions of MessageSets must be optional messages
 Extensions to non-lite types can only be declared in non-lite files.  Note that you cannot extend a non-lite type to contain a lite type, but the reverse is allowed
 Extra connection [%s]:\n
+EȋMЉ\bMc
 EЃx<\tL
-EЋủ0D
 EЋz\bIc
 Eـ8.uCH
 F H+p(H
@@ -1137,8 +1143,6 @@ FATAL ERROR: unable to register all schema data: %s\n
 FLT_MAX
 FP]ÐUH
 F\bA:G\bL
-F\bHc
-F\bIc̋t
 F\bL;8t
 F\bL;8tAH
 F\b]ÐUH
@@ -1242,7 +1246,6 @@ G\bH;A\bu\eH
 G\bHcL\b
 G\bHcT\b
 G\bHc\f\bH
-G\bHcɋT
 G\bIcO\f9
 G\bJcL0
 G\bJc\f0H
@@ -1403,11 +1406,11 @@ HMc<$D
 HTX( 0L8@P
 H[A^A
 H\bH+\bH
-H\bHcS8
-H\bHcSP
-H\bHcsP
-H\bHcv8
-H\bHcvP
+H\bHcS`D
+H\bHcV
+H\bHcV@D
+H\bHcV`D
+H\bHcs
 H__ZdaPv
 H__ZdaPvSt11align_val_t
 H__ZdaPvm
@@ -1427,7 +1430,6 @@ H__ZnwmSt11align_val_tRKSt9nothrow_t
 HammerMapLoader001
 HasField
 Hc@ I9
-Hc@0H9
 Hc@0I9
 Hc@8H9
 Hc@\bIc
@@ -1501,10 +1503,10 @@ INetworkSystem::RegisterNetworkCategory: Attempted to register category %u twice
 INetworkSystem::RegisterNetworkCategory: all categories must have ids between 0-31!\n
 IPulseSystem_001
 I\bHcK\b
-I\bHcSP
-I\bHcV8
-I\bHcVP
+I\bHcS
+I\bHcV
 I\bL9a\b
+I\b\b J\b\a K\b
 I\fH;H\ft
 I\n NETWORK_DISCONNECT_STEAM_DROPPED
 I\n$NETWORK_DISCONNECT_STEAM_VACBANSTATE
@@ -1536,7 +1538,6 @@ IcD$|I
 IcE H9
 IcE(H9
 IcE(I9
-IcE0H9
 IcE0I9
 IcE`I9
 IcF H9
@@ -1549,10 +1550,9 @@ IcG(H9
 IcG(I9
 IcG,H9
 IcG0H9
-IcG0I9
 IcGhI9
 IcL$(H9
-IcL$L9
+IcL$0H9
 IcL$TI
 IcL$hI
 IcN8D9
@@ -1613,9 +1613,8 @@ J\n\eENetworkDisconnectionReason
 J\n\eNETWORK_DISCONNECT_OVERFLOW
 Jffffff
 K+D&\bH
-KH1ɉKPH
+KX1ɉK`H
 K\b1\tC
-K\bH;H\btqH
 K\f;J\f
 K\n!NETWORK_DISCONNECT_INTERNAL_ERROR
 K\n#NETWORK_DISCONNECT_TICKMSG_OVERFLOW
@@ -1647,7 +1646,6 @@ LOG_GENERAL
 L\n!NETWORK_DISCONNECT_HLTVRESTRICTED
 L\n!NETWORK_DISCONNECT_KICKED_SUICIDE
 L\n!NETWORK_DISCONNECT_LOOPDEACTIVATE
-LcC0L9
 LcG\bA9
 Lcv\bA9
 Leaked channel %s remote %s\n
@@ -1663,7 +1661,7 @@ LoggingSystem_Log
 LoggingSystem_RegisterLoggingChannel
 LookupMapValue
 Loss:    avg out %.1f, in %.1f\n
-M"B:L8
+M&B:L8
 M9&v`A
 M9'v_Hc
 M9'v`H
@@ -1678,6 +1676,7 @@ MNetworkArraySerializer
 MNetworkBitCount
 MNetworkChangeCallback
 MNetworkChangePointerCallback
+MNetworkChangeTag
 MNetworkDisable
 MNetworkEnable
 MNetworkEncodeFlags
@@ -1711,6 +1710,8 @@ MODEL_PROCESSING_SERVICES_INTERFACE_001
 MResourceTypeForInfoType
 MSG_SPLITSCREEN_ADDUSER
 MSG_SPLITSCREEN_REMOVEUSER
+M\bHc
+M\b\b0N\b\a`O\b
 M\n"NETWORK_DISCONNECT_SERVER_SHUTDOWN
 M\n"NETWORK_DISCONNECT_STEAM_DENY_MISC
 M\n"NETWORK_DISCONNECT_STEAM_OWNERSHIP
@@ -1777,6 +1778,7 @@ MessageSets cannot have fields, only extensions
 Messages can't have default values
 MethodDescriptorProto
 MethodOptions
+Mffff
 Missing field: FileDescriptorProto.name
 Missing name
 ModelDocUtils001
@@ -1789,7 +1791,7 @@ MЈA,ffff
 MЉQ,f
 N,E+N0A
 N13CNetMessagePBILi0E11CNETMsg_NOPL13SignonGroup_t11EL19NetChannelBufType_t1ELb0EE16CProtobufBindingE
-N13CNetMessagePBILi1E18CNETMsg_DisconnectL13SignonGroup_t11EL19NetChannelBufType_t1ELb0EE16CProtobufBindingE
+N13CNetMessagePBILi1E25CNETMsg_Disconnect_LegacyL13SignonGroup_t11EL19NetChannelBufType_t1ELb0EE16CProtobufBindingE
 N13CNetMessagePBILi35E25CCLCMsg_RconServerDetailsL13SignonGroup_t0EL19NetChannelBufType_t1ELb0EE16CProtobufBindingE
 N13CNetMessagePBILi3E23CNETMsg_SplitScreenUserL13SignonGroup_t11EL19NetChannelBufType_t1ELb0EE16CProtobufBindingE
 N13CNetMessagePBILin1E19NetMessagePacketEndL13SignonGroup_t11EL19NetChannelBufType_t1ELb0EE16CProtobufBindingE
@@ -1800,6 +1802,8 @@ N13CNetMessagePBILin1E32NetMessageSplitscreenUserChangedL13SignonGroup_t11EL19Ne
 N24CFieldPathHuffmanEncoder12InternalNodeE
 N24CFieldPathHuffmanEncoder5INodeE
 N24CFieldPathHuffmanEncoder8LeafNodeE
+N24CParallelProcessLauncher18CParallelLambdaJobIZ11ParallelForILb1EZN37CBuildNetworkSerializerHierarchyOrder12ComputeDepthEP30BuildFlattenedSerializerInfo_tiEUliE_EviiPKcT0_ii13JobPriority_tEUliE_EE
+N24CParallelProcessLauncher18CParallelLambdaJobIZ11ParallelForILb1EZN37CBuildNetworkSerializerHierarchyOrder7ProcessEbEUliE_EviiPKcT0_ii13JobPriority_tEUliE_EE
 N6google8protobuf10TextFormat17BaseTextGeneratorE
 N6google8protobuf10TextFormat21FastFieldValuePrinterE
 N6google8protobuf10TextFormat6FinderE
@@ -1920,6 +1924,7 @@ NETWORK_FIELD_CHANGED_ARRAY_WITH_VALUE
 NETWORK_FIELD_CHANGED_NO_VALUE
 NETWORK_FIELD_CHANGED_NO_VALUE_NO_CONTEXT
 NETWORK_FIELD_CHANGED_REPLAY_COMPAT
+NETWORK_FIELD_CHANGED_TAG
 NETWORK_FIELD_CHANGED_TYPE_NONE
 NETWORK_FIELD_CHANGED_WITH_VALUE
 NETWORK_FIELD_CHANGES_OFTEN_PRIORITY
@@ -2187,7 +2192,7 @@ QuaternionStorage
 QueueCallback( %s ) '%s' using value type (%s) on struct field, ignoring!\n
 QueueChange
 QueueReplayCompatFieldChange( %s ): can't place MNetworkReplayCompatField callback on a fully fake struct (e.g., a pointed to component or object), game code should move callback on entity %d to a C_BaseEntity derived class!\n
-RASAUASASASASBUAp\b]AUAUASBUAp\bRAVAp
+RASAUBUASASASASBUAp\bRAp\b]AUAUASBUAp\bRAVAp
 RBRBVEp
 RBSDp(p(p
 RBp\bWAp\bVAp
@@ -2206,6 +2211,7 @@ RandomInt
 Reached an unintended state: CPPTYPE_MESSAGE
 Reached impossible case in HasBit
 Reached maximum recursion limit for nested messages
+ReadFieldList with bogus offsets!\n
 ReadFields
 Recursion limit at end of parse should be
 RegisterConCommand: Unknown error registering con command "%s"!\n
@@ -2241,7 +2247,6 @@ ResourceSystem013
 Reusing cacheable shared Steam Net Connection to '%s'\n
 Rffff
 S$HcK\bH9
-S(PAUH
 S4A;T$4u*H
 SASASBp\bRCp
 SAp\bp\bp
@@ -2316,6 +2321,7 @@ SoundOpSystem001
 SoundOpSystemEdit001
 SoundService_001
 SoundSystem001
+Source 2 Unit Tests
 Source of CopyFrom cannot be a descendant of the target
 Source2Client002
 Source2ClientPrediction001
@@ -2393,8 +2399,7 @@ System
 System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices
 System/Library/Frameworks/Foundation.framework/Versions/C/Foundation
 T$\bL94
-T8(Hǅp
-TAp\bp\bp
+T8(Hǅh
 TCP/UDP Disabled.\n
 TCSBWKp
 T\b<Ic
@@ -2420,7 +2425,6 @@ This convar is being accessed prior to ConVar_Register being called
 This is not
 This list may include POPs without any gameservers)\n
 ThreadGetCurrentId
-ThreadInMainThread
 ThreadSleep
 TimeTable
 To use it here, please add the necessary import
@@ -2439,7 +2443,7 @@ Tried to register a non-generated type with the generated type registry
 Type appears to be in generated pool but wasn't
 Type is already registered
 U%08x
-UARARARAUAUARAUARAUARAUARASAp\bRAUARAUARAUARAUARAUARAUARAUARAUARAUARAUARARAUAUARAUARAUARAUAUASASB`)Ap\bRASARA
+UARARARAUAUARAUARAUARAUARASAp\bRAUARAUARAUARAUARAUARAUARAUARAUARAUARAUARARAUAUARAUARAUARAUAUASASASB`)Ap\bRASARA
 UAp\bUASASASB`:AUASASASASAp
 UDP -> %s: sz=%5i seq=%5i ack=%5i rel=%1i tm=%8.3f\n
 UDP <- %s: sz=%5i seq=%5i ack=%5i rel=%1i tm=%8.3f\n
@@ -2546,6 +2550,7 @@ V_strncpy
 V_strnicmp_fast
 V_vsnprintf
 Validate
+ValidateOffsets(false
 ValidateSerializedEntity:  %s [ent %d] invalid change '%s' for field %s (value '%s') on array that has metadata with only %d array elements!\n
 ValidateSerializedEntity:  expected metadata entry of ARRAYCOUNT for %s but got %s instead\n
 ValidateSerializedEntity:  metadata incorrect entry for %s [%d expected %d]\n
@@ -2572,6 +2577,7 @@ Valve_Reject_Reserved_For_Lobby
 Vector
 Vector2D
 Vector4D
+Vfffff
 Vffffff
 VisBuilder_001
 VoiceDataFormat_t
@@ -2590,7 +2596,6 @@ WorldRendererMgr001
 WriteFields
 WriteToBuffer Message %s is not initialized! Probably missing required fields!\n
 Writing %d bits for path %s of serializer %s entity %d, this will fail to parse\n
-X4;p0H
 X4;x0H
 XIcF\bHk
 XYZ[\\`dh
@@ -2601,6 +2606,7 @@ X\n'NETWORK_DISCONNECT_DIFFERENTCLASSTABLES
 X\n'NETWORK_DISCONNECT_KICKED_NOSTEAMTICKET
 X\n(NETWORK_DISCONNECT_INVALID_MESSAGE_ERROR
 X`\\abcdHP0
+Y\b\a@Z\b
 Y\n)NETWORK_DISCONNECT_NO_PEER_GROUP_HANDLERS
 Y\n*NETWORK_DISCONNECT_STRINGTABLEMSG_OVERFLOW
 Y\n0NETWORK_DISCONNECT_REJECT_SERVERCDKEYAUTHINVALID
@@ -2657,6 +2663,7 @@ ZN13CRawAllocator5AllocE18RawAllocatorType_tmPm
 ZN13CThreadRWLock11UnlockWriteEPKci
 ZN13CThreadRWLock11WaitForReadEv
 ZN13CThreadRWLock12LockForWriteEPKci
+ZN15CKeyValues_Data18Internal_GetStringEPKcPcm
 ZN15CUtlBinaryBlock3SetEPKvi
 ZN15CUtlSymbolTable9AddStringEPKcPb
 ZN15CUtlSymbolTable9RemoveAllEv
@@ -2728,6 +2735,7 @@ ZNK8netadr_t8ToStringEPcjb
 ZNK8netadr_t8ToStringEb
 ZNK8netadr_tltERKS
 ZNK9KeyValues6GetIntEPKci
+ZNK9KeyValues7FindKeyEPKc
 ZNK9KeyValues7GetNameEv
 ZNK9KeyValues8GetFloatEPKcf
 ZNKSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE2atEm
@@ -2863,7 +2871,6 @@ aH;G\bt\bH
 aH;G\bu
 aHc\f\bH
 aSt11align_val_t
-a\a\t0c\a
 a\v6;a\v6
 accessor_ == other.accessor
 activated
@@ -2905,21 +2912,20 @@ b16777215"R\n\nCMsg_CVars
 bH9w\bt
 bH;H\bt'H
 bH;H\bt\bH
-bHc0H
-bHcK8
-bHcK8D
-bHcKP
-bHcKPD
+bHc8H
+bHcK@D
+bHcK`D
+bHcɋL
 bIcD$PI
-bIc͋T
-bIcދL
+bIc͋L
 bMcD\v
-bSBRAp\bUBXAp\bRARAp\bUBTA
+bSBRAp\bUBXAp\bRARAp\bUBTAp\bRATARA
 bSt11align_val_t
 bUARARA
 bVARAUARA
 bXMcpXD
 b[A^A
+b\n@B\b\t C\b
 b\n\f\b0\f8b
 b]ÐUH
 backing paths
@@ -2936,9 +2942,11 @@ binary_blob
 bit %d - %d (%d bits/%d bytes):\n
 bitcount=%d
 bool CFlattenedSerializer::IsEqualSerializer(const CFlattenedSerializer *) const
+bool CFlattenedSerializer::ReadFieldList(const FlattenedSerializerHandle_t &, const CFlattenedSerializerSpewVerbosity &, bf_read &, CSerializedEntity *, int, NetworkSerializationMode_t, IFlattenedSerializers::ReadFieldListDTI_t, IFlattenedSerializerSpewListener *, int) const
 bool CFlattenedSerializer::WriteFieldList(const FlattenedSerializerHandle_t &, const CFlattenedSerializerSpewVerbosity &, bf_write &, CSerializedEntity *, int, NetworkSerializationMode_t, const PackedFieldPathVec_t *, CPlayerSlot) const
 bool CNetChan::ParseMessages(bf_read &, NetChannelBufType_t
 bool CNetChan::ProcessMessages
+bool CNetworkMessages::InitNetworkChangeTag(const char *, ChangeCallback_t
 bool CNetworkSystem::GetPacket(int, NetPacket_t
 both states
 bs\eM9
@@ -2999,7 +3007,6 @@ colors
 com.google.protobufB
 command
 command_number
-command_queue_desired_size
 command_queue_info
 command_queue_info_t
 commands_queued
@@ -3039,6 +3046,7 @@ d != %d
 d %d %d
 d %d %d %d
 d %s %u
+d %s field end <= start (start %d -> end %d) (width %d)\n
 d (%d peak) fields allocated in mempool\n
 d / %s "%s" thinking for %.02f ms!!!\n
 d Scratch Buffers in use (%llu bytes)\n
@@ -3067,6 +3075,7 @@ default = $0
 definition file imports the proto which defines the option
 deleted
 delta >= 1u
+delta_error
 details
 determinH
 dfffff
@@ -3124,9 +3133,9 @@ f == nullptr || dynamic_cast<To>(f) != nullptr
 f$C;\f7u
 f(Bt#H
 f(Bt&H
+f(Bt9H
 f(Bt:H
 f(Bt;H
-f(Bt@H
 f(BtAH
 f;z\f
 f>\bfA
@@ -3142,12 +3151,12 @@ fPO9|, uvK
 fTf;\fSu
 f[fD9
 f[fD94
-f\b\b@g\b
 f\n\bRP_PAUSE
 f\n\bclc_Move
 f\n\bnet_Tick
 f\n\bsvc_Menu
 f^f9\fZ
+f`Mc,$D
 failed to construct fake field from metadata %s::%s (%s) in %s\n
 failed to parse contents
 false
@@ -3181,6 +3190,11 @@ fixed32
 fixed64
 flags=%d
 flat_end
+flc_columns
+flc_count
+flc_file_ids
+flc_file_list
+flc_lines
 float32
 float64
 float64 CQuantizedFloatEncoder::AssignRangeMultiplier(uint32, float64
@@ -3365,6 +3379,7 @@ idempotency_level
 identified %d entity related c++ field shadowing issues:\n
 identifier_value
 if you ignore case and strip out the enum name prefix (if any). This is error-prone and can lead to undefined behavior. Please avoid doing this. If you are using allow_alias, please assign the same numeric value to both enums
+iffffff
 include
 including
 incoming
@@ -3416,6 +3431,7 @@ is_listenserver_host
 is_loadsavegame
 is_multiplayer
 ishltv
+jGetResourceManifest
 java_generate_equals_and_hash
 java_generic_services
 java_multiple_files
@@ -3424,7 +3440,6 @@ java_string_check_utf8
 json_name
 jstype
 jstype is only allowed on int64, uint64, sint64, fixed64 or sfixed64 fields
-kGetResourceManifest
 keeping around as cacheable shared connection
 kfffff
 l9C$rgH
@@ -3454,7 +3469,7 @@ localnamefixup
 loopback:%d
 loss: in %.1f%%, out %.1f%%\n
 m$`< uMH
-m\b\tpn\b
+m_NetworkChangeTagCallback.IsEmpty
 m_Value
 m_bCanStillRegisterCallbackPriorities
 m_bNeedsSort
@@ -3793,7 +3808,7 @@ n\vvoice_level
 n^\n~\nf\nl\nl\nl\nl\nl\nl\nl\nl\nZ\n
 negative_int_value
 net_DebugOverlay
-net_Disconnect
+net_Disconnect_Legacy
 net_SignonState
 net_SpawnGroup_Load
 net_SpawnGroup_LoadCompleted
@@ -3907,10 +3922,12 @@ opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/networksystem/networkm
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/networksystem/networkserializer.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/networksystem/networksystem.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/networksystem/verbosespewbuilder.cpp
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/public/networksystem/serializedentity.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/tier2/fieldpathpacker.cpp
 option json_name is not allowed on extension fields
 optional
 origin
+original\n
 out of order
 outgoing
 outgoing_data_bytespersecond
@@ -3923,25 +3940,27 @@ p p(p\bp p(p
 p }AI
 p/ugH
 p8SBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp@p
+p8p\b\\A\\CXCRCXCRCXCRCXCRCXCRCXCRCXCRCXCRCXCRCXCRCXCRCXCRCXCRCXCRCXCRCXCRCXCRCXCRCSE
 pDfff
 pEnd > *pStart
+pEntity->ValidateOffsets
 pFSField
 pIcF\bHk
 pL9\\1\bu
 pL9|9\bu
+pMerged->ValidateOffsets
 pXp(pXp
 p\bRARARARARAp\bp\bp
 p\bRAp\bTARA
 p\bSASAp
 p\bYAUARAWARA
 p\bp p p
-p\bp p8p0p
 p\bp(SHp
 p\bp(p p(p
-p\bp(p\bp(p(p
-p\bp(p\bp\b\\A\\CXCRCXCRCXCRCXCRCXCRCXCRCXCRCXCRCXCRCXCRCXCRCXCRCXCRCXCRCXCRCXCRCXCRCXCRCSE
+p\bp(p\bp(p p
 p\bp8p
 p\bp\bWAXARARASDp
+p\bp\bpPp
 p`p``p`ppp
 packed
 packed = true] can only be specified for repeated primitive fields
@@ -3980,6 +3999,7 @@ polymorphic_id
 polymorphic_types
 positive_int_value
 possible match: %s.%s\n
+pp0000 p
 pp`pp`p
 pppp``pp
 prediction_errors
@@ -4095,6 +4115,7 @@ s%s found %s in path %s\n
 s%s: failed to find match for offset %llu [path %s]\n
 s%s::%s marked %s by group %s at '%s'\n
 s%s::%s marked %s by name at '%s'\n
+s.fffff
 s/%d:  AddFieldPathAndOffset (%s) added too large of a bit offset (%u : prev=%u) at element %d\n
 s/%d:  AddFieldPathAndOffset (%s) added unexpected offset (%u : prev=%u) at element %d\n
 s0x%p %s Initializing\n
@@ -4139,7 +4160,7 @@ s::%s has more than one MNetworkChangeCallback that requires passing network val
 s::%s was in the original serializer at offset %u but that offset isn't in the ignore list!!!\n
 s::%s:%u (%s ) already encountered at %s::%s:%u (%s
 s:Dropped %i packets at %i\n
-s=E9>u8L
+s<E9>u7H
 s@H+s8H
 sApplying %s\n
 sCull fields for %s\n
@@ -4259,7 +4280,7 @@ t ffff
 t fffff
 t!HcNH;\b
 t"<\n\fCSVCMsg_Menu
-t"H9\rC
+t"H9\rS
 t"J\n\fCCLCMsg_Move
 t"M9,$tZI
 t"\r\n\vCNETMsg_NOP"'\n
@@ -4269,7 +4290,7 @@ t#IcN ;\b}\e
 t#IcN8;\b}\e
 t#fff
 t$ H;5
-t$4A;L$0H
+t$ H;5Q
 t$HcK ;\b
 t$IcN ;\b
 t$IcN0;\b
@@ -4279,6 +4300,8 @@ t$IcO ;\b
 t$\bfffff
 t$ffff
 t&fffff
+t'D95
+t'D95c
 t'fff
 t'ffffff
 t(ffff
@@ -4346,7 +4369,6 @@ the actual field type (for enums T should be the generated enum
 the global scope
 thread_data
 thread_vars
-time_dilation_percent
 tjMcl$`M
 tkI96vYI
 tlv_bootstrap
@@ -4360,9 +4382,7 @@ tpL93v[I
 tpMcl$HD
 trailing_comments
 truncated
-tsLch\bM
 tt \nv\nZ
-tuMc~\bM
 twfff
 type does not match\n
 type or int32_t
@@ -4373,16 +4393,15 @@ type() == TYPE_LENGTH_DELIMITED
 type() == TYPE_VARINT
 type.googleapis.com
 type.googleprod.com
-tzHc\bH
 u %u %u %u
 u serializers with %u fields (approx memory %llu / %llu in fields ) bytes (field size %d, serializer size %d)\n
 u(fffff
+u4A;U0H
 u8IcE0M
 u<fffff
 uH]ÍA\a
 uLA;uP
 uMffff
-uRIcE0H
 uVHct
 u\eE9u u
 u\fHc
@@ -4406,6 +4425,8 @@ unreliable_bits
 unverified_lazy
 unwind_info
 update_baseline
+updated field %d/%d: %s\n
+updated\n
 updated_entries
 uptime
 usage: %s <client|server>\n
@@ -4462,12 +4483,10 @@ v2\v.CMsgQAngle"4\n
 v2\v.CMsgVector
 v2\v.CMsgVector"O\n
 v2\v.CMsg_CVars
-v8H;52
-v8H;5@~\r
 vA;\bs\a
 vCPlayerSlot
 vH;A8u
-vH;\bu\nH
+vInstallSchemaBindings
 vPIcVHH
 v\bH+3t1I
 v\n\anet_NOP
@@ -4487,6 +4506,7 @@ vector4
 vfD9E
 vfD9e
 virtual NetMessageHandle_t CNetworkMessages::FindOrCreateNetMessage(int, const IProtobufBinding *, uint32, INetworkSerializerBindingBuildFilter *, bool, bool
+virtual SerializedEntityHandle_t CFlattenedSerializers::BuildMergedSerializedEntity(const FlattenedSerializerHandle_t &, const void *, SerializedEntityHandle_t, PackedFieldPathVec_t &, bool, int, NetworkSerializationMode_t, CUtlScratchMemoryPool
 virtual bool CNetworkFieldChangedEventQueue::QueueReplayCompatFieldChange(int, const CFieldPath &, const char *, void *, void *, int, CUtlAbstractDelegate, NetworkReplayCompatFieldFlags_t, const ReplayChangeEntry_t
 virtual int CNetworkMessages::ComputeOrderForPriority(int) const
 virtual void CNetworkMessages::RegisterFieldChangeCallbackPriority(int
@@ -4501,6 +4521,8 @@ void CMergedEntityOffsetBuilder::AddToTail(uint32
 void CNetworkMessages::ConfirmAllMessageHandlersInstalled(const char *, int, CUtlVector<NetMessageHandle_t
 void CNetworkSerializer::AssignSharedChangeCallbackIndex(CUtlVector<CNetworkSerializer::ChangeCallbackInfo_t> &, int, NetworkFieldSerializerInfo_t
 void CSendNode::SetRecursiveProxyIndices_R(const char *, uint16
+void CSerializedEntity::SetFieldInfo(const PackedFieldPathVec_t &, const uint32
+void CSerializedEntity::SetPackedFieldOffsets(const PackedFieldOffsets_t
 void CSerializedEntityFieldIterator::GetBitRange(int32 *, int32 *) const
 void CUtlLeanVectorFixedGrowableBase<CEncodeSerializerStack, 6>::EnsureCapacity(int, bool) [T = CEncodeSerializerStack, N = 6, I = short
 void CUtlLeanVectorFixedGrowableBase<CFieldPath::Path_t, 6>::EnsureCapacity(int, bool) [T = CFieldPath::Path_t, N = 6, I = short
@@ -4516,11 +4538,10 @@ volume
 vpIcVhH
 vs M9
 vsnprintf
-w<fff
-w@ffff
-wInstallSchemaBindings
+w\a\a@x\a
 w\bH+7H
 w\bH97t
+w\b\a@y\b
 w\fCǄ4
 w\nǃX\b
 w\vAǇH
@@ -4539,12 +4560,15 @@ world_offset_angle
 world_offset_pos
 worldgroupname
 wpfffff
+wrD95\n
 writing (in %s
 wrong submessage type
-wxH;5ڌ\r
 x (int:%d, float:%f
 x%A;Gh
 x&D95
+x4;P0Hc
+x4;p0H
+x4;p0Hc
 x8HcN H
 x@HcV$H
 xA;^|tII
@@ -4558,6 +4582,7 @@ xqE9~\b~kE9~$|eI
 xs9W\b~n9W$|iH
 y/fffff
 y\bA9z\b
+y\b\b0z\b
 y\eIcFLH
 z\b9~\b
 z\f9B\fH

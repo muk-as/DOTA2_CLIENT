@@ -212,6 +212,11 @@ DOTACrownfallVisualNovel.EncounterDialogue
 	box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.6);
 }
 
+.Act2 .MainContents
+{
+	background-color: rgb(66, 36, 19);
+}
+
 .EncounterDialogue .MainContents
 {
 	width: 1200px;
@@ -246,7 +251,7 @@ DOTACrownfallVisualNovel.EncounterDialogue
 	margin-top: 24px;
 }
 
-.EncounterDialogue .Heading,.ShowingComic .Heading,.ShowExternalComic .Heading
+.EncounterDialogue .Heading,.ShowingComic .Heading,.ShowExternalComic .Heading,.HideHeading .Heading,.OverrideHeading .Heading
 {
 	visibility: collapse;
 }
@@ -273,11 +278,44 @@ DOTACrownfallVisualNovel.EncounterDialogue
 	color: gradient( linear, 0% 0%, 0% 100%, from( gold1 ), to( gold3 ) );
 }
 
+.CustomHeading
+{
+	horizontal-align: center;
+	flow-children: down;
+	margin-top: 40px;
+	visibility: collapse;
+}
+
+.OverrideHeading .CustomHeading
+{
+	visibility: visible;
+}
+
+.CustomHeading Label
+{
+	text-shadow: 0px 2px 12px rgba(0, 0, 0, 0.6);
+}
+
+.CustomHeading .DashDotDivider
+{
+	margin-top: -4px;
+}
+
+.CustomHeading .Dash
+{
+	opacity: 0.2;
+}
+
+.CustomHeading .HeadingText
+{
+	margin: 0px 12px;
+	color: gradient( linear, 0% 0%, 0% 100%, from( gold1 ), to( gold3 ) );
+}
+
 .VisualNovelBackground
 {
 	width: 100%;
 	height: 100%;
-	background-image: url("s2r://panorama/images/events/crownfall/visual_novel/vn_background_act1_png.vtex");
 	background-position: center;
 	background-size: cover;
 	transition-property: opacity;
@@ -285,6 +323,16 @@ DOTACrownfallVisualNovel.EncounterDialogue
 	transition-delay: 1s;
 	transition-timing-function: ease;
 	opacity: 1;
+}
+
+.Act1 .VisualNovelBackground
+{
+	background-image: url("s2r://panorama/images/events/crownfall/visual_novel/vn_background_act1_png.vtex");
+}
+
+.Act2 .VisualNovelBackground
+{
+	background-image: url("s2r://panorama/images/events/crownfall/visual_novel/vn_background_act2_png.vtex");
 }
 
 .EncounterDialogue .VisualNovelBackground
@@ -450,6 +498,7 @@ DOTACrownfallVisualNovel.EncounterDialogue
 	line-height: 1.3;
 	font-size: 34px;
 	color: rgb(236, 236, 236);
+	text-overflow: shrink;
 	brightness: 0.25;
 	opacity: 0.5;
 }
@@ -477,6 +526,11 @@ DOTACrownfallVisualNovel.EncounterDialogue
 {
 	brightness: 1.0;
 	opacity: 1.0;
+}
+
+.ActorTextContainer .ActorText i
+{
+	font-family: Radiance;
 }
 
 .ActorTextContainer .MoreIndicator
@@ -700,6 +754,7 @@ DOTACrownfallVisualNovel.EncounterDialogue
 	transition-duration: 1s;
 	margin-bottom: 20px;
 	opacity: 0;
+	overflow: noclip;
 }
 
 .PortraitContainerLayered.ShowActorEffectOverlay .ActorEffectOverlay
@@ -720,7 +775,6 @@ DOTACrownfallVisualNovel.EncounterDialogue
 .PortraitContainerLayered.ActorSweatDrop .ActorEffectOverlay
 {
 	background-image: url("s2r://panorama/images/events/crownfall/visual_novel/effects/sweatdrop_png.vtex");
-	transition-duration: 3s;
 }
 
 .PortraitContainerLayered.Flipped .PictureMask .AnimationContainer .ActorPicture
@@ -748,6 +802,33 @@ DOTACrownfallVisualNovel.EncounterDialogue
 	transform: scaleX(-1) translateY( 0 );
 }
 
+.PortraitContainerLayered.ShowActorEffectOverlay.Flipped.ActorAnger .ActorEffectOverlay
+{
+	animation-name: AnimAngerTop;
+	animation-duration: 2s;
+	animation-fill-mode: forwards;
+}
+
+.PortraitContainerLayered.ShowActorEffectOverlay.ActorAnger .ActorEffectOverlay
+{
+	animation-name: AnimAngerBottom;
+	animation-duration: 2s;
+	animation-fill-mode: forwards;
+}
+
+.PortraitContainerLayered.ShowActorEffectOverlay.ActorSweatDrop .ActorEffectOverlay
+{
+	animation-name: AnimSweatDrop;
+	animation-duration: 2s;
+	animation-fill-mode: both;
+	animation-delay: 0.5s;
+}
+
+.PortraitContainerLayered.ShowActorEffectOverlay.Flipped.ActorSweatDrop .ActorEffectOverlay
+{
+	animation-name: AnimSweatDropFlipped;
+}
+
 .PortraitContainerLayered .PictureMask
 {
 	width: 100%;
@@ -767,56 +848,6 @@ DOTACrownfallVisualNovel.EncounterDialogue
 {
 	width:100%;
 	height:100%;
-}
-
-.EntranceRising .PortraitContainerLayered .PictureMask .AnimationContainer
-{
-	animation-name: EntranceRising;
-	animation-duration: 0.8s;
-	animation-timing-function: ease-in;
-}
-
-.EntranceFalling .PortraitContainerLayered .PictureMask .AnimationContainer
-{
-	animation-name: EntranceFalling;
-	animation-duration: 0.8s;
-	animation-timing-function: ease-in;
-}
-
-.Top .EntranceSlideSlow .PortraitContainerLayered .PictureMask .AnimationContainer
-{
-	animation-name: EntranceSlideTop;
-	animation-duration: 1.3s;
-}
-
-.Top .ExitSlideSlow .PortraitContainerLayered .PictureMask .AnimationContainer
-{
-	background-color: red;
-	animation-direction: reverse;
-	animation-name: EntranceSlideTop;
-	animation-duration: 1.3s;
-	animation-fill-mode: forwards;
-}
-
-.Bottom .PortraitContainerLayered .PictureMask.EntranceSlideSlow .AnimationContainer
-{
-	animation-name: EntranceSlideBottom;
-	animation-duration: 1.5s;
-	animation-timing-function: ease-in-out;
-}
-
-.Bottom .PortraitContainerLayered .PictureMask.EntranceSlideFast .AnimationContainer
-{
-	animation-name: EntranceSlideBottom;
-	animation-duration: 0.5s;
-}
-
-.Bottom .PortraitContainerLayered .PictureMask.ExitSlideSlow .AnimationContainer
-{
-	animation-direction: reverse;
-	animation-name: EntranceSlideBottom;
-	animation-duration: 1.5s;
-	animation-fill-mode: forwards;
 }
 
 .PortraitContainerLayered .ActorNameContainer
@@ -893,6 +924,19 @@ DOTACrownfallVisualNovel.EncounterDialogue
 	horizontal-align: right;
 }
 
+.Top .PortraitContainerLayered.EntranceRising .AnimationContainer
+{
+	animation-name: EntranceRising;
+	animation-duration: 0.8s;
+}
+
+.Top .PortraitContainerLayered.ExitFalling .AnimationContainer
+{
+	animation-name: EntranceRising;
+	animation-duration: 0.8s;
+	animation-direction: reverse;
+}
+
 .Top .PortraitContainerLayered.EntranceSlideFast .AnimationContainer
 {
 	animation-name: EntranceSlideTop;
@@ -910,6 +954,19 @@ DOTACrownfallVisualNovel.EncounterDialogue
 .Bottom .PortraitContainerLayered
 {
 	horizontal-align: left;
+}
+
+.Bottom .PortraitContainerLayered.EntranceRising .AnimationContainer
+{
+	animation-name: EntranceRising;
+	animation-duration: 0.8s;
+}
+
+.Bottom .PortraitContainerLayered.ExitFalling .AnimationContainer
+{
+	animation-name: EntranceRising;
+	animation-duration: 0.8s;
+	animation-direction: reverse;
 }
 
 .Bottom .PortraitContainerLayered.EntranceSlideFast .AnimationContainer
@@ -940,6 +997,11 @@ DOTACrownfallVisualNovel.EncounterDialogue
 	animation-iteration-count:1;
 }
 
+.PortraitContainerLayered.BigPortrait
+{
+	transform: scale3d( 1.1, 1.1, 1.0 );
+}
+
 #PopupContainer
 {
 	ignore-parent-flow: true;
@@ -965,6 +1027,26 @@ DOTACrownfallVisualNovel.EncounterDialogue
 	width: 100%;
 	height: 100%;
 	margin-top: 3%;
+}
+
+#PopupContainer .SoundEffectBackground.Wet
+{
+	visibility: collapse;
+}
+
+.WetPopup #PopupContainer .SoundEffectBackground.Wet
+{
+	visibility: visible;
+}
+
+.WetPopup #PopupContainer .SoundEffectBackground.Hit
+{
+	visibility: collapse;
+}
+
+#PopupContainer #BackgroundHit
+{
+	visibility: visible;
 }
 
 #PopupContainer #PopupText
@@ -1123,6 +1205,11 @@ DOTACrownfallVisualNovel.EncounterDialogue
 	animation-name: Squash;
 	animation-duration: 0.15s;
 	animation-iteration-count: infinite;
+}
+
+#PreloadActorPicture
+{
+	visibility: collapse;
 }
 
 @keyframes 'Squash'
@@ -1298,6 +1385,82 @@ DOTACrownfallVisualNovel.EncounterDialogue
 	100%
 	{
 		transform:translateY(0px);
+	}
+	
+}
+
+@keyframes 'AnimAngerTop'
+{
+	0%
+	{
+		opacity: 0;
+		transform: scale3d( -0.5, 0.5, 1.0) translateX( 40px);
+	}
+	
+	40%
+	{
+		opacity: 1;
+		transform: scale3d( -1, 1, 1.0) translateX( 60px);
+	}
+	
+	100%
+	{
+		opacity: 0;
+		transform: scale3d( -1, 1, 1.0) translateX( 65px) translateY( -2px);
+	}
+	
+}
+
+@keyframes 'AnimAngerBottom'
+{
+	0%
+	{
+		opacity: 0;
+		transform: scale3d( 0.5, 0.5, 1.0) translateX( -40px);
+	}
+	
+	40%
+	{
+		opacity: 1;
+		transform: scale3d( 1, 1, 1.0) translateX( -60px);
+	}
+	
+	100%
+	{
+		opacity: 0;
+		transform: scale3d( 1, 1, 1.0) translateX( -65px) translateY( -2px);
+	}
+	
+}
+
+@keyframes 'AnimSweatDrop'
+{
+	0%
+	{
+		opacity: 0;
+		transform: translateY( -40px);
+	}
+	
+	100%
+	{
+		opacity: 1;
+		transform: translateY( 0px);
+	}
+	
+}
+
+@keyframes 'AnimSweatDropFlipped'
+{
+	0%
+	{
+		opacity: 0;
+		transform: translateY( -40px) scaleX( -1 );
+	}
+	
+	100%
+	{
+		opacity: 1;
+		transform: translateY( 0px) scaleX( -1 );
 	}
 	
 }

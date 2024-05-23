@@ -8,6 +8,7 @@ function Init()
 	menuButtons.AddClass( "HeroDemo" );
 
 	$.RegisterEventHandler( 'DOTAUIHeroPickerHeroSelected', $( '#SelectHeroContainer' ), SwitchToNewHero );
+	$.RegisterEventHandler( 'DOTAHeroFacetDropdownFacetSelected', $( '#HeroFacetDropdown' ), SwitchToNewFacet );
 
     var UiDefaults = CustomNetTables.GetTableValue( "game_global", "ui_defaults" );
 
@@ -85,24 +86,36 @@ function SetHeroPickerVisible( bVisible )
 	bHeroPickerVisible = bVisible;
 }
 
-function SwitchToNewHero( nHeroID )
+function SwitchToNewHero( nHeroID, nHeroVariant )
 {
 	Game.EmitSound( "UI.Button.Pressed" );
 
 	$.Msg( 'Hero = ' + nHeroID );
+	$.Msg( 'Variant = ' + nHeroVariant )
 
 	if ( $( '#SelectHeroContainer' ).BHasClass( 'PickMainHero' ) )
 	{
-		$.DispatchEvent( 'FireCustomGameEvent_Str', 'SelectMainHeroButtonPressed', String( nHeroID ) );
+		$.DispatchEvent( 'FireCustomGameEvent_Str', 'SelectMainHeroButtonPressed', String( nHeroID ) + ':' + String( nHeroVariant ) );
 	}
 	else
 	{
-		$.DispatchEvent( 'FireCustomGameEvent_Str', 'SelectSpawnHeroButtonPressed', String( nHeroID ) );
+		$.DispatchEvent( 'FireCustomGameEvent_Str', 'SelectSpawnHeroButtonPressed', String( nHeroID ) + ':' + String( nHeroVariant ) );
 	}
 
 	$( '#SelectHeroContainer' ).RemoveClass( 'PickMainHero' );
 
 	SetHeroPickerVisible( false );
+}
+
+function SwitchToNewFacet( nHeroFacet )
+{
+	$( '#SelectHeroContainer' ).SetHasClass( 'PickMainHero', true );
+
+	var PlayerHeroImage = $( '#PlayerHeroImage' );
+	if ( PlayerHeroImage != null )
+	{
+		$.DispatchEvent( 'FireCustomGameEvent_Str', 'SelectMainHeroButtonPressed', String( PlayerHeroImage.heroid ) + ':' + String( nHeroFacet ) );	
+	}
 }
 
 function OnSetPlayerHeroID( event_data )
@@ -112,6 +125,12 @@ function OnSetPlayerHeroID( event_data )
 	if ( PlayerHeroImage != null )
 	{
 		PlayerHeroImage.heroid = event_data.hero_id;
+	}	
+
+	var HeroFacetPicker = $( '#HeroFacetDropdown' );
+	if( HeroFacetPicker != null )
+	{
+		HeroFacetPicker.Init( event_data.hero_id, event_data.hero_variant );
 	}
 
 	var HeroDemoButton = $( '#HeroDemoHeroName' );
@@ -128,7 +147,7 @@ function OnSetMainHeroID( event_data )
 {
 	$.Msg( "OnSetMainHeroID: ", event_data );
 
-	$.DispatchEvent( "DOTADemoHeroEquippedItems", event_data.hero_name );
+	$.DispatchEvent( "DOTADemoHeroEquippedItems", event_data.hero_name, event_data.hero_variant );
 }
 GameEvents.Subscribe( "set_main_hero_id", OnSetMainHeroID );
 
@@ -146,6 +165,7 @@ function OnSetSpawnHeroID( event_data )
 	{
 		$.Msg( 'HERO NAME = ' + event_data.hero_name );
 		SpawnHeroButton.SetDialogVariable( "hero_name", GameUI.GetUnitNameLocalized( event_data.hero_name ) );
+		SpawnHeroButton.SetDialogVariable( "hero_variant", event_data.hero_variant );
 	}
 }
 GameEvents.Subscribe( "set_spawn_hero_id", OnSetSpawnHeroID );

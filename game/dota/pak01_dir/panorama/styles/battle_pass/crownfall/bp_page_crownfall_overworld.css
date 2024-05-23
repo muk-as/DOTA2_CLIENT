@@ -262,7 +262,7 @@ DOTACrownfallOverworldPage.ShowingIntro.IntroState0
 #ActSelector
 {
 	margin-left: 246px;
-	margin-top: 200px;
+	margin-top: 210px;
 	padding-left: 12px;
 	transition-duration: 0.25s;
 	transition-property: transform, opacity;
@@ -286,12 +286,15 @@ DOTACrownfallOverworldPage.ShowingIntro.IntroState0
 	width: 300px;
 	padding-bottom: 1px;
 	background-color: DarkestGrey;
+	padding: 2px;
 }
 
-#ActSelector .ActWipLabel
+#ActSelector .SelectActLabel
 {
-	padding: 12px;
-	color: rgb(255, 115, 255);
+	horizontal-align: center;
+	margin: 8px;
+	color: LighterGrey;
+	text-shadow: 0px 2px 8px black;
 }
 
 #ActSelector .ChapterNavItem
@@ -299,11 +302,27 @@ DOTACrownfallOverworldPage.ShowingIntro.IntroState0
 	width: 100%;
 	flow-children: down;
 	padding: 8px 12px;
-	background-color: DarkerGrey;
-	margin: 1px;
+	background-color: gradient( linear, 0% 30%, 0% 100%, from( #1f2b39 ), to( #161c25 ) );
+	box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.02);
+	margin: 2px;
 	margin-bottom: 0px;
-	transition-duration: 0s;
+	border-right: 3px solid transparent;
+	transition-duration: 0.1s;
 	transition-property: background-color;
+}
+
+#ActSelector .ChapterNavItem.Inactive
+{
+	brightness: 0.6;
+	opacity: 0.2;
+	box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0);
+	background-color: none;
+}
+
+#ActSelector .ChapterNavItem .ActTitle
+{
+	font-family: titleFont;
+	color: LighterGrey;
 }
 
 #ActSelector .ChapterNavItem Label
@@ -319,21 +338,23 @@ DOTACrownfallOverworldPage.ShowingIntro.IntroState0
 	visibility: collapse;
 	ignore-parent-flow: true;
 	horizontal-align: right;
-	color: gold2;
+	vertical-align: top;
+	color: gradient( linear, 0% 30%, 0% 100%, from( #FFF2DF ), color-stop( 0.48, #ebc386 ), color-stop( 0.52, #BA8C47 ), to( #8d6c3a ) );
 }
 
 #ActSelector .ChapterNavItem .UnlockDate
 {
 	ignore-parent-flow: true;
 	horizontal-align: right;
+	vertical-align: top;
 }
 
-#ActSelector .ChapterNavItem:hover
+#ActSelector .ChapterNavItem:hover:not(.Inactive)
 {
-	background-color: DarkGrey;
+	background-color: gradient( linear, 0% 30%, 0% 100%, from( #3f5167 ), to( #27303d ) );
 }
 
-#ActSelector .ChapterNavItem:hover Label
+#ActSelector .ChapterNavItem:hover:not(.Inactive) Label
 {
 	color: white;
 }
@@ -346,6 +367,18 @@ DOTACrownfallOverworldPage.ShowingIntro.IntroState0
 .ActLocked #ActSelector .ChapterNavItem.Selected:not(.Active) .ActivateButton
 {
 	visibility: collapse;
+}
+
+#ActSelector .ChapterNavItem.Active
+{
+	border-color: white;
+	border-brush: gradient( linear, 0% 30%, 0% 100%, from( #FFF2DF ), color-stop( 0.48, #ebc386 ), color-stop( 0.52, #BA8C47 ), to( #8d6c3a ) );
+	background-color: gradient( linear, 0% 30%, 0% 100%, from( #3f5167 ), to( #27303d ) );
+}
+
+#ActSelector .ChapterNavItem.Active .ActLabel,#ActSelector .ChapterNavItem.Active .ActTitle
+{
+	color: white;
 }
 
 #ActSelector .ChapterNavItem.Active .CurrentlyActiveLabel
@@ -433,7 +466,7 @@ DOTACrownfallOverworldPage.ShowingIntro.IntroState0
 	flow-children: down;
 	width: 196px;
 	border-radius: 3px;
-	padding: 4px 0px;
+	padding: 4px;
 	margin: 8px;
 	background-color: rgba(7, 13, 16, 0);
 	border: 1px solid rgba(195, 228, 255, 0.0);
@@ -448,9 +481,9 @@ DOTACrownfallOverworldPage.ShowingIntro.IntroState0
 	text-shadow: 0px 4px 12px black;
 	font-family: titleFont;
 	color: rgb(222, 225, 231);
-	font-size: 22px;
+	font-size: 20px;
 	text-align: center;
-	line-height: 1.3;
+	line-height: 1.2;
 	margin-top: 2px;
 }
 
@@ -458,10 +491,10 @@ DOTACrownfallOverworldPage.ShowingIntro.IntroState0
 {
 	width: 12px;
 	wash-color: LightGrey;
-	vertical-align: center;
+	horizontal-align: center;
 	margin-left: 2px;
 	margin-right: -8px;
-	margin-top: 4px;
+	margin-top: -2px;
 	transition-property: wash-color;
 	transition-duration: 0.1s;
 	visibility: collapse;
@@ -494,33 +527,16 @@ DOTACrownfallOverworldPage.ShowingIntro.IntroState0
 	wash-color: white;
 }
 
-#RewardsPanel .ActiveBadge
+#RewardsPanel #ActivateButton
 {
 	horizontal-align: center;
-	margin: -18px 0px 8px;
+	margin: -25px 0px 8px;
 }
 
-#RewardsPanel .ActiveBadge Label
+#RewardsPanel #ActivateButton:disabled
 {
-	horizontal-align: center;
-	vertical-align: center;
-	color: gradient( linear, 0% 30%, 0% 100%, from( #FFF2DF ), color-stop( 0.48, #ebc386 ), color-stop( 0.52, #BA8C47 ), to( #8d6c3a ) );
-	text-shadow: 0px 2px 8px black;
-	margin-bottom: 1px;
-	margin-left: 2px;
-	line-height: 1.0;
-	text-overflow: shrink;
-	text-align: center;
-	max-width: 76px;
-	max-height: 28px;
-}
-
-#RewardsPanel .ActiveBadge .ActiveBadgeBackground
-{
-	width: 100px;
-	horizontal-align: center;
-	vertical-align: center;
-	img-shadow: 0px 2px 12px black;
+	saturation: 1;
+	brightness: 1;
 }
 
 #RewardsPanel .ActPassContainer
@@ -870,6 +886,22 @@ DOTACrownfallOverworldPage.ShowingIntro.IntroState0
 	opacity-mask: url("s2r://panorama/images/events/crownfall/overworld/nodes/icons/encounter_candy_png.vtex");
 }
 
+#RewardsPanel #EncounterShortcutContainer #EncounterShortcut_secret_admirer .ShortcutIcon
+{
+	width: 20px;
+	height: 20px;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( gold1 ), to( gold3 ) );
+	opacity-mask: url("s2r://panorama/images/events/crownfall/overworld/nodes/icons/encounter_mail_png.vtex");
+}
+
+#RewardsPanel #EncounterShortcutContainer #EncounterShortcut_pit_fighter .ShortcutIcon
+{
+	width: 20px;
+	height: 20px;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( gold1 ), to( gold3 ) );
+	opacity-mask: url("s2r://panorama/images/events/crownfall/overworld/nodes/icons/encounter_pit_png.vtex");
+}
+
 #RewardsPanel .ShortcutsTitle
 {
 	horizontal-align: center;
@@ -918,5 +950,34 @@ DOTACrownfallOverworldPage.ShowingIntro.IntroState0
 		transform: scale3d( 1.1, 1.1, 1.0 );
 	}
 	
+}
+
+@keyframes 'FadeIn'
+{
+	0%
+	{
+		opacity: 0;
+	}
+	
+	100%
+	{
+		opacity: 100;
+	}
+	
+}
+
+#FriendsLeaderboard
+{
+	horizontal-align: right;
+	margin-top: 140px;
+	margin-right: 20px;
+	width: 240px;
+	height: 225px;
+	visibility: collapse;
+}
+
+.HasLeaderboard #FriendsLeaderboard
+{
+	visibility: visible;
 }
 

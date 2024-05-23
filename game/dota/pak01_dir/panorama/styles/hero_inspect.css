@@ -85,7 +85,7 @@ DOTAHeroInspect
 	margin-left: 16px;
 	margin-right: 16px;
 	flow-children: right;
-	height: 203px;
+	height: 245px;
 	width: 100%;
 	margin-top: 42px;
 	margin-bottom: 10px;
@@ -112,18 +112,18 @@ DOTAHeroInspect
 
 #HeroPortrait
 {
-	border: 1px solid #00000022;
 	background-color: black;
-	margin-right: 1px;
+	height: 100%;
 	width: 160px;
-	height: 203px;
-	overflow: clip;
+	border: 1px solid #000000;
 }
 
 #HeroMovie
 {
-	width: 100%;
+	width: 192px;
 	height: 100%;
+	overflow: noclip;
+	horizontal-align: center;
 }
 
 #HeroImageFooter
@@ -189,14 +189,14 @@ DOTAHeroInspect
 {
 	padding-left: 16px;
 	padding-right: 16px;
-	margin-top: 255px;
+	margin-top: 297px;
 	flow-children: right;
 	height: 60px;
 }
 
-#HeroAbilities > DOTAAbilityImage,#HeroAbilities > .StatBranch,#HeroAbilities > .ScepterDetails
+#HeroAbilities > DOTAAbilityImage,#HeroAbilities > .StatBranch,#HeroAbilities > .ScepterDetails,#HeroAbilities > .InnateAbility
 {
-	margin-right: 8px;
+	margin-right: 6px;
 	width: fill-parent-flow( 1.0 );
 	height: width-percentage( 100% );
 	tooltip-position: bottom;
@@ -204,12 +204,7 @@ DOTAHeroInspect
 
 #HeroAbilities > .StatBranch,#HeroAbilities > .ScepterDetails
 {
-	wash-color: #5E86C2;
-}
-
-#HeroAbilities > .ScepterDetails
-{
-	margin-left: -7px;
+	wash-color: #798798;
 }
 
 #HeroHype
@@ -432,6 +427,7 @@ DOTAHeroInspect
 	width: 100%;
 	height: 100%;
 	padding-top: 5px;
+	overflow: squish;
 	visibility: collapse;
 	background-color: #0a0a0a;
 }
@@ -486,7 +482,7 @@ DOTAHeroInspect
 {
 	width: 100%;
 	margin-right: 0px;
-	margin-top: 314px;
+	margin-top: 356px;
 	padding-left: 16px;
 	padding-right: 16px;
 	visibility: collapse;
@@ -592,7 +588,7 @@ DOTAHeroInspect
 	margin-top: 5px;
 	horizontal-align: center;
 	width: 100%;
-	height: 100%;
+	height: fill-parent-flow(1.0);
 	padding-left: 10px;
 	padding-right: 10px;
 	background-color: black;
@@ -628,10 +624,10 @@ DOTAHeroInspect
 
 #HeroSimpleDescription
 {
-	margin-top: 378px;
+	margin-top: 420px;
 	padding-left: 16px;
 	padding-right: 16px;
-	height:200px;
+	height:158px;
 	visibility:collapse;
 }
 
@@ -643,5 +639,60 @@ DOTAHeroInspect
 #PreGame.IsCustomGame #FriendsAndFoes
 {
 	visibility: collapse;
+}
+
+#HeroImage
+{
+	width: 50%;
+	height: 50%;
+	vertical-align: center;
+	horizontal-align: center;
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	z-index: 2;
+	visibility: collapse;
+}
+
+.HeroFacetOuter
+{
+	width: 160px;
+	vertical-align: bottom;
+	flow-children: down;
+	background-color: rgba(0, 0, 0, 0.9);
+	padding: 4px 0px 4px;
+	transition-property: transform, opacity;
+	transition-duration: 0.3s;
+	transition-delay: 0.1s;
+	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
+	opacity: 0;
+	transform: translateY( 12px );
+}
+
+.InspectingHero .HeroFacetOuter
+{
+	opacity: 1;
+	transform: none;
+}
+
+.HeroFacetOuter .FacetsLabel
+{
+	horizontal-align: center;
+	text-shadow: 0px 2px 8px black;
+	opacity: 0.8;
+}
+
+.HeroFacetOuter #HeroFacetContainer
+{
+	flow-children: right;
+	horizontal-align: center;
+	vertical-align: bottom;
+}
+
+.HeroFacetOuter #HeroFacetContainer DOTAFacetIcon
+{
+	margin: 3px;
+	ui-scale: 108%;
+	tooltip-position: bottom;
 }
 
