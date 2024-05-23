@@ -12295,7 +12295,7 @@ class CDOTA_Modifier_DragonKnight_Inherited_Vigor : public CDOTA_Buff
 {
 public:
 	int32_t base_health_regen; // 0x1598	
-	int32_t base_armor; // 0x159c	
+	float base_armor; // 0x159c	
 	float level_mult; // 0x15a0	
 	float regen_and_armor_multiplier_during_dragon_form; // 0x15a4	
 	bool m_bRecurseProtect; // 0x15a8	
@@ -84448,7 +84448,7 @@ public:
 	float base_mana_regen; // 0x1598	
 	float proximity_bonus_factor; // 0x159c	
 	float aoe_bonus; // 0x15a0	
-	int32_t proximity_bonus_radius; // 0x15a4	
+	float proximity_bonus_radius; // 0x15a4	
 	int32_t self_cast_range_bonus; // 0x15a8	
 	int32_t mana_battery_mana_pct; // 0x15ac	
 };
