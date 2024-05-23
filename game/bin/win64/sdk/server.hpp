@@ -48286,12 +48286,11 @@ public:
 class CDOTA_Ability_Shredder_WhirlingDeath : public CDOTABaseAbility
 {
 public:
-	int32_t applies_debuff; // 0x5a0	
-	int32_t whirling_radius; // 0x5a4	
-	int32_t whirling_damage; // 0x5a8	
-	float whirling_tick; // 0x5ac	
-	float duration; // 0x5b0	
-	int32_t tree_damage_scale; // 0x5b4	
+	int32_t whirling_radius; // 0x5a0	
+	int32_t whirling_damage; // 0x5a4	
+	float whirling_tick; // 0x5a8	
+	float duration; // 0x5ac	
+	int32_t tree_damage_scale; // 0x5b0	
 };
 
 // Registered binary: server.dll (project 'server')

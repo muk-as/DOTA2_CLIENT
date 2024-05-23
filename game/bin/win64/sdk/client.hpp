@@ -20720,12 +20720,11 @@ public:
 class C_DOTA_Ability_Shredder_WhirlingDeath : public C_DOTABaseAbility
 {
 public:
-	int32_t applies_debuff; // 0x5d8	
-	int32_t whirling_radius; // 0x5dc	
-	int32_t whirling_damage; // 0x5e0	
-	float whirling_tick; // 0x5e4	
-	float duration; // 0x5e8	
-	int32_t tree_damage_scale; // 0x5ec	
+	int32_t whirling_radius; // 0x5d8	
+	int32_t whirling_damage; // 0x5dc	
+	float whirling_tick; // 0x5e0	
+	float duration; // 0x5e4	
+	int32_t tree_damage_scale; // 0x5e8	
 };
 
 // Registered binary: client.dll (project 'client')
