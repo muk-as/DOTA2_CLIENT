@@ -11185,7 +11185,7 @@ public:
 class CDOTA_Modifier_Slark_EssenceShift_Permanent_Debuff : public CDOTA_Buff
 {
 public:
-	int32_t steal_radius; // 0x15b8	
+	float steal_radius; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -16179,8 +16179,8 @@ public:
 class CDOTA_Modifier_Techies_StasisTrap : public CDOTA_Modifier_Invisible
 {
 public:
-	int32_t activation_radius; // 0x15c8	
-	int32_t stun_radius; // 0x15cc	
+	float activation_radius; // 0x15c8	
+	float stun_radius; // 0x15cc	
 	float stun_duration; // 0x15d0	
 	float explode_delay; // 0x15d4	
 	float activation_time; // 0x15d8	
@@ -16499,8 +16499,8 @@ public:
 class CDOTA_Modifier_Jakiro_DualBreath_Thinker : public CDOTA_Buff
 {
 public:
-	int32_t start_radius; // 0x15b8	
-	int32_t end_radius; // 0x15bc	
+	float start_radius; // 0x15b8	
+	float end_radius; // 0x15bc	
 	GameTime_t m_fStartTime; // 0x15c0	
 	float m_fTotalTime; // 0x15c4	
 	Vector m_vCastPosition; // 0x15c8	
@@ -17452,7 +17452,7 @@ class CDOTA_Modifier_Item_Blood_Grenade_Flight_Thinker : public CDOTA_Buff
 {
 public:
 	int32_t speed; // 0x15b8	
-	int32_t radius; // 0x15bc	
+	float radius; // 0x15bc	
 	int32_t damage_over_time; // 0x15c0	
 	int32_t impact_damage; // 0x15c4	
 	float debuff_duration; // 0x15c8	
@@ -19990,7 +19990,7 @@ public:
 	float damage_interval; // 0x15b8	
 	int32_t leech_damage; // 0x15bc	
 	int32_t movement_slow; // 0x15c0	
-	int32_t radius; // 0x15c4	
+	float radius; // 0x15c4	
 	int32_t projectile_speed; // 0x15c8	
 	bool ground_plant; // 0x15cc	
 };
@@ -20876,7 +20876,7 @@ public:
 class CDOTA_Modifier_Lich_Chain_Frost_Frostbound : public CDOTA_Buff
 {
 public:
-	int32_t jump_range; // 0x15b8	
+	float jump_range; // 0x15b8	
 	int32_t jumps_remaining; // 0x15bc	
 	int32_t damage_to_heroes; // 0x15c0	
 	int32_t heroes_killed; // 0x15c4	
@@ -22589,7 +22589,7 @@ public:
 class CDOTA_Modifier_Axe_CounterHelix : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 	int32_t trigger_attacks; // 0x15bc	
 };
 
@@ -26444,7 +26444,7 @@ public:
 	int32_t heal_percent; // 0x15d8	
 	int32_t m_nDamageTracker; // 0x15dc	
 	int32_t damage_threshold; // 0x15e0	
-	int32_t spread_radius; // 0x15e4	
+	float spread_radius; // 0x15e4	
 	int32_t max_health_as_damage_pct; // 0x15e8	
 };
 
@@ -31148,8 +31148,8 @@ class C_DOTA_Ability_Kunkka_GhostShip : public C_DOTABaseAbility
 public:
 	float buff_duration; // 0x5d8	
 	float stun_duration; // 0x5dc	
-	int32_t ghostship_width; // 0x5e0	
-	int32_t ghostship_width_scepter; // 0x5e4	
+	float ghostship_width; // 0x5e0	
+	float ghostship_width_scepter; // 0x5e4	
 	Vector m_vFinalDestination; // 0x5e8	
 	Vector m_vStartingPoint; // 0x5f4	
 	int32_t m_nProjectileID; // 0x600	
@@ -38225,7 +38225,7 @@ public:
 	int32_t projectiles_per_stack; // 0x15b8	
 	int32_t projectile_speed; // 0x15bc	
 	int32_t projectile_distance; // 0x15c0	
-	int32_t projectile_width; // 0x15c4	
+	float projectile_width; // 0x15c4	
 	int32_t splinter_angle; // 0x15c8	
 	float split_delay; // 0x15cc	
 	int32_t projectile_waves; // 0x15d0	
@@ -38326,14 +38326,14 @@ public:
 class CDOTA_Modifier_Necrolyte_Sadist : public CDOTA_Buff
 {
 public:
-	int32_t aura_radius; // 0x15b8	
+	float aura_radius; // 0x15b8	
 	bool m_bStackCountChanged; // 0x15bc	
 private:
 	[[maybe_unused]] uint8_t __pad15bd[0x3]; // 0x15bd
 public:
 	CUtlVector< GameTime_t > m_fStackExpireTimes; // 0x15c0	
-	int32_t bonus_aoe; // 0x15d8	
-	int32_t bonus_spell_amp; // 0x15dc	
+	float bonus_aoe; // 0x15d8	
+	float bonus_spell_amp; // 0x15dc	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -41022,10 +41022,10 @@ public:
 class C_DOTA_Ability_Lich_ChainFrost : public C_DOTABaseAbility
 {
 public:
-	int32_t jump_range; // 0x5d8	
+	float jump_range; // 0x5d8	
 	int32_t jumps; // 0x5dc	
 	float slow_duration; // 0x5e0	
-	int32_t vision_radius; // 0x5e4	
+	float vision_radius; // 0x5e4	
 	int32_t projectile_speed; // 0x5e8	
 	int32_t initial_projectile_speed; // 0x5ec	
 private:
@@ -45302,8 +45302,8 @@ public:
 class CDOTA_Modifier_StormSpirit_Overload : public CDOTA_Buff
 {
 public:
-	int32_t overload_aoe; // 0x15b8	
-	int32_t overload_cast_range; // 0x15bc	
+	float overload_aoe; // 0x15b8	
+	float overload_cast_range; // 0x15bc	
 	CUtlVector< CHandle< C_BaseEntity > > m_vecHitUnits; // 0x15c0	
 };
 
@@ -49221,7 +49221,7 @@ public:
 class CDOTA_Modifier_SandKing_CausticFinaleOrb : public CDOTA_Buff
 {
 public:
-	int32_t caustic_finale_radius; // 0x15b8	
+	float caustic_finale_radius; // 0x15b8	
 	int32_t caustic_finale_damage_base; // 0x15bc	
 	int32_t caustic_finale_damage_pct; // 0x15c0	
 };
@@ -52675,7 +52675,7 @@ public:
 class CDOTA_Modifier_Clinkz_Tar_Bomb_Thinker : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 	float slow_duration; // 0x15bc	
 	ParticleIndex_t m_nFXIndex; // 0x15c0	
 };
@@ -58257,7 +58257,7 @@ public:
 class CDOTA_Modifier_Techies_LandMine : public CDOTA_Modifier_Invisible
 {
 public:
-	int32_t radius; // 0x15c8	
+	float radius; // 0x15c8	
 	float proximity_threshold; // 0x15cc	
 	float damage; // 0x15d0	
 	float activation_delay; // 0x15d4	
@@ -59880,7 +59880,7 @@ public:
 	float movement_speed; // 0x15c4	
 	int32_t magic_resistance; // 0x15c8	
 	float m_flAccumDamage; // 0x15cc	
-	int32_t expiration_damage_radius; // 0x15d0	
+	float expiration_damage_radius; // 0x15d0	
 	int32_t accumulated_damage_explosion_pct; // 0x15d4	
 };
 
@@ -61101,7 +61101,7 @@ public:
 class CDOTA_Modifier_StormSpirit_Enemy_Overload : public CDOTA_Buff
 {
 public:
-	int32_t overload_aoe; // 0x15b8	
+	float overload_aoe; // 0x15b8	
 private:
 	[[maybe_unused]] uint8_t __pad15bc[0x4]; // 0x15bc
 public:
@@ -62074,7 +62074,7 @@ public:
 class CDOTA_Modifier_Juggernaut_BladeFury : public CDOTA_Buff
 {
 public:
-	int32_t blade_fury_radius; // 0x15b8	
+	float blade_fury_radius; // 0x15b8	
 	int32_t blade_fury_damage_per_tick; // 0x15bc	
 	float blade_fury_aspd_multiplier; // 0x15c0	
 	float m_flTotalAppliedDamage; // 0x15c4	
@@ -62748,7 +62748,7 @@ public:
 	float m_fPower; // 0x5e4	
 	int32_t m_iProjectile; // 0x5e8	
 	float damage_reduction; // 0x5ec	
-	int32_t arrow_width; // 0x5f0	
+	float arrow_width; // 0x5f0	
 	int32_t powershot_damage; // 0x5f4	
 	float tree_width; // 0x5f8	
 	float slow; // 0x5fc	
@@ -69379,7 +69379,7 @@ public:
 class CDOTA_Modifier_Techies_StickyBombThrow : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -70459,7 +70459,7 @@ public:
 class CDOTA_Modifier_Lich_FrostShield : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 	float interval; // 0x15bc	
 	int32_t damage_reduction; // 0x15c0	
 	int32_t health_regen; // 0x15c4	
@@ -70836,7 +70836,7 @@ public:
 class CDOTA_Modifier_StormSpirit_Electric_Rave : public CDOTA_Buff
 {
 public:
-	int32_t overload_aoe; // 0x15b8	
+	float overload_aoe; // 0x15b8	
 	int32_t overload_damage; // 0x15bc	
 	int32_t shard_attack_speed_bonus; // 0x15c0	
 };
@@ -71210,7 +71210,7 @@ class CDOTA_Modifier_Shadow_Demon_Disseminate : public CDOTA_Buff
 {
 public:
 	int32_t damage_reflection_pct; // 0x15b8	
-	int32_t radius; // 0x15bc	
+	float radius; // 0x15bc	
 	GameTime_t m_flLastDispersionPulseEffectTime; // 0x15c0	
 };
 
@@ -75355,7 +75355,7 @@ public:
 	Vector m_vVectorTargetEndpoint; // 0x600	
 	Vector m_vCurveAcceleration; // 0x60c	
 	Vector m_vStartPosition; // 0x618	
-	int32_t orb_vision; // 0x624	
+	float orb_vision; // 0x624	
 	float max_distance; // 0x628	
 	float vision_duration; // 0x62c	
 	int32_t damage; // 0x630	
@@ -75508,7 +75508,7 @@ public:
 class CDOTA_Modifier_Necrolyte_Heartstopper_Aura : public CDOTA_Buff
 {
 public:
-	int32_t aura_radius; // 0x15b8	
+	float aura_radius; // 0x15b8	
 	bool m_bStackCountChanged; // 0x15bc	
 private:
 	[[maybe_unused]] uint8_t __pad15bd[0x3]; // 0x15bd
@@ -78233,7 +78233,7 @@ public:
 class CDOTA_Modifier_Sniper_Shrapnel_Thinker : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 	bool m_bExploded; // 0x15bc	
 };
 
@@ -79983,7 +79983,7 @@ public:
 class CDOTA_Modifier_Silencer_LastWord_Aura : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -80559,7 +80559,7 @@ class CDOTA_Modifier_Item_Arcane_Boots : public CDOTA_Buff_Item
 public:
 	int32_t bonus_movement; // 0x15b8	
 	int32_t bonus_mana; // 0x15bc	
-	int32_t aura_radius; // 0x15c0	
+	float aura_radius; // 0x15c0	
 	float mana_regen; // 0x15c4	
 };
 
@@ -83026,8 +83026,8 @@ public:
 class C_DOTA_Ability_DragonKnight_BreatheFire : public C_DOTABaseAbility
 {
 public:
-	int32_t start_radius; // 0x5d8	
-	int32_t end_radius; // 0x5dc	
+	float start_radius; // 0x5d8	
+	float end_radius; // 0x5dc	
 	float damage; // 0x5e0	
 	Vector m_vStartPos; // 0x5e4	
 	GameTime_t m_fStartTime; // 0x5f0	
