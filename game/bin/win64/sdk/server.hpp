@@ -15944,7 +15944,7 @@ class CDOTA_Modifier_ArcWarden_MagneticField_Thinker_AttackRange : public CDOTA_
 private:
 	[[maybe_unused]] uint8_t __pad15b8[0x8]; // 0x15b8
 public:
-	int32_t radius; // 0x15c0	
+	float radius; // 0x15c0	
 	int32_t affects_buildings; // 0x15c4	
 	Vector m_vPos; // 0x15c8	
 };
@@ -16673,7 +16673,7 @@ public:
 class CDOTA_Modifier_ArcWarden_MagneticField_Thinker_Attack_Speed : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 	int32_t affects_buildings; // 0x15bc	
 };
 
@@ -20985,7 +20985,7 @@ class CDOTA_Modifier_ArcWarden_MagneticField_Thinker_Evasion : public CDOTA_Buff
 private:
 	[[maybe_unused]] uint8_t __pad15b8[0x8]; // 0x15b8
 public:
-	int32_t radius; // 0x15c0	
+	float radius; // 0x15c0	
 	Vector m_vPos; // 0x15c4	
 	int32_t affects_buildings; // 0x15d0	
 };
@@ -21151,7 +21151,7 @@ public:
 	float linger_duration; // 0x15c4	
 	int32_t min_bonus_pct; // 0x15c8	
 	int32_t max_bonus_pct; // 0x15cc	
-	int32_t thirst_range; // 0x15d0	
+	float thirst_range; // 0x15d0	
 };
 
 // Registered binary: server.dll (project 'server')
@@ -23110,7 +23110,7 @@ public:
 	int32_t attack_range_bonus; // 0x15b8	
 	int32_t attack_magic_damage; // 0x15bc	
 	int32_t attack_damage_bonus; // 0x15c0	
-	int32_t radius; // 0x15c4	
+	float radius; // 0x15c4	
 	int32_t shard_magic_resist; // 0x15c8	
 	int32_t shard_slow_pct; // 0x15cc	
 	float aura_origin_x; // 0x15d0	
@@ -25788,9 +25788,9 @@ public:
 class CDOTA_Modifier_ArcWarden_SparkWraith_Thinker : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
-	int32_t scepter_radius; // 0x15bc	
-	int32_t wraith_vision_radius; // 0x15c0	
+	float radius; // 0x15b8	
+	float scepter_radius; // 0x15bc	
+	float wraith_vision_radius; // 0x15c0	
 	int32_t wraith_speed; // 0x15c4	
 private:
 	[[maybe_unused]] uint8_t __pad15c8[0x8]; // 0x15c8
@@ -26524,7 +26524,7 @@ class CDOTA_Modifier_AbyssalUnderlord_Underling_Autoattack : public CDOTA_Buff
 {
 public:
 	CHandle< CBaseEntity > m_hBestTarget; // 0x15b8	
-	int32_t underling_search_radius; // 0x15bc	
+	float underling_search_radius; // 0x15bc	
 	bool m_bRunningToFountain; // 0x15c0	
 private:
 	[[maybe_unused]] uint8_t __pad15c1[0x3]; // 0x15c1
@@ -34115,7 +34115,7 @@ public:
 	float slow; // 0x15bc	
 	float cast_slow; // 0x15c0	
 	float strength_decrease; // 0x15c4	
-	int32_t aoe; // 0x15c8	
+	float aoe; // 0x15c8	
 };
 
 // Registered binary: server.dll (project 'server')
@@ -35695,7 +35695,7 @@ class CDOTA_Modifier_AbyssalUnderlord_PitOfMalice_Thinker : public CDOTA_Buff
 {
 public:
 	int32_t pit_damage; // 0x15b8	
-	int32_t radius; // 0x15bc	
+	float radius; // 0x15bc	
 	float pit_interval; // 0x15c0	
 	float ensnare_duration; // 0x15c4	
 };
@@ -37408,7 +37408,7 @@ public:
 class CDOTA_Modifier_AbyssalUnderlord_Underling_Spawn_Thinker : public CDOTA_Buff
 {
 public:
-	int32_t underling_search_radius; // 0x15b8	
+	float underling_search_radius; // 0x15b8	
 	int32_t warrior_health; // 0x15bc	
 	int32_t warrior_damage; // 0x15c0	
 	int32_t archer_health; // 0x15c4	
@@ -37433,7 +37433,7 @@ class CDOTA_Modifier_AbyssalUnderlord_Firestorm_Thinker : public CDOTA_Buff
 public:
 	int32_t wave_damage; // 0x15b8	
 	int32_t wave_count; // 0x15bc	
-	int32_t radius; // 0x15c0	
+	float radius; // 0x15c0	
 	float wave_interval; // 0x15c4	
 	float burn_duration; // 0x15c8	
 	float burn_interval; // 0x15cc	
@@ -41234,7 +41234,7 @@ public:
 class CDOTA_Modifier_AbyssalUnderlord_AtrophyAura_HeroDmgBuff : public CDOTA_Buff
 {
 public:
-	int32_t bonus_damage_from_hero; // 0x15b8	
+	float bonus_damage_from_hero; // 0x15b8	
 	float bonus_shared_by_allies_pct; // 0x15bc	
 	float m_flModifier; // 0x15c0	
 };
@@ -48617,7 +48617,7 @@ class CDOTA_Modifier_ArcWarden_MagneticField_Evasion : public CDOTA_Buff
 {
 public:
 	int32_t evasion_chance; // 0x15b8	
-	int32_t radius; // 0x15bc	
+	float radius; // 0x15bc	
 	int32_t shard_magic_resist; // 0x15c0	
 	int32_t shard_slow_pct; // 0x15c4	
 	float aura_origin_x; // 0x15c8	
@@ -55470,7 +55470,7 @@ public:
 class CDOTA_Modifier_Abyssal_Underling_Warrior_Sight : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 };
 
 // Registered binary: server.dll (project 'server')
@@ -56430,7 +56430,7 @@ public:
 class CDOTA_Modifier_Abaddon_AphoticShield : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 	float damage_absorb; // 0x15bc	
 	int32_t regen; // 0x15c0	
 	int32_t m_nDamageAbsorbed; // 0x15c4	
@@ -58948,7 +58948,7 @@ public:
 class CDOTA_Ability_AncientApparition_IceVortex : public CDOTABaseAbility
 {
 public:
-	int32_t vision_aoe; // 0x5a0	
+	float vision_aoe; // 0x5a0	
 	float vortex_duration; // 0x5a4	
 };
 
@@ -65236,7 +65236,7 @@ public:
 class CDOTA_Modifier_Abyssal_Underling_Archer_AoE : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 };
 
 // Registered binary: server.dll (project 'server')
@@ -65675,10 +65675,10 @@ class CDOTA_Modifier_AncientApparition_ColdFeet : public CDOTA_Buff
 public:
 	Vector m_vecStartPosition; // 0x15b8	
 	int32_t m_nCurrentTick; // 0x15c4	
-	int32_t break_distance; // 0x15c8	
+	float break_distance; // 0x15c8	
 	float stun_duration; // 0x15cc	
 	int32_t frost_stacks; // 0x15d0	
-	int32_t aoe; // 0x15d4	
+	float aoe; // 0x15d4	
 };
 
 // Registered binary: server.dll (project 'server')
@@ -66108,7 +66108,7 @@ class CDOTA_Modifier_AbyssalUnderlord_DarkRift : public CDOTA_Buff
 {
 public:
 	ParticleIndex_t m_nfxTargetTp; // 0x15b8	
-	int32_t radius; // 0x15bc	
+	float radius; // 0x15bc	
 	int32_t duration; // 0x15c0	
 	ParticleIndex_t m_nfxAmbientFx; // 0x15c4	
 	bool bPointTarget; // 0x15c8	
@@ -76880,9 +76880,9 @@ class CDOTA_Modifier_AbyssalUnderlord_AtrophyAura_DmgBuffCounter : public CDOTA_
 {
 public:
 	int32_t cleave_damage_pct; // 0x15b8	
-	int32_t cleave_starting_width; // 0x15bc	
+	float cleave_starting_width; // 0x15bc	
 	int32_t cleave_angle; // 0x15c0	
-	int32_t cleave_distance_base; // 0x15c4	
+	float cleave_distance_base; // 0x15c4	
 	int32_t cleave_distance_per_stack; // 0x15c8	
 };
 
@@ -76893,7 +76893,7 @@ public:
 class CDOTA_Modifier_AbyssalUnderlord_AtrophyAura : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 	ParticleIndex_t m_nFXIndex; // 0x15bc	
 };
 
@@ -79697,7 +79697,7 @@ class CDOTA_Modifier_Abaddon_TheQuickening : public CDOTA_Buff
 public:
 	float cooldown_reduction_creeps; // 0x15b8	
 	float cooldown_reduction_heroes; // 0x15bc	
-	int32_t radius; // 0x15c0	
+	float radius; // 0x15c0	
 };
 
 // Registered binary: server.dll (project 'server')
@@ -91328,7 +91328,7 @@ class CDOTA_Modifier_Alchemist_AcidSpray_Thinker : public CDOTA_Buff
 public:
 	int32_t damage; // 0x15b8	
 	int32_t armor_allies; // 0x15bc	
-	int32_t radius; // 0x15c0	
+	float radius; // 0x15c0	
 	ParticleIndex_t m_nFXIndex; // 0x15c4	
 };
 
@@ -96574,7 +96574,7 @@ class CDOTA_Ability_Leshrac_Diabolic_Edict : public CDOTABaseAbility
 {
 public:
 	int32_t num_explosions; // 0x5a0	
-	int32_t radius; // 0x5a4	
+	float radius; // 0x5a4	
 };
 
 // Registered binary: server.dll (project 'server')
@@ -98952,12 +98952,12 @@ public:
 	Vector m_vStartPos; // 0x5c4	
 	Vector m_vLastTempViewer; // 0x5d0	
 	int32_t m_iTrackerProjectile; // 0x5dc	
-	int32_t path_radius; // 0x5e0	
-	int32_t radius_min; // 0x5e4	
-	int32_t radius_max; // 0x5e8	
+	float path_radius; // 0x5e0	
+	float radius_min; // 0x5e4	
+	float radius_max; // 0x5e8	
 	float radius_grow; // 0x5ec	
 	float frostbite_duration; // 0x5f0	
-	int32_t target_sight_radius; // 0x5f4	
+	float target_sight_radius; // 0x5f4	
 	CUtlVector< CHandle< CBaseEntity > > m_hFrostbittenEntities; // 0x5f8	
 };
 
