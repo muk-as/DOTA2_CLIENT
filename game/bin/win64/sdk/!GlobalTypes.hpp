@@ -13437,7 +13437,7 @@ enum class AnimValueSource : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
-// Enumerator count: 335
+// Enumerator count: 336
 // Alignment: 4
 // Size: 0x4
 enum class modifierfunction : uint32_t
@@ -14108,7 +14108,9 @@ enum class modifierfunction : uint32_t
 	MODIFIER_PROPERTY_HEROFACET_OVERRIDE = 0x14b,
 	// MScriptDescription "OnTreeCutDown"
 	MODIFIER_EVENT_ON_TREE_CUT_DOWN = 0x14c,
-	MODIFIER_FUNCTION_LAST = 0x14d,
+	// MScriptDescription "OnCleaveAttackLanded"
+	MODIFIER_EVENT_ON_CLEAVE_ATTACK_LANDED = 0x14d,
+	MODIFIER_FUNCTION_LAST = 0x14e,
 	MODIFIER_FUNCTION_INVALID = 0xffff,
 };
 
@@ -33768,7 +33770,7 @@ public:
 
 // Registered binary: server.dll (project 'server')
 // Alignment: 8
-// Size: 0x15a8
+// Size: 0x15b8
 // Has VTable
 // Is Abstract
 class CDOTA_Buff : public CHorizontalMotionController
@@ -33823,9 +33825,9 @@ public:
 	CUtlVector< CDOTA_BuffParticle > m_iParticles; // 0xa0	
 	CUtlVector< CHandle< CBaseEntity > > m_hAuraUnits; // 0xb8	
 private:
-	[[maybe_unused]] uint8_t __pad00d0[0x14d0]; // 0xd0
+	[[maybe_unused]] uint8_t __pad00d0[0x14e0]; // 0xd0
 public:
-	HSCRIPT m_hScriptScope; // 0x15a0	
+	HSCRIPT m_hScriptScope; // 0x15b0	
 };
 
 // Registered binary: particles.dll (project 'particles')
@@ -34199,7 +34201,7 @@ public:
 
 // Registered binary: server.dll (project 'server')
 // Alignment: 8
-// Size: 0x1d0
+// Size: 0x1d8
 // Has Trivial Destructor
 class CModifierParams
 {
@@ -34251,51 +34253,55 @@ public:
 	bool bBlademailApplied; // 0x7f	
 	bool bForceFieldApplied; // 0x80	
 	bool bKayaApplied; // 0x81	
-	bool bStoutConsidered; // 0x82	
-	bool bInterrupted; // 0x83	
-	bool bDiffusalApplied; // 0x84	
-	bool bChainLightningConsidered; // 0x85	
-	bool bSuppressDamage; // 0x86	
-	bool bRangedAttack; // 0x87	
-	bool bProcessProcs; // 0x88	
-	bool bProjectileIsFromIllusion; // 0x89	
-	bool bHasMagicComponent; // 0x8a	
-	bool bIsSpellLifesteal; // 0x8b	
-	CEntityIndex pnMagicStickProcEntityIndices[64]; // 0x8c	
-	bool bBloodstoneRegenApplied; // 0x18c	
-	bool bShroudManaRestoreApplied; // 0x18d	
-	bool bPhylacteryApplied; // 0x18e	
-	bool bAllowZeroDamageFromPostReductionBlock; // 0x18f	
-	bool bForceMagicStickProc; // 0x190	
-	bool bIgnoreNegativeValuesIfDebuffImmune; // 0x191	
-	bool bIgnorePositiveValuesIfDebuffImmune; // 0x192	
-	bool bIgnoreAllIfDebuffImmune; // 0x193	
-	bool bAlsoIgnoreBuffsIfDebuffImmune; // 0x194	
-	bool bIgnoreLowerIfDebuffImmune; // 0x195	
+	bool bYashaAndKayaApplied; // 0x82	
+	bool bStoutConsidered; // 0x83	
+	bool bInterrupted; // 0x84	
+	bool bDiffusalApplied; // 0x85	
+	bool bChainLightningConsidered; // 0x86	
+	bool bSuppressDamage; // 0x87	
+	bool bRangedAttack; // 0x88	
+	bool bProcessProcs; // 0x89	
+	bool bProjectileIsFromIllusion; // 0x8a	
+	bool bHasMagicComponent; // 0x8b	
+	bool bIsSpellLifesteal; // 0x8c	
 private:
-	[[maybe_unused]] uint8_t __pad0196[0x2]; // 0x196
+	[[maybe_unused]] uint8_t __pad008d[0x3]; // 0x8d
 public:
-	float flIgnoreLowerIfDebuffImmune; // 0x198	
-	bool bIgnoreHigherIfDebuffImmune; // 0x19c	
+	CEntityIndex pnMagicStickProcEntityIndices[64]; // 0x90	
+	bool bBloodstoneRegenApplied; // 0x190	
+	bool bShroudManaRestoreApplied; // 0x191	
+	bool bPhylacteryApplied; // 0x192	
+	bool bAllowZeroDamageFromPostReductionBlock; // 0x193	
+	bool bForceMagicStickProc; // 0x194	
+	bool bIgnoreNegativeValuesIfDebuffImmune; // 0x195	
+	bool bIgnorePositiveValuesIfDebuffImmune; // 0x196	
+	bool bIgnoreAllIfDebuffImmune; // 0x197	
+	bool bAlsoIgnoreBuffsIfDebuffImmune; // 0x198	
+	bool bIgnoreLowerIfDebuffImmune; // 0x199	
 private:
-	[[maybe_unused]] uint8_t __pad019d[0x3]; // 0x19d
+	[[maybe_unused]] uint8_t __pad019a[0x2]; // 0x19a
 public:
-	float flIgnoreHigherIfDebuffImmune; // 0x1a0	
-	bool bIgnoreTemporaryAttackSpeedModifiers; // 0x1a4	
+	float flIgnoreLowerIfDebuffImmune; // 0x19c	
+	bool bIgnoreHigherIfDebuffImmune; // 0x1a0	
 private:
-	[[maybe_unused]] uint8_t __pad01a5[0x3]; // 0x1a5
+	[[maybe_unused]] uint8_t __pad01a1[0x3]; // 0x1a1
 public:
-	char* pszAbilitySpecialName; // 0x1a8	
-	int32_t nAbilitySpecialLevel; // 0x1b0	
-	bool bIsRegen; // 0x1b4	
+	float flIgnoreHigherIfDebuffImmune; // 0x1a4	
+	bool bIgnoreTemporaryAttackSpeedModifiers; // 0x1a8	
 private:
-	[[maybe_unused]] uint8_t __pad01b5[0x3]; // 0x1b5
+	[[maybe_unused]] uint8_t __pad01a9[0x7]; // 0x1a9
 public:
-	CHandle< CBaseEntity > hattacker; // 0x1b8	
-	CHandle< CBaseEntity > htarget; // 0x1bc	
-	CHandle< CBaseEntity > hunit; // 0x1c0	
-	CHandle< CDOTABaseAbility > inflictor; // 0x1c4	
-	CDOTA_Buff* pAddedBuff; // 0x1c8	
+	char* pszAbilitySpecialName; // 0x1b0	
+	int32_t nAbilitySpecialLevel; // 0x1b8	
+	bool bIsRegen; // 0x1bc	
+private:
+	[[maybe_unused]] uint8_t __pad01bd[0x3]; // 0x1bd
+public:
+	CHandle< CBaseEntity > hattacker; // 0x1c0	
+	CHandle< CBaseEntity > htarget; // 0x1c4	
+	CHandle< CBaseEntity > hunit; // 0x1c8	
+	CHandle< CDOTABaseAbility > inflictor; // 0x1cc	
+	CDOTA_Buff* pAddedBuff; // 0x1d0	
 	
 	// Static fields:
 	static CModifierParams &Get_s_Default(){return *reinterpret_cast<CModifierParams*>(interfaces::g_schema->FindTypeScopeForModule("!GlobalTypes")->FindDeclaredClass("CModifierParams")->m_static_fields[0]->m_instance);};
