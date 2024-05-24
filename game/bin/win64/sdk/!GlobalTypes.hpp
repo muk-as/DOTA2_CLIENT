@@ -13437,7 +13437,7 @@ enum class AnimValueSource : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
-// Enumerator count: 334
+// Enumerator count: 335
 // Alignment: 4
 // Size: 0x4
 enum class modifierfunction : uint32_t
@@ -14106,7 +14106,9 @@ enum class modifierfunction : uint32_t
 	MODIFIER_PROPERTY_HP_REGEN_MULTIPLIER_PRE_AMPLIFICATION = 0x14a,
 	// MScriptDescription "GetModifierHeroFacetOverride"
 	MODIFIER_PROPERTY_HEROFACET_OVERRIDE = 0x14b,
-	MODIFIER_FUNCTION_LAST = 0x14c,
+	// MScriptDescription "OnTreeCutDown"
+	MODIFIER_EVENT_ON_TREE_CUT_DOWN = 0x14c,
+	MODIFIER_FUNCTION_LAST = 0x14d,
 	MODIFIER_FUNCTION_INVALID = 0xffff,
 };
 
@@ -33766,7 +33768,7 @@ public:
 
 // Registered binary: server.dll (project 'server')
 // Alignment: 8
-// Size: 0x1598
+// Size: 0x15a8
 // Has VTable
 // Is Abstract
 class CDOTA_Buff : public CHorizontalMotionController
@@ -33821,9 +33823,9 @@ public:
 	CUtlVector< CDOTA_BuffParticle > m_iParticles; // 0xa0	
 	CUtlVector< CHandle< CBaseEntity > > m_hAuraUnits; // 0xb8	
 private:
-	[[maybe_unused]] uint8_t __pad00d0[0x14c0]; // 0xd0
+	[[maybe_unused]] uint8_t __pad00d0[0x14d0]; // 0xd0
 public:
-	HSCRIPT m_hScriptScope; // 0x1590	
+	HSCRIPT m_hScriptScope; // 0x15a0	
 };
 
 // Registered binary: particles.dll (project 'particles')
