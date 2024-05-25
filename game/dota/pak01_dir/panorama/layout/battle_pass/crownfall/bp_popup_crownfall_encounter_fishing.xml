@@ -28,14 +28,20 @@
 				<Label class="ScoreValue" text="{s:score_row_value} " />
 			</Panel>
 		</snippet>
+		<snippet name="RewardRow">
+			<Panel class="RewardRow">
+				<Label class="RewardScore" text="{d:reward_score_required}" />
+				<Panel id="RewardValue" class="RewardValue" />
+			</Panel>
+		</snippet>
 	</snippets>
-	<Panel class="PopupPanel FishingGame Hidden IntroMenu" allows_popups="1" popupbackground="dim" oncancel="DOTAEncounterFishingExit()">
+	<Panel class="PopupPanel FishingGame Hidden IntroMenu" allows_popups="1" popupbackground="dim" oncancel="DOTAEncounterMinigameExit()">
 		<Panel class="MainContents">
 			<Panel class="TopGoldDash" />
 			<Panel class="InnerContents">
 				<Panel class="Body">
 					<Panel class="Scene">
-						<DOTAScenePanel id="FishingScene" map="scenes/crownfall/fishing_game_act1" camera="side_character_camera" light="global_light" live-mode="on" renderdeferred="true" renderwaterreflections="true" deferredalpha="true" antialias="true" particleonly="false" />
+						<DOTAScenePanel id="FishingScene" camera="side_character_camera" light="global_light" live-mode="on" renderdeferred="true" renderwaterreflections="true" deferredalpha="true" antialias="true" particleonly="false" />
 						<Panel class="OverlayHUD" hittest="false">
 							<Panel class="LureCount" hittest="false" hittestchildren="false">
 								<Image class="LureIcon" src="s2r://panorama/images/events/crownfall/fishing/icon_lurecount_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
@@ -72,7 +78,7 @@
 							</Panel>
 							<Panel class="ScoreSection">
 								<Panel class="Header" hittestchildren="false">
-									<Label class="Title" text="#DOTA_Crownfall_Fishing_Title" />
+									<Label class="Title" text="{s:game_title}" />
 									<Image class="DividerGraphic" src="s2r://panorama/images/events/crownfall/fishing/divider_graphic_minigame_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
 								</Panel>
 								<Panel class="Main" hittestchildren="false">
@@ -126,48 +132,16 @@
 					<Panel class="MainMenu">
 						<Panel class="Header">
 							<Image class="EncounterGraphic" src="s2r://panorama/images/events/crownfall/fishing/hed_graphic_minigame_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
-							<Label class="Title" text="#DOTA_Crownfall_Fishing_Title" />
+							<Label class="Title" text="{s:game_title}" />
 						</Panel>
 						<Panel class="ColumnContainer">
 							<Panel class="Column1">
 								<Panel class="HowToPlaySection">
 									<Label class="HowToPlayTitle" text="#DOTA_Crownfall_Fishing_HowToPlay" />
-									<Label class="HowToPlayDescription" html="true" text="#DOTA_Crownfall_Fishing_HowToPlay_Description" />
+									<Label class="HowToPlayDescription" html="true" text="{s:how_to_play}" />
 								</Panel>
-								<Panel class="RewardsSection">
-									<Label class="RewardsLabel" text="#DOTA_Crownfall_Fishing_Rewards" />
-									<Panel class="RewardRow" id="RewardRow0">
-										<Label class="RewardScore" text="1,000" />
-										<Panel class="RewardValue">
-											<DOTACrownfallToken overworld_id="1" token_id="20" tooltipstyle="nameonly" />
-										</Panel>
-									</Panel>
-									<Panel class="RewardRow Reward2" id="RewardRow1">
-										<Label class="RewardScore" text="4,000" />
-										<Panel class="RewardValue">
-											<DOTACrownfallToken overworld_id="1" token_id="255" tooltipstyle="nameonly" />
-											<DOTACrownfallToken overworld_id="1" token_id="255" tooltipstyle="nameonly" />
-										</Panel>
-									</Panel>
-									<Panel class="RewardRow Reward3" id="RewardRow2">
-										<Label class="RewardScore" text="7,000" />
-										<Panel class="RewardValue">
-											<DOTACrownfallToken overworld_id="1" token_id="255" tooltipstyle="nameonly" />
-											<DOTACrownfallToken overworld_id="1" token_id="255" tooltipstyle="nameonly" />
-											<DOTACrownfallToken overworld_id="1" token_id="255" tooltipstyle="nameonly" />
-										</Panel>
-									</Panel>
-									<Panel class="RewardRow Reward4" id="RewardRow3">
-										<Label class="RewardScore" text="10,000" />
-										<Panel class="RewardValue">
-											<DOTACrownfallToken overworld_id="1" token_id="255" tooltipstyle="nameonly" />
-											<DOTACrownfallToken overworld_id="1" token_id="255" tooltipstyle="nameonly" />
-											<DOTACrownfallToken overworld_id="1" token_id="255" tooltipstyle="nameonly" />
-											<DOTACrownfallToken overworld_id="1" token_id="255" tooltipstyle="nameonly" />
-											<DOTACrownfallToken overworld_id="1" token_id="255" tooltipstyle="nameonly" />
-										</Panel>
-									</Panel>
-								</Panel>
+								<Label class="RewardsLabel" text="#DOTA_Crownfall_Fishing_Rewards" />
+								<Panel id="RewardsList" class="RewardsSection" />
 							</Panel>
 							<Panel class="Column2">
 								<Panel id="LeaderboardContainerFriends" class="LeaderboardContainer">
@@ -180,8 +154,8 @@
 							</Panel>
 						</Panel>
 						<Panel class="BottomButtons">
-							<DOTACrownfallButton class="StartGameButton " text="#DOTA_Crownfall_Fishing_Play" onactivate="DOTAEncounterFishingStartGame()" />
-							<DOTACrownfallButton class="ExitButton" text="#DOTA_Crownfall_Encounter_Leave" onactivate="DOTAEncounterFishingExit()" />
+							<DOTACrownfallButton class="StartGameButton " text="#DOTA_Crownfall_Fishing_Play" onactivate="DOTAEncounterMinigameStart()" />
+							<DOTACrownfallButton class="ExitButton" text="#DOTA_Crownfall_Encounter_Leave" onactivate="DOTAEncounterMinigameExit()" />
 						</Panel>
 					</Panel>
 					<Panel class="MissingDataSpinnerContainer" hittest="false">
@@ -190,7 +164,7 @@
 				</Panel>
 			</Panel>
 			<Panel id="CloseButtonContainer">
-				<Panel class="CloseButtonBackground" onactivate="DOTAEncounterFishingExit()" onmouseover="AddStyle( CloseButtonContainer, Hovered );" onmouseout="RemoveStyle( CloseButtonContainer, Hovered );" />
+				<Panel class="CloseButtonBackground" onactivate="DOTAEncounterMinigameExit()" onmouseover="AddStyle( CloseButtonContainer, Hovered );" onmouseout="RemoveStyle( CloseButtonContainer, Hovered );" />
 				<Panel class="CloseButtonBackgroundHover" hittest="false" />
 				<Image class="CloseIcon" src="s2r://panorama/images/control_icons/24px/x_close.vsvg" hittest="false" />
 				<Image class="ReturnIcon" src="s2r://panorama/images/control_icons/24px/reset.vsvg" hittest="false" />

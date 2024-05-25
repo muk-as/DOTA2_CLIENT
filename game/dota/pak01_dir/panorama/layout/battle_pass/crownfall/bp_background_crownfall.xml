@@ -10,9 +10,10 @@
 		<Panel class="BackgroundImageContainer">
 			<Panel class="BackgroundTexture" />
 		</Panel>
+		<Panel class="Darkness" />
 		<Panel class="HeroesSceneModels" hittest="false">
-			<DOTAUIEconSetPreview id="PremiumReward_Vengeful" activity-modifier="takeover" class="PremiumReward" itemdef="22722" cameraOrigin="0 0 0" rotation="-10" drawbackground="false" require-composition-layer="true" suppress-intro-effects="true" />
-			<DOTAUIEconSetPreview id="PremiumReward_Skywrath" activity-modifier="takeover" class="PremiumReward" itemdef="22277" cameraOrigin="0 0 0" rotation="-40" drawbackground="false" require-composition-layer="true" suppress-intro-effects="true" />
+			<DOTAUIEconSetPreview id="PremiumReward_Skywrath" activity-modifier="takeover" itemstyle="0" class="PremiumReward" itemdef="22277" cameraOrigin="0 0 0" rotation="-40" drawbackground="false" require-composition-layer="true" suppress-intro-effects="true" />
+			<DOTAUIEconSetPreview id="PremiumReward_Vengeful" activity-modifier="takeover" itemstyle="0" class="PremiumReward" itemdef="22722" cameraOrigin="0 0 0" rotation="-10" drawbackground="false" require-composition-layer="true" suppress-intro-effects="true" />
 		</Panel>
 		<DOTAParticleScenePanel class="SmokeFX Bottom" hittest="false" particleName="particles/ui/battle_pass/ui_bp_2022_diretide_home_background.vpcf" require-composition-layer="true" renderdeferred="true" particleonly="false" startActive="true" cameraOrigin="200 0 0" lookAt="0 0 0" fov="60" squarePixels="true" />
 		<Panel class="BottomGradient" />
@@ -23,12 +24,14 @@
 			</Panel>
 			<Panel class="DashDotDivider">
 				<Panel class="Dash Left" />
+				<Label class="ActLabel" text="#DOTA_Crownfall_Overworld_ActII" />
 				<Panel class="Dot" />
+				<Label class="ActAction" text="#DOTA_NowAvailable" />
 				<Panel class="Dash Right" />
 			</Panel>
-			<Label class="Subtitle" text="#DOTA_Crownfall_FrontPage_EventDescription" />
+			<Label class="Subtitle" text="#DOTA_Crownfall_FrontPage_EventDescription_Act2" />
 			<Panel class="Acts">
-				<Panel id="Act1" class="Act Active" onactivate="DOTAShowCrownfallOverworldPage( 1 )">
+				<Panel id="Act1" class="Act Available" onactivate="DOTACrownfallBackgroundActSelected( 1 )">
 					<Image class="ActExtrude" src="s2r://panorama/images/events/crownfall/dashboard/act_extrude_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
 					<Image class="ActBackground" src="s2r://panorama/images/events/crownfall/dashboard/act_container_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
 					<Image class="ActBorder" src="s2r://panorama/images/events/crownfall/dashboard/act_container_border_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
@@ -47,7 +50,7 @@
 					<DOTAParticleScenePanel class="ActiveParticles" hittest="false" particleName="particles/econ/items/spectre/spectre_arcana/spectre_arcana_radiance_owner_magic.vpcf" renderdeferred="true" particleonly="false" startActive="true" cameraOrigin="0 50 200" lookAt="0 -600 400" fov="110" />
 					<Panel class="ActDetailsContainer">
 						<Label class="ActName LabelExtraLarge" html="true" text="#DOTA_Crownfall_Background_Midgate" />
-						<Label class="ActDate LabelSmall" text="#DOTA_Crownfall_PlayNow" />
+						<Label class="ActDate LabelSmall" text="#DOTA_Crownfall_Overworld_Continue" />
 					</Panel>
 					<Panel class="ActStatus">
 						<Image class="ActStatusBadge" src="s2r://panorama/images/events/crownfall/dashboard/quest_completion_badge_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
@@ -59,8 +62,12 @@
 						</Panel>
 						<Label class="CompletedLabel LabelSmall" text="#DOTA_Crownfall_FrontPage_MapCompletion" />
 					</Panel>
+					<Panel class="ActiveBadge">
+						<Image class="ActiveBadgeBackground" src="s2r://panorama/images/events/crownfall/overworld/chapter_selector/active_badge_background_png.vtex" scaling="stretch-to-fit-y-preserve-aspect" />
+						<Label class="ActActiveLabel LabelMedium" text="#DOTA_Crownfall_Overworld_Active" />
+					</Panel>
 				</Panel>
-				<Panel id="Act2" class="Act" hittest="false" hittestchildren="false">
+				<Panel id="Act2" class="Act Available" onactivate="DOTACrownfallBackgroundActSelected( 2 )">
 					<Image class="ActExtrude" src="s2r://panorama/images/events/crownfall/dashboard/act_extrude_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
 					<Image class="ActBackground" src="s2r://panorama/images/events/crownfall/dashboard/act_container_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
 					<Image class="ActBorder" src="s2r://panorama/images/events/crownfall/dashboard/act_container_border_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
@@ -79,7 +86,7 @@
 					<DOTAParticleScenePanel class="ActiveParticles" hittest="false" particleName="particles/econ/items/spectre/spectre_arcana/spectre_arcana_radiance_owner_magic.vpcf" renderdeferred="true" particleonly="false" startActive="true" cameraOrigin="0 50 200" lookAt="0 -600 400" fov="110" />
 					<Panel class="ActDetailsContainer">
 						<Label class="ActName LabelExtraLarge" text="#DOTA_Crownfall_Background_Oglodi" html="true" />
-						<Label id="ActTwoActDate" class="ActDate LabelSmall" text="#DOTA_Crownfall_Overworld_Unlock_NextWeek" />
+						<Label class="ActDate LabelSmall" text="#DOTA_Crownfall_PlayNow" />
 					</Panel>
 					<Panel class="ActStatus">
 						<Image class="ActStatusBadge" src="s2r://panorama/images/events/crownfall/dashboard/quest_completion_badge_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
@@ -90,6 +97,10 @@
 							<Label class="LoadedState CompletedAmount LabelLarge" text="{d:total_earned} / {d:total_max}" />
 						</Panel>
 						<Label class="CompletedLabel LabelSmall" text="#DOTA_Crownfall_FrontPage_MapCompletion" />
+					</Panel>
+					<Panel class="ActiveBadge">
+						<Image class="ActiveBadgeBackground" src="s2r://panorama/images/events/crownfall/overworld/chapter_selector/active_badge_background_png.vtex" scaling="stretch-to-fit-y-preserve-aspect" />
+						<Label class="ActActiveLabel LabelMedium" text="#DOTA_Crownfall_Overworld_Active" />
 					</Panel>
 				</Panel>
 				<Panel id="Act3" class="Act" hittest="false" hittestchildren="false">
@@ -123,6 +134,10 @@
 						</Panel>
 						<Label class="CompletedLabel LabelSmall" text="#DOTA_Crownfall_FrontPage_MapCompletion" />
 					</Panel>
+					<Panel class="ActiveBadge">
+						<Image class="ActiveBadgeBackground" src="s2r://panorama/images/events/crownfall/overworld/chapter_selector/active_badge_background_png.vtex" scaling="stretch-to-fit-y-preserve-aspect" />
+						<Label class="ActActiveLabel LabelMedium" text="#DOTA_Crownfall_Overworld_Active" />
+					</Panel>
 				</Panel>
 				<Panel id="Act4" class="Act" hittest="false" hittestchildren="false">
 					<Image class="ActExtrude" src="s2r://panorama/images/events/crownfall/dashboard/act_extrude_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
@@ -155,6 +170,10 @@
 						</Panel>
 						<Label class="CompletedLabel LabelSmall" text="#DOTA_Crownfall_FrontPage_MapCompletion" />
 					</Panel>
+					<Panel class="ActiveBadge">
+						<Image class="ActiveBadgeBackground" src="s2r://panorama/images/events/crownfall/overworld/chapter_selector/active_badge_background_png.vtex" scaling="stretch-to-fit-y-preserve-aspect" />
+						<Label class="ActActiveLabel LabelMedium" text="#DOTA_Crownfall_Overworld_Active" />
+					</Panel>
 				</Panel>
 			</Panel>
 			<Image class="Emblem_2 HorizontalCenter" src="s2r://panorama/images/events/crownfall/buttons/emblem_2_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
@@ -165,10 +184,14 @@
 					<Label class="ViewDetailsLink LabelSmall" text="#DOTA_Crownfall_FrontPage_ViewArcana" />
 				</Panel>
 				<Panel class="FillWidth" />
-				<Panel class="LearnMoreButtons">
+				<Panel class="LearnMoreButtons Act1">
 					<DOTACrownfallButton text="#DOTA_Crownfall_FrontPage_ReadComic" class="LearnMoreButton Secondary" onactivate="DOTAShowComicPopup( crownfall_part_1 )" />
 					<DOTACrownfallButton text="#DOTA_Crownfall_FrontPage_WatchIntro" class="LearnMoreButton Secondary" onactivate="DOTAShowReferencePage( file://{resources}/layout/leaf_pages/dashboard_page_debut_skywrath_vengeful_arcana.xml )" />
 					<DOTACrownfallButton text="#DOTA_Crownfall_FrontPage_VisitWebsite" class="LearnMoreButton Secondary" onactivate="ExternalBrowserGoToDOTAURL( crownfall )" />
+				</Panel>
+				<Panel class="LearnMoreButtons Act2">
+					<Label class="BackstoryLabel" text="#DOTA_Crownfall_FrontPage_BackStoryLabel" />
+					<DOTACrownfallButton text="#DOTA_Crownfall_FrontPage_ReadComic_Act2" class="LearnMoreButton Secondary" onactivate="DOTAShowComicPopup( act2_intro )" />
 				</Panel>
 				<Panel class="FillWidth" />
 				<Panel class="ArcanaInfoContainer Right" onactivate="DOTAShowBPCrownfallStoreItem( 22722 )" onmouseover="AddStyle( PremiumReward_Vengeful, Hovered );" onmouseout="RemoveStyle( PremiumReward_Vengeful, Hovered );">

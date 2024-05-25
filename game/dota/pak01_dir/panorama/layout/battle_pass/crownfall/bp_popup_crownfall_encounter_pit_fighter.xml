@@ -1,0 +1,73 @@
+<!-- xml reconstructed by Source 2 Viewer 0.0.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/popups/popups_shared.vcss_c" />
+		<include src="s2r://panorama/styles/battle_pass/crownfall/bp_crownfall_shared.vcss_c" />
+		<include src="s2r://panorama/styles/battle_pass/crownfall/bp_popup_crownfall_encounter_pit_fighter.vcss_c" />
+	</styles>
+	<snippets>
+		<snippet name="Fighter">
+			<Panel class="Fighter">
+				<Label class="FighterName EncounterTitle" text="{s:fighter_title}" />
+				<Panel class="StatsContainer">
+					<Panel id="StrengthStat" class="Stat" onmouseover="UIShowTextTooltip( #DOTA_Crownfall_EncounterPitFight_StrTooltip )" onmouseout="UIHideTextTooltip()">
+						<Image class="StatItem StatImage" src="s2r://panorama/images/primary_attribute_icons/primary_attribute_icon_strength_psd.vtex" />
+						<Label class="StatItem StatValue" text="{d:stat_strength}" />
+						<Panel id="StrengthPipContainer" class="StatItem StatPipContainer" />
+					</Panel>
+					<Panel id="AgilityStat" class="Stat" onmouseover="UIShowTextTooltip( #DOTA_Crownfall_EncounterPitFight_AgiTooltip )" onmouseout="UIHideTextTooltip()">
+						<Image class="StatItem StatImage" src="s2r://panorama/images/primary_attribute_icons/primary_attribute_icon_agility_psd.vtex" />
+						<Label class="StatItem StatValue" text="{d:stat_agility}" />
+						<Panel id="AgilityPipContainer" class="StatItem StatPipContainer" />
+					</Panel>
+					<Panel id="IntelligenceStat" class="Stat" onmouseover="UIShowTextTooltip( #DOTA_Crownfall_EncounterPitFight_IntTooltip )" onmouseout="UIHideTextTooltip()">
+						<Image class="StatItem StatImage" src="s2r://panorama/images/primary_attribute_icons/primary_attribute_icon_intelligence_psd.vtex" />
+						<Label class="StatItem StatValue" text="{d:stat_intelligence}" />
+						<Panel id="IntelligencePipContainer" class="StatItem StatPipContainer" />
+					</Panel>
+				</Panel>
+				<Label class="OddsLabel" text="#DOTA_Crownfall_EncounterPitFight_Profit" />
+				<DOTACrownfallButton id="BetButton" disabled="true" text="#DOTA_Crownfall_EncounterPitFight_BetButton" />
+			</Panel>
+		</snippet>
+	</snippets>
+	<Panel class="PopupPanel Encounter PitFighter Hidden" allows_popups="1" oncancel="UIPopupButtonClicked()">
+		<Panel class="ContentsWrapper">
+			<Panel class="Contents">
+				<Panel class="VisualNovelBackground" />
+				<Panel class="BodyContainer">
+					<Panel class="BetsAvailableContainer">
+						<Panel id="FighterContainer">
+							<Panel id="Fighter1" />
+							<Panel class="VersusContainer">
+								<Panel class="VSContainer">
+									<Image class="VersusImage" scaling="stretch-to-fit-preserve-aspect" src="s2r://panorama/images/events/crownfall/visual_novel/sound_effect_background_png.vtex" />
+									<Label class="VersusLabel" text="#DOTA_Crownfall_EncounterPitFight_Versus" />
+								</Panel>
+								<Label class="BetTitle EncounterTitle" text="#DOTA_Crownfall_EncounterPitFight_BetTitle" />
+								<Label class="BetSubtitle" text="#DOTA_Crownfall_EncounterPitFight_BetSubitle" />
+								<DOTACrownfallToken id="BetToken" class="LargeToken Empty" onactivate="DotaOverworldPitFighterShowInventory()" />
+							</Panel>
+							<Panel id="Fighter2" />
+						</Panel>
+						<Panel id="BetContainer" hittest="false">
+							<Label class="BetInstructions" text="#DOTA_Crownfall_EncounterPitFight_BetInstructions" />
+						</Panel>
+					</Panel>
+					<DOTACrownfallButton text="#DOTA_Crownfall_Encounter_ComeBackLater" class="ComeBackLaterButton GlowButton" onactivate="UIPopupButtonClicked()" />
+					<Label class="BetResourceInstructions" text="#DOTA_Crownfall_EncounterPitFight_BetResourceInstructions" />
+				</Panel>
+			</Panel>
+		</Panel>
+		<Panel id="VisualNovelContainer" />
+		<Panel class="PickerContainer" acceptsfocus="true">
+			<DOTAUIOverworldInventoryPicker id="InventoryPicker" />
+		</Panel>
+		<Panel id="CloseButtonContainer">
+			<Panel class="CloseButtonBackground" onactivate="UIPopupButtonClicked()" onmouseover="AddStyle( CloseButtonContainer, Hovered );" onmouseout="RemoveStyle( CloseButtonContainer, Hovered );" />
+			<Panel class="CloseButtonBackgroundHover" hittest="false" />
+			<Image class="CloseIcon" src="s2r://panorama/images/control_icons/24px/x_close.vsvg" hittest="false" />
+		</Panel>
+	</Panel>
+</root>

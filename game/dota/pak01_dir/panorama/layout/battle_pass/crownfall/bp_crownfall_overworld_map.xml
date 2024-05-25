@@ -89,6 +89,7 @@
 					<Panel id="EditModeContainer" hittest="false" />
 				</Panel>
 				<Panel id="MapForegroundLayers" class="MapLayers" hittest="false" />
+				<Panel id="MapClickables" class="Clickables" hittest="false" />
 				<Panel class="TutorialContainer" hittest="false">
 					<Image class="TutorialBackground" src="s2r://panorama/images/events/crownfall/overworld/tutorial/tutorial_background_png.vtex" scaling="stretch-to-fit-y-preserve-aspect" />
 					<Panel class="TutorialContent">
@@ -101,9 +102,9 @@
 						<Panel class="FreeToken">
 							<Panel class="TutorialTokenContainer" hittestchildren="false">
 								<DOTAScenePanel class="TutorialTokenContainerParticles" map="backgrounds/accept_popup_test" camera="shot_camera" particleonly="true" />
-								<DOTACrownfallToken overworld_id="1" token_id="16" class="LargeToken" tooltipstyle="nameonly" />
+								<DOTACrownfallToken id="IntroTutorialFreeToken" overworld_id="1" token_id="16" class="LargeToken" tooltipstyle="nameonly" />
 							</Panel>
-							<Label html="true" class="TutorialText BodyLarge LightestGreyText" text="#DOTA_Crownfall_Overworld_Tutorial2" />
+							<Label id="IntroTutorialFreeTokenLabel" html="true" class="TutorialText BodyLarge LightestGreyText" text="#DOTA_Crownfall_Overworld_Tutorial2" />
 							<DOTACrownfallButton class="ContinueButton Blue GlowButton" text="#DOTA_Crownfall_Overworld_ClaimToken" onactivate="UIPopupButtonClicked(); DOTANextOverworldIntro();" />
 						</Panel>
 					</Panel>
@@ -121,9 +122,6 @@
 					<ToggleButton id="DebugNodeInfo" onactivate="DotaOverworldMapDebugToggle()">
 						<Label text="Show Node Info" unlocalized="true" />
 					</ToggleButton>
-					<ToggleButton id="DebugClickables" onactivate="ToggleStyle( OverworldMapRef, DebugShowClickables )">
-						<Label text="Highlight Clickables" unlocalized="true" />
-					</ToggleButton>
 					<Panel id="DebugPanel_ExtraOptions" class="DebugPanel Collapsed">
 						<Label class="DebugHeader" text="Extra Options" unlocalized="true" />
 						<TextButton class="DebugCollapseButton" text="v" unlocalized="true" onactivate="ToggleStyle( DebugPanel_ExtraOptions, Collapsed )" />
@@ -139,6 +137,12 @@
 							</Panel>
 							<ToggleButton id="DebugPaths" onactivate="DotaOverworldMapDebugToggle()">
 								<Label text="Show All Quests" unlocalized="true" />
+							</ToggleButton>
+							<ToggleButton id="DebugClickables" onactivate="ToggleStyle( OverworldMapRef, DebugShowClickables )">
+								<Label text="Highlight Clickables" unlocalized="true" />
+							</ToggleButton>
+							<ToggleButton id="DisableCameraEvents" onactivate="DotaOverworldMapDebugToggle()">
+								<Label text="Disable Camera Events" unlocalized="true" />
 							</ToggleButton>
 						</Panel>
 					</Panel>

@@ -56,10 +56,90 @@
 		<snippet name="AbilityNotes">
 			<Panel class="AbilityNotes">
 				<DOTAAbilityImage id="AbilityImage" />
+				<DOTAInnateIcon id="InnateIcon" show-tooltips="true" hittest="true" />
 				<Panel class="AbilityNotesContents">
 					<Label class="AbilityName" text="{s:ability_name}" />
 					<Panel id="AbilityNotesContainer" />
 				</Panel>
+			</Panel>
+		</snippet>
+		<snippet name="HeroSubsection">
+			<Panel class="HeroSubsection">
+				<Panel class="HeroSubsectionTop">
+					<Panel class="HeroSubsectionTitle">
+						<Label class="HeroSubsectionName" text="{s:herosubsection_title}" />
+						<Label class="HeroSubsectionTitleTag" text="{s:herosubsection_tag}" html="true" />
+					</Panel>
+				</Panel>
+				<Panel class="SubsectionNotesMain">
+					<Panel id="GeneralNotesContainer" />
+					<Panel id="AbilityNotesContainer" />
+					<Panel class="TalentNotes">
+						<Label class="TalentsName" text="#DOTA_AbilityBuild_Talent_Title" />
+						<Panel class="TalentNotesContents">
+							<Panel id="TalentTreeImage" />
+							<Panel id="TalentNotesContainer" />
+						</Panel>
+					</Panel>
+				</Panel>
+			</Panel>
+		</snippet>
+		<snippet name="InnateSnippet">
+			<Panel class="InnateSubsection">
+				<Panel class="InnateSubsectionTop">
+					<Panel class="HeroSubsectionTitle">
+						<Label class="HeroSubsectionName" text="{s:herosubsection_title}" />
+						<Label class="HeroSubsectionTitleTag" text="{s:herosubsection_tag}" html="true" />
+					</Panel>
+				</Panel>
+				<Panel class="InnateSubsectionMain">
+					<Panel id="GeneralNotesContainer" />
+					<Panel id="AbilityNotesContainer" />
+					<Panel class="TalentNotes">
+						<Panel id="TalentTreeImage" />
+						<Panel class="TalentNotesContents">
+							<Label class="TalentsName" text="#DOTA_AbilityBuild_Talent_Title" />
+							<Panel id="TalentNotesContainer" />
+						</Panel>
+					</Panel>
+				</Panel>
+			</Panel>
+		</snippet>
+		<snippet name="FacetSnippet">
+			<Panel class="HeroSubsection">
+				<Panel class="FacetBackground Faded" />
+				<Panel class="FacetHeader">
+					<Panel class="FacetBackground" />
+					<Panel class="FacetBackgroundTexture" />
+					<Panel class="FacetIconContainer">
+						<Panel class="FacetIconContainerShard" />
+						<Panel id="FacetIcon" />
+					</Panel>
+					<Panel class="FacetHeaderText">
+						<Label class="FacetName TitleSmall" text="{s:herosubsection_title}" />
+					</Panel>
+				</Panel>
+				<Panel class="SubsectionNotesMain">
+					<Panel id="GeneralNotesContainer" />
+					<Panel id="AbilityNotesContainer" />
+					<Panel class="TalentNotes">
+						<Label class="TalentsName" text="#DOTA_AbilityBuild_Talent_Title" />
+						<Panel class="TalentNotesContents">
+							<Panel id="TalentTreeImage" />
+							<Panel id="TalentNotesContainer" />
+						</Panel>
+					</Panel>
+					<Button id="DemoFacetButton" class="ButtonPrimary Green FacetButton">
+						<Label class="" text="#DOTA_Facet_Demo" />
+						<Image src="s2r://panorama/images/control_icons/24px/arrow_top_right.vsvg" />
+					</Button>
+				</Panel>
+			</Panel>
+		</snippet>
+		<snippet name="FacetContainerSnippet">
+			<Panel class="FacetContainerOuter">
+				<Label class="HeroSubsectionName" text="#DOTA_FacetSectionTag" />
+				<Panel id="SubsectionContainer" class="FacetContainer" />
 			</Panel>
 		</snippet>
 		<snippet name="HeroNotes">
@@ -75,11 +155,12 @@
 					</Panel>
 				</Panel>
 				<Panel class="HeroNotesMain">
+					<Panel id="HeroSubsections" />
 					<Panel id="AbilityNotesContainer" />
-					<Panel class="TalentNotes">
-						<Panel id="TalentTreeImage" />
+					<Panel class="TalentNotes" id="MainTalentNotes">
+						<Label class="TalentsName" text="#DOTA_AbilityBuild_Talent_Title" />
 						<Panel class="TalentNotesContents">
-							<Label class="TalentsName" text="#DOTA_AbilityBuild_Talent_Title" />
+							<Panel id="TalentTreeImage" />
 							<Panel id="TalentNotesContainer" />
 						</Panel>
 					</Panel>
@@ -99,18 +180,20 @@
 			</Panel>
 		</snippet>
 	</snippets>
-	<DOTAPatchesPage class="DashboardPage">
+	<DOTAPatchesPage class="DashboardPage" defaultfocus="PatchContents">
 		<Image id="BackgroundImage" scaling="stretch-to-fit-y-preserve-aspect" />
-		<Panel class="PatchContainer">
+		<Panel class="PatchWrapper">
 			<Panel id="Header">
-				<Panel class="HeaderControls">
-					<Label class="GamePlayUpdate" text="#DOTA_PatchNotes_Header" />
-					<DropDown id="PatchDropDown" />
-				</Panel>
+				<Label class="GamePlayUpdate" text="#DOTA_PatchNotes_Header" />
+				<DropDown id="PatchDropDown" />
 				<Label class="ReleaseDate" text="#DOTA_PatchNotes_ReleaseDate" />
 			</Panel>
-			<Panel id="PatchContents" AllowOversized="1" />
-			<DOTAHTMLPanel id="WebPatchNotes" />
+			<Panel class="PatchContainer">
+				<Panel id="PatchContents" AllowOversized="1" scrollparenttofitwhenfocused="false" acceptsfocus="true" onmovedown="ScrollPanelDown()" onmoveup="ScrollPanelUp()" />
+				<DOTAHTMLPanel id="WebPatchNotes" />
+			</Panel>
 		</Panel>
+		<DOTAHeroQuickSearch id="HeroQuickSearch" />
+		<Panel class="TopShadow" />
 	</DOTAPatchesPage>
 </root>

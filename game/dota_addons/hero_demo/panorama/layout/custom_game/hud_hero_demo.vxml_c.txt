@@ -9,15 +9,20 @@
 	</scripts>
 	<Panel hittest="false" class="CustomHudRoot">
 		<Panel id="SelectHeroContainer" acceptsfocus="true" oncancel="EscapeHeroPickerSearch()">
-			<DOTAUIHeroPicker id="HeroPicker" />
+			<DOTAUIHeroPicker id="HeroPicker" facet-select-popup="true" />
 			<Button id="CancelButton" class="CloseButton" acceptsjoyfocus="true" onactivate="CloseHeroPicker()" />
 		</Panel>
 		<Panel class="ControlPanel">
 			<Panel class="ControlPanelContainer">
 				<Panel id="Header">
-					<DOTAHeroImage id="PlayerHeroImage" heroimagestyle="landscape" scaling="stretch-to-fit-x-preserve-aspect" />
+					<Panel class="HeroImageContainer">
+						<DOTAHeroImage id="PlayerHeroImage" heroimagestyle="landscape" />
+						<DOTAUIHeroFacetDropdown id="HeroFacetDropdown" class="Small" />
+					</Panel>
 					<Panel class="HeroDemoTextContainer">
-						<Label id="HeroDemoHeroName" text="{s:hero_name}" />
+						<Panel class="HeroDemoNameContainer">
+							<Label id="HeroDemoHeroName" text="{s:hero_name}" />
+						</Panel>
 						<TextButton class="ChangeLoadoutButton" acceptsjoyfocus="true" onactivate="DOTAShowDashboardPage( DOTAShowDemoHeroPage() )" text="#SelectCosmetics_Button" />
 					</Panel>
 					<Button id="PlayerHeroPickerButton" class="HeroPickerArrow" onactivate="ToggleHeroPicker( true )" />

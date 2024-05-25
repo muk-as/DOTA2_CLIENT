@@ -34,33 +34,32 @@
 			<Label class="Separator" text="|" />
 			<TextButton class="FeedbackButton" text="#DOTA_Crownfall_Overworld_Feedback" onactivate="UIShowCustomLayoutPopup( CrownfallFeedback, file://{resources}/layout/battle_pass/crownfall/bp_popup_crownfall_feedback.xml );" />
 		</Panel>
+		<DOTALeaderboard id="FriendsLeaderboard" minimumrows="0" />
 		<Panel id="ActSelector" onmouseover="AddStyle( ActSelector, Show );" onmouseout="RemoveStyle( ActSelector, Show );">
 			<Panel class="ActList">
-				<Label class="BodySmall ActWipLabel" text="Temp stylin&apos;" />
-				<Panel id="ButtonAct1" class="ChapterNavItem" onactivate="DOTASelectOverworld( 1 ) DOTAActivateOverworld( 1 )">
-					<Label class="ActLabel LabelMedium" text="#DOTA_Crownfall_Overworld_ActI" />
-					<Label class="ActTitle LabelLarge" text="#DOTA_Crownfall_Overworld_TheEyrie" />
+				<Label class="SelectActLabel LabelMedium" text="#DOTA_Crownfall_SelectAct" />
+				<Panel id="ButtonAct1" class="ChapterNavItem" onactivate="DOTASelectOverworld( 1 )">
+					<Label class="ActLabel LabelSmall" text="#DOTA_Crownfall_Overworld_ActI" />
+					<Label class="ActTitle" text="#DOTA_Crownfall_Overworld_Midgate" />
 					<Label class="CurrentlyActiveLabel LabelMedium" text="#DOTA_Crownfall_Overworld_Active" />
 				</Panel>
-				<Panel id="ButtonAct2" class="ChapterNavItem" onactivate="DOTASelectOverworld( 2 ) DOTAActivateOverworld( 2 )">
-					<Label class="ActLabel LabelMedium" text="#DOTA_Crownfall_Overworld_ActII" />
-					<Label class="ActTitle LabelLarge" text="#DOTA_Crownfall_Overworld_Oglodi" />
-					<Label class="UnlockDate LabelSmall" text="#DOTA_Crownfall_Overworld_Unlock_Date_II" />
+				<Panel id="ButtonAct2" class="ChapterNavItem" onactivate="DOTASelectOverworld( 2 )">
+					<Label class="ActLabel LabelSmall" text="#DOTA_Crownfall_Overworld_ActII" />
+					<Label class="ActTitle" text="#DOTA_Crownfall_Overworld_Oglodi" />
 					<Label class="CurrentlyActiveLabel LabelMedium" text="#DOTA_Crownfall_Overworld_Active" />
 				</Panel>
-				<Panel id="ButtonAct3" class="ChapterNavItem" onactivate="DOTASelectOverworld( 3 ) DOTAActivateOverworld( 3 )">
-					<Label class="ActLabel LabelMedium" text="#DOTA_Crownfall_Overworld_ActIII" />
-					<Label class="ActTitle LabelLarge" text="#DOTA_Crownfall_Overworld_IceWrack" />
+				<Panel id="ButtonAct3" class="ChapterNavItem Inactive">
+					<Label class="ActLabel LabelSmall" text="#DOTA_Crownfall_Overworld_ActIII" />
+					<Label class="ActTitle" text="#DOTA_Crownfall_Overworld_IceWrack" />
 					<Label class="UnlockDate LabelSmall" text="#DOTA_Crownfall_Overworld_Unlock_Date_III" />
 					<Label class="CurrentlyActiveLabel LabelMedium" text="#DOTA_Crownfall_Overworld_Active" />
 				</Panel>
-				<Panel id="ButtonAct4" class="ChapterNavItem" onactivate="DOTASelectOverworld( 4 ) DOTAActivateOverworld( 4 )">
-					<Label class="ActLabel LabelMedium" text="#DOTA_Crownfall_Overworld_ActIV" />
-					<Label class="ActTitle LabelLarge" text="#DOTA_Crownfall_Overworld_TheEyrie" />
+				<Panel id="ButtonAct4" class="ChapterNavItem Inactive">
+					<Label class="ActLabel LabelSmall" text="#DOTA_Crownfall_Overworld_ActIV" />
+					<Label class="ActTitle" text="#DOTA_Crownfall_Overworld_TheEyrie" />
 					<Label class="UnlockDate LabelSmall" text="#DOTA_Crownfall_Overworld_Unlock_Date_IV" />
 					<Label class="CurrentlyActiveLabel LabelMedium" text="#DOTA_Crownfall_Overworld_Active" />
 				</Panel>
-				<Label class="BodySmall ActWipLabel" text="Help, need smart person to make this for real" />
 			</Panel>
 		</Panel>
 		<Panel id="RewardsPanel" hittest="false">
@@ -74,16 +73,13 @@
 				<Image class="CrownfallLogoCN" src="s2r://panorama/images/events/crownfall/logos/crownfall_logo_cn_psd.vtex" scaling="stretch-to-fit-preserve-aspect" />
 				<Panel class="ActSelectorDropdown" onmouseover="AddStyle( ActSelector, Show );" onmouseout="RemoveStyle( ActSelector, Show );">
 					<Label class="ActNumber LabelSmall" text="{s:active_act_number}" />
-					<Panel class="LeftRightFlow HorizontalCenter">
+					<Panel class="TopBottomFlow HorizontalCenter">
 						<Label class="ActName BodyExtraLarge" text="{s:active_act_title}" />
 						<Image class="Caret" src="s2r://panorama/images/control_icons/24px/caret_down.vsvg" scaling="stretch-to-fit-y-preserve-aspect" />
 					</Panel>
 				</Panel>
 			</Panel>
-			<Panel class="ActiveBadge">
-				<Image class="ActiveBadgeBackground" src="s2r://panorama/images/events/crownfall/overworld/chapter_selector/active_badge_background_png.vtex" scaling="stretch-to-fit-y-preserve-aspect" />
-				<Label class="LabelMedium" text="#DOTA_Crownfall_Overworld_Active" />
-			</Panel>
+			<DOTACrownfallButton id="ActivateButton" text="#DOTA_Crownfall_Overworld_SetActive" class="Secondary" onactivate="DOTAActivateOverworld()" />
 			<Panel class="RewardsContainer">
 				<Label class="RewardsTitle TitleSmall" text="#DOTA_Crownfall_RewardsGroup_Free" onmouseover="UIShowTextTooltip( #DOTA_Crownfall_Overworld_CompletionProgressBasic )" onmouseout="UIHideTextTooltip()" />
 				<Panel class="ProgressBarContainer Basic">
@@ -180,7 +176,7 @@
 				</AsyncDataPanel>
 				<Panel class="ActPassContainer">
 					<Label class="ActPassDescription BodySmall" html="true" text="#DOTA_Crownfall_ActPassDescription" />
-					<DOTACrownfallButton id="ViewPassButton" text="#DOTA_Crownfall_ActPassButtonLabel" class="Secondary Blue GlowButton" onactivate="DOTAShowBPCrownfallStoreItem( 30943 )" />
+					<DOTACrownfallButton id="ViewPassButton" text="#DOTA_Crownfall_ActPassButtonLabel" class="Secondary Blue GlowButton" />
 				</Panel>
 				<Panel class="OwnActPassContainer">
 					<DOTACrownfallButton id="ViewStoreButton" text="#DOTA_Crownfall_ViewStoreButtonLabel" class="Secondary Blue GlowButton" onactivate="DOTAShowBPCrownfallStorePage()" />
