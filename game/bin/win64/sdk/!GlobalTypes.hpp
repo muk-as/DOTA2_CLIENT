@@ -34255,17 +34255,18 @@ public:
 	bool bKayaApplied; // 0x81	
 	bool bYashaAndKayaApplied; // 0x82	
 	bool bStoutConsidered; // 0x83	
-	bool bInterrupted; // 0x84	
-	bool bDiffusalApplied; // 0x85	
-	bool bChainLightningConsidered; // 0x86	
-	bool bSuppressDamage; // 0x87	
-	bool bRangedAttack; // 0x88	
-	bool bProcessProcs; // 0x89	
-	bool bProjectileIsFromIllusion; // 0x8a	
-	bool bHasMagicComponent; // 0x8b	
-	bool bIsSpellLifesteal; // 0x8c	
+	bool bAegisUsed; // 0x84	
+	bool bInterrupted; // 0x85	
+	bool bDiffusalApplied; // 0x86	
+	bool bChainLightningConsidered; // 0x87	
+	bool bSuppressDamage; // 0x88	
+	bool bRangedAttack; // 0x89	
+	bool bProcessProcs; // 0x8a	
+	bool bProjectileIsFromIllusion; // 0x8b	
+	bool bHasMagicComponent; // 0x8c	
+	bool bIsSpellLifesteal; // 0x8d	
 private:
-	[[maybe_unused]] uint8_t __pad008d[0x3]; // 0x8d
+	[[maybe_unused]] uint8_t __pad008e[0x2]; // 0x8e
 public:
 	CEntityIndex pnMagicStickProcEntityIndices[64]; // 0x90	
 	bool bBloodstoneRegenApplied; // 0x190	

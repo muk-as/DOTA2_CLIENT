@@ -4,7 +4,7 @@
 
 // /////////////////////////////////////////////////////////////
 // Binary: client.dll
-// Classes count: 6,494 (Allocated) | 6,568 (Unallocated)
+// Classes count: 6,495 (Allocated) | 6,569 (Unallocated)
 // Enums count: 2 (Allocated) | 78 (Unallocated)
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
@@ -23259,7 +23259,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x6f8
+// Size: 0x720
 // Has VTable
 class C_DOTA_Ability_Visage_SummonFamiliars : public C_DOTABaseAbility
 {
@@ -23269,6 +23269,7 @@ private:
 	[[maybe_unused]] uint8_t __pad06dc[0x4]; // 0x6dc
 public:
 	CUtlVector< CHandle< C_BaseEntity > > m_hExistingUnits; // 0x6e0	
+	CUtlOrderedMap< int32, bool > m_AbilityAltCastState; // 0x6f8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -40145,6 +40146,7 @@ class CDOTA_Modifier_Leshrac_ChronopticNourishment : public CDOTA_Buff
 {
 public:
 	float mana_pct_per_hit; // 0x15b8	
+	int32_t creep_penalty_reduction_pct; // 0x15bc	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -45261,6 +45263,17 @@ class CDOTA_Modifier_Lina_SuperCharged : public CDOTA_Buff
 {
 public:
 	// No schema binary for binding
+};
+
+// Registered binary: client.dll (project 'client')
+// Alignment: 8
+// Size: 0x15c0
+// Has VTable
+class CDOTA_Modifier_CrystalMaiden_FrozenExpanse : public CDOTA_Buff
+{
+public:
+	float aoe_bonus; // 0x15b8	
+	int32_t self_cast_range_bonus; // 0x15bc	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -74798,7 +74811,7 @@ public:
 class CDOTA_Modifier_Axe_Coat_Of_Blood : public CDOTA_Buff
 {
 public:
-	int32_t armor_per_kill; // 0x15b8	
+	float armor_per_kill; // 0x15b8	
 	int32_t culling_blade_multiplier; // 0x15bc	
 };
 

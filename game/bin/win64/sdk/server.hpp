@@ -4,7 +4,7 @@
 
 // /////////////////////////////////////////////////////////////
 // Binary: server.dll
-// Classes count: 6,738 (Allocated) | 6,984 (Unallocated)
+// Classes count: 6,739 (Allocated) | 6,985 (Unallocated)
 // Enums count: 3 (Allocated) | 347 (Unallocated)
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
@@ -45451,17 +45451,18 @@ public:
 	bool bKayaApplied; // 0x81	
 	bool bYashaAndKayaApplied; // 0x82	
 	bool bStoutConsidered; // 0x83	
-	bool bInterrupted; // 0x84	
-	bool bDiffusalApplied; // 0x85	
-	bool bChainLightningConsidered; // 0x86	
-	bool bSuppressDamage; // 0x87	
-	bool bRangedAttack; // 0x88	
-	bool bProcessProcs; // 0x89	
-	bool bProjectileIsFromIllusion; // 0x8a	
-	bool bHasMagicComponent; // 0x8b	
-	bool bIsSpellLifesteal; // 0x8c	
+	bool bAegisUsed; // 0x84	
+	bool bInterrupted; // 0x85	
+	bool bDiffusalApplied; // 0x86	
+	bool bChainLightningConsidered; // 0x87	
+	bool bSuppressDamage; // 0x88	
+	bool bRangedAttack; // 0x89	
+	bool bProcessProcs; // 0x8a	
+	bool bProjectileIsFromIllusion; // 0x8b	
+	bool bHasMagicComponent; // 0x8c	
+	bool bIsSpellLifesteal; // 0x8d	
 private:
-	[[maybe_unused]] uint8_t __pad008d[0x3]; // 0x8d
+	[[maybe_unused]] uint8_t __pad008e[0x2]; // 0x8e
 public:
 	CEntityIndex pnMagicStickProcEntityIndices[64]; // 0x90	
 	bool bBloodstoneRegenApplied; // 0x190	
@@ -49017,6 +49018,7 @@ class CDOTA_Modifier_Leshrac_ChronopticNourishment : public CDOTA_Buff
 {
 public:
 	float mana_pct_per_hit; // 0x15b8	
+	int32_t creep_penalty_reduction_pct; // 0x15bc	
 };
 
 // Registered binary: server.dll (project 'server')
@@ -54956,6 +54958,17 @@ class CDOTA_Modifier_Lina_SuperCharged : public CDOTA_Buff
 {
 public:
 	// No schema binary for binding
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x15c0
+// Has VTable
+class CDOTA_Modifier_CrystalMaiden_FrozenExpanse : public CDOTA_Buff
+{
+public:
+	float aoe_bonus; // 0x15b8	
+	int32_t self_cast_range_bonus; // 0x15bc	
 };
 
 // Registered binary: server.dll (project 'server')
@@ -86917,7 +86930,7 @@ public:
 
 // Registered binary: server.dll (project 'server')
 // Alignment: 8
-// Size: 0x6c0
+// Size: 0x6e8
 // Has VTable
 class CDOTA_Ability_Visage_SummonFamiliars : public CDOTABaseAbility
 {
@@ -86927,6 +86940,7 @@ private:
 	[[maybe_unused]] uint8_t __pad06a4[0x4]; // 0x6a4
 public:
 	CUtlVector< CHandle< CBaseEntity > > m_hExistingUnits; // 0x6a8	
+	CUtlOrderedMap< int32, bool > m_AbilityAltCastState; // 0x6c0	
 };
 
 // Registered binary: server.dll (project 'server')
@@ -88352,7 +88366,7 @@ public:
 class CDOTA_Modifier_Axe_Coat_Of_Blood : public CDOTA_Buff
 {
 public:
-	int32_t armor_per_kill; // 0x15b8	
+	float armor_per_kill; // 0x15b8	
 	int32_t culling_blade_multiplier; // 0x15bc	
 };
 
