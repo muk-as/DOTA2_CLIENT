@@ -72,7 +72,7 @@ enum class ELeagueTierCategory : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
-// Enumerator count: 122
+// Enumerator count: 123
 // Alignment: 4
 // Size: 0x4
 enum class DOTA_INVALID_ORDERS : uint32_t
@@ -198,7 +198,8 @@ enum class DOTA_INVALID_ORDERS : uint32_t
 	DOTA_INVALID_ORDER_CANT_LOCKCOMBINE_NEUTRAL_ITEMS = 0x75,
 	DOTA_INVALID_ORDER_ABILITY_CANT_ALT_CAST = 0x76,
 	DOTA_INVALID_ORDER_ITEM_CANNOT_BE_CONSUMED = 0x77,
-	DOTA_INVALID_ORDER_COUNT = 0x78,
+	DOTA_INVALID_ORDER_CANT_BUYBACK_CEASELESS_DIRGE = 0x78,
+	DOTA_INVALID_ORDER_COUNT = 0x79,
 };
 
 // Registered binary: server.dll (project 'server')
@@ -20692,7 +20693,7 @@ public:
 class CDOTA_Modifier_Leshrac_Greater_Lightning_Storm : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 	float interval; // 0x15bc	
 };
 
@@ -30754,8 +30755,8 @@ class CDOTA_Ability_PrimalBeast_Rock_Throw : public CDOTABaseAbility
 {
 public:
 	int32_t base_damage; // 0x5a0	
-	int32_t impact_radius; // 0x5a4	
-	int32_t fragment_impact_radius; // 0x5a8	
+	float impact_radius; // 0x5a4	
+	float fragment_impact_radius; // 0x5a8	
 	int32_t fragment_impact_distance; // 0x5ac	
 	int32_t min_range; // 0x5b0	
 	float stun_duration; // 0x5b4	
@@ -46540,7 +46541,7 @@ public:
 class CDOTA_Modifier_Primalbeast_Trample : public CDOTA_Buff
 {
 public:
-	int32_t effect_radius; // 0x15b8	
+	float effect_radius; // 0x15b8	
 	Vector vLastPos; // 0x15bc	
 	float flCurrentDistance; // 0x15c8	
 	int32_t step_distance; // 0x15cc	
@@ -62577,15 +62578,15 @@ public:
 class CDOTA_Modifier_CrystalMaiden_FreezingField : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 	int32_t damage; // 0x15bc	
 	int32_t bonus_armor; // 0x15c0	
 	float explosion_interval; // 0x15c4	
 	float shard_bonus_explosion; // 0x15c8	
-	int32_t explosion_radius; // 0x15cc	
+	float explosion_radius; // 0x15cc	
 	float slow_duration; // 0x15d0	
 	int32_t explosion_min_dist; // 0x15d4	
-	int32_t explosion_max_dist; // 0x15d8	
+	float explosion_max_dist; // 0x15d8	
 	float frostbite_delay; // 0x15dc	
 	GameTime_t m_fLastTick; // 0x15e0	
 	float m_fTimeAccumulator; // 0x15e4	
@@ -67317,7 +67318,7 @@ public:
 class CDOTA_Modifier_Crystal_Maiden_Crystal_Clone_Statue : public CDOTA_Buff
 {
 public:
-	int32_t frostbite_radius; // 0x15b8	
+	float frostbite_radius; // 0x15b8	
 	float anim_delay; // 0x15bc	
 	bool m_bActivated; // 0x15c0	
 private:

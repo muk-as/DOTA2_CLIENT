@@ -131,7 +131,7 @@ enum class EDOTATriviaAnswerResult : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
-// Enumerator count: 122
+// Enumerator count: 123
 // Alignment: 4
 // Size: 0x4
 enum class DOTA_INVALID_ORDERS : uint32_t
@@ -257,7 +257,8 @@ enum class DOTA_INVALID_ORDERS : uint32_t
 	DOTA_INVALID_ORDER_CANT_LOCKCOMBINE_NEUTRAL_ITEMS = 0x75,
 	DOTA_INVALID_ORDER_ABILITY_CANT_ALT_CAST = 0x76,
 	DOTA_INVALID_ORDER_ITEM_CANNOT_BE_CONSUMED = 0x77,
-	DOTA_INVALID_ORDER_COUNT = 0x78,
+	DOTA_INVALID_ORDER_CANT_BUYBACK_CEASELESS_DIRGE = 0x78,
+	DOTA_INVALID_ORDER_COUNT = 0x79,
 };
 
 // Registered binary: client.dll (project 'client')
