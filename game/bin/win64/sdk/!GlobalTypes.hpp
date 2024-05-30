@@ -9823,7 +9823,7 @@ enum class PortraitSummonsDisplayMode_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
-// Enumerator count: 16
+// Enumerator count: 17
 // Alignment: 4
 // Size: 0x4
 enum class EOverworldAuditAction : uint32_t
@@ -9844,6 +9844,7 @@ enum class EOverworldAuditAction : uint32_t
 	k_eOverworldAuditAction_EncounterRewardTokenCost = 0xd,
 	k_eOverworldAuditAction_EncounterRewardTokenReward = 0xe,
 	k_eOverworldAuditAction_SupportGrantTokens = 0x10,
+	k_eOverworldAuditAction_TokenGiftSent = 0x11,
 };
 
 // Registered binary: rendersystemdx11.dll (project 'rendersystemdx11')

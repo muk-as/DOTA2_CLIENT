@@ -99,18 +99,22 @@
 
 .BodyContainer #FighterContainer .Fighter
 {
-	width: 330px;
+	width: 340px;
 	flow-children: down;
+	vertical-align: center;
+	margin-top: 16px;
 }
 
 .BodyContainer #FighterContainer .Fighter .FighterName
 {
 	text-align: center;
 	font-size: 30px;
-	text-transform: uppercase;
-	letter-spacing: 2px;
-	font-weight: bold;
+	max-height: 80px;
+	text-overflow: shrink;
+	margin-bottom: -4px;
 	color: gradient( linear, 0% 00%, 0% 100%, from( #f9e7cd ), to( gold2 ) );
+	line-height: 1.2;
+	letter-spacing: -0.2px;
 }
 
 .BodyContainer #FighterContainer .Fighter .StatsContainer
@@ -177,20 +181,29 @@
 	horizontal-align: center;
 	text-transform: uppercase;
 	font-weight: semi-bold;
+	letter-spacing: 1px;
+	color: rgba(245, 245, 245, 0.8);
+	padding-top: 12px;
+	width: 100%;
+	border-top: 1px solid rgba(255, 233, 219, 0.096);
+	text-align: center;
+	border-brush: gradient( linear, 0% 0%, 100% 0%, from( rgba(255, 255, 255, 0) ), color-stop( 0.5, rgb(255, 255, 255) ), to( rgba(255, 255, 255, 0) ) );
+	text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.4);
 }
 
 .BodyContainer #FighterContainer .Fighter .ChanceLabel
 {
 	horizontal-align: center;
 	font-size: 12px;
-	margin-top: -12px;
+	margin-top: -8px;
+	opacity: 0.6;
 }
 
 .BodyContainer #FighterContainer .Fighter DOTACrownfallButton
 {
 	margin-top: 8px;
 	horizontal-align: center;
-	ui-scale: 80%;
+	width: 280px;
 }
 
 .BodyContainer #FighterContainer .Fighter DOTACrownfallButton:disabled
@@ -201,26 +214,33 @@
 
 .BodyContainer #FighterContainer .VersusContainer
 {
-	width: 225px;
-	height: 330px;
+	width: 280px;
 	flow-children: down;
+	vertical-align: center;
+	overflow: noclip;
+}
+
+.BodyContainer #FighterContainer .VersusContainer .VSContainer
+{
+	horizontal-align: center;
+	margin: -20px 0px;
 }
 
 .BodyContainer #FighterContainer .VersusContainer .VersusImage
 {
-	horizontal-align: center;
-	vertical-align: top;
-	width: 200px;
-	height: 150px;
+	width: 180px;
 }
 
 .BodyContainer #FighterContainer .VersusContainer .VersusLabel
 {
 	horizontal-align: center;
 	vertical-align: center;
-	font-size: 50px;
+	font-size: 24px;
 	text-transform: uppercase;
 	font-weight: bold;
+	margin-top: -16px;
+	color: rgba(245, 245, 245, 0.8);
+	text-shadow: 0px 2px 8px black;
 }
 
 .BodyContainer #FighterContainer .VersusContainer .BetTitle
@@ -229,8 +249,15 @@
 	vertical-align: bottom;
 	text-align: center;
 	text-overflow: shrink;
-	max-height: 48px;
-	font-size: 32px;
+	max-height: 110px;
+	font-size: 44px;
+	color: gradient( linear, 0% 00%, 0% 100%, from( #ffffff ), to( rgb(206, 211, 211) ) );
+	text-shadow: 0px 6px 40px rgba(0, 0, 0, 0.8);
+	text-transform: uppercase;
+	font-weight: bold;
+	letter-spacing: 1.5px;
+	line-height: 1.1;
+	width: 280px;
 }
 
 .BodyContainer #FighterContainer .VersusContainer .BetSubtitle
@@ -243,15 +270,25 @@
 {
 	horizontal-align: center;
 	vertical-align: bottom;
-	width: 48px;
-	ui-scale: 200%;
+	ui-scale: 300%;
 	margin: 0;
+	margin-top: -32px;
+	margin-bottom: -44px;
+}
+
+.NeedsToken .BodyContainer #FighterContainer .VersusContainer DOTACrownfallToken
+{
+	animation-name: GlowToken;
+	animation-duration: 0.8s;
+	animation-direction: alternate;
+	animation-iteration-count: infinite;
 }
 
 .BodyContainer #BetContainer
 {
 	flow-children: down;
 	width: 100%;
+	margin-top: 24px;
 }
 
 .BodyContainer #BetContainer Label
@@ -260,16 +297,10 @@
 	text-align: center;
 }
 
-.BodyContainer #BetContainer .BetInstructions
-{
-	line-height: 1.5;
-}
-
 .BetResourceInstructions
 {
 	horizontal-align: center;
 	text-align: center;
-	line-height: 1.5;
 }
 
 .TakeTokensButton
@@ -282,5 +313,21 @@
 .DialogueComplete .TakeTokensButton
 {
 	opacity: 1;
+}
+
+@keyframes 'GlowToken'
+{
+	0%
+	{
+		brightness: 1;
+		transform: none;
+	}
+	
+	100%
+	{
+		brightness: 6;
+		transform: scale3d( 1.06, 1.06, 1 );
+	}
+	
 }
 

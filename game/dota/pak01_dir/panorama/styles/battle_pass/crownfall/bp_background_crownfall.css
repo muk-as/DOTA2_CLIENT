@@ -4,45 +4,50 @@
 {
 	width: 100%;
 	height: 100%;
-	background-size: cover;
-	transition-property: transform, opacity, background-image;
+	transition-property: opacity, blur;
 	transition-duration: 0.4s;
-	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
 	transition-timing-function: ease;
 	opacity: 0.08;
+	blur: gaussian(8px);
 }
 
 .OnHomePage .BackgroundImageContainer
 {
 	opacity: 1;
 	transition-duration: 0.15s;
+	blur: gaussian(0px);
 }
 
-.BackgroundImageContainer .BackgroundTexture
+.BackgroundImageContainer .BackgroundImage
 {
-	opacity-mask: url("s2r://panorama/images/events/crownfall/masks/texture_mask_png.vtex");
 	width: 100%;
 	height: 100%;
 	background-size: cover;
-	opacity: 0.5;
-	opacity-mask-position: 0% -20%;
-	-s2-mix-blend-mode: screen;
-	wash-color: rgba(8, 0, 255, 0.6);
+	transition-property: opacity;
+	transition-duration: 0.4s;
+	transition-timing-function: ease;
 }
 
-.CrownfallAct1Active .BackgroundImageContainer
+.BackgroundImageContainer .BackgroundImage.Act1
 {
-	background-image: url("s2r://panorama/images/events/crownfall/backgrounds/bg_png.vtex");
+	background-image: url("s2r://panorama/images/events/crownfall/backgrounds/bg_act1_png.vtex");
+	opacity: 0;
 }
 
-.CrownfallAct1Active .BackgroundTexture
+.CrownfallAct1Active .BackgroundImageContainer .BackgroundImage.Act1
 {
-	background-image: url("s2r://panorama/images/events/crownfall/backgrounds/the_eyrie_hero_art_png.vtex");
+	opacity: 1;
 }
 
-.CrownfallAct2Active .BackgroundImageContainer
+.BackgroundImageContainer .BackgroundImage.Act2
 {
 	background-image: url("s2r://panorama/images/events/crownfall/backgrounds/bg_act2_png.vtex");
+	opacity: 0;
+}
+
+.CrownfallAct2Active .BackgroundImageContainer .BackgroundImage.Act2
+{
+	opacity: 1;
 }
 
 .HeroesSceneModels
@@ -141,6 +146,7 @@
 	width: 100%;
 	height: 100%;
 	horizontal-align: center;
+	transition-property: wash-color;
 	opacity: 0;
 }
 
@@ -165,6 +171,16 @@
 	transition-timing-function: ease-in;
 	transition-duration: 0.15s;
 	transition-delay: 0s;
+}
+
+.CrownfallAct1Active .SmokeFX
+{
+	wash-color: rgb(73, 92, 126);
+}
+
+.CrownfallAct2Active .SmokeFX
+{
+	wash-color: rgb(126, 91, 73);
 }
 
 .BottomGradient
@@ -203,10 +219,21 @@
 	height: 500px;
 	ignore-parent-flow: true;
 	horizontal-align: center;
-	background-color: gradient( radial, 50% 50%, 0% 0%, 50% 50%, from( rgb(30, 18, 15) ), color-stop( 0.2, rgb(58, 35, 31), to( rgba(0, 0, 0, 0) ) );
 	blur: gaussian( 24px );
-	opacity: 0.5;
 	margin-top: 180px;
+	background-color: gradient( radial, 50% 50%, 0% 0%, 50% 50%, from( rgb(30, 18, 15) ), color-stop( 0.2, rgb(58, 35, 31), to( rgba(0, 0, 0, 0) ) );
+	transition-property: opacity, background-color;
+	transition-duration: 0.5s;
+}
+
+.CrownfallAct1Active .Darkness
+{
+	opacity: 0;
+}
+
+.CrownfallAct2Active .Darkness
+{
+	opacity: 0.5;
 }
 
 .CrownfallLogoContainer
@@ -272,8 +299,20 @@
 	font-family: titleFont;
 	text-align: center;
 	width: 540px;
-	color: rgba(237, 222, 198, 0.7);
 	text-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4);
+	transition-property: color;
+	transition-duration: 0.4s;
+	transition-timing-function: ease;
+}
+
+.CrownfallAct1Active .Subtitle
+{
+	color: rgba(184, 212, 245, 0.7);
+}
+
+.CrownfallAct2Active .Subtitle
+{
+	color: rgba(237, 222, 198, 0.7);
 }
 
 .FooterActions
