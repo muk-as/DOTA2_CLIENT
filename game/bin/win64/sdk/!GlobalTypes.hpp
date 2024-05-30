@@ -3488,7 +3488,7 @@ enum class VMixFilterType_t : uint16_t
 };
 
 // Registered binary: server.dll (project 'server')
-// Enumerator count: 45
+// Enumerator count: 46
 // Alignment: 8
 // Size: 0x8
 enum class DOTA_ABILITY_BEHAVIOR : uint64_t
@@ -3538,6 +3538,7 @@ enum class DOTA_ABILITY_BEHAVIOR : uint64_t
 	DOTA_ABILITY_BEHAVIOR_BREAK_DISABLES = 0x20000000000,
 	DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS = 0x40000000000,
 	DOTA_ABILITY_BEHAVIOR_INNATE_UI = 0x80000000000,
+	DOTA_ABILITY_BEHAVIOR_UNSWAPPABLE = 0x100000000000,
 };
 
 // Registered binary: server.dll (project 'server')

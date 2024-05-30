@@ -2677,7 +2677,7 @@ public:
 class CDOTA_Modifier_Skywrath_Mage_Mystic_Flare : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 	int32_t damage; // 0x15bc	
 	float duration; // 0x15c0	
 	float damage_interval; // 0x15c4	
@@ -2711,7 +2711,7 @@ public:
 class CDOTA_Modifier_Broodmother_SpinWeb_Thinker : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 	int32_t m_nFXIndex; // 0x15bc	
 };
 
@@ -3082,8 +3082,8 @@ public:
 class CDOTA_Modifier_Muerta_Revenant_HealingThinker : public CDOTA_Buff
 {
 public:
-	int32_t hit_radius; // 0x15b8	
-	int32_t dead_zone_distance; // 0x15bc	
+	float hit_radius; // 0x15b8	
+	float dead_zone_distance; // 0x15bc	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -3543,7 +3543,7 @@ public:
 class CDOTA_Modifier_Item_WardTrueSight : public CDOTA_Buff
 {
 public:
-	int32_t true_sight_range; // 0x15b8	
+	float true_sight_range; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -5173,7 +5173,7 @@ public:
 class CDOTA_Modifier_DoomBringer_Doom_Aura_Self : public CDOTA_Buff
 {
 public:
-	int32_t scepter_aura_radius; // 0x15b8	
+	float scepter_aura_radius; // 0x15b8	
 	int32_t damage; // 0x15bc	
 	bool applies_dispel_to_self; // 0x15c0	
 };
@@ -5714,7 +5714,7 @@ public:
 class CDOTA_Modifier_Item_Vladmir : public CDOTA_Buff_Item
 {
 public:
-	int32_t aura_radius; // 0x15b8	
+	float aura_radius; // 0x15b8	
 	int32_t armor; // 0x15bc	
 	float mana_regen; // 0x15c0	
 };
@@ -5726,7 +5726,7 @@ public:
 class CDOTA_Modifier_Mars_ArenaOfBlood_AnimationAura : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -5795,7 +5795,7 @@ public:
 class CDOTA_Modifier_Slardar_Puddle_Thinker : public CDOTA_Buff
 {
 public:
-	int32_t puddle_radius; // 0x15b8	
+	float puddle_radius; // 0x15b8	
 	ParticleIndex_t m_nFXIndex; // 0x15bc	
 };
 
@@ -6208,7 +6208,7 @@ public:
 class CDOTA_Modifier_DoomBringer_Doom_Aura_Enemy : public CDOTA_Buff
 {
 public:
-	int32_t scepter_aura_radius; // 0x15b8	
+	float scepter_aura_radius; // 0x15b8	
 	int32_t damage; // 0x15bc	
 };
 
@@ -6776,7 +6776,7 @@ public:
 class CDOTA_Modifier_KoboldTaskmaster_SpeedAura : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -7720,7 +7720,7 @@ public:
 class CDOTA_Ability_Nyx_Assassin_Jolt : public C_DOTABaseAbility
 {
 public:
-	int32_t aoe; // 0x5d8	
+	float aoe; // 0x5d8	
 	int32_t damage; // 0x5dc	
 };
 
@@ -7927,7 +7927,7 @@ public:
 class CDOTA_Modifier_Windrunner_GaleForce_Aura : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -9207,7 +9207,7 @@ public:
 class CDOTA_Modifier_FacelessVoid_Chronosphere_SelfBuff : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 	bool square; // 0x15bc	
 };
 
@@ -9938,7 +9938,7 @@ public:
 class CDOTA_Modifier_Luna_LunarBlessing : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 	int32_t bonus_night_vision; // 0x15bc	
 };
 
@@ -10139,7 +10139,7 @@ public:
 class CDOTA_Modifier_Abaddon_BorrowedTime_ImmolationAura : public CDOTA_Buff
 {
 public:
-	int32_t immolate_aoe; // 0x15b8	
+	float immolate_aoe; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -10789,7 +10789,7 @@ public:
 class CDOTA_Modifier_Broodmother_InsatiableHunger_Aura : public CDOTA_Buff
 {
 public:
-	int32_t aura_radius; // 0x15b8	
+	float aura_radius; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -11195,7 +11195,7 @@ public:
 class CDOTA_Modifier_Disruptor_KineticFieldThinker : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 	float formation_time; // 0x15bc	
 	bool m_bActive; // 0x15c0	
 private:
@@ -11451,7 +11451,7 @@ public:
 class CDOTA_Modifier_Aghsfort_Reward_MagicResistAura : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -12309,7 +12309,7 @@ public:
 class CDOTA_Modifier_NightStalker_Void_ZoneThinker : public CDOTA_Buff
 {
 public:
-	int32_t radius_scepter; // 0x15b8	
+	float radius_scepter; // 0x15b8	
 	float scepter_linger; // 0x15bc	
 };
 
@@ -12425,7 +12425,7 @@ public:
 class CDOTA_Modifier_AlphaWolf_CommandAura : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -12544,7 +12544,7 @@ class CDOTA_Modifier_Item_Veil_Of_Discord_Thinker : public CDOTA_Buff
 {
 public:
 	ParticleIndex_t m_nFXIndex; // 0x15b8	
-	int32_t debuff_radius; // 0x15bc	
+	float debuff_radius; // 0x15bc	
 	float resist_debuff_duration; // 0x15c0	
 	int32_t m_nHeroesHit; // 0x15c4	
 	bool m_bHitInvisibleHero; // 0x15c8	
@@ -13576,7 +13576,7 @@ public:
 class CDOTA_Modifier_Greevil_Miniboss_Sight : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -14695,7 +14695,7 @@ public:
 class CDOTA_Modifier_Aghsfort_Pugna_Grandmaster_NetherWard : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 	float mana_multiplier; // 0x15bc	
 	float mana_drained_per_attack; // 0x15c0	
 };
@@ -15118,7 +15118,7 @@ public:
 class CDOTA_Modifier_Lich_Ice_Spire : public CDOTA_Buff
 {
 public:
-	int32_t aura_radius; // 0x15b8	
+	float aura_radius; // 0x15b8	
 	ParticleIndex_t m_nFXIndex; // 0x15bc	
 	CountdownTimer m_Timer; // 0x15c0	
 	bool has_aura; // 0x15d8	
@@ -15565,7 +15565,7 @@ class CDOTA_Modifier_Item_Headdress : public CDOTA_Buff_Item
 {
 public:
 	float health_regen; // 0x15b8	
-	int32_t aura_radius; // 0x15bc	
+	float aura_radius; // 0x15bc	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -15954,7 +15954,7 @@ public:
 class CDOTA_Modifier_Miniboss_Radiance : public CDOTA_Buff
 {
 public:
-	int32_t aura_radius; // 0x15b8	
+	float aura_radius; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -16228,7 +16228,7 @@ public:
 class CDOTA_Modifier_KeeperOfTheLight_BlindingLight_Thinker : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 	ParticleIndex_t m_nFXIndex; // 0x15bc	
 };
 
@@ -17218,7 +17218,7 @@ public:
 class CDOTA_Modifier_SpiritBreaker_EmpoweringHasteAura : public CDOTA_Buff
 {
 public:
-	int32_t aura_radius; // 0x15b8	
+	float aura_radius; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -17954,7 +17954,7 @@ public:
 class CDOTA_Modifier_SpiritBreaker_PlanarPocketAura : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 	int32_t magic_resistance; // 0x15bc	
 };
 
@@ -18133,7 +18133,7 @@ public:
 class CDOTA_Modifier_ForestTrollHighPriest_ManaAura : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -18662,7 +18662,7 @@ public:
 class CDOTA_Modifier_Truesight_Aura : public CDOTA_Buff
 {
 public:
-	int32_t m_nAuraRadius; // 0x15b8	
+	float m_nAuraRadius; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -19557,7 +19557,7 @@ class CDOTA_Modifier_Item_Ceremonial_Robe : public CDOTA_Buff_Item
 {
 public:
 	int32_t bonus_mana; // 0x15b8	
-	int32_t aura_radius; // 0x15bc	
+	float aura_radius; // 0x15bc	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -19929,7 +19929,7 @@ public:
 	int32_t bonus_all_stats; // 0x15b8	
 	float health_regen; // 0x15bc	
 	int32_t magic_resistance; // 0x15c0	
-	int32_t aura_radius; // 0x15c4	
+	float aura_radius; // 0x15c4	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -20199,7 +20199,7 @@ public:
 class CDOTA_Modifier_Invoker_EMP_Pull_Thinker : public CDOTA_Buff
 {
 public:
-	int32_t area_of_effect; // 0x15b8	
+	float area_of_effect; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -20577,7 +20577,7 @@ public:
 class CDOTA_Modifier_Enigma_Black_Hole_Thinker_Scepter : public CDOTA_Buff
 {
 public:
-	int32_t scepter_radius; // 0x15b8	
+	float scepter_radius; // 0x15b8	
 	ParticleIndex_t n_FXIndex; // 0x15bc	
 };
 
@@ -20833,7 +20833,7 @@ public:
 class CDOTA_Modifier_Seer_Stone_Truesight : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 	float duration; // 0x15bc	
 };
 
@@ -21137,7 +21137,7 @@ public:
 class CDOTA_Modifier_Item_Force_Field_Bonus_Aura : public CDOTA_Buff
 {
 public:
-	int32_t bonus_aoe_radius; // 0x15b8	
+	float bonus_aoe_radius; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -21634,7 +21634,7 @@ public:
 class CDOTA_Modifier_Pugna_NetherWard : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 	float mana_multiplier; // 0x15bc	
 	float mana_drained_per_attack; // 0x15c0	
 	int32_t attacks_to_destroy; // 0x15c4	
@@ -21895,7 +21895,7 @@ class CDOTA_Modifier_Item_Arcane_Scout_Invulnerability : public CDOTA_Modifier_I
 {
 public:
 	int32_t scout_movespeed; // 0x15b8	
-	int32_t sight_range; // 0x15bc	
+	float sight_range; // 0x15bc	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -22089,7 +22089,7 @@ public:
 class CDOTA_Ability_AncientApparition_IceAge : public C_DOTABaseAbility
 {
 public:
-	int32_t radius; // 0x5d8	
+	float radius; // 0x5d8	
 	int32_t health_degen; // 0x5dc	
 	float duration; // 0x5e0	
 	int32_t damage; // 0x5e4	
@@ -22856,7 +22856,7 @@ public:
 private:
 	[[maybe_unused]] uint8_t __pad15c1[0x3]; // 0x15c1
 public:
-	int32_t radius; // 0x15c4	
+	float radius; // 0x15c4	
 	int32_t damage_amplification; // 0x15c8	
 	int32_t damage_reduction; // 0x15cc	
 	GameTime_t m_flLastSeen; // 0x15d0	
@@ -23481,7 +23481,7 @@ public:
 	GameTime_t m_flFadeTime; // 0x15e8	
 	float m_flDamageScale; // 0x15ec	
 	float duration; // 0x15f0	
-	int32_t aura_radius; // 0x15f4	
+	float aura_radius; // 0x15f4	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -24770,7 +24770,7 @@ class CDOTA_Modifier_Tornado_Tempest : public CDOTA_Buff
 public:
 	int32_t near_radius; // 0x15b8	
 	int32_t near_damage; // 0x15bc	
-	int32_t far_radius; // 0x15c0	
+	float far_radius; // 0x15c0	
 	int32_t far_damage; // 0x15c4	
 	float tick_rate; // 0x15c8	
 };
@@ -25667,7 +25667,7 @@ public:
 class CDOTA_Modifier_BlackDragon_DragonhideAura : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -27687,7 +27687,7 @@ public:
 class CDOTA_Modifier_VoidSpirit_AetherRemnantUnit_Truesight : public CDOTA_Buff
 {
 public:
-	int32_t m_nRadius; // 0x15b8	
+	float m_nRadius; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -27963,7 +27963,7 @@ public:
 class CDOTA_Modifier_AncientRockGolem_Weakening_Aura : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -28146,7 +28146,7 @@ public:
 class CDOTA_Modifier_Item_Mekansm : public CDOTA_Buff_Item
 {
 public:
-	int32_t aura_radius; // 0x15b8	
+	float aura_radius; // 0x15b8	
 	int32_t bonus_armor; // 0x15bc	
 };
 
@@ -29121,7 +29121,7 @@ class CDOTA_Modifier_Item_Spy_Gadget_Aura : public CDOTA_Buff_Item
 {
 public:
 	int32_t scan_cooldown_reduction; // 0x15b8	
-	int32_t aura_range; // 0x15bc	
+	float aura_range; // 0x15bc	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -29270,7 +29270,7 @@ private:
 public:
 	float flare_debuff_duration; // 0x660	
 	int32_t return_anim_distance_threshold; // 0x664	
-	int32_t range; // 0x668	
+	float range; // 0x668	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -30210,7 +30210,7 @@ public:
 	int32_t bonus_strength; // 0x15b8	
 	int32_t movement_speed; // 0x15bc	
 	int32_t model_scale; // 0x15c0	
-	int32_t damage_radius; // 0x15c4	
+	float damage_radius; // 0x15c4	
 	int32_t pct_str_damage_per_second; // 0x15c8	
 	float tick_rate; // 0x15cc	
 };
@@ -30317,7 +30317,7 @@ public:
 class CDOTA_Modifier_CrystalMaiden_IceRink_Thinker : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 	float rink_formation_time; // 0x15bc	
 	bool m_bActive; // 0x15c0	
 };
@@ -30470,7 +30470,7 @@ public:
 class CDOTA_Modifier_Item_SeedsOfSerenity_Active_Aura : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 	ParticleIndex_t m_nFXIndex; // 0x15bc	
 };
 
@@ -30583,7 +30583,7 @@ public:
 class CDOTA_Modifier_SandKing_SandStorm_Slow_Aura_Thinker : public CDOTA_Buff
 {
 public:
-	int32_t sand_storm_radius; // 0x15b8	
+	float sand_storm_radius; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -31432,8 +31432,8 @@ public:
 class CDOTA_Modifier_Rattletrap_Cog_Thinker_Self_Bonuses : public CDOTA_Buff
 {
 public:
-	int32_t cogs_radius; // 0x15b8	
-	int32_t extra_pull_buffer; // 0x15bc	
+	float cogs_radius; // 0x15b8	
+	float extra_pull_buffer; // 0x15bc	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -32244,7 +32244,7 @@ public:
 class CDOTA_Modifier_CentaurKhan_EnduranceAura : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -32320,7 +32320,7 @@ public:
 class CDOTA_Modifier_Warlock_Golem_Permanent_Immolation : public CDOTA_Buff
 {
 public:
-	int32_t aura_radius; // 0x15b8	
+	float aura_radius; // 0x15b8	
 	int32_t share_damage; // 0x15bc	
 	float manahealthboost; // 0x15c0	
 	float manaboost_scale_mult; // 0x15c4	
@@ -32482,7 +32482,7 @@ public:
 class CDOTA_Modifier_Item_WraithPact : public CDOTA_Buff_Item
 {
 public:
-	int32_t aura_radius; // 0x15b8	
+	float aura_radius; // 0x15b8	
 	int32_t bonus_mana; // 0x15bc	
 	int32_t bonus_health; // 0x15c0	
 };
@@ -34096,7 +34096,7 @@ public:
 class CDOTA_Modifier_Item_GemOfTrueSight : public CDOTA_Buff_Item
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -34261,7 +34261,7 @@ public:
 class CDOTA_Modifier_ForestTrollHighPriest_HealAmp : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -34395,7 +34395,7 @@ public:
 class CDOTA_Modifier_Third_Eye : public CDOTA_Buff
 {
 public:
-	int32_t truesight_radius; // 0x15b8	
+	float truesight_radius; // 0x15b8	
 	int32_t bonus_vision; // 0x15bc	
 	int32_t bonus_all_stats; // 0x15c0	
 };
@@ -34431,7 +34431,7 @@ public:
 	int32_t max_layers; // 0x15bc	
 	float minimum_damage; // 0x15c0	
 	int32_t recovery_time; // 0x15c4	
-	int32_t radius; // 0x15c8	
+	float radius; // 0x15c8	
 	int32_t max_damage_reduction; // 0x15cc	
 	ParticleIndex_t m_nFXIndex[4]; // 0x15d0	
 	ParticleIndex_t m_nFXIndexB; // 0x15e0	
@@ -35361,7 +35361,7 @@ public:
 class CDOTA_Modifier_Item_Terror_Mask_Fear_Aura : public CDOTA_Buff
 {
 public:
-	int32_t effect_radius; // 0x15b8	
+	float effect_radius; // 0x15b8	
 	ParticleIndex_t m_nFXIndex; // 0x15bc	
 };
 
@@ -35585,7 +35585,7 @@ public:
 class CDOTA_Modifier_MudGolem_CloakAura : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -36221,7 +36221,7 @@ public:
 class CDOTA_Modifier_BigThunderLizard_Wardrums : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -36320,7 +36320,7 @@ public:
 class CDOTA_Modifier_Tusk_Tag_Team_Attack_Slow_Aura : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -36582,7 +36582,7 @@ public:
 class CDOTA_Modifier_Mars_Dauntless : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -37912,7 +37912,7 @@ public:
 class CDOTA_Modifier_Tusk_Tag_Team_Aura : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -38302,7 +38302,7 @@ public:
 class CDOTA_Modifier_NightStalker_CripplingFear_Aura : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 	int32_t death_refresh; // 0x15bc	
 	float mana_pers_day; // 0x15c0	
 	float mana_pers_night; // 0x15c4	
@@ -38744,7 +38744,7 @@ public:
 class CDOTA_Modifier_Enigma_Innate_EventHorizonAura : public CDOTA_Buff
 {
 public:
-	int32_t max_dist; // 0x15b8	
+	float max_dist; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -40894,7 +40894,7 @@ public:
 class CDOTA_Modifier_Antimage_DampenMagic_Aura_Strong : public CDOTA_Buff
 {
 public:
-	int32_t shard_bonus_aura_range; // 0x15b8	
+	float shard_bonus_aura_range; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -41206,7 +41206,7 @@ public:
 class CDOTA_Modifier_ScoutBonuses : public CDOTA_Buff
 {
 public:
-	int32_t reveal_radius; // 0x15b8	
+	float reveal_radius; // 0x15b8	
 	float increase_health; // 0x15bc	
 	int32_t max_health; // 0x15c0	
 	float increase_armor; // 0x15c4	
@@ -41452,7 +41452,7 @@ public:
 class CDOTA_Modifier_Terrorblade_Demon_Zeal_Aura : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -41463,7 +41463,7 @@ class CDOTA_Modifier_Disruptor_StaticStormThinker : public CDOTA_Buff
 {
 public:
 	int32_t m_nCurrentPulse; // 0x15b8	
-	int32_t radius; // 0x15bc	
+	float radius; // 0x15bc	
 	int32_t damage_max; // 0x15c0	
 	int32_t pulses; // 0x15c4	
 	float duration; // 0x15c8	
@@ -41793,7 +41793,7 @@ public:
 class CDOTA_Modifier_Item_MartyrsPlate_Aura : public CDOTA_Buff_Item
 {
 public:
-	int32_t aura_radius; // 0x15b8	
+	float aura_radius; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -42470,7 +42470,7 @@ public:
 class CDOTA_Modifier_DrowRanger_Trueshot : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -42652,7 +42652,7 @@ public:
 class CDOTA_Modifier_Keeper_of_the_Light_ManaMagnifier : public CDOTA_Buff
 {
 public:
-	int32_t aura_radius; // 0x15b8	
+	float aura_radius; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -42998,7 +42998,7 @@ public:
 class CDOTA_Modifier_Earthshaker_Aftershock : public CDOTA_Buff
 {
 public:
-	int32_t nAftershockRange; // 0x15b8	
+	float nAftershockRange; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -43310,7 +43310,7 @@ class CDOTA_Modifier_Item_Shivas_Guard : public CDOTA_Buff_Item
 public:
 	int32_t bonus_intellect; // 0x15b8	
 	int32_t bonus_armor; // 0x15bc	
-	int32_t aura_radius; // 0x15c0	
+	float aura_radius; // 0x15c0	
 	int32_t bonus_hp_regen; // 0x15c4	
 	int32_t bonus_strength; // 0x15c8	
 };
@@ -43606,7 +43606,7 @@ public:
 class CDOTA_Modifier_Mars_ArenaOfBlood_BuffAura : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -44169,7 +44169,7 @@ public:
 class CDOTA_Modifier_Mars_ArenaOfBlood : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 	int32_t width; // 0x15bc	
 	int32_t spear_damage; // 0x15c0	
 	int32_t spear_distance_from_wall; // 0x15c4	
@@ -44642,7 +44642,7 @@ public:
 class CDOTA_Modifier_Greevil_Miniboss_White_Degen_Aura : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -44779,7 +44779,7 @@ public:
 class CDOTA_Modifier_EmberSpirit_FireRemnant_Shard : public CDOTA_Buff
 {
 public:
-	int32_t shard_radius; // 0x15b8	
+	float shard_radius; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -44923,7 +44923,7 @@ public:
 class CDOTA_Modifier_BlueDragonspawnOverseer_DevotionAura : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -45006,7 +45006,7 @@ public:
 class CDOTA_Modifier_Necronomicon_Warrior_Sight : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -45174,16 +45174,6 @@ public:
 // Size: 0x5d8
 // Has VTable
 class C_DOTA_Ability_Chaos_Knight_Phantasmagoria : public C_DOTABaseAbility
-{
-public:
-	// No schema binary for binding
-};
-
-// Registered binary: client.dll (project 'client')
-// Alignment: 8
-// Size: 0x5d8
-// Has VTable
-class C_DOTA_Ability_Warlock_Black_Grimoire : public C_DOTABaseAbility
 {
 public:
 	// No schema binary for binding
@@ -45854,7 +45844,7 @@ public:
 class CDOTA_Modifier_Nyx_Assassin_Nyxth_Sense : public CDOTA_Buff_Item
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -46162,7 +46152,7 @@ public:
 private:
 	[[maybe_unused]] uint8_t __pad15b9[0x3]; // 0x15b9
 public:
-	int32_t bonus_aoe_radius; // 0x15bc	
+	float bonus_aoe_radius; // 0x15bc	
 	int32_t self_armor; // 0x15c0	
 	int32_t self_mres; // 0x15c4	
 };
@@ -46207,7 +46197,7 @@ public:
 class CDOTA_Modifier_Item_Boots_Of_Bearing : public CDOTA_Buff_Item
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 	int32_t bonus_movement_speed; // 0x15bc	
 	int32_t bonus_health_regen; // 0x15c0	
 	int32_t bonus_str; // 0x15c4	
@@ -46272,7 +46262,7 @@ public:
 class CDOTA_Modifier_NagaSiren_SongOfTheSiren_Aura : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 	int32_t m_nAffectedEnemies; // 0x15bc	
 	CUtlVector< CHandle< C_BaseEntity > > m_vhAffectedHeroes; // 0x15c0	
 };
@@ -46669,7 +46659,7 @@ public:
 class CDOTA_Modifier_BaseBlocker : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -47176,7 +47166,7 @@ public:
 	int32_t bonus_mana; // 0x15bc	
 	int32_t bonus_mres; // 0x15c0	
 	int32_t bonus_armor; // 0x15c4	
-	int32_t aura_radius; // 0x15c8	
+	float aura_radius; // 0x15c8	
 	float mana_regen; // 0x15cc	
 };
 
@@ -47273,8 +47263,8 @@ public:
 class CDOTA_Modifier_Rattletrap_Cog_Thinker_Leash : public CDOTA_Buff
 {
 public:
-	int32_t cogs_radius; // 0x15b8	
-	int32_t extra_pull_buffer; // 0x15bc	
+	float cogs_radius; // 0x15b8	
+	float extra_pull_buffer; // 0x15bc	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -48488,7 +48478,7 @@ public:
 class CDOTA_Modifier_DragonKnight_Fireball_Thinker : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 	float linger_duration; // 0x15bc	
 };
 
@@ -48524,7 +48514,7 @@ public:
 class CDOTA_Modifier_Lich_Ice_Spire_VictimCopy : public CDOTA_Buff
 {
 public:
-	int32_t aura_radius; // 0x15b8	
+	float aura_radius; // 0x15b8	
 	ParticleIndex_t m_nFXIndex; // 0x15bc	
 	CountdownTimer m_Timer; // 0x15c0	
 	bool m_bIsHeroSpire; // 0x15d8	
@@ -49337,7 +49327,7 @@ class C_DOTA_Ability_AghsFort_Creature_Venomancer_PoisonNova : public C_DOTABase
 {
 public:
 	ParticleIndex_t m_nFXPreview; // 0x5d8	
-	int32_t radius; // 0x5dc	
+	float radius; // 0x5dc	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -49483,7 +49473,7 @@ public:
 class CDOTA_Modifier_Chen_DivineFavor_Aura : public CDOTA_Buff
 {
 public:
-	int32_t aura_radius; // 0x15b8	
+	float aura_radius; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -49712,7 +49702,7 @@ class CDOTA_Modifier_Item_Necronomicon_3 : public CDOTA_Buff_Item
 public:
 	float bonus_mana_regen; // 0x15b8	
 	int32_t bonus_strength; // 0x15bc	
-	int32_t aura_radius; // 0x15c0	
+	float aura_radius; // 0x15c0	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -50591,7 +50581,7 @@ public:
 class CDOTA_Modifier_Creature_IceSlam_Thinker : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 	ParticleIndex_t m_nPathEffectIndex; // 0x15bc	
 };
 
@@ -50755,7 +50745,7 @@ public:
 class CDOTA_Modifier_Abaddon_BorrowedTime : public CDOTA_Buff
 {
 public:
-	int32_t redirect_range_scepter; // 0x15b8	
+	float redirect_range_scepter; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -51062,7 +51052,7 @@ public:
 class CDOTA_Modifier_Elder_Titan_NaturalOrder_Aura_Armor : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -51761,7 +51751,7 @@ public:
 class CDOTA_Modifier_Primal_Beast_Trample_HasteAura : public CDOTA_Buff
 {
 public:
-	int32_t aura_radius; // 0x15b8	
+	float aura_radius; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -51811,7 +51801,7 @@ public:
 class CDOTA_Modifier_Riki_SmokeScreenThinkerAlly : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -52566,7 +52556,7 @@ public:
 class CDOTA_Modifier_KoboldTunneler_ProspectingAura : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -52880,7 +52870,7 @@ public:
 class CDOTA_Modifier_Item_Holy_Locket : public CDOTA_Buff_Item
 {
 public:
-	int32_t aura_radius; // 0x15b8	
+	float aura_radius; // 0x15b8	
 	int32_t bonus_health; // 0x15bc	
 	int32_t bonus_mana; // 0x15c0	
 	int32_t heal_increase; // 0x15c4	
@@ -54154,7 +54144,7 @@ public:
 class CDOTA_Modifier_Tusk_FrozenSigil_Aura : public CDOTA_Buff
 {
 public:
-	int32_t sigil_radius; // 0x15b8	
+	float sigil_radius; // 0x15b8	
 	ParticleIndex_t m_iParticleIndex; // 0x15bc	
 };
 
@@ -54226,7 +54216,7 @@ public:
 class CDOTA_Modifier_Viper_Nethertoxin_Thinker : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 	ParticleIndex_t m_nFXIndex; // 0x15bc	
 };
 
@@ -54591,7 +54581,7 @@ public:
 class CDOTA_Modifier_VengefulSpirit_Command_Negative_Aura : public CDOTA_Buff
 {
 public:
-	int32_t aura_radius; // 0x15b8	
+	float aura_radius; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -54692,7 +54682,7 @@ class C_DOTA_Ability_Enchantress_Little_Friends : public C_DOTABaseAbility
 {
 public:
 	float duration; // 0x5d8	
-	int32_t radius; // 0x5dc	
+	float radius; // 0x5dc	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -54763,7 +54753,7 @@ public:
 class CDOTA_Modifier_Item_Ancient_Janggo : public CDOTA_Buff_Item
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 	int32_t bonus_str; // 0x15bc	
 	int32_t bonus_int; // 0x15c0	
 };
@@ -54805,7 +54795,7 @@ public:
 class CDOTA_Modifier_Phoenix_Dying_Light : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -55423,8 +55413,8 @@ public:
 class CDOTA_Modifier_Rattletrap_Cog_Thinker_Talent : public CDOTA_Buff
 {
 public:
-	int32_t cogs_radius; // 0x15b8	
-	int32_t extra_pull_buffer; // 0x15bc	
+	float cogs_radius; // 0x15b8	
+	float extra_pull_buffer; // 0x15bc	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -55668,7 +55658,7 @@ public:
 class CDOTA_Modifier_Slark_ShadowDance_Aura : public CDOTA_Buff
 {
 public:
-	int32_t scepter_aoe; // 0x15b8	
+	float scepter_aoe; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -55695,7 +55685,7 @@ public:
 class CDOTA_Modifier_Windrunner_WindrunAlly : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 	bool m_bDispellable; // 0x15bc	
 };
 
@@ -56760,7 +56750,7 @@ public:
 class CDOTA_Modifier_Dawnbreaker_Converge_Thinker : public CDOTA_Buff
 {
 public:
-	int32_t flare_radius; // 0x15b8	
+	float flare_radius; // 0x15b8	
 	ParticleIndex_t m_nFXIndex; // 0x15bc	
 };
 
@@ -56838,8 +56828,8 @@ public:
 class CDOTA_Modifier_Rattletrap_Cog_Thinker : public CDOTA_Buff
 {
 public:
-	int32_t cogs_radius; // 0x15b8	
-	int32_t extra_pull_buffer; // 0x15bc	
+	float cogs_radius; // 0x15b8	
+	float extra_pull_buffer; // 0x15bc	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -57453,7 +57443,7 @@ public:
 class CDOTA_Modifier_Aghsfort_Reward_ArmorAura : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -57655,7 +57645,7 @@ public:
 class CDOTA_Modifier_SatyrHellcaller_UnholyAura : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -58258,7 +58248,7 @@ public:
 class CDOTA_Modifier_Nevermore_Presence_Aura : public CDOTA_Buff
 {
 public:
-	int32_t presence_radius; // 0x15b8	
+	float presence_radius; // 0x15b8	
 	float kill_buff_duration; // 0x15bc	
 	GameTime_t m_fLastStackChange; // 0x15c0	
 };
@@ -58290,7 +58280,7 @@ public:
 class CDOTA_Modifier_Filler_Heal_Aura : public CDOTA_Buff_Item
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -58962,7 +58952,7 @@ public:
 class CDOTA_Modifier_Enigma_Event_Horizon_Aura : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 	float vision_cone; // 0x15bc	
 };
 
@@ -59210,7 +59200,7 @@ public:
 class CDOTA_Modifier_Slark_Depth_Shroud_Thinker : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 	CHandle< C_BaseEntity > m_hVisibleEntity; // 0x15bc	
 };
 
@@ -59403,7 +59393,7 @@ public:
 class CDOTA_Modifier_Techies_Minefield_Sign_Scepter : public CDOTA_Buff
 {
 public:
-	int32_t aura_radius; // 0x15b8	
+	float aura_radius; // 0x15b8	
 	float minefield_duration; // 0x15bc	
 };
 
@@ -59604,7 +59594,7 @@ public:
 class CDOTA_Modifier_Item_WraithPact_Thinker : public CDOTA_Buff
 {
 public:
-	int32_t pact_aura_radius; // 0x15b8	
+	float pact_aura_radius; // 0x15b8	
 	ParticleIndex_t m_nFXIndex; // 0x15bc	
 	float aura_dps; // 0x15c0	
 };
@@ -60185,7 +60175,7 @@ public:
 class CDOTA_Modifier_Necronomicon_Archer_AoE : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -60630,7 +60620,7 @@ public:
 class CDOTA_Ability_Nyx_Assassin_ManaBurn : public C_DOTABaseAbility
 {
 public:
-	int32_t aoe; // 0x5d8	
+	float aoe; // 0x5d8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -62273,7 +62263,7 @@ public:
 class CDOTA_Modifier_FrostbittenGolem_TimeWarpAura : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -62348,7 +62338,7 @@ public:
 class CDOTA_Modifier_Gem_Active_TrueSight : public CDOTA_Buff
 {
 public:
-	int32_t active_radius; // 0x15b8	
+	float active_radius; // 0x15b8	
 	float duration; // 0x15bc	
 };
 
@@ -62615,7 +62605,7 @@ public:
 class CDOTA_Modifier_Omniknight_Degen_Aura : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -62684,7 +62674,7 @@ public:
 class CDOTA_Modifier_Lich_FrostAura_Aura : public CDOTA_Buff
 {
 public:
-	int32_t aura_radius; // 0x15b8	
+	float aura_radius; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -63329,7 +63319,7 @@ class CDOTA_Modifier_Item_Necronomicon_2 : public CDOTA_Buff_Item
 public:
 	float bonus_mana_regen; // 0x15b8	
 	int32_t bonus_strength; // 0x15bc	
-	int32_t aura_radius; // 0x15c0	
+	float aura_radius; // 0x15c0	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -63533,7 +63523,7 @@ class CDOTA_Modifier_Ascension_AcidBlood_Thinker : public CDOTA_Buff
 {
 public:
 	int32_t damage; // 0x15b8	
-	int32_t radius; // 0x15bc	
+	float radius; // 0x15bc	
 	ParticleIndex_t m_nFXIndex; // 0x15c0	
 };
 
@@ -63701,7 +63691,7 @@ public:
 class CDOTA_Modifier_Beastmaster_InnerBeast_Aura : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 	int32_t bonus_damage; // 0x15bc	
 };
 
@@ -63714,7 +63704,7 @@ class CDOTA_Modifier_Necrolyte_GhostShroud_Active : public CDOTA_Buff
 public:
 	int32_t heal_bonus; // 0x15b8	
 	int32_t bonus_damage; // 0x15bc	
-	int32_t slow_aoe; // 0x15c0	
+	float slow_aoe; // 0x15c0	
 	float movement_transfer; // 0x15c4	
 	float movement_speed; // 0x15c8	
 	float m_flMovementSpeedAmp; // 0x15cc	
@@ -64300,8 +64290,7 @@ public:
 class CDOTA_Modifier_AbyssalUnderlord_AtrophyAura : public CDOTA_Buff
 {
 public:
-	float radius; // 0x15b8	
-	ParticleIndex_t m_nFXIndex; // 0x15bc	
+	ParticleIndex_t m_nFXIndex; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -64753,7 +64742,7 @@ public:
 class CDOTA_Modifier_Elder_Titan_NaturalOrder_Aura_MagicResistance : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -64763,7 +64752,7 @@ public:
 class CDOTA_Modifier_Centaur_Return_Aura : public CDOTA_Buff
 {
 public:
-	int32_t aura_radius; // 0x15b8	
+	float aura_radius; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -64815,7 +64804,7 @@ public:
 class CDOTA_Modifier_Skeleton_King_Innate_VampiricSpirit_Aura : public CDOTA_Buff
 {
 public:
-	int32_t scepter_aura_radius; // 0x15b8	
+	float scepter_aura_radius; // 0x15b8	
 	float vampiric_aura; // 0x15bc	
 	float creep_lifesteal_reduction_pct; // 0x15c0	
 };
@@ -64958,7 +64947,6 @@ public:
 	int32_t bonus_damage; // 0x15b8	
 	int32_t evasion; // 0x15bc	
 	int32_t upgrade_day_vision; // 0x15c0	
-	int32_t aura_radius; // 0x15c4	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -67453,7 +67441,7 @@ public:
 class CDOTA_Modifier_Greevil_Miniboss_Blue_IceVortexThinker : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 	int32_t movement_speed_pct; // 0x15bc	
 	int32_t spell_resist_pct; // 0x15c0	
 	ParticleIndex_t m_nFXIndex; // 0x15c4	
@@ -67623,7 +67611,7 @@ public:
 class CDOTA_Modifier_Rubick_NullField : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -68176,7 +68164,7 @@ public:
 class CDOTA_Modifier_Spawnlord_Aura : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -68575,7 +68563,7 @@ public:
 class CDOTA_Modifier_Enigma_MidnightPulseThinker : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 	ParticleIndex_t n_FXIndex; // 0x15bc	
 };
 
@@ -70800,7 +70788,7 @@ public:
 class CDOTA_Modifier_Invoker_IceWall_SlowAura : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 	int32_t slow; // 0x15bc	
 	float slow_duration; // 0x15c0	
 };
@@ -71469,7 +71457,7 @@ public:
 class CDOTA_Modifier_Roshans_Banner_Aura : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 	int32_t hp_bonus; // 0x15bc	
 	int32_t damage_bonus; // 0x15c0	
 	int32_t model_scale; // 0x15c4	
@@ -72000,6 +71988,16 @@ class C_DOTA_Ability_QueenOfPain_ShadowStrike : public C_DOTABaseAbility
 {
 public:
 	Vector projectile_speed; // 0x5d8	
+};
+
+// Registered binary: client.dll (project 'client')
+// Alignment: 8
+// Size: 0x5d8
+// Has VTable
+class CDOTA_Ability_Warlock_Black_Grimoire : public C_DOTABaseAbility
+{
+public:
+	// No schema binary for binding
 };
 
 // Registered binary: client.dll (project 'client')
@@ -72894,7 +72892,7 @@ class CDOTA_Modifier_Invoker_GhostWalk_Self : public CDOTA_Modifier_Invisible
 {
 public:
 	int32_t self_slow; // 0x15c8	
-	int32_t area_of_effect; // 0x15cc	
+	float area_of_effect; // 0x15cc	
 	float aura_fade_time; // 0x15d0	
 	float health_regen; // 0x15d4	
 	float mana_regen; // 0x15d8	
@@ -74400,7 +74398,7 @@ public:
 class CDOTA_Modifier_Aghsfort_Reward_HPAura : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -74549,7 +74547,7 @@ public:
 class CDOTA_Modifier_Riki_SmokeScreenThinker : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -74569,7 +74567,7 @@ public:
 class CDOTA_Modifier_Antimage_DampenMagic_Aura : public CDOTA_Buff
 {
 public:
-	int32_t shard_radius; // 0x15b8	
+	float shard_radius; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -75201,7 +75199,7 @@ public:
 class CDOTA_Modifier_AghsFort_Creature_Phoenix_Sun : public CDOTA_Buff
 {
 public:
-	int32_t aura_radius; // 0x15b8	
+	float aura_radius; // 0x15b8	
 	float stun_duration; // 0x15bc	
 	int32_t max_hero_attacks; // 0x15c0	
 	int32_t max_hero_attacks_scepter; // 0x15c4	
@@ -75706,7 +75704,7 @@ public:
 class CDOTA_Modifier_BlackDrake_MagicAmplification_Aura : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -75718,7 +75716,7 @@ class CDOTA_Modifier_AghsFort_Ascension_MagneticField_Thinker_Evasion : public C
 private:
 	[[maybe_unused]] uint8_t __pad15b8[0x8]; // 0x15b8
 public:
-	int32_t radius; // 0x15c0	
+	float radius; // 0x15c0	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -76141,7 +76139,7 @@ public:
 class CDOTA_Modifier_NagaSiren_SongOfTheSiren_Healing_Aura : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 	int32_t m_nAffectedAllies; // 0x15bc	
 	CUtlVector< CHandle< C_BaseEntity > > m_vhAffectedHeroes; // 0x15c0	
 };
@@ -76552,7 +76550,7 @@ public:
 class CDOTA_Modifier_Treant_NaturesGrasp_Latch_Thinker : public CDOTA_Buff
 {
 public:
-	int32_t latch_range; // 0x15b8	
+	float latch_range; // 0x15b8	
 	int32_t latch_vision; // 0x15bc	
 	float initial_latch_delay; // 0x15c0	
 private:
@@ -76579,7 +76577,7 @@ class CDOTA_Modifier_Obsidian_Destroyer_EssenceAura : public CDOTA_Buff
 {
 public:
 	int32_t bonus_mana; // 0x15b8	
-	int32_t radius; // 0x15bc	
+	float radius; // 0x15bc	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -76886,7 +76884,7 @@ public:
 class CDOTA_Modifier_Brewmaster_PermanentImmolation_Aura : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -76907,7 +76905,7 @@ public:
 class CDOTA_Modifier_FacelessVoid_TimeZone : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -77142,7 +77140,7 @@ public:
 class CDOTA_Modifier_Roshan_DevotionAura : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -78193,7 +78191,7 @@ public:
 class CDOTA_Modifier_Item_EagleEye : public CDOTA_Buff_Item
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 	int32_t bonus_agi; // 0x15bc	
 };
 
@@ -78412,7 +78410,7 @@ public:
 	int32_t feedback_mana_burn; // 0x15c4	
 	int32_t feedback_mana_burn_illusion_melee; // 0x15c8	
 	int32_t feedback_mana_burn_illusion_ranged; // 0x15cc	
-	int32_t aura_radius; // 0x15d0	
+	float aura_radius; // 0x15d0	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -78518,7 +78516,7 @@ public:
 class CDOTA_Modifier_Drow_Ranger_Glacier_Hilltop_Aura : public CDOTA_Buff
 {
 public:
-	int32_t shard_width; // 0x15b8	
+	float shard_width; // 0x15b8	
 	ParticleIndex_t m_nFXIndex; // 0x15bc	
 };
 
@@ -78723,7 +78721,7 @@ public:
 class CDOTA_Modifier_Aghsfort_TempBuff_CorpseExplosion_Aura : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -78766,7 +78764,7 @@ public:
 	float bonus_health_regen; // 0x15b8	
 	float bonus_mana_regen; // 0x15bc	
 	int32_t bonus_armor; // 0x15c0	
-	int32_t aura_radius; // 0x15c4	
+	float aura_radius; // 0x15c4	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -79291,7 +79289,7 @@ public:
 class CDOTA_Modifier_EnragedWildkin_ToughnessAura : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -80230,7 +80228,7 @@ public:
 class CDOTA_Modifier_Pangolier_Fortune_Favors_The_Bold : public CDOTA_Buff
 {
 public:
-	int32_t aura_radius; // 0x15b8	
+	float aura_radius; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -80326,7 +80324,7 @@ public:
 class CDOTA_Modifier_AncientApparition_IceVortexThinker : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 	int32_t movement_speed_pct; // 0x15bc	
 	int32_t spell_resist_pct; // 0x15c0	
 	ParticleIndex_t m_nFXIndex; // 0x15c4	
@@ -80560,7 +80558,7 @@ class CDOTA_Modifier_Item_Cloak_Of_Flames : public CDOTA_Buff_Item
 public:
 	int32_t armor; // 0x15b8	
 	int32_t magic_resistance; // 0x15bc	
-	int32_t radius; // 0x15c0	
+	float radius; // 0x15c0	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -81023,7 +81021,7 @@ public:
 class CDOTA_Modifier_Beastmaster_DrumsOfSlom : public CDOTA_Buff
 {
 public:
-	int32_t aura_radius; // 0x15b8	
+	float aura_radius; // 0x15b8	
 	int32_t radius; // 0x15bc	
 	int32_t max_stacks; // 0x15c0	
 	float base_damage; // 0x15c4	
@@ -81130,7 +81128,7 @@ public:
 class CDOTA_Modifier_GraniteGolem_HPAura : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -81519,7 +81517,7 @@ public:
 private:
 	[[maybe_unused]] uint8_t __pad15b9[0x3]; // 0x15b9
 public:
-	int32_t bonus_aoe_radius; // 0x15bc	
+	float bonus_aoe_radius; // 0x15bc	
 	float armor; // 0x15c0	
 };
 
@@ -81550,7 +81548,7 @@ public:
 class CDOTA_Modifier_Chaos_Knight_Illusions_Damage_Reduction_Aura : public CDOTA_Buff
 {
 public:
-	int32_t aura_radius; // 0x15b8	
+	float aura_radius; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -81607,7 +81605,7 @@ public:
 class CDOTA_Modifier_DarkSeer_Surge_Trail_Thinker : public CDOTA_Buff
 {
 public:
-	int32_t trail_radius; // 0x15b8	
+	float trail_radius; // 0x15b8	
 	ParticleIndex_t m_nFXIndex; // 0x15bc	
 };
 
@@ -82055,7 +82053,7 @@ class CDOTA_Modifier_Oracle_RainOfDestiny_Aura : public CDOTA_Buff
 {
 public:
 	float damage; // 0x15b8	
-	int32_t radius; // 0x15bc	
+	float radius; // 0x15bc	
 	ParticleIndex_t m_nFXIndex; // 0x15c0	
 };
 
@@ -82778,7 +82776,7 @@ public:
 class CDOTA_Modifier_FacelessVoid_Chronosphere : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -82810,7 +82808,7 @@ public:
 class CDOTA_Modifier_AghsFort_BossWinterWyvern_Cold_Embrace_Thinker : public CDOTA_Buff
 {
 public:
-	int32_t freeze_radius; // 0x15b8	
+	float freeze_radius; // 0x15b8	
 	int32_t freeze_damage; // 0x15bc	
 	float freeze_debuff_duration; // 0x15c0	
 	float freeze_delay; // 0x15c4	
@@ -83160,7 +83158,7 @@ public:
 class CDOTA_Modifier_Phoenix_Sun : public CDOTA_Buff
 {
 public:
-	int32_t aura_radius; // 0x15b8	
+	float aura_radius; // 0x15b8	
 	float stun_duration; // 0x15bc	
 	int32_t max_hero_attacks; // 0x15c0	
 	int32_t max_hero_attacks_scepter; // 0x15c4	
@@ -83176,7 +83174,7 @@ public:
 class CDOTA_Modifier_Techies_Minefield_Sign_Thinker : public CDOTA_Buff
 {
 public:
-	int32_t aura_radius; // 0x15b8	
+	float aura_radius; // 0x15b8	
 	float trigger_radius; // 0x15bc	
 	float minefield_duration; // 0x15c0	
 	bool m_bTriggered; // 0x15c4	
@@ -83549,7 +83547,7 @@ public:
 class CDOTA_Modifier_HillTroll_RallyAura : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -84160,7 +84158,7 @@ public:
 class CDOTA_Modifier_Windrunner_Windrun : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15b8	
+	float radius; // 0x15b8	
 	int32_t scepter_radius; // 0x15bc	
 	int32_t movespeed_bonus_pct; // 0x15c0	
 	bool m_bDispellable; // 0x15c4	
@@ -84393,7 +84391,7 @@ public:
 private:
 	[[maybe_unused]] uint8_t __pad15c1[0x3]; // 0x15c1
 public:
-	int32_t radius; // 0x15c4	
+	float radius; // 0x15c4	
 	int32_t damage_amplification; // 0x15c8	
 	int32_t damage_reduction; // 0x15cc	
 	float root_base_duration; // 0x15d0	
@@ -84635,7 +84633,7 @@ public:
 private:
 	[[maybe_unused]] uint8_t __pad15b9[0x3]; // 0x15b9
 public:
-	int32_t aura_radius; // 0x15bc	
+	float aura_radius; // 0x15bc	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -84721,7 +84719,7 @@ public:
 class CDOTA_Modifier_VengefulSpirit_Command_Aura : public CDOTA_Buff
 {
 public:
-	int32_t aura_radius; // 0x15b8	
+	float aura_radius; // 0x15b8	
 };
 
 // Registered binary: client.dll (project 'client')
