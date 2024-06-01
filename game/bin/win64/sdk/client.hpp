@@ -39137,7 +39137,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0xabe0
+// Size: 0xabb0
 // Has VTable
 // 
 // MNetworkVarNames "int m_nRuneCycle"
@@ -39296,7 +39296,6 @@ public:
 // MNetworkVarNames "int m_nAbilityDraftRoundNumber"
 // MNetworkVarNames "int m_nAbilityDraftAdvanceSteps"
 // MNetworkVarNames "int m_nAbilityDraftPhase"
-// MNetworkVarNames "int m_nAbilityDraftHeroesChosen"
 // MNetworkVarNames "bool m_bIsPlayerDraft"
 // MNetworkVarNames "DOTA_PlayerDraftState m_ePlayerDraftState"
 // MNetworkVarNames "uint8 m_vecPlayerDraftPickOrder"
@@ -39750,93 +39749,93 @@ public:
 	// MNetworkEnable
 	int32_t m_nAbilityDraftPhase; // 0xb58	
 	// MNetworkEnable
-	// MNetworkChangeCallback "OnAbilityDraftHeroesChanged"
-	int32_t m_nAbilityDraftHeroesChosen[13]; // 0xb5c	
-	// MNetworkEnable
-	bool m_bIsPlayerDraft; // 0xb90	
+	bool m_bIsPlayerDraft; // 0xb5c	
 private:
-	[[maybe_unused]] uint8_t __pad0b91[0x3]; // 0xb91
+	[[maybe_unused]] uint8_t __pad0b5d[0x3]; // 0xb5d
 public:
 	// MNetworkEnable
-	DOTA_PlayerDraftState m_ePlayerDraftState; // 0xb94	
-	// MNetworkEnable
-	C_NetworkUtlVectorBase< uint8 > m_vecPlayerDraftPickOrder; // 0xb98	
-	// MNetworkEnable
-	int32_t m_nPlayerDraftPick; // 0xbb0	
-	// MNetworkEnable
-	int32_t m_nPlayerDraftActiveTeam; // 0xbb4	
-	// MNetworkEnable
-	float m_flPlayerDraftTimeBank[2]; // 0xbb8	
-	CUtlVector< KeyValues* > m_vecARDMHeroes[2]; // 0xbc0	
-	int32_t m_nARDMHeroesPrecached; // 0xbf0	
-	float m_fLastARDMPrecache; // 0xbf4	
-	// MNetworkEnable
-	int32_t m_nAllDraftPhase; // 0xbf8	
-	// MNetworkEnable
-	bool m_bAllDraftRadiantFirst; // 0xbfc	
-	// MNetworkEnable
-	bool m_bAllowOverrideVPK; // 0xbfd	
+	DOTA_PlayerDraftState m_ePlayerDraftState; // 0xb60	
 private:
-	[[maybe_unused]] uint8_t __pad0bfe[0x2]; // 0xbfe
+	[[maybe_unused]] uint8_t __pad0b64[0x4]; // 0xb64
 public:
 	// MNetworkEnable
-	int32_t m_nARDMHeroesRemaining[2]; // 0xc00	
-	bool m_bUpdateHeroStatues; // 0xc08	
+	C_NetworkUtlVectorBase< uint8 > m_vecPlayerDraftPickOrder; // 0xb68	
+	// MNetworkEnable
+	int32_t m_nPlayerDraftPick; // 0xb80	
+	// MNetworkEnable
+	int32_t m_nPlayerDraftActiveTeam; // 0xb84	
+	// MNetworkEnable
+	float m_flPlayerDraftTimeBank[2]; // 0xb88	
+	CUtlVector< KeyValues* > m_vecARDMHeroes[2]; // 0xb90	
+	int32_t m_nARDMHeroesPrecached; // 0xbc0	
+	float m_fLastARDMPrecache; // 0xbc4	
+	// MNetworkEnable
+	int32_t m_nAllDraftPhase; // 0xbc8	
+	// MNetworkEnable
+	bool m_bAllDraftRadiantFirst; // 0xbcc	
+	// MNetworkEnable
+	bool m_bAllowOverrideVPK; // 0xbcd	
 private:
-	[[maybe_unused]] uint8_t __pad0c09[0x17]; // 0xc09
+	[[maybe_unused]] uint8_t __pad0bce[0x2]; // 0xbce
 public:
 	// MNetworkEnable
-	bool m_bExperimentalGameplay; // 0xc20	
+	int32_t m_nARDMHeroesRemaining[2]; // 0xbd0	
+	bool m_bUpdateHeroStatues; // 0xbd8	
 private:
-	[[maybe_unused]] uint8_t __pad0c21[0x47]; // 0xc21
+	[[maybe_unused]] uint8_t __pad0bd9[0x17]; // 0xbd9
 public:
-	CUtlVector< int32 > m_vecPlayerMMR; // 0xc68	
 	// MNetworkEnable
-	uint32_t m_lobbyType; // 0xc80	
+	bool m_bExperimentalGameplay; // 0xbf0	
+private:
+	[[maybe_unused]] uint8_t __pad0bf1[0x47]; // 0xbf1
+public:
+	CUtlVector< int32 > m_vecPlayerMMR; // 0xc38	
 	// MNetworkEnable
-	LeagueID_t m_lobbyLeagueID; // 0xc84	
+	uint32_t m_lobbyType; // 0xc50	
 	// MNetworkEnable
-	char m_lobbyGameName[256]; // 0xc88	
+	LeagueID_t m_lobbyLeagueID; // 0xc54	
+	// MNetworkEnable
+	char m_lobbyGameName[256]; // 0xc58	
 	// MNetworkEnable
 	// MNetworkChangeCallback "OnHeroStatueLiked"
-	C_UtlVectorEmbeddedNetworkVar< CHeroStatueLiked > m_vecHeroStatueLiked; // 0xd88	
+	C_UtlVectorEmbeddedNetworkVar< CHeroStatueLiked > m_vecHeroStatueLiked; // 0xd58	
 	// MNetworkEnable
-	int32_t m_CustomGameTeamMaxPlayers[15]; // 0xdd8	
+	int32_t m_CustomGameTeamMaxPlayers[15]; // 0xda8	
 	// MNetworkEnable
-	int32_t m_iMutations[5]; // 0xe14	
+	int32_t m_iMutations[5]; // 0xde4	
 	// MNetworkEnable
-	C_NetworkUtlVectorBase< CHandle< C_IngameEvent_Base > > m_vecIngameEvents; // 0xe28	
+	C_NetworkUtlVectorBase< CHandle< C_IngameEvent_Base > > m_vecIngameEvents; // 0xdf8	
 	// MNetworkEnable
-	int8_t m_nPrimaryIngameEventIndex; // 0xe40	
+	int8_t m_nPrimaryIngameEventIndex; // 0xe10	
 private:
-	[[maybe_unused]] uint8_t __pad0e41[0x3]; // 0xe41
+	[[maybe_unused]] uint8_t __pad0e11[0x3]; // 0xe11
 public:
 	// MNetworkEnable
 	// MNetworkChangeCallback "OnObsoleteIngameEventChanged"
 	// MNetworkAlias "m_hIngameEvent"
-	CHandle< C_IngameEvent_Base > m_hObsoleteIngameEvent; // 0xe44	
-	uint32_t m_nOfrendaPledges; // 0xe48	
-	uint32_t m_nRadiantOfrendas; // 0xe4c	
-	uint32_t m_nDireOfrendas; // 0xe50	
+	CHandle< C_IngameEvent_Base > m_hObsoleteIngameEvent; // 0xe14	
+	uint32_t m_nOfrendaPledges; // 0xe18	
+	uint32_t m_nRadiantOfrendas; // 0xe1c	
+	uint32_t m_nDireOfrendas; // 0xe20	
 	// MNetworkEnable
-	bool m_bOfrendaEnabled; // 0xe54	
+	bool m_bOfrendaEnabled; // 0xe24	
 private:
-	[[maybe_unused]] uint8_t __pad0e55[0x33]; // 0xe55
+	[[maybe_unused]] uint8_t __pad0e25[0x33]; // 0xe25
 public:
 	// MNetworkEnable
-	C_NetworkUtlVectorBase< NeutralSpawnBoxes_t > m_NeutralSpawnBoxes; // 0xe88	
+	C_NetworkUtlVectorBase< NeutralSpawnBoxes_t > m_NeutralSpawnBoxes; // 0xe58	
 	// MNetworkEnable
-	C_NetworkUtlVectorBase< RegionTriggerBoxes_t > m_RegionTriggerBoxes; // 0xea0	
+	C_NetworkUtlVectorBase< RegionTriggerBoxes_t > m_RegionTriggerBoxes; // 0xe70	
 private:
-	[[maybe_unused]] uint8_t __pad0eb8[0xfb8]; // 0xeb8
+	[[maybe_unused]] uint8_t __pad0e88[0xfb8]; // 0xe88
 public:
-	double m_flLastPerfSampleTime; // 0x1e70	
-	double m_flLastPerfSampleSendTime; // 0x1e78	
-	bool m_bDidSeeStrategyTime; // 0x1e80	
+	double m_flLastPerfSampleTime; // 0x1e40	
+	double m_flLastPerfSampleSendTime; // 0x1e48	
+	bool m_bDidSeeStrategyTime; // 0x1e50	
 private:
-	[[maybe_unused]] uint8_t __pad1e81[0x8d57]; // 0x1e81
+	[[maybe_unused]] uint8_t __pad1e51[0x8d57]; // 0x1e51
 public:
-	double m_flLastUnfocusedSleepTime; // 0xabd8	
+	double m_flLastUnfocusedSleepTime; // 0xaba8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -66128,13 +66127,14 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x15c0
+// Size: 0x15c8
 // Has VTable
 class CDOTA_Modifier_Leshrac_Decrepify_Aura : public CDOTA_Buff
 {
 public:
 	int32_t magic_amp; // 0x15b8	
 	int32_t slow; // 0x15bc	
+	float radius; // 0x15c0	
 };
 
 // Registered binary: client.dll (project 'client')

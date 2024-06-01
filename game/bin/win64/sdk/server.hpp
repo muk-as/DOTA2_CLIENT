@@ -78961,13 +78961,14 @@ public:
 
 // Registered binary: server.dll (project 'server')
 // Alignment: 8
-// Size: 0x15c0
+// Size: 0x15c8
 // Has VTable
 class CDOTA_Modifier_Leshrac_Decrepify_Aura : public CDOTA_Buff
 {
 public:
 	int32_t magic_amp; // 0x15b8	
 	int32_t slow; // 0x15bc	
+	float radius; // 0x15c0	
 };
 
 // Registered binary: server.dll (project 'server')
@@ -100361,7 +100362,7 @@ public:
 
 // Registered binary: server.dll (project 'server')
 // Alignment: 8
-// Size: 0x5770
+// Size: 0x5740
 // Has VTable
 // 
 // MNetworkVarNames "int m_nRuneCycle"
@@ -100519,7 +100520,6 @@ public:
 // MNetworkVarNames "int m_nAbilityDraftRoundNumber"
 // MNetworkVarNames "int m_nAbilityDraftAdvanceSteps"
 // MNetworkVarNames "int m_nAbilityDraftPhase"
-// MNetworkVarNames "int m_nAbilityDraftHeroesChosen"
 // MNetworkVarNames "bool m_bIsPlayerDraft"
 // MNetworkVarNames "DOTA_PlayerDraftState m_ePlayerDraftState"
 // MNetworkVarNames "uint8 m_vecPlayerDraftPickOrder"
@@ -101005,222 +101005,222 @@ public:
 	// MNetworkEnable
 	int32_t m_nAbilityDraftPhase; // 0x1060	
 	// MNetworkEnable
-	// MNetworkChangeCallback "OnAbilityDraftHeroesChanged"
-	int32_t m_nAbilityDraftHeroesChosen[13]; // 0x1064	
-	// MNetworkEnable
-	bool m_bIsPlayerDraft; // 0x1098	
+	bool m_bIsPlayerDraft; // 0x1064	
 private:
-	[[maybe_unused]] uint8_t __pad1099[0x3]; // 0x1099
+	[[maybe_unused]] uint8_t __pad1065[0x3]; // 0x1065
 public:
 	// MNetworkEnable
-	DOTA_PlayerDraftState m_ePlayerDraftState; // 0x109c	
-	// MNetworkEnable
-	CNetworkUtlVectorBase< uint8 > m_vecPlayerDraftPickOrder; // 0x10a0	
-	// MNetworkEnable
-	int32_t m_nPlayerDraftPick; // 0x10b8	
-	// MNetworkEnable
-	int32_t m_nPlayerDraftActiveTeam; // 0x10bc	
-	// MNetworkEnable
-	float m_flPlayerDraftTimeBank[2]; // 0x10c0	
-	CUtlVector< KeyValues* > m_vecARDMHeroes[2]; // 0x10c8	
-	int32_t m_nARDMHeroesPrecached; // 0x10f8	
-	float m_fLastARDMPrecache; // 0x10fc	
-	// MNetworkEnable
-	int32_t m_nAllDraftPhase; // 0x1100	
-	// MNetworkEnable
-	bool m_bAllDraftRadiantFirst; // 0x1104	
-	// MNetworkEnable
-	bool m_bAllowOverrideVPK; // 0x1105	
+	DOTA_PlayerDraftState m_ePlayerDraftState; // 0x1068	
 private:
-	[[maybe_unused]] uint8_t __pad1106[0x2]; // 0x1106
+	[[maybe_unused]] uint8_t __pad106c[0x4]; // 0x106c
 public:
 	// MNetworkEnable
-	int32_t m_nARDMHeroesRemaining[2]; // 0x1108	
-	CUtlVector< CHandle< CDOTA_BaseNPC_Pet > > m_hGlobalPetList; // 0x1110	
+	CNetworkUtlVectorBase< uint8 > m_vecPlayerDraftPickOrder; // 0x1070	
+	// MNetworkEnable
+	int32_t m_nPlayerDraftPick; // 0x1088	
+	// MNetworkEnable
+	int32_t m_nPlayerDraftActiveTeam; // 0x108c	
+	// MNetworkEnable
+	float m_flPlayerDraftTimeBank[2]; // 0x1090	
+	CUtlVector< KeyValues* > m_vecARDMHeroes[2]; // 0x1098	
+	int32_t m_nARDMHeroesPrecached; // 0x10c8	
+	float m_fLastARDMPrecache; // 0x10cc	
+	// MNetworkEnable
+	int32_t m_nAllDraftPhase; // 0x10d0	
+	// MNetworkEnable
+	bool m_bAllDraftRadiantFirst; // 0x10d4	
+	// MNetworkEnable
+	bool m_bAllowOverrideVPK; // 0x10d5	
 private:
-	[[maybe_unused]] uint8_t __pad1128[0x50]; // 0x1128
-public:
-	int32_t m_nRadiantRoshanKills; // 0x1178	
-	int32_t m_nDireRoshanKills; // 0x117c	
-	int32_t m_nRoshanKillsDay; // 0x1180	
-	int32_t m_nRoshanKillsNight; // 0x1184	
-	int32_t m_nTormentorKills; // 0x1188	
-	int32_t m_nOutpostCaptures; // 0x118c	
-private:
-	[[maybe_unused]] uint8_t __pad1190[0xc]; // 0x1190
-public:
-	int32_t m_nDistanceCalculations; // 0x119c	
-	bool m_bLaneVictoryPredicted; // 0x11a0	
-private:
-	[[maybe_unused]] uint8_t __pad11a1[0x7]; // 0x11a1
-public:
-	CUtlOrderedMap< PlayerID_t, int32 > m_mapSuccessfulSmokes; // 0x11a8	
-private:
-	[[maybe_unused]] uint8_t __pad11d0[0x10]; // 0x11d0
+	[[maybe_unused]] uint8_t __pad10d6[0x2]; // 0x10d6
 public:
 	// MNetworkEnable
-	bool m_bExperimentalGameplay; // 0x11e0	
+	int32_t m_nARDMHeroesRemaining[2]; // 0x10d8	
+	CUtlVector< CHandle< CDOTA_BaseNPC_Pet > > m_hGlobalPetList; // 0x10e0	
 private:
-	[[maybe_unused]] uint8_t __pad11e1[0x1f]; // 0x11e1
+	[[maybe_unused]] uint8_t __pad10f8[0x50]; // 0x10f8
 public:
-	CUtlVector< HeroPickRecord_t > m_vecHeroPickRecord; // 0x1200	
+	int32_t m_nRadiantRoshanKills; // 0x1148	
+	int32_t m_nDireRoshanKills; // 0x114c	
+	int32_t m_nRoshanKillsDay; // 0x1150	
+	int32_t m_nRoshanKillsNight; // 0x1154	
+	int32_t m_nTormentorKills; // 0x1158	
+	int32_t m_nOutpostCaptures; // 0x115c	
 private:
-	[[maybe_unused]] uint8_t __pad1218[0x28]; // 0x1218
+	[[maybe_unused]] uint8_t __pad1160[0xc]; // 0x1160
 public:
-	CUtlVector< HeroDeathRecord_t > m_vecHeroDeathRecord; // 0x1240	
+	int32_t m_nDistanceCalculations; // 0x116c	
+	bool m_bLaneVictoryPredicted; // 0x1170	
 private:
-	[[maybe_unused]] uint8_t __pad1258[0x18]; // 0x1258
+	[[maybe_unused]] uint8_t __pad1171[0x7]; // 0x1171
 public:
-	CUtlVector< CHandle< CBaseEntity > > m_BadResultPositionTriggers; // 0x1270	
-	CUtlVector< CHandle< CBaseEntity > > m_RoshanPositionTriggers; // 0x1288	
-	CUtlVector< HeroPickRecord_t > m_vecAllDraftHeroPickRecord; // 0x12a0	
-	CUtlOrderedMap< PlayerID_t, CUtlVector< AbilityID_t > > m_vecAbilityDraftOrder; // 0x12b8	
+	CUtlOrderedMap< PlayerID_t, int32 > m_mapSuccessfulSmokes; // 0x1178	
 private:
-	[[maybe_unused]] uint8_t __pad12e0[0x18]; // 0x12e0
-public:
-	int32_t m_nAllDraftHeroPickCollisionsThisPhase; // 0x12f8	
-private:
-	[[maybe_unused]] uint8_t __pad12fc[0x4]; // 0x12fc
-public:
-	CUtlVector< CHandle< CBaseEntity > > m_hRuneSpawners; // 0x1300	
-	CUtlVector< CHandle< CBaseEntity > > m_hBountyRuneSpawners; // 0x1318	
-	CUtlVector< CHandle< CBaseEntity > > m_hXPRuneSpawners; // 0x1330	
-	CUtlVector< CHandle< CBaseEntity > > m_hNeutralSpawners[2]; // 0x1348	
-	int32_t m_iPreviousRune1; // 0x1378	
-	int32_t m_iPreviousRune2; // 0x137c	
-	CUtlVector< int32 > m_vecAvailableRunes; // 0x1380	
-	float m_fNextPowerupRuneSpawnTime; // 0x1398	
-	float m_fNextBountyRuneSpawnTime; // 0x139c	
-	float m_fNextBountyRunePrepTime; // 0x13a0	
-	float m_fNextXPRuneSpawnTime; // 0x13a4	
-	bool m_aNeutralChoicesLoaded[5]; // 0x13a8	
-	bool m_bFirstPowerupRune; // 0x13ad	
-	bool m_bFirstBountyRune; // 0x13ae	
-	bool m_bFilterMoreGold; // 0x13af	
-	bool m_bAllowOutpostXP; // 0x13b0	
-private:
-	[[maybe_unused]] uint8_t __pad13b1[0x3]; // 0x13b1
-public:
-	CHandle< CBaseEntity > m_hRoshanSpawner; // 0x13b4	
-	int32_t m_iPreviousSpectators; // 0x13b8	
-	uint32_t m_nMaxSpectators; // 0x13bc	
-	CUtlVector< CHandle< CBaseEntity > > m_hDroppedItems; // 0x13c0	
-	CUtlVector< CHandle< CBaseEntity > > m_hWards; // 0x13d8	
-	CHandle< CBaseEntity > m_hGameEvents; // 0x13f0	
-private:
-	[[maybe_unused]] uint8_t __pad13f4[0x1c]; // 0x13f4
-public:
-	CUtlVector< CHandle< CBaseEntity > > m_Towers; // 0x1410	
-	CUtlVector< CHandle< CDOTA_BaseNPC_Tower > > m_TeamTowers[10]; // 0x1428	
-	CUtlVector< CHandle< CBaseEntity > > m_Outposts; // 0x1518	
-	CUtlVector< Vector > m_TeamTowerPositions[10]; // 0x1530	
-	CUtlVector< int32 > m_TeamTowerLevels[10]; // 0x1620	
-	CUtlVector< int32 > m_TeamTowerLanes[10]; // 0x1710	
-	CUtlVector< CHandle< CDOTA_BaseNPC_Building > > m_TeamBarracks[10]; // 0x1800	
-	CUtlVector< CHandle< CDOTA_BaseNPC_Building > > m_TeamShrines[10]; // 0x18f0	
-	CountdownTimer m_TempDayTimer; // 0x19e0	
-	CountdownTimer m_TempNightTimer; // 0x19f8	
-	CountdownTimer m_NightstalkerNightTimer; // 0x1a10	
-	CountdownTimer m_TempRiverTimer; // 0x1a28	
-	bool m_bUseLenientAFK[2]; // 0x1a40	
-	bool m_bFirstBlood; // 0x1a42	
-private:
-	[[maybe_unused]] uint8_t __pad1a43[0x1]; // 0x1a43
-public:
-	int32_t m_nFirstBloodTime; // 0x1a44	
-	CountdownTimer m_CheckIdleTimer; // 0x1a48	
-	PlayerID_t m_nAnnounceHeroPickRadiantPlayerID; // 0x1a60	
-	PlayerID_t m_nAnnounceHeroPickDirePlayerID; // 0x1a64	
-	CUtlString m_pszLastUsedAbility[64]; // 0x1a68	
-	CUtlVector< CDOTA_ReconnectInfo > m_reconnectinfos; // 0x1c68	
-	CUtlVector< CHandle< CBaseEntity > > m_hEnemyCreepsInBase[10]; // 0x1c80	
-	bool m_bTeamHasAbandonedPlayer[10]; // 0x1d70	
-	bool m_bLobbyHasLeaverDetected; // 0x1d7a	
-	bool m_bGameIsForcedSafeToLeave; // 0x1d7b	
-	bool m_bLobbyHasDicardMatchResults; // 0x1d7c	
-private:
-	[[maybe_unused]] uint8_t __pad1d7d[0x3]; // 0x1d7d
-public:
-	int32_t m_iGameEndReason; // 0x1d80	
-	bool m_bNotifiedPlayerLeaverStatus[64]; // 0x1d84	
-	bool m_bUploadedReplay; // 0x1dc4	
-private:
-	[[maybe_unused]] uint8_t __pad1dc5[0x3]; // 0x1dc5
-public:
-	float m_flLobbyWaitTime; // 0x1dc8	
-	bool m_bGameWasLoaded; // 0x1dcc	
-private:
-	[[maybe_unused]] uint8_t __pad1dcd[0x3]; // 0x1dcd
-public:
-	int32_t m_nLoadPauseFrameCount; // 0x1dd0	
-private:
-	[[maybe_unused]] uint8_t __pad1dd4[0x4]; // 0x1dd4
-public:
-	double m_flStateFallbackTransitionTime; // 0x1dd8	
-	// -> m_duration - 0x1de8
-	// -> m_timestamp - 0x1dec
-	// -> m_timescale - 0x1df0
-	EngineCountdownTimer m_timerFinishReplay; // 0x1de0	
-	CUtlVector< GameChatLogEntry_t > m_vecChatLog; // 0x1df8	
-private:
-	[[maybe_unused]] uint8_t __pad1e10[0x2658]; // 0x1e10
-public:
-	bool m_bFatalErrorAbortGame; // 0x4468	
-	bool m_bFillEmptySlotsWithBots; // 0x4469	
-private:
-	[[maybe_unused]] uint8_t __pad446a[0x2]; // 0x446a
-public:
-	uint32_t m_dotaMapSpawnGroup; // 0x446c	
-private:
-	[[maybe_unused]] uint8_t __pad4470[0x28]; // 0x4470
+	[[maybe_unused]] uint8_t __pad11a0[0x10]; // 0x11a0
 public:
 	// MNetworkEnable
-	uint32_t m_lobbyType; // 0x4498	
+	bool m_bExperimentalGameplay; // 0x11b0	
+private:
+	[[maybe_unused]] uint8_t __pad11b1[0x1f]; // 0x11b1
+public:
+	CUtlVector< HeroPickRecord_t > m_vecHeroPickRecord; // 0x11d0	
+private:
+	[[maybe_unused]] uint8_t __pad11e8[0x28]; // 0x11e8
+public:
+	CUtlVector< HeroDeathRecord_t > m_vecHeroDeathRecord; // 0x1210	
+private:
+	[[maybe_unused]] uint8_t __pad1228[0x18]; // 0x1228
+public:
+	CUtlVector< CHandle< CBaseEntity > > m_BadResultPositionTriggers; // 0x1240	
+	CUtlVector< CHandle< CBaseEntity > > m_RoshanPositionTriggers; // 0x1258	
+	CUtlVector< HeroPickRecord_t > m_vecAllDraftHeroPickRecord; // 0x1270	
+	CUtlOrderedMap< PlayerID_t, CUtlVector< AbilityID_t > > m_vecAbilityDraftOrder; // 0x1288	
+private:
+	[[maybe_unused]] uint8_t __pad12b0[0x18]; // 0x12b0
+public:
+	int32_t m_nAllDraftHeroPickCollisionsThisPhase; // 0x12c8	
+private:
+	[[maybe_unused]] uint8_t __pad12cc[0x4]; // 0x12cc
+public:
+	CUtlVector< CHandle< CBaseEntity > > m_hRuneSpawners; // 0x12d0	
+	CUtlVector< CHandle< CBaseEntity > > m_hBountyRuneSpawners; // 0x12e8	
+	CUtlVector< CHandle< CBaseEntity > > m_hXPRuneSpawners; // 0x1300	
+	CUtlVector< CHandle< CBaseEntity > > m_hNeutralSpawners[2]; // 0x1318	
+	int32_t m_iPreviousRune1; // 0x1348	
+	int32_t m_iPreviousRune2; // 0x134c	
+	CUtlVector< int32 > m_vecAvailableRunes; // 0x1350	
+	float m_fNextPowerupRuneSpawnTime; // 0x1368	
+	float m_fNextBountyRuneSpawnTime; // 0x136c	
+	float m_fNextBountyRunePrepTime; // 0x1370	
+	float m_fNextXPRuneSpawnTime; // 0x1374	
+	bool m_aNeutralChoicesLoaded[5]; // 0x1378	
+	bool m_bFirstPowerupRune; // 0x137d	
+	bool m_bFirstBountyRune; // 0x137e	
+	bool m_bFilterMoreGold; // 0x137f	
+	bool m_bAllowOutpostXP; // 0x1380	
+private:
+	[[maybe_unused]] uint8_t __pad1381[0x3]; // 0x1381
+public:
+	CHandle< CBaseEntity > m_hRoshanSpawner; // 0x1384	
+	int32_t m_iPreviousSpectators; // 0x1388	
+	uint32_t m_nMaxSpectators; // 0x138c	
+	CUtlVector< CHandle< CBaseEntity > > m_hDroppedItems; // 0x1390	
+	CUtlVector< CHandle< CBaseEntity > > m_hWards; // 0x13a8	
+	CHandle< CBaseEntity > m_hGameEvents; // 0x13c0	
+private:
+	[[maybe_unused]] uint8_t __pad13c4[0x1c]; // 0x13c4
+public:
+	CUtlVector< CHandle< CBaseEntity > > m_Towers; // 0x13e0	
+	CUtlVector< CHandle< CDOTA_BaseNPC_Tower > > m_TeamTowers[10]; // 0x13f8	
+	CUtlVector< CHandle< CBaseEntity > > m_Outposts; // 0x14e8	
+	CUtlVector< Vector > m_TeamTowerPositions[10]; // 0x1500	
+	CUtlVector< int32 > m_TeamTowerLevels[10]; // 0x15f0	
+	CUtlVector< int32 > m_TeamTowerLanes[10]; // 0x16e0	
+	CUtlVector< CHandle< CDOTA_BaseNPC_Building > > m_TeamBarracks[10]; // 0x17d0	
+	CUtlVector< CHandle< CDOTA_BaseNPC_Building > > m_TeamShrines[10]; // 0x18c0	
+	CountdownTimer m_TempDayTimer; // 0x19b0	
+	CountdownTimer m_TempNightTimer; // 0x19c8	
+	CountdownTimer m_NightstalkerNightTimer; // 0x19e0	
+	CountdownTimer m_TempRiverTimer; // 0x19f8	
+	bool m_bUseLenientAFK[2]; // 0x1a10	
+	bool m_bFirstBlood; // 0x1a12	
+private:
+	[[maybe_unused]] uint8_t __pad1a13[0x1]; // 0x1a13
+public:
+	int32_t m_nFirstBloodTime; // 0x1a14	
+	CountdownTimer m_CheckIdleTimer; // 0x1a18	
+	PlayerID_t m_nAnnounceHeroPickRadiantPlayerID; // 0x1a30	
+	PlayerID_t m_nAnnounceHeroPickDirePlayerID; // 0x1a34	
+	CUtlString m_pszLastUsedAbility[64]; // 0x1a38	
+	CUtlVector< CDOTA_ReconnectInfo > m_reconnectinfos; // 0x1c38	
+	CUtlVector< CHandle< CBaseEntity > > m_hEnemyCreepsInBase[10]; // 0x1c50	
+	bool m_bTeamHasAbandonedPlayer[10]; // 0x1d40	
+	bool m_bLobbyHasLeaverDetected; // 0x1d4a	
+	bool m_bGameIsForcedSafeToLeave; // 0x1d4b	
+	bool m_bLobbyHasDicardMatchResults; // 0x1d4c	
+private:
+	[[maybe_unused]] uint8_t __pad1d4d[0x3]; // 0x1d4d
+public:
+	int32_t m_iGameEndReason; // 0x1d50	
+	bool m_bNotifiedPlayerLeaverStatus[64]; // 0x1d54	
+	bool m_bUploadedReplay; // 0x1d94	
+private:
+	[[maybe_unused]] uint8_t __pad1d95[0x3]; // 0x1d95
+public:
+	float m_flLobbyWaitTime; // 0x1d98	
+	bool m_bGameWasLoaded; // 0x1d9c	
+private:
+	[[maybe_unused]] uint8_t __pad1d9d[0x3]; // 0x1d9d
+public:
+	int32_t m_nLoadPauseFrameCount; // 0x1da0	
+private:
+	[[maybe_unused]] uint8_t __pad1da4[0x4]; // 0x1da4
+public:
+	double m_flStateFallbackTransitionTime; // 0x1da8	
+	// -> m_duration - 0x1db8
+	// -> m_timestamp - 0x1dbc
+	// -> m_timescale - 0x1dc0
+	EngineCountdownTimer m_timerFinishReplay; // 0x1db0	
+	CUtlVector< GameChatLogEntry_t > m_vecChatLog; // 0x1dc8	
+private:
+	[[maybe_unused]] uint8_t __pad1de0[0x2658]; // 0x1de0
+public:
+	bool m_bFatalErrorAbortGame; // 0x4438	
+	bool m_bFillEmptySlotsWithBots; // 0x4439	
+private:
+	[[maybe_unused]] uint8_t __pad443a[0x2]; // 0x443a
+public:
+	uint32_t m_dotaMapSpawnGroup; // 0x443c	
+private:
+	[[maybe_unused]] uint8_t __pad4440[0x28]; // 0x4440
+public:
 	// MNetworkEnable
-	LeagueID_t m_lobbyLeagueID; // 0x449c	
+	uint32_t m_lobbyType; // 0x4468	
 	// MNetworkEnable
-	char m_lobbyGameName[256]; // 0x44a0	
+	LeagueID_t m_lobbyLeagueID; // 0x446c	
+	// MNetworkEnable
+	char m_lobbyGameName[256]; // 0x4470	
 	// MNetworkEnable
 	// MNetworkChangeCallback "OnHeroStatueLiked"
-	CUtlVectorEmbeddedNetworkVar< CHeroStatueLiked > m_vecHeroStatueLiked; // 0x45a0	
+	CUtlVectorEmbeddedNetworkVar< CHeroStatueLiked > m_vecHeroStatueLiked; // 0x4570	
 	// MNetworkEnable
-	int32_t m_CustomGameTeamMaxPlayers[15]; // 0x4610	
+	int32_t m_CustomGameTeamMaxPlayers[15]; // 0x45e0	
 private:
-	[[maybe_unused]] uint8_t __pad464c[0x44]; // 0x464c
+	[[maybe_unused]] uint8_t __pad461c[0x44]; // 0x461c
 public:
 	// MNetworkEnable
-	int32_t m_iMutations[5]; // 0x4690	
+	int32_t m_iMutations[5]; // 0x4660	
 private:
-	[[maybe_unused]] uint8_t __pad46a4[0x4]; // 0x46a4
+	[[maybe_unused]] uint8_t __pad4674[0x4]; // 0x4674
 public:
 	// MNetworkEnable
-	CNetworkUtlVectorBase< CHandle< CIngameEvent_Base > > m_vecIngameEvents; // 0x46a8	
+	CNetworkUtlVectorBase< CHandle< CIngameEvent_Base > > m_vecIngameEvents; // 0x4678	
 	// MNetworkEnable
-	int8_t m_nPrimaryIngameEventIndex; // 0x46c0	
+	int8_t m_nPrimaryIngameEventIndex; // 0x4690	
 private:
-	[[maybe_unused]] uint8_t __pad46c1[0x3]; // 0x46c1
+	[[maybe_unused]] uint8_t __pad4691[0x3]; // 0x4691
 public:
-	uint32_t m_nOfrendaPledges; // 0x46c4	
-	uint32_t m_nRadiantOfrendas; // 0x46c8	
-	uint32_t m_nDireOfrendas; // 0x46cc	
+	uint32_t m_nOfrendaPledges; // 0x4694	
+	uint32_t m_nRadiantOfrendas; // 0x4698	
+	uint32_t m_nDireOfrendas; // 0x469c	
 	// MNetworkEnable
-	bool m_bOfrendaEnabled; // 0x46d0	
+	bool m_bOfrendaEnabled; // 0x46a0	
 private:
-	[[maybe_unused]] uint8_t __pad46d1[0x7]; // 0x46d1
+	[[maybe_unused]] uint8_t __pad46a1[0x7]; // 0x46a1
 public:
-	CUtlVector< sMuertaPartingShotSoulDef > m_vecMuertaPartingShotSouls; // 0x46d8	
+	CUtlVector< sMuertaPartingShotSoulDef > m_vecMuertaPartingShotSouls; // 0x46a8	
 private:
-	[[maybe_unused]] uint8_t __pad46f0[0x18]; // 0x46f0
+	[[maybe_unused]] uint8_t __pad46c0[0x18]; // 0x46c0
 public:
 	// MNetworkEnable
-	CNetworkUtlVectorBase< NeutralSpawnBoxes_t > m_NeutralSpawnBoxes; // 0x4708	
+	CNetworkUtlVectorBase< NeutralSpawnBoxes_t > m_NeutralSpawnBoxes; // 0x46d8	
 	// MNetworkEnable
-	CNetworkUtlVectorBase< RegionTriggerBoxes_t > m_RegionTriggerBoxes; // 0x4720	
-	double m_flLastItemSuggestionRequestTime[15]; // 0x4738	
+	CNetworkUtlVectorBase< RegionTriggerBoxes_t > m_RegionTriggerBoxes; // 0x46f0	
+	double m_flLastItemSuggestionRequestTime[15]; // 0x4708	
 private:
-	[[maybe_unused]] uint8_t __pad47b0[0xfb8]; // 0x47b0
+	[[maybe_unused]] uint8_t __pad4780[0xfb8]; // 0x4780
 public:
-	double m_flLastPerfSampleTime; // 0x5768	
+	double m_flLastPerfSampleTime; // 0x5738	
 	
 	// Static fields:
 	static int32_t &Get_s_GameStateTransitionsIndex(){return *reinterpret_cast<int32_t*>(interfaces::g_schema->FindTypeScopeForModule("server.dll")->FindDeclaredClass("CDOTAGameRules")->m_static_fields[0]->m_instance);};
