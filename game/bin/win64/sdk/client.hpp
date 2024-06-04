@@ -23269,7 +23269,6 @@ private:
 	[[maybe_unused]] uint8_t __pad06dc[0x4]; // 0x6dc
 public:
 	CUtlVector< CHandle< C_BaseEntity > > m_hExistingUnits; // 0x6e0	
-	CUtlOrderedMap< int32, bool > m_AbilityAltCastState; // 0x6f8	
 };
 
 // Registered binary: client.dll (project 'client')

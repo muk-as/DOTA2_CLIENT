@@ -86932,7 +86932,6 @@ private:
 	[[maybe_unused]] uint8_t __pad06a4[0x4]; // 0x6a4
 public:
 	CUtlVector< CHandle< CBaseEntity > > m_hExistingUnits; // 0x6a8	
-	CUtlOrderedMap< int32, bool > m_AbilityAltCastState; // 0x6c0	
 };
 
 // Registered binary: server.dll (project 'server')
