@@ -4,7 +4,7 @@
 
 // /////////////////////////////////////////////////////////////
 // Binary: client.dll
-// Classes count: 6,495 (Allocated) | 6,569 (Unallocated)
+// Classes count: 6,494 (Allocated) | 6,568 (Unallocated)
 // Enums count: 2 (Allocated) | 78 (Unallocated)
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
@@ -69813,16 +69813,6 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x15c0
-// Has VTable
-class CDOTA_Modifier_Axe_BatleHunger_Self : public CDOTA_Buff
-{
-public:
-	int32_t armor_change; // 0x15b8	
-};
-
-// Registered binary: client.dll (project 'client')
-// Alignment: 8
 // Size: 0x15b8
 // Has VTable
 class CDOTA_Modifier_Rune_SuperRegen : public CDOTA_Modifier_Rune_Regen
@@ -80840,6 +80830,7 @@ class CDOTA_Modifier_Lina_Slow_Burn : public CDOTA_Buff
 {
 public:
 	float damage; // 0x15b8	
+	bool bIsLaguna; // 0x15bc	
 };
 
 // Registered binary: client.dll (project 'client')
