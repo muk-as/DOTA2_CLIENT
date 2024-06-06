@@ -4,7 +4,7 @@
 
 // /////////////////////////////////////////////////////////////
 // Binary: client.dll
-// Classes count: 6,494 (Allocated) | 6,568 (Unallocated)
+// Classes count: 6,500 (Allocated) | 6,567 (Unallocated)
 // Enums count: 2 (Allocated) | 78 (Unallocated)
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
@@ -2188,6 +2188,7 @@ public:
 // Alignment: 8
 // Size: 0x5d8
 // Has VTable
+// Is Abstract
 // 
 // MNetworkExcludeByName "m_angRotation"
 // MNetworkExcludeByName "m_blinktoggle"
@@ -2377,6 +2378,7 @@ public:
 // Alignment: 8
 // Size: 0x678
 // Has VTable
+// Is Abstract
 // 
 // MNetworkVarNames "bool m_bCombinable"
 // MNetworkVarNames "bool m_bPermanent"
@@ -2695,13 +2697,14 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x15c0
+// Size: 0x15c8
 // Has VTable
 class CDOTA_Modifier_Meepo_Divided_We_Stand : public CDOTA_Buff
 {
 public:
 	float respawn; // 0x15b8	
 	float magic_resist; // 0x15bc	
+	int32_t main_meepo_stats_pct; // 0x15c0	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -3533,7 +3536,7 @@ class CDOTA_Modifier_Item_Crimson_Guard_Extra : public CDOTA_Buff
 public:
 	int32_t block_chance_active; // 0x15b8	
 	int32_t block_damage_active; // 0x15bc	
-	int32_t strength_pct; // 0x15c0	
+	float max_hp_pct; // 0x15c0	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -5312,6 +5315,7 @@ public:
 // Alignment: 8
 // Size: 0x5e0
 // Has VTable
+// Is Abstract
 class C_DOTA_Ability_Animation_Attack : public C_DOTABaseAbility
 {
 public:
@@ -5940,6 +5944,17 @@ public:
 // Size: 0x15b8
 // Has VTable
 class CDOTA_Modifier_MudGolem_Rock_Shard : public CDOTA_Buff
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: client.dll (project 'client')
+// Alignment: 8
+// Size: 0x678
+// Has VTable
+// Is Abstract
+class CDOTA_Item_Book : public C_DOTA_Item
 {
 public:
 	// No schema binary for binding
@@ -9080,6 +9095,7 @@ public:
 // Alignment: 8
 // Size: 0x5e8
 // Has VTable
+// Is Abstract
 class C_DOTA_Ability_Nevermore_Shadowraze : public C_DOTABaseAbility
 {
 public:
@@ -12838,6 +12854,7 @@ public:
 // Alignment: 8
 // Size: 0x5e8
 // Has VTable
+// Is Abstract
 // 
 // MNetworkVarNames "int m_nQuasLevel"
 // MNetworkVarNames "int m_nWexLevel"
@@ -13134,7 +13151,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1828
+// Size: 0x1830
 // Has VTable
 // 
 // MNetworkExcludeByName "m_angRotation"
@@ -13176,6 +13193,8 @@ public:
 	PlayerID_t m_iHeroStatueOwnerPlayerID; // 0x1820	
 	// MNetworkEnable
 	Color m_ParticleTintColor; // 0x1824	
+	// MNetworkEnable
+	FowCustomTeams_t m_nFoWTeam; // 0x1828	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -15690,7 +15709,7 @@ class CDOTA_Modifier_Rattletrap_CogPush : public CDOTA_Buff
 {
 public:
 	GameTime_t m_flStartTime; // 0x15b8	
-	int32_t push_length; // 0x15bc	
+	float push_length; // 0x15bc	
 	float push_duration; // 0x15c0	
 };
 
@@ -17254,7 +17273,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1898
+// Size: 0x18a0
 // Has VTable
 // 
 // MNetworkVarNames "EHANDLE m_hTowerAttackTarget"
@@ -17262,38 +17281,38 @@ public:
 class C_DOTA_BaseNPC_Tower : public C_DOTA_BaseNPC_Building
 {
 public:
-	ParticleIndex_t m_nAltHeldRangeFX; // 0x1828	
-	bool m_bWasInRange; // 0x182c	
+	ParticleIndex_t m_nAltHeldRangeFX; // 0x1830	
+	bool m_bWasInRange; // 0x1834	
 private:
-	[[maybe_unused]] uint8_t __pad182d[0x3]; // 0x182d
+	[[maybe_unused]] uint8_t __pad1835[0x3]; // 0x1835
 public:
-	ParticleIndex_t m_iRangeFX; // 0x1830	
-	ParticleIndex_t m_iPulseFX; // 0x1834	
-	uint8_t m_unTowerTier; // 0x1838	
+	ParticleIndex_t m_iRangeFX; // 0x1838	
+	ParticleIndex_t m_iPulseFX; // 0x183c	
+	uint8_t m_unTowerTier; // 0x1840	
 private:
-	[[maybe_unused]] uint8_t __pad1839[0x3]; // 0x1839
+	[[maybe_unused]] uint8_t __pad1841[0x3]; // 0x1841
 public:
-	float m_fTowerAggroDangerAmount; // 0x183c	
-	float m_flControlledUnitInRangeAmount; // 0x1840	
-	float m_flControlledUnitTargettedAmount; // 0x1844	
-	ParticleIndex_t m_iAnticipationFX; // 0x1848	
+	float m_fTowerAggroDangerAmount; // 0x1844	
+	float m_flControlledUnitInRangeAmount; // 0x1848	
+	float m_flControlledUnitTargettedAmount; // 0x184c	
+	ParticleIndex_t m_iAnticipationFX; // 0x1850	
 private:
-	[[maybe_unused]] uint8_t __pad184c[0x4]; // 0x184c
+	[[maybe_unused]] uint8_t __pad1854[0x4]; // 0x1854
 public:
-	CUtlSymbolLarge m_szAnticipationFXName; // 0x1850	
-	CHandle< C_BaseEntity > m_hPrevTowerAttackTarget; // 0x1858	
+	CUtlSymbolLarge m_szAnticipationFXName; // 0x1858	
+	CHandle< C_BaseEntity > m_hPrevTowerAttackTarget; // 0x1860	
 	// MNetworkEnable
-	CHandle< C_BaseEntity > m_hTowerAttackTarget; // 0x185c	
+	CHandle< C_BaseEntity > m_hTowerAttackTarget; // 0x1864	
 	// MNetworkEnable
-	CHandle< C_BaseEntity > m_hTowerHighFiveTarget; // 0x1860	
-	int32_t m_iPoseParameterAim; // 0x1864	
-	QAngle m_angDefaultCustomTowerAngle; // 0x1868	
-	float m_flLastAimYaw; // 0x1874	
-	bool m_bClientSideCustomTower; // 0x1878	
+	CHandle< C_BaseEntity > m_hTowerHighFiveTarget; // 0x1868	
+	int32_t m_iPoseParameterAim; // 0x186c	
+	QAngle m_angDefaultCustomTowerAngle; // 0x1870	
+	float m_flLastAimYaw; // 0x187c	
+	bool m_bClientSideCustomTower; // 0x1880	
 private:
-	[[maybe_unused]] uint8_t __pad1879[0x7]; // 0x1879
+	[[maybe_unused]] uint8_t __pad1881[0x7]; // 0x1881
 public:
-	CountdownTimer m_IdleRareAnimationTime; // 0x1880	
+	CountdownTimer m_IdleRareAnimationTime; // 0x1888	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -19362,7 +19381,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1828
+// Size: 0x1830
 // Has VTable
 class C_DOTA_BaseNPC_Barracks : public C_DOTA_BaseNPC_Building
 {
@@ -19797,7 +19816,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1848
+// Size: 0x1850
 // Has VTable
 // 
 // MNetworkVarNames "string_t m_szInteractAbilityName"
@@ -19805,11 +19824,11 @@ class C_DOTA_NPC_Lantern : public C_DOTA_BaseNPC_Building
 {
 public:
 	// MNetworkEnable
-	CUtlSymbolLarge m_szInteractAbilityName; // 0x1828	
-	CNewParticleEffect* m_pVisionRangeFX; // 0x1830	
-	ParticleIndex_t m_iFxIndex; // 0x1838	
-	int32_t m_nPreviewViewer; // 0x183c	
-	int32_t m_nTeamNumberShown; // 0x1840	
+	CUtlSymbolLarge m_szInteractAbilityName; // 0x1830	
+	CNewParticleEffect* m_pVisionRangeFX; // 0x1838	
+	ParticleIndex_t m_iFxIndex; // 0x1840	
+	int32_t m_nPreviewViewer; // 0x1844	
+	int32_t m_nTeamNumberShown; // 0x1848	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -20857,6 +20876,17 @@ class CDOTA_Modifier_Tusk_IceShard_Slow_Aura : public CDOTA_Buff
 {
 public:
 	// No schema binary for binding
+};
+
+// Registered binary: client.dll (project 'client')
+// Alignment: 8
+// Size: 0x15c0
+// Has VTable
+class CDOTA_Modifier_Rattletrap_Hookshot_Barrier : public CDOTA_Buff
+{
+public:
+	int32_t absorb_amount; // 0x15b8	
+	int32_t m_nAbsorbRemaining; // 0x15bc	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -23867,12 +23897,12 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1830
+// Size: 0x1838
 // Has VTable
 class C_DOTA_Unit_Twin_Gate : public C_DOTA_BaseNPC_Building
 {
 public:
-	CHandle< C_BaseEntity > m_hOtherPortal; // 0x1828	
+	CHandle< C_BaseEntity > m_hOtherPortal; // 0x1830	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -25015,7 +25045,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1868
+// Size: 0x1870
 // Has VTable
 // 
 // MNetworkVarNames "DOTA_SHOP_TYPE m_ShopType"
@@ -25023,13 +25053,13 @@ class C_DOTA_BaseNPC_Shop : public C_DOTA_BaseNPC_Building
 {
 public:
 	// MNetworkEnable
-	DOTA_SHOP_TYPE m_ShopType; // 0x1828	
+	DOTA_SHOP_TYPE m_ShopType; // 0x1830	
 private:
-	[[maybe_unused]] uint8_t __pad182c[0x24]; // 0x182c
+	[[maybe_unused]] uint8_t __pad1834[0x24]; // 0x1834
 public:
-	ParticleIndex_t m_nShopFX; // 0x1850	
-	Vector m_vShopFXOrigin; // 0x1854	
-	float m_flLastSpeech; // 0x1860	
+	ParticleIndex_t m_nShopFX; // 0x1858	
+	Vector m_vShopFXOrigin; // 0x185c	
+	float m_flLastSpeech; // 0x1868	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -25354,12 +25384,12 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x18a0
+// Size: 0x18a8
 // Has VTable
 class C_DOTA_BaseNPC_HoldoutTower : public C_DOTA_BaseNPC_Tower
 {
 public:
-	DOTA_HOLDOUT_TOWER_TYPE m_iTowerType; // 0x1898	
+	DOTA_HOLDOUT_TOWER_TYPE m_iTowerType; // 0x18a0	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -25630,6 +25660,7 @@ public:
 // Alignment: 8
 // Size: 0x690
 // Has VTable
+// Is Abstract
 // 
 // MNetworkVarNames "AbilityID_t m_vecChoices"
 class C_DOTA_Item_TierToken : public C_DOTA_Item
@@ -32147,7 +32178,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x18a0
+// Size: 0x18a8
 // Has VTable
 class C_DOTA_BaseNPC_HoldoutTower_ReduceSpeed : public C_DOTA_BaseNPC_HoldoutTower
 {
@@ -32685,7 +32716,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x17c8
+// Size: 0x17d0
 // Has VTable
 // 
 // MNetworkExcludeByName "m_CollisionGroup"
@@ -32719,16 +32750,18 @@ public:
 class C_DOTA_BaseNPC_Creep_Lane : public C_DOTA_BaseNPC_Creep
 {
 public:
+	// MNetworkEnable
+	FowCustomTeams_t m_nFoWTeam; // 0x17c8	
 };
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1830
+// Size: 0x1838
 // Has VTable
 class C_DOTA_BaseNPC_Healer : public C_DOTA_BaseNPC_Building
 {
 public:
-	ParticleIndex_t m_iRangeFX; // 0x1828	
+	ParticleIndex_t m_iRangeFX; // 0x1830	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -35115,6 +35148,7 @@ class CDOTA_Modifier_Nullifier_Mute : public CDOTA_Buff
 {
 public:
 	float slow_interval_duration; // 0x15b8	
+	int32_t slow_pct; // 0x15bc	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -36062,7 +36096,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x15c8
+// Size: 0x15d8
 // Has VTable
 class CDOTA_Modifier_Omniknight_Degen_Aura_Effect : public CDOTA_Buff
 {
@@ -36070,7 +36104,13 @@ public:
 	int32_t speed_bonus; // 0x15b8	
 	int32_t bonus_damage_per_stack; // 0x15bc	
 	float stack_interval; // 0x15c0	
-	int32_t max_stacks; // 0x15c4	
+	float linger_duration; // 0x15c4	
+	int32_t max_stacks; // 0x15c8	
+	bool m_bActive; // 0x15cc	
+private:
+	[[maybe_unused]] uint8_t __pad15cd[0x3]; // 0x15cd
+public:
+	GameTime_t m_flLastActiveTime; // 0x15d0	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -36650,6 +36690,16 @@ public:
 	float tick_interval; // 0x15b8	
 	int32_t damage; // 0x15bc	
 	int32_t shard_movement_speed_pct; // 0x15c0	
+};
+
+// Registered binary: client.dll (project 'client')
+// Alignment: 8
+// Size: 0x15b8
+// Has VTable
+class CDOTA_Modifier_Shadow_Shaman_Serpent_Ward_Shackle_Tracker : public CDOTA_Buff
+{
+public:
+	// No schema binary for binding
 };
 
 // Registered binary: client.dll (project 'client')
@@ -37783,8 +37833,8 @@ class CDOTA_Ability_Tusk_WalrusKick : public C_DOTABaseAbility
 public:
 	ParticleIndex_t m_nTargetFXIndex; // 0x5d8	
 	Vector m_vEndpoint; // 0x5dc	
-	int32_t landing_radius; // 0x5e8	
-	int32_t push_length; // 0x5ec	
+	float landing_radius; // 0x5e8	
+	float push_length; // 0x5ec	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -42441,7 +42491,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x15e0
+// Size: 0x15e8
 // Has VTable
 class CDOTA_Modifier_PhantomAssassin_BlurActive : public CDOTA_Buff
 {
@@ -42458,7 +42508,8 @@ public:
 	CHandle< C_BaseEntity > m_hVisibleEntity; // 0x15d0	
 	float m_flCountdown; // 0x15d4	
 	float buff_duration_after_break; // 0x15d8	
-	GameTime_t m_rtLastTime; // 0x15dc	
+	int32_t active_movespeed_bonus; // 0x15dc	
+	GameTime_t m_rtLastTime; // 0x15e0	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -44251,7 +44302,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1828
+// Size: 0x1830
 // Has VTable
 class C_DOTA_BaseNPC_Effigy_Statue : public C_DOTA_BaseNPC_Building
 {
@@ -44551,6 +44602,7 @@ class CDOTA_Modifier_AntiMage_Counterspell : public CDOTA_Buff
 public:
 	CModifierParams m_LastParams; // 0x15b8	
 	int32_t magic_resistance; // 0x1790	
+	int32_t reflected_spell_amp; // 0x1794	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -44628,7 +44680,7 @@ public:
 	int32_t damage_radius; // 0x5e4	
 	int32_t path_width; // 0x5e8	
 	float push_duration; // 0x5ec	
-	int32_t push_distance; // 0x5f0	
+	float push_distance; // 0x5f0	
 	int32_t damage; // 0x5f4	
 	float movement_speed_duration; // 0x5f8	
 };
@@ -45611,7 +45663,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1828
+// Size: 0x1830
 // Has VTable
 class C_DOTA_BaseNPC_Filler : public C_DOTA_BaseNPC_Building
 {
@@ -49715,13 +49767,16 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x15c0
+// Size: 0x15d0
 // Has VTable
 class CDOTA_Modifier_Abaddon_Frostmourne_Debuff_Bonus : public CDOTA_Buff
 {
 public:
 	float m_flDamage; // 0x15b8	
 	int32_t curse_slow; // 0x15bc	
+	float curse_interval; // 0x15c0	
+	int32_t curse_dps; // 0x15c4	
+	int32_t tower_dps_pct; // 0x15c8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -50084,18 +50139,6 @@ class CDOTA_Modifier_Mars_ArenaOfBlood_Buff : public CDOTA_Buff
 {
 public:
 	int32_t health_regen; // 0x15b8	
-};
-
-// Registered binary: client.dll (project 'client')
-// Alignment: 8
-// Size: 0x15c8
-// Has VTable
-class CDOTA_Modifier_Abaddon_DeathCoil_Effect : public CDOTA_Buff
-{
-public:
-	int32_t armor_bonus; // 0x15b8	
-	int32_t magic_resistance; // 0x15bc	
-	bool m_bFriendly; // 0x15c0	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -50547,6 +50590,16 @@ public:
 // Size: 0x5d8
 // Has VTable
 class C_DOTA_Ability_Greevil_Miniboss_Black_BrainSap : public C_DOTABaseAbility
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: client.dll (project 'client')
+// Alignment: 8
+// Size: 0x678
+// Has VTable
+class CDOTA_Item_BookAgility : public CDOTA_Item_Book
 {
 public:
 	// No schema binary for binding
@@ -52108,17 +52161,17 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1830
+// Size: 0x1838
 // Has VTable
 class C_DOTA_BaseNPC_HallofFame : public C_DOTA_BaseNPC_Building
 {
 public:
-	int32_t m_HallofFame; // 0x1828	
+	int32_t m_HallofFame; // 0x1830	
 };
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1828
+// Size: 0x1830
 // Has VTable
 class C_DOTA_BaseNPC_Effigy_BattleCup : public C_DOTA_BaseNPC_Building
 {
@@ -52128,7 +52181,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1840
+// Size: 0x1848
 // Has VTable
 // 
 // MNetworkVarNames "string_t m_szOutpostName"
@@ -52136,14 +52189,14 @@ public:
 class C_DOTA_BaseNPC_Watch_Tower : public C_DOTA_BaseNPC_Building
 {
 public:
-	ParticleIndex_t m_iRangeFX; // 0x1828	
+	ParticleIndex_t m_iRangeFX; // 0x1830	
 private:
-	[[maybe_unused]] uint8_t __pad182c[0x4]; // 0x182c
+	[[maybe_unused]] uint8_t __pad1834[0x4]; // 0x1834
 public:
 	// MNetworkEnable
-	CUtlSymbolLarge m_szOutpostName; // 0x1830	
+	CUtlSymbolLarge m_szOutpostName; // 0x1838	
 	// MNetworkEnable
-	CUtlSymbolLarge m_szInteractAbilityName; // 0x1838	
+	CUtlSymbolLarge m_szInteractAbilityName; // 0x1840	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -53599,12 +53652,12 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1830
+// Size: 0x1838
 // Has VTable
 class CDOTA_BaseNPC_Effigy_AghsFort : public C_DOTA_BaseNPC_Building
 {
 public:
-	uint32_t m_unStatusEffectIndex; // 0x1828	
+	uint32_t m_unStatusEffectIndex; // 0x1830	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -54568,8 +54621,9 @@ public:
 	int32_t heal; // 0x15b8	
 	float mana_per_second; // 0x15bc	
 	float heal_interval; // 0x15c0	
-	int32_t does_heal; // 0x15c4	
+	int32_t does_heal_all_allies; // 0x15c4	
 	int32_t does_damage; // 0x15c8	
+	int32_t self_only_heal_percentage; // 0x15cc	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -54614,13 +54668,13 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1830
+// Size: 0x1838
 // Has VTable
 class CDOTA_BaseNPC_CustomEffigy : public C_DOTA_BaseNPC_Building
 {
 public:
-	uint32_t m_unStatusEffectIndex; // 0x1828	
-	CHandle< C_BaseEntity > m_hPedestal; // 0x182c	
+	uint32_t m_unStatusEffectIndex; // 0x1830	
+	CHandle< C_BaseEntity > m_hPedestal; // 0x1834	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -54708,6 +54762,16 @@ public:
 // Size: 0x5d8
 // Has VTable
 class C_DOTA_Ability_AncientApparition_Innate_Absolute_Zero : public C_DOTABaseAbility
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: client.dll (project 'client')
+// Alignment: 8
+// Size: 0x5d8
+// Has VTable
+class CDOTAEmptyAbility : public C_DOTABaseAbility
 {
 public:
 	// No schema binary for binding
@@ -55797,12 +55861,12 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1830
+// Size: 0x1838
 // Has VTable
 class C_DOTA_Unit_Underlord_Portal : public C_DOTA_BaseNPC_Building
 {
 public:
-	CHandle< C_BaseEntity > m_hOtherPortal; // 0x1828	
+	CHandle< C_BaseEntity > m_hOtherPortal; // 0x1830	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -56058,7 +56122,7 @@ class CDOTA_Modifier_LoneDruid_TrueForm : public CDOTA_Buff
 public:
 	int32_t bonus_armor; // 0x15b8	
 	int32_t bonus_hp; // 0x15bc	
-	float base_attack_time; // 0x15c0	
+	float attack_speed_pct; // 0x15c0	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -58020,6 +58084,16 @@ public:
 // Alignment: 8
 // Size: 0x5d8
 // Has VTable
+class CDOTA_Ability_Abaddon_DeathCoil : public C_DOTABaseAbility
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: client.dll (project 'client')
+// Alignment: 8
+// Size: 0x5d8
+// Has VTable
 class C_DOTA_Ability_Treant_Innate_Attack_Damage : public C_DOTABaseAbility
 {
 public:
@@ -59665,7 +59739,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x18a0
+// Size: 0x18a8
 // Has VTable
 // 
 // MNetworkIncludeByName "CGameSceneNode::m_angRotation"
@@ -60656,16 +60730,6 @@ public:
 // Size: 0x5d8
 // Has VTable
 class C_DOTA_Ability_DrowRanger_CreepRally : public C_DOTABaseAbility
-{
-public:
-	// No schema binary for binding
-};
-
-// Registered binary: client.dll (project 'client')
-// Alignment: 8
-// Size: 0x5d8
-// Has VTable
-class C_DOTA_Ability_Pudge_FleshHeap : public C_DOTABaseAbility
 {
 public:
 	// No schema binary for binding
@@ -62774,6 +62838,16 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
+// Size: 0x688
+// Has VTable
+class CDOTA_Item_Tombstone_Mutation : public C_DOTA_Item_Tombstone
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: client.dll (project 'client')
+// Alignment: 8
 // Size: 0x15c8
 // Has VTable
 class CDOTA_Modifier_SkeletonKing_Reincarnation_Scepter_Active : public CDOTA_Buff
@@ -63487,6 +63561,16 @@ public:
 // Alignment: 8
 // Size: 0x5d8
 // Has VTable
+class CDOTA_Ability_Abaddon_AphoticShield : public C_DOTABaseAbility
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: client.dll (project 'client')
+// Alignment: 8
+// Size: 0x5d8
+// Has VTable
 class CDOTA_Ability_Miniboss_Reflect : public C_DOTABaseAbility
 {
 public:
@@ -63857,6 +63941,16 @@ public:
 // Size: 0x5d8
 // Has VTable
 class CDOTA_Ability_BerserkerTroll_Break : public C_DOTABaseAbility
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: client.dll (project 'client')
+// Alignment: 8
+// Size: 0x678
+// Has VTable
+class CDOTA_Item_BookStrength : public CDOTA_Item_Book
 {
 public:
 	// No schema binary for binding
@@ -66815,16 +66909,6 @@ public:
 // Alignment: 8
 // Size: 0x5d8
 // Has VTable
-class C_DOTA_Ability_Abaddon_AphoticShield : public C_DOTABaseAbility
-{
-public:
-	// No schema binary for binding
-};
-
-// Registered binary: client.dll (project 'client')
-// Alignment: 8
-// Size: 0x5d8
-// Has VTable
 class CDOTA_Ability_Dark_Seer_Quick_Wit : public C_DOTABaseAbility
 {
 public:
@@ -67021,6 +67105,7 @@ class CDOTA_Modifier_CDOTA_Ability_Axe_One_Man_Army : public CDOTA_Buff
 {
 public:
 	float armor_pct_as_strength; // 0x15b8	
+	float bonus_linger_duration; // 0x15bc	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -68828,7 +68913,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x18a0
+// Size: 0x18a8
 // Has VTable
 class C_DOTA_BaseNPC_HoldoutTower_HeavySlow : public C_DOTA_BaseNPC_HoldoutTower
 {
@@ -69288,7 +69373,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1828
+// Size: 0x1830
 // Has VTable
 class C_DOTA_BaseNPC_Promo : public C_DOTA_BaseNPC_Building
 {
@@ -69308,15 +69393,20 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x5e8
+// Size: 0x608
 // Has VTable
 class C_DOTA_Ability_MonkeyKing_Boundless_Strike : public C_DOTABaseAbility
 {
 public:
 	int32_t strike_cast_range; // 0x5d8	
 	int32_t strike_radius; // 0x5dc	
-	ParticleIndex_t m_nFXIndex; // 0x5e0	
-	bool m_bIsAltCastState; // 0x5e4	
+	int32_t spring_channel_pct; // 0x5e0	
+	ParticleIndex_t m_nFXIndex; // 0x5e4	
+	bool m_bIsAltCastState; // 0x5e8	
+private:
+	[[maybe_unused]] uint8_t __pad05e9[0x7]; // 0x5e9
+public:
+	CUtlVector< C_DOTA_BaseNPC* > struckEntities; // 0x5f0	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -72001,6 +72091,16 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
+// Size: 0x5d8
+// Has VTable
+class CDOTA_Ability_Pudge_FleshHeap : public C_DOTABaseAbility
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: client.dll (project 'client')
+// Alignment: 8
 // Size: 0x15c0
 // Has VTable
 class CDOTA_Modifier_Greevil_Miniboss_Casting : public CDOTA_Buff
@@ -72716,7 +72816,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x18a0
+// Size: 0x18a8
 // Has VTable
 class C_DOTA_BaseNPC_HoldoutTower_LightFast : public C_DOTA_BaseNPC_HoldoutTower
 {
@@ -72743,10 +72843,10 @@ class CDOTA_Ability_Magnataur_ReversePolarity : public C_DOTABaseAbility
 public:
 	ParticleIndex_t m_nFXIndex; // 0x5d8	
 	Vector m_vPullLocation; // 0x5dc	
-	int32_t push_radius; // 0x5e8	
-	int32_t max_knockback_distance; // 0x5ec	
-	int32_t pull_radius; // 0x5f0	
-	int32_t iEffectRadius; // 0x5f4	
+	float push_radius; // 0x5e8	
+	float max_knockback_distance; // 0x5ec	
+	float pull_radius; // 0x5f0	
+	float flEffectRadius; // 0x5f4	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -73518,16 +73618,6 @@ public:
 // Alignment: 8
 // Size: 0x5d8
 // Has VTable
-class C_DOTA_Ability_Abaddon_DeathCoil : public C_DOTABaseAbility
-{
-public:
-	// No schema binary for binding
-};
-
-// Registered binary: client.dll (project 'client')
-// Alignment: 8
-// Size: 0x5d8
-// Has VTable
 class C_DOTA_Ability_Silencer_BrainDrain : public C_DOTABaseAbility
 {
 public:
@@ -74202,7 +74292,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1828
+// Size: 0x1830
 // Has VTable
 class C_DOTA_BaseNPC_MangoTree : public C_DOTA_BaseNPC_Building
 {
@@ -74814,20 +74904,20 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1870
+// Size: 0x1878
 // Has VTable
 class C_DOTA_BaseNPC_NeutralItemStash : public C_DOTA_BaseNPC_Building
 {
 private:
-	[[maybe_unused]] uint8_t __pad1828[0x10]; // 0x1828
+	[[maybe_unused]] uint8_t __pad1830[0x10]; // 0x1830
 public:
-	CUtlVector< ParticleIndex_t > m_vecNewItemFX; // 0x1838	
-	bool m_bHasFoundProps; // 0x1850	
-	bool m_bDidHaveNewItems; // 0x1851	
+	CUtlVector< ParticleIndex_t > m_vecNewItemFX; // 0x1840	
+	bool m_bHasFoundProps; // 0x1858	
+	bool m_bDidHaveNewItems; // 0x1859	
 private:
-	[[maybe_unused]] uint8_t __pad1852[0x6]; // 0x1852
+	[[maybe_unused]] uint8_t __pad185a[0x6]; // 0x185a
 public:
-	CUtlVector< CHandle< C_DynamicPropClientside > > m_vecProps; // 0x1858	
+	CUtlVector< CHandle< C_DynamicPropClientside > > m_vecProps; // 0x1860	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -76941,7 +77031,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x15f8
+// Size: 0x1600
 // Has VTable
 class CDOTA_Modifier_SandKing_SandStorm : public CDOTA_Buff
 {
@@ -76950,16 +77040,18 @@ public:
 	int32_t sand_storm_damage; // 0x15bc	
 	float damage_tick_rate; // 0x15c0	
 	GameTime_t m_flLastDamageTime; // 0x15c4	
-	ParticleIndex_t m_nSandStormParticleIndex1; // 0x15c8	
-	ParticleIndex_t m_nSandStormParticleIndex2; // 0x15cc	
+	GameTime_t m_flLastSpineTime; // 0x15c8	
+	ParticleIndex_t m_nSandStormParticleIndex1; // 0x15cc	
+	ParticleIndex_t m_nSandStormParticleIndex2; // 0x15d0	
 private:
-	[[maybe_unused]] uint8_t __pad15d0[0x8]; // 0x15d0
+	[[maybe_unused]] uint8_t __pad15d4[0x8]; // 0x15d4
 public:
-	CHandle< C_BaseEntity > m_hThinker; // 0x15d8	
-	int32_t sand_storm_move_speed_pct; // 0x15dc	
-	Vector vecSpawnPos; // 0x15e0	
-	int32_t m_iExplosionQuadrant; // 0x15ec	
-	int32_t m_iExplosionDistance; // 0x15f0	
+	CHandle< C_BaseEntity > m_hThinker; // 0x15dc	
+	int32_t sand_storm_move_speed_pct; // 0x15e0	
+	Vector vecSpawnPos; // 0x15e4	
+	float spine_tick_rate; // 0x15f0	
+	int32_t m_iExplosionQuadrant; // 0x15f4	
+	int32_t m_iExplosionDistance; // 0x15f8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -76974,7 +77066,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x17c8
+// Size: 0x17d0
 // Has VTable
 class C_DOTA_BaseNPC_Creep_Siege : public C_DOTA_BaseNPC_Creep_Lane
 {
@@ -77182,6 +77274,16 @@ public:
 // Size: 0x5d8
 // Has VTable
 class CDOTA_Ability_Slark_Barracuda : public C_DOTABaseAbility
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: client.dll (project 'client')
+// Alignment: 8
+// Size: 0x678
+// Has VTable
+class CDOTA_Item_BookIntelligence : public CDOTA_Item_Book
 {
 public:
 	// No schema binary for binding
@@ -77988,7 +78090,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1828
+// Size: 0x1830
 // Has VTable
 class C_DOTA_Unit_Fountain : public C_DOTA_BaseNPC_Building
 {
@@ -79145,7 +79247,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x15d8
+// Size: 0x15e0
 // Has VTable
 class CDOTA_Modifier_Rattletrap_Hookshot : public CDOTA_Buff
 {
@@ -79158,6 +79260,7 @@ public:
 	float cooldown_refund_ally; // 0x15cc	
 	float damage; // 0x15d0	
 	float duration; // 0x15d4	
+	float ally_shield_duration; // 0x15d8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -80045,7 +80148,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1828
+// Size: 0x1830
 // Has VTable
 class C_DOTA_BaseNPC_Fort : public C_DOTA_BaseNPC_Building
 {
@@ -82139,7 +82242,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x18a0
+// Size: 0x18a8
 // Has VTable
 // 
 // MNetworkVarNames "int m_nEncounterType"
@@ -82154,44 +82257,44 @@ public:
 class CDOTA_BaseNPC_AghsFort_Watch_Tower : public C_DOTA_BaseNPC_Building
 {
 public:
-	int32_t m_nOptionNumber; // 0x1828	
-	float m_flMovePlayersRadius; // 0x182c	
-	CDOTA_BaseNPC_AghsFort_Watch_Tower::ExitDirection_t m_nExitDirection; // 0x1830	
-	Vector m_vExitLocation; // 0x1834	
-	int32_t m_nPathSelectedID; // 0x1840	
+	int32_t m_nOptionNumber; // 0x1830	
+	float m_flMovePlayersRadius; // 0x1834	
+	CDOTA_BaseNPC_AghsFort_Watch_Tower::ExitDirection_t m_nExitDirection; // 0x1838	
+	Vector m_vExitLocation; // 0x183c	
+	int32_t m_nPathSelectedID; // 0x1848	
 	// MNetworkEnable
-	int32_t m_nEncounterType; // 0x1844	
+	int32_t m_nEncounterType; // 0x184c	
 	// MNetworkEnable
-	bool m_bIsEliteEncounter; // 0x1848	
+	bool m_bIsEliteEncounter; // 0x1850	
 	// MNetworkEnable
-	bool m_bIsAscensionLevelPicker; // 0x1849	
+	bool m_bIsAscensionLevelPicker; // 0x1851	
 private:
-	[[maybe_unused]] uint8_t __pad184a[0x6]; // 0x184a
+	[[maybe_unused]] uint8_t __pad1852[0x6]; // 0x1852
 public:
 	// MNetworkEnable
-	CUtlSymbolLarge m_strEncounterName; // 0x1850	
+	CUtlSymbolLarge m_strEncounterName; // 0x1858	
 	// MNetworkEnable
-	CUtlSymbolLarge m_strAscensionAbilities; // 0x1858	
+	CUtlSymbolLarge m_strAscensionAbilities; // 0x1860	
 	// MNetworkEnable
-	CHandle< C_BaseEntity > m_hEffigy; // 0x1860	
-	float m_flYaw; // 0x1864	
-	float m_flStartTime; // 0x1868	
-	GameTime_t m_flCursorEnterTime; // 0x186c	
-	bool m_bShowingTooltip; // 0x1870	
+	CHandle< C_BaseEntity > m_hEffigy; // 0x1868	
+	float m_flYaw; // 0x186c	
+	float m_flStartTime; // 0x1870	
+	GameTime_t m_flCursorEnterTime; // 0x1874	
+	bool m_bShowingTooltip; // 0x1878	
 private:
-	[[maybe_unused]] uint8_t __pad1871[0x1b]; // 0x1871
+	[[maybe_unused]] uint8_t __pad1879[0x1b]; // 0x1879
 public:
-	float m_flLastUpdateTime; // 0x188c	
-	ParticleIndex_t m_nChannellingParticle; // 0x1890	
+	float m_flLastUpdateTime; // 0x1894	
+	ParticleIndex_t m_nChannellingParticle; // 0x1898	
 	// MNetworkEnable
-	CHandle< CBaseAnimatingActivity > m_hRoomGate; // 0x1894	
+	CHandle< CBaseAnimatingActivity > m_hRoomGate; // 0x189c	
 	// MNetworkEnable
-	bool m_bIsBeingChanneled; // 0x1898	
+	bool m_bIsBeingChanneled; // 0x18a0	
 private:
-	[[maybe_unused]] uint8_t __pad1899[0x3]; // 0x1899
+	[[maybe_unused]] uint8_t __pad18a1[0x3]; // 0x18a1
 public:
 	// MNetworkEnable
-	float m_flGoalCaptureProgress; // 0x189c	
+	float m_flGoalCaptureProgress; // 0x18a4	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -83008,16 +83111,6 @@ public:
 	int32_t m_nTimesSpawned; // 0x17c0	
 	int32_t m_nTempViewer; // 0x17c4	
 	CUtlVector< CHandle< C_BaseEntity > > m_hAttackingHeroes; // 0x17c8	
-};
-
-// Registered binary: client.dll (project 'client')
-// Alignment: 8
-// Size: 0x5d8
-// Has VTable
-class C_DOTA_Ability_Abaddon_Soul_Suck : public C_DOTABaseAbility
-{
-public:
-	// No schema binary for binding
 };
 
 // Registered binary: client.dll (project 'client')
@@ -84770,21 +84863,6 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1
-// Has Trivial Destructor
-// 
-// MIsBoxedIntegerType
-struct OverworldTokenID_t
-{
-public:
-	uint8_t m_Value; // 0x0	
-	
-	// Static fields:
-	static bool &Get_IS_TYPESAFE_INTEGER(){return *reinterpret_cast<bool*>(interfaces::g_schema->FindTypeScopeForModule("client.dll")->FindDeclaredClass("OverworldTokenID_t")->m_static_fields[0]->m_instance);};
-};
-
-// Registered binary: client.dll (project 'client')
-// Alignment: 8
 // Size: 0x70
 // 
 // MGetKV3ClassDefaults
@@ -84951,17 +85029,41 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x2
-// Has Trivial Destructor
+// Size: 0x88
 // 
-// MIsBoxedIntegerType
-struct OverworldNodeID_t
+// MGetKV3ClassDefaults
+// MVDataRoot
+class CDOTAOverworldNode
 {
 public:
-	uint16_t m_Value; // 0x0	
-	
-	// Static fields:
-	static bool &Get_IS_TYPESAFE_INTEGER(){return *reinterpret_cast<bool*>(interfaces::g_schema->FindTypeScopeForModule("client.dll")->FindDeclaredClass("OverworldNodeID_t")->m_static_fields[0]->m_instance);};
+	// MVDataUniqueMonotonicInt "_editor/next_id_node"
+	// MPropertyAttributeEditor "locked_int()"
+	OverworldNodeID_t m_unID; // 0x0	
+	Vector2D m_vPos; // 0x4	
+private:
+	[[maybe_unused]] uint8_t __pad000c[0x4]; // 0xc
+public:
+	// MPropertyDescription "A css class to be applied to the node."
+	CUtlString m_sCustomClass; // 0x10	
+	// MPropertyDescription "Name/Key used to look up which Visual Novel dialogue to use."
+	CUtlString m_sDialogueName; // 0x18	
+	CUtlString m_sRewardEventAction; // 0x20	
+	// MPropertyDescription "If defined, this node and the path to it are invisible and unreachable to players unless they own a specific event action."
+	CUtlString m_sHiddenWithoutEventAction; // 0x28	
+	CUtlString m_sJSEvent; // 0x30	
+	bool m_bSkipGrantingRewardOnUnlock; // 0x38	
+private:
+	[[maybe_unused]] uint8_t __pad0039[0x3]; // 0x39
+public:
+	EOverworldNodeFlags m_eNodeFlags; // 0x3c	
+	CUtlString m_sEncounterName; // 0x40	
+private:
+	[[maybe_unused]] uint8_t __pad0048[0x8]; // 0x48
+public:
+	// MPropertyDescription "CSS Classes that will be applied to the map when this node is unlocked."
+	CUtlVector< CUtlString > m_vecUnlockMapClasses; // 0x50	
+	// MPropertyDescription "CSS Classes that will be applied to the map when this node is being visited, and removed when leaving it."
+	CUtlVector< CUtlString > m_vecVisitMapClasses; // 0x68	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -85009,17 +85111,16 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x2
-// Has Trivial Destructor
+// Size: 0x18
 // 
-// MIsBoxedIntegerType
-struct OverworldClickableID_t
+// MGetKV3ClassDefaults
+// MVDataRoot
+class CDOTAOverworldClickable
 {
 public:
-	uint16_t m_Value; // 0x0	
-	
-	// Static fields:
-	static bool &Get_IS_TYPESAFE_INTEGER(){return *reinterpret_cast<bool*>(interfaces::g_schema->FindTypeScopeForModule("client.dll")->FindDeclaredClass("OverworldClickableID_t")->m_static_fields[0]->m_instance);};
+	OverworldClickableID_t m_unID; // 0x0	
+	CUtlString m_sSnippet; // 0x8	
+	Vector2D m_vPos; // 0x10	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -85034,36 +85135,6 @@ public:
 	uint32_t unSeat; // 0x4	
 	uint32_t unReversedSeat; // 0x8	
 	uint32_t unTeamID; // 0xc	
-};
-
-// Registered binary: client.dll (project 'client')
-// Alignment: 8
-// Size: 0x1
-// Has Trivial Destructor
-// 
-// MIsBoxedIntegerType
-struct OverworldCharacterID_t
-{
-public:
-	uint8_t m_Value; // 0x0	
-	
-	// Static fields:
-	static bool &Get_IS_TYPESAFE_INTEGER(){return *reinterpret_cast<bool*>(interfaces::g_schema->FindTypeScopeForModule("client.dll")->FindDeclaredClass("OverworldCharacterID_t")->m_static_fields[0]->m_instance);};
-};
-
-// Registered binary: client.dll (project 'client')
-// Alignment: 8
-// Size: 0x2
-// Has Trivial Destructor
-// 
-// MIsBoxedIntegerType
-struct OverworldEncounterID_t
-{
-public:
-	uint16_t m_Value; // 0x0	
-	
-	// Static fields:
-	static bool &Get_IS_TYPESAFE_INTEGER(){return *reinterpret_cast<bool*>(interfaces::g_schema->FindTypeScopeForModule("client.dll")->FindDeclaredClass("OverworldEncounterID_t")->m_static_fields[0]->m_instance);};
 };
 
 // Registered binary: client.dll (project 'client')
@@ -85243,31 +85314,38 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x18
+// Size: 0x48
 // 
 // MGetKV3ClassDefaults
 // MVDataRoot
-class CDOTAOverworldClickable
+class CDOTAOverworldPath
 {
 public:
-	OverworldClickableID_t m_unID; // 0x0	
-	CUtlString m_sSnippet; // 0x8	
-	Vector2D m_vPos; // 0x10	
-};
-
-// Registered binary: client.dll (project 'client')
-// Alignment: 8
-// Size: 0x2
-// Has Trivial Destructor
-// 
-// MIsBoxedIntegerType
-struct OverworldPathID_t
-{
+	// MVDataUniqueMonotonicInt "_editor/next_id_path"
+	// MPropertyAttributeEditor "locked_int()"
+	OverworldPathID_t m_unID; // 0x0	
+	// MPropertyDescription
+	OverworldNodeID_t m_unNodeStart; // 0x2	
+	// MPropertyDescription
+	OverworldNodeID_t m_unNodeEnd; // 0x4	
+	// MPropertyDescription
+	uint8_t m_unCost; // 0x6	
+private:
+	[[maybe_unused]] uint8_t __pad0007[0x19]; // 0x7
 public:
-	uint16_t m_Value; // 0x0	
-	
-	// Static fields:
-	static bool &Get_IS_TYPESAFE_INTEGER(){return *reinterpret_cast<bool*>(interfaces::g_schema->FindTypeScopeForModule("client.dll")->FindDeclaredClass("OverworldPathID_t")->m_static_fields[0]->m_instance);};
+	// MPropertyAttributeRange "-1 1"
+	// MPropertyDescription "0: line, +: curve to the 'right' from node 1 to node 2, -: curve left"
+	float m_flCircleInvRadius; // 0x20	
+	// MPropertyDescription "Path particle color"
+	Color m_cOuterColor; // 0x24	
+	Color m_cInnerColor; // 0x28	
+	uint8_t m_unOuterThickness; // 0x2c	
+	uint8_t m_unInnerThickness; // 0x2d	
+private:
+	[[maybe_unused]] uint8_t __pad002e[0x2]; // 0x2e
+public:
+	// MPropertyDescription
+	CUtlVector< CUtlString > m_vecRequiredTokenNames; // 0x30	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -85358,45 +85436,6 @@ public:
 	float m_flStartValue; // 0x8	
 	float m_flEndValue; // 0xc	
 	int32_t m_nInterpType; // 0x10	
-};
-
-// Registered binary: client.dll (project 'client')
-// Alignment: 8
-// Size: 0x88
-// 
-// MGetKV3ClassDefaults
-// MVDataRoot
-class CDOTAOverworldNode
-{
-public:
-	// MVDataUniqueMonotonicInt "_editor/next_id_node"
-	// MPropertyAttributeEditor "locked_int()"
-	OverworldNodeID_t m_unID; // 0x0	
-	Vector2D m_vPos; // 0x4	
-private:
-	[[maybe_unused]] uint8_t __pad000c[0x4]; // 0xc
-public:
-	// MPropertyDescription "A css class to be applied to the node."
-	CUtlString m_sCustomClass; // 0x10	
-	// MPropertyDescription "Name/Key used to look up which Visual Novel dialogue to use."
-	CUtlString m_sDialogueName; // 0x18	
-	CUtlString m_sRewardEventAction; // 0x20	
-	// MPropertyDescription "If defined, this node and the path to it are invisible and unreachable to players unless they own a specific event action."
-	CUtlString m_sHiddenWithoutEventAction; // 0x28	
-	CUtlString m_sJSEvent; // 0x30	
-	bool m_bSkipGrantingRewardOnUnlock; // 0x38	
-private:
-	[[maybe_unused]] uint8_t __pad0039[0x3]; // 0x39
-public:
-	EOverworldNodeFlags m_eNodeFlags; // 0x3c	
-	CUtlString m_sEncounterName; // 0x40	
-private:
-	[[maybe_unused]] uint8_t __pad0048[0x8]; // 0x48
-public:
-	// MPropertyDescription "CSS Classes that will be applied to the map when this node is unlocked."
-	CUtlVector< CUtlString > m_vecUnlockMapClasses; // 0x50	
-	// MPropertyDescription "CSS Classes that will be applied to the map when this node is being visited, and removed when leaving it."
-	CUtlVector< CUtlString > m_vecVisitMapClasses; // 0x68	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -85558,17 +85597,76 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1
-// Has Trivial Destructor
+// Size: 0x300
 // 
-// MIsBoxedIntegerType
-struct OverworldID_t
+// MGetKV3ClassDefaults
+// MVDataRoot
+// MVDataSingleton
+class CDOTAOverworldDefinition
 {
 public:
-	uint8_t m_Value; // 0x0	
-	
-	// Static fields:
-	static bool &Get_IS_TYPESAFE_INTEGER(){return *reinterpret_cast<bool*>(interfaces::g_schema->FindTypeScopeForModule("client.dll")->FindDeclaredClass("OverworldID_t")->m_static_fields[0]->m_instance);};
+	CUtlString generic_data_type; // 0x0	
+	// MPropertyDescription
+	OverworldID_t m_unID; // 0x8	
+private:
+	[[maybe_unused]] uint8_t __pad0009[0x7]; // 0x9
+public:
+	// MPropertyDescription
+	CUtlString m_sKey; // 0x10	
+	// MPropertyDescription "The event related to this overworld. Used for rewards and expiration."
+	EEvent m_eAssociatedEvent; // 0x18	
+private:
+	[[maybe_unused]] uint8_t __pad001c[0x4]; // 0x1c
+public:
+	// MPropertyDescription "An event action to grant whenever a node is unlocked."
+	CUtlString m_sNodeUnlockEventAction; // 0x20	
+	Vector2D m_vGridOffset; // 0x28	
+	uint32_t m_unGridSize; // 0x30	
+	uint32_t m_unMapWidth; // 0x34	
+	uint32_t m_unMapHeight; // 0x38	
+private:
+	[[maybe_unused]] uint8_t __pad003c[0x4]; // 0x3c
+public:
+	CUtlString m_sMapVisualsXmlPath; // 0x40	
+	// MPropertyDescription
+	OverworldNodeID_t m_unStartNodeID; // 0x48	
+	// MPropertyDescription
+	OverworldNodeID_t m_unEndNodeID; // 0x4a	
+private:
+	[[maybe_unused]] uint8_t __pad004c[0x4]; // 0x4c
+public:
+	// MPropertyDescription "Name/key of the Visual Novel associated with this map."
+	CUtlString m_sVisualNovelName; // 0x50	
+	// MPropertyDescription "Prefix to combine with tokent names to give their loc strings."
+	CUtlString m_sTokenLocStringPrefix; // 0x58	
+	// MPropertyDescription "Act number loc string, e.g. Act I."
+	CUtlString m_sActNumberLocString; // 0x60	
+	// MPropertyDescription "Act title loc string, e.g. The Eyrie."
+	CUtlString m_sActTitleLocString; // 0x68	
+	// MPropertyDescription
+	item_definition_index_t m_unPremiumItemDef; // 0x70	
+	OverworldCharacterID_t m_unHero1ID; // 0x74	
+	OverworldCharacterID_t m_unHero2ID; // 0x75	
+private:
+	[[maybe_unused]] uint8_t __pad0076[0x2]; // 0x76
+public:
+	CUtlVector< CDOTAEventActionTrigger > m_vecEventActionTriggers; // 0x78	
+	CUtlVector< CDOTAEventActionGrantAndClaimPairTrigger > m_vecEventActionGrantAndClaimPairTriggers; // 0x90	
+	// MPropertyDescription "ID of the scrap token rewarded for playing matches."
+	OverworldTokenID_t m_unScrapTokenID; // 0xa8	
+private:
+	[[maybe_unused]] uint8_t __pad00a9[0x11f]; // 0xa9
+public:
+	CUtlVector< CDOTAOverworldToken* > m_vecTokenTypes; // 0x1c8	
+private:
+	[[maybe_unused]] uint8_t __pad01e0[0x18]; // 0x1e0
+public:
+	CUtlVector< CDOTAOverworldHeroReward* > m_vecHeroRewards; // 0x1f8	
+	CUtlVector< CDOTAOverworldNode* > m_vecNodes; // 0x210	
+	CUtlVector< CDOTAOverworldPath* > m_vecPaths; // 0x228	
+	CUtlVector< CDOTAOverworldEncounter* > m_vecEncounters; // 0x240	
+	CUtlVector< CDOTAOverworldCharacter* > m_vecCharacters; // 0x258	
+	CUtlVector< CDOTAOverworldClickable* > m_vecClickables; // 0x270	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -85873,42 +85971,6 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x48
-// 
-// MGetKV3ClassDefaults
-// MVDataRoot
-class CDOTAOverworldPath
-{
-public:
-	// MVDataUniqueMonotonicInt "_editor/next_id_path"
-	// MPropertyAttributeEditor "locked_int()"
-	OverworldPathID_t m_unID; // 0x0	
-	// MPropertyDescription
-	OverworldNodeID_t m_unNodeStart; // 0x2	
-	// MPropertyDescription
-	OverworldNodeID_t m_unNodeEnd; // 0x4	
-	// MPropertyDescription
-	uint8_t m_unCost; // 0x6	
-private:
-	[[maybe_unused]] uint8_t __pad0007[0x19]; // 0x7
-public:
-	// MPropertyAttributeRange "-1 1"
-	// MPropertyDescription "0: line, +: curve to the 'right' from node 1 to node 2, -: curve left"
-	float m_flCircleInvRadius; // 0x20	
-	// MPropertyDescription "Path particle color"
-	Color m_cOuterColor; // 0x24	
-	Color m_cInnerColor; // 0x28	
-	uint8_t m_unOuterThickness; // 0x2c	
-	uint8_t m_unInnerThickness; // 0x2d	
-private:
-	[[maybe_unused]] uint8_t __pad002e[0x2]; // 0x2e
-public:
-	// MPropertyDescription
-	CUtlVector< CUtlString > m_vecRequiredTokenNames; // 0x30	
-};
-
-// Registered binary: client.dll (project 'client')
-// Alignment: 8
 // Size: 0xe20
 // Has VTable
 class CPortraitData : public CBasePortraitData
@@ -85990,80 +86052,6 @@ public:
 	CUtlVector< CandyShopCandyType_t > m_vecCandyTypes; // 0x58	
 	CUtlVector< CandyShopRewardSlot_t > m_vecRewardSlots; // 0x70	
 	CUtlVector< CandyShopRewardOption_t > m_vecDefaultRewardOptions; // 0x88	
-};
-
-// Registered binary: client.dll (project 'client')
-// Alignment: 8
-// Size: 0x300
-// 
-// MGetKV3ClassDefaults
-// MVDataRoot
-// MVDataSingleton
-class CDOTAOverworldDefinition
-{
-public:
-	CUtlString generic_data_type; // 0x0	
-	// MPropertyDescription
-	OverworldID_t m_unID; // 0x8	
-private:
-	[[maybe_unused]] uint8_t __pad0009[0x7]; // 0x9
-public:
-	// MPropertyDescription
-	CUtlString m_sKey; // 0x10	
-	// MPropertyDescription "The event related to this overworld. Used for rewards and expiration."
-	EEvent m_eAssociatedEvent; // 0x18	
-private:
-	[[maybe_unused]] uint8_t __pad001c[0x4]; // 0x1c
-public:
-	// MPropertyDescription "An event action to grant whenever a node is unlocked."
-	CUtlString m_sNodeUnlockEventAction; // 0x20	
-	Vector2D m_vGridOffset; // 0x28	
-	uint32_t m_unGridSize; // 0x30	
-	uint32_t m_unMapWidth; // 0x34	
-	uint32_t m_unMapHeight; // 0x38	
-private:
-	[[maybe_unused]] uint8_t __pad003c[0x4]; // 0x3c
-public:
-	CUtlString m_sMapVisualsXmlPath; // 0x40	
-	// MPropertyDescription
-	OverworldNodeID_t m_unStartNodeID; // 0x48	
-	// MPropertyDescription
-	OverworldNodeID_t m_unEndNodeID; // 0x4a	
-private:
-	[[maybe_unused]] uint8_t __pad004c[0x4]; // 0x4c
-public:
-	// MPropertyDescription "Name/key of the Visual Novel associated with this map."
-	CUtlString m_sVisualNovelName; // 0x50	
-	// MPropertyDescription "Prefix to combine with tokent names to give their loc strings."
-	CUtlString m_sTokenLocStringPrefix; // 0x58	
-	// MPropertyDescription "Act number loc string, e.g. Act I."
-	CUtlString m_sActNumberLocString; // 0x60	
-	// MPropertyDescription "Act title loc string, e.g. The Eyrie."
-	CUtlString m_sActTitleLocString; // 0x68	
-	// MPropertyDescription
-	item_definition_index_t m_unPremiumItemDef; // 0x70	
-	OverworldCharacterID_t m_unHero1ID; // 0x74	
-	OverworldCharacterID_t m_unHero2ID; // 0x75	
-private:
-	[[maybe_unused]] uint8_t __pad0076[0x2]; // 0x76
-public:
-	CUtlVector< CDOTAEventActionTrigger > m_vecEventActionTriggers; // 0x78	
-	CUtlVector< CDOTAEventActionGrantAndClaimPairTrigger > m_vecEventActionGrantAndClaimPairTriggers; // 0x90	
-	// MPropertyDescription "ID of the scrap token rewarded for playing matches."
-	OverworldTokenID_t m_unScrapTokenID; // 0xa8	
-private:
-	[[maybe_unused]] uint8_t __pad00a9[0x11f]; // 0xa9
-public:
-	CUtlVector< CDOTAOverworldToken* > m_vecTokenTypes; // 0x1c8	
-private:
-	[[maybe_unused]] uint8_t __pad01e0[0x18]; // 0x1e0
-public:
-	CUtlVector< CDOTAOverworldHeroReward* > m_vecHeroRewards; // 0x1f8	
-	CUtlVector< CDOTAOverworldNode* > m_vecNodes; // 0x210	
-	CUtlVector< CDOTAOverworldPath* > m_vecPaths; // 0x228	
-	CUtlVector< CDOTAOverworldEncounter* > m_vecEncounters; // 0x240	
-	CUtlVector< CDOTAOverworldCharacter* > m_vecCharacters; // 0x258	
-	CUtlVector< CDOTAOverworldClickable* > m_vecClickables; // 0x270	
 };
 
 // Registered binary: client.dll (project 'client')

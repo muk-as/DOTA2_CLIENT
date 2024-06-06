@@ -9483,7 +9483,7 @@ enum class FowCustomTeams_t : uint32_t
 	FOW_TEAM_NONE = 0x0,
 	FOW_TEAM_NIGHTSTALKER = 0x6,
 	FOW_TEAM_ARENA_OF_BLOOD = 0x7,
-	FOW_TEAM_SHADOW_DANCE = 0x8,
+	FOW_TEAM_UNUSED2 = 0x8,
 	FOW_TEAM_UNUSED3 = 0x9,
 	FOW_TEAM_UNUSED4 = 0xa,
 	FOW_TEAM_UNUSED5 = 0xb,
@@ -10065,9 +10065,11 @@ enum class EDOTAVersusScenePlayerBehavior : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
-// Enumerator count: 22
+// Enumerator count: 23
 // Alignment: 4
 // Size: 0x4
+// 
+// MEnumFlagsWithOverlappingBits
 enum class DOTA_UNIT_TARGET_FLAGS : uint32_t
 {
 	DOTA_UNIT_TARGET_FLAG_NONE = 0x0,
@@ -10092,6 +10094,7 @@ enum class DOTA_UNIT_TARGET_FLAGS : uint32_t
 	DOTA_UNIT_TARGET_FLAG_NOT_NIGHTMARED = 0x80000,
 	DOTA_UNIT_TARGET_FLAG_PREFER_ENEMIES = 0x100000,
 	DOTA_UNIT_TARGET_FLAG_RESPECT_OBSTRUCTIONS = 0x200000,
+	DOTA_UNIT_TARGET_FLAG_CAN_BE_SEEN = 0x180,
 };
 
 // Registered binary: server.dll (project 'server')
@@ -17775,7 +17778,7 @@ public:
 	uint16_t m_nConfig; // 0x2	
 };
 
-// Registered binary: client.dll (project 'client')
+// Registered binary: server.dll (project 'server')
 // Alignment: 8
 // Size: 0x2
 // Has Trivial Destructor
@@ -18672,7 +18675,7 @@ public:
 	bool m_bDefault; // 0x18	
 };
 
-// Registered binary: client.dll (project 'client')
+// Registered binary: server.dll (project 'server')
 // Alignment: 8
 // Size: 0x2
 // Has Trivial Destructor
@@ -29102,7 +29105,7 @@ public:
 	int32_t m_nType; // 0x10	
 };
 
-// Registered binary: client.dll (project 'client')
+// Registered binary: server.dll (project 'server')
 // Alignment: 8
 // Size: 0x2
 // Has Trivial Destructor
@@ -29552,7 +29555,7 @@ public:
 	CEntityComponentHelper* m_pNext; // 0x20	
 };
 
-// Registered binary: client.dll (project 'client')
+// Registered binary: server.dll (project 'server')
 // Alignment: 8
 // Size: 0x1
 // Has Trivial Destructor
@@ -32947,7 +32950,7 @@ public:
 	CUtlVector< int32 > m_selectableSamples; // 0x68	
 };
 
-// Registered binary: client.dll (project 'client')
+// Registered binary: server.dll (project 'server')
 // Alignment: 8
 // Size: 0x1
 // Has Trivial Destructor
@@ -33923,21 +33926,6 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x1
-// Has Trivial Destructor
-// 
-// MIsBoxedIntegerType
-struct OverworldID_t
-{
-public:
-	uint8_t m_Value; // 0x0	
-	
-	// Static fields:
-	static bool &Get_IS_TYPESAFE_INTEGER(){return *reinterpret_cast<bool*>(interfaces::g_schema->FindTypeScopeForModule("!GlobalTypes")->FindDeclaredClass("OverworldID_t")->m_static_fields[0]->m_instance);};
-};
-
-// Registered binary: client.dll (project 'client')
-// Alignment: 8
 // Size: 0x3d0
 // Has VTable
 class CLightInfoBase
@@ -34079,6 +34067,21 @@ public:
 	HeroPickType eType; // 0x0	
 	int32_t nHeroID; // 0x4	
 	int32_t nTeam; // 0x8	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x1
+// Has Trivial Destructor
+// 
+// MIsBoxedIntegerType
+struct OverworldID_t
+{
+public:
+	uint8_t m_Value; // 0x0	
+	
+	// Static fields:
+	static bool &Get_IS_TYPESAFE_INTEGER(){return *reinterpret_cast<bool*>(interfaces::g_schema->FindTypeScopeForModule("!GlobalTypes")->FindDeclaredClass("OverworldID_t")->m_static_fields[0]->m_instance);};
 };
 
 // Registered binary: particles.dll (project 'particles')
@@ -35883,6 +35886,41 @@ public:
 	int32_t m_nD3DSemanticIndex; // 0xc0	
 };
 
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x20
+// 
+// MGetKV3ClassDefaults
+// MPropertyAutoExpandSelf
+struct FantasyPlayerData_t
+{
+public:
+	// MPropertyDescription "Account ID of the Pro Player"
+	uint32_t m_unAccountID; // 0x0	
+	// MPropertyDescription "What team this player is competing with for the fantasy league"
+	uint32_t m_unTeamID; // 0x4	
+	// MPropertyDescription "What region does this player play for"
+	ELeagueRegion m_eRegion; // 0x8	
+private:
+	[[maybe_unused]] uint8_t __pad000c[0x4]; // 0xc
+public:
+	// MPropertyDescription "Name of the pro player"
+	CUtlString m_strPlayerName; // 0x10	
+	// MPropertyDescription "Is this player still playing in the league?"
+	bool m_bIsValid; // 0x18	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x28
+struct DOTALevelingAbilityBonus_t
+{
+public:
+	char* m_pszName; // 0x0	
+	CUtlVector< float32 > m_vecValues; // 0x8	
+	EDOTASpecialBonusOperation m_eOperation; // 0x20	
+};
+
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
 // Size: 0x48
@@ -35917,41 +35955,6 @@ private:
 public:
 	// MPropertyDescription
 	CUtlVector< CUtlString > m_vecRequiredTokenNames; // 0x30	
-};
-
-// Registered binary: server.dll (project 'server')
-// Alignment: 8
-// Size: 0x20
-// 
-// MGetKV3ClassDefaults
-// MPropertyAutoExpandSelf
-struct FantasyPlayerData_t
-{
-public:
-	// MPropertyDescription "Account ID of the Pro Player"
-	uint32_t m_unAccountID; // 0x0	
-	// MPropertyDescription "What team this player is competing with for the fantasy league"
-	uint32_t m_unTeamID; // 0x4	
-	// MPropertyDescription "What region does this player play for"
-	ELeagueRegion m_eRegion; // 0x8	
-private:
-	[[maybe_unused]] uint8_t __pad000c[0x4]; // 0xc
-public:
-	// MPropertyDescription "Name of the pro player"
-	CUtlString m_strPlayerName; // 0x10	
-	// MPropertyDescription "Is this player still playing in the league?"
-	bool m_bIsValid; // 0x18	
-};
-
-// Registered binary: server.dll (project 'server')
-// Alignment: 8
-// Size: 0x28
-struct DOTALevelingAbilityBonus_t
-{
-public:
-	char* m_pszName; // 0x0	
-	CUtlVector< float32 > m_vecValues; // 0x8	
-	EDOTASpecialBonusOperation m_eOperation; // 0x20	
 };
 
 // Registered binary: server.dll (project 'server')
@@ -36662,6 +36665,23 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
+// Size: 0x18
+// 
+// MGetKV3ClassDefaults
+// MVDataRoot
+class CDOTAEventActionTrigger
+{
+public:
+	CUtlString m_sEventAction; // 0x0	
+	int32_t m_unEventScoreRequired; // 0x8	
+private:
+	[[maybe_unused]] uint8_t __pad000c[0x4]; // 0xc
+public:
+	CUtlString m_sMapClassToAdd; // 0x10	
+};
+
+// Registered binary: client.dll (project 'client')
+// Alignment: 8
 // Size: 0x40
 // 
 // MGetKV3ClassDefaults
@@ -36679,23 +36699,6 @@ private:
 public:
 	// MPropertyDescription
 	EOverworldTokenType m_eTokenType; // 0x38	
-};
-
-// Registered binary: client.dll (project 'client')
-// Alignment: 8
-// Size: 0x18
-// 
-// MGetKV3ClassDefaults
-// MVDataRoot
-class CDOTAEventActionTrigger
-{
-public:
-	CUtlString m_sEventAction; // 0x0	
-	int32_t m_unEventScoreRequired; // 0x8	
-private:
-	[[maybe_unused]] uint8_t __pad000c[0x4]; // 0xc
-public:
-	CUtlString m_sMapClassToAdd; // 0x10	
 };
 
 // Registered binary: vphysics2.dll (project 'physicslib')
@@ -37137,7 +37140,7 @@ public:
 	bool m_bRenderOnly; // 0x44	
 };
 
-// Registered binary: client.dll (project 'client')
+// Registered binary: server.dll (project 'server')
 // Alignment: 8
 // Size: 0x2
 // Has Trivial Destructor
@@ -46492,6 +46495,18 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
+// Size: 0x20
+// 
+// MGetKV3ClassDefaults
+struct SZooSetAnnotations_t
+{
+public:
+	CUtlString m_strSetName; // 0x0	
+	CUtlVector< SZooSetAnnotation_t > m_annotations; // 0x8	
+};
+
+// Registered binary: client.dll (project 'client')
+// Alignment: 8
 // Size: 0x18
 // 
 // MGetKV3ClassDefaults
@@ -46502,18 +46517,6 @@ public:
 	OverworldClickableID_t m_unID; // 0x0	
 	CUtlString m_sSnippet; // 0x8	
 	Vector2D m_vPos; // 0x10	
-};
-
-// Registered binary: client.dll (project 'client')
-// Alignment: 8
-// Size: 0x20
-// 
-// MGetKV3ClassDefaults
-struct SZooSetAnnotations_t
-{
-public:
-	CUtlString m_strSetName; // 0x0	
-	CUtlVector< SZooSetAnnotation_t > m_annotations; // 0x8	
 };
 
 // Registered binary: server.dll (project 'server')
