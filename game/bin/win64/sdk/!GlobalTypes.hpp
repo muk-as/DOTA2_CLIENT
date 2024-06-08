@@ -3329,7 +3329,7 @@ enum class ObserverMode_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
-// Enumerator count: 105
+// Enumerator count: 106
 // Alignment: 4
 // Size: 0x4
 enum class EDotaClientMessages : uint32_t
@@ -3439,6 +3439,7 @@ enum class EDotaClientMessages : uint32_t
 	DOTA_CM_SelectOverworldTokenRewards = 0x329,
 	DOTA_CM_FacetAlert = 0x32a,
 	DOTA_CM_InnateAlert = 0x32b,
+	DOTA_CM_SelectOverworldID = 0x32c,
 };
 
 // Registered binary: server.dll (project 'server')
@@ -13443,7 +13444,7 @@ enum class AnimValueSource : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
-// Enumerator count: 336
+// Enumerator count: 337
 // Alignment: 4
 // Size: 0x4
 enum class modifierfunction : uint32_t
@@ -14116,7 +14117,9 @@ enum class modifierfunction : uint32_t
 	MODIFIER_EVENT_ON_TREE_CUT_DOWN = 0x14c,
 	// MScriptDescription "OnCleaveAttackLanded"
 	MODIFIER_EVENT_ON_CLEAVE_ATTACK_LANDED = 0x14d,
-	MODIFIER_FUNCTION_LAST = 0x14e,
+	// MScriptDescription "MinAttributeLevel"
+	MODIFIER_PROPERTY_MIN_ATTRIBUTE_LEVEL = 0x14e,
+	MODIFIER_FUNCTION_LAST = 0x14f,
 	MODIFIER_FUNCTION_INVALID = 0xffff,
 };
 
@@ -33776,7 +33779,7 @@ public:
 
 // Registered binary: server.dll (project 'server')
 // Alignment: 8
-// Size: 0x15b8
+// Size: 0x15c8
 // Has VTable
 // Is Abstract
 class CDOTA_Buff : public CHorizontalMotionController
@@ -33831,9 +33834,9 @@ public:
 	CUtlVector< CDOTA_BuffParticle > m_iParticles; // 0xa0	
 	CUtlVector< CHandle< CBaseEntity > > m_hAuraUnits; // 0xb8	
 private:
-	[[maybe_unused]] uint8_t __pad00d0[0x14e0]; // 0xd0
+	[[maybe_unused]] uint8_t __pad00d0[0x14f0]; // 0xd0
 public:
-	HSCRIPT m_hScriptScope; // 0x15b0	
+	HSCRIPT m_hScriptScope; // 0x15c0	
 };
 
 // Registered binary: particles.dll (project 'particles')
