@@ -27090,8 +27090,9 @@ public:
 		uint8_t m_bKeepInAbilityDraft: 1; 		
 		uint8_t m_bIsSpeciallyAllowedInNeutralSlot: 1; 		
 		uint8_t m_bIsSpeciallyBannedFromNeutralSlot: 1; 		
-		uint8_t __pad1: 2;
-	}; // 36 bits
+		uint8_t m_bAllowCombineFromGround: 1; 		
+		uint8_t __pad1: 3;
+	}; // 38 bits
 };
 
 // Registered binary: particles.dll (project 'particles')

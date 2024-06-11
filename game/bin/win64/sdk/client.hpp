@@ -5125,7 +5125,7 @@ public:
 	CUtlVector< CHandle< C_BaseEntity > > m_entitiesHit; // 0x15d0	
 	CountdownTimer m_ViewerTimer; // 0x15e8	
 	int32_t blast_speed; // 0x1600	
-	int32_t blast_radius; // 0x1604	
+	float blast_radius; // 0x1604	
 	int32_t blast_damage; // 0x1608	
 	int32_t illusion_multiplier_pct; // 0x160c	
 	float blast_debuff_duration; // 0x1610	
@@ -6622,7 +6622,7 @@ public:
 class CDOTA_Modifier_Medusa_StoneGaze : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15c8	
+	float radius; // 0x15c8	
 	float vision_cone; // 0x15cc	
 	float duration; // 0x15d0	
 	int32_t speed_boost; // 0x15d4	
@@ -13218,7 +13218,7 @@ public:
 class C_DOTA_Item_Ancient_Janggo : public C_DOTA_Item
 {
 public:
-	int32_t radius; // 0x678	
+	float radius; // 0x678	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -15417,7 +15417,7 @@ public:
 class C_DOTA_Ability_Lion_Impale : public C_DOTABaseAbility
 {
 public:
-	int32_t width; // 0x5d8	
+	float width; // 0x5d8	
 	float duration; // 0x5dc	
 	int32_t speed; // 0x5e0	
 	float length_buffer; // 0x5e4	
@@ -15666,7 +15666,7 @@ public:
 	int32_t acceleration; // 0x15d4	
 	float hit_damage; // 0x15d8	
 	int32_t max_distance; // 0x15dc	
-	int32_t shard_radius; // 0x15e0	
+	float shard_radius; // 0x15e0	
 	float shard_delay; // 0x15e4	
 	float pre_flight_time; // 0x15e8	
 	float stun_duration; // 0x15ec	
@@ -18018,7 +18018,7 @@ public:
 class CDOTA_Modifier_Lich_DeathCharge : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15c8	
+	float radius; // 0x15c8	
 	float mana_restore_pct_from_creep; // 0x15cc	
 	float mana_restore_pct_from_hero; // 0x15d0	
 };
@@ -20640,7 +20640,7 @@ public:
 	int32_t m_nJumps; // 0x15d0	
 	int32_t bonus_damage; // 0x15d4	
 	int32_t bonus_attack_speed; // 0x15d8	
-	int32_t omni_slash_radius; // 0x15dc	
+	float omni_slash_radius; // 0x15dc	
 	float attack_rate_multiplier; // 0x15e0	
 	bool m_bFirstHit; // 0x15e4	
 private:
@@ -21407,7 +21407,7 @@ public:
 class C_DOTA_Ability_Medusa_MysticSnake : public C_DOTABaseAbility
 {
 public:
-	int32_t radius; // 0x5d8	
+	float radius; // 0x5d8	
 	int32_t snake_jumps; // 0x5dc	
 	int32_t snake_damage; // 0x5e0	
 	int32_t snake_damage_pct; // 0x5e4	
@@ -30527,7 +30527,7 @@ class CDOTA_Modifier_Item_Stormcrafter : public CDOTA_Buff_Item
 public:
 	GameTime_t m_flNextHit; // 0x15c8	
 	int32_t passive_movement_bonus; // 0x15cc	
-	int32_t range; // 0x15d0	
+	float range; // 0x15d0	
 	float interval; // 0x15d4	
 	int32_t damage; // 0x15d8	
 	float slow_duration; // 0x15dc	
@@ -31601,7 +31601,7 @@ public:
 class C_DOTA_Item_Boots_Of_Bearing : public C_DOTA_Item
 {
 public:
-	int32_t radius; // 0x678	
+	float radius; // 0x678	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -35201,7 +35201,7 @@ public:
 class CDOTA_Modifier_Zuus_ArcLightning : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15c8	
+	float radius; // 0x15c8	
 	int32_t jump_count; // 0x15cc	
 	int32_t arc_damage; // 0x15d0	
 	float jump_delay; // 0x15d4	
@@ -37637,7 +37637,7 @@ public:
 	CHandle< C_DOTA_BaseNPC > m_hTarget; // 0x15c8	
 	Vector m_vPulverizeCenter; // 0x15cc	
 	Vector m_vCasterStartPos; // 0x15d8	
-	int32_t splash_radius; // 0x15e4	
+	float splash_radius; // 0x15e4	
 	float interval; // 0x15e8	
 	float ministun; // 0x15ec	
 	int32_t damage; // 0x15f0	
@@ -38281,7 +38281,7 @@ class CDOTA_Modifier_Primal_Beast_Uproar_Projectile_Thinker : public CDOTA_Buff
 public:
 	int32_t projectiles_per_stack; // 0x15c8	
 	int32_t projectile_speed; // 0x15cc	
-	int32_t projectile_distance; // 0x15d0	
+	float projectile_distance; // 0x15d0	
 	float projectile_width; // 0x15d4	
 	int32_t splinter_angle; // 0x15d8	
 	float split_delay; // 0x15dc	
@@ -69768,7 +69768,7 @@ class CDOTA_Modifier_Item_Rattlecage : public CDOTA_Buff
 public:
 	int32_t m_iDamageTaken; // 0x15c8	
 	int32_t damage_threshold; // 0x15cc	
-	int32_t radius; // 0x15d0	
+	float radius; // 0x15d0	
 	float damage_reset_interval; // 0x15d4	
 	int32_t bonus_armor; // 0x15d8	
 };
@@ -73504,7 +73504,7 @@ public:
 class CDOTA_Modifier_Rubick_FadeBolt : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15c8	
+	float radius; // 0x15c8	
 	int32_t damage; // 0x15cc	
 	int32_t jump_damage_reduction_pct; // 0x15d0	
 	float jump_delay; // 0x15d4	
@@ -78741,7 +78741,7 @@ public:
 class C_DOTA_Ability_Sven_StormBolt : public C_DOTABaseAbility
 {
 public:
-	int32_t vision_radius; // 0x5d8	
+	float vision_radius; // 0x5d8	
 	bool m_bIsAltCastState; // 0x5dc	
 };
 
@@ -79328,7 +79328,7 @@ public:
 	uint32_t m_nAcornTree; // 0x5d8	
 	float projectile_speed; // 0x5dc	
 	float bounce_delay; // 0x5e0	
-	int32_t bounce_range; // 0x5e4	
+	float bounce_range; // 0x5e4	
 	int32_t bounce_count; // 0x5e8	
 	bool m_bIsAltCastState; // 0x5ec	
 private:
@@ -81947,7 +81947,7 @@ public:
 class CDOTA_Modifier_Item_MeteorHammer_Land : public CDOTA_Buff
 {
 public:
-	int32_t impact_radius; // 0x15c8	
+	float impact_radius; // 0x15c8	
 	float land_time; // 0x15cc	
 	float burn_duration; // 0x15d0	
 };
@@ -83851,7 +83851,7 @@ public:
 	int32_t block_damage_ranged; // 0x15d4	
 	int32_t block_damage_melee; // 0x15d8	
 	int32_t block_chance; // 0x15dc	
-	int32_t bonus_aoe_radius; // 0x15e0	
+	float bonus_aoe_radius; // 0x15e0	
 };
 
 // Registered binary: client.dll (project 'client')
