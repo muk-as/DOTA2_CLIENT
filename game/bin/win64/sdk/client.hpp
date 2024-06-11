@@ -9206,7 +9206,7 @@ public:
 class CDOTA_Modifier_Phoenix_Dying_Light_Debuff : public CDOTA_Buff
 {
 public:
-	int32_t damage_pct; // 0x15c8	
+	float damage_pct; // 0x15c8	
 	int32_t aura_damage_upgrade_bonus; // 0x15cc	
 };
 
@@ -43042,7 +43042,7 @@ class CDOTA_Modifier_Bloodseeker_Sanguivore : public CDOTA_Buff
 public:
 	int32_t base_heal; // 0x15c8	
 	int32_t half_bonus_aoe; // 0x15cc	
-	int32_t heal_hp_pct_per_level; // 0x15d0	
+	float heal_hp_pct_per_level; // 0x15d0	
 	int32_t creep_lifesteal_reduction_pct; // 0x15d4	
 };
 
