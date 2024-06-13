@@ -13665,7 +13665,7 @@ class CDOTA_Ability_Weaver_Shukuchi : public CDOTABaseAbility
 {
 public:
 	float duration; // 0x5a0	
-	int32_t radius; // 0x5a4	
+	float radius; // 0x5a4	
 	int32_t damage; // 0x5a8	
 	float fade_time; // 0x5ac	
 };
@@ -25848,7 +25848,7 @@ public:
 class CDOTA_Modifier_Centaur_Stampede : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15c8	
+	float radius; // 0x15c8	
 	int32_t damage_reduction; // 0x15cc	
 	int32_t has_flying_movement; // 0x15d0	
 private:
@@ -27423,7 +27423,7 @@ class CDOTA_Ability_Tusk_Snowball : public CDOTABaseAbility
 private:
 	[[maybe_unused]] uint8_t __pad05a0[0x10]; // 0x5a0
 public:
-	int32_t snowball_windup_radius; // 0x5b0	
+	float snowball_windup_radius; // 0x5b0	
 	int32_t snowball_radius; // 0x5b4	
 	int32_t snowball_grow_rate; // 0x5b8	
 	int32_t snowball_damage; // 0x5bc	
@@ -39990,7 +39990,7 @@ class CDOTA_Modifier_DarkWillow_CursedCrown : public CDOTA_Buff
 public:
 	float delay; // 0x15c8	
 	float stun_duration; // 0x15cc	
-	int32_t stun_radius; // 0x15d0	
+	float stun_radius; // 0x15d0	
 	GameTime_t m_fStartTime; // 0x15d4	
 };
 
@@ -40385,7 +40385,7 @@ class CDOTA_Modifier_Disruptor_Thunder_Strike : public CDOTA_Buff
 {
 public:
 	float strike_interval; // 0x15c8	
-	int32_t radius; // 0x15cc	
+	float radius; // 0x15cc	
 	int32_t strike_damage; // 0x15d0	
 	int32_t strike_damage_bonus; // 0x15d4	
 	int32_t hits_units_inside_kinetic; // 0x15d8	
@@ -44599,7 +44599,7 @@ public:
 class CDOTA_Modifier_Undying_Tombstone_Zombie_Deathstrike : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15c8	
+	float radius; // 0x15c8	
 	float health_threshold_pct; // 0x15cc	
 	float duration; // 0x15d0	
 	CHandle< CDOTABaseAbility > m_hTombstoneSourceAbility; // 0x15d4	
@@ -46263,7 +46263,7 @@ public:
 class CDOTA_Modifier_Disruptor_KineticField : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15c8	
+	float radius; // 0x15c8	
 	Vector m_vOriginLoc; // 0x15cc	
 	bool m_bTruesight; // 0x15d8	
 private:
@@ -55580,7 +55580,7 @@ public:
 class CDOTA_Modifier_Undying_Tombstone_Zombie_Aura : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x15c8	
+	float radius; // 0x15c8	
 	float zombie_interval; // 0x15cc	
 };
 
@@ -57917,7 +57917,7 @@ public:
 class CDOTA_Modifier_Weaver_Shukuchi : public CDOTA_Modifier_Invisible
 {
 public:
-	int32_t radius; // 0x15d8	
+	float radius; // 0x15d8	
 	int32_t damage; // 0x15dc	
 	int32_t speed; // 0x15e0	
 	int32_t min_movespeed_override; // 0x15e4	
@@ -58283,7 +58283,7 @@ public:
 class CDOTA_Ability_SandKing_BurrowStrike : public CDOTABaseAbility
 {
 public:
-	int32_t burrow_width; // 0x5a0	
+	float burrow_width; // 0x5a0	
 	int32_t burrow_speed; // 0x5a4	
 	int32_t burrow_speed_scepter; // 0x5a8	
 	float burrow_anim_time; // 0x5ac	
@@ -66231,7 +66231,7 @@ public:
 	int32_t armor_reduction; // 0x15c8	
 	float scepter_delay; // 0x15cc	
 	int32_t undispellable; // 0x15d0	
-	int32_t puddle_radius; // 0x15d4	
+	float puddle_radius; // 0x15d4	
 	float puddle_duration; // 0x15d8	
 	Vector m_vecLastPuddle; // 0x15dc	
 	CHandle< CBaseEntity > m_hPuddle; // 0x15e8	
@@ -69612,7 +69612,7 @@ public:
 	Vector m_vTargetPos; // 0x15c8	
 	Vector m_vStart; // 0x15d4	
 	float m_flZDelta; // 0x15e0	
-	int32_t radius; // 0x15e4	
+	float radius; // 0x15e4	
 	int32_t corrosive_radius; // 0x15e8	
 	float effect_duration; // 0x15ec	
 	int32_t dive_speed; // 0x15f0	
@@ -70026,7 +70026,7 @@ class CDOTA_Ability_Undying_SoulRip : public CDOTABaseAbility
 {
 public:
 	int32_t damage_per_unit; // 0x5a0	
-	int32_t radius; // 0x5a4	
+	float radius; // 0x5a4	
 	int32_t max_units; // 0x5a8	
 	int32_t tombstone_heal; // 0x5ac	
 };
@@ -73584,7 +73584,7 @@ class CDOTA_Ability_Oracle_FortunesEnd : public CDOTABaseAbility
 {
 public:
 	int32_t damage; // 0x5a0	
-	int32_t radius; // 0x5a4	
+	float radius; // 0x5a4	
 	int32_t bolt_speed; // 0x5a8	
 	float maximum_purge_duration; // 0x5ac	
 	float minimum_purge_duration; // 0x5b0	
@@ -83211,7 +83211,7 @@ class CDOTA_Ability_Undying_Decay : public CDOTABaseAbility
 {
 public:
 	int32_t decay_damage; // 0x5a0	
-	int32_t radius; // 0x5a4	
+	float radius; // 0x5a4	
 	float decay_duration; // 0x5a8	
 	int32_t str_steal; // 0x5ac	
 	float creep_damage_multiplier; // 0x5b0	
@@ -83868,7 +83868,7 @@ class CDOTA_Modifier_Tiny_Avalanche : public CDOTA_Buff
 {
 public:
 	CUtlVector< CDOTA_BaseNPC* > m_pHeroesHit; // 0x15c8	
-	int32_t radius; // 0x15e0	
+	float radius; // 0x15e0	
 	float total_duration; // 0x15e4	
 	float stun_duration; // 0x15e8	
 	int32_t tick_count; // 0x15ec	
@@ -85620,7 +85620,7 @@ public:
 	float duration; // 0x5a0	
 	float activation_delay; // 0x5a4	
 	float wraith_vision_duration; // 0x5a8	
-	int32_t wraith_vision_radius; // 0x5ac	
+	float wraith_vision_radius; // 0x5ac	
 	float spark_damage; // 0x5b0	
 	int32_t creep_damage_bonus_pct; // 0x5b4	
 };
@@ -88661,7 +88661,7 @@ public:
 	int32_t movespeed_slow; // 0x15c8	
 	int32_t attackspeed_slow; // 0x15cc	
 	int32_t disable_vision; // 0x15d0	
-	int32_t vision_penalty; // 0x15d4	
+	float vision_penalty; // 0x15d4	
 	float invisible_damage_pers; // 0x15d8	
 	float invisible_damage_tickrate; // 0x15dc	
 };
@@ -94327,7 +94327,7 @@ public:
 private:
 	[[maybe_unused]] uint8_t __pad1605[0x3]; // 0x1605
 public:
-	int32_t radius; // 0x1608	
+	float radius; // 0x1608	
 	int32_t toss_damage; // 0x160c	
 	int32_t bonus_land_damage_pct; // 0x1610	
 	float land_debuff_duration; // 0x1614	
@@ -96543,7 +96543,7 @@ class CDOTA_Ability_Undying_Tombstone : public CDOTABaseAbility
 public:
 	CUtlVector< CHandle< CBaseEntity > > m_vZombies; // 0x5a0	
 	CHandle< CBaseEntity > hTombstone; // 0x5b8	
-	int32_t radius; // 0x5bc	
+	float radius; // 0x5bc	
 	float duration; // 0x5c0	
 };
 
