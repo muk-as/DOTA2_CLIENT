@@ -4,7 +4,7 @@
 
 // /////////////////////////////////////////////////////////////
 // Binary: client.dll
-// Classes count: 6,499 (Allocated) | 6,566 (Unallocated)
+// Classes count: 6,500 (Allocated) | 6,567 (Unallocated)
 // Enums count: 2 (Allocated) | 78 (Unallocated)
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
@@ -25312,7 +25312,7 @@ public:
 	float aspd_increase_buff_duration; // 0x15c8	
 	float aspd_increase_smoothness; // 0x15cc	
 	int32_t aspd_increase_mana_cost_pct; // 0x15d0	
-	int32_t aspd_increase_rate_pct; // 0x15d4	
+	float aspd_increase_rate_pct; // 0x15d4	
 	GameTime_t flMaxAspdGameTime; // 0x15d8	
 	int32_t m_iTotalAmount; // 0x15dc	
 	float m_flStartingAttackSpeed; // 0x15e0	
@@ -41606,11 +41606,12 @@ public:
 	int32_t bonus_damage; // 0x15c8	
 	int32_t m_iBounceRadius; // 0x15cc	
 	int32_t bonus_accuracy; // 0x15d0	
-	bool m_bFirstAttack; // 0x15d4	
+	int32_t bonus_attack_range; // 0x15d4	
+	bool m_bFirstAttack; // 0x15d8	
 private:
-	[[maybe_unused]] uint8_t __pad15d5[0x3]; // 0x15d5
+	[[maybe_unused]] uint8_t __pad15d9[0x3]; // 0x15d9
 public:
-	int32_t initial_target_count; // 0x15d8	
+	int32_t initial_target_count; // 0x15dc	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -80328,6 +80329,16 @@ class CDOTA_Modifier_Legion_Commander_PressTheAttack_Immunity : public CDOTA_Mod
 {
 public:
 	int32_t model_scale; // 0x15c8	
+};
+
+// Registered binary: client.dll (project 'client')
+// Alignment: 8
+// Size: 0x15c8
+// Has VTable
+class CDOTA_Modifier_Elder_Titan_AncestralSpirit_Invincibility : public CDOTA_Buff
+{
+public:
+	// No schema binary for binding
 };
 
 // Registered binary: client.dll (project 'client')
