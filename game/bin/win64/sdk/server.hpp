@@ -47892,17 +47892,18 @@ public:
 
 // Registered binary: server.dll (project 'server')
 // Alignment: 8
-// Size: 0x15e8
+// Size: 0x15f0
 // Has VTable
 class CDOTA_Modifier_NightStalker_CripplingFear_Aura : public CDOTA_Buff
 {
 public:
 	float radius; // 0x15c8	
 	int32_t death_refresh; // 0x15cc	
-	float mana_pers_day; // 0x15d0	
-	float mana_pers_night; // 0x15d4	
-	float mana_interval; // 0x15d8	
-	ParticleIndex_t m_nFXIndex; // 0x15dc	
+	float mana_pct_cost; // 0x15d0	
+	float mana_interval; // 0x15d4	
+	ParticleIndex_t m_nFXIndex; // 0x15d8	
+	float base_duration; // 0x15dc	
+	GameTime_t m_flStartTime; // 0x15e0	
 };
 
 // Registered binary: server.dll (project 'server')
@@ -49790,7 +49791,7 @@ public:
 	Vector m_vDirection; // 0x15c8	
 	float m_flEndTime; // 0x15d4	
 	float m_flCurTime; // 0x15d8	
-	int32_t push_length; // 0x15dc	
+	float push_length; // 0x15dc	
 	float push_duration; // 0x15e0	
 };
 
@@ -81232,7 +81233,7 @@ public:
 class CDOTA_NPC_Observer_Ward_TrueSight : public CDOTA_NPC_Observer_Ward
 {
 public:
-	int32_t m_iTrueSight; // 0x17d8	
+	float m_flTrueSight; // 0x17d8	
 	CEntityHandle m_hCasterEntity; // 0x17dc	
 	CEntityHandle m_hAbilityEntity; // 0x17e0	
 };
@@ -82515,13 +82516,14 @@ public:
 
 // Registered binary: server.dll (project 'server')
 // Alignment: 8
-// Size: 0x15d0
+// Size: 0x15d8
 // Has VTable
 class CDOTA_Modifier_Lifestealer_CorpseEater : public CDOTA_Buff
 {
 public:
-	int32_t bonus_hp; // 0x15c8	
-	int32_t m_nTotalBonusHP; // 0x15cc	
+	int32_t bonus_hp_per_creep; // 0x15c8	
+	int32_t bonus_hp_per_hero; // 0x15cc	
+	int32_t m_nTotalBonusHP; // 0x15d0	
 };
 
 // Registered binary: server.dll (project 'server')
