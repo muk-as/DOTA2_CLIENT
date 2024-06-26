@@ -107,14 +107,14 @@ function SwitchToNewHero( nHeroID, nHeroVariant )
 	SetHeroPickerVisible( false );
 }
 
-function SwitchToNewFacet( nHeroFacet )
+function SwitchToNewFacet( nHeroID, nHeroFacet )
 {
 	$( '#SelectHeroContainer' ).SetHasClass( 'PickMainHero', true );
 
 	var PlayerHeroImage = $( '#PlayerHeroImage' );
 	if ( PlayerHeroImage != null )
 	{
-		$.DispatchEvent( 'FireCustomGameEvent_Str', 'SelectMainHeroButtonPressed', String( PlayerHeroImage.heroid ) + ':' + String( nHeroFacet ) );	
+		$.DispatchEvent( 'FireCustomGameEvent_Str', 'SelectMainHeroButtonPressed', String( nHeroID ) + ':' + String( nHeroFacet ) );	
 	}
 }
 
