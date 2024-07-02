@@ -4,7 +4,7 @@
 
 // /////////////////////////////////////////////////////////////
 // Binary: server.dll
-// Classes count: 6,739 (Allocated) | 6,992 (Unallocated)
+// Classes count: 6,739 (Allocated) | 6,991 (Unallocated)
 // Enums count: 3 (Allocated) | 347 (Unallocated)
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
@@ -41852,16 +41852,12 @@ public:
 
 // Registered binary: server.dll (project 'server')
 // Alignment: 8
-// Size: 0x5c0
+// Size: 0x5a0
 // Has VTable
 class CDOTA_Ability_Silencer_GlaivesOfWisdom : public CDOTABaseAbility
 {
 public:
-	int32_t m_iAttackIndex; // 0x5a0	
-private:
-	[[maybe_unused]] uint8_t __pad05a4[0x4]; // 0x5a4
-public:
-	CUtlVector< sGlaiveInfoSilencer > m_GlaiveInfo; // 0x5a8	
+	// No schema binary for binding
 };
 
 // Registered binary: server.dll (project 'server')
@@ -101470,17 +101466,6 @@ public:
 
 // Registered binary: server.dll (project 'server')
 // Alignment: 8
-// Size: 0x20
-class sGlaiveInfoSilencer
-{
-public:
-	int32_t iAttackIndex; // 0x0	
-	int32_t iBounceCount; // 0x4	
-	CUtlVector< CHandle< CBaseEntity > > hAlreadyHitList; // 0x8	
-};
-
-// Registered binary: server.dll (project 'server')
-// Alignment: 8
 // Size: 0x5a0
 // Has VTable
 class CDOTA_Ability_Special_Bonus_Unique_Beastmaster_6 : public CDOTABaseAbility
@@ -104750,7 +104735,7 @@ public:
 
 // Registered binary: server.dll (project 'server')
 // Alignment: 8
-// Size: 0xd8
+// Size: 0xe8
 class CDOTA_AttackRecord
 {
 private:
@@ -104819,6 +104804,10 @@ private:
 public:
 	ParticleIndex_t m_iCustomFXIndex; // 0xb8	
 	DOTAProjectileAttachment_t m_iCustomProjectileAttachment; // 0xbc	
+private:
+	[[maybe_unused]] uint8_t __pad00c0[0x18]; // 0xc0
+public:
+	KeyValues3 m_kvExtraData; // 0xd8	
 };
 
 // Registered binary: server.dll (project 'server')

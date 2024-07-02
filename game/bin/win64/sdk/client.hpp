@@ -26263,16 +26263,12 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x5f8
+// Size: 0x5d8
 // Has VTable
 class C_DOTA_Ability_Silencer_GlaivesOfWisdom : public C_DOTABaseAbility
 {
 public:
-	int32_t m_iAttackIndex; // 0x5d8	
-private:
-	[[maybe_unused]] uint8_t __pad05dc[0x4]; // 0x5dc
-public:
-	CUtlVector< sGlaiveInfoSilencer > m_GlaiveInfo; // 0x5e0	
+	// No schema binary for binding
 };
 
 // Registered binary: client.dll (project 'client')

@@ -4,7 +4,7 @@
 
 // /////////////////////////////////////////////////////////////
 // Binary: !GlobalTypes
-// Classes count: 1,582 (Allocated) | 1,582 (Unallocated)
+// Classes count: 1,581 (Allocated) | 1,581 (Unallocated)
 // Enums count: 623 (Allocated) | 623 (Unallocated)
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
@@ -32716,17 +32716,6 @@ public:
 
 // Registered binary: server.dll (project 'server')
 // Alignment: 8
-// Size: 0x20
-class sGlaiveInfoSilencer
-{
-public:
-	int32_t iAttackIndex; // 0x0	
-	int32_t iBounceCount; // 0x4	
-	CUtlVector< CHandle< CBaseEntity > > hAlreadyHitList; // 0x8	
-};
-
-// Registered binary: server.dll (project 'server')
-// Alignment: 8
 // Size: 0x50
 // 
 // MGetKV3ClassDefaults
@@ -43588,7 +43577,7 @@ public:
 
 // Registered binary: server.dll (project 'server')
 // Alignment: 8
-// Size: 0xd8
+// Size: 0xe8
 class CDOTA_AttackRecord
 {
 private:
@@ -43657,6 +43646,10 @@ private:
 public:
 	ParticleIndex_t m_iCustomFXIndex; // 0xb8	
 	DOTAProjectileAttachment_t m_iCustomProjectileAttachment; // 0xbc	
+private:
+	[[maybe_unused]] uint8_t __pad00c0[0x18]; // 0xc0
+public:
+	KeyValues3 m_kvExtraData; // 0xd8	
 };
 
 // Registered binary: particles.dll (project 'particles')
