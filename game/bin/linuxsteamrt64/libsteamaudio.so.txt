@@ -199,6 +199,7 @@ BC4_UNORM
 BC5_SNORM
 BC5_TYPELESS
 BC5_UNORM
+BEnable SIMD code path for shoebox reverb processor
 BF-CBC
 BF-CFB
 BF-ECB
@@ -217,6 +218,7 @@ BakeReverb
 BakeReverb: Cancelled
 BakeReverb: Max probes (%u) limit exceeded (%d). Bake cancelled
 BakeReverb: Saved %zu bytes
+BakeReverb: Unable to create probe array. (%d
 BakeReverb: Unable to create probe batch. (%d
 BakeReverb: Unable to create serialized object. (%d
 BakedLODBuilderMgr001
@@ -363,7 +365,6 @@ EXPORTSYSTEM_INTERFACE_VERSION_001
 EarlyInit_Tier0
 EconItemToolModel_001
 Edge [ %d / %d ] connection count: %d
-Enable SIMD code path for shoebox reverb processor
 Enable caching listener probe neighborhood for pathing
 Enable custom HRTF loading
 Enable perspective correction for 3D audio
@@ -448,7 +449,6 @@ GetNearestNav: Area[%d] blocked
 GetNearestNav: Area[%d] completely disconnected
 GetNearestNav: Area[%d] failed LOS to original point
 GetNearestNav: Area[%d] failed LOS to original point above the area
-GetNearestNav: Area[%d] failed to find closest point on poly
 GetNearestNav: Area[%d] is terminus
 GetNearestNav: Area[%d] only has incoming connections
 GetNearestNav: Area[%d] only outside connections
@@ -463,6 +463,7 @@ GetNearestNav: Empty Grid
 GetNearestNav: Invalid Ground Height
 GetNearestNav: Pos Invalid
 GetNearestNav: Returning area [%d
+GetNearestNav: [%d] Areas that failed poly test
 GetResourceManifestCount
 GetResourceManifests
 GtB<Tt>1
@@ -475,6 +476,7 @@ H3P8H
 H91sWL
 H9D$xt
 H;2t-H
+H;=3s
 H;D$pH
 H;E0sR
 HBposition
@@ -548,7 +550,6 @@ Key field (volume) missing in custom hrtf properties file. Setting it to 0 dB
 KeyValueCache001
 L$HH;G
 L$XdH3
-L0]T30L
 L9cHu
 L9{Hu
 L;l$puYH
@@ -803,6 +804,7 @@ Probes: Probe Batch is null
 PropWorldOrigin
 PropertyEditorSystem_001
 Proxy Certificate Information
+R0]T30
 R10G10B10A2_TYPELESS
 R10G10B10A2_UINT
 R10G10B10A2_UNORM
@@ -914,6 +916,9 @@ ResourceCompiler/SteamAudio/PathingDefaults/ProbeVisRadius
 ResourceCompiler/SteamAudio/PathingDefaults/ProbeVisThreshold
 ResourceCompiler/SteamAudio/PathingDefaults/RebakeOption
 ResourceCompiler/SteamAudio/Reverb/AmbisonicsOrder
+ResourceCompiler/SteamAudio/ReverbDefaults/ClusteringCubemapResolution
+ResourceCompiler/SteamAudio/ReverbDefaults/ClusteringDepthThreshold
+ResourceCompiler/SteamAudio/ReverbDefaults/ClusteringEnabled
 ResourceCompiler/SteamAudio/ReverbDefaults/GridSpacing
 ResourceCompiler/SteamAudio/ReverbDefaults/GridType
 ResourceCompiler/SteamAudio/ReverbDefaults/HeightAboveFloor
@@ -1121,6 +1126,7 @@ TLS init function for
 TLS wrapper function for
 TS lib
 TUUBk
+TanFrameQuat
 TestScriptMgr001
 TextLayout_001
 The Navigation Mesh was built with an old server dll - reanalyze the mesh
@@ -1195,6 +1201,7 @@ VScriptManager010
 VStringTokenSystem001
 VTT for
 VUUUATI
+VWebm001
 V_DoubleToString_Unsafe
 V_FixDoubleSlashes
 V_FloatToString_Unsafe
@@ -1241,7 +1248,6 @@ VertexPaintTintColor
 VisBuilder_001
 Vrad3_001
 Vs>b*w2
-W1rGP1
 WARNING: Failed to load %s: %s
 Warning
 Warning: NavMesh place %s is undefined
@@ -1427,6 +1433,7 @@ ZN10CUtlBuffer3GetEPvi
 ZN10CUtlBuffer3PutEPKvi
 ZN10CUtlBuffer6PrintfEPKcz
 ZN10CUtlBuffer7GetLineEPci
+ZN10CUtlBuffer7GetUpToEPvi
 ZN10CUtlBuffer7SeekGetENS_10SeekType_tEi
 ZN10CUtlBuffer7SeekPutENS_10SeekType_tEi
 ZN10CUtlBuffer8CheckGetEi
@@ -6071,7 +6078,7 @@ holdInstructionReject
 homePostalAddress
 homeTelephoneNumber
 houseIdentifier
-i2t<f2R
+i2t<f2
 iA5StringSyntax
 iA9\$$|bI
 iconv_close
@@ -6349,9 +6356,11 @@ iplHRTFRelease
 iplImpulseResponse2AddChannel
 iplImpulseResponse2AddSample
 iplImpulseResponse2Create
+iplImpulseResponse2GetChannel
 iplImpulseResponse2Release
 iplImpulseResponse2Reset
 iplImpulseResponse2SetChannel
+iplImpulseResponse2SetChannelDelayed
 iplImpulseResponse2SetSample
 iplImpulseResponse2Swap
 iplImpulseResponse2SwapSource
@@ -6365,12 +6374,18 @@ iplProbeArrayGenerateProbes
 iplProbeArrayGetNumProbes
 iplProbeArrayGetProbe
 iplProbeArrayRelease
+iplProbeArrayResize
+iplProbeArraySetProbe
 iplProbeBatchAddProbe
+iplProbeBatchAddProbeArray
+iplProbeBatchAddProbeArrayAndCluster
 iplProbeBatchCommit
 iplProbeBatchCreate
+iplProbeBatchCreateNonUniform
 iplProbeBatchGetInfluencingProbes
 iplProbeBatchGetProbeArray
 iplProbeBatchLoad
+iplProbeBatchLoadNonUniform
 iplProbeBatchRelease
 iplProbeBatchSave
 iplProbeNeighborhoodCalculateWeights
@@ -7023,6 +7038,9 @@ steamaudio_pathing_visibility_samples
 steamaudio_pathing_visibility_threshold
 steamaudio_reverb_ambisonic_order
 steamaudio_reverb_bounces
+steamaudio_reverb_clustering_cubemap_resolution
+steamaudio_reverb_clustering_depth_threshold
+steamaudio_reverb_clustering_enable
 steamaudio_reverb_grid_spacing
 steamaudio_reverb_grid_type
 steamaudio_reverb_height_above_floor
@@ -7111,7 +7129,6 @@ t~Lc8I
 u%AUATUSH
 u-AWAVAUATUH
 u/H#D
-u0+!n0
 u8AVAUATUSH
 ua8CHtdH
 ubD9kH
@@ -7148,6 +7165,7 @@ userClass
 userId
 userPassword
 uxHcG
+v1rGP1
 vector
 vector2
 vector2d
@@ -7203,5 +7221,6 @@ xX0123456789abcdefABCDEF
 x[A\A
 x[A\A]A^A
 xdigit
+y0+!n0
 yOk GU5T
 zlib compression

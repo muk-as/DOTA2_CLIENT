@@ -6,22 +6,25 @@
 		<include src="s2r://panorama/styles/battle_pass/crownfall/bp_crownfall_shared.vcss_c" />
 		<include src="s2r://panorama/styles/battle_pass/crownfall/front_page_crownfall_store.vcss_c" />
 	</styles>
-	<CustomLayoutPanel class="CrownfallStoreCell" onactivate="DOTAShowBPCrownfallStorePage()">
-		<Panel class="CellBackground" />
-		<Panel class="CellContent">
-			<Label class="CellTitle" text="#DOTA_Crownfall_FrontpageStore_NowInStore" />
-			<Panel class="StoreItems">
-				<Panel class="StoreItem Act2PathfinderPack" onactivate="DOTAShowBPCrownfallStoreItem( 29638 )">
-					<Panel class="StoreItemImage" />
-					<Label class="StoreItemLabel" text="#DOTA_Crownfall_FrontpageStore_Act2PathfinderPack" />
-				</Panel>
-				<Panel class="StoreItem Treasure3" onactivate="DOTAShowBPCrownfallStoreItem( 30939 )">
-					<DOTAUIEconSetPreview class="StoreItemImage" pin-fov="vertical" itemdef="30939" cameraOrigin="0 0 0" rotation="0" drawbackground="false" require-composition-layer="true" suppress-intro-effects="true" />
-					<Label class="StoreItemLabel" text="#DOTA_Crownfall_FrontpageStore_Treasure3" />
+	<CustomLayoutPanel class="CrownfallStoreCell" onload="$.GetContextPanel().SetDialogVariableInt( &apos;act3_pack_item_def&apos;, 29674 );">
+		<Image id="CellBackground" src="s2r://panorama/images/events/crownfall/store/act3_store_cell_background_png.vtex" scaling="cover" />
+		<Label class="CellTitle TitleSmall" text="#DOTA_Crownfall_Tab_Store" />
+		<Image class="CellImage" onmouseover="AddStyle( CellBackground, Hovered );" onmouseout="RemoveStyle( CellBackground, Hovered );" onactivate="DOTAShowBPCrownfallStoreItem( 29674 )" src="s2r://panorama/images/events/crownfall/store/store_overview_event_pass_act3_web_psd.vtex" scaling="stretch-to-fit-preserve-aspect" />
+		<Panel class="CellContent" hittest="false">
+			<Panel class="StoreItemContainer" hittest="false">
+				<Panel class="StoreItem">
+					<Panel id="NewArrivalBadge" hittest="false">
+						<Label class="LabelSmall" text="#DOTA_CrownfallStore_NewForAct3" />
+					</Panel>
+					<Label class="StoreItemTitle" text="#DOTA_CrownfallStore_Act3Pass_Name" />
+					<Label class="StoreItemPrice" text="{g:dota_item_price:act3_pack_item_def}" />
 				</Panel>
 			</Panel>
-			<DOTACrownfallButton id="ViewStoreButton" class="Secondary" text="#DOTA_Crownfall_ViewStoreButtonLabel" onactivate="DOTAShowBPCrownfallStorePage()" />
-			<Label class="DiscountText" text="#DOTA_Crownfall_StoreCell_DiscountAvailable" />
+			<Panel class="CellFooter">
+				<DOTACrownfallButton id="ViewStoreButton" class="Secondary" text="#DOTA_Crownfall_ViewStoreButtonLabel" onactivate="DOTAShowBPCrownfallStoreItem( 0 )" />
+				<Label class="DiscountText" text="#DOTA_Crownfall_StoreCell_DiscountAvailable" />
+			</Panel>
 		</Panel>
+		<Panel class="CellBorder" hittest="false" />
 	</CustomLayoutPanel>
 </root>

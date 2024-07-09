@@ -302,13 +302,13 @@ DOTACrownfallOverworldPage.ShowingIntro.IntroState0
 	width: 100%;
 	flow-children: down;
 	padding: 8px 12px;
-	background-color: gradient( linear, 0% 30%, 0% 100%, from( #1f2b39 ), to( #161c25 ) );
+	background-color: gradient( linear, 0% 30%, 0% 100%, from( #1b2532 ), to( #161c25 ) );
 	box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.02);
 	margin: 2px;
 	margin-bottom: 0px;
 	border-right: 3px solid transparent;
 	transition-duration: 0.1s;
-	transition-property: background-color;
+	transition-property: background-color, brightness;
 }
 
 #ActSelector .ChapterNavItem.Inactive
@@ -354,10 +354,20 @@ DOTACrownfallOverworldPage.ShowingIntro.IntroState0
 
 #ActSelector .ChapterNavItem:hover:not(.Inactive)
 {
-	background-color: gradient( linear, 0% 30%, 0% 100%, from( #3f5167 ), to( #27303d ) );
+	brightness: 1.5;
 }
 
 #ActSelector .ChapterNavItem:hover:not(.Inactive) Label
+{
+	color: whitesmoke;
+}
+
+#ActSelector .ChapterNavItem.Selected
+{
+	background-color: gradient( linear, 0% 30%, 0% 100%, from( #495d75 ), to( #2e3947 ) );
+}
+
+#ActSelector .ChapterNavItem.Selected .ActLabel,#ActSelector .ChapterNavItem.Selected .ActTitle
 {
 	color: white;
 }
@@ -376,12 +386,6 @@ DOTACrownfallOverworldPage.ShowingIntro.IntroState0
 {
 	border-color: white;
 	border-brush: gradient( linear, 0% 30%, 0% 100%, from( #FFF2DF ), color-stop( 0.48, #ebc386 ), color-stop( 0.52, #BA8C47 ), to( #8d6c3a ) );
-	background-color: gradient( linear, 0% 30%, 0% 100%, from( #3f5167 ), to( #27303d ) );
-}
-
-#ActSelector .ChapterNavItem.Active .ActLabel,#ActSelector .ChapterNavItem.Active .ActTitle
-{
-	color: white;
 }
 
 #ActSelector .ChapterNavItem.Active .CurrentlyActiveLabel
@@ -392,6 +396,14 @@ DOTACrownfallOverworldPage.ShowingIntro.IntroState0
 #ActSelector .ChapterNavItem.Active .ActiveBorder
 {
 	visibility: visible;
+}
+
+#ActSelector .ChapterNavItem.Locked
+{
+	opacity: 0.1;
+	background-color: none;
+	border: 0px;
+	box-shadow: none;
 }
 
 #RewardsPanel
@@ -435,7 +447,7 @@ DOTACrownfallOverworldPage.ShowingIntro.IntroState0
 	horizontal-align: center;
 	flow-children: down;
 	overflow: noclip;
-	padding-bottom: 16px;
+	padding-bottom: 20px;
 }
 
 #RewardsPanel .ActInfo .CrownfallLogo,#RewardsPanel .ActInfo .CrownfallLogoCN
@@ -500,7 +512,7 @@ DOTACrownfallOverworldPage.ShowingIntro.IntroState0
 	horizontal-align: center;
 	margin-left: 2px;
 	margin-right: -8px;
-	margin-top: -2px;
+	margin-top: -4px;
 	transition-property: wash-color;
 	transition-duration: 0.1s;
 	visibility: collapse;
@@ -536,7 +548,7 @@ DOTACrownfallOverworldPage.ShowingIntro.IntroState0
 #RewardsPanel #ActivateButton
 {
 	horizontal-align: center;
-	margin: -25px 0px 8px;
+	margin: -25px 0px 0px;
 }
 
 #RewardsPanel #ActivateButton:disabled
@@ -614,7 +626,17 @@ DOTACrownfallOverworldPage.ShowingIntro.IntroState0
 	margin: 8px 0px 16px;
 }
 
-#RewardsPanel .RewardsContainer .RewardsTitle
+#RewardsPanel .RewardsContainer .ProgressBarContainer
+{
+	width: 100%;
+	padding: 8px 20px;
+	margin-top: 0px;
+	tooltip-position: top;
+	tooltip-body-position: 50% 40px;
+	flow-children: down;
+}
+
+#RewardsPanel .RewardsContainer .ProgressBarContainer .RewardsTitle
 {
 	horizontal-align: center;
 	text-align: center;
@@ -624,23 +646,15 @@ DOTACrownfallOverworldPage.ShowingIntro.IntroState0
 	color: gradient( linear, 0% 30%, 0% 100%, from( #ffffff ), color-stop( 0.48, #ccdfe6 ), color-stop( 0.52, #89a2b0 ), to( #5e6b70 ) );
 }
 
-.Language_schinese #RewardsPanel .RewardsContainer .RewardsTitle,.Language_tchinese #RewardsPanel .RewardsContainer .RewardsTitle
+.Language_schinese #RewardsPanel .RewardsContainer .ProgressBarContainer .RewardsTitle,.Language_tchinese #RewardsPanel .RewardsContainer .ProgressBarContainer .RewardsTitle
 {
 	font-family: defaultFont;
 	font-size: 18px;
 }
 
-#RewardsPanel .RewardsContainer.Premium .RewardsTitle
+#RewardsPanel .RewardsContainer .ProgressBarContainer.Premium .RewardsTitle
 {
 	color: gradient( linear, 0% 30%, 0% 100%, from( #FFF2DF ), color-stop( 0.48, #ebc386 ), color-stop( 0.52, #BA8C47 ), to( #8d6c3a ) );
-}
-
-#RewardsPanel .RewardsContainer .ProgressBarContainer
-{
-	width: 100%;
-	padding: 8px 20px;
-	margin-top: -6px;
-	tooltip-position: top;
 }
 
 #RewardsPanel .RewardsContainer .ProgressBarContainer .ProgressBar
@@ -906,6 +920,13 @@ DOTACrownfallOverworldPage.ShowingIntro.IntroState0
 	height: 20px;
 	background-color: gradient( linear, 0% 0%, 0% 100%, from( gold1 ), to( gold3 ) );
 	opacity-mask: url("s2r://panorama/images/events/crownfall/overworld/nodes/icons/encounter_pit_png.vtex");
+}
+
+#RewardsPanel #EncounterShortcutContainer #EncounterShortcut_dragon_hoard .ShortcutIcon
+{
+	width: 24px;
+	height: 24px;
+	opacity-mask: url("s2r://panorama/images/events/crownfall/overworld/nodes/icons/encounter_library_png.vtex");
 }
 
 #RewardsPanel .ShortcutsTitle

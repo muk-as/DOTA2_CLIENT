@@ -17,21 +17,20 @@
 15CTier1AppSystemI12IPulseSystemLx0EE
 15CTier2AppSystemI12IPulseSystemLx0EE
 15CTier3AppSystemI12IPulseSystemLx0EE
+15IGapHost_Cursor
 16CGenericExprPart
 16CPulseExecCursor
+16IGapHost_ExecLog
+16IGapHost_Unknown
 16ILoggingListener
 17CPulseTypeManager
 18CGenericExpr_Unary
+18CPulseCell_Unknown
 19CGenericExpr_Binary
 19CPulseCell_BaseFlow
 19CPulseCell_Timeline
 19CSchemaRegistration
 1:1: Tokens : ( T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | TOK_COLON | OPEN_BRACE | CLOSE_BRACE | OPEN_PAREN | CLOSE_PAREN | OPEN_BRACKET | CLOSE_BRACKET | SEMICOLON | OP_EQUAL | COMMA | DOUBLE_AND | NEGATIVE_TOK | DOUBLE_OR | LITERAL_TRUE | LITERAL_FALSE | POS_INTLITERAL | POS_FLOATLITERAL | ID | DOUBLE_QUOTED_STRING | SINGLE_QUOTED_STRING | SINGLE_LINE_COMMENT | ML_COMMENT | WS | UNRECOGNIZED
-1ɾ YA1H
-1ɾ!YA1
-1ɾ!YA1H
-1Ҿ!YA1
-1Ҿ#YA1H
 20CPostConnectCallback
 20CPulseCell_BaseValue
 20FakeEntityDerivedA_t
@@ -56,6 +55,7 @@
 23CKV3TransferSaveContext
 23CPulseCell_Inflow_Yield
 23CPulseTestHandleService
+23IGapHost_YieldingCursor
 23IGapTypeQueriesForScope
 24CGenericExpr_BoolLiteral
 24CPulseCell_Inflow_Method
@@ -130,7 +130,6 @@
 8@%rdi 8@%rsi
 8@%rdx 8@%rax
 8A\\A]A
-8IcD$4f
 8Lc&D;f
 8SourceTS
 9ISourceTS
@@ -139,7 +138,7 @@ A default string (set
 A testing-only domain that doesn't correspond to any in-engine use case
 A testing-only domain that draws on a 2D canvas with a LOGO-like 'turtle' cursor
 A#N\\Mc
-A9\\$htf
+A9\\$ptf
 A9\f$u
 A9]\bw\nD
 A9v0|#A
@@ -217,6 +216,7 @@ Any extra waiting cursors will be terminated. -1 for infinite cursors
 Apply the same tag we're waiting on to the resulting cursor upon wait completion. Can be used to wait on our result cursor with the same tag
 Are we currently running unit tests
 Arg '%s
+AssertFatalCast
 AssetBrowserSystem_001
 AssetPreviewSystem_001
 AssetRenameSystem_001
@@ -338,6 +338,7 @@ CPulseCell_Test_MultiOutflow_WithParams_Yielding::CursorState_t
 CPulseCell_Test_NoInflow
 CPulseCell_Timeline
 CPulseCell_Timeline::TimelineEvent_t
+CPulseCell_Unknown
 CPulseCell_Val_TestDomainFindEntityByName
 CPulseCell_Val_TestDomainGetEntityName
 CPulseCell_Value_RandomInt
@@ -473,7 +474,7 @@ Cannot allocate abstract class
 Cannot deduce for class
 Cannot reference domain '%s' from '%s'\n
 Cannot reinterpret instance (actual: %s) from (original) %s to (desired) %s
-Cast of %s loses value information (returning %s) on %s:%d\n
+Cast of %s loses value information (returning %s) in %s on %s:%u\n
 Cast of %s loses value information (returning %s)\n
 Causes each execution cursor to pause at this node for a fixed period of time. Each cursor will wake up and resume execution when the time expires, unless aborted or early-woken
 Causes each execution cursor to wait for the completion of all prior cursors that have visited this node. Use this to safely support multiple triggers to areas of the graph that take time to complete
@@ -529,6 +530,7 @@ D$\bw\f[A
 D$\ft\rH
 D$\vt\tM
 D8 t,D
+D9c }jA
 D9l$\f
 D;0tbH
 DATAATI
@@ -561,13 +563,11 @@ Do not stop the current yielding node, but do not continue to the next node afte
 Domain: %s\n
 Double-save to Member '%s
 E.hmH
-E1> YA1H
-E1>!YA1H
 E4f3XL
 E5Li%H
 E9l$\bw
 E;t$0D
-E;t$l
+E;t$t
 EPulseGraphExecutionHistoryFlag
 EQ_BOOL
 EQ_EHANDLE
@@ -648,7 +648,6 @@ FakeEntity_tAPI!GetIntValue
 FakeEntity_tAPI!GetName
 FakeEntity_tAPI!SetAndGetIntValue
 FakeEntity_tAPI!SetIntValue
-FatalCastNumberInternal
 Find Fake Entity
 Find a spawned entity by name
 Find all the yielded cursors on this graph and cancel them
@@ -723,7 +722,6 @@ Get the test value as an int
 GetBlackboardReference R%d <- BR%d (%s
 GetCPUInformation
 GetConst R%d <- C%d (%s
-GetDefaultMiniDumpTypeFlags
 GetDomainValue R%d <- DV%d (%s
 GetInlineConst R%d <- C%d (%s
 GetResourceManifestCount
@@ -735,7 +733,6 @@ Gtx<Ttt1
 H+E\bH9
 H+G\bH9
 H+w\bH9
-H95)A\t
 H9D$\bthH
 H9J\btI
 H9J\btg
@@ -744,12 +741,12 @@ H9\at'H
 H9\at:A
 H9\at\aH
 H9~\bt\b
-H;=Q \a
 H\b[A
 HammerMapLoader001
 HandleInt
 HandleIntDerived
 HardCancel
+HcC ;C0
 HcG\bIc
 HcK8Ic
 HcK\bIc
@@ -764,6 +761,9 @@ I could not work out what I was expecting, like so many of us these days!\n
 I+D$\bI9
 I9F\bu=I
 ID_CHAR
+IGapHost_Cursor
+IGapHost_ExecLog
+IGapHost_YieldingCursor
 IKV3TransferInterface_EHandle_Load
 IKV3TransferInterface_EHandle_Save
 IKV3TransferInterface_GameTime_Load
@@ -786,7 +786,10 @@ ITM_memcpyRnWt
 ITM_memcpyRtWn
 ITM_registerTMCloneTable
 I\tD$8A
+IcD$<f
 IcD$\fH
+IcE A;E0
+IcE H
 IcE8L
 IcL$ Ic
 IcM`Ic
@@ -824,7 +827,6 @@ Invoke Lib %s
 Invoke binding %d (%s) not found, converting to NOP\n
 Invoke%d: Cell%d %s\n
 Invoke%d: LibraryFunc %s\n
-InvokeMiniDumpHandler
 Is In Test Mode
 IsValidIndex( i
 JUMP_COND
@@ -861,6 +863,7 @@ LTE_FLOAT
 LTE_INT
 LT_FLOAT
 LT_INT
+LayoutAndAllocateConstantStorage
 Lc/D;o
 Lc3D;s
 Lc;IǄ$07
@@ -942,6 +945,7 @@ Max Float
 Max Int
 Maximum of two values (float
 Maximum of two values (int
+Mcl$\bH
 Mct$ M
 Mct$HH
 Mc|$\bH
@@ -969,6 +973,7 @@ Mismatched Token Exception
 Mismatched set
 Missing %s \n
 Missing <EOF>\n
+Missing cell schema '%s', replacing with 'CPulseCell_Unknown'\n
 Missing required transfer interface: %s
 Missing token
 Missing token %s
@@ -1084,6 +1089,7 @@ PVAL_PANORAMA_PANEL_HANDLE
 PVAL_RESOURCE
 PVAL_SCHEMA_ENUM
 PVAL_SNDEVT_GUID
+PVAL_SNDEVT_NAME
 PVAL_STRING
 PVAL_TEST_HANDLE
 PVAL_TRANSFORM
@@ -1121,6 +1127,7 @@ PrintStringWithLeafSuggestions: %s\n
 Prints the execution history of a graph by filename or instanceid
 Prop( %s
 PropertyEditorSystem_001
+PtdH9
 PublicMethod
 PublicMethod '%s' defined with invalid function as second paramter
 PublicMethod invoked with unrecognized 'this' value
@@ -1271,7 +1278,8 @@ SignatureOutflow_Resume
 Sine of angle, in degrees (0 -> 0, 90 -> 1
 Skip this node after the limit. Check Type does not apply, the limit will always be checked
 SoftCancel
-SoundEvent Handle
+SoundEvent
+SoundEvent Instance Handle
 SoundOpSystem001
 SoundOpSystemEdit001
 SoundService_001
@@ -1343,15 +1351,15 @@ Tag Removed: '%s
 Target
 Terminate
 TernaryConditional
-Test Compiled Params_ After Type Changes
-Test Compiled Params_ Before Type Changes
+Test Compiled Params  After Type Changes
+Test Compiled Params  Before Type Changes
 Test Domain
 Test Handle
 Test Mode Assert True
-Test Optional Parameters_ After Defaults Added
-Test Optional Parameters_ After Reorder Sparse Defaults
-Test Optional Parameters_ Before Defaults Added
-Test Optional Parameters_ Before Reorder Sparse Defaults
+Test Optional Parameters  After Defaults Added
+Test Optional Parameters  After Reorder Sparse Defaults
+Test Optional Parameters  Before Defaults Added
+Test Optional Parameters  Before Reorder Sparse Defaults
 Test functions for the derived test domain
 Test node that just generates the integer 50. Nothing to see here
 Test node that picks between two outflows as specified in the test domain
@@ -1427,6 +1435,7 @@ VScriptDbg
 VScriptManager010
 VStringTokenSystem001
 VTT for
+VWebm001
 V_AppearsToBeANumber
 V_DoubleToString_Unsafe
 V_FloatToString_Unsafe
@@ -1621,7 +1630,7 @@ ZN10__cxxabiv120__unexpected_handlerE
 ZN10__cxxabiv121__vmi_class_type_infoD0Ev
 ZN10__cxxabiv121__vmi_class_type_infoD1Ev
 ZN10__cxxabiv121__vmi_class_type_infoD2Ev
-ZN12CSplitString9ConstructEPKcPS1_ib
+ZN12CSplitString5SplitEPKciPS1_ib
 ZN13CBufferString10FixSlashesEc
 ZN13CBufferString11ToLowerFastEi
 ZN13CBufferString12AppendFormatEPKcz
@@ -2471,7 +2480,7 @@ ZnwmSt11align_val_t
 ZnwmSt11align_val_tRKSt9nothrow_t
 a9wPA
 a@uHH
-aA;D$H}!L
+aA;FH}9L
 aAk- ÎQm
 aH9x\btbI
 aI9D$pt\fH
@@ -2661,7 +2670,7 @@ gnu_debuglink
 guard variable for
 gxx_personality_v0
 hEntity
-hHcGHL
+hHcGHH
 hTarget
 hidden alias for
 highlight_instance_id
@@ -2765,6 +2774,7 @@ m_TargetInput
 m_TimelineEvents
 m_Tracepoints
 m_Type
+m_UnknownKeys
 m_UnyieldResume
 m_Value
 m_Vars
@@ -2991,7 +3001,9 @@ s: __pos (which is %zu) > this->size() (which is %zu
 s: invalid nBeforeIndex %d\n
 s: invalid nSize %d\n
 s@HcS8
+s@HcS<1
 sBHcC0H
+sP[A\\H
 s_Instance
 s_flExplicitCurTime
 schemasystem
@@ -3042,6 +3054,7 @@ t1Mc4$E;t
 t7I94\t
 t8IcD$ A;D$0
 t;Hdt\fH
+t=D9;u
 tC@t6H
 tKATUH
 tL<Gt\b<T
@@ -3112,11 +3125,11 @@ unsigned long long
 unsigned short
 unspecified
 upHcG\bIc
-uuD9c }_A
 uxHcG\bIc
 u~HcG\bIc
 v8system
 vC \np
+v\bAUATI
 v\r<Dt!1
 vecAncestorCursorIDs
 vector

@@ -20,7 +20,7 @@
 02X%02X%02X%02X\nR:%d, G:%d, B:%d, A:%d\n(%.3f, %.3f, %.3f, %.3f
 02X%02X%02X\nR: %d, G: %d, B: %d\n(%.3f, %.3f, %.3f
 02d Hz
-02d%c Tab 0x%08X '%s' Offset: %.1f, Width: %.1f/%.1f
+02d%c Tab 0x%08X '%s' Offset: %.2f, Width: %.2f/%.2f
 02d-%02d
 02d.%03d %03d
 02d:%02d:%02d
@@ -28,6 +28,7 @@
 02d:00
 048<@D
 04d: scrollable region
+04d] Window
 05d] [%s] Hello, current time is %.1f, here's a word: '%s'\n
 06f ns
 08@lmnHP\b\t\n\v\f\r
@@ -43,12 +44,13 @@
 0AERROR: Docking is not enabled! See Demo > Configuration
 0A\\A
 0A\\A]A^A
+0A\vE
 0Ces-8R
 0G??Ou
 0HPX8
 0L*S3P
 0L9l$\b
-0LF?H
+0YA1H
 0[]A\\A]A^ÐAUATI
 0[]A\\ÐAUATI
 0\n\aoptions
@@ -63,12 +65,17 @@
 0rpc $1($4.$2) returns ($5.$3
 0s0G9|0G9|0G9|0G9|X9
 0x" must be followed by hex digits
+0x%02X
+0x%04X
+0x%08X
 0x%08X "%s" Pos (%d,%d) Size (%d,%d) Collapsed=%d
+0x%08X [override
 0x%08X,%d
+0xDDDDDDDD
 1 = visualize bounds, 2 = visualize sceneobject mesh materials, 3 = required texture size, 4 = bounds group, 5 = LOD, 6 == LPV Binding, 7 == instancing
 1!9Q5F
 1. I am selectable
-1.83 WIP
+1.90.8
 10CEntityMsg
 10CMsgQAngle
 10CMsgVector
@@ -86,7 +93,6 @@
 11ISceneLayer
 11ISceneUtils
 11ISceneWorld
-12,345 bytes
 123.456
 123456
 12CMsgVector2D
@@ -100,6 +106,7 @@
 13CImGuiWrapper
 13CLightBinner2
 13CMsgTransform
+13CQuadRenderer
 13ConCommandRef
 13IBaseSequence
 14CBaseAppSystemI10IAppSystemE
@@ -163,9 +170,13 @@
 19IRenderReadCallback
 19ISceneLightListener
 1\n-NETWORK_DISCONNECT_DIRECT_CONNECT_RESERVATION
+1\v=YcL
 1fmb / %.1fmb filtered resident
 1fmb / %.1fmb resident
 1҃|$8 D
+1ҋCX9C
+1ҋF$Hc~(D
+1ҋF$LcF(D
 1ҋH ;M
 1Ҿ5YA1
 2#.google.protobuf.FieldOptions.CType
@@ -176,10 +187,9 @@
 2*.google.protobuf.FieldDescriptorProto.Type
 2+.google.protobuf.FieldDescriptorProto.Label
 2+i)\tSC
-2,345 bytes
+2-wide
 2. I am selectable
 2/.google.protobuf.MethodOptions.IdempotencyLevel
-200x200
 20CBarnLightObjectDesc
 20CBaseSceneObjectDesc
 20CDebugTextObjectDesc
@@ -227,7 +237,6 @@
 23CSpotLightObjectDescGPU
 23ICharacterDecalRenderer
 23ISceneViewDebugOverlays
-24 Hour Clock
 24CPointLightObjectDescGPU
 24CVConCommandMessageScene
 24IProceduralLayerRenderer
@@ -235,7 +244,6 @@
 25CConCommandMemberAccessorI12CSceneSystemE
 25CEnvMapLightObjectDescGPU
 25CInstancedMeshSceneObject
-25CNETMsg_Disconnect_Legacy
 25CNETMsg_SpawnGroup_Unload
 25CRenderingPipelineFactoryI25CRenderingPipelineForwardE
 25CRenderingPipelineForward
@@ -261,13 +269,14 @@
 2\n\aoptions
 2a?9\v
 2d arr
-2f FPS
 2f px
+2f x %.2f
 2f\nsec
 2ɑKC\n\v
 3 (tab skip
 3) Or click this button
-3. I am not selectable
+3-wide
+3. I am selectable
 30CDirectionalLightObjectDescGPU
 30CLightProbeVolumeObjectDescGPU
 30CProjectedDecalSceneObjectDesc
@@ -319,7 +328,7 @@
 3333L
 333?333?H
 333?H
-333?I
+333?UH
 333?ff
 33CAmbientOcclusionProxySceneObject
 33CDistanceFieldInstanceSceneObject
@@ -336,7 +345,8 @@
 3ff, %.3ff, %.3ff, %.3ff
 3jx\tM
 4 (tab skip
-4. I am selectable
+4-wide
+4. I am double clickable
 40ISceneAnimatableProceduralBoneTransforms
 40M\v
 4333333
@@ -344,7 +354,6 @@
 4?AUATL
 4H[A\\A]A
 4HcP0E
-4PE;t
 4fff>fff>fff>fff
 4t*[JOa*[=Qp7(qJ_oOL^('7fB&Hq-:sf,sNj8xq^>$U4O]GKx'm9)b@p7YsvK3w^YR-CdQ*:Ir<($u&)#(&?L9Rg3H)4fiEp^iI9O8KnTj,]H?D*r7'M;PwZ9K0E^k&-cpI;.p/6_vwoFMV<->#%Xi.LxVnrU(4&8/P+:hLSKj$#U%]49t'I:rgMi'FL@a:0Y-uA[39',(vbma*hU%<-SRF`Tt:542R_VV$p@[p8DV[A,?1839FWdF<TddF<9Ah-6&9tWoDlh]&1SpGMq>Ti1O*H&#(AL8[_P%.M>v^-))qOT*F5Cq0`Ye%+$B6i:7@0IX<N+T+0MlMBPQ*Vj>SsD<U4JHY8kD2)2fU/M#$e.)T4,_=8hLim[&);?UkK'-x?'(:siIfL<$pFM`i<?%W(mGDHM%>iWP,##P`%/L<eXi:@Z9C.7o=@(pXdAO/NLQ8lPl+HPOQa8wD8=^GlPa8TKI1CjhsCTSLJM'/Wl>-S(qw%sf/@%#B6;/U7K]uZbi^Oc^2n<bhPmUkMw>%t<)'mEVE''n`WnJra$^TKvX5B>;_aSEK',(hwa0:i4G?.Bci.(X[?b*($,=-n<.Q%`(X=?+@Am*Js0&=3bh8K]mL<LoNs'6,'85`0?t/'_U59@]ddF<#LdF<eWdF<OuN/45rY<-L@&#+fm>69=Lb,OcZV/);TTm8VI;?%OtJ<(b4mq7M6:u?KRdF<gR@2L=FNU-<b[(9c/ML3m;Z[$oF3g)GAWqpARc=<ROu7cL5l;-[A]%/+fsd;l#SafT/f*W]0=O'$(Tb<[)*@e775R-:Yob%g*>l*:xP?Yb.5)%w_I?7uk5JC+FS(m#i'k.'a0i)9<7b'fs'59hq$*5Uhv##pi^8+hIEBF`nvo`;'l0.^S1<-wUK2/Coh58KKhLjM=SO*rfO`+qC`W-On.=AJ56>>i2@2LH6A:&5q`?9I3@@'04&p2/LVa*T-4<-i3;M9UvZd+N7>b*eIwg:CC)c<>nO&#<IGe;__.thjZl<%w(Wk2xmp4Q@I#I9,DF]u7-P=.-_:YJ]aS@V?6*C()dOp7:WL,b&3Rg/.cmM9&r^>$(>.Z-I&J(Q0Hd5Q%7Co-b`-c<N(6r@ip+AurK<m86QIth*#v;-OBqi+L7wDE-Ir8K['m+DDSLwK&/.?-V%U_%3:qKNu$_b*B-kp7NaD'QdWQPKYq[@>P)hI;*_F]u`Rb[.j8_Q/<&>uu+VsH$sM9TA%?)(vmJ80),P7E>)tjD%2L=-t#fK[%`v=Q8<FfNkgg^oIbah*#8/Qt$F&:K*-(N/'+1vMB,u()-a.VUU*#[e%gAAO(S>WlA2);Sa>gXm8YB`1d@K#n]76-a$U,mF<fX]idqd)<3,]J7JmW4`6]uks=4-72L(jEk+:bJ0M^q-8Dm_Z?0olP1C9Sa&H[d&c$ooQUj]Exd*3ZM@-WGW2%s',B-_M%>%Ul:#/'xoFM9QX-$.QN'>[%$Z$uF6pA6Ki2O5:8w*vP1<-1`[G,)-m#>0`P&#eb#.3i)rtB61(o'$?X3B</R90;eZ]%Ncq;-Tl]#F>2Qft^ae_5tKL9MUe9b*sLEQ95C&`=G?@Mj=wh*'3E>=-<)Gt*Iw)'QG:`@IwOf7&]1i'S01B+Ev/Nac#9S;=;YQpg_6U`*kVY39xK,[/6Aj7:'1Bm-_1EYfa1+o&o4hp7KN_Q(OlIo@S%;jVdn0'1<Vc52=u`3^o-n1'g4v58Hj&6_t7$##?M)c<$bgQ_'SY((-xkA#Y(,p'H9rIVY-b,'%bCPF7.J<Up^,(dU1VY*5#WkTU>h19w,WQhLI)3S#f$2(eb,jr*b;3Vw]*7NH%$c4Vs,eD9>XW8?N]o+(*pgC%/72LV-u<Hp,3@e^9UB1J+ak9-TN/mhKPg+AJYd$MlvAF_jCK*.O-^(63adMT->W%iewS8W6m2rtCpo'RS1R84=@paTKt)>=%&1[)*vp'u+x,VrwN;&]kuO9JDbg=pO$J*.jVe;u'm0dr9l,<*wMK*Oe=g8lV_KEBFkO'oU]^=[-792#ok,)i]lR8qQ2oA8wcRCZ^7w/Njh;?.stX?Q1>S1q4Bn$)K1<-rGdO'$Wr.Lc.CG)$/*JL4tNR/,SVO3,aUw'DJN:)Ss;wGn9A32ijw%FL+Z0Fn.U9;reSq)bmI32U==5ALuG&#Vf1398/pVo1*c-(aY168o<`JsSbk-,1N;$>0:OUas(3:8Z972LSfF8eb=c-;>SPw7.6hn3m`9^Xkn(r.qS[0;T%&Qc=+STRxX'q1BNk3&*eu2;&8q$&x>Q#Q7^Tf+6<(d%ZVmj2bDi%.3L2n+4W'$PiDDG)g,r%+?,$@?uou5tSe2aN_AQU*<h`e-GI7)?OK2A.d7_c)?wQ5AS@DL3r#7fSkgl6-++D:'A,uq7SvlB$pcpH'q3n0#_%dY#xCpr-l<F0NR@-##FEV6NTF6##$l84N1w?AO>'IAOURQ##V^Fv-XFbGM7Fl(N<3DhLGF%q.1rC$#:T__&Pi68%0xi_&[qFJ(77j_&JWoF.V735&T,[R*:xFR*K5>>#`bW-?4Ne_&6Ne_&6Ne_&n`kr-#GJcM6X;uM6X;uM(.a..^2TkL%oR(#;u.T%fAr%4tJ8&><1=GHZ_+m9/#H1F^R#SC#*N=BA9(D?v[UiFY>>^8p,KKF.W]L29uLkLlu/+4T<XoIB&hx=T1PcDaB&;HH+-AFr?(m9HZV)FKS8JCw;SD=6[^/DZUL`EUDf]GGlG&>w$)F./^n3+rlo+DB;5sIYGNk+i1t-69Jg--0pao7Sm#K)pdHW&;LuDNH@H>#/X-TI(;P>#,Gc>#0Su>#4`1?#8lC?#<xU?#@.i?#D:%@#HF7@#LRI@#P_[@#Tkn@#Xw*A#]-=A#a9OA#d<F&#*;G##.GY##2Sl##6`($#:l:$#>xL$#B.`$#F:r$#JF.%#NR@%#R_R%#Vke%#Zww%#_-4&#3^Rh%Sflr-k'MS.o?.5/sWel/wpEM0%3'/1)K^f1-d>G21&v(35>V`39V7A4=onx4A1OY5EI0;6Ibgr6M$HS7Q<)58C5w,;WoA*#[%T*#`1g*#d=#+#hI5+#lUG+#pbY+#tnl+#x$),#&1;,#*=M,#.I`,#2Ur,#6b.-#;w[H#iQtA#m^0B#qjBB#uvTB##-hB#'9$C#+E6C#/QHC#3^ZC#7jmC#;v)D#?,<D#C8ND#GDaD#KPsD#O]/E#g1A5#KA*1#gC17#MGd;#8(02#L-d3#rWM4#Hga1#,<w0#T.j<#O#'2#CYN1#qa^:#_4m3#o@/=#eG8=#t8J5#`+78#4uI-#m3B2#SB[8#Q0@8#i[*9#iOn8#1Nm;#^sN9#qh<9#:=x-#P;K2#$%X9#bC+.#Rg;<#mN=.#MTF.#RZO.#2?)4#Y#(/#[)1/#b;L/#dAU/#0Sv;#lY$0#n`-0#sf60#(F24#wrH0#%/e0#TmD<#%JSMFove:CTBEXI:<eh2g)B,3h2^G3i;#d3jD>)4kMYD4lVu`4m`:&5niUA5@(A5BA1]PBB:xlBCC=2CDLXMCEUtiCf&0g2'tN?PGT4CPGT4CPGT4CPGT4CPGT4CPGT4CPGT4CPGT4CPGT4CPGT4CPGT4CPGT4CPGT4CP-qekC`.9kEg^+F$kwViFJTB&5KTB&5KTB&5KTB&5KTB&5KTB&5KTB&5KTB&5KTB&5KTB&5KTB&5KTB&5KTB&5KTB&5KTB&5o,^<-28ZI'O?;xpO?;xpO?;xpO?;xpO?;xpO?;xpO?;xpO?;xpO?;xpO?;xpO?;xpO?;xpO?;xpO?;xp;7q-#lLYI:xvD
 4x\ax7
@@ -352,19 +361,17 @@
 5+jֱi
 5,¸YA1
 5,¸Yi
-5. I am double clickable
-500x500
 5?33s?4IPVS
 5?fff
 5?q=J?H
 5FC?}?e
-5HǯZi
 5YA1H
 5\nNaii
 5\n\vnested_type
 5c1^K
 6.1f,%6.1f) (%6.1f,%6.1f) Size (%6.1f,%6.1f) %s
 6.1f,%6.1f) (%6.1f,%6.1f) Size (%6.1f,%6.1f) Col %d %s
+6IImGui
 6\n\fmessage_type
 7IImPlot
 7\n\aoptions
@@ -373,8 +380,8 @@
 7гY>Y
 8#GameUI_Disconnect_LocalProblem_HostedServerPrimaryRelay
 8)t\nǅ0
-800x200
 88ubH9
+899~&L
 8@%r8 8@-80(%rbx
 8@%rdi 8@%rsi
 8@%rdx 8@%rax
@@ -382,13 +389,13 @@
 8A\\A]A
 8CMsgRGBA
 8CUtlGrid
-8H9C8
+8H9WpH
 8H9X8
 8H9{8u
+8HcwPE
 8I#W@t
-8I9}8H
+8IcF0L
 8LcwpE
-8McD$$A
 8[]A\\A]A^A_ÐAUATI
 8[]A\\A]A^A_ÐAWAVAUATL
 8[]A\\A]A^A_ÐAWAVAUATUSH
@@ -414,7 +421,10 @@
 8ÐAWAVAUATI
 8ÐAWAVAUATUSH
 9%&dPp
+9;tdHcP
+9A\fuRH
 9CDviH
+9CXu%E1
 9C\bt0A
 9C\ft/H
 9H |\fH
@@ -422,6 +432,8 @@
 9HP~AHc
 9ISequence
 9O0u&UH
+9P t\vIi
+9STtrL
 9VS^AF
 9\n\noneof_decl
 9p |\fH
@@ -438,13 +450,11 @@
 9zP~EHk
 9|$XrvA
 9|$\btvM
-A Rather Long Title
+A Rather
 A \aJ\f  B
 A file with this name is already in the pool
 A protocol message was rejected because it was too big (more than
-A#D$\bA
-A)D$\bI
-A)ԋS B
+A$Hcq
 A0 Row 0
 A0 Row 1
 A1 Row 0
@@ -454,17 +464,20 @@ A8^pt\nA8^q
 A8nnA
 A8npt\nA8nq
 A9<$taA
-A9D$\bA
+A9D$TA
+A9D$TI
+A9D$Tu
 A9D$\bu
-A9D$dt
-A9D$hu
-A9F u\nA
-A9GH~wI
+A9E4uэP
+A9F u\aM
 A9L$Lw
-A9T$l
+A9T$ J
 A9\\$ u\tA
 A9\\$P~3I
+A9\\$lf
 A9]P~,I
+A9^<tL
+A9_lt\rI
 A9|$\ft
 A9|$\fu
 A:%0.3f
@@ -476,7 +489,6 @@ A;F\b
 A<5vw[1
 A<8wtH
 A<8w{H
-AA for plots can be toggled from the plot's context menu
 ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789
 ABGR8888
 ABORTED
@@ -486,6 +498,7 @@ ADHcy@E
 AE_BODYGROUP_SET_VALUE
 AE_CL_DISABLE_BODYGROUP
 AE_CL_ENABLE_BODYGROUP
+ALL_GRAPHICS
 ALREADY_EXISTS
 AN?NbX?\f
 ANIMATION_PROCESSING_CLIENT_INTERPOLATION
@@ -506,14 +519,16 @@ AOProxies
 APPSYSTEM: In ConnectInterfaces(), s_nRegistrationCount is %d!\n
 ARAQAPWL
 ARGB8888
+ASAQH
 ASARAPM
 ASARAQAPWH
 ASARAQAPWL
 ASAWSVRE
 ASCII//TRANSLIT
+ASPAQM
 ATSHc\a
+ATSHcwdH
 ATSsgI
-ATStDI
 ATUSH
 ATUSHc_\fH
 ATUSL9
@@ -526,6 +541,7 @@ AUATH
 AUATI
 AUATL
 AUATLc
+AUATS1
 AUATSA
 AUATSD
 AUATSH
@@ -533,7 +549,8 @@ AUATSHc
 AUATSI
 AUATSL
 AUATSLc
-AUATSfH
+AUATSLcghH
+AUATSf
 AUATUH
 AUATUI
 AUATUL
@@ -550,10 +567,7 @@ AUATUSRH+\a
 AUATtsH
 AVATSD
 AVATSI
-AVAUA
-AVAUAT
 AVAUATA
-AVAUATE
 AVAUATE1
 AVAUATH
 AVAUATI
@@ -568,7 +582,6 @@ AVAUATSH
 AVAUATSHc>H
 AVAUATSI
 AVAUATSL
-AVAUATSfH
 AVAUATUA
 AVAUATUH
 AVAUATUI
@@ -597,8 +610,8 @@ AWAVAUATS
 AWAVAUATS1
 AWAVAUATSD
 AWAVAUATSH
+AWAVAUATSHc
 AWAVAUATSL
-AWAVAUATSfH
 AWAVAUATU
 AWAVAUATUH
 AWAVAUATUI
@@ -623,9 +636,10 @@ AWAVLc
 AWAVM
 AWAVSH
 AWAVfA
+AWAVfI
 AXAYE1
 AXAYu\eL
-AYHǃxM
+AZHǃxM
 A\\A]A^A_ÐATUH
 A\\A]A^A_ÐATUI
 A\\A]A^A_ÐAUATI
@@ -699,25 +713,29 @@ A\\ÐAWAVAUATA
 A\\ÐAWAVAUATI
 A\\ÐAWAVI
 A\\ÐUSH
+A\bA9F8
 A\bH;D
 A\bH;w\b
-A\bHcA\b
+A\fA9F
 A\n!NETWORK_DISCONNECT_REJECT_NOLOBBY
 A\n\nannotation
 A\tǋChD
+A\vw\bA\vw\fA
 A]A^A
 A]A^ÐUSH
 A]ÐAUATI
 A]ÐAVL
 A]ÐUSH
 Abibliophobia
-About Dear ImGui
 Absquatulate
 Accum
 Action
 Active DrawLists in Viewport #%d, ID: 0x%08X
 Active: %d/%d, WriteAccessed: %d, BeginOrderWithinContext: %d
+ActiveId
 ActiveId: 0x%08X/0x%08X (%.2f sec), AllowOverlap: %d, Source: %s
+ActiveIdUsing: AllKeyboardKeys: %d, NavDirMask: %X
+ActiveIdUsing: AllKeyboardKeys: %d, NavDirMask: 0x%X
 ActiveIdWindow: '%s
 Actual
 Add 1000 lines
@@ -737,12 +755,12 @@ AddString
 AddToView
 AddUInt32
 AddUInt64
-Adjust if you cannot see the edges of your screen (e.g. on a TV where scaling has not been configured
+Additional alpha multiplier for disabled items (multiply over current value of Alpha
 Adjust shadow penumbra based on light size
 AdvanceX: %.1f
-Advanced
 Advanced & Close Button
 Advanced, with Selectable nodes
+After reordering, contents of channel 0 appears below channel 1
 AgeList
 AggregateDesc
 AggregateSceneObjectManifest
@@ -754,12 +772,13 @@ Align to right edge minus 100
 Align to right edge minus half
 Aligned
 AlignedByteArray not properly aligned\n
+AlignedGroup
 Alignment applies when a button is larger than its text content
 Alignment applies when a selectable is larger than its text content
 All primitives
-All those beautiful files will be deleted.\nThis operation cannot be undone!\n\n
-AllHovered: %s
+All those beautiful files will be deleted.\nThis operation cannot be undone
 AllocateRenderTarget: Does not work to pass pOtherView == this!\n
+Allocation
 Allow dynamic BLAS creation for geometry going through the compute shader skinning path
 Allow stationary/dynamic lights to cast shadows
 Allow time-sliced shadow buffer rendering when enabled via gameinfo.gi
@@ -775,6 +794,9 @@ Already saw decimal point or exponent; can't have another one
 Also see Style->Rendering for rendering options
 Alt to jump to the menu layer of a window
 Alt+F4
+Always On
+Always On (Advanced
+Always On (Simple
 Always clamp value to min/max bounds (if any) when input manually with CTRL+Click
 AlwaysAutoResize
 AmbientLightingSHB
@@ -783,6 +805,8 @@ AmbientLightingSHR
 Amplitude
 An extra line here
 And now some textured buttons
+AngledHeader
+AngledHeaders
 AnimGraphEditorUtils001
 Animate
 Animated title %c %d###AnimatedTitle
@@ -798,26 +822,29 @@ AnimationSystem_001
 AnnotationPadding
 Annotations
 Another bullet point
-Anti-Aliased Lines
 Anti-aliased fill
 Anti-aliased lines
 Anti-aliased lines use texture
-Anti-aliasing can be enabled from the plot's context menu (see Help
-AntiAliasedLines
 AnyHit0
 AnyHit1
 AnyHit2
 AnyHit3
 AoProxyManifest
+AoVolumeTexture
+Apostrophe
+AppBack
+AppForward
 Appearing: %d, Hidden: %d (CanSkip %d Cannot %d), SkipItems: %d
 Application average %.3f ms/frame (%.1f FPS
+Apply to every windows, menus, popups, tooltips: amount where we avoid displaying contents. Adjust if you cannot see the edges of your screen (e.g. on a TV where scaling has not been configured
+Apply to regular windows: amount which we enforce to keep visible when moving near edges of your screen
 Apricot
 Aquarium
 Arrow keys to navigate
 Artichoke
-As with every widgets in dear imgui, we never modify values unless there is a user interaction.\nYou can override the clamping limits by using CTRL+Click to input a value
+As with every widget in dear imgui, we never modify values unless there is a user interaction.\nYou can override the clamping limits by using CTRL+Click to input a value
 Ascent: %f, Descent: %f, Height: %f
-Aspect:     %f
+Aspect: %f
 AssetBrowserSystem_001
 AssetGridWidget_ClearLayer
 AssetPreviewSystem_001
@@ -825,8 +852,7 @@ AssetRenameSystem_001
 AssetSystem001
 AssetSystemTest001
 Asterisk
-Atlas texture
-Atlas texture (%dx%d pixels
+At least 100x100
 Attempt to add %s to renderable types when it is already there
 Attempted to add semaphore for view (%s) for label layer (%s) that does not exist.\n
 Attempted to alias unknown rendering pipeline\n
@@ -835,12 +861,24 @@ Attempted to register duplicate rendering pipeline name %s\n
 Attempted to unregister unknown rendering pipeline name %s\n
 Audio file
 August
+Auto-Fit
+Auto-Fitting Data
 Auto-resize
+Auto-resize with constraints
 Auto-scroll
 Auto/Current
 Avail %.2f
-Average
 Avocado
+Axis Constraints
+Axis Linking
+AxisBg
+AxisBgActive
+AxisBgHovered
+AxisConstraints
+AxisGrid
+AxisLinking
+AxisText
+AxisTick
 B H+P
 B H9E
 B0 Row 0
@@ -853,7 +891,9 @@ B5G6R5_UNORM
 B8G8R8A8_UNORM
 B8G8R8X8_UNORM
 B:%0.3f
+B>A9F8H
 BBBBBBBB
+BBCenterVs
 BC1_TYPELESS
 BC1_UNORM
 BC1_UNORM_SRGB
@@ -884,21 +924,28 @@ BPUNCTUAL
 BUYbp
 B\bH;F\btMI
 B\bH;F\btuI
+B\fHcr
+Bachman
 BackUp() can not exceed the size of the last Next() call
 BackUp() can only be called after Next
 BackUp() can only be called after a successful Next
-Backend Flags
 BackfaceCulling
 Background
-Background color
 BackgroundClipRect
+Backslash
+Backspace
 BakedLODBuilderMgr001
 BakedLightingConstantBuffer_t
 Banana
+Bar Group
+Bar Groups
 Bar Plot
 Bar Plots
+Bar Stacks
 BarnLight
 BarnLightObjectDesc
+Barrier\n  [%s:%s] %s\n
+Barrier\n  [%s:%s]\n
 Base resolution for dynamic shadowmap sizing.  Shadowmap size of a screen sized light
 Baseline of button will look misaligned with text
 Basic Horizontal Layout
@@ -915,10 +962,9 @@ BeginGroup() basically locks the horizontal position for new line. EndGroup() bu
 Below we are displaying the font texture (which is the only texture we have access to in this demo). Use the 'ImTextureID' type as storage to pass pointers or identifier to your own texture data. Hover the texture for a zoomed view
 Below we are displaying the font texture, which is the only texture we have\naccess to in this demo
 Below we are testing adding menu items to a regular window. It's rather unusual but should work
-Bench
-Benchmark
 BenchmarkService001
 Bernard
+Between 100x100 and 500x500
 Bezier
 Bias for LOD selection of instanced meshes
 Bias for LOD selection of instanced meshes in shadowmaps
@@ -929,12 +975,14 @@ BindBakedLightingInfoInPerViewLightingConstants
 Blah blah blah
 Blah blah\nBlah Blah
 Blaine
+Blue shape is drawn first, into channel 1: appears in front
+Blue shape is drawn first: appears in back
 Blueberry
 BoneConstraintList
 BoneWeightOffset
 Boolean default must be true or false
 BorderShadow
-Borders, background
+Both types
 Bottom
 Bottom-left
 Bottom-right
@@ -942,6 +990,7 @@ Bound Last Frame
 BoundingBoxBloat
 BoundingRadius
 Box Select
+Box select and left click mouse to create a new query rect
 BreakOnDelete
 BreakOnDraw
 Brianna
@@ -953,10 +1002,13 @@ Bullet point 1
 Bullet point 2\nOn multiple lines
 Bullet point 3 (two calls
 Bullet text
-Bullets
 Bumfuzzled
+Bust Item Cache
+Bust Plot Cache
 Button
 Button (w/ repeat
+Button 1
+Button 2
 Button##1
 Button##2
 Button##3
@@ -967,18 +1019,22 @@ ButtonHovered
 ButtonTextAlign
 By Omar Cornut and all Dear ImGui contributors
 By default, Selectables uses style.SelectableTextAlign but it can be overridden on a per-item basis using PushStyleVar(). You'll probably want to always keep your default situation to left-align otherwise it becomes difficult to layout multiple items on a same line
-By default, anti-aliased lines are turned OFF
 By default, colors are given to ColorEdit and ColorPicker in RGB, but ImGuiColorEditFlags_InputHSVallows you to store colors as HSV and pass them to ColorEdit and ColorPicker as HSV. This comes with theadded benefit that you can manipulate hue values with the picker even when saturation or value are zero
 By default, labels are in UTC time but can be set to use local time instead
 By default, right-clicking over a TableHeadersRow()/TableHeader() line will open the default context-menu.\nUsing ImGuiTableFlags_ContextMenuInBody we also allow right-clicking over columns body
+By display order
+By focus order (root windows
+By submission order (begin stack
 Byte size calculation and serialization were inconsistent.  This may indicate a bug in protocol buffers or it may be caused by concurrent modification of
 B~>m9w>e
 C 9G u
 C HcPP
+C HcʉS
 C I+A
 C I+G
 C []A
 C [ÐAWAVAUATI
+C$A\tC\f
 C(9C,t^H
 C(H;C0r
 C([ÐAVAUATUL
@@ -1321,7 +1377,6 @@ CHECK failed: uninterpreted_options_field != nullptr
 CHECK failed: unknown_fields->SerializeToString(outstr
 CHECK failed: value != nullptr
 CHECK failed: z.first != NULL
-CHH9CP
 CHI+AH
 CHI+GH
 CHZ[]ÐUS
@@ -1330,7 +1385,7 @@ CH[ÐSH
 CH[ÐUSH
 CInstancedMeshSceneObjectDesc
 CInvocations
-CJK text will only appears if the font was loaded with the appropriate CJK character ranges. Call io.Fonts->AddFontFromFileTTF() manually to load extra character ranges. Read docs/FONTS.md for details
+CJK text will only appear if the font was loaded with the appropriate CJK character ranges. Call io.Fonts->AddFontFromFileTTF() manually to load extra character ranges. Read docs/FONTS.md for details
 CLASSIFY
 CLHcCPD
 CLOSE
@@ -1350,7 +1405,6 @@ CMsgQuaternion
 CMsgQuaternion"6\n\bCMsgRGBA
 CMsg_CVars.CVar
 CNETMsg_DebugOverlay
-CNETMsg_Disconnect_Legacy
 CNETMsg_SetConVar
 CNETMsg_SignonState
 CNETMsg_SpawnGroup_Load
@@ -1360,7 +1414,12 @@ CNETMsg_StringCmd
 COL3F
 COL4F
 COLLAPSE
-CP9CTu
+COLOR_ATTACHMENT_OPTIMAL
+COLOR_ATTACHMENT_OUTPUT
+COLOR_ATTACHMENT_READ_BIT
+COLOR_ATTACHMENT_WRITE_BIT
+COMPUTE_SHADER
+COPIED
 CP<\nt2<\\th
 CPI+AP
 CPI+GP
@@ -1375,10 +1434,11 @@ CPPTYPE_UINT32
 CPPTYPE_UINT64
 CP[A\\A]A
 CP[ÐSH
-CP\fH9U
 CPointLightObjectDescGpu
 CPrimitives
 CProjectedDecalSceneObjectDesc
+CQuadRenderer
+CQuadRendererLayout
 CRC64_ProcessBuffer
 CSInvocations
 CSM%i "%s" (%s
@@ -1394,6 +1454,7 @@ CSVCMsgList_GameEvents
 CSVCMsgList_GameEvents.event_t
 CSVCMsg_GameEvent
 CSVCMsg_GameEvent.key_t
+CSceneSystem::FrameUpdate
 CSceneSystem::m_hDefaultPerLayerConstants
 CSceneViewDebugOverlays: Cannot call AddToViewAndRetireStaleOverlays and pass in no abs time unless the overlay was created with the SCENE_VIEW_DEBUG_OVERLAY_TYPE_RELATIVE_TIMING flag!\n
 CSceneViewDebugOverlays::Render2DLineOverlay GetMode("Default") == NULL? Can't Render with material %s!\n
@@ -1410,17 +1471,14 @@ CScratchRenderTargetSystem::AllocateRenderTarget: invalid texture handle for "%s
 CSimpleQuadRenderer
 CSkyBoxObjectDesc
 CSpotLightObjectDescGpu
-CT9CPu
 CTRL+A or double-click to select all
 CTRL+C
 CTRL+Click on a slider or drag box to input value as text
 CTRL+Left/Right to word jump
 CTRL+M
 CTRL+Mouse Wheel to zoom window contents
-CTRL+S
 CTRL+Tab to select a window
 CTRL+V
-CTRL+W
 CTRL+X
 CTRL+X/C/V to use clipboard cut/copy/paste
 CTRL+Y
@@ -1433,6 +1491,7 @@ CTextureDisplayer
 CTonemapRenderer is trying to render with an invalid occlusion query handle. Are we rendering while the screen isn't visible? Look for a previous warning saying we ran out of buckets.\n
 CTonemapRenderer needs to use a layer which has had a render attribute called "ColorBuffer" set!\n
 CTonemapSystem::GenerateRendererData ran out of buckets!!\n
+CTt)L
 CURRENTLY APPENDING
 CUtlBlockMemory overflow!\n
 CUtlLinkedList overflow! (exhausted index range)\n
@@ -1442,21 +1501,17 @@ CUtlMultiList overflow! (exhausted memory allocator)\n
 CUtlRBTree overflow with %u elements!\n
 CUtlString
 CUtlVector
+CX9C\\A
 CXZ[]ÐUH
+C\\9CXt
+C\\9CXu
 C\b)H(L
-C\b9G u\aI
-C\b@t\bH
-C\bE9gp
-C\bHc8E
-C\bI9D$\b
 C\b[A
 C\b[ÐAUATI
 C\bfD93D
 C\bfD9;D
 C\btOHcU
-C\fA\vE\f\vC\f
 C\fZYD9
-C\t\btBH
 Cache: %.1f MB
 Cached Fog
 Cached: %s, LRU %i
@@ -1475,35 +1530,37 @@ Can't print proto content: proto type
 Can't reach
 Can't read a rendertarget from a view with a higher priority.\n
 CanHostOtherWindows
-Cancel
 Candlestick Chart
 Cannot add a resolve layer as the first layer in a view!\n
 Cannot call BuildFile on a DescriptorPool that uses a DescriptorDatabase.  You must instead find a way to get your file into the underlying database
 Cannot copy json_name to a proto of a different size
+Cannot drop here
 Cannot generate primitives for InstancedMesh in layer %s/%s, no gpu culling enabled\n
 Cannot get here
 Cannot resolve to the same render targets as in the previous layer!\n
 Cannot skip field value, unexpected token
 Canvas
+CapsLock
 Capture/Logging
-Carrot
+CarrfD
 Cast of %s loses value information (returning %s)\n
 Category A
 Category B
 Category C
 Cattywampus
 CcD\tc(A
-Cd[A\\A]A
 CduGH
 Cdw(A
 Celery
 Cell %d,%d
 Cell contents
 CellPadding
+CellPadding.y = %.2f
 CellPaddingX: %.1f, CellSpacingX: %.1f/%.1f, OuterPaddingX: %.1f
 CentralNode
 CentralNode=%d%n
 CentralNode=1
+Centroid
 ChZ[]ÐH
 Ch[]A
 Change Colormap
@@ -1518,49 +1575,60 @@ Checked
 Cherry
 Child
 Child %d
-Child windows
 ChildBg
 ChildBorderSize
+ChildD
+ChildE
 ChildL
 ChildMenu
 ChildR
 ChildRounding
-ChildWindow
 ChildWindows
 Child[0
 Child[1
+Choose one way that doesn't interfere with what you are trying to debug!\nYou need a debugger attached or this will crash
 ChooseEnvironmentMap
+Christie
 Circle
 Circle %d
 Circle Tessellation Max Error
 Circle segments override
+Cl[A\\A]A
 Clamp integers to 0..50
 ClassId=0x%08X\n
 ClassId=0x%X
 Classic
 Clear %s
+Clear Queries
 Clear nodes
 Clear settings
 ClearField
-Click and drag any point
+Click %s Button to break in debugger! (remap w/ Ctrl+Shift
 Click and drag column headers to reorder columns.\n\nRight-click on a header to open a context menu
+Click and drag each point
 Click and drag on lower corner to resize window\n(double-click to auto fit window to its contents
+Click and drag the edges, corners, and center of the rect
 Click and drag the horizontal and vertical lines
 Click and drag to edit value.\nHold SHIFT/ALT for faster/slower edit.\nDouble-click or CTRL+click to input value
+Click and drag to move or undock whole node
 Click and drag to scroll
 Click legend label icons to show/hide plot items
 Click me
 Click on the color square to open a color picker.\nCTRL+click on individual component to input value.\n
 Click on the color square to open a color picker.\nClick and hold to use drag and drop.\nRight-click on the color square to show options.\nCTRL+click on individual component to input value.\n
-Click to break in debugger
 Client Rendering
 ClientToolsInfo_001
-Clipping
+Clipper
+Clipper: Begin(%d,%.2f) in '%s'\n
+Clipper: End() in '%s'\n
+Clipper: Step(): End.\n
+Clipper: Step(): computed ItemsHeight: %.2f.\n
+Clipper: Step(): display %d to %d.\n
+Clipper: Step(): inside frozen table row.\n
 Clipping Invocations - the number of primitives (triangles) that were executed in the primitive clipping stage
 Clipping Primitives - the number of primitives (triangles) that were output by the primitive clipping stage
 Close All Documents
 Close Console
-Close all
 Close this window
 Close: $%.2f
 ClosestHit0
@@ -1568,15 +1636,18 @@ ClosestHit1
 ClosestHit2
 ClosestHit3
 ClumpExp
+ClumpMask
 ClumpScale
 ClutterDesc
 ClutterInstances
 CmdLinkAH
 Coconut
+Codepoint
 Codepoint: U+%04X
+Col Ratios
+Collapse all
 Collapsed=%d
 Collapsed=%d\n
-Collapsing Headers
 CollapsingHeader
 Color button only
 Color button with Custom Picker Popup
@@ -1591,12 +1662,15 @@ Color widget with InputHSV
 Color/Picker Widgets
 ColorButton
 ColorButtonPosition
-ColorEdit defaults to displaying RGB inputs if you don't specify a display mode, but the user can change it with a right-click.\n\nColorPicker defaults to displaying RGB+HSV+Hex if you don't specify a display mode.\n\nYou can change the defaults using SetColorEditOptions
+ColorEdit defaults to displaying RGB inputs if you don't specify a display mode, but the user can change it with a right-click on those inputs.\n\nColorPicker defaults to displaying RGB+HSV+Hex if you don't specify a display mode.\n\nYou can change the defaults using SetColorEditOptions
 ColorPosition
+ColorTextureCombo
 ColorUVTestLayout
 Colorful Text
 Colormap Index
+Colormap Widgets
 Colormaps
+Colormaps:  %d
 Colors that are set to Auto (i.e. IMPLOT_AUTO_COL) will\nbe automatically deduced from your ImGui style or the\ncurrent ImPlot Colormap. If you want to style individual\nplot items, use Push/PopStyleColor around its function
 Colors##Selector
 Column %-2d
@@ -1604,15 +1678,21 @@ Column %02d: OffsetNorm %.3f (= %.1f px
 Column %d Order %d SortOrder %d %s Vis %d %s %7.3f UserID 0x%08X
 Column %d order %d '%s': offset %+.2f to %+.2f%s\nEnabled: %d, VisibleX/Y: %d/%d, RequestOutput: %d, SkipItems: %d, DrawChannels: %d,%d\nWidthGiven: %.1f, Request/Auto: %.1f/%.1f, StretchWeight: %.3f (%.1f%%)\nMinX: %.1f, MaxX: %.1f (%+.1f), ClipRect: %.1f to %.1f (+%.1f)\nContentWidth: %.1f,%.1f, HeadersUsed/Ideal %.1f/%.1f\nSort: %d%s, UserID: 0x%08X, Flags: 0x%04X: %s%s%s
 Column %d%n
+Column Major
 Columns
+Columns (legacy API
+Columns (legacy API)/Basic
+Columns (legacy API)/Borders
+Columns (legacy API)/Horizontal Scrolling
+Columns (legacy API)/Mixed items
+Columns (legacy API)/Tree
+Columns (legacy API)/Word-wrapping
 Columns Id: 0x%08X, Count: %d, Flags: 0x%04X
 Columns are all the same width, matching the maximum contents width.\nImplicitly disable ImGuiTableFlags_Resizable and enable ImGuiTableFlags_NoKeepColumnsVisible
 Columns default to _WidthFixed (if resizable) or _WidthAuto (if not resizable), matching contents width
 Columns default to _WidthStretch with same weights
 Columns default to _WidthStretch with weights proportional to their widths
-Columns flags
 Columns sets (%d
-Columns widths
 Columns() is an old API! Prefer using the more flexible and powerful BeginTable() API
 ColumnsClipRect
 ColumnsContentFrozen
@@ -1623,6 +1703,7 @@ ColumnsCount: %d (max %d
 ColumnsGivenWidth: %.1f, ColumnsAutoFitWidth: %.1f, InnerWidth: %.1f%s
 ColumnsRect
 ColumnsWorkRect
+ComboPopup
 Combo_%02d
 CommandLine
 Commands
@@ -1639,24 +1720,31 @@ ComputeCullBits
 ComputeLayerInfo
 ComputeScratchTargetActualSize
 ComputeSkinning
+Concepts
 ConditionallySetBakedLightingFromLightmapCombo
+Config
 Config/Build Information
 Configuration
 Configuration##2
+Configuration/Backend Flags
+Configuration/Capture, Logging
+Configuration/Style
 Constrained-resizing window
+ConstrainedChild
 Constraint
 Contact the program author for an update.  If you compiled the program yourself, make sure that your headers are from the same version of Protocol Buffers as your link-time library.  (Version verification failed in
 Content
 ContentIdeal
 ContentRegionRect
 Contents
-Context menus
 Context" functions are simple helpers to associate a Popup to a given Item or Window identifier
+ContextLocked: %s
 ContextMenu
 ConvertFloatToChannel: Trying to convert to a a float to a destation of byte size %d\n
 ConvertFloatToChannel: Trying to convert to a a normalized float to a destation of byte size %d\n
 Copy "Hello, world!" to clipboard
 Copy %s
+Copy %s->%s
 Copy as
 Copy of Image001 (Final2).png
 Copy of Image001.png
@@ -1677,8 +1765,12 @@ Creating ray trace scene world with %d instances
 Crosshairs
 Ctrl + click in the plot area to draw points
 Ctrl shows window dock info
+Ctrl+A
+Ctrl+C: copy path to clipboard
 Ctrl+O
+Ctrl+R
 Ctrl+S
+Ctrl+W
 CubeMapDebugColors
 Cucumber
 CullCameraForwardWs
@@ -1691,31 +1783,30 @@ CullViewOrthoInvWidth
 CullViewSizeThreshold
 CullViewTanHalfFov
 Culling: %s objects pre-cull (%s tested), %s passing culling\n
+Cumulative
 Cur: %.2f
+CurLenW: %d, CurLenA: %d, Cursor: %d, Selection: %d..%d
 Current
 Current mouse cursor = %d: %s
 Currently all this does is to lift the 0..1 limits on dragging widgets
 Curve Tessellation Tolerance
 Curves segments override
 Custom
-Custom Context Menus
 Custom Data
 Custom Data and Getters
 Custom Plotters and Tooltips
-Custom Rendering
+Custom Scale
 Custom Styles
-Custom Ticks
-Custom headers
 Custom: Always Square
+Custom: Aspect Ratio 16:9
 Custom: Fixed Steps (100
 CustomRend
 CustomTexture0
 CustomTexture1
 CustomTexture2
-Cxf9Cz
 Cycles focus between the game window and undocked imgui windows
-Czf9Cx
 D$ A;G
+D$ A\\1
 D$ H9D$(L
 D$ HcE
 D$ I+E
@@ -1730,11 +1821,9 @@ D$(I9D
 D$(L9l
 D$(L9t
 D$(dH3
-D$(y\aHc
 D$,PAVj\aH
 D$,PAVj\fH
 D$0Hǅp
-D$0Lck
 D$0v7f
 D$4H)C
 D$8I+E8
@@ -1746,7 +1835,8 @@ D$8u\aH
 D$8u\tI
 D$?t\f9
 D$?t\t8Co
-D$Du;H
+D$@tdH
+D$H@t/M9
 D$HI+EH
 D$HurI
 D$Ot\t8Eo
@@ -1763,12 +1853,12 @@ D$\b9h$A
 D$\b@8h!A
 D$\bA
 D$\bA;D
-D$\bA\vD
 D$\bD
 D$\bE9l
 D$\bH
 D$\bH+C\bI
 D$\bH9C0tAH
+D$\bH9C\b
 D$\bH9C\bt\n
 D$\bH9l$\b
 D$\bH9l$\bunH
@@ -1779,7 +1869,6 @@ D$\bIcl
 D$\bL
 D$\bL9d
 D$\bL9l
-D$\b\vF(D9
 D$\bsGL
 D$\bt#H
 D$\bt*H
@@ -1787,7 +1876,6 @@ D$\bt,H
 D$\btIH
 D$\bt[H;E
 D$\bt\bH
-D$\bt\fA
 D$\btqH
 D$\bt~L9
 D$\butH
@@ -1798,12 +1886,11 @@ D$_t\nA8^o
 D$_t\nA8no
 D$_t\rA9
 D$`H+D$XH
-D$`PAUA
+D$`IcT$XL
 D$`tDH
-D$hZ1
-D$ht\fI
+D$pA\\A]A
 D$tI;D$ t+H9
-D$xz\bA
+D$xA\\A]A
 D$ЉB\bA
 D$ԉB\fA
 D)G )w
@@ -1820,18 +1907,18 @@ D8 t,D
 D8kpt\nD8kq
 D9X(uċO`+HHA
 D9ZP~NMk
+D9cl~ZH
+D9cl~}H
 D9e(~JH
 D9e,}^H
 D9e4~ H
 D9jP~NMk
-D9kh~/J
 D9l$\f
-D9xXu\fH
-D9{l~~H
+D9x`u\vH
+D9{0~7H
 D; }\vIc
 D;4$}VD
 D;G\f}(HcO\bH
-D;\ttCI
 D;c4|\tE1
 D;c\b}CHc
 D;k }3H
@@ -1843,22 +1930,28 @@ D;p }4L
 DATA_LOSS
 DEADLINE_EXCEEDED
 DEFAULT_WRITE_PATH
+DEPTH_STENCIL_ATTACHMENT_OPTIMAL
+DEPTH_STENCIL_ATTACHMENT_READ_BIT
+DEPTH_STENCIL_ATTACHMENT_WRITE_BIT
+DEPTH_STENCIL_READ_ONLY_OPTIMAL
 DHcx@E
 DND_DEMO_CELL
 DND_LEFT
 DND_RIGHT
 DO NOT PARSE: fields may be stripped and missing.\n
+DRAW_INDIRECT
 DUMP: Scene World %d: 0x%p '%s': %d objects]\n
 DXT1_ONEBITALPHA
 DXT5_NM
 D\n\f\a\bF\v
-D\tȈFdƇL
+D\tȈFmƇ9
 D_ALPHATINT
 D_ATTACHED_TO_SURFACE
 D_BAKED_LIGHTING_FROM_LIGHTMAP
 D_BAKED_LIGHTING_FROM_PROBE
 D_BAKED_LIGHTING_FROM_VERTEX_STREAM
 D_COLLISION_ENABLED
+D_COLOR_TEXTURE
 D_COMPRESSED_NORMALS_AND_TANGENTS
 D_COMPUTE_TENSION
 D_CULL_NON_MOVING_OBJECTS
@@ -1870,7 +1963,7 @@ D_ENABLE_VOLUMETRIC_FOG
 D_FAST_CONSERVATIVE_BOUNDS
 D_FLOAT_INTERMEDIATE_TEXTURES
 D_FULL_HAIR_PIPELINE
-D_HAIR_COLOR
+D_HAIR_OFFSETS
 D_HAS_ROOT_VIEW
 D_LATTICE_DEFORMER
 D_LODS
@@ -1880,7 +1973,9 @@ D_OVERWRITE_DEPTH
 D_PASS
 D_SCENE_DEPTH_MSAA
 D_SELF_SHADOW
+D_STRAND_COLOR_VARIATION
 D_SUBGROUP_SIZE_32
+D_TEMPORAL_INTEGRATE
 D_VARIANT
 D_VISUALIZE_SCENEOBJECTS
 D_VIS_CULLING
@@ -1888,31 +1983,43 @@ D_VOLUME_CULLER
 Daikon
 Data 1
 Data 2
-Data Types
 Data: %p\nSize: %d\nCapacity: %d
+DataFitting
+Day:   %s
 Dear ImGui %s
 Dear ImGui %s (%d
+Dear ImGui 1.90.8 (19080
+Dear ImGui Debug Log
 Dear ImGui Demo
+Dear ImGui ID Stack Tool
 Dear ImGui Metrics/Debugger
 Dear ImGui Style Editor
 Dear ImGui is licensed under the MIT License, see LICENSE for more information
 Dear ImGui uses monitor data:\n- to query DPI settings on a per monitor basis\n- to position popup/tooltips so they don't straddle monitors
+Debug Begin/BeginChild return value
+Debug Log: Auto-disabled some ImGuiDebugLogFlags after 2 frames)\n
+Debug breaks
 Debug details
 Debug draw the light shape
 Debug draw the visclusters the light overlaps - can be used to see why the light is drawing
 Debug##Default
+DebugBreak
 DebugDrawAllMeshlets
 DebugLevel
 DebugMeshletDrawArgs
 DebugText
+DebugTextEncoding
+DebugTextEncodingBuf
 Debug] Add 5 entries
 DecalNormals_%d.vtex
 DecalRenderTarget_Staging.vtex
 DecalRenderingLayer
 DecalRenderingView
 December
+Declared shortcut routes automatically set key owner when mods matches
 DecompressTextureBits
 Decorations
+Default
 Default Depth
 Default for column 0
 Default for column >0
@@ -1922,12 +2029,15 @@ Default: Float + HDR + Hue Wheel
 Default: Uint8 + HSV + Hue Bar
 DefaultHide
 DefaultSort
+DelayLong
 Delete
 DeleteMapValue
 DeleteObjectForReal
 DeleteSceneObject
 DemoUpconverterVersion001
-Demonstrate mixing table context menu (over header), item context button (over button) and custom per-colum context menu (over column body
+Demonstrate mixing table context menu (over header), item context button (over button) and custom per-colunm context menu (over column body
+Demonstrate using BeginDisabled()/EndDisabled() across this section
+Density
 DensityVolumeTexture
 Depth bias applied to shadow receiver for transmissive backface geo (based on renderstate depthbias being 0
 DepthPyramid
@@ -1939,31 +2049,40 @@ DevMsg
 Diamond
 Difference of
 Digital
-Digital and Analog Signals
-Digital signals do not respond to Y drag and zoom, so that
+Digital Plots
+Digital plots do not respond to Y drag and zoom, so that
 DigitalBitGap
 DigitalBitHeight
 DirectionalLight
 Disable CTRL+Click or Enter key allowing to input text directly into the widget
 Disable Menu
 Disable Mouse Wheel
+Disable block
 Disable clipping rectangle for every individual columns (reduce draw command count, items will be able to overflow into other columns). Generally incompatible with ScrollFreeze options
 Disable distributing remainder width to stretched columns (width allocation on a 100-wide table with 3 columns: Without this flag: 33,33,34. With this flag: 33,33,33). With larger number of columns, resizing will appear to be less smooth
+Disable entire section above
+Disable header contributing to column width
 Disable inner padding between columns (double inner padding if BordersOuterV is on, single inner padding if BordersOuterV is off
 Disable outer-most padding (default if ImGuiTableFlags_BordersOuterV is not set
 Disable rounding underlying value to match precision of the format string (e.g. %.3f values are rounded to those 3 digits
 Disable the indenting of tree nodes so demo tables can use the full window width
 Disable tree indentation
-Disable vertical borders in columns Body (borders will always appears in Headers
-Disable vertical borders in columns Body until hovered for resize (borders will always appears in Headers
+Disable vertical borders in columns Body (borders will always appear in Headers
+Disable vertical borders in columns Body until hovered for resize (borders will always appear in Headers
 DisableShadows_t
+Disabled
+Disabled Alpha
+Disabled item
 Disk-shaped light
+Display
 Display Mode
 Display all characters as '*'.\nDisable clipboard cut and copy.\nDisable logging.\n
 Display headers
 DisplaySafeAreaPadding
+DisplayWindowPadding
 Distance to cull the AO proxy as a factor of size
 DistanceFieldAtlas.vtex
+Diverging
 Division or mod by zero: dividend.hi
 DoNotCastShadows
 Dock node
@@ -1978,29 +2097,37 @@ DockNodeAsHost
 DockNode_%02X
 DockSpace Demo
 DockSpace+Window
-DockSpaceViewport_%08X
+DockedWindowsInFocusRoute
 DockingEmptyBg
 DockingPreview
+DockingSplitterSize
 Dockspace
 Document "%s
 Don't ask me next time
 Don't lookup extension types if they aren't present (1
 Don't lookup extension types if they aren't present (2
 Done (%.2f seconds)\n
+Double click edges to expand rect to plot extents
 Double left-click axis labels to fit the individual axis
 Double left-click to fit all visible data
 Double-click on title bar to collapse window
 Double-save to Member '%s
 DoubleSided
+DownArrow
 Downsample2x
 Downsample4x
 DpiEnableScaleFonts
 DpiEnableScaleViewports
-Drag Lines and Points
+Drag Lines
 Drag Me
+Drag Points
+Drag Rects
 Drag and drop in standard widgets
+Drag and drop items from the legend onto plots (except for 'common
 Drag and drop to copy/swap items
+Drag bottom border to resize. Double-click bottom border to auto-fit to vertical contents
 Drag from window title bar or their tab to dock/undock. Hold SHIFT to disable docking.\n\nDrag from window menu button (upper-left button) to undock an entire node (all windows
+Drag from window title bar or their tab to dock/undock. Hold SHIFT to enable docking.\n\nDrag from window menu button (upper-left button) to undock an entire node (all windows
 Drag to reorder items (simple
 Drag/Slider Flags
 Drag/drop items between plots
@@ -2013,22 +2140,20 @@ DragFloat (-inf -> 1
 DragFloat (0 -> +inf
 DragFloat (0 -> 1
 DragInt (0 -> 100
-Dragging
-Dragging:   %s
-Drags
+Draw Channels
 Draw Proxy: qh:%p org:<%d,%d,%d> (frame:%d)\n
 Draw calls: %s\n
+Draw frame with background (e.g. for CollapsingHeader
 Draw in Background draw list
 Draw in Foreground draw list
 DrawCmd: +%d (in child window), Scroll: (%.f/%.f) (%.f/%.f
 DrawCmd: +%d (in same window
-DrawCmd:%5d tris, Tex 0x%p, ClipRect (%4.0f,%4.0f)-(%4.0f,%4.0f
+DrawCmd:%5d tris, Tex %s, ClipRect (%4.0f,%4.0f)-(%4.0f,%4.0f
 DrawDepth Fade
 DrawDepth%s
 DrawLists
 DrawLists (%d
 DrawShadowMapsForLight
-Drawing
 Dump a list of the objects in a sceneworld (Usage: sc_dumpworld <world_index
 Dump debug info
 Dump the objects in a sceneworld into a 3d geoview buffer (Usage: sc_dumpworld3d <world_index
@@ -2042,20 +2167,23 @@ E I+G
 E L9X
 E(H9E0sHL
 E(I9E0sHH
+E0IcD$ A;D$0
 E0Z[]A\\A
 E0]A\\A
+E19222
 E19ZZx
+E1ɋ\r
 E4;E8
 E7r_NH
 E7r_NL
 E8I+D$8H
 E8I+G8
-E9/~CL
 E9e\b~=M
+E9l$\\~hI
+E9l$\\~kI
 E9l$\bu
 E9op~|I
 E9t$X
-E9t$\bE
 E9|$ ~AD
 E9}Hv3D
 E9ȉV\f
@@ -2070,15 +2198,17 @@ E;wxD
 E@I+D
 E@I+G
 E@I+G@H
+E@L9h
+EARLY_FRAGMENT_TESTS
 ED$`H9
 ED$pH9
 ED$pI9
 EHI+D$H
 EHI+GH
 EHI+GHf
+EHM9i`A
 EMG %d
 EMG Signal
-ENetworkDisconnectionReason
 EPI+D$P
 EPI+GP
 ERROR! Cannot load GpuLightBinnerManifest
@@ -2087,6 +2217,7 @@ ERROR: CUtlSymbolTableLarge element limit of %u exceeded\n
 ERROR: Resource name "%s" has the incorrect extension "%s" for the specified resource type (expected "%s")!\n
 ESCAPE to revert
 EXPORTSYSTEM_INTERFACE_VERSION_001
+E\b@t3A
 E\bA+B\b
 E\bA9D$\b
 E\bATSH
@@ -2094,25 +2225,34 @@ E\fA;E\b
 E\n NETWORK_DISCONNECT_REJECT_BANNED
 E\n\f\a\bD\vH
 E\n\rtarget_entity
+E`PAVA
+E`t"A
 EarlyInit_Tier0
 EconItemToolModel_001
+Edit Mode
 Edit name
 Ef8D$<t$L
 Eggplant
 Ej\bt\tA
 Electrode
-Ellipsis character: '%c' (U+%04X
-Embed everything inside a child window (for additional testing
+Ellipsis character: '%s' (U+%04X
+Embed everything inside a child window for testing _RootWindow flag
+Empirical
+Enable AllowOverlap
+Enable AngledHeader on all columns. Best enabled on selected narrow columns (see "Angled headers" section of the demo
 Enable blinking cursor (optional as some users consider it to be distracting
 Enable context menu
 Enable display of console messages on screen. 1 = Enabled, 0 = Disabled, -1 = Enabled if vgui is not present
+Enable docking when holding Shift only (allow to drop in wider space, reduce visual noise
 Enable gamepad controls. Require backend to set io.BackendFlags |= ImGuiBackendFlags_HasGamepad.\n\nRead instructions in imgui.cpp for details
 Enable grid
+Enable input queue trickling: some types of events submitted during the same frame (e.g. button down + up) will be spread over multiple frames, improving interactions with low framerates
 Enable keyboard controls
 Enable logarithmic editing (more precision for small values
 Enable outer-most padding (default if ImGuiTableFlags_BordersOuterV is set
 Enable resizing of windows from their edges and from the lower-left corner.\nThis requires (io.BackendFlags & ImGuiBackendFlags_HasMouseCursors) because it needs mouse cursor feedback
 Enable turning DragXXX widgets into text input with a simple mouse click-release (without moving
+Enable various tools calling IM_DEBUG_BREAK().\n\nRequires a debugger being attached, otherwise IM_DEBUG_BREAK() options will appear to crash your application
 EnableAlphaTint
 EnableSorting
 EnableViewModelSunlight
@@ -2141,6 +2281,8 @@ EnumValueOptions
 Enums must contain at least one value
 EnvMap
 Equal Axes
+Equal constraint applies to axis pairs (e.g ImAxis_X1/Y1, ImAxis_X2/Y2
+EqualAxes
 Error Bars
 Error loading barn light: %s\n
 Error parsing text-format
@@ -2158,6 +2300,7 @@ ErrorBar
 ErrorBarSize
 ErrorBarWeight
 ErrorBars
+Escape
 Escape to deactivate a widget, close popup, exit child window
 Et]<OtY
 Etj<Otf
@@ -2173,7 +2316,20 @@ Example: Long text display
 Example: Property editor
 Example: Simple layout
 Example: Simple overlay
-Examples
+Examples/Auto-resizing window
+Examples/Console
+Examples/Constrained Resizing window
+Examples/Custom Rendering
+Examples/Log
+Examples/Long text display
+Examples/Manipulating window titles
+Examples/Menu
+Examples/Menu/Append to an existing menu
+Examples/Menu/Colors
+Examples/Menu/Options
+Examples/Property Editor
+Examples/Simple Overlay
+Examples/Simple layout
 Exceeded compacted draws buffer size [buffer %i, used %i], @peted should implement resizing\n
 Exceeded maximum number of environment maps: %i added to world, %i maximum\n
 Exceeded maximum number visible environment maps: %i, %i maximum\n
@@ -2181,7 +2337,9 @@ Exceeded maximum number visible lpvs: %i, %i maximum\n
 Exceeding number of envmaps: MAX %i, found %i\n
 Exceeding number of lpvs: MAX %i, found %i\n
 Exceeds Maximum Package Depth
-Exec RenderGraph
+Exclude Outliers
+Exec %i Pass%s
+Expand all
 Expanded map entry type
 Expect a decimal number, got
 Expected
@@ -2196,9 +2354,7 @@ Expected string, got
 Explicit content size
 Explicit default values are not allowed in proto3
 Export
-Export code for selected Colormap\n(built in or custom
 Exposure Scale
-ExtHovered: %s
 Extend hit area to all available width instead of allowing more items to be laid out after the node
 Extension
 Extension conflicts with extension already in database: extend
@@ -2222,12 +2378,19 @@ ExtractSubrange() when arena is non-nullptr is only supported when
 EȨ@uH\f
 F H9G u
 F ÐAWAVAUATI
+F$Hc~(D
+F$Hc~(H
+F$LcN
 F(H9G(tT
 F(H9G(tf
 F(H9G(th
 F(H9G(u]H
 F(I;F0sQD
+F0Hc~ D
+F8A\tD$\fD9
 F8HcX
+F8LcN(D
+F9ȉCX
 F;t @u\vD
 F<no failure reason set
 FAILED_PRECONDITION
@@ -2235,17 +2398,18 @@ FATAL ERROR: CUtlSymbolTableLarge element limit of %u exceeded\n
 FATAL ERROR: unable to register all schema data: %s\n
 FATAL: %s called on a pool context (no root available)\n
 FORCE_UINT
+FPtCMi
+FRAGMENT_SHADER
 FRf9GRu
+FTD9sl
 FVf9GVu
 F\aAUATUSH
 F\b9G\btBL
-F\b@tGI9
 F\bH9G\b
 F\bH9G\btHH
 F\bH9G\bu
 F\bHc
-F\bHcF\b
-F\bI9E\b
+F\b[A
 F\bfE9>D
 F\bz-u
 F\fA;F\b
@@ -2255,7 +2419,7 @@ F\r<GtB<Tt>1
 Failed to allocate scratch rendertarget for %s from pool. The following pool entries were matches:\n
 Failed to allocate space for morph!\n
 Failed to save unsupported class
-Fallback character: '%c' (U+%04X
+Fallback character: '%s' (U+%04X
 FarPlaneOverride
 FastHexToBuffer() wants non-negative integers, not
 Faster lines using texture data. Require backend to render with bilinear filtering (not point/nearest filtering
@@ -2287,7 +2451,6 @@ Field_%d
 Fields in the same oneof must be defined consecutively. "$0" cannot be defined before the completion of the "$1" oneof definition
 Fields of oneofs must themselves have label LABEL_OPTIONAL
 Fields with proto3_optional set must be a member of a one-field oneof
-File Menu
 File already exists in database
 File appears to be in generated pool but wasn't registered
 File is already registered
@@ -2307,24 +2470,21 @@ Filled
 Filled Line Plots
 Filled Markers
 Filmic Curve
-Filter
 Filter ("incl,-excl") ("error
 Filter (inc,-exc
 Filter By Streaming Activity
 Filter colors
 Filter usage:\n  ""         display all lines\n  "xxx"      display lines containing "xxx"\n  "xxx,yyy"  display lines containing "xxx" or "yyy"\n  "-xxx"     hide lines containing "xxx
 Filtered Text Input
-Filtering
 Final Exam
 FindVisClustersForMeshlets
 Finish to complete : %f\n
 FinishRenderingViews has been called without a call to begin
 First argument to Swap() (of type
 First argument to SwapFields() (of type
+First calls to Begin()/BeginChild() will return false.\n\nTHIS OPTION IS DISABLED because it needs to be set at application boot-time to make sense. Showing the disabled option is a way to make this feature easier to discover
 First group hovered
 FirstCullRequest
-Fit Y2
-Fit Y3
 FitPadding
 Fixed %d,%d
 Fixed width
@@ -2334,14 +2494,16 @@ FixupResourceName: Illegal full path passed in ("%s")!\n
 FixupResourceName: Illegal path, missing extension passed in ("%s")!\n
 FizzBuzz
 Flag: AutoHideTabBar
-Flag: NoDockingInCentralNode
+Flag: NoDockingOverCentralNode
+Flag: NoDockingSplit
 Flag: NoResize
-Flag: NoSplit
+Flag: NoUndocking
 Flag: PassthruCentralNode
-Flags:         %d
-Flags:      %d
-Flags: 0x%04X =%s%s%s%s%s%s%s%s%s%s%s%s
+Flags Merged: 0x%04X, Local: 0x%04X, InWindows: 0x%04X, Shared: 0x%04X
+Flags above don't apply to this section
+Flags: 0x%04X =%s%s%s%s%s%s%s%s%s%s%s%s%s
 Flags: 0x%08X (%s%s%s%s%s%s%s%s%s
+Flash given color to identify places where it is used
 FlattenedSerializersVersion001
 Focus from code
 Focus on 1
@@ -2353,18 +2515,21 @@ Focus on Z
 Fog tile: %i since used, %i since rendered
 FogTile
 Folder
+Font Atlas
+Font Atlas (%dx%d pixels
 Font scale
 Font: "%s"\n%.2f px, %d glyphs, %d file(s
 FontManager_001
+Fonts (%d
 Fonts##Selector
 For envmaps in low quality shader mode, how much of the fade region to scale the envmap box by
+For use in Tables only
 Force respect TTL even when clearing scopes
 Force use of LPVs for indirect lighting in fog
 ForceEnableShadowCasting
 ForceFullResolve
 Forces all ray traced geometry to use default hit shaders instead of specialized ones
 Foreground
-Forward
 ForwardLightSetup
 Found existing value when inserting into dict - replacing existing value with new value. If this is intended behavior, use InsertOrReplace. If leaving existing values alone is intended, use InsertIfNotFound
 Found invalid proto option data for
@@ -2375,6 +2540,7 @@ FragmentDrawArgs
 FragmentDrawCount
 FragmentRecullDrawArgs
 FragmentStats
+Frame %06d: %+3d ( %2d malloc, %2d free )%s
 Frame Overlay
 Frame Times
 FrameBg
@@ -2384,13 +2550,14 @@ FrameBorder
 FrameBorderSize
 FrameBufferCopyTexture
 FrameBufferCopyViewport
-FrameHovered:  %s
+FrameHovered: %s
 FramePadding
 FrameRounding
-Framerate (Hz
 Frequency
 Friday
 Frozen
+Frozen columns
+Frozen rows
 Frust+Illum
 FrustumPlane0
 FrustumPlane1
@@ -2401,17 +2568,18 @@ FrustumPlane5
 Full-width
 Fullscreen
 Fullsort
+Functions
 FvP12CSceneObjectE
 FxA;F|L
 G H+B
 G H+x(H
+G$LcO
 G$}DH
 G(D;G,}1Ic
 G(H9G s
 G(H;G0r
 G(H;G0sM
 G(H;G0sq
-G,Ic\aA;G
 G49F8up
 G7@tJUH
 G8<+tYH
@@ -2426,8 +2594,10 @@ G@\bt*H
 G@\bt2H
 G@\bt\vH
 GBufferDepth
+GC now
 GCC: (SteamRT 10.3.0-3+steamrt3.1+bsrt3.1) 10.3.0
 GCC: (SteamRT 5.4.0-7.really.6+steamrt1.2+srt2) 5.4.1 20160803
+GENERAL
 GHAUATUL
 GHH+BH
 GLIBC_2.14
@@ -2464,7 +2634,7 @@ G\bH;V\bt6I;P
 G\bH;V\btpI;P
 G\bH;wHH
 G\bH;x\btHH
-G\b[A
+G\fIcH
 G\fz!u
 GameResourceServiceClientV001
 GameResourceServiceServerV001
@@ -2560,7 +2730,32 @@ GameUI_ServerRejectOldProtocol
 GameUI_ServerRejectServerFull
 GameUI_ServerRejectSteam
 GameUI_ServerReject_InvalidKeyLength
+GamepadBack
+GamepadDpadDown
+GamepadDpadLeft
+GamepadDpadRight
+GamepadDpadUp
+GamepadFaceDown
+GamepadFaceLeft
+GamepadFaceRight
+GamepadFaceUp
+GamepadL1
+GamepadL2
+GamepadL3
+GamepadLStickDown
+GamepadLStickLeft
+GamepadLStickRight
+GamepadLStickUp
+GamepadR1
+GamepadR2
+GamepadR3
+GamepadRStickDown
+GamepadRStickLeft
+GamepadRStickRight
+GamepadRStickUp
+GamepadStart
 GenCullRequests
+General
 Generate Huge Data (~500MB
 GenerateDecalNormals
 GeneratedCodeInfo
@@ -2597,11 +2792,12 @@ GetString
 GetStringReference
 GetUInt32
 GetUInt64
+GhH9C\bu
 Ght\tv\vH
+Gingrich
+Giving access to some ImGuiStyle value in this demo for convenience
 Global Alpha
 GlobalEnvironmentMapConstantBuffer_t
-GlobalStats
-Glt6M
 Glyphs
 Glyphs (%d
 Google.Protobuf.Reflection
@@ -2618,13 +2814,17 @@ GrabRounding
 Gradient
 Gradients
 Grapefruit
+GraphicsMisc
+GraveAccent
+Gravity
 Grid Lines
 Groups are not supported in proto3 syntax
 Gtx<Ttt1
+GuideHairCount
 GuideHairVertexCacheOffset
 Gx\btfH
-GxfA9Gz
-G|t6M
+Gxf9Gzu
+H Clinton
 H#D$ L\t
 H#D$0I
 H#D$8A
@@ -2649,7 +2849,8 @@ H+l$\bL
 H+s\b;s
 H+w\bH9
 H-scrollbar
-H0H;\rb
+H0H;\r:D
+H0H;\rxD
 H19\b
 H3~?\fY\r
 H9B rv
@@ -2671,14 +2872,14 @@ H9J\btg
 H9L$\bt(I9
 H9L$\bu\fH
 H9N\buS
+H9O@t
+H9O@u
 H9PHv?H
 H9S\bt\rD
 H9T$\br1H
-H9Z8u
 H9\at'H
 H9\at\aH
 H9\au\nH
-H9\vt4H
 H9i v\tH
 H9kxt\vH
 H9l$\bt%H
@@ -2687,7 +2888,6 @@ H9o(~\fL
 H9p sEI9
 H9p sFI9
 H9p sMI9
-H9r8t'H
 H9t$\bu
 H9wHtB
 H9w\bsdH
@@ -2695,20 +2895,23 @@ H9w\bw H
 H9wht\nH
 H9z r\fH
 H9z s
+H9{@H
 H9~\bt\b
 H9ǉJ,u
 H: %.3f, S: %.3f, V: %.3f
 H: %.3f, S: %.3f, V: %.3f, A: %.3f
 H:%0.3f
-H;=FfS
-H;=Y32
 H;D$HH
 H;E0sR
 H;G t`H;G
 H;G(tp
+H;G\bu\r
 H;H8t\b
 H;P\btYH
 H;W\bv
+H;\r8Q
+H;\r\bhX
+H;\rk4
 H;l$\bt=I9
 H;t$@t\bH
 H;z H
@@ -2718,6 +2921,7 @@ H;|$\bunH
 H;|$\bupH
 H=vmat
 H=vtexur
+H@t\bH
 HA;F\b
 HD9ep
 HDHcp@E
@@ -2726,7 +2930,7 @@ HH+W\bHcG
 HH9|$xL
 HHcJ\bH
 HISTORY
-HLines
+HIcV0M
 HOP##1
 HOP##2
 HSV Only
@@ -2760,59 +2964,73 @@ H\n\f\a\bC\v
 H\tʋL
 Haddock
 Hair Shadow
-HairColorCombo
+HairColorPalette
 HairColorTexture
 HairCountToDensityScale
 HairDensityTexture
 HairDensityVolumeTexture_%i
+HairDetailScale
+HairLengthMask
 HairLengthScale
 HairLightingTexture
+HairOffsets
 HairRendererManifest
 HairShadingAtlas
 HairShadowTexture
+HairStrandInfo
 HairThickness
 HairVolumeTexDim
+Half True
 Half of available width.\n(~ right-cursor_pos)\n(works within a column set
+HalfVoxelSize
 Hammer/BakeOnlyCubemaps
 Hammer/UsesBakedLighting
 HammerMapLoader001
 Handle ImGuiBackendFlags_RendererHasVtxOffset for 16-bit indices in your backend
+HasCentralNodeChild
 HasField
 HasMouseCursors
 HasMouseHoveredViewport
-HasRange:   %s
+HasRange: %s
 HasSetMousePos
 Hc+HcC
+Hc5@n6
+Hc@ I
+Hc@ L
 Hc@LHk
 Hc@\bE1
 Hc@\bfE
-HcA$Hc
-HcC$Hc
+HcC ;C$H
 HcC,Hc
-HcCTHcSP
+HcCP;CT
+HcCP;CTt'L
+HcCTH
+HcCX;C
+HcCXHcK\\9
+HcC\\HcSX
+HcCtHk
+HcCx;C
 HcD$\bH
 HcD00H
-HcE(Lc
 HcE0L
 HcE\b
-HcF$Hc
-HcG$Hc
 HcG0Hk
-HcGXf
+HcGP;GT
+HcGP;GTt
+HcGP;GTt?I
+HcGP;GTt_H
+HcGP;GTtdL
 HcG\bH
 HcG\bHc
 HcG\bIc
+HcGhf
 HcK(Ic
 HcKHIc
-HcKPHcCT9
 HcK\bIc
 HcO Hk
 HcQ\fHk
 HcR\bfD
 HcT$(L
-Hc\r@6\e
-Hc\rCGC
-Hc\rdt\e
 Hck HcC$9
 Hck$HcC(9
 Hck(HcC,9
@@ -2820,7 +3038,6 @@ Hck,HcC09
 Hck\bHcC\f9
 Hck\fHcC
 Hct$\fH
-Hc{h;{l
 HcɉG\bA
 HcɉW\bA
 HcЉD$8
@@ -2832,16 +3049,20 @@ HcՉD$ L
 Header with a close button
 HeaderActive
 HeaderHovered
+Headers
+HeatScale
 Heatmap1
 Heatmap2
 Heatmaps
-Height 400-500
+Height at least 400
+Held: %s
 Hello
 Hello %d,%d
 Hello Left
 Hello Right
 Hello from Stacked The First\nUsing style.Colors[ImGuiCol_ModalWindowDimBg] behind it
 Hello from Stacked The Second
+Hello from popup
 Hello world %d,%d
 Hello, world
 Hello.cpp
@@ -2850,57 +3071,70 @@ Hello\nWorld
 HelpSystem_001
 Here we activate ScrollY, which will create a child window container to allow hosting scrollable contents.\n\nWe also demonstrate using ImGuiListClipper to virtualize the submission of many items
 Here we append ".." each time Tab is pressed. See 'Examples>Console' for a more meaningful demonstration of using this callback
+Here we are sharing selection state between both boxes
 Here we replace and select text each time Up/Down are pressed. See 'Examples>Console' for a more meaningful demonstration of using this callback
-Here we toggle the casing of the first character on every edits + count edits
+Here we toggle the casing of the first character on every edit + count edits
 Here, all circle data is stored in a single interleaved buffer
 Hex Only
 Hex and octal numbers must be integers
 Hh#p\\H
-Hidden
+HiddenTabBar
 HiddenTabBar=%d%n
 HiddenTabBar=1
-Hide tab bar
+Hide tab bar###HideTabBar
 High:  $%.2f
 HighPrecisionLightingOffset
+HighlightHoveredColumn
 Hiragana: かきくけこ (kakikukeko
+Hist2D
+Histogram 2D
+Histograms
 History
+Hit-testing is by default performed in item submission order, which generally is perceived as 'back-to-front'.\n\nBy using SetNextItemAllowOverlap() you can notify that an item may be overlapped by another. Doing so alters the hovering logic: items using AllowOverlap mode requires an extra frame to accept hovered state
 HkL$\b(H
 Hold Alt to expand box selection horizontally
-Hold Alt to expand query horizontally
 Hold CTRL and click to select multiple items
+Hold SHIFT to display a dummy viewport
+Hold SHIFT to enable Docking window
+Hold SHIFT when clicking to enable for 2 frames only (useful for spammy log entries
 Hold Shift to expand box selection vertically
-Hold Shift to expand query vertically
 Hold to repeat
-Holding me clears the\nthe keyboard capture flag
-Horizontal
 Horizontal Scrolling
 Horizontal contents size demo window
-Horizontal scrolling
 Horizontal scrolling for a window is enabled via the ImGuiWindowFlags_HorizontalScrollbar flag.\n\nYou may want to also explicitly specify content width by using SetNextWindowContentWidth() before Begin
 HorizontalScrolling
 HostClipRect
 HostStateMgr001
 HostWindow
-Hover over me
+Hover an item with the mouse to display elements of the ID Stack leading to the item's final ID.\nEach level of the stack correspond to a PushID() call.\nAll levels of the stack are hashed together to make the final ID of a widget (ID displayed at the bottom level of the stack).\nRead FAQ entry about the ID stack for details
+Hover over legend items to see which axis they are plotted on
 Hover to see mouse cursors
+HoverFlagsForTooltipMouse
+HoverFlagsForTooltipNav
+HoverItemDelayId: 0x%08X, Timer: %.2f, ClearTimer: %.2f
 Hovered column: %d
 Hovered/Active tests after Begin() for title bar testing
 HoveredColumnBody: %d, HoveredColumnBorder: %d
 HoveredDockNode: 0x%08X
 HoveredId: 0x%08X
-HoveredId: 0x%08X/0x%08X (%.2f sec), AllowOverlap: %d
+HoveredId: 0x%08X (%.2f sec), AllowOverlap: %d
+HoveredId: 0x%08X, ActiveId:  0x%08X
 HoveredWindow->Root: '%s
 HoveredWindow: '%s
 HoveredWindowUnderMovingWindow: '%s
-Hovering me sets the\nkeyboard capture flag
-Hue bar + SV rect
-Hue wheel + SV triangle
+Hovering the colored canvas will override io.WantCaptureXXX fields.\nNotice how normally (when set to none), the value of io.WantCaptureKeyboard would be false when hovering and true when clicking
+I am a a tooltip for a disabled item
 I am a fancy tooltip
+I am a manually emitted tooltip
 I am a tooltip
 I am a tooltip over a popup
+I am a tooltip requiring mouse to be stationary before activating
+I am a tooltip with a long delay (%0.2f sec
+I am a tooltip with a short delay (%0.2f sec
+I am a tooltip with no delay
 I am an odd tab
+I am following you around
 I am the last one here
-I#D$8t
 I+D$8I
 I+D$\bH9
 I+D$\bI9
@@ -2912,15 +3146,16 @@ I9<$vJ
 I9@\bt7
 I9@\bu
 I9C@u
-I9D$8u
-I9Y8tRH
 I9\\$ u@H
 I9]\bv
 I;D$ A
+I;Q`tnH
 I;l$ t(H
+I@33SA
 IAPrimitives
 IAVertices
 ID: 0123456789
+ID: 0x%08X, ActiveID: 0x%08X
 ID=0x%08X
 IDEMPOTENCY_UNKNOWN
 IDHcy@E
@@ -2929,12 +3164,17 @@ IIIIIII
 IMAGE_FORMAT_IMC2
 IMAGE_FORMAT_NV12
 IMAGE_FORMAT_R11G11B10_FLOAT
+IMPLOT_DRAG_LINE_Y
+IMPLOT_DRAG_POINT
+IMPLOT_DRAG_RECT
 IMWINDOW
+INDEX_READ_BIT
+INDIRECT_COMMAND_READ_BIT
+INPUT_ATTACHMENT_READ_BIT
 INTERNAL
 INVALID_ARGUMENT
 INVALID_CPPTYPE
 IPulseSystem_001
-ISO 8601
 ITEM: Button
 ITEM: Checkbox
 ITEM: ColorEdit4
@@ -2942,8 +3182,10 @@ ITEM: Combo
 ITEM: InputFloat
 ITEM: InputFloat3
 ITEM: InputText
+ITEM: InputTextMultiline
 ITEM: ListBox
 ITEM: MenuItem
+ITEM: Selectable
 ITEM: SliderFloat
 ITEM: Text
 ITEM: TreeNode
@@ -2960,26 +3202,25 @@ I\n$NETWORK_DISCONNECT_STEAM_VACBANSTATE
 I\n%NETWORK_DISCONNECT_REJECT_HIDDEN_GAME
 I\tD$@H
 Ic7IcG
-Ic@$Hc
-IcD$ A;D$$tpI
-IcD$ I
+Ic@PA;@T
+IcD$ A;D$$toM
 IcD$ L
+IcD$ M
 IcD$<H
+IcD$PA;D$T
+IcD$PI
 IcD$PM
-IcD$XA;D$\\tDM
-IcD$XM
 IcD$\bH
 IcD$\bL
 IcD$\fH
 IcD$\fI
 IcD$hI
-IcD$hM
-IcD$xM
-IcE$Hc
-IcE\bA;E\ffI
-IcF$Hc
-IcG$Hc
-IcG(Hc
+IcE@A;ED
+IcEPA;ET
+IcF A;F$E
+IcFPA;FT
+IcFXL
+IcFpA;Ft
 IcMHIc
 IcN Ic
 IcO0Ic
@@ -2988,34 +3229,63 @@ IcT$PI
 IcT$XH
 IcT$\b[H
 IcT$hI
-IcT$xH
 IcT$xI
+Ic\aA;G
 Ic\f$H
 Ic]8A9]Hu
+Ict$ E
 Ict$\fH
-Ic|$0A
+Ic|$ E
 Icǋ3Hk
 IcщG\bA
 IdempotencyLevel
+If ImPlotAxisFlags_RangeFit is disabled, the axis will fit ALL data
 If enabled, the camera's translation will be included in the projection matrix
 If lb_csm_override_staticgeo_cascades, override value used to determine which cascades render static objects
-If permitable, you are better off using hardware AA (e.g. MSAA
-If scrolling is disabled (ScrollX and ScrollY not set):\n- The table is output directly in the parent window.\n- OuterSize.x < 0.0f will right-align the table.\n- OuterSize.x = 0.0f will narrow fit the table unless there are any Stretch column.\n- OuterSize.y then becomes the minimum size for the table, which will extend vertically if there are more rows (unless NoHostExtendY is set
+If scrolling is disabled (ScrollX and ScrollY not set):\n- The table is output directly in the parent window.\n- OuterSize.x < 0.0f will right-align the table.\n- OuterSize.x = 0.0f will narrow fit the table unless there are any Stretch columns.\n- OuterSize.y then becomes the minimum size for the table, which will extend vertically if there are more rows (unless NoHostExtendY is set
 If this is intended, set 'option allow_alias = true;' to the enum definition
 If you see visual artifacts, do one of the following
+If your company uses this, please consider funding the project
 IgnoreFaceNormalsForLighting
 Ignoring extension
 Illegal jstype for int64, uint64, sint64, fixed64 or sfixed64 field
 ImDrawIdx: %d-bit
 ImDrawVert
+ImGui Metrics
 ImGui Style
 ImGuiBackendFlags_RendererHasVtxOffset: %s
+ImGuiChildFlags_AlwaysUseWindowPadding
+ImGuiChildFlags_Border
+ImGuiChildFlags_FrameStyle
+ImGuiChildFlags_ResizeX
+ImGuiChildFlags_ResizeY
 ImGuiColorEditFlags_NoBorder
+ImGuiComboFlags_HeightLargest
+ImGuiComboFlags_HeightRegular
+ImGuiComboFlags_HeightSmall
 ImGuiComboFlags_NoArrowButton
 ImGuiComboFlags_NoPreview
 ImGuiComboFlags_PopupAlignLeft
+ImGuiComboFlags_WidthFitPreview
+ImGuiHoveredFlags_DelayNone
+ImGuiHoveredFlags_DelayNormal
+ImGuiHoveredFlags_DelayShort
+ImGuiHoveredFlags_NoSharedDelay
+ImGuiHoveredFlags_Stationary
+ImGuiInputFlags_Repeat
+ImGuiInputFlags_RouteActive
+ImGuiInputFlags_RouteAlways
+ImGuiInputFlags_RouteFocused (default
+ImGuiInputFlags_RouteGlobal
+ImGuiInputFlags_RouteOverActive
+ImGuiInputFlags_RouteOverFocused
+ImGuiInputFlags_RouteUnlessBgFocused
 ImGuiInputTextFlags_AllowTabInput
 ImGuiInputTextFlags_CtrlEnterForNewLine
+ImGuiInputTextFlags_DisplayEmptyRefVal
+ImGuiInputTextFlags_EscapeClearsAll
+ImGuiInputTextFlags_NoUndoRedo
+ImGuiInputTextFlags_ParseEmptyRefVal
 ImGuiInputTextFlags_ReadOnly
 ImGuiRendererManifest
 ImGuiSliderFlags_AlwaysClamp
@@ -3028,6 +3298,7 @@ ImGuiTabBarFlags_FittingPolicyScroll
 ImGuiTabBarFlags_NoCloseWithMiddleMouseButton
 ImGuiTabBarFlags_Reorderable
 ImGuiTabBarFlags_TabListPopupButton
+ImGuiTableColumnFlags_AngledHeader
 ImGuiTableFlags_Borders
 ImGuiTableFlags_BordersH
 ImGuiTableFlags_BordersInner
@@ -3040,6 +3311,7 @@ ImGuiTableFlags_BordersV
 ImGuiTableFlags_Borders\n = ImGuiTableFlags_BordersInnerV\n | ImGuiTableFlags_BordersOuterV\n | ImGuiTableFlags_BordersInnerV\n | ImGuiTableFlags_BordersOuterH
 ImGuiTableFlags_ContextMenuInBody
 ImGuiTableFlags_Hideable
+ImGuiTableFlags_HighlightHoveredColumn
 ImGuiTableFlags_NoBordersInBody
 ImGuiTableFlags_NoBordersInBodyUntilResize
 ImGuiTableFlags_NoClip
@@ -3064,43 +3336,69 @@ ImGuiTableFlags_SizingStretchSame
 ImGuiTableFlags_SortMulti
 ImGuiTableFlags_SortTristate
 ImGuiTableFlags_Sortable
+ImGuiTreeNodeFlags_AllowOverlap
+ImGuiTreeNodeFlags_Framed
 ImGuiTreeNodeFlags_OpenOnArrow
 ImGuiTreeNodeFlags_OpenOnDoubleClick
+ImGuiTreeNodeFlags_SpanAllColumns
 ImGuiTreeNodeFlags_SpanAvailWidth
 ImGuiTreeNodeFlags_SpanFullWidth
+ImGuiTreeNodeFlags_SpanTextWidth
 ImGuiWindowFlags_NoBackground
 ImGuiWindowFlags_NoCollapse
 ImGuiWindowFlags_NoDecoration
 ImGuiWindowFlags_NoScrollbar
 ImGuiWindowFlags_NoTitleBar
-ImPlot 0.9 WIP
-ImPlot Benchmark Tool
+ImPlot 0.17
 ImPlot Colormap
 ImPlot Demo
 ImPlot Metrics
 ImPlot Style
 ImPlot says hello. (%s
-ImVec4(%.2ff, %.2ff, %.2ff, %.2ff)%s\n
+ImPlotAxisFlags_AutoFit##X
+ImPlotAxisFlags_AutoFit##Y
+ImPlotAxisFlags_PanStretch
+ImPlotAxisFlags_RangeFit##X
+ImPlotAxisFlags_RangeFit##Y
+ImPlotColormapScaleFlags_Invert
+ImPlotColormapScaleFlags_NoLabel
+ImPlotColormapScaleFlags_Opposite
+ImPlotDemoTabs
+ImPlotLegendFlags_Horizontal
+ImPlotLegendFlags_Outside
+ImPlotLegendFlags_Sort
+ImPlotPieChartFlags_IgnoreHidden
+ImPlotPieChartFlags_Normalize
+ImPlotStairsFlags_Shaded
+ImPlotSubplotFlags_ColMajor
+ImPlotSubplotFlags_LinkAllX
+ImPlotSubplotFlags_LinkAllY
+ImPlotSubplotFlags_LinkCols
+ImPlotSubplotFlags_LinkRows
+ImPlotSubplotFlags_NoResize
+ImPlotSubplotFlags_NoTitle
+ImPlotSubplotFlags_ShareItems
 ImVec4* colors = ImGui::GetStyle().Colors;\n
 ImVec4* colors = ImPlot::GetStyle().Colors;\n
 Image file
-Images
 Imaginary
 Import
 In Mem
 In SettingsNodes
 In SettingsWindows
 In columns
-In front-to-back order
 In the Advanced demo we override the policy of each column so those table-wide settings have less effect that typical
 In the color list:\nLeft-click on color square to open color picker,\nRight-click to open edit options menu
 In the color list:\nLeft-click on colored square to open color picker,\nRight-click to open edit options menu
+In window "%s
 InLightingTexture
 Inactive
+Include NaN
 IndentDisable
 IndentEnable
 IndentSpacing
 Indented
+Indeterminate
 Index must be -1 for non-repeated fields
 Index must be -1 for singular fields
 Index must be in range of repeated field values
@@ -3109,29 +3407,42 @@ Indirect Dispatch Args
 IndirectArgsBuffer
 IndirectDispatchArgs
 IndirectDrawBuffer
-Inferred order (front-to-back
+Inferred Z order (front-to-back
 Infinite
 Infinite Joint Weights encountered: Skinning will not work! (At position %.3f %.3f %.3f)\n
 Infinite Lines
+Initial Texture Barriers
+Initialized: %s
 InlayText
+Inline color editor
 InnerClipRect
 InnerRect
 Input %d: '%s', Oversample: (%d,%d), PixelSnapH: %d, Offset: (%.1f,%.1f
-Input %s %s never created/provided but is used by: %s\n
 Input Assembly Primitives - the number of primitives (triangles) processed by the input assembly stage
 Input Assembly Vertices - the number of vertices processed by the input assembly stage
+Input Map
 Input flags
 Input size too large
 InputIndices
+InputRouting
 InputService_001
 InputStackSystemVersion001
 InputSystemVersion001
 InputText
-Inputs, Navigation & Focus
+Inputs & Focus
+Inputs & Focus/Dragging
+Inputs & Focus/Focus from code
+Inputs & Focus/Inputs
+Inputs & Focus/Mouse Cursors
+Inputs & Focus/Outputs
+Inputs & Focus/Outputs/WantCapture override
+Inputs & Focus/Shortcuts
+Inputs & Focus/Tabbing
 Insert
 InsertBeforeGetPtr
 InsertOrLookupMapValue
 InstallSchemaBindings
+Instance %d: HoveredRow: %d, LastOuterHeight: %.2f
 InstanceBuffer
 InstanceData
 InstancedMesh
@@ -3139,6 +3450,7 @@ InstancedMesh %s has %i lods and %i meshes, there must be a 1:1 mapping (right n
 InstancedMesh %s has %i meshgroups: only the default will be used.\n
 InstancedMesh %s, mesh %i has %i sceneobjects: only the first will be drawn.\n
 InstancedMeshSceneObjectManifest
+Instances
 Instruct Dear ImGui to render a mouse cursor itself. Note that a mouse cursor rendered via your application GPU rendering path will feel more laggy than hardware cursor, but will be more in sync with your other visuals.\n\nSome desktop applications may use both kinds of cursors (e.g. enable software cursor only when resizing/dragging something
 Instruct backend to not alter mouse cursor shape and visibility
 Instruct navigation to move the mouse cursor. See comment for ImGuiConfigFlags_NavEnableSetMousePos
@@ -3175,34 +3487,41 @@ Invert
 IsActive
 IsAlive
 IsCentralNode
+IsChild=%d
+IsChild=1\n
 IsDockSpace
 IsEnabled
 IsFirstRender
+IsFocused
 IsHairSimParamMaterial
 IsHovered
 IsItemHovered() after begin = %d (== is title bar hovered)\nIsItemActive() after begin = %d (== is window being clicked/moved)\n
 IsItemHovered: %d
+IsMinimized
 IsMouseDragging(%d
 IsPlatformMonitor
 IsSorted
 IsVisible
-IsWindowFocused() = %d\nIsWindowFocused(_ChildWindows) = %d\nIsWindowFocused(_ChildWindows|_RootWindow) = %d\nIsWindowFocused(_RootWindow) = %d\nIsWindowFocused(_AnyWindow) = %d\n
-IsWindowHovered() = %d\nIsWindowHovered(_AllowWhenBlockedByPopup) = %d\nIsWindowHovered(_AllowWhenBlockedByActiveItem) = %d\nIsWindowHovered(_ChildWindows) = %d\nIsWindowHovered(_ChildWindows|_RootWindow) = %d\nIsWindowHovered(_ChildWindows|_AllowWhenBlockedByPopup) = %d\nIsWindowHovered(_RootWindow) = %d\nIsWindowHovered(_AnyWindow) = %d\n
+IsWindowFocused() = %d\nIsWindowFocused(_ChildWindows) = %d\nIsWindowFocused(_ChildWindows|_NoPopupHierarchy) = %d\nIsWindowFocused(_ChildWindows|_DockHierarchy) = %d\nIsWindowFocused(_ChildWindows|_RootWindow) = %d\nIsWindowFocused(_ChildWindows|_RootWindow|_NoPopupHierarchy) = %d\nIsWindowFocused(_ChildWindows|_RootWindow|_DockHierarchy) = %d\nIsWindowFocused(_RootWindow) = %d\nIsWindowFocused(_RootWindow|_NoPopupHierarchy) = %d\nIsWindowFocused(_RootWindow|_DockHierarchy) = %d\nIsWindowFocused(_AnyWindow) = %d\n
+IsWindowFocused: %d
+IsWindowFocused: %d, Shortcut: %s
+IsWindowHovered() = %d\nIsWindowHovered(_AllowWhenBlockedByPopup) = %d\nIsWindowHovered(_AllowWhenBlockedByActiveItem) = %d\nIsWindowHovered(_ChildWindows) = %d\nIsWindowHovered(_ChildWindows|_NoPopupHierarchy) = %d\nIsWindowHovered(_ChildWindows|_DockHierarchy) = %d\nIsWindowHovered(_ChildWindows|_RootWindow) = %d\nIsWindowHovered(_ChildWindows|_RootWindow|_NoPopupHierarchy) = %d\nIsWindowHovered(_ChildWindows|_RootWindow|_DockHierarchy) = %d\nIsWindowHovered(_RootWindow) = %d\nIsWindowHovered(_RootWindow|_NoPopupHierarchy) = %d\nIsWindowHovered(_RootWindow|_DockHierarchy) = %d\nIsWindowHovered(_ChildWindows|_AllowWhenBlockedByPopup) = %d\nIsWindowHovered(_AnyWindow) = %d\nIsWindowHovered(_Stationary) = %d\n
+Item %03d
 Item %d
-Item 1
-Item 2##IDText
-Item 3
+Item 001##IDText
+Item 002
+Item 003
 Item = %d
+Item Disabled
 Item Five
 Item Four
 Item One
-Item Picker
+Item Sharing
 Item Styling
 Item Three
 Item Two
 Item Type
-Item [ID=%u
-Item width
+Item [0x%08X
 Item with focus: %d
 Item with focus: <none
 Item won't be cycled through when using TAB or Shift+Tab
@@ -3210,14 +3529,16 @@ Item##1
 Item##2
 Item##3
 ItemInnerSpacing
+ItemSharing
 ItemSpacing
 Items (%d
-Items (1,000 pts each
 I|?ff6
+J Bush
 J5`!gF
 J@I9K
 JDHcr@E
 JDLcB@E
+JHH9V
 JSType
 J\b[A
 J\n NETWORK_DISCONNECT_SNAPSHOTERROR
@@ -3230,11 +3551,13 @@ Joint Indices (%d) Out Of Range for SINT16: Skinning will not work!\n
 Joint Indices (%d) Out Of Range for UINT10: Skinning will not work!\n
 Joint Indices (%d) Out Of Range for UINT8: Skinning will not work!\n
 K'D#c
-K(Ic0L
 K0D;K@teH
-K=Other
+K8Hcs01
+K=scenelayer.cpp
 KC\f\vD$LD
 KE(;E
+KEY OWNERS
+KEYBOARD/GAMEPAD/MOUSE KEYS
 KKKKKKK
 KO Blahblah
 KPIcT$HI
@@ -3248,15 +3571,34 @@ K\n'NETWORK_DISCONNECT_CLIENT_DIFFERENT_MAP
 K\n\f\a\bB\vN
 K\v8H\vtIL
 Kanjis: 日本語 (nihongo
+Kasich
 Key 0x%08X Value { i: %d
+Key Count: %d
 Key in map fields cannot be enum types
 Key in map fields cannot be float/double, bytes or message types
 KeyValueCache001
-Keyboard & Navigation State
+Keypad0
+Keypad1
+Keypad2
+Keypad3
+Keypad4
+Keypad5
+Keypad6
+Keypad7
+Keypad8
+Keypad9
+KeypadAdd
+KeypadDecimal
+KeypadDivide
+KeypadEnter
+KeypadEqual
+KeypadMultiply
+KeypadSubtract
 Keys down
 Keys mods: %s%s%s%s
 Keys pressed
-Keys release
+Keys released
+Kpi7m۶D
 L#A(t\rM
 L#d$HI\t
 L#d$\bH#D
@@ -3266,8 +3608,7 @@ L#l$pH
 L$ 9L$X
 L$ H9L
 L$ f9L$X
-L$ t.f
-L$ t\bA
+L$ t\a
 L$(dH3\f
 L$(t\fH
 L$+8L
@@ -3276,16 +3617,18 @@ L$0H9L
 L$8dH3\f
 L$HA\\A]A
 L$HdH3\f
-L$TtIA
-L$Tz\bA
 L$XdH3\f
+L$XrE
+L$\\t1H
 L$\b9H4
 L$\b9Hh
 L$\bD98~\eIc
 L$\bH9L
+L$\bHcS\fH
 L$\bJct1\b
 L$\bLcL$\f
 L$\bdH3\f
+L$\bj\bE
 L$\btgI9
 L$\bu\fH
 L$\f9\bH
@@ -3297,24 +3640,25 @@ L$\ftBH
 L$hdH3\f
 L$xdH3\f
 L$~ I
-L9#vtA
+L9G@uۋW
 L9Ir,u
 L9l$\bL
 L9l$\bt_M
 L9p }kH
+L9r@u
 L9s v
 L9s vm
 L9t$ t9H
 L9t$\bM
 L9v ~FL
 L9|$(tLL
-L;%\rgS
+L;%us
 L;4$t0A
 L;4$toM
 L;4$trM
+L;J@u
+L;\rVWR
 L;e\bus
-L;h8tQI
-L;h8tdI
 L;h\bt;I
 L;k s3H
 L;l$puYH
@@ -3324,6 +3668,7 @@ L;{ u$I
 LABEL_OPTIONAL
 LABEL_REPEATED
 LABEL_REQUIRED
+LATE_FRAGMENT_TESTS
 LC_ADDRESS
 LC_COLLATE
 LC_CTYPE
@@ -3354,11 +3699,36 @@ Label2
 Label3
 Label4
 Label5
+Label: %s
 LabelPadding
+LastRequest = time: %.2f, frame: %d
+Layer Buffer Barriers
 Layout & Scrolling
+Layout -> %s
+Layout/Basic Horizontal Layout
+Layout/Basic Horizontal Layout/Dummy
+Layout/Basic Horizontal Layout/Manual wrapping
+Layout/Basic Horizontal Layout/SameLine
+Layout/Basic Horizontal Layout/SameLine (more
+Layout/Basic Horizontal Layout/SameLine (with offset
+Layout/Child windows
+Layout/Clipping
+Layout/Groups
+Layout/Overlap Mode
+Layout/Scrolling
+Layout/Scrolling/Horizontal
+Layout/Scrolling/Horizontal (more
+Layout/Scrolling/Horizontal contents size demo window
+Layout/Scrolling/Vertical
+Layout/Text Baseline Alignment
+Layout/Widgets Width
 Lc#D;c
 Lc+D;k
+Lc5Km6
+Lc8D;=e.M
+Lc;D;=a-M
 Lc;IǄ$07
+Lc=Mj6
 LcG\bB
 Lcc Lck$I
 Lcc$Lck(I
@@ -3367,17 +3737,26 @@ Lcc,Lck0I
 Lcc\bLck\fI
 Lcc\fLck
 LcchD;cxD
-Lcd\a\bA
 Leaked drawlists : %d!!!!!\n
 Left click for details
+Left) Using ImGui::PushClipRect():\nWill alter ImGui hit-testing logic + ImDrawList rendering.\n(use this if you want your clipping rectangle to affect interactions)\n\n(Center) Using ImDrawList::PushClipRect():\nWill alter ImDrawList rendering only.\n(use this as a shortcut if you are only using ImDrawList calls)\n\n(Right) Using ImDrawList::AddText() with a fine ClipRect:\nWill alter only this specific ImDrawList::AddText() rendering.\nThis is often used internally to avoid altering the clipping rectangle and minimize draw calls
 Left-click drag on axis labels to pan an individual axis
 Left-click drag within the plot area to pan X and Y axes
 Left-click while box selecting to cancel the selection
+LeftAlt
+LeftArrow
+LeftBracket
+LeftCtrl
+LeftShift
+LeftSuper
 Legacy Columns API
 LegacyPointLightShadowsEnabled
 Legend
+Legend Options
+Legend Popups
 LegendBg
 LegendBorder
+LegendContext
 LegendHovered: %s
 LegendInnerPadding
 LegendPadding
@@ -3398,17 +3777,32 @@ LightmapUV
 LightmapUVW
 Lights in view (unshadowed+shadowed): %d+%d omni, %d+%d spot, %d+%d barn %d env %d lpv\n
 Like this one
+Limits
+Limits Constraints
+Line %04d
 Line %d
 Line %d Column %d
+Line 1
 Line 1 hello\nLine 2 clip me
+Line 1, with SameLine(0,0
+Line 2
 Line Plot
 LineWeight
+Linear
 LinearDamping
+Lines Count
+Link 1
+Link 2
+Link 3
+Link All X
+Link All Y
+Link Cols
+Link Rows
 Link X
 Link Y
 Linked Axes
-LinkedMax:  %p
-LinkedMin:  %p
+LinkedMax: %p
+LinkedMin: %p
 List all the active sceneworlds
 List boxes
 List root nodes
@@ -3420,25 +3814,16 @@ LoadKV3ObjectInPlace error: %s\n
 LoadTextureBits failed to read file %s\n
 Loaded
 Loading %d resources
-Local Time
-LocalFlags: 0x%04X SharedFlags: 0x%04X
-LocalFlags: HiddenTabBar
-LocalFlags: NoCloseButton
-LocalFlags: NoDocking
-LocalFlags: NoResize
-LocalFlags: NoResizeX
-LocalFlags: NoResizeY
-LocalFlags: NoSplit
-LocalFlags: NoTabBar
-LocalFlags: NoWindowMenuButton
+LocalFlags
+LocalFlagsInWindows
 Localize_001
 LockDynamicConstantBuffer failed in CAmbientOcclusionProxySceneObjectDesc::DrawArray!!!\n
 LockDynamicConstantBuffer failed in CSceneUtils::FilterTexture!!!\n
 LockDynamicConstantBuffer failed in CSkyBoxObjectDesc::DrawArray!!!\n
 LockMax
 LockMin
-Log Plot
-Log Scale
+LockThisFrame
+LockUntilRelease
 Log To Clipboard
 Log To File
 Log To TTY
@@ -3449,6 +3834,7 @@ LoggingSystem_Log
 LoggingSystem_RegisterLoggingChannel
 Logic problem? szsrc
 Long Text
+Long TiH
 Long text that is likely to clip
 LookAtList
 LookupMapValue
@@ -3458,7 +3844,14 @@ Low level command to set the flags byte associated with an object class. sc_SetC
 Low:   $%.2f
 Lt\b<R
 LŉC0Z
+M zYuWf
+M zau_f
+M ziugf
 M(AiU
+M(I9WpH
+M(zPuNA
+M(zXuVA
+M(z`u^A
 M+t$8M
 M94$t\vM9t$\b
 M9l$0A
@@ -3470,12 +3863,15 @@ M9}0u\tM
 M9}@u\tM
 M:0.000
 M;l$\bt
-M;n8twI
 MATCHFRAMEWORK_001
 MGetKV3ClassDefaults
 MOD desires lightbiner GPU but is unsupported by HW (SupportsCompute=%i CubeMapArrays=%i)\n
 MODEL_PROCESSING_SERVICES_INTERFACE_001
+MOUSE STATE
+MOUSE WHEELING
+MPA;MT
 MSAAResolve
+MXH9O\bt\rH
 MY CUSTOM COLOR PICKER WITH AN AMAZING PALETTE
 MY_DND
 M\n"NETWORK_DISCONNECT_SERVER_SHUTDOWN
@@ -3497,7 +3893,9 @@ Make outer height stop exactly at outer_size.y (prevent auto-extending table pas
 Make outer width auto-fit to columns, overriding outer_size.x value.\n\nOnly available when ScrollX/ScrollY are disabled and Stretch columns are not used
 Make window or viewport transparent when docking and only display docking boxes on the target viewport. Useful if rendering of multiple viewport cannot be synced. Best used with ConfigViewportsNoAutoMerge
 Manipulating window titles
-Manually wrapping
+Manual
+Manual wrapping
+Manual-resize
 MapBegin
 MapEnd
 MapKey::GetBoolValue
@@ -3538,33 +3936,46 @@ MarkerSize
 MarkerStyles
 MarkerWeight
 Markers and Text
+Master disable flag (also hide from context menu
 Material %s - cannot find raytrace shader!\n
 Material changes
 MaterialUtils_001
+Max Height (in Lines
 Max Time
 Max: %.1f
 Max: %.2f
 Max: %d units
 Max: (%.2f, %.2f
+MaxHairLength
 MaxRootBoneAngularSpeed
 MaxRootBoneSpeed
+MaxSize: [%f,%f
 MaxThreadGroups
 MaybeAllocateAligned cannot fail here
 Mc,$E;l
 Mc/E;o
 Mc4$E;t
+McCain
+McL$ H
 Mcd$pH
 Mcl$\bE
+Mcl$`I
 Mcl$xE
 Mct$\bE
 Mct$`H
 Mc҉W\bC
 MemAlloc_StrDupFunc
+Memory allocations
+Memory: %d bytes
 Menu inside a regular window
 Menu item
+Menu/Examples
+Menu/File
+Menu/Tools
 MenuBarBg
 Menu_%02d
 Menus inside a regular window
+MergedFlags
 Mesh contains %d blend weights per vertex;  truncating to %d\n
 Mesh: ElemCount: %d, VtxOffset: +%d, IdxOffset: +%d, Area: ~%0.f px
 MeshBuilderObject
@@ -3589,9 +4000,6 @@ MessageSet is not supported in proto3
 MessageSets cannot have fields, only extensions
 Messages can't have default values
 MethodDescriptorProto
-Metrics (ImGui
-Metrics (ImPlot
-Middle click (or Ctrl + right click) and drag to create a query rect
 Midterm Exam
 Min / Max
 Min Time
@@ -3599,22 +4007,28 @@ Min: %.1f
 Min: %.2f
 Min: %d units
 Min: (%.2f, %.2f
-Minimized
+Mini apps
 MinorAlpha
 MinorGridSize
 MinorTickLen
 MinorTickSize
 Misc items
-Misc:%s%s%s%s%s
+Misc/Advanced
+Misc:%s%s%s%s%s%s%s
+Miscellaneous
+Missing Text
 Missing field: FileDescriptorProto.name
 Missing name
 Mixed Shadow
 Mixed items
 MlV\rH}St
+ModAlt
+ModCtrl
+ModShift
+ModSuper
 Modal
 Modal windows are like popups but the user cannot close them by clicking outside
 ModalWindowDimBg
-Modals
 ModelDocUtils001
 Modify
 Monday
@@ -3627,23 +4041,34 @@ More content %d
 More spacing: Hello
 MorphTextureAtlasWidth
 Most plotters can also be passed a function pointer for getting data
+Mostly False
+Mostly True
 Mouse Left: drag to add lines,\nMouse Right: drag to scroll, click for context menu
 Mouse Position
 Mouse Position: (%.1f,%.1f
 Mouse Position: <invalid
-Mouse State
+Mouse Position: [%.0f,%.0f
+Mouse X
+Mouse Y
 Mouse clicked
 Mouse cursor %d: %s
-Mouse cursors
-Mouse dblclick
 Mouse delta: (%g, %g
 Mouse down
 Mouse pos: (%g, %g
 Mouse pos: <INVALID
 Mouse released
+Mouse source: %s
 Mouse wheel: %.1f
+MouseLeft
+MouseMiddle
 MousePosPadding
+MouseRight
+MouseStationaryTimer: %.2f
 MouseViewport: 0x%08X (UserHovered 0x%08X, LastHovered 0x%08X
+MouseWheelX
+MouseWheelY
+MouseX1
+MouseX2
 Move %s
 Move your mouse to change the data
 MovementSettings
@@ -3652,7 +4077,8 @@ Multi-Axis Plot
 Multi-component Widgets
 Multi-line Text Input
 Multi-line text
-Multiple Y-Axes
+Multi-viewports
+Multiple Axes
 Multiple calls to Text(), clipped
 Multiple calls to Text(), not clipped (slow
 Multiple extension registrations for type
@@ -3660,6 +4086,7 @@ Multiple tables with the same identifier will share their settings, width, visib
 MutableMessage
 MutableRawRepeatedField
 MutableRepeatedMessage
+My Subplots
 MyColor##1
 MyColor##2
 MyColor##2f
@@ -3667,6 +4094,9 @@ MyColor##3
 MyColor##3b
 MyColor##3c
 MyColor##4
+MyColor##5
+MyColor##6
+MyColormap
 MyDockSpace
 MyHelpMenu
 MyObject %d
@@ -3675,6 +4105,7 @@ MyPopup
 MyStr
 MyTabBar
 MċE\tK\b9
+N Bins
 N H9O uBI
 N(H9O(uLH
 N(H9O@uI
@@ -3694,6 +4125,8 @@ N12_GLOBAL__N_121system_error_categoryE
 N12_GLOBAL__N_122generic_error_categoryE
 N19CRayTraceSceneWorld9CPipelineE
 N19CRenderGraphBuilder12NopGraphPassE
+N19CRenderGraphBuilder14LayerGraphPass13LayerPassImplE
+N19CRenderGraphBuilder14LayerGraphPassE
 N19CRenderGraphBuilder15FillCBGraphPassE
 N19CRenderGraphBuilder16ClearRTGraphPassE
 N19CRenderGraphBuilder17DispatchGraphPassE
@@ -3706,13 +4139,14 @@ N19CRenderGraphBuilder22SetBufferDataGraphPassE
 N19CRenderGraphBuilder23ReadbackBufferGraphPassE
 N19CRenderGraphBuilder27PooledBufferResourceManagerE
 N19CRenderGraphBuilder28PooledTextureResourceManagerE
-N19CRenderGraphBuilder34ScratchRenderTargetResourceManagerE
+N19CRenderGraphBuilder29ConstantBufferResourceManagerE
 N19CRenderGraphBuilder4PassE
 N19CRenderGraphBuilder9GraphPassE
+N19CRenderGraphBuilder9LayerPassE
 N19IRayTraceSceneWorld9IPipelineE
 N23CCharacterDecalRenderer26CCharacterDecalSceneObjectE
 N23CCharacterDecalRenderer27CCharacterDecalRendererDescE
-N24CParallelProcessLauncher18CParallelLambdaJobIZ11ParallelForILb1EZN25CAggregateSceneObjectDesc21OnBeginRenderingFrameEvEUliE_EviiPKcT0_ii13JobPriority_tEUliE_EE
+N24CParallelProcessLauncher18CParallelLambdaJobIZ11ParallelForILb1EZN25CAggregateSceneObjectDesc21OnBeginRenderingFrameEvEUliE_EviiPKcOT0_ii13JobPriority_tEUliE_EE
 N24CParallelProcessLauncher18CParallelLambdaJobIZN12CSceneSystem15Thread_CullViewEP10CSceneViewP13CViewDrawListEUliE_EE
 N6google8protobuf10TextFormat17BaseTextGeneratorE
 N6google8protobuf10TextFormat17FieldValuePrinterE
@@ -3864,7 +4298,7 @@ NETWORK_DISCONNECT_UNUSUAL
 NETWORK_DISCONNECT_USERCMD
 NOT_FOUND
 NO_SIDE_EFFECTS
-NSL9CP
+NST9CX
 NSt13__facet_shims12_GLOBAL__N_112collate_shimIcEE
 NSt13__facet_shims12_GLOBAL__N_112collate_shimIwEE
 NSt13__facet_shims12_GLOBAL__N_113messages_shimIcEE
@@ -3940,25 +4374,29 @@ N\n"NETWORK_DISCONNECT_KICKED_TK_START
 N\n"NETWORK_DISCONNECT_KICKED_VOTEDOFF
 N\n#NETWORK_DISCONNECT_REJECTED_BY_GAME
 N\n\f\a\bJ\v
-Name:       %s
+NaN Values
+NaNValues
 NameOffset: %d
-NavActivateId: 0x%08X, NavInputId: 0x%08X
+NavActivateFlags: %04X
+NavActivateId/DownId/PressedId: %08X/%08X/%08X
 NavActive: %d, NavVisible: %d
 NavDisableHighlight: %d, NavDisableMouseHover: %d
 NavEnableGamepad
 NavEnableKeyboard
 NavEnableSetMousePos
+NavFocusRoute
 NavFocusScopeId = 0x%08X
 NavGameTest001
 NavHighlight
 NavId: 0x%08X, NavLayer: %d
 NavInputSource: %s
-NavInputs down
-NavInputs pressed
 NavLastIds[%d]: 0x%08X
 NavLastIds[%d]: 0x%08X at +(%.1f,%.1f)(%.1f,%.1f
+NavLastValidSelectionUserData = %lld (0x%llX
 NavLayersActiveMask: %X, NavLastChildNavWindow: %s
 NavNoCaptureKeyboard
+NavPreferredScoringPosRel[%d] = {%.1f,%.1f
+NavUpdateWindowing
 NavWindow: '%s
 NavWindowingDimBg
 NavWindowingHighlight
@@ -3967,13 +4405,14 @@ NavWindowingTarget: '%s
 Need space between identifier and decimal point
 Need space between number and identifier
 NeedsStaticLPV
-Nested tables
 NetworkClientService_001
 NetworkMessagesVersion001
 NetworkP2PService_001
 NetworkServerService_001
 NetworkService_001
 NetworkSystemVersion001
+NewFrame(): ClearActiveID() because it isn't marked alive anymore!\n
+Nice try, but the number of rows and columns must be greater than 0
 Nincompoop
 No background
 No bring to front
@@ -3990,11 +4429,20 @@ No resize
 No scrollbar
 No titlebar
 NoAutoMerge
+NoBordersInBody
+NoCloseButton
 NoCloseButton=%d%n
 NoCloseButton=1
+NoCursors
 NoDecoration
+NoDocking
+NoDockingOver
+NoDockingOverEmpty
+NoDockingOverOther
+NoDockingSplitOther
 NoFocusOnAppearing
 NoFocusOnClick
+NoHeaderLabel
 NoHeaderWidth
 NoHide
 NoInputs
@@ -4006,13 +4454,17 @@ NoReorder
 NoResize
 NoResize=%d%n
 NoResize=1
+NoResizeX
+NoResizeY
 NoSavedSettings
 NoSort
 NoSortAscending
 NoSortDescending
+NoTabBar
 NoTabBar=%d%n
 NoTabBar=1
 NoTaskBarIcon
+NoWindowMenuButton
 NoWindowMenuButton=%d%n
 NoWindowMenuButton=1
 Node %08X, Parent %08X, SelectedTab %08X ('%s
@@ -4023,27 +4475,31 @@ Node%d
 Node%d.%d
 NoiseExp
 NoiseFreq
+NoiseMask
 NoiseScale
 Non-primitive types can't be packed
 Non-repeated Any specified multiple times
 Non-repeated field
 Normal buttons
-Normalize
 Not Available
 Not Selected
+Not a widget per-se, but ImGuiTextFilter is a helper to perform simple filtering on text strings
 Not implemented field number
 Not supported
 NotAllowed
 NotListed
-Note than the default embedded font is NOT meant to be scaled.\n\nFont are currently rendered into bitmaps at a given size at the time of building the atlas. You may oversample them to get some flexibility with scaling. You can also render at multiple sizes and select which one to use at runtime.\n\n(Glimmer of hope: the atlas system will be rewritten in the future to make scaling more flexible
 Note that enum values use C++ scoping rules, meaning that enum values are siblings of their type, not children of it.  Therefore
+Note that the default embedded font is NOT meant to be scaled.\n\nFont are currently rendered into bitmaps at a given size at the time of building the atlas. You may oversample them to get some flexibility with scaling. You can also render at multiple sizes and select which one to use at runtime.\n\n(Glimmer of hope: the atlas system will be rewritten in the future to make scaling more flexible
 Note that the exact same class is required; not just the same descriptor
 Note: some memory buffers have been compacted/freed
 Notes
 November
+Num Dummy Items (Demo Scrolling
 NumCullRequests
 NumFragments
 NumKeysBuffer
+NumKeysIndex
+NumLock
 NumRequests
 Number of cascades in sunlight shadow
 Number of contexts created
@@ -4065,11 +4521,13 @@ Number of views rendered: %d (%d with world traversals)\n
 Numbers starting with leading zero must be in octal
 O;d.\bH
 O<zQuO
+O@I;y`u\bI
 OCCharacterDecalRendererDesc
 OK Blahblah
 OOOOOOO
 ORIGIN
 OUT_OF_RANGE
+O\bE1ɋA0
 O\bH+7H
 O\bH+7H9
 O\bH+7I
@@ -4083,6 +4541,7 @@ O\n(NETWORK_DISCONNECT_REJECT_BACKGROUND_MAP
 O\n(NETWORK_DISCONNECT_STEAM_AUTHALREADYUSED
 O\n\f\a\bG\v
 O\n\nAnnotation
+O`H9\vt7H
 Object %4d: 0x%p, class=%20s, origin=(%13g,%13g,%13g), bounds=(%13g,%13g,%13g):(%13g,%13g,%13g), desc=0x%p, flags=0x%016llX\n
 OcclusionQueryIssueLayer
 October
@@ -4094,6 +4553,7 @@ Offsetting is useful for realtime plots (see above) and circular buffers
 Oh dear
 OmniLight
 OnBeginRenderingFrame
+One-liner variants
 OneOneOne
 One\nTwo\nThree
 Oneof must have at least one field
@@ -4101,30 +4561,32 @@ OneofDescriptorProto
 Only Modified Colors
 Only available if ScrollX is disabled
 Only makes a difference if the popup is larger than the combo
-Only using TableNextColumn(), which tends to be convenient for tables where every cells contains the same type of contents.\nThis is also more similar to the old NextColumn() function of the Columns API, and provided to facilitate the Columns->Tables API transition
+Only using TableNextColumn(), which tends to be convenient for tables where every cell contains the same type of contents.\n This is also more similar to the old NextColumn() function of the Columns API, and provided to facilitate the Columns->Tables API transition
 OpacityScale
 Open Markers
+Open Popup
 Open Recent
-Open all
-Open the plot context menu (double right click) to change scales
 Open:  $%.2f
+Opposite
 Option
 Option field
 Option must have a name
 Option must not use reserved name "uninterpreted_option
+Option to deactivate io.AddFocusEvent(false) handling. May facilitate interactions with a debugger when focus loss leads to clearing inputs data
+Option to save .ini data with extra comments (particularly helpful for Docking, but makes saving slower
 Or, enable 32-bit indices in imconfig.h
 Orange
 Order=%d
 Order=%d%n
 Ordered constructor wrapped type has no default constructor.\n\tYou must construct it with ORDERED_CONSTRUCT macro in the dependency resolution function.\n
 Original
+OrthoAxis: 0x%08X
 OrthoLight
 OrthographicView
 Other
 Out Mem
 OutScatteringTexture
 Outdent() without matching Indent
-Outer size
 OuterRect
 OuterRect: Pos: (%.1f,%.1f) Size: (%.1f,%.1f) Sizing: '%s
 OuterRectClipped
@@ -4132,12 +4594,12 @@ OuterSize
 Output
 Output flags
 OutputIndices
-Outside
 Overlapping
 OverlayProjectionDirection
 Override CSM cross fade amount
 Override CSM distance fade
 Override Cascades that will render static objects with lb_csm_override_staticgeo_cascades_value
+Override ChildBg color
 Override Streaming GPU Memory
 Override bulb radius for CSM
 Override default setting for HDR rendering. -1 default, 0 NoHdr, 1 Hdr, 2 Hdr 1010102 3 Hdr 111110
@@ -4149,13 +4611,16 @@ Override width/height of individual cascades in the CSM
 Override. Old default was 3.0
 Override. Old default was 45
 Override. Old value was 1.0
+OverrideMod
 Overrides the map's fog settings (-1 populates fog_ vars with map's values
 Owned
 OwnedByApp
+Ozf9Oxt\rH
 P A9\\$\bI
 P HcC
+P HcH4H
 P Hǃ@O
-P HǃXN
+P HǃPN
 P HǃXO
 P Hǃ\b
 P HǃxM
@@ -4172,28 +4637,29 @@ P Iǅxd
 P(HcH0M
 P(Lcd$\bL
 P*u?H
-P0A9]h
+P0E;l$x
 P0Hc@(H
 P0Lc9D;y
 P8HcH
-P>8c7NXNZd
 P@H+P8H
 P@H+P8L
 PARAQAPWL
+PARAQWL
 PA\\A
 PCAnimatableSceneObjectDesc
 PDHcH@E
-PE4\\HNKLY
 PERMISSION_DENIED
 PFvP12CSceneObjectE
-PH9x\b
 PH;k u'H
 PHcK`Ic
 PL;c u'H
 PLACEHOLDER_VALUE
 PRESS SPACE TO DISABLE
+PRESSED
+PRE_RASTERIZATION_SHADERS
 PROGRAMMER GUIDE
 PSInvocations
+PTHcSxH
 P[]A\\ÐAWAVAUATI
 P\b)SHH
 P\bH9F\b
@@ -4210,24 +4676,27 @@ P`<%uFI
 P`<%uOH
 Package name is too long
 Padding
+PageDown
+PageUp
 Paired
-Palette
 PanoramaTextServices001
 PanoramaUIClient001
 PanoramaUIEngine001
+Pants on Fire
 Parameter to BackUp() can't be negative
 Parent=0x%08X SizeRef=%d,%d
 Parent=0x%08X%n
 ParentNode
 ParentWindow
+ParentWindowForFocusRoute
 Particle Cloth %s
 ParticleSystemMgr003
+Passing ImGuiHoveredFlags_ForTooltip to IsItemHovered() is the preferred way to standardizetooltip activation details across your application. You may however decide to use customflags for a specific tooltip instance
 Password Input
 Pastel
 PathTracingShaderBindingTable
 Pauciloquent
 Pause Streaming Activity Graph
-Pd9ylƁL
 Pen Pressure: %.1f
 Penumbra size multiplier for shadow sampling, reduces fog shadow aliasing
 Per-frame scratch memory used: %s (high watermark %s)\n
@@ -4239,18 +4708,20 @@ PerViewLightingConstantBufferGPU_t
 PerViewLightingConstantBufferGpu_t
 Percentage of the transition between two lods we will apply a dither
 Perf Marker Group - defined in the rendering pipeline
+Period
 Physics
 PhysicsBuilderMgr001
-Picker Mode
 Pie Charts
 Pineapple
 Pixel Shader Invocations - the number of times the pixel shader was invoked
 Pixel vis system using %d sets total (%d in free list), %d queries total (%d in free list)\n
+PixelMax: %f
+PixelMin: %f
 PixelVisibility_FractionVisible called with NULL queryHandle!\n
 PixelVisibility_IssueQuery called with NULL queryHandle!\n
 Pixels visible: %d (qh:%p) (frame:%d)\n
 Pixels visible: %d (qh:%p) Pixels possible: %d (qh:%p) (frame:%d)\n
-Pixels:     %f
+Pixels: %f
 Plasma
 Plat_CPUTickFrequency
 Plat_DebugPrint
@@ -4274,7 +4745,7 @@ Player_DisconnectReason_TeamKilling
 Player_DisconnectReason_UntrustedAccount
 Player_DisconnectReason_VotedOff
 Please update your library.  If you compiled the program yourself, make sure that your headers are from the same version of Protocol Buffers as your link-time library.  (Version verification failed in
-Plot 1 Sources: Legend Items
+Plot 1 Sources: Legend Item Labels
 Plot 1 Targets: Plot, Y-Axes, Legend
 Plot 2 Sources: Plot, X-Axis, Y-Axis (hold Ctrl
 Plot 2 Targets: Plot, X-Axis, Y-Axis
@@ -4282,7 +4753,7 @@ Plot A
 Plot B
 Plot Padding
 Plot Styling
-Plot [ID=%u
+Plot [0x%08X
 PlotBg
 PlotBorder
 PlotBorderSize
@@ -4290,27 +4761,32 @@ PlotContext
 PlotDefaultSize
 PlotHistogram
 PlotHistogramHovered
-PlotHovered:   %s
 PlotLines
 PlotLinesHovered
 PlotMinSize
 PlotPadding
 Plots (%d
-Plots Widgets
-Plots can be used inside of ImGui tables
+Plots can be used inside of ImGui tables as another means of creating subplots
+Pm9ylƁ9
 Pointers cannot be used as numeric values
 Points
+PolitiFact: Who Lies More
 Pollock
+Pool Mem
 Popup
 PopupBg
 PopupBorder
 PopupBorderSize
-PopupID: %08x, Window: '%s'%s%s
+PopupF
+PopupID: %08x, Window: '%s' (%s%s), RestoreNavWindow '%s', ParentWindow '%s
 PopupRounding
 Popup_%08x
-Popups
 Popups & Modal windows
 Popups (%d
+Popups/Context menus
+Popups/Menus inside a regular window
+Popups/Modals
+Popups/Popups
 Pos (%.0f,%.0f), Size (%.0f, %.0f) Ref (%.0f, %.0f
 Pos: %2.3f, %2.3f, %2.3f\nRange: %2.3f, Falloff: %2.3f\nAtten0: %2.3f Atten1: %2.3f Atten2: %2.3f\nColor: %1.3f, %1.3f, %1.3f
 Pos: %2.3f, %2.3f, %2.3f\nRange: %2.3f, Falloff: %2.3f\nAtten0: %2.3f Atten1: %2.3f Atten2: %2.3f\nColor: %1.3f, %1.3f, %1.3f\nTheta: %3.1f Phi: %3.1f
@@ -4319,22 +4795,29 @@ Pos=%d,%d Size=%d,%d
 PosColorUVNormalTangentVertexLayout
 Position2D
 Possible matches:\n
+Post Step (default
 PostDecalForwardDynamic
 PostDecalForwardNoDecals
 PostProcessVertexLayout
 PostProcessingSystem_001
+Pre Step
 PreferSortAscending
 PreferSortDescending
-Present:    %s
+Press 'Pause/Break' on keyboard
+Press 'Pause/Break' on keyboard.\n- or Click (may alter focus/active id).\n- or navigate using keyboard and press space
+Press CTRL+A and see who receives it
 Press ESC to abort picking
 Pressed %d times
 Pressed Down
 Pressed Up
+Pressing Enter will keep item active and select contents (single-line only
 PrevFrameTransformBuffer
 Previous
+PrintScreen
 Printing unusually long amount of text
 Prints out the overall extra data allocation counts
 Priority
+Processed
 ProggyClean.ttf, %dpx
 Progress Bar
 ProjectedDecalSceneObjectDesc
@@ -4344,11 +4827,13 @@ Proto file starts with 0xEF but not UTF-8 BOM. Only UTF-8 is accepted for proto 
 Protobuf: %s(%d): %s\n
 Protocol Buffer map usage error:\n
 Protocol Buffer reflection usage error:\n  Method      : google::protobuf::Reflection
+PushID
 Px[]A
 QDHcy@E
 QFullCurrFrameFromPrevFrame
 QHcK0Ic
 QHcK8Ic
+QHcV\fH
 QWorldFromObj
 Q\n&NETWORK_DISCONNECT_REJECT_BADCHALLENGE
 Q\n&NETWORK_DISCONNECT_TEMPENTMSG_OVERFLOW
@@ -4357,13 +4842,13 @@ Q\n+NETWORK_DISCONNECT_CLIENT_UNABLE_TO_CRC_MAP
 Q\n,NETWORK_DISCONNECT_REJECT_SERVERAUTHDISABLED
 Qkkbal
 Quad-shaped light
+Qualitative
+Qualitative: %s
 Quantity
 Quantization of dynamically computed shadow size
-Queried:       %s
-Query the first plot to render a subview in the second plot (see above for controls
 Querying
-Querying Status (Edited/Active/Focused/Hovered etc
-Querying:      %s
+Querying Item Status (Edited/Active/Hovered etc
+Querying Window Status (Focused/Hovered etc
 R = radius, N = number of segments
 R IcW
 R+2jZ
@@ -4433,6 +4918,7 @@ R8_UNORM
 R9G9B9E5_SHAREDEXP
 R:%0.3f
 R?vlD
+RAY_TRACING_SHADER
 RDLcB@E
 REACTION
 RESIZE
@@ -4455,9 +4941,10 @@ RGBA8888_LINEAR
 RGBA8888_UINT
 RGBX8888
 R\e \e1
+Rand Paul
 RandomFloat
-Range Widgets
-Range:      [%f,%f
+Range
+Range: [%f,%f
 Raw HSV values
 Ray trace shader material %s - has no default mode!\n
 Ray trace shader material %s has invalid RayTypeCount %d - must be between 1 and %d\n
@@ -4468,19 +4955,24 @@ Reached an unintended state: CPPTYPE_MESSAGE
 Reached impossible case in HasBit
 Reached maximum recursion limit for nested messages
 Read FAQ and docs/FONTS.md for details on font loading
-Read the FAQ at http://www.dearimgui.org/faq
+Read the FAQ at https://www.dearimgui.com/faq
 ReadbackBuffer
 Realtime Plots
 Rebuild
 Rebuild all
+Recent frames with allocations
+Rect is %sclicked, %shovered, %sheld
 Rect of child window is: (%.0f,%.0f) (%.0f,%.0f
 RecullDispatchArgs
 RecullRequestCount
 RecullRequests
 Recurse
 Recursion limit at end of parse should be
+Red shape is drawn after, into channel 0: appears in back
+Red shape is drawn after: appears in front
 Redock all
 Reduce Scratch Buffer
+Reduce hit area to the text label and a bit of margin
 RefColor
 RefScale=%f
 RefScale=%g\n
@@ -4499,14 +4991,17 @@ RefractionsFromFramebuffer
 RegisterConCommand: Unknown error registering con command "%s"!\n
 RegisterConVar: Unknown error registering convar "%s"!\n
 RegisterStringToken
-Release
 ReleaseCleared() can only be used on a RepeatedPtrField not on
 ReleaseLast() called on a RepeatedPtrField that is on an arena
 ReleaseMessage
 Releasing elements without transferring ownership is an unsafe operation.  Use UnsafeArenaExtractSubrange
+Remaining
+Remap w/ Ctrl+Shift: click anywhere to select new mouse button
 Remove all
 Remove one
 RemoveLast
+Rename
+Render Graph
 Render2DLineOverlays
 Render2DTextOverlays
 Render3DLineOverlays
@@ -4516,6 +5011,7 @@ Render3DVectorTextOverlays
 RenderAsQuads
 RenderDevice003
 RenderDeviceMgr001
+RenderGraph
 RenderHardwareConfig002
 RenderLayerDrawListPart
 RenderPipelineAliases
@@ -4526,7 +5022,7 @@ RenderUnshadowedIfFailedShadowMapAllocation
 RenderUtils_001
 RendererHasViewports
 RendererHasVtxOffset
-Rendering more text into the same line
+Rendering more items on the same line
 RenderingPipelineForwardManifest
 RenderingPipelines_001
 Reorderable Tabs
@@ -4535,19 +5031,18 @@ Repeated fields can't have default values
 RepresentativeTexture
 Requested size is too large to fit into size_t
 Required fields are not allowed in proto3
+Requires io.ConfigDebugIsDebuggerPresent=true to be set.\n\nWe otherwise disable the menu option to avoid casual users crashing the application.\n\nYou can however always access the Item Picker in Metrics->Tools
 Reserved numbers must be positive integers
 Reserved range $0 to $1 overlaps with already-defined range $2 to $3
 Reserved range end number must be greater than start number
 Reset Data
 Reset Pos
-Reset order
+Reset order###ResetOrder
 Residency Constrained by Streamer
-Resizable, fixed
-Resizable, mixed
-Resizable, stretch
+ResizableChild
 Resize Callback
-Resize horizontal only
-Resize vertical only
+Resize horizontal + lock current height
+Resize vertical + lock current width
 ResizeAll
 ResizeEW
 ResizeGrip
@@ -4564,6 +5059,8 @@ ResolveVelocityTexture
 ResolvedHairVolumeTexture
 ResolvedHairVolumeTextureMip1
 ResolvedHairVolumeTextureMip2
+Resource
+Resource %s was created but never accessed
 ResourceCompiler/BakedLighting/DisableCullingForShadows
 ResourceCompiler/BakedLighting/LPVAtlas
 ResourceCompiler/WorldRendererBuilder/UseStaticEnvMapForObjectsWithLightingOrigin
@@ -4571,8 +5068,11 @@ ResourceCompilerSystem001
 ResourceHandleUtils001
 ResourceManifestRegistry001
 ResourceSystem013
+Resources
+Result
 Return to input text into a widget
-Return value = %d\nIsItemFocused() = %d\nIsItemHovered() = %d\nIsItemHovered(_AllowWhenBlockedByPopup) = %d\nIsItemHovered(_AllowWhenBlockedByActiveItem) = %d\nIsItemHovered(_AllowWhenOverlapped) = %d\nIsItemHovered(_RectOnly) = %d\nIsItemActive() = %d\nIsItemEdited() = %d\nIsItemActivated() = %d\nIsItemDeactivated() = %d\nIsItemDeactivatedAfterEdit() = %d\nIsItemVisible() = %d\nIsItemClicked() = %d\nIsItemToggledOpen() = %d\nGetItemRectMin() = (%.1f, %.1f)\nGetItemRectMax() = (%.1f, %.1f)\nGetItemRectSize() = (%.1f, %.1f
+Return value = %d\nIsItemFocused() = %d\nIsItemHovered() = %d\nIsItemHovered(_AllowWhenBlockedByPopup) = %d\nIsItemHovered(_AllowWhenBlockedByActiveItem) = %d\nIsItemHovered(_AllowWhenOverlappedByItem) = %d\nIsItemHovered(_AllowWhenOverlappedByWindow) = %d\nIsItemHovered(_AllowWhenDisabled) = %d\nIsItemHovered(_RectOnly) = %d\nIsItemActive() = %d\nIsItemEdited() = %d\nIsItemActivated() = %d\nIsItemDeactivated() = %d\nIsItemDeactivatedAfterEdit() = %d\nIsItemVisible() = %d\nIsItemClicked() = %d\nIsItemToggledOpen() = %d\nGetItemRectMin() = (%.1f, %.1f)\nGetItemRectMax() = (%.1f, %.1f)\nGetItemRectSize() = (%.1f, %.1f
+Reversed
 Revert
 Revert Ref
 Rf9_R
@@ -4584,7 +5084,14 @@ Right-click drag to box select data
 Right-click on the individual color widget to show options
 Right-click open the full plot context menu
 Right-click to open popup
+RightAlt
+RightArrow
+RightBracket
+RightCtrl
+RightShift
+RightSuper
 Rolling
+Romney
 RootLODLevel
 RootViewIsOrthographic
 RootViewOrigin
@@ -4596,7 +5103,7 @@ RootWindowDockTree
 Roughness
 Row %d
 Row %d Column %d
-Row height
+Row Ratios
 RowBg0
 RowBg1
 S(;S,}9Lc
@@ -4604,6 +5111,7 @@ S(t_HcL
 S0H+S8M
 S0Y[]ÐUSH
 S0[A\\A
+S8D;j4
 S: %7.3f\n
 S:%0.3f
 SAPu(H
@@ -4612,9 +5120,11 @@ SCROLLX
 SCROLLY
 SDr3Y
 SH9W8H
+SHADER_READ_BIT
+SHADER_READ_ONLY_OPTIMAL
+SHADER_WRITE_BIT
 SHIFT
-SHcGhH
-SHcGxH
+SHORTCUT ROUTING
 SIGNONSTATE_CHALLENGE
 SIGNONSTATE_CHANGELEVEL
 SIGNONSTATE_CONNECTED
@@ -4625,7 +5135,6 @@ SIGNONSTATE_PRESPAWN
 SIGNONSTATE_SPAWN
 SI\tC(H
 SK\tC(H
-SL;CL
 SL\tC(H
 SPAWN_GROUP_BLOCK_UNTIL_LOADED
 SPAWN_GROUP_DONT_SPAWN_ENTITIES
@@ -4635,10 +5144,10 @@ SPHERE
 SRfA9D$`fA
 SSAOManifest
 SSAOOcclusionFactor
+ST;CT
 STRING
 SUPER
 SXy\a1
-S\bA9T$\b
 S\bHcB\b
 S\bHcB\f
 S\bHcJ
@@ -4647,7 +5156,6 @@ S\n%NETWORK_DISCONNECT_CONNECTION_FAILURE
 S\n'NETWORK_DISCONNECT_DELTAENTMSG_OVERFLOW
 S\n'NETWORK_DISCONNECT_REJECT_FAILEDCHANNEL
 S\n,NETWORK_DISCONNECT_STEAM_LOGGED_IN_ELSEWHERE
-Safe Area Padding
 Sailor
 Same title as another window##1
 Same title as another window##2
@@ -4655,6 +5163,9 @@ Sample
 Sample count
 SampleHairVolumeTexture
 SampleVelocityTexture
+Sampler
+Sanders
+Santorum
 Saturday
 Save %s
 Save As
@@ -4667,7 +5178,10 @@ SaveFlags: 0x%08X
 Scale factor for requested texture size (texture streaming
 Scale factor for requested texture size (texture streaming) - used for geo that doesn't have a precomputed UV density measure
 Scale for computed barnlight shadowmap size
+Scale global volume fog density
 Scale of the text used for 3d display
+ScaleMax: %f
+ScaleToPixel: %f
 Scatter
 Scatter Plot
 Scatter Plots
@@ -4708,6 +5222,10 @@ SceneSystem/GpuLightBinnerBinEnvMaps
 SceneSystem/GpuLightBinnerBinLPVs
 SceneSystem/GpuLightBinnerSupportViewModelCascade
 SceneSystem/HDRFrameBuffer
+SceneSystem/HairShading
+SceneSystem/Imgui/Show Debug Log
+SceneSystem/Imgui/Show ID Stack Tool
+SceneSystem/Imgui/Show Metrics
 SceneSystem/LayerBatchThreshold
 SceneSystem/LayerBatchThresholdFullsort
 SceneSystem/LightBinner/Debug Light Bounds
@@ -4719,6 +5237,7 @@ SceneSystem/LightBinner/Debug Visualize Shadowed Lights
 SceneSystem/LightBinner/Enable Baked Shadows
 SceneSystem/LightBinner/Enable Binning
 SceneSystem/LightBinner/Enable EnvMaps
+SceneSystem/LightBinner/Enable Fog Mixed Shadows
 SceneSystem/LightBinner/Enable Lights
 SceneSystem/LightBinner/Enable Mixed Shadows
 SceneSystem/LightBinner/Enable Sunlight
@@ -4726,12 +5245,15 @@ SceneSystem/LightBinner/Shadow Rotation
 SceneSystem/LightBinner/Use Illumination Bounds
 SceneSystem/LightCookieAllocGranularity
 SceneSystem/LightCookieMinAllocSize
+SceneSystem/MinimumLateAllocatedVertexCacheBufferSizeMB
 SceneSystem/NonTexturedGradientFog
 SceneSystem/PointLightShadowsEnabled
 SceneSystem/PunctualContactShadows
+SceneSystem/RenderGraph Visualizer
 SceneSystem/ShadowTextureImageFormat_D16
 SceneSystem/ShadowmapMaxFilterRadius
 SceneSystem/SkipLoadingRenderingPipelines
+SceneSystem/SparseShadowTrees
 SceneSystem/Texture Visualizer
 SceneSystem/Tonemap Visualizer
 SceneSystem/Tonemapping
@@ -4767,6 +5289,7 @@ Scroll from code
 Scroll in the plot area to zoom both X any Y axes
 Scroll on axis labels to zoom an individual axis
 Scroll: (%.2f/%.2f,%.2f/%.2f) Scrollbar:%s%s
+ScrollLock
 ScrollbarBg
 ScrollbarGrab
 ScrollbarGrabActive
@@ -4777,10 +5300,13 @@ Scrolling
 Scrolling Text %d
 ScrollingRegion
 SdfCollisionConstants
+SearchBuffer = "%s
+Searching
 Second argument to Swap() (of type
 Second argument to SwapFields() (of type
 SecondaryViewIndex
 Sections below are demonstrating many aspects of the library
+See "Columns flags" section to configure how indentation is applied to individual columns
 See ImGui Wiki page 'Image Loading and Displaying Examples
 See comments in imgui.cpp
 See example applications in the examples/ folder
@@ -4790,24 +5316,31 @@ SegmentCount
 SegmentIndexBuffer
 SegmentsPerStrand
 Select
-Selectable
+SelectCancel
+SelectHorzMod
+SelectVertMod
 Selectable (span row
 Selectable Leaf %d
 Selectable Node %d
 SelectableTextAlign
-Selectables
+Selected: %s
 Selected=0x%08X
 Selected=0x%08X%n
 SelectedTabID: 0x%08X, LastFocusedNodeID: 0x%08X
-Selecting:     %s
+Selecting: %s
 Selection
 Selection State: Multiple Selection
 Selection State: Single Selection
+Selectors/Pickers
 SelfShadow
 SelfShadowStrength
+Semicolon
 Separator
 SeparatorActive
 SeparatorHovered
+SeparatorTextAlign
+SeparatorTextBorderSize
+SeparatorTextPadding
 September
 SerializedEntitiesVersion001
 ServerToolsInfo_001
@@ -4815,12 +5348,19 @@ ServiceDescriptorProto
 ServiceOptions
 Set 'io.ConfigFlags |= NavEnableGamepad' for gamepad controls
 Set 'io.ConfigFlags |= NavEnableKeyboard' for keyboard controls
+Set 200x200
+Set 500x500
+Set 800x200
 Set as default
 Set defaults in code
 Set io.ConfigFlags |= ImGuiConfigFlags_DockingEnable in your code, or
 Set to PI
+Set to false
 Set to make all floating imgui windows always create their own viewport. Otherwise, they are merged into the main host viewports when overlapping it
+Set to true
 Set to zero
+SetActiveID() cancel MovingWindow\n
+SetActiveID() old:0x%08X (window "%s") -> new:0x%08X (window "%s")\n
 SetAllocatedMessage
 SetBool
 SetColorEditOptions() is designed to allow you to set boot-time default.\nWe don't have Push/Pop functions because you can force options on a per-widget basis if needed,and the user can change non-forced ones with the options menu.\nWe don't have a getter to avoidencouraging you to persistently save values that aren't forward-compatible
@@ -4830,6 +5370,10 @@ SetEnum
 SetFloat
 SetInt32
 SetInt64
+SetKeyboardFocusHere(%d) in window "%s"\n
+SetKeyboardFocusHere() ignored while DragDropActive!\n
+SetNextFrameWantCaptureKeyboard() on hover
+SetNextFrameWantCaptureMouse() on hover
 SetNextItemWidth/PushItemWidth(-100
 SetNextItemWidth/PushItemWidth(-FLT_MIN
 SetNextItemWidth/PushItemWidth(-GetContentRegionAvail().x * 0.5f
@@ -4844,6 +5388,9 @@ SetRepeatedInt64
 SetRepeatedString
 SetRepeatedUInt32
 SetRepeatedUInt64
+SetShortcutRouting(%s, flags=%04X, owner_id=0x%08X) -> always, no register\n
+SetShortcutRouting(%s, flags=%04X, owner_id=0x%08X) -> filtered as potential char input\n
+SetShortcutRouting(%s, flags=%04X, owner_id=0x%08X) -> score %d\n
 SetString
 SetUInt32
 SetUInt64
@@ -4860,8 +5407,6 @@ SettingsHandlers
 SettingsIniData
 SettingsTables
 SettingsWindows
-Seven
-Shaded
 Shaded Plots
 Shader depth bias applied to shadow receiver (Note this conflicts with renderstate depth bias, both now default to 0
 ShadingAtlasTextureDim
@@ -4880,27 +5425,42 @@ ShadowTile Atlas Debugger
 ShadowTiles: %02i%% lights used, %s conservative, %s final\n
 ShadowTiles: %02i%% tiles used, %s all lit, %s all shadow, %s penumbra\n
 Shape %i\nStrength %.2f\nExponent %.2f
+Share Items
+SharedFlags
+Shift
 Short Text
 Should not reach here
+Show "Debug Break" buttons in other sections (io.ConfigDebugIsDebuggerPresent
 Show 2nd header
 Show Axes Rects
+Show Axis Rects
+Show Canvas Rects
+Show Custom Format
 Show Custom Labels
 Show Custom Ticks
+Show Debug Log
+Show Frame Rects
 Show GPU Pipeline Stats
 Show Horizontal contents size demo window
+Show ID Stack Tool
 Show ImDrawCmd bounding boxes when hovering
 Show ImDrawCmd mesh when hovering
+Show Item Picker
 Show LPV bounding box when debug grid is on, 0: off, 1: on
 Show LPV debug grid, 0: off, 1: closest only 2: closest and keep 3: all
-Show Labels##1
-Show Labels##2
 Show Leading TabItemButton
+Show Legend Rects
 Show Light Shape
 Show Plot Rects
+Show SST
+Show SST compression as color map
+Show Subplot Frame Rects
+Show Subplot Grid Rects
+Show Tags
 Show Tooltip
 Show Trailing TabItemButton
 Show Vis
-Show cost of lights in fog clipmap constant buffer. yellow = 1 cost, red = 6 cost
+Show groups rectangles
 Show indented items
 Show step buttons
 Show tables rectangles
@@ -4908,9 +5468,12 @@ Show the occlusion proxies
 Show width
 Show windows begin order
 Show windows rectangles
+Showcase altering CellPadding.y between rows. Note that CellPadding.x is locked for the entire table
 Showcase using PushItemWidth() and how it is preserved on a per-column basis.\n\nNote that on auto-resizing non-resizable fixed columns, querying the content width for e.g. right-alignment doesn't make sense
-Showcase using Stretch columns + ScrollX together: this is rather unusual and only makes sense when specifying an 'inner_width' for the table!\nWithout an explicit value, inner_width is == outer_size.x and therefore using Stretch columns + ScrollX together doesn't make sense
+Showcase using SameLine(0,0) to share Current Line Height between cells.\n\nPlease note that Tables Row Height is not the same thing as Current Line Height, as a table cell may contains multiple lines
+Showcase using Stretch columns + ScrollX together: this is rather unusual and only makes sense when specifying an 'inner_width' for the table!\nWithout an explicit value, inner_width is == outer_size.x and therefore using Stretch columns along with ScrollX doesn't make sense
 Showcase using a popup ID linked to item ID, with the item having a changing label + stable ID using the ### operator
+ShtbH
 Signal 1
 Signal 2
 Signal 3
@@ -4919,10 +5482,12 @@ SimBuffer
 SimStrandsPerGroup
 SimThreadsPerGroup
 SimThreadsPerStrand
-Simple overlay\nin the corner of the screen.\n(right-click to change position
+Simple overlay\n(right-click to change position
 SimplePostProcessingLayer
 Simplified docking mode: disable window splitting, so docking is limited to merging multiple windows together into tab-bars
+Sin(time) = %f
 Single call to TextUnformatted
+SingleCharMode = %d, Size = %d, Lock = %d
 Size all columns to default###SizeAll
 Size all columns to fit###SizeAll
 Size column to fit###SizeOne
@@ -4937,9 +5502,11 @@ Sizing Policy
 Sizing policies
 SkinnedObject
 SkinningCS_Dispatch
+Skip NaN
 SkyAmbientBounce
 SkyBox
 SkyBrightnessExposureBias
+Slider
 SliderFloat (0 -> 1
 SliderGrab
 SliderGrabActive
@@ -4950,10 +5517,10 @@ Sl|-1
 Small buttons
 SmallButton
 Snickersnee
-Software AA can be enabled globally with ImPlotStyle.AntiAliasedLines
-Software AA can be enabled per plot with ImPlotFlags_AntiAliased
 Some %s text %d,%d\nOver two lines
-Some Document
+Some Doc
+Some Selectable
+Some calls to Begin()/BeginChild() will return false.\n\nWill cycle through window depths then repeat. Windows should be flickering while running
 Some content %d
 Some contents
 Some framed item
@@ -4995,6 +5562,7 @@ SpHcChH
 Space to activate a widget
 SpawnGroupFlags_t
 Specify height of the Selectable item
+Spectral
 Spherical light
 Spiral
 Split=%c
@@ -5139,6 +5707,7 @@ St9money_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE
 St9time_base
 St9type_info
 Stack depth limit hit (%d
+Stacked
 Stacked 1
 Stacked 2
 Stacked Popup
@@ -5147,7 +5716,6 @@ Stairstep Plot
 Stairstep Plots
 Static World Overlays
 StaticOverlayLayer
-Stats
 StatsService_001
 SteamAudio001
 Stem Plots
@@ -5160,6 +5728,7 @@ Stock 2
 Stock 3
 Stock Prices
 Storage
+StrandColorVariationCombo
 StrandCount
 StrandCullThreshold
 StrandDepth
@@ -5179,26 +5748,36 @@ String field
 String literals cannot cross line boundaries
 StringPrintfVector currently only supports up to
 Student
+Sturges
 Style Editor (ImGui
 Style Editor (ImPlot
+Style settings
+Style the child window like a framed item: use FrameBg, FrameRounding, FrameBorderSize, FramePadding instead of ChildBg, ChildRounding, ChildBorderSize, WindowPadding
 StyleEditor
 Sub-menu
+Subplot
+Subplot [0x%08X
+Subplots (%d
 Suggested
 Suggested field numbers for
 SunLightMinBrightness
 Sunday
+Super
 SupportsCubeMapArrays
+SurfaceIB
 SurfaceVertexCacheBuffer
 SurfaceVertexCacheOffset
 Swap %s
+Swap Cmd<>Ctrl keys, enable various MacOS style behaviors
+Sxf;Sz
+SymLog Plot
 Symbol name
+Symmetric Log Scale
 Synced Table %d
-Synced instances
 Synthetic oneofs must be after all other oneofs
 System file
 Sˆ>zp
-T$ McD
-T$ McD$$M
+T$ HcE
 T$ t\fH
 T$ ~LH
 T$8XZL
@@ -5206,10 +5785,9 @@ T$8dH3
 T$8u\rH
 T$HH\t
 T$HdH3
-T$PfA
-T$Pt8H
+T$Ht0H
 T$XdH3
-T$\b9S\b
+T$XfA
 T$\bH;C
 T$\bL#d$HI\t
 T$\btGL
@@ -5230,11 +5808,16 @@ TIcM\bHc
 TK\eR/x
 TLS init function for
 TLS wrapper function for
+TRANSFER
+TRANSFER_DST_OPTIMAL
+TRANSFER_READ_BIT
+TRANSFER_SRC_OPTIMAL
+TRANSFER_WRITE_BIT
 TREENODE
-TRw?H
-TRw?\v$h?H
 TUBE_WITH_END_CAPS
 TUUBk
+TUUUv\ef
+TUUUw
 T\n%NETWORK_DISCONNECT_KICKED_TEAMHURTING
 T\n%NETWORK_DISCONNECT_KICKED_TEAMKILLING
 T\n%NETWORK_DISCONNECT_LOCALPROBLEM_OTHER
@@ -5247,6 +5830,7 @@ Tab bar
 TabActive
 TabBar
 TabBar+Tabs
+TabBarBorderSize
 TabBars
 TabBorderSize
 TabHovered
@@ -5254,9 +5838,10 @@ TabItemButton & Leading/Trailing flags
 TabRounding
 TabUnfocused
 TabUnfocusedActive
-Tabbing
 Table 0x%08X (%d columns, in '%s
 Table 0x%08X (%d columns, in '%s')%s
+Table Size: %d
+TableAngledHeadersTextAlign
 TableBorderLight
 TableBorderStrong
 TableHeaderBg
@@ -5265,13 +5850,39 @@ TableRowBgAlt
 Tables
 Tables & Columns
 Tables (%d
+Tables/Advanced
+Tables/Angled headers
+Tables/Background color
+Tables/Basic
+Tables/Borders, background
+Tables/Columns flags
+Tables/Columns widths
+Tables/Context menus
+Tables/Custom headers
+Tables/Explicit widths
+Tables/Horizontal scrolling
+Tables/Item width
+Tables/Nested tables
+Tables/Outer size
+Tables/Padding
+Tables/Reorderable, hideable, with headers
+Tables/Resizable, fixed
+Tables/Resizable, mixed
+Tables/Resizable, stretch
+Tables/Row height
+Tables/Sorting
+Tables/Synced instances
+Tables/Tree view
+Tables/Vertical scrolling, with clipping
+Tag: %d
 Tailor
+TanFrameQuat
 TangentSpaceOffset
 Target RowBg0 to override the alternating odd/even colors,\nTarget RowBg1 to blend with them
 TempBufferStartIndex
 Template view factory "%s" was registered twice!\n
 Temporal filtering weight
-Test of different widgets react and impact the work rectangle growing when horizontal scrolling is enabled.\n\nUse 'Metrics->Tools->Show windows rectangles' to visualize rectangles
+Test how different widgets react and impact the work rectangle growing when horizontal scrolling is enabled.\n\nUse 'Metrics->Tools->Show windows rectangles' to visualize rectangles
 Test paragraph %d
 Test tree node as drag source
 Test type
@@ -5299,6 +5910,7 @@ Text aligned to framed item
 Text baseline
 Text wrapped
 Text() elements don't have stable identifiers so we need to provide one
+Text: "%s
 TextDisabled
 TextInput
 TextLayout_001
@@ -5315,32 +5927,33 @@ The Background draw list will be rendered below every Dear ImGui windows
 The Foreground draw list will be rendered over every Dear ImGui windows
 The JSON camel-case name of field
 The TextDisabled color is stored in ImGuiStyle
+The Y-axis has been configured to auto-fit to only the data visible in X-axis range
 The [proto3_optional=true] option may only be set on proto3fields, not
-The current plot limits are:  [%g,%g,%g,%g
-The current query limits are: [%g,%g,%g,%g
-The demo data precision is: float
 The extension
 The first enum value must be zero in proto3
 The lazy dog is a good dog. This paragraph should fit within %.0f pixels. Testing a 1 character word. The quick brown fox jumps over the lazy dog
 The logging API redirects all text output so you can easily capture the content of a window or a block. Tree nodes can be automatically expanded.\nTry opening any of the contents below in this window and then click one of the "Log To" button
 The offset value indicates which circle point index is considered the first
-The query rect can be dragged after it's created
 The quick brown fox jumps over the lazy dog
 The same contents can be accessed in 'Tools->Style Editor' or by calling the ShowStyleEditor() function
 The type parameter T in RepeatedFieldRef<T> API doesn't match
+The value of io.WantCaptureMouse and io.WantCaptureKeyboard are normally set by Dear ImGui to instruct your application of how to route inputs. Typically, when a value is true, it means Dear ImGui wants the corresponding inputs and we expect the underlying application to ignore them.\n\nThe most typical case is: when hovering a window, Dear ImGui set io.WantCaptureMouse to true, and underlying application should ignore mouse inputs (in practice there are many and more subtle rules leading to how those flags are set
+Theoretical
 This ZeroCopyOutputStream doesn't support aliasing. Reaching here usually means a ZeroCopyOutputStream implementation bug
 This a popup for "%s
 This appears to be a value from a sibling type
 This can't happen; base64 decoder state
 This convar is being accessed prior to ConVar_Register being called
-This demonstrate embedding a table into another table cell
+This demonstrates embedding a table into another table cell
 This example assumes 60 FPS. Higher FPS requires larger buffer size
 This example implements a console with basic coloring, completion (TAB key) and history (Up/Down keys). A more elaborate implementation may want to store entries along with extra data such as timestamp, emitter, etc
-This example shows how you may implement a property editor using two columns.\nAll objects/fields data are dummies here.\nRemember that in many simple cases, you can use ImGui::SameLine(xxx) to position\nyour cursor horizontally instead of using the Columns() API
+This example shows how you may implement a property editor using two columns.\nAll objects/fields data are dummies here.\n
 This is a custom popup for Column %d
 This is a custom popup for unused space after the last column
 This is a drag and drop source
+This is a dummy button
 This is a more typical looking tree with selectable nodes.\nClick to select, CTRL+Click to toggle, click on arrows or double-click to open
+This is a simplified view. See more detailed input state:\n- in 'Tools->Metrics/Debugger->Inputs'.\n- in 'Tools->Debug Log->IO
 This is another child window for testing the _ChildWindows flag
 This is not
 This is testing the vertical alignment that gets applied on text to keep it aligned with widgets. Lines only composed of text or "small" widgets use less vertical space than lines with framed widgets
@@ -5357,10 +5970,10 @@ This section allows you to interact and see the effect of various sizing policie
 This shouldn't be called if all the sizes are equal
 This text should automatically wrap on the edge of the window. The current implementation for text wrapping follows simple rules suitable for English and possibly other languages
 This text should automatically wrap on the edge of the work rectangle
-This widget is only here to be able to tab-out of the widgets above
+This widget is only here to be able to tab-out of the widgets above and see e.g. Deactivated() status
 This window has a changing title
 Those are old settings provided for convenience.\nHowever, the _correct_ way of scaling your UI is currently to reload your font at the designed size, rebuild the font atlas, and call style.ScaleAllSizes() on a reference ImGuiStyle structure.\nUsing those settings here will give you poor quality results
-Those flags are set by the backends (imgui_impl_xxx files) to specify their capabilities.\nHere we expose then as read-only fields to avoid breaking interactions with your backend
+Those flags are set by the backends (imgui_impl_xxx files) to specify their capabilities.\nHere we expose them as read-only fields to avoid breaking interactions with your backend
 ThreadGetCurrentId
 ThreadInMainThread
 ThreadMultiWait
@@ -5375,13 +5988,16 @@ Threshold of indirect draws when we will do compaction
 Thursday
 Tick Labels
 Tick Marks
+Ticks
 Tilefish
-Time Formatted Axes
+Time Scale
 Time Series
 TimeSlicedShadow
 TimeSlicedShadowMapRendering
 Timer took %.4f
+Tint with Text Color
 Title bar Hovered/Active tests
+Title: %s
 TitleBg
 TitleBgActive
 TitleBgCollapsed
@@ -5391,6 +6007,7 @@ To -INF
 To Clipboard
 To Ref
 To TTY
+To call IM_DEBUG_BREAK() %s
 To google::protobuf::internal::down_cast(From*) [with To = const google::protobuf::Message*; From = const google::protobuf::MessageLite
 To google::protobuf::internal::down_cast(From*) [with To = const google::protobuf::UninterpretedOption*; From = const google::protobuf::Message
 To google::protobuf::internal::down_cast(From*) [with To = google::protobuf::Message*; From = google::protobuf::MessageLite
@@ -5409,7 +6026,6 @@ Toggling this at runtime is normally unsupported (most platform backends won't r
 Toggling this at runtime is normally unsupported (most platform backends won't refresh the task bar icon state right away
 Tokenizer::ParseFloat() passed text that could not have been tokenized as a float
 Tokenizer::ParseStringAppend() passed text that could not have been tokenized as a string
-Tomato
 ToneMapping
 Tonemap Visualizer
 TonemapManifest
@@ -5423,6 +6039,8 @@ Too many non-culled draws (alloc %u, need %u), resizing!\n
 ToolFramework2_002
 ToolSceneNodeFactory_001
 ToolService_001
+Tools/About Dear ImGui
+Tools/Style Editor
 ToolsAmbientLighting
 ToolsStartup_RayTracing
 ToolsUtil
@@ -5432,20 +6050,23 @@ Tools_Opaque
 Tools_PreTranslucent
 Tools_Translucent
 Tooltip
+Tooltip are typically created by using a IsItemHovered() + SetTooltip() sequence.\n\nWe provide a helper SetItemTooltip() function to perform the two with standards flags
+Tooltip at target location
 Tooltip here
 Tooltip_%02d
+Tooltip_Hidden
 Top-left
 Top-right
 TopMost
 Total : %d (%ukb)\n
 TouchExtraPadding
+TouchScreen
+Track %d
 Transparency
 Tree in column
 Tree node
 Tree nodes
-Tree view
 TreeNode (w/ double-click
-TreePush
 Triangles rendered
 Tried to copy from a message with a different type. to
 Tried to merge messages of different types
@@ -5454,10 +6075,13 @@ Tried to register a non-generated type with the generated type registry
 Tube light with end caps
 Tube light without end caps
 Tuesday
+Twilight
 Two items: Hello
 TwoTwoTwo
 Type appears to be in generated pool but wasn't
 Type is already registered
+TypingSelect
+TypingSelect (%d
 U%08x
 U(;U,}fLc
 U+%04X..U+%04X (%d %s
@@ -5466,26 +6090,27 @@ UH.f}ᨐ2
 UHcGPI
 UNAUTHENTICATED
 UNAVAILABLE
+UNDEFINED
 UNHIDE
+UNIFORM_READ_BIT
 UNIMPLEMENTED
 UNKNOWN
 UNKNOWN ID: %d
 UNKNOWN_ENUM_VALUE_%s_%d
 USER GUIDE
-USER:\nHold SHIFT or use mouse to select text.\nCTRL+Left/Right to word jump.\nCTRL+A or double-click to select all.\nCTRL+X,CTRL+C,CTRL+V clipboard.\nCTRL+Z,CTRL+Y undo/redo.\nESCAPE to revert.\n\nPROGRAMMER:\nYou can use the ImGuiInputTextFlags_CallbackResize facility if you need to wire InputText() to a dynamic string type. See misc/cpp/imgui_stdlib.h for an example (this is not demonstrated in imgui_demo.cpp
-UTF-8 Text
+USER:\nHold SHIFT or use mouse to select text.\nCTRL+Left/Right to word jump.\nCTRL+A or Double-Click to select all.\nCTRL+X,CTRL+C,CTRL+V clipboard.\nCTRL+Z,CTRL+Y undo/redo.\nESCAPE to revert.\n\nPROGRAMMER:\nYou can use the ImGuiInputTextFlags_CallbackResize facility if you need to wire InputText() to a dynamic string type. See misc/cpp/imgui_stdlib.h for an example (this is not demonstrated in imgui_demo.cpp
+UTF-8 Encoding viewer
 UTF-8 input
 UUUUUUU
 UUUUUUUUH
-UUUUv
 UVWQ8888
 U\bHcB\f
+U\fA\vT$\fA
 U\n"NETWORK_DISCONNECT_REMOTE_BADCRYPT
 U\n&NETWORK_DISCONNECT_REPLAY_INCOMPATIBLE
 U\n&NETWORK_DISCONNECT_SERVERINFO_OVERFLOW
 U\n&NETWORK_DISCONNECT_SERVER_INCOMPATIBLE
 U\n(NETWORK_DISCONNECT_REJECT_INVALIDCERTLEN
-UhHcCH;CL
 Unbatchable material draws
 Uncertain Data
 Underlying float value: %f
@@ -5509,33 +6134,38 @@ Unrecognized command %d in scene system debugger command\n
 Unrecognized syntax
 UnsafeArenaAddAllocatedMessage
 UnsafeArenaReleaseLast
+Unsaved document
 Unsupported
 Unsupported KV3 basic type '%s' (%d
 Unsupported: type mismatch
 Untitled
+UpArrow
 Update delay for shadow size
 Update hysteresis for shadow size
 UpdateDirtyObjects
 UsJ2Ggs&4<-e47&Kl+f//9@`b+?.TeN_&B8Ss?v;^Trk;f#YvJkl&w$]>-+k?'(<S:68tq*WoDfZu';mM?8X[ma8W%*`-=;D.(nc7/;)g:T1=^J$&BRV(-lTmNB6xqB[@0*o.erM*<SWF]u2=st-*(6v>^](H.aREZSi,#1:[IXaZFOm<-ui#qUq2$##Ri;u75OK#(RtaW-K-F`S+cF]uN`-KMQ%rP/Xri.LRcB##=YL3BgM/3MD?@f&1'BW-)Ju<L25gl8uhVm1hL$##*8###'A3/LkKW+(^rWX?5W_8g)a(m&K8P>#bmmWCMkk&#TR`C,5d>g)F;t,4:@_l8G/5h4vUd%&%950:VXD'QdWoY-F$BtUwmfe$YqL'8(PWX(P?^@Po3$##`MSs?DWBZ/S>+4%>fX,VWv/w'KD`LP5IbH;rTV>n3cEK8U#bX]l-/V+^lj3;vlMb&[5YQ8#pekX9JP3XUC72L,,?+Ni&co7ApnO*5NK,((W-i:$,kp'UDAO(G0Sq7MVjJsbIu)'Z,*[>br5fX^:FPAWr-m2KgL<LUN098kTF&#lvo58=/vjDo;.;)Ka*hLR#/k=rKbxuV`>Q_nN6'8uTG&#1T5g)uLv:873UpTLgH+#FgpH'_o1780Ph8KmxQJ8#H72L4@768@Tm&Qh4CB/5OvmA&,Q&QbUoi$a_%3M01H)4x7I^&KQVgtFnV+;[Pc>[m4k//,]1?#`VY[Jr*3&&slRfLiVZJ:]?=K3Sw=[$=uRB?3xk48@aeg<Z'<$#4H)6,>e0jT6'N#(q%.O=?2S]u*(m<-V8J'(1)G][68hW$5'q[GC&5j`TE?m'esFGNRM)j,ffZ?-qx8;->g4t*:CIP/[Qap7/9'#(1sao7w-.qNUdkJ)tCF&#B^;xGvn2r9FEPFFFcL@.iFNkTve$m%#QvQS8U@)2Z+3K:AKM5isZ88+dKQ)W6>J%CL<KE>`.d*(B`-n8D9oK<Up]c$X$(,)M8Zt7/[rdkqTgl-0cuGMv'?>-XV1q['-5k'cAZ69e;D_?$ZPP&s^+7])$*$#@QYi9,5P&#9r+$%CE=68>K8r0=dSC%%(@p7.m7jilQ02'0-VWAg<a/''3u.=4L$Y)6k/K:_[3=&jvL<L0C/2'v:^;-DIBW,B4E68:kZ;%?8(Q8BH=kO65BW?xSG&#@uU,DS*,?.+(o(#1vCS8#CHF>TlGW'b)Tq7VT9q^*^$$.:&N@@$&)WHtPm*5_rO0&e%K&#-30j(E4#'Zb.o/(Tpm$>K'f@[PvFl,hfINTNU6u'0pao7%XUp9]5.>%h`8_=VYbxuel.NTSsJfLacFu3B'lQSu/m6-Oqem8T+oE--$0a/k]uj9EwsG>%veR*hv^BFpQj:K'#SJ,sB-'#](j.Lg92rTw-*n%@/;39rrJF,l#qV%OrtBeC6/,;qB3ebNW[?,Hqj2L.1NP&GjUR=1D8QaS3Up&@*9wP?+lo7b?@%'k4`p0Z$22%K3+iCZj?XJN4Nm&+YF]u@-W$U%VEQ/,,>>#)D<h#`)h0:<Q6909ua+&VU%n2:cG3FJ-%@Bj-DgLr`Hw&HAKjKjseK</xKT*)B,N9X3]krc12t'pgTV(Lv-tL[xg_%=M_q7a^x?7Ubd>#%8cY#YZ?=,`Wdxu/ae&#w6)R89tI#6@s'(6Bf7a&?S=^ZI_kS&ai`&=tE72L_D,;^R)7[$s<Eh#c&)q.MXI%#v9ROa5FZO%sF7q7Nwb&#ptUJ:aqJe$Sl68%.D###EC><?-aF&#RNQv>o8lKN%5/$(vdfq7+ebA#u1p]ovUKW&Y%q]'>$1@-[xfn$7ZTp7mM,G,Ko7a&Gu%G[RMxJs[0MM%wci.LFDK)(<c`Q8N)jEIF*+?P2a8g%)$q]o2aH8C&<SibC/q,(e:v;-b#6[$NtDZ84Je2KNvB#$P5?tQ3nt(0d=j.LQf./Ll33+(;q3L-w=8dX$#WF&uIJ@-bfI>%:_i2B5CsR8&9Z&#=mPEnm0f`<&c)QL5uJ#%u%lJj+D-r;BoF&#4DoS97h5g)E#o:&S4weDF,9^Hoe`h*L+_a*NrLW-1pG_&2UdB86e%B/:=>)N4xeW.*wft-;$'58-ESqr<b?UI(_%@[P46>#U`'6AQ]m&6/`Z>#S?YY#Vc;r7U2&326d=w&H####?TZ`*4?&.MK?LP8Vxg>$[QXc%QJv92.(Db*B)gb*BM9dM*hJMAo*c&#b0v=Pjer]$gG&JXDf->'StvU7505l9$AFvgYRI^&<^b68?j#q9QX4SM'RO#&sL1IM.rJfLUAj221]d##DW=m83u5;'bYx,*Sl0hL(W;;$doB&O/TQ:(Z^xBdLjL<Lni;''X.`$#8+1GD:k$YUWsbn8ogh6rxZ2Z9]%nd+>V#*8U_72Lh+2Q8Cj0i:6hp&$C/:p(HK>T8Y[gHQ4`4)'$Ab(Nof%V'8hL&#<NEdtg(n'=S1A(Q1/I&4([%dM`,Iu'1:_hL>SfD07&6D<fp8dHM7/g+tlPN9J*rKaPct&?'uBCem^jn%9_K)<,C5K3s=5g&GmJb*[SYq7K;TRLGCsM-$$;S%:Y@r7AK0pprpL<Lrh,q7e/%KWK:50I^+m'vi`3?%Zp+<-d+$L-Sv:@.o19n$s0&39;kn;S%BSq*$3WoJSCLweV[aZ'MQIjO<7;X-X;&+dMLvu#^UsGEC9WEc[X(wI7#2.(F0jV*eZf<-Qv3J-c+J5AlrB#$p(H68LvEA'q3n0#m,[`*8Ft)FcYgEud]CWfm68,(aLA$@EFTgLXoBq/UPlp7:d[/;r_ix=:TF`S5H-b<LI&HY(K=h#)]Lk$K14lVfm:x$H<3^Ql<M`$OhapBnkup'D#L$Pb_`N*g]2e;X/Dtg,bsj&K#2[-:iYr'_wgH)NUIR8a1n#S?Yej'h8^58UbZd+^FKD*T@;6A7aQC[K8d-(v6GI$x:T<&'Gp5Uf>@M.*J:;$-rv29'M]8qMv-tLp,'886iaC=Hb*YJoKJ,(j%K=H`K.v9HggqBIiZu'QvBT.#=)0ukruV&.)3=(^1`o*Pj4<-<aN((^7('#Z0wK#5GX@7u][`*S^43933A4rl][`*O4CgLEl]v$1Q3AeF37dbXk,.)vj#x'd`;qgbQR%FW,2(?LO=s%Sc68%NP'##Aotl8x=BE#j1UD([3$M(]UI2LX3RpKN@;/#f'f/&_mt&F)XdF<9t4)Qa.*kTLwQ'(TTB9.xH'>#MJ+gLq9-##@HuZPN0]u:h7.T..G:;$/Usj(T7`Q8tT72LnYl<-qx8;-HV7Q-&Xdx%1a,hC=0u+HlsV>nuIQL-5<N?)NBS)QN*_I,?&)2'IM%L3I)X((e/dl2&8'<M:^#M*Q+[T.Xri.LYS3v%fF`68h;b-X[/En'CR.q7E)p'/kle2HM,u;^%OKC-N+Ll%F9CF<Nf'^#t2L,;27W:0O@6##U6W7:$rJfLWHj$#)woqBefIZ.PK<b*t7ed;p*_m;4ExK#h@&]>_>@kXQtMacfD.m-VAb8;IReM3$wf0''hra*so568'Ip&vRs849'MRYSp%:t:h5qSgwpEr$B>Q,;s(C#$)`svQuF$##-D,##,g68@2[T;.XSdN9Qe)rpt._K-#5wF)sP'##p#C0c%-Gb%hd+<-j'Ai*x&&HMkT]C'OSl##5RG[JXaHN;d'uA#x._U;.`PU@(Z3dt4r152@:v,'R.Sj'w#0<-;kPI)FfJ&#AYJ&#//)>-k=m=*XnK$>=)72L]0I%>.G690a:$##<,);?;72#?x9+d;^V'9;jY@;)br#q^YQpx:X#Te$Z^'=-=bGhLf:D6&bNwZ9-ZD#n^9HhLMr5G;']d&6'wYmTFmL<LD)F^%[tC'8;+9E#C$g%#5Y>q9wI>P(9mI[>kC-ekLC/R&CH+s'B;K-M6$EB%is00:+A4[7xks.LrNk0&E)wILYF@2L'0Nb$+pv<(2.768/FrY&h$^3i&@+G%JT'<-,v`3;_)I9M^AE]CN?Cl2AZg+%4iTpT3<n-&%H%b<FDj2M<hH=&Eh<2Len$b*aTX=-8QxN)k11IM1c^j%9s<L<NFSo)B?+<-(GxsF,^-Eh@$4dXhN$+#rxK8'je'D7k`e;)2pYwPA'_p9&@^18ml1^[@g
+Use 24 Hour Clock
+Use ISO 8601
 Use ImGui::SameLine() to keep adding items to the right of the preceding item
+Use Local Time
 Use SetScrollHereX() or SetScrollFromPosX() to scroll to a given horizontal position.\n\nBecause the clipping rectangle of most window hides half worth of WindowPadding on the left/right, using SetScrollFromPosX(+1) will usually result in clipped text whereas the equivalent SetScrollFromPosY(+1) wouldn't
 Use SetScrollHereY() or SetScrollFromPosY() to scroll to a given vertical position
 Use TAB/SHIFT+TAB to cycle through keyboard editable fields
+Use Text Color for Tint
 Use child windows to begin into a self-contained independent scrolling/clipping regions within a host window
 Use default sizing policy:\n- ImGuiTableFlags_SizingFixedFit if ScrollX is on or if host window has ImGuiWindowFlags_AlwaysAutoResize.\n- ImGuiTableFlags_SizingStretchSame otherwise
 Use multidrawindirect...count if the driver/hardware supports it
 Use multiview instancing for stereo rendering
 Use the 'ImTextureID' type as storage to pass pointers or identifiers to your\nown texture data
 Use work area instead of main area
-User can right-click the picker to change mode
+Used by %i passes
 UserID=%08X
 UserID=0x%08X%n
 Using 16-bit blend indices\n
-Using ImDrawList::AddText() with a fine ClipRect:\nWill alter only this specific ImDrawList::AddText() rendering.\n(this is often used internally to avoid altering the clipping rectangle and minimize draw calls
-Using ImDrawList::PushClipRect():\nWill alter ImDrawList rendering only.\n(use this as a shortcut if you are only using ImDrawList calls
-Using ImGui::PushClipRect():\nWill alter ImGui hit-testing logic + ImDrawList rendering.\n(use this if you want your clipping rectangle to affect interactions
 Using ImGuiInputTextFlags_CallbackResize to wire your custom string type to InputText().\n\nSee misc/cpp/imgui_stdlib.h for an implementation of this for std::string
 Using NoHostExtendX and NoHostExtendY
+Using SetNextItemShortcut
+Using Shortcut
 Using TableNextRow() + calling TableNextColumn() _before_ each cell, manually
 Using TableNextRow() + calling TableSetColumnIndex() _before_ each cell, in a loop
 Using TableSetupColumn() to alter resizing policy on a per-column basis.\n\nWhen combining Fixed and Stretch columns, generally you only want one, maybe two trailing columns to use _WidthStretch
@@ -5552,18 +6182,20 @@ UtlMemory_CalcNewAllocationCount
 UtlMemory_FailedAllocation
 V(B8\f2
 V(I;V0s
+V8D9j4}6H
 V:%0.3f
 VApplication001
 VAsyncFileSystem2_001
 VAvi001
 VBik001
 VConComm001
+VERTEX_ATTRIBUTE_READ_BIT
+VERTEX_INPUT
 VEngineCvar007
 VFileSystem017
 VIcL$\bHc
 VIcL$xIc
 VLFJU
-VLines
 VMaterialSystem2_001
 VMediaFoundation001
 VP4003
@@ -5578,7 +6210,10 @@ VScriptDbg
 VScriptManager010
 VStringTokenSystem001
 VTT for
-V[8VZt
+VUUU=TUUUw
+VWebm001
+V\b1\v7H
+V\bD9\n
 V\n&NETWORK_DISCONNECT_KICKED_NOSTEAMLOGIN
 V\n&NETWORK_DISCONNECT_PURESERVER_MISMATCH
 V\n'NETWORK_DISCONNECT_CREATE_SERVER_FAILED
@@ -5630,13 +6265,15 @@ V_roundf
 V_sincosf
 V_sinf
 V_snprintf
+V_sscanf
 V_stricmp_fast
 V_strncpy
 V_strnicmp_fast
 V_tanf
 V_vsnprintf
+Validate
 Value
-Value = %.3f <-- (1) right-click this value
+Value = %.3f <-- (1) right-click this text
 Value must be "true" or "false" for boolean option
 Value must be identifier for boolean option
 Value must be identifier for enum-valued option
@@ -5651,12 +6288,12 @@ Value of type
 Value out of range for int32 option
 Value out of range for int64 option
 Value out of range for uint32 option
-Values
 Valve_Reject_Background_Map
 Valve_Reject_Connect_From_Lobby
 Valve_Reject_Hidden_Game
 Valve_Reject_Reserved_For_Lobby
 Variables
+Vd8Vct
 Vector2f
 VelocityVolumeDim
 VertCount
@@ -5674,7 +6311,6 @@ VertexUVPosColorNormalAndTangent_t
 VertexUVPos_t
 VertexWireFrame2D_t
 VertexWireFrame_t
-Vertical Sliders
 Vertical Text
 Vertical scrolling, with clipping
 VerticalScrolling
@@ -5686,9 +6322,7 @@ Vf9_V
 View "%s": %d layers\n
 View "%s": %d render target usage\n
 View "%s": %d render targets\n
-View1
-View2
-Viewport #%d, ID: 0x%08X, FrontMostStampCount = %08d, Window: "%s
+Viewport #%d, ID: 0x%08X, LastFocused = %08d, PlatformFocused = %s, Window: "%s
 Viewport #%d, ID: 0x%08X, Parent: 0x%08X, Window: "%s
 Viewport: %d%s, ViewportId: 0x%08X, ViewportPos: (%.1f,%.1f
 ViewportHeight
@@ -5707,12 +6341,12 @@ VisBuilder_001
 Visible=%d
 Visible=%d%n
 VisibleWindow
+Visualize
 VisualizeCulled
 VisualizeSceneObjectsMode
 Voltage
 VolumeMaxs
 VolumeMins
-VolumetricFogConstantBuffer_t
 VolumetricFogManifest
 VolumetricFogVolumes
 VoxSFromSs
@@ -5729,6 +6363,7 @@ W: %.1f
 W@zIuG
 WARNING
 WARNING: Encountered %d total problems with vertex data (first %d shown above)\n
+WARNING: ImDrawIdx is 16-bit and ImGuiBackendFlags_RendererHasVtxOffset is false. Expect visual glitches and artifacts! See README for more information
 WARNING: Trying to create a CRenderContextPtr without a valid context.\n
 WINDOWING
 WIcM Ic
@@ -5740,11 +6375,10 @@ W\buEH9
 W\fuKHcG01
 W\n,NETWORK_DISCONNECT_REJECT_CONNECT_FROM_LOBBY
 W\n,NETWORK_DISCONNECT_REJECT_RESERVED_FOR_LOBBY
-WantCaptureKeyboard: %d
-WantCaptureMouse: %d
+WaitForRenderingToComplete
+Walker
+WantCapture override
 WantLockSizeOnce
-WantSetMousePos: %d
-WantTextInput: %d
 Warning
 Warning parsing text-format
 Warning: Sizing Constraints won't work if the window is docked
@@ -5753,39 +6387,119 @@ Watermelon
 We are colorizing cells to B1->C2 here
 We call AlignTextToFramePadding() to vertically align the text baseline by +FramePadding.y
 We don't use the drag and drop api at all here! Instead we query when the item is held but not hovered, and order items accordingly
-We often want outer padding activated when any using features which makes the edges of a column visible:\ne.g.:\n- BorderOuterV\n- any form of row selection\nBecause of this, activating BorderOuterV sets the default to PadOuterX. Using PadOuterX or NoPadOuterX you can override the default.\n\nActual padding values are using style.CellPadding.\n\nIn this demo we don't show horizontal borders to emphasis how they don't affect default horizontal padding
+We often want outer padding activated when any using features which makes the edges of a column visible:\ne.g.:\n- BorderOuterV\n- any form of row selection\nBecause of this, activating BorderOuterV sets the default to PadOuterX. Using PadOuterX or NoPadOuterX you can override the default.\n\nActual padding values are using style.CellPadding.\n\nIn this demo we don't show horizontal borders to emphasize how they don't affect default horizontal padding
 Wednesday
 Weight=%.4f
 Weight=%f%n
 Welcome to Dear ImGui
 Wf9L$8
 Wf9L$X
+WheelingAxisAvg[] = { %.3f, %.3f }, Main Axis: %s
+WheelingWindow: '%s
+WheelingWindowReleaseTimer: %.2f
 When ImPlotAxisFlags_Time is enabled on the X-Axis, values are interpreted as\nUNIX timestamps in seconds and axis labels are formated as date/time
-When ScrollX is enabled, the default sizing policy becomes ImGuiTableFlags_SizingFixedFit, as automatically stretching columns doesn't make much sense with horizontal scrolling.\n\nAlso note that as of the current version, you will almost always want to enable ScrollY along with ScrollX,because the container window won't automatically extend vertically to fix contents (this may be improved in future versions
+When ScrollX is enabled, the default sizing policy becomes ImGuiTableFlags_SizingFixedFit, as automatically stretching columns doesn't make much sense with horizontal scrolling.\n\nAlso note that as of the current version, you will almost always want to enable ScrollY along with ScrollX, because the container window won't automatically extend vertically to fix contents (this may be improved in future versions
+When _AllowTabInput is set, passing through the widget with Tabbing doesn't automatically activate it, in order to also cycling through subsequent widgets
 When a popup is active, it inhibits interacting with windows that are behind the popup. Clicking outside the popup closes it
 When disabling anti-aliasing lines, you'll probably want to disable borders in your style as well
-When docking is enabled, you can ALWAYS dock MOST window into another! Try it now!\n- Drag from window title bar or their tab to dock/undock.\n- Drag from window menu button (upper-left button) to undock an entire node (all windows).\n- Hold SHIFT to disable docking.\nThis demo app has nothing to do with it!\n\nThis demo app only demonstrate the use of ImGui::DockSpace() which allows you to manually create a docking node _within_ another window. This is useful so you can decorate your main application window (e.g. with a menu bar).\n\nImGui::DockSpace() comes with one hard constraint: it needs to be submitted _before_ any window which may be docked into it. Therefore, if you use a dock spot as the central point of your application, you'll probably want it to be part of the very first window you are submitting to imgui every frame.\n\n(NB: because of this constraint, the implicit "Debug" window can not be docked into an explicit DockSpace() node, because that window is submitted as part of the NewFrame() call. An easy workaround is that you can create your own implicit "Debug##2" window after calling DockSpace() and leave it in the window stack for anyone to use
+When docking is enabled, you can ALWAYS dock MOST window into another! Try it now!\n- Drag from window title bar or their tab to dock/undock.\n- Drag from window menu button (upper-left button) to undock an entire node (all windows).\n- Hold SHIFT to disable docking (if io.ConfigDockingWithShift == false, default)\n- Hold SHIFT to enable docking (if io.ConfigDockingWithShift == true)\nThis demo app has nothing to do with enabling docking!\n\nThis demo app only demonstrate the use of ImGui::DockSpace() which allows you to manually create a docking node _within_ another window.\n\nRead comments in ShowExampleAppDockSpace() for more details
 When drawing circle primitives with "num_segments == 0" tesselation will be calculated automatically
+When not specified explicitly (Auto/Current mode), user can right-click the picker to change mode
 When sorting is enabled: allow no sorting, disable default sorting. TableGetSortSpecs() may return specs where (SpecsCount == 0
 When sorting is enabled: hold shift when clicking headers to sort on multiple column. TableGetSortSpecs() may return specs where (SpecsCount > 1
 While inputing text:\n
 Whitepoint
-Widgets Width
+Widgets/Basic
+Widgets/Basic/Button
+Widgets/Basic/Buttons (Colored
+Widgets/Basic/Buttons (Repeating
+Widgets/Basic/Checkbox
+Widgets/Basic/ColorEdit3, ColorEdit4
+Widgets/Basic/Combo
+Widgets/Basic/DragInt, DragFloat
+Widgets/Basic/InputInt, InputFloat
+Widgets/Basic/InputText
+Widgets/Basic/ListBox
+Widgets/Basic/RadioButton
+Widgets/Basic/Slider (enum
+Widgets/Basic/SliderAngle
+Widgets/Basic/SliderInt, SliderFloat
+Widgets/Bullets
+Widgets/Collapsing Headers
+Widgets/Color
+Widgets/Color/ColorButton (simple
+Widgets/Color/ColorButton (with Picker
+Widgets/Color/ColorButton (with custom Picker popup
+Widgets/Color/ColorEdit
+Widgets/Color/ColorEdit (HSV, with Alpha
+Widgets/Color/ColorEdit (float display
+Widgets/Color/ColorPicker
+Widgets/Combo
+Widgets/Data Types
+Widgets/Data Types/Drags
+Widgets/Data Types/Inputs
+Widgets/Data Types/Sliders
+Widgets/Disable Block
+Widgets/Drag and Drop/Drag to reorder items (simple
+Widgets/Drag and Drop/Tooltip at target location
+Widgets/Drag and Slider Flags
+Widgets/Drag and drop
+Widgets/Drag and drop/Copy-swap items
+Widgets/Drag and drop/Standard widgets
+Widgets/Images
+Widgets/Images/Textured buttons
+Widgets/List Boxes
+Widgets/Multi-component Widgets
+Widgets/Plotting
+Widgets/Progress Bars
+Widgets/Querying Item Status (Edited,Active,Hovered etc
+Widgets/Querying Window Status (Focused,Hovered etc
+Widgets/Range Widgets
+Widgets/Selectables
+Widgets/Selectables/Alignment
+Widgets/Selectables/Basic
+Widgets/Selectables/Grid
+Widgets/Selectables/In columns
+Widgets/Selectables/Multiple Selection
+Widgets/Selectables/Rendering more items on the same line
+Widgets/Selectables/Single Selection
+Widgets/Tabs
+Widgets/Tabs/Advanced & Close Button
+Widgets/Tabs/Basic
+Widgets/Tabs/TabItemButton & Leading-Trailing flags
+Widgets/Text
+Widgets/Text Filter
+Widgets/Text Input
+Widgets/Text Input/Completion, History, Edit Callbacks
+Widgets/Text Input/Filtered Text Input
+Widgets/Text Input/Miscellaneous
+Widgets/Text Input/Multi-line Text Input
+Widgets/Text Input/Password input
+Widgets/Text Input/Resize Callback
+Widgets/Text/Colored Text
+Widgets/Text/UTF-8 Text
+Widgets/Text/Word Wrapping
+Widgets/Tooltips
+Widgets/Tree Nodes
+Widgets/Tree Nodes/Advanced, with Selectable nodes
+Widgets/Tree Nodes/Basic trees
+Widgets/Vertical Sliders
 Width
 Width %.2f
-Width 400-500
-Width > 100, Height > 100
+Width Between 400 and 500
 Width: %.1f (MinX: %.1f, MaxX: %.1f
 Width=%d
 Width=%d%n
 WidthFixed
 WidthStretch
 Will call the IM_DEBUG_BREAK() macro to break in debugger.\nWarning: If you don't have a debugger attached, this will probably crash
-Window '%s' -> DockId %08X
+Window '%s' -> DockId %08X DockOrder=%d
 Window options
+Window padding
 Window will resize every-frame to the size of its content.\nNote that you probably don't want to query the window size to\noutput your content because that would create a feedback loop
 Window=0x%08X
 Window=0x%08X%n
+WindowA
 WindowBg
 WindowBorder
 WindowBorderSize
@@ -5793,9 +6507,11 @@ WindowClass: %08X\n
 WindowClassId: 0x%08X
 WindowMenu
 WindowMenuButtonPosition
-WindowPadding
+WindowOverViewport_%08X
 WindowRounding
 WindowTitleAlign
+Windows (%d
+Windows Minimap
 Wireframe2DLayout
 Wireframe3DLayout
 With Alpha
@@ -5807,11 +6523,11 @@ With Half Alpha Preview
 With Options Menu
 With Ref Color
 With Side Preview
+With a menu
 With border
 With keyboard navigation enabled
 With the ImGuiColorEditFlags_NoInputs flag you can hide all the slider/text inputs.\nWith the ImGuiColorEditFlags_NoLabel flag you can pass a non-empty label which will only be used for the tooltip and picker popup
 Without border
-Word Wrapping
 Word-wrapping
 WorldGroupId_t
 WorldRenderer/EnvironmentMapCacheSize
@@ -5823,18 +6539,23 @@ WorldRenderer/LightProbeVolumeColorSpace
 WorldRenderer/LightProbeVolumeUncompressedFormat
 WorldRendererMgr001
 Wrap width
+X Hc@(L
 X Lch,I
 X-Axis
+X-Axis %d
+X-Axis %d [0x%08X
+X-Axis 1
+X-Axis 2
 X-axis in Stops
 X. q\n\f\a\bA\v
 X/Y = %.0f px
 X18,D
 X24_TYPELESS_G8_UINT
 X32_TYPELESS_G8X24_UINT
-XAxisGrid
 XContext
+XD$\bt
 XIcE\b1
-XXXXXXX-    X    -           X           -XXXXXXX          -          XXXXXXX-     XX          ..-         -X.....X-   X.X   -          X.X          -X.....X          -          X.....X-    X..X         ---         -XXX.XXX-  X...X  -         X...X         -X....X           -           X....X-    X..X         X           -  X.X  - X.....X -        X.....X        -X...X            -            X...X-    X..X         XX          -  X.X  -X.......X-       X.......X       -X..X.X           -           X.X..X-    X..X         X.X         -  X.X  -XXXX.XXXX-       XXXX.XXXX       -X.X X.X          -          X.X X.X-    X..XXX       X..X        -  X.X  -   X.X   -          X.X          -XX   X.X         -         X.X   XX-    X..X..XXX    X...X       -  X.X  -   X.X   -    XX    X.X    XX    -      X.X        -        X.X      -    X..X..X..XX  X....X      -  X.X  -   X.X   -   X.X    X.X    X.X   -       X.X       -       X.X       -    X..X..X..X.X X.....X     -  X.X  -   X.X   -  X..X    X.X    X..X  -        X.X      -      X.X        -XXX X..X..X..X..XX......X    -  X.X  -   X.X   - X...XXXXXX.XXXXXX...X -         X.X   XX-XX   X.X         -X..XX........X..XX.......X   -  X.X  -   X.X   -X.....................X-          X.X X.X-X.X X.X          -X...X...........XX........X  -  X.X  -   X.X   - X...XXXXXX.XXXXXX...X -           X.X..X-X..X.X           - X..............XX.........X -XXX.XXX-   X.X   -  X..X    X.X    X..X  -            X...X-X...X            -  X.............XX..........X-X.....X-   X.X   -   X.X    X.X    X.X   -           X....X-X....X           -  X.............XX......XXXXX-XXXXXXX-   X.X   -    XX    X.X    XX    -          X.....X-X.....X          -   X............XX...X..X    ---------   X.X   -          X.X          -          XXXXXXX-XXXXXXX          -   X...........X X..X X..X   -       -XXXX.XXXX-       XXXX.XXXX       -------------------------------------    X..........X X.X  X..X   -       -X.......X-       X.......X       -    XX           XX    -           -    X..........X XX    X..X  -       - X.....X -        X.....X        -   X.X           X.X   -           -     X........X        X..X          -  X...X  -         X...X         -  X..X           X..X  -           -     X........X         XX           -   X.X   -          X.X          - X...XXXXXXXXXXXXX...X -           -     XXXXXXXXXX  ------------        -    X    -           X           -X.....................X-           ------------------                    ----------------------------------- X...XXXXXXXXXXXXX...X -                                                                                   -  X..X           X..X  -                                                                                   -   X.X           X.X   -                                                                                   -    XX           XX
+XXXXXXX-    X    -           X           -XXXXXXX          -          XXXXXXX-     XX          - XX       XX ..-         -X.....X-   X.X   -          X.X          -X.....X          -          X.....X-    X..X         -X..X     X..X---         -XXX.XXX-  X...X  -         X...X         -X....X           -           X....X-    X..X         -X...X   X...XX           -  X.X  - X.....X -        X.....X        -X...X            -            X...X-    X..X         - X...X X...X XX          -  X.X  -X.......X-       X.......X       -X..X.X           -           X.X..X-    X..X         -  X...X...X  X.X         -  X.X  -XXXX.XXXX-       XXXX.XXXX       -X.X X.X          -          X.X X.X-    X..XXX       -   X.....X   X..X        -  X.X  -   X.X   -          X.X          -XX   X.X         -         X.X   XX-    X..X..XXX    -    X...X    X...X       -  X.X  -   X.X   -    XX    X.X    XX    -      X.X        -        X.X      -    X..X..X..XX  -     X.X     X....X      -  X.X  -   X.X   -   X.X    X.X    X.X   -       X.X       -       X.X       -    X..X..X..X.X -    X...X    X.....X     -  X.X  -   X.X   -  X..X    X.X    X..X  -        X.X      -      X.X        -XXX X..X..X..X..X-   X.....X   X......X    -  X.X  -   X.X   - X...XXXXXX.XXXXXX...X -         X.X   XX-XX   X.X         -X..XX........X..X-  X...X...X  X.......X   -  X.X  -   X.X   -X.....................X-          X.X X.X-X.X X.X          -X...X...........X- X...X X...X X........X  -  X.X  -   X.X   - X...XXXXXX.XXXXXX...X -           X.X..X-X..X.X           - X..............X-X...X   X...XX.........X -XXX.XXX-   X.X   -  X..X    X.X    X..X  -            X...X-X...X            -  X.............X-X..X     X..XX..........X-X.....X-   X.X   -   X.X    X.X    X.X   -           X....X-X....X           -  X.............X- XX       XX X......XXXXX-XXXXXXX-   X.X   -    XX    X.X    XX    -          X.....X-X.....X          -   X............X--------------X...X..X    ---------   X.X   -          X.X          -          XXXXXXX-XXXXXXX          -   X...........X -             X..X X..X   -       -XXXX.XXXX-       XXXX.XXXX       -------------------------------------    X..........X -             X.X  X..X   -       -X.......X-       X.......X       -    XX           XX    -           -    X..........X -             XX    X..X  -       - X.....X -        X.....X        -   X.X           X.X   -           -     X........X  -                   X..X  -       -  X...X  -         X...X         -  X..X           X..X  -           -     X........X  -                    XX   -       -   X.X   -          X.X          - X...XXXXXXXXXXXXX...X -           -     XXXXXXXXXX  -             -------------       -    X    -           X           -X.....................X-           -------------------                                 ----------------------------------- X...XXXXXXXXXXXXX...X -                                                                                                 -  X..X           X..X  -                                                                                                 -   X.X           X.X   -                                                                                                 -    XX           XX
 XYZ[\\`dh
 XZIcG0H
 X[]A\\A]A^A_ÐAWAVAUATL
@@ -5856,27 +6577,22 @@ X\n'NETWORK_DISCONNECT_BADSPECTATORPASSWORD
 X\n'NETWORK_DISCONNECT_DIFFERENTCLASSTABLES
 X\n'NETWORK_DISCONNECT_KICKED_NOSTEAMTICKET
 X\n(NETWORK_DISCONNECT_INVALID_MESSAGE_ERROR
+X`Hc@XH
 X`\\abcdHP0
 Xtk<Y
 XuDSH
 Y-Axis
 Y-Axis %d
+Y-Axis %d [0x%08X
 Y-Axis 1
 Y-Axis 2
 Y-Axis 3
 Y. q\n\f\a\bA\v
-Y@6IImGui
-YA1E1
 YA1SH
-YAxis2
-YAxis3
-YAxisGrid
-YAxisGrid2
-YAxisGrid3
 YContext
 YDHcy@E
 YIc\a^IcW\bH
-YSN[RUZ
+YSN[RUZP>8c7NXNZdPE4\\HNKLY
 Y[]A\\A]A^A_ÐAUATH
 Y[]A\\A]ÐAUATI
 Y[]A\\A]ÐAVAUI
@@ -5893,23 +6609,23 @@ Y^[]A\\ÐAWAVAUATUSAPH
 Y^[ÐAWAVH
 Yellow
 Yes, you can\ndrag this
+You can also call ImGui::DebugTextEncoding() from your code with a given string to test that your UTF-8 encoding settings are correct
 You can also call ImGui::LogText() to output directly to the log without a visual output
-You can apply arithmetic operators +,*,/ on numerical values.\n  e.g. [ 100 ], input '*2', result becomes [ 200 ]\nUse +- to subtract
-You can apply arithmetic operators +,*,/ on numerical values.\nUse +- to subtract
+You can also call ImGui::ShowDebugLogWindow() from your code
+You can also call ImGui::ShowIDStackToolWindow() from your code
 You can create custom plotters or extend ImPlot using implot_internal.h
+You can drag axes to the opposite side of the plot
 You can drag from the color squares
 You can implement legend context menus to inject per-item controls and widgets
 You can input value using the scientific notation,\n  e.g. "1e+8" becomes "100000000
 You can optionally pass user data to be given to your getter function
-You can pass a 'min_row_height' to TableNextRow().\n\nRows are padded with 'style.CellPadding.y' on top and bottom, so effectively the minimum row height will always be >= 'style.CellPadding.y * 2.0f'.\n\nWe cannot honor a _maximum_ row height as that would requires a unique clipping rectangle per row
+You can pass a 'min_row_height' to TableNextRow().\n\nRows are padded with 'style.CellPadding.y' on top and bottom, so effectively the minimum row height will always be >= 'style.CellPadding.y * 2.0f'.\n\nWe cannot honor a _maximum_ row height as that would require a unique clipping rectangle per row
 You can plot custom structs using the stride feature
-You can plot digital and analog signals on the same plot
 You can use ImGui::GetMouseDragDelta(0) to query for the dragged amount on any widget
 You can use the ImGuiInputTextFlags_CallbackResize facility if you need to wire InputTextMultiline() to a dynamic string type. See misc/cpp/imgui_stdlib.h for an example. (This is not demonstrated in imgui_demo.cpp because we don't want to include <string> in here
 Your application can render a different mouse cursor based on what ImGui::GetMouseCursor() returns. If software cursor rendering (io.MouseDrawCursor) is set ImGui will draw the right cursor for you, otherwise your backend needs to handle it
 Your current configuration is
 Z-google.golang.org/protobuf/types/descriptorpb
-Z13V_SplitStringPKcS0_R10CUtlVectorI10CUtlStringi10CUtlMemoryIS2_iEEb
 Z14GetGameInfoIntPKci
 Z14V_stristr_fastPKcS0
 Z15GetGameInfoBoolPKcb
@@ -6057,7 +6773,6 @@ ZGVZNKSt8__detail11_AnyMatcherISt12regex_traitsIcELb0ELb0ELb0EEclEcE5__nul
 ZGVZNKSt8__detail11_AnyMatcherISt12regex_traitsIcELb0ELb0ELb1EEclEcE5__nul
 ZGVZNKSt8__detail11_AnyMatcherISt12regex_traitsIcELb0ELb1ELb0EEclEcE5__nul
 ZGVZNKSt8__detail11_AnyMatcherISt12regex_traitsIcELb0ELb1ELb1EEclEcE5__nul
-ZL29InitForFrustum_DebugRendering21ESceneObjectTypeFlagsS_17ESceneObjectFlagsS0_P10CSceneViewEUlP17CSceneLightObjectE
 ZN10CUtlBuffer12SetBigEndianEb
 ZN10CUtlBuffer18AddNullTerminationEv
 ZN10CUtlBuffer3PutEPKvi
@@ -6129,7 +6844,7 @@ ZN12CSceneSystem22ReleaseLayerDependentsERKSt10shared_ptrI13CViewDrawListEP11CSc
 ZN12CSceneSystem22ReleaseLayerDependentsERKSt10shared_ptrI13CViewDrawListEP11CSceneLayerEUlvE0
 ZN12CSceneSystem22ReleaseLayerDependentsERKSt10shared_ptrI13CViewDrawListEP11CSceneLayerEUlvE1
 ZN12CSceneSystem26Thread_RenderLayerDrawListESt10shared_ptrI13CViewDrawListEP11CSceneLayerP16CRenderBatchList18EBatchStartFlags_tRK10CUtlVectorIP14CSceneDrawListi10CUtlMemoryISA_iEEEUlvE
-ZN12CSplitString9ConstructEPKcPS1_ib
+ZN12CSplitString5SplitEPKciPS1_ib
 ZN12CThreadEvent3SetEv
 ZN12CThreadEventC1Eb
 ZN13CBufferString10FixSlashesEc
@@ -6298,7 +7013,6 @@ ZN9__gnu_cxxeqIPcSsEEbRKNS_17__normal_iteratorIT_T0_EES7
 ZN9__gnu_cxxeqIPwNSt7__cxx1112basic_stringIwSt11char_traitsIwESaIwEEEEEbRKNS_17__normal_iteratorIT_T0_EESD
 ZN9__gnu_cxxeqIPwSbIwSt11char_traitsIwESaIwEEEEbRKNS_17__normal_iteratorIT_T0_EESB
 ZNK10CUtlString27IsEqual_FastCaseInsensitiveEPKc
-ZNK10CUtlStringixEi
 ZNK10__cxxabiv117__class_type_info10__do_catchEPKSt9type_infoPPvj
 ZNK10__cxxabiv117__class_type_info11__do_upcastEPKS0_PKvRNS0_15__upcast_resultE
 ZNK10__cxxabiv117__class_type_info11__do_upcastEPKS0_PPv
@@ -10817,6 +11531,7 @@ Z\n(NETWORK_DISCONNECT_KICKED_HOSTAGEKILLING
 Z\n(NETWORK_DISCONNECT_REMOTE_CERTNOTTRUSTED
 Z\n*NETWORK_DISCONNECT_REJECT_INVALIDKEYLENGTH
 Z\n+NETWORK_DISCONNECT_CONNECT_REQUEST_TIMEDOUT
+Z\vB\fHcr
 ZdaPv
 ZdaPvSt11align_val_t
 ZdaPvm
@@ -10834,14 +11549,19 @@ ZnwmRKSt9nothrow_t
 ZnwmSt11align_val_t
 ZnwmSt11align_val_tRKSt9nothrow_t
 Zoom %f\n
+Zoom Constraints
+Zoom and pan the X-axis. Disable Stems to see a difference in fit
+ZoomMod
+ZoomRate
 ZÐATUI
 ZÐATUSH
 ZÐAUATI
 ZÐAVAUATUI
 a protocol buffer. Use the 'bytes' type if you intend to send raw bytes
-a<#viD
+a0D9f D
+a<#vqD
 a<~u I
-aAXƃlM
+aAYƃlM
 aH9G\bt
 aH9G\bt:H9S\bu
 aH9G\bt\v
@@ -10854,6 +11574,7 @@ aaa1.c
 aaa2.cpp
 aaaaaaaa bbbbbbbb, c cccccccc,dddddddd. d eeeeeeee   ffffffff. gggggggg!hhhhhhhh
 accessor_ == other.accessor
+active resources
 active sceneobject: %i clusters
 adding views while previous rendering is running. Someone needed to call WaitForRenderingToComplete()!!!!!\n
 additional_includes
@@ -10863,6 +11584,7 @@ aggregate_value
 aggregatedesc.cpp
 aj\n\f\a\bG\v
 albedo for LPV debug grid
+aliasing
 alignof
 alphatest
 ambientColor
@@ -10885,10 +11607,10 @@ aq\n\f\a\bG\vc
 args were given.  Full format string was
 arguments
 array: %u elements
+as %s
 assert_fail
 asterisk
 at'H9U
-at4E1
 atpUSH
 avg %f
 avg lum: average scene luminance, calculated using average of pixels that fall within\nmat_tonemap_force_log_lum_min, mat_tonemap_force_log_lum_max.\n(defaults 0.5,0.5 so average is half of pixels either side
@@ -10900,40 +11622,48 @@ aÐAUATI
 b"S\n\nCEntityMsg
 b"k\n"CNETMsg_SpawnGroup_SetCreationTick
 b%d (%.02f secs
+b%d (%d
 b16777215"R\n\nCMsg_CVars
 b;kp|\t1
 b< t\a<\tu
 b>Viewport X</b>=%d <b>Y</b>=%d <b>Width</b>=%d <b>Height</b>=%d  <b>MinZ</b>=%.3f <b>MaxZ</b>=%.3f
 b?,eY
 b@80u
-b@UUUUUU
 bA8^nA
 bA9;t
 bASARWH
 bAUATUSH
 bAVAUATI
 bAVAUI
+bAWAVAUARWH
 bA\\A]A
 bBQ]H"l\t
 bD$/u)H
 bD$\ftfH
 bD$\fupH
+bD9x\b
 bDisableDynamicRefractionMap
 bH9H\bt
 bH9H\bt\bH
 bH9H\bu
 bH9X\b
+bH;5SUR
+bH;5sx
 bH;l$\b
 bHcD$4
-bI9D$\b
+bHcWxH
+bHc\a;G
+bI9F\b
+bI9G\b
 bI9\\$8u
+bIcD$xH
 bIcN0A
-bIcV8H
+bIcVXH
 bL$HH;G
 bLc/E
-bLc7HcW
-bLcoXE
+bLcgtL
 bLcohE
+bMc$$I
 bNdFbNdFbNdFbNdF
 bPHhFQ\n
 bReflectDynamicObjectsOnly
@@ -10941,9 +11671,11 @@ bT$=H;G
 bT$VH;G
 bX[]ÐUSH
 bZÐSH
+b[A\\A]A^A_]ÐHcGP;GTt
 b[]ÐAWL
 b[ÐSH
 b\\RF
+b\b\b\bA
 b\bf\fn\nH
 b\bf\fn\nr\rH
 b\fH0<=D
@@ -11003,6 +11735,7 @@ bodygroup
 bonename
 bool google::protobuf::internal::RepeatedFieldRefIterator<T>::operator!=(const google::protobuf::internal::RepeatedFieldRefIterator<T>&) const [with T = google::protobuf::Message
 boolean
+bootstrap
 bounce
 bounce_scale
 bt!USH
@@ -11018,10 +11751,12 @@ but was
 bytes
 bytes).  To increase the limit (or to disable these warnings), see CodedInputStream::SetTotalBytesLimit() in third_party/protobuf/io/coded_stream.h
 bz\nH
+bz\ru\vf
 bÐATUH
 bÐATUI
 bÐAVAUL
 bÐUSRH
+c [%02d] where %03d, insert %03d, delete %03d, char_storage %03d "%s
 c%c%c
 c' (0x%04X
 c(D9c0D
@@ -11030,11 +11765,12 @@ c0HcC(M
 c8L+c0I
 c<yXH?B
 c?zS9
-cHE19
+cHcC\fH
 cPL+cHI
 c\bL+#H
 c\b[A
 c\n\rCMsgTransform
+cabasa
 can fit within a text block
 can't reach here
 cannot be required
@@ -11044,6 +11780,7 @@ cannot create std::vector larger than max_size
 cannot determine missing fields for lite message
 canvas
 carriage-return
+casing swap
 cc_enable_arenas
 cc_generic_services
 ccc1.c
@@ -11086,6 +11823,7 @@ combo 3 (array
 combo 4 (function
 comment
 commercial-at
+common
 compacted draw count
 compacted drawindirectargs
 compaction requests
@@ -11104,14 +11842,17 @@ const google::protobuf::internal::ExtensionSet::KeyValue* google::protobuf::inte
 const string& google::protobuf::UnknownField::length_delimited() const
 const_cast
 construction vtable for
+contains
 contains invalid UTF-8 data when
 contains null character
 copy_rt
 covariant return thunk to
 cpu culling: [vis %d] [vol %d] [dist %d] [size %d]\n
+created by %s
 creationsequence
 csharp_namespace
 csmFrustumFOVOverride
+csmPushbackDistance
 csmPushbackDistanceViewModel
 csm_bias_override_0
 csm_bias_override_1
@@ -11130,7 +11871,13 @@ csm_res_override_0
 csm_res_override_1
 csm_res_override_2
 csm_res_override_3
+csm_shadow_worldview_align_x_to_u
+csm_shadow_worldview_shear_align_z_to_v
 csm_split_log_scalar
+csm_sst_max_visible_dist
+csm_sst_pushback_distance
+csm_sst_shadow_focus_region_maxz
+csm_sst_shadow_focus_region_minz
 csm_viewdir_shadow_bias
 csm_viewmodel_farz
 csm_viewmodel_max_shadow_dist
@@ -11176,15 +11923,13 @@ cxa_throw_bad_array_new_length
 d %d %d %d
 d (%d depth-only
 d (%ukb), %d (%ukb)\n
-d (0x%X
-d (0x%X) (%.02f secs
 d Scene Worlds: --\n
-d active allocations
-d active windows (%d visible
 d columns
+d current allocations
 d depth-only alpha-tested
 d draw calls for particles\n
 d initial materials (%d initial depth-only) (%i fast-path depth-only)\n
+d instances of same table! Some data below will refer to last instance
 d material Vfx evals, %d material Vfx rule checks, %i cb updates (%ikb)\n
 d material binds for particles\n
 d material computes, %d full material sets, %d similar sets, %d texture-only sets\n
@@ -11192,6 +11937,7 @@ d particle systems rendered\n
 d primary\n
 d some text
 d vertices, %d indices (%d triangles
+d visible windows, %d current allocations
 d$$E19
 d$0L+d$(H
 d$4v\tf
@@ -11199,7 +11945,6 @@ d$xPAQj
 d-%02d
 d-%02d-%02d
 d/%d/%02d
-d4@Hc
 d: %8.4g\n%d: %8.4g
 d:%02d%s
 d:%02d:%02d%s
@@ -11208,10 +11953,10 @@ dH3\f
 d\n-NETWORK_DISCONNECT_KICKED_COMPETITIVECOOLDOWN
 d\n-NETWORK_DISCONNECT_LOCALPROBLEM_NETWORKCONFIG
 d\n\f\a\bF\vc\n\f\a\bE\v8
-d] %.2f (%.02f secs
+data%d
 data.rel.ro
 data_ == other.data
-dear imgui says hello. (%s
+dear imgui says hello! (%s) (%d
 debugmeshletdrawargs
 debugoverlay_force_respect_ttl
 debugoverlay_show_text_outline
@@ -11225,6 +11970,8 @@ decltype(nullptr
 default = $0
 default arg
 default pushback
+define: IMGUI_DISABLE_OBSOLETE_FUNCTIONS
+define: IMGUI_DISABLE_OBSOLETE_KEYIO
 define: IMGUI_HAS_DOCK
 define: IMGUI_HAS_VIEWPORT
 define: __GNUC__=%d
@@ -11235,6 +11982,7 @@ delete
 deleted virtual method called\n
 demo menu
 depth pass
+depth viz
 depthTarget
 desktop.ini
 details
@@ -11249,6 +11997,23 @@ dimensions
 display very important message here
 dl_iterate_phdr
 dndxy
+docking] - Tab 0x%08X '%s' Order %d\n
+docking] DockContextAddNode 0x%08X\n
+docking] DockContextProcessDock node 0x%08X target '%s' dock window '%s', split_dir %d\n
+docking] DockContextProcessDock node 0x%08X, split_dir %d\n
+docking] DockContextProcessUndockNode node %08X\n
+docking] DockContextProcessUndockWindow window '%s', clear_persistent_docking_ref = %d\n
+docking] DockContextPruneUnusedSettingsNodes: Prune 0x%08X\n
+docking] DockContextRebuildNodes\n
+docking] DockContextRemoveNode 0x%08X\n
+docking] DockNodeAddWindow node 0x%08X window '%s'\n
+docking] DockNodeRemoveWindow node 0x%08X window '%s'\n
+docking] DockNodeTreeMerge: 0x%08X + 0x%08X back into parent 0x%08X\n
+docking] DockSettingsRenameNodeReferences: from 0x%08X -> to 0x%08X\n
+docking] DockSpace: dockspace node 0x%08X created\n
+docking] DockSpace: dockspace node 0x%08X: setup WindowClass 0x%08X -> 0x%08X\n
+docking] In node 0x%08X: %d new appearing tabs:%s\n
+docking] SelectedTabId = 0x%08X, NavWindow->TabId = 0x%08X\n
 dollar-sign
 dr^3c0
 drag double
@@ -11263,8 +12028,10 @@ drag int 0..100
 drag int2
 drag int3
 drag int4
+drag me
 drag s16
 drag s32
+drag s32 hex
 drag s64
 drag s8
 drag small float
@@ -11272,6 +12039,8 @@ drag u16
 drag u32
 drag u64
 drag u8
+dragdrop] BeginDragDropSource() DragDropActive = true, source_id = %08X\n
+dragdrop] ClearDragDrop()\n
 draw2D
 drawShadows
 drawcounts
@@ -11279,6 +12048,8 @@ drawindirectargs_debug
 drawindirectargs_recull
 drawmaterialquad2
 drop here
+drop here##0
+drop here##1
 dummy
 dummybuffer
 dump3d
@@ -11296,7 +12067,7 @@ e#GameUI_Disconnect_SteamVAC
 e#GameUI_Disconnect_TimedOut
 e#GameUI_ServerRequireSteams
 e#Valve_Reject_Single_Player
-eHcK0Ic
+e1ҋG$LcO(D
 e\n\f\a\bD\vb
 e\n\f\a\bD\vc
 edit me
@@ -11305,7 +12076,6 @@ eh_frame
 eh_frame_hdr
 ehandle
 emissive_lighting_boost
-empty
 empty indirect draws compacted: %i
 empty member name
 enter text here
@@ -11320,6 +12090,7 @@ error
 error] something went wrong
 events
 exceeded maximum protobuf size of 2GB
+except InputRouting which is spammy
 exclamation-mark
 expected_long_tick
 expected_long_tick_reason
@@ -11334,27 +12105,31 @@ f$H9L
 f$L9L$\bt8I
 f$L9L$\btMI
 f(x) = 10^x
-f(x) = cos(x)*.2+.5 (Y2
+f(x) = a*x+b
 f(x) = log(x
+f(x) = sin(x
 f(x) = sin(x)*3+1
 f(x) = sin(x)+1
-f(x) = sin(x+.5)*100+200 (Y3
+f(x) = sin(x+.5)*100+200
 f(x) = x
 f+B\ff
 f2ATUH
+f8IcF0M
 f9C\fu
 f9|$Xr{A
 f@n۶m
+fA9<At
+fA9\fAt
 fA;E\b
 fA\tF`A\bVbH
-fD9Cl
+fD9QR~\af
+fD9x\f
 fD9|$8
 fD;g@u
 fD;gBu
 fD;m\bsAL
 fHcS\bH
 fIcL$\bHc
-f\fr\nf
 f\n\bnet_Tick
 failed to parse contents
 false
@@ -11373,9 +12148,9 @@ fff?333
 fff?333?H
 fff?333?L
 fff?H
-fff?I
 fff?ff
 fff?fff?H
+fff?fff?I
 fff?fff?M
 fffff
 fffff0
@@ -11413,10 +12188,10 @@ fffffД@fffff
 fflush
 field number
 fileno
-fillcb
 filmic curve\n           linear scale\n(whitepoint scaled to 1.0
 filmic curve\n (log scale
 fini_array
+first used by %s
 fish_hat.c
 fish_hat.h
 fish_hat.inl
@@ -11438,14 +12213,20 @@ float##4a
 float0
 float1
 float128
+float2
 float32
 float5a
 float64
+focus] FocusWindow("%s", UnlessBelowModal): prevented by "%s".\n
+focus] NavMoveRequest: SetNavWindow("%s")\n
+focus] NavRestoreLayer: from "%s" to SetNavWindow("%s")\n
+focus] SetNavWindow("%s")\n
 fog volumes
 fog_cached_shadow_atlas
 fog_color
 fog_hdrcolorscale
 fog_override
+fogmixedshadows
 fogscale
 fogshadowmode
 font color="red">Display lists discarded</font
@@ -11468,7 +12249,9 @@ fullscreenquad
 fwrite
 fxstat64
 f})IcO\bH
+g %s%s
 gHcCP1
+gHc\r8}V
 g\btQIcG
 g\fE;e\fI
 g^>q d
@@ -11480,6 +12263,7 @@ g_lightBinnerGpuSet
 g_pMemAlloc
 g_pThreadPool
 g_tLastFrameFogVolume
+g`HcGXM
 gcc_except_table
 gcclibcxx_demangle_callback
 generatecullrequests
@@ -11630,16 +12414,13 @@ google::protobuf::internal::ExtensionSet::KeyValue* google::protobuf::internal::
 gpu culling: [vis %d] [frust %d] [occ %d] [vol %d] [bface %d] [size %d
 gradient1
 gradient2
+granting current route\n
 grave-accent
 greater-than-sign
 guard variable for
-guides
 gxx_personality_v0
-h9Kl~)H
-h9yl~TH
 h>4hp
 h?{N2
-hA9D$l
 hA\\A]A
 hHkҘHk
 h[]A\\A]A^A_ÐAWAVA
@@ -11649,7 +12430,6 @@ h[]A\\A]A^A_ÐAWAVM
 h[]ÐUSH
 h\n,NETWORK_DISCONNECT_REMOTE_TIMEOUT_CONNECTING
 h\vtFH
-h^N=H
 hairdensityaccumvolume
 hairindexbuffer
 hairindirectargsbuffer
@@ -11664,17 +12444,21 @@ has no field named
 has no value named
 has not been loaded
 has the same name as
+has_preferred_x: %d (%.2f
 hashed
 hello, world
 hexadecimal
 hidden
 hidden alias for
+hihat-c
+hihat-o
 hitgroup_default_opaque:%d
 hitgroup_default_transparent:%d
 hitgroup_shader_%p
 hlX`0pt
 hltv_replay_flags
 horizontal
+horizontal split
 host_computationtime
 host_frametime
 host_frametime_std_deviation
@@ -11686,9 +12470,12 @@ i The quick brown fox jumps over the lazy dog
 i The quick brown fox jumps over the lazy dog\n
 i dynamic, %i cached, %i failed, %i lru'd in %ix%i atlas
 i filtered textures
+i resources used
 i textures
 i tiles used, %i tiles rendered, %i tiles recycled, %i failed in %ix%i atlas
 i)H\e
+i0D9n D
+i7m۶fA
 i>Label Layer</i
 i] %s %s\n
 iconv_close
@@ -11696,21 +12483,32 @@ iconv_open
 idempotency_level
 identifier_value
 if you ignore case and strip out the enum name prefix (if any). This is error-prone and can lead to undefined behavior. Please avoid doing this. If you are using allow_alias, please assign the same numeric value to both enums
+ignore
 illumfrustum
 illumination_volume
 imGUI detached window
 image
-imgui" letters
+imgui
 imgui.ini
 imgui_atlas_%f
 imgui_cycle_undocked_window_focus
 imgui_default_font_size
+imgui_demo.cpp
 imgui_log.txt
 imgui_render.cpp
 implements neither SetCachedSize() nor ByteSize().  Must implement one or the other
 import "$0";\n
 import public "$0";\n
 import weak "$0";\n
+in '%s
+in Begin
+in BeginTable
+in ChildD: not using same Shortcut
+in ChildE: using same Shortcut
+in ItemAdd
+in PopupF
+in SetShortcutRouting() for this KeyChord
+in WindowA
 include
 indirectLighting
 infinity
@@ -11741,6 +12539,7 @@ input u64
 input u8
 inside block comment.  Block comments cannot be nested
 instance cull stats
+instance cull stats shadow
 instancebuffer
 instanced mesh data
 instancedmeshdesc.cpp
@@ -11759,9 +12558,15 @@ io.BackendFlags: RendererHasViewports
 io.BackendFlags: RendererHasVtxOffset
 io.BackendPlatformName: %s
 io.BackendRendererName: %s
+io.ConfigDebugBeginReturnValueLoop
+io.ConfigDebugBeginReturnValueOnce
+io.ConfigDebugIgnoreFocusLoss
+io.ConfigDebugIniSettings
+io.ConfigDebugIsDebuggerPresent
 io.ConfigDockingAlwaysTabBar
 io.ConfigDockingNoSplit
 io.ConfigDockingTransparentPayload
+io.ConfigDockingWithShift
 io.ConfigDragClickToInputText
 io.ConfigFlags: 0x%08X
 io.ConfigFlags: DockingEnable
@@ -11772,6 +12577,8 @@ io.ConfigFlags: NoMouse
 io.ConfigFlags: NoMouseCursorChange
 io.ConfigFlags: ViewportsEnable
 io.ConfigInputTextCursorBlink
+io.ConfigInputTextEnterKeepActive
+io.ConfigInputTrickleEventQueue
 io.ConfigMacOSXBehaviors
 io.ConfigMemoryCompactTimer = %.1f
 io.ConfigViewportsNoAutoMerge
@@ -11785,6 +12592,22 @@ io.DisplaySize: %.2f,%.2f
 io.Fonts: %d fonts, Flags: 0x%08X, TexSize: %d,%d
 io.MouseDelta: (%.1f, %.1f
 io.MouseDrawCursor
+io.NavActive: %d, io.NavVisible: %d
+io.WantCaptureKeyboard: %d
+io.WantCaptureMouse: %d
+io.WantCaptureMouseUnlessPopupClose: %d
+io.WantSetMousePos: %d
+io.WantTextInput: %d
+io] %s: AppFocused %d\n
+io] %s: Key "%s" %s\n
+io] %s: MouseButton %d %s (%s)\n
+io] %s: MousePos (%.1f, %.1f) (%s)\n
+io] %s: MousePos (-FLT_MAX, -FLT_MAX)\n
+io] %s: MouseViewport (0x%08X)\n
+io] %s: MouseWheel (%.3f, %.3f) (%s)\n
+io] %s: Text: %c (U+%08X)\n
+io] Calling io.SetPlatformImeDataFn(): WantVisible: %d, InputPos (%.2f,%.2f)\n
+io] LockWheelingWindow() "%s"\n
 ios_base::_M_grow_words allocation failed
 ios_base::_M_grow_words is not valid
 iostream error
@@ -11825,7 +12648,6 @@ ix%ix%i
 j.0Q\n\f\a\bA\v
 jDLcZ@E
 jPATSH
-j\nj\nj\nH
 java Class for
 java resource
 java_generate_equals_and_hash
@@ -11860,6 +12682,7 @@ lA9<$tpI
 lN1\v}\by
 label
 lambda
+last used by %s
 lazy = true] can only be specified for submessage fields
 lb_allow_shadow_rotation
 lb_allow_time_sliced_shadow_map_rendering
@@ -11895,6 +12718,7 @@ lb_enable_baked_shadows
 lb_enable_binning
 lb_enable_dynamic_lights
 lb_enable_envmaps
+lb_enable_fog_mixed_shadows
 lb_enable_lights
 lb_enable_shadow_casting
 lb_enable_stationary_lights
@@ -11906,7 +12730,6 @@ lb_mixed_shadows
 lb_shadow_map_culling
 lb_shadow_texture_height_override
 lb_shadow_texture_width_override
-lb_show_light_fog_clipmap_cb_cost
 lb_sun_csm_size_cull_threshold_texels
 lb_tile_pixels
 lb_timesliced_shadows_dynamic_size
@@ -11942,10 +12765,10 @@ lighting_array_fog_RT1.vtex
 lighting_array_fog_RT2.vtex
 lightmapuv
 linear
+lines
 listbox
 listbox 1
 listbox 2
-llu ms
 locale::_Impl::_M_replace_facet
 locale::_S_normalize_category category not found
 locale::facet::_S_create_c_locale name not valid
@@ -11960,7 +12783,8 @@ longeeer
 lowprecisionuv
 lowprecisionuv1
 lseek64
-m8L;-\n
+lu ms
+m8H;-b
 mQNr7
 m\bu\eH9
 m\n\f\a\bE\vc\n\f\a\bB\v
@@ -12147,9 +12971,11 @@ min_client_limit
 min_row_height = %.2f
 mindate
 mintime
+missing
 mktime
 model_default_preview_sequence_name
 morphcomposite
+most recent
 mt19937
 multibase
 must be unique within
@@ -12164,7 +12990,10 @@ mycolumns3
 mypicker
 m۶m۶\rM
 m۶m۶mH
+m۶m۶mHk
+m۶m۶mI
 m۶m۶mL
+m۶m۶mf
 n    Actual
 n    Field type
 n    H
@@ -12173,6 +13002,7 @@ n  Message type
 n  Problem
 n  Problem     : Enum value did not match field type:\n    Expected
 n  Problem     : Field is not the right type for this message:\n    Expected
+n  [%s:%s
 n CNETMsg_SpawnGroup_LoadCompleted
 n CSVCMsg_GameSessionConfiguration
 n L9l$\b
@@ -12198,8 +13028,8 @@ n,NETWORK_DISCONNECT_STEAM_DENY_BAD_ANTI_CHEAT
 n-NETWORK_DISCONNECT_REJECT_INVALIDSTEAMCERTLEN
 n.NETWORK_DISCONNECT_REQUEST_HOSTSTATE_HLTVRELAY
 n4X?e
+n8A;]4
 n8ATUH
-n;q\bu
 n<i>Not using PerViewConstantBuffer_t</i
 n<i>PerViewConstantBuffer_t</i
 n<i>Procedural Layer</i
@@ -12208,7 +13038,9 @@ nCompressedSize == nUncompressedSize
 nD9kXH
 nHcD2
 nI#M@I
+nImPlotColormap %s = ImPlot::AddColormap("%s", %s_Data, %d
 nIndex < m_RenderTargets.Count
+nJcT2
 nL4=IM
 nL4=nL4=nL4=nL4=IM
 nL;H\bt
@@ -12333,6 +13165,14 @@ n\vorientation
 n\voutput_type
 n\vsource_file
 n\vspawn_count
+nav] NavInitRequest: ApplyResult: NavID 0x%08X in Layer %d Window "%s"\n
+nav] NavInitRequest: from NavInitWindow(), init_for_nav=%d, window="%s", layer=%d\n
+nav] NavInitRequest: from move, window "%s", layer=%d\n
+nav] NavMoveRequest: clamp NavRectRel for gamepad move\n
+nav] NavMoveRequest: result NavID 0x%08X in Layer %d Window "%s"\n
+nav] NavMoveRequestForward %d\n
+nav] NavMoveSubmitted but not led to a result!\n
+nav] NavUpdateCancelRequest()\n
 negative_int_value
 net_DebugOverlay
 net_Disconnect_Legacy
@@ -12366,7 +13206,6 @@ not previously defined in symbols_by_name_, but was defined in symbols_by_parent
 not_pickable
 note.gnu.build-id
 note.stapsdt
-nt\t<\ru
 null material
 nullptr output boolean given
 num pixels
@@ -12376,8 +13215,6 @@ number-sign
 nxnstripped
 nƾ3YA1
 n˾/YA1
-nΨ t f
-nϨ t(f
 o(Lcw I
 o0ATUSH
 o8ATUI
@@ -12390,7 +13227,6 @@ o\bATUH
 o\bATUI
 o\bATUSH
 o\bA]A
-o\bE9l$\bE
 o\bM+/H
 o\fwӺ\f
 o\n\f\a\bD\vv\n\f\a\bB\vD
@@ -12409,19 +13245,24 @@ operator
 option json_name is not allowed on extension fields
 optional
 optionallycompressedtangentframe
-or me
 original
 outer_child
 outer_size
 output specified is nullptr
 output_type
+overlay_deferred
+owners
 p0A9v0u
 p8I9v8
+p9Kl~,H
+p9yl~UH
 p<0tUw
+pA9T$l
 pDHcH
 pH;|$Pt
 pObj->HasFlags( SCENEOBJECTFLAG_DELETED
 pObj->IsDeleted
+p\bIcP\fE
 p\fA8uxuǋx
 p\n\f\a\bA\v
 p\vA9^\bv2Lc
@@ -12430,9 +13271,11 @@ package $0;\n\n
 packed
 packed = true] can only be specified for repeated primitive fields
 palette
+panel
 panorama
 parentnamefixup
 parsing
+passes
 password
 password (clear
 password (w/ hint
@@ -12460,6 +13303,11 @@ plus-sign
 point0
 point1
 pointer
+popup] CloseCurrentPopup %d -> %d\n
+popup] ClosePopupToLevel(%d), restore_under=%d\n
+popup] ClosePopupsOverWindow("%s")\n
+popup] OpenPopup("%s" -> 0x%08X)\n
+popup] OpenPopupEx(0x%08X)\n
 pos2Dtex2D
 position
 positionH
@@ -12497,9 +13345,11 @@ public/tier0/utlsymboltable.h
 public/tier0/utltshash.h
 public_dependency
 pure virtual method called\n
+pxs?{7
 py_generic_services
 q=j>e
 qDHcy@E
+qRfA9t
 q\n\f\a\bE\v
 q\n\f\a\bJ\vx\n\f\a\bH\vE
 qangle
@@ -12507,9 +13357,10 @@ quadLayout
 quaternion
 question-mark
 quotation-mark
-qxs?H
+qxs?y7
+qxs?{7
 r%AȄx
-r-HcShHi
+r+IcT$xH
 r0AUATE1
 r:\b16777215B
 r\n\tCODE_SIZE
@@ -12576,7 +13427,6 @@ ratio = %.3f
 rdrand
 rdseed
 realloc
-reason
 recullcounter
 reculldispatchargs
 recullrequests
@@ -12626,9 +13476,11 @@ right-square-bracket
 rodata
 rotation_vector
 roughness for LPV debug grid
+routes
 row bg target
 row bg type
 row_min_height
+rpA9ppL
 rtx_dynamic_blas
 rtx_force_default_hitgroup
 rtx_random_samples.vtex
@@ -12636,13 +13488,11 @@ r̤9ϔwl
 s %.1f %.1f %.1f %s
 s %04d: pos (%8.2f,%8.2f), uv (%.6f,%.6f), col %08X\n
 s %d,%d
-s (Y%d
+s (%s
 s 0x%04X%s: %d windows (vis: '%s
-s 0x%04X%s: %s split (vis: '%s
+s 0x%04X%s: %s (vis: '%s
 s 0x%08X (%d tabs)%s
 s : %d\n
-s = %s
-s = %s,%s
 s [%s
 s agg [%s fragments (%s merged), %s meshlets (%s recull, %s recull visible)]\n
 s allocation count overflow
@@ -12650,7 +13500,13 @@ s allocation count overflow( %llu > %llu )\n
 s allocation count overflow( add %llu + current %llu > max %llu )\n
 s base, %s animated\n
 s instmesh [%s draw calls, %s instances, %s drawn (shadow: %s instances, %s drawn)]\n
+s" %d
+s" [window
+s###doc%d
 s%d.vtex
+s, %s
+s, 0x%08x+%s
+s, 0x%08x+%s -- Overlaps
 s.ini
 s.log
 s/%08X
@@ -12665,6 +13521,8 @@ s: %d
 s: %d entries, %d bytes
 s: %s
 s: '%s' %d vtx, %d indices, %d cmds
+s: 0x%08X (scored %d
+s: 0x%08X%s
 s: Invalid capacity %u\n
 s: Invalid grow amount %d\n
 s: NULL
@@ -12678,6 +13536,7 @@ sHASARAQAPWL
 sHello, sailor! Making this line long enough for the example
 sThis is line %d
 s\b9p0u
+s\bA;u\b
 s\nIndex: %d
 s\nLOD Level: %d Draw Calls: %d Triangles: %d
 s][Data]\n
@@ -12727,6 +13586,9 @@ sc_force_materials_batchable
 sc_force_single_display_list_per_layer
 sc_force_translation_in_projection
 sc_hdr_enabled_override
+sc_imgui_show_debug_log
+sc_imgui_show_id_stack
+sc_imgui_show_metrics
 sc_instanced_material_solo
 sc_instanced_mesh_enable
 sc_instanced_mesh_gpu_culling
@@ -12751,6 +13613,7 @@ sc_only_render_opaque
 sc_only_render_shadowcasters
 sc_queue_reflection_views_to_layers
 sc_reject_all_objects
+sc_rendergraph_debug_visualizer
 sc_screen_size_lod_scale_override
 sc_setclassflags
 sc_setclassflags %s %d
@@ -12773,7 +13636,6 @@ scene_quadindexbuffer
 scenegfxresources
 scenegfxresources.cpp
 sceneinfo_gpu - Load Materials
-scenelayer.cpp
 scenelight.cpp
 scenelpvdebuggrid.cpp
 sceneobject_h
@@ -12787,8 +13649,8 @@ scenesysDodecahedron
 scenesysPyramid
 scenesystem
 scenesystem.cpp
-scenesystem.cpp(5331): Expecting 1 renderable pass for material "%s" but found %d!\n
-scenesystem.cpp:3452
+scenesystem.cpp(5350): Expecting 1 renderable pass for material "%s" but found %d!\n
+scenesystem.cpp:3455
 scenesystemdebug
 scenesysteminstancedata
 scenesystemtransformdata
@@ -12825,7 +13687,6 @@ show_widget_frame_bg
 show_windows_rect_type
 show_wrapped_text
 shstrtab
-sin(x
 sincos
 sint32
 sint64
@@ -12852,6 +13713,7 @@ slider int3
 slider int4
 slider s16 full
 slider s32 full
+slider s32 hex
 slider s32 high
 slider s32 low
 slider s32 reverse
@@ -12874,26 +13736,31 @@ slider u8 full
 slider u8 reverse
 sm_hLayout
 smoothnormalsscratchbuffer
+snare-c
+snare-s
 snprintf_chk
 some more text
 soundevent
 source
 source_code_info
 spark
+sparseshadowtree_cs_debug_colors
 spawngrouphandle
 spawngroupmanifest
 spawngroupownerhandle
 spawngroupparenthandle
 sphere radius (world) for LPV debug grid
+split
 split1
 split2
 sprintf
 sprintf_chk
+sstdebugcolor%d
 stack frames not accounted for stack unwind
 stack_chk_fail
 stapsdt
 stapsdt.base
-static const ImVec4 colormap[%d] = {\n
+static const ImU32 %s_Data[%d] = {\n
 static_cast
 stats_display
 std::allocator
@@ -12934,6 +13801,7 @@ string::string
 string_token
 strings::Substitute format string invalid: asked for
 strlen
+strncmp
 strpbrk
 strspn
 strstr
@@ -12952,6 +13820,8 @@ style.FramePadding: %.2f,%.2f
 style.FrameRounding: %.2f
 style.ItemInnerSpacing: %.2f,%.2f
 style.ItemSpacing: %.2f,%.2f
+style.TableAngledHeadersAngle
+style.TableAngledHeadersTextAlign
 style.WindowBorderSize: %.2f
 style.WindowPadding: %.2f,%.2f
 st~<zt
@@ -12966,9 +13836,13 @@ syscall
 sz %.2f
 s{E\a
 t H9j w
-t"D9{Xu\tE
+t HcCxL
+t!HcSPH
+t!IcVpH
 t"\r\n\vCNETMsg_NOP"'\n
 t"u\n!CNETMsg_SpawnGroup_ManifestUpdate
+t#IcT$PH
+t#IcUPH
 t$ A9^h~4Hk
 t$ APM
 t$ AVj
@@ -12986,7 +13860,6 @@ t$;0u D
 t$@H;t$ t
 t$DAƄ$B
 t$HA;t$L
-t$PE19
 t$P룐UH
 t$\b)KT
 t$\b9t$\f
@@ -13004,53 +13877,83 @@ t$\b~KH
 t$\f9t$\b
 t$\ftDH
 t$pIcT$h
+t%D9{`u\tE
 t%HcA0H
 t%HcC H
+t%IcT$PH
 t%L92u
 t%L; u
+t'HcSPH
+t'L; u
 t(IcF
 t(IcT
 t);y }\fH
 t)H;0u
+t)HcSPH
+t)IcV H
+t)IcV0H
 t*HcL
 t*IcT
+t*IcT$PH
 t*USPH
 t+H;y s\fH
 t+HcD$\f
+t+HcSPH
+t+IcVPH
+t,A9B\bM
 t,A9и0
 t,M9l
 t-H92u
-t.A9B\bM
+t-HcSPH
+t-IcT$PH
 t/HcI\bD
+t/IcD$ L
+t/IcT$PH
 t0Hc\b;O\f}(LcG\bH
+t0IcUPH
+t1HcSPH
+t1HcShH
+t1IcUPH
 t1IcU`H
+t1IcWPH
 t2Hc>A
+t3HcSPH
 t3Hc\nHcG\b9
+t3IcVPH
 t5H90u
 t5H92u
 t5HcCh
+t5IcUPH
 t5L;"u
 t6Hc>;{\f}.HcK\bH
+t6HcS(H
+t6IcVPH
 t6Lc\aD;C\f}-HcK\bH
 t7L9 u
 t7L9(u
 t8HcCh
+t8Ic\aH
 t9<\at5L
-t9HcS(H
-t=HcS H
-t=IcF L
+t;HcSPH
 t>vTU
+t@UUUUUU
 tALc"D9b
-tBL;%U
+tAƄ$E
+tCIcUPH
 tC\f~iL
 tD333
 tEXx!H
-tFIcU`H
+tFIcUPH
 tGH9\bu
 tGL9 u
 tGL90u
+tHIcT$PH
 tIIcN\bM
+tIIcU`H
+tJH;2u
 tJHcC
+tJIcUPH
+tJIcVPH
 tKATUH
 tKHcC(L
 tKI;E
@@ -13058,8 +13961,10 @@ tL<Gt\b<T
 tLayer %d "%s": %d inputs, %d outputs\n
 tLayer %d "%s"\n
 tMHcC8
+tMIcN\bM
 tN;Y\bu
 tNt1f
+tOIcUPH
 tPATUH
 tPL;b rJH
 tQI;M
@@ -13074,38 +13979,50 @@ tTarget %d "%s": [FMT-> %s] [MSAA-> %s] [%s size : %d %d]\n
 tUI;4
 tUI;M
 tVAVAUI
-tVIcD$ H
 tVIcM\bM
 tWAVAUATI
 tYAVAUATUSL
 tYIcN\bM
 tYL97u
 t[ATUH
+t[IcT$PH
 t\aH9p\bu
 t\aH;0u
 t\aI;D$(u
+t\aL9h
+t\bAƆh4
+t\bAƇb
 t\bH;w H
 t\bHcC\b9
 t\bHcG\b
 t\bHcG\b9
 t\bHcR\bf
 t\eA9_\bu
-t\eD;\au
 t\eH9h r\fH
 t\eH9p r\fL
-t\eHǃ82
+t\eHǃ0
+t\eHǃ84
+t\eHǃ@5
+t\eHǃH
+t\eHǃX
+t\eHǃX2
+t\eHǃX4
+t\eHǃ\b
+t\eHǃp
+t\eHǃp\t
+t\eHǃx5
 t\eI;E
 t\eIcT
-t\eIcT$XH
-t\eIcT$hH
+t\eIcT$PH
 t\eL9p r\fH
 t\eL;` w\fH
-t\f<\tu
 t\fHc
 t\fHc}H
 t\fHc}L
 t\fIcF
 t\fIcF8
+t\fL;f tmL9f(tGA
+t\f[A
 t\nA8WI
 t\nA8^I
 t\nA8nI
@@ -13116,12 +14033,15 @@ t\nD9kL
 t\nE8gI
 t\nE9gL
 t\nH9X
+t\nH9Z
 t\nH;w
 t\nI;x
-t\nL9r8
+t\nL9h
 t\nM9}0
 t\n\v../public/tier0/utlrbtree.h
+t\r9W t
 t\rH;0u
+t\rHc3H
 t\rIc
 t\rIc|$8
 t\tH;h H
@@ -13137,11 +14057,15 @@ t\t\tDepth Target: HRT = %llX, MSAA = %s, Resolve = %llX, Width = %d, Height = %
 t\t\tHRT = %llX, MSAA = %s\n
 t\tviewport TopLeftX: %d TopLeftY: %d Width: %d Height: %d\n
 t\v9q H
+t\vAǅ`5
+t\vAǇL
 t\vL;#tGH
 t\vM9l$0
 t\v[A
+taA9]0I
 taHct$\b
 ta\n\f\a\bA\v
+tabbar
 table
 table border="1
 table1
@@ -13149,6 +14073,8 @@ table2
 table3
 table: %u members
 table_advanced
+table_angled_headers
+table_changing_cellpadding_y
 table_columns_flags
 table_columns_flags_checkboxes
 table_context_menu
@@ -13162,6 +14088,7 @@ table_padding_2
 table_row_height
 table_scrollx
 table_scrolly
+table_share_lineheight
 table_sorting
 tangent
 tangentu_signv
@@ -13177,7 +14104,6 @@ td>CLEAR_DEPTH</td
 td>CLEAR_STENCIL</td
 td>DEBUG_BREAK</td
 td>DELETED</td
-td>DISABLED_IN_LOW_QUALITY</td
 td>DOES_NOT_ACCEPT_DECALS</td
 td>FORWARD_LAYER_ONLY</td
 td>GAME_OVERLAY_LAYER</td
@@ -13262,8 +14188,11 @@ timegm
 timestampmgr.cpp
 tint_color
 tls_get_addr
-tmL9f tGA
 to start from the outermost scope
+toI+D$\bH
+tom-hi
+tom-low
+tom-mid
 tonemap scale: final exposure scale used to scale HDR values before tonemapping.\nmid-grey in HDR becomes 'target average lum' after scaling -> mid-grey (0.18) in LDR
 tonemap.cpp: g_pRenderDevice->CreateQueryObject( RENDER_QUERY_OCCLUSION ) failed!\n
 tools
@@ -13271,7 +14200,6 @@ tools.toolsmaterial
 toupper
 towlower_l
 towupper_l
-tqHc\r
 tr><td><b>Excluded obj flags</b></td><td>0x%llx</td
 tr><td><b>Frustum Override Count</b></td><td>%d</td></tr
 tr><td><b>Required obj flags</b><td>0x%llx</td
@@ -13306,6 +14234,7 @@ truncated
 trying to move layer %s after unfound layer %s
 trying to move non existent layer
 tt:<\nu
+tt\v< u
 tuIcE
 tuҋR\b)UHH
 twL9 u
@@ -13322,12 +14251,9 @@ typeinfo fn for
 typeinfo for
 typeinfo name for
 tzAWAVAUATA
-t{L;3w
-tʈPd뻐UH
 tʉP\bD
-tʋ=G\bC
-tˋC\f;C\b
 tЈGۋF܉G
+u%s\n
 u/H#D
 u3D\tk
 u4A;t$Dt
@@ -13339,8 +14265,8 @@ uAIǄ$p
 uE[A\\A]A
 uF_iM,E
 uFn\e_rG
-uGL;%5
 uHHcG01
+uI=#jW
 uLHcG01
 uP[A\\A]A
 uRHcG0Hk
@@ -13349,24 +14275,26 @@ u\aH;L
 u\bA\\A
 u\b[A
 u\eI9
-u\f;r\bA
-u\fIǄ$8N
+u\fA\\A
+u\fAǄ$P
+u\fIǄ$0N
 u\fIǄ$H
 u\fIǄ$X
 u\f[A
+u\nA\\A
 u\nE;w
 u\n[A
 u\rI9
-u\tAƄ$S
+u\tAƄ$A
 u\tHcD
 u\t[A
+u\vHǀX
 u\vHǃ A
 u\vHǃ0E
-u\vHǃ8N
+u\vHǃ0N
 u\vHǃH
 u\vHǃh
 u\vIǅX
-u\vIǆX
 u\vIǆ\b
 u\vIǇ\b
 u\v[A
@@ -13385,6 +14313,8 @@ uint64_t google::protobuf::UnknownField::fixed64() const
 uint64_t google::protobuf::UnknownField::varint() const
 undefined
 underscore
+undo_point: %d, redo_point: %d, undo_char_point: %d, redo_char_point: %d
+undopoints
 ungetc
 ungetwc
 uniform_color
@@ -13392,6 +14322,7 @@ unimplemented type
 uninitialized __any_string
 uninterpreted_option
 unknown
+unknown enum value
 unknown. Ensure that your proto
 unnamed
 unnamed type
@@ -13434,13 +14365,12 @@ uˋK\fA9N\fu
 uӋC09E
 uր9#tq
 uۋC,9E
-uߋ@49
+uߋs0E1
 v#imH
-v(Lc\eM
-v+Aǅt1
-v.Aǅt1
-v0AǇt1
-v1AǇt1
+v(AǇp3
+v*Aǆp3
+v.Aǆp3
+v/AǇp3
 v2 .google.protobuf.DescriptorProto
 v2!.google.protobuf.EnumValueOptions
 v2$.google.protobuf.EnumDescriptorProto
@@ -13466,11 +14396,12 @@ v2\v.CMsgQAngle
 v2\v.CMsgVector
 v2\v.CMsg_CVars
 v4_lpA
-v@Day:   %s
 v@I;vH
 vAVAUATUH
+vB\fHcr
+vC\b\vC\f
 vD$0t\a
-vOn?H
+vH\b\vH\f
 vPI;vX
 vUgYk
 v\bH9s\b
@@ -13495,18 +14426,31 @@ vector::_M_realloc_insert
 vector::reserve
 vertexbuffer
 vertical
+vertical split
 vertical-line
 vertical-tab
 view.bIsToolView
+viewport
+viewport] Add Viewport %08X '%s'\n
+viewport] Create Platform Window %08X '%s'\n
+viewport] Delete Viewport %08X '%s'\n
+viewport] Destroy Platform Window %08X '%s'\n
+viewport] Focused viewport changed %08X -> %08X, attempting to apply our focus.\n
+viewport] Node %08X transfer Viewport %08X->%08X to Window '%s'\n
+viewport] Window '%s' closed by PlatformRequestClose\n
+viewport] Window '%s' steal Viewport %08X from Window '%s'\n
 void google::protobuf::FieldDescriptorProto::_internal_set_label(google::protobuf::FieldDescriptorProto_Label
 void google::protobuf::FieldDescriptorProto::_internal_set_type(google::protobuf::FieldDescriptorProto_Type
 void google::protobuf::io::CodedInputStream::UnsafeDecrementRecursionDepth
 void google::protobuf::stringpiece_internal::StringPiece::remove_prefix(google::protobuf::stringpiece_internal::StringPiece::size_type
+void*)0x%p
 void_context
 volatile
 volume_fog_debug_volumes
+volume_fog_density_scale
 volume_fog_depth
 volume_fog_depth_warp
+volume_fog_depth_warp_debug
 volume_fog_dither_scale
 volume_fog_enable_jitter
 volume_fog_force_indirect_lpvs
@@ -13541,7 +14485,6 @@ w\bATUI
 w\bAUATI
 w\bAUATSH
 w\bAUATUSH
-w\bE9t$\bE
 w\ePATL
 w\fwӺ\f
 w\f};HcO\bE1
@@ -13585,8 +14528,10 @@ which is not defined. The innermost scope is searched first in name resolution. 
 which is not imported by
 whitepoint
 whitepoint: filmic whitepoint scaled by tonemap scale.\n[0..whitepoint] in HDR gets tonemapped to [0..1] in LDR
+will sort
 window scale
 window_context
+with Hovering Delay or Stationary test:\nIsItemHovered() = = %d\nIsItemHovered(_Stationary) = %d\nIsItemHovered(_DelayShort) = %d\nIsItemHovered(_DelayNormal) = %d\nIsItemHovered(_Tooltip) = %d
 with a type that does not implement MergeFrom. This is unsafe
 wmemchr
 wmemcmp
@@ -13618,16 +14563,18 @@ xDHcH
 xDHcp
 xE8t$pH
 xP}>Hk
-xQtGUL
 xX0123456789abcdef0123456789ABCDEF
 xX0123456789abcdefABCDEF
 xY{[xY{[xY{[xY0
 x[]A\\A]A^A_ÐAUATI
 x[]ÐATUI
 x[]ÐUSH
+x\bA9~\b
 x\bI9~H
 x\bI9~\b
+x\bIcF(D
 x\e;p
+x\fA9~\ft
 xdigit
 xf9{z
 xk;B`}fH
@@ -13636,17 +14583,15 @@ y-axis
 y<\rE5B
 yOk GU5T
 y\fI+t$\bH
-you can drag analog signals over the rising/falling digital edge
+you can drag analog plots over the rising/falling digital edge
 yڋp\bA9uDu
 yދx\bB9
 z0AUATI
-z6[?H
 z:u8HcU
 z>matrix3x4a_t
 z?333?H
 z?33s?H
 zPrePassNormals
 z\n8NETWORK_DISCONNECT_LOCALPROBLEM_HOSTEDSERVERPRIMARYRELAY
+z\ru\vAǇ0
 z\ru\vfA
-zdA9xdL
-zf9{x

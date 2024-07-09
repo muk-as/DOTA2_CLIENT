@@ -131,7 +131,7 @@ public:
 
 // Registered binary: vphysics2.dll (project 'physicslib')
 // Alignment: 8
-// Size: 0x10
+// Size: 0x18
 // 
 // MGetKV3ClassDefaults
 struct RnShapeDesc_t
@@ -140,6 +140,12 @@ public:
 	uint32_t m_nCollisionAttributeIndex; // 0x0	
 	uint32_t m_nSurfacePropertyIndex; // 0x4	
 	CUtlString m_UserFriendlyName; // 0x8	
+	bool m_bUserFriendlyNameSealed; // 0x10	
+	bool m_bUserFriendlyNameLong; // 0x11	
+private:
+	[[maybe_unused]] uint8_t __pad0012[0x2]; // 0x12
+public:
+	uint32_t m_nToolMaterialHash; // 0x14	
 };
 
 // Registered binary: vphysics2.dll (project 'physicslib')
@@ -545,15 +551,15 @@ public:
 
 // Registered binary: vphysics2.dll (project 'physicslib')
 // Alignment: 8
-// Size: 0x30
+// Size: 0x38
 // 
 // MGetKV3ClassDefaults
 struct RnCapsuleDesc_t : public RnShapeDesc_t
 {
 public:
-	// -> m_vCenter[2] - 0x10
-	// -> m_flRadius - 0x28
-	RnCapsule_t m_Capsule; // 0x10	
+	// -> m_vCenter[2] - 0x18
+	// -> m_flRadius - 0x30
+	RnCapsule_t m_Capsule; // 0x18	
 };
 
 // Registered binary: vphysics2.dll (project 'physicslib')
@@ -620,23 +626,23 @@ public:
 
 // Registered binary: vphysics2.dll (project 'physicslib')
 // Alignment: 8
-// Size: 0xb8
+// Size: 0xc0
 // 
 // MGetKV3ClassDefaults
 struct RnMeshDesc_t : public RnShapeDesc_t
 {
 public:
-	// -> m_vMin - 0x10
-	// -> m_vMax - 0x1c
-	// -> m_Nodes - 0x28
-	// -> m_Vertices - 0x40
-	// -> m_Triangles - 0x58
-	// -> m_Wings - 0x70
-	// -> m_Materials - 0x88
-	// -> m_vOrthographicAreas - 0xa0
-	// -> m_nFlags - 0xac
-	// -> m_nDebugFlags - 0xb0
-	RnMesh_t m_Mesh; // 0x10	
+	// -> m_vMin - 0x18
+	// -> m_vMax - 0x24
+	// -> m_Nodes - 0x30
+	// -> m_Vertices - 0x48
+	// -> m_Triangles - 0x60
+	// -> m_Wings - 0x78
+	// -> m_Materials - 0x90
+	// -> m_vOrthographicAreas - 0xa8
+	// -> m_nFlags - 0xb4
+	// -> m_nDebugFlags - 0xb8
+	RnMesh_t m_Mesh; // 0x18	
 };
 
 // Registered binary: vphysics2.dll (project 'physicslib')
@@ -1211,13 +1217,13 @@ public:
 
 // Registered binary: vphysics2.dll (project 'physicslib')
 // Alignment: 8
-// Size: 0x108
+// Size: 0x110
 // 
 // MGetKV3ClassDefaults
 struct RnHullDesc_t : public RnShapeDesc_t
 {
 public:
-	RnHull_t m_Hull; // 0x10	
+	RnHull_t m_Hull; // 0x18	
 };
 
 // Registered binary: vphysics2.dll (project 'physicslib')
@@ -1426,13 +1432,13 @@ public:
 
 // Registered binary: vphysics2.dll (project 'physicslib')
 // Alignment: 8
-// Size: 0x20
+// Size: 0x28
 // 
 // MGetKV3ClassDefaults
 struct RnSphereDesc_t : public RnShapeDesc_t
 {
 public:
-	SphereBase_t< float32 > m_Sphere; // 0x10	
+	SphereBase_t< float32 > m_Sphere; // 0x18	
 };
 
 // Registered binary: vphysics2.dll (project 'physicslib')

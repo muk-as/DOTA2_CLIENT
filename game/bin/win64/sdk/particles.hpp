@@ -4,8 +4,8 @@
 
 // /////////////////////////////////////////////////////////////
 // Binary: particles.dll
-// Classes count: 1 (Allocated) | 444 (Unallocated)
-// Enums count: 0 (Allocated) | 75 (Unallocated)
+// Classes count: 1 (Allocated) | 446 (Unallocated)
+// Enums count: 0 (Allocated) | 76 (Unallocated)
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
@@ -130,6 +130,18 @@ enum class ParticleVRHandChoiceList_t : uint32_t
 	PARTICLE_VRHAND_CP = 0x2,
 	// MPropertyFriendlyName "Detect from CP's Object"
 	PARTICLE_VRHAND_CP_OBJECT = 0x3,
+};
+
+// Registered binary: particles.dll (project 'particles')
+// Enumerator count: 2
+// Alignment: 4
+// Size: 0x4
+enum class ParticleReplicationMode_t : uint32_t
+{
+	// MPropertyFriendlyName "Off"
+	PARTICLE_REPLICATIONMODE_NONE = 0x0,
+	// MPropertyFriendlyName "Replicate for each parent particle"
+	PARTICLE_REPLICATIONMODE_REPLICATE_FOR_EACH_PARENT_PARTICLE = 0x1,
 };
 
 // Registered binary: particles.dll (project 'particles')
@@ -1304,6 +1316,7 @@ struct ControlPointReference_t;
 struct CParticleVariableRef;
 struct TextureControls_t;
 struct ParticlePreviewState_t;
+struct CReplicationParameters;
 
 // Registered binary: particles.dll (project 'particleslib')
 // Alignment: 8
@@ -3334,7 +3347,7 @@ public:
 
 // Registered binary: particles.dll (project 'particles')
 // Alignment: 8
-// Size: 0x1e0
+// Size: 0x488
 // Has VTable
 // 
 // MGetKV3ClassDefaults
@@ -3343,17 +3356,20 @@ class C_INIT_VelocityRadialRandom : public CParticleFunctionInitializer
 public:
 	// MPropertyFriendlyName "control point number"
 	int32_t m_nControlPointNumber; // 0x1c0	
-	// MPropertyFriendlyName "random speed min"
-	float m_fSpeedMin; // 0x1c4	
-	// MPropertyFriendlyName "random speed max"
-	float m_fSpeedMax; // 0x1c8	
-	// MPropertyFriendlyName "local space scale"
-	Vector m_vecLocalCoordinateSystemSpeedScale; // 0x1cc	
 private:
-	[[maybe_unused]] uint8_t __pad01d8[0x1]; // 0x1d8
+	[[maybe_unused]] uint8_t __pad01c4[0x4]; // 0x1c4
+public:
+	// MPropertyFriendlyName "random speed min"
+	CPerParticleFloatInput m_fSpeedMin; // 0x1c8	
+	// MPropertyFriendlyName "random speed max"
+	CPerParticleFloatInput m_fSpeedMax; // 0x320	
+	// MPropertyFriendlyName "local space scale"
+	Vector m_vecLocalCoordinateSystemSpeedScale; // 0x478	
+private:
+	[[maybe_unused]] uint8_t __pad0484[0x1]; // 0x484
 public:
 	// MPropertyFriendlyName "ignore delta time"
-	bool m_bIgnoreDelta; // 0x1d9	
+	bool m_bIgnoreDelta; // 0x485	
 };
 
 // Registered binary: particles.dll (project 'particles')
@@ -3859,7 +3875,7 @@ public:
 
 // Registered binary: particles.dll (project 'particles')
 // Alignment: 8
-// Size: 0x298
+// Size: 0x3e8
 // Has VTable
 // 
 // MGetKV3ClassDefaults
@@ -3878,20 +3894,21 @@ public:
 	CStrongHandle< InfoForResourceTypeCModel > m_hModel; // 0x210	
 	// MPropertyFriendlyName "input model override"
 	CParticleModelInput m_modelInput; // 0x218	
-	// MPropertyFriendlyName "model LOD"
-	int32_t m_nLOD; // 0x278	
+	// MPropertyStartGroup "Rendering"
+	// MPropertyFriendlyName "size cull scale"
+	CParticleCollectionFloatInput m_fSizeCullScale; // 0x278	
 	// MPropertyFriendlyName "disable shadows"
-	bool m_bDisableShadows; // 0x27c	
+	bool m_bDisableShadows; // 0x3d0	
 	// MPropertyFriendlyName "disable motion blur"
-	bool m_bDisableMotionBlur; // 0x27d	
+	bool m_bDisableMotionBlur; // 0x3d1	
 	// MPropertyFriendlyName "accept decals"
-	bool m_bAcceptsDecals; // 0x27e	
+	bool m_bAcceptsDecals; // 0x3d2	
 private:
-	[[maybe_unused]] uint8_t __pad027f[0x1]; // 0x27f
+	[[maybe_unused]] uint8_t __pad03d3[0x1]; // 0x3d3
 public:
 	// MPropertyFriendlyName "angular velocity attribute (improves motion blur)"
 	// MPropertyAttributeChoiceName "particlefield_vector"
-	ParticleAttributeIndex_t m_nAngularVelocityField; // 0x280	
+	ParticleAttributeIndex_t m_nAngularVelocityField; // 0x3d4	
 };
 
 // Registered binary: particles.dll (project 'particles')
@@ -6960,7 +6977,7 @@ public:
 
 // Registered binary: particles.dll (project 'particles')
 // Alignment: 8
-// Size: 0x1c8
+// Size: 0x1d0
 // Has VTable
 // 
 // MGetKV3ClassDefaults
@@ -6971,8 +6988,18 @@ public:
 	float m_flDirScale; // 0x1b8	
 	// MPropertyFriendlyName "speed matching strength"
 	float m_flSpdScale; // 0x1bc	
+	// MPropertyFriendlyName "neighbor distance"
+	float m_flNeighborDistance; // 0x1c0	
+	// MPropertyFriendlyName "facing strength falloff"
+	float m_flFacingStrength; // 0x1c4	
+	// MPropertyFriendlyName "use AABB"
+	// MPropertySuppressExpr "m_flNeighborDistance > 0"
+	bool m_bUseAABB; // 0x1c8	
+private:
+	[[maybe_unused]] uint8_t __pad01c9[0x3]; // 0x1c9
+public:
 	// MPropertyFriendlyName "control point to broadcast speed and direction to"
-	int32_t m_nCPBroadcast; // 0x1c0	
+	int32_t m_nCPBroadcast; // 0x1cc	
 };
 
 // Registered binary: particles.dll (project 'particles')
@@ -9342,6 +9369,23 @@ public:
 
 // Registered binary: particles.dll (project 'particles')
 // Alignment: 8
+// Size: 0x1d8
+// Has VTable
+// 
+// MGetKV3ClassDefaults
+class C_OP_DensityForce : public CParticleFunctionForce
+{
+public:
+	// MPropertyFriendlyName "Radius scale for particle influence"
+	float m_flRadiusScale; // 0x1c8	
+	// MPropertyFriendlyName "Scale of force"
+	float m_flForceScale; // 0x1cc	
+	// MPropertyFriendlyName "Target density"
+	float m_flTargetDensity; // 0x1d0	
+};
+
+// Registered binary: particles.dll (project 'particles')
+// Alignment: 8
 // Size: 0x798
 // Has VTable
 // 
@@ -9484,6 +9528,33 @@ public:
 	CParticleTransformInput m_TransformInput; // 0x968	
 	// MPropertyFriendlyName "use local space"
 	bool m_bLocalSpace; // 0x9d0	
+};
+
+// Registered binary: particles.dll (project 'particles')
+// Alignment: 8
+// Size: 0x1e8
+// Has VTable
+// 
+// MGetKV3ClassDefaults
+class C_OP_IntraParticleForce : public CParticleFunctionForce
+{
+public:
+	// MPropertyFriendlyName "min attraction distance"
+	float m_flAttractionMinDistance; // 0x1c8	
+	// MPropertyFriendlyName "max attraction distance"
+	float m_flAttractionMaxDistance; // 0x1cc	
+	// MPropertyFriendlyName "max attraction force"
+	float m_flAttractionMaxStrength; // 0x1d0	
+	// MPropertyFriendlyName "min repulsion distance"
+	float m_flRepulsionMinDistance; // 0x1d4	
+	// MPropertyFriendlyName "max repulsion distance"
+	float m_flRepulsionMaxDistance; // 0x1d8	
+	// MPropertyFriendlyName "max repulsion force"
+	float m_flRepulsionMaxStrength; // 0x1dc	
+	// MPropertyFriendlyName "use aabbtree"
+	bool m_bUseAABB; // 0x1e0	
+	// MPropertyFriendlyName "thread pairwise collision"
+	bool m_bThreadIt; // 0x1e1	
 };
 
 // Registered binary: particles.dll (project 'particles')
@@ -10567,8 +10638,14 @@ public:
 	// MPropertyFriendlyName "center offset"
 	// MVectorIsCoordinate
 	Vector m_vecCP1Pos; // 0x1c4	
+	// MPropertyFriendlyName "use average particle position"
+	// MVectorIsCoordinate
+	bool m_bUseAvgParticlePos; // 0x1d0	
+private:
+	[[maybe_unused]] uint8_t __pad01d1[0x3]; // 0x1d1
+public:
 	// MPropertyFriendlyName "set parent"
-	ParticleParentSetMode_t m_nSetParent; // 0x1d0	
+	ParticleParentSetMode_t m_nSetParent; // 0x1d4	
 };
 
 // Registered binary: particles.dll (project 'particles')
@@ -11911,24 +11988,30 @@ public:
 };
 
 // Registered binary: particles.dll (project 'particles')
-// Alignment: 4
-// Size: 0x24
-// Has Trivial Destructor
+// Alignment: 8
+// Size: 0x10c0
 // 
 // MGetKV3ClassDefaults
 class CReplicationParameters
 {
 public:
+	// MPropertyFriendlyName "Replication mode"
+	ParticleReplicationMode_t m_nReplicationMode; // 0x0	
 	// MPropertyFriendlyName "Scale child particle radius based on parent radius"
-	bool m_bScaleChildParticleRadii; // 0x0	
+	bool m_bScaleChildParticleRadii; // 0x4	
+private:
+	[[maybe_unused]] uint8_t __pad0005[0x3]; // 0x5
+public:
 	// MPropertyFriendlyName "Minimum random scale for radius"
-	float m_flMinRandomRadiusScale; // 0x4	
+	CParticleCollectionFloatInput m_flMinRandomRadiusScale; // 0x8	
 	// MPropertyFriendlyName "Maximum random scale for radius"
-	float m_flMaxRandomRadiusScale; // 0x8	
+	CParticleCollectionFloatInput m_flMaxRandomRadiusScale; // 0x160	
 	// MPropertyFriendlyName "min random displacement for child particles"
-	Vector m_vMinRandomDisplacement; // 0xc	
+	CParticleCollectionVecInput m_vMinRandomDisplacement; // 0x2b8	
 	// MPropertyFriendlyName "max random displacement for child particles"
-	Vector m_vMaxRandomDisplacement; // 0x18	
+	CParticleCollectionVecInput m_vMaxRandomDisplacement; // 0x910	
+	// MPropertyFriendlyName "Modelling scale"
+	CParticleCollectionFloatInput m_flModellingScale; // 0xf68	
 };
 
 // Registered binary: particles.dll (project 'particles')
@@ -12209,7 +12292,7 @@ public:
 	// MPropertyFriendlyName "animation rate scale field"
 	// MPropertyAttributeChoiceName "particlefield_scalar"
 	// MPropertySortPriority "500"
-	// MPropertySuppressExpr "!m_bAnimated"
+	// MPropertySuppressExpr "!(m_bAnimated && m_bScaleAnimationRate)"
 	ParticleAttributeIndex_t m_nAnimationScaleField; // 0x16b4	
 	// MPropertyStartGroup "Animation"
 	// MPropertyFriendlyName "animation sequence field"
@@ -12652,7 +12735,7 @@ public:
 
 // Registered binary: particles.dll (project 'particles')
 // Alignment: 8
-// Size: 0x220
+// Size: 0x228
 // Has VTable
 // 
 // MGetKV3ClassDefaults
@@ -12662,19 +12745,28 @@ public:
 	// MPropertyFriendlyName "client physics type"
 	// MPropertyAttributeEditor "VDataChoice( scripts/misc.vdata!generic_physics_particle_spawner )"
 	CUtlString m_strPhysicsType; // 0x208	
-	// MPropertyFriendlyName "kill physics particles"
-	bool m_bKillParticles; // 0x210	
-	// MPropertyFriendlyName "delete physics sim when stopped"
-	// MPropertySuppressExpr "m_bKillParticles == false"
-	bool m_bDeleteSim; // 0x211	
+	// MPropertyFriendlyName "start all physics asleep"
+	bool m_bStartAsleep; // 0x210	
+	// MPropertyFriendlyName "use high quality simulation"
+	bool m_bUseHighQualitySimulation; // 0x211	
 private:
 	[[maybe_unused]] uint8_t __pad0212[0x2]; // 0x212
 public:
+	// MPropertyFriendlyName "max particle count"
+	int32_t m_nMaxParticleCount; // 0x214	
+	// MPropertyFriendlyName "kill physics particles"
+	bool m_bKillParticles; // 0x218	
+	// MPropertyFriendlyName "delete physics sim when stopped"
+	// MPropertySuppressExpr "m_bKillParticles == false"
+	bool m_bDeleteSim; // 0x219	
+private:
+	[[maybe_unused]] uint8_t __pad021a[0x2]; // 0x21a
+public:
 	// MPropertyFriendlyName "control point (for finding nearest sim)"
 	// MPropertySuppressExpr "m_bKillParticles == true"
-	int32_t m_nControlPoint; // 0x214	
+	int32_t m_nControlPoint; // 0x21c	
 	// MPropertyFriendlyName "tint blend (color vs prop group gradient)"
-	ParticleColorBlendType_t m_nColorBlendType; // 0x218	
+	ParticleColorBlendType_t m_nColorBlendType; // 0x220	
 };
 
 // Registered binary: particles.dll (project 'particles')
@@ -12781,7 +12873,7 @@ public:
 
 // Registered binary: particles.dll (project 'particles')
 // Alignment: 8
-// Size: 0x3230
+// Size: 0x42f0
 // Has VTable
 // 
 // MGetKV3ClassDefaults
@@ -12908,6 +13000,16 @@ public:
 	// MPropertySortPriority "400"
 	// MPropertySuppressExpr "!m_bParticleShadows"
 	float m_flShadowDensity; // 0x3224	
+	// MPropertyStartGroup "Replication"
+	// MPropertyFriendlyName "Replication settings"
+	// -> m_nReplicationMode - 0x3228
+	// -> m_bScaleChildParticleRadii - 0x322c
+	// -> m_flMinRandomRadiusScale - 0x3230
+	// -> m_flMaxRandomRadiusScale - 0x3388
+	// -> m_vMinRandomDisplacement - 0x34e0
+	// -> m_vMaxRandomDisplacement - 0x3b38
+	// -> m_flModellingScale - 0x4190
+	CReplicationParameters m_replicationParameters; // 0x3228	
 };
 
 // Registered binary: particles.dll (project 'particles')

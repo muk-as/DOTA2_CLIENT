@@ -48,13 +48,12 @@
 					<Label class="ActTitle" text="#DOTA_Crownfall_Overworld_Oglodi" />
 					<Label class="CurrentlyActiveLabel LabelMedium" text="#DOTA_Crownfall_Overworld_Active" />
 				</Panel>
-				<Panel id="ButtonAct3" class="ChapterNavItem Inactive">
+				<Panel id="ButtonAct3" class="ChapterNavItem" onactivate="DOTASelectOverworld( 3 )">
 					<Label class="ActLabel LabelSmall" text="#DOTA_Crownfall_Overworld_ActIII" />
 					<Label class="ActTitle" text="#DOTA_Crownfall_Overworld_IceWrack" />
-					<Label class="UnlockDate LabelSmall" text="#DOTA_Crownfall_Overworld_Unlock_Date_III" />
 					<Label class="CurrentlyActiveLabel LabelMedium" text="#DOTA_Crownfall_Overworld_Active" />
 				</Panel>
-				<Panel id="ButtonAct4" class="ChapterNavItem Inactive">
+				<Panel id="ButtonAct4" class="ChapterNavItem Locked" onactivate="DOTASelectOverworld( 4 )">
 					<Label class="ActLabel LabelSmall" text="#DOTA_Crownfall_Overworld_ActIV" />
 					<Label class="ActTitle" text="#DOTA_Crownfall_Overworld_TheEyrie" />
 					<Label class="UnlockDate LabelSmall" text="#DOTA_Crownfall_Overworld_Unlock_Date_IV" />
@@ -69,7 +68,7 @@
 			</Panel>
 			<Panel class="ActInfo">
 				<Image class="LogoBackground" src="s2r://panorama/images/events/crownfall/overworld/chapter_selector/chapter_selector_gold_background_png.vtex" scaling="stretch-to-fit-y-preserve-aspect" />
-				<Image class="CrownfallLogo" src="s2r://panorama/images/events/crownfall/logos/crownfall_logo_en_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+				<Image class="CrownfallLogo" src="s2r://panorama/images/events/crownfall/logos/crownfall_logo_en_psd.vtex" scaling="stretch-to-fit-preserve-aspect" />
 				<Image class="CrownfallLogoCN" src="s2r://panorama/images/events/crownfall/logos/crownfall_logo_cn_psd.vtex" scaling="stretch-to-fit-preserve-aspect" />
 				<Panel class="ActSelectorDropdown" onmouseover="AddStyle( ActSelector, Show );" onmouseout="RemoveStyle( ActSelector, Show );">
 					<Label class="ActNumber LabelSmall" text="{s:active_act_number}" />
@@ -81,8 +80,8 @@
 			</Panel>
 			<DOTACrownfallButton id="ActivateButton" text="#DOTA_Crownfall_Overworld_SetActive" class="Secondary" onactivate="DOTAActivateOverworld()" />
 			<Panel class="RewardsContainer">
-				<Label class="RewardsTitle TitleSmall" text="#DOTA_Crownfall_RewardsGroup_Free" onmouseover="UIShowTextTooltip( #DOTA_Crownfall_Overworld_CompletionProgressBasic )" onmouseout="UIHideTextTooltip()" />
-				<Panel class="ProgressBarContainer Basic">
+				<Panel class="ProgressBarContainer Basic" onmouseover="UIShowTextTooltip( #DOTA_Crownfall_Overworld_CompletionProgressBasic )" onmouseout="UIHideTextTooltip()">
+					<Label class="RewardsTitle TitleSmall" text="#DOTA_Crownfall_RewardsGroup_Free" />
 					<ProgressBar id="BasicProgressBar" class="ProgressBar" value="0.0" />
 				</Panel>
 				<AsyncDataPanel class="RewardListStatus" state="{d:overworld_page_state}" loading-text="#DOTA_Crownfall_Overworld_Rewards_Loading" error-text="#DOTA_Crownfall_Overworld_Rewards_FailedToLoad">
@@ -131,8 +130,8 @@
 				<Panel class="Dash Right" />
 			</Panel>
 			<Panel class="RewardsContainer Premium">
-				<Label class="RewardsTitle TitleSmall" text="#DOTA_Crownfall_RewardsGroup_Paid" />
 				<Panel class="ProgressBarContainer Premium" onmouseover="UIShowTextTooltip( #DOTA_Crownfall_Overworld_CompletionProgressPremium )" onmouseout="UIHideTextTooltip()">
+					<Label class="RewardsTitle TitleSmall" text="#DOTA_Crownfall_RewardsGroup_Paid" />
 					<ProgressBar id="PremiumProgressBar" class="ProgressBar" value="0.0" />
 				</Panel>
 				<AsyncDataPanel class="RewardListStatus" state="{d:overworld_page_state}" loading-text="#DOTA_Crownfall_Overworld_Rewards_Loading" error-text="#DOTA_Crownfall_Overworld_Rewards_FailedToLoad">

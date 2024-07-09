@@ -4,7 +4,7 @@
 
 // /////////////////////////////////////////////////////////////
 // Binary: pulse_system.dll
-// Classes count: 0 (Allocated) | 108 (Unallocated)
+// Classes count: 0 (Allocated) | 112 (Unallocated)
 // Enums count: 0 (Allocated) | 9 (Unallocated)
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
@@ -66,7 +66,7 @@ enum class PulseCursorExecResult_t : uint32_t
 };
 
 // Registered binary: pulse_system.dll (project 'pulse_runtime_lib')
-// Enumerator count: 20
+// Enumerator count: 21
 // Alignment: 4
 // Size: 0x4
 enum class PulseValueType_t : uint32_t
@@ -91,26 +91,28 @@ enum class PulseValueType_t : uint32_t
 	PVAL_EHANDLE = 0x7,
 	// MPropertyFriendlyName "Resource"
 	PVAL_RESOURCE = 0x8,
-	// MPropertyFriendlyName "SoundEvent Handle"
+	// MPropertyFriendlyName "SoundEvent Instance Handle"
 	PVAL_SNDEVT_GUID = 0x9,
+	// MPropertyFriendlyName "SoundEvent"
+	PVAL_SNDEVT_NAME = 0xa,
 	// MPropertyFriendlyName "Entity Name"
-	PVAL_ENTITY_NAME = 0xa,
+	PVAL_ENTITY_NAME = 0xb,
 	// MPropertyFriendlyName "Opaque Handle"
-	PVAL_OPAQUE_HANDLE = 0xb,
+	PVAL_OPAQUE_HANDLE = 0xc,
 	// MPropertyFriendlyName "Typesafe Int"
-	PVAL_TYPESAFE_INT = 0xc,
+	PVAL_TYPESAFE_INT = 0xd,
 	// MPropertySuppressEnumerator
-	PVAL_CURSOR_FLOW = 0xd,
+	PVAL_CURSOR_FLOW = 0xe,
 	// MPropertyFriendlyName "Any"
-	PVAL_ANY = 0xe,
+	PVAL_ANY = 0xf,
 	// MPropertyFriendlyName "Schema Enum"
-	PVAL_SCHEMA_ENUM = 0xf,
+	PVAL_SCHEMA_ENUM = 0x10,
 	// MPropertyFriendlyName "Panorama Panel Handle"
-	PVAL_PANORAMA_PANEL_HANDLE = 0x10,
+	PVAL_PANORAMA_PANEL_HANDLE = 0x11,
 	// MPropertyFriendlyName "Test Handle"
-	PVAL_TEST_HANDLE = 0x11,
+	PVAL_TEST_HANDLE = 0x12,
 	// MPropertySuppressEnumerator
-	PVAL_COUNT = 0x12,
+	PVAL_COUNT = 0x13,
 };
 
 // Registered binary: pulse_system.dll (project 'pulse_runtime_lib')
@@ -617,15 +619,16 @@ public:
 
 // Registered binary: pulse_system.dll (project 'pulse_runtime_lib')
 // Alignment: 8
-// Size: 0xa0
+// Size: 0x8
 // Has VTable
-// 
-// MPulseInternal_IsCursor
-class CPulseExecCursor
+// Is Abstract
+// Has Trivial Destructor
+class IGapHost_ExecLog
 {
 private:
-	[[maybe_unused]] uint8_t __pad0000[0xa0]; // 0x0
+	[[maybe_unused]] uint8_t __pad0000[0x8]; // 0x0
 public:
+	// No schema binary for binding
 };
 
 // Registered binary: pulse_system.dll (project 'pulse_runtime_lib')
@@ -710,6 +713,18 @@ public:
 // Alignment: 8
 // Size: 0x8
 // Has VTable
+// Is Abstract
+// Has Trivial Destructor
+class IGapHost_Cursor : public IGapHost_ExecLog
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: pulse_system.dll (project 'pulse_runtime_lib')
+// Alignment: 8
+// Size: 0x8
+// Has VTable
 // Has Trivial Destructor
 // 
 // MGapTypeQueriesForScopeSingleton
@@ -720,6 +735,16 @@ private:
 public:
 	// Static fields:
 	static CPulseTestGapTypeQueryRegistration &Get_s_Instance(){return *reinterpret_cast<CPulseTestGapTypeQueryRegistration*>(interfaces::g_schema->FindTypeScopeForModule("pulse_system.dll")->FindDeclaredClass("CPulseTestGapTypeQueryRegistration")->m_static_fields[0]->m_instance);};
+};
+
+// Registered binary: pulse_system.dll (project 'pulse_runtime_lib')
+// Alignment: 8
+// Size: 0x58
+// Has VTable
+class CPulseCell_Unknown : public CPulseCell_Base
+{
+public:
+	KeyValues3 m_UnknownKeys; // 0x48	
 };
 
 // Registered binary: pulse_system.dll (project 'pulse_runtime_lib')
@@ -786,7 +811,7 @@ public:
 struct CPulseCell_Outflow_CycleShuffled__InstanceState_t
 {
 public:
-	CUtlVectorFixedGrowable< uint8 > m_Shuffle; // 0x0	
+	CUtlVectorFixedGrowable< uint8, 8 > m_Shuffle; // 0x0	
 	int32_t m_nNextShuffle; // 0x20	
 };
 
@@ -867,6 +892,18 @@ struct CPulseCell_BaseLerp__CursorState_t
 public:
 	GameTime_t m_StartTime; // 0x0	
 	GameTime_t m_EndTime; // 0x4	
+};
+
+// Registered binary: pulse_system.dll (project 'pulse_runtime_lib')
+// Alignment: 8
+// Size: 0x8
+// Has VTable
+// Is Abstract
+// Has Trivial Destructor
+class IGapHost_YieldingCursor : public IGapHost_Cursor
+{
+public:
+	// No schema binary for binding
 };
 
 // Registered binary: pulse_system.dll (project 'pulse_runtime_lib')
@@ -1403,6 +1440,19 @@ public:
 // Size: 0xa8
 // Has VTable
 // 
+// MPulseInternal_IsCursor
+class CPulseExecCursor : public IGapHost_YieldingCursor
+{
+private:
+	[[maybe_unused]] uint8_t __pad0008[0x98]; // 0x8
+public:
+};
+
+// Registered binary: pulse_system.dll (project 'pulse_runtime_lib')
+// Alignment: 8
+// Size: 0xa8
+// Has VTable
+// 
 // MGetKV3ClassDefaults
 // MCellForDomain
 // MPulseCellMethodBindings
@@ -1627,7 +1677,7 @@ public:
 
 // Registered binary: pulse_system.dll (project 'pulse_runtime_lib')
 // Alignment: 8
-// Size: 0xa8
+// Size: 0xb0
 // Has VTable
 // 
 // MPulseLibraryBindings
@@ -1635,8 +1685,8 @@ public:
 class CTestDomainDerived_Cursor : public CPulseExecCursor
 {
 public:
-	int32_t m_nCursorValueA; // 0xa0	
-	int32_t m_nCursorValueB; // 0xa4	
+	int32_t m_nCursorValueA; // 0xa8	
+	int32_t m_nCursorValueB; // 0xac	
 };
 
 // Registered binary: pulse_system.dll (project 'pulse_runtime_lib')
@@ -1940,7 +1990,7 @@ public:
 
 // Registered binary: pulse_system.dll (project 'pulse_runtime_lib')
 // Alignment: 8
-// Size: 0xb8
+// Size: 0xc0
 // Has VTable
 // 
 // MPulseLibraryBindings
@@ -1948,9 +1998,9 @@ public:
 class CPulseTurtleGraphicsCursor : public CPulseExecCursor
 {
 public:
-	Color m_Color; // 0xa0	
-	Vector2D m_vPos; // 0xa4	
-	float m_flHeadingDeg; // 0xac	
-	bool m_bPenUp; // 0xb0	
+	Color m_Color; // 0xa8	
+	Vector2D m_vPos; // 0xac	
+	float m_flHeadingDeg; // 0xb4	
+	bool m_bPenUp; // 0xb8	
 };
 

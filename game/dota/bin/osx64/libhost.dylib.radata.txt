@@ -161,7 +161,6 @@
 23CSVCMsg_GameEvent_key_t
 24CSchemaRegistration_host
 25CBoneConstraintDotToMorph
-25CNETMsg_Disconnect_Legacy
 25CNETMsg_SpawnGroup_Unload
 25CSurfacePropDataTableBase
 25ISinglePlayerSharedMemory
@@ -177,6 +176,7 @@
 33CNETMsg_SpawnGroup_ManifestUpdate
 34CNETMsg_SpawnGroup_SetCreationTick
 3\n\bNamePart
+511CRenderMesh
 5\n\vnested_type
 6\n\fmessage_type
 7\n\aoptions
@@ -483,7 +483,6 @@ CMsgQuaternion
 CMsgQuaternion"6\n\bCMsgRGBA
 CMsg_CVars.CVar
 CNETMsg_DebugOverlay
-CNETMsg_Disconnect_Legacy
 CNETMsg_SetConVar
 CNETMsg_SignonState
 CNETMsg_SpawnGroup_Load
@@ -519,6 +518,7 @@ CTwistConstraint
 CType
 CUtlDict::IndexType_t CUtlDict<CAttachment>::Insert(const char *) [T = CAttachment, L = CDefFastCaselessStringLess
 CUtlDict::IndexType_t CUtlDict<CHitBoxSet>::Insert(const char *) [T = CHitBoxSet, L = CDefFastCaselessStringLess
+CUtlLeanVector
 CUtlLinkedList overflow! (exhausted index range)\n
 CUtlLinkedList overflow! (exhausted memory allocator)\n
 CUtlRBTree overflow with %u elements!\n
@@ -556,7 +556,6 @@ Difference of
 DotaMapUtils001
 Double-save to Member '%s
 DynamicMeshDeformParams_t
-ENetworkDisconnectionReason
 ERROR
 ERROR: CUtlSymbolTableLarge element limit of %u exceeded\n
 ERROR: Resource name "%s" has the incorrect extension "%s" for the specified resource type (expected "%s")!\n
@@ -854,7 +853,6 @@ J\n'NETWORK_DISCONNECT_DISCONNECT_BY_SERVER
 J\n\eENetworkDisconnectionReason
 J\n\eNETWORK_DISCONNECT_OVERFLOW
 JustInTimeManifest
-K11CRenderMesh
 K\n!NETWORK_DISCONNECT_INTERNAL_ERROR
 K\n#NETWORK_DISCONNECT_TICKMSG_OVERFLOW
 K\n$NETWORK_DISCONNECT_STEAM_AUTHINVALID
@@ -1273,6 +1271,7 @@ SurfacePropertiesList
 Symbol name
 Synthetic oneofs must be after all other oneofs
 System %s failed to init\n
+T *CUtlLeanVectorImpl<CUtlLeanVectorBase<CConstraintSlave>, CConstraintSlave>::InsertBeforeGetPtr(int, int) [B = CUtlLeanVectorBase<CConstraintSlave>, T = CConstraintSlave, I = short
 TILT_TWIST
 TWIST
 T\n%NETWORK_DISCONNECT_KICKED_TEAMHURTING
@@ -1282,6 +1281,7 @@ T\n&NETWORK_DISCONNECT_BAD_SERVER_PASSWORD
 T\n&NETWORK_DISCONNECT_MESSAGE_PARSE_ERROR
 T\n)NETWORK_DISCONNECT_REQUEST_HOSTSTATE_IDLE
 T\n+NETWORK_DISCONNECT_STEAM_VAC_CHECK_TIMEDOUT
+TanFrameQuat
 TestScriptMgr001
 TextLayout_001
 The JSON camel-case name of field
@@ -1345,6 +1345,7 @@ VScript
 VScriptDbg
 VScriptManager010
 VStringTokenSystem001
+VWebm001
 V\n&NETWORK_DISCONNECT_KICKED_NOSTEAMLOGIN
 V\n&NETWORK_DISCONNECT_PURESERVER_MISMATCH
 V\n'NETWORK_DISCONNECT_CREATE_SERVER_FAILED
@@ -1748,6 +1749,7 @@ m_bDrawLast
 m_bEnableSimulation
 m_bHasBakedLightingFromLightMap
 m_bHasBakedLightingFromVertexStream
+m_bHasHairPositionOffsets
 m_bIgnoreRotation
 m_bInfluenceRootTransform
 m_bInverse
@@ -1779,7 +1781,6 @@ m_flMin
 m_flRemap
 m_flShapeRadius
 m_flSphereRadius
-m_flSumOfAllHairLengths
 m_flTensionCompressScale
 m_flTensionStretchScale
 m_flTraceHeight
@@ -1791,6 +1792,7 @@ m_floatAttributes
 m_floatParams
 m_hBuffer
 m_hSimParamsMat
+m_hairPositionOffsets
 m_hairs
 m_hitboxsets
 m_indexBuffer
@@ -2111,7 +2113,6 @@ r\n\tJS_NUMBER
 r\n\tJS_STRING
 r\n\tTYPE_BOOL
 r\n\tTYPE_ENUM
-reason
 registered
 remove_prefix
 repeated
@@ -2119,6 +2120,9 @@ required
 reserved_range
 runleft
 runright
+s allocation count overflow
+s allocation count overflow( %llu > %llu )\n
+s allocation count overflow( add %llu + current %llu > max %llu )\n
 s:  IGameSystem::LoopActivateAllSystems {\n
 s:  IGameSystem::LoopDeactivateAllSystems {\n
 s:  IGameSystem::LoopInitAllSystems(finish
@@ -2128,6 +2132,8 @@ s:  } IGameSystem::LoopDeactivateAllSystems done\n
 s: %s\n
 s: Invalid capacity %u\n
 s: Invalid grow amount %d\n
+s: invalid nBeforeIndex %d\n
+s: invalid nSize %d\n
 savegamefilename
 scale
 schema_description
@@ -2248,6 +2254,7 @@ varint
 vector2
 vector3
 vector4
+void CUtlLeanVectorBase<CConstraintSlave>::EnsureCapacity(int, bool) [T = CConstraintSlave, I = short
 void CUtlMemory_RawAllocator<CUtlHashtableEntry<unsigned int>>::EnsureCapacity(int) [T = CUtlHashtableEntry<unsigned int
 void CUtlMemory_RawAllocator<unsigned int>::EnsureCapacity(int) [T = unsigned int
 void CUtlMemory_RawAllocator<unsigned int>::Grow(int) [T = unsigned int

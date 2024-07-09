@@ -4,7 +4,7 @@
 
 // /////////////////////////////////////////////////////////////
 // Binary: resourcesystem.dll
-// Classes count: 0 (Allocated) | 58 (Unallocated)
+// Classes count: 0 (Allocated) | 59 (Unallocated)
 // Enums count: 0 (Allocated) | 2 (Unallocated)
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
@@ -38,6 +38,20 @@ enum class FuseVariableAccess_t : uint8_t
 
 struct FuseVariableIndex_t;
 struct FuseFunctionIndex_t;
+
+// Registered binary: resourcesystem.dll (project 'resourcesystem')
+// Alignment: 8
+// Size: 0x1
+// Has Trivial Constructor
+// Has Trivial Destructor
+// 
+// MResourceTypeForInfoType "vnmik"
+class InfoForResourceTypeCNmIKRig
+{
+private:
+	[[maybe_unused]] uint8_t __pad0000[0x1]; // 0x0
+public:
+};
 
 // Registered binary: resourcesystem.dll (project 'resourcesystem')
 // Alignment: 8
@@ -183,7 +197,7 @@ public:
 // Has Trivial Constructor
 // Has Trivial Destructor
 // 
-// MResourceTypeForInfoType "vgcxdata"
+// MResourceTypeForInfoType "vgcxdatavxml"
 class InfoForResourceTypeCGcExportableExternalData
 {
 private:
@@ -197,7 +211,7 @@ public:
 // Has Trivial Constructor
 // Has Trivial Destructor
 // 
-// MResourceTypeForInfoType "vanmgrpheconitemvents"
+// MResourceTypeForInfoType "vanmgrpheconitem"
 class InfoForResourceTypeIAnimGraphModelBinding
 {
 private:
@@ -546,7 +560,7 @@ public:
 // Has Trivial Constructor
 // Has Trivial Destructor
 // 
-// MResourceTypeForInfoType "econitemvents"
+// MResourceTypeForInfoType "econitem"
 class InfoForResourceTypeCCSGOEconItem
 {
 private:

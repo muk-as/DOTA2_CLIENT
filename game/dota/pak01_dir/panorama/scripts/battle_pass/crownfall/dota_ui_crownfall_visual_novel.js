@@ -63,6 +63,7 @@ function FixUpHtmlTags(strHtmlText) {
     var isBold = false;
     var isItalics = false;
     var someText = false;
+    var isSpan = false;
 
     //$.Msg("FixUphtmlTags, chunks: " + chunks.join('|'));
 
@@ -77,6 +78,11 @@ function FixUpHtmlTags(strHtmlText) {
             isItalics = true;
             someText = false;
         }
+        else if (strncmp(chunks[i], "<span", 5) == 0 ) {
+            isSpan = true;
+            someText = false;
+            //$.Msg("Detected span opening tag. " + i);
+        }
         else if (chunks[i] == "</b>") {
             isBold = false;
         }
@@ -84,7 +90,20 @@ function FixUpHtmlTags(strHtmlText) {
             isItalics = false;
         }
         else if (strncmp(chunks[i], "<child ", 5) == 0) {
-            if (isBold) {
+            if (isSpan) {
+                //$.Msg("Fixing up child inside span");
+                // Find the closing tag, and insert it here.
+                var closingTagIndex = chunks.indexOf("</span>", i);
+                chunks.splice(closingTagIndex, 1);
+                if (someText) {
+                    chunks.splice(i + 1, 0, "</span>");
+                }
+                else {
+                    chunks.splice(i, 0, "</span>");
+                }
+                isSpan = false;
+            } 
+            else if (isBold) {
                 // Find the closing tag, and insert it here.
                 var closingTagIndex = chunks.indexOf("</b>", i);
                 chunks.splice(closingTagIndex, 1);

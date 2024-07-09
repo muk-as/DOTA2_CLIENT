@@ -1,0 +1,38 @@
+<!-- xml reconstructed by Source 2 Viewer 0.0.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/popups/popups_shared.vcss_c" />
+		<include src="s2r://panorama/styles/battle_pass/crownfall/bp_crownfall_shared.vcss_c" />
+		<include src="s2r://panorama/styles/battle_pass/crownfall/bp_popup_crownfall_encounter_minigame.vcss_c" />
+		<include src="s2r://panorama/styles/battle_pass/crownfall/bp_popup_crownfall_encounter_fighting.vcss_c" />
+	</styles>
+	<Panel class="PopupPanel FightingGame Hidden IntroMenu" allows_popups="1" popupbackground="dim" oncancel="DOTAEncounterFightingExit()">
+		<Panel class="MainContents">
+			<Panel id="FightingGamePanelContainer">
+				<DOTAFightingGamePanel id="FightingGamePanel" />
+			</Panel>
+			<DOTAFightingGameMenu id="FightingGameMenu" hittest="false" />
+			<Panel class="VisualNovelOuterContainer">
+				<Panel class="VisualNovelBackground" />
+				<Panel id="VisualNovelContainer" onactivate="DOTAVisualNovelNextStep()">
+					<DOTACrownfallVisualNovel id="VisualNovel" />
+				</Panel>
+			</Panel>
+			<Panel class="MissingDataSpinnerContainer" hittest="false">
+				<Panel class="Spinner MissingDataSpinner" hittest="false" />
+			</Panel>
+		</Panel>
+		<Panel id="CloseButtonContainer">
+			<Panel class="CloseButtonBackground" onactivate="DOTAEncounterFightingExit()" onmouseover="AddStyle( CloseButtonContainer, Hovered );" onmouseout="RemoveStyle( CloseButtonContainer, Hovered );" />
+			<Panel class="CloseButtonBackgroundHover" hittest="false" />
+			<Image class="CloseIcon" src="s2r://panorama/images/control_icons/24px/x_close.vsvg" hittest="false" />
+			<Image class="ReturnIcon" src="s2r://panorama/images/control_icons/24px/reset.vsvg" hittest="false" />
+		</Panel>
+		<Panel id="ResizeButtonContainer">
+			<Panel class="CloseButtonBackground" onactivate="DOTAEncounterFightingResize()" onmouseover="AddStyle( ResizeButtonContainer, Hovered );" onmouseout="RemoveStyle( ResizeButtonContainer, Hovered );" />
+			<Panel class="CloseButtonBackgroundHover" hittest="false" />
+			<Image class="CloseIcon" src="s2r://panorama/images/control_icons/24px/full_screen.vsvg" hittest="false" />
+		</Panel>
+	</Panel>
+</root>

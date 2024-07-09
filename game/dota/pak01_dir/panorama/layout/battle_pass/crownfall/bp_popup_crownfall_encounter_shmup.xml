@@ -1,0 +1,318 @@
+<!-- xml reconstructed by Source 2 Viewer 0.0.0.0 - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/popups/popups_shared.vcss_c" />
+		<include src="s2r://panorama/styles/battle_pass/crownfall/bp_crownfall_shared.vcss_c" />
+		<include src="s2r://panorama/styles/battle_pass/crownfall/bp_popup_crownfall_encounter_minigame.vcss_c" />
+		<include src="s2r://panorama/styles/battle_pass/crownfall/bp_popup_crownfall_encounter_shmup.vcss_c" />
+	</styles>
+	<scripts>
+		<include src="s2r://panorama/scripts/common/async.vts_c" />
+		<include src="s2r://panorama/scripts/battle_pass/crownfall/bp_popup_crownfall_encounter_shmup.vts_c" />
+	</scripts>
+	<snippets>
+		<snippet name="LeaderboardRow">
+			<Panel class="LeaderboardRow">
+				<DOTAAvatarImage id="LeaderListAvatar" nocompendiumborder="true" />
+				<Label class="LeaderListName" text="{g:dota_persona:account_id}" html="true" />
+				<Label class="LeaderListValue" text="{d:score}" />
+			</Panel>
+		</snippet>
+		<snippet name="RewardRow">
+			<Panel class="RewardRow">
+				<Label class="RewardScore" text="{d:reward_score_required}" />
+				<Panel id="RewardValue" class="RewardValue" />
+			</Panel>
+		</snippet>
+		<snippet name="ReserveItem">
+			<Panel class="ReserveItem">
+				<DOTAHeroImage class="ReserveIcon" heroimagestyle="icon" heroname="vengefulspirit" item="22718" />
+			</Panel>
+		</snippet>
+		<snippet name="ChainPip">
+			<Panel class="ChainPip" />
+		</snippet>
+		<snippet name="ChargePip">
+			<Panel class="ChargePip" />
+		</snippet>
+		<snippet name="ComboNotification">
+			<Panel class="ComboNotificationNoClip">
+				<Panel class="ComboNotificationClip">
+					<Panel class="ComboNotificationContainer">
+						<Label class="ComboNotificationTitle" text="#DOTA_Crownfall_Shmup_ComboNotification_Title" />
+						<Label class="ComboNotificationMaxTitle" text="#DOTA_Crownfall_Shmup_ComboNotification_TitleMax" />
+						<Label class="ComboNotificationScore" text="#DOTA_Crownfall_Shmup_ComboNotification_Desc" />
+					</Panel>
+				</Panel>
+			</Panel>
+		</snippet>
+		<snippet name="ComboNotificationBroken">
+			<Panel class="ComboNotificationNoClip">
+				<Panel class="ComboNotificationClip">
+					<Panel class="ComboNotificationContainer ComboNotificationBrokenContainer">
+						<Label class="ComboNotificationBrokenTitle" text="#DOTA_Crownfall_Shmup_ComboNotification_Break_Desc" />
+					</Panel>
+				</Panel>
+			</Panel>
+		</snippet>
+		<snippet name="VictoryScoreItem">
+			<Panel class="VictoryScoreItem">
+				<Label class="VictoryScoreItemTitle" text="{s:item_name}" />
+				<Label class="VictoryScoreItemValue" text="{d:item_score}" />
+			</Panel>
+		</snippet>
+	</snippets>
+	<DOTABPCrownfallEncounterShmupPopup class="PopupPanel DragonBoss" popupbackground="dim" oncancel="DOTAEncounterMinigameExit()">
+		<PulsePanel id="Gameplay" class="Gameplay" graph="pulse/battle_pass/crownfall/bp_popup_crownfall_encounter_shmup.vpulse">
+			<Panel class="GameplayPauseOverlay">
+				<DOTAScenePanel class="GameScene" id="GameScene" map="maps/scenes/crownfall/shmup_act3.vpk" camera="attract_camera" light="global_light" live-mode="on" renderdeferred="true" renderwaterreflections="true" deferredalpha="true" antialias="true" particleonly="false" hittest="false" />
+				<DOTACrownfallDragonBossSpriteRenderer class="Bullets" id="Sprites" redbullet="s2r://panorama/images/events/crownfall/shmup/redbullet_png.vtex" bluebullet="s2r://panorama/images/events/crownfall/shmup/bluebullet_png.vtex" redheart="s2r://panorama/images/events/crownfall/shmup/redheart_png.vtex" blueheart="s2r://panorama/images/events/crownfall/shmup/blueheart_png.vtex" debugsprite="s2r://panorama/images/events/crownfall/shmup/debug_png.vtex" paint="false" hittest="false" />
+				<Panel id="Toasts" class="Toasts" hittest="false" />
+				<Panel class="BossWarning">
+					<Panel class="BossWarningBackground" />
+					<Panel class="BossWarningChevrons BossWarningChevrons__Top">
+						<Panel class="BossWarningChevronsScroll" />
+					</Panel>
+					<Panel class="BossWarningChevrons BossWarningChevrons__Bottom">
+						<Panel class="BossWarningChevronsScroll" />
+					</Panel>
+					<Panel class="BossWarningLayout">
+						<Panel class="BossWarningTitlePanel">
+							<Label class="BossWarningTitle BossWarningTitle_Main" text="#DOTA_Crownfall_Shmup_BossWarning_Title" />
+							<Label class="BossWarningTitle BossWarningTitle_Blur" text="#DOTA_Crownfall_Shmup_BossWarning_Title" />
+						</Panel>
+						<Panel class="BossWarningDescriptionPanel">
+							<Label class="BossWarningDescription BossWarningDescription_Main" text="#DOTA_Crownfall_Shmup_BossWarning_Desc" />
+							<Label class="BossWarningDescription BossWarningDescription_Blur" text="#DOTA_Crownfall_Shmup_BossWarning_Desc" />
+						</Panel>
+					</Panel>
+				</Panel>
+				<Panel class="BossFight" hitteset="false" hittestchildren="false">
+					<Label class="BossFightTitle" text="#DOTA_Crownfall_Shmup_BossHealthBar_Title" />
+					<Panel id="BigHealthBarContainer" hittest="false">
+						<Panel id="HPBar" hittest="false">
+							<Panel id="HPBarContainer" hittest="false">
+								<Panel class="BarHolder">
+									<ProgressBar hittest="false" id="HPProgressBar" value="1.0" />
+								</Panel>
+							</Panel>
+						</Panel>
+					</Panel>
+					<Label class="Time" text="#DOTA_Crownfall_Shmup_BossHealthBar_Time" />
+					<Label class="TimeLeft" text="{d:boss_time_left}" />
+				</Panel>
+			</Panel>
+		</PulsePanel>
+		<Panel class="PregameUI">
+			<Panel class="Shmup_LogoTitling" />
+			<Panel class="MainMenu">
+				<Panel class="TopGoldDash" />
+				<Panel class="ColumnContainer">
+					<Panel class="Column1">
+						<Panel class="HowToPlaySection">
+							<Label class="HowToPlayTitle" text="#DOTA_Crownfall_Fishing_HowToPlay" />
+							<Label class="HowToPlayDescription" html="true" text="#DOTA_Crownfall_Shmup_HowToPlay_Description" />
+						</Panel>
+						<Label class="RewardsLabel" text="#DOTA_Crownfall_Fishing_Rewards" />
+						<Panel id="RewardsList" class="RewardsSection" />
+					</Panel>
+					<Panel class="Column2">
+						<Panel id="LeaderboardContainerFriends" class="LeaderboardContainer">
+							<Panel class="LeaderListHeader">
+								<Label class="ScoreBoardType" text="#DOTA_Crownfall_Fishing_Leaderboard_HeaderFriends" />
+								<Label class="Score" text="#DOTA_Crownfall_Fishing_Leaderboard_Score" />
+							</Panel>
+							<DelayLoadList id="LeaderListFriends" class="LeaderList" itemwidth="200px" itemheight="26px" />
+						</Panel>
+					</Panel>
+				</Panel>
+				<Panel class="BottomButtons">
+					<DOTACrownfallButton class="StartGameButton " text="#DOTA_Crownfall_Fishing_Play" onactivate="DOTAEncounterMinigameStart()" />
+					<DOTACrownfallButton class="ExitButton" text="#DOTA_Crownfall_Encounter_Leave" onactivate="DOTAEncounterMinigameExit()" />
+				</Panel>
+			</Panel>
+		</Panel>
+		<Panel class="VisualNovelOuterContainer">
+			<Panel class="VisualNovelBackground" />
+			<Panel id="VisualNovelContainer" onactivate="DOTAVisualNovelNextStep()">
+				<DOTACrownfallVisualNovel id="VisualNovel" />
+			</Panel>
+		</Panel>
+		<Panel id="ControlsDisplay" hittest="false">
+			<Panel class="Row">
+				<Panel class="Column">
+					<Panel class="ControlKey">
+						<Label text="W" class="KeyText" />
+					</Panel>
+					<Panel class="Row">
+						<Panel class="ControlKey">
+							<Label text="A" class="KeyText" />
+						</Panel>
+						<Panel class="ControlKey">
+							<Label text="S" class="KeyText" />
+						</Panel>
+						<Panel class="ControlKey">
+							<Label text="D" class="KeyText" />
+						</Panel>
+					</Panel>
+				</Panel>
+				<Panel class="ColumnSpacer" />
+				<Panel class="ColumnSpacer" />
+				<Panel class="Column">
+					<Panel class="Row">
+						<Panel class="ControlMouse">
+							<Panel class="MouseButton MOUSE1" />
+						</Panel>
+					</Panel>
+				</Panel>
+				<Panel class="ColumnSpacer" />
+				<Panel class="Column">
+					<Panel class="Row">
+						<Panel class="ControlMouse">
+							<Panel class="MouseButton MOUSE2" />
+						</Panel>
+					</Panel>
+				</Panel>
+				<Panel class="ColumnSpacer" />
+				<Panel class="Column">
+					<Panel class="Row">
+						<Panel class="ControlMouse">
+							<Panel class="MouseButton MOUSE3" />
+						</Panel>
+					</Panel>
+				</Panel>
+				<Panel class="ColumnSpacer" />
+				<Label class="VerticalCenter OrText" text="#DOTA_Crownfall_Shmup_ControlDisplay_Separator" />
+				<Panel class="ColumnSpacer" />
+				<Panel class="Column">
+					<Panel class="Row">
+						<Panel class="ControlKey">
+							<Label text="Z" class="KeyText" />
+						</Panel>
+						<Panel class="ControlKey">
+							<Label text="X" class="KeyText" />
+						</Panel>
+					</Panel>
+					<Panel class="Row">
+						<Panel class="ControlKey">
+							<Label text="Space" class="KeyText ExtraLarge" />
+						</Panel>
+					</Panel>
+				</Panel>
+				<Panel class="Column" />
+				<Panel class="ColumnSpacer" />
+				<Panel class="Column">
+					<Panel class="ControlKey">
+						<Panel class="KeyText Up" />
+					</Panel>
+					<Panel class="Row">
+						<Panel class="ControlKey">
+							<Panel class="KeyText Back" />
+						</Panel>
+						<Panel class="ControlKey">
+							<Panel class="KeyText Down" />
+						</Panel>
+						<Panel class="ControlKey">
+							<Panel class="KeyText Forward" />
+						</Panel>
+					</Panel>
+				</Panel>
+			</Panel>
+		</Panel>
+		<Panel class="PauseHint">
+			<Panel class="PauseLabelContainer" hittest="false">
+				<Label text="#DOTA_Crownfall_Shmup_Pause" class="PauseLabel LabelMedium LighterGreyText" />
+				<Label text="#DOTA_FightingGame_HUD_UnPause" class="UnPauseLabel LabelMedium LighterGreyText" />
+			</Panel>
+			<Panel class="ControlKey">
+				<Label class="KeyText" text="F9" />
+			</Panel>
+		</Panel>
+		<Panel class="PauseUI">
+			<Panel class="MenuButtons">
+				<DOTACrownfallButton class="ResumeButton" text="#DOTA_Crownfall_Shmup_PauseMenu_Resume" onactivate="DOTAEncounterMinigameStart()" />
+				<DOTACrownfallButton class="AbortButton" text="#DOTA_Crownfall_Shmup_PauseMenu_Abort" onactivate="DOTAEncounterMinigameExit()" />
+			</Panel>
+		</Panel>
+		<Panel class="InGameUI" hittest="false" hittestchildren="false">
+			<Panel class="ScoreBar">
+				<Panel class="StatusScore">
+					<Label class="ScoreTitle" text="#DOTA_Crownfall_Shmup_Game_Score_Title" />
+					<Label class="Score" text="{d:score}" />
+				</Panel>
+				<Panel class="ComboScore">
+					<Label class="ComboTitle" text="#DOTA_Crownfall_Shmup_Game_Combo_Title" />
+					<Panel class="ComboValueContainer">
+						<Label class="Combo" text="{d:combo}" />
+						<Panel id="ChainPipContainer" class="ChainPipContainer" />
+					</Panel>
+				</Panel>
+			</Panel>
+			<Panel class="StatusReserve" hittest="false" hittestchildren="false">
+				<Label class="ReserveTitle" text="#DOTA_Crownfall_Shmup_Game_Lives_Title" />
+				<Panel id="Reserve" class="Reserve" />
+			</Panel>
+			<Panel class="ChargeContainer">
+				<Panel class="ChargeText">
+					<Label text="#DOTA_Crownfall_Shmup_Game_Charges" />
+					<Label class="MaxText" text="#DOTA_Crownfall_Shmup_Game_Max" />
+				</Panel>
+				<Panel id="ChargeMeter" />
+			</Panel>
+		</Panel>
+		<Panel class="TutorialUI" hittest="false">
+			<Panel class="Shmup_LogoTitling2" />
+			<Panel class="TutorialContents">
+				<Panel class="TopGoldDash" />
+				<Panel class="MovieContainer">
+					<MoviePanel id="TutorialMovie1" repeat="true" autoplay="onload" disableaudio="true" hittest="false" src="file://{resources}/videos/crownfall/shmup_1.webm" />
+					<MoviePanel id="TutorialMovie2" repeat="true" autoplay="onload" disableaudio="true" hittest="false" src="file://{resources}/videos/crownfall/shmup_2.webm" />
+				</Panel>
+				<Panel class="TutorialText">
+					<Label html="true" class="Instructions Tutorial1" text="#DOTA_Crownfall_Shmup_Tutorial_1" />
+					<Label html="true" class="Instructions Tutorial2" text="#DOTA_Crownfall_Shmup_Tutorial_2" />
+					<Label html="true" class="Instructions Tutorial3" text="#DOTA_Crownfall_Shmup_Tutorial_3" />
+					<Label html="true" class="Instructions Tutorial4" text="#DOTA_Crownfall_Shmup_Tutorial_4" />
+					<Label html="true" class="Instructions Tutorial5" text="#DOTA_Crownfall_Shmup_Tutorial_5" />
+					<Label html="true" class="Instructions Tutorial6" text="#DOTA_Crownfall_Shmup_Tutorial_6" />
+				</Panel>
+				<DOTACrownfallButton id="NextTutorialButton" class="NextButton" text="#DOTA_Crownfall_Shmup_Tutorial_GotIt" onactivate="DOTAEncounterShmupTutorialNext()" />
+			</Panel>
+		</Panel>
+		<Panel class="GameOverUI" hittest="false">
+			<Label class="GameOverTitle" text="#DOTA_Crownfall_Shmup_GameOver_Title" />
+			<Panel class="GameOverButtons">
+				<DOTACrownfallButton class="GameOverButton" text="#DOTA_Crownfall_Shmup_GameOver_Retry" onactivate="DOTAEncounterMinigameStart()" />
+				<DOTACrownfallButton class="GameOverButton" text="#DOTA_Crownfall_Shmup_GameOver_Abort" onactivate="DOTAEncounterMinigameExit()" />
+			</Panel>
+		</Panel>
+		<Panel class="VictoryUI">
+			<Panel class="VictoryUIMain">
+				<Label class="VictoryElement VictoryTitle" text="#DOTA_Crownfall_Shmup_Victory_Title" />
+				<Label class="VictoryElement VictorySubtitle" text="#DOTA_Crownfall_Shmup_Victory_Subtitle" />
+				<Label class="VictoryElement VictoryDescription" text="#DOTA_Crownfall_Shmup_Victory_Desc" />
+				<Label class="VictoryElement VictoryMaxComboTitle" text="#DOTA_Crownfall_Shmup_Victory_Combo_Title" />
+				<Label class="VictoryElement VictoryMaxComboValue" text="{d:max_combo}" />
+				<Label class="VictoryElement VictoryScoreTitle" text="#DOTA_Crownfall_Shmup_Victory_Score_Title" />
+				<Label class="VictoryElement VictoryScoreValue" text="{d:victory_score}" />
+				<Label class="VictoryElement VictoryRatingTitle" text="#DOTA_Crownfall_Shmup_Victory_Rating_Title" />
+				<Label class="VictoryElement VictoryRatingValue" text="{s:rating}" />
+				<Panel class="VictoryElement VictoryButtons">
+					<DOTACrownfallButton class="VictoryContinue" text="#DOTA_Crownfall_Shmup_Victory_Retry" onactivate="DOTAEncounterMinigameStart()" />
+					<DOTACrownfallButton class="VictoryExit" text="#DOTA_Crownfall_Shmup_Victory_Abort" onactivate="DOTAEncounterMinigameExit()" />
+				</Panel>
+			</Panel>
+			<Panel id="VictoryCategories" class="VictoryCategories" />
+		</Panel>
+		<Panel class="LoadingUI">
+			<Panel class="LoadingUISpinner Spinner" />
+		</Panel>
+		<Panel id="CloseButtonContainer">
+			<Panel class="CloseButtonBackground" onactivate="DOTAEncounterMinigameExit()" onmouseover="AddStyle( CloseButtonContainer, Hovered );" onmouseout="RemoveStyle( CloseButtonContainer, Hovered );" />
+			<Panel class="CloseButtonBackgroundHover" hittest="false" />
+			<Image class="CloseIcon" src="s2r://panorama/images/control_icons/24px/x_close.vsvg" hittest="false" />
+			<Image class="ReturnIcon" src="s2r://panorama/images/control_icons/24px/reset.vsvg" hittest="false" />
+		</Panel>
+	</DOTABPCrownfallEncounterShmupPopup>
+</root>

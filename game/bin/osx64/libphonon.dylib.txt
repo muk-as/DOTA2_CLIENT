@@ -18,14 +18,15 @@
 0:qg 8
 0;vn2
 0@@@@@00@00p0p0@@@@@0p0p0
-0@@@@p0p0
-0BakedReflectionsDataE
 0CSimulator
 0CSimulatorE
+0CTrueAudioNextDevice
 0CTrueAudioNextDeviceE
 0EvalSHSlowEii
 0I9u r	I
+0NonUniformProbeBatchENS1_9allocatorIS2_EEEE
 0P0@@P00@@00000000P0  0p0
+0ProbeBatchE
 0QuaternionIfEE
 0To:@75
 0Yr709
@@ -33,18 +34,17 @@
 0_32fc
 0__function6__baseIFviRNS_6atomicIbEEEEE
 0__shared_ptr
-0`0`0 0   0    0  0     0  0  0  0      0      0            0  0    0    0    0    0    0    0    0    0    0    0    0    0     0               0          0       0
+0`0`0 0   0    0  0     0  0  0  0      0      0            0  0      0      0      0      0      0      0      0      0      0      0    0      0     0               0          0       0
 0closestHitERKNS_3RayEff
 0createHRTFEP16IPLAudioSettingsP15IPLHRTFSettingsPPNS_5IHRTFE
 0enes
+0estimateHybridReverbEv
 0getInfluencingProbesERKNS_7Vector3IfEEPKNS_5ProbeEiPi
+0getInfluencingProbesERKNS_7Vector3IfEERNS_17ProbeNeighborhoodEi
 0initializeEv
-0iplReflectionEffectGetTailSizeEP22_IPLReflectionEffect_t
-0j;r|D
 0kBlockSizeE
 0makeSilentEv
 0oups
-0p64Q.k
 0removeDataEP22IPLBakedDataIdentifier
 0removeDataERKNS_19BakedDataIdentifierE
 0reverbTimeEPKfiRKNS_18AirAbsorptionModelEi
@@ -77,7 +77,6 @@
 11nearestHRIRERKNS_7Vector3IfEE
 11reconstructEiPKPKNS_11EnergyFieldEPKPKfPKNS_18AirAbsorptionModelEPKPNS_15ImpulseResponseENS_18ReconstructionTypeEfi
 11setRotationERKNS_1
-12calcReverbIREiPKfS2
 12startThreadsEv
 13band_rotationEi
 13uniformRandomEv
@@ -100,15 +99,18 @@
 18calculateGainAndEQERKNS_15DirectSoundPathENS_17DirectEffectFlagsENS_16TransmissionTypeERfPf
 19__simd128_float32_t
 19kDefaultMinDistanceE
+19serializeNonUniformERNS_16SerializedObjectE
 1;pOe:f
 1AudioBufferE
 1AudioBufferERS1
+1CNonUniformProbeBatchE
 1CValidatedVirtualSurroundEffectE
 1ENSt3__110shared_ptrINS_11EmbreeSceneEEE
 1ENSt3__110shared_ptrINS_11EmbreeSceneEEES4_RKNS_12SquareMatrixIfLi4EEE
 1ENSt3__110shared_ptrINS_12EmbreeDeviceEEE
 1EP18IPLContextSettings
 1EPFvNS_15MessageSeverityEPKcEPFPvmmEPFvS6_ENS_9SIMDLevelEj
+1EPFvPKNS_3RayEffPNS_3HitEPvEPFvS3_ffPhS6_EPFviS3_PKfSD_S5_S6_EPFviS3_SD_SD_S9_S6_ES6
 1EPNS_10CSimulatorEP17IPLSourceSettings
 1EPNS_13COpenCLDeviceEP27IPLRadeonRaysDeviceSettings
 1EPNS_13COpenCLDeviceEP30IPLTrueAudioNextDeviceSettings
@@ -177,7 +179,6 @@
 1generateCentroidProbeERKNS_6ISceneERKNS_12SquareMatrixIfLi4EEERNS_10ProbeArrayE
 1generateSphereSamplesEiPNS_7Vector3IfEE
 1getFunctionEPvPKc
-1iplVirtualSurroundEffectGetTailEP27_IPLVirtualSurroundEffect_tP14IPLAudioBuffer
 1kLowCutoffFrequenciesE
 1kProbeLookupStackSizeE
 1medianSplitEPNS_11GrowableBoxEPiPKPNS_18CentroidCoordinateERKNS_3BoxEii
@@ -207,11 +208,15 @@
 21findDiffractingVoxelsERS0
 21pairwisePanningWeightERKNS_7Vector3IfEERKNS_13SpeakerLayoutEiPKNS_11PanningDataE
 21patchSOFANeighborhoodEv
+21sEnableHybridEQFromIRE
+22estimateHybridEQFromIRERKNS_15ImpulseResponseEffiPfS4
 23generateCorrectionCurveERKS0_S2_iiPf
 23sApplyNyquistCorrectionE
 23uniformRandomNormalizedEv
 24DistanceAttenuationModelES2
 24HybridReverbEffectParamsERKNS_11AudioBufferERS4
+24tR6z
+25serializeNonUniformAsRootERNS_16SerializedObjectE
 27OverlapSaveConvolutionMixerE
 29ispcEmbreeReflectionSimulatorERKS0
 2:YFk:k
@@ -219,6 +224,7 @@
 2<vdR
 2ARAS
 2CValidatedAmbisonics
+2CVirtualSurroundEffect
 2CVirtualSurroundEffectE
 2DE=au
 2ENSt3__110shared_ptrINS_11EmbreeSceneEEE
@@ -289,6 +295,7 @@
 2HRTFDatabase14
 2SquareMatrixIfLi3EEE
 2V1;(%v
+2W:.n'X
 2_32fc
 2_bkd
 2_extension
@@ -297,10 +304,10 @@
 2b!|HX
 2b1|H
 2batH
+2calcReverbIREiPKfS2
 2createRadeonRaysDeviceEP27IPLRadeonRaysDeviceSettingsPPNS_17IRadeonRaysDeviceE
 2createSourceEP17IPLSourceSettingsPPNS_7ISourceE
 2getNumProbesEv
-2iplAmbisonics
 2ispcMaterialERKNS_8MaterialE
 2kBinDurationE
 2kHighCutoffFrequenciesE
@@ -318,7 +325,6 @@
 2toProbeArrayERNS_10ProbeArrayE
 2totalEnergyInHistogramEPKfi
 2transmissionERKNS_6ISceneERKNS_7Vector3IfEES7_Pfi
-2x~b:]4j
 2āx(d2
 3- =cO
 30;th
@@ -332,7 +338,6 @@
 32s_E9
 333333
 34OverlapSaveConvolutionEffectParamsERKNS_11AudioBufferER
-35sEnableProbeCachingForMissingProbesE
 396js
 3;CScs
 3<h;6
@@ -349,6 +354,7 @@
 3addEPNS_6ISceneE
 3addERKNS_3RefIS0_EE
 3addERKS0_S2_RS0
+3addProbeArrayAndClusterERKNS_10ProbeArrayERKNS_6ISceneERKNS_23ProbeClusteringSettingsEf
 3addProbeArrayEPNS_11IProbeArrayE
 3addProbeArrayERKNS_10ProbeArrayE
 3addProbeBatchENSt3__110shared_ptrINS_10ProbeBatchEEE
@@ -356,7 +362,6 @@
 3addStaticMeshENSt3__110shared_ptrINS_11IStaticMeshEEE
 3beginWritePartitionedIREv
 3c</U
-3cFLW
 3calcOctreeBoxERKNS_3BoxEf
 3computeFloorProbesBelowERKNS_6ISceneERKNS_7Vector3IfEES7_RKNS_12SquareMatrixIfLi4EEEffRNSt3__16vectorINS_5ProbeENS_9allocatorISE_EEEE
 3createContextEP18IPLContextSettingsPPNS_8IContextE
@@ -364,7 +369,6 @@
 3enable_shared_from_thisIN3ipl6ISceneEEE
 3interpolatedHRIRWeightsERKNS_7Vector3IfEEPiPf
 3ipl19ReflectionSimulatorE
-3iplAmbisonicsPanningEffectGetTailEP29_IPLAmbisonicsPanningEffect_tP14IPLAudioBuffer
 3kRayBatchSizeE
 3kSourceRadiusE
 3l```WeN
@@ -377,7 +381,6 @@
 4"T:PD
 4$;3~WH
 40bA|H
-42iplInterpolatableImpulseResponse
 43bBUH
 44tailERNS_11AudioBufferE
 46findShortestPathFromSourceProbeToListenerProbeERKNS_6ISceneERKNS_10ProbeBatchEiiRKNS_13BakedPathDataEfffbbbbRNS_9ProbePathEPFvNS_7Vector3IfEESD_bPvESE
@@ -386,6 +389,7 @@
 49u O
 4<k:F
 4AmbisonicsBinauralEffectENS1_9allocatorIS2_EEEE
+4CAmbisonicsPanningEffect
 4CAmbisonicsPanningEffectE
 4CValidatedAmbisonics
 4EE5kZeroE
@@ -411,7 +415,6 @@
 4generateProbesERKNS_6ISceneERKNS_12SquareMatrixIfLi4EEENS_19ProbeGenerationTypeEffRNS_10ProbeArrayE
 4hannEiPf
 4initEPFvNS_15MessageSeverityEPKcE
-4iplAmbisonics
 4kPiDE
 4loadEPKc
 4loadStaticMeshEPNS_17ISerializedObjectEPFvfPvES3_PPNS_11IStaticMeshE
@@ -421,7 +424,6 @@
 4sLogE
 4saveEPNS_17ISerializedObjectE
 4serializedSizeEv
-4simulateDirectE
 4tailE
 4tailERNS
 4tailERNS_1
@@ -430,6 +432,7 @@
 4updateEndpointERKNS_19BakedDataIdentifierERKNS_6SphereE
 4āx(d4
 4Ћv$A9
+5)|No
 5+;ruL
 512_bkd
 512_extension
@@ -437,8 +440,10 @@
 54secondOrderPanningWeightERKNS_7Vector3IfEERKNS_13SpeakerLayoutEi
 59stereoPanningWeightERKNS_7Vector3IfEEi
 5:/F1
+5Allpass
 5ApplyEi
 5ArrayIfLm2EEERNS_8JobGraphE
+5AܘuJ7Or
 5CAmbisonics
 5CBinauralEffect
 5CBinauralEffectE
@@ -452,7 +457,6 @@
 5IndirectEffect223numTailSamplesRemainingEv
 5ProjectFunctionEi
 5SceneE
-5Vector3IfE6k
 5_32fc
 5applyEi
 5applyEiPKfPf
@@ -460,20 +464,21 @@
 5b691n6
 5basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEE
 5calcDistanceRatioForPathsERKNS_7Vector3IfEERKNS_10ProbeBatchEPiS8_iPKNS_9SoundPathEPKfPf
+5calcRelativeEDCEPKfii
 5createTrueAudioNextDeviceEP30IPLTrueAudioNextDeviceSettingsPPNS_20ITrueAudioNextDeviceE
 5directPathDelayERKNS_7Vector3IfEES4
 5doubleFactorialEj
-5hBA9h
-5iplVirtualSurroundEffectGetTailSizeEP27_IPLVirtualSurroundEffect_t
 5isCallerAPIVersionAtLeastEjj
 5kDownwardOffsetE
 5kListenerRadiusE
 5pME:i
+5partitionImpulseResponsesEii
 5pruneERKNS_10ProbeBatchERKNS_21ProbeVisibilityTesterEf
 5removeSchedulerERKNS_3RefIS0_EE
 5resetEv
 5sBakeInProgressE
 5sEnableNyquistCorrectionForPhaseInterpolationE
+5sEnableProbeCachingForMissingProbesE
 5sStereoSpeakersE
 5scaleAccumulateERKS0_fRS0
 5scaleAccumulateEiPKffPf
@@ -522,6 +527,7 @@
 6calculateRelativeDirectionE10IPLVector3S1_S1_S1
 6cancelEv
 6commitEv
+6copyImpulseResponsesFromHostToDeviceEv
 6createP
 6createStaticMeshEP21IPLStaticMeshSettingsPPNS_11IStaticMeshE
 6embree13TaskScheduler
@@ -530,7 +536,6 @@
 6generateUniformFloorProbesERKNS_6ISceneERKNS_12SquareMatrixIfLi4EEEffRNS_10ProbeArrayE
 6getHRIRsForIndexEiPPKf
 6hC@9h
-6iplAmbisonics
 6kEnergyThresholdE
 6nextPowerOfPrimeEii
 6p7MOf
@@ -540,6 +545,7 @@
 6removeProbeBatchENSt3__110shared_ptrINS_10ProbeBatchEEE
 6removeProbeBatchEPNS_11IProbeBatchE
 6resizeEi
+6resizeEifi
 6resizeEii
 6retainEv
 6setFilter_float4ERKNS_3IIRE
@@ -584,7 +590,6 @@
 7getNodeEi
 7hammingEiPf
 7hasEdgeEii
-7iplPanningEffectGetTailSizeEP19_IPLPanningEffect_t
 7kDegreesToRadiansE
 7kHalfPiE
 7lookupEnergyFieldERKNS_19BakedDataIdentifierERKNS_17ProbeNeighborhoodERNS_11EnergyFieldE
@@ -605,10 +610,13 @@
 7totalEnergyInHistogramRangeEffPKf
 7updateProbeRadiusEif
 8 CPU
+8$+6kL
 8,3M:QN
 80āzo
 823interpolatedHRIRWeightsERKNS_7Vector3IfEEPiPf
+82loadNumHRIRsERPKh
 835calculateLinearInterpolationWeightsEfffiiRfS1
+84loadDirectionsERPKh
 85nearestNeighborEPKfif
 88lowerAndUpperBoundEPKfif
 89\$pf
@@ -630,6 +638,7 @@
 8McL$PA
 8OverlapSaveConvolutionEffect
 8ReverbEffectParamsERKNS_11AudioBufferERS4
+8V@#c
 8[A\A]A^A
 8[A^A
 8_32fc
@@ -647,14 +656,12 @@
 8clampToValidRangesERNS_11I3DL2ReverbE
 8copyFromERKS0
 8distanceERKNS_10ProbeBatchE
+8estimateEPKNS_11EnergyFieldERKNS_6ReverbERNS_15ImpulseResponseEffiPf
 8estimateERKNS_11EnergyFieldERKNS_18AirAbsorptionModelERNS
-8estimateERKNS_11EnergyFieldERKNS_6ReverbERNS_15ImpulseResponseEffiPf
 8evaluateERKNS_7Vector3IfEE
 8evaluateEf
 8evaluateEfi
-8getProbeEi
 8hrtfStubv
-8iplBinauralEffectGetTailSizeEP20_IPLBinauralEffect_t
 8k!̚x
 8lookupShortestPathEiiPNS_9ProbePathE
 8multiplyAccumulateEiPK
@@ -674,8 +681,11 @@
 8āx(D8
 8āx(T8
 9(D>O
+923interpolatedHRIRWeightsERKNS_7Vector3IfEEPiPf
 929ںOD
 98/ºza5:B
+98lowerAndUpperBoundEPKfif
+9@N3ipl20NonUniformProbeBatchE
 9CPuaH
 9CValidatedSimulatorE
 9CValidatedTrueAudioNextDeviceE
@@ -709,7 +719,6 @@
 9findPathsFromSourceProbeToListenerProbeERKNS_6ISceneERKNS_10ProbeBatchERKNS_17ProbeNeighborhoodERKNS_13BakedPathDataEififffbbbbPFvNS_7Vector3IfEESE_bPvESF_RiPNS_9SoundPathEPfPiSM
 9getLoadedBinaryPathEPKcPci
 9highShelfEffi
-9iplInterpolatableImpulseResponseReleaseEPP35_IPLInterpolatableImpulseResponse_t
 9isDefaultEv
 9ispcCoordinateSpaceERKNS_16CoordinateSpace3IfEE
 9measurementPositionEi
@@ -732,7 +741,6 @@ A+]0A
 A+_0A
 A-0DB
 A-6DF-8HD-;LB
-A-gAB-a8
 A-pFB-rNC
 A39;BUn:8
 A8H,t
@@ -752,9 +760,9 @@ APIName
 APIVersion
 AQASE
 ARATAp
-ARAUARASARAUARAUARASARASARAYARAVARAVARASARAUARAUARAUARAUARAUARAUARAUARAUARAUARAUARAUARAUARAVARA[ARA\ARAWARAVARAXARA
-ARAUARASARAUARAUARASARASARAYARAVARAVARASARAUARAUARAUARAUARAUARAUARAUARAUARAUARAUARAUARAUARAVARA[ARA\ARAWARAZARAp
-ARA`BE`EAp
+ARAUARASARAUARAUARASARASARAYARAVARAVARASARAWARAWARAWARAWARAWARAWARAWARAWARAWARAWARAUARAWARAVARA[ARA\ARAWARASARAZARAp
+ARAUARASARAUARAUARASARASARAYARAVARAVARASARAWARAWARAWARAWARAWARAWARAWARAWARAWARAWARAUARAWARAVARA[ARA\ARAWARAVARAXARA
+ARA`DE`EAp
 ARI SOFA API for Matlab/Octave
 ARPASAVAWAQAU
 ATASAR
@@ -872,7 +880,6 @@ A_A^A]A\H
 A_A^A]A\[]ÐUSATAUAVAWI
 A_A^A]A\][ÐSUATAUAVAWH
 A_A^A]ÃxX
-A_e-PlL
 AccelN tH
 AccelN::intersector1
 AccelN::intersector16
@@ -895,7 +902,7 @@ AmbisonicsBinauralEffect
 AmbisonicsBinauralEffect23numTailSamplesRemainingEv
 AmbisonicsDecodeEffect23numTailSamplesRemainingEv
 AmbisonicsPanningEffectE
-AmbisonicsPanningEffectGetTailSizeEP29_IPLAmbisonicsPanningEffect_t
+AndCluster
 ApplyDCCorrectionE
 ApplyEiPKfPf
 ArrayE
@@ -907,7 +914,6 @@ Attempted to create SOFA HRTF without either a file name or a data buffer
 Attribute
 AudioBuffer
 AudioBuffer4readEPf
-Av~z{O
 Ax(@pŸY
 Ax(B0ŸY
 Ax(C0ŸY
@@ -943,6 +949,7 @@ Ax)v0I
 Ayn<4L
 Ayn\=d
 Aynd=0
+Ayo/f
 AzoL4
 A{L.B
 A|(TD
@@ -952,6 +959,7 @@ B; rs9
 B>Bh9
 BC±b#MAC
 BENCHMARK_BUILD
+BFCiXX4YI
 BHH+B@H
 BIG_SMALL
 BInterseH
@@ -979,16 +987,10 @@ BinauralEffect
 BinauralEffectE
 BinauralEffectENS1_9allocatorIS2_EEEE
 BinauralEffectEP16IPLAudioSettingsP35IPLAmbisonicsBinauralEffectSettingsPPNS_25IAmbisonicsBinauralEffectE
-BinauralEffectGetTailEP20_IPLBinauralEffect_tP14IPLAudioBuffer
-BinauralEffectGetTailEP30_IPLAmbisonicsBinauralEffect_tP14IPLAudioBuffer
-BinauralEffectGetTailSizeEP30_IPLAmbisonicsBinauralEffect_t
 BitRev
 BitRev1_Blk
 Bk(#B3
-BlendEP35_IPLInterpolatableImpulseResponse_tfS1
 Bounds
-BprecomputeAmbisonicsHRTFsEii
-Bs<͕yu
 Buffer
 BufferedEQEffect
 BufferedGainEffect
@@ -1014,8 +1016,6 @@ C-0ED-2ME
 C0H;C(t
 C0H;C8
 C0H;C8u
-CAmbisonics
-CAmbisonicsPanningEffect
 CCS_32f
 CC_12_9
 CC_1_11
@@ -1045,7 +1045,6 @@ CN6embree5SceneE
 CONST_TABLE
 COS16_1_8
 COS_1_8
-CP+%pEDg
 CPU does not support SSE2
 CPU doesH
 CSToR_32f
@@ -1059,12 +1058,9 @@ CTHL40
 CTHRG4
 CTHRL4
 CToC_32fc
-CTrueAudioNextDevice
-CVirtualSurroundEffect
 CXH+CPH
 CXH+CPI;F8w+I
 CXH+CPI;F8w-I
-C]E\y
 C_1_3
 C_1_5
 C_2_5
@@ -1100,12 +1096,12 @@ CprecomputeAmbisonicsHRTFsEii
 CpuFeatures
 CpuFeaturesAndIdx
 Create
-CreateEP13_IPLContext_tP16IPLAudioSettingsP40IPLInterpolatableImpulseResponseSettingsPP35_IPLInterpolatableImpulseResponse_t
 Cunenum_5B_RTCParameter_5D
 Cunenum_5B_RTCParameter_5D_unu
 CurveGeometry
 CustomScene
 CustomSceneE
+D N-Labp
 D$ L9
 D$ M9
 D$ t9L
@@ -1145,7 +1141,6 @@ D0HIcu
 D0HIcw
 D0Hv*A
 D0HvqA
-D3calcSphereITDERKNS_7Vector3IfEERfS5
 D8hāx
 D9	s[L
 D9HvSA
@@ -1156,13 +1151,11 @@ DATA_CONST
 DBL_MIN_NORMAL
 DBY^uB
 DFTBatch_CompactTrans
-DIB-D
 DIMENSION_LIST
 DIMENSION_SCALE
 DPPPI995
-DT%n]3
 DX41H
-D`VAV
+D`TAV
 DambisonicsHRTFEiPPKNSt3__17complexIfEE
 Data.Delay
 Data.IR
@@ -1174,9 +1167,8 @@ DecodeEffect
 DecodeEffectE
 DecodeEffectENS1_9allocatorIS2_EEEE
 DecodeEffectEP16IPLAudioSettingsP33IPLAmbisonicsDecodeEffectSettingsPPNS_23IAmbisonicsDecodeEffectE
-DecodeEffectGetTailEP28_IPLAmbisonicsDecodeEffect_tP14IPLAudioBuffer
-DecodeEffectGetTailSizeEP28_IPLAmbisonicsDecodeEffect_t
 DefaultHrtfData
+Delayed
 DelaysForReverbTimeEf
 DenormAreZeros
 Device
@@ -1192,19 +1184,21 @@ DirectEffect23numTailSamplesRemainingEv
 DirectEffectE
 DirectEffectENS1_9allocatorIS2_EEEE
 DirectEffectEP16IPLAudioSettingsP23IPLDirectEffectSettingsPPNS_13IDirectEffectE
-DirectEffectGetTailSizeEP18_IPLDirectEffect_t
 DirectSimulator
+Directivity
 DirectivityERKNS_11DirectivityE
 DisplacementFunction
+DistanceAttenuationModel
 DunwrapPhaseERNS_5ArrayIfLm3EEE
 Dvc:e4
-E-GAD
 E3calcSphereITDERKNS_7Vector3IfEERfS5
 E9|$8u
 E:	=680
 E:2dB
 E;7t$E;w
 E@-2MA
+EJ%9U3
+EJ%j^0
 EPI;EXw
 EPI;EXw;I
 ERROR
@@ -1217,7 +1211,6 @@ EextractPeakDelayEPKfi
 Effect
 Effect2
 Effect23numTailSamplesRemainingEv
-EjyIz
 Embree Ray Tracing Kernels
 Embree: Invalid argument
 Embree: Invalid error code
@@ -1243,13 +1236,11 @@ EncodeEffect
 EncodeEffectE
 EncodeEffectENS1_9allocatorIS2_EEEE
 EncodeEffectEP16IPLAudioSettingsP33IPLAmbisonicsEncodeEffectSettingsPPNS_23IAmbisonicsEncodeEffectE
-EncodeEffectGetTailEP28_IPLAmbisonicsEncodeEffect_tP14IPLAudioBuffer
-EncodeEffectGetTailSizeEP28_IPLAmbisonicsEncodeEffect_t
 Endpoint
 EnergyField
 EnergyFieldE
 EnergyFieldFactory6createENS_9SceneTypeEfiNSt3__110shared_ptrINS_12OpenCLDeviceEEE
-Ep TAp(`!A`+F`ND
+Ep TAp(`"A`,F`ND
 ErrorFunction
 Estimate
 EunwrapPhaseERNS_5ArrayIfLm3EEE
@@ -1257,9 +1248,7 @@ Ex___un_3C_s_5B_un__RTCScene_5D__3E_un_3C_s_5B__c_unRTCIntersectContext_5D__3E_R
 Exp_32f
 E　C　E
 F(voH
-F0-U\?R
 F0@@5B
-F16applyGainScalingEiPPff
 F20calculate
 F6:LUP:~so8Ì8
 F8H9D
@@ -1271,11 +1260,8 @@ FHI9FPuG
 FHI9FPuM
 FHIBu
 FHRIRsEPKiPKffNS_13HRTFPhaseTypeERKNS_7Vector3IfEE
-FLuHzF
 FPH+FHx
-FPu;z9
 FRHPu
-FTu.z
 FX=rV?=0
 FXH+FPH
 FXH+FPH;G
@@ -1285,8 +1271,6 @@ FXI9F`t
 Fact8_Last_32f
 Fact_32f
 Fact_32fc
-FdBToGainEf
-Fdu!z
 Feature
 FeatureMask
 Features
@@ -1313,7 +1297,6 @@ G16applyGainScalingEiPPff
 G20calculate
 G8H9D$H
 G9Z!¹p
-G;5&v
 GB largeH
 GCC_except_table0
 GCC_except_table1
@@ -1442,7 +1425,6 @@ GCC_except_table21
 GCC_except_table210
 GCC_except_table211
 GCC_except_table212
-GCC_except_table213
 GCC_except_table214
 GCC_except_table215
 GCC_except_table216
@@ -1806,11 +1788,14 @@ Generated by Steam Audio
 GenuineIntel
 Geometry
 GeometryH
-GetChannelEP35_IPLInterpolatableImpulseResponse_timPf
+GetChannel
 GetCorrectionCurve
 GetNum
 GetOutputs
 GetSize
+GetTail
+GpvMe
+Gt-HgN
 H	t$ I
 H āx(L80
 H#T$ H
@@ -1822,6 +1807,7 @@ H+D$0H
 H+K8L9
 H+yHH9
 H30;t
+H348,a
 H5<mN
 H6hC@9
 H6hC@9h
@@ -1834,8 +1820,8 @@ H;D$0u
 H;T$HH
 H;T$PH
 HAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAUAU0
-HC-1e2
 HHc9Hk
+HQOA)}f
 HRTFDatabase
 HRTFDatabaseENS1_9allocatorIS2_EEEE
 HRTFMap
@@ -1884,6 +1870,7 @@ HybridReverbEstimatorENS1_9allocatorIS2_EEEE
 HЋD$H
 HЋL$H
 I+D$8H9
+I+D$8L9
 I+E8H9
 I+E8L9
 I+G8H9
@@ -1970,7 +1957,6 @@ IcF$H9
 IcL$0Hc
 IcU IcM
 Ict$ H
-Ieh:h
 Ig8-Q
 Im_32f_M7
 ImpulseResponseFactory6createENS_18IndirectEffectTypeEfiiNSt3__110shared_ptrINS_12OpenCLDeviceEEE
@@ -1994,12 +1980,12 @@ InvRec_32f
 InverseEPKNSt3__17complexIfEEP
 Iotensor
 J(vAL
+J1ERKNS_13AudioSettingsERKNS_35OverlapAddConvolutionEffectSettingsE
 J4tailERNS_11AudioBufferE
 J:SZL::wl
 JAKgdB
 JCαb3mAC
 JD$`0
-JDX? X
 JProbeGenerator
 JXH+JP
 JXH+JPL9
@@ -2017,7 +2003,6 @@ K<V=s
 KDTreeC
 KD[A\A^A
 KHH+K
-KHH] R
 K[:cc
 Ka=tCP
 Kc4<IcN
@@ -2025,7 +2010,6 @@ Kd %f %f %f
 Knights H
 Knights Landing
 Ks %f %f %f
-KtailERNS_11AudioBufferE
 Kz_;Zk
 L$	bq|H
 L$ r;D9
@@ -2071,6 +2055,7 @@ L$XI+L$PI
 L$XtGH
 L$XtoH
 L$XttH
+L$`Hc
 L$`fD
 L$`fE
 L$pH+L$h
@@ -2080,6 +2065,7 @@ L+D$ I
 L+D$0I
 L+L$ I
 L+L$0I
+L.+818
 L10Kc4
 L3F I1
 L9 tPH
@@ -4420,6 +4406,8 @@ M9b t2
 M9b(t
 M9e t
 M9e(t
+M9l$(t
+M9l$0t M9l$8
 M9l$Xv
 M9q t2
 M9t$ t8
@@ -4441,7 +4429,6 @@ MASK_0F0F
 MASK_H_128
 MASK_L_128
 MB (100.00
-MH	@L
 MHybridReverbEstimator
 MJii,if72G
 MM_SET_DENORMALS_ZERO_MODE(_MM_DENORMALS_ZERO_ON
@@ -4456,6 +4443,7 @@ Mac OS X (64bit
 Mac OS XH
 Magn_32fc
 MapBuffer
+MapplyERKNS_20BinauralEffectParamsERKNS_11AudioBufferERS4
 MaskFeatures
 MaskIsFeatures
 MaxCacheSizeB
@@ -4465,7 +4453,6 @@ Memory
 MemoryMonitorFunction
 Merge_32f
 Merge_32fc
-MergedGlobals
 MonoSpeakersE
 Mprim/s
 MtR:gTK9
@@ -4515,6 +4502,7 @@ N3api20CValidatedProbeArrayE
 N3api20CValidatedProbeBatchE
 N3api20CValidatedStaticMeshE
 N3api20ITrueAudioNextDeviceE
+N3api21CNonUniformProbeBatchE
 N3api22CValidatedDirectEffectE
 N3api22CValidatedEmbreeDeviceE
 N3api22CValidatedOpenCLDeviceE
@@ -4554,6 +4542,7 @@ N3api7ISourceE
 N3api8CContextE
 N3api8IContextE
 N3ipl10IBakedDataE
+N3ipl10ProbeBatchE
 N3ipl10StaticMeshE
 N3ipl11CustomSceneE
 N3ipl11EmbreeSceneE
@@ -4570,6 +4559,7 @@ N3ipl19EmbreeInstancedMeshE
 N3ipl20BakedReflectionsDataE
 N3ipl20FlatBuffersAllocatorE
 N3ipl20IReflectionSimulatorE
+N3ipl20NonUniformProbeBatchE
 N3ipl25EmbreeReflectionSimulatorE
 N3ipl26BatchedReflectionSimulatorE
 N3ipl5SceneE
@@ -4578,7 +4568,6 @@ N3ipl7HRTFMapE
 N3ipl7deleterE
 N3ipl8IHRTFMapE
 N3ipl9ExceptionE
-N4Mesh9serializeERNS_16SerializedObjectE
 N4tailERNS_11AudioBufferE
 N6embree10FileStreamE
 N6embree10TriangleMiILi4EE4TypeE
@@ -5195,6 +5184,7 @@ NSt3__120__shared_ptr_emplaceIN3ipl17ProbeNeighborhoodENS1_9allocatorIS2_EEEE
 NSt3__120__shared_ptr_emplaceIN3ipl17SimulationManagerENS1_9allocatorIS2_EEEE
 NSt3__120__shared_ptr_emplaceIN3ipl19EmbreeInstancedMeshENS1_9allocatorIS2_EEEE
 NSt3__120__shared_ptr_emplaceIN3ipl19IndirectPartitionerENS1_9allocatorIS2_EEEE
+NSt3__120__shared_ptr_emplaceIN3ipl20NonUniformProbeBatchENS1_9allocatorIS2_EEEE
 NSt3__120__shared_ptr_emplaceIN3ipl21HybridReverbEstimatorENS1_9allocatorIS2_EEEE
 NSt3__120__shared_ptr_emplaceIN3ipl21VirtualSurroundEffectENS1_9allocatorIS2_EEEE
 NSt3__120__shared_ptr_emplaceIN3ipl22AmbisonicsDecodeEffectENS1_9allocatorIS2_EEEE
@@ -5217,7 +5207,6 @@ NSt3__17complexIfEEPS3
 NSt3__17complexIfEES5_PS3
 NSt3__17complexIfEEfPS3
 NTvnH
-NVic??l
 NXH+NPH
 NXH+NPI
 NapplyERKNS_27VirtualSurroundEffectParamsERKNS_11AudioBufferERS4
@@ -5246,6 +5235,9 @@ NbrmLe
 Nehalem
 Neighborhood
 NewScene
+NonUniform
+NonUniformProbeBatch
+NonUniformProbeBatchE
 NormLarge_32fc
 Norm_32f
 Norm_32fc
@@ -5287,13 +5279,13 @@ OpenCLDeviceListEP23IPLOpenCLDeviceSettingsPPNS_17IOpenCLDeviceListE
 OverlapSaveConvolutionEffect2
 OverlapSaveFIR
 OverlapSavePartitionerENS1_9allocatorIS2_EEEE
+P,wlK
 P3AmbisonicsPanningEffect
 P88EB8j
 PATASARAVAU
 PATAWAVSAUASARj
 PCQQB	OX)PPGUUB
 PE:WGO
-PEE-P(0
 PFvPKNS_3RayEffPNS_3HitEPvEPFvS4_ffPhS7_EPFviS4_PKfSE_S6_S7_EPFviS4_SE_SE_SA_S7_ES7_NSt3__110shared_ptrINS_12EmbreeDeviceEEENSK_INS_16RadeonRaysDeviceEEE
 PHI+P
 PHI+P@A
@@ -5303,6 +5295,7 @@ PKNS_10Serialized11EnergyFieldE
 PKNS_10Serialized15VisibilityGraphE
 PKNS_10Serialized16BakedPathingDataE
 PKNS_10Serialized20BakedReflectionsDataE
+PKNS_10Serialized20NonUniformProbeBatchE
 PKNS_10Serialized4MeshE
 PKNS_10Serialized5SceneE
 PKPNS_11EnergyFieldERNS_8JobGraphE
@@ -5326,22 +5319,23 @@ PanningEffectE
 Parameter1i
 Partition
 Partitioner2
-PathEffectGetTailSizeEP16_IPLPathEffect_t
 PathSimulator14isPathOccludedERKNS_9SoundPathERKNS_6ISceneERKNS_10ProbeBatchEffiibPFvNS_7Vector3IfEESB_bPvESC
 Pathing
 PerSource
 Pi4Inv
 Pi4x3
 Pi4x4
+PiُoTh.c
 Platform
 PolarToCart_32fc
 Position
-Pp@  0
+Pp@  P
 Ppāx(L8
 PrimeFact_32f_32f
 Prime_32f
 Probe clustering complete. (%lld probes, %lld clusters
 ProbeArray
+ProbeBatchE
 ProbeManager
 ProbeNeighborhood
 ProbeNeighborhood11findNearestERKNS_7Vector3IfEE
@@ -5359,17 +5353,14 @@ QOverlapSavePartitioner
 QPH+QHH9
 QRSTUVWXH
 QRWVAPAQ
-QRotateEffect
 Qkkbal
 Qk}9UH
 QuadMesh
 QuadSpeakersE
 R19__simd128_float32_t
-R1ERKNS_30AmbisonicsEncodeEffectSettingsE
-R4tailERNS_11AudioBufferE
 RARARARARARARARARARARARAXARARARARARARARARARARARARARARARARARARARARARARARARARARARAXARARARARARARARARARARARARARARARARARARARARARARARARARARARAXARARARARARARARARARARARAXARARARARARARARAXARARARARARARARAXARARARARARARARAXARARARARARARARAXARARARARARARARAXARARARARARARARAXARARARARARARARAXARARAp
 RARARARARARARARARARARARAYARARARA`3BRARAp
-RARARARARARARARARARARARA`3ARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARAXARARARARARARARARARARARAXARARARARARARARAXARARARARARARARAXARARARARARARARAXARARARARARARARAXARARARARARARARAXARARARARARARARAXARARARARARARARBp
+RARARARARARARARARARARARA`3ARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARAXARARARARARARARARARARARAXARARARARARARARAXARARARARARARARAXARARARARARARARAXARARARARARARARAXARARARARARARARAXARARARARARARARAXARARARARARARASAU0
 RARARARARARARARARA`4A`4ARARA`4ARA`3ARA`3ARA`4ARAWARARAUCVAp
 RARARARARARAXARARARARARARARARARARARARARARARARARARARARARARARARARARARAXARARARARARARARARARARARARARARARARARARARARARARARARARARARAXARARARARARARARARARARARAXARARARARARARARAXARARARARARARARAXARARARARARARARAXARARAp
 RARARARAYARARAp
@@ -5406,8 +5397,10 @@ RNS_14SimulationDataE
 RNS_16SerializedObjectE
 RNS_17ProbeNeighborhoodE
 RNS_5ArrayIfLm2EEEiii
+ROverlapSavePartitioner
 RRotateEffect
 RToCCS_32f
+RYL7T
 Radius
 Radix4
 RandomNumberGenerator
@@ -5423,7 +5416,6 @@ ReconstructorE
 ReconstructorFactory6createENS_9SceneTypeENS_18IndirectEffectTypeEfiiNSt3__110shared_ptrINS_16RadeonRaysDeviceEEE
 RefitSAHH
 ReflectionEffectEP16IPLAudioSettingsP27IPLReflectionEffectSettingsPPNS_17IReflectionEffectE
-ReflectionEffectGetTailEP22_IPLReflectionEffect_tP14IPLAudioBufferP21_IPLReflectionMixer_t
 ReflectionMixerE
 ReflectionSimulator
 ReflectionSimulator1
@@ -5433,8 +5425,6 @@ Reflections
 Release
 ReleaseSlot
 Reord_32fc
-ResetEP35_IPLInterpolatableImpulseResponse_t
-RetainEP35_IPLInterpolatableImpulseResponse_t
 ReverbEffect
 ReverbEffect23numTailSamplesRemainingEv
 RotateEffectENS1_9allocatorIS2_EEEE
@@ -5442,12 +5432,11 @@ Rotation
 RotationEffect
 RotationEffectE
 RotationEffectEP16IPLAudioSettingsP35IPLAmbisonicsRotationEffectSettingsPPNS_25IAmbisonicsRotationEffectE
-RotationEffectGetTailEP30_IPLAmbisonicsRotationEffect_tP14IPLAudioBuffer
-RotationEffectGetTailSizeEP30_IPLAmbisonicsRotationEffect_t
 S0H+S
 S1ERKNS_30AmbisonicsEncodeEffectSettingsE
 S4tailERNS_11AudioBufferE
 SAH not H
+SARAZARAp
 SAUAVASATAW
 SAUA[Ap
 SAYARAp
@@ -5538,10 +5527,11 @@ SerializedObject
 SerializedObjectE
 SerializedObjectENS1_9allocatorIS2_EEEE
 SerializedObjectEP27IPLSerializedObjectSettingsPPNS_17ISerializedObjectE
-SetChannelEP35_IPLInterpolatableImpulseResponse_timPf
+SetChannel
 SetData
 SetImpulseResponse
 SetInputs
+SetProbe
 SetRotationERKN3ipl1
 Sfs_ASM
 SimpleFreeFieldHRIR
@@ -5590,6 +5580,7 @@ T$0bA|M
 T$0rWA9
 T$0r^9
 T$0u?H
+T$8rBE9
 T$:APARA
 T$:AQARA
 T$:AQARE
@@ -5602,7 +5593,6 @@ T$\;Q0s
 T$`āhYT4
 T$ht)H
 T$pH9
-T%S 1
 T9E)y; 9o
 TG-V\A
 TREEt
@@ -5611,6 +5601,7 @@ TWO_32H
 TX,1H
 TabDft
 TableCacheSize
+TapplyERKNS_28AmbisonicsEncodeEffectParamsERKNS_11AudioBufferERS4
 Targets
 Task3runERNS0_6ThreadE
 Tasking
@@ -5636,7 +5627,6 @@ TrueAudioNext
 TrueAudioNextDeviceE
 Tt$PĂy
 Tü	FF
-U16kVirtualSpeakersE
 U1ERKNS_13AudioSettingsERKNS_31AmbisonicsPanningEffectSettingsE
 U4tailERNS_11AudioBufferE
 U8LAynn
@@ -5644,8 +5634,10 @@ U8LOR9Y
 UAWAVAUATSH
 UAWAVAUATSPE
 UAWAVAUATSPM
-UJ%0|0
-UJ%x'1
+UJ%163
+UJ%PU3
+UJ%XB1
+UJ%h94
 UNKNOWN
 UNPACK_H_256
 UNPACK_H_CC99
@@ -5660,7 +5652,6 @@ UUUUUUU
 UXH+sPH
 UYWr1
 UZ?5t,?G
-UapplyERKNS_29AmbisonicsPanningEffectParamsERKNS_11AudioBufferERS4
 Unable to create vDSP forward DFT setup (size == %d
 Unable to create vDSP inverse DFT setup (size == %d
 Unable to load SOFA data. [%d
@@ -5680,10 +5671,10 @@ Users/buildbot/buildslave/phonon_main_osx/build/core/deps-build/mysofa/install/o
 Users/buildbot/buildslave/phonon_main_osx/build/core/src/core
 V	T;5
 V16kVirtualSpeakersE
+V4tailERNS_11AudioBufferE
 V<GZs
 VAPI_COMMON_DATA_NAME
 VARAZARAp
-VDistanceAttenuationModel
 VHH+V@x
 VHI+V@t5I
 VML_THISFUNC_NAME
@@ -5718,6 +5709,7 @@ ValidatedSceneE
 ValidatedSourceE
 VapplyERKNS_29AmbisonicsPanningEffectParamsERKNS_11AudioBufferERS4
 Variable
+Vector3IfE6k
 VectorIfLi
 Version
 VirtualIH
@@ -5727,8 +5719,10 @@ VirtualSurroundEffect23numTailSamplesRemainingEv
 VirtualSurroundEffectENS1_9allocatorIS2_EEEE
 VoxelGrid
 VoxelGrid8voxelizeERKNS_10StaticMeshERKNS_17VoxelGridSettingsE
-V销V阀V需V
-W1ERKNS_13AudioSettingsERKNS_32AmbisonicsBinauralEffectSettingsE
+V가V관V글V
+W%1U3
+W%=B1
+W%M94
 WARAWARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARAWAUA
 WARNING: "Flush to Zero" or "Denormals are Zero" mode not enabled
 WDistanceAttenuationModel
@@ -5739,17 +5733,15 @@ WindowFunction
 Wr95B
 X+L$xL
 X,;s 5;xA
-X,IAPs
 X1ERKNS_13AudioSettingsERKNS_32AmbisonicsBinauralEffectSettingsE
 X:9.08
 XAxisE
 XBX,XXX
+XDistanceAttenuationModel
 XG(ŚX
 XH+CPH9
 XIcD$pIct$tH
-XNW048
 XP[A^A
-XT%'d
 X[A\A]A^A
 X[A^A
 X\0 ŰY
@@ -5760,10 +5752,11 @@ Xd0@ŌY
 Xo(źX_H
 XrhD9
 Xs.<(1V
-XtailERNS_11AudioBufferE
-Y-m-w
-Y5%-w
-Y818LDV
+Y-5<w
+Y-U/w
+Y1ERKNS_13AudioSettingsERKNS_32AmbisonicsBinauralEffectSettingsE
+Y5=<w
+Y5=>w
 Y@NSt3__119basic_ostringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE
 YA_A^A]A
 YAxisE
@@ -5771,17 +5764,16 @@ YB`(Ap
 YD$ ŰYt$p
 YD$0ňYt
 YD$PŰY
-YDecodeEffect
-YDistanceAttenuationModel
+YG~V~8a
 YL$0ŰY
 YL$@tcfD
 YT$	bbmH
 Y[A_A^A
 Y]A^A]A
 Y]A_A]A
-YapplyERKNS_30AmbisonicsBinauralEffectParamsERKNS_11AudioBufferERS4
 Yd$ ŘY
 Yd$Puj
+YtailERNS_11AudioBufferE
 Z!0;1
 Z%F3lKpb
 Z12createHandleIN3ipl11EnergyFieldEEN12HandleTraitsIT_E11opaque_typeENSt3__110shared_ptrINS0_7ContextEEENS7_IS3_EE
@@ -5820,7 +5812,6 @@ ZGVN6embree6LineMiILi4EE4typeE
 ZGVN6embree6QuadMiILi4EE4typeE
 ZGVN6embree6QuadMvILi4EE4typeE
 ZGVN6embree9TriangleMILi4EE4typeE
-ZGVZN3iplL24calcDistanceFieldAtPointERKNS_8MeshDataERKNS_7Vector3IfEEfE5delta
 ZN11flatbuffers15vector_downward10reallocateEm
 ZN11flatbuffers17FlatBufferBuilder10AddElementIfEEvtT_S2
 ZN11flatbuffers17FlatBufferBuilder10AddElementIsEEvtT_S2
@@ -5847,6 +5838,7 @@ ZN11flatbuffers17FlatBufferBuilder9AddOffsetINS_6VectorIPKN3ipl10Serialized8Tria
 ZN11flatbuffers17FlatBufferBuilder9AddOffsetINS_6VectorIfEEEEvtNS_6OffsetIT_EE
 ZN11flatbuffers17FlatBufferBuilder9AddOffsetINS_6VectorIhEEEEvtNS_6OffsetIT_EE
 ZN11flatbuffers17FlatBufferBuilder9AddOffsetINS_6VectorIiEEEEvtNS_6OffsetIT_EE
+ZN11flatbuffers17FlatBufferBuilder9AddOffsetINS_6VectorIsEEEEvtNS_6OffsetIT_EE
 ZN11flatbuffers17FlatBufferBuilder9AddStructIN3ipl10Serialized6SphereEEEvtPKT
 ZN11flatbuffers25flatbuffer_version_stringE
 ZN11flatbuffers9Allocator19reallocate_downwardEPhmmmm
@@ -5913,9 +5905,12 @@ ZN3api11CProbeArray12getNumProbesEv
 ZN3api11CProbeArray14generateProbesEPNS_6ISceneEP24IPLProbeGenerationParams
 ZN3api11CProbeArray14generateProbesEPNS_6ISceneEP24IPLProbeGenerationParams.cold.1
 ZN3api11CProbeArray14generateProbesEPNS_6ISceneEP24IPLProbeGenerationParams.cold.2
+ZN3api11CProbeArray6resizeEi
+ZN3api11CProbeArray6resizeEi.cold.1
 ZN3api11CProbeArray6retainEv
 ZN3api11CProbeArray7releaseEv
 ZN3api11CProbeArray8getProbeEi
+ZN3api11CProbeArray8setProbeEiP9IPLSphere
 ZN3api11CProbeArrayC1EPNS_8CContextE
 ZN3api11CProbeArrayC2EPNS_8CContextE
 ZN3api11CProbeArrayC2EPNS_8CContextE.cold.1
@@ -6163,7 +6158,15 @@ ZN3api20CValidatedProbeBatch8addProbeE9IPLSphere
 ZN3api20CValidatedStaticMesh3addEPNS_6ISceneE
 ZN3api20CValidatedStaticMesh4saveEPNS_17ISerializedObjectE
 ZN3api20CValidatedStaticMesh6removeEPNS_6ISceneE
-ZN3api20iplPathEffectGetTailEP16_IPLPathEffect_tP14IPLAudioBuffer
+ZN3api21CNonUniformProbeBatch23addProbeArrayAndClusterEPNS_11IProbeArrayEPNS_6ISceneEP26IPLProbeClusteringSettings
+ZN3api21CNonUniformProbeBatch23addProbeArrayAndClusterEPNS_11IProbeArrayEPNS_6ISceneEP26IPLProbeClusteringSettings.cold.1
+ZN3api21CNonUniformProbeBatch23addProbeArrayAndClusterEPNS_11IProbeArrayEPNS_6ISceneEP26IPLProbeClusteringSettings.cold.2
+ZN3api21CNonUniformProbeBatch4saveEPNS_17ISerializedObjectE
+ZN3api21CNonUniformProbeBatch4saveEPNS_17ISerializedObjectE.cold.1
+ZN3api21CNonUniformProbeBatch4saveEPNS_17ISerializedObjectE.cold.2
+ZN3api21CNonUniformProbeBatchC2EPNS_8CContextE
+ZN3api21CNonUniformProbeBatchC2EPNS_8CContextE.cold.1
+ZN3api21CNonUniformProbeBatchC2EPNS_8CContextEPNS_17ISerializedObjectE
 ZN3api22CValidatedDirectEffect5applyEP21IPLDirectEffectParamsP14IPLAudioBufferS4
 ZN3api22CValidatedOpenCLDevice22createRadeonRaysDeviceEP27IPLRadeonRaysDeviceSettingsPPNS_17IRadeonRaysDeviceE
 ZN3api22CValidatedOpenCLDevice25createTrueAudioNextDeviceEP30IPLTrueAudioNextDeviceSettingsPPNS_20ITrueAudioNextDeviceE
@@ -6177,7 +6180,6 @@ ZN3api22CVirtualSurroundEffect7getTailEP14IPLAudioBuffer
 ZN3api22CVirtualSurroundEffect7releaseEv
 ZN3api22CVirtualSurroundEffectC1EPNS_8CContextEP16IPLAudioSettingsP32IPLVirtualSurroundEffectSettings
 ZN3api22CVirtualSurroundEffectC2EPNS_8CContextEP16IPLAudioSettingsP32IPLVirtualSurroundEffectSettings
-ZN3api22iplDirectEffectGetTailEP18_IPLDirectEffect_tP14IPLAudioBuffer
 ZN3api23CAmbisonicsDecodeEffect11getTailSizeEv
 ZN3api23CAmbisonicsDecodeEffect11getTailSizeEv.cold.1
 ZN3api23CAmbisonicsDecodeEffect5applyEP31IPLAmbisonicsDecodeEffectParamsP14IPLAudioBufferS4
@@ -6201,7 +6203,6 @@ ZN3api23CValidatedInstancedMesh15updateTransformEPNS_6ISceneE12IPLMatrix4x4
 ZN3api23CValidatedInstancedMesh3addEPNS_6ISceneE
 ZN3api23CValidatedInstancedMesh6removeEPNS_6ISceneE
 ZN3api23CValidatedPanningEffect5applyEP22IPLPanningEffectParamsP14IPLAudioBufferS4
-ZN3api23iplPanningEffectGetTailEP19_IPLPanningEffect_tP14IPLAudioBuffer
 ZN3api24CAmbisonicsPanningEffect11getTailSizeEv
 ZN3api24CAmbisonicsPanningEffect5applyEP32IPLAmbisonicsPanningEffectParamsP14IPLAudioBufferS4
 ZN3api24CAmbisonicsPanningEffect5resetEv
@@ -6220,9 +6221,6 @@ ZN3api24CReflectionsPartitioner27addTaskEP24_IPLReflectionsEffect2_t.cold.2
 ZN3api24CReflectionsPartitioner27releaseEv
 ZN3api24CReflectionsPartitioner2C2EPNS_8CContextEP16IPLAudioSettingsP27IPLReflectionEffectSettings
 ZN3api24CValidatedBinauralEffect5applyEP23IPLBinauralEffectParamsP14IPLAudioBufferS4
-ZN3api24iplBinauralEffectGetTailEP20_IPLBinauralEffect_tP14IPLAudioBuffer
-ZN3api24iplPathEffectGetTailSizeEP16_IPLPathEffect_t
-ZN3api24iplPathEffectGetTailSizeEP16_IPLPathEffect_t.cold.1
 ZN3api25CAmbisonicsBinauralEffect11getTailSizeEv
 ZN3api25CAmbisonicsBinauralEffect11getTailSizeEv.cold.1
 ZN3api25CAmbisonicsBinauralEffect5applyEP33IPLAmbisonicsBinauralEffectParamsP14IPLAudioBufferS4
@@ -6246,48 +6244,17 @@ ZN3api25CValidatedReflectionMixer5applyEP25IPLReflectionEffectParamsP14IPLAudioB
 ZN3api26CValidatedOpenCLDeviceList13getDeviceDescEiP19IPLOpenCLDeviceDesc
 ZN3api26CValidatedOpenCLDeviceList13getNumDevicesEv
 ZN3api26CValidatedReflectionEffect5applyEP25IPLReflectionEffectParamsP14IPLAudioBufferS4_PNS_16IReflectionMixerE
-ZN3api26iplDirectEffectGetTailSizeEP18_IPLDirectEffect_t
-ZN3api26iplReflectionEffectGetTailEP22_IPLReflectionEffect_tP14IPLAudioBufferP21_IPLReflectionMixer_t
-ZN3api27iplPanningEffectGetTailSizeEP19_IPLPanningEffect_t
-ZN3api28iplBinauralEffectGetTailSizeEP20_IPLBinauralEffect_t
 ZN3api30CInterpolatableImpulseResponse5blendEPKS0_fPS0
 ZN3api30CInterpolatableImpulseResponse5blendEPKS0_fPS0_.cold.1
 ZN3api30CInterpolatableImpulseResponse5blendEPKS0_fPS0_.cold.2
 ZN3api30CInterpolatableImpulseResponse7releaseEv
 ZN3api30CInterpolatableImpulseResponseC2EPNS_8CContextEP16IPLAudioSettingsP40IPLInterpolatableImpulseResponseSettings
-ZN3api30iplReflectionEffectGetTailSizeEP22_IPLReflectionEffect_t
-ZN3api30iplReflectionEffectGetTailSizeEP22_IPLReflectionEffect_t.cold.1
 ZN3api31CValidatedVirtualSurroundEffect5applyEP30IPLVirtualSurroundEffectParamsP14IPLAudioBufferS4
-ZN3api31iplVirtualSurroundEffectGetTailEP27_IPLVirtualSurroundEffect_tP14IPLAudioBuffer
 ZN3api32CValidatedAmbisonicsDecodeEffect5applyEP31IPLAmbisonicsDecodeEffectParamsP14IPLAudioBufferS4
 ZN3api32CValidatedAmbisonicsEncodeEffect5applyEP31IPLAmbisonicsEncodeEffectParamsP14IPLAudioBufferS4
-ZN3api32iplAmbisonicsDecodeEffectGetTailEP28_IPLAmbisonicsDecodeEffect_tP14IPLAudioBuffer
-ZN3api32iplAmbisonicsEncodeEffectGetTailEP28_IPLAmbisonicsEncodeEffect_tP14IPLAudioBuffer
 ZN3api33CValidatedAmbisonicsPanningEffect5applyEP32IPLAmbisonicsPanningEffectParamsP14IPLAudioBufferS4
-ZN3api33iplAmbisonicsPanningEffectGetTailEP29_IPLAmbisonicsPanningEffect_tP14IPLAudioBuffer
 ZN3api34CValidatedAmbisonicsBinauralEffect5applyEP33IPLAmbisonicsBinauralEffectParamsP14IPLAudioBufferS4
 ZN3api34CValidatedAmbisonicsRotationEffect5applyEP33IPLAmbisonicsRotationEffectParamsP14IPLAudioBufferS4
-ZN3api34iplAmbisonicsBinauralEffectGetTailEP30_IPLAmbisonicsBinauralEffect_tP14IPLAudioBuffer
-ZN3api34iplAmbisonicsRotationEffectGetTailEP30_IPLAmbisonicsRotationEffect_tP14IPLAudioBuffer
-ZN3api35iplVirtualSurroundEffectGetTailSizeEP27_IPLVirtualSurroundEffect_t
-ZN3api35iplVirtualSurroundEffectGetTailSizeEP27_IPLVirtualSurroundEffect_t.cold.1
-ZN3api36iplAmbisonicsDecodeEffectGetTailSizeEP28_IPLAmbisonicsDecodeEffect_t
-ZN3api36iplAmbisonicsDecodeEffectGetTailSizeEP28_IPLAmbisonicsDecodeEffect_t.cold.1
-ZN3api36iplAmbisonicsEncodeEffectGetTailSizeEP28_IPLAmbisonicsEncodeEffect_t
-ZN3api37iplAmbisonicsPanningEffectGetTailSizeEP29_IPLAmbisonicsPanningEffect_t
-ZN3api37iplInterpolatableImpulseResponseBlendEP35_IPLInterpolatableImpulseResponse_tfS1
-ZN3api37iplInterpolatableImpulseResponseResetEP35_IPLInterpolatableImpulseResponse_t
-ZN3api37iplInterpolatableImpulseResponseResetEP35_IPLInterpolatableImpulseResponse_t.cold.1
-ZN3api38iplAmbisonicsBinauralEffectGetTailSizeEP30_IPLAmbisonicsBinauralEffect_t
-ZN3api38iplAmbisonicsBinauralEffectGetTailSizeEP30_IPLAmbisonicsBinauralEffect_t.cold.1
-ZN3api38iplAmbisonicsRotationEffectGetTailSizeEP30_IPLAmbisonicsRotationEffect_t
-ZN3api38iplInterpolatableImpulseResponseCreateEP13_IPLContext_tP16IPLAudioSettingsP40IPLInterpolatableImpulseResponseSettingsPP35_IPLInterpolatableImpulseResponse_t
-ZN3api38iplInterpolatableImpulseResponseRetainEP35_IPLInterpolatableImpulseResponse_t
-ZN3api39iplInterpolatableImpulseResponseReleaseEPP35_IPLInterpolatableImpulseResponse_t
-ZN3api42iplInterpolatableImpulseResponseGetChannelEP35_IPLInterpolatableImpulseResponse_timPf
-ZN3api42iplInterpolatableImpulseResponseGetChannelEP35_IPLInterpolatableImpulseResponse_timPf.cold.1
-ZN3api42iplInterpolatableImpulseResponseSetChannelEP35_IPLInterpolatableImpulseResponse_timPf
-ZN3api42iplInterpolatableImpulseResponseSetChannelEP35_IPLInterpolatableImpulseResponse_timPf.cold.1
 ZN3api5CHRTF6retainEv
 ZN3api5CHRTF7releaseEv
 ZN3api5CHRTFC1EPNS_8CContextEP16IPLAudioSettingsP15IPLHRTFSettings
@@ -6772,6 +6739,7 @@ ZN3ipl17ProbeNeighborhoodD2Ev
 ZN3ipl17SimulationManager12removeSourceENSt3__110shared_ptrINS_14SimulationDataEEE
 ZN3ipl17SimulationManager13addProbeBatchENSt3__110shared_ptrINS_10ProbeBatchEEE
 ZN3ipl17SimulationManager13addProbeBatchENSt3__110shared_ptrINS_10ProbeBatchEEE.cold.1
+ZN3ipl17SimulationManager14estimateReverbEv
 ZN3ipl17SimulationManager14simulateDirectERNS_14SimulationDataE
 ZN3ipl17SimulationManager14simulateDirectEv
 ZN3ipl17SimulationManager15hasSceneChangedEv
@@ -6782,7 +6750,16 @@ ZN3ipl17SimulationManager16removeProbeBatchENSt3__110shared_ptrINS_10ProbeBatchE
 ZN3ipl17SimulationManager16removeProbeBatchENSt3__110shared_ptrINS_10ProbeBatchEEE.cold.1
 ZN3ipl17SimulationManager16simulateIndirectEv
 ZN3ipl17SimulationManager17resetSceneChangedEv
+ZN3ipl17SimulationManager20estimateHybridReverbEv
+ZN3ipl17SimulationManager22accumulateEnergyFieldsEv
+ZN3ipl17SimulationManager22lookupBakedReflectionsEv
+ZN3ipl17SimulationManager25partitionImpulseResponsesEii
+ZN3ipl17SimulationManager27reconstructImpulseResponsesEv
+ZN3ipl17SimulationManager27simulateRealTimeReflectionsEv
+ZN3ipl17SimulationManager32copyEnergyFieldsFromDeviceToHostEv
+ZN3ipl17SimulationManager32generateDistanceCorrectionCurvesEi
 ZN3ipl17SimulationManager35sEnableProbeCachingForMissingProbesE
+ZN3ipl17SimulationManager36copyImpulseResponsesFromHostToDeviceEv
 ZN3ipl17SimulationManager6commitEv
 ZN3ipl17SimulationManager9addSourceENSt3__110shared_ptrINS_14SimulationDataEEE
 ZN3ipl17SimulationManagerC1EbbbNS_9SceneTypeENS_18IndirectEffectTypeEiiifiiiiiibRKNS_7Vector3IfEEiiNSt3__110shared_ptrINS_12OpenCLDeviceEEENS8_INS_16RadeonRaysDeviceEEENS8_INS_9TANDeviceEEE
@@ -6835,6 +6812,7 @@ ZN3ipl19HybridReverbEffect25resetEv
 ZN3ipl19HybridReverbEffect2C1ERKNS_13AudioSettingsERKNS_26HybridReverbEffectSettingsE
 ZN3ipl19HybridReverbEffect2C2ERKNS_13AudioSettingsERKNS_26HybridReverbEffectSettingsE
 ZN3ipl19HybridReverbEffect2D2Ev
+ZN3ipl19IndirectPartitioner21sEnableHybridEQFromIRE
 ZN3ipl19IndirectPartitioner3addENSt3__110shared_ptrINS_22BufferedIndirectEffectEEE
 ZN3ipl19IndirectPartitioner3runEv
 ZN3ipl19IndirectPartitioner6commitEv
@@ -6911,6 +6889,13 @@ ZN3ipl20InterpolatableSignal9wrapPhaseEiPf
 ZN3ipl20InterpolatableSignalC1Ei
 ZN3ipl20InterpolatableSignalC2Ei
 ZN3ipl20InterpolatableSignalD2Ev
+ZN3ipl20NonUniformProbeBatch20getInfluencingProbesERKNS_7Vector3IfEERNS_17ProbeNeighborhoodEi
+ZN3ipl20NonUniformProbeBatch23addProbeArrayAndClusterERKNS_10ProbeArrayERKNS_6ISceneERKNS_23ProbeClusteringSettingsEf
+ZN3ipl20NonUniformProbeBatch6commitEv
+ZN3ipl20NonUniformProbeBatchC1EPKNS_10Serialized20NonUniformProbeBatchE
+ZN3ipl20NonUniformProbeBatchC1ERNS_16SerializedObjectE
+ZN3ipl20NonUniformProbeBatchC2EPKNS_10Serialized20NonUniformProbeBatchE
+ZN3ipl20NonUniformProbeBatchC2ERNS_16SerializedObjectE
 ZN3ipl20ProbeVisibilityGraph5pruneERKNS_10ProbeBatchERKNS_21ProbeVisibilityTesterEf
 ZN3ipl20ProbeVisibilityGraphC1EPKNS_10Serialized15VisibilityGraphE
 ZN3ipl20ProbeVisibilityGraphC1ERKNS_6ISceneERKNS_10ProbeBatchERKNS_21ProbeVisibilityTesterEfffiRNSt3__16atomicIbEEPFvfPvESE
@@ -6919,7 +6904,9 @@ ZN3ipl20ProbeVisibilityGraphC2ERKNS_6ISceneERKNS_10ProbeBatchERKNS_21ProbeVisibi
 ZN3ipl20ReconstructorFactory6createENS_9SceneTypeENS_18IndirectEffectTypeEfiiNSt3__110shared_ptrINS_16RadeonRaysDeviceEEE
 ZN3ipl20generateOctreeProbesERKNS_6ISceneERKNS_12SquareMatrixIfLi4EEEfRNS_10ProbeArrayE
 ZN3ipl21HybridReverbEstimator12calcReverbIREiPKfS2
-ZN3ipl21HybridReverbEstimator8estimateERKNS_11EnergyFieldERKNS_6ReverbERNS_15ImpulseResponseEffiPf
+ZN3ipl21HybridReverbEstimator15calcRelativeEDCEPKfii
+ZN3ipl21HybridReverbEstimator22estimateHybridEQFromIRERKNS_15ImpulseResponseEffiPfS4
+ZN3ipl21HybridReverbEstimator8estimateEPKNS_11EnergyFieldERKNS_6ReverbERNS_15ImpulseResponseEffiPf
 ZN3ipl21HybridReverbEstimatorC1Efii
 ZN3ipl21HybridReverbEstimatorC2Efii
 ZN3ipl21HybridReverbEstimatorD2Ev
@@ -6973,6 +6960,7 @@ ZN3ipl22ImpulseResponseFactory6createENS_18IndirectEffectTypeEfiiNSt3__110shared
 ZN3ipl22OverlapSavePartitioner9partitionERKNS_15ImpulseResponseEiiRNS_14OverlapSaveFIRE
 ZN3ipl22OverlapSavePartitionerC1Ei
 ZN3ipl22OverlapSavePartitionerC2Ei
+ZN3ipl22kdTreeVisibilityFilterERKNS_7Vector3IfEES3_Pv
 ZN3ipl23AmbisonicsPanningEffect16kVirtualSpeakersE
 ZN3ipl23AmbisonicsPanningEffect4tailERNS_11AudioBufferE
 ZN3ipl23AmbisonicsPanningEffect5applyERKNS_29AmbisonicsPanningEffectParamsERKNS_11AudioBufferERS4
@@ -6995,6 +6983,7 @@ ZN3ipl24DistanceAttenuationModelC1EfPFffPvES1
 ZN3ipl24DistanceAttenuationModelC1Ev
 ZN3ipl24DistanceAttenuationModelC2EfPFffPvES1
 ZN3ipl24DistanceAttenuationModelC2Ev
+ZN3ipl24calcDistanceFieldAtPointERKNS_8MeshDataERKNS_7Vector3IfEEf
 ZN3ipl25EmbreeReflectionSimulator10kBlockSizeE
 ZN3ipl25EmbreeReflectionSimulator12ispcMaterialERKNS_8MaterialE
 ZN3ipl25EmbreeReflectionSimulator13kRayBatchSizeE
@@ -7227,6 +7216,15 @@ ZN3ipl6OctreeC1ERKNS_6ISceneERKNS_3BoxEf
 ZN3ipl6OctreeC2ERKNS_6ISceneERKNS_3BoxEf
 ZN3ipl6VectorIfLi3EE5kZeroE
 ZN3ipl6VectorIfLi4EE5kZeroE
+ZN3ipl7Allpass5applyE19__simd128_float32_t
+ZN3ipl7Allpass5applyEDv4_f
+ZN3ipl7Allpass5applyEf
+ZN3ipl7Allpass5resetEv
+ZN3ipl7Allpass6resizeEifi
+ZN3ipl7AllpassC1Eifi
+ZN3ipl7AllpassC1Ev
+ZN3ipl7AllpassC2Eifi
+ZN3ipl7AllpassC2Ev
 ZN3ipl7Context10sSIMDLevelE
 ZN3ipl7Context11sAPIVersionE
 ZN3ipl7Context21setDenormalsAreZeroesEv
@@ -7325,7 +7323,6 @@ ZN3ipl9ProbeTreeC2EiPKNS_5ProbeE
 ZN3ipl9SoundPathC1ERKNS_9ProbePathERKNS_10ProbeBatchE
 ZN3ipl9SoundPathC2ERKNS_9ProbePathERKNS_10ProbeBatchE
 ZN3ipl9VoxelGrid8voxelizeERKNS_10StaticMeshERKNS_17VoxelGridSettingsE
-ZN3iplL24calcDistanceFieldAtPointERKNS_8MeshDataERKNS_7Vector3IfEEf
 ZN3ipleqERKNS_18AirAbsorptionModelES2
 ZN3ipleqERKNS_24DistanceAttenuationModelES2
 ZN3iplltERKNS_10PathFinder18PriorityQueueEntryES3
@@ -12430,6 +12427,8 @@ ZNK3ipl20BakedReflectionsData14serializedSizeEv
 ZNK3ipl20BakedReflectionsData9serializeERNS_16SerializedObjectE
 ZNK3ipl20BufferedDirectEffect23numTailSamplesRemainingEv
 ZNK3ipl20BufferedReverbEffect23numTailSamplesRemainingEv
+ZNK3ipl20NonUniformProbeBatch19serializeNonUniformERNS_16SerializedObjectE
+ZNK3ipl20NonUniformProbeBatch25serializeNonUniformAsRootERNS_16SerializedObjectE
 ZNK3ipl20ProbeVisibilityGraph14serializedSizeEv
 ZNK3ipl20ProbeVisibilityGraph7hasEdgeEii
 ZNK3ipl20ProbeVisibilityGraph9serializeERNS_16SerializedObjectE
@@ -12875,6 +12874,7 @@ ZNSt3__110shared_ptrIN3ipl19EmbreeInstancedMeshEE15allocate_sharedINS1_9allocato
 ZNSt3__110shared_ptrIN3ipl19EmbreeInstancedMeshEE15allocate_sharedINS1_9allocatorIS2_EEJNS0_INS1_11EmbreeSceneEEERS8_RKNS1_12SquareMatrixIfLi4EEEEEES3_RKT_DpOT0_.cold.1
 ZNSt3__110shared_ptrIN3ipl19EmbreeInstancedMeshEE15allocate_sharedINS1_9allocatorIS2_EEJNS0_INS1_11EmbreeSceneEEERS8_RKNS1_12SquareMatrixIfLi4EEEEEES3_RKT_DpOT0_.cold.2
 ZNSt3__110shared_ptrIN3ipl19IndirectPartitionerEE15allocate_sharedINS1_9allocatorIS2_EEJRNS1_13AudioSettingsERNS1_22IndirectEffectSettingsEEEES3_RKT_DpOT0
+ZNSt3__110shared_ptrIN3ipl20NonUniformProbeBatchEE15allocate_sharedINS1_9allocatorIS2_EEJRNS1_16SerializedObjectEEEES3_RKT_DpOT0
 ZNSt3__110shared_ptrIN3ipl21HybridReverbEstimatorEE15allocate_sharedINS1_9allocatorIS2_EEJRfRiS8_EEES3_RKT_DpOT0
 ZNSt3__110shared_ptrIN3ipl21VirtualSurroundEffectEE15allocate_sharedINS1_9allocatorIS2_EEJRNS1_13AudioSettingsERNS1_29VirtualSurroundEffectSettingsEEEES3_RKT_DpOT0
 ZNSt3__110shared_ptrIN3ipl22AmbisonicsDecodeEffectEE15allocate_sharedINS1_9allocatorIS2_EEJRNS1_13AudioSettingsERNS1_30AmbisonicsDecodeEffectSettingsEEEES3_RKT_DpOT0
@@ -13076,6 +13076,11 @@ ZNSt3__120__shared_ptr_emplaceIN3ipl19IndirectPartitionerENS1_9allocatorIS2_EEE1
 ZNSt3__120__shared_ptr_emplaceIN3ipl19IndirectPartitionerENS1_9allocatorIS2_EEE21__on_zero_shared_weakEv
 ZNSt3__120__shared_ptr_emplaceIN3ipl19IndirectPartitionerENS1_9allocatorIS2_EEED0Ev
 ZNSt3__120__shared_ptr_emplaceIN3ipl19IndirectPartitionerENS1_9allocatorIS2_EEED1Ev
+ZNSt3__120__shared_ptr_emplaceIN3ipl20NonUniformProbeBatchENS1_9allocatorIS2_EEE16__on_zero_sharedEv
+ZNSt3__120__shared_ptr_emplaceIN3ipl20NonUniformProbeBatchENS1_9allocatorIS2_EEE21__on_zero_shared_weakEv
+ZNSt3__120__shared_ptr_emplaceIN3ipl20NonUniformProbeBatchENS1_9allocatorIS2_EEED0Ev
+ZNSt3__120__shared_ptr_emplaceIN3ipl20NonUniformProbeBatchENS1_9allocatorIS2_EEED1Ev
+ZNSt3__120__shared_ptr_emplaceIN3ipl20NonUniformProbeBatchENS1_9allocatorIS2_EEED2Ev
 ZNSt3__120__shared_ptr_emplaceIN3ipl21HybridReverbEstimatorENS1_9allocatorIS2_EEE16__on_zero_sharedEv
 ZNSt3__120__shared_ptr_emplaceIN3ipl21HybridReverbEstimatorENS1_9allocatorIS2_EEE21__on_zero_shared_weakEv
 ZNSt3__120__shared_ptr_emplaceIN3ipl21HybridReverbEstimatorENS1_9allocatorIS2_EEED0Ev
@@ -13258,13 +13263,13 @@ ZNSt3__16vectorIN3ipl10OctreeNodeENS1_9allocatorIS2_EEE9push_backERKS2
 ZNSt3__16vectorIN3ipl10PathFinder18PriorityQueueEntryENS1_9allocatorIS3_EEEC2ERKS6
 ZNSt3__16vectorIN3ipl12CubeDepthMapENS1_9allocatorIS2_EEEC2Em
 ZNSt3__16vectorIN3ipl13DynamicMatrixIfEENS1_9allocatorIS3_EEE9push_backEOS3
-ZNSt3__16vectorIN3ipl16CoordinateSpace3IfEENS1_9allocatorIS3_EEE9push_backERKS3
 ZNSt3__16vectorIN3ipl5PlaneENS1_9allocatorIS2_EEE8__appendEm
 ZNSt3__16vectorIN3ipl5ProbeENS1_9allocatorIS2_EEE8__appendEm
 ZNSt3__16vectorIN3ipl5ProbeENS1_9allocatorIS2_EEE9push_backERKS2
 ZNSt3__16vectorIN3ipl6ReverbENS1_9allocatorIS2_EEE8__appendEm
 ZNSt3__16vectorIN3ipl6SphereENS1_9allocatorIS2_EEEC2Em
 ZNSt3__16vectorIN3ipl7Vector3IfEENS1_9allocatorIS3_EEE8__appendEm
+ZNSt3__16vectorIN3ipl7Vector3IfEENS1_9allocatorIS3_EEEC2Em
 ZNSt3__16vectorIN6embree6atomicIPNS1_13TaskScheduler6ThreadEEENS_9allocatorIS6_EEE8__appendEm
 ZNSt3__16vectorINS0_IiN3ipl9allocatorIiEEEENS2_IS4_EEE8__appendEm
 ZNSt3__16vectorINS_10unique_ptrIN3ipl11EnergyFieldENS2_7deleterEEENS2_9allocatorIS5_EEE8__appendEm
@@ -13307,6 +13312,7 @@ ZNSt3__16vectorIiN3ipl9allocatorIiEEE9push_backERKi
 ZNSt3__16vectorIiN3ipl9allocatorIiEEEC2ERKS4
 ZNSt3__16vectorIiN3ipl9allocatorIiEEEC2Em
 ZNSt3__16vectorImNS_9allocatorImEEE8__appendEm
+ZNSt3__16vectorIsN3ipl9allocatorIsEEE8__appendEm
 ZNSt3__17__sort3IRNS_6__lessIN6embree3avx21BVHNBuilderInstancingILi4ENS2_12TriangleMeshEE8BuildRefES7_EEPS7_EEjT0_SB_SB_T
 ZNSt3__17__sort3IRNS_6__lessIN6embree3avx21BVHNBuilderInstancingILi4ENS2_8QuadMeshEE8BuildRefES7_EEPS7_EEjT0_SB_SB_T
 ZNSt3__17__sort3IRNS_6__lessIN6embree4sse221BVHNBuilderInstancingILi4ENS2_12TriangleMeshEE8BuildRefES7_EEPS7_EEjT0_SB_SB_T
@@ -13432,6 +13438,7 @@ ZTIN3api20CValidatedProbeArrayE
 ZTIN3api20CValidatedProbeBatchE
 ZTIN3api20CValidatedStaticMeshE
 ZTIN3api20ITrueAudioNextDeviceE
+ZTIN3api21CNonUniformProbeBatchE
 ZTIN3api22CValidatedDirectEffectE
 ZTIN3api22CValidatedEmbreeDeviceE
 ZTIN3api22CValidatedOpenCLDeviceE
@@ -13471,6 +13478,7 @@ ZTIN3api7ISourceE
 ZTIN3api8CContextE
 ZTIN3api8IContextE
 ZTIN3ipl10IBakedDataE
+ZTIN3ipl10ProbeBatchE
 ZTIN3ipl10StaticMeshE
 ZTIN3ipl11CustomSceneE
 ZTIN3ipl11EmbreeSceneE
@@ -13489,6 +13497,7 @@ ZTIN3ipl19ReflectionSimulatorE
 ZTIN3ipl20BakedReflectionsDataE
 ZTIN3ipl20FlatBuffersAllocatorE
 ZTIN3ipl20IReflectionSimulatorE
+ZTIN3ipl20NonUniformProbeBatchE
 ZTIN3ipl25EmbreeReflectionSimulatorE
 ZTIN3ipl26BatchedReflectionSimulatorE
 ZTIN3ipl5SceneE
@@ -14111,6 +14120,7 @@ ZTINSt3__120__shared_ptr_emplaceIN3ipl17ProbeNeighborhoodENS1_9allocatorIS2_EEEE
 ZTINSt3__120__shared_ptr_emplaceIN3ipl17SimulationManagerENS1_9allocatorIS2_EEEE
 ZTINSt3__120__shared_ptr_emplaceIN3ipl19EmbreeInstancedMeshENS1_9allocatorIS2_EEEE
 ZTINSt3__120__shared_ptr_emplaceIN3ipl19IndirectPartitionerENS1_9allocatorIS2_EEEE
+ZTINSt3__120__shared_ptr_emplaceIN3ipl20NonUniformProbeBatchENS1_9allocatorIS2_EEEE
 ZTINSt3__120__shared_ptr_emplaceIN3ipl21HybridReverbEstimatorENS1_9allocatorIS2_EEEE
 ZTINSt3__120__shared_ptr_emplaceIN3ipl21VirtualSurroundEffectENS1_9allocatorIS2_EEEE
 ZTINSt3__120__shared_ptr_emplaceIN3ipl22AmbisonicsDecodeEffectENS1_9allocatorIS2_EEEE
@@ -14186,6 +14196,7 @@ ZTSN3api20CValidatedProbeArrayE
 ZTSN3api20CValidatedProbeBatchE
 ZTSN3api20CValidatedStaticMeshE
 ZTSN3api20ITrueAudioNextDeviceE
+ZTSN3api21CNonUniformProbeBatchE
 ZTSN3api22CValidatedDirectEffectE
 ZTSN3api22CValidatedEmbreeDeviceE
 ZTSN3api22CValidatedOpenCLDeviceE
@@ -14225,6 +14236,7 @@ ZTSN3api7ISourceE
 ZTSN3api8CContextE
 ZTSN3api8IContextE
 ZTSN3ipl10IBakedDataE
+ZTSN3ipl10ProbeBatchE
 ZTSN3ipl10StaticMeshE
 ZTSN3ipl11CustomSceneE
 ZTSN3ipl11EmbreeSceneE
@@ -14243,6 +14255,7 @@ ZTSN3ipl19ReflectionSimulatorE
 ZTSN3ipl20BakedReflectionsDataE
 ZTSN3ipl20FlatBuffersAllocatorE
 ZTSN3ipl20IReflectionSimulatorE
+ZTSN3ipl20NonUniformProbeBatchE
 ZTSN3ipl25EmbreeReflectionSimulatorE
 ZTSN3ipl26BatchedReflectionSimulatorE
 ZTSN3ipl5SceneE
@@ -14861,6 +14874,7 @@ ZTSNSt3__120__shared_ptr_emplaceIN3ipl17ProbeNeighborhoodENS1_9allocatorIS2_EEEE
 ZTSNSt3__120__shared_ptr_emplaceIN3ipl17SimulationManagerENS1_9allocatorIS2_EEEE
 ZTSNSt3__120__shared_ptr_emplaceIN3ipl19EmbreeInstancedMeshENS1_9allocatorIS2_EEEE
 ZTSNSt3__120__shared_ptr_emplaceIN3ipl19IndirectPartitionerENS1_9allocatorIS2_EEEE
+ZTSNSt3__120__shared_ptr_emplaceIN3ipl20NonUniformProbeBatchENS1_9allocatorIS2_EEEE
 ZTSNSt3__120__shared_ptr_emplaceIN3ipl21HybridReverbEstimatorENS1_9allocatorIS2_EEEE
 ZTSNSt3__120__shared_ptr_emplaceIN3ipl21VirtualSurroundEffectENS1_9allocatorIS2_EEEE
 ZTSNSt3__120__shared_ptr_emplaceIN3ipl22AmbisonicsDecodeEffectENS1_9allocatorIS2_EEEE
@@ -14918,6 +14932,7 @@ ZTVN3api20CValidatedPathEffectE
 ZTVN3api20CValidatedProbeArrayE
 ZTVN3api20CValidatedProbeBatchE
 ZTVN3api20CValidatedStaticMeshE
+ZTVN3api21CNonUniformProbeBatchE
 ZTVN3api22CValidatedDirectEffectE
 ZTVN3api22CValidatedEmbreeDeviceE
 ZTVN3api22CValidatedOpenCLDeviceE
@@ -14946,6 +14961,7 @@ ZTVN3api5CHRTFE
 ZTVN3api6CSceneE
 ZTVN3api7CSourceE
 ZTVN3api8CContextE
+ZTVN3ipl10ProbeBatchE
 ZTVN3ipl10StaticMeshE
 ZTVN3ipl11CustomSceneE
 ZTVN3ipl11EmbreeSceneE
@@ -14960,6 +14976,7 @@ ZTVN3ipl19EmbreeInstancedMeshE
 ZTVN3ipl19ReflectionSimulatorE
 ZTVN3ipl20BakedReflectionsDataE
 ZTVN3ipl20FlatBuffersAllocatorE
+ZTVN3ipl20NonUniformProbeBatchE
 ZTVN3ipl25EmbreeReflectionSimulatorE
 ZTVN3ipl26BatchedReflectionSimulatorE
 ZTVN3ipl5SceneE
@@ -15566,6 +15583,7 @@ ZTVNSt3__120__shared_ptr_emplaceIN3ipl17ProbeNeighborhoodENS1_9allocatorIS2_EEEE
 ZTVNSt3__120__shared_ptr_emplaceIN3ipl17SimulationManagerENS1_9allocatorIS2_EEEE
 ZTVNSt3__120__shared_ptr_emplaceIN3ipl19EmbreeInstancedMeshENS1_9allocatorIS2_EEEE
 ZTVNSt3__120__shared_ptr_emplaceIN3ipl19IndirectPartitionerENS1_9allocatorIS2_EEEE
+ZTVNSt3__120__shared_ptr_emplaceIN3ipl20NonUniformProbeBatchENS1_9allocatorIS2_EEEE
 ZTVNSt3__120__shared_ptr_emplaceIN3ipl21HybridReverbEstimatorENS1_9allocatorIS2_EEEE
 ZTVNSt3__120__shared_ptr_emplaceIN3ipl21VirtualSurroundEffectENS1_9allocatorIS2_EEEE
 ZTVNSt3__120__shared_ptr_emplaceIN3ipl22AmbisonicsDecodeEffectENS1_9allocatorIS2_EEEE
@@ -15613,7 +15631,6 @@ ZTv0_n24_NSt3__119basic_ostringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEED0E
 ZTv0_n24_NSt3__119basic_ostringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEED1Ev
 ZZN3ipl3Log7messageENS_15MessageSeverityEPKczE14kMessageBuffer
 ZZN3ipl3Log7messageENS_15MessageSeverityEPKczE23kFormattedMessageBuffer
-ZZN3iplL24calcDistanceFieldAtPointERKNS_8MeshDataERKNS_7Vector3IfEEfE5delta
 ZZN6embree12bin_parallelINS_3avx8BinInfoTILm32ENS_9PrimRefMBENS_4BBoxINS_6Vec3faEEEEENS1_10BinMappingILm32EEES3_EEvRT_PKT1_mmmmRKT0_ENKUlRKNS_5rangeImEEE_clESL
 ZZN6embree12bin_parallelINS_4sse28BinInfoTILm32ENS_9PrimRefMBENS_4BBoxINS_6Vec3faEEEEENS1_10BinMappingILm32EEES3_EEvRT_PKT1_mmmmRKT0_ENKUlRKNS_5rangeImEEE_clESL
 ZZN6embree13TaskScheduler5spawnIiZNS_12parallel_forIiZNS_24parallel_reduce_internalIiNS_14BVHNStatisticsILi4EE10StatisticsEZNS_15parallel_reduceIiS6_ZNS5_10statisticsENS_4BVHNILi4EE7NodeRefEdNS_4BBoxIfEEEUliE0_FS6_RKS6_SF_EEET0_T_SI_RKSH_RKT1_RKT2_EUlNS_5rangeIiEEE_SG_EESH_SI_SI_SI_SI_SK_SN_SQ_EUliE_EEvSI_SK_EUlRKSS_E_EEvSI_SI_SI_SK_ENKUlvE_clEv
@@ -15927,22 +15944,24 @@ ZZNK6embree3avx5SetMB12linearBoundsINS0_18RecalculatePrimRefINS_8AccelSetEEEEENS
 ZZNK6embree4sse216BVHBuilderMorton8BuilderTINS_13BVHNodeRecordINS_4BVHNILi4EE7NodeRefEEENS_13FastAllocator15CachedAllocatorENS5_11CreateAllocENS5_11AlignedNode6CreateENS0_13SetBVHNBoundsILi4EEENS0_16CreateMortonLeafILi4ENS_6ObjectEEENS0_19CalculateMeshBoundsINS_8AccelSetEEENS_5Scene29BuildProgressMonitorInterfaceEE19recreateMortonCodesERKNS_5rangeIjEEENKUlSR_E0_clESR
 ZZNK6embree4sse25SetMB12linearBoundsINS0_18RecalculatePrimRefINS_12TriangleMeshEEEEENS_5LBBoxINS_6Vec3faEEERKT_ENKUlRKNS_5rangeImEEE_clESF
 ZZNK6embree4sse25SetMB12linearBoundsINS0_18RecalculatePrimRefINS_8AccelSetEEEEENS_5LBBoxINS_6Vec3faEEERKT_ENKUlRKNS_5rangeImEEE_clESF
+ZapplyERKNS_30AmbisonicsBinauralEffectParamsERKNS_11AudioBufferERS4
 ZdaPv
 ZdlPv
 Zero_8u
-Zh18MX
 Zxāyn
 a geomeH
 a singleH
 a"\4P
-a3BoxERKNS_7Vector3IfEEPKiRfSA
+a$\dHDri
 a:4K5:`iX
+aPKNS_10Serialized4MeshE
 abcdefghH
 abcdefghijklmnopqrstuvwxyz
 abort
 accel
 accel_mbH
 accels
+accumulateEnergyFieldsEv
 ache_line_size
 ackToR_32f
 ack_32f
@@ -16064,7 +16083,6 @@ audioBuffer
 audioSettings
 audioSettings->frameSize
 audioSettings->samplingRate
-avS\+	a
 avx2::BVH4IntersectorStreamPacketFallback
 avx2::BVH4Triangle4Intersector1Moeller
 avx2::BVH4Triangle4Intersector4HybridMoeller
@@ -16239,7 +16257,6 @@ aw:R)z8f0
 axEnergyForLineFitE
 axIndexEiPKfRfRi
 ay57u
-b 6Xod
 b!, Y
 b!,HY
 b!,HYl
@@ -16248,8 +16265,6 @@ b!}Hp4
 b1}Hpαb
 b1}HpرbQ}HpαbqTHY
 b2:ve2
-b3BoxERKNS_7Vector3IfEEPKiRfSA
-b6SphereE
 b: Vw:M
 b?Z<c?s
 bALHY4
@@ -16261,6 +16276,7 @@ bC 9,o
 bHN&n
 bQ$HX
 bQ4HX
+bQB5n
 bQ}Hp̱bqTHY
 bQ}Hp۱bQ4@Y
 bT:(j6:2
@@ -16300,6 +16316,7 @@ bm.256.0.3
 bm.266.0.3
 bm.284.0.3
 bm.285.0.3
+bqLXT5M
 bq\HYt
 bqt@Yl$	b
 bq}Hp
@@ -16309,6 +16326,7 @@ bq}Hpαb
 bq}Hpбb
 bq}Hpбbq}Hp
 bq}HpڱbadH
+br}HX
 bsULCűb
 bsmLCڱb
 btreeFree
@@ -16345,15 +16363,14 @@ by yourH
 bytes
 bytes/prim
 bzero
-c$0kP
 c16s_Sfs_ASM
 c2_p1m1
 c2c_1d
 c2c_1d_small_ipp_s
-c3%)T
+c3BoxERKNS_7Vector3IfEEPKiRfSA
 c3_p1m1
 c4_p1m1
-c5buildERKNS_4MeshEPFvfPvES4
+c6SphereE
 c;UUUUUU
 c=N6embree13TaskScheduler19ClosureTaskFunctionIZNS0_5spawnImZNS_12parallel_forImZNS_19parallel_prefix_sumImNS_4sse29PrimInfoTINS_4BBoxINS_6Vec3faEEEEEZNS5_18createPrimRefArrayINS_12TriangleMeshEEESA_PT_RNS_8vector_tINS_7PrimRefENS_27aligned_monitored_allocatorISG_Lm32EEEEERNS_20BuildProgressMonitorEEUlRKNS_5rangeImEERKSA_E_ZNSB_ISC_EESA_SE_SK_SM_EUlSS_SS_E_EET0_RNS_22ParallelPrefixSumStateISV_EESD_SD_SD_RKSV_RKT1_RKT2_EUlmE_EEvSD_S10_EUlSQ_E_EEvSD_SD_SD_S10_EUlvE_EE
 cBccc!c
@@ -16446,6 +16463,7 @@ cache_siH
 cache_size
 cached
 calarField30generateDistanceFieldLaplacianERKNS_10StaticMeshERKNS_9VoxelGridERKNS_30DistanceFieldLaplacianSettingsE
+calcDistanceFieldAtPointERKNS_8MeshDataERKNS_7Vector3IfEEf
 calcPairwisePanningDataERKNS_7Vector3IfEERKNS_13SpeakerLayoutERNS_11PanningDataE
 calculateAirAbsorption
 calculateDirectivity
@@ -16503,6 +16521,7 @@ convertUnitsERNS_11I3DL2ReverbE
 convertedDirectionI
 convolutionQueue
 copyArrayWeighted
+copyEnergyFieldsFromDeviceToHostEv
 copyFromFloat
 copyStateERKS0
 copyToFloat
@@ -16563,8 +16582,6 @@ cxa_begin_catch
 cxa_end_catch
 cxa_free_exception
 cxa_get_exception_ptr
-cxa_guard_acquire
-cxa_guard_release
 cxa_pure_virtual
 cxa_rethrow
 cxa_throw
@@ -16600,12 +16617,8 @@ d$PňX
 d$X+L$pD
 d$`I;D$0vfH
 d$pāx
-d1ERKNS_4MeshEPFvfPvES4
-d21boxIntersectsTriangleERKNS_3BoxERKNS_4MeshEi
-d5buildERKNS_4MeshEPFvfPvES4
-d8sahSplitEPNS_11GrowableBoxEPiPKPNS_18CentroidCoordinateEPfRKNS_3BoxEii
+d&/T5W
 d93PM
-d9bestSplitEPNS_11GrowableBoxEPiPKPNS_18CentroidCoordinateEPfRKNS_3BoxEii
 d:75S
 dArrayWeighted
 dBitRev1_Blk
@@ -16682,9 +16695,11 @@ e ServerH
 e deviceH
 e group H
 e"?Dg
+e1ERKNS_4MeshEPFvfPvES4
 e21boxIntersectsTriangleERKNS_3BoxERKNS_4MeshEi
-e6boxIntersectsBoxERKNS_3BoxES3
+e5buildERKNS_4MeshEPFvfPvES4
 e7.? bz
+e8sahSplitEPNS_11GrowableBoxEPiPKPNS_18CentroidCoordinateEPfRKNS_3BoxEii
 e9_cFftFwd_BlkStep
 e9_cFftInv_BlkStep
 e9_cFft_Blk_R2
@@ -16849,10 +16864,10 @@ e9_owns_rFFTinv_8_32f
 e9_owns_rFFTinv_8_scale_32f
 e9_owns_sBitRev1_Blk
 e9_owns_zBitRev1_Blk
+e9bestSplitEPNS_11GrowableBoxEPiPKPNS_18CentroidCoordinateEPfRKNS_3BoxEii
 e:Rfx
 e=rAe>U:f
 eBuilderH
-eFFT12apply
 eGeometrH
 ePw:1
 ead_alloH
@@ -16894,6 +16909,8 @@ emplaceI
 en097
 enableERKNS_11EmbreeSceneE
 enable_dc_correction_for_phase_interpolation
+enable_hybrid_eqNSt3__120__shared_ptr_emplaceIN3ipl17ProbeNeighborhoodENS1_9allocatorIS2_EEEE
+enable_hybrid_eq_from_ir
 enable_paths_from_all_source_probes
 enable_reverb_probe_caching_for_missing_probes
 enable_sH
@@ -16918,6 +16935,7 @@ eshBuildH
 eshRefitH
 essellationRate
 ession_tH
+estimateReverbEv
 estimatedSize
 et calleH
 etDictionary
@@ -16931,7 +16949,6 @@ evaluateDirectivity___vyf_3C_3_3E_REFs_5B__c_unCoordinateSpace_5D_REFs_5B__c_unD
 evaluateDirectivity___vyf_3C_3_3E_REFs_5B__c_unCoordinateSpace_5D_REFs_5B__c_unDirectivity_5D_sse4
 evaluateEiiRKNS_7Vector3IfEE
 evelVirtH
-exGsRa
 exp10f
 expEiPK
 exp_scalar
@@ -16941,21 +16958,19 @@ f %d %d %d
 f boundsH
 f threadH
 f vertexH
-f10isOccludedERKNS
-f4A͝q@8
-f7Vector3IfEES4_RKNS_4MeshE
+f0.22сwZ
+f6boxIntersectsBoxERKNS_3BoxES3
 f94748
-f9intersectERKNS_3
 f::OS
 f:iby
 f:itd
-fBoxERKNS_4MeshE
 fEENS_7Vector3IT_EERKNS2_IfEE
 fEET_iPKS1
 fFFT12apply
 fPFffPvES1
 fPNSt3__17complexIfEE
 fS2_Pf
+f_d:VF
 factorization_db
 failed
 fast_allH
@@ -17027,6 +17042,7 @@ free blocks
 freeAudioBuffer
 freeAudioBufferEP14IPLAudioBuffer
 freeEPv
+from_ir
 fseek
 ft_fix_twiddle_table_32f
 ftell
@@ -17058,11 +17074,14 @@ function BVH8VirtualSceneBuilderSAH not supported by your CPU
 functionH
 fwrite
 g,;wa 9c
+g10isOccludedERKNS
 g2(;p
 g7Vector3IfEES4_RKNS_4MeshE
 g8B~0GBf
+g9intersectERKNS_3
 g: kP;O
 gAPIVersionEv
+gBoxERKNS_4MeshE
 gDefaultHrtfData
 gLoadingBinaryNamesE
 gLogEv
@@ -17074,6 +17093,7 @@ gcc_except_tab__TEXT
 gcolFree
 gcolRead
 general
+generateDistanceCorrectionCurvesEi
 generateHemisphereSamplesEiPNS_7Vector3IfEE
 generateOctreeProbesERKNS_6ISceneERKNS_12SquareMatrixIfLi4EEEfRNS_10ProbeArrayE
 generateProbes
@@ -17098,6 +17118,7 @@ getNumProbes
 getOutputs
 getPartitionedIREv
 getProbe
+getProbeEi
 getSizesTwd_Large_32f
 getTailEP14IPLAudioBuffer
 getTailEP14IPLAudioBufferPNS_16IReflectionMixerE
@@ -17113,11 +17134,10 @@ groups H
 gunzip
 gxx_personality_v0
 h1F96(6
+h7Vector3IfEES4_RKNS_4MeshE
 h:/1E
 h:p.Y
 hMK</u
-hPKNS_10Serialized10StaticMeshE
-hYT+ H
 hYT5 H
 h[A\A]A^A
 h[A^A
@@ -17160,13 +17180,11 @@ hugepageH
 hugepages
 hvļTAS
 hypotf
-i6anyHitERKNS_3RayEff
 iFiii#i
 iPKN3ipl7Vector3IfEEPKfPf
 iPKNS_10Serialized10StaticMeshE
 iPKNS_7Vector3IfEE
 iPKfPf
-iRNS_16SerializedObjectE
 ial_spliH
 icationsH
 identifier
@@ -17593,26 +17611,36 @@ ion_testH
 iplAirAbsorptionCalculate
 iplAmbisonicsBinauralEffectApply
 iplAmbisonicsBinauralEffectCreate
+iplAmbisonicsBinauralEffectGetTail
+iplAmbisonicsBinauralEffectGetTailSize
 iplAmbisonicsBinauralEffectRelease
 iplAmbisonicsBinauralEffectReset
 iplAmbisonicsBinauralEffectRetain
 iplAmbisonicsDecodeEffectApply
 iplAmbisonicsDecodeEffectCreate
+iplAmbisonicsDecodeEffectGetTail
+iplAmbisonicsDecodeEffectGetTailSize
 iplAmbisonicsDecodeEffectRelease
 iplAmbisonicsDecodeEffectReset
 iplAmbisonicsDecodeEffectRetain
 iplAmbisonicsEncodeEffectApply
 iplAmbisonicsEncodeEffectCreate
+iplAmbisonicsEncodeEffectGetTail
+iplAmbisonicsEncodeEffectGetTailSize
 iplAmbisonicsEncodeEffectRelease
 iplAmbisonicsEncodeEffectReset
 iplAmbisonicsEncodeEffectRetain
 iplAmbisonicsPanningEffectApply
 iplAmbisonicsPanningEffectCreate
+iplAmbisonicsPanningEffectGetTail
+iplAmbisonicsPanningEffectGetTailSize
 iplAmbisonicsPanningEffectRelease
 iplAmbisonicsPanningEffectReset
 iplAmbisonicsPanningEffectRetain
 iplAmbisonicsRotationEffectApply
 iplAmbisonicsRotationEffectCreate
+iplAmbisonicsRotationEffectGetTail
+iplAmbisonicsRotationEffectGetTailSize
 iplAmbisonicsRotationEffectRelease
 iplAmbisonicsRotationEffectReset
 iplAmbisonicsRotationEffectRetain
@@ -17625,6 +17653,8 @@ iplAudioBufferInterleave
 iplAudioBufferMix
 iplBinauralEffectApply
 iplBinauralEffectCreate
+iplBinauralEffectGetTail
+iplBinauralEffectGetTailSize
 iplBinauralEffectRelease
 iplBinauralEffectReset
 iplBinauralEffectRetain
@@ -17644,7 +17674,8 @@ iplConvolutionPartitionerRelease
 iplConvolutionPartitionerRetain
 iplDirectEffectApply
 iplDirectEffectCreate
-iplDirectEffectGetTailEP18_IPLDirectEffect_tP14IPLAudioBuffer
+iplDirectEffectGetTail
+iplDirectEffectGetTailSize
 iplDirectEffectRelease
 iplDirectEffectReset
 iplDirectEffectRetain
@@ -17681,11 +17712,15 @@ iplImpulseResponse2AddChannel
 iplImpulseResponse2AddChannel.cold.1
 iplImpulseResponse2AddSample
 iplImpulseResponse2Create
+iplImpulseResponse2GetChannel
+iplImpulseResponse2GetNumChannels
+iplImpulseResponse2GetNumSamples
 iplImpulseResponse2Release
 iplImpulseResponse2Reset
 iplImpulseResponse2Reset.cold.1
 iplImpulseResponse2Retain
 iplImpulseResponse2SetChannel
+iplImpulseResponse2SetChannelDelayed
 iplImpulseResponse2SetSample
 iplImpulseResponse2Swap
 iplImpulseResponse2SwapSource
@@ -17709,6 +17744,16 @@ iplInstancedMeshRelease
 iplInstancedMeshRemove
 iplInstancedMeshRetain
 iplInstancedMeshUpdateTransform
+iplInterpolatableImpulseResponseBlend
+iplInterpolatableImpulseResponseCreate
+iplInterpolatableImpulseResponseGetChannel
+iplInterpolatableImpulseResponseGetChannel.cold.1
+iplInterpolatableImpulseResponseRelease
+iplInterpolatableImpulseResponseReset
+iplInterpolatableImpulseResponseReset.cold.1
+iplInterpolatableImpulseResponseRetain
+iplInterpolatableImpulseResponseSetChannel
+iplInterpolatableImpulseResponseSetChannel.cold.1
 iplOpenCLDeviceCreate
 iplOpenCLDeviceCreateFromExisting
 iplOpenCLDeviceListCreate
@@ -17720,7 +17765,8 @@ iplOpenCLDeviceRelease
 iplOpenCLDeviceRetain
 iplPanningEffectApply
 iplPanningEffectCreate
-iplPanningEffectGetTailEP19_IPLPanningEffect_tP14IPLAudioBuffer
+iplPanningEffectGetTail
+iplPanningEffectGetTailSize
 iplPanningEffectRelease
 iplPanningEffectReset
 iplPanningEffectRetain
@@ -17728,7 +17774,8 @@ iplPathBakerBake
 iplPathBakerCancelBake
 iplPathEffectApply
 iplPathEffectCreate
-iplPathEffectGetTailEP16_IPLPathEffect_tP14IPLAudioBuffer
+iplPathEffectGetTail
+iplPathEffectGetTailSize
 iplPathEffectRelease
 iplPathEffectReset
 iplPathEffectRetain
@@ -17743,11 +17790,15 @@ iplProbeArrayGenerateProbes
 iplProbeArrayGetNumProbes
 iplProbeArrayGetProbe
 iplProbeArrayRelease
+iplProbeArrayResize
 iplProbeArrayRetain
+iplProbeArraySetProbe
 iplProbeBatchAddProbe
 iplProbeBatchAddProbeArray
+iplProbeBatchAddProbeArrayAndCluster
 iplProbeBatchCommit
 iplProbeBatchCreate
+iplProbeBatchCreateNonUniform
 iplProbeBatchGetDataSize
 iplProbeBatchGetInfluencingProbes
 iplProbeBatchGetInfluencingProbes.cold.1
@@ -17757,6 +17808,7 @@ iplProbeBatchGetProbeArray
 iplProbeBatchGetProbeArray.cold.1
 iplProbeBatchGetProbeArray.cold.2
 iplProbeBatchLoad
+iplProbeBatchLoadNonUniform
 iplProbeBatchRelease
 iplProbeBatchRemoveData
 iplProbeBatchRemoveProbe
@@ -17791,6 +17843,8 @@ iplReconstructorRelease
 iplReconstructorRetain
 iplReflectionEffectApply
 iplReflectionEffectCreate
+iplReflectionEffectGetTail
+iplReflectionEffectGetTailSize
 iplReflectionEffectRelease
 iplReflectionEffectReset
 iplReflectionEffectRetain
@@ -17880,6 +17934,8 @@ iplTrueAudioNextSetImpulseResponse
 iplTrueAudioNextUpdateIRs
 iplVirtualSurroundEffectApply
 iplVirtualSurroundEffectCreate
+iplVirtualSurroundEffectGetTail
+iplVirtualSurroundEffectGetTailSize
 iplVirtualSurroundEffectRelease
 iplVirtualSurroundEffectReset
 iplVirtualSurroundEffectRetain
@@ -18071,14 +18127,14 @@ ispcUpdate
 ispcUpdateBuffer
 ivityCalculate
 j/ʼn4
-j0closestHitERKNS_3RayEff
-j3intersectsBoxERKNS_3BoxE
 j6anyHitERKNS_3RayEff
-jReconstructor
+jPKNS_10Serialized10StaticMeshE
+jRNS_16SerializedObjectE
 jY|/d
 jt":2
 k"5:*ub
 k,e:EG1
+k-F+l
 k.2:x_O
 k0_STEP_FFT_4_NORM_IN
 k0_STEP_FFT_4_NORM_OUT
@@ -18589,18 +18645,18 @@ k0_static_dt_commit
 k0_static_uncommit
 k0_testDftSpecialCase
 k0closestHitERKNS_3RayEff
-k15updateTransformERKNS_6ISceneERKNS_12SquareMatrixIfLi4EEE
 k3intersectsBoxERKNS_3BoxE
+k6anyHitERKNS_3RayEff
 kP<HI <4jv
 kQQ:I
 kReconstructor
 kaiser12_table
+kdTreeVisibilityFilterERKNS_7Vector3IfEES3_Pv
 kd_create
 kd_free
 kd_insert
 kd_nearest
 kd_nearest_i
-kdirectMixer
 ker_row_notw_db
 ker_row_twid_db
 kip_zeros
@@ -18613,9 +18669,8 @@ l$hMcElL
 l$pfD
 l$xL;m
 l15updateTransformERKNS_6ISceneERKNS_12SquareMatrixIfLi4EEE
-l1ENSt3__110shared_ptrINS_5SceneEEERKNS_12SquareMatrixIfLi4EEE
+l3intersectsBoxERKNS_3BoxE
 l598_r
-l6commitERKNS_6ISceneE
 l9_cDftFwd_StepPrimeFact
 l9_cDftInv_StepPrimeFact
 l9_cFftFwd_BlkStep
@@ -19061,8 +19116,10 @@ l9_static_dt_commit
 l9_static_uncommit
 l; le
 l> fE
+lI)gKHR9
 lQl6lll
 lR);ce
+lReconstructor
 lU ńX
 lX4)H
 lYR`ŤY
@@ -19072,12 +19129,13 @@ la_symbol_ptr
 lackmanEiPf
 lderTwoLH
 lder_isaH
+ldirectMixer
 leaf_siH
 leaves
 lection H
 led in sH
 legendreEif
-libphonon-55554944b0fdc8bdc00430988f5f4d6083a0b146
+libphonon-55554944970c085c77633430a33d09d817d540d9
 libphonon.dylib
 line segments
 line4i
@@ -19116,6 +19174,7 @@ log2f
 logEiPKfPf
 long to H
 lookup
+lookupBakedReflectionsEv
 lookupEnergyFieldEi
 loudness
 lowPassEfi
@@ -19124,6 +19183,7 @@ ltERKNS_10PathFinder18PriorityQueueEntryES3
 luded4 nH
 luded8 nH
 ludedN nH
+m15updateTransformERKNS_6ISceneERKNS_12SquareMatrixIfLi4EEE
 m1ENSt3__110shared_ptrINS_5SceneEEERKNS_12SquareMatrixIfLi4EEE
 m69jlQ9B
 m6commitERKNS_6ISceneE
@@ -19275,10 +19335,11 @@ n be at H
 n not suH
 n only cH
 n streamH
-n6anyHitERKNS_3RayEff
+n1ENSt3__110shared_ptrINS_5SceneEEERKNS_12SquareMatrixIfLi4EEE
+n6commitERKNS_6ISceneE
 n</N9
+n=2)e
 n?0ho?s
-nBakedPathData
 nMesh isH
 nN only H
 n_factorH
@@ -19332,15 +19393,15 @@ number oH
 o not beH
 o):8tR
 o,<Lc
-o2transformHitERKNS_3HitERKNS_3RayE
-o8JobGraph7isEmptyEv
-o9inverseTransformRayERKNS_3RayERfS4
+o6anyHitERKNS_3RayEff
 o:cPO
 o;xXq
+oBakedPathData
 oD$0fD
 oDFTTwid_Compact
 oL$pfD
 oZs=s_d
+o_X652R
 object
 object_aH
 object_accel
@@ -19354,7 +19415,6 @@ object_builder
 object_builder_mb
 ocator_rH
 ock_sizeH
-oclosestHitERKNS_3RayEff
 og 9P
 ometriesH
 ommittedH
@@ -19581,17 +19641,17 @@ own_ipps_zErrorI
 ownmix
 ownsFFTGetBufSize
 o|$ fD
+p2transformHitERKNS_3HitERKNS_3RayE
 p7M}f
 p8JobGraph7isEmptyEv
+p9inverseTransformRayERKNS_3RayERfS4
 p=BAr
 pA]A\H
 pA^A]H
 pD$ Nf
-pDelay
 pH9\$@u
 pH9\$Hu
 pI;G0vkH
-pKDTree19findNearestNeighborERKNS_7Vector3IfEEPS3_PFbS4_S4_PvES6
 pL;d$0r
 pL;t$0r
 pP00PPPPPPPP
@@ -19686,6 +19746,7 @@ params->transmission[iBand
 params->type
 params->visRange
 pc_fpu
+pclosestHitERKNS_3RayEff
 peakingEfffi
 pecifiedH
 pentium
@@ -19768,8 +19829,8 @@ q(uvA9
 q(u}A9
 q(u~A9
 qDelay
-qPKNS_10Serialized5SceneE
-qRNS_16SerializedObjectE
+qKDTree19findNearestNeighborERKNS_7Vector3IfEEPS3_PFbS4_S4_PvES6
+q^V[o
 qbvh4.triangle4i
 qbvh8.triangle4
 qbvh8.triangle4i
@@ -19794,9 +19855,8 @@ qxs?qxs
 qxs?qxs?qxs?qxs
 r each tH
 r uDI
-r25T5>CFN
 r2c_1d_small_ipp_s
-r6commitEv
+r4Hc9H
 r:gom:fp
 rFunctioH
 rGeometrH
@@ -19825,6 +19885,7 @@ reateBinauralEffectEP16IPLAudioSettingsP25IPLBinauralEffectSettingsPPNS_15IBinau
 reateReflectionMixerEP16IPLAudioSettingsP27IPLReflectionEffectSettingsPPNS_16IReflectionMixerE
 reateSimulatorEP21IPLSimulationSettingsPPNS_10ISimulatorE
 reateVirtualSurroundEffectEP16IPLAudioSettingsP32IPLVirtualSurroundEffectSettingsPPNS_22IVirtualSurroundEffectE
+reconstructImpulseResponsesEv
 release
 releaseEv
 remove
@@ -20442,14 +20503,18 @@ s not maH
 s not suH
 s specifH
 s$W<M
+s/tX x
 s0H+s(H
+s6commitEv
 s: HRTF data contains Ambisonic HRIRs of unsupported order: %d
 s: Unsupported HRTF data format version: %d
 s: invalid %s: %s = %s
 sBitRev1_Blk
 sFunction
 sHH+s
+sPKNS_10Serialized5SceneE
 sRA; J
+sRNS_16SerializedObjectE
 sXH+sPH
 sXH+sPI;v0w	I
 s_32f_A24
@@ -20492,6 +20557,7 @@ setHasConvolutionEb
 setImpulseResponseERNSt3__110unique_ptrINS_15ImpulseResponseENS_7deleterEEE
 setInputs
 setPartitionedIRERNSt3__110unique_ptrINS_14OverlapSaveFIRENS_7deleterEEE
+setProbeEiP9IPLSphere
 setProfilerContext
 setProfilerContextEPv
 setScene
@@ -20572,6 +20638,7 @@ sharedInputs->listener.up.z
 sharedInputs->numBounces
 sharedInputs->numRays
 sharedInputs->order
+simulateDirectE
 simulateEnergyField
 simulateEnergyField___un_3C_s_5B__c_unEmbreeScene_5D__3E_un_3C_s_5B__c_unEmbreeReflectionSimulator_5D__3E_uniuniuniun_3C_s_5B_unEnergyField_5D__3E_avx
 simulateEnergyField___un_3C_s_5B__c_unEmbreeScene_5D__3E_un_3C_s_5B__c_unEmbreeReflectionSimulator_5D__3E_uniuniuniun_3C_s_5B_unEnergyField_5D__3E_avx2
@@ -20593,6 +20660,7 @@ simulateImage_sse4
 simulateIndirectEv
 simulateJobERKNS_6ISceneE
 simulatePathingE
+simulateRealTimeReflectionsEv
 simulator
 sinTbl
 sinTbl_h9
@@ -20600,6 +20668,7 @@ sincos_scalar
 sincos_stret
 sincosf_stret
 sionFilterFunction
+sizeEi
 slotMask
 small_ipp_s
 snprintf
@@ -20633,7 +20702,7 @@ src->data[iChannel][src->numSamples - 1
 src->numChannels
 src->numSamples
 src[iArray
-sremoveStaticMeshENSt3__110shared_ptrINS_11IStaticMeshEEE
+ssU:Q
 sscanf
 sse2::BVH
 sse2::BVH4IntersectorStreamPacketFallback
@@ -20779,20 +20848,15 @@ t-D93u9
 t00āzo
 t1?"t1?"t1?"t1
 t3__16vectorINS_3RayENS_9allocatorISD_EEEE
-t3addStaticMeshENSt3__110shared_ptrINS_11IStaticMeshEEE
 t5XK+t5PH9
-t:̔zPIM
 t;J479
-tDNSVD
 tG<zmZ
 tKHc:Hk
 tPD9J$u
-tRNS_16SerializedObjectE
 tT:V05
 tWt:ttt
 tYL%@H
 tYL5@H
-tZaSB
 t]I9?uX
 t_replicH
 tableCache
@@ -20829,6 +20893,7 @@ te this H
 ted by yH
 terFuncsH
 terminatH
+terpolatableImpulseResponse
 tersect
 tersectiH
 tersectoH
@@ -20900,17 +20965,21 @@ twd8im
 twd8re
 u	<BFb
 u ARAS
+u%N2Ze
 u(PASAR
 u. ;BS0
+u3addStaticMeshENSt3__110shared_ptrINS_11IStaticMeshEEE
 u8t>fD
 u:H+K@L
 u@ARAUAS
+uRNS_16SerializedObjectE
 uXI+uPH
 uXI+uPH;s0w	H
+uY,Hq
 uZEeu
 u]tcfD
 u`PAVARASAT
-uaddInstancedMeshENSt3__110shared_ptrINS_14IInstancedMeshEEE
+ua2cd
 ualSAH nH
 ubdivisionMesh
 uded notH
@@ -21012,7 +21081,7 @@ update_filter
 updatewindow
 uperblock
 upportedH
-uremoveInstancedMeshENSt3__110shared_ptrINS_14IInstancedMeshEEE
+uremoveStaticMeshENSt3__110shared_ptrINS_11IStaticMeshEEE
 use rtcSH
 use_single_mode
 used blocks
@@ -21059,6 +21128,7 @@ versionEv
 vertex bH
 vertex buffer can be at most 16GB large
 vertices
+vlkTW
 vmldExpHATab
 vmldSinCosHATab
 vmlsCosHATab
@@ -21081,7 +21151,6 @@ vssincos_data
 vv	sqF
 w A+w0A
 w D+w0D
-w6anyHitERKNS_3RayEff
 wA^A]A
 wA_A^A]A
 wA_A^A]A\][ÐSUATAUAVAWH
@@ -21099,33 +21168,26 @@ w_real_rec_im_1
 w_real_rec_im_2
 w_real_rec_re_1
 w_real_rec_re_2
+waddInstancedMeshENSt3__110shared_ptrINS_14IInstancedMeshEEE
 waitEv
-wanyHitsEiPKNS_3RayEPKfS5_Pb
 wasted
 withstepdefine
 wni_extension
 writableH
 writeEPKf
-x(%2k
-x(%3k
-x(%IR
-x(%J2F
-x(%LH
-x(%Of
-x(%T4L
-x(%YZM
-x(%a1
-x(%ip
-x(%od
-x(-EzB
-x(5!l
-x(5'6
-x(5Cn
-x(5X'E
-x(5d\8
-x(5o	P
-x(=1kN
-x(=b9
+x(%99L
+x(%GoL
+x(%QA
+x(%tXM
+x(-Ay
+x(-Kq
+x(-iL3
+x(5ETL
+x(5Iy
+x(5Sq
+x(5T5C
+x(5dS
+x(= RC
 x(D$p
 x(D% H
 x(D& H
@@ -21142,7 +21204,6 @@ x(L/ H
 x(L1 āx(d! H
 x(L7 āx(\' H
 x(L7 āx(l' H
-x(L7 ňY
 x(L8P
 x(T7 āx(L' H
 x(T7 āx(t' H
@@ -21152,7 +21213,6 @@ x(TB@ģm
 x(W0ŸY
 x(^0f
 x(d> H
-x(g0ŠY
 x(l2 āx(t20
 x(l4 āx(t40
 x(l4P
@@ -21196,24 +21256,21 @@ x)t$0ňY
 x)t$P
 x)t$PňY
 x+9- G8
-x1:l.p
-x1closestHitsEiPKNS_3RayEPKfS5_PNS_3HitE
 x2n_table
-x3intersectsBoxERKNS_3BoxE
-x5serializeAsRootERNS_16SerializedObjectE
+x6anyHitERKNS_3RayEff
 x8:Sb(8h
-x9serializeERNS_16SerializedObjectE
 x:P5Q:Zx
 x:_P2
 x>V6'?C
 x?S;3
+xTphT
 xYL% H
 xYT+ H
 xZx<xxx
 x[A\A]A^A
 x[A^A
 x_extension
-xdumpObjERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS_9allocatorIcEEEE
+xanyHitsEiPKNS_3RayEPKfS5_Pb
 xk]:45R
 y ID alrH
 y cannotH
@@ -21227,6 +21284,7 @@ y!A( L
 y!X8 H
 y!`8 H
 y!`8 I
+y1closestHitsEiPKNS_3RayEPKfS5_PNS_3HitE
 y3intersectsBoxERKNS_3BoxE
 y5serializeAsRootERNS_16SerializedObjectE
 y8_cFftFwd_BlkStep
@@ -21461,7 +21519,10 @@ ybridReverbEstimator
 ydumpObjERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS_9allocatorIcEEEE
 yn->l7
 yn<9ă1
-yoT$Pt
+yo5%M
+yo5NJ
+yo5|6
+yo= B
 yol$0L
 you can H
 you can use rtcSetIntersectFunctionN only in stream mode
@@ -21479,18 +21540,18 @@ ysofa
 ytes aliH
 yxD;d$p
 z <tHm
-z1EPFvPKNS_3RayEffPNS_3HitEPvEPFvS3_ffPhS6_EPFviS3_PKfSD_S5_S6_EPFviS3_SD_SD_S9_S6_ES6
-z6anyHitERKNS_3RayEff
+z5serializeAsRootERNS_16SerializedObjectE
 z: SR
 z:> R9f
 zBitRev1_Blk
-zDirectivity
+zCOpsa
 zError
 zXH+zPH
 z]z@zzz z
 z_errmsg
 zcalloc
 zcfree
+zdumpObjERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS_9allocatorIcEEEE
 zero_none
 zeros
 zierCurvH

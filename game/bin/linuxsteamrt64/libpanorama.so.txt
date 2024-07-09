@@ -23,6 +23,7 @@
 0Ces-8R
 0IcE(L
 0IcF(L
+0Y[]A\A]H
 0[A\A]A
 0[]A\A]A^ÐAUATI
 0enum $1
@@ -1208,6 +1209,8 @@ CTopLevelWindow::PerformLayout - 2nd Pass
 CUIEngine::CompileScript
 CUIEngine::DispatchEvent - Find Unhandled
 CUIEngine::DispatchQueuedEvent
+CUIEngine::GetContextForPanel
+CUIEngine::GetScriptOrigin
 CUIEngine::InvokeJSGenericCallback
 CUIEngine::PaintWindows
 CUIEngine::PaintWindows - Requeue paint
@@ -1221,6 +1224,8 @@ CUIEngine::RunFunction
 CUIEngine::RunScheduledDelegates
 CUIEngine::RunScript (compile+run
 CUIEngine::RunScript (pre-compiled
+CUIEngine::RunScript Run
+CUIEngine::RunScript::Compile
 CUIEngine::UnregisterEventHandler
 CUIEngine::UnregisterForUnhandledEvent
 CUIEngine::UnregisterJSForUnhandledEvent
@@ -1568,6 +1573,8 @@ EconItemToolModel_001
 Empty JPEG image (DNL not supported
 Empty input file
 Enable multithreading to use std::thread
+Enable panorama joystick input
+Enable script caching to speed up recompiling scripts multiple times
 Enable sending minidumps on JS Exceptions
 End Of Image
 End-of-file inside block comment
@@ -1798,7 +1805,6 @@ G$}DH
 G(H;G0r
 G(H;G0sM
 G(H;G0sq
-G,A9E
 G49F8up
 G4A9E4
 G89G@}<M
@@ -1840,7 +1846,7 @@ GOST R 34.11-94 with GOST R 34.10-94 Cryptocom
 GOST R 3410-2001 Parameter Set Cryptocom
 GPÐAWAVI
 GSets the x, y, z position for a panel. Must not be in a flowing layout.<br><br><b>Example:</b><pre>position: 3% 20px 0px;</pre
-Ga>-nojoy
+Ga>-joy
 GameResourceServiceClientV001
 GameResourceServiceServerV001
 GameUIService_001
@@ -2461,6 +2467,7 @@ JS_NUMBER
 JS_STRING
 JX[A\A]A^A
 January
+Javascript
 K8IcS I
 KEYFRAMES
 KEYFRAME_SELECTOR
@@ -2482,6 +2489,7 @@ L$xdH3
 L9s v
 L9s vm
 L9t$ t9H
+L9v ~FL
 L9|$(tLL
 L;#tGH
 L;$$tJA
@@ -4627,6 +4635,7 @@ VScriptDbg
 VScriptManager010
 VStringTokenSystem001
 VTT for
+VWebm001
 VZ#-DLU[3=h
 V_:X1
 V_BasicHtmlEntityEncode
@@ -4911,7 +4920,6 @@ You must construct it with ORDERED_CONSTRUCT macro in the dependency resolution 
 You must turn on panorama_track_render_commands to track command usage
 Z-google.golang.org/protobuf/types/descriptorpb
 Z13V_SplitStringPKcS0_R10CUtlVectorI10CUtlStringi10CUtlMemoryIS2_iEEb
-Z13V_SplitStringPKcS0_R10CUtlVectorIPci10CUtlMemoryIS2_iEE
 Z13base64_decodeR10CUtlBufferRKS
 Z14V_stristr_fastPKcS0
 Z15LoadKV3FromJSONP10KeyValues3P10CUtlStringPKcS4
@@ -5136,7 +5144,7 @@ ZN11CTSListBase12InternalPushEP13TSLNodeBase_t
 ZN11CTSListBase6DetachEv
 ZN11CTSListBaseC1Ev
 ZN11CTSListBaseC2Ev
-ZN12CSplitString9ConstructEPKcPS1_ib
+ZN12CSplitString5SplitEPKciPS1_ib
 ZN12CThreadEvent3SetEv
 ZN12CThreadEvent5ResetEv
 ZN12CThreadEventC1Eb
@@ -5165,6 +5173,7 @@ ZN13CRawAllocator5AllocE18RawAllocatorType_tmPm
 ZN13CThreadRWLock11UnlockWriteEPKci
 ZN13CThreadRWLock11WaitForReadEv
 ZN13CThreadRWLock12LockForWriteEPKci
+ZN14CUtlStringList11SplitStringEPKcPKS1_i
 ZN15CKeyValues_Data18Internal_GetStringEPKcPcm
 ZN15CUtlSymbolTable9AddStringEPKcPb
 ZN15CUtlSymbolTable9RemoveAllEv
@@ -5215,6 +5224,9 @@ ZN2v814ObjectTemplate11SetAccessorENS_5LocalINS_6StringEEEPFvS3_RKNS_20PropertyC
 ZN2v814ObjectTemplate21SetInternalFieldCountEi
 ZN2v814ObjectTemplate24SetCallAsFunctionHandlerEPFvRKNS_20FunctionCallbackInfoINS_5ValueEEEENS_5LocalIS2_EE
 ZN2v814ObjectTemplate3NewEPNS_7IsolateENS_5LocalINS_16FunctionTemplateEEE
+ZN2v814ScriptCompiler10CachedDataD1Ev
+ZN2v814ScriptCompiler20ConsumeCodeCacheTaskD1Ev
+ZN2v814ScriptCompiler7CompileENS_5LocalINS_7ContextEEEPNS0_6SourceENS0_14CompileOptionsENS0_13NoCacheReasonE
 ZN2v816FunctionTemplate11GetFunctionENS_5LocalINS_7ContextEEE
 ZN2v816FunctionTemplate3NewEPNS_7IsolateEPFvRKNS_20FunctionCallbackInfoINS_5ValueEEEENS_5LocalIS4_EENSA_INS_9SignatureEEEiNS_19ConstructorBehaviorENS_14SideEffectTypeEPKNS_9CFunctionEttt
 ZN2v820EscapableHandleScope6EscapeEPm
@@ -10642,7 +10654,6 @@ cairo_version
 cairo_version_string
 called a function that was disabled at compile-time
 called a function you should not call
-calloc
 camellia-128-cbc
 camellia-128-cfb
 camellia-128-cfb1
@@ -11006,7 +11017,6 @@ elliptic curve routines
 emailAddress
 emailProtection
 empty member name
-enabled
 encrypted track 2
 engine
 engine routines
@@ -11686,6 +11696,7 @@ italian
 italic
 jA9]$|dI
 jHi[Zz
+jaE1ɹY
 janetMailbox
 japanese
 java Class for
@@ -11951,6 +11962,9 @@ loongson-mmi
 lowercase
 lseek64
 lt;Needs a description&gt
+m H;-0
+m8H;-J
+m8L;-j
 mXRecord
 m_bNeedsSort
 m_pRoot
@@ -12042,7 +12056,7 @@ msExtReq
 msSmartcardLogin
 mt19937
 must be unique within
-mxH;-P
+mxH;-p
 n A9F
 n L9l
 n8ATUH
@@ -12070,10 +12084,12 @@ no_standard_descriptor_accessor
 noclip
 noexcept
 noime
+nojoy
 non-transaction clone for
 non-virtual thunk to
 nonet@H
 nonzero
+nopanoramajoy
 normal
 normtHH
 norwegian
@@ -12294,6 +12310,7 @@ panorama_joystick_axis_repeat_interval_start
 panorama_joystick_button_repeat_curve_time
 panorama_joystick_button_repeat_interval_end
 panorama_joystick_button_repeat_interval_start
+panorama_joystick_enabled
 panorama_js_minidumps
 panorama_large_dispatch_event_queue
 panorama_max_fps
@@ -12311,6 +12328,7 @@ panorama_rt_%s.vtex
 panorama_rt_composition_atlas%i.vtex
 panorama_rt_ds_%s.vtex
 panorama_rt_pp_%s.vtex
+panorama_script_cache_enabled
 panorama_show_fps
 panorama_show_fps_scale
 panorama_simple_borders_no_comp_layer
@@ -12618,7 +12636,6 @@ schema_description
 schema_friendly_name
 schema_suppress_enumerator
 schinese
-script
 script /> tags within XML files are no longer supported. Please create a separate script file that is included via an <include /> in the <scripts /> section
 scripts
 scrollbehavior

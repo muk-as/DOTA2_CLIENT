@@ -1,6 +1,6 @@
 --- Files in package:
-	vcs: 322 files
-	ini: 117 files
+	vcs: 327 files
+	ini: 119 files
 shaders/vfx/aoproxy_splat.ini crc=0x00 size=0
 shaders/vfx/bilateral_blur.ini crc=0x00 size=0
 shaders/vfx/black.ini crc=0x00 size=0
@@ -84,6 +84,8 @@ shaders/vfx/ssao_bilateral_blur.ini crc=0x00 size=0
 shaders/vfx/ssao_convert_depth.ini crc=0x00 size=0
 shaders/vfx/ssao_downsample_depth.ini crc=0x00 size=0
 shaders/vfx/ssao_scalable_ambient_obscurance.ini crc=0x00 size=0
+shaders/vfx/sst_copy_depth.ini crc=0x00 size=0
+shaders/vfx/sst_cs.ini crc=0x00 size=0
 shaders/vfx/sum_aggregate_cull_stats.ini crc=0x00 size=0
 shaders/vfx/texture_generator_facevertexcolor.ini crc=0x00 size=0
 shaders/vfx/texture_generator_objectspacenormal.ini crc=0x00 size=0
@@ -133,8 +135,8 @@ shaders/vfx/blur_pc_40_vs.vcs crc=0x42265a5b size=360
 shaders/vfx/cables_pc_40_features.vcs crc=0xa5167429 size=7154
 shaders/vfx/cables_pc_40_ps.vcs crc=0xaac5a643 size=16245
 shaders/vfx/cables_pc_40_vs.vcs crc=0xe67a61a3 size=11267
-shaders/vfx/cmaa2_pc_50_cs.vcs crc=0x464eb201 size=11958
-shaders/vfx/cmaa2_pc_50_features.vcs crc=0x4353f4d5 size=5237
+shaders/vfx/cmaa2_pc_50_cs.vcs crc=0x35bb6036 size=11958
+shaders/vfx/cmaa2_pc_50_features.vcs crc=0x62531d08 size=5237
 shaders/vfx/combine_colorcorrection_lut_cs_pc_50_cs.vcs crc=0x7009055e size=6648
 shaders/vfx/combine_colorcorrection_lut_cs_pc_50_features.vcs crc=0xbf7deeb8 size=5761
 shaders/vfx/compact_indirect_draws_pc_50_cs.vcs crc=0xa51e7e81 size=3896
@@ -164,8 +166,8 @@ shaders/vfx/cs_parallel_sort_pc_50_cs.vcs crc=0x4e8f72cb size=409
 shaders/vfx/cs_parallel_sort_pc_50_features.vcs crc=0x19210fe2 size=343
 shaders/vfx/cull_aggregate_fragments_pc_50_cs.vcs crc=0xfcb2fb99 size=122386
 shaders/vfx/cull_aggregate_fragments_pc_50_features.vcs crc=0x90eeb0b1 size=19975
-shaders/vfx/cull_instanced_meshes_pc_50_cs.vcs crc=0x815398bf size=140810
-shaders/vfx/cull_instanced_meshes_pc_50_features.vcs crc=0x93e4a3a7 size=22402
+shaders/vfx/cull_instanced_meshes_pc_50_cs.vcs crc=0xe5e1ff8 size=139147
+shaders/vfx/cull_instanced_meshes_pc_50_features.vcs crc=0x20ab01fb size=22402
 shaders/vfx/debug_show_texture_pc_40_features.vcs crc=0xe13c5840 size=1787
 shaders/vfx/debug_show_texture_pc_40_ps.vcs crc=0x831d3c4a size=2246
 shaders/vfx/debug_show_texture_pc_40_vs.vcs crc=0xd5083294 size=378
@@ -194,8 +196,8 @@ shaders/vfx/fsr2_compute_reactive_mask_pc_50_vs.vcs crc=0x50e8f655 size=314
 shaders/vfx/fsr_upscale_pc_50_features.vcs crc=0xec909003 size=3585
 shaders/vfx/fsr_upscale_pc_50_ps.vcs crc=0xb8cc93a5 size=6428
 shaders/vfx/fsr_upscale_pc_50_vs.vcs crc=0x904ee363 size=371
-shaders/vfx/fxaa_cs_pc_50_cs.vcs crc=0x29add14c size=8571
-shaders/vfx/fxaa_cs_pc_50_features.vcs crc=0x2e2b1816 size=5236
+shaders/vfx/fxaa_cs_pc_50_cs.vcs crc=0x50a1d0e2 size=8564
+shaders/vfx/fxaa_cs_pc_50_features.vcs crc=0xc27f9e18 size=5236
 shaders/vfx/general_filter_pc_40_features.vcs crc=0x7e28292b size=7039
 shaders/vfx/general_filter_pc_40_ps.vcs crc=0x90f8afec size=15068
 shaders/vfx/general_filter_pc_40_vs.vcs crc=0xb43d1887 size=838
@@ -225,14 +227,14 @@ shaders/vfx/imgui_srgb_pc_40_ps.vcs crc=0x2576c3f0 size=2893
 shaders/vfx/imgui_srgb_pc_40_vs.vcs crc=0x1f1a15bf size=1042
 shaders/vfx/implicit_surface_pc_50_cs.vcs crc=0x585d1aad size=18083
 shaders/vfx/implicit_surface_pc_50_features.vcs crc=0x1e935158 size=8671
-shaders/vfx/lightmap_generate_small_chart_samples_pc_50_cs.vcs crc=0xb604a1 size=245
-shaders/vfx/lightmap_generate_small_chart_samples_pc_50_features.vcs crc=0x4911ee1d size=381
-shaders/vfx/lightmap_rasterize_pc_50_features.vcs crc=0xf9f39dfa size=2813
-shaders/vfx/lightmap_rasterize_pc_50_gs.vcs crc=0x265a3c38 size=1287
-shaders/vfx/lightmap_rasterize_pc_50_ps.vcs crc=0xaf157980 size=2818
+shaders/vfx/lightmap_generate_small_chart_samples_pc_50_cs.vcs crc=0x87dac352 size=245
+shaders/vfx/lightmap_generate_small_chart_samples_pc_50_features.vcs crc=0x83c38706 size=381
+shaders/vfx/lightmap_rasterize_pc_50_features.vcs crc=0x5124c454 size=2813
+shaders/vfx/lightmap_rasterize_pc_50_gs.vcs crc=0x1b913f75 size=1287
+shaders/vfx/lightmap_rasterize_pc_50_ps.vcs crc=0x3f063239 size=2818
 shaders/vfx/lightmap_rasterize_pc_50_vs.vcs crc=0x16323c51 size=1309
-shaders/vfx/lightmap_vertexlight_reduce_pc_50_cs.vcs crc=0x42aafcf5 size=3100
-shaders/vfx/lightmap_vertexlight_reduce_pc_50_features.vcs crc=0x967ec3ca size=2474
+shaders/vfx/lightmap_vertexlight_reduce_pc_50_cs.vcs crc=0xa24e5445 size=3100
+shaders/vfx/lightmap_vertexlight_reduce_pc_50_features.vcs crc=0xc44b4f43 size=2474
 shaders/vfx/lpv_debug_grid_pc_50_features.vcs crc=0x6b531a71 size=3216
 shaders/vfx/lpv_debug_grid_pc_50_gs.vcs crc=0x87d70f7a size=8014
 shaders/vfx/lpv_debug_grid_pc_50_ps.vcs crc=0x61c3c94c size=7484
@@ -266,9 +268,9 @@ shaders/vfx/panorama_pc_40_vs.vcs crc=0x8f7baade size=428
 shaders/vfx/panorama_pc_50_features.vcs crc=0x7c28237d size=4747
 shaders/vfx/panorama_pc_50_ps.vcs crc=0x70eb0016 size=8110
 shaders/vfx/panorama_pc_50_vs.vcs crc=0x24234185 size=424
-shaders/vfx/physics_wireframe_pc_40_features.vcs crc=0xe3d9ef75 size=3126
+shaders/vfx/physics_wireframe_pc_40_features.vcs crc=0xac3de13e size=3126
 shaders/vfx/physics_wireframe_pc_40_ps.vcs crc=0x86786654 size=13488
-shaders/vfx/physics_wireframe_pc_40_vs.vcs crc=0x4c008ebe size=9701
+shaders/vfx/physics_wireframe_pc_40_vs.vcs crc=0x959ae651 size=9687
 shaders/vfx/post_process_pc_40_features.vcs crc=0xdfd9ce68 size=16116
 shaders/vfx/post_process_pc_40_ps.vcs crc=0xf3616ba5 size=41373
 shaders/vfx/post_process_pc_40_vs.vcs crc=0xc48927f4 size=5152
@@ -277,18 +279,18 @@ shaders/vfx/rendermicrobenchmark_pc_40_ps.vcs crc=0x2f5a22cc size=608
 shaders/vfx/rendermicrobenchmark_pc_40_vs.vcs crc=0xec20304d size=851
 shaders/vfx/reset_draw_params_cs_pc_50_cs.vcs crc=0x620f159d size=3634
 shaders/vfx/reset_draw_params_cs_pc_50_features.vcs crc=0x477ff099 size=2787
-shaders/vfx/rtx_binlights_pc_50_features.vcs crc=0x87c568a0 size=369
-shaders/vfx/rtx_debug_visualization_pc_50_features.vcs crc=0x1acd30b5 size=370
-shaders/vfx/rtx_default_hitgroup_pc_50_features.vcs crc=0x4551fc71 size=521
+shaders/vfx/rtx_binlights_pc_50_features.vcs crc=0x8614928 size=369
+shaders/vfx/rtx_debug_visualization_pc_50_features.vcs crc=0xe6c26bb3 size=370
+shaders/vfx/rtx_default_hitgroup_pc_50_features.vcs crc=0xd3e61a50 size=521
 shaders/vfx/rtx_generate_scrambled_halton_samples_pc_50_cs.vcs crc=0x80631161 size=244
 shaders/vfx/rtx_generate_scrambled_halton_samples_pc_50_features.vcs crc=0xe58d9014 size=351
-shaders/vfx/rtx_pathtracer_pc_50_features.vcs crc=0x69b1bcfb size=391
-shaders/vfx/rtx_vrad3_lightmap_pc_50_features.vcs crc=0xd50406ce size=369
-shaders/vfx/rtx_vrad3_lightmap_sample_validation_pc_50_features.vcs crc=0xc951eb7f size=369
-shaders/vfx/rtx_vrad3_lpv_pc_50_features.vcs crc=0xb305f2ff size=369
-shaders/vfx/rtx_vrad3_vertexlight_pc_50_features.vcs crc=0x4b848b01 size=369
-shaders/vfx/sampletexture_bicubic_pc_40_features.vcs crc=0xd1e8b374 size=6469
-shaders/vfx/sampletexture_bicubic_pc_40_ps.vcs crc=0xf88367f size=7797
+shaders/vfx/rtx_pathtracer_pc_50_features.vcs crc=0x2f16213d size=391
+shaders/vfx/rtx_vrad3_lightmap_pc_50_features.vcs crc=0x1d9af4f0 size=369
+shaders/vfx/rtx_vrad3_lightmap_sample_validation_pc_50_features.vcs crc=0x59f9cdff size=369
+shaders/vfx/rtx_vrad3_lpv_pc_50_features.vcs crc=0x9952119 size=369
+shaders/vfx/rtx_vrad3_vertexlight_pc_50_features.vcs crc=0xeaa45a63 size=369
+shaders/vfx/sampletexture_bicubic_pc_40_features.vcs crc=0x58b8f8f3 size=6423
+shaders/vfx/sampletexture_bicubic_pc_40_ps.vcs crc=0xfaa8478 size=7993
 shaders/vfx/sampletexture_bicubic_pc_40_vs.vcs crc=0xbef1f4e6 size=360
 shaders/vfx/screen_texture_with_depth_pc_40_features.vcs crc=0xeb9b7b94 size=2237
 shaders/vfx/screen_texture_with_depth_pc_40_ps.vcs crc=0x64c2bbd7 size=1270
@@ -331,6 +333,11 @@ shaders/vfx/ssao_pc_40_vs.vcs crc=0x93957229 size=390
 shaders/vfx/ssao_scalable_ambient_obscurance_pc_40_features.vcs crc=0xad93c62e size=5615
 shaders/vfx/ssao_scalable_ambient_obscurance_pc_40_ps.vcs crc=0x33d187ff size=12602
 shaders/vfx/ssao_scalable_ambient_obscurance_pc_40_vs.vcs crc=0x48c67b57 size=327
+shaders/vfx/sst_copy_depth_pc_50_features.vcs crc=0xb01c841b size=1354
+shaders/vfx/sst_copy_depth_pc_50_ps.vcs crc=0xbeced51d size=1279
+shaders/vfx/sst_copy_depth_pc_50_vs.vcs crc=0xf603c594 size=354
+shaders/vfx/sst_cs_pc_50_cs.vcs crc=0x4f574103 size=13265
+shaders/vfx/sst_cs_pc_50_features.vcs crc=0xb909d6c2 size=8680
 shaders/vfx/sum_aggregate_cull_stats_pc_50_cs.vcs crc=0x6d7cde8f size=2759
 shaders/vfx/sum_aggregate_cull_stats_pc_50_features.vcs crc=0x308db54d size=2314
 shaders/vfx/texture_generator_facevertexcolor_pc_50_features.vcs crc=0xf8d6d435 size=492

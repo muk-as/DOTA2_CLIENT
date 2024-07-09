@@ -59,6 +59,7 @@
 15C_OP_RemapSpeed
 15C_OP_RenderText
 15C_OP_SpinUpdate
+15IGapHost_Cursor
 16CGenericExprPart
 16CPulseExecCursor
 16C_INIT_InitFloat
@@ -85,12 +86,14 @@
 16C_OP_SDFLighting
 16C_OP_SetVariable
 16C_OP_VectorNoise
+16IGapHost_ExecLog
 16IGapHost_Unknown
 16ILoggingListener
 16ISceneObjectDesc
 17CParticleFunction
 17CParticleSnapshot
 17CParticleVecInput
+17C_OP_DensityForce
 17C_OP_DistanceCull
 17C_OP_FadeInSimple
 17C_OP_HSVShiftToCP
@@ -109,6 +112,7 @@
 18CBaseTrailRenderer
 18CGenericExpr_Unary
 18CParticleSystemMgr
+18CPulseCell_Unknown
 18C_INIT_GlobalScale
 18C_INIT_RandomAlpha
 18C_INIT_RandomColor
@@ -252,10 +256,12 @@
 23C_INIT_SequenceLifeTime
 23C_INIT_SetHitboxToModel
 23C_OP_DecayMaintainCount
+23C_OP_IntraParticleForce
 23C_OP_RampCPLinearRandom
 23C_OP_RenderFlattenGrass
 23C_OP_RenderStatusEffect
 23C_OP_SetFloatCollection
+23IGapHost_YieldingCursor
 23IGapTypeQueriesForScope
 24CChildFunctionDefinition
 24CGenericExpr_BoolLiteral
@@ -478,6 +484,7 @@
 32CParticleFunctionDefinitionTypedI16C_OP_SDFLightingE
 32CParticleFunctionDefinitionTypedI16C_OP_SetVariableE
 32CParticleFunctionDefinitionTypedI16C_OP_VectorNoiseE
+32CParticleFunctionDefinitionTypedI17C_OP_DensityForceE
 32CParticleFunctionDefinitionTypedI17C_OP_DistanceCullE
 32CParticleFunctionDefinitionTypedI17C_OP_FadeInSimpleE
 32CParticleFunctionDefinitionTypedI17C_OP_HSVShiftToCPE
@@ -587,6 +594,7 @@
 32CParticleFunctionDefinitionTypedI23C_INIT_SequenceLifeTimeE
 32CParticleFunctionDefinitionTypedI23C_INIT_SetHitboxToModelE
 32CParticleFunctionDefinitionTypedI23C_OP_DecayMaintainCountE
+32CParticleFunctionDefinitionTypedI23C_OP_IntraParticleForceE
 32CParticleFunctionDefinitionTypedI23C_OP_RampCPLinearRandomE
 32CParticleFunctionDefinitionTypedI23C_OP_RenderFlattenGrassE
 32CParticleFunctionDefinitionTypedI23C_OP_RenderStatusEffectE
@@ -954,7 +962,9 @@
 8@%r8 8@-80(%rbx
 8@%rdi 8@%rsi
 8@%rdx 8@%rax
+8Lc&D;f
 8LcwpE
+8[A\A
 8[A\A]A^A
 8]pt	8]q
 9C4v'H
@@ -1274,7 +1284,7 @@ AWAVAULc
 AWAVAUM
 AWAVE1
 AWAVfA
-AXt<L
+AYAZt%H
 AYUVToNV12
 AYUVToNV21
 AYUVToUVRow_C
@@ -1282,7 +1292,6 @@ AYUVToVURow_C
 AYUVToYRow_C
 A\A]A
 A\A]A^A
-A\A]A^A_]Ë5nVX
 A\A]A^A_]þvmatL
 A\A]A^A_ÐAUATUH
 A\A]A^ÐAUL
@@ -1498,14 +1507,13 @@ C L9 t L
 C L9 t"L
 C L9 t%L
 C L9 t&L
-C L9 t)L
 C L9 t+L
 C L9 t-L
 C L9 t.L
 C L9 t4L
-C L9 tOL
-C L9 tQL
-C L9 t\L
+C L9 t7L
+C L9 tUL
+C L9 tYL
 C L9 thL
 C L9 tjL
 C L9 tlL
@@ -1513,8 +1521,6 @@ C L9 tmL
 C L9 tnL
 C L9 toL
 C L9 tqL
-C L9 trL
-C L9 ttL
 C L9 txL
 C L9 tyL
 C L9 t|L
@@ -1523,7 +1529,6 @@ C L; thL
 C L; tkL
 C L; trL
 C L; tsL
-C L;(trL
 C%d:I%d {ID=%-3d
 C8H9C
 CBasePulseGraphInstance
@@ -1670,6 +1675,7 @@ CPulseCell_Test_MultiOutflow_WithParams_Yielding::CursorState_t
 CPulseCell_Test_NoInflow
 CPulseCell_Timeline
 CPulseCell_Timeline::TimelineEvent_t
+CPulseCell_Unknown
 CPulseCell_Val_TestDomainFindEntityByName
 CPulseCell_Val_TestDomainGetEntityName
 CPulseCell_Value_RandomInt
@@ -1912,6 +1918,7 @@ C_OP_Decay
 C_OP_DecayClampCount
 C_OP_DecayMaintainCount
 C_OP_DecayOffscreen
+C_OP_DensityForce
 C_OP_DifferencePreviousParticle
 C_OP_Diffusion
 C_OP_DirectionBetweenVecsToVec
@@ -1943,6 +1950,7 @@ C_OP_InheritFromParentParticlesV2
 C_OP_InheritFromPeerSystem
 C_OP_InstantaneousEmitter
 C_OP_InterpolateRadius
+C_OP_IntraParticleForce
 C_OP_LagCompensation
 C_OP_LerpEndCapScalar
 C_OP_LerpEndCapVector
@@ -2377,6 +2385,7 @@ Default_Keys
 DemoUpconverterVersion001
 Density value to map to max value
 Density value to map to min value
+Density-based force
 Depth buffer control and effects
 Depth feathering mode
 Derived Func A
@@ -2728,6 +2737,7 @@ Gm_flPosition
 GpuImplicitRendererManifest
 Green Channel
 Green with Green as Alpha
+H A9^t
 H D;ct
 H D;kt
 H tgA
@@ -2793,6 +2803,7 @@ HcK8Ic
 HcO4McB
 HcȋE(H
 HelpSystem_001
+HfE9l$@D
 Hitbox Count
 Hitbox Index
 Hitbox Offset Position
@@ -2804,7 +2815,6 @@ Honors the per-particle radius (multiplied by radius scale) but is more expensiv
 HostStateMgr001
 How aggressive the switch to fallbacks will be depending on how far over the cl_particle_sim_fallback_threshold_ms the sim time is.  Higher numbers are more aggressive
 Hybrid Box/Capsule
-I A9T$t
 I cannot be refracted through refracting objects like water
 I could not work out what I was expecting, like so many of us these days
 I010AlphaToARGBMatrix
@@ -3011,6 +3021,9 @@ I9\$@tlH
 I;G s'L
 I;G s=H
 ID_CHAR
+IGapHost_Cursor
+IGapHost_ExecLog
+IGapHost_YieldingCursor
 IKV3TransferInterface_EHandle_Load
 IKV3TransferInterface_EHandle_Save
 IKV3TransferInterface_GameTime_Load
@@ -3052,8 +3065,10 @@ ITM_deregisterTMCloneTable
 ITM_memcpyRnWt
 ITM_memcpyRtWn
 ITM_registerTMCloneTable
+IcD$<f
+IcE H
 IcF0Hc
-IcMPIc
+IcNPIc
 IcV4Mc
 IcsxI
 If (R%d) Jump to Instr I%d
@@ -3139,6 +3154,7 @@ InterpolateRow_Any_AVX2
 InterpolateRow_Any_SSSE3
 InterpolateRow_C
 InterpolateRow_SSSE3
+Intra-particle force
 Invalid Color Control Point
 Invalid control point %d in %s
 Invalid use of KV3 specific type %s with basic type %s, must be basic type %s
@@ -3184,7 +3200,6 @@ Killed on Collision
 L$HH;G
 L9C t#H
 L;l$puYH
-L@QAngle
 LAST_SERIALIZED_CODE
 LC_ADDRESS
 LC_COLLATE
@@ -3217,7 +3232,6 @@ LT_INT
 Last/Newest Particle
 Lc"D;b
 Lc#D;c
-Lc'D;g
 Lc+D;k
 Lc2D;r
 Left Hand
@@ -3404,7 +3418,8 @@ Maximum distance
 Maximum of two values (float
 Maximum of two values (int
 Maximum random scale for radius
-Mc'E;g
+Mc,$E;l
+Mc7E;w
 Mc<$E
 McT$4Mc|$8
 Medium
@@ -3482,6 +3497,7 @@ Mismatched Token Exception
 Mismatched set
 Missing %s
 Missing <EOF
+Missing cell schema '%s', replacing with 'CPulseCell_Unknown
 Missing data block
 Missing required transfer interface: %s
 Missing snapshot buffer block
@@ -3506,6 +3522,7 @@ ModelDocUtils001
 ModelHitboxType_t
 ModelInput
 ModelReference_t
+Modelling scale
 Monday
 MotionVectorsTexture
 Move forward in the facing direction
@@ -3559,16 +3576,16 @@ N12_GLOBAL__N_122generic_error_categoryE
 N24CFieldPathHuffmanEncoder12InternalNodeE
 N24CFieldPathHuffmanEncoder5INodeE
 N24CFieldPathHuffmanEncoder8LeafNodeE
-N24CParallelProcessLauncher18CParallelLambdaJobIZ11ParallelForILb1EZN11CVoxelArray44GenerateDistanceFieldFromTrianglesWithVotingEPK5Vec3DIfEiPKiifiEUliE0_EviiPKcT0_ii13JobPriority_tEUliE_EE
-N24CParallelProcessLauncher18CParallelLambdaJobIZ11ParallelForILb1EZN11CVoxelArray44GenerateDistanceFieldFromTrianglesWithVotingEPK5Vec3DIfEiPKiifiEUliE_EviiPKcT0_ii13JobPriority_tEUliE_EE
-N24CParallelProcessLauncher18CParallelLambdaJobIZ11ParallelForILb1EZN13CSOAContainer11IterateRowsIZN11CVoxelArray44GenerateDistanceFieldFromTrianglesWithVotingEPK5Vec3DIfEiPKiifiEUliE2_EEvT_bEUliE_EviiPKcT0_ii13JobPriority_tEUliE_EE
-N24CParallelProcessLauncher18CParallelLambdaJobIZ11ParallelForILb1EZN13CSOAContainer11IterateRowsIZN11CVoxelArray44GenerateDistanceFieldFromTrianglesWithVotingEPK5Vec3DIfEiPKiifiEUliE3_EEvT_bEUliE_EviiPKcT0_ii13JobPriority_tEUliE_EE
-N24CParallelProcessLauncher18CParallelLambdaJobIZ11ParallelForILb1EZN13CSOAContainer11IterateRowsIZN13FloatBitMap_t12TransformRGBIZN11CVoxelArray34GenerateDistanceFieldFromTrianglesEPK5Vec3DIfEiPKiifiiEUlS8_iiiE0_EEvOT_EUliE_EEvSE_bEUliE_EviiPKcT0_ii13JobPriority_tEUliE_EE
-N24CParallelProcessLauncher18CParallelLambdaJobIZ11ParallelForILb1EZN13CSOAContainer11IterateRowsIZN13FloatBitMap_t12TransformRGBIZN11CVoxelArray34GenerateDistanceFieldFromTrianglesEPK5Vec3DIfEiPKiifiiEUlS8_iiiE_EEvOT_EUliE_EEvSE_bEUliE_EviiPKcT0_ii13JobPriority_tEUliE_EE
-N24CParallelProcessLauncher18CParallelLambdaJobIZ11ParallelForILb1EZN13CSOAContainer11IterateRowsIZNS2_31RemoveInteriorISOSurfaceSamplesEifiEUliE_EEvT_bEUliE_EviiPKcT0_ii13JobPriority_tEUliE_EE
-N24CParallelProcessLauncher18CParallelLambdaJobIZ11ParallelForILb1EZN20CSweepBlockProcessorILi1EE22InitDependencyCountersEvEUliE_EviiPKcT0_ii13JobPriority_tEUliE_EE
-N24CParallelProcessLauncher18CParallelLambdaJobIZ11ParallelForILb1EZN20CSweepBlockProcessorILi1EE3RunEvEUliE_EviiPKcT0_ii13JobPriority_tEUliE_EE
-N24CParallelProcessLauncher18CParallelLambdaJobIZ11ParallelForILb1EZNK17C_OP_RenderModels12PostSimulateEP19CParticleCollectionPvEUliE_EviiPKcT0_ii13JobPriority_tEUliE_EE
+N24CParallelProcessLauncher18CParallelLambdaJobIZ11ParallelForILb1EZN11CVoxelArray44GenerateDistanceFieldFromTrianglesWithVotingEPK5Vec3DIfEiPKiifiEUliE0_EviiPKcOT0_ii13JobPriority_tEUliE_EE
+N24CParallelProcessLauncher18CParallelLambdaJobIZ11ParallelForILb1EZN11CVoxelArray44GenerateDistanceFieldFromTrianglesWithVotingEPK5Vec3DIfEiPKiifiEUliE_EviiPKcOT0_ii13JobPriority_tEUliE_EE
+N24CParallelProcessLauncher18CParallelLambdaJobIZ11ParallelForILb1EZN13CSOAContainer11IterateRowsIZN11CVoxelArray44GenerateDistanceFieldFromTrianglesWithVotingEPK5Vec3DIfEiPKiifiEUliE2_EEvT_bEUliE_EviiPKcOT0_ii13JobPriority_tEUliE_EE
+N24CParallelProcessLauncher18CParallelLambdaJobIZ11ParallelForILb1EZN13CSOAContainer11IterateRowsIZN11CVoxelArray44GenerateDistanceFieldFromTrianglesWithVotingEPK5Vec3DIfEiPKiifiEUliE3_EEvT_bEUliE_EviiPKcOT0_ii13JobPriority_tEUliE_EE
+N24CParallelProcessLauncher18CParallelLambdaJobIZ11ParallelForILb1EZN13CSOAContainer11IterateRowsIZN13FloatBitMap_t12TransformRGBIZN11CVoxelArray34GenerateDistanceFieldFromTrianglesEPK5Vec3DIfEiPKiifiiEUlS8_iiiE0_EEvOT_EUliE_EEvSE_bEUliE_EviiPKcOT0_ii13JobPriority_tEUliE_EE
+N24CParallelProcessLauncher18CParallelLambdaJobIZ11ParallelForILb1EZN13CSOAContainer11IterateRowsIZN13FloatBitMap_t12TransformRGBIZN11CVoxelArray34GenerateDistanceFieldFromTrianglesEPK5Vec3DIfEiPKiifiiEUlS8_iiiE_EEvOT_EUliE_EEvSE_bEUliE_EviiPKcOT0_ii13JobPriority_tEUliE_EE
+N24CParallelProcessLauncher18CParallelLambdaJobIZ11ParallelForILb1EZN13CSOAContainer11IterateRowsIZNS2_31RemoveInteriorISOSurfaceSamplesEifiEUliE_EEvT_bEUliE_EviiPKcOT0_ii13JobPriority_tEUliE_EE
+N24CParallelProcessLauncher18CParallelLambdaJobIZ11ParallelForILb1EZN20CSweepBlockProcessorILi1EE22InitDependencyCountersEvEUliE_EviiPKcOT0_ii13JobPriority_tEUliE_EE
+N24CParallelProcessLauncher18CParallelLambdaJobIZ11ParallelForILb1EZN20CSweepBlockProcessorILi1EE3RunEvEUliE_EviiPKcOT0_ii13JobPriority_tEUliE_EE
+N24CParallelProcessLauncher18CParallelLambdaJobIZ11ParallelForILb1EZNK17C_OP_RenderModels12PostSimulateEP19CParticleCollectionPvEUliE_EviiPKcOT0_ii13JobPriority_tEUliE_EE
 N24CParallelProcessLauncher18CParallelLambdaJobIZN13CSOAContainer9FilterInXEi9IntAABB_tiPKfbEUliE_EE
 N28GapBindingSchemaEnumTraits_tI27PulseCursorCancelPriority_tEUlvE_E
 N9__gnu_cxx13stdio_filebufIcSt11char_traitsIcEEE
@@ -3958,6 +3975,8 @@ PARTICLE_POST_PROCESS_PRIORITY_GAMEPLAY_STATE_LOW
 PARTICLE_POST_PROCESS_PRIORITY_GLOBAL_UI
 PARTICLE_POST_PROCESS_PRIORITY_LEVEL_OVERRIDE
 PARTICLE_POST_PROCESS_PRIORITY_LEVEL_VOLUME
+PARTICLE_REPLICATIONMODE_NONE
+PARTICLE_REPLICATIONMODE_REPLICATE_FOR_EACH_PARENT_PARTICLE
 PARTICLE_ROTATION_LOCK_NONE
 PARTICLE_ROTATION_LOCK_NORMAL
 PARTICLE_ROTATION_LOCK_ROTATIONS
@@ -4120,6 +4139,7 @@ PVAL_PANORAMA_PANEL_HANDLE
 PVAL_RESOURCE
 PVAL_SCHEMA_ENUM
 PVAL_SNDEVT_GUID
+PVAL_SNDEVT_NAME
 PVAL_STRING
 PVAL_TEST_HANDLE
 PVAL_TRANSFORM
@@ -4145,6 +4165,7 @@ PVEC_TYPE_PARTICLE_VELOCITY
 PVEC_TYPE_RANDOM_UNIFORM
 PVEC_TYPE_RANDOM_UNIFORM_OFFSET
 P[A\A]A
+P[A\A]A^A
 Panel ID
 PanelID
 Panorama Panel Handle
@@ -4221,6 +4242,7 @@ ParticlePinDistance_t
 ParticlePostProcessPriorityGroup_t
 ParticlePreviewBodyGroup_t
 ParticlePreviewState_t
+ParticleReplicationMode_t
 ParticleRotationLockType_t
 ParticleSelection_t
 ParticleSequenceCropOverride_t
@@ -4340,6 +4362,7 @@ Promise already satisfied
 Prop( %s
 PropWorldOrigin
 PropertyEditorSystem_001
+PtdH9
 Pull towards control point
 Pulse domain which enables particle content to query leaf code to introspect game state
 Pulse test failure: %s
@@ -4381,6 +4404,7 @@ PulseTestEnumShape_t
 PulseValueType_t
 PulseWarningLog
 Q)=root
+QAngle
 Qkkbal
 Quadratic/Linear Bias
 Quadrilaterals
@@ -4703,6 +4727,10 @@ Rendering filter
 Repeatedly Trigger Child Group
 Replace
 Replacement Options
+Replicate for each parent particle
+Replication
+Replication mode
+Replication settings
 Request elegant wind-down of any associated work (e.g. vcd interrupt
 Requirement Result R%d
 Resolution to use for creating a voxel grid
@@ -4865,6 +4893,7 @@ Scale Current Value Raw
 Scale Initial Value
 Scale Start/End Control Point
 Scale child particle radius based on parent radius
+Scale of force
 Scale to apply to result
 ScaleARGBCols64_C
 ScaleARGBColsUp2_C
@@ -5215,7 +5244,7 @@ SobelYRow_C
 SobelYRow_SSE2
 SoftCancel
 Sort Method
-SoundEvent Handle
+SoundEvent Instance Handle
 SoundOpSystem001
 SoundOpSystemEdit001
 SoundPicker
@@ -5469,8 +5498,10 @@ TRAIL_LENGTH
 TRIANGLE
 Take radius into account
 Take radius into account for distance
+TanFrameQuat
 Target
 Target color control point number
+Target density
 Teleport Beam
 Terminate
 TernaryConditional
@@ -5642,6 +5673,7 @@ Use New Particle at Same Index if Possible
 Use Next Parent Particle
 Use Quaternians Internally
 Use Random Children in Group
+Use fixed seeds for easier debugging
 Use local coordinates for offset
 Use local space offset
 Use parent density instead of ours
@@ -5695,6 +5727,7 @@ VPhysics2_Handle_Interface_001
 VPhysics2_Interface_001
 VProcessUtils002
 VProfService_001
+VQRPH
 VRenderDeviceSetupV001
 VScript
 VScriptDbg
@@ -5702,6 +5735,7 @@ VScriptManager010
 VStringTokenSystem001
 VTT for
 VUUUHi
+VWebm001
 VZ#-DLU[3=h
 V_:X1
 V_AppearsToBeANumber
@@ -5875,7 +5909,6 @@ X offset of center point
 X to the Y power
 X24_TYPELESS_G8_UINT
 X32_TYPELESS_G8X24_UINT
-XD*LD9
 XHcGPL
 XY velocity only
 X[A\A]A^A
@@ -6103,7 +6136,7 @@ ZN11CTSListBase12InternalPushEP13TSLNodeBase_t
 ZN11CTSListBase6DetachEv
 ZN11CTSListBaseC1Ev
 ZN11CTSListBaseC2Ev
-ZN12CSplitString9ConstructEPKcPS1_ib
+ZN12CSplitString5SplitEPKciPS1_ib
 ZN12CThreadEventC1Eb
 ZN13CBufferString10FixSlashesEc
 ZN13CBufferString11ToLowerFastEi
@@ -10638,7 +10671,6 @@ cable_tesselation_ib
 cable_tesselation_vb
 cablevertices
 cache attribute to read from
-calloc
 camera depth bias
 can't solve quadratic for light %f %f
 cannot create shim for unknown locale::facet
@@ -10826,6 +10858,7 @@ d PublicOutputs
 d Vars
 d instruction(s
 d register(s) %d byte(s
+d$h_AX
 d$xPAQj
 d62έ62έ62έ62
 dampen gravity/buoyancy near water plane
@@ -11004,6 +11037,7 @@ f %f %f %f
 f5J5J5J5J5J5J5J5J5J5J5J5J5J5J5J5Jx
 fD9|$8
 fD;cZw
+facing strength falloff
 fade end time
 fade in time exponent
 fade in time max
@@ -11582,6 +11616,7 @@ m_TransformInput
 m_TransformStart
 m_TwistAxis
 m_Type
+m_UnknownKeys
 m_UnyieldResume
 m_Value
 m_ValueType
@@ -11608,6 +11643,7 @@ m_bAllowApproximateTransforms
 m_bAnimateInFPS
 m_bAnimated
 m_bAnimated && m_bManualAnimFrame
+m_bAnimated && m_bScaleAnimationRate
 m_bAnimationNonLooping
 m_bApplyMinForce
 m_bAttachment
@@ -11866,6 +11902,7 @@ m_bSkin
 m_bSkipRenderingOnMobile
 m_bSoftEdges
 m_bSphericalCookie
+m_bStartAsleep
 m_bStencilTestExclude
 m_bStickInsteadOfCull
 m_bSubFrame
@@ -11875,6 +11912,7 @@ m_bSuppressStopSoundEvent
 m_bSuppressTint
 m_bSynchronizeParticles
 m_bTestYesOrNoPath
+m_bThreadIt
 m_bTintByFOW
 m_bTintByGlobalLight
 m_bTraceAlongNormal
@@ -11885,7 +11923,9 @@ m_bTransformRadii
 m_bTranslate
 m_bUniformSpeed
 m_bUpdatePosition
+m_bUseAABB
 m_bUseAlphaTestWindow
+m_bUseAvgParticlePos
 m_bUseBasicMovementGravity
 m_bUseBones
 m_bUseBoundsCenter
@@ -11894,6 +11934,7 @@ m_bUseCompressedNormalTangent
 m_bUseCount
 m_bUseDeltaV
 m_bUseHLambert
+m_bUseHighQualitySimulation
 m_bUseLocalCoords
 m_bUseMesh
 m_bUseMixedResolutionRendering
@@ -11954,6 +11995,7 @@ m_fRadPerPointTo
 m_fRadiusMax
 m_fRadiusMin
 m_fRadiusScale
+m_fSizeCullScale
 m_fSpeedMax
 m_fSpeedMin
 m_fSpeedRandExp
@@ -11981,6 +12023,9 @@ m_flAnimationRate
 m_flAnimationTimeScale
 m_flArcMaxDuration
 m_flArcSpeed
+m_flAttractionMaxDistance
+m_flAttractionMaxStrength
+m_flAttractionMinDistance
 m_flBParm
 m_flBias
 m_flBiasParameter
@@ -12086,6 +12131,7 @@ m_flEndTime_min
 m_flEndValue
 m_flEnvMapIntensity
 m_flExponent
+m_flFacingStrength
 m_flFadeBias
 m_flFadeEnd
 m_flFadeEndTime
@@ -12224,7 +12270,10 @@ m_flMinimumSimTime
 m_flMinimumSpeed
 m_flMinimumTimeStep
 m_flModelScale
+m_flModellingScale
 m_flMultFactor
+m_flNeighborDistance
+m_flNeighborDistance > 0
 m_flNoCameraFallback
 m_flNoDrawTimeToGoToSleep
 m_flNoPixelVisibilityFallback
@@ -12328,6 +12377,9 @@ m_flRelativeProbabilityOfSpawn
 m_flRelativeWeight
 m_flRemapBias
 m_flRemapTime
+m_flRepulsionMaxDistance
+m_flRepulsionMaxStrength
+m_flRepulsionMinDistance
 m_flResetRate
 m_flRestLength
 m_flRestingLength
@@ -12414,6 +12466,7 @@ m_flStopSimulationAfterTime
 m_flStopSpeed
 m_flTValue
 m_flTailAlphaScale
+m_flTargetDensity
 m_flTessScale
 m_flTextureBlend
 m_flTextureRepeatsCircumference
@@ -12721,6 +12774,7 @@ m_nMaxCol
 m_nMaxConstraintPasses
 m_nMaxEmittedPerFrame
 m_nMaxIterations
+m_nMaxParticleCount
 m_nMaxParticles
 m_nMaxPlanes
 m_nMaxRow
@@ -12813,6 +12867,7 @@ m_nReg
 m_nReg0
 m_nReg1
 m_nReg2
+m_nReplicationMode
 m_nResult
 m_nRisingEventType
 m_nRotationSetType
@@ -12936,6 +12991,7 @@ m_pszTimeOfDayParameter
 m_qOrientation
 m_randomnessParameters
 m_renderRadius
+m_replicationParameters
 m_rimLightColor
 m_rotationOffset
 m_sequenceName
@@ -13123,6 +13179,8 @@ materialsystem2
 matrix3x4
 max # of children to enable (-1 for max particle count
 max active CP
+max attraction distance
+max attraction force
 max column/particle index to affect
 max constraint passes
 max coords
@@ -13134,9 +13192,12 @@ max hitbox velocity
 max inherited bone velocity
 max initial speed
 max length
+max particle count
 max particles
 max projection depth
 max random displacement for child particles
+max repulsion distance
+max repulsion force
 max row/particle index to affect
 max trace length
 max_expected
@@ -13177,6 +13238,7 @@ mesh_calculate_curvature_smooth_weight
 metalness texture
 mid point position
 min active CP
+min attraction distance
 min column/particle index to affect
 min coords
 min dist to sdf
@@ -13187,6 +13249,7 @@ min initial speed
 min length
 min projection depth
 min random displacement for child particles
+min repulsion distance
 min row/particle index to affect
 minimum CPU level
 minimum GPU level
@@ -13261,6 +13324,7 @@ near %s
 near '%c
 near char(%#02X
 need dictionary
+neighbor distance
 newlocale
 next: %p, parent: %p
 next_cursor_id
@@ -13573,7 +13637,6 @@ public/tier0/tslist.h
 public/tier0/utlmap.h
 public/tier0/utlrbtree.h
 public/tier0/utlsymboltable.h
-pulse_open_graph_id %u
 pulse_open_graph_id %u %u
 pulse_runtime_lib
 pulse_save_execution_history
@@ -13590,11 +13653,13 @@ quaternion
 r_draw_particle_children_with_parents
 r_drawparticles
 r_freezeparticles
+r_limit_particle_job_duration
 r_particle_cables_cast_shadows
 r_particle_debug_filter
 r_particle_debug_force_simulation
 r_particle_debug_randomseeds
 r_particle_enable_fastpath
+r_particle_fixedrandomseeds
 r_particle_force_material_binds
 r_particle_gpu_implicit
 r_particle_gpu_implicit_debug_bricks
@@ -13850,6 +13915,7 @@ shuffle
 simulation timescale
 size at which to fade away
 size at which to start fading
+size cull scale
 sizeof
 skin number
 skinning
@@ -13906,6 +13972,7 @@ stapsdt
 stapsdt.base
 start age maximum
 start age minimum
+start all physics asleep
 start alpha
 start as last particle
 start control point number
@@ -13980,6 +14047,7 @@ syntax not recognized
 syscall
 system_state
 t$;0u D
+t=D9;u
 tGH;:uB
 tJ[A\A]A^A
 tKATUH
@@ -14020,6 +14088,7 @@ th[A\A]A^A
 third control point location
 third control point number
 thread initialization failed
+thread pairwise collision
 throw
 time coordinate offset
 time noise coordinate scale
@@ -14080,6 +14149,7 @@ u/H#D
 uI[A\A]A
 uP[A\A
 uP[A\A]A
+uYzA\A]A^A_]H
 ua8CHtdH
 ubD9kH
 uc8EHtfH
@@ -14115,7 +14185,10 @@ unsigned long
 unsigned long long
 unsigned short
 unspecified
+use AABB
 use Movement Basic for Local Gravity & Buoyancy Scale
+use aabbtree
+use average particle position
 use bones instead of hitboxes
 use continuous emission
 use delta of velocity instead of constant speed
@@ -14123,6 +14196,7 @@ use distance to an infinite line instead of a finite line segment
 use existing particle count
 use eye orientation
 use hand orientation
+use high quality simulation
 use hmd orientation
 use local space
 use local system
@@ -14144,7 +14218,6 @@ use velocity for test direction
 use vertical velocity for weighting
 uselocale
 utlsoacontainer.cpp:2453
-uuD9c }_A
 uxHcG
 v %f %f %f
 vE[A\A]A
@@ -14229,7 +14302,7 @@ volatile
 volume field
 volume scale
 voting took %? secs
-vpcf60
+vpcf61
 vpcfAUATL
 vpulse
 vr camera right eye
@@ -14288,7 +14361,6 @@ x4HcP0
 x6Lc2D;r
 xX0123456789abcdef0123456789ABCDEF
 xX0123456789abcdefABCDEF
-xXuYE1
 x[A\A]A^A
 xk;B`}fH
 xxxxxxxxxxxxxxx
