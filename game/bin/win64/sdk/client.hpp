@@ -85390,7 +85390,6 @@ public:
 // Registered binary: client.dll (project 'client')
 // Alignment: 4
 // Size: 0x5c
-// Has Trivial Constructor
 // Has Trivial Destructor
 // 
 // MGetKV3ClassDefaults
@@ -86434,7 +86433,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x350
+// Size: 0x358
 // 
 // MGetKV3ClassDefaults
 // MVDataRoot
@@ -86482,28 +86481,30 @@ public:
 	CUtlString m_sActTitleLocString; // 0x68	
 	// MPropertyDescription
 	item_definition_index_t m_unPremiumItemDef; // 0x70	
+	// MPropertyDescription
+	item_definition_index_t m_unFullCompletionItemDef; // 0x74	
 	// MPropertyDescription "ID of the scrap token rewarded for playing matches."
-	OverworldTokenID_t m_unScrapTokenID; // 0x74	
+	OverworldTokenID_t m_unScrapTokenID; // 0x78	
 private:
-	[[maybe_unused]] uint8_t __pad0075[0x3]; // 0x75
+	[[maybe_unused]] uint8_t __pad0079[0x7]; // 0x79
 public:
-	CUtlVector< CDOTAEventActionTrigger > m_vecEventActionTriggers; // 0x78	
-	CUtlVector< CDOTAEventActionGrantAndClaimPairTrigger > m_vecEventActionGrantAndClaimPairTriggers; // 0x90	
-	CUtlVector< CDOTAOverworldPathColorRule > m_vecPathColorRules; // 0xa8	
+	CUtlVector< CDOTAEventActionTrigger > m_vecEventActionTriggers; // 0x80	
+	CUtlVector< CDOTAEventActionGrantAndClaimPairTrigger > m_vecEventActionGrantAndClaimPairTriggers; // 0x98	
+	CUtlVector< CDOTAOverworldPathColorRule > m_vecPathColorRules; // 0xb0	
 private:
-	[[maybe_unused]] uint8_t __pad00c0[0x140]; // 0xc0
+	[[maybe_unused]] uint8_t __pad00c8[0x140]; // 0xc8
 public:
-	CUtlVector< CDOTAOverworldToken* > m_vecTokenTypes; // 0x200	
+	CUtlVector< CDOTAOverworldToken* > m_vecTokenTypes; // 0x208	
 private:
-	[[maybe_unused]] uint8_t __pad0218[0x18]; // 0x218
+	[[maybe_unused]] uint8_t __pad0220[0x18]; // 0x220
 public:
-	CUtlVector< CDOTAOverworldHeroReward* > m_vecHeroRewards; // 0x230	
-	CUtlVector< CDOTAOverworldNode* > m_vecNodes; // 0x248	
-	CUtlVector< CDOTAOverworldPath* > m_vecPaths; // 0x260	
-	CUtlVector< CDOTAOverworldEncounter* > m_vecEncounters; // 0x278	
-	CUtlVector< CDOTAOverworldHero* > m_vecHeroes; // 0x290	
-	CUtlVector< CDOTAOverworldCharacter* > m_vecCharacters; // 0x2a8	
-	CUtlVector< CDOTAOverworldClickable* > m_vecClickables; // 0x2c0	
+	CUtlVector< CDOTAOverworldHeroReward* > m_vecHeroRewards; // 0x238	
+	CUtlVector< CDOTAOverworldNode* > m_vecNodes; // 0x250	
+	CUtlVector< CDOTAOverworldPath* > m_vecPaths; // 0x268	
+	CUtlVector< CDOTAOverworldEncounter* > m_vecEncounters; // 0x280	
+	CUtlVector< CDOTAOverworldHero* > m_vecHeroes; // 0x298	
+	CUtlVector< CDOTAOverworldCharacter* > m_vecCharacters; // 0x2b0	
+	CUtlVector< CDOTAOverworldClickable* > m_vecClickables; // 0x2c8	
 };
 
 // Registered binary: client.dll (project 'client')

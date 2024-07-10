@@ -427,28 +427,10 @@
 	transform: none;
 }
 
-.TutorialUI .Shmup_LogoTitling2
-{
-	background-image: url("s2r://panorama/images/events/crownfall/shmup/shmup_logotitling_01_png.vtex");
-	background-size: 100% 100%;
-	background-position: center;
-	ui-scale: 87%;
-	horizontal-align: center;
-	margin-top: 40px;
-	width: 450px;
-	height: 121px;
-}
-
-.Language_schinese .TutorialUI .Shmup_LogoTitling2,.Language_tchinese .TutorialUI .Shmup_LogoTitling2
-{
-	background-image: url("s2r://panorama/images/events/crownfall/shmup/shmup_logotitling_01_cn_png.vtex");
-}
-
 .TutorialUI .TutorialContents
 {
 	horizontal-align: center;
 	vertical-align: center;
-	margin-top: 40px;
 	width: 600px;
 	height: 700px;
 	flow-children: down;
@@ -1765,6 +1747,17 @@
 	padding-right: 15px;
 }
 
+.MainMenu .HowToPlaySection .OldHowToPlay
+{
+	width: 100%;
+	flow-children: down;
+}
+
+.MainMenu .HowToPlaySection .NewHowToPlay
+{
+	visibility: collapse;
+}
+
 .MainMenu .HowToPlaySection .HowToPlayTitle
 {
 	text-transform: uppercase;
@@ -1784,8 +1777,6 @@
 {
 	font-weight: bold;
 	font-size: 16px;
-	color: #c1c1c1;
-	letter-spacing: 1.5px;
 }
 
 .MainMenu .Title
@@ -1884,6 +1875,130 @@
 	ui-scale: 64%;
 }
 
+.HowToPlaySection .Description
+{
+	margin-top: 10px;
+	horizontal-align: center;
+	text-transform: uppercase;
+	text-overflow: shrink;
+	letter-spacing: 2px;
+	color: gradient( linear, 0% 0%, 0% 100%, from( gold1 ), to( gold2 ) );
+}
+
+.HowToPlaySection .Description.LeftAlign
+{
+	horizontal-align: left;
+}
+
+.HowToPlaySection .Details
+{
+	font-size: 16px;
+	vertical-align: center;
+	horizontal-align: center;
+	text-align: center;
+	margin: 4px;
+	text-overflow: shrink;
+}
+
+.HowToPlaySection .Details.LeftAlign
+{
+	horizontal-align: left;
+	text-align: left;
+}
+
+.HowToPlaySection .Row.BelowControls
+{
+	width: 100%;
+}
+
+.HowToPlaySection .GamepadIcon
+{
+	height: 20px;
+	width: 20px;
+	horizontal-align: right;
+	ignore-parent-flow: true;
+}
+
+.Quadrant
+{
+	width: 180px;
+	height: 180px;
+	flow-children: down;
+}
+
+.Quadrant .ControlKey
+{
+	horizontal-align: center;
+}
+
+.Quadrant .ControlKey .KeyText.ExtraLarge
+{
+	width: 140px;
+}
+
+.Quadrant .ControlMouse
+{
+	horizontal-align: center;
+	margin-bottom: 5px;
+}
+
+.Quadrant .Contents
+{
+	margin-top: 10px;
+	horizontal-align: center;
+}
+
+.ShowAltControls .Quadrant .Contents .Alt
+{
+	opacity: 1;
+}
+
+.ShowAltControls .Quadrant .Contents .Main
+{
+	opacity: 0;
+}
+
+.Quadrant .Contents .Alt
+{
+	horizontal-align: center;
+	vertical-align: center;
+	opacity: 0;
+	transition-property:opacity;
+	transition-duration: 0.5s;
+}
+
+.Quadrant .Contents .Main
+{
+	horizontal-align: center;
+	vertical-align: center;
+	opacity: 1;
+}
+
+@keyframes 'FadeInOut'
+{
+	0%
+	{
+		opacity: 1;
+	}
+	
+	35%
+	{
+		opacity: 1;
+	}
+	
+	65%
+	{
+		opacity: 0;
+	}
+	
+	100%
+	{
+		opacity: 0;
+		brightness: 0.5;
+	}
+	
+}
+
 .BottomButtons
 {
 	margin-top: 20px;
@@ -1901,6 +2016,11 @@
 .PlayedOnce .BottomButtons .ExitButton
 {
 	visibility: visible;
+}
+
+#LeaderboardContainerFriends
+{
+	max-height: 330px;
 }
 
 .Leaderboard
@@ -2173,91 +2293,6 @@
 	animation-name: none;
 }
 
-#ControlsDisplay .ControlKey
-{
-	horizontal-align: center;
-	margin: 3px;
-	animation-name: none;
-}
-
-#ControlsDisplay .ControlKey .Up
-{
-	background-image: url("s2r://panorama/images/control_icons/24px/arrow_up.vsvg");
-}
-
-#ControlsDisplay .ControlKey .Down
-{
-	background-image: url("s2r://panorama/images/control_icons/24px/arrow_down.vsvg");
-}
-
-#ControlsDisplay .ControlKey .Forward
-{
-	background-image: url("s2r://panorama/images/control_icons/24px/arrow_right.vsvg");
-}
-
-#ControlsDisplay .ControlKey .Back
-{
-	background-image: url("s2r://panorama/images/control_icons/24px/arrow_left.vsvg");
-}
-
-#ControlsDisplay .ControlMouse
-{
-	border-radius: 15px;
-	box-shadow: 0px 5px 20px -3px rgba(0, 0, 0, 0.8);
-	margin-bottom: 15px;
-}
-
-#ControlsDisplay .ControlMouse .MouseButton
-{
-	vertical-align: center;
-	horizontal-align: center;
-	padding: 5px 0px 7px;
-	min-width: 34px;
-	min-height: 52px;
-}
-
-#ControlsDisplay .ControlMouse .MOUSE1,#ControlsDisplay .ControlMouse .MOUSE2,#ControlsDisplay .ControlMouse .MOUSE3
-{
-	height: 45px;
-	width: 28px;
-	margin: 0 4px;
-	vertical-align: middle;
-	background-size: 100% 100%;
-	background-position: 50% 50%;
-	background-repeat: no-repeat;
-}
-
-#ControlsDisplay .ControlMouse .MOUSE1
-{
-	background-image: url("s2r://panorama/images/events/crownfall/shmup/mouse_leftclick_png.vtex");
-}
-
-#ControlsDisplay .ControlMouse .MOUSE2
-{
-	background-image: url("s2r://panorama/images/events/crownfall/shmup/mouse_rightclick_png.vtex");
-}
-
-#ControlsDisplay .ControlMouse .MOUSE3
-{
-	background-image: url("s2r://panorama/images/events/crownfall/shmup/mouse_middleclick_png.vtex");
-}
-
-#ControlsDisplay .Column
-{
-	flow-children: down;
-	vertical-align: bottom;
-}
-
-#ControlsDisplay .ColumnSpacer
-{
-	width: 12px;
-}
-
-#ControlsDisplay .Row
-{
-	flow-children: right;
-}
-
 .ShowControls #ControlsDisplay,.GamePaused #ControlsDisplay
 {
 	opacity: 1;
@@ -2277,6 +2312,91 @@
 {
 	margin-left: 25px;
 	margin-right: 25px;
+}
+
+.Column
+{
+	flow-children: down;
+	vertical-align: bottom;
+}
+
+.ColumnSpacer
+{
+	width: 12px;
+}
+
+.Row
+{
+	flow-children: right;
+}
+
+.ControlKey
+{
+	horizontal-align: center;
+	margin: 3px;
+	animation-name: none;
+}
+
+.ControlKey .Up
+{
+	background-image: url("s2r://panorama/images/control_icons/24px/arrow_up.vsvg");
+}
+
+.ControlKey .Down
+{
+	background-image: url("s2r://panorama/images/control_icons/24px/arrow_down.vsvg");
+}
+
+.ControlKey .Forward
+{
+	background-image: url("s2r://panorama/images/control_icons/24px/arrow_right.vsvg");
+}
+
+.ControlKey .Back
+{
+	background-image: url("s2r://panorama/images/control_icons/24px/arrow_left.vsvg");
+}
+
+.ControlMouse
+{
+	border-radius: 15px;
+	box-shadow: 0px 5px 20px -3px rgba(0, 0, 0, 0.4);
+	margin-bottom: 15px;
+}
+
+.ControlMouse .MouseButton
+{
+	vertical-align: center;
+	horizontal-align: center;
+	padding: 5px 0px 7px;
+	min-width: 34px;
+	min-height: 52px;
+}
+
+.ControlMouse .MOUSE1,.ControlMouse .MOUSE2,.ControlMouse .MOUSE3
+{
+	height: 45px;
+	width: 28px;
+	margin: 0 4px;
+	vertical-align: middle;
+	background-size: 100% 100%;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+}
+
+.ControlMouse .MOUSE1
+{
+	background-image: url("s2r://panorama/images/events/crownfall/shmup/mouse_leftclick_png.vtex");
+}
+
+.ControlMouse .MOUSE2
+{
+	background-image: url("s2r://panorama/images/events/crownfall/shmup/mouse_rightclick_png.vtex");
+}
+
+.ControlMouse .MOUSE3
+{
+	background-image: url("s2r://panorama/images/events/crownfall/shmup/mouse_middleclick_png.vtex");
 }
 
 @keyframes 'PulseControlKey'
