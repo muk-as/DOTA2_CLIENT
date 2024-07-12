@@ -2017,7 +2017,6 @@ struct CDOTAOverworldCharacterBase;
 struct CDOTAOverworldCharacterConditional;
 struct OverworldHeroID_t;
 struct Match3OpponentActionID_t;
-struct CPulse_ResumePoint;
 struct CDOTAFlappySkywrathCharacter;
 struct CShmupPlayerDefinition;
 struct CShmupBossDefinition;
@@ -2025,6 +2024,7 @@ struct Match3GameModeID_t;
 struct OverworldTokenID_t;
 struct RoadToTIQuestID_t;
 struct CandyShopID_t;
+struct CPulse_ResumePoint;
 struct CandyShopRewardOptionID_t;
 struct PulseNodeDynamicOutflows_t;
 struct Match3AbilityID_t;
@@ -86183,22 +86183,6 @@ public:
 };
 
 // Registered binary: client.dll (project 'client')
-// Alignment: 8
-// Size: 0x78
-// Has VTable
-// 
-// MGetKV3ClassDefaults
-// MCellForDomain
-// MPulseCellMethodBindings
-// MPulseCellOutflowHookInfo
-// MPropertyFriendlyName "Shmup Wait For Running Game"
-class CPulseCell_ShmupWaitForGameRunning : public CPulseCell_BaseYieldingInflow
-{
-public:
-	CPulse_ResumePoint m_WakeResume; // 0x48	
-};
-
-// Registered binary: client.dll (project 'client')
 // Alignment: 4
 // Size: 0x3c
 // Has Trivial Destructor
@@ -86876,6 +86860,19 @@ public:
 };
 
 // Registered binary: client.dll (project 'client')
+// Alignment: 4
+// Size: 0xc
+// Has Trivial Destructor
+// 
+// MGetKV3ClassDefaults
+struct CPulseCell_ShmupWaitForDuration__CursorState_t
+{
+public:
+	panorama::CPanelPtr m_hPanel; // 0x0	
+	int32_t m_nTargetTick; // 0x8	
+};
+
+// Registered binary: client.dll (project 'client')
 // Alignment: 8
 // Size: 0x4
 // Has Trivial Destructor
@@ -86977,18 +86974,6 @@ class CPulseAnimFuncs
 private:
 	[[maybe_unused]] uint8_t __pad0000[0x1]; // 0x0
 public:
-};
-
-// Registered binary: client.dll (project 'client')
-// Alignment: 4
-// Size: 0x8
-// Has Trivial Destructor
-// 
-// MGetKV3ClassDefaults
-struct CPulseCell_ShmupWaitForGameRunning__CursorState_t
-{
-public:
-	panorama::CPanelPtr m_hPanel; // 0x0	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -87419,6 +87404,22 @@ public:
 	// MPropertyDescription "For k_eCandyShopRewardOptionType_EventPoints, what is the amount of event points."
 	// MPropertySuppressExpr "m_eOptionType != k_eCandyShopRewardOptionType_EventPoints"
 	uint32_t m_unEventPoints; // 0x28	
+};
+
+// Registered binary: client.dll (project 'client')
+// Alignment: 8
+// Size: 0x78
+// Has VTable
+// 
+// MGetKV3ClassDefaults
+// MCellForDomain
+// MPulseCellMethodBindings
+// MPulseCellOutflowHookInfo
+// MPropertyFriendlyName "Shmup Wait For Duration"
+class CPulseCell_ShmupWaitForDuration : public CPulseCell_BaseYieldingInflow
+{
+public:
+	CPulse_ResumePoint m_WakeResume; // 0x48	
 };
 
 // Registered binary: client.dll (project 'client')

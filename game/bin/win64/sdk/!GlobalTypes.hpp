@@ -23670,22 +23670,6 @@ public:
 	int32_t m_nMorphCount; // 0x2c	
 };
 
-// Registered binary: client.dll (project 'client')
-// Alignment: 8
-// Size: 0x78
-// Has VTable
-// 
-// MGetKV3ClassDefaults
-// MCellForDomain
-// MPulseCellMethodBindings
-// MPulseCellOutflowHookInfo
-// MPropertyFriendlyName "Shmup Wait For Running Game"
-class CPulseCell_ShmupWaitForGameRunning : public CPulseCell_BaseYieldingInflow
-{
-public:
-	CPulse_ResumePoint m_WakeResume; // 0x48	
-};
-
 // Registered binary: server.dll (project 'server')
 // Alignment: 8
 // Size: 0x4
@@ -33876,6 +33860,22 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
+// Size: 0x78
+// Has VTable
+// 
+// MGetKV3ClassDefaults
+// MCellForDomain
+// MPulseCellMethodBindings
+// MPulseCellOutflowHookInfo
+// MPropertyFriendlyName "Shmup Wait For Duration"
+class CPulseCell_ShmupWaitForDuration : public CPulseCell_BaseYieldingInflow
+{
+public:
+	CPulse_ResumePoint m_WakeResume; // 0x48	
+};
+
+// Registered binary: client.dll (project 'client')
+// Alignment: 8
 // Size: 0x30
 // Has VTable
 // Has Trivial Destructor
@@ -40147,6 +40147,19 @@ public:
 };
 
 // Registered binary: client.dll (project 'client')
+// Alignment: 4
+// Size: 0xc
+// Has Trivial Destructor
+// 
+// MGetKV3ClassDefaults
+struct CPulseCell_ShmupWaitForDuration__CursorState_t
+{
+public:
+	panorama::CPanelPtr m_hPanel; // 0x0	
+	int32_t m_nTargetTick; // 0x8	
+};
+
+// Registered binary: client.dll (project 'client')
 // Alignment: 8
 // Size: 0x20
 // 
@@ -40963,18 +40976,6 @@ public:
 	CUtlVector< CDOTAOverworldHero* > m_vecHeroes; // 0x298	
 	CUtlVector< CDOTAOverworldCharacter* > m_vecCharacters; // 0x2b0	
 	CUtlVector< CDOTAOverworldClickable* > m_vecClickables; // 0x2c8	
-};
-
-// Registered binary: client.dll (project 'client')
-// Alignment: 4
-// Size: 0x8
-// Has Trivial Destructor
-// 
-// MGetKV3ClassDefaults
-struct CPulseCell_ShmupWaitForGameRunning__CursorState_t
-{
-public:
-	panorama::CPanelPtr m_hPanel; // 0x0	
 };
 
 // Registered binary: server.dll (project 'server')

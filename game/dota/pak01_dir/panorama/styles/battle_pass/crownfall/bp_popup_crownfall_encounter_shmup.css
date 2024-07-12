@@ -95,9 +95,15 @@
 	transition-timing-function: ease-out;
 }
 
-.ShowGameOverFade .Gameplay
+.ShowGameOverFade.GameOver .Gameplay
 {
 	saturation: 0;
+	brightness: 0.2;
+	transition-duration: 0.1s;
+}
+
+.ShowGameOverFade.GameVictory .Gameplay
+{
 	brightness: 0.2;
 	transition-duration: 0.1s;
 }
@@ -841,7 +847,7 @@
 	visibility: visible;
 }
 
-.MaxCharge .ChargeContainer .ChargeText .MaxText
+.MaxCharge.GameRunning .ChargeContainer .ChargeText .MaxText
 {
 	animation-name: ChargePulse;
 	animation-duration: 0.4s;
@@ -874,7 +880,7 @@
 	background-color: gradient( linear, 0% 1%, 0% 40%, from( gold1), to( gold3) );
 }
 
-.MaxCharge .ChargeContainer #ChargeMeter
+.MaxCharge.GameRunning .ChargeContainer #ChargeMeter
 {
 	animation-name: ChargePulse;
 	animation-duration: 0.4s;
@@ -902,6 +908,14 @@
 	height: 100%;
 }
 
+.TempToasts
+{
+	vertical-align: center;
+	margin-left: 60px;
+	flow-children: right;
+	visibility: collapse;
+}
+
 .ComboNotificationNoClip
 {
 	width: 1px;
@@ -914,11 +928,284 @@
 	visibility: collapse;
 }
 
-.ComboNotificationClip
+.ComboNotificationNoClip .ComboNotificationClip
 {
 	width: 400px;
 	height: 400px;
 	transform: translateX(-200px) translateY(-200px);
+}
+
+.ComboNotificationNoClip .ComboNotificationContainer
+{
+	vertical-align: center;
+	horizontal-align: center;
+	opacity: 0;
+	animation-name: ComboNotificationAnim;
+	animation-duration: 1.25s;
+}
+
+.ComboNotificationNoClip .ComboLabels
+{
+	vertical-align: center;
+	horizontal-align: center;
+	flow-children: down;
+}
+
+.ComboNotificationNoClip .ScoreGlow
+{
+	horizontal-align: center;
+	vertical-align: bottom;
+	width: 200px;
+	-s2-mix-blend-mode: screen;
+	margin-top: 60px;
+	wash-color: rgb(69, 199, 255);
+	opacity: 0.3;
+}
+
+.ComboNotificationNoClip .Wings
+{
+	horizontal-align: center;
+	vertical-align: center;
+	visibility: collapse;
+}
+
+.ComboNotificationNoClip .Wings .ScoreWing
+{
+	horizontal-align: center;
+	vertical-align: center;
+	width: height-percentage( 200% );
+	-s2-mix-blend-mode: screen;
+	animation-duration: 0.4s;
+}
+
+.ComboNotificationNoClip .Wings .ScoreWing.Left
+{
+	animation-name: SlideWingLeft;
+}
+
+.ComboNotificationNoClip .Wings .ScoreWing.Right
+{
+	transform: scaleX( -1 );
+	animation-name: SlideWingRight;
+}
+
+.ComboNotificationNoClip .ComboNotificationComboCount,.ComboNotificationNoClip .ComboNotificationComboMax
+{
+	horizontal-align: center;
+	color: white;
+	font-size: 28px;
+	font-family: titleFont;
+	font-weight: bold;
+	margin-bottom: -3px;
+}
+
+.ComboNotificationNoClip .ComboNotificationComboCount.Animated
+{
+	ui-scale: 220%;
+	-s2-mix-blend-mode: screen;
+	opacity-brush: gradient(linear, -100% -100%, 0% 0%, from( #ffffff00 ), color-stop( 0.5, #ffffffff ), to( #ffffff00 ) );
+	vertical-align: center;
+	margin-top: -24px;
+	animation-name: BigScoreComboAnimation;
+	transition-timing-function: ease-in-out;
+	animation-duration: 1.25s;
+}
+
+.ComboNotificationNoClip .ComboNotificationTitle
+{
+	horizontal-align: center;
+	color: rgba(255, 255, 255, 1);
+	font-size: 16px;
+	letter-spacing: 1.5px;
+	text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.ComboNotificationNoClip .ComboNotificationScore
+{
+	horizontal-align: center;
+	color: white;
+	font-weight: bold;
+	font-size: 20px;
+	padding: 0px 12px;
+	text-shadow: 0px 0px 12px rgba(119, 162, 255, 0.8);
+	animation-name: PulseTextAnimation;
+	animation-iteration-count: 0;
+	animation-duration: 0.22s;
+	animation-delay: 0.4s;
+}
+
+.ComboNotificationNoClip.ComboNotification_ComboCount_4 .ComboNotificationComboCount,.ComboNotificationNoClip.ComboNotification_ComboCount_5 .ComboNotificationComboCount,.ComboNotificationNoClip.ComboNotification_ComboCount_6 .ComboNotificationComboCount
+{
+	font-size: 34px;
+	margin-bottom: -6px;
+}
+
+.ComboNotificationNoClip.ComboNotification_ComboCount_4 .ComboNotificationComboCount.Animated,.ComboNotificationNoClip.ComboNotification_ComboCount_5 .ComboNotificationComboCount.Animated,.ComboNotificationNoClip.ComboNotification_ComboCount_6 .ComboNotificationComboCount.Animated
+{
+	color: rgb(81, 90, 255);
+}
+
+.ComboNotificationNoClip.ComboNotification_ComboCount_4 .ComboNotificationScore,.ComboNotificationNoClip.ComboNotification_ComboCount_5 .ComboNotificationScore,.ComboNotificationNoClip.ComboNotification_ComboCount_6 .ComboNotificationScore
+{
+	font-size: 26px;
+	margin-top: -2px;
+	text-shadow: 0px 0px 12px rgba(171, 119, 255, 0.8);
+	animation-iteration-count: 2;
+}
+
+.ComboNotificationNoClip.ComboNotification_ComboCount_4 .ScoreGlow,.ComboNotificationNoClip.ComboNotification_ComboCount_5 .ScoreGlow,.ComboNotificationNoClip.ComboNotification_ComboCount_6 .ScoreGlow
+{
+	visibility: visible;
+	margin-top: 60px;
+	wash-color: rgb(69, 128, 255);
+	opacity: 0.6;
+}
+
+.ComboNotificationNoClip.ComboNotification_ComboCount_4 .Wings,.ComboNotificationNoClip.ComboNotification_ComboCount_5 .Wings,.ComboNotificationNoClip.ComboNotification_ComboCount_6 .Wings
+{
+	visibility: visible;
+	margin-bottom: 10px;
+	opacity: 0.4;
+}
+
+.ComboNotificationNoClip.ComboNotification_ComboCount_4 .Wings .ScoreWing,.ComboNotificationNoClip.ComboNotification_ComboCount_5 .Wings .ScoreWing,.ComboNotificationNoClip.ComboNotification_ComboCount_6 .Wings .ScoreWing
+{
+	height: 28px;
+	opacity-brush: gradient(linear, 10% 0%, 50% 100%, from( #ffffffff ), to( #ffffff00 ) );
+	wash-color: rgb(111, 157, 255);
+	background-image: url("s2r://panorama/images/events/crownfall/shmup/score_wing_png.vtex");
+	background-size: cover;
+}
+
+.ComboNotificationNoClip.ComboNotification_ComboCount_4 .Wings .ScoreWing.Left,.ComboNotificationNoClip.ComboNotification_ComboCount_5 .Wings .ScoreWing.Left,.ComboNotificationNoClip.ComboNotification_ComboCount_6 .Wings .ScoreWing.Left
+{
+	margin-right: 60px;
+}
+
+.ComboNotificationNoClip.ComboNotification_ComboCount_4 .Wings .ScoreWing.Right,.ComboNotificationNoClip.ComboNotification_ComboCount_5 .Wings .ScoreWing.Right,.ComboNotificationNoClip.ComboNotification_ComboCount_6 .Wings .ScoreWing.Right
+{
+	margin-left: 60px;
+}
+
+.ComboNotificationNoClip.ComboNotification_ComboCount_7 .ComboNotificationComboCount,.ComboNotificationNoClip.ComboNotification_ComboCount_8 .ComboNotificationComboCount,.ComboNotificationNoClip.ComboNotification_ComboCount_9 .ComboNotificationComboCount
+{
+	font-size: 34px;
+	margin-bottom: -6px;
+}
+
+.ComboNotificationNoClip.ComboNotification_ComboCount_7 .ComboNotificationComboCount.Animated,.ComboNotificationNoClip.ComboNotification_ComboCount_8 .ComboNotificationComboCount.Animated,.ComboNotificationNoClip.ComboNotification_ComboCount_9 .ComboNotificationComboCount.Animated
+{
+	color: rgb(255, 168, 69);
+}
+
+.ComboNotificationNoClip.ComboNotification_ComboCount_7 .ComboNotificationScore,.ComboNotificationNoClip.ComboNotification_ComboCount_8 .ComboNotificationScore,.ComboNotificationNoClip.ComboNotification_ComboCount_9 .ComboNotificationScore
+{
+	font-size: 36px;
+	margin-top: -4px;
+	text-shadow: 0px 0px 12px rgb(255, 201, 119);
+	animation-iteration-count: 2;
+}
+
+.ComboNotificationNoClip.ComboNotification_ComboCount_7 .ScoreGlow,.ComboNotificationNoClip.ComboNotification_ComboCount_8 .ScoreGlow,.ComboNotificationNoClip.ComboNotification_ComboCount_9 .ScoreGlow
+{
+	visibility: visible;
+	margin-top: 56px;
+	width: 260px;
+	wash-color: rgb(255, 142, 66);
+	opacity: 1;
+}
+
+.ComboNotificationNoClip.ComboNotification_ComboCount_7 .Wings,.ComboNotificationNoClip.ComboNotification_ComboCount_8 .Wings,.ComboNotificationNoClip.ComboNotification_ComboCount_9 .Wings
+{
+	visibility: visible;
+	margin-top: 0px;
+}
+
+.ComboNotificationNoClip.ComboNotification_ComboCount_7 .Wings .ScoreWing,.ComboNotificationNoClip.ComboNotification_ComboCount_8 .Wings .ScoreWing,.ComboNotificationNoClip.ComboNotification_ComboCount_9 .Wings .ScoreWing
+{
+	height: 36px;
+	opacity-brush: gradient(linear, 10% 0%, 50% 90%, from( #ffffffff ), to( #ffffff00 ) );
+	wash-color: rgb(255, 185, 111);
+	background-image: url("s2r://panorama/images/events/crownfall/shmup/score_wing_double_png.vtex");
+	background-size: cover;
+}
+
+.ComboNotificationNoClip.ComboNotification_ComboCount_7 .Wings .ScoreWing.Left,.ComboNotificationNoClip.ComboNotification_ComboCount_8 .Wings .ScoreWing.Left,.ComboNotificationNoClip.ComboNotification_ComboCount_9 .Wings .ScoreWing.Left
+{
+	margin-right: 70px;
+}
+
+.ComboNotificationNoClip.ComboNotification_ComboCount_7 .Wings .ScoreWing.Right,.ComboNotificationNoClip.ComboNotification_ComboCount_8 .Wings .ScoreWing.Right,.ComboNotificationNoClip.ComboNotification_ComboCount_9 .Wings .ScoreWing.Right
+{
+	margin-left: 70px;
+}
+
+.ComboNotificationNoClip.ComboNotification_ComboCount_10 .ComboNotificationComboCount,.ComboNotificationNoClip.ComboNotification_ComboCount_10 .ComboNotificationComboMax
+{
+	font-size: 40px;
+	margin-bottom: -8px;
+}
+
+.ComboNotificationNoClip.ComboNotification_ComboCount_10 .ComboNotificationScore
+{
+	font-size: 36px;
+	margin-top: -6px;
+	text-shadow: 0px 0px 12px rgb(255, 72, 96);
+	animation-iteration-count: 2;
+}
+
+.ComboNotificationNoClip.ComboNotification_ComboCount_10 .ComboNotificationComboMax
+{
+	text-shadow: 0px 0px 12px rgb(255, 72, 96);
+}
+
+.ComboNotificationNoClip.ComboNotification_ComboCount_10 .ComboNotificationComboCount.Animated
+{
+	color: rgb(255, 69, 69);
+	visibility: visible;
+}
+
+.ComboNotificationNoClip.ComboNotification_ComboCount_10 .ScoreGlow
+{
+	visibility: visible;
+	margin-top: 80px;
+	width: 320px;
+	wash-color: rgb(255, 55, 55);
+	opacity: 1;
+}
+
+.ComboNotificationNoClip.ComboNotification_ComboCount_10 .ComboParticles
+{
+	width: 80%;
+	height: 80%;
+	horizontal-align: center;
+	vertical-align: center;
+	opacity: 0.3;
+}
+
+.ComboNotificationNoClip.ComboNotification_ComboCount_10 .Wings
+{
+	visibility: visible;
+	margin-top: 8px;
+}
+
+.ComboNotificationNoClip.ComboNotification_ComboCount_10 .Wings .ScoreWing
+{
+	height: 40px;
+	opacity-brush: gradient(linear, 10% 0%, 50% 90%, from( #ffffffff ), to( #ffffff00 ) );
+	wash-color: rgb(255, 67, 57);
+	background-image: url("s2r://panorama/images/events/crownfall/shmup/score_wing_double_png.vtex");
+	background-size: cover;
+}
+
+.ComboNotificationNoClip.ComboNotification_ComboCount_10 .Wings .ScoreWing.Left
+{
+	margin-right: 120px;
+}
+
+.ComboNotificationNoClip.ComboNotification_ComboCount_10 .Wings .ScoreWing.Right
+{
+	margin-left: 120px;
 }
 
 @keyframes 'ComboNotificationAnim'
@@ -930,8 +1217,9 @@
 	
 	20%
 	{
-		transform: translateY(-90px);
+		transform: translateY(-80px);
 		opacity: 1;
+		brightness: 2.5;
 	}
 	
 	80%
@@ -942,21 +1230,77 @@
 	100%
 	{
 		transform: translateY(-100px);
-		opacity: 1;
+		opacity: 0;
+		brightness: 1;
 	}
 	
 }
 
-.ComboNotificationContainer
+@keyframes 'BigScoreComboAnimation'
 {
-	flow-children: down;
-	vertical-align: center;
-	horizontal-align: center;
-	animation-name: ComboNotificationAnim;
-	animation-fill-mode: forwards;
-	animation-iteration-count: 1;
-	transition-timing-function: ease-in-out;
-	animation-duration: 1.25s;
+	0%
+	{
+		opacity-brush: gradient(linear, -100% -100%, 0% 0%, from( #ffffff00 ), color-stop( 0.5, #ffffffff ), to( #ffffff00 ) );
+	}
+	
+	100%
+	{
+		transform: scale3d( 1.3, 1.3, 1 );
+		opacity-brush: gradient(linear, 100% 100%, 200% 200%, from( #ffffff00 ), color-stop( 0.5, #ffffffff ), to( #ffffff00 ) );
+	}
+	
+}
+
+@keyframes 'PulseTextAnimation'
+{
+	50%
+	{
+		transform: scale3d( 1.2, 1.2, 1 );
+		brightness: 2;
+	}
+	
+}
+
+@keyframes 'SlideWingLeft'
+{
+	0%
+	{
+		transform: translateX( 40px );
+		opacity: 0;
+	}
+	
+	60%
+	{
+		transform: translateX( 40px );
+		opacity: 0;
+	}
+	
+	100%
+	{
+		transform: none;
+	}
+	
+}
+
+@keyframes 'SlideWingRight'
+{
+	0%
+	{
+		transform: scaleX( -1) translateX( -40px );
+		opacity: 0;
+	}
+	
+	60%
+	{
+		transform: scaleX( -1) translateX( -40px );
+		opacity: 0;
+	}
+	
+	100%
+	{
+		transform: scaleX( -1);
+	}
+	
 }
 
 .ComboNotificationBrokenContainer
@@ -966,42 +1310,29 @@
 
 .ComboNotificationBrokenTitle
 {
-	horizontal-align: left;
+	horizontal-align: center;
 	text-align: center;
-	color: red;
-	text-shadow: 2px 2px 0px 1.0 #00000090;
+	color: rgb(255, 255, 255);
+	text-shadow: 0px 0px 12px 1.0 #ff1b1b90;
 	font-size: 24px;
+	font-weight: semi-bold;
+	line-height: 1.2;
+	padding: 12px;
 }
 
-.ComboNotificationTitle,.ComboNotificationMaxTitle
-{
-	horizontal-align: left;
-	text-align: left;
-	color: white;
-}
-
-.ComboNotification_MaxCombo .ComboNotificationTitle
+.ComboNotification_MaxCombo .ComboNotificationComboCount
 {
 	visibility: collapse;
 }
 
-.ComboNotificationMaxTitle
+.ComboNotificationComboMax
 {
 	visibility: collapse;
 }
 
-.ComboNotification_MaxCombo .ComboNotificationMaxTitle
+.ComboNotification_MaxCombo .ComboNotificationComboMax
 {
 	visibility: visible;
-}
-
-.ComboNotificationScore
-{
-	horizontal-align: left;
-	text-align: left;
-	color: white;
-	font-weight: bold;
-	font-size: 30px;
 }
 
 .BossWarning
