@@ -85520,7 +85520,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x88
+// Size: 0x90
 // 
 // MGetKV3ClassDefaults
 // MVDataRoot
@@ -85542,19 +85542,23 @@ public:
 	// MPropertyDescription "If defined, this node and the path to it are invisible and unreachable to players unless they own a specific event action."
 	CUtlString m_sHiddenWithoutEventAction; // 0x28	
 	CUtlString m_sJSEvent; // 0x30	
-	bool m_bSkipGrantingRewardOnUnlock; // 0x38	
+	float m_flUnlockDelay; // 0x38	
+	bool m_bSkipGrantingRewardOnUnlock; // 0x3c	
 private:
-	[[maybe_unused]] uint8_t __pad0039[0x3]; // 0x39
+	[[maybe_unused]] uint8_t __pad003d[0x3]; // 0x3d
 public:
-	EOverworldNodeFlags m_eNodeFlags; // 0x3c	
-	CUtlString m_sEncounterName; // 0x40	
+	EOverworldNodeFlags m_eNodeFlags; // 0x40	
 private:
-	[[maybe_unused]] uint8_t __pad0048[0x8]; // 0x48
+	[[maybe_unused]] uint8_t __pad0044[0x4]; // 0x44
+public:
+	CUtlString m_sEncounterName; // 0x48	
+private:
+	[[maybe_unused]] uint8_t __pad0050[0x8]; // 0x50
 public:
 	// MPropertyDescription "CSS Classes that will be applied to the map when this node is unlocked."
-	CUtlVector< CUtlString > m_vecUnlockMapClasses; // 0x50	
+	CUtlVector< CUtlString > m_vecUnlockMapClasses; // 0x58	
 	// MPropertyDescription "CSS Classes that will be applied to the map when this node is being visited, and removed when leaving it."
-	CUtlVector< CUtlString > m_vecVisitMapClasses; // 0x68	
+	CUtlVector< CUtlString > m_vecVisitMapClasses; // 0x70	
 };
 
 // Registered binary: client.dll (project 'client')
