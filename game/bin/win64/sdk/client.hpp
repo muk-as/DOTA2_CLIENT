@@ -5,7 +5,7 @@
 // /////////////////////////////////////////////////////////////
 // Binary: client.dll
 // Classes count: 6,507 (Allocated) | 6,615 (Unallocated)
-// Enums count: 2 (Allocated) | 87 (Unallocated)
+// Enums count: 2 (Allocated) | 90 (Unallocated)
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
@@ -115,6 +115,17 @@ enum class EOverworldIntroProgressState : uint32_t
 	k_eOverworldIntroProgressState_UnlockNode = 0x5,
 	k_eOverworldIntroProgressState_ShowLearnMore = 0x6,
 	k_eOverworldIntroProgressState_Complete = 0x7,
+};
+
+// Registered binary: client.dll (project 'client')
+// Enumerator count: 3
+// Alignment: 4
+// Size: 0x4
+enum class ETalentContentAssetType : uint32_t
+{
+	k_eTalentContentAssetType_Photo = 0x1,
+	k_eTalentContentAssetType_Autograph = 0x2,
+	k_eTalentContentAssetType_Voicelines = 0x3,
 };
 
 // Registered binary: client.dll (project 'client')
@@ -1344,6 +1355,17 @@ enum class EShowcaseHeroPlusFlag : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
+// Enumerator count: 3
+// Alignment: 4
+// Size: 0x4
+enum class ETalentContentAssetStatus : uint32_t
+{
+	k_eTalentContentAssetStatus_None = 0x0,
+	k_eTalentContentAssetStatus_Approved = 0x1,
+	k_eTalentContentAssetStatus_Rejected = 0x2,
+};
+
+// Registered binary: client.dll (project 'client')
 // Enumerator count: 12
 // Alignment: 4
 // Size: 0x4
@@ -1667,6 +1689,17 @@ enum class EFlappySkywrathInputAction : uint32_t
 	Glide = 0x3,
 	COUNT = 0x4,
 	None = 0xffffffffffffffff,
+};
+
+// Registered binary: client.dll (project 'client')
+// Enumerator count: 3
+// Alignment: 4
+// Size: 0x4
+enum class ETalentContentStatus : uint32_t
+{
+	TALENT_CONTENT_STATUS_INVALID = 0x0,
+	TALENT_CONTENT_STATUS_PENDING = 0x1,
+	TALENT_CONTENT_STATUS_EVALUATED = 0x2,
 };
 
 // Registered binary: client.dll (project 'client')

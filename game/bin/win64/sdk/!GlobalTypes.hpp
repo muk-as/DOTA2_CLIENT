@@ -5,7 +5,7 @@
 // /////////////////////////////////////////////////////////////
 // Binary: !GlobalTypes
 // Classes count: 1,734 (Allocated) | 1,734 (Unallocated)
-// Enums count: 652 (Allocated) | 652 (Unallocated)
+// Enums count: 655 (Allocated) | 655 (Unallocated)
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
@@ -1821,6 +1821,17 @@ enum class RenderMultisampleType_t : uint8_t
 	RENDER_MULTISAMPLE_TYPE_COUNT = 0x6,
 };
 
+// Registered binary: client.dll (project 'client')
+// Enumerator count: 3
+// Alignment: 4
+// Size: 0x4
+enum class ETalentContentAssetStatus : uint32_t
+{
+	k_eTalentContentAssetStatus_None = 0x0,
+	k_eTalentContentAssetStatus_Approved = 0x1,
+	k_eTalentContentAssetStatus_Rejected = 0x2,
+};
+
 // Registered binary: server.dll (project 'server')
 // Enumerator count: 5
 // Alignment: 4
@@ -2235,6 +2246,17 @@ enum class PFuncVisualizationType_t : uint32_t
 	PFUNC_VISUALIZATION_LINE = 0x5,
 	// MPropertyFriendlyName "Visualization Cylinder"
 	PFUNC_VISUALIZATION_CYLINDER = 0x6,
+};
+
+// Registered binary: client.dll (project 'client')
+// Enumerator count: 3
+// Alignment: 4
+// Size: 0x4
+enum class ETalentContentStatus : uint32_t
+{
+	TALENT_CONTENT_STATUS_INVALID = 0x0,
+	TALENT_CONTENT_STATUS_PENDING = 0x1,
+	TALENT_CONTENT_STATUS_EVALUATED = 0x2,
 };
 
 // Registered binary: server.dll (project 'server')
@@ -9928,6 +9950,17 @@ enum class DOTA_ROSHAN_PHASE : uint32_t
 	k_SRSP_ROSHAN_ALIVE = 0x0,
 	k_SRSP_ROSHAN_BASE_TIMER = 0x1,
 	k_SRSP_ROSHAN_VISIBLE_TIMER = 0x2,
+};
+
+// Registered binary: client.dll (project 'client')
+// Enumerator count: 3
+// Alignment: 4
+// Size: 0x4
+enum class ETalentContentAssetType : uint32_t
+{
+	k_eTalentContentAssetType_Photo = 0x1,
+	k_eTalentContentAssetType_Autograph = 0x2,
+	k_eTalentContentAssetType_Voicelines = 0x3,
 };
 
 // Registered binary: client.dll (project 'client')

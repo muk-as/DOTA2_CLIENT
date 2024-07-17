@@ -112,6 +112,7 @@
 0YA1AVAUATSL
 0YA1SI
 0YA1SL
+0YA1貼x
 0[A\A]A
 0[A\A]A^A
 0[]A\A]A^ÐAUATI
@@ -5997,6 +5998,7 @@
 2%.CMsgInGamePrediction.ERawValueType_t
 2%.CMsgMatchConsumableUsage.PlayerUsage
 2%.CMsgSOCacheSubscribed.SubscribedType
+2%.CMsgSetTalentContentResponse.EResult
 2%.CMsgSource1LegacyGameEventList.key_t"K
 2%.CMsgSteamLearnServerInfo.ProjectInfo
 2%.CMsgStickerbookTeamPageOrderSequence
@@ -6022,6 +6024,7 @@
 2&.CMsgPredictionRankings.PredictionLine
 2&.CMsgPredictionResults.ResultBreakdown"D
 2&.CMsgSocialFeedCommentsResponse.Result
+2&.CMsgTalentContentStatus.TalentDetails
 2&.CMsgWatchGameResponse.WatchGameResult
 2&.CSODOTAGameAccountClient.RoleHandicap
 2&.VersusScene_PlayActivity.ActivityInfo
@@ -7473,6 +7476,7 @@
 23CMsgSOCacheUnsubscribed
 23CMsgSQLAddDropRateBonus
 23CMsgShowcaseItem_Trophy
+23CMsgTalentContentStatus
 23CMsgWeekendTourneyLeave
 23CNETMsg_SpawnGroup_Load
 23CNETMsg_SplitScreenUser
@@ -9777,11 +9781,13 @@
 28CMsgPredictionResults_Result
 28CMsgSOCacheSubscriptionCheck
 28CMsgSetSpectatorLobbyDetails
+28CMsgSetTalentContentResponse
 28CMsgShowcaseAdminUserDetails
 28CMsgShowcaseItem_PlayerMatch
 28CMsgShowcaseItem_SpiderGraph
 28CMsgShowcaseItem_Trophy_Data
 28CMsgSosSetLibraryStackFields
+28CMsgTalentContentAssetStatus
 28CMsgUnderDraftData_BenchSlot
 28CMsgVDebugGameSessionIDEvent
 28CNPCMaterialOverrideModifier
@@ -14122,6 +14128,7 @@
 37CMsgPredictionRankings_PredictionLine
 37CMsgPredictionResults_ResultBreakdown
 37CMsgSteamLearn_BatchOperation_Request
+37CMsgTalentContentStatus_TalentDetails
 37CMsgTeamFanContentAssetStatusResponse
 37CMsgWatchGameResponse_WatchGameResult
 37CPointClientUIWorldTextPanelPreviewer
@@ -20922,7 +20929,8 @@ ATASARAQAPWH
 ATAUL
 ATAUM1
 ATAUWL
-ATLc%p
+ATLc%,PM
+ATLc%k}n
 ATSHc
 ATSHcG
 ATSHcGLH
@@ -21052,6 +21060,7 @@ AVAUH
 AVAUI
 AVAUL
 AVAULc
+AVAULc-a6
 AVAUSH
 AVAUSL
 AVAUfA
@@ -22513,6 +22522,7 @@ B8HcR0H
 B9\8 u
 B;t 0A
 B;t"0A
+B<D9Z@t
 B@HcR8Hk
 B@IcW A;W0
 B@Ic^ A;^0
@@ -31482,6 +31492,7 @@ CHAT_MESSAGE_WILL_NOT_BE_SCORED_NETWORK_RANKED
 CHAT_MESSAGE_WILL_NOT_BE_SCORED_RANKED
 CHAT_MESSAGE_YEAR_BEAST_KILLED
 CHAT_MESSAGE_YOUPAUSED
+CHD9cX
 CHECK failed: !AllocPolicy
 CHECK failed: !HasUnknownFieldsTag
 CHECK failed: !InRealOneof(field
@@ -33416,6 +33427,7 @@ CMsgServerUseItem
 CMsgServerUserCmd
 CMsgSetItemPositions
 CMsgSetSpectatorLobbyDetails
+CMsgSetTalentContentResponse
 CMsgShowcase
 CMsgShowcase"z
 CMsgShowcase.EModerationState"U
@@ -33567,6 +33579,8 @@ CMsgTEShatterSurface
 CMsgTESmoke
 CMsgTESparks
 CMsgTEWorldDecal
+CMsgTalentContentAssetStatus
+CMsgTalentContentStatus
 CMsgTalentWinRates
 CMsgTeamFanContentAssetStatus
 CMsgTeamFanContentAssetStatusResponse
@@ -39338,7 +39352,6 @@ D$@I9F
 D$@IcD
 D$@fE
 D$@t}HcT
-D$DA\]ÐUH
 D$D[A
 D$H t#H
 D$H9D$T
@@ -39421,16 +39434,17 @@ D9 t"H
 D9 tuH
 D9 t}H
 D9"t!Ic
-D9%Hi
 D9&~jMc
 D9't3H
 D9't:H
+D9(t8D
 D9(w*D9x
 D90t2H
 D90tDL
 D90t_D
 D90tcD
-D95eB6
+D95%86
+D95U?6
 D98tKL
 D98t^D
 D98tdL
@@ -39483,7 +39497,7 @@ D9{du	9Ch
 D:/generated_set_portraits.txt
 D:o8t
 D; t.L
-D;%Xb
+D;%sH
 D;(tHA
 D;)te;E
 D;,$rP1
@@ -51423,6 +51437,9 @@ ET:  AccumulateElapsedTime %u seconds to %u, now at %s
 ET:  AccumulateElapsedTime( %s ) at %d
 ET:  SetMostRecentElapsedTime( %s ) at %d
 ETEProtobufIds
+ETalentContentAssetStatus
+ETalentContentAssetType
+ETalentContentStatus
 ETeamFanContentAssetStatus
 ETeamFanContentAssetType
 ETeamFanContentStatus
@@ -55649,11 +55666,11 @@ H;2t-H
 H;2t?sDI9
 H;8t/~M
 H;:t7r
-H;=8oT
-H;=TyT
-H;=gGS
-H;=mPU
-H;=myT
+H;=8iT
+H;=TsT
+H;=gAS
+H;=mJU
+H;=msT
 H;@XtJH
 H;D$pH
 H;E0sR
@@ -56350,11 +56367,8 @@ HavePlayersLastWeek
 Hazhadal
 Hc+HcC
 Hc0A;t
-Hc57ep
-Hc5?h
-Hc5Kgp
-Hc5Pf
-Hc5iNn
+Hc5I$f
+Hc=c9l
 Hc@ H
 Hc@ I
 Hc@(E1
@@ -59215,7 +59229,6 @@ KEY_BACKSPACE: Accepted
 KEY_BACKSPACE: Clearing state due to %d
 KEY_BACKSPACE: Rejected
 KH;KLH
-KH~4E1
 KICKED_FROM_LOBBY
 KICKED_FROM_PARTY
 KICKED_FROM_QUEUE_EVENT_ENDING
@@ -59659,13 +59672,15 @@ LayoutDirtied
 Lc!D;a
 Lc"D;b
 Lc#D;c
+Lc%83M
+Lc%IgT
 Lc'D;g
 Lc(D;h
 Lc)D;i
 Lc+D;k
+Lc-92M
 Lc1D;q
 Lc3D;s
-Lc5fs
 Lc8D;x
 LcD$ H
 LcIHD;IXE
@@ -59693,6 +59708,7 @@ Lck8D;kHD
 LckHD;kXA
 LckHD;kXD
 LckxD
+Lco0D;o@D
 LcoHD;oXL
 Lcs D;s0D
 LcsXD;shD
@@ -67072,7 +67088,7 @@ Perfect
 Perfect circular or elliptical panel (circular if box was square
 PerfectMovie
 Perform client side prediction
-Perform server side lag compensa
+Perform server side lag compensation of weapon firing events
 PerformanceHeroIcon
 PerformanceMode_t
 PerformingOperation
@@ -73819,6 +73835,9 @@ TAG_BAD_CHARACTERS
 TAG_EMPTY
 TAG_TAKEN
 TAG_TOO_LONG
+TALENT_CONTENT_STATUS_EVALUATED
+TALENT_CONTENT_STATUS_INVALID
+TALENT_CONTENT_STATUS_PENDING
 TARGET_ENGINE_MISMATCH
 TD:~TuYE
 TDCDOTA_Modifier_Aghanims_Shard
@@ -74144,6 +74163,7 @@ Talent Sticker
 TalentBranchActive
 TalentBundlesPopup
 TalentContainer
+TalentDetails
 TalentGuideViewer
 TalentImage
 TalentLabelRejected
@@ -75409,6 +75429,7 @@ UGCImage%d
 UGCOperation
 UGCRead failed? (UGC=%08X%08X
 UGCRead failed? (UGC=%llu
+UHIcE@H
 UHcC@1
 UHcGXH
 UI.Bounty.Claimed
@@ -76203,6 +76224,7 @@ UtlMemory_Alloc
 UtlMemory_CalcNewAllocationCount
 UtlMemory_FailedAllocation
 UȋF0;B0
+U｜N｜G
 V	0S	H
 V(A+V
 V(A\A]A^A
@@ -76228,6 +76250,7 @@ V8ParamToPanoramaType expected IUIPanel object to convert, but got some other in
 V8ParamToPanoramaType expected Number type to convert, but got something else (%s
 V8ParamToPanoramaType expected bool type to convert, but got something else (%s
 V8ParamToPanoramaType expected object type to convert, but got something else (%s
+V@A;VD
 VAC_NOT_VERIFIED
 VApplication001
 VAsyncFileSystem2_001
@@ -77748,9 +77771,9 @@ Z9FioReadAtiyPviPi
 Z9V_strnlenPKci
 Z9sug_QuhVc
 Z<D9R@t
+Z@D9RDt
 Z@tyM9
 ZD$4AVAWRH
-ZD$8讀U
 ZEo^m
 ZFP compH
 ZFP compression is not supported
@@ -86811,6 +86834,7 @@ broadcast_channel_info
 broadcast_day
 broadcast_group
 broadcast_id
+broadcast_language
 broadcast_provider
 broadcast_state
 broadcaster
@@ -94652,14 +94676,12 @@ f9C8tmH
 f9Gvr(f
 f9w(t
 f9w0t
-f;5) B
-f;5)V
-f;59cK
-f;5I*E
-f;5I+E
-f;5Ijc
-f;5yic
-f;5ylc
+f;5)fc
+f;59}c
+f;5I"E
+f;5iOR
+f;5i`K
+f;5yzc
 f;J8t_H
 f;W8s f
 f;W8s(f
@@ -96945,6 +96967,7 @@ full_body_right_side
 full_challenge_average
 full_challenges_completed
 full_lap_avg_tries
+full_name
 full_report
 full_set_count
 full_set_pick_count
@@ -97964,6 +97987,7 @@ h(Hc@ I
 h(Hc@ M
 h8Hc@0H
 h@Hc@8Hk
+hA9\$$|aI
 hA\A]A
 hA\A]A^A
 hActivator
@@ -98779,6 +98803,10 @@ huskar_life_break
 hype_loc
 hyphen
 hypothermia
+h|D;-6i
+h|D;-Id
+h|D;-TAB
+h|D;-XU
 h|E;l
 h~>Hc
 i < length
@@ -103487,6 +103515,12 @@ k_eSupport
 k_eTagAlreadyUsed
 k_eTagChangeNoPermissions
 k_eTagInvalid
+k_eTalentContentAssetStatus_Approved
+k_eTalentContentAssetStatus_None
+k_eTalentContentAssetStatus_Rejected
+k_eTalentContentAssetType_Autograph
+k_eTalentContentAssetType_Photo
+k_eTalentContentAssetType_Voicelines
 k_eTargetNotMember
 k_eTeamTrackedStatImpl_Direct
 k_eTeamTrackedStatImpl_Expression
@@ -104449,7 +104483,7 @@ lycan_summon_wolves
 lycan_summon_wolves_critical_strike
 lycan_summon_wolves_invisibility
 lycan_wolf_bite
-m H;-d
+m H;-dW
 m8H;-6
 mCStorePlus
 mIcI`Ic
@@ -119535,11 +119569,9 @@ pwrd_cyber_cafe_id
 pwrd_cyber_cafe_name
 py_generic_services
 p|D;5
-p|D;5%b
-p|D;57
-p|D;5W
-p|D;5\A
-p|D;5n4
+p|D;57n
+p|D;5et
+p|D;5ww
 p|E;t
 p耀p耀p耀p
 q not prime
@@ -119668,8 +119700,8 @@ r\v"Hc
 r_AirboatViewDampenDamp
 r_AirboatViewDampenFreq
 r_AirboatViewZHeight
+r_JeepViewDampen
 r_JeepViewDampenDamp
-r_JeepViewDampenFreq
 r_JeepViewZHeight
 r_RainAllowInSplitScreen
 r_RainParticleDensity
@@ -121495,7 +121527,6 @@ s<br><br
 s<span class="Match">%s</span>%s
 s<t~E
 s<u)LcC
-s<u+LcS
 s=%(nh0
 s?interpolation=lanczos-none&output-format=jpeg&output-quality=92&fit=inside|*:%d
 s?interpolation=lanczos-none&output-format=jpeg&output-quality=95&fit=inside|*:70
@@ -126168,7 +126199,6 @@ t/HcQ8H
 t/IcF8
 t/L; u
 t/fD; u
-t/fD;%W
 t0;?ZlP*m
 t0HcRx1
 t1<)t
@@ -126347,7 +126377,6 @@ tNHcC8
 tNHcGp
 tNL9c0t L9c@tj
 tOH90u
-tOH;2
 tOHcC
 tOI;4
 tOI;7
@@ -126370,6 +126399,7 @@ tQHcCP
 tQHcZ H
 tQI;M
 tQIcL$HH
+tQLc5*X
 tQsMHc
 tRHcC
 tRHcC0
@@ -126529,6 +126559,7 @@ talent_comment_1
 talent_name
 talent_rates
 talent_skeleton_damage
+talent_status
 talent_title_%d
 talent_title_0
 talent_title_1
@@ -126644,6 +126675,7 @@ tdvrHc
 td}\Hc
 te.proto
 teL;"u
+teLc%&jw
 team ID
 team is
 team%d
@@ -127195,7 +127227,6 @@ tiny_toss_tree;tiny_tree_channel
 tiny_voice
 tinyexr_impl.cpp
 tinyexr_impl.cpp:164
-tion of weapon firing events
 tions.txH
 tions_stj
 tip-amount-events
@@ -127975,7 +128006,6 @@ uPM+uHI
 uP[A\A
 uP[A\A]A
 uR[A\A]A
-uSHc54
 uXA9t$XA
 uXHcNHH
 uXIcEPI
@@ -129189,6 +129219,7 @@ w+OQvr
 w,AUATI
 w0ATSH
 w0AUATI
+w0E;w4
 w0HcG(I
 w0Lco(I
 w0|/H
@@ -129724,6 +129755,7 @@ workshop_file
 workshop_file_id
 workshop_force_downloaded
 workshop_guide_name
+workshop_item_id
 workshop_testbed
 workshop_update_test
 workshoplink
@@ -129976,6 +130008,7 @@ z_speed_override
 zchangespeed
 zero_value
 zgueE1
+zip_file
 zlib compression
 zoW A1
 zoW E1
