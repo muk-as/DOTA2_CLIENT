@@ -8604,7 +8604,7 @@ enum class ESpecialPingValue : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
-// Enumerator count: 938
+// Enumerator count: 939
 // Alignment: 4
 // Size: 0x4
 enum class EDOTAGCMsg : uint32_t
@@ -9547,6 +9547,7 @@ enum class EDOTAGCMsg : uint32_t
 	k_EMsgGCToClientFightingGameChallenge = 0x2323,
 	k_EMsgGCToClientFightingGameStartMatch = 0x2324,
 	k_EMsgGCToClientFightingGameChallengeCanceled = 0x2325,
+	k_EMsgGCToServerSteamLearnUseHTTP = 0x2326,
 };
 
 // Registered binary: particles.dll (project 'particles')
