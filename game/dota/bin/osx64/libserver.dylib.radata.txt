@@ -10520,6 +10520,7 @@
 35CMsgSerializedSOCache_Cache_Version
 35CMsgServerToGCRerollPlayerChallenge
 35CMsgSteamLearnDataSourceDescElement
+35CMsgSteamLearnLateGameItemPurchases
 35CPortraitBackgroundParticleModifier
 35CSosFilterSetSoundEventFieldsInfo_t
 35CSurfacePropReloadableDataTableBase
@@ -10864,6 +10865,7 @@
 36CMsgServerToGCPlayerChallengeHistory
 36CMsgServerToGCRequestStatus_Response
 36CMsgSource1LegacyGameEventList_key_t
+36CMsgSteamLearnEarlyGameItemPurchases
 36CMsgSteamLearnMatchStateV5_TeamState
 36CMsgSteamLearnServerInfo_ProjectInfo
 36CMsgSteamLearnWardPlacement_Location
@@ -31050,12 +31052,14 @@ Dota Plus relic %s found with challenge ranks!\n
 DotaAbilitySkill
 DotaBingo_global_server
 DotaDefaultUIElement_t
+DotaEarlyGameItemPurchases
 DotaFantasyCrafting_global_server
 DotaFeaturedGamemodes_global_server
 DotaGCClientStartup
 DotaGestureSlot_t
 DotaItemPurchase
 DotaLabyrithBlessings_global_server
+DotaLateGameItemPurchases
 DotaMapUtils001
 DotaMatchHero
 DotaMatchHeroes
@@ -36895,9 +36899,11 @@ InfoForResourceTypeIMaterial2
 InfoForResourceTypeIParticleSystemDefinition
 InfoForResourceTypeIPulseGraphDef
 InfoPanel
+Information about a late-game item being selected
 Information about a neutral item being selected
 Information about a ward being placed
 Information about an ability getting skilled up
+Information about an early-game item being selected
 Information about an item purchase
 Information about item purchases in the pregame
 Information about the heroes in a match and their lanes
@@ -38068,7 +38074,7 @@ Jobs/Coroutines
 Join a team
 Joint Info
 JointMotion_t
-Jul 23 2024
+Jul 25 2024
 Jump to Instr I%d
 Jump to the passed tutorial lesson
 JumpOrLeap( C%d:I%d
@@ -40137,6 +40143,8 @@ N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18RegisterDataSourceI29CMsgStea
 N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18RegisterDataSourceI30CMsgSteamLearnPlayerTimedStatsEEvPKcS5_jjEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18RegisterDataSourceI33CMsgSteamLearnNeutralItemPurchaseEEvPKcS5_jjEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18RegisterDataSourceI34CMsgSteamLearnPreGameItemPurchasesEEvPKcS5_jjEUlvE_EE
+N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18RegisterDataSourceI35CMsgSteamLearnLateGameItemPurchasesEEvPKcS5_jjEUlvE_EE
+N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18RegisterDataSourceI36CMsgSteamLearnEarlyGameItemPurchasesEEvPKcS5_jjEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18SubmitToDataSourceI23CMsgSteamLearnMatchInfoEEvRK10CUtlVectorIyi10CUtlMemoryIyiEERKT_bEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18SubmitToDataSourceI25CMsgSteamLearnMatchHeroV3EEvRK10CUtlVectorIyi10CUtlMemoryIyiEERKT_bEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18SubmitToDataSourceI26CMsgSteamLearnAbilitySkillEEvRK10CUtlVectorIyi10CUtlMemoryIyiEERKT_bEUlvE_EE
@@ -40148,6 +40156,8 @@ N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18SubmitToDataSourceI29CMsgStea
 N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18SubmitToDataSourceI30CMsgSteamLearnPlayerTimedStatsEEvRK10CUtlVectorIyi10CUtlMemoryIyiEERKT_bEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18SubmitToDataSourceI33CMsgSteamLearnNeutralItemPurchaseEEvRK10CUtlVectorIyi10CUtlMemoryIyiEERKT_bEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18SubmitToDataSourceI34CMsgSteamLearnPreGameItemPurchasesEEvRK10CUtlVectorIyi10CUtlMemoryIyiEERKT_bEUlvE_EE
+N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18SubmitToDataSourceI35CMsgSteamLearnLateGameItemPurchasesEEvRK10CUtlVectorIyi10CUtlMemoryIyiEERKT_bEUlvE_EE
+N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18SubmitToDataSourceI36CMsgSteamLearnEarlyGameItemPurchasesEEvRK10CUtlVectorIyi10CUtlMemoryIyiEERKT_bEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager8PostInitEvE3$_1EE
 N5GCSDK17GCClientJobLambdaIZN19CDOTAGCServerSystem22UpdateLiveFantasyStatsEvE3$_0EE
 N5GCSDK17GCClientJobLambdaIZN20CDOTA_PlayerResource27FlushPlayerResourceRequestsEvE3$_2EE
@@ -45645,8 +45655,6 @@ Should blacklisted heroes be hidden, or just dimmed, in hero picking
 Should both primary and secondary attacks be cooled down together (so cooling down primary attack would cooldown both primary + secondary attacks
 Should nav_test_path test 3d navigation?  1 = space to space, 2 = multi-modal space/ground
 Should not reach here
-ShouldBeInitiallySuggested
-ShouldBeSuggested
 ShouldClientReceiveStringTableUserData called with nullptr GameRules() on table %s, string %d\n
 ShouldDoFlyHeightVisual
 ShouldGiveFreeTPOnDeath
@@ -46208,6 +46216,9 @@ Subtract
 SubtractFromTimer
 Succeeded
 Success
+SuggestEarlygame
+SuggestLategame
+SuggestPregame
 Suggested field numbers for
 Summarizes (by class) all extant entities. Optional 2nd arg is a substring of a classname that the list will be filtered by
 Summary: %d entities considered\n
@@ -49269,6 +49280,7 @@ b"I\n
 b"J\n CDOTAClientMsg_SelectOverworldID
 b"K\n
 b"L\n
+b"L\n$CMsgSteamLearnEarlyGameItemPurchases
 b"M\n CDOTAClientMsg_GuideSelectOption
 b"N\n
 b"O\n CMsgGCToGCStoreProcessSettlement
@@ -62430,8 +62442,6 @@ m_bShortLeashTime
 m_bShouldAnimateDuringGameplayPause
 m_bShouldApply
 m_bShouldAutoConvertBackFromDebris
-m_bShouldBeInitiallySuggested
-m_bShouldBeSuggested
 m_bShouldBleed
 m_bShouldCharge
 m_bShouldComputeRemainingPathLength
@@ -62518,6 +62528,9 @@ m_bStrikeLanded
 m_bStunned
 m_bSubtle
 m_bSuccess
+m_bSuggestEarlygame
+m_bSuggestLategame
+m_bSuggestPregame
 m_bSuggestedLaneJungle
 m_bSuggestedLaneRoam
 m_bSupportsCoopTeleport
@@ -72329,6 +72342,7 @@ n"EVENT_ID_MUERTA_RELEASE_SPRING2023
 n"GAME_PARTICLE_MANAGER_EVENT_CREATE
 n"GAME_PARTICLE_MANAGER_EVENT_FROZEN
 n"GAME_PARTICLE_MANAGER_EVENT_UPDATE
+n"K\n#CMsgSteamLearnLateGameItemPurchases
 n"LEAGUE_AUDIT_ACTION_NODEGROUP_EDIT
 n"LEAGUE_AUDIT_ACTION_NODE_COMPLETED
 n"OVERHEAD_ALERT_BONUS_POISON_DAMAGE

@@ -103719,8 +103719,9 @@ public:
 		uint8_t m_bIsAllowedInBackpack: 1; 		
 		uint8_t m_bIsObsolete: 1; 		
 		uint8_t m_bItemRequiresCustomShop: 1; 		
-		uint8_t m_bShouldBeSuggested: 1; 		
-		uint8_t m_bShouldBeInitiallySuggested: 1; 		
+		uint8_t m_bSuggestPregame: 1; 		
+		uint8_t m_bSuggestEarlygame: 1; 		
+		uint8_t m_bSuggestLategame: 1; 		
 		uint8_t m_bIsAffectedByAoEIncrease: 1; 		
 		uint8_t m_bHasCastAnimation: 1; 		
 		uint8_t m_bItemHasPassive: 1; 		
@@ -103730,8 +103731,8 @@ public:
 		uint8_t m_bIsSpeciallyAllowedInNeutralSlot: 1; 		
 		uint8_t m_bIsSpeciallyBannedFromNeutralSlot: 1; 		
 		uint8_t m_bAllowCombineFromGround: 1; 		
-		uint8_t __pad3: 3;
-	}; // 38 bits
+		uint8_t __pad3: 4;
+	}; // 40 bits
 };
 
 // Registered binary: server.dll (project 'server')
