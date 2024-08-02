@@ -35727,7 +35727,7 @@ public:
 class CDOTA_Modifier_EarthSpirit_Polarization : public CDOTA_Buff
 {
 public:
-	int32_t damage_per_second; // 0x1688	
+	float damage_per_second; // 0x1688	
 	float damage_interval; // 0x168c	
 	float damage_duration; // 0x1690	
 	int32_t rock_search_radius; // 0x1694	
@@ -64522,7 +64522,7 @@ class CDOTA_Modifier_Sniper_Shrapnel_Slow : public CDOTA_Buff
 {
 public:
 	int32_t slow_movement_speed; // 0x1688	
-	int32_t shrapnel_damage; // 0x168c	
+	float shrapnel_damage; // 0x168c	
 	int32_t m_nTracker; // 0x1690	
 	bool bFirst; // 0x1694	
 };
@@ -78026,7 +78026,7 @@ class CDOTA_Modifier_EarthSpirit_Magnetize : public CDOTA_Buff
 {
 public:
 	int32_t rock_search_radius; // 0x1688	
-	int32_t damage_per_second; // 0x168c	
+	float damage_per_second; // 0x168c	
 	float damage_interval; // 0x1690	
 	float rock_explosion_delay; // 0x1694	
 	float damage_duration; // 0x1698	
@@ -85881,10 +85881,9 @@ public:
 class CDOTA_Modifier_Furion_CurseOfTheForest : public CDOTA_Buff
 {
 public:
-	int32_t radius; // 0x1688	
-	int32_t damage_per_tree; // 0x168c	
-	int32_t slow_per_tree; // 0x1690	
-	int32_t m_nSlow; // 0x1694	
+	int32_t damage_per_tree; // 0x1688	
+	int32_t slow_per_tree; // 0x168c	
+	int32_t m_nSlow; // 0x1690	
 };
 
 // Registered binary: server.dll (project 'server')
