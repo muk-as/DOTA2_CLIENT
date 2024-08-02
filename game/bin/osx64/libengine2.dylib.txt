@@ -85,7 +85,6 @@
 0|t?L
 0|t?uj
 0|t?z7
-0녀UＺ0녔U
 1 = Pause the game when pressing ~ to open the console. CTRL+~ opens the console without pause
 1 = Unpause the game when pressing ~ to close the console. 0 = Leave the game paused
 1 fD9
@@ -2526,7 +2525,6 @@ CL:  connection to '%s' already started
 CL:  deleting entity %d %s due to reconcile issue
 CL:  m_pStringTableContainer is NULL in CBaseClientState::ProcessUpdateStringTable
 CL:  skipping back: %d -> %d. Calling RemoveAllFrames
-CL: %8.3f : clock drifted too much (abs(%d) > (delta %d + sim ticks %d) this frame), adopting server tick
 CL: CNetworkGameClient::ProcessTick server tick %d went backward from previous of %d, resetting previous
 CL: CNetworkGameClientBase::LinkClasses renamed %s to %s for replay compatability
 CL: ProcessSpawnGroup_Load setting max spawn group creation sequence to (%u) due to tickcount
@@ -2973,7 +2971,6 @@ ClientSkipsServerDLL
 ClientToServer
 ClientToolsInfo_001
 ClientVersion
-Clock Drift
 CloneDelta
 CloseDebuggerWindow
 Closed demo frame stats file '%s
@@ -3093,6 +3090,7 @@ Current alias commands: %d
 Current resident memory: %s
 Current server access password
 Current sv_pure value is %d
+Current tick is %d, but we have received a message for tick %d.  Processing all messages up to %d now
 Currently bound to '%s
 Currently playing %d of %d ticks. Minutes:%.2f File:%s
 Currently storing %d client frames, %12s bytes
@@ -3716,7 +3714,6 @@ Force a full update for all clients
 Force a single render of the engine viewport
 Force async reads to serialize for profiling
 Force client to ignore packets (for debugging
-Force clock correction to match the server tick + this offset (999 disables it
 Force full sendtable sending path
 Force toggle hibernation state
 Force uncompressed update
@@ -4429,7 +4426,6 @@ IcD$ I
 IcD$ I9
 IcD$(H
 IcD$(I
-IcD$0H9
 IcD$0I
 IcD$4H9
 IcD$4I
@@ -6980,7 +6976,6 @@ Should not reach here
 Show SourceTV server status
 Show alien gib entities
 Show client rates
-Show debugging info about the clock drift, 1= resets, 2=adjustments, 3=verbose
 Show entity packing stats, pass 'clear' as argument to reset counts
 Show human gib entities
 Show listening addition/removals
@@ -7024,6 +7019,7 @@ Skipped to tick=%d clientTick=%d startServerTick=%d
 Skips the current demo playback to the marked tick
 Skips to a tick in demo
 Skips to location in demo
+Slamming client tick to server tick.  abs( server tick %d - client tick %d = %d ) > ( cl_clockdrift_max_ticks %d + sim ticks %d = %d
 Slams viewport size to a specified value
 Sleep randomly 0..net_async_job_random_sleep ms in the parallel server jobs; sleep is per job
 SleepAfterMainLoop
@@ -7560,7 +7556,6 @@ UB^GWA
 UB`.ASA
 UILanguage
 UISubLanguage
-UL+搬U
 UNKNOWN
 UNKNOWN_ENUM_VALUE_%s_%d
 URL of the broadcast relay
@@ -9193,7 +9188,6 @@ cl_cache_sendtable
 cl_chat_active
 cl_checkdeclareclasses
 cl_clock_correction
-cl_clock_correction_force_server_tick
 cl_clock_interp_ticks
 cl_clock_recvmargin: %s, running at %.3f
 cl_clock_recvmargin_adjust_limit_slowdown
@@ -9205,8 +9199,6 @@ cl_clock_recvmargin_spew_interval
 cl_clock_recvmargin_timeconstant_slowdown
 cl_clock_recvmargin_timeconstant_speedup
 cl_clock_recvmargin_window
-cl_clock_showdebuginfo
-cl_clock_unhook
 cl_clockdbg
 cl_clockdrift_max_ticks
 cl_connectionretrytime_p2p
@@ -11022,10 +11014,10 @@ opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/engine2/loopmodeingame
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/engine2/loopmodelevelload.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/engine2/loopmodemainmenu.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/engine2/loopmoderemoteconnect.cpp
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/engine2/networkgameclient.cpp:2624
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/engine2/networkgameclient.cpp:3116
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/engine2/networkgameclient.cpp:3792
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/engine2/networkgameclient.cpp:4081
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/engine2/networkgameclient.cpp:2611
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/engine2/networkgameclient.cpp:3138
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/engine2/networkgameclient.cpp:3803
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/engine2/networkgameclient.cpp:4092
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/engine2/networkgameclientbase.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/engine2/networkgameclientbase.cpp:2710
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/engine2/networkgameserver.cpp:1174
@@ -12482,7 +12474,6 @@ t%fffff
 t%ffffff
 t&IcD
 t&ffffff
-t'D9=F
 t'HcD3
 t'HcD7
 t'IcD
@@ -12877,6 +12868,8 @@ u}ffffff
 űUȋM
 v3fffff
 v7fff
+v8H;5b
+v8H;5p
 v8IcV0H
 v:fff
 v:fffff
@@ -13109,6 +13102,7 @@ wsqnmcb_OD420
 wwgEbDgxvvfGb
 wwwwwwwwwwwwwww
 wwwwwwwwwwwwwwww
+wxH;5
 w|IcGxH
 x != NULL
 x#A9Fp

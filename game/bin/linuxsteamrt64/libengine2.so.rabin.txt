@@ -632,10 +632,8 @@
 1\n-NETWORK_DISCONNECT_DIRECT_CONNECT_RESERVATION
 1\n\fsplitplayers
 1\n\fvprof_report
-1\v=0AS
-1\v=6.S
 1\v=P=H
-1\v\rZ[Q
+1\v=jOS
 1s3\t\b\b
 1}1帚Y
 1ɉw E9
@@ -2607,7 +2605,6 @@ CL:  connection to '%s' already started\n
 CL:  deleting entity %d %s due to reconcile issue!\n
 CL:  m_pStringTableContainer is NULL in CBaseClientState::ProcessUpdateStringTable\n
 CL:  skipping back: %d -> %d. Calling RemoveAllFrames()\n
-CL: %8.3f : clock drifted too much (abs(%d) > (delta %d + sim ticks %d) this frame), adopting server tick\n
 CL: CNetworkGameClient::ProcessTick server tick %d went backward from previous of %d, resetting previous\n
 CL: CNetworkGameClientBase::LinkClasses renamed %s to %s for replay compatability\n
 CL: ProcessSpawnGroup_Load setting max spawn group creation sequence to (%u) due to tickcount\n
@@ -3038,7 +3035,6 @@ ClientSkipsServerDLL
 ClientToServer
 ClientToolsInfo_001
 Client\n    {\n
-Clock Drift
 CloneDelta
 CloseDebuggerWindow
 Closed demo frame stats file '%s'\n
@@ -3156,6 +3152,7 @@ Current Map: '%s'\n
 Current alias commands: %d\n
 Current resident memory: %s\n
 Current server access password
+Current tick is %d, but we have received a message for tick %d.  Processing all messages up to %d now.\n
 Currently bound to '%s'\n
 Currently playing %d of %d ticks. Minutes:%.2f File:%s\n
 Currently storing %d client frames, %12s bytes\n
@@ -3778,7 +3775,6 @@ Extensions of MessageSets must be optional messages
 Extensions to non-lite types can only be declared in non-lite files.  Note that you cannot extend a non-lite type to contain a lite type, but the reverse is allowed
 Extra arguments given after name\n
 ExtractSubrange() when arena is non-nullptr is only supported when
-EȉK=L'T
 EȋMPH
 EȨ@uH\f
 EЋE HcЋE
@@ -4059,7 +4055,6 @@ Force a full update for all clients
 Force a single render of the engine viewport
 Force async reads to serialize for profiling
 Force client to ignore packets (for debugging
-Force clock correction to match the server tick + this offset (999 disables it
 Force full sendtable sending path
 Force toggle hibernation state
 Force uncompressed update
@@ -4406,7 +4401,9 @@ H010ToAB30
 H010ToABGR
 H010ToAR30
 H010ToARGB
-H0H;\rE
+H0H;\r
+H0H;\r\b
+H0H;\re
 H19\b
 H210ToAB30
 H210ToABGR
@@ -4473,11 +4470,11 @@ H9z s
 H9{\btRH
 H9~\bt\b
 H;2s]A
-H;=5R
-H;=9WL
-H;=O\nS
-H;=PrM
-H;=g\tA
+H;=Ee
+H;=O\bS
+H;=Of
+H;=UR
+H;=o\fS
 H;D$HH
 H;E0sR
 H;G s@L
@@ -4489,9 +4486,8 @@ H;S sJH
 H;S srL
 H;U(v*H
 H;W\bv
-H;\rLJ
-H;\rcf
-H;\rs
+H;\rBrQ
+H;\rlJ
 H;l$\bt=I9
 H;t$@t\bH
 H;z H
@@ -4501,7 +4497,6 @@ H;|$ t\tH
 H;|$\bunH
 H;|$\bupH
 H@9H8
-H@L;\rh
 HA\\A]A
 HCperforce.inf
 HD9ep
@@ -4603,8 +4598,9 @@ HcP\bH
 HcT$(L
 HcT$4Mc
 HcW\bD
-Hc\rB\aZ
+Hc\r"\bZ
 Hc\rb/N
+Hc\rc%Q
 Hck HcC$9
 Hck$HcC(9
 Hck(HcC,9
@@ -5129,6 +5125,7 @@ J422ToABGR
 J422ToARGB
 J444ToABGR
 J444ToARGB
+J@L;\rZ
 JD;t$H
 JFIF APP0 marker: version %d.%02d, density %dx%d  %d
 JFIF extension marker: JPEG-compressed thumbnail image, length %u
@@ -5239,7 +5236,7 @@ L9v ~FL
 L9|$(tLL
 L9|$HJ
 L9|$\bu
-L;%HV
+L;%hV
 L;4$t0A
 L;4$toM
 L;4$trM
@@ -6378,6 +6375,7 @@ PCRE does not support \\L, \\l, \\N{name}, \\U, or \\u
 PD;{T
 PERMISSION_DENIED
 PEvent
+PH;=I
 PH;k u'H
 PHcKHIc
 PHcǍT
@@ -7636,7 +7634,6 @@ Should not reach here
 Show SourceTV server status
 Show alien gib entities
 Show client rates
-Show debugging info about the clock drift, 1= resets, 2=adjustments, 3=verbose
 Show entity packing stats, pass 'clear' as argument to reset counts
 Show human gib entities
 Show listening addition/removals
@@ -7680,6 +7677,7 @@ Skipped to tick=%d clientTick=%d startServerTick=%d\n
 Skips the current demo playback to the marked tick
 Skips to a tick in demo
 Skips to location in demo
+Slamming client tick to server tick.  abs( server tick %d - client tick %d = %d ) > ( cl_clockdrift_max_ticks %d + sim ticks %d = %d )\n
 Slams viewport size to a specified value
 Sleep randomly 0..net_async_job_random_sleep ms in the parallel server jobs; sleep is per job
 SleepAfterMainLoop
@@ -8936,6 +8934,7 @@ XuDSH
 Y. q\n\f\a\bA\v
 Y?'WY
 YA1E1
+YA1说\n
 YD$,ZY
 YUY2ToARGB
 YUY2ToARGBRow_AVX2
@@ -14342,7 +14341,7 @@ bE1\vK
 bH9H\bt
 bH9H\bt\bH
 bH9H\bu
-bH;5Kn
+bH;5kn
 bH;l$\b
 bH\vH\v$\t
 bHcD$4
@@ -14613,7 +14612,6 @@ cl_cache_sendtable
 cl_chat_active
 cl_checkdeclareclasses
 cl_clock_correction
-cl_clock_correction_force_server_tick
 cl_clock_interp_ticks
 cl_clock_recvmargin: %s, running at %.3f%%\n
 cl_clock_recvmargin_adjust_limit_slowdown
@@ -14625,8 +14623,6 @@ cl_clock_recvmargin_spew_interval
 cl_clock_recvmargin_timeconstant_slowdown
 cl_clock_recvmargin_timeconstant_speedup
 cl_clock_recvmargin_window
-cl_clock_showdebuginfo
-cl_clock_unhook
 cl_clockdbg
 cl_clockdrift_max_ticks
 cl_connectionretrytime_p2p
@@ -15908,6 +15904,7 @@ kBgrF709Constants
 kBgrH709Constants
 kBgrI601Constants
 kBgrJPEGConstants
+kHc\rT:Q
 kPH+kHH
 kP}+H
 kRgbF709Constants
@@ -16054,9 +16051,8 @@ lrucache_stats
 lseek64
 lu\tI
 l|)9lC
-m H;-x
 m#R;cv
-m8H;-Z
+m8H;-z
 mQN\aKN
 m\bu\eH9
 m\n\f\a\bE\vc\n\f\a\bB\v
@@ -16267,6 +16263,7 @@ multvar
 multvar: cvar "%s" not found\n
 multvar: no varname specified!\n
 must be unique within
+mxH;- f
 m۶m۶\rM
 m۶m۶mH
 m۶m۶mL
@@ -16964,9 +16961,14 @@ pServerClass
 pYa(bu
 p\bA9p\bu\a
 p\bHc\r
-p\bHc\rOvZ
-p\bHc\r\a
-p\bHc\r\ewZ
+p\bHc\r1Y
+p\bHc\r3
+p\bHc\rD
+p\bHc\rE
+p\bHc\rOwZ
+p\bHc\rW
+p\bHc\r\exZ
+p\bHc\ri
 p\n\f\a\bA\v
 p\n\f\a\bE\v
 package $0;\n\n
@@ -18367,7 +18369,6 @@ t\bHcC\b9
 t\bHcG\b
 t\bHcG\b9
 t\bIcF
-t\b[A
 t\eH9h r\fH
 t\eH9p r\fL
 t\eI;E
@@ -18641,6 +18642,7 @@ typeinfo name for
 tzAWAVAUATA
 tǋT$PL
 tЈC81
+t܋=VNS
 u CPU%s
 u [A\\A]A
 u iterated blocks\n
@@ -18663,6 +18665,7 @@ uE[A\\A]A
 uFD\tc
 uFIcW\bA9R\bu<I
 uF_iL,E
+uGL;%\b
 uI[A\\A]A
 uK[A\\A]A
 uMD\tc
