@@ -5259,9 +5259,7 @@
 1\n\tabilities
 1\n\taccolades
 1\n\vtree_events
-1\v=I\t
-1\v=\eKD
-1\v=o\t
+1\v={FD
 1] -> empty
 1] -> gsn(empty
 1] -> gsn(null
@@ -5272,6 +5270,7 @@
 1ɋS\fH
 1҃|$8 D
 1ҋH ;M
+1ҋ\rW~N
 2 .CMsgConnectedPlayers.SendReason
 2 .CMsgGCRoutingInfo.RoutingMethod
 2 .CMsgGCRoutingInfo.RoutingMethod:\aDISCARD
@@ -17096,7 +17095,6 @@ AT#G@u
 ATASAR
 ATAUP1
 ATAUWL
-ATLc%pzR
 ATS;wH
 ATSHc
 ATSHcG
@@ -17279,6 +17277,7 @@ AYAZD
 AYAZE1
 AYAZt=I
 AYAZtA
+AYAZ蠹S
 AZA[t\bL
 AZA[t\fH
 AZA[zYuW
@@ -17690,6 +17689,7 @@ Add the specified item drop to this creature
 AddAbility - Failed to create ability %s.\n
 AddAbility - Unit doesn't have empty slot for ability %s.\n
 AddAbilityUpgradeToWhitelist
+AddActiveCannonball
 AddAegisPickup
 AddBool
 AddBot
@@ -29041,6 +29041,7 @@ CreateFakeEntity( "%s", "%s" ) -> idx %d (handle %d)\n
 CreateHTTPRequest
 CreateHTTPRequestScriptVM
 CreateHeroForPlayer
+CreateHitListForCannonballVolley
 CreateItemOnPositionForLaunch
 CreateItemOnPositionSync
 CreateLocationTask
@@ -29400,10 +29401,11 @@ D8l\b0t'H
 D9 t}H
 D9 ~9H
 D9 ~\fH
+D9%n\aO
 D9&~jMc
 D9't3H
 D9(w*D9x
-D9-\vh
+D9-kc
 D93~0L
 D98tdL
 D98|\f
@@ -29440,7 +29442,6 @@ D9{8XZ
 D9{T|JL
 D; }\vIc
 D;#u\eH
-D;%m9
 D;&t9H
 D;)tCA
 D;*t\fH
@@ -32052,8 +32053,6 @@ E1\tKhfD
 E1\vO`H
 E1\vV@H
 E1\v{LL
-E1Ƀ=VP
-E1Ƀ=vO
 E1ɉJ\bH
 E1ɋsHWL
 E1҉EčB
@@ -33606,6 +33605,7 @@ Fire a game event
 Fire a game event without broadcasting to the client
 Fire an entity output
 Fire input {m_Input
+FireCannonsFromLocation
 FireCursorsParent
 FireEffect
 FireEntityIOInputNameOnly
@@ -35547,7 +35547,7 @@ H+r\b;r
 H+s\b;s
 H+w\bH9
 H0D;H@B
-H0H;\r
+H0H;\r0
 H19\b
 H3P H
 H3P(H
@@ -35568,7 +35568,6 @@ H97t[UH
 H98x\bL
 H9;vb
 H9;vk
-H9=fnE
 H9B rv
 H9C(u*[D
 H9C(u-[D
@@ -35628,21 +35627,17 @@ H;2s]A
 H;2spH
 H;2ssH
 H;2sxH
-H;5-RP
 H;8t/~M
 H;8t1H
 H;8tzD
 H;:tqI
-H;=0\fK
-H;=EeE
-H;=bPP
-H;=crB
-H;=gME
-H;=jE\v
-H;=lVE
-H;=nhF
-H;=q2J
-H;=zrV
+H;=4NP
+H;=A3B
+H;=JQB
+H;=SoB
+H;=n\fF
+H;=q\rJ
+H;=xD\v
 H;@XtJH
 H;D$HH
 H;D$pH
@@ -35662,6 +35657,7 @@ H;|$\bunH
 H;|$\bupH
 H<E:J
 H=vmdlt
+H@L;\rH
 H@T\tK
 HAS_LADDERS
 HAUATSH
@@ -35884,7 +35880,8 @@ Have we received the post match signout message that includes reward information
 HaveAllPlayersJoined
 Hc+HcC
 Hc0A;t$\f
-Hc5{*Z
+Hc5\e*Z
+Hc=\\1Z
 Hc@ Hk
 Hc@8I
 Hc@LHk
@@ -35960,7 +35957,8 @@ HcSl;Sp
 HcT$(L
 HcVXH94
 HcW\bH
-Hc\r]nM
+Hc\rCqc
+Hc\rSp
 Hc\tHc\f
 Hc_ ;_0
 Hc_ H
@@ -39105,6 +39103,11 @@ KPIcT$HI
 KRV\buM
 KR\v\vs
 KTEArmorRicochet_GameEvent_t
+KUNKKA GHOST SHIP SCEPTER: Bad index for cannonball hit data vector ADD. Caster = %s, Vector Size = %d, Projectile ID = %d, CannonballVolley = %d\n
+KUNKKA GHOST SHIP SCEPTER: Bad index for cannonball hit data vector REMOVE. Caster = %s, Vector Size = %d, Projectile ID = %d, CannonballVolley = %d\n
+KUNKKA GHOST SHIP SCEPTER: Cannonball hit data vector size does not match volley number. Caster = %s, Vector Size = %d, Projectile ID = %d, CannonballVolley = %d\n
+KUNKKA GHOST SHIP SCEPTER: Cannonball hit target but cannot find valid hit list. Caster = %s, Projectile ID = %d, CannonballVolley = %d\n
+KUNKKA GHOST SHIP SCEPTER: Missing Ability! No cannonballs will be fired. Caster = %s, Projectile ID = %d, CannonballVolley = %d\n
 KV3 instances cannot be set to an unspecified specific type
 KV3 save transfer failed: %s
 KXIcT$PI
@@ -39248,11 +39251,12 @@ L; u>I
 L; u\nD;i
 L; uiI
 L;!s?H9
-L;%Z9J
+L;%i\aJ
 L;0t`I
 L;4$t0A
 L;4$toM
 L;4$trM
+L;5|rP
 L;8t&I
 L;8t'I
 L;8t+I
@@ -39460,8 +39464,7 @@ Lc!D;a
 Lc"D;b
 Lc#D;c
 Lc#IcGxA9
-Lc%\\xc
-Lc%Ƀ4
+Lc%y3C
 Lc&HcG
 Lc'HǅP
 Lc(D;h
@@ -42882,6 +42885,7 @@ PFT_SOUND
 PFv31SoundOpvarManagerSettableData_tP34CSoundOpvarSetPointStackCollectionE
 PGDInstruction_t
 PH9CPu
+PH;=QxV
 PH;k u'H
 PHASE_Ban
 PHASE_Pick
@@ -44021,6 +44025,7 @@ Remove updater
 RemoveAbility - Unit does not have ability %s.\n
 RemoveAbilityFromIndexByName
 RemoveAbilityUpgradeFromWhitelist
+RemoveActiveCannonball
 RemoveAllInScope
 RemoveAllModifiersOfName
 RemoveBroadcastTeamTarget
@@ -48918,7 +48923,6 @@ X0uB[A
 X18,D
 X24_TYPELESS_G8_UINT
 X32_TYPELESS_G8X24_UINT
-X4Lc-J
 X500algorithms
 X509 V3 routines
 X509 lib
@@ -49026,8 +49030,6 @@ YA1ƅq
 YA1ǅ\f
 YA1ǅt
 YA1ǅx
-YA1董v
-YA1蘋\b
 YHcCx1
 YIcM(Ic
 YIcN(Ic
@@ -54352,7 +54354,6 @@ aA9L$\f
 aA;FH}9L
 aDCBaseAnimatingOverlay
 aGCommandMoveToPosition
-aH9=ge
 aH9G\bt
 aH9G\bt:H9S\bu
 aH9G\bt\v
@@ -54915,6 +54916,7 @@ ancient_apparition_death_rime
 ancient_apparition_ice_age
 ancient_apparition_ice_blast
 ancient_apparition_ice_blast_release
+ancient_apparition_ice_blast_release;ancient_apparition_death_rime
 ancient_apparition_ice_vortex
 ancient_creeps_killed
 ancient_golem_rockslide
@@ -55652,7 +55654,6 @@ bHasFrontalCone
 bHasInventory
 bHasMagicComponent
 bHasStartedBurning
-bHc5`rE
 bHc@0
 bHcC H
 bHcC01
@@ -55661,7 +55662,8 @@ bHcGXH
 bHcG\bL
 bHcR H
 bHc\aL
-bHc\rK{R
+bHc\r
+bHc\rGkE
 bHeartRegenApplied
 bHeroEffect
 bHeroID_t
@@ -55719,7 +55721,6 @@ bL$HH;G
 bL9B u
 bL9B@u
 bLateGame
-bLc%|d
 bLc&D;f
 bLc'D;g
 bLc.Lc7E
@@ -56692,6 +56693,7 @@ build_/game/server/_vpc_server_dota/unity/linuxsteamrt64/_proto_/../_schema_/rel
 build_/game/server/_vpc_server_dota/unity/linuxsteamrt64/_proto_/../_schema_/release/../../../../../../../../src/game/shared/dota/dota_ingameevents_muertarelease.cpp
 build_/game/server/_vpc_server_dota/unity/linuxsteamrt64/_proto_/../_schema_/release/../../../../../../../../src/game/shared/dota/dota_vscriptgamesystem.cpp
 build_/game/server/_vpc_server_dota/unity/linuxsteamrt64/_proto_/../_schema_/release/../../../../../../../../src/game/shared/dota/items/dota_item_aegis.cpp
+build_/game/server/_vpc_server_dota/unity/linuxsteamrt64/_proto_/../_schema_/release/../../../../../../../../src/game/shared/dota/units/dota_unit_hero_kunkka.cpp
 build_/game/server/_vpc_server_dota/unity/linuxsteamrt64/_proto_/../_schema_/release/../../../../../../../../src/game/shared/dota/units/dota_unit_hero_muerta.cpp
 build_/game/server/_vpc_server_dota/unity/linuxsteamrt64/_proto_/../_schema_/release/../../../../../../../../src/game/shared/props_shared.cpp
 build_/game/server/_vpc_server_dota/unity/linuxsteamrt64/_proto_/../_schema_/release/../../../../../../../../src/game/shared/vscriptgamesystem.cpp
@@ -59873,6 +59875,7 @@ eEquipped
 eEvent
 eEyesOnly
 eH[A\\A]A
+eHc\r
 eIcE(1
 eIcE@1
 eIcL$(Ic
@@ -60688,7 +60691,6 @@ fHcC81
 fHcCP1
 fHcKXIc
 fHcS\bH
-fHc\ro7C
 fI9\tJ\bu
 fIcE@1
 fIcO0Ic
@@ -61444,8 +61446,8 @@ g0E;g@D
 g0HcG(I
 g:l4d2
 gHcC\bMc
-gHc\r`G
-gHc\rЃF
+gHc\r
+gHc\r(f
 g\bHcXH
 g\btQIcG
 g\n#particle_freeze_transition_override
@@ -66531,7 +66533,7 @@ lycan_summon_wolves_hightail
 lycan_summon_wolves_invisibility
 lycan_wolf_bite
 m E9n4t
-m8L;-z
+m8H;-J
 m>1YA1A
 mA9]$|gI
 mHcC\b1
@@ -86499,6 +86501,8 @@ pvsplayer
 pwrd_cyber_cafe_id
 pwrd_cyber_cafe_name
 py_generic_services
+p|D;5\a
+p|D;5q\t
 q0[A\\A]A
 qW"a؈p
 q\bH9p\bv
@@ -92598,6 +92602,7 @@ t~HcC\b9
 t~Lc8I
 t~~lHc
 tþ-YA1L
+tɋ5KHc
 tЈC\bA
 tЉCH[A
 tЉEЋK
@@ -92679,6 +92684,7 @@ uF[A\\A]A
 uF_iM,E
 uFn\e_rG:=pq
 uGH91uB
+uGL;%p\nJ
 uG[A\\A]A
 uHIcE@I
 uID\tc
@@ -92729,6 +92735,7 @@ u\nD;B\b
 u\n[A
 u\rA\\A
 u\rAƄ$L
+u\rD;-C
 u\r[A
 u\tA\\A
 u\tHcD
@@ -93014,6 +93021,7 @@ uvA\\A
 uvD9h\bupL
 uvHcG\bIc
 uv[A\\A]A
+uwL;5
 uwMc7E;w
 uxHcG\bIc
 uxIcEpI
@@ -93025,6 +93033,7 @@ u~D\tc
 u~HcG\bIc
 uȋS\bfA
 uо/YA1H
+uً5osc
 u܋B E1
 v AUATI
 v"L\n"CMsgClientToGCOverworldDevResetAll
@@ -94127,7 +94136,6 @@ written by I%d last-read I%d
 wrong submessage type
 wt\b<a
 wxAUATI
-w݀=Q7m
 x%02x
 x(IcD$ A;D$0
 x(Ic] A;]0
