@@ -13946,7 +13946,7 @@ enum class AnimValueSource : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
-// Enumerator count: 350
+// Enumerator count: 349
 // Alignment: 4
 // Size: 0x4
 enum class modifierfunction : uint32_t
@@ -14645,9 +14645,7 @@ enum class modifierfunction : uint32_t
 	MODIFIER_PROPERTY_REDIRECT_SPELL = 0x159,
 	// MScriptDescription "GetBaseAttackPostBonus"
 	MODIFIER_PROPERTY_BASEATTACK_POSTBONUS = 0x15a,
-	// MScriptDescription "OnFoWTeamChanged"
-	MODIFIER_EVENT_ON_FOW_TEAM_CHANGED = 0x15b,
-	MODIFIER_FUNCTION_LAST = 0x15c,
+	MODIFIER_FUNCTION_LAST = 0x15b,
 	MODIFIER_FUNCTION_INVALID = 0xffff,
 };
 
@@ -35960,7 +35958,7 @@ public:
 
 // Registered binary: server.dll (project 'server')
 // Alignment: 8
-// Size: 0x1698
+// Size: 0x1688
 // Has VTable
 // Is Abstract
 class CDOTA_Buff : public CHorizontalMotionController
@@ -36015,9 +36013,9 @@ public:
 	CUtlVector< CDOTA_BuffParticle > m_iParticles; // 0xa0	
 	CUtlVector< CHandle< CBaseEntity > > m_hAuraUnits; // 0xb8	
 private:
-	[[maybe_unused]] uint8_t __pad00d0[0x15c0]; // 0xd0
+	[[maybe_unused]] uint8_t __pad00d0[0x15b0]; // 0xd0
 public:
-	HSCRIPT m_hScriptScope; // 0x1690	
+	HSCRIPT m_hScriptScope; // 0x1680	
 };
 
 // Registered binary: particles.dll (project 'particles')
@@ -37301,14 +37299,13 @@ public:
 
 // Registered binary: server.dll (project 'server')
 // Alignment: 8
-// Size: 0x18
+// Size: 0x10
 class sSharedCooldownInfo
 {
 public:
 	CUtlString cooldownName; // 0x0	
 	float cooldownLength; // 0x8	
 	GameTime_t cooldownTime; // 0xc	
-	GameTime_t lastUpdateTime; // 0x10	
 };
 
 // Registered binary: particles.dll (project 'particles')
