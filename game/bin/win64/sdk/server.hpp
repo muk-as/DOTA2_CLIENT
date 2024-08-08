@@ -93153,12 +93153,12 @@ public:
 
 // Registered binary: server.dll (project 'server')
 // Alignment: 8
-// Size: 0x1690
+// Size: 0x1688
 // Has VTable
 class CDOTA_Modifier_LoneDruid_GiftBearer : public CDOTA_Buff
 {
 public:
-	CHandle< CDOTA_Ability_LoneDruid_Innate_GiftBearer > m_hGiftBearer; // 0x1688	
+	// No schema binary for binding
 };
 
 // Registered binary: server.dll (project 'server')
