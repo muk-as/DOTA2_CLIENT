@@ -18260,6 +18260,7 @@ public:
 // MNetworkVarNames "uint64 m_ulTeamBannerLogo"
 // MNetworkVarNames "bool m_bTeamComplete"
 // MNetworkVarNames "bool m_bTeamIsHomeTeam"
+// MNetworkVarNames "bool m_bTeamCanSeeRoshanTimer"
 // MNetworkVarNames "Color m_CustomHealthbarColor"
 // MNetworkVarNames "char m_szTag"
 class C_DOTATeam : public C_Team
@@ -18287,9 +18288,11 @@ public:
 	// MNetworkEnable
 	bool m_bTeamIsHomeTeam; // 0x619	
 	// MNetworkEnable
-	Color m_CustomHealthbarColor; // 0x61a	
+	bool m_bTeamCanSeeRoshanTimer; // 0x61a	
 	// MNetworkEnable
-	char m_szTag[33]; // 0x61e	
+	Color m_CustomHealthbarColor; // 0x61b	
+	// MNetworkEnable
+	char m_szTag[33]; // 0x61f	
 };
 
 // Registered binary: client.dll (project 'client')

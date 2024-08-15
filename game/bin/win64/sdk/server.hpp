@@ -26189,12 +26189,12 @@ public:
 
 // Registered binary: server.dll (project 'server')
 // Alignment: 8
-// Size: 0x5b8
+// Size: 0x5c0
 // Has VTable
 class CDOTA_Ability_Invoker_ForgeSpirit : public CDOTA_Ability_Invoker_InvokedBase
 {
 public:
-	CHandle< CBaseEntity > m_Spirits[2]; // 0x5b0	
+	CHandle< CBaseEntity > m_Spirits[3]; // 0x5b0	
 };
 
 // Registered binary: server.dll (project 'server')
@@ -77693,7 +77693,7 @@ public:
 
 // Registered binary: server.dll (project 'server')
 // Alignment: 8
-// Size: 0x5b8
+// Size: 0x5c0
 // Has VTable
 class CDOTA_Ability_Invoker_ForgeSpirit_AD : public CDOTA_Ability_Invoker_ForgeSpirit
 {
@@ -79831,6 +79831,7 @@ public:
 // MNetworkVarNames "uint64 m_ulTeamBannerLogo"
 // MNetworkVarNames "bool m_bTeamComplete"
 // MNetworkVarNames "bool m_bTeamIsHomeTeam"
+// MNetworkVarNames "bool m_bTeamCanSeeRoshanTimer"
 // MNetworkVarNames "Color m_CustomHealthbarColor"
 // MNetworkVarNames "char m_szTag"
 class CDOTATeam : public CTeam
@@ -79860,12 +79861,11 @@ public:
 	// MNetworkEnable
 	bool m_bTeamIsHomeTeam; // 0x5a9	
 	// MNetworkEnable
-	Color m_CustomHealthbarColor; // 0x5aa	
+	bool m_bTeamCanSeeRoshanTimer; // 0x5aa	
 	// MNetworkEnable
-	char m_szTag[33]; // 0x5ae	
-private:
-	[[maybe_unused]] uint8_t __pad05cf[0x1]; // 0x5cf
-public:
+	Color m_CustomHealthbarColor; // 0x5ab	
+	// MNetworkEnable
+	char m_szTag[33]; // 0x5af	
 	int32_t m_event_lobby_updated; // 0x5d0	
 	int32_t m_nKillStreak; // 0x5d4	
 	int32_t m_iRecentKillCount; // 0x5d8	
@@ -80210,12 +80210,12 @@ public:
 
 // Registered binary: server.dll (project 'server')
 // Alignment: 8
-// Size: 0x5a8
+// Size: 0x5a0
 // Has VTable
 class CDOTA_Ability_Ursa_Earthshock : public CDOTABaseAbility
 {
 public:
-	CHandle< CDOTABaseAbility > m_hSourceAbility; // 0x5a0	
+	// No schema binary for binding
 };
 
 // Registered binary: server.dll (project 'server')
