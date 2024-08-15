@@ -4,7 +4,7 @@
 
 // /////////////////////////////////////////////////////////////
 // Binary: client.dll
-// Classes count: 6,568 (Allocated) | 6,676 (Unallocated)
+// Classes count: 6,569 (Allocated) | 6,677 (Unallocated)
 // Enums count: 2 (Allocated) | 90 (Unallocated)
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
@@ -63315,6 +63315,16 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
+// Size: 0x16b8
+// Has VTable
+class CDOTA_Modifier_ArcWarden_Flux_Alone : public CDOTA_Modifier_Silence
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: client.dll (project 'client')
+// Alignment: 8
 // Size: 0x16c0
 // Has VTable
 class CDOTA_Modifier_Medusa_StoneGaze_Slow : public CDOTA_Buff
@@ -69877,12 +69887,8 @@ public:
 	int32_t applies_silence; // 0x16d8	
 	int32_t m_nCurrentMovementSlow; // 0x16dc	
 	int32_t m_nCurrentStatusResistance; // 0x16e0	
-	bool m_bAlone; // 0x16e4	
-private:
-	[[maybe_unused]] uint8_t __pad16e5[0x3]; // 0x16e5
-public:
-	ParticleIndex_t m_nFXIndex; // 0x16e8	
-	bool m_bIsTempestVersion; // 0x16ec	
+	ParticleIndex_t m_nFXIndex; // 0x16e4	
+	bool m_bIsTempestVersion; // 0x16e8	
 };
 
 // Registered binary: client.dll (project 'client')
