@@ -535,7 +535,6 @@
 									<ToggleButton class="CheckBox" id="LegacyKeysCheckBox" text="#dota_settings_legacykeys" onactivate="DOTASetLegacyKeys();" onmouseover="UIShowTextTooltipStyled( #DOTA_Hotkeys_Tooltip_Legacy, OptionsTooltip)" onmouseout="UIHideTextTooltip()" />
 									<ToggleButton class="CheckBox" id="AllowGuiKeyToBindCheckbox" text="#dota_settings_allow_gui_key_to_bind" onactivate="DOTAUpdateAllowGuiKeyToBind();" />
 									<ToggleButton class="CheckBox" id="ButtonCodeIsScanCodeCheckbox" text="#dota_settings_button_code_is_scan_code" onactivate="DOTAUpdateButtonCodeIsScanCode();" onmouseover="UIShowTextTooltipStyled( #dota_settings_button_code_is_scan_code_tooltip, OptionsTooltip )" onmouseout="UIHideTextTooltip()" />
-									<ToggleButton class="CheckBox" id="ForceEnglishLocalKeyNamesCheckbox" text="#dota_settings_force_english_local_key_names" onactivate="DOTAUpdateForceEnglishLocalKeyNames();" onmouseover="UIShowTextTooltipStyled( #dota_settings_force_english_local_key_names_tooltip, OptionsTooltip )" onmouseout="UIHideTextTooltip()" />
 									<ToggleButton class="CheckBox" id="ShowItemQuickcastTab" text="#dota_settings_enable_item_quickcast" onactivate="DOTAToggleShowItemQuickcastTab();" onmouseover="UIShowTextTooltipStyled( #dota_settings_enable_item_quickcast_tooltip, OptionsTooltip )" onmouseout="UIHideTextTooltip()" />
 								</Panel>
 								<Panel id="" class="SettingsSection">
@@ -1647,11 +1646,18 @@
 										<RadioButton text="#dota_settings_overlay_map_key_behavior_whenheld" value="0" class="EnumButton" />
 										<RadioButton text="#dota_settings_overlay_map_key_behavior_toggle" value="1" class="EnumButton" />
 									</DOTASettingsEnum>
-									<DOTASettingsEnum convar="dota_overlaymap_inputmode" text="#dota_settings_overlay_map_inputmode">
+									<DOTASettingsEnum convar="dota_overlaymap_inputmode" text="#dota_settings_overlay_map_inputmode" onactivate="DOTALabsUpdateOverlayMapInputKeyState()">
 										<RadioButton text="#dota_settings_overlay_map_inputmode_never" value="0" class="EnumButton" />
 										<RadioButton text="#dota_settings_overlay_map_inputmode_always" value="1" class="EnumButton" />
+										<RadioButton text="#dota_settings_overlay_map_inputmode_whileheld" value="2" class="EnumButton" />
 									</DOTASettingsEnum>
+									<DOTASettingsKeyBinder id="OverlayMapInputKey" text="#dota_settings_overlay_map_inputkey" bind="OverlayMapInputKey" />
 									<DOTASettingsSlider text="#dota_settings_overlay_map_opacity" convar="dota_overlaymap_opacity" min="0.25" max="1.0" percentage="true" value100percent="1.00" />
+									<DOTASettingsEnum convar="dota_overlaymap_position" text="#dota_settings_overlay_map_position">
+										<RadioButton text="#dota_settings_overlay_map_position_center" value="0" class="EnumButton" />
+										<RadioButton text="#dota_settings_overlay_map_position_left" value="1" class="EnumButton" />
+										<RadioButton text="#dota_settings_overlay_map_position_right" value="2" class="EnumButton" />
+									</DOTASettingsEnum>
 								</Panel>
 								<Label class="SettingsDescription" text="#DOTA_Hotkeys_Tooltip_OverlayMapDescription" />
 							</Panel>

@@ -949,6 +949,8 @@ G\bx#;p
 GameResourceServiceClientV001
 GameResourceServiceServerV001
 GameStartup
+GameTick_t
+GameTime_t
 GameUIService_001
 GaussCol_C
 GaussCol_F32_C
@@ -1003,8 +1005,8 @@ H010ToAB30
 H010ToABGR
 H010ToAR30
 H010ToARGB
-H0H;\r
-H0H;\rЏ\n
+H0H;\rH
+H0H;\r\n
 H210ToAB30
 H210ToABGR
 H210ToAR30
@@ -1034,11 +1036,6 @@ H9\at'H
 H9\at\aH
 H9_X[A\\A
 H9~\bt\b
-H;-F9\t
-H;=L1\b
-H;=cL\n
-H;=e1\b
-H;=zk\b
 H;D$HH
 H;E0sR
 H;G s@L
@@ -1049,7 +1046,6 @@ H;t$@t\bH
 H;|$\bunH
 H;|$\bupH
 H@9H8
-H@L;\rpz\n
 HMaterial
 HModel
 HParticleSystemDefinition
@@ -1309,6 +1305,8 @@ IMAGE_FORMAT_IMC2
 IMAGE_FORMAT_NV12
 IMAGE_FORMAT_R11G11B10_FLOAT
 IPulseSystem_001
+IS_TYPESAFE_FLOAT
+IS_TYPESAFE_INTEGER
 ITM_RU1
 ITM_RU8
 ITM_addUserCommitAction
@@ -1344,7 +1342,6 @@ InputSystemVersion001
 Insert
 InsertBeforeGetPtr
 InstallSchemaBindings
-Intentionally vague touch behavior for %p\n
 InterpolatePlane
 InterpolateRow_16_C
 InterpolateRow_AVX2
@@ -1442,6 +1439,8 @@ M9}0u\tM
 M9}@u\tM
 MATCHFRAMEWORK_001
 MGetKV3ClassDefaults
+MIsBoxedFloatType
+MIsBoxedIntegerType
 MNetworkBitCount
 MNetworkChangeAccessorFieldPathIndex
 MNetworkChangeCallback
@@ -1740,6 +1739,7 @@ NumCols() <= V_ARRAYSIZE( s_DummyRow
 O0HcO8H
 OBJECT_TYPE_BLOCK_LIGHT
 OBJECT_TYPE_DISABLED_IN_LOW_QUALITY
+OBJECT_TYPE_DISABLE_VIS_CULLING
 OBJECT_TYPE_MODEL
 OBJECT_TYPE_MODEL_HAS_LODS
 OBJECT_TYPE_NONE
@@ -1761,7 +1761,6 @@ ObjectTypeFlags_t
 October
 Ok GU5T
 Only DXT1/DXT5 online texture compression supported.\n
-Ordered constructor wrapped type has no default constructor.\n\tYou must construct it with ORDERED_CONSTRUCT macro in the dependency resolution function.\n
 Output aborted
 Output unserialization of entities on map load. 0 - off, 1 - client/server, 2 - server, 3 - client
 OverlayProjectionDirection
@@ -1823,8 +1822,8 @@ PfA+DW
 Physics
 PhysicsBuilderMgr001
 Plat_CPUTickFrequency
-Plat_DebugPrint
 Plat_FatalErrorFunc
+Plat_GetTime
 Plat_IsInDebugSession
 Plat_NeedsLowFragmentation
 Plat_NonFatalErrorFunc
@@ -1978,6 +1977,7 @@ RGBA16161616
 RGBA16161616F
 RGBA32323232F
 RGBA32323232_UINT
+RGBA8888
 RGBA8888_LINEAR
 RGBA8888_UINT
 RGBAToARGB
@@ -2714,7 +2714,7 @@ WorldRenderer/GrassQuadSize
 WorldRendererMgr001
 World_t
 X&xXuePy
-X(IcF(M
+X(IcG(M
 X. q\n\f\a\bA\v
 X18,D
 X24_TYPELESS_G8_UINT
@@ -2930,6 +2930,7 @@ ZN11CTSListBaseC1Ev
 ZN11CTSListBaseC2Ev
 ZN12CSplitString5SplitEPKciPS1_ib
 ZN13CBufferString10FixSlashesEc
+ZN13CBufferString10TruncateAtEib
 ZN13CBufferString11ToLowerFastEi
 ZN13CBufferString12AppendConcatEiPKPKcPKib
 ZN13CBufferString12AppendFormatEPKcz
@@ -7468,7 +7469,6 @@ cxa_throw
 cxa_throw_bad_array_new_length
 d %d %d %d
 d (s/n %d
-d$$E19
 d$09l
 d$Pw[f
 d$\bfH
@@ -7631,7 +7631,6 @@ gxx_personality_v0
 hPMcu0E
 h\\FU8^a\n
 height > 0
-hhHc@`H
 hidden alias for
 home/saml/dev/steam/thirdpartycode/nonredist/libyuv/libyuv/source/planar_functions.cc
 home/saml/dev/steam/thirdpartycode/nonredist/libyuv/libyuv/source/row_common.cc
@@ -7748,6 +7747,7 @@ locale::_S_normalize_category category not found
 locale::facet::_S_create_c_locale name not valid
 locale::facet::_S_lc_ctype_c_locale duplocale error
 locale::facet::_S_lc_ctype_c_locale newlocale error
+localize
 long double
 loongson-ext
 loongson-mmi
@@ -7787,6 +7787,8 @@ m_bHasTransform
 m_bInvokePostDataUpdates
 m_bIsNotMatchedToMaterial
 m_bMarkedForRemoval
+m_bNoShadow
+m_bOnlyShadow
 m_bUseCompressedNormalTangent
 m_bUseShadowFastPath
 m_bVisibleinPVS
@@ -8001,6 +8003,7 @@ n\f\a\bH\v
 n\f\a\bK\v
 n\f\a\bK\v0
 n\f̓WyQ
+n\v\fresource
 nanosleep
 newlocale
 nl_langinfo_l
@@ -8028,13 +8031,13 @@ operator
 optionallycompressedtangentframe
 output
 p<0tUw
-p?RGBA8888
 pH;|$Pt
 p\n\f\a\bA\v
 panorama
 pass %u\n
 pbucket->plinkLast->GetNext() == nullptr
 pervertexlighting
+phHc@`H
 phys_res
 plt.got
 pointer
@@ -8251,7 +8254,6 @@ t\nD9kL
 t\nE8gI
 t\nE9gL
 t\nM9}0
-t\n\vresource
 t\t\tNodes Loaded: %d / %d\n
 t\vM9l$0
 t`LcL\n\bL
@@ -8294,7 +8296,6 @@ u>DATAH
 u@IcU8H
 uF_iL,E
 uFn\e_rG
-uGL;%h
 uI[A\\A]A
 uP[A\\A
 uP[A\\A]A

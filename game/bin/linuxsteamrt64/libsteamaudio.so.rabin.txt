@@ -34,12 +34,10 @@
 16ISourceProcessor
 16ISteamAudioScene
 17CPathingProcessor
-17CSteamAudioProbes
 17CSteamAudioSource
 17CVDataFileManagerI13CNavHullVDataE
 17CVDataFileManagerI19CNavHullPresetVDataE
 17IPathingProcessor
-17ISteamAudioProbes
 17ISteamAudioSource
 18CSource3DProcessor
 1˫oJ֧#q
@@ -58,8 +56,9 @@
 23CSteamAudioMaterialList
 23INavMovableMeshListener
 24CNavHullVDataFileManager
+25CSteamAudioSimulationData
 25CSurfacePropDataTableBase
-2RD\n2
+25ISteamAudioSimulationData
 2ɑKC\n\v
 30CNavHullPresetVDataFileManager
 33333333H
@@ -70,6 +69,8 @@
 3jx\tM
 4IcT$0
 4x\ax7
+5BppEi
+5BppHi
 5lu file=%s, line=%d
 60-G/0í\n09N
 7gEsHi
@@ -263,6 +264,7 @@ BinaryProperties_GetValue
 Binvalid_hitbox
 Biometric Info
 BoneConstraintList
+C IǄ$8
 C(H;C0r
 C)ʹcL
 C8HcMčp
@@ -381,6 +383,7 @@ D16_UNORM
 D24_UNORM_S8_UINT
 D32_FLOAT
 D32_FLOAT_S8X24_UINT
+D40]T30
 D8 t,D
 D8kpt\nD8kq
 D9l$\f
@@ -440,7 +443,6 @@ ERROR: Unconnected ladder #%d top at ( %g, %g, %g )\n
 EVP lib
 EXPORTSYSTEM_INTERFACE_VERSION_001
 E\a@u*1
-E\bHc@t
 E\n\f\a\bD\vH
 EarlyInit_Tier0
 EconItemToolModel_001
@@ -577,7 +579,7 @@ H+G\bH9
 H+L$\bH
 H+] H
 H+w\bH9
-H0H;\rX
+H0H;\rJ
 H3P H
 H3P(H
 H3P0H
@@ -586,6 +588,7 @@ H3P@H
 H3PHH
 H3P\bH
 H91sWL
+H95y\e\a
 H9D$\bthH
 H9D$xt
 H9D$xtzI
@@ -601,9 +604,11 @@ H9\at'H
 H9\at\aH
 H9~\bt\b
 H9Љ49u
-H;=3s\t
-H;=TB\b
-H;=dF\b
+H;=4M\b
+H;=7L\t
+H;=OM\b
+H;=UU\t
+H;=cs\t
 H;D$HH
 H;D$pH
 H;E0sR
@@ -633,8 +638,9 @@ HelpSystem_001
 Hh#p\\H
 HhFQ\n
 Hi/4>\tH
-Hiwg,1Hi
+Hi[3?XH
 Hi£4>2H
+Hi·g,1Hi
 Hiȿ\nf(Hi
 HiɁl@6H
 Hiɹuy\aH
@@ -697,8 +703,8 @@ If set, all the probes near a source withing probe range are used to find paths 
 If set, baked pathing data is loaded. Steam Audio Hammer entities can successfully use pathing in this case
 If set, baked reverb data is loaded. Reset it to zero during an format changes of baked data until all data is updated
 Imaginary
-ImportPathingProbes
-ImportReverbProbes
+ImportPathingData
+ImportReverbData
 Independent
 Index of active HRTF
 Inherit all
@@ -707,7 +713,6 @@ InputStackSystemVersion001
 InputSystemVersion001
 Insert
 InstallSchemaBindings
-Intentionally vague touch behavior for %p\n
 International Organizations
 Invalid navigation file '%s'.\n
 Invalidity Date
@@ -738,7 +743,6 @@ L$\bJct1\b
 L$\bLcL$\f
 L$\bdH3\f
 L$\bt9H
-L$\btaf
 L$\ff9L$8
 L9cHu
 L9l$\bt_M
@@ -756,7 +760,6 @@ LC_NUMERIC
 LC_PAPER
 LC_TELEPHONE
 LC_TIME
-Lc#D;c
 Lc)D;i
 Lc;IǄ$07
 Lck8D;kH
@@ -957,7 +960,6 @@ O\n\f\a\bG\v
 Oakley-EC2N-3
 Oakley-EC2N-4
 October
-Ordered constructor wrapped type has no default constructor.\n\tYou must construct it with ORDERED_CONSTRUCT macro in the dependency resolution function.\n
 OverlayProjectionDirection
 P A9\\$\bI
 P HcC
@@ -983,7 +985,7 @@ PBKDF2
 PBMAC1
 PEM lib
 PEM routines
-PHHc\vH
+PHA9\\$x
 PHcǍT
 PKCS12 lib
 PKCS12 routines
@@ -1008,12 +1010,14 @@ Path length of invalid path in inches. Set this to .0 to use direct distance as 
 Pathing: Baked data file is the wrong format version, skipping load. Consider re-baking. (%s)\n
 Pathing: Baked data file is the wrong format, skipping load. Consider re-baking. (%s)\n
 Pathing: Cannot find baked paths file: %s. Pathing disabled.\n
+Pathing: Cannot find baked paths file: %s.\n
 Pathing: Filesystem not initialized.\n
 Pathing: Imported %d probes from baked pathing file (%s).\n
 Pathing: Loaded baked data file (%s).\n
 Pathing: No baked pathing found in baked data file: %s.\n
 Pathing: No probes found in baked data file: %s. Pathing disabled.\n
 Pathing: Unable to create serialized object. (%d)\n
+Pathing: Unable to load baked data file (%s).\n
 Pathing: Unable to load probe batch. (%d)\n
 Pathing: Unable to read from baked data file (%s). Pathing disabled.\n
 PerVertexLighting
@@ -1022,9 +1026,10 @@ Perspective correction factor, ratio of screen size and view depth from screen, 
 Phonon_Log
 Physics
 PhysicsBuilderMgr001
-Plat_DebugPrint
 Plat_FatalErrorFunc
 Plat_FloatTime
+Plat_GetTime
+Plat_IsInDebugSession
 Plat_NonFatalErrorFunc
 Pointers cannot be used as numeric values
 Policy Qualifier CPS
@@ -1039,7 +1044,6 @@ Proxy Certificate Information
 Q\f9V\f
 R IcW
 R+2jZ
-R0]T30
 R10G10B10A2_TYPELESS
 R10G10B10A2_UINT
 R10G10B10A2_UNORM
@@ -1112,7 +1116,6 @@ RC5-CBC
 RC5-CFB
 RC5-ECB
 RC5-OFB
-RIcE(1
 RSA Data Security, Inc
 RSA Data Security, Inc. PKCS
 RSA lib
@@ -1170,6 +1173,7 @@ ResourceSystem013
 Reverb: Baked data file is the wrong format version, skipping load. Consider re-baking. (%s)\n
 Reverb: Baked data file is the wrong format, skipping load. Consider re-baking. (%s)\n
 Reverb: Cannot find baked reverb file: %s. Reverb disabled.\n
+Reverb: Cannot find baked reverb file: %s.\n
 Reverb: Filesystem not initialized.\n
 Reverb: Imported %d probes from baked reverb file (%s).\n
 Reverb: Loaded baked data file (%s).\n
@@ -1177,6 +1181,7 @@ Reverb: No baked reverb found in baked data file: %s.\n
 Reverb: No probes found in baked data file: %s. Reverb disabled.\n
 Reverb: Unable to create serialized object. (%d)\n
 Reverb: Unable to load baked data file (%s). Reverb disabled.\n
+Reverb: Unable to load baked data file (%s).\n
 Reverb: Unable to load probe batch. (%d)\n
 S(;S,}9Lc
 S(HcV\b
@@ -1362,6 +1367,7 @@ T \bA9
 T$0~pH
 T$8HǅP
 T$8XZL
+T$HA\\A
 T$HH\t
 T$\bH;C
 T$\bL#d$HI\t
@@ -1410,8 +1416,6 @@ UH.f}ᨐ2
 UNKNOWN
 UStwHc_\bH
 UUUUUUUUH
-U\bz\rA
-U\fOsD
 U\fOsHi
 Unable to create Ambisonics decode effect [%d]\n
 Unable to create custom HRTF [%s]\n
@@ -1755,6 +1759,7 @@ ZN12CThreadEvent5ResetEv
 ZN12CThreadEventC1EPKcbb
 ZN13CBufferString10FixSlashesEc
 ZN13CBufferString10RelinquishENS_19EAllocationOption_tE
+ZN13CBufferString10TruncateAtEib
 ZN13CBufferString11ToLowerFastEi
 ZN13CBufferString12AppendConcatEiPKPKcPKib
 ZN13CBufferString12AppendFormatEPKcz
@@ -5871,6 +5876,7 @@ aH9G\bt:H9S\bu
 aH9G\bu
 aRecord
 aY\a@\aR
+a\eZEi
 a_object.c
 aaControls
 ac-auditEntity
@@ -6165,10 +6171,8 @@ cxa_thread_atexit_impl
 cxa_throw
 cxa_throw_bad_array_new_length
 d %d %d %d
-d$$E19
 d$xPAQj
 dH3\f
-dHiҕL
 dITRedirect
 dNSDomain
 dSAQuality
@@ -6382,7 +6386,6 @@ gost89-cnt
 gost94cc
 guard variable for
 gxx_personality_v0
-h\bz\eu
 hidden alias for
 highFreqAbsorption
 highFreqTransmission
@@ -6400,9 +6403,7 @@ homePostalAddress
 homeTelephoneNumber
 houseIdentifier
 i)H\e
-i2t<f2
 iA5StringSyntax
-iEi\t
 ibI+Hi
 iconv_close
 iconv_open
@@ -6680,6 +6681,7 @@ iplImpulseResponse2AddChannel
 iplImpulseResponse2AddSample
 iplImpulseResponse2Create
 iplImpulseResponse2GetChannel
+iplImpulseResponse2GetNumSamples
 iplImpulseResponse2Release
 iplImpulseResponse2Reset
 iplImpulseResponse2SetChannel
@@ -6747,6 +6749,7 @@ iplSimulatorCreate
 iplSimulatorRelease
 iplSimulatorRemoveProbeBatch
 iplSimulatorRunDirect
+iplSimulatorRunPathingForNeighborhoods
 iplSimulatorRunPathingPerSource
 iplSimulatorRunPathingPerSourceForNeighborhood
 iplSimulatorRunReflections
@@ -6792,7 +6795,6 @@ l$ LcM
 l$0H;T$8trH
 l$\bA8nnA
 l$\bE1\t
-l0\f$f0
 lA9<$tpI
 lIcT$h
 lN1\v}\by
@@ -6821,6 +6823,8 @@ locale::facet::_S_create_c_locale name not valid
 locale::facet::_S_lc_ctype_c_locale duplocale error
 locale::facet::_S_lc_ctype_c_locale newlocale error
 localityName
+localization_path
+localize
 localtime
 long double
 lowFreqAbsorption
@@ -6850,6 +6854,8 @@ m_bHasBakedLightingFromLightMap
 m_bHasBakedLightingFromVertexStream
 m_bIsNotMatchedToMaterial
 m_bNeedsSort
+m_bNoShadow
+m_bOnlyShadow
 m_bUseCompressedNormalTangent
 m_bUseShadowFastPath
 m_vGravity
@@ -6902,6 +6908,7 @@ n    H
 n------- Steam Audio Baked Pathing Statistics ------\n
 n------- Steam Audio Baked Reverb Statistics ------\n
 n8ATUH
+n<\etgH
 nL4=nL4=nL4=nL4=IM
 nN\t{E\e
 nSRecord
@@ -6918,6 +6925,7 @@ n\f\a\bH\v
 n\f\a\bK\v
 n\f\a\bK\v0
 n\f̓WyQ
+n\v\f../public/tier0/utlrbtree.h
 nameConstraints
 nav_pathfind_multithread
 nav_unmark; nav_mark ladder %d; nav_warp_to_mark\n
@@ -6949,6 +6957,7 @@ nsRenewalUrl
 nsRevocationUrl
 nsSslServerName
 number=%d, address=%08lX\n
+o(zVuT
 o\bATSH
 o\bA]A
 o\n\f\a\bD\vv\n\f\a\bB\vD
@@ -7111,6 +7120,7 @@ r̤9ϔwl
 s Ladder Count: %d\n
 s%s%s crc=0x%x metadatasz=%d
 s(%d): OpenSSL internal error, assertion failed: %s\n
+s0IǄ$p
 s8H;s@t[H
 s: %s
 s: Invalid capacity %u\n
@@ -7417,7 +7427,6 @@ steamaudio_reverb_ir_duration
 steamaudio_reverb_rays
 steamaudio_reverb_rebake_option
 steamaudio_validation
-steamaudioprobes.cpp
 steamaudioscene.cpp
 strchr
 strcmp
@@ -7498,7 +7507,6 @@ t\nD9kL
 t\nE8gI
 t\nE9gL
 t\nM9}0
-t\n\v../public/tier0/utlrbtree.h
 t\rHcs\fH
 t\tHcCP;C8r
 t\vH;8u
@@ -7548,7 +7556,6 @@ u@IcU8H
 uF_iM,E
 uFn\e_rG
 uG;~@Uu
-uGL;%p
 u\aH;L
 u\tHcD
 ua8CHtdH
@@ -7588,7 +7595,6 @@ userPassword
 uvHcG\bIc
 uxHcG\bIc
 v#imH
-v1rGP1
 v4_lpA
 vT$\fuCH
 vUgYk
@@ -7660,7 +7666,7 @@ xk;B`}fH
 xl;B`}gH
 xzy{u
 xzy{ͦǌuw
-y0+!n0
+y0+!n0\f$f0
 y<\rE5B
 yOk GU5T
 zlib compression

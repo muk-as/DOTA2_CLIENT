@@ -10,7 +10,7 @@
 // /////////////////////////////////////////////////////////////
 
 // Registered binary: worldrenderer.dll (project 'worldrenderer')
-// Enumerator count: 13
+// Enumerator count: 14
 // Alignment: 4
 // Size: 0x4
 enum class ObjectTypeFlags_t : uint32_t
@@ -28,6 +28,7 @@ enum class ObjectTypeFlags_t : uint32_t
 	OBJECT_TYPE_OVERLAY = 0x2000,
 	OBJECT_TYPE_PRECOMPUTED_VISMEMBERS = 0x4000,
 	OBJECT_TYPE_STATIC_CUBE_MAP = 0x8000,
+	OBJECT_TYPE_DISABLE_VIS_CULLING = 0x10000,
 };
 
 struct ChangeAccessorFieldPathIndex_t;
@@ -98,7 +99,7 @@ public:
 	// MNetworkChangeAccessorFieldPathIndex
 	ChangeAccessorFieldPathIndex_t m_PathIndex; // 0x40	
 private:
-	[[maybe_unused]] uint8_t __pad0042[0x16]; // 0x42
+	[[maybe_unused]] uint8_t __pad0044[0x14]; // 0x44
 public:
 	CEntityIdentity* m_pPrev; // 0x58	
 	CEntityIdentity* m_pNext; // 0x60	
@@ -345,7 +346,7 @@ public:
 
 // Registered binary: worldrenderer.dll (project 'worldrenderer')
 // Alignment: 8
-// Size: 0x28
+// Size: 0x30
 // Has Trivial Destructor
 // 
 // MGetKV3ClassDefaults

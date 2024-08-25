@@ -10,6 +10,7 @@
 0` 0hSN
 0fD9|$8
 1.2.11
+100s %-6s %-6s\n
 10ConCommand
 10IAppSystem
 12CDeviceFence
@@ -41,6 +42,7 @@
 18CEmptyShaderBuffer
 18CPooledIndexBuffer
 18CRenderDeviceEmpty
+19CPooledVertexBuffer
 19CRenderContextEmpty
 19CSchemaRegistration
 19CTextureManagerBase
@@ -789,7 +791,7 @@ H010ToAB30
 H010ToABGR
 H010ToAR30
 H010ToARGB
-H0H;\r
+H0H;\rM
 H210ToAB30
 H210ToABGR
 H210ToAR30
@@ -819,12 +821,13 @@ H9\at'H
 H9\at\aH
 H9_X[A\\A
 H9~\bt\b
-H;-16\r
-H;=9Y\r
-H;=Aj\r
-H;=Ed\a
-H;=ce\t
-H;=qE\r
+H;-Vs\b
+H;=BQ\a
+H;=N8\n
+H;=fO\r
+H;=jV\r
+H;=qU\r
+H;=sD\t
 H;@0tJH
 H;@@tJH
 H;@\btJH
@@ -841,6 +844,7 @@ H;v0t|L
 H;|$\bunH
 H;|$\bupH
 H@9H8
+H@L;\rX
 HAk- M
 H\n\f\a\bC\v
 H\tʋL
@@ -858,6 +862,7 @@ HammerMapLoader001
 HcE8HcM
 HcE8Lcu
 HcG\bH
+HcG\bIc
 HcG\fHcW
 HcN\bHi
 HcO4McB
@@ -1094,7 +1099,8 @@ I;O s'H
 I;U s%H
 I;t$ stL
 I;t$ u\f
-IB: %d buffers, %.2f MB\n
+IB Size: %s (Count: %d)\n
+IB: %d buffers, %.2f MB
 IBPool
 IDATt
 IMAGE_FORMAT_IMC2
@@ -1146,7 +1152,6 @@ Insufficient data size in offset table
 Insufficient data size.\n
 Insufficient header/data size.\n
 Insufficient memory (case %d
-Intentionally vague touch behavior for %p\n
 InterpolatePlane
 InterpolateRow_16_C
 InterpolateRow_AVX2
@@ -1197,7 +1202,6 @@ J444ToABGR
 J444ToARGB
 J5`!gG
 J<J\fOn
-J@L;\rZ
 JFIF APP0 marker: version %d.%02d, density %dx%d  %d
 JFIF extension marker: JPEG-compressed thumbnail image, length %u
 JFIF extension marker: RGB thumbnail image, length %u
@@ -1226,6 +1230,8 @@ L$\bLcL$\f
 L$\ff9L$8
 L9l$\bt_M
 L9p\bu
+L;%Bu\b
+L;%wL\r
 L;l$puYH
 LC_ADDRESS
 LC_COLLATE
@@ -1507,7 +1513,6 @@ Obtained EMS handle %u
 Obtained XMS handle %u
 October
 Opened temporary file %s
-Ordered constructor wrapped type has no default constructor.\n\tYou must construct it with ORDERED_CONSTRUCT macro in the dependency resolution function.\n
 Output aborted
 Output file write error --- out of disk space
 Output memory size is zero
@@ -1565,7 +1570,6 @@ ParticleSystemMgr003
 PfA+DW
 PhysicsBuilderMgr001
 Plat_CPUTickFrequency
-Plat_DebugPrint
 Plat_FatalErrorFunc
 Plat_FloatTime
 Plat_GetClockStart
@@ -1575,6 +1579,7 @@ Plat_GetMonitorBounds
 Plat_GetMonitorCount
 Plat_GetMonitorResolution
 Plat_GetProcAddress
+Plat_GetTime
 Plat_GetWindowMonitorIndex
 Plat_GlobalMemoryStatus
 Plat_IsInDebugSession
@@ -1582,6 +1587,7 @@ Plat_NeedsLowFragmentation
 Plat_OsSpecificHandleToPlatWindow
 Plat_ReconfigureWindow
 Plat_WindowToOsSpecificHandle
+Pool: %.1fmb of %.1fmb
 PooledDynamicConstantBuffer
 PostProcessingSystem_001
 PreloadTextureBits
@@ -1589,6 +1595,7 @@ Premature end of JPEG file
 Premature end of input file
 Premature end-of-file encountered
 Premature end-of-partition0 encountered
+Print Vertex/Index/GPU buffers
 Promise already satisfied
 PropertyEditorSystem_001
 QHcKPIc
@@ -1760,14 +1767,8 @@ RenderSystem/MaxPreloadTextureResolution
 RenderSystem/MinDXLevel
 RenderSystem/MinStreamingPoolSizeMB
 RenderSystem/MinStreamingPoolSizeMBTools
+RenderSystem/VertexBufferPoolSizeMB
 RenderUtils_001
-Rendering/Constant Buffers (MB
-Rendering/Index Buffers (MB
-Rendering/Texture Non-Evictable Size (MB
-Rendering/Texture Pool Size (MB
-Rendering/Texture Resident Size (MB
-Rendering/Texture Unthrottle Streaming
-Rendering/Vertex Buffers (MB
 Rendersystem/SheetCacheTextureCols
 Rendersystem/SheetCacheTextureRows
 Requested feature was omitted at compile time
@@ -2238,6 +2239,7 @@ Too many color components: %d, max %d
 ToolFramework2_002
 ToolSceneNodeFactory_001
 ToolService_001
+Total Size: %s (Count: %d)\n
 Total size of the texture pool in MB
 TransposePlane
 TransposeUVWx8_Any_SSE2
@@ -2336,7 +2338,9 @@ V(I;V0s
 VApplication001
 VAsyncFileSystem2_001
 VAvi001
-VB: %d buffers, %.2f MB\n
+VB Size: %s (Count: %d)\n
+VB: %d buffers, %.2f MB
+VBPool
 VBik001
 VConComm001
 VEngineCvar007
@@ -2354,7 +2358,6 @@ VPhysics2_Handle_Interface_001
 VPhysics2_Interface_001
 VProcessUtils002
 VProfService_001
-VProf_FindOrCreateCounter
 VRenderDeviceSetupV001
 VScript
 VScriptDbg
@@ -2368,6 +2371,7 @@ V_:X1
 V_GetFileExtension
 V_IsAbsolutePath
 V_LZ4_decompress_safe
+V_PrettifyMem
 V_PrettifyNum
 V_RemoveDotSlashes
 V_StringToBool
@@ -2462,6 +2466,7 @@ Write to XMS failed
 Wrong JPEG library version: library is %d, caller expects %d
 X&xXuePy
 X. q\n\f\a\bA\v
+XIcE\b1
 XYdl\nv
 XZ[A\\H
 XuDSH
@@ -7113,6 +7118,7 @@ min megatexels
 min_processor_count
 mt19937
 n    H
+n Hǃx\b
 n8ATUH
 nHcG\bH
 nL4=nL4=nL4=nL4=IM
@@ -7201,6 +7207,7 @@ r_fullscreen_gamma
 r_gpu_mem_stats
 r_max_device_threads
 r_max_texture_pool_size
+r_print_buffers
 r_renderdoc_capture_frame
 r_renderdoc_capture_window_vulkan
 r_renderdoc_open_captures
@@ -7369,7 +7376,6 @@ t\nE8gI
 t\nE9gL
 t\nL;0u
 t\nM9}0
-t\tAƄ$x\n
 t\t\t\t\t\t\t\tI
 t\vM9l$0
 ta\n\f\a\bA\v
@@ -7378,15 +7384,15 @@ terminate called after throwing an instance of
 terminate called recursively\n
 terminate called without an active exception\n
 texturebase.cpp
-texturebase.cpp(2421):Error loading texture: %s\n
-texturebase.cpp(3447):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
-texturebase.cpp(3479):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
-texturebase.cpp(3499):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
-texturebase.cpp(3517):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
-texturebase.cpp(3536):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
-texturebase.cpp(3557):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
-texturebase.cpp(3568):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
-texturebase.cpp(3579):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
+texturebase.cpp(2423):Error loading texture: %s\n
+texturebase.cpp(3449):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
+texturebase.cpp(3481):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
+texturebase.cpp(3501):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
+texturebase.cpp(3519):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
+texturebase.cpp(3538):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
+texturebase.cpp(3559):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
+texturebase.cpp(3570):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
+texturebase.cpp(3581):ResourceHandleToData( %s ) failed! Falling back to error texture!\n
 thread initialization failed
 threads
 throw
@@ -7409,13 +7415,15 @@ u'M;t
 u/H#D
 uF_iL,E
 uFn\e_rG:=pq
+uGL;%h"\r
 uI[A\\A]A
 uP[A\\A
 uP[A\\A]A
 u\aE;l
 u\aH;L
 u\b[A
-u\vHǃ0\b
+u\fIǄ$H\b
+u\vHǃH\b
 u\vHǃH\t
 u\vHǃX\b
 u\v[A
@@ -7433,6 +7441,7 @@ uintptr_t)(src_height) & ((2)-1
 uintptr_t)(src_width) & ((2)-1
 undefined
 uninitialized __any_string
+unknown
 unknown compression method
 unknown header flags set
 unknown multisample type

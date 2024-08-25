@@ -4,7 +4,7 @@
 
 // /////////////////////////////////////////////////////////////
 // Binary: pulse_system.dll
-// Classes count: 0 (Allocated) | 112 (Unallocated)
+// Classes count: 0 (Allocated) | 111 (Unallocated)
 // Enums count: 0 (Allocated) | 9 (Unallocated)
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
@@ -116,7 +116,7 @@ enum class PulseValueType_t : uint32_t
 };
 
 // Registered binary: pulse_system.dll (project 'pulse_runtime_lib')
-// Enumerator count: 73
+// Enumerator count: 75
 // Alignment: 2
 // Size: 0x2
 enum class PulseInstructionCode_t : uint16_t
@@ -180,20 +180,22 @@ enum class PulseInstructionCode_t : uint16_t
 	EQ_FLOAT = 0x38,
 	EQ_STRING = 0x39,
 	EQ_ENTITY_NAME = 0x3a,
-	EQ_EHANDLE = 0x3b,
-	EQ_PANEL_HANDLE = 0x3c,
-	EQ_OPAQUE_HANDLE = 0x3d,
-	EQ_TEST_HANDLE = 0x3e,
-	NE_BOOL = 0x3f,
-	NE_INT = 0x40,
-	NE_FLOAT = 0x41,
-	NE_STRING = 0x42,
-	NE_ENTITY_NAME = 0x43,
-	NE_EHANDLE = 0x44,
-	NE_PANEL_HANDLE = 0x45,
-	NE_OPAQUE_HANDLE = 0x46,
-	NE_TEST_HANDLE = 0x47,
-	GET_CONST_INLINE_STORAGE = 0x48,
+	EQ_SCHEMA_ENUM = 0x3b,
+	EQ_EHANDLE = 0x3c,
+	EQ_PANEL_HANDLE = 0x3d,
+	EQ_OPAQUE_HANDLE = 0x3e,
+	EQ_TEST_HANDLE = 0x3f,
+	NE_BOOL = 0x40,
+	NE_INT = 0x41,
+	NE_FLOAT = 0x42,
+	NE_STRING = 0x43,
+	NE_ENTITY_NAME = 0x44,
+	NE_SCHEMA_ENUM = 0x45,
+	NE_EHANDLE = 0x46,
+	NE_PANEL_HANDLE = 0x47,
+	NE_OPAQUE_HANDLE = 0x48,
+	NE_TEST_HANDLE = 0x49,
+	GET_CONST_INLINE_STORAGE = 0x4a,
 };
 
 // Registered binary: pulse_system.dll (project 'pulse_runtime_lib')
@@ -239,10 +241,11 @@ enum class PulseCursorCancelPriority_t : uint32_t
 // Size: 0x4
 enum class PulseDomainValueType_t : uint32_t
 {
+	// MPropertyFriendlyName "Invalid"
 	INVALID = 0xffffffffffffffff,
-	// MPropertyFriendlyName "Entity Name"
+	// MPropertyFriendlyName "Parent Map Entity"
 	ENTITY_NAME = 0x0,
-	// MPropertyFriendlyName "Panel ID"
+	// MPropertyFriendlyName "Parent XML Panel"
 	PANEL_ID = 0x1,
 	COUNT = 0x2,
 };
@@ -547,21 +550,6 @@ public:
 
 // Registered binary: pulse_system.dll (project 'pulse_runtime_lib')
 // Alignment: 8
-// Size: 0x1
-// Has Trivial Constructor
-// Has Trivial Destructor
-// 
-// MPulseLibraryBindings
-// MPropertyDescription "Test functions for the derived test domain."
-class CPulseTestFuncs_DerivedDomain
-{
-private:
-	[[maybe_unused]] uint8_t __pad0000[0x1]; // 0x0
-public:
-};
-
-// Registered binary: pulse_system.dll (project 'pulse_runtime_lib')
-// Alignment: 8
 // Size: 0x48
 // Has VTable
 // 
@@ -611,6 +599,7 @@ public:
 // MPropertyFriendlyName "Wait"
 // MPropertyDescription "Causes each execution cursor to pause at this node for a fixed period of time. Each cursor will wake up and resume execution when the time expires, unless aborted or early-woken."
 // MPulseEditorHeaderIcon
+// MPulseEditorIsControlFlowNode
 class CPulseCell_Inflow_Wait : public CPulseCell_BaseYieldingInflow
 {
 public:
@@ -646,6 +635,7 @@ public:
 // Has VTable
 // 
 // MGetKV3ClassDefaults
+// MPulseEditorIsControlFlowNode
 class CPulseCell_WaitForCursorsWithTagBase : public CPulseCell_BaseYieldingInflow
 {
 public:

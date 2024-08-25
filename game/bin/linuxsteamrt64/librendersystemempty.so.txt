@@ -6,6 +6,7 @@
 0123456789:<>@BDFHJLNPRTVXZ\^`bdfhjlnprtwz
 0: Bilinear, 1: Trilinear, 2: Aniso 2x, 3: Aniso 4x, 4: Aniso 8x, 5: Aniso 16x
 1.2.11
+100s %-6s %-6s
 10ConCommand
 10IAppSystem
 12CDeviceFence
@@ -37,6 +38,7 @@
 18CEmptyShaderBuffer
 18CPooledIndexBuffer
 18CRenderDeviceEmpty
+19CPooledVertexBuffer
 19CRenderContextEmpty
 19CSchemaRegistration
 19CTextureManagerBase
@@ -309,6 +311,7 @@ ASEs implemented
 ATUSL9
 AUATA
 AUATE1
+AUATI
 AUATLc
 AUATMc
 AUATSA
@@ -568,6 +571,7 @@ E9|$8A
 E<G&Iw
 ED$`H9
 ERROR: Resource name "%s" has the incorrect extension "%s" for the specified resource type (expected "%s
+EX9C$u
 EXECUTABLE_PATH
 EXPORTSYSTEM_INTERFACE_VERSION_001
 EXRHeader variable is not initialized
@@ -682,11 +686,7 @@ H444ToABGR
 H444ToARGB
 H97t[UH
 H9D$xt
-H;-16
-H;=9Y
-H;=Aj
-H;=ce
-H;=qE
+H;=sD
 H;@@tJH
 H;E0sR
 H;G s@L
@@ -918,6 +918,7 @@ I9\$8u
 I;G s'L
 I;G s=H
 I;t$ u
+IB Size: %s (Count: %d
 IB: %d buffers, %.2f MB
 IBPool
 IMAGE_FORMAT_IMC2
@@ -959,7 +960,6 @@ Insufficient data size for attributes
 Insufficient data size in offset table
 Insufficient header/data size
 Insufficient memory (case %d
-Intentionally vague touch behavior for %p
 InterpolatePlane
 InterpolateRow_16_C
 InterpolateRow_AVX2
@@ -1022,6 +1022,7 @@ Keeping resolution of (%dx%d
 KeyValueCache001
 KeyValuesSystem
 L$HH;G
+L;%wL
 L;l$puYH
 LC_ADDRESS
 LC_COLLATE
@@ -1271,7 +1272,6 @@ Obtained EMS handle %u
 Obtained XMS handle %u
 October
 Opened temporary file %s
-Ordered constructor wrapped type has no default constructor
 Output aborted
 Output file write error --- out of disk space
 Output memory size is zero
@@ -1315,7 +1315,6 @@ ParseEXRHeaderFromMemory() failed! Error message: %s
 ParticleSystemMgr003
 PhysicsBuilderMgr001
 Plat_CPUTickFrequency
-Plat_DebugPrint
 Plat_FatalErrorFunc
 Plat_FloatTime
 Plat_GetClockStart
@@ -1325,6 +1324,7 @@ Plat_GetMonitorBounds
 Plat_GetMonitorCount
 Plat_GetMonitorResolution
 Plat_GetProcAddress
+Plat_GetTime
 Plat_GetWindowMonitorIndex
 Plat_GlobalMemoryStatus
 Plat_IsInDebugSession
@@ -1332,6 +1332,7 @@ Plat_NeedsLowFragmentation
 Plat_OsSpecificHandleToPlatWindow
 Plat_ReconfigureWindow
 Plat_WindowToOsSpecificHandle
+Pool: %.1fmb of %.1fmb
 PooledDynamicConstantBuffer
 PostProcessingSystem_001
 PreloadTextureBits
@@ -1339,6 +1340,7 @@ Premature end of JPEG file
 Premature end of input file
 Premature end-of-file encountered
 Premature end-of-partition0 encountered
+Print Vertex/Index/GPU buffers
 Promise already satisfied
 PropertyEditorSystem_001
 Q1Z2Z
@@ -1510,14 +1512,8 @@ RenderSystem/MaxPreloadTextureResolution
 RenderSystem/MinDXLevel
 RenderSystem/MinStreamingPoolSizeMB
 RenderSystem/MinStreamingPoolSizeMBTools
+RenderSystem/VertexBufferPoolSizeMB
 RenderUtils_001
-Rendering/Constant Buffers (MB
-Rendering/Index Buffers (MB
-Rendering/Texture Non-Evictable Size (MB
-Rendering/Texture Pool Size (MB
-Rendering/Texture Resident Size (MB
-Rendering/Texture Unthrottle Streaming
-Rendering/Vertex Buffers (MB
 Rendersystem/SheetCacheTextureCols
 Rendersystem/SheetCacheTextureRows
 Requested feature was omitted at compile time
@@ -1981,6 +1977,7 @@ Too many color components: %d, max %d
 ToolFramework2_002
 ToolSceneNodeFactory_001
 ToolService_001
+Total Size: %s (Count: %d
 Total size of the texture pool in MB
 TransposePlane
 TransposeUVWx8_Any_SSE2
@@ -2069,7 +2066,9 @@ UtlMemory_FailedAllocation
 VApplication001
 VAsyncFileSystem2_001
 VAvi001
+VB Size: %s (Count: %d
 VB: %d buffers, %.2f MB
+VBPool
 VBik001
 VConComm001
 VEngineCvar007
@@ -2087,7 +2086,6 @@ VPhysics2_Handle_Interface_001
 VPhysics2_Interface_001
 VProcessUtils002
 VProfService_001
-VProf_FindOrCreateCounter
 VRenderDeviceSetupV001
 VScript
 VScriptDbg
@@ -2100,6 +2098,7 @@ V_:X1
 V_GetFileExtension
 V_IsAbsolutePath
 V_LZ4_decompress_safe
+V_PrettifyMem
 V_PrettifyNum
 V_RemoveDotSlashes
 V_StringToBool
@@ -2217,7 +2216,6 @@ YUY2ToYRow_Any_AVX2
 YUY2ToYRow_Any_SSE2
 YUY2ToYRow_C
 YUY2ToYRow_SSE2
-You must construct it with ORDERED_CONSTRUCT macro in the dependency resolution function
 Z10DevWarningPKcz
 Z14GetGameInfoIntPKci
 Z14V_stristr_fastPKcS0
@@ -6830,6 +6828,7 @@ r_fullscreen_gamma
 r_gpu_mem_stats
 r_max_device_threads
 r_max_texture_pool_size
+r_print_buffers
 r_renderdoc_capture_frame
 r_renderdoc_capture_window_vulkan
 r_renderdoc_open_captures
@@ -6977,15 +6976,15 @@ terminate called after throwing an instance of
 terminate called recursively
 terminate called without an active exception
 texturebase.cpp
-texturebase.cpp(2421):Error loading texture: %s
-texturebase.cpp(3447):ResourceHandleToData( %s ) failed! Falling back to error texture
-texturebase.cpp(3479):ResourceHandleToData( %s ) failed! Falling back to error texture
-texturebase.cpp(3499):ResourceHandleToData( %s ) failed! Falling back to error texture
-texturebase.cpp(3517):ResourceHandleToData( %s ) failed! Falling back to error texture
-texturebase.cpp(3536):ResourceHandleToData( %s ) failed! Falling back to error texture
-texturebase.cpp(3557):ResourceHandleToData( %s ) failed! Falling back to error texture
-texturebase.cpp(3568):ResourceHandleToData( %s ) failed! Falling back to error texture
-texturebase.cpp(3579):ResourceHandleToData( %s ) failed! Falling back to error texture
+texturebase.cpp(2423):Error loading texture: %s
+texturebase.cpp(3449):ResourceHandleToData( %s ) failed! Falling back to error texture
+texturebase.cpp(3481):ResourceHandleToData( %s ) failed! Falling back to error texture
+texturebase.cpp(3501):ResourceHandleToData( %s ) failed! Falling back to error texture
+texturebase.cpp(3519):ResourceHandleToData( %s ) failed! Falling back to error texture
+texturebase.cpp(3538):ResourceHandleToData( %s ) failed! Falling back to error texture
+texturebase.cpp(3559):ResourceHandleToData( %s ) failed! Falling back to error texture
+texturebase.cpp(3570):ResourceHandleToData( %s ) failed! Falling back to error texture
+texturebase.cpp(3581):ResourceHandleToData( %s ) failed! Falling back to error texture
 tf[A\A]A^A
 th[A\A]A^A
 thread initialization failed
@@ -7021,6 +7020,7 @@ uintptr_t)(src_height) & ((2)-1
 uintptr_t)(src_width) & ((2)-1
 undefined
 uninitialized __any_string
+unknown
 unknown compression method
 unknown header flags set
 unknown multisample type

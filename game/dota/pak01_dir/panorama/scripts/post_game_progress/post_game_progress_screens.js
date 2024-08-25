@@ -1560,28 +1560,27 @@ function TestMVP2Screen() {
                     slot: 3,
                     accountid: 174054,
                     guildid: 4,
-                    heroname: 'npc_dota_hero_muerta', // just for display
+                    herounit: 'npc_dota_hero_ringmaster', // just for display
+                    herotoken: '#npc_dota_hero_ringmaster',
                     // Find hero id in game\dota\scripts\npc\npc_heroes.txt
-                    overrideheroid: 138,
+                    overrideheroid: 131,
                     // Find econ id in game\dota\scripts\items\items_game.txt
                     //overrideeconid: 21136,
                     was_dire: false,
                     featured_hero_sticker_index: 23867,
                     featured_hero_sticker_quality: 0,
                     accolades: [
-                        //{ type: accolades[0], detail_value: 113 },
-                        //{ type: accolades[1], detail_value: 4 },
-                        //{ type: accolades[2], detail_value: 13 }
-                        { type: 275, detail_value: 10 },
-                        { type: 276, detail_value: 1 },
-                        { type: 278, detail_value: 4 }
+                        { type: 279, detail_value: 10 },
+                        { type: 280, detail_value: 1 },
+                        { type: 281, detail_value: 4 }
                     ]
                 },
                 {
                     slot: 1,
                     accountid: 85501829,
                     guildid: 18,
-                    heroname: 'npc_dota_hero_windrunner',
+                    herounit: 'npc_dota_hero_windrunner',
+                    herotoken: '#npc_dota_hero_windrunner',
                     overrideheroid: 21,
                     was_dire: false,
                     featured_hero_sticker_index: 23867,
@@ -1595,7 +1594,8 @@ function TestMVP2Screen() {
                     accountid: 85501006,
                     guildid: 4,
                     was_dire: true,
-                    heroname: 'npc_dota_hero_axe',
+                    herounit: 'npc_dota_hero_axe',
+                    herotoken: '#npc_dota_hero_axe',
                     overrideheroid: 2,
                     featured_hero_sticker_index: 23867,
                     featured_hero_sticker_quality: 0,

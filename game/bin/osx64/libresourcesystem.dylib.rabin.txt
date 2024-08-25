@@ -8,7 +8,6 @@
 10IAppSystem
 13ConCommandRef
 14CBaseAppSystemI15IResourceSystemE
-14IErrorListener
 15CResourceSystem
 15CTier0AppSystemI15IResourceSystemLx0EE
 15CTier1AppSystemI15IResourceSystemLx0EE
@@ -33,6 +32,7 @@
 23CKV3ResourceBlockHelper
 23CKV3ResourceTypeManagerILy418564367478EE
 23CKV3ResourceTypeManagerILy500152235126EE
+23CKV3TransferContextBase
 23CKV3TransferLoadContext
 23CKV3TransferSaveContext
 23CResourceSystemProfiler
@@ -80,12 +80,13 @@
 7ffffff
 8[A^A
 9D\n\bu\vH
+A#4$L
 A9L$\f
 AABB_t
 APPSYSTEM: In ConnectInterfaces(), s_nRegistrationCount is %d!\n
 ARARARAp\bRARAp\bRA\\0
 ASAp\bRA
-AUASASCRAp\bXB`1A\\ASARA`iBSASAp\bRARAp
+AUASASCRAp\bXB`1A\\AWARA`fASBWAWAp\bRARBp
 AUASAp
 AWAVATS
 AWAVATS9w0}9A
@@ -111,6 +112,7 @@ AWAVSPH
 AWAVSPI
 AWAVSPL
 AWAVSPM
+AZAp\bRASBp p
 AlignedByteArray not properly aligned\n
 An attempt was made to create a resource manifest with debug name "%s" while the resource system was shutting down.\n
 AnimGraphEditorUtils001
@@ -185,6 +187,7 @@ CommandLine
 Couldn't load KV3 for resource: %s
 CreateInterface
 D$\fA;D
+DATA_CONST
 DISABLED
 D\aPIǄ\a
 D\aP]ÐUH
@@ -302,6 +305,7 @@ FIELD_WORLD_GROUP_ID
 Failed loading resource "%s" (%s)\n
 Failed to allocate an instance of a class
 Failed to apply FLC data to resource '%s': %s\n
+Failed to find or register resource "%s" for external reference: referring resource is %s\n
 Failed to load resource "%s" and -exit_on_resource_load_failure was set and it's not in badresources_whitelist.txt\n
 Failed to save unsupported class
 FileSystem
@@ -383,7 +387,6 @@ IcG\bH9
 IcG\bI9
 IcO\bH9
 IcT$8H
-IcT$@H
 Idle (ResourceSystemSleep
 InfoForResourceTypeCAnimData
 InfoForResourceTypeCAnimationGroup
@@ -438,7 +441,6 @@ InputStackSystemVersion001
 InputSystemVersion001
 InstallResourceTypeManager
 InstallSchemaBindings
-Intentionally vague touch behavior for %p\n
 IsResourceManifestGroupKnown: Manifest group name is empty or null\n
 JPH;NP
 K\bD9q\b
@@ -501,7 +503,6 @@ Not safe to 'new' this class due to alignment requirements
 NxtWfff
 OPH;ZP
 OnAsyncProcessResourceData
-Ordered constructor wrapped type has no default constructor.\n\tYou must construct it with ORDERED_CONSTRUCT macro in the dependency resolution function.\n
 P HǃX
 P Hǃp
 P IcF\bH9
@@ -519,10 +520,10 @@ PanoramaUIClient001
 PanoramaUIEngine001
 ParticleSystemMgr003
 PhysicsBuilderMgr001
-Plat_DebugPrint
 Plat_ExitProcess
 Plat_FatalErrorFunc
 Plat_FloatTime
+Plat_GetTime
 Plat_IsInDebugSession
 Plat_MicroSecTickDiff
 Plat_NonFatalErrorFunc
@@ -736,6 +737,7 @@ ZN12CThreadEvent3SetEv
 ZN12CThreadEventC1Eb
 ZN13CBufferString10FixSlashesEc
 ZN13CBufferString10RelinquishENS_19EAllocationOption_tE
+ZN13CBufferString10TruncateAtEib
 ZN13CBufferString11ToLowerFastEi
 ZN13CBufferString12AppendConcatEiPKPKcPKib
 ZN13CBufferString12AppendFormatEPKcz
@@ -840,6 +842,7 @@ binary blob: %u bytes
 binary_blob
 bzero
 c4IcG(D9
+chkstk_darwin
 class
 command
 common
@@ -862,6 +865,7 @@ editor
 efffff
 empty member name
 enable_profiling
+enable_spread_finalize
 error_resource
 exit_on_resource_load_failure
 f %f %f
@@ -890,10 +894,11 @@ int CUtlSortVector<CResourceManifest::LoadingResourceReference_t>::Find(const TK
 int CUtlSortVector<CResourceManifest::LoadingResourceReference_t>::FindLessOrEqual(const TKey &, bool *) const [T = CResourceManifest::LoadingResourceReference_t, LessFunc = CUtlSortVectorDefaultLess<CResourceManifest::LoadingResourceReference_t>, BaseVector = CUtlVector<CResourceManifest::LoadingResourceReference_t>, TKey = CResourceManifest::LoadingResourceReference_t
 int CUtlSortVector<CResourceManifest::LoadingResourceReference_t>::Insert(const T &) [T = CResourceManifest::LoadingResourceReference_t, LessFunc = CUtlSortVectorDefaultLess<CResourceManifest::LoadingResourceReference_t>, BaseVector = CUtlVector<CResourceManifest::LoadingResourceReference_t
 invalid
-jGetResourceManifest
+kGetResourceManifest
 la_symbol_ptr
 libresourcesystem.dylib
 loader_path
+localization_path
 m_Value
 m_bNeedsSort
 m_child
@@ -917,9 +922,8 @@ memset
 mod_init_func
 multibase
 nTries < 10000000
-nl_symbol_ptr
+n\v\f14IErrorListener
 no failure reason set
-no_spread_finalize
 not_pickable
 of %d) values when saving map
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/resourcesystem/loadingresource.cpp
@@ -930,7 +934,7 @@ p8RCp p
 p8SARBp
 p\bRBRBRBRBRBRBRBp\bp
 p\bSBp\b
-p\bp\b\\ARAZBVBUAXAVAp\bVARAVARARARCp(SA
+p\bp\b\\ARAZBVBUAXAVAp\bVARAVARARAR
 panorama_image
 pointer
 pthread_mutex_destroy
@@ -943,9 +947,9 @@ public/tier0/tslist.h
 public/tier0/utlrbtree.h
 public/tier0/utlsortvector.h
 public/tier0/utltshash.h
-qA`RAZAp\bRASBp p
 qPH;rP}\tI
 qangle
+rA`7Ap
 radr://5614542
 raise
 refcount % 4d
@@ -974,6 +978,7 @@ s$Fence%d
 s: %s\n
 s: Invalid capacity %u\n
 s: Invalid grow amount %d\n
+sDfff
 sPH;pP}HL
 sPH;pP}j
 sPI;ZP
@@ -992,12 +997,10 @@ stubs
 t ffff
 t#I;8t
 t#fff
-t$Dffff
 t&fffff
 t/fff
 t1fffff
 t7H97u
-t\n\v23CKV3TransferContextBase
 t\tL9+u
 t\tL93u
 t\t[ FAIL ] - Manifest contains an illegal resource name "%s"!\n
@@ -1018,8 +1021,6 @@ unwind_info
 usr/lib/libSystem.B.dylib
 usr/lib/libc++.1.dylib
 usr/lib/libiconv.2.dylib
-u{ffff
-vInstallSchemaBindings
 v\r[A
 vanmgrphvcdlist
 vcompmatvgcxdatavsmart
@@ -1039,6 +1040,7 @@ void CUtlMemory_RawAllocator<unsigned int>::Grow(int) [T = unsigned int
 vptest
 vpulse
 vsndevtsvsndstckvsnd
+wInstallSchemaBindings
 w\nǃx
 whfffff
 x&A9Ep~ I

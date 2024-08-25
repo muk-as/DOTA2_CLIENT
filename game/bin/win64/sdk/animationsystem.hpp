@@ -1341,8 +1341,8 @@ enum class AnimVectorSource : uint32_t
 {
 	// MPropertyFriendlyName "Move Direction"
 	MoveDirection = 0x0,
-	// MPropertyFriendlyName "Facing Direction"
-	FacingDirection = 0x1,
+	// MPropertyFriendlyName "Facing Position"
+	FacingPosition = 0x1,
 	// MPropertyFriendlyName "Look Direction"
 	LookDirection = 0x2,
 	// MPropertyFriendlyName "Parameter"
@@ -1602,7 +1602,7 @@ public:
 
 // Registered binary: animationsystem.dll (project 'modellib')
 // Alignment: 8
-// Size: 0x78
+// Size: 0x60
 // 
 // MGetKV3ClassDefaults
 class CSceneObjectData
@@ -1610,10 +1610,10 @@ class CSceneObjectData
 public:
 	Vector m_vMinBounds; // 0x0	
 	Vector m_vMaxBounds; // 0xc	
-	CUtlVector< CMaterialDrawDescriptor > m_drawCalls; // 0x18	
-	CUtlVector< AABB_t > m_drawBounds; // 0x30	
-	CUtlVector< CMeshletDescriptor > m_meshlets; // 0x48	
-	Vector4D m_vTintColor; // 0x60	
+	CUtlLeanVector< CMaterialDrawDescriptor > m_drawCalls; // 0x18	
+	CUtlLeanVector< AABB_t > m_drawBounds; // 0x28	
+	CUtlLeanVector< CMeshletDescriptor > m_meshlets; // 0x38	
+	Vector4D m_vTintColor; // 0x48	
 };
 
 // Registered binary: animationsystem.dll (project 'modellib')
@@ -1669,9 +1669,9 @@ public:
 	// MPropertyAttributeEditor "TextBlock()"
 	// MPropertySortPriority "-100"
 	CUtlString m_sComment; // 0x20	
-	// MPropertyHideField
+	// MPropertyReadOnly
 	CUtlString m_group; // 0x28	
-	// MPropertyHideField
+	// MPropertyReadOnly
 	AnimParamID m_id; // 0x30	
 private:
 	[[maybe_unused]] uint8_t __pad0034[0x14]; // 0x34
@@ -3487,7 +3487,7 @@ public:
 
 // Registered binary: animationsystem.dll (project 'modellib')
 // Alignment: 8
-// Size: 0x18
+// Size: 0x20
 // Has Trivial Destructor
 // 
 // MGetKV3ClassDefaults
@@ -6103,7 +6103,7 @@ public:
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')
 // Alignment: 8
-// Size: 0xb0
+// Size: 0xb8
 // Has VTable
 // 
 // MGetKV3ClassDefaults
@@ -6117,15 +6117,19 @@ public:
 	CAnimParamHandle m_hParameterUseIK; // 0x70	
 	CAnimParamHandle m_hParameterCameraOnly; // 0x72	
 	CAnimParamHandle m_hParameterWeaponDepenetrationDistance; // 0x74	
-	CAnimParamHandle m_hParameterCameraClearanceDistance; // 0x76	
-	// -> m_nChainIndex - 0x78
-	// -> m_nCameraJointIndex - 0x7c
-	// -> m_nPelvisJointIndex - 0x80
-	// -> m_nClavicleLeftJointIndex - 0x84
-	// -> m_nClavicleRightJointIndex - 0x88
-	// -> m_nDepenetrationJointIndex - 0x8c
-	// -> m_propJoints - 0x90
-	AimCameraOpFixedSettings_t m_opFixedSettings; // 0x78	
+	CAnimParamHandle m_hParameterWeaponDepenetrationDelta; // 0x76	
+	CAnimParamHandle m_hParameterCameraClearanceDistance; // 0x78	
+private:
+	[[maybe_unused]] uint8_t __pad007a[0x6]; // 0x7a
+public:
+	// -> m_nChainIndex - 0x80
+	// -> m_nCameraJointIndex - 0x84
+	// -> m_nPelvisJointIndex - 0x88
+	// -> m_nClavicleLeftJointIndex - 0x8c
+	// -> m_nClavicleRightJointIndex - 0x90
+	// -> m_nDepenetrationJointIndex - 0x94
+	// -> m_propJoints - 0x98
+	AimCameraOpFixedSettings_t m_opFixedSettings; // 0x80	
 };
 
 // Registered binary: animationsystem.dll (project 'modellib')
@@ -6719,7 +6723,7 @@ public:
 
 // Registered binary: animationsystem.dll (project 'modellib')
 // Alignment: 8
-// Size: 0xe8
+// Size: 0xd0
 // 
 // MGetKV3ClassDefaults
 class CMaterialDrawDescriptor
@@ -6729,28 +6733,28 @@ public:
 	Vector m_vTintColor; // 0x4	
 	float m_flAlpha; // 0x10	
 private:
-	[[maybe_unused]] uint8_t __pad0014[0x4]; // 0x14
+	[[maybe_unused]] uint8_t __pad0014[0x8]; // 0x14
 public:
-	uint32_t m_nFirstMeshlet; // 0x18	
-	uint16_t m_nNumMeshlets; // 0x1c	
+	uint32_t m_nFirstMeshlet; // 0x1c	
+	uint16_t m_nNumMeshlets; // 0x20	
 private:
-	[[maybe_unused]] uint8_t __pad001e[0x2]; // 0x1e
+	[[maybe_unused]] uint8_t __pad0022[0x2]; // 0x22
 public:
-	RenderPrimitiveType_t m_nPrimitiveType; // 0x20	
-	int32_t m_nBaseVertex; // 0x24	
-	int32_t m_nVertexCount; // 0x28	
-	int32_t m_nStartIndex; // 0x2c	
-	int32_t m_nIndexCount; // 0x30	
+	RenderPrimitiveType_t m_nPrimitiveType; // 0x24	
+	int32_t m_nBaseVertex; // 0x28	
+	int32_t m_nVertexCount; // 0x2c	
+	int32_t m_nStartIndex; // 0x30	
+	int32_t m_nIndexCount; // 0x34	
 private:
-	[[maybe_unused]] uint8_t __pad0034[0x84]; // 0x34
+	[[maybe_unused]] uint8_t __pad0038[0x60]; // 0x38
 public:
-	// -> m_hBuffer - 0xb8
-	// -> m_nBindOffsetBytes - 0xc8
-	CRenderBufferBinding m_indexBuffer; // 0xb8	
+	// -> m_hBuffer - 0x98
+	// -> m_nBindOffsetBytes - 0xa8
+	CRenderBufferBinding m_indexBuffer; // 0x98	
 private:
-	[[maybe_unused]] uint8_t __pad00d0[0x8]; // 0xd0
+	[[maybe_unused]] uint8_t __pad00b8[0x8]; // 0xb8
 public:
-	CStrongHandle< InfoForResourceTypeIMaterial2 > m_material; // 0xd8	
+	CStrongHandle< InfoForResourceTypeIMaterial2 > m_material; // 0xc0	
 };
 
 // Registered binary: animationsystem.dll (project 'animlib')
@@ -7794,7 +7798,6 @@ public:
 	int32_t m_nAttachMeshIdx; // 0x5c	
 	int32_t m_nAttachMeshDrawCallIdx; // 0x60	
 	bool m_bEnableSimulation; // 0x64	
-	bool m_bHasHairPositionOffsets; // 0x65	
 };
 
 // Registered binary: animationsystem.dll (project 'animlib')
@@ -8078,7 +8081,7 @@ public:
 
 // Registered binary: animationsystem.dll (project 'modellib')
 // Alignment: 8
-// Size: 0x1f8
+// Size: 0x1c0
 // Has VTable
 // 
 // MGetKV3ClassDefaults
@@ -8087,24 +8090,24 @@ class CRenderMesh
 private:
 	[[maybe_unused]] uint8_t __pad0000[0x10]; // 0x0
 public:
-	CUtlVectorFixedGrowable< CSceneObjectData, 1 > m_sceneObjects; // 0x10	
-	CUtlVector< CBaseConstraint* > m_constraints; // 0xa0	
-	// -> m_bones - 0xb8
-	// -> m_boneParents - 0xe8
-	// -> m_nBoneWeightCount - 0x100
-	CRenderSkeleton m_skeleton; // 0xb8	
+	CUtlLeanVectorFixedGrowable< CSceneObjectData, 1 > m_sceneObjects; // 0x10	
+	CUtlLeanVector< CBaseConstraint* > m_constraints; // 0x78	
+	// -> m_bones - 0x88
+	// -> m_boneParents - 0xb8
+	// -> m_nBoneWeightCount - 0xd0
+	CRenderSkeleton m_skeleton; // 0x88	
 private:
-	[[maybe_unused]] uint8_t __pad0108[0xd8]; // 0x108
+	[[maybe_unused]] uint8_t __pad00d8[0xd0]; // 0xd8
 public:
-	// -> m_flTensionCompressScale - 0x1e0
-	// -> m_flTensionStretchScale - 0x1e4
-	// -> m_bRecomputeSmoothNormalsAfterAnimation - 0x1e8
-	// -> m_bComputeDynamicMeshTensionAfterAnimation - 0x1e9
-	DynamicMeshDeformParams_t m_meshDeformParams; // 0x1e0	
+	// -> m_flTensionCompressScale - 0x1a8
+	// -> m_flTensionStretchScale - 0x1ac
+	// -> m_bRecomputeSmoothNormalsAfterAnimation - 0x1b0
+	// -> m_bComputeDynamicMeshTensionAfterAnimation - 0x1b1
+	DynamicMeshDeformParams_t m_meshDeformParams; // 0x1a8	
 private:
-	[[maybe_unused]] uint8_t __pad01ec[0x4]; // 0x1ec
+	[[maybe_unused]] uint8_t __pad01b4[0x4]; // 0x1b4
 public:
-	CRenderGroom* m_pGroomData; // 0x1f0	
+	CRenderGroom* m_pGroomData; // 0x1b8	
 };
 
 // Registered binary: animationsystem.dll (project 'animationsystem')

@@ -4,7 +4,6 @@
 0*llx bytes of %s at %0*llx%s
 0*llx: address after highest user-space virtual region
 0,/1a
-0.uXM
 000 P
 000000
 00000000
@@ -22,7 +21,6 @@
 02X%02X
 02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%x
 02X%02X%02X%02X-%02X%02X-%02X%02X-%02X%02X-%02X%02X%02X%02X%02X%02X
-02d: %u:0x%llx
 08x %s size %08x
 09K |N
 09S |UI
@@ -47,10 +45,12 @@
 0FixSlashesEc
 0GetSTUBFunctionTableEv
 0Internal_SetNameFromERKS
+0IsReadOnly
 0IterateListeners_EndERNS_23DelegateIterator_Base_tE
 0KeyValues3P10CUtlStringP
 0KeyValues3P10CUtlStringPKcS4_RK7KV3ID_t
 0KvBeginKeyEP9KeyValuesi
+0OrCreateWrappedPlatWindow
 0ParseTokenEPK
 0ReadAsBinaryFilteredER10CUtlBuffer
 0ReplaceReturnContextEP23JmpBuf_AlternateStack_t
@@ -67,9 +67,6 @@
 0f pct of time accounted for
 0fffff
 0ffffff
-0pandEnvVars
-0sureDirectory
-0umerateModuleImportLibraries
 0x%016llX
 0x%08X
 0x%llX
@@ -127,7 +124,7 @@
 14CMemPassAllocTI23LLA_AddAlignedSelectorsI31LowLevelAllocationScheme_mallocEE
 14CTestScriptMgr
 14CVBinaryModule
-14CVDebugProcessPKcb19_VWMD_MINIDUMP_TYPEP36_VWMD_MINIDUMP_EXCEPTION_INFORMATIONP38_VWMD_MINIDUMP_USER_STREAM_INFORMATIONP35_VWMD_MINIDUMP_CALLBACK_INFORMATION
+14CVDebugProcessPKcb18VWMD_MINIDUMP_TYPEP36_VWMD_MINIDUMP_EXCEPTION_INFORMATIONP38_VWMD_MINIDUMP_USER_STREAM_INFORMATIONP35_VWMD_MINIDUMP_CALLBACK_INFORMATION
 14CVSymbolModule
 14FindConversionEPKcPi
 14GetChangedFileEP13CBufferStringP17FioBaseFileInfo_t
@@ -143,6 +140,7 @@
 15CTier0AppSystemI5ICvarLx0EE
 15CUtlVectorFixedIPKfLm64EiERK5Vec3DIfES8_i
 15IPerfTraceDepot
+15ValidateStorageEv
 15WaitForMultipleEiP
 16@0:8
 16CKeyValuesSystem
@@ -218,14 +216,14 @@
 1FreeNodes_REP10CVProfNode
 1GetElementsEiiP10CUtlSymbol
 1GetListenerNames_BaseERK10CUtlVectorINS_19EventListenerInfo_tEi10CUtlMemoryIS1_iEEPS0_I10CUtlStringiS2_IS7_iEE
+1GetVarValueEi
 1H30t4H
+1Ia!O
 1InternalPopEv
 1IsEqual_CaseSensitiveEPKc
 1IsLocalhostEv
-1IsReadOnly
 1KvWriteTextEPKc
 1OpenSemaphoreInternalEPKcb
-1OrCreateWrappedPlatWindow
 1RandomFloatEff
 1ReachedZeroReferencesEv
 1ResetAllocationCountsEv
@@ -237,6 +235,8 @@
 1fA;6u
 1ffff
 1fffff
+1oatTime
+1ppleMajorMinorPatchVersion
 2) channel names: name1 name2 ...           // Lists channels by name
 20AssignNextTimespanIdEv
 20CKeyValuesSystemBase
@@ -274,6 +274,7 @@
 25CColorizedLoggingListener
 25CConCommandMemberAccessorI5CCvarE
 25CVProfileOutputColumn_Sum
+25CaptureProcessEnvironmentEv
 25EvaluateAsUnmarkedSymbolsERbPKcPFbS2_PvEPFvS2_S3_ES3_S3
 26CDefaultKeyValuesErrorSpew
 26CDisposableKeyValuesSystem
@@ -358,9 +359,6 @@
 2fffff
 2ffffff
 2lobalMemoryStatus
-2oatTime
-2ppleMajorMinorPatchVersion
-2u - proc %2u (grp %u:%-2u / phy %u / cor %u / smt %u): max freq %llu
 2u :%7u
 30CAsyncScheduledFunctionManager
 30HandleFirstWriteLockTransitionER14CEventListNode
@@ -401,6 +399,7 @@
 3DAllocator
 3DecodeFromNativePointerEPKvP13CBufferStringS3_Pj
 3FixupPathNameEv
+3Frame
 3GetActualSizeEPKh
 3GetActualSizeEPh
 3GetCurrentTopEb
@@ -429,6 +428,7 @@
 3STUB_GetVectorData_StoredSubTreesERPKPKS_Rj
 3SetDirToWatchEPKcjbP11__CFRunLoopm
 3SetEPKc
+3SetEPKcS1
 3SetEPKvi
 3SetEv
 3SetFromS
@@ -446,13 +446,17 @@
 3Z$3Z83Z0D1
 3Z,3Z$D1
 3Z03Z
-3d - grp %u:%u / phy %d / cor %d / smt %d, max freq %llu
 3f: Testing %d threads
 3ffff
 3ffffff
 3i convars/concommands for [%s
 3i total convars/concommands
+3ockStart
+3omputerName
+3rtEnv
+3splayMode
 3u:%3u bytes at pos %8u, savings %7u bytes
+3urrent
 4 9s |rM
 4!ffff
 4(A9t
@@ -462,7 +466,6 @@
 41IsParticleSystemBehaviorVersionDeprecatedP10KeyValues3Pi
 42CVirtualMachineCallStackTranslationEncoder
 456789
-4?fA;4
 4CStdIOFormatOutputStream
 4CUtlMemoryBlockAllocator
 4CopyERKS
@@ -475,7 +478,6 @@
 4FindElfBuildIdEPKvmPPhPj
 4FindScopeForThreadHandleEP16ThreadHandle_t
 4FindVertsInBoxER
-4Frame
 4FreeE18RawAllocatorType_tPvm
 4FreeEPh
 4GetChangedFileEP13CBufferString
@@ -486,6 +488,7 @@
 4GetMemoryUsageEv
 4HandleToStringEt
 4HashEPKc
+4HibernationState
 4InitEjjPvb
 4IsBaseAdrValidEv
 4IterateAllocationsUnsafeEPFvPvS0_ES0
@@ -508,14 +511,11 @@
 4UnqualifiedFilenameAllocEv
 4WaitEj
 4d    %-32s    %-10s
+4faultMonitorIndex
 4ffff
 4fffff
-4ockStart
-4omputerName
-4rtEnv
+4ocumentDirectory
 4s    %-32s    %-10s    %-10s    %-32s    %-32s
-4splayMode
-4urrent
 5&YA1A
 5&YA1L
 52.52s%12d%12.3f%12.3f%7.2f%12.3f%7.2f%12.3f%12.3f%12.3f%12.3f
@@ -528,6 +528,7 @@
 5CKeyValuesDumpContextToBufferString
 5CKeyValuesDumpContextToBufferString11KvWriteTextEPKc
 5ClearEv
+5CloseEv
 5Color8FormatToEP19IFormatOutputStream20CFormatStringElement
 5ColorPK
 5ColorPKcz
@@ -542,7 +543,6 @@
 5GetIdEPKcPb
 5GetIndexBitMaskEv
 5GetStartPointerEv
-5HibernationState
 5ICvar
 5Internal_Set
 5IsNotPlatModuleEPKcPKvm
@@ -554,6 +554,7 @@
 5ReferenceStringEPKc
 5ResetEiii
 5ResetEv
+5Resolution
 5ScanfEPKcz
 5SetColumnHeaderEiPKc
 5SetCurFrameTimeEm
@@ -563,13 +564,12 @@
 5TryLockForWriteEPKci
 5WaitForMultipleEiP
 5WaitForReadLockTransitionER14CEventListNodej
-5faultMonitorIndex
+5cutablePathUTF8
 5ffff
 5fffff
-5ffffff
 5lVõi
-5ocumentDirectory
 5sktop
+5ullscreenDisplayModes
 6.3f: ThreadPoolTest: Testing with %d jobs! Sleep %d, interleave %d, prioritized %d
 60@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16^{SDL_Window=}48I56
 64-bit DWARF format is not supported
@@ -588,6 +588,7 @@
 6FindStringHandleEPKc
 6Free3DERK8Rect3D_t
 6FreeToAllocPointE26UtlScratchMemoryPoolMark_t
+6GameInstanceMutex
 6GetIndexBitShiftEv
 6IcM IcU
 6IcO IcW
@@ -598,12 +599,12 @@
 6LogFailureOutputEii
 6PrintfEPKcz
 6RegisterEventListener_BaseERK20CUtlAbstractDelegatejbR10CUtlVectorINS_19EventListenerInfo_tEi10CUtlMemoryIS4_iEEiPKc
+6RemoveEPKc
 6RemoveEPKcb
 6RemoveEv
 6ReportEi
 6ReserveOwnershipEv
 6ResizeEi
-6Resolution
 6ResumeEv
 6RtcZO
 6STUB_UnlockEntryEj
@@ -614,10 +615,11 @@
 6StringERKjP
 6UpdateEPKvj
 6V_UnicodeConvertAndCaseStrPK
-6ullscreenDisplayModes
-6xecutablePathUTF8
+6lobalListRegistry
+6ocalTime
+7.ucH
 7;0uEH
-7AddTextEPKciid
+7AddTextEPKciibdy
 7AdvanceEi
 7CKeyValuesDumpContextToLoggingChannel
 7CKeyValuesDumpContextToLoggingChannel11KvWriteTextEPKc
@@ -660,16 +662,17 @@
 7Cxl2i5n
 7EnsureEndsWithNumCharactersEcib
 7ExecuteEv
+7Filename
 7FindOrCreateChildEPKcR24VProfBudgetGroupCallSite
 7FreeAllEb
 7FreeAllEv
-7GameInstanceMutex
 7GetCurrentCThreadEv
 7GetCurrentPointerEv
 7GetExtensionAllocEv
 7GetNextTrueSubKeyEv
 7GetScopeListMutexEv
 7GetSizeEv
+7GetVarKeyAndValueEi
 7HaveWriteLock_BlockReadsNowEb
 7I33t.H
 7I33t9H
@@ -680,6 +683,7 @@
 7LockCommandBufferEb
 7NearestERK5Vec3DIfE
 7NumRowsEv
+7NumberCpusOnline
 7PopulateWCharPathEv
 7ReleaseEiPi
 7ReleaseEv
@@ -697,8 +701,7 @@
 7bad_function_callE
 7emPageSize
 7ffff
-7lobalListRegistry
-7ocalTime
+7iniDumpErrorString
 8.4f / %9.2f:  %s
 8.4f / %9.2f:  Writing profile data to '%s
 8.8x-%4.4x-%4.4x-%2.2x%2.2x-%2.2x%2.2x%2.2x%2.2x%2.2x%2.2x
@@ -719,7 +722,6 @@
 8DequeueNextCommandE
 8EnforceTypeAndSizeEPKcS1
 8EvaluateERbPKcPFbS2_PvEPFvS2_S3_ES3_S3
-8Filename
 8FindElfVirtualSizeEP
 8FindInsertionPointERK10CUtlVectorINS_19EventListenerInfo_tEi10CUtlMemoryIS1_iEEi
 8FreeGutsEPKv
@@ -739,7 +741,7 @@
 8MemUsageEv
 8MergeFromTemporaryEPKS_NS_18MergeKeyValuesOp_tE
 8NextFileEv
-8NumberCpusOnline
+8ProcAddress
 8PutCharsEPKci
 8ReleaseOwnerThreadEv
 8ReleaseParentStackReferencesEv
@@ -753,9 +755,9 @@
 8[A\A]A^A
 8[A^A
 8[abiL
-8iniDumpErrorString
 8netadr_t
 8nitor
+8terfaceFactory
 8x-%4x-%4x-%2x%2x-%2x%2x%2x%2x%2x%2x
 8{ paH
 9AllocIntsEi
@@ -775,17 +777,18 @@
 9IFormatOutputStream
 9IMemAlloc
 9IPipeRead
+9IndexFromName
 9InitEmptyEv
 9Internal
 9InternalSetFiberJobEPFvPvES0_mb
 9NewPathStringBufferEv
 9ParseFileEv
-9ProcAddress
 9RandomGaussianFloatEff
 9RandomIntEii
 9RecursiveSaveToFileER10CUtlBufferibb
 9RemoveAllEm
 9RemoveAllEv
+9Resolution
 9ResolveWStringValueEv
 9ResumeJobEPv
 9S |hE
@@ -799,7 +802,6 @@
 9ToSockadrEP8sockaddr
 9TransformEPjPKh
 9fffff
-9terfaceFactory
 9{ |fE
 9{,ruC
 9әaco-nz
@@ -870,6 +872,8 @@ ANGLES
 ANIMATION_TYPE_FIT_LIFETIME
 ANIMATION_TYPE_FIXED_RATE
 APPSYSTEM: In ConnectInterfaces(), s_nRegistrationCount is %d
+ARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARBp(p8RF
+ARARARARARARARARARARARARARARARARARARARBRB
 ARARARARAXAp
 ARAXAp
 ARCHIVE
@@ -880,6 +884,7 @@ ASARAUATAWH
 ASASBTCRAp
 ASASB^ARARARARARAp
 ASSERT
+ATARAS
 ATPAUARAS
 ATTEMPTED TO DECOMMIT OWNED MEMORY STACK SPACE
 AUrlHandler
@@ -969,22 +974,6 @@ AddedCapacityEiPPcbb
 Address range refers to non-existent CU at 0x%llx
 AddressInformation
 Afffff
-Affinity preferences: %d logical processors, limiting to %d
-Affinity preferences: %d speeds, preference split at sort index %d
-Affinity preferences: '%s' thread assigned to all-procs mask %u:0x%llx
-Affinity preferences: '%s' thread assigned to proc mask %u:0x%llx (index %d)%s, next proc mask %u:0x%llx (index %d
-Affinity preferences: all-procs gather crossed group boundary
-Affinity preferences: disabled (%u physical procs, %u logical
-Affinity preferences: explicitly disabled
-Affinity preferences: no logical processor speed variation
-Affinity preferences: no logical processor split fit
-Affinity preferences: no per-logical-processor information
-Affinity preferences: no preferences, skipping assignment
-Affinity preferences: no-pref all-procs does not set affinity
-Affinity preferences: only one logical processor
-Affinity preferences: turned off for internal reason
-AffinityPreference
-AffinityPreferenceSlotInfo
 Agrave
 AlignBufferEi
 Aligned
@@ -1053,13 +1042,7 @@ ApplyDiffs
 Aring
 AsJSONPK10KeyValues3P10CUtlString
 Assert
-AssertValid
 AssertValidEv
-AssertValidReadPtr
-AssertValidReadWritePtr
-AssertValidStringPtr
-AssertValidWStringPtr
-AssertValidWritePtr
 Assert_ConditionFailed
 Assertion
 Assertion Failed
@@ -1077,7 +1060,6 @@ AssetSystemTest001
 AssignNextTimespanId
 AssignRangeMultipler with bitcount=32
 AssumeMemoryEPviii
-Astall
 AsyncScheduledFunctions
 Atilde
 Attempted to add job to job queue that has already been completed
@@ -1094,9 +1076,11 @@ B13CProcessUtils
 B;t0XH
 BAdrERKS
 BCodeToHTML
+BDirectory
 BEGIN VPROF REPORT
+BHighDPI
 BINARY BLOB
-BWStringPtr
+BMarkFrame
 BackdoorLoggingListener
 BackdoorLoggingListeners
 BackdoorLoggingState
@@ -1137,6 +1121,7 @@ BenchmarkService001
 BentNormalData
 Bffff
 Bfffff
+Bffffff
 BinaryBlock
 BinaryProperties_GetValue
 BitWriteMasks
@@ -1150,6 +1135,7 @@ BlockCompress1
 BlockSize
 BodyGroup
 BodyGroupChoice
+BonsoleApplication
 Border
 Boundary_Radius
 Bounds
@@ -1474,14 +1460,27 @@ CDampedPathAnimMotor
 CDirTreeWatchManager::AddWatch called on '%s' which is contained in existing watch of '%s
 CDirectPlaybackAnimNode
 CDirectionalBlendAnimNode
-CDirectory
 CDistanceRemainingMetric
 CDwarfVector capacity overflow
 CEmitTagAction
 CEnumAnimParameter
 CExpressionAction
+CFA advance has a zero size
+CFA advances off the end of the FDE
+CFA cfa_offset but the CFA is not currently a val offset (op %u
+CFA cfa_offset_sf but the CFA is not currently a val offset (op %u
+CFA cfa_register but the CFA is not currently a val offset (op %u
+CFA location set does not advance
+CFA location set off the end of the FDE
+CFA offset set to invalid value (%llu
+CFA register set to invalid value (%llu
+CFA set_loc uses an invalid address
 CFArrayCreate
 CFConstantStringClassReference
+CFI def_cfa_expression not supported
+CFI expression not supported
+CFI restore_state without pushed state
+CFI val_expression not supported
 CFRelease
 CFRetain
 CFRunLoopGetCurrent
@@ -1508,7 +1507,6 @@ CGroupAnimNode
 CGroupInputAnimNode
 CGroupOutputAnimNode
 CHeadlessMode
-CHighDPI
 CHitReactAnimNode
 CIE aug data missing LSDA encoding
 CIE aug data missing personality routine encoding
@@ -1579,11 +1577,11 @@ COMPARISONVALUETYPE_PARAMETER
 COM_TimestampedLog
 CONSOLE
 CONTENT
+COSInLowPowerUseMode
 COrCondition
 CPH;C(t
 CPH;C(td
 CPPCommentEv
-CPU information: physical %u, logical %u (fake mode %u
 CPUMonitoringInterval
 CParameterAnimCondition
 CParameterCondition
@@ -1596,6 +1594,7 @@ CPathMetric
 CPathStatusCondition
 CPffff
 CPlayerInputAnimMotor
+CPointerOnStack
 CProxyAnimNodeBase
 CPulseCell
 CPulseCell_Inflow_Wait
@@ -1614,7 +1613,8 @@ CRigidBodyWeightList
 CRigidBodyWeightListConstPtr
 CRigidBodyWeightListPtr
 CRootAnimNode
-CSD`KA
+CRunningOnCustomerMachine
+CSD`IA
 CSP1uVL
 CScriptEditManager
 CScriptEditManagerConstPtr
@@ -1712,6 +1712,7 @@ CTSQueue corruption
 CTSQueue::Node_t *CTSQueue<int, true>::Push(CTSQueue::Node_t *) [T = int, bTestOptimizer = true
 CTSQueue::Node_t *CTSQueue<std::function<void ()> *, false>::Push(CTSQueue::Node_t *) [T = std::function<void ()> *, bTestOptimizer = false
 CTagCondition
+CTestMode
 CTestScriptMgr: not initialized
 CTestScriptMgr::InsertCommandsBeforeCheckpoint
 CTestScriptMgr::InsertCommandsBeforeCheckpoint() adding to tail
@@ -1745,6 +1746,7 @@ CUtlStringTokenSystem: Encountered string token collision: "%s" and "%s" both ha
 CVProfile
 CVectorAnimParameter
 CWayPointHelperAnimNode
+CWindow
 CZeroPoseAnimNode
 C_INIT_AddVectorToVector
 C_INIT_AgeNoise
@@ -1991,7 +1993,6 @@ Connection_Inparam
 Connection_Outflow
 Console
 Console History (reversed
-ConsoleApplication
 ConsoleOnly
 ConsoleOnly                      // Enable/disable a flag to send text only to the console
 ConstructThreadFiberEm
@@ -2068,13 +2069,13 @@ CountedStringPool_CI
 CounterNameEi
 Cover must have at least one input file
 Cover parameters incorrect
-CrackSmokingCompiler
 Create
 CreateCommandLine
 CreateDisposableKeyValuesSystem
 CreateInterface
 CreateKeyUsingKnownLastChildEPKcPS
 CreateNewKeyEv
+CreateNewMiniDumpFile
 CreateNewThreadPool
 CreatePeerKeyEPKc
 CreateSimpleProcess
@@ -2091,14 +2092,17 @@ CurrentProfile
 CustomerMachineMode
 Cycle or diamond double-reference to '%s
 CycleOverride
+Cymlink
 D"A/oyu
 D$ A;D$0u
+D$ I+F 1
 D$ I;D
 D$ fffff
 D$pu	I
 D;s ~q
 D;{(uCG
 DAMAGEORDEATH_INTERRUPTABILITY
+DATA_CONST
 DEATH_INTERRUPTABILITY
 DEBUG_EXITPROCESS
 DEFAULT_WRITE_PATH
@@ -2106,14 +2110,13 @@ DEVELOPER
 DEVELOPMENTONLY
 DISCARD
 DMinimized
+DModeEnabled
+DModule
 DONTRECORD
-DOSInLowPowerUseMode
-DPointerOnStack
-DRunningOnCustomerMachine
 DSTRCT
 DStream
-DTestMode
 DVREnabled
+DVisible
 DWARF
 DWARF WARNING: arange terminator not at the end of a set
 DWARF deferred symbols
@@ -2142,13 +2145,13 @@ DWARF: trying file %s
 DWARF: unable to find debug info for %s, attempting to fall back to the primary file regardless of debug info
 DWARF: unable to find matching separate debug info for %s, check the primary file for debug info
 DWARF_LOCAL_TRANSLATE
-DWindow
 DZP(7
 Data corruption detected
 DataERKS
 Debug server download process failed with exit code %d
 Debug server download running more than %u seconds, aborted
 Debug test scripts
+DebugNameS2
 DebugPrintBitStringBits
 DebugPrintKV3PK10KeyValues3
 DebugSession
@@ -2183,6 +2186,7 @@ DevWarningPKcz
 Developer
 DeveloperConsole
 DeveloperVerbose
+Dfffff
 DictID_from
 DictSize
 Dict_byReference
@@ -2206,12 +2210,12 @@ DotSlashesEc
 Double-register of KV3 conversion (from '%s' to '%s
 DoubleSlashes
 Download process succeeded but didn't write a local file
+DsGame
 DumpNamedInstance
 DumpNodesERK21VProfReportSettings_tPK10CVProfNodeibRK20CVProfSummingContextddb
 Dumps information about all logging channels
 Duplicate abbrev code 0x%x at 0x%x
 Dx,2$E
-Dymlink
 DynamicConfigList
 DĈEދ3D
 E8PAU
@@ -2227,8 +2231,6 @@ ELA;EH
 ELF DWARF symbols
 ELF fallback symbols
 EMPTY - ok for slot zero only
-EModeEnabled
-EModule
 ENABLE_ASSERT_DIALOG_PRINT
 END VPROF REPORT
 ENGLISH
@@ -2236,8 +2238,8 @@ ENTITY_NAME
 ERROR: %s
 ERROR: Alloc exceeded allocation limit /+/ %llu > %llu
 ERROR: CUtlSymbolTableLarge element limit of %u exceeded
+ERROR: DWARF breakpad CFI is incomplete, breakpad symbols are incomplete
 ERROR: Virtual reservation exceeded limit /+/ %llu > %llu
-EVisible
 EXECUTE_PER_TICK
 EXPORTSYSTEM_INTERFACE_VERSION_001
 E`I+EhA9ExL
@@ -2248,6 +2250,7 @@ EditorDynamicConfig
 EessageBox
 Efffff
 ElementEi
+ElliSecTickDiff
 EllipsifyEi
 EmptyAnim
 Enable
@@ -2260,6 +2263,7 @@ End of input was reached and '{' was not matched by
 EndLoadingModule
 EndsWith
 EndsWithEPKc
+Engine2/MapMaxCoord
 EngineServiceMgr001
 EnsureCapacityEi
 EnsureCapacityEiPPcbb
@@ -2272,6 +2276,7 @@ Entry '%s' already has a name (ignoring update to '%s
 EnumHelperP19IFormatOutputStream20CFormatStringElementiSt16initializer_listINSt3__14pairIiPKcEEE
 Enumerate
 EnumerateRegisteredInstances
+EnvironmentBlock
 Error (generic
 Error parsing string '%s' as double, parsed to: '%s
 Error parsing string '%s' as float64
@@ -2285,7 +2290,6 @@ ErrorProc
 Error_AlwaysSpewCallStack
 Error_AlwaysSpewCallStack_Enable
 Error_AlwaysSpewCallStack_Length
-EsGame
 EventDispatcher_Base
 EventListNode1
 EventRWLock
@@ -2337,6 +2341,7 @@ FATAL ERROR: CUtlSymbolTableLarge element limit of %u exceeded
 FATAL ERROR: unable to create temp directory under '%s
 FATAL ERROR: unable to create temp file under '%s
 FATAL: %s called on a pool context (no root available
+FCMOV
 FCVAR_ARCHIVE
 FCVAR_CHEAT
 FCVAR_DONTRECORD
@@ -2350,6 +2355,7 @@ FFFFFFFFI
 FFIFFLST
 FGNOXZ
 FOpenTempFile
+FPrintf
 FRENCH
 FSE_normalizeCount error with litLengthCount
 FSE_normalizeCount error with matchLengthCount
@@ -2380,6 +2386,7 @@ Failed to select dictionary
 Failed to write
 FakePath
 Fatal Error
+Features
 Fiber Job
 Fiber Pool Default Worker
 FiberC
@@ -2415,6 +2422,7 @@ FindAndDeleteSubKeyEPKc
 FindDiffs
 FindDiffsForLargeFiles
 FindDiffsLowMemory
+FindEntryEPKcPS1_b
 FindGlobalSymbol
 FindGlobalSymbolByHash
 FindKeyE
@@ -2438,7 +2446,7 @@ Finish
 FioCreate
 FioGetActualFilenameCasePKcP13CBufferStringb
 FioGetDiskInfoPKcP13FioDiskInfo_t
-FioGetFileCRC32PKcPji
+FioGetFileCRC32PKcPjiPy
 FioGetFileType
 FioReadAtiyPviPi
 FioReadFileTo
@@ -2448,10 +2456,8 @@ FixSlashesEc
 FixTaskbarPinShortcut
 FixupPathNameEc
 FlA+F|I
-Flags
 FlagsEi
 FlattenedSerializersVersion001
-FlliSecTickDiff
 Float array has extra '%s' after values
 Float array only parsed %u value(s) when expecting %u
 Float value %f above maximum %f
@@ -2466,6 +2472,7 @@ Flushi
 FnimizeWindow
 Focused
 Folder
+FonFatalErrorFunc
 FontManager_001
 ForADay
 ForEachInSphereERK5Vec3DIfEfRKNSt3__18functionIFvPKfEEEi
@@ -2498,11 +2505,13 @@ FreeCommandLine
 FreeEPv
 FreeFunc
 Frequency
+Frequency: %.01f %s
 FrequencyResults
 FromAlternateLocation
 FromJSON
 FromString
 FromStringEPKcS1_PS1
+FsSpecificHandleToPlatWindow
 G [A\A^A
 G ~iH
 G,A+G<Hc
@@ -2517,7 +2526,7 @@ GENERAL
 GENERAL_INTERRUPTABILITY
 GERMAN
 GLA;GHs
-GPrintf
+GQueueSteamLoginWithAccessCode
 GameInfoBoolPKcb
 GameInstanceMutex
 GameResourceServiceClientV001
@@ -2549,7 +2558,7 @@ GetDmElementTypeSymbolMap
 GetENS_10SeekType_tEi
 GetEPvi
 GetFileAndLineFromAddress
-GetFileCRC32BufferPKcPjPhi
+GetFileCRC32BufferPKcPjPhiPy
 GetFirstSubKeyEv
 GetFirstValueEv
 GetGameInfo
@@ -2558,6 +2567,7 @@ GetHeaderEi
 GetJSONCharConversion
 GetJobManualEventFromPool
 GetLocalHostname
+GetMiniDumpDirectory
 GetModuleNameFromAddress
 GetMoltenVKMetalLayer
 GetMoltenVKMonitorContentsScale
@@ -2567,12 +2577,12 @@ GetMoltenVKWindowContentsScale
 GetNameEv
 GetNameFromOSType
 GetNameSymbolEv
+GetNewMiniDumpFileName
 GetNextCommandHandleEv
 GetNextKeyEv
 GetNextValueEv
 GetOverflowEi
 GetPerfSortedLogicalProcessors
-GetPerformanceAndEfficiencyCoreCount
 GetPlatformName
 GetPricingAsync
 GetQuantizedFloatEncoderByReg
@@ -2593,18 +2603,18 @@ GetTokenEPKc
 GetTotalTranslation_SourceState
 GetTotalTranslation_TargetState
 GetUTF8BytesNeededPK
-GetVendorRecommendedThreadPoolCountIncludingMainThread
+GetVarKeyEiP13CBufferString
 GetWStringEPKwPwm
 GetWin32ConsoleCursorColumnIndex
 Gfffff
+GfreshDPI
 GlobPool
 GlobalSymbol
 Goal_Distance
-GonFatalErrorFunc
 Gp[A\A^A
-GpenPath
 GridStringPrinter
 GroupEi
+GunningWithDebugModules
 Gз)31CTier0MasterMobileEventListener
 H*0"ZOW
 H+M H9
@@ -2630,7 +2640,8 @@ HEAP WARNING: memory block at %p is unexpectedly unrecognized
 HEAP WARNING: memory pointer %p is invalid
 HH:MM:SS.z
 HIGHDPI
-HQueueSteamLoginWithAccessCode
+HOpenOrCreate
+HSignalHandler
 HUF_buildCTable error
 HUF_writeCTable error
 H[A\A]A^A
@@ -2677,15 +2688,12 @@ Heap: standard allocator
 Heap: standard allocator pass-through to low-level
 Help Text
 HelpSystem_001
-HfreshDPI
 HideBudgetGroupEib
 Hierarchical Call Graph
 High PC attr without addr value (form %u
 Hit end of input before closing quote (%c
 Hit end of line before closing quote (%c
 HostStateMgr001
-HsSpecificHandleToPlatWindow
-HunningWithDebugModules
 I CUtlRBTree<CUtlOrderedMapBase<CVirtRangeMap::VirtRange_t, CVirtRangeMap::VirtDesc_t, CDefLess<CVirtRangeMap::VirtRange_t>, int>::Node_t, CUtlOrderedMapBase<CVirtRangeMap::VirtRange_t, CVirtRangeMap::VirtDesc_t, CDefLess<CVirtRangeMap::VirtRange_t>, int>::CKeyLess>::Insert(T &&) [T = CUtlOrderedMapBase<CVirtRangeMap::VirtRange_t, CVirtRangeMap::VirtDesc_t, CDefLess<CVirtRangeMap::VirtRange_t>, int>::Node_t, L = CUtlOrderedMapBase<CVirtRangeMap::VirtRange_t, CVirtRangeMap::VirtDesc_t, CDefLess<CVirtRangeMap::VirtRange_t>, int>::CKeyLess, I = int, M = CUtlMemory<UtlRBTreeNode_t<CUtlOrderedMapBase<CVirtRangeMap::VirtRange_t, CVirtRangeMap::VirtDesc_t, CDefLess<CVirtRangeMap::VirtRange_t>, int>::Node_t, int
 I CUtlRBTree<CUtlOrderedMapBase<HKeySymbol, bool, CDefLess<HKeySymbol>, int>::Node_t, CUtlOrderedMapBase<HKeySymbol, bool, CDefLess<HKeySymbol>, int>::CKeyLess>::Insert(T &&) [T = CUtlOrderedMapBase<HKeySymbol, bool, CDefLess<HKeySymbol>, int>::Node_t, L = CUtlOrderedMapBase<HKeySymbol, bool, CDefLess<HKeySymbol>, int>::CKeyLess, I = int, M = CUtlMemory<UtlRBTreeNode_t<CUtlOrderedMapBase<HKeySymbol, bool, CDefLess<HKeySymbol>, int>::Node_t, int
 I CUtlRBTree<CUtlOrderedMapBase<KV3MetatextType_t, CBufferString, CDefLess<KV3MetatextType_t>, int>::Node_t, CUtlOrderedMapBase<KV3MetatextType_t, CBufferString, CDefLess<KV3MetatextType_t>, int>::CKeyLess>::Insert(T &&) [T = CUtlOrderedMapBase<KV3MetatextType_t, CBufferString, CDefLess<KV3MetatextType_t>, int>::Node_t, L = CUtlOrderedMapBase<KV3MetatextType_t, CBufferString, CDefLess<KV3MetatextType_t>, int>::CKeyLess, I = int, M = CUtlMemory<UtlRBTreeNode_t<CUtlOrderedMapBase<KV3MetatextType_t, CBufferString, CDefLess<KV3MetatextType_t>, int>::Node_t, int
@@ -2832,7 +2840,6 @@ INHERITABLE_BOOL_TRUE
 INOWY
 INTEGER
 INodeBlend2DItem
-IOpenOrCreate
 IParameterProvider
 IProxyAnimNode
 IPulseSystem_001
@@ -2845,7 +2852,6 @@ ISequenceBlend2DItem
 ISequenceMotionItem
 ISequencePreviewSource
 ISequenceUser
-ISignalHandler
 ISingleFrameAnimNode
 ISlopeComponent
 ISolveIKChainAnimNode
@@ -2853,6 +2859,8 @@ IString
 ISubGraphAnimNode
 ISubGraphManager
 ITALIAN
+IWrite
+I\zH6MO
 IcD$ A;D
 IcD$ H
 IcD$@H9
@@ -2873,9 +2881,11 @@ IcL$hD9
 IcM$H
 IcN(H9
 IcT$8H
+IcT$xI
 Ic\$ H
 Ic] H
 Ic_ A
+IeaseMouseCapture
 Ignore
 Ignore All Asserts
 Ignore For 24 Hours
@@ -2899,7 +2909,6 @@ Incorrect k
 Incorrect parameters
 Incorrect splitPoint
 Indent
-IndexFromName
 Indicate to a test script that a checkpoint has been reached
 IndicateActivity
 Indirect FDE pointer encoding is not supported
@@ -2914,6 +2923,7 @@ InitEv
 InitMiniDumpReportOptions
 InitStackContextEPvmbm
 InitWin32ConsoleColorContext
+Initial CFA instructions advance location
 Inline attr without data1 value
 InlineCallData
 Input contains no data
@@ -2986,6 +2996,7 @@ Invalid personality array block location (0x%x : 0x%x
 Invalid range end value 0x%llx (base 0x%llx
 Invalid range start value 0x%llx (base 0x%llx
 Invalid range with start greater than end
+Invalid register number (%llu
 Invalid second level encodings table count (0x%x
 Invalid second level encodings table offset (0x%x
 Invalid second level entry table count (0x%x
@@ -3025,15 +3036,16 @@ JSON error, unterminated element
 JSONBuffer
 JSONFileP10KeyValues3P10CUtlStringPKcS4
 JSONP10KeyValues3P10CUtlStringPKcS4
-JString
-JWrite
 JcL(hI9
-JeaseMouseCapture
 Jfffff
 JmpToAlternateStack
+JnameFile
 Jobs/Coroutines
 JoinEj
 JoinNumberscRK10CUtlVectorI
+JoreDenormalsAreZero
+JportDllLoadDenial
+JquireSDL
 JsonEscapePKc
 K 3K43K
 K$ffff
@@ -3053,6 +3065,7 @@ KV3LoadFlagsv
 KV3OrKV1P10KeyValues3P10CUtlStringP10CUtlBufferRK7KV3ID_tPKc
 KVPacker1
 KcRK7KV3ID_tS4
+KcreenToWindowCoords
 KeyEPKc
 KeyPKc
 KeyValueCache001
@@ -3069,11 +3082,7 @@ KeyValuesSystem
 KeyValuesToJSON
 KeyValues_Data
 Kffffff
-KnameFile
 KnownLoadedModules
-KoreDenormalsAreZero
-KportDllLoadDenial
-KquireSDL
 L$(ffff
 L$<IcL$ I
 L9{Hv
@@ -3100,7 +3109,6 @@ LastChannelLineComplete
 LastDir
 Launch Debugger
 LcCxE9
-LcreenToWindowCoords
 Lc~(A9
 Leading
 LeadingWhitespace
@@ -3154,6 +3162,7 @@ LoadKV3FromOldSchemaTextP10KeyValues3P10CUtlStringP10CUtlBufferRK7KV3ID_tPKc
 LoadKV3P1
 LoadTemporaryFromFileEbP11IFileSystemPKcS3_PFbS3_PvES4_S3
 Loaded %s, got %p
+LoadedModule
 Loading multi-line string literals with metadata support enabled is not currently supported
 LocalHostname
 LocalScope
@@ -3247,6 +3256,7 @@ MD5_Print
 MD5_ProcessSingleBuffer
 MD5_PseudoRandom
 MENUBAR_ITEM
+MFrame
 MOBILE
 MODEL_PROCESSING_SERVICES_INTERFACE_001
 MTLCreateSystemDefaultDevice
@@ -3322,13 +3332,13 @@ MeshSystem001
 MeshUtils001
 Message: %s
 MetalView
-Mffff
 MiniDumpAdditionalStringData_t
 MiniDumpComment
 MiniDumpCommentEnsureOSDescription
 MiniDumpErrorString
 MiniDumpExceptionHandler
 MiniDumpExceptionHandler() is undefined for this platform
+MiniDumpFile
 MiniDumpRegisterForUnhandledExceptions
 MiniDumpReport
 MiniDumpReportOptions
@@ -3341,6 +3351,7 @@ MinidumpUserStreamInfoGet
 MinidumpUserStreamInfoSetHeader
 Missing
 Missing file '%s
+MlipboardText
 ModelDocFormat
 ModelDocUtils001
 Module
@@ -3378,6 +3389,7 @@ Multiple specific types given, '%s' and also '%s
 Multiple specification attrs
 Multiple statement lists
 MurmurHash3_32
+Murrent
 Mutex7TryLockEPKci
 N10moodycamel15ConcurrentQueueIP12CThreadedJobNS_28ConcurrentQueueDefaultTraitsEE12ProducerBaseE
 N10moodycamel15ConcurrentQueueIP12CThreadedJobNS_28ConcurrentQueueDefaultTraitsEE16ImplicitProducerE
@@ -3396,13 +3408,13 @@ N3fmt2v96detail15iterator_bufferIPccNS1_13buffer_traitsEEE
 N3fmt2v96detail6bufferIcEE
 N3fmt2v96detail6bufferIiEE
 N3fmt2v96detail6bufferIjEE
-NFrame
 NOTE: this is the total bytes of the regions above, not the growth since the old snapshot
 NOTHING
 NOTIFY
 NOT_CONNECTED
 NO_GAME_ASSERT_DIALOG
 NO_RAISE_ON_ASSERT
+NReadOnly
 NSClassFromString
 NSGetArgc
 NSGetArgv
@@ -3425,12 +3437,11 @@ Name attr without string value
 NameByReg
 NameERKS
 NameEv
-NameFromOSType
 NamesAreEquivalent
 NavGameTest001
 NavMesh
 Nearby
-NearestInternalERK5Vec3DIfERfPPKfi
+NearestInternalERK5Vec3DIfERf
 NegativeForUnequal
 NetworkClientService_001
 NetworkMessagesVersion001
@@ -3440,7 +3451,6 @@ NetworkService_001
 NetworkSystemVersion001
 Networking
 NeverNetwork
-NewThreadPool
 Newline in string literal
 NextBot
 NextChannelID
@@ -3448,7 +3458,6 @@ NextKeyEPS
 NextTag
 Nfffff
 Nffffff
-NlipboardText
 NnormalsAreZero
 No Buffer
 No caller file
@@ -3456,11 +3465,14 @@ No closing */ before end of file
 No error detected
 No name
 No samples
+No unwind info found in FDE
+No valid CFA rule defined by FDE (op %u, refreg 0x%x
 No valid format conversion from '%s' to '%s
 NoHeaderPK10KeyValues3P10CUtlString
 NoPoseControl
 NoSecurityDoNotUse
 NodeSpike
+NoregroundWindow
 Not enough data for 1-byte element array
 Not enough data for 2-byte element array
 Not enough data for 4-byte element array
@@ -3475,6 +3487,7 @@ Not enough memory
 Not enough string data for string table
 Notes
 Notify
+NsktopNotifyIconPath
 NullMutexE
 NumBudgetGroupsEv
 NumColumnsEv
@@ -3482,8 +3495,9 @@ NumCountersEv
 Number
 Number contains invalid character 0x%02x
 Number contains invalid character 0x%02x ('%c
-Nurrent
 O$ffffff
+O9T0 u
+O9T0(u+K
 O<A)_8I
 OBJC_CLASS_$_NSObject
 OBJC_CLASS_$_NSProcessInfo
@@ -3497,8 +3511,8 @@ OBJC_CLASS_$_NSView
 OBJC_METACLASS_$_NSObject
 OBJC_METACLASS_$_NSView
 OHHc6Hc
+OIsConsoleApplication
 OM_TimestampedLog
-OReadOnly
 OS error message
 OS memory stats
 OS type: %s (%d
@@ -3512,13 +3526,13 @@ Offffff
 Offset
 Offset Code Frequencies
 OldSchemaTextPKviP7KV3ID_t
+OlobalSafeAreaInsets
 OnCanceled
 OnExceptionCaughtEv
 OnExitEv
 OnFailedToPerform
 OnFinished
 OneTimeEvent8AllocateEv
-OoregroundWindow
 OpenTempFile
 Operation made no progress over multiple calls, due to input being empty
 Operation made no progress over multiple calls, due to output buffer being full
@@ -3527,9 +3541,8 @@ Operation on NULL destination buffer
 OrCreateCounterEPKc14CounterGroup_t
 OrCreateQuantizedFloatEncoder
 Ordered constructor wrapped type has no default constructor
-OriginLength
 OsSpecificHandle
-OsktopNotifyIconPath
+OullscreenMinimizeOnFocusLoss
 Out of keyvalue string space
 Out of logging channels
 Out of range abbrev code %llu
@@ -3549,6 +3562,7 @@ Outflow_Simultaneous
 P   0
 P fffff
 P10CUtlBuffer
+P13CBufferString
 P13CBufferStringj
 P16IKeyValuesSystemb
 P@P  00@P@P  00
@@ -3588,6 +3602,7 @@ PARTICLE_VRHAND_CP_OBJECT
 PARTICLE_VRHAND_LEFT
 PARTICLE_VRHAND_RIGHT
 PAVASAR
+PCLMULQDQ
 PER_USER
 PF_BIAS_TYPE_EXPONENTIAL
 PF_BIAS_TYPE_STANDARD
@@ -3609,8 +3624,8 @@ PF_TYPE_PARTICLE_NUMBER_NORMALIZED
 PF_TYPE_PARTICLE_SPEED
 PF_TYPE_RANDOM_BIASED
 PF_TYPE_RANDOM_UNIFORM
+PFullscreenState
 PIcvHH
-PIsConsoleApplication
 PK17LoggingMetaData_t
 PK17LoggingMetaData_tPKc
 PKcPyS1
@@ -3630,6 +3645,7 @@ PT_TYPE_CONTROL_POINT_RANGE
 PT_TYPE_INVALID
 PUEmulated
 PUInformation
+PUInformation14GetDescriptionEP13CBufferStringj
 PUTickFrequency
 PUTicksAreReliable
 PUUsage
@@ -3644,6 +3660,7 @@ PVEC_TYPE_LITERAL_COLOR
 PVEC_TYPE_RANDOM_UNIFORM
 PVEC_TYPE_RANDOM_UNIFORM_OFFSET
 PVirtualReserve
+PWarnLimit
 P[A\A]A^A
 P[A\A^A
 P`@    @@  P
@@ -3689,6 +3706,7 @@ PhysicsShapeCapsule
 PhysicsShapeHull
 PhysicsShapeMesh
 PhysicsShapeSphere
+Pindow
 PipePiS_i
 PlatCPUTicksAreReliable
 PlatC_ReadFileToMemory
@@ -3760,6 +3778,7 @@ Plat_GetDesktopBounds
 Plat_GetDesktopResolution
 Plat_GetDocumentDirectory
 Plat_GetEnv
+Plat_GetExeModule
 Plat_GetExecutablePathUTF8
 Plat_GetFileType
 Plat_GetFullscreenDisplayModes
@@ -3862,7 +3881,6 @@ Plat_MinimizeWindow
 Plat_NeedsLowFragmentation
 Plat_NonFatalErrorFunc
 Plat_OnExecutableExitingMain
-Plat_OpenPath
 Plat_OsSpecificHandleToPlatWindow
 Plat_Printf
 Plat_QueueSteamLoginWithAccessCode
@@ -3956,7 +3974,6 @@ Plat_gmtime64
 Plat_localtime64
 Plat_mktime64
 Plat_timegm64
-PlobalSafeAreaInsets
 PopThread
 PortEt
 PortEv
@@ -3986,8 +4003,8 @@ PropertyEditorSystem_001
 PtrEPKcPv
 PtrEPv
 PtrValueEv
-PullscreenMinimizeOnFocusLoss
 PulseEntFireMode_t::HANDLE
+PupFPUControlWord
 PurchaseSku
 PurgeEv
 PuseCapture
@@ -4003,18 +4020,19 @@ PutZerosEi
 Q$3Q83Q
 Q(3Q<3Q
 Q16@0:8
-QFullscreenState
-QWarnLimit
+QTitle
 Qffffff
-Qindow
 Qkkbal
 Qt_GetCustomAllocators
 QuantizedFloatEncoder
 QueryExistingPurchases
 Quotes
-QupFPUControlWord
+QutdownCOM
+QwWindow
 R10CUtlBufferP11IFileSystemS1_PFbS1_PvEP19IKeyValuesErrorSpewS6_S1
 R10CUtlBufferP11IFileSystemS1_PFbS1_PvES6_S1
+R23CUtlVectorFixedGrowableIPKfLm64EiE
+R23CUtlVectorFixedGrowableIPKfLm64EiEi
 R24VProfBudgetGroupCallSited
 R?Z}5
 RAISE_ON_ASSERT
@@ -4025,17 +4043,20 @@ RARARARAp
 RARARASAp p
 RARASBp
 RARAUASB`.AUASBTBp
-RARAUAUBSATC
+RARAVAUBSATB
 RARAWAp
 RASARASARASARASARASA
 RASARASARASARASARASARASARASARASARASARASARASARASARASARASARASARASARASARASARASARASARASARASARASARASARASARASARASARASARASARASARASARAp
-RAUAUA
 RAUB`(ASAp
 RAVARAVARAVARATAp
+RAVAVA
+RAYARARAYAp
 RAZARAp
 RBRARARARARARARARARARARARARARARARARARASB
 RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(Q
 RD?4KF?=GH?9FJ?8HL
+RDTSC
+RDTSCP
 RELEASE
 REPLICATED
 RK10CUtlBuffer
@@ -4044,7 +4065,6 @@ RK14LeafCodeInfo_t
 RK21VProfReportSettings_tPKci
 RK34_AssertCompileTimeConstantStruct_t
 RKSt9nothrow_t
-RTitle
 RUSSIAN
 RWLockTranstionResult_t CSemiAutoRWLockT<CThreadRWLock_FastRead>::LockForWrite(const char *, int, Ts &&...) [RWLOCK_TYPE = CThreadRWLock_FastRead, Ts
 RWLock_FastRead
@@ -4062,6 +4082,7 @@ Range list without .debug_ranges
 Range start value 0x%llx out of virtual bound 0x%x
 Ranges attr without a section offset
 RawAllocator
+Read off the end of DWARF CFI
 Read off the end of a CIE
 Read off the end of a CIE (EH data
 Read off the end of a CIE (address size
@@ -4105,6 +4126,7 @@ RecursiveLoadFromBuffer:  got conditional between key and value
 RecursiveLoadFromBuffer:  got empty keyname
 RecursiveLoadFromBuffer:  got } in key
 RecursiveLoadFromBuffer:  recursion overflow
+Register offset set to invalid value (%llu
 RegisterAssertionFailureListener
 RegisterConCommand: Unknown error registering con command "%s
 RegisterConVar: Unknown error registering convar "%s
@@ -4150,7 +4172,6 @@ ResetEv
 ResetPeakEv
 ResetThreadSyncObjectInternalEv
 Resident virtual bytes: %s
-Resolution
 Resolve
 ResourceCompilerSystem001
 ResourceHandleUtils001
@@ -4174,8 +4195,10 @@ ReturnJobManualEventToPool
 ReturnsInt
 Rffff
 RightEi
+RlliSec
 Root_Motion_Speed
 Root_Motion_Turn_Speed
+RsAfter
 RunProcess
 RunTSListTests
 RunTSQueueTests
@@ -4184,17 +4207,17 @@ RunWithAlternateStack
 Running %s
 Running headless mode, no notes collected
 RunningFromAlternateLocation
-RutdownCOM
-RwWindow
+RupportsMetalGraphicsAPI
 S0u!H
 S1_P11IFileSystemS1_PFbS1_PvEP19IKeyValuesErrorSpewS4_S1
 S1_S1
 S>T7W
-SARAYARARAYAYARAYARA
+SARAYARAYARA
+SASASAp
 SASBZAp
 SAWAVAUATH
 SAWAVAUH
-SAZFWF
+SAZFWF`XBp
 SCHINESE
 SCTCYA
 SDL.window.cocoa.window
@@ -4236,7 +4259,6 @@ SDL_GetCurrentAudioDriver
 SDL_GetCurrentDisplayMode
 SDL_GetCursor
 SDL_GetDefaultCursor
-SDL_GetDefaultKeyFromScancode
 SDL_GetDesktopDisplayMode
 SDL_GetDisplayBounds
 SDL_GetDisplayContentScale
@@ -4252,17 +4274,15 @@ SDL_GetGlobalMouseState
 SDL_GetGrabbedWindow
 SDL_GetHaptics
 SDL_GetHint
-SDL_GetJoystickInstanceID
 SDL_GetKeyFromScancode
 SDL_GetKeyName
 SDL_GetKeyboardFocus
 SDL_GetKeyboardState
 SDL_GetModState
 SDL_GetNumberProperty
+SDL_GetPointerProperty
 SDL_GetPowerInfo
-SDL_GetProperty
 SDL_GetPropertyType
-SDL_GetRelativeMouseMode
 SDL_GetScancodeFromKey
 SDL_GetScancodeFromName
 SDL_GetScancodeName
@@ -4274,6 +4294,7 @@ SDL_GetWindowMouseGrab
 SDL_GetWindowPixelDensity
 SDL_GetWindowPosition
 SDL_GetWindowProperties
+SDL_GetWindowRelativeMouseMode
 SDL_GetWindowSize
 SDL_GetWindowSizeInPixels
 SDL_GetWindowTitle
@@ -4298,10 +4319,12 @@ SDL_PeepEvents
 SDL_PlayHapticRumble
 SDL_PollEvent
 SDL_PumpEvents
+SDL_PushEvent
 SDL_PutAudioStreamData
 SDL_Quit
 SDL_QuitSubSystem
 SDL_RaiseWindow
+SDL_RegisterEvents
 SDL_ResetKeyboard
 SDL_RestoreWindow
 SDL_ResumeAudioDevice
@@ -4312,8 +4335,7 @@ SDL_SetClipboardText failed: %s
 SDL_SetCursor
 SDL_SetHint
 SDL_SetNumberProperty
-SDL_SetProperty
-SDL_SetRelativeMouseMode
+SDL_SetPointerProperty
 SDL_SetStringProperty
 SDL_SetTextInputArea
 SDL_SetThreadPriority
@@ -4323,6 +4345,7 @@ SDL_SetWindowFullscreenMode
 SDL_SetWindowIcon
 SDL_SetWindowMouseGrab
 SDL_SetWindowPosition
+SDL_SetWindowRelativeMouseMode
 SDL_SetWindowSize
 SDL_SetWindowTitle
 SDL_ShowCursor
@@ -4347,7 +4370,6 @@ SDL_WasInit
 SDL_Window
 SDL_Window=}16@0:8
 SDL_free
-SDL_getenv
 SDL_iconv_string
 SDL_modff
 SDL_roundf
@@ -4393,6 +4415,7 @@ SIGVTALRM
 SIGWINCH
 SIGXCPU
 SIGXFSZ
+SMT/HT index %d
 SONCharConversion
 SPANISH
 SPONLY
@@ -4401,6 +4424,10 @@ SPRITECARD_TEXTURE_CHANNEL_MIX_A
 SPRITECARD_TEXTURE_CHANNEL_MIX_RGB
 SPRITECARD_TEXTURE_CHANNEL_MIX_RGBA
 SPRITECARD_TEXTURE_NORMALMAP
+SSE4.1
+SSE4.2
+STACK CFI %x
+STACK CFI INIT %x %x
 STATETAGBEHAVIOR_ACTIVE_WHILE_CURRENT
 STATETAGBEHAVIOR_FIRE_ON_ENTER
 STATETAGBEHAVIOR_FIRE_ON_ENTER_AND_EXIT
@@ -4470,6 +4497,7 @@ SetPtrEPciibb
 SetSeed_LockedEi
 SetSizeiy
 SetStringEiiPKc
+SetSymbolSearchPath
 SetThreadedLoadLibraryFunc
 SetWStringEPKw
 SetWin32ConsoleColor
@@ -4495,14 +4523,13 @@ SkipBlanks
 SkippableFrame
 Sleeping
 SliceEii
-SlliSec
+SlliSecs
 Slope_Angle
 Slope_Angle_Forward
 Slope_Angle_Sideways
 Slope_Heading
 SmoothLoop
 SortCheck_Failure
-SortedLogicalProcessors
 SoundMix
 SoundOpSystem001
 SoundOpSystemEdit001
@@ -4546,7 +4573,6 @@ Spring
 SranslateSymbolicLinks
 Src size is incorrect
 SrcSizeToDecompress
-SsAfter
 St11align_val_t
 Stack unwinding
 StackContext_StartData_t2
@@ -4608,7 +4634,6 @@ StringEii
 StringEndMasks
 StringFormatOutputStream
 StringPKcS0_Pcm
-StringPtr
 StripExtensionEb
 StripExtensionEv
 StripFilenameEv
@@ -4619,7 +4644,6 @@ Subtract
 Sum (%s
 SumTimesEPK
 Summary
-SupportsMetalGraphicsAPI
 Surrounding
 SwapERS
 SwapJob
@@ -4642,7 +4666,6 @@ T *CUtlLeanVectorImpl<CUtlLeanVectorFixedGrowableBase<KeyValues3 *, 4, int>, Key
 T$8IcD
 T@"CALayer",&,N,V_metalLayer
 T@"NSString",R,C
-TBRARARARARARARARARARARARARARARARARARARBRB
 TCHINESE
 TESTSCRIPT: CheckPoint -> '%s
 TESTSCRIPT: waiting for checkpoint '%s'%s
@@ -4653,6 +4676,8 @@ TSList cannot hold more that %d nodes
 TSListBase
 TSPointerList Nodes
 TSPointerListNodes
+TToString
+TVirtual
 T^{SDL_Window=},V_m_pSDLWindow
 Table has potentially invalid member names and cannot be persisted
 TagName
@@ -4665,7 +4690,6 @@ TempDirectory
 TermEv
 TerminateEi
 Test bucket %d has an invalid value %d
-TestAffinityPreferenceSlotInfo
 TestFormatA
 TestFormatB
 TestFormatC
@@ -4741,10 +4765,7 @@ ThreadNanoSleep
 ThreadOpenProcess
 ThreadPool
 ThreadPoolTest:         %d threads -- %d (%d) jobs processed in %fms, %fms to suspend (%f/%f
-ThreadPoolTest:     Distribute
-ThreadPoolTest:     Distribute NO Sleep
 ThreadPoolTest:     NO Sleep
-ThreadPoolTest:     Non-distribute
 ThreadPoolTest:   NOT to completion
 ThreadPoolTest:   To completion
 ThreadPoolTest: Job distribution speed
@@ -4752,8 +4773,8 @@ ThreadPoolTest: Jobs doing work, %s main thread
 ThreadRWLock
 ThreadReadProcessMemory
 ThreadSemaphore
-ThreadSetAffinityPreference
 ThreadSetDebugNameS2
+ThreadSetPerfSetAffinity
 ThreadSetPriority
 ThreadSetProcessPriority
 ThreadShellExecute
@@ -4779,7 +4800,7 @@ TimestampedEventMsg
 TimestampedEventMsgV
 TimestampedEvent_RegisterListenerAndFlushBuffer
 Title: %s
-TlliSecs
+Tnload
 ToArray
 ToFileBaseEb
 ToFileRK7KV3ID_tS1_PK10KeyValues3P10CUtlStringPKcS8_j
@@ -4842,6 +4863,8 @@ Type *CDwarfVector<SDwarfCieInfo>::GetInsertPtr(int, int) [_Type = SDwarfCieInfo
 Type *CDwarfVector<SDwarfFdeInfo>::GetInsertPtr(int, int) [_Type = SDwarfFdeInfo
 Type *CDwarfVector<SDwarfIncompleteName>::GetInsertPtr(int, int) [_Type = SDwarfIncompleteName
 Type *CDwarfVector<SDwarfRelVirtRange>::GetInsertPtr(int, int) [_Type = SDwarfRelVirtRange
+Type *CDwarfVector<SDwarfUnwindRule>::GetInsertPtr(int, int) [_Type = SDwarfUnwindRule
+Type *CDwarfVector<SDwarfUnwindRuleSet>::GetInsertPtr(int, int) [_Type = SDwarfUnwindRuleSet
 Type *CDwarfVector<VSymbolKind_t>::GetInsertPtr(int, int) [_Type = VSymbolKind_t
 Type *CDwarfVector<char *>::GetInsertPtr(int, int) [_Type = char
 Type *CDwarfVector<char>::GetInsertPtr(int, int) [_Type = char
@@ -4852,19 +4875,23 @@ TypeEv
 TypeFlags
 U,E9e(w<D9
 UASASASASASASASASASB`+ARARARARARARARARARARARARARARARARARARARARARARARARAp
-UASASC`EARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARBp(p0RF
+UASASC`vA
 UASBRARARB
 UNLOGGED
 UNhkk
 UPDATE_STRING_TOKEN_DATABASE
+UProtect
 URLCharacter
 URLQuery_Unsafe
 USERINFO
-UToString
+UScreenCoords
 UUIDImpl
 UUUUH
 UUUUUUUUH
-UVirtual
+UWindowTo
+Uasctime
+Uctime64
+Ugmtime64
 Uint value %llu above maximum %llu
 Uint value %llu below minimum %llu
 Uint64EPKcy
@@ -4916,7 +4943,6 @@ Unable to traverse directory '%s' - check permissions
 Unable to write file '%s
 Unaccounted
 Unexpected EOF while parsing number
-Unexpected Mach-O UUID length
 Unexpected augmentation string byte 0x%x
 Unexpected augmentation string byte 0x%x (shouldn't have augmentation data
 Unexpected character 0x%02x
@@ -4927,6 +4953,7 @@ Unexpected high PC attr in addition to ranges
 Unexpected high PC attr without a low PC attr
 Unexpected nested comp dir
 Unfixed
+Unhandled DWARF CFI 0x%x
 Unhandled DWARF attribute form 0x%x
 UnicodeCaseCo
 UnicodeCaseConvertEi25EStringConvertErrorPolicy
@@ -4948,7 +4975,7 @@ Unknown pointer encoding representation 0x%x
 Unknown reader format version %u
 Unknown standard instruction 0x%x
 UnknownOS
-Unload
+UnloadedModule
 UnlockWriteEPKci
 Unrecognized ELF class
 Unrecognized ELF data layout or version
@@ -5027,11 +5054,11 @@ VERSION=1
 VERSIONCONTROL=p4
 VEngineCvar007
 VFileSystem017
+VGaussianFloat
 VMIDEv
 VMaterialSystem2_001
 VMediaFoundation001
 VP4003
-VPKPathForm
 VPKPathName
 VPLATFORM
 VPROJECT
@@ -5057,15 +5084,12 @@ VProf_EnterScopeAdHoc
 VProf_ExitScope
 VProf_FindOrCreateCounter
 VProfile
-VProtect
 VRenderDeviceSetupV001
 VSNAPFile
-VScreenCoords
 VScriptManager010
 VStringTokenSystem001
 VTT structure for
 VWebm001
-VWindowTo
 V_:X1
 V_AbbreviatePathInPlace
 V_AddBackSlashesToSpecialChars
@@ -5076,6 +5100,7 @@ V_AreSlashesCorrect
 V_BBCodeToHTML
 V_BasicHtmlEntityEncode
 V_BoyerMooreSearch
+V_CommonPrefixToUnderscore
 V_CompareNameWithWildcards
 V_ComposeFileName
 V_CopyMemory3D
@@ -5467,16 +5492,12 @@ ValidatePathConcat
 ValueEi
 VariableDefinition
 VariantIndex
-Vasctime
-Vctime64
 Vector
 VectorData_StatEntriesERPKvRj
-VendorRecommendedThreadPoolCountIncludingMainThread
 Verbosity
 VerbosityForSeverity
 Version not supported
 VertexKDTree
-Vgmtime64
 Virtual Memory %s Report for PID %u
 Virtual memory regions sorted by size
 VisBuilder_001
@@ -5491,6 +5512,7 @@ W,CiD3
 W/q#IX
 W0[A^A
 WARNING: %s Denied a request to load '%s
+WARNING: %u CFI problems encountered
 WARNING: Command buffer full... ignoring
 WARNING: Command too long... ignoring
 WARNING: Large alloc of %llu bytes of memory (limit %llu
@@ -5500,6 +5522,7 @@ WARNING: Suffix '%s' is a current-drive-root path (has a leading slash), cannot 
 WARNING: Suffix '%s' is a drive-relative path, cannot be prefixed with '%s
 WARNING: Suffix '%s' is an absolute path, cannot be prefixed with '%s
 WARNING: The maximum dictionary size %u is too large compared to the source size %u! size(source)/size(dictionary) = %f, but it should be >= 10! This may lead to a subpar dictionary! We recommend training on sources at least 10x, and preferably 100x the size of the dictionary
+WARNING: Unable to build frame unwind table for FDE at 0x%x
 WARNING: Unable to copy '%s' into symbol cache at '%s', error %u
 WARNING: Unable to initialize verifier allocator
 WARNING: Unable to rename temporary symbol cache file '%s' to final '%s
@@ -5508,12 +5531,13 @@ WARNING: minidump path in '%s' doesn't exist and can't be created
 WARNING: there were errors during information capture, this report may be incomplete
 WARNING: total wall clock time was %.2f seconds, results may be invalid
 WARNING: unable to link multiple ConCommands named %s because both are not marked FCVAR_LINKED_CONCOMMAND
-WGaussianFloat
 WGlobalObject
 WINDOWS
 WMD_tier0_MiniDumpWriteDump
+WMobileEventListener
 WString
 WStringEPKcPKw
+WStringToken
 W\;Q0s
 WaitForJobCompletionER14CEventListNode
 WaitForReadEv
@@ -5560,16 +5584,15 @@ Windows ME
 Windows NT
 Windows Vista
 Windows XP
-WithAlternateStack
 WleaseThreadHandle
 Working set: %s
 WorldRendererMgr001
+Worldsize_Init
 WrapperFunc
 WriteAsBinaryER10CUtlBuffer
 WriteAsBinaryFilteredER10CUtlBuffer
 WriteAtiyPKviPi
 WriteEPKvi
-WritePtr
 WriteToFileEPKcb
 WriteZeroedEi
 Write_LockForReadEPKci
@@ -5581,22 +5604,22 @@ X360LODEF
 X360SPLITSCREEN
 X360WIDE
 XIct$dH
-XMobileEventListener
-XStringToken
 XXXXXX: found leading plus sign while parsing string '%s' as float64, ignoring it
 X[A\A]A^A
 X[A^A
 Xfffff
+XmoveAssertionCallback
+XoreWin32ConsoleColor
+XportProgress
 Y 3Y43Y
 Y(3Y<3Y
 YARAUBp
 YShowGenericRestartErrorForBadShortcut
+YTestIfInternalArg
 Yf,=M
 YieldToMain
-YmoveAssertionCallback
-YoreWin32ConsoleColor
 You must construct it with ORDERED_CONSTRUCT macro in the dependency resolution function
-YportProgress
+YturnJobManualEventToPool
 Z 3Z43Z
 Z10DevWarningPKcz
 Z10FioGetSizeiPy
@@ -5638,7 +5661,7 @@ Z14V_SplitNumbersPKccR10CUtlVectorIji10CUtlMemoryIjiEE
 Z14V_SplitNumbersPKccR10CUtlVectorIxi10CUtlMemoryIxiEE
 Z14V_SplitNumbersPKccR10CUtlVectorIyi10CUtlMemoryIyiEE
 Z14V_stristr_fastPKcS0
-Z15FioGetFileCRC32PKcPji
+Z15FioGetFileCRC32PKcPjiPy
 Z15GetGameInfoBoolPKcb
 Z15GetKV3LoadFlagsv
 Z15LoadKV3FromFileP10KeyValues3P10CUtlStringPKcS4_RK7KV3ID_t
@@ -5701,7 +5724,7 @@ Z20V_UnicodeCaseConvertPKcPcii25EStringConvertErrorPolicy
 Z20V_UnicodeCaseConvertPKtPtii25EStringConvertErrorPolicy
 Z20V_UnicodeCaseConvertPKwPwii25EStringConvertErrorPolicy
 Z21FioCreateSymbolicLinkPKcS0_b
-Z21FioGetFileCRC32BufferPKcPjPhi
+Z21FioGetFileCRC32BufferPKcPjPhiPy
 Z21FioIsSameFileIdentityPKcS0
 Z21FioIsSameFileIdentityii
 Z21V_UnicodeBufferLengthPKciRb
@@ -5738,9 +5761,9 @@ Z27V_UnicodeCaseStringInStringPKcS0_i25EStringConvertErrorPolicy
 Z27V_UnicodeCaseStringInStringPKtS0_i25EStringConvertErrorPolicy
 Z27V_UnicodeCaseStringInStringPKwS0_i25EStringConvertErrorPolicy
 Z28Formatting_AdjustIndentationi
-Z28VWMD_tier0_MiniDumpWriteDumpP14CVDebugProcessPKcb19_VWMD_MINIDUMP_TYPEP36_VWMD_MINIDUMP_EXCEPTION_INFORMATIONP38_VWMD_MINIDUMP_USER_STREAM_INFORMATIONP35_VWMD_MINIDUMP_CALLBACK_INFORMATION
-Z28VWMD_tier0_MiniDumpWriteDumpPvji19_VWMD_MINIDUMP_TYPEP36_VWMD_MINIDUMP_EXCEPTION_INFORMATIONP38_VWMD_MINIDUMP_USER_STREAM_INFORMATIONP35_VWMD_MINIDUMP_CALLBACK_INFORMATION
-Z28VWMD_tier0_MiniDumpWriteDumpjPKcb19_VWMD_MINIDUMP_TYPEP36_VWMD_MINIDUMP_EXCEPTION_INFORMATIONP38_VWMD_MINIDUMP_USER_STREAM_INFORMATIONP35_VWMD_MINIDUMP_CALLBACK_INFORMATION
+Z28VWMD_tier0_MiniDumpWriteDumpP14CVDebugProcessPKcb18VWMD_MINIDUMP_TYPEP36_VWMD_MINIDUMP_EXCEPTION_INFORMATIONP38_VWMD_MINIDUMP_USER_STREAM_INFORMATIONP35_VWMD_MINIDUMP_CALLBACK_INFORMATION
+Z28VWMD_tier0_MiniDumpWriteDumpPvji18VWMD_MINIDUMP_TYPEP36_VWMD_MINIDUMP_EXCEPTION_INFORMATIONP38_VWMD_MINIDUMP_USER_STREAM_INFORMATIONP35_VWMD_MINIDUMP_CALLBACK_INFORMATION
+Z28VWMD_tier0_MiniDumpWriteDumpjPKcb18VWMD_MINIDUMP_TYPEP36_VWMD_MINIDUMP_EXCEPTION_INFORMATIONP38_VWMD_MINIDUMP_USER_STREAM_INFORMATIONP35_VWMD_MINIDUMP_CALLBACK_INFORMATION
 Z28V_SanitizeTextForCommandLinePKcP13CBufferStringb
 Z28V_SanitizeTextForCommandLinePKcPci
 Z29LoadKV3FromKV1Text_TranslatedP10KeyValues3P10CUtlStringPKc23KV1TextEscapeBehavior_tPK21KV1ToKV3Translation_tiS4_b
@@ -5944,13 +5967,12 @@ ZN11CPathStringD2Ev
 ZN11CRunProcess14ReadPipeOutputEj
 ZN11CRunProcess16LogFailureOutputEii
 ZN11CRunProcess3RunEPKci
+ZN11CRunProcess5CloseEv
 ZN11CRunProcess7RunWaitEv
 ZN11CRunProcessC1EPKci
 ZN11CRunProcessC1Ev
 ZN11CRunProcessC2EPKci
 ZN11CRunProcessC2Ev
-ZN11CRunProcessD1Ev
-ZN11CRunProcessD2Ev
 ZN11CTSListBase11InternalPopEv
 ZN11CTSListBase12InternalPushEP13TSLNodeBase_t
 ZN11CTSListBase6DetachEv
@@ -6092,7 +6114,7 @@ ZN14CCommandBuffer21EndProcessingCommandsEv
 ZN14CCommandBuffer22DelayAllQueuedCommandsEi
 ZN14CCommandBuffer23BeginProcessingCommandsEi
 ZN14CCommandBuffer23LimitArgumentBufferSizeEi
-ZN14CCommandBuffer7AddTextEPKciid
+ZN14CCommandBuffer7AddTextEPKciibdy
 ZN14CCommandBufferC1Ev
 ZN14CCommandBufferC2Ev
 ZN14CCommandBufferD1Ev
@@ -6245,6 +6267,13 @@ ZN16VProfScopeHelperILi4ELb1EE29EnterScopeInternalBudgetFlagsEPKcR24VProfBudgetG
 ZN17CCallStackCapture7CaptureEPFiyPPviiEjj
 ZN17CCallStackCaptureC1EPFiyPPviiEjj
 ZN17CCallStackCaptureC2EPFiyPPviiEjj
+ZN17CEnvironmentBlock15ValidateStorageEv
+ZN17CEnvironmentBlock25CaptureProcessEnvironmentEv
+ZN17CEnvironmentBlock3SetEPKcS1
+ZN17CEnvironmentBlock4CopyERKS
+ZN17CEnvironmentBlock6RemoveEPKc
+ZN17CEnvironmentBlockC1Ev
+ZN17CEnvironmentBlockC2Ev
 ZN17CThreadLocalScope13SetThreadNameEPKc
 ZN17CThreadLocalScope17GetScopeListMutexEv
 ZN17CThreadLocalScope20FindScopeForThreadIdEy
@@ -6806,7 +6835,10 @@ ZNK13CVertexKDTree14FindVertsInBoxER15CUtlVectorFixedIPKfLm64EiERK5Vec3DIfES8_i
 ZNK13CVertexKDTree14FindVertsInBoxER23CUtlVectorFixedGrowableIPKfLm64EiERK5Vec3DIfES8_i
 ZNK13CVertexKDTree15ForEachInSphereERK5Vec3DIfEfRKNSt3__18functionIFvPKfEEEi
 ZNK13CVertexKDTree15NearestInternalERK5Vec3DIfERfPPKfi
+ZNK13CVertexKDTree15NearestInternalERK5Vec3DIfERfR23CUtlVectorFixedGrowableIPKfLm64EiEi
 ZNK13CVertexKDTree7NearestERK5Vec3DIfE
+ZNK13CVertexKDTree7NearestERK5Vec3DIfER23CUtlVectorFixedGrowableIPKfLm64EiE
+ZNK14CPUInformation14GetDescriptionEP13CBufferStringj
 ZNK14CStrAutoEncode12PopulateUTF8Ev
 ZNK14CStrAutoEncode13PopulateUTF16Ev
 ZNK14CStrAutoEncode13PopulateUTF32Ev
@@ -6844,6 +6876,11 @@ ZNK16CMiniDumpComment15GetStartPointerEv
 ZNK16CMiniDumpComment17GetCurrentPointerEv
 ZNK16CMiniDumpComment22GetAvailableBufferSizeEv
 ZNK16LoggingChannel_t6HasTagEPKc
+ZNK17CEnvironmentBlock11GetVarValueEi
+ZNK17CEnvironmentBlock17GetVarKeyAndValueEi
+ZNK17CEnvironmentBlock17GetVarKeyAndValueEiP13CBufferString
+ZNK17CEnvironmentBlock9FindEntryEPKcPS1_b
+ZNK17CEnvironmentBlock9GetVarKeyEiP13CBufferString
 ZNK17CThreadLocalScope18IsLocalThreadScopeEv
 ZNK17CThreadSyncObjectntEv
 ZNK18CGridStringPrinter10NumColumnsEv
@@ -7180,7 +7217,7 @@ ZTVN10__cxxabiv117__class_type_infoE
 ZTVN10__cxxabiv120__si_class_type_infoE
 ZTVN10__cxxabiv121__vmi_class_type_infoE
 ZTVSt12length_error
-ZTestIfInternalArg
+ZWithAlternateStack
 ZdaPv
 ZdaPvSt11align_val_t
 ZdaPvm
@@ -7189,26 +7226,23 @@ ZdlPv
 ZdlPvSt11align_val_t
 ZdlPvm
 ZdlPvmSt11align_val_t
+Zfffff
+ZhreadPoolTests
 ZnamRKSt9nothrow_t
 ZnamSt11align_val_t
 ZnamSt11align_val_tRKSt9nothrow_t
 ZnwmRKSt9nothrow_t
 ZnwmSt11align_val_t
 ZnwmSt11align_val_tRKSt9nothrow_t
-ZturnJobManualEventToPool
 a href=H
 a;C(uELc
 a?y#c?sIe
 aHcGTH
 aInstallModuleMappingListener
-aLoadedModule
 aSERK13CBufferString
 aSERKS
-aSetSymbolSearchPath
-aUnloadedModule
 aVirtualMachineEncoders
 abort
-ackSmokingCompiler
 ackTop_Base
 acosf
 active
@@ -7236,6 +7270,7 @@ alphasort$INODE64
 always test dictionary efficiency on real samples
 ameDirectories
 ameDirectory
+ameFromOSType
 ameHeaderSize
 ancelIoi
 anchor_angles
@@ -7284,6 +7319,7 @@ archive
 argument not found
 ariableBitStringBase
 ariableBitStringBase15ValidateOperandERKS
+arning
 array: %u elements
 artCurrentProcess
 artSelf
@@ -7320,7 +7356,9 @@ awCallStack
 axCLevel
 bForceLookAtPath
 bReacquireAfterBreak
+bRemoveModuleMappingListener
 bUpdate
+bVerifyLoadedModuleMappings
 backingScaleFactor
 backtrace
 base is NULL
@@ -7330,6 +7368,7 @@ base64_encode
 basic_string
 bbreviatePathInPlace
 bffff
+bhread
 bin/osx64/libtier0.dylib
 bin\stringtokendatabase.txt
 binary
@@ -7387,12 +7426,9 @@ c32@0:8@"NSUserNotificationCenter"16@"NSUserNotification"24
 c32@0:8@16@24
 c4IcG(D9
 c8D+c(L
-cKeyValuesJSONParser
 cPcii25EStringConvertErrorPolicy
-cRemoveModuleMappingListener
 cS0_i25EStringConvertErrorPolicy
 cTickDiff
-cVerifyLoadedModuleMappings
 cache
 caleconv
 callStackSymbols
@@ -7416,8 +7452,8 @@ char8_t
 chdir
 child: "%s
 children
+chkstk_darwin
 chmod
-chread
 ciR20CVProfSummingContext
 cl_language
 clareCurrentThreadIsMainThread
@@ -7466,6 +7502,7 @@ contentsScale
 continue
 control_point
 copy_tmp
+copyfile
 coroutine.m_pStackHigh <= coroutinePrev.m_pStackHigh
 corrupted entry
 coshf
@@ -7502,8 +7539,11 @@ d total counted strings
 d.%ds
 d:%02d.H
 d:%02d:%02d.%03d
+dDebugNameForThread
 dLco`D9
+dProcess
 dWatchdogTimer
+d_%02d%02d_%02d%02d%02d_%d
 damage
 darwin
 ddress
@@ -7558,10 +7598,8 @@ digest
 digit_str
 dingBufferSize_min
 dioxXu
-disable_affinity_preferences
 disabled
 disconnected
-distributed
 diuoxXfFeEgGaAcsp
 divide
 dladdr
@@ -7593,8 +7631,10 @@ e(ˈPo
 eCombat
 eDamageOrDeath
 eDeath
-eDebugNameForThread
 eGeneral
+eIdFromHandle
+eMainThreadId
+ePriority
 eProcess
 eacute
 eadlessMode
@@ -7610,6 +7650,8 @@ eedsLowFragmentation
 eekStringLengthEv
 efaultMiniDump
 efaultMiniDumpHandler
+efficiency class %lld
+eflags
 egisteredModules
 eh_frame
 ehandle
@@ -7634,10 +7676,13 @@ eqERKS
 equenceBound
 equences
 er0GenericMiniDumpHandler
+erfSetAffinity
+erfSortedLogicalProcessors
 ergeBlockDelimiters
 error
 essential
 essential' turns on vital logs
+estKeyValuesJSONParser
 etAllocAttributesFunc
 etErrno
 etExtension
@@ -7655,6 +7700,7 @@ event_keys
 event_ramp
 eventindex
 events
+ewMiniDumpFileName
 ewh/?y
 executable
 execute_per_tick
@@ -7676,13 +7722,11 @@ f %f %f %f
 fA9F&r
 fA;	u
 fA;>u
-fIdFromHandle
-fMainThreadId
-fProcess
+fIdActive
+fShouldRun
 faceMergeAngle
 failed to dlopen "%s" error=%s
 failed to dlopen %s error=%s
-fake_mixed_cpu_mode
 false
 fastCover
 faultCLevel
@@ -7707,7 +7751,9 @@ finalizeDictionary
 findflags
 finding patterns
 finited
+fitOnceCall
 fixedlength
+flConfigMaxCoord
 flDurationSec
 flMaxDistance
 flMinDistance
@@ -7752,6 +7798,8 @@ frexp
 frexpf
 friction
 fromFrame
+fs.base
+fsProcess
 fseek
 fseeko
 fstat$INODE64
@@ -7765,9 +7813,12 @@ func+child         func
 func+child       func
 fwrite
 g&yR?V
-gIdActive
-gPriority
-gShouldRun
+gDestroy
+gGetCount
+gMultiWait
+gNanoSleep
+gOpenProcess
+gReadProcessMemory
 g_BitBuf_BitWriteMasks
 g_BitBuf_ExtraMasks
 g_BitStringEndMasks
@@ -7780,6 +7831,7 @@ g_VProfNodeSpikeReporting
 g_VProfSignalSpike
 g_bPlatCPUTicksAreReliable
 g_bUpdateStringTokenDatabase
+g_flConfigMaxCoord
 g_pFiberJobPool
 g_pMemAlloc
 g_pPerfTraceDepot
@@ -7811,9 +7863,9 @@ gettimeofday
 getuid
 gfFeEaAG
 ggingSystem
+ghellExecute
 gister
 gisterSequenceProducer
-gitOnceCall
 gmtime_r
 gnoreAssert
 gnoreContentAsserts
@@ -7821,23 +7873,17 @@ gnu_debuglink
 gnu_debuglink doesn't have a filename
 gnu_debuglink doesn't have string terminator
 gravity
-gsProcess
+gs.base
 guard after
 guard before
 guard both
 guard for static
 gxx_personality_v0
-hDebugNameS2
-hDestroy
 hEntity
 hEntityNPC
 hEntityTarget
-hGetCount
-hMultiWait
-hNanoSleep
-hOpenProcess
-hReadProcessMemory
 hTarget
+hTerminateProcessCode
 h[A\A]A^A
 h[A^A
 handindex
@@ -7854,15 +7900,13 @@ help text
 help:  no cvar or command named %s
 hex color: RRGGBBAA                         // A hexadecimal color value in the order RGBA
 hextobinary
-hhellExecute
-higher
 hljztL
 hm~iD
+hocessPriority
 holdevent
 hortenPathEb
 houldAllowRestart
 hreadIndex
-hreadPoolTests
 hurt_me
 hurt_them
 hw.logicalcpu
@@ -7871,8 +7915,10 @@ hw.physicalcpu
 hw.physicalcpu_max
 hypot
 hypotf
+i core%s
+iGetAdditionalFileAttachmentCallback
 iPKcib
-iTerminateProcessCode
+iYield
 icmp_fast
 ictID_from
 ighQoSExecutionSpeed
@@ -7887,6 +7933,7 @@ iklockleftarm
 iklockrightarm
 ilMiniDump
 ileType
+imestampedEvent
 img src
 inCLevel
 include
@@ -7899,6 +7946,7 @@ incremental_shapes
 ingPool_CI
 ingPool_CI5CountEv
 ingleAppInstance
+iniDumpDirectory
 inimumMs
 initWithFrame
 initWithFrame:sdlWindow:createWindowFlags
@@ -7933,11 +7981,11 @@ invalid type specifier
 invalid window size
 invert_orientation
 ioGetSectorSizePKcPi
-iocessPriority
 ionMargin
 iority
 ipboardText
 iquest
+irapProcessId
 irtualMemorySnapshot
 isEqual
 isError
@@ -7952,27 +8000,24 @@ itJSONConfig
 itProcess
 itializeCOM
 izeof
-jGetAdditionalFileAttachmentCallback
-jPKcb19_VWMD_MINIDUMP_TYPEP36_VWMD_MINIDUMP_EXCEPTION_INFORMATIONP38_VWMD_MINIDUMP_USER_STREAM_INFORMATIONP35_VWMD_MINIDUMP_CALLBACK_INFORMATION
-jYield
+jOptions
+jPKcb18VWMD_MINIDUMP_TYPEP36_VWMD_MINIDUMP_EXCEPTION_INFORMATIONP38_VWMD_MINIDUMP_USER_STREAM_INFORMATIONP35_VWMD_MINIDUMP_CALLBACK_INFORMATION
+jPreHandlerCallback
 ji10CUtlMemoryIjiEE
 ji10CUtlMemoryIjiEEP10CUtlString
-jmestampedEvent
-jrapProcessId
+joolsStallMonitor
 k*WBjL
 kCAFilterNearest
 kCFRunLoopDefaultMode
 kE9~$|eI
-kOptions
-kPreHandlerCallback
+kEndScope
+k_RegisterListenerAndFlushBuffer
 keGlobalSymbol
 kipBlanks
-koolsStallMonitor
 ktopNotify
 kv3 encoding:%s:version{%s} format:%s:version{%s
 l;9ăB
-lEndScope
-l_RegisterListenerAndFlushBuffer
+lMainThreadWindow
 la_symbol_ptr
 lambda
 lambdaJ
@@ -7997,15 +8042,18 @@ lerp_curve
 lertUser
 lfHeaderEP
 lfffff
+lhutdown
 libMoltenVK.dylib
 libSDL3.dylib
 light mem debug
 light verifier
+limRight
 linked
 linux
 list %u best segments
 literal
 llatePKcS0_i25EStringConvertErrorPolicy
+llateStackInfo
 llectMiniDumpsForFatalErrors
 llocationGranularity
 llx_%x
@@ -8020,6 +8068,7 @@ load_string_token_database
 loader_path
 localeconv
 localhost
+localize
 localtime_r
 lockRotationAlpha
 lock_facing
@@ -8059,7 +8108,7 @@ lushStream
 lwaysInvokeMiniDumpHandler
 m?H5p
 mElementTypeSymbolMap
-mMainThreadWindow
+mToString
 m_AllowedSurfaceProperties
 m_Arg0
 m_Arg0Name
@@ -8591,6 +8640,7 @@ material
 materials/particle/base_projected.vmat
 materials/particle/base_sprite.vtex
 matrix3x4
+max frequency %.01f %s
 max' allows everything
 max. %f
 max. %s
@@ -8614,21 +8664,20 @@ meshes
 message
 metalLayer
 mffff
-mhutdown
 micro
 middot
-mimRight
 min. %f
 min. %s
 min_angle
+minidump_file_prefix
 minimum ratio : %u
+miqueId
 missing '}' in format string
 missing precision specifier
 mj>zjZ
 mkdir
 mktemp
 mktime
-mlateStackInfo
 mmandLine
 mnt/symbols
 mod_init_func
@@ -8671,27 +8720,31 @@ modeldoc7
 modeldoc8
 modeldoc9
 modff
+monPrefixToUnderscore
 moredetailed
 moveAtUTF8Eii
 moveSubKeyEPS_bb
 moveto
-mpareNameWithWildcards
 mparePK
 mport_GetICVarFactory
 mpress
 mpress_safe
 mprotect
+mregister
+mtlMemory
 multiplayer_break
 munmap
+mxcsr
 n/h%fPn
 n9W$|iH
 nBits != 32
+nCalcNewAllocationCount
 nExecutableExitingMain
 nInterruptability
+nMobileEventListener
 nOffset < m_nAllocationSize
 nReturnCode != EINVAL
 nSwitchValue
-nToString
 nTries < 10000000
 nanosleep
 nav_attribute_avoid
@@ -8711,9 +8764,6 @@ nffffff
 ngAfter
 nicmp_cch
 niformRandomStreamImplI
-niqueId
-nl_symbol_ptr
-no affinity
 no guard
 no name set
 no results
@@ -8726,7 +8776,6 @@ noautoargs
 nocustomermachine
 nohibernate
 non-virtual thunk to
-nopref-all
 norecord
 norestart
 normalizeFloat
@@ -8740,12 +8789,11 @@ notify
 nowatchdog
 npackIntoStructureEPK24KeyValuesUnpackStructurePv
 nqualifiedFileName
-nregister
+nserialize
 ntainsWhitespace
 ntentsScale
 nterScopeAdHoc
 nticAMD
-ntlMemory
 nullptr
 num_str_fast
 number
@@ -8755,36 +8803,37 @@ nvalidTag
 nvertPK
 nvertToLocalTime
 o,CiD4
-oCalcNewAllocationCount
+oFailedAllocation
 oGetFileType
 oIc] H
-oMobileEventListener
 obManualEventFromPool
 objc_alloc
+objc_alloc_init
 objc_autoreleasePoolPop
 objc_autoreleasePoolPush
-objc_classlist__DATA
+objc_classlist__DATA_CONST
 objc_classname__TEXT
 objc_classrefs__DATA
 objc_const
 objc_data
 objc_empty_cache
 objc_enumerationMutation
-objc_imageinfo__DATA
+objc_imageinfo__DATA_CONST
 objc_ivar
 objc_methname
 objc_methtype
 objc_msgSend
 objc_msgSendSuper2
 objc_msgSend_stret
-objc_protolist__DATA
+objc_opt_class
+objc_protolist__DATA_CONST
 objc_release
 objc_selrefs
 objc_setProperty_nonatomic
 objc_superrefs__DATA
 ocessSingleBuffer
 ocketEi
-offffff
+odigit
 ogMultiline
 oggingResponsePolicy
 okeMiniDumpHandler
@@ -8806,6 +8855,7 @@ operation
 operator
 operatorJ
 oppedERKS
+oprint
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/tier0/coroutine.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/tier0/dbg.cpp
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/tier0/fibertools.cpp
@@ -8839,10 +8889,9 @@ opyFilePKcS0_b
 opyState
 origin_max_delta
 origin_relative
-ormanceAndEfficiencyCoreCount
+orldsize_Init
 ormatToP19IFormatOutputStream20CFormatStringElement
 ortCheck_Failure
-oserialize
 oslash
 ostemps
 otilde
@@ -8853,14 +8902,13 @@ p    @0P
 p SAXCSBp
 p `8Ap
 p0 PP
-p0RCRCp R0
+p0RCRCp p
 p4 add -t binary "%s
 p4 edit -t binary "%s
-pA3QPX
 pA3QuW
 pAbilityName
 pClass
-pFailedAllocation
+pDedicatedServerSleep
 pFrameBottom > m_pStackHigh || pFrameTop < m_pStackLow
 pMessage
 pParam
@@ -8868,6 +8916,7 @@ pSwitchValue
 pTarget
 pTraceString
 p[A\A^A
+pandEnvVars
 panorama
 param2
 parent (wins): "%s
@@ -8877,7 +8926,6 @@ particle
 particles
 pb>pAf
 pclose
-pdigit
 peak_frame
 peak_scale
 per_user
@@ -8906,12 +8954,12 @@ pose_control_type
 posix_memalign
 posix_memalign( .., %d, %d) failed with EINVAL indicating the alignment was not a power of 2 at least as large as sizeof(void
 pplyDiffs
-pprint
 pread
 precision is not integer
 precision not allowed for this argument type
 preferred_carryangles
 printf
+proc group %u:%u, physical ID %d, core ID %d
 processInfo
 profile
 prop_data
@@ -8951,11 +8999,13 @@ public/tier0/tslist.h
 public/tier0/utldict.h
 public/tier0/utlrbtree.h
 public/tier0/utltshash.h
+pupper
 pwrite
 py_bytes
 qD9{$rkH
-qDedicatedServerSleep
-qWarning
+qEnabled
+qHistoricalData
+qNextFrame
 qangle
 qffff
 qffffff
@@ -8964,17 +9014,16 @@ qsort_r
 quaternion
 queue force advance
 queue max wait
-qupper
 r'ffffff
 r0fff
 r0u)H
 r<fff
-rEnabled
+rFindOrCreateCounter
 rL<LtHI
-rNextFrame
 rNfffff
 rOffffff
 rReplaceChar
+rSetEnabled
 rSfff
 rT+6ZNw
 rTffffff
@@ -9022,10 +9071,10 @@ rettify
 retval
 rewind
 rfffff
+rflags
 ricing
 rmdir
 rocAddress
-rocessUtils
 rootNode
 root_keyname
 rotation
@@ -9039,8 +9088,8 @@ rsquo
 rstDirEPKc
 rstDirEPS
 rstTag
+rxitScope
 s %c%s
-s %d: proc %d (group %u:%u
 s %i %s
 s %s %s %s
 s %s -nominidumps
@@ -9061,18 +9110,16 @@ s not expected here.  Missing
 s not expected here.  Missing ',' or
 s not expected here; expected string for key name or
 s not expected here; missing value
-s slot %d combined mask %u:0x%llx
-s test: multithread interleaved push/pop, %s
-s test: multithread push, multithread pop, %s
-s test: multithread push, sequential pop, %s
-s test: multithread push, single thread pop, %s
-s test: sequential push, multithread pop, %s
-s test: single thread push, multithread pop, %s
+s test: multithread interleaved push/pop, no affinity
+s test: multithread push, multithread pop, no affinity
+s test: multithread push, sequential pop, no affinity
+s test: multithread push, single thread pop, no affinity
+s test: sequential push, multithread pop, no affinity
+s test: single thread push, multithread pop, no affinity
 s test: single thread push/pop, in order
 s test: single thread push/pop, interleaved
 s total bytes in user-space regions (%s bytes in kernel-space regions
 s unable to allocate %u bytes
-s%s%s_%d_%02d%02d_%02d%02d%02d_%d%s%s.mdmp
 s' %s
 s.exe
 s1Y3JrMH
@@ -9113,17 +9160,15 @@ s: string length overflows (is %d, need %d unused
 s: unable to find %s in '%s
 s: unable to load '%s', error %d
 sChannelEnabled
-sFindOrCreateCounter
-sHistoricalData
-sMarkFrame
 sMatch
-sSetEnabled
 sSharingReg
+sSlashesCorrect
 sUsingCCtxParams
 sample set too large : reduced to %u MB
 scandir$INODE64
 schema
 scrubber
+sddBackSlashesToSpecialChars
 secondary
 semctl
 semget
@@ -9176,14 +9221,16 @@ sourcemappings
 spawn_entity
 spawn_motion_disabled
 spew_detailed_cpu_info
+sppearsToBeANumber
 sprintf
 srcSize
 srv*http
 srv*https
-ssert
+sserts
 stack_chk_fail
 stack_chk_guard
 stackstats
+stall
 stallProgressReportHandler
 start_frame
 start_resource_profiling
@@ -9250,8 +9297,8 @@ superclass
 suppress
 suppressed_shapes
 sureChannelVerbosity
+sureDirectory
 surface_prop
-sxitScope
 symbol
 symlink
 symtab
@@ -9261,14 +9308,12 @@ sysctl.proc_translated
 sysctlbyname
 system
 szlig
-s~fffff
 t	L9+u
 t	L93u
 t fffff
 t ffffff
 t!fff
 t!ffffff
-t"ffff
 t"ffffff
 t#L91t
 t#fff
@@ -9285,6 +9330,7 @@ t,ffff
 t,fffff
 t-E#H\L
 t-ffff
+t.fffff
 t.ffffff
 t/ffffff
 t25EStringConvertErrorPolicy
@@ -9307,7 +9353,6 @@ tPwiPS1_i25EStringConvertErrorPolicy
 tRfffff
 tS0_i25EStringConvertErrorPolicy
 tSfffff
-tSlashesCorrect
 tTfff
 tUfffff
 tVfffff
@@ -9321,7 +9366,6 @@ tail_frame
 tanhf
 tartEj20ThreadPriorityEnum_t
 task_info
-tddBackSlashesToSpecialChars
 teamLoginWithAccessCode
 temp_unserialization_member
 terateCapturedStackAnnotations
@@ -9351,12 +9395,12 @@ tlv_bootstrap
 tmfffff
 tmp/source_engine_%u.lock
 toFlushNow
+toidFnPtrLookup_Tier0
 tolower
 too many length or distance symbols
 tools
 tools_stall_monitor_break_on_unknown_cause
 toupper
-tppearsToBeANumber
 trDup
 trFormatEPKcz
 trade
@@ -9379,6 +9423,7 @@ tzset
 t}ffff
 u - %u
 u AVASP
+u CPU%s
 u header stack frames
 u must be followed by exactly 4 hex digits
 u segments found, of total size %u
@@ -9391,6 +9436,8 @@ u64( %lld = 0x%llX
 u<fff
 u=ffff
 uO]O<I
+uP/%uE
+uP/%uE cores
 uRffffff
 uTfffff
 uacute
@@ -9410,6 +9457,8 @@ uint32 CUtlMemoryArena::Free(byte
 uint64
 uldCollectMiniDumpsForFatalErrors
 ultiplier
+umerateModuleImportLibraries
+unable to create unique minidump file
 undefined
 unexpected error %d trying to exclusively lock %s
 ungetc
@@ -9431,9 +9480,13 @@ unsigned long
 unsigned long long
 unsigned short
 unspecified
+unused1
+unused2
+unused3
+unused4
+unused5
 unwind_info
 uoffffff
-uoidFnPtrLookup_Tier0
 upWin32ConsoleIO
 update
 updateDrawableSize
@@ -9485,6 +9538,7 @@ v_<dtq<p
 validhex
 valueWithSize
 vanmgrph
+vasicHtmlEntityEncode
 vconsole_fuzzy
 vconsole_set_focus
 vector
@@ -9506,7 +9560,7 @@ virtual bool CThreadPool::YieldWait(CThreadedJob **, int, bool, uint32
 virtual table for
 virtual thunk to
 virtual void CAsyncScheduledFunctionManager::Init
-vji19_VWMD_MINIDUMP_TYPEP36_VWMD_MINIDUMP_EXCEPTION_INFORMATIONP38_VWMD_MINIDUMP_USER_STREAM_INFORMATIONP35_VWMD_MINIDUMP_CALLBACK_INFORMATION
+vji18VWMD_MINIDUMP_TYPEP36_VWMD_MINIDUMP_EXCEPTION_INFORMATIONP38_VWMD_MINIDUMP_USER_STREAM_INFORMATIONP35_VWMD_MINIDUMP_CALLBACK_INFORMATION
 vmdl;vmdl_prefab
 vmdlkeys0
 vmdlkeys1
@@ -9544,6 +9598,7 @@ void V_StringParseError(uint32, IErrorListener *, const char
 void ValidateStringFormatSpecifiers(const char
 void ValidateStringFormatSpecifiers(const wchar_t
 volatile
+voyerMooreSearch
 vpcf10
 vpcf11
 vpcf12
@@ -9630,6 +9685,7 @@ w4L95s
 w4L95x
 w8Mc&I
 w@ffff
+wExtractDomainFromURL
 wPfffff
 wPwiPS1_i25EStringConvertErrorPolicy
 wPwii25EStringConvertErrorPolicy
@@ -9644,7 +9700,6 @@ warning : ZSTD_compressBegin_usingCDict failed
 warning : could not compress sample size %u
 warning : pathological dataset : literals are not compressible : samples are noisy or too regular
 warning : selected content significantly smaller than requested (%u < %u
-wasicHtmlEntityEncode
 wchar_t
 wcschr
 wcscmp
@@ -9664,52 +9719,59 @@ windows
 with baH
 without
 workSpace buffer is not large enough
+woubleToString_Unsafe
+wpareNameWithWildcards
 wpfffff
 wprintf
+wpyMemory3D
 write
 writeSkippableFrame
 wscanf
+wuntTextLines
 x&A9Ex~ I
 x(	u]IcE
 x,D93~'D
 x.%x.copy_tmp
 x3A9Gx~-M
 xEA9@`~?I
-xExtractDomainFromURL
 xIA9EH~CI
 xIA9G
+xInvalid
+xPathCharacters
+xSlashes
 x[A\A]A^A
 x[A^A
 xeModuleEPKvm
 xhE9w ~bI
 xi10CUtlMemoryIxiEE
 xi10CUtlMemoryIxiEEP10CUtlString
+xloatToString_Unsafe
+xmm10
+xmm11
+xmm12
+xmm13
+xmm14
+xmm15
 xns瑳ru
 xoA9G`~iA9G||c
-xoubleToString_Unsafe
-xoyerMooreSearch
-xpyMemory3D
 xtO<htO<X
-xuntTextLines
 xupPathName
-x老y退y
 yAndMakeFriendlyNameFromCppName
-yInvalid
-yPathCharacters
-ySlashes
+ySpaceToUnderscore
 yacute
 yaw_end
 yaw_start
 yi10CUtlMemoryIyiEE
 yi10CUtlMemoryIyiEEP10CUtlString
-yloatToString_Unsafe
 ymbol8FormatToEP19IFormatOutputStream20CFormatStringElement
 ymbolTable
 yncObject
 ystemLoad
+yupPath
 zFileExtension
 zHtmlEntityDecodeToUTF8
-zSpaceToUnderscore
+zOriginLength
+zVPKPathForm
 z`%1Is
 zfffff
-zupPath
+zrocessUtils

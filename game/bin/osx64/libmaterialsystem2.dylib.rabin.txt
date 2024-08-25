@@ -18,7 +18,6 @@
 14CBaseAppSystemI16IMaterialSystem2E
 14CBaseAppSystemI21IMaterialSystem2UtilsE
 14CBaseAppSystemI21IPostProcessingSystemE
-14IErrorListener
 14IOpCodeHandlerIiE
 15.15s
 15CIntOpEvaluator
@@ -67,6 +66,7 @@
 22CSchemaInstallCallback
 22CShaderCreateCallbacks
 23CKV3ResourceBlockHelper
+23CKV3TransferContextBase
 23CKV3TransferLoadContext
 23CKV3TransferSaveContext
 23CUtlStackMachineBuilder
@@ -94,7 +94,7 @@
 5&YA1A
 5,¸YA
 6d %-50s
-6s %-50s %5s %5s %5s %5s %5s %5s %5s %10s\n
+6s %-50s %5s %5s %5s %5s %5s %5s %10s\n
 7ffff
 8HcC8H
 8Icv@H
@@ -104,8 +104,10 @@
 9CFontBase
 9D\n\bu\vH
 9W$t\f
+9fffff
 9ffffff
 9p\bt\nH
+A#4$L
 A#F\f\r
 A+D$$Hc
 A+G$Lc
@@ -130,7 +132,6 @@ ARARASAp\bRARAp\bRBRAp\bWA]A
 ARAWAVL
 ARGB8888
 ASARAV
-ASASAp\bRARAp
 ASAVARPj
 ASPARAVj
 AUAWARP
@@ -167,8 +168,10 @@ AWAVSPH
 AWAVSPH9
 AWAVSPI
 AWAVSPL
+AWAWAp\bRARAp
 A\\BWA\\0
-A`pB`2Cp\bRARARARARARA\\0
+A`2Cp\bRARARARARARA\\0
+A`DBR0
 Actually dude, we didn't seem to be expecting anything here, or at least\n
 Afffff
 AlignedByteArray not properly aligned\n
@@ -186,7 +189,6 @@ Android SM 5.0 (VULKAN
 AnimGraphEditorUtils001
 AnimationSystemUtils_001
 AnimationSystem_001
-Ap\bRER0
 Ap\bTIp\bSAp\bRA
 Apple Symbols
 Arial Unicode MS
@@ -362,6 +364,7 @@ D24FS8
 D24X8_SHADOW
 D32FS8
 D;s(u(I
+DATA_CONST
 DDDDUUUUDDDDUUUU
 DXT1_ONEBITALPHA
 DXT5_NM
@@ -555,7 +558,6 @@ HcK H
 HcKHH9
 HcK\bH9
 HcK\bI9
-Hc\rHI\b
 HcˋUԉT
 HelpSystem_001
 Helvetica
@@ -597,7 +599,6 @@ IcF\bHi
 IcF\bI9
 IcG\bH9
 IcG\bI9
-IcN\b要\f
 IcO\bH9
 IcT$0L
 IcT$8H
@@ -612,7 +613,6 @@ InputService_001
 InputStackSystemVersion001
 InputSystemVersion001
 InstallSchemaBindings
-Intentionally vague touch behavior for %p\n
 InvTextureDim
 InvViewportSize
 J :N r\v
@@ -776,6 +776,7 @@ NetworkP2PService_001
 NetworkServerService_001
 NetworkService_001
 NetworkSystemVersion001
+Nffffff
 No DATA block for resource '%s'\n
 No DATA block for resource\n
 No Valid Layers
@@ -790,7 +791,9 @@ O ;O0}\n
 O D;O0}\fA
 O0;N0u
 On the line reading %s):\n
-Ordered constructor wrapped type has no default constructor.\n\tYou must construct it with ORDERED_CONSTRUCT macro in the dependency resolution function.\n
+OutputBC7Texture
+OutputBC7Texture_1x1
+OutputBC7Texture_2x2
 OutputDXT5Texture
 OutputDXT5Texture_1x1
 OutputDXT5Texture_2x2
@@ -810,7 +813,6 @@ P8H=vtext
 P;G\bv
 P@@ppp
 P@P0000@P@P0000
-P@\a\tPB\a
 PA9\\$Tt"Hc
 PAWAVASAR
 PC SM 4.0 (D3D10
@@ -843,11 +845,11 @@ Pffffff
 PhysicsBuilderMgr001
 Pixel Shader
 Pixel Shader Render State
-Plat_DebugPrint
 Plat_DebugString
 Plat_ExitProcess
 Plat_FatalErrorFunc
 Plat_FloatTime
+Plat_GetTime
 Plat_IsInDebugSession
 Plat_LoadInterface
 Plat_NonFatalErrorFunc
@@ -1287,6 +1289,7 @@ ZN12CThreadEvent3SetEv
 ZN12CThreadEventC1Eb
 ZN13CBufferString10FixSlashesEc
 ZN13CBufferString10RelinquishENS_19EAllocationOption_tE
+ZN13CBufferString10TruncateAtEib
 ZN13CBufferString11ShortenPathEb
 ZN13CBufferString11ToLowerFastEi
 ZN13CBufferString12AppendFormatEPKcz
@@ -1391,7 +1394,6 @@ ZnwmSt11align_val_t
 ZnwmSt11align_val_tRKSt9nothrow_t
 a\aM\bN\tO\nR\vQ\fT\r]\rU
 a\aM\bN\tO\nR\vQ\f]\r
-a\aP<\a
 a\f\b
 a`0PPP
 abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
@@ -1414,9 +1416,11 @@ bool CFontTextureCache::IsCharCached(FontHandle_t, FontDrawType_t, uchar32, int 
 buffer
 byteaddressbuffer
 bzero
+c\a\a@e\a
 cannot match to any predicted input...\n
 cbuffer
 channel
+chkstk_darwin
 class
 colorcorrection_%p.vtex
 common
@@ -1617,6 +1621,7 @@ h[A^A
 iOS SM 4.0 (VULKAN
 iOS SM 4.1 (VULKAN
 iOS SM 5.0 (VULKAN
+i\a\aPj\a
 include
 invalid
 is also the end of the line, so you must check your lexer rules\n
@@ -1630,7 +1635,6 @@ kCTFontTraitsAttribute
 kCTFontWeightTrait
 knN(knN(knN(knN
 l\a(fA
-l\a\a n\a
 la_symbol_ptr
 length
 lexer error %d :\n\t%s at offset %d
@@ -1770,6 +1774,7 @@ mat_warn_bad_modes
 material
 materials
 materials/dev/combine_colorcorrection_lut_cs.vmat
+materials/dev/cs_compress_bc7.vmat
 materials/dev/cs_compress_dxt5.vmat
 materials/dev/cs_mipgen.vmat
 materials/dev/debug_solid.vmat
@@ -1794,7 +1799,7 @@ n   %s:\n
 n   NOTE: Currently showing on disk format without accounting for picmip level or streaming state!\n
 n   Options:\n
 n   Ref        On Disk               In Memory         MSAA     Format      File
-n%6s %-50s %5s %5s %5s %5s %5s %5s %5s %10s\n
+n%6s %-50s %5s %5s %5s %5s %5s %5s %10s\n
 n%s File\n
 n*** %s "%s" in %s does not follow the 0..N format!\n\n
 n*** %s "%s" in %s has max(%d) > 254!\n\n
@@ -1889,10 +1894,10 @@ nUsage: mat_assert_on_shader_use [shader_substring]\n       (no arguments disabl
 nVCS file format is "%c%c%c%c" instead of "%c%c%c%c" for %s\n
 nVCS file version is %d instead of %d for %s\n
 n\t\tDynamic
+n\v\f14IErrorListener
 near %s
 near '%c' :\n
 near char(%#02X) :\n
-nl_symbol_ptr
 no failure reason set
 no text for the token
 noasyncmaterialload
@@ -1944,9 +1949,9 @@ opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/materi
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/materialsystem2.cpp(1040): ERROR!!! Shaders not freed before shader reload! (See spew above)\n\n
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/materialsystem2.cpp(155): ERROR! Empty shader mode string found! Use "Default" instead!\n
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/materialsystem2.cpp(171): ERROR! Shader mode "%s" has unsupported type "%s" specified gameinfo.gi!\n
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/materialsystem2.cpp(3449): pVfx == NULL!\n
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/materialsystem2.cpp(3498): pVfx == NULL!\n
-opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/materialsystem2.cpp(3769): Error reading index!\n
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/materialsystem2.cpp(3452): pVfx == NULL!\n
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/materialsystem2.cpp(3501): pVfx == NULL!\n
+opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/materialsystem2.cpp(3772): Error reading index!\n
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/materialsystem2.cpp(503): ERROR!!! Materials not released by other systems on shutdown! (See spew above)\n
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/materialsystem2.cpp(508): ERROR!!! Shaders not freed on shutdown, likely due to unreleased materials! (See spew above)\n
 opt/buildbot/buildworker/source2_dota_rel_osx64/build/src/materialsystem2/materialsystem2.cpp(522): GetErrorMaterial() called when m_pMaterialTypeManager == NULL!\n
@@ -1991,7 +1996,6 @@ public/tier0/utlrbtree.h
 public/tier0/utlsymboltable.h
 public/tier0/utltshash.h
 qangle
-r\a\a0s\a
 radians
 radr://5614542
 raise
@@ -2108,7 +2112,6 @@ tKffff
 tMH9s\bu
 tSA;GPu
 tY<*uA
-t\n\v23CKV3TransferContextBase
 t\tL9+u
 t\tL93u
 t\tStatic
@@ -2157,7 +2160,6 @@ using substring "%s
 usr/lib/libSystem.B.dylib
 usr/lib/libc++.1.dylib
 usr/lib/libiconv.2.dylib
-u{ffff
 uԋUЋM
 v,Aǆ0
 v:fff
@@ -2176,8 +2178,7 @@ virtual void CMaterialSystem2Utils::RenderPrimitives(IRenderContext *, MaterialP
 virtual void CPostProcessingState::ResetColorCorrectionLookupWeights
 virtual void CPostProcessingState::SetColorCorrectionLookupWeight(ColorCorrectionHandle_t, float
 virtual void CPostProcessingState::SetColorCorrectionResetable(ColorCorrectionHandle_t, bool
-vmat豺\v
-vmat趵\v
+vmat虾\v
 void CMaterial2::ComputeMaterialBatchableFlags
 void CUtlLeanVectorBase<CMaterial2::StaticComboVcsLoad_t *>::EnsureCapacity(int, bool) [T = CMaterial2::StaticComboVcsLoad_t *, I = short
 void CUtlLeanVectorBase<CMaterialLayer::PerProgramState_t>::EnsureCapacity(int, bool) [T = CMaterialLayer::PerProgramState_t, I = short

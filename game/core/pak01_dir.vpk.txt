@@ -1,8 +1,8 @@
 --- Files in package:
-	vmat_c: 522 files
-	vtex_c: 485 files
-	vsnd_c: 57 files
+	vmat_c: 526 files
+	vtex_c: 487 files
 	vpcf_c: 54 files
+	vsnd_c: 52 files
 	vmdl_c: 48 files
 	vxml_c: 24 files
 	txt: 20 files
@@ -91,8 +91,8 @@ panorama/styles/tooltips/tooltip_title_text.vcss_c crc=0x3ea7a35b size=1283
 scripts/tools/asset_graph_view_styles.vdata_c crc=0xf9dfc052 size=2448
 scripts/tools/core_asset_tags.vdata_c crc=0x3407fdc6 size=2078
 scripts/tools/game_asset_tags.vdata_c crc=0x699d1bf size=870
-scripts/tools/pulse_scene_presets_v2.vdata_c crc=0x63db46b8 size=3716
-scripts/tools/pulse_scene_styles_v2.vdata_c crc=0x95cc68b6 size=11421
+scripts/tools/pulse_scene_presets_v2.vdata_c crc=0x72b0b2fe size=4023
+scripts/tools/pulse_scene_styles_v2.vdata_c crc=0xaa745ae6 size=14586
 soundstacks/dsp_mix_modifiers.vdata_c crc=0x45fa2086 size=934
 dev/vgui/materials/fonts/buttons.vfont_c crc=0x9f797ef3 size=4074
 dev/panorama_world_panel_default.vmat_c crc=0x3d359cc7 size=5542
@@ -136,6 +136,7 @@ materials/dev/compute_smooth_normals_cs.vmat_c crc=0xe660ab98 size=1087
 materials/dev/convolve_environment_map.vmat_c crc=0x8b82c362 size=2504
 materials/dev/copytexture.vmat_c crc=0xce0726b size=1041
 materials/dev/copytextureload.vmat_c crc=0xe00adac7 size=1378
+materials/dev/cs_compress_bc7.vmat_c crc=0x3bbae17b size=1060
 materials/dev/cs_compress_dxt5.vmat_c crc=0x167a7e2 size=733
 materials/dev/cs_compress_stb_dxt5.vmat_c crc=0x61647fe2 size=738
 materials/dev/cs_mipgen.vmat_c crc=0xf931601d size=1896
@@ -160,6 +161,7 @@ materials/dev/debug_ui.vmat_c crc=0x1d0a723b size=3568
 materials/dev/debug_wireframe.vmat_c crc=0x10315a5b size=3632
 materials/dev/debug_wireframe_2d.vmat_c crc=0xc1bf684f size=2728
 materials/dev/default_sky.vmat_c crc=0xcfbd3e65 size=2984
+materials/dev/deferred_hair_shadowtile_compute.vmat_c crc=0x3acda4cb size=1462
 materials/dev/dev_measuredoor01.vmat_c crc=0xc4ad0dae size=5696
 materials/dev/dev_measuregeneric01.vmat_c crc=0xd9622920 size=5728
 materials/dev/dev_measuregeneric01b.vmat_c crc=0x1415ebe size=2901
@@ -408,6 +410,7 @@ materials/editor/logic_timer.vmat_c crc=0x5c409389 size=3304
 materials/editor/math_counter.vmat_c crc=0xe86fc177 size=3272
 materials/editor/multi_manager.vmat_c crc=0xc94d95b6 size=3280
 materials/editor/multisource.vmat_c crc=0xaeb1ae89 size=3256
+materials/editor/nav_oriented_mesh.vmat_c crc=0xee8c42f4 size=2137
 materials/editor/nav_space.vmat_c crc=0x6e560f96 size=2001
 materials/editor/nav_walkable.vmat_c crc=0xa40e6bc6 size=2001
 materials/editor/node_hint.vmat_c crc=0xe2629bdc size=6064
@@ -462,7 +465,7 @@ materials/physics/wireframe_basic.vmat_c crc=0xcdb8ee5f size=3464
 materials/physics/wireframe_hidden.vmat_c crc=0xf18e6524 size=3536
 materials/rendertargetops/bilateral_blur_horz.vmat_c crc=0x6b7b3ab size=2512
 materials/rendertargetops/bilateral_blur_vert.vmat_c crc=0xa4bb36c7 size=2464
-materials/rendertargetops/copydepth.vmat_c crc=0x76ce85a7 size=2576
+materials/rendertargetops/copydepth.vmat_c crc=0x709dfc33 size=1334
 materials/skybox/light_test_dark.vmat_c crc=0xde7a344 size=1962
 materials/skybox/light_test_default.vmat_c crc=0x13410305 size=1987
 materials/skybox/light_test_interior_basic.vmat_c crc=0x6001fc32 size=2041
@@ -568,6 +571,7 @@ materials/tools/toolslightvolumeboundary.vmat_c crc=0xb88aa093 size=6176
 materials/tools/toolsmarkupvolumeai.vmat_c crc=0x9be5f64a size=3288
 materials/tools/toolsnavattribute.vmat_c crc=0x7a29e82e size=7200
 materials/tools/toolsnavclip.vmat_c crc=0x972341f3 size=5525
+materials/tools/toolsnavspaceclip.vmat_c crc=0x4f2e2c80 size=3317
 materials/tools/toolsnodraw.vmat_c crc=0xf8e0c1a0 size=2965
 materials/tools/toolsnodraw_bounce.vmat_c crc=0x127357a9 size=5928
 materials/tools/toolsnodraw_grate.vmat_c crc=0xb6de81da size=6328
@@ -666,13 +670,13 @@ models/editor/sun.vmdl_c crc=0x2979a488 size=194856
 models/vr/auto_chap_model.vmdl_c crc=0xb82c0c0e size=14093
 models/vr/helper_safearea.vmdl_c crc=0xf4356e5 size=4544
 soundstacks/base.vmix_c crc=0x12658af7 size=6411
-soundstacks/mixgraph.vmix_c crc=0x9cc6f574 size=6891
+soundstacks/mixgraph.vmix_c crc=0x883cda8c size=7111
 soundstacks/subgraph_default.vmix_c crc=0xb3aa716f size=7168
-soundstacks/unit_test.vmix_c crc=0x1e2dbd0d size=11126
+soundstacks/unit_test.vmix_c crc=0x8d51af75 size=11143
 particles/beams/default_beam.vpcf_c crc=0xbe8e80aa size=1792
 particles/dev/color_blend_test.vpcf_c crc=0xc4e79163 size=2872
 particles/dev/default_break_particles.vpcf_c crc=0xcb5eecae size=2216
-particles/dev/default_break_particles_contents.vpcf_c crc=0x88ff00a8 size=3386
+particles/dev/default_break_particles_contents.vpcf_c crc=0x85c15569 size=3731
 particles/dev/dev_attachpoint_effect.vpcf_c crc=0xc56f3378 size=1669
 particles/dev/dev_cables_preview.vpcf_c crc=0xea66d180 size=2401
 particles/dev/dev_cables_snapshot.vpcf_c crc=0x2688e60d size=2415
@@ -734,12 +738,7 @@ soundstacks/soundstacks_manifest_core.vrman_c crc=0x2b572c28 size=1533
 particles/dev/placeholder.vsnap_c crc=0xb09f7f9b size=31183
 particles/dev/placeholder_skinned_kv.vsnap_c crc=0x10a0a4bb size=701
 particles/entity/path_particle_rope_placeholder.vsnap_c crc=0xc89da553 size=779
-sounds/constant_container.vsnd_c crc=0xd9ae71d3 size=681727
-sounds/constant_synthesis_container.vsnd_c crc=0x12f9b3a size=177181
-sounds/dynamic_engine_container.vsnd_c crc=0xd5d4aa1d size=1140
 sounds/envelope_analyzer.vsnd_c crc=0x4e5e6704 size=733380
-sounds/eternal_sine_wave.vsnd_c crc=0xee3f05ad size=996
-sounds/nested_dynamic_container.vsnd_c crc=0x4a064adc size=1159
 sounds/common/counting.vsnd_c crc=0xa5df1db3 size=730550
 sounds/common/noise.vsnd_c crc=0xc8fec87c size=706804
 sounds/common/null.vsnd_c crc=0xeb09c49a size=1543
@@ -800,7 +799,7 @@ soundevents/soundevents_soundscapes_core.vsndevts_c crc=0x95fd7da8 size=12344
 soundevents/testkv3_soundevents_diagnostics.vsndevts_c crc=0x4cc0e0d1 size=18266
 soundstacks/soundeventgroups.vsndgrps crc=0x53fbc6c2 size=25298
 soundstacks/soundstacks_containers_test.vsndstck_c crc=0x378f2d37 size=1556
-soundstacks/soundstacks_core.vsndstck_c crc=0xa621a043 size=8081
+soundstacks/soundstacks_core.vsndstck_c crc=0xcb4bd3d size=8093
 soundstacks/soundstacks_core_setters.vsndstck_c crc=0x82ddabb5 size=3355
 soundstacks/soundstacks_core_test.vsndstck_c crc=0x1999e7d7 size=943
 soundstacks/soundstacks_diagnostics.vsndstck_c crc=0xf213077 size=15745
@@ -1023,6 +1022,7 @@ materials/editor/logic_timer_color_tga_9bb87df9.vtex_c crc=0x28d783a0 size=7204
 materials/editor/math_counter_tga_fb1022f9.vtex_c crc=0x3fbd45ee size=7188
 materials/editor/multi_manager_tga_38eca427.vtex_c crc=0x5e342aeb size=7188
 materials/editor/multisource_tga_252e5ae7.vtex_c crc=0xdfe055e4 size=7188
+materials/editor/nav_oriented_mesh_tga_4102cace.vtex_c crc=0x5ec61a4d size=23876
 materials/editor/nav_space_tga_5a791551.vtex_c crc=0xb8e213e size=23812
 materials/editor/nav_walkable_tga_8e552af9.vtex_c crc=0x8e96fef4 size=23812
 materials/editor/node_hint_color_tga_5dd9c0e3.vtex_c crc=0x9218b0cb size=12668
@@ -1216,6 +1216,7 @@ materials/tools/hlmv_ground_color_tga_49be2e09.vtex_c crc=0xe20453c6 size=176508
 materials/tools/modeldoc_default_mesh_vmat_g_tcolor_8cdd07fd.vtex_c crc=0x78aaab2a size=1500
 materials/tools/modeldoc_default_mesh_vmat_g_tselfillummask_8ac4c33.vtex_c crc=0x52ddaaad size=1580
 materials/tools/nav_attribute_color_psd_b7968921.vtex_c crc=0x9439cf14 size=45516
+materials/tools/nav_space_clip_color_psd_95365729.vtex_c crc=0xc62662b2 size=45804
 materials/tools/occluder_color_tga_a26e7ef1.vtex_c crc=0xf4667e14 size=89188
 materials/tools/postprocessingvolume_color_tga_20b3d223.vtex_c crc=0xca2b33b3 size=89332
 materials/tools/preview_plane_tex_color_tga_b449c8a8.vtex_c crc=0x79254f64 size=176540
@@ -1293,27 +1294,27 @@ textures/dev/ggx_integrate_brdf_lut_schlick.vtex_c crc=0x6ba3c916 size=263988
 textures/dev/normalsfittingtexture.vtex_c crc=0xebeaf52 size=1050372
 textures/dev/reflectivity_scale.vtex_c crc=0xf9fdc83f size=468340
 textures/particle/largesmoke.vtex_c crc=0x3ddd47ab size=263924
-panorama/layout/base_world_panel.vxml_c crc=0x93d96228 size=1190
-panorama/layout/console.vxml_c crc=0xc7be5023 size=1742
-panorama/layout/debugger.vxml_c crc=0xc8e7859e size=2364
-panorama/layout/debugindividualstyle.vxml_c crc=0xdd74b0ee size=1325
-panorama/layout/debuginheritedstylesheader.vxml_c crc=0x4b6e8fa4 size=1294
-panorama/layout/debuglayout.vxml_c crc=0x5971b061 size=1869
-panorama/layout/debugpanel.vxml_c crc=0xcad4c876 size=1634
-panorama/layout/debugstyleanimation.vxml_c crc=0xc6ce6626 size=1566
-panorama/layout/debugstyleblock.vxml_c crc=0x88a7624c size=1380
-panorama/layout/engineconsole.vxml_c crc=0x1ce8a286 size=1125
-panorama/layout/fileopendialog.vxml_c crc=0x6df75a31 size=2312
-panorama/layout/hud_perfstats_basics.vxml_c crc=0xf30139e5 size=1652
-panorama/layout/number_entry.vxml_c crc=0xeab8ed3d size=1498
-panorama/layout/tooltip.vxml_c crc=0x2cee74c5 size=1186
-panorama/layout/context_menus/context_menu_base.vxml_c crc=0x933f9ca4 size=1521
-panorama/layout/popups/popup_generic.vxml_c crc=0x28aa8ebd size=1783
-panorama/layout/popups/popup_generic_dropdown.vxml_c crc=0x4909afb0 size=1748
-panorama/layout/popups/popup_generic_no_dim.vxml_c crc=0xbd06114d size=1753
-panorama/layout/popups/popup_generic_text_entry.vxml_c crc=0x70b82c7e size=1730
-panorama/layout/popups/popup_manager.vxml_c crc=0x932854b7 size=1408
-panorama/layout/tooltips/tooltip_base.vxml_c crc=0xef2ca87a size=1512
-panorama/layout/tooltips/tooltip_text.vxml_c crc=0x7d095c28 size=1284
-panorama/layout/tooltips/tooltip_title_image_text.vxml_c crc=0xb3777431 size=1359
-panorama/layout/tooltips/tooltip_title_text.vxml_c crc=0x50c1d8a6 size=1322
+panorama/layout/base_world_panel.vxml_c crc=0x1a43e4bc size=1190
+panorama/layout/console.vxml_c crc=0xce1d5008 size=1742
+panorama/layout/debugger.vxml_c crc=0x1adbaff9 size=2364
+panorama/layout/debugindividualstyle.vxml_c crc=0xebebc8fe size=1325
+panorama/layout/debuginheritedstylesheader.vxml_c crc=0x3545f6c2 size=1294
+panorama/layout/debuglayout.vxml_c crc=0x7c5ec0f5 size=1869
+panorama/layout/debugpanel.vxml_c crc=0x729e8a69 size=1634
+panorama/layout/debugstyleanimation.vxml_c crc=0x8c870b63 size=1566
+panorama/layout/debugstyleblock.vxml_c crc=0xe4bfc3f1 size=1380
+panorama/layout/engineconsole.vxml_c crc=0xcdab8338 size=1125
+panorama/layout/fileopendialog.vxml_c crc=0xfb51ecf9 size=2312
+panorama/layout/hud_perfstats_basics.vxml_c crc=0x35c3e59d size=1652
+panorama/layout/number_entry.vxml_c crc=0x6e7a123c size=1498
+panorama/layout/tooltip.vxml_c crc=0xda52bb76 size=1186
+panorama/layout/context_menus/context_menu_base.vxml_c crc=0x7797aee0 size=1521
+panorama/layout/popups/popup_generic.vxml_c crc=0x9ba2ee71 size=1783
+panorama/layout/popups/popup_generic_dropdown.vxml_c crc=0x746dd721 size=1748
+panorama/layout/popups/popup_generic_no_dim.vxml_c crc=0x3a696932 size=1753
+panorama/layout/popups/popup_generic_text_entry.vxml_c crc=0xf5aca378 size=1730
+panorama/layout/popups/popup_manager.vxml_c crc=0x1662eeb size=1408
+panorama/layout/tooltips/tooltip_base.vxml_c crc=0x346ac538 size=1512
+panorama/layout/tooltips/tooltip_text.vxml_c crc=0x2ebb1a81 size=1284
+panorama/layout/tooltips/tooltip_title_image_text.vxml_c crc=0xf9773061 size=1359
+panorama/layout/tooltips/tooltip_title_text.vxml_c crc=0x6b21db62 size=1322

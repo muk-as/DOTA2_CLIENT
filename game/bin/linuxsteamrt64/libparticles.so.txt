@@ -429,6 +429,7 @@
 31C_OP_LightningSnapshotGenerator
 31C_OP_RemapDirectionToCPToVector
 31C_OP_RemapParticleCountToScalar
+31C_OP_RenderClientPhysicsImpulse
 31C_OP_RenderScreenVelocityRotate
 31C_OP_SetControlPointOrientation
 31C_OP_SetControlPointsToParticle
@@ -721,6 +722,7 @@
 32CParticleFunctionDefinitionTypedI31C_OP_LightningSnapshotGeneratorE
 32CParticleFunctionDefinitionTypedI31C_OP_RemapDirectionToCPToVectorE
 32CParticleFunctionDefinitionTypedI31C_OP_RemapParticleCountToScalarE
+32CParticleFunctionDefinitionTypedI31C_OP_RenderClientPhysicsImpulseE
 32CParticleFunctionDefinitionTypedI31C_OP_RenderScreenVelocityRotateE
 32CParticleFunctionDefinitionTypedI31C_OP_SetControlPointOrientationE
 32CParticleFunctionDefinitionTypedI31C_OP_SetControlPointsToParticleE
@@ -971,7 +973,6 @@
 9C_OP_Cull
 9C_OP_Spin
 9ISequence
-9Kt~fH
 9X(~ H
 A minimum on particle simulation time, particle simulation happening more frequently than this will lerp
 A testing-only domain that doesn't correspond to any in-engine use case
@@ -1008,7 +1009,6 @@ ACParticleSnapshot::%s - Invalid attribute mapping specified (must be one-to-one
 ADD_FLOAT
 ADD_INT
 ADD_STRING
-AFunction is disabled
 ALPHA2
 AMBIENTSCALE
 ANIMATION_TYPE_FIT_LIFETIME
@@ -1230,6 +1230,7 @@ AUATSH
 AUATSHc
 AUATSIc
 AUATSL
+AUATStRE
 AUATUH
 AUATUI
 AUATUL
@@ -1284,7 +1285,7 @@ AWAVAULc
 AWAVAUM
 AWAVE1
 AWAVfA
-AYAZt%H
+AXAYt%H
 AYUVToNV12
 AYUVToNV21
 AYUVToUVRow_C
@@ -1292,7 +1293,6 @@ AYUVToVURow_C
 AYUVToYRow_C
 A\A]A
 A\A]A^A
-A\A]A^A_]þvmatL
 A\A]A^A_ÐAUATUH
 A\A]A^ÐAUL
 A\A]H
@@ -1507,13 +1507,15 @@ C L9 t L
 C L9 t"L
 C L9 t%L
 C L9 t&L
+C L9 t)L
 C L9 t+L
 C L9 t-L
 C L9 t.L
 C L9 t4L
-C L9 t7L
-C L9 tUL
-C L9 tYL
+C L9 t;L
+C L9 tQL
+C L9 tcL
+C L9 tfL
 C L9 thL
 C L9 tjL
 C L9 tlL
@@ -1523,7 +1525,6 @@ C L9 toL
 C L9 tqL
 C L9 txL
 C L9 tyL
-C L9 t|L
 C L90taL
 C L; thL
 C L; tkL
@@ -1708,9 +1709,6 @@ CPulseMathlib!MinInt
 CPulseMathlib!Pow
 CPulseMathlib!Sin
 CPulseRuntimeMethodArg
-CPulseTestFuncs_DerivedDomain
-CPulseTestFuncs_DerivedDomain!GetCursorValueA
-CPulseTestFuncs_DerivedDomain!SetCursorValueA
 CPulseTestGapTypeQueryRegistration
 CPulseTestScriptLib
 CPulseTestScriptLib!AssertTrue
@@ -1747,7 +1745,9 @@ CSplitScreenSlot
 CStrongHandle
 CTSQueue corruption
 CTestDomainDerived_Cursor
+CTestDomainDerived_Cursor!GetCursorValueA
 CTestDomainDerived_Cursor!GetCursorValueB
+CTestDomainDerived_Cursor!SetCursorValueA
 CTestDomainDerived_Cursor!SetCursorValueB
 CURSOR_ADD_TAG
 CURSOR_REMOVE_TAG
@@ -2061,6 +2061,7 @@ C_OP_RemapVisibilityScalar
 C_OP_RenderAsModels
 C_OP_RenderBlobs
 C_OP_RenderCables
+C_OP_RenderClientPhysicsImpulse
 C_OP_RenderClothForce
 C_OP_RenderDeferredLight
 C_OP_RenderFlattenGrass
@@ -2329,6 +2330,7 @@ D32_FLOAT_S8X24_UINT
 D8kpt
 D9p(~"H
 D9p@~3H
+D9r(~nH
 DATAATSH
 DEBUG-Only
 DETAIL2
@@ -2399,6 +2401,7 @@ DestroyFakeEntity( handle %d
 Detail2Combo_t
 DetailCombo_t
 Detect from CP's Object
+Di5o5Z
 Diffuse Infinite Zoom
 Diffuse Texture
 Diffuse particle attributes
@@ -2464,6 +2467,7 @@ EQ_FLOAT
 EQ_INT
 EQ_OPAQUE_HANDLE
 EQ_PANEL_HANDLE
+EQ_SCHEMA_ENUM
 EQ_STRING
 EQ_TEST_HANDLE
 ERROR: CUtlSymbolTableLarge element limit of %u exceeded
@@ -2529,7 +2533,6 @@ Extraneous input - expected %s
 Extraneous input - expected <EOF
 Extraneous token
 EЋE HcЋE
-F t"D
 F tIH
 FATAL ERROR: CUtlSymbolTableLarge element limit of %u exceeded
 FATAL ERROR: unable to register all schema data: %s
@@ -2654,8 +2657,10 @@ Full 3-Axis Rotation
 Full Loop Increment Amount
 Func( %s
 Function "%s" not found while loading particle system
+Function is disabled
 Functions not supported in this evaluator (%s
 Future already retrieved
+G t"D
 G ÐUH
 G'@tJUH
 G(H;G0r
@@ -2733,7 +2738,6 @@ Global UI
 Globally Scale Initial Attributes
 Glow Alpha
 Glow RGB
-Gm_flPosition
 GpuImplicitRendererManifest
 Green Channel
 Green with Green as Alpha
@@ -2801,6 +2805,9 @@ HcCx;C|H
 HcG ;G$H
 HcK8Ic
 HcO4McB
+Hcq ~EE
+Hcq$~IA
+Hcq<~IA
 HcȋE(H
 HelpSystem_001
 HfE9l$@D
@@ -3069,8 +3076,10 @@ IcD$<f
 IcE H
 IcF0Hc
 IcNPIc
+IcT$@I
 IcV4Mc
 IcsxI
+Ic}\Hc
 If (R%d) Jump to Instr I%d
 If (R%d) Leap to Chunk C%d
 Ignore delta time (RenderTrails
@@ -3146,7 +3155,6 @@ InsertBeforeGetPtr
 InstallSchemaBindings
 Instance Count
 Int( %d
-Intentionally vague touch behavior for %p
 InterpolatePlane
 InterpolateRow_16_C
 InterpolateRow_AVX2
@@ -3221,6 +3229,7 @@ LINE_CONTINUATION
 LITERAL_FALSE
 LITERAL_TRUE
 LOG_GENERAL
+LONG PARTICLE RENDER: "%s" took %fms to submit to render
 LOS Failure Scalar
 LOS Failure Scale
 LOS collision group
@@ -3376,6 +3385,7 @@ MPulseDomainHookInfo
 MPulseDomainOptInFeatureTag
 MPulseEditorHeaderIcon
 MPulseEditorHeaderText
+MPulseEditorIsControlFlowNode
 MPulseExpressionAlias
 MPulseGraphHook
 MPulseInstanceDomainInfo
@@ -3418,7 +3428,7 @@ Maximum distance
 Maximum of two values (float
 Maximum of two values (int
 Maximum random scale for radius
-Mc,$E;l
+Mc/E;o
 Mc7E;w
 Mc<$E
 McT$4Mc|$8
@@ -3559,7 +3569,6 @@ MultiplyRow_16_Any_AVX2
 MultiplyRow_16_C
 Mx8KNu
 MкVUUU
-MоF"5PL
 N10__cxxabiv115__forced_unwindE
 N10__cxxabiv117__class_type_infoE
 N10__cxxabiv119__foreign_exceptionE
@@ -3585,7 +3594,7 @@ N24CParallelProcessLauncher18CParallelLambdaJobIZ11ParallelForILb1EZN13CSOAConta
 N24CParallelProcessLauncher18CParallelLambdaJobIZ11ParallelForILb1EZN13CSOAContainer11IterateRowsIZNS2_31RemoveInteriorISOSurfaceSamplesEifiEUliE_EEvT_bEUliE_EviiPKcOT0_ii13JobPriority_tEUliE_EE
 N24CParallelProcessLauncher18CParallelLambdaJobIZ11ParallelForILb1EZN20CSweepBlockProcessorILi1EE22InitDependencyCountersEvEUliE_EviiPKcOT0_ii13JobPriority_tEUliE_EE
 N24CParallelProcessLauncher18CParallelLambdaJobIZ11ParallelForILb1EZN20CSweepBlockProcessorILi1EE3RunEvEUliE_EviiPKcOT0_ii13JobPriority_tEUliE_EE
-N24CParallelProcessLauncher18CParallelLambdaJobIZ11ParallelForILb1EZNK17C_OP_RenderModels12PostSimulateEP19CParticleCollectionPvEUliE_EviiPKcOT0_ii13JobPriority_tEUliE_EE
+N24CParallelProcessLauncher18CParallelLambdaJobIZ11ParallelForILb1EZNK17C_OP_RenderModels12PostSimulateEP19CParticleCollectionPvbEUliE_EviiPKcOT0_ii13JobPriority_tEUliE_EE
 N24CParallelProcessLauncher18CParallelLambdaJobIZN13CSOAContainer9FilterInXEi9IntAABB_tiPKfbEUliE_EE
 N28GapBindingSchemaEnumTraits_tI27PulseCursorCancelPriority_tEUlvE_E
 N9__gnu_cxx13stdio_filebufIcSt11char_traitsIcEEE
@@ -3595,6 +3604,7 @@ N9__gnu_cxx18stdio_sync_filebufIwSt11char_traitsIwEEE
 N9__gnu_cxx20recursive_init_errorE
 N9__gnu_cxx24__concurrence_lock_errorE
 N9__gnu_cxx26__concurrence_unlock_errorE
+ND$t1҉C
 NEGATE_FLOAT
 NEGATE_INT
 NEGATIVE_TOK
@@ -3608,6 +3618,7 @@ NE_FLOAT
 NE_INT
 NE_OPAQUE_HANDLE
 NE_PANEL_HANDLE
+NE_SCHEMA_ENUM
 NE_STRING
 NE_TEST_HANDLE
 NONE/Disabled
@@ -3765,11 +3776,15 @@ NotReloading
 November
 Number of Children to Use
 Numer of points along path
+O4zbu
+O8zZuX
+O<zRuP
+O@zJuH
+ODzBu
 OPEN_BRACE
 OPEN_BRACKET
 OPEN_PAREN
 OP_EQUAL
-OPvnL
 ORIGIN
 October
 Offscreen Time Before Decay
@@ -3803,7 +3818,6 @@ Operator Fade Time Offset
 Operator Fade Timescale Modifiers
 Operator Name
 Or R%d <- R%d || R%d
-Ordered constructor wrapped type has no default constructor
 Oscillate scalar
 Oscillate scalar simple
 Oscillate vector
@@ -4062,6 +4076,7 @@ PF_MAP_TYPE_MULT
 PF_MAP_TYPE_NOTCHED
 PF_MAP_TYPE_REMAP
 PF_MAP_TYPE_REMAP_BIASED
+PF_MAP_TYPE_ROUND
 PF_NOISE_MODIFIER_CLUMPS
 PF_NOISE_MODIFIER_LINES
 PF_NOISE_MODIFIER_NONE
@@ -4080,6 +4095,11 @@ PF_RANDOM_MODE_CONSTANT
 PF_RANDOM_MODE_COUNT
 PF_RANDOM_MODE_INVALID
 PF_RANDOM_MODE_VARYING
+PF_ROUND_TYPE_CEIL
+PF_ROUND_TYPE_COUNT
+PF_ROUND_TYPE_FLOOR
+PF_ROUND_TYPE_INVALID
+PF_ROUND_TYPE_NEAREST
 PF_TYPE_CLOSEST_CAMERA_DISTANCE
 PF_TYPE_COLLECTION_AGE
 PF_TYPE_CONCURRENT_DEF_COUNT
@@ -4166,14 +4186,15 @@ PVEC_TYPE_RANDOM_UNIFORM
 PVEC_TYPE_RANDOM_UNIFORM_OFFSET
 P[A\A]A
 P[A\A]A^A
-Panel ID
 PanelID
 Panorama Panel Handle
 PanoramaTextServices001
 PanoramaUIClient001
 PanoramaUIEngine001
+Parent Map Entity
 Parent Map: %s
 Parent Particle Index
+Parent XML Panel
 Parent radius scale for distance calc
 Parser encountered %d error(s
 Particle Alpha & Alpha Reference
@@ -4218,6 +4239,7 @@ ParticleFloatBiasType_t
 ParticleFloatInputMode_t
 ParticleFloatMapType_t
 ParticleFloatRandomMode_t
+ParticleFloatRoundType_t
 ParticleFloatType_t
 ParticleFogType_t
 ParticleHitboxBiasType_t
@@ -4297,7 +4319,6 @@ PetGroundType_t
 PhysicsBuilderMgr001
 Pin Particle to control point
 Place Particle at Trace End
-Plat_DebugPrint
 Plat_FatalErrorFunc
 Plat_FloatTime
 Plat_GetTime
@@ -4307,6 +4328,7 @@ Plat_MSTime
 Plat_NonFatalErrorFunc
 Plat_USTime
 Play EndCap when Finished
+Player Wake Radius
 Point Away
 Point vector at next particle position
 PointDefinitionWithTimeValues_t
@@ -4362,7 +4384,6 @@ Promise already satisfied
 Prop( %s
 PropWorldOrigin
 PropertyEditorSystem_001
-PtdH9
 Pull towards control point
 Pulse domain which enables particle content to query leaf code to introspect game state
 Pulse test failure: %s
@@ -4696,6 +4717,7 @@ Render Tree Shake
 Render VR Haptic Event
 Render as models (DEPRECATED
 Render blobs
+Render client physics radial impulse
 Render cloth force
 Render deferred light
 Render light beam
@@ -5482,8 +5504,9 @@ Synchronize particles
 Synchronous - wait for the method to fully complete before returning
 System Name
 SystemOrigin
+SystemStepSize
 Systems Measured: %d
-T$LIcV@H
+T$LIcU@H
 T$VH;G
 T@23CParticleTransformInput
 TD_OFFSET_NORMAL
@@ -5508,7 +5531,6 @@ TernaryConditional
 Test Domain
 Test Handle
 Test Mode Assert True
-Test functions for the derived test domain
 Test node that just generates the integer 50. Nothing to see here
 Test node that picks between two outflows as specified in the test domain
 Test node that randomly picks between two outflows
@@ -5543,6 +5565,7 @@ The maximum distance that particles will render
 This convar is being accessed prior to ConVar_Register being called
 This indicates a poorly specified lexer RULE
 ThreadGetCurrentId
+Threshold to warn about when rendering particles
 Thursday
 Time scale
 Time varying force
@@ -5734,7 +5757,6 @@ VScriptDbg
 VScriptManager010
 VStringTokenSystem001
 VTT for
-VUUUHi
 VWebm001
 VZ#-DLU[3=h
 V_:X1
@@ -5818,6 +5840,7 @@ Vector2D
 Vector3
 VectorExpressionType_t
 VectorFloatExpressionType_t
+Vehicle Wake Radius
 Velocity Control Point
 Velocity Scale
 Velocity away from hitbox random
@@ -5830,7 +5853,6 @@ Velocity repulse from world
 Velocity set from control point
 Velocity vector
 Version circa 7/31/2018
-VertexBuffer
 VertexBufferSize
 VertexColorUVPos_t
 VertexDataOffset
@@ -5944,7 +5966,6 @@ YUY2ToYRow_Any_SSE2
 YUY2ToYRow_C
 YUY2ToYRow_SSE2
 Yield, Resume=%s
-You must construct it with ORDERED_CONSTRUCT macro in the dependency resolution function
 Y低T啓B
 Z Dimension Count
 Z Dimension Spacing
@@ -6139,6 +6160,7 @@ ZN11CTSListBaseC2Ev
 ZN12CSplitString5SplitEPKciPS1_ib
 ZN12CThreadEventC1Eb
 ZN13CBufferString10FixSlashesEc
+ZN13CBufferString10TruncateAtEib
 ZN13CBufferString11ToLowerFastEi
 ZN13CBufferString12AppendFormatEPKcz
 ZN13CBufferString12SetExtensionEPKcb
@@ -10694,6 +10716,7 @@ channel
 char16_t
 char32_t
 char8_t
+check full bbox only
 child group ID
 child group ID to affect
 cl_aggregate_particles
@@ -10793,6 +10816,7 @@ creation_time
 ctype_b_loc
 ctype_get_mb_cur_max
 ctype_toupper_loc
+cube root of volume
 cube width
 cull control point
 cull cost
@@ -10858,7 +10882,6 @@ d PublicOutputs
 d Vars
 d instruction(s
 d register(s) %d byte(s
-d$h_AX
 d$xPAQj
 d62έ62έ62έ62
 dampen gravity/buoyancy near water plane
@@ -11070,6 +11093,7 @@ field to init
 field to read
 file error
 fileno
+filter explosion to single simulation id
 filterinY
 filterinZ
 final per component scale
@@ -11106,6 +11130,7 @@ float32
 float64
 fog contribution
 fog lighting mode
+fogscale
 follow attachment
 fopen64
 force at max distance
@@ -11139,6 +11164,7 @@ future
 fxstat64
 g_BitBuf_BitWriteMasks
 g_bUpdateStringTokenDatabase
+g_flConfigMaxCoord
 g_pMemAlloc
 g_pPulseSystem->GetWeakHandleTable()->AnyHandlesAllocated
 g_pThreadPool
@@ -11204,6 +11230,7 @@ home/saml/dev/steam/thirdpartycode/nonredist/libyuv/libyuv/source/scale_uv.cc
 horizontal texture offset
 horizontal texture scale
 how long before a trail grows to its full length
+htdH9
 hue adjust
 hybrid ratio
 iboxwidth > 0
@@ -11218,6 +11245,7 @@ implicit particles
 implicit vertices
 impulse type
 include default contents trace hulls
+include particle radius
 include water
 incompatible version
 incorrect data check
@@ -11318,6 +11346,7 @@ kRgbF709Constants
 kRgbH709Constants
 kRgbI601Constants
 kRgbJPEGConstants
+kSXLH
 kYuv2020Constants
 kYuvF709Constants
 kYuvH709Constants
@@ -11426,6 +11455,7 @@ locale::_S_normalize_category category not found
 locale::facet::_S_create_c_locale name not valid
 locale::facet::_S_lc_ctype_c_locale duplocale error
 locale::facet::_S_lc_ctype_c_locale newlocale error
+localize
 lock rotation
 lock rotations to bone orientation
 long double
@@ -11649,6 +11679,7 @@ m_bApplyMinForce
 m_bAttachment
 m_bAutoUpdateBBox
 m_bAvoidSingularity
+m_bBBoxOnly
 m_bBackwards
 m_bBakedTwoSided
 m_bBlendFramesSeq0
@@ -11671,6 +11702,7 @@ m_bClampV
 m_bClosedLoop
 m_bCopyAlpha
 m_bCopyColor
+m_bCubeRoot
 m_bCullInside
 m_bCullOnMiss
 m_bCullOutside
@@ -11720,6 +11752,7 @@ m_bFitToModelSize
 m_bFlipBasedOnYaw
 m_bFlipHorizontal
 m_bFlipUVBasedOnPitchYaw
+m_bFog
 m_bFollowNamedValue
 m_bForceDrawInterlevedWithSiblings
 m_bForceEmitOnFirstUpdate
@@ -11745,6 +11778,7 @@ m_bIgnoreDt
 m_bIgnoreNormal
 m_bIgnoreRadius
 m_bIncludeChildren
+m_bIncludeRadii
 m_bIncludeShotHull
 m_bIncludeWater
 m_bInfiniteBounds
@@ -11792,6 +11826,7 @@ m_bManualAnimFrame
 m_bMaxLuminanceBlendingSequence0
 m_bModelFromRenderer
 m_bNeedsBBoxUpdate
+m_bNoShadow
 m_bNoiseImgPreviewLive
 m_bNonUniformScaling
 m_bNormalize
@@ -11808,6 +11843,7 @@ m_bOnlyChildren
 m_bOnlyRenderInEffecsGameOverlay
 m_bOnlyRenderInEffectsBloomPass
 m_bOnlyRenderInEffectsWaterPass
+m_bOnlyShadow
 m_bOrient
 m_bOrientToEyes
 m_bOrientToHMD
@@ -11849,6 +11885,7 @@ m_bRenderDiffuse
 m_bRenderSpecular
 m_bReplaceTextureWithGradient
 m_bResetAnimOnStop
+m_bRespectExclusionVolumes
 m_bReverse
 m_bReverseOrder
 m_bReverseZBuffering
@@ -12160,6 +12197,7 @@ m_flFinalTextureUVRotation
 m_flFlattenStrength
 m_flFogAmount
 m_flFogContribution
+m_flFogScale
 m_flForceScale
 m_flForwardDegrees
 m_flForwardShift
@@ -12224,6 +12262,7 @@ m_flLiteralValue
 m_flLocalBuoyancyScale
 m_flLocalGravityScale
 m_flLuminaireRadius
+m_flMagnitude
 m_flManualModelSelection
 m_flMaterialOverrideEnabled
 m_flMaterialSelection
@@ -12340,6 +12379,8 @@ m_flPitch
 m_flPitchScale
 m_flPlaneOffset
 m_flPlaybackSpeed
+m_flPlayerWakeRadius
+m_flPosition
 m_flPositionDampingConstant
 m_flPostProcessStrength
 m_flPreSimulationTime
@@ -12497,6 +12538,7 @@ m_flValueAboveMax
 m_flValueAtMax
 m_flValueAtMin
 m_flValueBelowMin
+m_flVehicleWakeRadius
 m_flVelocityMax
 m_flVelocityMin
 m_flVelocityScale
@@ -12871,6 +12913,7 @@ m_nReplicationMode
 m_nResult
 m_nRisingEventType
 m_nRotationSetType
+m_nRoundType
 m_nRoundness
 m_nScalarAttribute
 m_nScalarFieldForTextureCoordinate
@@ -12892,6 +12935,7 @@ m_nSetMethod
 m_nSetParent
 m_nShaderType
 m_nShaderType != SPRITECARD_SHADER_CUSTOM
+m_nSimIdFilter
 m_nSizeCullBloat
 m_nSkin
 m_nSkipRenderControlPoint
@@ -13596,6 +13640,7 @@ posxyz
 pre-simulation time
 prepare for rigid lock
 preserve initial Z-offset relative to cp
+prevent spawning in exclusion volumes
 previous position sacale
 previous position scale
 print
@@ -13678,6 +13723,7 @@ r_particle_newinput
 r_particle_render_refreshes_sleep_timer
 r_particle_render_test
 r_particle_timescale
+r_particle_warn_threshold_ms
 r_physics_particle_op_spawn_scale
 r_threaded_particles
 radius 1
@@ -14217,7 +14263,7 @@ use the derivative
 use velocity for test direction
 use vertical velocity for weighting
 uselocale
-utlsoacontainer.cpp:2453
+utlsoacontainer.cpp:2493
 uxHcG
 v %f %f %f
 vE[A\A]A
@@ -14308,7 +14354,6 @@ vpulse
 vr camera right eye
 vulkan_disable_particle_descriptor_set
 w <Xt|<hu7H
-w(Lc2D;r
 w+OQvr
 w2Mce
 wait for children to finish

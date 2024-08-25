@@ -162,48 +162,23 @@ DOTAHudPreGame .RightColumn
 	visibility: collapse;
 }
 
-#AbililyEffectsContainer
+.AbilityEffectDescription
 {
+	margin: 12px 20px;
 	width: 100%;
-	height: 100%;
-	flow-children: down;
-	padding: 12px 8px 12px 12px;
-	box-shadow: inset 0px 1px 0px rgba(238, 245, 255, 0.02);
-	overflow: squish scroll;
-}
-
-#AbililyEffectsContainer:hover VerticalScrollBar
-{
-	opacity: 1;
-}
-
-#AbililyEffectsContainer VerticalScrollBar
-{
-	opacity: 0;
-	transition-property: opacity, transform;
-	transition-duration: 0.1s;
-}
-
-#AbililyEffectsContainer .AbilityEffectDescription
-{
-	margin: 0px 6px 12px 6px;
-	padding-bottom: 12px;
-	width: 100%;
-	border-bottom: 1px solid rgba(255, 255, 255, 0.02);
-}
-
-#CosmeticPickerContentsContainerGrouped
-{
 	visibility: collapse;
-	flow-children: down;
-	width: 100%;
+}
+
+.ShowingAbilityEffects .AbilityEffectDescription
+{
+	visibility: visible;
 }
 
 .CosmeticPickerContentsContainer
 {
 	visibility: collapse;
 	width: 100%;
-	height: 100%;
+	height: fill-parent-flow( 1.0 );
 	overflow: squish scroll;
 	padding: 12px 8px 12px 12px;
 	box-shadow: inset 0px 1px 0px rgba(238, 245, 255, 0.02);
@@ -221,12 +196,17 @@ DOTAHudPreGame .RightColumn
 	transition-duration: 0.1s;
 }
 
+#CosmeticPickerContentsContainerGrouped
+{
+	flow-children: down;
+}
+
 .HasGroups #CosmeticPickerContentsContainerGrouped
 {
 	visibility: visible;
 }
 
-DOTACosmeticPicker:not(.HasGroups) .CosmeticPickerContentsContainer
+DOTACosmeticPicker:not(.HasGroups) #CosmeticPickerContentsContainer
 {
 	visibility: visible;
 }
@@ -242,12 +222,12 @@ DOTACosmeticPicker:not(.HasGroups) .CosmeticPickerContentsContainer
 {
 	width: 60px;
 	height: 60px;
+	margin-right: 12px;
 	box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.6);
 }
 
 .GroupTitle
 {
-	margin-left: 12px;
 	vertical-align: center;
 	text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.5);
 }

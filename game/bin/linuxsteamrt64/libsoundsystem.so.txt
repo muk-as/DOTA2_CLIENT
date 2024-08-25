@@ -155,9 +155,11 @@
 19CSosOperatorGlobals
 19CSosOperatorPosVec8
 19CTestBlendContainer
+19CVSndParameterTable
 19CVoiceContainerBase
 19CVoiceContainerNull
 19CVoiceContainerVOIP
+19IVSndParameterTable
 1:1: Tokens : ( T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | TOK_COLON | OPEN_BRACE | CLOSE_BRACE | OPEN_PAREN | CLOSE_PAREN | OPEN_BRACKET | CLOSE_BRACKET | SEMICOLON | OP_EQUAL | COMMA | DOUBLE_AND | NEGATIVE_TOK | DOUBLE_OR | LITERAL_TRUE | LITERAL_FALSE | POS_INTLITERAL | POS_FLOATLITERAL | ID | DOUBLE_QUOTED_STRING | SINGLE_QUOTED_STRING | SINGLE_LINE_COMMENT | ML_COMMENT | WS | UNRECOGNIZED
 1ANYckrx
 1CMR]c
@@ -369,6 +371,7 @@
 26CSteamAudioDirectProcessor
 26CStereoDelayAudioProcessor
 26CVoiceContainerLoopTrigger
+26CVoiceContainerShapedNoise
 27CSosOperatorEntityGetHealth
 27CSosOperatorEntityWorldAABB
 27CSosOperatorFloatToSpeakers
@@ -522,6 +525,7 @@
 36CSosOperatorLogicSwitch3StringHandle
 36CVoiceContainerAmpedDecayingSineWave
 37CSosGroupActionSetSoundeventParameter
+37CSosGroupActionSoundeventMinMaxValues
 37CSosOperatorCalcWeightedAvgSerialVec3
 37CSosOperatorSetContainerInstanceParam
 38CSosGroupActionSoundeventClusterSchema
@@ -540,6 +544,7 @@
 40CSosOperatorLogicPerspectiveSwitchString
 41CSosOperatorCalcInterpolatedRotationAngle
 43CSosGroupActionSetSoundeventParameterSchema
+43CSosGroupActionSoundeventMinMaxValuesSchema
 47CSchemaRegistration_soundsystem_voicecontainers
 488:1: POS_FLOATLITERAL : ( ( DIGIT )+ '.' ( DIGIT )* ( EXPONENT )? | '.' ( DIGIT )+ ( EXPONENT )? | ( DIGIT )+ EXPONENT
 4;AFJNQUWZ]_bdfikmoqstvxz
@@ -624,7 +629,6 @@ AVAUATUSH
 AVAUATUSL
 AVAUE1
 AVAUL
-AVAULc
 AWAPE
 AWAVAUA
 AWAVAUATA
@@ -678,7 +682,6 @@ AddSoundEvents: SoundEvent %s was unable to convert to KV3
 AddSoundEvents: SoundEvent file %s was not compiled from a KeyValues3 file and is being converted. Please recompile
 AddSoundEvents: event with empty name
 AddStackKV3: Cannot find "operators" array in stack %s
-Added %s to RANDOM SELECTOR
 Added %s to TRASHSYNTH
 Adding operator stack matching existing name: %s
 Additive Synth Container
@@ -697,7 +700,6 @@ AnimationSystemUtils_001
 AnimationSystem_001
 Application is not loaded
 Apply cos(angle) * weight before pan law
-Arg Name: "%s" Type: %s
 Args: [Asset directory Path
 Args: [Voice Container Path
 Arrangement: %s
@@ -815,6 +817,7 @@ CSosGroupActionSchema
 CSosGroupActionSetSoundeventParameterSchema
 CSosGroupActionSoundeventClusterSchema
 CSosGroupActionSoundeventCountSchema
+CSosGroupActionSoundeventMinMaxValuesSchema
 CSosGroupActionSoundeventPrioritySchema
 CSosGroupActionTimeBlockLimitSchema
 CSosGroupActionTimeLimitSchema
@@ -867,12 +870,14 @@ CSosOperatorStartSoundEvent
 CSosOperatorSystem: Deleting orphaned CSosOperatorStack pointer for %s via shutdown
 CSosOperatorSystem::SetOpField: Unable to find operator stack %s
 CSosOperatorSystem::SetOpField: Unable to find operator stack from guid %d
+CSosOperatorSystem::StartSoundEvent Unable to find soundevent "core.empty
 CSosOperatorSystem::StartSoundEvent Unable to find soundevent %s
 CSosOperatorSystem::StartSoundEvent Unable to start soundevent %s
 CSosOperatorSystem::StartSoundEvent called with invalid soundevent hash
 CSosSoundEventGroupListSchema
 CSosSoundEventGroupSchema
 CSoundContainerReference
+CSoundContainerReferenceArray
 CSoundDebugVisualizer
 CSoundEvent: %s
 CSoundEventMetaData
@@ -924,12 +929,12 @@ CVoiceContainerGranulator
 CVoiceContainerLoopTrigger
 CVoiceContainerNull
 CVoiceContainerRandomSampler
-CVoiceContainerRandomSampler: Cleaning up data for %d instances
 CVoiceContainerRandomSampler: Loaded %d grains into table Total of %lld samples, %f MB
 CVoiceContainerRealtimeFMSineWave
 CVoiceContainerSelector
 CVoiceContainerSet
 CVoiceContainerSetElement
+CVoiceContainerShapedNoise
 CVoiceContainerStaticAdditiveSynth
 CVoiceContainerStaticAdditiveSynth::CGainScalePerInstance
 CVoiceContainerStaticAdditiveSynth::CHarmonic
@@ -1008,7 +1013,6 @@ D8*AWH
 D98tLI
 D;]0D
 D;cXs
-D;sp}N
 D>B<HuUZv
 DATAATI
 DATASH
@@ -1085,6 +1089,7 @@ Dump main graph control output values
 Duration for which path remains visible. Should be close to update rate of the sound operator stack
 Duration: %f
 Dynamic
+E0I+L$xH
 E9n0~)I
 EMPTY
 EMidiNote
@@ -1163,6 +1168,10 @@ Event Data: %i
 Event Name
 Event VSNDS
 Exclude Stopped Sounds from Count
+Exclude delayed sounds from evaluation
+Exclude sounds from evaluation greater than or equal to a max value threshold
+Exclude sounds from evaluation less than or equal to a min value threshold
+Exclude stopped sounds from evaluation
 Expecting %s
 Expecting EOF
 Exponential
@@ -1174,7 +1183,6 @@ Extraneous input - expected %s
 Extraneous input - expected <EOF
 Extraneous token
 EȋMPH
-F fE9
 F,w.H
 F0A;F@A
 F@A\A]A
@@ -1262,6 +1270,7 @@ Found existing value when inserting into dict - replacing existing value with ne
 Found existing value when inserting into tree - replacing existing value with new value. If this is intended behavior, use InsertOrReplace. If leaving existing values alone is intended, use InsertIfNotFound. If duplicate entries are intended, use InsertWithDupes
 Fract
 Free ?: %s
+Frequency Sweep
 Func( %s
 G0uw
 GCC: (SteamRT 10.3.0-3+steamrt3.1+bsrt3.1) 10.3.0
@@ -1273,6 +1282,7 @@ GLOBAL
 GLOBAL_H9
 GPHcGHE
 G_Sharp
+Gain Sweep (in Decibels
 Game v.o. volume
 Game volume
 Game/Sound System Debugger
@@ -1282,7 +1292,6 @@ GameStartup
 GameUIService_001
 Generated a nulled out container
 Generates an Envelope Curve on compile
-Generating RANDOM SELECTOR
 Generating TRASHSYNTH
 Ges-8R
 Get data related to mix group matching string
@@ -1324,6 +1333,7 @@ HammerMapLoader001
 HandleSetLibStackFieldsMessageQueue
 HandleSetSoundEventFieldsMessageQueue
 Harmonics
+HcF L
 HcF,H
 HcGHui
 HcP(I
@@ -1343,7 +1353,6 @@ I could not work out what I was expecting, like so many of us these days
 I<OXb
 ID of the sound device to use
 ID_CHAR
-IHcKHIc
 IKV3TransferInterface_ResourceLoad
 INVALID
 IPulseSystem_001
@@ -1355,14 +1364,15 @@ ITM_memcpyRnWt
 ITM_memcpyRtWn
 ITM_registerTMCloneTable
 IcD$p1
-IcFH1
+IcE L
+IcF`1
 IcH Ic
 IcH8Ic
 IcL$0Ic
 IcL$pIc
 IcMPIc
-IcT$`I
 Ic\$xA
+Ic]0A;]@L
 If set > 0, overrides how long the decay time is on all mix graphs (in seconds
 If set to 1, report more error found when playing sounds
 If set to 1, show all incoming updates to vmix inputs
@@ -1389,7 +1399,6 @@ Instances Playing Required To Reach Loudest Volume
 Instances Playing Until We Get Louder Than Quietest Volume
 Instrument: %s
 Int( %d
-Intentionally vague touch behavior for %p
 Invalid arg %s set for subvoice playing %s
 Invalid field type %s for field %s
 Invert Match
@@ -1421,7 +1430,6 @@ LOG_GENERAL
 LVL: %f
 LayerTriggers
 Lc#D;c
-Lc%A(1
 Lexer encountered %d error(s
 LinePos
 List all active tracks
@@ -1496,6 +1504,7 @@ Max Target Count
 Max Time
 Max reverb gain amount for listener DSP
 Max reverb gain amount for source-specific DSP
+Max value property name
 Maximum Value
 Mc/E;o
 McnxE
@@ -1513,6 +1522,7 @@ Mid EQ gain (dB
 Min Threshold Count
 Min reverb gain amount amount for listener DSP
 Min reverb gain amount for source-specific DSP
+Min value property name
 Minimum Nearby Soundevents
 Minimum Value
 Mirror
@@ -1565,6 +1575,7 @@ N19CVoiceContainerBase10CParameterIN25CVoiceContainerGranulator19CGranulatorInst
 N19CVoiceContainerBase10CParameterIN28CVoiceContainerRandomSampler26CRandomSamplerInstanceViewEiEE
 N19CVoiceContainerBase10CParameterIN33CVoiceContainerRealtimeFMSineWave15CFMSineInstanceEfEE
 N19CVoiceContainerBase10CParameterIN34CVoiceContainerStaticAdditiveSynth26CAdditiveSynthInstanceViewEiEE
+N19CVoiceContainerBase10CParameterINS_13CInstanceBaseEfEE
 N19CVoiceContainerBase10CParameterINS_13CInstanceBaseEiEE
 N19CVoiceContainerBase13CInstanceBaseE
 N19CVoiceContainerBase14CParameterBaseE
@@ -1577,6 +1588,7 @@ N24CFieldPathHuffmanEncoder12InternalNodeE
 N24CFieldPathHuffmanEncoder5INodeE
 N24CFieldPathHuffmanEncoder8LeafNodeE
 N25CVoiceContainerGranulator19CGranulatorInstanceE
+N26CVoiceContainerShapedNoise9CInstanceE
 N28CVoiceContainerRandomSampler26CRandomSamplerInstanceViewE
 N29CVSoundStackScriptTypeManager19CAsyncProcessResultE
 N31CVoiceContainerDecayingSineWave13CSineInstanceE
@@ -1655,7 +1667,6 @@ Operator Stack: %s
 Operators: %s -> %s
 Opvar Float
 Opvar String
-Ordered constructor wrapped type has no default constructor
 Output %s: %.3f
 Output Balance
 Output Gain (dB
@@ -1697,10 +1708,10 @@ PhysicsBuilderMgr001
 PhysicsSurfaceProperties
 Plain4Tap
 Plat_CPUTickFrequency
-Plat_DebugPrint
 Plat_FatalErrorFunc
 Plat_FloatTime
 Plat_GetProcAddresses
+Plat_GetTime
 Plat_IsInDebugSession
 Plat_IsRunningOnCustomerMachine
 Plat_LoadSDL
@@ -1757,6 +1768,8 @@ ProcessSoundEvent: Sound Event %s, field %s: array length exceeds currently maxi
 ProcessSoundEvent: Sound Event %s, field %s: total array length of all soundevent_data has exceeded maximum selection bits for "random_exclusive
 Prop( %s
 PropertyEditorSystem_001
+Public field 'delay' name
+Public field name to query
 Purge and reload all vmidi data and files
 PurgeAndDeleteAll: Deleting orphaned CSoundEvent pointer for %s via shutdown
 Queued: elapsed time: %f, next sync time: %f, length: %f
@@ -1790,11 +1803,13 @@ Recognition exception
 Reference dB at snd_refdist
 Reference distance for snd_refdb
 Reference to a vsnd file or another container
+Reference to list of vsnd files or other containers
 Refs %16s : Name (Locks
 Regenerate curve on compile
 RegisterConCommand: Unknown error registering con command "%s
 RegisterConVar: Unknown error registering convar "%s
 RegisterStringToken
+Relative Weights
 Release
 Release Time MS
 Release time (ms
@@ -1808,6 +1823,7 @@ RenderHardwareConfig002
 RenderService_001
 RenderUtils_001
 Resolve the inputs and execute one specified operator from a specified stack
+Resonance Sweep
 ResourceCompilerSystem001
 ResourceHandleUtils001
 ResourceManifestRegistry001
@@ -1874,6 +1890,7 @@ SOS_ACTION_NONE
 SOS_ACTION_SET_SOUNDEVENT_PARAM
 SOS_ACTION_SOUNDEVENT_CLUSTER
 SOS_ACTION_SOUNDEVENT_COUNT
+SOS_ACTION_SOUNDEVENT_MIN_MAX_VALUES
 SOS_ACTION_SOUNDEVENT_PRIORITY
 SOS_ACTION_TIME_BLOCK_LIMITER
 SOS_ACTION_TIME_LIMIT
@@ -1969,9 +1986,10 @@ SosOpFieldInfo_t::GetValue: index %i out of range on %s
 SosOpFieldInfo_t::SetValue: index %i out of range on %s
 SosOpFieldInfo_t::ValueToString: Unable to find ENUM match for %i on %s
 SosOpFieldInfo_t::ValueToString: Unable to find ENUM tokenset on %s
+Sound Array
 Sound Disabled
 Sound Event
-Sound Initialization: Finish, Sampling Rate: %i
+Sound Initialization: Finish, Device Sampling Rate: %i
 Sound device in use (changing this does not change the soundsystem
 Sound device synchronization max delay (ms
 Sound device synchronization shift (ms
@@ -2002,9 +2020,9 @@ SoundSystem/WaveDataCacheSizeMB_LowFragmentation
 SoundSystem001
 SoundSystemDebug
 SoundSystemLowLevel
-SoundWithProbability_t
 Soundevent Cluster
 Soundevent Count
+Soundevent Min/Max Values
 Soundevent Priority
 Soundevent param overwrites: %s
 Sounds To play
@@ -2081,6 +2099,7 @@ Starts Event(s): %s
 Starts VSND: %s
 Starts a specified soundevent
 Starts a specified soundevent at the given position
+Starts a specified stack via an empty soundevent
 Starts the specified arrangement
 Static
 StatsService_001
@@ -2129,13 +2148,15 @@ The amount to multiply the volume of the non-spatialized reverb/dsp by when at t
 The frequency of the sine tone modulating this sine tone
 The frequency of this sine tone
 The lexer was matching from line %d, offset %d, which
+The maximum threshold value to exclude sounds
+The minimum threshold value to exclude sounds
 The soundsystem requires the filesystem to run
 This convar is being accessed prior to ConVar_Register being called
 This indicates a poorly specified lexer RULE
 This is a static additive synth that can scale components of the synth based on how many instances are running
+This is a synth meant to generate whoosh noises
 ThreadGetCurrentId
 ThreadJoin
-ThreadSetAffinityPreference
 ThreadSetPriority
 ThreadSleep
 Threshold (dB
@@ -2194,7 +2215,6 @@ Trimming grain for %s from %f to %f seconds
 Type Name: %s
 Type: %s
 U0thD9
-UHc=(i
 UHcCH1
 UNRECOGNIZED
 UNRESOLVED
@@ -2257,6 +2277,7 @@ Used stack: %s
 UtlMemory_Alloc
 UtlMemory_CalcNewAllocationCount
 UtlMemory_FailedAllocation
+V(IcF I
 V5A8V5uX
 VApplication001
 VAsyncFileSystem2_001
@@ -2461,6 +2482,8 @@ Vrad3_001
 Vsnd Container
 Vsnd Reference
 V|x{w
+W0u2D
+W0uZD
 W2g%b1
 WARNING: Attempting to import existing public field %s in stack %s
 WARNING: Attempting to set fields on a stopped sound
@@ -2490,6 +2513,7 @@ Warning: vsnd %s is not yet loaded, queueing for load on next play
 When a source has source-specific DSP, this can be used as an additional mix stage for the listener reverb amount
 When on, silences all DSP mixes
 Width Reflectivity
+Wind Generator Container
 Won't age handle
 WorldRendererMgr001
 Wp|?l8~C
@@ -2502,7 +2526,6 @@ Y@VUUUUU
 Y@vmix_apply_effect
 YA1E1
 YA1SH
-You must construct it with ORDERED_CONSTRUCT macro in the dependency resolution function
 Z	t	t	t
 Z10DevWarningPKcz
 Z13DebugPrintKV3PK10KeyValues3
@@ -2668,6 +2691,7 @@ ZN12CThreadMutex7TryLockEPKci
 ZN12CThreadedJob5AbortEb
 ZN12CThreadedJob7ExecuteEv
 ZN13CBufferString10FixSlashesEc
+ZN13CBufferString10TruncateAtEib
 ZN13CBufferString11ToLowerFastEi
 ZN13CBufferString12AppendConcatEiPKPKcPKib
 ZN13CBufferString12AppendFormatEPKcz
@@ -2794,7 +2818,6 @@ ZN24CUtlMemoryBlockAllocatorC1Eij18RawAllocatorType_t
 ZN24CUtlMemoryBlockAllocatorD1Ev
 ZN25CVoiceContainerGranulator17Finalize_InternalEvEUlvE
 ZN25CVoiceContainerGranulator18BindInstanceParamsER10CUtlVectorISt10unique_ptrIN19CVoiceContainerBase14CParameterBaseESt14default_deleteIS3_EEi10CUtlMemoryIS6_iEEEUlPNS_19CGranulatorInstanceERKfE1
-ZN25CVoiceContainerGranulator18BindInstanceParamsER10CUtlVectorISt10unique_ptrIN19CVoiceContainerBase14CParameterBaseESt14default_deleteIS3_EEi10CUtlMemoryIS6_iEEEUlPNS_19CGranulatorInstanceERKfE2
 ZN25CVoiceContainerGranulator18BindInstanceParamsER10CUtlVectorISt10unique_ptrIN19CVoiceContainerBase14CParameterBaseESt14default_deleteIS3_EEi10CUtlMemoryIS6_iEEEUlPNS_19CGranulatorInstanceERKiE
 ZN25CVoiceContainerGranulator18BindInstanceParamsER10CUtlVectorISt10unique_ptrIN19CVoiceContainerBase14CParameterBaseESt14default_deleteIS3_EEi10CUtlMemoryIS6_iEEEUlPNS_19CGranulatorInstanceERKiE0
 ZN28CVoiceContainerRandomSampler17Finalize_InternalEvEUlvE
@@ -3804,6 +3827,7 @@ convar_get
 convar_set
 core.auto
 core.default
+core.empty
 core.null
 core.voip
 core_update_default
@@ -4482,6 +4506,8 @@ jA9]$|dI
 java Class for
 java resource
 k*eKF
+k0Lc!D;a
+k0Lc'D;g
 k=E.x=i
 k?n_m?P
 key_groups
@@ -4517,6 +4543,8 @@ libstdcxx
 libtier0.so
 line_text
 localPlayer
+localization_path
+localize
 logic_perspective_switch_float
 logic_perspective_switch_string
 long double
@@ -4545,6 +4573,9 @@ m_bCrossFade
 m_bEnable
 m_bEnableFilter
 m_bEnabled
+m_bExcludSoundsAboveThreshold
+m_bExcludeDelayedSounds
+m_bExcludeSoundsBelowThreshold
 m_bExcludeStoppedSounds
 m_bInvertMatch
 m_bIsBlocking
@@ -4570,6 +4601,15 @@ m_bShouldPause
 m_bShouldVoiceDuck
 m_bSolo
 m_bSyncInstances
+m_bUseCurveForAmplitude
+m_bUseCurveForAmplitude == 0
+m_bUseCurveForAmplitude == 1
+m_bUseCurveForFrequency
+m_bUseCurveForFrequency == 0
+m_bUseCurveForFrequency == 1
+m_bUseCurveForResonance
+m_bUseCurveForResonance == 0
+m_bUseCurveForResonance == 1
 m_bUseReference
 m_bUseReference == 0
 m_bUseReference == 1
@@ -4588,7 +4628,7 @@ m_dspName
 m_effectName
 m_effectsPreview
 m_encodedHeader
-m_fProbabilityWeight
+m_fProbabilityWeights
 m_feedbackFilter
 m_filter
 m_filterType
@@ -4623,6 +4663,8 @@ m_flElapsedTime
 m_flEndTime
 m_flEntIndex
 m_flEnvelopeAmount
+m_flExcludeSoundsMaxThresholdValue
+m_flExcludeSoundsMinThresholdValue
 m_flFadeTime
 m_flFeedback
 m_flFeedbackDepth
@@ -4636,6 +4678,7 @@ m_flFreqRangeEnd
 m_flFreqRangeStart
 m_flFrequency
 m_flGainAmount
+m_flGainInDecibels
 m_flGlideTime
 m_flGrainCrossfadeAmount
 m_flGrainLength
@@ -4682,6 +4725,7 @@ m_flRatio
 m_flRatioAbove
 m_flRatioBelow
 m_flReleaseTimeMS
+m_flResonance
 m_flRetriggerTimeMax
 m_flRetriggerTimeMin
 m_flRoomSize
@@ -4728,6 +4772,8 @@ m_fldbThresholdAbove
 m_fldbThresholdBelow
 m_flxfade
 m_freq
+m_frequencySweep
+m_gainSweep
 m_grainResources
 m_graphName
 m_graphPreview
@@ -4802,6 +4848,7 @@ m_opvarName
 m_opvarString
 m_pHandle
 m_pSound
+m_pSounds
 m_pStack
 m_pVoice
 m_params
@@ -4810,6 +4857,7 @@ m_previewList
 m_priorityContributeButDontRead
 m_priorityValue
 m_priorityVolumeScalar
+m_resonanceSweep
 m_resultVarName
 m_samples
 m_secondSound
@@ -4827,6 +4875,10 @@ m_sourceAudio
 m_spline
 m_stages
 m_strCountKeyName
+m_strDelayPublicFieldName
+m_strMaxValueName
+m_strMinValueName
+m_strQueryPublicFieldName
 m_subgraphs
 m_table
 m_tangents
@@ -4910,6 +4962,7 @@ memory allocation failed
 memory_map_sound
 memset
 metadata
+min_max_query
 min_note
 min_output
 min_velocity_db
@@ -5129,6 +5182,7 @@ output_entity_scale
 output_event_finished
 output_event_playing
 output_events_matching
+output_frame_time
 output_goto_count
 output_guid
 output_host_elapsed_time
@@ -5198,6 +5252,7 @@ output_snd_gamesound_convar
 output_snd_gamevoice_convar
 output_snd_musicvolume_convar
 output_sound_areas_exist
+output_soundevent_name
 output_spread
 output_stop_elapsed_time
 output_stopped
@@ -5788,6 +5843,7 @@ snd_sos_soundevent_max_deferred_time
 snd_sos_soundevent_profile
 snd_sos_start_soundevent
 snd_sos_start_soundevent_at_pos
+snd_sos_start_stack
 snd_sos_stop_all_soundevents
 snd_sos_stop_soundevent_guid
 snd_sos_stop_soundevent_index
@@ -5856,7 +5912,6 @@ soundevent_group_quit
 soundevent_group_set_float
 soundevent_group_stop
 soundevent_limiter
-soundevent_name
 soundevent_param
 soundevent_pause
 soundevent_samples
@@ -5974,6 +6029,7 @@ tXD; u
 ta[A\A]A
 table: %u members
 tcD;k0}]H
+tcf;2u^fD
 template parameter object for
 terminate called after throwing an instance of
 terminate called recursively

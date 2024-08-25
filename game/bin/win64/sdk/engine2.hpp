@@ -4,7 +4,7 @@
 
 // /////////////////////////////////////////////////////////////
 // Binary: engine2.dll
-// Classes count: 4 (Allocated) | 48 (Unallocated)
+// Classes count: 4 (Allocated) | 52 (Unallocated)
 // Enums count: 0 (Allocated) | 4 (Unallocated)
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
@@ -122,7 +122,7 @@ public:
 	// MNetworkChangeAccessorFieldPathIndex
 	ChangeAccessorFieldPathIndex_t m_PathIndex; // 0x40	
 private:
-	[[maybe_unused]] uint8_t __pad0042[0x16]; // 0x42
+	[[maybe_unused]] uint8_t __pad0044[0x14]; // 0x44
 public:
 	CEntityIdentity* m_pPrev; // 0x58	
 	CEntityIdentity* m_pNext; // 0x60	
@@ -268,6 +268,35 @@ public:
 	CEntityComponentHelper* m_pNext; // 0x20	
 };
 
+// Registered binary: engine2.dll (project 'entity2')
+// Alignment: 8
+// Size: 0x4
+// Has Trivial Destructor
+// 
+// MIsBoxedFloatType
+struct GameTime_t
+{
+public:
+	float m_Value; // 0x0	
+	
+	// Static fields:
+	static bool &Get_IS_TYPESAFE_FLOAT(){return *reinterpret_cast<bool*>(interfaces::g_schema->FindTypeScopeForModule("engine2.dll")->FindDeclaredClass("GameTime_t")->m_static_fields[0]->m_instance);};
+	static GameTime_t &Get_Zero(){return *reinterpret_cast<GameTime_t*>(interfaces::g_schema->FindTypeScopeForModule("engine2.dll")->FindDeclaredClass("GameTime_t")->m_static_fields[1]->m_instance);};
+};
+
+// Registered binary: engine2.dll (project 'engine2')
+// Alignment: 8
+// Size: 0x1
+// Has Trivial Constructor
+// Has Trivial Destructor
+struct EventServerEndAsyncPostTickWork_t
+{
+private:
+	[[maybe_unused]] uint8_t __pad0000[0x1]; // 0x0
+public:
+	// No schema binary for binding
+};
+
 // Registered binary: engine2.dll (project 'engine2')
 // Alignment: 8
 // Size: 0x40
@@ -328,6 +357,22 @@ public:
 	float m_flRenderFrameTime; // 0x30	
 	float m_flRenderFrameTimeUnbounded; // 0x34	
 	bool m_bRenderOnly; // 0x38	
+};
+
+// Registered binary: engine2.dll (project 'entity2')
+// Alignment: 8
+// Size: 0x4
+// Has Trivial Destructor
+// 
+// MIsBoxedIntegerType
+struct GameTick_t
+{
+public:
+	int32_t m_Value; // 0x0	
+	
+	// Static fields:
+	static bool &Get_IS_TYPESAFE_INTEGER(){return *reinterpret_cast<bool*>(interfaces::g_schema->FindTypeScopeForModule("engine2.dll")->FindDeclaredClass("GameTick_t")->m_static_fields[0]->m_instance);};
+	static GameTick_t &Get_Zero(){return *reinterpret_cast<GameTick_t*>(interfaces::g_schema->FindTypeScopeForModule("engine2.dll")->FindDeclaredClass("GameTick_t")->m_static_fields[1]->m_instance);};
 };
 
 // Registered binary: engine2.dll (project 'engine2')
@@ -671,6 +716,16 @@ struct EventClientPollNetworking_t
 {
 public:
 	int32_t m_nTickCount; // 0x0	
+};
+
+// Registered binary: engine2.dll (project 'engine2')
+// Alignment: 8
+// Size: 0x40
+// Has Trivial Destructor
+struct EventServerBeginAsyncPostTickWork_t : public EventPostAdvanceTick_t
+{
+public:
+	// No schema binary for binding
 };
 
 // Registered binary: engine2.dll (project 'engine2')

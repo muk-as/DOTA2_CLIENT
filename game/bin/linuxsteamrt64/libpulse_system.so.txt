@@ -128,6 +128,7 @@
 8[A\A]A^A
 9ISourceTS
 A default string (set
+A string associated with this Cursor, to use later for remote Kill or Wait requests. Cursors can have any number of Tags associated with them
 A testing-only domain that doesn't correspond to any in-engine use case
 A testing-only domain that draws on a 2D canvas with a LOGO-like 'turtle' cursor
 A9v0|#A
@@ -148,6 +149,7 @@ AUATUSH
 AVAUATA
 AVAUATH
 AVAUATI
+AVAUATL
 AVAUATS
 AVAUATSD
 AVAUATSH
@@ -359,9 +361,6 @@ CPulseMathlib!Sin
 CPulseRuntimeMethodArg
 CPulseSystem::Internal_InstanceCreated( %s, %p
 CPulseSystem::Internal_InstanceDestroyed( %s, %p
-CPulseTestFuncs_DerivedDomain
-CPulseTestFuncs_DerivedDomain!GetCursorValueA
-CPulseTestFuncs_DerivedDomain!SetCursorValueA
 CPulseTestFuncs_LibraryA
 CPulseTestFuncs_LibraryA!Event_AGreaterThan5
 CPulseTestFuncs_LibraryA!Event_AValueChanged
@@ -421,7 +420,9 @@ CPulse_ResumePoint
 CPulse_Variable
 CResourceNameTyped
 CTestDomainDerived_Cursor
+CTestDomainDerived_Cursor!GetCursorValueA
 CTestDomainDerived_Cursor!GetCursorValueB
+CTestDomainDerived_Cursor!SetCursorValueA
 CTestDomainDerived_Cursor!SetCursorValueB
 CURSOR_ADD_TAG
 CURSOR_REMOVE_TAG
@@ -528,6 +529,7 @@ EQ_FLOAT
 EQ_INT
 EQ_OPAQUE_HANDLE
 EQ_PANEL_HANDLE
+EQ_SCHEMA_ENUM
 EQ_STRING
 EQ_TEST_HANDLE
 ERROR: CUtlSymbolTableLarge element limit of %u exceeded
@@ -670,6 +672,7 @@ GetResourceManifests
 GetVar R%d <- V%d (%s
 Graph
 Graph Def
+H95iH
 H[A\A]A^A
 HammerMapLoader001
 HandleInt
@@ -711,7 +714,7 @@ IcD$<f
 IcE H
 If (R%d) Jump to Instr I%d
 If (R%d) Leap to Chunk C%d
-If this cursor spawns other work via Fire And Forget, should this tag be inherited
+If this cursor spawns other work via Fire And Forget, should this Tag be inherited
 Imaginary
 Immediate Wake
 ImmediateWake
@@ -733,7 +736,6 @@ Insert
 InsertBeforeGetPtr
 InstallSchemaBindings
 Int( %d
-Intentionally vague touch behavior for %p
 Invalid use of KV3 specific type %s with basic type %s, must be basic type %s
 Invoke '%s' failed with code %d
 Invoke Cell%d [eid=%d] %s::%s
@@ -824,6 +826,7 @@ MPulseDomainHookInfo
 MPulseDomainOptInFeatureTag
 MPulseEditorHeaderIcon
 MPulseEditorHeaderText
+MPulseEditorIsControlFlowNode
 MPulseExpressionAlias
 MPulseGraphHook
 MPulseInstanceDomainInfo
@@ -911,6 +914,7 @@ NE_FLOAT
 NE_INT
 NE_OPAQUE_HANDLE
 NE_PANEL_HANDLE
+NE_SCHEMA_ENUM
 NE_STRING
 NE_TEST_HANDLE
 NO_FLAGS
@@ -957,8 +961,8 @@ Opaque Handle
 Open a specific graph instance by id
 Optional. After taking an OnCanceled outflow, signal to any observers that this cursor is now canceled. Equivalent to not handling the original cancel outflow. If you don't use this, handling OnCanceled will be treated as success
 Optional. After taking an OnFailed outflow, signal to any observers that this cursor is now failed. Equivalent to not handling the original fail outflow. If you don't use this, handling OnFailed will be treated as success
+Optional. Type 'Any'. An associated value, e.g. the Entity Handle which is responsible for this Cursor. The Tag is defined by the unique combination of Name and Value
 Or R%d <- R%d || R%d
-Ordered constructor wrapped type has no default constructor
 Output Connection %d: '%s' -> '%s' : %s( %s
 Output%d: '%s' (%s
 PANEL_ID
@@ -988,22 +992,23 @@ PVAL_TEST_HANDLE
 PVAL_TRANSFORM
 PVAL_TYPESAFE_INT
 PVAL_VEC3
-Panel ID
 PanelID
 Panorama Panel Handle
 PanoramaTextServices001
 PanoramaUIClient001
 PanoramaUIEngine001
+Parent Map Entity
 Parent Map: %s
+Parent XML Panel
 Parser encountered %d error(s
 ParticleSystemMgr003
 Pause the cursor at this point
 Pen Down
 Pen Up
 PhysicsBuilderMgr001
-Plat_DebugPrint
 Plat_FatalErrorFunc
 Plat_FloatTime
+Plat_GetTime
 Plat_IsInDebugSession
 Plat_IsInTestMode
 Plat_NonFatalErrorFunc
@@ -1018,7 +1023,6 @@ PrintStringWithLeafSuggestions: %s
 Prints the execution history of a graph by filename or instanceid
 Prop( %s
 PropertyEditorSystem_001
-PtdH9
 PublicMethod
 PublicMethod '%s' defined with invalid function as second paramter
 PublicMethod invoked with unrecognized 'this' value
@@ -1243,7 +1247,6 @@ Test Optional Parameters  After Defaults Added
 Test Optional Parameters  After Reorder Sparse Defaults
 Test Optional Parameters  Before Defaults Added
 Test Optional Parameters  Before Reorder Sparse Defaults
-Test functions for the derived test domain
 Test node that just generates the integer 50. Nothing to see here
 Test node that picks between two outflows as specified in the test domain
 Test node that randomly picks between two outflows
@@ -1390,7 +1393,6 @@ X to the Y power
 XHcGPL
 X[A\A]A^A
 Yield, Resume=%s
-You must construct it with ORDERED_CONSTRUCT macro in the dependency resolution function
 Z13DebugPrintKV3PK10KeyValues3
 Z14V_stristr_fastPKcS0
 Z17LoggingSystem_Logi17LoggingSeverity_t5ColorPKcz
@@ -1512,6 +1514,7 @@ ZN10__cxxabiv121__vmi_class_type_infoD1Ev
 ZN10__cxxabiv121__vmi_class_type_infoD2Ev
 ZN12CSplitString5SplitEPKciPS1_ib
 ZN13CBufferString10FixSlashesEc
+ZN13CBufferString10TruncateAtEib
 ZN13CBufferString11ToLowerFastEi
 ZN13CBufferString12AppendFormatEPKcz
 ZN13CBufferString12SetExtensionEPKcb
@@ -1542,7 +1545,7 @@ ZN2v811HandleScopeC1EPNS_7IsolateE
 ZN2v811HandleScopeD1Ev
 ZN2v812api_internal12ToLocalEmptyEv
 ZN2v812api_internal13DisposeGlobalEPm
-ZN2v812api_internal18GlobalizeReferenceEPNS_8internal7IsolateEPm
+ZN2v812api_internal18GlobalizeReferenceEPNS_8internal7IsolateEm
 ZN2v812api_internal8MakeWeakEPmPvPFvRKNS_16WeakCallbackInfoIvEEENS_16WeakCallbackTypeE
 ZN2v814ObjectTemplate11NewInstanceENS_5LocalINS_7ContextEEE
 ZN2v814ObjectTemplate21SetInternalFieldCountEi
@@ -1553,11 +1556,11 @@ ZN2v814ScriptCompiler20ConsumeCodeCacheTaskD1Ev
 ZN2v816FunctionTemplate3NewEPNS_7IsolateEPFvRKNS_20FunctionCallbackInfoINS_5ValueEEEENS_5LocalIS4_EENSA_INS_9SignatureEEEiNS_19ConstructorBehaviorENS_14SideEffectTypeEPKNS_9CFunctionEttt
 ZN2v85Array3NewEPNS_7IsolateEi
 ZN2v86Module17InstantiateModuleENS_5LocalINS_7ContextEEEPFNS_10MaybeLocalIS0_EES3_NS1_INS_6StringEEENS1_INS_10FixedArrayEEENS1_IS0_EEE
-ZN2v86Module21CreateSyntheticModuleEPNS_7IsolateENS_5LocalINS_6StringEEERKNSt2Cr6vectorIS5_NS6_9allocatorIS5_EEEEPFNS_10MaybeLocalINS_5ValueEEENS3_INS_7ContextEEENS3_IS0_EEE
+ZN2v86Module21CreateSyntheticModuleEPNS_7IsolateENS_5LocalINS_6StringEEERKNS_10MemorySpanIKS5_EEPFNS_10MaybeLocalINS_5ValueEEENS3_INS_7ContextEEENS3_IS0_EEE
 ZN2v86Module24SetSyntheticModuleExportEPNS_7IsolateENS_5LocalINS_6StringEEENS3_INS_5ValueEEE
 ZN2v86Module8EvaluateENS_5LocalINS_7ContextEEE
 ZN2v86Number3NewEPNS_7IsolateEd
-ZN2v86Object16SetInternalFieldEiNS_5LocalINS_5ValueEEE
+ZN2v86Object16SetInternalFieldEiNS_5LocalINS_4DataEEE
 ZN2v86Object20SlowGetInternalFieldEi
 ZN2v86Object3GetENS_5LocalINS_7ContextEEEj
 ZN2v86Object3SetENS_5LocalINS_7ContextEEEjNS1_INS_5ValueEEE
@@ -2461,8 +2464,6 @@ deleted virtual method called
 dev/random
 dev/urandom
 dl_iterate_phdr
-dlerror
-dlsym CreateSyntheticModule failed: %s
 dr^uo
 dynamic
 dynamic_cast
@@ -2526,6 +2527,7 @@ h[A\A]A^A
 hidden alias for
 highlight_instance_id
 highlight_node_id
+htdH9
 init_array
 instance
 instances
@@ -2539,7 +2541,6 @@ ld-linux-x86-64.so.2
 lexer error %d
 lexer->mTokens(): Error: No lexer rules were added to the lexer yet
 libc.so.6
-libdl.so.2
 libm.so.6
 libpthread.so.0
 libpulse_system.so
@@ -2547,6 +2548,7 @@ libpulse_system.so.dbg
 libstdcxx
 libtier0.so
 libv8.so
+localize
 long double
 looks like this
 mL`^VEj
@@ -2885,6 +2887,7 @@ syscall
 system_state
 t$;0u D
 t=D9;u
+tI}wJqe
 tVMc.I
 tWAVAUATI
 table: %u members
@@ -2905,6 +2908,7 @@ tools/images/pulse_editor/cursor_tag.png
 tools/images/pulse_editor/cursor_wait_zone.png
 tools/images/pulse_editor/exit_cycle_random.png
 tools/images/pulse_editor/inflow_wait.png
+tools/images/pulse_editor/kill_cursor_with_tag.png
 transaction_safe
 transform
 typeinfo fn for

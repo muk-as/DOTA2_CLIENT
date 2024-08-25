@@ -23,6 +23,7 @@
 		<include src="s2r://panorama/scripts/post_game_progress/post_game_progress_fall2021.vjs_c" />
 		<include src="s2r://panorama/scripts/post_game_progress/post_game_progress_battle_pass_2022.vts_c" />
 		<include src="s2r://panorama/scripts/post_game_progress/post_game_progress_international2023.vts_c" />
+		<include src="s2r://panorama/scripts/post_game_progress/post_game_progress_international2024.vts_c" />
 		<include src="s2r://panorama/scripts/post_game_progress/post_game_progress_frostivus2023.vts_c" />
 		<include src="s2r://panorama/scripts/post_game_progress/post_game_progress_crownfall.vts_c" />
 		<include src="s2r://panorama/scripts/post_game_progress/post_game_progress_sequence.vts_c" />
@@ -876,6 +877,70 @@
 				<Label class="NewlyCompletedLabel LabelLarge" text="#DOTA_Spring2021PostGame_Complete" />
 			</Panel>
 		</snippet>
+		<snippet name="International2024Progress">
+			<Panel class="ProgressScreen International2024Progress" onactivate="StartSkippingAhead()">
+				<Panel class="CompediumBackgroundImage" />
+				<Panel class="CompediumBackgroundContainer">
+					<Panel class="CircusBackgroundImage" />
+					<Image class="Aegis2024_Large" src="s2r://panorama/images/compendium/international2024/logos/aegis2024_large_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+				</Panel>
+				<DOTAScenePanel class="SpotlightParticles" map="scenes/international_2024/international_2024_dashboard_background" camera="camera_dashboard" hittest="false" renderdeferred="false" particleonly="false" />
+				<Panel class="ProgressScreenContents">
+					<Panel class="Header">
+						<Image class="TILogoText" scaling="stretch-to-fit-preserve-aspect" src="s2r://panorama/images/compendium/international2024/logos/the_international_text_png.vtex" />
+						<Label class="Title" text="#FrontPage_Compendium_Points_Header" />
+						<Panel id="StarsContainer">
+							<Panel class="CompendiumStar" />
+							<Panel class="CompendiumStar" />
+							<Panel class="CompendiumStar" />
+							<Panel class="CompendiumStar" />
+							<Panel class="CompendiumStar" />
+						</Panel>
+					</Panel>
+					<Panel class="ProgressCenter">
+						<Panel class="WeeklyChallengeHeader">
+							<Label class="WeeklyChallengeTitle" text="#DOTA_Compendium2024_WeeklyChallenge" />
+							<Label class="WeeklyChallengePeriod" text="#DOTA_Compendium2024_WeeklyChallenge_WeekNumber" />
+						</Panel>
+						<Panel class="WeeklyProgressContainer">
+							<Label class="WeeklyProgressTitle" text="#DOTA_Compendium2024_WeeklyChallenge_WeeklyProgress" />
+							<Panel class="WeeklyProgressBarContainer">
+								<ProgressBarWithMiddle id="WeeklyProgressBar" />
+								<Label text="#DOTA_Compendium2024_WeeklyChallenge_Points" html="true" />
+							</Panel>
+						</Panel>
+						<Panel class="MatchProgressContainer">
+							<Label class="MatchProgressTitle" text="#DOTA_Compendium2024_WeeklyChallenge_MatchProgress" />
+							<Panel id="MatchProgressRows">
+								<Panel id="MatchPointsRow" class="MatchProgressRow">
+									<Label class="MatchProgressLabel" text="{s:match_points_reason}" />
+									<Panel id="MatchPointsRow" class="MatchProgressValue">
+										<Label text="+{d:match_points}" />
+										<Panel class="PointsIcon" />
+									</Panel>
+								</Panel>
+								<Panel id="DailyWinRow" class="MatchProgressRow">
+									<Label class="MatchProgressLabel" text="#DOTA_Compendium2024_WeeklyChallenge_DailyBonus" />
+									<Panel class="MatchProgressValue">
+										<Label text="+{d:daily_win_points}" />
+										<Panel class="PointsIcon" />
+									</Panel>
+								</Panel>
+							</Panel>
+						</Panel>
+					</Panel>
+					<Panel class="CompendiumLevelContainer">
+						<DOTAParticleScenePanel class="EventLevelParticles" hittest="false" particleName="particles/ui/ui_godrays_soft_glow.vpcf" renderdeferred="true" particleonly="false" startActive="true" cameraOrigin="0 0 120" lookAt="0 0 0" fov="60" squarePixels="true" />
+						<DOTAEventLevelShield id="LevelShield" eventid="EVENT_ID_INTERNATIONAL_2024" />
+						<Panel class="CompendiumLevel">
+							<Label class="LevelText" text="#DOTA_CompendiumLevel" />
+							<ProgressBarWithMiddle id="CompendiumLevelProgressBar" />
+							<Label class="LevelProgress" text="&lt;b&gt;{d:current_level_progress}&lt;/b&gt; / {d:max_level_progress}" html="true" />
+						</Panel>
+					</Panel>
+				</Panel>
+			</Panel>
+		</snippet>
 		<snippet name="Frostivus2023MatchDailyBonusProgress">
 			<Panel id="Frostivus2023MatchDailyBonusProgress" class="Frostivus2023ProgressTypeContainer">
 				<Panel class="Frostivus2023ProgressTitleContainer DailyBonus">
@@ -1333,6 +1398,7 @@
 			<TextButton class="PopupButton" text="Spring 2021" unlocalized="true" onactivate="TestAnimateSpring2021()" />
 			<TextButton class="PopupButton" text="BP 2022" unlocalized="true" onactivate="TestAnimateBattlePass2022()" />
 			<TextButton class="PopupButton" text="International 2023" unlocalized="true" onactivate="TestAnimateInternational2023()" />
+			<TextButton class="PopupButton" text="International 2024" unlocalized="true" onactivate="TestAnimateInternational2024()" />
 			<TextButton class="PopupButton" text="Frostivus 2023" unlocalized="true" onactivate="TestAnimateFrostivus2023()" />
 			<TextButton class="PopupButton" text="Crownfall" unlocalized="true" onactivate="TestAnimateCrownfall()" />
 			<TextButton class="PopupButton Blue" text="Reset" unlocalized="true" onactivate="ResetScreens()" />

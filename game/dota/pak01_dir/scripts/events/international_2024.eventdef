@@ -1,0 +1,1689 @@
+"EVENT_ID_INTERNATIONAL_2024"
+{
+	"season_name"	"#DOTA_EventName_International2024"
+	"season_name_short"	"#DOTA_EventNameShort_International2024"
+	"season_class"	"Season_International2024"
+
+	"is_ti"		"1"
+	"league_id"		"16935"
+
+	"team_fandom_league_registration_period"		"9"
+	"team_fandom_content_season"		"11"
+	"team_logo_model"					"models/events/ti13/teams/team_%u.vmdl"
+	//"team_fandom_bundles_on_sale"		"1"
+
+	// The event_end_time is when all of the activities stop working (e.g. wagering, tipping, etc). Customers
+	// can still claim rewards or increase their level after this time as a grace period since they may have
+	// received some final
+	// levels from features like predictions. From a customer perspective, this is the date that the Battle
+	// Pass ends.
+	// CURRENT TIME SET: Tuesday, October 15, 2023 8:00:00 PM PST
+	"event_end_time"	"1729004400"
+
+	// The expiration_date is when the event is completely over and customers can no longer claim rewards.
+	// This date should mostly be unimportant for customers - it should be at least a few weeks after the
+	// end date to give customers a chance to claim their final rewards. It mostly serves as a stopping
+	// point after which we no longer have to support the Battle Pass features.
+	// CURRENT TIME SET: Tuesday, December 17, 2024 3:00:00 PM PST
+	"expiration_date"	"1734476400"
+
+	"level_event_trophy"		"86"
+	//"questlines_trophy"			"85"
+
+	//"allows_season_changes"		"1"
+	//"challenges_enabled"		"1"
+
+	"event_level"
+	{
+		"show_battle_level"		"1"
+		"points_per_level"		"1000"
+		"badge_tiers"
+		{
+			"1"
+			{
+				"event_level"	"1"
+				"tier_class"	"EventTierBronze"
+				"tier_badge"	"file://{images}/badges/international_2024_compendium_badge_1.png"
+			}
+			"4"
+			{
+				"event_level"	"250"
+				"tier_class"	"EventTierPlatinum"
+				"tier_badge"	"file://{images}/badges/international_2024_compendium_badge_2.png"
+			}
+		}
+	}
+
+	"uses_premium_points"	"1"
+
+	"does_event_point_popup"			"1"
+	"does_event_point_popup_premium"	"0"
+
+	"effects_item_def"		"30238"
+	"normal_points_leaderboard_name"				"International2024Points"
+
+	//"level_1000_hall_of_fame_particle"	"particles/econ/events/ti11/aegis_lvl_1000_ambient_ti11.vpcf"
+	//"level_2000_gold_roshan_enabled"	"0"
+
+	"ingame_predictions_group_stage_periodic_resource"	"international_2024_daily_in_game_predictions"
+	"ingame_predictions_main_event_periodic_resource"	"international_2024_daily_in_game_predictions"
+	//"ingame_predictions_qualifiers_periodic_resource"	"international_2023_daily_in_game_predictions" // No qualifiers in TI event for 2023
+
+	"activate_item_defs"
+	{
+		"International 2024 - Compendium"				"1"
+		"International 2024 - Compendium (Giftable)"	"1"
+		"International 2024 - Upgraded Compendium"		"1"
+	}	
+	"purchase_points_item_defs"
+	{
+		"International 2024 - Level Pack"	"1"
+	}
+	
+	"show_home_page_event"	"DOTAShowBPInternational2024RewardsPage()"
+	"purchase_access_event" "DOTAPurchaseEventAccess( EVENT_ID_INTERNATIONAL_2024, false )"
+	"purchase_levels_event"	"DOTAPurchaseEventLevels( EVENT_ID_INTERNATIONAL_2024 )"
+	//"show_level_rewards_event" "DOTAShowBPInternational2023RewardsAtLevel( %u )"
+
+	"notification_class"	"Compendium_2024"
+	"notifications"
+	{
+		"physical_reward_registration"
+		{
+			"notification_id"	"0"
+			"message"	"#Notification_CompendiumCollectibles_2024"
+			"link"		"ExternalBrowserGoToURL('https://dota2.cmdvault.com/')"
+		}
+
+		"physical_reward_problem"
+		{
+			"notification_id"	"1"
+			"message"	"#Notification_CompendiumCollectibles_2024_Problem"
+			"link"		"ExternalBrowserGoToURL('https://dota2.cmdvault.com/')"
+		}		
+	}
+
+	"physical_rewards"
+	{
+		"aegis" {
+			"action"			"aegis_tracker"
+			"required_level"	"300"
+		}
+	}
+
+	"action_lists"
+	{
+		// CHFLYNN TODO - Update Chat Wheel Casters
+		"chat_wheel_caster_group"
+		{	
+			"reward_list"
+			{
+				"chat_wheel_actions"
+				{
+					"action_min"	"200"
+					"action_max"	"224"
+					"weight"		"1"
+				}
+			}
+		}
+	}
+
+	"event_actions"
+	{
+
+		// --------------------------------------------------------------------
+		// Team Fandom Bundles
+		// --------------------------------------------------------------------
+		"#include"		"scripts/events/fandom/international_2024_fandom.eventincludes"
+
+
+
+		// --------------------------------------------------------------------
+		// Chat Wheels
+		// --------------------------------------------------------------------
+		// CHFLYNN TODO - Caster Chat Wheels
+		"caster_chat_wheel_english_1"
+		{
+			"action_id"		"200"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_permanent_chat_wheel_messages"	"609"
+					}
+				}
+			}
+		}
+		"caster_chat_wheel_english_2"
+		{
+			"action_id"		"201"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_permanent_chat_wheel_messages"	"610"
+					}
+				}
+			}
+		}
+		"caster_chat_wheel_english_3"
+		{
+			"action_id"		"202"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_permanent_chat_wheel_messages"	"611"
+					}
+				}
+			}
+		}
+		"caster_chat_wheel_english_4"
+		{
+			"action_id"		"203"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_permanent_chat_wheel_messages"	"612"
+					}
+				}
+			}
+		}
+		"caster_chat_wheel_english_5"
+		{
+			"action_id"		"204"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_permanent_chat_wheel_messages"	"613"
+					}
+				}
+			}
+		}
+		"caster_chat_wheel_spanish_1"
+		{
+			"action_id"		"205"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_permanent_chat_wheel_messages"	"614"
+					}
+				}
+			}
+		}
+		"caster_chat_wheel_spanish_2"
+		{
+			"action_id"		"206"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_permanent_chat_wheel_messages"	"615"
+					}
+				}
+			}
+		}
+		"caster_chat_wheel_spanish_3"
+		{
+			"action_id"		"207"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_permanent_chat_wheel_messages"	"616"
+					}
+				}
+			}
+		}
+		"caster_chat_wheel_spanish_4"
+		{
+			"action_id"		"208"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_permanent_chat_wheel_messages"	"617"
+					}
+				}
+			}
+		}
+		"caster_chat_wheel_spanish_5"
+		{
+			"action_id"		"209"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_permanent_chat_wheel_messages"	"618"
+					}
+				}
+			}
+		}
+		"caster_chat_wheel_portuguese_1"
+		{
+			"action_id"		"210"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_permanent_chat_wheel_messages"	"619"
+					}
+				}
+			}
+		}
+		"caster_chat_wheel_portuguese_2"
+		{
+			"action_id"		"211"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_permanent_chat_wheel_messages"	"620"
+					}
+				}
+			}
+		}
+		"caster_chat_wheel_portuguese_3"
+		{
+			"action_id"		"212"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_permanent_chat_wheel_messages"	"621"
+					}
+				}
+			}
+		}
+		"caster_chat_wheel_portuguese_4"
+		{
+			"action_id"		"213"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_permanent_chat_wheel_messages"	"622"
+					}
+				}
+			}
+		}
+		"caster_chat_wheel_portuguese_5"
+		{
+			"action_id"		"214"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_permanent_chat_wheel_messages"	"623"
+					}
+				}
+			}
+		}
+		"caster_chat_wheel_russian_1"
+		{
+			"action_id"		"215"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_permanent_chat_wheel_messages"	"624"
+					}
+				}
+			}
+		}
+		"caster_chat_wheel_russian_2"
+		{
+			"action_id"		"216"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_permanent_chat_wheel_messages"	"625"
+					}
+				}
+			}
+		}
+		"caster_chat_wheel_russian_3"
+		{
+			"action_id"		"217"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_permanent_chat_wheel_messages"	"626"
+					}
+				}
+			}
+		}
+		"caster_chat_wheel_russian_4"
+		{
+			"action_id"		"218"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_permanent_chat_wheel_messages"	"627"
+					}
+				}
+			}
+		}
+		"caster_chat_wheel_russian_5"
+		{
+			"action_id"		"219"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_permanent_chat_wheel_messages"	"628"
+					}
+				}
+			}
+		}
+		"caster_chat_wheel_chinese_1"
+		{
+			"action_id"		"220"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_permanent_chat_wheel_messages"	"629"
+					}
+				}
+			}
+		}
+		"caster_chat_wheel_chinese_2"
+		{
+			"action_id"		"221"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_permanent_chat_wheel_messages"	"630"
+					}
+				}
+			}
+		}
+		"caster_chat_wheel_chinese_3"
+		{
+			"action_id"		"222"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_permanent_chat_wheel_messages"	"631"
+					}
+				}
+			}
+		}
+		"caster_chat_wheel_chinese_4"
+		{
+			"action_id"		"223"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_permanent_chat_wheel_messages"	"632"
+					}
+				}
+			}
+		}
+		"caster_chat_wheel_chinese_5"
+		{
+			"action_id"		"224"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_permanent_chat_wheel_messages"	"633"
+					}
+				}
+			}
+		}
+
+		// --------------------------------------------------------------------
+		// Gifting Titles
+		// --------------------------------------------------------------------
+		
+		"gift_compendium"
+		{
+			"action_id"			"300"
+			"max_grants"		"5"
+			"must_own_event"	"0"
+			"rewards"
+			{
+				"1"
+				{
+					"is_achievement"		"1"
+					"reward_name"			"#DOTA_International2022_Achievement_Make_A_Gift_Name"
+					"reward_description"	"#DOTA_International2022_Achievement_Make_A_Gift_Description"
+					"reward_image"			"file://{images}/compendium/achievements/gift.png"
+
+					"grants"
+					{
+						"grant_points"	"2000"
+						"grant_title"	"4"
+					}
+				}
+				"3"
+				{
+					"is_achievement"		"1"
+					"reward_name"			"#DOTA_International2022_Achievement_Make_A_Gift2_Name"
+					"reward_description"	"#DOTA_International2022_Achievement_Make_A_Gift2_Description"
+					"reward_image"			"file://{images}/compendium/achievements/gift2.png"
+
+					"grants"
+					{
+						"grant_points"	"4000"
+						"grant_title"	"5"
+					}
+				}
+				"5"
+				{
+					"is_achievement"		"1"
+					"reward_name"			"#DOTA_International2022_Achievement_Make_A_Gift3_Name"
+					"reward_description"	"#DOTA_International2022_Achievement_Make_A_Gift3_Description"
+					"reward_image"			"file://{images}/compendium/achievements/gift3.png"
+
+					"grants"
+					{
+						"grant_points"	"10000"
+						"grant_title"	"6"
+					}
+				}
+			}
+		}
+
+		// --------------------------------------------------------------------
+		// In-game predictions
+		// --------------------------------------------------------------------
+
+		"correct_ingame_predictions_groupstage"
+		{
+			"action_id"		"900"
+			"max_grants"		"10000"
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"reward_name"		"#DOTA_BattlePassLog_CorrectPrediction_Ingame"
+					"grants"
+					{
+						"grant_points"		"200"
+					}
+				}
+			}
+		}
+
+		"correct_ingame_predictions_mainevent"
+		{
+			"action_id"		"901"
+			"max_grants"		"10000"
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"reward_name"		"#DOTA_BattlePassLog_CorrectPrediction"
+					"grants"
+					{
+						"grant_points"		"200"
+					}
+				}
+			}
+		}
+
+		// --------------------------------------------------------------------
+		// Initial Rewards Bundle on Purchase
+		// --------------------------------------------------------------------
+		// CHFLYNN - Re-evaluate what we are giving for initial bundle
+		"welcome_gifts"
+		{
+			"action_id" "400"
+			"always_claimable"	"1"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_emoticon"		"379" // Aegis Emoticon
+						"grant_fantasy_crafting_rolls"
+						{
+							"fantasy_id"		"2"
+							"period"			"0"
+							"rolls"				"10"
+						}
+						"grant_fantasy_crafting_rolls"
+						{
+							"fantasy_id"		"2"
+							"period"			"1"
+							"rolls"				"10"
+						}
+						"grant_fantasy_crafting_rolls"
+						{
+							"fantasy_id"		"2"
+							"period"			"2"
+							"rolls"				"10"
+						}
+						
+						// Starting bingo tokens count, may need numbers adjustments
+						"grant_bingo_tokens"
+						{
+							"league_phase"		"1"
+							"token_count"		"15"
+						}
+						"grant_bingo_tokens"
+						{
+							"league_phase"		"2"
+							"token_count"		"15"
+						}
+						"grant_bingo_tokens"
+						{
+							"league_phase"		"3"
+							"token_count"		"15"
+						}
+					}
+				}
+			}
+		}
+
+		// --------------------------------------------------------------------
+		// Actual Rewards
+		// --------------------------------------------------------------------
+		// CHFLYNN TODO - Leaving this alone, but we need to decide on actual rewards
+		"points_tracker"
+		{
+			"action_id"	"1111"
+			"max_grants"		"999999"
+		}
+		"points_redemption"
+		{
+			"action_id" "1112"
+			"claimable_up_to_event_level"	"1"
+			"max_grants"		"999999"
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"reward_name"		"#DOTA_BattlePassLog_EventReward"
+					"grants"
+					{
+						"grant_action_custom"		
+						{
+							"action"	"player_sticker_tracker"
+							"count"		"1"
+							"should_skip_audit"	"1"
+						}
+						"grant_action_custom"		
+						{
+							"action"	"fantasy_and_bingo_reward_tracker"
+							"count"		"1"
+							"should_skip_audit"	"1"
+						}
+						"grant_action_custom"		
+						{
+							"action"	"caster_chat_wheel_line_tracker"
+							"count"		"1"
+							"should_skip_audit"	"1"
+						}
+						"grant_action_custom"		
+						{
+							"action"	"team_sticker_tracker"
+							"count"		"1"
+							"should_skip_audit"	"1"
+						}
+						
+						"grant_action_custom"		
+						{
+							"action"	"team_loading_screen_tracker"
+							"count"		"1"
+							"should_skip_audit"	"1"
+						}
+						"grant_action_custom"		
+						{
+							"action"	"ti_loading_screen_tracker"
+							"count"		"1"
+							"should_skip_audit"	"1"
+						}							
+						"grant_action_custom"		
+						{
+							"action"	"tp_fx_tracker"
+							"count"		"1"
+							"should_skip_audit"	"1"
+						}
+						"grant_action_custom"		
+						{
+							"action"	"hud_tracker"
+							"count"		"1"
+							"should_skip_audit"	"1"
+						}
+						"grant_action_custom"		
+						{
+							"action"	"legacychatwheel_tracker"
+							"count"		"1"
+							"should_skip_audit"	"1"
+						}
+						"grant_action_custom"
+						{
+							"action"	"effigy_tracker"
+							"count"		"1"
+							"should_skip_audit"	"1"
+						}
+						"grant_action_custom"
+						{
+							"action"	"versusscreen_tracker"
+							"count"		"1"
+							"should_skip_audit"	"1"
+						}
+						"grant_action_custom"		
+						{
+							"action"	"aegis_tracker"
+							"count"		"1"
+							"should_skip_audit"	"1"
+						}
+						
+					}
+				}		
+								
+			}
+		}
+
+
+		"player_sticker_tracker"
+		{
+			"action_id"	"1120"
+			"max_grants"		"999999"
+			
+		}
+		"player_sticker_booster"
+		{
+			"action_id"	"1220"
+			"max_grants"		"999999"
+			"premium_point_cost"	"1"		
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"grants"
+					{
+							"grant_action"			"player_sticker_tracker" 
+							"grant_action"			"aegis_tracker" 
+					}
+				}
+			}
+		}
+		"player_sticker_redemption"
+		{
+			"action_id"	"1130"
+			"max_grants"		"999999"
+			"claimable_if_prerequisites_satisfied"	"1"
+			"prerequisite_actions"
+			{
+				"player_sticker_tracker" "4 + 4n"
+			}
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"grants"
+					{
+						"grant_item"			"31611" // Player Sticker
+					}
+				}
+			}
+		}
+		
+		"fantasy_and_bingo_reward_tracker"
+		{
+			"action_id"	"1121"
+			"max_grants"		"999999"
+			
+		}
+		"fantasy_and_bingo_reward_booster"
+		{
+			"action_id"	"1221"
+			"max_grants"		"999999"
+			"premium_point_cost"	"1"		
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"grants"
+					{
+							"grant_action"			"fantasy_and_bingo_reward_tracker" 
+							"grant_action"			"aegis_tracker" 
+					}
+				}
+			}
+		}
+		"fantasy_and_bingo_reward_redemption"
+		{
+			"action_id"	"1131"
+			"max_grants"		"999999"
+			"claimable_if_prerequisites_satisfied"	"1"
+			"prerequisite_actions"
+			{
+				"fantasy_and_bingo_reward_tracker" "3 + 3n"
+			}
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_fantasy_crafting_rolls"
+						{
+							"fantasy_id"		"2"
+							"period"			"0"
+							"rolls"				"3"
+						}
+						"grant_bingo_tokens"
+						{
+							"league_phase"		"1"
+							"token_count"		"3"
+						}
+					}
+				}
+				"2"
+				{
+					"grants"
+					{
+						"grant_fantasy_crafting_rolls"
+						{
+							"fantasy_id"		"2"
+							"period"			"0"
+							"rolls"				"3"
+						}
+						"grant_bingo_tokens"
+						{
+							"league_phase"		"1"
+							"token_count"		"3"
+						}
+					}
+				}
+				"3 + 3n"
+				{
+					"grants"
+					{
+						"grant_fantasy_crafting_rolls"
+						{
+							"fantasy_id"		"2"
+							"period"			"0"
+							"rolls"				"3"
+						}
+						"grant_bingo_tokens"
+						{
+							"league_phase"		"1"
+							"token_count"		"3"
+						}
+					}
+				}
+				"4 + 3n"
+				{
+					"grants"
+						{
+						"grant_fantasy_crafting_rolls"
+						{
+							"fantasy_id"		"2"
+							"period"			"1"
+							"rolls"				"3"
+						}
+						"grant_bingo_tokens"
+						{
+							"league_phase"		"2"
+							"token_count"		"3"
+						}
+					}
+				}
+				"5 + 3n"
+				{
+					"grants"
+					{
+						"grant_fantasy_crafting_rolls"
+						{
+							"fantasy_id"		"2"
+							"period"			"2"
+							"rolls"				"3"
+						}
+						"grant_bingo_tokens"
+						{
+							"league_phase"		"3"
+							"token_count"		"3"
+						}
+					}
+				}
+			}
+		}
+
+		"caster_chat_wheel_line_tracker"
+		{
+			"action_id"	"1123"
+			"max_grants"		"999999"
+		}
+		"caster_chat_wheel_line_booster"
+		{
+			"action_id"	"1223"
+			"max_grants"		"999999"
+			"premium_point_cost"	"1"	
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"grants"
+					{
+							"grant_action"			"caster_chat_wheel_line_tracker" 
+							"grant_action"			"aegis_tracker" 
+					}
+				}
+			}
+		}
+		"caster_chat_wheel_line_redemption"
+		{
+			"action_id"	"1133"
+			"max_grants"		"25"
+			"claimable_if_prerequisites_satisfied"	"1"
+			"prerequisite_actions"
+			{
+				"caster_chat_wheel_line_tracker" "6 + 6n"
+			}
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"grants"
+					{
+							"grant_action_list"		"chat_wheel_caster_group"
+					}
+				}
+			}
+		}
+		"team_sticker_tracker"
+		{
+			"action_id"	"1124"
+			"max_grants"		"999999"
+		}
+		"team_sticker_booster"
+		{
+			"action_id"	"1224"
+			"max_grants"		"999999"
+			"premium_point_cost"	"1"		
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"grants"
+					{
+							"grant_action"			"team_sticker_tracker" 
+							"grant_action"			"aegis_tracker" 
+					}
+				}
+			}
+		}
+		"team_sticker_redemption"
+		{
+			"action_id"	"1134"
+			"max_grants"		"999999"
+			"claimable_if_prerequisites_satisfied"	"1"
+			"prerequisite_actions"
+			{
+				"team_sticker_tracker" "10 + 10n"
+			}
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"grants"
+					{
+							"grant_item"			"31603" // Team Sticker
+					}
+				}
+			}
+		}
+
+		"team_loading_screen_tracker"
+		{
+			"action_id"	"1125"
+			"max_grants"		"999999"
+		}
+		"team_loading_screen_booster"
+		{
+			"action_id"	"1225"
+			"max_grants"		"999999"
+			"premium_point_cost"	"1"		
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"grants"
+					{
+							"grant_action"			"team_loading_screen_tracker" 
+							"grant_action"			"aegis_tracker" 
+					}
+				}
+			}
+		}
+		"team_loading_screen_redemption"
+		{
+			"action_id"	"1135"
+			"max_grants"		"16"
+			"claimable_if_prerequisites_satisfied"	"1"
+			"prerequisite_actions"
+			{
+				"team_loading_screen_tracker" "12 + 12n"
+			}
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"grants"
+					{
+							"grant_item"			"32139" // Team Loading Screen Treasure
+					}
+				}
+			}
+		}
+		"ti_loading_screen_tracker"
+		{
+			"action_id"	"1126"
+			"max_grants"		"999999"
+		}
+		"ti_loading_screen_booster"
+		{
+			"action_id"	"1226"
+			"max_grants"		"999999"
+			"premium_point_cost"	"1"		
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"grants"
+					{
+							"grant_action"			"ti_loading_screen_tracker" 
+							"grant_action"			"aegis_tracker" 
+					}
+				}
+			}
+		}
+		"ti_loading_screen_redemption"
+		{
+			"action_id"	"1136"
+			"max_grants"		"5"
+			"claimable_if_prerequisites_satisfied"	"1"
+			"prerequisite_actions"
+			{
+				"ti_loading_screen_tracker" "15 + 15n"
+			}
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"grants"
+					{
+							"grant_item"		"32042" // Loading Screen Treasure
+					}
+				}
+			}
+		}
+		"tp_fx_tracker"
+		{
+			"action_id"	"1127"
+			"max_grants"		"999999"
+		}
+		"tp_fx_booster"
+		{
+			"action_id"	"1227"
+			"max_grants"		"999999"
+			"premium_point_cost"	"1"	
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"grants"
+					{
+							"grant_action"			"tp_fx_tracker" 
+							"grant_action"			"aegis_tracker" 
+					}
+				}
+			}
+		}
+		"tp_fx_redemption"
+		{
+			"action_id"	"1137"
+			"max_grants"		"3"
+			"claimable_if_prerequisites_satisfied"	"1"
+			"prerequisite_actions"
+			{
+				"tp_fx_tracker" "50 + 50n"
+			}
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_effect"
+						{
+							"name"			"#DOTA_TI2017_Reward_Teleport_Effect_1"
+							"image"			"{images}/compendium/international2020/prestigerewards/tp_fx_lv1.png"
+							"effect_index"	"4"
+						}
+					}
+				}
+				"2"
+				{
+					"grants"
+					{
+						"grant_effect"
+						{
+							"name"			"#DOTA_TI2017_Reward_Teleport_Effect_2"
+							"image"			"{images}/compendium/international2020/prestigerewards/tp_fx_lv2.png"
+							"effect_index"	"5"
+						}
+					}
+				}
+				"3"
+				{
+					"grants"
+					{
+						"grant_effect"
+						{
+							"name"			"#DOTA_TI2017_Reward_Teleport_Effect_3"
+							"image"			"{images}/compendium/international2020/prestigerewards/tp_fx_lv3.png"
+							"effect_index"	"6"
+						}
+					}
+				}
+			}
+		}
+		"hud_tracker"
+		{
+			"action_id"	"1128"
+			"max_grants"		"999999"
+		}
+		"hud_booster"
+		{
+			"action_id"	"1228"
+			"max_grants"		"999999"
+			"premium_point_cost"	"1"		
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"grants"
+					{
+							"grant_action"			"hud_tracker" 
+							"grant_action"			"aegis_tracker" 
+					}
+				}
+			}
+		}
+		"hud_redemption"
+		{
+			"action_id"	"1138"
+			"max_grants"		"1"
+			"claimable_if_prerequisites_satisfied"	"1"
+			"prerequisite_actions"
+			{
+				"hud_tracker" "75"
+			}
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"		"30324" // HUD
+					}
+				}
+			}
+		}
+		"legacychatwheel_tracker"
+		{
+			"action_id"	"1129"
+			"max_grants"		"999999"
+		}
+		"legacychatwheel_booster"
+		{
+			"action_id"	"1229"
+			"max_grants"		"999999"
+			"premium_point_cost"	"1"	
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"grants"
+					{
+							"grant_action"			"legacychatwheel_tracker" 
+							"grant_action"			"aegis_tracker" 
+					}
+				}
+			}
+		}
+		"legacychatwheel_redemption"
+		{
+			"action_id"	"1139"
+			"max_grants"		"1"
+			"claimable_if_prerequisites_satisfied"	"1"
+			"prerequisite_actions"
+			{
+				"legacychatwheel_tracker" "225"
+			}
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_permanent_chat_wheel_messages"	"681 - 685"	// Legacy Chat Wheel
+					}
+				}
+			}
+		}
+		"effigy_tracker"
+		{
+			"action_id"	"1151"
+			"max_grants"	"999999"
+		}
+		"effigy_booster"
+		{
+			"action_id"	"1152"
+			"max_grants"		"999999"
+			"premium_point_cost"	"1"	
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"grants"
+					{
+							"grant_action"			"effigy_tracker" 
+							"grant_action"			"aegis_tracker" 
+					}
+				}
+			}
+		}
+		"effigy_redemption"
+		{
+			"action_id"	"1153"
+			"max_grants"		"999999"
+			"claimable_if_prerequisites_satisfied"	"1"
+			"prerequisite_actions"
+			{
+				"effigy_tracker" "25 + 25n"
+			}
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"grants"
+					{
+						"grant_item"			"32114" // TI13 Effigy Block
+					}
+				}
+			}
+		}
+		"versusscreen_tracker"
+		{
+			"action_id"	"1154"
+			"max_grants"		"999999"
+		}
+		"versusscreen_booster"
+		{
+			"action_id"	"1155"
+			"max_grants"		"999999"
+			"premium_point_cost"	"1"	
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"grants"
+					{
+							"grant_action"			"versusscreen_tracker" 
+							"grant_action"			"aegis_tracker" 
+					}
+				}
+			}
+		}
+		"versusscreen_redemption"
+		{
+			"action_id"	"1156"
+			"max_grants"		"1"
+			"claimable_if_prerequisites_satisfied"	"1"
+			"prerequisite_actions"
+			{
+				"versusscreen_tracker" "150"
+			}
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{						
+						"grant_item"			"30323" // TI13 Versus Screen
+					}
+				}
+			}
+		}
+		"aegis_tracker"
+		{
+			"action_id"	"1140"
+			"max_grants"		"999999"
+		}		
+		"aegis_redemption"
+		{
+			"action_id"	"1150"
+			"max_grants"		"1"
+			"claimable_if_prerequisites_satisfied"	"1"
+			"prerequisite_actions"
+			{
+				"aegis_tracker" "300"
+			}
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_item"					"27559" // Physical Aegis
+						"grant_event_notification"		"physical_reward_registration"
+					}
+				}
+			}
+		}
+		
+		// --------------------------------------------------------------------
+		// Fantasy
+		// --------------------------------------------------------------------
+		// CHFLYNN TODO - This should roll forward fine, we jsut need to decide how many points we are awarding for fantasy
+		"fantasy_period_end_reward_0"
+		{
+			"action_id"		"600"
+			"max_grants"		"0"
+			"season_action"		"fantasy_period_end_reward_0"
+		}
+		"fantasy_period_end_reward_25"
+		{
+			"action_id"		"601"
+			"max_grants"		"0"
+			"season_action"		"fantasy_period_end_reward_25"
+		}
+		"fantasy_period_end_reward_50"
+		{
+			"action_id"		"602"
+			"max_grants"		"0"
+			"season_action"		"fantasy_period_end_reward_50"
+		}
+		"fantasy_period_end_reward_75"
+		{
+			"action_id"		"603"
+			"max_grants"		"0"
+			"season_action"		"fantasy_period_end_reward_75"
+		}
+		"fantasy_period_end_reward_90"
+		{
+			"action_id"		"604"
+			"max_grants"		"0"
+			"season_action"		"fantasy_period_end_reward_90"
+		}
+		"fantasy_period_end_reward_99"
+		{
+			"action_id"		"605"
+			"max_grants"		"0"
+			"season_action"		"fantasy_period_end_reward_99"
+		}
+
+		// These exist so we can alias into the correct event action for claiming
+		"fantasy_period_end_reward_0_claimable"
+		{
+			"action_id"		"606"
+			"max_grants"		"0"
+			"season_action"		"fantasy_period_end_reward_0_claimable"
+		}
+		"fantasy_period_end_reward_25_claimable"
+		{
+			"action_id"		"607"
+			"max_grants"		"0"
+			"season_action"		"fantasy_period_end_reward_25_claimable"
+		}
+		"fantasy_period_end_reward_50_claimable"
+		{
+			"action_id"		"608"
+			"max_grants"		"0"
+			"season_action"		"fantasy_period_end_reward_50_claimable"
+		}
+		"fantasy_period_end_reward_75_claimable"
+		{
+			"action_id"		"609"
+			"max_grants"		"0"
+			"season_action"		"fantasy_period_end_reward_75_claimable"
+		}
+		"fantasy_period_end_reward_90_claimable"
+		{
+			"action_id"		"610"
+			"max_grants"		"0"
+			"season_action"		"fantasy_period_end_reward_90_claimable"
+		}
+		"fantasy_period_end_reward_99_claimable"
+		{
+			"action_id"		"611"
+			"max_grants"		"0"
+			"season_action"		"fantasy_period_end_reward_99_claimable"
+		}
+		
+		"#include"		"scripts/events/fantasy/dpc_fantasy_period_claimable.eventactions"
+		
+		// --------------------------------------------------------------------
+		// Bingo
+		// --------------------------------------------------------------------
+		"bingo_row_reward"
+		{
+			// up to 36 rows. 12 rows per bingo board, 3 rows.
+			"action_id_range"			"1300-1335"
+			"max_grants"				"1"
+			
+			"rewards"
+			{
+				"1"
+				{
+					"reward_name"		"#DOTA_BattlePassLog_Bingo"
+					"grants"
+					{
+						"grant_points"		"750"						
+					}
+				}
+			}
+		}
+
+		// --------------------------------------------------------------------
+		// Play matches, get points
+		// --------------------------------------------------------------------
+		"win_matches"
+		{
+			"action_id"		"1400"
+			"max_grants"	"100000"
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"reward_name"		"#DOTA_Compendium2024_WeeklyChallenge_WonMatch"
+
+					"grants"
+					{
+						"grant_periodic_action"
+						{
+							"action"			"daily_win_bonus"
+							"count"				"1"
+							"periodic_resource" "international_2024_daily_win_bonus"
+						}
+						"grant_periodic_points"
+						{
+							"points"	"300"
+							"periodic_resource"	"international_2024_weekly_limit"
+						}
+					}
+				}
+			}
+		}
+		"win_turbo_matches"
+		{
+			"action_id"		"1401"
+			"max_grants"	"100000"
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"reward_name"		"#DOTA_Compendium2024_WeeklyChallenge_WonTurboMatch"
+
+					"grants"
+					{
+						"grant_periodic_action"
+						{
+							"action"			"daily_win_bonus"
+							"count"				"1"
+							"periodic_resource" "international_2024_daily_win_bonus"
+						}
+						"grant_periodic_points"
+						{
+							"points"	"150"
+							"periodic_resource"	"international_2024_weekly_limit"
+						}
+					}
+				}
+			}
+		}
+		"lose_matches"
+		{
+			"action_id"		"1402"
+			"max_grants"	"100000"
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"reward_name"		"#DOTA_Compendium2024_WeeklyChallenge_LostMatch"
+
+					"grants"
+					{
+						"grant_periodic_points"
+						{
+							"points"	"100"
+							"periodic_resource"	"international_2024_weekly_limit"
+						}
+					}
+				}
+			}
+		}
+		"lose_turbo_matches"
+		{
+			"action_id"		"1403"
+			"max_grants"	"100000"
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"reward_name"		"#DOTA_Compendium2024_WeeklyChallenge_LostTurboMatch"
+
+					"grants"
+					{
+						"grant_periodic_points"
+						{
+							"points"	"50"
+							"periodic_resource"	"international_2024_weekly_limit"
+						}
+					}
+				}
+			}
+		}
+		"daily_win_bonus"
+		{
+			"action_id"		"1404"
+			"max_grants"	"100000"
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"reward_name"		"#DOTA_Compendium2024_WeeklyChallenge_DailyBonus"
+
+					"grants"
+					{
+						"grant_periodic_points"
+						{
+							"points"	"1500"
+							"periodic_resource"	"international_2024_weekly_limit"
+						}
+					}
+				}
+			}
+		}
+
+	}
+
+	"seasons"
+	{
+		"period1"
+		{
+			"season_id"		"1"
+			"season_loc_name"		"#DOTA_TeamFandom_Period1_Name"
+			"season_quests"
+			{
+				"season_quests_action_prefix"		"period1_"
+			}
+		}
+		"period2"
+		{
+			"season_id"		"2"
+			"season_loc_name"		"#DOTA_TeamFandom_Period2_Name"
+			"season_quests"
+			{
+				"season_quests_action_prefix"		"period2_"
+			}
+		}
+		"period3"
+		{
+			"season_id"		"3"
+			"season_loc_name"		"#DOTA_TeamFandom_Period3_Name"
+			"season_quests"
+			{
+				"season_quests_action_prefix"		"period3_"
+			}
+		}
+	}
+
+	"fantasy_leaderboard_name"		"DPC_24_TIFantasyScore"
+	"fantasy"
+	{
+		"scoring"
+		{
+			"0"		"129"
+			"1"		"155"
+			"2"		"3"
+			"3"		"2"
+			"4"		"322"
+			"5"		"1126"
+			"6"		"1556"
+			"7"		"114"
+			"8"		"186"
+			"9"		"100"
+			"10"	"1813"
+			"11"	"15"
+			"12"	"283"
+			"13"	"147"
+			"14"	"114"
+			"15"	"197"
+			"16"	"625"
+			"17"	"1086"
+		}
+
+		"rewards"
+		{
+			"end_of_period_actions"
+			{
+				"0"			"600"
+				"25"		"601"
+				"50"		"602"
+				"75"		"603"
+				"90"		"604"
+				"99"		"605"
+			}
+
+			"end_of_period_claims"
+			{
+				"0"			"606"
+				"25"		"607"
+				"50"		"608"
+				"75"		"609"
+				"90"		"610"
+				"99"		"611"
+			}
+		}
+
+		// CHFLYNN TODO - Update these timestamps to be actual match start times to maximize time people have
+		"period_definitions" 
+		{
+			// Group Stage
+			"0"
+			{
+				"start"		"1725433200"
+				"end"		"1725562800"
+				"allowed_leagues"
+				{
+					"LEAGUE_REGION_UNSET"	"16935"
+				}
+			}
+
+			// Playoffs Weekend
+			// CHFLYNN TODO - There is no gap between groups and finals, awkward for fantasy. How should we handle it?
+			"1"
+			{
+				"start"		"1725606000"
+				"end"		"1726038000"
+				"allowed_leagues"
+				{
+					"LEAGUE_REGION_UNSET"	"16935"
+				}
+			}
+
+			// Finals Weekend
+			"2"
+			{
+				"start"		"1726210800"
+				"end"		"1726470000"
+				"allowed_leagues"
+				{
+					"LEAGUE_REGION_UNSET"	"16935"
+				}
+			}
+		}
+	}
+
+}
