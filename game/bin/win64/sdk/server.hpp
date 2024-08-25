@@ -11894,6 +11894,7 @@ private:
 	[[maybe_unused]] uint8_t __pad063d[0x3]; // 0x63d
 public:
 	int32_t m_nCombineVersion; // 0x640	
+	CHandle< CDOTA_BaseNPC > m_hPrevCaster; // 0x644	
 };
 
 // Registered binary: server.dll (project 'server')
