@@ -33686,12 +33686,12 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x678
+// Size: 0x680
 // Has VTable
 class C_DOTA_Item_HandOfMidas : public C_DOTA_Item
 {
 public:
-	// No schema binary for binding
+	C_DOTA_UnitInventory* m_pLastEquippedInventory; // 0x678	
 };
 
 // Registered binary: client.dll (project 'client')
