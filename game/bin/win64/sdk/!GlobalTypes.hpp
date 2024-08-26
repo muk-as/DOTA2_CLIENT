@@ -5950,7 +5950,7 @@ enum class CNmTargetInfoNode__Info_t : uint32_t
 };
 
 // Registered binary: client.dll (project 'client')
-// Enumerator count: 9
+// Enumerator count: 10
 // Alignment: 4
 // Size: 0x4
 enum class EBingoAuditAction : uint32_t
@@ -5964,6 +5964,7 @@ enum class EBingoAuditAction : uint32_t
 	k_eBingoAuditAction_UpgradeSquare = 0x6,
 	k_eBingoAuditAction_ClaimRow = 0x7,
 	k_eBingoAuditAction_EventActionTokenGrant = 0x8,
+	k_eBingoAuditAction_SupportGrantTokens = 0x9,
 };
 
 // Registered binary: server.dll (project 'server')
