@@ -33691,7 +33691,7 @@ public:
 class C_DOTA_Item_HandOfMidas : public C_DOTA_Item
 {
 public:
-	C_DOTA_UnitInventory* m_pLastEquippedInventory; // 0x678	
+	CHandle< C_DOTA_BaseNPC > m_hPrevMidasOwner; // 0x678	
 };
 
 // Registered binary: client.dll (project 'client')
