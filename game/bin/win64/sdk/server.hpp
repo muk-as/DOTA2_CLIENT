@@ -4,7 +4,7 @@
 
 // /////////////////////////////////////////////////////////////
 // Binary: server.dll
-// Classes count: 6,841 (Allocated) | 7,095 (Unallocated)
+// Classes count: 6,842 (Allocated) | 7,096 (Unallocated)
 // Enums count: 5 (Allocated) | 352 (Unallocated)
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
@@ -28284,6 +28284,16 @@ public:
 
 // Registered binary: server.dll (project 'server')
 // Alignment: 8
+// Size: 0x5a0
+// Has VTable
+class CDOTA_Ability_Earthshaker_Slugger : public CDOTABaseAbility
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
 // Size: 0x16c8
 // Has VTable
 class CDOTA_Modifier_NotOnMinimap : public CDOTA_Buff
@@ -47810,7 +47820,7 @@ public:
 
 // Registered binary: server.dll (project 'server')
 // Alignment: 8
-// Size: 0x16d8
+// Size: 0x16e0
 // Has VTable
 class CDOTA_Modifier_PhantomLancer_PhantomEdge_Boost : public CDOTA_Buff
 {
@@ -47822,6 +47832,7 @@ private:
 	[[maybe_unused]] uint8_t __pad16d1[0x3]; // 0x16d1
 public:
 	CHandle< CBaseEntity > m_hTarget; // 0x16d4	
+	int32_t bonus_agility; // 0x16d8	
 };
 
 // Registered binary: server.dll (project 'server')
@@ -80577,16 +80588,6 @@ public:
 
 // Registered binary: server.dll (project 'server')
 // Alignment: 8
-// Size: 0x16e0
-// Has VTable
-class CDOTA_Modifier_Earthshaker_EnchantTotem_Intrinsic : public CDOTA_Buff
-{
-public:
-	CUtlVector< int16 > m_EnchantTotemAttackRecords; // 0x16c8	
-};
-
-// Registered binary: server.dll (project 'server')
-// Alignment: 8
 // Size: 0x5a0
 // Has VTable
 class CDOTA_Ability_Bane_Enfeeble : public CDOTABaseAbility
@@ -100807,6 +100808,16 @@ class CDOTA_Modifier_VengefulSpirit_Command_Aura : public CDOTA_Buff
 {
 public:
 	float aura_radius; // 0x16c8	
+};
+
+// Registered binary: server.dll (project 'server')
+// Alignment: 8
+// Size: 0x16e0
+// Has VTable
+class CDOTA_Modifier_Earthshaker_Slugger_Intrinsic : public CDOTA_Buff
+{
+public:
+	CUtlVector< int16 > m_EnchantTotemAttackRecords; // 0x16c8	
 };
 
 // Registered binary: server.dll (project 'server')

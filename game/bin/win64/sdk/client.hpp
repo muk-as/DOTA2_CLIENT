@@ -4,7 +4,7 @@
 
 // /////////////////////////////////////////////////////////////
 // Binary: client.dll
-// Classes count: 6,607 (Allocated) | 6,716 (Unallocated)
+// Classes count: 6,608 (Allocated) | 6,717 (Unallocated)
 // Enums count: 2 (Allocated) | 91 (Unallocated)
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
@@ -38602,7 +38602,7 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x16d8
+// Size: 0x16e0
 // Has VTable
 class CDOTA_Modifier_PhantomLancer_PhantomEdge_Boost : public CDOTA_Buff
 {
@@ -38614,6 +38614,7 @@ private:
 	[[maybe_unused]] uint8_t __pad16d1[0x3]; // 0x16d1
 public:
 	CHandle< C_BaseEntity > m_hTarget; // 0x16d4	
+	int32_t bonus_agility; // 0x16d8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -54306,6 +54307,16 @@ public:
 // Alignment: 8
 // Size: 0x5d8
 // Has VTable
+class C_DOTA_Ability_Earthshaker_Slugger : public C_DOTABaseAbility
+{
+public:
+	// No schema binary for binding
+};
+
+// Registered binary: client.dll (project 'client')
+// Alignment: 8
+// Size: 0x5d8
+// Has VTable
 class CDOTA_Ability_MudGolem_RockDestroy : public C_DOTABaseAbility
 {
 public:
@@ -67870,16 +67881,6 @@ class CDOTA_Modifier_Beastmaster_InnerBeast_Berserk : public CDOTA_Buff
 {
 public:
 	int32_t berserk_bonus_attack_speed; // 0x16c8	
-};
-
-// Registered binary: client.dll (project 'client')
-// Alignment: 8
-// Size: 0x16e0
-// Has VTable
-class CDOTA_Modifier_Earthshaker_EnchantTotem_Intrinsic : public CDOTA_Buff
-{
-public:
-	CUtlVector< int16 > m_EnchantTotemAttackRecords; // 0x16c8	
 };
 
 // Registered binary: client.dll (project 'client')
@@ -86527,6 +86528,16 @@ class CDOTA_Modifier_VengefulSpirit_Command_Aura : public CDOTA_Buff
 {
 public:
 	float aura_radius; // 0x16c8	
+};
+
+// Registered binary: client.dll (project 'client')
+// Alignment: 8
+// Size: 0x16e0
+// Has VTable
+class CDOTA_Modifier_Earthshaker_Slugger_Intrinsic : public CDOTA_Buff
+{
+public:
+	CUtlVector< int16 > m_EnchantTotemAttackRecords; // 0x16c8	
 };
 
 // Registered binary: client.dll (project 'client')
