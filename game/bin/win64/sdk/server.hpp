@@ -71315,6 +71315,7 @@ class CDOTA_Item_HandOfMidas : public CDOTA_Item
 {
 public:
 	CHandle< CDOTA_BaseNPC > m_hPrevMidasOwner; // 0x648	
+	int32_t m_PrevMainSlot; // 0x64c	
 };
 
 // Registered binary: server.dll (project 'server')
