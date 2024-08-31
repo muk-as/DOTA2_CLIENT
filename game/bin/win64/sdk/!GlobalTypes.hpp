@@ -8650,7 +8650,7 @@ enum class ESpecialPingValue : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
-// Enumerator count: 943
+// Enumerator count: 945
 // Alignment: 4
 // Size: 0x4
 enum class EDOTAGCMsg : uint32_t
@@ -9598,6 +9598,8 @@ enum class EDOTAGCMsg : uint32_t
 	k_EMsgClientToGCBingoDevAddTokensResponse = 0x232c,
 	k_EMsgClientToGCBingoDevClearInventory = 0x232d,
 	k_EMsgClientToGCBingoDevClearInventoryResponse = 0x232e,
+	k_EMsgGCCompendiumRemoveAllSelections = 0x232f,
+	k_EMsgGCCompendiumRemoveAllSelectionsResponse = 0x2330,
 };
 
 // Registered binary: particles.dll (project 'particles')

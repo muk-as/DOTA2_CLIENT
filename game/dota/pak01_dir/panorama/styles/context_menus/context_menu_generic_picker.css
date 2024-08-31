@@ -373,24 +373,30 @@ DOTAPlayerImage.IsInactive
 
 .TeamCategory .TeamImage
 {
-	height: 92px;
-	width: 92px;
-	margin: 8px 8px 8px 8px;
+	height: 100px;
+	width: 100px;
+	margin: 2px;
+	padding: 12px;
+	background-color: rgba(10, 15, 21, 0.3);
+	border: 1px solid rgba(206, 236, 255, 0);
 	tooltip-position: top;
 	tooltip-body-position: 50% 50%;
-	transition-property: transform;
-	transition-duration: 0.1s;
+	transition-property: transform, border, background-color;
+	transition-duration: 0.05s, 0.1s;
+}
+
+.TeamCategory .TeamImage Image
+{
+	img-shadow: 0px 4px 16px rgb(0, 0, 0);
 }
 
 .TeamCategory .TeamImage.AlreadySelected
 {
-	brightness: 0.1;
-	saturation: 0;
+	opacity: 0.1;
 }
 
 .TeamCategory .TeamImage.CurrentSelection
 {
-	transform: translateY( -4px);
 	brightness: 1.1;
 }
 
@@ -468,16 +474,21 @@ DOTAPlayerImage.IsInactive
 
 .TeamCategory .TeamImage:enabled:hover
 {
-	brightness: 1.1;
-	contrast: 0.95;
-	saturation: 1;
-	transform: translateY( -4px);
+	background-color: rgba(10, 15, 21, 0.7);
+	border: 1px solid rgba(206, 236, 255, 0.1);
+}
+
+.TeamCategory .TeamImage:enabled:active
+{
+	transform: scale3d( 0.96, 0.96, 1 );
+	brightness: 0.5;
 }
 
 .TeamCategory .TeamImage.AlreadySelected:enabled:hover
 {
 	brightness: 1;
 	saturation: 1;
+	border: 1px solid rgba(206, 236, 255, 0);
 }
 
 .LargeTeamPicker .HeroCategory .TeamImage

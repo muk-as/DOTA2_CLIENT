@@ -110,7 +110,7 @@ DOTABPInternational2024PredictionsPage.DashboardPage
 .StageContainer
 {
 	flow-children: down;
-	background-color: gradient( linear, 0% 0%, 0% 100%, from( #041a13e1 ), to( #07251a00 ) );
+	background-color: rgba(62, 177, 118, 0.02);
 	box-shadow: inset 0px 0px 1px 1px rgba(200, 255, 226, 0.01);
 	margin-right: 8px;
 }
@@ -304,11 +304,6 @@ DOTABPInternational2024PredictionsPage.DashboardPage
 	flow-children: down;
 }
 
-.MatchContainer.Inactive
-{
-	opacity: 0.5;
-}
-
 .WinnersAegis
 {
 	width: SlotWidth;
@@ -326,13 +321,25 @@ International2024PredictionGroup .GroupTeamSlot
 	margin-bottom: 6px;
 }
 
+.Winner0 .Team1
+{
+	z-index: 1;
+}
+
+.Winner1 .Team2
+{
+	z-index: 1;
+}
+
 .GroupTeamSlot
 {
 	flow-children: right;
-	background-color: gradient( linear, 0% 0%, 0% 100%, from( #1c1416 ), to( #2b1c1f ));
-	border: 1px solid #543d3f;
+	background-color: #2d1d21;
+	border: 1px solid #6b4a4d63;
 	width: SlotWidth;
 	height: SlotHeight;
+	box-shadow: 0px 4px 24px -2px rgba(0, 0, 0, 0.5);
+	padding-left: 6px;
 	transition-property: border;
 	transition-duration: 0.1s;
 }
@@ -349,16 +356,22 @@ International2024PredictionGroup .GroupTeamSlot
 
 .GroupTeamSlot Label
 {
-	color: LighterGrey;
+	color: rgba(255, 210, 210, 0.5);
 }
 
 .GroupTeamSlot .TeamRank
 {
-	width: 45px;
-	text-align: right;
-	padding-right: 8px;
+	width: 34px;
+	padding-left: 6px;
 	vertical-align: middle;
-	font-weight: semi-bold;
+	font-size: 12px;
+	text-transform: uppercase;
+	color: rgb(188, 134, 134);
+	ignore-parent-flow: true;
+	text-align: right;
+	horizontal-align: right;
+	margin-right: 4px;
+	opacity: 0.5;
 }
 
 .GroupTeamSlot .GroupTeam
@@ -371,6 +384,8 @@ International2024PredictionGroup .GroupTeamSlot
 {
 	visibility: collapse;
 	vertical-align: middle;
+	padding: 2px 12px;
+	margin-left: -12px;
 }
 
 .GroupTeamSlot.NoTeam .NoTeamMark
@@ -383,33 +398,29 @@ International2024PredictionGroup .GroupTeamSlot
 	visibility: collapse;
 }
 
-.GroupTeamSlot.Active
+.GroupTeamSlot.Active .NoTeamMark
 {
-	border-color: white;
-	border-brush: gradient( linear, 0% 0%, 0% 100%, from( #e4c989 ), to( #a08b58 ) );
-	animation-name: GlowActiveTeamSelector;
+	color: #ffe09c;
+	text-decoration: underline;
+	animation-name: GlowActiveTeamLabel;
 	animation-duration: 0.8s;
 	animation-iteration-count: infinite;
 	animation-timing-function: ease-in-out;
 	animation-direction: alternate-reverse;
 }
 
-.GroupTeamSlot.Inactive,.Locked .GroupTeamSlot.Active
+.GroupTeamSlot.Active .NoTeamMark:hover
 {
-	border-color: primaryColor2&11;
-	background-color: primaryColor6;
-	brightness: 0.5;
-}
-
-.GroupTeamSlot.Inactive Label,.Locked .GroupTeamSlot.Active Label
-{
-	color: LightGrey;
+	color: white;
 }
 
 .GroupTeamSlot DOTATeamImage
 {
-	width: 32px;
-	height: 32px;
+	width: 20px;
+	height: 20px;
+	vertical-align: center;
+	margin-right: 6px;
+	margin-right: 6px;
 }
 
 .GroupTeamSlot .TeamName
@@ -434,33 +445,14 @@ International2024PredictionGroup .GroupTeamSlot
 	background-size: contain;
 	background-position: center;
 	background-repeat: no-repeat;
-}
-
-.GroupTeamSlot:hover:not(.GroupTeamSlot.Inactive)
-{
-	border-color: white;
-}
-
-.GroupTeamSlot:hover:not(.GroupTeamSlot.Inactive) Label
-{
-	color: white;
-}
-
-.NoData .GroupTeamSlot:hover:not(.GroupTeamSlot.Inactive),.Locked .GroupTeamSlot:hover:not(.GroupTeamSlot.Inactive)
-{
-	border-color: primaryColor2&44;
-}
-
-.NoData .GroupTeamSlot:hover:not(.GroupTeamSlot.Inactive) Label,.Locked .GroupTeamSlot:hover:not(.GroupTeamSlot.Inactive) Label
-{
-	color: LighterGrey;
+	ignore-parent-flow: true;
+	margin-right: 28px;
 }
 
 .GroupTeamSlot.Correct,.GroupTeamSlot.OpponentCorrect
 {
 	border-color: winnerGreen&44;
 	background-color: winnerGreen&11;
-	box-shadow: 0px 0px 16px winnerGreen&09;
 }
 
 .GroupTeamSlot.Correct Label,.GroupTeamSlot.OpponentCorrect Label
@@ -477,9 +469,8 @@ International2024PredictionGroup .GroupTeamSlot
 
 .GroupTeamSlot.Incorrect,.GroupTeamSlot.OpponentIncorrect
 {
-	border-color: loserRed&44;
-	background-color: loserRed&11;
-	box-shadow: 0px 0px 16px loserRed&09;
+	border-color: #97312a;
+	background-color: #531814;
 }
 
 .GroupTeamSlot.Incorrect Label,.GroupTeamSlot.OpponentIncorrect Label
@@ -494,6 +485,16 @@ International2024PredictionGroup .GroupTeamSlot
 	wash-color: loserRed;
 }
 
+.Team2 .TeamName,International2024PredictionGroup .TeamName
+{
+	text-decoration: underline;
+}
+
+.Team2 .TeamName:hover,International2024PredictionGroup .TeamName:hover
+{
+	color: white;
+}
+
 International2024PredictionSeries
 {
 	flow-children: down;
@@ -501,20 +502,53 @@ International2024PredictionSeries
 	box-shadow: 0px 4px 24px -2px rgba(0, 0, 0, 0.5);
 }
 
-International2024PredictionSeries.NoData,International2024PredictionSeries.Locked
+International2024PredictionSeries .GroupTeamSlot
 {
-	brightness: 0.5;
+	box-shadow: none;
+}
+
+International2024PredictionSeries .GroupTeamSlot
+{
+	background-color: #0b120f;
+	border: 1px solid #51373a63;
+}
+
+International2024PredictionSeries.HasTeam0 #Slot0,International2024PredictionSeries.HasTeam1 #Slot1,International2024PredictionSeries .GroupTeamSlot.Active
+{
+	background-color: #2d1d21;
+	border: 1px solid #6b4a4d63;
+}
+
+International2024PredictionSeries.Winner0 #Slot0,International2024PredictionSeries.Winner1 #Slot1
+{
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( #56432d ), to( #674b2f ) );
+	border: 1px solid rgba(255, 255, 255, 0.16);
+	border-brush: gradient( linear, 100% 0%, 0% 0%, from( #ffe7b0 ), color-stop( 0.5, #e8c57a ), to( #9e8143 ) );
+	box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.3);
+	z-index: 1;
+}
+
+International2024PredictionSeries.Winner0 #Slot0 .TeamName,International2024PredictionSeries.Winner1 #Slot1 .TeamName
+{
+	color: white;
+	text-shadow: 0px 1px 6px black;
 }
 
 International2024PredictionSeries.Winner0 #Crown0,International2024PredictionSeries.Winner1 #Crown1
 {
-	brightness: 1.2;
+	background-img-opacity: 1;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #ffe7b0 ), color-stop( 0.5, #e8c57a ), to( #9e8143 ) );
+	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+International2024PredictionSeries.Winner0 #Crown0:hover,International2024PredictionSeries.Winner1 #Crown1:hover
+{
+	border: 0px;
 }
 
 International2024PredictionSeries.Winner0.WinnerCorrect #Crown0,International2024PredictionSeries.Winner1.WinnerCorrect #Crown1
 {
 	wash-color: winnerGreen;
-	img-shadow: 0px 0px 16px winnerGreen&33;
 }
 
 International2024PredictionSeries.Winner0.WinnerCorrect #CrownResultIcon0,International2024PredictionSeries.Winner1.WinnerCorrect #CrownResultIcon1
@@ -535,28 +569,54 @@ International2024PredictionSeries.Winner0.WinnerIncorrect #CrownResultIcon0,Inte
 	wash-color: loserRed;
 }
 
+International2024PredictionSeries .GroupTeamSlot.NoTeam .Crown
+{
+	opacity: 0.2;
+}
+
+International2024PredictionSeries .GroupTeamSlot.NoTeam .Crown:hover
+{
+	border: 1px solid rgba(237, 180, 180, 0.2);
+}
+
 International2024PredictionSeries .Crown
 {
 	horizontal-align: right;
 	vertical-align: middle;
-	height: 24px;
-	width: 24px;
-	margin-left: 4px;
-	background-image: url("s2r://panorama/images/hud/player_mvp_crown_png.vtex");
+	height: 16px;
+	width: 16px;
+	margin-right: 3px;
+	background-image: url("s2r://panorama/images/compendium/international2024/crown.vsvg");
 	background-repeat: no-repeat;
-	background-size: contain;
-	brightness: 0.2;
-	transition-property: brightness;
+	background-size: 80%;
+	background-position: center;
+	background-texture-size: 40px;
+	background-img-opacity: 0;
+	border-radius: 50%;
+	background-color: black;
+	border: 1px solid rgba(237, 180, 180, 0.2);
+	transition-property: border, background-img-opacity, background-color;
 	transition-duration: 0.1s;
+}
+
+International2024PredictionSeries .Crown:hover
+{
+	border: 1px solid white;
 }
 
 International2024PredictionSeries.CrownsActive .Crown
 {
+	border: 1px solid #e7c57b;
 	animation-name: GlowActiveCrownSelector;
 	animation-duration: 0.8s;
 	animation-iteration-count: infinite;
 	animation-timing-function: ease-in-out;
 	animation-direction: alternate-reverse;
+}
+
+International2024PredictionSeries.CrownsActive .Crown:hover
+{
+	border: 1px solid white;
 }
 
 International2024PredictionSeries .GroupTeamRow
@@ -604,13 +664,19 @@ International2024PredictionSeries .GroupTeamSlot .GroupTeam
 {
 	flow-children: right;
 	width: fill-parent-flow(1);
-	padding-left: 8px;
 }
 
 International2024PredictionSeries .GroupTeamSlot .GroupTeam DOTATeamImage
 {
-	width: 32px;
-	height: 32px;
+	width: 20px;
+	height: 20px;
+	vertical-align: center;
+	margin-right: 6px;
+}
+
+International2024PredictionSeries .GroupTeamSlot .GroupTeam DOTATeamImage Image
+{
+	img-shadow: 0px 0.5px 2px black;
 }
 
 International2024PredictionSeries .GroupTeamSlot .GroupTeam .TeamName
@@ -654,14 +720,28 @@ BracketPrediction.TI2024
 {
 	0%
 	{
-		brightness: 1;
 		box-shadow: 0px 0px 12px #E5C88700;
 	}
 	
 	100%
 	{
-		brightness: 2;
 		box-shadow: 0px 0px 24px #E5C88722;
+	}
+	
+}
+
+@keyframes 'GlowActiveTeamLabel'
+{
+	0%
+	{
+		brightness: 1;
+		text-shadow: 0px 0px 12px #E5C88700;
+	}
+	
+	100%
+	{
+		brightness: 2;
+		text-shadow: 0px 0px 12px #E5C88766;
 	}
 	
 }
@@ -670,12 +750,14 @@ BracketPrediction.TI2024
 {
 	0%
 	{
-		brightness: 0.2;
+		box-shadow: 0px 0px 12px #E5C88700;
+		transform: scale3d( 0.9, 0.9, 1 );
 	}
 	
 	100%
 	{
-		brightness: 1.5;
+		brightness: 3;
+		box-shadow: 0px 0px 24px #E5C88722;
 	}
 	
 }
@@ -691,7 +773,7 @@ BracketPrediction.TI2024
 	visibility: collapse;
 }
 
-.Locked .LockIcon
+.Inactive .LockIcon
 {
 	visibility: visible;
 }
@@ -701,18 +783,9 @@ International2024PredictionSeries .GroupTeamRow .GroupTeamSlot .GroupTeam,Intern
 	visibility: visible;
 }
 
-.Locked International2024PredictionSeries .GroupTeamRow .GroupTeamSlot .GroupTeam,.Locked International2024PredictionSeries .GroupTeamRow .GroupTeamSlot .ResultIcon,.Locked International2024PredictionSeries .GroupTeamRow .Crown,.Locked International2024PredictionSeries .GroupTeamRow .CrownResultIcon
+.Inactive International2024PredictionSeries .GroupTeamRow .GroupTeamSlot .GroupTeam,.Inactive International2024PredictionSeries .GroupTeamRow .GroupTeamSlot .ResultIcon,.Inactive International2024PredictionSeries .GroupTeamRow .Crown,.Inactive International2024PredictionSeries .GroupTeamRow .CrownResultIcon
 {
 	visibility: collapse;
-}
-
-.FullBracketContainer .StageContainer:not(.Locked) International2024PredictionSeries .GroupTeamRow #Slot0
-{
-	background-color: #383737;
-	border-top: 1px solid #5b5b5b;
-	border-bottom: 1px solid #262525;
-	border-left: 1px solid #2e2d2d;
-	border-right: 1px solid #2e2d2d;
 }
 
 International2024PredictionGroup .TeamRank,International2024PredictionGroup .GroupTeam,International2024PredictionGroup .ResultIcon
@@ -720,7 +793,7 @@ International2024PredictionGroup .TeamRank,International2024PredictionGroup .Gro
 	visibility: visible;
 }
 
-.Locked International2024PredictionGroup .TeamRank,.Locked International2024PredictionGroup .GroupTeam,.Locked International2024PredictionGroup .ResultIcon
+.Inactive International2024PredictionGroup .TeamRank,.Inactive International2024PredictionGroup .GroupTeam,.Inactive International2024PredictionGroup .ResultIcon
 {
 	visibility: collapse;
 }
@@ -728,5 +801,20 @@ International2024PredictionGroup .TeamRank,International2024PredictionGroup .Gro
 #GroupStageContainer
 {
 	visibility: collapse;
+}
+
+.LockedPanel
+{
+	width: 100%;
+	height: 100%;
+	ignore-parent-flow: true;
+	background-color: rgba(11, 39, 29, 0.5);
+	margin-top: 66px;
+	visibility: collapse;
+}
+
+.Locked .LockedPanel
+{
+	visibility: visible;
 }
 
