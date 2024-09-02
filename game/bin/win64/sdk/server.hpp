@@ -54070,7 +54070,7 @@ public:
 
 // Registered binary: server.dll (project 'server')
 // Alignment: 8
-// Size: 0x1720
+// Size: 0x1738
 // Has VTable
 class CDOTA_Modifier_Windrunner_UnfocusedFire : public CDOTA_Buff
 {
