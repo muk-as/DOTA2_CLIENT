@@ -15397,7 +15397,7 @@ enum class ParticleEndcapMode_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
-// Enumerator count: 18
+// Enumerator count: 22
 // Alignment: 4
 // Size: 0x4
 enum class EBadgeType : uint32_t
@@ -15420,6 +15420,10 @@ enum class EBadgeType : uint32_t
 	k_EBadgeType_TI12_PlayoffsDay3 = 0xf,
 	k_EBadgeType_TI12_FinalsWeekend = 0x10,
 	k_EBadgeType_TI12_Special = 0x11,
+	k_EBadgeType_TI13_FinalsDay1 = 0x12,
+	k_EBadgeType_TI13_FinalsDay2 = 0x13,
+	k_EBadgeType_TI13_FinalsDay3 = 0x14,
+	k_EBadgeType_TI13_Special = 0x15,
 };
 
 // Registered binary: animationsystem.dll (project 'animgraphlib')

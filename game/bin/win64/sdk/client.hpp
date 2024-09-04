@@ -54786,15 +54786,16 @@ public:
 
 // Registered binary: client.dll (project 'client')
 // Alignment: 8
-// Size: 0x16f8
+// Size: 0x1700
 // Has VTable
 class CDOTA_Modifier_Sniper_Shrapnel_Slow : public CDOTA_Buff
 {
 public:
 	int32_t slow_movement_speed; // 0x16e8	
 	float shrapnel_damage; // 0x16ec	
-	int32_t m_nTracker; // 0x16f0	
-	bool bFirst; // 0x16f4	
+	int32_t fast_tick; // 0x16f0	
+	int32_t m_nTracker; // 0x16f4	
+	bool bFirst; // 0x16f8	
 };
 
 // Registered binary: client.dll (project 'client')

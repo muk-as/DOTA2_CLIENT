@@ -6232,7 +6232,7 @@ enum class CourierState_t : uint32_t
 };
 
 // Registered binary: server.dll (project 'server')
-// Enumerator count: 18
+// Enumerator count: 22
 // Alignment: 4
 // Size: 0x4
 enum class EBadgeType : uint32_t
@@ -6255,6 +6255,10 @@ enum class EBadgeType : uint32_t
 	k_EBadgeType_TI12_PlayoffsDay3 = 0xf,
 	k_EBadgeType_TI12_FinalsWeekend = 0x10,
 	k_EBadgeType_TI12_Special = 0x11,
+	k_EBadgeType_TI13_FinalsDay1 = 0x12,
+	k_EBadgeType_TI13_FinalsDay2 = 0x13,
+	k_EBadgeType_TI13_FinalsDay3 = 0x14,
+	k_EBadgeType_TI13_Special = 0x15,
 };
 
 // Registered binary: server.dll (project 'server')
@@ -64856,15 +64860,16 @@ public:
 
 // Registered binary: server.dll (project 'server')
 // Alignment: 8
-// Size: 0x16f8
+// Size: 0x1700
 // Has VTable
 class CDOTA_Modifier_Sniper_Shrapnel_Slow : public CDOTA_Buff
 {
 public:
 	int32_t slow_movement_speed; // 0x16e8	
 	float shrapnel_damage; // 0x16ec	
-	int32_t m_nTracker; // 0x16f0	
-	bool bFirst; // 0x16f4	
+	int32_t fast_tick; // 0x16f0	
+	int32_t m_nTracker; // 0x16f4	
+	bool bFirst; // 0x16f8	
 };
 
 // Registered binary: server.dll (project 'server')
