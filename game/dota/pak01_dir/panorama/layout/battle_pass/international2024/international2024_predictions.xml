@@ -62,11 +62,11 @@
 			</TabButton>
 		</Panel>
 		<Image class="OrcaleBackground" src="s2r://panorama/images/compendium/international2024/predictions_background_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
-		<Panel class="MainContents BPSharedPageContainer NewPredictions" hittest="false">
+		<Panel class="MainContents BPSharedPageContainer NewPredictions ShowLBR2Error" hittest="false">
 			<Panel class="Header BPSharedHeaderContainer">
 				<Label class="BPTitle" text="#DOTA_OraclesChallenge_OraclesChallenge" />
 				<Label class="BPPageDescription" text="#DOTA_International2024_Predictions_Description" />
-				<DOTAInternational2024Button class="HowToPlayButton TextOnly" text="#DOTA_HowToPlay" onactivate="Predictions2024ToggleHelp()" />
+				<DOTAInternational2024Button class="HowToPlayButton TextOnly" text="#DOTA_HowToPlay" onactivate="DOTAPredictions2024ToggleHelp()" />
 			</Panel>
 			<Panel class="UnavailableContainer">
 				<Panel class="LockIconContainer">
@@ -80,9 +80,17 @@
 					<Panel class="StageTitleContainer">
 						<Panel class="TitleTexture" />
 						<Label class="StageName WhiteText" text="#DOTA_International2024_RoadToTI" />
-						<DOTACountdown id="Countdown" class="LeftRightFlow" server-time="true">
-							<Label id="CountdownLabel" class="StageLock" text="#DOTA_OraclesChallenge_AvailableCountdown" />
-						</DOTACountdown>
+						<Panel class="CountdownContainer">
+							<DOTACountdown id="Countdown" class="LeftRightFlow" server-time="true">
+								<Label id="CountdownLabel" class="StageLock" text="#DOTA_OraclesChallenge_AvailableCountdown" />
+							</DOTACountdown>
+							<Panel id="RoadToTIStageResults" class="StageResultsContainer">
+								<Image class="CheckIcon" scaling="stretch-to-fit-preserve-aspect" src="s2r://panorama/images/control_icons/24px/check.vsvg" />
+								<Label class="CorrectPredictionsCount" text="#DOTA_OraclesChallenge_Predicted_RoadToTI" />
+								<Label class="PointsEarnedValue" text="#DOTA_OraclesChallenge_PointsValue_RoadToTI" />
+								<Panel class="PointsEarnedIcon" />
+							</Panel>
+						</Panel>
 					</Panel>
 					<Panel class="LeftRightFlow StageMainContainer">
 						<Panel class="StageColumnsContainer">
@@ -234,7 +242,7 @@
 									<Panel style="height: 72px;" />
 									<Panel class="Line" />
 								</Panel>
-								<Panel class="StageColumn">
+								<Panel class="StageColumn" id="LowerBracketRound2">
 									<Label class="RoundTitle" text="#DOTA_Bracket_LowerBracketRound2" />
 									<Panel class="MatchContainer">
 										<Label class="DayDate" text="#DOTA_International2024_Predictions_Date_Sep9" />
@@ -269,14 +277,28 @@
 						</Panel>
 					</Panel>
 					<Panel class="LockedPanel" />
+					<Panel id="LowerBracketRound2ErrorMessage">
+						<Image class="ErrorMessageImage" src="s2r://panorama/images/compendium/international2024/oracle_prayer_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+						<Label class="ErrorMessageTitle" text="#DOTA_OraclesChallenge_LBR2ErrorTitle" />
+						<Label class="ErrorMessageDescription" html="true" text="#DOTA_OraclesChallenge_LBR2ErrorDescription" />
+						<Label class="LabelLink" text="#DOTA_OraclesChallenge_LBR2ErrorLearnMore" onmouseover="UIShowTextTooltip( #DOTA_OraclesChallenge_LBR2ErrorTooltip )" onmouseout="UIHideTextTooltip()" />
+					</Panel>
 				</Panel>
 				<Panel id="FinalsContainer" class="StageContainer FinalsContainer">
 					<Panel class="StageTitleContainer">
 						<Panel class="TitleTexture" />
 						<Label class="StageName WhiteText" text="#DOTA_OraclesChallenge_MainEvent" />
-						<DOTACountdown id="Countdown" class="LeftRightFlow" server-time="true">
-							<Label id="CountdownLabel" class="StageLock" text="#DOTA_OraclesChallenge_AvailableCountdown" />
-						</DOTACountdown>
+						<Panel class="CountdownContainer">
+							<DOTACountdown id="Countdown" class="LeftRightFlow" server-time="true">
+								<Label id="CountdownLabel" class="StageLock" text="#DOTA_OraclesChallenge_AvailableCountdown" />
+							</DOTACountdown>
+							<Panel id="MainEventStageResults" class="StageResultsContainer">
+								<Image class="CheckIcon" scaling="stretch-to-fit-preserve-aspect" src="s2r://panorama/images/control_icons/24px/check.vsvg" />
+								<Label class="CorrectPredictionsCount" text="#DOTA_OraclesChallenge_Predicted_MainEvent" />
+								<Label class="PointsEarnedValue" text="#DOTA_OraclesChallenge_PointsValue_MainEvent" />
+								<Panel class="PointsEarnedIcon" />
+							</Panel>
+						</Panel>
 					</Panel>
 					<Panel class="LeftRightFlow StageMainContainer">
 						<Panel class="TopBottomFlow">
@@ -431,6 +453,42 @@
 					</Panel>
 					<Panel class="LockedPanel" />
 				</Panel>
+			</Panel>
+		</Panel>
+		<Panel class="ResultsPopupContainer">
+			<Panel class="ResultsPopupDarkness" />
+			<Panel class="ResultsPopup">
+				<Panel class="ResultsPopupBackground" />
+				<Panel class="ResultsPopupContents">
+					<Label class="LabelLarge GoldText ResultsSubHeader RTTI" text="#DOTA_International2024_RoadToTI" />
+					<Label class="LabelLarge GoldText ResultsSubHeader MainEvent" text="#DOTA_International2024_MainEvent" />
+					<Label class="TitleLarge GoldText ResultsTitle" text="#DOTA_OraclesChallenge_YourPredictionsLabel" />
+					<Panel class="ResultsContainer">
+						<Panel class="CorrectResultsContainer">
+							<Label class="BodyMedium ResultStatLabel" text="#DOTA_OraclesChallenge_CorrectPredictions" />
+							<Panel class="ResultsStatsContainer">
+								<Label class="TitleLarge ResultStatValue RTTI" text="{d:road_to_ti_correct}" />
+								<Label class="TitleLarge ResultStatValue MainEvent" text="{d:main_event_correct}" />
+								<Image class="ResultStatIcon" src="s2r://panorama/images/control_icons/24px/check.vsvg" texturewidth="48px" textureheight="48px" />
+							</Panel>
+						</Panel>
+						<Panel class="IncorrectResultsContainer">
+							<Label class="BodyMedium ResultStatLabel" text="#DOTA_OraclesChallenge_IncorrectPredictions" />
+							<Panel class="ResultsStatsContainer">
+								<Label class="TitleLarge ResultStatValue RTTI" text="{d:road_to_ti_incorrect}" />
+								<Label class="TitleLarge ResultStatValue MainEvent" text="{d:main_event_incorrect}" />
+								<Image class="ResultStatIcon" src="s2r://panorama/images/control_icons/24px/x_close.vsvg" texturewidth="48px" textureheight="48px" />
+							</Panel>
+						</Panel>
+					</Panel>
+					<Label class="LabelLarge ResultsPointsEarnedLabel" text="#DOTA_International2023_Quests_Postgame_Reward_Label" />
+					<Panel class="ResultsPointsContainer">
+						<Label class="TitleExtraLarge ResultsPointsEarnedValue RTTI" text="+{d:road_to_ti_points}" />
+						<Label class="TitleExtraLarge ResultsPointsEarnedValue MainEvent" text="+{d:main_event_points}" />
+						<Panel class="ResultsPointsEarnedIcon" />
+					</Panel>
+				</Panel>
+				<DOTAInternational2024Button class="DoneButton LightGreen Wide" text="#DOTA_GotIt" onactivate="DOTAPredictions2024DismissResults()" />
 			</Panel>
 		</Panel>
 	</DOTABPInternational2024PredictionsPage>
