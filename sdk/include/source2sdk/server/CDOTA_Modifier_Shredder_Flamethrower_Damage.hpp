@@ -1,0 +1,36 @@
+#pragma once
+#include "source2sdk/client/CDOTA_Buff.hpp"
+#include "source2sdk/client/ParticleIndex_t.hpp"
+#include "source2sdk/source2gen.hpp"
+#include <cstddef>
+#include <cstdint>
+
+// /////////////////////////////////////////////////////////////
+// Module: server
+// Created using source2gen - github.com/neverlosecc/source2gen
+// /////////////////////////////////////////////////////////////
+
+namespace source2sdk::server
+{
+    // Registered alignment: unknown
+    // Alignment: unknown
+    // Standard-layout class: false
+    // Size: 0x1700
+    // Has VTable
+    // MNetworkAssumeNotNetworkable
+    #pragma pack(push, 1)
+    class CDOTA_Modifier_Shredder_Flamethrower_Damage : public client::CDOTA_Buff
+    {
+    public:
+        client::ParticleIndex_t m_nFXIndex; // 0x16e8        
+        client::ParticleIndex_t m_nActiveFXIndex; // 0x16ec        
+        client::ParticleIndex_t m_nActiveStatusFXIndex; // 0x16f0        
+        float damage_per_second; // 0x16f4        
+        int32_t building_dmg_pct; // 0x16f8        
+        int32_t move_slow_pct; // 0x16fc        
+    };
+    #pragma pack(pop)
+    
+    // Cannot assert offsets of fields in CDOTA_Modifier_Shredder_Flamethrower_Damage because it is not a standard-layout class
+    static_assert(sizeof(CDOTA_Modifier_Shredder_Flamethrower_Damage) == 0x1700);
+};
