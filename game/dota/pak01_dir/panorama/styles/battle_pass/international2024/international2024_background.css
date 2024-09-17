@@ -87,7 +87,7 @@ DOTABPBackgroundInternational2024
 	visibility: visible;
 }
 
-.OwnsEvent #CompediumBackground .BackgroundFloor
+.OwnsEvent #CompediumBackground .BackgroundFloor,.TournamentFinished #CompediumBackground .BackgroundFloor
 {
 	visibility: collapse;
 }
@@ -110,6 +110,11 @@ DOTABPBackgroundInternational2024
 	brightness: 1;
 }
 
+.TournamentFinished #CompediumBackground .SpotlightParticles
+{
+	transform: translateY( -400px );
+}
+
 #CompediumBackground #RingmasterModel
 {
 	width: 1160px;
@@ -126,7 +131,7 @@ DOTABPBackgroundInternational2024
 	opacity-brush: gradient( linear, 0% 35%, 0% 100%, from( rgb(255, 255, 255) ), color-stop( 0.4, #ffffff11 ), to( #ffffff00 ) );
 }
 
-.ShowVideoPlayer #CompediumBackground #RingmasterModel
+.ShowVideoPlayer #CompediumBackground #RingmasterModel,.TournamentFinished #CompediumBackground #RingmasterModel
 {
 	visibility: collapse;
 }
@@ -138,7 +143,7 @@ DOTABPBackgroundInternational2024
 	horizontal-align: center;
 }
 
-.ShowVideoPlayer #CompediumBackground .RingmasterHitBox
+.ShowVideoPlayer #CompediumBackground .RingmasterHitBox,.TournamentFinished #CompediumBackground .RingmasterHitBox
 {
 	visibility: collapse;
 }
@@ -147,6 +152,11 @@ DOTABPBackgroundInternational2024
 {
 	width: 100%;
 	opacity: 0.6;
+}
+
+.TournamentFinished #CompediumBackground .CircusBackground
+{
+	visibility: collapse;
 }
 
 #CompediumBackground .Aegis2024_Large
@@ -167,6 +177,11 @@ DOTABPBackgroundInternational2024
 	opacity-brush: gradient( linear, 0% 40%, 0% 84%, from( rgb(255, 255, 255) ), color-stop( 0.5, #ffffff6e ), to( #ffffff00 ) );
 }
 
+.TournamentFinished #CompediumBackground .Aegis2024_Large
+{
+	opacity-brush: gradient( linear, 0% 40%, 0% 84%, from( rgb(255, 255, 255) ), color-stop( 0.5, #ffffff0b ), to( #ffffff00 ) );
+}
+
 #CompediumBackground .RingmasterButtons
 {
 	horizontal-align: center;
@@ -176,6 +191,11 @@ DOTABPBackgroundInternational2024
 #CompediumBackground .RingmasterButtons DOTAInternational2024Button
 {
 	margin: 10px;
+}
+
+.TournamentFinished #CompediumBackground .RingmasterButtons
+{
+	visibility: collapse;
 }
 
 .GCStatusVisible .RingmasterButtons
@@ -354,6 +374,11 @@ DOTABPBackgroundInternational2024
 .AspectRatio21x9 .PurchaseSection .PurchaseDetails
 {
 	margin-top: 12px;
+}
+
+.TournamentFinished .PurchaseSection
+{
+	visibility: collapse;
 }
 
 .Curtains
@@ -1488,16 +1513,15 @@ DOTABPBackgroundInternational2024.SelfEventActive.GlobalEventActive.GlobalEventP
 {
 	width: 100%;
 	margin-top: 20px;
-	margin-bottom: 0px;
 	flow-children: down;
 	margin-bottom: 12px;
-	height: 720px;
+	height: 780px;
 	visibility: collapse;
 }
 
 .OwnsEvent #EventChampionsContainer
 {
-	height: 546px;
+	height: 524px;
 }
 
 #EventChampionsContainer .EventChampionsContent
@@ -1510,38 +1534,39 @@ DOTABPBackgroundInternational2024.SelfEventActive.GlobalEventActive.GlobalEventP
 #EventChampionsContainer .EventChampionsContent .LogoSmall
 {
 	horizontal-align: center;
-	width: 420px;
+	width: 500px;
+	margin-bottom: -20px;
 }
 
 #EventChampionsContainer .EventChampionsContent .LogoStars
 {
 	horizontal-align: center;
 	width: 100px;
-	margin-top: 12px;
 	margin-bottom: 24px;
 	brightness: 1.5;
 }
 
 .OwnsEvent #EventChampionsContainer .EventChampionsContent .LogoSmall
 {
-	width: 300px;
+	width: 360px;
+	margin-top: -20px;
 }
 
 .OwnsEvent #EventChampionsContainer .EventChampionsContent .LogoStars
 {
 	width: 80px;
-	margin-top: 8px;
 	margin-bottom: 0px;
 }
 
 #EventChampionsContainer .EventChampionsContent .ChampionsTitle
 {
 	horizontal-align: center;
-	font-size: 52px;
+	font-size: 46px;
 	font-family: titleFont;
 	letter-spacing: -1px;
 	text-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
-	color: gradient( linear, 0% 0%, 0% 100%, from( white ), to( LighterGrey ) );
+	color: gradient( linear, 0% 20%, 0% 100%, from( white ), to( rgb(222, 216, 202) ) );
+	color: whitesmoke;
 	margin-top: 8px;
 	text-overflow: shrink;
 	text-align: center;
@@ -1550,10 +1575,14 @@ DOTABPBackgroundInternational2024.SelfEventActive.GlobalEventActive.GlobalEventP
 
 #EventChampionsContainer .EventChampionsContent .ChampionsDescription
 {
-	width: 620px;
+	width: 680px;
+	height: 51px;
+	text-overflow: shrink;
 	text-align: center;
 	horizontal-align: center;
 	text-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+	font-family: titleFont;
+	color: rgba(255, 255, 255, 0.6);
 }
 
 #EventChampionsContainer .EventChampionsContent #WatchReplayButton
@@ -1564,8 +1593,13 @@ DOTABPBackgroundInternational2024.SelfEventActive.GlobalEventActive.GlobalEventP
 #EventChampionsContainer .EventChampionsContent .ChampionsActionsContainer
 {
 	flow-children: right;
-	margin-top: 24px;
+	margin-top: 64px;
 	horizontal-align: center;
+}
+
+.OwnsEvent #EventChampionsContainer .EventChampionsContent .ChampionsActionsContainer
+{
+	margin-top: 24px;
 }
 
 #EventChampionsContainer .EventChampionsContent .Dash
@@ -2032,8 +2066,8 @@ DOTABPBackgroundInternational2024.SelfEventActive.GlobalEventActive.GlobalEventP
 .ChampionsImageSequenceContainer
 {
 	opacity-mask: url("s2r://panorama/images/compendium/international2024/champions_photo_background_mask_png.vtex");
-	opacity: 0.1;
-	wash-color: primaryColor3&99;
+	opacity: 0;
+	wash-color: rgba(176, 170, 147, 0.9);
 	blur: gaussian( 12px );
 	width: 100%;
 	height: 100%;
@@ -2049,7 +2083,7 @@ DOTABPBackgroundInternational2024.SelfEventActive.GlobalEventActive.GlobalEventP
 
 .OnHomePage .ChampionsImageSequenceContainer
 {
-	opacity: 0.6;
+	opacity: 0.3;
 	blur: gaussian( 0px );
 }
 
