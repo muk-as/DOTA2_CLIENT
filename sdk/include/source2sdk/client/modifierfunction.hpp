@@ -13,7 +13,7 @@ namespace source2sdk::client
     // Size: 0x4
     enum class modifierfunction : std::uint32_t
     {
-        // MScriptDescription "@èˇº¯ GetModifierPreAttack_BonusDamage"
+        // MScriptDescription "@è≠º¯ GetModifierPreAttack_BonusDamage"
         MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE = 0x0,
         // MScriptDescription "GetModifierPreAttack_BonusDamage_Proc GetModifierPreAttack_BonusDamage_Target"
         MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE_TARGET = 0x1,
@@ -55,7 +55,7 @@ namespace source2sdk::client
         MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE_UNIQUE = 0x13,
         // MScriptDescription "GetModifierMoveSpeedBonus_Special_Boots_2 GetModifierMoveSpeedBonus_Special_Boots"
         MODIFIER_PROPERTY_MOVESPEED_BONUS_UNIQUE = 0x14,
-        // MScriptDescription "∞êˇº¯ GetModifierMoveSpeedBonus_Special_Boots_2"
+        // MScriptDescription "∞ê≠º¯ GetModifierMoveSpeedBonus_Special_Boots_2"
         MODIFIER_PROPERTY_MOVESPEED_BONUS_UNIQUE_2 = 0x15,
         // MScriptDescription "GetModifierMoveSpeedBonus_Constant_Unique_2 GetModifierMoveSpeedBonus_Constant_Unique"
         MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT_UNIQUE = 0x16,
@@ -135,7 +135,7 @@ namespace source2sdk::client
         MODIFIER_PROPERTY_MP_RESTORE_AMPLIFY_PERCENTAGE = 0x3b,
         // MScriptDescription "GetModifierBaseDamageOutgoing_PercentageUnique GetModifierBaseDamageOutgoing_Percentage"
         MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE = 0x3c,
-        // MScriptDescription "Äìˇº¯ GetModifierBaseDamageOutgoing_PercentageUnique"
+        // MScriptDescription "Äì≠º¯ GetModifierBaseDamageOutgoing_PercentageUnique"
         MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE_UNIQUE = 0x3d,
         // MScriptDescription "GetModifierIncomingPhysicalDamage_Percentage GetModifierIncomingDamage_Percentage"
         MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE = 0x3e,
@@ -235,7 +235,7 @@ namespace source2sdk::client
         MODIFIER_PROPERTY_CAST_RANGE_BONUS = 0x6d,
         // MScriptDescription "GetModifierCastRangeBonusTarget GetModifierCastRangeBonusPercentage"
         MODIFIER_PROPERTY_CAST_RANGE_BONUS_PERCENTAGE = 0x6e,
-        // MScriptDescription " óˇº¯ GetModifierCastRangeBonusTarget"
+        // MScriptDescription " ó≠º¯ GetModifierCastRangeBonusTarget"
         MODIFIER_PROPERTY_CAST_RANGE_BONUS_TARGET = 0x6f,
         // MScriptDescription "GetModifierAttackRangeOverride GetModifierCastRangeBonusStacking"
         MODIFIER_PROPERTY_CAST_RANGE_BONUS_STACKING = 0x70,
@@ -405,7 +405,7 @@ namespace source2sdk::client
         MODIFIER_EVENT_ON_ATTACK_ALLIED = 0xc2,
         // MScriptDescription "OnOrder OnProjectileDodge"
         MODIFIER_EVENT_ON_PROJECTILE_DODGE = 0xc3,
-        // MScriptDescription "0ùˇº¯ OnOrder"
+        // MScriptDescription "0ù≠º¯ OnOrder"
         MODIFIER_EVENT_ON_ORDER = 0xc4,
         // MScriptDescription "OnAbilityStart OnUnitMoved"
         MODIFIER_EVENT_ON_UNIT_MOVED = 0xc5,
@@ -433,7 +433,7 @@ namespace source2sdk::client
         MODIFIER_EVENT_ON_ORB_EFFECT = 0xd0,
         // MScriptDescription "gold_amount OnProcessCleave"
         MODIFIER_EVENT_ON_PROCESS_CLEAVE = 0xd1,
-        // MScriptDescription "0ûˇº¯ OnDamageCalculated"
+        // MScriptDescription "0û≠º¯ OnDamageCalculated"
         MODIFIER_EVENT_ON_DAMAGE_CALCULATED = 0xd2,
         // MScriptDescription "OnAttacked OnMagicDamageCalculated"
         MODIFIER_EVENT_ON_MAGIC_DAMAGE_CALCULATED = 0xd3,
@@ -477,7 +477,7 @@ namespace source2sdk::client
         MODIFIER_PROPERTY_TOOLTIP = 0xe6,
         // MScriptDescription "GetModifierModelScale GetModifierModelChange"
         MODIFIER_PROPERTY_MODEL_CHANGE = 0xe7,
-        // MScriptDescription "@°ˇº¯ GetModifierModelScale"
+        // MScriptDescription "@°≠º¯ GetModifierModelScale"
         MODIFIER_PROPERTY_MODEL_SCALE = 0xe8,
         // MScriptDescription "GetModifierModelScaleUseInOutEase GetModifierModelScaleAnimateTime"
         MODIFIER_PROPERTY_MODEL_SCALE_ANIMATE_TIME = 0xe9,
@@ -561,7 +561,7 @@ namespace source2sdk::client
         MODIFIER_PROPERTY_MOVESPEED_REDUCTION_PERCENTAGE = 0x110,
         // MScriptDescription "GetModifierAttackSpeedPercentage "
         MODIFIER_PROPERTY_ATTACK_WHILE_MOVING_TARGET = 0x111,
-        // MScriptDescription " §ˇº¯ GetModifierAttackSpeedPercentage"
+        // MScriptDescription " §≠º¯ GetModifierAttackSpeedPercentage"
         MODIFIER_PROPERTY_ATTACKSPEED_PERCENTAGE = 0x112,
         // MScriptDescription "OnPreDebuffApplied OnAttemptProjectileDodge"
         MODIFIER_EVENT_ON_ATTEMPT_PROJECTILE_DODGE = 0x113,
@@ -637,7 +637,7 @@ namespace source2sdk::client
         MODIFIER_PROPERTY_AOE_BONUS_CONSTANT_STACKING = 0x136,
         // MScriptDescription "OnMuteDamageAbilities OnTakeDamagePostUnavoidableBlock"
         MODIFIER_EVENT_ON_TAKEDAMAGE_POST_UNAVOIDABLE_BLOCK = 0x137,
-        // MScriptDescription "‡¶ˇº¯ OnMuteDamageAbilities"
+        // MScriptDescription "‡¶≠º¯ OnMuteDamageAbilities"
         MODIFIER_EVENT_ON_MUTE_DAMAGE_ABILITIES = 0x138,
         // MScriptDescription "GetModifierAbilityPoints GetSuppressCrit"
         MODIFIER_PROPERTY_SUPPRESS_CRIT = 0x139,
@@ -673,7 +673,7 @@ namespace source2sdk::client
         MODIFIER_PROPERTY_BASE_MRES_PER_INT_BONUS_PERCENTAGE = 0x148,
         // MScriptDescription "GetModifierCreateBonusIllusionChance OnDayStarted"
         MODIFIER_EVENT_ON_DAY_STARTED = 0x149,
-        // MScriptDescription "®ˇº¯ GetModifierCreateBonusIllusionChance"
+        // MScriptDescription "®≠º¯ GetModifierCreateBonusIllusionChance"
         MODIFIER_PROPERTY_CREATE_BONUS_ILLUSION_CHANCE = 0x14a,
         // MScriptDescription "GetModofierPropertyPseudoRandomBonus GetModifierCreateBonusIllusionCount"
         MODIFIER_PROPERTY_CREATE_BONUS_ILLUSION_COUNT = 0x14b,
