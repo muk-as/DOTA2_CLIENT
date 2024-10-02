@@ -1,0 +1,13 @@
+"use strict";
+/// <reference path="dota.d.ts" />
+/// <reference path="util.ts" />
+/// <reference path="dota_sequence_actions.ts" />
+$('#FxScene').RemoveClass('LogoTrigger');
+$('#FxScene').FireEntityInput('logo_fx', 'Stop', 0);
+var LogoTrigger = function () {
+    $('#FxScene').FireEntityInput('logo_fx', 'Start', 0);
+    $.Schedule(2.5, function () {
+        $('#FxScene').AddClass('LogoTrigger');
+    });
+};
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZGFzaGJvYXJkX2JhY2tncm91bmRfbG9hZG91dF9jY18yMDI0LmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vLi4vLi4vY29udGVudC9kb3RhL3Bhbm9yYW1hL3NjcmlwdHMvZGFzaGJvYXJkX2JhY2tncm91bmRfbG9hZG91dF9jY18yMDI0LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7QUFBQSxrQ0FBa0M7QUFDbEMsZ0NBQWdDO0FBQ2hDLGlEQUFpRDtBQUlqRCxDQUFDLENBQUUsVUFBVSxDQUFHLENBQUMsV0FBVyxDQUFFLGFBQWEsQ0FBRSxDQUFDO0FBQzdDLENBQUMsQ0FBQyxVQUFVLENBQXNCLENBQUMsZUFBZSxDQUFFLFNBQVMsRUFBRSxNQUFNLEVBQUUsQ0FBQyxDQUFFLENBQUM7QUFFNUUsSUFBSSxXQUFXLEdBQUc7SUFFYixDQUFDLENBQUMsVUFBVSxDQUFzQixDQUFDLGVBQWUsQ0FBRSxTQUFTLEVBQUUsT0FBTyxFQUFFLENBQUMsQ0FBRSxDQUFDO0lBQzdFLENBQUMsQ0FBQyxRQUFRLENBQUUsR0FBRyxFQUFFO1FBRWIsQ0FBQyxDQUFFLFVBQVUsQ0FBRyxDQUFDLFFBQVEsQ0FBRSxhQUFhLENBQUUsQ0FBQztJQUMvQyxDQUFDLENBQUUsQ0FBQztBQUNSLENBQUMsQ0FBQyJ9

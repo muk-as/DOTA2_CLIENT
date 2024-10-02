@@ -23,8 +23,8 @@ namespace source2sdk::server
     public:
         float attack_slow; // 0x16e8        
         float movement_slow_max; // 0x16ec        
-        float debuff_radius; // 0x16f0        
-        [[maybe_unused]] std::uint8_t pad_0x16f4[0x4];
+        float movement_slow_min; // 0x16f0        
+        float debuff_radius; // 0x16f4        
     };
     #pragma pack(pop)
     

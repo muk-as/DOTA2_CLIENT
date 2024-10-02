@@ -24,11 +24,11 @@ namespace source2sdk::client
         int32_t bonus_strength; // 0x16e8        
         int32_t bonus_agility; // 0x16ec        
         int32_t bonus_intellect; // 0x16f0        
-        int32_t clock_time; // 0x16f4        
-        float bonus_health_regen; // 0x16f8        
-        int32_t bonus_damage; // 0x16fc        
-        int32_t bonus_slow_resistance; // 0x1700        
-        int32_t bonus_health; // 0x1704        
+        float bonus_health_regen; // 0x16f4        
+        int32_t bonus_damage; // 0x16f8        
+        int32_t bonus_slow_resistance; // 0x16fc        
+        int32_t bonus_health; // 0x1700        
+        [[maybe_unused]] std::uint8_t pad_0x1704[0x4];
     };
     #pragma pack(pop)
     

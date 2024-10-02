@@ -26,7 +26,7 @@ namespace source2sdk::server
         int32_t bonus_intellect; // 0x16f0        
         float bonus_mana_regen; // 0x16f4        
         int32_t bonus_max_mana_percentage; // 0x16f8        
-        int32_t clock_time; // 0x16fc        
+        [[maybe_unused]] std::uint8_t pad_0x16fc[0x4];
     };
     #pragma pack(pop)
     

@@ -25,8 +25,8 @@ namespace source2sdk::server
         int32_t bonus_agility; // 0x16ec        
         int32_t bonus_intellect; // 0x16f0        
         int32_t bonus_attack_speed; // 0x16f4        
-        int32_t clock_time; // 0x16f8        
-        float bonus_armor; // 0x16fc        
+        float bonus_armor; // 0x16f8        
+        [[maybe_unused]] std::uint8_t pad_0x16fc[0x4];
     };
     #pragma pack(pop)
     
