@@ -14,7 +14,7 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x1810
+    // Size: 0x1818
     // Has VTable
     // Construct allowed
     // MNetworkAssumeNotNetworkable
@@ -22,10 +22,10 @@ namespace source2sdk::client
     class C_DOTA_BaseNPC_Creep_Neutral : public client::C_DOTA_BaseNPC_Creep
     {
     public:
-        CUtlString m_sDisplayName; // 0x1808        
+        CUtlString m_sDisplayName; // 0x1810        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in C_DOTA_BaseNPC_Creep_Neutral because it is not a standard-layout class
-    static_assert(sizeof(C_DOTA_BaseNPC_Creep_Neutral) == 0x1810);
+    static_assert(sizeof(C_DOTA_BaseNPC_Creep_Neutral) == 0x1818);
 };

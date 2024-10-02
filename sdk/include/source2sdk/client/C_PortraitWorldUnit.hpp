@@ -29,36 +29,36 @@ namespace source2sdk::client
     class C_PortraitWorldUnit : public client::C_DOTA_BaseNPC
     {
     public:
-        entity2::CEntityIOOutput m_OutputAnimOver; // 0x1800        
-        bool m_bSuppressIntroEffects; // 0x1828        
-        bool m_bIsAlternateLoadout; // 0x1829        
-        bool m_bSkipBackgroundEntities; // 0x182a        
-        bool m_bSpawnBackgroundModels; // 0x182b        
-        bool m_bDeferredPortrait; // 0x182c        
-        bool m_bShowParticleAssetModifiers; // 0x182d        
-        bool m_bIgnorePortraitInfo; // 0x182e        
-        bool m_bFlyingCourier; // 0x182f        
-        bool m_bDisableDefaultModifiers; // 0x1830        
-        [[maybe_unused]] std::uint8_t pad_0x1831[0x3]; // 0x1831
-        int32_t m_nEffigyStatusEffect; // 0x1834        
-        CUtlSymbolLarge m_effigySequenceName; // 0x1838        
-        float m_flStartingAnimationCycle; // 0x1840        
-        float m_flAnimationPlaybackSpeed; // 0x1844        
-        float m_flRareLoadoutAnimChance; // 0x1848        
-        bool m_bSetDefaultActivityOnSequenceFinished; // 0x184c        
-        [[maybe_unused]] std::uint8_t pad_0x184d[0x3]; // 0x184d
+        entity2::CEntityIOOutput m_OutputAnimOver; // 0x1808        
+        bool m_bSuppressIntroEffects; // 0x1830        
+        bool m_bIsAlternateLoadout; // 0x1831        
+        bool m_bSkipBackgroundEntities; // 0x1832        
+        bool m_bSpawnBackgroundModels; // 0x1833        
+        bool m_bDeferredPortrait; // 0x1834        
+        bool m_bShowParticleAssetModifiers; // 0x1835        
+        bool m_bIgnorePortraitInfo; // 0x1836        
+        bool m_bFlyingCourier; // 0x1837        
+        bool m_bDisableDefaultModifiers; // 0x1838        
+        [[maybe_unused]] std::uint8_t pad_0x1839[0x3]; // 0x1839
+        int32_t m_nEffigyStatusEffect; // 0x183c        
+        CUtlSymbolLarge m_effigySequenceName; // 0x1840        
+        float m_flStartingAnimationCycle; // 0x1848        
+        float m_flAnimationPlaybackSpeed; // 0x184c        
+        float m_flRareLoadoutAnimChance; // 0x1850        
+        bool m_bSetDefaultActivityOnSequenceFinished; // 0x1854        
+        [[maybe_unused]] std::uint8_t pad_0x1855[0x3]; // 0x1855
         // m_vecActivityModifiers has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<CUtlSymbolLarge> m_vecActivityModifiers;
-        char m_vecActivityModifiers[0x18]; // 0x1850        
-        client::DOTAPortraitEnvironmentType_t m_environment; // 0x1868        
-        [[maybe_unused]] std::uint8_t pad_0x186c[0x4]; // 0x186c
-        client::StartupBehavior_t m_nStartupBehavior; // 0x1870        
-        [[maybe_unused]] std::uint8_t pad_0x1874[0x1e4]; // 0x1874
-        CUtlSymbolLarge m_cameraName; // 0x1a58        
-        [[maybe_unused]] std::uint8_t pad_0x1a60[0x50]; // 0x1a60
-        client::ParticleIndex_t m_nPortraitParticle; // 0x1ab0        
-        int32_t m_nCourierType; // 0x1ab4        
-        [[maybe_unused]] std::uint8_t pad_0x1ab8[0x198];
+        char m_vecActivityModifiers[0x18]; // 0x1858        
+        client::DOTAPortraitEnvironmentType_t m_environment; // 0x1870        
+        [[maybe_unused]] std::uint8_t pad_0x1874[0x4]; // 0x1874
+        client::StartupBehavior_t m_nStartupBehavior; // 0x1878        
+        [[maybe_unused]] std::uint8_t pad_0x187c[0x1e4]; // 0x187c
+        CUtlSymbolLarge m_cameraName; // 0x1a60        
+        [[maybe_unused]] std::uint8_t pad_0x1a68[0x50]; // 0x1a68
+        client::ParticleIndex_t m_nPortraitParticle; // 0x1ab8        
+        int32_t m_nCourierType; // 0x1abc        
+        [[maybe_unused]] std::uint8_t pad_0x1ac0[0x190];
         
         // Datamap fields:
         // CUtlSymbolLarge activity_modifier; // 0x7fffffff

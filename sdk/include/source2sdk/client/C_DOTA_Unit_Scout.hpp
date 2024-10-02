@@ -22,7 +22,7 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x18f8
+    // Size: 0x1900
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
@@ -36,22 +36,22 @@ namespace source2sdk::client
     class C_DOTA_Unit_Scout : public client::C_DOTA_BaseNPC_Additive
     {
     public:
-        bool m_bUnitRespawned; // 0x1800        
-        [[maybe_unused]] std::uint8_t pad_0x1801[0x3]; // 0x1801
+        bool m_bUnitRespawned; // 0x1808        
+        [[maybe_unused]] std::uint8_t pad_0x1809[0x3]; // 0x1809
         // metadata: MNetworkEnable
-        client::PlayerID_t m_nSoleControllingPlayer; // 0x1804        
+        client::PlayerID_t m_nSoleControllingPlayer; // 0x180c        
         // metadata: MNetworkEnable
-        entity2::GameTime_t m_flRespawnTime; // 0x1808        
+        entity2::GameTime_t m_flRespawnTime; // 0x1810        
         // metadata: MNetworkEnable
-        client::ScoutState_t m_nScoutState; // 0x180c        
+        client::ScoutState_t m_nScoutState; // 0x1814        
         // metadata: MNetworkEnable
         // m_hScoutStateEntity has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<client::C_BaseEntity> m_hScoutStateEntity;
-        char m_hScoutStateEntity[0x4]; // 0x1810        
-        [[maybe_unused]] std::uint8_t pad_0x1814[0xe4];
+        char m_hScoutStateEntity[0x4]; // 0x1818        
+        [[maybe_unused]] std::uint8_t pad_0x181c[0xe4];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in C_DOTA_Unit_Scout because it is not a standard-layout class
-    static_assert(sizeof(C_DOTA_Unit_Scout) == 0x18f8);
+    static_assert(sizeof(C_DOTA_Unit_Scout) == 0x1900);
 };

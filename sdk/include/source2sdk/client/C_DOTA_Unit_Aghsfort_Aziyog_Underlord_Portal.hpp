@@ -19,7 +19,7 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x1808
+    // Size: 0x1810
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
@@ -30,11 +30,11 @@ namespace source2sdk::client
     public:
         // m_hOtherPortal has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<client::C_BaseEntity> m_hOtherPortal;
-        char m_hOtherPortal[0x4]; // 0x1800        
-        [[maybe_unused]] std::uint8_t pad_0x1804[0x4];
+        char m_hOtherPortal[0x4]; // 0x1808        
+        [[maybe_unused]] std::uint8_t pad_0x180c[0x4];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in C_DOTA_Unit_Aghsfort_Aziyog_Underlord_Portal because it is not a standard-layout class
-    static_assert(sizeof(C_DOTA_Unit_Aghsfort_Aziyog_Underlord_Portal) == 0x1808);
+    static_assert(sizeof(C_DOTA_Unit_Aghsfort_Aziyog_Underlord_Portal) == 0x1810);
 };

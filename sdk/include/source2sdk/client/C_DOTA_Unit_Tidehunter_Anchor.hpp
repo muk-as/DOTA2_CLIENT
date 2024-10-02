@@ -19,7 +19,7 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x1810
+    // Size: 0x1818
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
@@ -34,12 +34,12 @@ namespace source2sdk::client
         // metadata: MNetworkEnable
         // m_hTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<client::C_BaseEntity> m_hTarget;
-        char m_hTarget[0x4]; // 0x1800        
+        char m_hTarget[0x4]; // 0x1808        
         // metadata: MNetworkEnable
-        Vector m_vProjectilePosition; // 0x1804        
+        Vector m_vProjectilePosition; // 0x180c        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in C_DOTA_Unit_Tidehunter_Anchor because it is not a standard-layout class
-    static_assert(sizeof(C_DOTA_Unit_Tidehunter_Anchor) == 0x1810);
+    static_assert(sizeof(C_DOTA_Unit_Tidehunter_Anchor) == 0x1818);
 };

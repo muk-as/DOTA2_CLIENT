@@ -19,7 +19,7 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x1820
+    // Size: 0x1828
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
@@ -31,14 +31,14 @@ namespace source2sdk::client
     {
     public:
         // metadata: MNetworkEnable
-        int32_t m_nTimesSpawned; // 0x1800        
-        int32_t m_nTempViewer; // 0x1804        
+        int32_t m_nTimesSpawned; // 0x1808        
+        int32_t m_nTempViewer; // 0x180c        
         // m_hAttackingHeroes has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<CHandle<client::C_BaseEntity>> m_hAttackingHeroes;
-        char m_hAttackingHeroes[0x18]; // 0x1808        
+        char m_hAttackingHeroes[0x18]; // 0x1810        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in C_DOTA_Unit_Miniboss because it is not a standard-layout class
-    static_assert(sizeof(C_DOTA_Unit_Miniboss) == 0x1820);
+    static_assert(sizeof(C_DOTA_Unit_Miniboss) == 0x1828);
 };

@@ -113,6 +113,8 @@ namespace source2sdk::server
     // static metadata: MNetworkVarNames "float m_flManaRegen"
     // static metadata: MNetworkVarNames "float m_flHealthRegen"
     // static metadata: MNetworkVarNames "int64 m_nTotalDamageTaken"
+    // static metadata: MNetworkVarNames "int m_iBaseDamageMin"
+    // static metadata: MNetworkVarNames "int m_iBaseDamageMax"
     // static metadata: MNetworkVarNames "int m_iAttackRange"
     // static metadata: MNetworkVarNames "int m_iMoveSpeed"
     // static metadata: MNetworkVarNames "GameTime_t m_flTauntCooldown"
@@ -282,7 +284,9 @@ namespace source2sdk::server
         float m_flManaRegenCounter; // 0xbbc        
         float m_flAccumulatedHeal; // 0xbc0        
         int32_t m_iBaseAttackSpeed; // 0xbc4        
+        // metadata: MNetworkEnable
         int32_t m_iBaseDamageMin; // 0xbc8        
+        // metadata: MNetworkEnable
         int32_t m_iBaseDamageMax; // 0xbcc        
         // metadata: MNetworkEnable
         int32_t m_iAttackRange; // 0xbd0        

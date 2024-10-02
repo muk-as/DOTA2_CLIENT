@@ -19,7 +19,7 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x1b98
+    // Size: 0x1ba0
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
@@ -32,17 +32,17 @@ namespace source2sdk::client
     {
     public:
         // metadata: MNetworkEnable
-        uint32_t m_nTreeDisguise; // 0x1b88        
+        uint32_t m_nTreeDisguise; // 0x1b90        
         // metadata: MNetworkEnable
         // metadata: MNetworkChangeCallback "OnPerchedTreeChanged"
-        uint32_t m_nPerchedTree; // 0x1b8c        
+        uint32_t m_nPerchedTree; // 0x1b94        
         // m_hTreeDisguiseEnt has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<client::C_BaseEntity> m_hTreeDisguiseEnt;
-        char m_hTreeDisguiseEnt[0x4]; // 0x1b90        
-        [[maybe_unused]] std::uint8_t pad_0x1b94[0x4];
+        char m_hTreeDisguiseEnt[0x4]; // 0x1b98        
+        [[maybe_unused]] std::uint8_t pad_0x1b9c[0x4];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in C_DOTA_Unit_Hero_MonkeyKing because it is not a standard-layout class
-    static_assert(sizeof(C_DOTA_Unit_Hero_MonkeyKing) == 0x1b98);
+    static_assert(sizeof(C_DOTA_Unit_Hero_MonkeyKing) == 0x1ba0);
 };

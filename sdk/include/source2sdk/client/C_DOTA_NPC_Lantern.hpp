@@ -20,7 +20,7 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x1890
+    // Size: 0x1898
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
@@ -32,15 +32,15 @@ namespace source2sdk::client
     {
     public:
         // metadata: MNetworkEnable
-        CUtlSymbolLarge m_szInteractAbilityName; // 0x1870        
-        particleslib::CNewParticleEffect* m_pVisionRangeFX; // 0x1878        
-        client::ParticleIndex_t m_iFxIndex; // 0x1880        
-        int32_t m_nPreviewViewer; // 0x1884        
-        int32_t m_nTeamNumberShown; // 0x1888        
-        [[maybe_unused]] std::uint8_t pad_0x188c[0x4];
+        CUtlSymbolLarge m_szInteractAbilityName; // 0x1878        
+        particleslib::CNewParticleEffect* m_pVisionRangeFX; // 0x1880        
+        client::ParticleIndex_t m_iFxIndex; // 0x1888        
+        int32_t m_nPreviewViewer; // 0x188c        
+        int32_t m_nTeamNumberShown; // 0x1890        
+        [[maybe_unused]] std::uint8_t pad_0x1894[0x4];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in C_DOTA_NPC_Lantern because it is not a standard-layout class
-    static_assert(sizeof(C_DOTA_NPC_Lantern) == 0x1890);
+    static_assert(sizeof(C_DOTA_NPC_Lantern) == 0x1898);
 };

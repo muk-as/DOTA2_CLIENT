@@ -15,7 +15,7 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x1810
+    // Size: 0x1818
     // Has VTable
     // Construct allowed
     // MNetworkAssumeNotNetworkable
@@ -53,11 +53,11 @@ namespace source2sdk::client
     {
     public:
         // metadata: MNetworkEnable
-        client::FowCustomTeams_t m_nFoWTeam; // 0x1808        
-        [[maybe_unused]] std::uint8_t pad_0x180c[0x4];
+        client::FowCustomTeams_t m_nFoWTeam; // 0x1810        
+        [[maybe_unused]] std::uint8_t pad_0x1814[0x4];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in C_DOTA_BaseNPC_Creep_Lane because it is not a standard-layout class
-    static_assert(sizeof(C_DOTA_BaseNPC_Creep_Lane) == 0x1810);
+    static_assert(sizeof(C_DOTA_BaseNPC_Creep_Lane) == 0x1818);
 };

@@ -14,7 +14,7 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x1870
+    // Size: 0x1878
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
@@ -27,5 +27,5 @@ namespace source2sdk::client
     };
     #pragma pack(pop)
     
-    static_assert(sizeof(C_DOTA_Unit_Fountain) == 0x1870);
+    static_assert(sizeof(C_DOTA_Unit_Fountain) == 0x1878);
 };
