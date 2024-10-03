@@ -3,6 +3,7 @@
 .Compendium2024TournamentFinishSummary
 {
 	background-color: gradient( linear, 0% 0%, 0% 100%, from( #458119 ), to( #182F09 ) );
+	flow-children: down;
 }
 
 .Compendium2024TournamentFinishSummary:hover .CellArt
@@ -16,38 +17,61 @@
 	color: gradient( linear, 0% 0%, 0% 100%, from( white ), color-stop( 0.5, white ), to( white ) );
 }
 
-.Compendium2024TournamentFinishSummary .CellArt
+.CellArt
 {
+	ignore-parent-flow: true;
+	width: 100%;
+	height: 100%;
+	background-image: url("s2r://panorama/images/front_page/compendium_2024_tournament_finished_cell_background_png.vtex");
+	background-size: cover;
+	background-position: top;
 	transition-property: brightness, pre-transform-scale2d;
 	transition-duration: 0.2s;
 	transition-timing-function: ease;
 }
 
-.Compendium2024TournamentFinishSummary .SpotlightParticles
+.SpotlightParticles
 {
+	ignore-parent-flow: true;
 	width: 180%;
 	height: 130%;
 	horizontal-align: center;
-	transform: translateY( -180px );
+	transform: translateY( -200px );
+	opacity: 0.8;
 	overflow: noclip;
 	opacity-brush: gradient( linear, 0% 70%, 0% 100%, from( rgba(255, 255, 255, 0.712) ), to( rgba(255, 255, 255, 0) ) );
 }
 
-.Compendium2024TournamentFinishSummary .CompendiumLogoContainer
+.CellBorder
+{
+	ignore-parent-flow: true;
+	width: 100%;
+	height: 100%;
+	border: 1px solid rgba(255, 255, 255, 1);
+	border-brush: gradient( linear, 0% 0%, 50% 100%, from( #d1e6ff38 ), to( #88aeff02 ) );
+}
+
+.CompendiumLogoContainer
 {
 	flow-children: down;
 	width: 100%;
 	margin-top: 24px;
 }
 
-.Compendium2024TournamentFinishSummary .CompendiumLogoContainer .TILogoText
+.EventOwned .CompendiumLogoContainer
+{
+	margin-top: 4px;
+	ui-scale: 80%;
+}
+
+.CompendiumLogoContainer .TILogoText
 {
 	width: 240px;
 	horizontal-align: center;
 	margin-bottom: -14px;
 }
 
-.Compendium2024TournamentFinishSummary .CompendiumLogoContainer .CompendiumTitle
+.CompendiumLogoContainer .CompendiumTitle
 {
 	color: whitesmoke;
 	text-transform: uppercase;
@@ -61,14 +85,14 @@
 	text-overflow: shrink;
 }
 
-.Compendium2024TournamentFinishSummary .CompendiumLogoContainer #StarsContainer
+.CompendiumLogoContainer #StarsContainer
 {
 	flow-children: right;
 	horizontal-align: center;
 	margin-top: 3px;
 }
 
-.Compendium2024TournamentFinishSummary .CompendiumLogoContainer #StarsContainer .CompendiumStar
+.CompendiumLogoContainer #StarsContainer .CompendiumStar
 {
 	width: 10px;
 	height: 10px;
@@ -79,88 +103,243 @@
 	margin: 0px 4px;
 }
 
-.Compendium2024TournamentFinishSummary .CellTitle
+.WIPLabel
 {
 	horizontal-align: center;
-	color: white;
-	margin: 10px 12px;
-	text-shadow: 0px 2px 10px rgba(0, 0, 0, 1);
-	letter-spacing: 1px;
-	width: 100%;
-	text-align: center;
+	color: rgba(255, 255, 255, 0.8);
+	text-shadow: 0px 1px 8px black;
+	background-color: rgba(255, 0, 255, 0.2);
+	padding: 2px 8px;
+	border-radius: 2px;
+	margin-top: 16px;
 	font-size: 16px;
-	font-weight: semi-bold;
 }
 
-.Compendium2024TournamentFinishSummary .TopGradient
-{
-	width: 100%;
-	height: 60px;
-	background-color: gradient( linear, 0% 0%, 0% 100%, from( #4d5f6ac2 ), to( #88aeff02 ) );
-}
-
-.Compendium2024TournamentFinishSummary .CellBorder
-{
-	ignore-parent-flow: true;
-	width: 100%;
-	height: 100%;
-	border: 1px solid rgba(255, 255, 255, 1);
-	border-brush: gradient( linear, 0% 0%, 50% 100%, from( #d1e6ff38 ), to( #88aeff02 ) );
-}
-
-.Compendium2024TournamentFinishSummary .CellContent
+.OwnedContent
 {
 	width: 100%;
 	flow-children: down;
-	vertical-align: bottom;
+	margin-top: 8px;
+	visibility: collapse;
 }
 
-.Compendium2024TournamentFinishSummary .CellContent .Description
+.EventOwned .OwnedContent
 {
-	text-align: center;
-	color: rgba( 200, 255, 213, 0.8 );
-	text-shadow: 0px 2px 12px 2 black;
-	margin-bottom: 14px;
-	margin-left: 16px;
-	margin-right: 16px;
-	text-align: center;
-	width: 100%;
-	font-size: 16px;
-	max-height: 40px;
-	text-overflow: shrink;
-	opacity: 0.8;
+	visibility: visible;
 }
 
-.Compendium2024TournamentFinishSummary .CellContent .ButtonLabel
+.OwnedContent .ActivitySummaryContainer
+{
+	width: 100%;
+	height: fill-parent-flow(1);
+}
+
+.OwnedContent .ActivitySummaryContainer .ActivitySummaryCenter
+{
+	vertical-align: middle;
+	width: 100%;
+	flow-children: down;
+}
+
+.OwnedContent .WeeklyProgress
+{
+	horizontal-align: center;
+}
+
+.OwnedContent .WeeklyProgress #WeeklyChallengeProgressBar
+{
+	background-color: rgb(15, 24, 18);
+	width: 280px;
+	height: 24px;
+	border-radius: 3px;
+	box-shadow: 0px 0px 1px 0.5px rgba(219, 255, 237, 0.084);
+}
+
+.OwnedContent .WeeklyProgress #WeeklyChallengeProgressBar .ProgressBarLeft
+{
+	border-radius: 2px;
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( #064F12 ), to( #2C9A23 ) );
+	border: 2px solid rgb(15, 24, 18);
+	box-shadow: 0px 2px 4px black;
+}
+
+.OwnedContent .WeeklyProgress > Label
+{
+	width: 100%;
+	text-align: center;
+	color: whitesmoke;
+	font-size: 16px;
+	vertical-align: center;
+	text-shadow: 0px 2px 8px black;
+	letter-spacing: 1px;
+	margin-top: -0.5px;
+}
+
+.OwnedContent #WeeklyChallengeWeeklyCountdown
+{
+	margin-top: 4px;
+}
+
+.OwnedContent DOTACountdown
+{
+	flow-children: right;
+	horizontal-align: center;
+}
+
+.OwnedContent DOTACountdown Label
+{
+	color: #9BCBAD;
+	text-shadow: 0px 2px 6px black;
+	font-size: 14px;
+	horizontal-align: center;
+	text-align: center;
+	margin: 0px 2px;
+}
+
+.OwnedContent DOTACountdown .PhaseLabel
+{
+	font-weight: bold;
+}
+
+.OwnedContent .DailyBonusContainer
+{
+	horizontal-align: center;
+	width: 100%;
+	height: fill-parent-flow(1);
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( #46382300 ), color-stop( 0.4, #cca16025 ), color-stop( 0.6, #cca16025 ), to( #46382300 ) );
+	border-top: 1px solid rgba(255, 255, 255, 0.082);
+	border-brush: gradient( linear, 0% 0%, 100% 0%, from( #00000039 ), color-stop( 0.3, #000000 ), color-stop( 0.5, #000000 ), color-stop( 0.7, #000000 ), to( #00000039 ) );
+	background-color: gradient( radial, 50% 0%, 0% 0%, 80% 120%, from( #02130ac1 ), to( #02130a00 ) );
+	margin-top: 8px;
+}
+
+.OwnedContent .DailyBonusContainer .DailyBonusContents
+{
+	horizontal-align: center;
+	vertical-align: center;
+	flow-children: down;
+}
+
+.OwnedContent .DailyBonusContainer .DailyBonusLabel
+{
+	horizontal-align: center;
+	text-align: center;
+	text-transform: uppercase;
+	color: #ffffff;
+	font-size: 12px;
+	letter-spacing: 1px;
+	text-shadow: 0px 2px 8px black;
+}
+
+.OwnedContent .DailyBonusContainer .DailyBonusClaimed
+{
+	horizontal-align: center;
+	text-align: center;
+	color: #7fbc8b62;
+	text-shadow: 0px 2px 8px black;
+}
+
+.OwnedContent .DailyBonusContainer .DailyBonusReady
+{
+	horizontal-align: center;
+	text-align: center;
+	color: white;
+	text-shadow: 0px 0px 12px rgba(255, 187, 92, 0.4);
+	font-weight: semi-bold;
+	padding: 0px 12px;
+	visibility: collapse;
+}
+
+.OwnedContent .DailyBonusContainer .DailyBonusReady .PointsIcon
+{
+	width: 22px;
+	height: 22px;
+	wash-color: secondaryColor1;
+	background-image: url("s2r://panorama/images/compendium/international2022/totalpoints_psd.vtex");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.DailyBonusAvailable .OwnedContent .DailyBonusContainer
+{
+	border-top: 1px solid white;
+	background-color: gradient( radial, 50% 0%, 0% 0%, 80% 120%, from( #ffcd8322 ), to( #CCA16000 ) );
+	border-brush: gradient( linear, 0% 0%, 100% 0%, from( #7f5b2639 ), color-stop( 0.3, #CCA160 ), color-stop( 0.5, #ffe5b4 ), color-stop( 0.7, #CCA160 ), to( #7f5b2639 ) );
+}
+
+.DailyBonusAvailable .OwnedContent .DailyBonusContainer .DailyBonusReady
+{
+	visibility: visible;
+	animation-name: GlowDailyBonusText;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
+	animation-direction: alternate-reverse;
+}
+
+.DailyBonusAvailable .OwnedContent .DailyBonusContainer .DailyBonusClaimed
+{
+	visibility: collapse;
+}
+
+.OwnedContent .ButtonLabel
 {
 	color: gradient( linear, 0% 10%, 0% 100%, from( #E1CC9A ), color-stop( 0.5, #E7C57B ), to( #9D8145 ) );
 	border-top: 1px solid #fff1d21d;
 	border-brush: gradient( linear, 0% 0%, 100% 0%, from( rgba(255, 255, 255, 0) ), color-stop( 0.3, white), color-stop( 0.7, white), to( rgba(255, 255, 255, 0) ) );
 	width: 100%;
 	padding-top: 10px;
+	padding-bottom: 10px;
 	text-align: center;
 	text-shadow: 0px 2px 8px black;
 	transition-property: color;
 	transition-duration: 0.2s;
 }
 
-.Compendium2024TournamentFinishSummary .CellContent .Reminders
+.HaveSomething .OwnedContent .ButtonLabel
+{
+	visibility: collapse;
+}
+
+.OwnedContent .Reminders
 {
 	flow-children: right;
 	horizontal-align: center;
-	padding: 8px;
+	padding: 6px;
 	border-top: 1px solid #fff1d21d;
 	border-brush: gradient( linear, 0% 0%, 100% 0%, from( rgba(255, 255, 255, 0) ), color-stop( 0.3, white), color-stop( 0.7, white), to( rgba(255, 255, 255, 0) ) );
+	visibility:collapse;
 }
 
-.Compendium2024TournamentFinishSummary .CellContent .Reminders .Reminder
+.HaveSomething .OwnedContent .Reminders
+{
+	visibility: visible;
+}
+
+.OwnedContent .Reminders .Reminder
 {
 	visibility: collapse;
 	flow-children: right;
 	margin: 4px;
 }
 
-.Compendium2024TournamentFinishSummary .CellContent .Reminders .Reminder .Name
+.HaveLevels .OwnedContent .Reminders .Reminder.LevelsContainer
+{
+	visibility: visible;
+}
+
+.HaveBoosters .OwnedContent .Reminders .Reminder.BoostersContainer
+{
+	visibility: visible;
+}
+
+.HaveRewards .OwnedContent .Reminders .Reminder.RewardsContainer
+{
+	visibility: visible;
+}
+
+.OwnedContent .Reminders .Reminder .Name
 {
 	vertical-align: center;
 	font-size: 14px;
@@ -173,7 +352,7 @@
 	max-width: 100px;
 }
 
-.Compendium2024TournamentFinishSummary .CellContent .Reminders .Reminder .Count
+.OwnedContent .Reminders .Reminder .Count
 {
 	background-color: green;
 	color: white;
@@ -193,7 +372,7 @@
 	animation-direction: alternate;
 }
 
-.Compendium2024TournamentFinishSummary .CellContent .Reminders .Reminder.RewardsContainer .Count
+.OwnedContent .Reminders .Reminder.RewardsContainer .Count
 {
 	background-color: green;
 	color: white;
@@ -213,14 +392,46 @@
 	animation-direction: alternate;
 }
 
-.Compendium2024TournamentFinishSummary.HaveLevels .Reminder.LevelsContainer,.Compendium2024TournamentFinishSummary.HaveBoosters .Reminder.BoostersContainer,.Compendium2024TournamentFinishSummary.HaveRewards .Reminder.RewardsContainer
+.UnownedContent
+{
+	width: 100%;
+	flow-children: down;
+	margin-top: 16px;
+	visibility: collapse;
+}
+
+.EventUnowned .UnownedContent
 {
 	visibility: visible;
 }
 
-.Compendium2024TournamentFinishSummary.HaveSomething .ButtonLabel
+.UnownedContent .Description
 {
-	visibility: collapse;
+	text-align: center;
+	color: rgba( 200, 255, 213, 0.8 );
+	text-shadow: 0px 2px 12px 2 black;
+	margin-bottom: 14px;
+	margin-left: 16px;
+	margin-right: 16px;
+	text-align: center;
+	width: 100%;
+	font-size: 16px;
+	max-height: 40px;
+	text-overflow: shrink;
+	opacity: 0.8;
+}
+
+.UnownedContent .ViewCompendiumLabel
+{
+	color: gradient( linear, 0% 10%, 0% 100%, from( #E1CC9A ), color-stop( 0.5, #E7C57B ), to( #9D8145 ) );
+	border-top: 1px solid #fff1d21d;
+	border-brush: gradient( linear, 0% 0%, 100% 0%, from( rgba(255, 255, 255, 0) ), color-stop( 0.3, white), color-stop( 0.7, white), to( rgba(255, 255, 255, 0) ) );
+	width: 100%;
+	padding-top: 10px;
+	text-align: center;
+	text-shadow: 0px 2px 8px black;
+	transition-property: color;
+	transition-duration: 0.2s;
 }
 
 @keyframes 'LevelsOwnedCount'
@@ -251,6 +462,22 @@
 	{
 		brightness: 1.5;
 		box-shadow: 0px 0px 24px #FFB96E44;
+	}
+	
+}
+
+@keyframes 'GlowDailyBonusText'
+{
+	0%
+	{
+		brightness: 1;
+		text-shadow: 0px 0px 12px rgba(255, 187, 92, 0.2);
+	}
+	
+	100%
+	{
+		brightness: 2;
+		text-shadow: 0px 0px 12px rgba(255, 187, 92, 0.8);
 	}
 	
 }

@@ -7,7 +7,7 @@
 		<include src="s2r://panorama/styles/banners/front_page_compendium_2024_tournament_finished_summary.vcss_c" />
 	</styles>
 	<CustomLayoutPanel class="Compendium2024TournamentFinishSummary" onactivate="DOTAShowBPInternational2024RewardsPage()">
-		<Image class="CellArt" src="s2r://panorama/images/front_page/compendium_2024_tournament_finished_cell_background_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+		<Image class="CellArt" />
 		<DOTAScenePanel class="SpotlightParticles" map="scenes/international_2024/international_2024_dashboard_background" camera="camera_dashboard" hittest="false" renderdeferred="false" particleonly="false" />
 		<Panel class="CellBorder" />
 		<Panel class="CompendiumLogoContainer">
@@ -21,9 +21,35 @@
 				<Panel class="CompendiumStar" />
 			</Panel>
 		</Panel>
-		<Panel class="CellContent">
+		<Panel class="UnownedContent">
 			<Label class="Description" text="#DOTA_Compendium2024_TournamentFinishedCell_Summary" />
-			<Label class="ButtonLabel LabelMedium" text="#DOTA_ViewCompendium" />
+			<Label class="ViewCompendiumLabel LabelMedium" text="#DOTA_ViewCompendium" />
+		</Panel>
+		<Panel class="OwnedContent">
+			<AsyncDataPanel class="ActivitySummaryContainer" state="{d:weekly_challenge_state}">
+				<Panel class="AsyncSuccessContainer">
+					<Panel class="ActivitySummaryCenter">
+						<Panel class="WeeklyProgress">
+							<ProgressBar id="WeeklyChallengeProgressBar" />
+							<Label html="true" text="#DOTA_Compendium2024_WeeklyChallenge_Points" />
+						</Panel>
+						<DOTACountdown id="WeeklyChallengeWeeklyCountdown" server-time="true">
+							<Label class="PhaseLabel" text="#DOTA_Compendium2024_WeeklyChallenge_WeekNumber" />
+							<Label class="CooldownText" text="#DOTA_Compendium2024_WeeklyChallenge_WeeklyResetTime" />
+						</DOTACountdown>
+						<Panel class="DailyBonusContainer">
+							<Panel class="DailyBonusContents">
+								<DOTACountdown id="WeeklyChallengeDailyCountdown" server-time="true">
+									<Label class="PhaseLabel" text="#DOTA_Compendium2024_WeeklyChallenge_DailyBonus" />
+									<Label class="CooldownText" text="#DOTA_Compendium2024_WeeklyChallenge_DailyResetTime" />
+								</DOTACountdown>
+								<Label class="DailyBonusClaimed" text="#DOTA_Compendium2024_WeeklyChallenge_Claimed" />
+								<Label class="DailyBonusReady" text="#DOTA_Compendium2024_WeeklyChallenge_DailyBonusAvailable" html="true" />
+							</Panel>
+						</Panel>
+					</Panel>
+				</Panel>
+			</AsyncDataPanel>
 			<Panel class="Reminders">
 				<Panel class="Reminder LevelsContainer">
 					<Label class="Name" text="#DOTA_Compendium2024_Finish_Cell_Levels" />
@@ -38,6 +64,7 @@
 					<Label class="Count" text="{d:compendium_rewards_count}" />
 				</Panel>
 			</Panel>
+			<Label class="ButtonLabel LabelMedium" text="#DOTA_ViewCompendium" />
 		</Panel>
 	</CustomLayoutPanel>
 </root>
