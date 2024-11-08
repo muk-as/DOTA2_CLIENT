@@ -14,11 +14,10 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x1818
+    // Size: 0x1868
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class C_DOTA_BaseNPC_Trap_Ward : public client::C_DOTA_BaseNPC_Creature
     {
@@ -27,5 +26,5 @@ namespace source2sdk::client
     };
     #pragma pack(pop)
     
-    static_assert(sizeof(C_DOTA_BaseNPC_Trap_Ward) == 0x1818);
+    static_assert(sizeof(C_DOTA_BaseNPC_Trap_Ward) == 0x1868);
 };

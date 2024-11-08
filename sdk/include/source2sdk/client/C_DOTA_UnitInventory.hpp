@@ -22,7 +22,6 @@ namespace source2sdk::client
     // Size: 0xd0
     // Has VTable
     // MNetworkNoBase
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkExcludeByName "m_hInventoryParent"
     // static metadata: MNetworkVarNames "EHANDLE m_hItems"
@@ -62,7 +61,9 @@ namespace source2sdk::client
         char m_hTransientCastItem[0x4]; // 0x90        
         [[maybe_unused]] std::uint8_t pad_0x94[0x1c]; // 0x94
         bool m_bSendChangedMsg; // 0xb0        
-        [[maybe_unused]] std::uint8_t pad_0xb1[0x1f];
+        [[maybe_unused]] std::uint8_t pad_0xb1[0x3]; // 0xb1
+        int32_t m_nAcknowledgedParity; // 0xb4        
+        [[maybe_unused]] std::uint8_t pad_0xb8[0x18];
     };
     #pragma pack(pop)
     
@@ -75,6 +76,7 @@ namespace source2sdk::client
     static_assert(offsetof(C_DOTA_UnitInventory, m_bStashEnabled) == 0x8d);
     static_assert(offsetof(C_DOTA_UnitInventory, m_hTransientCastItem) == 0x90);
     static_assert(offsetof(C_DOTA_UnitInventory, m_bSendChangedMsg) == 0xb0);
+    static_assert(offsetof(C_DOTA_UnitInventory, m_nAcknowledgedParity) == 0xb4);
     
     static_assert(sizeof(C_DOTA_UnitInventory) == 0xd0);
 };

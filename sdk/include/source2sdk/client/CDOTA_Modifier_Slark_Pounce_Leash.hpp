@@ -14,21 +14,20 @@ namespace source2sdk::client
     // Registered alignment: unknown
     // Alignment: unknown
     // Standard-layout class: false
-    // Size: 0x1700
+    // Size: 0x1720
     // Has VTable
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Modifier_Slark_Pounce_Leash : public client::CDOTA_Buff
     {
     public:
-        int32_t leash_radius; // 0x16e8        
-        Vector vLeashLocation; // 0x16ec        
-        bool m_bEscaped; // 0x16f8        
-        bool m_bFishBait; // 0x16f9        
-        [[maybe_unused]] std::uint8_t pad_0x16fa[0x6];
+        int32_t leash_radius; // 0x1708        
+        Vector vLeashLocation; // 0x170c        
+        bool m_bEscaped; // 0x1718        
+        bool m_bFishBait; // 0x1719        
+        [[maybe_unused]] std::uint8_t pad_0x171a[0x6];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Modifier_Slark_Pounce_Leash because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_Slark_Pounce_Leash) == 0x1700);
+    static_assert(sizeof(CDOTA_Modifier_Slark_Pounce_Leash) == 0x1720);
 };

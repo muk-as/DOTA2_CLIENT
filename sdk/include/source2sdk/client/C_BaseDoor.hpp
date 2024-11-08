@@ -14,11 +14,10 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x7e0
+    // Size: 0x828
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkVarNames "bool m_bIsUsable"
     #pragma pack(push, 1)
@@ -26,11 +25,11 @@ namespace source2sdk::client
     {
     public:
         // metadata: MNetworkEnable
-        bool m_bIsUsable; // 0x7d8        
-        [[maybe_unused]] std::uint8_t pad_0x7d9[0x7];
+        bool m_bIsUsable; // 0x820        
+        [[maybe_unused]] std::uint8_t pad_0x821[0x7];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in C_BaseDoor because it is not a standard-layout class
-    static_assert(sizeof(C_BaseDoor) == 0x7e0);
+    static_assert(sizeof(C_BaseDoor) == 0x828);
 };

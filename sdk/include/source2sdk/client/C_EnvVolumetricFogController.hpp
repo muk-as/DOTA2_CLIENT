@@ -16,13 +16,13 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x5d8
+    // Size: 0x610
     // Has VTable
     // Construct allowed
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MEntityAllowsPortraitWorldSpawn
     // static metadata: MNetworkVarNames "float m_flScattering"
+    // static metadata: MNetworkVarNames "Color m_TintColor"
     // static metadata: MNetworkVarNames "float m_flAnisotropy"
     // static metadata: MNetworkVarNames "float m_flFadeSpeed"
     // static metadata: MNetworkVarNames "float m_flDrawDistance"
@@ -55,82 +55,89 @@ namespace source2sdk::client
     // static metadata: MNetworkVarNames "float m_fNoiseSpeed"
     // static metadata: MNetworkVarNames "float m_fNoiseStrength"
     // static metadata: MNetworkVarNames "Vector m_vNoiseScale"
+    // static metadata: MNetworkVarNames "float m_fWindSpeed"
+    // static metadata: MNetworkVarNames "Vector m_vWindDirection"
     #pragma pack(push, 1)
     class C_EnvVolumetricFogController : public client::C_BaseEntity
     {
     public:
         // metadata: MNetworkEnable
-        float m_flScattering; // 0x538        
+        float m_flScattering; // 0x560        
         // metadata: MNetworkEnable
-        float m_flAnisotropy; // 0x53c        
+        Color m_TintColor; // 0x564        
         // metadata: MNetworkEnable
-        float m_flFadeSpeed; // 0x540        
+        float m_flAnisotropy; // 0x568        
         // metadata: MNetworkEnable
-        float m_flDrawDistance; // 0x544        
+        float m_flFadeSpeed; // 0x56c        
         // metadata: MNetworkEnable
-        float m_flFadeInStart; // 0x548        
+        float m_flDrawDistance; // 0x570        
         // metadata: MNetworkEnable
-        float m_flFadeInEnd; // 0x54c        
+        float m_flFadeInStart; // 0x574        
         // metadata: MNetworkEnable
-        float m_flIndirectStrength; // 0x550        
+        float m_flFadeInEnd; // 0x578        
         // metadata: MNetworkEnable
-        int32_t m_nVolumeDepth; // 0x554        
+        float m_flIndirectStrength; // 0x57c        
         // metadata: MNetworkEnable
-        float m_fFirstVolumeSliceThickness; // 0x558        
+        int32_t m_nVolumeDepth; // 0x580        
         // metadata: MNetworkEnable
-        int32_t m_nIndirectTextureDimX; // 0x55c        
+        float m_fFirstVolumeSliceThickness; // 0x584        
         // metadata: MNetworkEnable
-        int32_t m_nIndirectTextureDimY; // 0x560        
+        int32_t m_nIndirectTextureDimX; // 0x588        
         // metadata: MNetworkEnable
-        int32_t m_nIndirectTextureDimZ; // 0x564        
+        int32_t m_nIndirectTextureDimY; // 0x58c        
         // metadata: MNetworkEnable
-        Vector m_vBoxMins; // 0x568        
+        int32_t m_nIndirectTextureDimZ; // 0x590        
         // metadata: MNetworkEnable
-        Vector m_vBoxMaxs; // 0x574        
+        Vector m_vBoxMins; // 0x594        
         // metadata: MNetworkEnable
-        bool m_bActive; // 0x580        
-        [[maybe_unused]] std::uint8_t pad_0x581[0x3]; // 0x581
+        Vector m_vBoxMaxs; // 0x5a0        
         // metadata: MNetworkEnable
-        entity2::GameTime_t m_flStartAnisoTime; // 0x584        
+        bool m_bActive; // 0x5ac        
+        [[maybe_unused]] std::uint8_t pad_0x5ad[0x3]; // 0x5ad
         // metadata: MNetworkEnable
-        entity2::GameTime_t m_flStartScatterTime; // 0x588        
+        entity2::GameTime_t m_flStartAnisoTime; // 0x5b0        
         // metadata: MNetworkEnable
-        entity2::GameTime_t m_flStartDrawDistanceTime; // 0x58c        
+        entity2::GameTime_t m_flStartScatterTime; // 0x5b4        
         // metadata: MNetworkEnable
-        float m_flStartAnisotropy; // 0x590        
+        entity2::GameTime_t m_flStartDrawDistanceTime; // 0x5b8        
         // metadata: MNetworkEnable
-        float m_flStartScattering; // 0x594        
+        float m_flStartAnisotropy; // 0x5bc        
         // metadata: MNetworkEnable
-        float m_flStartDrawDistance; // 0x598        
+        float m_flStartScattering; // 0x5c0        
         // metadata: MNetworkEnable
-        float m_flDefaultAnisotropy; // 0x59c        
+        float m_flStartDrawDistance; // 0x5c4        
         // metadata: MNetworkEnable
-        float m_flDefaultScattering; // 0x5a0        
+        float m_flDefaultAnisotropy; // 0x5c8        
         // metadata: MNetworkEnable
-        float m_flDefaultDrawDistance; // 0x5a4        
+        float m_flDefaultScattering; // 0x5cc        
         // metadata: MNetworkEnable
-        bool m_bStartDisabled; // 0x5a8        
+        float m_flDefaultDrawDistance; // 0x5d0        
         // metadata: MNetworkEnable
-        bool m_bEnableIndirect; // 0x5a9        
+        bool m_bStartDisabled; // 0x5d4        
         // metadata: MNetworkEnable
-        bool m_bIndirectUseLPVs; // 0x5aa        
+        bool m_bEnableIndirect; // 0x5d5        
         // metadata: MNetworkEnable
-        bool m_bIsMaster; // 0x5ab        
-        [[maybe_unused]] std::uint8_t pad_0x5ac[0x4]; // 0x5ac
+        bool m_bIndirectUseLPVs; // 0x5d6        
+        // metadata: MNetworkEnable
+        bool m_bIsMaster; // 0x5d7        
         // metadata: MNetworkEnable
         // m_hFogIndirectTexture has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CStrongHandle<resourcesystem::InfoForResourceTypeCTextureBase> m_hFogIndirectTexture;
-        char m_hFogIndirectTexture[0x8]; // 0x5b0        
+        char m_hFogIndirectTexture[0x8]; // 0x5d8        
         // metadata: MNetworkEnable
-        int32_t m_nForceRefreshCount; // 0x5b8        
+        int32_t m_nForceRefreshCount; // 0x5e0        
         // metadata: MNetworkEnable
-        float m_fNoiseSpeed; // 0x5bc        
+        float m_fNoiseSpeed; // 0x5e4        
         // metadata: MNetworkEnable
-        float m_fNoiseStrength; // 0x5c0        
+        float m_fNoiseStrength; // 0x5e8        
         // metadata: MNetworkEnable
-        Vector m_vNoiseScale; // 0x5c4        
-        bool m_bFirstTime; // 0x5d0        
-        [[maybe_unused]] std::uint8_t pad_0x5d1[0x7];
+        Vector m_vNoiseScale; // 0x5ec        
+        // metadata: MNetworkEnable
+        float m_fWindSpeed; // 0x5f8        
+        // metadata: MNetworkEnable
+        Vector m_vWindDirection; // 0x5fc        
+        bool m_bFirstTime; // 0x608        
+        [[maybe_unused]] std::uint8_t pad_0x609[0x7];
         
         // Datamap fields:
         // void InputSetToDefaults; // 0x0
@@ -146,5 +153,5 @@ namespace source2sdk::client
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in C_EnvVolumetricFogController because it is not a standard-layout class
-    static_assert(sizeof(C_EnvVolumetricFogController) == 0x5d8);
+    static_assert(sizeof(C_EnvVolumetricFogController) == 0x610);
 };

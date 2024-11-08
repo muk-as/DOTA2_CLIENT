@@ -14,22 +14,21 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x680
+    // Size: 0x6a8
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class C_DOTA_Item_BootsOfTravel : public client::C_DOTA_Item
     {
     public:
-        float m_flTeleportTimeOverride; // 0x678        
-        bool m_bPendingSellExcessScrolls; // 0x67c        
-        bool m_bQueueSellScrolls; // 0x67d        
-        [[maybe_unused]] std::uint8_t pad_0x67e[0x2];
+        float m_flTeleportTimeOverride; // 0x6a0        
+        bool m_bPendingSellExcessScrolls; // 0x6a4        
+        bool m_bQueueSellScrolls; // 0x6a5        
+        [[maybe_unused]] std::uint8_t pad_0x6a6[0x2];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in C_DOTA_Item_BootsOfTravel because it is not a standard-layout class
-    static_assert(sizeof(C_DOTA_Item_BootsOfTravel) == 0x680);
+    static_assert(sizeof(C_DOTA_Item_BootsOfTravel) == 0x6a8);
 };

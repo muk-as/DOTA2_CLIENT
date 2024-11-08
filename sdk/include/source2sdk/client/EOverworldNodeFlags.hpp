@@ -8,7 +8,7 @@
 
 namespace source2sdk::client
 {
-    // Enumerator count: 7
+    // Enumerator count: 8
     // Alignment: 4
     // Size: 0x4
     enum class EOverworldNodeFlags : std::uint32_t
@@ -20,5 +20,6 @@ namespace source2sdk::client
         Shortcut = 0x10,
         InvisibleUntilNearby = 0x20,
         Secret = 0x40,
+        FinalNode = 0x80,
     };
 };

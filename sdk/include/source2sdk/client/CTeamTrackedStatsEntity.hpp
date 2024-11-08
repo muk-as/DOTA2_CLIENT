@@ -15,11 +15,10 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x598
+    // Size: 0x5d8
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkVarNames "DOTATeam_t m_nTeam"
     #pragma pack(push, 1)
@@ -27,11 +26,11 @@ namespace source2sdk::client
     {
     public:
         // metadata: MNetworkEnable
-        client::DOTATeam_t m_nTeam; // 0x590        
-        [[maybe_unused]] std::uint8_t pad_0x594[0x4];
+        client::DOTATeam_t m_nTeam; // 0x5d0        
+        [[maybe_unused]] std::uint8_t pad_0x5d4[0x4];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CTeamTrackedStatsEntity because it is not a standard-layout class
-    static_assert(sizeof(CTeamTrackedStatsEntity) == 0x598);
+    static_assert(sizeof(CTeamTrackedStatsEntity) == 0x5d8);
 };

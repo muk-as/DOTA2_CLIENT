@@ -14,20 +14,19 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x1b98
+    // Size: 0x1be8
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class C_DOTA_Unit_Hero_CrystalMaiden : public client::C_DOTA_BaseNPC_Hero
     {
     public:
-        int32_t m_iParticleMouthIndex; // 0x1b90        
-        int32_t m_iParticleHandRIndex; // 0x1b94        
+        int32_t m_iParticleMouthIndex; // 0x1be0        
+        int32_t m_iParticleHandRIndex; // 0x1be4        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in C_DOTA_Unit_Hero_CrystalMaiden because it is not a standard-layout class
-    static_assert(sizeof(C_DOTA_Unit_Hero_CrystalMaiden) == 0x1b98);
+    static_assert(sizeof(C_DOTA_Unit_Hero_CrystalMaiden) == 0x1be8);
 };

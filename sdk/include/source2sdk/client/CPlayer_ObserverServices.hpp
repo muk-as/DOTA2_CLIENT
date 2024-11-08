@@ -23,7 +23,6 @@ namespace source2sdk::client
     // Standard-layout class: false
     // Size: 0x58
     // Has VTable
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkVarNames "uint8 m_iObserverMode"
     // static metadata: MNetworkVarNames "CHandle< CBaseEntity> m_hObserverTarget"

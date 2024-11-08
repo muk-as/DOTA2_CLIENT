@@ -15,11 +15,10 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x1900
+    // Size: 0x1970
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkVarNames "bool m_bMiniGameActive"
     // static metadata: MNetworkVarNames "int8 m_vecTargetAssignments"
@@ -31,22 +30,22 @@ namespace source2sdk::client
     public:
         // metadata: MNetworkEnable
         // metadata: MNetworkChangeCallback "OnMuertaReleaseEventMiniGameActiveChanged"
-        bool m_bMiniGameActive; // 0x18b8        
+        bool m_bMiniGameActive; // 0x1928        
         // metadata: MNetworkEnable
         // metadata: MNetworkChangeCallback "OnMuertaReleaseEventTargetAssignmentsChanged"
-        int8_t m_vecTargetAssignments[10]; // 0x18b9        
+        int8_t m_vecTargetAssignments[10]; // 0x1929        
         // metadata: MNetworkEnable
         // metadata: MNetworkChangeCallback "OnMuertaReleaseEventMiniGamePointsChanged"
-        uint8_t m_vecMiniGamePoints[10]; // 0x18c3        
+        uint8_t m_vecMiniGamePoints[10]; // 0x1933        
         // metadata: MNetworkEnable
-        uint8_t m_vecMiniGameKills[10]; // 0x18cd        
-        [[maybe_unused]] std::uint8_t pad_0x18d7[0x11]; // 0x18d7
+        uint8_t m_vecMiniGameKills[10]; // 0x193d        
+        [[maybe_unused]] std::uint8_t pad_0x1947[0x11]; // 0x1947
         // m_activeGravestones has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<client::ParticleIndex_t> m_activeGravestones;
-        char m_activeGravestones[0x18]; // 0x18e8        
+        char m_activeGravestones[0x18]; // 0x1958        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CIngameEvent_MuertaReleaseSpring2023 because it is not a standard-layout class
-    static_assert(sizeof(CIngameEvent_MuertaReleaseSpring2023) == 0x1900);
+    static_assert(sizeof(CIngameEvent_MuertaReleaseSpring2023) == 0x1970);
 };

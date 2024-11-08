@@ -25,10 +25,11 @@ function SkipToEnd() {
 function SetFinished() {
     g_typeWriterEffect.m_bFinished = true;
     if (g_typeWriterEffect.m_strText.length != 0) {
-        g_typeWriterEffect.m_panel.text = g_typeWriterEffect.m_strText + " <child id='Cursor' nobreak='1'>";
+        g_typeWriterEffect.m_panel.text = g_typeWriterEffect.m_strText + " <child id='Cursor'>";
     }
     g_typeWriterEffect.m_storyPanel.GetParent().SetHasClass("Animating", false);
-    g_typeWriterEffect.m_storyPanel.SetHasClass("AnimateDonkey", false);
+    g_typeWriterEffect.m_storyPanel.SetHasClass( "AnimateDonkey", false );
+    $.DispatchEvent( 'DOTAVisualNovelDialogueLineComplete', g_typeWriterEffect.m_storyPanel );
     $.Msg("Finished effects on ", g_typeWriterEffect.m_strText);
 }
 
@@ -167,7 +168,14 @@ function UpdateEffects() {
     var endString = g_typeWriterEffect.m_strText.substring(g_typeWriterEffect.m_nCharacterIndex);
 
     //$.Msg(partialString, " / ", g_typeWriterEffect.m_strText)
-    var combinedString = partialString + "<child id='Cursor' nobreak='1'/><span class='HideText'>" + endString + "</span>";
+    // We want the cursor to act like the next character in the word so that it word breaks or wraps correctly.
+    var replaceCharAttribute = "";
+    if ( endString.length > 0 )
+    {
+        replaceCharAttribute = " replacechar='" + endString.charAt( 0 ) + "'";
+    }
+
+    var combinedString = partialString + "<child id='Cursor'" + replaceCharAttribute + "/><span class='HideText'>" + endString + "</span>";
     //$.Msg("Before:\t" + combinedString);
     var fixedString = FixUpHtmlTags(combinedString);
     //$.Msg("After:\t" + fixedString);

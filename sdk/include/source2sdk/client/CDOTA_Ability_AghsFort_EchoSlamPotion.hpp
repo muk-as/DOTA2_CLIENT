@@ -14,24 +14,23 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x690
+    // Size: 0x6b8
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Ability_AghsFort_EchoSlamPotion : public client::C_DOTA_Item
     {
     public:
-        int32_t echo_slam_damage_range; // 0x678        
-        int32_t echo_slam_echo_search_range; // 0x67c        
-        int32_t echo_slam_echo_range; // 0x680        
-        int32_t echo_slam_echo_damage; // 0x684        
-        int32_t echo_slam_initial_damage; // 0x688        
-        float spend_charge_delay; // 0x68c        
+        int32_t echo_slam_damage_range; // 0x6a0        
+        int32_t echo_slam_echo_search_range; // 0x6a4        
+        int32_t echo_slam_echo_range; // 0x6a8        
+        int32_t echo_slam_echo_damage; // 0x6ac        
+        int32_t echo_slam_initial_damage; // 0x6b0        
+        float spend_charge_delay; // 0x6b4        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Ability_AghsFort_EchoSlamPotion because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Ability_AghsFort_EchoSlamPotion) == 0x690);
+    static_assert(sizeof(CDOTA_Ability_AghsFort_EchoSlamPotion) == 0x6b8);
 };

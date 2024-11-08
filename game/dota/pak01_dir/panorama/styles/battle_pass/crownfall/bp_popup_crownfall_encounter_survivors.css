@@ -1,0 +1,6668 @@
+/* Prettified by Source 2 Viewer 0.0.0.0 - https://valveresourceformat.github.io */
+
+@define HudHeight: 110px;
+@define BossFadeDuration: 1.5s;
+@define UISoundSelect: ui_select_md;
+@define UISoundBack: ui_settings_out_multi;
+.PopupPanel.Survivors
+{
+	flow-children: none;
+	background-color: none;
+	animation: none;
+	border: 0px solid transparent;
+	padding: 0px;
+	box-shadow: none;
+	width: 100%;
+	height: 100%;
+}
+
+.MainContentsWrapperContainer
+{
+	flow-children: down;
+	horizontal-align: center;
+	vertical-align: center;
+	margin-top: 32px;
+}
+
+.PopupPanel .MainContents
+{
+	width: 1560px;
+	height: width-percentage( 56.25% );
+	height: width-percentage( 62.5% );
+	background-color: black;
+}
+
+.PopupPanel.Maximized
+{
+	width: 1920px;
+	height: 1080px;
+}
+
+.AspectRatio16x10 .PopupPanel.Maximized
+{
+	width: 100%;
+	height: 90%;
+}
+
+.PopupPanel.Maximized .MainContentsWrapperContainer
+{
+	width: fill-parent-flow(1);
+	height: fill-parent-flow(1);
+	margin: 0px;
+}
+
+.PopupPanel.Maximized .MainContentsWrapper
+{
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+	border: 0px;
+	padding: 0px;
+	ui-scale: 100%;
+}
+
+.PopupPanel.Maximized .MainContents
+{
+	ui-scale: 100%;
+	border: 0px;
+	width: 1920px;
+	height: 1080px;
+}
+
+.PopupPanel.Maximized .DebugContainer
+{
+	visibility: collapse;
+}
+
+.PopupPanel.Maximized .DebugTimelineControlsContainer
+{
+	visibility: collapse;
+}
+
+.PopupPanel.Maximized #ResizeButtonContainer,.PopupPanel.Maximized #CloseButtonContainer
+{
+	margin: 0px;
+}
+
+.FadeCover
+{
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	opacity: 0;
+	transition-property: opacity;
+	transition-duration: BossFadeDuration;
+}
+
+.BossFadeIn .FadeCover
+{
+	opacity: 0;
+}
+
+.BossFadeOut .FadeCover
+{
+	opacity: 1;
+}
+
+.PlayerDamageContainer
+{
+	width: 100%;
+	height: 100%;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( red ), color-stop( 0.4, rgba(255, 0, 0, 0) ), color-stop( 0.6, rgba(255, 0, 0, 0) ), to( red ) ) );
+	opacity-brush: gradient( linear, 0% 0%, 100% 0%, from( white ), color-stop( 0.5, rgba(255, 255, 255, 0.5) ), color-stop( 0.5, rgba(255, 255, 255, 0.5) ), to( white ) );
+	opacity: 0;
+}
+
+.PlayerTookDamage .PlayerDamageContainer
+{
+	animation-name: PlayerTookDamageAnim;
+	animation-duration: 0.8s;
+	animation-iteration-count: 1;
+}
+
+@keyframes 'PlayerTookDamageAnim'
+{
+	0%
+	{
+		opacity: 0;
+	}
+	
+	20%
+	{
+		opacity: 0.8;
+	}
+	
+	100%
+	{
+		opacity: 0;
+	}
+	
+}
+
+.GameUI
+{
+	width: 100%;
+	height: 100%;
+}
+
+.GameState_Setup .GameUI,.GameState_Finished .GameUI,.DebugFinishedScreen .GameUI
+{
+	visibility: collapse;
+}
+
+.TimerContainer
+{
+	horizontal-align: center;
+	margin-top: -5.5px;
+	opacity-brush: gradient( linear, 0% 0%, 0% 5%, from(rgba(255, 255, 255, 0) ), to( #ffffff ) );
+	height: 100px;
+	transform: none;
+	opacity: 1;
+	transition-property: transform, opacity;
+	transition-duration: 0.2s;
+	transition-delay: 0s;
+	transition-timing-function: cubic-bezier(0, 1, 0, 1);
+}
+
+.GameState_Setup .TimerContainer,.GameState_Finished .TimerContainer,.GameState_ShowingDialogue .TimerContainer,.DebugFinishedScreen .TimerContainer
+{
+	transform: translateY( -24px );
+	opacity: 0;
+	transition-duration: 0.4s;
+	transition-delay: 0.5s;
+}
+
+.TimerContainer .ScoreBackground,.TimerContainer .ScoreBorder
+{
+	width: 310px;
+	transform: scaleY( -1.0 );
+}
+
+.TimerContainer .ScoreBackground
+{
+	wash-color: #685d47;
+}
+
+.TimerContainer .ScoreBorder
+{
+	wash-color: #f0ce92;
+}
+
+.TimerContainer .TimerInfoContainer
+{
+	flow-children: right;
+	horizontal-align: center;
+	margin-top: 4px;
+}
+
+.TimerContainer .DifficultyContainer
+{
+	horizontal-align: center;
+	margin-top: 45px;
+}
+
+.TimerContainer .DifficultyContainer .EchelonBadge
+{
+	height: 22px;
+	img-shadow: 0px 2px 12px black;
+}
+
+.TimerContainer .DifficultyContainer .DifficultyText
+{
+	vertical-align: center;
+	horizontal-align: center;
+	font-size: 12px;
+	color: rgba(245, 245, 245, 0.7);
+	width: 100%;
+	height: 16px;
+	text-align: center;
+	margin: 0px 8px;
+	text-overflow: shrink;
+	text-shadow: 0px 2px 8px black;
+}
+
+.TimerContainer .DifficultyContainer .DifficultyText b
+{
+	color: white;
+}
+
+.TimerContainer .ScoreData
+{
+	flow-children: down;
+	horizontal-align: center;
+	vertical-align: center;
+	width: 120px;
+}
+
+.TimerContainer .ScoreData .ScoreLabel
+{
+	horizontal-align: center;
+	color: rgba(255, 255, 255, 0.5);
+	text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.6);
+	margin-bottom: -5px;
+}
+
+.TimerContainer .ScoreData .ScoreHUD
+{
+	horizontal-align: center;
+	font-weight: bold;
+	color: white;
+	font-size: 21px;
+	text-shadow: 0px 0px 12px 0.5 #ffd05a31;
+	padding: 0px 12px;
+	transition-duration: 0.1s;
+	transition-property: transform, brightness, text-shadow;
+}
+
+.IsAnimatingScore .TimerContainer .ScoreData .ScoreHUD
+{
+	brightness: 1.5;
+	transform: scale3d( 1.08, 1.08, 1 );
+	text-shadow: 0px 0px 12px 0.5 #ffd05a99;
+	transition-duration: 0.3s;
+}
+
+.TimerContainer .Dash
+{
+	height: 40px;
+	width: 1px;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( rgba(255, 255, 255, 0) ), color-stop( 0.3, rgba(255, 255, 255, 0.1) ), color-stop( 0.7, rgba(255, 255, 255, 0.1) ), to( rgba(255, 255, 255, 0) ) );
+	vertical-align: center;
+	visibility: visible;
+}
+
+.TimerContainer .GoldData
+{
+	flow-children: down;
+	horizontal-align: center;
+	vertical-align: center;
+	width: 120px;
+	visibility: visible;
+}
+
+.TimerContainer .GoldData .GoldLabel
+{
+	horizontal-align: center;
+	color: rgba(255, 255, 255, 0.5);
+	text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.6);
+	margin-bottom: -5px;
+}
+
+.TimerContainer .GoldData .GoldDataContainer
+{
+	flow-children: right;
+	horizontal-align: center;
+}
+
+.TimerContainer .GoldData .GoldDataContainer .GoldHUD
+{
+	horizontal-align: center;
+	font-weight: bold;
+	font-size: 21px;
+	text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.TimerContainer .GoldData .GoldDataContainer .GoldIcon
+{
+	width: 22px;
+	height: width-percentage(100%);
+	img-shadow: 0px 2px 8px rgba(0, 0, 0, 0.8);
+	vertical-align: center;
+	opacity-brush: gradient( linear, 0% 10%, 0% 90%, from( #FFF2DF ), color-stop( 0.48, #ebc386 ), color-stop( 0.52, #BA8C47 ), to( #8d6c3a ) );
+	padding: 2px;
+	margin-left: -1px;
+}
+
+.BossHealthContainer
+{
+	opacity: 0;
+	horizontal-align: center;
+	vertical-align: top;
+	margin-top: 64px;
+}
+
+.IsInBossStage:not(.GameState_GoingToBoss) .BossHealthContainer
+{
+	opacity: 1;
+}
+
+.BossHealthContainer .BossLabel
+{
+	vertical-align: top;
+	horizontal-align: center;
+	text-align: center;
+	color: white;
+	text-shadow: 0px 2px 16px black;
+	font-family: titleFont;
+	margin-bottom: 8px;
+}
+
+.BossHealthContainer #BossHealthProgressBar
+{
+	border-radius: 3px;
+	height: 20px;
+	border: 1px solid rgb(0, 0, 0);
+	box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 0.02);
+	width: 600px;
+	background-color: rgba(0, 0, 0, 0.96);
+	margin-top: 30px;
+}
+
+.BossHealthContainer #BossHealthProgressBar .ProgressBarLeft
+{
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #5CA33C ), to( #3E5F23 ) );
+}
+
+.BossHealthContainer .ProgressBarLabel
+{
+	font-size: 14px;
+	vertical-align: center;
+	horizontal-align: center;
+	text-align: center;
+	color: white;
+	text-shadow: 0px 2px 12px black;
+	font-weight: bold;
+	letter-spacing: 1px;
+	margin-top: 28px;
+}
+
+#ArenaSceneContainer
+{
+	width: 100%;
+	height: 100%;
+	brightness: 1;
+	blur: gaussian( 0px );
+	opacity: 1;
+	transition-property: opacity, brightness, blur;
+	transition-duration: 0.1s;
+}
+
+.GameState_Setup #ArenaSceneContainer
+{
+	opacity: 0;
+	transition-duration: 0.5s;
+}
+
+.ShowPowerUpChoices #ArenaSceneContainer,.GameState_Finished #ArenaSceneContainer,.DebugFinishedScreen #ArenaSceneContainer,.IsPaused.UserPaused #ArenaSceneContainer
+{
+	brightness: 0.1;
+	blur: gaussian( 1px );
+	transition-duration: 0.5s;
+}
+
+#ArenaSceneContainer #ArenaScene
+{
+	width: 100%;
+	height: 100%;
+}
+
+.PlayerHudContainer
+{
+	vertical-align: bottom;
+	horizontal-align: center;
+	flow-children: right;
+	height: 200px;
+	padding-top: 20px;
+	transform: none;
+	opacity: 1;
+	transition-property: transform, opacity;
+	transition-duration: 0.7s;
+	transition-delay: 0.3s;
+	transition-timing-function: cubic-bezier(0, 1, 0, 1);
+	transform: translateY(120px);
+}
+
+.GameState_Setup .PlayerHudContainer
+{
+	transform: translateY(120px);
+}
+
+.GameState_Active .PlayerHudContainer,.GameState_ChoosingPowerUp .PlayerHudContainer
+{
+	transform: none;
+}
+
+.PlayerHudContainer .HudEndCapImage
+{
+	height: HudHeight;
+	hue-rotation: -15deg;
+	vertical-align: bottom;
+}
+
+.PlayerHudContainer .HudEndCapImage.Right
+{
+	transform: scaleX( -1 );
+}
+
+.PlayerHudContainer .PlayerExp
+{
+	horizontal-align: center;
+	vertical-align: bottom;
+	padding-bottom: 8px;
+	margin-right: -34px;
+	z-index: 1;
+}
+
+.PlayerHudContainer .PlayerExp .GemImage
+{
+	width: 44px;
+	height: 44px;
+	background-image: url("s2r://panorama/images/events/crownfall/survivors/gem_png.vtex");
+	background-size: cover;
+	vertical-align: bottom;
+	horizontal-align: center;
+	transform: translateY( 14px );
+}
+
+.PlayerHudContainer .PlayerExpContainer
+{
+	width: 80px;
+	height: width-percentage( 100% );
+	padding: 2px;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( rgb(0, 0, 0) ), to( rgb(23, 30, 37) ) );
+	border-radius: 50%;
+	box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.4);
+	border: 1px solid rgba(255, 255, 255, 0.03);
+	border-brush: gradient( linear, 0% 0%, 100% 0%, from( rgba(255, 255, 255, 0) ), to( rgb(255, 255, 255) ) );
+}
+
+.PlayerHudContainer .PlayerExpContainer #PlayerExpProgressBar
+{
+	border-radius: 3px;
+	height: 14px;
+	border: 1px solid rgb(0, 0, 0);
+	box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 0.02);
+	width: 100px;
+	background-color: rgba(0, 0, 0, 0.96);
+	visibility: collapse;
+}
+
+.PlayerHudContainer .PlayerExpContainer .PlayerExpProgressCircle
+{
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	border: 3px solid rgba(255, 255, 255, 0.03);
+}
+
+.PlayerHudContainer .PlayerExpContainer #PlayerExpProgressCircleFilled
+{
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	border: 3px solid white;
+	border-brush: gradient( linear, 0% 0%, 0% 100%, from( #ffe89c ), to( #856d20 ) );
+}
+
+.PlayerHudContainer .PlayerExpContainer .PlayerExpLevelLabelsContainer
+{
+	flow-children: down;
+	horizontal-align: center;
+	vertical-align: center;
+}
+
+.PlayerHudContainer .PlayerExpContainer .PlayerExpLevelLabelsContainer .LevelText
+{
+	horizontal-align: center;
+	text-align: center;
+	margin-top: -4px;
+	margin-bottom: -3px;
+	font-size: 20px;
+}
+
+.PlayerHudContainer .PlayerExpContainer .PlayerExpLevelLabelsContainer .GemCounter
+{
+	flow-children: down;
+	horizontal-align: center;
+}
+
+.PlayerHudContainer .PlayerExpContainer .PlayerExpLevelLabelsContainer .GemCounter .ExpText
+{
+	horizontal-align: center;
+	visibility: collapse;
+	text-align: center;
+	letter-spacing: 0px;
+	vertical-align: center;
+	letter-spacing: 0px;
+	color: rgba(255, 255, 255, 0.6);
+	text-shadow: 0px 2px 8px black;
+}
+
+.PlayerHudContainer .PlayerExpContainer .ExpGemModel
+{
+	width: 80px;
+	height: 80px;
+}
+
+.PlayerHudContainer .PlayerHeroPortraitContainer
+{
+	width: HudHeight;
+	height: HudHeight;
+	vertical-align: bottom;
+	background-color: gradient( radial, 50% 50%, 0% 0%, 80% 80%, from( rgb(73, 69, 122) ), to( rgb(6, 7, 30) ) );
+	box-shadow: inset 0px 1px 3px rgba(255, 255, 255, 0.01);
+	border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.PlayerHudContainer .PlayerHeroPortraitContainer #HeroPortrait
+{
+	width: 100%;
+	height: width-percentage( 133% );
+	overflow: noclip;
+	margin-top: -10%;
+}
+
+.PlayerHudContainer .PlayerHeroPortraitContainer .WIPLabel
+{
+	horizontal-align: center;
+	vertical-align: bottom;
+}
+
+.PlayerHudContainer .PlayerAbilitiesContainer
+{
+	padding: 0px 12px;
+	height: 100%;
+}
+
+.PlayerHudContainer .PlayerAbilitiesContainer .PlayerAbilitiesBackground
+{
+	width: 100%;
+	margin-left: -12px;
+	margin-right: -12px;
+	height: HudHeight;
+	vertical-align: bottom;
+	background-color: rgba(38, 37, 49, 0.2);
+	background-image: url("s2r://panorama/images/events/crownfall/survivors/ability_bg_png.vtex");
+	background-size: cover;
+	background-position: top;
+	box-shadow: inset -1px 0px 0px rgba(255, 255, 255, 0.01);
+}
+
+.PlayerHudContainer .PlayerAbilitiesContainer .PlayerInnatesAndActiveContainer
+{
+	flow-children: right;
+	vertical-align: bottom;
+}
+
+.PlayerHudContainer .PlayerAbilitiesContainer #PlayerInnateContainer
+{
+	vertical-align: bottom;
+	flow-children: right;
+	margin-right: -8px;
+	margin-bottom: 40px;
+	overflow: noclip;
+}
+
+.PlayerHudContainer .PlayerAbilitiesContainer #PlayerInnateContainer .PlayerInventorySlot
+{
+	margin-right: 8px;
+	margin-bottom: 4px;
+	padding-bottom: 8px;
+	tooltip-position: top;
+	overflow: noclip;
+}
+
+.PlayerHudContainer .PlayerAbilitiesContainer #PlayerInnateContainer .PlayerInventorySlot .PowerUpLevel
+{
+	opacity: 0;
+}
+
+.PlayerHudContainer .PlayerAbilitiesContainer #PlayerInnateContainer .PlayerInventorySlot .PowerUpImageContainer
+{
+	width: 40px;
+	height: 41px;
+	margin-right: 10px;
+	padding: 3px;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( rgba(0, 0, 0, 0.7) ), to( rgba(0, 0, 0, 0.6) ) );
+	border-radius: 80px;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.PlayerHudContainer .PlayerAbilitiesContainer #PlayerInnateContainer .PlayerInventorySlot .PowerUpImageContainer .PowerUpCooldownContainer
+{
+	width: 100%;
+	height: 100%;
+	visibility: collapse;
+}
+
+.PlayerHudContainer .PlayerAbilitiesContainer #PlayerInnateContainer .PlayerInventorySlot .PowerUpImageContainer .PowerUpCooldownContainer #PowerUpCooldownProgress
+{
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.9);
+}
+
+.PlayerHudContainer .PlayerAbilitiesContainer #PlayerInnateContainer .PlayerInventorySlot .PowerUpImageContainer .PowerUpCooldownContainer .PowerupCooldownLabel
+{
+	horizontal-align: center;
+	vertical-align: center;
+	color: white;
+	text-shadow: 0px 2px 6px 3 black;
+	font-size: 25px;
+	margin-bottom: 2px;
+}
+
+.PlayerHudContainer .PlayerAbilitiesContainer #PlayerInnateContainer .PlayerInventorySlot .PowerUpImageContainer .PowerUpImageBorder
+{
+	width: 100%;
+	height: 100%;
+	border: 0px solid rgba(212, 229, 255, 0.06);
+}
+
+.PlayerHudContainer .PlayerAbilitiesContainer #PlayerInnateContainer .PlayerInventorySlot.OnCooldown .PowerUpCooldownContainer
+{
+	visibility: visible;
+}
+
+.PlayerHudContainer .PlayerAbilitiesContainer #PlayerInnateContainer .PlayerInventorySlot.EmptySlot #PowerUpImage
+{
+	visibility: collapse;
+}
+
+.PlayerHudContainer .PlayerAbilitiesContainer #PlayerInnateContainer .PlayerInventorySlot.EmptySlot .PowerUpLevel
+{
+	visibility: collapse;
+}
+
+.PlayerHudContainer .PlayerAbilitiesContainer #PlayerInnateContainer .PlayerInventorySlot .PowerUpLevel
+{
+	font-size: 12px;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #00000000 ), to( #000000 ) );
+	color: gradient( linear, 0% 35%, 0% 100%, from( #FFF2DF ), color-stop( 0.48, #ebc386 ), color-stop( 0.52, #BA8C47 ), to( #ffc56f ) );
+	text-shadow: 0px 1px 4px 3.0 #000000;
+	vertical-align: center;
+	horizontal-align: center;
+	text-align: center;
+	padding-top: 3px;
+	transform: translate3d(20px, 20px, 0px);
+	width: 25px;
+	height: 25px;
+	z-index: 10;
+	background-color: gradient( linear, 0% 70%, 0% 100%, from( rgb(0, 0, 0) ), to( rgb(32, 41, 48) ) );
+	border: 2px solid white;
+	border-brush: gradient( linear, 0% 0%, 0% 100%, from( #FFF2DF ), color-stop( 0.4, #ebc386 ), color-stop( 0.6, #BA8C47 ), to( #8d6c3a ) );
+	border-radius: 50%;
+	overflow: noclip;
+}
+
+.PlayerHudContainer .PlayerAbilitiesContainer #PlayerActiveContainer
+{
+	vertical-align: bottom;
+	flow-children: right;
+	margin-right: -8px;
+	margin-bottom: 40px;
+	overflow: noclip;
+}
+
+.PlayerHudContainer .PlayerAbilitiesContainer #PlayerActiveContainer .PlayerInventorySlot
+{
+	margin-right: 8px;
+	margin-bottom: 4px;
+	padding-top: 10px;
+	tooltip-position: top;
+	overflow: noclip;
+}
+
+.PlayerHudContainer .PlayerAbilitiesContainer #PlayerActiveContainer .PlayerInventorySlot .PowerUpImageContainer
+{
+	width: 56px;
+	height: 56px;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( rgba(0, 0, 0, 0.7) ), to( rgba(0, 0, 0, 0.6) ) );
+	border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+	box-shadow: inset 0px 1px 6px rgba(0, 0, 0, 0.6);
+	padding: 3px;
+}
+
+.PlayerHudContainer .PlayerAbilitiesContainer #PlayerActiveContainer .PlayerInventorySlot .PowerUpImageContainer #PowerUpImage
+{
+	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.PlayerHudContainer .PlayerAbilitiesContainer #PlayerActiveContainer .PlayerInventorySlot .PowerUpImageContainer .PowerUpCooldownContainer
+{
+	width: 100%;
+	height: 100%;
+	visibility: collapse;
+}
+
+.PlayerHudContainer .PlayerAbilitiesContainer #PlayerActiveContainer .PlayerInventorySlot .PowerUpImageContainer .PowerUpCooldownContainer #PowerUpCooldownProgress
+{
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.9);
+}
+
+.PlayerHudContainer .PlayerAbilitiesContainer #PlayerActiveContainer .PlayerInventorySlot .PowerUpImageContainer .PowerUpCooldownContainer .PowerupCooldownLabel
+{
+	horizontal-align: center;
+	vertical-align: center;
+	color: white;
+	text-shadow: 0px 2px 6px 3 black;
+	font-size: 20px;
+	margin-bottom: 3px;
+}
+
+.PlayerHudContainer .PlayerAbilitiesContainer #PlayerActiveContainer .PlayerInventorySlot .PowerUpImageContainer .PowerUpImageBorder
+{
+	width: 100%;
+	height: 100%;
+	border: 1px solid rgba(212, 229, 255, 0.06);
+	border-brush: gradient( linear, 0% 0%, 0% 100%, from( #ffffff ), to( #ffffff22 ) );
+}
+
+.PlayerHudContainer .PlayerAbilitiesContainer #PlayerActiveContainer .PlayerInventorySlot .PowerUpImageContainer .ActiveImageBorder
+{
+	width: 100%;
+	height: 100%;
+	border: 1px solid rgba(212, 229, 255, 0.06);
+	border-brush: gradient( linear, 0% 0%, 0% 100%, from( #ffffff ), to( #ffffff22 ) );
+	background-image: url("s2r://panorama/images/hud/reborn/autocastable_ability_border_psd.vtex");
+	background-size: 100%;
+	visibility: collapse;
+}
+
+.PlayerHudContainer .PlayerAbilitiesContainer #PlayerActiveContainer .PlayerInventorySlot .PowerUpImageContainer #AutoCasting
+{
+	width: 56px;
+	height: 56px;
+	transform: scale3d(1.15, 1.15, 1);
+	horizontal-align: center;
+	vertical-align: center;
+	opacity: 0;
+	transition-property: opacity, transform;
+	transition-duration: 0.25s;
+}
+
+.PlayerHudContainer .PlayerAbilitiesContainer #PlayerActiveContainer .PlayerInventorySlot .ShardScepterImageContainer
+{
+	horizontal-align: center;
+	margin-top: -20px;
+	visibility: collapse;
+}
+
+.PlayerHudContainer .PlayerAbilitiesContainer #PlayerActiveContainer .PlayerInventorySlot .ShardScepterImageContainer .ShardScepterBackground
+{
+	horizontal-align: center;
+	vertical-align: center;
+	width: 26px;
+	height: width-percentage(100%);
+	border-radius: 50%;
+	background-color: gradient( linear, 0% 0%, 0% 60%, from( #293542be ), to( #090c10db ) );
+	border: 0.5px solid rgba(192, 225, 255, 0.2);
+	border-brush: gradient( linear, 0% 0%, 0% 50%, from( white ), to( rgba(255, 255, 255, 0) ) );
+	box-shadow: 0px 2px 8px -1px rgba(0, 0, 0, 0.6);
+	visibility: collapse;
+}
+
+.PlayerHudContainer .PlayerAbilitiesContainer #PlayerActiveContainer .PlayerInventorySlot .ShardScepterImageContainer .AbilityShardScepterImage
+{
+	horizontal-align: center;
+	vertical-align: center;
+	width: 36px;
+	height: width-percentage(100%);
+	background-size: cover;
+	margin-left: -0.2px;
+	img-shadow: 0px 2px 16px black;
+}
+
+.PlayerHudContainer .PlayerAbilitiesContainer #PlayerActiveContainer .PlayerInventorySlot.ScepterUpgrade .ShardScepterImageContainer
+{
+	visibility: visible;
+}
+
+.PlayerHudContainer .PlayerAbilitiesContainer #PlayerActiveContainer .PlayerInventorySlot.ScepterUpgrade .ShardScepterImageContainer .AbilityShardScepterImage
+{
+	background-image: url("s2r://panorama/images/hud/reborn/aghs_on_scepter_large_png.vtex");
+}
+
+.PlayerHudContainer .PlayerAbilitiesContainer #PlayerActiveContainer .PlayerInventorySlot.ShardUpgrade .ShardScepterImageContainer
+{
+	visibility: visible;
+}
+
+.PlayerHudContainer .PlayerAbilitiesContainer #PlayerActiveContainer .PlayerInventorySlot.ShardUpgrade .ShardScepterImageContainer .AbilityShardScepterImage
+{
+	background-image: url("s2r://panorama/images/hud/reborn/aghs_on_shard_large_png.vtex");
+}
+
+.PlayerHudContainer .PlayerAbilitiesContainer #PlayerActiveContainer .PlayerInventorySlot.ScepterUpgrade.ShardUpgrade .ShardScepterImageContainer
+{
+	visibility: visible;
+}
+
+.PlayerHudContainer .PlayerAbilitiesContainer #PlayerActiveContainer .PlayerInventorySlot.ScepterUpgrade.ShardUpgrade .ShardScepterImageContainer .AbilityShardScepterImage
+{
+	background-image: url("s2r://panorama/images/hud/reborn/aghs_on_large_png.vtex");
+}
+
+.PlayerHudContainer .PlayerAbilitiesContainer #PlayerActiveContainer .PlayerInventorySlot.OnCooldown .PowerUpCooldownContainer
+{
+	visibility: visible;
+}
+
+.PlayerHudContainer .PlayerAbilitiesContainer #PlayerActiveContainer .PlayerInventorySlot.AbilityActive #AutoCasting
+{
+	opacity: 1;
+}
+
+.PlayerHudContainer .PlayerAbilitiesContainer #PlayerActiveContainer .PlayerInventorySlot.EmptySlot #PowerUpImage
+{
+	visibility: collapse;
+}
+
+.PlayerHudContainer .PlayerAbilitiesContainer #PlayerActiveContainer .PlayerInventorySlot.EmptySlot .PowerUpLevel
+{
+	visibility: collapse;
+}
+
+.PlayerHudContainer .PlayerAbilitiesContainer #PlayerActiveContainer .PlayerInventorySlot .PowerUpLevel
+{
+	vertical-align: center;
+	horizontal-align: center;
+	padding-top: 2px;
+	transform: translate3d(20px, 20px, 0px);
+	width: 20px;
+	height: 20px;
+	z-index: 10;
+	background-color: gradient( linear, 0% 70%, 0% 100%, from( rgb(0, 0, 0) ), to( rgb(32, 41, 48) ) );
+	border: 1px solid rgba(255, 255, 255, 0.6);
+	border-brush: gradient( linear, 0% 0%, 0% 100%, from( #FFF2DF ), color-stop( 0.4, #ebc386 ), color-stop( 0.6, #BA8C47 ), to( #8d6c3a ) );
+	border-radius: 50%;
+	box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.6);
+	color: gradient( linear, 0% 35%, 0% 100%, from( #FFF2DF ), color-stop( 0.48, #ebc386 ), color-stop( 0.52, #BA8C47 ), to( #ffc56f ) );
+	font-size: 12px;
+	text-align: center;
+	text-shadow: 0px 1px 4px 3.0 #000000;
+}
+
+.PlayerHudContainer .PlayerAbilitiesContainer .PlayerHealthContainer
+{
+	horizontal-align: center;
+	vertical-align: bottom;
+	margin-bottom: 12px;
+	width: 100%;
+}
+
+.PlayerHudContainer .PlayerAbilitiesContainer .PlayerHealthContainer #PlayerHealthProgressBar
+{
+	border-radius: 3px;
+	height: 24px;
+	border: 1px solid rgb(0, 0, 0);
+	box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 0.02);
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.94);
+}
+
+.PlayerHudContainer .PlayerAbilitiesContainer .PlayerHealthContainer #PlayerHealthProgressBar .ProgressBarLeft
+{
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #5CA33C ), to( #3E5F23 ) );
+}
+
+.PlayerHudContainer .PlayerAbilitiesContainer .PlayerHealthContainer #PlayerHealthProgressBar .ProgressBarLeft .DotaSceneContainer
+{
+	width: 100%;
+	height: 100%;
+	overflow: noclip;
+}
+
+.PlayerHudContainer .PlayerAbilitiesContainer .PlayerHealthContainer #PlayerHealthProgressBar .ProgressBarLeft .DotaSceneContainer #HealthBurner
+{
+	width: 100%;
+	height: 100%;
+}
+
+.PlayerHudContainer .PlayerAbilitiesContainer .PlayerHealthContainer #PlayerHealthProgressBar .ProgressBarRight
+{
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #17200d ), color-stop( 0.2, #222e13 ), color-stop( .5, #1e2911), to( #17200d) );
+}
+
+.PlayerHudContainer .PlayerAbilitiesContainer .PlayerHealthContainer .PlayerHealth
+{
+	vertical-align: center;
+	horizontal-align: center;
+	text-align: center;
+	color: white;
+	text-shadow: 0px 1px 8px 2 black;
+	font-weight: semi-bold;
+	letter-spacing: 1px;
+	font-size: 16px;
+	transform: translateY( 1px );
+}
+
+.PlayerHudContainer .PlayerAbilitiesContainer .PlayerHealthContainer .PlayerHealthRegen
+{
+	color: #5cea57;
+	vertical-align: center;
+	horizontal-align: right;
+	text-align: right;
+	font-family: monospaceNumbersFont;
+	text-shadow: 0px 1px 8px 2 black;
+	font-weight: semi-bold;
+	letter-spacing: 1px;
+	font-size: 14px;
+	margin-right: 8px;
+	transform: translateY( 1px );
+}
+
+.PlayerHudContainer .PlayerAbilitiesContainer .EdgeShadow
+{
+	height: HudHeight;
+	width: 12px;
+	vertical-align: bottom;
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( rgba(0, 0, 0, 0.4) ), to( #00000000 ) );
+	ignore-parent-flow: true;
+	margin-left: -12px;
+	border-left: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.PlayerHudContainer .PlayerItemsContainer
+{
+	width: 200px;
+	height: HudHeight;
+	vertical-align: bottom;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( rgba(22, 27, 37, 0.8) ), to( rgba(0, 0, 0, 1) ) );
+	background-image: url("s2r://panorama/images/events/crownfall/survivors/inventory_bg_png.vtex");
+	background-size: cover;
+	background-position: top;
+	background-img-opacity: 0.8;
+}
+
+.PlayerHudContainer .PlayerItemsContainer #PlayerPassiveContainer
+{
+	flow-children: right-wrap;
+	horizontal-align: center;
+	vertical-align: center;
+}
+
+.PlayerHudContainer .PlayerItemsContainer #PlayerPassiveContainer .PlayerInventorySlot
+{
+	width: 62px;
+	height: width-percentage( 75% );
+	tooltip-position: top;
+}
+
+.PlayerHudContainer .PlayerItemsContainer #PlayerPassiveContainer .PlayerInventorySlot .PowerUpImageContainer
+{
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( rgba(0, 0, 0, 0.7) ), to( rgba(0, 0, 0, 0.6) ) );
+	box-shadow: inset 0px 1px 0px 2px rgba(0, 0, 0, 0.3);
+	border: 1px solid black;
+	margin: 3px;
+	width: 100%;
+	height: 100%;
+}
+
+.PlayerHudContainer .PlayerItemsContainer #PlayerPassiveContainer .PlayerInventorySlot.EmptySlot .PowerUpLevel
+{
+	visibility: collapse;
+}
+
+.PlayerHudContainer .PlayerItemsContainer #PlayerPassiveContainer .PlayerInventorySlot .PowerUpLevel
+{
+	vertical-align: bottom;
+	horizontal-align: right;
+	padding-top: 2px;
+	width: 20px;
+	height: 20px;
+	z-index: 10;
+	background-color: gradient( linear, 0% 70%, 0% 100%, from( rgb(0, 0, 0) ), to( rgb(32, 41, 48) ) );
+	border: 1px solid rgba(255, 255, 255, 0.6);
+	border-brush: gradient( linear, 0% 0%, 0% 100%, from( #FFF2DF ), color-stop( 0.4, #ebc386 ), color-stop( 0.6, #BA8C47 ), to( #8d6c3a ) );
+	border-radius: 50%;
+	box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.6);
+	color: gradient( linear, 0% 35%, 0% 100%, from( #FFF2DF ), color-stop( 0.48, #ebc386 ), color-stop( 0.52, #BA8C47 ), to( #ffc56f ) );
+	font-size: 12px;
+	text-align: center;
+	text-shadow: 0px 1px 4px 3.0 #000000;
+}
+
+.PlayerHudContainer .PlayerItemsContainer #PlayerPassiveContainer .PlayerInventorySlot .PowerUpCooldownContainer
+{
+	visibility: collapse;
+}
+
+.PlayerHudContainer .PlayerItemsContainer .EdgeShadow
+{
+	height: 100%;
+	width: 12px;
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( rgba(0, 0, 0, 0.6) ), to( #00000000 ) );
+	border-left: 1px solid rgba(0, 0, 0, 0.6);
+}
+
+#AbilityCombinationItemsContainer
+{
+	width: fit-children;
+	height: fit-children;
+	flow-children: right;
+	horizontal-align: center;
+	visibility: collapse;
+	margin-bottom: 8px;
+}
+
+#AbilityCombinationItemsContainer .LabelSmall
+{
+	vertical-align: center;
+}
+
+#AbilityCombinationItemsContainer #AbilityCombinationItems
+{
+	height: fit-children;
+	width: fit-children;
+	flow-children: right;
+	margin-left: 8px;
+}
+
+#AbilityCombinationItemsContainer #AbilityCombinationItems .RecipeItemImage
+{
+	height: 32px;
+	width: height-percentage( 125% );
+	box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.6);
+	margin: 3px;
+}
+
+#ItemAffectedAbilitiesOuter
+{
+	width: 100%;
+	height: fit-children;
+	flow-children: down;
+	horizontal-align: center;
+	visibility: collapse;
+	margin-top: 12px;
+	margin-bottom: 78px;
+	ignore-parent-flow: true;
+	vertical-align: bottom;
+	background-color: gradient( radial, 50% 0%, 0% 0%, 50% 100%, from( rgba(0, 0, 0, 0.5) ), color-stop( 0.5, rgba(0, 0, 0, 0.3) ), to( rgba(0, 0, 0, 0) ) );
+}
+
+#ItemAffectedAbilitiesOuter .ItemAffectedHolder
+{
+	flow-children: down;
+	horizontal-align: center;
+}
+
+#ItemAffectedAbilitiesOuter .BodySmall
+{
+	horizontal-align: center;
+	color: rgba(239, 246, 255, 0.35);
+	opacity: 0.9;
+	font-size: 14px;
+	margin: 2px 0px -2px;
+	text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+#ItemAffectedAbilitiesOuter #ItemAffectedAbilities
+{
+	width: fit-children;
+	max-width: 95%;
+	flow-children: right;
+	horizontal-align: center;
+	overflow: squish;
+}
+
+#ItemAffectedAbilitiesOuter #ItemAffectedAbilities .AbilitySynergyImage
+{
+	height: 28px;
+	width: height-percentage( 100% );
+	box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.6);
+	margin: 6px 2px;
+}
+
+#ItemAffectedAbilitiesOuter #ItemAffectedAbilities .ItemSynergyImage
+{
+	height: 28px;
+	width: height-percentage( 125% );
+	box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.6);
+	margin: 6px 3px;
+}
+
+.PowerupExisting #ItemAffectedAbilitiesOuter
+{
+	margin-bottom: 78px;
+}
+
+.ItemCombination #AbilityCombinationItemsContainer
+{
+	visibility: visible;
+}
+
+.HasSynergies #ItemAffectedAbilitiesOuter
+{
+	visibility: visible;
+}
+
+.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice.HasSynergies .PowerUpContainer .PowerUpDescription
+{
+	margin-bottom: 0px;
+	ignore-parent-flow: false;
+}
+
+.WIPLabel
+{
+	color: magenta;
+	font-size: 14px;
+	text-shadow: 0px 1px 4px 4 black;
+	text-transform: uppercase;
+}
+
+.SurvivorsPowerUp_10 .PowerUpBackground
+{
+	background-image: url("s2r://materials/portraits_card/portrait_backgrounds/faceless_void_psd.vtex");
+}
+
+.SurvivorsPowerUp_11 .PowerUpBackground
+{
+	background-image: url("s2r://materials/portraits_card/portrait_backgrounds/storm_spirit_psd.vtex");
+}
+
+.SurvivorsPowerUp_12 .PowerUpBackground
+{
+	background-image: url("s2r://materials/portraits_card/portrait_backgrounds/prophet_psd.vtex");
+}
+
+.SurvivorsPowerUp_13 .PowerUpBackground
+{
+	background-image: url("s2r://materials/portraits_card/portrait_backgrounds/axe_psd.vtex");
+}
+
+.SurvivorsPowerUp_14 .PowerUpBackground
+{
+	background-image: url("s2r://materials/portraits_card/portrait_backgrounds/venomancer_psd.vtex");
+}
+
+.SurvivorsPowerUp_15 .PowerUpBackground
+{
+	background-image: url("s2r://materials/portraits_card/portrait_backgrounds/vengeful_spirit_psd.vtex");
+}
+
+.SurvivorsPowerUp_16 .PowerUpBackground
+{
+	background-image: url("s2r://materials/portraits_card/portrait_backgrounds/ancient_apparition_psd.vtex");
+}
+
+.SurvivorsPowerUp_17 .PowerUpBackground
+{
+	background-image: url("s2r://materials/portraits_card/portrait_backgrounds/lina_psd.vtex");
+}
+
+.SurvivorsPowerUp_18 .PowerUpBackground
+{
+	background-image: url("s2r://materials/portraits_card/portrait_backgrounds/tinker_psd.vtex");
+}
+
+.SurvivorsPowerUp_19 .PowerUpBackground
+{
+	background-image: url("s2r://materials/portraits_card/portrait_backgrounds/beastmaster_psd.vtex");
+}
+
+.SurvivorsPowerUp_120 .PowerUpBackground
+{
+	background-image: url("s2r://materials/portraits_card/portrait_backgrounds/queenofpain_psd.vtex");
+}
+
+.SurvivorsPowerUp_21 .PowerUpBackground
+{
+	background-image: url("s2r://materials/portraits_card/portrait_backgrounds/batrider_psd.vtex");
+}
+
+.SurvivorsPowerUp_210 .PowerUpBackground
+{
+	background-image: url("s2r://materials/portraits_card/portrait_backgrounds/nightstalker_psd.vtex");
+}
+
+.SurvivorsPowerUp_102 .PowerUpBackground
+{
+	background-image: url("s2r://materials/portraits_card/portrait_backgrounds/antimage_persona_psd.vtex");
+}
+
+.SurvivorsPowerUp_130 .PowerUpBackground
+{
+	background-image: url("s2r://materials/portraits_card/portrait_backgrounds/huskar_psd.vtex");
+}
+
+.PlayerLevelUpChoiceWrapper
+{
+	horizontal-align: center;
+	vertical-align: middle;
+	flow-children: down;
+	margin-bottom: 100px;
+	transition-property: opacity, transform;
+	transition-duration: 0.25s;
+	opacity: 0;
+	transform: scale3d( 1.1, 1.1, 1 );
+	transition-timing-function: ease-out, cubic-bezier(0, 0.9, 0, 0.9);
+}
+
+.ShowPowerUpChoices .PlayerLevelUpChoiceWrapper
+{
+	transform: none;
+	opacity: 1;
+	transition-duration: 0.1s;
+	transition-timing-function: ease-in;
+}
+
+.PlayerLevelUpChoiceWrapper .LevelUpTitle
+{
+	width: 100%;
+	color: white;
+	text-shadow: 0px 3px 12px black;
+	text-align: center;
+	z-index: 1;
+	visibility: collapse;
+}
+
+.RerollButtonActive .PlayerLevelUpChoiceWrapper .RerollButton
+{
+	brightness: 2.0;
+}
+
+.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer
+{
+	flow-children: right;
+	padding: 0px 48px;
+}
+
+.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice
+{
+	padding: 20px 24px 0px;
+	margin: 0px -4px;
+}
+
+.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice .HeroImageContainer
+{
+	visibility: collapse;
+	horizontal-align: center;
+	width: 132px;
+	z-index: 1;
+	transition-property: transform;
+	transition-duration: 0.1s;
+	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
+}
+
+.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice .HeroImageContainer .ActorShadow
+{
+	horizontal-align: center;
+	vertical-align: bottom;
+	transform: translateY( 15% );
+	opacity: 0.4;
+}
+
+.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice .HeroImageContainer .ActorBackground
+{
+	width: 50%;
+	height: width-percentage( 100% );
+	background-color: rgb(6, 10, 15);
+	horizontal-align: center;
+	vertical-align: bottom;
+	transform: rotateZ( 45deg );
+	margin-top: -15.8%;
+}
+
+.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice .HeroImageContainer .ActorBorderUnder,.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice .HeroImageContainer .ActorBorderOver
+{
+	width: 100%;
+	vertical-align: bottom;
+}
+
+.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice .HeroImageContainer #HeroImage
+{
+	width: 100%;
+	height: width-percentage( 112.5% );
+	opacity-mask: url("s2r://panorama/images/events/crownfall/visual_novel/portrait_mask_png.vtex");
+}
+
+.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice .ShardScepterImageContainer
+{
+	horizontal-align: center;
+	margin-top: -38px;
+	margin-bottom: -8px;
+	z-index: 1;
+	overflow: noclip;
+	ui-scale: 130%;
+	visibility: collapse;
+}
+
+.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice .ShardScepterImageContainer .ShardScepterParticles
+{
+	width: 240%;
+	height: 240%;
+	overflow: noclip;
+	horizontal-align: center;
+	vertical-align: center;
+	opacity-mask: url("s2r://panorama/images/masks/sun_burst_png.vtex");
+}
+
+.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice .ShardScepterImageContainer .AbilityShardScepterImage
+{
+	horizontal-align: center;
+	vertical-align: center;
+	width: 72px;
+	height: width-percentage( 100% );
+	background-size: cover;
+	img-shadow: 0px 4px 16px rgba(0, 0, 0, 0.6);
+	margin-right: 1px;
+}
+
+.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice .PowerUpContainer
+{
+	width: 100%;
+	width: 250px;
+	height: 480px;
+	margin: 92px 0px 45px;
+	flow-children: down;
+	horizontal-align: center;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #977b51 ), to( #2e261b ) );
+	box-shadow: 0px 8px 80px -6px rgba(0, 0, 0, 0.6);
+	transition-property: background-color, box-shadow;
+	transition-duration: 0.2s;
+	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
+}
+
+.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice .PowerUpContainer .HeroName
+{
+	visibility: collapse;
+}
+
+.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice .PowerUpContainer .PowerUpBackground
+{
+	width: 100%;
+	height: 100%;
+	transform: scale3d( 1.1, 1.1, 1 );
+	ignore-parent-flow: true;
+	blur: gaussian( 12px );
+	opacity: 0.15;
+	saturation: 1.1;
+	background-size: cover;
+	background-position: center;
+}
+
+.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice .PowerUpContainer .PowerupLabel
+{
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.4);
+	padding: 24px 8px 8px;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+	color: rgba(236, 246, 255, 0.8);
+	text-shadow: 0px 1px 6px black;
+	font-size: 18px;
+	font-weight: semi-bold;
+	text-align: center;
+}
+
+.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice .PowerUpContainer .ScepterLabel,.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice .PowerUpContainer .ShardLabel
+{
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.7);
+	padding: 16px 8px 40px;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+	color: rgb(181, 214, 243);
+	font-weight: semi-bold;
+	font-family: titleFont;
+	font-size: 12px;
+	text-shadow: 0px 1px 6px black;
+	text-align: center;
+	visibility: collapse;
+}
+
+.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice .PowerUpContainer .PowerupTexture
+{
+	ignore-parent-flow: true;
+	width: 100%;
+	height: 100%;
+	-s2-mix-blend-mode: multiply;
+}
+
+.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice .PowerUpContainer .AbilityImageContainer
+{
+	margin-top: 16px;
+	horizontal-align: center;
+	padding: 5px;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( rgba(0, 0, 0, 0.6) ), to( rgba(0, 0, 0, 0.4) ) );
+	border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+	box-shadow: inset 0px 1px 6px rgba(0, 0, 0, 0.6);
+}
+
+.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice .PowerUpContainer .AbilityImageContainer #AbilityImage
+{
+	height: 92px;
+	width: height-percentage( 125% );
+	box-shadow: 0px 2px 8px -1px rgba(0, 0, 0, 0.6);
+}
+
+.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice .PowerUpContainer .AbilityImageContainer .AbilityImageShine
+{
+	width: 100%;
+	height: 100%;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( rgba(255, 255, 255, 0.01) ), to( rgba(255, 255, 255, 0) ) );
+	border: 1px solid white;
+	border-brush: gradient( linear, 0% 0%, 0% 100%, from( rgba(255, 255, 255, 0.04) ), to( rgba(255, 255, 255, 0.02) ) );
+}
+
+.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice .PowerUpContainer .AbilityName
+{
+	margin: 12px 0px 10px;
+	horizontal-align: center;
+	text-align: center;
+	color: rgba(245, 245, 245, 0.96);
+	font-family: titleFont;
+	text-transform: uppercase;
+	font-weight: semi-bold;
+	font-size: 18px;
+	line-height: 1.3;
+	letter-spacing: 1px;
+	text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice .PowerUpContainer .PowerUpDescription
+{
+	width: 100%;
+	horizontal-align: center;
+	padding: 0px 12px;
+	ignore-parent-flow: true;
+	vertical-align: bottom;
+	margin-bottom: 80px;
+	margin-top: 8px;
+	line-height: 1.2;
+	max-height: 66px;
+	text-overflow: shrink;
+	color: rgba(239, 246, 255, 0.35);
+	text-align: center;
+	font-size: 14px;
+	text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice .PowerUpContainer .MajorUpgrade
+{
+	horizontal-align: center;
+	width: 100%;
+	text-align: center;
+	visibility: collapse;
+}
+
+.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice .PowerUpContainer .LevelUpgradeInfo
+{
+	horizontal-align: center;
+	vertical-align: bottom;
+	text-align: center;
+	ignore-parent-flow: true;
+	width: 100%;
+	padding: 12px 12px 36px;
+	margin: 0px 16px;
+	color: gradient( linear, 0% 50%, 0% 100%, from( #FFF2DF ), color-stop( 0.48, #ebc386 ), color-stop( 0.52, #BA8C47 ), to( #8d6c3a ) );
+	font-family: titleFont;
+	font-size: 26px;
+	text-shadow: 0px 2px 12px rgba(0, 0, 0, 1);
+	text-overflow: shrink;
+	visibility: collapse;
+}
+
+.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice .PowerUpContainer .NewPowerup
+{
+	horizontal-align: center;
+	vertical-align: bottom;
+	ignore-parent-flow: true;
+	margin-bottom: 32px;
+	height: fit-children;
+	width: fit-children;
+	visibility: collapse;
+}
+
+.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice .PowerUpContainer .NewPowerup .NewPowerupBadge
+{
+	height: 46px;
+	horizontal-align: center;
+	vertical-align: center;
+	padding: 12px;
+	img-shadow: 0px 2px 12px black;
+}
+
+.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice .PowerUpContainer .NewPowerup Label
+{
+	width: 64px;
+	horizontal-align: center;
+	vertical-align: center;
+	margin-bottom: 3px;
+	letter-spacing: 0.5px;
+	font-weight: bold;
+	text-overflow: shrink;
+	text-align: center;
+	color: black;
+	text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.1);
+}
+
+.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice .PowerUpContainer #TooltipVariableLines
+{
+	flow-children: down;
+	horizontal-align: center;
+	width: 100%;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+	border-brush: gradient( linear, 0% 0%, 100% 0%, from( rgba(255, 255, 255, 0) ), color-stop( 0.2, white ), color-stop( 0.8, white ), to( rgba(255, 255, 255, 0) ) );
+}
+
+.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice .PowerUpContainer #TooltipVariableLines .TooltipVariableLine
+{
+	width: 100%;
+	horizontal-align: left;
+	padding: 2.5px 16px 3.5px;
+	margin-bottom: -1px;
+	border-top: 1px solid rgba(255, 255, 255, 0.02);
+	border-brush: gradient( linear, 0% 0%, 100% 0%, from( rgba(255, 255, 255, 0) ), color-stop( 0.2, white ), color-stop( 0.8, white ), to( rgba(255, 255, 255, 0) ) );
+}
+
+.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice .PowerUpContainer #TooltipVariableLines .TooltipVariableLine .TooltipVariable
+{
+	horizontal-align: center;
+	text-align: center;
+	color: rgba(239, 246, 255, 0.7);
+	font-family: titleFont;
+	font-size: 15px;
+	text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.8);
+	height: 21.5px;
+	text-overflow: shrink;
+}
+
+.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice .PowerUpContainer #TooltipVariableLines .TooltipVariableLine .TooltipVariable b
+{
+	color: cf_brightgreen;
+}
+
+.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice .PowerUpContainer #TooltipVariableLines .TooltipVariableLine.PhysicalDamage
+{
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( rgba(255, 255, 255, 0) ), color-stop( 0.5, rgba(192, 23, 40, 0.3) ), to( rgba(255, 255, 255, 0) ) );
+}
+
+.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice .PowerUpContainer #TooltipVariableLines .TooltipVariableLine.MagicalDamage
+{
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( rgba(255, 255, 255, 0) ), color-stop( 0.5, rgba(82, 118, 248, 0.3) ), to( rgba(255, 255, 255, 0) ) );
+}
+
+.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice .PowerUpContainer #AttributeDescriptionLines
+{
+	flow-children: down;
+	horizontal-align: center;
+	width: 100%;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+	border-brush: gradient( linear, 0% 0%, 100% 0%, from( rgba(255, 255, 255, 0) ), color-stop( 0.2, white ), color-stop( 0.8, white ), to( rgba(255, 255, 255, 0) ) );
+	visibility: collapse;
+}
+
+.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice .PowerUpContainer #AttributeDescriptionLines .AttributeDescriptionLine
+{
+	width: 100%;
+	horizontal-align: center;
+	flow-children: down;
+	border-top: 1px solid rgba(255, 255, 255, 0.02);
+	padding: 4px 32px 5px;
+	margin-bottom: -1px;
+	border-brush: gradient( linear, 0% 0%, 100% 0%, from( rgba(255, 255, 255, 0) ), color-stop( 0.2, white ), color-stop( 0.8, white ), to( rgba(255, 255, 255, 0) ) );
+}
+
+.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice .PowerUpContainer #AttributeDescriptionLines .AttributeDescriptionLine #AttributeDetails
+{
+	horizontal-align: center;
+	text-align: center;
+	color: rgba(239, 246, 255, 0.8);
+	font-family: titleFont;
+	font-size: 15px;
+	text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.8);
+	text-overflow: shrink;
+}
+
+.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice .PowerUpContainer #AttributeDescriptionLines .AttributeDescriptionLine #AttributeDetails b
+{
+	color: cf_brightgreen;
+}
+
+.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice .PowerUpContainer #AttributeDescriptionLines .AttributeDescriptionLine.PhysicalDamage
+{
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( rgba(255, 255, 255, 0) ), color-stop( 0.5, rgba(192, 23, 40, 0.3) ), to( rgba(255, 255, 255, 0) ) );
+}
+
+.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice .PowerUpContainer #AttributeDescriptionLines .AttributeDescriptionLine.MagicalDamage
+{
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( rgba(255, 255, 255, 0) ), color-stop( 0.5, rgba(82, 118, 248, 0.3) ), to( rgba(255, 255, 255, 0) ) );
+}
+
+.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice .PowerUpContainerBorder
+{
+	width: 100%;
+	height: 100%;
+	margin: 92px 0px 45px;
+	border: 1px solid rgba(255, 255, 255, 0.8);
+	border-brush: gradient( linear, 0% 0%, 0% 100%, from( #FFF2DF ), color-stop( 0.48, #DDAF6B ), color-stop( 0.52, #674108 ), to( #A27531 ) );
+	transition-property: border, transform;
+	transition-duration: 0.1s;
+	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
+}
+
+.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice #ChooseButton
+{
+	ui-scale: 85%;
+	width: 78%;
+	horizontal-align: center;
+	vertical-align: bottom;
+}
+
+.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice .ControlKey
+{
+	vertical-align: top;
+	horizontal-align: right;
+	ignore-parent-flow: true;
+	margin: 8px;
+	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.484);
+}
+
+.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice.PowerupExisting .LevelUpgradeInfo
+{
+	visibility: visible;
+}
+
+.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice.PowerupExisting #TooltipVariableLines
+{
+	visibility: collapse;
+}
+
+.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice.PowerupExisting #AttributeDescriptionLines
+{
+	visibility: visible;
+}
+
+.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice.PowerupNew .NewPowerup
+{
+	visibility: visible;
+}
+
+.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice.HasHero .HeroImageContainer
+{
+	visibility: visible;
+}
+
+.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice.HasHero .PowerUpContainer
+{
+	height: 600px;
+}
+
+.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice.HasHero .PowerupLabel
+{
+	padding: 56px 8px 8px;
+	color: rgba(236, 246, 255, 0.5);
+	font-size: 14px;
+	font-weight: normal;
+	text-align: center;
+	visibility: collapse;
+}
+
+.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice.HasHero .AbilityImageContainer
+{
+	margin-top: 64px;
+}
+
+.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice.HasHero .PowerUpContainer
+{
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #2b3a4b ), to( #0d1321 ) );
+}
+
+.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice.HasHero .PowerUpContainer #AbilityImage
+{
+	height: 88px;
+	width: height-percentage( 100% );
+}
+
+.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice.ScepterUpgrade,.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice.ShardUpgrade
+{
+	padding: 20px 12px 0px;
+}
+
+.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice.ScepterUpgrade .PowerUpContainer,.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice.ShardUpgrade .PowerUpContainer
+{
+	background-color: gradient( linear, 0% 20%, 0% 100%, from( #1b2230 ), to( #245f9e ) );
+}
+
+.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice.ScepterUpgrade .PowerUpContainerBorder,.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice.ShardUpgrade .PowerUpContainerBorder
+{
+	border-brush: gradient( linear, 0% 0%, 0% 100%, from( #c2e8ff ), color-stop( 0.48, #6ca1f5 ), color-stop( 0.52, #1148a7 ), to( #2e67b1 ) );
+}
+
+.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice.ScepterUpgrade .AbilityImageContainer,.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice.ShardUpgrade .AbilityImageContainer
+{
+	margin-top: 16px;
+}
+
+.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice.ScepterUpgrade .PowerUpBackground,.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice.ShardUpgrade .PowerUpBackground
+{
+	visibility: collapse;
+}
+
+.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice.ScepterUpgrade .PowerUpContainer,.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice.ShardUpgrade .PowerUpContainer
+{
+	width: 220px;
+	height: 480px;
+}
+
+.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice.ScepterUpgrade .PowerUpContainer #AbilityImage,.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice.ShardUpgrade .PowerUpContainer #AbilityImage
+{
+	height: 64px;
+}
+
+.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice.ScepterUpgrade .AbilityName,.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice.ShardUpgrade .AbilityName
+{
+	margin: 8px 0px 4px;
+	font-size: 16px;
+}
+
+.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice.ScepterUpgrade #ItemAffectedAbilitiesOuter,.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice.ShardUpgrade #ItemAffectedAbilitiesOuter
+{
+	margin-bottom: 36px;
+}
+
+.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice.ScepterUpgrade .LevelUpgradeInfo,.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice.ScepterUpgrade .HeroImageContainer,.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice.ScepterUpgrade .PowerupLabel,.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice.ShardUpgrade .LevelUpgradeInfo,.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice.ShardUpgrade .HeroImageContainer,.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice.ShardUpgrade .PowerupLabel
+{
+	visibility: collapse;
+}
+
+.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice.ScepterUpgrade .PowerUpDescription,.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice.ShardUpgrade .PowerUpDescription
+{
+	ignore-parent-flow: false;
+	margin-bottom: 0px;
+	color: rgba(239, 246, 255, 0.6);
+	font-family: titleFont;
+	font-size: 14px;
+	line-height: 1.3;
+	text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice.ScepterUpgrade .PowerUpDescription b,.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice.ShardUpgrade .PowerUpDescription b
+{
+	color: cf_brightgreen;
+}
+
+.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice.ScepterUpgrade .ShardScepterImageContainer,.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice.ShardUpgrade .ShardScepterImageContainer
+{
+	visibility: visible;
+}
+
+.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice.ScepterUpgrade .AbilityShardScepterImage
+{
+	background-image: url("s2r://panorama/images/hud/reborn/aghs_on_scepter_large_png.vtex");
+}
+
+.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice.ScepterUpgrade .ScepterLabel
+{
+	visibility: visible;
+}
+
+.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice.ShardUpgrade .AbilityShardScepterImage
+{
+	background-image: url("s2r://panorama/images/hud/reborn/aghs_on_shard_large_png.vtex");
+}
+
+.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice.ShardUpgrade .ShardLabel
+{
+	visibility: visible;
+}
+
+.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice.PowerUpSelected
+{
+	animation-name: BounceFocusPowerup;
+	animation-duration: 0.2s;
+	animation-iteration-count: 1;
+}
+
+.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice.PowerUpSelected .PowerUpContainerBorder
+{
+	width: 100%;
+	height: 100%;
+	border: 4px solid white;
+	transform: scale3d( 1.03, 1.01, 1 );
+}
+
+.RerollButtonActive .PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice.PowerUpSelected .PowerUpContainerBorder
+{
+	border: 1px solid rgba(255, 255, 255, 0.8);
+	transform: scale3d( 1, 1, 1 );
+}
+
+.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice.PowerUpSelected .HeroImageContainer
+{
+	transform: translateY( -2px );
+}
+
+.PlayerLevelUpChoiceWrapper #PlayerLevelUpActionsContainer
+{
+	horizontal-align: center;
+	opacity: 0;
+	margin-top: 4px;
+}
+
+.ShowPowerUpChoices.HasRerollsLeft .PlayerLevelUpChoiceWrapper #PlayerLevelUpActionsContainer
+{
+	opacity: 1;
+}
+
+@keyframes 'BounceFocusPowerup'
+{
+	0%
+	{
+		transform: none;
+	}
+	
+	20%
+	{
+		transform: scale3d( 1.025, 1.025, 1 );
+	}
+	
+	100%
+	{
+		transform: none;
+	}
+	
+}
+
+@keyframes 'GlowPowerup'
+{
+	0%
+	{
+		box-shadow: 0px 0px 48px #FFDA8F00;
+	}
+	
+	100%
+	{
+		box-shadow: 0px 0px 48px #FFDA8F11;
+	}
+	
+}
+
+.PlayerAttributesGroup
+{
+	vertical-align: center;
+	height: 100%;
+	transition-property: opacity, transform;
+	transition-duration: 0.25s;
+	transition-delay: 0.3s;
+	opacity: 0;
+	transition-timing-function: ease-out, cubic-bezier(0, 0.9, 0, 0.9);
+	horizontal-align: right;
+}
+
+.MinimapRight .PlayerAttributesGroup
+{
+	horizontal-align: left;
+}
+
+.ShowPowerUpChoices .PlayerAttributesGroup,.IsPaused:not(.ShowVisualNovel) .PlayerAttributesGroup
+{
+	transform: none;
+	opacity: 0.9;
+	transition-duration: 0.1s;
+	transition-timing-function: ease-in;
+	transition-delay: 0s;
+}
+
+.PlayerAttributesGroup .AttributesShadow
+{
+	width: 400px;
+	height: 100%;
+	vertical-align: center;
+	ignore-parent-flow: true;
+	overflow: noclip;
+	z-index: -1;
+	background-color: gradient( radial, 0% 50%, 0% 0%, 100% 50%, from( rgba(0, 0, 0, 0.9) ), color-stop( 0.6, rgba(0, 0, 0, 0.75) ), to( rgba(0, 0, 0, 0) ) );
+	blur: gaussian( 12px );
+	opacity: 0.5;
+	transform: scaleX( -1 );
+}
+
+.MinimapRight .PlayerAttributesGroup .AttributesShadow
+{
+	transform: scaleX( 1 );
+}
+
+.PlayerAttributesGroup #PlayerAttributesContainer
+{
+	flow-children: down;
+	vertical-align: center;
+	horizontal-align: right;
+	margin: 0px 40px;
+	visibility: collapse;
+}
+
+.MinimapRight .PlayerAttributesGroup #PlayerAttributesContainer
+{
+	horizontal-align: left;
+}
+
+.PlayerAttributesGroup #PlayerAttributesContainer .PlayerAttribute
+{
+	margin-bottom: 3px;
+	flow-children: right;
+}
+
+.PlayerAttributesGroup #PlayerAttributesContainer .PlayerAttribute Label
+{
+	font-size: 14px;
+	color: rgba(255, 255, 255, 0.8);
+	text-shadow: 0px 2px 6px black;
+	vertical-align: center;
+}
+
+.PlayerAttributesGroup #PlayerAttributesContainer .PlayerAttribute .LeftSide
+{
+	flow-children: right;
+	width: 170px;
+	height: 28px;
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( rgba(255, 255, 255, 0) ), to( rgba(255, 255, 255, 0.018) ) );
+	border: 1px solid rgba(255, 255, 255, 0.04);
+	border-right: 0px;
+	border-brush: gradient( linear, 0% 0%, 100% 0%, from( rgba(255, 255, 255, 0) ), to( white ) );
+}
+
+.PlayerAttributesGroup #PlayerAttributesContainer .PlayerAttribute .LeftSide .AttributeIcon
+{
+	width: 14px;
+	height: 14px;
+	padding: 1px;
+	margin-right: 3px;
+	vertical-align: center;
+	visibility: collapse;
+}
+
+.PlayerAttributesGroup #PlayerAttributesContainer .PlayerAttribute .LeftSide .AttributeName
+{
+	width: fill-parent-flow(1);
+	height: 16px;
+	letter-spacing: -0.2px;
+}
+
+.PlayerAttributesGroup #PlayerAttributesContainer .PlayerAttribute .LeftSide .AttributeValue
+{
+	text-align: right;
+	margin-right: 6px;
+	letter-spacing: 1px;
+}
+
+.PlayerAttributesGroup #PlayerAttributesContainer .PlayerAttribute .ItemContainer
+{
+	height: 28px;
+	width: height-percentage( 150% );
+	background-color: rgba(0, 0, 0, 0.1);
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	border-brush: gradient( linear, 0% 0%, 0% 100%, from( white ), to( rgba(255, 255, 255, 0.7) ) );
+	box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.112);
+}
+
+.PlayerAttributesGroup #PlayerAttributesContainer .PlayerAttribute .AttributeBuffContainer
+{
+	height: 100%;
+	width: 60px;
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( cf_brightgreen&09 ), to( cf_brightgreen&00 ) );
+	border: 1px solid cf_brightgreen&44;
+	border-brush: gradient( linear, 0% 0%, 100% 0%, from( white ), to( rgba(255, 255, 255, 0) ) );
+	border-left: 0px;
+	visibility: collapse;
+}
+
+.PlayerAttributesGroup #PlayerAttributesContainer .PlayerAttribute .AttributeBuffContainer .AttributeBuffValue
+{
+	margin-left: 8px;
+	color: cf_brightgreen;
+}
+
+.PlayerAttributesGroup #PlayerAttributesContainer .PlayerAttribute.HasBonus .AttributeBuffContainer
+{
+	visibility: visible;
+}
+
+.DebugContainer
+{
+	visibility: collapse;
+	horizontal-align: right;
+	vertical-align: center;
+	padding: 8px;
+	ignore-parent-flow: true;
+	background-color: rgba(113, 138, 163, 0.938);
+	flow-children: down;
+	max-width: 160px;
+}
+
+.DebugContainer .DebugSection
+{
+	border: 1px solid black;
+	padding: 4px;
+	margin-top: 4px;
+}
+
+.DebugContainer .DebugColumn
+{
+	flow-children: down;
+}
+
+.DebugContainer .DebugRow
+{
+	flow-children: down;
+	margin-top: 6px;
+	width: 100%;
+}
+
+.ShowCheats .DebugContainer
+{
+	visibility: visible;
+}
+
+.DebugContainer Button
+{
+	padding: 4px;
+	background-color: darkslategray;
+	margin: 2px;
+}
+
+.DebugContainer Button Label
+{
+	font-size: 12px;
+}
+
+.DebugContainer DOTASettingsCheckbox Label
+{
+	font-size: 13px;
+	color: whitesmoke;
+}
+
+.DebugContainer DropDown
+{
+	height: 26px;
+	width: 150px;
+	padding: 2px;
+	border-width: 1px;
+	margin-bottom: 4px;
+}
+
+.DebugContainer DropDown Label
+{
+	font-size: 12px;
+}
+
+.DebugContainer #TotalEnemiesDebugLabel,.DebugContainer #TotalSpawnersDebugLabel
+{
+	font-size: 12px;
+	margin: 4px;
+	color: white;
+}
+
+.DebugTimelineControlsContainer
+{
+	width: 1100px;
+	height: 40px;
+	border: 1px solid black;
+	background-color: #651d72;
+	horizontal-align: center;
+	vertical-align: bottom;
+	margin:10px;
+	flow-children: down;
+}
+
+.DebugTimelineControlsContainer .TimelineContainer
+{
+	horizontal-align: center;
+	width: 1000px;
+}
+
+.DebugTimelineControlsContainer .TimelineContainer .HorizontalSlider
+{
+	margin:2px;
+	vertical-align: top;
+	margin-top: 0;
+	width: 100%;
+}
+
+.DebugTimelineControlsContainer .Row
+{
+	width: 100%;
+	flow-children: right;
+}
+
+.DebugTimelineControlsContainer .Row .RowRight
+{
+	horizontal-align: right;
+	flow-children: right;
+}
+
+.DebugTimelineControlsContainer .DebugButton
+{
+	background-color: #b263df;
+	border: 1px solid white;
+	margin: 2px;
+	padding: 2px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.DebugTimelineControlsContainer .DebugButton Label
+{
+	color: black;
+	letter-spacing: 1px;
+}
+
+.DebugTimelineControlsContainer .DebugButton:hover
+{
+	brightness: 1.5;
+}
+
+.DebugTimelineControlsContainer .DebugButton:active
+{
+	brightness: 0.3;
+}
+
+.KeyArtContainer
+{
+	width: 100%;
+	height: 100%;
+	margin: 1px;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #2C1E5A ), to( #060724 ) ) );
+	transition-property: opacity, brightness;
+	transition-duration: 0.4s;
+	opacity: 0;
+}
+
+.KeyArtContainer .KeyArtTempLabel
+{
+	margin: 16px;
+	color: magenta;
+	visibility: collapse;
+}
+
+.KeyArtContainer .KeyArtImage
+{
+	width: 100%;
+	height: 100%;
+	opacity-brush: gradient( linear, 80% 0%, 100% 0%, from( white ), to( #FFFFFF00 ) ) );
+	transition-property: blur, opacity, transform;
+	transition-duration: 0.4s;
+	transition-timing-function: ease-in-out;
+}
+
+.ShowHeroScreen .KeyArtContainer .KeyArtImage
+{
+	blur: gaussian( 5px );
+	transform: translateX( -24px );
+}
+
+.ShowDifficultyScreen .KeyArtContainer .KeyArtImage
+{
+	blur: gaussian( 5px );
+	transform: translateX( -48px );
+}
+
+.ShowHeroScreen .KeyArtContainer
+{
+	brightness: 0.3;
+}
+
+.GameState_Setup .KeyArtContainer
+{
+	opacity: 1;
+}
+
+.SetupScreenInnerBorder
+{
+	border: 1px solid rgba(255, 255, 255, 0.02);
+	width: 100%;
+	height: fill-parent-flow(1);
+	ignore-parent-flow: true;
+}
+
+.SetupScreen
+{
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	transform: none;
+	transition-property: transform, opacity;
+	transition-duration: 0.15s;
+	transition-delay: 0s;
+	transition-timing-function: cubic-bezier(1, 0, 1, 1);
+}
+
+.GameState_Setup .SetupScreen
+{
+	opacity: 1;
+}
+
+.ShowHeroScreen .SetupScreen
+{
+	opacity: 0;
+	transform: translateX( -160px );
+	transition-duration: 0.4s;
+	transition-delay: 0.2s;
+	transition-timing-function: cubic-bezier(0, 1, 0, 1);
+	sound: "ui_loadout_slide_in";
+}
+
+.GameState_Active .SetupScreen
+{
+	opacity: 0;
+}
+
+.SetupScreen .SetupScreenLeftCol
+{
+	width: 56%;
+	height: 100%;
+}
+
+.SetupScreen .SetupScreenMenu
+{
+	flow-children: down;
+	vertical-align: middle;
+	horizontal-align: right;
+	width: 780px;
+	margin-bottom: 140px;
+}
+
+.Maximized .SetupScreen .SetupScreenMenu
+{
+	margin-right: 6%;
+}
+
+.SetupScreen .SetupScreenMenu .MinigameLogoEn,.SetupScreen .SetupScreenMenu .MinigameLogoCn
+{
+	horizontal-align: center;
+	margin-bottom: -30px;
+	width: 100%;
+}
+
+.SetupScreen .SetupScreenMenu .MinigameLogoCn
+{
+	visibility: collapse;
+	width: 90%;
+}
+
+.Language_schinese .SetupScreen .SetupScreenMenu .MinigameLogoEn
+{
+	visibility: collapse;
+}
+
+.Language_schinese .SetupScreen .SetupScreenMenu .MinigameLogoCn
+{
+	visibility: visible;
+}
+
+.SetupScreen .SetupScreenMenu .PlaySectionContent
+{
+	margin: 0px 18%;
+	flow-children: right;
+}
+
+.SetupScreen .SetupScreenMenu .PlaySectionContent .GameIntroDescription
+{
+	width: 100%;
+	text-align: center;
+	margin-bottom: 32px;
+	color: whitesmoke;
+	text-shadow: 0px 4px 16px rgba(0, 0, 0, 0.6);
+}
+
+.SetupScreen .SetupScreenMenu .PlaySectionContent .PlaySectionHeader
+{
+	width: 100%;
+	margin-bottom: 8px;
+}
+
+.SetupScreen .SetupScreenMenu .PlaySectionContent .PlaySectionCol
+{
+	width: fill-parent-flow( 1 );
+	flow-children: down;
+}
+
+.SetupScreen .SetupScreenMenu .PlaySectionContent .PlaySectionCol.Left
+{
+	margin-right: 8px;
+}
+
+.SetupScreen .SetupScreenMenu .PlaySectionContent .PlaySectionCol.Right
+{
+	margin-left: 8px;
+}
+
+.SetupScreen .SetupScreenMenu .PlaySectionContent .HowToPlaySection
+{
+	width: 100%;
+	flow-children: down;
+	margin-bottom: 12px;
+	padding-bottom: 12px;
+}
+
+.SetupScreen .SetupScreenMenu .PlaySectionContent .HowToPlaySection .HowToPlayDescription
+{
+	font-size: 16px;
+	line-height: 1.2;
+}
+
+.SetupScreen .SetupScreenMenu .PlaySectionContent .HowToPlaySection .HowToPlayDescription b
+{
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.SetupScreen .SetupScreenMenu .PlaySectionContent .HowToPlaySection .DescriptionContainer
+{
+	flow-children: down;
+	vertical-align: center;
+	margin-bottom: 8px;
+	padding-right: 16px;
+}
+
+.SetupScreen .SetupScreenMenu .PlaySectionContent .HowToPlaySection .DescriptionContainer .SubHeader
+{
+	color: LightestGrey;
+	text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.SetupScreen .SetupScreenMenu .PlaySectionContent .HowToPlaySection .DescriptionContainer .Details
+{
+	color: LightGrey;
+	text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.SetupScreen .SetupScreenMenu .PlaySectionContent .LeaderboardContainer
+{
+	margin: 0px;
+}
+
+.SetupScreen .SetupScreenMenu .PlaySectionContent .LeaderboardContainer .LeaderListHeader
+{
+	flow-children: right;
+}
+
+.SetupScreen .SetupScreenMenu .PlaySectionContent .LeaderboardContainer .LeaderListHeader .LeaderListHeaderLabel
+{
+	width: fill-parent-flow( 1 );
+}
+
+.SetupScreen .SetupScreenMenu .PlaySectionContent .LeaderboardContainer .LeaderListHeader .LeaderListHeaderLabel,.SetupScreen .SetupScreenMenu .PlaySectionContent .LeaderboardContainer .LeaderListHeader .LeaderListHeaderScore
+{
+	color: rgba(241, 249, 255, 0.5);
+	text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.SetupScreen .SetupScreenMenu .PlaySectionContent .RewardsSection
+{
+	visibility: collapse;
+	flow-children: down;
+	width: 100%;
+	margin-bottom: 12px;
+}
+
+.SetupScreen .SetupScreenMenu .PlaySectionContent .RewardsSection .RewardRow
+{
+	flow-children: right;
+	width: 100%;
+	margin-bottom: 2px;
+}
+
+.SetupScreen .SetupScreenMenu .PlaySectionContent .RewardsSection .RewardRow.Unlocked
+{
+	brightness: 0.1;
+}
+
+.SetupScreen .SetupScreenMenu .PlaySectionContent .RewardsSection .RewardRow .RewardScore
+{
+	width: 80px;
+	vertical-align: middle;
+	text-align: left;
+	font-weight: bold;
+}
+
+.SetupScreen .SetupScreenMenu .PlaySectionContent .RewardsSection .RewardRow .RewardValue
+{
+	flow-children: right;
+	width: 100%;
+	vertical-align: middle;
+}
+
+.SetupScreen .SetupScreenMenu .PlaySectionContent .RewardsSection .RewardRow .RewardValue DOTACrownfallToken
+{
+	width: 38px;
+}
+
+.SetupScreen .BottomButtons
+{
+	flow-children: right;
+	horizontal-align: center;
+	vertical-align: bottom;
+	padding-bottom: 40px;
+}
+
+.SetupScreen .BottomButtons .Loading
+{
+	flow-children: right;
+	vertical-align: bottom;
+	margin-bottom: 38px;
+	margin-right: 8px;
+	margin-left: 8px;
+	visibility: collapse;
+}
+
+.IsLoading .SetupScreen .BottomButtons .Loading
+{
+	visibility: visible;
+}
+
+.SetupScreen .BottomButtons .Loading .Spinner
+{
+	vertical-align: middle;
+	margin-right: 8px;
+}
+
+.SetupScreen .BottomButtons .Loading > Label
+{
+	vertical-align: middle;
+	text-transform: uppercase;
+	color: white;
+	letter-spacing: 2px;
+	font-size: 20px;
+}
+
+.SetupScreen .BottomButtons DOTACrownfallButton
+{
+	min-width: 300px;
+}
+
+.IsLoading .SetupScreen .BottomButtons .StartGameButton
+{
+	visibility: collapse;
+}
+
+.SetupScreen .ExitButton
+{
+	visibility: collapse;
+	ignore-parent-flow: true;
+	horizontal-align: center;
+	vertical-align: bottom;
+	width: 460px;
+	padding: 10px 0px 16px;
+	text-align: center;
+	border-top: 1px solid rgba(255, 255, 255, 0.1);
+	border-brush: gradient( linear, 0% 0%, 100% 0%, from( rgba(255, 255, 255, 0) ), color-stop( 0.5, white ), to( rgba(255, 255, 255, 0) ) );
+	background-color: gradient( radial, 50% 0%, 0% 0%, 50% 100%, from( rgb(13, 11, 33) ), to( rgba(0, 0, 0, 0) ) );
+	transition-property: brightness;
+	transition-duration: 0.1s;
+}
+
+.SetupScreen .ExitButton:hover
+{
+	brightness: 2;
+}
+
+.PlayedOnce .SetupScreen .ExitButton
+{
+	visibility: visible;
+}
+
+.ControlKey
+{
+	horizontal-align: center;
+	margin: 3px;
+	animation-name: none;
+	ui-scale: 84%;
+}
+
+.ControlKey .Up
+{
+	background-image: url("s2r://panorama/images/control_icons/24px/arrow_up.vsvg");
+}
+
+.ControlKey .Down
+{
+	background-image: url("s2r://panorama/images/control_icons/24px/arrow_down.vsvg");
+}
+
+.ControlKey .Forward
+{
+	background-image: url("s2r://panorama/images/control_icons/24px/arrow_right.vsvg");
+}
+
+.ControlKey .Back
+{
+	background-image: url("s2r://panorama/images/control_icons/24px/arrow_left.vsvg");
+}
+
+.ControlKey .Space
+{
+	background-image: url("s2r://panorama/images/control_icons/24px/space.vsvg");
+}
+
+.ControlDescriptionBlock
+{
+	width: 100%;
+	flow-children: right;
+	padding-right: 16px;
+}
+
+.ControlDescriptionBlock .OrSeparator
+{
+	vertical-align: center;
+	margin: 0px 12px;
+	color: LightGrey;
+	text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.ControlDescriptionBlock .SubHeader
+{
+	color: LightestGrey;
+	text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.ControlDescriptionBlock .Details
+{
+	color: LightGrey;
+	text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.ControlDescriptionBlock .KeysColumn
+{
+	flow-children: down;
+}
+
+.ControlDescriptionBlock .KeysRow
+{
+	flow-children: right;
+}
+
+.ControlDescriptionBlock .ControlMouse
+{
+	vertical-align: center;
+}
+
+.ControlDescriptionBlock .ControlMouse .MouseButton
+{
+	vertical-align: center;
+	horizontal-align: center;
+	min-width: 60px;
+	min-height: 60px;
+}
+
+.ControlDescriptionBlock .ControlMouse .MOUSE1,.ControlDescriptionBlock .ControlMouse .MOUSE2,.ControlDescriptionBlock .ControlMouse .MOUSE3
+{
+	height: 45px;
+	width: 45px;
+	vertical-align: middle;
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.ControlDescriptionBlock .ControlMouse .MOUSE1
+{
+	background-image: url("s2r://panorama/images/events/crownfall/shmup/mouse_leftclick_png.vtex");
+}
+
+.ControlDescriptionBlock .ControlMouse .MOUSE2
+{
+	background-image: url("s2r://panorama/images/events/crownfall/shmup/mouse_rightclick_png.vtex");
+}
+
+.ControlDescriptionBlock .ControlMouse .MOUSE3
+{
+	background-image: url("s2r://panorama/images/events/crownfall/shmup/mouse_middleclick_png.vtex");
+}
+
+.GamepadContainer
+{
+	flow-children: right;
+	tooltip-position: top;
+	margin-top: 16px;
+}
+
+.GamepadContainer .GamepadIcon
+{
+	height: 24px;
+	width: 24px;
+	opacity-brush: gradient( linear, 0% 10%, 0% 90%, from( white ),to( rgb(45, 59, 79) ) );
+	img-shadow: 0px 1px 4px rgba(0, 0, 0, 0.8);
+	vertical-align: center;
+}
+
+.GamepadContainer .GamepadLabel
+{
+	color: LightGrey;
+	margin-left: 6px;
+	vertical-align: center;
+	text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5);
+	margin-bottom: 2px;
+}
+
+.GoldHeader
+{
+	text-transform: uppercase;
+	text-overflow: shrink;
+	letter-spacing: 2px;
+	color: gradient( linear, 0% 20%, 0% 100%, from( #FFF2DF ), color-stop( 0.48, #ebc386 ), color-stop( 0.52, #BA8C47 ), to( #8d6c3a ) );
+	text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.6);
+	margin-bottom: 4px;
+	font-weight: semi-bold;
+	font-size: 22px;
+}
+
+.MetaProgressionSelection .UpgradesSection
+{
+	width: 100%;
+	height: 100%;
+	flow-children: down;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( charcoalLight ), to( charcoalDark ) );
+}
+
+.MetaProgressionSelection .UpgradesSection #MetaUpgradesContainer
+{
+	flow-children: down;
+	width: 100%;
+	overflow: clip scroll;
+	height: fill-parent-flow(1);
+	padding: 20px 0px;
+}
+
+.MetaProgressionSelection .UpgradesSection #MetaUpgradesContainer .MetaUpgradeAttributeRow
+{
+	width: fill-parent-flow(1);
+	horizontal-align: center;
+	flow-children: right;
+	margin: 0px 20px;
+}
+
+.MetaProgressionSelection .UpgradesSection #MetaUpgradesContainer .MetaUpgradeAttribute
+{
+	width: fill-parent-flow(4);
+	flow-children: down;
+	min-height: 208px;
+	background-color: #0008;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( rgb(61, 73, 90) ), to( rgb(38, 50, 67) ) );
+	border: 1px solid rgba(194, 224, 255, 0.06);
+	box-shadow: 0px 3px 12px -1px rgba(0, 0, 0, 0.3);
+	transition-property: background-color;
+	transition-duration: 0.1s;
+	margin: 4px;
+}
+
+.MetaProgressionSelection .UpgradesSection #MetaUpgradesContainer .MetaUpgradeAttribute .MetaUpgradeAttributeContainer
+{
+	padding: 8px 8px;
+	height: 100%;
+	width: 100%;
+	flow-children: down;
+}
+
+.MetaProgressionSelection .UpgradesSection #MetaUpgradesContainer .MetaUpgradeAttribute .MetaUpgradeAttributeContainer #UpgradePipsContainer
+{
+	width: 55%;
+	flow-children: right;
+	horizontal-align: center;
+	margin-top: 3px;
+}
+
+.MetaProgressionSelection .UpgradesSection #MetaUpgradesContainer .MetaUpgradeAttribute .MetaUpgradeAttributeContainer #UpgradePipsContainer .UpgradePipOuter
+{
+	width: fill-parent-flow(1);
+}
+
+.MetaProgressionSelection .UpgradesSection #MetaUpgradesContainer .MetaUpgradeAttribute .MetaUpgradeAttributeContainer #UpgradePipsContainer .UpgradePipOuter .UpgradePip
+{
+	horizontal-align: center;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( charcoalDark ), to( charcoalDark&99 ) );
+	box-shadow: inset 0px 1px 4px rgba(0, 0, 0, 0.2);
+	width: 10px;
+	height: 10px;
+}
+
+.MetaProgressionSelection .UpgradesSection #MetaUpgradesContainer .MetaUpgradeAttribute .MetaUpgradeAttributeContainer #UpgradePipsContainer .UpgradePipOuter.Upgraded .UpgradePip
+{
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #FFF2DF ), color-stop( 0.48, #ebc386 ), color-stop( 0.52, #BA8C47 ), to( #ffc56f ) );
+	box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.MetaProgressionSelection .UpgradesSection #MetaUpgradesContainer .MetaUpgradeAttribute .MetaUpgradeAttributeContainer #UpgradePipsContainer .UpgradePipOuter.Focused .UpgradePip
+{
+	background-color: cf_brightgreen;
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	animation-name: UpgradePipGlow;
+	animation-duration: 0.5s;
+	animation-iteration-count: infinite;
+	animation-direction:alternate;
+}
+
+.MetaProgressionSelection .UpgradesSection #MetaUpgradesContainer .MetaUpgradeAttribute .MetaUpgradeAttributeContainer .AttributeName
+{
+	text-overflow: shrink;
+	text-align: center;
+	width: fill-parent-flow(1);
+	height: 25px;
+	margin-bottom: 4px;
+	font-family: titleFont;
+	color: whitesmoke;
+	text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.MetaProgressionSelection .UpgradesSection #MetaUpgradesContainer .MetaUpgradeAttribute .MetaUpgradeAttributeContainer .AttributeValue
+{
+	margin-top: 7px;
+	text-overflow: shrink;
+	text-align: center;
+	width: fill-parent-flow(1);
+	text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.8);
+	height: 20px;
+	color: LighterGrey;
+}
+
+.MetaProgressionSelection .UpgradesSection #MetaUpgradesContainer .MetaUpgradeAttribute .MetaUpgradeAttributeContainer .AttributeValue b
+{
+	color: cf_brightgreen;
+}
+
+.MetaProgressionSelection .UpgradesSection #MetaUpgradesContainer .MetaUpgradeAttribute .MetaUpgradeAttributeContainer .UpgradeButton
+{
+	width: 100%;
+	tooltip-position: top;
+}
+
+.MetaProgressionSelection .UpgradesSection #MetaUpgradesContainer .MetaUpgradeAttribute .MetaUpgradeAttributeContainer.MaxLevel .UpgradeButton
+{
+	opacity: 0;
+}
+
+.MetaProgressionSelection .UpgradesSection #MetaUpgradesContainer .MetaUpgradeAttribute .MetaUpgradeAttributeContainer.MaxLevel .CostContainer
+{
+	margin: 0px;
+	height: 100%;
+}
+
+.MetaProgressionSelection .UpgradesSection #MetaUpgradesContainer .MetaUpgradeAttribute .MetaUpgradeAttributeContainer.MaxLevel .CostContainer .TokenCost
+{
+	visibility: collapse;
+}
+
+.MetaProgressionSelection .UpgradesSection #MetaUpgradesContainer .MetaUpgradeAttribute .MetaUpgradeAttributeContainer.MaxLevel .CostContainer .CurrencyCost
+{
+	font-size: 50px;
+	text-align: center;
+	margin: 0px;
+	padding: 0px;
+}
+
+.MetaProgressionSelection .UpgradesSection #MetaUpgradesContainer .MetaUpgradeAttribute .MetaUpgradeAttributeContainer.MaxLevel .GoldIcon
+{
+	visibility: collapse;
+}
+
+.MetaProgressionSelection .UpgradesSection #MetaUpgradesContainer .MetaUpgradeAttribute .MetaUpgradeAttributeContainer.MaxLevel .CurrencyPlus
+{
+	visibility: collapse;
+}
+
+.MetaProgressionSelection .UpgradesSection #MetaUpgradesContainer .MetaUpgradeAttribute .MetaUpgradeAttributeContainer.MaxLevel .CostLabelContainer
+{
+	visibility: collapse;
+}
+
+.MetaProgressionSelection .UpgradesSection #MetaUpgradesContainer .MetaUpgradeAttribute .SelectedDifficultyBorder
+{
+	width: 100%;
+	height: 100%;
+	border: 3px solid white;
+	border-brush: gradient( linear, 0% 0%, 100% 0%, from( gold2 ), color-stop( 0.5, gold1 ), to( gold2 ) );
+	ignore-parent-flow: true;
+	transition-property: border;
+	transition-duration: 0.1s;
+	opacity: 0.0;
+}
+
+.MetaProgressionSelection .UpgradesSection #MetaUpgradesContainer .MetaUpgradeAttribute.UpgradesAvailable .SelectedDifficultyBorder
+{
+	opacity: 1.0;
+}
+
+.MetaProgressionSelection .UpgradesSection #MetaUpgradesContainer .MetaUpgradeAttribute.NoTokenCost .TokensContainer
+{
+	visibility: collapse;
+}
+
+.MetaProgressionSelection .UpgradesSection #MetaUpgradesContainer .MetaUpgradeAttribute.NoTokenCost .CurrencyPlus
+{
+	visibility: collapse;
+}
+
+.MetaProgressionSelection .UpgradesSection #MetaUpgradesContainer .MetaUpgradeAttribute.NoTokenCost .CostContainer
+{
+	padding-top: 10px;
+}
+
+.MetaProgressionSelection .UpgradesSection #MetaUpgradesContainer .MetaUpgradeAttribute.CantAffordUpgrade
+{
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( rgb(41, 48, 59) ), to( rgb(21, 28, 37) ) );
+}
+
+.MetaProgressionSelection .UpgradesSection #MetaUpgradesContainer .MetaUpgradeAttribute.GamepadSelected .SelectedDifficultyBorder
+{
+	opacity: 1;
+	animation-name: OpacityPulse;
+	animation-duration: 0.5s;
+	animation-iteration-count: infinite;
+	animation-direction:alternate;
+}
+
+.MetaProgressionSelection .UpgradesSection #MetaUpgradesContainer .MetaUpgradeAttribute #CompletionProgress
+{
+	height: 8px;
+	overflow: clip;
+	border-radius: 2px;
+	vertical-align: center;
+	margin-top: 7px;
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
+.MetaProgressionSelection .UpgradesSection #MetaUpgradesContainer .MetaUpgradeAttribute #CompletionProgress .ProgressBarLeft
+{
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #FFF2DF ), color-stop( 0.48, #ebc386 ), color-stop( 0.52, #BA8C47 ), to( #8d6c3a ) );
+	border: 1px solid black;
+	border-radius: 1px;
+	box-shadow: 0px 2px 8px black;
+}
+
+.MetaProgressionSelection .UpgradesSection #MetaUpgradesContainer .MetaUpgradeAttribute #CompletionProgress .ProgressBarRight
+{
+	box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+.MetaProgressionSelection .UpgradesSection #MetaUpgradesContainer .MetaUpgradeAttribute .CostLabelContainer
+{
+	flow-children: right;
+	margin-top: 10px;
+	width: 100%;
+}
+
+.MetaProgressionSelection .UpgradesSection #MetaUpgradesContainer .MetaUpgradeAttribute .CostLabelContainer .LineBreak
+{
+	width: fill-parent-flow(1);
+	vertical-align: center;
+	horizontal-align: center;
+	border-top: 1px solid rgba(212, 229, 255, 0.1);
+	border-brush: gradient( linear, 100% 0%, 0% 0%, from( rgba(255, 255, 255, 1) ), to( rgba(255, 255, 255, 0)) );
+}
+
+.MetaProgressionSelection .UpgradesSection #MetaUpgradesContainer .MetaUpgradeAttribute .CostLabelContainer .LineBreak.Right
+{
+	transform: scaleX( -1 );
+}
+
+.MetaProgressionSelection .UpgradesSection #MetaUpgradesContainer .MetaUpgradeAttribute .CostLabelContainer .CostLabel
+{
+	vertical-align: center;
+	margin: 0px 2px 0px 4px;
+}
+
+.MetaProgressionSelection .UpgradesSection #MetaUpgradesContainer .MetaUpgradeAttribute .CostContainer
+{
+	flow-children: right;
+	horizontal-align: center;
+	margin-top: -6px;
+}
+
+.MetaProgressionSelection .UpgradesSection #MetaUpgradesContainer .MetaUpgradeAttribute .CostContainer .TokenCost
+{
+	vertical-align: top;
+	horizontal-align: left;
+	flow-children: left;
+	padding-right: 24px;
+	margin-left: -16px;
+}
+
+.MetaProgressionSelection .UpgradesSection #MetaUpgradesContainer .MetaUpgradeAttribute .CostContainer .TokenCost DOTACrownfallToken
+{
+	margin-right: -32px;
+	margin-left: 4px;
+	ui-scale: 80%;
+}
+
+.MetaProgressionSelection .UpgradesSection #MetaUpgradesContainer .MetaUpgradeAttribute .CostContainer .CurrencyPlus
+{
+	vertical-align: center;
+}
+
+.MetaProgressionSelection .UpgradesSection #MetaUpgradesContainer .MetaUpgradeAttribute .CostContainer .CurrencyCost
+{
+	vertical-align: center;
+	text-align: left;
+	text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.8);
+	text-overflow: shrink;
+	letter-spacing: 0.4px;
+	font-size: 18px;
+}
+
+.MetaProgressionSelection .UpgradesSection #MetaUpgradesContainer .MetaUpgradeAttribute .CostContainer .GoldIcon
+{
+	width: 18px;
+	height: width-percentage(100%);
+	img-shadow: 0px 2px 8px rgba(0, 0, 0, 0.8);
+	vertical-align: center;
+	opacity-brush: gradient( linear, 0% 10%, 0% 90%, from( #FFF2DF ), color-stop( 0.48, #ebc386 ), color-stop( 0.52, #BA8C47 ), to( #8d6c3a ) );
+	margin-top: 2px;
+	padding: 2px;
+	margin-left: -1px;
+}
+
+.MetaProgressionSelection .UpgradesSection #MetaUpgradesContainer .MetaUpgradeAttribute #UpgradeButton
+{
+	vertical-align: bottom;
+	margin-bottom: 5px;
+}
+
+.MetaProgressionSelection .UpgradesSection .ResourceContainer
+{
+	flow-children: right;
+	horizontal-align: center;
+	width: 80%;
+}
+
+.MetaProgressionSelection .UpgradesSection .ResourceContainer .TotalGoldContainer
+{
+	flow-children: down;
+	horizontal-align: center;
+	padding: 16px 0px;
+	width: fill-parent-flow(1);
+	border-top: 1px solid rgba(194, 224, 255, 0.08);
+	border-brush: gradient( linear, 0% 0%, 100% 0%, from( rgba(255, 255, 255, 0) ), color-stop( 0.3, white ), color-stop( 0.7, white ), to( rgba(255, 255, 255, 0) ) );
+}
+
+.MetaProgressionSelection .UpgradesSection .ResourceContainer .TotalGoldContainer Label
+{
+	text-align: center;
+	horizontal-align: center;
+}
+
+.MetaProgressionSelection .UpgradesSection .ResourceContainer .TotalGoldContainer .TotalGoldLabel
+{
+	margin-bottom: -4px;
+	text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.MetaProgressionSelection .UpgradesSection .ResourceContainer .TotalGoldContainer .TotalGoldValue
+{
+	text-shadow: 0px 4px 12px rgba(0, 0, 0, 0.6);
+}
+
+.MetaProgressionSelection .UpgradesSection .ResourceContainer .TotalGoldContainer .GoldIcon
+{
+	width: 34px;
+	height: width-percentage(100%);
+	vertical-align: center;
+	margin-left: 4px;
+	img-shadow: 0px 3px 12px black;
+	opacity-brush: gradient( linear, 0% 0%, 0% 100%, from( #FFF2DF ), color-stop( 0.48, #ebc386 ), color-stop( 0.52, #BA8C47 ), to( #8d6c3a ) );
+}
+
+.MetaProgressionSelection .UpgradesSection .ResourceContainer .TokensButtonContainer
+{
+	horizontal-align: center;
+	width: fill-parent-flow(1);
+	height: 100%;
+}
+
+.MetaProgressionSelection .UpgradesSection .ResourceContainer .TokensButtonContainer .TokensButton
+{
+	horizontal-align: center;
+	vertical-align: center;
+	min-width: 250px;
+}
+
+.MetaProgressionSelection .UpgradesSection .DebugButtons
+{
+	flow-children: right;
+	horizontal-align: center;
+	margin-bottom: 12px;
+}
+
+.MetaProgressionSelection .UpgradesSection .DebugButtons .DebugButton
+{
+	padding: 4px;
+	background-color: darkslategray;
+	margin: 2px;
+}
+
+.MetaProgressionSelection .UpgradesSection .DebugButtons .DebugButton Label
+{
+	font-size: 12px;
+}
+
+.MetaProgressionSelection .UpgradesSection .DebugButtons .DebugButton:hover
+{
+	brightness: 1.5;
+}
+
+.MetaProgressionSelection .UpgradesSection .DebugButtons .DebugButton:active
+{
+	brightness: 0.5;
+}
+
+.MetaProgressionSelection .UpgradesSection .PointsAvailable
+{
+	horizontal-align: center;
+	margin: 10px;
+	font-family: titleFont;
+	color: gold;
+}
+
+.SurvivorsGameTabs
+{
+	horizontal-align: center;
+}
+
+.SurvivorsGameTabs .SurvivorsTabsBackground
+{
+	ignore-parent-flow: true;
+	width: 100%;
+	height: 56px;
+	border-width: 56px 56px 0px 56px;
+	border-image-slice: 100% 112px 0px 112px;
+	border-image-repeat: stretch;
+	border-image-source: url("s2r://panorama/images/events/crownfall/buttons/tabs_background_png.vtex");
+}
+
+.SurvivorsGameTabs .TabsContainer
+{
+	flow-children: right;
+	margin: 0px 9.5px;
+	vertical-align: center;
+}
+
+.SurvivorsGameTabs .TabsContainer .TabItem
+{
+	min-width: 220px;
+	margin: 0px -4px;
+	height: 42px;
+	transition-property: brightness, transform;
+	transition-duration: 0.1s;
+}
+
+.SurvivorsGameTabs .TabsContainer .TabItem:hover
+{
+	brightness: 2;
+}
+
+.SurvivorsGameTabs .TabsContainer .TabItem:active
+{
+	transform: scale3d( 0.98, 0.98, 1 );
+	sound: "ui_generic_button_click";
+}
+
+.SurvivorsGameTabs .TabsContainer .TabItem Label
+{
+	text-transform: uppercase;
+	font-weight: normal;
+	letter-spacing: 1.5px;
+	text-align: center;
+	color: gradient( linear, 0% 0%, 0% 100%, from( white ), to( #B0BCC2 ) );
+	text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.8);
+	horizontal-align: center;
+	vertical-align: center;
+}
+
+.SurvivorsGameTabs .TabsContainer .TabItem .TabItemBg
+{
+	width: 100%;
+	border-width: 42px 42px 0px 42px;
+	border-image-slice: 100% 84px 0px 84px;
+	border-image-repeat: stretch;
+	border-image-source: url("s2r://panorama/images/events/crownfall/buttons/tab_background_png.vtex");
+	opacity: 0;
+	transform: scale3d( 0.95, 0.95, 1 );
+	transition-property: opacity, transform;
+	transition-duration: 0.15s;
+	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
+}
+
+.SelectedTab0 .SurvivorsGameTabs #PlayTab .TabItemBg
+{
+	opacity: 1;
+	transform: none;
+}
+
+.SelectedTab1 .SurvivorsGameTabs #UpgradesTab .TabItemBg
+{
+	opacity: 1;
+	transform: none;
+}
+
+.PauseScreen
+{
+	flow-children: down;
+	margin-bottom: 80px;
+	horizontal-align: center;
+	vertical-align: center;
+	opacity: 0.0;
+	transform: scale3d( 1.3, 1.3, 1 );
+	transition-property: opacity, transform;
+	transition-duration: 0.2s;
+	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
+	transition-delay: 0.1s;
+}
+
+.PauseScreen .PauseScreenContent
+{
+	padding: 48px;
+	horizontal-align: center;
+	vertical-align: center;
+	flow-children: down;
+	padding: 48px 160px;
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( rgba(11, 12, 15, 0) ), color-stop( 0.1, rgba(11, 12, 15, 0.4), color-stop( 0.2, rgba(11, 12, 15, 0.7), color-stop( 0.5, rgba(11, 12, 15, 0.9), color-stop( 0.8, rgba(11, 12, 15, 0.7), color-stop( 0.9, rgba(11, 12, 15, 0.4), to( rgba(11, 12, 15, 0) ) );
+	border: 1px solid white;
+	border-brush: gradient( linear, 0% 0%, 100% 0%, from( gold2&00 ), color-stop( 0.5, gold1 ), to( gold2&00 ) );
+}
+
+.IsPaused.UserPaused .PauseScreen
+{
+	opacity: 1.0;
+	transform: none;
+	transition-duration: 0.15s;
+	transition-timing-function: cubic-bezier(1, 0, 1, 1);
+}
+
+.PauseScreen .PauseText
+{
+	font-size: 32px;
+	font-family: titleFont;
+	color: gradient( linear, 0% 00%, 0% 100%, from( #f9e7cd ), to( gold2 ) );
+	text-shadow: 0px 4px 16px rgba(0, 0, 0, 0.8);
+	font-weight: semi-bold;
+	text-transform: uppercase;
+	horizontal-align: center;
+	text-align: center;
+	letter-spacing: 1px;
+	margin-bottom: 24px;
+}
+
+.PauseScreen DOTACrownfallButton
+{
+	horizontal-align: center;
+}
+
+.PauseScreen .ResumeButton
+{
+	min-width: 360px;
+	ui-scale: 90%;
+}
+
+.LeaveButtonActive .PauseScreen .ResumeButton
+{
+	saturation: 0;
+	brightness: 0.4;
+}
+
+.PauseScreen .LeaveButton
+{
+	horizontal-align: center;
+	min-width: 220px;
+	margin-top: -24px;
+}
+
+.LeaveButtonActive .PauseScreen .LeaveButton
+{
+	brightness: 1.5;
+}
+
+.PauseScreen .LeaveButton.Secondary
+{
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+.FinishedScreen
+{
+	horizontal-align: center;
+	vertical-align: center;
+	flow-children: down;
+	width: 100%;
+	transform: translateY( 40px );
+	visibility: collapse;
+}
+
+.GameState_Finished .FinishedScreen,.DebugFinishedScreen .FinishedScreen
+{
+	visibility: visible;
+}
+
+.FinishedScreen .Title
+{
+	font-size: 40px;
+	font-family: titleFont;
+	color: white;
+	text-shadow: 0px 4px 16px rgba(0, 0, 0, 0.8);
+	font-weight: bold;
+	text-transform: uppercase;
+	horizontal-align: center;
+	text-align: center;
+	letter-spacing: 2px;
+	z-index: 1;
+}
+
+.FinishedScreen .FinalScreenBackground
+{
+	width: 100%;
+	height: 100%;
+	ignore-parent-flow: true;
+	margin-top: 100px;
+	opacity: 0.8;
+	border-top: 1px solid rgba(255, 255, 255, 0.1);
+	border-brush: gradient( linear, 0% 0%, 100% 0%, from( rgba(255, 255, 255, 0) ), color-stop( 0.3, white ), color-stop( 0.7, white ), to( rgba(255, 255, 255, 0) ) );
+	background-color: gradient( radial, 50% 0%, 0% 0%, 50% 100%, from( rgba(0, 0, 0, 0.9) ), color-stop( 0.5, rgba(0, 0, 0, 0.8) ), to( rgba(0, 0, 0, 0) ) );
+}
+
+.FinishedScreen .FinalHeroContainer
+{
+	width: 360px;
+	height: width-percentage( 100% );
+	horizontal-align: center;
+	margin-top: -32px;
+	overflow: noclip;
+}
+
+.FinishedScreen .FinalHeroContainer .FinalHeroBackground
+{
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	background-color: rgb(30, 30, 30);
+	background-color: gradient( radial, 50% 50%, 0% 0%, 50% 50%, from( rgb(21, 48, 81) ), to( rgb(6, 8, 14) ) );
+}
+
+.FinishedScreen .FinalHeroContainer #PostGameHeroModel
+{
+	overflow: noclip;
+	width: 900px;
+	height: 900px;
+	horizontal-align: center;
+	vertical-align: center;
+}
+
+.FinishedScreen .FinalHeroContainer .FinalHeroBorder
+{
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	border: 10px solid white;
+	border-brush: gradient( linear, 0% 00%, 0% 100%, from( #FFF2DF ), color-stop( 0.48, #DDAF6B ), color-stop( 0.52, #BA8C47 ), to( #785C32 ) );
+}
+
+.FinishedScreen .FinalHeroContainer .FinalHeroBorder.Under
+{
+	opacity-brush: gradient( linear, 0% 0%, 0% 100%, from( white ), color-stop( 0.8, white ), color-stop( 0.8, rgba(255, 255, 255, 0) ), to( rgba(255, 255, 255, 0) ) );
+}
+
+.FinishedScreen .FinalHeroContainer .FinalHeroBorder.Over
+{
+	opacity-brush: gradient( linear, 0% 100%, 0% 0%, from( white ), color-stop( 0.2, white ), color-stop( 0.2, rgba(255, 255, 255, 0) ), to( rgba(255, 255, 255, 0) ) );
+}
+
+.FinishedScreen.SurvivorsHeroID_1 #PostGameHeroModel
+{
+	transform: translateX( -10px ) translateY( 30px );
+	opacity-brush: gradient( linear, 0% 0%, 0% 100%, from( rgba(255, 255, 255, 0) ), color-stop( 0.25, white ), color-stop( 0.55, white ), color-stop( 0.65, rgba(255, 255, 255, 0) ), to( rgba(255, 255, 255, 0) ) );
+}
+
+.FinishedScreen.SurvivorsHeroID_2 #PostGameHeroModel
+{
+	transform: translateX( 16px ) translateY( 30px );
+	opacity-brush: gradient( linear, 0% 0%, 0% 100%, from( rgba(255, 255, 255, 0) ), color-stop( 0.25, white ), color-stop( 0.55, white ), color-stop( 0.65, rgba(255, 255, 255, 0) ), to( rgba(255, 255, 255, 0) ) );
+}
+
+.FinishedScreen.SurvivorsHeroID_3 #PostGameHeroModel
+{
+	transform: translateX( 0px ) translateY( 0px ) scale3d( 0.85, 0.85, 1 );
+	opacity-brush: gradient( linear, 0% 0%, 0% 100%, from( rgba(255, 255, 255, 0) ), color-stop( 0.25, white ), color-stop( 0.58, white ), color-stop( 0.68, rgba(255, 255, 255, 0) ), to( rgba(255, 255, 255, 0) ) );
+}
+
+.FinishedScreen .Message
+{
+	horizontal-align: center;
+	text-align: center;
+}
+
+.FinishedScreen .CheatWarning
+{
+	margin-top: 8px;
+	font-size: 16px;
+	horizontal-align: center;
+	text-align: center;
+	width: 400px;
+	color: loserRed;
+	visibility: collapse;
+}
+
+.CheatDetected .FinishedScreen .CheatWarning
+{
+	visibility: visible;
+}
+
+.FinishedScreen .FinalMainContainer
+{
+	width: 90%;
+	horizontal-align: center;
+	margin-top: 60px;
+}
+
+.FinishedScreen .PlayButtonContainer
+{
+	width: 60%;
+	horizontal-align: center;
+	margin-top: 24px;
+	padding: 16px;
+}
+
+.FinishedScreen .PlayButtonContainer .PlayAgainButton
+{
+	horizontal-align: center;
+	min-width: 340px;
+}
+
+.FinishedScreen .PostGameButtonsContainer
+{
+	margin-top: 16px;
+	horizontal-align: center;
+	flow-children: right;
+}
+
+.FinishedScreen .PostGameButtonsContainer DOTACrownfallButton
+{
+	min-width: 300px;
+}
+
+.FinishedScreen.GoToHeroButtonSelected .HeroSelectButton
+{
+	brightness: 3.0;
+}
+
+.FinishedScreen.GoToHeroButtonSelected .PlayAgainButton
+{
+	brightness: 0.5;
+}
+
+.FinishedScreen.GoToDifficultyButtonSelected .UpgradesButton
+{
+	brightness: 3.0;
+}
+
+.FinishedScreen.GoToDifficultyButtonSelected .PlayAgainButton
+{
+	brightness: 0.5;
+}
+
+.FinishedScreen .FinalAbilitiesContainer
+{
+	flow-children: down;
+}
+
+.FinishedScreen .FinalAbilitiesContainer .AbilityStatLabel
+{
+	font-family: titleFont;
+	vertical-align: center;
+	color: whitesmoke;
+	font-size: 20px;
+	text-shadow: 0px 4px 12px rgba(0, 0, 0, 0.8);
+	height: 29px;
+	text-overflow: shrink;
+}
+
+.FinishedScreen .FinalAbilitiesContainer .HeaderLabel
+{
+	text-transform: uppercase;
+}
+
+.FinishedScreen .FinalAbilitiesContainer .AbilityName
+{
+	visibility: collapse;
+}
+
+.FinishedScreen .FinalAbilitiesContainer .AbilityLevel
+{
+	width: 80px;
+	text-align: center;
+}
+
+.FinishedScreen .FinalAbilitiesContainer .AbilityTimeHeld
+{
+	width: 80px;
+	text-align: center;
+}
+
+.FinishedScreen .FinalAbilitiesContainer .AbilityDamage
+{
+	width: 120px;
+	text-align: center;
+}
+
+.FinishedScreen .FinalAbilitiesContainer .AbilityDPS
+{
+	width: 80px;
+	text-align: center;
+}
+
+.FinishedScreen .FinalAbilitiesContainer .AbilitiesStatsHeading
+{
+	flow-children: right;
+	horizontal-align: right;
+	padding-bottom: 8px;
+	padding-right: 6px;
+}
+
+.FinishedScreen .FinalAbilitiesContainer .AbilitiesStatsHeading Label
+{
+	vertical-align: center;
+}
+
+.FinishedScreen .FinalAbilitiesContainer #AbilitiesStatsContainer
+{
+	flow-children: down;
+	width: 480px;
+}
+
+.FinishedScreen .FinalAbilitiesContainer #AbilitiesStatsContainer .AbilityStats
+{
+	width: 100%;
+	flow-children: right;
+	padding: 2px 6px;
+	margin-bottom: 3px;
+	background-color: white;
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( rgba(255, 255, 255, 0) ), color-stop( 0.4, rgba(255, 255, 255, 0.018) ), color-stop( 0.5, rgba(255, 255, 255, 0.02) ), color-stop( 0.6, rgba(255, 255, 255, 0.018) ), to( rgba(255, 255, 255, 0) ) );
+	border: 1px solid white;
+	border-brush: gradient( linear, 0% 0%, 100% 0%, from( rgba(255, 255, 255, 0) ), color-stop( 0.5, rgba(255, 255, 255, 0.1) ), to( rgba(255, 255, 255, 0) ) );
+	border-left: 0px;
+	border-right: 0px;
+}
+
+.FinishedScreen .FinalAbilitiesContainer #AbilitiesStatsContainer .AbilityStats .AbilityName
+{
+	visibility: collapse;
+}
+
+.FinishedScreen .FinalAbilitiesContainer #AbilitiesStatsContainer .AbilityStats .AbilityImageContainer
+{
+	horizontal-align: center;
+	padding: 3px;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( rgba(0, 0, 0, 0.5) ), to( rgba(0, 0, 0, 0.3) ) );
+	border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+	box-shadow: inset 0px 1px 6px rgba(0, 0, 0, 0.6);
+}
+
+.FinishedScreen .FinalAbilitiesContainer #AbilitiesStatsContainer .AbilityStats .AbilityImageContainer #AbilityImage
+{
+	width: 40px;
+	height: width-percentage( 100% );
+	box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.8);
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( rgb(20, 22, 23) ), to( rgb(31, 34, 37) ) );
+}
+
+.FinishedScreen .FinalAbilitiesContainer #AbilitiesStatsContainer .AbilityStats .AbilityLevelContainer
+{
+	margin: 0px 26px;
+}
+
+.FinishedScreen .FinalAbilitiesContainer #AbilitiesStatsContainer .AbilityStats .AbilityShardScepterImage
+{
+	width: 40px;
+	height: width-percentage( 100% );
+	vertical-align: center;
+	background-size: cover;
+	img-shadow: 0px 4px 16px rgba(0, 0, 0, 0.6);
+}
+
+.FinishedScreen .FinalAbilitiesContainer #AbilitiesStatsContainer .AbilityStats .AbilityShardScepterImage.Empty
+{
+	background-image: url("s2r://panorama/images/hud/reborn/aghs_off_large_png.vtex");
+}
+
+.FinishedScreen .FinalAbilitiesContainer #AbilitiesStatsContainer .AbilityStats .AbilityShardScepterImage.Shard
+{
+	background-image: url("s2r://panorama/images/hud/reborn/aghs_on_shard_large_png.vtex");
+}
+
+.FinishedScreen .FinalAbilitiesContainer #AbilitiesStatsContainer .AbilityStats .AbilityShardScepterImage.Scepter
+{
+	background-image: url("s2r://panorama/images/hud/reborn/aghs_on_scepter_large_png.vtex");
+}
+
+.FinishedScreen .FinalAbilitiesContainer #AbilitiesStatsContainer .AbilityStats .AbilityShardScepterImage.ShardScepter
+{
+	background-image: url("s2r://panorama/images/hud/reborn/aghs_on_large_png.vtex");
+}
+
+.FinishedScreen .FinalAbilitiesContainer #AbilitiesStatsContainer .AbilityStats.EmptySlot
+{
+	opacity: 0.5;
+}
+
+.FinishedScreen .FinalAbilitiesContainer #AbilitiesStatsContainer .AbilityStats.EmptySlot .AbilityLevelContainer
+{
+	visibility: collapse;
+}
+
+.FinishedScreen .FinalAbilitiesContainer #AbilitiesStatsContainer .AbilityStats.EmptySlot .AbilityShardScepterImage
+{
+	opacity: 0.5;
+}
+
+.FinishedScreen .FinalAbilitiesContainer #AbilitiesStatsContainer .AbilityStats.EmptySlot .AbilityStatLabel
+{
+	opacity: 0;
+}
+
+.FinishedScreen .FinalAbilitiesContainer #AbilitiesStatsContainer .AbilityStats.EmptySlot .AbilityLevelContainer
+{
+	border-brush: none;
+	opacity: 0.4;
+}
+
+.FinishedScreen .FinalItemsContainer
+{
+	horizontal-align: right;
+	flow-children: down;
+	width: 460px;
+}
+
+.FinishedScreen .FinalItemsContainer .ItemLevel
+{
+	width: 100px;
+	text-align: center;
+}
+
+.FinishedScreen .FinalItemsContainer .ItemTimeHeld
+{
+	width: 100px;
+	text-align: center;
+}
+
+.FinishedScreen .FinalItemsContainer .ItemName
+{
+	width: fill-parent-flow(1);
+	text-align: left;
+}
+
+.FinishedScreen .FinalItemsContainer .ItemsStatsHeading
+{
+	flow-children: right;
+	padding: 0px 4px 8px;
+}
+
+.FinishedScreen .FinalItemsContainer #ItemsStatsContainer
+{
+	flow-children: down;
+}
+
+.FinishedScreen .FinalItemsContainer #ItemsStatsContainer .ItemStats
+{
+	width: 480px;
+	flow-children: right;
+	padding: 2px 4px;
+	margin-bottom: 3px;
+	background-color: white;
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( rgba(255, 255, 255, 0) ), color-stop( 0.4, rgba(255, 255, 255, 0.018) ), color-stop( 0.5, rgba(255, 255, 255, 0.02) ), color-stop( 0.6, rgba(255, 255, 255, 0.018) ), to( rgba(255, 255, 255, 0) ) );
+	border: 1px solid white;
+	border-brush: gradient( linear, 0% 0%, 100% 0%, from( rgba(255, 255, 255, 0) ), color-stop( 0.5, rgba(255, 255, 255, 0.1) ), to( rgba(255, 255, 255, 0) ) );
+}
+
+.FinishedScreen .FinalItemsContainer #ItemsStatsContainer .ItemStats Label
+{
+	vertical-align: center;
+}
+
+.FinishedScreen .FinalItemsContainer #ItemsStatsContainer .ItemStats .ItemName
+{
+	color: rgba(245, 245, 245, 0.6);
+	text-shadow: 0px 4px 12px rgba(0, 0, 0, 0.8);
+	margin-left: 8px;
+	font-size: 15px;
+}
+
+.FinishedScreen .FinalItemsContainer #ItemsStatsContainer .ItemStats .AbilityLevelContainer
+{
+	margin: 0px 32px;
+}
+
+.FinishedScreen .FinalItemsContainer #ItemsStatsContainer .ItemStats .ItemLevel,.FinishedScreen .FinalItemsContainer #ItemsStatsContainer .ItemStats .ItemTimeHeld
+{
+	font-family: titleFont;
+	color: whitesmoke;
+	font-size: 20px;
+	text-shadow: 0px 4px 12px rgba(0, 0, 0, 0.8);
+	height: 29px;
+	text-overflow: shrink;
+}
+
+.FinishedScreen .FinalItemsContainer #ItemsStatsContainer .ItemStats #ItemImage
+{
+	height: 38px;
+	width: height-percentage(133.33%);
+	box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.FinishedScreen .FinalItemsContainer #ItemsStatsContainer .ItemStats.EmptySlot
+{
+	opacity: 0.5;
+}
+
+.FinishedScreen .FinalItemsContainer #ItemsStatsContainer .ItemStats.EmptySlot Label,.FinishedScreen .FinalItemsContainer #ItemsStatsContainer .ItemStats.EmptySlot .AbilityLevelContainer
+{
+	visibility: collapse;
+}
+
+.FinishedScreen .FinalItemsContainer #ItemsStatsContainer .ItemStats.EmptySlot #ItemImage
+{
+	background-color: black;
+	box-shadow: 0px 0px 0px #00000000;
+	box-shadow: inset 0px 0px 0px 1px rgba(255, 255, 255, 0.025);
+}
+
+.FinishedScreen .AbilityLevelContainer
+{
+	width: 28px;
+	height: width-percentage( 100% );
+	vertical-align: center;
+	border-radius: 50%;
+	border: 2px solid white;
+	border-brush: gradient( linear, 0% 35%, 0% 100%, from( #FFF2DF ), color-stop( 0.48, #ebc386 ), color-stop( 0.52, #BA8C47 ), to( #8d6c3a ) );
+	background-color: rgba(0, 0, 0, 0.8);
+	box-shadow: 0px 2px 8px -1px rgba(0, 0, 0, 0.2);
+}
+
+.FinishedScreen .AbilityLevelContainer Label
+{
+	font-size: 14px;
+	text-align: center;
+	vertical-align: center;
+	horizontal-align: center;
+	font-weight: semi-bold;
+	color: gradient( linear, 0% 35%, 0% 100%, from( #FFF2DF ), color-stop( 0.48, #ebc386 ), color-stop( 0.52, #BA8C47 ), to( #8d6c3a ) );
+	text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.FinishedScreen .FinalEnemyStatsContainer
+{
+	horizontal-align: center;
+	flow-children: down;
+	margin: 12px 0px 16px;
+	visibility: collapse;
+}
+
+.FinishedScreen .FinalEnemyStatsContainer .EnemiesDefeatedTitle
+{
+	horizontal-align: center;
+	margin-bottom: 8px;
+}
+
+.FinishedScreen .FinalEnemyStatsContainer #EnemiesStatsContainer
+{
+	flow-children: right;
+	horizontal-align: center;
+}
+
+.FinishedScreen .FinalEnemyStatsContainer #EnemiesStatsContainer .EnemyStats
+{
+	flow-children: down;
+	margin: 0px 4px;
+}
+
+.FinishedScreen .FinalEnemyStatsContainer #EnemiesStatsContainer .EnemyStats .EnemyStatImageContainer
+{
+	tooltip-position: top;
+	width: 52px;
+	height: width-percentage(100%);
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #313721 ), to( #58572b ) );
+	box-shadow: 0px 4px 12px -2px rgba(0, 0, 0, 0.4);
+}
+
+.FinishedScreen .FinalEnemyStatsContainer #EnemiesStatsContainer .EnemyStats .EnemyKilled
+{
+	text-align: center;
+	horizontal-align: center;
+	color: whitesmoke;
+	margin-top: 4px;
+	max-width: 56px;
+	font-family: titleFont;
+	text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.FinishedScreen .FinalStatsContainer
+{
+	horizontal-align: center;
+	flow-children: down;
+	width: 80%;
+	margin-top: 16px;
+	z-index: 1;
+}
+
+.FinishedScreen .FinalStatsContainer .FinalScoreLabel
+{
+	margin: 0px 12px;
+	text-shadow: 0px 4px 12px rgba(0, 0, 0, 0.8);
+	color: whitesmoke;
+	text-align: center;
+}
+
+.FinishedScreen .FinalStatsContainer .FinalStats
+{
+	horizontal-align: center;
+	flow-children: right;
+	margin: 2px 0px;
+}
+
+.FinishedScreen .FinalStatsContainer .FinalStats .VerticalDash
+{
+	height: 100%;
+	width: 1px;
+	background-color: rgba(255, 255, 255, 0.05);
+	margin: 2px 0px;
+}
+
+.FinishedScreen .FinalStatsContainer .FinalStats .FinalStatBlock
+{
+	width: 170px;
+	flow-children: down;
+}
+
+.FinishedScreen .FinalStatsContainer .FinalStats .FinalStatBlock Label
+{
+	horizontal-align: center;
+}
+
+.FinishedScreen .FinalStatsContainer .FinalStats .FinalStatBlock .FinalStatValue
+{
+	font-family: titleFont;
+	vertical-align: center;
+	color: whitesmoke;
+	font-size: 24px;
+	text-shadow: 0px 4px 12px rgba(0, 0, 0, 0.8);
+	max-width: 170px;
+	height: 35px;
+}
+
+.FinishedScreen .FinalStatsContainer .FinalStats .FinalStatBlock .FinalStatValue.FinalStatGold
+{
+	font-weight: semi-bold;
+	color: gradient( linear, 0% 40%, 0% 100%, from( #FFF2DF ), color-stop( 0.48, #ebc386 ), color-stop( 0.52, #BA8C47 ), to( #8d6c3a ) );
+}
+
+.FinishedScreen .FinalStatsContainer .FinalStats .FinalStatBlock.FinalScoreBlock
+{
+	width: fit-children;
+}
+
+.FinishedScreen .FinalStatsContainer .FinalStats .FinalStatBlock.FinalScoreBlock .FinalStatValue
+{
+	font-size: 36px;
+	font-weight: semi-bold;
+	margin: 0px 10px;
+	margin-top: -2px;
+	height: fit-children;
+	width: 170px;
+	text-align: center;
+	text-overflow: shrink;
+}
+
+.FinishedScreen .DifficultyContainer
+{
+	margin: 0px -3px;
+}
+
+.FinishedScreen .DifficultyContainer .EchelonBadge
+{
+	height: 26px;
+	img-shadow: 0px 2px 12px black;
+}
+
+.FinishedScreen .DifficultyContainer .DifficultyText
+{
+	vertical-align: center;
+	horizontal-align: center;
+	font-size: 13px;
+	color: rgba(245, 245, 245, 0.7);
+	width: 100%;
+	height: 16px;
+	text-align: center;
+	margin: 0px 8px;
+	text-overflow: shrink;
+	text-shadow: 0px 2px 8px black;
+}
+
+.FinishedScreen .DifficultyContainer .DifficultyText b
+{
+	color: white;
+}
+
+.FinishedScreen .PostGameDifficultyContainer
+{
+	flow-children: right;
+	horizontal-align: center;
+	margin-top: -12px;
+	padding: 8px 160px 32px;
+	margin-bottom: -44px;
+	visibility: collapse;
+	background-color: gradient( radial, 50% 0%, 0% 0%, 50% 100%, from( rgba(255, 234, 195, 0.04) ), color-stop( 0.5, rgba(255, 234, 195, 0.02) ), to( rgba(255, 255, 255, 0) ) );
+}
+
+.FinishedScreen .PostGameDifficultyContainer Label
+{
+	horizontal-align: center;
+	text-align: center;
+	color: white;
+	padding: 16px;
+	margin: 0px -6px;
+	font-family: titleFont;
+	animation-name: TextGlow;
+	animation-duration: 0.6s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+
+.FinishedScreen .PostGameDifficultyContainer .DifficultyUnlockedLabel
+{
+	visibility: collapse;
+}
+
+.FinishedScreen .PostGameDifficultyContainer .UpgradesAvailableLabel
+{
+	visibility: collapse;
+}
+
+.FinishedScreen.UnlockedNewDifficulty .DifficultyUnlockedLabel
+{
+	visibility: visible;
+}
+
+.FinishedScreen.UnlockedNewDifficulty .PostGameDifficultyContainer
+{
+	visibility: visible;
+}
+
+.FinishedScreen.UpgradesAvailable .UpgradesAvailableLabel
+{
+	visibility: visible;
+}
+
+.FinishedScreen.UpgradesAvailable .PostGameDifficultyContainer
+{
+	visibility: visible;
+}
+
+.FinishedScreen .FinalTimeRangeContainer
+{
+	flow-children: down;
+	horizontal-align: center;
+	visibility: collapse;
+}
+
+.FinishedScreen .FinalTimeRangeContainer Label
+{
+	horizontal-align: center;
+}
+
+.FinishedScreen .FinalTimeRangeContainer RangeSlider
+{
+	margin-bottom: -4px;
+}
+
+@keyframes 'UpgradePipGlow'
+{
+	0%
+	{
+		brightness: 4;
+		box-shadow: 0px 0px 20px rgba(57, 255, 103, 0.2);
+	}
+	
+	100%
+	{
+		brightness: 1;
+		box-shadow: 0px 0px 16px rgba(57, 255, 103, 0.1);
+	}
+	
+}
+
+@keyframes 'GoldGlow'
+{
+	0%
+	{
+		brightness: 1;
+	}
+	
+	100%
+	{
+		brightness: 2.0;
+	}
+	
+}
+
+@keyframes 'OpacityPulse'
+{
+	0%
+	{
+		opacity: 0.0;
+	}
+	
+	100%
+	{
+		opacity: 1.0;
+	}
+	
+}
+
+@keyframes 'TextGlow'
+{
+	0%
+	{
+		brightness: 1;
+		text-shadow: 0px 0px 20px rgba(255, 212, 148, 0.2);
+	}
+	
+	100%
+	{
+		brightness: 1.2;
+		text-shadow: 0px 0px 20px rgba(255, 212, 148, 0.8);
+	}
+	
+}
+
+@keyframes 'NewBadgeGlow'
+{
+	0%
+	{
+		brightness: 1;
+		img-shadow: 0px 0px 16px rgba(255, 255, 255, 0.1);
+	}
+	
+	100%
+	{
+		brightness: 2.0;
+		img-shadow: 0px 0px 16px rgba(255, 255, 255, 0.3);
+	}
+	
+}
+
+@define scoreEventDuration: 0.7s;
+@keyframes 'ScoreEventAnimation'
+{
+	0%
+	{
+		transform: scale3d( 1.2, 1.2, 1.0 );
+	}
+	
+	10%
+	{
+		transform: scale3d( 1.5, 1.5, 1.0 );
+	}
+	
+	100%
+	{
+		transform: translateY( -30px);
+	}
+	
+}
+
+@define defaultDamageEventDuration: 0.7s;
+@keyframes 'DefaultDamageEventAnimation'
+{
+	0%
+	{
+		transform: scale3d( 1.2, 1.2, 1.0 );
+	}
+	
+	10%
+	{
+		transform: scale3d( 1.5, 1.5, 1.0 );
+	}
+	
+	100%
+	{
+		transform: translateY( -30px);
+	}
+	
+}
+
+@define critDamageEventDuration: 1.5s;
+@keyframes 'CritDamageEventAnimation'
+{
+	0%
+	{
+		transform: scale3d( 1.2, 1.2, 1.0 );
+	}
+	
+	10%
+	{
+		transform: scale3d( 2.0, 2.0, 1.0 );
+	}
+	
+	100%
+	{
+		transform: translateY( -60px);
+	}
+	
+}
+
+@define magicDamageEventDuration: 0.7s;
+@keyframes 'MagicDamageEventAnimation'
+{
+	0%
+	{
+		transform: scale3d( 1.2, 1.2, 1.0 );
+	}
+	
+	10%
+	{
+		transform: scale3d( 1.5, 1.5, 1.0 );
+	}
+	
+	100%
+	{
+		transform: translateY( -30px);
+	}
+	
+}
+
+#EventsOverlay
+{
+	width: 100%;
+	height: 100%;
+	overflow: clip;
+}
+
+#EventsOverlay .ScoreEvent
+{
+	width: 300px;
+	height: 200px;
+	overflow: noclip;
+	transform: translate3d( -150px, -100px, 0px );
+}
+
+#EventsOverlay .ScoreEvent .Contents
+{
+	width: 100%;
+	vertical-align: middle;
+	flow-children: down;
+	animation-name: ScoreEventAnimation;
+	animation-duration: scoreEventDuration;
+	animation-fill-mode: forwards;
+}
+
+#EventsOverlay .ScoreEvent .Contents .EventTitle
+{
+	horizontal-align: center;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 24px;
+	color: white;
+	text-shadow: 2px 2px 4px black;
+}
+
+#EventsOverlay .ScoreEvent .Contents .ScoreAmount
+{
+	horizontal-align: center;
+	text-align: center;
+	font-size: 32px;
+	color: yellow;
+	text-shadow: 2px 2px 4px black;
+}
+
+#EventsOverlay .DamageEvent
+{
+	width: 300px;
+	height: 200px;
+	overflow: noclip;
+	transform: translate3d( -150px, -100px, 0px );
+}
+
+#EventsOverlay .DamageEvent.DefaultDamageEvent .DamageAmount
+{
+	horizontal-align: center;
+	vertical-align: middle;
+	text-align: center;
+	color: white;
+	font-size: 36px;
+	font-weight: bold;
+	text-shadow: 2px 2px 4px black;
+	animation-name: DefaultDamageEventAnimation;
+	animation-duration: defaultDamageEventDuration;
+	animation-fill-mode: forwards;
+}
+
+#EventsOverlay .DamageEvent.CritDamageEvent .Contents
+{
+	horizontal-align: center;
+	vertical-align: middle;
+	flow-children: right;
+	animation-name: CritDamageEventAnimation;
+	animation-duration: critDamageEventDuration;
+	animation-fill-mode: forwards;
+}
+
+#EventsOverlay .DamageEvent.CritDamageEvent .Icon
+{
+	width: 32px;
+	height: 32px;
+	margin-right: 4px;
+	vertical-align: middle;
+	wash-color: rgb( 255, 0, 0 );
+	background-image: url("s2r://panorama/images/control_icons/crit_damage_png.vtex");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+#EventsOverlay .DamageEvent.CritDamageEvent .DamageAmount
+{
+	color: rgb( 255, 0, 0 );
+	font-size: 48px;
+	font-weight: bold;
+	text-shadow: 2px 2px 4px black;
+}
+
+#EventsOverlay .DamageEvent.MagicDamageEvent .Contents
+{
+	horizontal-align: center;
+	vertical-align: middle;
+	flow-children: right;
+	animation-name: MagicDamageEventAnimation;
+	animation-duration: magicDamageEventDuration;
+	animation-fill-mode: forwards;
+}
+
+#EventsOverlay .DamageEvent.MagicDamageEvent .Icon
+{
+	width: 32px;
+	height: 32px;
+	margin-right: 4px;
+	vertical-align: middle;
+	wash-color: rgb( 163, 38, 228 );
+	background-image: url("s2r://panorama/images/control_icons/magic_damage_png.vtex");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+#EventsOverlay .DamageEvent.MagicDamageEvent .DamageAmount
+{
+	color: rgb( 163, 38, 228 );
+	font-size: 48px;
+	font-weight: bold;
+	text-shadow: 2px 2px 4px black;
+}
+
+.PauseHint
+{
+	horizontal-align: right;
+	vertical-align: bottom;
+	flow-children: right;
+	margin-top: 12px;
+	transition-property: transform, opacity, brightness;
+	transition-duration: 0.3s;
+	transition-timing-function: cubic-bezier(0, 1, 0, 1);
+	opacity: 0;
+	transform: translateY( 24px );
+}
+
+.GameState_Active .PauseHint
+{
+	opacity: 1;
+	transform: none;
+	transition-timing-function: cubic-bezier(1, 0, 1, 1);
+}
+
+.PauseHint:hover
+{
+	brightness: 2.0;
+}
+
+.PauseHint:active
+{
+	brightness: 1.5;
+}
+
+.PauseHint .PauseLabelContainer
+{
+	vertical-align: center;
+	margin-right: 8px;
+	margin-top: -2px;
+}
+
+.PauseHint .PauseLabel,.PauseHint .UnPauseLabel
+{
+	horizontal-align: right;
+	opacity: 0;
+	transition-property: transform, opacity;
+	transition-duration: 0.2s;
+	transition-timing-function: ease-out;
+}
+
+.PauseHint .PauseLabel
+{
+	transition-duration: 0.05s;
+	opacity: 1;
+	transform: none;
+	transition-delay: 0s;
+}
+
+.IsPaused .PauseHint .PauseLabel
+{
+	transition-duration: 0.2s;
+	opacity: 0;
+	transform: translateY( -8px );
+	transition-delay: 0.05s;
+}
+
+.PauseHint .UnPauseLabel
+{
+	transition-duration: 0.2s;
+	opacity: 0;
+	transform: translateY( 8px );
+	transition-delay: 0.05s;
+}
+
+.IsPaused .PauseHint .UnPauseLabel
+{
+	transition-duration: 0.05s;
+	opacity: 1;
+	transform: none;
+	transition-delay: 0s;
+}
+
+@keyframes 'PlayerExpLevelProgressAnimation'
+{
+	0%
+	{
+		clip: radial( 50% 50%, 0deg, 0deg );
+	}
+	
+	50%
+	{
+		clip: radial( 50% 50%, 0deg, 180deg );
+	}
+	
+	100%
+	{
+		clip: radial( 50% 50%, 0deg, 360deg );
+	}
+	
+}
+
+@keyframes 'PowerupCooldownProgress'
+{
+	0%
+	{
+		clip: radial( 50% 50%, 0deg, 0deg );
+	}
+	
+	50%
+	{
+		clip: radial( 50% 50%, 0deg, 180deg );
+	}
+	
+	100%
+	{
+		clip: radial( 50% 50%, 0deg, 360deg );
+	}
+	
+}
+
+.MinimapWrapper
+{
+	vertical-align: bottom;
+	margin: 24px;
+	horizontal-align: left;
+	width: 240px;
+	height: width-percentage(100%);
+	transition-property: transform, opacity;
+	transition-duration: 0.7s;
+	transition-timing-function: cubic-bezier(0, 1, 0, 1);
+	transform: scale3d( 0.7, 0.7, 1 );
+	opacity: 0;
+	overflow: noclip;
+}
+
+.GameState_Active:not(.IsInBossStage) .MinimapWrapper,.GameState_ChoosingPowerUp:not(.IsInBossStage) .MinimapWrapper
+{
+	transform: none;
+	opacity: 1;
+	animation-name: BounceMinimap;
+	animation-duration: 0.4s;
+	animation-iteration-count: 3;
+	sound: "ui_topmenu_activate";
+}
+
+.MinimapRight .MinimapWrapper
+{
+	horizontal-align: right;
+}
+
+.MinimapWrapper .MinimapBackgroundNight
+{
+	width: 100%;
+	height: 100%;
+	overflow: noclip;
+	horizontal-align: center;
+	vertical-align: center;
+	border-radius: 50%;
+	background-color: #0F0F15;
+	opacity-brush: gradient( radial, 50% 50%, 0% 0%, 100% 100%, from( #ffffff ), color-stop( .3, #ffffff ), color-stop( .4, #888888 ), color-stop( .48, #000000 ) );
+	box-shadow: 0px 4px 64px 0px rgba(0, 0, 0, 0.6);
+}
+
+.MinimapWrapper .MinimapContainer
+{
+	width: 100%;
+	height: 100%;
+	horizontal-align: center;
+	vertical-align: center;
+}
+
+.MinimapWrapper .MinimapBorder,.MinimapWrapper .MinimapBorderShine,.MinimapWrapper .MinimapBorderShadow
+{
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+}
+
+.MinimapWrapper .MinimapBorderShadow
+{
+	border: 5px solid rgba(0, 0, 0, 0.7);
+}
+
+.MinimapWrapper .MinimapBorder
+{
+	border: 4px solid white;
+	border-brush: gradient( linear, 0% 0%, 0% 100%, from( #3F464A ), to( #242527 ) );
+}
+
+.MinimapWrapper .MinimapBorderShine
+{
+	border: 0.8px solid rgba(255, 255, 255, 0.2);
+	border-brush: gradient( linear, 0% 0%, 0% 100%, from( #ffffff ), to( #ffffff00 ) );
+	box-shadow: inset 0px 1px 2px rgba(255, 255, 255, 0.05);
+}
+
+@keyframes 'GlowMinimapHeroIcon'
+{
+	100%
+	{
+		pre-transform-scale2d: 1.1;
+		brightness: 3;
+	}
+	
+}
+
+@keyframes 'TestRotation'
+{
+	100%
+	{
+		transform: rotateZ( -180deg );
+	}
+	
+}
+
+#Minimap
+{
+	width: 100%;
+	height: 100%;
+	overflow: noclip;
+	horizontal-align: center;
+	vertical-align: center;
+}
+
+#Minimap .MinimapPlayerIcon
+{
+	width: 50px;
+	height: 50px;
+	z-index: 1;
+	transform: scaleX( -1 );
+}
+
+#Minimap .MinimapPlayerIcon .MinimapPlayerIconGlow
+{
+	width: 70%;
+	height: width-percentage(110%);
+	margin-top: 1px;
+	horizontal-align: center;
+	vertical-align: center;
+	background-color: gradient( radial, 50% 50%, 0% 0%, 50% 50%, from( rgb(6, 255, 43) ), color-stop( 0.4, rgba(48, 255, 6, 0.8) ), to( rgba(29, 86, 179, 0) ) );
+	border-radius: 80px;
+	-s2-mix-blend-mode: screen;
+	brightness: 2;
+	animation-name: GlowMinimapHeroIcon;
+	animation-duration: 0.6s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	visibility: collapse;
+}
+
+#Minimap .MinimapPlayerIcon .MinimapPlayerIconImage
+{
+	width: 50%;
+	height: 50%;
+	horizontal-align: center;
+	vertical-align: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	texture-sampling: point;
+}
+
+#Minimap .MinimapPlayerIcon #MinimapPlayerIconCompassContainer
+{
+	horizontal-align: center;
+	vertical-align: center;
+	width: 100%;
+	height: width-percentage(100%);
+	margin-top: 6px;
+}
+
+#Minimap .MinimapPlayerIcon #MinimapPlayerIconCompassContainer .MinimapPlayerIconCompass
+{
+	width: 65%;
+	height: width-percentage(100%);
+	horizontal-align: center;
+	vertical-align: center;
+	background-image: url("s2r://panorama/images/events/crownfall/survivors/minimap/compass_icon_png.vtex");
+	background-size: cover;
+	background-position: center;
+}
+
+#Minimap .MinimapPlayerIcon.PlayerHero_1 .MinimapPlayerIconImage
+{
+	background-image: url("s2r://panorama/images/heroes/icons/npc_dota_hero_vengefulspirit_alt2_png.vtex");
+}
+
+#Minimap .MinimapPlayerIcon.PlayerHero_2 .MinimapPlayerIconImage
+{
+	background-image: url("s2r://panorama/images/heroes/icons/npc_dota_hero_skywrath_mage_alt1_png.vtex");
+}
+
+#Minimap .MinimapPlayerIcon.PlayerHero_3 .MinimapPlayerIconImage
+{
+	background-image: url("s2r://panorama/images/heroes/icons/npc_dota_hero_kez_png.vtex");
+}
+
+#Minimap .MinimapSmallMinibossIcon
+{
+	width: 56px;
+	height: 56px;
+}
+
+#Minimap .MinimapSmallMinibossIcon .MinimapSmallMinibossPin
+{
+	width: 70%;
+	height: 70%;
+	horizontal-align: center;
+	vertical-align: bottom;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-image: url("s2r://panorama/images/events/crownfall/survivors/minimap/pin_png.vtex");
+	margin-bottom: 1px;
+}
+
+#Minimap .MinimapSmallMinibossIcon .MinimapSmallMinibossImage
+{
+	width: 35%;
+	height: 35%;
+	horizontal-align: center;
+	vertical-align: center;
+	margin-top: 4px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	texture-sampling: point;
+}
+
+#Minimap .MinimapResurrectorIcon .MinimapSmallMinibossImage
+{
+	background-image: url("s2r://panorama/images/events/crownfall/survivors/minimap/npc_dota_survivor_resurrector_png.vtex");
+}
+
+#Minimap .MinimapGolemIcon .MinimapSmallMinibossImage
+{
+	background-image: url("s2r://panorama/images/events/crownfall/survivors/minimap/npc_dota_survivor_golem_png.vtex");
+}
+
+#Minimap .MinimapAbsorberIcon .MinimapSmallMinibossImage
+{
+	background-image: url("s2r://panorama/images/events/crownfall/survivors/minimap/npc_dota_survivor_defender_png.vtex");
+}
+
+#Minimap .MinimapArcherIcon .MinimapSmallMinibossImage
+{
+	background-image: url("s2r://panorama/images/events/crownfall/survivors/minimap/npc_dota_survivors_archer_png.vtex");
+}
+
+#Minimap .MinimapTowerIcon .MinimapSmallMinibossImage
+{
+	background-image: url("s2r://panorama/images/hud/icon_roshan_psd.vtex");
+}
+
+#Minimap .MinimapMagnetIcon
+{
+	width: 20px;
+	height: 20px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-image: url("s2r://panorama/images/events/crownfall/survivors/minimap/npc_dota_survivor_magnet_png.vtex");
+}
+
+#Minimap .MinimapTreasureIcon
+{
+	width: 30px;
+	height: 30px;
+}
+
+#Minimap .MinimapTreasureIcon .MinimapTreasureGlow
+{
+	width: 70%;
+	height: 30%;
+	horizontal-align: center;
+	vertical-align: center;
+	background-color: gradient( radial, 50% 50%, 0% 0%, 50% 50%, from( rgba(255, 238, 6, .5) ), color-stop( 0.5, rgba(255, 238, 6, .5) ), to( rgba(255, 247, 137, 0) ) );
+	border-radius: 80px;
+	-s2-mix-blend-mode: screen;
+	brightness: 2;
+	animation-name: ActiveLabelGlow;
+	animation-duration: 0.5s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+
+#Minimap .MinimapTreasureIcon .MinimapTreasureIconImage
+{
+	width: 30px;
+	height: 30px;
+	horizontal-align: center;
+	vertical-align: center;
+	background-size: cover;
+	background-image: url("s2r://panorama/images/events/crownfall/survivors/minimap/treasure_icon_png.vtex");
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+#Minimap .MinimapTreasureIcon .MinimapTreasureIconAlert
+{
+	width: 16px;
+	height: 16px;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #e9aa2c ), to( rgb(203, 93, 15) ) );
+	border: 0.3px solid black;
+	border-radius: 50%;
+	margin-top: 10%;
+	vertical-align: top;
+	horizontal-align: center;
+	background-size: 70%;
+	background-image: url("s2r://panorama/images/events/crownfall/survivors/minimap/exclaimation_point_png.vtex");
+	background-repeat: no-repeat;
+	background-position: center;
+	animation-name: BobItem;
+	animation-duration: 0.6s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	visibility: collapse;
+}
+
+.ParentDifficultyLevelsContainer
+{
+	width: 100%;
+	height: 100%;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( charcoalLight ), to( charcoalDark ) );
+}
+
+.ParentDifficultyLevelsContainer .TableHeader
+{
+	flow-children: right;
+	padding: 20px 12px 6px 24px;
+	margin-right: 12px;
+	background-color: charcoalLight;
+	opacity-brush: gradient( linear, 0% 90%, 0% 100%, from( white ), to( #FFFFFF00 ) );
+}
+
+.ParentDifficultyLevelsContainer .TableHeader .DifficultyHeaderLabel
+{
+	width: fill-parent-flow(1);
+}
+
+.DifficultySelectScreen
+{
+	horizontal-align: center;
+	vertical-align: middle;
+	width: 100%;
+	height: 100%;
+	flow-children: down;
+	opacity: 0;
+	transform: scale3d( 1.1, 1.1, 1 );
+	transition-property: transform, opacity;
+	transition-duration: 0.4s;
+	transition-delay: 0.2s;
+	transition-timing-function: cubic-bezier(0, 1, 0, 1);
+}
+
+.GameState_Setup .DifficultySelectScreen
+{
+	transform: translateX( 160px );
+}
+
+.GameState_Setup.ShowDifficultyScreen .DifficultySelectScreen
+{
+	opacity: 1;
+	transform: none;
+	transition-duration: 0.15s;
+	transition-delay: 0s;
+	transition-timing-function: cubic-bezier(1, 0, 1, 1);
+	sound: "ui_loadout_slide_in";
+}
+
+.DifficultySelectScreen .ChooseHeroTitle
+{
+	horizontal-align: center;
+	text-shadow: 0px 4px 16px rgba(0, 0, 0, 0.4);
+	color: gradient( linear, 0% 0%, 0% 100%, from( #dee1e3 ), to( white ) );
+	margin-top: 80px;
+	margin-bottom: 10px;
+	font-size: 48px;
+}
+
+.DifficultySelectScreen .DifficultySelectActions
+{
+	ignore-parent-flow: true;
+	horizontal-align: center;
+	vertical-align: bottom;
+	width: 520px;
+	padding: 0px 40px 40px;
+}
+
+.DifficultySelectScreen .Container
+{
+	width: 100%;
+	Height: 78%;
+	margin: 45px 80px 0px;
+	flow-children: right;
+}
+
+.DifficultySelectScreen .Container .MetaProgressionSelection,.DifficultySelectScreen .Container .DifficultySelectionContainer
+{
+	width: fill-parent-flow(1);
+	height: 100%;
+	margin: 0 12px;
+	flow-children: down;
+}
+
+.DifficultySelectScreen .Container .MetaProgressionSelection .TopGoldDash,.DifficultySelectScreen .Container .DifficultySelectionContainer .TopGoldDash
+{
+	width: 100%;
+	height: 2px;
+	ignore-parent-flow: true;
+}
+
+.DifficultySelectScreen .Container .MetaProgressionSelection .TopGoldDash.Bottom,.DifficultySelectScreen .Container .DifficultySelectionContainer .TopGoldDash.Bottom
+{
+	vertical-align: bottom;
+}
+
+.DifficultySelectScreen .Container .UpgradesTitle,.DifficultySelectScreen .Container .DifficultyTitle
+{
+	width: 100%;
+	text-align: center;
+	color: whitesmoke;
+	text-shadow: 0px 4px 24px rgba(0, 0, 0, 0.6);
+}
+
+.DifficultySelectScreen .Container .DifficultyIntroDescription
+{
+	horizontal-align: center;
+	color: LighterGrey;
+	margin-top: -6px;
+	margin-bottom: 16px;
+	text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.8);
+	height: 22px;
+	width: 100%;
+	text-align: center;
+	text-overflow: shrink;
+}
+
+.DifficultySelectScreen .Container .DifficultySelectionContainer .DifficultyLevelsContainer
+{
+	width: 100%;
+	height: 100%;
+	flow-children: down;
+	horizontal-align: center;
+	overflow: clip scroll;
+	padding: 44px 24px 24px;
+}
+
+.DifficultySelectScreen .Container .DifficultySelectionContainer .DifficultyLevelsContainer .DifficultyLevelItem
+{
+	background-color: gradient( linear, 0% 0%, 0% 140%, from( rgb(61, 73, 90) ), to( rgb(38, 50, 67) ) );
+	width: fill-parent-flow(1);
+	margin-bottom: 6px;
+	box-shadow: 0px 3px 12px -1px rgba(0, 0, 0, 0.3);
+	height: 92px;
+	transition-property: background-color, brightness, transform;
+	transition-duration: 0.1s, 0.1s, 0.05s;
+}
+
+.DifficultySelectScreen .Container .DifficultySelectionContainer .DifficultyLevelsContainer .DifficultyLevelItem:hover
+{
+	brightness: 1.3;
+}
+
+.DifficultySelectScreen .Container .DifficultySelectionContainer .DifficultyLevelsContainer .DifficultyLevelItem .DifficultyLevelItemContent
+{
+	width: 100%;
+	height: 100%;
+	flow-children: right;
+	padding-left: 4px;
+}
+
+.DifficultySelectScreen .Container .DifficultySelectionContainer .DifficultyLevelsContainer .DifficultyLevelItem .DifficultyBorder
+{
+	width: 100%;
+	height: 100%;
+	border: 1px solid rgba(194, 224, 255, 0.06);
+}
+
+.DifficultySelectScreen .Container .DifficultySelectionContainer .DifficultyLevelsContainer .DifficultyLevelItem .SelectedDifficultyBorder
+{
+	width: 100%;
+	height: 100%;
+	border: 0px solid white;
+	border-brush: gradient( linear, 0% 0%, 100% 0%, from( gold2 ), color-stop( 0.5, gold1 ), to( gold2 ) );
+	transition-property: border;
+	transition-duration: 0.1s;
+}
+
+.DifficultySelectScreen .Container .DifficultySelectionContainer .DifficultyLevelsContainer .DifficultyLevelItem .EchelonContainer
+{
+	vertical-align: center;
+	width: 120px;
+	height: 100%;
+}
+
+.DifficultySelectScreen .Container .DifficultySelectionContainer .DifficultyLevelsContainer .DifficultyLevelItem .EchelonContainer .EchelonContent
+{
+	flow-children: down;
+	vertical-align: center;
+	horizontal-align: center;
+}
+
+.DifficultySelectScreen .Container .DifficultySelectionContainer .DifficultyLevelsContainer .DifficultyLevelItem .EchelonContainer .EchelonContent Label
+{
+	text-shadow: 0px 1px 6px rgba(0, 0, 0, 0.6);
+}
+
+.DifficultySelectScreen .Container .DifficultySelectionContainer .DifficultyLevelsContainer .DifficultyLevelItem .EchelonContainer .EchelonContent .RankLabel
+{
+	horizontal-align: center;
+	color: whitesmoke;
+	font-size: 12px;
+	margin-bottom: -3px;
+	font-weight: semi-bold;
+	transition-property: color;
+	transition-duration: 0.1s;
+}
+
+.DifficultySelectScreen .Container .DifficultySelectionContainer .DifficultyLevelsContainer .DifficultyLevelItem .EchelonContainer .EchelonContent .RankValue
+{
+	horizontal-align: center;
+	color: whitesmoke;
+	font-size: 24px;
+	font-weight: semi-bold;
+	font-family: titleFont;
+}
+
+.DifficultySelectScreen .Container .DifficultySelectionContainer .DifficultyLevelsContainer .DifficultyLevelItem .EchelonContainer .EchelonBadge
+{
+	horizontal-align: center;
+	vertical-align: center;
+	width: 48px;
+	height: width-percentage( 100% );
+	ignore-parent-flow: true;
+	border: 1px solid gold2;
+	transform: rotateZ( 45deg );
+	background-color: #00000022;
+	opacity-brush: gradient( linear, 0% 0%, 100% 100%, from( white ), color-stop( 0.2, #FFFFFF00 ), color-stop( 0.35, #FFFFFF00 ), color-stop( 0.55, white ), to( #FFFFFF22 ) );
+	box-shadow: 0px 0px 0px 1px #00000011;
+}
+
+.DifficultySelectScreen .Container .DifficultySelectionContainer .DifficultyLevelsContainer .DifficultyLevelItem .VerticalDivider
+{
+	width: 1px;
+	height: 100%;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( rgba(255, 255, 255, 0) ), color-stop( 0.4, white ), color-stop( 0.6, white ), to( rgba(255, 255, 255, 0)) );
+	opacity: 0.1;
+}
+
+.DifficultySelectScreen .Container .DifficultySelectionContainer .DifficultyLevelsContainer .DifficultyLevelItem .LockIcon
+{
+	visibility: collapse;
+	vertical-align: center;
+	width: 15px;
+	margin-right: 4px;
+	opacity-brush: gradient( linear, 0% 0%, 0% 100%, from( LighterGrey ), to( Grey ) );
+	opacity: 0;
+	margin-top: -1px;
+}
+
+.DifficultySelectScreen .Container .DifficultySelectionContainer .DifficultyLevelsContainer .DifficultyLevelItem .LockedPattern
+{
+	width: 100%;
+	height: 100%;
+	background-image: url("s2r://panorama/images/events/crownfall/survivors/locked_pattern_png.vtex");
+	background-size: 16px;
+	opacity: 0.02;
+	visibility: collapse;
+	wash-color: LightGrey;
+}
+
+.DifficultySelectScreen .Container .DifficultySelectionContainer .DifficultyLevelsContainer .DifficultyLevelItem .RewardContainer
+{
+	width: 105px;
+	height: 70px;
+	horizontal-align: right;
+	vertical-align: center;
+	margin-right: 12px;
+	background-color: rgba(0, 0, 0, 0.3);
+}
+
+.DifficultySelectScreen .Container .DifficultySelectionContainer .DifficultyLevelsContainer .DifficultyLevelItem .RewardContainer #RewardSnippetContainer
+{
+	horizontal-align: center;
+}
+
+.DifficultySelectScreen .Container .DifficultySelectionContainer .DifficultyLevelsContainer .DifficultyLevelItem .RewardContainer .EmoticonReward
+{
+	vertical-align: center;
+	ui-scale: 200%;
+}
+
+.DifficultySelectScreen .Container .DifficultySelectionContainer .DifficultyLevelsContainer .DifficultyLevelItem .RewardContainer #ItemImage
+{
+	box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.3);
+	horizontal-align: right;
+	vertical-align: center;
+}
+
+.DifficultySelectScreen .Container .DifficultySelectionContainer .DifficultyLevelsContainer .DifficultyLevelItem .DifficultyDescriptionContainer
+{
+	flow-children: down;
+	vertical-align: center;
+	margin-left: 24px;
+	width: fill-parent-flow( 1 );
+	margin-right: 24px;
+}
+
+.DifficultySelectScreen .Container .DifficultySelectionContainer .DifficultyLevelsContainer .DifficultyLevelItem .DifficultyDescriptionContainer .DifficultyName
+{
+	text-align: center;
+	vertical-align: center;
+	font-family: titleFont;
+	color: whitesmoke;
+	text-transform: uppercase;
+	font-weight: semi-bold;
+	letter-spacing: 0.5px;
+	text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.DifficultySelectScreen .Container .DifficultySelectionContainer .DifficultyLevelsContainer .DifficultyLevelItem .DifficultyDescriptionContainer .DifficultyDescription
+{
+	vertical-align: center;
+	font-size: 16px;
+	color: rgba(192, 204, 223, 0.7);
+	text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.DifficultySelectScreen .Container .DifficultySelectionContainer .DifficultyLevelsContainer .DifficultyLevelItem .DifficultyDescriptionContainer .DifficultyDescription b
+{
+	color: LightestGrey;
+	font-weight: semi-bold;
+}
+
+.DifficultySelectScreen .Container .DifficultySelectionContainer .DifficultyLevelsContainer .DifficultyLevelItem.Locked
+{
+	background-color: rgb(18, 21, 28);
+	opacity: 0.4;
+	box-shadow: none;
+}
+
+.DifficultySelectScreen .Container .DifficultySelectionContainer .DifficultyLevelsContainer .DifficultyLevelItem.Locked .DifficultyName
+{
+	color: LighterGrey;
+}
+
+.DifficultySelectScreen .Container .DifficultySelectionContainer .DifficultyLevelsContainer .DifficultyLevelItem.Locked .LockIcon
+{
+	visibility: visible;
+	opacity: 1;
+}
+
+.DifficultySelectScreen .Container .DifficultySelectionContainer .DifficultyLevelsContainer .DifficultyLevelItem.Locked .LockedPattern
+{
+	visibility: visible;
+}
+
+.DifficultySelectScreen .Container .DifficultySelectionContainer .DifficultyLevelsContainer .DifficultyLevelItem.Locked:hover
+{
+	brightness: 1;
+}
+
+.DifficultySelectScreen .Container .DifficultySelectionContainer .DifficultyLevelsContainer .DifficultyLevelItem.PreviousDifficulty
+{
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( rgb(81, 67, 48) ), to( #584C32 ) );
+}
+
+.DifficultySelectScreen .Container .DifficultySelectionContainer .DifficultyLevelsContainer .DifficultyLevelItem.PreviousDifficulty .RewardContainer .RewardLabel
+{
+	color: white;
+}
+
+.DifficultySelectScreen .Container .DifficultySelectionContainer .DifficultyLevelsContainer .DifficultyLevelItem:active,.DifficultySelectScreen .Container .DifficultySelectionContainer .DifficultyLevelsContainer .DifficultyLevelItem:selected
+{
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( #7E6941 ), to( #584C32 ) );
+}
+
+.DifficultySelectScreen .Container .DifficultySelectionContainer .DifficultyLevelsContainer .DifficultyLevelItem:active .SelectedDifficultyBorder,.DifficultySelectScreen .Container .DifficultySelectionContainer .DifficultyLevelsContainer .DifficultyLevelItem:selected .SelectedDifficultyBorder
+{
+	border-width: 2px;
+}
+
+.DifficultySelectScreen .Container .DifficultySelectionContainer .DifficultyLevelsContainer .DifficultyLevelItem:active .DifficultyName,.DifficultySelectScreen .Container .DifficultySelectionContainer .DifficultyLevelsContainer .DifficultyLevelItem:selected .DifficultyName
+{
+	color: white;
+}
+
+.DifficultySelectScreen .Container .DifficultySelectionContainer .DifficultyLevelsContainer .DifficultyLevelItem:active .DifficultyDescription,.DifficultySelectScreen .Container .DifficultySelectionContainer .DifficultyLevelsContainer .DifficultyLevelItem:selected .DifficultyDescription
+{
+	opacity: 1;
+}
+
+.DifficultySelectScreen .Container .DifficultySelectionContainer .DifficultyLevelsContainer .DifficultyLevelItem:active .RankLabel,.DifficultySelectScreen .Container .DifficultySelectionContainer .DifficultyLevelsContainer .DifficultyLevelItem:selected .RankLabel
+{
+	color: white;
+}
+
+.DifficultySelectScreen .Container .DifficultySelectionContainer .DifficultyLevelsContainer .DifficultyLevelItem:active .SelectedDifficultyBorder,.DifficultySelectScreen .Container .DifficultySelectionContainer .DifficultyLevelsContainer .DifficultyLevelItem:selected .SelectedDifficultyBorder
+{
+	animation-name: GoldGlow;
+	animation-duration: 0.5s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+
+.DifficultySelectScreen .Container .DifficultySelectionContainer .DifficultyLevelsContainer .DifficultyLevelItem:active .RewardContainer .RewardLabel,.DifficultySelectScreen .Container .DifficultySelectionContainer .DifficultyLevelsContainer .DifficultyLevelItem:selected .RewardContainer .RewardLabel
+{
+	color: white;
+}
+
+.DifficultySelectScreen .Container .DifficultySelectionContainer .DifficultyLevelsContainer .DifficultyLevelItem:active:hover,.DifficultySelectScreen .Container .DifficultySelectionContainer .DifficultyLevelsContainer .DifficultyLevelItem:selected:hover
+{
+	brightness: 1;
+}
+
+.DifficultySelectScreen .Container .DifficultySelectionContainer .DifficultyLevelsContainer .DifficultyLevelItem:active:active,.DifficultySelectScreen .Container .DifficultySelectionContainer .DifficultyLevelsContainer .DifficultyLevelItem:selected:active
+{
+	brightness: 0.5;
+	transform: scale3d( 0.99, 0.97, 1 );
+}
+
+.DifficultySelectScreen .Container .DifficultySelectionContainer .DifficultyLevelsContainer .DifficultyLevelItem.GamepadSelected .SelectedDifficultyBorder
+{
+	animation-name: OpacityPulse;
+	animation-duration: 0.5s;
+	animation-iteration-count: infinite;
+	animation-direction:alternate;
+}
+
+.DifficultySelectScreen .Container .DifficultySelectionContainer .DifficultyLevelsContainer .DifficultyLevelItem.GamepadSelected .DifficultyBorder
+{
+	brightness: 3.0;
+	border: 3px solid white;
+	animation-name: OpacityPulse;
+	animation-duration: 0.5s;
+	animation-iteration-count: infinite;
+	animation-direction:alternate;
+}
+
+.DifficultySelectScreen .Container .DifficultySelectionContainer .DifficultyLevelsContainer .DifficultyLevelItem.NoReward .RewardContainer
+{
+	visibility: collapse;
+}
+
+.DifficultySelectScreen .HeroSelectActions
+{
+	horizontal-align: center;
+	vertical-align: bottom;
+	width: 520px;
+	padding: 0px 40px 40px;
+}
+
+.DifficultySelectScreen .FinishHeroSelectButton
+{
+	horizontal-align: center;
+	vertical-align: bottom;
+	min-width: 300px;
+	margin-top: 24px;
+}
+
+.GamePadSelectionActive .DifficultySelectScreen .FinishHeroSelectButton
+{
+	animation-name: none;
+	brightness: 0.2;
+}
+
+.DifficultySelectScreen .BackArrowButton
+{
+	horizontal-align: left;
+	vertical-align: center;
+	border: 1px solid rgb(255, 255, 255);
+	border-brush: gradient( linear, 0% 0%, 0% 100%, from( gold1 ), to( gold3 ) );
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #30385a ), to( #111422 ) );
+	border-radius: 50%;
+	margin-top: 4px;
+	box-shadow: 0px 6px 24px rgba(0, 0, 0, 0.4);
+	transition-property: border, background-color, transform, brightness;
+	transition-duration: 0.1s;
+	transition-timing-function: ease-out, cubic-bezier(0, 0.9, 0, 0.9);
+}
+
+.DifficultySelectScreen .BackArrowButton:hover
+{
+	border: 1px solid rgba(255, 255, 255, 1);
+	background-color: rgba(0, 0, 0, 0.8);
+	transform: scale3d( 1.08, 1.08, 1 );
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #3e4871 ), to( #1a1e33 ) );
+	brightness: 1.2;
+}
+
+.DifficultySelectScreen .BackArrowButton:active
+{
+	transform: scale3d( 0.9, 0.9, 1 );
+	brightness: 0.5;
+	sound: "ui_preview_button_click";
+}
+
+.LocalMultiplayer .DifficultySelectScreen .BackArrowButton
+{
+	margin-bottom: 0;
+}
+
+.DifficultySelectScreen .BackArrowButton Image
+{
+	width: 22px;
+	height: width-percentage(100%);
+	margin: 16px;
+	img-shadow: 0px 2px 12px black;
+}
+
+@keyframes 'BobItem'
+{
+	0%
+	{
+		transform: translateY( 0px );
+	}
+	
+	100%
+	{
+		transform: translateY( 1px );
+	}
+	
+}
+
+.HeroSelectScreen
+{
+	horizontal-align: center;
+	vertical-align: middle;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	transform: scale3d( 1.1, 1.1, 1 );
+	transition-property: transform, opacity;
+	transition-duration: 0.4s;
+	transition-delay: 0.2s;
+	transition-timing-function: cubic-bezier(0, 1, 0, 1);
+}
+
+.GameState_Setup .HeroSelectScreen
+{
+	transform: translateX( 160px );
+}
+
+.GameState_Setup.ShowHeroScreen .HeroSelectScreen
+{
+	opacity: 1;
+	transform: none;
+	transition-duration: 0.15s;
+	transition-delay: 0s;
+	transition-timing-function: cubic-bezier(1, 0, 1, 1);
+	sound: "ui_loadout_slide_in";
+}
+
+.GameState_Setup.ShowHeroScreen.ShowDifficultyScreen .HeroSelectScreen
+{
+	opacity: 0;
+	transform: translateX( -160px );
+	transition-duration: 0.4s;
+	transition-delay: 0.2s;
+	transition-timing-function: cubic-bezier(0, 1, 0, 1);
+	sound: "ui_loadout_slide_in";
+}
+
+.HeroSelectScreen .ChooseHeroTitle
+{
+	horizontal-align: center;
+	text-shadow: 0px 4px 16px rgba(0, 0, 0, 0.4);
+	color: gradient( linear, 0% 0%, 0% 100%, from( #dee1e3 ), to( white ) );
+	margin-top: 80px;
+	font-size: 48px;
+}
+
+.HeroSelectScreen #HeroSelect
+{
+	horizontal-align: center;
+	vertical-align: center;
+	flow-children: right;
+	padding: 48px;
+	margin-bottom: 24px;
+}
+
+.HeroSelectScreen #HeroSelect .ChooseHeroButton
+{
+	height: 600px;
+	width: 280px;
+	margin: 12px 16px;
+	box-shadow: 0px 12px 120px -6px rgba(0, 0, 0, 0.7);
+	transition-property: transform, brightness;
+	transition-duration: 0.15s, 0.05s;
+	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
+	transform: scale3d( 0.96, 0.96, 1 );
+}
+
+.HeroSelectScreen #HeroSelect .ChooseHeroButton .ChooseHeroBackground
+{
+	width: 100%;
+	height: 100%;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #0d1321 ), to( #2b3a4b ) );
+	transition-property: background-color;
+	transition-duration: 0.2s;
+	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
+}
+
+.HeroSelectScreen #HeroSelect .ChooseHeroButton .ChooseHeroTexture
+{
+	width: 100%;
+	height: 100%;
+	-s2-mix-blend-mode: multiply;
+}
+
+.HeroSelectScreen #HeroSelect .ChooseHeroButton .ChooseHeroCustomBackground
+{
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-position: center;
+	opacity: 0.4;
+	transform: scale3d( 1.1, 1.1, 1 );
+	transition-property: opacity;
+	transition-duration: 0.2s;
+	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
+}
+
+.HeroSelectScreen #HeroSelect .ChooseHeroButton .ChooseHeroBorder
+{
+	width: 100%;
+	height: 100%;
+	border: 1px solid #FFFFFF11;
+	border-brush: gradient( linear, 0% 0%, 0% 100%, from( #FFF2DF ), color-stop( 0.48, #ebc386 ), color-stop( 0.52, #BA8C47 ), to( #8d6c3a ) );
+	transition-property: border;
+	transition-duration: 0.2s;
+	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
+}
+
+.HeroSelectScreen #HeroSelect .ChooseHeroButton .TickBox
+{
+	visibility: collapse;
+}
+
+.HeroSelectScreen #HeroSelect .ChooseHeroButton #HeroModel
+{
+	height: 180%;
+	width: height-percentage(100%);
+	vertical-align: center;
+	horizontal-align: center;
+	overflow: noclip;
+	opacity-brush: gradient( linear, 0% 50%, 0% 70%, from( white ), to( rgba(255, 255, 255, 0) ) );
+	transition-property: opacity;
+	transition-duration: 0.2s;
+	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
+}
+
+.HeroSelectScreen #HeroSelect .ChooseHeroButton.SurvivorsHero_1 #HeroModel
+{
+	transform: translateX( 0px ) translateY( 0px );
+}
+
+.HeroSelectScreen #HeroSelect .ChooseHeroButton.SurvivorsHero_2 #HeroModel
+{
+	transform: translateX( 0px ) translateY( 0px );
+}
+
+.HeroSelectScreen #HeroSelect .ChooseHeroButton.SurvivorsHero_3 #HeroModel
+{
+	transform: translateX( 0px ) translateY( -30px ) scale3d( 0.8, 0.8, 1 );
+}
+
+.HeroSelectScreen #HeroSelect .ChooseHeroButton.SurvivorsHero_1 .ChooseHeroCustomBackground
+{
+	background-image: url("s2r://materials/portraits_card/portrait_backgrounds/faceless_void_psd.vtex");
+}
+
+.HeroSelectScreen #HeroSelect .ChooseHeroButton.SurvivorsHero_2 .ChooseHeroCustomBackground
+{
+	background-image: url("s2r://materials/portraits_card/portrait_backgrounds/lich_psd.vtex");
+}
+
+.HeroSelectScreen #HeroSelect .ChooseHeroButton.SurvivorsHero_3 .ChooseHeroCustomBackground
+{
+	background-image: url("s2r://materials/portraits_card/portrait_backgrounds/slardar_psd.vtex");
+	hue-rotation: -20deg;
+}
+
+.HeroSelectScreen #HeroSelect .ChooseHeroButton .HeroDetails
+{
+	flow-children: down;
+	horizontal-align: center;
+	vertical-align: bottom;
+	padding-bottom: 32px;
+	padding-top: 16px;
+	width: 100%;
+}
+
+.HeroSelectScreen #HeroSelect .ChooseHeroButton .HeroDetails .HeroName
+{
+	horizontal-align: center;
+	margin-bottom: 8px;
+	padding-bottom: 8px;
+	width: 100%;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.103);
+	border-brush: gradient( linear, 0% 0%, 100% 0%, from( rgba(255, 255, 255, 0) ), color-stop( 0.5, white ), to( rgba(255, 255, 255, 0) ) );
+	color: white;
+	text-shadow: 0px 2px 12px rgba(0, 0, 0, 0.8);
+	text-align: center;
+	font-weight: semi-bold;
+}
+
+.HeroSelectScreen #HeroSelect .ChooseHeroButton .HeroDetails .StartingAbilityLabel
+{
+	horizontal-align: center;
+	color: rgba(255, 255, 255, 0.6);
+	text-shadow: 0px 2px 12px rgba(0, 0, 0, 0.8);
+	margin-bottom: 8px;
+}
+
+.HeroSelectScreen #HeroSelect .ChooseHeroButton .HeroDetails .LeftRightFlow
+{
+	horizontal-align: center;
+}
+
+.HeroSelectScreen #HeroSelect .ChooseHeroButton .HeroDetails .InnateImageContainer
+{
+	width: 56px;
+	height: width-percentage( 100% );
+	margin-right: 10px;
+	horizontal-align: right;
+	vertical-align: center;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( rgba(0, 0, 0, 0.7) ), to( rgba(0, 0, 0, 0.5) ) );
+	box-shadow: inset 0px 1px 6px rgba(0, 0, 0, 0.2);
+	border-radius: 100px;
+	img-shadow: 0px 2px 16px black;
+	padding: 4px;
+}
+
+.HeroSelectScreen #HeroSelect .ChooseHeroButton .HeroDetails .InnateImageContainer #InnateImage
+{
+	tooltip-position: top;
+}
+
+.HeroSelectScreen #HeroSelect .ChooseHeroButton .HeroDetails .AbilityImageContainer
+{
+	horizontal-align: center;
+	padding: 4px;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( rgba(0, 0, 0, 0.7) ), to( rgba(0, 0, 0, 0.5) ) );
+	box-shadow: inset 0px 1px 6px rgba(0, 0, 0, 0.2);
+}
+
+.HeroSelectScreen #HeroSelect .ChooseHeroButton .HeroDetails .AbilityImageContainer #AbilityImage
+{
+	background-color: black;
+	height: 64px;
+	width: height-percentage( 100% );
+	box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.8);
+	tooltip-position: top;
+}
+
+.HeroSelectScreen #HeroSelect .ChooseHeroButton .HeroDetails .AbilityImageContainer .AbilityImageShine
+{
+	width: 100%;
+	height: 100%;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( rgba(255, 255, 255, 0.01) ), to( rgba(255, 255, 255, 0) ) );
+	border: 1px solid white;
+	border-brush: gradient( linear, 0% 0%, 0% 100%, from( rgba(255, 255, 255, 0.04) ), to( rgba(255, 255, 255, 0.02) ) );
+}
+
+.HeroSelectScreen #HeroSelect .ChooseHeroButton:hover .ChooseHeroBackground
+{
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #32436b ), to( #2b3a4b ) );
+}
+
+.HeroSelectScreen #HeroSelect .ChooseHeroButton:hover .ChooseHeroCustomBackground
+{
+	opacity: 0.4;
+}
+
+.HeroSelectScreen #HeroSelect .ChooseHeroButton:active
+{
+	transform: scale3d( 0.94, 0.94, 1 );
+	brightness: 0.4;
+	sound: "ui.pick_repick";
+}
+
+.HeroSelectScreen #HeroSelect .ChooseHeroButton:selected
+{
+	transform: none;
+	z-index: 1;
+}
+
+.HeroSelectScreen #HeroSelect .ChooseHeroButton:selected .ChooseHeroBorder
+{
+	border: 6px solid white;
+	border-brush: gradient( linear, 0% 0%, 0% 100%, from( #FFF2DF ), color-stop( 0.48, #ebc386 ), color-stop( 0.52, #BA8C47 ), to( #8d6c3a ) );
+}
+
+.HeroSelectScreen #HeroSelect .ChooseHeroButton:selected #HeroModel
+{
+	opacity: 1;
+}
+
+.HeroSelectScreen .HeroSelectActions
+{
+	ignore-parent-flow: true;
+	horizontal-align: center;
+	vertical-align: bottom;
+	width: 520px;
+	padding: 0px 40px 40px;
+}
+
+.HeroSelectScreen .BackArrowButton
+{
+	vertical-align: center;
+	border: 1px solid rgb(255, 255, 255);
+	border-brush: gradient( linear, 0% 0%, 0% 100%, from( gold1 ), to( gold3 ) );
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #30385a ), to( #111422 ) );
+	border-radius: 50%;
+	margin-top: 4px;
+	box-shadow: 0px 6px 24px rgba(0, 0, 0, 0.4);
+	transition-property: border, background-color, transform, brightness;
+	transition-duration: 0.1s;
+	transition-timing-function: ease-out, cubic-bezier(0, 0.9, 0, 0.9);
+}
+
+.FirstTimeIntro .HeroSelectScreen .BackArrowButton
+{
+	visibility: collapse;
+}
+
+.HeroSelectScreen .BackArrowButton:hover
+{
+	border: 1px solid rgba(255, 255, 255, 1);
+	background-color: rgba(0, 0, 0, 0.8);
+	transform: scale3d( 1.08, 1.08, 1 );
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #3e4871 ), to( #1a1e33 ) );
+	brightness: 1.2;
+}
+
+.HeroSelectScreen .BackArrowButton:active
+{
+	transform: scale3d( 0.9, 0.9, 1 );
+	brightness: 0.5;
+	sound: "ui_preview_button_click";
+}
+
+.LocalMultiplayer .HeroSelectScreen .BackArrowButton
+{
+	margin-bottom: 0;
+}
+
+.HeroSelectScreen .BackArrowButton Image
+{
+	width: 22px;
+	height: width-percentage(100%);
+	margin: 16px;
+	img-shadow: 0px 2px 12px black;
+}
+
+.HeroSelectScreen .FinishHeroSelectButton
+{
+	horizontal-align: center;
+	vertical-align: bottom;
+	min-width: 300px;
+	margin-top: 24px;
+}
+
+.HeroSelectScreen .FinishHeroSelectButton:active
+{
+	sound: "ui.pick_play";
+}
+
+.FirstTimeIntro .HeroSelectScreen .FinishHeroSelectButton
+{
+	visibility: collapse;
+}
+
+.HeroSelectFirstTimeIntroButtons
+{
+	flow-children: right;
+	horizontal-align: center;
+	vertical-align: bottom;
+	padding-bottom: 40px;
+	visibility: collapse;
+}
+
+.FirstTimeIntro .HeroSelectFirstTimeIntroButtons
+{
+	visibility: visible;
+}
+
+.HeroSelectFirstTimeIntroButtons .Loading
+{
+	flow-children: right;
+	vertical-align: bottom;
+	margin-bottom: 38px;
+	margin-right: 8px;
+	margin-left: 8px;
+	visibility: collapse;
+}
+
+.IsLoading .HeroSelectFirstTimeIntroButtons .Loading
+{
+	visibility: visible;
+}
+
+.HeroSelectFirstTimeIntroButtons .Loading .Spinner
+{
+	vertical-align: middle;
+	margin-right: 8px;
+}
+
+.HeroSelectFirstTimeIntroButtons .Loading > Label
+{
+	vertical-align: middle;
+	text-transform: uppercase;
+	color: white;
+	letter-spacing: 2px;
+	font-size: 20px;
+}
+
+.HeroSelectFirstTimeIntroButtons DOTACrownfallButton
+{
+	min-width: 300px;
+}
+
+.IsLoading .HeroSelectFirstTimeIntroButtons .StartGameButton
+{
+	visibility: collapse;
+}
+
+#HeroSelectPlayButtonFirstTimeIntro
+{
+	visibility: collapse;
+}
+
+.FirstTimeIntro #HeroSelectPlayButtonFirstTimeIntro
+{
+	visibility: visible;
+}
+
+.IsLoading #HeroSelectPlayButtonFirstTimeIntro
+{
+	visibility: collapse;
+}
+
+#ChatterContainer
+{
+	width: 100%;
+	height: 100%;
+	brightness: 1;
+	blur: gaussian( 0px );
+	opacity: 1;
+	transition-property: opacity, brightness, blur;
+	transition-duration: 0.1s;
+}
+
+.GameState_Setup #ChatterContainer
+{
+	opacity: 0;
+	transition-duration: 0.5s;
+}
+
+.ShowPowerUpChoices #ChatterContainer,.GameState_Finished #ChatterContainer,.DebugFinishedScreen #ChatterContainer,.IsPaused.UserPaused #ChatterContainer
+{
+	brightness: 0.1;
+	blur: gaussian( 1px );
+	transition-duration: 0.5s;
+}
+
+#ChatterContainer #ChatterVisualNovel
+{
+	ui-scale: 90%;
+	vertical-align: top;
+	margin-top: -20px;
+}
+
+#VideoContainer
+{
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	overflow: clip;
+	opacity: 0.0;
+	transition-property: opacity;
+	transition-duration: 2.0s;
+}
+
+.ShowVideoContainer #VideoContainer
+{
+	opacity: 1.0;
+	transition-duration: 0.3s;
+}
+
+#VideoContainer #MoviePanel
+{
+	width: height-percentage( 177.77% );
+	height: 100%;
+	horizontal-align: center;
+	vertical-align: middle;
+}
+
+.AspectRatio16x10 #VideoContainer #MoviePanel
+{
+	width: 100%;
+	height: width-percentage( 56.25% );
+}
+
+#VideoContainer .CloseVideoButton
+{
+	z-index: 1;
+	opacity: 0.0;
+	horizontal-align: right;
+	margin: 16px;
+	transition-property: opacity;
+	transition-duration: 0.2s;
+}
+
+.ShowVideoCloseButton #VideoContainer .CloseVideoButton
+{
+	opacity: 1.0;
+}
+
+.ObjectivesIntroContainer
+{
+	horizontal-align: center;
+	vertical-align: middle;
+	margin-bottom: 100px;
+	width: 1000px;
+	height: 200px;
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( rgba(11, 12, 15, 0) ), color-stop( 0.1, rgba(11, 12, 15, 0.4), color-stop( 0.2, rgba(11, 12, 15, 0.7), color-stop( 0.5, rgba(11, 12, 15, 0.9), color-stop( 0.8, rgba(11, 12, 15, 0.7), color-stop( 0.9, rgba(11, 12, 15, 0.4), to( rgba(11, 12, 15, 0) ) );
+	border: 1px solid white;
+	border-brush: gradient( linear, 0% 0%, 100% 0%, from( gold2&00 ), color-stop( 0.5, gold1 ), to( gold2&00 ) );
+	opacity: 0;
+}
+
+.ObjectivesIntro .ObjectivesIntroContainer
+{
+	animation-name: ObjectivesIntroBackground;
+	animation-duration: 4s;
+	animation-iteration-count: 1;
+}
+
+.ObjectivesIntroContainer #SurviveTitle
+{
+	width: 100%;
+	color: rgba(255, 255, 255, 0.8);
+	text-transform: uppercase;
+	text-shadow: 0px 2px 12px rgba(0, 0, 0, 0.8);
+	horizontal-align: center;
+	vertical-align: center;
+	text-align: center;
+	font-weight: semi-bold;
+	font-size: 48px;
+	text-overflow: shrink;
+	font-family: titleFont;
+	opacity: 0;
+}
+
+.ObjectivesIntroLabel .ObjectivesIntroContainer #SurviveTitle
+{
+	animation-name: ObjectivesIntro;
+	animation-duration: 2s;
+	animation-iteration-count: 1;
+}
+
+.ObjectivesIntroContainer #DefeatImperiaTitle
+{
+	width: 100%;
+	color: rgba(255, 255, 255, 0.8);
+	text-transform: uppercase;
+	text-shadow: 0px 2px 12px rgba(0, 0, 0, 0.8);
+	horizontal-align: center;
+	vertical-align: center;
+	text-align: center;
+	font-weight: semi-bold;
+	font-size: 76px;
+	text-overflow: shrink;
+	margin-bottom: 2px;
+	font-family: titleFont;
+	opacity: 0;
+}
+
+.ObjectivesIntroLabel .ObjectivesIntroContainer #DefeatImperiaTitle
+{
+	animation-name: ObjectivesIntro;
+	animation-duration: 2s;
+	animation-delay: 2s;
+	animation-iteration-count: 1;
+}
+
+@keyframes 'ObjectivesIntro'
+{
+	0%
+	{
+		opacity: 0;
+		transform: scale3d(2, 2, 1);
+	}
+	
+	8%
+	{
+		opacity: 1;
+		transform: scale3d(1.2, 1.2, 1);
+	}
+	
+	92%
+	{
+		opacity: 1;
+		transform: scale3d(1.1, 1.1, 1);
+	}
+	
+	100%
+	{
+		opacity: 0;
+		transform: scale3d(0.9, 0.9, 1);
+	}
+	
+}
+
+@keyframes 'ObjectivesIntroBackground'
+{
+	0%
+	{
+		opacity: 0;
+		transform: scale3d(2, 2, 1);
+	}
+	
+	8%
+	{
+		opacity: 1;
+		transform: scale3d(1.2, 1.2, 1);
+	}
+	
+	92%
+	{
+		opacity: 1;
+		transform: scale3d(1.1, 1.1, 1);
+	}
+	
+	100%
+	{
+		opacity: 0;
+		transform: scale3d(0.9, 0.9, 1);
+	}
+	
+}
+
+.MinibossIntroContainer
+{
+	horizontal-align: center;
+	vertical-align: center;
+	width: 1000px;
+	padding: 24px 80px;
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( rgba(11, 12, 15, 0) ), color-stop( 0.1, rgba(11, 12, 15, 0.4), color-stop( 0.2, rgba(11, 12, 15, 0.7), color-stop( 0.5, rgba(11, 12, 15, 0.9), color-stop( 0.8, rgba(11, 12, 15, 0.7), color-stop( 0.9, rgba(11, 12, 15, 0.4), to( rgba(11, 12, 15, 0) ) );
+	border: 1px solid white;
+	border-brush: gradient( linear, 0% 0%, 100% 0%, from( gold2&00 ), color-stop( 0.5, gold1 ), to( gold2&00 ) );
+	margin-bottom: 400px;
+	opacity: 0;
+}
+
+.MinibossArrived .MinibossIntroContainer
+{
+	animation-name: MinibossArrived;
+	animation-duration: 3s;
+	animation-iteration-count: 1;
+	sound: "survivors.miniboss.arrived";
+}
+
+.MinibossIntroContainer #MinibossArrivedTitle
+{
+	width: 100%;
+	color: rgba(255, 255, 255, 0.8);
+	text-transform: uppercase;
+	text-shadow: 0px 2px 12px rgba(0, 0, 0, 0.8);
+	horizontal-align: center;
+	font-family: titleFont;
+	text-align: center;
+	font-weight: semi-bold;
+	font-size: 48px;
+	text-overflow: shrink;
+}
+
+@keyframes 'MinibossArrived'
+{
+	0%
+	{
+		opacity: 0;
+		transform: scale3d(2, 2, 1);
+	}
+	
+	8%
+	{
+		opacity: 1;
+		transform: scale3d(1.2, 1.2, 1);
+	}
+	
+	92%
+	{
+		opacity: 1;
+		transform: scale3d(1.1, 1.1, 1);
+	}
+	
+	100%
+	{
+		opacity: 0;
+		transform: scale3d(0.9, 0.9, 1);
+	}
+	
+}
+
+@keyframes 'BounceObjectives'
+{
+	0%
+	{
+		transform: translateY( 0px );
+	}
+	
+	20%
+	{
+		transform: translateY( -16px );
+		brightness: 3;
+	}
+	
+	100%
+	{
+		transform: translateY( 0px );
+	}
+	
+}
+
+@keyframes 'BounceMinimap'
+{
+	0%
+	{
+		transform: none;
+	}
+	
+	20%
+	{
+		transform: scale3d( 1.1, 1.1, 1 );
+		brightness: 3;
+	}
+	
+	100%
+	{
+		transform: none;
+	}
+	
+}
+
+.ObjectivesLogShadow
+{
+	vertical-align: bottom;
+	width: 400px;
+	height: 800px;
+	background-color: gradient( radial, 100% 100%, 0% 0%, 100% 100%, from( rgba(19, 21, 23, 0.9) ), color-stop( 0.6, rgba(19, 24, 19, 0.75) ), to( rgba(0, 0, 0, 0) ) );
+	opacity: 0.7;
+	horizontal-align: left;
+	transform: scaleX( -1 );
+}
+
+.MinimapRight .ObjectivesLogShadow
+{
+	horizontal-align: right;
+	transform: scaleX( 1 );
+}
+
+.ObjectivesLogContainer
+{
+	horizontal-align: left;
+	vertical-align: bottom;
+	flow-children: down;
+	width: 210px;
+	margin: 40px;
+	margin-bottom: 280px;
+	transition-property: transform, opacity;
+	transition-duration: 0.4s;
+	transition-delay: 0.6s;
+	transition-timing-function: cubic-bezier(0, 1, 0, 1);
+	opacity: 0;
+}
+
+.GameState_Active:not(.IsInBossStage) .ObjectivesLogContainer.Revealed,.GameState_ChoosingPowerUp:not(.IsInBossStage) .ObjectivesLogContainer.Revealed
+{
+	opacity: 1;
+	animation-name: BounceObjectives;
+	animation-duration: 0.4s;
+	animation-iteration-count: 3;
+}
+
+.MinimapRight .ObjectivesLogContainer
+{
+	horizontal-align: right;
+}
+
+.ObjectivesLogContainer .Emblem
+{
+	transform: scaleY( -1 );
+	width: 80%;
+	horizontal-align: center;
+	margin-top: 8px;
+	margin-right: 12px;
+	opacity: 0.6;
+	visibility: collapse;
+}
+
+.ObjectivesLogContainer .ObjectivesTitleContainer
+{
+	width: 100%;
+	flow-children: down;
+	padding: 0px 8px;
+	margin-bottom: 6px;
+}
+
+.ObjectivesLogContainer .ObjectivesTitleContainer .ObjectivesHeading
+{
+	width: 100%;
+	color: rgba(255, 255, 255, 0.8);
+	text-shadow: 0px 2px 12px rgba(0, 0, 0, 0.8);
+	horizontal-align: center;
+	text-align: center;
+	font-weight: semi-bold;
+	margin-bottom: 2px;
+}
+
+.ObjectivesLogContainer .ObjectivesTitleContainer .ObjectivesDescription
+{
+	width: 100%;
+	text-align: center;
+	font-size: 13px;
+	text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.8);
+	color: rgba(245, 245, 245, 0.5);
+}
+
+.ObjectivesLogContainer #MandatoryObjectivesContainer,.ObjectivesLogContainer #OptionalObjectivesContainer
+{
+	flow-children: down;
+	margin-top: 8px;
+}
+
+.ObjectivesLogContainer .Objective
+{
+	flow-children: right;
+	width: fill-parent-flow(1);
+	padding: 3px 4px 3px 4px;
+	border: 1px solid white;
+	background-color: gradient( linear, 50% 0%, 0% 0%, from( rgba(11, 12, 15, 0.5) ), to( rgba(0, 0, 0, 0) ) );
+	border-brush: gradient( linear, 50% 0%, 0% 0%, from( rgba(0, 0, 0, 0.5) ), to( rgba(0, 0, 0, 0) ) );
+	border-radius: 0px 80px 80px 0px;
+	margin-bottom: 3px;
+	visibility: collapse;
+}
+
+.MinimapRight .ObjectivesLogContainer .Objective
+{
+	background-color: gradient( linear, 50% 0%, 100% 0%, from( rgba(11, 12, 15, 0.5) ), to( rgba(0, 0, 0, 0) ) );
+	border-brush: gradient( linear, 50% 0%, 100% 0%, from( rgba(0, 0, 0, 0.5) ), to( rgba(0, 0, 0, 0) ) );
+	border-radius: 80px 0px 0px 80px;
+}
+
+.ObjectivesLogContainer .Objective .ObjectiveImage
+{
+	vertical-align: center;
+	width: 32px;
+	height: width-percentage( 100% );
+	border-brush: gradient( linear, 0% 0%, 0% 80%, from( rgb(181, 189, 196) ), color-stop( 0.5, rgb(50, 55, 59) ), to( rgb(71, 80, 94) ) );
+	border-brush: gradient( linear, 0% 0%, 0% 100%, from( rgb(255, 232, 182) ), color-stop( 0.5, rgb(67, 56, 38) ), to( rgb(118, 90, 39) ) );
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.ObjectivesLogContainer .Objective .ObjectiveTextContainer
+{
+	vertical-align: center;
+	flow-children: down;
+	margin-left: 6px;
+	width: fill-parent-flow(1);
+	margin-bottom: 3px;
+}
+
+.ObjectivesLogContainer .Objective .ObjectiveTextContainer .ObjectiveName
+{
+	font-size: 14px;
+	color: rgba(245, 245, 245, 0.8);
+	text-shadow: 0px 2px 6px black;
+	font-family: titleFont;
+	text-overflow: shrink;
+}
+
+.ObjectivesLogContainer .Objective .ObjectiveTextContainer .ObjectiveStatusLabel
+{
+	font-size: 12px;
+	color: rgba(245, 245, 245, 0.8);
+	text-shadow: 0px 0px 12px rgba(115, 180, 255, 0.3);
+	margin-top: -2px;
+	margin-left: -12px;
+	padding: 0px 12px 4px;
+	visibility: collapse;
+	animation-name: ActiveLabelGlow;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-direction:alternate;
+}
+
+.ObjectivesLogContainer .Objective .ObjectiveRewardIcon
+{
+	width: 32px;
+	height: 100%;
+	vertical-align: center;
+	background-size: contain;
+	background-image: url("s2r://panorama/images/hud/reborn/aghs_off_large_png.vtex");
+}
+
+.ObjectivesLogContainer .Objective.Complete
+{
+	text-decoration: line-through;
+}
+
+.ObjectivesLogContainer .Objective.Complete .ObjectiveRewardIcon
+{
+	background-image: url("s2r://panorama/images/hud/reborn/aghs_on_scepter_large_png.vtex");
+}
+
+.ObjectivesLogContainer .Objective.Revealed
+{
+	visibility: visible;
+}
+
+.ObjectivesLogContainer .Objective.MinimapArcherIcon .ObjectiveImage
+{
+	background-image: url("s2r://panorama/images/events/crownfall/survivors/minimap/npc_dota_survivors_archer_png.vtex");
+}
+
+.ObjectivesLogContainer .Objective.MinimapResurrectorIcon .ObjectiveImage
+{
+	background-image: url("s2r://panorama/images/events/crownfall/survivors/minimap/npc_dota_survivor_resurrector_png.vtex");
+}
+
+.ObjectivesLogContainer .Objective.MinimapGolemIcon .ObjectiveImage
+{
+	background-image: url("s2r://panorama/images/events/crownfall/survivors/minimap/npc_dota_survivor_golem_png.vtex");
+}
+
+.ObjectivesLogContainer .Objective.MinimapAbsorberIcon .ObjectiveImage
+{
+	background-image: url("s2r://panorama/images/events/crownfall/survivors/minimap/npc_dota_survivor_defender_png.vtex");
+}
+
+.ObjectivesLogContainer #DefeatImperiaLabel
+{
+	visibility: collapse;
+}
+
+@keyframes 'ActiveLabelGlow'
+{
+	0%
+	{
+		brightness: 1;
+		text-shadow: 0px 0px 12px rgba(115, 180, 255, 0.2);
+	}
+	
+	100%
+	{
+		brightness: 2.0;
+		text-shadow: 0px 0px 12px rgba(115, 180, 255, 0.8);
+	}
+	
+}
+
+.FirstTimeIntroDialogue .VisualNovelOuterContainer
+{
+	padding-top: 300px;
+	background-color: #000000;
+	background-image: url("s2r://panorama/images/events/crownfall/survivors/survivors_keyart_psd.vtex");
+	background-size: cover;
+	background-img-opacity: 0.2;
+}
+
+.MinibossWarningAlertContainer
+{
+	flow-children: down;
+	horizontal-align: center;
+	opacity: 0;
+}
+
+.MiniBossWarning .MinibossWarningAlertContainer
+{
+	opacity: 1;
+	sound: "survivors.miniboss.incoming";
+}
+
+.MinibossWarningAlertContainer .WarningDarkness
+{
+	width: 1600px;
+	height: 360px;
+	ignore-parent-flow: true;
+	background-color: gradient( radial, 50% 0%, 0% 0%, 50% 100%, from( black ), color-stop( 0.5, rgba(0,0,0,0.8) ), to( #00000000 ) );
+}
+
+.MinibossWarningAlertContainer .WarningContainer
+{
+	margin-top: 72px;
+	flow-children: right;
+	horizontal-align: center;
+}
+
+.MinibossWarningAlertContainer .WarningContainer .Emblem
+{
+	vertical-align: center;
+	margin-top: 5px;
+	wash-color: #f0ce92;
+	height: 20px;
+}
+
+.MinibossWarningAlertContainer .WarningContainer .Emblem.Left
+{
+	transform: scaleX( -1 );
+}
+
+.MinibossWarningAlertContainer .WarningContainer .WarningBadge
+{
+	margin: 0px -32px;
+	padding: 0px 32px;
+}
+
+.MinibossWarningAlertContainer .WarningContainer .WarningBadge .WarningBadgeBackground
+{
+	width: 100%;
+	border-width: 48px 24px 0px 24px;
+	border-image-slice: 100% 48px 0px 48px;
+	border-image-source: url("s2r://panorama/images/events/crownfall/survivors/warning_badge_png.vtex");
+	horizontal-align: center;
+	vertical-align: center;
+	animation-name: PulseWarningBadge;
+	animation-duration: 0.3s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
+	animation-direction: alternate-reverse;
+}
+
+.MinibossWarningAlertContainer .WarningContainer .WarningBadge .WarningLabel
+{
+	horizontal-align: center;
+	vertical-align: center;
+	color: white;
+	text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.6);
+	margin: 0px 24px 3px;
+}
+
+.MinibossWarningAlertContainer .WarningContainer .WarningBadge .WarningRed
+{
+	horizontal-align: center;
+	vertical-align: center;
+	border-radius: 20px;
+	width: 100%;
+	height: 100%;
+	ignore-parent-flow: true;
+	background-color: gradient( radial, 50% 50%, 0% 0%, 50% 50%, from( #F81A25 ), color-stop( 0.3, #F81A2599 ), to( #F81A2500 ) );
+	-s2-mix-blend-mode: screen;
+	overflow: noclip;
+	animation-name: GlowWarningBadge;
+	animation-duration: 0.3s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
+	animation-direction: alternate-reverse;
+}
+
+.MinibossWarningAlertContainer .WarningTitleContainer
+{
+	flow-children: right;
+	horizontal-align: center;
+	margin: -5px 0px;
+}
+
+.MinibossWarningAlertContainer .WarningTitleContainer .MultiDash
+{
+	vertical-align: center;
+	height: 16px;
+	margin-bottom: 2px;
+	wash-color: loserRed;
+}
+
+.MinibossWarningAlertContainer .WarningTitleContainer .MultiDash.Left
+{
+	transform: scaleX( -1 );
+}
+
+.MinibossWarningAlertContainer .WarningTitleContainer .WarningTitle
+{
+	vertical-align: center;
+	color: whitesmoke;
+	font-size: 22px;
+	text-shadow: 0px 2px 16px black;
+	margin: 0px 6px;
+}
+
+.MinibossWarningAlertContainer .BottomEmblem
+{
+	horizontal-align: center;
+	wash-color: #f0ce92;
+	height: 10px;
+	margin-top: 8px;
+}
+
+@keyframes 'GlowWarningBadge'
+{
+	0%
+	{
+		opacity: 0;
+	}
+	
+	100%
+	{
+		opacity: 1;
+	}
+	
+}
+
+@keyframes 'PulseWarningBadge'
+{
+	100%
+	{
+		transform: scale3d( 1.04, 1.08, 1 );
+		brightness: 3;
+	}
+	
+}
+
+#HealthBarsContainer
+{
+	height: 100%;
+	width: 100%;
+	visibility: collapse;
+	brightness: 1;
+	blur: gaussian( 0px );
+	opacity: 1;
+	transition-property: opacity, brightness, blur;
+	transition-duration: 0.1s;
+}
+
+.GameState_Active #HealthBarsContainer
+{
+	visibility: visible;
+}
+
+.GameState_Setup #HealthBarsContainer
+{
+	opacity: 0;
+	transition-duration: 0.5s;
+}
+
+.ShowPowerUpChoices #HealthBarsContainer,.GameState_Finished #HealthBarsContainer,.DebugFinishedScreen #HealthBarsContainer,.IsPaused.UserPaused #HealthBarsContainer
+{
+	brightness: 0.1;
+	blur: gaussian( 1px );
+	transition-duration: 0.5s;
+}
+
+#HealthBarsContainer .HealthBar
+{
+	flow-children: right;
+	transform: translateX(-30px) translateY(-60px);
+	padding: 8px;
+}
+
+#HealthBarsContainer .HealthBar .HealthBarContainer
+{
+	vertical-align: center;
+	box-shadow: 0px 4px 10px -2px rgba(0, 0, 0, 0.4);
+}
+
+#HealthBarsContainer .HealthBar .HealthBarContainer #HealthBar
+{
+	width: 60px;
+	height: 8px;
+	border-radius: 2px;
+	border: 1.5px solid rgb(0, 0, 0);
+	box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 0.02);
+	background-color: rgba(0, 0, 0, 1);
+}
+
+#HealthBarsContainer .HealthBar .HealthBarContainer #HealthBar .ProgressBarLeft
+{
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( rgb(236, 54, 54) ), to( darkred ) );
+	border-radius: 1px;
+	transition-property: opacity, background-color;
+	transition-duration: 0.3s;
+}
+
+#HealthBarsContainer .HealthBar .PlayerHealthBarExpContainer
+{
+	z-index: 1;
+	transform: translateX( 17px );
+	visibility: collapse;
+}
+
+#HealthBarsContainer .HealthBar.PlayerFriendly
+{
+	transform: translateX(-110px) translateY(-90px);
+}
+
+#HealthBarsContainer .HealthBar.PlayerFriendly .HealthBarContainer
+{
+	background-color: gradient( linear, 0% 0%, 50% 0%, from( #335f4c ), to( #2a3c37 ) );
+	transition-property: background-color;
+	transition-duration: 0.3s;
+	padding: 3px 3px 3px 12px;
+	border-radius: 2px;
+}
+
+.PlayerTookDamage #HealthBarsContainer .HealthBar.PlayerFriendly .HealthBarContainer
+{
+	animation-name: FlashHealthBarDamageBorder;
+	animation-duration: 0.6s;
+	animation-iteration-count: 1;
+}
+
+#HealthBarsContainer .HealthBar.PlayerFriendly .HealthBarContainer #HealthBar
+{
+	width: 120px;
+}
+
+#HealthBarsContainer .HealthBar.PlayerFriendly .HealthBarContainer #HealthBar .ProgressBarLeft
+{
+	background-color: gradient( linear, 0% 0%, 0% 80%, from( #75E533 ), to( #316812 ) );
+}
+
+.PlayerTookDamage #HealthBarsContainer .HealthBar.PlayerFriendly .HealthBarContainer #HealthBar .ProgressBarLeft
+{
+	animation-name: FlashHealthBarDamage;
+	animation-duration: 0.6s;
+	animation-iteration-count: 1;
+}
+
+#HealthBarsContainer .HealthBar.PlayerFriendly .PlayerHealthBarExpContainer
+{
+	margin: 8px;
+	width: 26px;
+	height: 26px;
+	vertical-align: center;
+	border-radius: 50%;
+	border: 1px solid rgb(0, 0, 0);
+	horizontal-align: left;
+	background-color: gradient( linear, 0% 70%, 0% 30%, from( rgb(0, 0, 0) ), to( rgb(32, 41, 48) ) );
+	box-shadow: 0px 4px 12px -2px rgba(0, 0, 0, 0.6);
+}
+
+.GameState_Active #HealthBarsContainer .HealthBar.PlayerFriendly .PlayerHealthBarExpContainer
+{
+	visibility: visible;
+}
+
+#HealthBarsContainer .HealthBar.PlayerFriendly .PlayerHealthBarExpContainer Label
+{
+	horizontal-align: center;
+	vertical-align: center;
+	text-align: center;
+	font-size: 13px;
+	font-weight: semi-bold;
+	text-shadow: 0px 2px 8px black;
+	letter-spacing: 0px;
+	margin-top: -1px;
+}
+
+#HealthBarsContainer .HealthBar.PlayerFriendly .PlayerHealthBarExpContainer .PlayerExpProgressCircle
+{
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	border: 2px solid rgba(215, 227, 255, 0.06);
+}
+
+#HealthBarsContainer .HealthBar.PlayerFriendly .PlayerHealthBarExpContainer #PlayerExpProgressCircleFilled
+{
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	border: 2px solid white;
+	border-brush: gradient( linear, 0% 0%, 0% 100%, from( #FFF2DF ), color-stop( 0.4, #ebc386 ), color-stop( 0.6, #BA8C47 ), to( #8d6c3a ) );
+}
+
+#HealthBarsContainer .HealthBar.PlayerFriendly.Invulnerable
+{
+	animation-name: PulseHealthBar;
+	animation-duration: 0.3s;
+	animation-iteration-count: 1;
+}
+
+#HealthBarsContainer .HealthBar.PlayerFriendly.Invulnerable .HealthBarContainer
+{
+	background-color: gradient( linear, 0% 0%, 50% 0%, from( #257594 ), to( #24445e ) );
+}
+
+#HealthBarsContainer .HealthBar.PlayerFriendly.Invulnerable .HealthBarContainer #HealthBar .ProgressBarLeft
+{
+	background-color: gradient( linear, 0% 0%, 0% 80%, from( #33d9e5 ), to( #20338d ) );
+	animation-name: InvulnerableHealthBarPlayer_Animation;
+	animation-duration: 0.18s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
+	animation-direction: alternate-reverse;
+}
+
+#HealthBarsContainer .HealthBar.Invulnerable #HealthBar .ProgressBarLeft
+{
+	background-color: gradient( linear, 0% 0%, 0% 80%, from( #33d9e5 ), to( #20338d ) );
+	animation-name: InvulnerableHealthBarPlayer_Animation;
+	animation-duration: 0.3s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
+	animation-direction: alternate-reverse;
+}
+
+@keyframes 'PulseHealthBar'
+{
+	20%
+	{
+		pre-transform-scale2d: 1.2;
+		brightness: 5;
+	}
+	
+}
+
+@keyframes 'InvulnerableHealthBarPlayer_Animation'
+{
+	0%
+	{
+		opacity: 1;
+		brightness: 1.7;
+	}
+	
+	100%
+	{
+		opacity: 0.1;
+		brightness: 1;
+	}
+	
+}
+
+@keyframes 'FlashHealthBarDamage'
+{
+	20%
+	{
+		background-color: gradient( linear, 0% 0%, 0% 80%, from( white ), to( white ) );
+	}
+	
+}
+
+@keyframes 'FlashHealthBarDamageBorder'
+{
+	20%
+	{
+		background-color: gradient( linear, 0% 0%, 50% 0%, from( rgb(236, 54, 54) ), to( darkred ) );
+	}
+	
+}
+
+.HighlightTarget
+{
+	ignore-parent-flow: true;
+	width: 100%;
+	height: 100%;
+	z-index: 2;
+	opacity: .4;
+	visibility: collapse;
+}
+
+.DoHighlight_Attr1 .TooltipHighlight_Attr1 .HighlightTarget,.DoHighlight_Attr3 .TooltipHighlight_Attr3 .HighlightTarget,.DoHighlight_Attr4 .TooltipHighlight_Attr4 .HighlightTarget,.DoHighlight_Attr6 .TooltipHighlight_Attr6 .HighlightTarget,.DoHighlight_Attr8 .TooltipHighlight_Attr8 .HighlightTarget,.DoHighlight_Attr26 .TooltipHighlight_Attr26 .HighlightTarget,.DoHighlight_Attr27 .TooltipHighlight_Attr27 .HighlightTarget,.DoHighlight_Attr28 .TooltipHighlight_Attr28 .HighlightTarget,.DoHighlight_Attr29 .TooltipHighlight_Attr29 .HighlightTarget,.DoHighlight_Attr31 .TooltipHighlight_Attr31 .HighlightTarget,.DoHighlight_Attr32 .TooltipHighlight_Attr32 .HighlightTarget,.DoHighlight_Attr37 .TooltipHighlight_Attr37 .HighlightTarget,.DoHighlight_Attr38 .TooltipHighlight_Attr38 .HighlightTarget,.DoHighlight_Attr58 .TooltipHighlight_Attr58 .HighlightTarget,.DoHighlight_Attr59 .TooltipHighlight_Attr59 .HighlightTarget,.DoHighlight_Attr60 .TooltipHighlight_Attr60 .HighlightTarget,.DoHighlight_Attr61 .TooltipHighlight_Attr61 .HighlightTarget,.DoHighlight_Attr69 .TooltipHighlight_Attr69 .HighlightTarget,.HighlightActive.DoHighlight_Everything .PlayerInventorySlot:not(.EmptySlot) .HighlightTarget,.HighlightActive .TooltipHighlight_Everything .HighlightTarget
+{
+	visibility: visible;
+	animation-name: syngery_highlight;
+	animation-duration: 2.0s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+}
+
+@keyframes 'syngery_highlight'
+{
+	0%
+	{
+		background-color: #e38f1200;
+	}
+	
+	50%
+	{
+		background-color: #e38f1299;
+	}
+	
+	100%
+	{
+		background-color: #e38f1200;
+	}
+	
+}
+
+.TimelineBackground
+{
+	width: 90%;
+	height: 360px;
+	horizontal-align: center;
+	background-color: gradient( radial, 50% 0%, 0% 0%, 50% 50%, from( rgba(0, 0, 0, 0.9) ), color-stop( 0.5, rgba(0, 0, 0, 0.75) ), to( rgba(0, 0, 0, 0) ) );
+}
+
+.TimelineContainer
+{
+	horizontal-align: center;
+	vertical-align: top;
+	margin-top: 64px;
+	flow-children: right;
+	padding: 0px 16px;
+	brightness: 1;
+	blur: gaussian( 0px );
+	transition-property: opacity, brightness, blur;
+	transition-duration: 0.2s, 0.1s;
+}
+
+.IsInBossStage .TimelineContainer,.ShowVisualNovel .TimelineContainer
+{
+	opacity: 0;
+}
+
+.ShowPowerUpChoices .TimelineContainer,.GameState_Finished .TimelineContainer,.DebugFinishedScreen .TimelineContainer,.IsPaused.UserPaused .TimelineContainer
+{
+	brightness: 0.1;
+	blur: gaussian( 1px );
+	transition-duration: 0.5s;
+}
+
+.TimelineContainer .TimerHUD
+{
+	color: whitesmoke;
+	margin-bottom: 1px;
+	vertical-align: center;
+	text-shadow: 0px 2px 12px black;
+	font-size: 20px;
+}
+
+.TimelineContainer .Timeline
+{
+	padding: 0px 8px;
+	vertical-align: center;
+}
+
+.TimelineContainer .Timeline #TimelineBar
+{
+	width: 480px;
+	height: 6px;
+	vertical-align: center;
+	border-radius: 2px;
+	border: 1px solid black;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #2A1E0C ), to( #463f31 ) );
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #242527 ), to( #3F464A ) );
+}
+
+.TimelineContainer .Timeline #TimelineBar .ProgressBarLeft
+{
+	background-color: gradient( linear, 0% 0%, 0% 70%, from( #FFF2DF ), color-stop( 0.48, #ebc386 ), color-stop( 0.52, #BA8C47 ), to( #785C32 ) );
+	border-radius: 1px;
+}
+
+.TimelineContainer .Timeline .MinibossTimelineIcon
+{
+	width: 24px;
+	height: 24px;
+	vertical-align: center;
+	background-image: url("s2r://panorama/images/control_icons/24px/help_diamond.vsvg");
+	opacity-brush: gradient( linear, 0% 0%, 0% 100%, from( LighterGrey ), to( DarkGrey ) );
+	img-shadow: 0px 2px 16px black;
+	background-size: 80%;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.TimelineContainer .Timeline .MinibossTimelineIcon.Revealed
+{
+	texture-sampling: point;
+	background-size: cover;
+	img-shadow: none;
+	opacity-brush: white;
+}
+
+.TimelineContainer .Timeline .MinibossTimelineIcon.Revealed.MinimapResurrectorIcon
+{
+	background-image: url("s2r://panorama/images/events/crownfall/survivors/minimap/npc_dota_survivor_resurrector_png.vtex");
+}
+
+.TimelineContainer .Timeline .MinibossTimelineIcon.Revealed.MinimapGolemIcon
+{
+	background-image: url("s2r://panorama/images/events/crownfall/survivors/minimap/npc_dota_survivor_golem_png.vtex");
+}
+
+.TimelineContainer .Timeline .MinibossTimelineIcon.Revealed.MinimapAbsorberIcon
+{
+	background-image: url("s2r://panorama/images/events/crownfall/survivors/minimap/npc_dota_survivor_defender_png.vtex");
+}
+
+.TimelineContainer .Timeline .MinibossTimelineIcon.Revealed.MinimapArcherIcon
+{
+	background-image: url("s2r://panorama/images/events/crownfall/survivors/minimap/npc_dota_survivors_archer_png.vtex");
+}
+
+.TimelineContainer .Timeline .BossTimelineIcon
+{
+	width: 32px;
+	height: 32px;
+	horizontal-align: right;
+	vertical-align: center;
+	margin-right: -16px;
+	texture-sampling: point;
+	margin-bottom: 6px;
+	background-size: cover;
+	background-image: url("s2r://panorama/images/heroes/icons/npc_dota_hero_vengefulspirit_alt3_png.vtex");
+}
+
+#ResizeButtonContainer
+{
+	horizontal-align: left;
+	transform: scaleX( -1 );
+	margin: 1px;
+}
+
+.ChatWheelMessage
+{
+	flow-children: right;
+	height: 100px;
+	vertical-align: center;
+}
+
+.ChatWheelMessage.ChatWheelMessageIsSpray
+{
+	height: 200px;
+	width: 220px;
+	padding-left: 6px;
+	padding-right: 0px;
+}
+
+.ChatWheelMessageIcon
+{
+	width: 20px;
+	height: 20px;
+	background-image: url("s2r://panorama/images/control_icons/chat_wheel_icon_png.vtex");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	wash-color: #FA98E8;
+}
+
+.ChatWheelMessageSoundIcon
+{
+	width: 30px;
+	height: 30px;
+	vertical-align: center;
+	horizontal-align: center;
+	background-image: url("s2r://panorama/images/hud/reborn/icon_scoreboard_mute_sound_psd.vtex");
+	background-repeat: no-repeat;
+	background-size: contain;
+	wash-color: white;
+}
+
+.ChatWheelMessage.ChatWheelMessageHasSound:not(.ChatWheelMessageIsSpray) #ChatWheelMessageSoundButton
+{
+	visibility: visible;
+}
+
+#ChatWheelMessageSoundButton
+{
+	ui-scale: 70%;
+	visibility: collapse;
+	vertical-align: center;
+	flow-children: down;
+}
+
+#ChatWheelMessageSoundButton Label
+{
+	horizontal-align: center;
+	vertical-align: center;
+	text-align: center;
+	color: LighterGrey;
+	text-shadow: 0px 2px 8px black;
+	max-height: 43px;
+	margin: 0px 4px;
+}
+
+#ChatWheelMessageSoundButton .ChatWheelMessageContainer
+{
+	margin-top: 4px;
+	flow-children: right;
+	horizontal-align: center;
+}
+

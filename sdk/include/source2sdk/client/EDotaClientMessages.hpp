@@ -8,7 +8,7 @@
 
 namespace source2sdk::client
 {
-    // Enumerator count: 108
+    // Enumerator count: 109
     // Alignment: 4
     // Size: 0x4
     enum class EDotaClientMessages : std::uint32_t
@@ -121,5 +121,6 @@ namespace source2sdk::client
         DOTA_CM_SelectOverworldID = 0x32c,
         DOTA_CM_RerollNeutralItem = 0x32d,
         DOTA_CM_RoshanTimer = 0x32e,
+        DOTA_CM_SuggestItemPreference = 0x32f,
     };
 };

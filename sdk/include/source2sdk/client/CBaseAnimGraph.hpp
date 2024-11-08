@@ -15,10 +15,9 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0xa38
+    // Size: 0xa80
     // Has VTable
     // Construct allowed
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkIncludeByName "m_bClientSideRagdoll"
     // static metadata: MNetworkVarNames "bool m_bInitiallyPopulateInterpHistory"
@@ -31,37 +30,37 @@ namespace source2sdk::client
     class CBaseAnimGraph : public client::C_BaseModelEntity
     {
     public:
-        [[maybe_unused]] std::uint8_t pad_0x7d8[0x78]; // 0x7d8
+        [[maybe_unused]] std::uint8_t pad_0x820[0x78]; // 0x820
         // metadata: MNetworkEnable
-        bool m_bInitiallyPopulateInterpHistory; // 0x850        
-        [[maybe_unused]] std::uint8_t pad_0x851[0x1]; // 0x851
-        bool m_bSuppressAnimEventSounds; // 0x852        
-        [[maybe_unused]] std::uint8_t pad_0x853[0xd]; // 0x853
+        bool m_bInitiallyPopulateInterpHistory; // 0x898        
+        [[maybe_unused]] std::uint8_t pad_0x899[0x1]; // 0x899
+        bool m_bSuppressAnimEventSounds; // 0x89a        
+        [[maybe_unused]] std::uint8_t pad_0x89b[0xd]; // 0x89b
         // metadata: MNetworkEnable
-        bool m_bAnimGraphUpdateEnabled; // 0x860        
-        [[maybe_unused]] std::uint8_t pad_0x861[0x3]; // 0x861
-        float m_flMaxSlopeDistance; // 0x864        
-        Vector m_vLastSlopeCheckPos; // 0x868        
-        bool m_bAnimationUpdateScheduled; // 0x874        
-        [[maybe_unused]] std::uint8_t pad_0x875[0x3]; // 0x875
+        bool m_bAnimGraphUpdateEnabled; // 0x8a8        
+        [[maybe_unused]] std::uint8_t pad_0x8a9[0x3]; // 0x8a9
+        float m_flMaxSlopeDistance; // 0x8ac        
+        Vector m_vLastSlopeCheckPos; // 0x8b0        
+        bool m_bAnimationUpdateScheduled; // 0x8bc        
+        [[maybe_unused]] std::uint8_t pad_0x8bd[0x3]; // 0x8bd
         // metadata: MNetworkEnable
-        Vector m_vecForce; // 0x878        
+        Vector m_vecForce; // 0x8c0        
         // metadata: MNetworkEnable
-        int32_t m_nForceBone; // 0x884        
-        client::CBaseAnimGraph* m_pClientsideRagdoll; // 0x888        
-        bool m_bBuiltRagdoll; // 0x890        
-        [[maybe_unused]] std::uint8_t pad_0x891[0x17]; // 0x891
+        int32_t m_nForceBone; // 0x8cc        
+        client::CBaseAnimGraph* m_pClientsideRagdoll; // 0x8d0        
+        bool m_bBuiltRagdoll; // 0x8d8        
+        [[maybe_unused]] std::uint8_t pad_0x8d9[0x17]; // 0x8d9
         // metadata: MNetworkEnable
-        client::PhysicsRagdollPose_t m_RagdollPose; // 0x8a8        
+        client::PhysicsRagdollPose_t m_RagdollPose; // 0x8f0        
         // metadata: MNetworkEnable
         // metadata: MNetworkChangeCallback "OnClientRagdollChanged"
-        bool m_bRagdollClientSide; // 0x8f0        
-        [[maybe_unused]] std::uint8_t pad_0x8f1[0xf]; // 0x8f1
-        bool m_bHasAnimatedMaterialAttributes; // 0x900        
-        [[maybe_unused]] std::uint8_t pad_0x901[0x137];
+        bool m_bRagdollClientSide; // 0x938        
+        [[maybe_unused]] std::uint8_t pad_0x939[0xf]; // 0x939
+        bool m_bHasAnimatedMaterialAttributes; // 0x948        
+        [[maybe_unused]] std::uint8_t pad_0x949[0x137];
         
         // Datamap fields:
-        // void m_pMainGraphController; // 0x848
+        // void m_pMainGraphController; // 0x890
         // float InputSetPlaybackRate; // 0x0
         // CUtlSymbolLarge InputSetBodyGroup; // 0x0
         // bool InputDisableAnimEventSounds; // 0x0
@@ -69,5 +68,5 @@ namespace source2sdk::client
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CBaseAnimGraph because it is not a standard-layout class
-    static_assert(sizeof(CBaseAnimGraph) == 0xa38);
+    static_assert(sizeof(CBaseAnimGraph) == 0xa80);
 };

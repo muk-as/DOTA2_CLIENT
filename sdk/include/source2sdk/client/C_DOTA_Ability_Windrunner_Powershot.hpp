@@ -16,32 +16,31 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x610
+    // Size: 0x638
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class C_DOTA_Ability_Windrunner_Powershot : public client::C_DOTABaseAbility
     {
     public:
-        [[maybe_unused]] std::uint8_t pad_0x5d8[0x8]; // 0x5d8
-        entity2::GameTime_t m_fStartTime; // 0x5e0        
-        float m_fPower; // 0x5e4        
-        int32_t m_iProjectile; // 0x5e8        
-        float damage_reduction; // 0x5ec        
-        float arrow_width; // 0x5f0        
-        int32_t powershot_damage; // 0x5f4        
-        float tree_width; // 0x5f8        
-        float slow; // 0x5fc        
-        float slow_duration; // 0x600        
-        bool m_bAwardedKillEater; // 0x604        
-        [[maybe_unused]] std::uint8_t pad_0x605[0x3]; // 0x605
-        int32_t m_nHeroesHit; // 0x608        
-        client::ParticleIndex_t m_nFXIndex; // 0x60c        
+        [[maybe_unused]] std::uint8_t pad_0x600[0x8]; // 0x600
+        entity2::GameTime_t m_fStartTime; // 0x608        
+        float m_fPower; // 0x60c        
+        int32_t m_iProjectile; // 0x610        
+        float damage_reduction; // 0x614        
+        float arrow_width; // 0x618        
+        int32_t powershot_damage; // 0x61c        
+        float tree_width; // 0x620        
+        float slow; // 0x624        
+        float slow_duration; // 0x628        
+        bool m_bAwardedKillEater; // 0x62c        
+        [[maybe_unused]] std::uint8_t pad_0x62d[0x3]; // 0x62d
+        int32_t m_nHeroesHit; // 0x630        
+        client::ParticleIndex_t m_nFXIndex; // 0x634        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in C_DOTA_Ability_Windrunner_Powershot because it is not a standard-layout class
-    static_assert(sizeof(C_DOTA_Ability_Windrunner_Powershot) == 0x610);
+    static_assert(sizeof(C_DOTA_Ability_Windrunner_Powershot) == 0x638);
 };

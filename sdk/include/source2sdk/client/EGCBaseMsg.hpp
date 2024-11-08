@@ -8,7 +8,7 @@
 
 namespace source2sdk::client
 {
-    // Enumerator count: 22
+    // Enumerator count: 24
     // Alignment: 4
     // Size: 0x4
     enum class EGCBaseMsg : std::uint32_t
@@ -35,5 +35,7 @@ namespace source2sdk::client
         k_EMsgClientToGCIntegrityStatus = 0x11aa,
         k_EMsgClientToGCAggregateMetrics = 0x11ab,
         k_EMsgGCToClientAggregateMetricsBackoff = 0x11ac,
+        k_EMsgGCToServerSteamLearnAccessTokensChanged = 0x11ad,
+        k_EMsgGCToServerSteamLearnUseHTTP = 0x11ae,
     };
 };

@@ -14,11 +14,10 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0xba0
+    // Size: 0xc00
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class C_DOTA_Tiny_ScepterTree : public client::C_DOTAWearableItem
     {
@@ -27,5 +26,5 @@ namespace source2sdk::client
     };
     #pragma pack(pop)
     
-    static_assert(sizeof(C_DOTA_Tiny_ScepterTree) == 0xba0);
+    static_assert(sizeof(C_DOTA_Tiny_ScepterTree) == 0xc00);
 };

@@ -14,20 +14,19 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x680
+    // Size: 0x6a8
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class C_DOTA_Item_Boots_Of_Bearing : public client::C_DOTA_Item
     {
     public:
-        float radius; // 0x678        
-        [[maybe_unused]] std::uint8_t pad_0x67c[0x4];
+        float radius; // 0x6a0        
+        [[maybe_unused]] std::uint8_t pad_0x6a4[0x4];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in C_DOTA_Item_Boots_Of_Bearing because it is not a standard-layout class
-    static_assert(sizeof(C_DOTA_Item_Boots_Of_Bearing) == 0x680);
+    static_assert(sizeof(C_DOTA_Item_Boots_Of_Bearing) == 0x6a8);
 };

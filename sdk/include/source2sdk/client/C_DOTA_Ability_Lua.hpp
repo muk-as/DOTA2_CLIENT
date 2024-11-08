@@ -14,19 +14,18 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x620
+    // Size: 0x648
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class C_DOTA_Ability_Lua : public client::C_DOTABaseAbility
     {
     public:
-        [[maybe_unused]] std::uint8_t pad_0x5d8[0x48];
+        [[maybe_unused]] std::uint8_t pad_0x600[0x48];
         // No schema binary for binding
     };
     #pragma pack(pop)
     
-    static_assert(sizeof(C_DOTA_Ability_Lua) == 0x620);
+    static_assert(sizeof(C_DOTA_Ability_Lua) == 0x648);
 };

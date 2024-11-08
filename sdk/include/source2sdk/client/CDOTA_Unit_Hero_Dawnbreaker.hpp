@@ -14,11 +14,10 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x1b98
+    // Size: 0x1be8
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkVarNames "int m_nAttackState"
     #pragma pack(push, 1)
@@ -26,11 +25,11 @@ namespace source2sdk::client
     {
     public:
         // metadata: MNetworkEnable
-        int32_t m_nAttackState; // 0x1b90        
-        [[maybe_unused]] std::uint8_t pad_0x1b94[0x4];
+        int32_t m_nAttackState; // 0x1be0        
+        [[maybe_unused]] std::uint8_t pad_0x1be4[0x4];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Unit_Hero_Dawnbreaker because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Unit_Hero_Dawnbreaker) == 0x1b98);
+    static_assert(sizeof(CDOTA_Unit_Hero_Dawnbreaker) == 0x1be8);
 };

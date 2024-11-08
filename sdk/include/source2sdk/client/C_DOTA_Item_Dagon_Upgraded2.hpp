@@ -14,10 +14,9 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x678
+    // Size: 0x6a0
     // Has VTable
     // Construct allowed
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class C_DOTA_Item_Dagon_Upgraded2 : public client::C_DOTA_Item_Dagon_Upgraded
     {
@@ -26,5 +25,5 @@ namespace source2sdk::client
     };
     #pragma pack(pop)
     
-    static_assert(sizeof(C_DOTA_Item_Dagon_Upgraded2) == 0x678);
+    static_assert(sizeof(C_DOTA_Item_Dagon_Upgraded2) == 0x6a0);
 };

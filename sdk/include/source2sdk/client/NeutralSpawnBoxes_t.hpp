@@ -19,11 +19,16 @@ namespace source2sdk::client
     struct NeutralSpawnBoxes_t
     {
     public:
+        // metadata: MNetworkEnable
         mathlib_extended::AABB_t neutralSpawnBoxes; // 0x0        
+        // metadata: MNetworkEnable
         Vector vSpawnBoxOrigin; // 0x18        
         [[maybe_unused]] std::uint8_t pad_0x24[0x4]; // 0x24
+        // metadata: MNetworkEnable
         CUtlString strCampName; // 0x28        
+        // metadata: MNetworkEnable
         CEntityIndex iSpawnerEntIndex; // 0x30        
+        // metadata: MNetworkEnable
         int32_t nCampType; // 0x34        
     };
     #pragma pack(pop)

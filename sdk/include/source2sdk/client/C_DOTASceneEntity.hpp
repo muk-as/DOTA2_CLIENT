@@ -14,21 +14,20 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x5a8
+    // Size: 0x5d0
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class C_DOTASceneEntity : public client::C_SceneEntity
     {
     public:
-        int32_t m_nCustomStackIndex; // 0x598        
-        float m_flVolume; // 0x59c        
-        [[maybe_unused]] std::uint8_t pad_0x5a0[0x8];
+        int32_t m_nCustomStackIndex; // 0x5c0        
+        float m_flVolume; // 0x5c4        
+        [[maybe_unused]] std::uint8_t pad_0x5c8[0x8];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in C_DOTASceneEntity because it is not a standard-layout class
-    static_assert(sizeof(C_DOTASceneEntity) == 0x5a8);
+    static_assert(sizeof(C_DOTASceneEntity) == 0x5d0);
 };

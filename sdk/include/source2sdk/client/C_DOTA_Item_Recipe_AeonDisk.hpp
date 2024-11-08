@@ -14,11 +14,10 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x678
+    // Size: 0x6a0
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class C_DOTA_Item_Recipe_AeonDisk : public client::C_DOTA_Item
     {
@@ -27,5 +26,5 @@ namespace source2sdk::client
     };
     #pragma pack(pop)
     
-    static_assert(sizeof(C_DOTA_Item_Recipe_AeonDisk) == 0x678);
+    static_assert(sizeof(C_DOTA_Item_Recipe_AeonDisk) == 0x6a0);
 };

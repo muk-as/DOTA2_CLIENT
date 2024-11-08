@@ -15,22 +15,21 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x690
+    // Size: 0x6b8
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class C_DOTA_Item_MeteorHammer : public client::C_DOTA_Item
     {
     public:
-        client::ParticleIndex_t m_nFXIndex; // 0x678        
-        client::ParticleIndex_t m_nFXIndexB; // 0x67c        
-        Vector m_vecCastPosition; // 0x680        
-        [[maybe_unused]] std::uint8_t pad_0x68c[0x4];
+        client::ParticleIndex_t m_nFXIndex; // 0x6a0        
+        client::ParticleIndex_t m_nFXIndexB; // 0x6a4        
+        Vector m_vecCastPosition; // 0x6a8        
+        [[maybe_unused]] std::uint8_t pad_0x6b4[0x4];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in C_DOTA_Item_MeteorHammer because it is not a standard-layout class
-    static_assert(sizeof(C_DOTA_Item_MeteorHammer) == 0x690);
+    static_assert(sizeof(C_DOTA_Item_MeteorHammer) == 0x6b8);
 };

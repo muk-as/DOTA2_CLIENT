@@ -14,19 +14,18 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x5f8
+    // Size: 0x638
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class C_DOTA_Ability_Ringmaster_DarkCarnivalSouvenirs : public client::C_DOTABaseAbility
     {
     public:
-        [[maybe_unused]] std::uint8_t pad_0x5d8[0x20];
+        [[maybe_unused]] std::uint8_t pad_0x600[0x38];
         // No schema binary for binding
     };
     #pragma pack(pop)
     
-    static_assert(sizeof(C_DOTA_Ability_Ringmaster_DarkCarnivalSouvenirs) == 0x5f8);
+    static_assert(sizeof(C_DOTA_Ability_Ringmaster_DarkCarnivalSouvenirs) == 0x638);
 };

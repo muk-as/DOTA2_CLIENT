@@ -17,11 +17,11 @@
 0123456789
 0123456789abcdef
 048
-048<@D
 089
 08@lmnHP\b\t\n\v\f\r
 0:<\n\fdelta_ignore
 0:D\n
+0:u\n
 0E\t\r
 0HPX8
 0HXhx
@@ -341,6 +341,7 @@ CHECK failed: (total_size_) > (0
 CHECK failed: (type) != (WireFormatLite::TYPE_ENUM
 CHECK failed: (type) != (WireFormatLite::TYPE_GROUP
 CHECK failed: (type) != (WireFormatLite::TYPE_MESSAGE
+CHECK failed: (type) == (WireFormatLite::TYPE_ENUM
 CHECK failed: (uintptr_t((a).data() - (*result).data())) > (uintptr_t((*result).size
 CHECK failed: (used) <= (total_.template Get<TypeToUse
 CHECK failed: *from != nullptr
@@ -494,6 +495,7 @@ DescriptorProto
 DescriptorProtosH
 Difference of
 DotaMapUtils001
+EProtoDebugVisiblity
 ERROR
 ERROR: Resource name "%s" has the incorrect extension "%s" for the specified resource type (expected "%s")!\n
 EXPORTSYSTEM_INTERFACE_VERSION_001
@@ -782,7 +784,6 @@ K\n!NETWORK_DISCONNECT_INTERNAL_ERROR
 K\n#NETWORK_DISCONNECT_TICKMSG_OVERFLOW
 K\n$NETWORK_DISCONNECT_STEAM_AUTHINVALID
 K\n'NETWORK_DISCONNECT_CLIENT_DIFFERENT_MAP
-K\n\eENetworkDisconnectionReason
 Key in map fields cannot be enum types
 Key in map fields cannot be float/double, bytes or message types
 KeyValueCache001
@@ -792,6 +793,7 @@ LABEL_REQUIRED
 L\n!NETWORK_DISCONNECT_HLTVRESTRICTED
 L\n!NETWORK_DISCONNECT_KICKED_SUICIDE
 L\n!NETWORK_DISCONNECT_LOOPDEACTIVATE
+L\n\eENetworkDisconnectionReason
 Label
 Localize_001
 LookAtList
@@ -972,9 +974,9 @@ NETWORK_DISCONNECT_STEAM_TICKET
 NETWORK_DISCONNECT_UNUSUAL
 NETWORK_DISCONNECT_USERCMD
 NO_SIDE_EFFECTS
-NSt3__110__function6__baseIFvvEEE
 NSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEE
 NSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEE
+NSt3__117bad_function_callE
 NSt3__118basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE
 NSt3__119basic_ostringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE
 NSt3__121__basic_string_commonILb1EEE
@@ -1036,7 +1038,7 @@ Player_DisconnectReason_ConvictedAccount
 Player_DisconnectReason_HostageKilling
 Player_DisconnectReason_Idle
 Player_DisconnectReason_InputAutomation
-Player_DisconnectReason_InputAutomation_Detail:E\n
+Player_DisconnectReason_InputAutomation_Detail
 Player_DisconnectReason_NoSteamLogin
 Player_DisconnectReason_NoSteamTicket
 Player_DisconnectReason_Suicide
@@ -1044,6 +1046,7 @@ Player_DisconnectReason_TK_Start
 Player_DisconnectReason_TeamHurting
 Player_DisconnectReason_TeamKilling
 Player_DisconnectReason_UntrustedAccount
+Player_DisconnectReason_VacNetAbnormalBehavior:E\n
 Player_DisconnectReason_VotedOff
 PostProcessingSystem_001
 PredictionDiffManager001
@@ -1273,7 +1276,6 @@ Z\n(NETWORK_DISCONNECT_REMOTE_CERTNOTTRUSTED
 Z\n*NETWORK_DISCONNECT_REJECT_INVALIDKEYLENGTH
 Z\n+NETWORK_DISCONNECT_CONNECT_REQUEST_TIMEDOUT
 a protocol buffer. Use the 'bytes' type if you intend to send raw bytes
-a\b\t\n
 a\t\n\n\t
 accessor_ == other.accessor
 additional_includes
@@ -1283,7 +1285,6 @@ allocator<T>::allocate(size_t n) 'n' exceeds maximum supported size
 allowed in proto3
 another member of oneof
 args were given.  Full format string was
-avx
 b"S\n\nCEntityMsg
 b"k\n"CNETMsg_SpawnGroup_SetCreationTick
 b16777215"R\n\nCMsg_CVars
@@ -1324,6 +1325,7 @@ d\n-NETWORK_DISCONNECT_KICKED_COMPETITIVECOOLDOWN
 d\n-NETWORK_DISCONNECT_LOCALPROBLEM_NETWORKCONFIG
 data
 data_ == other.data
+debugprint_visibility
 default = $0
 definition file imports the proto which defines the option
 demo_force_version
@@ -1470,7 +1472,6 @@ google/protobuf/descriptor.h
 google/protobuf/descriptor.pb.cc
 google/protobuf/descriptor.pb.h
 google/protobuf/descriptor.proto
-google/protobuf/descriptor.proto:?\n
 google/protobuf/descriptor_database.cc
 google/protobuf/dynamic_message.cc
 google/protobuf/dynamic_message.h
@@ -1522,8 +1523,7 @@ hlX`0pt
 hltv_replay_flags
 host
 host_computationtime
-host_frametime
-host_frametime_std_deviation
+host_frame_dropped_pct_x10
 host_unfiltered_frametime
 i < length
 idempotency_level
@@ -1567,15 +1567,20 @@ is_large
 is_loadsavegame
 is_multiplayer
 ishltv
+j\n0NETWORK_DISCONNECT_KICKED_VACNETABNORMALBEHAVIOR
 java_generate_equals_and_hash
 java_generic_services
 java_multiple_files
 java_outer_classname
 java_string_check_utf8
-jitter
 json_name
 jstype
 jstype is only allowed on int64, uint64, sint64, fixed64 or sfixed64 fields
+k_EProtoDebugVisibility_Always
+k_EProtoDebugVisibility_Always:@\n
+k_EProtoDebugVisibility_GC
+k_EProtoDebugVisibility_Never
+k_EProtoDebugVisibility_Server
 key_t
 keys
 label
@@ -1584,6 +1589,7 @@ lazy = true] can only be specified for submessage fields
 lc_count
 leading_comments
 leading_detached_comments
+legacy_host_loss
 length_ >= n
 length_delimited
 leveltransition
@@ -1636,11 +1642,12 @@ n CNETMsg_SpawnGroup_LoadCompleted
 n CSVCMsg_GameSessionConfiguration
 n NETWORK_DISCONNECT_CLIENT_NO_MAP
 n google/protobuf/descriptor.proto
-n!host_framestarttime_std_deviation
 n"SPAWN_GROUP_CREATE_NEW_SCENE_WORLD
 n"SPAWN_GROUP_IS_INITIAL_SPAWN_GROUP
 n"host_computationtime_std_deviation
 n#SPAWN_GROUP_LOAD_ENTITIES_FROM_SAVE
+n#k_EProtoDebugVisibility_ValveServer
+n$host_frame_irregular_arrival_pct_x10
 n'SPAWN_GROUP_CREATE_CLIENT_ONLY_ENTITIES
 n)NETWORK_DISCONNECT_KICKED_INPUTAUTOMATION
 n)NETWORK_DISCONNECT_PURESERVER_CLIENTEXTRA
@@ -1730,7 +1737,6 @@ n\rphp_namespace
 n\rpreviouslevel
 n\rreserved_name
 n\rtick_interval
-n\thost_loss
 n\tjson_name
 n\tmap_entry
 n\tname_part
@@ -1748,7 +1754,7 @@ n\vTYPE_STRING
 n\vTYPE_UINT32
 n\vTYPE_UINT64
 n\v\b\t
-n\v\fNSt3__117bad_function_callE
+n\v\fNSt3__110__function6__baseIFvvEEE
 n\v\f\r
 n\vallow_alias
 n\vis_headless
@@ -1861,9 +1867,6 @@ spawngrouphandle
 spawngroupmanifest
 spawngroupownerhandle
 spawngroupparenthandle
-sse2
-sse3
-sse4
 stack frames not accounted for stack unwind
 start
 static bool IGameSystem::InitAllSystems
@@ -1890,7 +1893,6 @@ tick
 times
 to
 to start from the outermost scope
-tools
 trailing_comments
 true
 truncated

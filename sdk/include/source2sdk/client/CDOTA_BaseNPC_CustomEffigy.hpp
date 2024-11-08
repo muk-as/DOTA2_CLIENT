@@ -19,22 +19,21 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x1880
+    // Size: 0x18d0
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_BaseNPC_CustomEffigy : public client::C_DOTA_BaseNPC_Building
     {
     public:
-        uint32_t m_unStatusEffectIndex; // 0x1878        
+        uint32_t m_unStatusEffectIndex; // 0x18c8        
         // m_hPedestal has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<client::C_BaseEntity> m_hPedestal;
-        char m_hPedestal[0x4]; // 0x187c        
+        char m_hPedestal[0x4]; // 0x18cc        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_BaseNPC_CustomEffigy because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_BaseNPC_CustomEffigy) == 0x1880);
+    static_assert(sizeof(CDOTA_BaseNPC_CustomEffigy) == 0x18d0);
 };

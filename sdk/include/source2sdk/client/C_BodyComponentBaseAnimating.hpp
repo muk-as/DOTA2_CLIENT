@@ -16,10 +16,9 @@ namespace source2sdk::client
     // Registered alignment: unknown
     // Alignment: unknown
     // Standard-layout class: false
-    // Size: 0xa50
+    // Size: 0xab0
     // Has VTable
     // Construct disallowed
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkVarNames "CBaseAnimatingController m_animationController"
     #pragma pack(push, 1)
@@ -27,8 +26,8 @@ namespace source2sdk::client
     {
     public:
         // metadata: MNetworkEnable
-        client::C_BaseAnimatingController m_animationController; // 0x470        
-        [[maybe_unused]] std::uint8_t pad_0xa48[0x8];
+        client::C_BaseAnimatingController m_animationController; // 0x4d0        
+        [[maybe_unused]] std::uint8_t pad_0xaa8[0x8];
         
         // Static fields:
         static entity2::EntComponentInfo_t &Get_s_EntComponentInfo() {return *reinterpret_cast<entity2::EntComponentInfo_t*>(interfaces::g_schema->FindTypeScopeForModule("client.dll")->FindDeclaredClass("C_BodyComponentBaseAnimating")->GetStaticFields()[0]->m_pInstance);};
@@ -37,5 +36,5 @@ namespace source2sdk::client
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in C_BodyComponentBaseAnimating because it is not a standard-layout class
-    static_assert(sizeof(C_BodyComponentBaseAnimating) == 0xa50);
+    static_assert(sizeof(C_BodyComponentBaseAnimating) == 0xab0);
 };

@@ -14,10 +14,9 @@ namespace source2sdk::client
     // Registered alignment: 0x10
     // Alignment: 0x10
     // Standard-layout class: false
-    // Size: 0xaa0
+    // Size: 0xae0
     // Has VTable
     // Construct allowed
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class C_EnvDeferredSpotLightClientOnly : public client::C_EnvDeferredLight
     {
@@ -26,5 +25,5 @@ namespace source2sdk::client
     };
     #pragma pack(pop)
     
-    static_assert(sizeof(C_EnvDeferredSpotLightClientOnly) == 0xaa0);
+    static_assert(sizeof(C_EnvDeferredSpotLightClientOnly) == 0xae0);
 };

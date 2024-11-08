@@ -17,7 +17,6 @@ namespace source2sdk::client
     // Standard-layout class: false
     // Size: 0x218
     // Has VTable
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkVarNames "float32 m_flFallVelocity"
     // static metadata: MNetworkVarNames "bool m_bInCrouch"

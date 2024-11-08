@@ -20,11 +20,10 @@ namespace source2sdk::client
     // Registered alignment: unknown
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x18b8
+    // Size: 0x1928
     // Has VTable
     // Is Abstract
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkVarNames "int m_CompendiumChallengeEventID"
     // static metadata: MNetworkVarNames "int m_CompendiumChallengeSequenceID"
@@ -57,85 +56,85 @@ namespace source2sdk::client
     class C_IngameEvent_Base : public client::C_BaseEntity
     {
     public:
-        [[maybe_unused]] std::uint8_t pad_0x538[0x8]; // 0x538
-        bool m_bInitialized; // 0x540        
-        [[maybe_unused]] std::uint8_t pad_0x541[0x3]; // 0x541
+        [[maybe_unused]] std::uint8_t pad_0x560[0x8]; // 0x560
+        bool m_bInitialized; // 0x568        
+        [[maybe_unused]] std::uint8_t pad_0x569[0x3]; // 0x569
         // metadata: MNetworkEnable
-        int32_t m_CompendiumChallengeEventID[24]; // 0x544        
+        int32_t m_CompendiumChallengeEventID[24]; // 0x56c        
         // metadata: MNetworkEnable
-        int32_t m_CompendiumChallengeSequenceID[24]; // 0x5a4        
+        int32_t m_CompendiumChallengeSequenceID[24]; // 0x5cc        
         // metadata: MNetworkEnable
-        int32_t m_CompendiumChallengeCoinReward[24]; // 0x604        
+        int32_t m_CompendiumChallengeCoinReward[24]; // 0x62c        
         // metadata: MNetworkEnable
-        int32_t m_CompendiumChallengeCoinSplash[24]; // 0x664        
+        int32_t m_CompendiumChallengeCoinSplash[24]; // 0x68c        
         // metadata: MNetworkEnable
-        int32_t m_CompendiumChallengePointReward[24]; // 0x6c4        
-        // metadata: MNetworkEnable
-        // metadata: MNetworkChangeCallback "OnClientPlayerChallengeProgressChanged"
-        bool m_CompendiumChallengeCompleted[24]; // 0x724        
+        int32_t m_CompendiumChallengePointReward[24]; // 0x6ec        
         // metadata: MNetworkEnable
         // metadata: MNetworkChangeCallback "OnClientPlayerChallengeProgressChanged"
-        bool m_CompendiumChallengeFailed[24]; // 0x73c        
+        bool m_CompendiumChallengeCompleted[24]; // 0x74c        
         // metadata: MNetworkEnable
         // metadata: MNetworkChangeCallback "OnClientPlayerChallengeProgressChanged"
-        int32_t m_CompendiumChallengeProgress[24]; // 0x754        
+        bool m_CompendiumChallengeFailed[24]; // 0x764        
         // metadata: MNetworkEnable
-        int32_t m_QueryIDForProgress[24]; // 0x7b4        
-        [[maybe_unused]] std::uint8_t pad_0x814[0x4]; // 0x814
+        // metadata: MNetworkChangeCallback "OnClientPlayerChallengeProgressChanged"
+        int32_t m_CompendiumChallengeProgress[24]; // 0x77c        
+        // metadata: MNetworkEnable
+        int32_t m_QueryIDForProgress[24]; // 0x7dc        
+        [[maybe_unused]] std::uint8_t pad_0x83c[0x4]; // 0x83c
         // metadata: MNetworkEnable
         // m_SubChallenges has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // C_UtlVectorEmbeddedNetworkVar<client::CDOTASubChallengeInfo> m_SubChallenges;
-        char m_SubChallenges[0x50]; // 0x818        
+        char m_SubChallenges[0x68]; // 0x840        
         // metadata: MNetworkEnable
         // metadata: MNetworkChangeCallback "OnWagerChanged"
-        int32_t m_CompendiumCoinWager[10]; // 0x868        
+        int32_t m_CompendiumCoinWager[10]; // 0x8a8        
         // metadata: MNetworkEnable
         // metadata: MNetworkChangeCallback "OnWagerChanged"
-        client::itemid_t m_CompendiumTokenWagerItemID[10]; // 0x890        
+        client::itemid_t m_CompendiumTokenWagerItemID[10]; // 0x8d0        
         // metadata: MNetworkEnable
         // metadata: MNetworkChangeCallback "OnWagerChanged"
-        int32_t m_CompendiumWagerTokenBonusPct[10]; // 0x8e0        
+        int32_t m_CompendiumWagerTokenBonusPct[10]; // 0x920        
         // metadata: MNetworkEnable
-        int32_t m_CompendiumCoinWagerResults[10]; // 0x908        
+        int32_t m_CompendiumCoinWagerResults[10]; // 0x948        
         // metadata: MNetworkEnable
         // metadata: MNetworkChangeCallback "OnWagerChanged"
-        int32_t m_CompendiumRankWagers[10]; // 0x930        
+        int32_t m_CompendiumRankWagers[10]; // 0x970        
         // metadata: MNetworkEnable
         // metadata: MNetworkChangeCallback "OnWagerTimeChanged"
-        float m_flWagerTimer; // 0x958        
+        float m_flWagerTimer; // 0x998        
         // metadata: MNetworkEnable
-        entity2::GameTime_t m_flWagerEndTime; // 0x95c        
+        entity2::GameTime_t m_flWagerEndTime; // 0x99c        
         // metadata: MNetworkEnable
         // m_CompendiumChallengeInfo has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // C_UtlVectorEmbeddedNetworkVar<client::CDOTA_PlayerChallengeInfo> m_CompendiumChallengeInfo;
-        char m_CompendiumChallengeInfo[0xac0]; // 0x960        
+        char m_CompendiumChallengeInfo[0xad8]; // 0x9a0        
         // metadata: MNetworkEnable
         // metadata: MNetworkTypeAlias "DOTA_CombatLogQueryProgress"
         // m_PlayerQueryIDs has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // C_UtlVectorEmbeddedNetworkVar<client::C_DOTA_CombatLogQueryProgress> m_PlayerQueryIDs;
-        char m_PlayerQueryIDs[0x50]; // 0x1420        
+        char m_PlayerQueryIDs[0x68]; // 0x1478        
         // metadata: MNetworkEnable
         // metadata: MNetworkChangeCallback "OnClientPlayerChallengeProgressChanged"
-        int32_t m_ProgressForQueryID[100]; // 0x1470        
+        int32_t m_ProgressForQueryID[100]; // 0x14e0        
         // metadata: MNetworkEnable
-        int32_t m_GoalForQueryID[100]; // 0x1600        
+        int32_t m_GoalForQueryID[100]; // 0x1670        
         // metadata: MNetworkEnable
-        int32_t m_PlayerQuestRankPreviouslyCompleted[10]; // 0x1790        
+        int32_t m_PlayerQuestRankPreviouslyCompleted[10]; // 0x1800        
         // metadata: MNetworkEnable
         // metadata: MNetworkChangeCallback "OnClientPlayerQuestRankChanged"
-        int32_t m_PlayerQuestRankCompleted[10]; // 0x17b8        
+        int32_t m_PlayerQuestRankCompleted[10]; // 0x1828        
         // metadata: MNetworkEnable
-        client::PlayerID_t m_PlayerBountyTarget[10]; // 0x17e0        
+        client::PlayerID_t m_PlayerBountyTarget[10]; // 0x1850        
         // metadata: MNetworkEnable
-        entity2::GameTime_t m_flPlayerBountyTimestamp[10]; // 0x1808        
+        entity2::GameTime_t m_flPlayerBountyTimestamp[10]; // 0x1878        
         // metadata: MNetworkEnable
-        int32_t m_PlayerBountyCount[10]; // 0x1830        
+        int32_t m_PlayerBountyCount[10]; // 0x18a0        
         // metadata: MNetworkEnable
         // metadata: MNetworkChangeCallback "OnPlayerBountyTimestampChanged"
-        int32_t m_PlayerBountyTimestamp_Obsolete[24]; // 0x1858        
+        int32_t m_PlayerBountyTimestamp_Obsolete[24]; // 0x18c8        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in C_IngameEvent_Base because it is not a standard-layout class
-    static_assert(sizeof(C_IngameEvent_Base) == 0x18b8);
+    static_assert(sizeof(C_IngameEvent_Base) == 0x1928);
 };

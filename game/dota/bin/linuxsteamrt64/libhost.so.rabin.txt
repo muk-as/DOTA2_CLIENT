@@ -13,7 +13,6 @@
 00010203040506070809101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899
 0123456789
 0123456789abcdef
-048<@D
 08@lmnHP\b\t\n\v\f\r
 0:<\n\fdelta_ignore
 0<\aw>H
@@ -45,6 +44,7 @@
 11IGameSystem
 12CMsgVector2D
 12CNETMsg_Tick
+12CThreadEvent
 12ISource2Host
 13CDotaMapUtils
 13CMsgTransform
@@ -971,6 +971,7 @@ E;wxD
 ED$`H9
 ED$pH9
 ED$pI9
+EProtoDebugVisiblity
 ERROR: Resource name "%s" has the incorrect extension "%s" for the specified resource type (expected "%s")!\n
 EXPORTSYSTEM_INTERFACE_VERSION_001
 E\bA9D$\b
@@ -1289,8 +1290,7 @@ H+l$XHcD$lH9
 H+l$\bL
 H+s\b;s
 H+w\bH9
-H0H;\r\r
-H0H;\rr
+H0H;\rJ
 H19\b
 H9B rv
 H9C(u*[D
@@ -1331,8 +1331,6 @@ H9w\bw H
 H9z r\fH
 H9z s
 H9~\bt\b
-H;-fT\f
-H;=TC\f
 H;D$HH
 H;E0sR
 H;G t`H;G
@@ -1484,6 +1482,8 @@ Invalid wire type for CPPTYPE_MESSAGE
 Invalid wire type for CPPTYPE_UINT32
 Invalid wire type for CPPTYPE_UINT64
 J5`!gF
+J@L;\rZ
+J@L;\ri
 JSType
 J\fD9I\f|YH
 J\n NETWORK_DISCONNECT_SNAPSHOTERROR
@@ -1500,7 +1500,6 @@ K\n!NETWORK_DISCONNECT_INTERNAL_ERROR
 K\n#NETWORK_DISCONNECT_TICKMSG_OVERFLOW
 K\n$NETWORK_DISCONNECT_STEAM_AUTHINVALID
 K\n'NETWORK_DISCONNECT_CLIENT_DIFFERENT_MAP
-K\n\eENetworkDisconnectionReason
 K\n\f\a\bB\vN
 K\v8H\vtIL
 K\v9\bt
@@ -1580,6 +1579,7 @@ LOG_GENERAL
 L\n!NETWORK_DISCONNECT_HLTVRESTRICTED
 L\n!NETWORK_DISCONNECT_KICKED_SUICIDE
 L\n!NETWORK_DISCONNECT_LOOPDEACTIVATE
+L\n\eENetworkDisconnectionReason
 Lc;IǄ$07
 Lcc Lck$I
 Lcc$Lck(I
@@ -2027,7 +2027,7 @@ Player_DisconnectReason_ConvictedAccount
 Player_DisconnectReason_HostageKilling
 Player_DisconnectReason_Idle
 Player_DisconnectReason_InputAutomation
-Player_DisconnectReason_InputAutomation_Detail:E\n
+Player_DisconnectReason_InputAutomation_Detail
 Player_DisconnectReason_NoSteamLogin
 Player_DisconnectReason_NoSteamTicket
 Player_DisconnectReason_Suicide
@@ -2035,6 +2035,7 @@ Player_DisconnectReason_TK_Start
 Player_DisconnectReason_TeamHurting
 Player_DisconnectReason_TeamKilling
 Player_DisconnectReason_UntrustedAccount
+Player_DisconnectReason_VacNetAbnormalBehavior:E\n
 Player_DisconnectReason_VotedOff
 Please update your library.  If you compiled the program yourself, make sure that your headers are from the same version of Protocol Buffers as your link-time library.  (Version verification failed in
 PostProcessingSystem_001
@@ -2622,9 +2623,9 @@ Z14V_stristr_fastPKcS0
 Z18g_nSequentialBytesIDv4_iE
 Z18g_nSequentialBytesIiE
 Z20_txnal_cow_string_D1Pv
-Z20g_flSequentialFloatsIDv4_fE
-Z20g_flSequentialFloatsIfE
+Z20g_nSequentialIndicesIDv4_fE
 Z20g_nSequentialIndicesIDv4_iE
+Z20g_nSequentialIndicesIfE
 Z20g_nSequentialIndicesIiE
 Z22Assert_ConditionFailedRK34_AssertCompileTimeConstantStruct_t
 Z22Assert_ConditionFailedRK34_AssertCompileTimeConstantStruct_tPKcz
@@ -2810,6 +2811,10 @@ ZN13CRawAllocator5AllocE18RawAllocatorType_tmPm
 ZN15CUtlSymbolTable9AddStringEPKcPb
 ZN15CUtlSymbolTableC1Eiib
 ZN15CUtlSymbolTableD1Ev
+ZN16CThreadSemaphoreD1Ev
+ZN17CThreadSyncObject8WaitImplEj
+ZN17CThreadSyncObjectD2Ev
+ZN22CThreadRWLock_FastReadC1Ev
 ZN24CUtlMemoryBlockAllocatorC1Eij18RawAllocatorType_t
 ZN24CUtlMemoryBlockAllocatorD1Ev
 ZN9__gnu_cxx13__scoped_lockD1Ev
@@ -6628,6 +6633,7 @@ ZStrsIwSt11char_traitsIwEERSt13basic_istreamIT_T0_ES6_St14_Resetiosflags
 ZStrsIwSt11char_traitsIwEERSt13basic_istreamIT_T0_ES6_St5_Setw
 ZStrsIwSt11char_traitsIwEERSt13basic_istreamIT_T0_ES6_St8_Setbase
 ZStrsIwSt11char_traitsIwEERSt13basic_istreamIT_T0_ES6_St8_SetfillIS3_E
+ZTI17CThreadSyncObject
 ZTIDd
 ZTIDe
 ZTIDf
@@ -7551,7 +7557,6 @@ btKI;M
 btSI;E
 btTI;u
 bt\eI;E
-bu7A\t
 bu\r<\bt
 but only
 but was
@@ -7648,6 +7653,7 @@ d\n-NETWORK_DISCONNECT_LOCALPROBLEM_NETWORKCONFIG
 d\n\f\a\bF\vc\n\f\a\bE\v8
 data.rel.ro
 data_ == other.data
+debugprint_visibility
 decimal128
 decimal32
 decimal64
@@ -7659,7 +7665,6 @@ default arg
 definition file imports the proto which defines the option
 delete
 deleted virtual method called\n
-demo_force_version
 details
 dev/random
 dev/urandom
@@ -7850,7 +7855,6 @@ google/protobuf/descriptor.h
 google/protobuf/descriptor.pb.cc
 google/protobuf/descriptor.pb.h
 google/protobuf/descriptor.proto
-google/protobuf/descriptor.proto:?\n
 google/protobuf/descriptor_database.cc
 google/protobuf/dynamic_message.cc
 google/protobuf/dynamic_message.h
@@ -7921,8 +7925,7 @@ hidden alias for
 hlX`0pt
 hltv_replay_flags
 host_computationtime
-host_frametime
-host_frametime_std_deviation
+host_frame_dropped_pct_x10
 host_unfiltered_frametime
 hyphen
 i < length
@@ -7974,6 +7977,7 @@ ishltv
 iswctype_l
 it\b<t
 j.0Q\n\f\a\bA\v
+j\n0NETWORK_DISCONNECT_KICKED_VACNETABNORMALBEHAVIOR
 java Class for
 java resource
 java_generate_equals_and_hash
@@ -7981,7 +7985,6 @@ java_generic_services
 java_multiple_files
 java_outer_classname
 java_string_check_utf8
-jitter
 json_name
 jstype
 jstype is only allowed on int64, uint64, sint64, fixed64 or sfixed64 fields
@@ -7989,6 +7992,11 @@ k8}.H
 kPH+kHH
 kP}+H
 k\ft^Ic\f
+k_EProtoDebugVisibility_Always
+k_EProtoDebugVisibility_Always:@\n
+k_EProtoDebugVisibility_GC
+k_EProtoDebugVisibility_Never
+k_EProtoDebugVisibility_Server
 l$ LcM
 l$0H;T$8trH
 l$0tTH
@@ -8008,6 +8016,7 @@ leading_comments
 leading_detached_comments
 left-curly-bracket
 left-parenthesis
+legacy_host_loss
 len >= input_len
 length_ >= n
 less-than-sign
@@ -8031,7 +8040,6 @@ long double
 lowprecisionuv
 lowprecisionuv1
 lseek64
-m8H;-b
 mQNr7
 m\bu\eH9
 m\n\f\a\bE\vc\n\f\a\bB\v
@@ -8072,6 +8080,7 @@ missing
 model_default_preview_sequence_name
 mt19937
 must be unique within
+mxH;-8o\e
 m۶m۶\rM
 m۶m۶mH
 m۶m۶mL
@@ -8088,11 +8097,12 @@ n CSVCMsg_GameSessionConfiguration
 n L9l$\b
 n NETWORK_DISCONNECT_CLIENT_NO_MAP
 n google/protobuf/descriptor.proto
-n!host_framestarttime_std_deviation
 n"SPAWN_GROUP_CREATE_NEW_SCENE_WORLD
 n"SPAWN_GROUP_IS_INITIAL_SPAWN_GROUP
 n"host_computationtime_std_deviation
 n#SPAWN_GROUP_LOAD_ENTITIES_FROM_SAVE
+n#k_EProtoDebugVisibility_ValveServer
+n$host_frame_irregular_arrival_pct_x10
 n'SPAWN_GROUP_CREATE_CLIENT_ONLY_ENTITIES
 n)NETWORK_DISCONNECT_KICKED_INPUTAUTOMATION
 n)NETWORK_DISCONNECT_PURESERVER_CLIENTEXTRA
@@ -8205,7 +8215,6 @@ n\rphp_namespace
 n\rpreviouslevel
 n\rreserved_name
 n\rtick_interval
-n\thost_loss
 n\tjson_name
 n\tmap_entry
 n\tname_part
@@ -8606,7 +8615,6 @@ throw
 tiATUL
 tls_get_addr
 to start from the outermost scope
-tools
 towlower_l
 towupper_l
 trailing_comments
@@ -8636,7 +8644,7 @@ u@IcE8I
 uE[A\\A]A
 uF_iM,E
 uFn\e_rG
-uP[A\\A]A
+uH[A\\A]A
 uR[A\\A]A
 u\aH;L
 u\bE;t$\bE
@@ -8659,6 +8667,7 @@ uint32_t google::protobuf::UnknownField::fixed32() const
 uint64
 uint64_t google::protobuf::UnknownField::fixed64() const
 uint64_t google::protobuf::UnknownField::varint() const
+unD\tc
 undefined
 underscore
 ungetc

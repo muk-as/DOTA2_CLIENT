@@ -14,10 +14,9 @@ namespace source2sdk::client
     // Registered alignment: unknown
     // Alignment: 0x8
     // Standard-layout class: true
-    // Size: 0x1d08
+    // Size: 0x1d10
     // Has VTable
     // MNetworkNoBase
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkVarNames "bool m_CurrentHeroAvailable"
     #pragma pack(push, 1)
@@ -25,7 +24,6 @@ namespace source2sdk::client
     {
     public:
         [[maybe_unused]] std::uint8_t pad_0x00[0x30]; // 0x0
-        // metadata: MNetworkDisable
         // metadata: MNetworkChangeAccessorFieldPathIndex
         entity2::CNetworkVarChainer __m_pChainEntity; // 0x30        
         [[maybe_unused]] std::uint8_t pad_0x58[0xa18]; // 0x58
@@ -51,8 +49,9 @@ namespace source2sdk::client
         bool m_bLoadedPortraits[9]; // 0x1bf0        
         [[maybe_unused]] std::uint8_t pad_0x1bf9[0x7]; // 0x1bf9
         KeyValues* m_pControlGroupsKeyValues; // 0x1c00        
+        KeyValues3* m_pItemSuggestPreferenceKeyValues; // 0x1c08        
         // metadata: MNetworkEnable
-        bool m_CurrentHeroAvailable[256]; // 0x1c08        
+        bool m_CurrentHeroAvailable[256]; // 0x1c10        
     };
     #pragma pack(pop)
     
@@ -75,7 +74,8 @@ namespace source2sdk::client
     static_assert(offsetof(C_DOTAGameManager, m_pCountryKeyValues) == 0x15f0);
     static_assert(offsetof(C_DOTAGameManager, m_bLoadedPortraits) == 0x1bf0);
     static_assert(offsetof(C_DOTAGameManager, m_pControlGroupsKeyValues) == 0x1c00);
-    static_assert(offsetof(C_DOTAGameManager, m_CurrentHeroAvailable) == 0x1c08);
+    static_assert(offsetof(C_DOTAGameManager, m_pItemSuggestPreferenceKeyValues) == 0x1c08);
+    static_assert(offsetof(C_DOTAGameManager, m_CurrentHeroAvailable) == 0x1c10);
     
-    static_assert(sizeof(C_DOTAGameManager) == 0x1d08);
+    static_assert(sizeof(C_DOTAGameManager) == 0x1d10);
 };

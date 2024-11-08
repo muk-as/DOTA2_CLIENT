@@ -14,18 +14,17 @@ namespace source2sdk::client
     // Registered alignment: unknown
     // Alignment: unknown
     // Standard-layout class: false
-    // Size: 0x16f0
+    // Size: 0x1710
     // Has VTable
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Modifier_Special_Bonus_20_Bash : public client::CDOTA_Buff
     {
     public:
-        float value; // 0x16e8        
-        float value2; // 0x16ec        
+        float value; // 0x1708        
+        float value2; // 0x170c        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Modifier_Special_Bonus_20_Bash because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_Special_Bonus_20_Bash) == 0x16f0);
+    static_assert(sizeof(CDOTA_Modifier_Special_Bonus_20_Bash) == 0x1710);
 };

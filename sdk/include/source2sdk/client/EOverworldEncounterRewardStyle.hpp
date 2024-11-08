@@ -8,7 +8,7 @@
 
 namespace source2sdk::client
 {
-    // Enumerator count: 8
+    // Enumerator count: 9
     // Alignment: 4
     // Size: 0x4
     enum class EOverworldEncounterRewardStyle : std::uint32_t
@@ -21,5 +21,6 @@ namespace source2sdk::client
         k_eOverworldEncounterRewardStyle_Quest = 0x5,
         k_eOverworldEncounterRewardStyle_ClaimCreditsRange = 0x6,
         k_eOverworldEncounterRewardStyle_Custom = 0xa,
+        k_eOverworldEncounterRewardStyle_RepeatableChoice = 0xb,
     };
 };

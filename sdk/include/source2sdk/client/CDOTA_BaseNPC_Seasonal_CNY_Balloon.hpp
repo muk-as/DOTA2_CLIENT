@@ -14,11 +14,10 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x1808
+    // Size: 0x1858
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_BaseNPC_Seasonal_CNY_Balloon : public client::C_DOTA_BaseNPC_Additive
     {
@@ -27,5 +26,5 @@ namespace source2sdk::client
     };
     #pragma pack(pop)
     
-    static_assert(sizeof(CDOTA_BaseNPC_Seasonal_CNY_Balloon) == 0x1808);
+    static_assert(sizeof(CDOTA_BaseNPC_Seasonal_CNY_Balloon) == 0x1858);
 };

@@ -1,6 +1,8 @@
 0 0 0 0
 0 0 0 255
 0123456789
+0A\\A
+0Ces-8R
 0HcG(L
 0IcD$(H
 0IcG(L
@@ -72,6 +74,7 @@
 27CPulseCell_Inflow_GraphHook
 28CPulseCell_Outflow_IntSwitch
 28CPulseCell_Step_PublicOutput
+28CPulseCell_Value_RandomFloat
 28CPulseCell_Value_TestValue50
 29CPulseCell_BaseYieldingInflow
 29PulseSystemEventYieldResume_t
@@ -108,6 +111,8 @@
 36IKV3TransferInterface_UtlSymbolLarge
 37CPulseCell_Test_MultiInflow_NoDefault
 37CSchemaRegistration_pulse_runtime_lib
+37IKV3TransferInterface_Worldspace_Load
+37IKV3TransferInterface_Worldspace_Save
 38CPulseCell_Val_TestDomainGetEntityName
 39CKV3TransferInterface_EHandle_Load_NoOp
 39CKV3TransferInterface_EHandle_Save_NoOp
@@ -117,6 +122,8 @@
 40CKV3TransferInterface_GameTime_Load_NoOp
 40CKV3TransferInterface_GameTime_Save_NoOp
 41CPulseCell_Val_TestDomainFindEntityByName
+42CKV3TransferInterface_Worldspace_Load_NoOp
+42CKV3TransferInterface_Worldspace_Save_NoOp
 42CPulseCell_Step_TestDomainCreateFakeEntity
 43CPulseCell_Step_TestDomainDestroyFakeEntity
 43PulseSystemEventObservableVariableChanged_t
@@ -130,7 +137,6 @@
 8@%rdi 8@%rsi
 8@%rdx 8@%rax
 8A\\A]A
-8Lc&D;f
 8SourceTS
 9ISourceTS
 9\aroI
@@ -139,9 +145,9 @@ A string associated with this Cursor, to use later for remote Kill or Wait reque
 A testing-only domain that doesn't correspond to any in-engine use case
 A testing-only domain that draws on a 2D canvas with a LOGO-like 'turtle' cursor
 A#N\\Mc
-A9\\$ptf
 A9\f$u
 A9]\bw\nD
+A9]\f~6I
 A9v0|#A
 A;F\b
 A;L$\bs
@@ -150,6 +156,7 @@ A<5vw[1
 ADD_FLOAT
 ADD_INT
 ADD_STRING
+ADD_VEC3
 ANTLR3_EXCEPTION number %d (%08X).\n
 ANTLR3_EXCEPTION: %s\n
 APPSYSTEM: In ConnectInterfaces(), s_nRegistrationCount is %d!\n
@@ -177,6 +184,7 @@ AVAUATUSH
 AVAUATUSL
 AVAUE1
 AVAUI
+AVAUL
 AVAULc
 AWAVAUA
 AWAVAUATA
@@ -184,6 +192,7 @@ AWAVAUATE1
 AWAVAUATH
 AWAVAUATI
 AWAVAUATL
+AWAVAUATLc
 AWAVAUATS1
 AWAVAUATSH
 AWAVAUATUH
@@ -214,6 +223,12 @@ Any Other Cursors Have Tag
 Any cursors above this count will wait, up to the limit
 Any extra waiting cursors will be terminated. -1 for infinite cursors
 Apply the same tag we're waiting on to the resulting cursor upon wait completion. Can be used to wait on our result cursor with the same tag
+Arc Cos
+Arc Cosine of angle, in degrees (0 -> 0, 90 -> 1
+Arc Sin
+Arc Sine of angle, in degrees (0 -> 0, 90 -> 1
+Arc Tan
+Arc Tangent of angle, in degrees (0 -> 0, 90 -> 1
 Are we currently running unit tests
 Arg '%s
 AssertFatalCast
@@ -261,8 +276,11 @@ BinSub
 BinaryProperties_GetValue
 Bool( %s
 Boolean
+Breakpoint Log [%u
+Breakpoint Log [%u] - %s
 C%d:I%d {ID=%-3d
 C8HcMčp
+C<tuMc.E;n
 C@t3H
 CBasePulseGraphInstance
 CBufferString
@@ -341,6 +359,7 @@ CPulseCell_Timeline::TimelineEvent_t
 CPulseCell_Unknown
 CPulseCell_Val_TestDomainFindEntityByName
 CPulseCell_Val_TestDomainGetEntityName
+CPulseCell_Value_RandomFloat
 CPulseCell_Value_RandomInt
 CPulseCell_Value_TestValue50
 CPulseCell_WaitForCursorsWithTag
@@ -373,15 +392,29 @@ CPulseGraphInstance_TurtleGraphics!Graph_Go
 CPulseMathlib
 CPulseMathlib!AbsFloat
 CPulseMathlib!AbsInt
+CPulseMathlib!ArcCos
+CPulseMathlib!ArcSin
+CPulseMathlib!ArcTan
 CPulseMathlib!ClampFloat
 CPulseMathlib!ClampInt
 CPulseMathlib!Cos
+CPulseMathlib!CrossProductVector
+CPulseMathlib!DotProductVector
+CPulseMathlib!FloatToGameTime
+CPulseMathlib!GameTimeToFloat
+CPulseMathlib!LengthVector
+CPulseMathlib!MakeVector
+CPulseMathlib!MakeWorldVector
 CPulseMathlib!MaxFloat
 CPulseMathlib!MaxInt
 CPulseMathlib!MinFloat
 CPulseMathlib!MinInt
+CPulseMathlib!NormalizeVector
 CPulseMathlib!Pow
 CPulseMathlib!Sin
+CPulseMathlib!Tan
+CPulseMathlib!VectorToWorldVector
+CPulseMathlib!WorldVectorToVector
 CPulseRuntimeMethodArg
 CPulseSystem::Internal_InstanceCreated( %s, %p )\n
 CPulseSystem::Internal_InstanceDestroyed( %s, %p )\n
@@ -460,6 +493,7 @@ CUtlVector
 CUtlVectorFixedGrowable
 CWeakHandle
 C\bA8D$\bA
+C\bHc\vA9
 C\bI9D$\bA
 C\btOHcU
 C\bu\t[L
@@ -499,14 +533,21 @@ Commit Step
 CommitStep
 Complex
 Convert %s R%d <- %s R%d
+Convert from a Game Time a raw floating-point time that will NOT fixed up - use with caution
+Convert from a local-space to a world-space vector
+Convert from a raw floating-point time to a Game Time that will be saved/loaded appropriately
+Convert from a world-space to local-space vector
 Copy R%d <- R%d
 Cosine of angle, in degrees (0 -> 1, 90 -> 0
+Could not execute '%s' because this graph domain does not support the required IGapHost
 Couldn't load KV3 for resource: %s
 CreateFakeEntity
 CreateFakeEntity( "%s", "%s" ) -> idx %d (handle %d)\n
 CreateInterface
 Creating SourceTSDomain for domain %s\n
 Creating SourceTSInstance[%d] in Domain %s\n
+Cross Product Vector
+Cross Product of Vector a x Vector b
 Cursor Has Tag
 Cursor Queue
 Cursor [%s] @ %.2f. Cell: %u => %s: %s
@@ -539,6 +580,8 @@ DOUBLE_AND
 DOUBLE_OR
 DOUBLE_QUOTED_STRING
 DOUBLE_QUOTE_CHAR
+Data breakpoint [%s
+Data breakpoint [%s] - %s
 Data breakpoint hit
 Default echo string
 DefaultTime
@@ -556,17 +599,27 @@ Destroy a fake entity from a static library function
 DestroyAll
 DestroyFakeEntity( handle %d)\n
 Destroying SourceTSInstance[%d]\n
+Did not execute '%s' because the 'Target' object was missing
 Disallowed variable name: %s
 Div R%d <- R%d / R%d
+Divide by zero
 Do not stop the current yielding node, but do not continue to the next node afterwards
 Domain: %s\n
+Dot Product Vector
+Dot Product of Vector a • Vector b
 Double-save to Member '%s
+E(IcU H
 E.hmH
+E4f3X
 E4f3XL
 E5Li%H
+E5Li%L
+E9g\f~FI
 E9l$\bw
+E9l$pI
 E;t$0D
-E;t$t
+ELEMENT_ACCESS
+ELEMENT_ACCESS_VEC3
 EPulseGraphExecutionHistoryFlag
 EQ_BOOL
 EQ_EHANDLE
@@ -578,6 +631,7 @@ EQ_PANEL_HANDLE
 EQ_SCHEMA_ENUM
 EQ_STRING
 EQ_TEST_HANDLE
+EQ_VEC3
 ERROR: CUtlSymbolTableLarge element limit of %u exceeded\n
 ERROR: Resource name "%s" has the incorrect extension "%s" for the specified resource type (expected "%s")!\n
 ESCAPE_CHAR
@@ -587,6 +641,7 @@ EXPORTSYSTEM_INTERFACE_VERSION_001
 Early exit
 EarlyInit_Tier0
 EconItemToolModel_001
+Element Access R%d <- R%d[R%d
 Enable multithreading to use std::thread
 EngineServiceMgr001
 EnsureCapacity
@@ -662,6 +717,7 @@ Fired whenever the global A value changes
 FixupResourceName: Illegal full path passed in ("%s")!\n
 FixupResourceName: Illegal path, missing extension passed in ("%s")!\n
 FlattenedSerializersVersion001
+Float To Game Time
 Float( %f
 FontManager_001
 Found existing value when inserting into tree - replacing existing value with new value. If this is intended behavior, use InsertOrReplace. If leaving existing values alone is intended, use InsertIfNotFound. If duplicate entries are intended, use InsertWithDupes
@@ -689,10 +745,12 @@ GXLcK(N
 G\bH9F\bH
 G`@u9UL
 Game Blackboards
+Game Time To Float
 GameResourceServiceClientV001
 GameResourceServiceServerV001
 GameTime_t
 GameUIService_001
+Generate a random float between min and max (inclusive
 Generate a random integer between min and max (inclusive
 GenerateInt
 GenerateIntWithResult
@@ -733,27 +791,28 @@ Gtx<Ttt1
 H+E\bH9
 H+G\bH9
 H+w\bH9
-H95iH\t
 H9D$\bthH
 H9J\btI
 H9J\btg
 H9S\bt\rD
 H9\at'H
-H9\at:A
+H9\at8A
 H9\at\aH
 H9~\bt\b
+H;=BA\a
 H\b[A
 HammerMapLoader001
 HandleInt
 HandleIntDerived
 HardCancel
 HcC ;C0
+HcCHA9
 HcG\bIc
 HcK8Ic
 HcK\bIc
 HcS<D
+HcSHA9
 HelpSystem_001
-HfE9l$@D
 Hh#p\\H
 Hook register '%s' invoked with invalid function as first paramter
 Hook register '%s' invoked with unrecognized 'this' value
@@ -771,6 +830,8 @@ IKV3TransferInterface_GameTime_Load
 IKV3TransferInterface_GameTime_Save
 IKV3TransferInterface_ResourceLoad
 IKV3TransferInterface_UtlSymbolLarge
+IKV3TransferInterface_Worldspace_Load
+IKV3TransferInterface_Worldspace_Save
 IMMEDIATE_HALT
 INVALID
 INVALID INSTRUCTION %d***]\n
@@ -787,7 +848,7 @@ ITM_memcpyRnWt
 ITM_memcpyRtWn
 ITM_registerTMCloneTable
 I\tD$8A
-IcD$<f
+IcD$<D
 IcD$\fH
 IcE A;E0
 IcE H
@@ -836,7 +897,7 @@ KC\f\vD$LD
 KE(;E
 KV3 instances cannot be set to an unspecified specific type
 KV3 save transfer failed: %s
-K\\t@Hk
+K\\tPHk
 K\bt|E1
 Keep a history of all instructions run on a per graph basis
 Keep running normally
@@ -868,6 +929,8 @@ Lc/D;o
 Lc3D;s
 Lc;IǄ$07
 LcwhH
+Length (magnitude) of Vector a
+Length Vector
 Less R%d <- R%d < R%d
 LessEq R%d <- R%d <= R%d
 Lexer encountered %d error(s
@@ -877,6 +940,7 @@ Library Spawn Fake Entity
 Library for interacting with a few global test values
 Library for interacting with pulse cursors
 Limit Count
+Limit Count: " + m_nLimitCount
 LinePos
 List all the active pulse graph instances
 LoadKV3ObjectInPlace error: %s\n
@@ -915,7 +979,6 @@ MPulseCellOutflowHookInfo
 MPulseCellOutflow_IsDefault
 MPulseCellWithCustomDocNode
 MPulseCursorTerminates
-MPulseCursorYields
 MPulseDomainHiddenInTool
 MPulseDomainHookInfo
 MPulseDomainOptInFeatureTag
@@ -936,9 +999,15 @@ MPulseProvideFeatureTag
 MPulseRequirementCheck
 MPulseRequirementCommit
 MPulseRequirementPass
+MPulseRequirementSummaryExpr
 MPulseSignatureForOutflow
+MPulseSignatureName
 MUL_FLOAT
 MUL_INT
+Make Vector
+Make World Vector
+Make a Vector from component values
+Make a World Vector from component values
 MakeGlobalSymbol
 MapListService_001
 MaterialUtils_001
@@ -946,7 +1015,11 @@ Max Float
 Max Int
 Maximum of two values (float
 Maximum of two values (int
+Mcl$XI
+Mcl$XMk
 Mcl$\bH
+Mcl$\bI
+Mcl$\bMk
 Mct$ M
 Mct$HH
 Mc|$\bH
@@ -1005,6 +1078,7 @@ N9__gnu_cxx26__concurrence_unlock_errorE
 NEGATE
 NEGATE_FLOAT
 NEGATE_INT
+NEGATE_VEC3
 NEGATIVE_TOK
 NEWLINE
 NE_BOOL
@@ -1017,6 +1091,7 @@ NE_PANEL_HANDLE
 NE_SCHEMA_ENUM
 NE_STRING
 NE_TEST_HANDLE
+NE_VEC3
 NO_FLAGS
 NSt3_V214error_categoryE
 NSt6thread6_StateE
@@ -1042,6 +1117,8 @@ No expression
 No input data for '%s'. (Empty buffer
 No library info for binding %s\n
 NodeID %d port '%s' called from C%d:I%d
+Normalize Vector
+Normalize Vector a
 Not R%d <- !R%d
 Not safe to 'new' this class due to alignment requirements
 OPEN_BRACE
@@ -1084,6 +1161,7 @@ PVAL_CURSOR_FLOW
 PVAL_EHANDLE
 PVAL_ENTITY_NAME
 PVAL_FLOAT
+PVAL_GAMETIME
 PVAL_INT
 PVAL_INVALID
 PVAL_OPAQUE_HANDLE
@@ -1095,8 +1173,10 @@ PVAL_SNDEVT_NAME
 PVAL_STRING
 PVAL_TEST_HANDLE
 PVAL_TRANSFORM
+PVAL_TRANSFORM_WORLDSPACE
 PVAL_TYPESAFE_INT
 PVAL_VEC3
+PVAL_VEC3_WORLDSPACE
 P\b)SHH
 P\bu\nH
 PanelID
@@ -1144,7 +1224,6 @@ PulseDebugLog: Calling external method on non-existent entity or game blackboard
 PulseDebugLog: Calling external method on non-existent entity or game blackboard\n
 PulseDocNodeID_t
 PulseDomainValueType_t
-PulseFakeEntities
 PulseGraphDef ==\n
 PulseGraphExecutionHistoryCursorDesc_t
 PulseGraphExecutionHistoryEntry_t
@@ -1187,7 +1266,9 @@ RETURN R%d
 RETURN_VALUE
 RETURN_VOID
 Raise pen
+Random Float
 Random Integer
+RandomFloat
 RandomInt
 Randomly taken half of the time
 Recognition Exception
@@ -1219,6 +1300,9 @@ Retired
 Return the input string, use the code default if none was supplied
 Retval '%s
 S(;S,}9Lc
+SCALE_INV
+SCALE_INV_VEC3
+SCALE_VEC3
 SEMICOLON
 SET_BLACKBOARD_REFERENCE
 SET_VAR
@@ -1231,10 +1315,13 @@ SSE and SSE2 are required
 STRING_CHAR
 SUB_FLOAT
 SUB_INT
+SUB_VEC3
 SYNC_WAIT_FOR_COMPLETION
 S\bHcB\f
 S\bHcJ
 Save a named value of any type on the cursor
+Scale INV R%d <- R%d / R%d
+Scale R%d <- R%d * R%d
 SceneSystem_002
 SceneUtils_001
 Schema Enum
@@ -1269,12 +1356,12 @@ Set the global string value (with default
 Set the test value as an int
 SetBlackboardReference BR%d (%s) <- R%d
 SetVar V%d (%s) <- R%d R%d
-Signature hook to fill out arguments for m_AsyncChild1
-Signature hook to fill out arguments for m_AsyncChild2
-Signature hook to fill out arguments for m_Out1
-Signature hook to fill out arguments for m_Out2
-Signature hook to fill out arguments for m_YieldResume1
-Signature hook to fill out arguments for m_YieldResume2
+Signature hook to fill out arguments for OutflowSignature_OnAsyncChild1
+Signature hook to fill out arguments for OutflowSignature_OnAsyncChild2
+Signature hook to fill out arguments for OutflowSignature_OnOut1
+Signature hook to fill out arguments for OutflowSignature_OnOut2
+Signature hook to fill out arguments for OutflowSignature_OnYieldResume1
+Signature hook to fill out arguments for OutflowSignature_OnYieldResume2
 SignatureOutflow_Continue
 SignatureOutflow_Resume
 Sine of angle, in degrees (0 -> 0, 90 -> 1
@@ -1350,6 +1437,7 @@ TRIANGLE
 Tag Added: '%s
 Tag Cursor
 Tag Removed: '%s
+Tangent of angle, in degrees (0 -> 0, 90 -> 1
 Target
 Terminate
 TernaryConditional
@@ -1382,7 +1470,6 @@ ToolFramework2_002
 ToolSceneNodeFactory_001
 ToolService_001
 Tracepoint
-Transform
 Triangle
 Tried to load a polymorphic pointer with no '%s' key
 Turtle Graphics Domain
@@ -1469,6 +1556,9 @@ V_UInt16ToString_Unsafe
 V_UInt32ToString_Unsafe
 V_UInt64ToString_Unsafe
 V_UInt8ToString_Unsafe
+V_acosd
+V_asind
+V_atand
 V_atof
 V_atofloat32
 V_atoi
@@ -1478,6 +1568,7 @@ V_fmodd
 V_fmodf
 V_fpclassifyd
 V_fprintf
+V_frexpf
 V_fwrite
 V_isnand
 V_powf
@@ -1490,21 +1581,24 @@ V_stricmp_fast
 V_strncmp
 V_strncpy
 V_strnicmp_fast
+V_tand
 Var( %s
+Vector To World Vector
 Vector2D
-Vector3
 VisBuilder_001
 Vrad3_001
 WARNING: Pulse failed to restore yielded cursor - error with cell state (%d:%s)\n
 WARNING: Pulse failed to restore yielded cursor - no yielding cell or landing pad (%d:%s)\n
 WARNING: Pulse failed to save yielded cursor - no yielding cell or landing pad (C%d:I%d)\n
-WIcM(Ic
+WIcL$(Ic
 WL1\voP
 Wait For Completion
 Wait For Cursors With Tag
 Wait, Resume=%s
 Warning
 When we start waiting, how should we handle existing cursors
+World Transform
+World Vector To Vector
 WorldRendererMgr001
 X to the Y power
 XHcGPL
@@ -2494,7 +2588,11 @@ at <EOF
 at offset %d
 az7u5
 b@80u
+b@UUUUUU
 bA\\A]A
+bD9+D
+bD93E
+bD9;D
 bFailOnCancel
 bHc@0
 bHcC H
@@ -2502,6 +2600,7 @@ bHcC01
 bInAutoWakeList
 bInherit
 bLc/E
+bMc,$L
 bValue
 bad_function_call
 basic_iostream
@@ -2523,10 +2622,6 @@ basic_string::insert
 basic_string::replace
 basic_string::resize
 basic_string::substr
-bfD9+D
-bfD93D
-bfD93E
-bfD9;D
 binary blob: %u bytes
 binary_blob
 boolean
@@ -2555,7 +2650,6 @@ covariant return thunk to
 cspointscript
 ctype_b_loc
 ctype_toupper_loc
-cursor_state
 cxa_allocate_dependent_exception
 cxa_allocate_exception
 cxa_atexit
@@ -2623,8 +2717,8 @@ error %d : %s
 expected %s ...\n
 expected <EOF>\n
 f %f %f %f
+f, %f, %f
 f2ATUH
-fA9E\bA
 fA;E\b
 fakeEnt.m_nHandle.WeakHandle() == GAP_WEAK_HANDLE_INVALID
 fake_derived_a
@@ -2635,7 +2729,9 @@ flDistance
 flDurationSec
 flExecTime
 flExponent
+flFloat
 flLastReferenced
+flTime
 flValue
 flWaitValue
 flWakeTime
@@ -2674,7 +2770,6 @@ hTarget
 hidden alias for
 highlight_instance_id
 highlight_node_id
-htdH9
 init_array
 instance
 instances
@@ -2685,6 +2780,7 @@ java Class for
 java resource
 k*>Cq
 k\bu-E1
+l$\bMc4$L
 lambda
 ld-linux-x86-64.so.2
 lexer error %d :\n\t%s at offset %d
@@ -2697,6 +2793,7 @@ libpulse_system.so.dbg
 libstdcxx
 libtier0.so
 libv8.so
+listeners
 localize
 long double
 looks like this:\n\t\t%.*s\n
@@ -2793,6 +2890,7 @@ m_bIsPublic
 m_bIsRunningUnitTests
 m_bPauseForPreviousEvents
 m_bPenUp
+m_bSelfReference
 m_bTagSelfWhenComplete
 m_bTestYesOrNoPath
 m_bWaitForChildOutflows
@@ -2874,10 +2972,10 @@ n    H
 n    near %s\n
 n<\et\fA
 n<\eteI
-n<\etwH
 nAsyncRet1
 nColor
 nEditorID
+nHE9f@D
 nHandle
 nKillPriority
 nLastValidEntryIdx
@@ -2916,6 +3014,7 @@ open_asset %s
 operator
 p$McuhI
 p<0tUw
+pA\\A]A^A
 pAsyncRet2
 pCheckpointName
 pClass
@@ -2995,7 +3094,6 @@ s - Blackboard reference %s: %u (%s) type mismatches
 s - Could not find blackboard instance for %s
 s - Could not find blackboard reference %s: %u (%s
 s allocation count overflow
-s allocation count overflow( %llu > %llu )\n
 s allocation count overflow( add %llu + current %llu > max %llu )\n
 s: %s %s
 s: %s\n
@@ -3004,8 +3102,8 @@ s: Invalid grow amount %d\n
 s: __pos (which is %zu) > this->size() (which is %zu
 s: invalid nBeforeIndex %d\n
 s: invalid nSize %d\n
+s@HcS
 s@HcS8
-s@HcS<1
 sBHcC0H
 sP[A\\H
 s_Instance
@@ -3051,10 +3149,11 @@ syntax not recognized...\n
 syscall
 system_state
 t The lexer was matching from line %d, offset %d, which\n\t
-t$8t\tH
+t$8t\tI
 t$;0u D
 t(IcF
-t1Mc4$E;t
+t);5w
+t2Mc'E;g
 t7I94\t
 t8IcD$ A;D$0
 t;Hdt\fH
@@ -3089,7 +3188,6 @@ thLcL\n\bL
 throw
 tkIcU I
 tls_get_addr
-tools
 tools/images/pulse_editor/cursor_kill.png
 tools/images/pulse_editor/cursor_tag.png
 tools/images/pulse_editor/cursor_wait_zone.png
@@ -3100,10 +3198,10 @@ transaction_safe
 transform
 tuIcE
 tuҋR\b)UHH
+tyLc'H
 typeinfo fn for
 typeinfo for
 typeinfo name for
-t|HcSHA9
 t|~xHc
 u-E19
 u/H#D
@@ -3134,8 +3232,10 @@ u~HcG\bIc
 v8system
 vC \np
 v\bAUATI
+v\bHc3C
 v\r<Dt!1
 vecAncestorCursorIDs
+vecValue
 vector
 vector2
 vector2d
@@ -3161,5 +3261,6 @@ x\e;p
 x\eA;F
 xk;B`}fH
 xl;B`}gH
+xx;P }s
 y@ hHv
 yield_token

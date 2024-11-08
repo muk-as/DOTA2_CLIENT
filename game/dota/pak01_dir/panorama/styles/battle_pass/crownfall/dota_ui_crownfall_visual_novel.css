@@ -220,7 +220,7 @@ DOTACrownfallVisualNovel.EncounterDialogue
 .EncounterDialogue .MainContents
 {
 	width: 1200px;
-	height: 280px;
+	height: fit-children;
 	background-color: none;
 	box-shadow: none;
 	border: 0;
@@ -237,11 +237,6 @@ DOTACrownfallVisualNovel.EncounterDialogue
 {
 	wash-color: white;
 	pre-transform-scale2d: 1;
-}
-
-.FishingGame .EncounterDialogue .MainContents
-{
-	height: 320px;
 }
 
 .Heading
@@ -345,6 +340,11 @@ DOTACrownfallVisualNovel.EncounterDialogue
 	background-image: url("s2r://panorama/images/events/crownfall/visual_novel/vn_background_act3town_png.vtex");
 }
 
+.Act4 .VisualNovelBackground
+{
+	background-image: url("s2r://panorama/images/events/crownfall/visual_novel/vn_background_act4_png.vtex");
+}
+
 .EncounterDialogue .VisualNovelBackground
 {
 	visibility: collapse;
@@ -361,26 +361,42 @@ DOTACrownfallVisualNovel.EncounterDialogue
 	opacity: 0;
 }
 
+.EncounterBackground
+{
+	width: 100%;
+	height: 100%;
+	background-color: gradient( radial, 50% 100%, 0% 0%, 50% 100%, from( rgba(0, 0, 0, 0.9) ), color-stop( 0.5, rgba(0, 0, 0, 0.75) ), to( rgba(0, 0, 0, 0) ) );
+	border-bottom: 1px solid rgb(255, 255, 255);
+	border-brush: gradient( linear, 0% 0%, 100% 0%, from( gold2&00 ), color-stop( 0.5, gold1 ), to( gold2&00 ) );
+	margin-top: -70px;
+	opacity: 0;
+	transition-property: opacity;
+	transition-duration: 0.1s;
+}
+
+.ShowDialog .EncounterBackground
+{
+	opacity: 1;
+	transition-duration: 0.3s;
+}
+
+.ShowVisualNovel .EncounterBackground,#VisualNovel .EncounterBackground
+{
+	visibility: collapse;
+}
+
 .ShowDialog #StoryPanel
 {
 	opacity: 1;
 	transition-delay: 0.5s;
 }
 
-@define overlapPadding: 120px;
-@define overlap: -140px;
 .NovelContainer
 {
 	flow-children: down;
 	horizontal-align: center;
 	vertical-align: center;
 	width: 100%;
-	padding-top: overlapPadding;
-}
-
-.EncounterDialogue .NovelContainer
-{
-	padding-top: 50px;
 }
 
 .GroupContainer
@@ -388,7 +404,6 @@ DOTACrownfallVisualNovel.EncounterDialogue
 	flow-children: right;
 	horizontal-align: center;
 	width: 100%;
-	margin-top: overlap;
 	opacity: 0;
 }
 
@@ -419,11 +434,17 @@ DOTACrownfallVisualNovel.EncounterDialogue
 {
 	flow-children: left;
 	margin-left: 140px;
+	margin-top: -140px;
 }
 
 .ShowActor2 .GroupContainer.Bottom
 {
 	opacity: 1;
+}
+
+.EncounterDialogue .GroupContainer.Bottom
+{
+	margin-top: 0px;
 }
 
 .GroupContainer.Top
@@ -480,17 +501,11 @@ DOTACrownfallVisualNovel.EncounterDialogue
 	width: 100%;
 	height: 100%;
 	margin: 150px 0px 20px;
-	padding-top: 30px;
 	vertical-align: center;
 	transition-property: opacity, brightness, saturation, background-color;
 	transition-duration: 0.2s;
 	opacity: 1.0;
 	z-index: 1;
-}
-
-.EncounterDialogue .ActorTextContainer
-{
-	padding-top: 0px;
 }
 
 .Exiting .ActorTextContainer
@@ -534,11 +549,13 @@ DOTACrownfallVisualNovel.EncounterDialogue
 .EncounterDialogue .ActorTextContainer,.EncounterDialogue.Act3 .ActorTextContainer
 {
 	background-color: #00000000;
+	padding-bottom: 30px;
 }
 
 .ActorTextContainer .ActorText
 {
 	width: 100%;
+	vertical-align: middle;
 	font-family: Reaver;
 	line-height: 1.3;
 	font-size: 34px;
@@ -578,28 +595,73 @@ DOTACrownfallVisualNovel.EncounterDialogue
 	transform: skewX( -3deg);
 }
 
-.GrayText .ActorTextContainer .ActorText
+.VN_TEXT_COLOR_GRAY .ActorTextContainer .ActorText
 {
 	color: rgb(200, 213, 227);
 	letter-spacing: 1px;
 }
 
-.BlueText .ActorTextContainer .ActorText
+.VN_TEXT_COLOR_BLUE .ActorTextContainer .ActorText
 {
 	color: rgb(157, 193, 232);
 	letter-spacing: 1px;
 }
 
-.GreenText .ActorTextContainer .ActorText
+.VN_TEXT_COLOR_GREEN .ActorTextContainer .ActorText
 {
 	color: rgb(130, 212, 123);
 	letter-spacing: 1px;
 }
 
-.RedText .ActorTextContainer .ActorText
+.VN_TEXT_COLOR_RED .ActorTextContainer .ActorText
 {
 	color: rgb(233, 152, 152);
 	letter-spacing: 1px;
+}
+
+.VN_TEXT_COLOR_LIGHT_GRAY .ActorTextContainer .ActorText
+{
+	color: rgb(218, 225, 233);
+}
+
+.VN_TEXT_COLOR_DARK_GRAY .ActorTextContainer .ActorText
+{
+	color: rgb(164, 173, 182);
+}
+
+.VN_TEXT_COLOR_DARK_RED .ActorTextContainer .ActorText
+{
+	color: rgb(183, 98, 98);
+}
+
+.VN_TEXT_COLOR_ORANGE .ActorTextContainer .ActorText
+{
+	color: rgb(231, 132, 80);
+}
+
+.VN_TEXT_COLOR_WHITE .ActorTextContainer .ActorText
+{
+	color: rgb(255, 255, 255);
+}
+
+.VN_TEXT_COLOR_LIGHT_BLUE .ActorTextContainer .ActorText
+{
+	color: rgb(166, 208, 232);
+}
+
+.VN_TEXT_COLOR_PURPLE .ActorTextContainer .ActorText
+{
+	color: rgb(196, 136, 210);
+}
+
+.VN_TEXT_COLOR_YELLOW .ActorTextContainer .ActorText
+{
+	color: rgb(225, 212, 96);
+}
+
+#ChatterContainer .ActorTextContainer .ActorText
+{
+	text-shadow: 0px 2px 16px 2 black;
 }
 
 .TopUpdated .Top .ActorTextContainer .ActorText,.BottomUpdated .Bottom .ActorTextContainer .ActorText
@@ -663,11 +725,6 @@ DOTACrownfallVisualNovel.EncounterDialogue
 	width:420px;
 	min-height: 405px;
 	overflow: noclip;
-}
-
-.EncounterDialogue .PortraitGroup
-{
-	margin-left: -60px;
 }
 
 .PortraitGroup .PortraitContainerLayered.Tall
@@ -1289,6 +1346,18 @@ DOTACrownfallVisualNovel.EncounterDialogue
 	letter-spacing: -1px;
 }
 
+.EncounterDialogue #PopupContainer #PopupText
+{
+	margin:0;
+}
+
+.EncounterDialogue #PopupContainer
+{
+	height: 100%;
+	width: 100%;
+	margin-top: 30px;
+}
+
 .InstructionTextContainer
 {
 	horizontal-align: center;
@@ -1405,6 +1474,7 @@ DOTACrownfallVisualNovel.EncounterDialogue
 .HideText
 {
 	color: transparent;
+	text-shadow: none;
 }
 
 .RedBoldText
@@ -1432,16 +1502,15 @@ DOTACrownfallVisualNovel.EncounterDialogue
 #Cursor
 {
 	width: 1px;
+	height: 10px;
 	overflow: noclip;
+	transform: translateY( -34px );
 }
 
 #Cursor .Donkey
 {
 	width: 52px;
 	height: 52px;
-	transform:translateY( 7px );
-	overflow: noclip;
-	color: black;
 	background-image: url("s2r://panorama/images/emoticons/crownfall/props/prop_donkey_prompt_psd.vtex");
 	background-size: contain;
 	background-repeat: no-repeat;
@@ -1471,12 +1540,12 @@ DOTACrownfallVisualNovel.EncounterDialogue
 {
 	33%
 	{
-		transform:scaleX(1) scaleY( 1.4 ) translateY( 2px );
+		transform:scaleX(1) scaleY( 1.4 );
 	}
 	
 	66%
 	{
-		transform:scaleX(1.6) scaleY( 0.8 ) translateY( 7px );
+		transform:scaleX(1.6) scaleY( 0.8 );
 	}
 	
 }

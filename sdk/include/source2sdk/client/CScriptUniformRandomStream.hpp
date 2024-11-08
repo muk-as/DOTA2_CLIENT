@@ -15,7 +15,6 @@ namespace source2sdk::client
     // Standard-layout class: true
     // Size: 0xa0
     // Has VTable
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CScriptUniformRandomStream
     {

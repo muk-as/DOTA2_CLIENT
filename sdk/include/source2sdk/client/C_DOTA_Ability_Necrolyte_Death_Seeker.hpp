@@ -14,19 +14,18 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x5e0
+    // Size: 0x608
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class C_DOTA_Ability_Necrolyte_Death_Seeker : public client::C_DOTABaseAbility
     {
     public:
-        [[maybe_unused]] std::uint8_t pad_0x5d8[0x8];
+        [[maybe_unused]] std::uint8_t pad_0x600[0x8];
         // No schema binary for binding
     };
     #pragma pack(pop)
     
-    static_assert(sizeof(C_DOTA_Ability_Necrolyte_Death_Seeker) == 0x5e0);
+    static_assert(sizeof(C_DOTA_Ability_Necrolyte_Death_Seeker) == 0x608);
 };

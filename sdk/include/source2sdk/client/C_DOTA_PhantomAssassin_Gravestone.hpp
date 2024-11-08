@@ -15,20 +15,19 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x18b0
+    // Size: 0x1900
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class C_DOTA_PhantomAssassin_Gravestone : public client::C_DOTA_BaseNPC_Additive
     {
     public:
-        client::PlayerID_t m_nVictimPlayerID; // 0x1808        
-        [[maybe_unused]] std::uint8_t pad_0x180c[0xa4];
+        client::PlayerID_t m_nVictimPlayerID; // 0x1858        
+        [[maybe_unused]] std::uint8_t pad_0x185c[0xa4];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in C_DOTA_PhantomAssassin_Gravestone because it is not a standard-layout class
-    static_assert(sizeof(C_DOTA_PhantomAssassin_Gravestone) == 0x18b0);
+    static_assert(sizeof(C_DOTA_PhantomAssassin_Gravestone) == 0x1900);
 };

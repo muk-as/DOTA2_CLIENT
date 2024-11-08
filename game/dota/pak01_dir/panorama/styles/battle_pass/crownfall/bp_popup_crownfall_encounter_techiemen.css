@@ -1,0 +1,1571 @@
+/* Prettified by Source 2 Viewer 0.0.0.0 - https://valveresourceformat.github.io */
+
+.PopupPanel.Techiemen
+{
+	flow-children: none;
+	background-color: none;
+	animation: none;
+	border: 0px solid transparent;
+	padding: 0px;
+	box-shadow: none;
+	width: 100%;
+	height: 100%;
+}
+
+@define gridHeight: 948.0;
+@define gridWidth: 1360.0;
+@define gridHeightPx: 948px;
+@define gridWidthPx: 1360px;
+@define blockSize: 64;
+@define blockSizePx: 64px;
+@define blockSizePx2x: 128px;
+@define charAltSpriteCount: 0;
+@define boardWidth: 19;
+@define boardHeight: 11;
+@define enableTallBreakableBlocks: 1;
+@define pixelPerfect: 1;
+@define rendererWidthPx: 1360px;
+@define rendererHeightPx: 892px;
+@define rendererWidth: 1360;
+@define rendererHeight: 892;
+.Char
+{
+	texture-sampling: point;
+	width: blockSizePx;
+	height: blockSizePx2x;
+}
+
+.WideChar
+{
+	texture-sampling: point;
+	width: blockSizePx2x;
+	height: blockSizePx2x;
+}
+
+.UnitBlock
+{
+	texture-sampling: point;
+	width: blockSizePx;
+	height: blockSizePx;
+}
+
+@define walkFramesCycleCount: 10;
+@define walkFramesLeftRightStart: 0;
+@define walkFramesUpStart: 20;
+@define walkFramesDownStart: 10;
+@define walkFramesDuration: 0.0625;
+@define deathDuration: 3.0;
+@define deathFramesStart: 30;
+@define deathFramesCount: 37;
+@define deathFramesDuration: 0.07;
+@define charExitDuration: 2.0;
+@define charExitFramesStart: 68;
+@define charExitFramesCount: 29;
+@define charExitFramesDuration: 0.05;
+@define charWalkSpeedIncrement: 0.75;
+@define blockFrameExitLocked: 22;
+@define blockFrameExitStart: 23;
+@define blockFrameExitCount: 3;
+@define creepConstantsPrefix: creep_;
+@define creep_walkFramesCycleCount: 6;
+@define creep_walkFramesLeftRightStart: 0;
+@define creep_walkFramesUpStart: 6;
+@define creep_walkFramesDownStart: 12;
+@define creep_walkFramesDuration: 0.1;
+@define creepCharge_walkFramesCycleCount: 12;
+@define creepCharge_walkFramesLeftRightStart: 34;
+@define creepCharge_walkFramesUpStart: 46;
+@define creepCharge_walkFramesDownStart: 58;
+@define creepCharge_walkFramesDuration: 0.05;
+@define creep_chargeFramesBonk: 70;
+@define creep_deathDuration: 1.408;
+@define creep_deathFramesStart: 18;
+@define creep_deathFramesCount: 16;
+@define creep_deathFramesDuration: 0.088;
+@define dropper_walkFramesCycleCount: 8;
+@define dropper_walkFramesLeftRightStart: 0;
+@define dropper_walkFramesUpStart: 8;
+@define dropper_walkFramesDownStart: 16;
+@define dropper_walkFramesDuration: 0.0625;
+@define dropper_targetBaseOpacity: 0.4;
+@define dropper_nearTargetOpacityAdd: 0.35;
+@define dropper_nearTargetFlickerSpeed: 32.0;
+@define bombDuration: 3.0;
+@define bombExplosionDuration: 0.45;
+@define bombFrameTimeMax: 0.25;
+@define bombFrameTimeMin: 0.05;
+@define bombFrameTimeThreshold: 0.5;
+@define bombExplosionFrameDuration: 0.0167;
+@define bombRemoteFrameDuration: 0.125;
+@define bombKickSpeed: 5.0;
+@define bombKickEnabledByDefault: 0;
+@define spikyBombsEnabledByDefault: 0;
+@define testCreepChargesAtPlayer: 1;
+@define testLevelArt: 1;
+@define sfxExplosion: Techiemen.Explosion;
+@define sfxBombDrop: Techiemen.BombDrop;
+@define sfxCreepDeath: Techiemen.CreepDeath;
+@define sfxPlayerDeath: Techiemen.PlayerDeath;
+@define sfxLevelExit: Techiemen.LevelExit;
+@define sfxPowerUp: Techiemen.PowerUp;
+@define sfxCountIn: Techiemen.CountIn;
+@define sfxWallHit: Techiemen.WallHit;
+@define sfxFallIn: Techiemen.FallIn;
+@define sfxTimerTick: Techiemen.TimerTick;
+@define sfxTimerExpired: Techiemen.TimerExpired;
+@define sfxUnlock: Techiemen.Unlock;
+@define sfxDash: Techiemen.Dash;
+@define sfxDropperEnter: Techiemen.DropperEnter;
+@define sfxBombKick: Techiemen.BombKick;
+@define sfxBombStop: Techiemen.BombStop;
+@define sfxScore: Techiemen.Score;
+@define sfxExplosionSpiky: Techiemen.ExplosionSpiky;
+@define sfxExplosionRemote: Techiemen.ExplosionRemote;
+.PopupPanel .MainContents
+{
+	flow-children: down;
+	width: fit-children;
+	height: fit-children;
+	padding: 8px 16px 8px 16px;
+	border-radius: 8px;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #463f316c ), to( #2a1e0cbb ) );
+	border: 1px solid white;
+	border-brush: gradient( linear, 0% 0%, 0% 100%, from( #8671455d ), to( #57411e69 ) );
+	box-shadow: 0px 16px 80px -4px rgba(0, 0, 0, 0.4);
+	margin-left: 0px;
+	horizontal-align: center;
+	vertical-align: center;
+}
+
+.Header
+{
+	flow-children: down;
+	width: 100%;
+}
+
+.Header .Title
+{
+	font-family: titleFont;
+	font-size: 48px;
+	color: white;
+	text-transform: uppercase;
+	font-weight: bold;
+	letter-spacing: 4px;
+}
+
+.PlayField
+{
+	height: fit-children;
+	width: fit-children;
+	padding: 16px;
+}
+
+.Body
+{
+	overflow: clip;
+	border-radius: 4px;
+	border: 2px solid white;
+	border-brush: gradient(linear, 0% 0%, 0% 100%, from( #FFE3BA ), color-stop( 0.48, #CCA160 ), color-stop( 0.52, #B88943 ), to( #7F5C26 ));
+}
+
+.Body .HeaderStats
+{
+	width: 100%;
+	height: 168px;
+	flow-children: down;
+}
+
+.Body .BombCountIcon,.Body .BombSizeIcon,.Body .WalkSpeedIcon,.Body .BombCountIconKick,.Body .BombCountIconSpiky,.Body .BombCountIconRemote,.Body .BombCountIconRemoteContainer,.Body .LivesRemainingIcon
+{
+	width: 58px;
+	height: 58px;
+	texture-sampling: point;
+	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.125);
+}
+
+.Body .BombCountIcon .AbilityLabel,.Body .BombSizeIcon .AbilityLabel,.Body .WalkSpeedIcon .AbilityLabel,.Body .BombCountIconKick .AbilityLabel,.Body .BombCountIconSpiky .AbilityLabel,.Body .BombCountIconRemote .AbilityLabel,.Body .BombCountIconRemoteContainer .AbilityLabel,.Body .LivesRemainingIcon .AbilityLabel
+{
+	font-weight: bold;
+}
+
+.Body .TopRowIcons
+{
+	height: fit-children;
+	width: 100%;
+}
+
+.Body .TopRowIcons .PickUpStats
+{
+	width: fit-children;
+	horizontal-align: left;
+	flow-children: right;
+}
+
+.Body .TopRowIcons .LifeStats
+{
+	width: 100%;
+	horizontal-align: right;
+	flow-children: left;
+}
+
+.Body .TopRowIcons .LifeStats #LevelNumberLabel
+{
+	visibility: collapse;
+}
+
+.Body .TopRowIcons .AbilityLabel
+{
+	font-size: 36px;
+	width: 40px;
+	margin-left: 12px;
+	vertical-align: center;
+	horizontal-align: center;
+	font-family: Reaver;
+}
+
+.Body .TopRowIcons .ScoreLabel
+{
+	font-size: 36px;
+	vertical-align: center;
+	margin-right: 24px;
+	color: white;
+	text-shadow: 0px 0px 6px 0.5 #caf7f3a2;
+}
+
+.Body .TopRowIcons .ScoreTextLabel
+{
+	font-size: 36px;
+	margin-right: 12px;
+	vertical-align: center;
+}
+
+.Body .HeaderTimer
+{
+	vertical-align: top;
+	width: fit-children;
+	margin-top: -60px;
+	horizontal-align: center;
+	flow-children: right;
+}
+
+.Body .HeaderTimer #TimerLabel
+{
+	width: 140px;
+	vertical-align: center;
+	margin: 0px;
+	text-align: center;
+	color: white;
+	font-size: 48px;
+	text-shadow: 0px 0px 6px 0.5 #caf7f3a2;
+	letter-spacing: 8px;
+}
+
+.Body .HeaderTimer .TimerIcon
+{
+	width: 56px;
+	height: 56px;
+	margin: -4px 4px 3px 0px;
+	vertical-align: center;
+	img-shadow: 0px 2px 4px rgb(0, 0, 0);
+	wash-color: LighterGrey;
+	opacity: .4;
+}
+
+.Body .HeaderStage
+{
+	flow-children: right;
+	width: 100%;
+	vertical-align: top;
+	margin-top: 4px;
+}
+
+.Body .HeaderStage .StageHUD
+{
+	horizontal-align: center;
+	text-align: center;
+	font-weight: light;
+	color: rgba(255, 255, 255, 0.9);
+	margin: 0px 8px 0px 8px;
+	font-size: 34px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+.Body .HeaderStage .Dash
+{
+	vertical-align: center;
+	width: fill-parent-flow(1);
+	height: 1px;
+	opacity: 0.3;
+	margin-bottom: 2px;
+}
+
+.Body .HeaderStage .Dash.Left
+{
+	background-color: gradient( linear, 100% 0%, 0% 0%, from( white ), to( rgba(255, 255, 255, 0) ) );
+}
+
+.Body .HeaderStage .Dash.Right
+{
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( white ), to( rgba(255, 255, 255, 0) ) );
+}
+
+.Body .GameBoardContainer
+{
+	width: fit-children;
+	height: fit-children;
+	background-color: #222;
+	overflow: clip;
+}
+
+.Body .GameBoardContainer #GameBoard
+{
+	width: 100%;
+	height: 100%;
+	transform: translateY( 84px );
+	overflow: clip;
+}
+
+.Body .GameBoardContainer #GameBoard #DebugLabel
+{
+	horizontal-align: right;
+}
+
+.Body .GameBoardContainer .LevelNumberLabel
+{
+	visibility: collapse;
+	opacity: 0;
+}
+
+.Body .GameBoardContainer #KeyHole
+{
+	visibility: collapse;
+	width: 100%;
+	height: 100%;
+	overflow: clip;
+}
+
+.Body .GameBoardContainer #KeyHole #KeyHoleTopMask
+{
+	background-color: black;
+}
+
+.Body .GameBoardContainer #KeyHole #KeyHoleLeftMask
+{
+	background-color: black;
+}
+
+.Body .GameBoardContainer #KeyHole #KeyHoleRightMask
+{
+	background-color: black;
+}
+
+.Body .GameBoardContainer #KeyHole #KeyHoleBottomMask
+{
+	background-color: black;
+}
+
+.Body .GameBoardContainer #MainMenu
+{
+	width: 100%;
+	height: 100%;
+}
+
+.Body .GameBoardContainer #MainMenu #MainMenuBg
+{
+	texture-sampling: point;
+	width: 100%;
+	height: 100%;
+}
+
+.Body .GameBoardContainer #MainMenu #MainMenuBgLogoContainer
+{
+	texture-sampling: point;
+	width: 65%;
+	height: 100%;
+	animation-name: LogoBob;
+	animation-duration: 2.5s;
+	animation-delay: 1s;
+	animation-iteration-count: infinite;
+}
+
+.Body .GameBoardContainer #MainMenu #MainMenuBgSpoonContainer
+{
+	texture-sampling: point;
+	width: 65%;
+	height: 100%;
+}
+
+.Body .GameBoardContainer #MainMenu #MainMenuBgPressStart
+{
+	width: fit-children;
+	height: 100%;
+	margin-bottom: 80px;
+	margin-right: 480px;
+	vertical-align: bottom;
+	horizontal-align: center;
+	flow-children: right;
+	animation-name: SpringUp;
+	animation-duration: .5s;
+	animation-iteration-count: 1;
+	animation-delay: 0s;
+	animation-timing-function: ease-in-out;
+	transition-duration: .5s;
+	transition-property: transform;
+}
+
+.Body .GameBoardContainer #MainMenu #MainMenuBgPressStartP
+{
+	width: 50px;
+	height: 100%;
+	texture-sampling: point;
+}
+
+.Body .GameBoardContainer #MainMenu #MainMenuBgPressStartRainbow
+{
+	width: 100%;
+	height: 100%;
+	vertical-align: center;
+	horizontal-align: center;
+	flow-children: none;
+	animation-name: StartRainbow;
+	animation-duration: 8s;
+	animation-iteration-count: infinite;
+}
+
+.Body .GameBoardContainer #MainMenu #MainMenuBgPressStartBG
+{
+	height: 100px;
+	width: 100%;
+	margin-bottom: 120px;
+	vertical-align: bottom;
+	animation-name: SwipeRight;
+	animation-duration: 1s;
+	animation-iteration-count: 1;
+	animation-delay: 0s;
+}
+
+.Body .GameBoardContainer #MainMenu .MainMenuBgPressStartLetter
+{
+	width: 40px;
+	height: 160px;
+	vertical-align: bottom;
+	texture-sampling: point;
+	animation-name: StartBob;
+	animation-duration: 1.6s;
+	animation-iteration-count: infinite;
+}
+
+.Body .GameBoardContainer #MainMenu #MainMenuBgPressStartLetter1
+{
+	animation-delay: .4s;
+}
+
+.Body .GameBoardContainer #MainMenu #MainMenuBgPressStartLetter2
+{
+	animation-delay: .6s;
+}
+
+.Body .GameBoardContainer #MainMenu #MainMenuBgPressStartLetter3
+{
+	animation-delay: .8s;
+}
+
+.Body .GameBoardContainer #MainMenu #MainMenuBgPressStartLetter4
+{
+	animation-delay: 1s;
+}
+
+.Body .GameBoardContainer #MainMenu #MainMenuBgPressStartLetter5
+{
+	animation-delay: 1.2s;
+}
+
+.Body .GameBoardContainer #MainMenu #MainMenuBgPressStartLetter6
+{
+	animation-delay: 1.4s;
+}
+
+.Body .GameBoardContainer #MainMenu #MainMenuBgPressStartLetter7
+{
+	animation-delay: 0s;
+}
+
+.Body .GameBoardContainer #MainMenu #MainMenuBgPressStartLetter8
+{
+	animation-delay: .2s;
+}
+
+.Body .GameBoardContainer #MainMenu #MainMenuBgPressStartLetter9
+{
+	animation-delay: .4s;
+}
+
+.Body .GameBoardContainer #MainMenu #MainMenuBgPressStartLetter10
+{
+	animation-delay: .6s;
+}
+
+.Body .GameBoardContainer #MainMenu #MainMenuBgPressStartLetter11
+{
+	animation-delay: .8s;
+}
+
+.Body .GameBoardContainer #MainMenu #MainMenuBgPressStartLetter12
+{
+	animation-delay: 1.0s;
+}
+
+.Body .GameBoardContainer #MainMenu #MainMenuBgPressStartLetter13
+{
+	animation-delay: 1.2s;
+}
+
+.Body .GameBoardContainer #MainMenu #MainMenuBgPressStartLetter14
+{
+	animation-delay: 1.4s;
+}
+
+.Body .GameBoardContainer #MainMenu #MainMenuBgPressStartLetter15
+{
+	animation-delay: 0s;
+}
+
+.Body .GameBoardContainer #MainMenu #MainMenuBgPressStartLetter16
+{
+	animation-delay: .2s;
+}
+
+.Body .GameBoardContainer #MainMenu #MainMenuBgPressStartLetter17
+{
+	animation-delay: .4s;
+}
+
+.Body .GameBoardContainer #MainMenu #MainMenuBgPressStartLetter18
+{
+	animation-delay: .6s;
+}
+
+.Body .GameBoardContainer #MainMenu #MainMenuBgPressStartLetter19
+{
+	animation-delay: .8s;
+}
+
+.Body .GameBoardContainer #MainMenu .StartLabel
+{
+	horizontal-align: center;
+	vertical-align: bottom;
+}
+
+.CloseButton
+{
+	horizontal-align: right;
+}
+
+.Block
+{
+	width: 48px;
+	height: 56px;
+}
+
+.TechiemenRenderer
+{
+	texture-sampling: point;
+	width: rendererWidthPx;
+	height: rendererHeightPx;
+	margin-top: 128px;
+	font-size: 28px;
+	text-align: center;
+	text-shadow: 0px 0px 6px 0.5 #caf7f3a2;
+	overflow: clip;
+}
+
+@keyframes 'CountInPulse'
+{
+	0%
+	{
+		transform: scale3d( 1, 1, 1 );
+	}
+	
+	20%
+	{
+		transform: scale3d( 1.25, 1.25, 1.25 );
+	}
+	
+	75%
+	{
+		transform: scale3d( 0, 0, 0 );
+	}
+	
+	100%
+	{
+		transform: scale3d( 0, 0, 0 );
+	}
+	
+}
+
+@keyframes 'GameOverGrow'
+{
+	0%
+	{
+		transform: scale3d( 0, 0, 0 );
+	}
+	
+	25%
+	{
+		transform: scale3d( 1.25, 1.25, 1.25 );
+	}
+	
+	30%
+	{
+		transform: scale3d( 1.0, 1.0, 1.0 );
+	}
+	
+	100%
+	{
+		transform: scale3d( 1.0, 1.0, 1.0 );
+	}
+	
+}
+
+@keyframes 'PowerUpPulse'
+{
+	0%
+	{
+		transform: scale3d( 1, 1, 1 );
+	}
+	
+	35%
+	{
+		transform: scale3d( 1.5, 1.5, 1.5 );
+	}
+	
+	100%
+	{
+		transform: scale3d( 1.0, 1.0, 1.0 );
+	}
+	
+}
+
+@keyframes 'LogoDrop'
+{
+	0%
+	{
+		transform: scale3d( 1, 1, 1 ) translatey(0px);
+		opacity: 0;
+	}
+	
+	35%
+	{
+		transform: scale3d( 1.5, 1.5, 1.5 ) translatey(0px);
+		opacity: .3;
+	}
+	
+	100%
+	{
+		transform: scale3d( 1.0, 1.0, 1.0 ) translatey(0px);
+		opacity: 1;
+	}
+	
+}
+
+@keyframes 'SwipeRight'
+{
+	0%
+	{
+		transform: translatex(-2000px);
+		opacity: 0;
+	}
+	
+	100%
+	{
+		transform: translatex(0px);
+		opacity: 1;
+	}
+	
+}
+
+@keyframes 'SpringUp'
+{
+	0%
+	{
+		transform: scale3d( 3, 3, 3 ) translatey(0px);
+		opacity: 0;
+	}
+	
+	40%
+	{
+		transform: scale3d( 3, 3, 3 ) translatey(0px);
+		opacity: 0;
+	}
+	
+	50%
+	{
+		transform: scale3d( 1.5, 1.5, 1.5 ) translatey(0px);
+	}
+	
+	100%
+	{
+		transform: scale3d( 1.0, 1.0, 1.0 ) translatey(0px);
+		opacity: 1;
+	}
+	
+}
+
+@keyframes 'LogoBob'
+{
+	0%
+	{
+		transform: translatey(0px);
+	}
+	
+	50%
+	{
+		transform: translatey(-25px);
+	}
+	
+	100%
+	{
+		transform: translatey(0px);
+	}
+	
+}
+
+@keyframes 'StartBob'
+{
+	0%
+	{
+		transform: translatey(0px);
+	}
+	
+	50%
+	{
+		transform: translatey(-25px);
+	}
+	
+	100%
+	{
+		transform: translatey(0px);
+	}
+	
+}
+
+@keyframes 'StartRainbow'
+{
+	0%
+	{
+		hue-rotation: 0deg;
+	}
+	
+	100%
+	{
+		hue-rotation: 360deg;
+	}
+	
+}
+
+@keyframes 'TimerPulse'
+{
+	0%
+	{
+		transform: scale3d( 1, 1, 1 );
+		wash-color: white;
+	}
+	
+	10%
+	{
+		transform: scale3d( 1.25, 1.25, 1.25 );
+		wash-color: red;
+	}
+	
+	100%
+	{
+		transform: scale3d( 1, 1, 1 );
+		wash-color: white;
+	}
+	
+}
+
+.CountInPulseAnim
+{
+	animation-name: CountInPulse;
+	animation-duration: 1s;
+	animation-iteration-count: 1;
+}
+
+.GameOverGrowAnim
+{
+	animation-name: GameOverGrow;
+	animation-duration: 1s;
+	animation-iteration-count: 1;
+}
+
+.PowerUpPulseAnim
+{
+	animation-name: PowerUpPulse;
+	animation-duration: 0.5s;
+	animation-iteration-count: 1;
+}
+
+.DebugButton
+{
+	horizontal-align: center;
+	vertical-align: top;
+	border: 1px solid black;
+	background-color: #4d196b;
+	border-radius: 3px;
+	margin: 4px;
+}
+
+.DebugButtons
+{
+	visibility: collapse;
+	flow-children: right;
+	margin: 32px;
+	horizontal-align: center;
+	vertical-align: bottom;
+}
+
+.ShowDebugButtons .DebugButtons
+{
+	visibility: visible;
+}
+
+.ToggleDebugButton
+{
+	vertical-align: bottom;
+}
+
+.IntroLabel
+{
+	color: gradient( linear, 0% 100%, 0% 0%, from( rgba(255, 255, 0, 1) ), to( rgba(255, 255, 212, 1) ) );
+	visibility: collapse;
+	font-size: 128px;
+	font-family: Reaver;
+	horizontal-align: center;
+	vertical-align: center;
+	margin-top: 32px;
+	text-shadow: 4px 4px 4px black;
+	transform: scale3d( 0, 0, 0 );
+}
+
+.GameOverLabel
+{
+	transform: scale3d( 1, 1, 1 );
+}
+
+.PausedLabel
+{
+	visibility: collapse;
+	margin: 0px;
+	color: white;
+	text-shadow: 0px 1px 4px 3.0 #000000;
+	font-size: 50px;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 4px;
+	text-align: center;
+	vertical-align: center;
+	horizontal-align: center;
+}
+
+.Paused .PausedLabel
+{
+	visibility:visible;
+}
+
+#PauseBG
+{
+	height: 260px;
+	width: 100%;
+	vertical-align: center;
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( #0c111c00 ), color-stop( 0.25, #151d2efa ), color-stop( 0.5, #0c111cfa ), color-stop( 0.75, #151d2efa ), to( #0c111c00 ) );
+	border-top: 1px solid rgba(255, 255, 255, 0.9);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.9);
+	border-brush: gradient( linear, 0% 0%, 100% 0%, from( #ffffff00 ), color-stop( 0.25, #a9b5cffa ), color-stop( 0.5, #ffffff ), color-stop( 0.75, #a9b5cffa ), to( #ffffff00 ) );
+}
+
+.Paused .DimmedWhenPaused
+{
+	saturation: 0.2;
+	brightness: 0.4;
+}
+
+.HasKick .BombCountIcon
+{
+	visibility: collapse;
+}
+
+.HasSpikyBombs .BombCountIcon
+{
+	visibility: collapse;
+}
+
+.HasRemoteBombs .BombCountIcon
+{
+	visibility: collapse;
+}
+
+.BombCountIconKick
+{
+	visibility: collapse;
+}
+
+.HasKick .BombCountIconKick
+{
+	visibility: visible;
+}
+
+.BombCountIconSpiky
+{
+	visibility: collapse;
+}
+
+.HasSpikyBombs .BombCountIconSpiky
+{
+	visibility: visible;
+}
+
+.BombCountIconRemoteContainer
+{
+	overflow: noclip;
+	visibility: collapse;
+}
+
+.HasRemoteBombs .BombCountIconRemoteContainer
+{
+	visibility: visible;
+}
+
+.PauseButtonRow
+{
+	flow-children: right;
+	horizontal-align: center;
+	vertical-align: bottom;
+	margin-bottom: 342px;
+}
+
+.ForceUIScale1 .PauseButtonRow
+{
+	vertical-align: center;
+	margin-bottom: 0px;
+	margin-top: 262px;
+}
+
+.PauseButtonContainer
+{
+	min-width: 220px;
+}
+
+.TimerPulseAnim .TimerLabel
+{
+	animation-name: TimerPulse;
+	animation-duration: 1.0s;
+	animation-iteration-count: infinite;
+}
+
+.TimerAtZeroAnim .TimerIcon
+{
+	animation-name: TimerPulse;
+	animation-duration: 1.0s;
+	animation-iteration-count: 1;
+}
+
+.VisibleOnPauseOrMenu
+{
+	visibility: collapse;
+}
+
+.IsOnMenuOrPaused .VisibleOnPauseOrMenu
+{
+	visibility: visible;
+}
+
+.SetupScreenMenu
+{
+	margin-right: 72px;
+	horizontal-align: right;
+	width: 32%;
+	height: 100%;
+	margin-top: 52px;
+	margin-bottom: 24px;
+}
+
+.ForceUIScale1 .SetupScreenMenu
+{
+	ui-scale: 150%;
+	margin-top: 5%;
+	width: 35%;
+}
+
+.SetupScreenMenu .TechiemenGameTabs
+{
+	ui-scale: 86%;
+}
+
+.SetupScreenMenu .SetupScreenContents
+{
+	width: 100%;
+	height: 100%;
+	box-shadow: 0px 16px 140px -8px rgba(0, 0, 0, 0.6);
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( charcoalLight ), to( charcoalDark ) );
+	margin-top: 24px;
+	margin-bottom: 53px;
+	z-index: -1;
+}
+
+.SetupScreenMenu .SetupScreenContents .SetupScreenContentsBorder
+{
+	border: 1px solid rgba(255, 255, 255, 0.02);
+	width: 100%;
+	height: fill-parent-flow(1);
+}
+
+.SetupScreenMenu .SetupScreenContents .TopGoldDash
+{
+	width: 100%;
+	height: 2px;
+}
+
+.SetupScreenMenu .SetupScreenContents .TopGoldDash.Bottom
+{
+	vertical-align: bottom;
+}
+
+.SetupScreenMenu .SetupScreenContents .ScoresSection
+{
+	width: 100%;
+	height: 100%;
+	flow-children: down;
+	padding-top: 12px;
+	margin: 24px;
+	transition-property: opacity, transform;
+	transition-duration: 0.3s;
+	transition-delay: 0.1s;
+	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
+	opacity: 0;
+	transform: translateX( 30px );
+}
+
+.SelectedTab0 .SetupScreenMenu .SetupScreenContents .ScoresSection
+{
+	opacity: 1;
+	transform: none;
+	transition-duration: 0.1s;
+	transition-delay: 0s;
+}
+
+.SetupScreenMenu .SetupScreenContents .HowToPlaySection
+{
+	width: 100%;
+	height: 100%;
+	flow-children: down;
+	overflow: clip scroll;
+	padding-top: 12px;
+	margin: 24px;
+	transition-property: opacity, transform;
+	transition-duration: 0.3s;
+	transition-delay: 0.1s;
+	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
+	opacity: 0;
+	transform: translateX( -30px );
+}
+
+.SetupScreenMenu .SetupScreenContents .HowToPlaySection .HowToPlayPowerups
+{
+	flow-children: down;
+}
+
+.SetupScreenMenu .SetupScreenContents .HowToPlaySection .HowToPlayPowerupIcon
+{
+	texture-sampling: point;
+	horizontal-align: center;
+}
+
+.SelectedTab1 .SetupScreenMenu .SetupScreenContents .HowToPlaySection
+{
+	opacity: 1;
+	transform: none;
+	transition-duration: 0.1s;
+	transition-delay: 0s;
+}
+
+.TechiemenGameTabs
+{
+	horizontal-align: center;
+}
+
+.TechiemenGameTabs .TechiemenTabsBackground
+{
+	ignore-parent-flow: true;
+	width: 100%;
+	height: 56px;
+	border-width: 56px 56px 0px 56px;
+	border-image-slice: 100% 112px 0px 112px;
+	border-image-repeat: stretch;
+	border-image-source: url("s2r://panorama/images/events/crownfall/buttons/tabs_background_png.vtex");
+}
+
+.TechiemenGameTabs .TabsContainer
+{
+	flow-children: right;
+	margin: 0px 9.5px;
+	vertical-align: center;
+}
+
+.TechiemenGameTabs .TabsContainer .TabItem
+{
+	min-width: 200px;
+	margin: 0px -4px;
+	height: 42px;
+	transition-property: brightness, transform;
+	transition-duration: 0.1s;
+}
+
+.TechiemenGameTabs .TabsContainer .TabItem:hover
+{
+	brightness: 2;
+}
+
+.TechiemenGameTabs .TabsContainer .TabItem:active
+{
+	transform: scale3d( 0.98, 0.98, 1 );
+	sound: "ui_generic_button_click";
+}
+
+.TechiemenGameTabs .TabsContainer .TabItem Label
+{
+	text-transform: uppercase;
+	font-weight: normal;
+	letter-spacing: 1.5px;
+	text-align: center;
+	color: gradient( linear, 0% 0%, 0% 100%, from( white ), to( #B0BCC2 ) );
+	text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.8);
+	horizontal-align: center;
+	vertical-align: center;
+}
+
+.TechiemenGameTabs .TabsContainer .TabItem .TabItemBg
+{
+	width: 100%;
+	border-width: 42px 42px 0px 42px;
+	border-image-slice: 100% 84px 0px 84px;
+	border-image-repeat: stretch;
+	border-image-source: url("s2r://panorama/images/events/crownfall/buttons/tab_background_png.vtex");
+	opacity: 0;
+	transform: scale3d( 0.95, 0.95, 1 );
+	transition-property: opacity, transform;
+	transition-duration: 0.15s;
+	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
+}
+
+.SelectedTab0 .TechiemenGameTabs #ScoresTab .TabItemBg
+{
+	opacity: 1;
+	transform: none;
+}
+
+.SelectedTab1 .TechiemenGameTabs #HowToPlayTab .TabItemBg
+{
+	opacity: 1;
+	transform: none;
+}
+
+.ControlKey
+{
+	horizontal-align: center;
+	margin: 3px;
+	animation-name: none;
+	ui-scale: 84%;
+}
+
+.ControlKey .Up
+{
+	background-image: url("s2r://panorama/images/control_icons/24px/arrow_up.vsvg");
+}
+
+.ControlKey .Down
+{
+	background-image: url("s2r://panorama/images/control_icons/24px/arrow_down.vsvg");
+}
+
+.ControlKey .Forward
+{
+	background-image: url("s2r://panorama/images/control_icons/24px/arrow_right.vsvg");
+}
+
+.ControlKey .Back
+{
+	background-image: url("s2r://panorama/images/control_icons/24px/arrow_left.vsvg");
+}
+
+.ControlKey .Space
+{
+	background-image: url("s2r://panorama/images/control_icons/24px/space.vsvg");
+}
+
+.ControlKey .Alt
+{
+	background-image: url("s2r://panorama/images/control_icons/24px/alt.vsvg");
+}
+
+.KeysRow
+{
+	flow-children: right;
+}
+
+.KeysColumn
+{
+	flow-children: down;
+	horizontal-align: center;
+}
+
+.ControlColumn
+{
+	flow-children: right;
+	width: 132px;
+}
+
+.ControlRow
+{
+	flow-children: right;
+	padding-bottom: 12px;
+	width: 100%;
+}
+
+.ControlDescription
+{
+	margin-right: 12px;
+	vertical-align: center;
+}
+
+.SubHeader
+{
+	color: LightestGrey;
+	text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5);
+	padding-bottom: 12px;
+}
+
+.GamepadIcon
+{
+	horizontal-align: center;
+}
+
+.GoldHeader
+{
+	text-transform: uppercase;
+	text-overflow: shrink;
+	letter-spacing: 2px;
+	width: 100%;
+	text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.6);
+	padding-top: 8px;
+	margin-bottom: 8px;
+	font-weight: semi-bold;
+	font-size: 18px;
+	border-top: 1px solid rgba(255, 255, 255, 0.07);
+	border-brush: gradient( linear, 0% 0%, 100% 0%, from( white ), color-stop( 0.7, white ), to( rgba(255, 255, 255, 0) ) );
+}
+
+@keyframes 'RemoteBombHintPulse'
+{
+	0%
+	{
+		transform: scale3d( 1, 1, 1 );
+	}
+	
+	100%
+	{
+		transform: scale3d( 1.5, 1.5, 1.5 );
+	}
+	
+}
+
+.RemoteBombHint
+{
+	visibility: collapse;
+	vertical-align: center;
+	opacity: 0.75;
+	horizontal-align: center;
+	animation-name: RemoteBombHintPulse;
+	animation-duration: 0.5s;
+	animation-direction: alternate;
+	animation-iteration-count: infinite;
+}
+
+.ShowRemoteBombHint .RemoteBombHint
+{
+	visibility: visible;
+}
+
+.LeaderboardContainer
+{
+	margin-top: 12px;
+	margin-left: 0px;
+	margin-bottom: 24px;
+	max-height: 40%;
+}
+
+.LeaderboardContainer .LeaderList
+{
+	background-color: rgba(0, 0, 0, 0);
+}
+
+.LeaderboardContainer .LeaderList .LeaderboardRow
+{
+	background-color: #b7e3ff08;
+}
+
+.LeaderboardContainer .LeaderList .LeaderboardRow.OddRow
+{
+	background-color: rgba(0, 0, 0, 0);
+}
+
+.TitleContainer
+{
+	flow-children: right;
+	width: 100%;
+}
+
+.TitleContainer Label
+{
+	margin: 0px 12px;
+}
+
+.TitleContainer .Dash
+{
+	vertical-align: center;
+	width: fill-parent-flow(1);
+	height: 1px;
+	opacity: 0.6;
+}
+
+.TitleContainer .Dash.Left
+{
+	background-color: gradient( linear, 100% 0%, 0% 0%, from( gold1 ), color-stop( 0.5, gold2&66 ), to( gold3&00 ) );
+}
+
+.TitleContainer .Dash.Right
+{
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( gold1 ), color-stop( 0.5, gold2&66 ), to( gold3&00 ) );
+}
+
+.MyHighScore
+{
+	horizontal-align: center;
+	vertical-align: bottom;
+	margin-top: 12px;
+	flow-children: down;
+	width: 100%;
+}
+
+.MyHighScore Label
+{
+	horizontal-align: center;
+}
+
+.MyHighScore .HighScore
+{
+	font-size: 24px;
+	margin-top: -2px;
+}
+
+.CompleteStage3Label
+{
+	font-style: italic;
+	margin-bottom: 16px;
+}
+
+.StoryComplete .CompleteStage3Label
+{
+	visibility: collapse;
+}
+
+.MainMenuBgLogo
+{
+	horizontal-align: left;
+	texture-sampling: point;
+	width: 100%;
+	height: 600px;
+	horizontal-align: center;
+	vertical-align: top;
+	margin-top: 0px;
+	opacity: 1;
+	animation-name: LogoDrop;
+	animation-duration: 0.5s;
+	animation-iteration-count: 1;
+}
+
+.ForceUIScale1 .MainMenuBgLogo
+{
+	width: 70%;
+}
+
+.MainMenuBgLogo.en
+{
+	visibility: visible;
+}
+
+.Language_schinese .MainMenuBgLogo.en
+{
+	visibility: collapse;
+}
+
+.MainMenuBgLogo.cn
+{
+	visibility: collapse;
+}
+
+.Language_schinese .MainMenuBgLogo.cn
+{
+	visibility: visible;
+}
+
+.MainMenuBgSpoon
+{
+	horizontal-align: left;
+	texture-sampling: point;
+	width: 368px;
+	height: 449px;
+	horizontal-align: left;
+	vertical-align: bottom;
+	margin-bottom: 140px;
+	margin-left: -1px;
+	opacity: 1;
+}
+
+.ForceUIScale1 .MainMenuBgSpoon
+{
+	width: 70%;
+}
+
+.ControlsHeaderContainer
+{
+	overflow: noclip;
+	width: 100%;
+}
+
+.ControlsHeaderContainer .GoldHeader
+{
+	horizontal-align: left;
+	width: 100%;
+}
+
+.ControlsHeaderContainer .GamepadIconContainer
+{
+	flow-children: right;
+	margin-right: 16px;
+	horizontal-align: right;
+	vertical-align: middle;
+}
+
+.ControlsHeaderContainer .GamepadIconContainer .GamepadIcon
+{
+	padding-right: 6px;
+	opacity-brush: gradient( linear, 0% 10%, 0% 90%, from( white ),to( rgb(45, 59, 79) ) );
+	img-shadow: 0px 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+.ControlsHeaderContainer .GamepadIconContainer .SupportedLabel
+{
+	color: LightGrey;
+	margin-left: 6px;
+	vertical-align: center;
+	text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5);
+	margin-bottom: 2px;
+}
+
+.RewardsSection
+{
+	flow-children: down;
+	width: 100%;
+	horizontal-align: left;
+}
+
+.RewardsSection .RewardRow
+{
+	flow-children: right;
+	width: 100%;
+	margin-bottom: 2px;
+	height: 32px;
+}
+
+.RewardsSection .RewardRow.Unlocked
+{
+	brightness: 0.1;
+}
+
+.RewardsSection .RewardRow .RewardScore
+{
+	width: 80px;
+	vertical-align: middle;
+	text-align: left;
+}
+
+.RewardsSection .RewardRow .RewardValue
+{
+	flow-children: right;
+	width: 100%;
+	vertical-align: middle;
+}
+
+.RewardsSection .RewardRow .RewardValue DOTACrownfallToken
+{
+	width: 38px;
+	ui-scale: 64%;
+	vertical-align: middle;
+}
+
+.RewardsSection .RewardRow .RewardValue DOTAShowcaseDecoration
+{
+	width: 28px;
+	height: 28px;
+	horizontal-align: left;
+	vertical-align: middle;
+	tooltip-position: top;
+	tooltip-body-position: 50% 20px;
+}
+
+.StartGameButton
+{
+	horizontal-align: center;
+	vertical-align: bottom;
+}
+
+.VisualNovelOuterContainer
+{
+	padding-top: 200px;
+}
+
+@keyframes 'GlowHighScore'
+{
+	100%
+	{
+		brightness: 5;
+		transform: scale3d( 1.06, 1.06, 1 );
+	}
+	
+}
+
+.NewHighScore
+{
+	opacity: 0;
+	height: 0px;
+	margin-top: 2px;
+	transition-property: opacity, height, brightness;
+	transition-duration: 0.2s;
+	horizontal-align: center;
+	font-weight: semi-bold;
+	color: gradient( linear, 0% 35%, 0% 100%, from( #FFF2DF ), color-stop( 0.48, #ebc386 ), color-stop( 0.52, #BA8C47 ), to( #8d6c3a ) );
+	brightness: 1.3;
+}
+
+.NewHighScoreEarned .NewHighScore
+{
+	opacity: 1.0;
+	height: 42px;
+	animation-name: GlowHighScore;
+	animation-duration: 0.4s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate-reverse;
+}
+

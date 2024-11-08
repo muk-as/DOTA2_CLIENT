@@ -8,7 +8,7 @@
 
 namespace source2sdk::client
 {
-    // Enumerator count: 4
+    // Enumerator count: 5
     // Alignment: 4
     // Size: 0x4
     enum class Class_T : std::uint32_t
@@ -16,6 +16,7 @@ namespace source2sdk::client
         CLASS_NONE = 0x0,
         CLASS_PLAYER = 0x1,
         CLASS_PLAYER_ALLY = 0x2,
-        NUM_CLASSIFY_CLASSES = 0x3,
+        CLASS_CROWNFALL_SURVIVOR_UNIT = 0x3,
+        NUM_CLASSIFY_CLASSES = 0x4,
     };
 };

@@ -14,11 +14,10 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x690
+    // Size: 0x6b8
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class C_DOTA_Item_Tier2Token : public client::C_DOTA_Item_TierToken
     {
@@ -27,5 +26,5 @@ namespace source2sdk::client
     };
     #pragma pack(pop)
     
-    static_assert(sizeof(C_DOTA_Item_Tier2Token) == 0x690);
+    static_assert(sizeof(C_DOTA_Item_Tier2Token) == 0x6b8);
 };

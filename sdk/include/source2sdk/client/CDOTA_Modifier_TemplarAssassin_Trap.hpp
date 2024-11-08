@@ -14,18 +14,17 @@ namespace source2sdk::client
     // Registered alignment: unknown
     // Alignment: unknown
     // Standard-layout class: false
-    // Size: 0x1700
+    // Size: 0x1720
     // Has VTable
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Modifier_TemplarAssassin_Trap : public client::CDOTA_Modifier_Invisible
     {
     public:
-        int32_t bonus_vision; // 0x16f8        
-        [[maybe_unused]] std::uint8_t pad_0x16fc[0x4];
+        int32_t bonus_vision; // 0x1718        
+        [[maybe_unused]] std::uint8_t pad_0x171c[0x4];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Modifier_TemplarAssassin_Trap because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_TemplarAssassin_Trap) == 0x1700);
+    static_assert(sizeof(CDOTA_Modifier_TemplarAssassin_Trap) == 0x1720);
 };

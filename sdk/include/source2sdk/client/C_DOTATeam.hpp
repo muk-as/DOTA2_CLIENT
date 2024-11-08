@@ -14,11 +14,10 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x648
+    // Size: 0x670
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkVarNames "int m_iHeroKills"
     // static metadata: MNetworkVarNames "int m_iTowerKills"
@@ -38,38 +37,38 @@ namespace source2sdk::client
     {
     public:
         // metadata: MNetworkEnable
-        int32_t m_iHeroKills; // 0x5f0        
+        int32_t m_iHeroKills; // 0x618        
         // metadata: MNetworkEnable
-        int32_t m_iTowerKills; // 0x5f4        
+        int32_t m_iTowerKills; // 0x61c        
         // metadata: MNetworkEnable
-        int32_t m_iBarracksKills; // 0x5f8        
+        int32_t m_iBarracksKills; // 0x620        
         // metadata: MNetworkEnable
-        uint32_t m_unTournamentTeamID; // 0x5fc        
-        // metadata: MNetworkEnable
-        // metadata: MNetworkEncoder "fixed64"
-        uint64_t m_ulTeamLogo; // 0x600        
+        uint32_t m_unTournamentTeamID; // 0x624        
         // metadata: MNetworkEnable
         // metadata: MNetworkEncoder "fixed64"
-        uint64_t m_ulTeamBaseLogo; // 0x608        
+        uint64_t m_ulTeamLogo; // 0x628        
         // metadata: MNetworkEnable
         // metadata: MNetworkEncoder "fixed64"
-        uint64_t m_ulTeamBannerLogo; // 0x610        
+        uint64_t m_ulTeamBaseLogo; // 0x630        
         // metadata: MNetworkEnable
-        bool m_bTeamComplete; // 0x618        
+        // metadata: MNetworkEncoder "fixed64"
+        uint64_t m_ulTeamBannerLogo; // 0x638        
         // metadata: MNetworkEnable
-        bool m_bTeamIsHomeTeam; // 0x619        
+        bool m_bTeamComplete; // 0x640        
         // metadata: MNetworkEnable
-        bool m_bTeamCanSeeRoshanTimer; // 0x61a        
+        bool m_bTeamIsHomeTeam; // 0x641        
         // metadata: MNetworkEnable
-        bool m_bTeamCanSeeNextPowerRune; // 0x61b        
+        bool m_bTeamCanSeeRoshanTimer; // 0x642        
         // metadata: MNetworkEnable
-        Color m_CustomHealthbarColor; // 0x61c        
+        bool m_bTeamCanSeeNextPowerRune; // 0x643        
         // metadata: MNetworkEnable
-        char m_szTag[33]; // 0x620        
-        [[maybe_unused]] std::uint8_t pad_0x641[0x7];
+        Color m_CustomHealthbarColor; // 0x644        
+        // metadata: MNetworkEnable
+        char m_szTag[33]; // 0x648        
+        [[maybe_unused]] std::uint8_t pad_0x669[0x7];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in C_DOTATeam because it is not a standard-layout class
-    static_assert(sizeof(C_DOTATeam) == 0x648);
+    static_assert(sizeof(C_DOTATeam) == 0x670);
 };

@@ -21,7 +21,6 @@
 02x%c
 02x%s
 04d%02d%02d%02d%02d%02dZ
-0IcE@L
 0M2~@p
 0[]A\ÐATH
 0enum $1
@@ -47,6 +46,7 @@
 14s.%03dZ
 15CEC25519KeyBase
 16CMsgICECandidate
+16CMsgTOSTreatment
 17CMsgICERendezvous
 19CECSigningPublicKey
 1CMsgSteamDatagramConnectionStatsP2PClientToRouter
@@ -249,6 +249,7 @@
 7?7E7I7O7]7a7u7
 8!83858A8G8K8S8W8_8e8o8q8}8
 8.3f %s
+89A8w!f
 89C8r
 89G8r
 8H9,$t"C
@@ -275,7 +276,6 @@
 9D$$~aH
 9F tAH
 9Sh~QHi
-9WhtsH
 9͉L$@ve
 A	ًZtA
 A connection with that ID already exists
@@ -289,8 +289,8 @@ A1ÉȋL
 A9D$0
 A9D$4
 A9D$4t H
-A9\$0
 A9l$h~0Hi
+A9|$0|9f
 A:3,]VOHyrkd
 A;MH}G
 A;n8}*Li
@@ -569,7 +569,6 @@ A\A]A^A_ÐUSH
 A\A]A^H
 A\A]A^L
 A\A]A^Ë81
-A\A]A^ÐATU1
 A\A]A^ÐATUSH
 A\A]A^ÐAUATL
 A\A]A^ÐAVAUATA
@@ -800,6 +799,7 @@ Assertion Failed: (&src < Base()) || (&src >= (Base() + Count
 Assertion Failed: (elem == Count()) || IsValidIndex(elem
 Assertion Failed: (int)cbEncrypted <= k_cbSteamNetworkingSocketsMaxEncryptedPayloadSend
 Assertion Failed: (int)cbEncrypted >= cbPlainText
+Assertion Failed: (int64)usecTimeSinceSentLast >= 0
 Assertion Failed: (links.m_pNext->*pMbrLinks).m_pPrev == this
 Assertion Failed: (links.m_pPrev->*pMbrLinks).m_pNext == this
 Assertion Failed: (pPrev->*pMbrLinks).m_pNext == pSuccessor
@@ -1607,6 +1607,7 @@ Assertion Failed: usecNextCheck > usecNow
 Assertion Failed: usecNextThinkRelay > usecNow
 Assertion Failed: usecNextThinkSession > usecNow
 Assertion Failed: usecNow > 0x20000*k_usecAckDelayPrecision
+Assertion Failed: usecRecvTimeSincePrev >= 0
 Assertion Failed: usecReliableRTO <= usecNow
 Assertion Failed: usecTimeoutDuration > 0
 Assertion Failed: usecWhen > 0
@@ -1817,6 +1818,7 @@ But we still have a valid cert, continuing with that one
 Byte size calculation and serialization were inconsistent.  This may indicate a bug in protocol buffers or it may be caused by concurrent modification of
 C D;u }0Ik
 C H1C@H
+C H9hP
 C [ÐAWAVAUL
 C!FReQ
 C%C'C3C7C9COCWCiC
@@ -2316,6 +2318,7 @@ CMsgSteamSockets_UDP_ConnectRequest
 CMsgSteamSockets_UDP_ConnectionClosed
 CMsgSteamSockets_UDP_NoConnection
 CMsgSteamSockets_UDP_Stats
+CMsgTOSTreatment
 CODE_SIZE
 CONF_dump_fp
 CONF_load
@@ -2626,8 +2629,10 @@ D#D)D;D?DEDKDQDSDYDeDoD
 D$ 3|$dM
 D$ 9D
 D$ Entef
+D$ H+D$(H
 D$ H1L$(H1t$ L
 D$ H9D
+D$ Hc
 D$ IcI
 D$ IcU0H
 D$ M3T
@@ -2663,20 +2668,20 @@ D$8L;l$8
 D$8L;t$8t%A
 D$8dH3
 D$8tZA
+D$<9D$0
 D$@H9D
 D$@fE
 D$@t=HcT
 D$@tuHcT
-D$BsdpifA
+D$Bsdpif
+D$Ff9C
 D$H9D
 D$HD9kh~>Mi
 D$HD9kt~NMi
 D$HH;l$8t
 D$HdH3
-D$P9D
 D$PfE
 D$T+L$H
-D$VfA9D
 D$X9C8
 D$X9k
 D$X;k
@@ -2727,6 +2732,7 @@ D9cx~vIk
 D9d$`L
 D9e$~ H
 D9e(~ H
+D9e(~jH
 D9e,~"1
 D9e4~jH
 D9e8~%1
@@ -2740,6 +2746,7 @@ D;k0}#D
 D;k4}#D
 D;k8})D
 D;m(|WD;m
+D;t$H
 D;{P|sH
 D;{h}KH
 DATA_LOSS
@@ -2896,6 +2903,7 @@ E-mail Protection
 E09C0H
 E0H;E8t
 E0HcS(H
+E0IcU@L
 E0Z[]A\A]ÐAWAVAUI
 E1ĉVHE
 E1ĉVXE
@@ -3092,6 +3100,7 @@ EdiPartyName
 EdiPartyName:<unsupported
 EhH+E`H
 EhH;Ep
+EhHcU`H
 Empty identity msg
 EnableDiagnosticsUI
 Encipher Only
@@ -3178,6 +3187,7 @@ ExtensionRangeOptions
 Extensions in proto3 are only allowed for defining options
 Extensions of MessageSets must be optional messages
 Extensions to non-lite types can only be declared in non-lite files.  Note that you cannot extend a non-lite type to contain a lite type, but the reverse is allowed
+Extra control data returned besides TOS?  0x%x/0x%x
 Extra text starting with character 0x%02x='%c
 ExtraField
 ExtractSubrange() when arena is non-NULL is only supported when
@@ -3350,9 +3360,11 @@ FileOptions
 Files that do not use optimize_for = LITE_RUNTIME cannot import files which do use this option.  This file is not lite, but it imports
 Files with optimize_for = LITE_RUNTIME cannot define services unless you set both options cc_generic_services and java_generic_services to false
 FinalizeLocalCrypto
+FindServerDataForCluster
 Fingerprint check failed: %x vs. %x
 First argument to Swap() (of type
 First argument to SwapFields() (of type
+Flags indicate presence of TimeSincePrev, but no room for it.  Stats message size %d, packet size %d
 FlushMessagesOnConnection
 For best results, preload the config.  (See SDR_NETWORK_CONFIG env var
 Found existing connection [%s].  Only one symmetric connection can be active at a time
@@ -3494,7 +3506,7 @@ H#T$ H
 H#s H1
 H#s(H1
 H(hqA1p
-H+50=G
+H+5OOG
 H+D$8E1
 H+D$hA
 H+L$H1
@@ -3504,7 +3516,7 @@ H+L$h1
 H+N0H
 H+T$hH
 H+l$ H
-H+l$pH
+H+l$H
 H+t$0H
 H+t$XH
 H14$H1L
@@ -3544,7 +3556,8 @@ H;2s!H
 H;2s"H
 H;2sPH
 H;2t'H
-H;=gBK
+H;=4LP
+H;=GZK
 H;D$0u
 H;D$p
 H;L$Pf
@@ -3556,7 +3569,7 @@ H;Z tWH;X
 H;Z tZH;X
 H;k@r
 H;kx|#H
-H;z t H
+H;r t H
 H@H9xqI
 HAI8xpH
 HEX DUMP
@@ -3591,9 +3604,10 @@ HcD$ H
 HcD$ I
 HcD$$H
 HcD$0H
-HcD$@M
+HcD$@I
 HcD$\H
 HcD$`H
+HcD$`H9
 HcD$tH
 HcD$xL
 HcE0L
@@ -3610,7 +3624,6 @@ HcT$,H
 HcT$4D
 HcT$@H
 Hcl$ H
-Hcl$(H
 Hct$ H
 Hct$|H
 Hc|$0H
@@ -3687,7 +3700,6 @@ ITM_registerTMCloneTable
 Ic,$Hi
 Ic4$E1
 IcD$PL
-IcT$ H
 IcT$8;S
 IcT$hH
 IcV A;W u
@@ -3895,7 +3907,6 @@ L$hH)L
 L$hdH3
 L$xdH3
 L)l$0u
-L+D$8M
 L+d$ H
 L+d$0A
 L+l$hD
@@ -3907,8 +3918,8 @@ L9D$X
 L9bptz
 L9d$ H
 L9g tV
+L9l$ s
 L9l$PH
-L9t$(s
 L9t$(tCD
 L9|$8rBH
 L;4$tlM
@@ -3932,7 +3943,6 @@ LcD$<A9
 LcT$(D
 LcT$4D
 LcfDH
-Lcr@L9
 Lc|$LM9
 Lead byte %d invalid for ticket blob
 Lead byte 0x%02x not a known message ID
@@ -4369,7 +4379,6 @@ Network config router list/map mismatch
 Network configuration: %s
 NetworkAndCachedRoutes
 NetworkDevVarsChanged
-NetworkNext
 NetworkRevisionChanged
 Never gathered *any* host candidates
 Never received any remote candidates
@@ -4388,6 +4397,7 @@ No cert data
 No certs
 No client identity
 No configured STUN servers
+No control data returned even though we asked for TOS
 No data
 No default value
 No dropped packets, pkt num %lld, dup bit not set?  recvseq=%lld inorder=%lld, dup=%lld, lurch=%lld, ooo=%lld, %s.  (%s
@@ -4809,7 +4819,7 @@ Ping measurement completed in %.1fs.  Relays: %d valid, %d great, %d good+, %d o
 Ping request has my_ips list, but from address isn't present.  Could be spoofed / replay attack.  Dropping
 Ping timed out to %s
 Ping to relay = %d
-Pinging %s (%s
+Pinging %s (%s).  ECN%d  reply_tos=0x%02x[DSCP%d ECN%d
 Pings
 Pkt number lurch by %lld; %04x->%04x
 Please update your library.  If you compiled the program yourself, make sure that your headers are from the same version of Protocol Buffers as your link-time library.  (Version verification failed in
@@ -5071,7 +5081,6 @@ Router network: %s
 RouterPingReply
 RouterPingReply from %s latency lists not the same length.  %d vs %d.  Ignoring message
 RouterPingReply from %s, %dms
-RouterPingReply from %s, %dms (first measurement to %s, estimate was %d
 RouterPingReply from %s; dropping due to override
 RouterQuality
 RoutesChanged
@@ -5114,6 +5123,7 @@ SDR shared socket listening on local address %s
 SDRClient_ConsecutitivePingTimeoutsFail
 SDRClient_ConsecutitivePingTimeoutsFailInitial
 SDRClient_DevTicket
+SDRClient_EnableTOSProbes
 SDRClient_FakeClusterPing
 SDRClient_ForceProxyAddr
 SDRClient_ForceRelayCluster
@@ -5271,6 +5281,7 @@ SendMessages
 SendRateMax
 SendRateMin
 SendServerBrowserPacket
+SendTimeSincePreviousPacket
 SendUDPacket
 Sender sent abs latest recv pkt number using %llx mod %llx, next send %llx
 Sender sent abs unreliable message number using %llx mod %llx, highest seen %llx
@@ -5459,7 +5470,7 @@ SymmetricConnect
 SymmetricConnect not supported
 Synthetic oneofs must be after all other oneofs
 SystemSpew
-T$ ~iH
+T$ ~fH
 T$(Icp
 T$(dH3
 T$03\$LD
@@ -5680,6 +5691,7 @@ Unauthenticated connections not allowed
 Unencrypted
 Unencrypted addresses only allowed to 'dev' POPID
 Unexpected AvailAnyRouterCommunication %d
+Unexpected IP_TOS cmsg_len %lld
 Unexpected NoConnection
 Unexpected P2PSessionError %d
 Unexpected auth avail %d (%s
@@ -6495,6 +6507,7 @@ bytes
 bytes).  To increase the limit (or to disable these warnings), see CodedInputStream::SetTotalBytesLimit() in third_party/protobuf/src/google/protobuf/io/coded_stream.h
 c []A
 c!!B0
+c(Ict
 c0X[]A\A]A^A
 c2i_ASN1_BIT_STRING
 c2i_ASN1_INTEGER
@@ -7418,6 +7431,7 @@ domainComponent
 domainRelatedObject
 double
 double_value
+down_dscp45
 downtime_warning_reached
 downwarn
 drbg already initialized
@@ -7462,6 +7476,7 @@ dummy
 dummy_legacy_identity_binary
 dummy_pad
 dummy_steam_id
+dummy_varint
 duplicate zone id
 dynamic
 dynamic_cast
@@ -7553,6 +7568,8 @@ ecdsa_with_SHA3-384
 ecdsa_with_SHA3-512
 echo_console
 echo_relay_unix_time
+echo_request_reply_tos
+echo_sent_tos
 eckey_param2type
 eckey_param_decode
 eckey_priv_decode
@@ -7701,7 +7718,6 @@ extension value error
 extension_range
 extensions
 extra_fields
-f(Ict
 fS{ggRcjh
 facsimileTelephoneNumber
 failed to create lock
@@ -7750,6 +7766,7 @@ fingerprint size is
 fini_array
 fips mode not supported
 fips_mode
+first measurement to %s, estimate was %d
 first num too large
 first octet invalid
 first reliable streampos
@@ -8106,7 +8123,7 @@ i2s_ASN1_IA5STRING
 i2s_ASN1_INTEGER
 i2v_AUTHORITY_INFO_ACCESS
 iA5StringSyntax
-iL9%B
+iL9%r
 ia5org
 ice_enable_var
 ice_enabled
@@ -8757,8 +8774,10 @@ l$0tQH
 l$0v'E1
 l$8H3D$0H3l
 l$P~CH
-l$_Hc5
+l$hv,H
+l$p9D$P
 l$p;k4
+l4s_detect
 ladder post failure
 ladder pre failure
 ladder step failure
@@ -8809,7 +8828,7 @@ length too long
 length_ >= n
 level_add_node
 lf%n %n
-lib Jun 26 2024 20:40:08
+lib Sep 10 2024 01:06:41
 lib(%lu
 libc.so.6
 libm.so.6
@@ -8850,7 +8869,7 @@ longjmp
 lookup returned nothing
 lookup_certs_sk
 loopback
-m H;-^56
+m H;->D6
 mAWAVAUATUSH
 mPG@j^h
 mXRecord
@@ -9182,8 +9201,8 @@ o2i_ECPublicKey
 o2i_SCT
 o2i_SCT_LIST
 o2i_SCT_signature
-o8H;-2
-o8H;-B
+o8H;-R
+o8H;-b
 oCP)Kp)St
 oD$ fD
 oD$@fA
@@ -9687,7 +9706,8 @@ recipientinfo
 recommended-private-length: %d bits
 recursion_budget_ < recursion_limit
 recursive directory include
-recvfrom
+recv_tos
+recvmsg
 register_atfork
 registered
 registeredAddress
@@ -9719,6 +9739,8 @@ removeFromCRL
 repeated
 reqCert
 req_info
+req_recv_tos
+req_sent_tos
 request not signed
 request too large for drbg
 requestExtensions
@@ -9773,6 +9795,9 @@ routes
 routing
 routing_blob
 routing_secret
+rpl_echo_req_tos
+rpl_recv_tos
+rpl_sent_tos
 rsa operations not supported
 rsa routines
 rsaEncryption
@@ -9893,6 +9918,7 @@ s=%(nh0
 s=%lld
 s=%llu
 s='%s', which isn't a valid IPv%d address
+s=0x%02x[DSCP%d ECN%d
 sAlias: %s
 sBytes buffered: %s
 sC3pcG'd
@@ -10066,7 +10092,7 @@ s] Parsed relay auth ticket from server.  %d bytes
 s] Peer acked our routes for revision %u, but our latest revision is %u
 s] Peer appears to be using '%s' transport as primary
 s] Peer sent hosted_server_ticket.  Switching to SDR client transport
-s] Pinging %s (%s
+s] Pinging %s (%s).  ECN%d  reply_tos=0x%02x[DSCP%d ECN%d
 s] Posting SteamNetworkingMessagesSessionFailed_t
 s] Primary router %s going offline in %d seconds; seeking replacement
 s] Protobuf failed to parse CMsgSteamDatagramP2PRoutes routes
@@ -10289,6 +10315,7 @@ sendProxiedRouter
 sendRouter
 sendmsg
 sendto
+sent_tos
 seq_num_c2r
 seq_num_e2e
 seq_num_r2c
@@ -10545,6 +10572,7 @@ socket
 socket() call failed.  Error code 0x%08x
 socketpair
 socketpair() call failed.  Error code 0x%08x
+sockopt(IPPROTO_IP, IP_RECVTOS, 1) failed (0x%x), will not be able to read TOS
 source_code_info
 source_file
 spHc}0H
@@ -10684,7 +10712,6 @@ t$I;4
 t$XdH34
 t$huKH
 t$huYH
-t$lH;D$0
 t$p9E4
 t$p}?Mk
 t(L;D
@@ -10728,6 +10755,7 @@ tbsRequest
 tbsResponseData
 tcgetattr
 tcsetattr
+tdD9#u
 tdata
 telephoneNumber
 teletexTerminalIdentifier
@@ -10813,7 +10841,6 @@ tsa untrusted
 tst info setup error
 ttHcD
 tv[]A\A]A
-twIcw
 tx=pgs
 tx[]A
 type does not match
@@ -10837,7 +10864,7 @@ type_name
 typical_ping element %d invalid
 typical_pings
 t{ATUH
-t{Icw8
+t{Icw
 t|ATUH
 t|AUATI
 t|HcT$@H
@@ -10855,10 +10882,8 @@ u0L;b
 u6[]A\A]A
 uHB9t08
 uHL9'uC
-uHL;b
 uJ4CA2
 uLL9d
-uQD	c
 uTH;Wh
 u`D;c
 ua-pki
@@ -11012,6 +11037,7 @@ unwrap error
 unwrap failure
 upD;c4
 up[]A
+up_ecn1
 update
 uri authority unsupported
 user data duplication unsupported

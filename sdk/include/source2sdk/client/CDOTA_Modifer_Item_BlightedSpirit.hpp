@@ -14,18 +14,17 @@ namespace source2sdk::client
     // Registered alignment: unknown
     // Alignment: unknown
     // Standard-layout class: false
-    // Size: 0x16f0
+    // Size: 0x1710
     // Has VTable
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Modifer_Item_BlightedSpirit : public client::CDOTA_Buff_Item
     {
     public:
-        int32_t magic_resist; // 0x16e8        
-        float duration; // 0x16ec        
+        int32_t magic_resist; // 0x1708        
+        float duration; // 0x170c        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Modifer_Item_BlightedSpirit because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifer_Item_BlightedSpirit) == 0x16f0);
+    static_assert(sizeof(CDOTA_Modifer_Item_BlightedSpirit) == 0x1710);
 };

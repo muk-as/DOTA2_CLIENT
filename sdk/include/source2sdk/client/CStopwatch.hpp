@@ -20,7 +20,7 @@ namespace source2sdk::client
     class CStopwatch : public client::CStopwatchBase
     {
     public:
-        float m_interval; // 0xc        
+        float m_flInterval; // 0xc        
     };
     #pragma pack(pop)
     

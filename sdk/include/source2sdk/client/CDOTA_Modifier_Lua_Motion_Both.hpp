@@ -14,9 +14,8 @@ namespace source2sdk::client
     // Registered alignment: unknown
     // Alignment: unknown
     // Standard-layout class: false
-    // Size: 0x17d8
+    // Size: 0x17f8
     // Has VTable
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Modifier_Lua_Motion_Both : public client::CDOTA_Modifier_Lua
     {
@@ -25,5 +24,5 @@ namespace source2sdk::client
     };
     #pragma pack(pop)
     
-    static_assert(sizeof(CDOTA_Modifier_Lua_Motion_Both) == 0x17d8);
+    static_assert(sizeof(CDOTA_Modifier_Lua_Motion_Both) == 0x17f8);
 };

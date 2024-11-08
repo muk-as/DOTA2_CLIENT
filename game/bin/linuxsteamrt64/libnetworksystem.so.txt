@@ -18,8 +18,8 @@
 0123456789abcdef
 0<	vcH
 0A9G8u
+0NETWORK_DISCONNECT_KICKED_VACNETABNORMALBEHAVIOR
 0NETWORK_DISCONNECT_REJECT_SERVERCDKEYAUTHINVALID
-0[A\A]A
 0[]A\A]A^ÐAUATI
 0enum $1
 0message $1
@@ -192,6 +192,7 @@
 23NetMessagePacketStart_t
 24.ProtoFlattenedSerializerField_t.polymorphic_field_t
 24CCLCMsg_RespondCvarValue
+24CHiddenFieldValuePrinter
 25.CSource2Metrics_MatchPerfSummary_Notification.Client
 25CCLCMsg_RconServerDetails
 25CConCommandMemberAccessorI16CNetworkMessagesE
@@ -315,7 +316,6 @@
 A file with this name is already in the pool
 A protocol message was rejected because it was too big (more than
 A(twUH
-A+D$0H
 A8npt
 A9UTr%9
 A;D$hA
@@ -362,11 +362,9 @@ AUATt3H
 AVATSI
 AVAUATA
 AVAUATD
-AVAUATE
 AVAUATH
 AVAUATI
 AVAUATL
-AVAUATLc
 AVAUATS
 AVAUATS1
 AVAUATSD
@@ -482,6 +480,7 @@ A\A]ÐAWH
 A\A]ÐSH
 A\A]ÐUSH
 A\ÐATI
+A\ÐATUA
 A\ÐATUH
 A\ÐATUI
 A\ÐATUSH
@@ -1181,6 +1180,7 @@ D$ H9D$(L
 D$ HcE
 D$(D9
 D$(E9
+D$(I9D
 D$(L9l
 D$(L9t
 D$(dH3
@@ -1197,6 +1197,7 @@ D$XH9D$8u
 D$XZYH
 D$XdH3
 D$`tDH
+D$tI;D$ t+H9
 D8kpt
 D9e(~JH
 D9e4~ H
@@ -1250,14 +1251,18 @@ Dump UDP packets summary to console
 Dump non-loopback udp only
 E(H9E0sHL
 E(I9E0sHH
+E+L$0L
+E+t$0L
 E4;E8
 E9w(~zI
 E9|$ ~AD
+E;7r͋S
 E;e }7Mk
 E;eP}4Mk
 E;l$8}8H
 ED$`H9
 ENetworkDisconnectionReason
+EProtoDebugVisiblity
 EQueryCvarValueStatus
 ERROR! SendData %s data too big (%i
 ERROR: CUtlSymbolTableLarge element limit of %u exceeded
@@ -1610,7 +1615,7 @@ H+D$ I9
 H+D$8H
 H+K H+S
 H9B rv
-H9C(u*[D
+H9C(u-[D
 H9C0tAH
 H9D$(u"H
 H9D$0t
@@ -1625,6 +1630,7 @@ H9x0t
 H9z r
 H9z s
 H;2s]A
+H;E0sR
 H;G t`H;G
 H;z H
 H;z t
@@ -1655,7 +1661,6 @@ HammerMapLoader001
 HasField
 Hc+HcC
 Hc@LHk
-HcBhD9
 HcC0A9
 HcE0L
 HcG(H
@@ -1782,7 +1787,6 @@ L$HdH3
 L$XdH3
 L$hdH3
 L$xdH3
-L9p }kH
 L9s v
 L9s vm
 L9t$ t9H
@@ -1840,6 +1844,7 @@ Logic problem? szsrc
 LookupMapValue
 Loss . . . . . . . . . : %8.2f%%%8.2f%%%9s   net_fakeloss
 Loss:    avg out %.1f, in %.1f
+M+t$XI
 M9}0u	M
 M9}@u	M
 MATCHFRAMEWORK_001
@@ -1852,7 +1857,6 @@ MNetworkBitCount
 MNetworkChangeCallback
 MNetworkChangePointerCallback
 MNetworkChangeTag
-MNetworkDisable
 MNetworkEnable
 MNetworkEncodeFlags
 MNetworkEncoder
@@ -2388,7 +2392,8 @@ P@H+P8H
 PACKET_STATUS_DROPPED
 PACKET_STATUS_INVALID
 PACKET_STATUS_NORMAL
-PAVAWj
+PACKET_STATUS_OUT_OF_ORDER
+PAUAVj
 PCT        Percentage of packets (0...100) that will receive a random delay
 PERMISSION_DENIED
 PFT_SOUND
@@ -2396,7 +2401,7 @@ PH;k u'H
 PHc@HM
 PL;c u'H
 PLACEHOLDER_VALUE
-PROFILE    One of: off, low, med, high
+PROFILE    One of: off, low, med, high, huge
 P[A\A]A
 P[]A\ÐAWAVAUATI
 Package name is too long
@@ -2437,7 +2442,7 @@ Player_DisconnectReason_ConvictedAccount
 Player_DisconnectReason_HostageKilling
 Player_DisconnectReason_Idle
 Player_DisconnectReason_InputAutomation
-Player_DisconnectReason_InputAutomation_Detail:E
+Player_DisconnectReason_InputAutomation_Detail
 Player_DisconnectReason_NoSteamLogin
 Player_DisconnectReason_NoSteamTicket
 Player_DisconnectReason_Suicide
@@ -2445,6 +2450,7 @@ Player_DisconnectReason_TK_Start
 Player_DisconnectReason_TeamHurting
 Player_DisconnectReason_TeamKilling
 Player_DisconnectReason_UntrustedAccount
+Player_DisconnectReason_VacNetAbnormalBehavior:E
 Player_DisconnectReason_VotedOff
 Please update your library.  If you compiled the program yourself, make sure that your headers are from the same version of Protocol Buffers as your link-time library.  (Version verification failed in
 PlusFour
@@ -2474,7 +2480,6 @@ Problem     : Enum value did not match field type
 Problem     : Field is not the right type for this message
 ProcessMessages
 ProcessOverride encountered unknown directive NetworkOverrideType_t(%d
-ProcessPacket %s:%s packet %i at %i
 Processing
 PropertyEditorSystem_001
 Proto
@@ -2614,6 +2619,10 @@ Second argument to Swap() (of type
 Second argument to SwapFields() (of type
 September
 SerializedEntitiesVersion001
+Server will not buffer more than N kb from connected clients
+Server will not buffer more than N messages from connected clients
+Server will reject message larger than N kb
+Server will reject packets with more than N segments
 ServerToolsInfo_001
 ServiceDescriptorProto
 ServiceOptions
@@ -2868,6 +2877,7 @@ T$ ~LH
 T$HdH3
 T$VH;G
 T$XdH3
+T$xdH3
 TCP/UDP Disabled
 TD_OFFSET_NORMAL
 TD_OFFSET_PACKED
@@ -2961,6 +2971,7 @@ Unknown jitter profile '%s
 Unknown message type %u
 Unparsed options
 Unrecognized syntax
+Unreliable header too small
 UnsafeArenaAddAllocatedMessage
 UnsafeArenaReleaseLast
 Unsupported
@@ -3088,7 +3099,6 @@ WriteFieldList
 WriteFields
 WriteToBuffer Message %s is not initialized! Probably missing required fields
 Writing %d bits for path %s of serializer %s entity %d, this will fail to parse
-X[A\A
 X[A\A]A^A
 X[]A\A]A^A_ÐATUI
 X[]A\A]A^A_ÐAWAVAUATL
@@ -8045,7 +8055,6 @@ backing paths
 backslash
 backspace
 bad_function_call
-badpacket%03i.dat
 baseline
 baseline_index
 baseline_nr
@@ -8174,6 +8183,7 @@ command
 commands
 comment
 commercial-at
+common/protobuf_helpers.cpp
 compressed
 computer_guid
 conflicts with an existing enum type
@@ -8259,6 +8269,7 @@ data_compressed
 databytes
 deactivated
 deallocate %s
+debugprint_visibility
 decal_texture_index
 decimal128
 decimal32
@@ -8307,7 +8318,6 @@ dti_%02d%02d%02d-%02d%02d%02d_%s.csv
 dti_enabled
 due to MNetworkNoBase
 dummy
-duplicate
 duplocale
 dynamic
 dynamic_cast
@@ -8606,17 +8616,15 @@ has no value named
 has not been loaded
 has the same name as
 has_network_encoding_data
-has_pvs_vis_bits
+has_pvs_vis_bits_deprecated
 header_count
 hidden alias for
 high_value
 hltv_replay_flags
 host_computationtime
 host_computationtime_std_deviation
-host_framestarttime_std_deviation
-host_frametime
-host_frametime_std_deviation
-host_loss
+host_frame_dropped_pct_x10
+host_frame_irregular_arrival_pct_x10
 host_name
 host_unfiltered_frametime
 hostip
@@ -8701,16 +8709,19 @@ java_multiple_files
 java_outer_classname
 java_package
 java_string_check_utf8
-jitter
 json_name
 jstype
 jstype is only allowed on int64, uint64, sint64, fixed64 or sfixed64 fields
 k0X[]A\A]A^A
 k8}.H
-k;=TN
 kPH+kHH
 kP}+H
 k[A\A]A
+k_EProtoDebugVisibility_Always
+k_EProtoDebugVisibility_GC
+k_EProtoDebugVisibility_Never
+k_EProtoDebugVisibility_Server
+k_EProtoDebugVisibility_ValveServer
 keeping around as cacheable shared connection
 kp|	1
 l$0H;T$8trH
@@ -8733,6 +8744,7 @@ leading_detached_comments
 left-curly-bracket
 left-parenthesis
 left-square-bracket
+legacy_host_loss
 legacy_is_delta
 len >= input_len
 length_ >= n
@@ -8765,7 +8777,6 @@ loss_out
 low_priority
 low_value
 lseek64
-m H;-X
 m_NetworkChangeTagCallback.IsEmpty
 m_Value
 m_arBuf[ BUF_VOICE ].m_stream
@@ -8859,6 +8870,10 @@ net_fakeloss = %g%%  (net_option FakePacketLoss_Send = %g%%, net_option FakePack
 net_fakestatus
 net_filelogging
 net_fs_showindirections
+net_limit_sv_recv_max_message_size_kb
+net_limit_sv_recv_segments_per_packet
+net_limit_sv_recvbuffer_kb
+net_limit_sv_recvbuffer_msg
 net_listallmessages
 net_log_processing
 net_max_message_process_count
@@ -8866,7 +8881,6 @@ net_max_message_queue_size
 net_max_polymorphic_spew
 net_messageinfo
 net_messageinfo %s
-net_no_parallel_build
 net_option
 net_option %s = %s
 net_option settings will not apply to loopback listenservers. To run a listenserver without loopback. Select your map with "map foo loopback=0
@@ -8904,20 +8918,11 @@ networkbasetypes.proto
 networking/%04d_%02d_%02d_%02d_%02d_%02d
 networkmessages.cpp
 networkmessages.h
-networkprofile_fsbuild
 networkserializer.cpp
-networkspew
-networkspewcreate
-networkspewentity
-networkspewentity_readfieldlist
-networkspeweverything
-networkspewexcludes
-networkspewfakefields
 networksystem
 networksystem.cpp
 networksystem_protomessages.proto
 networksystem_protomessages.proto"0
-networkvar_validate
 newline
 newlocale
 next state only
@@ -8989,7 +8994,7 @@ origin
 origin_x
 origin_y
 origin_z
-out of order
+out-of-order
 outgoing
 outgoing_data_bytespersecond
 outgoing_sequence
@@ -9023,7 +9028,6 @@ pending_full_frame
 per client out %.1f, in %.1f kB/s
 per client out %.1f/s, in %.1f/s
 percent-sign
-perfectworld
 period
 php_class_prefix
 php_generic_services
@@ -9132,6 +9136,7 @@ reliable: %s
 reliable_sound
 remote IP: %s
 remote_addr
+removed
 render_interpolation_fraction
 repeated
 replay_slowdown_begin
@@ -9177,7 +9182,6 @@ s : %s = '%s
 s Gathering field offsets in %s
 s SendMessages %s failed with EResult %d
 s allocation count overflow
-s allocation count overflow( %llu > %llu
 s allocation count overflow( add %llu + current %llu > max %llu
 s ambiguous, field exists in serializer '%s' field %d
 s depth %d
@@ -9204,12 +9208,10 @@ s:  %s
 s:  (%d bits/%d bytes
 s:  CNetChan::Transmit( %s ) while suppressing transmit
 s:  CNetChan::Transmit(%s) SinceLastSend=%.1fs, Sent=%d, pending R/U=%d/%d, queueTime=%.1fms
-s:  NetChan QoS flow %s: %4dms engine latency, %5d/%5d dropped (%.1f
 s:  NetChan Setting Timeout to %4.2f seconds
 s:  couldn't find serializer %s in %s
 s:  encodeded data mismatched %d bits
 s:  encoding mismatched %d vs. %d bits
-s:  high packet loss detected flow %s: %4dms engine latency, %5d/%5d dropped (%.1f
 s:  in serializer '%s' couldn't find field %s::%s, possibly already marked MNetworkExclude
 s:  meta info problem %s
 s:  metadata( %d: '% -10s' %s = %u
@@ -9239,12 +9241,19 @@ s: timing out, last received %f [%.2f seconds ago
 s::%s has more than one MNetworkChangeCallback that requires passing network value into handler, this is unsupported
 s::%s was in the original serializer at offset %u but that offset isn't in the ignore list
 s::%s:%u (%s ) already encountered at %s::%s:%u (%s
-s:Dropped %i packets at %i
+s:Inbound net frame %d dropped
+s:Inbound net frame %d duplicated
+s:Inbound net frame %d out of order (latest received is %d
+s:Inbound net frames %d..%d dropped (%d frames
+s:Outbound net frame %d dropped
+s:Outbound net frame %d out of order
 s@H;sH
 sApplying %s
 sCull fields for %s
 sCulled %s::%s
 sProcess includes/excludes %s %s [%d fields
+s] high frame misdelivery %.1f%%, %d/%d of %d frames dropped/reordered, %.0fms ping
+s] misdelivery %.1f%%, %d/%d of %d frames dropped/reordered, %.0fms ping
 s] setting extremely high timeout
 sample_rate
 savegamefilename
@@ -9307,7 +9316,6 @@ sky_name
 slowdown_length
 slowdown_rate
 smarking %s::%s because it derives from or is a '%s
-snallownoauth
 snprintf_chk
 sound_index
 sound_level
@@ -9357,7 +9365,6 @@ steamid
 steamlearn_count
 steamml_is_timestamp
 steamml_max_entries
-steamnetworkingsockets_use_steamclient
 stored in google.protobuf.Any
 stored in google.protobuf.Any has missing required fields
 strchr
@@ -9469,6 +9476,7 @@ tVI;u
 tWAVAUATI
 tYAVAUATUSL
 t[ATUH
+t[LcL
 t_IcE
 t`LcL
 taHct
@@ -9476,6 +9484,7 @@ table_id
 taf;0u\fD
 target struct
 target_entity
+tcLcL
 tdata
 template parameter object for
 terminate called after throwing an instance of
@@ -9499,7 +9508,6 @@ tjf;2uefD
 tls_get_addr
 to missing
 to start from the outermost scope
-tools
 total: in %.1f, out %.1f MB
 total_data_in
 total_data_out
@@ -9534,10 +9542,10 @@ u(fA9t$(A
 u/H#D
 u8D	k
 uE[A\A]A
+uH[A\A]A
 uKA\A
 uK[A\A]A
 uPIcEHI
-uP[A\A]A
 uR[A\A]A
 ua8CHtdH
 ubD9kH
@@ -9585,7 +9593,6 @@ usage: %s <client|server
 usage: %s <name> <server
 usage: %s classname fieldname
 usage: fs_spew_readfieldlist entindex <optional min change bytes
-use_valve_ice
 usec_avg_active
 usec_avg_all
 usec_max
@@ -9671,7 +9678,6 @@ wcsnrtombs
 wcsxfrm_l
 wctype_l
 weak_dependency
-whIcG`I
 which is
 which is a proto3 message type
 which is not defined or is not an extension of

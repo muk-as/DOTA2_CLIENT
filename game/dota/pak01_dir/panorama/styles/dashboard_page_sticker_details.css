@@ -11,11 +11,12 @@ DOTAStickerItemDetailsPage
 {
 	width: 100%;
 	height: 100%;
-	margin-bottom: 120px;
 }
 
 #StickerItemDetailsContainer
 {
+	width: 100%;
+	height: 100%;
 	flow-children: right;
 	horizontal-align: center;
 	vertical-align: center;
@@ -30,37 +31,77 @@ DOTAStickerItemDetailsPage
 
 #StickerPreviewContainer
 {
-	width: 700px;
-	height: 700px;
+	width: 960px;
+	height: 100%;
 	vertical-align: center;
-	margin-top: 70px;
+}
+
+.StickerPreviewBackground
+{
+	width: 100%;
+	height: 100%;
+	wash-color: rgba(0, 0, 0, 0.85);
+	background-size: cover;
+	background-position: center;
+	blur: gaussian (4px);
+	background-color: gradient( linear, 0% 50%, 0% 100%, from( #13171f ), to( #2B415A ) );
+	visibility: collapse;
+}
+
+.IsPopup .StickerPreviewBackground
+{
+	visibility: visible;
 }
 
 #StickerPreview
 {
-	width: 100%;
-	height: 100%;
-	opacity: 0;
-	transform: scale3d(0.7, 0.7, 1);
-	transition-property: transform, opacity;
-	transition-duration: 0.8s;
-	transition-delay: 0.2s;
-	transition-timing-function: cubic-bezier( 0, 1, 0, 1 );
+	width: 640px;
+	height: width-percentage(100%);
+	margin-top: 40px;
+	vertical-align: center;
+	horizontal-align: center;
 }
 
 .BodyBox
 {
 	vertical-align: center;
-	margin-left: 40px;
-	width: 500px;
+	width: 100%;
+	height: 100%;
 	flow-children: down;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #2D2E30 ), to( #202529 ) );
+	box-shadow: #000000aa 0px 0px 12px 0px ;
+	border: 2px solid black;
+}
+
+.IsPopup .BodyBox
+{
+	box-shadow: #00000000 0px 0px 0px ;
+	border: 0px;
+	background-color: DarkGreyGradientBackgroundColor;
+}
+
+.BodyBox .Details
+{
+	margin: 20px;
+	width: 100%;
+	height: 100%;
+	flow-children: down;
+}
+
+.BodyBox .DetailsSection
+{
+	padding: 20px;
+	width: 100%;
+	background-color: #00000058;
+	border: 1px solid rgba( 0, 0, 0, 0.6 );
+	flow-children: down;
+	margin-bottom: 20px;
 }
 
 .BodyBox #ItemHeader
 {
 	width: 100%;
-	flow-children: right;
-	margin-bottom: 16px;
+	flow-children: down;
 	transition-property: background-color;
 	transition-duration: 0.2s;
 }
@@ -69,14 +110,15 @@ DOTAStickerItemDetailsPage
 {
 	font-size: 28px;
 	font-weight: semi-bold;
-	padding: 16px;
+	padding: 36px 16px;
 	text-shadow: 0px 2px 12px rgba(0, 0, 0, 0.6);
 }
 
 .BodyBox #ItemHeader #QualityStripe
 {
-	width: 6px;
-	height: 100%;
+	width: 100%;
+	height: 6px;
+	opacity-brush: gradient( linear, 0% 0%, 100% 0%, from( white ), to( rgba(255, 255, 255, 0) ) );
 }
 
 .CloseButton
@@ -253,18 +295,14 @@ DOTAStickerItemDetailsPage
 	opacity: 0.2;
 }
 
-.PageVisible .QualitySelector
-{
-	transform: translateY(0px);
-	transition-delay: 0s;
-	opacity: 1;
-}
-
 .QualitySelector
 {
 	margin-top: 28px;
-	transform: translateY(-20px);
-	opacity: 0;
+}
+
+.QualitySelector .QualitySelection .QualityOwned
+{
+	text-overflow: shrink;
 }
 
 .HideQuality_unique #QualitySelection_unique,.HideQuality_glitter #QualitySelection_glitter,.HideQuality_holo #QualitySelection_holo,.HideQuality_gold #QualitySelection_gold
@@ -277,24 +315,15 @@ DOTAStickerItemDetailsPage
 	visibility: collapse;
 }
 
-.PageVisible .StickerGeneralControlsContainer
-{
-	transform: translateY(0px);
-	transition-delay: 0s;
-	opacity: 1;
-}
-
 .StickerGeneralControlsContainer
 {
 	vertical-align: bottom;
 	horizontal-align: center;
 	width: 100%;
-	margin: 0px 200px;
-	padding-top: 16px;
+	margin-bottom: 20px;
+	padding-top: 20px;
 	border-top: 1px solid white;
 	border-brush: gradient( linear, 0% 0%, 100% 0%, from( rgba(255, 255, 255, 0) ), color-stop( 0.2, rgba(255, 255, 255, 0.02) ), color-stop( 0.8, rgba(255, 255, 255, 0.02) ), to( rgba(255, 255, 255, 0) ) );
-	opacity: 0;
-	transform: translateY(20px);
 	transition-property: transform, opacity;
 	transition-duration: 0.3s;
 	transition-delay: 0.6s;
@@ -305,6 +334,11 @@ DOTAStickerItemDetailsPage
 {
 	flow-children: right;
 	horizontal-align: center;
+}
+
+.StickerGeneralControlsContainer .StickerGeneralControls .ButtonPrimary
+{
+	margin-right: 5px;
 }
 
 .UsesLabel
@@ -321,6 +355,16 @@ DOTAStickerItemDetailsPage
 	color: whitesmoke;
 	padding: 12px 0px 8px;
 	width: 100%;
+}
+
+.CollectionButton
+{
+	visibility: collapse;
+}
+
+.HasCollection .CollectionButton
+{
+	visibility: visible;
 }
 
 .PriceNone

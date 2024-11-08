@@ -745,6 +745,13 @@ DOTATreasureStickerPackDetailsPage:not(.TreasureMarketAvailable) #TreasureOwnedR
 	opacity-mask: url("s2r://panorama/images/stickers/sticker_drawer_contents_mask_psd.vtex");
 }
 
+.DetailedContentsItem
+{
+	transition-property: transform;
+	transition-duration: 0.1s;
+	transition-timing-function: ease-in-out;
+}
+
 .DetailedContentsItem,.StickerCountSmall .DetailedContentsItem
 {
 	width: 256px;
@@ -762,6 +769,11 @@ DOTATreasureStickerPackDetailsPage:not(.TreasureMarketAvailable) #TreasureOwnedR
 	width: 200px;
 	height: 200px;
 	margin: -4px;
+}
+
+.StickerCountLarge .DetailedContentsItem:hover
+{
+	transform: scale3d( 1.05, 1.05, 1.0);
 }
 
 #DetailedTreasureDetailsTab
@@ -1035,5 +1047,79 @@ DOTATreasureStickerPackDetailsPage:not(.TreasureMarketAvailable) #TreasureOwnedR
 .StickerQuality_gold .StickerGoldMessage
 {
 	visibility: visible;
+}
+
+.OwnedRadioBox
+{
+	background-color: #777;
+}
+
+.DetailedContentsItem.Unowned
+{
+	brightness: 0.2;
+	saturation: 0.4;
+	opacity: 0.9;
+}
+
+.StickerNumber
+{
+	horizontal-align: center;
+	vertical-align: bottom;
+	margin-bottom: 15px;
+	padding: 0px 5px 0px 5px;
+	background-color: #111;
+	border: 2px solid #666;
+	border-radius: 6px;
+	opacity: 0;
+	animation-name: FadeIn;
+	animation-duration: 0.5s;
+	animation-delay: 0.1s;
+	animation-fill-mode: forwards;
+	visibility: collapse;
+}
+
+.ShowCollectedCount .StickerNumber
+{
+	visibility: visible;
+}
+
+.StickerNumber Label
+{
+	color: #ccc;
+}
+
+.CollectedCount
+{
+	color: white;
+	height: 30px;
+	width: 300px;
+	horizontal-align: center;
+	text-align: center;
+	visibility: collapse;
+}
+
+.ShowCollectedCount .CollectedCount
+{
+	visibility: visible;
+}
+
+.CollectedCount Label
+{
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+@keyframes 'FadeIn'
+{
+	0%
+	{
+		opacity: 0;
+	}
+	
+	100%
+	{
+		opacity: 1;
+	}
+	
 }
 

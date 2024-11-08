@@ -8,7 +8,7 @@
 
 namespace source2sdk::client
 {
-    // Enumerator count: 71
+    // Enumerator count: 72
     // Alignment: 1
     // Size: 0x1
     enum class EDOTAFacetIcon : std::uint8_t
@@ -80,78 +80,80 @@ namespace source2sdk::client
         // MAlternateSemanticName
         FACET_ICON_ITEM = 32,
         // MAlternateSemanticName
-        FACET_ICON_LIFESTEALER_RAGE = 33,
+        FACET_ICON_KEZ = 33,
         // MAlternateSemanticName
-        FACET_ICON_MANA = 34,
+        FACET_ICON_LIFESTEALER_RAGE = 34,
         // MAlternateSemanticName
-        FACET_ICON_MOON = 35,
+        FACET_ICON_MANA = 35,
         // MAlternateSemanticName
-        FACET_ICON_MEAT = 36,
+        FACET_ICON_MOON = 36,
         // MAlternateSemanticName
-        FACET_ICON_MOVEMENT = 37,
+        FACET_ICON_MEAT = 37,
         // MAlternateSemanticName
-        FACET_ICON_MULTI_ARROW = 38,
+        FACET_ICON_MOVEMENT = 38,
         // MAlternateSemanticName
-        FACET_ICON_NO_VISION = 39,
+        FACET_ICON_MULTI_ARROW = 39,
         // MAlternateSemanticName
-        FACET_ICON_NUKE = 40,
+        FACET_ICON_NO_VISION = 40,
         // MAlternateSemanticName
-        FACET_ICON_OGRE = 41,
+        FACET_ICON_NUKE = 41,
         // MAlternateSemanticName
-        FACET_ICON_OVERSHADOW = 42,
+        FACET_ICON_OGRE = 42,
         // MAlternateSemanticName
-        FACET_ICON_PUDGE_HOOK = 43,
+        FACET_ICON_OVERSHADOW = 43,
         // MAlternateSemanticName
-        FACET_ICON_RANGE = 44,
+        FACET_ICON_PUDGE_HOOK = 44,
         // MAlternateSemanticName
-        FACET_ICON_RICOCHET = 45,
+        FACET_ICON_RANGE = 45,
         // MAlternateSemanticName
-        FACET_ICON_RNG = 46,
+        FACET_ICON_RICOCHET = 46,
         // MAlternateSemanticName
-        FACET_ICON_SIEGE = 47,
+        FACET_ICON_RNG = 47,
         // MAlternateSemanticName
-        FACET_ICON_SILENCER = 48,
+        FACET_ICON_SIEGE = 48,
         // MAlternateSemanticName
-        FACET_ICON_SLOW = 49,
+        FACET_ICON_SILENCER = 49,
         // MAlternateSemanticName
-        FACET_ICON_SNAKE = 50,
+        FACET_ICON_SLOW = 50,
         // MAlternateSemanticName
-        FACET_ICON_SNOT = 51,
+        FACET_ICON_SNAKE = 51,
         // MAlternateSemanticName
-        FACET_ICON_SNOWFLAKE = 52,
+        FACET_ICON_SNOT = 52,
         // MAlternateSemanticName
-        FACET_ICON_SPECTRE = 53,
+        FACET_ICON_SNOWFLAKE = 53,
         // MAlternateSemanticName
-        FACET_ICON_SPEED = 54,
+        FACET_ICON_SPECTRE = 54,
         // MAlternateSemanticName
-        FACET_ICON_SPINNING = 55,
+        FACET_ICON_SPEED = 55,
         // MAlternateSemanticName
-        FACET_ICON_SPIRIT = 56,
+        FACET_ICON_SPINNING = 56,
         // MAlternateSemanticName
-        FACET_ICON_STRENGTH = 57,
+        FACET_ICON_SPIRIT = 57,
         // MAlternateSemanticName
-        FACET_ICON_SUMMONS = 58,
+        FACET_ICON_STRENGTH = 58,
         // MAlternateSemanticName
-        FACET_ICON_SUN = 59,
+        FACET_ICON_SUMMONS = 59,
         // MAlternateSemanticName
-        FACET_ICON_TELEPORT = 60,
+        FACET_ICON_SUN = 60,
         // MAlternateSemanticName
-        FACET_ICON_TREE = 61,
+        FACET_ICON_TELEPORT = 61,
         // MAlternateSemanticName
-        FACET_ICON_TWIN_HEARTS = 62,
+        FACET_ICON_TREE = 62,
         // MAlternateSemanticName
-        FACET_ICON_UNIQUE = 63,
+        FACET_ICON_TWIN_HEARTS = 63,
         // MAlternateSemanticName
-        FACET_ICON_VISION = 64,
+        FACET_ICON_UNIQUE = 64,
         // MAlternateSemanticName
-        FACET_ICON_VORTEX_IN = 65,
+        FACET_ICON_VISION = 65,
         // MAlternateSemanticName
-        FACET_ICON_VORTEX_OUT = 66,
+        FACET_ICON_VORTEX_IN = 66,
         // MAlternateSemanticName
-        FACET_ICON_WOLF = 67,
+        FACET_ICON_VORTEX_OUT = 67,
         // MAlternateSemanticName
-        FACET_ICON_XP = 68,
-        FACET_ICON_COUNT = 69,
-        FACET_ICON_INVALID = 70,
+        FACET_ICON_WOLF = 68,
+        // MAlternateSemanticName
+        FACET_ICON_XP = 69,
+        FACET_ICON_COUNT = 70,
+        FACET_ICON_INVALID = 71,
     };
 };

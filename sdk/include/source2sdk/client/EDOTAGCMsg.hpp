@@ -8,7 +8,7 @@
 
 namespace source2sdk::client
 {
-    // Enumerator count: 945
+    // Enumerator count: 949
     // Alignment: 4
     // Size: 0x4
     enum class EDOTAGCMsg : std::uint32_t
@@ -828,7 +828,6 @@ namespace source2sdk::client
         k_EMsgGCToClientCollectorsCacheAvailableDataResponse = 0x22a8,
         k_EMsgClientToGCUploadMatchClip = 0x22a9,
         k_EMsgGCToClientUploadMatchClipResponse = 0x22aa,
-        k_EMsgGCToServerSteamLearnAccessTokensChanged = 0x22ac,
         k_EMsgSignOutMuertaMinigame = 0x22ad,
         k_EMsgGCToServerLobbyHeroRoleStats = 0x22ae,
         k_EMsgClientToGCRankRequest = 0x22af,
@@ -947,7 +946,6 @@ namespace source2sdk::client
         k_EMsgGCToClientFightingGameChallenge = 0x2323,
         k_EMsgGCToClientFightingGameStartMatch = 0x2324,
         k_EMsgGCToClientFightingGameChallengeCanceled = 0x2325,
-        k_EMsgGCToServerSteamLearnUseHTTP = 0x2326,
         k_EMsgClientToGCBingoShuffleCard = 0x2327,
         k_EMsgClientToGCBingoShuffleCardResponse = 0x2328,
         k_EMsgClientToGCBingoModifySquare = 0x2329,
@@ -958,5 +956,11 @@ namespace source2sdk::client
         k_EMsgClientToGCBingoDevClearInventoryResponse = 0x232e,
         k_EMsgGCCompendiumRemoveAllSelections = 0x232f,
         k_EMsgGCCompendiumRemoveAllSelectionsResponse = 0x2330,
+        k_EMsgClientToGCOverworldMinigameAction = 0x2331,
+        k_EMsgClientToGCOverworldMinigameActionResponse = 0x2332,
+        k_EMsgClientToGCSurvivorsTelemetry = 0x2333,
+        k_EMsgClientToGCSurvivorsTelemetryResponse = 0x2334,
+        k_EMsgClientToGCOverworldRequestTokensNeededByFriend = 0x2335,
+        k_EMsgClientToGCOverworldRequestTokensNeededByFriendResponse = 0x2336,
     };
 };

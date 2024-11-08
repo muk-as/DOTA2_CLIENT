@@ -1,0 +1,283 @@
+/* Prettified by Source 2 Viewer 0.0.0.0 - https://valveresourceformat.github.io */
+
+DOTAKezWeaponCard
+{
+	horizontal-align: center;
+	vertical-align: bottom;
+	margin-bottom: 160px;
+	padding: 40px;
+	opacity: 1;
+	transform: none;
+	pre-transform-scale2d: 1;
+	transition-property: pre-transform-scale2d, transform, opacity;
+	transition-duration: 0.2s, 0.2s, 0.14s;
+	transition-timing-function: cubic-bezier(0.9, 0, 0.9, 0.9);
+}
+
+.Hidden
+{
+	opacity: 0;
+	transform: translateY( 150px );
+	pre-transform-scale2d: 0.5;
+	transition-duration: 0.22s, 0.16s;
+	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
+	visibility: visible;
+}
+
+.HitBlocker
+{
+	width: 100%;
+	height: 100%;
+	background-color: rgba(255, 0, 255, 0);
+	ignore-parent-flow: true;
+	opacity: 0;
+	transition-property: opacity;
+	transition-duration: 0.01s;
+	transition-delay: 0s;
+}
+
+.Hidden .HitBlocker
+{
+	opacity: 1;
+	transition-delay: 0.2s;
+}
+
+.Shimmer
+{
+	width: 100%;
+	height: 100%;
+	ignore-parent-flow: true;
+	-s2-mix-blend-mode: screen;
+	animation-name: Shimmer;
+	animation-duration: 0.6s;
+	animation-delay: 0.4s;
+	animation-timing-function: ease-out;
+}
+
+.Hidden .Shimmer
+{
+	animation-name: none;
+}
+
+@keyframes 'Shimmer'
+{
+	0%
+	{
+		background-color: gradient( linear, -50% -50%, 0% 0%, from( #A0C8FF00 ), color-stop( 0.5, #A0C8FF05 ), to( #A0C8FF00 ) );
+	}
+	
+	100%
+	{
+		background-color: gradient( linear, 100% 100%, 150% 150%, from( #A0C8FF00 ), color-stop( 0.5, #A0C8FF05 ), to( #A0C8FF00 ) );
+	}
+	
+}
+
+.FXParticles
+{
+	ignore-parent-flow: true;
+	width: 100%;
+	height: 100%;
+	hue-rotation: 200deg;
+	opacity: 0.6;
+	transform: translateY( -32px );
+}
+
+.CardTopImage
+{
+	horizontal-align: center;
+	width: 100%;
+	height: width-percentage( 5% );
+	background-image: url("s2r://panorama/images/hud/kez/kez_popup_top_edge_png.vtex");
+	background-size: cover;
+}
+
+.CardBottomImage
+{
+	horizontal-align: center;
+	vertical-align: bottom;
+	width: 100%;
+	height: width-percentage( 5% );
+	background-image: url("s2r://panorama/images/hud/kez/kez_popup_bottom_edge_png.vtex");
+	background-size: cover;
+}
+
+.WeaponCardContainer
+{
+	flow-children: down;
+	vertical-align: center;
+	width: 360px;
+	margin: 17px 6px;
+	background-image: url("s2r://panorama/images/hud/kez/kez_popup_background_png.vtex");
+	background-size: cover;
+	background-position: center;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+	box-shadow: 0px 8px 56px -4px #000000d6;
+}
+
+.HUDFlipped .WeaponCardContainer
+{
+	transform: scaleX( -1 );
+}
+
+.CloseWeaponCardLabel
+{
+	width: 100%;
+	padding: 8px;
+	margin-top: 6px;
+	background-color: gradient( radial, 50% 0%, 0% 0%, 70% 200%, from( #030810c9 ), color-stop( 0.5, #03080f8b ), to( #09111D00 ) );
+	border-top: 1px solid rgba(205, 234, 255, 0.3);
+	border-brush: gradient( linear, 0% 0%, 100% 0%, from( rgba(255, 255, 255, 0) ), color-stop( 0.4, white ), color-stop( 0.6, white ), to( rgba(255, 255, 255, 0) ) );
+	text-align: center;
+	color: gradient( linear, 0% 0%, 0% 100%, from( #FFE7C4 ), to( #b18d5f ) );
+	text-shadow: 0px 2px 8px black;
+	transition-property: color, background-color;
+	transition-duration: 0.15s;
+}
+
+.CloseWeaponCardLabel:hover
+{
+	color: gradient( linear, 0% 0%, 0% 100%, from( white ), to( #edd3ab ) );
+	background-color: gradient( radial, 50% 0%, 0% 0%, 70% 200%, from( #030810e5 ), color-stop( 0.5, #03080fb4 ), to( #09111D00 ) );
+}
+
+#WeaponHeader
+{
+	width: 100%;
+	vertical-align: center;
+	horizontal-align: center;
+}
+
+#WeaponHeaderLabel
+{
+	horizontal-align: center;
+	text-align: center;
+	margin: 14px 0px 4px;
+	font-family: titleFont;
+	font-weight: semi-bold;
+	font-size: 13px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	text-shadow: 0px 2px 8px black;
+	color: whitesmoke;
+}
+
+#KatanaAbilities,#SaiAbilities
+{
+	flow-children: right;
+	padding: 2px 24px;
+}
+
+#KatanaAbilities .WeaponNameContainer,#SaiAbilities .WeaponNameContainer
+{
+	flow-children: down;
+	vertical-align: center;
+}
+
+#KatanaAbilities .WeaponNameContainer .WeaponIcon,#SaiAbilities .WeaponNameContainer .WeaponIcon
+{
+	width: 28px;
+	horizontal-align: center;
+	box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5);
+	margin: 4px 0px 3px;
+	border-radius: 1px;
+}
+
+#KatanaAbilities .WeaponNameContainer .AbilitiesGroupLabel,#SaiAbilities .WeaponNameContainer .AbilitiesGroupLabel
+{
+	horizontal-align: center;
+	color: rgba(255, 255, 255, 0.7);
+	text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.8);
+	letter-spacing: 0px;
+	text-transform: none;
+	width: 58px;
+	text-align: center;
+	text-overflow: shrink;
+}
+
+#KatanaAbilities
+{
+	opacity: 1;
+	transform: none;
+	transition-property: opacity, transform;
+	transition-duration: 0.3s;
+	transition-delay: 0.2s;
+	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
+	border-bottom: 1px solid rgba(211, 235, 255, 0.04);
+	border-brush: gradient( linear, 0% 0%, 100% 0%, from( rgba(255, 255, 255, 0) ), color-stop( 0.2, white ), color-stop( 0.8, white ), to( rgba(255, 255, 255, 0) ) );
+}
+
+.Hidden #KatanaAbilities
+{
+	opacity: 0;
+	transform: translateY( 6px );
+}
+
+#SaiAbilities
+{
+	opacity: 1;
+	transform: none;
+	transition-property: opacity, transform;
+	transition-duration: 0.3s;
+	transition-delay: 0.3s;
+	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
+}
+
+.Hidden #SaiAbilities
+{
+	opacity: 0;
+	transform: translateY( 6px );
+}
+
+.WeaponAbilityContainer
+{
+	flow-children: right;
+	horizontal-align: center;
+	margin: 2px;
+}
+
+.WeaponAbilityContainer DOTAAbilityImage
+{
+	margin: 5px;
+	width: 48px;
+	height: 48px;
+	border: 2px solid #3B434B;
+	border-top-color: #798188;
+	border-bottom-color: #232A31;
+	box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.8);
+	transition-property: border, brightness;
+	transition-duration: 0.1s;
+}
+
+.WeaponAbilityContainer DOTAAbilityImage:hover
+{
+	brightness: 1.5;
+}
+
+#AbilityIcon
+{
+	height: 36px;
+	width: 36px;
+	padding: 5px 5px 5px 0px;
+}
+
+#CloseWeaponCard
+{
+	horizontal-align: center;
+	width: 100%;
+	margin: 0px 12px 12px;
+}
+
+.tooltip_top
+{
+	tooltip-position: top;
+}
+
+.AbilitiesContainer
+{
+	horizontal-align: center;
+	flow-children: down;
+	width: fit-children;
+}
+

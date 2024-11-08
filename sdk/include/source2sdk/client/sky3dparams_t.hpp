@@ -17,7 +17,6 @@ namespace source2sdk::client
     // Size: 0x90
     // Has VTable
     // Has Trivial Destructor
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkVarNames "int16 scale"
     // static metadata: MNetworkVarNames "Vector origin"

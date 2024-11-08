@@ -14,10 +14,9 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x7e0
+    // Size: 0x828
     // Has VTable
     // Construct allowed
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkIncludeByName "m_spawnflags"
     // static metadata: MNetworkVarNames "bool m_bDisabled"
@@ -27,13 +26,13 @@ namespace source2sdk::client
     {
     public:
         // metadata: MNetworkEnable
-        bool m_bDisabled; // 0x7d8        
+        bool m_bDisabled; // 0x820        
         // metadata: MNetworkEnable
-        bool m_bClientSidePredicted; // 0x7d9        
-        [[maybe_unused]] std::uint8_t pad_0x7da[0x6];
+        bool m_bClientSidePredicted; // 0x821        
+        [[maybe_unused]] std::uint8_t pad_0x822[0x6];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in C_BaseTrigger because it is not a standard-layout class
-    static_assert(sizeof(C_BaseTrigger) == 0x7e0);
+    static_assert(sizeof(C_BaseTrigger) == 0x828);
 };

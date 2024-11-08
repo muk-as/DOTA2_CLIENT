@@ -14,11 +14,10 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x1878
+    // Size: 0x18c8
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class C_DOTA_BaseNPC_Promo : public client::C_DOTA_BaseNPC_Building
     {
@@ -27,5 +26,5 @@ namespace source2sdk::client
     };
     #pragma pack(pop)
     
-    static_assert(sizeof(C_DOTA_BaseNPC_Promo) == 0x1878);
+    static_assert(sizeof(C_DOTA_BaseNPC_Promo) == 0x18c8);
 };

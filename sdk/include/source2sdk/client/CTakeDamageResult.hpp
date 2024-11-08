@@ -18,7 +18,7 @@ namespace source2sdk::client
     // Registered alignment: unknown
     // Alignment: 0x8
     // Standard-layout class: true
-    // Size: 0x18
+    // Size: 0x20
     // Has Trivial Destructor
     #pragma pack(push, 1)
     class CTakeDamageResult
@@ -29,6 +29,8 @@ namespace source2sdk::client
         int32_t m_nDamageTaken; // 0xc        
         int32_t m_nTotalledHealthLost; // 0x10        
         int32_t m_nTotalledDamageTaken; // 0x14        
+        float m_flTotalledDamageAbsorbed; // 0x18        
+        [[maybe_unused]] std::uint8_t pad_0x1c[0x4];
         
         // Static fields:
         static client::CTakeDamageResult &Get_EmptyResult() {return *reinterpret_cast<client::CTakeDamageResult*>(interfaces::g_schema->FindTypeScopeForModule("!GlobalTypes")->FindDeclaredClass("CTakeDamageResult")->GetStaticFields()[0]->m_pInstance);};
@@ -40,6 +42,7 @@ namespace source2sdk::client
     static_assert(offsetof(CTakeDamageResult, m_nDamageTaken) == 0xc);
     static_assert(offsetof(CTakeDamageResult, m_nTotalledHealthLost) == 0x10);
     static_assert(offsetof(CTakeDamageResult, m_nTotalledDamageTaken) == 0x14);
+    static_assert(offsetof(CTakeDamageResult, m_flTotalledDamageAbsorbed) == 0x18);
     
-    static_assert(sizeof(CTakeDamageResult) == 0x18);
+    static_assert(sizeof(CTakeDamageResult) == 0x20);
 };

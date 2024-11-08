@@ -14,10 +14,9 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x5a0
+    // Size: 0x5c8
     // Has VTable
     // Construct allowed
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkVarNames "string_t m_iszStackName"
     // static metadata: MNetworkVarNames "string_t m_iszOperatorName"
@@ -31,27 +30,27 @@ namespace source2sdk::client
     class CCitadelSoundOpvarSetOBB : public client::C_BaseEntity
     {
     public:
-        [[maybe_unused]] std::uint8_t pad_0x538[0x18]; // 0x538
+        [[maybe_unused]] std::uint8_t pad_0x560[0x18]; // 0x560
         // metadata: MNetworkEnable
-        CUtlSymbolLarge m_iszStackName; // 0x550        
+        CUtlSymbolLarge m_iszStackName; // 0x578        
         // metadata: MNetworkEnable
-        CUtlSymbolLarge m_iszOperatorName; // 0x558        
+        CUtlSymbolLarge m_iszOperatorName; // 0x580        
         // metadata: MNetworkEnable
-        CUtlSymbolLarge m_iszOpvarName; // 0x560        
+        CUtlSymbolLarge m_iszOpvarName; // 0x588        
         // metadata: MNetworkEnable
-        Vector m_vDistanceInnerMins; // 0x568        
+        Vector m_vDistanceInnerMins; // 0x590        
         // metadata: MNetworkEnable
-        Vector m_vDistanceInnerMaxs; // 0x574        
+        Vector m_vDistanceInnerMaxs; // 0x59c        
         // metadata: MNetworkEnable
-        Vector m_vDistanceOuterMins; // 0x580        
+        Vector m_vDistanceOuterMins; // 0x5a8        
         // metadata: MNetworkEnable
-        Vector m_vDistanceOuterMaxs; // 0x58c        
+        Vector m_vDistanceOuterMaxs; // 0x5b4        
         // metadata: MNetworkEnable
-        int32_t m_nAABBDirection; // 0x598        
-        [[maybe_unused]] std::uint8_t pad_0x59c[0x4];
+        int32_t m_nAABBDirection; // 0x5c0        
+        [[maybe_unused]] std::uint8_t pad_0x5c4[0x4];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CCitadelSoundOpvarSetOBB because it is not a standard-layout class
-    static_assert(sizeof(CCitadelSoundOpvarSetOBB) == 0x5a0);
+    static_assert(sizeof(CCitadelSoundOpvarSetOBB) == 0x5c8);
 };

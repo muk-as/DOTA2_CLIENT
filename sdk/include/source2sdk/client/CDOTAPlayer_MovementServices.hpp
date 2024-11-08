@@ -16,7 +16,6 @@ namespace source2sdk::client
     // Standard-layout class: false
     // Size: 0x1d8
     // Has VTable
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTAPlayer_MovementServices : public client::CPlayer_MovementServices
     {

@@ -15,11 +15,10 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x1890
+    // Size: 0x18e0
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkVarNames "string_t m_szOutpostName"
     // static metadata: MNetworkVarNames "string_t m_szInteractAbilityName"
@@ -27,15 +26,15 @@ namespace source2sdk::client
     class C_DOTA_BaseNPC_Watch_Tower : public client::C_DOTA_BaseNPC_Building
     {
     public:
-        client::ParticleIndex_t m_iRangeFX; // 0x1878        
-        [[maybe_unused]] std::uint8_t pad_0x187c[0x4]; // 0x187c
+        client::ParticleIndex_t m_iRangeFX; // 0x18c8        
+        [[maybe_unused]] std::uint8_t pad_0x18cc[0x4]; // 0x18cc
         // metadata: MNetworkEnable
-        CUtlSymbolLarge m_szOutpostName; // 0x1880        
+        CUtlSymbolLarge m_szOutpostName; // 0x18d0        
         // metadata: MNetworkEnable
-        CUtlSymbolLarge m_szInteractAbilityName; // 0x1888        
+        CUtlSymbolLarge m_szInteractAbilityName; // 0x18d8        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in C_DOTA_BaseNPC_Watch_Tower because it is not a standard-layout class
-    static_assert(sizeof(C_DOTA_BaseNPC_Watch_Tower) == 0x1890);
+    static_assert(sizeof(C_DOTA_BaseNPC_Watch_Tower) == 0x18e0);
 };

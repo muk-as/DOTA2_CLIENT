@@ -14,20 +14,19 @@ namespace source2sdk::client
     // Registered alignment: unknown
     // Alignment: unknown
     // Standard-layout class: false
-    // Size: 0x16f8
+    // Size: 0x1718
     // Has VTable
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Modifier_Ringmaster_Wheel_Mesmerize_Pull : public client::CDOTA_Buff
     {
     public:
-        float think_interval; // 0x16e8        
-        float mesmerize_radius; // 0x16ec        
-        float k_flCloseThreshold; // 0x16f0        
-        [[maybe_unused]] std::uint8_t pad_0x16f4[0x4];
+        float think_interval; // 0x1708        
+        float mesmerize_radius; // 0x170c        
+        float k_flCloseThreshold; // 0x1710        
+        [[maybe_unused]] std::uint8_t pad_0x1714[0x4];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Modifier_Ringmaster_Wheel_Mesmerize_Pull because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_Ringmaster_Wheel_Mesmerize_Pull) == 0x16f8);
+    static_assert(sizeof(CDOTA_Modifier_Ringmaster_Wheel_Mesmerize_Pull) == 0x1718);
 };

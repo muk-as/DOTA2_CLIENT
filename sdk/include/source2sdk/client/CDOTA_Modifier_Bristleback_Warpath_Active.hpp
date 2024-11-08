@@ -15,18 +15,17 @@ namespace source2sdk::client
     // Registered alignment: unknown
     // Alignment: unknown
     // Standard-layout class: false
-    // Size: 0x16f0
+    // Size: 0x1710
     // Has VTable
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Modifier_Bristleback_Warpath_Active : public client::CDOTA_Buff
     {
     public:
-        float active_view_angle_restriction; // 0x16e8        
-        client::ParticleIndex_t m_nScreenFXIndex; // 0x16ec        
+        float active_view_angle_restriction; // 0x1708        
+        client::ParticleIndex_t m_nScreenFXIndex; // 0x170c        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Modifier_Bristleback_Warpath_Active because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_Bristleback_Warpath_Active) == 0x16f0);
+    static_assert(sizeof(CDOTA_Modifier_Bristleback_Warpath_Active) == 0x1710);
 };

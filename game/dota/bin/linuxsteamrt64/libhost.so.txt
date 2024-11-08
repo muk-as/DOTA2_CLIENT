@@ -13,6 +13,7 @@
 0123456789
 0123456789abcdef
 0<	vcH
+0NETWORK_DISCONNECT_KICKED_VACNETABNORMALBEHAVIOR
 0NETWORK_DISCONNECT_REJECT_SERVERCDKEYAUTHINVALID
 0[]A\A]A^ÐAUATI
 0enum $1
@@ -32,6 +33,7 @@
 11IGameSystem
 12CMsgVector2D
 12CNETMsg_Tick
+12CThreadEvent
 12ISource2Host
 13CDotaMapUtils
 13CMsgTransform
@@ -368,6 +370,7 @@ A\ÐAWAVAUATA
 A\ÐAWAVAUATI
 A\ÐAWAVI
 A\ÐSH
+A\ÐUS
 A\ÐUSH
 A]A^A
 A]ÐAUATI
@@ -873,6 +876,7 @@ E;eP}4Mk
 E;l$8}8H
 ED$`H9
 ENetworkDisconnectionReason
+EProtoDebugVisiblity
 ERROR: Resource name "%s" has the incorrect extension "%s" for the specified resource type (expected "%s
 EXPORTSYSTEM_INTERFACE_VERSION_001
 EarlyInit_Tier0
@@ -1155,7 +1159,6 @@ H9z r
 H9z s
 H;E0sR
 H;G t`H;G
-H;G(tp
 H;z H
 H;z t
 HBm_bUseShadowFastPath
@@ -1278,7 +1281,6 @@ L$HdH3
 L$XdH3
 L$hdH3
 L$xdH3
-L9p }kH
 L9s v
 L9s vm
 L9t$ t9H
@@ -1796,7 +1798,7 @@ Player_DisconnectReason_ConvictedAccount
 Player_DisconnectReason_HostageKilling
 Player_DisconnectReason_Idle
 Player_DisconnectReason_InputAutomation
-Player_DisconnectReason_InputAutomation_Detail:E
+Player_DisconnectReason_InputAutomation_Detail
 Player_DisconnectReason_NoSteamLogin
 Player_DisconnectReason_NoSteamTicket
 Player_DisconnectReason_Suicide
@@ -1804,6 +1806,7 @@ Player_DisconnectReason_TK_Start
 Player_DisconnectReason_TeamHurting
 Player_DisconnectReason_TeamKilling
 Player_DisconnectReason_UntrustedAccount
+Player_DisconnectReason_VacNetAbnormalBehavior:E
 Player_DisconnectReason_VotedOff
 Please update your library.  If you compiled the program yourself, make sure that your headers are from the same version of Protocol Buffers as your link-time library.  (Version verification failed in
 PostProcessingSystem_001
@@ -2140,7 +2143,6 @@ T$ ~LH
 T$HdH3
 T$VH;G
 T$XdH3
-T$xdH3
 TD_OFFSET_NORMAL
 TD_OFFSET_PACKED
 TLS init function for
@@ -2337,9 +2339,9 @@ Z14V_stristr_fastPKcS0
 Z18g_nSequentialBytesIDv4_iE
 Z18g_nSequentialBytesIiE
 Z20_txnal_cow_string_D1Pv
-Z20g_flSequentialFloatsIDv4_fE
-Z20g_flSequentialFloatsIfE
+Z20g_nSequentialIndicesIDv4_fE
 Z20g_nSequentialIndicesIDv4_iE
+Z20g_nSequentialIndicesIfE
 Z20g_nSequentialIndicesIiE
 Z22Assert_ConditionFailedRK34_AssertCompileTimeConstantStruct_t
 Z22Assert_ConditionFailedRK34_AssertCompileTimeConstantStruct_tPKcz
@@ -2525,6 +2527,10 @@ ZN13CRawAllocator5AllocE18RawAllocatorType_tmPm
 ZN15CUtlSymbolTable9AddStringEPKcPb
 ZN15CUtlSymbolTableC1Eiib
 ZN15CUtlSymbolTableD1Ev
+ZN16CThreadSemaphoreD1Ev
+ZN17CThreadSyncObject8WaitImplEj
+ZN17CThreadSyncObjectD2Ev
+ZN22CThreadRWLock_FastReadC1Ev
 ZN24CUtlMemoryBlockAllocatorC1Eij18RawAllocatorType_t
 ZN24CUtlMemoryBlockAllocatorD1Ev
 ZN9__gnu_cxx13__scoped_lockD1Ev
@@ -6343,6 +6349,7 @@ ZStrsIwSt11char_traitsIwEERSt13basic_istreamIT_T0_ES6_St14_Resetiosflags
 ZStrsIwSt11char_traitsIwEERSt13basic_istreamIT_T0_ES6_St5_Setw
 ZStrsIwSt11char_traitsIwEERSt13basic_istreamIT_T0_ES6_St8_Setbase
 ZStrsIwSt11char_traitsIwEERSt13basic_istreamIT_T0_ES6_St8_SetfillIS3_E
+ZTI17CThreadSyncObject
 ZTIDd
 ZTIDe
 ZTIDf
@@ -7289,6 +7296,7 @@ d$0L+d$(H
 d$xPAQj
 data.rel.ro
 data_ == other.data
+debugprint_visibility
 decimal128
 decimal32
 decimal64
@@ -7302,7 +7310,6 @@ definition file imports the proto which defines the option
 delete
 deleted virtual method called
 delta_ignore
-demo_force_version
 dependency
 deprecated
 details
@@ -7546,10 +7553,8 @@ hidden alias for
 hltv_replay_flags
 host_computationtime
 host_computationtime_std_deviation
-host_framestarttime_std_deviation
-host_frametime
-host_frametime_std_deviation
-host_loss
+host_frame_dropped_pct_x10
+host_frame_irregular_arrival_pct_x10
 host_unfiltered_frametime
 hostname
 hyphen
@@ -7612,7 +7617,6 @@ java_multiple_files
 java_outer_classname
 java_package
 java_string_check_utf8
-jitter
 json_name
 jstype
 jstype is only allowed on int64, uint64, sint64, fixed64 or sfixed64 fields
@@ -7620,6 +7624,11 @@ k0X[]A\A]A^A
 k8}.H
 kPH+kHH
 kP}+H
+k_EProtoDebugVisibility_Always
+k_EProtoDebugVisibility_GC
+k_EProtoDebugVisibility_Never
+k_EProtoDebugVisibility_Server
+k_EProtoDebugVisibility_ValveServer
 kp|	1
 l$0H;T$8trH
 l$0tTH
@@ -7633,6 +7642,7 @@ leading_detached_comments
 left-curly-bracket
 left-parenthesis
 left-square-bracket
+legacy_host_loss
 len >= input_len
 length_ >= n
 less-than-sign
@@ -7657,7 +7667,6 @@ long double
 lowprecisionuv
 lowprecisionuv1
 lseek64
-m8H;-b
 m_bBakedTwoSided
 m_bCanBatchWithDynamicShaderConstants
 m_bDrawLast
@@ -7699,6 +7708,7 @@ missing
 model_default_preview_sequence_name
 mt19937
 must be unique within
+mxH;-8o
 n L9l
 n8ATUH
 nL4=nL4=nL4=nL4=IM
@@ -7994,7 +8004,6 @@ tick_interval
 tickcount
 tls_get_addr
 to start from the outermost scope
-tools
 towlower_l
 towupper_l
 trailing_comments
@@ -8018,7 +8027,7 @@ u	HcD
 u/H#D
 u8D	k
 uE[A\A]A
-uP[A\A]A
+uH[A\A]A
 uR[A\A]A
 ua8CHtdH
 ubD9kH

@@ -14,19 +14,18 @@ namespace source2sdk::client
     // Registered alignment: unknown
     // Alignment: unknown
     // Standard-layout class: false
-    // Size: 0x16f0
+    // Size: 0x1710
     // Has VTable
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Modifier_FacelessVoid_Chronosphere_SelfBuff : public client::CDOTA_Buff
     {
     public:
-        float radius; // 0x16e8        
-        bool square; // 0x16ec        
-        [[maybe_unused]] std::uint8_t pad_0x16ed[0x3];
+        float radius; // 0x1708        
+        bool square; // 0x170c        
+        [[maybe_unused]] std::uint8_t pad_0x170d[0x3];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Modifier_FacelessVoid_Chronosphere_SelfBuff because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_FacelessVoid_Chronosphere_SelfBuff) == 0x16f0);
+    static_assert(sizeof(CDOTA_Modifier_FacelessVoid_Chronosphere_SelfBuff) == 0x1710);
 };

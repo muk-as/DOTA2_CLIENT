@@ -24,6 +24,9 @@
 		<snippet name="TreasurePreviewPanel">
 			<Panel>
 				<DOTAUIEconSetPreview id="StickerPreview" stickercamera="sticker_camera_Close" rotateonmousemove="true" rotationlimits="1.5 -1.5 1.5 -1.5" stickeranim="stock_idle" yawaxis="pitch" pitchaxis="roll" />
+				<Panel class="StickerNumber">
+					<Label text="{d:sticker_number}" />
+				</Panel>
 			</Panel>
 		</snippet>
 	</snippets>
@@ -110,7 +113,7 @@
 				</Panel>
 				<Panel class="ItemDetailsDivider HorizontalCenter" />
 				<Panel class="SecondaryActionsButtons HorizontalCenter LeftRightFlow">
-					<TextButton class="PopupButton BattlePass2022ButtonSecondary Small" text="#DOTA_TabName_StickerStash" onactivate="DOTAShowCollectionPageGlobalInterfaceItemsTab( &apos;Stickers&apos; )" />
+					<TextButton class="PopupButton BattlePass2022ButtonSecondary Small" text="#DOTA_StickerSplash_ViewCollection" onactivate="DOTAStickerPackShowDetailedOwnedContents()" />
 					<Panel id="SelectedItemMarketPurchaseRow" class="SelectedItemDetailsRow">
 						<Panel class="PurchaseButtonContainer">
 							<Button id="SelectedItemMarketPurchaseButton" class="PurchaseButtonBase PopupButton BattlePass2022ButtonSecondary Small" onactivate="DOTAStickerPackPurchaseSelectedStickerOnMarket()">
@@ -138,6 +141,12 @@
 						<Panel id="PackOverviewTeamContainer" />
 					</Panel>
 					<Panel id="PreviewQualityControls" class="QualitySelector">
+						<RadioButton id="QualitySelection_owned" class="QualitySelection" group="StickerQuality" onactivate="DOTAStickerPackShowOwned()">
+							<Panel class="QualityRadioBox OwnedRadioBox">
+								<Panel class="Dot" />
+							</Panel>
+							<Label class="QualityName" text="#DOTA_Sticker_OwnedStickers" />
+						</RadioButton>
 						<Panel id="TreasureHelpIcon" class="InfoIcon" />
 						<Label class="Title" text="#DOTA_Sticker_QualitySelectionLabel" />
 						<RadioButton id="QualitySelection_unique" class="QualitySelection" group="StickerQuality" selected="true" onactivate="DOTAStickerPackOverrideQuality( Basic )">
@@ -166,6 +175,9 @@
 						</RadioButton>
 					</Panel>
 					<Panel id="DetailedTreasureContents" />
+					<Label class="CollectedCount">
+						<Label text="#DOTA_Sticker_CollectedCount" />
+					</Label>
 				</Panel>
 			</Panel>
 		</Panel>

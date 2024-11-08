@@ -17,7 +17,6 @@ namespace source2sdk::client
     // Standard-layout class: false
     // Size: 0x1d8
     // Has VTable
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkVarNames "ButtonBitMask_t m_nToggleButtonDownMask"
     // static metadata: MNetworkVarNames "float32 m_flMaxspeed"

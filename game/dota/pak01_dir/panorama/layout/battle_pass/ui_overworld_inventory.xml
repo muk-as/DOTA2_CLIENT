@@ -75,13 +75,18 @@
 				<Image class="TokensShadow" src="s2r://panorama/images/events/crownfall/overworld/tokens_bg_shadow_png.vtex" />
 			</Panel>
 			<Panel class="InventoryBackground">
+				<Panel class="TokenGifting" onmouseover="UIShowTextTooltip( #DOTA_Crownfall_Overworld_GiftedTokensTooltip )" onmouseout="UIHideTextTooltip()">
+					<Label class="TokenGiftCount LabelMedium" text="{d:gift_tokens_received}" />
+					<DOTAParticleScenePanel class="TokenGiftParticles" hittest="false" particleName="particles/ui/ui_godrays_soft_glow.vpcf" renderdeferred="true" particleonly="false" startActive="true" cameraOrigin="0 0 120" lookAt="0 0 0" fov="60" squarePixels="true" />
+					<Image class="TokenGiftIcon" src="s2r://panorama/images/events/crownfall/overworld/token_gift_icon_png.vtex" />
+				</Panel>
 				<Panel class="BgEdge Left" />
 				<Panel class="BgFill" />
 				<Panel class="BgEdge Right" />
 				<Panel class="CloseButton" onactivate="DOTAOverworldInventoryClearTokenSelection()" />
 			</Panel>
-			<AsyncDataPanel id="InventoryContainer" state="{d:inventory_loading_state}" loading-text="#DOTA_Crownfall_Overworld_Inventory_Loading" error-text="#DOTA_Crownfall_Overworld_Inventory_FailedToLoad">
-				<Panel class="OverworldInventory AsyncSuccessContainer">
+			<AsyncDataPanel id="InventoryContainer" hittest="false" state="{d:inventory_loading_state}" loading-text="#DOTA_Crownfall_Overworld_Inventory_Loading" error-text="#DOTA_Crownfall_Overworld_Inventory_FailedToLoad">
+				<Panel class="OverworldInventory AsyncSuccessContainer" hittest="false">
 					<Panel class="TitleContainer">
 						<Label class="LabelSmall TokensTitle LighterGreyText ActLabel" text="{s:act_number}" />
 						<Label class="TitleSmall TokensTitle LightestGreyText" text="#DOTA_Crownfall_OverworldInventory_Inventory" />

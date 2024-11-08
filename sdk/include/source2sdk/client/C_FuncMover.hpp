@@ -14,10 +14,9 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x7d8
+    // Size: 0x820
     // Has VTable
     // Construct allowed
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class C_FuncMover : public client::C_BaseToggle
     {
@@ -26,5 +25,5 @@ namespace source2sdk::client
     };
     #pragma pack(pop)
     
-    static_assert(sizeof(C_FuncMover) == 0x7d8);
+    static_assert(sizeof(C_FuncMover) == 0x820);
 };

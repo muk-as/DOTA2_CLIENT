@@ -14,11 +14,10 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0xab8
+    // Size: 0xb08
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkExcludeByName "m_flAnimTime"
     // static metadata: MNetworkExcludeByUserGroup "m_flCycle"
@@ -32,20 +31,21 @@ namespace source2sdk::client
     class C_DOTA_Item_Rune : public client::CBaseAnimatingActivity
     {
     public:
+        [[maybe_unused]] std::uint8_t pad_0x848[0x8]; // 0x848
         // metadata: MNetworkEnable
-        int32_t m_iRuneType; // 0x800        
+        int32_t m_iRuneType; // 0x850        
         // metadata: MNetworkEnable
-        float m_flRuneTime; // 0x804        
+        float m_flRuneTime; // 0x854        
         // metadata: MNetworkEnable
-        int32_t m_nMapLocationTeam; // 0x808        
+        int32_t m_nMapLocationTeam; // 0x858        
         // metadata: MNetworkEnable
-        char m_szLocation[512]; // 0x80c        
-        int32_t m_iOldRuneType; // 0xa0c        
-        bool m_bShowingTooltip; // 0xa10        
-        [[maybe_unused]] std::uint8_t pad_0xa11[0xa7];
+        char m_szLocation[512]; // 0x85c        
+        int32_t m_iOldRuneType; // 0xa5c        
+        bool m_bShowingTooltip; // 0xa60        
+        [[maybe_unused]] std::uint8_t pad_0xa61[0xa7];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in C_DOTA_Item_Rune because it is not a standard-layout class
-    static_assert(sizeof(C_DOTA_Item_Rune) == 0xab8);
+    static_assert(sizeof(C_DOTA_Item_Rune) == 0xb08);
 };
