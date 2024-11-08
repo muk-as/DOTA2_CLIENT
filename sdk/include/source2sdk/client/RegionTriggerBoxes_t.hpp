@@ -19,9 +19,12 @@ namespace source2sdk::client
     struct RegionTriggerBoxes_t
     {
     public:
+        // metadata: MNetworkEnable
         mathlib_extended::AABB_t regionBox; // 0x0        
+        // metadata: MNetworkEnable
         Vector vRegionBoxOrigin; // 0x18        
         [[maybe_unused]] std::uint8_t pad_0x24[0x4]; // 0x24
+        // metadata: MNetworkEnable
         CUtlString strRegionName; // 0x28        
     };
     #pragma pack(pop)

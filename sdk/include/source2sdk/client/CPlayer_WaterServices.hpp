@@ -16,7 +16,6 @@ namespace source2sdk::client
     // Standard-layout class: false
     // Size: 0x40
     // Has VTable
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CPlayer_WaterServices : public client::CPlayerPawnComponent
     {

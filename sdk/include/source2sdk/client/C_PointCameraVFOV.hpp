@@ -14,24 +14,23 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x5a8
+    // Size: 0x5d0
     // Has VTable
     // Construct allowed
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class C_PointCameraVFOV : public client::C_PointCamera
     {
     public:
-        float m_flVerticalFOV; // 0x5a0        
-        [[maybe_unused]] std::uint8_t pad_0x5a4[0x4];
+        float m_flVerticalFOV; // 0x5c8        
+        [[maybe_unused]] std::uint8_t pad_0x5cc[0x4];
         
         // Datamap fields:
-        // float m_flDofFarCrisp; // 0x580
-        // float m_flDofFarBlurry; // 0x584
-        // float m_flDofTiltToGround; // 0x588
+        // float m_flDofFarCrisp; // 0x5a8
+        // float m_flDofFarBlurry; // 0x5ac
+        // float m_flDofTiltToGround; // 0x5b0
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in C_PointCameraVFOV because it is not a standard-layout class
-    static_assert(sizeof(C_PointCameraVFOV) == 0x5a8);
+    static_assert(sizeof(C_PointCameraVFOV) == 0x5d0);
 };
