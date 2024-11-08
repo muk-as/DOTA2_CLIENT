@@ -21,7 +21,6 @@ namespace source2sdk::client
     // Size: 0x1b0
     // Has VTable
     // Construct disallowed
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkVarNames "Color m_Color"
     // static metadata: MNetworkVarNames "Color m_SecondaryColor"
@@ -93,7 +92,6 @@ namespace source2sdk::client
     {
     public:
         [[maybe_unused]] std::uint8_t pad_0x08[0x30]; // 0x8
-        // metadata: MNetworkDisable
         // metadata: MNetworkChangeAccessorFieldPathIndex
         entity2::CNetworkVarChainer __m_pChainEntity; // 0x38        
         [[maybe_unused]] std::uint8_t pad_0x60[0x15]; // 0x60

@@ -14,11 +14,10 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x1b98
+    // Size: 0x1be8
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkVarNames "int m_nAimAngle"
     #pragma pack(push, 1)
@@ -27,11 +26,11 @@ namespace source2sdk::client
     public:
         // metadata: MNetworkEnable
         // metadata: MNetworkPriority "32"
-        int32_t m_nAimAngle; // 0x1b90        
-        int32_t m_iPoseParameterAim; // 0x1b94        
+        int32_t m_nAimAngle; // 0x1be0        
+        int32_t m_iPoseParameterAim; // 0x1be4        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in C_DOTA_Unit_Hero_Pugna because it is not a standard-layout class
-    static_assert(sizeof(C_DOTA_Unit_Hero_Pugna) == 0x1b98);
+    static_assert(sizeof(C_DOTA_Unit_Hero_Pugna) == 0x1be8);
 };

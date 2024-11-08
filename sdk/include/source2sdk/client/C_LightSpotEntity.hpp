@@ -14,10 +14,9 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x7e0
+    // Size: 0x828
     // Has VTable
     // Construct allowed
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class C_LightSpotEntity : public client::C_LightEntity
     {
@@ -26,5 +25,5 @@ namespace source2sdk::client
     };
     #pragma pack(pop)
     
-    static_assert(sizeof(C_LightSpotEntity) == 0x7e0);
+    static_assert(sizeof(C_LightSpotEntity) == 0x828);
 };

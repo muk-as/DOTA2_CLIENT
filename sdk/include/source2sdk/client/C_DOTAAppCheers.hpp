@@ -15,11 +15,10 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x550
+    // Size: 0x578
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkVarNames "int16 m_nRadiantCheers"
     // static metadata: MNetworkVarNames "int16 m_nRadiantBronzeCheers"
@@ -36,28 +35,28 @@ namespace source2sdk::client
     {
     public:
         // metadata: MNetworkEnable
-        int16_t m_nRadiantCheers; // 0x538        
+        int16_t m_nRadiantCheers; // 0x560        
         // metadata: MNetworkEnable
-        int16_t m_nRadiantBronzeCheers; // 0x53a        
+        int16_t m_nRadiantBronzeCheers; // 0x562        
         // metadata: MNetworkEnable
-        int16_t m_nRadiantSilverCheers; // 0x53c        
+        int16_t m_nRadiantSilverCheers; // 0x564        
         // metadata: MNetworkEnable
-        int16_t m_nRadiantGoldCheers; // 0x53e        
+        int16_t m_nRadiantGoldCheers; // 0x566        
         // metadata: MNetworkEnable
-        client::ECrowdLevel m_nRadiantCrowdLevel; // 0x540        
+        client::ECrowdLevel m_nRadiantCrowdLevel; // 0x568        
         // metadata: MNetworkEnable
-        int16_t m_nDireCheers; // 0x544        
+        int16_t m_nDireCheers; // 0x56c        
         // metadata: MNetworkEnable
-        int16_t m_nDireBronzeCheers; // 0x546        
+        int16_t m_nDireBronzeCheers; // 0x56e        
         // metadata: MNetworkEnable
-        int16_t m_nDireSilverCheers; // 0x548        
+        int16_t m_nDireSilverCheers; // 0x570        
         // metadata: MNetworkEnable
-        int16_t m_nDireGoldCheers; // 0x54a        
+        int16_t m_nDireGoldCheers; // 0x572        
         // metadata: MNetworkEnable
-        client::ECrowdLevel m_nDireCrowdLevel; // 0x54c        
+        client::ECrowdLevel m_nDireCrowdLevel; // 0x574        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in C_DOTAAppCheers because it is not a standard-layout class
-    static_assert(sizeof(C_DOTAAppCheers) == 0x550);
+    static_assert(sizeof(C_DOTAAppCheers) == 0x578);
 };

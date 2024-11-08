@@ -15,7 +15,6 @@ namespace source2sdk::client
     // Standard-layout class: true
     // Size: 0x18
     // Has Trivial Destructor
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_ReconnectInfo
     {

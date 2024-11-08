@@ -16,7 +16,6 @@ namespace source2sdk::client
     // Standard-layout class: true
     // Size: 0x38
     // Has VTable
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkVarNames "attrib_definition_index_t m_iAttributeDefinitionIndex"
     // static metadata: MNetworkVarNames "float m_flValue"

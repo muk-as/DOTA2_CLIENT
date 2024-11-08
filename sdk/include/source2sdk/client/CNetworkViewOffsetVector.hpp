@@ -22,18 +22,21 @@ namespace source2sdk::client
     {
     public:
         [[maybe_unused]] std::uint8_t pad_0x00[0x10]; // 0x0
+        // metadata: MNetworkEnable
         // metadata: MNetworkBitCount "10"
         // metadata: MNetworkMinValue "-64,000000"
         // metadata: MNetworkMaxValue "64,000000"
         // metadata: MNetworkEncodeFlags "4"
         // metadata: MNetworkChangeCallback "CNetworkViewOffsetVector"
         CNetworkedQuantizedFloat m_vecX; // 0x10        
+        // metadata: MNetworkEnable
         // metadata: MNetworkBitCount "10"
         // metadata: MNetworkMinValue "-64,000000"
         // metadata: MNetworkMaxValue "64,000000"
         // metadata: MNetworkEncodeFlags "4"
         // metadata: MNetworkChangeCallback "CNetworkViewOffsetVector"
         CNetworkedQuantizedFloat m_vecY; // 0x18        
+        // metadata: MNetworkEnable
         // metadata: MNetworkBitCount "20"
         // metadata: MNetworkMinValue "0,000000"
         // metadata: MNetworkMaxValue "128,000000"

@@ -47,32 +47,19 @@ namespace source2sdk::client
         // metadata: MNetworkPriority "32"
         // metadata: MNetworkChangeCallback "animationLayerCycleReset"
         int32_t m_nNewSequenceParity; // 0x68        
-        // metadata: MNetworkDisable
         entity2::GameTime_t m_flSeqStartTime; // 0x6c        
-        // metadata: MNetworkDisable
         float m_flCachedSequenceCycleRate; // 0x70        
-        // metadata: MNetworkDisable
         int32_t m_nFlags; // 0x74        
-        // metadata: MNetworkDisable
         bool m_bSequenceFinished; // 0x78        
         [[maybe_unused]] std::uint8_t pad_0x79[0x3]; // 0x79
-        // metadata: MNetworkDisable
         entity2::GameTime_t m_flKillStartTime; // 0x7c        
-        // metadata: MNetworkDisable
         float m_flKillRate; // 0x80        
-        // metadata: MNetworkDisable
         entity2::GameTime_t m_flLayerSuppressChangeTime; // 0x84        
-        // metadata: MNetworkDisable
         int32_t m_nActivity; // 0x88        
-        // metadata: MNetworkDisable
         int32_t m_nPriority; // 0x8c        
-        // metadata: MNetworkDisable
         float m_flLastEventCycle; // 0x90        
-        // metadata: MNetworkDisable
         float m_flFadeInFraction; // 0x94        
-        // metadata: MNetworkDisable
         float m_flFadeOutFraction; // 0x98        
-        // metadata: MNetworkDisable
         bool m_bHasFadedIn; // 0x9c        
         [[maybe_unused]] std::uint8_t pad_0x9d[0xb];
     };
