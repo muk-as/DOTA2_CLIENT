@@ -29,7 +29,6 @@ namespace source2sdk::client
         float m_flBossFightDuration; // 0x8        
         int32_t m_nComboBaseScore; // 0xc        
         client::CShmupPlayerDefinition m_player; // 0x10        
-        [[maybe_unused]] std::uint8_t pad_0x6c[0x4]; // 0x6c
         client::CShmupBossDefinition m_boss; // 0x70        
     };
     #pragma pack(pop)
