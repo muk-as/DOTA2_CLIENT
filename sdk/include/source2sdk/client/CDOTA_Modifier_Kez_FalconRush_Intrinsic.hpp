@@ -20,10 +20,11 @@ namespace source2sdk::client
     class CDOTA_Modifier_Kez_FalconRush_Intrinsic : public client::CDOTA_Buff
     {
     public:
-        float base_attack_rate; // 0x1708        
-        int32_t attack_speed_factor; // 0x170c        
-        float m_flAttackRate; // 0x1710        
-        [[maybe_unused]] std::uint8_t pad_0x1714[0x1c];
+        float base_attack_rate_katana; // 0x1708        
+        float base_attack_rate_sai; // 0x170c        
+        int32_t attack_speed_factor; // 0x1710        
+        float m_flAttackRate; // 0x1714        
+        [[maybe_unused]] std::uint8_t pad_0x1718[0x18];
     };
     #pragma pack(pop)
     

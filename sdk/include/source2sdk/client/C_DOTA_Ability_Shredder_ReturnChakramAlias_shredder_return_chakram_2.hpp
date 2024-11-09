@@ -14,10 +14,9 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x5d8
+    // Size: 0x600
     // Has VTable
     // Construct allowed
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class C_DOTA_Ability_Shredder_ReturnChakramAlias_shredder_return_chakram_2 : public client::C_DOTA_Ability_Shredder_ReturnChakram
     {
@@ -26,5 +25,5 @@ namespace source2sdk::client
     };
     #pragma pack(pop)
     
-    static_assert(sizeof(C_DOTA_Ability_Shredder_ReturnChakramAlias_shredder_return_chakram_2) == 0x5d8);
+    static_assert(sizeof(C_DOTA_Ability_Shredder_ReturnChakramAlias_shredder_return_chakram_2) == 0x600);
 };

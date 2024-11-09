@@ -15,10 +15,9 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x810
+    // Size: 0x858
     // Has VTable
     // Construct allowed
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MEntityAllowsPortraitWorldSpawn
     // static metadata: MNetworkVarNames "HMaterialStrong m_hDecalMaterial"
@@ -37,31 +36,31 @@ namespace source2sdk::client
         // metadata: MNetworkEnable
         // m_hDecalMaterial has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CStrongHandle<resourcesystem::InfoForResourceTypeIMaterial2> m_hDecalMaterial;
-        char m_hDecalMaterial[0x8]; // 0x7d8        
+        char m_hDecalMaterial[0x8]; // 0x820        
         // metadata: MNetworkEnable
         // metadata: MNetworkChangeCallback "OnDecalDimensionsChanged"
-        float m_flWidth; // 0x7e0        
+        float m_flWidth; // 0x828        
         // metadata: MNetworkEnable
         // metadata: MNetworkChangeCallback "OnDecalDimensionsChanged"
-        float m_flHeight; // 0x7e4        
+        float m_flHeight; // 0x82c        
         // metadata: MNetworkEnable
         // metadata: MNetworkChangeCallback "OnDecalDimensionsChanged"
-        float m_flDepth; // 0x7e8        
+        float m_flDepth; // 0x830        
         // metadata: MNetworkEnable
-        uint32_t m_nRenderOrder; // 0x7ec        
+        uint32_t m_nRenderOrder; // 0x834        
         // metadata: MNetworkEnable
-        bool m_bProjectOnWorld; // 0x7f0        
+        bool m_bProjectOnWorld; // 0x838        
         // metadata: MNetworkEnable
-        bool m_bProjectOnCharacters; // 0x7f1        
+        bool m_bProjectOnCharacters; // 0x839        
         // metadata: MNetworkEnable
-        bool m_bProjectOnWater; // 0x7f2        
-        [[maybe_unused]] std::uint8_t pad_0x7f3[0x1]; // 0x7f3
+        bool m_bProjectOnWater; // 0x83a        
+        [[maybe_unused]] std::uint8_t pad_0x83b[0x1]; // 0x83b
         // metadata: MNetworkEnable
-        float m_flDepthSortBias; // 0x7f4        
-        [[maybe_unused]] std::uint8_t pad_0x7f8[0x18];
+        float m_flDepthSortBias; // 0x83c        
+        [[maybe_unused]] std::uint8_t pad_0x840[0x18];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in C_EnvDecal because it is not a standard-layout class
-    static_assert(sizeof(C_EnvDecal) == 0x810);
+    static_assert(sizeof(C_EnvDecal) == 0x858);
 };

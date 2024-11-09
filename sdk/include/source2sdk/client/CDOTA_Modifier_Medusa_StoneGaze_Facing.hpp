@@ -16,26 +16,25 @@ namespace source2sdk::client
     // Registered alignment: unknown
     // Alignment: unknown
     // Standard-layout class: false
-    // Size: 0x1720
+    // Size: 0x1740
     // Has VTable
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Modifier_Medusa_StoneGaze_Facing : public client::CDOTA_Buff
     {
     public:
-        float face_duration; // 0x16e8        
-        float stone_duration; // 0x16ec        
-        float duration; // 0x16f0        
-        float vision_cone; // 0x16f4        
-        float m_flAccumulatedTime; // 0x16f8        
-        [[maybe_unused]] std::uint8_t pad_0x16fc[0x4]; // 0x16fc
-        client::CountdownTimer ctFacing; // 0x1700        
-        bool m_bAlreadyStoned; // 0x1718        
-        [[maybe_unused]] std::uint8_t pad_0x1719[0x3]; // 0x1719
-        client::ParticleIndex_t m_nFXIndex; // 0x171c        
+        float face_duration; // 0x1708        
+        float stone_duration; // 0x170c        
+        float duration; // 0x1710        
+        float vision_cone; // 0x1714        
+        float m_flAccumulatedTime; // 0x1718        
+        [[maybe_unused]] std::uint8_t pad_0x171c[0x4]; // 0x171c
+        client::CountdownTimer ctFacing; // 0x1720        
+        bool m_bAlreadyStoned; // 0x1738        
+        [[maybe_unused]] std::uint8_t pad_0x1739[0x3]; // 0x1739
+        client::ParticleIndex_t m_nFXIndex; // 0x173c        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Modifier_Medusa_StoneGaze_Facing because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_Medusa_StoneGaze_Facing) == 0x1720);
+    static_assert(sizeof(CDOTA_Modifier_Medusa_StoneGaze_Facing) == 0x1740);
 };

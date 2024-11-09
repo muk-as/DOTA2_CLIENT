@@ -14,11 +14,10 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x7d8
+    // Size: 0x820
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MEntityAllowsPortraitWorldSpawn
     #pragma pack(push, 1)
@@ -28,5 +27,5 @@ namespace source2sdk::client
     };
     #pragma pack(pop)
     
-    static_assert(sizeof(CDOTA_Match3_EffectsEntity) == 0x7d8);
+    static_assert(sizeof(CDOTA_Match3_EffectsEntity) == 0x820);
 };

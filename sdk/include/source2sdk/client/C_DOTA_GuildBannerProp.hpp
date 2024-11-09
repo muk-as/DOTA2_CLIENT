@@ -14,20 +14,19 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0xaf8
+    // Size: 0xb40
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MEntityAllowsPortraitWorldSpawn
     #pragma pack(push, 1)
     class C_DOTA_GuildBannerProp : public client::C_DynamicProp
     {
     public:
-        [[maybe_unused]] std::uint8_t pad_0xab0[0x48];
+        [[maybe_unused]] std::uint8_t pad_0xaf8[0x48];
     };
     #pragma pack(pop)
     
-    static_assert(sizeof(C_DOTA_GuildBannerProp) == 0xaf8);
+    static_assert(sizeof(C_DOTA_GuildBannerProp) == 0xb40);
 };

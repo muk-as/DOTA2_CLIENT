@@ -19,11 +19,10 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x1ba0
+    // Size: 0x1bf0
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkVarNames "EHANDLE m_hDoubleShotTarget"
     #pragma pack(push, 1)
@@ -34,11 +33,11 @@ namespace source2sdk::client
         // metadata: MNetworkPriority "32"
         // m_hDoubleShotTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<client::C_BaseEntity> m_hDoubleShotTarget;
-        char m_hDoubleShotTarget[0x4]; // 0x1b90        
-        QAngle m_qStartAngle; // 0x1b94        
+        char m_hDoubleShotTarget[0x4]; // 0x1be0        
+        QAngle m_qStartAngle; // 0x1be4        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in C_DOTA_Unit_Hero_Muerta because it is not a standard-layout class
-    static_assert(sizeof(C_DOTA_Unit_Hero_Muerta) == 0x1ba0);
+    static_assert(sizeof(C_DOTA_Unit_Hero_Muerta) == 0x1bf0);
 };

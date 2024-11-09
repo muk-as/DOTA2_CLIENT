@@ -20,8 +20,8 @@ namespace source2sdk::client
     class CRandStopwatch : public client::CStopwatchBase
     {
     public:
-        float m_minInterval; // 0xc        
-        float m_maxInterval; // 0x10        
+        float m_flMinInterval; // 0xc        
+        float m_flMaxInterval; // 0x10        
     };
     #pragma pack(pop)
     

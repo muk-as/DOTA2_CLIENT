@@ -14,11 +14,10 @@ namespace source2sdk::client
     // Registered alignment: unknown
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x538
+    // Size: 0x560
     // Has VTable
     // Is Abstract
     // MNetworkNoBase
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class C_DOTABaseCustomHeroPickRules : public client::C_BaseEntity
     {
@@ -27,5 +26,5 @@ namespace source2sdk::client
     };
     #pragma pack(pop)
     
-    static_assert(sizeof(C_DOTABaseCustomHeroPickRules) == 0x538);
+    static_assert(sizeof(C_DOTABaseCustomHeroPickRules) == 0x560);
 };

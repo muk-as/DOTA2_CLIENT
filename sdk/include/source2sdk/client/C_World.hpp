@@ -16,11 +16,10 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x818
+    // Size: 0x860
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkVarNames "HMaterialStrong m_skyBoxFaces"
     // static metadata: MNetworkVarNames "HRenderTextureStrong m_hHeightFogTexture"
@@ -32,18 +31,18 @@ namespace source2sdk::client
         // metadata: MNetworkEnable
         // m_skyBoxFaces has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CStrongHandle<resourcesystem::InfoForResourceTypeIMaterial2> m_skyBoxFaces[6];
-        char m_skyBoxFaces[0x30]; // 0x7d8        
+        char m_skyBoxFaces[0x30]; // 0x820        
         // metadata: MNetworkEnable
         // m_hHeightFogTexture has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CStrongHandle<resourcesystem::InfoForResourceTypeCTextureBase> m_hHeightFogTexture;
-        char m_hHeightFogTexture[0x8]; // 0x808        
+        char m_hHeightFogTexture[0x8]; // 0x850        
         // metadata: MNetworkEnable
         // m_hHeightFogMaskTexture has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CStrongHandle<resourcesystem::InfoForResourceTypeCTextureBase> m_hHeightFogMaskTexture;
-        char m_hHeightFogMaskTexture[0x8]; // 0x810        
+        char m_hHeightFogMaskTexture[0x8]; // 0x858        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in C_World because it is not a standard-layout class
-    static_assert(sizeof(C_World) == 0x818);
+    static_assert(sizeof(C_World) == 0x860);
 };

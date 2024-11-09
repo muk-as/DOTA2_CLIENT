@@ -17,7 +17,6 @@ namespace source2sdk::client
     // Standard-layout class: false
     // Size: 0x28
     // Has VTable
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkVarNames "uint32 m_bvDisabledHitGroups"
     #pragma pack(push, 1)
