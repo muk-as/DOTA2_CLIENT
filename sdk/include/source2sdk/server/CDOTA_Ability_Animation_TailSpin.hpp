@@ -14,20 +14,19 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x5a8
+    // Size: 0x5d0
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Ability_Animation_TailSpin : public server::CDOTABaseAbility
     {
     public:
-        float m_flPlaybackRate; // 0x5a0        
-        float animation_time; // 0x5a4        
+        float m_flPlaybackRate; // 0x5c8        
+        float animation_time; // 0x5cc        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Ability_Animation_TailSpin because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Ability_Animation_TailSpin) == 0x5a8);
+    static_assert(sizeof(CDOTA_Ability_Animation_TailSpin) == 0x5d0);
 };

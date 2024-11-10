@@ -14,20 +14,19 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x5e0
+    // Size: 0x608
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Ability_Seasonal_TI11_Duel : public client::C_DOTABaseAbility
     {
     public:
-        float model_scale; // 0x5d8        
-        [[maybe_unused]] std::uint8_t pad_0x5dc[0x4];
+        float model_scale; // 0x600        
+        [[maybe_unused]] std::uint8_t pad_0x604[0x4];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Ability_Seasonal_TI11_Duel because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Ability_Seasonal_TI11_Duel) == 0x5e0);
+    static_assert(sizeof(CDOTA_Ability_Seasonal_TI11_Duel) == 0x608);
 };

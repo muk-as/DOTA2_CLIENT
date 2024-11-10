@@ -14,18 +14,17 @@ namespace source2sdk::server
     // Registered alignment: unknown
     // Alignment: unknown
     // Standard-layout class: false
-    // Size: 0x1700
+    // Size: 0x1720
     // Has VTable
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Modifier_BountyHunter_Track_Bear_Trap : public server::CDOTA_Modifier_Invisible
     {
     public:
-        bool m_bActivated; // 0x16f8        
-        [[maybe_unused]] std::uint8_t pad_0x16f9[0x7];
+        bool m_bActivated; // 0x1718        
+        [[maybe_unused]] std::uint8_t pad_0x1719[0x7];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Modifier_BountyHunter_Track_Bear_Trap because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_BountyHunter_Track_Bear_Trap) == 0x1700);
+    static_assert(sizeof(CDOTA_Modifier_BountyHunter_Track_Bear_Trap) == 0x1720);
 };

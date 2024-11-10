@@ -16,7 +16,6 @@ namespace source2sdk::client
     // Size: 0x30
     // Has VTable
     // Has Trivial Destructor
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     struct sndopvarlatchdata_t
     {

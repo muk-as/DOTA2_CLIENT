@@ -14,11 +14,10 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x798
+    // Size: 0x7c0
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Beastmaster_Axe : public server::CBaseAnimatingActivity
     {
@@ -27,5 +26,5 @@ namespace source2sdk::server
     };
     #pragma pack(pop)
     
-    static_assert(sizeof(CDOTA_Beastmaster_Axe) == 0x798);
+    static_assert(sizeof(CDOTA_Beastmaster_Axe) == 0x7c0);
 };

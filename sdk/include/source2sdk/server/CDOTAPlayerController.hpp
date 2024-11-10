@@ -24,11 +24,10 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x910
+    // Size: 0x930
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkUserGroupProxy "CDOTAPlayerController"
     // static metadata: MNetworkExcludeByName "m_angRotation"
@@ -59,8 +58,6 @@ namespace source2sdk::server
     // static metadata: MNetworkVarNames "int m_iHighPriorityScore"
     // static metadata: MNetworkVarNames "AbilityID_t m_quickBuyItems"
     // static metadata: MNetworkVarNames "bool m_quickBuyIsPurchasable"
-    // static metadata: MNetworkVarNames "float m_flFrameTime"
-    // static metadata: MNetworkVarNames "float m_flFrameTimeStdDev"
     // static metadata: MNetworkVarNames "float m_flUnfilteredFrameTime"
     // static metadata: MNetworkVarNames "bool m_bUsingAssistedCameraOperator"
     // static metadata: MNetworkVarNames "bool m_bUsingCameraMan"
@@ -78,134 +75,128 @@ namespace source2sdk::server
     class CDOTAPlayerController : public server::CBasePlayerController
     {
     public:
-        [[maybe_unused]] std::uint8_t pad_0x748[0x8]; // 0x748
-        int32_t m_iMinimapMove; // 0x750        
+        [[maybe_unused]] std::uint8_t pad_0x770[0x8]; // 0x770
+        int32_t m_iMinimapMove; // 0x778        
         // metadata: MNetworkEnable
         // metadata: MNetworkUserGroup "DOTACommentatorTable"
         // metadata: MNetworkPriority "32"
-        int32_t m_iCursor[2]; // 0x754        
+        int32_t m_iCursor[2]; // 0x77c        
         // metadata: MNetworkEnable
         // metadata: MNetworkUserGroup "DOTACommentatorTable"
-        int32_t m_iSpectatorClickBehavior; // 0x75c        
+        int32_t m_iSpectatorClickBehavior; // 0x784        
         // metadata: MNetworkEnable
         // metadata: MNetworkUserGroup "DOTACommentatorTable"
-        float m_flAspectRatio; // 0x760        
+        float m_flAspectRatio; // 0x788        
         // metadata: MNetworkEnable
         // metadata: MNetworkUserGroup "DOTACommentatorTable"
         // m_hSpectatorQueryUnit has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<server::CBaseEntity> m_hSpectatorQueryUnit;
-        char m_hSpectatorQueryUnit[0x4]; // 0x764        
+        char m_hSpectatorQueryUnit[0x4]; // 0x78c        
         // metadata: MNetworkEnable
         // metadata: MNetworkUserGroup "DOTACommentatorTable"
-        int32_t m_iStatsPanel; // 0x768        
+        int32_t m_iStatsPanel; // 0x790        
         // metadata: MNetworkEnable
         // metadata: MNetworkUserGroup "DOTACommentatorTable"
-        int32_t m_iShopPanel; // 0x76c        
+        int32_t m_iShopPanel; // 0x794        
         // metadata: MNetworkEnable
         // metadata: MNetworkUserGroup "DOTACommentatorTable"
-        client::ShopItemViewMode_t m_iShopViewMode; // 0x770        
+        client::ShopItemViewMode_t m_iShopViewMode; // 0x798        
         // metadata: MNetworkEnable
         // metadata: MNetworkUserGroup "DOTACommentatorTable"
-        int32_t m_iStatsDropdownCategory; // 0x774        
+        int32_t m_iStatsDropdownCategory; // 0x79c        
         // metadata: MNetworkEnable
         // metadata: MNetworkUserGroup "DOTACommentatorTable"
-        int32_t m_iStatsDropdownSort; // 0x778        
+        int32_t m_iStatsDropdownSort; // 0x7a0        
         // metadata: MNetworkEnable
         // metadata: MNetworkUserGroup "DOTACommentatorTable"
-        char m_szShopString[64]; // 0x77c        
+        char m_szShopString[64]; // 0x7a4        
         // metadata: MNetworkEnable
         // metadata: MNetworkUserGroup "DOTACommentatorTable"
-        bool m_bInShowCaseMode; // 0x7bc        
-        [[maybe_unused]] std::uint8_t pad_0x7bd[0x3]; // 0x7bd
+        bool m_bInShowCaseMode; // 0x7e4        
+        [[maybe_unused]] std::uint8_t pad_0x7e5[0x3]; // 0x7e5
         // metadata: MNetworkEnable
         // metadata: MNetworkUserGroup "DOTACommentatorTable"
-        float m_flCameraZoomAmount; // 0x7c0        
+        float m_flCameraZoomAmount; // 0x7e8        
         // metadata: MNetworkEnable
         // metadata: MNetworkUserGroup "DOTACommentatorTable"
-        int32_t m_iHighPriorityScore; // 0x7c4        
+        int32_t m_iHighPriorityScore; // 0x7ec        
         // metadata: MNetworkEnable
         // metadata: MNetworkUserGroup "DOTATeamMatesAndCommentatorTable"
-        client::AbilityID_t m_quickBuyItems[9]; // 0x7c8        
+        client::AbilityID_t m_quickBuyItems[9]; // 0x7f0        
         // metadata: MNetworkEnable
         // metadata: MNetworkUserGroup "DOTATeamMatesAndCommentatorTable"
-        bool m_quickBuyIsPurchasable[9]; // 0x7ec        
-        [[maybe_unused]] std::uint8_t pad_0x7f5[0x3]; // 0x7f5
+        bool m_quickBuyIsPurchasable[9]; // 0x814        
+        [[maybe_unused]] std::uint8_t pad_0x81d[0x3]; // 0x81d
         // metadata: MNetworkEnable
         // metadata: MNetworkUserGroup "DOTACommentatorTable"
-        float m_flFrameTime; // 0x7f8        
+        float m_flUnfilteredFrameTime; // 0x820        
         // metadata: MNetworkEnable
-        // metadata: MNetworkUserGroup "DOTACommentatorTable"
-        float m_flFrameTimeStdDev; // 0x7fc        
+        bool m_bUsingAssistedCameraOperator; // 0x824        
         // metadata: MNetworkEnable
-        // metadata: MNetworkUserGroup "DOTACommentatorTable"
-        float m_flUnfilteredFrameTime; // 0x800        
+        bool m_bUsingCameraMan; // 0x825        
+        [[maybe_unused]] std::uint8_t pad_0x826[0x2]; // 0x826
         // metadata: MNetworkEnable
-        bool m_bUsingAssistedCameraOperator; // 0x804        
+        int32_t m_nPlayerAssistFlags; // 0x828        
+        float m_flHighPriorityScoreTimeStamp; // 0x82c        
+        float m_flExecuteOrdersLagCompensation; // 0x830        
         // metadata: MNetworkEnable
-        bool m_bUsingCameraMan; // 0x805        
-        [[maybe_unused]] std::uint8_t pad_0x806[0x2]; // 0x806
+        int32_t m_iMusicStatus; // 0x834        
         // metadata: MNetworkEnable
-        int32_t m_nPlayerAssistFlags; // 0x808        
-        float m_flHighPriorityScoreTimeStamp; // 0x80c        
-        float m_flExecuteOrdersLagCompensation; // 0x810        
+        float m_flMusicOperatorVals[3]; // 0x838        
         // metadata: MNetworkEnable
-        int32_t m_iMusicStatus; // 0x814        
-        // metadata: MNetworkEnable
-        float m_flMusicOperatorVals[3]; // 0x818        
-        // metadata: MNetworkEnable
-        int32_t m_iMusicOperatorVals[4]; // 0x824        
-        [[maybe_unused]] std::uint8_t pad_0x834[0x4]; // 0x834
-        server::CountdownTimer m_MusicRestTime; // 0x838        
+        int32_t m_iMusicOperatorVals[4]; // 0x844        
+        [[maybe_unused]] std::uint8_t pad_0x854[0x4]; // 0x854
+        server::CountdownTimer m_MusicRestTime; // 0x858        
         // metadata: MNetworkEnable
         // m_hKillCamUnit has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<server::CBaseEntity> m_hKillCamUnit;
-        char m_hKillCamUnit[0x4]; // 0x850        
-        Vector m_vecCrosshairTracePos; // 0x854        
-        CEntityIndex m_iCrosshairEntity; // 0x860        
+        char m_hKillCamUnit[0x4]; // 0x870        
+        Vector m_vecCrosshairTracePos; // 0x874        
+        CEntityIndex m_iCrosshairEntity; // 0x880        
         // metadata: MNetworkEnable
-        client::PlayerID_t m_nPlayerID; // 0x864        
+        client::PlayerID_t m_nPlayerID; // 0x884        
         // metadata: MNetworkEnable
         // m_hAssignedHero has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<server::CBaseEntity> m_hAssignedHero;
-        char m_hAssignedHero[0x4]; // 0x868        
-        [[maybe_unused]] std::uint8_t pad_0x86c[0xc]; // 0x86c
-        bool m_bTeleportRequiresHalt; // 0x878        
-        bool m_bChannelRequiresHalt; // 0x879        
-        [[maybe_unused]] std::uint8_t pad_0x87a[0x2]; // 0x87a
+        char m_hAssignedHero[0x4]; // 0x888        
+        [[maybe_unused]] std::uint8_t pad_0x88c[0xc]; // 0x88c
+        bool m_bTeleportRequiresHalt; // 0x898        
+        bool m_bChannelRequiresHalt; // 0x899        
+        [[maybe_unused]] std::uint8_t pad_0x89a[0x2]; // 0x89a
         // metadata: MNetworkEnable
         // metadata: MNetworkUserGroup "LocalPlayerExclusive"
-        int32_t m_nServerOrderSequenceNumber; // 0x87c        
-        float m_flLastOrderTime; // 0x880        
-        float m_flLastKnownActiveTime; // 0x884        
-        entity2::GameTime_t m_flLastReconnectTime; // 0x888        
-        entity2::GameTime_t m_fLastSuggestionTime; // 0x88c        
-        [[maybe_unused]] std::uint8_t pad_0x890[0x20]; // 0x890
-        bool m_bWantsRandomHero; // 0x8b0        
-        bool m_bFullyJoinedServer; // 0x8b1        
-        [[maybe_unused]] std::uint8_t pad_0x8b2[0x2]; // 0x8b2
-        int32_t m_nCheatDetectOrderReferenceCommandNumber; // 0x8b4        
-        client::PlayerID_t m_iSwapPreferencePlayerID; // 0x8b8        
-        uint32_t m_nCoachListenMask; // 0x8bc        
+        int32_t m_nServerOrderSequenceNumber; // 0x89c        
+        float m_flLastOrderTime; // 0x8a0        
+        float m_flLastKnownActiveTime; // 0x8a4        
+        entity2::GameTime_t m_flLastReconnectTime; // 0x8a8        
+        entity2::GameTime_t m_fLastSuggestionTime; // 0x8ac        
+        [[maybe_unused]] std::uint8_t pad_0x8b0[0x20]; // 0x8b0
+        bool m_bWantsRandomHero; // 0x8d0        
+        bool m_bFullyJoinedServer; // 0x8d1        
+        [[maybe_unused]] std::uint8_t pad_0x8d2[0x2]; // 0x8d2
+        int32_t m_nCheatDetectOrderReferenceCommandNumber; // 0x8d4        
+        client::PlayerID_t m_iSwapPreferencePlayerID; // 0x8d8        
+        uint32_t m_nCoachListenMask; // 0x8dc        
         // metadata: MNetworkEnable
-        int32_t m_nCachedCoachedTeam; // 0x8c0        
-        float m_flLastChatWheelTime[2]; // 0x8c4        
-        float m_flLastChatWheelAudioTime[2]; // 0x8cc        
-        float m_flLastChatWheelAllChatAudioTime[2]; // 0x8d4        
-        float m_flLastChatWheelSprayTime; // 0x8dc        
-        float m_flLastChatWheelLongCooldownTime; // 0x8e0        
-        float m_flLastPingTime; // 0x8e4        
-        float m_flPingAllowance; // 0x8e8        
-        float m_flLastMapLineTime; // 0x8ec        
-        float m_flMapLineAllowance; // 0x8f0        
-        float m_flLastVersusBehaviorTime; // 0x8f4        
-        float m_flVersusBehaviorAllowance; // 0x8f8        
-        uint8_t m_pOrderRetirementHistory[10]; // 0x8fc        
-        uint16_t m_nOrderRetirementSum; // 0x906        
-        int32_t m_nOrderRetirementLastTick; // 0x908        
-        [[maybe_unused]] std::uint8_t pad_0x90c[0x4];
+        int32_t m_nCachedCoachedTeam; // 0x8e0        
+        float m_flLastChatWheelTime[2]; // 0x8e4        
+        float m_flLastChatWheelAudioTime[2]; // 0x8ec        
+        float m_flLastChatWheelAllChatAudioTime[2]; // 0x8f4        
+        float m_flLastChatWheelSprayTime; // 0x8fc        
+        float m_flLastChatWheelLongCooldownTime; // 0x900        
+        float m_flLastPingTime; // 0x904        
+        float m_flPingAllowance; // 0x908        
+        float m_flLastMapLineTime; // 0x90c        
+        float m_flMapLineAllowance; // 0x910        
+        float m_flLastVersusBehaviorTime; // 0x914        
+        float m_flVersusBehaviorAllowance; // 0x918        
+        uint8_t m_pOrderRetirementHistory[10]; // 0x91c        
+        uint16_t m_nOrderRetirementSum; // 0x926        
+        int32_t m_nOrderRetirementLastTick; // 0x928        
+        [[maybe_unused]] std::uint8_t pad_0x92c[0x4];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTAPlayerController because it is not a standard-layout class
-    static_assert(sizeof(CDOTAPlayerController) == 0x910);
+    static_assert(sizeof(CDOTAPlayerController) == 0x930);
 };

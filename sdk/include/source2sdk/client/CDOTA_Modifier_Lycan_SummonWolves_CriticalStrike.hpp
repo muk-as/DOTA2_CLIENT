@@ -15,19 +15,18 @@ namespace source2sdk::client
     // Registered alignment: unknown
     // Alignment: unknown
     // Standard-layout class: false
-    // Size: 0x1708
+    // Size: 0x1728
     // Has VTable
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Modifier_Lycan_SummonWolves_CriticalStrike : public client::CDOTA_Buff
     {
     public:
-        client::CountdownTimer m_CooldownTimer; // 0x16e8        
-        int32_t maim_chance; // 0x1700        
-        float maim_duration; // 0x1704        
+        client::CountdownTimer m_CooldownTimer; // 0x1708        
+        int32_t maim_chance; // 0x1720        
+        float maim_duration; // 0x1724        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Modifier_Lycan_SummonWolves_CriticalStrike because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_Lycan_SummonWolves_CriticalStrike) == 0x1708);
+    static_assert(sizeof(CDOTA_Modifier_Lycan_SummonWolves_CriticalStrike) == 0x1728);
 };

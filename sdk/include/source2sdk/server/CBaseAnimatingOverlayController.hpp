@@ -15,7 +15,7 @@ namespace source2sdk::server
     // Registered alignment: unknown
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x520
+    // Size: 0x538
     // Has VTable
     // 
     // static metadata: MNetworkVarNames "CAnimationLayer m_AnimOverlay"
@@ -28,11 +28,11 @@ namespace source2sdk::server
         // metadata: MNetworkChangeCallback "OnOverlaysChanged2"
         // m_AnimOverlay has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVectorEmbeddedNetworkVar<server::CAnimationLayer> m_AnimOverlay;
-        char m_AnimOverlay[0x50]; // 0x4c8        
-        [[maybe_unused]] std::uint8_t pad_0x518[0x8];
+        char m_AnimOverlay[0x68]; // 0x4c8        
+        [[maybe_unused]] std::uint8_t pad_0x530[0x8];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CBaseAnimatingOverlayController because it is not a standard-layout class
-    static_assert(sizeof(CBaseAnimatingOverlayController) == 0x520);
+    static_assert(sizeof(CBaseAnimatingOverlayController) == 0x538);
 };

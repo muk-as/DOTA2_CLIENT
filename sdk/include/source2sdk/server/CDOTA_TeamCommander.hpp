@@ -25,7 +25,6 @@ namespace source2sdk::server
     // Standard-layout class: true
     // Size: 0x1488
     // Has VTable
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_TeamCommander
     {

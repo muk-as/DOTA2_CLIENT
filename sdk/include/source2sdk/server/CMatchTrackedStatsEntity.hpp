@@ -14,11 +14,10 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x508
+    // Size: 0x548
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CMatchTrackedStatsEntity : public server::CBaseTrackedStatsEntity
     {
@@ -27,5 +26,5 @@ namespace source2sdk::server
     };
     #pragma pack(pop)
     
-    static_assert(sizeof(CMatchTrackedStatsEntity) == 0x508);
+    static_assert(sizeof(CMatchTrackedStatsEntity) == 0x548);
 };

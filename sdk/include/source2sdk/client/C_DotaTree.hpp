@@ -16,7 +16,6 @@ namespace source2sdk::client
     // Size: 0x30
     // Has VTable
     // Is Abstract
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class C_DotaTree
     {

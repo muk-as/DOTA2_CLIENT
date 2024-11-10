@@ -15,7 +15,6 @@ namespace source2sdk::client
     // Standard-layout class: true
     // Size: 0x58
     // Has VTable
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkVarNames "int32 m_iGlowType"
     // static metadata: MNetworkVarNames "int32 m_iGlowTeam"

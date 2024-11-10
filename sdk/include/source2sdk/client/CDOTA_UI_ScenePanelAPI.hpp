@@ -17,7 +17,7 @@ namespace source2sdk::client
     // Has Trivial Constructor
     // Has Trivial Destructor
     // 
-    // static metadata: MPulseProvideFeatureTag "Panorama"
+    // static metadata: MPulseProvideFeatureTag "2"
     // static metadata: MPulseLibraryBindings
     #pragma pack(push, 1)
     class CDOTA_UI_ScenePanelAPI

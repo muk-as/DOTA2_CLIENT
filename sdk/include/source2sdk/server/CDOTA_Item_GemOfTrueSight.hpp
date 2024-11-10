@@ -19,24 +19,23 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x658
+    // Size: 0x680
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Item_GemOfTrueSight : public server::CDOTA_Item
     {
     public:
-        int32_t m_iTempViewer; // 0x648        
-        int32_t m_iTeam; // 0x64c        
-        int32_t m_nFXIndex; // 0x650        
+        int32_t m_iTempViewer; // 0x670        
+        int32_t m_iTeam; // 0x674        
+        int32_t m_nFXIndex; // 0x678        
         // m_hThinker has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<server::CBaseEntity> m_hThinker;
-        char m_hThinker[0x4]; // 0x654        
+        char m_hThinker[0x4]; // 0x67c        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Item_GemOfTrueSight because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Item_GemOfTrueSight) == 0x658);
+    static_assert(sizeof(CDOTA_Item_GemOfTrueSight) == 0x680);
 };

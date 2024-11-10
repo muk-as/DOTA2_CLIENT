@@ -17,7 +17,6 @@ namespace source2sdk::server
     // Size: 0x17b8
     // Has VTable
     // MNetworkNoBase
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkVarNames "bool m_CurrentHeroAvailable"
     #pragma pack(push, 1)
@@ -25,7 +24,6 @@ namespace source2sdk::server
     {
     public:
         [[maybe_unused]] std::uint8_t pad_0x00[0x30]; // 0x0
-        // metadata: MNetworkDisable
         // metadata: MNetworkChangeAccessorFieldPathIndex
         entity2::CNetworkVarChainer __m_pChainEntity; // 0x30        
         [[maybe_unused]] std::uint8_t pad_0x58[0xa18]; // 0x58

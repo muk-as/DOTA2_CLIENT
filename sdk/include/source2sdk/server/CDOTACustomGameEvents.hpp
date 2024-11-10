@@ -14,10 +14,9 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x5a8
+    // Size: 0x5d0
     // Has VTable
     // Construct allowed
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTACustomGameEvents : public server::CDOTAGameEvents
     {
@@ -34,5 +33,5 @@ namespace source2sdk::server
     };
     #pragma pack(pop)
     
-    static_assert(sizeof(CDOTACustomGameEvents) == 0x5a8);
+    static_assert(sizeof(CDOTACustomGameEvents) == 0x5d0);
 };

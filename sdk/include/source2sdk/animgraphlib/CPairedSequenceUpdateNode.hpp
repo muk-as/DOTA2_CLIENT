@@ -14,7 +14,7 @@ namespace source2sdk::animgraphlib
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x80
+    // Size: 0x88
     // Has VTable
     // Construct allowed
     // 
@@ -23,11 +23,11 @@ namespace source2sdk::animgraphlib
     class CPairedSequenceUpdateNode : public animgraphlib::CSequenceUpdateNodeBase
     {
     public:
-        CGlobalSymbol m_sPairedSequenceRole; // 0x70        
-        [[maybe_unused]] std::uint8_t pad_0x78[0x8];
+        CGlobalSymbol m_sPairedSequenceRole; // 0x78        
+        [[maybe_unused]] std::uint8_t pad_0x80[0x8];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CPairedSequenceUpdateNode because it is not a standard-layout class
-    static_assert(sizeof(CPairedSequenceUpdateNode) == 0x80);
+    static_assert(sizeof(CPairedSequenceUpdateNode) == 0x88);
 };

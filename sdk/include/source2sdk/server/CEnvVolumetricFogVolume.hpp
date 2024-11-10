@@ -14,10 +14,9 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x500
+    // Size: 0x530
     // Has VTable
     // Construct allowed
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MEntityAllowsPortraitWorldSpawn
     // static metadata: MNetworkVarNames "bool m_bActive"
@@ -32,6 +31,8 @@ namespace source2sdk::server
     // static metadata: MNetworkVarNames "float m_fIndirectLightStrength"
     // static metadata: MNetworkVarNames "float m_fSunLightStrength"
     // static metadata: MNetworkVarNames "float m_fNoiseStrength"
+    // static metadata: MNetworkVarNames "Color m_TintColor"
+    // static metadata: MNetworkVarNames "bool m_bOverrideTintColor"
     // static metadata: MNetworkVarNames "bool m_bOverrideIndirectLightStrength"
     // static metadata: MNetworkVarNames "bool m_bOverrideSunLightStrength"
     // static metadata: MNetworkVarNames "bool m_bOverrideNoiseStrength"
@@ -41,40 +42,44 @@ namespace source2sdk::server
     {
     public:
         // metadata: MNetworkEnable
-        bool m_bActive; // 0x4b8        
-        [[maybe_unused]] std::uint8_t pad_0x4b9[0x3]; // 0x4b9
+        bool m_bActive; // 0x4e0        
+        [[maybe_unused]] std::uint8_t pad_0x4e1[0x3]; // 0x4e1
         // metadata: MNetworkEnable
-        Vector m_vBoxMins; // 0x4bc        
+        Vector m_vBoxMins; // 0x4e4        
         // metadata: MNetworkEnable
-        Vector m_vBoxMaxs; // 0x4c8        
+        Vector m_vBoxMaxs; // 0x4f0        
         // metadata: MNetworkEnable
-        bool m_bStartDisabled; // 0x4d4        
-        [[maybe_unused]] std::uint8_t pad_0x4d5[0x3]; // 0x4d5
+        bool m_bStartDisabled; // 0x4fc        
+        [[maybe_unused]] std::uint8_t pad_0x4fd[0x3]; // 0x4fd
         // metadata: MNetworkEnable
-        float m_flStrength; // 0x4d8        
+        float m_flStrength; // 0x500        
         // metadata: MNetworkEnable
-        int32_t m_nFalloffShape; // 0x4dc        
+        int32_t m_nFalloffShape; // 0x504        
         // metadata: MNetworkEnable
-        float m_flFalloffExponent; // 0x4e0        
+        float m_flFalloffExponent; // 0x508        
         // metadata: MNetworkEnable
-        float m_flHeightFogDepth; // 0x4e4        
+        float m_flHeightFogDepth; // 0x50c        
         // metadata: MNetworkEnable
-        float m_fHeightFogEdgeWidth; // 0x4e8        
+        float m_fHeightFogEdgeWidth; // 0x510        
         // metadata: MNetworkEnable
-        float m_fIndirectLightStrength; // 0x4ec        
+        float m_fIndirectLightStrength; // 0x514        
         // metadata: MNetworkEnable
-        float m_fSunLightStrength; // 0x4f0        
+        float m_fSunLightStrength; // 0x518        
         // metadata: MNetworkEnable
-        float m_fNoiseStrength; // 0x4f4        
+        float m_fNoiseStrength; // 0x51c        
         // metadata: MNetworkEnable
-        bool m_bOverrideIndirectLightStrength; // 0x4f8        
+        Color m_TintColor; // 0x520        
         // metadata: MNetworkEnable
-        bool m_bOverrideSunLightStrength; // 0x4f9        
+        bool m_bOverrideTintColor; // 0x524        
         // metadata: MNetworkEnable
-        bool m_bOverrideNoiseStrength; // 0x4fa        
+        bool m_bOverrideIndirectLightStrength; // 0x525        
         // metadata: MNetworkEnable
-        bool m_bAllowLPVIndirect; // 0x4fb        
-        [[maybe_unused]] std::uint8_t pad_0x4fc[0x4];
+        bool m_bOverrideSunLightStrength; // 0x526        
+        // metadata: MNetworkEnable
+        bool m_bOverrideNoiseStrength; // 0x527        
+        // metadata: MNetworkEnable
+        bool m_bAllowLPVIndirect; // 0x528        
+        [[maybe_unused]] std::uint8_t pad_0x529[0x7];
         
         // Datamap fields:
         // bool InputEnable; // 0x0
@@ -83,5 +88,5 @@ namespace source2sdk::server
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CEnvVolumetricFogVolume because it is not a standard-layout class
-    static_assert(sizeof(CEnvVolumetricFogVolume) == 0x500);
+    static_assert(sizeof(CEnvVolumetricFogVolume) == 0x530);
 };

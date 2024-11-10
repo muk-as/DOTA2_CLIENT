@@ -14,11 +14,10 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x660
+    // Size: 0x688
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Item_Tier4Token : public server::CDOTA_Item_TierToken
     {
@@ -27,5 +26,5 @@ namespace source2sdk::server
     };
     #pragma pack(pop)
     
-    static_assert(sizeof(CDOTA_Item_Tier4Token) == 0x660);
+    static_assert(sizeof(CDOTA_Item_Tier4Token) == 0x688);
 };

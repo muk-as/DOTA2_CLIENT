@@ -14,10 +14,9 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0xa10
+    // Size: 0xa58
     // Has VTable
     // Construct allowed
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class C_NetTestBaseCombatCharacter : public client::C_BaseCombatCharacter
     {
@@ -26,5 +25,5 @@ namespace source2sdk::client
     };
     #pragma pack(pop)
     
-    static_assert(sizeof(C_NetTestBaseCombatCharacter) == 0xa10);
+    static_assert(sizeof(C_NetTestBaseCombatCharacter) == 0xa58);
 };

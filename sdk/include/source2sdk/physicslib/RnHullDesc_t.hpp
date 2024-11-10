@@ -15,7 +15,7 @@ namespace source2sdk::physicslib
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x110
+    // Size: 0x118
     // Construct allowed
     // 
     // static metadata: MGetKV3ClassDefaults
@@ -23,10 +23,10 @@ namespace source2sdk::physicslib
     struct RnHullDesc_t : public physicslib::RnShapeDesc_t
     {
     public:
-        physicslib::RnHull_t m_Hull; // 0x18        
+        physicslib::RnHull_t m_Hull; // 0x20        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in RnHullDesc_t because it is not a standard-layout class
-    static_assert(sizeof(RnHullDesc_t) == 0x110);
+    static_assert(sizeof(RnHullDesc_t) == 0x118);
 };

@@ -14,20 +14,19 @@ namespace source2sdk::client
     // Registered alignment: unknown
     // Alignment: unknown
     // Standard-layout class: false
-    // Size: 0x16f8
+    // Size: 0x1718
     // Has VTable
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Modifier_Item_AeonDisk : public client::CDOTA_Buff_Item
     {
     public:
-        int32_t bonus_health; // 0x16e8        
-        int32_t bonus_mana; // 0x16ec        
-        int32_t health_threshold_pct; // 0x16f0        
-        float buff_duration; // 0x16f4        
+        int32_t bonus_health; // 0x1708        
+        int32_t bonus_mana; // 0x170c        
+        int32_t health_threshold_pct; // 0x1710        
+        float buff_duration; // 0x1714        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Modifier_Item_AeonDisk because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_Item_AeonDisk) == 0x16f8);
+    static_assert(sizeof(CDOTA_Modifier_Item_AeonDisk) == 0x1718);
 };

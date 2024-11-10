@@ -17,8 +17,8 @@ namespace source2sdk::pulse_runtime_lib
     // Has Trivial Constructor
     // Has Trivial Destructor
     // 
-    // static metadata: MPulseProvideFeatureTag "PulseFakeEntities"
     // static metadata: MPulseLibraryBindings
+    // static metadata: MPulseProvideFeatureTag "16"
     #pragma pack(push, 1)
     class FakeEntityDerivedB_tAPI
     {

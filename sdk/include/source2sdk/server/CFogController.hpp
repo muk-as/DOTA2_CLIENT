@@ -15,11 +15,10 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x528
+    // Size: 0x550
     // Has VTable
     // Construct allowed
     // MNetworkNoBase
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MEntityAllowsPortraitWorldSpawn
     // static metadata: MNetworkVarNames "fogparams_t m_fog"
@@ -28,10 +27,10 @@ namespace source2sdk::server
     {
     public:
         // metadata: MNetworkEnable
-        server::fogparams_t m_fog; // 0x4b8        
-        bool m_bUseAngles; // 0x520        
-        [[maybe_unused]] std::uint8_t pad_0x521[0x3]; // 0x521
-        int32_t m_iChangedVariables; // 0x524        
+        server::fogparams_t m_fog; // 0x4e0        
+        bool m_bUseAngles; // 0x548        
+        [[maybe_unused]] std::uint8_t pad_0x549[0x3]; // 0x549
+        int32_t m_iChangedVariables; // 0x54c        
         
         // Datamap fields:
         // float InputSetStartDist; // 0x0
@@ -56,5 +55,5 @@ namespace source2sdk::server
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CFogController because it is not a standard-layout class
-    static_assert(sizeof(CFogController) == 0x528);
+    static_assert(sizeof(CFogController) == 0x550);
 };

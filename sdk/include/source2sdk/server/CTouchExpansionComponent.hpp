@@ -17,7 +17,6 @@ namespace source2sdk::server
     // Standard-layout class: false
     // Size: 0x50
     // Has VTable
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CTouchExpansionComponent : public entity2::CEntityComponent
     {

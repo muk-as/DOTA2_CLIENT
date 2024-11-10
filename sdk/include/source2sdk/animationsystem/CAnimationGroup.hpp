@@ -17,7 +17,7 @@ namespace source2sdk::animationsystem
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: true
-    // Size: 0x130
+    // Size: 0x148
     // Has VTable
     // Construct allowed
     // 
@@ -47,7 +47,10 @@ namespace source2sdk::animationsystem
         // m_szScripts has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<CBufferString> m_szScripts;
         char m_szScripts[0x18]; // 0x110        
-        [[maybe_unused]] std::uint8_t pad_0x128[0x8];
+        // m_AdditionalExtRefs has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+        // CUtlVector<CStrongHandleVoid> m_AdditionalExtRefs;
+        char m_AdditionalExtRefs[0x18]; // 0x128        
+        [[maybe_unused]] std::uint8_t pad_0x140[0x8];
     };
     #pragma pack(pop)
     
@@ -58,6 +61,7 @@ namespace source2sdk::animationsystem
     static_assert(offsetof(CAnimationGroup, m_directHSeqGroup_Handle) == 0x90);
     static_assert(offsetof(CAnimationGroup, m_decodeKey) == 0x98);
     static_assert(offsetof(CAnimationGroup, m_szScripts) == 0x110);
+    static_assert(offsetof(CAnimationGroup, m_AdditionalExtRefs) == 0x128);
     
-    static_assert(sizeof(CAnimationGroup) == 0x130);
+    static_assert(sizeof(CAnimationGroup) == 0x148);
 };

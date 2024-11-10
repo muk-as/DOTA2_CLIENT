@@ -27,70 +27,69 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x9e0
+    // Size: 0xa08
     // Has VTable
     // Construct allowed
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CItemGeneric : public server::CItem
     {
     public:
-        [[maybe_unused]] std::uint8_t pad_0x870[0x8]; // 0x870
-        bool m_bHasTriggerRadius; // 0x878        
-        bool m_bHasPickupRadius; // 0x879        
-        [[maybe_unused]] std::uint8_t pad_0x87a[0x2]; // 0x87a
-        float m_flPickupRadiusSqr; // 0x87c        
-        float m_flTriggerRadiusSqr; // 0x880        
-        entity2::GameTime_t m_flLastPickupCheck; // 0x884        
-        bool m_bPlayerCounterListenerAdded; // 0x888        
-        bool m_bPlayerInTriggerRadius; // 0x889        
-        [[maybe_unused]] std::uint8_t pad_0x88a[0x6]; // 0x88a
+        [[maybe_unused]] std::uint8_t pad_0x898[0x8]; // 0x898
+        bool m_bHasTriggerRadius; // 0x8a0        
+        bool m_bHasPickupRadius; // 0x8a1        
+        [[maybe_unused]] std::uint8_t pad_0x8a2[0x2]; // 0x8a2
+        float m_flPickupRadiusSqr; // 0x8a4        
+        float m_flTriggerRadiusSqr; // 0x8a8        
+        entity2::GameTime_t m_flLastPickupCheck; // 0x8ac        
+        bool m_bPlayerCounterListenerAdded; // 0x8b0        
+        bool m_bPlayerInTriggerRadius; // 0x8b1        
+        [[maybe_unused]] std::uint8_t pad_0x8b2[0x6]; // 0x8b2
         // m_hSpawnParticleEffect has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CStrongHandle<resourcesystem::InfoForResourceTypeIParticleSystemDefinition> m_hSpawnParticleEffect;
-        char m_hSpawnParticleEffect[0x8]; // 0x890        
-        CUtlSymbolLarge m_pAmbientSoundEffect; // 0x898        
-        bool m_bAutoStartAmbientSound; // 0x8a0        
-        [[maybe_unused]] std::uint8_t pad_0x8a1[0x7]; // 0x8a1
-        CUtlSymbolLarge m_pSpawnScriptFunction; // 0x8a8        
+        char m_hSpawnParticleEffect[0x8]; // 0x8b8        
+        CUtlSymbolLarge m_pAmbientSoundEffect; // 0x8c0        
+        bool m_bAutoStartAmbientSound; // 0x8c8        
+        [[maybe_unused]] std::uint8_t pad_0x8c9[0x7]; // 0x8c9
+        CUtlSymbolLarge m_pSpawnScriptFunction; // 0x8d0        
         // m_hPickupParticleEffect has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CStrongHandle<resourcesystem::InfoForResourceTypeIParticleSystemDefinition> m_hPickupParticleEffect;
-        char m_hPickupParticleEffect[0x8]; // 0x8b0        
-        CUtlSymbolLarge m_pPickupSoundEffect; // 0x8b8        
-        CUtlSymbolLarge m_pPickupScriptFunction; // 0x8c0        
+        char m_hPickupParticleEffect[0x8]; // 0x8d8        
+        CUtlSymbolLarge m_pPickupSoundEffect; // 0x8e0        
+        CUtlSymbolLarge m_pPickupScriptFunction; // 0x8e8        
         // m_hTimeoutParticleEffect has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CStrongHandle<resourcesystem::InfoForResourceTypeIParticleSystemDefinition> m_hTimeoutParticleEffect;
-        char m_hTimeoutParticleEffect[0x8]; // 0x8c8        
-        CUtlSymbolLarge m_pTimeoutSoundEffect; // 0x8d0        
-        CUtlSymbolLarge m_pTimeoutScriptFunction; // 0x8d8        
-        CUtlSymbolLarge m_pPickupFilterName; // 0x8e0        
+        char m_hTimeoutParticleEffect[0x8]; // 0x8f0        
+        CUtlSymbolLarge m_pTimeoutSoundEffect; // 0x8f8        
+        CUtlSymbolLarge m_pTimeoutScriptFunction; // 0x900        
+        CUtlSymbolLarge m_pPickupFilterName; // 0x908        
         // m_hPickupFilter has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<server::CBaseFilter> m_hPickupFilter;
-        char m_hPickupFilter[0x4]; // 0x8e8        
-        [[maybe_unused]] std::uint8_t pad_0x8ec[0x4]; // 0x8ec
-        entity2::CEntityIOOutput m_OnPickup; // 0x8f0        
-        entity2::CEntityIOOutput m_OnTimeout; // 0x918        
-        entity2::CEntityIOOutput m_OnTriggerStartTouch; // 0x940        
-        entity2::CEntityIOOutput m_OnTriggerTouch; // 0x968        
-        entity2::CEntityIOOutput m_OnTriggerEndTouch; // 0x990        
-        CUtlSymbolLarge m_pAllowPickupScriptFunction; // 0x9b8        
-        float m_flPickupRadius; // 0x9c0        
-        float m_flTriggerRadius; // 0x9c4        
-        CUtlSymbolLarge m_pTriggerSoundEffect; // 0x9c8        
-        bool m_bGlowWhenInTrigger; // 0x9d0        
-        Color m_glowColor; // 0x9d1        
-        bool m_bUseable; // 0x9d5        
-        [[maybe_unused]] std::uint8_t pad_0x9d6[0x2]; // 0x9d6
+        char m_hPickupFilter[0x4]; // 0x910        
+        [[maybe_unused]] std::uint8_t pad_0x914[0x4]; // 0x914
+        entity2::CEntityIOOutput m_OnPickup; // 0x918        
+        entity2::CEntityIOOutput m_OnTimeout; // 0x940        
+        entity2::CEntityIOOutput m_OnTriggerStartTouch; // 0x968        
+        entity2::CEntityIOOutput m_OnTriggerTouch; // 0x990        
+        entity2::CEntityIOOutput m_OnTriggerEndTouch; // 0x9b8        
+        CUtlSymbolLarge m_pAllowPickupScriptFunction; // 0x9e0        
+        float m_flPickupRadius; // 0x9e8        
+        float m_flTriggerRadius; // 0x9ec        
+        CUtlSymbolLarge m_pTriggerSoundEffect; // 0x9f0        
+        bool m_bGlowWhenInTrigger; // 0x9f8        
+        Color m_glowColor; // 0x9f9        
+        bool m_bUseable; // 0x9fd        
+        [[maybe_unused]] std::uint8_t pad_0x9fe[0x2]; // 0x9fe
         // m_hTriggerHelper has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<server::CItemGenericTriggerHelper> m_hTriggerHelper;
-        char m_hTriggerHelper[0x4]; // 0x9d8        
-        [[maybe_unused]] std::uint8_t pad_0x9dc[0x4];
+        char m_hTriggerHelper[0x4]; // 0xa00        
+        [[maybe_unused]] std::uint8_t pad_0xa04[0x4];
         
         // Datamap fields:
         // void CItemGenericItemGenericTouch; // 0x0
         // void InputStartAmbientSound; // 0x0
         // void InputStopAmbientSound; // 0x0
         // void InputToggleAmbientSound; // 0x0
-        // void m_hAmbientSound; // 0x870
+        // void m_hAmbientSound; // 0x898
         // float auto_remove_timeout; // 0x7fffffff
         // float drag_override; // 0x7fffffff
         // float damping_override; // 0x7fffffff
@@ -98,5 +97,5 @@ namespace source2sdk::server
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CItemGeneric because it is not a standard-layout class
-    static_assert(sizeof(CItemGeneric) == 0x9e0);
+    static_assert(sizeof(CItemGeneric) == 0xa08);
 };

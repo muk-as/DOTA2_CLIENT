@@ -22,7 +22,6 @@ namespace source2sdk::server
     // Size: 0xd8
     // Has VTable
     // MNetworkNoBase
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkExcludeByName "m_hInventoryParent"
     // static metadata: MNetworkVarNames "EHANDLE m_hItems"

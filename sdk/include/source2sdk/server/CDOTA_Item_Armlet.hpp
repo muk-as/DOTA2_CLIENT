@@ -15,22 +15,21 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x658
+    // Size: 0x680
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Item_Armlet : public server::CDOTA_Item
     {
     public:
-        float toggle_cooldown; // 0x648        
-        entity2::GameTime_t m_flLastActivateTime; // 0x64c        
-        entity2::GameTime_t m_flLastDeactivateTime; // 0x650        
-        [[maybe_unused]] std::uint8_t pad_0x654[0x4];
+        float toggle_cooldown; // 0x670        
+        entity2::GameTime_t m_flLastActivateTime; // 0x674        
+        entity2::GameTime_t m_flLastDeactivateTime; // 0x678        
+        [[maybe_unused]] std::uint8_t pad_0x67c[0x4];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Item_Armlet because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Item_Armlet) == 0x658);
+    static_assert(sizeof(CDOTA_Item_Armlet) == 0x680);
 };

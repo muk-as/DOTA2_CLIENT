@@ -14,18 +14,17 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x4c0
+    // Size: 0x4e8
     // Has VTable
     // Construct allowed
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CBaseDMStart : public server::CPointEntity
     {
     public:
-        CUtlSymbolLarge m_Master; // 0x4b8        
+        CUtlSymbolLarge m_Master; // 0x4e0        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CBaseDMStart because it is not a standard-layout class
-    static_assert(sizeof(CBaseDMStart) == 0x4c0);
+    static_assert(sizeof(CBaseDMStart) == 0x4e8);
 };

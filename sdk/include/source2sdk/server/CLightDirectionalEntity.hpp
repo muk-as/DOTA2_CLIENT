@@ -14,10 +14,9 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x790
+    // Size: 0x7b8
     // Has VTable
     // Construct allowed
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CLightDirectionalEntity : public server::CLightEntity
     {
@@ -26,5 +25,5 @@ namespace source2sdk::server
     };
     #pragma pack(pop)
     
-    static_assert(sizeof(CLightDirectionalEntity) == 0x790);
+    static_assert(sizeof(CLightDirectionalEntity) == 0x7b8);
 };

@@ -15,11 +15,10 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x810
+    // Size: 0x858
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkVarNames "float m_flLastSpawnTime"
     // static metadata: MNetworkVarNames "float m_flNextSpawnTime"
@@ -27,16 +26,16 @@ namespace source2sdk::client
     class C_DOTA_Item_RuneSpawner : public client::CBaseAnimatingActivity
     {
     public:
-        client::DOTA_RUNES m_nRuneType; // 0x800        
+        client::DOTA_RUNES m_nRuneType; // 0x848        
         // metadata: MNetworkEnable
         // metadata: MNetworkChangeCallback "OnCustomGameRuneSpawnerLastSpawnTimeChanged"
-        float m_flLastSpawnTime; // 0x804        
+        float m_flLastSpawnTime; // 0x84c        
         // metadata: MNetworkEnable
-        float m_flNextSpawnTime; // 0x808        
-        [[maybe_unused]] std::uint8_t pad_0x80c[0x4];
+        float m_flNextSpawnTime; // 0x850        
+        [[maybe_unused]] std::uint8_t pad_0x854[0x4];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in C_DOTA_Item_RuneSpawner because it is not a standard-layout class
-    static_assert(sizeof(C_DOTA_Item_RuneSpawner) == 0x810);
+    static_assert(sizeof(C_DOTA_Item_RuneSpawner) == 0x858);
 };

@@ -15,7 +15,7 @@ namespace source2sdk::animlib
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: true
-    // Size: 0x50
+    // Size: 0x68
     // Construct allowed
     // 
     // static metadata: MGetKV3ClassDefaults
@@ -33,5 +33,5 @@ namespace source2sdk::animlib
     static_assert(offsetof(CNmGraphVariation, m_graphDefinition) == 0x0);
     static_assert(offsetof(CNmGraphVariation, m_dataSet) == 0x8);
     
-    static_assert(sizeof(CNmGraphVariation) == 0x50);
+    static_assert(sizeof(CNmGraphVariation) == 0x68);
 };

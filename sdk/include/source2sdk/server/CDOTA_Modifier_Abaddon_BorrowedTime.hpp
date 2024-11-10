@@ -14,18 +14,17 @@ namespace source2sdk::server
     // Registered alignment: unknown
     // Alignment: unknown
     // Standard-layout class: false
-    // Size: 0x16f0
+    // Size: 0x1710
     // Has VTable
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Modifier_Abaddon_BorrowedTime : public client::CDOTA_Buff
     {
     public:
-        int32_t m_iTotalDamageAbsorbed; // 0x16e8        
-        float redirect_range_scepter; // 0x16ec        
+        int32_t m_iTotalDamageAbsorbed; // 0x1708        
+        float redirect_range_scepter; // 0x170c        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Modifier_Abaddon_BorrowedTime because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_Abaddon_BorrowedTime) == 0x16f0);
+    static_assert(sizeof(CDOTA_Modifier_Abaddon_BorrowedTime) == 0x1710);
 };

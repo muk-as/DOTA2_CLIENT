@@ -16,11 +16,10 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x5b0
+    // Size: 0x5f0
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkVarNames "bool m_bVotingClosed"
     // static metadata: MNetworkVarNames "bool m_bAllPredictionsFinished"
@@ -31,24 +30,24 @@ namespace source2sdk::client
     {
     public:
         // metadata: MNetworkEnable
-        bool m_bVotingClosed; // 0x538        
+        bool m_bVotingClosed; // 0x560        
         // metadata: MNetworkEnable
         // metadata: MNetworkChangeCallback "OnAllPredictionsFinished"
-        bool m_bAllPredictionsFinished; // 0x539        
-        [[maybe_unused]] std::uint8_t pad_0x53a[0x6]; // 0x53a
+        bool m_bAllPredictionsFinished; // 0x561        
+        [[maybe_unused]] std::uint8_t pad_0x562[0x6]; // 0x562
         // metadata: MNetworkEnable
         // m_vecPredictions has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // C_UtlVectorEmbeddedNetworkVar<client::InGamePredictionData_t> m_vecPredictions;
-        char m_vecPredictions[0x50]; // 0x540        
+        char m_vecPredictions[0x68]; // 0x568        
         // metadata: MNetworkEnable
-        client::LeagueID_t m_nLeagueID; // 0x590        
-        [[maybe_unused]] std::uint8_t pad_0x594[0x4]; // 0x594
+        client::LeagueID_t m_nLeagueID; // 0x5d0        
+        [[maybe_unused]] std::uint8_t pad_0x5d4[0x4]; // 0x5d4
         // m_vecPrevPredictions has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<client::InGamePredictionData_t> m_vecPrevPredictions;
-        char m_vecPrevPredictions[0x18]; // 0x598        
+        char m_vecPrevPredictions[0x18]; // 0x5d8        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTAInGamePredictionState because it is not a standard-layout class
-    static_assert(sizeof(CDOTAInGamePredictionState) == 0x5b0);
+    static_assert(sizeof(CDOTAInGamePredictionState) == 0x5f0);
 };

@@ -15,10 +15,9 @@ namespace source2sdk::server
     // Registered alignment: unknown
     // Alignment: unknown
     // Standard-layout class: false
-    // Size: 0x470
+    // Size: 0x4d0
     // Has VTable
     // Construct disallowed
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CBodyComponentBaseModelEntity : public server::CBodyComponentSkeletonInstance
     {
@@ -30,5 +29,5 @@ namespace source2sdk::server
     };
     #pragma pack(pop)
     
-    static_assert(sizeof(CBodyComponentBaseModelEntity) == 0x470);
+    static_assert(sizeof(CBodyComponentBaseModelEntity) == 0x4d0);
 };

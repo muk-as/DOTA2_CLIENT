@@ -18,7 +18,6 @@ namespace source2sdk::entity2
     // Size: 0x38
     // Has VTable
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CScriptComponent : public entity2::CEntityComponent
     {

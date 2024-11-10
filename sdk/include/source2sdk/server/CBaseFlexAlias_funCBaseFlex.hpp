@@ -14,10 +14,9 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x828
+    // Size: 0x850
     // Has VTable
     // Construct allowed
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CBaseFlexAlias_funCBaseFlex : public server::CBaseFlex
     {
@@ -26,5 +25,5 @@ namespace source2sdk::server
     };
     #pragma pack(pop)
     
-    static_assert(sizeof(CBaseFlexAlias_funCBaseFlex) == 0x828);
+    static_assert(sizeof(CBaseFlexAlias_funCBaseFlex) == 0x850);
 };

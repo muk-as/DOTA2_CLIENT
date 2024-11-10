@@ -15,20 +15,19 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x5a8
+    // Size: 0x5d0
     // Has VTable
     // Construct allowed
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTAGameEvents : public server::CBaseEntity
     {
     public:
-        entity2::CEntityIOOutput m_OnDayStarted; // 0x4b8        
-        entity2::CEntityIOOutput m_OnNightStarted; // 0x4e0        
-        entity2::CEntityIOOutput m_OnRadiantFortDestroyed; // 0x508        
-        entity2::CEntityIOOutput m_OnDireFortDestroyed; // 0x530        
-        entity2::CEntityIOOutput m_OnGameEnded; // 0x558        
-        entity2::CEntityIOOutput m_OnGameStarted; // 0x580        
+        entity2::CEntityIOOutput m_OnDayStarted; // 0x4e0        
+        entity2::CEntityIOOutput m_OnNightStarted; // 0x508        
+        entity2::CEntityIOOutput m_OnRadiantFortDestroyed; // 0x530        
+        entity2::CEntityIOOutput m_OnDireFortDestroyed; // 0x558        
+        entity2::CEntityIOOutput m_OnGameEnded; // 0x580        
+        entity2::CEntityIOOutput m_OnGameStarted; // 0x5a8        
         
         // Datamap fields:
         // float SetTimeOfDay; // 0x0
@@ -36,5 +35,5 @@ namespace source2sdk::server
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTAGameEvents because it is not a standard-layout class
-    static_assert(sizeof(CDOTAGameEvents) == 0x5a8);
+    static_assert(sizeof(CDOTAGameEvents) == 0x5d0);
 };

@@ -14,20 +14,19 @@ namespace source2sdk::server
     // Registered alignment: unknown
     // Alignment: unknown
     // Standard-layout class: false
-    // Size: 0x1700
+    // Size: 0x1720
     // Has VTable
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Modifier_Puck_Coil_Break_Stun : public server::CDOTA_Modifier_Stunned
     {
     public:
-        Vector m_vCastLocation; // 0x16e8        
-        int32_t coil_rapid_fire_z_offset; // 0x16f4        
-        float coil_rapid_fire_rate; // 0x16f8        
-        [[maybe_unused]] std::uint8_t pad_0x16fc[0x4];
+        Vector m_vCastLocation; // 0x1708        
+        int32_t coil_rapid_fire_z_offset; // 0x1714        
+        float coil_rapid_fire_rate; // 0x1718        
+        [[maybe_unused]] std::uint8_t pad_0x171c[0x4];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Modifier_Puck_Coil_Break_Stun because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_Puck_Coil_Break_Stun) == 0x1700);
+    static_assert(sizeof(CDOTA_Modifier_Puck_Coil_Break_Stun) == 0x1720);
 };

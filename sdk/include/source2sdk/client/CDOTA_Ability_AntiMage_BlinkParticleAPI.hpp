@@ -17,7 +17,7 @@ namespace source2sdk::client
     // Has Trivial Constructor
     // Has Trivial Destructor
     // 
-    // static metadata: MPulseProvideFeatureTag "PulseParticles"
+    // static metadata: MPulseProvideFeatureTag "8"
     // static metadata: MPulseLibraryBindings
     // static metadata: MParticleDomainTag "CDOTA_Ability_AntiMage_BlinkParticleAPI Antimage Blink Ability"
     // static metadata: MPulseDomainHookInfo

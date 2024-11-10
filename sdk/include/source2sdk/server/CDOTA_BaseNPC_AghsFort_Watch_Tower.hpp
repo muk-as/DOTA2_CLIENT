@@ -30,11 +30,10 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x1990
+    // Size: 0x19b0
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkVarNames "int m_nEncounterType"
     // static metadata: MNetworkVarNames "bool m_bIsEliteEncounter"
@@ -49,48 +48,48 @@ namespace source2sdk::server
     class CDOTA_BaseNPC_AghsFort_Watch_Tower : public server::CDOTA_BaseNPC_Building
     {
     public:
-        [[maybe_unused]] std::uint8_t pad_0x1920[0x10]; // 0x1920
-        int32_t m_nOptionNumber; // 0x1930        
-        float m_flMovePlayersRadius; // 0x1934        
-        server::CDOTA_BaseNPC_AghsFort_Watch_Tower__ExitDirection_t m_nExitDirection; // 0x1938        
-        Vector m_vExitLocation; // 0x193c        
-        int32_t m_nPathSelectedID; // 0x1948        
+        [[maybe_unused]] std::uint8_t pad_0x1940[0x10]; // 0x1940
+        int32_t m_nOptionNumber; // 0x1950        
+        float m_flMovePlayersRadius; // 0x1954        
+        server::CDOTA_BaseNPC_AghsFort_Watch_Tower__ExitDirection_t m_nExitDirection; // 0x1958        
+        Vector m_vExitLocation; // 0x195c        
+        int32_t m_nPathSelectedID; // 0x1968        
         // metadata: MNetworkEnable
-        int32_t m_nEncounterType; // 0x194c        
+        int32_t m_nEncounterType; // 0x196c        
         // metadata: MNetworkEnable
-        bool m_bIsEliteEncounter; // 0x1950        
+        bool m_bIsEliteEncounter; // 0x1970        
         // metadata: MNetworkEnable
-        bool m_bIsAscensionLevelPicker; // 0x1951        
-        [[maybe_unused]] std::uint8_t pad_0x1952[0x6]; // 0x1952
+        bool m_bIsAscensionLevelPicker; // 0x1971        
+        [[maybe_unused]] std::uint8_t pad_0x1972[0x6]; // 0x1972
         // metadata: MNetworkEnable
-        CUtlSymbolLarge m_strEncounterName; // 0x1958        
+        CUtlSymbolLarge m_strEncounterName; // 0x1978        
         // metadata: MNetworkEnable
-        CUtlSymbolLarge m_strAscensionAbilities; // 0x1960        
+        CUtlSymbolLarge m_strAscensionAbilities; // 0x1980        
         // metadata: MNetworkEnable
         // m_hEffigy has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<server::CBaseEntity> m_hEffigy;
-        char m_hEffigy[0x4]; // 0x1968        
-        int32_t m_nDepth; // 0x196c        
+        char m_hEffigy[0x4]; // 0x1988        
+        int32_t m_nDepth; // 0x198c        
         // m_hPedestal has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<server::CDOTA_BaseNPC_Effigy_AghsFort> m_hPedestal;
-        char m_hPedestal[0x4]; // 0x1970        
+        char m_hPedestal[0x4]; // 0x1990        
         // m_hParticleSystem has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<server::CBaseEntity> m_hParticleSystem;
-        char m_hParticleSystem[0x4]; // 0x1974        
-        [[maybe_unused]] std::uint8_t pad_0x1978[0x8]; // 0x1978
+        char m_hParticleSystem[0x4]; // 0x1994        
+        [[maybe_unused]] std::uint8_t pad_0x1998[0x8]; // 0x1998
         // metadata: MNetworkEnable
         // m_hRoomGate has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<server::CBaseAnimatingActivity> m_hRoomGate;
-        char m_hRoomGate[0x4]; // 0x1980        
+        char m_hRoomGate[0x4]; // 0x19a0        
         // metadata: MNetworkEnable
-        bool m_bIsBeingChanneled; // 0x1984        
-        [[maybe_unused]] std::uint8_t pad_0x1985[0x3]; // 0x1985
+        bool m_bIsBeingChanneled; // 0x19a4        
+        [[maybe_unused]] std::uint8_t pad_0x19a5[0x3]; // 0x19a5
         // metadata: MNetworkEnable
-        float m_flGoalCaptureProgress; // 0x1988        
-        [[maybe_unused]] std::uint8_t pad_0x198c[0x4];
+        float m_flGoalCaptureProgress; // 0x19a8        
+        [[maybe_unused]] std::uint8_t pad_0x19ac[0x4];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_BaseNPC_AghsFort_Watch_Tower because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_BaseNPC_AghsFort_Watch_Tower) == 0x1990);
+    static_assert(sizeof(CDOTA_BaseNPC_AghsFort_Watch_Tower) == 0x19b0);
 };

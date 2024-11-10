@@ -43,7 +43,6 @@ namespace source2sdk::server
     // Standard-layout class: false
     // Size: 0x158
     // Has VTable
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkVarNames "fogplayerparams_t m_PlayerFog"
     // static metadata: MNetworkVarNames "CHandle< CColorCorrection> m_hColorCorrectionCtrl"

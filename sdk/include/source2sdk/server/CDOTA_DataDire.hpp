@@ -14,10 +14,9 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x1408
+    // Size: 0x14a8
     // Has VTable
     // Construct allowed
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_DataDire : public server::CDOTA_DataNonSpectator
     {
@@ -26,5 +25,5 @@ namespace source2sdk::server
     };
     #pragma pack(pop)
     
-    static_assert(sizeof(CDOTA_DataDire) == 0x1408);
+    static_assert(sizeof(CDOTA_DataDire) == 0x14a8);
 };

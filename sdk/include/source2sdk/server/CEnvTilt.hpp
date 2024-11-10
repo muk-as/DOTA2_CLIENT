@@ -15,18 +15,17 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x4c8
+    // Size: 0x4f0
     // Has VTable
     // Construct allowed
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CEnvTilt : public server::CPointEntity
     {
     public:
-        float m_Duration; // 0x4b8        
-        float m_Radius; // 0x4bc        
-        float m_TiltTime; // 0x4c0        
-        entity2::GameTime_t m_stopTime; // 0x4c4        
+        float m_Duration; // 0x4e0        
+        float m_Radius; // 0x4e4        
+        float m_TiltTime; // 0x4e8        
+        entity2::GameTime_t m_stopTime; // 0x4ec        
         
         // Datamap fields:
         // void InputStartTilt; // 0x0
@@ -35,5 +34,5 @@ namespace source2sdk::server
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CEnvTilt because it is not a standard-layout class
-    static_assert(sizeof(CEnvTilt) == 0x4c8);
+    static_assert(sizeof(CEnvTilt) == 0x4f0);
 };

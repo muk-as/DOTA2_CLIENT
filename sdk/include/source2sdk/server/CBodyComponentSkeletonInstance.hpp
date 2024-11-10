@@ -16,18 +16,18 @@ namespace source2sdk::server
     // Registered alignment: unknown
     // Alignment: unknown
     // Standard-layout class: false
-    // Size: 0x470
+    // Size: 0x4d0
     // Has VTable
     // Construct disallowed
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkVarNames "CSkeletonInstance m_skeletonInstance"
     #pragma pack(push, 1)
     class CBodyComponentSkeletonInstance : public server::CBodyComponent
     {
     public:
+        [[maybe_unused]] std::uint8_t pad_0x78[0x8]; // 0x78
         // metadata: MNetworkEnable
-        server::CSkeletonInstance m_skeletonInstance; // 0x50        
+        server::CSkeletonInstance m_skeletonInstance; // 0x80        
         
         // Static fields:
         static entity2::EntComponentInfo_t &Get_s_EntComponentInfo() {return *reinterpret_cast<entity2::EntComponentInfo_t*>(interfaces::g_schema->FindTypeScopeForModule("server.dll")->FindDeclaredClass("CBodyComponentSkeletonInstance")->GetStaticFields()[0]->m_pInstance);};
@@ -36,5 +36,5 @@ namespace source2sdk::server
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CBodyComponentSkeletonInstance because it is not a standard-layout class
-    static_assert(sizeof(CBodyComponentSkeletonInstance) == 0x470);
+    static_assert(sizeof(CBodyComponentSkeletonInstance) == 0x4d0);
 };

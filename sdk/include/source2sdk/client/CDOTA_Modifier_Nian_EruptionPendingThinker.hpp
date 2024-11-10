@@ -14,21 +14,20 @@ namespace source2sdk::client
     // Registered alignment: unknown
     // Alignment: unknown
     // Standard-layout class: false
-    // Size: 0x1700
+    // Size: 0x1720
     // Has VTable
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Modifier_Nian_EruptionPendingThinker : public client::CDOTA_Buff
     {
     public:
-        int32_t tick_count; // 0x16e8        
-        int32_t beam_radius; // 0x16ec        
-        int32_t m_nTickCount; // 0x16f0        
-        int32_t n_FXIndex; // 0x16f4        
-        [[maybe_unused]] std::uint8_t pad_0x16f8[0x8];
+        int32_t tick_count; // 0x1708        
+        int32_t beam_radius; // 0x170c        
+        int32_t m_nTickCount; // 0x1710        
+        int32_t n_FXIndex; // 0x1714        
+        [[maybe_unused]] std::uint8_t pad_0x1718[0x8];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Modifier_Nian_EruptionPendingThinker because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_Nian_EruptionPendingThinker) == 0x1700);
+    static_assert(sizeof(CDOTA_Modifier_Nian_EruptionPendingThinker) == 0x1720);
 };

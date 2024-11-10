@@ -15,11 +15,10 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x658
+    // Size: 0x680
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkVarNames "int m_iStoredRuneType"
     #pragma pack(push, 1)
@@ -28,13 +27,13 @@ namespace source2sdk::server
     public:
         // metadata: MNetworkEnable
         // metadata: MNetworkChangeCallback "OnChaliceStoredRuneChanged"
-        int32_t m_iStoredRuneType; // 0x648        
-        entity2::GameTime_t m_fStoredRuneTime; // 0x64c        
-        float stored_rune_duration; // 0x650        
-        [[maybe_unused]] std::uint8_t pad_0x654[0x4];
+        int32_t m_iStoredRuneType; // 0x670        
+        entity2::GameTime_t m_fStoredRuneTime; // 0x674        
+        float stored_rune_duration; // 0x678        
+        [[maybe_unused]] std::uint8_t pad_0x67c[0x4];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Item_Bottomless_Chalice because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Item_Bottomless_Chalice) == 0x658);
+    static_assert(sizeof(CDOTA_Item_Bottomless_Chalice) == 0x680);
 };

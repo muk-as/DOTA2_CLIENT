@@ -14,29 +14,29 @@ namespace source2sdk::server
     // Registered alignment: unknown
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x7c8
+    // Size: 0x7f0
     // Has VTable
     // Construct disallowed
     // MConstructibleClassBase
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CMarkupVolumeTagged : public server::CMarkupVolume
     {
     public:
-        [[maybe_unused]] std::uint8_t pad_0x790[0x30]; // 0x790
-        bool m_bIsGroup; // 0x7c0        
-        bool m_bGroupByPrefab; // 0x7c1        
-        bool m_bGroupByVolume; // 0x7c2        
-        bool m_bGroupOtherGroups; // 0x7c3        
-        bool m_bIsInGroup; // 0x7c4        
-        [[maybe_unused]] std::uint8_t pad_0x7c5[0x3];
-        
-        // Datamap fields:
-        // void m_GroupNames; // 0x790
-        // void m_Tags; // 0x7a8
+        // m_GroupNames has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+        // CUtlVector<CGlobalSymbol> m_GroupNames;
+        char m_GroupNames[0x18]; // 0x7b8        
+        // m_Tags has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+        // CUtlVector<CGlobalSymbol> m_Tags;
+        char m_Tags[0x18]; // 0x7d0        
+        bool m_bIsGroup; // 0x7e8        
+        bool m_bGroupByPrefab; // 0x7e9        
+        bool m_bGroupByVolume; // 0x7ea        
+        bool m_bGroupOtherGroups; // 0x7eb        
+        bool m_bIsInGroup; // 0x7ec        
+        [[maybe_unused]] std::uint8_t pad_0x7ed[0x3];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CMarkupVolumeTagged because it is not a standard-layout class
-    static_assert(sizeof(CMarkupVolumeTagged) == 0x7c8);
+    static_assert(sizeof(CMarkupVolumeTagged) == 0x7f0);
 };

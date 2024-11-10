@@ -14,11 +14,10 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x668
+    // Size: 0x690
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Item_Tombstone_Mutation : public server::CDOTA_Item_Tombstone
     {
@@ -27,5 +26,5 @@ namespace source2sdk::server
     };
     #pragma pack(pop)
     
-    static_assert(sizeof(CDOTA_Item_Tombstone_Mutation) == 0x668);
+    static_assert(sizeof(CDOTA_Item_Tombstone_Mutation) == 0x690);
 };

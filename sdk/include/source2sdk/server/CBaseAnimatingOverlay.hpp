@@ -14,10 +14,9 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x798
+    // Size: 0x7c0
     // Has VTable
     // Construct allowed
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CBaseAnimatingOverlay : public server::CBaseAnimatingActivity
     {
@@ -26,5 +25,5 @@ namespace source2sdk::server
     };
     #pragma pack(pop)
     
-    static_assert(sizeof(CBaseAnimatingOverlay) == 0x798);
+    static_assert(sizeof(CBaseAnimatingOverlay) == 0x7c0);
 };

@@ -14,11 +14,10 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x1810
+    // Size: 0x1860
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class C_DOTA_Unit_Hero_Beastmaster_Boar : public client::C_DOTA_Unit_Hero_Beastmaster_Beasts
     {
@@ -27,5 +26,5 @@ namespace source2sdk::client
     };
     #pragma pack(pop)
     
-    static_assert(sizeof(C_DOTA_Unit_Hero_Beastmaster_Boar) == 0x1810);
+    static_assert(sizeof(C_DOTA_Unit_Hero_Beastmaster_Boar) == 0x1860);
 };

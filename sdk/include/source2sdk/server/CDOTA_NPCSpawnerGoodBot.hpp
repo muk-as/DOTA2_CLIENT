@@ -14,10 +14,9 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x538
+    // Size: 0x560
     // Has VTable
     // Construct allowed
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_NPCSpawnerGoodBot : public server::CDOTA_NPCSpawner
     {
@@ -26,5 +25,5 @@ namespace source2sdk::server
     };
     #pragma pack(pop)
     
-    static_assert(sizeof(CDOTA_NPCSpawnerGoodBot) == 0x538);
+    static_assert(sizeof(CDOTA_NPCSpawnerGoodBot) == 0x560);
 };

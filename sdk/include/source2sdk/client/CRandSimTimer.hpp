@@ -20,8 +20,8 @@ namespace source2sdk::client
     class CRandSimTimer : public client::CSimpleSimTimer
     {
     public:
-        float m_minInterval; // 0x8        
-        float m_maxInterval; // 0xc        
+        float m_flMinInterval; // 0x8        
+        float m_flMaxInterval; // 0xc        
     };
     #pragma pack(pop)
     

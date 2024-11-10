@@ -15,18 +15,17 @@ namespace source2sdk::server
     // Registered alignment: unknown
     // Alignment: unknown
     // Standard-layout class: false
-    // Size: 0x16f0
+    // Size: 0x1710
     // Has VTable
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Modifier_Item_Terror_Mask_Fear_Aura : public client::CDOTA_Buff
     {
     public:
-        float effect_radius; // 0x16e8        
-        client::ParticleIndex_t m_nFXIndex; // 0x16ec        
+        float effect_radius; // 0x1708        
+        client::ParticleIndex_t m_nFXIndex; // 0x170c        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Modifier_Item_Terror_Mask_Fear_Aura because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_Item_Terror_Mask_Fear_Aura) == 0x16f0);
+    static_assert(sizeof(CDOTA_Modifier_Item_Terror_Mask_Fear_Aura) == 0x1710);
 };

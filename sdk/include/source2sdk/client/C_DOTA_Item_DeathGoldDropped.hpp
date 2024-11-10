@@ -14,11 +14,10 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x8a0
+    // Size: 0x8e8
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkExcludeByName "m_flAnimTime"
     // static metadata: MNetworkExcludeByUserGroup "m_flCycle"
@@ -28,9 +27,9 @@ namespace source2sdk::client
     class C_DOTA_Item_DeathGoldDropped : public client::CBaseAnimatingActivity
     {
     public:
-        [[maybe_unused]] std::uint8_t pad_0x800[0xa0];
+        [[maybe_unused]] std::uint8_t pad_0x848[0xa0];
     };
     #pragma pack(pop)
     
-    static_assert(sizeof(C_DOTA_Item_DeathGoldDropped) == 0x8a0);
+    static_assert(sizeof(C_DOTA_Item_DeathGoldDropped) == 0x8e8);
 };

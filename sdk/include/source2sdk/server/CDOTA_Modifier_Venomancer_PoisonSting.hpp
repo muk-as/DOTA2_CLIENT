@@ -14,9 +14,8 @@ namespace source2sdk::server
     // Registered alignment: unknown
     // Alignment: unknown
     // Standard-layout class: false
-    // Size: 0x1700
+    // Size: 0x1720
     // Has VTable
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Modifier_Venomancer_PoisonSting : public server::CDOTA_Modifier_Venomancer_PoisonStingBase
     {
@@ -25,5 +24,5 @@ namespace source2sdk::server
     };
     #pragma pack(pop)
     
-    static_assert(sizeof(CDOTA_Modifier_Venomancer_PoisonSting) == 0x1700);
+    static_assert(sizeof(CDOTA_Modifier_Venomancer_PoisonSting) == 0x1720);
 };

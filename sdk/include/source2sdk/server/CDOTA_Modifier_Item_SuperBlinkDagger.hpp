@@ -14,9 +14,8 @@ namespace source2sdk::server
     // Registered alignment: unknown
     // Alignment: unknown
     // Standard-layout class: false
-    // Size: 0x16f0
+    // Size: 0x1710
     // Has VTable
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Modifier_Item_SuperBlinkDagger : public server::CDOTA_Modifier_Item_BlinkDagger
     {
@@ -25,5 +24,5 @@ namespace source2sdk::server
     };
     #pragma pack(pop)
     
-    static_assert(sizeof(CDOTA_Modifier_Item_SuperBlinkDagger) == 0x16f0);
+    static_assert(sizeof(CDOTA_Modifier_Item_SuperBlinkDagger) == 0x1710);
 };

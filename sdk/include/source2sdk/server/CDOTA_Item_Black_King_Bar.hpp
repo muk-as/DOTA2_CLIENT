@@ -14,20 +14,19 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x650
+    // Size: 0x678
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Item_Black_King_Bar : public server::CDOTA_Item
     {
     public:
-        bool m_bActive; // 0x648        
-        [[maybe_unused]] std::uint8_t pad_0x649[0x7];
+        bool m_bActive; // 0x670        
+        [[maybe_unused]] std::uint8_t pad_0x671[0x7];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Item_Black_King_Bar because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Item_Black_King_Bar) == 0x650);
+    static_assert(sizeof(CDOTA_Item_Black_King_Bar) == 0x678);
 };

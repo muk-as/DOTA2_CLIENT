@@ -16,11 +16,10 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x4c8
+    // Size: 0x4f0
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkVarNames "DOTACustomHeroPickRulesPhase_t m_Phase"
     // static metadata: MNetworkVarNames "int32 m_nNumBansPerTeam"
@@ -30,15 +29,15 @@ namespace source2sdk::server
     {
     public:
         // metadata: MNetworkEnable
-        client::DOTACustomHeroPickRulesPhase_t m_Phase; // 0x4b8        
+        client::DOTACustomHeroPickRulesPhase_t m_Phase; // 0x4e0        
         // metadata: MNetworkEnable
-        int32_t m_nNumBansPerTeam; // 0x4bc        
+        int32_t m_nNumBansPerTeam; // 0x4e4        
         // metadata: MNetworkEnable
-        entity2::GameTime_t m_flEnterTime; // 0x4c0        
-        int32_t m_nNumHeroesPicked; // 0x4c4        
+        entity2::GameTime_t m_flEnterTime; // 0x4e8        
+        int32_t m_nNumHeroesPicked; // 0x4ec        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTACustomGameHeroPickRules because it is not a standard-layout class
-    static_assert(sizeof(CDOTACustomGameHeroPickRules) == 0x4c8);
+    static_assert(sizeof(CDOTACustomGameHeroPickRules) == 0x4f0);
 };

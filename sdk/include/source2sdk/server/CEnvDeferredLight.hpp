@@ -19,10 +19,9 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x9b8
+    // Size: 0x9e0
     // Has VTable
     // Construct allowed
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkVarNames "Color m_LightColor"
     // static metadata: MNetworkVarNames "float m_flIntensity"
@@ -39,26 +38,26 @@ namespace source2sdk::server
     public:
         // m_hTargetEntity has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<server::CBaseEntity> m_hTargetEntity;
-        char m_hTargetEntity[0x4]; // 0x788        
+        char m_hTargetEntity[0x4]; // 0x7b0        
         // metadata: MNetworkEnable
-        Color m_LightColor; // 0x78c        
+        Color m_LightColor; // 0x7b4        
         // metadata: MNetworkEnable
-        float m_flIntensity; // 0x790        
+        float m_flIntensity; // 0x7b8        
         // metadata: MNetworkEnable
-        float m_flLightSize; // 0x794        
+        float m_flLightSize; // 0x7bc        
         // metadata: MNetworkEnable
-        float m_flSpotFoV; // 0x798        
+        float m_flSpotFoV; // 0x7c0        
         // metadata: MNetworkEnable
-        QAngle m_vLightDirection; // 0x79c        
+        QAngle m_vLightDirection; // 0x7c4        
         // metadata: MNetworkEnable
-        float m_flStartFalloff; // 0x7a8        
+        float m_flStartFalloff; // 0x7d0        
         // metadata: MNetworkEnable
-        float m_flDistanceFalloff; // 0x7ac        
+        float m_flDistanceFalloff; // 0x7d4        
         // metadata: MNetworkEnable
-        uint32_t m_nFlags; // 0x7b0        
+        uint32_t m_nFlags; // 0x7d8        
         // metadata: MNetworkEnable
-        char m_ProjectedTextureName[512]; // 0x7b4        
-        [[maybe_unused]] std::uint8_t pad_0x9b4[0x4];
+        char m_ProjectedTextureName[512]; // 0x7dc        
+        [[maybe_unused]] std::uint8_t pad_0x9dc[0x4];
         
         // Datamap fields:
         // void InputTurnOn; // 0x0
@@ -70,5 +69,5 @@ namespace source2sdk::server
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CEnvDeferredLight because it is not a standard-layout class
-    static_assert(sizeof(CEnvDeferredLight) == 0x9b8);
+    static_assert(sizeof(CEnvDeferredLight) == 0x9e0);
 };

@@ -15,20 +15,19 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x5a8
+    // Size: 0x5d0
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Ability_AghsFort_Creature_Venomancer_PoisonNova : public server::CDOTABaseAbility
     {
     public:
-        client::ParticleIndex_t m_nFXPreview; // 0x5a0        
-        float radius; // 0x5a4        
+        client::ParticleIndex_t m_nFXPreview; // 0x5c8        
+        float radius; // 0x5cc        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Ability_AghsFort_Creature_Venomancer_PoisonNova because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Ability_AghsFort_Creature_Venomancer_PoisonNova) == 0x5a8);
+    static_assert(sizeof(CDOTA_Ability_AghsFort_Creature_Venomancer_PoisonNova) == 0x5d0);
 };

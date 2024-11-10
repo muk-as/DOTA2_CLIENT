@@ -14,20 +14,19 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x1b98
+    // Size: 0x1be8
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class C_DOTA_Unit_Hero_VengefulSpirit : public client::C_DOTA_BaseNPC_Hero
     {
     public:
-        bool m_bArcanaEquipped; // 0x1b90        
-        [[maybe_unused]] std::uint8_t pad_0x1b91[0x7];
+        bool m_bArcanaEquipped; // 0x1be0        
+        [[maybe_unused]] std::uint8_t pad_0x1be1[0x7];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in C_DOTA_Unit_Hero_VengefulSpirit because it is not a standard-layout class
-    static_assert(sizeof(C_DOTA_Unit_Hero_VengefulSpirit) == 0x1b98);
+    static_assert(sizeof(C_DOTA_Unit_Hero_VengefulSpirit) == 0x1be8);
 };

@@ -15,20 +15,19 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x1818
+    // Size: 0x1868
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class C_DOTA_Unit_Broodmother_Web : public client::C_DOTA_BaseNPC_Additive
     {
     public:
-        client::ParticleIndex_t m_nFXIndex; // 0x1808        
-        Vector m_vecOrigin; // 0x180c        
+        client::ParticleIndex_t m_nFXIndex; // 0x1858        
+        Vector m_vecOrigin; // 0x185c        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in C_DOTA_Unit_Broodmother_Web because it is not a standard-layout class
-    static_assert(sizeof(C_DOTA_Unit_Broodmother_Web) == 0x1818);
+    static_assert(sizeof(C_DOTA_Unit_Broodmother_Web) == 0x1868);
 };

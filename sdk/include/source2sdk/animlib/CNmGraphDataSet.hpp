@@ -14,7 +14,7 @@ namespace source2sdk::animlib
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: true
-    // Size: 0x48
+    // Size: 0x60
     // Construct allowed
     // 
     // static metadata: MGetKV3ClassDefaults
@@ -29,7 +29,7 @@ namespace source2sdk::animlib
         // m_resources has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<CStrongHandleVoid> m_resources;
         char m_resources[0x18]; // 0x10        
-        [[maybe_unused]] std::uint8_t pad_0x28[0x20];
+        [[maybe_unused]] std::uint8_t pad_0x28[0x38];
     };
     #pragma pack(pop)
     
@@ -37,5 +37,5 @@ namespace source2sdk::animlib
     static_assert(offsetof(CNmGraphDataSet, m_skeleton) == 0x8);
     static_assert(offsetof(CNmGraphDataSet, m_resources) == 0x10);
     
-    static_assert(sizeof(CNmGraphDataSet) == 0x48);
+    static_assert(sizeof(CNmGraphDataSet) == 0x60);
 };

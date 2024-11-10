@@ -14,19 +14,18 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x5a8
+    // Size: 0x5d0
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Ability_FacelessVoid_Innate_DistortionField : public server::CDOTABaseAbility
     {
     public:
-        CUtlString m_strCachedDependencyAbility; // 0x5a0        
+        CUtlString m_strCachedDependencyAbility; // 0x5c8        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Ability_FacelessVoid_Innate_DistortionField because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Ability_FacelessVoid_Innate_DistortionField) == 0x5a8);
+    static_assert(sizeof(CDOTA_Ability_FacelessVoid_Innate_DistortionField) == 0x5d0);
 };

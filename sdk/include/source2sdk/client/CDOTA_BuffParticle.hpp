@@ -16,7 +16,6 @@ namespace source2sdk::client
     // Standard-layout class: true
     // Size: 0xc
     // Has Trivial Destructor
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_BuffParticle
     {

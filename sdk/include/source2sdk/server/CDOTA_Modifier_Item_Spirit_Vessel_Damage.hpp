@@ -14,20 +14,19 @@ namespace source2sdk::server
     // Registered alignment: unknown
     // Alignment: unknown
     // Standard-layout class: false
-    // Size: 0x16f8
+    // Size: 0x1718
     // Has VTable
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Modifier_Item_Spirit_Vessel_Damage : public client::CDOTA_Buff
     {
     public:
-        int32_t hp_regen_reduction_enemy; // 0x16e8        
-        int32_t soul_damage_amount; // 0x16ec        
-        float enemy_hp_drain; // 0x16f0        
-        [[maybe_unused]] std::uint8_t pad_0x16f4[0x4];
+        int32_t hp_regen_reduction_enemy; // 0x1708        
+        int32_t soul_damage_amount; // 0x170c        
+        float enemy_hp_drain; // 0x1710        
+        [[maybe_unused]] std::uint8_t pad_0x1714[0x4];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Modifier_Item_Spirit_Vessel_Damage because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_Item_Spirit_Vessel_Damage) == 0x16f8);
+    static_assert(sizeof(CDOTA_Modifier_Item_Spirit_Vessel_Damage) == 0x1718);
 };

@@ -14,7 +14,7 @@ namespace source2sdk::soundsystem_voicecontainers
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x190
+    // Size: 0x198
     // Has VTable
     // Construct allowed
     // 
@@ -25,30 +25,30 @@ namespace source2sdk::soundsystem_voicecontainers
     class CVoiceContainerShapedNoise : public soundsystem_voicecontainers::CVoiceContainerBase
     {
     public:
-        bool m_bUseCurveForFrequency; // 0xb8        
-        [[maybe_unused]] std::uint8_t pad_0xb9[0x3]; // 0xb9
+        bool m_bUseCurveForFrequency; // 0xc0        
+        [[maybe_unused]] std::uint8_t pad_0xc1[0x3]; // 0xc1
         // metadata: MPropertySuppressExpr "m_bUseCurveForFrequency == 1"
-        float m_flFrequency; // 0xbc        
+        float m_flFrequency; // 0xc4        
         // metadata: MPropertySuppressExpr "m_bUseCurveForFrequency == 0"
         // metadata: MPropertyFriendlyName "Frequency Sweep"
-        CPiecewiseCurve m_frequencySweep; // 0xc0        
-        bool m_bUseCurveForResonance; // 0x100        
-        [[maybe_unused]] std::uint8_t pad_0x101[0x3]; // 0x101
+        CPiecewiseCurve m_frequencySweep; // 0xc8        
+        bool m_bUseCurveForResonance; // 0x108        
+        [[maybe_unused]] std::uint8_t pad_0x109[0x3]; // 0x109
         // metadata: MPropertySuppressExpr "m_bUseCurveForResonance == 1"
-        float m_flResonance; // 0x104        
+        float m_flResonance; // 0x10c        
         // metadata: MPropertySuppressExpr "m_bUseCurveForResonance == 0"
         // metadata: MPropertyFriendlyName "Resonance Sweep"
-        CPiecewiseCurve m_resonanceSweep; // 0x108        
-        bool m_bUseCurveForAmplitude; // 0x148        
-        [[maybe_unused]] std::uint8_t pad_0x149[0x3]; // 0x149
+        CPiecewiseCurve m_resonanceSweep; // 0x110        
+        bool m_bUseCurveForAmplitude; // 0x150        
+        [[maybe_unused]] std::uint8_t pad_0x151[0x3]; // 0x151
         // metadata: MPropertySuppressExpr "m_bUseCurveForAmplitude == 1"
-        float m_flGainInDecibels; // 0x14c        
+        float m_flGainInDecibels; // 0x154        
         // metadata: MPropertySuppressExpr "m_bUseCurveForAmplitude == 0"
         // metadata: MPropertyFriendlyName "Gain Sweep (in Decibels)"
-        CPiecewiseCurve m_gainSweep; // 0x150        
+        CPiecewiseCurve m_gainSweep; // 0x158        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CVoiceContainerShapedNoise because it is not a standard-layout class
-    static_assert(sizeof(CVoiceContainerShapedNoise) == 0x190);
+    static_assert(sizeof(CVoiceContainerShapedNoise) == 0x198);
 };

@@ -13,7 +13,7 @@ namespace source2sdk::navlib
     // Registered alignment: 0x4
     // Alignment: 0x4
     // Standard-layout class: true
-    // Size: 0x2c
+    // Size: 0x34
     // Has Trivial Destructor
     // Construct allowed
     // 
@@ -58,6 +58,13 @@ namespace source2sdk::navlib
         // metadata: MPropertyFriendlyName "Border Erosion"
         // metadata: MPropertyDescription "Border erosion in voxel units ( -1 to use default value based on agent radius )."
         int32_t m_agentBorderErosion; // 0x28        
+        // metadata: MPropertyFriendlyName "Hierarchical Nav"
+        // metadata: MPropertyDescription "Enables super node nav information to be generated"
+        bool m_flowMapGenerationEnabled; // 0x2c        
+        [[maybe_unused]] std::uint8_t pad_0x2d[0x3]; // 0x2d
+        // metadata: MPropertyFriendlyName "Hierarchical Nav Max Super Node radius"
+        // metadata: MPropertyDescription "Maximum radius of a super node - larger means lower resolution"
+        float m_flowMapNodeMaxRadius; // 0x30        
     };
     #pragma pack(pop)
     
@@ -72,6 +79,8 @@ namespace source2sdk::navlib
     static_assert(offsetof(CNavHullVData, m_agentMaxJumpHorizDistBase) == 0x20);
     static_assert(offsetof(CNavHullVData, m_agentMaxJumpUpDist) == 0x24);
     static_assert(offsetof(CNavHullVData, m_agentBorderErosion) == 0x28);
+    static_assert(offsetof(CNavHullVData, m_flowMapGenerationEnabled) == 0x2c);
+    static_assert(offsetof(CNavHullVData, m_flowMapNodeMaxRadius) == 0x30);
     
-    static_assert(sizeof(CNavHullVData) == 0x2c);
+    static_assert(sizeof(CNavHullVData) == 0x34);
 };

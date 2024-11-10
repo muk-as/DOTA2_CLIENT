@@ -19,21 +19,20 @@ namespace source2sdk::server
     // Registered alignment: unknown
     // Alignment: unknown
     // Standard-layout class: false
-    // Size: 0x1708
+    // Size: 0x1728
     // Has VTable
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Modifier_NagaSiren_SongOfTheSiren_Aura : public client::CDOTA_Buff
     {
     public:
-        float radius; // 0x16e8        
-        int32_t m_nAffectedEnemies; // 0x16ec        
+        float radius; // 0x1708        
+        int32_t m_nAffectedEnemies; // 0x170c        
         // m_vhAffectedHeroes has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<CHandle<server::CBaseEntity>> m_vhAffectedHeroes;
-        char m_vhAffectedHeroes[0x18]; // 0x16f0        
+        char m_vhAffectedHeroes[0x18]; // 0x1710        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Modifier_NagaSiren_SongOfTheSiren_Aura because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_NagaSiren_SongOfTheSiren_Aura) == 0x1708);
+    static_assert(sizeof(CDOTA_Modifier_NagaSiren_SongOfTheSiren_Aura) == 0x1728);
 };

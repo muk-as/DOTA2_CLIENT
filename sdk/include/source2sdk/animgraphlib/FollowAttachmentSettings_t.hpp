@@ -1,4 +1,5 @@
 #pragma once
+#include "source2sdk/modellib/AttachmentHandle_t.hpp"
 #include "source2sdk/modellib/CAnimAttachment.hpp"
 #include "source2sdk/source2gen.hpp"
 #include <cstddef>
@@ -25,16 +26,18 @@ namespace source2sdk::animgraphlib
     public:
         modellib::CAnimAttachment m_attachment; // 0x0        
         int32_t m_boneIndex; // 0x80        
-        bool m_bMatchTranslation; // 0x84        
-        bool m_bMatchRotation; // 0x85        
-        [[maybe_unused]] std::uint8_t pad_0x86[0xa];
+        modellib::AttachmentHandle_t m_attachmentHandle; // 0x84        
+        bool m_bMatchTranslation; // 0x85        
+        bool m_bMatchRotation; // 0x86        
+        [[maybe_unused]] std::uint8_t pad_0x87[0x9];
     };
     #pragma pack(pop)
     
     static_assert(offsetof(FollowAttachmentSettings_t, m_attachment) == 0x0);
     static_assert(offsetof(FollowAttachmentSettings_t, m_boneIndex) == 0x80);
-    static_assert(offsetof(FollowAttachmentSettings_t, m_bMatchTranslation) == 0x84);
-    static_assert(offsetof(FollowAttachmentSettings_t, m_bMatchRotation) == 0x85);
+    static_assert(offsetof(FollowAttachmentSettings_t, m_attachmentHandle) == 0x84);
+    static_assert(offsetof(FollowAttachmentSettings_t, m_bMatchTranslation) == 0x85);
+    static_assert(offsetof(FollowAttachmentSettings_t, m_bMatchRotation) == 0x86);
     
     static_assert(sizeof(FollowAttachmentSettings_t) == 0x90);
 };

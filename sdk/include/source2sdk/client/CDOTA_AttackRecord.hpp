@@ -26,7 +26,6 @@ namespace source2sdk::client
     // Alignment: unknown
     // Standard-layout class: true
     // Size: 0xe8
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_AttackRecord
     {
@@ -75,9 +74,10 @@ namespace source2sdk::client
         uint32_t m_bIgnoreBaseArmor: 1;
         uint32_t m_bIgnoreObstructions: 1;
         uint32_t m_bSuppressAttackSounds: 1;
+        uint32_t m_bForceAttackMissSound: 1;
         uint32_t m_bSuppressDamageSounds: 1;
         uint32_t m_bSuppressDamageEffects: 1;
-        // end of bitfield block // 18 bits
+        // end of bitfield block // 19 bits
         int32_t m_nBashSource; // 0x50        
         int32_t m_nCritSource; // 0x54        
         float m_flAttackHeight; // 0x58        
@@ -135,6 +135,7 @@ namespace source2sdk::client
     // Cannot assert offset of bitfield CDOTA_AttackRecord::m_bIgnoreBaseArmor
     // Cannot assert offset of bitfield CDOTA_AttackRecord::m_bIgnoreObstructions
     // Cannot assert offset of bitfield CDOTA_AttackRecord::m_bSuppressAttackSounds
+    // Cannot assert offset of bitfield CDOTA_AttackRecord::m_bForceAttackMissSound
     // Cannot assert offset of bitfield CDOTA_AttackRecord::m_bSuppressDamageSounds
     // Cannot assert offset of bitfield CDOTA_AttackRecord::m_bSuppressDamageEffects
     static_assert(offsetof(CDOTA_AttackRecord, m_nBashSource) == 0x50);

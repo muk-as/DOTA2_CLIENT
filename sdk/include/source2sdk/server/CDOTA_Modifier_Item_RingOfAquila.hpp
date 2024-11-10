@@ -14,22 +14,21 @@ namespace source2sdk::server
     // Registered alignment: unknown
     // Alignment: unknown
     // Standard-layout class: false
-    // Size: 0x1700
+    // Size: 0x1720
     // Has VTable
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Modifier_Item_RingOfAquila : public server::CDOTA_Buff_Item
     {
     public:
-        int32_t bonus_strength; // 0x16e8        
-        int32_t bonus_agility; // 0x16ec        
-        int32_t bonus_intellect; // 0x16f0        
-        int32_t bonus_damage; // 0x16f4        
-        int32_t bonus_armor; // 0x16f8        
-        [[maybe_unused]] std::uint8_t pad_0x16fc[0x4];
+        int32_t bonus_strength; // 0x1708        
+        int32_t bonus_agility; // 0x170c        
+        int32_t bonus_intellect; // 0x1710        
+        int32_t bonus_damage; // 0x1714        
+        int32_t bonus_armor; // 0x1718        
+        [[maybe_unused]] std::uint8_t pad_0x171c[0x4];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Modifier_Item_RingOfAquila because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_Item_RingOfAquila) == 0x1700);
+    static_assert(sizeof(CDOTA_Modifier_Item_RingOfAquila) == 0x1720);
 };

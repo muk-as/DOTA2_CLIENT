@@ -14,11 +14,10 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x550
+    // Size: 0x578
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkVarNames "int m_iLastKillerTeam"
     // static metadata: MNetworkVarNames "int m_iKillCount"
@@ -28,12 +27,12 @@ namespace source2sdk::client
     {
     public:
         // metadata: MNetworkEnable
-        int32_t m_iLastKillerTeam; // 0x538        
+        int32_t m_iLastKillerTeam; // 0x560        
         // metadata: MNetworkEnable
-        int32_t m_iKillCount; // 0x53c        
+        int32_t m_iKillCount; // 0x564        
         // metadata: MNetworkEnable
-        Vector m_vRoshanAltLocation; // 0x540        
-        [[maybe_unused]] std::uint8_t pad_0x54c[0x4];
+        Vector m_vRoshanAltLocation; // 0x568        
+        [[maybe_unused]] std::uint8_t pad_0x574[0x4];
         
         // Static fields:
         static client::C_DOTA_RoshanSpawner* &Get_s_pRoshanSpawner() {return *reinterpret_cast<client::C_DOTA_RoshanSpawner**>(interfaces::g_schema->FindTypeScopeForModule("client.dll")->FindDeclaredClass("C_DOTA_RoshanSpawner")->GetStaticFields()[0]->m_pInstance);};
@@ -41,5 +40,5 @@ namespace source2sdk::client
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in C_DOTA_RoshanSpawner because it is not a standard-layout class
-    static_assert(sizeof(C_DOTA_RoshanSpawner) == 0x550);
+    static_assert(sizeof(C_DOTA_RoshanSpawner) == 0x578);
 };

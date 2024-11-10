@@ -18,7 +18,6 @@ namespace source2sdk::client
     // Size: 0x40
     // Has VTable
     // Has Trivial Destructor
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CPropDataComponent : public entity2::CEntityComponent
     {

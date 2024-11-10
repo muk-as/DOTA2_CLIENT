@@ -14,11 +14,10 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x1840
+    // Size: 0x1860
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CODTA_Unit_Warlock_Imp : public server::CDOTA_BaseNPC_Creep
     {
@@ -27,5 +26,5 @@ namespace source2sdk::server
     };
     #pragma pack(pop)
     
-    static_assert(sizeof(CODTA_Unit_Warlock_Imp) == 0x1840);
+    static_assert(sizeof(CODTA_Unit_Warlock_Imp) == 0x1860);
 };

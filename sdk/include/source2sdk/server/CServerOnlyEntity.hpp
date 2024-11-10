@@ -14,10 +14,9 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x4b8
+    // Size: 0x4e0
     // Has VTable
     // Construct allowed
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CServerOnlyEntity : public server::CBaseEntity
     {
@@ -26,5 +25,5 @@ namespace source2sdk::server
     };
     #pragma pack(pop)
     
-    static_assert(sizeof(CServerOnlyEntity) == 0x4b8);
+    static_assert(sizeof(CServerOnlyEntity) == 0x4e0);
 };

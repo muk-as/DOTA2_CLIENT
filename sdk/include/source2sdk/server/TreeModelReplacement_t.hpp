@@ -27,7 +27,6 @@ namespace source2sdk::server
         int32_t m_nBinaryObjectID; // 0x30        
         // metadata: MNetworkEnable
         char m_szModel[512]; // 0x34        
-        // metadata: MNetworkDisable
         int32_t m_nChangeToken; // 0x234        
     };
     #pragma pack(pop)

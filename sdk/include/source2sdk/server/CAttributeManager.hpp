@@ -22,7 +22,6 @@ namespace source2sdk::server
     // Standard-layout class: true
     // Size: 0x68
     // Has VTable
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkVarNames "int m_iReapplyProvisionParity"
     // static metadata: MNetworkVarNames "EHANDLE m_hOuter"

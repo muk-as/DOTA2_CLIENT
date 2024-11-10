@@ -20,7 +20,6 @@ namespace source2sdk::client
     // Size: 0x9f8
     // Has VTable
     // MNetworkNoBase
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkVarNames "int m_rgRadiantTotalEarnedGold"
     // static metadata: MNetworkVarNames "int m_rgDireTotalEarnedGold"
@@ -37,7 +36,6 @@ namespace source2sdk::client
     {
     public:
         [[maybe_unused]] std::uint8_t pad_0x00[0x28]; // 0x0
-        // metadata: MNetworkDisable
         // metadata: MNetworkChangeAccessorFieldPathIndex
         entity2::CNetworkVarChainer __m_pChainEntity; // 0x28        
         bool m_bTrackingTeamStats; // 0x50        

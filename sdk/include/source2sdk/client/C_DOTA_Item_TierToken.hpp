@@ -15,11 +15,10 @@ namespace source2sdk::client
     // Registered alignment: unknown
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x690
+    // Size: 0x6b8
     // Has VTable
     // Is Abstract
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkVarNames "AbilityID_t m_vecChoices"
     #pragma pack(push, 1)
@@ -28,10 +27,10 @@ namespace source2sdk::client
     public:
         // metadata: MNetworkEnable
         // metadata: MNetworkChangeCallback "OnChoicesChanged"
-        client::AbilityID_t m_vecChoices[6]; // 0x678        
+        client::AbilityID_t m_vecChoices[6]; // 0x6a0        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in C_DOTA_Item_TierToken because it is not a standard-layout class
-    static_assert(sizeof(C_DOTA_Item_TierToken) == 0x690);
+    static_assert(sizeof(C_DOTA_Item_TierToken) == 0x6b8);
 };

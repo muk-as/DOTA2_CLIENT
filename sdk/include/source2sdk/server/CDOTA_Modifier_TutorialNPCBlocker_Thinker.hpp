@@ -14,21 +14,20 @@ namespace source2sdk::server
     // Registered alignment: unknown
     // Alignment: unknown
     // Standard-layout class: false
-    // Size: 0x1708
+    // Size: 0x1728
     // Has VTable
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Modifier_TutorialNPCBlocker_Thinker : public client::CDOTA_Buff
     {
     public:
-        Vector m_vecStart; // 0x16e8        
-        Vector m_vecEnd; // 0x16f4        
-        float m_flRadius; // 0x1700        
-        bool m_bHidden; // 0x1704        
-        [[maybe_unused]] std::uint8_t pad_0x1705[0x3];
+        Vector m_vecStart; // 0x1708        
+        Vector m_vecEnd; // 0x1714        
+        float m_flRadius; // 0x1720        
+        bool m_bHidden; // 0x1724        
+        [[maybe_unused]] std::uint8_t pad_0x1725[0x3];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Modifier_TutorialNPCBlocker_Thinker because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_TutorialNPCBlocker_Thinker) == 0x1708);
+    static_assert(sizeof(CDOTA_Modifier_TutorialNPCBlocker_Thinker) == 0x1728);
 };

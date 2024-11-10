@@ -14,20 +14,19 @@ namespace source2sdk::client
     // Registered alignment: unknown
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x5e0
+    // Size: 0x608
     // Has VTable
     // Is Abstract
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class C_DOTA_Ability_Animation_Attack : public client::C_DOTABaseAbility
     {
     public:
-        float animation_time; // 0x5d8        
-        [[maybe_unused]] std::uint8_t pad_0x5dc[0x4];
+        float animation_time; // 0x600        
+        [[maybe_unused]] std::uint8_t pad_0x604[0x4];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in C_DOTA_Ability_Animation_Attack because it is not a standard-layout class
-    static_assert(sizeof(C_DOTA_Ability_Animation_Attack) == 0x5e0);
+    static_assert(sizeof(C_DOTA_Ability_Animation_Attack) == 0x608);
 };

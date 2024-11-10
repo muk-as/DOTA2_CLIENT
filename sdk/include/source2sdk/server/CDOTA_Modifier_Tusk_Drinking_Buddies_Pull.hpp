@@ -14,20 +14,19 @@ namespace source2sdk::server
     // Registered alignment: unknown
     // Alignment: unknown
     // Standard-layout class: false
-    // Size: 0x1700
+    // Size: 0x1720
     // Has VTable
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Modifier_Tusk_Drinking_Buddies_Pull : public client::CDOTA_Buff
     {
     public:
-        Vector m_vDirection; // 0x16e8        
-        float m_flEndTime; // 0x16f4        
-        float m_flCurTime; // 0x16f8        
-        float m_flDistance; // 0x16fc        
+        Vector m_vDirection; // 0x1708        
+        float m_flEndTime; // 0x1714        
+        float m_flCurTime; // 0x1718        
+        float m_flDistance; // 0x171c        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Modifier_Tusk_Drinking_Buddies_Pull because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_Tusk_Drinking_Buddies_Pull) == 0x1700);
+    static_assert(sizeof(CDOTA_Modifier_Tusk_Drinking_Buddies_Pull) == 0x1720);
 };

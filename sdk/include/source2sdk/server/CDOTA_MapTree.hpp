@@ -14,15 +14,14 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x4e0
+    // Size: 0x508
     // Has VTable
     // Construct allowed
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_MapTree : public server::CDOTA_BinaryObject
     {
     public:
-        [[maybe_unused]] std::uint8_t pad_0x4c0[0x20];
+        [[maybe_unused]] std::uint8_t pad_0x4e8[0x20];
         // Datamap fields:
         // void InputCutDown; // 0x0
         // void InputCutDownForever; // 0x0
@@ -31,5 +30,5 @@ namespace source2sdk::server
     };
     #pragma pack(pop)
     
-    static_assert(sizeof(CDOTA_MapTree) == 0x4e0);
+    static_assert(sizeof(CDOTA_MapTree) == 0x508);
 };

@@ -1,5 +1,6 @@
 #pragma once
 #include "source2sdk/client/AmmoIndex_t.hpp"
+#include "source2sdk/client/DamageTypes_t.hpp"
 #include "source2sdk/client/TakeDamageFlags_t.hpp"
 #include "source2sdk/source2gen.hpp"
 #include <cstddef>
@@ -20,7 +21,7 @@ namespace source2sdk::client
     // Registered alignment: unknown
     // Alignment: 0x8
     // Standard-layout class: true
-    // Size: 0xb0
+    // Size: 0xc0
     // Has VTable
     #pragma pack(push, 1)
     class CTakeDamageInfo
@@ -42,24 +43,27 @@ namespace source2sdk::client
         char m_hAbility[0x4]; // 0x40        
         float m_flDamage; // 0x44        
         float m_flTotalledDamage; // 0x48        
-        int32_t m_bitsDamageType; // 0x4c        
-        int32_t m_iDamageCustom; // 0x50        
-        client::AmmoIndex_t m_iAmmoType; // 0x54        
-        [[maybe_unused]] std::uint8_t pad_0x55[0xb]; // 0x55
-        float m_flOriginalDamage; // 0x60        
-        bool m_bShouldBleed; // 0x64        
-        bool m_bShouldSpark; // 0x65        
-        [[maybe_unused]] std::uint8_t pad_0x66[0xa]; // 0x66
-        client::TakeDamageFlags_t m_nDamageFlags; // 0x70        
-        int32_t m_bitsDotaDamageType; // 0x78        
-        int32_t m_nDotaDamageCategory; // 0x7c        
-        float m_flCombatLogCreditFactor; // 0x80        
-        int16_t m_iRecord; // 0x84        
-        [[maybe_unused]] std::uint8_t pad_0x86[0x2]; // 0x86
-        HSCRIPT m_hScriptInstance; // 0x88        
-        [[maybe_unused]] std::uint8_t pad_0x90[0x14]; // 0x90
-        bool m_bInTakeDamageFlow; // 0xa4        
-        [[maybe_unused]] std::uint8_t pad_0xa5[0xb];
+        float m_flTotalledDamageAbsorbed; // 0x4c        
+        client::DamageTypes_t m_bitsDamageType; // 0x50        
+        int32_t m_iDamageCustom; // 0x54        
+        client::AmmoIndex_t m_iAmmoType; // 0x58        
+        [[maybe_unused]] std::uint8_t pad_0x59[0xf]; // 0x59
+        float m_flOriginalDamage; // 0x68        
+        bool m_bShouldBleed; // 0x6c        
+        bool m_bShouldSpark; // 0x6d        
+        [[maybe_unused]] std::uint8_t pad_0x6e[0x2]; // 0x6e
+        float m_flDamageAbsorbed; // 0x70        
+        [[maybe_unused]] std::uint8_t pad_0x74[0xc]; // 0x74
+        client::TakeDamageFlags_t m_nDamageFlags; // 0x80        
+        int32_t m_bitsDotaDamageType; // 0x88        
+        int32_t m_nDotaDamageCategory; // 0x8c        
+        float m_flCombatLogCreditFactor; // 0x90        
+        int16_t m_iRecord; // 0x94        
+        [[maybe_unused]] std::uint8_t pad_0x96[0x2]; // 0x96
+        HSCRIPT m_hScriptInstance; // 0x98        
+        [[maybe_unused]] std::uint8_t pad_0xa0[0x14]; // 0xa0
+        bool m_bInTakeDamageFlow; // 0xb4        
+        [[maybe_unused]] std::uint8_t pad_0xb5[0xb];
         
         // Static fields:
         static client::CTakeDamageInfo &Get_EmptyInfo() {return *reinterpret_cast<client::CTakeDamageInfo*>(interfaces::g_schema->FindTypeScopeForModule("!GlobalTypes")->FindDeclaredClass("CTakeDamageInfo")->GetStaticFields()[0]->m_pInstance);};
@@ -75,19 +79,21 @@ namespace source2sdk::client
     static_assert(offsetof(CTakeDamageInfo, m_hAbility) == 0x40);
     static_assert(offsetof(CTakeDamageInfo, m_flDamage) == 0x44);
     static_assert(offsetof(CTakeDamageInfo, m_flTotalledDamage) == 0x48);
-    static_assert(offsetof(CTakeDamageInfo, m_bitsDamageType) == 0x4c);
-    static_assert(offsetof(CTakeDamageInfo, m_iDamageCustom) == 0x50);
-    static_assert(offsetof(CTakeDamageInfo, m_iAmmoType) == 0x54);
-    static_assert(offsetof(CTakeDamageInfo, m_flOriginalDamage) == 0x60);
-    static_assert(offsetof(CTakeDamageInfo, m_bShouldBleed) == 0x64);
-    static_assert(offsetof(CTakeDamageInfo, m_bShouldSpark) == 0x65);
-    static_assert(offsetof(CTakeDamageInfo, m_nDamageFlags) == 0x70);
-    static_assert(offsetof(CTakeDamageInfo, m_bitsDotaDamageType) == 0x78);
-    static_assert(offsetof(CTakeDamageInfo, m_nDotaDamageCategory) == 0x7c);
-    static_assert(offsetof(CTakeDamageInfo, m_flCombatLogCreditFactor) == 0x80);
-    static_assert(offsetof(CTakeDamageInfo, m_iRecord) == 0x84);
-    static_assert(offsetof(CTakeDamageInfo, m_hScriptInstance) == 0x88);
-    static_assert(offsetof(CTakeDamageInfo, m_bInTakeDamageFlow) == 0xa4);
+    static_assert(offsetof(CTakeDamageInfo, m_flTotalledDamageAbsorbed) == 0x4c);
+    static_assert(offsetof(CTakeDamageInfo, m_bitsDamageType) == 0x50);
+    static_assert(offsetof(CTakeDamageInfo, m_iDamageCustom) == 0x54);
+    static_assert(offsetof(CTakeDamageInfo, m_iAmmoType) == 0x58);
+    static_assert(offsetof(CTakeDamageInfo, m_flOriginalDamage) == 0x68);
+    static_assert(offsetof(CTakeDamageInfo, m_bShouldBleed) == 0x6c);
+    static_assert(offsetof(CTakeDamageInfo, m_bShouldSpark) == 0x6d);
+    static_assert(offsetof(CTakeDamageInfo, m_flDamageAbsorbed) == 0x70);
+    static_assert(offsetof(CTakeDamageInfo, m_nDamageFlags) == 0x80);
+    static_assert(offsetof(CTakeDamageInfo, m_bitsDotaDamageType) == 0x88);
+    static_assert(offsetof(CTakeDamageInfo, m_nDotaDamageCategory) == 0x8c);
+    static_assert(offsetof(CTakeDamageInfo, m_flCombatLogCreditFactor) == 0x90);
+    static_assert(offsetof(CTakeDamageInfo, m_iRecord) == 0x94);
+    static_assert(offsetof(CTakeDamageInfo, m_hScriptInstance) == 0x98);
+    static_assert(offsetof(CTakeDamageInfo, m_bInTakeDamageFlow) == 0xb4);
     
-    static_assert(sizeof(CTakeDamageInfo) == 0xb0);
+    static_assert(sizeof(CTakeDamageInfo) == 0xc0);
 };

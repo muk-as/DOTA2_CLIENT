@@ -14,19 +14,18 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x690
+    // Size: 0x6b8
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Item_Lua : public server::CDOTA_Item
     {
     public:
-        [[maybe_unused]] std::uint8_t pad_0x648[0x48];
+        [[maybe_unused]] std::uint8_t pad_0x670[0x48];
         // No schema binary for binding
     };
     #pragma pack(pop)
     
-    static_assert(sizeof(CDOTA_Item_Lua) == 0x690);
+    static_assert(sizeof(CDOTA_Item_Lua) == 0x6b8);
 };

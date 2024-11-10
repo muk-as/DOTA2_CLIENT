@@ -14,10 +14,9 @@ namespace source2sdk::client
     // Registered alignment: unknown
     // Alignment: unknown
     // Standard-layout class: false
-    // Size: 0x16e8
+    // Size: 0x1708
     // Has VTable
     // Is Abstract
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Buff_Item : public client::CDOTA_Buff
     {
@@ -26,5 +25,5 @@ namespace source2sdk::client
     };
     #pragma pack(pop)
     
-    static_assert(sizeof(CDOTA_Buff_Item) == 0x16e8);
+    static_assert(sizeof(CDOTA_Buff_Item) == 0x1708);
 };

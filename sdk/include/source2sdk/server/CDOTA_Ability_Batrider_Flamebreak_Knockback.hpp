@@ -14,9 +14,8 @@ namespace source2sdk::server
     // Registered alignment: unknown
     // Alignment: unknown
     // Standard-layout class: false
-    // Size: 0x1718
+    // Size: 0x1738
     // Has VTable
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Ability_Batrider_Flamebreak_Knockback : public server::CDOTA_Modifier_Knockback
     {
@@ -25,5 +24,5 @@ namespace source2sdk::server
     };
     #pragma pack(pop)
     
-    static_assert(sizeof(CDOTA_Ability_Batrider_Flamebreak_Knockback) == 0x1718);
+    static_assert(sizeof(CDOTA_Ability_Batrider_Flamebreak_Knockback) == 0x1738);
 };

@@ -26,7 +26,6 @@ namespace source2sdk::client
     class CSkeletonAnimationController : public client::ISkeletonAnimationController
     {
     public:
-        // metadata: MNetworkDisable
         client::CSkeletonInstance* m_pSkeletonInstance; // 0x8        
     };
     #pragma pack(pop)

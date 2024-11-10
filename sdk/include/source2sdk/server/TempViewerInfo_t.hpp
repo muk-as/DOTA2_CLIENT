@@ -51,13 +51,9 @@ namespace source2sdk::server
         // metadata: MNetworkEnable
         // metadata: MNetworkChangeCallback "OnFieldChanged"
         bool m_bValid; // 0x3e        
-        // metadata: MNetworkDisable
         bool m_bDirty; // 0x3f        
-        // metadata: MNetworkDisable
         entity2::GameTime_t flEndTime; // 0x40        
-        // metadata: MNetworkDisable
         int32_t nFoWID; // 0x44        
-        // metadata: MNetworkDisable
         // hOwner has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<server::CBaseEntity> hOwner;
         char hOwner[0x4]; // 0x48        

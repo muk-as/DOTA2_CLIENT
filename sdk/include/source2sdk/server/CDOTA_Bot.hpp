@@ -35,7 +35,6 @@ namespace source2sdk::server
     // Standard-layout class: true
     // Size: 0x8718
     // Has VTable
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Bot
     {

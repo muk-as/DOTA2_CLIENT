@@ -16,7 +16,6 @@ namespace source2sdk::server
     // Standard-layout class: false
     // Size: 0x158
     // Has VTable
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTAPlayer_CameraServices : public server::CPlayer_CameraServices
     {

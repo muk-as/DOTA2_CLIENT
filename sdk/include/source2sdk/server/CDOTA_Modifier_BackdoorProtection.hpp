@@ -15,24 +15,23 @@ namespace source2sdk::server
     // Registered alignment: unknown
     // Alignment: unknown
     // Standard-layout class: false
-    // Size: 0x1718
+    // Size: 0x1738
     // Has VTable
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Modifier_BackdoorProtection : public client::CDOTA_Buff
     {
     public:
-        bool m_bActivated; // 0x16e8        
-        [[maybe_unused]] std::uint8_t pad_0x16e9[0x3]; // 0x16e9
-        float m_flHealthToRestore; // 0x16ec        
-        int32_t radius; // 0x16f0        
-        float activation_time; // 0x16f4        
-        int32_t regen_rate; // 0x16f8        
-        [[maybe_unused]] std::uint8_t pad_0x16fc[0x4]; // 0x16fc
-        server::CountdownTimer m_TimerToActivate; // 0x1700        
+        bool m_bActivated; // 0x1708        
+        [[maybe_unused]] std::uint8_t pad_0x1709[0x3]; // 0x1709
+        float m_flHealthToRestore; // 0x170c        
+        int32_t radius; // 0x1710        
+        float activation_time; // 0x1714        
+        int32_t regen_rate; // 0x1718        
+        [[maybe_unused]] std::uint8_t pad_0x171c[0x4]; // 0x171c
+        server::CountdownTimer m_TimerToActivate; // 0x1720        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Modifier_BackdoorProtection because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_BackdoorProtection) == 0x1718);
+    static_assert(sizeof(CDOTA_Modifier_BackdoorProtection) == 0x1738);
 };

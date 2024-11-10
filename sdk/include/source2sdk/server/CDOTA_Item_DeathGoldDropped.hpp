@@ -14,11 +14,10 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x7a0
+    // Size: 0x7c8
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkExcludeByName "m_flAnimTime"
     // static metadata: MNetworkExcludeByUserGroup "m_flCycle"
@@ -28,9 +27,9 @@ namespace source2sdk::server
     class CDOTA_Item_DeathGoldDropped : public server::CBaseAnimatingActivity
     {
     public:
-        [[maybe_unused]] std::uint8_t pad_0x798[0x8];
+        [[maybe_unused]] std::uint8_t pad_0x7c0[0x8];
     };
     #pragma pack(pop)
     
-    static_assert(sizeof(CDOTA_Item_DeathGoldDropped) == 0x7a0);
+    static_assert(sizeof(CDOTA_Item_DeathGoldDropped) == 0x7c8);
 };

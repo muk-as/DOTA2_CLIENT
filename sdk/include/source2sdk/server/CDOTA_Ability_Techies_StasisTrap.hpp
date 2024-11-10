@@ -20,22 +20,21 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x5a8
+    // Size: 0x5d0
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Ability_Techies_StasisTrap : public server::CDOTABaseAbility
     {
     public:
-        client::ParticleIndex_t m_nFXIndex; // 0x5a0        
+        client::ParticleIndex_t m_nFXIndex; // 0x5c8        
         // m_hTrap has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<server::CBaseEntity> m_hTrap;
-        char m_hTrap[0x4]; // 0x5a4        
+        char m_hTrap[0x4]; // 0x5cc        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Ability_Techies_StasisTrap because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Ability_Techies_StasisTrap) == 0x5a8);
+    static_assert(sizeof(CDOTA_Ability_Techies_StasisTrap) == 0x5d0);
 };

@@ -14,20 +14,19 @@ namespace source2sdk::client
     // Registered alignment: unknown
     // Alignment: unknown
     // Standard-layout class: false
-    // Size: 0x16f8
+    // Size: 0x1718
     // Has VTable
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Modifier_Clinkz_Strafe : public client::CDOTA_Buff
     {
     public:
-        int32_t attack_speed_bonus; // 0x16e8        
-        int32_t attack_range_bonus; // 0x16ec        
-        int32_t archer_attack_speed_pct; // 0x16f0        
-        float debuff_duration; // 0x16f4        
+        int32_t attack_speed_bonus; // 0x1708        
+        int32_t attack_range_bonus; // 0x170c        
+        int32_t archer_attack_speed_pct; // 0x1710        
+        float debuff_duration; // 0x1714        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Modifier_Clinkz_Strafe because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_Clinkz_Strafe) == 0x16f8);
+    static_assert(sizeof(CDOTA_Modifier_Clinkz_Strafe) == 0x1718);
 };

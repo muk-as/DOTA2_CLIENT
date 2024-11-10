@@ -15,26 +15,25 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x9a8
+    // Size: 0x9d0
     // Has VTable
     // Construct allowed
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CTriggerFan : public server::CBaseTrigger
     {
     public:
-        Vector m_vFanOrigin; // 0x958        
-        Vector m_vFanEnd; // 0x964        
-        Vector m_vNoise; // 0x970        
-        float m_flForce; // 0x97c        
-        float m_flRopeForceScale; // 0x980        
-        float m_flPlayerForce; // 0x984        
-        float m_flRampTime; // 0x988        
-        bool m_bFalloff; // 0x98c        
-        bool m_bPushPlayer; // 0x98d        
-        bool m_bRampDown; // 0x98e        
-        bool m_bAddNoise; // 0x98f        
-        server::CountdownTimer m_RampTimer; // 0x990        
+        Vector m_vFanOrigin; // 0x980        
+        Vector m_vFanEnd; // 0x98c        
+        Vector m_vNoise; // 0x998        
+        float m_flForce; // 0x9a4        
+        float m_flRopeForceScale; // 0x9a8        
+        float m_flPlayerForce; // 0x9ac        
+        float m_flRampTime; // 0x9b0        
+        bool m_bFalloff; // 0x9b4        
+        bool m_bPushPlayer; // 0x9b5        
+        bool m_bRampDown; // 0x9b6        
+        bool m_bAddNoise; // 0x9b7        
+        server::CountdownTimer m_RampTimer; // 0x9b8        
         
         // Datamap fields:
         // void CTriggerFanPushThink; // 0x0
@@ -42,5 +41,5 @@ namespace source2sdk::server
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CTriggerFan because it is not a standard-layout class
-    static_assert(sizeof(CTriggerFan) == 0x9a8);
+    static_assert(sizeof(CTriggerFan) == 0x9d0);
 };

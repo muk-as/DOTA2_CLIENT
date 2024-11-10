@@ -27,15 +27,12 @@ namespace source2sdk::server
     // Has VTable
     // Is Abstract
     // MDisableDataDescValidation
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_ActionRunner
     {
     public:
         [[maybe_unused]] std::uint8_t pad_0x00[0x8]; // 0x0
-        // metadata: MNetworkDisable
         client::CModifierParams* m_pEventContext; // 0x8        
-        // metadata: MNetworkDisable
         server::CDOTA_BaseNPC* m_pCaster; // 0x10        
     };
     #pragma pack(pop)

@@ -61,15 +61,15 @@ namespace source2sdk::server
         bool m_bIsValid; // 0x30        
         [[maybe_unused]] std::uint8_t pad_0x31[0x7]; // 0x31
         // metadata: MNetworkEnable
-        // metadata: MNetworkChangeCallback "OnPlayerNamesChanged"
+        // metadata: MNetworkChangeCallback "OnPlayerDataPlayerNamesChanged"
         CUtlSymbolLarge m_iszPlayerName; // 0x38        
         // metadata: MNetworkEnable
-        // metadata: MNetworkChangeCallback "OnTeamChanged"
+        // metadata: MNetworkChangeCallback "OnPlayerDataTeamChanged"
         int32_t m_iPlayerTeam; // 0x40        
         // metadata: MNetworkEnable
         bool m_bFullyJoinedServer; // 0x44        
         // metadata: MNetworkEnable
-        // metadata: MNetworkChangeCallback "OnFakeClientChanged"
+        // metadata: MNetworkChangeCallback "OnPlayerDataFakeClientChanged"
         bool m_bFakeClient; // 0x45        
         // metadata: MNetworkEnable
         bool m_bIsBroadcaster; // 0x46        
@@ -82,17 +82,17 @@ namespace source2sdk::server
         bool m_bIsBroadcasterChannelCameraman; // 0x50        
         [[maybe_unused]] std::uint8_t pad_0x51[0x3]; // 0x51
         // metadata: MNetworkEnable
-        // metadata: MNetworkChangeCallback "OnPlayerConnectionStateChanged"
+        // metadata: MNetworkChangeCallback "OnPlayerDataPlayerConnectionStateChanged"
         int32_t m_iConnectionState; // 0x54        
         // metadata: MNetworkEnable
         // metadata: MNetworkEncoder "fixed64"
-        // metadata: MNetworkChangeCallback "OnPlayerSteamIDsChanged"
+        // metadata: MNetworkChangeCallback "OnPlayerDataPlayerSteamIDsChanged"
         uint64_t m_iPlayerSteamID; // 0x58        
         // metadata: MNetworkEnable
         client::DOTATeam_t m_eCoachTeam; // 0x60        
         [[maybe_unused]] std::uint8_t pad_0x64[0x4]; // 0x64
         // metadata: MNetworkEnable
-        // metadata: MNetworkChangeCallback "OnPlayerCoachedPlayerIDsChanged"
+        // metadata: MNetworkChangeCallback "OnPlayerDataPlayerCoachedPlayerIDsChanged"
         // m_vecPrivateCoachPlayerIDs has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CNetworkUtlVectorBase<client::PlayerID_t> m_vecPrivateCoachPlayerIDs;
         char m_vecPrivateCoachPlayerIDs[0x18]; // 0x68        

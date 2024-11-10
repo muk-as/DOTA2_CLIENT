@@ -15,7 +15,6 @@ namespace source2sdk::entity2
     // Alignment: 0x8
     // Standard-layout class: true
     // Size: 0x78
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkVarNames "int32 m_nameStringableIndex"
     #pragma pack(push, 1)
@@ -31,10 +30,8 @@ namespace source2sdk::entity2
         [[maybe_unused]] std::uint8_t pad_0x28[0x8]; // 0x28
         uint32_t m_flags; // 0x30        
         [[maybe_unused]] std::uint8_t pad_0x34[0x4]; // 0x34
-        // metadata: MNetworkDisable
         WorldGroupId_t m_worldGroupId; // 0x38        
         uint32_t m_fDataObjectTypes; // 0x3c        
-        // metadata: MNetworkDisable
         // metadata: MNetworkChangeAccessorFieldPathIndex
         networksystem::ChangeAccessorFieldPathIndex_t m_PathIndex; // 0x40        
         [[maybe_unused]] std::uint8_t pad_0x44[0x14]; // 0x44

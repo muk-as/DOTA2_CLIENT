@@ -14,20 +14,19 @@ namespace source2sdk::server
     // Registered alignment: unknown
     // Alignment: unknown
     // Standard-layout class: false
-    // Size: 0x1718
+    // Size: 0x1738
     // Has VTable
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Modifier_Slark_EssenceShift : public server::CDOTA_Modifier_Stacking_Base
     {
     public:
-        int32_t agi_gain; // 0x1708        
-        float duration; // 0x170c        
-        int32_t max_stacks_per_hero; // 0x1710        
-        [[maybe_unused]] std::uint8_t pad_0x1714[0x4];
+        int32_t agi_gain; // 0x1728        
+        float duration; // 0x172c        
+        int32_t max_stacks_per_hero; // 0x1730        
+        [[maybe_unused]] std::uint8_t pad_0x1734[0x4];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Modifier_Slark_EssenceShift because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_Slark_EssenceShift) == 0x1718);
+    static_assert(sizeof(CDOTA_Modifier_Slark_EssenceShift) == 0x1738);
 };

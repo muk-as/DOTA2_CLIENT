@@ -15,11 +15,10 @@ namespace source2sdk::server
     // Registered alignment: unknown
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x660
+    // Size: 0x688
     // Has VTable
     // Is Abstract
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkVarNames "AbilityID_t m_vecChoices"
     #pragma pack(push, 1)
@@ -28,10 +27,10 @@ namespace source2sdk::server
     public:
         // metadata: MNetworkEnable
         // metadata: MNetworkChangeCallback "OnChoicesChanged"
-        client::AbilityID_t m_vecChoices[6]; // 0x648        
+        client::AbilityID_t m_vecChoices[6]; // 0x670        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Item_TierToken because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Item_TierToken) == 0x660);
+    static_assert(sizeof(CDOTA_Item_TierToken) == 0x688);
 };

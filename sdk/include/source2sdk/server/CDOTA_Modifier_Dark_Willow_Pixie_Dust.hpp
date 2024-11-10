@@ -14,18 +14,17 @@ namespace source2sdk::server
     // Registered alignment: unknown
     // Alignment: unknown
     // Standard-layout class: false
-    // Size: 0x16f0
+    // Size: 0x1710
     // Has VTable
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Modifier_Dark_Willow_Pixie_Dust : public server::CDOTA_Buff_Item
     {
     public:
-        int32_t hp_regen; // 0x16e8        
-        int32_t mana_regen_amp; // 0x16ec        
+        int32_t hp_regen; // 0x1708        
+        int32_t mana_regen_amp; // 0x170c        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Modifier_Dark_Willow_Pixie_Dust because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_Dark_Willow_Pixie_Dust) == 0x16f0);
+    static_assert(sizeof(CDOTA_Modifier_Dark_Willow_Pixie_Dust) == 0x1710);
 };

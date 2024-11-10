@@ -16,21 +16,20 @@ namespace source2sdk::server
     // Registered alignment: unknown
     // Alignment: unknown
     // Standard-layout class: false
-    // Size: 0x1710
+    // Size: 0x1730
     // Has VTable
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Modifier_Lich_Ice_Spire_VictimCopy : public client::CDOTA_Buff
     {
     public:
-        float aura_radius; // 0x16e8        
-        client::ParticleIndex_t m_nFXIndex; // 0x16ec        
-        server::CountdownTimer m_Timer; // 0x16f0        
-        bool m_bIsHeroSpire; // 0x1708        
-        [[maybe_unused]] std::uint8_t pad_0x1709[0x7];
+        float aura_radius; // 0x1708        
+        client::ParticleIndex_t m_nFXIndex; // 0x170c        
+        server::CountdownTimer m_Timer; // 0x1710        
+        bool m_bIsHeroSpire; // 0x1728        
+        [[maybe_unused]] std::uint8_t pad_0x1729[0x7];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Modifier_Lich_Ice_Spire_VictimCopy because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_Lich_Ice_Spire_VictimCopy) == 0x1710);
+    static_assert(sizeof(CDOTA_Modifier_Lich_Ice_Spire_VictimCopy) == 0x1730);
 };

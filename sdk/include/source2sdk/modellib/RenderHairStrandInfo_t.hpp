@@ -13,7 +13,7 @@ namespace source2sdk::modellib
     // Registered alignment: 0x4
     // Alignment: 0x4
     // Standard-layout class: true
-    // Size: 0x24
+    // Size: 0x28
     // Has Trivial Constructor
     // Has Trivial Destructor
     // Construct allowed
@@ -29,6 +29,7 @@ namespace source2sdk::modellib
         uint16_t m_nPackedBaseUv[2]; // 0x18        
         uint32_t m_nPackedSurfaceNormalOs; // 0x1c        
         uint32_t m_nPackedSurfaceTangentOs; // 0x20        
+        uint32_t m_nDataOffset_Segments; // 0x24        
     };
     #pragma pack(pop)
     
@@ -38,6 +39,7 @@ namespace source2sdk::modellib
     static_assert(offsetof(RenderHairStrandInfo_t, m_nPackedBaseUv) == 0x18);
     static_assert(offsetof(RenderHairStrandInfo_t, m_nPackedSurfaceNormalOs) == 0x1c);
     static_assert(offsetof(RenderHairStrandInfo_t, m_nPackedSurfaceTangentOs) == 0x20);
+    static_assert(offsetof(RenderHairStrandInfo_t, m_nDataOffset_Segments) == 0x24);
     
-    static_assert(sizeof(RenderHairStrandInfo_t) == 0x24);
+    static_assert(sizeof(RenderHairStrandInfo_t) == 0x28);
 };

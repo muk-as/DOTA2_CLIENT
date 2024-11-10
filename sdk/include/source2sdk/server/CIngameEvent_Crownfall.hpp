@@ -14,10 +14,9 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x1a30
+    // Size: 0x1aa0
     // Has VTable
     // Construct allowed
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CIngameEvent_Crownfall : public server::CIngameEvent_Base
     {
@@ -26,5 +25,5 @@ namespace source2sdk::server
     };
     #pragma pack(pop)
     
-    static_assert(sizeof(CIngameEvent_Crownfall) == 0x1a30);
+    static_assert(sizeof(CIngameEvent_Crownfall) == 0x1aa0);
 };

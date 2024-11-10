@@ -52,11 +52,10 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x538
+    // Size: 0x560
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkExcludeByName "m_bClientSideRagdoll"
     // static metadata: MNetworkExcludeByName "m_iMaxHealth"
@@ -111,122 +110,122 @@ namespace source2sdk::client
         // metadata: MNetworkAlias "CBodyComponent"
         // metadata: MNetworkTypeAlias "CBodyComponent"
         // metadata: MNetworkPriority "48"
-        client::CBodyComponent* m_CBodyComponent; // 0x38        
-        client::CNetworkTransmitComponent m_NetworkTransmitComponent; // 0x40        
-        [[maybe_unused]] std::uint8_t pad_0x1e0[0x120]; // 0x1e0
-        entity2::GameTick_t m_nLastThinkTick; // 0x300        
-        [[maybe_unused]] std::uint8_t pad_0x304[0x4]; // 0x304
-        client::CGameSceneNode* m_pGameSceneNode; // 0x308        
-        client::CRenderComponent* m_pRenderComponent; // 0x310        
-        client::CCollisionProperty* m_pCollision; // 0x318        
+        client::CBodyComponent* m_CBodyComponent; // 0x40        
+        client::CNetworkTransmitComponent m_NetworkTransmitComponent; // 0x48        
+        [[maybe_unused]] std::uint8_t pad_0x208[0x120]; // 0x208
+        entity2::GameTick_t m_nLastThinkTick; // 0x328        
+        [[maybe_unused]] std::uint8_t pad_0x32c[0x4]; // 0x32c
+        client::CGameSceneNode* m_pGameSceneNode; // 0x330        
+        client::CRenderComponent* m_pRenderComponent; // 0x338        
+        client::CCollisionProperty* m_pCollision; // 0x340        
         // metadata: MNetworkEnable
         // metadata: MNetworkUserGroup "LocalPlayerExclusive"
-        int32_t m_iMaxHealth; // 0x320        
+        int32_t m_iMaxHealth; // 0x348        
         // metadata: MNetworkEnable
         // metadata: MNetworkSerializer "ClampHealth"
         // metadata: MNetworkUserGroup "Player"
         // metadata: MNetworkPriority "32"
-        int32_t m_iHealth; // 0x324        
+        int32_t m_iHealth; // 0x34c        
         // metadata: MNetworkEnable
         // metadata: MNetworkUserGroup "Player"
         // metadata: MNetworkPriority "32"
-        uint8_t m_lifeState; // 0x328        
+        uint8_t m_lifeState; // 0x350        
         // metadata: MNetworkEnable
-        client::DamageOptions_t m_takedamage; // 0x329        
+        client::DamageOptions_t m_takedamage; // 0x351        
         // metadata: MNetworkEnable
-        bool m_bTakesDamage; // 0x32a        
-        [[maybe_unused]] std::uint8_t pad_0x32b[0x5]; // 0x32b
+        bool m_bTakesDamage; // 0x352        
+        [[maybe_unused]] std::uint8_t pad_0x353[0x5]; // 0x353
         // metadata: MNetworkEnable
-        client::TakeDamageFlags_t m_nTakeDamageFlags; // 0x330        
+        client::TakeDamageFlags_t m_nTakeDamageFlags; // 0x358        
         // metadata: MNetworkEnable
-        client::EntityPlatformTypes_t m_nPlatformType; // 0x338        
+        client::EntityPlatformTypes_t m_nPlatformType; // 0x360        
         // metadata: MNetworkEnable
         // metadata: MNetworkChangeCallback "OnInterpolationFrameChanged"
-        uint8_t m_ubInterpolationFrame; // 0x339        
-        [[maybe_unused]] std::uint8_t pad_0x33a[0x2]; // 0x33a
+        uint8_t m_ubInterpolationFrame; // 0x361        
+        [[maybe_unused]] std::uint8_t pad_0x362[0x2]; // 0x362
         // m_hSceneObjectController has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<client::C_BaseEntity> m_hSceneObjectController;
-        char m_hSceneObjectController[0x4]; // 0x33c        
-        int32_t m_nNoInterpolationTick; // 0x340        
-        int32_t m_nVisibilityNoInterpolationTick; // 0x344        
-        float m_flProxyRandomValue; // 0x348        
-        int32_t m_iEFlags; // 0x34c        
-        uint8_t m_nWaterType; // 0x350        
-        bool m_bInterpolateEvenWithNoModel; // 0x351        
-        bool m_bPredictionEligible; // 0x352        
-        bool m_bApplyLayerMatchIDToModel; // 0x353        
-        CUtlStringToken m_tokLayerMatchID; // 0x354        
+        char m_hSceneObjectController[0x4]; // 0x364        
+        int32_t m_nNoInterpolationTick; // 0x368        
+        int32_t m_nVisibilityNoInterpolationTick; // 0x36c        
+        float m_flProxyRandomValue; // 0x370        
+        int32_t m_iEFlags; // 0x374        
+        uint8_t m_nWaterType; // 0x378        
+        bool m_bInterpolateEvenWithNoModel; // 0x379        
+        bool m_bPredictionEligible; // 0x37a        
+        bool m_bApplyLayerMatchIDToModel; // 0x37b        
+        CUtlStringToken m_tokLayerMatchID; // 0x37c        
         // metadata: MNetworkEnable
         // metadata: MNetworkChangeCallback "OnSubclassIDChanged"
-        CUtlStringToken m_nSubclassID; // 0x358        
-        [[maybe_unused]] std::uint8_t pad_0x35c[0xc]; // 0x35c
-        int32_t m_nSimulationTick; // 0x368        
-        int32_t m_iCurrentThinkContext; // 0x36c        
+        CUtlStringToken m_nSubclassID; // 0x380        
+        [[maybe_unused]] std::uint8_t pad_0x384[0xc]; // 0x384
+        int32_t m_nSimulationTick; // 0x390        
+        int32_t m_iCurrentThinkContext; // 0x394        
         // m_aThinkFunctions has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<client::thinkfunc_t> m_aThinkFunctions;
-        char m_aThinkFunctions[0x18]; // 0x370        
-        bool m_bDisabledContextThinks; // 0x388        
-        [[maybe_unused]] std::uint8_t pad_0x389[0x3]; // 0x389
+        char m_aThinkFunctions[0x18]; // 0x398        
+        bool m_bDisabledContextThinks; // 0x3b0        
+        [[maybe_unused]] std::uint8_t pad_0x3b1[0x3]; // 0x3b1
         // metadata: MNetworkEnable
         // metadata: MNetworkPriority "0"
         // metadata: MNetworkSerializer "animTimeSerializer"
-        float m_flAnimTime; // 0x38c        
+        float m_flAnimTime; // 0x3b4        
         // metadata: MNetworkEnable
         // metadata: MNetworkPriority "1"
         // metadata: MNetworkSerializer "simulationTimeSerializer"
         // metadata: MNetworkChangeCallback "OnSimulationTimeChanged"
-        float m_flSimulationTime; // 0x390        
-        uint8_t m_nSceneObjectOverrideFlags; // 0x394        
-        bool m_bHasSuccessfullyInterpolated; // 0x395        
-        bool m_bHasAddedVarsToInterpolation; // 0x396        
-        bool m_bRenderEvenWhenNotSuccessfullyInterpolated; // 0x397        
-        int32_t m_nInterpolationLatchDirtyFlags[2]; // 0x398        
-        uint16_t m_ListEntry[11]; // 0x3a0        
-        [[maybe_unused]] std::uint8_t pad_0x3b6[0x2]; // 0x3b6
+        float m_flSimulationTime; // 0x3b8        
+        uint8_t m_nSceneObjectOverrideFlags; // 0x3bc        
+        bool m_bHasSuccessfullyInterpolated; // 0x3bd        
+        bool m_bHasAddedVarsToInterpolation; // 0x3be        
+        bool m_bRenderEvenWhenNotSuccessfullyInterpolated; // 0x3bf        
+        int32_t m_nInterpolationLatchDirtyFlags[2]; // 0x3c0        
+        uint16_t m_ListEntry[11]; // 0x3c8        
+        [[maybe_unused]] std::uint8_t pad_0x3de[0x2]; // 0x3de
         // metadata: MNetworkEnable
-        entity2::GameTime_t m_flCreateTime; // 0x3b8        
+        entity2::GameTime_t m_flCreateTime; // 0x3e0        
         // metadata: MNetworkEnable
-        float m_flSpeed; // 0x3bc        
-        uint16_t m_EntClientFlags; // 0x3c0        
+        float m_flSpeed; // 0x3e4        
+        uint16_t m_EntClientFlags; // 0x3e8        
         // metadata: MNetworkEnable
-        bool m_bClientSideRagdoll; // 0x3c2        
+        bool m_bClientSideRagdoll; // 0x3ea        
         // metadata: MNetworkEnable
         // metadata: MNetworkChangeCallback "OnNetVarTeamNumChanged"
-        uint8_t m_iTeamNum; // 0x3c3        
+        uint8_t m_iTeamNum; // 0x3eb        
         // metadata: MNetworkEnable
-        uint32_t m_spawnflags; // 0x3c4        
+        uint32_t m_spawnflags; // 0x3ec        
         // metadata: MNetworkEnable
         // metadata: MNetworkUserGroup "LocalPlayerExclusive"
-        entity2::GameTick_t m_nNextThinkTick; // 0x3c8        
+        entity2::GameTick_t m_nNextThinkTick; // 0x3f0        
+        [[maybe_unused]] std::uint8_t pad_0x3f4[0x4]; // 0x3f4
         // metadata: MNetworkEnable
         // metadata: MNetworkPriority "32"
         // metadata: MNetworkUserGroup "Player"
         // metadata: MNetworkChangeCallback "OnFlagsChanged"
-        uint32_t m_fFlags; // 0x3cc        
-        Vector m_vecAbsVelocity; // 0x3d0        
-        [[maybe_unused]] std::uint8_t pad_0x3dc[0x4]; // 0x3dc
+        uint32_t m_fFlags; // 0x3f8        
+        Vector m_vecAbsVelocity; // 0x3fc        
         // metadata: MNetworkEnable
         // metadata: MNetworkUserGroup "LocalPlayerExclusive"
         // metadata: MNetworkChangeCallback "OnLocalVelocityChanged"
         // metadata: MNetworkPriority "32"
-        client::CNetworkVelocityVector m_vecVelocity; // 0x3e0        
-        [[maybe_unused]] std::uint8_t pad_0x408[0x8]; // 0x408
+        client::CNetworkVelocityVector m_vecVelocity; // 0x408        
+        [[maybe_unused]] std::uint8_t pad_0x430[0x8]; // 0x430
         // metadata: MNetworkEnable
         // m_hEffectEntity has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<client::C_BaseEntity> m_hEffectEntity;
-        char m_hEffectEntity[0x4]; // 0x410        
+        char m_hEffectEntity[0x4]; // 0x438        
         // metadata: MNetworkEnable
         // metadata: MNetworkPriority "32"
         // m_hOwnerEntity has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<client::C_BaseEntity> m_hOwnerEntity;
-        char m_hOwnerEntity[0x4]; // 0x414        
+        char m_hOwnerEntity[0x4]; // 0x43c        
         // metadata: MNetworkEnable
-        client::MoveCollide_t m_MoveCollide; // 0x418        
+        client::MoveCollide_t m_MoveCollide; // 0x440        
         // metadata: MNetworkEnable
         // metadata: MNetworkChangeCallback "OnMoveTypeChanged"
-        client::MoveType_t m_MoveType; // 0x419        
-        client::MoveType_t m_nActualMoveType; // 0x41a        
-        [[maybe_unused]] std::uint8_t pad_0x41b[0x1]; // 0x41b
+        client::MoveType_t m_MoveType; // 0x441        
+        client::MoveType_t m_nActualMoveType; // 0x442        
+        [[maybe_unused]] std::uint8_t pad_0x443[0x1]; // 0x443
         // metadata: MNetworkEnable
         // metadata: MNetworkUserGroup "Water"
         // metadata: MNetworkChangeCallback "OnWaterLevelChangeNetworked"
@@ -234,80 +233,80 @@ namespace source2sdk::client
         // metadata: MNetworkMinValue "0,000000"
         // metadata: MNetworkMaxValue "1,000000"
         // metadata: MNetworkEncodeFlags "8"
-        float m_flWaterLevel; // 0x41c        
+        float m_flWaterLevel; // 0x444        
         // metadata: MNetworkEnable
         // metadata: MNetworkChangeCallback "OnEffectsChanged"
-        uint32_t m_fEffects; // 0x420        
+        uint32_t m_fEffects; // 0x448        
         // metadata: MNetworkEnable
         // metadata: MNetworkPriority "32"
         // metadata: MNetworkUserGroup "Player"
         // m_hGroundEntity has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<client::C_BaseEntity> m_hGroundEntity;
-        char m_hGroundEntity[0x4]; // 0x424        
+        char m_hGroundEntity[0x4]; // 0x44c        
         // metadata: MNetworkEnable
         // metadata: MNetworkPriority "32"
         // metadata: MNetworkUserGroup "Player"
-        int32_t m_nGroundBodyIndex; // 0x428        
+        int32_t m_nGroundBodyIndex; // 0x450        
         // metadata: MNetworkEnable
         // metadata: MNetworkBitCount "8"
         // metadata: MNetworkMinValue "0,000000"
         // metadata: MNetworkMaxValue "4,000000"
         // metadata: MNetworkEncodeFlags "1"
         // metadata: MNetworkUserGroup "LocalPlayerExclusive"
-        float m_flFriction; // 0x42c        
+        float m_flFriction; // 0x454        
         // metadata: MNetworkEnable
         // metadata: MNetworkEncoder "coord"
-        float m_flElasticity; // 0x430        
+        float m_flElasticity; // 0x458        
         // metadata: MNetworkEnable
         // metadata: MNetworkUserGroup "LocalPlayerExclusive"
-        float m_flGravityScale; // 0x434        
+        float m_flGravityScale; // 0x45c        
         // metadata: MNetworkEnable
         // metadata: MNetworkUserGroup "LocalPlayerExclusive"
-        float m_flTimeScale; // 0x438        
+        float m_flTimeScale; // 0x460        
         // metadata: MNetworkEnable
         // metadata: MNetworkChangeCallback "OnInterpolationAmountChanged"
-        bool m_bAnimatedEveryTick; // 0x43c        
-        [[maybe_unused]] std::uint8_t pad_0x43d[0x3]; // 0x43d
+        bool m_bAnimatedEveryTick; // 0x464        
+        [[maybe_unused]] std::uint8_t pad_0x465[0x3]; // 0x465
         // metadata: MNetworkEnable
         // metadata: MNetworkChangeCallback "OnNavIgnoreChanged"
-        entity2::GameTime_t m_flNavIgnoreUntilTime; // 0x440        
-        uint16_t m_hThink; // 0x444        
-        [[maybe_unused]] std::uint8_t pad_0x446[0xa]; // 0x446
-        uint8_t m_fBBoxVisFlags; // 0x450        
-        bool m_bPredictable; // 0x451        
-        bool m_bRenderWithViewModels; // 0x452        
-        [[maybe_unused]] std::uint8_t pad_0x453[0x1]; // 0x453
-        CSplitScreenSlot m_nSplitUserPlayerPredictionSlot; // 0x454        
-        int32_t m_nFirstPredictableCommand; // 0x458        
-        int32_t m_nLastPredictableCommand; // 0x45c        
+        entity2::GameTime_t m_flNavIgnoreUntilTime; // 0x468        
+        uint16_t m_hThink; // 0x46c        
+        [[maybe_unused]] std::uint8_t pad_0x46e[0xa]; // 0x46e
+        uint8_t m_fBBoxVisFlags; // 0x478        
+        bool m_bPredictable; // 0x479        
+        bool m_bRenderWithViewModels; // 0x47a        
+        [[maybe_unused]] std::uint8_t pad_0x47b[0x1]; // 0x47b
+        CSplitScreenSlot m_nSplitUserPlayerPredictionSlot; // 0x47c        
+        int32_t m_nFirstPredictableCommand; // 0x480        
+        int32_t m_nLastPredictableCommand; // 0x484        
         // m_hOldMoveParent has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<client::C_BaseEntity> m_hOldMoveParent;
-        char m_hOldMoveParent[0x4]; // 0x460        
-        [[maybe_unused]] std::uint8_t pad_0x464[0x4]; // 0x464
-        particleslib::CParticleProperty m_Particles; // 0x468        
+        char m_hOldMoveParent[0x4]; // 0x488        
+        [[maybe_unused]] std::uint8_t pad_0x48c[0x4]; // 0x48c
+        particleslib::CParticleProperty m_Particles; // 0x490        
         // m_vecPredictedScriptFloats has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<float> m_vecPredictedScriptFloats;
-        char m_vecPredictedScriptFloats[0x18]; // 0x490        
+        char m_vecPredictedScriptFloats[0x18]; // 0x4b8        
         // m_vecPredictedScriptFloatIDs has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<int32_t> m_vecPredictedScriptFloatIDs;
-        char m_vecPredictedScriptFloatIDs[0x18]; // 0x4a8        
-        [[maybe_unused]] std::uint8_t pad_0x4c0[0x18]; // 0x4c0
-        int32_t m_nNextScriptVarRecordID; // 0x4d8        
-        [[maybe_unused]] std::uint8_t pad_0x4dc[0xc]; // 0x4dc
-        QAngle m_vecAngVelocity; // 0x4e8        
-        int32_t m_DataChangeEventRef; // 0x4f4        
+        char m_vecPredictedScriptFloatIDs[0x18]; // 0x4d0        
+        [[maybe_unused]] std::uint8_t pad_0x4e8[0x18]; // 0x4e8
+        int32_t m_nNextScriptVarRecordID; // 0x500        
+        [[maybe_unused]] std::uint8_t pad_0x504[0xc]; // 0x504
+        QAngle m_vecAngVelocity; // 0x510        
+        int32_t m_DataChangeEventRef; // 0x51c        
         // m_dependencies has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<CEntityHandle> m_dependencies;
-        char m_dependencies[0x18]; // 0x4f8        
-        int32_t m_nCreationTick; // 0x510        
-        [[maybe_unused]] std::uint8_t pad_0x514[0x9]; // 0x514
-        bool m_bAnimTimeChanged; // 0x51d        
-        bool m_bSimulationTimeChanged; // 0x51e        
-        [[maybe_unused]] std::uint8_t pad_0x51f[0x9]; // 0x51f
-        CUtlString m_sUniqueHammerID; // 0x528        
+        char m_dependencies[0x18]; // 0x520        
+        int32_t m_nCreationTick; // 0x538        
+        [[maybe_unused]] std::uint8_t pad_0x53c[0x9]; // 0x53c
+        bool m_bAnimTimeChanged; // 0x545        
+        bool m_bSimulationTimeChanged; // 0x546        
+        [[maybe_unused]] std::uint8_t pad_0x547[0x9]; // 0x547
+        CUtlString m_sUniqueHammerID; // 0x550        
         // metadata: MNetworkEnable
-        client::BloodType m_nBloodType; // 0x530        
-        [[maybe_unused]] std::uint8_t pad_0x534[0x4];
+        client::BloodType m_nBloodType; // 0x558        
+        [[maybe_unused]] std::uint8_t pad_0x55c[0x4];
         
         // Static fields:
         static bool &Get_sm_bDatadescValidating() {return *reinterpret_cast<bool*>(interfaces::g_schema->FindTypeScopeForModule("client.dll")->FindDeclaredClass("C_BaseEntity")->GetStaticFields()[0]->m_pInstance);};
@@ -325,9 +324,9 @@ namespace source2sdk::client
         
         // Datamap fields:
         // CUtlSymbolLarge m_iszPrivateVScripts; // 0x8
-        // void m_CScriptComponent; // 0x28
+        // void m_CScriptComponent; // 0x30
         // CUtlSymbolLarge subclass_name; // 0x7fffffff
-        // void m_pSubclassVData; // 0x360
+        // void m_pSubclassVData; // 0x388
         // QAngle angles; // 0x7fffffff
         // Vector origin; // 0x7fffffff
         // CStrongHandle< InfoForResourceTypeCModel > model; // 0x7fffffff
@@ -336,5 +335,5 @@ namespace source2sdk::client
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in C_BaseEntity because it is not a standard-layout class
-    static_assert(sizeof(C_BaseEntity) == 0x538);
+    static_assert(sizeof(C_BaseEntity) == 0x560);
 };

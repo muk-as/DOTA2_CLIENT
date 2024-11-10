@@ -19,21 +19,20 @@ namespace source2sdk::server
     // Registered alignment: unknown
     // Alignment: unknown
     // Standard-layout class: false
-    // Size: 0x1718
+    // Size: 0x1738
     // Has VTable
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Modifier_TemplarAssassin_Trap : public server::CDOTA_Modifier_Invisible
     {
     public:
         // m_vecTriggers has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<CHandle<server::CBaseEntity>> m_vecTriggers;
-        char m_vecTriggers[0x18]; // 0x16f8        
-        int32_t bonus_vision; // 0x1710        
-        [[maybe_unused]] std::uint8_t pad_0x1714[0x4];
+        char m_vecTriggers[0x18]; // 0x1718        
+        int32_t bonus_vision; // 0x1730        
+        [[maybe_unused]] std::uint8_t pad_0x1734[0x4];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Modifier_TemplarAssassin_Trap because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_TemplarAssassin_Trap) == 0x1718);
+    static_assert(sizeof(CDOTA_Modifier_TemplarAssassin_Trap) == 0x1738);
 };

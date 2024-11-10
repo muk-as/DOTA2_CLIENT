@@ -1,6 +1,7 @@
 #pragma once
 #include "source2sdk/physicslib/CFeIndexedJiggleBone.hpp"
 #include "source2sdk/physicslib/FeAnimStrayRadius_t.hpp"
+#include "source2sdk/physicslib/FeAntiTunnelProbe_t.hpp"
 #include "source2sdk/physicslib/FeAxialEdgeBend_t.hpp"
 #include "source2sdk/physicslib/FeBoxRigid_t.hpp"
 #include "source2sdk/physicslib/FeCollisionPlane_t.hpp"
@@ -11,6 +12,7 @@
 #include "source2sdk/physicslib/FeFitMatrix_t.hpp"
 #include "source2sdk/physicslib/FeFitWeight_t.hpp"
 #include "source2sdk/physicslib/FeFollowNode_t.hpp"
+#include "source2sdk/physicslib/FeHingeLimit_t.hpp"
 #include "source2sdk/physicslib/FeKelagerBend2_t.hpp"
 #include "source2sdk/physicslib/FeMorphLayerDepr_t.hpp"
 #include "source2sdk/physicslib/FeNodeBase_t.hpp"
@@ -51,7 +53,7 @@ namespace source2sdk::physicslib
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: true
-    // Size: 0x638
+    // Size: 0x680
     // Construct allowed
     // 
     // static metadata: MGetKV3ClassDefaults
@@ -116,175 +118,184 @@ namespace source2sdk::physicslib
         // m_Twists has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<physicslib::FeTwistConstraint_t> m_Twists;
         char m_Twists[0x18]; // 0x150        
+        // m_HingeLimits has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+        // CUtlVector<physicslib::FeHingeLimit_t> m_HingeLimits;
+        char m_HingeLimits[0x18]; // 0x168        
+        // m_AntiTunnelProbes has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+        // CUtlVector<physicslib::FeAntiTunnelProbe_t> m_AntiTunnelProbes;
+        char m_AntiTunnelProbes[0x18]; // 0x180        
+        // m_AntiTunnelTargetNodes has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+        // CUtlVector<uint16_t> m_AntiTunnelTargetNodes;
+        char m_AntiTunnelTargetNodes[0x18]; // 0x198        
         // m_AxialEdges has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<physicslib::FeAxialEdgeBend_t> m_AxialEdges;
-        char m_AxialEdges[0x18]; // 0x168        
+        char m_AxialEdges[0x18]; // 0x1b0        
         // m_NodeInvMasses has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<float> m_NodeInvMasses;
-        char m_NodeInvMasses[0x18]; // 0x180        
+        char m_NodeInvMasses[0x18]; // 0x1c8        
         // m_CtrlOffsets has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<physicslib::FeCtrlOffset_t> m_CtrlOffsets;
-        char m_CtrlOffsets[0x18]; // 0x198        
+        char m_CtrlOffsets[0x18]; // 0x1e0        
         // m_CtrlOsOffsets has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<physicslib::FeCtrlOsOffset_t> m_CtrlOsOffsets;
-        char m_CtrlOsOffsets[0x18]; // 0x1b0        
+        char m_CtrlOsOffsets[0x18]; // 0x1f8        
         // m_FollowNodes has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<physicslib::FeFollowNode_t> m_FollowNodes;
-        char m_FollowNodes[0x18]; // 0x1c8        
+        char m_FollowNodes[0x18]; // 0x210        
         // m_CollisionPlanes has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<physicslib::FeCollisionPlane_t> m_CollisionPlanes;
-        char m_CollisionPlanes[0x18]; // 0x1e0        
+        char m_CollisionPlanes[0x18]; // 0x228        
         // m_NodeIntegrator has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<physicslib::FeNodeIntegrator_t> m_NodeIntegrator;
-        char m_NodeIntegrator[0x18]; // 0x1f8        
+        char m_NodeIntegrator[0x18]; // 0x240        
         // m_SpringIntegrator has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<physicslib::FeSpringIntegrator_t> m_SpringIntegrator;
-        char m_SpringIntegrator[0x18]; // 0x210        
+        char m_SpringIntegrator[0x18]; // 0x258        
         // m_SimdSpringIntegrator has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<physicslib::FeSimdSpringIntegrator_t> m_SimdSpringIntegrator;
-        char m_SimdSpringIntegrator[0x18]; // 0x228        
+        char m_SimdSpringIntegrator[0x18]; // 0x270        
         // m_WorldCollisionParams has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<physicslib::FeWorldCollisionParams_t> m_WorldCollisionParams;
-        char m_WorldCollisionParams[0x18]; // 0x240        
+        char m_WorldCollisionParams[0x18]; // 0x288        
         // m_LegacyStretchForce has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<float> m_LegacyStretchForce;
-        char m_LegacyStretchForce[0x18]; // 0x258        
+        char m_LegacyStretchForce[0x18]; // 0x2a0        
         // m_NodeCollisionRadii has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<float> m_NodeCollisionRadii;
-        char m_NodeCollisionRadii[0x18]; // 0x270        
+        char m_NodeCollisionRadii[0x18]; // 0x2b8        
         // m_DynNodeFriction has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<float> m_DynNodeFriction;
-        char m_DynNodeFriction[0x18]; // 0x288        
+        char m_DynNodeFriction[0x18]; // 0x2d0        
         // m_LocalRotation has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<float> m_LocalRotation;
-        char m_LocalRotation[0x18]; // 0x2a0        
+        char m_LocalRotation[0x18]; // 0x2e8        
         // m_LocalForce has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<float> m_LocalForce;
-        char m_LocalForce[0x18]; // 0x2b8        
+        char m_LocalForce[0x18]; // 0x300        
         // m_TaperedCapsuleStretches has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<physicslib::FeTaperedCapsuleStretch_t> m_TaperedCapsuleStretches;
-        char m_TaperedCapsuleStretches[0x18]; // 0x2d0        
+        char m_TaperedCapsuleStretches[0x18]; // 0x318        
         // m_TaperedCapsuleRigids has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<physicslib::FeTaperedCapsuleRigid_t> m_TaperedCapsuleRigids;
-        char m_TaperedCapsuleRigids[0x18]; // 0x2e8        
+        char m_TaperedCapsuleRigids[0x18]; // 0x330        
         // m_SphereRigids has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<physicslib::FeSphereRigid_t> m_SphereRigids;
-        char m_SphereRigids[0x18]; // 0x300        
+        char m_SphereRigids[0x18]; // 0x348        
         // m_WorldCollisionNodes has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<uint16_t> m_WorldCollisionNodes;
-        char m_WorldCollisionNodes[0x18]; // 0x318        
+        char m_WorldCollisionNodes[0x18]; // 0x360        
         // m_TreeParents has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<uint16_t> m_TreeParents;
-        char m_TreeParents[0x18]; // 0x330        
+        char m_TreeParents[0x18]; // 0x378        
         // m_TreeCollisionMasks has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<uint16_t> m_TreeCollisionMasks;
-        char m_TreeCollisionMasks[0x18]; // 0x348        
+        char m_TreeCollisionMasks[0x18]; // 0x390        
         // m_TreeChildren has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<physicslib::FeTreeChildren_t> m_TreeChildren;
-        char m_TreeChildren[0x18]; // 0x360        
+        char m_TreeChildren[0x18]; // 0x3a8        
         // m_FreeNodes has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<uint16_t> m_FreeNodes;
-        char m_FreeNodes[0x18]; // 0x378        
+        char m_FreeNodes[0x18]; // 0x3c0        
         // m_FitMatrices has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<physicslib::FeFitMatrix_t> m_FitMatrices;
-        char m_FitMatrices[0x18]; // 0x390        
+        char m_FitMatrices[0x18]; // 0x3d8        
         // m_FitWeights has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<physicslib::FeFitWeight_t> m_FitWeights;
-        char m_FitWeights[0x18]; // 0x3a8        
+        char m_FitWeights[0x18]; // 0x3f0        
         // m_ReverseOffsets has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<physicslib::FeNodeReverseOffset_t> m_ReverseOffsets;
-        char m_ReverseOffsets[0x18]; // 0x3c0        
+        char m_ReverseOffsets[0x18]; // 0x408        
         // m_AnimStrayRadii has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<physicslib::FeAnimStrayRadius_t> m_AnimStrayRadii;
-        char m_AnimStrayRadii[0x18]; // 0x3d8        
+        char m_AnimStrayRadii[0x18]; // 0x420        
         // m_SimdAnimStrayRadii has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<physicslib::FeSimdAnimStrayRadius_t> m_SimdAnimStrayRadii;
-        char m_SimdAnimStrayRadii[0x18]; // 0x3f0        
+        char m_SimdAnimStrayRadii[0x18]; // 0x438        
         // m_KelagerBends has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<physicslib::FeKelagerBend2_t> m_KelagerBends;
-        char m_KelagerBends[0x18]; // 0x408        
+        char m_KelagerBends[0x18]; // 0x450        
         // m_CtrlSoftOffsets has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<physicslib::FeCtrlSoftOffset_t> m_CtrlSoftOffsets;
-        char m_CtrlSoftOffsets[0x18]; // 0x420        
+        char m_CtrlSoftOffsets[0x18]; // 0x468        
         // m_JiggleBones has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<physicslib::CFeIndexedJiggleBone> m_JiggleBones;
-        char m_JiggleBones[0x18]; // 0x438        
+        char m_JiggleBones[0x18]; // 0x480        
         // m_SourceElems has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<uint16_t> m_SourceElems;
-        char m_SourceElems[0x18]; // 0x450        
+        char m_SourceElems[0x18]; // 0x498        
         // m_GoalDampedSpringIntegrators has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<uint32_t> m_GoalDampedSpringIntegrators;
-        char m_GoalDampedSpringIntegrators[0x18]; // 0x468        
+        char m_GoalDampedSpringIntegrators[0x18]; // 0x4b0        
         // m_Tris has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<physicslib::FeTri_t> m_Tris;
-        char m_Tris[0x18]; // 0x480        
-        uint16_t m_nTriCount1; // 0x498        
-        uint16_t m_nTriCount2; // 0x49a        
-        uint8_t m_nReservedUint8; // 0x49c        
-        uint8_t m_nExtraPressureIterations; // 0x49d        
-        uint8_t m_nExtraGoalIterations; // 0x49e        
-        uint8_t m_nExtraIterations; // 0x49f        
+        char m_Tris[0x18]; // 0x4c8        
+        uint16_t m_nTriCount1; // 0x4e0        
+        uint16_t m_nTriCount2; // 0x4e2        
+        uint8_t m_nReservedUint8; // 0x4e4        
+        uint8_t m_nExtraPressureIterations; // 0x4e5        
+        uint8_t m_nExtraGoalIterations; // 0x4e6        
+        uint8_t m_nExtraIterations; // 0x4e7        
         // m_SDFRigids has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<physicslib::FeSDFRigid_t> m_SDFRigids;
-        char m_SDFRigids[0x18]; // 0x4a0        
+        char m_SDFRigids[0x18]; // 0x4e8        
         // m_BoxRigids has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<physicslib::FeBoxRigid_t> m_BoxRigids;
-        char m_BoxRigids[0x18]; // 0x4b8        
+        char m_BoxRigids[0x18]; // 0x500        
         // m_DynNodeVertexSet has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<uint8_t> m_DynNodeVertexSet;
-        char m_DynNodeVertexSet[0x18]; // 0x4d0        
+        char m_DynNodeVertexSet[0x18]; // 0x518        
         // m_VertexSetNames has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<uint32_t> m_VertexSetNames;
-        char m_VertexSetNames[0x18]; // 0x4e8        
+        char m_VertexSetNames[0x18]; // 0x530        
         // m_RigidColliderPriorities has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<physicslib::FeRigidColliderIndices_t> m_RigidColliderPriorities;
-        char m_RigidColliderPriorities[0x18]; // 0x500        
+        char m_RigidColliderPriorities[0x18]; // 0x548        
         // m_MorphLayers has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<physicslib::FeMorphLayerDepr_t> m_MorphLayers;
-        char m_MorphLayers[0x18]; // 0x518        
+        char m_MorphLayers[0x18]; // 0x560        
         // m_MorphSetData has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<uint8_t> m_MorphSetData;
-        char m_MorphSetData[0x18]; // 0x530        
+        char m_MorphSetData[0x18]; // 0x578        
         // m_VertexMaps has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<physicslib::FeVertexMapDesc_t> m_VertexMaps;
-        char m_VertexMaps[0x18]; // 0x548        
+        char m_VertexMaps[0x18]; // 0x590        
         // m_VertexMapValues has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<uint8_t> m_VertexMapValues;
-        char m_VertexMapValues[0x18]; // 0x560        
+        char m_VertexMapValues[0x18]; // 0x5a8        
         // m_Effects has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<physicslib::FeEffectDesc_t> m_Effects;
-        char m_Effects[0x18]; // 0x578        
+        char m_Effects[0x18]; // 0x5c0        
         // m_LockToParent has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<physicslib::FeCtrlOffset_t> m_LockToParent;
-        char m_LockToParent[0x18]; // 0x590        
+        char m_LockToParent[0x18]; // 0x5d8        
         // m_LockToGoal has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<uint16_t> m_LockToGoal;
-        char m_LockToGoal[0x18]; // 0x5a8        
+        char m_LockToGoal[0x18]; // 0x5f0        
         // m_SkelParents has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<int16_t> m_SkelParents;
-        char m_SkelParents[0x18]; // 0x5c0        
+        char m_SkelParents[0x18]; // 0x608        
         // m_DynNodeWindBases has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<physicslib::FeNodeWindBase_t> m_DynNodeWindBases;
-        char m_DynNodeWindBases[0x18]; // 0x5d8        
-        float m_flInternalPressure; // 0x5f0        
-        float m_flDefaultTimeDilation; // 0x5f4        
-        float m_flWindage; // 0x5f8        
-        float m_flWindDrag; // 0x5fc        
-        float m_flDefaultSurfaceStretch; // 0x600        
-        float m_flDefaultThreadStretch; // 0x604        
-        float m_flDefaultGravityScale; // 0x608        
-        float m_flDefaultVelAirDrag; // 0x60c        
-        float m_flDefaultExpAirDrag; // 0x610        
-        float m_flDefaultVelQuadAirDrag; // 0x614        
-        float m_flDefaultExpQuadAirDrag; // 0x618        
-        float m_flRodVelocitySmoothRate; // 0x61c        
-        float m_flQuadVelocitySmoothRate; // 0x620        
-        float m_flAddWorldCollisionRadius; // 0x624        
-        float m_flDefaultVolumetricSolveAmount; // 0x628        
-        float m_flMotionSmoothCDT; // 0x62c        
-        uint16_t m_nRodVelocitySmoothIterations; // 0x630        
-        uint16_t m_nQuadVelocitySmoothIterations; // 0x632        
-        [[maybe_unused]] std::uint8_t pad_0x634[0x4];
+        char m_DynNodeWindBases[0x18]; // 0x620        
+        float m_flInternalPressure; // 0x638        
+        float m_flDefaultTimeDilation; // 0x63c        
+        float m_flWindage; // 0x640        
+        float m_flWindDrag; // 0x644        
+        float m_flDefaultSurfaceStretch; // 0x648        
+        float m_flDefaultThreadStretch; // 0x64c        
+        float m_flDefaultGravityScale; // 0x650        
+        float m_flDefaultVelAirDrag; // 0x654        
+        float m_flDefaultExpAirDrag; // 0x658        
+        float m_flDefaultVelQuadAirDrag; // 0x65c        
+        float m_flDefaultExpQuadAirDrag; // 0x660        
+        float m_flRodVelocitySmoothRate; // 0x664        
+        float m_flQuadVelocitySmoothRate; // 0x668        
+        float m_flAddWorldCollisionRadius; // 0x66c        
+        float m_flDefaultVolumetricSolveAmount; // 0x670        
+        float m_flMotionSmoothCDT; // 0x674        
+        float m_flLocalDrag1; // 0x678        
+        uint16_t m_nRodVelocitySmoothIterations; // 0x67c        
+        uint16_t m_nQuadVelocitySmoothIterations; // 0x67e        
     };
     #pragma pack(pop)
     
@@ -318,78 +329,82 @@ namespace source2sdk::physicslib
     static_assert(offsetof(PhysFeModelDesc_t, m_InitPose) == 0x120);
     static_assert(offsetof(PhysFeModelDesc_t, m_Rods) == 0x138);
     static_assert(offsetof(PhysFeModelDesc_t, m_Twists) == 0x150);
-    static_assert(offsetof(PhysFeModelDesc_t, m_AxialEdges) == 0x168);
-    static_assert(offsetof(PhysFeModelDesc_t, m_NodeInvMasses) == 0x180);
-    static_assert(offsetof(PhysFeModelDesc_t, m_CtrlOffsets) == 0x198);
-    static_assert(offsetof(PhysFeModelDesc_t, m_CtrlOsOffsets) == 0x1b0);
-    static_assert(offsetof(PhysFeModelDesc_t, m_FollowNodes) == 0x1c8);
-    static_assert(offsetof(PhysFeModelDesc_t, m_CollisionPlanes) == 0x1e0);
-    static_assert(offsetof(PhysFeModelDesc_t, m_NodeIntegrator) == 0x1f8);
-    static_assert(offsetof(PhysFeModelDesc_t, m_SpringIntegrator) == 0x210);
-    static_assert(offsetof(PhysFeModelDesc_t, m_SimdSpringIntegrator) == 0x228);
-    static_assert(offsetof(PhysFeModelDesc_t, m_WorldCollisionParams) == 0x240);
-    static_assert(offsetof(PhysFeModelDesc_t, m_LegacyStretchForce) == 0x258);
-    static_assert(offsetof(PhysFeModelDesc_t, m_NodeCollisionRadii) == 0x270);
-    static_assert(offsetof(PhysFeModelDesc_t, m_DynNodeFriction) == 0x288);
-    static_assert(offsetof(PhysFeModelDesc_t, m_LocalRotation) == 0x2a0);
-    static_assert(offsetof(PhysFeModelDesc_t, m_LocalForce) == 0x2b8);
-    static_assert(offsetof(PhysFeModelDesc_t, m_TaperedCapsuleStretches) == 0x2d0);
-    static_assert(offsetof(PhysFeModelDesc_t, m_TaperedCapsuleRigids) == 0x2e8);
-    static_assert(offsetof(PhysFeModelDesc_t, m_SphereRigids) == 0x300);
-    static_assert(offsetof(PhysFeModelDesc_t, m_WorldCollisionNodes) == 0x318);
-    static_assert(offsetof(PhysFeModelDesc_t, m_TreeParents) == 0x330);
-    static_assert(offsetof(PhysFeModelDesc_t, m_TreeCollisionMasks) == 0x348);
-    static_assert(offsetof(PhysFeModelDesc_t, m_TreeChildren) == 0x360);
-    static_assert(offsetof(PhysFeModelDesc_t, m_FreeNodes) == 0x378);
-    static_assert(offsetof(PhysFeModelDesc_t, m_FitMatrices) == 0x390);
-    static_assert(offsetof(PhysFeModelDesc_t, m_FitWeights) == 0x3a8);
-    static_assert(offsetof(PhysFeModelDesc_t, m_ReverseOffsets) == 0x3c0);
-    static_assert(offsetof(PhysFeModelDesc_t, m_AnimStrayRadii) == 0x3d8);
-    static_assert(offsetof(PhysFeModelDesc_t, m_SimdAnimStrayRadii) == 0x3f0);
-    static_assert(offsetof(PhysFeModelDesc_t, m_KelagerBends) == 0x408);
-    static_assert(offsetof(PhysFeModelDesc_t, m_CtrlSoftOffsets) == 0x420);
-    static_assert(offsetof(PhysFeModelDesc_t, m_JiggleBones) == 0x438);
-    static_assert(offsetof(PhysFeModelDesc_t, m_SourceElems) == 0x450);
-    static_assert(offsetof(PhysFeModelDesc_t, m_GoalDampedSpringIntegrators) == 0x468);
-    static_assert(offsetof(PhysFeModelDesc_t, m_Tris) == 0x480);
-    static_assert(offsetof(PhysFeModelDesc_t, m_nTriCount1) == 0x498);
-    static_assert(offsetof(PhysFeModelDesc_t, m_nTriCount2) == 0x49a);
-    static_assert(offsetof(PhysFeModelDesc_t, m_nReservedUint8) == 0x49c);
-    static_assert(offsetof(PhysFeModelDesc_t, m_nExtraPressureIterations) == 0x49d);
-    static_assert(offsetof(PhysFeModelDesc_t, m_nExtraGoalIterations) == 0x49e);
-    static_assert(offsetof(PhysFeModelDesc_t, m_nExtraIterations) == 0x49f);
-    static_assert(offsetof(PhysFeModelDesc_t, m_SDFRigids) == 0x4a0);
-    static_assert(offsetof(PhysFeModelDesc_t, m_BoxRigids) == 0x4b8);
-    static_assert(offsetof(PhysFeModelDesc_t, m_DynNodeVertexSet) == 0x4d0);
-    static_assert(offsetof(PhysFeModelDesc_t, m_VertexSetNames) == 0x4e8);
-    static_assert(offsetof(PhysFeModelDesc_t, m_RigidColliderPriorities) == 0x500);
-    static_assert(offsetof(PhysFeModelDesc_t, m_MorphLayers) == 0x518);
-    static_assert(offsetof(PhysFeModelDesc_t, m_MorphSetData) == 0x530);
-    static_assert(offsetof(PhysFeModelDesc_t, m_VertexMaps) == 0x548);
-    static_assert(offsetof(PhysFeModelDesc_t, m_VertexMapValues) == 0x560);
-    static_assert(offsetof(PhysFeModelDesc_t, m_Effects) == 0x578);
-    static_assert(offsetof(PhysFeModelDesc_t, m_LockToParent) == 0x590);
-    static_assert(offsetof(PhysFeModelDesc_t, m_LockToGoal) == 0x5a8);
-    static_assert(offsetof(PhysFeModelDesc_t, m_SkelParents) == 0x5c0);
-    static_assert(offsetof(PhysFeModelDesc_t, m_DynNodeWindBases) == 0x5d8);
-    static_assert(offsetof(PhysFeModelDesc_t, m_flInternalPressure) == 0x5f0);
-    static_assert(offsetof(PhysFeModelDesc_t, m_flDefaultTimeDilation) == 0x5f4);
-    static_assert(offsetof(PhysFeModelDesc_t, m_flWindage) == 0x5f8);
-    static_assert(offsetof(PhysFeModelDesc_t, m_flWindDrag) == 0x5fc);
-    static_assert(offsetof(PhysFeModelDesc_t, m_flDefaultSurfaceStretch) == 0x600);
-    static_assert(offsetof(PhysFeModelDesc_t, m_flDefaultThreadStretch) == 0x604);
-    static_assert(offsetof(PhysFeModelDesc_t, m_flDefaultGravityScale) == 0x608);
-    static_assert(offsetof(PhysFeModelDesc_t, m_flDefaultVelAirDrag) == 0x60c);
-    static_assert(offsetof(PhysFeModelDesc_t, m_flDefaultExpAirDrag) == 0x610);
-    static_assert(offsetof(PhysFeModelDesc_t, m_flDefaultVelQuadAirDrag) == 0x614);
-    static_assert(offsetof(PhysFeModelDesc_t, m_flDefaultExpQuadAirDrag) == 0x618);
-    static_assert(offsetof(PhysFeModelDesc_t, m_flRodVelocitySmoothRate) == 0x61c);
-    static_assert(offsetof(PhysFeModelDesc_t, m_flQuadVelocitySmoothRate) == 0x620);
-    static_assert(offsetof(PhysFeModelDesc_t, m_flAddWorldCollisionRadius) == 0x624);
-    static_assert(offsetof(PhysFeModelDesc_t, m_flDefaultVolumetricSolveAmount) == 0x628);
-    static_assert(offsetof(PhysFeModelDesc_t, m_flMotionSmoothCDT) == 0x62c);
-    static_assert(offsetof(PhysFeModelDesc_t, m_nRodVelocitySmoothIterations) == 0x630);
-    static_assert(offsetof(PhysFeModelDesc_t, m_nQuadVelocitySmoothIterations) == 0x632);
+    static_assert(offsetof(PhysFeModelDesc_t, m_HingeLimits) == 0x168);
+    static_assert(offsetof(PhysFeModelDesc_t, m_AntiTunnelProbes) == 0x180);
+    static_assert(offsetof(PhysFeModelDesc_t, m_AntiTunnelTargetNodes) == 0x198);
+    static_assert(offsetof(PhysFeModelDesc_t, m_AxialEdges) == 0x1b0);
+    static_assert(offsetof(PhysFeModelDesc_t, m_NodeInvMasses) == 0x1c8);
+    static_assert(offsetof(PhysFeModelDesc_t, m_CtrlOffsets) == 0x1e0);
+    static_assert(offsetof(PhysFeModelDesc_t, m_CtrlOsOffsets) == 0x1f8);
+    static_assert(offsetof(PhysFeModelDesc_t, m_FollowNodes) == 0x210);
+    static_assert(offsetof(PhysFeModelDesc_t, m_CollisionPlanes) == 0x228);
+    static_assert(offsetof(PhysFeModelDesc_t, m_NodeIntegrator) == 0x240);
+    static_assert(offsetof(PhysFeModelDesc_t, m_SpringIntegrator) == 0x258);
+    static_assert(offsetof(PhysFeModelDesc_t, m_SimdSpringIntegrator) == 0x270);
+    static_assert(offsetof(PhysFeModelDesc_t, m_WorldCollisionParams) == 0x288);
+    static_assert(offsetof(PhysFeModelDesc_t, m_LegacyStretchForce) == 0x2a0);
+    static_assert(offsetof(PhysFeModelDesc_t, m_NodeCollisionRadii) == 0x2b8);
+    static_assert(offsetof(PhysFeModelDesc_t, m_DynNodeFriction) == 0x2d0);
+    static_assert(offsetof(PhysFeModelDesc_t, m_LocalRotation) == 0x2e8);
+    static_assert(offsetof(PhysFeModelDesc_t, m_LocalForce) == 0x300);
+    static_assert(offsetof(PhysFeModelDesc_t, m_TaperedCapsuleStretches) == 0x318);
+    static_assert(offsetof(PhysFeModelDesc_t, m_TaperedCapsuleRigids) == 0x330);
+    static_assert(offsetof(PhysFeModelDesc_t, m_SphereRigids) == 0x348);
+    static_assert(offsetof(PhysFeModelDesc_t, m_WorldCollisionNodes) == 0x360);
+    static_assert(offsetof(PhysFeModelDesc_t, m_TreeParents) == 0x378);
+    static_assert(offsetof(PhysFeModelDesc_t, m_TreeCollisionMasks) == 0x390);
+    static_assert(offsetof(PhysFeModelDesc_t, m_TreeChildren) == 0x3a8);
+    static_assert(offsetof(PhysFeModelDesc_t, m_FreeNodes) == 0x3c0);
+    static_assert(offsetof(PhysFeModelDesc_t, m_FitMatrices) == 0x3d8);
+    static_assert(offsetof(PhysFeModelDesc_t, m_FitWeights) == 0x3f0);
+    static_assert(offsetof(PhysFeModelDesc_t, m_ReverseOffsets) == 0x408);
+    static_assert(offsetof(PhysFeModelDesc_t, m_AnimStrayRadii) == 0x420);
+    static_assert(offsetof(PhysFeModelDesc_t, m_SimdAnimStrayRadii) == 0x438);
+    static_assert(offsetof(PhysFeModelDesc_t, m_KelagerBends) == 0x450);
+    static_assert(offsetof(PhysFeModelDesc_t, m_CtrlSoftOffsets) == 0x468);
+    static_assert(offsetof(PhysFeModelDesc_t, m_JiggleBones) == 0x480);
+    static_assert(offsetof(PhysFeModelDesc_t, m_SourceElems) == 0x498);
+    static_assert(offsetof(PhysFeModelDesc_t, m_GoalDampedSpringIntegrators) == 0x4b0);
+    static_assert(offsetof(PhysFeModelDesc_t, m_Tris) == 0x4c8);
+    static_assert(offsetof(PhysFeModelDesc_t, m_nTriCount1) == 0x4e0);
+    static_assert(offsetof(PhysFeModelDesc_t, m_nTriCount2) == 0x4e2);
+    static_assert(offsetof(PhysFeModelDesc_t, m_nReservedUint8) == 0x4e4);
+    static_assert(offsetof(PhysFeModelDesc_t, m_nExtraPressureIterations) == 0x4e5);
+    static_assert(offsetof(PhysFeModelDesc_t, m_nExtraGoalIterations) == 0x4e6);
+    static_assert(offsetof(PhysFeModelDesc_t, m_nExtraIterations) == 0x4e7);
+    static_assert(offsetof(PhysFeModelDesc_t, m_SDFRigids) == 0x4e8);
+    static_assert(offsetof(PhysFeModelDesc_t, m_BoxRigids) == 0x500);
+    static_assert(offsetof(PhysFeModelDesc_t, m_DynNodeVertexSet) == 0x518);
+    static_assert(offsetof(PhysFeModelDesc_t, m_VertexSetNames) == 0x530);
+    static_assert(offsetof(PhysFeModelDesc_t, m_RigidColliderPriorities) == 0x548);
+    static_assert(offsetof(PhysFeModelDesc_t, m_MorphLayers) == 0x560);
+    static_assert(offsetof(PhysFeModelDesc_t, m_MorphSetData) == 0x578);
+    static_assert(offsetof(PhysFeModelDesc_t, m_VertexMaps) == 0x590);
+    static_assert(offsetof(PhysFeModelDesc_t, m_VertexMapValues) == 0x5a8);
+    static_assert(offsetof(PhysFeModelDesc_t, m_Effects) == 0x5c0);
+    static_assert(offsetof(PhysFeModelDesc_t, m_LockToParent) == 0x5d8);
+    static_assert(offsetof(PhysFeModelDesc_t, m_LockToGoal) == 0x5f0);
+    static_assert(offsetof(PhysFeModelDesc_t, m_SkelParents) == 0x608);
+    static_assert(offsetof(PhysFeModelDesc_t, m_DynNodeWindBases) == 0x620);
+    static_assert(offsetof(PhysFeModelDesc_t, m_flInternalPressure) == 0x638);
+    static_assert(offsetof(PhysFeModelDesc_t, m_flDefaultTimeDilation) == 0x63c);
+    static_assert(offsetof(PhysFeModelDesc_t, m_flWindage) == 0x640);
+    static_assert(offsetof(PhysFeModelDesc_t, m_flWindDrag) == 0x644);
+    static_assert(offsetof(PhysFeModelDesc_t, m_flDefaultSurfaceStretch) == 0x648);
+    static_assert(offsetof(PhysFeModelDesc_t, m_flDefaultThreadStretch) == 0x64c);
+    static_assert(offsetof(PhysFeModelDesc_t, m_flDefaultGravityScale) == 0x650);
+    static_assert(offsetof(PhysFeModelDesc_t, m_flDefaultVelAirDrag) == 0x654);
+    static_assert(offsetof(PhysFeModelDesc_t, m_flDefaultExpAirDrag) == 0x658);
+    static_assert(offsetof(PhysFeModelDesc_t, m_flDefaultVelQuadAirDrag) == 0x65c);
+    static_assert(offsetof(PhysFeModelDesc_t, m_flDefaultExpQuadAirDrag) == 0x660);
+    static_assert(offsetof(PhysFeModelDesc_t, m_flRodVelocitySmoothRate) == 0x664);
+    static_assert(offsetof(PhysFeModelDesc_t, m_flQuadVelocitySmoothRate) == 0x668);
+    static_assert(offsetof(PhysFeModelDesc_t, m_flAddWorldCollisionRadius) == 0x66c);
+    static_assert(offsetof(PhysFeModelDesc_t, m_flDefaultVolumetricSolveAmount) == 0x670);
+    static_assert(offsetof(PhysFeModelDesc_t, m_flMotionSmoothCDT) == 0x674);
+    static_assert(offsetof(PhysFeModelDesc_t, m_flLocalDrag1) == 0x678);
+    static_assert(offsetof(PhysFeModelDesc_t, m_nRodVelocitySmoothIterations) == 0x67c);
+    static_assert(offsetof(PhysFeModelDesc_t, m_nQuadVelocitySmoothIterations) == 0x67e);
     
-    static_assert(sizeof(PhysFeModelDesc_t) == 0x638);
+    static_assert(sizeof(PhysFeModelDesc_t) == 0x680);
 };

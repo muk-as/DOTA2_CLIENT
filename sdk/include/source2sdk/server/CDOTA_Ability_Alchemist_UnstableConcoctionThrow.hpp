@@ -14,20 +14,19 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x5b0
+    // Size: 0x5d8
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Ability_Alchemist_UnstableConcoctionThrow : public server::CDOTABaseAbility
     {
     public:
-        float m_fCookTime; // 0x5a0        
-        Vector m_vProjectileLoc; // 0x5a4        
+        float m_fCookTime; // 0x5c8        
+        Vector m_vProjectileLoc; // 0x5cc        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Ability_Alchemist_UnstableConcoctionThrow because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Ability_Alchemist_UnstableConcoctionThrow) == 0x5b0);
+    static_assert(sizeof(CDOTA_Ability_Alchemist_UnstableConcoctionThrow) == 0x5d8);
 };

@@ -19,11 +19,10 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x5f8
+    // Size: 0x620
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkVarNames "float m_flLongestEnsnareDuration"
     #pragma pack(push, 1)
@@ -31,14 +30,14 @@ namespace source2sdk::client
     {
     public:
         // metadata: MNetworkEnable
-        float m_flLongestEnsnareDuration; // 0x5d8        
-        [[maybe_unused]] std::uint8_t pad_0x5dc[0x4]; // 0x5dc
+        float m_flLongestEnsnareDuration; // 0x600        
+        [[maybe_unused]] std::uint8_t pad_0x604[0x4]; // 0x604
         // affectedEntities has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<CHandle<client::C_BaseEntity>> affectedEntities;
-        char affectedEntities[0x18]; // 0x5e0        
+        char affectedEntities[0x18]; // 0x608        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in C_DOTA_Ability_Naga_Siren_Reel_In because it is not a standard-layout class
-    static_assert(sizeof(C_DOTA_Ability_Naga_Siren_Reel_In) == 0x5f8);
+    static_assert(sizeof(C_DOTA_Ability_Naga_Siren_Reel_In) == 0x620);
 };

@@ -14,20 +14,19 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x5b0
+    // Size: 0x5d8
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Ability_Gyrocopter_Call_Down : public server::CDOTABaseAbility
     {
     public:
-        Vector m_vEndpoint; // 0x5a0        
-        int32_t range_scepter; // 0x5ac        
+        Vector m_vEndpoint; // 0x5c8        
+        int32_t range_scepter; // 0x5d4        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Ability_Gyrocopter_Call_Down because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Ability_Gyrocopter_Call_Down) == 0x5b0);
+    static_assert(sizeof(CDOTA_Ability_Gyrocopter_Call_Down) == 0x5d8);
 };

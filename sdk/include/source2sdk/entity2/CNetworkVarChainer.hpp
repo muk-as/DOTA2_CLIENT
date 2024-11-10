@@ -20,7 +20,6 @@ namespace source2sdk::entity2
     {
     public:
         [[maybe_unused]] std::uint8_t pad_0x00[0x20]; // 0x0
-        // metadata: MNetworkDisable
         // metadata: MNetworkChangeAccessorFieldPathIndex
         networksystem::ChangeAccessorFieldPathIndex_t m_PathIndex; // 0x20        
         [[maybe_unused]] std::uint8_t pad_0x24[0x4];

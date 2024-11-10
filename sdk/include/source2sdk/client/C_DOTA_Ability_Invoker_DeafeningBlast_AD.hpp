@@ -14,11 +14,10 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x5f8
+    // Size: 0x620
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class C_DOTA_Ability_Invoker_DeafeningBlast_AD : public client::C_DOTA_Ability_Invoker_DeafeningBlast
     {
@@ -27,5 +26,5 @@ namespace source2sdk::client
     };
     #pragma pack(pop)
     
-    static_assert(sizeof(C_DOTA_Ability_Invoker_DeafeningBlast_AD) == 0x5f8);
+    static_assert(sizeof(C_DOTA_Ability_Invoker_DeafeningBlast_AD) == 0x620);
 };

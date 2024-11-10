@@ -14,22 +14,21 @@ namespace source2sdk::client
     // Registered alignment: unknown
     // Alignment: unknown
     // Standard-layout class: false
-    // Size: 0x1700
+    // Size: 0x1720
     // Has VTable
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Modifier_Item_Orb_of_Venom : public client::CDOTA_Buff_Item
     {
     public:
-        int32_t poison_movement_speed_melee; // 0x16e8        
-        int32_t poison_movement_speed_range; // 0x16ec        
-        float poison_duration; // 0x16f0        
-        float poison_damage_melee; // 0x16f4        
-        float poison_damage_range; // 0x16f8        
-        [[maybe_unused]] std::uint8_t pad_0x16fc[0x4];
+        int32_t poison_movement_speed_melee; // 0x1708        
+        int32_t poison_movement_speed_range; // 0x170c        
+        float poison_duration; // 0x1710        
+        float poison_damage_melee; // 0x1714        
+        float poison_damage_range; // 0x1718        
+        [[maybe_unused]] std::uint8_t pad_0x171c[0x4];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Modifier_Item_Orb_of_Venom because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_Item_Orb_of_Venom) == 0x1700);
+    static_assert(sizeof(CDOTA_Modifier_Item_Orb_of_Venom) == 0x1720);
 };

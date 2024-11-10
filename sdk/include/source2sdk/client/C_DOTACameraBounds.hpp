@@ -14,11 +14,10 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x550
+    // Size: 0x578
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkVarNames "Vector m_vecBoundsMin"
     // static metadata: MNetworkVarNames "Vector m_vecBoundsMax"
@@ -27,12 +26,12 @@ namespace source2sdk::client
     {
     public:
         // metadata: MNetworkEnable
-        Vector m_vecBoundsMin; // 0x538        
+        Vector m_vecBoundsMin; // 0x560        
         // metadata: MNetworkEnable
-        Vector m_vecBoundsMax; // 0x544        
+        Vector m_vecBoundsMax; // 0x56c        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in C_DOTACameraBounds because it is not a standard-layout class
-    static_assert(sizeof(C_DOTACameraBounds) == 0x550);
+    static_assert(sizeof(C_DOTACameraBounds) == 0x578);
 };

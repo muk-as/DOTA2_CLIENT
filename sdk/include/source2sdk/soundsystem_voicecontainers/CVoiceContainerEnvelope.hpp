@@ -20,7 +20,7 @@ namespace source2sdk::soundsystem_voicecontainers
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0xc8
+    // Size: 0xd0
     // Has VTable
     // Construct allowed
     // 
@@ -34,12 +34,12 @@ namespace source2sdk::soundsystem_voicecontainers
         // metadata: MPropertyFriendlyName "Vsnd File"
         // m_sound has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CStrongHandle<resourcesystem::InfoForResourceTypeCVoiceContainerBase> m_sound;
-        char m_sound[0x8]; // 0xb8        
+        char m_sound[0x8]; // 0xc0        
         // metadata: MPropertyFriendlyName "Container Analyzers"
-        soundsystem_voicecontainers::CVoiceContainerAnalysisBase* m_analysisContainer; // 0xc0        
+        soundsystem_voicecontainers::CVoiceContainerAnalysisBase* m_analysisContainer; // 0xc8        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CVoiceContainerEnvelope because it is not a standard-layout class
-    static_assert(sizeof(CVoiceContainerEnvelope) == 0xc8);
+    static_assert(sizeof(CVoiceContainerEnvelope) == 0xd0);
 };

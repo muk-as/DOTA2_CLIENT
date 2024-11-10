@@ -14,11 +14,10 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0xa00
+    // Size: 0xa20
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkUserGroupProxy "CDOTAPlayerPawn"
     // static metadata: MNetworkExcludeByName "m_angRotation"
@@ -49,10 +48,10 @@ namespace source2sdk::server
     {
     public:
         // Datamap fields:
-        // CDOTAPlayer_CameraServices m_pCameraServices; // 0x8f0
-        // CDOTAPlayer_MovementServices m_pMovementServices; // 0x8f8
+        // CDOTAPlayer_CameraServices m_pCameraServices; // 0x910
+        // CDOTAPlayer_MovementServices m_pMovementServices; // 0x918
     };
     #pragma pack(pop)
     
-    static_assert(sizeof(CDOTAPlayerPawn) == 0xa00);
+    static_assert(sizeof(CDOTAPlayerPawn) == 0xa20);
 };

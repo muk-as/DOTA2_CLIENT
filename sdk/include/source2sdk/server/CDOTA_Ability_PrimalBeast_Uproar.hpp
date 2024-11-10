@@ -14,11 +14,10 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x5a8
+    // Size: 0x5d0
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkVarNames "int m_iUproarStatus"
     #pragma pack(push, 1)
@@ -27,12 +26,12 @@ namespace source2sdk::server
     public:
         // metadata: MNetworkEnable
         // metadata: MNetworkChangeCallback "OnUproarActiveChanged"
-        int32_t m_iUproarStatus; // 0x5a0        
-        bool m_bUpdateIcons; // 0x5a4        
-        [[maybe_unused]] std::uint8_t pad_0x5a5[0x3];
+        int32_t m_iUproarStatus; // 0x5c8        
+        bool m_bUpdateIcons; // 0x5cc        
+        [[maybe_unused]] std::uint8_t pad_0x5cd[0x3];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Ability_PrimalBeast_Uproar because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Ability_PrimalBeast_Uproar) == 0x5a8);
+    static_assert(sizeof(CDOTA_Ability_PrimalBeast_Uproar) == 0x5d0);
 };

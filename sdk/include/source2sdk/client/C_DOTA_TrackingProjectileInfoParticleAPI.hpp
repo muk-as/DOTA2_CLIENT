@@ -17,7 +17,7 @@ namespace source2sdk::client
     // Has Trivial Constructor
     // Has Trivial Destructor
     // 
-    // static metadata: MPulseProvideFeatureTag "PulseParticles"
+    // static metadata: MPulseProvideFeatureTag "8"
     // static metadata: MPulseLibraryBindings
     // static metadata: MParticleDomainTag "C_DOTA_TrackingProjectileInfoParticleAPI Tracking Projectile"
     // static metadata: MPulseDomainHookInfo

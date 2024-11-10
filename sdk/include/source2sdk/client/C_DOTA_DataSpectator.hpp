@@ -20,11 +20,10 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x1800
+    // Size: 0x18b8
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkVarNames "CHandle< CBaseEntity> m_hPowerupRune_1"
     // static metadata: MNetworkVarNames "CHandle< CBaseEntity> m_hPowerupRune_2"
@@ -51,61 +50,61 @@ namespace source2sdk::client
         // metadata: MNetworkEnable
         // m_hPowerupRune_1 has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<client::C_BaseEntity> m_hPowerupRune_1;
-        char m_hPowerupRune_1[0x4]; // 0x1488        
+        char m_hPowerupRune_1[0x4]; // 0x1528        
         // metadata: MNetworkEnable
         // m_hPowerupRune_2 has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<client::C_BaseEntity> m_hPowerupRune_2;
-        char m_hPowerupRune_2[0x4]; // 0x148c        
+        char m_hPowerupRune_2[0x4]; // 0x152c        
         // metadata: MNetworkEnable
         // m_hBountyRune_1 has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<client::C_BaseEntity> m_hBountyRune_1;
-        char m_hBountyRune_1[0x4]; // 0x1490        
+        char m_hBountyRune_1[0x4]; // 0x1530        
         // metadata: MNetworkEnable
         // m_hBountyRune_2 has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<client::C_BaseEntity> m_hBountyRune_2;
-        char m_hBountyRune_2[0x4]; // 0x1494        
+        char m_hBountyRune_2[0x4]; // 0x1534        
         // metadata: MNetworkEnable
         // m_hBountyRune_3 has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<client::C_BaseEntity> m_hBountyRune_3;
-        char m_hBountyRune_3[0x4]; // 0x1498        
+        char m_hBountyRune_3[0x4]; // 0x1538        
         // metadata: MNetworkEnable
         // m_hBountyRune_4 has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<client::C_BaseEntity> m_hBountyRune_4;
-        char m_hBountyRune_4[0x4]; // 0x149c        
+        char m_hBountyRune_4[0x4]; // 0x153c        
         // metadata: MNetworkEnable
         // m_hXPRune_1 has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<client::C_BaseEntity> m_hXPRune_1;
-        char m_hXPRune_1[0x4]; // 0x14a0        
+        char m_hXPRune_1[0x4]; // 0x1540        
         // metadata: MNetworkEnable
         // m_hXPRune_2 has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<client::C_BaseEntity> m_hXPRune_2;
-        char m_hXPRune_2[0x4]; // 0x14a4        
+        char m_hXPRune_2[0x4]; // 0x1544        
         // metadata: MNetworkEnable
-        int32_t m_iNetWorth[24]; // 0x14a8        
+        int32_t m_iNetWorth[24]; // 0x1548        
         // metadata: MNetworkEnable
-        float m_fRadiantWinProbability; // 0x1508        
+        float m_fRadiantWinProbability; // 0x15a8        
         // metadata: MNetworkEnable
-        int32_t m_iGoldSpentOnSupport[24]; // 0x150c        
+        int32_t m_iGoldSpentOnSupport[24]; // 0x15ac        
         // metadata: MNetworkEnable
-        int32_t m_iHeroDamage[24]; // 0x156c        
+        int32_t m_iHeroDamage[24]; // 0x160c        
         // metadata: MNetworkEnable
-        int32_t m_nWardsPurchased[24]; // 0x15cc        
+        int32_t m_nWardsPurchased[24]; // 0x166c        
         // metadata: MNetworkEnable
-        int32_t m_nWardsPlaced[24]; // 0x162c        
+        int32_t m_nWardsPlaced[24]; // 0x16cc        
         // metadata: MNetworkEnable
-        int32_t m_nWardsDestroyed[24]; // 0x168c        
+        int32_t m_nWardsDestroyed[24]; // 0x172c        
         // metadata: MNetworkEnable
-        int32_t m_nRunesActivated[24]; // 0x16ec        
+        int32_t m_nRunesActivated[24]; // 0x178c        
         // metadata: MNetworkEnable
-        int32_t m_nCampsStacked[24]; // 0x174c        
-        [[maybe_unused]] std::uint8_t pad_0x17ac[0x4]; // 0x17ac
+        int32_t m_nCampsStacked[24]; // 0x17ec        
+        [[maybe_unused]] std::uint8_t pad_0x184c[0x4]; // 0x184c
         // metadata: MNetworkEnable
         // m_ThreatLevelInfos has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // C_UtlVectorEmbeddedNetworkVar<client::DOTAThreatLevelInfo_t> m_ThreatLevelInfos;
-        char m_ThreatLevelInfos[0x50]; // 0x17b0        
+        char m_ThreatLevelInfos[0x68]; // 0x1850        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in C_DOTA_DataSpectator because it is not a standard-layout class
-    static_assert(sizeof(C_DOTA_DataSpectator) == 0x1800);
+    static_assert(sizeof(C_DOTA_DataSpectator) == 0x18b8);
 };

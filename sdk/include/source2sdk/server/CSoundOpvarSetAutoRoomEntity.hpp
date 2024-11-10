@@ -16,24 +16,23 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x6a0
+    // Size: 0x6c8
     // Has VTable
     // Construct allowed
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CSoundOpvarSetAutoRoomEntity : public server::CSoundOpvarSetPointEntity
     {
     public:
         // m_traceResults has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<server::SoundOpvarTraceResult_t> m_traceResults;
-        char m_traceResults[0x18]; // 0x660        
+        char m_traceResults[0x18]; // 0x688        
         // m_doorwayPairs has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<server::AutoRoomDoorwayPairs_t> m_doorwayPairs;
-        char m_doorwayPairs[0x18]; // 0x678        
-        float m_flSize; // 0x690        
-        float m_flHeightTolerance; // 0x694        
-        float m_flSizeSqr; // 0x698        
-        [[maybe_unused]] std::uint8_t pad_0x69c[0x4];
+        char m_doorwayPairs[0x18]; // 0x6a0        
+        float m_flSize; // 0x6b8        
+        float m_flHeightTolerance; // 0x6bc        
+        float m_flSizeSqr; // 0x6c0        
+        [[maybe_unused]] std::uint8_t pad_0x6c4[0x4];
         
         // Datamap fields:
         // void CSoundOpvarSetAutoRoomEntitySetOpvarThink; // 0x0
@@ -41,5 +40,5 @@ namespace source2sdk::server
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CSoundOpvarSetAutoRoomEntity because it is not a standard-layout class
-    static_assert(sizeof(CSoundOpvarSetAutoRoomEntity) == 0x6a0);
+    static_assert(sizeof(CSoundOpvarSetAutoRoomEntity) == 0x6c8);
 };

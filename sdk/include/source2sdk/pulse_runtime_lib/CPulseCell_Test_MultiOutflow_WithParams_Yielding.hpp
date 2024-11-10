@@ -29,10 +29,15 @@ namespace source2sdk::pulse_runtime_lib
     {
     public:
         // metadata: MPulseCellOutflow_IsDefault
+        // metadata: MPulseSignatureName
         pulse_runtime_lib::SignatureOutflow_Continue m_Out1; // 0x48        
+        // metadata: MPulseSignatureName
         pulse_runtime_lib::SignatureOutflow_Continue m_AsyncChild1; // 0x78        
+        // metadata: MPulseSignatureName
         pulse_runtime_lib::SignatureOutflow_Continue m_AsyncChild2; // 0xa8        
+        // metadata: MPulseSignatureName
         pulse_runtime_lib::SignatureOutflow_Resume m_YieldResume1; // 0xd8        
+        // metadata: MPulseSignatureName
         pulse_runtime_lib::SignatureOutflow_Resume m_YieldResume2; // 0x108        
     };
     #pragma pack(pop)

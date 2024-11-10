@@ -27,37 +27,36 @@ namespace source2sdk::modellib
         float m_flUvDensity; // 0x0        
         Vector m_vTintColor; // 0x4        
         float m_flAlpha; // 0x10        
-        [[maybe_unused]] std::uint8_t pad_0x14[0x8]; // 0x14
+        [[maybe_unused]] std::uint8_t pad_0x14[0x2]; // 0x14
+        uint16_t m_nNumMeshlets; // 0x16        
+        [[maybe_unused]] std::uint8_t pad_0x18[0x4]; // 0x18
         uint32_t m_nFirstMeshlet; // 0x1c        
-        uint16_t m_nNumMeshlets; // 0x20        
-        [[maybe_unused]] std::uint8_t pad_0x22[0x2]; // 0x22
-        rendersystemdx11::RenderPrimitiveType_t m_nPrimitiveType; // 0x24        
-        int32_t m_nBaseVertex; // 0x28        
-        int32_t m_nVertexCount; // 0x2c        
-        int32_t m_nStartIndex; // 0x30        
-        int32_t m_nIndexCount; // 0x34        
-        [[maybe_unused]] std::uint8_t pad_0x38[0x60]; // 0x38
+        rendersystemdx11::RenderPrimitiveType_t m_nPrimitiveType; // 0x20        
+        int32_t m_nBaseVertex; // 0x24        
+        int32_t m_nVertexCount; // 0x28        
+        int32_t m_nStartIndex; // 0x2c        
+        int32_t m_nIndexCount; // 0x30        
+        [[maybe_unused]] std::uint8_t pad_0x34[0x64]; // 0x34
         modellib::CRenderBufferBinding m_indexBuffer; // 0x98        
-        [[maybe_unused]] std::uint8_t pad_0xb8[0x8]; // 0xb8
+        [[maybe_unused]] std::uint8_t pad_0xb8[0x10]; // 0xb8
         // m_material has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CStrongHandle<resourcesystem::InfoForResourceTypeIMaterial2> m_material;
-        char m_material[0x8]; // 0xc0        
-        [[maybe_unused]] std::uint8_t pad_0xc8[0x8];
+        char m_material[0x8]; // 0xc8        
     };
     #pragma pack(pop)
     
     static_assert(offsetof(CMaterialDrawDescriptor, m_flUvDensity) == 0x0);
     static_assert(offsetof(CMaterialDrawDescriptor, m_vTintColor) == 0x4);
     static_assert(offsetof(CMaterialDrawDescriptor, m_flAlpha) == 0x10);
+    static_assert(offsetof(CMaterialDrawDescriptor, m_nNumMeshlets) == 0x16);
     static_assert(offsetof(CMaterialDrawDescriptor, m_nFirstMeshlet) == 0x1c);
-    static_assert(offsetof(CMaterialDrawDescriptor, m_nNumMeshlets) == 0x20);
-    static_assert(offsetof(CMaterialDrawDescriptor, m_nPrimitiveType) == 0x24);
-    static_assert(offsetof(CMaterialDrawDescriptor, m_nBaseVertex) == 0x28);
-    static_assert(offsetof(CMaterialDrawDescriptor, m_nVertexCount) == 0x2c);
-    static_assert(offsetof(CMaterialDrawDescriptor, m_nStartIndex) == 0x30);
-    static_assert(offsetof(CMaterialDrawDescriptor, m_nIndexCount) == 0x34);
+    static_assert(offsetof(CMaterialDrawDescriptor, m_nPrimitiveType) == 0x20);
+    static_assert(offsetof(CMaterialDrawDescriptor, m_nBaseVertex) == 0x24);
+    static_assert(offsetof(CMaterialDrawDescriptor, m_nVertexCount) == 0x28);
+    static_assert(offsetof(CMaterialDrawDescriptor, m_nStartIndex) == 0x2c);
+    static_assert(offsetof(CMaterialDrawDescriptor, m_nIndexCount) == 0x30);
     static_assert(offsetof(CMaterialDrawDescriptor, m_indexBuffer) == 0x98);
-    static_assert(offsetof(CMaterialDrawDescriptor, m_material) == 0xc0);
+    static_assert(offsetof(CMaterialDrawDescriptor, m_material) == 0xc8);
     
     static_assert(sizeof(CMaterialDrawDescriptor) == 0xd0);
 };

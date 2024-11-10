@@ -15,11 +15,10 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x510
+    // Size: 0x550
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkVarNames "PlayerID_t m_nPlayerID"
     #pragma pack(push, 1)
@@ -27,11 +26,11 @@ namespace source2sdk::server
     {
     public:
         // metadata: MNetworkEnable
-        client::PlayerID_t m_nPlayerID; // 0x508        
-        [[maybe_unused]] std::uint8_t pad_0x50c[0x4];
+        client::PlayerID_t m_nPlayerID; // 0x548        
+        [[maybe_unused]] std::uint8_t pad_0x54c[0x4];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CPlayerTrackedStatsEntity because it is not a standard-layout class
-    static_assert(sizeof(CPlayerTrackedStatsEntity) == 0x510);
+    static_assert(sizeof(CPlayerTrackedStatsEntity) == 0x550);
 };

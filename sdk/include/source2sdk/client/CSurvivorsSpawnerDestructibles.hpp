@@ -20,7 +20,7 @@ namespace source2sdk::client
     class CSurvivorsSpawnerDestructibles : public client::CSurvivorsSpawner
     {
     public:
-        float m_flMinimiumDistanceBetween; // 0x178        
+        float m_flMinimumDistanceBetween; // 0x178        
         float m_flDestroyDistance; // 0x17c        
     };
     #pragma pack(pop)

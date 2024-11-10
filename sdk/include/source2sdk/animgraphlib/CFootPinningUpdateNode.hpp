@@ -17,7 +17,7 @@ namespace source2sdk::animgraphlib
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0xc8
+    // Size: 0xd0
     // Has VTable
     // Construct allowed
     // 
@@ -26,18 +26,18 @@ namespace source2sdk::animgraphlib
     class CFootPinningUpdateNode : public animgraphlib::CUnaryUpdateNode
     {
     public:
-        [[maybe_unused]] std::uint8_t pad_0x68[0x8]; // 0x68
-        animgraphlib::FootPinningPoseOpFixedData_t m_poseOpFixedData; // 0x70        
-        animgraphlib::FootPinningTimingSource m_eTimingSource; // 0xa0        
-        [[maybe_unused]] std::uint8_t pad_0xa4[0x4]; // 0xa4
+        [[maybe_unused]] std::uint8_t pad_0x68[0x10]; // 0x68
+        animgraphlib::FootPinningPoseOpFixedData_t m_poseOpFixedData; // 0x78        
+        animgraphlib::FootPinningTimingSource m_eTimingSource; // 0xa8        
+        [[maybe_unused]] std::uint8_t pad_0xac[0x4]; // 0xac
         // m_params has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<animgraphlib::CAnimParamHandle> m_params;
-        char m_params[0x18]; // 0xa8        
-        bool m_bResetChild; // 0xc0        
-        [[maybe_unused]] std::uint8_t pad_0xc1[0x7];
+        char m_params[0x18]; // 0xb0        
+        bool m_bResetChild; // 0xc8        
+        [[maybe_unused]] std::uint8_t pad_0xc9[0x7];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CFootPinningUpdateNode because it is not a standard-layout class
-    static_assert(sizeof(CFootPinningUpdateNode) == 0xc8);
+    static_assert(sizeof(CFootPinningUpdateNode) == 0xd0);
 };

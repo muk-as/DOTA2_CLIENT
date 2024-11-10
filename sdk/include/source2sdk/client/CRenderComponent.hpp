@@ -19,13 +19,11 @@ namespace source2sdk::client
     // Size: 0xd8
     // Has VTable
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CRenderComponent : public entity2::CEntityComponent
     {
     public:
         [[maybe_unused]] std::uint8_t pad_0x08[0x8]; // 0x8
-        // metadata: MNetworkDisable
         // metadata: MNetworkChangeAccessorFieldPathIndex
         entity2::CNetworkVarChainer __m_pChainEntity; // 0x10        
         [[maybe_unused]] std::uint8_t pad_0x38[0x18]; // 0x38

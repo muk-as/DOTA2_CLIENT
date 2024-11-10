@@ -16,22 +16,21 @@ namespace source2sdk::server
     // Registered alignment: unknown
     // Alignment: unknown
     // Standard-layout class: false
-    // Size: 0x1700
+    // Size: 0x1720
     // Has VTable
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Modifier_Ringmaster_TameTheBeasts : public client::CDOTA_Buff
     {
     public:
-        float m_flPreviousMult; // 0x16e8        
-        float m_fChannelTime; // 0x16ec        
-        entity2::GameTime_t m_fStartTime; // 0x16f0        
-        client::ParticleIndex_t m_nFXIndex; // 0x16f4        
-        int32_t has_debuff_immunity; // 0x16f8        
-        int32_t magic_resist; // 0x16fc        
+        float m_flPreviousMult; // 0x1708        
+        float m_fChannelTime; // 0x170c        
+        entity2::GameTime_t m_fStartTime; // 0x1710        
+        client::ParticleIndex_t m_nFXIndex; // 0x1714        
+        int32_t has_debuff_immunity; // 0x1718        
+        int32_t magic_resist; // 0x171c        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Modifier_Ringmaster_TameTheBeasts because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_Ringmaster_TameTheBeasts) == 0x1700);
+    static_assert(sizeof(CDOTA_Modifier_Ringmaster_TameTheBeasts) == 0x1720);
 };

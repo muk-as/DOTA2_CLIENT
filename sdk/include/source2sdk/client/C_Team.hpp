@@ -24,11 +24,10 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x5f0
+    // Size: 0x618
     // Has VTable
     // Construct allowed
     // MNetworkNoBase
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkIncludeByName "m_iTeamNum"
     // static metadata: MNetworkVarNames "CHandle< CBasePlayerController > m_aPlayerControllers"
@@ -43,20 +42,20 @@ namespace source2sdk::client
         // metadata: MNetworkAlias "m_aPlayers"
         // m_aPlayerControllers has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // C_NetworkUtlVectorBase<CHandle<client::CBasePlayerController>> m_aPlayerControllers;
-        char m_aPlayerControllers[0x18]; // 0x538        
+        char m_aPlayerControllers[0x18]; // 0x560        
         // metadata: MNetworkEnable
         // metadata: MNetworkAlias "m_aPawns"
         // m_aPlayers has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // C_NetworkUtlVectorBase<CHandle<client::C_BasePlayerPawn>> m_aPlayers;
-        char m_aPlayers[0x18]; // 0x550        
+        char m_aPlayers[0x18]; // 0x578        
         // metadata: MNetworkEnable
-        int32_t m_iScore; // 0x568        
+        int32_t m_iScore; // 0x590        
         // metadata: MNetworkEnable
-        char m_szTeamname[129]; // 0x56c        
-        [[maybe_unused]] std::uint8_t pad_0x5ed[0x3];
+        char m_szTeamname[129]; // 0x594        
+        [[maybe_unused]] std::uint8_t pad_0x615[0x3];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in C_Team because it is not a standard-layout class
-    static_assert(sizeof(C_Team) == 0x5f0);
+    static_assert(sizeof(C_Team) == 0x618);
 };

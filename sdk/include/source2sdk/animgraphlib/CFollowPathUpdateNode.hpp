@@ -43,7 +43,8 @@ namespace source2sdk::animgraphlib
         [[maybe_unused]] std::uint8_t pad_0x9e[0x2]; // 0x9e
         float m_flTurnToFaceOffset; // 0xa0        
         bool m_bTurnToFace; // 0xa4        
-        [[maybe_unused]] std::uint8_t pad_0xa5[0x3];
+        bool m_bAlignRootMotionWithMoveDirection; // 0xa5        
+        [[maybe_unused]] std::uint8_t pad_0xa6[0x2];
     };
     #pragma pack(pop)
     

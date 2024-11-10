@@ -15,6 +15,6 @@ namespace source2sdk::animlib
     {
         Overlay = 0,
         Additive = 1,
-        GlobalSpace = 2,
+        ModelSpace = 2,
     };
 };

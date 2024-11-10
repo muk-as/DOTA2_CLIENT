@@ -16,10 +16,9 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x508
+    // Size: 0x530
     // Has VTable
     // Construct allowed
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkVarNames "float m_flEndDistance"
     // static metadata: MNetworkVarNames "float m_flStartDistance"
@@ -43,47 +42,47 @@ namespace source2sdk::server
     {
     public:
         // metadata: MNetworkEnable
-        float m_flEndDistance; // 0x4b8        
+        float m_flEndDistance; // 0x4e0        
         // metadata: MNetworkEnable
-        float m_flStartDistance; // 0x4bc        
+        float m_flStartDistance; // 0x4e4        
         // metadata: MNetworkEnable
-        float m_flFogFalloffExponent; // 0x4c0        
+        float m_flFogFalloffExponent; // 0x4e8        
         // metadata: MNetworkEnable
-        bool m_bHeightFogEnabled; // 0x4c4        
-        [[maybe_unused]] std::uint8_t pad_0x4c5[0x3]; // 0x4c5
+        bool m_bHeightFogEnabled; // 0x4ec        
+        [[maybe_unused]] std::uint8_t pad_0x4ed[0x3]; // 0x4ed
         // metadata: MNetworkEnable
-        float m_flFogHeightWidth; // 0x4c8        
+        float m_flFogHeightWidth; // 0x4f0        
         // metadata: MNetworkEnable
-        float m_flFogHeightEnd; // 0x4cc        
+        float m_flFogHeightEnd; // 0x4f4        
         // metadata: MNetworkEnable
-        float m_flFogHeightStart; // 0x4d0        
+        float m_flFogHeightStart; // 0x4f8        
         // metadata: MNetworkEnable
-        float m_flFogHeightExponent; // 0x4d4        
+        float m_flFogHeightExponent; // 0x4fc        
         // metadata: MNetworkEnable
-        float m_flLODBias; // 0x4d8        
+        float m_flLODBias; // 0x500        
         // metadata: MNetworkEnable
-        bool m_bActive; // 0x4dc        
+        bool m_bActive; // 0x504        
         // metadata: MNetworkEnable
-        bool m_bStartDisabled; // 0x4dd        
-        [[maybe_unused]] std::uint8_t pad_0x4de[0x2]; // 0x4de
+        bool m_bStartDisabled; // 0x505        
+        [[maybe_unused]] std::uint8_t pad_0x506[0x2]; // 0x506
         // metadata: MNetworkEnable
-        float m_flFogMaxOpacity; // 0x4e0        
+        float m_flFogMaxOpacity; // 0x508        
         // metadata: MNetworkEnable
-        int32_t m_nCubemapSourceType; // 0x4e4        
+        int32_t m_nCubemapSourceType; // 0x50c        
         // metadata: MNetworkEnable
         // m_hSkyMaterial has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CStrongHandle<resourcesystem::InfoForResourceTypeIMaterial2> m_hSkyMaterial;
-        char m_hSkyMaterial[0x8]; // 0x4e8        
+        char m_hSkyMaterial[0x8]; // 0x510        
         // metadata: MNetworkEnable
-        CUtlSymbolLarge m_iszSkyEntity; // 0x4f0        
+        CUtlSymbolLarge m_iszSkyEntity; // 0x518        
         // metadata: MNetworkEnable
         // m_hFogCubemapTexture has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CStrongHandle<resourcesystem::InfoForResourceTypeCTextureBase> m_hFogCubemapTexture;
-        char m_hFogCubemapTexture[0x8]; // 0x4f8        
+        char m_hFogCubemapTexture[0x8]; // 0x520        
         // metadata: MNetworkEnable
-        bool m_bHasHeightFogEnd; // 0x500        
-        bool m_bFirstTime; // 0x501        
-        [[maybe_unused]] std::uint8_t pad_0x502[0x6];
+        bool m_bHasHeightFogEnd; // 0x528        
+        bool m_bFirstTime; // 0x529        
+        [[maybe_unused]] std::uint8_t pad_0x52a[0x6];
         
         // Datamap fields:
         // bool InputEnable; // 0x0
@@ -92,5 +91,5 @@ namespace source2sdk::server
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CEnvCubemapFog because it is not a standard-layout class
-    static_assert(sizeof(CEnvCubemapFog) == 0x508);
+    static_assert(sizeof(CEnvCubemapFog) == 0x530);
 };

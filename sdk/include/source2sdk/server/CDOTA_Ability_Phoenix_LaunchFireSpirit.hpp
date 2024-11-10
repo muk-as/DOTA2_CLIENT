@@ -15,22 +15,21 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x5b0
+    // Size: 0x5d8
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Ability_Phoenix_LaunchFireSpirit : public server::CDOTABaseAbility
     {
     public:
-        int32_t spirit_speed; // 0x5a0        
-        float duration; // 0x5a4        
-        int32_t radius; // 0x5a8        
-        client::ParticleIndex_t m_nFXIndex; // 0x5ac        
+        int32_t spirit_speed; // 0x5c8        
+        float duration; // 0x5cc        
+        int32_t radius; // 0x5d0        
+        client::ParticleIndex_t m_nFXIndex; // 0x5d4        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Ability_Phoenix_LaunchFireSpirit because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Ability_Phoenix_LaunchFireSpirit) == 0x5b0);
+    static_assert(sizeof(CDOTA_Ability_Phoenix_LaunchFireSpirit) == 0x5d8);
 };

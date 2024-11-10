@@ -14,23 +14,22 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x5b0
+    // Size: 0x5d8
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Ability_Tusk_Drinking_Buddies : public server::CDOTABaseAbility
     {
     public:
-        float buff_duration; // 0x5a0        
-        float pull_duration; // 0x5a4        
-        float min_distance; // 0x5a8        
-        bool m_bIsAltCastState; // 0x5ac        
-        [[maybe_unused]] std::uint8_t pad_0x5ad[0x3];
+        float buff_duration; // 0x5c8        
+        float pull_duration; // 0x5cc        
+        float min_distance; // 0x5d0        
+        bool m_bIsAltCastState; // 0x5d4        
+        [[maybe_unused]] std::uint8_t pad_0x5d5[0x3];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Ability_Tusk_Drinking_Buddies because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Ability_Tusk_Drinking_Buddies) == 0x5b0);
+    static_assert(sizeof(CDOTA_Ability_Tusk_Drinking_Buddies) == 0x5d8);
 };

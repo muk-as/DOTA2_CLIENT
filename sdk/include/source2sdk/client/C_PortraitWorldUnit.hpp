@@ -18,47 +18,46 @@ namespace source2sdk::client
     // Registered alignment: 0x10
     // Alignment: 0x10
     // Standard-layout class: false
-    // Size: 0x1c50
+    // Size: 0x1ca0
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MEntityAllowsPortraitWorldSpawn
     #pragma pack(push, 1)
     class C_PortraitWorldUnit : public client::C_DOTA_BaseNPC
     {
     public:
-        entity2::CEntityIOOutput m_OutputAnimOver; // 0x1808        
-        bool m_bSuppressIntroEffects; // 0x1830        
-        bool m_bIsAlternateLoadout; // 0x1831        
-        bool m_bSkipBackgroundEntities; // 0x1832        
-        bool m_bSpawnBackgroundModels; // 0x1833        
-        bool m_bDeferredPortrait; // 0x1834        
-        bool m_bShowParticleAssetModifiers; // 0x1835        
-        bool m_bIgnorePortraitInfo; // 0x1836        
-        bool m_bFlyingCourier; // 0x1837        
-        bool m_bDisableDefaultModifiers; // 0x1838        
-        [[maybe_unused]] std::uint8_t pad_0x1839[0x3]; // 0x1839
-        int32_t m_nEffigyStatusEffect; // 0x183c        
-        CUtlSymbolLarge m_effigySequenceName; // 0x1840        
-        float m_flStartingAnimationCycle; // 0x1848        
-        float m_flAnimationPlaybackSpeed; // 0x184c        
-        float m_flRareLoadoutAnimChance; // 0x1850        
-        bool m_bSetDefaultActivityOnSequenceFinished; // 0x1854        
-        [[maybe_unused]] std::uint8_t pad_0x1855[0x3]; // 0x1855
+        entity2::CEntityIOOutput m_OutputAnimOver; // 0x1858        
+        bool m_bSuppressIntroEffects; // 0x1880        
+        bool m_bIsAlternateLoadout; // 0x1881        
+        bool m_bSkipBackgroundEntities; // 0x1882        
+        bool m_bSpawnBackgroundModels; // 0x1883        
+        bool m_bDeferredPortrait; // 0x1884        
+        bool m_bShowParticleAssetModifiers; // 0x1885        
+        bool m_bIgnorePortraitInfo; // 0x1886        
+        bool m_bFlyingCourier; // 0x1887        
+        bool m_bDisableDefaultModifiers; // 0x1888        
+        [[maybe_unused]] std::uint8_t pad_0x1889[0x3]; // 0x1889
+        int32_t m_nEffigyStatusEffect; // 0x188c        
+        CUtlSymbolLarge m_effigySequenceName; // 0x1890        
+        float m_flStartingAnimationCycle; // 0x1898        
+        float m_flAnimationPlaybackSpeed; // 0x189c        
+        float m_flRareLoadoutAnimChance; // 0x18a0        
+        bool m_bSetDefaultActivityOnSequenceFinished; // 0x18a4        
+        [[maybe_unused]] std::uint8_t pad_0x18a5[0x3]; // 0x18a5
         // m_vecActivityModifiers has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<CUtlSymbolLarge> m_vecActivityModifiers;
-        char m_vecActivityModifiers[0x18]; // 0x1858        
-        client::DOTAPortraitEnvironmentType_t m_environment; // 0x1870        
-        [[maybe_unused]] std::uint8_t pad_0x1874[0x4]; // 0x1874
-        client::StartupBehavior_t m_nStartupBehavior; // 0x1878        
-        [[maybe_unused]] std::uint8_t pad_0x187c[0x1e4]; // 0x187c
-        CUtlSymbolLarge m_cameraName; // 0x1a60        
-        [[maybe_unused]] std::uint8_t pad_0x1a68[0x50]; // 0x1a68
-        client::ParticleIndex_t m_nPortraitParticle; // 0x1ab8        
-        int32_t m_nCourierType; // 0x1abc        
-        [[maybe_unused]] std::uint8_t pad_0x1ac0[0x190];
+        char m_vecActivityModifiers[0x18]; // 0x18a8        
+        client::DOTAPortraitEnvironmentType_t m_environment; // 0x18c0        
+        [[maybe_unused]] std::uint8_t pad_0x18c4[0x4]; // 0x18c4
+        client::StartupBehavior_t m_nStartupBehavior; // 0x18c8        
+        [[maybe_unused]] std::uint8_t pad_0x18cc[0x1e4]; // 0x18cc
+        CUtlSymbolLarge m_cameraName; // 0x1ab0        
+        [[maybe_unused]] std::uint8_t pad_0x1ab8[0x50]; // 0x1ab8
+        client::ParticleIndex_t m_nPortraitParticle; // 0x1b08        
+        int32_t m_nCourierType; // 0x1b0c        
+        [[maybe_unused]] std::uint8_t pad_0x1b10[0x190];
         
         // Datamap fields:
         // CUtlSymbolLarge activity_modifier; // 0x7fffffff
@@ -87,5 +86,5 @@ namespace source2sdk::client
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in C_PortraitWorldUnit because it is not a standard-layout class
-    static_assert(sizeof(C_PortraitWorldUnit) == 0x1c50);
+    static_assert(sizeof(C_PortraitWorldUnit) == 0x1ca0);
 };

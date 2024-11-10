@@ -14,10 +14,9 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x558
+    // Size: 0x580
     // Has VTable
     // Construct allowed
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class C_SoundOpvarSetPathCornerEntity : public client::C_SoundOpvarSetPointEntity
     {
@@ -26,5 +25,5 @@ namespace source2sdk::client
     };
     #pragma pack(pop)
     
-    static_assert(sizeof(C_SoundOpvarSetPathCornerEntity) == 0x558);
+    static_assert(sizeof(C_SoundOpvarSetPathCornerEntity) == 0x580);
 };

@@ -16,11 +16,10 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x518
+    // Size: 0x558
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkVarNames "bool m_bVotingClosed"
     // static metadata: MNetworkVarNames "bool m_bAllPredictionsFinished"
@@ -31,21 +30,21 @@ namespace source2sdk::server
     {
     public:
         // metadata: MNetworkEnable
-        bool m_bVotingClosed; // 0x4b8        
+        bool m_bVotingClosed; // 0x4e0        
         // metadata: MNetworkEnable
         // metadata: MNetworkChangeCallback "OnAllPredictionsFinished"
-        bool m_bAllPredictionsFinished; // 0x4b9        
-        [[maybe_unused]] std::uint8_t pad_0x4ba[0x6]; // 0x4ba
+        bool m_bAllPredictionsFinished; // 0x4e1        
+        [[maybe_unused]] std::uint8_t pad_0x4e2[0x6]; // 0x4e2
         // metadata: MNetworkEnable
         // m_vecPredictions has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVectorEmbeddedNetworkVar<server::InGamePredictionData_t> m_vecPredictions;
-        char m_vecPredictions[0x50]; // 0x4c0        
+        char m_vecPredictions[0x68]; // 0x4e8        
         // metadata: MNetworkEnable
-        client::LeagueID_t m_nLeagueID; // 0x510        
-        [[maybe_unused]] std::uint8_t pad_0x514[0x4];
+        client::LeagueID_t m_nLeagueID; // 0x550        
+        [[maybe_unused]] std::uint8_t pad_0x554[0x4];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTAInGamePredictionState because it is not a standard-layout class
-    static_assert(sizeof(CDOTAInGamePredictionState) == 0x518);
+    static_assert(sizeof(CDOTAInGamePredictionState) == 0x558);
 };

@@ -19,11 +19,10 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x978
+    // Size: 0x9b8
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkExcludeByUserGroup "m_flCycle"
     // static metadata: MNetworkExcludeByName "m_flAnimTime"
@@ -65,21 +64,21 @@ namespace source2sdk::server
     {
     public:
         // metadata: MNetworkEnable
-        bool m_bOwnerModelChanged; // 0x970        
+        bool m_bOwnerModelChanged; // 0x9b0        
         // metadata: MNetworkEnable
-        bool m_bIsGeneratingEconItem; // 0x971        
+        bool m_bIsGeneratingEconItem; // 0x9b1        
         // metadata: MNetworkEnable
-        bool m_bIsItemVisibleOnGeneratedEntity; // 0x972        
+        bool m_bIsItemVisibleOnGeneratedEntity; // 0x9b2        
         // metadata: MNetworkEnable
         // metadata: MNetworkChangeCallback "OnHideWearableButDrawAdditionalWearablesChanged"
-        bool m_bHideWearableButDrawAdditionalWearables; // 0x973        
+        bool m_bHideWearableButDrawAdditionalWearables; // 0x9b3        
         // metadata: MNetworkEnable
         // m_hAdditionalWearable has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<server::CBaseAnimatingActivity> m_hAdditionalWearable;
-        char m_hAdditionalWearable[0x4]; // 0x974        
+        char m_hAdditionalWearable[0x4]; // 0x9b4        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTAWearableItem because it is not a standard-layout class
-    static_assert(sizeof(CDOTAWearableItem) == 0x978);
+    static_assert(sizeof(CDOTAWearableItem) == 0x9b8);
 };

@@ -18,7 +18,6 @@ namespace source2sdk::server
     // Standard-layout class: true
     // Size: 0xb0
     // Has VTable
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkVarNames "VPhysicsCollisionAttribute_t m_collisionAttribute"
     // static metadata: MNetworkVarNames "Vector m_vecMins"

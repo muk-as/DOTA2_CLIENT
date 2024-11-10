@@ -21,7 +21,6 @@ namespace source2sdk::client
     // Standard-layout class: false
     // Size: 0xa0
     // Has VTable
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkVarNames "CHandle< C_BasePlayerWeapon > m_hMyWeapons"
     // static metadata: MNetworkVarNames "CHandle< CBasePlayerWeapon> m_hActiveWeapon"

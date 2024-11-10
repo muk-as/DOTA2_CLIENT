@@ -24,7 +24,7 @@ namespace source2sdk::client
     // static metadata: MCellForDomain "BaseDomain"
     // static metadata: MPulseCellMethodBindings
     // static metadata: MPulseCellOutflowHookInfo
-    // static metadata: MPulseDomainOptInFeatureTag
+    // static metadata: MPulseProvideFeatureTag "1"
     // static metadata: MPropertyFriendlyName "Play Sequence"
     // static metadata: MPropertyDescription "Play the specified animation sequence on a NON-ANIMGRAPH entity, and wait for it to complete."
     #pragma pack(push, 1)

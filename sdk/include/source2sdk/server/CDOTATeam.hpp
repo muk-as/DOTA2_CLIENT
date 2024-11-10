@@ -15,11 +15,10 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x600
+    // Size: 0x628
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkVarNames "int m_iHeroKills"
     // static metadata: MNetworkVarNames "int m_iTowerKills"
@@ -38,46 +37,46 @@ namespace source2sdk::server
     class CDOTATeam : public server::CTeam
     {
     public:
-        [[maybe_unused]] std::uint8_t pad_0x570[0x10]; // 0x570
+        [[maybe_unused]] std::uint8_t pad_0x598[0x10]; // 0x598
         // metadata: MNetworkEnable
-        int32_t m_iHeroKills; // 0x580        
+        int32_t m_iHeroKills; // 0x5a8        
         // metadata: MNetworkEnable
-        int32_t m_iTowerKills; // 0x584        
+        int32_t m_iTowerKills; // 0x5ac        
         // metadata: MNetworkEnable
-        int32_t m_iBarracksKills; // 0x588        
+        int32_t m_iBarracksKills; // 0x5b0        
         // metadata: MNetworkEnable
-        uint32_t m_unTournamentTeamID; // 0x58c        
-        // metadata: MNetworkEnable
-        // metadata: MNetworkEncoder "fixed64"
-        uint64_t m_ulTeamLogo; // 0x590        
+        uint32_t m_unTournamentTeamID; // 0x5b4        
         // metadata: MNetworkEnable
         // metadata: MNetworkEncoder "fixed64"
-        uint64_t m_ulTeamBaseLogo; // 0x598        
+        uint64_t m_ulTeamLogo; // 0x5b8        
         // metadata: MNetworkEnable
         // metadata: MNetworkEncoder "fixed64"
-        uint64_t m_ulTeamBannerLogo; // 0x5a0        
+        uint64_t m_ulTeamBaseLogo; // 0x5c0        
         // metadata: MNetworkEnable
-        bool m_bTeamComplete; // 0x5a8        
+        // metadata: MNetworkEncoder "fixed64"
+        uint64_t m_ulTeamBannerLogo; // 0x5c8        
         // metadata: MNetworkEnable
-        bool m_bTeamIsHomeTeam; // 0x5a9        
+        bool m_bTeamComplete; // 0x5d0        
         // metadata: MNetworkEnable
-        bool m_bTeamCanSeeRoshanTimer; // 0x5aa        
+        bool m_bTeamIsHomeTeam; // 0x5d1        
         // metadata: MNetworkEnable
-        bool m_bTeamCanSeeNextPowerRune; // 0x5ab        
+        bool m_bTeamCanSeeRoshanTimer; // 0x5d2        
         // metadata: MNetworkEnable
-        Color m_CustomHealthbarColor; // 0x5ac        
+        bool m_bTeamCanSeeNextPowerRune; // 0x5d3        
         // metadata: MNetworkEnable
-        char m_szTag[33]; // 0x5b0        
-        [[maybe_unused]] std::uint8_t pad_0x5d1[0x3]; // 0x5d1
-        int32_t m_event_lobby_updated; // 0x5d4        
-        int32_t m_nKillStreak; // 0x5d8        
-        int32_t m_iRecentKillCount; // 0x5dc        
-        int32_t m_iRandomNumber; // 0x5e0        
-        [[maybe_unused]] std::uint8_t pad_0x5e4[0x4]; // 0x5e4
-        server::CountdownTimer m_RecentHeroKillTimer; // 0x5e8        
+        Color m_CustomHealthbarColor; // 0x5d4        
+        // metadata: MNetworkEnable
+        char m_szTag[33]; // 0x5d8        
+        [[maybe_unused]] std::uint8_t pad_0x5f9[0x3]; // 0x5f9
+        int32_t m_event_lobby_updated; // 0x5fc        
+        int32_t m_nKillStreak; // 0x600        
+        int32_t m_iRecentKillCount; // 0x604        
+        int32_t m_iRandomNumber; // 0x608        
+        [[maybe_unused]] std::uint8_t pad_0x60c[0x4]; // 0x60c
+        server::CountdownTimer m_RecentHeroKillTimer; // 0x610        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTATeam because it is not a standard-layout class
-    static_assert(sizeof(CDOTATeam) == 0x600);
+    static_assert(sizeof(CDOTATeam) == 0x628);
 };

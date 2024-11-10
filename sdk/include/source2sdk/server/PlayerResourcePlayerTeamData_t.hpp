@@ -1,4 +1,5 @@
 #pragma once
+#include "source2sdk/client/AbilityID_t.hpp"
 #include "source2sdk/client/GuildID_t.hpp"
 #include "source2sdk/client/HeroFacetID_t.hpp"
 #include "source2sdk/client/HeroID_t.hpp"
@@ -25,7 +26,7 @@ namespace source2sdk::server
     // Registered alignment: unknown
     // Alignment: 0x8
     // Standard-layout class: true
-    // Size: 0x1a0
+    // Size: 0x200
     // Has VTable
     // 
     // static metadata: MNetworkVarNames "DOTAThreatLevelInfo_t m_ThreatLevelInfos"
@@ -89,6 +90,8 @@ namespace source2sdk::server
     // static metadata: MNetworkVarNames "int8 m_nPlayerDraftPreferredTeam"
     // static metadata: MNetworkVarNames "uint8 m_nAvailableGifts"
     // static metadata: MNetworkVarNames "uint8 m_unFowTeam"
+    // static metadata: MNetworkVarNames "AbilityID_t m_vecItemPreferenceLiked"
+    // static metadata: MNetworkVarNames "AbilityID_t m_vecItemPreferenceDisliked"
     #pragma pack(push, 1)
     struct PlayerResourcePlayerTeamData_t
     {
@@ -97,212 +100,222 @@ namespace source2sdk::server
         // metadata: MNetworkEnable
         // m_ThreatLevelInfos has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVectorEmbeddedNetworkVar<server::DOTAThreatLevelInfo_t> m_ThreatLevelInfos;
-        char m_ThreatLevelInfos[0x50]; // 0x30        
+        char m_ThreatLevelInfos[0x68]; // 0x30        
         // metadata: MNetworkEnable
-        // metadata: MNetworkChangeCallback "OnSelectionDirty"
-        client::HeroID_t m_nSelectedHeroID; // 0x80        
+        // metadata: MNetworkChangeCallback "OnPlayerTeamDataSelectionDirty"
+        client::HeroID_t m_nSelectedHeroID; // 0x98        
         // metadata: MNetworkEnable
-        client::HeroFacetID_t m_nSelectedHeroVariant; // 0x84        
+        client::HeroFacetID_t m_nSelectedHeroVariant; // 0x9c        
         // metadata: MNetworkEnable
-        int32_t m_iKills; // 0x88        
+        int32_t m_iKills; // 0xa0        
         // metadata: MNetworkEnable
-        int32_t m_iAssists; // 0x8c        
+        int32_t m_iAssists; // 0xa4        
         // metadata: MNetworkEnable
-        int32_t m_iDeaths; // 0x90        
+        int32_t m_iDeaths; // 0xa8        
         // metadata: MNetworkEnable
-        int32_t m_iStreak; // 0x94        
+        int32_t m_iStreak; // 0xac        
         // metadata: MNetworkEnable
-        int32_t m_iLevel; // 0x98        
+        int32_t m_iLevel; // 0xb0        
         // metadata: MNetworkEnable
-        int32_t m_iCustomIntParam; // 0x9c        
+        int32_t m_iCustomIntParam; // 0xb4        
         // metadata: MNetworkEnable
-        int32_t m_iRespawnSeconds; // 0xa0        
+        int32_t m_iRespawnSeconds; // 0xb8        
         // metadata: MNetworkEnable
-        entity2::GameTime_t m_flLastBuybackTime; // 0xa4        
+        entity2::GameTime_t m_flLastBuybackTime; // 0xbc        
         // metadata: MNetworkEnable
         // m_hSelectedHero has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<server::CBaseEntity> m_hSelectedHero;
-        char m_hSelectedHero[0x4]; // 0xa8        
+        char m_hSelectedHero[0x4]; // 0xc0        
         // metadata: MNetworkEnable
-        bool m_bAFK; // 0xac        
-        [[maybe_unused]] std::uint8_t pad_0xad[0x3]; // 0xad
+        bool m_bAFK; // 0xc4        
+        [[maybe_unused]] std::uint8_t pad_0xc5[0x3]; // 0xc5
         // metadata: MNetworkEnable
-        // metadata: MNetworkChangeCallback "OnSelectionDirty"
-        client::HeroID_t m_nSuggestedHeroes[4]; // 0xb0        
+        // metadata: MNetworkChangeCallback "OnPlayerTeamDataSelectionDirty"
+        client::HeroID_t m_nSuggestedHeroes[4]; // 0xc8        
         // metadata: MNetworkEnable
-        // metadata: MNetworkChangeCallback "OnSelectionDirty"
-        bool m_bBanSuggestedHeroes[4]; // 0xc0        
+        // metadata: MNetworkChangeCallback "OnPlayerTeamDataSelectionDirty"
+        bool m_bBanSuggestedHeroes[4]; // 0xd8        
         // metadata: MNetworkEnable
-        uint16_t m_unCompendiumLevel; // 0xc4        
+        uint16_t m_unCompendiumLevel; // 0xdc        
         // metadata: MNetworkEnable
-        bool m_bCanRepick; // 0xc6        
+        bool m_bCanRepick; // 0xde        
         // metadata: MNetworkEnable
-        bool m_bCanEarnRewards; // 0xc7        
+        bool m_bCanEarnRewards; // 0xdf        
         // metadata: MNetworkEnable
-        bool m_bHasRandomed; // 0xc8        
-        [[maybe_unused]] std::uint8_t pad_0xc9[0x3]; // 0xc9
+        bool m_bHasRandomed; // 0xe0        
+        [[maybe_unused]] std::uint8_t pad_0xe1[0x3]; // 0xe1
         // metadata: MNetworkEnable
-        client::HeroID_t m_nRandomedHeroID; // 0xcc        
+        client::HeroID_t m_nRandomedHeroID; // 0xe4        
         // metadata: MNetworkEnable
-        bool m_bBattleBonusActive; // 0xd0        
-        [[maybe_unused]] std::uint8_t pad_0xd1[0x1]; // 0xd1
+        bool m_bBattleBonusActive; // 0xe8        
+        [[maybe_unused]] std::uint8_t pad_0xe9[0x1]; // 0xe9
         // metadata: MNetworkEnable
-        uint16_t m_iBattleBonusRate; // 0xd2        
+        uint16_t m_iBattleBonusRate; // 0xea        
         // metadata: MNetworkEnable
-        int32_t m_iCustomBuybackCost; // 0xd4        
+        int32_t m_iCustomBuybackCost; // 0xec        
         // metadata: MNetworkEnable
-        Color m_CustomPlayerColor; // 0xd8        
+        Color m_CustomPlayerColor; // 0xf0        
         // metadata: MNetworkEnable
-        bool m_bQualifiesForPAContractReward; // 0xdc        
+        bool m_bQualifiesForPAContractReward; // 0xf4        
         // metadata: MNetworkEnable
-        bool m_bHasPredictedVictory; // 0xdd        
-        [[maybe_unused]] std::uint8_t pad_0xde[0x2]; // 0xde
+        bool m_bHasPredictedVictory; // 0xf5        
+        [[maybe_unused]] std::uint8_t pad_0xf6[0x2]; // 0xf6
         // metadata: MNetworkEnable
-        int32_t m_UnitShareMasks; // 0xe0        
+        int32_t m_UnitShareMasks; // 0xf8        
         // metadata: MNetworkEnable
-        // metadata: MNetworkChangeCallback "OnTeamChanged"
-        int32_t m_iTeamSlot; // 0xe4        
+        // metadata: MNetworkChangeCallback "OnPlayerTeamDataTeamChanged"
+        int32_t m_iTeamSlot; // 0xfc        
         // metadata: MNetworkEnable
-        uint8_t m_iBattleCupWinStreak; // 0xe8        
-        [[maybe_unused]] std::uint8_t pad_0xe9[0x7]; // 0xe9
+        uint8_t m_iBattleCupWinStreak; // 0x100        
+        [[maybe_unused]] std::uint8_t pad_0x101[0x7]; // 0x101
         // metadata: MNetworkEnable
-        uint64_t m_iBattleCupWinDate; // 0xf0        
+        uint64_t m_iBattleCupWinDate; // 0x108        
         // metadata: MNetworkEnable
-        uint16_t m_iBattleCupSkillLevel; // 0xf8        
-        [[maybe_unused]] std::uint8_t pad_0xfa[0x2]; // 0xfa
+        uint16_t m_iBattleCupSkillLevel; // 0x110        
+        [[maybe_unused]] std::uint8_t pad_0x112[0x2]; // 0x112
         // metadata: MNetworkEnable
-        uint32_t m_iBattleCupTeamID; // 0xfc        
+        uint32_t m_iBattleCupTeamID; // 0x114        
         // metadata: MNetworkEnable
-        uint32_t m_iBattleCupTournamentID; // 0x100        
+        uint32_t m_iBattleCupTournamentID; // 0x118        
         // metadata: MNetworkEnable
-        uint8_t m_iBattleCupDivision; // 0x104        
-        [[maybe_unused]] std::uint8_t pad_0x105[0x3]; // 0x105
+        uint8_t m_iBattleCupDivision; // 0x11c        
+        [[maybe_unused]] std::uint8_t pad_0x11d[0x3]; // 0x11d
         // metadata: MNetworkEnable
-        float m_flTeamFightParticipation; // 0x108        
+        float m_flTeamFightParticipation; // 0x120        
         // metadata: MNetworkEnable
-        int32_t m_iFirstBloodClaimed; // 0x10c        
+        int32_t m_iFirstBloodClaimed; // 0x124        
         // metadata: MNetworkEnable
-        int32_t m_iFirstBloodGiven; // 0x110        
+        int32_t m_iFirstBloodGiven; // 0x128        
         // metadata: MNetworkEnable
-        uint32_t m_unPickOrder; // 0x114        
+        uint32_t m_unPickOrder; // 0x12c        
         // metadata: MNetworkEnable
-        entity2::GameTime_t m_flTimeOfLastSaluteSent; // 0x118        
-        [[maybe_unused]] std::uint8_t pad_0x11c[0x4]; // 0x11c
+        entity2::GameTime_t m_flTimeOfLastSaluteSent; // 0x130        
+        [[maybe_unused]] std::uint8_t pad_0x134[0x4]; // 0x134
         // metadata: MNetworkEnable
         // m_vecPlayerEventData has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVectorEmbeddedNetworkVar<server::PlayerResourcePlayerEventData_t> m_vecPlayerEventData;
-        char m_vecPlayerEventData[0x50]; // 0x120        
+        char m_vecPlayerEventData[0x68]; // 0x138        
         // metadata: MNetworkEnable
-        uint32_t m_unSelectedHeroBadgeXP; // 0x170        
+        uint32_t m_unSelectedHeroBadgeXP; // 0x1a0        
         // metadata: MNetworkEnable
-        uint8_t m_iBountyRunes; // 0x174        
+        uint8_t m_iBountyRunes; // 0x1a4        
         // metadata: MNetworkEnable
-        uint8_t m_iPowerRunes; // 0x175        
+        uint8_t m_iPowerRunes; // 0x1a5        
         // metadata: MNetworkEnable
-        uint8_t m_iWaterRunes; // 0x176        
+        uint8_t m_iWaterRunes; // 0x1a6        
         // metadata: MNetworkEnable
-        uint8_t m_iOutpostsCaptured; // 0x177        
+        uint8_t m_iOutpostsCaptured; // 0x1a7        
         // metadata: MNetworkEnable
-        uint8_t m_unGuildTier; // 0x178        
-        [[maybe_unused]] std::uint8_t pad_0x179[0x1]; // 0x179
+        uint8_t m_unGuildTier; // 0x1a8        
+        [[maybe_unused]] std::uint8_t pad_0x1a9[0x1]; // 0x1a9
         // metadata: MNetworkEnable
-        uint16_t m_unGuildLevel; // 0x17a        
+        uint16_t m_unGuildLevel; // 0x1aa        
         // metadata: MNetworkEnable
-        uint8_t m_unGuildPrimaryColor; // 0x17c        
+        uint8_t m_unGuildPrimaryColor; // 0x1ac        
         // metadata: MNetworkEnable
-        uint8_t m_unGuildSecondaryColor; // 0x17d        
+        uint8_t m_unGuildSecondaryColor; // 0x1ad        
         // metadata: MNetworkEnable
-        uint8_t m_unGuildPattern; // 0x17e        
-        [[maybe_unused]] std::uint8_t pad_0x17f[0x1]; // 0x17f
+        uint8_t m_unGuildPattern; // 0x1ae        
+        [[maybe_unused]] std::uint8_t pad_0x1af[0x1]; // 0x1af
         // metadata: MNetworkEnable
-        uint64_t m_unGuildLogo; // 0x180        
+        uint64_t m_unGuildLogo; // 0x1b0        
         // metadata: MNetworkEnable
-        uint32_t m_unGuildFlags; // 0x188        
+        uint32_t m_unGuildFlags; // 0x1b8        
         // metadata: MNetworkEnable
-        bool m_bIsPartyGuild; // 0x18c        
-        [[maybe_unused]] std::uint8_t pad_0x18d[0x3]; // 0x18d
+        bool m_bIsPartyGuild; // 0x1bc        
+        [[maybe_unused]] std::uint8_t pad_0x1bd[0x3]; // 0x1bd
         // metadata: MNetworkEnable
-        client::GuildID_t m_unGuildID; // 0x190        
+        client::GuildID_t m_unGuildID; // 0x1c0        
         // metadata: MNetworkEnable
-        client::item_definition_index_t m_unHeroStickerDefIndex; // 0x194        
+        client::item_definition_index_t m_unHeroStickerDefIndex; // 0x1c4        
         // metadata: MNetworkEnable
-        uint8_t m_eHeroStickerQuality; // 0x198        
+        uint8_t m_eHeroStickerQuality; // 0x1c8        
         // metadata: MNetworkEnable
-        uint8_t m_eLaneSelectionFlags; // 0x199        
+        uint8_t m_eLaneSelectionFlags; // 0x1c9        
         // metadata: MNetworkEnable
-        uint8_t m_nPlayerDraftPreferredRoles; // 0x19a        
+        uint8_t m_nPlayerDraftPreferredRoles; // 0x1ca        
         // metadata: MNetworkEnable
-        int8_t m_nPlayerDraftPreferredTeam; // 0x19b        
+        int8_t m_nPlayerDraftPreferredTeam; // 0x1cb        
         // metadata: MNetworkEnable
-        uint8_t m_nAvailableGifts; // 0x19c        
+        uint8_t m_nAvailableGifts; // 0x1cc        
         // metadata: MNetworkEnable
-        // metadata: MNetworkChangeCallback "OnTeamFoWChanged"
-        uint8_t m_unFowTeam; // 0x19d        
-        [[maybe_unused]] std::uint8_t pad_0x19e[0x2];
+        // metadata: MNetworkChangeCallback "OnPlayerTeamDataTeamFoWChanged"
+        uint8_t m_unFowTeam; // 0x1cd        
+        [[maybe_unused]] std::uint8_t pad_0x1ce[0x2]; // 0x1ce
+        // metadata: MNetworkEnable
+        // m_vecItemPreferenceLiked has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+        // CNetworkUtlVectorBase<client::AbilityID_t> m_vecItemPreferenceLiked;
+        char m_vecItemPreferenceLiked[0x18]; // 0x1d0        
+        // metadata: MNetworkEnable
+        // m_vecItemPreferenceDisliked has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+        // CNetworkUtlVectorBase<client::AbilityID_t> m_vecItemPreferenceDisliked;
+        char m_vecItemPreferenceDisliked[0x18]; // 0x1e8        
     };
     #pragma pack(pop)
     
     static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_ThreatLevelInfos) == 0x30);
-    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_nSelectedHeroID) == 0x80);
-    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_nSelectedHeroVariant) == 0x84);
-    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_iKills) == 0x88);
-    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_iAssists) == 0x8c);
-    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_iDeaths) == 0x90);
-    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_iStreak) == 0x94);
-    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_iLevel) == 0x98);
-    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_iCustomIntParam) == 0x9c);
-    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_iRespawnSeconds) == 0xa0);
-    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_flLastBuybackTime) == 0xa4);
-    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_hSelectedHero) == 0xa8);
-    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_bAFK) == 0xac);
-    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_nSuggestedHeroes) == 0xb0);
-    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_bBanSuggestedHeroes) == 0xc0);
-    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_unCompendiumLevel) == 0xc4);
-    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_bCanRepick) == 0xc6);
-    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_bCanEarnRewards) == 0xc7);
-    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_bHasRandomed) == 0xc8);
-    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_nRandomedHeroID) == 0xcc);
-    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_bBattleBonusActive) == 0xd0);
-    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_iBattleBonusRate) == 0xd2);
-    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_iCustomBuybackCost) == 0xd4);
-    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_CustomPlayerColor) == 0xd8);
-    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_bQualifiesForPAContractReward) == 0xdc);
-    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_bHasPredictedVictory) == 0xdd);
-    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_UnitShareMasks) == 0xe0);
-    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_iTeamSlot) == 0xe4);
-    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_iBattleCupWinStreak) == 0xe8);
-    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_iBattleCupWinDate) == 0xf0);
-    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_iBattleCupSkillLevel) == 0xf8);
-    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_iBattleCupTeamID) == 0xfc);
-    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_iBattleCupTournamentID) == 0x100);
-    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_iBattleCupDivision) == 0x104);
-    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_flTeamFightParticipation) == 0x108);
-    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_iFirstBloodClaimed) == 0x10c);
-    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_iFirstBloodGiven) == 0x110);
-    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_unPickOrder) == 0x114);
-    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_flTimeOfLastSaluteSent) == 0x118);
-    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_vecPlayerEventData) == 0x120);
-    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_unSelectedHeroBadgeXP) == 0x170);
-    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_iBountyRunes) == 0x174);
-    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_iPowerRunes) == 0x175);
-    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_iWaterRunes) == 0x176);
-    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_iOutpostsCaptured) == 0x177);
-    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_unGuildTier) == 0x178);
-    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_unGuildLevel) == 0x17a);
-    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_unGuildPrimaryColor) == 0x17c);
-    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_unGuildSecondaryColor) == 0x17d);
-    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_unGuildPattern) == 0x17e);
-    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_unGuildLogo) == 0x180);
-    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_unGuildFlags) == 0x188);
-    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_bIsPartyGuild) == 0x18c);
-    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_unGuildID) == 0x190);
-    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_unHeroStickerDefIndex) == 0x194);
-    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_eHeroStickerQuality) == 0x198);
-    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_eLaneSelectionFlags) == 0x199);
-    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_nPlayerDraftPreferredRoles) == 0x19a);
-    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_nPlayerDraftPreferredTeam) == 0x19b);
-    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_nAvailableGifts) == 0x19c);
-    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_unFowTeam) == 0x19d);
+    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_nSelectedHeroID) == 0x98);
+    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_nSelectedHeroVariant) == 0x9c);
+    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_iKills) == 0xa0);
+    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_iAssists) == 0xa4);
+    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_iDeaths) == 0xa8);
+    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_iStreak) == 0xac);
+    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_iLevel) == 0xb0);
+    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_iCustomIntParam) == 0xb4);
+    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_iRespawnSeconds) == 0xb8);
+    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_flLastBuybackTime) == 0xbc);
+    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_hSelectedHero) == 0xc0);
+    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_bAFK) == 0xc4);
+    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_nSuggestedHeroes) == 0xc8);
+    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_bBanSuggestedHeroes) == 0xd8);
+    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_unCompendiumLevel) == 0xdc);
+    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_bCanRepick) == 0xde);
+    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_bCanEarnRewards) == 0xdf);
+    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_bHasRandomed) == 0xe0);
+    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_nRandomedHeroID) == 0xe4);
+    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_bBattleBonusActive) == 0xe8);
+    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_iBattleBonusRate) == 0xea);
+    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_iCustomBuybackCost) == 0xec);
+    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_CustomPlayerColor) == 0xf0);
+    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_bQualifiesForPAContractReward) == 0xf4);
+    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_bHasPredictedVictory) == 0xf5);
+    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_UnitShareMasks) == 0xf8);
+    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_iTeamSlot) == 0xfc);
+    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_iBattleCupWinStreak) == 0x100);
+    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_iBattleCupWinDate) == 0x108);
+    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_iBattleCupSkillLevel) == 0x110);
+    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_iBattleCupTeamID) == 0x114);
+    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_iBattleCupTournamentID) == 0x118);
+    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_iBattleCupDivision) == 0x11c);
+    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_flTeamFightParticipation) == 0x120);
+    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_iFirstBloodClaimed) == 0x124);
+    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_iFirstBloodGiven) == 0x128);
+    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_unPickOrder) == 0x12c);
+    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_flTimeOfLastSaluteSent) == 0x130);
+    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_vecPlayerEventData) == 0x138);
+    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_unSelectedHeroBadgeXP) == 0x1a0);
+    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_iBountyRunes) == 0x1a4);
+    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_iPowerRunes) == 0x1a5);
+    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_iWaterRunes) == 0x1a6);
+    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_iOutpostsCaptured) == 0x1a7);
+    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_unGuildTier) == 0x1a8);
+    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_unGuildLevel) == 0x1aa);
+    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_unGuildPrimaryColor) == 0x1ac);
+    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_unGuildSecondaryColor) == 0x1ad);
+    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_unGuildPattern) == 0x1ae);
+    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_unGuildLogo) == 0x1b0);
+    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_unGuildFlags) == 0x1b8);
+    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_bIsPartyGuild) == 0x1bc);
+    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_unGuildID) == 0x1c0);
+    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_unHeroStickerDefIndex) == 0x1c4);
+    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_eHeroStickerQuality) == 0x1c8);
+    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_eLaneSelectionFlags) == 0x1c9);
+    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_nPlayerDraftPreferredRoles) == 0x1ca);
+    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_nPlayerDraftPreferredTeam) == 0x1cb);
+    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_nAvailableGifts) == 0x1cc);
+    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_unFowTeam) == 0x1cd);
+    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_vecItemPreferenceLiked) == 0x1d0);
+    static_assert(offsetof(PlayerResourcePlayerTeamData_t, m_vecItemPreferenceDisliked) == 0x1e8);
     
-    static_assert(sizeof(PlayerResourcePlayerTeamData_t) == 0x1a0);
+    static_assert(sizeof(PlayerResourcePlayerTeamData_t) == 0x200);
 };

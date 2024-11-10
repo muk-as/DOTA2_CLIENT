@@ -19,38 +19,37 @@ namespace source2sdk::server
     // Registered alignment: unknown
     // Alignment: unknown
     // Standard-layout class: false
-    // Size: 0x1748
+    // Size: 0x1768
     // Has VTable
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Modifier_Seasonal_Summon_TI11_Balloon_Thinker : public client::CDOTA_Buff
     {
     public:
-        float speed; // 0x16e8        
-        int32_t min_distance_before_bounce; // 0x16ec        
-        float drag; // 0x16f0        
-        float max_height; // 0x16f4        
-        float max_vertical_move_time; // 0x16f8        
-        float bounce_turn_angle; // 0x16fc        
-        float bounce_turn_angle_tree; // 0x1700        
-        float bounce_delay; // 0x1704        
-        int32_t max_bounces; // 0x1708        
-        float max_model_scale; // 0x170c        
-        float power_growth_exponent; // 0x1710        
-        Vector m_vLastPos; // 0x1714        
-        Vector m_vDir; // 0x1720        
-        float m_flSpeed; // 0x172c        
-        float m_flDistRemaining; // 0x1730        
-        float m_flTreeTimeRemaining; // 0x1734        
-        int32_t m_nTimesBounced; // 0x1738        
-        float m_flModelScale; // 0x173c        
+        float speed; // 0x1708        
+        int32_t min_distance_before_bounce; // 0x170c        
+        float drag; // 0x1710        
+        float max_height; // 0x1714        
+        float max_vertical_move_time; // 0x1718        
+        float bounce_turn_angle; // 0x171c        
+        float bounce_turn_angle_tree; // 0x1720        
+        float bounce_delay; // 0x1724        
+        int32_t max_bounces; // 0x1728        
+        float max_model_scale; // 0x172c        
+        float power_growth_exponent; // 0x1730        
+        Vector m_vLastPos; // 0x1734        
+        Vector m_vDir; // 0x1740        
+        float m_flSpeed; // 0x174c        
+        float m_flDistRemaining; // 0x1750        
+        float m_flTreeTimeRemaining; // 0x1754        
+        int32_t m_nTimesBounced; // 0x1758        
+        float m_flModelScale; // 0x175c        
         // m_hLastHit has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<server::CBaseEntity> m_hLastHit;
-        char m_hLastHit[0x4]; // 0x1740        
-        [[maybe_unused]] std::uint8_t pad_0x1744[0x4];
+        char m_hLastHit[0x4]; // 0x1760        
+        [[maybe_unused]] std::uint8_t pad_0x1764[0x4];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Modifier_Seasonal_Summon_TI11_Balloon_Thinker because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_Seasonal_Summon_TI11_Balloon_Thinker) == 0x1748);
+    static_assert(sizeof(CDOTA_Modifier_Seasonal_Summon_TI11_Balloon_Thinker) == 0x1768);
 };

@@ -15,10 +15,9 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x15c0
+    // Size: 0x15e8
     // Has VTable
     // Construct allowed
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MEntityAllowsPortraitWorldSpawn
     // static metadata: MNetworkVarNames "Color m_Entity_Color"
@@ -49,79 +48,79 @@ namespace source2sdk::server
     class CEnvCombinedLightProbeVolume : public server::CBaseEntity
     {
     public:
-        [[maybe_unused]] std::uint8_t pad_0x4b8[0x1060]; // 0x4b8
+        [[maybe_unused]] std::uint8_t pad_0x4e0[0x1060]; // 0x4e0
         // metadata: MNetworkEnable
         // metadata: MNetworkChangeCallback "StateChanged"
-        Color m_Entity_Color; // 0x1518        
+        Color m_Entity_Color; // 0x1540        
         // metadata: MNetworkEnable
         // metadata: MNetworkChangeCallback "StateChanged"
-        float m_Entity_flBrightness; // 0x151c        
+        float m_Entity_flBrightness; // 0x1544        
         // metadata: MNetworkEnable
         // m_Entity_hCubemapTexture has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CStrongHandle<resourcesystem::InfoForResourceTypeCTextureBase> m_Entity_hCubemapTexture;
-        char m_Entity_hCubemapTexture[0x8]; // 0x1520        
+        char m_Entity_hCubemapTexture[0x8]; // 0x1548        
         // metadata: MNetworkEnable
-        bool m_Entity_bCustomCubemapTexture; // 0x1528        
-        [[maybe_unused]] std::uint8_t pad_0x1529[0x7]; // 0x1529
+        bool m_Entity_bCustomCubemapTexture; // 0x1550        
+        [[maybe_unused]] std::uint8_t pad_0x1551[0x7]; // 0x1551
         // metadata: MNetworkEnable
         // m_Entity_hLightProbeTexture has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CStrongHandle<resourcesystem::InfoForResourceTypeCTextureBase> m_Entity_hLightProbeTexture;
-        char m_Entity_hLightProbeTexture[0x8]; // 0x1530        
+        char m_Entity_hLightProbeTexture[0x8]; // 0x1558        
         // metadata: MNetworkEnable
         // m_Entity_hLightProbeDirectLightIndicesTexture has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CStrongHandle<resourcesystem::InfoForResourceTypeCTextureBase> m_Entity_hLightProbeDirectLightIndicesTexture;
-        char m_Entity_hLightProbeDirectLightIndicesTexture[0x8]; // 0x1538        
+        char m_Entity_hLightProbeDirectLightIndicesTexture[0x8]; // 0x1560        
         // metadata: MNetworkEnable
         // m_Entity_hLightProbeDirectLightScalarsTexture has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CStrongHandle<resourcesystem::InfoForResourceTypeCTextureBase> m_Entity_hLightProbeDirectLightScalarsTexture;
-        char m_Entity_hLightProbeDirectLightScalarsTexture[0x8]; // 0x1540        
+        char m_Entity_hLightProbeDirectLightScalarsTexture[0x8]; // 0x1568        
         // metadata: MNetworkEnable
         // m_Entity_hLightProbeDirectLightShadowsTexture has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CStrongHandle<resourcesystem::InfoForResourceTypeCTextureBase> m_Entity_hLightProbeDirectLightShadowsTexture;
-        char m_Entity_hLightProbeDirectLightShadowsTexture[0x8]; // 0x1548        
+        char m_Entity_hLightProbeDirectLightShadowsTexture[0x8]; // 0x1570        
         // metadata: MNetworkEnable
-        Vector m_Entity_vBoxMins; // 0x1550        
+        Vector m_Entity_vBoxMins; // 0x1578        
         // metadata: MNetworkEnable
-        Vector m_Entity_vBoxMaxs; // 0x155c        
+        Vector m_Entity_vBoxMaxs; // 0x1584        
         // metadata: MNetworkEnable
-        bool m_Entity_bMoveable; // 0x1568        
-        [[maybe_unused]] std::uint8_t pad_0x1569[0x3]; // 0x1569
+        bool m_Entity_bMoveable; // 0x1590        
+        [[maybe_unused]] std::uint8_t pad_0x1591[0x3]; // 0x1591
         // metadata: MNetworkEnable
-        int32_t m_Entity_nHandshake; // 0x156c        
+        int32_t m_Entity_nHandshake; // 0x1594        
         // metadata: MNetworkEnable
-        int32_t m_Entity_nEnvCubeMapArrayIndex; // 0x1570        
+        int32_t m_Entity_nEnvCubeMapArrayIndex; // 0x1598        
         // metadata: MNetworkEnable
-        int32_t m_Entity_nPriority; // 0x1574        
+        int32_t m_Entity_nPriority; // 0x159c        
         // metadata: MNetworkEnable
-        bool m_Entity_bStartDisabled; // 0x1578        
-        [[maybe_unused]] std::uint8_t pad_0x1579[0x3]; // 0x1579
+        bool m_Entity_bStartDisabled; // 0x15a0        
+        [[maybe_unused]] std::uint8_t pad_0x15a1[0x3]; // 0x15a1
         // metadata: MNetworkEnable
-        float m_Entity_flEdgeFadeDist; // 0x157c        
+        float m_Entity_flEdgeFadeDist; // 0x15a4        
         // metadata: MNetworkEnable
-        Vector m_Entity_vEdgeFadeDists; // 0x1580        
+        Vector m_Entity_vEdgeFadeDists; // 0x15a8        
         // metadata: MNetworkEnable
-        int32_t m_Entity_nLightProbeSizeX; // 0x158c        
+        int32_t m_Entity_nLightProbeSizeX; // 0x15b4        
         // metadata: MNetworkEnable
-        int32_t m_Entity_nLightProbeSizeY; // 0x1590        
+        int32_t m_Entity_nLightProbeSizeY; // 0x15b8        
         // metadata: MNetworkEnable
-        int32_t m_Entity_nLightProbeSizeZ; // 0x1594        
+        int32_t m_Entity_nLightProbeSizeZ; // 0x15bc        
         // metadata: MNetworkEnable
-        int32_t m_Entity_nLightProbeAtlasX; // 0x1598        
+        int32_t m_Entity_nLightProbeAtlasX; // 0x15c0        
         // metadata: MNetworkEnable
-        int32_t m_Entity_nLightProbeAtlasY; // 0x159c        
+        int32_t m_Entity_nLightProbeAtlasY; // 0x15c4        
         // metadata: MNetworkEnable
-        int32_t m_Entity_nLightProbeAtlasZ; // 0x15a0        
-        [[maybe_unused]] std::uint8_t pad_0x15a4[0x15]; // 0x15a4
+        int32_t m_Entity_nLightProbeAtlasZ; // 0x15c8        
+        [[maybe_unused]] std::uint8_t pad_0x15cc[0x15]; // 0x15cc
         // metadata: MNetworkEnable
-        bool m_Entity_bEnabled; // 0x15b9        
-        [[maybe_unused]] std::uint8_t pad_0x15ba[0x6];
+        bool m_Entity_bEnabled; // 0x15e1        
+        [[maybe_unused]] std::uint8_t pad_0x15e2[0x6];
         
         // Datamap fields:
-        // void m_Entity_pEnvMap; // 0x15a8
-        // void m_Entity_pLightProbeVolume; // 0x15b0
+        // void m_Entity_pEnvMap; // 0x15d0
+        // void m_Entity_pLightProbeVolume; // 0x15d8
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CEnvCombinedLightProbeVolume because it is not a standard-layout class
-    static_assert(sizeof(CEnvCombinedLightProbeVolume) == 0x15c0);
+    static_assert(sizeof(CEnvCombinedLightProbeVolume) == 0x15e8);
 };

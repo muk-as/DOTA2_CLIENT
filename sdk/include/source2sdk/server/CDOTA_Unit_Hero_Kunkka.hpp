@@ -14,20 +14,19 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x1e70
+    // Size: 0x1e98
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Unit_Hero_Kunkka : public server::CDOTA_BaseNPC_Hero
     {
     public:
-        int32_t m_nFXIndex; // 0x1e68        
-        [[maybe_unused]] std::uint8_t pad_0x1e6c[0x4];
+        int32_t m_nFXIndex; // 0x1e90        
+        [[maybe_unused]] std::uint8_t pad_0x1e94[0x4];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Unit_Hero_Kunkka because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Unit_Hero_Kunkka) == 0x1e70);
+    static_assert(sizeof(CDOTA_Unit_Hero_Kunkka) == 0x1e98);
 };

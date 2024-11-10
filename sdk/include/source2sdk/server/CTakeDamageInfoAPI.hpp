@@ -17,7 +17,7 @@ namespace source2sdk::server
     // Has Trivial Constructor
     // Has Trivial Destructor
     // 
-    // static metadata: MPulseProvideFeatureTag "PulseEntities"
+    // static metadata: MPulseProvideFeatureTag "1"
     // static metadata: MPulseLibraryBindings
     #pragma pack(push, 1)
     class CTakeDamageInfoAPI

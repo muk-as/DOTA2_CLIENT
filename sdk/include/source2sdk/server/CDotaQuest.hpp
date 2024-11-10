@@ -19,12 +19,11 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x938
+    // Size: 0x960
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
     // MNetworkNoBase
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkVarNames "char m_pszQuestTitle"
     // static metadata: MNetworkVarNames "char m_pszQuestText"
@@ -43,36 +42,36 @@ namespace source2sdk::server
     {
     public:
         // metadata: MNetworkEnable
-        char m_pszQuestTitle[256]; // 0x4b8        
+        char m_pszQuestTitle[256]; // 0x4e0        
         // metadata: MNetworkEnable
-        char m_pszQuestText[256]; // 0x5b8        
+        char m_pszQuestText[256]; // 0x5e0        
         // metadata: MNetworkEnable
-        int32_t m_nQuestType; // 0x6b8        
+        int32_t m_nQuestType; // 0x6e0        
         // metadata: MNetworkEnable
         // m_hSubquests has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<server::CDotaSubquestBase> m_hSubquests[8];
-        char m_hSubquests[0x20]; // 0x6bc        
+        char m_hSubquests[0x20]; // 0x6e4        
         // metadata: MNetworkEnable
-        bool m_bHidden; // 0x6dc        
+        bool m_bHidden; // 0x704        
         // metadata: MNetworkEnable
-        bool m_bCompleted; // 0x6dd        
+        bool m_bCompleted; // 0x705        
         // metadata: MNetworkEnable
-        bool m_bWinIfCompleted; // 0x6de        
+        bool m_bWinIfCompleted; // 0x706        
         // metadata: MNetworkEnable
-        bool m_bLoseIfCompleted; // 0x6df        
+        bool m_bLoseIfCompleted; // 0x707        
         // metadata: MNetworkEnable
-        char m_pszGameEndText[256]; // 0x6e0        
+        char m_pszGameEndText[256]; // 0x708        
         // metadata: MNetworkEnable
-        int32_t m_pnTextReplaceValuesCDotaQuest[4]; // 0x7e0        
+        int32_t m_pnTextReplaceValuesCDotaQuest[4]; // 0x808        
         // metadata: MNetworkEnable
-        char m_pszTextReplaceString[64]; // 0x7f0        
+        char m_pszTextReplaceString[64]; // 0x818        
         // metadata: MNetworkEnable
-        int32_t m_nTextReplaceValueVersion; // 0x830        
-        int32_t m_nQuestCompleteFadeAlpha; // 0x834        
-        char m_pszQuestName[256]; // 0x838        
+        int32_t m_nTextReplaceValueVersion; // 0x858        
+        int32_t m_nQuestCompleteFadeAlpha; // 0x85c        
+        char m_pszQuestName[256]; // 0x860        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDotaQuest because it is not a standard-layout class
-    static_assert(sizeof(CDotaQuest) == 0x938);
+    static_assert(sizeof(CDotaQuest) == 0x960);
 };

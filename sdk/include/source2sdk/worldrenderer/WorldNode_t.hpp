@@ -21,7 +21,7 @@ namespace source2sdk::worldrenderer
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: true
-    // Size: 0x140
+    // Size: 0x148
     // Construct allowed
     // 
     // static metadata: MGetKV3ClassDefaults
@@ -64,6 +64,8 @@ namespace source2sdk::worldrenderer
         char m_overlayLayerIndices[0x18]; // 0xf0        
         CUtlString m_grassFileName; // 0x108        
         worldrenderer::BakedLightingInfo_t m_nodeLightingInfo; // 0x110        
+        bool m_bHasBakedGeometryFlag; // 0x140        
+        [[maybe_unused]] std::uint8_t pad_0x141[0x7];
     };
     #pragma pack(pop)
     
@@ -80,6 +82,7 @@ namespace source2sdk::worldrenderer
     static_assert(offsetof(WorldNode_t, m_overlayLayerIndices) == 0xf0);
     static_assert(offsetof(WorldNode_t, m_grassFileName) == 0x108);
     static_assert(offsetof(WorldNode_t, m_nodeLightingInfo) == 0x110);
+    static_assert(offsetof(WorldNode_t, m_bHasBakedGeometryFlag) == 0x140);
     
-    static_assert(sizeof(WorldNode_t) == 0x140);
+    static_assert(sizeof(WorldNode_t) == 0x148);
 };

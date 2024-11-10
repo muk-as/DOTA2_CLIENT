@@ -19,31 +19,30 @@ namespace source2sdk::server
     // Registered alignment: unknown
     // Alignment: unknown
     // Standard-layout class: false
-    // Size: 0x1750
+    // Size: 0x1770
     // Has VTable
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Modifier_Phoenix_IcarusDive : public client::CDOTA_Buff
     {
     public:
-        Vector m_vSource; // 0x16e8        
-        Vector m_vTarget; // 0x16f4        
-        Vector m_vDirection; // 0x1700        
-        QAngle m_angDirection; // 0x170c        
-        float m_flCurrentTime; // 0x1718        
-        int32_t dash_length; // 0x171c        
-        int32_t dash_width; // 0x1720        
-        int32_t hit_radius; // 0x1724        
-        float burn_duration; // 0x1728        
-        float dive_duration; // 0x172c        
-        float impact_damage; // 0x1730        
-        [[maybe_unused]] std::uint8_t pad_0x1734[0x4]; // 0x1734
+        Vector m_vSource; // 0x1708        
+        Vector m_vTarget; // 0x1714        
+        Vector m_vDirection; // 0x1720        
+        QAngle m_angDirection; // 0x172c        
+        float m_flCurrentTime; // 0x1738        
+        int32_t dash_length; // 0x173c        
+        int32_t dash_width; // 0x1740        
+        int32_t hit_radius; // 0x1744        
+        float burn_duration; // 0x1748        
+        float dive_duration; // 0x174c        
+        float impact_damage; // 0x1750        
+        [[maybe_unused]] std::uint8_t pad_0x1754[0x4]; // 0x1754
         // m_vecHitEntities has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<CHandle<server::CBaseEntity>> m_vecHitEntities;
-        char m_vecHitEntities[0x18]; // 0x1738        
+        char m_vecHitEntities[0x18]; // 0x1758        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Modifier_Phoenix_IcarusDive because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_Phoenix_IcarusDive) == 0x1750);
+    static_assert(sizeof(CDOTA_Modifier_Phoenix_IcarusDive) == 0x1770);
 };

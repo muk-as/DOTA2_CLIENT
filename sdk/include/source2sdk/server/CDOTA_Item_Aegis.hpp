@@ -15,20 +15,19 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x650
+    // Size: 0x678
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Item_Aegis : public server::CDOTA_Item
     {
     public:
-        int32_t m_iKillerTeam; // 0x648        
-        entity2::GameTime_t m_fEquipTime; // 0x64c        
+        int32_t m_iKillerTeam; // 0x670        
+        entity2::GameTime_t m_fEquipTime; // 0x674        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Item_Aegis because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Item_Aegis) == 0x650);
+    static_assert(sizeof(CDOTA_Item_Aegis) == 0x678);
 };

@@ -20,25 +20,24 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x5b8
+    // Size: 0x5e0
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Ability_Seasonal_TI11_Balloon : public server::CDOTABaseAbility
     {
     public:
-        float charge_use_interval; // 0x5a0        
-        float max_usable_charges; // 0x5a4        
-        entity2::GameTime_t m_flLastChargeUseTime; // 0x5a8        
+        float charge_use_interval; // 0x5c8        
+        float max_usable_charges; // 0x5cc        
+        entity2::GameTime_t m_flLastChargeUseTime; // 0x5d0        
         // m_hBalloon has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<server::CBaseEntity> m_hBalloon;
-        char m_hBalloon[0x4]; // 0x5ac        
-        [[maybe_unused]] std::uint8_t pad_0x5b0[0x8];
+        char m_hBalloon[0x4]; // 0x5d4        
+        [[maybe_unused]] std::uint8_t pad_0x5d8[0x8];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Ability_Seasonal_TI11_Balloon because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Ability_Seasonal_TI11_Balloon) == 0x5b8);
+    static_assert(sizeof(CDOTA_Ability_Seasonal_TI11_Balloon) == 0x5e0);
 };

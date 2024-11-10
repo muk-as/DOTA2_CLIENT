@@ -17,7 +17,6 @@ namespace source2sdk::server
     // Size: 0x20
     // Has VTable
     // Is Abstract
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Tree : public server::CObstructionObject
     {

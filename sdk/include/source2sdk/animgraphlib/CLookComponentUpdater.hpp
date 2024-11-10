@@ -26,14 +26,15 @@ namespace source2sdk::animgraphlib
     public:
         [[maybe_unused]] std::uint8_t pad_0x30[0x4]; // 0x30
         animgraphlib::CAnimParamHandle m_hLookHeading; // 0x34        
-        animgraphlib::CAnimParamHandle m_hLookHeadingVelocity; // 0x36        
-        animgraphlib::CAnimParamHandle m_hLookPitch; // 0x38        
-        animgraphlib::CAnimParamHandle m_hLookDistance; // 0x3a        
-        animgraphlib::CAnimParamHandle m_hLookDirection; // 0x3c        
-        animgraphlib::CAnimParamHandle m_hLookTarget; // 0x3e        
-        animgraphlib::CAnimParamHandle m_hLookTargetWorldSpace; // 0x40        
-        bool m_bNetworkLookTarget; // 0x42        
-        [[maybe_unused]] std::uint8_t pad_0x43[0x5];
+        animgraphlib::CAnimParamHandle m_hLookHeadingNormalized; // 0x36        
+        animgraphlib::CAnimParamHandle m_hLookHeadingVelocity; // 0x38        
+        animgraphlib::CAnimParamHandle m_hLookPitch; // 0x3a        
+        animgraphlib::CAnimParamHandle m_hLookDistance; // 0x3c        
+        animgraphlib::CAnimParamHandle m_hLookDirection; // 0x3e        
+        animgraphlib::CAnimParamHandle m_hLookTarget; // 0x40        
+        animgraphlib::CAnimParamHandle m_hLookTargetWorldSpace; // 0x42        
+        bool m_bNetworkLookTarget; // 0x44        
+        [[maybe_unused]] std::uint8_t pad_0x45[0x3];
     };
     #pragma pack(pop)
     

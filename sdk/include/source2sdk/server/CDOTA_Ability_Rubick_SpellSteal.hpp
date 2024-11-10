@@ -25,11 +25,10 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x6b8
+    // Size: 0x6e0
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkVarNames "char m_ActivityModifier"
     // static metadata: MNetworkVarNames "float m_fStolenCastPoint"
@@ -38,21 +37,21 @@ namespace source2sdk::server
     {
     public:
         // metadata: MNetworkEnable
-        char m_ActivityModifier[256]; // 0x5a0        
+        char m_ActivityModifier[256]; // 0x5c8        
         // metadata: MNetworkEnable
-        float m_fStolenCastPoint; // 0x6a0        
+        float m_fStolenCastPoint; // 0x6c8        
         // m_hStealTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<server::CBaseEntity> m_hStealTarget;
-        char m_hStealTarget[0x4]; // 0x6a4        
+        char m_hStealTarget[0x4]; // 0x6cc        
         // m_hStealAbility has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<server::CDOTABaseAbility> m_hStealAbility;
-        char m_hStealAbility[0x4]; // 0x6a8        
-        client::ParticleIndex_t m_nFXIndex; // 0x6ac        
-        int32_t m_hProjectile; // 0x6b0        
-        [[maybe_unused]] std::uint8_t pad_0x6b4[0x4];
+        char m_hStealAbility[0x4]; // 0x6d0        
+        client::ParticleIndex_t m_nFXIndex; // 0x6d4        
+        int32_t m_hProjectile; // 0x6d8        
+        [[maybe_unused]] std::uint8_t pad_0x6dc[0x4];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Ability_Rubick_SpellSteal because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Ability_Rubick_SpellSteal) == 0x6b8);
+    static_assert(sizeof(CDOTA_Ability_Rubick_SpellSteal) == 0x6e0);
 };

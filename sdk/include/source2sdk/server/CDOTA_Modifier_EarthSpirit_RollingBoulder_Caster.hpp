@@ -14,19 +14,18 @@ namespace source2sdk::server
     // Registered alignment: unknown
     // Alignment: unknown
     // Standard-layout class: false
-    // Size: 0x16f8
+    // Size: 0x1718
     // Has VTable
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Modifier_EarthSpirit_RollingBoulder_Caster : public client::CDOTA_Buff
     {
     public:
-        Vector m_vDir; // 0x16e8        
-        bool m_bBoulderCreated; // 0x16f4        
-        [[maybe_unused]] std::uint8_t pad_0x16f5[0x3];
+        Vector m_vDir; // 0x1708        
+        bool m_bBoulderCreated; // 0x1714        
+        [[maybe_unused]] std::uint8_t pad_0x1715[0x3];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Modifier_EarthSpirit_RollingBoulder_Caster because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_EarthSpirit_RollingBoulder_Caster) == 0x16f8);
+    static_assert(sizeof(CDOTA_Modifier_EarthSpirit_RollingBoulder_Caster) == 0x1718);
 };

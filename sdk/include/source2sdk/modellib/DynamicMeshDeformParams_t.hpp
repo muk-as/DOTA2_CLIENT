@@ -26,7 +26,8 @@ namespace source2sdk::modellib
         float m_flTensionStretchScale; // 0x4        
         bool m_bRecomputeSmoothNormalsAfterAnimation; // 0x8        
         bool m_bComputeDynamicMeshTensionAfterAnimation; // 0x9        
-        [[maybe_unused]] std::uint8_t pad_0x0a[0x2];
+        bool m_bSmoothNormalsAcrossUvSeams; // 0xa        
+        [[maybe_unused]] std::uint8_t pad_0x0b[0x1];
     };
     #pragma pack(pop)
     
@@ -34,6 +35,7 @@ namespace source2sdk::modellib
     static_assert(offsetof(DynamicMeshDeformParams_t, m_flTensionStretchScale) == 0x4);
     static_assert(offsetof(DynamicMeshDeformParams_t, m_bRecomputeSmoothNormalsAfterAnimation) == 0x8);
     static_assert(offsetof(DynamicMeshDeformParams_t, m_bComputeDynamicMeshTensionAfterAnimation) == 0x9);
+    static_assert(offsetof(DynamicMeshDeformParams_t, m_bSmoothNormalsAcrossUvSeams) == 0xa);
     
     static_assert(sizeof(DynamicMeshDeformParams_t) == 0xc);
 };

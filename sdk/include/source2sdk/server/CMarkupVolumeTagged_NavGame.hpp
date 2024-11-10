@@ -14,19 +14,18 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x7e8
+    // Size: 0x810
     // Has VTable
     // Construct allowed
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CMarkupVolumeTagged_NavGame : public server::CMarkupVolumeWithRef
     {
     public:
-        bool m_bFloodFillAttribute; // 0x7e0        
-        [[maybe_unused]] std::uint8_t pad_0x7e1[0x7];
+        bool m_bFloodFillAttribute; // 0x808        
+        [[maybe_unused]] std::uint8_t pad_0x809[0x7];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CMarkupVolumeTagged_NavGame because it is not a standard-layout class
-    static_assert(sizeof(CMarkupVolumeTagged_NavGame) == 0x7e8);
+    static_assert(sizeof(CMarkupVolumeTagged_NavGame) == 0x810);
 };

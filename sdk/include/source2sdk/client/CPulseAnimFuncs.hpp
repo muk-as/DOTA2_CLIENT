@@ -17,8 +17,8 @@ namespace source2sdk::client
     // Has Trivial Constructor
     // Has Trivial Destructor
     // 
+    // static metadata: MPulseProvideFeatureTag "1"
     // static metadata: MPulseLibraryBindings
-    // static metadata: MPulseDomainOptInFeatureTag
     #pragma pack(push, 1)
     class CPulseAnimFuncs
     {

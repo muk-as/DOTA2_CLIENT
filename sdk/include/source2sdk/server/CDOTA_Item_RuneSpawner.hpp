@@ -14,11 +14,10 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x7a0
+    // Size: 0x7c8
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkVarNames "float m_flLastSpawnTime"
     // static metadata: MNetworkVarNames "float m_flNextSpawnTime"
@@ -27,12 +26,12 @@ namespace source2sdk::server
     {
     public:
         // metadata: MNetworkEnable
-        float m_flLastSpawnTime; // 0x798        
+        float m_flLastSpawnTime; // 0x7c0        
         // metadata: MNetworkEnable
-        float m_flNextSpawnTime; // 0x79c        
+        float m_flNextSpawnTime; // 0x7c4        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Item_RuneSpawner because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Item_RuneSpawner) == 0x7a0);
+    static_assert(sizeof(CDOTA_Item_RuneSpawner) == 0x7c8);
 };

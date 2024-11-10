@@ -20,11 +20,10 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x14e0
+    // Size: 0x1598
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkVarNames "CHandle< CBaseEntity> m_hPowerupRune_1"
     // static metadata: MNetworkVarNames "CHandle< CBaseEntity> m_hPowerupRune_2"
@@ -44,47 +43,47 @@ namespace source2sdk::server
         // metadata: MNetworkEnable
         // m_hPowerupRune_1 has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<server::CBaseEntity> m_hPowerupRune_1;
-        char m_hPowerupRune_1[0x4]; // 0x1408        
+        char m_hPowerupRune_1[0x4]; // 0x14a8        
         // metadata: MNetworkEnable
         // m_hPowerupRune_2 has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<server::CBaseEntity> m_hPowerupRune_2;
-        char m_hPowerupRune_2[0x4]; // 0x140c        
+        char m_hPowerupRune_2[0x4]; // 0x14ac        
         // metadata: MNetworkEnable
         // m_hBountyRune_1 has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<server::CBaseEntity> m_hBountyRune_1;
-        char m_hBountyRune_1[0x4]; // 0x1410        
+        char m_hBountyRune_1[0x4]; // 0x14b0        
         // metadata: MNetworkEnable
         // m_hBountyRune_2 has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<server::CBaseEntity> m_hBountyRune_2;
-        char m_hBountyRune_2[0x4]; // 0x1414        
+        char m_hBountyRune_2[0x4]; // 0x14b4        
         // metadata: MNetworkEnable
         // m_hBountyRune_3 has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<server::CBaseEntity> m_hBountyRune_3;
-        char m_hBountyRune_3[0x4]; // 0x1418        
+        char m_hBountyRune_3[0x4]; // 0x14b8        
         // metadata: MNetworkEnable
         // m_hBountyRune_4 has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<server::CBaseEntity> m_hBountyRune_4;
-        char m_hBountyRune_4[0x4]; // 0x141c        
+        char m_hBountyRune_4[0x4]; // 0x14bc        
         // metadata: MNetworkEnable
         // m_hXPRune_1 has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<server::CBaseEntity> m_hXPRune_1;
-        char m_hXPRune_1[0x4]; // 0x1420        
+        char m_hXPRune_1[0x4]; // 0x14c0        
         // metadata: MNetworkEnable
         // m_hXPRune_2 has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<server::CBaseEntity> m_hXPRune_2;
-        char m_hXPRune_2[0x4]; // 0x1424        
+        char m_hXPRune_2[0x4]; // 0x14c4        
         // metadata: MNetworkEnable
-        int32_t m_iNetWorth[24]; // 0x1428        
+        int32_t m_iNetWorth[24]; // 0x14c8        
         // metadata: MNetworkEnable
-        float m_fRadiantWinProbability; // 0x1488        
-        [[maybe_unused]] std::uint8_t pad_0x148c[0x4]; // 0x148c
+        float m_fRadiantWinProbability; // 0x1528        
+        [[maybe_unused]] std::uint8_t pad_0x152c[0x4]; // 0x152c
         // metadata: MNetworkEnable
         // m_ThreatLevelInfos has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVectorEmbeddedNetworkVar<server::DOTAThreatLevelInfo_t> m_ThreatLevelInfos;
-        char m_ThreatLevelInfos[0x50]; // 0x1490        
+        char m_ThreatLevelInfos[0x68]; // 0x1530        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_DataSpectator because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_DataSpectator) == 0x14e0);
+    static_assert(sizeof(CDOTA_DataSpectator) == 0x1598);
 };

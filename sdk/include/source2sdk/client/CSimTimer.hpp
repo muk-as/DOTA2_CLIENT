@@ -20,7 +20,7 @@ namespace source2sdk::client
     class CSimTimer : public client::CSimpleSimTimer
     {
     public:
-        float m_interval; // 0x8        
+        float m_flInterval; // 0x8        
     };
     #pragma pack(pop)
     

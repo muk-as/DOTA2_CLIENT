@@ -15,10 +15,9 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x1860
+    // Size: 0x1880
     // Has VTable
     // Construct allowed
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkExcludeByName "m_CollisionGroup"
     // static metadata: MNetworkExcludeByName "m_Inventory"
@@ -53,12 +52,12 @@ namespace source2sdk::server
     class CDOTA_BaseNPC_Creep_Lane : public server::CDOTA_BaseNPC_Creep
     {
     public:
-        [[maybe_unused]] std::uint8_t pad_0x1840[0x1c]; // 0x1840
+        [[maybe_unused]] std::uint8_t pad_0x1860[0x1c]; // 0x1860
         // metadata: MNetworkEnable
-        client::FowCustomTeams_t m_nFoWTeam; // 0x185c        
+        client::FowCustomTeams_t m_nFoWTeam; // 0x187c        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_BaseNPC_Creep_Lane because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_BaseNPC_Creep_Lane) == 0x1860);
+    static_assert(sizeof(CDOTA_BaseNPC_Creep_Lane) == 0x1880);
 };

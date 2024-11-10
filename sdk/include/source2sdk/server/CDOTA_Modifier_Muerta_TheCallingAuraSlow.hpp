@@ -14,18 +14,17 @@ namespace source2sdk::server
     // Registered alignment: unknown
     // Alignment: unknown
     // Standard-layout class: false
-    // Size: 0x16f0
+    // Size: 0x1710
     // Has VTable
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Modifier_Muerta_TheCallingAuraSlow : public client::CDOTA_Buff
     {
     public:
-        int32_t aura_movespeed_slow; // 0x16e8        
-        int32_t aura_attackspeed_slow; // 0x16ec        
+        int32_t aura_movespeed_slow; // 0x1708        
+        int32_t aura_attackspeed_slow; // 0x170c        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Modifier_Muerta_TheCallingAuraSlow because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_Muerta_TheCallingAuraSlow) == 0x16f0);
+    static_assert(sizeof(CDOTA_Modifier_Muerta_TheCallingAuraSlow) == 0x1710);
 };

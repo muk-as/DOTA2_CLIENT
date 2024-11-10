@@ -15,7 +15,7 @@ namespace source2sdk::smartprops
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x2c0
+    // Size: 0x300
     // Has VTable
     // Construct allowed
     // 
@@ -46,13 +46,17 @@ namespace source2sdk::smartprops
         CSmartPropAttributeVector m_vUpDirection; // 0x228        
         // metadata: MPropertyDescription "Space in which the up direction is defined."
         smartprops::CSmartPropAttributeCoordinateSpace m_UpDirectionSpace; // 0x268        
+        // metadata: MPropertyFriendlyName "Default Path In World Space"
+        // metadata: MPropertyDescription "If enabled, the default path values will be treated as world space values, if disabled they are treated as object space values. Typically it makes sense for literal values to be treated as being in object space, but if the values are being supplied by locators they will typically be in world space."
+        CSmartPropAttributeBool m_DefaultPathInWorldSpace; // 0x2a8        
+        // metadata: MPropertyAttributeEditor "SmartPropAttributeEditor(vector3)"
         // metadata: MPropertyDescription "A set of points defining a path to use when an external path isn't specified. This will be used in the preview and thumbnail for the smart prop. It will also be used when the smart prop is placed in Hammer before a path is selected."
         // m_DefaultPath has a template type with potentially unknown template parameters. You can try uncommenting the field below.
-        // CUtlVector<Vector> m_DefaultPath;
-        char m_DefaultPath[0x18]; // 0x2a8        
+        // CUtlVector<CSmartPropAttributeVector> m_DefaultPath;
+        char m_DefaultPath[0x18]; // 0x2e8        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CSmartPropElement_PlaceOnPath because it is not a standard-layout class
-    static_assert(sizeof(CSmartPropElement_PlaceOnPath) == 0x2c0);
+    static_assert(sizeof(CSmartPropElement_PlaceOnPath) == 0x300);
 };

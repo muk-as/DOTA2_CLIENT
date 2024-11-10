@@ -16,10 +16,9 @@ namespace source2sdk::server
     // Registered alignment: unknown
     // Alignment: unknown
     // Standard-layout class: false
-    // Size: 0x940
+    // Size: 0x9a0
     // Has VTable
     // Construct disallowed
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkVarNames "CBaseAnimatingController m_animationController"
     #pragma pack(push, 1)
@@ -27,8 +26,8 @@ namespace source2sdk::server
     {
     public:
         // metadata: MNetworkEnable
-        server::CBaseAnimatingController m_animationController; // 0x470        
-        [[maybe_unused]] std::uint8_t pad_0x938[0x8];
+        server::CBaseAnimatingController m_animationController; // 0x4d0        
+        [[maybe_unused]] std::uint8_t pad_0x998[0x8];
         
         // Static fields:
         static entity2::EntComponentInfo_t &Get_s_EntComponentInfo() {return *reinterpret_cast<entity2::EntComponentInfo_t*>(interfaces::g_schema->FindTypeScopeForModule("server.dll")->FindDeclaredClass("CBodyComponentBaseAnimating")->GetStaticFields()[0]->m_pInstance);};
@@ -37,5 +36,5 @@ namespace source2sdk::server
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CBodyComponentBaseAnimating because it is not a standard-layout class
-    static_assert(sizeof(CBodyComponentBaseAnimating) == 0x940);
+    static_assert(sizeof(CBodyComponentBaseAnimating) == 0x9a0);
 };

@@ -13,7 +13,7 @@ namespace source2sdk::worldrenderer
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: true
-    // Size: 0x30
+    // Size: 0x40
     // Construct allowed
     // 
     // static metadata: MGetKV3ClassDefaults
@@ -29,6 +29,7 @@ namespace source2sdk::worldrenderer
         CUtlString m_overrideParam; // 0x20        
         float m_flDelay; // 0x28        
         int32_t m_nTimesToFire; // 0x2c        
+        KeyValues3 m_paramMap; // 0x30        
     };
     #pragma pack(pop)
     
@@ -39,6 +40,7 @@ namespace source2sdk::worldrenderer
     static_assert(offsetof(EntityIOConnectionData_t, m_overrideParam) == 0x20);
     static_assert(offsetof(EntityIOConnectionData_t, m_flDelay) == 0x28);
     static_assert(offsetof(EntityIOConnectionData_t, m_nTimesToFire) == 0x2c);
+    static_assert(offsetof(EntityIOConnectionData_t, m_paramMap) == 0x30);
     
-    static_assert(sizeof(EntityIOConnectionData_t) == 0x30);
+    static_assert(sizeof(EntityIOConnectionData_t) == 0x40);
 };

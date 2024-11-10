@@ -14,10 +14,9 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x510
+    // Size: 0x538
     // Has VTable
     // Construct allowed
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CInfoPlayerStartBadGuys : public server::CInfoPlayerStartDota
     {
@@ -26,5 +25,5 @@ namespace source2sdk::server
     };
     #pragma pack(pop)
     
-    static_assert(sizeof(CInfoPlayerStartBadGuys) == 0x510);
+    static_assert(sizeof(CInfoPlayerStartBadGuys) == 0x538);
 };

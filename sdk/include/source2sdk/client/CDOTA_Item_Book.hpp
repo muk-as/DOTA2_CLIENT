@@ -14,11 +14,10 @@ namespace source2sdk::client
     // Registered alignment: unknown
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x678
+    // Size: 0x6a0
     // Has VTable
     // Is Abstract
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Item_Book : public client::C_DOTA_Item
     {
@@ -27,5 +26,5 @@ namespace source2sdk::client
     };
     #pragma pack(pop)
     
-    static_assert(sizeof(CDOTA_Item_Book) == 0x678);
+    static_assert(sizeof(CDOTA_Item_Book) == 0x6a0);
 };

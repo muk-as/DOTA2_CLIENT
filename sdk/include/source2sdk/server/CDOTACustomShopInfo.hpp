@@ -14,7 +14,7 @@ namespace source2sdk::server
     // Registered alignment: unknown
     // Alignment: 0x8
     // Standard-layout class: true
-    // Size: 0x180
+    // Size: 0x198
     // Has VTable
     // MNetworkNoBase
     // 
@@ -30,12 +30,12 @@ namespace source2sdk::server
         // metadata: MNetworkEnable
         // m_CustomShopItems has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVectorEmbeddedNetworkVar<server::CDOTACustomShopItemInfo> m_CustomShopItems;
-        char m_CustomShopItems[0x50]; // 0x130        
+        char m_CustomShopItems[0x68]; // 0x130        
     };
     #pragma pack(pop)
     
     static_assert(offsetof(CDOTACustomShopInfo, m_CustomShopName) == 0x30);
     static_assert(offsetof(CDOTACustomShopInfo, m_CustomShopItems) == 0x130);
     
-    static_assert(sizeof(CDOTACustomShopInfo) == 0x180);
+    static_assert(sizeof(CDOTACustomShopInfo) == 0x198);
 };

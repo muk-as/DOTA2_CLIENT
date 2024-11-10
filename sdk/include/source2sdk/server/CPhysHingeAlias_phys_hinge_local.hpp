@@ -14,10 +14,9 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x6d0
+    // Size: 0x6f8
     // Has VTable
     // Construct allowed
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CPhysHingeAlias_phys_hinge_local : public server::CPhysHinge
     {
@@ -26,5 +25,5 @@ namespace source2sdk::server
     };
     #pragma pack(pop)
     
-    static_assert(sizeof(CPhysHingeAlias_phys_hinge_local) == 0x6d0);
+    static_assert(sizeof(CPhysHingeAlias_phys_hinge_local) == 0x6f8);
 };

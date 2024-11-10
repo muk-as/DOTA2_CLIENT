@@ -14,11 +14,10 @@ namespace source2sdk::client
     // Registered alignment: unknown
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x5e8
+    // Size: 0x610
     // Has VTable
     // Is Abstract
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkVarNames "int m_nQuasLevel"
     // static metadata: MNetworkVarNames "int m_nWexLevel"
@@ -28,15 +27,15 @@ namespace source2sdk::client
     {
     public:
         // metadata: MNetworkEnable
-        int32_t m_nQuasLevel; // 0x5d8        
+        int32_t m_nQuasLevel; // 0x600        
         // metadata: MNetworkEnable
-        int32_t m_nWexLevel; // 0x5dc        
+        int32_t m_nWexLevel; // 0x604        
         // metadata: MNetworkEnable
-        int32_t m_nExortLevel; // 0x5e0        
-        [[maybe_unused]] std::uint8_t pad_0x5e4[0x4];
+        int32_t m_nExortLevel; // 0x608        
+        [[maybe_unused]] std::uint8_t pad_0x60c[0x4];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Ability_Invoker_InvokedBase because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Ability_Invoker_InvokedBase) == 0x5e8);
+    static_assert(sizeof(CDOTA_Ability_Invoker_InvokedBase) == 0x610);
 };

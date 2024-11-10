@@ -19,7 +19,7 @@ namespace source2sdk::pulse_runtime_lib
     // Construct allowed
     // 
     // static metadata: MGetKV3ClassDefaults
-    // static metadata: MCellForDomain "BaseDomain"
+    // static metadata: MCellForDomain "TestDomain"
     // static metadata: MPulseCellMethodBindings
     // static metadata: MPulseCellOutflowHookInfo
     // static metadata: MPropertyFriendlyName "[Test] Int Value 50"

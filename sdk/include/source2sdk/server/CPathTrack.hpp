@@ -16,23 +16,22 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x510
+    // Size: 0x538
     // Has VTable
     // Construct allowed
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CPathTrack : public server::CPointEntity
     {
     public:
-        server::CPathTrack* m_pnext; // 0x4b8        
-        server::CPathTrack* m_pprevious; // 0x4c0        
-        server::CPathTrack* m_paltpath; // 0x4c8        
-        float m_flRadius; // 0x4d0        
-        float m_length; // 0x4d4        
-        CUtlSymbolLarge m_altName; // 0x4d8        
-        int32_t m_nIterVal; // 0x4e0        
-        server::TrackOrientationType_t m_eOrientationType; // 0x4e4        
-        entity2::CEntityIOOutput m_OnPass; // 0x4e8        
+        server::CPathTrack* m_pnext; // 0x4e0        
+        server::CPathTrack* m_pprevious; // 0x4e8        
+        server::CPathTrack* m_paltpath; // 0x4f0        
+        float m_flRadius; // 0x4f8        
+        float m_length; // 0x4fc        
+        CUtlSymbolLarge m_altName; // 0x500        
+        int32_t m_nIterVal; // 0x508        
+        server::TrackOrientationType_t m_eOrientationType; // 0x50c        
+        entity2::CEntityIOOutput m_OnPass; // 0x510        
         
         // Static fields:
         static int32_t &Get_s_nCurrIterVal() {return *reinterpret_cast<int32_t*>(interfaces::g_schema->FindTypeScopeForModule("server.dll")->FindDeclaredClass("CPathTrack")->GetStaticFields()[0]->m_pInstance);};
@@ -50,5 +49,5 @@ namespace source2sdk::server
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CPathTrack because it is not a standard-layout class
-    static_assert(sizeof(CPathTrack) == 0x510);
+    static_assert(sizeof(CPathTrack) == 0x538);
 };

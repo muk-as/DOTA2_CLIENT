@@ -14,24 +14,23 @@ namespace source2sdk::client
     // Registered alignment: unknown
     // Alignment: unknown
     // Standard-layout class: false
-    // Size: 0x1700
+    // Size: 0x1720
     // Has VTable
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Modifier_Tower_Aura : public client::CDOTA_Buff
     {
     public:
-        int32_t bonus_armor; // 0x16e8        
-        bool m_bOverrideArmor; // 0x16ec        
-        [[maybe_unused]] std::uint8_t pad_0x16ed[0x3]; // 0x16ed
-        float hp_regen; // 0x16f0        
-        bool m_bOverrideRegen; // 0x16f4        
-        [[maybe_unused]] std::uint8_t pad_0x16f5[0x3]; // 0x16f5
-        int32_t m_nRadius; // 0x16f8        
-        [[maybe_unused]] std::uint8_t pad_0x16fc[0x4];
+        int32_t bonus_armor; // 0x1708        
+        bool m_bOverrideArmor; // 0x170c        
+        [[maybe_unused]] std::uint8_t pad_0x170d[0x3]; // 0x170d
+        float hp_regen; // 0x1710        
+        bool m_bOverrideRegen; // 0x1714        
+        [[maybe_unused]] std::uint8_t pad_0x1715[0x3]; // 0x1715
+        int32_t m_nRadius; // 0x1718        
+        [[maybe_unused]] std::uint8_t pad_0x171c[0x4];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Modifier_Tower_Aura because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_Tower_Aura) == 0x1700);
+    static_assert(sizeof(CDOTA_Modifier_Tower_Aura) == 0x1720);
 };

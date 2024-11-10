@@ -14,10 +14,9 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x650
+    // Size: 0x678
     // Has VTable
     // Construct allowed
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Item_RiverPainter2 : public server::CDOTA_Item_RiverPainter
     {
@@ -26,5 +25,5 @@ namespace source2sdk::server
     };
     #pragma pack(pop)
     
-    static_assert(sizeof(CDOTA_Item_RiverPainter2) == 0x650);
+    static_assert(sizeof(CDOTA_Item_RiverPainter2) == 0x678);
 };

@@ -19,12 +19,11 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x540
+    // Size: 0x568
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
     // MNetworkNoBase
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkVarNames "CDOTAGameManager * m_pGameManager"
     #pragma pack(push, 1)
@@ -33,7 +32,7 @@ namespace source2sdk::client
     public:
         // metadata: MNetworkEnable
         // metadata: MNetworkTypeAlias "CDOTAGameManager*"
-        client::C_DOTAGameManager* m_pGameManager; // 0x538        
+        client::C_DOTAGameManager* m_pGameManager; // 0x560        
         
         // Static fields:
         static client::C_DOTAGameManagerProxy* &Get_s_pGameManagerProxy() {return *reinterpret_cast<client::C_DOTAGameManagerProxy**>(interfaces::g_schema->FindTypeScopeForModule("client.dll")->FindDeclaredClass("C_DOTAGameManagerProxy")->GetStaticFields()[0]->m_pInstance);};
@@ -41,5 +40,5 @@ namespace source2sdk::client
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in C_DOTAGameManagerProxy because it is not a standard-layout class
-    static_assert(sizeof(C_DOTAGameManagerProxy) == 0x540);
+    static_assert(sizeof(C_DOTAGameManagerProxy) == 0x568);
 };

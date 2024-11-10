@@ -14,10 +14,9 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x18b8
+    // Size: 0x1928
     // Has VTable
     // Construct allowed
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class C_IngameEvent_DotaPlus : public client::C_IngameEvent_Base
     {
@@ -26,5 +25,5 @@ namespace source2sdk::client
     };
     #pragma pack(pop)
     
-    static_assert(sizeof(C_IngameEvent_DotaPlus) == 0x18b8);
+    static_assert(sizeof(C_IngameEvent_DotaPlus) == 0x1928);
 };

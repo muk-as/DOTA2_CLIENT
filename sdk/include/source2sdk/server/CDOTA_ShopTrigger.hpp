@@ -15,20 +15,19 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x988
+    // Size: 0x9b0
     // Has VTable
     // Construct allowed
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_ShopTrigger : public server::CBaseTrigger
     {
     public:
-        int32_t m_ShopType; // 0x958        
-        [[maybe_unused]] std::uint8_t pad_0x95c[0x4]; // 0x95c
-        entity2::CEntityIOOutput m_OnTrigger; // 0x960        
+        int32_t m_ShopType; // 0x980        
+        [[maybe_unused]] std::uint8_t pad_0x984[0x4]; // 0x984
+        entity2::CEntityIOOutput m_OnTrigger; // 0x988        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_ShopTrigger because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_ShopTrigger) == 0x988);
+    static_assert(sizeof(CDOTA_ShopTrigger) == 0x9b0);
 };

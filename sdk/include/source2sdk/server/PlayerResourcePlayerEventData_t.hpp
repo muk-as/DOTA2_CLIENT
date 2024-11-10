@@ -14,7 +14,7 @@ namespace source2sdk::server
     // Registered alignment: unknown
     // Alignment: 0x8
     // Standard-layout class: true
-    // Size: 0xe8
+    // Size: 0x100
     // Has VTable
     // 
     // static metadata: MNetworkVarNames "uint32 m_iEventID"
@@ -78,39 +78,39 @@ namespace source2sdk::server
         // metadata: MNetworkEnable
         // m_vecPeriodicResources has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVectorEmbeddedNetworkVar<server::PlayerResourcePlayerPeriodicResourceData_t> m_vecPeriodicResources;
-        char m_vecPeriodicResources[0x50]; // 0x70        
+        char m_vecPeriodicResources[0x68]; // 0x70        
         // metadata: MNetworkEnable
         // metadata: MNetworkAlias "m_iSaluteAmounts"
-        uint8_t m_iObsoleteSaluteAmounts; // 0xc0        
-        [[maybe_unused]] std::uint8_t pad_0xc1[0x3]; // 0xc1
+        uint8_t m_iObsoleteSaluteAmounts; // 0xd8        
+        [[maybe_unused]] std::uint8_t pad_0xd9[0x3]; // 0xd9
         // metadata: MNetworkEnable
         // metadata: MNetworkAlias "m_iEventArcanaPeriodicResourceRemaining"
-        uint32_t m_iObsoleteEventArcanaPeriodicResourceRemaining; // 0xc4        
+        uint32_t m_iObsoleteEventArcanaPeriodicResourceRemaining; // 0xdc        
         // metadata: MNetworkEnable
         // metadata: MNetworkAlias "m_iEventArcanaPeriodicResourceMax"
-        uint32_t m_iObsoleteEventArcanaPeriodicResourceMax; // 0xc8        
+        uint32_t m_iObsoleteEventArcanaPeriodicResourceMax; // 0xe0        
         // metadata: MNetworkEnable
         // metadata: MNetworkAlias "m_iEventWagerTokensRemaining"
-        uint32_t m_iObsoleteEventWagerTokensRemaining; // 0xcc        
+        uint32_t m_iObsoleteEventWagerTokensRemaining; // 0xe4        
         // metadata: MNetworkEnable
         // metadata: MNetworkAlias "m_iEventWagerTokensMax"
-        uint32_t m_iObsoleteEventWagerTokensMax; // 0xd0        
+        uint32_t m_iObsoleteEventWagerTokensMax; // 0xe8        
         // metadata: MNetworkEnable
         // metadata: MNetworkAlias "m_iEventBountiesRemaining"
-        uint32_t m_iObsoleteEventBountiesRemaining; // 0xd4        
+        uint32_t m_iObsoleteEventBountiesRemaining; // 0xec        
         // metadata: MNetworkEnable
         // metadata: MNetworkAlias "m_iRankWagersAvailable"
-        uint32_t m_iObsoleteRankWagersAvailable; // 0xd8        
+        uint32_t m_iObsoleteRankWagersAvailable; // 0xf0        
         // metadata: MNetworkEnable
         // metadata: MNetworkAlias "m_iRankWagersMax"
-        uint32_t m_iObsoleteRankWagersMax; // 0xdc        
+        uint32_t m_iObsoleteRankWagersMax; // 0xf4        
         // metadata: MNetworkEnable
         // metadata: MNetworkAlias "m_iEventPointAdjustmentsRemaining"
-        uint32_t m_iObsoleteEventPointAdjustmentsRemaining; // 0xe0        
+        uint32_t m_iObsoleteEventPointAdjustmentsRemaining; // 0xf8        
         // metadata: MNetworkEnable
         // metadata: MNetworkAlias "m_iEventRanks"
-        uint16_t m_iObsoleteEventRanks; // 0xe4        
-        [[maybe_unused]] std::uint8_t pad_0xe6[0x2];
+        uint16_t m_iObsoleteEventRanks; // 0xfc        
+        [[maybe_unused]] std::uint8_t pad_0xfe[0x2];
     };
     #pragma pack(pop)
     
@@ -128,16 +128,16 @@ namespace source2sdk::server
     static_assert(offsetof(PlayerResourcePlayerEventData_t, m_iEventTeleportFXLevel) == 0x54);
     static_assert(offsetof(PlayerResourcePlayerEventData_t, m_nCandyPointsReason) == 0x58);
     static_assert(offsetof(PlayerResourcePlayerEventData_t, m_vecPeriodicResources) == 0x70);
-    static_assert(offsetof(PlayerResourcePlayerEventData_t, m_iObsoleteSaluteAmounts) == 0xc0);
-    static_assert(offsetof(PlayerResourcePlayerEventData_t, m_iObsoleteEventArcanaPeriodicResourceRemaining) == 0xc4);
-    static_assert(offsetof(PlayerResourcePlayerEventData_t, m_iObsoleteEventArcanaPeriodicResourceMax) == 0xc8);
-    static_assert(offsetof(PlayerResourcePlayerEventData_t, m_iObsoleteEventWagerTokensRemaining) == 0xcc);
-    static_assert(offsetof(PlayerResourcePlayerEventData_t, m_iObsoleteEventWagerTokensMax) == 0xd0);
-    static_assert(offsetof(PlayerResourcePlayerEventData_t, m_iObsoleteEventBountiesRemaining) == 0xd4);
-    static_assert(offsetof(PlayerResourcePlayerEventData_t, m_iObsoleteRankWagersAvailable) == 0xd8);
-    static_assert(offsetof(PlayerResourcePlayerEventData_t, m_iObsoleteRankWagersMax) == 0xdc);
-    static_assert(offsetof(PlayerResourcePlayerEventData_t, m_iObsoleteEventPointAdjustmentsRemaining) == 0xe0);
-    static_assert(offsetof(PlayerResourcePlayerEventData_t, m_iObsoleteEventRanks) == 0xe4);
+    static_assert(offsetof(PlayerResourcePlayerEventData_t, m_iObsoleteSaluteAmounts) == 0xd8);
+    static_assert(offsetof(PlayerResourcePlayerEventData_t, m_iObsoleteEventArcanaPeriodicResourceRemaining) == 0xdc);
+    static_assert(offsetof(PlayerResourcePlayerEventData_t, m_iObsoleteEventArcanaPeriodicResourceMax) == 0xe0);
+    static_assert(offsetof(PlayerResourcePlayerEventData_t, m_iObsoleteEventWagerTokensRemaining) == 0xe4);
+    static_assert(offsetof(PlayerResourcePlayerEventData_t, m_iObsoleteEventWagerTokensMax) == 0xe8);
+    static_assert(offsetof(PlayerResourcePlayerEventData_t, m_iObsoleteEventBountiesRemaining) == 0xec);
+    static_assert(offsetof(PlayerResourcePlayerEventData_t, m_iObsoleteRankWagersAvailable) == 0xf0);
+    static_assert(offsetof(PlayerResourcePlayerEventData_t, m_iObsoleteRankWagersMax) == 0xf4);
+    static_assert(offsetof(PlayerResourcePlayerEventData_t, m_iObsoleteEventPointAdjustmentsRemaining) == 0xf8);
+    static_assert(offsetof(PlayerResourcePlayerEventData_t, m_iObsoleteEventRanks) == 0xfc);
     
-    static_assert(sizeof(PlayerResourcePlayerEventData_t) == 0xe8);
+    static_assert(sizeof(PlayerResourcePlayerEventData_t) == 0x100);
 };

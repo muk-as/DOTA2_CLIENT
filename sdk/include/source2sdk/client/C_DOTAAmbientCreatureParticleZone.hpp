@@ -14,20 +14,19 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x918
+    // Size: 0x960
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class C_DOTAAmbientCreatureParticleZone : public client::C_FuncBrush
     {
     public:
-        char m_szModelName[64]; // 0x7d8        
-        char m_szAreaName[256]; // 0x818        
+        char m_szModelName[64]; // 0x820        
+        char m_szAreaName[256]; // 0x860        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in C_DOTAAmbientCreatureParticleZone because it is not a standard-layout class
-    static_assert(sizeof(C_DOTAAmbientCreatureParticleZone) == 0x918);
+    static_assert(sizeof(C_DOTAAmbientCreatureParticleZone) == 0x960);
 };

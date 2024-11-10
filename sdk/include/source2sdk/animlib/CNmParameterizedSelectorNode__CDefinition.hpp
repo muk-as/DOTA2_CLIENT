@@ -14,7 +14,7 @@ namespace source2sdk::animlib
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x28
+    // Size: 0x30
     // Has VTable
     // Construct allowed
     // 
@@ -25,12 +25,12 @@ namespace source2sdk::animlib
     public:
         // m_optionNodeIndices has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlLeanVectorFixedGrowable<int16_t,5> m_optionNodeIndices;
-        char m_optionNodeIndices[0x10]; // 0x10        
-        int16_t m_parameterNodeIdx; // 0x20        
-        [[maybe_unused]] std::uint8_t pad_0x22[0x6];
+        char m_optionNodeIndices[0x18]; // 0x10        
+        int16_t m_parameterNodeIdx; // 0x28        
+        [[maybe_unused]] std::uint8_t pad_0x2a[0x6];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CNmParameterizedSelectorNode::CDefinition because it is not a standard-layout class
-    static_assert(sizeof(CNmParameterizedSelectorNode__CDefinition) == 0x28);
+    static_assert(sizeof(CNmParameterizedSelectorNode__CDefinition) == 0x30);
 };

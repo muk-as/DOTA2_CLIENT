@@ -14,16 +14,16 @@ namespace source2sdk::server
     // Registered alignment: unknown
     // Alignment: unknown
     // Standard-layout class: false
-    // Size: 0x16e8
+    // Size: 0x1730
     // Has VTable
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Modifier_Morphling_Replicate_Manager : public client::CDOTA_Buff
     {
     public:
+        [[maybe_unused]] std::uint8_t pad_0x1708[0x28];
         // No schema binary for binding
     };
     #pragma pack(pop)
     
-    static_assert(sizeof(CDOTA_Modifier_Morphling_Replicate_Manager) == 0x16e8);
+    static_assert(sizeof(CDOTA_Modifier_Morphling_Replicate_Manager) == 0x1730);
 };

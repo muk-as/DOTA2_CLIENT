@@ -14,31 +14,30 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x878
+    // Size: 0x8b8
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTANewPlayerPoolGameMode : public server::CDOTABaseGameMode
     {
     public:
-        int32_t m_nHighestLevelInCurrentGame; // 0x7d8        
-        [[maybe_unused]] std::uint8_t pad_0x7dc[0x4c]; // 0x7dc
+        int32_t m_nHighestLevelInCurrentGame; // 0x818        
+        [[maybe_unused]] std::uint8_t pad_0x81c[0x4c]; // 0x81c
         // m_ExtraMeleeCreepTimes has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<float> m_ExtraMeleeCreepTimes;
-        char m_ExtraMeleeCreepTimes[0x18]; // 0x828        
+        char m_ExtraMeleeCreepTimes[0x18]; // 0x868        
         // m_ExtraRangedCreepTimes has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<float> m_ExtraRangedCreepTimes;
-        char m_ExtraRangedCreepTimes[0x18]; // 0x840        
+        char m_ExtraRangedCreepTimes[0x18]; // 0x880        
         // m_ExtraSiegeCreepTimes has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<float> m_ExtraSiegeCreepTimes;
-        char m_ExtraSiegeCreepTimes[0x18]; // 0x858        
-        bool m_bInOvertime; // 0x870        
-        [[maybe_unused]] std::uint8_t pad_0x871[0x7];
+        char m_ExtraSiegeCreepTimes[0x18]; // 0x898        
+        bool m_bInOvertime; // 0x8b0        
+        [[maybe_unused]] std::uint8_t pad_0x8b1[0x7];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTANewPlayerPoolGameMode because it is not a standard-layout class
-    static_assert(sizeof(CDOTANewPlayerPoolGameMode) == 0x878);
+    static_assert(sizeof(CDOTANewPlayerPoolGameMode) == 0x8b8);
 };

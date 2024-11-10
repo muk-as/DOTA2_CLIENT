@@ -26,7 +26,6 @@ namespace source2sdk::animgraphlib
     public:
         int32_t m_nChainIndex; // 0x0        
         animgraphlib::IKSolverSettings_t m_SolverSettings; // 0x4        
-        [[maybe_unused]] std::uint8_t pad_0x0c[0x4]; // 0xc
         animgraphlib::IKTargetSettings_t m_TargetSettings; // 0x10        
         animgraphlib::SolveIKChainAnimNodeDebugSetting m_DebugSetting; // 0x38        
         float m_flDebugNormalizedValue; // 0x3c        

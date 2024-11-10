@@ -21,30 +21,29 @@ namespace source2sdk::server
     // Registered alignment: unknown
     // Alignment: unknown
     // Standard-layout class: false
-    // Size: 0x1740
+    // Size: 0x1760
     // Has VTable
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Modifier_Bristleback_QuillSpray_Thinker : public client::CDOTA_Buff
     {
     public:
-        float m_fCurRadius; // 0x16e8        
-        entity2::GameTime_t m_fLastThink; // 0x16ec        
+        float m_fCurRadius; // 0x1708        
+        entity2::GameTime_t m_fLastThink; // 0x170c        
         // m_entitiesHit has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<CHandle<server::CBaseEntity>> m_entitiesHit;
-        char m_entitiesHit[0x18]; // 0x16f0        
-        server::CountdownTimer m_ViewerTimer; // 0x1708        
-        int32_t projectile_speed; // 0x1720        
-        float radius; // 0x1724        
-        bool m_bTriggeredByBristleback; // 0x1728        
-        bool m_bDelayed; // 0x1729        
-        [[maybe_unused]] std::uint8_t pad_0x172a[0x2]; // 0x172a
-        int32_t m_nAngleRestriction; // 0x172c        
-        Vector m_vFacing; // 0x1730        
-        [[maybe_unused]] std::uint8_t pad_0x173c[0x4];
+        char m_entitiesHit[0x18]; // 0x1710        
+        server::CountdownTimer m_ViewerTimer; // 0x1728        
+        int32_t projectile_speed; // 0x1740        
+        float radius; // 0x1744        
+        bool m_bTriggeredByBristleback; // 0x1748        
+        bool m_bDelayed; // 0x1749        
+        [[maybe_unused]] std::uint8_t pad_0x174a[0x2]; // 0x174a
+        int32_t m_nAngleRestriction; // 0x174c        
+        Vector m_vFacing; // 0x1750        
+        [[maybe_unused]] std::uint8_t pad_0x175c[0x4];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Modifier_Bristleback_QuillSpray_Thinker because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_Bristleback_QuillSpray_Thinker) == 0x1740);
+    static_assert(sizeof(CDOTA_Modifier_Bristleback_QuillSpray_Thinker) == 0x1760);
 };

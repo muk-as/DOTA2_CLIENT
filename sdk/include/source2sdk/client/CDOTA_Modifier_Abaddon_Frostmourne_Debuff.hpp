@@ -15,18 +15,17 @@ namespace source2sdk::client
     // Registered alignment: unknown
     // Alignment: unknown
     // Standard-layout class: false
-    // Size: 0x16f0
+    // Size: 0x1710
     // Has VTable
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Modifier_Abaddon_Frostmourne_Debuff : public client::CDOTA_Buff
     {
     public:
-        int32_t movement_speed; // 0x16e8        
-        client::ParticleIndex_t m_nFXStackIndex; // 0x16ec        
+        int32_t movement_speed; // 0x1708        
+        client::ParticleIndex_t m_nFXStackIndex; // 0x170c        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Modifier_Abaddon_Frostmourne_Debuff because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_Abaddon_Frostmourne_Debuff) == 0x16f0);
+    static_assert(sizeof(CDOTA_Modifier_Abaddon_Frostmourne_Debuff) == 0x1710);
 };

@@ -14,18 +14,17 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x518
+    // Size: 0x540
     // Has VTable
     // Construct allowed
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CFilterClass : public server::CBaseFilter
     {
     public:
-        CUtlSymbolLarge m_iFilterClass; // 0x510        
+        CUtlSymbolLarge m_iFilterClass; // 0x538        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CFilterClass because it is not a standard-layout class
-    static_assert(sizeof(CFilterClass) == 0x518);
+    static_assert(sizeof(CFilterClass) == 0x540);
 };

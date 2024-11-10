@@ -55,14 +55,10 @@ namespace source2sdk::server
         // metadata: MNetworkMaxValue "1,000000"
         // metadata: MNetworkEncodeFlags "0"
         CNetworkedQuantizedFloat m_flWeight; // 0x14        
-        // metadata: MNetworkDisable
         bool m_bSequenceChangeNetworked; // 0x1c        
-        // metadata: MNetworkDisable
         bool m_bDiscontinuity; // 0x1d        
         [[maybe_unused]] std::uint8_t pad_0x1e[0x2]; // 0x1e
-        // metadata: MNetworkDisable
         float m_flPrevCycleFromDiscontinuity; // 0x20        
-        // metadata: MNetworkDisable
         float m_flPrevCycleForAnimEventDetection; // 0x24        
         
         // Datamap fields:

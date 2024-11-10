@@ -14,11 +14,10 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x650
+    // Size: 0x678
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkVarNames "int m_iStat"
     #pragma pack(push, 1)
@@ -27,11 +26,11 @@ namespace source2sdk::server
     public:
         // metadata: MNetworkEnable
         // metadata: MNetworkChangeCallback "OnGrandmastersStatChanged"
-        int32_t m_iStat; // 0x648        
-        [[maybe_unused]] std::uint8_t pad_0x64c[0x4];
+        int32_t m_iStat; // 0x670        
+        [[maybe_unused]] std::uint8_t pad_0x674[0x4];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Item_Grandmasters_Glaive because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Item_Grandmasters_Glaive) == 0x650);
+    static_assert(sizeof(CDOTA_Item_Grandmasters_Glaive) == 0x678);
 };

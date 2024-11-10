@@ -14,9 +14,8 @@ namespace source2sdk::client
     // Registered alignment: unknown
     // Alignment: unknown
     // Standard-layout class: false
-    // Size: 0x16e8
+    // Size: 0x1708
     // Has VTable
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Modifier_Stacking_Exp_Rate_Boost : public client::CDOTA_Buff
     {
@@ -25,5 +24,5 @@ namespace source2sdk::client
     };
     #pragma pack(pop)
     
-    static_assert(sizeof(CDOTA_Modifier_Stacking_Exp_Rate_Boost) == 0x16e8);
+    static_assert(sizeof(CDOTA_Modifier_Stacking_Exp_Rate_Boost) == 0x1708);
 };

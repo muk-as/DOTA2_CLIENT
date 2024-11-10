@@ -20,33 +20,32 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x970
+    // Size: 0x998
     // Has VTable
     // Construct allowed
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CPhysBox : public server::CBreakable
     {
     public:
-        int32_t m_damageType; // 0x860        
-        float m_massScale; // 0x864        
-        int32_t m_damageToEnableMotion; // 0x868        
-        float m_flForceToEnableMotion; // 0x86c        
-        QAngle m_angPreferredCarryAngles; // 0x870        
-        bool m_bNotSolidToWorld; // 0x87c        
-        bool m_bEnableUseOutput; // 0x87d        
-        [[maybe_unused]] std::uint8_t pad_0x87e[0x2]; // 0x87e
-        int32_t m_iExploitableByPlayer; // 0x880        
-        float m_flTouchOutputPerEntityDelay; // 0x884        
-        entity2::CEntityIOOutput m_OnDamaged; // 0x888        
-        entity2::CEntityIOOutput m_OnAwakened; // 0x8b0        
-        entity2::CEntityIOOutput m_OnMotionEnabled; // 0x8d8        
-        entity2::CEntityIOOutput m_OnPlayerUse; // 0x900        
-        entity2::CEntityIOOutput m_OnStartTouch; // 0x928        
+        int32_t m_damageType; // 0x888        
+        int32_t m_damageToEnableMotion; // 0x88c        
+        float m_flForceToEnableMotion; // 0x890        
+        QAngle m_angPreferredCarryAngles; // 0x894        
+        bool m_bNotSolidToWorld; // 0x8a0        
+        bool m_bEnableUseOutput; // 0x8a1        
+        [[maybe_unused]] std::uint8_t pad_0x8a2[0x2]; // 0x8a2
+        int32_t m_iExploitableByPlayer; // 0x8a4        
+        float m_flTouchOutputPerEntityDelay; // 0x8a8        
+        [[maybe_unused]] std::uint8_t pad_0x8ac[0x4]; // 0x8ac
+        entity2::CEntityIOOutput m_OnDamaged; // 0x8b0        
+        entity2::CEntityIOOutput m_OnAwakened; // 0x8d8        
+        entity2::CEntityIOOutput m_OnMotionEnabled; // 0x900        
+        entity2::CEntityIOOutput m_OnPlayerUse; // 0x928        
+        entity2::CEntityIOOutput m_OnStartTouch; // 0x950        
         // m_hCarryingPlayer has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<server::CBasePlayerPawn> m_hCarryingPlayer;
-        char m_hCarryingPlayer[0x4]; // 0x950        
-        [[maybe_unused]] std::uint8_t pad_0x954[0x1c];
+        char m_hCarryingPlayer[0x4]; // 0x978        
+        [[maybe_unused]] std::uint8_t pad_0x97c[0x1c];
         
         // Datamap fields:
         // void InputWake; // 0x0
@@ -59,5 +58,5 @@ namespace source2sdk::server
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CPhysBox because it is not a standard-layout class
-    static_assert(sizeof(CPhysBox) == 0x970);
+    static_assert(sizeof(CPhysBox) == 0x998);
 };

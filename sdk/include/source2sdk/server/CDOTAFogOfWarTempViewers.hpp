@@ -16,11 +16,10 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x538
+    // Size: 0x578
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkVarNames "uint32 m_FoWTempViewerVersion"
     // static metadata: MNetworkVarNames "TempViewerInfo_t m_TempViewerInfo"
@@ -29,17 +28,17 @@ namespace source2sdk::server
     {
     public:
         // metadata: MNetworkEnable
-        uint32_t m_FoWTempViewerVersion; // 0x4b8        
-        [[maybe_unused]] std::uint8_t pad_0x4bc[0x4]; // 0x4bc
+        uint32_t m_FoWTempViewerVersion; // 0x4e0        
+        [[maybe_unused]] std::uint8_t pad_0x4e4[0x4]; // 0x4e4
         // metadata: MNetworkEnable
         // m_TempViewerInfo has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVectorEmbeddedNetworkVar<server::TempViewerInfo_t> m_TempViewerInfo;
-        char m_TempViewerInfo[0x50]; // 0x4c0        
-        entity2::GameTime_t m_flEndTimeMin; // 0x510        
-        [[maybe_unused]] std::uint8_t pad_0x514[0x24];
+        char m_TempViewerInfo[0x68]; // 0x4e8        
+        entity2::GameTime_t m_flEndTimeMin; // 0x550        
+        [[maybe_unused]] std::uint8_t pad_0x554[0x24];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTAFogOfWarTempViewers because it is not a standard-layout class
-    static_assert(sizeof(CDOTAFogOfWarTempViewers) == 0x538);
+    static_assert(sizeof(CDOTAFogOfWarTempViewers) == 0x578);
 };

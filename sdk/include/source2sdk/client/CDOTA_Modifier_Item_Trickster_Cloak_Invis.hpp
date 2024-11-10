@@ -14,9 +14,8 @@ namespace source2sdk::client
     // Registered alignment: unknown
     // Alignment: unknown
     // Standard-layout class: false
-    // Size: 0x16f8
+    // Size: 0x1718
     // Has VTable
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Modifier_Item_Trickster_Cloak_Invis : public client::CDOTA_Modifier_Invisible
     {
@@ -25,5 +24,5 @@ namespace source2sdk::client
     };
     #pragma pack(pop)
     
-    static_assert(sizeof(CDOTA_Modifier_Item_Trickster_Cloak_Invis) == 0x16f8);
+    static_assert(sizeof(CDOTA_Modifier_Item_Trickster_Cloak_Invis) == 0x1718);
 };

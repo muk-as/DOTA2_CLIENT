@@ -14,9 +14,8 @@ namespace source2sdk::client
     // Registered alignment: unknown
     // Alignment: unknown
     // Standard-layout class: false
-    // Size: 0x1718
+    // Size: 0x1738
     // Has VTable
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Modifier_Muerta_PartingShot_Knockback : public client::CDOTA_Modifier_Knockback
     {
@@ -25,5 +24,5 @@ namespace source2sdk::client
     };
     #pragma pack(pop)
     
-    static_assert(sizeof(CDOTA_Modifier_Muerta_PartingShot_Knockback) == 0x1718);
+    static_assert(sizeof(CDOTA_Modifier_Muerta_PartingShot_Knockback) == 0x1738);
 };

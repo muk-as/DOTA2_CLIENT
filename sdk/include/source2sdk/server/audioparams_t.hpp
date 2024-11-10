@@ -16,7 +16,6 @@ namespace source2sdk::server
     // Size: 0x78
     // Has VTable
     // Has Trivial Destructor
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkVarNames "Vector localSound"
     // static metadata: MNetworkVarNames "int32 soundscapeIndex"

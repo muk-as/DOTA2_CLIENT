@@ -37,7 +37,10 @@ namespace source2sdk::animlib
         // m_compressedPoseOffsets has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<uint32_t> m_compressedPoseOffsets;
         char m_compressedPoseOffsets[0x18]; // 0x40        
-        [[maybe_unused]] std::uint8_t pad_0x58[0x48]; // 0x58
+        [[maybe_unused]] std::uint8_t pad_0x58[0x28]; // 0x58
+        // m_secondaryAnimations has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+        // CUtlVectorFixedGrowable<animlib::CNmClip*,1> m_secondaryAnimations;
+        char m_secondaryAnimations[0x20]; // 0x80        
         animlib::CNmSyncTrack m_syncTrack; // 0xa0        
         animlib::CNmRootMotionData m_rootMotion; // 0x150        
         bool m_bIsAdditive; // 0x1a0        
@@ -51,6 +54,7 @@ namespace source2sdk::animlib
     static_assert(offsetof(CNmClip, m_compressedPoseData) == 0x10);
     static_assert(offsetof(CNmClip, m_trackCompressionSettings) == 0x28);
     static_assert(offsetof(CNmClip, m_compressedPoseOffsets) == 0x40);
+    static_assert(offsetof(CNmClip, m_secondaryAnimations) == 0x80);
     static_assert(offsetof(CNmClip, m_syncTrack) == 0xa0);
     static_assert(offsetof(CNmClip, m_rootMotion) == 0x150);
     static_assert(offsetof(CNmClip, m_bIsAdditive) == 0x1a0);

@@ -19,23 +19,22 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x4d0
+    // Size: 0x4f8
     // Has VTable
     // Construct allowed
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CInfoDynamicShadowHint : public server::CPointEntity
     {
     public:
-        bool m_bDisabled; // 0x4b8        
-        [[maybe_unused]] std::uint8_t pad_0x4b9[0x3]; // 0x4b9
-        float m_flRange; // 0x4bc        
-        int32_t m_nImportance; // 0x4c0        
-        int32_t m_nLightChoice; // 0x4c4        
+        bool m_bDisabled; // 0x4e0        
+        [[maybe_unused]] std::uint8_t pad_0x4e1[0x3]; // 0x4e1
+        float m_flRange; // 0x4e4        
+        int32_t m_nImportance; // 0x4e8        
+        int32_t m_nLightChoice; // 0x4ec        
         // m_hLight has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<server::CBaseEntity> m_hLight;
-        char m_hLight[0x4]; // 0x4c8        
-        [[maybe_unused]] std::uint8_t pad_0x4cc[0x4];
+        char m_hLight[0x4]; // 0x4f0        
+        [[maybe_unused]] std::uint8_t pad_0x4f4[0x4];
         
         // Static fields:
         static CUtlVector<server::CInfoDynamicShadowHint*> &Get_m_AllHints() {return *reinterpret_cast<CUtlVector<server::CInfoDynamicShadowHint*>*>(interfaces::g_schema->FindTypeScopeForModule("server.dll")->FindDeclaredClass("CInfoDynamicShadowHint")->GetStaticFields()[0]->m_pInstance);};
@@ -47,5 +46,5 @@ namespace source2sdk::server
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CInfoDynamicShadowHint because it is not a standard-layout class
-    static_assert(sizeof(CInfoDynamicShadowHint) == 0x4d0);
+    static_assert(sizeof(CInfoDynamicShadowHint) == 0x4f8);
 };

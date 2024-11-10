@@ -37,7 +37,8 @@ namespace source2sdk::animgraphlib
         [[maybe_unused]] std::uint8_t pad_0xf0[0x4]; // 0xf0
         bool m_bBlockWaningTags; // 0xf4        
         bool m_bLockStateWhenWaning; // 0xf5        
-        [[maybe_unused]] std::uint8_t pad_0xf6[0x2];
+        bool m_bResetWhenActivated; // 0xf6        
+        [[maybe_unused]] std::uint8_t pad_0xf7[0x1];
     };
     #pragma pack(pop)
     

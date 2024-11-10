@@ -19,11 +19,10 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x5b8
+    // Size: 0x5e0
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkVarNames "float m_flChannelTime"
     #pragma pack(push, 1)
@@ -32,22 +31,22 @@ namespace source2sdk::server
     public:
         // m_hTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<server::CBaseEntity> m_hTarget;
-        char m_hTarget[0x4]; // 0x5a0        
+        char m_hTarget[0x4]; // 0x5c8        
         // metadata: MNetworkEnable
-        float m_flChannelTime; // 0x5a4        
+        float m_flChannelTime; // 0x5cc        
         // m_hSpawnUnderlingThinker has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<server::CBaseEntity> m_hSpawnUnderlingThinker;
-        char m_hSpawnUnderlingThinker[0x4]; // 0x5a8        
+        char m_hSpawnUnderlingThinker[0x4]; // 0x5d0        
         // m_hWarrior has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<server::CBaseEntity> m_hWarrior;
-        char m_hWarrior[0x4]; // 0x5ac        
+        char m_hWarrior[0x4]; // 0x5d4        
         // m_hArcher has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<server::CBaseEntity> m_hArcher;
-        char m_hArcher[0x4]; // 0x5b0        
-        [[maybe_unused]] std::uint8_t pad_0x5b4[0x4];
+        char m_hArcher[0x4]; // 0x5d8        
+        [[maybe_unused]] std::uint8_t pad_0x5dc[0x4];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Ability_AbyssalUnderlord_Portal_Warp because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Ability_AbyssalUnderlord_Portal_Warp) == 0x5b8);
+    static_assert(sizeof(CDOTA_Ability_AbyssalUnderlord_Portal_Warp) == 0x5e0);
 };

@@ -20,20 +20,19 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x838
+    // Size: 0x860
     // Has VTable
     // Construct allowed
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CGunTarget : public server::CBaseToggle
     {
     public:
-        bool m_on; // 0x808        
-        [[maybe_unused]] std::uint8_t pad_0x809[0x3]; // 0x809
+        bool m_on; // 0x830        
+        [[maybe_unused]] std::uint8_t pad_0x831[0x3]; // 0x831
         // m_hTargetEnt has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<server::CBaseEntity> m_hTargetEnt;
-        char m_hTargetEnt[0x4]; // 0x80c        
-        entity2::CEntityIOOutput m_OnDeath; // 0x810        
+        char m_hTargetEnt[0x4]; // 0x834        
+        entity2::CEntityIOOutput m_OnDeath; // 0x838        
         
         // Datamap fields:
         // void CGunTargetNext; // 0x0
@@ -46,5 +45,5 @@ namespace source2sdk::server
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CGunTarget because it is not a standard-layout class
-    static_assert(sizeof(CGunTarget) == 0x838);
+    static_assert(sizeof(CGunTarget) == 0x860);
 };

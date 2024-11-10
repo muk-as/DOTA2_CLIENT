@@ -20,12 +20,12 @@ namespace source2sdk::client
     class CSimpleSimTimer
     {
     public:
-        entity2::GameTime_t m_next; // 0x0        
+        entity2::GameTime_t m_flNext; // 0x0        
         WorldGroupId_t m_nWorldGroupId; // 0x4        
     };
     #pragma pack(pop)
     
-    static_assert(offsetof(CSimpleSimTimer, m_next) == 0x0);
+    static_assert(offsetof(CSimpleSimTimer, m_flNext) == 0x0);
     static_assert(offsetof(CSimpleSimTimer, m_nWorldGroupId) == 0x4);
     
     static_assert(sizeof(CSimpleSimTimer) == 0x8);

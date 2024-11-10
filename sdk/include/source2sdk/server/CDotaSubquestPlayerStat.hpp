@@ -15,23 +15,22 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x720
+    // Size: 0x748
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
     // MNetworkNoBase
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDotaSubquestPlayerStat : public server::CDotaSubquestBase
     {
     public:
-        client::subquest_player_stat_types_t m_ePlayerStatType; // 0x710        
-        int32_t m_nPlayerStatValue; // 0x714        
-        int32_t m_nStartingStatOffset; // 0x718        
-        [[maybe_unused]] std::uint8_t pad_0x71c[0x4];
+        client::subquest_player_stat_types_t m_ePlayerStatType; // 0x738        
+        int32_t m_nPlayerStatValue; // 0x73c        
+        int32_t m_nStartingStatOffset; // 0x740        
+        [[maybe_unused]] std::uint8_t pad_0x744[0x4];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDotaSubquestPlayerStat because it is not a standard-layout class
-    static_assert(sizeof(CDotaSubquestPlayerStat) == 0x720);
+    static_assert(sizeof(CDotaSubquestPlayerStat) == 0x748);
 };

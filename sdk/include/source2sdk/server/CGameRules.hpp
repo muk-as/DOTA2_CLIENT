@@ -17,7 +17,6 @@ namespace source2sdk::server
     // Size: 0xc0
     // Has VTable
     // Is Abstract
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkVarNames "int m_nTotalPausedTicks"
     // static metadata: MNetworkVarNames "int m_nPauseStartTick"
@@ -27,7 +26,6 @@ namespace source2sdk::server
     {
     public:
         [[maybe_unused]] std::uint8_t pad_0x00[0x8]; // 0x0
-        // metadata: MNetworkDisable
         // metadata: MNetworkChangeAccessorFieldPathIndex
         entity2::CNetworkVarChainer __m_pChainEntity; // 0x8        
         char m_szQuestName[128]; // 0x30        

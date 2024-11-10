@@ -28,9 +28,10 @@ namespace source2sdk::worldrenderer
         bool m_bHasLightmaps; // 0x10        
         bool m_bBakedShadowsGamma20; // 0x11        
         bool m_bCompressionEnabled; // 0x12        
-        uint8_t m_nChartPackIterations; // 0x13        
-        uint8_t m_nVradQuality; // 0x14        
-        [[maybe_unused]] std::uint8_t pad_0x15[0x3]; // 0x15
+        bool m_bSHLightmaps; // 0x13        
+        uint8_t m_nChartPackIterations; // 0x14        
+        uint8_t m_nVradQuality; // 0x15        
+        [[maybe_unused]] std::uint8_t pad_0x16[0x2]; // 0x16
         // m_lightMaps has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<CStrongHandle<resourcesystem::InfoForResourceTypeCTextureBase>> m_lightMaps;
         char m_lightMaps[0x18]; // 0x18        
@@ -43,8 +44,9 @@ namespace source2sdk::worldrenderer
     static_assert(offsetof(BakedLightingInfo_t, m_bHasLightmaps) == 0x10);
     static_assert(offsetof(BakedLightingInfo_t, m_bBakedShadowsGamma20) == 0x11);
     static_assert(offsetof(BakedLightingInfo_t, m_bCompressionEnabled) == 0x12);
-    static_assert(offsetof(BakedLightingInfo_t, m_nChartPackIterations) == 0x13);
-    static_assert(offsetof(BakedLightingInfo_t, m_nVradQuality) == 0x14);
+    static_assert(offsetof(BakedLightingInfo_t, m_bSHLightmaps) == 0x13);
+    static_assert(offsetof(BakedLightingInfo_t, m_nChartPackIterations) == 0x14);
+    static_assert(offsetof(BakedLightingInfo_t, m_nVradQuality) == 0x15);
     static_assert(offsetof(BakedLightingInfo_t, m_lightMaps) == 0x18);
     
     static_assert(sizeof(BakedLightingInfo_t) == 0x30);

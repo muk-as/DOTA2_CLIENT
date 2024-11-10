@@ -15,22 +15,21 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x5b0
+    // Size: 0x5d8
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Ability_Roshan_Teleport : public server::CDOTABaseAbility
     {
     public:
-        client::ParticleIndex_t m_nFXIndexStart; // 0x5a0        
-        client::ParticleIndex_t m_nFXIndexEnd; // 0x5a4        
-        client::ParticleIndex_t m_nFXIndexEndTeam; // 0x5a8        
-        [[maybe_unused]] std::uint8_t pad_0x5ac[0x4];
+        client::ParticleIndex_t m_nFXIndexStart; // 0x5c8        
+        client::ParticleIndex_t m_nFXIndexEnd; // 0x5cc        
+        client::ParticleIndex_t m_nFXIndexEndTeam; // 0x5d0        
+        [[maybe_unused]] std::uint8_t pad_0x5d4[0x4];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Ability_Roshan_Teleport because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Ability_Roshan_Teleport) == 0x5b0);
+    static_assert(sizeof(CDOTA_Ability_Roshan_Teleport) == 0x5d8);
 };

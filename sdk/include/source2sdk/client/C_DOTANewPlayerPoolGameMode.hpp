@@ -14,11 +14,10 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x6f8
+    // Size: 0x738
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class C_DOTANewPlayerPoolGameMode : public client::C_DOTABaseGameMode
     {
@@ -27,5 +26,5 @@ namespace source2sdk::client
     };
     #pragma pack(pop)
     
-    static_assert(sizeof(C_DOTANewPlayerPoolGameMode) == 0x6f8);
+    static_assert(sizeof(C_DOTANewPlayerPoolGameMode) == 0x738);
 };

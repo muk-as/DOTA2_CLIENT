@@ -15,22 +15,21 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x5b0
+    // Size: 0x5d8
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Ability_Wisp_Relocate : public server::CDOTABaseAbility
     {
     public:
-        client::ParticleIndex_t m_nFXIndexEndTeam; // 0x5a0        
-        client::ParticleIndex_t m_nFXIndexChannel; // 0x5a4        
-        float cast_delay; // 0x5a8        
-        float return_time; // 0x5ac        
+        client::ParticleIndex_t m_nFXIndexEndTeam; // 0x5c8        
+        client::ParticleIndex_t m_nFXIndexChannel; // 0x5cc        
+        float cast_delay; // 0x5d0        
+        float return_time; // 0x5d4        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Ability_Wisp_Relocate because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Ability_Wisp_Relocate) == 0x5b0);
+    static_assert(sizeof(CDOTA_Ability_Wisp_Relocate) == 0x5d8);
 };

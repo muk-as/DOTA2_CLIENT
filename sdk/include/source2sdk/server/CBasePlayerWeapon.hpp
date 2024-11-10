@@ -16,10 +16,9 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x7e0
+    // Size: 0x808
     // Has VTable
     // Construct allowed
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkExcludeByName "m_flexWeight"
     // static metadata: MNetworkExcludeByName "m_blinktoggle"
@@ -41,28 +40,28 @@ namespace source2sdk::server
     public:
         // metadata: MNetworkEnable
         // metadata: MNetworkUserGroup "LocalWeaponExclusive"
-        entity2::GameTick_t m_nNextPrimaryAttackTick; // 0x798        
+        entity2::GameTick_t m_nNextPrimaryAttackTick; // 0x7c0        
         // metadata: MNetworkEnable
         // metadata: MNetworkUserGroup "LocalWeaponExclusive"
-        float m_flNextPrimaryAttackTickRatio; // 0x79c        
+        float m_flNextPrimaryAttackTickRatio; // 0x7c4        
         // metadata: MNetworkEnable
         // metadata: MNetworkUserGroup "LocalWeaponExclusive"
-        entity2::GameTick_t m_nNextSecondaryAttackTick; // 0x7a0        
+        entity2::GameTick_t m_nNextSecondaryAttackTick; // 0x7c8        
         // metadata: MNetworkEnable
         // metadata: MNetworkUserGroup "LocalWeaponExclusive"
-        float m_flNextSecondaryAttackTickRatio; // 0x7a4        
+        float m_flNextSecondaryAttackTickRatio; // 0x7cc        
         // metadata: MNetworkEnable
         // metadata: MNetworkSerializer "minusone"
         // metadata: MNetworkPriority "32"
-        int32_t m_iClip1; // 0x7a8        
+        int32_t m_iClip1; // 0x7d0        
         // metadata: MNetworkEnable
         // metadata: MNetworkSerializer "minusone"
         // metadata: MNetworkUserGroup "LocalWeaponExclusive"
-        int32_t m_iClip2; // 0x7ac        
+        int32_t m_iClip2; // 0x7d4        
         // metadata: MNetworkEnable
         // metadata: MNetworkUserGroup "LocalWeaponExclusive"
-        int32_t m_pReserveAmmo[2]; // 0x7b0        
-        entity2::CEntityIOOutput m_OnPlayerUse; // 0x7b8        
+        int32_t m_pReserveAmmo[2]; // 0x7d8        
+        entity2::CEntityIOOutput m_OnPlayerUse; // 0x7e0        
         
         // Datamap fields:
         // int32_t InputSetClipPrimary; // 0x0
@@ -71,5 +70,5 @@ namespace source2sdk::server
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CBasePlayerWeapon because it is not a standard-layout class
-    static_assert(sizeof(CBasePlayerWeapon) == 0x7e0);
+    static_assert(sizeof(CBasePlayerWeapon) == 0x808);
 };

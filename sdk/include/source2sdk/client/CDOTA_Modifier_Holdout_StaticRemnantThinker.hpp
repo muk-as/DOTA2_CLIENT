@@ -14,22 +14,21 @@ namespace source2sdk::client
     // Registered alignment: unknown
     // Alignment: unknown
     // Standard-layout class: false
-    // Size: 0x1700
+    // Size: 0x1720
     // Has VTable
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Modifier_Holdout_StaticRemnantThinker : public client::CDOTA_Buff
     {
     public:
-        int32_t static_remnant_radius; // 0x16e8        
-        int32_t static_remnant_damage_radius; // 0x16ec        
-        int32_t static_remnant_damage; // 0x16f0        
-        float static_remnant_delay; // 0x16f4        
-        float overload_duration; // 0x16f8        
-        [[maybe_unused]] std::uint8_t pad_0x16fc[0x4];
+        int32_t static_remnant_radius; // 0x1708        
+        int32_t static_remnant_damage_radius; // 0x170c        
+        int32_t static_remnant_damage; // 0x1710        
+        float static_remnant_delay; // 0x1714        
+        float overload_duration; // 0x1718        
+        [[maybe_unused]] std::uint8_t pad_0x171c[0x4];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Modifier_Holdout_StaticRemnantThinker because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_Holdout_StaticRemnantThinker) == 0x1700);
+    static_assert(sizeof(CDOTA_Modifier_Holdout_StaticRemnantThinker) == 0x1720);
 };

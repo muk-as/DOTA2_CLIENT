@@ -24,7 +24,8 @@ namespace source2sdk::worldrenderer
     public:
         float m_flMinDrawVolumeSize; // 0x0        
         bool m_bBuildBakedLighting; // 0x4        
-        [[maybe_unused]] std::uint8_t pad_0x05[0x3]; // 0x5
+        bool m_bLightmapPropInstances; // 0x5        
+        [[maybe_unused]] std::uint8_t pad_0x06[0x2]; // 0x6
         worldrenderer::BakedLightingInfo_t m_bakedLightingInfo; // 0x8        
         uint64_t m_nCompileTimestamp; // 0x38        
         uint64_t m_nCompileFingerprint; // 0x40        
@@ -33,6 +34,7 @@ namespace source2sdk::worldrenderer
     
     static_assert(offsetof(WorldBuilderParams_t, m_flMinDrawVolumeSize) == 0x0);
     static_assert(offsetof(WorldBuilderParams_t, m_bBuildBakedLighting) == 0x4);
+    static_assert(offsetof(WorldBuilderParams_t, m_bLightmapPropInstances) == 0x5);
     static_assert(offsetof(WorldBuilderParams_t, m_bakedLightingInfo) == 0x8);
     static_assert(offsetof(WorldBuilderParams_t, m_nCompileTimestamp) == 0x38);
     static_assert(offsetof(WorldBuilderParams_t, m_nCompileFingerprint) == 0x40);

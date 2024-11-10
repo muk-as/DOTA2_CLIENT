@@ -22,11 +22,10 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x1848
+    // Size: 0x1868
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkVarNames "PlayerID_t m_nSoleControllingPlayer"
     // static metadata: MNetworkVarNames "bool m_bFlyingCourier"
@@ -37,29 +36,29 @@ namespace source2sdk::server
     class CDOTA_Unit_Courier : public server::CDOTA_BaseNPC_Additive
     {
     public:
-        bool m_bUnitRespawned; // 0x1810        
-        bool m_bPreUpdateFlyingCourier; // 0x1811        
-        [[maybe_unused]] std::uint8_t pad_0x1812[0x2]; // 0x1812
+        bool m_bUnitRespawned; // 0x1830        
+        bool m_bPreUpdateFlyingCourier; // 0x1831        
+        [[maybe_unused]] std::uint8_t pad_0x1832[0x2]; // 0x1832
         // metadata: MNetworkEnable
-        client::PlayerID_t m_nSoleControllingPlayer; // 0x1814        
+        client::PlayerID_t m_nSoleControllingPlayer; // 0x1834        
         // metadata: MNetworkEnable
-        bool m_bFlyingCourier; // 0x1818        
-        [[maybe_unused]] std::uint8_t pad_0x1819[0x3]; // 0x1819
+        bool m_bFlyingCourier; // 0x1838        
+        [[maybe_unused]] std::uint8_t pad_0x1839[0x3]; // 0x1839
         // metadata: MNetworkEnable
-        entity2::GameTime_t m_flRespawnTime; // 0x181c        
+        entity2::GameTime_t m_flRespawnTime; // 0x183c        
         // metadata: MNetworkEnable
-        client::CourierState_t m_nCourierState; // 0x1820        
+        client::CourierState_t m_nCourierState; // 0x1840        
         // metadata: MNetworkEnable
         // m_hCourierStateEntity has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<server::CBaseEntity> m_hCourierStateEntity;
-        char m_hCourierStateEntity[0x4]; // 0x1824        
-        CUtlString m_strCourierModel; // 0x1828        
-        CUtlString m_strFlyingCourierModel; // 0x1830        
-        Vector m_vSpawnLocation; // 0x1838        
-        [[maybe_unused]] std::uint8_t pad_0x1844[0x4];
+        char m_hCourierStateEntity[0x4]; // 0x1844        
+        CUtlString m_strCourierModel; // 0x1848        
+        CUtlString m_strFlyingCourierModel; // 0x1850        
+        Vector m_vSpawnLocation; // 0x1858        
+        [[maybe_unused]] std::uint8_t pad_0x1864[0x4];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Unit_Courier because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Unit_Courier) == 0x1848);
+    static_assert(sizeof(CDOTA_Unit_Courier) == 0x1868);
 };

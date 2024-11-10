@@ -19,11 +19,10 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x5f8
+    // Size: 0x620
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkVarNames "float m_flLongestShackleDuration"
     #pragma pack(push, 1)
@@ -31,14 +30,14 @@ namespace source2sdk::client
     {
     public:
         // metadata: MNetworkEnable
-        float m_flLongestShackleDuration; // 0x5d8        
-        [[maybe_unused]] std::uint8_t pad_0x5dc[0x4]; // 0x5dc
+        float m_flLongestShackleDuration; // 0x600        
+        [[maybe_unused]] std::uint8_t pad_0x604[0x4]; // 0x604
         // m_Victims has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<CHandle<client::C_BaseEntity>> m_Victims;
-        char m_Victims[0x18]; // 0x5e0        
+        char m_Victims[0x18]; // 0x608        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in C_DOTA_Ability_ShadowShaman_Shackles because it is not a standard-layout class
-    static_assert(sizeof(C_DOTA_Ability_ShadowShaman_Shackles) == 0x5f8);
+    static_assert(sizeof(C_DOTA_Ability_ShadowShaman_Shackles) == 0x620);
 };

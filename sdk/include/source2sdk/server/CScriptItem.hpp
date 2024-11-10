@@ -15,19 +15,18 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x878
+    // Size: 0x8a0
     // Has VTable
     // Construct allowed
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CScriptItem : public server::CItem
     {
     public:
-        client::MoveType_t m_MoveTypeOverride; // 0x870        
-        [[maybe_unused]] std::uint8_t pad_0x871[0x7];
+        client::MoveType_t m_MoveTypeOverride; // 0x898        
+        [[maybe_unused]] std::uint8_t pad_0x899[0x7];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CScriptItem because it is not a standard-layout class
-    static_assert(sizeof(CScriptItem) == 0x878);
+    static_assert(sizeof(CScriptItem) == 0x8a0);
 };

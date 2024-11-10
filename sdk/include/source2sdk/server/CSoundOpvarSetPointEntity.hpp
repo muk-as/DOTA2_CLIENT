@@ -15,42 +15,41 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x660
+    // Size: 0x688
     // Has VTable
     // Construct allowed
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CSoundOpvarSetPointEntity : public server::CSoundOpvarSetPointBase
     {
     public:
-        entity2::CEntityIOOutput m_OnEnter; // 0x550        
-        entity2::CEntityIOOutput m_OnExit; // 0x578        
-        bool m_bAutoDisable; // 0x5a0        
-        [[maybe_unused]] std::uint8_t pad_0x5a1[0x43]; // 0x5a1
-        float m_flDistanceMin; // 0x5e4        
-        float m_flDistanceMax; // 0x5e8        
-        float m_flDistanceMapMin; // 0x5ec        
-        float m_flDistanceMapMax; // 0x5f0        
-        float m_flOcclusionRadius; // 0x5f4        
-        float m_flOcclusionMin; // 0x5f8        
-        float m_flOcclusionMax; // 0x5fc        
-        float m_flValSetOnDisable; // 0x600        
-        bool m_bSetValueOnDisable; // 0x604        
-        bool m_bReloading; // 0x605        
-        [[maybe_unused]] std::uint8_t pad_0x606[0x2]; // 0x606
-        int32_t m_nSimulationMode; // 0x608        
-        int32_t m_nVisibilitySamples; // 0x60c        
-        Vector m_vDynamicProxyPoint; // 0x610        
-        float m_flDynamicMaximumOcclusion; // 0x61c        
-        CEntityHandle m_hDynamicEntity; // 0x620        
-        [[maybe_unused]] std::uint8_t pad_0x624[0x4]; // 0x624
-        CUtlSymbolLarge m_iszDynamicEntityName; // 0x628        
-        float m_flPathingDistanceNormFactor; // 0x630        
-        Vector m_vPathingSourcePos; // 0x634        
-        Vector m_vPathingListenerPos; // 0x640        
-        Vector m_vPathingDirection; // 0x64c        
-        int32_t m_nPathingSourceIndex; // 0x658        
-        [[maybe_unused]] std::uint8_t pad_0x65c[0x4];
+        entity2::CEntityIOOutput m_OnEnter; // 0x578        
+        entity2::CEntityIOOutput m_OnExit; // 0x5a0        
+        bool m_bAutoDisable; // 0x5c8        
+        [[maybe_unused]] std::uint8_t pad_0x5c9[0x43]; // 0x5c9
+        float m_flDistanceMin; // 0x60c        
+        float m_flDistanceMax; // 0x610        
+        float m_flDistanceMapMin; // 0x614        
+        float m_flDistanceMapMax; // 0x618        
+        float m_flOcclusionRadius; // 0x61c        
+        float m_flOcclusionMin; // 0x620        
+        float m_flOcclusionMax; // 0x624        
+        float m_flValSetOnDisable; // 0x628        
+        bool m_bSetValueOnDisable; // 0x62c        
+        bool m_bReloading; // 0x62d        
+        [[maybe_unused]] std::uint8_t pad_0x62e[0x2]; // 0x62e
+        int32_t m_nSimulationMode; // 0x630        
+        int32_t m_nVisibilitySamples; // 0x634        
+        Vector m_vDynamicProxyPoint; // 0x638        
+        float m_flDynamicMaximumOcclusion; // 0x644        
+        CEntityHandle m_hDynamicEntity; // 0x648        
+        [[maybe_unused]] std::uint8_t pad_0x64c[0x4]; // 0x64c
+        CUtlSymbolLarge m_iszDynamicEntityName; // 0x650        
+        float m_flPathingDistanceNormFactor; // 0x658        
+        Vector m_vPathingSourcePos; // 0x65c        
+        Vector m_vPathingListenerPos; // 0x668        
+        Vector m_vPathingDirection; // 0x674        
+        int32_t m_nPathingSourceIndex; // 0x680        
+        [[maybe_unused]] std::uint8_t pad_0x684[0x4];
         
         // Datamap fields:
         // void InputSetDisabledValue; // 0x0
@@ -59,5 +58,5 @@ namespace source2sdk::server
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CSoundOpvarSetPointEntity because it is not a standard-layout class
-    static_assert(sizeof(CSoundOpvarSetPointEntity) == 0x660);
+    static_assert(sizeof(CSoundOpvarSetPointEntity) == 0x688);
 };

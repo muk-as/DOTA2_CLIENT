@@ -14,18 +14,17 @@ namespace source2sdk::server
     // Registered alignment: unknown
     // Alignment: unknown
     // Standard-layout class: false
-    // Size: 0x16f0
+    // Size: 0x1710
     // Has VTable
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Modifier_Dark_Seer_Quick_Wit : public client::CDOTA_Buff
     {
     public:
-        float int_to_atkspd; // 0x16e8        
-        [[maybe_unused]] std::uint8_t pad_0x16ec[0x4];
+        float int_to_atkspd; // 0x1708        
+        [[maybe_unused]] std::uint8_t pad_0x170c[0x4];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Modifier_Dark_Seer_Quick_Wit because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_Dark_Seer_Quick_Wit) == 0x16f0);
+    static_assert(sizeof(CDOTA_Modifier_Dark_Seer_Quick_Wit) == 0x1710);
 };

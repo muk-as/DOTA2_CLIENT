@@ -14,10 +14,9 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x788
+    // Size: 0x7b0
     // Has VTable
     // Construct allowed
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CFuncVehicleClip : public server::CBaseModelEntity
     {
@@ -29,5 +28,5 @@ namespace source2sdk::server
     };
     #pragma pack(pop)
     
-    static_assert(sizeof(CFuncVehicleClip) == 0x788);
+    static_assert(sizeof(CFuncVehicleClip) == 0x7b0);
 };

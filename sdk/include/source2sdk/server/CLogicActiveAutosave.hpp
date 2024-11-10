@@ -15,18 +15,17 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x4d8
+    // Size: 0x500
     // Has VTable
     // Construct allowed
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CLogicActiveAutosave : public server::CLogicAutosave
     {
     public:
-        int32_t m_TriggerHitPoints; // 0x4c8        
-        float m_flTimeToTrigger; // 0x4cc        
-        entity2::GameTime_t m_flStartTime; // 0x4d0        
-        float m_flDangerousTime; // 0x4d4        
+        int32_t m_TriggerHitPoints; // 0x4f0        
+        float m_flTimeToTrigger; // 0x4f4        
+        entity2::GameTime_t m_flStartTime; // 0x4f8        
+        float m_flDangerousTime; // 0x4fc        
         
         // Datamap fields:
         // void CLogicActiveAutosaveSaveThink; // 0x0
@@ -36,5 +35,5 @@ namespace source2sdk::server
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CLogicActiveAutosave because it is not a standard-layout class
-    static_assert(sizeof(CLogicActiveAutosave) == 0x4d8);
+    static_assert(sizeof(CLogicActiveAutosave) == 0x500);
 };

@@ -21,7 +21,6 @@ namespace source2sdk::server
     // Size: 0x40
     // Has VTable
     // Has Trivial Destructor
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkVarNames "CHandle< CFogController> m_hCtrl"
     #pragma pack(push, 1)

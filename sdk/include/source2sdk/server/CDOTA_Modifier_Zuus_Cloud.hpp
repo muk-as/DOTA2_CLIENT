@@ -15,19 +15,18 @@ namespace source2sdk::server
     // Registered alignment: unknown
     // Alignment: unknown
     // Standard-layout class: false
-    // Size: 0x1708
+    // Size: 0x1728
     // Has VTable
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Modifier_Zuus_Cloud : public client::CDOTA_Buff
     {
     public:
-        server::CountdownTimer m_CloudBoltTimer; // 0x16e8        
-        float cloud_bolt_interval; // 0x1700        
-        int32_t cloud_radius; // 0x1704        
+        server::CountdownTimer m_CloudBoltTimer; // 0x1708        
+        float cloud_bolt_interval; // 0x1720        
+        int32_t cloud_radius; // 0x1724        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Modifier_Zuus_Cloud because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_Zuus_Cloud) == 0x1708);
+    static_assert(sizeof(CDOTA_Modifier_Zuus_Cloud) == 0x1728);
 };

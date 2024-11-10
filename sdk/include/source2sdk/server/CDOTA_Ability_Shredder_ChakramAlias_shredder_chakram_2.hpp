@@ -14,10 +14,9 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x5f8
+    // Size: 0x620
     // Has VTable
     // Construct allowed
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Ability_Shredder_ChakramAlias_shredder_chakram_2 : public server::CDOTA_Ability_Shredder_Chakram
     {
@@ -26,5 +25,5 @@ namespace source2sdk::server
     };
     #pragma pack(pop)
     
-    static_assert(sizeof(CDOTA_Ability_Shredder_ChakramAlias_shredder_chakram_2) == 0x5f8);
+    static_assert(sizeof(CDOTA_Ability_Shredder_ChakramAlias_shredder_chakram_2) == 0x620);
 };

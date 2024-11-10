@@ -19,11 +19,10 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x540
+    // Size: 0x568
     // Has VTable
     // Construct allowed
     // MNetworkNoBase
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkVarNames "C_DOTAGamerules * m_pGameRules"
     #pragma pack(push, 1)
@@ -33,10 +32,10 @@ namespace source2sdk::client
         // metadata: MNetworkEnable
         // metadata: MNetworkTypeAlias "CDOTAGameRules*"
         // metadata: MNetworkPriority "32"
-        client::C_DOTAGamerules* m_pGameRules; // 0x538        
+        client::C_DOTAGamerules* m_pGameRules; // 0x560        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in C_DOTAGamerulesProxy because it is not a standard-layout class
-    static_assert(sizeof(C_DOTAGamerulesProxy) == 0x540);
+    static_assert(sizeof(C_DOTAGamerulesProxy) == 0x568);
 };

@@ -21,11 +21,10 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x4f0
+    // Size: 0x518
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkVarNames "int m_iLastKillerTeam"
     // static metadata: MNetworkVarNames "int m_iKillCount"
@@ -34,28 +33,28 @@ namespace source2sdk::server
     class CDOTA_RoshanSpawner : public server::CPointEntity
     {
     public:
-        bool m_bIsRoshanAlive; // 0x4b8        
-        bool m_bSpawnRequested; // 0x4b9        
-        [[maybe_unused]] std::uint8_t pad_0x4ba[0x2]; // 0x4ba
+        bool m_bIsRoshanAlive; // 0x4e0        
+        bool m_bSpawnRequested; // 0x4e1        
+        [[maybe_unused]] std::uint8_t pad_0x4e2[0x2]; // 0x4e2
         // m_hRoshan has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<server::CBaseEntity> m_hRoshan;
-        char m_hRoshan[0x4]; // 0x4bc        
-        entity2::GameTime_t m_fRoshanKillTime; // 0x4c0        
-        int32_t m_nSentRoshReclaim; // 0x4c4        
-        int32_t m_nSentRoshRespawn; // 0x4c8        
-        float m_fRoshanRespawnDuration; // 0x4cc        
+        char m_hRoshan[0x4]; // 0x4e4        
+        entity2::GameTime_t m_fRoshanKillTime; // 0x4e8        
+        int32_t m_nSentRoshReclaim; // 0x4ec        
+        int32_t m_nSentRoshRespawn; // 0x4f0        
+        float m_fRoshanRespawnDuration; // 0x4f4        
         // metadata: MNetworkEnable
-        int32_t m_iLastKillerTeam; // 0x4d0        
+        int32_t m_iLastKillerTeam; // 0x4f8        
         // metadata: MNetworkEnable
-        int32_t m_iKillCount; // 0x4d4        
+        int32_t m_iKillCount; // 0x4fc        
         // metadata: MNetworkEnable
-        Vector m_vRoshanAltLocation; // 0x4d8        
-        client::ParticleIndex_t m_nFXIndex; // 0x4e4        
-        client::ParticleIndex_t m_nFXIndex2; // 0x4e8        
-        [[maybe_unused]] std::uint8_t pad_0x4ec[0x4];
+        Vector m_vRoshanAltLocation; // 0x500        
+        client::ParticleIndex_t m_nFXIndex; // 0x50c        
+        client::ParticleIndex_t m_nFXIndex2; // 0x510        
+        [[maybe_unused]] std::uint8_t pad_0x514[0x4];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_RoshanSpawner because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_RoshanSpawner) == 0x4f0);
+    static_assert(sizeof(CDOTA_RoshanSpawner) == 0x518);
 };

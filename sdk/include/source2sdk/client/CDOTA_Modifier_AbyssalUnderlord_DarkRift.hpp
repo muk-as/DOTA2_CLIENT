@@ -15,23 +15,22 @@ namespace source2sdk::client
     // Registered alignment: unknown
     // Alignment: unknown
     // Standard-layout class: false
-    // Size: 0x1708
+    // Size: 0x1728
     // Has VTable
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Modifier_AbyssalUnderlord_DarkRift : public client::CDOTA_Buff
     {
     public:
-        client::ParticleIndex_t m_nfxTargetTp; // 0x16e8        
-        float radius; // 0x16ec        
-        int32_t duration; // 0x16f0        
-        client::ParticleIndex_t m_nfxAmbientFx; // 0x16f4        
-        bool bPointTarget; // 0x16f8        
-        [[maybe_unused]] std::uint8_t pad_0x16f9[0x3]; // 0x16f9
-        Vector vDestination; // 0x16fc        
+        client::ParticleIndex_t m_nfxTargetTp; // 0x1708        
+        float radius; // 0x170c        
+        int32_t duration; // 0x1710        
+        client::ParticleIndex_t m_nfxAmbientFx; // 0x1714        
+        bool bPointTarget; // 0x1718        
+        [[maybe_unused]] std::uint8_t pad_0x1719[0x3]; // 0x1719
+        Vector vDestination; // 0x171c        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Modifier_AbyssalUnderlord_DarkRift because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_AbyssalUnderlord_DarkRift) == 0x1708);
+    static_assert(sizeof(CDOTA_Modifier_AbyssalUnderlord_DarkRift) == 0x1728);
 };

@@ -14,18 +14,17 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x4c8
+    // Size: 0x4f0
     // Has VTable
     // Construct allowed
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CInfoPlayerStart : public server::CPointEntity
     {
     public:
-        bool m_bDisabled; // 0x4b8        
-        bool m_bIsMaster; // 0x4b9        
-        [[maybe_unused]] std::uint8_t pad_0x4ba[0x6]; // 0x4ba
-        CGlobalSymbol m_pPawnSubclass; // 0x4c0        
+        bool m_bDisabled; // 0x4e0        
+        bool m_bIsMaster; // 0x4e1        
+        [[maybe_unused]] std::uint8_t pad_0x4e2[0x6]; // 0x4e2
+        CGlobalSymbol m_pPawnSubclass; // 0x4e8        
         
         // Datamap fields:
         // void InputEnable; // 0x0
@@ -35,5 +34,5 @@ namespace source2sdk::server
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CInfoPlayerStart because it is not a standard-layout class
-    static_assert(sizeof(CInfoPlayerStart) == 0x4c8);
+    static_assert(sizeof(CInfoPlayerStart) == 0x4f0);
 };

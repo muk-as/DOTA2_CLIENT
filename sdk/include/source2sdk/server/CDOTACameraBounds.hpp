@@ -14,10 +14,9 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x4d0
+    // Size: 0x4f8
     // Has VTable
     // Construct allowed
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkVarNames "Vector m_vecBoundsMin"
     // static metadata: MNetworkVarNames "Vector m_vecBoundsMax"
@@ -26,12 +25,12 @@ namespace source2sdk::server
     {
     public:
         // metadata: MNetworkEnable
-        Vector m_vecBoundsMin; // 0x4b8        
+        Vector m_vecBoundsMin; // 0x4e0        
         // metadata: MNetworkEnable
-        Vector m_vecBoundsMax; // 0x4c4        
+        Vector m_vecBoundsMax; // 0x4ec        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTACameraBounds because it is not a standard-layout class
-    static_assert(sizeof(CDOTACameraBounds) == 0x4d0);
+    static_assert(sizeof(CDOTACameraBounds) == 0x4f8);
 };

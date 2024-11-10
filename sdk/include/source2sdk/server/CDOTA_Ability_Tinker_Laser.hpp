@@ -19,24 +19,23 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x5c8
+    // Size: 0x5f0
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Ability_Tinker_Laser : public server::CDOTABaseAbility
     {
     public:
-        Vector m_vProjectileLocation; // 0x5a0        
-        bool bBlocked; // 0x5ac        
-        [[maybe_unused]] std::uint8_t pad_0x5ad[0x3]; // 0x5ad
+        Vector m_vProjectileLocation; // 0x5c8        
+        bool bBlocked; // 0x5d4        
+        [[maybe_unused]] std::uint8_t pad_0x5d5[0x3]; // 0x5d5
         // m_hHitEntities has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<CHandle<server::CBaseEntity>> m_hHitEntities;
-        char m_hHitEntities[0x18]; // 0x5b0        
+        char m_hHitEntities[0x18]; // 0x5d8        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Ability_Tinker_Laser because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Ability_Tinker_Laser) == 0x5c8);
+    static_assert(sizeof(CDOTA_Ability_Tinker_Laser) == 0x5f0);
 };

@@ -19,27 +19,26 @@ namespace source2sdk::server
     // Registered alignment: unknown
     // Alignment: unknown
     // Standard-layout class: false
-    // Size: 0x1728
+    // Size: 0x1748
     // Has VTable
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Modifier_Tiny_Avalanche : public client::CDOTA_Buff
     {
     public:
         // m_pHeroesHit has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<server::CDOTA_BaseNPC*> m_pHeroesHit;
-        char m_pHeroesHit[0x18]; // 0x16e8        
-        float radius; // 0x1700        
-        float total_duration; // 0x1704        
-        float stun_duration; // 0x1708        
-        int32_t tick_count; // 0x170c        
-        int32_t toss_damage_bonus_pct; // 0x1710        
-        int32_t m_damage; // 0x1714        
-        int32_t m_nTicks; // 0x1718        
-        [[maybe_unused]] std::uint8_t pad_0x171c[0xc];
+        char m_pHeroesHit[0x18]; // 0x1708        
+        float radius; // 0x1720        
+        float total_duration; // 0x1724        
+        float stun_duration; // 0x1728        
+        int32_t tick_count; // 0x172c        
+        int32_t toss_damage_bonus_pct; // 0x1730        
+        int32_t m_damage; // 0x1734        
+        int32_t m_nTicks; // 0x1738        
+        [[maybe_unused]] std::uint8_t pad_0x173c[0xc];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Modifier_Tiny_Avalanche because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_Tiny_Avalanche) == 0x1728);
+    static_assert(sizeof(CDOTA_Modifier_Tiny_Avalanche) == 0x1748);
 };

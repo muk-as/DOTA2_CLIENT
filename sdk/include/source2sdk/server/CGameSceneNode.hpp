@@ -34,15 +34,10 @@ namespace source2sdk::server
     {
     public:
         [[maybe_unused]] std::uint8_t pad_0x00[0x10]; // 0x0
-        // metadata: MNetworkDisable
         CTransform m_nodeToWorld; // 0x10        
-        // metadata: MNetworkDisable
         entity2::CEntityInstance* m_pOwner; // 0x30        
-        // metadata: MNetworkDisable
         server::CGameSceneNode* m_pParent; // 0x38        
-        // metadata: MNetworkDisable
         server::CGameSceneNode* m_pChild; // 0x40        
-        // metadata: MNetworkDisable
         server::CGameSceneNode* m_pNextSibling; // 0x48        
         [[maybe_unused]] std::uint8_t pad_0x50[0x28]; // 0x50
         // metadata: MNetworkEnable
@@ -66,45 +61,26 @@ namespace source2sdk::server
         // metadata: MNetworkChangeCallback "gameSceneNodeLocalScaleChanged"
         // metadata: MNetworkPriority "32"
         float m_flScale; // 0xcc        
-        // metadata: MNetworkDisable
         Vector m_vecAbsOrigin; // 0xd0        
-        // metadata: MNetworkDisable
         QAngle m_angAbsRotation; // 0xdc        
-        // metadata: MNetworkDisable
         float m_flAbsScale; // 0xe8        
-        // metadata: MNetworkDisable
         int16_t m_nParentAttachmentOrBone; // 0xec        
-        // metadata: MNetworkDisable
         bool m_bDebugAbsOriginChanges; // 0xee        
-        // metadata: MNetworkDisable
         bool m_bDormant; // 0xef        
-        // metadata: MNetworkDisable
         bool m_bForceParentToBeNetworked; // 0xf0        
         // start of bitfield block at 0xf1
-        // metadata: MNetworkDisable
         uint16_t m_bDirtyHierarchy: 1;
-        // metadata: MNetworkDisable
         uint16_t m_bDirtyBoneMergeInfo: 1;
-        // metadata: MNetworkDisable
         uint16_t m_bNetworkedPositionChanged: 1;
-        // metadata: MNetworkDisable
         uint16_t m_bNetworkedAnglesChanged: 1;
-        // metadata: MNetworkDisable
         uint16_t m_bNetworkedScaleChanged: 1;
-        // metadata: MNetworkDisable
         uint16_t m_bWillBeCallingPostDataUpdate: 1;
-        // metadata: MNetworkDisable
         uint16_t m_bBoneMergeFlex: 1;
-        // metadata: MNetworkDisable
         uint16_t m_nLatchAbsOrigin: 2;
-        // metadata: MNetworkDisable
         uint16_t m_bDirtyBoneMergeBoneToRoot: 1;
         // end of bitfield block // 10 bits
-        // metadata: MNetworkDisable
         uint8_t m_nHierarchicalDepth; // 0xf3        
-        // metadata: MNetworkDisable
         uint8_t m_nHierarchyType; // 0xf4        
-        // metadata: MNetworkDisable
         uint8_t m_nDoNotSetAnimTimeInInvalidatePhysicsCount; // 0xf5        
         [[maybe_unused]] std::uint8_t pad_0xf6[0x2]; // 0xf6
         // metadata: MNetworkEnable
@@ -113,11 +89,8 @@ namespace source2sdk::server
         // metadata: MNetworkEnable
         // metadata: MNetworkChangeCallback "gameSceneNodeHierarchyAttachmentChanged"
         CUtlStringToken m_hierarchyAttachName; // 0x138        
-        // metadata: MNetworkDisable
         float m_flZOffset; // 0x13c        
-        // metadata: MNetworkDisable
         float m_flClientLocalScale; // 0x140        
-        // metadata: MNetworkDisable
         Vector m_vRenderOrigin; // 0x144        
         [[maybe_unused]] std::uint8_t pad_0x150[0x10];
         

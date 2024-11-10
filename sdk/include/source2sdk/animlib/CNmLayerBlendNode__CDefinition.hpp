@@ -15,7 +15,7 @@ namespace source2sdk::animlib
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x40
+    // Size: 0x48
     // Has VTable
     // Construct allowed
     // 
@@ -29,10 +29,10 @@ namespace source2sdk::animlib
         [[maybe_unused]] std::uint8_t pad_0x13[0x5]; // 0x13
         // m_layerDefinition has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlLeanVectorFixedGrowable<animlib::CNmLayerBlendNode__LayerDefinition_t,3> m_layerDefinition;
-        char m_layerDefinition[0x28]; // 0x18        
+        char m_layerDefinition[0x30]; // 0x18        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CNmLayerBlendNode::CDefinition because it is not a standard-layout class
-    static_assert(sizeof(CNmLayerBlendNode__CDefinition) == 0x40);
+    static_assert(sizeof(CNmLayerBlendNode__CDefinition) == 0x48);
 };

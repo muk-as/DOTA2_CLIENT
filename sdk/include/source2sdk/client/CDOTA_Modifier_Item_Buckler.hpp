@@ -14,21 +14,20 @@ namespace source2sdk::client
     // Registered alignment: unknown
     // Alignment: unknown
     // Standard-layout class: false
-    // Size: 0x16f8
+    // Size: 0x1718
     // Has VTable
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Modifier_Item_Buckler : public client::CDOTA_Buff_Item
     {
     public:
-        bool m_bAppliesToCreeps; // 0x16e8        
-        [[maybe_unused]] std::uint8_t pad_0x16e9[0x3]; // 0x16e9
-        float bonus_aoe_radius; // 0x16ec        
-        float armor; // 0x16f0        
-        [[maybe_unused]] std::uint8_t pad_0x16f4[0x4];
+        bool m_bAppliesToCreeps; // 0x1708        
+        [[maybe_unused]] std::uint8_t pad_0x1709[0x3]; // 0x1709
+        float bonus_aoe_radius; // 0x170c        
+        float armor; // 0x1710        
+        [[maybe_unused]] std::uint8_t pad_0x1714[0x4];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Modifier_Item_Buckler because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_Item_Buckler) == 0x16f8);
+    static_assert(sizeof(CDOTA_Modifier_Item_Buckler) == 0x1718);
 };

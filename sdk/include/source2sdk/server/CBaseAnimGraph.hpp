@@ -20,10 +20,9 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x998
+    // Size: 0x9f8
     // Has VTable
     // Construct allowed
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkIncludeByName "m_bClientSideRagdoll"
     // static metadata: MNetworkVarNames "bool m_bInitiallyPopulateInterpHistory"
@@ -36,32 +35,32 @@ namespace source2sdk::server
     class CBaseAnimGraph : public server::CBaseModelEntity
     {
     public:
-        [[maybe_unused]] std::uint8_t pad_0x788[0x78]; // 0x788
+        [[maybe_unused]] std::uint8_t pad_0x7b0[0x78]; // 0x7b0
         // metadata: MNetworkEnable
-        bool m_bInitiallyPopulateInterpHistory; // 0x800        
-        [[maybe_unused]] std::uint8_t pad_0x801[0x7]; // 0x801
-        client::IChoreoServices* m_pChoreoServices; // 0x808        
+        bool m_bInitiallyPopulateInterpHistory; // 0x828        
+        [[maybe_unused]] std::uint8_t pad_0x829[0x7]; // 0x829
+        client::IChoreoServices* m_pChoreoServices; // 0x830        
         // metadata: MNetworkEnable
-        bool m_bAnimGraphUpdateEnabled; // 0x810        
-        [[maybe_unused]] std::uint8_t pad_0x811[0x3]; // 0x811
-        float m_flMaxSlopeDistance; // 0x814        
-        Vector m_vLastSlopeCheckPos; // 0x818        
-        bool m_bAnimationUpdateScheduled; // 0x824        
-        [[maybe_unused]] std::uint8_t pad_0x825[0x3]; // 0x825
+        bool m_bAnimGraphUpdateEnabled; // 0x838        
+        [[maybe_unused]] std::uint8_t pad_0x839[0x3]; // 0x839
+        float m_flMaxSlopeDistance; // 0x83c        
+        Vector m_vLastSlopeCheckPos; // 0x840        
+        bool m_bAnimationUpdateScheduled; // 0x84c        
+        [[maybe_unused]] std::uint8_t pad_0x84d[0x3]; // 0x84d
         // metadata: MNetworkEnable
-        Vector m_vecForce; // 0x828        
+        Vector m_vecForce; // 0x850        
         // metadata: MNetworkEnable
-        int32_t m_nForceBone; // 0x834        
-        [[maybe_unused]] std::uint8_t pad_0x838[0x10]; // 0x838
+        int32_t m_nForceBone; // 0x85c        
+        [[maybe_unused]] std::uint8_t pad_0x860[0x10]; // 0x860
         // metadata: MNetworkEnable
-        server::PhysicsRagdollPose_t m_RagdollPose; // 0x848        
+        server::PhysicsRagdollPose_t m_RagdollPose; // 0x870        
         // metadata: MNetworkEnable
         // metadata: MNetworkChangeCallback "OnClientRagdollChanged"
-        bool m_bRagdollClientSide; // 0x870        
-        [[maybe_unused]] std::uint8_t pad_0x871[0x127];
+        bool m_bRagdollClientSide; // 0x898        
+        [[maybe_unused]] std::uint8_t pad_0x899[0x15f];
         
         // Datamap fields:
-        // void m_pMainGraphController; // 0x7f8
+        // void m_pMainGraphController; // 0x820
         // void CBaseAnimGraphChoreoServicesThink; // 0x0
         // float InputSetPlaybackRate; // 0x0
         // CUtlSymbolLarge InputSetBodyGroup; // 0x0
@@ -70,5 +69,5 @@ namespace source2sdk::server
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CBaseAnimGraph because it is not a standard-layout class
-    static_assert(sizeof(CBaseAnimGraph) == 0x998);
+    static_assert(sizeof(CBaseAnimGraph) == 0x9f8);
 };

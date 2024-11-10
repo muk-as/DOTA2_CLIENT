@@ -127,7 +127,6 @@ namespace source2sdk::client
         // metadata: MNetworkPriority "48"
         int32_t m_iUnreliableGold; // 0x34        
         // metadata: MNetworkEnable
-        // metadata: MNetworkChangeCallback "OnStartingPositionsChanged"
         int32_t m_iStartingPosition; // 0x38        
         // metadata: MNetworkEnable
         // metadata: MNetworkPriority "32"
@@ -189,10 +188,10 @@ namespace source2sdk::client
         // metadata: MNetworkEnable
         int32_t m_iMissCount; // 0xac        
         // metadata: MNetworkEnable
-        // metadata: MNetworkChangeCallback "OnSelectionDirty"
+        // metadata: MNetworkChangeCallback "OnDataTeamPlayerSelectionDirty"
         client::HeroID_t m_nPossibleHeroSelection; // 0xb0        
         // metadata: MNetworkEnable
-        // metadata: MNetworkChangeCallback "OnSelectionDirty"
+        // metadata: MNetworkChangeCallback "OnDataTeamPlayerSelectionDirty"
         client::HeroFacetID_t m_nPossibleHeroFacetSelection; // 0xb4        
         // metadata: MNetworkEnable
         entity2::GameTime_t m_flBuybackCooldownTime; // 0xb8        
@@ -250,19 +249,19 @@ namespace source2sdk::client
         // metadata: MNetworkEnable
         float m_fSuggestedAbilityWeights[5]; // 0x254        
         // metadata: MNetworkEnable
-        // metadata: MNetworkChangeCallback "OnSuggestedItemsChanged"
+        // metadata: MNetworkChangeCallback "OnDataTeamPlayerSuggestedItemsChanged"
         client::AbilityID_t m_iSuggestedPregameItems[15]; // 0x268        
         // metadata: MNetworkEnable
-        // metadata: MNetworkChangeCallback "OnSuggestedItemsChanged"
+        // metadata: MNetworkChangeCallback "OnDataTeamPlayerSuggestedItemSequencesChanged"
         client::AbilityID_t m_iSuggestedItemSequences[30]; // 0x2a4        
         // metadata: MNetworkEnable
-        // metadata: MNetworkChangeCallback "OnSuggestedItemsChanged"
+        // metadata: MNetworkChangeCallback "OnDataTeamPlayerSuggestedItemsChanged"
         client::WeightedAbilitySuggestion_t m_iSuggestedWeightedItems[15]; // 0x31c        
         // metadata: MNetworkEnable
-        // metadata: MNetworkChangeCallback "OnSuggestedItemsChanged"
+        // metadata: MNetworkChangeCallback "OnDataTeamPlayerSuggestedItemsChanged"
         client::WeightedAbilitySuggestion_t m_iSuggestedTopNItems[3]; // 0x394        
         // metadata: MNetworkEnable
-        // metadata: MNetworkChangeCallback "OnSuggestedItemsChanged"
+        // metadata: MNetworkChangeCallback "OnDataTeamPlayerSuggestedItemsChanged"
         client::WeightedAbilitySuggestion_t m_iSuggestedNeutralItems[30]; // 0x3ac        
         // metadata: MNetworkEnable
         client::HeroID_t m_iSuggestedHeroes[10]; // 0x49c        
@@ -297,7 +296,7 @@ namespace source2sdk::client
         [[maybe_unused]] std::uint8_t pad_0x536[0x2]; // 0x536
         // metadata: MNetworkEnable
         // metadata: MNetworkEncoder "fixed64"
-        // metadata: MNetworkChangeCallback "OnPlayerSteamIDsChanged"
+        // metadata: MNetworkChangeCallback "OnDataTeamPlayerPlayerSteamIDsChanged"
         uint64_t m_iPlayerSteamID; // 0x538        
         // metadata: MNetworkEnable
         int32_t m_iSmokesUsed; // 0x540        

@@ -14,11 +14,10 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x1810
+    // Size: 0x1830
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     // 
     // static metadata: MNetworkIncludeByName "m_angRotation"
     // static metadata: MNetworkIncludeByName "m_angRotation[0]"
@@ -30,5 +29,5 @@ namespace source2sdk::server
     };
     #pragma pack(pop)
     
-    static_assert(sizeof(CDOTA_BaseNPC_RotatableBuilding) == 0x1810);
+    static_assert(sizeof(CDOTA_BaseNPC_RotatableBuilding) == 0x1830);
 };

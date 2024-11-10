@@ -16,7 +16,7 @@ namespace source2sdk::animgraphlib
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0xa8
+    // Size: 0xa0
     // Has VTable
     // Construct allowed
     // 
@@ -29,10 +29,10 @@ namespace source2sdk::animgraphlib
         // CUtlVector<animgraphlib::CSolveIKTargetHandle_t> m_targetHandles;
         char m_targetHandles[0x18]; // 0x68        
         animgraphlib::SolveIKChainPoseOpFixedSettings_t m_opFixedData; // 0x80        
-        [[maybe_unused]] std::uint8_t pad_0xa0[0x8];
+        [[maybe_unused]] std::uint8_t pad_0x98[0x8];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CSolveIKChainUpdateNode because it is not a standard-layout class
-    static_assert(sizeof(CSolveIKChainUpdateNode) == 0xa8);
+    static_assert(sizeof(CSolveIKChainUpdateNode) == 0xa0);
 };

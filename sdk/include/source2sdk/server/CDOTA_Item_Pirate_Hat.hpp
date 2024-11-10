@@ -15,23 +15,22 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x660
+    // Size: 0x688
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
-    // MNetworkAssumeNotNetworkable
     #pragma pack(push, 1)
     class CDOTA_Item_Pirate_Hat : public server::CDOTA_Item
     {
     public:
-        Vector m_vChannelPos; // 0x648        
-        bool m_bIsUnderwater; // 0x654        
-        [[maybe_unused]] std::uint8_t pad_0x655[0x3]; // 0x655
-        client::ParticleIndex_t m_nPhaseStartFXIndex; // 0x658        
-        [[maybe_unused]] std::uint8_t pad_0x65c[0x4];
+        Vector m_vChannelPos; // 0x670        
+        bool m_bIsUnderwater; // 0x67c        
+        [[maybe_unused]] std::uint8_t pad_0x67d[0x3]; // 0x67d
+        client::ParticleIndex_t m_nPhaseStartFXIndex; // 0x680        
+        [[maybe_unused]] std::uint8_t pad_0x684[0x4];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Item_Pirate_Hat because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Item_Pirate_Hat) == 0x660);
+    static_assert(sizeof(CDOTA_Item_Pirate_Hat) == 0x688);
 };
