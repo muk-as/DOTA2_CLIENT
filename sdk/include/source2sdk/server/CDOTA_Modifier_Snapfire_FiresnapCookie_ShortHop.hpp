@@ -25,7 +25,7 @@ namespace source2sdk::server
         int32_t jump_horizontal_distance; // 0x1710        
         float pre_land_anim_time; // 0x1714        
         float landing_gesture_duration; // 0x1718        
-        int32_t impact_radius; // 0x171c        
+        float impact_radius; // 0x171c        
         int32_t impact_damage; // 0x1720        
         float impact_stun_duration; // 0x1724        
         float m_flStartZ; // 0x1728        

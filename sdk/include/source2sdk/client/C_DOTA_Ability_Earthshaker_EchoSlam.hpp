@@ -22,7 +22,7 @@ namespace source2sdk::client
     class C_DOTA_Ability_Earthshaker_EchoSlam : public client::C_DOTABaseAbility
     {
     public:
-        int32_t echo_slam_damage_range; // 0x600        
+        float echo_slam_damage_range; // 0x600        
         int32_t echo_slam_echo_search_range; // 0x604        
         int32_t echo_slam_echo_range; // 0x608        
         int32_t echo_slam_echo_damage; // 0x60c        

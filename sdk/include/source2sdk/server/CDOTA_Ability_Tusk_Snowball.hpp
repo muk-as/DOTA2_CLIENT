@@ -31,7 +31,7 @@ namespace source2sdk::server
     public:
         [[maybe_unused]] std::uint8_t pad_0x5c8[0x10]; // 0x5c8
         float snowball_windup_radius; // 0x5d8        
-        int32_t snowball_radius; // 0x5dc        
+        float snowball_radius; // 0x5dc        
         int32_t snowball_grow_rate; // 0x5e0        
         int32_t snowball_damage; // 0x5e4        
         int32_t snowball_damage_bonus; // 0x5e8        

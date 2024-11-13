@@ -29,7 +29,7 @@ namespace source2sdk::client
         // m_hTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<client::C_BaseEntity> m_hTarget;
         char m_hTarget[0x4]; // 0x1708        
-        int32_t radius; // 0x170c        
+        float radius; // 0x170c        
         int32_t beams; // 0x1710        
         int32_t hit_count; // 0x1714        
         int32_t m_iBeamDamage; // 0x1718        

@@ -22,7 +22,7 @@ namespace source2sdk::server
     class CDOTA_Ability_Earthshaker_EchoSlam : public server::CDOTABaseAbility
     {
     public:
-        int32_t echo_slam_damage_range; // 0x5c8        
+        float echo_slam_damage_range; // 0x5c8        
         int32_t echo_slam_echo_search_range; // 0x5cc        
         int32_t echo_slam_echo_range; // 0x5d0        
         int32_t echo_slam_echo_damage; // 0x5d4        

@@ -27,7 +27,7 @@ namespace source2sdk::client
     class CDOTA_Modifier_SandKing_SandStorm : public client::CDOTA_Buff
     {
     public:
-        int32_t sand_storm_radius; // 0x1708        
+        float sand_storm_radius; // 0x1708        
         int32_t sand_storm_damage; // 0x170c        
         float damage_tick_rate; // 0x1710        
         entity2::GameTime_t m_flLastDamageTime; // 0x1714        

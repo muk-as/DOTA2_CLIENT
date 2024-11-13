@@ -30,7 +30,7 @@ namespace source2sdk::client
     {
     public:
         float snowball_windup_radius; // 0x600        
-        int32_t snowball_radius; // 0x604        
+        float snowball_radius; // 0x604        
         int32_t snowball_grow_rate; // 0x608        
         int32_t snowball_damage; // 0x60c        
         int32_t snowball_damage_bonus; // 0x610        
