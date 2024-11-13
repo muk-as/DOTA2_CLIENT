@@ -48,15 +48,15 @@ namespace source2sdk::client
         int32_t bonus_flat_lifesteal; // 0x1770        
         int32_t lifesteal_pct; // 0x1774        
         int32_t creep_lifesteal_reduction_pct; // 0x1778        
+        int32_t max_distance_break; // 0x177c        
         // m_hTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<client::C_BaseEntity> m_hTarget;
-        char m_hTarget[0x4]; // 0x177c        
-        bool m_bDidAttack; // 0x1780        
-        bool m_bStartedAnimation; // 0x1781        
-        [[maybe_unused]] std::uint8_t pad_0x1782[0x2]; // 0x1782
-        client::GameActivity_t m_Activity; // 0x1784        
-        float m_flTimeLeftForActivity; // 0x1788        
-        [[maybe_unused]] std::uint8_t pad_0x178c[0x4];
+        char m_hTarget[0x4]; // 0x1780        
+        bool m_bDidAttack; // 0x1784        
+        bool m_bStartedAnimation; // 0x1785        
+        [[maybe_unused]] std::uint8_t pad_0x1786[0x2]; // 0x1786
+        client::GameActivity_t m_Activity; // 0x1788        
+        float m_flTimeLeftForActivity; // 0x178c        
     };
     #pragma pack(pop)
     
