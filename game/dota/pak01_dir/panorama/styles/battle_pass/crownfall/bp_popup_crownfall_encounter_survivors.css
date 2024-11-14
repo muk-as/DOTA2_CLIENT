@@ -1260,10 +1260,27 @@
 	padding: 0px 48px;
 }
 
+.PowerUpChoiceRerolling .PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer #PowerUp1
+{
+	animation-name: RerollPowerup1, RerollPowerupFade;
+}
+
+.PowerUpChoiceRerolling .PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer #PowerUp2
+{
+	animation-name: RerollPowerup2, RerollPowerupFade;
+}
+
 .PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice
 {
 	padding: 20px 24px 0px;
 	margin: 0px -4px;
+}
+
+.PowerUpChoiceRerolling .PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice
+{
+	animation-name: RerollPowerup0, RerollPowerupFade;
+	animation-duration: 0.6s, 0.3s;
+	animation-iteration-count: 1;
 }
 
 .PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice .HeroImageContainer
@@ -1799,7 +1816,7 @@
 	visibility: visible;
 }
 
-.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice.PowerUpSelected
+.PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice.PowerUpSelected .PowerUpContainer
 {
 	animation-name: BounceFocusPowerup;
 	animation-duration: 0.2s;
@@ -1812,6 +1829,9 @@
 	height: 100%;
 	border: 4px solid white;
 	transform: scale3d( 1.03, 1.01, 1 );
+	animation-name: BounceFocusPowerup;
+	animation-duration: 0.2s;
+	animation-iteration-count: 1;
 }
 
 .RerollButtonActive .PlayerLevelUpChoiceWrapper #PlayerLevelUpChoiceContainer .PowerUpChoice.PowerUpSelected .PowerUpContainerBorder
@@ -1841,17 +1861,88 @@
 {
 	0%
 	{
-		transform: none;
+		pre-transform-scale2d: 1;
 	}
 	
 	20%
 	{
-		transform: scale3d( 1.025, 1.025, 1 );
+		pre-transform-scale2d: 1.03;
+	}
+	
+	100%
+	{
+		pre-transform-scale2d: 1;
+	}
+	
+}
+
+@keyframes 'RerollPowerup0'
+{
+	0%
+	{
+		transform: translateY( -24px );
+	}
+	
+	30%
+	{
+		transform: translateY( 12px );
+	}
+	
+	60%
+	{
+		transform: none;
+	}
+	
+}
+
+@keyframes 'RerollPowerup1'
+{
+	20%
+	{
+		transform: translateY( -24px );
+	}
+	
+	50%
+	{
+		transform: translateY( 12px );
+	}
+	
+	80%
+	{
+		transform: none;
+	}
+	
+}
+
+@keyframes 'RerollPowerup2'
+{
+	40%
+	{
+		transform: translateY( -24px );
+	}
+	
+	70%
+	{
+		transform: translateY( 12px );
 	}
 	
 	100%
 	{
 		transform: none;
+	}
+	
+}
+
+@keyframes 'RerollPowerupFade'
+{
+	0%
+	{
+		opacity: 0;
+	}
+	
+	100%
+	{
+		opacity: 1;
 	}
 	
 }
@@ -2758,52 +2849,6 @@
 	tooltip-position: top;
 }
 
-.MetaProgressionSelection .UpgradesSection #MetaUpgradesContainer .MetaUpgradeAttribute .MetaUpgradeAttributeContainer .SelectedDifficultyBorder
-{
-	width: 100%;
-	height: 100%;
-	border: 3px solid white;
-	border-brush: gradient( linear, 0% 0%, 100% 0%, from( gold2 ), color-stop( 0.5, gold1 ), to( gold2 ) );
-	ignore-parent-flow: true;
-	transition-property: border;
-	transition-duration: 0.1s;
-	opacity: 0.0;
-}
-
-.MetaProgressionSelection .UpgradesSection #MetaUpgradesContainer .MetaUpgradeAttribute .MetaUpgradeAttributeContainer.UpgradesAvailable .SelectedDifficultyBorder
-{
-	opacity: 1.0;
-}
-
-.MetaProgressionSelection .UpgradesSection #MetaUpgradesContainer .MetaUpgradeAttribute .MetaUpgradeAttributeContainer.NoTokenCost .TokensContainer
-{
-	visibility: collapse;
-}
-
-.MetaProgressionSelection .UpgradesSection #MetaUpgradesContainer .MetaUpgradeAttribute .MetaUpgradeAttributeContainer.NoTokenCost .CurrencyPlus
-{
-	visibility: collapse;
-}
-
-.MetaProgressionSelection .UpgradesSection #MetaUpgradesContainer .MetaUpgradeAttribute .MetaUpgradeAttributeContainer.NoTokenCost .CostContainer
-{
-	padding-top: 10px;
-}
-
-.MetaProgressionSelection .UpgradesSection #MetaUpgradesContainer .MetaUpgradeAttribute .MetaUpgradeAttributeContainer.CantAffordUpgrade
-{
-	background-color: gradient( linear, 0% 0%, 0% 100%, from( rgb(41, 48, 59) ), to( rgb(21, 28, 37) ) );
-}
-
-.MetaProgressionSelection .UpgradesSection #MetaUpgradesContainer .MetaUpgradeAttribute .MetaUpgradeAttributeContainer.GamepadSelected .SelectedDifficultyBorder
-{
-	opacity: 1;
-	animation-name: OpacityPulse;
-	animation-duration: 0.5s;
-	animation-iteration-count: infinite;
-	animation-direction:alternate;
-}
-
 .MetaProgressionSelection .UpgradesSection #MetaUpgradesContainer .MetaUpgradeAttribute .MetaUpgradeAttributeContainer #CompletionProgress
 {
 	height: 8px;
@@ -2908,6 +2953,57 @@
 {
 	vertical-align: bottom;
 	margin-bottom: 5px;
+}
+
+.MetaProgressionSelection .UpgradesSection #MetaUpgradesContainer .MetaUpgradeAttribute.NoTokenCost .TokensContainer
+{
+	visibility: collapse;
+}
+
+.MetaProgressionSelection .UpgradesSection #MetaUpgradesContainer .MetaUpgradeAttribute.NoTokenCost .CurrencyPlus
+{
+	visibility: collapse;
+}
+
+.MetaProgressionSelection .UpgradesSection #MetaUpgradesContainer .MetaUpgradeAttribute.NoTokenCost .CostContainer
+{
+	padding-top: 10px;
+}
+
+.MetaProgressionSelection .UpgradesSection #MetaUpgradesContainer .MetaUpgradeAttribute.CantAffordUpgrade
+{
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( rgb(41, 48, 59) ), to( rgb(21, 28, 37) ) );
+}
+
+.MetaProgressionSelection .UpgradesSection #MetaUpgradesContainer .MetaUpgradeAttribute .SelectedDifficultyBorder
+{
+	width: 100%;
+	height: 100%;
+	border: 3px solid white;
+	border-brush: gradient( linear, 0% 0%, 100% 0%, from( gold2 ), color-stop( 0.5, gold1 ), to( gold2 ) );
+	ignore-parent-flow: true;
+	transition-property: border;
+	transition-duration: 0.1s;
+	opacity: 0.0;
+}
+
+.MetaProgressionSelection .UpgradesSection #MetaUpgradesContainer .MetaUpgradeAttribute.UpgradesAvailable .SelectedDifficultyBorder
+{
+	opacity: 1.0;
+}
+
+.MetaProgressionSelection .UpgradesSection #MetaUpgradesContainer .MetaUpgradeAttribute.GamepadSelected .SelectedDifficultyBorder
+{
+	opacity: 1;
+	animation-name: OpacityPulse;
+	animation-duration: 0.5s;
+	animation-iteration-count: infinite;
+	animation-direction:alternate;
+}
+
+.MetaProgressionSelection .UpgradesSection #MetaUpgradesContainer .MetaUpgradeAttribute.MaxLevel
+{
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( rgb(41, 48, 59) ), to( rgb(21, 28, 37) ) );
 }
 
 .MetaProgressionSelection .UpgradesSection #MetaUpgradesContainer .MetaUpgradeAttribute.MaxLevel .UpgradeButton
