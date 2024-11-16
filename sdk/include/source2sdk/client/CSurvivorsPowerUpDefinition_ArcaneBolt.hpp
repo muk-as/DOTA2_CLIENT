@@ -14,7 +14,7 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x7a0
+    // Size: 0x798
     // Has VTable
     // Construct allowed
     // 
@@ -27,5 +27,5 @@ namespace source2sdk::client
     };
     #pragma pack(pop)
     
-    static_assert(sizeof(CSurvivorsPowerUpDefinition_ArcaneBolt) == 0x7a0);
+    static_assert(sizeof(CSurvivorsPowerUpDefinition_ArcaneBolt) == 0x798);
 };

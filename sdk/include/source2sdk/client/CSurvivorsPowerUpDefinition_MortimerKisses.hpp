@@ -15,7 +15,7 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x960
+    // Size: 0x958
     // Has VTable
     // Construct allowed
     // 
@@ -25,16 +25,16 @@ namespace source2sdk::client
     class CSurvivorsPowerUpDefinition_MortimerKisses : public client::CSurvivorsPowerUpDefinition_AreaAttack_Circle
     {
     public:
+        float m_flMinRange; // 0x868        
+        float m_flLaunchDistance; // 0x86c        
+        float m_flScepterLaunchDistance; // 0x870        
+        float m_flAnglePerShot; // 0x874        
         // m_sArtilleryParticle has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CResourceNameTyped<CWeakHandle<resourcesystem::InfoForResourceTypeIParticleSystemDefinition>> m_sArtilleryParticle;
-        char m_sArtilleryParticle[0xe0]; // 0x870        
-        float m_flMinRange; // 0x950        
-        float m_flLaunchDistance; // 0x954        
-        float m_flScepterLaunchDistance; // 0x958        
-        float m_flAnglePerShot; // 0x95c        
+        char m_sArtilleryParticle[0xe0]; // 0x878        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CSurvivorsPowerUpDefinition_MortimerKisses because it is not a standard-layout class
-    static_assert(sizeof(CSurvivorsPowerUpDefinition_MortimerKisses) == 0x960);
+    static_assert(sizeof(CSurvivorsPowerUpDefinition_MortimerKisses) == 0x958);
 };

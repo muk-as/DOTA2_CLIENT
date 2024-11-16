@@ -16,7 +16,7 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x790
+    // Size: 0x788
     // Has VTable
     // Construct allowed
     // 
@@ -26,14 +26,14 @@ namespace source2sdk::client
     class CSurvivorsPowerUpDefinition_InstantAttack : public client::CSurvivorsPowerUpDefinition
     {
     public:
+        client::ESurvivorsAttackTargeting m_eTargeting; // 0x6a0        
+        [[maybe_unused]] std::uint8_t pad_0x6a4[0x4]; // 0x6a4
         // m_sParticle has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CResourceNameTyped<CWeakHandle<resourcesystem::InfoForResourceTypeIParticleSystemDefinition>> m_sParticle;
         char m_sParticle[0xe0]; // 0x6a8        
-        client::ESurvivorsAttackTargeting m_eTargeting; // 0x788        
-        [[maybe_unused]] std::uint8_t pad_0x78c[0x4];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CSurvivorsPowerUpDefinition_InstantAttack because it is not a standard-layout class
-    static_assert(sizeof(CSurvivorsPowerUpDefinition_InstantAttack) == 0x790);
+    static_assert(sizeof(CSurvivorsPowerUpDefinition_InstantAttack) == 0x788);
 };

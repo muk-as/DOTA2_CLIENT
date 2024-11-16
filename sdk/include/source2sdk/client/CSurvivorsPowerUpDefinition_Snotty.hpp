@@ -14,7 +14,7 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x878
+    // Size: 0x870
     // Has VTable
     // Construct allowed
     // 
@@ -24,11 +24,11 @@ namespace source2sdk::client
     class CSurvivorsPowerUpDefinition_Snotty : public client::CSurvivorsPowerUpDefinition_AreaAttack_Circle
     {
     public:
-        float m_flRotationSpeedDeg; // 0x870        
-        float m_flRotationDist; // 0x874        
+        float m_flRotationSpeedDeg; // 0x868        
+        float m_flRotationDist; // 0x86c        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CSurvivorsPowerUpDefinition_Snotty because it is not a standard-layout class
-    static_assert(sizeof(CSurvivorsPowerUpDefinition_Snotty) == 0x878);
+    static_assert(sizeof(CSurvivorsPowerUpDefinition_Snotty) == 0x870);
 };

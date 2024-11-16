@@ -14,7 +14,7 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x870
+    // Size: 0x868
     // Has VTable
     // Construct allowed
     // 
@@ -27,5 +27,5 @@ namespace source2sdk::client
     };
     #pragma pack(pop)
     
-    static_assert(sizeof(CSurvivorsPowerUpDefinition_AreaAttack_CircleConstant) == 0x870);
+    static_assert(sizeof(CSurvivorsPowerUpDefinition_AreaAttack_CircleConstant) == 0x868);
 };

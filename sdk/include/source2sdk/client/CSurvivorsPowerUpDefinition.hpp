@@ -19,7 +19,7 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: true
-    // Size: 0x6a8
+    // Size: 0x6a0
     // Has VTable
     // Construct allowed
     // 
@@ -48,50 +48,49 @@ namespace source2sdk::client
         bool m_bIsInnate; // 0x71        
         bool m_bIsGold; // 0x72        
         bool m_bRollable; // 0x73        
-        [[maybe_unused]] std::uint8_t pad_0x74[0x4]; // 0x74
+        bool m_bIsShardUpgradeable; // 0x74        
+        bool m_bIsScepterUpgradeable; // 0x75        
+        [[maybe_unused]] std::uint8_t pad_0x76[0x2]; // 0x76
+        CPanoramaImageName m_sImage; // 0x78        
+        [[maybe_unused]] std::uint8_t pad_0x88[0x8]; // 0x88
+        CUtlString m_sSource; // 0x90        
+        CPanoramaImageName m_sHeroImage; // 0x98        
+        CUtlString m_sLocAbilityName; // 0xa8        
+        CUtlString m_sLocAbilityDesc; // 0xb0        
+        CUtlString m_sLocShardAbilityDesc; // 0xb8        
+        CUtlString m_sLocScepterAbilityDesc; // 0xc0        
+        CUtlString m_sLocHeroName; // 0xc8        
         // m_vecMinorUpgradeChoices has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<client::CSurvivorsUpgradeDefinition> m_vecMinorUpgradeChoices;
-        char m_vecMinorUpgradeChoices[0x18]; // 0x78        
-        bool m_bIsShardUpgradeable; // 0x90        
-        bool m_bIsScepterUpgradeable; // 0x91        
-        [[maybe_unused]] std::uint8_t pad_0x92[0x6]; // 0x92
+        char m_vecMinorUpgradeChoices[0x18]; // 0xd0        
         // m_vecAuthoredUpgradeChoices has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<client::CSurvivorsUpgradeDefinition> m_vecAuthoredUpgradeChoices;
-        char m_vecAuthoredUpgradeChoices[0x18]; // 0x98        
-        client::CSurvivorsUpgradeDefinition m_scepterUpgradeDefinition; // 0xb0        
-        CPanoramaImageName m_sImage; // 0xf0        
-        [[maybe_unused]] std::uint8_t pad_0x100[0x8]; // 0x100
-        CUtlString m_sSource; // 0x108        
-        CPanoramaImageName m_sHeroImage; // 0x110        
-        CUtlString m_sLocAbilityName; // 0x120        
-        CUtlString m_sLocAbilityDesc; // 0x128        
-        CUtlString m_sLocShardAbilityDesc; // 0x130        
-        CUtlString m_sLocScepterAbilityDesc; // 0x138        
-        CUtlString m_sLocHeroName; // 0x140        
-        bool m_bModifierParticleUsesOverheadOffset; // 0x148        
-        [[maybe_unused]] std::uint8_t pad_0x149[0x7]; // 0x149
+        char m_vecAuthoredUpgradeChoices[0x18]; // 0xe8        
+        client::CSurvivorsUpgradeDefinition m_scepterUpgradeDefinition; // 0x100        
+        bool m_bModifierParticleUsesOverheadOffset; // 0x140        
+        [[maybe_unused]] std::uint8_t pad_0x141[0x7]; // 0x141
         // m_sModifierParticle has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CResourceNameTyped<CWeakHandle<resourcesystem::InfoForResourceTypeIParticleSystemDefinition>> m_sModifierParticle;
-        char m_sModifierParticle[0xe0]; // 0x150        
+        char m_sModifierParticle[0xe0]; // 0x148        
         // m_sStunParticle has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CResourceNameTyped<CWeakHandle<resourcesystem::InfoForResourceTypeIParticleSystemDefinition>> m_sStunParticle;
-        char m_sStunParticle[0xe0]; // 0x230        
+        char m_sStunParticle[0xe0]; // 0x228        
         // m_sVulnerableParticle has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CResourceNameTyped<CWeakHandle<resourcesystem::InfoForResourceTypeIParticleSystemDefinition>> m_sVulnerableParticle;
-        char m_sVulnerableParticle[0xe0]; // 0x310        
+        char m_sVulnerableParticle[0xe0]; // 0x308        
         // m_sFreezeParticle has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CResourceNameTyped<CWeakHandle<resourcesystem::InfoForResourceTypeIParticleSystemDefinition>> m_sFreezeParticle;
-        char m_sFreezeParticle[0xe0]; // 0x3f0        
+        char m_sFreezeParticle[0xe0]; // 0x3e8        
         // m_sHitStatusEffectParticle has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CResourceNameTyped<CWeakHandle<resourcesystem::InfoForResourceTypeIParticleSystemDefinition>> m_sHitStatusEffectParticle;
-        char m_sHitStatusEffectParticle[0xe0]; // 0x4d0        
+        char m_sHitStatusEffectParticle[0xe0]; // 0x4c8        
         // m_sWarmupEffectParticle has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CResourceNameTyped<CWeakHandle<resourcesystem::InfoForResourceTypeIParticleSystemDefinition>> m_sWarmupEffectParticle;
-        char m_sWarmupEffectParticle[0xe0]; // 0x5b0        
-        Vector m_vWarmupEffectColor; // 0x690        
-        float m_flWarmupEffectTime; // 0x69c        
-        float m_flSpawnPickupOnKillPercent; // 0x6a0        
-        client::SurvivorsPickupID_t m_unSpawnPickupOnKillID; // 0x6a4        
+        char m_sWarmupEffectParticle[0xe0]; // 0x5a8        
+        Vector m_vWarmupEffectColor; // 0x688        
+        float m_flWarmupEffectTime; // 0x694        
+        float m_flSpawnPickupOnKillPercent; // 0x698        
+        client::SurvivorsPickupID_t m_unSpawnPickupOnKillID; // 0x69c        
     };
     #pragma pack(pop)
     
@@ -105,30 +104,30 @@ namespace source2sdk::client
     static_assert(offsetof(CSurvivorsPowerUpDefinition, m_bIsInnate) == 0x71);
     static_assert(offsetof(CSurvivorsPowerUpDefinition, m_bIsGold) == 0x72);
     static_assert(offsetof(CSurvivorsPowerUpDefinition, m_bRollable) == 0x73);
-    static_assert(offsetof(CSurvivorsPowerUpDefinition, m_vecMinorUpgradeChoices) == 0x78);
-    static_assert(offsetof(CSurvivorsPowerUpDefinition, m_bIsShardUpgradeable) == 0x90);
-    static_assert(offsetof(CSurvivorsPowerUpDefinition, m_bIsScepterUpgradeable) == 0x91);
-    static_assert(offsetof(CSurvivorsPowerUpDefinition, m_vecAuthoredUpgradeChoices) == 0x98);
-    static_assert(offsetof(CSurvivorsPowerUpDefinition, m_scepterUpgradeDefinition) == 0xb0);
-    static_assert(offsetof(CSurvivorsPowerUpDefinition, m_sImage) == 0xf0);
-    static_assert(offsetof(CSurvivorsPowerUpDefinition, m_sSource) == 0x108);
-    static_assert(offsetof(CSurvivorsPowerUpDefinition, m_sHeroImage) == 0x110);
-    static_assert(offsetof(CSurvivorsPowerUpDefinition, m_sLocAbilityName) == 0x120);
-    static_assert(offsetof(CSurvivorsPowerUpDefinition, m_sLocAbilityDesc) == 0x128);
-    static_assert(offsetof(CSurvivorsPowerUpDefinition, m_sLocShardAbilityDesc) == 0x130);
-    static_assert(offsetof(CSurvivorsPowerUpDefinition, m_sLocScepterAbilityDesc) == 0x138);
-    static_assert(offsetof(CSurvivorsPowerUpDefinition, m_sLocHeroName) == 0x140);
-    static_assert(offsetof(CSurvivorsPowerUpDefinition, m_bModifierParticleUsesOverheadOffset) == 0x148);
-    static_assert(offsetof(CSurvivorsPowerUpDefinition, m_sModifierParticle) == 0x150);
-    static_assert(offsetof(CSurvivorsPowerUpDefinition, m_sStunParticle) == 0x230);
-    static_assert(offsetof(CSurvivorsPowerUpDefinition, m_sVulnerableParticle) == 0x310);
-    static_assert(offsetof(CSurvivorsPowerUpDefinition, m_sFreezeParticle) == 0x3f0);
-    static_assert(offsetof(CSurvivorsPowerUpDefinition, m_sHitStatusEffectParticle) == 0x4d0);
-    static_assert(offsetof(CSurvivorsPowerUpDefinition, m_sWarmupEffectParticle) == 0x5b0);
-    static_assert(offsetof(CSurvivorsPowerUpDefinition, m_vWarmupEffectColor) == 0x690);
-    static_assert(offsetof(CSurvivorsPowerUpDefinition, m_flWarmupEffectTime) == 0x69c);
-    static_assert(offsetof(CSurvivorsPowerUpDefinition, m_flSpawnPickupOnKillPercent) == 0x6a0);
-    static_assert(offsetof(CSurvivorsPowerUpDefinition, m_unSpawnPickupOnKillID) == 0x6a4);
+    static_assert(offsetof(CSurvivorsPowerUpDefinition, m_bIsShardUpgradeable) == 0x74);
+    static_assert(offsetof(CSurvivorsPowerUpDefinition, m_bIsScepterUpgradeable) == 0x75);
+    static_assert(offsetof(CSurvivorsPowerUpDefinition, m_sImage) == 0x78);
+    static_assert(offsetof(CSurvivorsPowerUpDefinition, m_sSource) == 0x90);
+    static_assert(offsetof(CSurvivorsPowerUpDefinition, m_sHeroImage) == 0x98);
+    static_assert(offsetof(CSurvivorsPowerUpDefinition, m_sLocAbilityName) == 0xa8);
+    static_assert(offsetof(CSurvivorsPowerUpDefinition, m_sLocAbilityDesc) == 0xb0);
+    static_assert(offsetof(CSurvivorsPowerUpDefinition, m_sLocShardAbilityDesc) == 0xb8);
+    static_assert(offsetof(CSurvivorsPowerUpDefinition, m_sLocScepterAbilityDesc) == 0xc0);
+    static_assert(offsetof(CSurvivorsPowerUpDefinition, m_sLocHeroName) == 0xc8);
+    static_assert(offsetof(CSurvivorsPowerUpDefinition, m_vecMinorUpgradeChoices) == 0xd0);
+    static_assert(offsetof(CSurvivorsPowerUpDefinition, m_vecAuthoredUpgradeChoices) == 0xe8);
+    static_assert(offsetof(CSurvivorsPowerUpDefinition, m_scepterUpgradeDefinition) == 0x100);
+    static_assert(offsetof(CSurvivorsPowerUpDefinition, m_bModifierParticleUsesOverheadOffset) == 0x140);
+    static_assert(offsetof(CSurvivorsPowerUpDefinition, m_sModifierParticle) == 0x148);
+    static_assert(offsetof(CSurvivorsPowerUpDefinition, m_sStunParticle) == 0x228);
+    static_assert(offsetof(CSurvivorsPowerUpDefinition, m_sVulnerableParticle) == 0x308);
+    static_assert(offsetof(CSurvivorsPowerUpDefinition, m_sFreezeParticle) == 0x3e8);
+    static_assert(offsetof(CSurvivorsPowerUpDefinition, m_sHitStatusEffectParticle) == 0x4c8);
+    static_assert(offsetof(CSurvivorsPowerUpDefinition, m_sWarmupEffectParticle) == 0x5a8);
+    static_assert(offsetof(CSurvivorsPowerUpDefinition, m_vWarmupEffectColor) == 0x688);
+    static_assert(offsetof(CSurvivorsPowerUpDefinition, m_flWarmupEffectTime) == 0x694);
+    static_assert(offsetof(CSurvivorsPowerUpDefinition, m_flSpawnPickupOnKillPercent) == 0x698);
+    static_assert(offsetof(CSurvivorsPowerUpDefinition, m_unSpawnPickupOnKillID) == 0x69c);
     
-    static_assert(sizeof(CSurvivorsPowerUpDefinition) == 0x6a8);
+    static_assert(sizeof(CSurvivorsPowerUpDefinition) == 0x6a0);
 };

@@ -15,7 +15,7 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x868
+    // Size: 0x860
     // Has VTable
     // Construct allowed
     // 
@@ -27,13 +27,13 @@ namespace source2sdk::client
     public:
         // m_sParticle has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CResourceNameTyped<CWeakHandle<resourcesystem::InfoForResourceTypeIParticleSystemDefinition>> m_sParticle;
-        char m_sParticle[0xe0]; // 0x6a8        
+        char m_sParticle[0xe0]; // 0x6a0        
         // m_sExplosionParticle has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CResourceNameTyped<CWeakHandle<resourcesystem::InfoForResourceTypeIParticleSystemDefinition>> m_sExplosionParticle;
-        char m_sExplosionParticle[0xe0]; // 0x788        
+        char m_sExplosionParticle[0xe0]; // 0x780        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CSurvivorsPowerUpDefinition_Spirits because it is not a standard-layout class
-    static_assert(sizeof(CSurvivorsPowerUpDefinition_Spirits) == 0x868);
+    static_assert(sizeof(CSurvivorsPowerUpDefinition_Spirits) == 0x860);
 };
