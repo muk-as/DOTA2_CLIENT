@@ -14,7 +14,7 @@ namespace source2sdk::client
     // Registered alignment: unknown
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x810
+    // Size: 0x818
     // Has VTable
     #pragma pack(push, 1)
     class CSurvivorsPowerUp_CounterHelix : public client::CSurvivorsPowerUp_AreaAttack_Circle
@@ -22,10 +22,11 @@ namespace source2sdk::client
     public:
         [[maybe_unused]] std::uint8_t pad_0x800[0x8]; // 0x800
         float m_flChanceToCounter; // 0x808        
-        [[maybe_unused]] std::uint8_t pad_0x80c[0x4];
+        float m_flDelayBetweenCounters; // 0x80c        
+        [[maybe_unused]] std::uint8_t pad_0x810[0x8];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CSurvivorsPowerUp_CounterHelix because it is not a standard-layout class
-    static_assert(sizeof(CSurvivorsPowerUp_CounterHelix) == 0x810);
+    static_assert(sizeof(CSurvivorsPowerUp_CounterHelix) == 0x818);
 };

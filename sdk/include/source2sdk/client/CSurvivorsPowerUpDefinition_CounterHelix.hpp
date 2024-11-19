@@ -25,7 +25,7 @@ namespace source2sdk::client
     {
     public:
         float m_flChanceToCounter; // 0x868        
-        [[maybe_unused]] std::uint8_t pad_0x86c[0x4];
+        float m_flDelayBetweenCounters; // 0x86c        
     };
     #pragma pack(pop)
     

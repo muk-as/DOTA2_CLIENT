@@ -19,7 +19,7 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: true
-    // Size: 0xb0
+    // Size: 0xb8
     // Construct allowed
     // 
     // static metadata: MGetKV3ClassDefaults
@@ -44,20 +44,21 @@ namespace source2sdk::client
         float m_flTriggerCollisionRadiusPadding; // 0x38        
         [[maybe_unused]] std::uint8_t pad_0x3c[0x4]; // 0x3c
         CUtlString m_pszPlayerHitSoundEvent; // 0x40        
+        CUtlString m_sLocDisplayName; // 0x48        
         // m_vecEconItems has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<client::item_definition_index_t> m_vecEconItems;
-        char m_vecEconItems[0x18]; // 0x48        
-        client::style_index_t m_unStyleIndex; // 0x60        
-        [[maybe_unused]] std::uint8_t pad_0x61[0x7]; // 0x61
+        char m_vecEconItems[0x18]; // 0x50        
+        client::style_index_t m_unStyleIndex; // 0x68        
+        [[maybe_unused]] std::uint8_t pad_0x69[0x7]; // 0x69
         // m_vecBaseAttributes has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<client::CSurvivorsAttributeValue> m_vecBaseAttributes;
-        char m_vecBaseAttributes[0x18]; // 0x68        
+        char m_vecBaseAttributes[0x18]; // 0x70        
         // m_vecStartingPowerUps has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<client::SurvivorsPowerUpID_t> m_vecStartingPowerUps;
-        char m_vecStartingPowerUps[0x18]; // 0x80        
+        char m_vecStartingPowerUps[0x18]; // 0x88        
         // m_vecInnatePowerUps has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<client::SurvivorsPowerUpID_t> m_vecInnatePowerUps;
-        char m_vecInnatePowerUps[0x18]; // 0x98        
+        char m_vecInnatePowerUps[0x18]; // 0xa0        
     };
     #pragma pack(pop)
     
@@ -75,11 +76,12 @@ namespace source2sdk::client
     static_assert(offsetof(CSurvivorsHeroDefinition, m_flCollisionHeight) == 0x34);
     static_assert(offsetof(CSurvivorsHeroDefinition, m_flTriggerCollisionRadiusPadding) == 0x38);
     static_assert(offsetof(CSurvivorsHeroDefinition, m_pszPlayerHitSoundEvent) == 0x40);
-    static_assert(offsetof(CSurvivorsHeroDefinition, m_vecEconItems) == 0x48);
-    static_assert(offsetof(CSurvivorsHeroDefinition, m_unStyleIndex) == 0x60);
-    static_assert(offsetof(CSurvivorsHeroDefinition, m_vecBaseAttributes) == 0x68);
-    static_assert(offsetof(CSurvivorsHeroDefinition, m_vecStartingPowerUps) == 0x80);
-    static_assert(offsetof(CSurvivorsHeroDefinition, m_vecInnatePowerUps) == 0x98);
+    static_assert(offsetof(CSurvivorsHeroDefinition, m_sLocDisplayName) == 0x48);
+    static_assert(offsetof(CSurvivorsHeroDefinition, m_vecEconItems) == 0x50);
+    static_assert(offsetof(CSurvivorsHeroDefinition, m_unStyleIndex) == 0x68);
+    static_assert(offsetof(CSurvivorsHeroDefinition, m_vecBaseAttributes) == 0x70);
+    static_assert(offsetof(CSurvivorsHeroDefinition, m_vecStartingPowerUps) == 0x88);
+    static_assert(offsetof(CSurvivorsHeroDefinition, m_vecInnatePowerUps) == 0xa0);
     
-    static_assert(sizeof(CSurvivorsHeroDefinition) == 0xb0);
+    static_assert(sizeof(CSurvivorsHeroDefinition) == 0xb8);
 };
