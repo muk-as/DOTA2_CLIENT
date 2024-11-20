@@ -14,7 +14,7 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x5d0
+    // Size: 0x5c8
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
@@ -22,10 +22,9 @@ namespace source2sdk::server
     class CDOTA_Ability_Tusk_Bitter_Chill : public server::CDOTABaseAbility
     {
     public:
-        CUtlString m_strCachedDependencyAbility; // 0x5c8        
+        // No schema binary for binding
     };
     #pragma pack(pop)
     
-    // Cannot assert offsets of fields in CDOTA_Ability_Tusk_Bitter_Chill because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Ability_Tusk_Bitter_Chill) == 0x5d0);
+    static_assert(sizeof(CDOTA_Ability_Tusk_Bitter_Chill) == 0x5c8);
 };

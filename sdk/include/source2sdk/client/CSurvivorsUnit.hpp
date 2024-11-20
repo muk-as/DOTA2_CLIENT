@@ -16,7 +16,7 @@ namespace source2sdk::client
     // Registered alignment: unknown
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x170
+    // Size: 0x180
     // Has VTable
     #pragma pack(push, 1)
     class CSurvivorsUnit : public client::CSurvivorsEntity
@@ -33,13 +33,13 @@ namespace source2sdk::client
         float m_flKnockbackResistance; // 0x48        
         float m_flStatusResistance; // 0x4c        
         float m_flBodyRadius; // 0x50        
-        [[maybe_unused]] std::uint8_t pad_0x54[0x3c]; // 0x54
+        [[maybe_unused]] std::uint8_t pad_0x54[0x4c]; // 0x54
         // m_playingStatusParticle has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CResourceNameTyped<CWeakHandle<resourcesystem::InfoForResourceTypeIParticleSystemDefinition>> m_playingStatusParticle;
-        char m_playingStatusParticle[0xe0]; // 0x90        
+        char m_playingStatusParticle[0xe0]; // 0xa0        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CSurvivorsUnit because it is not a standard-layout class
-    static_assert(sizeof(CSurvivorsUnit) == 0x170);
+    static_assert(sizeof(CSurvivorsUnit) == 0x180);
 };

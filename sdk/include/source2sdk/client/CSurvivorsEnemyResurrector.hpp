@@ -15,24 +15,24 @@ namespace source2sdk::client
     // Registered alignment: unknown
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x418
+    // Size: 0x428
     // Has VTable
     #pragma pack(push, 1)
     class CSurvivorsEnemyResurrector : public client::CSurvivorsEnemy
     {
     public:
-        int32_t m_nTotalResurrections; // 0x328        
-        int32_t m_nResurrectionsRemaining; // 0x32c        
-        float m_flMovementSpeedMultiplierPerDeath; // 0x330        
-        bool m_bIsDyingWithResurrection; // 0x334        
-        bool m_bIsResurrecting; // 0x335        
-        [[maybe_unused]] std::uint8_t pad_0x336[0x2]; // 0x336
+        int32_t m_nTotalResurrections; // 0x338        
+        int32_t m_nResurrectionsRemaining; // 0x33c        
+        float m_flMovementSpeedMultiplierPerDeath; // 0x340        
+        bool m_bIsDyingWithResurrection; // 0x344        
+        bool m_bIsResurrecting; // 0x345        
+        [[maybe_unused]] std::uint8_t pad_0x346[0x2]; // 0x346
         // m_sResurrectParticleName has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CResourceNameTyped<CWeakHandle<resourcesystem::InfoForResourceTypeIParticleSystemDefinition>> m_sResurrectParticleName;
-        char m_sResurrectParticleName[0xe0]; // 0x338        
+        char m_sResurrectParticleName[0xe0]; // 0x348        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CSurvivorsEnemyResurrector because it is not a standard-layout class
-    static_assert(sizeof(CSurvivorsEnemyResurrector) == 0x418);
+    static_assert(sizeof(CSurvivorsEnemyResurrector) == 0x428);
 };

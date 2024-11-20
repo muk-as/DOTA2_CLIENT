@@ -14,7 +14,7 @@ namespace source2sdk::client
     // Registered alignment: unknown
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x328
+    // Size: 0x338
     // Has VTable
     #pragma pack(push, 1)
     class CSurvivorsEnemyGolem : public client::CSurvivorsEnemy
@@ -24,5 +24,5 @@ namespace source2sdk::client
     };
     #pragma pack(pop)
     
-    static_assert(sizeof(CSurvivorsEnemyGolem) == 0x328);
+    static_assert(sizeof(CSurvivorsEnemyGolem) == 0x338);
 };

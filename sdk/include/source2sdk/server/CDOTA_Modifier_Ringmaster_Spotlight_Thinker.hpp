@@ -27,10 +27,10 @@ namespace source2sdk::server
         float sweep_speed; // 0x1714        
         float sweep_radius; // 0x1718        
         float linger_duration; // 0x171c        
-        Vector m_vStartLocation; // 0x1720        
-        Vector m_vTargetLocation; // 0x172c        
-        float m_flTargetReachedTime; // 0x1738        
-        [[maybe_unused]] std::uint8_t pad_0x173c[0x4];
+        int32_t spotlight_index; // 0x1720        
+        Vector m_vStartLocation; // 0x1724        
+        Vector m_vTargetLocation; // 0x1730        
+        float m_flTargetReachedTime; // 0x173c        
     };
     #pragma pack(pop)
     

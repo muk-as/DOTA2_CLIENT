@@ -16,7 +16,7 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: true
-    // Size: 0x98
+    // Size: 0xb0
     // Construct allowed
     // 
     // static metadata: MGetKV3ClassDefaults
@@ -51,6 +51,9 @@ namespace source2sdk::client
         // m_vecAdditionalStartingPowerUps has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<client::SurvivorsPowerUpID_t> m_vecAdditionalStartingPowerUps;
         char m_vecAdditionalStartingPowerUps[0x18]; // 0x80        
+        // m_vecOverrideImperiaEnrageHealthThresholds has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+        // CUtlVector<float> m_vecOverrideImperiaEnrageHealthThresholds;
+        char m_vecOverrideImperiaEnrageHealthThresholds[0x18]; // 0x98        
     };
     #pragma pack(pop)
     
@@ -72,6 +75,7 @@ namespace source2sdk::client
     static_assert(offsetof(CSurvivorsDifficultyDefinition, m_vecAdditionalEnemySpawners) == 0x50);
     static_assert(offsetof(CSurvivorsDifficultyDefinition, m_vecAdditionalEnemyEvents) == 0x68);
     static_assert(offsetof(CSurvivorsDifficultyDefinition, m_vecAdditionalStartingPowerUps) == 0x80);
+    static_assert(offsetof(CSurvivorsDifficultyDefinition, m_vecOverrideImperiaEnrageHealthThresholds) == 0x98);
     
-    static_assert(sizeof(CSurvivorsDifficultyDefinition) == 0x98);
+    static_assert(sizeof(CSurvivorsDifficultyDefinition) == 0xb0);
 };
