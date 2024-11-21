@@ -22,7 +22,7 @@ namespace source2sdk::client
     public:
         int32_t mana_restore_pct; // 0x1708        
         int32_t hp_restore_pct; // 0x170c        
-        int32_t dodged_spell_multiplier; // 0x1710        
+        float dodged_spell_multiplier; // 0x1710        
         int32_t mana_restore_base; // 0x1714        
         int32_t hp_restore_base; // 0x1718        
         [[maybe_unused]] std::uint8_t pad_0x171c[0x4];

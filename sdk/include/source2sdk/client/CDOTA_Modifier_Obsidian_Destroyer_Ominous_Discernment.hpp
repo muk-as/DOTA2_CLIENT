@@ -20,7 +20,7 @@ namespace source2sdk::client
     class CDOTA_Modifier_Obsidian_Destroyer_Ominous_Discernment : public client::CDOTA_Buff
     {
     public:
-        int32_t bonus_max_mana_per_int; // 0x1708        
+        float bonus_max_mana_per_int; // 0x1708        
         [[maybe_unused]] std::uint8_t pad_0x170c[0x4];
     };
     #pragma pack(pop)
