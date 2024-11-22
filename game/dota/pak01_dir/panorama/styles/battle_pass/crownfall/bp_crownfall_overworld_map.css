@@ -358,6 +358,76 @@
 	opacity: 0;
 }
 
+.Node .NodeAlert
+{
+	horizontal-align: center;
+	vertical-align: bottom;
+	overflow: noclip;
+	margin-bottom: 10px;
+	width: 80px;
+	height: width-percentage( 100% );
+	transition-property: transform, brightness;
+	transition-duration: 0.1s;
+	visibility: collapse;
+}
+
+.Node .NodeAlert .NodeAlertGlow
+{
+	horizontal-align: center;
+	vertical-align: center;
+	width: 34px;
+	transform: rotateZ( 45deg );
+	height: width-percentage( 100% );
+	box-shadow: 0px 0px 48px -4px rgba(255, 190, 115, 0.4);
+	-s2-mix-blend-mode: screen;
+	blur: gaussian( 4px );
+}
+
+.Node .NodeAlert .NodeAlertBackground
+{
+	horizontal-align: center;
+	vertical-align: center;
+	width: 32px;
+	height: width-percentage( 100% );
+	background-color: gradient( linear, 0% 0%, 100% 100%, from( #FFEFD5 ), color-stop( 0.5, #AC8C57), to( #2D200D ) );
+	transform: rotateZ( 45deg );
+	box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.6);
+}
+
+.Node .NodeAlert .NodeAlertInner
+{
+	horizontal-align: center;
+	vertical-align: center;
+	width: 28px;
+	height: width-percentage( 100% );
+	background-color: gradient( linear, 0% 0%, 100% 100%, from( #AE4313 ), to( #F7AB61 ) );
+	transform: rotateZ( 45deg );
+	border: 1px solid rgba(255, 255, 255, 0.139);
+}
+
+.Node .NodeAlert .NodeAlertIcon
+{
+	horizontal-align: center;
+	vertical-align: center;
+	width: 22px;
+	height: width-percentage( 100% );
+	img-shadow: 0px 2px 12px black;
+}
+
+.Node .NodeAlert:hover
+{
+	transform: scale3d( 1.1, 1.1, 1 );
+}
+
+.Node.artillery:not(.Node__Locked) #ArtilleryEncounterAlert
+{
+	visibility: visible;
+	animation-name: PulseAlert;
+	animation-duration: 0.6s;
+	animation-direction: alternate;
+	animation-iteration-count: infinite;
+}
+
 .Node.Node__Completed #NodeBackground:active
 {
 	brightness: 0.5;
@@ -1022,6 +1092,16 @@
 	
 }
 
+@keyframes 'PulseAlert'
+{
+	100%
+	{
+		brightness: 2;
+		pre-transform-scale2d: 1.2;
+	}
+	
+}
+
 .TokensUnlockContainer
 {
 	width: 100%;
@@ -1654,6 +1734,11 @@ DOTACrownfallToken
 .IntroState2 .StartPath .UnlockLabel,.IntroState3 .StartPath .UnlockLabel,.IntroState4 .StartPath .UnlockLabel
 {
 	visibility: collapse;
+}
+
+.ArtilleryNodeAlertHidden #ArtilleryEncounterAlert
+{
+	opacity: 0;
 }
 
 .BottomGradient

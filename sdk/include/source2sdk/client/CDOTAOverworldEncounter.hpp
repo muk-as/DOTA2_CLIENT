@@ -15,7 +15,7 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: true
-    // Size: 0x70
+    // Size: 0x78
     // Construct allowed
     // 
     // static metadata: MGetKV3ClassDefaults
@@ -37,6 +37,8 @@ namespace source2sdk::client
         char m_vecRewards[0x18]; // 0x40        
         CUtlString m_sDefaultDialogue; // 0x58        
         KeyValues3 m_kvCustomData; // 0x60        
+        int32_t m_nLeaderboardCount; // 0x70        
+        [[maybe_unused]] std::uint8_t pad_0x74[0x4];
     };
     #pragma pack(pop)
     
@@ -49,6 +51,7 @@ namespace source2sdk::client
     static_assert(offsetof(CDOTAOverworldEncounter, m_vecRewards) == 0x40);
     static_assert(offsetof(CDOTAOverworldEncounter, m_sDefaultDialogue) == 0x58);
     static_assert(offsetof(CDOTAOverworldEncounter, m_kvCustomData) == 0x60);
+    static_assert(offsetof(CDOTAOverworldEncounter, m_nLeaderboardCount) == 0x70);
     
-    static_assert(sizeof(CDOTAOverworldEncounter) == 0x70);
+    static_assert(sizeof(CDOTAOverworldEncounter) == 0x78);
 };

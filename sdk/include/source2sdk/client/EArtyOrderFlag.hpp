@@ -22,7 +22,7 @@ namespace source2sdk::client
         k_EArtyOrderFlag_PrevWeapon = 0x20,
         k_EArtyOrderFlag_FireStart = 0x40,
         k_EArtyOrderFlag_FireStop = 0x80,
-        k_EArtyOrderFlag_Turbo = 0x100,
+        k_EArtyOrderFlag_FineControl = 0x100,
         k_EArtyOrderFlag_PowerUp = 0x200,
         k_EArtyOrderFlag_PowerDown = 0x400,
         k_EArtyOrderFlag_MoveUp = 0x800,

@@ -792,6 +792,94 @@
 	background-color: red;
 }
 
+.DifficultySelectTabs
+{
+	horizontal-align: center;
+	margin-top: 2px;
+	ui-scale: 80%;
+}
+
+.DifficultySelectTabs .DifficultySelectTabsBackground
+{
+	ignore-parent-flow: true;
+	width: 100%;
+	height: 56px;
+	border-width: 56px 56px 0px 56px;
+	border-image-slice: 100% 112px 0px 112px;
+	border-image-repeat: stretch;
+	border-image-source: url("s2r://panorama/images/events/crownfall/buttons/tabs_background_png.vtex");
+}
+
+.DifficultySelectTabs .TabsContainer
+{
+	flow-children: right;
+	margin: 0px 9.5px;
+	vertical-align: center;
+}
+
+.DifficultySelectTabs .TabsContainer .TabItem
+{
+	min-width: 220px;
+	margin: 0px -4px;
+	height: 42px;
+	transition-property: brightness, transform;
+	transition-duration: 0.1s;
+}
+
+.DifficultySelectTabs .TabsContainer .TabItem:hover
+{
+	brightness: 2;
+}
+
+.DifficultySelectTabs .TabsContainer .TabItem:active
+{
+	transform: scale3d( 0.98, 0.98, 1 );
+	sound: "ui_generic_button_click";
+}
+
+.DifficultySelectTabs .TabsContainer .TabItem Label
+{
+	text-transform: uppercase;
+	font-weight: normal;
+	letter-spacing: 1.5px;
+	text-align: center;
+	color: gradient( linear, 0% 0%, 0% 100%, from( white ), to( #B0BCC2 ) );
+	text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.8);
+	horizontal-align: center;
+	vertical-align: center;
+}
+
+.DifficultySelectTabs .TabsContainer .TabItem .TabItemBg
+{
+	width: 100%;
+	border-width: 42px 42px 0px 42px;
+	border-image-slice: 100% 84px 0px 84px;
+	border-image-repeat: stretch;
+	border-image-source: url("s2r://panorama/images/events/crownfall/buttons/tab_background_png.vtex");
+	opacity: 0;
+	transform: scale3d( 0.95, 0.95, 1 );
+	transition-property: opacity, transform;
+	transition-duration: 0.15s;
+	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
+}
+
+.NormalMode #NormalModeTab .TabItemBg
+{
+	opacity: 1;
+	transform: none;
+}
+
+.HardMode #HardModeTab .TabItemBg
+{
+	opacity: 1;
+	transform: none;
+}
+
+.HardModeDisabled #HardModeTab
+{
+	opacity: 0.3;
+}
+
 .SetupScreen
 {
 	width: 100%;
@@ -964,6 +1052,11 @@
 }
 
 .GameState_LevelSelect:not(.IsLoading) .SetupScreen .SetupScreenMenu .BottomButtons .StartGameButton
+{
+	visibility: visible;
+}
+
+.GameState_LevelSelect:not(.IsLoading) .SetupScreen .SetupScreenMenu .BottomButtons .HardModeButton
 {
 	visibility: visible;
 }
@@ -1256,7 +1349,7 @@
 
 .PregameSection
 {
-	padding: 32px 32px;
+	padding: 48px 32px 32px;
 }
 
 .PregameSection .GameIntroDescription
@@ -1449,6 +1542,11 @@
 	background-image: url("s2r://panorama/images/control_icons/24px/space.vsvg");
 }
 
+.ControlKey .Shift
+{
+	background-image: url("s2r://panorama/images/control_icons/24px/arrow_up.vsvg");
+}
+
 .ControlDescriptionBlock
 {
 	width: 100%;
@@ -1499,6 +1597,18 @@
 .SpaceKey .KeyText
 {
 	width: 200px;
+}
+
+.ShiftKey
+{
+	horizontal-align: left;
+	flow-children: right;
+}
+
+.ShiftKey .KeyText
+{
+	width: 120px;
+	background-image: none;
 }
 
 .GameStateScreen
