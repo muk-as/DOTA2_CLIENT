@@ -15,7 +15,7 @@ namespace source2sdk::client
     // Registered alignment: unknown
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x7e8
+    // Size: 0x7f0
     // Has VTable
     #pragma pack(push, 1)
     class CSurvivorsPowerUp_Spirits : public client::CSurvivorsPowerUp
@@ -31,9 +31,11 @@ namespace source2sdk::client
         bool m_bActive; // 0x7e0        
         [[maybe_unused]] std::uint8_t pad_0x7e1[0x3]; // 0x7e1
         float m_flDurationTimer; // 0x7e4        
+        float m_flRange; // 0x7e8        
+        [[maybe_unused]] std::uint8_t pad_0x7ec[0x4];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CSurvivorsPowerUp_Spirits because it is not a standard-layout class
-    static_assert(sizeof(CSurvivorsPowerUp_Spirits) == 0x7e8);
+    static_assert(sizeof(CSurvivorsPowerUp_Spirits) == 0x7f0);
 };
