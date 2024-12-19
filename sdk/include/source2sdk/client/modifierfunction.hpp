@@ -13,7 +13,7 @@ namespace source2sdk::client
     // Size: 0x4
     enum class modifierfunction : std::uint32_t
     {
-        // MScriptDescription "pAX)û GetModifierPreAttack_BonusDamage"
+        // MScriptDescription "pQX)û GetModifierPreAttack_BonusDamage"
         MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE = 0x0,
         // MScriptDescription "GetModifierPreAttack_BonusDamage_Proc GetModifierPreAttack_BonusDamage_Target"
         MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE_TARGET = 0x1,
@@ -73,7 +73,7 @@ namespace source2sdk::client
         MODIFIER_PROPERTY_MOVESPEED_LIMIT = 0x1c,
         // MScriptDescription "GetModifierFixedAttackRate GetModifierAttackSpeedBaseOverride"
         MODIFIER_PROPERTY_ATTACKSPEED_BASE_OVERRIDE = 0x1d,
-        // MScriptDescription "`DX)û GetModifierFixedAttackRate"
+        // MScriptDescription "`TX)û GetModifierFixedAttackRate"
         MODIFIER_PROPERTY_FIXED_ATTACK_RATE = 0x1e,
         // MScriptDescription "GetModifierAttackSpeed_Limit GetModifierAttackSpeedBonus_Constant"
         MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT = 0x1f,
@@ -93,7 +93,7 @@ namespace source2sdk::client
         MODIFIER_PROPERTY_BASE_ATTACK_TIME_PERCENTAGE = 0x26,
         // MScriptDescription "GetModifierBonusDamageOutgoing_Percentage GetModifierAttackPointConstant"
         MODIFIER_PROPERTY_ATTACK_POINT_CONSTANT = 0x27,
-        // MScriptDescription "€EX)û GetModifierBonusDamageOutgoing_Percentage"
+        // MScriptDescription "€UX)û GetModifierBonusDamageOutgoing_Percentage"
         MODIFIER_PROPERTY_BONUSDAMAGEOUTGOING_PERCENTAGE = 0x28,
         // MScriptDescription "GetModifierDamageOutgoing_Percentage_Illusion GetModifierDamageOutgoing_Percentage"
         MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE = 0x29,
@@ -247,7 +247,7 @@ namespace source2sdk::client
         MODIFIER_PROPERTY_ATTACK_RANGE_BONUS_UNIQUE = 0x73,
         // MScriptDescription "GetModifierMaxAttackRange GetModifierAttackRangeBonusPercentage"
         MODIFIER_PROPERTY_ATTACK_RANGE_BONUS_PERCENTAGE = 0x74,
-        // MScriptDescription "ÐMX)û GetModifierMaxAttackRange"
+        // MScriptDescription "Ð]X)û GetModifierMaxAttackRange"
         MODIFIER_PROPERTY_MAX_ATTACK_RANGE = 0x75,
         // MScriptDescription "GetModifierProjectileSpeedBonusPercentage GetModifierProjectileSpeedBonus"
         MODIFIER_PROPERTY_PROJECTILE_SPEED_BONUS = 0x76,
@@ -255,7 +255,7 @@ namespace source2sdk::client
         MODIFIER_PROPERTY_PROJECTILE_SPEED_BONUS_PERCENTAGE = 0x77,
         // MScriptDescription "ReincarnateTime GetModifierProjectileName"
         MODIFIER_PROPERTY_PROJECTILE_NAME = 0x78,
-        // MScriptDescription "pNX)û ReincarnateTime"
+        // MScriptDescription "p^X)û ReincarnateTime"
         MODIFIER_PROPERTY_REINCARNATION = 0x79,
         // MScriptDescription "GetModifierConstantRespawnTime ReincarnateSuppressFX"
         MODIFIER_PROPERTY_REINCARNATION_SUPPRESS_FX = 0x7a,
@@ -431,7 +431,7 @@ namespace source2sdk::client
         MODIFIER_EVENT_ON_DEATH_PREVENTED = 0xcf,
         // MScriptDescription "Unused OnStateChanged"
         MODIFIER_EVENT_ON_STATE_CHANGED = 0xd0,
-        // MScriptDescription " XX)û Unused"
+        // MScriptDescription " hX)û Unused"
         MODIFIER_EVENT_ON_ORB_EFFECT = 0xd1,
         // MScriptDescription " OnProcessCleave"
         MODIFIER_EVENT_ON_PROCESS_CLEAVE = 0xd2,
@@ -481,7 +481,7 @@ namespace source2sdk::client
         MODIFIER_PROPERTY_MODEL_CHANGE = 0xe8,
         // MScriptDescription "GetModifierModelScaleAnimateTime GetModifierModelScale"
         MODIFIER_PROPERTY_MODEL_SCALE = 0xe9,
-        // MScriptDescription "P[X)û GetModifierModelScaleAnimateTime"
+        // MScriptDescription "PkX)û GetModifierModelScaleAnimateTime"
         MODIFIER_PROPERTY_MODEL_SCALE_ANIMATE_TIME = 0xea,
         // MScriptDescription "GetModifierModelScaleConstant GetModifierModelScaleUseInOutEase"
         MODIFIER_PROPERTY_MODEL_SCALE_USE_IN_OUT_EASE = 0xeb,
@@ -493,7 +493,7 @@ namespace source2sdk::client
         MODIFIER_PROPERTY_IS_SHARD = 0xee,
         // MScriptDescription "GetActivityTranslationModifiers GetModifierRadarCooldownReduction"
         MODIFIER_PROPERTY_RADAR_COOLDOWN_REDUCTION = 0xef,
-        // MScriptDescription "ð[X)û GetActivityTranslationModifiers"
+        // MScriptDescription "ðkX)û GetActivityTranslationModifiers"
         MODIFIER_PROPERTY_TRANSLATE_ACTIVITY_MODIFIERS = 0xf0,
         // MScriptDescription "GetUnitLifetimeFraction GetAttackSound"
         MODIFIER_PROPERTY_TRANSLATE_ATTACK_SOUND = 0xf1,
@@ -517,7 +517,7 @@ namespace source2sdk::client
         MODIFIER_PROPERTY_OVERRIDE_ABILITY_SPECIAL = 0xfa,
         // MScriptDescription "GetModifierAbilityLayout GetModifierOverrideAbilitySpecialValue"
         MODIFIER_PROPERTY_OVERRIDE_ABILITY_SPECIAL_VALUE = 0xfb,
-        // MScriptDescription "P]X)û GetModifierAbilityLayout"
+        // MScriptDescription "PmX)û GetModifierAbilityLayout"
         MODIFIER_PROPERTY_ABILITY_LAYOUT = 0xfc,
         // MScriptDescription "OnDominated"
         MODIFIER_EVENT_ON_DOMINATED = 0xfd,
@@ -531,7 +531,7 @@ namespace source2sdk::client
         MODIFIER_PROPERTY_PRESERVE_PARTICLES_ON_MODEL_CHANGE = 0x101,
         // MScriptDescription "GetModifierIgnoreCooldown OnAttackFinished"
         MODIFIER_EVENT_ON_ATTACK_FINISHED = 0x102,
-        // MScriptDescription "à^X)û GetModifierIgnoreCooldown"
+        // MScriptDescription "ànX)û GetModifierIgnoreCooldown"
         MODIFIER_PROPERTY_IGNORE_COOLDOWN = 0x103,
         // MScriptDescription "GetModifierCanAttackTrees"
         MODIFIER_PROPERTY_CAN_ATTACK_TREES = 0x104,
@@ -589,7 +589,7 @@ namespace source2sdk::client
         MODIFIER_EVENT_SPELL_APPLIED_SUCCESSFULLY = 0x11e,
         // MScriptDescription "GetModifierPropetyFailAttack GetModifierAvoidDamageAfterReductions"
         MODIFIER_PROPERTY_AVOID_DAMAGE_AFTER_REDUCTIONS = 0x11f,
-        // MScriptDescription "pbX)û GetModifierPropetyFailAttack"
+        // MScriptDescription "prX)û GetModifierPropetyFailAttack"
         MODIFIER_PROPERTY_FAIL_ATTACK = 0x120,
         // MScriptDescription "GetModifierSuppressFullscreenDeathFX GetModifierPrereduceIncomingDamage_Mult"
         MODIFIER_PROPERTY_PREREDUCE_INCOMING_DAMAGE_MULT = 0x121,
@@ -611,7 +611,7 @@ namespace source2sdk::client
         MODIFIER_PROPERTY_PROJECTILE_SPEED = 0x129,
         // MScriptDescription "GetModifierBecomeStrength GetModifierProjectileSpeedTarget"
         MODIFIER_PROPERTY_PROJECTILE_SPEED_TARGET = 0x12a,
-        // MScriptDescription "ðcX)û GetModifierBecomeStrength"
+        // MScriptDescription "ðsX)û GetModifierBecomeStrength"
         MODIFIER_PROPERTY_BECOME_STRENGTH = 0x12b,
         // MScriptDescription "GetModifierBecomeIntelligence GetModifierBecomeAgility"
         MODIFIER_PROPERTY_BECOME_AGILITY = 0x12c,
@@ -623,7 +623,7 @@ namespace source2sdk::client
         MODIFIER_EVENT_ON_FORCE_PROC_MAGIC_STICK = 0x12f,
         // MScriptDescription "GetModifierShareXPRune OnDamageHPLoss"
         MODIFIER_EVENT_ON_DAMAGE_HPLOSS = 0x130,
-        // MScriptDescription "ÀdX)û GetModifierShareXPRune"
+        // MScriptDescription "ÀtX)û GetModifierShareXPRune"
         MODIFIER_PROPERTY_SHARE_XPRUNE = 0x131,
         // MScriptDescription "GetModifierHasBonusNeutralItemChoice GetModifierNoFreeTPScrollOnDeath"
         MODIFIER_PROPERTY_NO_FREE_TP_SCROLL_ON_DEATH = 0x132,
@@ -647,7 +647,7 @@ namespace source2sdk::client
         MODIFIER_PROPERTY_ABILITY_POINTS = 0x13b,
         // MScriptDescription "GetModifierBuybackPenaltyPercent"
         MODIFIER_PROPERTY_BUYBACK_PENALTY_PERCENT = 0x13c,
-        // MScriptDescription "ÐeX)û GetModifierItemSellbackCost"
+        // MScriptDescription "ÐuX)û GetModifierItemSellbackCost"
         MODIFIER_PROPERTY_ITEM_SELLBACK_COST = 0x13d,
         // MScriptDescription "GetModifierFixedManaRegen GetModifierDisassembleAnything"
         MODIFIER_PROPERTY_DISASSEMBLE_ANYTHING = 0x13e,
@@ -705,7 +705,7 @@ namespace source2sdk::client
         MODIFIER_PROPERTY_TIER_TOKEN_REROLL = 0x158,
         // MScriptDescription "GetModifierTotal_ConstantBlockStacking GetVisionDegreeRestriction"
         MODIFIER_PROPERTY_VISION_DEGREES_RESTRICTION = 0x159,
-        // MScriptDescription " iX)û GetModifierTotal_ConstantBlockStacking"
+        // MScriptDescription " yX)û GetModifierTotal_ConstantBlockStacking"
         MODIFIER_PROPERTY_TOTAL_CONSTANT_BLOCK_STACKING = 0x15a,
         // MScriptDescription "OnTierTokenRerolled GetModifierInventorySlotRestricted"
         MODIFIER_PROPERTY_INVENTORY_SLOT_RESTRICTED = 0x15b,
