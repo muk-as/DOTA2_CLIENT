@@ -27,7 +27,7 @@ namespace source2sdk::server
     // Registered alignment: unknown
     // Alignment: 0x4
     // Standard-layout class: false
-    // Size: 0x2e8
+    // Size: 0x300
     // Has VTable
     #pragma pack(push, 1)
     class CDOTABehaviorPet : public server::CDOTABehaviorCompanion
@@ -60,22 +60,23 @@ namespace source2sdk::server
         server::CountdownTimer m_CarryItemTimer; // 0x270        
         server::CountdownTimer m_PickupDelayTimer; // 0x288        
         server::CountdownTimer m_LevelupCheckTimer; // 0x2a0        
-        bool m_bIsEmoting; // 0x2b8        
-        [[maybe_unused]] std::uint8_t pad_0x2b9[0x3]; // 0x2b9
+        server::CountdownTimer m_RareIdleTimer; // 0x2b8        
+        bool m_bIsEmoting; // 0x2d0        
+        [[maybe_unused]] std::uint8_t pad_0x2d1[0x3]; // 0x2d1
         // m_hEmoteTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<server::CDOTA_BaseNPC> m_hEmoteTarget;
-        char m_hEmoteTarget[0x4]; // 0x2bc        
-        server::CountdownTimer m_EmoteTimer; // 0x2c0        
-        int32_t m_nEmoteActivity; // 0x2d8        
+        char m_hEmoteTarget[0x4]; // 0x2d4        
+        server::CountdownTimer m_EmoteTimer; // 0x2d8        
+        int32_t m_nEmoteActivity; // 0x2f0        
         // m_tempGoalEntity has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<server::CBaseEntity> m_tempGoalEntity;
-        char m_tempGoalEntity[0x4]; // 0x2dc        
-        bool m_bFollowingTempGoal; // 0x2e0        
-        [[maybe_unused]] std::uint8_t pad_0x2e1[0x3]; // 0x2e1
-        int32_t m_event_dota_illusions_created; // 0x2e4        
+        char m_tempGoalEntity[0x4]; // 0x2f4        
+        bool m_bFollowingTempGoal; // 0x2f8        
+        [[maybe_unused]] std::uint8_t pad_0x2f9[0x3]; // 0x2f9
+        int32_t m_event_dota_illusions_created; // 0x2fc        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTABehaviorPet because it is not a standard-layout class
-    static_assert(sizeof(CDOTABehaviorPet) == 0x2e8);
+    static_assert(sizeof(CDOTABehaviorPet) == 0x300);
 };

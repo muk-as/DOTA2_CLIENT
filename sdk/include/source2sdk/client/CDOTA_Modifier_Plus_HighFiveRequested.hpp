@@ -24,8 +24,9 @@ namespace source2sdk::client
         float think_interval; // 0x170c        
         float acknowledged_cooldown; // 0x1710        
         bool m_bAcknowledged; // 0x1714        
-        bool m_bFirstThink; // 0x1715        
-        [[maybe_unused]] std::uint8_t pad_0x1716[0x2]; // 0x1716
+        bool m_bWithEnemy; // 0x1715        
+        bool m_bFirstThink; // 0x1716        
+        [[maybe_unused]] std::uint8_t pad_0x1717[0x1]; // 0x1717
         int32_t high_five_level; // 0x1718        
         [[maybe_unused]] std::uint8_t pad_0x171c[0x4];
     };

@@ -26,6 +26,7 @@
 		<include src="s2r://panorama/scripts/post_game_progress/post_game_progress_international2024.vts_c" />
 		<include src="s2r://panorama/scripts/post_game_progress/post_game_progress_frostivus2023.vts_c" />
 		<include src="s2r://panorama/scripts/post_game_progress/post_game_progress_crownfall.vts_c" />
+		<include src="s2r://panorama/scripts/post_game_progress/post_game_progress_frostivus2024.vts_c" />
 		<include src="s2r://panorama/scripts/post_game_progress/post_game_progress_sequence.vts_c" />
 	</scripts>
 	<snippets>
@@ -36,13 +37,15 @@
 						<Panel class="HeroBackgroundImage" />
 						<Panel class="HeroSelectGlow" />
 						<Panel class="Accolades" id="Accolades" />
-						<DOTAScenePanel id="HonorableMentionModel" class="OverviewHeroRender" drawbackground="0" environment="full_body_loadout" antialias="true" activity-modifier="PostGameIdle" particleonly="false" />
+						<DOTAScenePanel id="HonorableMentionModel" onload="DOTAPostGameHonorableMentionSpawnedHero()" class="OverviewHeroRender" drawbackground="0" environment="full_body_loadout" antialias="true" activity-modifier="PostGameIdle" particleonly="false" />
 						<Panel class="HeroImageOverlay" hittest="false" />
 					</Panel>
 					<Label id="PlayerName" class="OverviewHeroPlayerName" hittest="false" html="true" text="{g:dota_persona:ng:user_account_id}" />
 					<Label id="BotPlayerName" class="OverviewHeroPlayerName" hittest="false" text="{s:bot_player_name}" />
 					<Label class="Guildname" hittest="false" html="true" text="{g:dota_guild_name:user_guild_id}" />
 					<DOTAHeroImage id="MainHeroImage" heroimagestyle="landscape" scaling="stretch-to-fit-preserve-aspect" />
+					<Image id="EventLogo" scaling="cover" hittest="false" />
+					<DOTAParticleScenePanel id="ParticleOverlay" hittest="false" renderdeferred="true" particleonly="true" startActive="false" cameraOrigin="100 0 -200" lookAt="0 0 -200" fov="50" />
 				</Panel>
 			</Panel>
 		</snippet>
@@ -53,6 +56,8 @@
 				<DOTAAbilityImage class="ability_icon" id="ability_icon" />
 				<Label class="title" text="{s:title}" />
 				<Label class="details" id="details" text="{s:details}" html="true" />
+				<Image id="EventLogo" scaling="cover" hittest="false" />
+				<DOTAParticleScenePanel id="ParticleOverlay" hittest="false" renderdeferred="true" particleonly="true" startActive="true" cameraOrigin="100 0 -200" lookAt="0 0 -200" fov="50" />
 			</Panel>
 		</snippet>
 		<snippet name="HeroBadgeProgress">
@@ -1090,6 +1095,59 @@
 				</Panel>
 			</Panel>
 		</snippet>
+		<snippet name="Frostivus2024Component">
+			<Panel class="Frostivus2024Component">
+				<Panel class="ComponentImageContainer">
+					<Panel class="ComponentImageBackground" />
+					<Panel class="ComponentImageBackgroundInner" />
+					<Image id="ComponentImage" scaling="contain" />
+					<Panel class="ComponentDetails">
+						<Label class="ComponentCount" text="{d:component_count}" />
+						<Label class="ComponentName" text="{s:component_name}" />
+					</Panel>
+				</Panel>
+				<Panel id="QuestList" />
+			</Panel>
+		</snippet>
+		<snippet name="Frostivus2024QuestProgressContainer">
+			<Panel class="Frostivus2024QuestContainer">
+				<Panel class="DescriptionContainer">
+					<Panel class="CheckMark" />
+					<Label text="{s:quest_progress}" class="QuestProgress" />
+				</Panel>
+			</Panel>
+		</snippet>
+		<snippet name="Frostivus2024Progress">
+			<Panel class="ProgressScreen" onactivate="StartSkippingAhead()">
+				<Panel class="BackgroundImageContainer">
+					<Panel class="BackgroundTexture" />
+				</Panel>
+				<DOTAParticleScenePanel class="SmokeFX Bottom" hittest="false" particleName="particles/ui/battle_pass/ui_bp_2022_diretide_home_background.vpcf" require-composition-layer="true" renderdeferred="true" particleonly="false" startActive="true" cameraOrigin="200 0 0" lookAt="0 0 0" fov="60" squarePixels="true" />
+				<Panel class="BottomGradient" hittest="false" />
+				<Panel id="Frostivus2024ProgressMain">
+					<Panel id="Frostivus2024ProgressTitle">
+						<Image class="Frostivus2024Logo en" src="s2r://panorama/images/front_page/frostivus_2024_en_psd.vtex" scaling="stretch-to-fit-preserve-aspect" />
+						<Image class="Frostivus2024Logo cn" src="s2r://panorama/images/front_page/frostivus_2024_cn_psd.vtex" scaling="stretch-to-fit-preserve-aspect" />
+					</Panel>
+					<Panel id="Frostivus2024ProgressRewards">
+						<Image class="Frostivus2024Divider" src="s2r://panorama/images/events/frostivus/2024/frostivus_divider_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+						<Panel id="InventoryList" />
+					</Panel>
+					<Panel class="Frostivus2024SectionDivider">
+						<Panel class="Frostivus2024SectionDividerDash Left" />
+						<Image class="Frostivus2024SectionDividerSnowflake" src="s2r://panorama/images/events/frostivus/2024/snowflake_2_gold_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+						<Panel class="Frostivus2024SectionDividerDash Right" />
+					</Panel>
+					<Panel class="FrostivusRewardClaimableContainer">
+						<Panel class="Frostivus2024RewardArrow Left" />
+						<Panel class="RewardClaimableBadge">
+							<Label text="#DOTA_Frostivus2024_RewardCraftable" />
+						</Panel>
+						<Panel class="Frostivus2024RewardArrow Right" />
+					</Panel>
+				</Panel>
+			</Panel>
+		</snippet>
 		<snippet name="CavernCrawlProgress">
 			<Panel class="ProgressScreen" onactivate="StartSkippingAhead()">
 				<DOTACavernCrawlPostGameProgress id="CavernCrawl" />
@@ -1195,6 +1253,7 @@
 					<Panel class="Accolades" id="Accolades" />
 				</Panel>
 				<Panel id="HonorableMentionsContainer">
+					<Panel id="EventHonorableMentions" />
 					<Label text="#DOTA_MVP_HonorableMentions" />
 					<Panel id="HonorableMentions" />
 				</Panel>
@@ -1401,6 +1460,7 @@
 			<TextButton class="PopupButton" text="International 2024" unlocalized="true" onactivate="TestAnimateInternational2024()" />
 			<TextButton class="PopupButton" text="Frostivus 2023" unlocalized="true" onactivate="TestAnimateFrostivus2023()" />
 			<TextButton class="PopupButton" text="Crownfall" unlocalized="true" onactivate="TestAnimateCrownfall()" />
+			<TextButton class="PopupButton" text="Frostivus 2024" unlocalized="true" onactivate="TestAnimateFrostivus2024()" />
 			<TextButton class="PopupButton Blue" text="Reset" unlocalized="true" onactivate="ResetScreens()" />
 			<TextButton class="PopupButton Blue" text="Exit" unlocalized="true" onactivate="HideProgress()" />
 		</Panel>

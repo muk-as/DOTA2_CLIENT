@@ -20,7 +20,7 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x1880
+    // Size: 0x18b8
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
@@ -28,11 +28,11 @@ namespace source2sdk::server
     class CDOTA_Unit_Undying_Zombie : public server::CDOTA_BaseNPC_Creep
     {
     public:
-        server::CountdownTimer m_ctRespawn; // 0x1860        
-        server::CDOTA_BaseNPC* m_pTombstone; // 0x1878        
+        server::CountdownTimer m_ctRespawn; // 0x1898        
+        server::CDOTA_BaseNPC* m_pTombstone; // 0x18b0        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Unit_Undying_Zombie because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Unit_Undying_Zombie) == 0x1880);
+    static_assert(sizeof(CDOTA_Unit_Undying_Zombie) == 0x18b8);
 };

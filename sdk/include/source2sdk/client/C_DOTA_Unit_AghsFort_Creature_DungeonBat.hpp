@@ -15,7 +15,7 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x1870
+    // Size: 0x1888
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
@@ -23,11 +23,11 @@ namespace source2sdk::client
     class C_DOTA_Unit_AghsFort_Creature_DungeonBat : public client::C_DOTA_BaseNPC_Creature
     {
     public:
-        client::ParticleIndex_t m_nFXAmbient; // 0x1868        
-        [[maybe_unused]] std::uint8_t pad_0x186c[0x4];
+        client::ParticleIndex_t m_nFXAmbient; // 0x1880        
+        [[maybe_unused]] std::uint8_t pad_0x1884[0x4];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in C_DOTA_Unit_AghsFort_Creature_DungeonBat because it is not a standard-layout class
-    static_assert(sizeof(C_DOTA_Unit_AghsFort_Creature_DungeonBat) == 0x1870);
+    static_assert(sizeof(C_DOTA_Unit_AghsFort_Creature_DungeonBat) == 0x1888);
 };

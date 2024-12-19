@@ -15,7 +15,7 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x1868
+    // Size: 0x1880
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
@@ -23,11 +23,11 @@ namespace source2sdk::client
     class C_DOTA_Unit_Brewmaster_PrimalStorm : public client::C_DOTA_BaseNPC_Creep
     {
     public:
-        client::ParticleIndex_t m_nFXStormAmbient1; // 0x1860        
-        client::ParticleIndex_t m_nFXStormAmbient2; // 0x1864        
+        client::ParticleIndex_t m_nFXStormAmbient1; // 0x1878        
+        client::ParticleIndex_t m_nFXStormAmbient2; // 0x187c        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in C_DOTA_Unit_Brewmaster_PrimalStorm because it is not a standard-layout class
-    static_assert(sizeof(C_DOTA_Unit_Brewmaster_PrimalStorm) == 0x1868);
+    static_assert(sizeof(C_DOTA_Unit_Brewmaster_PrimalStorm) == 0x1880);
 };

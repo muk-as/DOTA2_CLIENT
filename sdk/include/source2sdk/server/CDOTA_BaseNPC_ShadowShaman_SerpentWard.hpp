@@ -14,7 +14,7 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x1840
+    // Size: 0x1878
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
@@ -22,11 +22,11 @@ namespace source2sdk::server
     class CDOTA_BaseNPC_ShadowShaman_SerpentWard : public server::CDOTA_BaseNPC_Additive
     {
     public:
-        QAngle m_angle; // 0x1830        
-        int32_t m_iPoseParameterAim; // 0x183c        
+        QAngle m_angle; // 0x1868        
+        int32_t m_iPoseParameterAim; // 0x1874        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_BaseNPC_ShadowShaman_SerpentWard because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_BaseNPC_ShadowShaman_SerpentWard) == 0x1840);
+    static_assert(sizeof(CDOTA_BaseNPC_ShadowShaman_SerpentWard) == 0x1878);
 };

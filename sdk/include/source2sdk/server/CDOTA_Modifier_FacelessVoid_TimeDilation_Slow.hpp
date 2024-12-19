@@ -16,7 +16,7 @@ namespace source2sdk::server
     // Registered alignment: unknown
     // Alignment: unknown
     // Standard-layout class: false
-    // Size: 0x1858
+    // Size: 0x1880
     // Has VTable
     #pragma pack(push, 1)
     class CDOTA_Modifier_FacelessVoid_TimeDilation_Slow : public client::CDOTA_Buff
@@ -29,10 +29,10 @@ namespace source2sdk::server
         int32_t cooldown_percentage; // 0x1718        
         int32_t damage_per_stack; // 0x171c        
         int32_t base_damage; // 0x1720        
-        [[maybe_unused]] std::uint8_t pad_0x1724[0x134];
+        [[maybe_unused]] std::uint8_t pad_0x1724[0x15c];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Modifier_FacelessVoid_TimeDilation_Slow because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_FacelessVoid_TimeDilation_Slow) == 0x1858);
+    static_assert(sizeof(CDOTA_Modifier_FacelessVoid_TimeDilation_Slow) == 0x1880);
 };

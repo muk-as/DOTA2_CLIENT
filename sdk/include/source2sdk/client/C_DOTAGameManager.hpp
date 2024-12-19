@@ -14,7 +14,7 @@ namespace source2sdk::client
     // Registered alignment: unknown
     // Alignment: 0x8
     // Standard-layout class: true
-    // Size: 0x1d10
+    // Size: 0x34b0
     // Has VTable
     // MNetworkNoBase
     // 
@@ -26,56 +26,56 @@ namespace source2sdk::client
         [[maybe_unused]] std::uint8_t pad_0x00[0x30]; // 0x0
         // metadata: MNetworkChangeAccessorFieldPathIndex
         entity2::CNetworkVarChainer __m_pChainEntity; // 0x30        
-        [[maybe_unused]] std::uint8_t pad_0x58[0xa18]; // 0x58
-        bool m_bCustomGame; // 0xa70        
-        bool m_bEventGame; // 0xa71        
-        bool m_bGameModeWantsDefaultNeutralItemSchema; // 0xa72        
-        bool m_bGameModeFilteredAbilities; // 0xa73        
-        char m_szAddOnGame[128]; // 0xa74        
-        char m_szAddOnMap[128]; // 0xaf4        
-        [[maybe_unused]] std::uint8_t pad_0xb74[0xa04]; // 0xb74
-        KeyValues* m_pTutorialLessonKeyValues; // 0x1578        
-        KeyValues* m_pDivisionKeyValues; // 0x1580        
-        KeyValues* m_pMatchGroupsKeyValues; // 0x1588        
-        KeyValues* m_pAnimationStatues; // 0x1590        
-        KeyValues* m_pBotScriptsDedicatedServer; // 0x1598        
-        KeyValues* m_pkvWardPlacementLocations; // 0x15a0        
-        KeyValues* m_pRegionKeyValues; // 0x15a8        
-        KeyValues* m_pSurveyQuestionData; // 0x15b0        
-        KeyValues3 m_AddonInfoKeyValues; // 0x15b8        
-        [[maybe_unused]] std::uint8_t pad_0x15c8[0x28]; // 0x15c8
-        KeyValues* m_pCountryKeyValues; // 0x15f0        
-        [[maybe_unused]] std::uint8_t pad_0x15f8[0x5f8]; // 0x15f8
-        bool m_bLoadedPortraits[9]; // 0x1bf0        
-        [[maybe_unused]] std::uint8_t pad_0x1bf9[0x7]; // 0x1bf9
-        KeyValues* m_pControlGroupsKeyValues; // 0x1c00        
-        KeyValues3* m_pItemSuggestPreferenceKeyValues; // 0x1c08        
+        [[maybe_unused]] std::uint8_t pad_0x58[0x15e8]; // 0x58
+        bool m_bCustomGame; // 0x1640        
+        bool m_bEventGame; // 0x1641        
+        bool m_bGameModeWantsDefaultNeutralItemSchema; // 0x1642        
+        bool m_bGameModeFilteredAbilities; // 0x1643        
+        char m_szAddOnGame[128]; // 0x1644        
+        char m_szAddOnMap[128]; // 0x16c4        
+        [[maybe_unused]] std::uint8_t pad_0x1744[0x15d4]; // 0x1744
+        KeyValues* m_pTutorialLessonKeyValues; // 0x2d18        
+        KeyValues* m_pDivisionKeyValues; // 0x2d20        
+        KeyValues* m_pMatchGroupsKeyValues; // 0x2d28        
+        KeyValues* m_pAnimationStatues; // 0x2d30        
+        KeyValues* m_pBotScriptsDedicatedServer; // 0x2d38        
+        KeyValues* m_pkvWardPlacementLocations; // 0x2d40        
+        KeyValues* m_pRegionKeyValues; // 0x2d48        
+        KeyValues* m_pSurveyQuestionData; // 0x2d50        
+        KeyValues3 m_AddonInfoKeyValues; // 0x2d58        
+        [[maybe_unused]] std::uint8_t pad_0x2d68[0x28]; // 0x2d68
+        KeyValues* m_pCountryKeyValues; // 0x2d90        
+        [[maybe_unused]] std::uint8_t pad_0x2d98[0x5f8]; // 0x2d98
+        bool m_bLoadedPortraits[9]; // 0x3390        
+        [[maybe_unused]] std::uint8_t pad_0x3399[0x7]; // 0x3399
+        KeyValues* m_pControlGroupsKeyValues; // 0x33a0        
+        KeyValues3* m_pItemSuggestPreferenceKeyValues; // 0x33a8        
         // metadata: MNetworkEnable
-        bool m_CurrentHeroAvailable[256]; // 0x1c10        
+        bool m_CurrentHeroAvailable[256]; // 0x33b0        
     };
     #pragma pack(pop)
     
     static_assert(offsetof(C_DOTAGameManager, __m_pChainEntity) == 0x30);
-    static_assert(offsetof(C_DOTAGameManager, m_bCustomGame) == 0xa70);
-    static_assert(offsetof(C_DOTAGameManager, m_bEventGame) == 0xa71);
-    static_assert(offsetof(C_DOTAGameManager, m_bGameModeWantsDefaultNeutralItemSchema) == 0xa72);
-    static_assert(offsetof(C_DOTAGameManager, m_bGameModeFilteredAbilities) == 0xa73);
-    static_assert(offsetof(C_DOTAGameManager, m_szAddOnGame) == 0xa74);
-    static_assert(offsetof(C_DOTAGameManager, m_szAddOnMap) == 0xaf4);
-    static_assert(offsetof(C_DOTAGameManager, m_pTutorialLessonKeyValues) == 0x1578);
-    static_assert(offsetof(C_DOTAGameManager, m_pDivisionKeyValues) == 0x1580);
-    static_assert(offsetof(C_DOTAGameManager, m_pMatchGroupsKeyValues) == 0x1588);
-    static_assert(offsetof(C_DOTAGameManager, m_pAnimationStatues) == 0x1590);
-    static_assert(offsetof(C_DOTAGameManager, m_pBotScriptsDedicatedServer) == 0x1598);
-    static_assert(offsetof(C_DOTAGameManager, m_pkvWardPlacementLocations) == 0x15a0);
-    static_assert(offsetof(C_DOTAGameManager, m_pRegionKeyValues) == 0x15a8);
-    static_assert(offsetof(C_DOTAGameManager, m_pSurveyQuestionData) == 0x15b0);
-    static_assert(offsetof(C_DOTAGameManager, m_AddonInfoKeyValues) == 0x15b8);
-    static_assert(offsetof(C_DOTAGameManager, m_pCountryKeyValues) == 0x15f0);
-    static_assert(offsetof(C_DOTAGameManager, m_bLoadedPortraits) == 0x1bf0);
-    static_assert(offsetof(C_DOTAGameManager, m_pControlGroupsKeyValues) == 0x1c00);
-    static_assert(offsetof(C_DOTAGameManager, m_pItemSuggestPreferenceKeyValues) == 0x1c08);
-    static_assert(offsetof(C_DOTAGameManager, m_CurrentHeroAvailable) == 0x1c10);
+    static_assert(offsetof(C_DOTAGameManager, m_bCustomGame) == 0x1640);
+    static_assert(offsetof(C_DOTAGameManager, m_bEventGame) == 0x1641);
+    static_assert(offsetof(C_DOTAGameManager, m_bGameModeWantsDefaultNeutralItemSchema) == 0x1642);
+    static_assert(offsetof(C_DOTAGameManager, m_bGameModeFilteredAbilities) == 0x1643);
+    static_assert(offsetof(C_DOTAGameManager, m_szAddOnGame) == 0x1644);
+    static_assert(offsetof(C_DOTAGameManager, m_szAddOnMap) == 0x16c4);
+    static_assert(offsetof(C_DOTAGameManager, m_pTutorialLessonKeyValues) == 0x2d18);
+    static_assert(offsetof(C_DOTAGameManager, m_pDivisionKeyValues) == 0x2d20);
+    static_assert(offsetof(C_DOTAGameManager, m_pMatchGroupsKeyValues) == 0x2d28);
+    static_assert(offsetof(C_DOTAGameManager, m_pAnimationStatues) == 0x2d30);
+    static_assert(offsetof(C_DOTAGameManager, m_pBotScriptsDedicatedServer) == 0x2d38);
+    static_assert(offsetof(C_DOTAGameManager, m_pkvWardPlacementLocations) == 0x2d40);
+    static_assert(offsetof(C_DOTAGameManager, m_pRegionKeyValues) == 0x2d48);
+    static_assert(offsetof(C_DOTAGameManager, m_pSurveyQuestionData) == 0x2d50);
+    static_assert(offsetof(C_DOTAGameManager, m_AddonInfoKeyValues) == 0x2d58);
+    static_assert(offsetof(C_DOTAGameManager, m_pCountryKeyValues) == 0x2d90);
+    static_assert(offsetof(C_DOTAGameManager, m_bLoadedPortraits) == 0x3390);
+    static_assert(offsetof(C_DOTAGameManager, m_pControlGroupsKeyValues) == 0x33a0);
+    static_assert(offsetof(C_DOTAGameManager, m_pItemSuggestPreferenceKeyValues) == 0x33a8);
+    static_assert(offsetof(C_DOTAGameManager, m_CurrentHeroAvailable) == 0x33b0);
     
-    static_assert(sizeof(C_DOTAGameManager) == 0x1d10);
+    static_assert(sizeof(C_DOTAGameManager) == 0x34b0);
 };

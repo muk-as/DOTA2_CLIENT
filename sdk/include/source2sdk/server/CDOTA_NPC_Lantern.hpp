@@ -14,7 +14,7 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x1948
+    // Size: 0x1980
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
@@ -25,10 +25,10 @@ namespace source2sdk::server
     {
     public:
         // metadata: MNetworkEnable
-        CUtlSymbolLarge m_szInteractAbilityName; // 0x1940        
+        CUtlSymbolLarge m_szInteractAbilityName; // 0x1978        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_NPC_Lantern because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_NPC_Lantern) == 0x1948);
+    static_assert(sizeof(CDOTA_NPC_Lantern) == 0x1980);
 };

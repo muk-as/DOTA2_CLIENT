@@ -15,7 +15,7 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x1ea0
+    // Size: 0x1ed8
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
@@ -28,24 +28,24 @@ namespace source2sdk::server
     class CDOTA_Unit_Hero_Spectre : public server::CDOTA_BaseNPC_Hero
     {
     public:
-        bool m_bArcanaKillstreakCompleted; // 0x1e90        
+        bool m_bArcanaKillstreakCompleted; // 0x1ec8        
         // metadata: MNetworkEnable
         // metadata: MNetworkChangeCallback "OnSpectreArcanaProgressChanged"
-        uint8_t m_unCurrentArcanaKillStreak; // 0x1e91        
+        uint8_t m_unCurrentArcanaKillStreak; // 0x1ec9        
         // metadata: MNetworkEnable
         // metadata: MNetworkChangeCallback "OnSpectreArcanaProgressChanged"
-        uint8_t m_unBestArcanaKillStreak; // 0x1e92        
-        [[maybe_unused]] std::uint8_t pad_0x1e93[0x1]; // 0x1e93
+        uint8_t m_unBestArcanaKillStreak; // 0x1eca        
+        [[maybe_unused]] std::uint8_t pad_0x1ecb[0x1]; // 0x1ecb
         // metadata: MNetworkEnable
         // metadata: MNetworkChangeCallback "OnSpectreArcanaProgressChanged"
-        client::PlayerID_t m_nVictimPlayerID; // 0x1e94        
+        client::PlayerID_t m_nVictimPlayerID; // 0x1ecc        
         // metadata: MNetworkEnable
         // metadata: MNetworkChangeCallback "OnSpectreArcanaProgressChanged"
-        bool m_bArcanaKillstreakRecordBroken; // 0x1e98        
-        [[maybe_unused]] std::uint8_t pad_0x1e99[0x7];
+        bool m_bArcanaKillstreakRecordBroken; // 0x1ed0        
+        [[maybe_unused]] std::uint8_t pad_0x1ed1[0x7];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Unit_Hero_Spectre because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Unit_Hero_Spectre) == 0x1ea0);
+    static_assert(sizeof(CDOTA_Unit_Hero_Spectre) == 0x1ed8);
 };

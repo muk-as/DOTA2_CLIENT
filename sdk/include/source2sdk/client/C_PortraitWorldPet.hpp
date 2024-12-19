@@ -14,16 +14,17 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0xaf8
+    // Size: 0xb00
     // Has VTable
     // Construct allowed
     #pragma pack(push, 1)
     class C_PortraitWorldPet : public client::C_DynamicProp
     {
     public:
+        [[maybe_unused]] std::uint8_t pad_0xaf8[0x8];
         // No schema binary for binding
     };
     #pragma pack(pop)
     
-    static_assert(sizeof(C_PortraitWorldPet) == 0xaf8);
+    static_assert(sizeof(C_PortraitWorldPet) == 0xb00);
 };

@@ -14,7 +14,7 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x1838
+    // Size: 0x1870
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
@@ -22,11 +22,11 @@ namespace source2sdk::server
     class CDOTA_NPC_Treant_EyesInTheForest : public server::CDOTA_BaseNPC_Additive
     {
     public:
-        bool m_bIsBlind; // 0x1830        
-        [[maybe_unused]] std::uint8_t pad_0x1831[0x7];
+        bool m_bIsBlind; // 0x1868        
+        [[maybe_unused]] std::uint8_t pad_0x1869[0x7];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_NPC_Treant_EyesInTheForest because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_NPC_Treant_EyesInTheForest) == 0x1838);
+    static_assert(sizeof(CDOTA_NPC_Treant_EyesInTheForest) == 0x1870);
 };

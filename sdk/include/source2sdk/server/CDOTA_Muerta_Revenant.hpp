@@ -14,7 +14,7 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x1830
+    // Size: 0x1868
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
@@ -26,5 +26,5 @@ namespace source2sdk::server
     };
     #pragma pack(pop)
     
-    static_assert(sizeof(CDOTA_Muerta_Revenant) == 0x1830);
+    static_assert(sizeof(CDOTA_Muerta_Revenant) == 0x1868);
 };

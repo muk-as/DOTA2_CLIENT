@@ -45,7 +45,7 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x1858
+    // Size: 0x1870
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
@@ -260,286 +260,287 @@ namespace source2sdk::client
         // metadata: MNetworkChangeCallback "OnAbilitiesChanged"
         // metadata: MNetworkPriority "32"
         // m_hAbilities has a template type with potentially unknown template parameters. You can try uncommenting the field below.
-        // CHandle<client::C_BaseEntity> m_hAbilities[35];
-        char m_hAbilities[0x8c]; // 0xb28        
-        float m_flInvisibilityLevel; // 0xbb4        
-        float m_flHullRadius; // 0xbb8        
-        float m_flCollisionPadding; // 0xbbc        
-        float m_flRingRadius; // 0xbc0        
-        float m_flProjectileCollisionSize; // 0xbc4        
-        CUtlSymbolLarge m_iszUnitName; // 0xbc8        
-        CUtlSymbolLarge m_iszUnitNameIconOverride; // 0xbd0        
-        CUtlSymbolLarge m_iszParticleFolder; // 0xbd8        
-        CUtlSymbolLarge m_iszSoundSet; // 0xbe0        
-        CUtlSymbolLarge m_iszSelectionGroup; // 0xbe8        
-        CUtlSymbolLarge m_iszVoiceFile; // 0xbf0        
-        CUtlSymbolLarge m_iszGameSoundsFile; // 0xbf8        
-        CUtlSymbolLarge m_iszVoiceBackgroundSound; // 0xc00        
-        CUtlSymbolLarge m_iszIdleSoundLoop; // 0xc08        
+        // CHandle<client::C_BaseEntity> m_hAbilities[40];
+        char m_hAbilities[0xa0]; // 0xb28        
+        float m_flInvisibilityLevel; // 0xbc8        
+        float m_flHullRadius; // 0xbcc        
+        float m_flCollisionPadding; // 0xbd0        
+        float m_flRingRadius; // 0xbd4        
+        float m_flProjectileCollisionSize; // 0xbd8        
+        [[maybe_unused]] std::uint8_t pad_0xbdc[0x4]; // 0xbdc
+        CUtlSymbolLarge m_iszUnitName; // 0xbe0        
+        CUtlSymbolLarge m_iszUnitNameIconOverride; // 0xbe8        
+        CUtlSymbolLarge m_iszParticleFolder; // 0xbf0        
+        CUtlSymbolLarge m_iszSoundSet; // 0xbf8        
+        CUtlSymbolLarge m_iszSelectionGroup; // 0xc00        
+        CUtlSymbolLarge m_iszVoiceFile; // 0xc08        
+        CUtlSymbolLarge m_iszGameSoundsFile; // 0xc10        
+        CUtlSymbolLarge m_iszVoiceBackgroundSound; // 0xc18        
+        CUtlSymbolLarge m_iszIdleSoundLoop; // 0xc20        
         // metadata: MNetworkEnable
-        CUtlString m_szUnitLabel; // 0xc10        
+        CUtlString m_szUnitLabel; // 0xc28        
         // metadata: MNetworkEnable
-        CUtlString m_szScaleset; // 0xc18        
+        CUtlString m_szScaleset; // 0xc30        
         // metadata: MNetworkEnable
-        uint8_t m_nUnitLabelIndex; // 0xc20        
-        [[maybe_unused]] std::uint8_t pad_0xc21[0x7]; // 0xc21
-        CUtlString m_strAnimationModifier; // 0xc28        
-        CUtlString m_TerrainSpecificFootstepEffect; // 0xc30        
-        bool m_bUseCustomTerrainWeatherEffect; // 0xc38        
-        bool m_bHasClientSoundReplacement; // 0xc39        
-        bool m_bHasClientReplacementParticle; // 0xc3a        
-        [[maybe_unused]] std::uint8_t pad_0xc3b[0x9]; // 0xc3b
-        bool m_bResourcesLoaded; // 0xc44        
-        [[maybe_unused]] std::uint8_t pad_0xc45[0x3]; // 0xc45
+        uint8_t m_nUnitLabelIndex; // 0xc38        
+        [[maybe_unused]] std::uint8_t pad_0xc39[0x7]; // 0xc39
+        CUtlString m_strAnimationModifier; // 0xc40        
+        CUtlString m_TerrainSpecificFootstepEffect; // 0xc48        
+        bool m_bUseCustomTerrainWeatherEffect; // 0xc50        
+        bool m_bHasClientSoundReplacement; // 0xc51        
+        bool m_bHasClientReplacementParticle; // 0xc52        
+        [[maybe_unused]] std::uint8_t pad_0xc53[0x9]; // 0xc53
+        bool m_bResourcesLoaded; // 0xc5c        
+        [[maybe_unused]] std::uint8_t pad_0xc5d[0x3]; // 0xc5d
         // metadata: MNetworkEnable
-        entity2::GameTime_t m_flTauntCooldown; // 0xc48        
+        entity2::GameTime_t m_flTauntCooldown; // 0xc60        
         // metadata: MNetworkEnable
-        entity2::GameTime_t m_flTauntCooldown2; // 0xc4c        
+        entity2::GameTime_t m_flTauntCooldown2; // 0xc64        
         // metadata: MNetworkEnable
-        client::DOTA_SHOP_TYPE m_iCurShop; // 0xc50        
-        [[maybe_unused]] std::uint8_t pad_0xc54[0x4]; // 0xc54
+        client::DOTA_SHOP_TYPE m_iCurShop; // 0xc68        
+        [[maybe_unused]] std::uint8_t pad_0xc6c[0x4]; // 0xc6c
         // metadata: MNetworkEnable
-        CUtlSymbolLarge m_szCurShopEntName; // 0xc58        
+        CUtlSymbolLarge m_szCurShopEntName; // 0xc70        
         // metadata: MNetworkEnable
-        int32_t m_iDayTimeVisionRange; // 0xc60        
+        int32_t m_iDayTimeVisionRange; // 0xc78        
         // metadata: MNetworkEnable
-        int32_t m_iNightTimeVisionRange; // 0xc64        
+        int32_t m_iNightTimeVisionRange; // 0xc7c        
         // metadata: MNetworkEnable
         // metadata: MNetworkChangeCallback "OnDamageMinChanged"
-        int32_t m_iDamageMin; // 0xc68        
+        int32_t m_iDamageMin; // 0xc80        
         // metadata: MNetworkEnable
         // metadata: MNetworkChangeCallback "OnDamageMaxChanged"
-        int32_t m_iDamageMax; // 0xc6c        
+        int32_t m_iDamageMax; // 0xc84        
         // metadata: MNetworkEnable
-        int32_t m_iDamageBonus; // 0xc70        
+        int32_t m_iDamageBonus; // 0xc88        
         // metadata: MNetworkEnable
-        int32_t m_iBaseDamageMin; // 0xc74        
+        int32_t m_iBaseDamageMin; // 0xc8c        
         // metadata: MNetworkEnable
-        int32_t m_iBaseDamageMax; // 0xc78        
+        int32_t m_iBaseDamageMax; // 0xc90        
         // metadata: MNetworkEnable
         // metadata: MNetworkPriority "32"
-        int32_t m_iTaggedAsVisibleByTeam; // 0xc7c        
+        int32_t m_iTaggedAsVisibleByTeam; // 0xc94        
         // metadata: MNetworkEnable
-        client::CDOTA_ModifierManager m_ModifierManager; // 0xc80        
+        client::CDOTA_ModifierManager m_ModifierManager; // 0xc98        
         // metadata: MNetworkEnable
-        client::C_DOTA_UnitInventory m_Inventory; // 0xfa0        
-        [[maybe_unused]] std::uint8_t pad_0x1070[0x10]; // 0x1070
+        client::C_DOTA_UnitInventory m_Inventory; // 0xfb8        
+        [[maybe_unused]] std::uint8_t pad_0x1088[0x10]; // 0x1088
         // metadata: MNetworkEnable
         // metadata: MNetworkChangeCallback "OnUnitStateChanged"
         // metadata: MNetworkPriority "32"
-        uint64_t m_nUnitState64; // 0x1080        
-        [[maybe_unused]] std::uint8_t pad_0x1088[0x8]; // 0x1088
-        uint64_t m_nUnitDebuffState; // 0x1090        
-        bool m_bHasInventory; // 0x1098        
-        [[maybe_unused]] std::uint8_t pad_0x1099[0x3]; // 0x1099
-        int32_t m_iAcquisitionRange; // 0x109c        
-        int32_t m_FoWViewID; // 0x10a0        
-        int32_t m_iPrevHealthPct; // 0x10a4        
-        int32_t m_iPrevLifeState; // 0x10a8        
-        int32_t m_iPrevTeam; // 0x10ac        
-        bool m_bPrevProvidesVision; // 0x10b0        
-        [[maybe_unused]] std::uint8_t pad_0x10b1[0x7]; // 0x10b1
-        uint64_t m_nPrevControllableMask; // 0x10b8        
-        [[maybe_unused]] std::uint8_t pad_0x10c0[0x8]; // 0x10c0
-        client::CountdownTimer m_TagTime; // 0x10c8        
-        client::CountdownTimer m_ClickedTime; // 0x10e0        
-        entity2::GameTime_t m_flIdleRunPoseStartTime[2]; // 0x10f8        
-        float m_flIdleRunPoseDuration[2]; // 0x1100        
-        bool m_bAnimationTransitionActive; // 0x1108        
-        [[maybe_unused]] std::uint8_t pad_0x1109[0x3]; // 0x1109
-        int32_t m_nAnimationTransitionPoseParameters[2]; // 0x110c        
-        int32_t m_nAnimationTransitionInjuredPoseParameters[2]; // 0x1114        
-        int32_t m_nAnimationTransitionAggressivePoseParameters[2]; // 0x111c        
-        [[maybe_unused]] std::uint8_t pad_0x1124[0x5c]; // 0x1124
-        entity2::GameTime_t m_flTimeSinceLastAbilityNag; // 0x1180        
+        uint64_t m_nUnitState64; // 0x1098        
+        [[maybe_unused]] std::uint8_t pad_0x10a0[0x8]; // 0x10a0
+        uint64_t m_nUnitDebuffState; // 0x10a8        
+        bool m_bHasInventory; // 0x10b0        
+        [[maybe_unused]] std::uint8_t pad_0x10b1[0x3]; // 0x10b1
+        int32_t m_iAcquisitionRange; // 0x10b4        
+        int32_t m_FoWViewID; // 0x10b8        
+        int32_t m_iPrevHealthPct; // 0x10bc        
+        int32_t m_iPrevLifeState; // 0x10c0        
+        int32_t m_iPrevTeam; // 0x10c4        
+        bool m_bPrevProvidesVision; // 0x10c8        
+        [[maybe_unused]] std::uint8_t pad_0x10c9[0x7]; // 0x10c9
+        uint64_t m_nPrevControllableMask; // 0x10d0        
+        [[maybe_unused]] std::uint8_t pad_0x10d8[0x8]; // 0x10d8
+        client::CountdownTimer m_TagTime; // 0x10e0        
+        client::CountdownTimer m_ClickedTime; // 0x10f8        
+        entity2::GameTime_t m_flIdleRunPoseStartTime[2]; // 0x1110        
+        float m_flIdleRunPoseDuration[2]; // 0x1118        
+        bool m_bAnimationTransitionActive; // 0x1120        
+        [[maybe_unused]] std::uint8_t pad_0x1121[0x3]; // 0x1121
+        int32_t m_nAnimationTransitionPoseParameters[2]; // 0x1124        
+        int32_t m_nAnimationTransitionInjuredPoseParameters[2]; // 0x112c        
+        int32_t m_nAnimationTransitionAggressivePoseParameters[2]; // 0x1134        
+        [[maybe_unused]] std::uint8_t pad_0x113c[0x5c]; // 0x113c
+        entity2::GameTime_t m_flTimeSinceLastAbilityNag; // 0x1198        
         // metadata: MNetworkEnable
         // metadata: MNetworkPriority "32"
-        int32_t m_iAttackCapabilities; // 0x1184        
+        int32_t m_iAttackCapabilities; // 0x119c        
         // metadata: MNetworkEnable
         // metadata: MNetworkPriority "32"
-        int32_t m_iSpecialAbility; // 0x1188        
-        int32_t m_iMoveCapabilities; // 0x118c        
+        int32_t m_iSpecialAbility; // 0x11a0        
+        int32_t m_iMoveCapabilities; // 0x11a4        
         // metadata: MNetworkEnable
-        client::PlayerID_t m_nPlayerOwnerID; // 0x1190        
+        client::PlayerID_t m_nPlayerOwnerID; // 0x11a8        
         // metadata: MNetworkEnable
-        entity2::GameTime_t m_flLastDamageTime; // 0x1194        
+        entity2::GameTime_t m_flLastDamageTime; // 0x11ac        
         // metadata: MNetworkEnable
-        entity2::GameTime_t m_flLastAttackTime; // 0x1198        
-        [[maybe_unused]] std::uint8_t pad_0x119c[0x4]; // 0x119c
-        CUtlSymbolLarge m_iszMinimapIcon; // 0x11a0        
-        [[maybe_unused]] std::uint8_t pad_0x11a8[0x8]; // 0x11a8
-        float m_flMinimapIconSize; // 0x11b0        
-        bool m_bMinimapDisableTint; // 0x11b4        
-        bool m_bMinimapDisableRotation; // 0x11b5        
-        Color m_colorHeroGlow; // 0x11b6        
-        [[maybe_unused]] std::uint8_t pad_0x11ba[0x2]; // 0x11ba
-        int32_t m_iNearShopMask; // 0x11bc        
-        int32_t m_nPoseParameterTurn; // 0x11c0        
-        int32_t m_nPoseParameterRun; // 0x11c4        
-        float m_flLean; // 0x11c8        
-        float m_flRun; // 0x11cc        
+        entity2::GameTime_t m_flLastAttackTime; // 0x11b0        
+        [[maybe_unused]] std::uint8_t pad_0x11b4[0x4]; // 0x11b4
+        CUtlSymbolLarge m_iszMinimapIcon; // 0x11b8        
+        [[maybe_unused]] std::uint8_t pad_0x11c0[0x8]; // 0x11c0
+        float m_flMinimapIconSize; // 0x11c8        
+        bool m_bMinimapDisableTint; // 0x11cc        
+        bool m_bMinimapDisableRotation; // 0x11cd        
+        Color m_colorHeroGlow; // 0x11ce        
+        [[maybe_unused]] std::uint8_t pad_0x11d2[0x2]; // 0x11d2
+        int32_t m_iNearShopMask; // 0x11d4        
+        int32_t m_nPoseParameterTurn; // 0x11d8        
+        int32_t m_nPoseParameterRun; // 0x11dc        
+        float m_flLean; // 0x11e0        
+        float m_flRun; // 0x11e4        
         // metadata: MNetworkEnable
         // metadata: MNetworkPriority "32"
-        int32_t m_anglediff; // 0x11d0        
-        bool m_bInfoKeyActive; // 0x11d4        
-        bool m_bNewUpdateAssetModifiersNetworked; // 0x11d5        
-        [[maybe_unused]] std::uint8_t pad_0x11d6[0x2]; // 0x11d6
-        entity2::GameTick_t m_nAssetModifiersLastUpdatedTick; // 0x11d8        
-        bool m_bSuppressGlow; // 0x11dc        
-        bool m_bWasSinking; // 0x11dd        
-        [[maybe_unused]] std::uint8_t pad_0x11de[0x2]; // 0x11de
-        float m_flRangeDisplayDist; // 0x11e0        
-        [[maybe_unused]] std::uint8_t pad_0x11e4[0x1e4]; // 0x11e4
-        CUtlSymbolLarge m_szDefaultIdle; // 0x13c8        
-        CUtlSymbolLarge m_szDefaultRareIdle; // 0x13d0        
-        client::CountdownTimer m_damagetimer; // 0x13d8        
-        Vector m_vRenderOrigin; // 0x13f0        
-        float m_fZDelta; // 0x13fc        
+        int32_t m_anglediff; // 0x11e8        
+        bool m_bInfoKeyActive; // 0x11ec        
+        bool m_bNewUpdateAssetModifiersNetworked; // 0x11ed        
+        [[maybe_unused]] std::uint8_t pad_0x11ee[0x2]; // 0x11ee
+        entity2::GameTick_t m_nAssetModifiersLastUpdatedTick; // 0x11f0        
+        bool m_bSuppressGlow; // 0x11f4        
+        bool m_bWasSinking; // 0x11f5        
+        [[maybe_unused]] std::uint8_t pad_0x11f6[0x2]; // 0x11f6
+        float m_flRangeDisplayDist; // 0x11f8        
+        [[maybe_unused]] std::uint8_t pad_0x11fc[0x1e4]; // 0x11fc
+        CUtlSymbolLarge m_szDefaultIdle; // 0x13e0        
+        CUtlSymbolLarge m_szDefaultRareIdle; // 0x13e8        
+        client::CountdownTimer m_damagetimer; // 0x13f0        
+        Vector m_vRenderOrigin; // 0x1408        
+        float m_fZDelta; // 0x1414        
         // metadata: MNetworkEnable
-        entity2::GameTime_t m_flDeathTime; // 0x1400        
-        bool m_bBaseStatsChanged; // 0x1404        
-        bool m_bNeedsSoundEmitterRefresh; // 0x1405        
-        [[maybe_unused]] std::uint8_t pad_0x1406[0x2]; // 0x1406
+        entity2::GameTime_t m_flDeathTime; // 0x1418        
+        bool m_bBaseStatsChanged; // 0x141c        
+        bool m_bNeedsSoundEmitterRefresh; // 0x141d        
+        [[maybe_unused]] std::uint8_t pad_0x141e[0x2]; // 0x141e
         // metadata: MNetworkEnable
-        float m_flPhysicalArmorValue; // 0x1408        
+        float m_flPhysicalArmorValue; // 0x1420        
         // metadata: MNetworkEnable
-        float m_flMagicalResistanceValue; // 0x140c        
-        int32_t m_nPrevSequenceParity; // 0x1410        
-        [[maybe_unused]] std::uint8_t pad_0x1414[0xa4]; // 0x1414
-        float m_flPrevInvisLevel; // 0x14b8        
-        [[maybe_unused]] std::uint8_t pad_0x14bc[0x4]; // 0x14bc
+        float m_flMagicalResistanceValue; // 0x1424        
+        int32_t m_nPrevSequenceParity; // 0x1428        
+        [[maybe_unused]] std::uint8_t pad_0x142c[0xa4]; // 0x142c
+        float m_flPrevInvisLevel; // 0x14d0        
+        [[maybe_unused]] std::uint8_t pad_0x14d4[0x4]; // 0x14d4
         // m_nOriginalModelIndex has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CStrongHandle<resourcesystem::InfoForResourceTypeCModel> m_nOriginalModelIndex;
-        char m_nOriginalModelIndex[0x8]; // 0x14c0        
+        char m_nOriginalModelIndex[0x8]; // 0x14d8        
         // m_nClientOriginalModelIndex has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CStrongHandle<resourcesystem::InfoForResourceTypeCModel> m_nClientOriginalModelIndex;
-        char m_nClientOriginalModelIndex[0x8]; // 0x14c8        
+        char m_nClientOriginalModelIndex[0x8]; // 0x14e0        
         // m_nClientReplacementModelIndex has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CStrongHandle<resourcesystem::InfoForResourceTypeCModel> m_nClientReplacementModelIndex;
-        char m_nClientReplacementModelIndex[0x8]; // 0x14d0        
-        bool m_bClientReplacementModelNeedsRebuild; // 0x14d8        
-        [[maybe_unused]] std::uint8_t pad_0x14d9[0x3]; // 0x14d9
-        int32_t m_nClientReplacementModelReloadCount; // 0x14dc        
+        char m_nClientReplacementModelIndex[0x8]; // 0x14e8        
+        bool m_bClientReplacementModelNeedsRebuild; // 0x14f0        
+        [[maybe_unused]] std::uint8_t pad_0x14f1[0x3]; // 0x14f1
+        int32_t m_nClientReplacementModelReloadCount; // 0x14f4        
         // metadata: MNetworkEnable
         // metadata: MNetworkChangeCallback "OnUnitModelVariantChanged"
-        int8_t m_nUnitModelVariant; // 0x14e0        
-        int8_t m_nUnitModelVariantCount; // 0x14e1        
-        [[maybe_unused]] std::uint8_t pad_0x14e2[0x2]; // 0x14e2
-        int32_t m_iPrevSequence; // 0x14e4        
-        char* m_pLastWeatherEffectName; // 0x14e8        
-        [[maybe_unused]] std::uint8_t pad_0x14f0[0x8]; // 0x14f0
-        client::CountdownTimer m_VoiceBackgroundSoundTimer; // 0x14f8        
+        int8_t m_nUnitModelVariant; // 0x14f8        
+        int8_t m_nUnitModelVariantCount; // 0x14f9        
+        [[maybe_unused]] std::uint8_t pad_0x14fa[0x2]; // 0x14fa
+        int32_t m_iPrevSequence; // 0x14fc        
+        char* m_pLastWeatherEffectName; // 0x1500        
+        [[maybe_unused]] std::uint8_t pad_0x1508[0x8]; // 0x1508
+        client::CountdownTimer m_VoiceBackgroundSoundTimer; // 0x1510        
         // metadata: MNetworkEnable
-        bool m_bIsWaitingToSpawn; // 0x1510        
-        [[maybe_unused]] std::uint8_t pad_0x1511[0x7]; // 0x1511
+        bool m_bIsWaitingToSpawn; // 0x1528        
+        [[maybe_unused]] std::uint8_t pad_0x1529[0x7]; // 0x1529
         // metadata: MNetworkEnable
-        int64_t m_nTotalDamageTaken; // 0x1518        
+        int64_t m_nTotalDamageTaken; // 0x1530        
         // metadata: MNetworkEnable
         // metadata: MNetworkBitCount "18"
         // metadata: MNetworkMinValue "-100,000000"
         // metadata: MNetworkMaxValue "1000,000000"
         // metadata: MNetworkChangeCallback "OnManaRegenChanged"
-        float m_flManaRegen; // 0x1520        
+        float m_flManaRegen; // 0x1538        
         // metadata: MNetworkEnable
         // metadata: MNetworkBitCount "18"
         // metadata: MNetworkMinValue "-100,000000"
         // metadata: MNetworkMaxValue "1000,000000"
         // metadata: MNetworkChangeCallback "OnHealthRegenChanged"
-        float m_flHealthRegen; // 0x1524        
+        float m_flHealthRegen; // 0x153c        
         // metadata: MNetworkEnable
-        bool m_bIsMoving; // 0x1528        
-        [[maybe_unused]] std::uint8_t pad_0x1529[0x3]; // 0x1529
+        bool m_bIsMoving; // 0x1540        
+        [[maybe_unused]] std::uint8_t pad_0x1541[0x3]; // 0x1541
         // metadata: MNetworkEnable
-        float m_fRevealRadius; // 0x152c        
+        float m_fRevealRadius; // 0x1544        
         // metadata: MNetworkEnable
-        bool m_bCanUseWards; // 0x1530        
+        bool m_bCanUseWards; // 0x1548        
         // metadata: MNetworkEnable
-        bool m_bCanUseAllItems; // 0x1531        
-        [[maybe_unused]] std::uint8_t pad_0x1532[0x2]; // 0x1532
+        bool m_bCanUseAllItems; // 0x1549        
+        [[maybe_unused]] std::uint8_t pad_0x154a[0x2]; // 0x154a
         // metadata: MNetworkEnable
-        int32_t m_iXPBounty; // 0x1534        
+        int32_t m_iXPBounty; // 0x154c        
         // metadata: MNetworkEnable
-        int32_t m_iXPBountyExtra; // 0x1538        
+        int32_t m_iXPBountyExtra; // 0x1550        
         // metadata: MNetworkEnable
-        int32_t m_iGoldBountyMin; // 0x153c        
+        int32_t m_iGoldBountyMin; // 0x1554        
         // metadata: MNetworkEnable
-        int32_t m_iGoldBountyMax; // 0x1540        
+        int32_t m_iGoldBountyMax; // 0x1558        
         // metadata: MNetworkEnable
         // m_hOwnerNPC has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<client::C_BaseEntity> m_hOwnerNPC;
-        char m_hOwnerNPC[0x4]; // 0x1544        
+        char m_hOwnerNPC[0x4]; // 0x155c        
         // metadata: MNetworkEnable
         // m_hGoalEntity has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<client::C_BaseEntity> m_hGoalEntity;
-        char m_hGoalEntity[0x4]; // 0x1548        
+        char m_hGoalEntity[0x4]; // 0x1560        
         // metadata: MNetworkEnable
         // m_hNeutralSpawner has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<client::C_DOTA_NeutralSpawner> m_hNeutralSpawner;
-        char m_hNeutralSpawner[0x4]; // 0x154c        
+        char m_hNeutralSpawner[0x4]; // 0x1564        
         // m_hClientOverrideMaterial has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CStrongHandle<resourcesystem::InfoForResourceTypeIMaterial2> m_hClientOverrideMaterial;
-        char m_hClientOverrideMaterial[0x8]; // 0x1550        
-        bool m_bCombinerMaterialOverrideListChanged; // 0x1558        
-        [[maybe_unused]] std::uint8_t pad_0x1559[0x3]; // 0x1559
-        int32_t m_nBaseModelMeshCount; // 0x155c        
+        char m_hClientOverrideMaterial[0x8]; // 0x1568        
+        bool m_bCombinerMaterialOverrideListChanged; // 0x1570        
+        [[maybe_unused]] std::uint8_t pad_0x1571[0x3]; // 0x1571
+        int32_t m_nBaseModelMeshCount; // 0x1574        
         // m_combinerMaterialOverrideList has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<CStrongHandleCopyable<resourcesystem::InfoForResourceTypeIMaterial2>> m_combinerMaterialOverrideList;
-        char m_combinerMaterialOverrideList[0x18]; // 0x1560        
-        int8_t m_nArcanaLevel; // 0x1578        
-        int8_t m_nDefaultArcanaLevel; // 0x1579        
-        Color m_defaultColorGemColor; // 0x157a        
-        [[maybe_unused]] std::uint8_t pad_0x157e[0x1a]; // 0x157e
-        bool m_bHasBuiltWearableSpawnList; // 0x1598        
-        bool m_bHasCostume; // 0x1599        
-        bool m_bRecreateParticleSystemsOnModifiersChange; // 0x159a        
-        [[maybe_unused]] std::uint8_t pad_0x159b[0x19]; // 0x159b
-        float m_flAdditionalSinkDelay; // 0x15b4        
-        [[maybe_unused]] std::uint8_t pad_0x15b8[0xe0]; // 0x15b8
+        char m_combinerMaterialOverrideList[0x18]; // 0x1578        
+        int8_t m_nArcanaLevel; // 0x1590        
+        int8_t m_nDefaultArcanaLevel; // 0x1591        
+        Color m_defaultColorGemColor; // 0x1592        
+        [[maybe_unused]] std::uint8_t pad_0x1596[0x1a]; // 0x1596
+        bool m_bHasBuiltWearableSpawnList; // 0x15b0        
+        bool m_bHasCostume; // 0x15b1        
+        bool m_bRecreateParticleSystemsOnModifiersChange; // 0x15b2        
+        [[maybe_unused]] std::uint8_t pad_0x15b3[0x19]; // 0x15b3
+        float m_flAdditionalSinkDelay; // 0x15cc        
+        [[maybe_unused]] std::uint8_t pad_0x15d0[0xe0]; // 0x15d0
         // metadata: MNetworkEnable
         // metadata: MNetworkPriority "32"
-        int32_t m_NetworkActivity; // 0x1698        
-        int32_t m_PrevNetworkActivity; // 0x169c        
+        int32_t m_NetworkActivity; // 0x16b0        
+        int32_t m_PrevNetworkActivity; // 0x16b4        
         // metadata: MNetworkEnable
         // metadata: MNetworkPriority "32"
-        int32_t m_NetworkSequenceIndex; // 0x16a0        
+        int32_t m_NetworkSequenceIndex; // 0x16b8        
         // metadata: MNetworkEnable
-        bool m_bShouldDoFlyHeightVisual; // 0x16a4        
-        [[maybe_unused]] std::uint8_t pad_0x16a5[0x3]; // 0x16a5
+        bool m_bShouldDoFlyHeightVisual; // 0x16bc        
+        [[maybe_unused]] std::uint8_t pad_0x16bd[0x3]; // 0x16bd
         // metadata: MNetworkEnable
-        float m_flStartSequenceCycle; // 0x16a8        
-        [[maybe_unused]] std::uint8_t pad_0x16ac[0x4]; // 0x16ac
+        float m_flStartSequenceCycle; // 0x16c0        
+        [[maybe_unused]] std::uint8_t pad_0x16c4[0x4]; // 0x16c4
         // m_ActivityModifiers has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<CUtlSymbol> m_ActivityModifiers;
-        char m_ActivityModifiers[0x18]; // 0x16b0        
+        char m_ActivityModifiers[0x18]; // 0x16c8        
         // m_hBackgroundSceneEnt has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<client::C_SceneEntity> m_hBackgroundSceneEnt;
-        char m_hBackgroundSceneEnt[0x4]; // 0x16c8        
+        char m_hBackgroundSceneEnt[0x4]; // 0x16e0        
         // m_hSpeakingSceneEnt has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<client::C_SceneEntity> m_hSpeakingSceneEnt;
-        char m_hSpeakingSceneEnt[0x4]; // 0x16cc        
-        [[maybe_unused]] std::uint8_t pad_0x16d0[0x10]; // 0x16d0
+        char m_hSpeakingSceneEnt[0x4]; // 0x16e4        
+        [[maybe_unused]] std::uint8_t pad_0x16e8[0x10]; // 0x16e8
         // m_hOldWearables has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<CHandle<client::C_EconWearable>> m_hOldWearables;
-        char m_hOldWearables[0x18]; // 0x16e0        
+        char m_hOldWearables[0x18]; // 0x16f8        
         // m_hOldWearableSkins has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<CUtlStringToken> m_hOldWearableSkins;
-        char m_hOldWearableSkins[0x18]; // 0x16f8        
+        char m_hOldWearableSkins[0x18]; // 0x1710        
         // metadata: MNetworkEnable
-        char m_CustomHealthLabel[256]; // 0x1710        
+        char m_CustomHealthLabel[256]; // 0x1728        
         // metadata: MNetworkEnable
-        Color m_CustomHealthLabelColor; // 0x1810        
-        client::item_definition_index_t m_nWearableDefIndex; // 0x1814        
-        [[maybe_unused]] std::uint8_t pad_0x1818[0x1]; // 0x1818
-        Color m_gibTintColor; // 0x1819        
-        bool m_bForceMaterialCombine; // 0x181d        
-        bool m_bShouldDrawParticlesWhileHidden; // 0x181e        
-        bool m_bIsClientThinkPending; // 0x181f        
-        bool m_bActivityModifiersDirty; // 0x1820        
-        bool m_bUnitModelVariantChanged; // 0x1821        
-        bool m_bWearablesAreTaunting; // 0x1822        
-        [[maybe_unused]] std::uint8_t pad_0x1823[0x15]; // 0x1823
-        bool m_bShowCannotBeDisabledIcon; // 0x1838        
-        [[maybe_unused]] std::uint8_t pad_0x1839[0x1f];
+        Color m_CustomHealthLabelColor; // 0x1828        
+        client::item_definition_index_t m_nWearableDefIndex; // 0x182c        
+        [[maybe_unused]] std::uint8_t pad_0x1830[0x1]; // 0x1830
+        Color m_gibTintColor; // 0x1831        
+        bool m_bForceMaterialCombine; // 0x1835        
+        bool m_bShouldDrawParticlesWhileHidden; // 0x1836        
+        bool m_bIsClientThinkPending; // 0x1837        
+        bool m_bActivityModifiersDirty; // 0x1838        
+        bool m_bUnitModelVariantChanged; // 0x1839        
+        bool m_bWearablesAreTaunting; // 0x183a        
+        [[maybe_unused]] std::uint8_t pad_0x183b[0x15]; // 0x183b
+        bool m_bShowCannotBeDisabledIcon; // 0x1850        
+        [[maybe_unused]] std::uint8_t pad_0x1851[0x1f];
         
         // Datamap fields:
         // int32_t InputSetStyleOverride; // 0x0
@@ -553,5 +554,5 @@ namespace source2sdk::client
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in C_DOTA_BaseNPC because it is not a standard-layout class
-    static_assert(sizeof(C_DOTA_BaseNPC) == 0x1858);
+    static_assert(sizeof(C_DOTA_BaseNPC) == 0x1870);
 };

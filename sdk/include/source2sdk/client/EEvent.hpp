@@ -8,7 +8,7 @@
 
 namespace source2sdk::client
 {
-    // Enumerator count: 49
+    // Enumerator count: 50
     // Alignment: 4
     // Size: 0x4
     enum class EEvent : std::uint32_t
@@ -62,5 +62,6 @@ namespace source2sdk::client
         EVENT_ID_CROWNFALL = 0x2f,
         EVENT_ID_FROSTIVUS_2023 = 0x30,
         EVENT_ID_INTERNATIONAL_2024 = 0x31,
+        EVENT_ID_FROSTIVUS_2024 = 0x32,
     };
 };

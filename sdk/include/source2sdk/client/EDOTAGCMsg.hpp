@@ -8,7 +8,7 @@
 
 namespace source2sdk::client
 {
-    // Enumerator count: 949
+    // Enumerator count: 957
     // Alignment: 4
     // Size: 0x4
     enum class EDOTAGCMsg : std::uint32_t
@@ -962,5 +962,13 @@ namespace source2sdk::client
         k_EMsgClientToGCSurvivorsTelemetryResponse = 0x2334,
         k_EMsgClientToGCOverworldRequestTokensNeededByFriend = 0x2335,
         k_EMsgClientToGCOverworldRequestTokensNeededByFriendResponse = 0x2336,
+        k_EMsgClientToGCCraftworksGetUserData = 0x2337,
+        k_EMsgClientToGCCraftworksGetUserDataResponse = 0x2338,
+        k_EMsgGCToClientCraftworksUserDataUpdated = 0x2339,
+        k_EMsgClientToGCCraftworksCraftRecipe = 0x233a,
+        k_EMsgClientToGCCraftworksCraftRecipeResponse = 0x233b,
+        k_EMsgClientToGCCraftworksDevModifyComponents = 0x233c,
+        k_EMsgClientToGCCraftworksDevModifyComponentsResponse = 0x233d,
+        k_EMsgSignOutCraftworks = 0x233e,
     };
 };

@@ -15,7 +15,7 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x1888
+    // Size: 0x18a0
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
@@ -23,11 +23,11 @@ namespace source2sdk::client
     class CDOTA_Unit_Announcer : public client::C_DOTA_BaseNPC
     {
     public:
-        client::CAnnouncerDescriptor m_currentAnnouncer; // 0x1858        
-        [[maybe_unused]] std::uint8_t pad_0x1880[0x8];
+        client::CAnnouncerDescriptor m_currentAnnouncer; // 0x1870        
+        [[maybe_unused]] std::uint8_t pad_0x1898[0x8];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Unit_Announcer because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Unit_Announcer) == 0x1888);
+    static_assert(sizeof(CDOTA_Unit_Announcer) == 0x18a0);
 };

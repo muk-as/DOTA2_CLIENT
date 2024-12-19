@@ -45,7 +45,6 @@
 25CSurfacePropDataTableBase
 25ISteamAudioSimulationData
 30CSchemaRegistration_steamaudio
-33333333H
 3d] [ Pathing %6.2f MB %6d %4.1f %4.1f %7.1f ] %s\n
 3d] [ Pathing: Invalid baked data version found. Please rebake. ] %s\n
 3d] [ Reverb  %6.2f MB %6u %4.1f %4.1f %7d %4d %2.1f %d ] %s\n
@@ -135,6 +134,7 @@ AWAVI
 A\bH;D
 A\bv_f
 A]A^A
+A]A^]ÐU19
 Acceptable OCSP Responses
 Accum
 Adjust overall volume of the default HRTF by the specified gain (dB
@@ -191,7 +191,6 @@ BinaryProperties_GetValue
 Binvalid_hitbox
 Biometric Info
 C)ʹcL
-C8HcMčp
 C@t3H
 CA Issuers
 CA Repository
@@ -268,6 +267,7 @@ D$(H9D
 D$(dH3
 D$\bA
 D$\bHcÉ\f
+D$\bXZu
 D$\btxH
 D$\vt\tM
 D,F\n
@@ -332,6 +332,8 @@ Enable perspective correction for 3D audio
 Enables tracy profiling when baking steam audio data in Hammer
 EngineServiceMgr001
 EnsureCapacity
+EnsureElementCapacity
+EnsureMemberCapacity
 Enterprises
 Error reading from loaded packed store "%s
 Experimental
@@ -416,8 +418,6 @@ H3P@H
 H3PHH
 H3P\bH
 H9D$\bthH
-H9J\btI
-H9J\btg
 H9\at'H
 H9\at\aH
 H;D$pH
@@ -479,9 +479,7 @@ ITM_memcpyRtWn
 ITM_registerTMCloneTable
 I\fH9J\f
 IcD$8A;D$H
-IcD$\fH
 IcT$\bI
-Ic\f$H
 IcǉT$\f
 If set, all the probes near a source withing probe range are used to find paths instead of nearest probe
 If set, baked dimensions data is loaded
@@ -516,6 +514,8 @@ Key field (file) missing in custom hrtf properties file. Using default HRTF
 Key field (normalization) missing in custom hrtf properties file. Setting it to no normalization
 Key field (volume) missing in custom hrtf properties file. Setting it to 0 dB
 KeyValueCache001
+KeyValues3: pre-allocated array memory is too small for %u elements (%u bytes available, %u bytes needed)\n
+KeyValues3: pre-allocated table memory is too small for %u members (%u bytes available, %u bytes needed)\n
 L$4Hǅh
 L$4Hǅp
 L$XdH3\f
@@ -523,7 +523,6 @@ L$\bLcL$\f
 L$\bdH3\f
 L$\bt9H
 Lc)D;i
-Lc;IǄ$07
 Lc\nLcR
 LoadKV3Object error: %s\n
 Loaded custom HRTF [%s] with volume [%.2f dB] and normaliztion [%d]\n
@@ -583,7 +582,6 @@ Microsoft Trust List Signing
 Microsoft Universal Principal Name
 Missing custom_hrtfs key field in custom hrtf properties file. Cannot load
 ModelDocUtils001
-MċE\tK\b9
 N H1P H
 N(H1P(H
 N0H1P0H
@@ -662,7 +660,6 @@ Occlusion: Imported %d probes from baked file (%s).\n
 Occlusion: Loaded baked data file (%s).\n
 Occlusion: Unable to load baked data file (%s).\n
 P A9\\$\bI
-P HcC
 P Hǃ(\a
 P Hǃ@\a
 P IǇ(\a
@@ -732,7 +729,6 @@ Probes: Probe Batch is null.\n
 PropertyEditorSystem_001
 Proxy Certificate Information
 Q\f9V\f
-R IcW
 RAND lib
 RC2-40-CBC
 RC2-64-CBC
@@ -845,8 +841,6 @@ SSE and SSE2 are required
 SSL lib
 SSL routines
 SXNetID
-S\bHcB\f
-S\bHcJ
 SceneSystem_002
 SceneUtils_001
 SchemaSystem_001
@@ -945,8 +939,6 @@ Trust Root
 U(;U,}fLc
 UStwHc_\bH
 UUUUUU
-UUUUUUUUH
-U\bHcB\f
 U\fOsHi
 Unable to create Ambisonics decode effect [%d]\n
 Unable to create custom HRTF [%s]\n
@@ -1996,6 +1988,7 @@ az7u5
 b9w\f}k
 b@80u
 bA+t$$Hc
+bA\\A]A
 bHiҋUL
 bLc/D9
 b_print.c
@@ -2053,7 +2046,6 @@ brainpoolP512r1
 brainpoolP512t1
 bss_file.c
 bss_start
-bu\r<\bt
 buf_str.c
 buildingName
 businessCategory
@@ -2343,7 +2335,6 @@ func(%lu
 fwrite
 g*\ag*\bg
 g\a\ahm`J
-g\btQIcG
 g_BitBuf_BitWriteMasks
 g_bUpdateStringTokenDatabase
 g_pMemAlloc
@@ -2876,17 +2867,13 @@ msCodeInd
 msExtReq
 msSmartcardLogin
 mt19937
-m۶m۶mH
-m۶m۶mL
 n    H
 n------- Steam Audio Baked Pathing Statistics ------\n
 n------- Steam Audio Baked Reverb Statistics ------\n
-n<\etgH
 nSRecord
 n\f\a\bA\v
 n\f\a\bE\v
 n\f\a\bH\v
-n\v\f../public/tier0/utlrbtree.h
 nameConstraints
 nested asn1 error
 no failure reason set
@@ -3068,7 +3055,8 @@ s: Unable to load data: %s\n
 s: Unable to load probe batch (%d)\n
 s: Unable to save data: %s\n
 s: __pos (which is %zu) > this->size() (which is %zu
-s@HcS8
+s: element count overflow (%u)\n
+s: member count overflow (%u)\n
 sOARecord
 s\bD9q\b
 s\bE9t$\b
@@ -3415,7 +3403,6 @@ sysconf
 system lib
 system library
 t$\btR~aA
-t(IcF
 t*Hcs\b;s\f}4H
 t5H9r\bu
 t:Hcs\fH
@@ -3428,6 +3415,7 @@ tRIcM\bM
 tVIcM\bM
 tWAVAUATI
 t[ATUH
+t\n[A
 t\rHcs\fH
 t\tHcCP;C8r
 t`LcL\n\bL
@@ -3454,7 +3442,6 @@ tpBasis
 transaction_safe
 transform
 trustRoot
-tuIcE
 tuҋR\b)UHH
 tyHcS\bA9
 typeinfo fn for
@@ -3465,7 +3452,6 @@ u-AWAVAUATUH
 u/H#D
 u0+!n0
 u8AVAUATUSH
-u@IcU8H
 uchar32
 uint16
 uint32

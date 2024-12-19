@@ -14,7 +14,7 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x1eb8
+    // Size: 0x1ef0
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
@@ -28,18 +28,18 @@ namespace source2sdk::server
     public:
         // metadata: MNetworkEnable
         // metadata: MNetworkChangeCallback "OnAbilityColorChanged"
-        Vector m_stolenAbilityColorHSV1; // 0x1e90        
+        Vector m_stolenAbilityColorHSV1; // 0x1ec8        
         // metadata: MNetworkEnable
         // metadata: MNetworkChangeCallback "OnAbilityColorChanged"
-        Vector m_stolenAbilityColorHSV2; // 0x1e9c        
+        Vector m_stolenAbilityColorHSV2; // 0x1ed4        
         // metadata: MNetworkEnable
         // metadata: MNetworkChangeCallback "OnAbilityColorChanged"
-        Vector m_stolenAbilityFXColorHSV; // 0x1ea8        
-        bool m_bHasInitializedAbilityColors; // 0x1eb4        
-        [[maybe_unused]] std::uint8_t pad_0x1eb5[0x3];
+        Vector m_stolenAbilityFXColorHSV; // 0x1ee0        
+        bool m_bHasInitializedAbilityColors; // 0x1eec        
+        [[maybe_unused]] std::uint8_t pad_0x1eed[0x3];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Unit_Hero_Rubick because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Unit_Hero_Rubick) == 0x1eb8);
+    static_assert(sizeof(CDOTA_Unit_Hero_Rubick) == 0x1ef0);
 };

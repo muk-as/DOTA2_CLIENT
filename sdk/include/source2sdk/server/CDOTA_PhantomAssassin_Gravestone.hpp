@@ -15,7 +15,7 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x1838
+    // Size: 0x1870
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
@@ -23,11 +23,11 @@ namespace source2sdk::server
     class CDOTA_PhantomAssassin_Gravestone : public server::CDOTA_BaseNPC_Additive
     {
     public:
-        client::PlayerID_t m_nVictimPlayerID; // 0x1830        
-        [[maybe_unused]] std::uint8_t pad_0x1834[0x4];
+        client::PlayerID_t m_nVictimPlayerID; // 0x1868        
+        [[maybe_unused]] std::uint8_t pad_0x186c[0x4];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_PhantomAssassin_Gravestone because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_PhantomAssassin_Gravestone) == 0x1838);
+    static_assert(sizeof(CDOTA_PhantomAssassin_Gravestone) == 0x1870);
 };

@@ -27,7 +27,7 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x1940
+    // Size: 0x1958
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
@@ -45,45 +45,45 @@ namespace source2sdk::client
     class CDOTA_BaseNPC_AghsFort_Watch_Tower : public client::C_DOTA_BaseNPC_Building
     {
     public:
-        int32_t m_nOptionNumber; // 0x18c8        
-        float m_flMovePlayersRadius; // 0x18cc        
-        client::CDOTA_BaseNPC_AghsFort_Watch_Tower__ExitDirection_t m_nExitDirection; // 0x18d0        
-        Vector m_vExitLocation; // 0x18d4        
-        int32_t m_nPathSelectedID; // 0x18e0        
+        int32_t m_nOptionNumber; // 0x18e0        
+        float m_flMovePlayersRadius; // 0x18e4        
+        client::CDOTA_BaseNPC_AghsFort_Watch_Tower__ExitDirection_t m_nExitDirection; // 0x18e8        
+        Vector m_vExitLocation; // 0x18ec        
+        int32_t m_nPathSelectedID; // 0x18f8        
         // metadata: MNetworkEnable
-        int32_t m_nEncounterType; // 0x18e4        
+        int32_t m_nEncounterType; // 0x18fc        
         // metadata: MNetworkEnable
-        bool m_bIsEliteEncounter; // 0x18e8        
+        bool m_bIsEliteEncounter; // 0x1900        
         // metadata: MNetworkEnable
-        bool m_bIsAscensionLevelPicker; // 0x18e9        
-        [[maybe_unused]] std::uint8_t pad_0x18ea[0x6]; // 0x18ea
+        bool m_bIsAscensionLevelPicker; // 0x1901        
+        [[maybe_unused]] std::uint8_t pad_0x1902[0x6]; // 0x1902
         // metadata: MNetworkEnable
-        CUtlSymbolLarge m_strEncounterName; // 0x18f0        
+        CUtlSymbolLarge m_strEncounterName; // 0x1908        
         // metadata: MNetworkEnable
-        CUtlSymbolLarge m_strAscensionAbilities; // 0x18f8        
+        CUtlSymbolLarge m_strAscensionAbilities; // 0x1910        
         // metadata: MNetworkEnable
         // m_hEffigy has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<client::C_BaseEntity> m_hEffigy;
-        char m_hEffigy[0x4]; // 0x1900        
-        float m_flYaw; // 0x1904        
-        float m_flStartTime; // 0x1908        
-        entity2::GameTime_t m_flCursorEnterTime; // 0x190c        
-        bool m_bShowingTooltip; // 0x1910        
-        [[maybe_unused]] std::uint8_t pad_0x1911[0x1b]; // 0x1911
-        float m_flLastUpdateTime; // 0x192c        
-        client::ParticleIndex_t m_nChannellingParticle; // 0x1930        
+        char m_hEffigy[0x4]; // 0x1918        
+        float m_flYaw; // 0x191c        
+        float m_flStartTime; // 0x1920        
+        entity2::GameTime_t m_flCursorEnterTime; // 0x1924        
+        bool m_bShowingTooltip; // 0x1928        
+        [[maybe_unused]] std::uint8_t pad_0x1929[0x1b]; // 0x1929
+        float m_flLastUpdateTime; // 0x1944        
+        client::ParticleIndex_t m_nChannellingParticle; // 0x1948        
         // metadata: MNetworkEnable
         // m_hRoomGate has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<client::CBaseAnimatingActivity> m_hRoomGate;
-        char m_hRoomGate[0x4]; // 0x1934        
+        char m_hRoomGate[0x4]; // 0x194c        
         // metadata: MNetworkEnable
-        bool m_bIsBeingChanneled; // 0x1938        
-        [[maybe_unused]] std::uint8_t pad_0x1939[0x3]; // 0x1939
+        bool m_bIsBeingChanneled; // 0x1950        
+        [[maybe_unused]] std::uint8_t pad_0x1951[0x3]; // 0x1951
         // metadata: MNetworkEnable
-        float m_flGoalCaptureProgress; // 0x193c        
+        float m_flGoalCaptureProgress; // 0x1954        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_BaseNPC_AghsFort_Watch_Tower because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_BaseNPC_AghsFort_Watch_Tower) == 0x1940);
+    static_assert(sizeof(CDOTA_BaseNPC_AghsFort_Watch_Tower) == 0x1958);
 };

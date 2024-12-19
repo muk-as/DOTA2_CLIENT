@@ -14,7 +14,7 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x1c10
+    // Size: 0x1c28
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
@@ -25,17 +25,17 @@ namespace source2sdk::client
     class C_DOTA_Unit_Hero_SkeletonKing : public client::C_DOTA_BaseNPC_Hero
     {
     public:
-        int32_t m_nSkeletonWarriors; // 0x1be0        
+        int32_t m_nSkeletonWarriors; // 0x1bf8        
         // metadata: MNetworkEnable
         // metadata: MNetworkChangeCallback "OnSKArcanaProgressChanged"
-        int32_t m_vecInitialHeroKillBitmask[5]; // 0x1be4        
+        int32_t m_vecInitialHeroKillBitmask[5]; // 0x1bfc        
         // metadata: MNetworkEnable
         // metadata: MNetworkChangeCallback "OnSKArcanaProgressChanged"
-        int32_t m_vecInGameHeroKillBitmask[5]; // 0x1bf8        
-        [[maybe_unused]] std::uint8_t pad_0x1c0c[0x4];
+        int32_t m_vecInGameHeroKillBitmask[5]; // 0x1c10        
+        [[maybe_unused]] std::uint8_t pad_0x1c24[0x4];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in C_DOTA_Unit_Hero_SkeletonKing because it is not a standard-layout class
-    static_assert(sizeof(C_DOTA_Unit_Hero_SkeletonKing) == 0x1c10);
+    static_assert(sizeof(C_DOTA_Unit_Hero_SkeletonKing) == 0x1c28);
 };

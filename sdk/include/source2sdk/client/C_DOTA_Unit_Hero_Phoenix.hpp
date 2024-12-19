@@ -15,7 +15,7 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x1be8
+    // Size: 0x1c00
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
@@ -23,12 +23,12 @@ namespace source2sdk::client
     class C_DOTA_Unit_Hero_Phoenix : public client::C_DOTA_BaseNPC_Hero
     {
     public:
-        client::ParticleIndex_t m_nFXAmbientSpirits; // 0x1be0        
-        bool m_bDetermineAmbientEffect; // 0x1be4        
-        [[maybe_unused]] std::uint8_t pad_0x1be5[0x3];
+        client::ParticleIndex_t m_nFXAmbientSpirits; // 0x1bf8        
+        bool m_bDetermineAmbientEffect; // 0x1bfc        
+        [[maybe_unused]] std::uint8_t pad_0x1bfd[0x3];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in C_DOTA_Unit_Hero_Phoenix because it is not a standard-layout class
-    static_assert(sizeof(C_DOTA_Unit_Hero_Phoenix) == 0x1be8);
+    static_assert(sizeof(C_DOTA_Unit_Hero_Phoenix) == 0x1c00);
 };

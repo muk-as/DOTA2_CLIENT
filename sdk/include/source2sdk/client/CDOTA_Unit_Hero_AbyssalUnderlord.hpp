@@ -15,7 +15,7 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x1be8
+    // Size: 0x1c00
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
@@ -23,11 +23,11 @@ namespace source2sdk::client
     class CDOTA_Unit_Hero_AbyssalUnderlord : public client::C_DOTA_BaseNPC_Hero
     {
     public:
-        client::ParticleIndex_t m_iRangeFX; // 0x1be0        
-        [[maybe_unused]] std::uint8_t pad_0x1be4[0x4];
+        client::ParticleIndex_t m_iRangeFX; // 0x1bf8        
+        [[maybe_unused]] std::uint8_t pad_0x1bfc[0x4];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Unit_Hero_AbyssalUnderlord because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Unit_Hero_AbyssalUnderlord) == 0x1be8);
+    static_assert(sizeof(CDOTA_Unit_Hero_AbyssalUnderlord) == 0x1c00);
 };

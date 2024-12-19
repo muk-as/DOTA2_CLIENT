@@ -15,7 +15,7 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x1860
+    // Size: 0x1878
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
@@ -25,13 +25,13 @@ namespace source2sdk::client
     public:
         // metadata: MNetworkEnable
         // metadata: MNetworkAlias "m_hHeroStatueSequence"
-        animationsystem::HSequence m_hObsoleteHeroStatueSequence; // 0x1858        
+        animationsystem::HSequence m_hObsoleteHeroStatueSequence; // 0x1870        
         // metadata: MNetworkEnable
         // metadata: MNetworkAlias "m_hConstantLayerSequence"
-        animationsystem::HSequence m_hObsoleteConstantLayerSequence; // 0x185c        
+        animationsystem::HSequence m_hObsoleteConstantLayerSequence; // 0x1874        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in C_DOTA_BaseNPC_RotatableBuilding because it is not a standard-layout class
-    static_assert(sizeof(C_DOTA_BaseNPC_RotatableBuilding) == 0x1860);
+    static_assert(sizeof(C_DOTA_BaseNPC_RotatableBuilding) == 0x1878);
 };

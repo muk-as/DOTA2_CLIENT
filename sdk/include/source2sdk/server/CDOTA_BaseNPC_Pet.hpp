@@ -26,7 +26,7 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x1860
+    // Size: 0x1898
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
@@ -36,24 +36,24 @@ namespace source2sdk::server
     public:
         // m_hHeroHandle has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<server::CDOTA_BaseNPC_Hero> m_hHeroHandle;
-        char m_hHeroHandle[0x4]; // 0x1830        
-        float m_flPetThreatLevel; // 0x1834        
-        bool m_bReadyToPerformCoopTeleport; // 0x1838        
-        bool m_bSupportsCoopTeleport; // 0x1839        
-        [[maybe_unused]] std::uint8_t pad_0x183a[0x2]; // 0x183a
-        server::PetCoopStates_t m_nCoopState; // 0x183c        
-        CUtlString m_strPickupItemModel; // 0x1840        
+        char m_hHeroHandle[0x4]; // 0x1868        
+        float m_flPetThreatLevel; // 0x186c        
+        bool m_bReadyToPerformCoopTeleport; // 0x1870        
+        bool m_bSupportsCoopTeleport; // 0x1871        
+        [[maybe_unused]] std::uint8_t pad_0x1872[0x2]; // 0x1872
+        server::PetCoopStates_t m_nCoopState; // 0x1874        
+        CUtlString m_strPickupItemModel; // 0x1878        
         // m_hCarriedItem has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<server::CDOTA_Pet_CarriedItem> m_hCarriedItem;
-        char m_hCarriedItem[0x4]; // 0x1848        
-        int32_t m_nPetLevel; // 0x184c        
-        client::PetLevelup_Rule_t m_nLevelupRule; // 0x1850        
-        [[maybe_unused]] std::uint8_t pad_0x1854[0x4]; // 0x1854
-        int32_t m_nXPCompendiumEventID; // 0x1858        
-        [[maybe_unused]] std::uint8_t pad_0x185c[0x4];
+        char m_hCarriedItem[0x4]; // 0x1880        
+        int32_t m_nPetLevel; // 0x1884        
+        client::PetLevelup_Rule_t m_nLevelupRule; // 0x1888        
+        [[maybe_unused]] std::uint8_t pad_0x188c[0x4]; // 0x188c
+        int32_t m_nXPCompendiumEventID; // 0x1890        
+        [[maybe_unused]] std::uint8_t pad_0x1894[0x4];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_BaseNPC_Pet because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_BaseNPC_Pet) == 0x1860);
+    static_assert(sizeof(CDOTA_BaseNPC_Pet) == 0x1898);
 };

@@ -16,7 +16,7 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x1860
+    // Size: 0x1898
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
@@ -26,16 +26,16 @@ namespace source2sdk::server
     class CDOTA_BaseNPC_Creep : public server::CDOTA_BaseNPC_Additive
     {
     public:
-        server::CDOTA_CreepKillInfo m_KillInfo; // 0x1830        
-        client::DOTA_LANE m_Lane; // 0x1850        
-        bool m_bPushback; // 0x1854        
-        [[maybe_unused]] std::uint8_t pad_0x1855[0x3]; // 0x1855
+        server::CDOTA_CreepKillInfo m_KillInfo; // 0x1868        
+        client::DOTA_LANE m_Lane; // 0x1888        
+        bool m_bPushback; // 0x188c        
+        [[maybe_unused]] std::uint8_t pad_0x188d[0x3]; // 0x188d
         // metadata: MNetworkEnable
-        float m_flAim; // 0x1858        
-        [[maybe_unused]] std::uint8_t pad_0x185c[0x4];
+        float m_flAim; // 0x1890        
+        [[maybe_unused]] std::uint8_t pad_0x1894[0x4];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_BaseNPC_Creep because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_BaseNPC_Creep) == 0x1860);
+    static_assert(sizeof(CDOTA_BaseNPC_Creep) == 0x1898);
 };

@@ -14,7 +14,7 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x1940
+    // Size: 0x1958
     // Has VTable
     // Construct allowed
     #pragma pack(push, 1)
@@ -25,5 +25,5 @@ namespace source2sdk::client
     };
     #pragma pack(pop)
     
-    static_assert(sizeof(C_DOTA_BaseNPC_HoldoutTower_HeavySlow) == 0x1940);
+    static_assert(sizeof(C_DOTA_BaseNPC_HoldoutTower_HeavySlow) == 0x1958);
 };

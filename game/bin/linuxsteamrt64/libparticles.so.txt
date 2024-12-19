@@ -798,6 +798,7 @@
 32CParticleFunctionDefinitionTypedI41C_OP_RemapTransformOrientationToRotationsE
 32CParticleFunctionDefinitionTypedI41C_OP_SetPerChildControlPointFromAttributeE
 32CParticleFunctionDefinitionTypedI41C_OP_SetVectorAttributeToVectorExpressionE
+32CParticleFunctionDefinitionTypedI42C_INIT_SetFloatAttributeToVectorExpressionE
 32CParticleFunctionDefinitionTypedI42C_OP_EnableChildrenFromParentParticleCountE
 32CParticleFunctionDefinitionTypedI42C_OP_MovementSkinnedPositionFromCPSnapshotE
 32CParticleFunctionDefinitionTypedI42C_OP_RemapCrossProductOfTwoVectorsToVectorE
@@ -938,6 +939,7 @@
 42CKV3TransferInterface_Worldspace_Load_NoOp
 42CKV3TransferInterface_Worldspace_Save_NoOp
 42CPulseCell_Step_TestDomainCreateFakeEntity
+42C_INIT_SetFloatAttributeToVectorExpression
 42C_OP_EnableChildrenFromParentParticleCount
 42C_OP_MovementSkinnedPositionFromCPSnapshot
 42C_OP_RemapCrossProductOfTwoVectorsToVector
@@ -987,7 +989,6 @@ A8npt
 A9D$@L
 A9D$tA
 A9F4v4I
-A9T$t
 AB64ToARGB
 AB64ToARGBRow_AVX2
 AB64ToARGBRow_Any_AVX2
@@ -1436,6 +1437,7 @@ BOX_FLAGS
 BOX_MAXS
 BOX_MINS
 Bad KV3 data (%s
+Bad KV3 data for '%s': %s
 Bad KV3 data for resource '%s': %s
 Bad code word
 Bad compression
@@ -1524,15 +1526,17 @@ C L9 t"L
 C L9 t%L
 C L9 t&L
 C L9 t+L
+C L9 t,L
 C L9 t-L
 C L9 t.L
 C L9 t4L
-C L9 t7L
-C L9 tCL
-C L9 tIL
-C L9 tYL
+C L9 t5L
+C L9 t=L
+C L9 tbL
 C L9 tcL
+C L9 tdL
 C L9 thL
+C L9 tiL
 C L9 tjL
 C L9 tlL
 C L9 tmL
@@ -1542,6 +1546,7 @@ C L9 tqL
 C L9 txL
 C L9 tyL
 C L90taL
+C L90trL
 C L; thL
 C L; tkL
 C L; trL
@@ -1908,6 +1913,7 @@ C_INIT_ScaleVelocity
 C_INIT_SequenceFromCP
 C_INIT_SequenceLifeTime
 C_INIT_SetAttributeToScalarExpression
+C_INIT_SetFloatAttributeToVectorExpression
 C_INIT_SetHitboxToClosest
 C_INIT_SetHitboxToModel
 C_INIT_SetRigidAttachment
@@ -2555,6 +2561,8 @@ Endcap timed system freeze
 Engine2/SupportsVulkanParticleOptimizations
 EngineServiceMgr001
 EnsureCapacity
+EnsureElementCapacity
+EnsureMemberCapacity
 EntFire,%d,%s,%s
 Entire Path
 Entity Handle
@@ -2586,6 +2594,7 @@ Extraneous input
 Extraneous input - expected %s
 Extraneous input - expected <EOF
 Extraneous token
+E̋5}Q
 EЋE HcЋE
 F t&D
 F tIH
@@ -3193,6 +3202,7 @@ Init System-Wide Float
 Init System-Wide Vec
 Init Transform orientation to rotations
 Init Vector
+Init float attribute from vector expression
 Init float attribute to scalar expression
 Init from CP snapshot
 Init from Vector Field snapshot
@@ -3214,6 +3224,7 @@ InputStackSystemVersion001
 InputSystemVersion001
 Insert
 InsertBeforeGetPtr
+InsertMultipleBefore
 InstallSchemaBindings
 Instance Count
 Int( %d
@@ -3256,12 +3267,15 @@ JX[A\A]A^A
 January
 JumpOrLeap( C%d:I%d
 KV3 instances cannot be set to an unspecified specific type
+KV3 load transfer failed: %s
 KV3 save transfer failed: %s
 K\tPHk
 Keep a history of all instructions run on a per graph basis
 Keep running normally
 KeyValueCache001
 KeyValues3
+KeyValues3: pre-allocated array memory is too small for %u elements (%u bytes available, %u bytes needed
+KeyValues3: pre-allocated table memory is too small for %u members (%u bytes available, %u bytes needed
 Kill Particle
 Kill after current node
 Kill elegantly
@@ -3307,6 +3321,7 @@ Lc#D;c
 Lc+D;k
 Lc2D;r
 Lc:D;z
+Lc{0E1
 Left Hand
 Length (magnitude) of Vector a
 Length Vector
@@ -3498,6 +3513,7 @@ Maximum distance
 Maximum of two values (float
 Maximum of two values (int
 Maximum random scale for radius
+Mc!E;a
 Mc7E;w
 Mc<$E
 McT$4Mc|$8
@@ -3940,6 +3956,7 @@ P410ToARGBRow_C
 P410ToARGBRow_SSSE3
 P8H=vmdlt
 PANEL_ID
+PARENT_PARTICLE_ID
 PARENT_PARTICLE_INDEX
 PARTICLEBLEND_DARKEN
 PARTICLEBLEND_DEFAULT
@@ -4009,7 +4026,6 @@ PARTICLE_HITBOX_AVERAGE_SPEED
 PARTICLE_HITBOX_BIAS_ENTITY
 PARTICLE_HITBOX_BIAS_HITBOX
 PARTICLE_HITBOX_COUNT
-PARTICLE_ID
 PARTICLE_LIGHTING_PER_PARTICLE
 PARTICLE_LIGHTING_PER_PIXEL
 PARTICLE_LIGHTING_PER_VERTEX
@@ -4272,6 +4288,7 @@ PanoramaUIClient001
 PanoramaUIEngine001
 Parent Map Entity
 Parent Map: %s
+Parent Particle ID
 Parent Particle Index
 Parent XML Panel
 Parent radius scale for distance calc
@@ -4281,7 +4298,6 @@ Particle Binding
 Particle Binding (Real
 Particle Error before emit: Effect %s, Function %s (%d, %d
 Particle Error: Effect %s, Operator %s (%d, %d
-Particle ID
 Particle Normal Align
 Particle Operator Perf
 Particle Shadows
@@ -4506,7 +4522,6 @@ Quadratic/Linear Bias
 Quadrilaterals
 Quantize Float
 Quantize Float to Control Point Component
-R IcW
 R%d: %15s %25s %s
 R10G10B10A2_TYPELESS
 R10G10B10A2_UINT
@@ -5840,6 +5855,7 @@ VScriptDbg
 VScriptManager010
 VStringTokenSystem001
 VTT for
+VUUUHi
 VWebm001
 VZ#-DLU[3=h
 V_:X1
@@ -11459,6 +11475,7 @@ kRgbF709Constants
 kRgbH709Constants
 kRgbI601Constants
 kRgbJPEGConstants
+kSXLH
 kYuv2020Constants
 kYuvF709Constants
 kYuvH709Constants
@@ -13994,8 +14011,12 @@ s: %s %s
 s: Invalid capacity %u
 s: Invalid grow amount %d
 s: __pos (which is %zu) > this->size() (which is %zu
+s: element count overflow (%u
+s: invalid insert point %u (current count %u
 s: invalid nBeforeIndex %d
 s: invalid nSize %d
+s: max element overflow, cur count %u + %u
+s: member count overflow (%u
 s:( ActiveParticleCount()=%d, m_bounds=%? simtime=%g
 s@HcS
 s_Instance
@@ -14329,10 +14350,10 @@ typeinfo for
 typeinfo name for
 u*A\A
 u/H#D
+uGL;%06
 uI[A\A]A
 uP[A\A
 uP[A\A]A
-uYzA\A]A^A_]H
 ua8CHtdH
 ubD9kH
 uc8EHtfH
@@ -14368,7 +14389,6 @@ unsigned long
 unsigned long long
 unsigned short
 unspecified
-up[A\A]A
 use AABB
 use Movement Basic for Local Gravity & Buoyancy Scale
 use aabbtree

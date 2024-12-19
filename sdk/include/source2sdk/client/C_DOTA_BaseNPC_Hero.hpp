@@ -26,7 +26,7 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x1be0
+    // Size: 0x1bf8
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
@@ -57,103 +57,103 @@ namespace source2sdk::client
     class C_DOTA_BaseNPC_Hero : public client::C_DOTA_BaseNPC_Additive
     {
     public:
-        [[maybe_unused]] std::uint8_t pad_0x1858[0x8]; // 0x1858
+        [[maybe_unused]] std::uint8_t pad_0x1870[0x8]; // 0x1870
         // metadata: MNetworkEnable
         // metadata: MNetworkPriority "32"
-        int32_t m_iCurrentXP; // 0x1860        
+        int32_t m_iCurrentXP; // 0x1878        
         // metadata: MNetworkEnable
         // metadata: MNetworkChangeCallback "OnAbilityPointsChanged"
-        int32_t m_iAbilityPoints; // 0x1864        
+        int32_t m_iAbilityPoints; // 0x187c        
         // metadata: MNetworkEnable
-        int32_t m_iTotalAbilityPoints; // 0x1868        
+        int32_t m_iTotalAbilityPoints; // 0x1880        
         // metadata: MNetworkEnable
-        entity2::GameTime_t m_flRespawnTime; // 0x186c        
+        entity2::GameTime_t m_flRespawnTime; // 0x1884        
         // metadata: MNetworkEnable
-        float m_flRespawnTimePenalty; // 0x1870        
-        // metadata: MNetworkEnable
-        // metadata: MNetworkChangeCallback "OnBaseStatChanged"
-        float m_flStrength; // 0x1874        
+        float m_flRespawnTimePenalty; // 0x1888        
         // metadata: MNetworkEnable
         // metadata: MNetworkChangeCallback "OnBaseStatChanged"
-        float m_flAgility; // 0x1878        
+        float m_flStrength; // 0x188c        
         // metadata: MNetworkEnable
         // metadata: MNetworkChangeCallback "OnBaseStatChanged"
-        float m_flIntellect; // 0x187c        
+        float m_flAgility; // 0x1890        
         // metadata: MNetworkEnable
         // metadata: MNetworkChangeCallback "OnBaseStatChanged"
-        float m_flStrengthTotal; // 0x1880        
+        float m_flIntellect; // 0x1894        
         // metadata: MNetworkEnable
         // metadata: MNetworkChangeCallback "OnBaseStatChanged"
-        float m_flAgilityTotal; // 0x1884        
+        float m_flStrengthTotal; // 0x1898        
         // metadata: MNetworkEnable
         // metadata: MNetworkChangeCallback "OnBaseStatChanged"
-        float m_flIntellectTotal; // 0x1888        
-        [[maybe_unused]] std::uint8_t pad_0x188c[0x4]; // 0x188c
+        float m_flAgilityTotal; // 0x189c        
+        // metadata: MNetworkEnable
+        // metadata: MNetworkChangeCallback "OnBaseStatChanged"
+        float m_flIntellectTotal; // 0x18a0        
+        [[maybe_unused]] std::uint8_t pad_0x18a4[0x4]; // 0x18a4
         // metadata: MNetworkEnable
         // m_hFacetAbilities has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // C_NetworkUtlVectorBase<CHandle<client::C_BaseEntity>> m_hFacetAbilities;
-        char m_hFacetAbilities[0x18]; // 0x1890        
+        char m_hFacetAbilities[0x18]; // 0x18a8        
         // metadata: MNetworkEnable
-        int32_t m_iRecentDamage; // 0x18a8        
-        float m_fPainFactor; // 0x18ac        
-        float m_fTargetPainFactor; // 0x18b0        
-        bool m_bLifeState; // 0x18b4        
-        bool m_bFirstSpawn; // 0x18b5        
-        [[maybe_unused]] std::uint8_t pad_0x18b6[0x2]; // 0x18b6
-        client::ParticleIndex_t m_nFXStunIndex; // 0x18b8        
-        client::ParticleIndex_t m_nFXSilenceIndex; // 0x18bc        
-        client::ParticleIndex_t m_nFXDeathIndex; // 0x18c0        
-        [[maybe_unused]] std::uint8_t pad_0x18c4[0x24]; // 0x18c4
+        int32_t m_iRecentDamage; // 0x18c0        
+        float m_fPainFactor; // 0x18c4        
+        float m_fTargetPainFactor; // 0x18c8        
+        bool m_bLifeState; // 0x18cc        
+        bool m_bFirstSpawn; // 0x18cd        
+        [[maybe_unused]] std::uint8_t pad_0x18ce[0x2]; // 0x18ce
+        client::ParticleIndex_t m_nFXStunIndex; // 0x18d0        
+        client::ParticleIndex_t m_nFXSilenceIndex; // 0x18d4        
+        client::ParticleIndex_t m_nFXDeathIndex; // 0x18d8        
+        [[maybe_unused]] std::uint8_t pad_0x18dc[0x24]; // 0x18dc
         // metadata: MNetworkEnable
-        client::PlayerID_t m_iPlayerID; // 0x18e8        
+        client::PlayerID_t m_iPlayerID; // 0x1900        
         // metadata: MNetworkEnable
-        client::HeroFacetID_t m_iHeroFacetID; // 0x18ec        
+        client::HeroFacetID_t m_iHeroFacetID; // 0x1904        
         // metadata: MNetworkEnable
         // m_hReplicatingOtherHeroModel has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<client::C_DOTA_BaseNPC_Hero> m_hReplicatingOtherHeroModel;
-        char m_hReplicatingOtherHeroModel[0x4]; // 0x18f0        
+        char m_hReplicatingOtherHeroModel[0x4]; // 0x1908        
         // metadata: MNetworkEnable
-        bool m_bReincarnating; // 0x18f4        
+        bool m_bReincarnating; // 0x190c        
         // metadata: MNetworkEnable
-        bool m_bCustomKillEffect; // 0x18f5        
-        [[maybe_unused]] std::uint8_t pad_0x18f6[0x2]; // 0x18f6
+        bool m_bCustomKillEffect; // 0x190d        
+        [[maybe_unused]] std::uint8_t pad_0x190e[0x2]; // 0x190e
         // metadata: MNetworkEnable
-        entity2::GameTime_t m_flSpawnedAt; // 0x18f8        
+        entity2::GameTime_t m_flSpawnedAt; // 0x1910        
         // metadata: MNetworkEnable
-        bool m_bScriptDisableRespawns; // 0x18fc        
-        [[maybe_unused]] std::uint8_t pad_0x18fd[0x3]; // 0x18fd
+        bool m_bScriptDisableRespawns; // 0x1914        
+        [[maybe_unused]] std::uint8_t pad_0x1915[0x3]; // 0x1915
         // metadata: MNetworkEnable
-        int32_t m_iPrimaryAttribute; // 0x1900        
-        int32_t m_nLastDrawnHealth; // 0x1904        
-        float m_flHurtAmount; // 0x1908        
-        entity2::GameTime_t m_flLastHurtTime; // 0x190c        
-        float m_flHurtDecayRate; // 0x1910        
-        entity2::GameTime_t m_flLastHealTime; // 0x1914        
-        entity2::GameTime_t m_flLastTreeShakeTime; // 0x1918        
-        [[maybe_unused]] std::uint8_t pad_0x191c[0x4]; // 0x191c
-        client::CountdownTimer m_CenterOnHeroCooldownTimer; // 0x1920        
-        [[maybe_unused]] std::uint8_t pad_0x1938[0x208]; // 0x1938
+        int32_t m_iPrimaryAttribute; // 0x1918        
+        int32_t m_nLastDrawnHealth; // 0x191c        
+        float m_flHurtAmount; // 0x1920        
+        entity2::GameTime_t m_flLastHurtTime; // 0x1924        
+        float m_flHurtDecayRate; // 0x1928        
+        entity2::GameTime_t m_flLastHealTime; // 0x192c        
+        entity2::GameTime_t m_flLastTreeShakeTime; // 0x1930        
+        [[maybe_unused]] std::uint8_t pad_0x1934[0x4]; // 0x1934
+        client::CountdownTimer m_CenterOnHeroCooldownTimer; // 0x1938        
+        [[maybe_unused]] std::uint8_t pad_0x1950[0x208]; // 0x1950
         // m_CombinedModels has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CStrongHandle<resourcesystem::InfoForResourceTypeCModel> m_CombinedModels[4];
-        char m_CombinedModels[0x20]; // 0x1b40        
-        int32_t m_nCurrentCombinedModelIndex; // 0x1b60        
-        int32_t m_nPendingCombinedModelIndex; // 0x1b64        
-        client::HeroID_t m_iHeroID; // 0x1b68        
-        float m_flCheckLegacyItemsAt; // 0x1b6c        
-        bool m_bDisplayAdditionalHeroes; // 0x1b70        
-        [[maybe_unused]] std::uint8_t pad_0x1b71[0xf]; // 0x1b71
+        char m_CombinedModels[0x20]; // 0x1b58        
+        int32_t m_nCurrentCombinedModelIndex; // 0x1b78        
+        int32_t m_nPendingCombinedModelIndex; // 0x1b7c        
+        client::HeroID_t m_iHeroID; // 0x1b80        
+        float m_flCheckLegacyItemsAt; // 0x1b84        
+        bool m_bDisplayAdditionalHeroes; // 0x1b88        
+        [[maybe_unused]] std::uint8_t pad_0x1b89[0xf]; // 0x1b89
         // m_CombinedParticleModels has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CStrongHandle<resourcesystem::InfoForResourceTypeCModel> m_CombinedParticleModels[4];
-        char m_CombinedParticleModels[0x20]; // 0x1b80        
+        char m_CombinedParticleModels[0x20]; // 0x1b98        
         // m_vecAttachedParticleIndeces has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<client::ParticleIndex_t> m_vecAttachedParticleIndeces;
-        char m_vecAttachedParticleIndeces[0x18]; // 0x1ba0        
+        char m_vecAttachedParticleIndeces[0x18]; // 0x1bb8        
         // m_hPets has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<CHandle<client::C_BaseEntity>> m_hPets;
-        char m_hPets[0x18]; // 0x1bb8        
-        client::ParticleIndex_t m_nKillStreakFX; // 0x1bd0        
-        int32_t m_nKillStreakFXTier; // 0x1bd4        
-        // start of bitfield block at 0x1bd8
+        char m_hPets[0x18]; // 0x1bd0        
+        client::ParticleIndex_t m_nKillStreakFX; // 0x1be8        
+        int32_t m_nKillStreakFXTier; // 0x1bec        
+        // start of bitfield block at 0x1bf0
         uint16_t m_bBuybackDisabled: 1;
         uint16_t m_bWasFrozen: 1;
         uint16_t m_bUpdateClientsideWearables: 1;
@@ -165,10 +165,10 @@ namespace source2sdk::client
         uint16_t m_bResetVisibility: 1;
         uint16_t m_bStoredVisibility: 1;
         // end of bitfield block // 10 bits
-        [[maybe_unused]] std::uint8_t pad_0x1bda[0x6];
+        [[maybe_unused]] std::uint8_t pad_0x1bf2[0x6];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in C_DOTA_BaseNPC_Hero because it is not a standard-layout class
-    static_assert(sizeof(C_DOTA_BaseNPC_Hero) == 0x1be0);
+    static_assert(sizeof(C_DOTA_BaseNPC_Hero) == 0x1bf8);
 };

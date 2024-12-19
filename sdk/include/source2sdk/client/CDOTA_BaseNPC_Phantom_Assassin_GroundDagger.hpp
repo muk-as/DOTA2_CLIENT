@@ -15,7 +15,7 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x1860
+    // Size: 0x1878
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
@@ -23,8 +23,8 @@ namespace source2sdk::client
     class CDOTA_BaseNPC_Phantom_Assassin_GroundDagger : public client::C_DOTA_BaseNPC_Additive
     {
     public:
-        client::ParticleIndex_t m_nFXIndex; // 0x1858        
-        [[maybe_unused]] std::uint8_t pad_0x185c[0x4];
+        client::ParticleIndex_t m_nFXIndex; // 0x1870        
+        [[maybe_unused]] std::uint8_t pad_0x1874[0x4];
         
         // Static fields:
         static char* &Get_PARTICLE_SPAWN() {return *reinterpret_cast<char**>(interfaces::g_schema->FindTypeScopeForModule("client.dll")->FindDeclaredClass("CDOTA_BaseNPC_Phantom_Assassin_GroundDagger")->GetStaticFields()[0]->m_pInstance);};
@@ -32,5 +32,5 @@ namespace source2sdk::client
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_BaseNPC_Phantom_Assassin_GroundDagger because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_BaseNPC_Phantom_Assassin_GroundDagger) == 0x1860);
+    static_assert(sizeof(CDOTA_BaseNPC_Phantom_Assassin_GroundDagger) == 0x1878);
 };

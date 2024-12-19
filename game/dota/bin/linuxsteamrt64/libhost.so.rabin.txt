@@ -167,7 +167,6 @@
 30CSVCMsgList_GameEvents_event_t
 32CNETMsg_SpawnGroup_LoadCompleted
 32CSVCMsg_GameSessionConfiguration
-33333333H
 3333H
 33CNETMsg_SpawnGroup_ManifestUpdate
 34CNETMsg_SpawnGroup_SetCreationTick
@@ -467,6 +466,7 @@ B\bH;F\btuI
 BackUp() can not exceed the size of the last Next() call
 BackUp() can only be called after Next
 BackUp() can only be called after a successful Next
+Bad KV3 data for '%s': %s\n
 BakedLODBuilderMgr001
 BenchmarkService001
 BinaryProperties_GetValue
@@ -986,6 +986,7 @@ EhD;8u
 Enable multithreading to use std::thread
 End-of-file inside block comment
 EngineServiceMgr001
+EnsureElementCapacity
 EntitySubclassUtilsV001
 Entry %s was not found in surfaceproperties_footsteps.txt\n
 Enum name
@@ -1141,7 +1142,8 @@ G\bH;V\bt6I;P
 G\bH;V\btpI;P
 G\bH;wHH
 G\bH;x\btHH
-G\bx#;p
+G\bx);p
+G\bx,;p
 Game System %s is defined twice!\n
 GameModelInfo001
 GameResourceServiceClientV001
@@ -1290,7 +1292,7 @@ H+l$XHcD$lH9
 H+l$\bL
 H+s\b;s
 H+w\bH9
-H0H;\rJ
+H0H;\rE
 H19\b
 H9B rv
 H9C(u*[D
@@ -1306,8 +1308,6 @@ H9G\bsH;h
 H9G\bsKH
 H9G\bt\b
 H9H\bH
-H9J\btI
-H9J\btg
 H9L$\bt(I9
 H9L$\bu\fH
 H9N\buS
@@ -1331,6 +1331,8 @@ H9w\bw H
 H9z r\fH
 H9z s
 H9~\bt\b
+H;=2T\v
+H;=Bj\v
 H;D$HH
 H;E0sR
 H;G t`H;G
@@ -1431,7 +1433,6 @@ I\n NETWORK_DISCONNECT_STEAM_DROPPED
 I\n$NETWORK_DISCONNECT_STEAM_VACBANSTATE
 I\n%NETWORK_DISCONNECT_REJECT_HIDDEN_GAME
 IcD$PM
-IcD$\fH
 IcD$\fI
 IcD$hI
 IcE@A;EP
@@ -1441,7 +1442,6 @@ IcT$PI
 IcT$XH
 IcT$hI
 IcT$xI
-Ic\f$H
 IdempotencyLevel
 If this is intended, set 'option allow_alias = true;' to the enum definition
 Ignoring extension
@@ -1482,8 +1482,6 @@ Invalid wire type for CPPTYPE_MESSAGE
 Invalid wire type for CPPTYPE_UINT32
 Invalid wire type for CPPTYPE_UINT64
 J5`!gF
-J@L;\rZ
-J@L;\ri
 JSType
 J\fD9I\f|YH
 J\n NETWORK_DISCONNECT_SNAPSHOTERROR
@@ -1495,6 +1493,7 @@ JustInTimeManifest
 KC\f\vD$LD
 KE(;E
 KPIcT$HI
+KV3 load transfer failed: %s\n
 K\b8H\btIL
 K\n!NETWORK_DISCONNECT_INTERNAL_ERROR
 K\n#NETWORK_DISCONNECT_TICKMSG_OVERFLOW
@@ -1506,6 +1505,8 @@ K\v9\bt
 Key in map fields cannot be enum types
 Key in map fields cannot be float/double, bytes or message types
 KeyValueCache001
+KeyValues3: pre-allocated array memory is too small for %u elements (%u bytes available, %u bytes needed)\n
+KeyValues3: pre-allocated table memory is too small for %u members (%u bytes available, %u bytes needed)\n
 L#d$HI\t
 L#d$\bH#D
 L#l$\bH
@@ -1549,9 +1550,11 @@ L9t$ t9H
 L9t$\bM
 L9v ~FL
 L9|$(tLL
+L;%JQ\f
 L;4$t0A
 L;4$toM
 L;4$trM
+L;5g%\n
 L;e\bus
 L;h\bt;I
 L;k s3H
@@ -1580,7 +1583,6 @@ L\n!NETWORK_DISCONNECT_HLTVRESTRICTED
 L\n!NETWORK_DISCONNECT_KICKED_SUICIDE
 L\n!NETWORK_DISCONNECT_LOOPDEACTIVATE
 L\n\eENetworkDisconnectionReason
-Lc;IǄ$07
 Lcc Lck$I
 Lcc$Lck(I
 Lcc(Lck,I
@@ -1685,7 +1687,6 @@ Multiple extension registrations for type
 MutableMessage
 MutableRawRepeatedField
 MutableRepeatedMessage
-MċE\tK\b9
 N10__cxxabiv115__forced_unwindE
 N10__cxxabiv117__class_type_infoE
 N10__cxxabiv117__pbase_type_infoE
@@ -1983,7 +1984,6 @@ Option must have a name
 Option must not use reserved name "uninterpreted_option
 Outdent() without matching Indent
 OverlayProjectionDirection
-P HcC
 P(HcH0M
 P(Lcd$\bL
 P*u?H
@@ -2172,8 +2172,6 @@ SPAWN_GROUP_SYNCHRONOUS_SPAWN
 SSE and SSE2 are required
 STRING
 SXy\a1
-S\bHcB\f
-S\bHcJ
 S\n!NETWORK_DISCONNECT_REMOTE_TIMEOUT
 S\n%NETWORK_DISCONNECT_CONNECTION_FAILURE
 S\n'NETWORK_DISCONNECT_DELTAENTMSG_OVERFLOW
@@ -2458,7 +2456,6 @@ UNIMPLEMENTED
 UNKNOWN
 UNKNOWN_ENUM_VALUE_%s_%d
 UUUUUUU
-UUUUUUUUH
 U\n"NETWORK_DISCONNECT_REMOTE_BADCRYPT
 U\n&NETWORK_DISCONNECT_REPLAY_INCOMPATIBLE
 U\n&NETWORK_DISCONNECT_SERVERINFO_OVERFLOW
@@ -7557,7 +7554,6 @@ btKI;M
 btSI;E
 btTI;u
 bt\eI;E
-bu\r<\bt
 but only
 but was
 bytes
@@ -7757,8 +7753,7 @@ fseeko64
 ftello64
 fxstat64
 f})IcO\bH
-gHc\rxU
-g\btQIcG
+gHc\rhU
 g_BitBuf_BitWriteMasks
 g_bUpdateStringTokenDatabase
 g_flConfigMaxCoord
@@ -8040,6 +8035,9 @@ long double
 lowprecisionuv
 lowprecisionuv1
 lseek64
+m H;- |\e
+m H;-X
+m8H;-Z
 mQNr7
 m\bu\eH9
 m\n\f\a\bE\vc\n\f\a\bB\v
@@ -8080,10 +8078,8 @@ missing
 model_default_preview_sequence_name
 mt19937
 must be unique within
-mxH;-8o\e
 m۶m۶\rM
 m۶m۶mH
-m۶m۶mL
 n    Actual
 n    Field type
 n    H
@@ -8397,6 +8393,7 @@ s:  IGameSystem::LoopInitAllSystems(start
 s:  } IGameSystem::LoopActivateAllSystems done\n
 s:  } IGameSystem::LoopDeactivateAllSystems done\n
 s: __pos (which is %zu) > this->size() (which is %zu
+s: element count overflow (%u)\n
 s<H;D
 s\bD9q\b
 s\bE9t$\b
@@ -8523,7 +8520,6 @@ t$\f9t$\b
 t$\ftDH
 t$pIcT$h
 t'D9 u
-t(IcF
 t);y }\fH
 t*HcL
 t*USPH
@@ -8585,6 +8581,7 @@ t\nH9X
 t\nH;w
 t\nI;x
 t\nM9}0
+t\n[A
 t\rIc
 t\rIc|$8
 t\tH;h H
@@ -8644,6 +8641,7 @@ u@IcE8I
 uE[A\\A]A
 uF_iM,E
 uFn\e_rG
+uGL;%\b
 uH[A\\A]A
 uR[A\\A]A
 u\aH;L

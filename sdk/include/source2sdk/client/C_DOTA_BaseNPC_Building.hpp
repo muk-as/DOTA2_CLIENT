@@ -19,7 +19,7 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x18c8
+    // Size: 0x18e0
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
@@ -34,45 +34,45 @@ namespace source2sdk::client
     {
     public:
         // metadata: MNetworkEnable
-        int32_t m_iDamageLevel; // 0x1858        
-        client::ParticleIndex_t m_nAmbientFXIndex; // 0x185c        
-        client::ParticleIndex_t m_nTPFXIndex; // 0x1860        
-        client::ParticleIndex_t m_nStatusFXIndex; // 0x1864        
+        int32_t m_iDamageLevel; // 0x1870        
+        client::ParticleIndex_t m_nAmbientFXIndex; // 0x1874        
+        client::ParticleIndex_t m_nTPFXIndex; // 0x1878        
+        client::ParticleIndex_t m_nStatusFXIndex; // 0x187c        
         // metadata: MNetworkEnable
         // m_nFXIndex has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CStrongHandle<resourcesystem::InfoForResourceTypeIParticleSystemDefinition> m_nFXIndex;
-        char m_nFXIndex[0x8]; // 0x1868        
+        char m_nFXIndex[0x8]; // 0x1880        
         // metadata: MNetworkEnable
         // m_nFXIndexDestruction has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CStrongHandle<resourcesystem::InfoForResourceTypeIParticleSystemDefinition> m_nFXIndexDestruction;
-        char m_nFXIndexDestruction[0x8]; // 0x1870        
+        char m_nFXIndexDestruction[0x8]; // 0x1888        
         // metadata: MNetworkEnable
-        QAngle m_angInitialAngles; // 0x1878        
+        QAngle m_angInitialAngles; // 0x1890        
         // metadata: MNetworkEnable
-        animationsystem::HSequence m_hHeroStatueSequence; // 0x1884        
+        animationsystem::HSequence m_hHeroStatueSequence; // 0x189c        
         // metadata: MNetworkEnable
-        animationsystem::HSequence m_hConstantLayerSequence; // 0x1888        
+        animationsystem::HSequence m_hConstantLayerSequence; // 0x18a0        
         // metadata: MNetworkEnable
-        float m_fHeroStatueCycle; // 0x188c        
+        float m_fHeroStatueCycle; // 0x18a4        
         // metadata: MNetworkEnable
-        int32_t m_iHeroStatueStatusEffectIndex; // 0x1890        
+        int32_t m_iHeroStatueStatusEffectIndex; // 0x18a8        
         // metadata: MNetworkEnable
-        bool m_bHeroStatue; // 0x1894        
+        bool m_bHeroStatue; // 0x18ac        
         // metadata: MNetworkEnable
-        bool m_bBattleCup; // 0x1895        
+        bool m_bBattleCup; // 0x18ad        
         // metadata: MNetworkEnable
-        char m_HeroStatueInscription[32]; // 0x1896        
-        [[maybe_unused]] std::uint8_t pad_0x18b6[0x2]; // 0x18b6
+        char m_HeroStatueInscription[32]; // 0x18ae        
+        [[maybe_unused]] std::uint8_t pad_0x18ce[0x2]; // 0x18ce
         // metadata: MNetworkEnable
-        client::PlayerID_t m_iHeroStatueOwnerPlayerID; // 0x18b8        
+        client::PlayerID_t m_iHeroStatueOwnerPlayerID; // 0x18d0        
         // metadata: MNetworkEnable
-        Color m_ParticleTintColor; // 0x18bc        
+        Color m_ParticleTintColor; // 0x18d4        
         // metadata: MNetworkEnable
-        client::FowCustomTeams_t m_nFoWTeam; // 0x18c0        
-        [[maybe_unused]] std::uint8_t pad_0x18c4[0x4];
+        client::FowCustomTeams_t m_nFoWTeam; // 0x18d8        
+        [[maybe_unused]] std::uint8_t pad_0x18dc[0x4];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in C_DOTA_BaseNPC_Building because it is not a standard-layout class
-    static_assert(sizeof(C_DOTA_BaseNPC_Building) == 0x18c8);
+    static_assert(sizeof(C_DOTA_BaseNPC_Building) == 0x18e0);
 };

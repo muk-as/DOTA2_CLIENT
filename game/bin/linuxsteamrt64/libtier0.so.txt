@@ -261,6 +261,7 @@
 A channel specifier is either
 A+J4E
 A+T$DL
+A+u$Hc
 A3	A3I(A3I
 A3@,A3
 A3@<A3@$A3
@@ -408,6 +409,7 @@ AWAVLc
 AYAZE1
 A\A]A
 A\A]A^A
+A\A]A^A_]þ4YA1L
 A\A]A^H
 A\A]A^ÐAUL
 A\A]H
@@ -549,6 +551,7 @@ BreakCommand
 BreakPieceEmbedded
 BreakPieceExternal
 Breaking content into %u epochs of size %u
+Buffers extend past the end of the input (%llu bytes
 Build ID too large
 Build ID too large, %d bytes
 Build-time option settings
@@ -1493,6 +1496,7 @@ DeveloperConsole
 DeveloperVerbose
 Dictionary is corrupted
 Dictionary mismatch
+Discard data buffer mismatch
 DoAssertDialog
 DoAssertDialog: invalid Assert response returned from dialog/vxconsole - breaking to debugger
 DoNotEcho
@@ -1540,6 +1544,8 @@ Engine2/MapMaxCoord
 EngineServiceMgr001
 EnsureAddedCapacity
 EnsureCapacity
+EnsureElementCapacity
+EnsureMemberCapacity
 Entry '%s' already has a name (ignoring update to '%s
 Error (generic
 Error parsing string '%s' as double, parsed to: '%s
@@ -1780,6 +1786,8 @@ H9D$xt
 H9E(sgL
 H9w rCH
 H;2uRE
+H;=un
+H;E0sR
 H;N sKL
 H;X0t	H
 H>*SL
@@ -2024,7 +2032,7 @@ InputService_001
 InputStackSystemVersion001
 InputSystemVersion001
 Insert
-InsertBeforeGetPtr
+InsertMultipleBefore
 InstallProgressReportHandler
 Int array has extra '%s' after values
 Int array only parsed %u value(s) when expecting %u
@@ -2120,11 +2128,12 @@ KV3 instances cannot be set to an unspecified specific type
 KV3 pointers cannot be serialized
 KeyValueCache001
 KeyValues Error: %s in file %s
+KeyValues3: pre-allocated array memory is too small for %u elements (%u bytes available, %u bytes needed
+KeyValues3: pre-allocated table memory is too small for %u members (%u bytes available, %u bytes needed
 KeyValues::ParseIncludedKeys: Couldn't load included keyvalue file %s
 KeyValues::SaveToFile: couldn't open file "%s" in path "%s
 KeyValuesFromJSON
 KeyValuesToJSON
-L$8A9\$X
 L$@QRP
 L$HH;G
 L$PI;L$(r0A
@@ -2995,6 +3004,7 @@ RecursiveLoadFromBuffer:  got conditional between key and value
 RecursiveLoadFromBuffer:  got empty keyname
 RecursiveLoadFromBuffer:  got } in key
 RecursiveLoadFromBuffer:  recursion overflow
+Reference data buffer mismatch
 Register offset set to invalid value (%llu
 RegisterAssertionFailureListener
 RegisterConCommand: Unknown error registering con command "%s
@@ -3009,6 +3019,7 @@ RemoveAssertionCallback
 RemoveAt
 RemoveAtUTF8
 RemoveBoneAndChildren
+RemoveMultiple
 Removing string token database entry "%s" for reason "%s
 RenderDevice003
 RenderDeviceMgr001
@@ -4346,10 +4357,10 @@ X360WIDE
 X<D3X(D3X
 XXXXXX: found leading plus sign while parsing string '%s' as float64, ignoring it
 X[A\A]A^A
-X|(ZJ
 Y4D3Y D3Y
 Y@CUtlMemoryPoolBase: Cannot specify 0 elements to grow each time
 YA1AUL
+YA1E1
 Yf,=M
 YieldWait
 You must construct it with ORDERED_CONSTRUCT macro in the dependency resolution function
@@ -10727,6 +10738,7 @@ incorrect data check
 incorrect header check
 incorrect length check
 incremental_shapes
+inherit_owner_joints
 init_array
 install
 int( %d = 0x%X
@@ -11511,6 +11523,7 @@ modeldoc34
 modeldoc35
 modeldoc36
 modeldoc37
+modeldoc38
 modeldoc4
 modeldoc5
 modeldoc6
@@ -11676,11 +11689,10 @@ opt.zero_realloc
 origin_max_delta
 origin_relative
 out of order
-p$D+G$D
 p4 add -t binary "%s
 p4 edit -t binary "%s
 p<0tUw
-pA3Q{I
+pA3Q+j
 pAUATI
 pAbilityName
 pClass
@@ -11706,6 +11718,7 @@ persistent
 phycpu
 physgun_interactions
 physical id
+physics_joint_modification_mode
 physicsmode
 place high
 place low
@@ -11803,9 +11816,12 @@ quantizedfloatencoderregistry.cpp
 quaternion
 queue force advance
 queue max wait
+r L;-A
 r M9q M
-r9L;-r
-r<H;5
+r9L;-B
+r9L;-b
+r<H;5u
+rKL;-4
 rT+6ZNw
 radius0
 radius1
@@ -11872,8 +11888,6 @@ s (before "%s
 s ) * %f
 s * %f
 s + 0x%llx
-s allocation count overflow
-s allocation count overflow( add %llu + current %llu > max %llu
 s bytes used out of %s bytes available (%.2f
 s is out of range for KeyValues, which doesn't support signed 64-bit numbers
 s minidump to %s
@@ -11910,9 +11924,12 @@ s: added string size %d overflows (added to %d
 s: capacity request for %d can't be satisfied (max %d
 s: different number of names and flags
 s: different number of names and pointers
+s: element count overflow (%u
+s: invalid array remove count %u (current count %u
+s: invalid array remove point %u (current count %u
 s: invalid capacity %d requested
 s: invalid flag byte count
-s: invalid nBeforeIndex %d
+s: invalid insert point %u (current count %u
 s: invalid nBufferChars %d
 s: invalid nByteIndex %d (string %d
 s: invalid nChars %d (index %d, string %d
@@ -11920,10 +11937,11 @@ s: invalid nChars %d (string %d
 s: invalid nIndex %d (string %d
 s: invalid nNewChars %d
 s: invalid nOldChars %d (string %d
-s: invalid nSize %d
 s: invalid nStart %d (string %d
 s: invalid pointer byte count
 s: invalid string pointer (string chars %d
+s: max element overflow, cur count %u + %u
+s: member count overflow (%u
 s: out of memory, falling back to regular allocators
 s: requested conversion of %d chars
 s: string format requested %d chars
@@ -12146,15 +12164,17 @@ t$HSATQL
 t$PAWARASL
 t$PSATQL
 t$XAWATASL
+t&L;5O
+t&L;5o
 t'D; u
-t)L;52
 t6<\t2H
+t6Hc@0
 t=fD;s
 tAD8;u
 tAE99L
 tKATUH
 tRUE1
-tTH;=%Z0
+tTH;=%y0
 tWAVAUATI
 tZLck H
 t[ATUH
@@ -12206,7 +12226,6 @@ trust_madvise
 trying split debug file
 tsd_nominal_tsds_lock
 tt<\u
-tu<+u
 turn_rate
 type info for
 type info name for
@@ -12376,7 +12395,6 @@ vsmart;vsmart_template
 vswprintf
 w <Xt|<hu7H
 w+OQvr
-w@IcW8H
 wBH9E
 wPAUATI
 waitpid

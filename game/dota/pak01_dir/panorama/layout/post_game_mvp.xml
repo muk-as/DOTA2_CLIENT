@@ -19,13 +19,15 @@
 						<Panel class="HeroBackgroundImage" />
 						<Panel class="HeroSelectGlow" />
 						<Panel class="Accolades" id="Accolades" />
-						<DOTAScenePanel id="HonorableMentionModel" class="OverviewHeroRender" unit="npc_dota_hero_rubick" environment="full_body_loadout" drawbackground="0" antialias="true" activity-modifier="PostGameIdle" particleonly="false" />
+						<DOTAScenePanel id="HonorableMentionModel" onload="DOTAPostGameHonorableMentionSpawnedHero()" class="OverviewHeroRender" unit="npc_dota_hero_rubick" environment="full_body_loadout" drawbackground="0" antialias="true" activity-modifier="PostGameIdle" particleonly="false" />
 						<Panel class="HeroImageOverlay" hittest="false" />
 					</Panel>
 					<Label id="PlayerName" class="OverviewHeroPlayerName" hittest="false" html="true" text="{g:dota_persona:ng:user_account_id}" />
 					<Label id="BotPlayerName" class="OverviewHeroPlayerName" hittest="false" text="{s:bot_player_name}" />
 					<Label class="Guildname" hittest="false" html="true" text="{g:dota_guild_name:user_guild_id}" />
 					<DOTAHeroImage id="MainHeroImage" heroimagestyle="landscape" scaling="stretch-to-fit-preserve-aspect" />
+					<Image id="EventLogo" scaling="cover" hittest="false" />
+					<DOTAParticleScenePanel id="ParticleOverlay" hittest="false" renderdeferred="true" particleonly="true" startActive="false" cameraOrigin="100 0 -200" lookAt="0 0 -200" fov="50" />
 				</Panel>
 			</Panel>
 		</snippet>
@@ -36,6 +38,8 @@
 				<DOTAAbilityImage class="ability_icon" id="ability_icon" />
 				<Label class="title" text="{s:title}" />
 				<Label class="details" id="details" text="{s:details}" html="true" />
+				<Image id="EventLogo" scaling="cover" hittest="false" />
+				<DOTAParticleScenePanel id="ParticleOverlay" hittest="false" renderdeferred="true" particleonly="true" startActive="true" cameraOrigin="100 0 -200" lookAt="0 0 -200" fov="50" />
 			</Panel>
 		</snippet>
 		<snippet name="MVP2MapRadiant">
@@ -69,6 +73,7 @@
 				<Panel class="Accolades" id="Accolades" />
 			</Panel>
 			<Panel id="HonorableMentionsContainer">
+				<Panel id="EventHonorableMentions" />
 				<Label text="#DOTA_MVP_HonorableMentions" />
 				<Panel id="HonorableMentions" />
 			</Panel>

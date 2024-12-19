@@ -9,6 +9,7 @@
 @import url("s2r://panorama/styles/post_game_progress_international2024.vcss_c");
 @import url("s2r://panorama/styles/post_game_progress_frostivus2023.vcss_c");
 @import url("s2r://panorama/styles/post_game_progress_crownfall.vcss_c");
+@import url("s2r://panorama/styles/post_game_progress_frostivus2024.vcss_c");
 @define HeroTransitionDuration: 0.46s;
 @define slot0color: #0038AC;
 @define slot1color: #17B271;
@@ -8863,6 +8864,32 @@ DOTAGuildContract
 	opacity: 0;
 }
 
+.HonorableMention #EventLogo
+{
+	width: 75%;
+	horizontal-align: center;
+	vertical-align: bottom;
+	margin-bottom: 74px;
+	visibility: collapse;
+}
+
+.HonorableMention #EventLogo.HasLogo
+{
+	visibility: visible;
+}
+
+.HonorableMention #ParticleOverlay
+{
+	width: 100%;
+	height: 100%;
+	vertical-align: top;
+	horizontal-align: center;
+	transition-property: opacity;
+	transition-duration: 0.6s;
+	opacity: 0.4;
+	blur: gaussian( 0.5px );
+}
+
 .MVPAccolade
 {
 	opacity: 0;
@@ -8870,6 +8897,32 @@ DOTAGuildContract
 	transition-property: opacity, transform;
 	transition-duration: 1s;
 	transition-timing-function: ease;
+}
+
+.MVPAccolade #EventLogo
+{
+	width: 20%;
+	horizontal-align: right;
+	vertical-align: middle;
+	margin-right: 4px;
+	visibility: collapse;
+}
+
+.MVPAccolade #EventLogo.HasLogo
+{
+	visibility: visible;
+}
+
+.MVPAccolade #ParticleOverlay
+{
+	width: 100%;
+	height: 100%;
+	vertical-align: top;
+	horizontal-align: center;
+	transition-property: opacity;
+	transition-duration: 0.6s;
+	opacity: 0.4;
+	blur: gaussian( 0.5px );
 }
 
 .GuildDetails Label
@@ -8892,7 +8945,7 @@ DOTAGuildContract
 	color: #ffffff;
 }
 
-#HonorableMentions .MVPAccolade
+#HonorableMentions .MVPAccolade,#EventHonorableMentions .MVPAccolade
 {
 	opacity: 1;
 	transform: translateX(0px);
@@ -8923,11 +8976,11 @@ DOTAGuildContract
 #HonorableMentionsContainer
 {
 	width: 560px;
-	height: 600px;
+	height: 760px;
 	vertical-align: middle;
 	horizontal-align: center;
 	margin-left: 855px;
-	margin-top: 225px;
+	margin-top: 65px;
 	opacity: 1;
 	transition-property: opacity;
 	flow-children: down;
@@ -8940,9 +8993,47 @@ DOTAGuildContract
 
 #HonorableMentions
 {
-	height: fill-parent-flow( 1.0 );
-	width: fill-parent-flow( 1.0 );
+	height: fill-parent-flow( 0.75 );
+	width: fill-parent-flow( 0.75 );
 	flow-children: right;
+}
+
+#EventHonorableMentions
+{
+	height: fill-parent-flow( 0.25 );
+	width: fill-parent-flow( 0.25 );
+	flow-children: right;
+}
+
+#EventHonorableMentions .HonorableMention
+{
+	width: 540px;
+}
+
+#EventHonorableMentions .HonorableMention #EventLogo
+{
+	horizontal-align: left;
+	vertical-align: bottom;
+	width: 200px;
+	height: 60px;
+	margin-left: 50px;
+}
+
+#EventHonorableMentions .HonorableMention .OverviewHeroRender
+{
+	horizontal-align: right;
+	width: 238px;
+	height: 541px;
+	transform: translateX( 0px ) translateY( -50px );
+}
+
+#EventHonorableMentions .HonorableMention .OverviewHeroPlayerNameExpanded,#EventHonorableMentions .HonorableMention .OverviewHeroPlayerName
+{
+	horizontal-align: right;
+	width: 238px;
+	margin-left: 2px;
+	margin-right: 2px;
+	margin-top: 8px;
 }
 
 .HonorableMention
@@ -8986,7 +9077,7 @@ DOTAGuildContract
 	text-overflow: clip;
 }
 
-#HonorableMentions .Accolades
+#HonorableMentions .Accolades,#EventHonorableMentions .Accolades
 {
 	z-index: 1;
 	height: 100%;
@@ -9081,7 +9172,7 @@ DOTAGuildContract
 	height: 100%;
 }
 
-#HonorableMentions .Accolade .icon
+#HonorableMentions .Accolade .icon,#EventHonorableMentions .Accolade .icon
 {
 	width: 65px;
 	background-size: 100% 100%;
@@ -9093,19 +9184,19 @@ DOTAGuildContract
 	margin-top: 3px;
 }
 
-#HonorableMentions .Accolade DOTAAbilityImage
+#HonorableMentions .Accolade DOTAAbilityImage,#EventHonorableMentions .Accolade DOTAAbilityImage
 {
 	max-width: 65px;
 	margin-top: 3px;
 }
 
-#HonorableMentions .Accolade .title
+#HonorableMentions .Accolade .title,#EventHonorableMentions .Accolade .title
 {
 	margin-left: 70px;
 	margin-top: 10px;
 }
 
-#HonorableMentions .Accolade .details
+#HonorableMentions .Accolade .details,#EventHonorableMentions .Accolade .details
 {
 	margin-left: 70px;
 	margin-top: 32px;

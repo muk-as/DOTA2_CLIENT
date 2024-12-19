@@ -24,7 +24,7 @@
 0(4
 0(45
 0*llu
-0-1./45236789:;=<>?@ACDBGEFJHIKL
+0-1./45236789:;=<>?@ACDBGEFJHIKLM
 0-4D\t\n\v
 0.1s interval
 0.2f
@@ -324,8 +324,6 @@
 10IGameEvent
 10IIntention
 10INavEditor
-10thAnniversary.PartyHat.Cast
-10thAnniversary.PartyHat.Death
 11CAnchorList
 11CBaseEntity
 11CBaseFilter
@@ -4647,6 +4645,7 @@
 17CCompressedStaticIiiE
 17CCompressedStaticIisE
 17CConstraintAnchor
+17CCraftworksSchema
 17CDOTABaseGameMode
 17CDOTABehaviorIdle
 17CDOTABingoManager
@@ -5270,6 +5269,7 @@
 1\n,kKillEaterEventType_Mars_MultiHeroGodsRebuke
 1\n,kKillEaterEventType_Muerta_MultiHeroDeadShot
 1\n,kKillEaterEventType_Razor_EyeOfTheStormKills
+1\n,kKillEaterEventType_Seasonal_PartyHatsStolen
 1\n,kKillEaterEventType_Viper_CorrosiveSkinKills
 1\n,k_EHeroStatType_CounterHelixHeroesHitAverage
 1\n,k_EMsgClientToGCAcceptPrivateCoachingSession
@@ -5678,9 +5678,11 @@
 21CCLSearchFieldFactoryI25SCLTeamBuildingKillFieldsL20DOTA_COMBATLOG_TYPES17EE
 21CCLSearchFieldFactoryI26SCLNeutralItemEarnedFieldsL20DOTA_COMBATLOG_TYPES43EE
 21CCLSearchFieldFactoryI27SCLModifierStackEventFieldsL20DOTA_COMBATLOG_TYPES19EE
+21CCLSearchFieldFactoryI31SCLPlayerStatTrackerEventFieldsL20DOTA_COMBATLOG_TYPES44EE
 21CCLSearchFieldFactoryI32SCLPhysicalDamagePreventedFieldsL20DOTA_COMBATLOG_TYPES32EE
 21CCompressedStaticBool
 21CCompressedStaticChar
+21CCraftworksGameSystem
 21CDOTACustomGameEvents
 21CDOTAGameManagerProxy
 21CDOTAInventoryManager
@@ -5836,6 +5838,7 @@
 21CMsgSOCacheSubscribed
 21CMsgSOMultipleObjects
 21CMsgSerializedSOCache
+21CMsgSignOutCraftworks
 21CMsgSosStopSoundEvent
 21CMsgSpendWager_Player
 21CMsgSurvivorsUserData
@@ -6695,6 +6698,7 @@
 24CGameSystemStaticFactoryI20CDOTA_CombatAnalyzerS0_E
 24CGameSystemStaticFactoryI20CNavSpaceBuildLockerS0_E
 24CGameSystemStaticFactoryI20CPlayerVoiceListenerS0_E
+24CGameSystemStaticFactoryI21CCraftworksGameSystemS0_E
 24CGameSystemStaticFactoryI21CDOTAInventoryManagerS0_E
 24CGameSystemStaticFactoryI21CDOTATrophyGameSystemS0_E
 24CGameSystemStaticFactoryI21CDOTA_CustomUIManagerS0_E
@@ -6737,6 +6741,7 @@
 24CGameSystemStaticFactoryI30CParticleSystemQueryGameSystemS0_E
 24CGameSystemStaticFactoryI30CThreatEvaluatorAutoGameSystemS0_E
 24CGameSystemStaticFactoryI31CCleanupRelationshipsGameSystemS0_E
+24CGameSystemStaticFactoryI31CDOTACraftworksServerGameSystemS0_E
 24CGameSystemStaticFactoryI31CDOTAFeaturedGamemodeGameSystemS0_E
 24CGameSystemStaticFactoryI32CDOTAStatTrackerSchemaGameSystemS0_E
 24CGameSystemStaticFactoryI32CDOTAStatTrackerServerGameSystemS0_E
@@ -6760,6 +6765,7 @@
 24CMsgClientToGCEquipItems
 24CMsgClientToGCPackBundle
 24CMsgClientToGCUnwrapGift
+24CMsgCraftworksComponents
 24CMsgDOTAAwardEventPoints
 24CMsgDOTABotDebugInfo_Bot
 24CMsgDOTADPCLeagueResults
@@ -7064,6 +7070,7 @@
 25CMsgBotWorldState_Courier
 25CMsgClearWorldDecalsEvent
 25CMsgClientToGCUnlockCrate
+25CMsgCraftworksQuestReward
 25CMsgDOTALeagueNodeResults
 25CMsgDOTALeague_SeriesInfo
 25CMsgDOTARealtimeGameStats
@@ -7337,6 +7344,7 @@
 26CGameSystemEventDispatcher
 26CGenericExpr_StringLiteral
 26CGridSceneObjectDescriptor
+26CIngameEvent_Frostivus2024
 26CInterpolatedVarProceduralI19MeshGroupMaskInfo_tE
 26CInterpolatedVarProceduralI21EnableRenderingInfo_tE
 26CLobbyBroadcastChannelInfo
@@ -7407,6 +7415,7 @@
 26CUserMessageSayTextChannel
 26CUserMessage_ExtraUserData
 26CUserMsg_CustomGameEvent_t
+26CUserMsg_ParticleManager_t
 26GameSessionConfiguration_t
 26ICommandCompletionCallback
 26IDOTA_SpeechQueuedCallback
@@ -7965,6 +7974,7 @@
 28CMsgLocalServerFakeLobbyData
 28CMsgSOCacheSubscriptionCheck
 28CMsgServerToGCGetCheerConfig
+28CMsgSignOutCraftworks_Player
 28CMsgSosSetLibraryStackFields
 28CMsgSosSetSoundEventParams_t
 28CMsgUnderDraftData_BenchSlot
@@ -8359,6 +8369,9 @@
 2\n-k_EHeroStatType_BattleHungerPotentialDuration
 2\n-k_EMsgClientToGCCancelUnfinalizedTransactions
 2\n-k_EMsgClientToGCCandyShopDevResetShopResponse
+2\n-k_EMsgClientToGCCraftworksCraftRecipeResponse
+2\n-k_EMsgClientToGCCraftworksDevModifyComponents
+2\n-k_EMsgClientToGCCraftworksGetUserDataResponse
 2\n-k_EMsgClientToGCCreateStickerbookPageResponse
 2\n-k_EMsgClientToGCDeleteStickerbookPageResponse
 2\n-k_EMsgClientToGCGetBattleReportAggregateStats
@@ -8924,6 +8937,7 @@
 31CDOTAClientMsg_NeutralCampAlert
 31CDOTAClientMsg_SetUnitShareFlag
 31CDOTAClientMsg_ToggleAutoattack
+31CDOTACraftworksServerGameSystem
 31CDOTAEntityMsg_InvokerSpellCast
 31CDOTAFeaturedGamemodeGameSystem
 31CDOTAInGamePredictionGameSystem
@@ -9254,6 +9268,7 @@
 31PlayerResourceBroadcasterData_t
 31PlayerResourcePlayerEventData_t
 31ProtoFlattenedSerializerField_t
+31SCLPlayerStatTrackerEventFields
 32.32s: %4.4s, counter % 4d, level %s\n
 32:B\n
 32CClientMsg_CustomGameEventBounce
@@ -12097,7 +12112,6 @@
 3_top
 3f
 3f / %.3f
-3f3n3
 4
 4 (8
 4,08
@@ -15048,6 +15062,7 @@
 58CDOTA_Modifier_SpiritBreaker_ChargeOfDarkness_Untargetable
 58CDOTA_Modifier_VengefulSpirit_Command_Negative_Aura_Effect
 58CMsgClientToGCOverworldRequestTokensNeededByFriendResponse
+58CMsgCraftworksComponents_ComponentQuantitiesEntry_DoNotUse
 58CMsgNotificationOfSuspiciousActivity_MultipleGameInstances
 58CMsgServerToGCCompendiumChosenInGamePredictions_Prediction
 58CMsgServerToGCMatchPlayerNeutralItemEquipHistory_ItemEquip
@@ -17290,7 +17305,10 @@ Action '%s' can't grant a reward for score '%s' with unknown item def '%u
 Action '%s' can't grant action '%s' as a reward at score '%s' because that action spans a range of action ids
 Action '%s' can't grant action '%s' as a reward at score '%s' without specifying 'level', because that action spans a range of action ids
 Action '%s' can't grant action '%s' at level %d at score '%s', out of range.  Max level for that action is %d
+Action '%s' can't grant action '%s' for event %s. For cross-event grants, use the number of the action instead of the name
+Action '%s' can't grant action '%s' with EVENT_ID_NONE
 Action '%s' can't grant action '%s' with grant count %d at score '%s' - sanity check out of range (1-10000
+Action '%s' can't grant action '%s' with invalid event '%s
 Action '%s' can't grant an unknown action '%s' as a reward at score '%s
 Action '%s' can't parse the range of chat wheel message ids '%s' to grant at reward score '%s
 Action '%s' can't parse the range of ping wheel message ids '%s' to grant at reward score '%s
@@ -18337,7 +18355,6 @@ Buyback
 BuybackUsageThink
 Bypasses lookup of soundscapes for indvidual audio sources when enabled
 B¸2
-C
 C not allowed in lookbehind assertion
 C%d:I%d {ID=%-3d
 C-side of entity framework
@@ -18560,6 +18577,16 @@ CCompressedStaticVector4D
 CConstantForceController
 CConstraintAnchor
 CCopyRecipientFilter
+CCraftworksComponentDefinition
+CCraftworksDefinition
+CCraftworksGameSystem
+CCraftworksQuestComponentReward
+CCraftworksQuestDefinition
+CCraftworksRecipeComponentQuantity
+CCraftworksRecipeDefinition
+CCraftworksRecipeTierDefinition
+CCraftworksSchema: %s\n
+CCraftworksSchema: Couldn't load resource %s\n
 CCredits
 CCustomGameData
 CCustomGameEventManager
@@ -18778,6 +18805,7 @@ CDOTAClientMsg_WorldLine
 CDOTAClientMsg_WorldLine_t
 CDOTAClientMsg_XPAlert
 CDOTAClientMsg_XPAlert_t
+CDOTACraftworksServerGameSystem
 CDOTACustomGameCache
 CDOTACustomGameEvents
 CDOTACustomGameHeroPickRules
@@ -26349,6 +26377,7 @@ CHECK failed: index_of_first_non_null_ == num_buckets_ || table_[index_of_first_
 CHECK failed: is_extension
 CHECK failed: is_prototype
 CHECK failed: is_repeated
+CHECK failed: it != end
 CHECK failed: limit >= 0 && limit <= INT_MAX - kSlopBytes
 CHECK failed: limit_ > kSlopBytes
 CHECK failed: limit_end_ == buffer_end
@@ -26550,6 +26579,7 @@ CIngameEvent_FV2018
 CIngameEvent_FV2019
 CIngameEvent_FV2023
 CIngameEvent_Fall2021
+CIngameEvent_Frostivus2024
 CIngameEvent_MuertaReleaseSpring2023
 CIngameEvent_MuertaReleaseSpring2023_DummyModifierHolder
 CIngameEvent_NB2020
@@ -26788,6 +26818,8 @@ CMsgConnectionStatus
 CMsgConsumableUsage
 CMsgCraftStatue
 CMsgCraftingResponse
+CMsgCraftworksComponents
+CMsgCraftworksQuestReward
 CMsgCustomGameInstallStatus"*\n
 CMsgCustomGameWhitelist
 CMsgCustomGameWhitelistForEdit
@@ -27118,6 +27150,8 @@ CMsgSignOutAssassinMiniGameInfo
 CMsgSignOutBotInfo
 CMsgSignOutBounties
 CMsgSignOutCommunicationSummary
+CMsgSignOutCraftworks
+CMsgSignOutCraftworks.Player
 CMsgSignOutDraftInfo
 CMsgSignOutGameplayStats
 CMsgSignOutGameplayStats.CTeam
@@ -28699,7 +28733,9 @@ Complexity
 Component %d for achievement %s found, but already had that component\n
 Component %d for achievement %s found\n
 Component %s illegally specified INT_MIN as its priority!\n
+Component %u specifies recipe tier %u, but that doesn't exist
 Component class %s needs its own datadesc (is using %s)\n
+ComponentQuantitiesEntry
 Compute LOD mask internally like since 2016, i.e. force all LOD groups' bones to compute
 Compute the closest T value on the path relative to the entity provided. (0.0 to 1.0 float value that defines the point along the spline
 Compute the closest direction along the path relative to the entity provided. (world space vector
@@ -28793,6 +28829,7 @@ Could not find clear space for unit "%s" at (%f, %f, %f)!\n
 Could not find data for item! %s\n
 Could not find guild challenge instance %u
 Could not find lobby member for account %u when setting up contracts
+Could not find tracked player stat with name %s
 Could not find type
 Could not get permission to signout, exiting
 Couldn't Find Stats Definition in file %s\n
@@ -28827,6 +28864,13 @@ CountryDailyRevenue
 CourierState_t
 CourierUsageThink
 Cover image to use. Likely starts with file://{images}/comics
+CraftworksComponentID_t
+CraftworksFiles
+CraftworksID_t
+CraftworksQuestID_t
+CraftworksQuestType_t
+CraftworksRecipeID_t
+CraftworksRecipeTierID_t
 Crash detection sentinel file '%s' file is present!\n
 Crash report has been pending to submit for %d seconds\n
 Crash report message acknowledge by GC\n
@@ -29609,6 +29653,7 @@ DOTA_COMBATLOG_PLAYERSTATS
 DOTA_COMBATLOG_PURCHASE
 DOTA_COMBATLOG_REVEALED_INVISIBLE
 DOTA_COMBATLOG_SPELL_ABSORB
+DOTA_COMBATLOG_STAT_TRACKER_PLAYER
 DOTA_COMBATLOG_SUCCESSFUL_SCAN
 DOTA_COMBATLOG_TEAM_BUILDING_KILL
 DOTA_COMBATLOG_TREE_CUT
@@ -31216,7 +31261,7 @@ DebugWeeklyQuestChallenge: Query completed for %s but hero id does not match sel
 Debugger connected\n
 Debugging helper to try out different autostyle configurations\n\tArguments:   \t<{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}> <var name> <value>\n
 Debugging stopped\n
-Dec  5 2024
+Dec 18 2024
 DecalEmitterSystem
 DeclareFunctions
 Decrease this modifier's stack count by 1
@@ -31647,6 +31692,9 @@ Duplicate alternate icon definition (%d
 Duplicate attribute definition index (%d
 Duplicate chat wheel message name %s
 Duplicate chat wheel message_id %u. Used for both %s and %s
+Duplicate component ID %u
+Duplicate craftworks id %u
+Duplicate craftworks name %s
 Duplicate effect %s found in rubick arcana file '%s
 Duplicate id %d found for blessing types '%s' and '%s
 Duplicate id %d found for blessings '%s' and '%s
@@ -31667,7 +31715,10 @@ Duplicate player stat name %s (%u and %u
 Duplicate prefab name (%s
 Duplicate premium player card packs for team id %u: %u and %u
 Duplicate quality value (%d
+Duplicate quest ID %u
 Duplicate rarity value (%d
+Duplicate recipe ID %u
+Duplicate recipe tier %u
 Duplicate scenario id %u used by both '%s' and '%s'\n
 Duplicate scenario name '%s' used by scenario %u and %u\n
 Duplicate season_id '%u
@@ -31716,6 +31767,7 @@ EClientUIEvent
 EClientUIEvent_DialogFinished
 EClientUIEvent_FireOutput
 EClientUIEvent_Invalid
+ECraftworksAuditAction
 ECrowdLevel
 ECustomGameInstallStatus
 ECustomGameWhitelistState
@@ -31878,6 +31930,7 @@ EQueryCvarValueStatus
 ERROR
 ERROR - RemoveAbilityByHandle - %s does not have ability %s.\n
 ERROR: *Muerta: Parting Shot - Hero: %s, attempting to swap %s with %s. Null ability found in index %d (num abilities = %d).\n
+ERROR: CCraftworksSchema reload failed\n
 ERROR: CDOTABingoSchema Reload failed\n
 ERROR: CSource2Server::Connect - 'g_pCVar' is nullptr\n
 ERROR: CSource2Server::Connect - Failed to connect to engine\n
@@ -31965,6 +32018,7 @@ EVENT_ID_FROSTIVUS_2017
 EVENT_ID_FROSTIVUS_2018
 EVENT_ID_FROSTIVUS_2019
 EVENT_ID_FROSTIVUS_2023
+EVENT_ID_FROSTIVUS_2024
 EVENT_ID_INTERNATIONAL_2015
 EVENT_ID_INTERNATIONAL_2016
 EVENT_ID_INTERNATIONAL_2017
@@ -32893,6 +32947,7 @@ Failed to get HTTP response data.\n
 Failed to get HTTP response size.\n
 Failed to hit anything
 Failed to include script "%s
+Failed to initialize CCraftworksSchema. %s
 Failed to initialize CDOTABingoSchema. %s
 Failed to initialize CDOTAFantasyCraftingSchema. %s
 Failed to initialize CDOTAFeaturedGamemodeSchema. %s
@@ -33364,6 +33419,9 @@ Frostivus.Item.Coal.Cast
 Frostivus.Item.Coal.Target
 Frostivus.Item.Snowball.Cast
 Frostivus.Item.Snowball.Target
+Frostivus.SantaHat.Channel
+Frostivus.SantaHat.Swipe
+Frostivus.SantaHat.Swipe.Target
 Frostivus.SlidePenguin.Crash.Impact
 Frostivus.SlidePenguin.Crash.Voice
 Frostivus.SlidePenguin.Expired
@@ -37056,12 +37114,19 @@ I CUtlRBTree<CUtlOrderedMapBase<CHandle<CBaseEntity>, CDOTAHeroPositions *, CDef
 I CUtlRBTree<CUtlOrderedMapBase<CHandle<CBaseEntity>, bool, CDefLess<CHandle<CBaseEntity>>, int>::Node_t, CUtlOrderedMapBase<CHandle<CBaseEntity>, bool, CDefLess<CHandle<CBaseEntity>>, int>::CKeyLess>::Insert(T &&) [T = CUtlOrderedMapBase<CHandle<CBaseEntity>, bool, CDefLess<CHandle<CBaseEntity>>, int>::Node_t, L = CUtlOrderedMapBase<CHandle<CBaseEntity>, bool, CDefLess<CHandle<CBaseEntity>>, int>::CKeyLess, I = int, M = CUtlMemory<UtlRBTreeNode_t<CUtlOrderedMapBase<CHandle<CBaseEntity>, bool, CDefLess<CHandle<CBaseEntity>>, int>::Node_t, int
 I CUtlRBTree<CUtlOrderedMapBase<CKV3MemberName, CUtlString, CLessFunc<&CEntitySystem::EntityKeyIdLessFunc>, int>::Node_t, CUtlOrderedMapBase<CKV3MemberName, CUtlString, CLessFunc<&CEntitySystem::EntityKeyIdLessFunc>, int>::CKeyLess>::Insert(T &&) [T = CUtlOrderedMapBase<CKV3MemberName, CUtlString, CLessFunc<&CEntitySystem::EntityKeyIdLessFunc>, int>::Node_t, L = CUtlOrderedMapBase<CKV3MemberName, CUtlString, CLessFunc<&CEntitySystem::EntityKeyIdLessFunc>, int>::CKeyLess, I = int, M = CUtlMemory<UtlRBTreeNode_t<CUtlOrderedMapBase<CKV3MemberName, CUtlString, CLessFunc<&CEntitySystem::EntityKeyIdLessFunc>, int>::Node_t, int
 I CUtlRBTree<CUtlOrderedMapBase<CUtlString, BingoExclusiveStatGroupID_t, CDefLess<CUtlString>, int>::Node_t, CUtlOrderedMapBase<CUtlString, BingoExclusiveStatGroupID_t, CDefLess<CUtlString>, int>::CKeyLess>::Insert(T &&) [T = CUtlOrderedMapBase<CUtlString, BingoExclusiveStatGroupID_t, CDefLess<CUtlString>, int>::Node_t, L = CUtlOrderedMapBase<CUtlString, BingoExclusiveStatGroupID_t, CDefLess<CUtlString>, int>::CKeyLess, I = int, M = CUtlMemory<UtlRBTreeNode_t<CUtlOrderedMapBase<CUtlString, BingoExclusiveStatGroupID_t, CDefLess<CUtlString>, int>::Node_t, int
+I CUtlRBTree<CUtlOrderedMapBase<CUtlString, CCraftworksDefinition *, CDefLess<CUtlString>, int>::Node_t, CUtlOrderedMapBase<CUtlString, CCraftworksDefinition *, CDefLess<CUtlString>, int>::CKeyLess>::Insert(T &&) [T = CUtlOrderedMapBase<CUtlString, CCraftworksDefinition *, CDefLess<CUtlString>, int>::Node_t, L = CUtlOrderedMapBase<CUtlString, CCraftworksDefinition *, CDefLess<CUtlString>, int>::CKeyLess, I = int, M = CUtlMemory<UtlRBTreeNode_t<CUtlOrderedMapBase<CUtlString, CCraftworksDefinition *, CDefLess<CUtlString>, int>::Node_t, int
 I CUtlRBTree<CUtlOrderedMapBase<CUtlString, CDOTABingoStatDefinition, CDefLess<CUtlString>, int>::Node_t, CUtlOrderedMapBase<CUtlString, CDOTABingoStatDefinition, CDefLess<CUtlString>, int>::CKeyLess>::Insert(T &&) [T = CUtlOrderedMapBase<CUtlString, CDOTABingoStatDefinition, CDefLess<CUtlString>, int>::Node_t, L = CUtlOrderedMapBase<CUtlString, CDOTABingoStatDefinition, CDefLess<CUtlString>, int>::CKeyLess, I = int, M = CUtlMemory<UtlRBTreeNode_t<CUtlOrderedMapBase<CUtlString, CDOTABingoStatDefinition, CDefLess<CUtlString>, int>::Node_t, int
 I CUtlRBTree<CUtlOrderedMapBase<CUtlString, CDOTAEventGameDefinition *, CDefFastCaselessStringLess, int>::Node_t, CUtlOrderedMapBase<CUtlString, CDOTAEventGameDefinition *, CDefFastCaselessStringLess, int>::CKeyLess>::Insert(T &&) [T = CUtlOrderedMapBase<CUtlString, CDOTAEventGameDefinition *, CDefFastCaselessStringLess, int>::Node_t, L = CUtlOrderedMapBase<CUtlString, CDOTAEventGameDefinition *, CDefFastCaselessStringLess, int>::CKeyLess, I = int, M = CUtlMemory<UtlRBTreeNode_t<CUtlOrderedMapBase<CUtlString, CDOTAEventGameDefinition *, CDefFastCaselessStringLess, int>::Node_t, int
 I CUtlRBTree<CUtlOrderedMapBase<CUtlString, CUtlString, CDefLess<CUtlString>, int>::Node_t, CUtlOrderedMapBase<CUtlString, CUtlString, CDefLess<CUtlString>, int>::CKeyLess>::Insert(T &&) [T = CUtlOrderedMapBase<CUtlString, CUtlString, CDefLess<CUtlString>, int>::Node_t, L = CUtlOrderedMapBase<CUtlString, CUtlString, CDefLess<CUtlString>, int>::CKeyLess, I = int, M = CUtlMemory<UtlRBTreeNode_t<CUtlOrderedMapBase<CUtlString, CUtlString, CDefLess<CUtlString>, int>::Node_t, int
 I CUtlRBTree<CUtlOrderedMapBase<CUtlSymbol, HSCRIPT__ *, CDefLess<CUtlSymbol>, int>::Node_t, CUtlOrderedMapBase<CUtlSymbol, HSCRIPT__ *, CDefLess<CUtlSymbol>, int>::CKeyLess>::Insert(T &&) [T = CUtlOrderedMapBase<CUtlSymbol, HSCRIPT__ *, CDefLess<CUtlSymbol>, int>::Node_t, L = CUtlOrderedMapBase<CUtlSymbol, HSCRIPT__ *, CDefLess<CUtlSymbol>, int>::CKeyLess, I = int, M = CUtlMemory<UtlRBTreeNode_t<CUtlOrderedMapBase<CUtlSymbol, HSCRIPT__ *, CDefLess<CUtlSymbol>, int>::Node_t, int
 I CUtlRBTree<CUtlOrderedMapBase<CUtlSymbolLarge, CUtlVector<CEntityHandle> *, CDefLess<CUtlSymbolLarge>, unsigned short>::Node_t, CUtlOrderedMapBase<CUtlSymbolLarge, CUtlVector<CEntityHandle> *, CDefLess<CUtlSymbolLarge>, unsigned short>::CKeyLess, unsigned short>::Insert(T &&) [T = CUtlOrderedMapBase<CUtlSymbolLarge, CUtlVector<CEntityHandle> *, CDefLess<CUtlSymbolLarge>, unsigned short>::Node_t, L = CUtlOrderedMapBase<CUtlSymbolLarge, CUtlVector<CEntityHandle> *, CDefLess<CUtlSymbolLarge>, unsigned short>::CKeyLess, I = unsigned short, M = CUtlMemory<UtlRBTreeNode_t<CUtlOrderedMapBase<CUtlSymbolLarge, CUtlVector<CEntityHandle> *, CDefLess<CUtlSymbolLarge>, unsigned short>::Node_t, unsigned short>, unsigned short
 I CUtlRBTree<CUtlOrderedMapBase<ChatWheelMessageID_t, SChatWheelMessageDefinition *, CDefLess<ChatWheelMessageID_t>, int>::Node_t, CUtlOrderedMapBase<ChatWheelMessageID_t, SChatWheelMessageDefinition *, CDefLess<ChatWheelMessageID_t>, int>::CKeyLess>::Insert(T &&) [T = CUtlOrderedMapBase<ChatWheelMessageID_t, SChatWheelMessageDefinition *, CDefLess<ChatWheelMessageID_t>, int>::Node_t, L = CUtlOrderedMapBase<ChatWheelMessageID_t, SChatWheelMessageDefinition *, CDefLess<ChatWheelMessageID_t>, int>::CKeyLess, I = int, M = CUtlMemory<UtlRBTreeNode_t<CUtlOrderedMapBase<ChatWheelMessageID_t, SChatWheelMessageDefinition *, CDefLess<ChatWheelMessageID_t>, int>::Node_t, int
+I CUtlRBTree<CUtlOrderedMapBase<CraftworksComponentID_t, CCraftworksComponentDefinition *, CDefLess<CraftworksComponentID_t>, int>::Node_t, CUtlOrderedMapBase<CraftworksComponentID_t, CCraftworksComponentDefinition *, CDefLess<CraftworksComponentID_t>, int>::CKeyLess>::Insert(T &&) [T = CUtlOrderedMapBase<CraftworksComponentID_t, CCraftworksComponentDefinition *, CDefLess<CraftworksComponentID_t>, int>::Node_t, L = CUtlOrderedMapBase<CraftworksComponentID_t, CCraftworksComponentDefinition *, CDefLess<CraftworksComponentID_t>, int>::CKeyLess, I = int, M = CUtlMemory<UtlRBTreeNode_t<CUtlOrderedMapBase<CraftworksComponentID_t, CCraftworksComponentDefinition *, CDefLess<CraftworksComponentID_t>, int>::Node_t, int
+I CUtlRBTree<CUtlOrderedMapBase<CraftworksID_t, CCraftworksDefinition *, CDefLess<CraftworksID_t>, int>::Node_t, CUtlOrderedMapBase<CraftworksID_t, CCraftworksDefinition *, CDefLess<CraftworksID_t>, int>::CKeyLess>::Insert(T &&) [T = CUtlOrderedMapBase<CraftworksID_t, CCraftworksDefinition *, CDefLess<CraftworksID_t>, int>::Node_t, L = CUtlOrderedMapBase<CraftworksID_t, CCraftworksDefinition *, CDefLess<CraftworksID_t>, int>::CKeyLess, I = int, M = CUtlMemory<UtlRBTreeNode_t<CUtlOrderedMapBase<CraftworksID_t, CCraftworksDefinition *, CDefLess<CraftworksID_t>, int>::Node_t, int
+I CUtlRBTree<CUtlOrderedMapBase<CraftworksQuestID_t, CCraftworksQuestDefinition *, CDefLess<CraftworksQuestID_t>, int>::Node_t, CUtlOrderedMapBase<CraftworksQuestID_t, CCraftworksQuestDefinition *, CDefLess<CraftworksQuestID_t>, int>::CKeyLess>::Insert(T &&) [T = CUtlOrderedMapBase<CraftworksQuestID_t, CCraftworksQuestDefinition *, CDefLess<CraftworksQuestID_t>, int>::Node_t, L = CUtlOrderedMapBase<CraftworksQuestID_t, CCraftworksQuestDefinition *, CDefLess<CraftworksQuestID_t>, int>::CKeyLess, I = int, M = CUtlMemory<UtlRBTreeNode_t<CUtlOrderedMapBase<CraftworksQuestID_t, CCraftworksQuestDefinition *, CDefLess<CraftworksQuestID_t>, int>::Node_t, int
+I CUtlRBTree<CUtlOrderedMapBase<CraftworksQuestID_t, TrackedStatID_t, CDefLess<CraftworksQuestID_t>, int>::Node_t, CUtlOrderedMapBase<CraftworksQuestID_t, TrackedStatID_t, CDefLess<CraftworksQuestID_t>, int>::CKeyLess>::Insert(T &&) [T = CUtlOrderedMapBase<CraftworksQuestID_t, TrackedStatID_t, CDefLess<CraftworksQuestID_t>, int>::Node_t, L = CUtlOrderedMapBase<CraftworksQuestID_t, TrackedStatID_t, CDefLess<CraftworksQuestID_t>, int>::CKeyLess, I = int, M = CUtlMemory<UtlRBTreeNode_t<CUtlOrderedMapBase<CraftworksQuestID_t, TrackedStatID_t, CDefLess<CraftworksQuestID_t>, int>::Node_t, int
+I CUtlRBTree<CUtlOrderedMapBase<CraftworksRecipeID_t, CCraftworksRecipeDefinition *, CDefLess<CraftworksRecipeID_t>, int>::Node_t, CUtlOrderedMapBase<CraftworksRecipeID_t, CCraftworksRecipeDefinition *, CDefLess<CraftworksRecipeID_t>, int>::CKeyLess>::Insert(T &&) [T = CUtlOrderedMapBase<CraftworksRecipeID_t, CCraftworksRecipeDefinition *, CDefLess<CraftworksRecipeID_t>, int>::Node_t, L = CUtlOrderedMapBase<CraftworksRecipeID_t, CCraftworksRecipeDefinition *, CDefLess<CraftworksRecipeID_t>, int>::CKeyLess, I = int, M = CUtlMemory<UtlRBTreeNode_t<CUtlOrderedMapBase<CraftworksRecipeID_t, CCraftworksRecipeDefinition *, CDefLess<CraftworksRecipeID_t>, int>::Node_t, int
+I CUtlRBTree<CUtlOrderedMapBase<CraftworksRecipeTierID_t, CCraftworksRecipeTierDefinition *, CDefLess<CraftworksRecipeTierID_t>, int>::Node_t, CUtlOrderedMapBase<CraftworksRecipeTierID_t, CCraftworksRecipeTierDefinition *, CDefLess<CraftworksRecipeTierID_t>, int>::CKeyLess>::Insert(T &&) [T = CUtlOrderedMapBase<CraftworksRecipeTierID_t, CCraftworksRecipeTierDefinition *, CDefLess<CraftworksRecipeTierID_t>, int>::Node_t, L = CUtlOrderedMapBase<CraftworksRecipeTierID_t, CCraftworksRecipeTierDefinition *, CDefLess<CraftworksRecipeTierID_t>, int>::CKeyLess, I = int, M = CUtlMemory<UtlRBTreeNode_t<CUtlOrderedMapBase<CraftworksRecipeTierID_t, CCraftworksRecipeTierDefinition *, CDefLess<CraftworksRecipeTierID_t>, int>::Node_t, int
 I CUtlRBTree<CUtlOrderedMapBase<EEvent, CDOTAEventDefinition *, CDefLess<EEvent>, int>::Node_t, CUtlOrderedMapBase<EEvent, CDOTAEventDefinition *, CDefLess<EEvent>, int>::CKeyLess>::Insert(T &&) [T = CUtlOrderedMapBase<EEvent, CDOTAEventDefinition *, CDefLess<EEvent>, int>::Node_t, L = CUtlOrderedMapBase<EEvent, CDOTAEventDefinition *, CDefLess<EEvent>, int>::CKeyLess, I = int, M = CUtlMemory<UtlRBTreeNode_t<CUtlOrderedMapBase<EEvent, CDOTAEventDefinition *, CDefLess<EEvent>, int>::Node_t, int
 I CUtlRBTree<CUtlOrderedMapBase<EEvent, CUtlVector<int> *, CDefLess<EEvent>, int>::Node_t, CUtlOrderedMapBase<EEvent, CUtlVector<int> *, CDefLess<EEvent>, int>::CKeyLess>::Insert(T &&) [T = CUtlOrderedMapBase<EEvent, CUtlVector<int> *, CDefLess<EEvent>, int>::Node_t, L = CUtlOrderedMapBase<EEvent, CUtlVector<int> *, CDefLess<EEvent>, int>::CKeyLess, I = int, M = CUtlMemory<UtlRBTreeNode_t<CUtlOrderedMapBase<EEvent, CUtlVector<int> *, CDefLess<EEvent>, int>::Node_t, int
 I CUtlRBTree<CUtlOrderedMapBase<EventNotificationID_t, SDOTAEventNotificationDefinition *, CDefLess<EventNotificationID_t>, int>::Node_t, CUtlOrderedMapBase<EventNotificationID_t, SDOTAEventNotificationDefinition *, CDefLess<EventNotificationID_t>, int>::CKeyLess>::Insert(T &&) [T = CUtlOrderedMapBase<EventNotificationID_t, SDOTAEventNotificationDefinition *, CDefLess<EventNotificationID_t>, int>::Node_t, L = CUtlOrderedMapBase<EventNotificationID_t, SDOTAEventNotificationDefinition *, CDefLess<EventNotificationID_t>, int>::CKeyLess, I = int, M = CUtlMemory<UtlRBTreeNode_t<CUtlOrderedMapBase<EventNotificationID_t, SDOTAEventNotificationDefinition *, CDefLess<EventNotificationID_t>, int>::Node_t, int
@@ -37100,6 +37165,7 @@ I CUtlRBTree<CUtlOrderedMapBase<SDOTAEventUnderDraftSound, CUtlVector<CUtlString
 I CUtlRBTree<CUtlOrderedMapBase<SPingWheelMessageIDRange, bool, CDOTA_PlayerResource::PingWheelMessageIDRangeLess, int>::Node_t, CUtlOrderedMapBase<SPingWheelMessageIDRange, bool, CDOTA_PlayerResource::PingWheelMessageIDRangeLess, int>::CKeyLess>::Insert(T &&) [T = CUtlOrderedMapBase<SPingWheelMessageIDRange, bool, CDOTA_PlayerResource::PingWheelMessageIDRangeLess, int>::Node_t, L = CUtlOrderedMapBase<SPingWheelMessageIDRange, bool, CDOTA_PlayerResource::PingWheelMessageIDRangeLess, int>::CKeyLess, I = int, M = CUtlMemory<UtlRBTreeNode_t<CUtlOrderedMapBase<SPingWheelMessageIDRange, bool, CDOTA_PlayerResource::PingWheelMessageIDRangeLess, int>::Node_t, int
 I CUtlRBTree<CUtlOrderedMapBase<SchemaMetaInfoHandle_t<CSchemaClassInfo>, CUtlVector<CEventDispatcher_Base::EventListenerInfo_t>, CDefLess<SchemaMetaInfoHandle_t<CSchemaClassInfo>>, unsigned int>::Node_t, CUtlOrderedMapBase<SchemaMetaInfoHandle_t<CSchemaClassInfo>, CUtlVector<CEventDispatcher_Base::EventListenerInfo_t>, CDefLess<SchemaMetaInfoHandle_t<CSchemaClassInfo>>, unsigned int>::CKeyLess, unsigned int>::Insert(T &&) [T = CUtlOrderedMapBase<SchemaMetaInfoHandle_t<CSchemaClassInfo>, CUtlVector<CEventDispatcher_Base::EventListenerInfo_t>, CDefLess<SchemaMetaInfoHandle_t<CSchemaClassInfo>>, unsigned int>::Node_t, L = CUtlOrderedMapBase<SchemaMetaInfoHandle_t<CSchemaClassInfo>, CUtlVector<CEventDispatcher_Base::EventListenerInfo_t>, CDefLess<SchemaMetaInfoHandle_t<CSchemaClassInfo>>, unsigned int>::CKeyLess, I = unsigned int, M = CUtlMemory<UtlRBTreeNode_t<CUtlOrderedMapBase<SchemaMetaInfoHandle_t<CSchemaClassInfo>, CUtlVector<CEventDispatcher_Base::EventListenerInfo_t>, CDefLess<SchemaMetaInfoHandle_t<CSchemaClassInfo>>, unsigned int>::Node_t, unsigned int>, unsigned int
 I CUtlRBTree<CUtlOrderedMapBase<TeamStat_t, CDOTAServerStatTracker::TeamTrackedStatInfo_t, CDefLess<TeamStat_t>, int>::Node_t, CUtlOrderedMapBase<TeamStat_t, CDOTAServerStatTracker::TeamTrackedStatInfo_t, CDefLess<TeamStat_t>, int>::CKeyLess>::Insert(T &&) [T = CUtlOrderedMapBase<TeamStat_t, CDOTAServerStatTracker::TeamTrackedStatInfo_t, CDefLess<TeamStat_t>, int>::Node_t, L = CUtlOrderedMapBase<TeamStat_t, CDOTAServerStatTracker::TeamTrackedStatInfo_t, CDefLess<TeamStat_t>, int>::CKeyLess, I = int, M = CUtlMemory<UtlRBTreeNode_t<CUtlOrderedMapBase<TeamStat_t, CDOTAServerStatTracker::TeamTrackedStatInfo_t, CDefLess<TeamStat_t>, int>::Node_t, int
+I CUtlRBTree<CUtlOrderedMapBase<TrackedStatID_t, CCraftworksQuestDefinition *, CDefLess<TrackedStatID_t>, int>::Node_t, CUtlOrderedMapBase<TrackedStatID_t, CCraftworksQuestDefinition *, CDefLess<TrackedStatID_t>, int>::CKeyLess>::Insert(T &&) [T = CUtlOrderedMapBase<TrackedStatID_t, CCraftworksQuestDefinition *, CDefLess<TrackedStatID_t>, int>::Node_t, L = CUtlOrderedMapBase<TrackedStatID_t, CCraftworksQuestDefinition *, CDefLess<TrackedStatID_t>, int>::CKeyLess, I = int, M = CUtlMemory<UtlRBTreeNode_t<CUtlOrderedMapBase<TrackedStatID_t, CCraftworksQuestDefinition *, CDefLess<TrackedStatID_t>, int>::Node_t, int
 I CUtlRBTree<CUtlOrderedMapBase<TrackedStatID_t, CDOTABingoStatDefinition *, CDefLess<TrackedStatID_t>, int>::Node_t, CUtlOrderedMapBase<TrackedStatID_t, CDOTABingoStatDefinition *, CDefLess<TrackedStatID_t>, int>::CKeyLess>::Insert(T &&) [T = CUtlOrderedMapBase<TrackedStatID_t, CDOTABingoStatDefinition *, CDefLess<TrackedStatID_t>, int>::Node_t, L = CUtlOrderedMapBase<TrackedStatID_t, CDOTABingoStatDefinition *, CDefLess<TrackedStatID_t>, int>::CKeyLess, I = int, M = CUtlMemory<UtlRBTreeNode_t<CUtlOrderedMapBase<TrackedStatID_t, CDOTABingoStatDefinition *, CDefLess<TrackedStatID_t>, int>::Node_t, int
 I CUtlRBTree<CUtlOrderedMapBase<TrackedStatID_t, CDOTAServerStatTracker::MatchTrackedStatInfo_t, CDefLess<TrackedStatID_t>, int>::Node_t, CUtlOrderedMapBase<TrackedStatID_t, CDOTAServerStatTracker::MatchTrackedStatInfo_t, CDefLess<TrackedStatID_t>, int>::CKeyLess>::Insert(T &&) [T = CUtlOrderedMapBase<TrackedStatID_t, CDOTAServerStatTracker::MatchTrackedStatInfo_t, CDefLess<TrackedStatID_t>, int>::Node_t, L = CUtlOrderedMapBase<TrackedStatID_t, CDOTAServerStatTracker::MatchTrackedStatInfo_t, CDefLess<TrackedStatID_t>, int>::CKeyLess, I = int, M = CUtlMemory<UtlRBTreeNode_t<CUtlOrderedMapBase<TrackedStatID_t, CDOTAServerStatTracker::MatchTrackedStatInfo_t, CDefLess<TrackedStatID_t>, int>::Node_t, int
 I CUtlRBTree<CUtlOrderedMapBase<TrackedStatID_t, CMatchTrackedStatDefinition *, CDefLess<TrackedStatID_t>, int>::Node_t, CUtlOrderedMapBase<TrackedStatID_t, CMatchTrackedStatDefinition *, CDefLess<TrackedStatID_t>, int>::CKeyLess>::Insert(T &&) [T = CUtlOrderedMapBase<TrackedStatID_t, CMatchTrackedStatDefinition *, CDefLess<TrackedStatID_t>, int>::Node_t, L = CUtlOrderedMapBase<TrackedStatID_t, CMatchTrackedStatDefinition *, CDefLess<TrackedStatID_t>, int>::CKeyLess, I = int, M = CUtlMemory<UtlRBTreeNode_t<CUtlOrderedMapBase<TrackedStatID_t, CMatchTrackedStatDefinition *, CDefLess<TrackedStatID_t>, int>::Node_t, int
@@ -38759,6 +38825,8 @@ KeyValueOverrides
 KeyValues
 KeyValues3
 KeyValues3 *CKeyValues3Context::Root
+KeyValues3: pre-allocated array memory is too small for %u elements (%u bytes available, %u bytes needed)\n
+KeyValues3: pre-allocated table memory is too small for %u members (%u bytes available, %u bytes needed)\n
 Keys for overriding inference keys
 Kick a specific player from the game
 Kill
@@ -39209,7 +39277,6 @@ Lua Modifier String Table not found!\n
 LuaModifierType
 LuaModifiers
 Lv Name         Player        K/ D/ A/ LH/ DN/ Gold Health    Mana\n
-M
 M;UU
 MANDATORY
 MANUAL
@@ -40082,7 +40149,7 @@ MinHitPointsToCommit
 MinPlayerLevel
 MinTeamSumToPassQuery
 MinToPassQuery
-Miniboss.Tormenter.Reflect
+Miniboss.Tormenter.Reflect%d
 Miniboss.Tormenter.Spawn
 Miniboss.Tormenter.Target
 MinigameDataEntry
@@ -40288,6 +40355,7 @@ Mutes the in-game killing spree announcer
 MutliBinaryCrossEntropyOutput
 MvpAccoladeType
 MysteryItemRewardData
+N
 N is not supported in a class
 N10CSkyCamera23NetworkVar_m_skyboxDataE
 N11CBaseEntity25Cm_vecVelocityInitializerE
@@ -40821,7 +40889,7 @@ N5GCSDK17CGCClientProtoJobI32CMsgGCToServerRecordTrainingDataEE
 N5GCSDK17CGCClientProtoJobI33CMsgGCToServerCheerScalesOverrideEE
 N5GCSDK17CGCClientProtoJobI37CMsgGCToServerUpdateSteamBroadcastingEE
 N5GCSDK17CGCClientProtoJobI43CMsgGCToServerSteamLearnAccessTokensChangedEE
-N5GCSDK17GCClientJobLambdaIZL28dota_load_demo_mode_scenarioRK15CCommandContextRK8CCommandE3$_1EE
+N5GCSDK17GCClientJobLambdaIZL28dota_load_demo_mode_scenarioRK15CCommandContextRK8CCommandE3$_3EE
 N5GCSDK17GCClientJobLambdaIZN14CDOTAGameRules20ClientMsg_GiftPlayerE12CEntityIndexRK27CDOTAClientMsg_GiftPlayer_tE3$_3EE
 N5GCSDK17GCClientJobLambdaIZN14CDOTAGameRules21UpdatePlayerAccoladesE10PlayerID_tE3$_9EE
 N5GCSDK17GCClientJobLambdaIZN14CDOTAGameRules22ClientMsg_GiftEveryoneE12CEntityIndexRK29CDOTAClientMsg_GiftEveryone_tE3$_4EE
@@ -40858,7 +40926,7 @@ N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18SubmitToDataSourceI37CMsgStea
 N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18SubmitToDataSourceI38CMsgSteamLearnEarlyGameItemPurchasesV2EEvRK10CUtlVectorIyi10CUtlMemoryIyiEERKT_bEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager8PostInitEvE3$_1EE
 N5GCSDK17GCClientJobLambdaIZN19CDOTAGCServerSystem22UpdateLiveFantasyStatsEvE3$_0EE
-N5GCSDK17GCClientJobLambdaIZN20CDOTA_PlayerResource27FlushPlayerResourceRequestsEvE3$_2EE
+N5GCSDK17GCClientJobLambdaIZN20CDOTA_PlayerResource27FlushPlayerResourceRequestsEvE3$_3EE
 N5GCSDK17GCClientJobLambdaIZN26CDOTACavernCrawlGameSystem13FireGameEventEP10IGameEventE3$_0EE
 N5GCSDK17GCClientJobLambdaIZN29CDOTA_SuggestionManager_Learn12GetAbilitiesE10PlayerID_tfP10CUtlVectorI27WeightedAbilitySuggestion_ti10CUtlMemoryIS4_iEEbE3$_6EE
 N5GCSDK17GCClientJobLambdaIZN29CDOTA_SuggestionManager_Learn12GetTopNItemsE10PlayerID_tiP10CUtlVectorI27WeightedAbilitySuggestion_ti10CUtlMemoryIS4_iEEbE3$_7EE
@@ -40963,6 +41031,7 @@ N6google8protobuf7MessageE
 N6google8protobuf8internal12ExtensionSet8KeyValueE
 N6google8protobuf8internal12MapEntryImplI48CMsgOverworldUserData_MinigameDataEntry_DoNotUseNS0_7MessageEj29CMsgOverworldMinigameUserDataLNS1_14WireFormatLite9FieldTypeE13ELS7_11EEE
 N6google8protobuf8internal12MapEntryImplI51CMsgSurvivorsUserData_AttributeLevelsEntry_DoNotUseNS0_7MessageEijLNS1_14WireFormatLite9FieldTypeE5ELS6_13EEE
+N6google8protobuf8internal12MapEntryImplI58CMsgCraftworksComponents_ComponentQuantitiesEntry_DoNotUseNS0_7MessageEjjLNS1_14WireFormatLite9FieldTypeE13ELS6_13EEE
 N6google8protobuf8internal12MapEntryImplI63CMsgSteamLearn_InferenceMetadata_Response_AppInfoEntry_DoNotUseNS0_7MessageEj49CMsgSteamLearn_InferenceMetadata_Response_AppInfoLNS1_14WireFormatLite9FieldTypeE13ELS7_11EEE
 N6google8protobuf8internal12MapEntryImplI78CMsgSteamLearn_InferenceMetadata_Response_CompactTable_MapValuesEntry_DoNotUseNS0_7MessageEj60CMsgSteamLearn_InferenceMetadata_Response_CompactTable_EntryLNS1_14WireFormatLite9FieldTypeE13ELS7_11EEE
 N6google8protobuf8internal12MapEntryImplI79CMsgSteamLearn_InferenceMetadata_Response_SequenceTable_MapValuesEntry_DoNotUseNS0_7MessageEj61CMsgSteamLearn_InferenceMetadata_Response_SequenceTable_EntryLNS1_14WireFormatLite9FieldTypeE13ELS7_11EEE
@@ -40992,6 +41061,7 @@ N6google8protobuf8internal23TypeDefinedMapFieldBaseIj29CMsgOverworldMinigameUser
 N6google8protobuf8internal23TypeDefinedMapFieldBaseIj49CMsgSteamLearn_InferenceMetadata_Response_AppInfoEE
 N6google8protobuf8internal23TypeDefinedMapFieldBaseIj60CMsgSteamLearn_InferenceMetadata_Response_CompactTable_EntryEE
 N6google8protobuf8internal23TypeDefinedMapFieldBaseIj61CMsgSteamLearn_InferenceMetadata_Response_SequenceTable_EntryEE
+N6google8protobuf8internal23TypeDefinedMapFieldBaseIjjEE
 N6google8protobuf8internal30RepeatedFieldPrimitiveAccessorIbEE
 N6google8protobuf8internal30RepeatedFieldPrimitiveAccessorIdEE
 N6google8protobuf8internal30RepeatedFieldPrimitiveAccessorIfEE
@@ -41004,6 +41074,7 @@ N6google8protobuf8internal31RepeatedPtrFieldMessageAccessorE
 N6google8protobuf8internal33RandomAccessRepeatedFieldAccessorE
 N6google8protobuf8internal8MapEntryI48CMsgOverworldUserData_MinigameDataEntry_DoNotUsej29CMsgOverworldMinigameUserDataLNS1_14WireFormatLite9FieldTypeE13ELS6_11EEE
 N6google8protobuf8internal8MapEntryI51CMsgSurvivorsUserData_AttributeLevelsEntry_DoNotUseijLNS1_14WireFormatLite9FieldTypeE5ELS5_13EEE
+N6google8protobuf8internal8MapEntryI58CMsgCraftworksComponents_ComponentQuantitiesEntry_DoNotUsejjLNS1_14WireFormatLite9FieldTypeE13ELS5_13EEE
 N6google8protobuf8internal8MapEntryI63CMsgSteamLearn_InferenceMetadata_Response_AppInfoEntry_DoNotUsej49CMsgSteamLearn_InferenceMetadata_Response_AppInfoLNS1_14WireFormatLite9FieldTypeE13ELS6_11EEE
 N6google8protobuf8internal8MapEntryI78CMsgSteamLearn_InferenceMetadata_Response_CompactTable_MapValuesEntry_DoNotUsej60CMsgSteamLearn_InferenceMetadata_Response_CompactTable_EntryLNS1_14WireFormatLite9FieldTypeE13ELS6_11EEE
 N6google8protobuf8internal8MapEntryI79CMsgSteamLearn_InferenceMetadata_Response_SequenceTable_MapValuesEntry_DoNotUsej61CMsgSteamLearn_InferenceMetadata_Response_SequenceTable_EntryLNS1_14WireFormatLite9FieldTypeE13ELS6_11EEE
@@ -41011,6 +41082,7 @@ N6google8protobuf8internal8MapEntryI80CMsgSteamLearn_InferenceMetadata_Response_
 N6google8protobuf8internal8MapEntryI81CMsgSteamLearn_InferenceMetadata_Response_SequenceTable_MapMappingsEntry_DoNotUseNSt3__112basic_stringIcNS4_11char_traitsIcEENS4_9allocatorIcEEEE61CMsgSteamLearn_InferenceMetadata_Response_SequenceTable_EntryLNS1_14WireFormatLite9FieldTypeE9ELSD_11EEE
 N6google8protobuf8internal8MapFieldI48CMsgOverworldUserData_MinigameDataEntry_DoNotUsej29CMsgOverworldMinigameUserDataLNS1_14WireFormatLite9FieldTypeE13ELS6_11EEE
 N6google8protobuf8internal8MapFieldI51CMsgSurvivorsUserData_AttributeLevelsEntry_DoNotUseijLNS1_14WireFormatLite9FieldTypeE5ELS5_13EEE
+N6google8protobuf8internal8MapFieldI58CMsgCraftworksComponents_ComponentQuantitiesEntry_DoNotUsejjLNS1_14WireFormatLite9FieldTypeE13ELS5_13EEE
 N6google8protobuf8internal8MapFieldI63CMsgSteamLearn_InferenceMetadata_Response_AppInfoEntry_DoNotUsej49CMsgSteamLearn_InferenceMetadata_Response_AppInfoLNS1_14WireFormatLite9FieldTypeE13ELS6_11EEE
 N6google8protobuf8internal8MapFieldI78CMsgSteamLearn_InferenceMetadata_Response_CompactTable_MapValuesEntry_DoNotUsej60CMsgSteamLearn_InferenceMetadata_Response_CompactTable_EntryLNS1_14WireFormatLite9FieldTypeE13ELS6_11EEE
 N6google8protobuf8internal8MapFieldI79CMsgSteamLearn_InferenceMetadata_Response_SequenceTable_MapValuesEntry_DoNotUsej61CMsgSteamLearn_InferenceMetadata_Response_SequenceTable_EntryLNS1_14WireFormatLite9FieldTypeE13ELS6_11EEE
@@ -41376,7 +41448,7 @@ NSt3__110__function6__funcIZN12CSceneEntity18DispatchStartSpeakEP12CChoreoSceneP
 NSt3__110__function6__funcIZN12CSceneEntity18DispatchStartSpeakEP12CChoreoSceneP9CBaseFlexP12CChoreoEvent12soundlevel_tE3$_6NS_9allocatorISA_EEFbPK21CBasePlayerControllerEEE
 NSt3__110__function6__funcIZN13CDOTA_BaseNPC20UpdateAssetModifiersEvE3$_0NS_9allocatorIS3_EEFvPK14CAssetModifierEEE
 NSt3__110__function6__funcIZN14CSource2Server27GetEconItemModifiersForTypeEPKcR10CUtlVectorI14ModifierInfo_ti10CUtlMemoryIS6_iEEE3$_9NS_9allocatorISB_EEFvPK14CAssetModifierEEE
-NSt3__110__function6__funcIZN15CItemGeneration27BuildAssetModifierContainerEP23CAssetModifierContaineriPP13CEconItemViewE4$_58NS_9allocatorIS8_EEFvPK14CAssetModifierEEE
+NSt3__110__function6__funcIZN15CItemGeneration27BuildAssetModifierContainerEP23CAssetModifierContaineriPP13CEconItemViewE4$_59NS_9allocatorIS8_EEFvPK14CAssetModifierEEE
 NSt3__110__function6__funcIZN16CDOTABaseAbility9OnUpgradeEvE3$_1NS_9allocatorIS3_EEFvPS2_EEE
 NSt3__110__function6__funcIZN16CNavBoundaryZone38FindConnectedBoundaryEdgesWithinCircleERK12CNavPathCostRK8CNavAreaRK5Vec2DIfEfR10CUtlVectorI16NavBoundarySeg_ti10CUtlMemoryISE_iEERK31NavBoundaryZoneExpandSettings_tE4$_14NS_9allocatorISM_EEF17NavSearchResult_tRS6_PK15NavSearchInfo_tIS6_EEEE
 NSt3__110__function6__funcIZN16CNavBoundaryZone38FindConnectedBoundaryEdgesWithinCircleERK12CNavPathCostRK8CNavAreaRK5Vec2DIfEfR10CUtlVectorI16NavBoundarySeg_ti10CUtlMemoryISE_iEERK31NavBoundaryZoneExpandSettings_tE4$_15NS_9allocatorISM_EEF18NavIncludeResult_tRS6_RK16NavIncludeInfo_tIS6_EEEE
@@ -41389,7 +41461,7 @@ NSt3__110__function6__funcIZN17CNavAdjacencyListI8CNavAreaE20CollectAdjacentNode
 NSt3__110__function6__funcIZN17CNavMarkupManager27AddAttributeForMarkupVolumeERK19CMarkupVolumeTagged13CNavAttributebE4$_22NS_9allocatorIS7_EEFbR8CNavAreaEEE
 NSt3__110__function6__funcIZN17CNavMarkupManager27AddAttributeForMarkupVolumeERK19CMarkupVolumeTagged13CNavAttributebE4$_23NS_9allocatorIS7_EEF17NavSearchResult_tR8CNavAreaPK15NavSearchInfo_tISB_EEEE
 NSt3__110__function6__funcIZN17CNavMarkupManager27AddAttributeForMarkupVolumeERK19CMarkupVolumeTagged13CNavAttributebE4$_24NS_9allocatorIS7_EEFbR8CNavAreaEEE
-NSt3__110__function6__funcIZN18CDOTA_BaseNPC_Fort8PrecacheEPK22CEntityPrecacheContextE3$_5NS_9allocatorIS6_EEFvPK14CAssetModifierEEE
+NSt3__110__function6__funcIZN18CDOTA_BaseNPC_Fort8PrecacheEPK22CEntityPrecacheContextE3$_6NS_9allocatorIS6_EEFvPK14CAssetModifierEEE
 NSt3__110__function6__funcIZN18CSoundOpGameSystem21DoSetSoundEventParamsEPK16IRecipientFilter16SoundEventGuid_t15CUtlStringTokenPK13CSosFieldDatasPKviE3$_5NS_9allocatorISD_EEFP15CSosEventInfo_tvEEE
 NSt3__110__function6__funcIZN18CSoundOpGameSystem23DoSetLibraryStackFieldsEPK16IRecipientFilterj15CUtlStringTokenPK13CSosFieldDatasPKviE3$_6NS_9allocatorISC_EEFP15CSosEventInfo_tvEEE
 NSt3__110__function6__funcIZN19CEntity2SaveRestore14SaveGame_StartERK16SaveGameParams_tE3$_4NS_9allocatorIS6_EEFvvEEE
@@ -41413,7 +41485,7 @@ NSt3__110__function6__funcIZN21CNavSpaceBuildTreeJob12RunBuildTreeEvE4$_33NS_9al
 NSt3__110__function6__funcIZN21CNavSpaceBuildTreeJob12RunBuildTreeEvE4$_34NS_9allocatorIS3_EEFbRK6AABB_tEEE
 NSt3__110__function6__funcIZN21CPathOptimizerNavmesh20FindNextOccludedNodeER5CPathRK12CNavPathCostiP23CUtlVectorFixedGrowableI15NavTransition_tLm16EiEE3$_0NS_9allocatorISC_EEFbPK8CNavAreaPKNSF_5Adj_tERK5Vec3DIfESO_bEEE
 NSt3__110__function6__funcIZN21CPathOptimizerNavmesh20FindNextOccludedNodeER5CPathRK12CNavPathCostiP23CUtlVectorFixedGrowableI15NavTransition_tLm16EiEE3$_1NS_9allocatorISC_EEFbPK8CNavAreaPKNSF_5Adj_tERK5Vec3DIfESO_bEEE
-NSt3__110__function6__funcIZN23CDOTARubickArcanaSchema20GetRubickArcanaScoreEP13CDOTA_BaseNPCE3$_0NS_9allocatorIS5_EEFvP19CItemSocket_StrangeEEE
+NSt3__110__function6__funcIZN23CDOTARubickArcanaSchema20GetRubickArcanaScoreEP13CDOTA_BaseNPCE3$_2NS_9allocatorIS5_EEFvP19CItemSocket_StrangeEEE
 NSt3__110__function6__funcIZN23CDOTA_Unit_Hero_Spectre22UpdateArcanaKillstreakEP18CDOTA_BaseNPC_HeroiEUlP19CItemSocket_StrangeE_NS_9allocatorIS7_EEFvS6_EEE
 NSt3__110__function6__funcIZN23CNavIndirectConnections14GetAreaToAreasI10CUtlVectorI16NavIndirectDst_tI8CNavAreaEi10CUtlMemoryIS7_iEEEEvPKS6_PT_EUlRKS7_E_NS_9allocatorISH_EEFvSG_EEE
 NSt3__110__function6__funcIZN23CNavIndirectConnections15GetAreaToBlocksI10CUtlVectorI16NavIndirectDst_tI12SpaceBlock_tEi10CUtlMemoryIS7_iEEEEvPK8CNavAreaPT_EUlRKS7_E_NS_9allocatorISI_EEFvSH_EEE
@@ -41510,7 +41582,7 @@ NSt3__110__function6__funcIZNK16CNavMultiContext26GetNeighbors_SpaceToGroundI23C
 NSt3__110__function6__funcIZNK16CNavMultiContext27GetNeighbors_GroundToGroundI23CUtlVectorFixedGrowableIN9CNavMulti5Adj_tELm16EiEEEvRKS5_PT_EUlRK16NavIndirectDst_tI8CNavAreaEE_NS_9allocatorISH_EEFvSG_EEE
 NSt3__110__function6__funcIZNK19CEconItemDefinition31GetAssetModifiersActiveForStyleEiP10CUtlVectorI20AssetModifierEntry_ti10CUtlMemoryIS4_iEEE5$_164NS_9allocatorIS9_EEFvPK14CAssetModifierEEE
 NSt3__110__function6__funcIZNK19CNavGeometryManager16GetMovableMeshIdEiEUlRKjE_NS_9allocatorIS5_EEFvS4_EEE
-NSt3__110__function6__funcIZNK20CDOTA_PlayerResource39Script_GetLabyrinthEventGameHeroUnlocksE10PlayerID_tE3$_3NS_9allocatorIS4_EEFb12BlessingID_tEEE
+NSt3__110__function6__funcIZNK20CDOTA_PlayerResource39Script_GetLabyrinthEventGameHeroUnlocksE10PlayerID_tE3$_4NS_9allocatorIS4_EEFb12BlessingID_tEEE
 NSt3__110__function6__funcIZNK9CNavSpace20GetOverlappingBlocksERK14GenericShape_tRK10CTransformPK25CPathfindGeneric_PathCostP10CUtlVectorIPK12SpaceBlock_ti10CUtlMemoryISF_iEEE4$_28NS_9allocatorISK_EEFNS2_14SearchResult_tERSE_iEEE
 NSt3__110__function6__funcIZNK9CNavSpace20GetOverlappingBlocksERK5Vec3DIfEPK25CPathfindGeneric_PathCostP10CUtlVectorIPK12SpaceBlock_ti10CUtlMemoryISD_iEEE4$_27NS_9allocatorISI_EEFNS2_14SearchResult_tERSC_iEEE
 NSt3__110__function6__funcIZNK9CNavSpace23ForEachBlockOverlappingERNS_8functionIFNS2_14SearchResult_tERK12SpaceBlock_tiEEERK6AABB_tPK25CPathfindGeneric_PathCostE4$_25NS_9allocatorISH_EEFS4_RKNS2_11SpaceCell_tEiEEE
@@ -43389,6 +43461,8 @@ Quest %s has duplicate quest ID: %u\n
 Quest %s has multiple challenges with the same ID: %u - %s and %s\n
 Quest %s has multiple challenges with the same name: %s\n
 Quest %s is missing a challenge block\n
+Quest index [%d] does not have a valid type defined
+Quest specifies component %u, but it doesn't exist
 Quest: both win_if_completed and lose_if_completed set for quest '%s'\n
 Quest: invalid quest type %d for quest named '%s'\n
 Queue
@@ -44079,6 +44153,7 @@ Roshan.Knockback
 Roshan.Knockback.Creep
 Roshan.PreAttack
 Roshan.RevengeRoar
+Roshan.RevengeRoar.Local
 Roshan.Slam
 Rotate
 Rotate a QAngle by another QAngle
@@ -47063,7 +47138,6 @@ T *CUtlLeanVectorImpl<CUtlLeanVectorBase<CPulseRuntimeMethodArg>, CPulseRuntimeM
 T *CUtlLeanVectorImpl<CUtlLeanVectorBase<CPulse_RegisterInfo>, CPulse_RegisterInfo>::InsertBeforeGetPtr(int, int) [B = CUtlLeanVectorBase<CPulse_RegisterInfo>, T = CPulse_RegisterInfo, I = int
 T *CUtlLeanVectorImpl<CUtlLeanVectorBase<PGDInstruction_t>, PGDInstruction_t>::InsertBeforeGetPtr(int, int) [B = CUtlLeanVectorBase<PGDInstruction_t>, T = PGDInstruction_t, I = int
 T *CUtlLeanVectorImpl<CUtlLeanVectorBase<PulseDocNodeID_t>, PulseDocNodeID_t>::InsertBeforeGetPtr(int, int) [B = CUtlLeanVectorBase<PulseDocNodeID_t>, T = PulseDocNodeID_t, I = int
-T *CUtlLeanVectorImpl<CUtlLeanVectorFixedGrowableBase<KeyValues3 *, 4>, KeyValues3 *>::InsertBeforeGetPtr(int, int) [B = CUtlLeanVectorFixedGrowableBase<KeyValues3 *, 4>, T = KeyValues3 *, I = int
 T CAnimGraphParamRefBase<int, CAnimGraph1ParamRefImpl, true>::Get() const [T = int, ParamRefImpl = CAnimGraph1ParamRefImpl, bOptional = true
 T&$K3
 TACTICAL_SEARCH
@@ -48716,7 +48790,6 @@ XP Delta %d\n
 XP per min: %u  Gold per min: %u  Claimed Farm: %u  Support Gold %u\n
 XPAmount
 XPGain
-XYZ26CUserMsg_ParticleManager_t
 XYZ[\\`dh
 X\n'CMsgGCToClientStoreTransactionCompleted
 X\n'NETWORK_DISCONNECT_BADSPECTATORPASSWORD
@@ -48775,7 +48848,7 @@ ZN12CSceneEntity18DispatchStartSpeakEP12CChoreoSceneP9CBaseFlexP12CChoreoEvent12
 ZN12CSceneEntity18DispatchStartSpeakEP12CChoreoSceneP9CBaseFlexP12CChoreoEvent12soundlevel_tE3$_6
 ZN13CDOTA_BaseNPC20UpdateAssetModifiersEvE3$_0
 ZN14CSource2Server27GetEconItemModifiersForTypeEPKcR10CUtlVectorI14ModifierInfo_ti10CUtlMemoryIS3_iEEE3$_9
-ZN15CItemGeneration27BuildAssetModifierContainerEP23CAssetModifierContaineriPP13CEconItemViewE4$_58
+ZN15CItemGeneration27BuildAssetModifierContainerEP23CAssetModifierContaineriPP13CEconItemViewE4$_59
 ZN16CDOTABaseAbility9OnUpgradeEvE3$_1
 ZN16CNavBoundaryZone38FindConnectedBoundaryEdgesWithinCircleERK12CNavPathCostRK8CNavAreaRK5Vec2DIfEfR10CUtlVectorI16NavBoundarySeg_ti10CUtlMemoryISB_iEERK31NavBoundaryZoneExpandSettings_tE4$_14
 ZN16CNavBoundaryZone38FindConnectedBoundaryEdgesWithinCircleERK12CNavPathCostRK8CNavAreaRK5Vec2DIfEfR10CUtlVectorI16NavBoundarySeg_ti10CUtlMemoryISB_iEERK31NavBoundaryZoneExpandSettings_tE4$_15
@@ -48788,7 +48861,7 @@ ZN17CNavAdjacencyListI8CNavAreaE20CollectAdjacentNodesERKS0_jE3$_0
 ZN17CNavMarkupManager27AddAttributeForMarkupVolumeERK19CMarkupVolumeTagged13CNavAttributebE4$_22
 ZN17CNavMarkupManager27AddAttributeForMarkupVolumeERK19CMarkupVolumeTagged13CNavAttributebE4$_23
 ZN17CNavMarkupManager27AddAttributeForMarkupVolumeERK19CMarkupVolumeTagged13CNavAttributebE4$_24
-ZN18CDOTA_BaseNPC_Fort8PrecacheEPK22CEntityPrecacheContextE3$_5
+ZN18CDOTA_BaseNPC_Fort8PrecacheEPK22CEntityPrecacheContextE3$_6
 ZN18CSoundOpGameSystem21DoSetSoundEventParamsEPK16IRecipientFilter16SoundEventGuid_t15CUtlStringTokenPK13CSosFieldDatasPKviE3$_5
 ZN18CSoundOpGameSystem23DoSetLibraryStackFieldsEPK16IRecipientFilterj15CUtlStringTokenPK13CSosFieldDatasPKviE3$_6
 ZN19CEntity2SaveRestore14SaveGame_StartERK16SaveGameParams_tE3$_4
@@ -48812,7 +48885,7 @@ ZN21CNavSpaceBuildTreeJob12RunBuildTreeEvE4$_33
 ZN21CNavSpaceBuildTreeJob12RunBuildTreeEvE4$_34
 ZN21CPathOptimizerNavmesh20FindNextOccludedNodeER5CPathRK12CNavPathCostiP23CUtlVectorFixedGrowableI15NavTransition_tLm16EiEE3$_0
 ZN21CPathOptimizerNavmesh20FindNextOccludedNodeER5CPathRK12CNavPathCostiP23CUtlVectorFixedGrowableI15NavTransition_tLm16EiEE3$_1
-ZN23CDOTARubickArcanaSchema20GetRubickArcanaScoreEP13CDOTA_BaseNPCE3$_0
+ZN23CDOTARubickArcanaSchema20GetRubickArcanaScoreEP13CDOTA_BaseNPCE3$_2
 ZN23CDOTA_Unit_Hero_Spectre22UpdateArcanaKillstreakEP18CDOTA_BaseNPC_HeroiEUlP19CItemSocket_StrangeE
 ZN23CNavIndirectConnections14GetAreaToAreasI10CUtlVectorI16NavIndirectDst_tI8CNavAreaEi10CUtlMemoryIS4_iEEEEvPKS3_PT_EUlRKS4_E
 ZN23CNavIndirectConnections15GetAreaToBlocksI10CUtlVectorI16NavIndirectDst_tI12SpaceBlock_tEi10CUtlMemoryIS4_iEEEEvPK8CNavAreaPT_EUlRKS4_E
@@ -48909,7 +48982,7 @@ ZNK16CNavMultiContext26GetNeighbors_SpaceToGroundI23CUtlVectorFixedGrowableIN9CN
 ZNK16CNavMultiContext27GetNeighbors_GroundToGroundI23CUtlVectorFixedGrowableIN9CNavMulti5Adj_tELm16EiEEEvRKS2_PT_EUlRK16NavIndirectDst_tI8CNavAreaEE
 ZNK19CEconItemDefinition31GetAssetModifiersActiveForStyleEiP10CUtlVectorI20AssetModifierEntry_ti10CUtlMemoryIS1_iEEE5$_164
 ZNK19CNavGeometryManager16GetMovableMeshIdEiEUlRKjE
-ZNK20CDOTA_PlayerResource39Script_GetLabyrinthEventGameHeroUnlocksE10PlayerID_tE3$_3
+ZNK20CDOTA_PlayerResource39Script_GetLabyrinthEventGameHeroUnlocksE10PlayerID_tE3$_4
 ZNK9CNavSpace20GetOverlappingBlocksERK14GenericShape_tRK10CTransformPK25CPathfindGeneric_PathCostP10CUtlVectorIPK12SpaceBlock_ti10CUtlMemoryISC_iEEE4$_28
 ZNK9CNavSpace20GetOverlappingBlocksERK5Vec3DIfEPK25CPathfindGeneric_PathCostP10CUtlVectorIPK12SpaceBlock_ti10CUtlMemoryISA_iEEE4$_27
 ZNK9CNavSpace23ForEachBlockOverlappingERNSt3__18functionIFNS_14SearchResult_tERK12SpaceBlock_tiEEERK6AABB_tPK25CPathfindGeneric_PathCostE4$_25
@@ -51155,6 +51228,7 @@ bounty_hunter_wind_walk_ally
 bounty_multiplier
 bounty_rune_gold
 bounty_runes
+bounty_runes_picked_up
 bountygold
 bow_bot
 bow_hand
@@ -51981,6 +52055,7 @@ completer_account_id
 completion_event_action
 completion_minutes
 component
+component_quantities
 components
 compressed_msg
 con_logfile_suffix
@@ -52207,6 +52282,8 @@ crack_distance
 crack_duration
 crack_time
 crack_width
+craftworks_id
+craftworks_quest_rewards
 crate_item_def
 crc2
 createClientOnlyEntities
@@ -53393,6 +53470,7 @@ dota_contextual_tips_scanenemy_pollduration
 dota_contextual_tips_smokeofdeceit_waitinminutes
 dota_contextual_tips_time_restriction_disable
 dota_courier_transfer_item
+dota_craftworks.h
 dota_create_ability
 dota_create_bot_wearing_item
 dota_create_bot_wearing_set
@@ -53513,6 +53591,7 @@ dota_gamerules
 dota_gamestate
 dota_gcmessages_common.proto
 dota_gcmessages_common_bot_script.proto
+dota_gcmessages_common_craftworks.proto
 dota_gcmessages_common_fighting_game.proto
 dota_gcmessages_common_league.proto
 dota_gcmessages_common_lobby.proto
@@ -53668,6 +53747,9 @@ dota_hud_error_must_target_tree
 dota_hud_error_no_allies_nearby
 dota_hud_error_no_corpses
 dota_hud_error_no_dispersion_targets
+dota_hud_error_no_hat_buff
+dota_hud_error_no_hats_to_gift
+dota_hud_error_no_hats_to_steal
 dota_hud_error_no_items_to_deliver
 dota_hud_error_no_minefield_here
 dota_hud_error_no_more_famangos
@@ -53726,6 +53808,7 @@ dota_ingameevent_dota_prime
 dota_ingameevent_fall2021
 dota_ingameevent_fm2015
 dota_ingameevent_fm2016
+dota_ingameevent_frostivus2024
 dota_ingameevent_fv2018
 dota_ingameevent_fv2019
 dota_ingameevent_fv2023
@@ -53917,6 +54000,8 @@ dota_pet_herodist_minthreat
 dota_pet_herodist_radius
 dota_pet_itemcarry
 dota_pet_priorthreat_to_vanish
+dota_pet_rare_idle_chance
+dota_pet_rare_idle_check_time
 dota_pet_reposition_maxtime
 dota_pet_reposition_mintime
 dota_pet_return_threshold
@@ -54141,6 +54226,7 @@ dota_threat_evaluator_radius
 dota_ti9_consumable_banner
 dota_ti9_consumable_shovel_outcome
 dota_time_of_day_rate
+dota_tormentor_force_hit_sound_direction
 dota_tormentor_respawn_time
 dota_tormentor_spawn_time
 dota_tournament_item_event
@@ -55994,6 +56080,8 @@ frostbite_duration
 frostbite_radius
 frostbitten_golem_time_warp_aura
 frostbound_duration
+frostivus_2024
+frostivus_hats_stolen
 frozen
 frozen_path_duration
 fulfilled_item_id
@@ -56293,6 +56381,7 @@ givecurrentammo
 givegold
 given a dummy scene name and a vcd string, load the scene
 given an entity reference, such as !target, get actual entity from scene object
+given_tips
 gives_normal_credit_in_turbo_mode
 glacial_duration
 glaives_attack_radius
@@ -57011,6 +57100,7 @@ hero_entangle_chance
 hero_entindex
 hero_entindex_const
 hero_gems_only
+hero_healing
 hero_hit_radius
 hero_id
 hero_id_to_spawn
@@ -57105,7 +57195,9 @@ high_five.fail
 high_five.impact
 high_five_level
 high_five_speed
+high_fives_ally
 high_fives_completed
+high_fives_enemy
 high_priority
 high_priority_disabled
 high_priority_state
@@ -57592,6 +57684,7 @@ in_game_display_interval
 in_game_duration
 in_game_item_def
 in_game_predictions
+in_game_treasure_gifted
 in_logon_surge
 in_sellback_window
 in_spewbuttondelta
@@ -57711,9 +57804,9 @@ ingame_predictions_main_event_periodic_resource
 ingame_predictions_qualifiers_periodic_resource
 ingame_scale
 ingameevent_id
+inherit_all_joints
 inherit_owner
 inherit_owner_index
-inherit_owner_joints
 inherit_owner_name
 init
 initial group %d, [%d .. %d], has %d syms (%4.1f%%)\n
@@ -59435,6 +59528,12 @@ k_EMsgClientToGCClaimSwag
 k_EMsgClientToGCCoachFriend
 k_EMsgClientToGCCoachFriendResponse
 k_EMsgClientToGCCollectorsCacheAvailableDataRequest
+k_EMsgClientToGCCraftworksCraftRecipe
+k_EMsgClientToGCCraftworksCraftRecipeResponse
+k_EMsgClientToGCCraftworksDevModifyComponents
+k_EMsgClientToGCCraftworksDevModifyComponentsResponse
+k_EMsgClientToGCCraftworksGetUserData
+k_EMsgClientToGCCraftworksGetUserDataResponse
 k_EMsgClientToGCCreateGuild
 k_EMsgClientToGCCreateGuildResponse
 k_EMsgClientToGCCreateHeroStatue
@@ -60087,6 +60186,7 @@ k_EMsgGCToClientClaimSwagResponse
 k_EMsgGCToClientCoachTeammateRatingsChanged
 k_EMsgGCToClientCollectorsCacheAvailableDataResponse
 k_EMsgGCToClientCommendNotification
+k_EMsgGCToClientCraftworksUserDataUpdated
 k_EMsgGCToClientCurrencyPricePoints
 k_EMsgGCToClientCustomGamesFriendsPlayedResponse
 k_EMsgGCToClientEmoticonData
@@ -60440,6 +60540,7 @@ k_EMsgSignOutBounties
 k_EMsgSignOutCommunicationSummary
 k_EMsgSignOutCommunityGoalProgress
 k_EMsgSignOutConsumableUsage
+k_EMsgSignOutCraftworks
 k_EMsgSignOutDiretideCandy
 k_EMsgSignOutDraftInfo
 k_EMsgSignOutEventActionGrants
@@ -60606,6 +60707,10 @@ k_UnlockStyle_Failed_OtherError
 k_UnlockStyle_Succeeded
 k_UnpackBundle_Succeeded
 k_eAlreadyVisited
+k_eCraftworksQuest_GiveCommend
+k_eCraftworksQuest_Invalid
+k_eCraftworksQuest_ReceiveCommend
+k_eCraftworksQuest_StatTracker
 k_eEncounterMissingRewards
 k_eEventActionScoreMode_Add
 k_eEventActionScoreMode_Min
@@ -60657,6 +60762,7 @@ k_eGCPlatform_PC
 k_eGCPlatform_iOS
 k_eInsufficientCharges
 k_eInternalError
+k_eInvalid
 k_eInvalidAccountID
 k_eInvalidChallenge
 k_eInvalidEncounter
@@ -60680,6 +60786,8 @@ k_eLimitedItem
 k_eLobbyMemberCoachRequestState_Accepted
 k_eLobbyMemberCoachRequestState_None
 k_eLobbyMemberCoachRequestState_Rejected
+k_eMatchRewards
+k_eMatchRewardsTurbo
 k_eMatchTrackedStatImpl_Direct
 k_eMatchTrackedStatImpl_Expression
 k_eMatchTrackedStatImpl_Invalid
@@ -60734,6 +60842,7 @@ k_ePlayerTrackedStatImpl_Expression
 k_ePlayerTrackedStatImpl_HeroAdjective
 k_ePlayerTrackedStatImpl_Invalid
 k_ePlayerTrackedStatImpl_KillEater
+k_eRecipeCrafted
 k_eResult_Destroyed
 k_eResult_ItemGranted
 k_eRewardAlreadyClaimed
@@ -60785,6 +60894,7 @@ keeper_of_the_light_radiant_bind
 keeper_of_the_light_recall
 keeper_of_the_light_spirit_form
 keeper_of_the_light_will_o_wisp
+key not found
 key_id
 key_t
 keyframe_interval
@@ -60916,7 +61026,6 @@ kv3Data
 kv_juxtapose_illusion
 kv_juxtapose_illusion_uncontrollable
 l@33
-l\n\vMvpAccolade
 label
 labelled_debug_helper_arc_segments
 labelled_debug_helper_enabled
@@ -61497,8 +61606,7 @@ lycan_summon_wolves_hamstring
 lycan_summon_wolves_hightail
 lycan_summon_wolves_invisibility
 lycan_wolf_bite
-m\n\bCMvpData
-m\n\bMvpDatum
+m\n\vMvpAccolade
 m_16ByteOrLessStack out of space, falling through after %d entries, consider upping NETWORKFIELDSCRATCHDATA_16BYTE_COUNT\n
 m_AbilitiesPendingDelete
 m_AbilityDraftAbilities
@@ -62193,6 +62301,7 @@ m_QuickBuyStr
 m_Radius
 m_RagdollPose
 m_RampTimer
+m_RareIdleTimer
 m_Receivers
 m_RecentHeroKillTimer
 m_Recipients
@@ -63414,6 +63523,7 @@ m_bPiercesCreeps
 m_bPiercesMagicImmunity
 m_bPinning
 m_bPlacedInSpawnBox
+m_bPlayEndcapOnNext
 m_bPlayPostVictoryAnims
 m_bPlayReversalSound
 m_bPlaySound
@@ -63545,6 +63655,7 @@ m_bScheduleSendTickPacket
 m_bScriptDisableRespawns
 m_bScriptRoar
 m_bScriptedMovement
+m_bSeasonalReward
 m_bSecondStar
 m_bSeenClearedByTeam
 m_bSelectionGoldPenaltyEnabled
@@ -63587,6 +63698,7 @@ m_bShouldStun
 m_bShouldTeleportPhysics
 m_bShouldUseResources
 m_bShowEnemies
+m_bShowInGameProgressToasts
 m_bShowInitialEarn
 m_bShowOnHUD
 m_bShowOnMinimap
@@ -63840,6 +63952,7 @@ m_bWillBeCallingPostDataUpdate
 m_bWillSpawnNextPowerRune
 m_bWinIfCompleted
 m_bWindingUp
+m_bWithEnemy
 m_bWorldLayerVisible
 m_bWorldSpaceScale
 m_bWorldTreeState
@@ -63918,6 +64031,7 @@ m_duration
 m_eAccess
 m_eAccoladeType
 m_eAggregate
+m_eAssociatedEvent
 m_eCoachTeam
 m_eEvent
 m_eGameMode
@@ -65216,6 +65330,7 @@ m_flStartWindSpeed
 m_flStartZ
 m_flStartingAttackSpeed
 m_flStartingTime
+m_flStatMultiplier
 m_flStateFallbackTransitionTime
 m_flStateTransitionTime
 m_flStateTransitionTime set to %2.2f\n
@@ -65332,6 +65447,7 @@ m_flTreeTimeRemaining
 m_flTriggerRadius
 m_flTriggerRadiusSqr
 m_flTrueSight
+m_flTurboMultiplier
 m_flTurnBoostProgress
 m_flTurnHistory
 m_flTurnRate
@@ -66213,6 +66329,7 @@ m_iMaxClip1
 m_iMaxClip2
 m_iMaxDist
 m_iMaxGust
+m_iMaxHatStacks
 m_iMaxHealth
 m_iMaxLevel
 m_iMaxObjectsAttached
@@ -66791,6 +66908,7 @@ m_nAimAngle
 m_nAllDraftHeroPickCollisionsThisPhase
 m_nAllDraftPhase
 m_nAlliesTaunted
+m_nAllyCount
 m_nAmbientFXIndex
 m_nAngleRestriction
 m_nAngularMotionX
@@ -68273,7 +68391,12 @@ m_strBossUnit
 m_strBreakableContentsParticleOverride
 m_strBreakableContentsPropGroupOverride
 m_strCachedDependencyAbility
+m_strComponentImageMedium
+m_strComponentImageSmall
+m_strComponentLocDesc
+m_strComponentLocName
 m_strCourierModel
+m_strCraftAction
 m_strCustomHexModel
 m_strCustomKillEffect
 m_strDefaultStickyItem
@@ -68291,6 +68414,8 @@ m_strIndividualStat
 m_strItemClass
 m_strLandmarkName
 m_strLastKillerAbility
+m_strLocName
+m_strLocProgress
 m_strMapToLoad
 m_strMeasureReference
 m_strMeasureTarget
@@ -68309,16 +68434,23 @@ m_strPickupItemModel
 m_strPlayerName
 m_strRelationships
 m_strRequiredFacet
+m_strRewardAction
 m_strRopeMaterialModel
 m_strScoutModel
 m_strSearchName
+m_strSound
 m_strSourceClassName
 m_strSpiritsOutSwapAbility
 m_strStartTouchEventName
 m_strTPScrollSlotItemOverride
 m_strTargetReference
+m_strTierClass
+m_strTrackedStatName
 m_strTransitionEffect
 m_strTriggerID
+m_strUnlockAction
+m_strUnlockLocDesc
+m_strUnlockLocProgress
 m_succeeded
 m_supportMultipleEntitiesWithSameName
 m_surfaceProps
@@ -68399,6 +68531,7 @@ m_trainName
 m_transitioningLayers
 m_triggerBloat
 m_triggermode
+m_type
 m_uSelectedOverworldID
 m_uSelectedOverworldTokenRewards
 m_ubInterpolationFrame
@@ -68419,7 +68552,9 @@ m_unBubbleCount
 m_unClientFlags
 m_unCoachRating
 m_unCompendiumLevel
+m_unComponentID
 m_unCount
+m_unCraftworksID
 m_unCurrentArcanaKillStreak
 m_unDuelsWon
 m_unFanfareBadGuys
@@ -68464,18 +68599,24 @@ m_unPickOrder
 m_unPlayerID
 m_unPrimaryColor
 m_unQualityID
+m_unQuantity
+m_unQuestID
+m_unRecipeID
+m_unRecipeTierID
 m_unRecommendedDistance
 m_unRiverAccountID
 m_unSecondaryColor
 m_unSelectedHeroBadgeXP
 m_unShapeID
 m_unStatID
+m_unStatMaximum
 m_unStatusEffectIndex
 m_unSuicideKills
 m_unTeamID
 m_unThresholdValue
 m_unTitle
 m_unTournamentTeamID
+m_unVersion
 m_unVerticalAlign
 m_unViewerTeam
 m_unpausingPlayerId
@@ -68821,6 +68962,7 @@ m_vecChatLog
 m_vecChoices
 m_vecClientAngles
 m_vecClientOrigin
+m_vecComponents
 m_vecConnections
 m_vecCornerPairsNetworked
 m_vecCraftingSetups
@@ -68871,6 +69013,7 @@ m_vecGemSlots
 m_vecGems
 m_vecGlowingPlayerIDs
 m_vecGlowingPlayerIDs2
+m_vecHatColors
 m_vecHeroDeathRecord
 m_vecHeroIDs
 m_vecHeroNames
@@ -68928,6 +69071,7 @@ m_vecMoveAng
 m_vecMoveDirParentSpace
 m_vecMuertaPartingShotSouls
 m_vecNavHulls
+m_vecNearbyUnits
 m_vecNeutralItemEquippedHistory
 m_vecNeutralItemsConsumed
 m_vecNeutralItemsTierInfo
@@ -68944,6 +69088,7 @@ m_vecOriginalItems
 m_vecOverlappingLinks
 m_vecParamsToResetInPostGraphUpdate
 m_vecParriedEnemies
+m_vecParticles
 m_vecPathCornerPairs
 m_vecPathNodes
 m_vecPathSampleDistances
@@ -68975,14 +69120,18 @@ m_vecPrivateCoachPlayerIDs
 m_vecProjectileHandles
 m_vecPushDirEntitySpace
 m_vecQualities
+m_vecQuests
 m_vecRecentDamage
 m_vecRecentModifiers
 m_vecRecipeComponents
+m_vecRecipeTiers
+m_vecRecipes
 m_vecRecommendedPlaytestHeroesStorage
 m_vecRenderAttributes
 m_vecReportedPosition
 m_vecRequiredPlaytestHeroesStorage
 m_vecReturnPosition
+m_vecRewards
 m_vecShapes
 m_vecShards
 m_vecSmoothedVelocity
@@ -69016,6 +69165,7 @@ m_vecTreeCircleCenter
 m_vecTreeFires
 m_vecTriggers
 m_vecUniqueHitList
+m_vecUnitIdleStartTimes
 m_vecValidStatRangesPerPhase
 m_vecValues
 m_vecVelocity
@@ -69754,6 +69904,7 @@ models/heroes/abyssal_underlord/abyssal_underlord_portal_model.vmdl
 models/heroes/dark_willow/dark_willow_wisp.vmdl
 models/heroes/death_prophet/death_prophet_ghost.vmdl
 models/heroes/dragon_knight/dragon_knight_dragon.vmdl
+models/heroes/dragon_knight_persona/dk_persona_dragon.vmdl
 models/heroes/hoodwink/hoodwink_tree_model.vmdl
 models/heroes/lone_druid/true_form.vmdl
 models/heroes/lycan/lycan_wolf.vmdl
@@ -69782,6 +69933,9 @@ models/heroes/tiny/tiny_tree/tiny_tree.vmdl
 models/heroes/undying/undying_flesh_golem.vmdl
 models/heroes/wisp/wisp_additive.vmdl
 models/heroes/wisp/wisp_effigy.vmdl
+models/items/hex/fish_hex/fish_hex.vmdl
+models/items/hex/sheep_hex/sheep_hex.vmdl
+models/items/hex/sheep_hex/sheep_hex_gold.vmdl
 models/items/io/io_ti7/io_ti7_additive.vmdl
 models/props_gameplay/aegis.vmdl
 models/props_gameplay/banana_prop_closed_mk.vmdl
@@ -69795,7 +69949,6 @@ models/props_gameplay/donkey.vmdl
 models/props_gameplay/donkey_dire.vmdl
 models/props_gameplay/donkey_dire_wings.vmdl
 models/props_gameplay/donkey_wings.vmdl
-models/props_gameplay/fish.vmdl
 models/props_gameplay/frog.vmdl
 models/props_gameplay/gold_bag.vmdl
 models/props_gameplay/neutral_box.vmdl
@@ -73591,6 +73744,7 @@ n"DOTA_BOT_MODE_ASSEMBLE_WITH_HUMANS
 n"DOTA_CM_AbilityDraftRequestAbility
 n"DOTA_CM_VersusScene_PlayerBehavior
 n"DOTA_COMBATLOG_NEUTRAL_ITEM_EARNED
+n"DOTA_COMBATLOG_STAT_TRACKER_PLAYER
 n"DOTA_CONNECTION_STATE_DISCONNECTED
 n"DOTA_GAMERULES_STATE_STRATEGY_TIME
 n"DOTA_GAMERULES_STATE_TEAM_SHOWCASE
@@ -73997,6 +74151,8 @@ n%k_EMatchBehaviorScoreVariance_Invalid
 n%k_EMatchOutcome_NotScored_ServerCrash
 n%k_EMsgClientToGCBingoClaimRowResponse
 n%k_EMsgClientToGCCandyShopDevResetShop
+n%k_EMsgClientToGCCraftworksCraftRecipe
+n%k_EMsgClientToGCCraftworksGetUserData
 n%k_EMsgClientToGCGetStickerbookRequest
 n%k_EMsgClientToGCGetTrophyListResponse
 n%k_EMsgClientToGCInviteToGuildResponse
@@ -74189,8 +74345,10 @@ n'LEAGUE_AUDIT_ACTION_LEAGUE_ADMIN_REVOKE
 n'LEAGUE_AUDIT_ACTION_NODEGROUP_COMPLETED
 n'SPAWN_GROUP_CREATE_CLIENT_ONLY_ENTITIES
 n'dota_gcmessages_common_bot_script.proto
+n'dota_gcmessages_common_craftworks.proto
 n'kKillEaterEventType_Kez_RavensVeilKills
 n'kKillEaterEventType_Rubick_SpellsStolen
+n'kKillEaterEventType_Seasonal_TallestHat
 n'kKillEaterEventType_Skywrath_FlareKills
 n'kKillEaterEventType_Tiny_TreeThrowKills
 n'kKillEaterEventType_VeilsLeadingToKills
@@ -74406,6 +74564,7 @@ n)k_EMsgClientToGCSetGuildRoleOrderResponse
 n)k_EMsgClientToGCSubmitCoachTeammateRating
 n)k_EMsgGCGameMatchSignOutPermissionRequest
 n)k_EMsgGCPracticeLobbyJoinBroadcastChannel
+n)k_EMsgGCToClientCraftworksUserDataUpdated
 n)k_EMsgGCToClientRecordContestVoteResponse
 n)k_EMsgGCToClientStoreTransactionCompleted
 n)k_EMsgGCToGCGetEventParticipationResponse
@@ -74564,6 +74723,7 @@ n5kKillEaterEventType_CrystalMaiden_TwoHeroCrystalNovas
 n5kKillEaterEventType_DarkWillow_CursedCrownTripleStuns
 n5kKillEaterEventType_ShadowShaman_MultiHeroEtherShocks
 n5k_EMsgClientToGCCancelUnfinalizedTransactionsResponse
+n5k_EMsgClientToGCCraftworksDevModifyComponentsResponse
 n5k_EMsgClientToGCGetBattleReportAggregateStatsResponse
 n5k_EMsgClientToGCOverworldClaimEncounterRewardResponse
 n5k_EMsgClientToGCRequestPrivateCoachingSessionResponse
@@ -75761,6 +75921,8 @@ n\nUM_HudText
 n\nUM_SayText
 n\nUM_TextMsg
 n\nXPReceived
+n\n\bCMvpData
+n\n\bMvpDatum
 n\n\bRuneInfo
 n\n\eEGCMsgInitiateTradeResponse
 n\n\nSteamLearn
@@ -75800,6 +75962,7 @@ n\ncoach_name
 n\ncoach_team
 n\ncomm_level
 n\ncomplexity
+n\ncomponents
 n\ncurr_items
 n\ncurrencies
 n\ndamage_max
@@ -75830,6 +75993,7 @@ n\nentity_idx
 n\nentity_msg
 n\nentry_type
 n\nevent_mask
+n\nevent_mvps
 n\nevent_name
 n\nevent_team
 n\nevent_time
@@ -75891,6 +76055,7 @@ n\nitem_level
 n\nitem_price
 n\nitem_value
 n\nkPVLS_None
+n\nk_eInvalid
 n\nk_eSuccess
 n\nk_eTimeout
 n\nk_eTooBusy
@@ -75992,6 +76157,7 @@ n\nstartframe
 n\nstashitems
 n\nstat_score
 n\nstat_total
+n\nstat_value
 n\nstatspanel
 n\nstream_ids
 n\nstream_url
@@ -78579,15 +78745,7 @@ particles/dire_fx/dire_building_damage_minor.vpcf
 particles/econ/attack/attack_modifier_empty.vpcf
 particles/econ/attack/attack_modifier_ti9.vpcf
 particles/econ/courier/courier_babyroshan_ti9/courier_babyroshan_ti9_ambient.vpcf
-particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_chicken.vpcf
-particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_fish.vpcf
-particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_frog.vpcf
-particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_dragon_knight_dragon.vpcf
-particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_lone_druid.vpcf
-particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_lycan_wolf.vpcf
 particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_pangolier_gyroshell.vpcf
-particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_terrorblade.vpcf
-particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_pig.vpcf
 particles/econ/events/coal
 particles/econ/events/coal/coal_projectile.vpcf
 particles/econ/events/consolation
@@ -78599,6 +78757,19 @@ particles/econ/events/frostivus/frostivus_fireworks.vpcf
 particles/econ/events/frostivus/frostivus_fireworks_illumination.vpcf
 particles/econ/events/frostivus/frostivus_snowman_cast.vpcf
 particles/econ/events/frostivus/frostivus_tree_cast.vpcf
+particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_chicken.vpcf
+particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_fish_hex.vpcf
+particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_frog.vpcf
+particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_dragon_knight_dragon.vpcf
+particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_dragon_knight_persona1_dragon.vpcf
+particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_lone_druid.vpcf
+particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_lycan_wolf.vpcf
+particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_morphling.vpcf
+particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_terrorblade.vpcf
+particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_undying_golem.vpcf
+particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_pig.vpcf
+particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_sheep_hex.vpcf
+particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_sheep_hex_gold.vpcf
 particles/econ/events/new_bloom/dragon_cast.vpcf
 particles/econ/events/new_bloom/dragon_death.vpcf
 particles/econ/events/new_bloom/firecracker.vpcf
@@ -78716,6 +78887,7 @@ particles/entity/env_explosion/explosion_gascylinder.vpcf
 particles/entity/env_explosion/explosion_grenade.vpcf
 particles/entity/env_explosion/explosion_smokegrenade.vpcf
 particles/entity/env_explosion/explosion_tripmine.vpcf
+particles/events/frostivus/frostivus_hat_steal/frostivus_hat_steal_channelled_spell.vpcf
 particles/frostivus_gameplay
 particles/generic_fx/fx_electricspark.vpcf
 particles/generic_fx/fx_metalspark.vpcf
@@ -78911,6 +79083,7 @@ particles/items_fx/aegis_respawn_timer.vpcf
 particles/items_fx/aegis_timer.vpcf
 particles/items_fx/aegis_timer_e.vpcf
 particles/items_fx/aegis_timer_i.vpcf
+particles/items_fx/aghanims_shard.vpcf
 particles/items_fx/arcane_boots.vpcf
 particles/items_fx/arcane_boots_recipient.vpcf
 particles/items_fx/armlet.vpcf
@@ -78999,8 +79172,6 @@ particles/neutral_fx/miniboss_damage_reflect_dire.vpcf
 particles/neutral_fx/miniboss_death.vpcf
 particles/neutral_fx/miniboss_death_dire.vpcf
 particles/neutral_fx/miniboss_dire_shield_hit.vpcf
-particles/neutral_fx/miniboss_shield.vpcf
-particles/neutral_fx/miniboss_shield_dire.vpcf
 particles/neutral_fx/miniboss_shield_hit.vpcf
 particles/neutral_fx/mud_golem_hurl_boulder.vpcf
 particles/neutral_fx/neutral_centaur_khan_war_stomp.vpcf
@@ -81178,6 +81349,7 @@ physics_add_test
 physics_debug_entity
 physics_entity_solver
 physics_highlight_active
+physics_joint_modification_type
 physics_prop_ragdoll
 physics_remove_test
 physics_report_active
@@ -81364,6 +81536,7 @@ player_slot
 player_spawn
 player_start_teleport_destination
 player_stat
+player_stat_tracker
 player_stat_type
 player_stat_value
 player_team
@@ -81394,6 +81567,7 @@ playerstats
 playervisibilitystrength
 playerweapon
 playing_commentary
+playing_in_party
 playoverscript
 playsound
 pluralizable localization string ID to use for the user facing unit to display on the trophy tooltip (e.g. 1 Challenge Completed / 3 Challenges Completed
@@ -82094,6 +82268,7 @@ r"x\n'CMsgClearDecalsForSkeletonInstanceEvent
 r"y\n\tEResponse
 r"z\n
 r(y
+r*m\n
 r:\b16777215
 r:\b16777215B
 r:\n4294967295
@@ -82648,6 +82823,7 @@ reward_action_name
 reward_after_wins
 reward_can_be_shown_in_toast
 reward_class
+reward_components
 reward_damage
 reward_description
 reward_display_item_def
@@ -83240,8 +83416,14 @@ s: Setting Revenge Target to: %s from death of victim: %s\n
 s: Trying to initialize target assignment based on assigned roles\n
 s: Unsupported raw allocator type %u\n
 s: Value for %s out of range\n
+s: element count overflow (%u)\n
+s: invalid array remove count %u (current count %u)\n
+s: invalid array remove point %u (current count %u)\n
+s: invalid insert point %u (current count %u)\n
 s: invalid nBeforeIndex %d\n
 s: invalid nSize %d\n
+s: max element overflow, cur count %u + %u\n
+s: member count overflow (%u)\n
 s: removed change %s, %s offset %d\n
 s: unexpected parameter format for InputSetBodyGroup. Had %s, expected <bodygroupname,partnumber>\n
 s: unexpected parameter type %s, expected a CString\n
@@ -83623,6 +83805,7 @@ scripts/comics.vdata
 scripts/compendiums
 scripts/compendiums/in_game_prediction_templates.txt
 scripts/contextual_tips.txt
+scripts/craftworks_frostivus_2024.vdata
 scripts/custom.gameevents
 scripts/custom_net_tables.txt
 scripts/decals_subrect.txt
@@ -83649,15 +83832,11 @@ scripts/npc/activelist.txt
 scripts/npc/heroes/%s.txt
 scripts/npc/herolist.txt
 scripts/npc/items.txt
-scripts/npc/items_staging.txt
 scripts/npc/neutral_items.txt
-scripts/npc/neutral_items_staging.txt
 scripts/npc/npc_abilities.txt
 scripts/npc/npc_abilities_custom.txt
 scripts/npc/npc_abilities_override.txt
-scripts/npc/npc_abilities_staging.txt
 scripts/npc/npc_ability_ids.txt
-scripts/npc/npc_ability_ids_staging.txt
 scripts/npc/npc_heroes.txt
 scripts/npc/npc_heroes_custom.txt
 scripts/npc/npc_items_custom.txt
@@ -83665,7 +83844,6 @@ scripts/npc/npc_neutral_items_custom.txt
 scripts/npc/npc_popular_items.txt
 scripts/npc/npc_units.txt
 scripts/npc/npc_units_custom.txt
-scripts/npc/npc_units_staging.txt
 scripts/npc/portraits.txt
 scripts/npc/portraits_custom.txt
 scripts/npc/portraits_staging.txt
@@ -86818,6 +86996,7 @@ taunt_duration
 taunt_persona_1
 taunted
 taunting_player_id
+taunts_used
 td_example
 te.proto
 team
@@ -86990,6 +87169,7 @@ thinkalways
 thinker
 thinkerEntities
 thinkfunc_t
+thirdparty/protobuf-3.21.8/src/google/protobuf/map.h
 thirdparty/protobuf-3.21.8/src/google/protobuf/map_field.h
 thirdparty/protobuf-3.21.8/src/google/protobuf/map_field_inl.h
 thirst
@@ -88052,6 +88232,7 @@ v21.CUserMsg_ParticleManager.SetControlPointSnapshot
 v21.CUserMsg_ParticleManager.UpdateParticleSetFrozen
 v21.CUserMsg_ParticleManager.UpdateParticleTransform
 v21.CUserMsg_ParticleManager.UpdateParticle_OBSOLETE
+v22.CMsgCraftworksComponents.ComponentQuantitiesEntry
 v22.CMsgDOTARealtimeGameStats.GraphData.LocationStats"[\n
 v22.CMsgLobbyFeaturedGamemodeProgress.AccountProgress
 v22.CMsgSteamLearn_InferenceBackend_Response.Sequence
@@ -88612,6 +88793,10 @@ void CEntitySystem::DataDesc_BuildComponentUnserializers
 void CEntitySystem::RegisterAliasEntityClass(CEntityClass
 void CGameEntitySystem::InitEntity2NetworkClasses(int
 void CInstallUGCJob::FailureProbablyBug(const char
+void CKeyValues3Array::EnsureElementCapacity(CKeyValues3Context *, int, bool, bool
+void CKeyValues3Array::InsertMultipleBefore(KeyValues3 *, int, int
+void CKeyValues3Array::RemoveMultiple(KeyValues3 *, int, int
+void CKeyValues3Table::EnsureMemberCapacity(CKeyValues3Context *, int, bool, bool
 void CModelState::SetupModel(CModelState *, CSkeletonInstance *, const CTransform
 void CQuantizedVectorBase<CNetworkOriginCellCoordQuantizedVector>::SetNetworkStateChangedRouter(INetworkStateChangedRouter *) [T = CNetworkOriginCellCoordQuantizedVector
 void CQuantizedVectorBase<CNetworkVelocityVector>::SetNetworkStateChangedRouter(INetworkStateChangedRouter *) [T = CNetworkVelocityVector
@@ -88667,6 +88852,7 @@ vscripts
 vuln_duration
 vuln_slow
 vulnerableoncreepspawn
+wCDOTA_Ability_Plus_HighFive
 wager
 wager_conversion_ratio
 wager_large
@@ -88905,6 +89091,10 @@ wins
 wins_event_type
 winter2022
 winter_2018
+winter_event_penguins_collided
+winter_event_snowballs_thrown
+winter_event_snowman_built_before_horn
+winter_event_snowman_destroyed
 winter_wyvern_arctic_burn
 winter_wyvern_cold_embrace
 winter_wyvern_dragon_sight

@@ -15,7 +15,7 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x1878
+    // Size: 0x18b0
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
@@ -23,10 +23,10 @@ namespace source2sdk::server
     class CDOTA_BaseNPC_Creep_Neutral : public server::CDOTA_BaseNPC_Creep
     {
     public:
-        server::CountdownTimer m_ThinkTimer; // 0x1860        
+        server::CountdownTimer m_ThinkTimer; // 0x1898        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_BaseNPC_Creep_Neutral because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_BaseNPC_Creep_Neutral) == 0x1878);
+    static_assert(sizeof(CDOTA_BaseNPC_Creep_Neutral) == 0x18b0);
 };

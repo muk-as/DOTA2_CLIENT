@@ -15,7 +15,7 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x1bf8
+    // Size: 0x1c10
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
@@ -25,15 +25,15 @@ namespace source2sdk::client
     class C_DOTA_Unit_Hero_Terrorblade : public client::C_DOTA_BaseNPC_Hero
     {
     public:
-        client::ParticleIndex_t m_nFXDeath; // 0x1be0        
-        [[maybe_unused]] std::uint8_t pad_0x1be4[0x4]; // 0x1be4
-        CUtlString m_szResponseCriteria; // 0x1be8        
+        client::ParticleIndex_t m_nFXDeath; // 0x1bf8        
+        [[maybe_unused]] std::uint8_t pad_0x1bfc[0x4]; // 0x1bfc
+        CUtlString m_szResponseCriteria; // 0x1c00        
         // metadata: MNetworkEnable
-        uint32_t m_nArcanaColor; // 0x1bf0        
-        [[maybe_unused]] std::uint8_t pad_0x1bf4[0x4];
+        uint32_t m_nArcanaColor; // 0x1c08        
+        [[maybe_unused]] std::uint8_t pad_0x1c0c[0x4];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in C_DOTA_Unit_Hero_Terrorblade because it is not a standard-layout class
-    static_assert(sizeof(C_DOTA_Unit_Hero_Terrorblade) == 0x1bf8);
+    static_assert(sizeof(C_DOTA_Unit_Hero_Terrorblade) == 0x1c10);
 };

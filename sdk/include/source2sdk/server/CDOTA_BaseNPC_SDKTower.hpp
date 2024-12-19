@@ -14,7 +14,7 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x1978
+    // Size: 0x19b0
     // Has VTable
     // Construct allowed
     // 
@@ -26,5 +26,5 @@ namespace source2sdk::server
     };
     #pragma pack(pop)
     
-    static_assert(sizeof(CDOTA_BaseNPC_SDKTower) == 0x1978);
+    static_assert(sizeof(CDOTA_BaseNPC_SDKTower) == 0x19b0);
 };

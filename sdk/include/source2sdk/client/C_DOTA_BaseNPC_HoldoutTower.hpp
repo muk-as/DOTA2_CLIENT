@@ -15,7 +15,7 @@ namespace source2sdk::client
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x1940
+    // Size: 0x1958
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
@@ -23,11 +23,11 @@ namespace source2sdk::client
     class C_DOTA_BaseNPC_HoldoutTower : public client::C_DOTA_BaseNPC_Tower
     {
     public:
-        client::DOTA_HOLDOUT_TOWER_TYPE m_iTowerType; // 0x1938        
-        [[maybe_unused]] std::uint8_t pad_0x193c[0x4];
+        client::DOTA_HOLDOUT_TOWER_TYPE m_iTowerType; // 0x1950        
+        [[maybe_unused]] std::uint8_t pad_0x1954[0x4];
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in C_DOTA_BaseNPC_HoldoutTower because it is not a standard-layout class
-    static_assert(sizeof(C_DOTA_BaseNPC_HoldoutTower) == 0x1940);
+    static_assert(sizeof(C_DOTA_BaseNPC_HoldoutTower) == 0x1958);
 };

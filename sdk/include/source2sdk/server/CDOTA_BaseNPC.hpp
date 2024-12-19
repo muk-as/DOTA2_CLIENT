@@ -50,7 +50,7 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x1830
+    // Size: 0x1868
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
@@ -348,278 +348,277 @@ namespace source2sdk::server
         client::PlayerID_t m_nFarmClaimPlayerID; // 0xca8        
         // metadata: MNetworkEnable
         client::PlayerID_t m_nPlayerOwnerID; // 0xcac        
-        CUtlSymbolLarge m_iszAbilityList[35]; // 0xcb0        
-        int32_t m_iAttackDamageType; // 0xdc8        
-        bool m_bIsIdle; // 0xdcc        
-        bool m_bHold; // 0xdcd        
-        bool m_bWasKilledPassively; // 0xdce        
-        [[maybe_unused]] std::uint8_t pad_0xdcf[0x1]; // 0xdcf
-        server::CountdownTimer m_AngerTimer; // 0xdd0        
-        server::CountdownTimer m_AlertTimer; // 0xde8        
+        CUtlSymbolLarge m_iszAbilityList[40]; // 0xcb0        
+        int32_t m_iAttackDamageType; // 0xdf0        
+        bool m_bIsIdle; // 0xdf4        
+        bool m_bHold; // 0xdf5        
+        bool m_bWasKilledPassively; // 0xdf6        
+        [[maybe_unused]] std::uint8_t pad_0xdf7[0x1]; // 0xdf7
+        server::CountdownTimer m_AngerTimer; // 0xdf8        
+        server::CountdownTimer m_AlertTimer; // 0xe10        
         // m_hAngerTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<server::CBaseEntity> m_hAngerTarget;
-        char m_hAngerTarget[0x4]; // 0xe00        
+        char m_hAngerTarget[0x4]; // 0xe28        
         // m_hAlertTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<server::CBaseEntity> m_hAlertTarget;
-        char m_hAlertTarget[0x4]; // 0xe04        
+        char m_hAlertTarget[0x4]; // 0xe2c        
         // m_hForceAttackTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<server::CBaseEntity> m_hForceAttackTarget;
-        char m_hForceAttackTarget[0x4]; // 0xe08        
-        bool m_bAllowAllyForceAttack; // 0xe0c        
-        [[maybe_unused]] std::uint8_t pad_0xe0d[0x3]; // 0xe0d
-        Vector m_vTargetLastKnownPosition; // 0xe10        
-        [[maybe_unused]] std::uint8_t pad_0xe1c[0x1c]; // 0xe1c
+        char m_hForceAttackTarget[0x4]; // 0xe30        
+        bool m_bAllowAllyForceAttack; // 0xe34        
+        [[maybe_unused]] std::uint8_t pad_0xe35[0x3]; // 0xe35
+        Vector m_vTargetLastKnownPosition; // 0xe38        
+        [[maybe_unused]] std::uint8_t pad_0xe44[0x1c]; // 0xe44
         // metadata: MNetworkEnable
-        entity2::GameTime_t m_flLastDamageTime; // 0xe38        
+        entity2::GameTime_t m_flLastDamageTime; // 0xe60        
         // metadata: MNetworkEnable
-        entity2::GameTime_t m_flLastAttackTime; // 0xe3c        
-        entity2::GameTime_t m_flTimeSinceLastAbilityNag; // 0xe40        
-        entity2::GameTime_t m_flLastTeleportTime; // 0xe44        
+        entity2::GameTime_t m_flLastAttackTime; // 0xe64        
+        entity2::GameTime_t m_flTimeSinceLastAbilityNag; // 0xe68        
+        entity2::GameTime_t m_flLastTeleportTime; // 0xe6c        
         // metadata: MNetworkEnable
-        uint64_t m_nUnitState64; // 0xe48        
-        entity2::GameTime_t m_vLastVisibilityChange[15]; // 0xe50        
-        [[maybe_unused]] std::uint8_t pad_0xe8c[0x1c]; // 0xe8c
-        bool m_bFirstSpawn; // 0xea8        
-        [[maybe_unused]] std::uint8_t pad_0xea9[0x3]; // 0xea9
+        uint64_t m_nUnitState64; // 0xe70        
+        entity2::GameTime_t m_vLastVisibilityChange[15]; // 0xe78        
+        [[maybe_unused]] std::uint8_t pad_0xeb4[0x1c]; // 0xeb4
+        bool m_bFirstSpawn; // 0xed0        
+        [[maybe_unused]] std::uint8_t pad_0xed1[0x3]; // 0xed1
         // m_hAttackTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<server::CBaseEntity> m_hAttackTarget;
-        char m_hAttackTarget[0x4]; // 0xeac        
+        char m_hAttackTarget[0x4]; // 0xed4        
         // m_hAggroTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<server::CBaseEntity> m_hAggroTarget;
-        char m_hAggroTarget[0x4]; // 0xeb0        
+        char m_hAggroTarget[0x4]; // 0xed8        
         // m_hCommandAttackTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<server::CBaseEntity> m_hCommandAttackTarget;
-        char m_hCommandAttackTarget[0x4]; // 0xeb4        
-        CUtlSymbolLarge m_iszOriginalModel; // 0xeb8        
+        char m_hCommandAttackTarget[0x4]; // 0xedc        
+        CUtlSymbolLarge m_iszOriginalModel; // 0xee0        
         // metadata: MNetworkEnable
-        int8_t m_nUnitModelVariant; // 0xec0        
-        int8_t m_nUnitModelVariantCount; // 0xec1        
-        bool m_bPseudoQueueOrders; // 0xec2        
-        bool m_bCastLocked; // 0xec3        
-        [[maybe_unused]] std::uint8_t pad_0xec4[0x1c]; // 0xec4
-        entity2::GameTime_t m_flAttackRegulator; // 0xee0        
-        float m_flTimeDisparityTolerance; // 0xee4        
-        entity2::GameTime_t m_fAttackPhaseEndTime; // 0xee8        
-        entity2::GameTime_t m_flPositionUpdateTime; // 0xeec        
-        Vector m_vLastPositionSent; // 0xef0        
+        int8_t m_nUnitModelVariant; // 0xee8        
+        int8_t m_nUnitModelVariantCount; // 0xee9        
+        bool m_bPseudoQueueOrders; // 0xeea        
+        bool m_bCastLocked; // 0xeeb        
+        [[maybe_unused]] std::uint8_t pad_0xeec[0x1c]; // 0xeec
+        entity2::GameTime_t m_flAttackRegulator; // 0xf08        
+        float m_flTimeDisparityTolerance; // 0xf0c        
+        entity2::GameTime_t m_fAttackPhaseEndTime; // 0xf10        
+        entity2::GameTime_t m_flPositionUpdateTime; // 0xf14        
+        Vector m_vLastPositionSent; // 0xf18        
         // metadata: MNetworkEnable
         // metadata: MNetworkPriority "32"
-        int32_t m_iTaggedAsVisibleByTeam; // 0xefc        
+        int32_t m_iTaggedAsVisibleByTeam; // 0xf24        
         // metadata: MNetworkEnable
-        uint64_t m_iIsControllableByPlayer64; // 0xf00        
-        client::PlayerID_t m_nControllingPlayerID; // 0xf08        
-        bool m_bRunAIWhenControllableByPlayer; // 0xf0c        
-        [[maybe_unused]] std::uint8_t pad_0xf0d[0x3]; // 0xf0d
+        uint64_t m_iIsControllableByPlayer64; // 0xf28        
+        client::PlayerID_t m_nControllingPlayerID; // 0xf30        
+        bool m_bRunAIWhenControllableByPlayer; // 0xf34        
+        [[maybe_unused]] std::uint8_t pad_0xf35[0x3]; // 0xf35
         // metadata: MNetworkEnable
         // metadata: MNetworkUserGroup "Abilities"
         // metadata: MNetworkPriority "32"
         // m_hAbilities has a template type with potentially unknown template parameters. You can try uncommenting the field below.
-        // CHandle<server::CBaseEntity> m_hAbilities[35];
-        char m_hAbilities[0x8c]; // 0xf10        
-        [[maybe_unused]] std::uint8_t pad_0xf9c[0x4]; // 0xf9c
+        // CHandle<server::CBaseEntity> m_hAbilities[40];
+        char m_hAbilities[0xa0]; // 0xf38        
         // m_associatedEmptyAbilities has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<CHandle<server::CBaseEntity>> m_associatedEmptyAbilities;
-        char m_associatedEmptyAbilities[0x18]; // 0xfa0        
+        char m_associatedEmptyAbilities[0x18]; // 0xfd8        
         // m_hActiveAbility has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<server::CBaseEntity> m_hActiveAbility;
-        char m_hActiveAbility[0x4]; // 0xfb8        
-        Vector m_vCursorLocation; // 0xfbc        
+        char m_hActiveAbility[0x4]; // 0xff0        
+        Vector m_vCursorLocation; // 0xff4        
         // m_hCursorTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<server::CBaseEntity> m_hCursorTarget;
-        char m_hCursorTarget[0x4]; // 0xfc8        
+        char m_hCursorTarget[0x4]; // 0x1000        
         // m_hOriginalCursorTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<server::CBaseEntity> m_hOriginalCursorTarget;
-        char m_hOriginalCursorTarget[0x4]; // 0xfcc        
-        bool m_bCursorTargetingNothing; // 0xfd0        
-        [[maybe_unused]] std::uint8_t pad_0xfd1[0x7]; // 0xfd1
+        char m_hOriginalCursorTarget[0x4]; // 0x1004        
+        bool m_bCursorTargetingNothing; // 0x1008        
+        [[maybe_unused]] std::uint8_t pad_0x1009[0x7]; // 0x1009
         // metadata: MNetworkEnable
-        server::CDOTA_ModifierManager m_ModifierManager; // 0xfd8        
-        [[maybe_unused]] std::uint8_t pad_0x12f8[0x8]; // 0x12f8
-        float m_flInvisibilityLevel; // 0x1300        
-        [[maybe_unused]] std::uint8_t pad_0x1304[0x4]; // 0x1304
-        CUtlSymbolLarge m_iszMapUnitName; // 0x1308        
-        CUtlSymbolLarge m_iszUnitName; // 0x1310        
+        server::CDOTA_ModifierManager m_ModifierManager; // 0x1010        
+        [[maybe_unused]] std::uint8_t pad_0x1330[0x8]; // 0x1330
+        float m_flInvisibilityLevel; // 0x1338        
+        [[maybe_unused]] std::uint8_t pad_0x133c[0x4]; // 0x133c
+        CUtlSymbolLarge m_iszMapUnitName; // 0x1340        
+        CUtlSymbolLarge m_iszUnitName; // 0x1348        
         // metadata: MNetworkEnable
-        int32_t m_iUnitNameIndex; // 0x1318        
+        int32_t m_iUnitNameIndex; // 0x1350        
         // metadata: MNetworkEnable
-        int32_t m_iDamageMin; // 0x131c        
+        int32_t m_iDamageMin; // 0x1354        
         // metadata: MNetworkEnable
-        int32_t m_iDamageMax; // 0x1320        
+        int32_t m_iDamageMax; // 0x1358        
         // metadata: MNetworkEnable
-        int32_t m_iDamageBonus; // 0x1324        
+        int32_t m_iDamageBonus; // 0x135c        
         // metadata: MNetworkEnable
-        bool m_bIsWaitingToSpawn; // 0x1328        
-        [[maybe_unused]] std::uint8_t pad_0x1329[0x3]; // 0x1329
-        int32_t m_iLeashType; // 0x132c        
-        int32_t m_iAggroType; // 0x1330        
-        bool m_bCreepIgnoreAggro; // 0x1334        
-        bool m_bCreepFirstWave; // 0x1335        
+        bool m_bIsWaitingToSpawn; // 0x1360        
+        [[maybe_unused]] std::uint8_t pad_0x1361[0x3]; // 0x1361
+        int32_t m_iLeashType; // 0x1364        
+        int32_t m_iAggroType; // 0x1368        
+        bool m_bCreepIgnoreAggro; // 0x136c        
+        bool m_bCreepFirstWave; // 0x136d        
         // metadata: MNetworkEnable
-        bool m_bIsIllusion; // 0x1336        
+        bool m_bIsIllusion; // 0x136e        
         // metadata: MNetworkEnable
-        uint8_t m_nUnitLabelIndex; // 0x1337        
+        uint8_t m_nUnitLabelIndex; // 0x136f        
         // metadata: MNetworkEnable
-        CUtlString m_szScaleset; // 0x1338        
+        CUtlString m_szScaleset; // 0x1370        
         // metadata: MNetworkEnable
-        CUtlString m_szUnitLabel; // 0x1340        
-        CUtlString m_strAnimationModifier; // 0x1348        
-        [[maybe_unused]] std::uint8_t pad_0x1350[0x8]; // 0x1350
+        CUtlString m_szUnitLabel; // 0x1378        
+        CUtlString m_strAnimationModifier; // 0x1380        
+        [[maybe_unused]] std::uint8_t pad_0x1388[0x8]; // 0x1388
         // metadata: MNetworkEnable
         // m_hOwnerNPC has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<server::CBaseEntity> m_hOwnerNPC;
-        char m_hOwnerNPC[0x4]; // 0x1358        
-        [[maybe_unused]] std::uint8_t pad_0x135c[0x4]; // 0x135c
-        server::CLocomotionBase* m_locomotor; // 0x1360        
-        server::IBody* m_body; // 0x1368        
-        bool m_bNeverMoveToClearSpace; // 0x1370        
-        [[maybe_unused]] std::uint8_t pad_0x1371[0x3]; // 0x1371
+        char m_hOwnerNPC[0x4]; // 0x1390        
+        [[maybe_unused]] std::uint8_t pad_0x1394[0x4]; // 0x1394
+        server::CLocomotionBase* m_locomotor; // 0x1398        
+        server::IBody* m_body; // 0x13a0        
+        bool m_bNeverMoveToClearSpace; // 0x13a8        
+        [[maybe_unused]] std::uint8_t pad_0x13a9[0x3]; // 0x13a9
         // metadata: MNetworkEnable
         // metadata: MNetworkUserGroup "SpectatorsOnly"
         // m_hGoalEntity has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<server::CBaseEntity> m_hGoalEntity;
-        char m_hGoalEntity[0x4]; // 0x1374        
-        bool m_bMustReachEachGoalEntity; // 0x1378        
-        [[maybe_unused]] std::uint8_t pad_0x1379[0x3]; // 0x1379
-        Vector m_vInitialGoalPosition; // 0x137c        
-        [[maybe_unused]] std::uint8_t pad_0x1388[0x18]; // 0x1388
-        client::CUnitOrders m_CurrentQueuedOrder; // 0x13a0        
-        [[maybe_unused]] std::uint8_t pad_0x13e0[0x18]; // 0x13e0
+        char m_hGoalEntity[0x4]; // 0x13ac        
+        bool m_bMustReachEachGoalEntity; // 0x13b0        
+        [[maybe_unused]] std::uint8_t pad_0x13b1[0x3]; // 0x13b1
+        Vector m_vInitialGoalPosition; // 0x13b4        
+        [[maybe_unused]] std::uint8_t pad_0x13c0[0x18]; // 0x13c0
+        client::CUnitOrders m_CurrentQueuedOrder; // 0x13d8        
+        [[maybe_unused]] std::uint8_t pad_0x1418[0x18]; // 0x1418
         // metadata: MNetworkEnable
-        server::CDOTA_UnitInventory m_Inventory; // 0x13f8        
+        server::CDOTA_UnitInventory m_Inventory; // 0x1430        
         // m_hItemToDrop has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<server::CBaseEntity> m_hItemToDrop;
-        char m_hItemToDrop[0x4]; // 0x14d0        
+        char m_hItemToDrop[0x4]; // 0x1508        
         // metadata: MNetworkEnable
-        client::DOTA_SHOP_TYPE m_iCurShop; // 0x14d4        
+        client::DOTA_SHOP_TYPE m_iCurShop; // 0x150c        
         // m_hLastNearShop has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<server::CBaseEntity> m_hLastNearShop;
-        char m_hLastNearShop[0x4]; // 0x14d8        
-        [[maybe_unused]] std::uint8_t pad_0x14dc[0x4]; // 0x14dc
+        char m_hLastNearShop[0x4]; // 0x1510        
+        [[maybe_unused]] std::uint8_t pad_0x1514[0x4]; // 0x1514
         // metadata: MNetworkEnable
-        CUtlSymbolLarge m_szCurShopEntName; // 0x14e0        
-        bool m_bHasInventory; // 0x14e8        
-        [[maybe_unused]] std::uint8_t pad_0x14e9[0x3]; // 0x14e9
-        float m_flBaselineModelScale; // 0x14ec        
-        float m_fModelScaleMultiplier; // 0x14f0        
-        float m_fModelScaleMultiplierChangeStart; // 0x14f4        
-        entity2::GameTime_t m_fModelScaleMultiplierChangeTime; // 0x14f8        
-        float m_flPreviousModelScale; // 0x14fc        
-        float m_fMaxModelScaleMultiplier; // 0x1500        
-        bool m_bIsCamped; // 0x1504        
-        bool m_bIsReturningHome; // 0x1505        
-        bool m_bWantsToFlee; // 0x1506        
-        bool m_bWakesNeutrals; // 0x1507        
-        bool m_bNeutralIgnore; // 0x1508        
-        bool m_bIdleAcquire; // 0x1509        
-        bool m_bCanFollowUnseenUnits; // 0x150a        
-        bool m_bExpired; // 0x150b        
-        Vector m_vCurrentMovementOrderDestination; // 0x150c        
-        Vector m_vPreviousMovementOrderDestination; // 0x1518        
-        Vector m_vResumePreviousMovementRequestLocation; // 0x1524        
-        bool m_bCurrentOrderIsMovement; // 0x1530        
-        bool m_bPreviousOrderIsMovement; // 0x1531        
-        bool m_bResumePreviousMovement; // 0x1532        
-        bool m_bIsPatrolling; // 0x1533        
-        entity2::GameTime_t m_flCreationTime; // 0x1534        
-        bool m_bTargetMovedOutOfRange; // 0x1538        
-        bool m_bChaseTargetMoves; // 0x1539        
-        [[maybe_unused]] std::uint8_t pad_0x153a[0x2]; // 0x153a
-        float m_flChaseDistance; // 0x153c        
+        CUtlSymbolLarge m_szCurShopEntName; // 0x1518        
+        bool m_bHasInventory; // 0x1520        
+        [[maybe_unused]] std::uint8_t pad_0x1521[0x3]; // 0x1521
+        float m_flBaselineModelScale; // 0x1524        
+        float m_fModelScaleMultiplier; // 0x1528        
+        float m_fModelScaleMultiplierChangeStart; // 0x152c        
+        entity2::GameTime_t m_fModelScaleMultiplierChangeTime; // 0x1530        
+        float m_flPreviousModelScale; // 0x1534        
+        float m_fMaxModelScaleMultiplier; // 0x1538        
+        bool m_bIsCamped; // 0x153c        
+        bool m_bIsReturningHome; // 0x153d        
+        bool m_bWantsToFlee; // 0x153e        
+        bool m_bWakesNeutrals; // 0x153f        
+        bool m_bNeutralIgnore; // 0x1540        
+        bool m_bIdleAcquire; // 0x1541        
+        bool m_bCanFollowUnseenUnits; // 0x1542        
+        bool m_bExpired; // 0x1543        
+        Vector m_vCurrentMovementOrderDestination; // 0x1544        
+        Vector m_vPreviousMovementOrderDestination; // 0x1550        
+        Vector m_vResumePreviousMovementRequestLocation; // 0x155c        
+        bool m_bCurrentOrderIsMovement; // 0x1568        
+        bool m_bPreviousOrderIsMovement; // 0x1569        
+        bool m_bResumePreviousMovement; // 0x156a        
+        bool m_bIsPatrolling; // 0x156b        
+        entity2::GameTime_t m_flCreationTime; // 0x156c        
+        bool m_bTargetMovedOutOfRange; // 0x1570        
+        bool m_bChaseTargetMoves; // 0x1571        
+        [[maybe_unused]] std::uint8_t pad_0x1572[0x2]; // 0x1572
+        float m_flChaseDistance; // 0x1574        
         // m_hChaseEntity has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<server::CBaseEntity> m_hChaseEntity;
-        char m_hChaseEntity[0x4]; // 0x1540        
-        [[maybe_unused]] std::uint8_t pad_0x1544[0x4]; // 0x1544
+        char m_hChaseEntity[0x4]; // 0x1578        
+        [[maybe_unused]] std::uint8_t pad_0x157c[0x4]; // 0x157c
         // m_ActivityModifiers has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<CUtlSymbol> m_ActivityModifiers;
-        char m_ActivityModifiers[0x18]; // 0x1548        
-        bool m_bActivityModifiersDirty; // 0x1560        
-        [[maybe_unused]] std::uint8_t pad_0x1561[0x7]; // 0x1561
+        char m_ActivityModifiers[0x18]; // 0x1580        
+        bool m_bActivityModifiersDirty; // 0x1598        
+        [[maybe_unused]] std::uint8_t pad_0x1599[0x7]; // 0x1599
         // m_ActivityModifiersFromScript has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<CUtlSymbol> m_ActivityModifiersFromScript;
-        char m_ActivityModifiersFromScript[0x18]; // 0x1568        
-        entity2::GameTime_t m_flBlinkDaggerTime; // 0x1580        
-        float m_flAdditionalBattleMusicWeight; // 0x1584        
+        char m_ActivityModifiersFromScript[0x18]; // 0x15a0        
+        entity2::GameTime_t m_flBlinkDaggerTime; // 0x15b8        
+        float m_flAdditionalBattleMusicWeight; // 0x15bc        
         // metadata: MNetworkEnable
-        bool m_bStolenScepter; // 0x1588        
-        bool m_bHasScepterCached; // 0x1589        
-        bool m_bHasShardCached; // 0x158a        
-        [[maybe_unused]] std::uint8_t pad_0x158b[0x5]; // 0x158b
-        server::CLocalNPCObstructionsCache m_LocalNPCObstructionsCache; // 0x1590        
-        [[maybe_unused]] std::uint8_t pad_0x15b0[0x20]; // 0x15b0
-        entity2::GameTime_t m_flCritBashFailUntil; // 0x15d0        
-        float m_flAttackTimeLostToLastTick; // 0x15d4        
-        float m_flAttackTimeAtLastTick; // 0x15d8        
-        float m_flCompanionDistance; // 0x15dc        
-        bool m_bIsPartyCompanion; // 0x15e0        
-        bool m_bCanPartyCompanionAttack; // 0x15e1        
-        [[maybe_unused]] std::uint8_t pad_0x15e2[0x2]; // 0x15e2
+        bool m_bStolenScepter; // 0x15c0        
+        bool m_bHasScepterCached; // 0x15c1        
+        bool m_bHasShardCached; // 0x15c2        
+        [[maybe_unused]] std::uint8_t pad_0x15c3[0x5]; // 0x15c3
+        server::CLocalNPCObstructionsCache m_LocalNPCObstructionsCache; // 0x15c8        
+        [[maybe_unused]] std::uint8_t pad_0x15e8[0x20]; // 0x15e8
+        entity2::GameTime_t m_flCritBashFailUntil; // 0x1608        
+        float m_flAttackTimeLostToLastTick; // 0x160c        
+        float m_flAttackTimeAtLastTick; // 0x1610        
+        float m_flCompanionDistance; // 0x1614        
+        bool m_bIsPartyCompanion; // 0x1618        
+        bool m_bCanPartyCompanionAttack; // 0x1619        
+        [[maybe_unused]] std::uint8_t pad_0x161a[0x2]; // 0x161a
         // m_CompanionEntity has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<server::CBaseEntity> m_CompanionEntity;
-        char m_CompanionEntity[0x4]; // 0x15e4        
-        bool m_bFacePlayer; // 0x15e8        
-        [[maybe_unused]] std::uint8_t pad_0x15e9[0x3]; // 0x15e9
-        entity2::GameTime_t m_flLastIdleChangeTime; // 0x15ec        
-        bool m_bUseNeutralCreepBehavior; // 0x15f0        
-        [[maybe_unused]] std::uint8_t pad_0x15f1[0x27]; // 0x15f1
-        bool m_bHasBuiltWearableSpawnList; // 0x1618        
-        [[maybe_unused]] std::uint8_t pad_0x1619[0x3]; // 0x1619
-        entity2::GameTick_t m_nFoWFadeStartTime[15]; // 0x161c        
-        int32_t m_nFOWVisibilityRadius; // 0x1658        
-        Vector m_vFOWOriginOverride; // 0x165c        
-        CUtlString m_strLastKillerAbility; // 0x1668        
+        char m_CompanionEntity[0x4]; // 0x161c        
+        bool m_bFacePlayer; // 0x1620        
+        [[maybe_unused]] std::uint8_t pad_0x1621[0x3]; // 0x1621
+        entity2::GameTime_t m_flLastIdleChangeTime; // 0x1624        
+        bool m_bUseNeutralCreepBehavior; // 0x1628        
+        [[maybe_unused]] std::uint8_t pad_0x1629[0x27]; // 0x1629
+        bool m_bHasBuiltWearableSpawnList; // 0x1650        
+        [[maybe_unused]] std::uint8_t pad_0x1651[0x3]; // 0x1651
+        entity2::GameTick_t m_nFoWFadeStartTime[15]; // 0x1654        
+        int32_t m_nFOWVisibilityRadius; // 0x1690        
+        Vector m_vFOWOriginOverride; // 0x1694        
+        CUtlString m_strLastKillerAbility; // 0x16a0        
         // metadata: MNetworkEnable
         // metadata: MNetworkPriority "32"
-        int32_t m_anglediff; // 0x1670        
+        int32_t m_anglediff; // 0x16a8        
         // metadata: MNetworkEnable
         // metadata: MNetworkPriority "32"
-        int32_t m_NetworkActivity; // 0x1674        
+        int32_t m_NetworkActivity; // 0x16ac        
         // metadata: MNetworkEnable
         // metadata: MNetworkPriority "32"
-        int32_t m_NetworkSequenceIndex; // 0x1678        
+        int32_t m_NetworkSequenceIndex; // 0x16b0        
         // metadata: MNetworkEnable
-        bool m_bShouldDoFlyHeightVisual; // 0x167c        
-        [[maybe_unused]] std::uint8_t pad_0x167d[0x3]; // 0x167d
+        bool m_bShouldDoFlyHeightVisual; // 0x16b4        
+        [[maybe_unused]] std::uint8_t pad_0x16b5[0x3]; // 0x16b5
         // metadata: MNetworkEnable
-        float m_flStartSequenceCycle; // 0x1680        
-        bool m_bMidLoading; // 0x1684        
-        [[maybe_unused]] std::uint8_t pad_0x1685[0x3]; // 0x1685
+        float m_flStartSequenceCycle; // 0x16b8        
+        bool m_bMidLoading; // 0x16bc        
+        [[maybe_unused]] std::uint8_t pad_0x16bd[0x3]; // 0x16bd
         // m_hTutorialSpawner has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<server::CDOTA_ScriptedSpawner> m_hTutorialSpawner;
-        char m_hTutorialSpawner[0x4]; // 0x1688        
-        [[maybe_unused]] std::uint8_t pad_0x168c[0x4]; // 0x168c
-        server::CountdownTimer m_AngerCooldownTimer; // 0x1690        
-        int32_t m_iProjectileMoveSpeed; // 0x16a8        
-        [[maybe_unused]] std::uint8_t pad_0x16ac[0x4]; // 0x16ac
-        CUtlSymbolLarge m_iszAutoAttackRangedParticle; // 0x16b0        
-        int32_t m_nPoseParameterTurn; // 0x16b8        
-        int32_t m_nPoseParameterRun; // 0x16bc        
-        float m_flLean; // 0x16c0        
-        float m_flRun; // 0x16c4        
+        char m_hTutorialSpawner[0x4]; // 0x16c0        
+        [[maybe_unused]] std::uint8_t pad_0x16c4[0x4]; // 0x16c4
+        server::CountdownTimer m_AngerCooldownTimer; // 0x16c8        
+        int32_t m_iProjectileMoveSpeed; // 0x16e0        
+        [[maybe_unused]] std::uint8_t pad_0x16e4[0x4]; // 0x16e4
+        CUtlSymbolLarge m_iszAutoAttackRangedParticle; // 0x16e8        
+        int32_t m_nPoseParameterTurn; // 0x16f0        
+        int32_t m_nPoseParameterRun; // 0x16f4        
+        float m_flLean; // 0x16f8        
+        float m_flRun; // 0x16fc        
         // metadata: MNetworkEnable
-        char m_CustomHealthLabel[256]; // 0x16c8        
+        char m_CustomHealthLabel[256]; // 0x1700        
         // metadata: MNetworkEnable
-        Color m_CustomHealthLabelColor; // 0x17c8        
-        client::item_definition_index_t m_nWearableDefIndex; // 0x17cc        
-        int8_t m_nArcanaLevel; // 0x17d0        
-        int8_t m_nDefaultArcanaLevel; // 0x17d1        
-        Color m_defaultColorGemColor; // 0x17d2        
-        bool m_bDisableDamageDisplay; // 0x17d6        
-        [[maybe_unused]] std::uint8_t pad_0x17d7[0x1]; // 0x17d7
-        Color m_gibTintColor; // 0x17d8        
-        float m_flPathfindingSearchDepthScale; // 0x17dc        
+        Color m_CustomHealthLabelColor; // 0x1800        
+        client::item_definition_index_t m_nWearableDefIndex; // 0x1804        
+        int8_t m_nArcanaLevel; // 0x1808        
+        int8_t m_nDefaultArcanaLevel; // 0x1809        
+        Color m_defaultColorGemColor; // 0x180a        
+        bool m_bDisableDamageDisplay; // 0x180e        
+        [[maybe_unused]] std::uint8_t pad_0x180f[0x1]; // 0x180f
+        Color m_gibTintColor; // 0x1810        
+        float m_flPathfindingSearchDepthScale; // 0x1814        
         // m_ActivitiesStarted has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<int32_t> m_ActivitiesStarted;
-        char m_ActivitiesStarted[0x18]; // 0x17e0        
+        char m_ActivitiesStarted[0x18]; // 0x1818        
         // m_hIllusionOriginal has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<server::CBaseEntity> m_hIllusionOriginal;
-        char m_hIllusionOriginal[0x4]; // 0x17f8        
+        char m_hIllusionOriginal[0x4]; // 0x1830        
         // m_hDirectionalRangedFakeTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<server::CDOTA_BaseNPC> m_hDirectionalRangedFakeTarget;
-        char m_hDirectionalRangedFakeTarget[0x4]; // 0x17fc        
-        [[maybe_unused]] std::uint8_t pad_0x1800[0x28]; // 0x1800
-        bool m_bShouldComputeRemainingPathLength; // 0x1828        
-        [[maybe_unused]] std::uint8_t pad_0x1829[0x3]; // 0x1829
-        float m_flRemainingPathLength; // 0x182c        
+        char m_hDirectionalRangedFakeTarget[0x4]; // 0x1834        
+        [[maybe_unused]] std::uint8_t pad_0x1838[0x28]; // 0x1838
+        bool m_bShouldComputeRemainingPathLength; // 0x1860        
+        [[maybe_unused]] std::uint8_t pad_0x1861[0x3]; // 0x1861
+        float m_flRemainingPathLength; // 0x1864        
         
         // Datamap fields:
         // CUtlSymbolLarge Input_MoveTo; // 0x0
@@ -640,5 +639,5 @@ namespace source2sdk::server
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_BaseNPC because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_BaseNPC) == 0x1830);
+    static_assert(sizeof(CDOTA_BaseNPC) == 0x1868);
 };

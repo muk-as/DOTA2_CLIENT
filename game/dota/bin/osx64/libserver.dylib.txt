@@ -45,7 +45,7 @@
 00000000
 000000000
 00000000000
-00000000000000000
+000000000000000000
 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
 0000000000000000@@@@@@@@@@@@@@@@PPPPPPPPPPPPPPPP````````````````pppppppppppppppp
@@ -265,8 +265,6 @@
 10IGameEvent
 10IIntention
 10INavEditor
-10thAnniversary.PartyHat.Cast
-10thAnniversary.PartyHat.Death
 11CAnchorList
 11CBaseEntity
 11CBaseFilter
@@ -4593,6 +4591,7 @@
 17CCompressedStaticIiiE
 17CCompressedStaticIisE
 17CConstraintAnchor
+17CCraftworksSchema
 17CDOTABaseGameMode
 17CDOTABehaviorIdle
 17CDOTABingoManager
@@ -5843,9 +5842,11 @@
 21CCLSearchFieldFactoryI25SCLTeamBuildingKillFieldsL20DOTA_COMBATLOG_TYPES17EE
 21CCLSearchFieldFactoryI26SCLNeutralItemEarnedFieldsL20DOTA_COMBATLOG_TYPES43EE
 21CCLSearchFieldFactoryI27SCLModifierStackEventFieldsL20DOTA_COMBATLOG_TYPES19EE
+21CCLSearchFieldFactoryI31SCLPlayerStatTrackerEventFieldsL20DOTA_COMBATLOG_TYPES44EE
 21CCLSearchFieldFactoryI32SCLPhysicalDamagePreventedFieldsL20DOTA_COMBATLOG_TYPES32EE
 21CCompressedStaticBool
 21CCompressedStaticChar
+21CCraftworksGameSystem
 21CDOTACustomGameEvents
 21CDOTAGameManagerProxy
 21CDOTAInventoryManager
@@ -6001,6 +6002,7 @@
 21CMsgSOCacheSubscribed
 21CMsgSOMultipleObjects
 21CMsgSerializedSOCache
+21CMsgSignOutCraftworks
 21CMsgSosStopSoundEvent
 21CMsgSpendWager_Player
 21CMsgSurvivorsUserData
@@ -6045,6 +6047,7 @@
 21VersusScene_ChatWheel
 21__basic_string_commonILb1EEE
 22.CMsgClientToGCOverworldFeedbackResponse.EResponse
+22.CMsgCraftworksComponents.ComponentQuantitiesEntry
 22.CMsgDOTARealtimeGameStats.GraphData.LocationStats
 22.CMsgGameMatchSignOut.CTeam.CPlayer.HeroDamageType"Y
 22.CMsgLobbyFeaturedGamemodeProgress.AccountProgress
@@ -6892,6 +6895,7 @@
 24CGameSystemStaticFactoryI20CDOTA_CombatAnalyzerS0_E
 24CGameSystemStaticFactoryI20CNavSpaceBuildLockerS0_E
 24CGameSystemStaticFactoryI20CPlayerVoiceListenerS0_E
+24CGameSystemStaticFactoryI21CCraftworksGameSystemS0_E
 24CGameSystemStaticFactoryI21CDOTAInventoryManagerS0_E
 24CGameSystemStaticFactoryI21CDOTATrophyGameSystemS0_E
 24CGameSystemStaticFactoryI21CDOTA_CustomUIManagerS0_E
@@ -6934,6 +6938,7 @@
 24CGameSystemStaticFactoryI30CParticleSystemQueryGameSystemS0_E
 24CGameSystemStaticFactoryI30CThreatEvaluatorAutoGameSystemS0_E
 24CGameSystemStaticFactoryI31CCleanupRelationshipsGameSystemS0_E
+24CGameSystemStaticFactoryI31CDOTACraftworksServerGameSystemS0_E
 24CGameSystemStaticFactoryI31CDOTAFeaturedGamemodeGameSystemS0_E
 24CGameSystemStaticFactoryI32CDOTAStatTrackerSchemaGameSystemS0_E
 24CGameSystemStaticFactoryI32CDOTAStatTrackerServerGameSystemS0_E
@@ -6957,6 +6962,7 @@
 24CMsgClientToGCEquipItems
 24CMsgClientToGCPackBundle
 24CMsgClientToGCUnwrapGift
+24CMsgCraftworksComponents
 24CMsgDOTAAwardEventPoints
 24CMsgDOTABotDebugInfo_Bot
 24CMsgDOTADPCLeagueResults
@@ -7266,6 +7272,7 @@
 25CMsgBotWorldState_Courier
 25CMsgClearWorldDecalsEvent
 25CMsgClientToGCUnlockCrate
+25CMsgCraftworksQuestReward
 25CMsgDOTALeagueNodeResults
 25CMsgDOTALeague_SeriesInfo
 25CMsgDOTARealtimeGameStats
@@ -7545,6 +7552,7 @@
 26CGameSystemEventDispatcher
 26CGenericExpr_StringLiteral
 26CGridSceneObjectDescriptor
+26CIngameEvent_Frostivus2024
 26CInterpolatedVarProceduralI19MeshGroupMaskInfo_tE
 26CInterpolatedVarProceduralI21EnableRenderingInfo_tE
 26CLobbyBroadcastChannelInfo
@@ -7615,6 +7623,7 @@
 26CUserMessageSayTextChannel
 26CUserMessage_ExtraUserData
 26CUserMsg_CustomGameEvent_t
+26CUserMsg_ParticleManager_t
 26GameSessionConfiguration_t
 26ICommandCompletionCallback
 26IDOTA_SpeechQueuedCallback
@@ -8181,6 +8190,7 @@
 28CMsgLocalServerFakeLobbyData
 28CMsgSOCacheSubscriptionCheck
 28CMsgServerToGCGetCheerConfig
+28CMsgSignOutCraftworks_Player
 28CMsgSosSetLibraryStackFields
 28CMsgSosSetSoundEventParams_t
 28CMsgUnderDraftData_BenchSlot
@@ -9131,6 +9141,7 @@
 31CDOTAClientMsg_NeutralCampAlert
 31CDOTAClientMsg_SetUnitShareFlag
 31CDOTAClientMsg_ToggleAutoattack
+31CDOTACraftworksServerGameSystem
 31CDOTAEntityMsg_InvokerSpellCast
 31CDOTAFeaturedGamemodeGameSystem
 31CDOTAInGamePredictionGameSystem
@@ -9461,6 +9472,7 @@
 31PlayerResourceBroadcasterData_t
 31PlayerResourcePlayerEventData_t
 31ProtoFlattenedSerializerField_t
+31SCLPlayerStatTrackerEventFields
 32.32s: %4.4s, counter % 4d, level %s
 32CClientMsg_CustomGameEventBounce
 32CContextualTipBackdoorProtection
@@ -9828,7 +9840,6 @@
 333333
 3333333
 33333333H
-33333333L
 333?H
 333?I
 33CBaseAnimGraphAnimGraphController
@@ -12247,7 +12258,6 @@
 3[A\A^A
 3_star_action
 3f / %.3f
-3f3n3
 3ffff
 3fffff
 3ffffff
@@ -12286,6 +12296,7 @@
 3l$8D1
 3p RAp
 3ultimate_scepter_consumed_alchemist_bonus_all_stats
+3怀3老3退3
 4$fff
 4'KcD' H
 40.40s %10.10s %10.10s
@@ -15229,6 +15240,7 @@
 58CDOTA_Modifier_SpiritBreaker_ChargeOfDarkness_Untargetable
 58CDOTA_Modifier_VengefulSpirit_Command_Negative_Aura_Effect
 58CMsgClientToGCOverworldRequestTokensNeededByFriendResponse
+58CMsgCraftworksComponents_ComponentQuantitiesEntry_DoNotUse
 58CMsgNotificationOfSuspiciousActivity_MultipleGameInstances
 58CMsgServerToGCCompendiumChosenInGamePredictions_Prediction
 58CMsgServerToGCMatchPlayerNeutralItemEquipHistory_ItemEquip
@@ -15277,6 +15289,7 @@
 5kKillEaterEventType_ShadowShaman_MultiHeroEtherShocks
 5k_EDOTATriviaQuestionCategory_DYNAMIC_QUESTIONS_START
 5k_EMsgClientToGCCancelUnfinalizedTransactionsResponse
+5k_EMsgClientToGCCraftworksDevModifyComponentsResponse
 5k_EMsgClientToGCGetBattleReportAggregateStatsResponse
 5k_EMsgClientToGCOverworldClaimEncounterRewardResponse
 5k_EMsgClientToGCRequestPrivateCoachingSessionResponse
@@ -15649,8 +15662,6 @@ A9W(t<I
 A9\$ u	A
 A9\$t
 A9^$t*I
-A9t:(r
-A9|2(r
 A;D$4t
 A;D$LtEH
 A;D$Xu
@@ -15660,6 +15671,7 @@ A;F u
 A;F }-I
 A;F0umA
 A;F0unA
+A;F0uoA
 A;F0upA
 A;F0uqA
 A;F0us
@@ -15667,6 +15679,7 @@ A;F0u~A
 A;F8u
 A;F8uK
 A;F8uL
+A;F8uM
 A;F8uN
 A;F8uO
 A;F8uQ
@@ -15676,6 +15689,7 @@ A;F8uu
 A;F8ux
 A;F@u\A
 A;F@u]A
+A;F@u^A
 A;F@u_A
 A;F@u`A
 A;F@ub
@@ -15690,7 +15704,6 @@ A;G u
 A;G u2f
 A;G }yA
 A;G(u]I
-A;G\uJ
 A;Gx~UH
 A;G|~LH
 A;M$u
@@ -15698,6 +15711,7 @@ A;N(u-A
 A;O0uiL
 A;O0u|H
 A;O0}JI
+A;O\u5
 A;T$0sD
 A;V4sD
 A;XduMD
@@ -15710,7 +15724,6 @@ A;^ t
 A;^ t6
 A;^ tE
 A;^ u I
-A;^$urD
 A;^,t6I
 A;^,tAI
 A;^,tII
@@ -15727,7 +15740,6 @@ A;^LuAD
 A;^Tu
 A;^\uAD
 A;^dt
-A;^dusD
 A;^lu
 A;_$tII
 A;_h~AH
@@ -17329,16 +17341,17 @@ ARARARATAp
 ARARARAVBVC
 ARARARAWA
 ARARARAWAp
-ARARARA`:ARA
+ARARARA`:BRA
 ARARARAp
 ARARARB
 ARARARB\A\ARARA\A\ARARA\A\ARARA\A
 ARARASA
+ARARASAp
 ARARATARA
 ARARATARATARA
 ARARATARATARAWAp
 ARARAUBRATASBZAp
-ARARAVARASARA
+ARARAVARASA
 ARARAWA
 ARARAWARA
 ARARA` ARATARA[ARA
@@ -17348,7 +17361,6 @@ ARARAp
 ARARB
 ARARBRA
 ARARBRARBRBSAUASASBVARAp
-ARARBRAWA
 ARARBp
 ARASARA[ARA[AUASBRAp
 ARASAT
@@ -17356,13 +17368,12 @@ ARASAV
 ARASAVP
 ARASAW
 ARASAp
+ARASB
 ARATARA
-ARATARASARASARBVASB[ARA
+ARATARARARAp
 ARATARATARA
-ARATARATARASARA
 ARATARATARATARA
 ARATARATARATARATARATARATARATARATARATARATARATARATARATARA
-ARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARBRATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARASARARASATARATARATARAZARAp
 ARATARATARATARAZARAp
 ARATARATAUB[ARAXAp
 ARATARAWA
@@ -17392,13 +17403,15 @@ ARA[ARA[ARA[ARA
 ARA[ARA[ARA[ARA[ARA
 ARA[ARA[ARA[ARA[ARA[ARA[ARA[ARARA[ARA[ARA
 ARA[ARA[ARA[ARA[ARA[ARA[ARA[ARA[ARA
-ARA\ARARA\AWA
 ARA\Ap
+ARA\BRBWA
 ARA`:ARA
+ARA`:ARAWA
 ARA`:ARAXA
 ARA`:ARA`:ARA
 ARA`:BRAp
 ARA`;ARA`=ARA\A`:A
+ARA`;ATBp
 ARA`DA
 ARA`DA[A
 ARA`TA`#BSBXA]A]A]A]A]A]A]A]A]A]A]A^CSDTAp
@@ -17409,11 +17422,11 @@ ARA`|AVARARA
 ARA`|AVARARA`|AVARA`|AVARA
 ARA`|AVARARA`|AVARA`|AVARA`|AVARA
 ARA`|AVARARAp
-ARA`|AVARARBRA
-ARA`|AVARA`|AVA
+ARA`|AVARARBp
 ARA`|AVARA`|AVARA
 ARA`|AVARA`|AVARARARA
 ARA`|AVARA`|AVARARARA`|AVARAWA
+ARA`|AVARA`|AVARARBRA
 ARA`|AVARA`|AVARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARA
 ARA`|AVARA`|AVARA`:ARAp
 ARA`|AVARA`|AVARA`|AVARA
@@ -17530,7 +17543,6 @@ ASARARA
 ASARARARA
 ASARARARARARARA
 ASARAV
-ASARA`;ATBp
 ASARAp
 ASARB[ASCZARAp
 ASASASASASASASASAp
@@ -17557,13 +17569,14 @@ ATARA
 ATARARARA`|AVARA
 ATARARAp
 ATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATAUASB[BSC
+ATARA`pB
 ATATAp
 ATAUL
 ATAUM1
 ATAVA
+ATAVAp
 ATAWAV
 ATA]ASAp
-ATA`pB
 ATA`rARARARA
 ATA`|AVAXA]BVARAp
 ATBWAVA
@@ -17589,7 +17602,7 @@ AUATCp ZAp(p(RCp
 AUAWARA]ARAp
 AUAWAS
 AUAWASL
-AUAWBRARARARARARARARATARARA`:BRARAp
+AUAWBRARARARARARARA
 AUA`$A`CA[AUAZAZAWBp RA`#AWA
 AUA`;A
 AUBSARASARASAp
@@ -17687,7 +17700,7 @@ AWAVSM
 AWAVSP
 AWAVSP1
 AWAVSP9
-AWAVSP95P
+AWAVSP95
 AWAVSPA
 AWAVSPD
 AWAVSPE
@@ -17703,6 +17716,7 @@ AWAVSPLc
 AWAVSPLc?M
 AWAVSPM
 AWAVSPf
+AWAVSP衿L
 AXARARA[ARATARB^Ap
 AYASAp
 AYAYAYA` AYAYAYA` A` AYAYAYA` AYAYAYA` AYA` A` AYAYAYAYA` AYAYAYA` AYAYAYA` AYAYAYA` A` AYAYA` A` AYAYAYA` A` AYAYA` AYAYAYAYA` A` AYAYAYAYA` AYAYAYAYA` A` A` AYAYAYAYA
@@ -17718,15 +17732,17 @@ AZARAXARAWA
 AZARA^ARARARARARARARARA^ASARBZARAp
 AZARA`:ARBSARA
 AZARAp
+AZARB`;Ap
 AZAWA
 AZA[AUBWAVB
 AZA[A`0BZA
 AZBRARASCp
-AZBRARAp
+AZBRBWA
+AZBRBp
 AZBSARA
 AZBSARAUASASASASASASASASASASASASASASASA
-AZBSARBWA
 AZBSAp
+AZBTARASAUASB[BRA[ARASARASAUBZARAp
 AZBWA
 AZBWARA[BRARAp
 AZB[ARATARATARATARATARA
@@ -17742,21 +17758,19 @@ A\A]A^A
 A\A]A^A_]ÉChff
 A\A]A^A_]ÐUAWAVAUATSH
 A\A^A
-A]ASASB[BRASARASARBSASARARAp
 A^A_]ÊADH
 A_A^A]A
 A` Cp
 A`%ARA`EAXATA
 A`+A`'A`CASA
-A`/ARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARB
+A`/ARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARAp
 A`/A[Ap
-A`0BSARASARARASARARASARASARA[BUASB[ARASC
+A`0A[BRA[ARA
 A`7A]C
 A`:A` A`:AXBXB`NA
 A`:BRASAp
 A`;ATA
 A`;ATA`>ATAVA
-A`;ATAp
 A`;AUASCp
 A`<AUAp
 A`CAZA`:AYAp
@@ -17793,6 +17807,7 @@ A`bAYATB`:ARATAp
 A`bAYATBp
 A`bAYAXB`|AVARA
 A`bAYA`<A
+A`bAYAp
 A`bAYB
 A`bAYBRARAp
 A`bAZC
@@ -17800,11 +17815,11 @@ A`bA\BWA
 A`bA]BRA
 A`dARARARARARARARARARARARARARARARARARARARARARARARARARARARAXAp
 A`dA\B
-A`fB`:ARA[BUASASASASASASASASASASASASASASASASASASASASASASB[ARA^A`:ARA[ARA[ARBVASC`;C
+A`fB`:ARA`:ARA
 A`lCRBRARCp
-A`rA`TBRARARAWAp
+A`rA`TBRARARAWATBRASARAVAp
 A`wATA
-A`xBTA`|AVA`|AVATATBRAp
+A`xBTA`|AVA`|AVATAWASBRAp
 A`}AVARA
 Abilities
 Ability
@@ -17983,7 +17998,10 @@ Action '%s' can't grant a reward for score '%s' with unknown item def '%u
 Action '%s' can't grant action '%s' as a reward at score '%s' because that action spans a range of action ids
 Action '%s' can't grant action '%s' as a reward at score '%s' without specifying 'level', because that action spans a range of action ids
 Action '%s' can't grant action '%s' at level %d at score '%s', out of range.  Max level for that action is %d
+Action '%s' can't grant action '%s' for event %s. For cross-event grants, use the number of the action instead of the name
+Action '%s' can't grant action '%s' with EVENT_ID_NONE
 Action '%s' can't grant action '%s' with grant count %d at score '%s' - sanity check out of range (1-10000
+Action '%s' can't grant action '%s' with invalid event '%s
 Action '%s' can't grant an unknown action '%s' as a reward at score '%s
 Action '%s' can't parse the range of chat wheel message ids '%s' to grant at reward score '%s
 Action '%s' can't parse the range of ping wheel message ids '%s' to grant at reward score '%s
@@ -18676,6 +18694,7 @@ B9D!0t>J
 B9D+,t.A
 B9D>(t
 B9L(4t,N
+B9\ (t1N
 B9\(8t)N
 B9\00t/H
 B;D90t;M
@@ -18802,21 +18821,22 @@ BRARBUBSARA[AUB[A
 BRASARAWARAWARAWARASARAWARA[ARA[ARA[ARA
 BRASARBRASASC
 BRATARATARA
-BRATARATARATARA
+BRATARATARASARASARASARARASARARASARASARA[AUASB[ARASC
+BRATARATARB
 BRATARATASBTARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARARAp
-BRAWA
 BRAWARARA[AUCSBWBRAWASC
 BRAWBRAWARAUCRA`'ARAWARAUB`'ARB`:A
 BRAWBRAWARAWARAWARAYBXB
 BRAWBRAWARAZAp
-BRAWBRA[ARASAUASASB[ARA[AUASASASB[ARA[ARA
 BRAWBRA[BRAZAp
 BRA[ARASARB
 BRA[ARATARATARA[ARA[AUASCp
 BRA[ARAWBRAWARASARA[ARA[ARAZAp
 BRA[AUBSARASARASAUASASASASASASB[AUBSAp
+BRA`:ARAWA
 BRA`:ARA[ARA[ARATARATARATARATARATARAWARAUB`&ARARATARAWARAWARAWARARBp
 BRBRAWA
+BRBRB\ATARATARATARA
 BRUSHSOLID_ALWAYS
 BRUSHSOLID_NEVER
 BRUSHSOLID_TOGGLE
@@ -18826,9 +18846,9 @@ BSAWAWAWARBRAp
 BSR_ANYCRLF
 BSR_UNICODE
 BTARA
-BUASB
 BUBTARA[AUASASBTARATARAVARAVARARAp
 BUBTBUAp
+BUBWATBSARBSA
 BUCKSHOT
 BUILDING
 BUILDING_STATE
@@ -18837,6 +18857,7 @@ BVB<F
 BWAWAWARAp
 BX<"t
 BX<"u
+BYBp(p
 BYldUMRequest %s/%s request failed to send UM for proto %s
 BYldUMRequest %s/%s request timed out (%2.4f seconds) waiting for max-in-flight for proto %s
 BYldUMRequest %s/%s request timed out (%2.4f seconds) waiting for response for proto %s
@@ -18844,6 +18865,7 @@ BYldUMRequest %s/%s with invalid handle on response
 BZARATAp
 BZARAWA
 BZBWA
+B[BRA[ARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARASARBSATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARASARARASATARATARATARAZARAp
 B`*ATARAUARARARAUARARARARAp
 B`:AWARAp
 B`;ATA
@@ -19128,7 +19150,6 @@ Bx<"t
 By default, additional arguments are of the form [{ "key1" "value1" "key2" "value2
 ByHeroTarget
 Bypasses lookup of soundscapes for indvidual audio sources when enabled
-B倉C怀C逆M
 B耀B耀B
 C  u1E1
 C A;F
@@ -19425,6 +19446,16 @@ CCompressedStaticVector4D
 CConstantForceController
 CConstraintAnchor
 CCopyRecipientFilter
+CCraftworksComponentDefinition
+CCraftworksDefinition
+CCraftworksGameSystem
+CCraftworksQuestComponentReward
+CCraftworksQuestDefinition
+CCraftworksRecipeComponentQuantity
+CCraftworksRecipeDefinition
+CCraftworksRecipeTierDefinition
+CCraftworksSchema: %s
+CCraftworksSchema: Couldn't load resource %s
 CCredits
 CCustomGameData
 CCustomGameEventManager
@@ -19694,6 +19725,7 @@ CDOTAClientMsg_WorldLine
 CDOTAClientMsg_WorldLine_t
 CDOTAClientMsg_XPAlert
 CDOTAClientMsg_XPAlert_t
+CDOTACraftworksServerGameSystem
 CDOTACustomGameCache
 CDOTACustomGameEvents
 CDOTACustomGameHeroPickRules
@@ -27334,6 +27366,7 @@ CHECK failed: index_of_first_non_null_ == num_buckets_ || table_[index_of_first_
 CHECK failed: is_extension
 CHECK failed: is_prototype
 CHECK failed: is_repeated
+CHECK failed: it != end
 CHECK failed: limit >= 0 && limit <= INT_MAX - kSlopBytes
 CHECK failed: limit_ > kSlopBytes
 CHECK failed: limit_end_ == buffer_end
@@ -27540,6 +27573,7 @@ CIngameEvent_FV2018
 CIngameEvent_FV2019
 CIngameEvent_FV2023
 CIngameEvent_Fall2021
+CIngameEvent_Frostivus2024
 CIngameEvent_MuertaReleaseSpring2023
 CIngameEvent_MuertaReleaseSpring2023_DummyModifierHolder
 CIngameEvent_NB2020
@@ -27845,6 +27879,8 @@ CMsgConnectionStatus
 CMsgConsumableUsage
 CMsgCraftStatue
 CMsgCraftingResponse
+CMsgCraftworksComponents
+CMsgCraftworksQuestReward
 CMsgCustomGameInstallStatus
 CMsgCustomGameWhitelist
 CMsgCustomGameWhitelistForEdit
@@ -28302,6 +28338,8 @@ CMsgSignOutBounties
 CMsgSignOutBounties.Bounty
 CMsgSignOutCommunicationSummary
 CMsgSignOutCommunityGoalProgress
+CMsgSignOutCraftworks
+CMsgSignOutCraftworks.Player
 CMsgSignOutDraftInfo
 CMsgSignOutGameplayStats
 CMsgSignOutGameplayStats.CTeam
@@ -29154,6 +29192,7 @@ CSubtickMoveStep
 CTA:FT
 CTA:FTt)L
 CTA;FT
+CTA`:A`@ASASBp
 CTEFizz_server
 CTEGlowSprite_server
 CTELargeFunnel_server
@@ -29985,7 +30024,9 @@ ComponenH
 Component %d for achievement %s found
 Component %d for achievement %s found, but already had that component
 Component %s illegally specified INT_MIN as its priority
+Component %u specifies recipe tier %u, but that doesn't exist
 Component class %s needs its own datadesc (is using %s
+ComponentQuantitiesEntry
 Compute LOD mask internally like since 2016, i.e. force all LOD groups' bones to compute
 Compute the closest T value on the path relative to the entity provided. (0.0 to 1.0 float value that defines the point along the spline
 Compute the closest direction along the path relative to the entity provided. (world space vector
@@ -30081,6 +30122,7 @@ Could not find clear space for unit "%s" at (%f, %f, %f
 Could not find data for item! %s
 Could not find guild challenge instance %u
 Could not find lobby member for account %u when setting up contracts
+Could not find tracked player stat with name %s
 Could not find type
 Could not get permission to signout, exiting
 Couldn't Find Stats Definition in file %s
@@ -30122,6 +30164,13 @@ Cp<*u`L
 CpA;Fp
 CpD90
 CpD98
+CraftworksComponentID_t
+CraftworksFiles
+CraftworksID_t
+CraftworksQuestID_t
+CraftworksQuestType_t
+CraftworksRecipeID_t
+CraftworksRecipeTierID_t
 Crash detection sentinel file '%s' file is present
 Crash report has been pending to submit for %d seconds
 Crash report message acknowledge by GC
@@ -30374,7 +30423,7 @@ D$4A;D
 D$7[A\A^A
 D$8E	l
 D$@fE
-D$Dfffff
+D$Dff
 D$Hu:z8
 D$PA;GPup
 D$PD90
@@ -30423,6 +30472,7 @@ D8s=t%H
 D9 t%I
 D9 t[H
 D9"tiH
+D9%6iR
 D9&t6H
 D9,:t
 D90u@H
@@ -31010,6 +31060,7 @@ DOTA_COMBATLOG_PLAYERSTATS
 DOTA_COMBATLOG_PURCHASE
 DOTA_COMBATLOG_REVEALED_INVISIBLE
 DOTA_COMBATLOG_SPELL_ABSORB
+DOTA_COMBATLOG_STAT_TRACKER_PLAYER
 DOTA_COMBATLOG_SUCCESSFUL_SCAN
 DOTA_COMBATLOG_TEAM_BUILDING_KILL
 DOTA_COMBATLOG_TREE_CUT
@@ -32600,7 +32651,7 @@ DebugWeeklyQuestChallenge: Query completed for %s but hero id does not match sel
 Debugger connected
 Debugging helper to try out different autostyle configurations
 Debugging stopped
-Dec  5 2024
+Dec 18 2024
 DecalEmitterSystem
 DeclareFunctions
 Decrease this modifier's stack count by 1
@@ -33040,6 +33091,9 @@ Duplicate alternate icon definition (%d
 Duplicate attribute definition index (%d
 Duplicate chat wheel message name %s
 Duplicate chat wheel message_id %u. Used for both %s and %s
+Duplicate component ID %u
+Duplicate craftworks id %u
+Duplicate craftworks name %s
 Duplicate effect %s found in rubick arcana file '%s
 Duplicate id %d found for blessing types '%s' and '%s
 Duplicate id %d found for blessings '%s' and '%s
@@ -33060,7 +33114,10 @@ Duplicate player stat name %s (%u and %u
 Duplicate prefab name (%s
 Duplicate premium player card packs for team id %u: %u and %u
 Duplicate quality value (%d
+Duplicate quest ID %u
 Duplicate rarity value (%d
+Duplicate recipe ID %u
+Duplicate recipe tier %u
 Duplicate scenario id %u used by both '%s' and '%s
 Duplicate scenario name '%s' used by scenario %u and %u
 Duplicate season_id '%u
@@ -33170,6 +33227,7 @@ EClientUIEvent
 EClientUIEvent_DialogFinished
 EClientUIEvent_FireOutput
 EClientUIEvent_Invalid
+ECraftworksAuditAction
 ECrowdLevel
 ECustomGameInstallStatus
 ECustomGameWhitelistState
@@ -33335,6 +33393,7 @@ EQueryCvarValueStatus
 ERCPuED
 ERROR - RemoveAbilityByHandle - %s does not have ability %s
 ERROR: *Muerta: Parting Shot - Hero: %s, attempting to swap %s with %s. Null ability found in index %d (num abilities = %d
+ERROR: CCraftworksSchema reload failed
 ERROR: CDOTABingoSchema Reload failed
 ERROR: CSource2Server::Connect - 'g_pCVar' is nullptr
 ERROR: CSource2Server::Connect - Failed to connect to engine
@@ -33433,6 +33492,7 @@ EVENT_ID_FROSTIVUS_2017
 EVENT_ID_FROSTIVUS_2018
 EVENT_ID_FROSTIVUS_2019
 EVENT_ID_FROSTIVUS_2023
+EVENT_ID_FROSTIVUS_2024
 EVENT_ID_INTERNATIONAL_2015
 EVENT_ID_INTERNATIONAL_2016
 EVENT_ID_INTERNATIONAL_2017
@@ -34010,14 +34070,11 @@ Extraneous token
 Extrapolates their location in the future, based on past movement
 EyeAngles
 EyePosition
-Eȋ=Hfc
 EȋCHD9
 ÈzX"t
 ÈzX"u
 EЊCh<"t
 EЊCh<"u
-EЋ=Ff
-EЋ=eK
 EЦT\sH
 Eـ8.uCH
 F  uBE1
@@ -34051,7 +34108,6 @@ F8[A\A^A
 F8ffff
 F8l30t
 F9d3,t*N
-F9l (t0J
 F9l84t)N
 F9t ,t)J
 F9t(@u
@@ -34401,6 +34457,7 @@ Failed to get HTTP response data
 Failed to get HTTP response size
 Failed to hit anything
 Failed to include script "%s
+Failed to initialize CCraftworksSchema. %s
 Failed to initialize CDOTABingoSchema. %s
 Failed to initialize CDOTAFantasyCraftingSchema. %s
 Failed to initialize CDOTAFeaturedGamemodeSchema. %s
@@ -34877,6 +34934,9 @@ Frostivus.Item.Coal.Cast
 Frostivus.Item.Coal.Target
 Frostivus.Item.Snowball.Cast
 Frostivus.Item.Snowball.Target
+Frostivus.SantaHat.Channel
+Frostivus.SantaHat.Swipe
+Frostivus.SantaHat.Swipe.Target
 Frostivus.SlidePenguin.Crash.Impact
 Frostivus.SlidePenguin.Crash.Voice
 Frostivus.SlidePenguin.Expired
@@ -36870,16 +36930,6 @@ H+N0HcR
 H+^8H
 H0;K0s)L
 H97t4M
-H9=%57
-H9='57
-H9=-57
-H9=157
-H9=557
-H9=957
-H9=u57
-H9=w57
-H9={57
-H9=}57
 H9B t
 H9B tS
 H9C@t(fffff
@@ -37214,6 +37264,7 @@ HcP(Hi
 HcP0H9
 HcQ@I9
 HcS H9
+HcV H
 HcV H9
 HcW H9
 HcXHHi
@@ -38750,7 +38801,7 @@ How often the server updates internal game state and checks whether it should up
 How often the server updates the GC with player fantasy stats
 How short the time between presses needs to be for us to consider it a double-press
 Hp p pH
-Hp p pHpHp p pH
+Hp p pHpH
 Hull [%d
 HullDesc_tiny
 HullDesc_tiny_centered
@@ -38786,12 +38837,19 @@ I CUtlRBTree<CUtlOrderedMapBase<CHandle<CBaseEntity>, CDOTAHeroPositions *, CDef
 I CUtlRBTree<CUtlOrderedMapBase<CHandle<CBaseEntity>, bool, CDefLess<CHandle<CBaseEntity>>, int>::Node_t, CUtlOrderedMapBase<CHandle<CBaseEntity>, bool, CDefLess<CHandle<CBaseEntity>>, int>::CKeyLess>::Insert(T &&) [T = CUtlOrderedMapBase<CHandle<CBaseEntity>, bool, CDefLess<CHandle<CBaseEntity>>, int>::Node_t, L = CUtlOrderedMapBase<CHandle<CBaseEntity>, bool, CDefLess<CHandle<CBaseEntity>>, int>::CKeyLess, I = int, M = CUtlMemory<UtlRBTreeNode_t<CUtlOrderedMapBase<CHandle<CBaseEntity>, bool, CDefLess<CHandle<CBaseEntity>>, int>::Node_t, int
 I CUtlRBTree<CUtlOrderedMapBase<CKV3MemberName, CUtlString, CLessFunc<&CEntitySystem::EntityKeyIdLessFunc>, int>::Node_t, CUtlOrderedMapBase<CKV3MemberName, CUtlString, CLessFunc<&CEntitySystem::EntityKeyIdLessFunc>, int>::CKeyLess>::Insert(T &&) [T = CUtlOrderedMapBase<CKV3MemberName, CUtlString, CLessFunc<&CEntitySystem::EntityKeyIdLessFunc>, int>::Node_t, L = CUtlOrderedMapBase<CKV3MemberName, CUtlString, CLessFunc<&CEntitySystem::EntityKeyIdLessFunc>, int>::CKeyLess, I = int, M = CUtlMemory<UtlRBTreeNode_t<CUtlOrderedMapBase<CKV3MemberName, CUtlString, CLessFunc<&CEntitySystem::EntityKeyIdLessFunc>, int>::Node_t, int
 I CUtlRBTree<CUtlOrderedMapBase<CUtlString, BingoExclusiveStatGroupID_t, CDefLess<CUtlString>, int>::Node_t, CUtlOrderedMapBase<CUtlString, BingoExclusiveStatGroupID_t, CDefLess<CUtlString>, int>::CKeyLess>::Insert(T &&) [T = CUtlOrderedMapBase<CUtlString, BingoExclusiveStatGroupID_t, CDefLess<CUtlString>, int>::Node_t, L = CUtlOrderedMapBase<CUtlString, BingoExclusiveStatGroupID_t, CDefLess<CUtlString>, int>::CKeyLess, I = int, M = CUtlMemory<UtlRBTreeNode_t<CUtlOrderedMapBase<CUtlString, BingoExclusiveStatGroupID_t, CDefLess<CUtlString>, int>::Node_t, int
+I CUtlRBTree<CUtlOrderedMapBase<CUtlString, CCraftworksDefinition *, CDefLess<CUtlString>, int>::Node_t, CUtlOrderedMapBase<CUtlString, CCraftworksDefinition *, CDefLess<CUtlString>, int>::CKeyLess>::Insert(T &&) [T = CUtlOrderedMapBase<CUtlString, CCraftworksDefinition *, CDefLess<CUtlString>, int>::Node_t, L = CUtlOrderedMapBase<CUtlString, CCraftworksDefinition *, CDefLess<CUtlString>, int>::CKeyLess, I = int, M = CUtlMemory<UtlRBTreeNode_t<CUtlOrderedMapBase<CUtlString, CCraftworksDefinition *, CDefLess<CUtlString>, int>::Node_t, int
 I CUtlRBTree<CUtlOrderedMapBase<CUtlString, CDOTABingoStatDefinition, CDefLess<CUtlString>, int>::Node_t, CUtlOrderedMapBase<CUtlString, CDOTABingoStatDefinition, CDefLess<CUtlString>, int>::CKeyLess>::Insert(T &&) [T = CUtlOrderedMapBase<CUtlString, CDOTABingoStatDefinition, CDefLess<CUtlString>, int>::Node_t, L = CUtlOrderedMapBase<CUtlString, CDOTABingoStatDefinition, CDefLess<CUtlString>, int>::CKeyLess, I = int, M = CUtlMemory<UtlRBTreeNode_t<CUtlOrderedMapBase<CUtlString, CDOTABingoStatDefinition, CDefLess<CUtlString>, int>::Node_t, int
 I CUtlRBTree<CUtlOrderedMapBase<CUtlString, CDOTAEventGameDefinition *, CDefFastCaselessStringLess, int>::Node_t, CUtlOrderedMapBase<CUtlString, CDOTAEventGameDefinition *, CDefFastCaselessStringLess, int>::CKeyLess>::Insert(T &&) [T = CUtlOrderedMapBase<CUtlString, CDOTAEventGameDefinition *, CDefFastCaselessStringLess, int>::Node_t, L = CUtlOrderedMapBase<CUtlString, CDOTAEventGameDefinition *, CDefFastCaselessStringLess, int>::CKeyLess, I = int, M = CUtlMemory<UtlRBTreeNode_t<CUtlOrderedMapBase<CUtlString, CDOTAEventGameDefinition *, CDefFastCaselessStringLess, int>::Node_t, int
 I CUtlRBTree<CUtlOrderedMapBase<CUtlString, CUtlString, CDefLess<CUtlString>, int>::Node_t, CUtlOrderedMapBase<CUtlString, CUtlString, CDefLess<CUtlString>, int>::CKeyLess>::Insert(T &&) [T = CUtlOrderedMapBase<CUtlString, CUtlString, CDefLess<CUtlString>, int>::Node_t, L = CUtlOrderedMapBase<CUtlString, CUtlString, CDefLess<CUtlString>, int>::CKeyLess, I = int, M = CUtlMemory<UtlRBTreeNode_t<CUtlOrderedMapBase<CUtlString, CUtlString, CDefLess<CUtlString>, int>::Node_t, int
 I CUtlRBTree<CUtlOrderedMapBase<CUtlSymbol, HSCRIPT__ *, CDefLess<CUtlSymbol>, int>::Node_t, CUtlOrderedMapBase<CUtlSymbol, HSCRIPT__ *, CDefLess<CUtlSymbol>, int>::CKeyLess>::Insert(T &&) [T = CUtlOrderedMapBase<CUtlSymbol, HSCRIPT__ *, CDefLess<CUtlSymbol>, int>::Node_t, L = CUtlOrderedMapBase<CUtlSymbol, HSCRIPT__ *, CDefLess<CUtlSymbol>, int>::CKeyLess, I = int, M = CUtlMemory<UtlRBTreeNode_t<CUtlOrderedMapBase<CUtlSymbol, HSCRIPT__ *, CDefLess<CUtlSymbol>, int>::Node_t, int
 I CUtlRBTree<CUtlOrderedMapBase<CUtlSymbolLarge, CUtlVector<CEntityHandle> *, CDefLess<CUtlSymbolLarge>, unsigned short>::Node_t, CUtlOrderedMapBase<CUtlSymbolLarge, CUtlVector<CEntityHandle> *, CDefLess<CUtlSymbolLarge>, unsigned short>::CKeyLess, unsigned short>::Insert(T &&) [T = CUtlOrderedMapBase<CUtlSymbolLarge, CUtlVector<CEntityHandle> *, CDefLess<CUtlSymbolLarge>, unsigned short>::Node_t, L = CUtlOrderedMapBase<CUtlSymbolLarge, CUtlVector<CEntityHandle> *, CDefLess<CUtlSymbolLarge>, unsigned short>::CKeyLess, I = unsigned short, M = CUtlMemory<UtlRBTreeNode_t<CUtlOrderedMapBase<CUtlSymbolLarge, CUtlVector<CEntityHandle> *, CDefLess<CUtlSymbolLarge>, unsigned short>::Node_t, unsigned short>, unsigned short
 I CUtlRBTree<CUtlOrderedMapBase<ChatWheelMessageID_t, SChatWheelMessageDefinition *, CDefLess<ChatWheelMessageID_t>, int>::Node_t, CUtlOrderedMapBase<ChatWheelMessageID_t, SChatWheelMessageDefinition *, CDefLess<ChatWheelMessageID_t>, int>::CKeyLess>::Insert(T &&) [T = CUtlOrderedMapBase<ChatWheelMessageID_t, SChatWheelMessageDefinition *, CDefLess<ChatWheelMessageID_t>, int>::Node_t, L = CUtlOrderedMapBase<ChatWheelMessageID_t, SChatWheelMessageDefinition *, CDefLess<ChatWheelMessageID_t>, int>::CKeyLess, I = int, M = CUtlMemory<UtlRBTreeNode_t<CUtlOrderedMapBase<ChatWheelMessageID_t, SChatWheelMessageDefinition *, CDefLess<ChatWheelMessageID_t>, int>::Node_t, int
+I CUtlRBTree<CUtlOrderedMapBase<CraftworksComponentID_t, CCraftworksComponentDefinition *, CDefLess<CraftworksComponentID_t>, int>::Node_t, CUtlOrderedMapBase<CraftworksComponentID_t, CCraftworksComponentDefinition *, CDefLess<CraftworksComponentID_t>, int>::CKeyLess>::Insert(T &&) [T = CUtlOrderedMapBase<CraftworksComponentID_t, CCraftworksComponentDefinition *, CDefLess<CraftworksComponentID_t>, int>::Node_t, L = CUtlOrderedMapBase<CraftworksComponentID_t, CCraftworksComponentDefinition *, CDefLess<CraftworksComponentID_t>, int>::CKeyLess, I = int, M = CUtlMemory<UtlRBTreeNode_t<CUtlOrderedMapBase<CraftworksComponentID_t, CCraftworksComponentDefinition *, CDefLess<CraftworksComponentID_t>, int>::Node_t, int
+I CUtlRBTree<CUtlOrderedMapBase<CraftworksID_t, CCraftworksDefinition *, CDefLess<CraftworksID_t>, int>::Node_t, CUtlOrderedMapBase<CraftworksID_t, CCraftworksDefinition *, CDefLess<CraftworksID_t>, int>::CKeyLess>::Insert(T &&) [T = CUtlOrderedMapBase<CraftworksID_t, CCraftworksDefinition *, CDefLess<CraftworksID_t>, int>::Node_t, L = CUtlOrderedMapBase<CraftworksID_t, CCraftworksDefinition *, CDefLess<CraftworksID_t>, int>::CKeyLess, I = int, M = CUtlMemory<UtlRBTreeNode_t<CUtlOrderedMapBase<CraftworksID_t, CCraftworksDefinition *, CDefLess<CraftworksID_t>, int>::Node_t, int
+I CUtlRBTree<CUtlOrderedMapBase<CraftworksQuestID_t, CCraftworksQuestDefinition *, CDefLess<CraftworksQuestID_t>, int>::Node_t, CUtlOrderedMapBase<CraftworksQuestID_t, CCraftworksQuestDefinition *, CDefLess<CraftworksQuestID_t>, int>::CKeyLess>::Insert(T &&) [T = CUtlOrderedMapBase<CraftworksQuestID_t, CCraftworksQuestDefinition *, CDefLess<CraftworksQuestID_t>, int>::Node_t, L = CUtlOrderedMapBase<CraftworksQuestID_t, CCraftworksQuestDefinition *, CDefLess<CraftworksQuestID_t>, int>::CKeyLess, I = int, M = CUtlMemory<UtlRBTreeNode_t<CUtlOrderedMapBase<CraftworksQuestID_t, CCraftworksQuestDefinition *, CDefLess<CraftworksQuestID_t>, int>::Node_t, int
+I CUtlRBTree<CUtlOrderedMapBase<CraftworksQuestID_t, TrackedStatID_t, CDefLess<CraftworksQuestID_t>, int>::Node_t, CUtlOrderedMapBase<CraftworksQuestID_t, TrackedStatID_t, CDefLess<CraftworksQuestID_t>, int>::CKeyLess>::Insert(T &&) [T = CUtlOrderedMapBase<CraftworksQuestID_t, TrackedStatID_t, CDefLess<CraftworksQuestID_t>, int>::Node_t, L = CUtlOrderedMapBase<CraftworksQuestID_t, TrackedStatID_t, CDefLess<CraftworksQuestID_t>, int>::CKeyLess, I = int, M = CUtlMemory<UtlRBTreeNode_t<CUtlOrderedMapBase<CraftworksQuestID_t, TrackedStatID_t, CDefLess<CraftworksQuestID_t>, int>::Node_t, int
+I CUtlRBTree<CUtlOrderedMapBase<CraftworksRecipeID_t, CCraftworksRecipeDefinition *, CDefLess<CraftworksRecipeID_t>, int>::Node_t, CUtlOrderedMapBase<CraftworksRecipeID_t, CCraftworksRecipeDefinition *, CDefLess<CraftworksRecipeID_t>, int>::CKeyLess>::Insert(T &&) [T = CUtlOrderedMapBase<CraftworksRecipeID_t, CCraftworksRecipeDefinition *, CDefLess<CraftworksRecipeID_t>, int>::Node_t, L = CUtlOrderedMapBase<CraftworksRecipeID_t, CCraftworksRecipeDefinition *, CDefLess<CraftworksRecipeID_t>, int>::CKeyLess, I = int, M = CUtlMemory<UtlRBTreeNode_t<CUtlOrderedMapBase<CraftworksRecipeID_t, CCraftworksRecipeDefinition *, CDefLess<CraftworksRecipeID_t>, int>::Node_t, int
+I CUtlRBTree<CUtlOrderedMapBase<CraftworksRecipeTierID_t, CCraftworksRecipeTierDefinition *, CDefLess<CraftworksRecipeTierID_t>, int>::Node_t, CUtlOrderedMapBase<CraftworksRecipeTierID_t, CCraftworksRecipeTierDefinition *, CDefLess<CraftworksRecipeTierID_t>, int>::CKeyLess>::Insert(T &&) [T = CUtlOrderedMapBase<CraftworksRecipeTierID_t, CCraftworksRecipeTierDefinition *, CDefLess<CraftworksRecipeTierID_t>, int>::Node_t, L = CUtlOrderedMapBase<CraftworksRecipeTierID_t, CCraftworksRecipeTierDefinition *, CDefLess<CraftworksRecipeTierID_t>, int>::CKeyLess, I = int, M = CUtlMemory<UtlRBTreeNode_t<CUtlOrderedMapBase<CraftworksRecipeTierID_t, CCraftworksRecipeTierDefinition *, CDefLess<CraftworksRecipeTierID_t>, int>::Node_t, int
 I CUtlRBTree<CUtlOrderedMapBase<EEvent, CDOTAEventDefinition *, CDefLess<EEvent>, int>::Node_t, CUtlOrderedMapBase<EEvent, CDOTAEventDefinition *, CDefLess<EEvent>, int>::CKeyLess>::Insert(T &&) [T = CUtlOrderedMapBase<EEvent, CDOTAEventDefinition *, CDefLess<EEvent>, int>::Node_t, L = CUtlOrderedMapBase<EEvent, CDOTAEventDefinition *, CDefLess<EEvent>, int>::CKeyLess, I = int, M = CUtlMemory<UtlRBTreeNode_t<CUtlOrderedMapBase<EEvent, CDOTAEventDefinition *, CDefLess<EEvent>, int>::Node_t, int
 I CUtlRBTree<CUtlOrderedMapBase<EEvent, CUtlVector<int> *, CDefLess<EEvent>, int>::Node_t, CUtlOrderedMapBase<EEvent, CUtlVector<int> *, CDefLess<EEvent>, int>::CKeyLess>::Insert(T &&) [T = CUtlOrderedMapBase<EEvent, CUtlVector<int> *, CDefLess<EEvent>, int>::Node_t, L = CUtlOrderedMapBase<EEvent, CUtlVector<int> *, CDefLess<EEvent>, int>::CKeyLess, I = int, M = CUtlMemory<UtlRBTreeNode_t<CUtlOrderedMapBase<EEvent, CUtlVector<int> *, CDefLess<EEvent>, int>::Node_t, int
 I CUtlRBTree<CUtlOrderedMapBase<EventNotificationID_t, SDOTAEventNotificationDefinition *, CDefLess<EventNotificationID_t>, int>::Node_t, CUtlOrderedMapBase<EventNotificationID_t, SDOTAEventNotificationDefinition *, CDefLess<EventNotificationID_t>, int>::CKeyLess>::Insert(T &&) [T = CUtlOrderedMapBase<EventNotificationID_t, SDOTAEventNotificationDefinition *, CDefLess<EventNotificationID_t>, int>::Node_t, L = CUtlOrderedMapBase<EventNotificationID_t, SDOTAEventNotificationDefinition *, CDefLess<EventNotificationID_t>, int>::CKeyLess, I = int, M = CUtlMemory<UtlRBTreeNode_t<CUtlOrderedMapBase<EventNotificationID_t, SDOTAEventNotificationDefinition *, CDefLess<EventNotificationID_t>, int>::Node_t, int
@@ -38830,6 +38888,7 @@ I CUtlRBTree<CUtlOrderedMapBase<SDOTAEventUnderDraftSound, CUtlVector<CUtlString
 I CUtlRBTree<CUtlOrderedMapBase<SPingWheelMessageIDRange, bool, CDOTA_PlayerResource::PingWheelMessageIDRangeLess, int>::Node_t, CUtlOrderedMapBase<SPingWheelMessageIDRange, bool, CDOTA_PlayerResource::PingWheelMessageIDRangeLess, int>::CKeyLess>::Insert(T &&) [T = CUtlOrderedMapBase<SPingWheelMessageIDRange, bool, CDOTA_PlayerResource::PingWheelMessageIDRangeLess, int>::Node_t, L = CUtlOrderedMapBase<SPingWheelMessageIDRange, bool, CDOTA_PlayerResource::PingWheelMessageIDRangeLess, int>::CKeyLess, I = int, M = CUtlMemory<UtlRBTreeNode_t<CUtlOrderedMapBase<SPingWheelMessageIDRange, bool, CDOTA_PlayerResource::PingWheelMessageIDRangeLess, int>::Node_t, int
 I CUtlRBTree<CUtlOrderedMapBase<SchemaMetaInfoHandle_t<CSchemaClassInfo>, CUtlVector<CEventDispatcher_Base::EventListenerInfo_t>, CDefLess<SchemaMetaInfoHandle_t<CSchemaClassInfo>>, unsigned int>::Node_t, CUtlOrderedMapBase<SchemaMetaInfoHandle_t<CSchemaClassInfo>, CUtlVector<CEventDispatcher_Base::EventListenerInfo_t>, CDefLess<SchemaMetaInfoHandle_t<CSchemaClassInfo>>, unsigned int>::CKeyLess, unsigned int>::Insert(T &&) [T = CUtlOrderedMapBase<SchemaMetaInfoHandle_t<CSchemaClassInfo>, CUtlVector<CEventDispatcher_Base::EventListenerInfo_t>, CDefLess<SchemaMetaInfoHandle_t<CSchemaClassInfo>>, unsigned int>::Node_t, L = CUtlOrderedMapBase<SchemaMetaInfoHandle_t<CSchemaClassInfo>, CUtlVector<CEventDispatcher_Base::EventListenerInfo_t>, CDefLess<SchemaMetaInfoHandle_t<CSchemaClassInfo>>, unsigned int>::CKeyLess, I = unsigned int, M = CUtlMemory<UtlRBTreeNode_t<CUtlOrderedMapBase<SchemaMetaInfoHandle_t<CSchemaClassInfo>, CUtlVector<CEventDispatcher_Base::EventListenerInfo_t>, CDefLess<SchemaMetaInfoHandle_t<CSchemaClassInfo>>, unsigned int>::Node_t, unsigned int>, unsigned int
 I CUtlRBTree<CUtlOrderedMapBase<TeamStat_t, CDOTAServerStatTracker::TeamTrackedStatInfo_t, CDefLess<TeamStat_t>, int>::Node_t, CUtlOrderedMapBase<TeamStat_t, CDOTAServerStatTracker::TeamTrackedStatInfo_t, CDefLess<TeamStat_t>, int>::CKeyLess>::Insert(T &&) [T = CUtlOrderedMapBase<TeamStat_t, CDOTAServerStatTracker::TeamTrackedStatInfo_t, CDefLess<TeamStat_t>, int>::Node_t, L = CUtlOrderedMapBase<TeamStat_t, CDOTAServerStatTracker::TeamTrackedStatInfo_t, CDefLess<TeamStat_t>, int>::CKeyLess, I = int, M = CUtlMemory<UtlRBTreeNode_t<CUtlOrderedMapBase<TeamStat_t, CDOTAServerStatTracker::TeamTrackedStatInfo_t, CDefLess<TeamStat_t>, int>::Node_t, int
+I CUtlRBTree<CUtlOrderedMapBase<TrackedStatID_t, CCraftworksQuestDefinition *, CDefLess<TrackedStatID_t>, int>::Node_t, CUtlOrderedMapBase<TrackedStatID_t, CCraftworksQuestDefinition *, CDefLess<TrackedStatID_t>, int>::CKeyLess>::Insert(T &&) [T = CUtlOrderedMapBase<TrackedStatID_t, CCraftworksQuestDefinition *, CDefLess<TrackedStatID_t>, int>::Node_t, L = CUtlOrderedMapBase<TrackedStatID_t, CCraftworksQuestDefinition *, CDefLess<TrackedStatID_t>, int>::CKeyLess, I = int, M = CUtlMemory<UtlRBTreeNode_t<CUtlOrderedMapBase<TrackedStatID_t, CCraftworksQuestDefinition *, CDefLess<TrackedStatID_t>, int>::Node_t, int
 I CUtlRBTree<CUtlOrderedMapBase<TrackedStatID_t, CDOTABingoStatDefinition *, CDefLess<TrackedStatID_t>, int>::Node_t, CUtlOrderedMapBase<TrackedStatID_t, CDOTABingoStatDefinition *, CDefLess<TrackedStatID_t>, int>::CKeyLess>::Insert(T &&) [T = CUtlOrderedMapBase<TrackedStatID_t, CDOTABingoStatDefinition *, CDefLess<TrackedStatID_t>, int>::Node_t, L = CUtlOrderedMapBase<TrackedStatID_t, CDOTABingoStatDefinition *, CDefLess<TrackedStatID_t>, int>::CKeyLess, I = int, M = CUtlMemory<UtlRBTreeNode_t<CUtlOrderedMapBase<TrackedStatID_t, CDOTABingoStatDefinition *, CDefLess<TrackedStatID_t>, int>::Node_t, int
 I CUtlRBTree<CUtlOrderedMapBase<TrackedStatID_t, CDOTAServerStatTracker::MatchTrackedStatInfo_t, CDefLess<TrackedStatID_t>, int>::Node_t, CUtlOrderedMapBase<TrackedStatID_t, CDOTAServerStatTracker::MatchTrackedStatInfo_t, CDefLess<TrackedStatID_t>, int>::CKeyLess>::Insert(T &&) [T = CUtlOrderedMapBase<TrackedStatID_t, CDOTAServerStatTracker::MatchTrackedStatInfo_t, CDefLess<TrackedStatID_t>, int>::Node_t, L = CUtlOrderedMapBase<TrackedStatID_t, CDOTAServerStatTracker::MatchTrackedStatInfo_t, CDefLess<TrackedStatID_t>, int>::CKeyLess, I = int, M = CUtlMemory<UtlRBTreeNode_t<CUtlOrderedMapBase<TrackedStatID_t, CDOTAServerStatTracker::MatchTrackedStatInfo_t, CDefLess<TrackedStatID_t>, int>::Node_t, int
 I CUtlRBTree<CUtlOrderedMapBase<TrackedStatID_t, CMatchTrackedStatDefinition *, CDefLess<TrackedStatID_t>, int>::Node_t, CUtlOrderedMapBase<TrackedStatID_t, CMatchTrackedStatDefinition *, CDefLess<TrackedStatID_t>, int>::CKeyLess>::Insert(T &&) [T = CUtlOrderedMapBase<TrackedStatID_t, CMatchTrackedStatDefinition *, CDefLess<TrackedStatID_t>, int>::Node_t, L = CUtlOrderedMapBase<TrackedStatID_t, CMatchTrackedStatDefinition *, CDefLess<TrackedStatID_t>, int>::CKeyLess, I = int, M = CUtlMemory<UtlRBTreeNode_t<CUtlOrderedMapBase<TrackedStatID_t, CMatchTrackedStatDefinition *, CDefLess<TrackedStatID_t>, int>::Node_t, int
@@ -39116,10 +39175,12 @@ IcD$4I
 IcD$8H
 IcD$8H9
 IcD$8I9
+IcD$@H
 IcD$@I
 IcD$LH
 IcD$LfA
 IcD$PI
+IcD$XH9
 IcD$`H
 IcD$`I9
 IcD$hA
@@ -40585,6 +40646,7 @@ Item_Blight_Stone.Target
 Item_Desolator.Target
 Items: %d, %d, %d, %d, %d, %d, %d, %d, %d, %d
 Iterations: %d
+J r	H
 J0;N0s
 J0s	I
 J0s0I
@@ -40648,6 +40710,7 @@ K]ÐUH
 Kc<&L
 KcD' H
 KcD5pH
+KcD7 H
 KcD= H
 KcD=xH
 KcL4HD9
@@ -40671,6 +40734,8 @@ KeyValueOverrides
 KeyValues
 KeyValues3
 KeyValues3 *CKeyValues3Context::Root
+KeyValues3: pre-allocated array memory is too small for %u elements (%u bytes available, %u bytes needed
+KeyValues3: pre-allocated table memory is too small for %u members (%u bytes available, %u bytes needed
 KeyValuesSystem
 KeyValuesToJSON
 Keys for overriding inference keys
@@ -40728,7 +40793,7 @@ L$`LcQ
 L$pu	I
 L$tffffff
 L&&jL&&jl66Zl66Z~??A~??A
-L'XvNM
+L'XvGM
 L(8A;L
 L0%?t
 L9#t-H
@@ -40928,6 +40993,7 @@ LaunchLoot
 LaunchLootInitialHeight
 LaunchLootRequiredHeight
 LaunchSpear
+Lc5!qZ
 Lc@(Ii
 Lcg H
 LcpHIi
@@ -42108,7 +42174,7 @@ MinHitPointsToCommit
 MinPlayerLevel
 MinTeamSumToPassQuery
 MinToPassQuery
-Miniboss.Tormenter.Reflect
+Miniboss.Tormenter.Reflect%d
 Miniboss.Tormenter.Spawn
 Miniboss.Tormenter.Target
 MinidumpUserStreamInfoAppend
@@ -42859,7 +42925,7 @@ N5GCSDK17CGCClientProtoJobI32CMsgGCToServerRecordTrainingDataEE
 N5GCSDK17CGCClientProtoJobI33CMsgGCToServerCheerScalesOverrideEE
 N5GCSDK17CGCClientProtoJobI37CMsgGCToServerUpdateSteamBroadcastingEE
 N5GCSDK17CGCClientProtoJobI43CMsgGCToServerSteamLearnAccessTokensChangedEE
-N5GCSDK17GCClientJobLambdaIZL28dota_load_demo_mode_scenarioRK15CCommandContextRK8CCommandE3$_1EE
+N5GCSDK17GCClientJobLambdaIZL28dota_load_demo_mode_scenarioRK15CCommandContextRK8CCommandE3$_3EE
 N5GCSDK17GCClientJobLambdaIZN14CDOTAGameRules20ClientMsg_GiftPlayerE12CEntityIndexRK27CDOTAClientMsg_GiftPlayer_tE3$_3EE
 N5GCSDK17GCClientJobLambdaIZN14CDOTAGameRules21UpdatePlayerAccoladesE10PlayerID_tE3$_9EE
 N5GCSDK17GCClientJobLambdaIZN14CDOTAGameRules22ClientMsg_GiftEveryoneE12CEntityIndexRK29CDOTAClientMsg_GiftEveryone_tE3$_4EE
@@ -42896,7 +42962,7 @@ N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18SubmitToDataSourceI37CMsgStea
 N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18SubmitToDataSourceI38CMsgSteamLearnEarlyGameItemPurchasesV2EEvRK10CUtlVectorIyi10CUtlMemoryIyiEERKT_bEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager8PostInitEvE3$_1EE
 N5GCSDK17GCClientJobLambdaIZN19CDOTAGCServerSystem22UpdateLiveFantasyStatsEvE3$_0EE
-N5GCSDK17GCClientJobLambdaIZN20CDOTA_PlayerResource27FlushPlayerResourceRequestsEvE3$_2EE
+N5GCSDK17GCClientJobLambdaIZN20CDOTA_PlayerResource27FlushPlayerResourceRequestsEvE3$_3EE
 N5GCSDK17GCClientJobLambdaIZN26CDOTACavernCrawlGameSystem13FireGameEventEP10IGameEventE3$_0EE
 N5GCSDK17GCClientJobLambdaIZN29CDOTA_SuggestionManager_Learn12GetAbilitiesE10PlayerID_tfP10CUtlVectorI27WeightedAbilitySuggestion_ti10CUtlMemoryIS4_iEEbE3$_6EE
 N5GCSDK17GCClientJobLambdaIZN29CDOTA_SuggestionManager_Learn12GetTopNItemsE10PlayerID_tiP10CUtlVectorI27WeightedAbilitySuggestion_ti10CUtlMemoryIS4_iEEbE3$_7EE
@@ -43001,6 +43067,7 @@ N6google8protobuf7MessageE
 N6google8protobuf8internal12ExtensionSet8KeyValueE
 N6google8protobuf8internal12MapEntryImplI48CMsgOverworldUserData_MinigameDataEntry_DoNotUseNS0_7MessageEj29CMsgOverworldMinigameUserDataLNS1_14WireFormatLite9FieldTypeE13ELS7_11EEE
 N6google8protobuf8internal12MapEntryImplI51CMsgSurvivorsUserData_AttributeLevelsEntry_DoNotUseNS0_7MessageEijLNS1_14WireFormatLite9FieldTypeE5ELS6_13EEE
+N6google8protobuf8internal12MapEntryImplI58CMsgCraftworksComponents_ComponentQuantitiesEntry_DoNotUseNS0_7MessageEjjLNS1_14WireFormatLite9FieldTypeE13ELS6_13EEE
 N6google8protobuf8internal12MapEntryImplI63CMsgSteamLearn_InferenceMetadata_Response_AppInfoEntry_DoNotUseNS0_7MessageEj49CMsgSteamLearn_InferenceMetadata_Response_AppInfoLNS1_14WireFormatLite9FieldTypeE13ELS7_11EEE
 N6google8protobuf8internal12MapEntryImplI78CMsgSteamLearn_InferenceMetadata_Response_CompactTable_MapValuesEntry_DoNotUseNS0_7MessageEj60CMsgSteamLearn_InferenceMetadata_Response_CompactTable_EntryLNS1_14WireFormatLite9FieldTypeE13ELS7_11EEE
 N6google8protobuf8internal12MapEntryImplI79CMsgSteamLearn_InferenceMetadata_Response_SequenceTable_MapValuesEntry_DoNotUseNS0_7MessageEj61CMsgSteamLearn_InferenceMetadata_Response_SequenceTable_EntryLNS1_14WireFormatLite9FieldTypeE13ELS7_11EEE
@@ -43030,6 +43097,7 @@ N6google8protobuf8internal23TypeDefinedMapFieldBaseIj29CMsgOverworldMinigameUser
 N6google8protobuf8internal23TypeDefinedMapFieldBaseIj49CMsgSteamLearn_InferenceMetadata_Response_AppInfoEE
 N6google8protobuf8internal23TypeDefinedMapFieldBaseIj60CMsgSteamLearn_InferenceMetadata_Response_CompactTable_EntryEE
 N6google8protobuf8internal23TypeDefinedMapFieldBaseIj61CMsgSteamLearn_InferenceMetadata_Response_SequenceTable_EntryEE
+N6google8protobuf8internal23TypeDefinedMapFieldBaseIjjEE
 N6google8protobuf8internal30RepeatedFieldPrimitiveAccessorIbEE
 N6google8protobuf8internal30RepeatedFieldPrimitiveAccessorIdEE
 N6google8protobuf8internal30RepeatedFieldPrimitiveAccessorIfEE
@@ -43042,6 +43110,7 @@ N6google8protobuf8internal31RepeatedPtrFieldMessageAccessorE
 N6google8protobuf8internal33RandomAccessRepeatedFieldAccessorE
 N6google8protobuf8internal8MapEntryI48CMsgOverworldUserData_MinigameDataEntry_DoNotUsej29CMsgOverworldMinigameUserDataLNS1_14WireFormatLite9FieldTypeE13ELS6_11EEE
 N6google8protobuf8internal8MapEntryI51CMsgSurvivorsUserData_AttributeLevelsEntry_DoNotUseijLNS1_14WireFormatLite9FieldTypeE5ELS5_13EEE
+N6google8protobuf8internal8MapEntryI58CMsgCraftworksComponents_ComponentQuantitiesEntry_DoNotUsejjLNS1_14WireFormatLite9FieldTypeE13ELS5_13EEE
 N6google8protobuf8internal8MapEntryI63CMsgSteamLearn_InferenceMetadata_Response_AppInfoEntry_DoNotUsej49CMsgSteamLearn_InferenceMetadata_Response_AppInfoLNS1_14WireFormatLite9FieldTypeE13ELS6_11EEE
 N6google8protobuf8internal8MapEntryI78CMsgSteamLearn_InferenceMetadata_Response_CompactTable_MapValuesEntry_DoNotUsej60CMsgSteamLearn_InferenceMetadata_Response_CompactTable_EntryLNS1_14WireFormatLite9FieldTypeE13ELS6_11EEE
 N6google8protobuf8internal8MapEntryI79CMsgSteamLearn_InferenceMetadata_Response_SequenceTable_MapValuesEntry_DoNotUsej61CMsgSteamLearn_InferenceMetadata_Response_SequenceTable_EntryLNS1_14WireFormatLite9FieldTypeE13ELS6_11EEE
@@ -43049,6 +43118,7 @@ N6google8protobuf8internal8MapEntryI80CMsgSteamLearn_InferenceMetadata_Response_
 N6google8protobuf8internal8MapEntryI81CMsgSteamLearn_InferenceMetadata_Response_SequenceTable_MapMappingsEntry_DoNotUseNSt3__112basic_stringIcNS4_11char_traitsIcEENS4_9allocatorIcEEEE61CMsgSteamLearn_InferenceMetadata_Response_SequenceTable_EntryLNS1_14WireFormatLite9FieldTypeE9ELSD_11EEE
 N6google8protobuf8internal8MapFieldI48CMsgOverworldUserData_MinigameDataEntry_DoNotUsej29CMsgOverworldMinigameUserDataLNS1_14WireFormatLite9FieldTypeE13ELS6_11EEE
 N6google8protobuf8internal8MapFieldI51CMsgSurvivorsUserData_AttributeLevelsEntry_DoNotUseijLNS1_14WireFormatLite9FieldTypeE5ELS5_13EEE
+N6google8protobuf8internal8MapFieldI58CMsgCraftworksComponents_ComponentQuantitiesEntry_DoNotUsejjLNS1_14WireFormatLite9FieldTypeE13ELS5_13EEE
 N6google8protobuf8internal8MapFieldI63CMsgSteamLearn_InferenceMetadata_Response_AppInfoEntry_DoNotUsej49CMsgSteamLearn_InferenceMetadata_Response_AppInfoLNS1_14WireFormatLite9FieldTypeE13ELS6_11EEE
 N6google8protobuf8internal8MapFieldI78CMsgSteamLearn_InferenceMetadata_Response_CompactTable_MapValuesEntry_DoNotUsej60CMsgSteamLearn_InferenceMetadata_Response_CompactTable_EntryLNS1_14WireFormatLite9FieldTypeE13ELS6_11EEE
 N6google8protobuf8internal8MapFieldI79CMsgSteamLearn_InferenceMetadata_Response_SequenceTable_MapValuesEntry_DoNotUsej61CMsgSteamLearn_InferenceMetadata_Response_SequenceTable_EntryLNS1_14WireFormatLite9FieldTypeE13ELS6_11EEE
@@ -43413,7 +43483,7 @@ NSt3__110__function6__funcIZN12CSceneEntity18DispatchStartSpeakEP12CChoreoSceneP
 NSt3__110__function6__funcIZN12CSceneEntity18DispatchStartSpeakEP12CChoreoSceneP9CBaseFlexP12CChoreoEvent12soundlevel_tE3$_6NS_9allocatorISA_EEFbPK21CBasePlayerControllerEEE
 NSt3__110__function6__funcIZN13CDOTA_BaseNPC20UpdateAssetModifiersEvE3$_0NS_9allocatorIS3_EEFvPK14CAssetModifierEEE
 NSt3__110__function6__funcIZN14CSource2Server27GetEconItemModifiersForTypeEPKcR10CUtlVectorI14ModifierInfo_ti10CUtlMemoryIS6_iEEE3$_9NS_9allocatorISB_EEFvPK14CAssetModifierEEE
-NSt3__110__function6__funcIZN15CItemGeneration27BuildAssetModifierContainerEP23CAssetModifierContaineriPP13CEconItemViewE4$_58NS_9allocatorIS8_EEFvPK14CAssetModifierEEE
+NSt3__110__function6__funcIZN15CItemGeneration27BuildAssetModifierContainerEP23CAssetModifierContaineriPP13CEconItemViewE4$_59NS_9allocatorIS8_EEFvPK14CAssetModifierEEE
 NSt3__110__function6__funcIZN16CDOTABaseAbility9OnUpgradeEvE3$_1NS_9allocatorIS3_EEFvPS2_EEE
 NSt3__110__function6__funcIZN16CNavBoundaryZone38FindConnectedBoundaryEdgesWithinCircleERK12CNavPathCostRK8CNavAreaRK5Vec2DIfEfR10CUtlVectorI16NavBoundarySeg_ti10CUtlMemoryISE_iEERK31NavBoundaryZoneExpandSettings_tE4$_14NS_9allocatorISM_EEF17NavSearchResult_tRS6_PK15NavSearchInfo_tIS6_EEEE
 NSt3__110__function6__funcIZN16CNavBoundaryZone38FindConnectedBoundaryEdgesWithinCircleERK12CNavPathCostRK8CNavAreaRK5Vec2DIfEfR10CUtlVectorI16NavBoundarySeg_ti10CUtlMemoryISE_iEERK31NavBoundaryZoneExpandSettings_tE4$_15NS_9allocatorISM_EEF18NavIncludeResult_tRS6_RK16NavIncludeInfo_tIS6_EEEE
@@ -43426,7 +43496,7 @@ NSt3__110__function6__funcIZN17CNavAdjacencyListI8CNavAreaE20CollectAdjacentNode
 NSt3__110__function6__funcIZN17CNavMarkupManager27AddAttributeForMarkupVolumeERK19CMarkupVolumeTagged13CNavAttributebE4$_22NS_9allocatorIS7_EEFbR8CNavAreaEEE
 NSt3__110__function6__funcIZN17CNavMarkupManager27AddAttributeForMarkupVolumeERK19CMarkupVolumeTagged13CNavAttributebE4$_23NS_9allocatorIS7_EEF17NavSearchResult_tR8CNavAreaPK15NavSearchInfo_tISB_EEEE
 NSt3__110__function6__funcIZN17CNavMarkupManager27AddAttributeForMarkupVolumeERK19CMarkupVolumeTagged13CNavAttributebE4$_24NS_9allocatorIS7_EEFbR8CNavAreaEEE
-NSt3__110__function6__funcIZN18CDOTA_BaseNPC_Fort8PrecacheEPK22CEntityPrecacheContextE3$_5NS_9allocatorIS6_EEFvPK14CAssetModifierEEE
+NSt3__110__function6__funcIZN18CDOTA_BaseNPC_Fort8PrecacheEPK22CEntityPrecacheContextE3$_6NS_9allocatorIS6_EEFvPK14CAssetModifierEEE
 NSt3__110__function6__funcIZN18CSoundOpGameSystem21DoSetSoundEventParamsEPK16IRecipientFilter16SoundEventGuid_t15CUtlStringTokenPK13CSosFieldDatasPKviE3$_5NS_9allocatorISD_EEFP15CSosEventInfo_tvEEE
 NSt3__110__function6__funcIZN18CSoundOpGameSystem23DoSetLibraryStackFieldsEPK16IRecipientFilterj15CUtlStringTokenPK13CSosFieldDatasPKviE3$_6NS_9allocatorISC_EEFP15CSosEventInfo_tvEEE
 NSt3__110__function6__funcIZN19CEntity2SaveRestore14SaveGame_StartERK16SaveGameParams_tE3$_4NS_9allocatorIS6_EEFvvEEE
@@ -43450,7 +43520,7 @@ NSt3__110__function6__funcIZN21CNavSpaceBuildTreeJob12RunBuildTreeEvE4$_33NS_9al
 NSt3__110__function6__funcIZN21CNavSpaceBuildTreeJob12RunBuildTreeEvE4$_34NS_9allocatorIS3_EEFbRK6AABB_tEEE
 NSt3__110__function6__funcIZN21CPathOptimizerNavmesh20FindNextOccludedNodeER5CPathRK12CNavPathCostiP23CUtlVectorFixedGrowableI15NavTransition_tLm16EiEE3$_0NS_9allocatorISC_EEFbPK8CNavAreaPKNSF_5Adj_tERK5Vec3DIfESO_bEEE
 NSt3__110__function6__funcIZN21CPathOptimizerNavmesh20FindNextOccludedNodeER5CPathRK12CNavPathCostiP23CUtlVectorFixedGrowableI15NavTransition_tLm16EiEE3$_1NS_9allocatorISC_EEFbPK8CNavAreaPKNSF_5Adj_tERK5Vec3DIfESO_bEEE
-NSt3__110__function6__funcIZN23CDOTARubickArcanaSchema20GetRubickArcanaScoreEP13CDOTA_BaseNPCE3$_0NS_9allocatorIS5_EEFvP19CItemSocket_StrangeEEE
+NSt3__110__function6__funcIZN23CDOTARubickArcanaSchema20GetRubickArcanaScoreEP13CDOTA_BaseNPCE3$_2NS_9allocatorIS5_EEFvP19CItemSocket_StrangeEEE
 NSt3__110__function6__funcIZN23CDOTA_Unit_Hero_Spectre22UpdateArcanaKillstreakEP18CDOTA_BaseNPC_HeroiEUlP19CItemSocket_StrangeE_NS_9allocatorIS7_EEFvS6_EEE
 NSt3__110__function6__funcIZN23CNavIndirectConnections14GetAreaToAreasI10CUtlVectorI16NavIndirectDst_tI8CNavAreaEi10CUtlMemoryIS7_iEEEEvPKS6_PT_EUlRKS7_E_NS_9allocatorISH_EEFvSG_EEE
 NSt3__110__function6__funcIZN23CNavIndirectConnections15GetAreaToBlocksI10CUtlVectorI16NavIndirectDst_tI12SpaceBlock_tEi10CUtlMemoryIS7_iEEEEvPK8CNavAreaPT_EUlRKS7_E_NS_9allocatorISI_EEFvSH_EEE
@@ -43547,7 +43617,7 @@ NSt3__110__function6__funcIZNK16CNavMultiContext26GetNeighbors_SpaceToGroundI23C
 NSt3__110__function6__funcIZNK16CNavMultiContext27GetNeighbors_GroundToGroundI23CUtlVectorFixedGrowableIN9CNavMulti5Adj_tELm16EiEEEvRKS5_PT_EUlRK16NavIndirectDst_tI8CNavAreaEE_NS_9allocatorISH_EEFvSG_EEE
 NSt3__110__function6__funcIZNK19CEconItemDefinition31GetAssetModifiersActiveForStyleEiP10CUtlVectorI20AssetModifierEntry_ti10CUtlMemoryIS4_iEEE5$_164NS_9allocatorIS9_EEFvPK14CAssetModifierEEE
 NSt3__110__function6__funcIZNK19CNavGeometryManager16GetMovableMeshIdEiEUlRKjE_NS_9allocatorIS5_EEFvS4_EEE
-NSt3__110__function6__funcIZNK20CDOTA_PlayerResource39Script_GetLabyrinthEventGameHeroUnlocksE10PlayerID_tE3$_3NS_9allocatorIS4_EEFb12BlessingID_tEEE
+NSt3__110__function6__funcIZNK20CDOTA_PlayerResource39Script_GetLabyrinthEventGameHeroUnlocksE10PlayerID_tE3$_4NS_9allocatorIS4_EEFb12BlessingID_tEEE
 NSt3__110__function6__funcIZNK9CNavSpace20GetOverlappingBlocksERK14GenericShape_tRK10CTransformPK25CPathfindGeneric_PathCostP10CUtlVectorIPK12SpaceBlock_ti10CUtlMemoryISF_iEEE4$_28NS_9allocatorISK_EEFNS2_14SearchResult_tERSE_iEEE
 NSt3__110__function6__funcIZNK9CNavSpace20GetOverlappingBlocksERK5Vec3DIfEPK25CPathfindGeneric_PathCostP10CUtlVectorIPK12SpaceBlock_ti10CUtlMemoryISD_iEEE4$_27NS_9allocatorISI_EEFNS2_14SearchResult_tERSC_iEEE
 NSt3__110__function6__funcIZNK9CNavSpace23ForEachBlockOverlappingERNS_8functionIFNS2_14SearchResult_tERK12SpaceBlock_tiEEERK6AABB_tPK25CPathfindGeneric_PathCostE4$_25NS_9allocatorISH_EEFS4_RKNS2_11SpaceCell_tEiEEE
@@ -44888,7 +44958,7 @@ P[A\A^A
 P` `PPPPPP
 P`000
 P`0000  p
-P`0pp p
+P`0pp
 P`P00
 P`P0000
 P`PPPPPPPPPPP`PPp
@@ -45527,6 +45597,8 @@ Quest %s has duplicate quest ID: %u
 Quest %s has multiple challenges with the same ID: %u - %s and %s
 Quest %s has multiple challenges with the same name: %s
 Quest %s is missing a challenge block
+Quest index [%d] does not have a valid type defined
+Quest specifies component %u, but it doesn't exist
 Quest: both win_if_completed and lose_if_completed set for quest '%s
 Quest: invalid quest type %d for quest named '%s
 Queue AgeSaveList
@@ -45561,9 +45633,8 @@ RARARASARA
 RARARASAp
 RARARASBZARARBWAp
 RARARAWA
-RARARAZARAZARAZARAZARAZARAZARAZARAZARAZARAZARAZARAZARAZARAZARAZARAZARAZARAZARAZARAZARAZARAZARAZARAZARAZARAZARAZARAZARAZARASA
+RARARAZARAZARAZARAZARAZARAZARAZARAZARAZARAZARAZBZARAZARAZARAZARAZARAZARAZARAZARAZARAZARAZARAZARAZARAZARAZARAZARAZARAZARASA
 RARARA[A[ARA[A[ARA[ARA[ARA[ARA[ARA[ARARASARARBSARB
-RARARA`:ARAWARASAp
 RARARAp
 RARASA
 RARASARARBWA
@@ -45590,23 +45661,24 @@ RARBRAWA
 RARBRAWARAWARAWA
 RARBRA[BRATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARASARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARAZARAp
 RARBRAp
-RARBRBRARA[BRASARASAUBZARAp
+RARBRBRARA`:ARAWAp
 RARBRBRBWA
 RARBRBSAp
 RARBRBWA
 RARBRBWARBXBWA
 RARBRBWARB`AAXARASBp
-RARBRB`:ARA`:ARA[BRAWAp
+RARBRB`:ARA`:A
 RARBWA
-RARB`:Ap
 RASARA[ARA[ARASARBRBYBp
 RASARAp
 RASARB
 RASASARA
+RASASASB
+RASA[BRA[ARA[ARAWBRA[ARASAUASASB[ARA[AUASASASAVB`/A`:A
 RATARA
 RATARARARARARARARAZAp
 RATARARARARATBTA
-RATARARARATARARARATARARARATARARARATARARARATARARARATARARARATARARARATARARARATARARARATARARARATARARARATARARARATARARARATARARARATARARARATARARARATARARARATARARARATARARARATARARARATARARARATARARARATARARARATARARARATARARARATARARARATARARARATARARARATARARARATARARARATARARARATARARARATARARARATARARARATARARARATARARARATARARARATARARARATARA[ARA[ARATARATARATARATARATARATARATARATARATARATARASARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATA`zASASBp
+RATARARARATARARARATARARARATARARARATARARARATARARARATARARARATARARARATARARARATARARARATARARARATARARARATARARARATARARARATARARARATARARARATARARARATARARARATARARARATARARARATARARARATARARARATARARARATARARARATARARARATARARARATARARARATARARARATARARARATARARARATARARARATARARARATARARARATARARARATARARARATARARARATARARARATARARARATARARARATARARARATARA[ARA[ARATARATARATARATARATARATARATARATARATARATARASARATARATARATARATARATARATARATARATARATARATARATARATARBTA
 RATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARA
 RATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARA]Ap
 RATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATAVB
@@ -45662,8 +45734,10 @@ RAp pppxp8p p
 RAp(p p
 RAp(p8p p p
 RBRARA
+RBRASAp
 RBRASCWAp
-RBRATARAp
+RBRATARA`:BRARA
+RBRATAp
 RBRA]ARA
 RBRBRAp
 RBRBRAp(p
@@ -45722,6 +45796,7 @@ RBRBRBRC
 RBRBRBRCp
 RBRBRBRCp p
 RBRBRBRDp
+RBRBRBWA
 RBRBRBp
 RBRBRC
 RBRBRCp
@@ -46468,6 +46543,7 @@ Roshan.Knockback
 Roshan.Knockback.Creep
 Roshan.PreAttack
 Roshan.RevengeRoar
+Roshan.RevengeRoar.Local
 Roshan.Slam
 Rotate
 Rotate a QAngle by another QAngle
@@ -46544,19 +46620,20 @@ SASASASASASA
 SASASASASASASASASASA
 SASASASASASASASASASASASA
 SASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASAUASASASAp
-SASASASASASASASASASASASASASASASCTAp
+SASASASASASASASASASASASASASASASCWC`;C
 SASASASASASASASBUAXA
+SASASASASASASASB[BRATARATARATARATARATARATARATARATARATARATARATARA[AUASASASASASASASASASASASASASASASASASASASASASASB[ARA^A`:ARBVAUC
 SASASASASASASASC`>ATAVA`;ATA
 SASASASASASASAp
 SASASASASASAp
 SASASASAYCVAp
 SASASASAp
-SASASASBTARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARA[ARAWA
+SASASASB[ARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARA[ARAWA
 SASASAp
 SASASB
 SASASBWA
+SASASB[BRASARBRASARARAp
 SASASB`>Ap
-SASASC
 SASAUA
 SASAUAUA[ASASASA[A
 SASAUAp
@@ -46588,7 +46665,6 @@ SBRDRFp p
 SBSB]0
 SBSKSBp
 SBWARB[BRA[ARA`:Ap
-SB[BRA
 SB[BRARAp
 SB[BRA[ARA[ARA[ARA[ARA[ARASARB[ARATARATARATARATARATARATARATARATARA[ARA[ARAWBRAWARA]AZA`0B`sA`tBp
 SB^ARA`#ARAp
@@ -46626,6 +46702,7 @@ SCRBRC
 SCRBRCp
 SCRBRCp(p p
 SCRBREp p
+SCRB`L0
 SCRBp p
 SCRBp(p(p p
 SCRCp p
@@ -46639,6 +46716,7 @@ SCRIPT_MOVE_TO_MARK
 SCRIPT_PLAYING
 SCRIPT_POST_IDLE
 SCRIPT_WAIT
+SCTAp p
 SCUARA`:AYAUARA[ARAp
 SDOLoadFailure
 SDOLockFailure
@@ -49611,12 +49689,11 @@ T *CUtlLeanVectorImpl<CUtlLeanVectorBase<CPulseRuntimeMethodArg>, CPulseRuntimeM
 T *CUtlLeanVectorImpl<CUtlLeanVectorBase<CPulse_RegisterInfo>, CPulse_RegisterInfo>::InsertBeforeGetPtr(int, int) [B = CUtlLeanVectorBase<CPulse_RegisterInfo>, T = CPulse_RegisterInfo, I = int
 T *CUtlLeanVectorImpl<CUtlLeanVectorBase<PGDInstruction_t>, PGDInstruction_t>::InsertBeforeGetPtr(int, int) [B = CUtlLeanVectorBase<PGDInstruction_t>, T = PGDInstruction_t, I = int
 T *CUtlLeanVectorImpl<CUtlLeanVectorBase<PulseDocNodeID_t>, PulseDocNodeID_t>::InsertBeforeGetPtr(int, int) [B = CUtlLeanVectorBase<PulseDocNodeID_t>, T = PulseDocNodeID_t, I = int
-T *CUtlLeanVectorImpl<CUtlLeanVectorFixedGrowableBase<KeyValues3 *, 4>, KeyValues3 *>::InsertBeforeGetPtr(int, int) [B = CUtlLeanVectorFixedGrowableBase<KeyValues3 *, 4>, T = KeyValues3 *, I = int
 T CAnimGraphParamRefBase<int, CAnimGraph1ParamRefImpl, true>::Get() const [T = int, ParamRefImpl = CAnimGraph1ParamRefImpl, bOptional = true
 T$(3D$@3\$D3L$H3T$LM
 TA;FH
 TACTICAL_SEARCH
-TARARARBRA
+TARARARA`}AVARA
 TARATARATARA
 TARATARATARATARATARATARATARATARATARATARATARATARATARATARATARA
 TARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARASARATARATARATARATARATARATARATARATAUBTARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARA]ARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATA
@@ -49626,14 +49703,13 @@ TARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARA
 TARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARBTARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATAUBTARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATAUBRB
 TARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATAXA
 TARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARA[ARATARATARATARATARA
-TARATARATARATARATARATARATARATARATARATARA[AUASASASB[AUASA
+TARATARATARATARATARATARATARATARATARATARA[AUASASASB[AUB
 TARATARATARATARATARATARATARATARATARBTARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARBTARATARATARATARATARAZAp
 TARATARATARATARATARATARATARA[BUB[ARASARARASATARA[ARATARATARATARATARATARATARATARATARATASC
 TARATARATARATARATAUBTARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATARATAZB
 TARAUASB[ARA`:ARARAWAUBZARATBZARAp
 TARAWAp
 TARAZAp
-TARA`:BRARA
 TARBTARATARATARATARATARATARATARATARATARBTARATARATARATARATARATARASARATARATARATARATARATARATARATARATARATARATARATAUASASBTA
 TARB\ARARA\A\ARARA
 TARGET
@@ -49648,7 +49724,6 @@ TAUA^ARA^ARA^ARARARAp
 TAUA^ARA^ARA^ARA^ARA^ARARAp
 TA`;AWATASASB
 TBRASA
-TBRASARAVAp
 TBRATARASA
 TBRBRAp
 TCSBWKp
@@ -51528,7 +51603,6 @@ XPEarned
 XPGain
 XPReceived
 XPpppppp
-XYZ26CUserMsg_ParticleManager_t
 X[A\A]A^A
 X[A^A
 X[]ËG H
@@ -51538,8 +51612,13 @@ Xfffff
 Xffffff
 Y0;Z0s
 Y?33s
-YA1藤B
-YA1贖I
+YA1苅7
+YA1莉0
+YA1莱v
+YA1诸R
+YA1贔I
+YA1贯G
+YA1赛X
 YARATASCRARARASAp
 YARAYARA\BZARA
 YASB`;ASBTATASA`<ASARA`:A`:ASA`;ATApX`:A`9B
@@ -51733,7 +51812,7 @@ ZN13CThreadRWLock11WaitForReadEv
 ZN13CThreadRWLock12LockForWriteEPKci
 ZN14CSource2Server27GetEconItemModifiersForTypeEPKcR10CUtlVectorI14ModifierInfo_ti10CUtlMemoryIS3_iEEE3$_9
 ZN14CUtlStringList11SplitStringEPKcPKS1_i
-ZN15CItemGeneration27BuildAssetModifierContainerEP23CAssetModifierContaineriPP13CEconItemViewE4$_58
+ZN15CItemGeneration27BuildAssetModifierContainerEP23CAssetModifierContaineriPP13CEconItemViewE4$_59
 ZN15CKeyValues_Data18Internal_GetStringEPKcPcm
 ZN15CKeyValues_Data18Internal_SetStringEPKc
 ZN15CUtlBinaryBlock9SetLengthEi
@@ -51763,7 +51842,7 @@ ZN17CThreadSpinRWLock11UnlockWriteEPKci
 ZN17CThreadSpinRWLock16SpinLockForWriteEPKciy
 ZN17CThreadSyncObject4WaitEj
 ZN17CThreadSyncObjectD2Ev
-ZN18CDOTA_BaseNPC_Fort8PrecacheEPK22CEntityPrecacheContextE3$_5
+ZN18CDOTA_BaseNPC_Fort8PrecacheEPK22CEntityPrecacheContextE3$_6
 ZN18CGridStringPrinter15SetColumnHeaderEiPKc
 ZN18CGridStringPrinter17SetWordWrapColumnEibb
 ZN18CGridStringPrinter22SetColumnJustificationEib
@@ -51821,7 +51900,7 @@ ZN22CThreadRWLock_FastReadC1Ev
 ZN22CVariableBitStringBase6ResizeEi
 ZN22CVariableBitStringBase8FreeIntsEv
 ZN22CVariableBitStringBase9AllocIntsEi
-ZN23CDOTARubickArcanaSchema20GetRubickArcanaScoreEP13CDOTA_BaseNPCE3$_0
+ZN23CDOTARubickArcanaSchema20GetRubickArcanaScoreEP13CDOTA_BaseNPCE3$_2
 ZN23CDOTA_Unit_Hero_Spectre22UpdateArcanaKillstreakEP18CDOTA_BaseNPC_HeroiEUlP19CItemSocket_StrangeE
 ZN23CNavIndirectConnections14GetAreaToAreasI10CUtlVectorI16NavIndirectDst_tI8CNavAreaEi10CUtlMemoryIS4_iEEEEvPKS3_PT_EUlRKS4_E
 ZN23CNavIndirectConnections15GetAreaToBlocksI10CUtlVectorI16NavIndirectDst_tI12SpaceBlock_tEi10CUtlMemoryIS4_iEEEEvPK8CNavAreaPT_EUlRKS4_E
@@ -52022,7 +52101,7 @@ ZNK18CGridStringPrinter7NumRowsEv
 ZNK18CGridStringPrinter8GetLinesER10CUtlVectorI10CUtlStringi10CUtlMemoryIS1_iEEb
 ZNK19CEconItemDefinition31GetAssetModifiersActiveForStyleEiP10CUtlVectorI20AssetModifierEntry_ti10CUtlMemoryIS1_iEEE5$_164
 ZNK19CNavGeometryManager16GetMovableMeshIdEiEUlRKjE
-ZNK20CDOTA_PlayerResource39Script_GetLabyrinthEventGameHeroUnlocksE10PlayerID_tE3$_3
+ZNK20CDOTA_PlayerResource39Script_GetLabyrinthEventGameHeroUnlocksE10PlayerID_tE3$_4
 ZNK21CUtlScratchMemoryPool20GetCurrentAllocPointEv
 ZNK22CVariableBitStringBase15ValidateOperandERKS
 ZNK8netadr_t11IsLocalhostEv
@@ -52530,7 +52609,6 @@ affects_buildings
 affects_enemies
 affects_items
 affff
-affffff
 affine
 aftershock_damage
 aftershock_range
@@ -54414,6 +54492,7 @@ bounty_hunter_wind_walk_ally
 bounty_multiplier
 bounty_rune_gold
 bounty_runes
+bounty_runes_picked_up
 bounty_xp
 bountygold
 bow_bot
@@ -55337,6 +55416,7 @@ completion_minutes
 complexity
 component
 component, you should also report this bug to the author(s
+component_quantities
 components
 compressed_msg
 computer_guid
@@ -55586,6 +55666,8 @@ crack_distance
 crack_duration
 crack_time
 crack_width
+craftworks_id
+craftworks_quest_rewards
 crate_item_def
 crate_item_id
 crc_part
@@ -56852,6 +56934,7 @@ dota_contextual_tips_scanenemy_pollduration
 dota_contextual_tips_smokeofdeceit_waitinminutes
 dota_contextual_tips_time_restriction_disable
 dota_courier_transfer_item
+dota_craftworks.h
 dota_create_ability
 dota_create_bot_wearing_item
 dota_create_bot_wearing_set
@@ -56972,6 +57055,7 @@ dota_gamerules
 dota_gamestate
 dota_gcmessages_common.proto
 dota_gcmessages_common_bot_script.proto
+dota_gcmessages_common_craftworks.proto
 dota_gcmessages_common_fighting_game.proto
 dota_gcmessages_common_league.proto
 dota_gcmessages_common_lobby.proto
@@ -57127,6 +57211,9 @@ dota_hud_error_must_target_tree
 dota_hud_error_no_allies_nearby
 dota_hud_error_no_corpses
 dota_hud_error_no_dispersion_targets
+dota_hud_error_no_hat_buff
+dota_hud_error_no_hats_to_gift
+dota_hud_error_no_hats_to_steal
 dota_hud_error_no_items_to_deliver
 dota_hud_error_no_minefield_here
 dota_hud_error_no_more_famangos
@@ -57185,6 +57272,7 @@ dota_ingameevent_dota_prime
 dota_ingameevent_fall2021
 dota_ingameevent_fm2015
 dota_ingameevent_fm2016
+dota_ingameevent_frostivus2024
 dota_ingameevent_fv2018
 dota_ingameevent_fv2019
 dota_ingameevent_fv2023
@@ -57376,6 +57464,8 @@ dota_pet_herodist_minthreat
 dota_pet_herodist_radius
 dota_pet_itemcarry
 dota_pet_priorthreat_to_vanish
+dota_pet_rare_idle_chance
+dota_pet_rare_idle_check_time
 dota_pet_reposition_maxtime
 dota_pet_reposition_mintime
 dota_pet_return_threshold
@@ -57600,6 +57690,7 @@ dota_ti9_consumable_banner
 dota_ti9_consumable_shovel_outcome
 dota_time
 dota_time_of_day_rate
+dota_tormentor_force_hit_sound_direction
 dota_tormentor_respawn_time
 dota_tormentor_spawn_time
 dota_tournament_item_event
@@ -58569,6 +58660,7 @@ event_level_leaderboard_name
 event_location
 event_mask
 event_mode_recent_time
+event_mvps
 event_name
 event_owned
 event_play_button_label
@@ -58740,7 +58832,7 @@ f9<Ft
 f9<Nt
 f9<Vt
 f9<VtZH
-f9="Tl
+f9=BBo
 f9C"r{H
 f9C.r
 f9C.ryf
@@ -59552,6 +59644,8 @@ frostbite_duration
 frostbite_radius
 frostbitten_golem_time_warp_aura
 frostbound_duration
+frostivus_2024
+frostivus_hats_stolen
 frozen
 frozen_path_duration
 fulfilled_item_id
@@ -59629,7 +59723,7 @@ fxIndex
 fx_halo_height
 fx_index
 fxindex
-f怀g老g怀h老h
+fကiဆkငl
 g %g %g
 g %g %g %g
 g fieldsH
@@ -59901,6 +59995,7 @@ givecurrentammo
 givegold
 given a dummy scene name and a vcd string, load the scene
 given an entity reference, such as !target, get actual entity from scene object
+given_tips
 gives_normal_credit_in_turbo_mode
 glacial_duration
 glaives_attack_radius
@@ -60765,7 +60860,9 @@ high_five.fail
 high_five.impact
 high_five_level
 high_five_speed
+high_fives_ally
 high_fives_completed
+high_fives_enemy
 high_priority
 high_priority_disabled
 high_priority_state
@@ -60968,7 +61065,7 @@ huskar_inner_fire
 huskar_inner_vitality
 huskar_life_break
 hype_loc
-h|D9-J
+h|D9-Z
 i : %s (ground %i %s
 i < length
 i links
@@ -61249,6 +61346,7 @@ in_game_item_def
 in_game_prediction_count_per_game
 in_game_prediction_voting_period_minutes
 in_game_predictions
+in_game_treasure_gifted
 in_logon_surge
 in_sellback_window
 in_spewbuttondelta
@@ -61366,9 +61464,9 @@ ingame_predictions_main_event_periodic_resource
 ingame_predictions_qualifiers_periodic_resource
 ingame_scale
 ingameevent_id
+inherit_all_joints
 inherit_owner
 inherit_owner_index
-inherit_owner_joints
 inherit_owner_name
 initial
 initial group %d, [%d .. %d], has %d syms (%4.1f
@@ -62909,6 +63007,8 @@ kKillEaterEventType_Rubick_SpellsStolen
 kKillEaterEventType_Rubick_UltimatesStolen
 kKillEaterEventType_SandKing_BurrowstrikeStuns
 kKillEaterEventType_SandKing_EpicenterKills
+kKillEaterEventType_Seasonal_PartyHatsStolen
+kKillEaterEventType_Seasonal_TallestHat
 kKillEaterEventType_Skywrath_FlareKills
 kKillEaterEventType_Slark_LeashedEnemies
 kKillEaterEventType_Snapfire_LizardBlobsKills
@@ -63374,6 +63474,12 @@ k_EMsgClientToGCClaimSwag
 k_EMsgClientToGCCoachFriend
 k_EMsgClientToGCCoachFriendResponse
 k_EMsgClientToGCCollectorsCacheAvailableDataRequest
+k_EMsgClientToGCCraftworksCraftRecipe
+k_EMsgClientToGCCraftworksCraftRecipeResponse
+k_EMsgClientToGCCraftworksDevModifyComponents
+k_EMsgClientToGCCraftworksDevModifyComponentsResponse
+k_EMsgClientToGCCraftworksGetUserData
+k_EMsgClientToGCCraftworksGetUserDataResponse
 k_EMsgClientToGCCreateGuild
 k_EMsgClientToGCCreateGuildResponse
 k_EMsgClientToGCCreateHeroStatue
@@ -64026,6 +64132,7 @@ k_EMsgGCToClientClaimSwagResponse
 k_EMsgGCToClientCoachTeammateRatingsChanged
 k_EMsgGCToClientCollectorsCacheAvailableDataResponse
 k_EMsgGCToClientCommendNotification
+k_EMsgGCToClientCraftworksUserDataUpdated
 k_EMsgGCToClientCurrencyPricePoints
 k_EMsgGCToClientCustomGamesFriendsPlayedResponse
 k_EMsgGCToClientEmoticonData
@@ -64379,6 +64486,7 @@ k_EMsgSignOutBounties
 k_EMsgSignOutCommunicationSummary
 k_EMsgSignOutCommunityGoalProgress
 k_EMsgSignOutConsumableUsage
+k_EMsgSignOutCraftworks
 k_EMsgSignOutDiretideCandy
 k_EMsgSignOutDraftInfo
 k_EMsgSignOutEventActionGrants
@@ -64579,6 +64687,10 @@ k_UnpackBundle_Failed_SOCacheError
 k_UnpackBundle_Failed_UnableToDeleteItem
 k_UnpackBundle_Succeeded
 k_eAlreadyVisited
+k_eCraftworksQuest_GiveCommend
+k_eCraftworksQuest_Invalid
+k_eCraftworksQuest_ReceiveCommend
+k_eCraftworksQuest_StatTracker
 k_eData
 k_eDisabled
 k_eEncounterMissingRewards
@@ -64632,6 +64744,7 @@ k_eGCPlatform_PC
 k_eGCPlatform_iOS
 k_eInsufficientCharges
 k_eInternalError
+k_eInvalid
 k_eInvalidAccountID
 k_eInvalidChallenge
 k_eInvalidEncounter
@@ -64655,6 +64768,8 @@ k_eLimitedItem
 k_eLobbyMemberCoachRequestState_Accepted
 k_eLobbyMemberCoachRequestState_None
 k_eLobbyMemberCoachRequestState_Rejected
+k_eMatchRewards
+k_eMatchRewardsTurbo
 k_eMatchTrackedStatImpl_Direct
 k_eMatchTrackedStatImpl_Expression
 k_eMatchTrackedStatImpl_Invalid
@@ -64712,6 +64827,7 @@ k_ePlayerTrackedStatImpl_Expression
 k_ePlayerTrackedStatImpl_HeroAdjective
 k_ePlayerTrackedStatImpl_Invalid
 k_ePlayerTrackedStatImpl_KillEater
+k_eRecipeCrafted
 k_eResult_Destroyed
 k_eResult_ItemGranted
 k_eRewardAlreadyClaimed
@@ -64770,6 +64886,7 @@ keeper_of_the_light_radiant_bind
 keeper_of_the_light_recall
 keeper_of_the_light_spirit_form
 keeper_of_the_light_will_o_wisp
+key not found
 key_field
 key_id
 key_item_id
@@ -66197,6 +66314,7 @@ m_QuickBuyStr
 m_Radius
 m_RagdollPose
 m_RampTimer
+m_RareIdleTimer
 m_Receivers
 m_RecentHeroKillTimer
 m_Recipients
@@ -67417,6 +67535,7 @@ m_bPiercesCreeps
 m_bPiercesMagicImmunity
 m_bPinning
 m_bPlacedInSpawnBox
+m_bPlayEndcapOnNext
 m_bPlayPostVictoryAnims
 m_bPlayReversalSound
 m_bPlaySound
@@ -67548,6 +67667,7 @@ m_bScheduleSendTickPacket
 m_bScriptDisableRespawns
 m_bScriptRoar
 m_bScriptedMovement
+m_bSeasonalReward
 m_bSecondStar
 m_bSeenClearedByTeam
 m_bSelectionGoldPenaltyEnabled
@@ -67590,6 +67710,7 @@ m_bShouldStun
 m_bShouldTeleportPhysics
 m_bShouldUseResources
 m_bShowEnemies
+m_bShowInGameProgressToasts
 m_bShowInitialEarn
 m_bShowOnHUD
 m_bShowOnMinimap
@@ -67843,6 +67964,7 @@ m_bWillBeCallingPostDataUpdate
 m_bWillSpawnNextPowerRune
 m_bWinIfCompleted
 m_bWindingUp
+m_bWithEnemy
 m_bWorldLayerVisible
 m_bWorldSpaceScale
 m_bWorldTreeState
@@ -67919,6 +68041,7 @@ m_duration
 m_eAccess
 m_eAccoladeType
 m_eAggregate
+m_eAssociatedEvent
 m_eCoachTeam
 m_eEvent
 m_eGameMode
@@ -69216,6 +69339,7 @@ m_flStartWindSpeed
 m_flStartZ
 m_flStartingAttackSpeed
 m_flStartingTime
+m_flStatMultiplier
 m_flStateFallbackTransitionTime
 m_flStateTransitionTime
 m_flStateTransitionTime set to %2.2f
@@ -69331,6 +69455,7 @@ m_flTreeTimeRemaining
 m_flTriggerRadius
 m_flTriggerRadiusSqr
 m_flTrueSight
+m_flTurboMultiplier
 m_flTurnBoostProgress
 m_flTurnHistory
 m_flTurnRate
@@ -70209,6 +70334,7 @@ m_iMaxClip1
 m_iMaxClip2
 m_iMaxDist
 m_iMaxGust
+m_iMaxHatStacks
 m_iMaxHealth
 m_iMaxLevel
 m_iMaxObjectsAttached
@@ -70786,6 +70912,7 @@ m_nAimAngle
 m_nAllDraftHeroPickCollisionsThisPhase
 m_nAllDraftPhase
 m_nAlliesTaunted
+m_nAllyCount
 m_nAmbientFXIndex
 m_nAngleRestriction
 m_nAngularMotionX
@@ -72264,7 +72391,12 @@ m_strBossUnit
 m_strBreakableContentsParticleOverride
 m_strBreakableContentsPropGroupOverride
 m_strCachedDependencyAbility
+m_strComponentImageMedium
+m_strComponentImageSmall
+m_strComponentLocDesc
+m_strComponentLocName
 m_strCourierModel
+m_strCraftAction
 m_strCustomHexModel
 m_strCustomKillEffect
 m_strDefaultStickyItem
@@ -72282,6 +72414,8 @@ m_strIndividualStat
 m_strItemClass
 m_strLandmarkName
 m_strLastKillerAbility
+m_strLocName
+m_strLocProgress
 m_strMapToLoad
 m_strMeasureReference
 m_strMeasureTarget
@@ -72300,16 +72434,23 @@ m_strPickupItemModel
 m_strPlayerName
 m_strRelationships
 m_strRequiredFacet
+m_strRewardAction
 m_strRopeMaterialModel
 m_strScoutModel
 m_strSearchName
+m_strSound
 m_strSourceClassName
 m_strSpiritsOutSwapAbility
 m_strStartTouchEventName
 m_strTPScrollSlotItemOverride
 m_strTargetReference
+m_strTierClass
+m_strTrackedStatName
 m_strTransitionEffect
 m_strTriggerID
+m_strUnlockAction
+m_strUnlockLocDesc
+m_strUnlockLocProgress
 m_succeeded
 m_supportMultipleEntitiesWithSameName
 m_surfaceProps
@@ -72390,6 +72531,7 @@ m_trainName
 m_transitioningLayers
 m_triggerBloat
 m_triggermode
+m_type
 m_uSelectedOverworldID
 m_uSelectedOverworldTokenRewards
 m_ubInterpolationFrame
@@ -72410,7 +72552,9 @@ m_unBubbleCount
 m_unClientFlags
 m_unCoachRating
 m_unCompendiumLevel
+m_unComponentID
 m_unCount
+m_unCraftworksID
 m_unCurrentArcanaKillStreak
 m_unDuelsWon
 m_unFanfareBadGuys
@@ -72455,18 +72599,24 @@ m_unPickOrder
 m_unPlayerID
 m_unPrimaryColor
 m_unQualityID
+m_unQuantity
+m_unQuestID
+m_unRecipeID
+m_unRecipeTierID
 m_unRecommendedDistance
 m_unRiverAccountID
 m_unSecondaryColor
 m_unSelectedHeroBadgeXP
 m_unShapeID
 m_unStatID
+m_unStatMaximum
 m_unStatusEffectIndex
 m_unSuicideKills
 m_unTeamID
 m_unThresholdValue
 m_unTitle
 m_unTournamentTeamID
+m_unVersion
 m_unVerticalAlign
 m_unViewerTeam
 m_unpausingPlayerId
@@ -72811,6 +72961,7 @@ m_vecChatLog
 m_vecChoices
 m_vecClientAngles
 m_vecClientOrigin
+m_vecComponents
 m_vecConnections
 m_vecCornerPairsNetworked
 m_vecCraftingSetups
@@ -72861,6 +73012,7 @@ m_vecGemSlots
 m_vecGems
 m_vecGlowingPlayerIDs
 m_vecGlowingPlayerIDs2
+m_vecHatColors
 m_vecHeroDeathRecord
 m_vecHeroIDs
 m_vecHeroNames
@@ -72918,6 +73070,7 @@ m_vecMoveAng
 m_vecMoveDirParentSpace
 m_vecMuertaPartingShotSouls
 m_vecNavHulls
+m_vecNearbyUnits
 m_vecNeutralItemEquippedHistory
 m_vecNeutralItemsConsumed
 m_vecNeutralItemsTierInfo
@@ -72934,6 +73087,7 @@ m_vecOriginalItems
 m_vecOverlappingLinks
 m_vecParamsToResetInPostGraphUpdate
 m_vecParriedEnemies
+m_vecParticles
 m_vecPathCornerPairs
 m_vecPathNodes
 m_vecPathSampleDistances
@@ -72965,14 +73119,18 @@ m_vecPrivateCoachPlayerIDs
 m_vecProjectileHandles
 m_vecPushDirEntitySpace
 m_vecQualities
+m_vecQuests
 m_vecRecentDamage
 m_vecRecentModifiers
 m_vecRecipeComponents
+m_vecRecipeTiers
+m_vecRecipes
 m_vecRecommendedPlaytestHeroesStorage
 m_vecRenderAttributes
 m_vecReportedPosition
 m_vecRequiredPlaytestHeroesStorage
 m_vecReturnPosition
+m_vecRewards
 m_vecShapes
 m_vecShards
 m_vecSmoothedVelocity
@@ -73006,6 +73164,7 @@ m_vecTreeCircleCenter
 m_vecTreeFires
 m_vecTriggers
 m_vecUniqueHitList
+m_vecUnitIdleStartTimes
 m_vecValidStatRangesPerPhase
 m_vecValues
 m_vecVelocity
@@ -73812,6 +73971,7 @@ models/heroes/abyssal_underlord/abyssal_underlord_portal_model.vmdl
 models/heroes/dark_willow/dark_willow_wisp.vmdl
 models/heroes/death_prophet/death_prophet_ghost.vmdl
 models/heroes/dragon_knight/dragon_knight_dragon.vmdl
+models/heroes/dragon_knight_persona/dk_persona_dragon.vmdl
 models/heroes/hoodwink/hoodwink_tree_model.vmdl
 models/heroes/lone_druid/true_form.vmdl
 models/heroes/lycan/lycan_wolf.vmdl
@@ -73862,6 +74022,9 @@ models/heroes/tiny/tiny_tree/tiny_tree.vmdl
 models/heroes/undying/undying_flesh_golem.vmdl
 models/heroes/wisp/wisp_additive.vmdl
 models/heroes/wisp/wisp_effigy.vmdl
+models/items/hex/fish_hex/fish_hex.vmdl
+models/items/hex/sheep_hex/sheep_hex.vmdl
+models/items/hex/sheep_hex/sheep_hex_gold.vmdl
 models/items/io/io_ti7/io_ti7_additive.vmdl
 models/props_gameplay/aegis.vmdl
 models/props_gameplay/banana_prop_closed_mk.vmdl
@@ -73875,7 +74038,6 @@ models/props_gameplay/donkey.vmdl
 models/props_gameplay/donkey_dire.vmdl
 models/props_gameplay/donkey_dire_wings.vmdl
 models/props_gameplay/donkey_wings.vmdl
-models/props_gameplay/fish.vmdl
 models/props_gameplay/frog.vmdl
 models/props_gameplay/gold_bag.vmdl
 models/props_gameplay/neutral_box.vmdl
@@ -77389,6 +77551,7 @@ mvp_data
 mystery
 mystery_box
 mȋC Lc
+m耀m考n逃o
 n9W$|iH
 nAbilityIndex
 nAbilitySpecialLevel
@@ -78748,7 +78911,6 @@ o8E;o
 o@D;oDu
 oD$@fA
 oD$`fE
-oD9%y
 oHD;oLu
 oL$ fA
 oL$PfA
@@ -79103,8 +79265,7 @@ owning_camp_position
 owning_player_id
 p   P
 p   `00
-p RARARARARA
-p RARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARA
+p RARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARA
 p RARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARA
 p RARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARAZAWA
 p RARBZEp
@@ -79116,9 +79277,10 @@ p SBSATA
 p SBUBp
 p SBWA
 p SDRBRBRC
+p TARA`:BRA
 p TATATA` ARATARA`:BRA`:ARA
+p TAUAp p
 p TAUBp
-p TAUBp p
 p UAWA`5A`AA`VA
 p ZDp p(RDp
 p [A\A^A
@@ -79230,7 +79392,6 @@ p(RDRCp
 p(RDRDp
 p(REp p
 p(RLpXp@p@p0p(p0p8
-p(SAp p
 p(SBp p(RDRDp
 p(TAUBp
 p(UBp p(RDp
@@ -79277,7 +79438,6 @@ p(p(p pHp p pPp8p(p
 p(p(p0p p
 p(p(p0p p(RDp
 p(p(p8p
-p(p(pxpXpHp
 p(p0p p
 p(p0p(p
 p(p0p(p p
@@ -79302,6 +79462,7 @@ p0p RBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRDp
 p0p p p
 p0p p(RDp
 p0p p(p
+p0p p8TAUBp
 p0p pPp0p
 p0p(p TAUBp
 p0p(p p
@@ -79309,10 +79470,10 @@ p0p(p p(RDp
 p0p(p(p p p
 p0p(p0p p p0p
 p0p(p0p(p(p p(p8
-p0p0TAUBp
 p0p0p p(p@p
 p0p@TAUBp
 p0p@p TAUBSDp
+p0pHTAUBp
 p0pHp p(p
 p0pxp p`p(p@p8p(p
 p88Hp88H
@@ -79341,9 +79502,7 @@ p8SARDp
 p8SBUBp
 p8SCp p
 p8SCpXp
-p8TAUBp
 p8TBp(p p(RDp
-p8p p pH
 p8p p0p
 p8p(p
 p8p(p p(p(p
@@ -79394,13 +79553,14 @@ pHhXpHhX
 pHitEntity
 pHl\tHl\tиWBиWBR	j
 pHp p pH
+pHp p pHp p pH
 pHp p pHpHp p pH
 pHp ppREp
 pHp(p p
 pHp(p(p
 pHp(pPp p0p p(pPp p p@p0p8p p8p
+pHpHp p
 pHpHp p pH
-pHpHp p pHp p pHpHp p pHp p pHpH
 pHpXTATBp p@p
 pHphpXp p
 pIcNhH
@@ -79452,7 +79612,6 @@ p[A\A^A
 p`PP@@0
 p`PpP
 p``  pp
-p``PPPPPPPPPPPP
 p``p`p`ppp
 p``pp
 p``ppp
@@ -79636,15 +79795,7 @@ particles/dire_fx/dire_building_damage_minor.vpcf
 particles/econ/attack/attack_modifier_empty.vpcf
 particles/econ/attack/attack_modifier_ti9.vpcf
 particles/econ/courier/courier_babyroshan_ti9/courier_babyroshan_ti9_ambient.vpcf
-particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_chicken.vpcf
-particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_fish.vpcf
-particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_frog.vpcf
-particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_dragon_knight_dragon.vpcf
-particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_lone_druid.vpcf
-particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_lycan_wolf.vpcf
 particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_pangolier_gyroshell.vpcf
-particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_terrorblade.vpcf
-particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_pig.vpcf
 particles/econ/events/coal
 particles/econ/events/coal/coal_projectile.vpcf
 particles/econ/events/consolation
@@ -79656,6 +79807,19 @@ particles/econ/events/frostivus/frostivus_fireworks.vpcf
 particles/econ/events/frostivus/frostivus_fireworks_illumination.vpcf
 particles/econ/events/frostivus/frostivus_snowman_cast.vpcf
 particles/econ/events/frostivus/frostivus_tree_cast.vpcf
+particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_chicken.vpcf
+particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_fish_hex.vpcf
+particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_frog.vpcf
+particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_dragon_knight_dragon.vpcf
+particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_dragon_knight_persona1_dragon.vpcf
+particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_lone_druid.vpcf
+particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_lycan_wolf.vpcf
+particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_morphling.vpcf
+particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_terrorblade.vpcf
+particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_npc_dota_hero_undying_golem.vpcf
+particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_pig.vpcf
+particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_sheep_hex.vpcf
+particles/econ/events/frostivus_2024/frostivus_2024_hat_ambient_sheep_hex_gold.vpcf
 particles/econ/events/new_bloom/dragon_cast.vpcf
 particles/econ/events/new_bloom/dragon_death.vpcf
 particles/econ/events/new_bloom/firecracker.vpcf
@@ -79857,6 +80021,7 @@ particles/entity/env_explosion/explosion_gascylinder.vpcf
 particles/entity/env_explosion/explosion_grenade.vpcf
 particles/entity/env_explosion/explosion_smokegrenade.vpcf
 particles/entity/env_explosion/explosion_tripmine.vpcf
+particles/events/frostivus/frostivus_hat_steal/frostivus_hat_steal_channelled_spell.vpcf
 particles/frostivus_gameplay
 particles/generic_fx/fx_electricspark.vpcf
 particles/generic_fx/fx_metalspark.vpcf
@@ -80052,6 +80217,7 @@ particles/items_fx/aegis_respawn_timer.vpcf
 particles/items_fx/aegis_timer.vpcf
 particles/items_fx/aegis_timer_e.vpcf
 particles/items_fx/aegis_timer_i.vpcf
+particles/items_fx/aghanims_shard.vpcf
 particles/items_fx/arcane_boots.vpcf
 particles/items_fx/arcane_boots_recipient.vpcf
 particles/items_fx/armlet.vpcf
@@ -80140,8 +80306,6 @@ particles/neutral_fx/miniboss_damage_reflect_dire.vpcf
 particles/neutral_fx/miniboss_death.vpcf
 particles/neutral_fx/miniboss_death_dire.vpcf
 particles/neutral_fx/miniboss_dire_shield_hit.vpcf
-particles/neutral_fx/miniboss_shield.vpcf
-particles/neutral_fx/miniboss_shield_dire.vpcf
 particles/neutral_fx/miniboss_shield_hit.vpcf
 particles/neutral_fx/mud_golem_hurl_boulder.vpcf
 particles/neutral_fx/neutral_centaur_khan_war_stomp.vpcf
@@ -82347,6 +82511,7 @@ physics_add_test
 physics_debug_entity
 physics_entity_solver
 physics_highlight_active
+physics_joint_modification_type
 physics_prop_ragdoll
 physics_remove_test
 physics_report_active
@@ -82558,6 +82723,7 @@ player_slots
 player_spawn
 player_start_teleport_destination
 player_stat
+player_stat_tracker
 player_stat_type
 player_stat_value
 player_states
@@ -82599,6 +82765,7 @@ playerstats
 playervisibilitystrength
 playerweapon
 playing_commentary
+playing_in_party
 playoverscript
 playsound
 pluralizable localization string ID to use for the user facing unit to display on the trophy tooltip (e.g. 1 Challenge Completed / 3 Challenges Completed
@@ -82757,17 +82924,18 @@ powerup_id
 powerups
 poweruptype
 pp  Pp
-pp `p
 pp00P0
 ppPP@@00P
 pp`0000
 pp``PP
+pp``````PPPPPPP
 pp``p
 pp``ppp`pp
 pp``ppppp`p
 pp`pp`p
 pp`ppp`p
 ppp  P
+ppp `p
 ppp p(RDRBRBRBRBRBp
 ppp p(RDp
 ppp0pXp@p
@@ -83896,6 +84064,7 @@ reward_action_name
 reward_after_wins
 reward_can_be_shown_in_toast
 reward_class
+reward_components
 reward_damage
 reward_data
 reward_description
@@ -84531,8 +84700,14 @@ s: Setting Revenge Target to: %s from death of victim: %s
 s: Trying to initialize target assignment based on assigned roles
 s: Unsupported raw allocator type %u
 s: Value for %s out of range
+s: element count overflow (%u
+s: invalid array remove count %u (current count %u
+s: invalid array remove point %u (current count %u
+s: invalid insert point %u (current count %u
 s: invalid nBeforeIndex %d
 s: invalid nSize %d
+s: max element overflow, cur count %u + %u
+s: member count overflow (%u
 s: removed change %s, %s offset %d
 s: unexpected parameter format for InputSetBodyGroup. Had %s, expected <bodygroupname,partnumber
 s: unexpected parameter type %s, expected a CString
@@ -84932,6 +85107,7 @@ scripts/comics.vdata
 scripts/compendiums
 scripts/compendiums/in_game_prediction_templates.txt
 scripts/contextual_tips.txt
+scripts/craftworks_frostivus_2024.vdata
 scripts/custom.gameevents
 scripts/custom_net_tables.txt
 scripts/decals_subrect.txt
@@ -84958,15 +85134,11 @@ scripts/npc/activelist.txt
 scripts/npc/heroes/%s.txt
 scripts/npc/herolist.txt
 scripts/npc/items.txt
-scripts/npc/items_staging.txt
 scripts/npc/neutral_items.txt
-scripts/npc/neutral_items_staging.txt
 scripts/npc/npc_abilities.txt
 scripts/npc/npc_abilities_custom.txt
 scripts/npc/npc_abilities_override.txt
-scripts/npc/npc_abilities_staging.txt
 scripts/npc/npc_ability_ids.txt
-scripts/npc/npc_ability_ids_staging.txt
 scripts/npc/npc_heroes.txt
 scripts/npc/npc_heroes_custom.txt
 scripts/npc/npc_items_custom.txt
@@ -84974,7 +85146,6 @@ scripts/npc/npc_neutral_items_custom.txt
 scripts/npc/npc_popular_items.txt
 scripts/npc/npc_units.txt
 scripts/npc/npc_units_custom.txt
-scripts/npc/npc_units_staging.txt
 scripts/npc/portraits.txt
 scripts/npc/portraits_custom.txt
 scripts/npc/portraits_staging.txt
@@ -87443,6 +87614,7 @@ stat_total
 stat_tracker_gem_item_def
 stat_tracker_item_def
 stat_type
+stat_value
 state> Turn on/off simulated GC communications failure (GC is down in a way that we know it is down
 state_invisible
 state_values
@@ -88062,6 +88234,7 @@ szRewardType
 szUnitName
 s}SAVE/%s.%s
 s}SAVE/%s.sav
+s　s〃t〃u
 t	L9+u
 t	L93u
 t	L9;u
@@ -88250,6 +88423,7 @@ tEJc<3L
 tEMc>M
 tEfff
 tEffff
+tFD;%U
 tFfff
 tFfffff
 tGfffff
@@ -88293,6 +88467,7 @@ tWfff
 tXI96
 tXI96vFI
 tYMc4$C
+tZHcNp
 tZI94
 tZI96
 tZIcG
@@ -88321,7 +88496,6 @@ t`IcD
 t`L97
 t`Lc#D
 t`Mc>M
-taHcNp
 table: %u members
 table_flags
 table_id
@@ -88444,6 +88618,7 @@ taunt_duration
 taunt_persona_1
 taunted
 taunting_player_id
+taunts_used
 tbI96
 tbL93
 tbLc+D
@@ -88667,6 +88842,7 @@ thinkalways
 thinker
 thinkerEntities
 thinkfunc_t
+thirdparty/protobuf-3.21.8/src/google/protobuf/map.h
 thirdparty/protobuf-3.21.8/src/google/protobuf/map_field.h
 thirdparty/protobuf-3.21.8/src/google/protobuf/map_field_inl.h
 thirst
@@ -89280,6 +89456,7 @@ u E;u$uuA
 u PARA
 u fff
 u ffffff
+u!fffff
 u%ffff
 u%z#A
 u&A;E u
@@ -89308,7 +89485,6 @@ u=ffffff
 u>fffff
 u@IcU8H
 u@fffff
-uAHcKpH
 uAIcNpH
 uAfffff
 uAffffff
@@ -90046,6 +90222,10 @@ void CEntitySystem::DataDesc_BuildComponentUnserializers
 void CEntitySystem::RegisterAliasEntityClass(CEntityClass
 void CGameEntitySystem::InitEntity2NetworkClasses(int
 void CInstallUGCJob::FailureProbablyBug(const char
+void CKeyValues3Array::EnsureElementCapacity(CKeyValues3Context *, int, bool, bool
+void CKeyValues3Array::InsertMultipleBefore(KeyValues3 *, int, int
+void CKeyValues3Array::RemoveMultiple(KeyValues3 *, int, int
+void CKeyValues3Table::EnsureMemberCapacity(CKeyValues3Context *, int, bool, bool
 void CModelState::SetupModel(CModelState *, CSkeletonInstance *, const CTransform
 void CQuantizedVectorBase<CNetworkOriginCellCoordQuantizedVector>::SetNetworkStateChangedRouter(INetworkStateChangedRouter *) [T = CNetworkOriginCellCoordQuantizedVector
 void CQuantizedVectorBase<CNetworkVelocityVector>::SetNetworkStateChangedRouter(INetworkStateChangedRouter *) [T = CNetworkVelocityVector
@@ -90112,6 +90292,7 @@ vuln_slow
 vulnerableoncreepspawn
 vx2_select_w7
 vxIcVpH
+v怀v老v退v
 w IcWlH
 w IcWlL
 w fffff
@@ -90131,6 +90312,7 @@ w:ffff
 w;fffff
 w<ffff
 w@IcW8H
+wCDOTA_Ability_Plus_HighFive
 wDE;wHu
 wHIcW@H
 wPIcWHH
@@ -90395,6 +90577,10 @@ winningteam
 wins_event_type
 winter2022
 winter_2018
+winter_event_penguins_collided
+winter_event_snowballs_thrown
+winter_event_snowman_built_before_horn
+winter_event_snowman_destroyed
 winter_wyvern_arctic_burn
 winter_wyvern_cold_embrace
 winter_wyvern_dragon_sight
@@ -90499,6 +90685,7 @@ wxIcWpH
 wyfffff
 x E9t
 x IcD$ E
+x!9=R7
 x!9wh
 x!E9g
 x#A9Gx
@@ -90562,11 +90749,8 @@ xp_per_minute
 xp_per_use
 xp_reason
 xp_received
-xtO<htO<X
-xxD9%n
-x|D9=.x
-x|D9=Sw
-x|D9=iw
+x|D9=c
+x|D9=y
 y#fffff
 y=up=green, z=forward=blue, x=left=red
 y>fffff

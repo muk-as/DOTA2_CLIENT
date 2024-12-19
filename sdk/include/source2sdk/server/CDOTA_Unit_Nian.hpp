@@ -20,7 +20,7 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x19d0
+    // Size: 0x1a08
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
@@ -30,16 +30,16 @@ namespace source2sdk::server
     public:
         // m_vecRecentDamage has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<server::NianDamageTaken_t> m_vecRecentDamage;
-        char m_vecRecentDamage[0x18]; // 0x19b0        
+        char m_vecRecentDamage[0x18]; // 0x19e8        
         // m_hTail has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<server::CBaseEntity> m_hTail;
-        char m_hTail[0x4]; // 0x19c8        
+        char m_hTail[0x4]; // 0x1a00        
         // m_hHorn has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<server::CBaseEntity> m_hHorn;
-        char m_hHorn[0x4]; // 0x19cc        
+        char m_hHorn[0x4]; // 0x1a04        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_Unit_Nian because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Unit_Nian) == 0x19d0);
+    static_assert(sizeof(CDOTA_Unit_Nian) == 0x1a08);
 };

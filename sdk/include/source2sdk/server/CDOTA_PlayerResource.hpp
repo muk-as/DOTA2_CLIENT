@@ -35,7 +35,7 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0xefb8
+    // Size: 0xf018
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
@@ -163,65 +163,66 @@ namespace source2sdk::server
         int32_t m_iObserverWardsDestroyed[24]; // 0x8514        
         int32_t m_iReliableGoldEarned[24]; // 0x8574        
         int32_t m_iGoldLossPrevented[24]; // 0x85d4        
-        [[maybe_unused]] std::uint8_t pad_0x8634[0x5c]; // 0x8634
+        int32_t m_iMaxHatStacks[24]; // 0x8634        
+        [[maybe_unused]] std::uint8_t pad_0x8694[0x5c]; // 0x8694
         // m_hTeamCouriers has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<CHandle<server::CDOTA_Unit_Courier>> m_hTeamCouriers[15];
-        char m_hTeamCouriers[0x168]; // 0x8690        
+        char m_hTeamCouriers[0x168]; // 0x86f0        
         // m_hPlayerCouriers has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<CHandle<server::CDOTA_Unit_Courier>> m_hPlayerCouriers[64];
-        char m_hPlayerCouriers[0x600]; // 0x87f8        
-        float m_flAvailableLaneGold[15]; // 0x8df8        
-        [[maybe_unused]] std::uint8_t pad_0x8e34[0x4]; // 0x8e34
+        char m_hPlayerCouriers[0x600]; // 0x8858        
+        float m_flAvailableLaneGold[15]; // 0x8e58        
+        [[maybe_unused]] std::uint8_t pad_0x8e94[0x4]; // 0x8e94
         // m_DamageShareList has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<server::DamageShareEvent_t> m_DamageShareList[24];
-        char m_DamageShareList[0x240]; // 0x8e38        
-        server::DamageShareEvent_t m_AbsorbedDamageRollup[24][25]; // 0x9078        
-        client::AbilityID_t m_playerAbilityUpgradeOrder[24][25]; // 0xac98        
-        int32_t m_playerAbilityUpgradeTimes[24][25]; // 0xb5f8        
-        int32_t m_playerAbilityUpgradeCount[24]; // 0xbf58        
-        [[maybe_unused]] std::uint8_t pad_0xbfb8[0x40]; // 0xbfb8
-        int32_t m_fullUpdateCount[64]; // 0xbff8        
-        int32_t m_iCouriersDeployed[24]; // 0xc0f8        
-        int32_t m_iCouriersPotentiallyKilled[24]; // 0xc158        
-        int32_t m_iCommandsIssued[24]; // 0xc1b8        
-        uint32_t m_hHeroSpawnGroup[24]; // 0xc218        
-        [[maybe_unused]] std::uint8_t pad_0xc278[0x17c0]; // 0xc278
-        float m_fNextLaneDetectionUpdate; // 0xda38        
-        float m_fNextTimedHeroStatsUpdate; // 0xda3c        
-        [[maybe_unused]] std::uint8_t pad_0xda40[0x2a0]; // 0xda40
-        bool m_bInitializedLaneWaypoints; // 0xdce0        
-        [[maybe_unused]] std::uint8_t pad_0xdce1[0x757]; // 0xdce1
-        uint32_t m_nLastWardSuggestionBuildingState; // 0xe438        
-        uint32_t m_nLastWardSuggestionUpdateNum; // 0xe43c        
-        bool m_bLastWardSuggestionRoshanAlive; // 0xe440        
-        bool m_bDoFinalPregameSuggestion[10]; // 0xe441        
-        [[maybe_unused]] std::uint8_t pad_0xe44b[0x1]; // 0xe44b
-        float m_fNextCreepDistanceUpdate; // 0xe44c        
-        float m_fCreepDistanceSafe[15]; // 0xe450        
-        float m_fCreepDistanceMid[15]; // 0xe48c        
-        float m_fCreepDistanceOff[15]; // 0xe4c8        
-        entity2::GameTime_t m_fLastSuggestionTime; // 0xe504        
-        bool m_bHasRevealedAnonymizedEnemyPlayerInfo; // 0xe508        
-        [[maybe_unused]] std::uint8_t pad_0xe509[0x607]; // 0xe509
-        client::PlayerID_t m_nRequestedBotPlayerID; // 0xeb10        
-        float m_fNextCombatLogLocationUpdateTime; // 0xeb14        
-        float m_fNextAPMUpdateTime; // 0xeb18        
-        [[maybe_unused]] std::uint8_t pad_0xeb1c[0x4]; // 0xeb1c
+        char m_DamageShareList[0x240]; // 0x8e98        
+        server::DamageShareEvent_t m_AbsorbedDamageRollup[24][25]; // 0x90d8        
+        client::AbilityID_t m_playerAbilityUpgradeOrder[24][25]; // 0xacf8        
+        int32_t m_playerAbilityUpgradeTimes[24][25]; // 0xb658        
+        int32_t m_playerAbilityUpgradeCount[24]; // 0xbfb8        
+        [[maybe_unused]] std::uint8_t pad_0xc018[0x40]; // 0xc018
+        int32_t m_fullUpdateCount[64]; // 0xc058        
+        int32_t m_iCouriersDeployed[24]; // 0xc158        
+        int32_t m_iCouriersPotentiallyKilled[24]; // 0xc1b8        
+        int32_t m_iCommandsIssued[24]; // 0xc218        
+        uint32_t m_hHeroSpawnGroup[24]; // 0xc278        
+        [[maybe_unused]] std::uint8_t pad_0xc2d8[0x17c0]; // 0xc2d8
+        float m_fNextLaneDetectionUpdate; // 0xda98        
+        float m_fNextTimedHeroStatsUpdate; // 0xda9c        
+        [[maybe_unused]] std::uint8_t pad_0xdaa0[0x2a0]; // 0xdaa0
+        bool m_bInitializedLaneWaypoints; // 0xdd40        
+        [[maybe_unused]] std::uint8_t pad_0xdd41[0x757]; // 0xdd41
+        uint32_t m_nLastWardSuggestionBuildingState; // 0xe498        
+        uint32_t m_nLastWardSuggestionUpdateNum; // 0xe49c        
+        bool m_bLastWardSuggestionRoshanAlive; // 0xe4a0        
+        bool m_bDoFinalPregameSuggestion[10]; // 0xe4a1        
+        [[maybe_unused]] std::uint8_t pad_0xe4ab[0x1]; // 0xe4ab
+        float m_fNextCreepDistanceUpdate; // 0xe4ac        
+        float m_fCreepDistanceSafe[15]; // 0xe4b0        
+        float m_fCreepDistanceMid[15]; // 0xe4ec        
+        float m_fCreepDistanceOff[15]; // 0xe528        
+        entity2::GameTime_t m_fLastSuggestionTime; // 0xe564        
+        bool m_bHasRevealedAnonymizedEnemyPlayerInfo; // 0xe568        
+        [[maybe_unused]] std::uint8_t pad_0xe569[0x607]; // 0xe569
+        client::PlayerID_t m_nRequestedBotPlayerID; // 0xeb70        
+        float m_fNextCombatLogLocationUpdateTime; // 0xeb74        
+        float m_fNextAPMUpdateTime; // 0xeb78        
+        [[maybe_unused]] std::uint8_t pad_0xeb7c[0x4]; // 0xeb7c
         // m_vecPendingPlayerResourceRequests has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<uint32_t> m_vecPendingPlayerResourceRequests;
-        char m_vecPendingPlayerResourceRequests[0x18]; // 0xeb20        
-        int32_t m_iRampages[24]; // 0xeb38        
-        int32_t m_iTripleKills[24]; // 0xeb98        
-        int32_t m_iCouriersKilled[24]; // 0xebf8        
-        int32_t m_iAegisesSnatched[24]; // 0xec58        
-        int32_t m_iCheesesEaten[24]; // 0xecb8        
-        int32_t m_iRapiersPurchased[24]; // 0xed18        
-        float m_flPushingDamage[24]; // 0xed78        
-        int32_t m_iRoshanKillsNight[24]; // 0xedd8        
-        int32_t m_iRoshanKillsDay[24]; // 0xee38        
-        int32_t m_iPortalsUsed[24]; // 0xee98        
-        int32_t m_iWisdomRunesGained[24]; // 0xeef8        
-        int32_t m_iShieldRunesGained[24]; // 0xef58        
+        char m_vecPendingPlayerResourceRequests[0x18]; // 0xeb80        
+        int32_t m_iRampages[24]; // 0xeb98        
+        int32_t m_iTripleKills[24]; // 0xebf8        
+        int32_t m_iCouriersKilled[24]; // 0xec58        
+        int32_t m_iAegisesSnatched[24]; // 0xecb8        
+        int32_t m_iCheesesEaten[24]; // 0xed18        
+        int32_t m_iRapiersPurchased[24]; // 0xed78        
+        float m_flPushingDamage[24]; // 0xedd8        
+        int32_t m_iRoshanKillsNight[24]; // 0xee38        
+        int32_t m_iRoshanKillsDay[24]; // 0xee98        
+        int32_t m_iPortalsUsed[24]; // 0xeef8        
+        int32_t m_iWisdomRunesGained[24]; // 0xef58        
+        int32_t m_iShieldRunesGained[24]; // 0xefb8        
         
         // Static fields:
         static uint64_t &Get_s_unLobbySteamID() {return *reinterpret_cast<uint64_t*>(interfaces::g_schema->FindTypeScopeForModule("server.dll")->FindDeclaredClass("CDOTA_PlayerResource")->GetStaticFields()[0]->m_pInstance);};
@@ -230,5 +231,5 @@ namespace source2sdk::server
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_PlayerResource because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_PlayerResource) == 0xefb8);
+    static_assert(sizeof(CDOTA_PlayerResource) == 0xf018);
 };

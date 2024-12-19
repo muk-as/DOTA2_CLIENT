@@ -14,7 +14,7 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x1e90
+    // Size: 0x1ec8
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
@@ -26,5 +26,5 @@ namespace source2sdk::server
     };
     #pragma pack(pop)
     
-    static_assert(sizeof(CDOTA_Unit_Hero_Magnataur) == 0x1e90);
+    static_assert(sizeof(CDOTA_Unit_Hero_Magnataur) == 0x1ec8);
 };

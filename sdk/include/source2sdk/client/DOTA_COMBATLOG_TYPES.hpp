@@ -8,7 +8,7 @@
 
 namespace source2sdk::client
 {
-    // Enumerator count: 45
+    // Enumerator count: 46
     // Alignment: 4
     // Size: 0x4
     enum class DOTA_COMBATLOG_TYPES : std::uint32_t
@@ -58,5 +58,6 @@ namespace source2sdk::client
         DOTA_COMBATLOG_UNIT_TELEPORTED = 0x29,
         DOTA_COMBATLOG_KILL_EATER_EVENT = 0x2a,
         DOTA_COMBATLOG_NEUTRAL_ITEM_EARNED = 0x2b,
+        DOTA_COMBATLOG_STAT_TRACKER_PLAYER = 0x2c,
     };
 };
