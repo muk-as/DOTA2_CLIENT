@@ -27,7 +27,7 @@ namespace source2sdk::client
     public:
         // metadata: MNetworkEnable
         client::PlayerID_t m_nPlayerID; // 0x5d0        
-        [[maybe_unused]] std::uint8_t pad_0x5d4[0x4];
+        int32_t m_nTeam; // 0x5d4        
     };
     #pragma pack(pop)
     
