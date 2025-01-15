@@ -130,6 +130,7 @@
 0Ic^0
 0NETWORK_DISCONNECT_KICKED_VACNETABNORMALBEHAVIOR
 0NETWORK_DISCONNECT_REJECT_SERVERCDKEYAUTHINVALID
+0P  PPPP
 0P0 0
 0P0000
 0PPPPP
@@ -193,7 +194,6 @@
 0ultimate_scepter_consumed_alchemist_bonus_health
 0x" must be followed by hex digits
 0x%08X
-0者3退3
 1 255
 1 = force cl_predict to 1
 1 = let clients set cl_predict to anything
@@ -5328,6 +5328,7 @@
 2#.CMsgMatchDiretideCandy.PlayerCandy
 2#.CMsgSOMultipleObjects.SingleObject
 2#.CMsgSteamLearnDataSourceDescObject
+2#.CMsgSteamLearnMatchInfoTeam.PlayerB
 2#.CSVCMsg_GameEventList.descriptor_t
 2#.ESteamLearnInferenceMetadataResult
 2#.google.protobuf.FieldOptions.CType
@@ -7906,6 +7907,7 @@
 27CMsgSignOutOverworld_Player
 27CMsgSosStopSoundEventHash_t
 27CMsgSteamLearnMatchHeroesV3
+27CMsgSteamLearnMatchInfoTeam
 27CMsgSteamLearnWardPlacement
 27CMsgUnderDraftData_ShopSlot
 27CNetworkedSequenceOperation
@@ -10532,6 +10534,7 @@
 34CMsgServerToGCMatchConnectionStats
 34CMsgServerToGCNewBloomGiftResponse
 34CMsgSteamLearnDataSourceDescObject
+34CMsgSteamLearnMatchInfoTeam_Player
 34CMsgSteamLearnPreGameItemPurchases
 34CNETMsg_SpawnGroup_SetCreationTick
 34CParticleCollectionBindingInstance
@@ -14751,6 +14754,7 @@
 4k_EMsgClientToGCWeekendTourneyGetPlayerStatsResponse
 4k_EMsgGCToClientCollectorsCacheAvailableDataResponse
 4p  `p
+4苗4苺4
 5&YA1A
 5,9;h
 5,¸YAi
@@ -15427,7 +15431,6 @@
 7kKillEaterEventType_Enigma_MidnightPulseBlackHoleCombos
 7k_EMsgClientToGCFantasyCraftingPerformOperationResponse
 7k_EMsgClientToGCJoinPrivateCoachingSessionLobbyResponse
-7怀7老7退7
 8#GameUI_Disconnect_LocalProblem_HostedServerPrimaryRelay
 8$4,8$4
 8.3f[%d] %s:  %s
@@ -15539,7 +15542,6 @@
 9STEAMLEARN_REGISTER_DATA_SOURCE_RESULT_ERROR_INVALID_NAME
 9STEAMLEARN_SNAPSHOT_PROJECT_ERROR_INVALID_DATA_SOURCE_KEY
 9X0tщX0A
-9YA1莲L
 9basic_ostringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE
 9ffff
 9fffff
@@ -19750,6 +19752,7 @@ CDOTAFeaturedGamemodeSchema: Couldn't load resource %s
 CDOTAFogOfWarSystem::FrameUpdatePostEntityThink
 CDOTAFogOfWarTempViewers
 CDOTAGCServerSystem
+CDOTAGCServerSystem - SendSteamLearnMatchInfo CMsgSteamLearnMatchInfoTeam %d %d %d %d %d %d
 CDOTAGCServerSystem:: Failed to BZ2 compress private metadata
 CDOTAGCServerSystem:: Finished submitting MatchSignOutStats.  MatchID = %llu
 CDOTAGCServerSystem::CheckUpdateConnectedPlayers: Need to tell GC player is no longer connected, but we don't have a leaver state
@@ -28397,6 +28400,7 @@ CMsgSteamLearnMatchHeroV3
 CMsgSteamLearnMatchHeroesV3
 CMsgSteamLearnMatchInfo
 CMsgSteamLearnMatchInfoPlayer
+CMsgSteamLearnMatchInfoTeam
 CMsgSteamLearnMatchStateV5
 CMsgSteamLearnNeutralItemPurchase
 CMsgSteamLearnPlayerTimedStats
@@ -30473,7 +30477,6 @@ D8s=t%H
 D9 t%I
 D9 t[H
 D9"tiH
-D9%FuR
 D9&t6H
 D9,:t
 D90u@H
@@ -30499,7 +30502,8 @@ D9{8t!L
 D9{8t$L
 D9{8uKE
 D; ~2E
-D;55wd
+D;%EUs
+D;5Bma
 D;8~2E
 D;Z s%E1
 D;Z }%E1
@@ -32653,7 +32657,6 @@ DebugWeeklyQuestChallenge: Query completed for %s but hero id does not match sel
 Debugger connected
 Debugging helper to try out different autostyle configurations
 Debugging stopped
-Dec 20 2024
 DecalEmitterSystem
 DeclareFunctions
 Decrease this modifier's stack count by 1
@@ -32972,6 +32975,7 @@ DotaMatchHero
 DotaMatchHeroes
 DotaMatchInfo
 DotaMatchInfoPlayer
+DotaMatchInfoTeam
 DotaMatchState
 DotaNeutralItem
 DotaPingWheel_global_server
@@ -35336,6 +35340,7 @@ Gem Slot
 Gem Type
 General information about the match as a whole
 General information about the match as a whole from the perspective of a particular user
+General information about the teams in the match
 General.Buy
 General.CastFail_InvalidTarget_MagicImmune
 General.Coins
@@ -37199,8 +37204,7 @@ Have Entity say string, and teamOnly or not
 Have we received the post match signout message that includes reward information
 HaveAllPlayersJoined
 Hc0A;u
-Hc5'?R
-Hc5Nq
+Hc57kR
 Hc@ H9
 Hc@ I9
 Hc@$A;D
@@ -39173,7 +39177,6 @@ IcD$(H
 IcD$(I
 IcD$(I9
 IcD$0H
-IcD$0H9
 IcD$0I9
 IcD$4H9
 IcD$4I
@@ -40651,7 +40654,6 @@ Item_Blight_Stone.Target
 Item_Desolator.Target
 Items: %d, %d, %d, %d, %d, %d, %d, %d, %d, %d
 Iterations: %d
-I。J퀄J〃K
 J r	H
 J0;N0s
 J0s	I
@@ -40666,6 +40668,7 @@ JS_STRING
 JUMP_COND
 JUNGLE_CREEP
 Jackpot
+Jan 15 2025
 JcD(@H
 JcD08H
 JcL0(H
@@ -40690,6 +40693,7 @@ JumpedFromTree
 Jungle
 Jungler
 JustInTimeManifest
+J怀J老J退J者O
 K(v(H
 K,u<z
 K4A+Nx1
@@ -40999,7 +41003,6 @@ LaunchLoot
 LaunchLootInitialHeight
 LaunchLootRequiredHeight
 LaunchSpear
-Lc51jZ
 Lc@(Ii
 Lcg H
 LcpHIi
@@ -41259,7 +41262,6 @@ LuaModifierType
 LuaModifiers
 Lv Name         Player        K/ D/ A/ LH/ DN/ Gold Health    Mana
 LwH'LwH'LwH'LwH'LwH'LwH'LwH'LwH
-L　M〃N〃O
 M	~pI!^hI
 M HcA8H
 M twM
@@ -42945,6 +42947,7 @@ N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18RegisterDataSourceI26CMsgStea
 N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18RegisterDataSourceI26CMsgSteamLearnItemPurchaseEEvPKcS5_jjEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18RegisterDataSourceI26CMsgSteamLearnMatchStateV5EEvPKcS5_jjEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18RegisterDataSourceI27CMsgSteamLearnMatchHeroesV3EEvPKcS5_jjEUlvE_EE
+N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18RegisterDataSourceI27CMsgSteamLearnMatchInfoTeamEEvPKcS5_jjEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18RegisterDataSourceI27CMsgSteamLearnWardPlacementEEvPKcS5_jjEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18RegisterDataSourceI29CMsgSteamLearnMatchInfoPlayerEEvPKcS5_jjEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18RegisterDataSourceI30CMsgSteamLearnPlayerTimedStatsEEvPKcS5_jjEUlvE_EE
@@ -42959,6 +42962,7 @@ N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18SubmitToDataSourceI26CMsgStea
 N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18SubmitToDataSourceI26CMsgSteamLearnItemPurchaseEEvRK10CUtlVectorIyi10CUtlMemoryIyiEERKT_bEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18SubmitToDataSourceI26CMsgSteamLearnMatchStateV5EEvRK10CUtlVectorIyi10CUtlMemoryIyiEERKT_bEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18SubmitToDataSourceI27CMsgSteamLearnMatchHeroesV3EEvRK10CUtlVectorIyi10CUtlMemoryIyiEERKT_bEUlvE_EE
+N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18SubmitToDataSourceI27CMsgSteamLearnMatchInfoTeamEEvRK10CUtlVectorIyi10CUtlMemoryIyiEERKT_bEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18SubmitToDataSourceI27CMsgSteamLearnWardPlacementEEvRK10CUtlVectorIyi10CUtlMemoryIyiEERKT_bEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18SubmitToDataSourceI29CMsgSteamLearnMatchInfoPlayerEEvRK10CUtlVectorIyi10CUtlMemoryIyiEERKT_bEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18SubmitToDataSourceI30CMsgSteamLearnPlayerTimedStatsEEvRK10CUtlVectorIyi10CUtlMemoryIyiEERKT_bEUlvE_EE
@@ -44807,7 +44811,6 @@ PHASE_Ban
 PHASE_Pick
 PHLc+M
 PHYSGUN
-PHcG,H
 PING_CONFIRMATION_STATE_ICON_TYPE_ATTACK
 PING_CONFIRMATION_STATE_ICON_TYPE_DEFEND
 PING_CONFIRMATION_STATE_ICON_TYPE_SMOKE
@@ -44855,7 +44858,7 @@ PP0PPP
 PP@PPPPP@P@P
 PP@`p@0
 PPA;FHu
-PPLc%W2
+PPLc%g
 PPPPP
 PPPPP0PP0
 PPPPPP
@@ -50988,6 +50991,7 @@ UsingItemBreaksInvisibility
 UtlMemory_Alloc
 UtlMemory_CalcNewAllocationCount
 UtlMemory_FailedAllocation
+U怀U老U退U
 V fff
 V ffff
 V( fD
@@ -51578,6 +51582,7 @@ Wrong arg count for '%s' %d, expected 1
 Wrong arg count for '%s' %d, expected 2
 Wrong arg count for '%s' %d, expected 3
 Wrong arg type for 'stat' function. Expected string literal but got %d
+W态X耀X瀉Y
 X A;X$tAI
 X A;X$u
 X to the Y power
@@ -51620,9 +51625,11 @@ Xfffff
 Xffffff
 Y0;Z0s
 Y?33s
-YA1股7
-YA1脱v
-YA1苹7
+YA1脊G
+YA1號R
+YA1襞P
+YA1講P
+YA1贾B
 YARATASCRARARASAp
 YARAYARA\BZARA
 YASB`;ASBTATASA`<ASARA`:A`:ASA`;ATApX`:A`9B
@@ -54004,6 +54011,7 @@ because it is missing required fields
 bedlam
 behavior
 behavior_level
+behavior_score
 behavior_score_likert_scale
 behavior_score_variance
 belt_persona_1
@@ -55368,6 +55376,7 @@ combinedcombo
 combo_count
 comeback_gold
 comm_level
+comm_score
 command
 command queue logging of events
 command queue logging per player stats every N seconds, 0 to disable
@@ -56558,6 +56567,7 @@ dire_lanes
 dire_logo
 dire_name
 dire_only
+dire_players
 dire_positions
 dire_score
 dire_secret_shop
@@ -58838,7 +58848,7 @@ f9<Ft
 f9<Nt
 f9<Vt
 f9<VtZH
-f9=R;o
+f9=bgo
 f9C"r{H
 f9C.r
 f9C.ryf
@@ -58856,6 +58866,7 @@ fA9\$6
 fAttackTimeRemaining
 fC9L%L
 fC9\~`t
+fD9-J k
 fD94Qr=1
 fD94Qt?H
 fD;n@s
@@ -61070,6 +61081,7 @@ huskar_inner_fire
 huskar_inner_vitality
 huskar_life_break
 hype_loc
+h|D9-z
 i : %s (ground %i %s
 i < length
 i links
@@ -65028,6 +65040,7 @@ kv3Data
 kv_data
 kv_juxtapose_illusion
 kv_juxtapose_illusion_uncontrollable
+k怀k老k退k
 l$ E;l$$u
 l$0fD
 l$8H3D$0H3l
@@ -70462,6 +70475,7 @@ m_iRangeCount
 m_iRangeCreepUpgradeGoldEarned
 m_iRank
 m_iRankTier
+m_iRankUncertainty
 m_iRankWagersAvailable
 m_iRankWagersMax
 m_iRapiersPurchased
@@ -70968,6 +70982,7 @@ m_nBeamFXIndex
 m_nBeamFlags
 m_nBeamType
 m_nBehaviorLevel
+m_nBehaviorScore
 m_nBinaryID
 m_nBinaryObjectID
 m_nBlackboardReferenceIdx
@@ -71041,6 +71056,7 @@ m_nColor
 m_nCombineVersion
 m_nComboCount
 m_nCommLevel
+m_nCommScore
 m_nCompletedPathID
 m_nCompletedSteps
 m_nCompressionType
@@ -78876,6 +78892,7 @@ num_killed_by_faceless
 num_locations
 num_matches_to_search
 num_packets
+num_players_in_party
 num_recent_tips
 num_revenants
 num_scale_sets
@@ -78902,6 +78919,7 @@ nyx_assassin_nyxth_sense
 nyx_assassin_spiked_carapace
 nyx_assassin_unburrow
 nyx_assassin_vendetta
+n怀n老n退n
 o [%5d] '%s' (%s) [group entity
 o [no group entity
 o(D;o,u
@@ -78912,7 +78930,7 @@ o8E;o
 o@D;oDu
 oD$@fA
 oD$`fE
-oD9%y
+oD9%9
 oHD;oLu
 oL$ fA
 oL$PfA
@@ -79267,7 +79285,7 @@ owning_camp_position
 owning_player_id
 p   P
 p   `00
-p RARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARA
+p RARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARA
 p RARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARA
 p RARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARAZAWA
 p RARBZEp
@@ -79393,7 +79411,7 @@ p(RDRC
 p(RDRCp
 p(RDRDp
 p(REp p
-p(RLpXp@p@p0p(p0p8
+p(RLpX
 p(SBp p(RDRDp
 p(TAUBp
 p(UBp p(RDp
@@ -79443,6 +79461,7 @@ p(p(p8p
 p(p0p p
 p(p0p(p
 p(p0p(p p
+p(p0p8
 p(p8TAU0
 p(p8p p@p(p
 p(p@p p(p(p@p
@@ -83002,6 +83021,10 @@ preferred_map_variant
 preferred_name
 preferredcarryangles
 prefix_owner
+prematch_behavior_score
+prematch_comm_score
+prematch_mmr
+prematch_rank_uncertainty
 premium
 premium_only
 premium_packs
@@ -83405,7 +83428,6 @@ pvs_flowtype
 pvs_modify_entity
 pvsplayer
 py_generic_services
-p瀉r逃s逆t
 q0;r0s	I
 qangle
 qangle_pitch_yaw
@@ -83511,6 +83533,7 @@ radiant_lead
 radiant_logo
 radiant_name
 radiant_only
+radiant_players
 radiant_positions
 radiant_score
 radiant_secret_shop
@@ -83525,6 +83548,7 @@ radiant_team_logo_url
 radiant_team_name
 radiant_team_score
 radiant_team_tag
+radiant_team_won
 radiant_towers
 radiant_won
 radius
@@ -83604,6 +83628,7 @@ rank_stats
 rank_tier
 rank_tier_score
 rank_types
+rank_uncertainty
 rank_uncertainty_change
 rank_wager
 rank_wager_token
@@ -84306,7 +84331,6 @@ runes_grabbed
 runs pick test on multiple players
 rush_range
 rush_speed
-r态r退r逃s逃t
 s	%32.32s = "%s
 s  %%c %%10s : %c%%%ds%c %%s
 s %.3f] Sound event skipped because %i sound events were fired at once
@@ -88412,7 +88436,6 @@ t?ffffff
 t@fff
 t@ffffff
 tB9y0tY9yH
-tBD9=N
 tBD;0uM
 tBD;8uM
 tBHcp8H
@@ -88427,6 +88450,7 @@ tEJc<3L
 tEMc>M
 tEfff
 tEffff
+tFD;%E
 tFfff
 tFfffff
 tGfffff
@@ -88437,7 +88461,6 @@ tHfff
 tIA9]8~C
 tID9z(uCL
 tJHcH H
-tKD;%E
 tKE9&~F
 tKffff
 tLfff
@@ -88623,7 +88646,7 @@ taunt_persona_1
 taunted
 taunting_player_id
 taunts_used
-tbD;5. I
+tbD;5>LI
 tbI96
 tbL93
 tbLc+D
@@ -89456,7 +89479,6 @@ tzfff
 t~rLc
 tK D9
 t͋S\H
-t适v瀉x退x
 u E;u$t
 u E;u$uuA
 u PARA
@@ -89815,6 +89837,8 @@ v(IcV H
 v0IcV(H
 v8D;s<t
 v8D;s<u
+v8H;5B
+v8H;5P
 v8IcV0H
 v8array
 v8callback
@@ -89840,6 +89864,7 @@ vHIcV@H
 vIcT$(A
 vLA;vP
 vLastPos
+vLc5N
 vLeashLocation
 vLocation
 vNewLoc
@@ -90685,12 +90710,10 @@ write gameevents keyvalues (sorted by name) to gameevents_<modname>.txt
 written by I%d last-read I%d
 wrong submessage type
 www.memtest86.com).  At the time of writing it is free (GPLd
-wxH;5
 wxIcWpH
 wyfffff
 x E9t
 x IcD$ E
-x!9=bC
 x!9wh
 x!E9g
 x#A9Gx
@@ -90754,8 +90777,8 @@ xp_per_minute
 xp_per_use
 xp_reason
 xp_received
-xxD9%n
-x|D9=k
+x|D9=+4
+x|D9=^4
 y#fffff
 y=up=green, z=forward=blue, x=left=red
 y>fffff

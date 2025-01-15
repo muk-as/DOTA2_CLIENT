@@ -35,7 +35,7 @@ namespace source2sdk::server
     // Registered alignment: 0x8
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0xf018
+    // Size: 0xf138
     // Has VTable
     // Construct allowed
     // MClassHasEntityLimitedDataDesc
@@ -122,107 +122,110 @@ namespace source2sdk::server
         int32_t m_iTotalHeroDamageTaken[24]; // 0x3778        
         [[maybe_unused]] std::uint8_t pad_0x37d8[0x240]; // 0x37d8
         int32_t m_iRank[24]; // 0x3a18        
-        bool m_bRankCalibrated[24]; // 0x3a78        
-        bool m_bLowPriority[24]; // 0x3a90        
-        int32_t m_nWins[24]; // 0x3aa8        
-        int32_t m_nLosses[24]; // 0x3b08        
-        int32_t m_nSmurfCategory[24]; // 0x3b68        
-        bool m_bWasHeroPickDotaPlusSuggestion[24]; // 0x3bc8        
-        entity2::GameTime_t m_flLastActiveTime[24]; // 0x3be0        
-        float m_flIdleTime[24]; // 0x3c40        
-        bool m_bLoggedInElsewhere[24]; // 0x3ca0        
-        bool m_bPlayerLoadedCompletely[64]; // 0x3cb8        
-        int32_t m_iDisconnectionReason[64]; // 0x3cf8        
-        [[maybe_unused]] std::uint8_t pad_0x3df8[0x600]; // 0x3df8
-        uint64_t m_SelectedGuide[64]; // 0x43f8        
-        bool m_bIsUsingPlusGuide[64]; // 0x45f8        
-        uint32_t m_vecPredictedRanks[64]; // 0x4638        
-        [[maybe_unused]] std::uint8_t pad_0x4738[0xc00]; // 0x4738
-        uint32_t m_unLastRadiantFortPct; // 0x5338        
-        uint32_t m_unLastDireFortPct; // 0x533c        
-        int32_t m_iCustomTeamAssignments[24]; // 0x5340        
+        int32_t m_iRankUncertainty[24]; // 0x3a78        
+        bool m_bRankCalibrated[24]; // 0x3ad8        
+        bool m_bLowPriority[24]; // 0x3af0        
+        int32_t m_nWins[24]; // 0x3b08        
+        int32_t m_nLosses[24]; // 0x3b68        
+        int32_t m_nSmurfCategory[24]; // 0x3bc8        
+        int32_t m_nBehaviorScore[24]; // 0x3c28        
+        int32_t m_nCommScore[24]; // 0x3c88        
+        bool m_bWasHeroPickDotaPlusSuggestion[24]; // 0x3ce8        
+        entity2::GameTime_t m_flLastActiveTime[24]; // 0x3d00        
+        float m_flIdleTime[24]; // 0x3d60        
+        bool m_bLoggedInElsewhere[24]; // 0x3dc0        
+        bool m_bPlayerLoadedCompletely[64]; // 0x3dd8        
+        int32_t m_iDisconnectionReason[64]; // 0x3e18        
+        [[maybe_unused]] std::uint8_t pad_0x3f18[0x600]; // 0x3f18
+        uint64_t m_SelectedGuide[64]; // 0x4518        
+        bool m_bIsUsingPlusGuide[64]; // 0x4718        
+        uint32_t m_vecPredictedRanks[64]; // 0x4758        
+        [[maybe_unused]] std::uint8_t pad_0x4858[0xc00]; // 0x4858
+        uint32_t m_unLastRadiantFortPct; // 0x5458        
+        uint32_t m_unLastDireFortPct; // 0x545c        
+        int32_t m_iCustomTeamAssignments[24]; // 0x5460        
         // m_vecPlayerLevelUpTimes has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<float> m_vecPlayerLevelUpTimes[24];
-        char m_vecPlayerLevelUpTimes[0x240]; // 0x53a0        
-        int32_t m_iManaSpent[64][6]; // 0x55e0        
-        int32_t m_iNeutralOption[64][6][6]; // 0x5be0        
-        bool m_bLeaverAlreadyDetected; // 0x7fe0        
-        [[maybe_unused]] std::uint8_t pad_0x7fe1[0x427]; // 0x7fe1
+        char m_vecPlayerLevelUpTimes[0x240]; // 0x54c0        
+        int32_t m_iManaSpent[64][6]; // 0x5700        
+        int32_t m_iNeutralOption[64][6][6]; // 0x5d00        
+        bool m_bLeaverAlreadyDetected; // 0x8100        
+        [[maybe_unused]] std::uint8_t pad_0x8101[0x427]; // 0x8101
         // m_TimedKillList has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<server::TimedKillEvent_t> m_TimedKillList;
-        char m_TimedKillList[0x18]; // 0x8408        
+        char m_TimedKillList[0x18]; // 0x8528        
         // m_TimedAssistList has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<server::TimedKillEvent_t> m_TimedAssistList;
-        char m_TimedAssistList[0x18]; // 0x8420        
+        char m_TimedAssistList[0x18]; // 0x8540        
         // m_TimedDeathList has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<server::TimedKillEvent_t> m_TimedDeathList;
-        char m_TimedDeathList[0x18]; // 0x8438        
-        uint32_t m_unLastHeroPickOrder; // 0x8450        
-        int32_t m_iBountyGoldEarned[24]; // 0x8454        
-        int32_t m_iRangeCreepUpgradeGoldEarned[24]; // 0x84b4        
-        int32_t m_iObserverWardsDestroyed[24]; // 0x8514        
-        int32_t m_iReliableGoldEarned[24]; // 0x8574        
-        int32_t m_iGoldLossPrevented[24]; // 0x85d4        
-        int32_t m_iMaxHatStacks[24]; // 0x8634        
-        [[maybe_unused]] std::uint8_t pad_0x8694[0x5c]; // 0x8694
+        char m_TimedDeathList[0x18]; // 0x8558        
+        uint32_t m_unLastHeroPickOrder; // 0x8570        
+        int32_t m_iBountyGoldEarned[24]; // 0x8574        
+        int32_t m_iRangeCreepUpgradeGoldEarned[24]; // 0x85d4        
+        int32_t m_iObserverWardsDestroyed[24]; // 0x8634        
+        int32_t m_iReliableGoldEarned[24]; // 0x8694        
+        int32_t m_iGoldLossPrevented[24]; // 0x86f4        
+        int32_t m_iMaxHatStacks[24]; // 0x8754        
+        [[maybe_unused]] std::uint8_t pad_0x87b4[0x5c]; // 0x87b4
         // m_hTeamCouriers has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<CHandle<server::CDOTA_Unit_Courier>> m_hTeamCouriers[15];
-        char m_hTeamCouriers[0x168]; // 0x86f0        
+        char m_hTeamCouriers[0x168]; // 0x8810        
         // m_hPlayerCouriers has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<CHandle<server::CDOTA_Unit_Courier>> m_hPlayerCouriers[64];
-        char m_hPlayerCouriers[0x600]; // 0x8858        
-        float m_flAvailableLaneGold[15]; // 0x8e58        
-        [[maybe_unused]] std::uint8_t pad_0x8e94[0x4]; // 0x8e94
+        char m_hPlayerCouriers[0x600]; // 0x8978        
+        float m_flAvailableLaneGold[15]; // 0x8f78        
+        [[maybe_unused]] std::uint8_t pad_0x8fb4[0x4]; // 0x8fb4
         // m_DamageShareList has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<server::DamageShareEvent_t> m_DamageShareList[24];
-        char m_DamageShareList[0x240]; // 0x8e98        
-        server::DamageShareEvent_t m_AbsorbedDamageRollup[24][25]; // 0x90d8        
-        client::AbilityID_t m_playerAbilityUpgradeOrder[24][25]; // 0xacf8        
-        int32_t m_playerAbilityUpgradeTimes[24][25]; // 0xb658        
-        int32_t m_playerAbilityUpgradeCount[24]; // 0xbfb8        
-        [[maybe_unused]] std::uint8_t pad_0xc018[0x40]; // 0xc018
-        int32_t m_fullUpdateCount[64]; // 0xc058        
-        int32_t m_iCouriersDeployed[24]; // 0xc158        
-        int32_t m_iCouriersPotentiallyKilled[24]; // 0xc1b8        
-        int32_t m_iCommandsIssued[24]; // 0xc218        
-        uint32_t m_hHeroSpawnGroup[24]; // 0xc278        
-        [[maybe_unused]] std::uint8_t pad_0xc2d8[0x17c0]; // 0xc2d8
-        float m_fNextLaneDetectionUpdate; // 0xda98        
-        float m_fNextTimedHeroStatsUpdate; // 0xda9c        
-        [[maybe_unused]] std::uint8_t pad_0xdaa0[0x2a0]; // 0xdaa0
-        bool m_bInitializedLaneWaypoints; // 0xdd40        
-        [[maybe_unused]] std::uint8_t pad_0xdd41[0x757]; // 0xdd41
-        uint32_t m_nLastWardSuggestionBuildingState; // 0xe498        
-        uint32_t m_nLastWardSuggestionUpdateNum; // 0xe49c        
-        bool m_bLastWardSuggestionRoshanAlive; // 0xe4a0        
-        bool m_bDoFinalPregameSuggestion[10]; // 0xe4a1        
-        [[maybe_unused]] std::uint8_t pad_0xe4ab[0x1]; // 0xe4ab
-        float m_fNextCreepDistanceUpdate; // 0xe4ac        
-        float m_fCreepDistanceSafe[15]; // 0xe4b0        
-        float m_fCreepDistanceMid[15]; // 0xe4ec        
-        float m_fCreepDistanceOff[15]; // 0xe528        
-        entity2::GameTime_t m_fLastSuggestionTime; // 0xe564        
-        bool m_bHasRevealedAnonymizedEnemyPlayerInfo; // 0xe568        
-        [[maybe_unused]] std::uint8_t pad_0xe569[0x607]; // 0xe569
-        client::PlayerID_t m_nRequestedBotPlayerID; // 0xeb70        
-        float m_fNextCombatLogLocationUpdateTime; // 0xeb74        
-        float m_fNextAPMUpdateTime; // 0xeb78        
-        [[maybe_unused]] std::uint8_t pad_0xeb7c[0x4]; // 0xeb7c
+        char m_DamageShareList[0x240]; // 0x8fb8        
+        server::DamageShareEvent_t m_AbsorbedDamageRollup[24][25]; // 0x91f8        
+        client::AbilityID_t m_playerAbilityUpgradeOrder[24][25]; // 0xae18        
+        int32_t m_playerAbilityUpgradeTimes[24][25]; // 0xb778        
+        int32_t m_playerAbilityUpgradeCount[24]; // 0xc0d8        
+        [[maybe_unused]] std::uint8_t pad_0xc138[0x40]; // 0xc138
+        int32_t m_fullUpdateCount[64]; // 0xc178        
+        int32_t m_iCouriersDeployed[24]; // 0xc278        
+        int32_t m_iCouriersPotentiallyKilled[24]; // 0xc2d8        
+        int32_t m_iCommandsIssued[24]; // 0xc338        
+        uint32_t m_hHeroSpawnGroup[24]; // 0xc398        
+        [[maybe_unused]] std::uint8_t pad_0xc3f8[0x17c0]; // 0xc3f8
+        float m_fNextLaneDetectionUpdate; // 0xdbb8        
+        float m_fNextTimedHeroStatsUpdate; // 0xdbbc        
+        [[maybe_unused]] std::uint8_t pad_0xdbc0[0x2a0]; // 0xdbc0
+        bool m_bInitializedLaneWaypoints; // 0xde60        
+        [[maybe_unused]] std::uint8_t pad_0xde61[0x757]; // 0xde61
+        uint32_t m_nLastWardSuggestionBuildingState; // 0xe5b8        
+        uint32_t m_nLastWardSuggestionUpdateNum; // 0xe5bc        
+        bool m_bLastWardSuggestionRoshanAlive; // 0xe5c0        
+        bool m_bDoFinalPregameSuggestion[10]; // 0xe5c1        
+        [[maybe_unused]] std::uint8_t pad_0xe5cb[0x1]; // 0xe5cb
+        float m_fNextCreepDistanceUpdate; // 0xe5cc        
+        float m_fCreepDistanceSafe[15]; // 0xe5d0        
+        float m_fCreepDistanceMid[15]; // 0xe60c        
+        float m_fCreepDistanceOff[15]; // 0xe648        
+        entity2::GameTime_t m_fLastSuggestionTime; // 0xe684        
+        bool m_bHasRevealedAnonymizedEnemyPlayerInfo; // 0xe688        
+        [[maybe_unused]] std::uint8_t pad_0xe689[0x607]; // 0xe689
+        client::PlayerID_t m_nRequestedBotPlayerID; // 0xec90        
+        float m_fNextCombatLogLocationUpdateTime; // 0xec94        
+        float m_fNextAPMUpdateTime; // 0xec98        
+        [[maybe_unused]] std::uint8_t pad_0xec9c[0x4]; // 0xec9c
         // m_vecPendingPlayerResourceRequests has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<uint32_t> m_vecPendingPlayerResourceRequests;
-        char m_vecPendingPlayerResourceRequests[0x18]; // 0xeb80        
-        int32_t m_iRampages[24]; // 0xeb98        
-        int32_t m_iTripleKills[24]; // 0xebf8        
-        int32_t m_iCouriersKilled[24]; // 0xec58        
-        int32_t m_iAegisesSnatched[24]; // 0xecb8        
-        int32_t m_iCheesesEaten[24]; // 0xed18        
-        int32_t m_iRapiersPurchased[24]; // 0xed78        
-        float m_flPushingDamage[24]; // 0xedd8        
-        int32_t m_iRoshanKillsNight[24]; // 0xee38        
-        int32_t m_iRoshanKillsDay[24]; // 0xee98        
-        int32_t m_iPortalsUsed[24]; // 0xeef8        
-        int32_t m_iWisdomRunesGained[24]; // 0xef58        
-        int32_t m_iShieldRunesGained[24]; // 0xefb8        
+        char m_vecPendingPlayerResourceRequests[0x18]; // 0xeca0        
+        int32_t m_iRampages[24]; // 0xecb8        
+        int32_t m_iTripleKills[24]; // 0xed18        
+        int32_t m_iCouriersKilled[24]; // 0xed78        
+        int32_t m_iAegisesSnatched[24]; // 0xedd8        
+        int32_t m_iCheesesEaten[24]; // 0xee38        
+        int32_t m_iRapiersPurchased[24]; // 0xee98        
+        float m_flPushingDamage[24]; // 0xeef8        
+        int32_t m_iRoshanKillsNight[24]; // 0xef58        
+        int32_t m_iRoshanKillsDay[24]; // 0xefb8        
+        int32_t m_iPortalsUsed[24]; // 0xf018        
+        int32_t m_iWisdomRunesGained[24]; // 0xf078        
+        int32_t m_iShieldRunesGained[24]; // 0xf0d8        
         
         // Static fields:
         static uint64_t &Get_s_unLobbySteamID() {return *reinterpret_cast<uint64_t*>(interfaces::g_schema->FindTypeScopeForModule("server.dll")->FindDeclaredClass("CDOTA_PlayerResource")->GetStaticFields()[0]->m_pInstance);};
@@ -231,5 +234,5 @@ namespace source2sdk::server
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTA_PlayerResource because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_PlayerResource) == 0xf018);
+    static_assert(sizeof(CDOTA_PlayerResource) == 0xf138);
 };

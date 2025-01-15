@@ -7694,6 +7694,7 @@
 27CMsgSignOutOverworld_Player
 27CMsgSosStopSoundEventHash_t
 27CMsgSteamLearnMatchHeroesV3
+27CMsgSteamLearnMatchInfoTeam
 27CMsgSteamLearnWardPlacement
 27CMsgUnderDraftData_ShopSlot
 27CNetworkedSequenceOperation
@@ -10326,6 +10327,7 @@
 34CMsgServerToGCMatchConnectionStats
 34CMsgServerToGCNewBloomGiftResponse
 34CMsgSteamLearnDataSourceDescObject
+34CMsgSteamLearnMatchInfoTeam_Player
 34CMsgSteamLearnPreGameItemPurchases
 34CNETMsg_SpawnGroup_SetCreationTick
 34CParticleCollectionBindingInstance
@@ -18829,6 +18831,7 @@ CDOTAFeaturedGamemodeSchema: Couldn't load resource %s
 CDOTAFogOfWarSystem::FrameUpdatePostEntityThink
 CDOTAFogOfWarTempViewers
 CDOTAGCServerSystem
+CDOTAGCServerSystem - SendSteamLearnMatchInfo CMsgSteamLearnMatchInfoTeam %d %d %d %d %d %d\n
 CDOTAGCServerSystem:: Failed to BZ2 compress private metadata.\n
 CDOTAGCServerSystem:: Finished submitting MatchSignOutStats.  MatchID = %llu\n
 CDOTAGCServerSystem::CheckUpdateConnectedPlayers: Need to tell GC player is no longer connected, but we don't have a leaver state?\n
@@ -31261,7 +31264,6 @@ DebugWeeklyQuestChallenge: Query completed for %s but hero id does not match sel
 Debugger connected\n
 Debugging helper to try out different autostyle configurations\n\tArguments:   \t<{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}> <var name> <value>\n
 Debugging stopped\n
-Dec 20 2024
 DecalEmitterSystem
 DeclareFunctions
 Decrease this modifier's stack count by 1
@@ -31573,6 +31575,7 @@ DotaMatchHero
 DotaMatchHeroes
 DotaMatchInfo
 DotaMatchInfoPlayer
+DotaMatchInfoTeam
 DotaMatchState
 DotaNeutralItem
 DotaPingWheel_global_server
@@ -33742,6 +33745,7 @@ Gem Slot
 Gem Type
 General information about the match as a whole
 General information about the match as a whole from the perspective of a particular user
+General information about the teams in the match
 General.Buy
 General.CastFail_InvalidTarget_MagicImmune
 General.Coins
@@ -38768,6 +38772,7 @@ J\n\fcheer_remaps
 J\n\finput_errors
 J\n\foutput_items
 J\n\rgold_received
+Jan 15 2025
 Job %s has EXCEEDED TIMEOUT THRESHOLD exclusive time: %ums >= %ums\n
 Job %s has EXCEEDED TIMEOUT THRESHOLD yield time: %ums >= %ums\n
 Job %s has spent >%2.3fms without yielding: %2.3fms\n
@@ -40902,6 +40907,7 @@ N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18RegisterDataSourceI26CMsgStea
 N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18RegisterDataSourceI26CMsgSteamLearnItemPurchaseEEvPKcS5_jjEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18RegisterDataSourceI26CMsgSteamLearnMatchStateV5EEvPKcS5_jjEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18RegisterDataSourceI27CMsgSteamLearnMatchHeroesV3EEvPKcS5_jjEUlvE_EE
+N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18RegisterDataSourceI27CMsgSteamLearnMatchInfoTeamEEvPKcS5_jjEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18RegisterDataSourceI27CMsgSteamLearnWardPlacementEEvPKcS5_jjEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18RegisterDataSourceI29CMsgSteamLearnMatchInfoPlayerEEvPKcS5_jjEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18RegisterDataSourceI30CMsgSteamLearnPlayerTimedStatsEEvPKcS5_jjEUlvE_EE
@@ -40916,6 +40922,7 @@ N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18SubmitToDataSourceI26CMsgStea
 N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18SubmitToDataSourceI26CMsgSteamLearnItemPurchaseEEvRK10CUtlVectorIyi10CUtlMemoryIyiEERKT_bEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18SubmitToDataSourceI26CMsgSteamLearnMatchStateV5EEvRK10CUtlVectorIyi10CUtlMemoryIyiEERKT_bEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18SubmitToDataSourceI27CMsgSteamLearnMatchHeroesV3EEvRK10CUtlVectorIyi10CUtlMemoryIyiEERKT_bEUlvE_EE
+N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18SubmitToDataSourceI27CMsgSteamLearnMatchInfoTeamEEvRK10CUtlVectorIyi10CUtlMemoryIyiEERKT_bEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18SubmitToDataSourceI27CMsgSteamLearnWardPlacementEEvRK10CUtlVectorIyi10CUtlMemoryIyiEERKT_bEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18SubmitToDataSourceI29CMsgSteamLearnMatchInfoPlayerEEvRK10CUtlVectorIyi10CUtlMemoryIyiEERKT_bEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18SubmitToDataSourceI30CMsgSteamLearnPlayerTimedStatsEEvRK10CUtlVectorIyi10CUtlMemoryIyiEERKT_bEUlvE_EE
@@ -50736,6 +50743,7 @@ because it is missing required fields
 bedlam
 begin
 behavior_level
+behavior_score
 behavior_score_variance
 belt
 belt_persona_1
@@ -66454,6 +66462,7 @@ m_iRangeCount
 m_iRangeCreepUpgradeGoldEarned
 m_iRank
 m_iRankTier
+m_iRankUncertainty
 m_iRankWagersAvailable
 m_iRankWagersMax
 m_iRapiersPurchased
@@ -66961,6 +66970,7 @@ m_nBeamFXIndex
 m_nBeamFlags
 m_nBeamType
 m_nBehaviorLevel
+m_nBehaviorScore
 m_nBinaryID
 m_nBinaryObjectID
 m_nBlackboardReferenceIdx
@@ -67034,6 +67044,7 @@ m_nColor
 m_nCombineVersion
 m_nComboCount
 m_nCommLevel
+m_nCommScore
 m_nCompletedPathID
 m_nCompletedSteps
 m_nCompressionType
@@ -75389,6 +75400,7 @@ n\eCMsgSQLUpgradeBattleBooster
 n\eCMsgServerToGCKillSummaries
 n\eCMsgServerToGCRequestStatus"8\n$CMsgServerToGCRequestStatus_Response
 n\eCMsgSteamLearnMatchHeroesV3
+n\eCMsgSteamLearnMatchInfoTeam
 n\eCMsgSteamLearnWardPlacement
 n\eCSVCMsg_FlattenedSerializer
 n\eDOTALobbyVisibility_Friends
@@ -75652,6 +75664,7 @@ n\fdata_objects
 n\fdata_strings
 n\fdenies_count
 n\fdetail_value
+n\fdire_players
 n\fdire_team_id
 n\fdouble_value
 n\fdropped_item
@@ -75766,6 +75779,7 @@ n\fpoint_amount
 n\fpoints_total
 n\fportals_used
 n\fposttoserver
+n\fprematch_mmr
 n\fprimary_attr
 n\fprocess_name
 n\fquery_values
@@ -75960,6 +75974,7 @@ n\ncmd_number
 n\ncoach_name
 n\ncoach_team
 n\ncomm_level
+n\ncomm_score
 n\ncomplexity
 n\ncomponents
 n\ncurr_items
@@ -78196,6 +78211,7 @@ num_killed_by_allies
 num_killed_by_faceless
 num_locations
 num_matches_to_search
+num_players_in_party
 num_recent_tips
 num_revenants
 num_scale_sets
@@ -81751,6 +81767,9 @@ preferred_map_variant
 preferred_name
 preferredcarryangles
 prefix_owner
+prematch_behavior_score
+prematch_comm_score
+prematch_rank_uncertainty
 premium
 premium_only
 premium_packs
@@ -82331,6 +82350,7 @@ radiant_hero_ids
 radiant_heroes_alive
 radiant_jungle
 radiant_only
+radiant_players
 radiant_positions
 radiant_secret_shop
 radiant_series_wins
@@ -82342,6 +82362,7 @@ radiant_team_logo_url
 radiant_team_name
 radiant_team_score
 radiant_team_tag
+radiant_team_won
 radiant_towers
 radius
 radius: %f
@@ -82413,6 +82434,7 @@ rank_completed
 rank_mmr_boost_type
 rank_spread_likert_scale
 rank_tier_score
+rank_uncertainty
 rank_uncertainty_change
 rank_wager_token
 rank_wagering_item
@@ -88032,6 +88054,7 @@ v2#.CMsgLobbyEventPoints.AccountPoints
 v2#.CMsgMatchDiretideCandy.PlayerCandy
 v2#.CMsgSOMultipleObjects.SingleObject
 v2#.CMsgSteamLearnDataSourceDescObject
+v2#.CMsgSteamLearnMatchInfoTeam.PlayerB
 v2#.CSVCMsg_GameEventList.descriptor_t
 v2$.CDOTAMatchMetadata.Team.ActionGrant
 v2$.CDOTAUserMsg_StatsHeroMinuteDetails

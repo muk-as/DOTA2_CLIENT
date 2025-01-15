@@ -5235,6 +5235,7 @@
 2#.CMsgMatchDiretideCandy.PlayerCandy
 2#.CMsgSOMultipleObjects.SingleObject
 2#.CMsgSteamLearnDataSourceDescObject
+2#.CMsgSteamLearnMatchInfoTeam.PlayerB
 2#.CSVCMsg_GameEventList.descriptor_t
 2#.ESteamLearnInferenceMetadataResult
 2#.google.protobuf.FieldOptions.CType
@@ -7815,6 +7816,7 @@
 27CMsgSignOutOverworld_Player
 27CMsgSosStopSoundEventHash_t
 27CMsgSteamLearnMatchHeroesV3
+27CMsgSteamLearnMatchInfoTeam
 27CMsgSteamLearnWardPlacement
 27CMsgUnderDraftData_ShopSlot
 27CNetworkedSequenceOperation
@@ -10435,6 +10437,7 @@
 34CMsgServerToGCMatchConnectionStats
 34CMsgServerToGCNewBloomGiftResponse
 34CMsgSteamLearnDataSourceDescObject
+34CMsgSteamLearnMatchInfoTeam_Player
 34CMsgSteamLearnPreGameItemPurchases
 34CNETMsg_SpawnGroup_SetCreationTick
 34CParticleCollectionBindingInstance
@@ -15421,7 +15424,6 @@
 9X ~3A9L$P
 9X$|hH
 9Xp~8H
-9YA1迦t
 9Z$|SH
 9kKillEaterEventType_Bristleback_KillsUnderFourQuillStacks
 9kKillEaterEventType_CrystalMaiden_ThreeHeroFreezingFields
@@ -17078,6 +17080,8 @@ ASN1 lib
 ASYNC_FIRE_AND_FORGET
 ATASAR
 ATAUP1
+ATLc%K
+ATLc%p
 ATSHcG
 ATSHcGP
 ATSHcO
@@ -19099,6 +19103,7 @@ CDOTAFeaturedGamemodeSchema: Couldn't load resource %s
 CDOTAFogOfWarSystem::FrameUpdatePostEntityThink
 CDOTAFogOfWarTempViewers
 CDOTAGCServerSystem
+CDOTAGCServerSystem - SendSteamLearnMatchInfo CMsgSteamLearnMatchInfoTeam %d %d %d %d %d %d
 CDOTAGCServerSystem:: Failed to BZ2 compress private metadata
 CDOTAGCServerSystem:: Finished submitting MatchSignOutStats.  MatchID = %llu
 CDOTAGCServerSystem::CheckUpdateConnectedPlayers: Need to tell GC player is no longer connected, but we don't have a leaver state
@@ -27726,6 +27731,7 @@ CMsgSteamLearnMatchHeroV3
 CMsgSteamLearnMatchHeroesV3
 CMsgSteamLearnMatchInfo
 CMsgSteamLearnMatchInfoPlayer
+CMsgSteamLearnMatchInfoTeam
 CMsgSteamLearnMatchStateV5
 CMsgSteamLearnNeutralItemPurchase
 CMsgSteamLearnPlayerTimedStats
@@ -32102,6 +32108,7 @@ DotaMatchHero
 DotaMatchHeroes
 DotaMatchInfo
 DotaMatchInfoPlayer
+DotaMatchInfoTeam
 DotaMatchState
 DotaNeutralItem
 DotaPingWheel_global_server
@@ -34314,6 +34321,7 @@ Gem Slot
 Gem Type
 General information about the match as a whole
 General information about the match as a whole from the perspective of a particular user
+General information about the teams in the match
 General.Buy
 General.CastFail_InvalidTarget_MagicImmune
 General.Coins
@@ -35717,14 +35725,18 @@ H9p sMI9
 H9w t:H9w(t$H9w0tNH9w8tXH9w@t2H9wHt\H9wPtf
 H9z r
 H9z s
+H;-aEv
+H;-acv
 H;2s&H
 H;2t-H
-H;=TYO
-H;=dPJ
+H;=MeI
+H;=ZTJ
+H;=djJ
+H;=gZG
 H;@XtJH
 H;D$pH
+H;E0sR
 H;G t`H;G
-H;G(tp
 H;z H
 H;z t
 H<E:J
@@ -39098,8 +39110,6 @@ L; tPH
 L; u>I
 L;#tGH
 L;$$tJA
-L;%V7
-L;%vOU
 L;(t8M
 L;0t`I
 L;4$t0A
@@ -39294,8 +39304,6 @@ LayeredGameRoot
 Lc!D;a
 Lc"D;b
 Lc#D;c
-Lc%BCR
-Lc%l~s
 Lc&Lc?D
 Lc'D;g
 Lc+D;k
@@ -41193,6 +41201,7 @@ N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18RegisterDataSourceI26CMsgStea
 N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18RegisterDataSourceI26CMsgSteamLearnItemPurchaseEEvPKcS5_jjEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18RegisterDataSourceI26CMsgSteamLearnMatchStateV5EEvPKcS5_jjEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18RegisterDataSourceI27CMsgSteamLearnMatchHeroesV3EEvPKcS5_jjEUlvE_EE
+N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18RegisterDataSourceI27CMsgSteamLearnMatchInfoTeamEEvPKcS5_jjEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18RegisterDataSourceI27CMsgSteamLearnWardPlacementEEvPKcS5_jjEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18RegisterDataSourceI29CMsgSteamLearnMatchInfoPlayerEEvPKcS5_jjEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18RegisterDataSourceI30CMsgSteamLearnPlayerTimedStatsEEvPKcS5_jjEUlvE_EE
@@ -41207,6 +41216,7 @@ N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18SubmitToDataSourceI26CMsgStea
 N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18SubmitToDataSourceI26CMsgSteamLearnItemPurchaseEEvRK10CUtlVectorIyi10CUtlMemoryIyiEERKT_bEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18SubmitToDataSourceI26CMsgSteamLearnMatchStateV5EEvRK10CUtlVectorIyi10CUtlMemoryIyiEERKT_bEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18SubmitToDataSourceI27CMsgSteamLearnMatchHeroesV3EEvRK10CUtlVectorIyi10CUtlMemoryIyiEERKT_bEUlvE_EE
+N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18SubmitToDataSourceI27CMsgSteamLearnMatchInfoTeamEEvRK10CUtlVectorIyi10CUtlMemoryIyiEERKT_bEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18SubmitToDataSourceI27CMsgSteamLearnWardPlacementEEvRK10CUtlVectorIyi10CUtlMemoryIyiEERKT_bEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18SubmitToDataSourceI29CMsgSteamLearnMatchInfoPlayerEEvRK10CUtlVectorIyi10CUtlMemoryIyiEERKT_bEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18SubmitToDataSourceI30CMsgSteamLearnPlayerTimedStatsEEvRK10CUtlVectorIyi10CUtlMemoryIyiEERKT_bEUlvE_EE
@@ -55705,6 +55715,7 @@ beastname
 because it is missing required fields
 behavior
 behavior_level
+behavior_score
 behavior_score_likert_scale
 behavior_score_variance
 belt_persona_1
@@ -57032,6 +57043,7 @@ combineshield
 combo_count
 comeback_gold
 comm_level
+comm_score
 command
 command queue logging of events
 command queue logging per player stats every N seconds, 0 to disable
@@ -58216,6 +58228,7 @@ dire_lanes
 dire_logo
 dire_name
 dire_only
+dire_players
 dire_positions
 dire_score
 dire_secret_shop
@@ -59608,6 +59621,7 @@ dynpitchvol_t
 dynstr
 dynsym
 e" must be followed by exponent
+e8[A\A]A
 eAbilityH
 eAbsOrigin
 eAction
@@ -66939,8 +66953,7 @@ lycan_summon_wolves_hightail
 lycan_summon_wolves_invisibility
 lycan_wolf_bite
 m E9o4t"I
-m H;-4Iv
-m8H;-N
+m H;-tTv
 mIcG81
 mIcIhIc
 mXRecord
@@ -71765,6 +71778,7 @@ m_iRangeCount
 m_iRangeCreepUpgradeGoldEarned
 m_iRank
 m_iRankTier
+m_iRankUncertainty
 m_iRankWagersAvailable
 m_iRankWagersMax
 m_iRapiersPurchased
@@ -72270,6 +72284,7 @@ m_nBeamFXIndex
 m_nBeamFlags
 m_nBeamType
 m_nBehaviorLevel
+m_nBehaviorScore
 m_nBinaryID
 m_nBinaryObjectID
 m_nBlackboardReferenceIdx
@@ -72343,6 +72358,7 @@ m_nColor
 m_nCombineVersion
 m_nComboCount
 m_nCommLevel
+m_nCommScore
 m_nCompletedPathID
 m_nCompletedSteps
 m_nCompressionType
@@ -80040,6 +80056,7 @@ num_killed_by_faceless
 num_locations
 num_matches_to_search
 num_packets
+num_players_in_party
 num_recent_tips
 num_revenants
 num_scale_sets
@@ -83759,6 +83776,10 @@ preferred_map_variant
 preferred_name
 preferredcarryangles
 prefix_owner
+prematch_behavior_score
+prematch_comm_score
+prematch_mmr
+prematch_rank_uncertainty
 premium_only
 premium_packs
 premium_point_cap_periodic_resource
@@ -84158,8 +84179,7 @@ pvs_flowtype
 pvs_modify_entity
 pvsplayer
 py_generic_services
-p|D;5
-p|D;5b
+p|D;5K
 qHcKHIc
 qangle
 qangle_pitch_yaw
@@ -84253,6 +84273,7 @@ radiant_lead
 radiant_logo
 radiant_name
 radiant_only
+radiant_players
 radiant_positions
 radiant_score
 radiant_secret_shop
@@ -84267,6 +84288,7 @@ radiant_team_logo_url
 radiant_team_name
 radiant_team_score
 radiant_team_tag
+radiant_team_won
 radiant_towers
 radiant_won
 radius
@@ -84339,6 +84361,7 @@ rank_stats
 rank_tier
 rank_tier_score
 rank_types
+rank_uncertainty
 rank_uncertainty_change
 rank_wager
 rank_wager_token

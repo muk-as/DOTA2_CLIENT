@@ -5324,8 +5324,6 @@
 1\n\tabilities
 1\n\taccolades
 1\n\vtree_events
-1\v5|HI
-1\v=!MN
 1] -> empty
 1] -> gsn(empty
 1] -> gsn(null
@@ -7684,6 +7682,7 @@
 27CMsgSignOutOverworld_Player
 27CMsgSosStopSoundEventHash_t
 27CMsgSteamLearnMatchHeroesV3
+27CMsgSteamLearnMatchInfoTeam
 27CMsgSteamLearnWardPlacement
 27CMsgUnderDraftData_ShopSlot
 27CNetworkedSequenceOperation
@@ -10314,6 +10313,7 @@
 34CMsgServerToGCMatchConnectionStats
 34CMsgServerToGCNewBloomGiftResponse
 34CMsgSteamLearnDataSourceDescObject
+34CMsgSteamLearnMatchInfoTeam_Player
 34CMsgSteamLearnPreGameItemPurchases
 34CNETMsg_SpawnGroup_SetCreationTick
 34CParticleCollectionBindingInstance
@@ -12028,7 +12028,6 @@
 3E;4$D
 3H;^\buuH
 3Hc~PH
-3L;\rT
 3\n!CDOTAUserMsg_TE_DestroyProjectile
 3\n!CMsgGCStorePurchaseCancelResponse
 3\n"CDOTAUserMsg_GamerulesStateChanged
@@ -15564,8 +15563,6 @@
 9X ~3A9L$P
 9X$|hH
 9Xp~8H
-9YA1譎t
-9YA1迦t
 9Z$|SH
 9\aroI
 9\n4kKillEaterEventType_Magnus_HeroesSlowedWithShockwave
@@ -17338,6 +17335,8 @@ ASYNC_FIRE_AND_FORGET
 AT#G@u
 ATASAR
 ATAUP1
+ATLc%K
+ATLc%p
 ATS;wH
 ATSHc
 ATSHcG
@@ -17414,7 +17413,6 @@ AUATtKH
 AUATtc
 AUATtsH
 AUATue
-AUAT辁w
 AVASARA
 AVATSH
 AVATSI
@@ -19368,6 +19366,7 @@ CDOTAFeaturedGamemodeSchema: Couldn't load resource %s
 CDOTAFogOfWarSystem::FrameUpdatePostEntityThink
 CDOTAFogOfWarTempViewers
 CDOTAGCServerSystem
+CDOTAGCServerSystem - SendSteamLearnMatchInfo CMsgSteamLearnMatchInfoTeam %d %d %d %d %d %d\n
 CDOTAGCServerSystem:: Failed to BZ2 compress private metadata.\n
 CDOTAGCServerSystem:: Finished submitting MatchSignOutStats.  MatchID = %llu\n
 CDOTAGCServerSystem::CheckUpdateConnectedPlayers: Need to tell GC player is no longer connected, but we don't have a leaver state?\n
@@ -29835,7 +29834,6 @@ D9&~jMc
 D9't3H
 D9(w*D9x
 D93~0L
-D955L
 D98tdL
 D98|\f
 D9H(u
@@ -29882,9 +29880,11 @@ D;0t6D
 D;0tyHc
 D;0u狽x
 D;4$}VD
+D;551R
 D;8tbH
 D;9t6HcQxH
 D;9t;A
+D;=ih
 D;@0tP
 D;Bht"H
 D;G\f}(HcO\bH
@@ -32327,6 +32327,7 @@ DotaMatchHero
 DotaMatchHeroes
 DotaMatchInfo
 DotaMatchInfoPlayer
+DotaMatchInfoTeam
 DotaMatchState
 DotaNeutralItem
 DotaPingWheel_global_server
@@ -32527,9 +32528,8 @@ E1\tKhfD
 E1\vO`H
 E1\vVHH
 E1\v{LL
-E1Ƀ=fE
 E1ɉJ\bH
-E1ɋ5[*y
+E1ɋ5+Ty
 E1ɋsHWL
 E1҉EčB
 E3GL(H
@@ -33457,7 +33457,6 @@ ËC<D9{0t"H
 EВu\a^H
 EЦT\\sH
 EвtMeH
-E܋5N\vI
 E܋x8f
 F A9G
 F A;F
@@ -34748,6 +34747,7 @@ Gem Slot
 Gem Type
 General information about the match as a whole
 General information about the match as a whole from the perspective of a particular user
+General information about the teams in the match
 General.Buy
 General.CastFail_InvalidTarget_MagicImmune
 General.Coins
@@ -36149,7 +36149,7 @@ H+l$\bL
 H+r\b;r
 H+s\b;s
 H+w\bH9
-H0H;\r
+H0H;\rm
 H19\b
 H3P H
 H3P(H
@@ -36221,6 +36221,10 @@ H9ƉJXu
 H9ƋJ\fI
 H9ǉJ\bu
 H9ǉS\bH
+H;-E6O
+H;-aEv
+H;-acv
+H;-d6O
 H;0t1I
 H;2s&H
 H;2sXH
@@ -36231,20 +36235,15 @@ H;2sxH
 H;8t/~M
 H;8tzD
 H;:tqI
-H;=A2U
-H;=A\rV
-H;=I9
-H;=LZI
-H;=QDT
-H;=TYO
-H;=\rZI
-H;=dPJ
-H;=f\fO
-H;=fbK
-H;=gZI
-H;=if
-H;=uhI
-H;=w V
+H;=0\bP
+H;=4B\v
+H;=MeI
+H;=PxS
+H;=QO\r
+H;=ZTJ
+H;=djJ
+H;=gZG
+H;=n3O
 H;@XtJH
 H;D$HH
 H;D$pH
@@ -36571,7 +36570,8 @@ HcSxA9
 HcT$(L
 HcVXH94
 HcW\bH
-Hc\rS[V
+Hc\rJ6I
+Hc\rXXW
 Hc\tHc\f
 Hc_ ;_0
 Hc_ H
@@ -38477,7 +38477,6 @@ Ic^8A;^H
 Ic^PA
 Ic^xA
 Ic_ A;_0
-Ic_ 蠙G
 Ic_PA
 Ic_XA;_hf
 Ice_Explosion_Decal
@@ -38495,7 +38494,7 @@ Ic|$0H
 Ic|$\b1
 Ic|$\bHc
 IcŉS\bH
-Icŋ5<5
+Icŋ5LN
 IcǉT$\f
 IcԉC(H
 IdempotencyLevel
@@ -39747,6 +39746,8 @@ Item_TournamentDrop
 Item_Traded
 Items: %d, %d, %d, %d, %d, %d, %d, %d, %d, %d\n
 J5`!gF
+J@L;\rZ
+J@L;\ri
 JH9HHt9H
 JInferences using supplied data, or data associated with the specified key
 JOINT-ISO-ITU-T
@@ -39959,11 +39960,8 @@ L; u>I
 L; u\nD;i
 L; uiI
 L;!s?H9
-L;%V7
-L;%vOU
+L;%Z1O
 L;(t8M
-L;-5QG
-L;-nxG
 L;0t`I
 L;4$t0A
 L;4$toM
@@ -40175,8 +40173,6 @@ Lc!D;a
 Lc"D;b
 Lc#D;c
 Lc#IcGxA9
-Lc%BCR
-Lc%l~s
 Lc&HcG
 Lc&Lc?D
 Lc(D;h
@@ -40188,7 +40184,7 @@ Lc3I\t
 Lc8D;x
 LcE\vSPI
 Lc\nLcR
-Lc\rciI
+Lc\r\t6R
 LcaXD;ahD
 Lcc D;c0
 Lcc D;c0D
@@ -42153,6 +42149,7 @@ N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18RegisterDataSourceI26CMsgStea
 N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18RegisterDataSourceI26CMsgSteamLearnItemPurchaseEEvPKcS5_jjEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18RegisterDataSourceI26CMsgSteamLearnMatchStateV5EEvPKcS5_jjEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18RegisterDataSourceI27CMsgSteamLearnMatchHeroesV3EEvPKcS5_jjEUlvE_EE
+N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18RegisterDataSourceI27CMsgSteamLearnMatchInfoTeamEEvPKcS5_jjEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18RegisterDataSourceI27CMsgSteamLearnWardPlacementEEvPKcS5_jjEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18RegisterDataSourceI29CMsgSteamLearnMatchInfoPlayerEEvPKcS5_jjEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18RegisterDataSourceI30CMsgSteamLearnPlayerTimedStatsEEvPKcS5_jjEUlvE_EE
@@ -42167,6 +42164,7 @@ N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18SubmitToDataSourceI26CMsgStea
 N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18SubmitToDataSourceI26CMsgSteamLearnItemPurchaseEEvRK10CUtlVectorIyi10CUtlMemoryIyiEERKT_bEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18SubmitToDataSourceI26CMsgSteamLearnMatchStateV5EEvRK10CUtlVectorIyi10CUtlMemoryIyiEERKT_bEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18SubmitToDataSourceI27CMsgSteamLearnMatchHeroesV3EEvRK10CUtlVectorIyi10CUtlMemoryIyiEERKT_bEUlvE_EE
+N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18SubmitToDataSourceI27CMsgSteamLearnMatchInfoTeamEEvRK10CUtlVectorIyi10CUtlMemoryIyiEERKT_bEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18SubmitToDataSourceI27CMsgSteamLearnWardPlacementEEvRK10CUtlVectorIyi10CUtlMemoryIyiEERKT_bEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18SubmitToDataSourceI29CMsgSteamLearnMatchInfoPlayerEEvRK10CUtlVectorIyi10CUtlMemoryIyiEERKT_bEUlvE_EE
 N5GCSDK17GCClientJobLambdaIZN18CSteamLearnManager18SubmitToDataSourceI30CMsgSteamLearnPlayerTimedStatsEEvRK10CUtlVectorIyi10CUtlMemoryIyiEERKT_bEUlvE_EE
@@ -44706,7 +44704,6 @@ RUNE_STATUS_AVAILABLE
 RUNE_STATUS_MISSING
 RUNE_STATUS_UNKNOWN
 R\bH9Q\bv\fH
-R\bHc\rȫU
 R\bI9S\bv\fH
 R\e \e1
 R\n(CMsgClientToGCOverworldDevClearInventory
@@ -49832,6 +49829,7 @@ X. q\n\f\a\bA\v
 X18,D
 X24_TYPELESS_G8_UINT
 X32_TYPELESS_G8X24_UINT
+X4Lc-\nZW
 X500algorithms
 X509 V3 routines
 X509 lib
@@ -49939,14 +49937,16 @@ YA1Ei
 YA1Hǃ(\b
 YA1IǄ$<\t
 YA1Lc
-YA1Mcn
+YA1Mcn,諕f
 YA1SH
 YA1fA
 YA1ƅq
 YA1ǅ\f
 YA1ǅt
 YA1ǅx
-YA1菺t
+YA1耪s
+YA1诣t
+YA1迀\f
 YHcCx1
 YIcN(Ic
 YP4v*K
@@ -56625,6 +56625,7 @@ bHasFrontalCone
 bHasInventory
 bHasMagicComponent
 bHasStartedBurning
+bHc5n
 bHc@0
 bHcC H
 bHcC01
@@ -56634,9 +56635,9 @@ bHcG\bL
 bHcR H
 bHc\aL
 bHc\eE1
-bHc\r
-bHc\rg{Y
-bHc\rqpY
+bHc\rG
+bHc\rQ
+bHc\rkES
 bHeartRegenApplied
 bHeroEffect
 bHeroID_t
@@ -57045,6 +57046,7 @@ beastmaster_wild_axes
 beastname
 because it is missing required fields
 behavior_level
+behavior_score
 behavior_score_variance
 belt_persona_1
 bench_slots
@@ -60890,6 +60892,7 @@ eEyesForward
 eEyesOnly
 eForward
 eH[A\\A]A
+eHc\r~5I
 eHolster
 eIcE(1
 eIcE@1
@@ -62482,6 +62485,7 @@ g0HcG(I
 g:l4d2
 g@IcG8H
 gHcC\bMc
+gHc\rh6R
 gIcN0Ic
 g\bHcXH
 g\n#particle_freeze_transition_override
@@ -67677,8 +67681,7 @@ lycan_summon_wolves_hightail
 lycan_summon_wolves_invisibility
 lycan_wolf_bite
 m E9o4t"I
-m H;-4Iv
-m8H;-N
+m H;-tTv
 m>1YA1A
 mA9]$|gI
 mHcC\b1
@@ -72509,6 +72512,7 @@ m_iRangeCount
 m_iRangeCreepUpgradeGoldEarned
 m_iRank
 m_iRankTier
+m_iRankUncertainty
 m_iRankWagersAvailable
 m_iRankWagersMax
 m_iRapiersPurchased
@@ -73014,6 +73018,7 @@ m_nBeamFXIndex
 m_nBeamFlags
 m_nBeamType
 m_nBehaviorLevel
+m_nBehaviorScore
 m_nBinaryID
 m_nBinaryObjectID
 m_nBlackboardReferenceIdx
@@ -73087,6 +73092,7 @@ m_nColor
 m_nCombineVersion
 m_nComboCount
 m_nCommLevel
+m_nCommScore
 m_nCompletedPathID
 m_nCompletedSteps
 m_nCompressionType
@@ -81318,6 +81324,7 @@ n\eCMsgSQLUpgradeBattleBooster
 n\eCMsgServerToGCKillSummaries
 n\eCMsgServerToGCRequestStatus"8\n$CMsgServerToGCRequestStatus_Response
 n\eCMsgSteamLearnMatchHeroesV3
+n\eCMsgSteamLearnMatchInfoTeam
 n\eCMsgSteamLearnWardPlacement
 n\eCSVCMsg_FlattenedSerializer
 n\eDOTALobbyVisibility_Friends
@@ -81593,6 +81600,7 @@ n\fdata_objects
 n\fdata_strings
 n\fdenies_count
 n\fdetail_value
+n\fdire_players
 n\fdire_team_id
 n\fdouble_value
 n\fdropped_item
@@ -81707,6 +81715,7 @@ n\fpoint_amount
 n\fpoints_total
 n\fportals_used
 n\fposttoserver
+n\fprematch_mmr
 n\fprimary_attr
 n\fprocess_name
 n\fquery_values
@@ -81901,6 +81910,7 @@ n\ncmd_number
 n\ncoach_name
 n\ncoach_team
 n\ncomm_level
+n\ncomm_score
 n\ncomplexity
 n\ncomponents
 n\ncurr_items
@@ -84123,6 +84133,7 @@ num_killed_by_allies
 num_killed_by_faceless
 num_locations
 num_matches_to_search
+num_players_in_party
 num_recent_tips
 num_revenants
 num_scale_sets
@@ -87723,6 +87734,9 @@ preferred_map_variant
 preferred_name
 preferredcarryangles
 prefix_owner
+prematch_behavior_score
+prematch_comm_score
+prematch_rank_uncertainty
 premium_only
 premium_packs
 premium_point_cap_periodic_resource
@@ -88097,9 +88111,7 @@ pvs_flowtype
 pvs_modify_entity
 pvsplayer
 py_generic_services
-p|D;5
-p|D;5\a
-p|D;5b
+p|D;5K\b
 q0[A\\A]A
 qHcKHIc
 qW"a؈p
@@ -88258,6 +88270,7 @@ radiant_hero_ids
 radiant_heroes_alive
 radiant_jungle
 radiant_only
+radiant_players
 radiant_positions
 radiant_secret_shop
 radiant_series_wins
@@ -88269,6 +88282,7 @@ radiant_team_logo_url
 radiant_team_name
 radiant_team_score
 radiant_team_tag
+radiant_team_won
 radiant_towers
 radius
 radius: %f
@@ -88332,6 +88346,7 @@ rank_completed
 rank_mmr_boost_type
 rank_spread_likert_scale
 rank_tier_score
+rank_uncertainty
 rank_uncertainty_change
 rank_wager_token
 rank_wagering_item
@@ -93079,6 +93094,7 @@ tMIcN\bM
 tMatchID_t
 tMatchID_t"L\n
 tMs;Hc
+tN;5gH
 tNHcC
 tNHcC8
 tNHcPP
@@ -94329,7 +94345,7 @@ uF[A\\A]A
 uF_iM,E
 uFn\e_rG:=pq
 uGH91uB
-uGL;%\b\tO
+uGL;%H
 uG[A\\A]A
 uHIcE@I
 uH[A\\A]A
@@ -94754,6 +94770,7 @@ v2#.CMsgLobbyEventPoints.AccountPoints
 v2#.CMsgMatchDiretideCandy.PlayerCandy
 v2#.CMsgSOMultipleObjects.SingleObject
 v2#.CMsgSteamLearnDataSourceDescObject
+v2#.CMsgSteamLearnMatchInfoTeam.PlayerB
 v2#.CSVCMsg_GameEventList.descriptor_t
 v2$.CDOTAMatchMetadata.Team.ActionGrant
 v2$.CDOTAUserMsg_StatsHeroMinuteDetails
