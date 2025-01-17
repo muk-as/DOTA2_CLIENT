@@ -328,11 +328,41 @@
 							</Button>
 							<DropDown id="TreasureQuantityDropDown" class="ColoredButton QuantityDropDown" />
 						</Panel>
-						<Panel class="CrownfallDiscountsContainer">
-							<Label class="CrownfallDiscountMessage" html="true" text="#DOTA_Collectors_Cache_2024_Crownfall_Discounts_Message" />
-							<DOTACrownfallButton class="CrownfallStoreButton Secondary 29639" text="#DOTA_Crownfall_ActPassButtonLabel_Embed" onactivate="DOTAShowBPCrownfallStoreItem( 29639 )" />
-							<DOTACrownfallButton class="CrownfallStoreButton Secondary 30279" text="#DOTA_Crownfall_ActPassButtonLabel_Embed" onactivate="DOTAShowBPCrownfallStoreItem( 30279 )" />
-							<DOTACrownfallButton class="CrownfallStoreButton Secondary 32609" text="#DOTA_Crownfall_ActPassButtonLabel_Embed" onactivate="DOTAShowBPCrownfallStoreItem( 32609 )" />
+						<Panel class="CrownfallDiscountsContainer" id="CrownfallDiscountsContainer">
+							<Panel class="CrownfallDiscountsContainerBorder" />
+							<Panel class="CrownfallActivationRow Row">
+								<DOTAParticleScenePanel id="DiscountModeActivateFX" hittest="false" particleName="particles/ui/events/discountmode_button.vpcf" renderdeferred="true" squarePixels="true" particleonly="true" startActive="true" cameraOrigin="0 0 310" lookAt="0 0 0" fov="40" />
+								<Label class="CrownfallDiscountMessage 29639" html="true" text="#DOTA_CrownfallStore_View" onactivate="DOTAShowBPCrownfallStoreItem( 29639 )" />
+								<Label class="CrownfallDiscountMessage 30279" html="true" text="#DOTA_CrownfallStore_View" onactivate="DOTAShowBPCrownfallStoreItem( 30279 )" />
+								<Label class="CrownfallDiscountMessage 32609" html="true" text="#DOTA_CrownfallStore_View" onactivate="DOTAShowBPCrownfallStoreItem( 32609 )" />
+								<Panel class="Row 29639 30279 32609 CrownfallCoinsSection" onmouseover="UIShowTextTooltip( #DOTA_CrownfallStore_CoinsInfo )" onmouseout="UIHideTextTooltip()">
+									<Panel class="CoinsIconContainer">
+										<AnimatedImageStrip id="CoinsIcon" src="s2r://panorama/images/emoticons/crownfall/props/prop_reward_coin_idle_png.vtex" />
+										<Label class="TotalCoinCount LabelLarge TextShadowMedium WhiteText" text="#DOTA_Crownfall_Store_CoinsCount" />
+									</Panel>
+									<DOTACrownfallButton class="activateButton" text="#DOTA_CrownfallStore_ActivateDiscount" onactivate="DOTATreasureToggleCrownfallDiscountActive()" />
+									<DOTACrownfallButton class="deactivateButton" text="#DOTA_CrownfallStore_DeactivateDiscount" onactivate="DOTATreasureToggleCrownfallDiscountActive()" />
+								</Panel>
+							</Panel>
+							<Panel class="DiscountActiveContainer">
+								<Label text="#DOTA_DiscountActive" />
+							</Panel>
+							<Panel class="CrownfallPurchaseButtonRow Row 29639 30279 32609">
+								<DOTACrownfallPurchaseButton id="Purchase29639" class="29639 BundlePurchaseButton HasDiscountPrice" text="#DOTA_Purchase_CC_Bundle" itemdef="30235" consumeafterpurchase="true" />
+								<DOTACrownfallPurchaseButton id="Purchase30279" class="30279 BundlePurchaseButton HasDiscountPrice" text="#DOTA_Purchase_CC_Bundle" itemdef="32621" consumeafterpurchase="true" />
+								<DOTACrownfallPurchaseButton id="Purchase32609" class="32609 BundlePurchaseButton HasDiscountPrice" text="#DOTA_Purchase_CC_Bundle" itemdef="32649" consumeafterpurchase="true" />
+							</Panel>
+							<Panel id="CancelTransactionErrorMessage">
+								<Image class="ErrorIcon" src="s2r://panorama/images/control_icons/24px/warning.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+								<Label class="ErrorTextLabel BodySmall LightGreyText" text="#DOTA_ImmediatePurchase_CanCancelMessage" />
+								<Button id="CancelButton" class="ButtonPrimary DarkGrey" onactivate="DOTATreasureCrownfallCancelInFlightTransactions()">
+									<Label text="#DOTA_UI_Cancel" />
+								</Button>
+							</Panel>
+							<Panel id="TransactionErrorMessage">
+								<Image class="ErrorIcon" src="s2r://panorama/images/control_icons/24px/warning.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+								<Label class="ErrorTextLabel BodySmall LightGreyText" text="#DOTA_ImmediatePurchase_CantCancelMessage" />
+							</Panel>
 						</Panel>
 						<Panel id="ShardPurchaseRow" class="TreasureDetailsRow">
 							<Button id="ShardPurchaseButton" class="PurchaseButton ColoredButton" onactivate="DOTAPurchaseSelectedTreasureForShards()" onmouseover="DOTAShowSelectedOpenTreasureTooltip();" onmouseout="DOTAHideOpenTreasureTooltip();">
