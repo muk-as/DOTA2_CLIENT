@@ -47,7 +47,7 @@ namespace source2sdk::client
     // Registered alignment: unknown
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0xac28
+    // Size: 0xac30
     // Has VTable
     // 
     // static metadata: MNetworkVarNames "int m_nRuneCycle"
@@ -692,61 +692,61 @@ namespace source2sdk::client
         // metadata: MNetworkEnable
         int32_t m_nARDMHeroesRemaining[2]; // 0xc48        
         bool m_bUpdateHeroStatues; // 0xc50        
-        [[maybe_unused]] std::uint8_t pad_0xc51[0x17]; // 0xc51
+        [[maybe_unused]] std::uint8_t pad_0xc51[0x1f]; // 0xc51
         // metadata: MNetworkEnable
-        bool m_bExperimentalGameplay; // 0xc68        
-        [[maybe_unused]] std::uint8_t pad_0xc69[0x47]; // 0xc69
+        bool m_bExperimentalGameplay; // 0xc70        
+        [[maybe_unused]] std::uint8_t pad_0xc71[0x47]; // 0xc71
         // metadata: MNetworkEnable
-        uint32_t m_lobbyType; // 0xcb0        
+        uint32_t m_lobbyType; // 0xcb8        
         // metadata: MNetworkEnable
-        client::LeagueID_t m_lobbyLeagueID; // 0xcb4        
+        client::LeagueID_t m_lobbyLeagueID; // 0xcbc        
         // metadata: MNetworkEnable
-        char m_lobbyGameName[256]; // 0xcb8        
+        char m_lobbyGameName[256]; // 0xcc0        
         // metadata: MNetworkEnable
         // metadata: MNetworkChangeCallback "OnHeroStatueLiked"
         // m_vecHeroStatueLiked has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // C_UtlVectorEmbeddedNetworkVar<client::CHeroStatueLiked> m_vecHeroStatueLiked;
-        char m_vecHeroStatueLiked[0x68]; // 0xdb8        
+        char m_vecHeroStatueLiked[0x68]; // 0xdc0        
         // metadata: MNetworkEnable
-        int32_t m_CustomGameTeamMaxPlayers[15]; // 0xe20        
+        int32_t m_CustomGameTeamMaxPlayers[15]; // 0xe28        
         // metadata: MNetworkEnable
-        int32_t m_iMutations[5]; // 0xe5c        
+        int32_t m_iMutations[5]; // 0xe64        
         // metadata: MNetworkEnable
         // m_vecIngameEvents has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // C_NetworkUtlVectorBase<CHandle<client::C_IngameEvent_Base>> m_vecIngameEvents;
-        char m_vecIngameEvents[0x18]; // 0xe70        
+        char m_vecIngameEvents[0x18]; // 0xe78        
         // metadata: MNetworkEnable
-        int8_t m_nPrimaryIngameEventIndex; // 0xe88        
-        [[maybe_unused]] std::uint8_t pad_0xe89[0x3]; // 0xe89
+        int8_t m_nPrimaryIngameEventIndex; // 0xe90        
+        [[maybe_unused]] std::uint8_t pad_0xe91[0x3]; // 0xe91
         // metadata: MNetworkEnable
         // metadata: MNetworkChangeCallback "OnObsoleteIngameEventChanged"
         // metadata: MNetworkAlias "m_hIngameEvent"
         // m_hObsoleteIngameEvent has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<client::C_IngameEvent_Base> m_hObsoleteIngameEvent;
-        char m_hObsoleteIngameEvent[0x4]; // 0xe8c        
-        uint32_t m_nOfrendaPledges; // 0xe90        
-        uint32_t m_nRadiantOfrendas; // 0xe94        
-        uint32_t m_nDireOfrendas; // 0xe98        
+        char m_hObsoleteIngameEvent[0x4]; // 0xe94        
+        uint32_t m_nOfrendaPledges; // 0xe98        
+        uint32_t m_nRadiantOfrendas; // 0xe9c        
+        uint32_t m_nDireOfrendas; // 0xea0        
         // metadata: MNetworkEnable
-        bool m_bOfrendaEnabled; // 0xe9c        
-        [[maybe_unused]] std::uint8_t pad_0xe9d[0x33]; // 0xe9d
+        bool m_bOfrendaEnabled; // 0xea4        
+        [[maybe_unused]] std::uint8_t pad_0xea5[0x33]; // 0xea5
         // metadata: MNetworkEnable
         // m_NeutralSpawnBoxes has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // C_NetworkUtlVectorBase<client::NeutralSpawnBoxes_t> m_NeutralSpawnBoxes;
-        char m_NeutralSpawnBoxes[0x18]; // 0xed0        
+        char m_NeutralSpawnBoxes[0x18]; // 0xed8        
         // metadata: MNetworkEnable
         // m_RegionTriggerBoxes has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // C_NetworkUtlVectorBase<client::RegionTriggerBoxes_t> m_RegionTriggerBoxes;
-        char m_RegionTriggerBoxes[0x18]; // 0xee8        
-        [[maybe_unused]] std::uint8_t pad_0xf00[0xfb8]; // 0xf00
-        double m_flLastPerfSampleTime; // 0x1eb8        
-        double m_flLastPerfSampleSendTime; // 0x1ec0        
-        bool m_bDidSeeStrategyTime; // 0x1ec8        
-        [[maybe_unused]] std::uint8_t pad_0x1ec9[0x8d57]; // 0x1ec9
-        double m_flLastUnfocusedSleepTime; // 0xac20        
+        char m_RegionTriggerBoxes[0x18]; // 0xef0        
+        [[maybe_unused]] std::uint8_t pad_0xf08[0xfb8]; // 0xf08
+        double m_flLastPerfSampleTime; // 0x1ec0        
+        double m_flLastPerfSampleSendTime; // 0x1ec8        
+        bool m_bDidSeeStrategyTime; // 0x1ed0        
+        [[maybe_unused]] std::uint8_t pad_0x1ed1[0x8d57]; // 0x1ed1
+        double m_flLastUnfocusedSleepTime; // 0xac28        
     };
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in C_DOTAGamerules because it is not a standard-layout class
-    static_assert(sizeof(C_DOTAGamerules) == 0xac28);
+    static_assert(sizeof(C_DOTAGamerules) == 0xac30);
 };
