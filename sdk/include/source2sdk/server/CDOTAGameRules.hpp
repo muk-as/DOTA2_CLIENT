@@ -69,7 +69,7 @@ namespace source2sdk::server
     // Registered alignment: unknown
     // Alignment: 0x8
     // Standard-layout class: false
-    // Size: 0x57d8
+    // Size: 0x57e0
     // Has VTable
     // 
     // static metadata: MNetworkVarNames "int m_nRuneCycle"
@@ -756,187 +756,187 @@ namespace source2sdk::server
         // m_mapSuccessfulSmokes has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlOrderedMap<client::PlayerID_t,int32_t> m_mapSuccessfulSmokes;
         char m_mapSuccessfulSmokes[0x28]; // 0x11f0        
-        [[maybe_unused]] std::uint8_t pad_0x1218[0x18]; // 0x1218
+        [[maybe_unused]] std::uint8_t pad_0x1218[0x20]; // 0x1218
         // metadata: MNetworkEnable
-        bool m_bExperimentalGameplay; // 0x1230        
-        [[maybe_unused]] std::uint8_t pad_0x1231[0x1f]; // 0x1231
+        bool m_bExperimentalGameplay; // 0x1238        
+        [[maybe_unused]] std::uint8_t pad_0x1239[0x1f]; // 0x1239
         // m_vecHeroPickRecord has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<client::HeroPickRecord_t> m_vecHeroPickRecord;
-        char m_vecHeroPickRecord[0x18]; // 0x1250        
-        [[maybe_unused]] std::uint8_t pad_0x1268[0x28]; // 0x1268
+        char m_vecHeroPickRecord[0x18]; // 0x1258        
+        [[maybe_unused]] std::uint8_t pad_0x1270[0x28]; // 0x1270
         // m_vecHeroDeathRecord has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<client::HeroDeathRecord_t> m_vecHeroDeathRecord;
-        char m_vecHeroDeathRecord[0x18]; // 0x1290        
-        [[maybe_unused]] std::uint8_t pad_0x12a8[0x18]; // 0x12a8
+        char m_vecHeroDeathRecord[0x18]; // 0x1298        
+        [[maybe_unused]] std::uint8_t pad_0x12b0[0x18]; // 0x12b0
         // m_BadResultPositionTriggers has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<CHandle<server::CBaseEntity>> m_BadResultPositionTriggers;
-        char m_BadResultPositionTriggers[0x18]; // 0x12c0        
+        char m_BadResultPositionTriggers[0x18]; // 0x12c8        
         // m_RoshanPositionTriggers has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<CHandle<server::CBaseEntity>> m_RoshanPositionTriggers;
-        char m_RoshanPositionTriggers[0x18]; // 0x12d8        
+        char m_RoshanPositionTriggers[0x18]; // 0x12e0        
         // m_vecAllDraftHeroPickRecord has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<client::HeroPickRecord_t> m_vecAllDraftHeroPickRecord;
-        char m_vecAllDraftHeroPickRecord[0x18]; // 0x12f0        
+        char m_vecAllDraftHeroPickRecord[0x18]; // 0x12f8        
         // m_vecAbilityDraftOrder has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlOrderedMap<client::PlayerID_t,CUtlVector<client::AbilityID_t>> m_vecAbilityDraftOrder;
-        char m_vecAbilityDraftOrder[0x28]; // 0x1308        
-        [[maybe_unused]] std::uint8_t pad_0x1330[0x18]; // 0x1330
-        int32_t m_nAllDraftHeroPickCollisionsThisPhase; // 0x1348        
-        [[maybe_unused]] std::uint8_t pad_0x134c[0x4]; // 0x134c
+        char m_vecAbilityDraftOrder[0x28]; // 0x1310        
+        [[maybe_unused]] std::uint8_t pad_0x1338[0x18]; // 0x1338
+        int32_t m_nAllDraftHeroPickCollisionsThisPhase; // 0x1350        
+        [[maybe_unused]] std::uint8_t pad_0x1354[0x4]; // 0x1354
         // m_hRuneSpawners has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<CHandle<server::CBaseEntity>> m_hRuneSpawners;
-        char m_hRuneSpawners[0x18]; // 0x1350        
+        char m_hRuneSpawners[0x18]; // 0x1358        
         // m_hBountyRuneSpawners has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<CHandle<server::CBaseEntity>> m_hBountyRuneSpawners;
-        char m_hBountyRuneSpawners[0x18]; // 0x1368        
+        char m_hBountyRuneSpawners[0x18]; // 0x1370        
         // m_hXPRuneSpawners has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<CHandle<server::CBaseEntity>> m_hXPRuneSpawners;
-        char m_hXPRuneSpawners[0x18]; // 0x1380        
+        char m_hXPRuneSpawners[0x18]; // 0x1388        
         // m_hNeutralSpawners has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<CHandle<server::CBaseEntity>> m_hNeutralSpawners[2];
-        char m_hNeutralSpawners[0x30]; // 0x1398        
-        int32_t m_iPreviousRune1; // 0x13c8        
-        int32_t m_iPreviousRune2; // 0x13cc        
+        char m_hNeutralSpawners[0x30]; // 0x13a0        
+        int32_t m_iPreviousRune1; // 0x13d0        
+        int32_t m_iPreviousRune2; // 0x13d4        
         // m_vecAvailableRunes has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<int32_t> m_vecAvailableRunes;
-        char m_vecAvailableRunes[0x18]; // 0x13d0        
-        float m_fNextPowerupRuneSpawnTime; // 0x13e8        
-        float m_fNextBountyRuneSpawnTime; // 0x13ec        
-        float m_fNextBountyRunePrepTime; // 0x13f0        
-        float m_fNextXPRuneSpawnTime; // 0x13f4        
-        bool m_aNeutralChoicesLoaded[5]; // 0x13f8        
-        bool m_bFirstPowerupRune; // 0x13fd        
-        bool m_bFirstBountyRune; // 0x13fe        
-        bool m_bFilterMoreGold; // 0x13ff        
-        bool m_bAllowOutpostXP; // 0x1400        
-        [[maybe_unused]] std::uint8_t pad_0x1401[0x3]; // 0x1401
+        char m_vecAvailableRunes[0x18]; // 0x13d8        
+        float m_fNextPowerupRuneSpawnTime; // 0x13f0        
+        float m_fNextBountyRuneSpawnTime; // 0x13f4        
+        float m_fNextBountyRunePrepTime; // 0x13f8        
+        float m_fNextXPRuneSpawnTime; // 0x13fc        
+        bool m_aNeutralChoicesLoaded[5]; // 0x1400        
+        bool m_bFirstPowerupRune; // 0x1405        
+        bool m_bFirstBountyRune; // 0x1406        
+        bool m_bFilterMoreGold; // 0x1407        
+        bool m_bAllowOutpostXP; // 0x1408        
+        [[maybe_unused]] std::uint8_t pad_0x1409[0x3]; // 0x1409
         // m_hRoshanSpawner has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<server::CBaseEntity> m_hRoshanSpawner;
-        char m_hRoshanSpawner[0x4]; // 0x1404        
-        int32_t m_iPreviousSpectators; // 0x1408        
-        uint32_t m_nMaxSpectators; // 0x140c        
+        char m_hRoshanSpawner[0x4]; // 0x140c        
+        int32_t m_iPreviousSpectators; // 0x1410        
+        uint32_t m_nMaxSpectators; // 0x1414        
         // m_hDroppedItems has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<CHandle<server::CBaseEntity>> m_hDroppedItems;
-        char m_hDroppedItems[0x18]; // 0x1410        
+        char m_hDroppedItems[0x18]; // 0x1418        
         // m_hWards has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<CHandle<server::CBaseEntity>> m_hWards;
-        char m_hWards[0x18]; // 0x1428        
+        char m_hWards[0x18]; // 0x1430        
         // m_hGameEvents has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CHandle<server::CBaseEntity> m_hGameEvents;
-        char m_hGameEvents[0x4]; // 0x1440        
-        [[maybe_unused]] std::uint8_t pad_0x1444[0x1c]; // 0x1444
+        char m_hGameEvents[0x4]; // 0x1448        
+        [[maybe_unused]] std::uint8_t pad_0x144c[0x1c]; // 0x144c
         // m_Towers has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<CHandle<server::CBaseEntity>> m_Towers;
-        char m_Towers[0x18]; // 0x1460        
+        char m_Towers[0x18]; // 0x1468        
         // m_TeamTowers has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<CHandle<server::CDOTA_BaseNPC_Tower>> m_TeamTowers[10];
-        char m_TeamTowers[0xf0]; // 0x1478        
+        char m_TeamTowers[0xf0]; // 0x1480        
         // m_Outposts has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<CHandle<server::CBaseEntity>> m_Outposts;
-        char m_Outposts[0x18]; // 0x1568        
+        char m_Outposts[0x18]; // 0x1570        
         // m_TeamTowerPositions has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<Vector> m_TeamTowerPositions[10];
-        char m_TeamTowerPositions[0xf0]; // 0x1580        
+        char m_TeamTowerPositions[0xf0]; // 0x1588        
         // m_TeamTowerLevels has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<int32_t> m_TeamTowerLevels[10];
-        char m_TeamTowerLevels[0xf0]; // 0x1670        
+        char m_TeamTowerLevels[0xf0]; // 0x1678        
         // m_TeamTowerLanes has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<int32_t> m_TeamTowerLanes[10];
-        char m_TeamTowerLanes[0xf0]; // 0x1760        
+        char m_TeamTowerLanes[0xf0]; // 0x1768        
         // m_TeamBarracks has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<CHandle<server::CDOTA_BaseNPC_Building>> m_TeamBarracks[10];
-        char m_TeamBarracks[0xf0]; // 0x1850        
+        char m_TeamBarracks[0xf0]; // 0x1858        
         // m_TeamShrines has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<CHandle<server::CDOTA_BaseNPC_Building>> m_TeamShrines[10];
-        char m_TeamShrines[0xf0]; // 0x1940        
-        server::CountdownTimer m_TempDayTimer; // 0x1a30        
-        server::CountdownTimer m_TempNightTimer; // 0x1a48        
-        server::CountdownTimer m_NightstalkerNightTimer; // 0x1a60        
-        server::CountdownTimer m_TempRiverTimer; // 0x1a78        
-        bool m_bUseLenientAFK[2]; // 0x1a90        
-        bool m_bFirstBlood; // 0x1a92        
-        [[maybe_unused]] std::uint8_t pad_0x1a93[0x1]; // 0x1a93
-        int32_t m_nFirstBloodTime; // 0x1a94        
-        server::CountdownTimer m_CheckIdleTimer; // 0x1a98        
-        client::PlayerID_t m_nAnnounceHeroPickRadiantPlayerID; // 0x1ab0        
-        client::PlayerID_t m_nAnnounceHeroPickDirePlayerID; // 0x1ab4        
-        CUtlString m_pszLastUsedAbility[64]; // 0x1ab8        
+        char m_TeamShrines[0xf0]; // 0x1948        
+        server::CountdownTimer m_TempDayTimer; // 0x1a38        
+        server::CountdownTimer m_TempNightTimer; // 0x1a50        
+        server::CountdownTimer m_NightstalkerNightTimer; // 0x1a68        
+        server::CountdownTimer m_TempRiverTimer; // 0x1a80        
+        bool m_bUseLenientAFK[2]; // 0x1a98        
+        bool m_bFirstBlood; // 0x1a9a        
+        [[maybe_unused]] std::uint8_t pad_0x1a9b[0x1]; // 0x1a9b
+        int32_t m_nFirstBloodTime; // 0x1a9c        
+        server::CountdownTimer m_CheckIdleTimer; // 0x1aa0        
+        client::PlayerID_t m_nAnnounceHeroPickRadiantPlayerID; // 0x1ab8        
+        client::PlayerID_t m_nAnnounceHeroPickDirePlayerID; // 0x1abc        
+        CUtlString m_pszLastUsedAbility[64]; // 0x1ac0        
         // m_reconnectinfos has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<client::CDOTA_ReconnectInfo> m_reconnectinfos;
-        char m_reconnectinfos[0x18]; // 0x1cb8        
+        char m_reconnectinfos[0x18]; // 0x1cc0        
         // m_hEnemyCreepsInBase has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<CHandle<server::CBaseEntity>> m_hEnemyCreepsInBase[10];
-        char m_hEnemyCreepsInBase[0xf0]; // 0x1cd0        
-        bool m_bTeamHasAbandonedPlayer[10]; // 0x1dc0        
-        bool m_bLobbyHasLeaverDetected; // 0x1dca        
-        bool m_bGameIsForcedSafeToLeave; // 0x1dcb        
-        bool m_bLobbyHasDicardMatchResults; // 0x1dcc        
-        [[maybe_unused]] std::uint8_t pad_0x1dcd[0x3]; // 0x1dcd
-        int32_t m_iGameEndReason; // 0x1dd0        
-        bool m_bNotifiedPlayerLeaverStatus[64]; // 0x1dd4        
-        bool m_bUploadedReplay; // 0x1e14        
-        [[maybe_unused]] std::uint8_t pad_0x1e15[0x3]; // 0x1e15
-        float m_flLobbyWaitTime; // 0x1e18        
-        bool m_bGameWasLoaded; // 0x1e1c        
+        char m_hEnemyCreepsInBase[0xf0]; // 0x1cd8        
+        bool m_bTeamHasAbandonedPlayer[10]; // 0x1dc8        
+        bool m_bLobbyHasLeaverDetected; // 0x1dd2        
+        bool m_bGameIsForcedSafeToLeave; // 0x1dd3        
+        bool m_bLobbyHasDicardMatchResults; // 0x1dd4        
+        [[maybe_unused]] std::uint8_t pad_0x1dd5[0x3]; // 0x1dd5
+        int32_t m_iGameEndReason; // 0x1dd8        
+        bool m_bNotifiedPlayerLeaverStatus[64]; // 0x1ddc        
+        bool m_bUploadedReplay; // 0x1e1c        
         [[maybe_unused]] std::uint8_t pad_0x1e1d[0x3]; // 0x1e1d
-        int32_t m_nLoadPauseFrameCount; // 0x1e20        
-        [[maybe_unused]] std::uint8_t pad_0x1e24[0x4]; // 0x1e24
-        double m_flStateFallbackTransitionTime; // 0x1e28        
-        server::EngineCountdownTimer m_timerFinishReplay; // 0x1e30        
+        float m_flLobbyWaitTime; // 0x1e20        
+        bool m_bGameWasLoaded; // 0x1e24        
+        [[maybe_unused]] std::uint8_t pad_0x1e25[0x3]; // 0x1e25
+        int32_t m_nLoadPauseFrameCount; // 0x1e28        
+        [[maybe_unused]] std::uint8_t pad_0x1e2c[0x4]; // 0x1e2c
+        double m_flStateFallbackTransitionTime; // 0x1e30        
+        server::EngineCountdownTimer m_timerFinishReplay; // 0x1e38        
         // m_vecChatLog has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<server::GameChatLogEntry_t> m_vecChatLog;
-        char m_vecChatLog[0x18]; // 0x1e48        
-        [[maybe_unused]] std::uint8_t pad_0x1e60[0x2658]; // 0x1e60
-        bool m_bFatalErrorAbortGame; // 0x44b8        
-        bool m_bFillEmptySlotsWithBots; // 0x44b9        
-        [[maybe_unused]] std::uint8_t pad_0x44ba[0x2]; // 0x44ba
-        uint32_t m_dotaMapSpawnGroup; // 0x44bc        
-        [[maybe_unused]] std::uint8_t pad_0x44c0[0x28]; // 0x44c0
+        char m_vecChatLog[0x18]; // 0x1e50        
+        [[maybe_unused]] std::uint8_t pad_0x1e68[0x2658]; // 0x1e68
+        bool m_bFatalErrorAbortGame; // 0x44c0        
+        bool m_bFillEmptySlotsWithBots; // 0x44c1        
+        [[maybe_unused]] std::uint8_t pad_0x44c2[0x2]; // 0x44c2
+        uint32_t m_dotaMapSpawnGroup; // 0x44c4        
+        [[maybe_unused]] std::uint8_t pad_0x44c8[0x28]; // 0x44c8
         // metadata: MNetworkEnable
-        uint32_t m_lobbyType; // 0x44e8        
+        uint32_t m_lobbyType; // 0x44f0        
         // metadata: MNetworkEnable
-        client::LeagueID_t m_lobbyLeagueID; // 0x44ec        
+        client::LeagueID_t m_lobbyLeagueID; // 0x44f4        
         // metadata: MNetworkEnable
-        char m_lobbyGameName[256]; // 0x44f0        
+        char m_lobbyGameName[256]; // 0x44f8        
         // metadata: MNetworkEnable
         // metadata: MNetworkChangeCallback "OnHeroStatueLiked"
         // m_vecHeroStatueLiked has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVectorEmbeddedNetworkVar<server::CHeroStatueLiked> m_vecHeroStatueLiked;
-        char m_vecHeroStatueLiked[0x88]; // 0x45f0        
+        char m_vecHeroStatueLiked[0x88]; // 0x45f8        
         // metadata: MNetworkEnable
-        int32_t m_CustomGameTeamMaxPlayers[15]; // 0x4678        
-        [[maybe_unused]] std::uint8_t pad_0x46b4[0x44]; // 0x46b4
+        int32_t m_CustomGameTeamMaxPlayers[15]; // 0x4680        
+        [[maybe_unused]] std::uint8_t pad_0x46bc[0x44]; // 0x46bc
         // metadata: MNetworkEnable
-        int32_t m_iMutations[5]; // 0x46f8        
-        [[maybe_unused]] std::uint8_t pad_0x470c[0x4]; // 0x470c
+        int32_t m_iMutations[5]; // 0x4700        
+        [[maybe_unused]] std::uint8_t pad_0x4714[0x4]; // 0x4714
         // metadata: MNetworkEnable
         // m_vecIngameEvents has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CNetworkUtlVectorBase<CHandle<server::CIngameEvent_Base>> m_vecIngameEvents;
-        char m_vecIngameEvents[0x18]; // 0x4710        
+        char m_vecIngameEvents[0x18]; // 0x4718        
         // metadata: MNetworkEnable
-        int8_t m_nPrimaryIngameEventIndex; // 0x4728        
-        [[maybe_unused]] std::uint8_t pad_0x4729[0x3]; // 0x4729
-        uint32_t m_nOfrendaPledges; // 0x472c        
-        uint32_t m_nRadiantOfrendas; // 0x4730        
-        uint32_t m_nDireOfrendas; // 0x4734        
+        int8_t m_nPrimaryIngameEventIndex; // 0x4730        
+        [[maybe_unused]] std::uint8_t pad_0x4731[0x3]; // 0x4731
+        uint32_t m_nOfrendaPledges; // 0x4734        
+        uint32_t m_nRadiantOfrendas; // 0x4738        
+        uint32_t m_nDireOfrendas; // 0x473c        
         // metadata: MNetworkEnable
-        bool m_bOfrendaEnabled; // 0x4738        
-        [[maybe_unused]] std::uint8_t pad_0x4739[0x7]; // 0x4739
+        bool m_bOfrendaEnabled; // 0x4740        
+        [[maybe_unused]] std::uint8_t pad_0x4741[0x7]; // 0x4741
         // m_vecMuertaPartingShotSouls has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CUtlVector<client::sMuertaPartingShotSoulDef> m_vecMuertaPartingShotSouls;
-        char m_vecMuertaPartingShotSouls[0x18]; // 0x4740        
-        [[maybe_unused]] std::uint8_t pad_0x4758[0x18]; // 0x4758
+        char m_vecMuertaPartingShotSouls[0x18]; // 0x4748        
+        [[maybe_unused]] std::uint8_t pad_0x4760[0x18]; // 0x4760
         // metadata: MNetworkEnable
         // m_NeutralSpawnBoxes has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CNetworkUtlVectorBase<client::NeutralSpawnBoxes_t> m_NeutralSpawnBoxes;
-        char m_NeutralSpawnBoxes[0x18]; // 0x4770        
+        char m_NeutralSpawnBoxes[0x18]; // 0x4778        
         // metadata: MNetworkEnable
         // m_RegionTriggerBoxes has a template type with potentially unknown template parameters. You can try uncommenting the field below.
         // CNetworkUtlVectorBase<client::RegionTriggerBoxes_t> m_RegionTriggerBoxes;
-        char m_RegionTriggerBoxes[0x18]; // 0x4788        
-        double m_flLastItemSuggestionRequestTime[15]; // 0x47a0        
-        [[maybe_unused]] std::uint8_t pad_0x4818[0xfb8]; // 0x4818
-        double m_flLastPerfSampleTime; // 0x57d0        
+        char m_RegionTriggerBoxes[0x18]; // 0x4790        
+        double m_flLastItemSuggestionRequestTime[15]; // 0x47a8        
+        [[maybe_unused]] std::uint8_t pad_0x4820[0xfb8]; // 0x4820
+        double m_flLastPerfSampleTime; // 0x57d8        
         
         // Static fields:
         static int32_t &Get_s_GameStateTransitionsIndex() {return *reinterpret_cast<int32_t*>(interfaces::g_schema->FindTypeScopeForModule("server.dll")->FindDeclaredClass("CDOTAGameRules")->GetStaticFields()[0]->m_pInstance);};
@@ -944,5 +944,5 @@ namespace source2sdk::server
     #pragma pack(pop)
     
     // Cannot assert offsets of fields in CDOTAGameRules because it is not a standard-layout class
-    static_assert(sizeof(CDOTAGameRules) == 0x57d8);
+    static_assert(sizeof(CDOTAGameRules) == 0x57e0);
 };
