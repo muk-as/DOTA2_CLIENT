@@ -36,7 +36,7 @@ namespace source2sdk::client
         client::ParticleIndex_t m_iFxIndex; // 0x18f0        
         int32_t m_nPreviewViewer; // 0x18f4        
         int32_t m_nTeamNumberShown; // 0x18f8        
-        [[maybe_unused]] std::uint8_t pad_0x18fc[0x4];
+        int32_t m_nLastLocalTeam; // 0x18fc        
     };
     #pragma pack(pop)
     
