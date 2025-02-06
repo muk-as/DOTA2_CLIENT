@@ -538,7 +538,8 @@ namespace source2sdk::client
         bool m_bActivityModifiersDirty; // 0x1838        
         bool m_bUnitModelVariantChanged; // 0x1839        
         bool m_bWearablesAreTaunting; // 0x183a        
-        [[maybe_unused]] std::uint8_t pad_0x183b[0x15]; // 0x183b
+        bool m_bWearablesLoadoutOverride; // 0x183b        
+        [[maybe_unused]] std::uint8_t pad_0x183c[0x14]; // 0x183c
         bool m_bShowCannotBeDisabledIcon; // 0x1850        
         [[maybe_unused]] std::uint8_t pad_0x1851[0x1f];
         

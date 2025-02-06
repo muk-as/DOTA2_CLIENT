@@ -46,9 +46,9 @@ namespace source2sdk::client
         CUtlString m_sSpawnInfoTargetName; // 0x128        
         CUtlString m_sMinimapIconClass; // 0x130        
         float m_flPerpendicularWallSpacing; // 0x138        
-        [[maybe_unused]] std::uint8_t pad_0x13c[0x4]; // 0x13c
-        client::ESurvivorsEnemySpawnPositionsLayer m_eSpawnPositionsLayer; // 0x140        
-        [[maybe_unused]] std::uint8_t pad_0x144[0x4];
+        bool m_bIgnoreDifficultySpawnMultiplier; // 0x13c        
+        [[maybe_unused]] std::uint8_t pad_0x13d[0x7]; // 0x13d
+        client::ESurvivorsEnemySpawnPositionsLayer m_eSpawnPositionsLayer; // 0x144        
     };
     #pragma pack(pop)
     
@@ -68,7 +68,8 @@ namespace source2sdk::client
     static_assert(offsetof(CSurvivorsSpawnerDefinition, m_sSpawnInfoTargetName) == 0x128);
     static_assert(offsetof(CSurvivorsSpawnerDefinition, m_sMinimapIconClass) == 0x130);
     static_assert(offsetof(CSurvivorsSpawnerDefinition, m_flPerpendicularWallSpacing) == 0x138);
-    static_assert(offsetof(CSurvivorsSpawnerDefinition, m_eSpawnPositionsLayer) == 0x140);
+    static_assert(offsetof(CSurvivorsSpawnerDefinition, m_bIgnoreDifficultySpawnMultiplier) == 0x13c);
+    static_assert(offsetof(CSurvivorsSpawnerDefinition, m_eSpawnPositionsLayer) == 0x144);
     
     static_assert(sizeof(CSurvivorsSpawnerDefinition) == 0x148);
 };

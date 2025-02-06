@@ -37,8 +37,9 @@ namespace source2sdk::client
         char m_vecRewards[0x18]; // 0x40        
         CUtlString m_sDefaultDialogue; // 0x58        
         KeyValues3 m_kvCustomData; // 0x60        
-        int32_t m_nLeaderboardCount; // 0x70        
-        [[maybe_unused]] std::uint8_t pad_0x74[0x4];
+        bool m_bRequiresNodeToBeUnlockedToClaimRewards; // 0x70        
+        [[maybe_unused]] std::uint8_t pad_0x71[0x3]; // 0x71
+        int32_t m_nLeaderboardCount; // 0x74        
     };
     #pragma pack(pop)
     
@@ -51,7 +52,8 @@ namespace source2sdk::client
     static_assert(offsetof(CDOTAOverworldEncounter, m_vecRewards) == 0x40);
     static_assert(offsetof(CDOTAOverworldEncounter, m_sDefaultDialogue) == 0x58);
     static_assert(offsetof(CDOTAOverworldEncounter, m_kvCustomData) == 0x60);
-    static_assert(offsetof(CDOTAOverworldEncounter, m_nLeaderboardCount) == 0x70);
+    static_assert(offsetof(CDOTAOverworldEncounter, m_bRequiresNodeToBeUnlockedToClaimRewards) == 0x70);
+    static_assert(offsetof(CDOTAOverworldEncounter, m_nLeaderboardCount) == 0x74);
     
     static_assert(sizeof(CDOTAOverworldEncounter) == 0x78);
 };
