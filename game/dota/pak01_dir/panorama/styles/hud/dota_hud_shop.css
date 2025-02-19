@@ -2,8 +2,8 @@
 
 @define headerHeight: 47px;
 @define itemCombinesHeight: 90px;
-@define mainPanelWidth: 360px;
-@define negMainPanelWidth: -360px;
+@define mainPanelWidth: 400px;
+@define negMainPanelWidth: -400px;
 @define largeMainPanelWidth: 400px;
 @define largeNegMainPanelWidth: -400px;
 DOTAHUDShop
@@ -290,11 +290,9 @@ DOTAHUDShop.ShowSecretShop #SecretShopButton:hover
 
 #HeightLimiterContainer
 {
-	background-image: url("s2r://panorama/images/hud/reborn/bg_mainshop_psd.vtex");
-	background-size: cover;
-	background-repeat: no-repeat;
 	width: 100%;
 	height: 100%;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #1e1f22 ), to( #070708 ) );
 }
 
 .HUDFlipped #HeightLimiterContainer
@@ -485,7 +483,7 @@ DOTAHUDShop.ShowSecretShop #SecretShopButton:hover
 
 #SearchContainer
 {
-	width: 228px;
+	width: 270px;
 	padding-left: 10px;
 	padding-right: 8px;
 	padding-top: 10px;
@@ -494,11 +492,6 @@ DOTAHUDShop.ShowSecretShop #SecretShopButton:hover
 	flow-children: down;
 	vertical-align: top;
 	horizontal-align: left;
-}
-
-.ShopLarge #SearchContainer
-{
-	width: 270px;
 }
 
 .NewHeroShop #SearchContainer
@@ -570,8 +563,6 @@ DOTAHUDShop.ShowSecretShop #SecretShopButton:hover
 #GridMainShopContents
 {
 	horizontal-align: center;
-	padding-left: 4px;
-	padding-right: 2px;
 }
 
 .NewHeroShop #GridMainShopContents
@@ -613,7 +604,6 @@ DOTAHUDShop.ShowSecretShop #SecretShopButton:hover
 .ShopLarge #GridMainTabs
 {
 	margin-bottom: 0px;
-	horizontal-align: left;
 }
 
 #GridTabs Label,#GridMainTabs Label
@@ -625,11 +615,6 @@ DOTAHUDShop.ShowSecretShop #SecretShopButton:hover
 	font-weight: bold;
 	vertical-align: center;
 	margin-left: 0px;
-}
-
-.ShopLarge #GridTabs Label,.ShopLarge #GridMainTabs Label
-{
-	margin-left: 2px;
 }
 
 .ShopItemsTab
@@ -689,7 +674,7 @@ DOTAHUDShop.ShowSecretShop #SecretShopButton:hover
 	visibility: collapse;
 }
 
-.TeamHasNewNeutralItems .GridNeutralsTabNewItems
+.TeamHasNewNeutralItems .GridNeutralsTabNewItems,.CraftableNeutral .GridNeutralsTabNewItems
 {
 	visibility: visible;
 }
@@ -820,7 +805,7 @@ DOTAHUDShop.ShowSecretShop #SecretShopButton:hover
 	font-size: 14px;
 	padding: 5px 5px 3px 5px;
 	letter-spacing: 1px;
-	text-shadow: 2px 2px 0px 2.0 black;
+	text-shadow: 0px 2px 12px 2.0 black;
 	visibility: collapse;
 	font-weight: semi-bold;
 }
@@ -848,6 +833,7 @@ DOTAHUDShop.ShowSecretShop #SecretShopButton:hover
 	flow-children: right;
 	width: fit-children;
 	horizontal-align: center;
+	padding-left: 4px;
 }
 
 .ShopLarge .ShopItemsRows
@@ -1378,23 +1364,56 @@ DOTAHUDShop.ShopHotkeyMode:not(.DOTA_SHOP_CATEGORY_NONE) #GridRowHotkeys
 
 #GridNeutralItems
 {
+	width: 100%;
 	flow-children: down;
 	horizontal-align: center;
-	margin-top: 4px;
+	margin-top: -1px;
 }
 
 .NeutralItemsTier
 {
-	max-width: 350px;
-	flow-children: down;
-	margin-top: 2px;
+	flow-children: right;
+	width: 100%;
+	padding: 8px 8px;
+	padding-right: 5px;
+	border-brush: gradient( linear, 0% 0%, 100% 0%, from( rgba(255, 255, 255, 1) ), to( rgba(255, 255, 255, 0) ) );
+}
+
+.NeutralItemsTier.NeutralTier1
+{
+	border-top: 1px solid NeutralTier1&11;
+	background-color: gradient( radial, 0% 0%, 0% 0%, 100% 100%, from( NeutralTier1&09 ), color-stop( 0.5, NeutralTier1&04 ), to( NeutralTier1&00 ) );
+}
+
+.NeutralItemsTier.NeutralTier2
+{
+	border-top: 1px solid NeutralTier2&11;
+	background-color: gradient( radial, 0% 0%, 0% 0%, 100% 100%, from( NeutralTier2&09 ), color-stop( 0.5, NeutralTier2&04 ), to( NeutralTier2&00 ) );
+}
+
+.NeutralItemsTier.NeutralTier3
+{
+	border-top: 1px solid NeutralTier3&11;
+	background-color: gradient( radial, 0% 0%, 0% 0%, 100% 100%, from( NeutralTier3&09 ), color-stop( 0.5, NeutralTier3&04 ), to( NeutralTier3&00 ) );
+}
+
+.NeutralItemsTier.NeutralTier4
+{
+	border-top: 1px solid NeutralTier4&11;
+	background-color: gradient( radial, 0% 0%, 0% 0%, 100% 100%, from( NeutralTier4&09 ), color-stop( 0.5, NeutralTier4&04 ), to( NeutralTier4&00 ) );
+}
+
+.NeutralItemsTier.NeutralTier5
+{
+	border-top: 1px solid NeutralTier5&11;
+	background-color: gradient( radial, 0% 0%, 0% 0%, 100% 100%, from( NeutralTier5&09 ), color-stop( 0.5, NeutralTier5&04 ), to( NeutralTier5&00 ) );
 }
 
 .NeutralItemsTierHeader
 {
-	flow-children: right;
-	width: 100%;
-	padding: 0px 2px;
+	flow-children: down;
+	width: 60px;
+	padding: 2px;
 }
 
 .NeutralItemsTierName
@@ -1411,9 +1430,8 @@ DOTAHUDShop.ShopHotkeyMode:not(.DOTA_SHOP_CATEGORY_NONE) #GridRowHotkeys
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	font-weight: bold;
-	margin-bottom: 2px;
-	margin-top: 3px;
 	color: NeutralTier1;
+	text-shadow: 0px 1px 6px black;
 }
 
 .NeutralTier1 .NeutralItemsTierName
@@ -1445,11 +1463,10 @@ DOTAHUDShop.ShopHotkeyMode:not(.DOTA_SHOP_CATEGORY_NONE) #GridRowHotkeys
 {
 	text-transform: uppercase;
 	font-size: 13px;
-	letter-spacing: 2px;
-	color: #666;
-	margin-bottom: 2px;
-	margin-top: 3px;
-	text-align: right;
+	letter-spacing: 1px;
+	color: LightGrey;
+	margin-top: -2px;
+	text-shadow: 0px 1px 6px black;
 }
 
 .TierActive .NeutralItemsTierTimes
@@ -1477,33 +1494,41 @@ DOTAHUDShop.ShopHotkeyMode:not(.DOTA_SHOP_CATEGORY_NONE) #GridRowHotkeys
 #NeutralItemsList
 {
 	flow-children: right-wrap;
+	width: fill-parent-flow(1);
 }
 
 #NeutralItemsList DOTAShopItem
 {
 	width: 48px;
 	height: width-percentage( 72.7% );
-	margin: 2px;
-	saturation: 0.2;
-	brightness: 0.2;
-	transition-property: saturation, brightness;
-	transition-duration: 0.2s;
-	ui-scale:90%;
+	margin: 3px;
+	ui-scale: 88%;
+	border-radius: 2px;
+	box-shadow: 0px 1px 8px -1px rgba(0, 0, 0, 0.4);
 }
 
-#NeutralItemsList DOTAShopItem.NeutralItemFound
+#NeutralEnhancementsList
 {
-	saturation: 1.0;
-	brightness: 1.0;
-	border: 1px solid #ccc;
+	flow-children: right-wrap;
+	width: 124px;
+	padding-left: 6px;
+	border-left: 1px solid rgba(255, 255, 255, 0.02);
 }
 
-.HideUndiscoveredNeutralItems #NeutralItemsList DOTAShopItem
+#NeutralEnhancementsList DOTAShopItem
+{
+	width: 28px;
+	height: 28px;
+	opacity-mask: url("s2r://panorama/images/masks/softedge_box_png.vtex");
+	-s2-mix-blend-mode: screen;
+}
+
+.HideUndiscoveredNeutralItems #NeutralItemsList DOTAShopItem,.HideUndiscoveredNeutralItems #NeutralEnhancementsList DOTAShopItem
 {
 	visibility: collapse;
 }
 
-.HideUndiscoveredNeutralItems #NeutralItemsList DOTAShopItem.NeutralItemFound
+.HideUndiscoveredNeutralItems #NeutralItemsList DOTAShopItem.NeutralItemFound,.HideUndiscoveredNeutralItems #NeutralEnhancementsList DOTAShopItem.NeutralItemFound
 {
 	visibility: visible;
 }
@@ -1513,11 +1538,407 @@ DOTAHUDShop.ShopHotkeyMode:not(.DOTA_SHOP_CATEGORY_NONE) #GridRowHotkeys
 	horizontal-align: left;
 }
 
+.NoMadstoneLimit .HideWhenNoMadstoneLimit
+{
+	visibility: collapse;
+}
+
+.MadstoneExplainationContainer
+{
+	width: 100%;
+	flow-children: down;
+	margin-top: 14px;
+	visibility: collapse;
+}
+
+.MadstoneExplainationContainer .MadstoneExplainationTitleContainer
+{
+	flow-children: right;
+	margin-bottom: 4px;
+}
+
+.MadstoneExplainationContainer .MadstoneExplainationTitleContainer .MadstoneIcon
+{
+	width: 32px;
+	margin-left: -6px;
+	vertical-align: center;
+}
+
+.MadstoneExplainationContainer .MadstoneExplainationTitleContainer .MadstoneTitle
+{
+	vertical-align: center;
+	margin-left: 6px;
+	font-weight: semi-bold;
+	color: gradient( linear, 0% 0%, 0% 100%, from( #9DFE77 ), color-stop( 0.5, #4BEE81 ), to( #2B6B28 ) );
+	text-shadow: 0px 2px 6px black;
+}
+
+.MadstoneExplainationContainer .MadstoneExplainationTitleContainer .Dash
+{
+	width: fill-parent-flow( 1 );
+	height: 1px;
+	background-color: LightGrey;
+	vertical-align: center;
+	margin: 0px 8px;
+	opacity: 0.06;
+}
+
+.MadstoneExplainationContainer .MadstoneExplainationTitleContainer .MadstoneInfoIcon
+{
+	width: 18px;
+	wash-color: Grey;
+	vertical-align: center;
+}
+
+.MadstoneExplainationContainer .MadstoneDescriptionContainer
+{
+	flow-children: down;
+	height: fill-parent-flow( 1 );
+	margin-bottom: 12px;
+	overflow: squish scroll;
+}
+
+.MadstoneExplainationContainer .MadstoneDescriptionContainer .MadstoneDescription
+{
+	color: LightGrey;
+	text-shadow: 0px 2px 6px black;
+	margin-bottom: 6px;
+	font-size: 15px;
+	line-height: 1.2;
+}
+
 .TeamNeutralItems
 {
 	flow-children: down;
 	width: 100%;
-	margin-top: 13px;
+	margin-top: 12px;
+	padding: 0px 24px;
+}
+
+.TeamNeutralItems #CraftingStatusHolder
+{
+	width: 100%;
+	flow-children: down;
+	horizontal-align: center;
+	height: fill-parent-flow(1);
+}
+
+.TeamNeutralItems #CraftingStatusHolder .CraftingTeam
+{
+	width: 100%;
+	height: fit-children;
+	flow-children: down;
+	padding: 6px 0px 12px;
+	border-brush: gradient( linear, 0% 0%, 100% 0%, from( rgba(255, 255, 255, 0) ), color-stop( 0.5, white ), to( rgba(255, 255, 255, 0) ) );
+}
+
+.TeamNeutralItems #CraftingStatusHolder .CraftingTeam .TeamNameLabel
+{
+	font-size: 14px;
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+	min-width: 50px;
+	color: white;
+	width: 100%;
+	text-align: center;
+	text-shadow: 0px 2px 8px black;
+	margin-bottom: -2px;
+}
+
+.TeamNeutralItems #CraftingStatusHolder .CraftingTeam .TeamTimelineHolder
+{
+	width: 100%;
+	height: fit-children;
+	flow-children: down;
+}
+
+.TeamNeutralItems #CraftingStatusHolder .CraftingTeam.Radiant
+{
+	border-top: 1px solid winnerGreen&11;
+	background-color: gradient( radial, 50% 0%, 0% 0%, 50% 70%, from( winnerGreen&09 ), color-stop( 0.5, winnerGreen&04 ), to( winnerGreen&00 ) );
+}
+
+.TeamNeutralItems #CraftingStatusHolder .CraftingTeam.Radiant .TeamNameLabel
+{
+	text-shadow: 0px 0px 16px winnerGreen&99;
+}
+
+.TeamNeutralItems #CraftingStatusHolder .CraftingTeam.Dire
+{
+	border-top: 1px solid loserRed&11;
+	background-color: gradient( radial, 50% 0%, 0% 0%, 50% 70%, from( loserRed&09 ), color-stop( 0.5, loserRed&04 ), to( loserRed&00 ) );
+}
+
+.TeamNeutralItems #CraftingStatusHolder .CraftingTeam.Dire .TeamNameLabel
+{
+	text-shadow: 0px 0px 16px loserRed&99;
+}
+
+.TeamNeutralItems #CraftingStatusHolder.SingleTeam .CraftingTeam
+{
+	background-color: none;
+	border-top: 0px;
+	padding: 0px;
+}
+
+.TeamNeutralItems #CraftingStatusHolder.SingleTeam .TeamNameLabel
+{
+	visibility: collapse;
+}
+
+.TeamNeutralItems #CraftingStatusHolder.SingleTeam .MadstoneExplainationContainer
+{
+	visibility: visible;
+}
+
+.TeamNeutralItems #CraftingStatusHolder .HeroMadstoneTimeline
+{
+	width: 100%;
+	flow-children: right;
+	margin: 5px 0px;
+	margin-right: 16px;
+}
+
+.TeamNeutralItems #CraftingStatusHolder .HeroMadstoneTimeline #HeroImage
+{
+	horizontal-align: center;
+	vertical-align: center;
+	height: 26px;
+	width: 26px;
+	margin-right: 8px;
+	img-shadow: 0px 2px 12px black;
+}
+
+.TeamNeutralItems #CraftingStatusHolder .HeroMadstoneTimeline .TimelineHolder
+{
+	width: 100%;
+	flow-children: down;
+	vertical-align: center;
+}
+
+.TeamNeutralItems #CraftingStatusHolder .HeroMadstoneTimeline .TimelineHolder .TimelineUpper
+{
+	height: 40px;
+	width: 100%;
+	visibility: collapse;
+}
+
+.TeamNeutralItems #CraftingStatusHolder .HeroMadstoneTimeline .TimelineHolder .TimelineLower
+{
+	height: 26px;
+	flow-children: right;
+}
+
+.TeamNeutralItems #CraftingStatusHolder .HeroMadstoneTimeline .TimelineHolder .TimelineLower .TimelineBackground
+{
+	width: fill-parent-flow( 1 );
+	height: 5px;
+	border: 1px solid black;
+	vertical-align: center;
+	border-radius: 3px;
+	background-color: black;
+	box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 0.01);
+}
+
+.TeamNeutralItems #CraftingStatusHolder .HeroMadstoneTimeline .TimelineHolder .TimelineLower .TimelineBackground.NeutralTier1
+{
+	width: fill-parent-flow( 0.5 );
+}
+
+.TeamNeutralItems #CraftingStatusHolder .HeroMadstoneTimeline .TimelineHolder .TimelineLower .TimelineBackground ProgressBar
+{
+	border-radius: 0px;
+	height: 100%;
+	overflow: clip;
+}
+
+.TeamNeutralItems #CraftingStatusHolder .HeroMadstoneTimeline .TimelineHolder .TimelineLower .TimelineBackground ProgressBar .ProgressBarRight
+{
+	opacity: .1;
+}
+
+.TeamNeutralItems #CraftingStatusHolder .HeroMadstoneTimeline .TimelineHolder .TimelineLower .TimelineBackground.NeutralTier1 .ProgressBarLeft
+{
+	background-color: NeutralTier1;
+}
+
+.TeamNeutralItems #CraftingStatusHolder .HeroMadstoneTimeline .TimelineHolder .TimelineLower .TimelineBackground.NeutralTier1 .ProgressBarRight
+{
+	background-color: NeutralTier1;
+}
+
+.TeamNeutralItems #CraftingStatusHolder .HeroMadstoneTimeline .TimelineHolder .TimelineLower .TimelineBackground.NeutralTier2 .ProgressBarLeft
+{
+	background-color: NeutralTier2;
+}
+
+.TeamNeutralItems #CraftingStatusHolder .HeroMadstoneTimeline .TimelineHolder .TimelineLower .TimelineBackground.NeutralTier2 .ProgressBarRight
+{
+	background-color: NeutralTier2;
+}
+
+.TeamNeutralItems #CraftingStatusHolder .HeroMadstoneTimeline .TimelineHolder .TimelineLower .TimelineBackground.NeutralTier3 .ProgressBarLeft
+{
+	background-color: NeutralTier3;
+}
+
+.TeamNeutralItems #CraftingStatusHolder .HeroMadstoneTimeline .TimelineHolder .TimelineLower .TimelineBackground.NeutralTier3 .ProgressBarRight
+{
+	background-color: NeutralTier3;
+}
+
+.TeamNeutralItems #CraftingStatusHolder .HeroMadstoneTimeline .TimelineHolder .TimelineLower .TimelineBackground.NeutralTier4 .ProgressBarLeft
+{
+	background-color: NeutralTier4;
+}
+
+.TeamNeutralItems #CraftingStatusHolder .HeroMadstoneTimeline .TimelineHolder .TimelineLower .TimelineBackground.NeutralTier4 .ProgressBarRight
+{
+	background-color: NeutralTier4;
+}
+
+.TeamNeutralItems #CraftingStatusHolder .HeroMadstoneTimeline .TimelineHolder .TimelineLower .TimelineBackground.NeutralTier5 .ProgressBarLeft
+{
+	background-color: NeutralTier5;
+}
+
+.TeamNeutralItems #CraftingStatusHolder .HeroMadstoneTimeline .TimelineHolder .TimelineLower .TimelineBackground.NeutralTier5 .ProgressBarRight
+{
+	background-color: NeutralTier5;
+}
+
+.TeamNeutralItems #CraftingStatusHolder .HeroMadstoneTimeline .TimelineHolder .TimelineLower .TimelineLowerPip
+{
+	height: 8px;
+	width: 8px;
+	margin-left: -4px;
+	margin-right: -4px;
+	border-radius: 50%;
+	z-index: 2;
+	vertical-align: center;
+	border: 1px solid #ffffff71;
+	background-color: #000;
+	box-shadow: 0px 2px 16px -1px rgba(0, 0, 0, 0.3);
+}
+
+.TeamNeutralItems #CraftingStatusHolder .HeroMadstoneTimeline .TimelineHolder .TimelineLower .TimelineLowerPip.NeutralTier1
+{
+	border-brush: gradient( linear, 0% 0%, 0% 100%, from( NeutralTier1 ), to( NeutralTier1_Low ));
+}
+
+.TeamNeutralItems #CraftingStatusHolder .HeroMadstoneTimeline .TimelineHolder .TimelineLower .TimelineLowerPip.NeutralTier2
+{
+	border-brush: gradient( linear, 0% 0%, 0% 100%, from( NeutralTier2 ), to( NeutralTier2_Low ));
+}
+
+.TeamNeutralItems #CraftingStatusHolder .HeroMadstoneTimeline .TimelineHolder .TimelineLower .TimelineLowerPip.NeutralTier3
+{
+	border-brush: gradient( linear, 0% 0%, 0% 100%, from( NeutralTier3 ), to( NeutralTier3_Low ));
+}
+
+.TeamNeutralItems #CraftingStatusHolder .HeroMadstoneTimeline .TimelineHolder .TimelineLower .TimelineLowerPip.NeutralTier4
+{
+	border-brush: gradient( linear, 0% 0%, 0% 100%, from( NeutralTier4 ), to( NeutralTier4_Low ));
+}
+
+.TeamNeutralItems #CraftingStatusHolder .HeroMadstoneTimeline .TimelineHolder .TimelineLower .TimelineLowerPip.NeutralTier5
+{
+	border-brush: gradient( linear, 0% 0%, 0% 100%, from( NeutralTier5 ), to( NeutralTier5_Low ));
+}
+
+.TeamNeutralItems #CraftingStatusHolder .HeroMadstoneTimeline .TimelineHolder .TimelineLower .TimelineLowerPip.NeutralTier1.CraftingAvailable:not(.HasCraftedChoice)
+{
+	background-color: gradient( linear, 0% 50%, 0% 100%, from( NeutralTier1 ), to( NeutralTier1_Low ) );
+}
+
+.TeamNeutralItems #CraftingStatusHolder .HeroMadstoneTimeline .TimelineHolder .TimelineLower .TimelineLowerPip.NeutralTier2.CraftingAvailable:not(.HasCraftedChoice)
+{
+	background-color: gradient( linear, 0% 50%, 0% 100%, from( NeutralTier2 ), to( NeutralTier2_Low ) );
+}
+
+.TeamNeutralItems #CraftingStatusHolder .HeroMadstoneTimeline .TimelineHolder .TimelineLower .TimelineLowerPip.NeutralTier3.CraftingAvailable:not(.HasCraftedChoice)
+{
+	background-color: gradient( linear, 0% 50%, 0% 100%, from( NeutralTier3 ), to( NeutralTier3_Low ) );
+}
+
+.TeamNeutralItems #CraftingStatusHolder .HeroMadstoneTimeline .TimelineHolder .TimelineLower .TimelineLowerPip.NeutralTier4.CraftingAvailable:not(.HasCraftedChoice)
+{
+	background-color: gradient( linear, 0% 50%, 0% 100%, from( NeutralTier4 ), to( NeutralTier4_Low ) );
+}
+
+.TeamNeutralItems #CraftingStatusHolder .HeroMadstoneTimeline .TimelineHolder .TimelineLower .TimelineLowerPip.NeutralTier5.CraftingAvailable:not(.HasCraftedChoice)
+{
+	background-color: gradient( linear, 0% 50%, 0% 100%, from( NeutralTier5 ), to( NeutralTier5_Low ) );
+}
+
+.TeamNeutralItems #CraftingStatusHolder .HeroMadstoneTimeline .TimelineHolder .TimelineLower .TimelineLowerPip.CraftingAvailable:not(.HasCraftedChoice)
+{
+	border-color: none;
+	box-shadow: 0px 1px 6px rgba(0, 0, 0, 1);
+}
+
+.TeamNeutralItems #CraftingStatusHolder .HeroMadstoneTimeline .TimelineHolder .TimelineLower .TimelineLowerPip #TimelinePipItem
+{
+	height: 130%;
+	width: 130%;
+	overflow: noclip;
+	horizontal-align: center;
+	vertical-align: center;
+	visibility: collapse;
+}
+
+.TeamNeutralItems #CraftingStatusHolder .HeroMadstoneTimeline .TimelineHolder .TimelineLower .TimelineLowerPip.HasCraftedChoice
+{
+	border: 0.8px solid #ffffff;
+	border-brush: gradient( linear, 0% 0%, 0% 100%, from( white ), to( rgb(146, 149, 153) ));
+	height: 26px;
+	width: 26px;
+	margin-left: -13px;
+	margin-right: -13px;
+}
+
+.TeamNeutralItems #CraftingStatusHolder .HeroMadstoneTimeline .TimelineHolder .TimelineLower .TimelineLowerPip.HasCraftedChoice #TimelinePipItem
+{
+	visibility: visible;
+}
+
+.TeamNeutralItems #MadstoneLimitsHolder
+{
+	height: 210px;
+	width: fit-children;
+	flow-children: down-wrap;
+	horizontal-align: center;
+}
+
+.TeamNeutralItems #MadstoneLimitsHolder .HeroMadstoneStatus
+{
+	height: 40px;
+	width: 150px;
+	flow-children: right;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
+.TeamNeutralItems #MadstoneLimitsHolder .HeroMadstoneStatus #HeroImage
+{
+	vertical-align: center;
+	margin-right: 4px;
+}
+
+.TeamNeutralItems #MadstoneLimitsHolder .HeroMadstoneStatus .MadstoneStatusBar
+{
+	width: fill-parent-flow( 1.0 );
+	vertical-align: center;
+}
+
+.TeamNeutralItems #MadstoneLimitsHolder .HeroMadstoneStatus .MadstoneStatusBar #MadstoneStatusProgressBar
+{
+	width: 100%;
+}
+
+.TeamNeutralItems #MadstoneLimitsHolder .HeroMadstoneStatus .MadstoneStatusBar Label
+{
+	horizontal-align: center;
 }
 
 .TeamNeutralItems .TeamNeutralTokensTitle,.TeamNeutralItems .YourNeutralItemsTitle
@@ -1861,7 +2282,27 @@ DOTAHUDShop.ShopHotkeyMode:not(.DOTA_SHOP_CATEGORY_NONE) #GridRowHotkeys
 
 .ShowAllNeutralItems .NeutralItemsToggleButton
 {
-	padding: 2px 6px 2px 6px;
+	margin-top: 8px;
+}
+
+.NeutralItemsHeader
+{
+	flow-children: right;
+	width: 100%;
+	padding: 7px 10px;
+}
+
+.NeutralItemsHeader Label
+{
+	font-weight: semi-bold;
+	text-shadow: 0px 2px 8px black;
+	width: fill-parent-flow(1);
+	font-size: 14px;
+}
+
+.NeutralItemsHeader Label.Right
+{
+	text-align: right;
 }
 
 .NeutralItemsToggleButton Label
@@ -1882,11 +2323,6 @@ DOTAHUDShop.ShopHotkeyMode:not(.DOTA_SHOP_CATEGORY_NONE) #GridRowHotkeys
 .NeutralItemsToggleButton:active
 {
 	brightness: 1.5;
-}
-
-.HideCount .NeutralItemsTierTimes,.HideCount .NeutralItemsTierCount,.HideCount .TeamNeutralItemsTierTimes,.HideCount .TeamNeutralItemsTierCount,.HideCount .FillWidth
-{
-	visibility: collapse;
 }
 
 .Clock
@@ -2245,5 +2681,109 @@ DOTAHUDShop.ShopHotkeyMode:not(.DOTA_SHOP_CATEGORY_NONE) #GridRowHotkeys
 {
 	border: 1px solid #666;
 	color: #999;
+}
+
+.NeutralChoiceTitle
+{
+	width: 100%;
+	text-align: center;
+	color: whitesmoke;
+	text-shadow: 0px 2px 12px black;
+	text-transform:uppercase;
+	font-size: 20px;
+	letter-spacing: 1.5px;
+	font-family: titleFont;
+	font-weight: semi-bold;
+	text-overflow: shrink;
+	padding-bottom: 6px;
+	margin-bottom: 4px;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+.NeutralChoiceSubTitle
+{
+	width: 100%;
+	text-align: left;
+	color: #888888;
+	text-shadow: 2px 2px 0px 2.0 black;
+	text-transform:uppercase;
+	font-size:12px;
+	margin-top:10px;
+	margin-bottom:5px;
+	letter-spacing: 3px;
+	font-family:titleFont;
+	visibility: collapse;
+}
+
+.CraftingStatusTimeline
+{
+	width: 100%;
+	flow-children: right;
+	padding-left: 36px;
+	margin-right: -20px;
+	margin-bottom: 6px;
+}
+
+.CraftingStatusTimeline .NeutralTierTimingLabelsContainer
+{
+	width: fill-parent-flow( 1 );
+	flow-children: down;
+}
+
+.CraftingStatusTimeline .NeutralTierTimingLabelsContainer Label
+{
+	horizontal-align: center;
+	text-align: center;
+	letter-spacing: 1px;
+	font-size: 12px;
+	text-shadow: 0px 1px 6px black;
+}
+
+.CraftingStatusTimeline .NeutralTierTimingLabelsContainer .TierTimingTitle
+{
+	font-weight: semi-bold;
+	margin-bottom: -3px;
+}
+
+.CraftingStatusTimeline .NeutralTierTimingLabelsContainer .TierTimingTime
+{
+	color: LightGrey;
+}
+
+.CraftingStatusTimeline .NeutralTierTimingLabelsContainer.Tier1 .TierTimingTitle
+{
+	color: NeutralTier1;
+}
+
+.CraftingStatusTimeline .NeutralTierTimingLabelsContainer.Tier2 .TierTimingTitle
+{
+	color: NeutralTier2;
+}
+
+.CraftingStatusTimeline .NeutralTierTimingLabelsContainer.Tier3 .TierTimingTitle
+{
+	color: NeutralTier3;
+}
+
+.CraftingStatusTimeline .NeutralTierTimingLabelsContainer.Tier4 .TierTimingTitle
+{
+	color: NeutralTier4;
+}
+
+.CraftingStatusTimeline .NeutralTierTimingLabelsContainer.Tier5 .TierTimingTitle
+{
+	color: NeutralTier5;
+}
+
+.HorizontalRule
+{
+	width: fill-parent-flow( 1.0 );
+	background-color: #29353b;
+	height: 1px;
+	vertical-align: center;
+	margin-left: 4px;
+	margin-right: 4px;
+	margin-top: 2px;
+	margin-bottom: 2px;
 }
 

@@ -8,7 +8,7 @@
 
 namespace source2sdk::client
 {
-    // Enumerator count: 111
+    // Enumerator count: 114
     // Alignment: 4
     // Size: 0x4
     enum class DOTA_CHAT_MESSAGE : std::uint32_t
@@ -124,5 +124,8 @@ namespace source2sdk::client
         CHAT_MESSAGE_MINIBOSS_KILL = 0x75,
         CHAT_MESSAGE_PLAYER_IN_GAME_BAN_TEXT = 0x76,
         CHAT_MESSAGE_BANNER_PLANTED = 0x77,
+        CHAT_MESSAGE_ALCHEMIST_GRANTED_SCEPTER = 0x78,
+        CHAT_MESSAGE_PROTECTOR_SPAWNED = 0x79,
+        CHAT_MESSAGE_CRAFTING_XP = 0x7a,
     };
 };

@@ -182,6 +182,24 @@ DOTAAbilityPanel.Hidden
 	opacity: 1.0;
 }
 
+#MarkForSellOverlay
+{
+	background-image: url("s2r://panorama/images/hud/reborn/gold_small_psd.vtex");
+	background-size: 100% 100%;
+	width: 16px;
+	height: 16px;
+	horizontal-align: left;
+	vertical-align: bottom;
+	opacity: 0;
+	margin: 3px;
+	margin-right: 3px;
+}
+
+.mark_for_sell #MarkForSellOverlay
+{
+	opacity: 1.0;
+}
+
 .is_upgraded
 {
 	brightness: 3.0;
@@ -319,7 +337,7 @@ DOTAAbilityPanel.Hidden
 {
 	width: 100%;
 	height: 36px;
-	background-image: url("s2r://panorama/images/hud/reborn/levelup_button_psd.vtex");
+	background-image: url("s2r://panorama/images/hud/reborn/levelup_button_3_psd.vtex");
 	background-size: 100% 100%;
 	background-position: 50% 50%;
 	background-repeat: no-repeat;
@@ -579,6 +597,19 @@ DOTAAbilityPanel.Hidden
 	visibility: collapse;
 	z-index: -1;
 	background-position: center;
+}
+
+#inventory_tpscroll_slot #ItemImage
+{
+	height: 75%;
+	horizontal-align: center;
+	vertical-align: center;
+}
+
+#inventory_neutral_slot #ItemImage
+{
+	horizontal-align: center;
+	vertical-align: center;
 }
 
 .insufficient_mana:not(.unitmuted) #ItemImage
@@ -1583,13 +1614,13 @@ DOTAAbilityPanel.Hidden
 	color: #00dd00;
 }
 
-.Reborn .HasMorph.npc_dota_hero_rubick #Ability3 #AgiValue,.Reborn .HasMorph.npc_dota_hero_rubick #Ability4 #StrValue,.Reborn .HasMorph.npc_dota_hero_morphling #Ability3 #AgiValue,.Reborn .HasMorph.npc_dota_hero_morphling #Ability4 #StrValue
+.Reborn .HasMorph.npc_dota_hero_rubick #Ability3 #AgiValue,.Reborn .HasMorph.npc_dota_hero_rubick #Ability4 #StrValue,.Reborn .HasMorph.npc_dota_hero_morphling #Ability2 #AgiValue,.Reborn .HasMorph.npc_dota_hero_morphling #Ability3 #StrValue
 {
 	visibility: visible;
 	text-shadow: 0px 0px 3px 3 #000000;
 }
 
-.Reborn .HasMorph.npc_dota_hero_rubick #Ability4 .HeroStatValue,.Reborn .HasMorph.npc_dota_hero_morphling #Ability4 .HeroStatValue
+.Reborn .HasMorph.npc_dota_hero_rubick #Ability4 .HeroStatValue,.Reborn .HasMorph.npc_dota_hero_morphling #Ability3 .HeroStatValue
 {
 	horizontal-align: right;
 	margin-right: 4px;
@@ -1924,11 +1955,23 @@ DOTAAbilityPanel.Hidden
 {
 	width: 8px;
 	height: 4px;
-	margin: 3px 2px 3px 2px;
+	margin: 3px 2px;
 	border-radius: 1px;
 	background-image: none;
 	background-size: 100% 100%;
 	background-color: gradient( linear, 0% 0%, 0% 100%, from( #111111ff ), to( #000000ff ) );
+}
+
+.Reborn .AbilityMaxLevel5 .LevelPanel
+{
+	width: 7px;
+	margin: 3px 1.5px;
+}
+
+.Reborn .AbilityMaxLevel6 .LevelPanel
+{
+	width: 6px;
+	margin: 3px 1.5px;
 }
 
 .Reborn .AbilityMaxLevel7 .LevelPanel
@@ -1938,10 +1981,25 @@ DOTAAbilityPanel.Hidden
 	margin: 1.5px;
 }
 
-.Reborn .AbilityMaxLevel6 .LevelPanel
+.Reborn .AbilityMaxLevel8 .LevelPanel
 {
-	width: 6px;
-	margin: 3px 1.5px 3px 1.5px;
+	width: 4px;
+	height: 5px;
+	margin: 1px;
+}
+
+.Reborn .AbilityMaxLevel9 .LevelPanel
+{
+	width: 3px;
+	height: 6px;
+	margin: 1.3px;
+}
+
+.Reborn .AbilityMaxLevel10 .LevelPanel
+{
+	width: 3px;
+	height: 6px;
+	margin: 1px;
 }
 
 .Reborn .active_level.LevelPanel
@@ -2467,6 +2525,7 @@ DOTAAbilityPanel.Hidden
 #TopBarTPIcon #ItemImage
 {
 	border-radius: 50%;
+	margin: 4px;
 }
 
 #ADAbilityContainer #AbilityImage
@@ -2536,9 +2595,9 @@ DOTAAbilityPanel.Hidden
 
 #TopBarUltimate #CooldownTimer,#TopBarTPIcon #CooldownTimer
 {
-	margin-top: 4px;
-	margin-left: 1px;
 	text-align: center;
+	font-weight: semi-bold;
+	font-size: 20px;
 }
 
 .Reborn DOTAScoreboardPlayerInventory .InventoryItem #ButtonSize
@@ -2830,16 +2889,16 @@ DOTAAbilityPanel.Hidden
 	transition-duration: 0.1s;
 }
 
-.IsKez.KezKatanaMode .kez_switch_weapons #AbilityImage,.IsKez.KezKatanaMode .kez_switch_weapons #Cooldown
-{
-	animation-name: SwitchKezKatana;
-	animation-duration: 0.25s;
-}
-
 .IsKez.KezKatanaMode .kez_switch_weapons .KezAbilityLabelContainer #AbilityLabel1
 {
 	text-shadow: rgba(255, 166, 0, 0.6) 0px 0px 12px;
 	color: white;
+}
+
+.IsKez.KezKatanaMode.ShowKezButtonAnim .kez_switch_weapons #AbilityImage,.IsKez.KezKatanaMode.ShowKezButtonAnim .kez_switch_weapons #Cooldown
+{
+	animation-name: SwitchKezKatana;
+	animation-duration: 0.25s;
 }
 
 .IsKez.KezSaiMode .kez_switch_weapons #AbilityImage,.IsKez.KezSaiMode .kez_switch_weapons #ShineContainer,.IsKez.KezSaiMode .kez_switch_weapons #Cooldown
@@ -2847,16 +2906,16 @@ DOTAAbilityPanel.Hidden
 	horizontal-align: right;
 }
 
-.IsKez.KezSaiMode .kez_switch_weapons #AbilityImage,.IsKez.KezSaiMode .kez_switch_weapons #Cooldown
-{
-	animation-name: SwitchKezSai;
-	animation-duration: 0.25s;
-}
-
 .IsKez.KezSaiMode .kez_switch_weapons .KezAbilityLabelContainer #AbilityLabel2
 {
 	text-shadow: rgba(173, 216, 230, 0.6) 0px 0px 12px;
 	color: white;
+}
+
+.IsKez.KezSaiMode.ShowKezButtonAnim .kez_switch_weapons #AbilityImage,.IsKez.KezSaiMode.ShowKezButtonAnim .kez_switch_weapons #Cooldown
+{
+	animation-name: SwitchKezSai;
+	animation-duration: 0.25s;
 }
 
 @keyframes 'SwitchKezSai'

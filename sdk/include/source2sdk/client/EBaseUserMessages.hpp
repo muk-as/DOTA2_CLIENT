@@ -8,7 +8,7 @@
 
 namespace source2sdk::client
 {
-    // Enumerator count: 52
+    // Enumerator count: 51
     // Alignment: 4
     // Size: 0x4
     enum class EBaseUserMessages : std::uint32_t
@@ -49,7 +49,6 @@ namespace source2sdk::client
         UM_AnimGraphUpdate = 0x95,
         UM_HapticsManagerPulse = 0x96,
         UM_HapticsManagerEffect = 0x97,
-        UM_CommandQueueState = 0x98,
         UM_UpdateCssClasses = 0x99,
         UM_ServerFrameTime = 0x9a,
         UM_LagCompensationError = 0x9b,

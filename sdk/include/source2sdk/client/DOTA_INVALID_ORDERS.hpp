@@ -8,7 +8,7 @@
 
 namespace source2sdk::client
 {
-    // Enumerator count: 123
+    // Enumerator count: 124
     // Alignment: 4
     // Size: 0x4
     enum class DOTA_INVALID_ORDERS : std::uint32_t
@@ -135,6 +135,7 @@ namespace source2sdk::client
         DOTA_INVALID_ORDER_ABILITY_CANT_ALT_CAST = 0x76,
         DOTA_INVALID_ORDER_ITEM_CANNOT_BE_CONSUMED = 0x77,
         DOTA_INVALID_ORDER_CANT_BUYBACK_CEASELESS_DIRGE = 0x78,
-        DOTA_INVALID_ORDER_COUNT = 0x79,
+        DOTA_INVALID_ORDER_CANT_ATTACK_BUILDINGS = 0x79,
+        DOTA_INVALID_ORDER_COUNT = 0x7a,
     };
 };

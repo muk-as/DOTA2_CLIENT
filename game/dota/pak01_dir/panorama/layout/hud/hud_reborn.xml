@@ -145,7 +145,8 @@
 						<Panel id="right_flare">
 							<Panel id="HUDSkinPreCenterParticlesRight" class="hud_skinnable" hittest="false" />
 						</Panel>
-						<Panel id="inventory_composition_layer_container" require-composition-layer="true">
+						<Panel id="inventory_composition_layer_container" require-composition-layer="true" hittest="false">
+							<DOTAParticleScenePanel class="NeutralTokenChangedFX" particleName="particles/ui/hud/neutral_token_changed.vpcf" renderdeferred="true" particleonly="false" startActive="true" cameraOrigin="0 100 0" lookAt="0 0 0" fov="50" squarePixels="true" />
 							<Panel id="inventory_tpscroll_container">
 								<DOTAAbilityPanel id="inventory_tpscroll_slot" acceptsjoyfocus="true" />
 								<Panel id="inventory_tpscroll_HotkeyContainer" hittest="false">
@@ -163,6 +164,7 @@
 							</Panel>
 							<Panel id="inventory_neutral_slot_container">
 								<DOTAAbilityPanel id="inventory_neutral_slot" acceptsjoyfocus="true" />
+								<DOTAParticleScenePanel class="NeutralTokenChangedOverlayFX" particleName="particles/ui/hud/neutral_token_changed_sparkles.vpcf" renderdeferred="true" particleonly="false" startActive="true" cameraOrigin="0 100 0" lookAt="0 0 0" fov="50" squarePixels="true" />
 								<Panel id="inventory_neutral_slot_HotkeyContainer" hittest="false">
 									<Panel id="Hotkey" hittest="false">
 										<Label id="HotkeyText" text="{s:hotkey}" hittest="false" html="true" />
@@ -176,7 +178,40 @@
 								</Panel>
 								<Label id="neutralCharges" text="{d:charge_count}" hittest="false" />
 							</Panel>
-							<DOTAPlusNeutralItemUpgradeIndicator id="neutral_upgrade_indicator" />
+							<Panel id="inventory_neutral_craft_holder" hittest="false">
+								<DOTAParticleScenePanel class="FarmingAvailableFX" particleName="particles/ui/hud/neutral_token_changed_sparkles.vpcf" renderdeferred="true" particleonly="false" startActive="true" cameraOrigin="0 100 0" lookAt="0 0 0" fov="84" squarePixels="true" />
+								<Panel class="inventory_neutral_madstone_progress_background" />
+								<Panel id="inventory_neutral_madstone_holder" onactivate="DOTAHUDClickMadstoneCrafting()" onmouseover="DOTAHUDMouseOverNeutralCrafting()" onmouseout="DOTAHUDMouseOutNeutralCrafting()">
+									<Panel id="inventory_neutral_madstone_progress_max" />
+									<Panel id="inventory_neutral_madstone_progress" />
+									<Panel id="inventory_neutral_icon" />
+									<Panel class="inventory_neutral_madstone_counter_container">
+										<Label id="inventory_neutral_madstone_text" text="{d:current_madstone}" />
+										<Label id="inventory_neutral_madstone_text_max" text="/{d:madstone_craft_amount}" />
+									</Panel>
+								</Panel>
+								<Panel class="inventory_neutral_got_madstone_container">
+									<Panel class="inventory_neutral_icon_glow" />
+									<DOTAParticleScenePanel class="GotNeutralCurrencyFX" particleName="particles/ui/hud/got_neutral_currency.vpcf" renderdeferred="true" particleonly="false" startActive="true" cameraOrigin="0 200 0" lookAt="0 0 0" fov="65" squarePixels="true" />
+									<Label class="inventory_neutral_got_madstone_amount" text="+{d:madstone_gain_amount}" />
+								</Panel>
+								<DOTAParticleScenePanel hittest="false" class="LevelUpNeutralFX" particleName="particles/ui/hud/neutral_levelup.vpcf" renderdeferred="true" particleonly="false" startActive="true" cameraOrigin="0 200 0" lookAt="0 0 0" fov="65" squarePixels="true" />
+								<Panel id="inventory_neutral_level_up" hittest="false">
+									<Panel class="NeutralLevelUpAvailableGlow" hittest="false" />
+									<DOTAScenePanel class="NeutralBurstFX" map="scenes/hud/levelupburst" animate-during-pause="true" renderdeferred="false" rendershadows="false" camera="camera_1" hittest="false" particleonly="true" />
+									<Button id="CraftNeutral" onactivate="DOTAToggleNeutralItemPicker()" hittest="true">
+										<Panel class="LevelUpNeutralButton">
+											<Panel class="LevelUpNeutralButtonBackground" />
+											<Image class="LevelUpNeutralButtonIconShadow" src="s2r://panorama/images/control_icons/24px/crafting_hammer.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+											<Image class="LevelUpNeutralButtonIcon" src="s2r://panorama/images/control_icons/24px/crafting_hammer.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+										</Panel>
+									</Button>
+								</Panel>
+								<Panel id="inventory_neutral_icon_at_limit" onactivate="DOTAHUDClickMadstoneCrafting()" onmouseover="DOTAHUDMouseOverNeutralCrafting()" onmouseout="DOTAHUDMouseOutNeutralCrafting()">
+									<Image class="MadstoneLimitIcon" src="s2r://panorama/images/hud/facets/icons/cooldown_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+									<Label class="MadstoneLimitLabel" text="{s:madstone_unlock_time}" />
+								</Panel>
+							</Panel>
 						</Panel>
 					</Panel>
 				</Panel>

@@ -8,7 +8,7 @@
 
 namespace source2sdk::client
 {
-    // Enumerator count: 120
+    // Enumerator count: 121
     // Alignment: 4
     // Size: 0x4
     enum class ENetworkDisconnectionReason : std::uint32_t
@@ -133,5 +133,6 @@ namespace source2sdk::client
         NETWORK_DISCONNECT_KICKED_NOSTEAMTICKET = 0xa1,
         NETWORK_DISCONNECT_KICKED_INPUTAUTOMATION = 0xa2,
         NETWORK_DISCONNECT_KICKED_VACNETABNORMALBEHAVIOR = 0xa3,
+        NETWORK_DISCONNECT_KICKED_INSECURECLIENT = 0xa4,
     };
 };

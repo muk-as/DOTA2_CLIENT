@@ -34,9 +34,9 @@
 0L2@2H
 0Mc\vI
 0V[$0
+0\aPlat_IsInDebugSession
 0\f<pqA1
 0\r0#0)070;0U0Y0[0g0q0y0}0
-0_ÉL$ H
 0_ËC8A
 0b1\v0\t
 0c1\v0\t
@@ -64,7 +64,7 @@
 1CThreadSemaphore@@QEAA@XZ
 1CThreadSyncObject@@QEAA@XZ
 1CUtlMemoryBlockAllocator@@QEAA@XZ
-1P0sja
+1\bUtlMemory_CalcNewAllocationCount
 1f\t3Qg^y
 1h=bfz
 1kYL\r
@@ -83,6 +83,7 @@
 2\a3%3+3/353A3G3[3_3g3k3s3y3
 2\b \btBo
 2\b=F
+2\bUtlMemory_FailedAllocation
 2\t"n
 2cb:RO
 2ffffff
@@ -137,7 +138,6 @@
 3w2URu
 3ÉG03G
 3ɀ80u
-3Ƀ=lr\n
 3ɉD$8H
 3ɉT$0A
 3ɋt$P
@@ -167,7 +167,6 @@
 5hcr\aC
 5http://cacerts.digicert.com/DigiCertTrustedRootG4.crt0C
 5lu file=%s, line=%d
-6"w3\f
 6#6165676;6M6O6S6Y6a6k6m6
 6+?R6
 62$|S)6f
@@ -177,12 +176,12 @@
 6J~U\fm
 6K;L#k
 6M+ωD$ H
-6\a+pӎx
 6\rߖ3ja
 6c&0|vvX
 6i$R\nQ
 6l\nhF0
 6r-m_v
+6t_v]H
 6ynV\f8
 7?XEAVn
 7\a7\e7?7E7I7O7]7a7u7
@@ -203,11 +202,13 @@
 8A_A^A
 8A_A^A]A
 8CUtlString@@QEBA_NAEBV0@@Z
+8Csinf
 8D$ t4f
 8D$@t\fH
 8D$Xt\fH
 8DigiCert Trusted G4 Code Signing RSA4096 SHA384 2021 CA1
 8DigiCert Trusted G4 Code Signing RSA4096 SHA384 2021 CA10
+8HcC\b
 8H܋\\fP
 8SIffK5W
 8TZvrv
@@ -237,7 +238,7 @@
 9C,r\bH
 9D$Pu\tA
 9F\b~&E3
-9T$ ~ 3
+9T$ ~\e3ɐH
 9Y@nJM
 9YDu\tH9
 9\au\vLc
@@ -498,6 +499,8 @@ AUAVAWH
 AUTHORITY_INFO_ACCESS
 AUTHORITY_KEYID
 AV?$CBaseAppSystem@VISteamAudio
+AV?$CRefCountServiceBase@VCRefMT
+AV?$CRefCounted@V?$CRefCountServiceBase@VCRefMT
 AV?$CSurfacePropDataTable@VCSteamAudioMaterial
 AV?$CTier0AppSystem@VISteamAudio@@$0A
 AV?$CTier1AppSystem@VISteamAudio@@$0A
@@ -518,6 +521,9 @@ AVCSchemaRegistration_steamaudio
 AVCSource3DProcessor
 AVCSteamAudio
 AVCSteamAudioMaterialList
+AVCSteamAudioPartitioner
+AVCSteamAudioPartitioningTask
+AVCSteamAudioReverbSimulator
 AVCSteamAudioScene
 AVCSteamAudioSimulationData
 AVCSteamAudioSource
@@ -724,17 +730,22 @@ B\bu0L
 Bad boolean\n
 Bad time value
 BakeDimensions: Max probes (%u) limit exceeded (%d). Bake cancelled.\n
+BakeDimensions: No probes generated. Bake cancelled.\n
 BakeMaterials: Max probes (%u) limit exceeded (%d). Bake cancelled.\n
+BakeMaterials: No probes generated. Bake cancelled.\n
 BakeOcclusion: Max probes (%u) limit exceeded (%d). Bake cancelled.\n
+BakeOcclusion: No probes generated. Bake cancelled.\n
 BakeOcclusion: Unable to create impulse response. (%d)\n
 BakeOcclusion: Unable to create probe batch. [%d]\n
 BakeOcclusion: Unable to create simulator. (%d)\n
 BakeOcclusion: Unable to create source. (%d)\n
 BakePathData: Cancelled\n
 BakePathData: Max probes (%u) limit exceeded (%d). Bake cancelled.\n
+BakePathData: No probes generated. Bake cancelled.\n
 BakePathData: Unable to create probe batch. [%d]\n
 BakeReverb: Cancelled\n
 BakeReverb: Max probes (%u) limit exceeded (%d). Bake cancelled.\n
+BakeReverb: No probes generated. Bake cancelled.\n
 BakeReverb: Unable to create compressed probe batch. (%d)\n
 BakeReverb: Unable to create probe array. (%d)\n
 BakeReverb: Unable to create probe batch. (%d)\n
@@ -753,7 +764,6 @@ Bp\bu\bH
 Buffer too small
 BvVlZ
 BЉT$4L
-C ;C$t
 C H1C@H
 C!FReQ
 C!OFtq74
@@ -970,10 +980,13 @@ CRT$XCA
 CRT$XCC
 CRT$XCU
 CRT$XCZ
+CRT$XDA
+CRT$XDZ
 CRT$XIA
 CRT$XIC
 CRT$XIZ
 CRT$XLA
+CRT$XLC
 CRT$XLZ
 CRT$XPA
 CRT$XPX
@@ -996,11 +1009,14 @@ CSteamAudioBakedPathingData
 CSteamAudioBakedReverbData
 CSteamAudioBakedReverbData::KV3TransferPostLoadFn
 CSteamAudioBakedReverbData::KV3TransferPostSaveFn
+CSteamAudioPartitioner::CSteamAudioPartitioner
+CSteamAudioPartitioningTask::CSteamAudioPartitioningTask
 CSteamAudioProbeData
 CSteamAudioProbeData::KV3TransferPostLoadFn
 CSteamAudioProbeData::KV3TransferPostSaveFn
 CSteamAudioProbeData::SetProbes
 CSteamAudioProbeData::SetSerializedData
+CSteamAudioReverbSimulator::CSteamAudioReverbSimulator
 CSteamAudioScene::BakeDimensions
 CSteamAudioScene::BakeMaterials
 CSteamAudioScene::BakeOcclusion
@@ -1011,17 +1027,20 @@ CSteamAudioSimulationData::ImportMaterialsData
 CSteamAudioSimulationData::ImportOcclusionData
 CSteamAudioSimulationData::ImportPathingData
 CSteamAudioSimulationData::ImportReverbData
+CSteamAudioSource::CSteamAudioSource
 CT Certificate SCTs
 CT Precertificate Poison
 CT Precertificate SCTs
 CT Precertificate Signer
 CUtlBlockMemory overflow!\n
+CUtlLinkedList overflow! (exhausted index range)\n
+CUtlLinkedList overflow! (exhausted memory allocator)\n
 CUtlMemory_RawAllocator<class CUtlHashtableEntry<unsigned int,struct empty_t> >::EnsureCapacity
 CUtlMemory_RawAllocator<unsigned int>::EnsureCapacity
 CUtlMemory_RawAllocator<unsigned int>::Grow
 CUtlRBTree overflow with %u elements!\n
-CUtlRBTree<struct CUtlOrderedMapBase<class CUtlStringToken,int,class CDefLess<class CUtlStringToken>,int>::Node_t,class CUtlOrderedMapBase<class CUtlStringToken,int,class CDefLess<class CUtlStringToken>,int>::CKeyLess,int,class CUtlMemory<struct UtlRBTreeNode_t<struct CUtlOrderedMapBase<class CUtlStringToken,int,class CDefLess<class CUtlStringToken>,int>::Node_t,int>,int> >::Insert
-CUtlSortVector<struct ChunkHashFraction_t,class ChunkHashFractionLess_t,class CUtlVector<struct ChunkHashFraction_t,int,class CUtlMemory<struct ChunkHashFraction_t,int> > >::Find
+CUtlRBTree<struct CUtlOrderedMapBase<class CUtlStringToken,int,class CDefLess<class CUtlStringToken>,int>::Node_t,class CUtlOrderedMapBase<class CUtlStringToken,int,class CDefLess<class CUtlStringToken>,int>::CKeyLess,int,class CUtlMemory<struct UtlRBTreeNode_t<struct CUtlOrderedMapBase<class CUtlStringToken,int,class CDefLess<class CUtlStringToken>,int>::Node_t,int>,int,0> >::Insert
+CUtlSortVector<struct ChunkHashFraction_t,class ChunkHashFractionLess_t,class CUtlVector<struct ChunkHashFraction_t,int,class CUtlMemory<struct ChunkHashFraction_t,int,0> > >::Find
 CUtlVector
 C\\lVQ˅nF
 C\b9{\bu
@@ -1044,6 +1063,7 @@ CheckGet@CUtlBuffer@@IEAA_NH@Z
 CheckPut@CUtlBuffer@@IEAA_NH@Z
 Chunk hash not found
 Class Hierarchy Descriptor
+Class data is a '%s', not a table\n
 Class does not allow allocation from its schema binding
 ClientToolsInfo_001
 CloseHandle
@@ -1085,6 +1105,7 @@ Ct-<D
 CtK<Dv
 D!l$xA
 D#D)D;D?DEDKDQDSDYDeDoD
+D$ E3
 D$ E3\t\\$7H
 D$ E;n\f
 D$ HǀX
@@ -1119,7 +1140,9 @@ D$8H1C
 D$8HcD$8H
 D$8HcH
 D$8fff
+D$@E3
 D$@H1C
+D$@HcL$D
 D$D3\tD
 D$H+D$LH
 D$HD9`\bu!H
@@ -1219,7 +1242,7 @@ D8L$0u
 D8Z\bt
 D8t$ht\nH
 D8}?t\tH
-D96~QH
+D96~HH
 D9\vucL
 D9`Pu7H
 D9cDt\f
@@ -1391,7 +1414,6 @@ DO_PVK_HEADER
 DO_RSA_PRINT
 DO_SIGVER_INIT
 DO_SSL3_WRITE
-DRm-(i
 DSA PARAMETERS
 DSA PRIVATE KEY
 DSA lib
@@ -1459,6 +1481,8 @@ DYNAMIC_GET_DATA_CTX
 DYNAMIC_LOAD
 DYNAMIC_SET_DATA_CTX
 D\a͈ad
+D\n\bfA
+D\n\bfD
 D\r00D\r
 D]WO"#y
 Data Encipherment
@@ -1506,8 +1530,10 @@ E3\bD
 E3\bD$1H
 E3\tD
 E3\tD$ 3
-E3\tD$0H
+E3\tD$ H
+E3\tD$0I
 E3\tD$@H
+E3\tD$@I
 E3\tl$ H
 E3]\bE3U\fA3
 E3]\bE3U\fL
@@ -1517,7 +1543,6 @@ E3ɉl$(E3
 E3ɉl$P
 E3ɉl$PL
 E3ɉt$0H
-E3ɉt$@L
 E3ɋD$XD
 E3ɍPGE3
 E3ɍU*E3
@@ -1526,7 +1551,7 @@ E8HcE,H
 E8g\btAH
 E8g\btEH
 E8q(u\bH
-E9&~uH
+E9&~jH
 E9'~2I
 E9'~3I
 E9\ntIIc
@@ -1683,6 +1708,7 @@ EDIPARTYNAME
 EEo3҉D$@H
 EIl$@3
 EIt$@3
+EL;\r
 EMPTY>\n
 EN2 s
 ENCRYPTED
@@ -1790,7 +1816,6 @@ EXPORTSYSTEM_INTERFACE_VERSION_001
 EXTENDED_KEY_USAGE
 EXTERNAL
 EXTERNAL TYPE %s\n
-E\aPlat_NonFatalErrorFunc
 E\bHcu`M
 E\bIcN\b
 E\fw\vD8
@@ -1817,7 +1842,6 @@ Ep0uλ\ebq
 Eric Young's PKCS#1 RSA
 Error in encoding\n
 Error reading from loaded packed store "%s
-EwHc\\$ Hc0
 Ew`)9Q
 Excluded
 ExitProcess
@@ -1832,7 +1856,6 @@ Extension Request
 ExtractFileBase@CBufferString@@QEAAPEBDPEBD_N@Z
 ExtractFileExtension@CBufferString@@QEAAPEBDPEBD@Z
 ExtractFilePath@CBufferString@@QEAAPEBDPEBD_N@Z
-EȉL$xE3
 EȋA\bA
 EωL$8H
 EӀ:0u
@@ -1840,6 +1863,7 @@ F#bgn?MwN
 F$9~ s
 F$A9~ s
 F,mZq\e\vn
+F9`xX
 FATAL ERROR: CUtlSymbolTableLarge element limit of %u exceeded\n
 FATAL ERROR: unable to register all schema data: %s\n
 FATAL: %s called on a pool context (no root available)\n
@@ -1903,6 +1927,7 @@ F߷̀Y1
 G%uRH
 G1rGP1
 G2xVo
+G8j26
 GBd<}v
 GC\eq
 GD$8E3
@@ -2023,6 +2048,7 @@ GetStringTypeW
 GetSystemInfo
 GetSystemTime
 GetSystemTimeAsFileTime
+GetThreadLocalStackAllocator
 GetTickCount
 GetTimeZoneInformation
 GetUpTo@CUtlBuffer@@QEAAHPEAXH@Z
@@ -2050,7 +2076,6 @@ H9/u&L
 H97u+A
 H99tjH
 H9:t\fH
-H9=a4\r
 H9>&X
 H9>t\bH
 H9A u
@@ -2065,6 +2090,7 @@ H9K\bu\vH
 H9L$8v"H
 H9Q\bv"H
 H9X teH
+H9\r$T\r
 H9^\bt/H9_\bu
 H9_ u
 H9h\bu5H
@@ -2080,13 +2106,13 @@ H9t$@t\vH
 H9u t
 H9x\buSH
 H9{\bt
-H;5y}\e
 H;C\bw
 H;C\bw H
 H;C\bw"H
 H;H\bv\a
 H;K\bt\bH
 H;XXs\v
+H;\r1H\r
 H;l$\bsCH
 H;l$\bsEH+t
 H;xXu5
@@ -2120,7 +2146,6 @@ HMAC-MD5
 HMAC-SHA1
 HMAC_Init_ex
 HU>mA$_E
-H\b@81H
 H\bATAVAWH
 H\bAUAVAWH
 H\bHqI9x
@@ -2157,7 +2182,7 @@ HcT$@L
 HcX H
 Hct$`3
 Hcz\bE3
-Hc|$8L
+Hc|$ Ic
 Heap32First
 Heap32ListFirst
 Heap32ListNext
@@ -2220,11 +2245,8 @@ ISO US Member Body
 ISO-US
 ISSUING_DIST_POINT
 IV block
-I\bV_DoubleToString_Unsafe
 I\tHA\t981G'dc
-I\tV_powd
 I`Mb"(\ao
-Ic.A;n
 Ic^\fE3
 If D\b?i
 If set, all the probes near a source withing probe range are used to find paths instead of nearest probe
@@ -2267,7 +2289,6 @@ J:xrG\aDC
 J<0"0i3
 JJޔJJޘLLԘLL
 JOINT-ISO-ITU-T
-J\tV_powf
 J\ty\bRF
 J_R=I
 J_spY
@@ -2289,9 +2310,7 @@ KMBo8
 KV3 save transfer failed: %s
 K[C7W
 K\bLc@\b
-K\bUVAVAWI
-K\bV_FixDoubleSlashes
-K\tV_qsort
+K\bUVAUAVAWI
 K\vHC\n
 K]taM
 K`tBL
@@ -2304,6 +2323,9 @@ Key field (volume) missing in custom hrtf properties file. Setting it to 0 dB
 KeyValueCache001
 KeyValues3: pre-allocated array memory is too small for %u elements (%u bytes available, %u bytes needed)\n
 KeyValues3: pre-allocated table memory is too small for %u members (%u bytes available, %u bytes needed)\n
+KeyValues3::FindOrCreateMember
+KeyValues3::GetTable
+KeyValues3::Internal_FindMember
 K{"Kb,p
 K{(KĖK/VTR
 K£Qlǡ迢Kf
@@ -2334,6 +2356,7 @@ L$ WATAUAVAW
 L$ WATAUAVAWH
 L$ \vЉT$0H
 L$ fff
+L$$Ic
 L$(E3\tL
 L$(Hc
 L$0;L$l
@@ -2348,7 +2371,6 @@ L$4+L$H
 L$8E3
 L$8E3ɉL$(E3
 L$8u\eH
-L$@Lc\r
 L$H3ɉT$@A
 L$HE3\tD$(I
 L$HtnL
@@ -2375,7 +2397,6 @@ L$\bSVAU
 L$\bSVWATAUAVAWH
 L$\bUATAUAVAWH
 L$\bUH
-L$\bUSVWATAUAVH
 L$\bUVAT
 L$\bUVATAUH
 L$\bUVW
@@ -2429,13 +2450,12 @@ LOAD_IV
 LOG_MESSAGE
 LONG_C2I
 LX\aqIE\b
-L\aPlat_RegisterModule
 L\e#L\ek\bI
 L\eN\bL\eV
 L\ea\bL\ei
 L\em\bL\eu
 L\n/8x
-L\tV_qsort_s
+L\n\nfE
 LanmanServer
 LanmanWorkstation
 Lc&D;f
@@ -2447,6 +2467,7 @@ LcD$8H
 LcD$@H
 LcD$@Hc\nH
 LcE,A
+LcI\bI
 LcL$@HcT$DH
 Lc\\$pI
 Lcd$0J
@@ -2598,6 +2619,7 @@ NUMERIC
 NUMERICSTRING
 NWzl\n
 NXfT>o
+N\aPlat_NonFatalErrorFunc
 N\bA+̉k\b
 N\bD9y\b
 N\ft#A
@@ -2721,6 +2743,7 @@ Oakley-EC2N-4
 Object Signer
 Object Signing
 Object Signing CA
+OcL0\bA
 Occlusion: Cannot find baked data file: %s.\n
 Occlusion: Data not stored in KV3 format. Rebake.\n
 Occlusion: Filesystem not initialized.\n
@@ -2967,7 +2990,6 @@ Pathing: Cannot find baked paths file: %s.\n
 Pathing: Filesystem not initialized.\n
 Pathing: Imported %d probes from baked pathing file (%s).\n
 Pathing: Loaded baked data file (%s).\n
-Pathing: Loaded baked data file.\n
 Pathing: No baked pathing found in baked data file.\n
 Pathing: No baked pathing found in baked data file: %s.\n
 Pathing: No probes found in baked data file. Pathing disabled.\n
@@ -2982,7 +3004,7 @@ Phonon_Log
 Phttp://cacerts.digicert.com/DigiCertTrustedG4CodeSigningRSA4096SHA3842021CA1.crt0\t
 PhysicsBuilderMgr001
 Plat_ExitProcess
-Plat_FatalErrorFunc
+Plat_FatalError
 Plat_FloatTime
 PmR"H
 Pointers cannot be used as numeric values
@@ -3020,7 +3042,6 @@ Q/xtJ2
 Q2ʟ(\vC
 QZ^&D
 QZ^&E3
-Q\bV_FloatToString_Unsafe
 Qh٢%v
 Qjh/T
 QueryPerformanceCounter
@@ -3155,6 +3176,7 @@ RSA_verify_PKCS1_PSS
 RSA_verify_PKCS1_PSS_mgf1
 RSTUVWX
 R\b;Q\f
+R\bV_DoubleToString_Unsafe
 R\r1>Vp
 RaiseException
 ReadConsoleInputW
@@ -3259,11 +3281,11 @@ S2I_SKEY_ID
 S9!覄B>C
 S<hN-AO
 SABDt
+SATAUH
 SATAUL
 SATAV
 SATAVAW
 SATAW
-SATAWH
 SAUAVAW
 SAVAWH
 SECG curve over a 112 bit prime field
@@ -3458,6 +3480,7 @@ SUVWAUAVAW
 SUVWAUAW
 SUVWAV
 SUVWAVAW
+SUVWAWH
 SUWATAUAV
 SUWATAUAVAW
 SUWATAUAVAWH
@@ -3467,7 +3490,6 @@ SUWAW
 SVATAU
 SVATAUAW
 SVAVAW
-SVAVH
 SVWATAU
 SVWATAUAV
 SVWATAUAVAW
@@ -3668,6 +3690,7 @@ TS_VERIFY
 TS_VERIFY_CERT
 TS_VERIFY_CTX_new
 TXJw^{Ԓ>r
+T\bV_FixDoubleSlashes
 T\ew®pcN
 T\v!hn7
 T\viMOb
@@ -3767,7 +3790,6 @@ USVWAVH
 USVWH
 USWATAUAVAWH
 USWATAUAWH
-USWATAUH
 USWATAWH
 USWAVAWH
 UTCTIME
@@ -3796,6 +3818,7 @@ UVWATAUAVAW
 UVWATAUAVAWH
 UVWATAUAVAWI
 UVWATAUAW
+UVWATAVH
 UVWATAW
 UVWATAWH
 UVWAUAVH
@@ -3815,10 +3838,12 @@ UWAUAVAW
 UWAUAVAWH
 UWAVAW
 UWAVH
+U\aPlat_RegisterModule
 U\f2>Y
 U\fOsA
 U\fOsD
 U\fOsfA
+U\tV_powd
 Unable to create Ambisonics decode effect [%d]\n
 Unable to create custom HRTF [%s]\n
 Unable to create direct effect [%d]\n
@@ -3872,6 +3897,7 @@ VAUAVAW
 VAUAW
 VAUAWH
 VAVAW
+VAVAWH
 VApplication001
 VAsyncFileSystem2_001
 VAvi001
@@ -3918,7 +3944,7 @@ VWebm001
 VY5[;o
 V\b9^\bu
 V\rO:e
-V\tV_sincosf
+V\tV_powf
 V\v6I]Dc
 V\vA[o
 V_stristr_fast@@YAPEBDPEBD0@Z
@@ -3969,7 +3995,8 @@ W\bA9_\bu
 W\bD9*u
 W\bE9o\bu
 W\bI;P\bwwH9Q\bwqI
-W\t|$Df
+W\tV_qsort
+W\t|$tf
 W`c[\e\fF
 Wait@CThreadSyncObject@@QEAA_NI@Z
 WaitForSingleObjectEx
@@ -4128,7 +4155,8 @@ XA_A^A
 XA_A^A]A
 XLuC'4
 XNU`{3
-X\tV_sinf
+X\tV_qsort_s
+Xƶ:FE
 X醑U[D
 Y&\f -aY
 Y93a=7c
@@ -4148,6 +4176,7 @@ ZIޱZI
 ZRrˬ#D
 ZXF,`i
 Z\aGdD
+Z\bV_FloatToString_Unsafe
 ZdOt\n
 Ze2Zh
 Zf:Di
@@ -4180,17 +4209,14 @@ aON=A
 aON=fA
 aOpenSSL
 aPlat_GetTime
-aPlat_IsInDebugSession
 aPw0öMB
 aRandomFloat
 aRecord
 aRegisterStringToken
 aReleaseThreadHandle
 aThreadInMainThread
-aThreadJoin
 aUU[⤙Q7\v
 a\bL+!I
-a\bV_Int64ToString_Unsafe
 a\eZDi
 aaControls
 abcdefghijklmnopqrstuvwxyz
@@ -4344,6 +4370,7 @@ bB303
 bB:\f\bu\fH
 bBellevue1
 bC2\f(C
+bD8 H
 bD9n\bu
 bD9v\bu
 bDigiCert1 0
@@ -4355,14 +4382,12 @@ bH@H9xqI
 bL3D̀I
 bL3D݀I
 bPb:L7X
+bThreadJoin
 bThreadSleep
 bUVWATAUAVAW
 bUVWATAUAVAWH
 bUVWAVAWH
 bUtlMemory_Alloc
-bUtlMemory_CalcNewAllocationCount
-bUtlMemory_FailedAllocation
-bV_Int32ToString_Unsafe
 bV_StringParseError
 bV_StringToBool
 bV_StringToColor
@@ -4383,13 +4408,12 @@ bV_UInt64ToString_Unsafe
 bV_UnqualifiedFileName
 bV_acosf
 bV_atanf
-bV_atoi
-bV_cosf
 bW\a|T1
 b\b 0\b\b  \b\t
 b\eQEy
 b\fzUkm
 b\t 0\b\t
+b\tV_sincosf
 b\t\n\vSHA256 block transform for x86_64, CRYPTOGAMS by <appro@openssl.org
 b\vȉJ\fA
 b\vȉL$0
@@ -5010,7 +5034,6 @@ d %d %d %d
 d e not congruent to 1
 d$ AUAVAW
 d$ fD
-d$@t\vH
 d$PxSL
 d$dD;d$ltY
 d$pu>H
@@ -5084,6 +5107,8 @@ dNSDomain
 dSAQuality
 dVPdVP{˄a{˄a
 d[kHy
+d\a k6
+d\tV_sinf
 d_r_0\e
 d`D-laM
 daE<<0\f6
@@ -5262,6 +5287,7 @@ e0A_A^A]A
 eContent
 eContentType
 eDigiCert Assured ID Root CA0
+eH;_\bt-H
 eHA_A^A]A
 eN.d\tA
 eYe80D
@@ -5508,8 +5534,8 @@ fN46R
 fPw.\vM
 fS{ggRcjh
 fTSъ8,x
+fX!t5
 f\eփZ
-f\tV_stricmp_fast
 f\trixZ
 f\vǉD$HH
 f`\vP\n0
@@ -5535,11 +5561,6 @@ finish failed
 fips mode not supported
 first num too large
 first octet invalid
-flc_columns
-flc_count
-flc_file_ids
-flc_file_list
-flc_lines
 float32
 float64
 flt.vpk
@@ -5558,6 +5579,7 @@ freshestCRL
 friendlyCountry
 friendlyCountryName
 friendlyName
+from %s%s
 fu_E3
 fullname
 func(%lu
@@ -5620,6 +5642,7 @@ header too long
 heartbeat request already pending
 hex_to_string
 hexkey
+hf;_RwbfA9
 highFreqAbsorption
 highFreqTransmission
 hloav\\\t
@@ -5669,6 +5692,7 @@ i2s_ASN1_ENUMERATED
 i2s_ASN1_INTEGER
 iA5StringSyntax
 iFFp}A
+i\bV_Int32ToString_Unsafe
 i\b\e4ȿ;rB
 ia5org
 ia7@\t H9
@@ -6085,20 +6109,33 @@ iplDirectivityCalculate
 iplDistanceAttenuationCalculate
 iplEmbreeDeviceCreate
 iplEmbreeDeviceRelease
+iplEnergyFieldCreate
+iplEnergyFieldRelease
 iplHRTFCreate
 iplHRTFRelease
-iplImpulseResponse2AddChannel
-iplImpulseResponse2AddSample
+iplHybridReverbEffectApply
+iplHybridReverbEffectCreate
+iplHybridReverbEstimatorCreate
+iplHybridReverbEstimatorEstimate
+iplHybridReverbEstimatorRelease
 iplImpulseResponse2Create
 iplImpulseResponse2GetChannel
 iplImpulseResponse2GetNumSamples
 iplImpulseResponse2Release
 iplImpulseResponse2Reset
-iplImpulseResponse2SetChannel
-iplImpulseResponse2SetChannelDelayed
-iplImpulseResponse2SetSample
-iplImpulseResponse2Swap
 iplImpulseResponse2SwapSource
+iplImpulseResponseCreate
+iplImpulseResponseGetChannel
+iplImpulseResponseGetNumChannels
+iplImpulseResponseGetNumSamples
+iplImpulseResponseRelease
+iplImpulseResponseReset
+iplImpulseResponseSwap
+iplOverlapSaveFIRCreate
+iplOverlapSaveFIRRelease
+iplPartitionerCreate
+iplPartitionerPartition
+iplPartitionerRelease
 iplPathBakerBake
 iplPathBakerCancelBake
 iplPathEffectApply
@@ -6126,6 +6163,9 @@ iplProbeBatchGetProbeArray
 iplProbeBatchLoad
 iplProbeBatchLoadCompressed
 iplProbeBatchLoadNonUniform
+iplProbeBatchLookupBakedReflections
+iplProbeBatchLookupCreate
+iplProbeBatchLookupRelease
 iplProbeBatchRelease
 iplProbeBatchSave
 iplProbeNeighborhoodCalculateWeights
@@ -6137,21 +6177,14 @@ iplProbeNeighborhoodGetProbe
 iplProbeNeighborhoodRelease
 iplProbeNeighborhoodReset
 iplProbeNeighborhoodResize
+iplReconstructorCreate
+iplReconstructorReconstruct
+iplReconstructorRelease
 iplReflectionsBakerBake
 iplReflectionsBakerCancelBake
-iplReflectionsEffect2Apply
-iplReflectionsEffect2Create
-iplReflectionsEffect2Release
-iplReflectionsEffect2SetBuffer
-iplReflectionsEffect2SetFloat
-iplReflectionsEffect2SetInt32
-iplReflectionsPartitioner2AddTask
-iplReflectionsPartitioner2Commit
-iplReflectionsPartitioner2Create
-iplReflectionsPartitioner2Release
-iplReflectionsPartitioner2RemoveTask
-iplReflectionsPartitioner2Retain
-iplReflectionsPartitioner2RunTasks
+iplReverbEstimatorApplyScale
+iplReverbEstimatorCreate
+iplReverbEstimatorRelease
 iplSceneCommit
 iplSceneCreate
 iplSceneRelease
@@ -6217,6 +6250,7 @@ j<?L7\t
 jLTKTz
 jNXcA뢐X
 jV*d9O
+j\bV_Int64ToString_Unsafe
 j\vIP{s
 j]*\r2q
 janetMailbox
@@ -6231,7 +6265,6 @@ jurisdictionLocalityName
 jurisdictionST
 jurisdictionStateOrProvinceName
 j˾9JLX
-k+O\v{Sc
 k+ka\\T
 k/.fG
 k/\b\tA
@@ -6295,6 +6328,7 @@ krb5 server tkt expired
 krb5 server tkt not yet valid
 krb5 server tkt skew
 l <= sizeof(c->iv
+l$ AVH
 l$ HcA\b3
 l$ Lch
 l$ Lcy
@@ -6306,17 +6340,20 @@ l$ VWAV
 l$ VWAW
 l$ WATAW
 l$ WAVAW
+l$ fD
 l$03҉L
 l$0D+ D9
 l$0E3\tl$(H
 l$0L9i
 l$0fD
 l$8H3D$0H3l
+l$@Ic.L
 l$@u\bI
 l$@x3
 l$HA_A^A]A
 l$H\fIL
 l$Ht4H
+l$PfA
 l$XHci
 l$hfff
 l$pLcopI
@@ -6389,6 +6426,7 @@ m_reverbCompressionSettings
 m_reverbSettings
 m_vecInOut
 m_vecMaterialTokens
+m_vecMaterialWeights
 m_vecOcclusion
 m_vecSize
 ma\v\r01
@@ -6532,6 +6570,7 @@ n\a<4x
 n\bE;o\f
 n\tIPSec/IKE/Oakley curve #3 over a 155 bit binary field.\n\tNot suitable for ECDSA.\n\tQuestionable extension field
 n\tIPSec/IKE/Oakley curve #4 over a 185 bit binary field.\n\tNot suitable for ECDSA.\n\tQuestionable extension field
+n\tV_cosf
 n`\tP\b0
 name constraints minimum and maximum not supported
 name too long
@@ -6833,7 +6872,6 @@ pHl\\tHl\\tиWBиWBR\tj
 pSN.F
 pSourceFunc
 pSpecified
-p\bHcD3
 p\bt\n
 p\bt_H
 p\n|屮uO
@@ -7034,7 +7072,7 @@ r220323000000Z
 r220801000000Z
 r240926000000Z
 r241012000000Z
-r250206063132Z0
+r250218182348Z0
 r271008235959Z0a1\v0\t
 r2\t0!\n
 r311109235959Z0b1\v0\t
@@ -7057,9 +7095,11 @@ rMinghuaQu\f
 rService-0x
 rUHz4Z}\r
 rX&O0
+rXL鳉)r
 rZ1VwGf5
 r\bSA|X=G
 r\f\v\n\t\bSHA512 block transform for x86_64, CRYPTOGAMS by <appro@openssl.org
+r\tV_stricmp_fast
 r\tVr.>T
 r`\fP\v0
 random number generation failed
@@ -7184,6 +7224,7 @@ s %2d %02d:%02d:%02d%.*s %d%s
 s %s HTTP/1.0\r\n
 s %s%lu (%s0x%lx)\n
 s (%s
+s - Calling a table API on '%s
 s PARAMETERS
 s PRIVATE KEY
 s WAVAWH
@@ -7217,12 +7258,22 @@ s: (%d bit)\n
 s: Invalid capacity %u\n
 s: Invalid grow amount %d\n
 s: Invalid lock state %d\n
+s: Unable to create energy field [%d]\n
+s: Unable to create hybrid reverb estimator [%d]\n
+s: Unable to create impulse response [%d]\n
+s: Unable to create partitioned impulse response [%d]\n
+s: Unable to create partitioner [%d]\n
 s: Unable to create probe array (%d)\n
 s: Unable to create probe batch(%d)\n
+s: Unable to create probe lookup [%d]\n
+s: Unable to create probe neighborhood [%d]\n
+s: Unable to create reconstructor [%d]\n
+s: Unable to create reverb estimator [%d]\n
 s: Unable to create serialized object (%d)\n
 s: Unable to find serialized probe batch data\n
 s: Unable to load data: %s\n
 s: Unable to load probe batch (%d)\n
+s: Unable to load probe batch.\n
 s: Unable to save data: %s\n
 s: element count overflow (%u)\n
 s: member count overflow (%u)\n
@@ -7266,7 +7317,6 @@ sUnknown Qualifier
 sUser Notice:\n
 sVersion: %ld (0x%lX
 s\b}JL
-s\tV_tanf
 s_%03d.vpk
 safeContentsBag
 salt length check failed
@@ -7865,8 +7915,6 @@ t$(Lc2L
 t$0E3ɉt$(A
 t$0Hc2H
 t$8E3\tkHH
-t$8Hc
-t$8Lc7L
 t$8Lcu
 t$;)u L
 t$@fD
@@ -7916,21 +7964,21 @@ tA8_:t
 tA9u\b
 tA`KO/3G!\n7h
 tGHcT$0A
-tH;\rj/\r
 tHAI8xpH\f
 tH^\tzڣJA
 tIHcX H
 tIv\a3
 tJm_9
 tK9_\bt
-tKvIE2
 tLY^m`6
 tLl ՁgTH.M
 tM9s\bt
 tQD8c:u0M
 tS9{\b~\bH
 tTL9q t-H
-tUH95
+tUH95A
+tV_atoi
+tV_tanf
 tWarning
 tZHcX H
 t\eHcW\fH
@@ -7946,6 +7994,7 @@ t\t\brF6t
 t\t|87
 t\vA9v\bt
 t\vH;B\bv
+t_9q\b~P
 t_V_strncmp
 t_V_strncpy
 t_V_strnicmp_fast
@@ -7987,8 +8036,10 @@ time stamp routines
 time syscall error
 timeStamping
 timestampsign
+tivgI
 tj<jtV
 tkE>fvw
+tkviH
 tls client cert req with anon cipher
 tls illegal exporter label
 tls invalid ecpointformat list
@@ -8292,7 +8343,6 @@ vP;w\f
 vPG$$e
 vS!\r
 vS"үXv
-vU,`\vR
 vUY6[E
 vValve Corp.0
 vValve Corp.1
@@ -8350,7 +8400,6 @@ vv == NULL
 vƉD$0u%H
 vȉL$0H
 w0A4k
-w9"L/B
 w=ꬂit
 wMwwǷfm
 wOUigi
@@ -8376,6 +8425,7 @@ wap}Q\n
 wfA'@7
 whirlpool
 wn)*T$4?5z
+wnfB9
 wrap error
 wrap mode not allowed
 write bio not set
@@ -8405,7 +8455,6 @@ x ATAVAWH
 x AUAVAWH
 x UAVAWH
 x-;L$Hu\r
-x.;\rPp\f
 x121Address
 x500UniqueIdentifier
 x509 certificate routines
@@ -8432,11 +8481,12 @@ xWI96tRI
 xXI96tSI
 x\aH;;v
 x\bM9>u\r
+x\n;F\b
 xdata
 xdata$x
-xe;=KT\r
 xg-9Ja
 xrJ:DCG\a
+xt\rH
 xzy{u
 xzy{ͦǌuw
 y!=\tLK

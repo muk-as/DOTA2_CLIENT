@@ -8,7 +8,7 @@
 
 namespace source2sdk::client
 {
-    // Enumerator count: 160
+    // Enumerator count: 163
     // Alignment: 4
     // Size: 0x4
     enum class EDotaUserMessages : std::uint32_t
@@ -173,5 +173,8 @@ namespace source2sdk::client
         DOTA_UM_FacetPing = 0x270,
         DOTA_UM_InnatePing = 0x271,
         DOTA_UM_RoshanTimer = 0x272,
+        DOTA_UM_NeutralCraftAvailable = 0x273,
+        DOTA_UM_TimerAlert = 0x274,
+        DOTA_UM_MadstoneAlert = 0x275,
     };
 };

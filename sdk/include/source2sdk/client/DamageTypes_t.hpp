@@ -25,6 +25,7 @@ namespace source2sdk::client
         DMG_SHOCK = 0x100,
         DMG_SONIC = 0x200,
         DMG_ENERGYBEAM = 0x400,
+        DMG_BUCKSHOT = 0x800,
         DMG_DROWN = 0x4000,
         DMG_POISON = 0x8000,
         DMG_RADIATION = 0x10000,
@@ -33,9 +34,8 @@ namespace source2sdk::client
         DMG_PHYSGUN = 0x100000,
         DMG_DISSOLVE = 0x200000,
         DMG_BLAST_SURFACE = 0x400000,
-        DMG_BUCKSHOT = 0x1000000,
         // MPropertySuppressEnumerator
         // MEnumeratorIsNotAFlag
-        DMG_LASTGENERICFLAG = 0x1000000,
+        DMG_LASTGENERICFLAG = 0x400000,
     };
 };

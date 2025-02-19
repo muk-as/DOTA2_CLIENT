@@ -8,7 +8,6 @@ DOTAFoundNeutralItemToast
 	width: 380px;
 	background-image: url("s2r://panorama/images/hud/reborn/item_purchase_bg_psd.vtex");
 	background-size: cover;
-	padding: 8px;
 	tooltip-position: left;
 	transition-property: brightness;
 	transition-duration: 0.2s;
@@ -22,7 +21,6 @@ DOTANeutralTierToast
 	width: 380px;
 	background-image: url("s2r://panorama/images/hud/reborn/item_purchase_bg_psd.vtex");
 	background-size: cover;
-	padding: 8px;
 	tooltip-position: left;
 	transition-property: brightness;
 	transition-duration: 0.2s;
@@ -33,12 +31,37 @@ DOTAFoundNeutralItemToast:hover
 	brightness: 2.0;
 }
 
+.ImageHolder
+{
+	height: 72px;
+	width: height-percentage( 100% );
+	flow-children: none;
+	vertical-align: center;
+	margin-left: 4px;
+	margin-top: 2px;
+}
+
 #ItemImage
 {
-	width: 88px;
-	height: 64px;
-	vertical-align: middle;
+	width: 52px;
+	height: 52px;
+	vertical-align: center;
 	horizontal-align: center;
+	border-radius: 50%;
+	border: 1px solid black;
+	box-shadow: 0px 3px 12px -1px rgba(0, 0, 0, 0.5);
+}
+
+#EnhancementImage
+{
+	width: 28px;
+	height: 28px;
+	vertical-align: top;
+	horizontal-align: right;
+	border-radius: 50%;
+	border: 1px solid black;
+	box-shadow: 0px 3px 12px -1px rgba(0, 0, 0, 0.8);
+	margin: 4px 0px;
 }
 
 #ItemDetails
@@ -47,16 +70,33 @@ DOTAFoundNeutralItemToast:hover
 	vertical-align: middle;
 	margin-left: 8px;
 	width: fill-parent-flow( 1.0 );
+	padding: 8px 0px;
+}
+
+.ItemNameContainer
+{
+	width: fill-parent-flow( 1.0 );
+	padding-right: 8px;
 }
 
 #ItemName,#TierToastHeader
 {
 	text-transform: uppercase;
-	font-size: 18px;
-	color: #dedede;
-	text-shadow: 2px 2px 4px black;
-	letter-spacing: 2px;
+	color: whitesmoke;
+	font-family: titleFont;
+	font-size: 16px;
+	height: 23px;
+	margin-bottom: -2px;
+	text-shadow: 0px 2px 8px black;
+	letter-spacing: 1.5px;
 	font-weight: semi-bold;
+}
+
+#ItemName
+{
+	text-overflow: shrink;
+	width: fill-parent-flow( 1.0 );
+	line-height: 1.0;
 }
 
 .InfoIcon
@@ -71,7 +111,7 @@ DOTAFoundNeutralItemToast:hover
 {
 	font-size: 16px;
 	color: #dedede;
-	text-shadow: 2px 2px 4px black;
+	text-shadow: 0px 2px 8px black;
 }
 
 .HideCount #TierToastFoundLine
@@ -82,29 +122,32 @@ DOTAFoundNeutralItemToast:hover
 #HeroImage
 {
 	vertical-align: middle;
-	width: 32px;
-	height: 32px;
-	margin-left: 5px;
-	margin-bottom: -6px;
-	margin-top: -6px;
+	width: 26px;
+	height: 26px;
+	texture-sampling: point;
+	margin-right: 4px;
+	margin-left: -4px;
 }
 
 #FoundBy
 {
 	vertical-align: middle;
-	font-size: 16px;
-	color: #999;
-	text-shadow: 2px 2px 4px black;
+	font-size: 14px;
+	color: LighterGrey;
+	text-shadow: 0px 2px 8px black;
 	width: 230px;
-	height: 20px;
+	letter-spacing: 0.5px;
+	height: 16px;
 	text-overflow: ellipsis;
+	text-transform: uppercase;
+	margin-top: 2px;
 }
 
 .TierFound
 {
 	font-size: 12px;
-	color: #999;
-	text-shadow: 2px 2px 4px black;
+	color: LighterGrey;
+	text-shadow: 0px 2px 8px black;
 	padding-left: 5px;
 }
 
@@ -112,7 +155,7 @@ DOTAFoundNeutralItemToast:hover
 {
 	font-size: 16px;
 	font-style: italic;
-	text-shadow: 2px 2px 4px black;
+	text-shadow: 0px 2px 8px black;
 }
 
 .TierLabel
@@ -151,8 +194,31 @@ DOTAFoundNeutralItemToast:hover
 	color: NeutralTier5;
 }
 
-.HideCount #TierCount
+.HideCount #TierCount,.HideCount .TierCountHolder
 {
 	visibility: collapse;
+}
+
+.EnhancementText
+{
+	vertical-align: middle;
+	font-size: 16px;
+	color: LighterGrey;
+	text-shadow: 0px 2px 8px black;
+	width: 230px;
+	height: 19px;
+	text-overflow: ellipsis;
+	margin-top: -1px;
+	visibility: collapse;
+}
+
+.EnhancementText .EnhancementName
+{
+	color: whitesmoke;
+}
+
+.HasAffix .EnhancementText
+{
+	visibility: visible;
 }
 

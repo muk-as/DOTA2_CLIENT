@@ -1,66 +1,21 @@
 function AbilityScenePanelReady() {
 
 	var scenePanel = $( '#AbilitiesScene' );
-	scenePanel.FireEntityInput( 'block00_a0', 'SetAnimation', 'initial' );
-	scenePanel.FireEntityInput( 'block00_a1', 'SetAnimation', 'initial' );
-	scenePanel.FireEntityInput( 'block00_a2', 'SetAnimation', 'initial' );
 
-	scenePanel.FireEntityInput( 'block01_a0', 'SetAnimation', 'initial' );
-	scenePanel.FireEntityInput( 'block01_a1', 'SetAnimation', 'initial' );
-	scenePanel.FireEntityInput( 'block01_a2', 'SetAnimation', 'initial' );
+	for (var iBlock = 0; iBlock < 12; iBlock++) {
+		var formattedBlockNumber = ('0' + iBlock).slice(-2); // 00 - 11
 
-	scenePanel.FireEntityInput( 'block02_a0', 'SetAnimation', 'initial' );
-	scenePanel.FireEntityInput( 'block02_a1', 'SetAnimation', 'initial' );
-	scenePanel.FireEntityInput( 'block02_a2', 'SetAnimation', 'initial' );
+		for (var iAbility = 0; iAbility < 3; iAbility++) {
+			var abilityBlockName = 'block' + formattedBlockNumber + '_a' + iAbility + '_button';
+			scenePanel.FireEntityInput( abilityBlockName, 'SetAnimation', 'initial' );
+		}
 
-	scenePanel.FireEntityInput( 'block03_a0', 'SetAnimation', 'initial' );
-	scenePanel.FireEntityInput( 'block03_a1', 'SetAnimation', 'initial' );
-	scenePanel.FireEntityInput( 'block03_a2', 'SetAnimation', 'initial' );
+		var ultBlockName = 'block' + formattedBlockNumber + '_ult' + '_button';
+		scenePanel.FireEntityInput( ultBlockName, 'SetAnimation', 'initial' );
 
-	scenePanel.FireEntityInput( 'block04_a0', 'SetAnimation', 'initial' );
-	scenePanel.FireEntityInput( 'block04_a1', 'SetAnimation', 'initial' );
-	scenePanel.FireEntityInput( 'block04_a2', 'SetAnimation', 'initial' );
-
-	scenePanel.FireEntityInput( 'block05_a0', 'SetAnimation', 'initial' );
-	scenePanel.FireEntityInput( 'block05_a1', 'SetAnimation', 'initial' );
-	scenePanel.FireEntityInput( 'block05_a2', 'SetAnimation', 'initial' );
-
-	scenePanel.FireEntityInput( 'block06_a0', 'SetAnimation', 'initial' );
-	scenePanel.FireEntityInput( 'block06_a1', 'SetAnimation', 'initial' );
-	scenePanel.FireEntityInput( 'block06_a2', 'SetAnimation', 'initial' );
-
-	scenePanel.FireEntityInput( 'block07_a0', 'SetAnimation', 'initial' );
-	scenePanel.FireEntityInput( 'block07_a1', 'SetAnimation', 'initial' );
-	scenePanel.FireEntityInput( 'block07_a2', 'SetAnimation', 'initial' );
-
-	scenePanel.FireEntityInput( 'block08_a0', 'SetAnimation', 'initial' );
-	scenePanel.FireEntityInput( 'block08_a1', 'SetAnimation', 'initial' );
-	scenePanel.FireEntityInput( 'block08_a2', 'SetAnimation', 'initial' );
-
-	scenePanel.FireEntityInput( 'block09_a0', 'SetAnimation', 'initial' );
-	scenePanel.FireEntityInput( 'block09_a1', 'SetAnimation', 'initial' );
-	scenePanel.FireEntityInput( 'block09_a2', 'SetAnimation', 'initial' );				
-
-	scenePanel.FireEntityInput( 'block10_a0', 'SetAnimation', 'initial' );
-	scenePanel.FireEntityInput( 'block10_a1', 'SetAnimation', 'initial' );
-	scenePanel.FireEntityInput( 'block10_a2', 'SetAnimation', 'initial' );				
-
-	scenePanel.FireEntityInput( 'block11_a0', 'SetAnimation', 'initial' );
-	scenePanel.FireEntityInput( 'block11_a1', 'SetAnimation', 'initial' );
-	scenePanel.FireEntityInput( 'block11_a2', 'SetAnimation', 'initial' );		
-
-	scenePanel.FireEntityInput( 'block00_ult', 'SetAnimation', 'initial' );
-	scenePanel.FireEntityInput( 'block01_ult', 'SetAnimation', 'initial' );
-	scenePanel.FireEntityInput( 'block02_ult', 'SetAnimation', 'initial' );
-	scenePanel.FireEntityInput( 'block03_ult', 'SetAnimation', 'initial' );
-	scenePanel.FireEntityInput( 'block04_ult', 'SetAnimation', 'initial' );
-	scenePanel.FireEntityInput( 'block05_ult', 'SetAnimation', 'initial' );	
-	scenePanel.FireEntityInput( 'block06_ult', 'SetAnimation', 'initial' );
-	scenePanel.FireEntityInput( 'block07_ult', 'SetAnimation', 'initial' );
-	scenePanel.FireEntityInput( 'block08_ult', 'SetAnimation', 'initial' );
-	scenePanel.FireEntityInput( 'block09_ult', 'SetAnimation', 'initial' );
-	scenePanel.FireEntityInput( 'block10_ult', 'SetAnimation', 'initial' );
-	scenePanel.FireEntityInput( 'block11_ult', 'SetAnimation', 'initial' );	
+		var heroBlockName = 'block' + formattedBlockNumber + '_hero' + '_button';
+		scenePanel.FireEntityInput( heroBlockName, 'SetAnimation', 'initial' );
+	}
 }
 
 function HeroesReady() {
@@ -77,169 +32,125 @@ function HeroesReady() {
 	}
 	);
 	
-	$.Schedule( 0.1, function() {
-	scenePanel.FireEntityInput( 'block00_a0', 'SetAnimation', 'initial' );
-	scenePanel.FireEntityInput( 'block00_a1', 'SetAnimation', 'initial' );
-	scenePanel.FireEntityInput( 'block00_a2', 'SetAnimation', 'initial' );
+	$.Schedule(0.1, function () {
+		for (var iBlock = 0; iBlock < 12; iBlock++) {
+			var formattedBlockNumber = ('0' + iBlock).slice(-2); // 00 - 11
 
-	scenePanel.FireEntityInput( 'block01_a0', 'SetAnimation', 'initial' );
-	scenePanel.FireEntityInput( 'block01_a1', 'SetAnimation', 'initial' );
-	scenePanel.FireEntityInput( 'block01_a2', 'SetAnimation', 'initial' );				
-
-	scenePanel.FireEntityInput( 'block02_a0', 'SetAnimation', 'initial' );
-	scenePanel.FireEntityInput( 'block02_a1', 'SetAnimation', 'initial' );
-	scenePanel.FireEntityInput( 'block02_a2', 'SetAnimation', 'initial' );
-
-	scenePanel.FireEntityInput( 'block03_a0', 'SetAnimation', 'initial' );
-	scenePanel.FireEntityInput( 'block03_a1', 'SetAnimation', 'initial' );
-	scenePanel.FireEntityInput( 'block03_a2', 'SetAnimation', 'initial' );
-
-	scenePanel.FireEntityInput( 'block04_a0', 'SetAnimation', 'initial' );
-	scenePanel.FireEntityInput( 'block04_a1', 'SetAnimation', 'initial' );
-	scenePanel.FireEntityInput( 'block04_a2', 'SetAnimation', 'initial' );
-
-	scenePanel.FireEntityInput( 'block05_a0', 'SetAnimation', 'initial' );
-	scenePanel.FireEntityInput( 'block05_a1', 'SetAnimation', 'initial' );
-	scenePanel.FireEntityInput( 'block05_a2', 'SetAnimation', 'initial' );
-
-	scenePanel.FireEntityInput( 'block06_a0', 'SetAnimation', 'initial' );
-	scenePanel.FireEntityInput( 'block06_a1', 'SetAnimation', 'initial' );
-	scenePanel.FireEntityInput( 'block06_a2', 'SetAnimation', 'initial' );
-
-	scenePanel.FireEntityInput( 'block07_a0', 'SetAnimation', 'initial' );
-	scenePanel.FireEntityInput( 'block07_a1', 'SetAnimation', 'initial' );
-	scenePanel.FireEntityInput( 'block07_a2', 'SetAnimation', 'initial' );
-
-	scenePanel.FireEntityInput( 'block08_a0', 'SetAnimation', 'initial' );
-	scenePanel.FireEntityInput( 'block08_a1', 'SetAnimation', 'initial' );
-	scenePanel.FireEntityInput( 'block08_a2', 'SetAnimation', 'initial' );
-
-	scenePanel.FireEntityInput( 'block09_a0', 'SetAnimation', 'initial' );
-	scenePanel.FireEntityInput( 'block09_a1', 'SetAnimation', 'initial' );
-	scenePanel.FireEntityInput( 'block09_a2', 'SetAnimation', 'initial' );				
-
-	scenePanel.FireEntityInput( 'block10_a0', 'SetAnimation', 'initial' );
-	scenePanel.FireEntityInput( 'block10_a1', 'SetAnimation', 'initial' );
-	scenePanel.FireEntityInput( 'block10_a2', 'SetAnimation', 'initial' );				
-
-	scenePanel.FireEntityInput( 'block11_a0', 'SetAnimation', 'initial' );
-	scenePanel.FireEntityInput( 'block11_a1', 'SetAnimation', 'initial' );
-	scenePanel.FireEntityInput( 'block11_a2', 'SetAnimation', 'initial' );		
-
-	scenePanel.FireEntityInput( 'block00_ult', 'SetAnimation', 'initial' );
-	scenePanel.FireEntityInput( 'block01_ult', 'SetAnimation', 'initial' );
-	scenePanel.FireEntityInput( 'block02_ult', 'SetAnimation', 'initial' );
-	scenePanel.FireEntityInput( 'block03_ult', 'SetAnimation', 'initial' );
-	scenePanel.FireEntityInput( 'block04_ult', 'SetAnimation', 'initial' );
-	scenePanel.FireEntityInput( 'block05_ult', 'SetAnimation', 'initial' );	
-	scenePanel.FireEntityInput( 'block06_ult', 'SetAnimation', 'initial' );
-	scenePanel.FireEntityInput( 'block07_ult', 'SetAnimation', 'initial' );
-	scenePanel.FireEntityInput( 'block08_ult', 'SetAnimation', 'initial' );
-	scenePanel.FireEntityInput( 'block09_ult', 'SetAnimation', 'initial' );
-	scenePanel.FireEntityInput( 'block10_ult', 'SetAnimation', 'initial' );
-	scenePanel.FireEntityInput( 'block11_ult', 'SetAnimation', 'initial' );					
+			for (var iAbility = 0; iAbility < 3; iAbility++) {
+				var abilityBlockName = 'block' + formattedBlockNumber + '_a' + iAbility + '_button';
+				scenePanel.FireEntityInput( abilityBlockName, 'SetAnimation', 'initial' );
 			}
+
+			var ultBlockName = 'block' + formattedBlockNumber + '_ult' + '_button';
+			scenePanel.FireEntityInput( ultBlockName, 'SetAnimation', 'initial' );
+
+			var heroBlockName = 'block' + formattedBlockNumber + '_hero' + '_button';
+			scenePanel.FireEntityInput( heroBlockName, 'SetAnimation', 'initial' );
+		}
+	}
 	);				
 
 	$.Schedule( 1.1, function() {
 			$.DispatchEvent( 'DOTAGlobalSceneSetCameraEntity', 'AbilitiesScene', 'camera_1', 4.0 ); 
 			}
-		);				
-	
+	);
 
 	$.Schedule( 3.0, function() {
-
-		scenePanel.FireEntityInput( 'block00_a0', 'SetAnimation', 'spin' );
-		scenePanel.FireEntityInput( 'block00_ult', 'SetAnimation', 'spin' );
-		scenePanel.FireEntityInput( 'block06_ult', 'SetAnimation', 'spin' );
+		scenePanel.FireEntityInput( 'block00_hero_button', 'SetAnimation', 'spin' );
+		scenePanel.FireEntityInput( 'block00_a0_button', 'SetAnimation', 'spin' );
+		scenePanel.FireEntityInput( 'block00_ult_button', 'SetAnimation', 'spin' );
+		scenePanel.FireEntityInput( 'block06_ult_button', 'SetAnimation', 'spin' );
 	} );			
 
-	$.Schedule( 3.1, function() {
-		scenePanel.FireEntityInput( 'block02_a0', 'SetAnimation', 'spin' );
-		scenePanel.FireEntityInput( 'block00_a1', 'SetAnimation', 'spin' );
-		scenePanel.FireEntityInput( 'block01_ult', 'SetAnimation', 'spin' );
-		scenePanel.FireEntityInput( 'block07_ult', 'SetAnimation', 'spin' );
+	$.Schedule( 3.1, function () {
+		scenePanel.FireEntityInput( 'block02_hero_button', 'SetAnimation', 'spin' );
+		scenePanel.FireEntityInput( 'block02_a0_button', 'SetAnimation', 'spin' );
+		scenePanel.FireEntityInput( 'block00_a1_button', 'SetAnimation', 'spin' );
+		scenePanel.FireEntityInput( 'block01_ult_button', 'SetAnimation', 'spin' );
+		scenePanel.FireEntityInput( 'block07_ult_button', 'SetAnimation', 'spin' );
 	} );			
 
 	$.Schedule( 3.2, function() {
-
-		scenePanel.FireEntityInput( 'block04_a0', 'SetAnimation', 'spin' );
-		scenePanel.FireEntityInput( 'block02_a1', 'SetAnimation', 'spin' );
-		scenePanel.FireEntityInput( 'block00_a2', 'SetAnimation', 'spin' );
-		scenePanel.FireEntityInput( 'block02_ult', 'SetAnimation', 'spin' );
-		scenePanel.FireEntityInput( 'block08_ult', 'SetAnimation', 'spin' );
+		scenePanel.FireEntityInput( 'block04_hero_button', 'SetAnimation', 'spin' );
+		scenePanel.FireEntityInput( 'block04_a0_button', 'SetAnimation', 'spin' );
+		scenePanel.FireEntityInput( 'block02_a1_button', 'SetAnimation', 'spin' );
+		scenePanel.FireEntityInput( 'block00_a2_button', 'SetAnimation', 'spin' );
+		scenePanel.FireEntityInput( 'block02_ult_button', 'SetAnimation', 'spin' );
+		scenePanel.FireEntityInput( 'block08_ult_button', 'SetAnimation', 'spin' );
 	} );			
 
 	$.Schedule( 3.3, function() {
-
-		scenePanel.FireEntityInput( 'block06_a0', 'SetAnimation', 'spin' );
-		scenePanel.FireEntityInput( 'block04_a1', 'SetAnimation', 'spin' );
-		scenePanel.FireEntityInput( 'block02_a2', 'SetAnimation', 'spin' );
-		scenePanel.FireEntityInput( 'block01_a0', 'SetAnimation', 'spin' );
-		scenePanel.FireEntityInput( 'block03_ult', 'SetAnimation', 'spin' );
-		scenePanel.FireEntityInput( 'block09_ult', 'SetAnimation', 'spin' );
+		scenePanel.FireEntityInput( 'block06_hero_button', 'SetAnimation', 'spin' );
+		scenePanel.FireEntityInput( 'block06_a0_button', 'SetAnimation', 'spin' );
+		scenePanel.FireEntityInput( 'block04_a1_button', 'SetAnimation', 'spin' );
+		scenePanel.FireEntityInput( 'block02_a2_button', 'SetAnimation', 'spin' );
+		scenePanel.FireEntityInput( 'block01_a0_button', 'SetAnimation', 'spin' );
+		scenePanel.FireEntityInput( 'block03_ult_button', 'SetAnimation', 'spin' );
+		scenePanel.FireEntityInput( 'block09_ult_button', 'SetAnimation', 'spin' );
 	} );			
 
-	$.Schedule( 3.4, function() {
-		scenePanel.FireEntityInput( 'block08_a0', 'SetAnimation', 'spin' );
-		scenePanel.FireEntityInput( 'block06_a1', 'SetAnimation', 'spin' );
-		scenePanel.FireEntityInput( 'block04_a2', 'SetAnimation', 'spin' );
-		scenePanel.FireEntityInput( 'block03_a0', 'SetAnimation', 'spin' );
-		scenePanel.FireEntityInput( 'block01_a1', 'SetAnimation', 'spin' );
-		scenePanel.FireEntityInput( 'block04_ult', 'SetAnimation', 'spin' );
-		scenePanel.FireEntityInput( 'block10_ult', 'SetAnimation', 'spin' );				
+	$.Schedule( 3.4, function () {
+		scenePanel.FireEntityInput( 'block08_hero_button', 'SetAnimation', 'spin' );
+		scenePanel.FireEntityInput( 'block08_a0_button', 'SetAnimation', 'spin' );
+		scenePanel.FireEntityInput( 'block06_a1_button', 'SetAnimation', 'spin' );
+		scenePanel.FireEntityInput( 'block04_a2_button', 'SetAnimation', 'spin' );
+		scenePanel.FireEntityInput( 'block03_a0_button', 'SetAnimation', 'spin' );
+		scenePanel.FireEntityInput( 'block01_a1_button', 'SetAnimation', 'spin' );
+		scenePanel.FireEntityInput( 'block04_ult_button', 'SetAnimation', 'spin' );
+		scenePanel.FireEntityInput( 'block10_ult_button', 'SetAnimation', 'spin' );				
 	} );			
 
-	$.Schedule( 3.5, function() {
-		scenePanel.FireEntityInput( 'block10_a0', 'SetAnimation', 'spin' );
-		scenePanel.FireEntityInput( 'block08_a1', 'SetAnimation', 'spin' );
-		scenePanel.FireEntityInput( 'block06_a2', 'SetAnimation', 'spin' );
-		scenePanel.FireEntityInput( 'block05_a0', 'SetAnimation', 'spin' );
-		scenePanel.FireEntityInput( 'block03_a1', 'SetAnimation', 'spin' );
-		scenePanel.FireEntityInput( 'block01_a2', 'SetAnimation', 'spin' );
-		scenePanel.FireEntityInput( 'block05_ult', 'SetAnimation', 'spin' );
-		scenePanel.FireEntityInput( 'block11_ult', 'SetAnimation', 'spin' );				
-		
+	$.Schedule( 3.5, function () {
+		scenePanel.FireEntityInput( 'block10_hero_button', 'SetAnimation', 'spin' );
+		scenePanel.FireEntityInput( 'block10_a0_button', 'SetAnimation', 'spin' );
+		scenePanel.FireEntityInput( 'block08_a1_button', 'SetAnimation', 'spin' );
+		scenePanel.FireEntityInput( 'block06_a2_button', 'SetAnimation', 'spin' );
+		scenePanel.FireEntityInput( 'block05_a0_button', 'SetAnimation', 'spin' );
+		scenePanel.FireEntityInput( 'block03_a1_button', 'SetAnimation', 'spin' );
+		scenePanel.FireEntityInput( 'block01_a2_button', 'SetAnimation', 'spin' );
+		scenePanel.FireEntityInput( 'block05_ult_button', 'SetAnimation', 'spin' );
+		scenePanel.FireEntityInput( 'block11_ult_button', 'SetAnimation', 'spin' );
+		scenePanel.FireEntityInput( 'block01_hero_button', 'SetAnimation', 'spin' );
 	} );			
 
 	$.Schedule( 3.6, function() {
 
-		scenePanel.FireEntityInput( 'block10_a1', 'SetAnimation', 'spin' );
-		scenePanel.FireEntityInput( 'block08_a2', 'SetAnimation', 'spin' );
-		scenePanel.FireEntityInput( 'block07_a0', 'SetAnimation', 'spin' );
-		scenePanel.FireEntityInput( 'block05_a1', 'SetAnimation', 'spin' );
-		scenePanel.FireEntityInput( 'block03_a2', 'SetAnimation', 'spin' );
-		
+		scenePanel.FireEntityInput( 'block10_a1_button', 'SetAnimation', 'spin' );
+		scenePanel.FireEntityInput( 'block08_a2_button', 'SetAnimation', 'spin' );
+		scenePanel.FireEntityInput( 'block07_a0_button', 'SetAnimation', 'spin' );
+		scenePanel.FireEntityInput( 'block05_a1_button', 'SetAnimation', 'spin' );
+		scenePanel.FireEntityInput( 'block03_a2_button', 'SetAnimation', 'spin' );
+		scenePanel.FireEntityInput( 'block03_hero_button', 'SetAnimation', 'spin' );
 	} );			
 
 	$.Schedule( 3.7, function() {
-		scenePanel.FireEntityInput( 'block10_a2', 'SetAnimation', 'spin' );
-		scenePanel.FireEntityInput( 'block09_a0', 'SetAnimation', 'spin' );
-		scenePanel.FireEntityInput( 'block07_a1', 'SetAnimation', 'spin' );
-		scenePanel.FireEntityInput( 'block05_a2', 'SetAnimation', 'spin' );
-		
+		scenePanel.FireEntityInput( 'block10_a2_button', 'SetAnimation', 'spin' );
+		scenePanel.FireEntityInput( 'block09_a0_button', 'SetAnimation', 'spin' );
+		scenePanel.FireEntityInput( 'block07_a1_button', 'SetAnimation', 'spin' );
+		scenePanel.FireEntityInput( 'block05_a2_button', 'SetAnimation', 'spin' );
+		scenePanel.FireEntityInput( 'block05_hero_button', 'SetAnimation', 'spin' );
 	} );			
 
 	$.Schedule( 3.8, function() {
 
-		scenePanel.FireEntityInput( 'block11_a0', 'SetAnimation', 'spin' );
-		scenePanel.FireEntityInput( 'block09_a1', 'SetAnimation', 'spin' );
-		scenePanel.FireEntityInput( 'block07_a2', 'SetAnimation', 'spin' );
-		
+		scenePanel.FireEntityInput( 'block11_a0_button', 'SetAnimation', 'spin' );
+		scenePanel.FireEntityInput( 'block09_a1_button', 'SetAnimation', 'spin' );
+		scenePanel.FireEntityInput( 'block07_a2_button', 'SetAnimation', 'spin' );
+		scenePanel.FireEntityInput( 'block07_hero_button', 'SetAnimation', 'spin' );
 		
 	} );			
 
 	$.Schedule( 3.9, function() {
 
-		scenePanel.FireEntityInput( 'block11_a1', 'SetAnimation', 'spin' );
-		scenePanel.FireEntityInput( 'block09_a2', 'SetAnimation', 'spin' );
-		
+		scenePanel.FireEntityInput( 'block11_a1_button', 'SetAnimation', 'spin' );
+		scenePanel.FireEntityInput( 'block09_a2_button', 'SetAnimation', 'spin' );
+		scenePanel.FireEntityInput( 'block09_hero_button', 'SetAnimation', 'spin' );
 	} );			
 
 	$.Schedule( 4.0, function() {
 
-		scenePanel.FireEntityInput( 'block11_a2', 'SetAnimation', 'spin' );
-
+		scenePanel.FireEntityInput( 'block11_a2_button', 'SetAnimation', 'spin' );
+		scenePanel.FireEntityInput( 'block1_hero_button', 'SetAnimation', 'spin' );
 	} );			
 } 
 
@@ -290,12 +201,12 @@ function OnHoverButton( buttonName, abilityPanelName, IsUltimate )
 	if( !abilityPanel.BAscendantHasClass( 'AbilityChosen' ) && !abilityDraftPanel.BHasClass('CurrentPlayerHasChosen') )
 	{
 		var scenePanel = $( '#AbilitiesScene' );
-		scenePanel.FireEntityInput( buttonName, 'SetAnimation', 'hover');
+		scenePanel.FireEntityInput( buttonName + '_button', 'SetAnimation', 'hover' );
 	}
 
 }
 
-function OnMouseOut(buttonName, abilityPanelName, IsUltimate)
+function OnMouseOut( buttonName, abilityPanelName )
 {
 	var internalPanel=$( '#AbilitiesScene').GetPanoramaSurfacePanel();
 	
@@ -323,11 +234,75 @@ function OnMouseOut(buttonName, abilityPanelName, IsUltimate)
 	if( !abilityPanel.BAscendantHasClass( 'AbilityChosen' ) )
 	{
 		var scenePanel = $( '#AbilitiesScene' );
-		scenePanel.FireEntityInput( buttonName, 'SetAnimation', 'idle');
+		scenePanel.FireEntityInput( buttonName + '_button', 'SetAnimation', 'idle' );
 	}
 }
 
-function OnActivate( buttonNumber, buttonRow, abilityPanelName, abilityIndex )
+function OnHoverButtonHero(buttonName, heroPanelName) {
+	var internalPanel = $('#AbilitiesScene').GetPanoramaSurfacePanel();
+
+	if ( internalPanel )
+	{
+		var str = heroPanelName;
+		var res = str.replace('hero_id', 'heroimage');
+
+		var hoveredPanel = internalPanel.FindChildInLayoutFile(res);
+
+		if (hoveredPanel) {
+			hoveredPanel.AddClass('Hovered');
+		}
+	}
+
+
+	var heroPanel = $('#' + heroPanelName);
+
+	var unHeroID = heroPanel.GetAttributeUInt32( 'hero_id', 0 );
+	if ( unHeroID != 0 )
+	{
+		$.DispatchEvent('DOTAAbilityDraftShowHeroTooltip', heroPanel.GetParent(), unHeroID );
+	}
+
+	var abilityDraftPanel = $('#AbilityDraft');
+	var mainContainerPanel = $('#MainContainer');
+	if ( abilityDraftPanel.BHasClass('AbilityDraftPreRound') || !abilityDraftPanel.BHasClass('LocalPlayerIsDrafting') || mainContainerPanel.BHasClass('HeroChosen') )
+	{
+		return;
+	}
+
+	if (!heroPanel.BAscendantHasClass('AbilityChosen') && !abilityDraftPanel.BHasClass('CurrentPlayerHasChosen')) {
+		var scenePanel = $('#AbilitiesScene');
+		scenePanel.FireEntityInput(buttonName + '_button', 'SetAnimation', 'hover');
+	}
+}
+
+function OnMouseOutHero(buttonName, heroPanelName) {
+	var internalPanel = $('#AbilitiesScene').GetPanoramaSurfacePanel();
+
+	if (internalPanel) {
+		var str = heroPanelName;
+		var res = str.replace('hero_id', 'heroimage');
+
+		var hoveredPanel = internalPanel.FindChildInLayoutFile(res);
+
+		if (hoveredPanel) {
+			hoveredPanel.RemoveClass('Hovered');
+		}
+	}
+	$.DispatchEvent('DOTAAbilityDraftHideHeroTooltip');
+
+	var abilityDraftPanel = $('#AbilityDraft');
+	if (abilityDraftPanel.BHasClass('AbilityDraftPreRound')) {
+		return;
+	}
+
+	var heroPanel = $('#' + heroPanelName);
+	if (!heroPanel.BAscendantHasClass('AbilityChosen')) {
+		var scenePanel = $('#AbilitiesScene');
+		scenePanel.FireEntityInput(buttonName + '_button', 'SetAnimation', 'idle');
+	}
+}
+
+function OnActivateAbility( blockName, abilityPanelName, abilityIndex )
 {
 	if( GameUI.IsAltDown() )
 	{
@@ -361,21 +336,14 @@ function OnActivate( buttonNumber, buttonRow, abilityPanelName, abilityIndex )
 	if( !abilityPanel.BAscendantHasClass( 'AbilityChosen' ) )
 	{
 		var scenePanel = $( '#AbilitiesScene' );
-		var blockName = 'block' + buttonNumber + '_' + buttonRow;
-		var particleName = 'ability_picked' + buttonNumber + '_' + buttonRow;
-		scenePanel.FireEntityInput( blockName, 'SetAnimation', 'button_press');
-		scenePanel.FireEntityInput( particleName, 'stop', 0 ); 
-		scenePanel.FireEntityInput( particleName, 'start', 0 );
+		scenePanel.FireEntityInput( blockName + '_activate_relay', 'Trigger', 0 );
 
-		var buttonName = 'ability_picked' + buttonNumber + '_' + buttonRow;
-		scenePanel.FireEntityInput( buttonName, 'SetAnimation', 'stop');
-		scenePanel.FireEntityInput( buttonName, 'SetAnimation', 'start');
 		$.DispatchEvent( 'DOTAAbilityDraftSelectAbility', abilityIndex ); 
 	}
 
 }
 
-function OnActivateUltimate( buttonNumber, buttonRow, abilityPanelName, abilityIndex )
+function OnActivateUltimate( blockName, abilityPanelName, abilityIndex )
 {
 	if( GameUI.IsAltDown() )
 	{
@@ -400,18 +368,45 @@ function OnActivateUltimate( buttonNumber, buttonRow, abilityPanelName, abilityI
 	if( !abilityPanel.BAscendantHasClass( 'AbilityChosen' ) )
 	{
 		var scenePanel = $( '#AbilitiesScene' );
-		var buttonName = 'block' + buttonNumber + '_' + buttonRow;
-		scenePanel.FireEntityInput( buttonName, 'SetAnimation', 'button_press');
+		scenePanel.FireEntityInput( blockName + '_activate_relay', 'Trigger', 0 );
+
 		$.DispatchEvent( 'DOTAAbilityDraftSelectAbility', abilityIndex ); 
-		
-		var particleName = 'ability_picked' + buttonNumber + '_' + buttonRow;
-		scenePanel.FireEntityInput( particleName, 'stop', 0 ); 
-		scenePanel.FireEntityInput( particleName, 'start', 0 );
+	}
+}
+
+function OnActivateHero( blockName, heroPanelName, heroIndex )
+{
+	if ( GameUI.IsAltDown() )
+	{
+		$.DispatchEvent( 'DOTAAbilityDraftPingHero', heroIndex, GameUI.IsControlDown() );
+		return;
+	}
+
+	if ( GameUI.IsControlDown() )
+	{
+		$.DispatchEvent( 'DOTAAbilityDraftPingHero', heroIndex, true );
+		return;
+	}
+
+	var scenePanel = $( '#AbilitiesScene' );
+	var abilityDraftPanel = $( '#AbilityDraft' );
+	if ( !abilityDraftPanel.BHasClass( 'LocalPlayerIsDrafting' ) || abilityDraftPanel.BHasClass( 'CurrentPlayerHasChosen' ) || scenePanel.BHasClass('HeroChosen') )
+	{
+		return;
+	}
+
+	var heroPanel = $( '#' + heroPanelName );
+	if (!heroPanel.BAscendantHasClass('AbilityChosen') )
+	{
+		var scenePanel = $( '#AbilitiesScene' );
+		scenePanel.FireEntityInput( blockName + '_activate_relay', 'Trigger', 0 );
+
+		$.DispatchEvent( 'DOTAAbilityDraftSelectHero', heroIndex );
 	}
 }
 
 function OnAbilitySelected( abilityPanelId, blockName )
 {
 	var scenePanel = $( '#AbilitiesScene' );
-	scenePanel.FireEntityInput( blockName, 'SetAnimation', 'button_press');
+	scenePanel.FireEntityInput( blockName + '_button', 'SetAnimation', 'button_press' );
 }

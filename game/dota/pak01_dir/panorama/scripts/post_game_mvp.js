@@ -241,7 +241,7 @@ class AnimateMVP2TabAction extends RunSequentialActions {
     }
     start() {
         // Create the screen and do a bunch of initial setup
-        const mvp2ScreenPanel = $.GetContextPanel().FindPanelInLayoutFile('DetailsMVPInner');
+        const mvp2ScreenPanel = $.GetContextPanel().FindChildInLayoutFile('DetailsMVPInner');
         this.init(mvp2ScreenPanel);
     }
 }

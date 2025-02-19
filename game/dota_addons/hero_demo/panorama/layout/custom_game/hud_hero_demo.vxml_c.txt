@@ -9,7 +9,7 @@
 	</scripts>
 	<Panel hittest="false" class="CustomHudRoot">
 		<Panel id="SelectHeroContainer" acceptsfocus="true" oncancel="EscapeHeroPickerSearch()">
-			<DOTAUIHeroPicker id="HeroPicker" facet-select-popup="true" />
+			<DOTAUIHeroPicker id="HeroPicker" />
 			<Button id="CancelButton" class="CloseButton" acceptsjoyfocus="true" onactivate="CloseHeroPicker()" />
 		</Panel>
 		<Panel class="ControlPanel">
@@ -30,10 +30,13 @@
 				<Panel id="SpawnUnitsCategory" class="Category">
 					<Label class="CategoryHeader" text="#SpawnUnits_ButtonCategory" />
 					<Panel class="CategoryButtonContainer">
-						<Panel id="SpawnHeroButton" class="Row DemoButton" onactivate="ToggleHeroPicker( false )" acceptsjoyfocus="true">
-							<DOTAHeroImage id="HeroPickerImage" class="HeroImage" heroimagestyle="landscape" />
-							<Label id="SpawnHeroName" text="{s:hero_name}" />
-							<Panel class="HeroPickerArrow" />
+						<Panel class="HeroDetailsContainer">
+							<Panel id="SpawnHeroButton" class="Row DemoButton" onactivate="ToggleHeroPicker( false )" acceptsjoyfocus="true">
+								<DOTAHeroImage id="HeroPickerImage" class="HeroImage" heroimagestyle="landscape" />
+								<Label id="SpawnHeroName" text="{s:hero_name}" />
+								<Panel class="HeroPickerArrow" />
+							</Panel>
+							<DOTAUIHeroFacetPicker id="SpawnHeroFacetPicker" autoselect="true" class="Compact" />
 						</Panel>
 						<Panel class="Row">
 							<Button id="SpawnAllyButton" class="DemoButton LeftButton" acceptsjoyfocus="true" onactivate="FireCustomGameEvent_Str( SpawnAllyButtonPressed )">

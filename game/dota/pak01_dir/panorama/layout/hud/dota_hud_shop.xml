@@ -15,42 +15,6 @@
 				<Panel id="ShopItemsContainer" />
 			</Panel>
 		</snippet>
-		<snippet name="NeutralItemsTier">
-			<Panel class="NeutralItemsTier">
-				<Panel class="NeutralItemsTierHeader">
-					<Label class="NeutralItemsTierName" text="#DOTA_Shop_NeutralTier" />
-					<Panel class="FillWidth" />
-					<Label class="NeutralItemsTierTimes" text="{s:tier_times}" />
-					<Label class="NeutralItemsTierCount" text="[ {d:tier_found_count} / {d:tier_max_count} ]" />
-				</Panel>
-				<Panel id="NeutralItemsList" />
-			</Panel>
-		</snippet>
-		<snippet name="TeamNeutralItemsTier">
-			<Panel class="TeamNeutralItemsTier">
-				<Panel class="TeamNeutralItemsTierHeader">
-					<Label class="TeamNeutralItemsTierTitle" text="#DOTA_Shop_NeutralTier" />
-					<Panel class="FillWidth" />
-					<Panel class="TeamNeutralItemsTierDesc LeftRightFlow" onmouseout="UIHideTextTooltip();" onmouseover="UIShowTextTooltip( #DOTA_NeutralItemSlot_TimeTip );">
-						<Panel class="Clock" />
-						<Label class="TeamNeutralItemsTierTimes" text="{s:tier_times}" />
-						<Label class="TeamNeutralItemsTierCount" text="[ {d:tier_found_count} / {d:tier_max_count} ]" />
-					</Panel>
-				</Panel>
-				<Label id="TeamNeutralItemsTierNoneAvailable" class="TeamNeutralItemsTierNoneAvailable" text="#DOTA_Shop_NeutralTierNoTokensAvailable" />
-				<Panel id="TierItemsList" />
-			</Panel>
-		</snippet>
-		<snippet name="TeamNeutralItem">
-			<Panel class="TeamNeutralItem">
-				<Panel class="TeamNeutralItemMainContents">
-					<DOTAShopItem id="ShopItem" />
-					<Label class="TeamNeutralItemStatus" text="{s:status}" />
-				</Panel>
-				<DOTAHeroImage id="HeroImage" heroimagestyle="icon" />
-				<Panel class="NewItemOverlay" />
-			</Panel>
-		</snippet>
 		<snippet name="NewPlayerShopItem">
 			<Panel class="NewPlayerShopItem LeftRightFlow">
 				<DOTAShopItem id="NewShopItem" class="NewShopItem" abilityid="194" />
@@ -73,6 +37,61 @@
 				<Panel class="NewPlayerGoldCost LeftRightFlow">
 					<Panel class="GoldIcon" />
 					<Label text="{d:new_item_cost}" />
+				</Panel>
+			</Panel>
+		</snippet>
+		<snippet name="NeutralItemsTier">
+			<Panel class="NeutralItemsTier">
+				<Panel class="NeutralItemsTierHeader">
+					<Label class="NeutralItemsTierName" text="#DOTA_Shop_NeutralTier" />
+					<Label class="NeutralItemsTierTimes" text="{s:tier_times}" />
+				</Panel>
+				<Panel id="NeutralItemsList" />
+				<Panel id="NeutralEnhancementsList" />
+			</Panel>
+		</snippet>
+		<snippet name="HeroMadstoneTimeline">
+			<Panel class="HeroMadstoneTimeline">
+				<DOTAHeroImage id="HeroImage" heroimagestyle="icon" />
+				<Panel class="TimelineHolder">
+					<Panel class="TimelineUpper">
+						<Panel class="TimelineUpperPip" id="TimelineUpper1" />
+						<Panel class="TimelineUpperPip" id="TimelineUpper3" />
+						<Panel class="TimelineUpperPip" id="TimelineUpper4" />
+						<Panel class="TimelineUpperPip" id="TimelineUpper5" />
+					</Panel>
+					<Panel class="TimelineLower">
+						<Panel class="TimelineBackground NeutralTier1">
+							<ProgressBar class="Timeline" id="TimelineProgress1" />
+						</Panel>
+						<Panel class="TimelineLowerPip NeutralTier1" id="TimelinePip1">
+							<DOTAItemImage id="TimelinePipItem" hittest="false" />
+						</Panel>
+						<Panel class="TimelineBackground NeutralTier2">
+							<ProgressBar class="Timeline" id="TimelineProgress2" />
+						</Panel>
+						<Panel class="TimelineLowerPip NeutralTier2" id="TimelinePip2">
+							<DOTAItemImage id="TimelinePipItem" hittest="false" />
+						</Panel>
+						<Panel class="TimelineBackground NeutralTier3">
+							<ProgressBar class="Timeline" id="TimelineProgress3" />
+						</Panel>
+						<Panel class="TimelineLowerPip NeutralTier3" id="TimelinePip3">
+							<DOTAItemImage id="TimelinePipItem" hittest="false" />
+						</Panel>
+						<Panel class="TimelineBackground NeutralTier4">
+							<ProgressBar class="Timeline" id="TimelineProgress4" />
+						</Panel>
+						<Panel class="TimelineLowerPip NeutralTier4" id="TimelinePip4">
+							<DOTAItemImage id="TimelinePipItem" hittest="false" />
+						</Panel>
+						<Panel class="TimelineBackground NeutralTier5">
+							<ProgressBar class="Timeline" id="TimelineProgress5" />
+						</Panel>
+						<Panel class="TimelineLowerPip NeutralTier5" id="TimelinePip5">
+							<DOTAItemImage id="TimelinePipItem" hittest="false" />
+						</Panel>
+					</Panel>
 				</Panel>
 			</Panel>
 		</snippet>
@@ -201,16 +220,61 @@
 						</TabContents>
 						<TabContents id="GridNeutralsCategory" group="ShopGridTab" tabid="GridNeutralsTab" class="ShopItemsCategory">
 							<Panel id="TeamNeutralItems" class="TeamNeutralItems">
-								<Label class="TeamNeutralTokensTitle" text="#DOTA_Shop_TeamNeutralTokens" />
-								<Panel id="TeamNeutralTokensList" />
-								<Label class="YourNeutralItemsTitle" text="#DOTA_Shop_YourNeutralItems" />
-								<Panel id="YourNeutralItemsList" />
-								<TextButton id="ViewAllButton" class="NeutralItemsToggleButton" text="#DOTA_TeamNeutralItems_ViewAll" html="true" onactivate="AddStyle( GridNeutralsCategory, ShowAllNeutralItems )" acceptsjoyfocus="true" />
+								<Label class="NeutralChoiceTitle" text="#DOTA_Shop_CraftingStatus" />
+								<Panel class="CraftingStatusTimeline">
+									<Panel class="NeutralTierTimingLabelsContainer Tier1">
+										<Label class="LabelSmall TierTimingTitle" text="#DOTA_HUD_Shop_Neutral_Tier1" />
+										<Label class="LabelSmall TierTimingTime" text="{s:shop_tier_timing_1}" />
+									</Panel>
+									<Panel class="NeutralTierTimingLabelsContainer Tier2">
+										<Label class="LabelSmall TierTimingTitle" text="#DOTA_HUD_Shop_Neutral_Tier2" />
+										<Label class="LabelSmall TierTimingTime" text="{s:shop_tier_timing_2}" />
+									</Panel>
+									<Panel class="NeutralTierTimingLabelsContainer Tier3">
+										<Label class="LabelSmall TierTimingTitle" text="#DOTA_HUD_Shop_Neutral_Tier3" />
+										<Label class="LabelSmall TierTimingTime" text="{s:shop_tier_timing_3}" />
+									</Panel>
+									<Panel class="NeutralTierTimingLabelsContainer Tier4">
+										<Label class="LabelSmall TierTimingTitle" text="#DOTA_HUD_Shop_Neutral_Tier4" />
+										<Label class="LabelSmall TierTimingTime" text="{s:shop_tier_timing_4}" />
+									</Panel>
+									<Panel class="NeutralTierTimingLabelsContainer Tier5">
+										<Label class="LabelSmall TierTimingTitle" text="#DOTA_HUD_Shop_Neutral_Tier5" />
+										<Label class="LabelSmall TierTimingTime" text="{s:shop_tier_timing_5}" />
+									</Panel>
+								</Panel>
+								<Panel id="CraftingStatusHolder">
+									<Panel class="CraftingTeam Radiant">
+										<Label class="TeamNameLabel" text="#DOTA_GoodGuys" />
+										<Panel id="Team0TimelineHolder" class="TeamTimelineHolder" />
+									</Panel>
+									<Panel class="CraftingTeam Dire">
+										<Label class="TeamNameLabel" text="#DOTA_BadGuys" />
+										<Panel id="Team1TimelineHolder" class="TeamTimelineHolder" />
+									</Panel>
+									<TextButton id="ViewAllButton" class="NeutralItemsToggleButton" text="#DOTA_TeamNeutralItems_ViewAll" html="true" onactivate="AddStyle( GridNeutralsCategory, ShowAllNeutralItems )" acceptsjoyfocus="true" />
+									<Panel class="MadstoneExplainationContainer">
+										<Panel class="MadstoneExplainationTitleContainer">
+											<Image class="MadstoneIcon" src="s2r://panorama/images/hud/neutral_currency_icon_png.vtex" scaling="stretch-to-fit-preserve-aspect" />
+											<Label class="MadstoneTitle LabelMedium" text="#DOTA_NeutralCurrencyName" />
+											<Panel class="Dash" />
+											<Image class="MadstoneInfoIcon" src="s2r://panorama/images/control_icons/24px/help.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+										</Panel>
+										<Panel class="MadstoneDescriptionContainer">
+											<Label class="MadstoneDescription BodySmall" html="true" text="#DOTA_Madstone_Explaination_1" />
+											<Label class="MadstoneDescription BodySmall" html="true" text="#DOTA_Madstone_Explaination_2" />
+											<Label class="MadstoneDescription BodySmall" html="true" text="#DOTA_Madstone_Explaination_3" />
+										</Panel>
+									</Panel>
+								</Panel>
 							</Panel>
 							<Panel class="AllNeutralItems">
+								<Panel class="NeutralItemsHeader">
+									<Label class="NeutralItemsHeaderLabel LabelSmall" text="#DOTA_NeutralCraft_TrinketHeader" />
+									<Label class="NeutralItemsHeaderLabel LabelSmall Right" text="#DOTA_NeutralCraft_EnhancementHeader" />
+								</Panel>
 								<Panel id="GridNeutralItems" />
-								<Label id="NeutralItemsDescription" text="#DOTA_Shop_NeutralItemsDescription" />
-								<TextButton id="ViewTeamButton" class="NeutralItemsToggleButton" text="#DOTA_TeamNeutralItems_ViewTeam" onactivate="RemoveStyle( GridNeutralsCategory, ShowAllNeutralItems )" acceptsjoyfocus="true" />
+								<TextButton id="ViewTeamButton" class="NeutralItemsToggleButton" text="#DOTA_TeamNeutralItems_ViewCrafting" onactivate="RemoveStyle( GridNeutralsCategory, ShowAllNeutralItems )" acceptsjoyfocus="true" />
 							</Panel>
 						</TabContents>
 					</Panel>

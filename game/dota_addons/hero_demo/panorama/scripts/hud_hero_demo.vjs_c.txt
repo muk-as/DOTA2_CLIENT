@@ -8,7 +8,8 @@ function Init()
 	menuButtons.AddClass( "HeroDemo" );
 
 	$.RegisterEventHandler( 'DOTAUIHeroPickerHeroSelected', $( '#SelectHeroContainer' ), SwitchToNewHero );
-	$.RegisterEventHandler( 'DOTAHeroFacetDropdownFacetSelected', $( '#HeroFacetDropdown' ), SwitchToNewFacet );
+	$.RegisterEventHandler('DOTAHeroFacetDropdownFacetSelected', $('#HeroFacetDropdown'), SwitchToNewFacet);
+	$.RegisterEventHandler('DOTAHeroFacetPickerFacetSelected', $('#SpawnHeroFacetPicker'), SwitchSpawnHeroFacet);
 
     var UiDefaults = CustomNetTables.GetTableValue( "game_global", "ui_defaults" );
 
@@ -43,7 +44,11 @@ function ToggleHeroPicker( bMainHero )
 {
 	Game.EmitSound( "UI.Button.Pressed" );
 
-	$( '#SelectHeroContainer' ).SetHasClass( 'PickMainHero', bMainHero );
+	$('#SelectHeroContainer').SetHasClass('PickMainHero', bMainHero);
+	var HeroPicker = $('#HeroPicker');
+	if (HeroPicker != null) {
+		HeroPicker.selectfacet = bMainHero;
+	}
 
 	SetHeroPickerVisible( !bHeroPickerVisible );
 }
@@ -67,21 +72,14 @@ function CloseHeroPicker()
 
 function SetHeroPickerVisible( bVisible )
 {
-	if ( bHeroPickerVisible )
-	{
-		if ( !bVisible )
-		{
-			$( '#SelectHeroContainer' ).RemoveClass( 'HeroPickerVisible' );
-			$( "#SelectHeroContainer" ).FindChildTraverse( "HeroSearchTextEntry" ).text = "";
-		}
+	$.Msg("SetHeroPickerVisible " + bVisible);
+	if (!bVisible) {
+		$('#SelectHeroContainer').RemoveClass('HeroPickerVisible');
+		$("#SelectHeroContainer").FindChildTraverse("HeroSearchTextEntry").text = "";
 	}
-	else
-	{
-		if ( bVisible )
-		{
-			$( '#SelectHeroContainer' ).AddClass( 'HeroPickerVisible' );
-			$( "#SelectHeroContainer" ).FindChildTraverse( "HeroSearchTextEntry" ).SetFocus();
-		}
+	if (bVisible) {
+		$('#SelectHeroContainer').AddClass('HeroPickerVisible');
+		$("#SelectHeroContainer").FindChildTraverse("HeroSearchTextEntry").SetFocus();
 	}
 	bHeroPickerVisible = bVisible;
 }
@@ -90,8 +88,7 @@ function SwitchToNewHero( nHeroID, nHeroVariant )
 {
 	Game.EmitSound( "UI.Button.Pressed" );
 
-	$.Msg( 'Hero = ' + nHeroID );
-	$.Msg( 'Variant = ' + nHeroVariant )
+	$.Msg( 'SwitchToNewHero - Hero = ' + nHeroID + ', Variant = ' + nHeroVariant );
 
 	if ( $( '#SelectHeroContainer' ).BHasClass( 'PickMainHero' ) )
 	{
@@ -99,7 +96,12 @@ function SwitchToNewHero( nHeroID, nHeroVariant )
 	}
 	else
 	{
-		$.DispatchEvent( 'FireCustomGameEvent_Str', 'SelectSpawnHeroButtonPressed', String( nHeroID ) + ':' + String( nHeroVariant ) );
+		$.DispatchEvent('FireCustomGameEvent_Str', 'SelectSpawnHeroButtonPressed', String(nHeroID) + ':' + String(nHeroVariant));
+
+		var SpawnHeroFacetPicker = $('#SpawnHeroFacetPicker');
+		if (SpawnHeroFacetPicker != null) {
+			SpawnHeroFacetPicker.heroid = nHeroID;
+		}
 	}
 
 	$( '#SelectHeroContainer' ).RemoveClass( 'PickMainHero' );
@@ -117,6 +119,15 @@ function SwitchToNewFacet( nHeroID, nHeroFacet )
 		$.DispatchEvent( 'FireCustomGameEvent_Str', 'SelectMainHeroButtonPressed', String( nHeroID ) + ':' + String( nHeroFacet ) );	
 	}
 }
+function SwitchSpawnHeroFacet(nHeroID, nHeroFacet) {
+
+	var SpawnHeroFacetPicker = $('#SpawnHeroFacetPicker');
+	if (SpawnHeroFacetPicker != null) {
+		$.Msg('SwitchSpawnHeroFacet ' + nHeroID + ' ' + nHeroFacet);
+		$.DispatchEvent('FireCustomGameEvent_Str', 'SelectSpawnHeroButtonPressed', String(nHeroID) + ':' + String(nHeroFacet));
+	}
+}
+
 
 function OnSetPlayerHeroID( event_data )
 {
@@ -166,6 +177,12 @@ function OnSetSpawnHeroID( event_data )
 		$.Msg( 'HERO NAME = ' + event_data.hero_name );
 		SpawnHeroButton.SetDialogVariable( "hero_name", GameUI.GetUnitNameLocalized( event_data.hero_name ) );
 		SpawnHeroButton.SetDialogVariable( "hero_variant", event_data.hero_variant );
+	}
+	if (event_data.initial_spawn) {
+		var SpawnHeroFacetPicker = $('#SpawnHeroFacetPicker');
+		if (SpawnHeroFacetPicker != null) {
+			SpawnHeroFacetPicker.heroid = event_data.hero_id;
+		}
 	}
 }
 GameEvents.Subscribe( "set_spawn_hero_id", OnSetSpawnHeroID );

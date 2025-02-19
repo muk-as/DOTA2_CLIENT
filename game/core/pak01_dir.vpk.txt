@@ -1,18 +1,18 @@
 --- Files in package:
-	vmat_c: 529 files
-	vtex_c: 491 files
-	vsnd_c: 56 files
+	vmat_c: 534 files
+	vtex_c: 493 files
+	vsnd_c: 66 files
 	vpcf_c: 54 files
-	vmdl_c: 48 files
+	vmdl_c: 49 files
 	vxml_c: 24 files
-	txt: 19 files
+	txt: 20 files
 	vcss_c: 18 files
 	ttf: 12 files
 	vrman_c: 8 files
+	vsndevts_c: 8 files
 	vsndstck_c: 8 files
 	res: 7 files
-	vdata_c: 7 files
-	vsndevts_c: 7 files
+	vdata_c: 6 files
 	vmix_c: 4 files
 	valst_c: 3 files
 	vsnap_c: 3 files
@@ -27,7 +27,7 @@ panorama/default_keybinds.cfg crc=0xec015dce size=764
 panorama/window_keybinds.cfg crc=0x00 size=0
 panorama/browser/webkit.css crc=0x653610e0 size=2436
 vr_fidelity_levels.csv crc=0x56755937 size=2130
-resource/core.gameevents crc=0xbcc4207e size=17114
+resource/core.gameevents crc=0x76a84385 size=17265
 resource/bugreporter.res crc=0x17e96be8 size=79
 resource/clientscheme.res crc=0x91c13cb0 size=15227
 resource/colorpicker.res crc=0x3d009bed size=7865
@@ -52,9 +52,10 @@ panorama/panorama_config.txt crc=0xea9e70d4 size=222
 scripts/collision_properties.txt crc=0xa2899d2d size=346
 scripts/dsp_presets.txt crc=0x64f623d5 size=52866
 scripts/hudanimations.txt crc=0xfb99463e size=33
+scripts/mapbuilder_settings.txt crc=0xa2559f0c size=2482
 scripts/replay_compatability_settings.txt crc=0x10de1eeb size=4082
 scripts/sound_operator_stacks.txt crc=0x286984db size=232516
-scripts/soundmixers.txt crc=0x1f203e8f size=36664
+scripts/soundmixers.txt crc=0xdff77f8c size=2171
 scripts/soundscapes_manifest.txt crc=0x93c17218 size=61
 scripts/surfaceproperties_explosion_debris_effects.txt crc=0x9714d784 size=174
 scripts/surfaceproperties_footsteps.txt crc=0x8832b2f7 size=4431
@@ -83,16 +84,15 @@ panorama/styles/popups/popup_generic_dropdown.vcss_c crc=0xf30b68c9 size=1824
 panorama/styles/popups/popup_generic_text_entry.vcss_c crc=0x61121664 size=3038
 panorama/styles/popups/popup_manager.vcss_c crc=0xbc045266 size=2113
 panorama/styles/popups/popups_shared.vcss_c crc=0x889cf1da size=5811
-panorama/styles/tooltips/tooltip_base.vcss_c crc=0x61af382 size=13259
+panorama/styles/tooltips/tooltip_base.vcss_c crc=0xa052d429 size=12678
 panorama/styles/tooltips/tooltip_text.vcss_c crc=0xb0c216cc size=2571
 panorama/styles/tooltips/tooltip_title_image_text.vcss_c crc=0x32438565 size=1628
 panorama/styles/tooltips/tooltip_title_text.vcss_c crc=0x3ea7a35b size=1283
 toolscenelightrigs.vdata_c crc=0x77ada428 size=2327
-scripts/tools/asset_graph_view_styles.vdata_c crc=0xf9dfc052 size=2448
+scripts/tools/asset_graph_view_styles.vdata_c crc=0xb3805326 size=2621
 scripts/tools/core_asset_tags.vdata_c crc=0x3407fdc6 size=2078
 scripts/tools/game_asset_tags.vdata_c crc=0x699d1bf size=870
-scripts/tools/pulse_scene_presets_v2.vdata_c crc=0x9f2fef65 size=4298
-scripts/tools/pulse_scene_styles_v2.vdata_c crc=0x264138ea size=15208
+scripts/tools/pulse_scene_styles_v2.vdata_c crc=0x9f9cedec size=15947
 soundstacks/dsp_mix_modifiers.vdata_c crc=0x45fa2086 size=934
 dev/vgui/materials/fonts/buttons.vfont_c crc=0x9f797ef3 size=4074
 dev/panorama_world_panel_default.vmat_c crc=0x3d359cc7 size=5542
@@ -143,6 +143,7 @@ materials/dev/cs_compress_dxt5.vmat_c crc=0x167a7e2 size=733
 materials/dev/cs_compress_stb_dxt5.vmat_c crc=0x61647fe2 size=738
 materials/dev/cs_mipgen.vmat_c crc=0xf931601d size=1896
 materials/dev/cs_parallel_sort.vmat_c crc=0xb9a7b274 size=1053
+materials/dev/cs_parallel_sort_onesweep.vmat_c crc=0xf9b2ce89 size=1185
 materials/dev/cs_volumetric_fog.vmat_c crc=0xb07b937f size=2856
 materials/dev/cull_aggregate_fragments.vmat_c crc=0x2779e737 size=1062
 materials/dev/cull_instanced_meshes.vmat_c crc=0xfc794e80 size=1083
@@ -172,6 +173,7 @@ materials/dev/downsample.vmat_c crc=0x3678545b size=2328
 materials/dev/downsample_bloomthreshold.vmat_c crc=0x8fb20a0d size=1324
 materials/dev/downsample_depth.vmat_c crc=0x8246bd34 size=981
 materials/dev/downsample_depth_cs.vmat_c crc=0xcac8df3f size=1057
+materials/dev/downsample_depth_singlepass_cs.vmat_c crc=0x6c90d8f5 size=1188
 materials/dev/fxaa_cs.vmat_c crc=0xea707325 size=1028
 materials/dev/gaussian_bloom_blur.vmat_c crc=0x98f9ecb size=2296
 materials/dev/generalfilter.vmat_c crc=0x7cfc238b size=2528
@@ -245,6 +247,7 @@ materials/dev/reflectivity_60b.vmat_c crc=0x7c46e52e size=5696
 materials/dev/reflectivity_70.vmat_c crc=0x95d71b26 size=5680
 materials/dev/reflectivity_70b.vmat_c crc=0xe6fcd8a7 size=5696
 materials/dev/reflectivity_80.vmat_c crc=0x9d3f56bd size=5680
+materials/dev/reflectivity_80_flammable.vmat_c crc=0xa7494c38 size=3197
 materials/dev/reflectivity_80b.vmat_c crc=0xb37088e0 size=5696
 materials/dev/reflectivity_90.vmat_c crc=0x7de759e7 size=5744
 materials/dev/reflectivity_90b.vmat_c crc=0x82204156 size=5696
@@ -415,6 +418,8 @@ materials/editor/multi_manager.vmat_c crc=0xc94d95b6 size=3280
 materials/editor/multisource.vmat_c crc=0xaeb1ae89 size=3256
 materials/editor/nav_oriented_mesh.vmat_c crc=0xee8c42f4 size=2137
 materials/editor/nav_space.vmat_c crc=0x6e560f96 size=2001
+materials/editor/nav_space_flight.vmat_c crc=0xa39b880d size=2288
+materials/editor/nav_space_water.vmat_c crc=0x751e3c89 size=2304
 materials/editor/nav_walkable.vmat_c crc=0xa40e6bc6 size=2001
 materials/editor/node_hint.vmat_c crc=0xe2629bdc size=6064
 materials/editor/npc_maker.vmat_c crc=0x425c5441 size=3256
@@ -451,7 +456,7 @@ materials/models/editor/cordon_helper.vmat_c crc=0xbe118626 size=6152
 materials/models/editor/editor_transparent.vmat_c crc=0x1d5181f7 size=2774
 materials/models/editor/info_target.vmat_c crc=0x460e04f7 size=4227
 materials/models/editor/overlay_helper.vmat_c crc=0x935c8d09 size=6160
-materials/models/editor/player_start.vmat_c crc=0x9bd082f4 size=5744
+materials/models/editor/player_start.vmat_c crc=0x2bd392c9 size=3165
 materials/models/editor/scripted_sequence.vmat_c crc=0x6f1da864 size=6400
 materials/models/editor/spot.vmat_c crc=0x16eab79 size=4169
 materials/models/editor/spot_cone.vmat_c crc=0x81574f31 size=5696
@@ -625,6 +630,7 @@ models/dev/new_model/materials/new_model.vmat_c crc=0x3cc4634d size=6448
 models/vr/autochap_hand.vmat_c crc=0x8f820f34 size=5848
 particles/dev/dev_cables_preview_material.vmat_c crc=0xacacac7b size=3784
 models/actors/ghost_speaker.vmdl_c crc=0x8ce7cce3 size=5611
+models/dev/antitunnel_n5.vmdl_c crc=0x7db78dfa size=22167
 models/dev/error.vmdl_c crc=0x532247be size=78760
 models/dev/gordon_at_desk.vmdl_c crc=0x25e90cf1 size=36816
 models/dev/mirror_normal_test.vmdl_c crc=0xf94a5af size=6516
@@ -741,18 +747,18 @@ soundstacks/soundstacks_manifest_core.vrman_c crc=0x2b572c28 size=1533
 particles/dev/placeholder.vsnap_c crc=0xb09f7f9b size=31183
 particles/dev/placeholder_skinned_kv.vsnap_c crc=0x10a0a4bb size=701
 particles/entity/path_particle_rope_placeholder.vsnap_c crc=0xc89da553 size=779
-sounds/envelope_analyzer.vsnd_c crc=0x4e5e6704 size=733380
+sounds/envelope_analyzer.vsnd_c crc=0xc2dc014a size=731780
 sounds/common/counting.vsnd_c crc=0x782ec02d size=135933
 sounds/common/noise.vsnd_c crc=0x74f93e72 size=129927
 sounds/common/null.vsnd_c crc=0xeb09c49a size=1543
 sounds/common/explosions/explo_gas_can_01.vsnd_c crc=0xc7d58518 size=681288
-sounds/containers/random_selector.vsnd_c crc=0x9c2585c2 size=1805
-sounds/containers/random_switch.vsnd_c crc=0x6818bb47 size=1596
+sounds/containers/random_selector.vsnd_c crc=0x72553bcd size=1923
+sounds/containers/random_switch.vsnd_c crc=0xbb5148cd size=1699
 sounds/containers/test_blend.vsnd_c crc=0xe8712db9 size=1331
 sounds/containers/test_constant_sine_decay.vsnd_c crc=0xc078cc83 size=1199
 sounds/containers/test_envelope.vsnd_c crc=0x106663b size=733361
 sounds/containers/test_fm.vsnd_c crc=0xa60a16bc size=1183
-sounds/containers/test_retrigger.vsnd_c crc=0xc421bdd4 size=1728
+sounds/containers/test_retrigger.vsnd_c crc=0x74a2048c size=1852
 sounds/diagnostics/abcd.vsnd_c crc=0xfde9f284 size=221984
 sounds/diagnostics/beep.vsnd_c crc=0x269843c3 size=20656
 sounds/diagnostics/beep_10sec_restart_9sec.vsnd_c crc=0x8419ad8a size=71911
@@ -792,27 +798,38 @@ sounds/diagnostics/ambient/thunder/thunder_distant_04.vsnd_c crc=0xc75e5d40 size
 sounds/ir/default.vsnd_c crc=0x6b28a32a size=59276
 sounds/ir/ir_click_3sec_lp.vsnd_c crc=0x6f0e2a7b size=265780
 sounds/ir/ir_neutral_forest.vsnd_c crc=0xa385fb95 size=87753
+sounds/ir/legacy_pickup_weapon_3sec_lp.vsnd_c crc=0x9fc62fbb size=332442
+sounds/tools/footstep_preview/step_01.vsnd_c crc=0x3fcc0584 size=44070
+sounds/tools/footstep_preview/step_02.vsnd_c crc=0x7ec5cf33 size=51950
+sounds/tools/footstep_preview/step_03.vsnd_c crc=0xbe2768f size=50058
+sounds/tools/footstep_preview/step_04.vsnd_c crc=0xb8b4c3b8 size=46338
+sounds/tools/footstep_preview/step_05.vsnd_c crc=0x92a96a7a size=41098
+sounds/tools/footstep_preview/step_06.vsnd_c crc=0xa774b224 size=39798
+sounds/tools/footstep_preview/step_07.vsnd_c crc=0x863308e8 size=41713
+sounds/tools/footstep_preview/step_08.vsnd_c crc=0x170e12fb size=50054
+sounds/tools/footstep_preview/step_09.vsnd_c crc=0xca8b4b79 size=47726
 sounds/tools/sfm/beep.vsnd_c crc=0xd989b097 size=58464
 sounds/tools/sfm/denyundo.vsnd_c crc=0x4728e35b size=4260
 sounds/tools/sfm/postroll.vsnd_c crc=0xad7db0fc size=894800
 sounds/tools/sfm/preroll.vsnd_c crc=0x7e11d89e size=903632
 sounds/tools/sfm/snap.vsnd_c crc=0x3c9705f size=984
-soundevents/soundevents_addon.vsndevts_c crc=0x76f99deb size=568
-soundevents/soundevents_containers_test.vsndevts_c crc=0xc4c2e8fe size=1132
-soundevents/soundevents_core.vsndevts_c crc=0x44c86da2 size=2308
-soundevents/soundevents_diagnostics.vsndevts_c crc=0xef6bdea2 size=8403
-soundevents/soundevents_examples.vsndevts_c crc=0x47eccc65 size=1101
-soundevents/soundevents_soundscapes_core.vsndevts_c crc=0x95fd7da8 size=12344
-soundevents/testkv3_soundevents_diagnostics.vsndevts_c crc=0x4cc0e0d1 size=18266
+soundevents/soundevents_addon.vsndevts_c crc=0x3d584ce5 size=901
+soundevents/soundevents_containers_test.vsndevts_c crc=0xa42352c1 size=1597
+soundevents/soundevents_core.vsndevts_c crc=0x674e0fd9 size=3138
+soundevents/soundevents_core_setters.vsndevts_c crc=0xd70dc640 size=1614
+soundevents/soundevents_diagnostics.vsndevts_c crc=0x1f922f0d size=9276
+soundevents/soundevents_examples.vsndevts_c crc=0xe206ae48 size=1373
+soundevents/soundevents_soundscapes_core.vsndevts_c crc=0xfe62123a size=4710
+soundevents/testkv3_soundevents_diagnostics.vsndevts_c crc=0x42d4f80 size=4593
 soundstacks/soundeventgroups.vsndgrps crc=0x53fbc6c2 size=25298
 soundstacks/soundstacks_containers_test.vsndstck_c crc=0x378f2d37 size=1556
-soundstacks/soundstacks_core.vsndstck_c crc=0xcb4bd3d size=8093
+soundstacks/soundstacks_core.vsndstck_c crc=0xb4e8405b size=8521
 soundstacks/soundstacks_core_setters.vsndstck_c crc=0x82ddabb5 size=3355
 soundstacks/soundstacks_core_test.vsndstck_c crc=0x1999e7d7 size=943
-soundstacks/soundstacks_diagnostics.vsndstck_c crc=0x95f153f size=16869
+soundstacks/soundstacks_diagnostics.vsndstck_c crc=0xd30b35c9 size=17151
 soundstacks/soundstacks_examples.vsndstck_c crc=0x97d0028c size=1620
-soundstacks/soundstacks_soundscapes_core.vsndstck_c crc=0xe68af38e size=13591
-soundstacks/soundstacks_src1.vsndstck_c crc=0xf249d2c8 size=3878
+soundstacks/soundstacks_soundscapes_core.vsndstck_c crc=0x565a531b size=13750
+soundstacks/soundstacks_src1.vsndstck_c crc=0xfdcde434 size=3975
 surfaceproperties/surfaceproperties.vsurf_c crc=0xa869cfcf size=7916
 dev/helper/reflectivity_90b_color_tga_88186957.vtex_c crc=0xbde44cf3 size=2428
 dev/helper/testgrid_color_tga_7daa5eb8.vtex_c crc=0xa6f9b87d size=176476
@@ -1033,7 +1050,9 @@ materials/editor/math_counter_tga_fb1022f9.vtex_c crc=0x3fbd45ee size=7188
 materials/editor/multi_manager_tga_38eca427.vtex_c crc=0x5e342aeb size=7188
 materials/editor/multisource_tga_252e5ae7.vtex_c crc=0xdfe055e4 size=7188
 materials/editor/nav_oriented_mesh_tga_4102cace.vtex_c crc=0x5ec61a4d size=23876
+materials/editor/nav_space_flight_tga_35406aa8.vtex_c crc=0x49ec7e5b size=23924
 materials/editor/nav_space_tga_5a791551.vtex_c crc=0xb8e213e size=23812
+materials/editor/nav_space_water_tga_f3f7bd69.vtex_c crc=0x4b3ceea size=23924
 materials/editor/nav_walkable_tga_8e552af9.vtex_c crc=0x8e96fef4 size=23812
 materials/editor/node_hint_color_tga_5dd9c0e3.vtex_c crc=0x9218b0cb size=12668
 materials/editor/node_hint_vmat_g_tselfillummask_75858c03.vtex_c crc=0x3cb6a03 size=1500
@@ -1076,7 +1095,7 @@ materials/models/editor/editor_transparent_vmat_g_tcolor_51d676ae.vtex_c crc=0x3
 materials/models/editor/info_target_color_psd_8a87b20b.vtex_c crc=0xa3772a9d size=45596
 materials/models/editor/light_spot_color_psd_67849a44.vtex_c crc=0x586c4b10 size=351384
 materials/models/editor/overlay_helper_tga_622536c3.vtex_c crc=0xd46c3250 size=23684
-materials/models/editor/player_start_tga_6597ddab.vtex_c crc=0xd8c3a784 size=23604
+materials/models/editor/player_start_tga_6597ddab.vtex_c crc=0xa8965c7 size=23924
 materials/models/editor/scripted_sequence_tga_d76c0041.vtex_c crc=0x624ffd95 size=45844
 materials/models/editor/spot_cone_tga_b54e2e90.vtex_c crc=0x83055205 size=4476
 materials/models/editor/sun_vmat_g_tcolor_a00ef19e.vtex_c crc=0x6da843c size=1500

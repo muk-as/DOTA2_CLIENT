@@ -612,21 +612,11 @@ DOTAStatBranch:not(.ShowStatBranchAsTooltip) .AttributeChoiceActive .StatChoice.
 	vertical-align: bottom;
 }
 
-#DOTAPostGame .LevelProgress,DOTAScoreboardPlayer .LevelProgress,Panel#DetailsScoreboard .LevelProgress
+#DOTAPostGame #StatPipContainer,DOTAScoreboardPlayer #StatPipContainer
 {
-	border-radius: 0px;
-	width: 38px;
-	height: 4px;
-	transform: rotateZ(-90deg) translate3d( -4px, 20px, 0px);
-	opacity-mask: url("s2r://panorama/images/hud/reborn/statbranch_progress_mask_psd.vtex") 1.0;
-	horizontal-align: right;
-	margin-top: 10px;
-	margin-bottom: 2px;
-	overflow: clip;
-	border-radius: 0;
-	border-bottom-right-radius: 3px;
-	border-bottom-left-radius: 2px;
-	z-index: 2;
+	ui-scale: 130%;
+	margin-top: 2.5px;
+	margin-left: -1px;
 }
 
 #StatUpgradeOption
@@ -742,10 +732,43 @@ DOTAStatBranch:not(.ShowStatBranchAsTooltip) #UpgradeStat.could_level_up.TalentB
 .ShouldShowOgreSillyThing .OgreTalents
 {
 	background-image: url("s2r://panorama/images/hud/ogre_talents_png.vtex");
-	width:50px;
-	height:250px;
+	width: 50px;
+	height: 250px;
 	background-size:100%;
 	horizontal-align:center;
-	z-index:100;
+	z-index: 100;
+}
+
+#AttributePipsContainer
+{
+	width: 74px;
+	height: 74px;
+	background-image: url("s2r://panorama/images/hud/attributes_pips_background_7_png.vtex");
+	background-size: cover;
+}
+
+#AttributePipsContainer #AttributePips
+{
+	width: 100%;
+	height: 100%;
+	background-color: gradient( radial, 50% 50%, 0% 0%, 50% 50%, from( #E3CE8F ), color-stop( 0.84, #E3CE8F ), to( #91814E ) );
+	opacity-mask: url("s2r://panorama/images/hud/attributes_pips_mask_7_png.vtex");
+	clip: radial( 50% 50%, 90deg, 100deg );
+	transform: scale3d(-1, 1, 1);
+}
+
+.AttributeMaxLevel6 #AttributePipsContainer #AttributePips
+{
+	opacity-mask: url("s2r://panorama/images/hud/attributes_pips_mask_6_png.vtex");
+}
+
+.AttributeMaxLevel6 #AttributePipsContainer
+{
+	background-image: url("s2r://panorama/images/hud/attributes_pips_background_6_png.vtex");
+}
+
+.HideAttributePips
+{
+	opacity: 0;
 }
 

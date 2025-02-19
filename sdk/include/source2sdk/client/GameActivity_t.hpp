@@ -8,7 +8,7 @@
 
 namespace source2sdk::client
 {
-    // Enumerator count: 272
+    // Enumerator count: 274
     // Alignment: 4
     // Size: 0x4
     enum class GameActivity_t : std::uint32_t
@@ -285,5 +285,7 @@ namespace source2sdk::client
         ACT_DOTA_KEZ_KATANA_ULT_END = 0x6e9,
         ACT_DOTA_KEZ_KATANA_IMPALE = 0x6ea,
         ACT_DOTA_KEZ_KATANA_IMPALE_FAST = 0x6eb,
+        ACT_DOTA_UNICYCLE = 0x6ec,
+        ACT_DOTA_UNICYCLE_END = 0x6ed,
     };
 };

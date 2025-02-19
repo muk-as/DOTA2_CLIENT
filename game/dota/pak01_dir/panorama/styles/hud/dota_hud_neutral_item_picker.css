@@ -3,62 +3,126 @@
 DOTANeutralItemPicker
 {
 	flow-children: down;
-	background-color: #000c;
-	border: 1px solid black;
 	horizontal-align: center;
 	vertical-align: middle;
-	padding: 8px 8px 0px 8px;
-	margin-left: 632px;
-	margin-top: 200px;
+	margin-left: 780px;
+	margin-top: 360px;
+	padding: 48px;
 	opacity: 0.0;
-	transform: translateY( 20px );
+	transform: translateY( 28px ) scale3d( 0.96, 0.96, 1 );
 	transition-property: opacity, transform;
 	transition-duration: 0.2s;
+	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
+	transition-delay: 0s;
 }
 
 DOTANeutralItemPicker.ShowPicker
 {
 	opacity: 1.0;
 	transform: none;
+	transition-delay: 0.1s;
+	transition-timing-function: ease-in;
+}
+
+.TooltipContents
+{
+	width: 560px;
+	flow-children: down;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #13171a ), to( #0b0f11 ) );
+	border: 2px solid black;
+	box-shadow: 0px 8px 40px -2px rgba(0, 0, 0, 0.6);
 }
 
 .Header
 {
 	width: 100%;
-	margin-bottom: 4px;
 	flow-children: right;
+}
+
+.Header .HeaderBackgroundTexture
+{
+	width: 100%;
+	height: 100%;
+	ignore-parent-flow: true;
+	background-image: url("s2r://panorama/images/hud/facets/ripple_texture_png.vtex");
+	background-size: cover;
+	background-position: center;
+	-s2-mix-blend-mode: screen;
+	opacity: 0.4;
+	opacity-brush: gradient( linear, 0% 0%, 100% 0%, from( white ), to( rgba(255, 255, 255, 0) ) );
 }
 
 .Header .HeaderText
 {
-	flow-children: down;
+	flow-children: right;
 	width: fill-parent-flow( 1.0 );
+	vertical-align: center;
+	padding: 10px 4px 8px 12px;
 }
 
-.Header .HeaderText .Title
+.Header .HeaderText Label
 {
-	width: 100%;
+	font-size: 16px;
+	text-shadow: 0px 1px 6px black;
+}
+
+.Header .HeaderText .TierNumber
+{
+	width: fill-parent-flow(1.0);
 	vertical-align: middle;
-	text-transform: uppercase;
-	color: #ccc;
-	font-size: 18px;
-	letter-spacing: 2px;
+	text-align: right;
+	font-weight: semi-bold;
 }
 
 .Header .HeaderText .Subtitle
 {
 	text-transform: uppercase;
 	letter-spacing: 1px;
-	color: #666;
-	font-size: 16px;
+	color: white;
 }
 
-.Header .CloseButton
+.Header #CloseButton
 {
 	horizontal-align: right;
-	margin: 0px;
+	vertical-align: center;
 	height: 32px;
 	width: 32px;
+	border-radius: 50%;
+	margin-right: 6px;
+	border: 1px solid rgba(255, 255, 255, 0);
+	transition-property: background-color, border;
+	transition-duration: 0.1s;
+}
+
+.Header #CloseButton:hover
+{
+	background-color: rgba(0, 0, 0, 0.6);
+	border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.Header #CloseButton:hover .CloseIcon
+{
+	opacity: 1;
+}
+
+.Header #CloseButton .CloseIcon
+{
+	margin: 0px;
+	height: 16px;
+	width: 16px;
+	horizontal-align: center;
+	vertical-align: center;
+	opacity: 0.5;
+	transition-property: opacity;
+	transition-duration: 0.1s;
+}
+
+.HeaderDash
+{
+	width: 100%;
+	height: 1px;
+	background-color: rgba(0, 0, 0, 0.15);
+	box-shadow: 0px -1px 0px rgba(255, 255, 255, 0.01);
 }
 
 .NeutralItemTier1 .NeutralItemTier
@@ -86,76 +150,386 @@ DOTANeutralItemPicker.ShowPicker
 	color: NeutralTier5;
 }
 
-#NeutralItemOptions
+.NeutralItemTier1 .Header
 {
-	flow-children: down;
-	horizontal-align: center;
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( NeutralTier1&55 ), to( NeutralTier1&05 ) );
 }
 
-#NeutralItemOptions .NeutralItemOption
+.NeutralItemTier2 .Header
+{
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( NeutralTier2&55 ), to( NeutralTier2&05 ) );
+}
+
+.NeutralItemTier3 .Header
+{
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( NeutralTier3&55 ), to( NeutralTier3&05 ) );
+}
+
+.NeutralItemTier4 .Header
+{
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( NeutralTier4&55 ), to( NeutralTier4&05 ) );
+}
+
+.NeutralItemTier5 .Header
+{
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( NeutralTier5&55 ), to( NeutralTier5&05 ) );
+}
+
+.NeutralItemTier1 .Body
+{
+	background-color: gradient( radial, 0% 0%, 0% 0%, 160% 80%, from( NeutralTier1&09 ), to( NeutralTier1&00 ) );
+}
+
+.NeutralItemTier2 .Body
+{
+	background-color: gradient( radial, 0% 0%, 0% 0%, 160% 80%, from( NeutralTier2&09 ), to( NeutralTier2&00 ) );
+}
+
+.NeutralItemTier3 .Body
+{
+	background-color: gradient( radial, 0% 0%, 0% 0%, 160% 80%, from( NeutralTier3&09 ), to( NeutralTier3&00 ) );
+}
+
+.NeutralItemTier4 .Body
+{
+	background-color: gradient( radial, 0% 0%, 0% 0%, 160% 80%, from( NeutralTier4&09 ), to( NeutralTier4&00 ) );
+}
+
+.NeutralItemTier5 .Body
+{
+	background-color: gradient( radial, 0% 0%, 0% 0%, 160% 80%, from( NeutralTier5&09 ), to( NeutralTier5&00 ) );
+}
+
+.NeutralItemTier1 .HeaderBackgroundTexture
+{
+	wash-color: NeutralTier1;
+}
+
+.NeutralItemTier2 .HeaderBackgroundTexture
+{
+	wash-color: NeutralTier2;
+}
+
+.NeutralItemTier3 .HeaderBackgroundTexture
+{
+	wash-color: NeutralTier3;
+}
+
+.NeutralItemTier4 .HeaderBackgroundTexture
+{
+	wash-color: NeutralTier4;
+}
+
+.NeutralItemTier5 .HeaderBackgroundTexture
+{
+	wash-color: NeutralTier5;
+}
+
+.Body
 {
 	flow-children: right;
-	width: 340px;
-	margin-bottom: 8px;
-	ui-scale: 90%;
-	border: 1px solid #141919;
-	background-color: #10171D;
-	transition-property: brightness;
-	transition-duration: 0.2s;
+	width: 100%;
+	padding: 10px 12px 8px;
 }
 
-#NeutralItemOptions .NeutralItemOption:hover
+.BottomArrow
+{
+	width: 36px;
+	height: width-percentage( 50% );
+	background-image: url("s2r://panorama/images/tooltips/tooltip_arrow.vsvg");
+	background-texture-size: 72px 36px;
+	background-size: cover;
+	wash-color: #12181C;
+	margin-top: -2px;
+	horizontal-align: center;
+	z-index: 1;
+	visibility: collapse;
+}
+
+.TrinketsContainer,.EnhancementsContainer
+{
+	flow-children: down;
+	width: fill-parent-flow( 1 );
+}
+
+@define OptionHeight: 54px;
+#NeutralCraftTrinketList
+{
+	flow-children: down;
+	width: 100%;
+	height: fit-children;
+}
+
+#NeutralCraftTrinketList .NeutralItemOption
+{
+	horizontal-align: center;
+	flow-children: right;
+	width: 100%;
+	height: OptionHeight;
+	margin-bottom: 4px;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( rgba(230, 250, 255, 0.04) ), to( rgba(233, 250, 255, 0.02) ) );
+	overflow: noclip;
+	tooltip-position: top;
+	transition-property: transform, brightness, background-color, border;
+	transition-duration: 0.05s, 0.1s;
+}
+
+#NeutralCraftTrinketList .NeutralItemOption:hover:not(.CraftingOptionSelected)
 {
 	brightness: 2.0;
 }
 
-#NeutralItemOptions .NeutralItemOption:active
+#NeutralCraftTrinketList .NeutralItemOption:active
 {
 	brightness: 1.5;
+	transform: scale3d( 0.99, 0.99, 1 );
 }
 
-#NeutralItemOptions .NeutralItemOption.IsHighestDotaPlusSuggestion
+#NeutralCraftTrinketList .NeutralItemOption.IsHighestDotaPlusSuggestion
 {
 	border: 1px solid #d1af58;
 }
 
-#NeutralItemOptions .NeutralItemOption.IsHighestDotaPlusSuggestion .DOTAPlusIcon
+#NeutralCraftTrinketList .NeutralItemOption.IsHighestDotaPlusSuggestion .DOTAPlusIcon
 {
 	visibility: visible;
 }
 
-#NeutralItemOptions .NeutralItemOption #ItemImage
+#NeutralCraftTrinketList .NeutralItemOption.CraftingOptionSelected
 {
-	width: 88px;
-	height: 64px;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( rgba(230, 250, 255, 0.2) ), to( rgba(233, 250, 255, 0.1) ) );
 }
 
-#NeutralItemOptions .NeutralItemOption .ItemName
+#NeutralCraftTrinketList .NeutralItemOption.CraftingOptionSelected .OptionBorder
+{
+	z-index: 1;
+	border: 1px solid rgba(255, 255, 255, 1);
+}
+
+#NeutralCraftTrinketList .NeutralItemOption.CraftingOptionSelected #OptionImage
+{
+	brightness: 2.0;
+}
+
+#NeutralCraftTrinketList .NeutralItemOption.CraftingOptionSelected .ItemName,#NeutralCraftTrinketList .NeutralItemOption.CraftingOptionSelected .CombinedItemName
+{
+	color: whitesmoke;
+}
+
+#NeutralCraftTrinketList .NeutralItemOption #OptionImage
+{
+	width: height-percentage( 133% );
+	height: OptionHeight;
+	border: 1px solid black;
+	box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
+	transition-property: brightness;
+	transition-duration: 0.2s;
+}
+
+#NeutralCraftTrinketList .NeutralItemOption .OptionBorder
+{
+	width: 100%;
+	height: 100%;
+	ignore-parent-flow: true;
+	border: 1px solid rgba(255, 255, 255, 0.03);
+	border-brush: gradient( linear, 0% 0%, 0% 100%, from( white ), to( rgba(255, 255, 255, 0.6) ) );
+	transition-property: border;
+	transition-duration: 0.2s;
+}
+
+#NeutralCraftTrinketList .NeutralItemOption .ItemName,#NeutralCraftTrinketList .NeutralItemOption .CombinedItemName
 {
 	font-family: titleFont;
-	font-size: 18px;
+	font-size: 14px;
+	line-height: 1.2;
 	color: #e1e1e1;
 	width: fill-parent-flow( 1.0 );
 	vertical-align: middle;
 	padding: 0px 8px;
 	text-overflow: shrink;
 	letter-spacing: 0.5px;
-	text-shadow: 2px 2px 0px 1.0 #00000090;
+	text-shadow: 0px 1px 4px #00000090;
 	text-transform: uppercase;
 	font-weight: semi-bold;
+	max-height: 48px;
+	vertical-align: center;
 }
 
-#NeutralItemOptions .NeutralItemOption .DOTAPlusSuggestion
+#NeutralCraftTrinketList .NeutralItemOption .DOTAPlusSuggestion
 {
 	font-size: 14px;
 	color: #d1af58;
 }
 
-#NeutralItemOptions .NeutralItemOption .DOTAPlusIcon
+#NeutralCraftTrinketList .NeutralItemOption .DOTAPlusIcon
 {
 	width: 16px;
 	height: 16px;
 	margin: 0px 2px;
+	visibility: collapse;
+}
+
+#NeutralCraftTrinketList .NeutralItemOption .EnhancementStats
+{
+	visibility: collapse;
+}
+
+#NeutralCraftEnhancementList
+{
+	flow-children: down;
+	width: 100%;
+	height: fit-children;
+}
+
+#NeutralCraftEnhancementList .NeutralItemOption
+{
+	horizontal-align: center;
+	flow-children: right;
+	width: 100%;
+	height: OptionHeight;
+	margin-bottom: 4px;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( rgba(230, 250, 255, 0.04) ), to( rgba(233, 250, 255, 0.02) ) );
+	tooltip-position: top;
+	transition-property: transform, brightness, background-color, border;
+	transition-duration: 0.05s, 0.1s;
+}
+
+#NeutralCraftEnhancementList .NeutralItemOption:hover:not(.CraftingOptionSelected)
+{
+	brightness: 2.0;
+}
+
+#NeutralCraftEnhancementList .NeutralItemOption:active
+{
+	brightness: 1.5;
+	transform: scale3d( 0.98, 0.98, 1 );
+}
+
+#NeutralCraftEnhancementList .NeutralItemOption.IsHighestDotaPlusSuggestion
+{
+	border: 1px solid #d1af58;
+}
+
+#NeutralCraftEnhancementList .NeutralItemOption.IsHighestDotaPlusSuggestion .DOTAPlusIcon
+{
+	visibility: visible;
+}
+
+#NeutralCraftEnhancementList .NeutralItemOption.CraftingOptionSelected
+{
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( rgba(230, 250, 255, 0.2) ), to( rgba(233, 250, 255, 0.1) ) );
+}
+
+#NeutralCraftEnhancementList .NeutralItemOption.CraftingOptionSelected .OptionBorder
+{
+	z-index: 1;
+	border: 1px solid rgba(255, 255, 255, 1);
+}
+
+#NeutralCraftEnhancementList .NeutralItemOption.CraftingOptionSelected #OptionImage
+{
+	brightness: 2.0;
+}
+
+#NeutralCraftEnhancementList .NeutralItemOption.CraftingOptionSelected .ItemName,#NeutralCraftEnhancementList .NeutralItemOption.CraftingOptionSelected .CombinedItemName
+{
+	color: whitesmoke;
+}
+
+#NeutralCraftEnhancementList .NeutralItemOption #OptionImage
+{
+	width: 32px;
+	height: width-percentage( 100% );
+	margin: 4px 16px;
+	border-radius: 50%;
+	border: 1px solid black;
+	box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
+	transition-property: brightness;
+	transition-duration: 0.2s;
+}
+
+#NeutralCraftEnhancementList .NeutralItemOption .OptionBorder
+{
+	width: 100%;
+	height: 100%;
+	ignore-parent-flow: true;
+	border: 1px solid rgba(255, 255, 255, 0.03);
+	border-brush: gradient( linear, 0% 0%, 0% 100%, from( white ), to( rgba(255, 255, 255, 0.6) ) );
+	transition-property: border;
+	transition-duration: 0.2s;
+}
+
+#NeutralCraftEnhancementList .NeutralItemOption .EnhancementStats
+{
+	vertical-align: center;
+	font-size: 15px;
+	color: LighterGrey;
+	line-height: 1.1;
+	text-shadow: 0px 1px 4px #00000090;
+	margin-right: 8px;
+	width: fill-parent-flow( 1 );
+	max-height: 96%;
+	text-overflow: shrink;
+	margin-left: -2px;
+}
+
+#NeutralCraftEnhancementList .NeutralItemOption .GameplayVariable
+{
+	font-weight: bold;
+	color: white;
+}
+
+#NeutralCraftEnhancementList .NeutralItemOption .GameplayValues
+{
+	font-weight: bold;
+	color: white;
+}
+
+#NeutralCraftEnhancementList .NeutralItemOption .ItemName,#NeutralCraftEnhancementList .NeutralItemOption .CombinedItemName
+{
+	vertical-align: bottom;
+	margin: 3px 3px;
+	width: 58px;
+	max-height: 24px;
+	font-family: titleFont;
+	ignore-parent-flow: true;
+	text-overflow: shrink;
+	font-size: 11px;
+	color: LighterGrey;
+	text-align: center;
+	text-overflow: shrink;
+	text-shadow: 0px 1px 4px #00000090;
+}
+
+#NeutralCraftEnhancementList .NeutralItemOption .DOTAPlusSuggestion
+{
+	font-size: 14px;
+	color: #d1af58;
+}
+
+#NeutralCraftEnhancementList .NeutralItemOption .DOTAPlusIcon
+{
+	width: 16px;
+	height: 16px;
+	margin: 0px 2px;
+	visibility: collapse;
+}
+
+.HideDotaPlus .DOTAPlusSuggestion
+{
+	visibility: collapse;
+}
+
+.NeutralChoiceHolder
+{
+	width: fit-children;
+	height: fit-children;
+	flow-children: right;
+	margin-bottom: 4px;
+}
+
+.SoloName .CombinedItemName,.SoloName #PassiveItemImage,.CombinedName .ItemName
+{
 	visibility: collapse;
 }
 
@@ -173,7 +547,7 @@ DOTANeutralItemPicker.ShowPicker
 	transition-timing-function: ease-in-out;
 }
 
-.RerollButton .RerollText
+.RerollButton Label
 {
 	vertical-align: middle;
 	horizontal-align: middle;
@@ -196,5 +570,54 @@ DOTANeutralItemPicker.ShowPicker
 .NoRollsAvailable .RerollButton
 {
 	visibility: collapse;
+}
+
+.HideReroll
+{
+	visibility: collapse;
+}
+
+.NeutralSeperator
+{
+	height: 100%;
+	flow-children: down;
+	margin: 14px 4px 0px;
+}
+
+.NeutralSeperator .HorizontalRule
+{
+	width: 1px;
+	height: fill-parent-flow( 1.0 );
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #808f9700 ), to( #808f97 ) );
+	horizontal-align: center;
+	opacity: 0.2;
+}
+
+.NeutralSeperator .HorizontalRule.Right
+{
+	transform: scaleY( -1 );
+}
+
+.NeutralSeperator .PlusIcon
+{
+	width: 14px;
+	height: width-percentage(100%);
+	margin: 4px 0px;
+	wash-color: #808f97;
+	img-shadow: 0px 1px 4px black;
+}
+
+.SubheaderLabel
+{
+	font-family: defaultFont;
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+	font-size: 14px;
+	vertical-align: center;
+	text-align: center;
+	width: 100%;
+	margin-bottom: 4px;
+	color: LighterGrey;
+	text-shadow: 0px 2px 6px black;
 }
 

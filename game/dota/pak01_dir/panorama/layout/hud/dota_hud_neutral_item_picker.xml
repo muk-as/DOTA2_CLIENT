@@ -8,24 +8,47 @@
 	<snippets>
 		<snippet name="NeutralItemOption">
 			<Panel class="NeutralItemOption">
-				<DOTAItemImage id="ItemImage" />
-				<Label class="ItemName" text="{g:dota_ability_name:item_ability_id}" />
+				<Panel class="OptionBorder" hittest="false" />
+				<DOTAItemImage id="OptionImage" scaling="cover" />
+				<Label class="ItemName" text="{s:option_name}" />
 				<Image id="DOTAPlusIcon" class="DOTAPlusIcon" src="s2r://panorama/images/dota_plus/dotaplus_logo_small_png.vtex" />
 				<Label id="DOTAPlusSuggestion" class="DOTAPlusSuggestion" text="{f:0:dota_plus_suggestion}%" />
+				<Label class="EnhancementStats" html="true" text="{s:enhancement_desc}" />
 			</Panel>
 		</snippet>
 	</snippets>
 	<DOTANeutralItemPicker>
-		<Panel class="Header">
-			<Panel class="HeaderText">
-				<Label id="Title" class="Title" text="#DOTA_NeutralItemPicker_Title" html="true" />
-				<Label class="Subtitle" text="#DOTA_NeutralItemPicker_Subtitle" />
+		<Panel class="TooltipContents">
+			<Panel class="Header">
+				<Panel class="HeaderBackgroundTexture" />
+				<Panel class="HeaderText">
+					<Label class="Subtitle" text="#DOTA_NeutralItemPicker_Subtitle" />
+					<Label id="Title" class="TierNumber" text="#DOTA_NeutralItemPicker_Title" html="true" />
+				</Panel>
+				<Panel id="CloseButton" onactivate="DOTANeutralItemPickerClosed()">
+					<Image class="CloseIcon" src="s2r://panorama/images/control_icons/24px/x_close.vsvg" />
+				</Panel>
 			</Panel>
-			<Button class="CloseButton" onactivate="DOTANeutralItemPickerClosed()" />
+			<Panel class="HeaderDash" />
+			<Panel class="Body">
+				<Panel class="TrinketsContainer">
+					<Label class="SubheaderLabel" text="#DOTA_NeutralCraft_TrinketHeader" />
+					<Panel id="NeutralCraftTrinketList" />
+				</Panel>
+				<Panel class="NeutralSeperator">
+					<Panel class="HorizontalRule" />
+					<Image class="PlusIcon" src="s2r://panorama/images/control_icons/24px/plus.vsvg" />
+					<Panel class="HorizontalRule Right" />
+				</Panel>
+				<Panel class="EnhancementsContainer">
+					<Label class="SubheaderLabel" text="#DOTA_NeutralCraft_EnhancementHeader" />
+					<Panel id="NeutralCraftEnhancementList" />
+				</Panel>
+				<Button class="RerollButton HideReroll" onactivate="DOTANeutralItemPickerReroll()">
+					<Label class="RerollText" text="#DOTA_NeutralItemPicker_Reroll" />
+				</Button>
+			</Panel>
 		</Panel>
-		<Panel id="NeutralItemOptions" />
-		<Button class="RerollButton" onactivate="DOTANeutralItemPickerReroll()">
-			<Label class="RerollText" text="#DOTA_NeutralItemPicker_Reroll" />
-		</Button>
+		<Panel class="BottomArrow" />
 	</DOTANeutralItemPicker>
 </root>

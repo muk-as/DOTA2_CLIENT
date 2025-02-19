@@ -8,7 +8,7 @@
 
 namespace source2sdk::client
 {
-    // Enumerator count: 21
+    // Enumerator count: 22
     // Alignment: 4
     // Size: 0x4
     enum class EDemoCommands : std::uint32_t
@@ -32,7 +32,8 @@ namespace source2sdk::client
         DEM_SpawnGroups = 0xf,
         DEM_AnimationData = 0x10,
         DEM_AnimationHeader = 0x11,
-        DEM_Max = 0x12,
+        DEM_Recovery = 0x12,
+        DEM_Max = 0x13,
         DEM_IsCompressed = 0x40,
     };
 };
