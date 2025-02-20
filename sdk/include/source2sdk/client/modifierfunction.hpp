@@ -297,7 +297,7 @@ namespace source2sdk::client
         MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE = 0x8c,
         // MScriptDescription "GetModifierPreAttack_Target_CriticalStrike"
         MODIFIER_PROPERTY_PREATTACK_TARGET_CRITICALSTRIKE = 0x8d,
-        // MScriptDescription "çê0û GetModifierMagical_ConstantBlock"
+        // MScriptDescription "øæê0û GetModifierMagical_ConstantBlock"
         MODIFIER_PROPERTY_MAGICAL_CONSTANT_BLOCK = 0x8e,
         // MScriptDescription "GetModifierPhysical_ConstantBlockSpecial GetModifierPhysical_ConstantBlock"
         MODIFIER_PROPERTY_PHYSICAL_CONSTANT_BLOCK = 0x8f,
