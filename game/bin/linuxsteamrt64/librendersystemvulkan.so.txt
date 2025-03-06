@@ -6,24 +6,24 @@
 0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz
 0123456789:<>@BDFHJLNPRTVXZ\^`bdfhjlnprtwz
 016lx
-02x.%016lx.json
 0: Bilinear, 1: Trilinear, 2: Aniso 2x, 3: Aniso 4x, 4: Aniso 8x, 5: Aniso 16x
-0E9,$u
 0[A\A]A
 0[A\A]A^A
 0` 0hSN
 0n6ZP
-1.2.11
 100s %-6s %-6s
 10ConCommand
 10IAppSystem
 11CBLASVulkan
 11CRefCountedI20CRefCountServiceBaseI6CRefMTEE
 11CTLASVulkan
+11IRefCounted
 12CDeviceFence
+12CRefCounted1I11IRefCounted20CRefCountServiceBaseI6CRefMTEE
 12CRenderUtils
 12CTextureBase
 12CThreadEvent
+12CThreadedJob
 12CVulkanImage
 12IRenderUtils
 13CRenderDocAPI
@@ -44,6 +44,7 @@
 15CNVReflexVulkan
 15CPipelineVulkan
 15CRenderResource
+15CStdFunctionJob
 15CTier0AppSystemI12IRenderUtilsLx0EE
 15CTier0AppSystemI16IRenderDeviceMgrLx0EE
 15CTier1AppSystemI12IRenderUtilsLx0EE
@@ -56,7 +57,6 @@
 16CIndexBufferBase
 16CInputLayoutDictI18CInputLayoutVulkanE
 16CSwapChainVulkan
-16CVfxSpirVReflect
 16ICommandCallback
 16IRenderDeviceMgr
 16VmaBlockMetadata
@@ -65,12 +65,15 @@
 17CRenderThreadBase
 17CShaderVulkanBase
 17CVertexBufferBase
+18CBlendStateCreator
 18CColorFormatVulkan
 18CIndexBufferVulkan
 18CPooledIndexBuffer
 18CRenderContextBase
 18CShaderTableVulkan
 18IMultipleWorkerJob
+18ITSHashConstructorI20CSamplerStateBindingE
+18ITSHashConstructorIPvE
 18IVmaAllocationBase
 19CImageLayoutTracker
 19CPooledVertexBuffer
@@ -93,6 +96,7 @@
 20CRefCountServiceBaseI6CRefMTE
 20CRenderContextVulkan
 20CRenderDeviceMgrBase
+20CSamplerStateCreator
 20CVfxShaderFileVulkan
 20CVulkanSamplerObject
 20IBufferMovedListener
@@ -115,6 +119,7 @@
 22CSchemaInstallCallback
 22IStreamBuilderCallbackI14CCommandStreamE
 22IToolsResourceListener
+23CRasterizerStateCreator
 23CRayTracePipelineVulkan
 23CTextureStreamingHelper
 23CVulkanDeviceMemoryPool
@@ -128,6 +133,7 @@
 25CConCommandMemberAccessorI20CMemoryManagerVulkanE
 25CConCommandMemberAccessorI21CFramebufferMgrVulkanE
 25CConCommandMemberAccessorI22CPipelineManagerVulkanE
+25CDepthStencilStateCreator
 25ITextureResidencyListener
 26CParallelProcessorAbstractI18CParallelProcessorIN22CFossilizeStateCreator18PipelineWorkItem_tE27CMemberFuncJobItemProcessorIS2_S1_S1_ELi1EEE
 26ICommandCompletionCallback
@@ -137,8 +143,7 @@
 28CBufferedDescriptorSetVulkan
 28CVulkanTextureObjectToDelete
 29CVulkanIndirectCommandsLayout
-2AUATSH
-2E9.u I
+2Icz L
 2战2战2战2
 30CVmaAllocationDeferredDeletionI18CIndexBufferVulkanE
 30CVmaAllocationDeferredDeletionI19CVertexBufferVulkanE
@@ -155,65 +160,59 @@
 3E9&t!H
 3L9\PHt
 3[A\A]A
-3[A\A]A^A
 3d %3d %3d %3d %3d %3d %3d %3d
 3d: e=%.3f rms=%.6f %u
 40Hc҉u
 41CRenderContextVulkan_SoftwareCommandLists
 42@80t
-4E9,$u!I
+4E9>u"H
 4IfA9T
 4PD;t$h
-4_0_android_vulkan
-4_0_ios_vulkan
-4_0_vulkan
-4_1_android_vulkan
-4_1_ios_vulkan
-4_1_vulkan
 4fffffffffffffff
 4pH9u r
 4u %4u %4u %4u %4u %4u %4u %4u
+5&YA1A
 5;FJ$,XEK4
-5D9;u#H
 5J5J5J5J5J5J5J5J5J5J5J5J5J5J5J5Jx
-5_0_android_vulkan
-5_0_ios_vulkan
-5_0_vulkan
-6_0_vulkan
+5YA1Mcg
 7&F|If
 7H;U0sS
-7LcUȋE
-7~Uf9K
 8"3hrf
 8@%rdi 8@%rsi
 8@%rdx 8@%rax
 8@%rdx 8@-80(%rbx
 8AVAUATI
 8AVAUL
+8BPSu7f
 8CHt:H
+8D9s,t
+8DATAu
 8EHt9H
+8H9:r,H
+8IcD$HH
 8[A\A
 8[A\A]A^A
 8]pt	8]q
 8b  16-May-2010
+8t,LcD7
 8t/LcD7
+8t0LcD7
+9BH~wH
 9CdAXAY
 9CdZYr
 9J$u4
 9Y>)F
 9]HtKH
 9s||2H
-9y u?A
-A [A\A]A
 A [A\A]A^A
-A0[A\A]A
+A)O\A
 A8D$IthA8D$Hta1
 A8l$It
 A8nHtiI
 A8npt
-A9F seH
-A9G(s,A
-A;D$Tr
+A9G sUH
+A9_X~)I
+A;0tCA
 AB64ToARGB
 AB64ToARGBRow_AVX2
 AB64ToARGBRow_Any_AVX2
@@ -239,16 +238,11 @@ ABGRToYRow_Any_SSSE3
 ABGRToYRow_C
 ABGRToYRow_SSSE3
 ALIGN_TYPE is wrong, please fix
-ALPHu
 AMD RADV
-ANDROID_VULKAN
-ANDROID_VULKAN_4_0
-ANDROID_VULKAN_4_1
-ANDROID_VULKAN_5_0
-APASARA
+APASAWA
 APPSYSTEM: In ConnectInterfaces(), s_nRegistrationCount is %d
 AQAPASE
-AQPAPAU
+AQPAPAT
 AR30ToAB30
 AR30ToAB30Row_C
 AR30ToABGR
@@ -264,6 +258,7 @@ AR64ToARGBRow_Any_AVX2
 AR64ToARGBRow_Any_SSSE3
 AR64ToARGBRow_C
 AR64ToARGBRow_SSSE3
+ARAQWV
 ARGB1555ToARGB
 ARGB1555ToARGBRow_Any_SSE2
 ARGB1555ToARGBRow_C
@@ -449,12 +444,14 @@ ARGBUnattenuateRow_C
 ARGBUnattenuateRow_SSE2
 ASARAQA
 ASARAQD
-ASARAQV
 ASCII//TRANSLIT
 ASEs implemented
+ASWAWP
 ATARSH
-ATSH;v0H
+ATSHcG
+ATSLcg
 ATUSH
+AUATASARD
 AUATE1
 AUATH
 AUATLc
@@ -462,8 +459,6 @@ AUATMc
 AUATS1
 AUATSD
 AUATSH
-AUATSH;v0H
-AUATSHc
 AUATSI
 AUATSIc
 AUATSL
@@ -472,10 +467,9 @@ AUATUH
 AUATUL
 AUATUS
 AUATUSH
-AUAWAV
+AUATWL
+AVATAWL
 AVAUATA
-AVAUATASARD
-AVAUATASARW
 AVAUATE
 AVAUATE1
 AVAUATI
@@ -483,13 +477,11 @@ AVAUATL
 AVAUATLc
 AVAUATM
 AVAUATS
-AVAUATS1
 AVAUATSD
 AVAUATSH
 AVAUATSHcw8
 AVAUATSL
 AVAUATSLc/D9
-AVAUATSt!1
 AVAUATU
 AVAUATUH
 AVAUATUL
@@ -497,20 +489,17 @@ AVAUATUS
 AVAUATUSH
 AVAUATUSH9
 AVAUATUSL
-AVAUE1
 AVAUH
-AVAUMc
-AVAUfI
+AVAULc
 AWATAVj
+AWAUATASARW
 AWAUATSH
 AWAVAUA
 AWAVAUATA
 AWAVAUATD
-AWAVAUATE
 AWAVAUATE1
 AWAVAUATI
 AWAVAUATL
-AWAVAUATLc
 AWAVAUATM
 AWAVAUATS
 AWAVAUATS1
@@ -526,6 +515,7 @@ AWAVAUATUSH
 AWAVAUATUSI
 AWAVAUE
 AWAVAUE1
+AWAVAUH
 AWAVAUI
 AWAVAUL
 AWAVAULc
@@ -533,6 +523,7 @@ AWAVAUM
 AWAVE1
 AWAVLc
 AWAVfH
+AXAYw8H
 AYUVToNV12
 AYUVToNV21
 AYUVToUVRow_C
@@ -546,13 +537,11 @@ A\A]A^A_ÐAWAVL
 A\A]A^A_ÐH95
 A\A]A^H
 A\A]A^I
-A\A]A^L
 A\A]A^ÐAVAUL
 A\A]H
-A\A]]Hi
-A\A]]ÐHcE
 A\A]]ÐHcN
 A\]Hk
+A\]Ðffff
 A\ÐUL
 A]A^A
 Aboring OnReadBuffer because of GPU memory allocation failure
@@ -582,15 +571,11 @@ Allocations: %llu / %s
 Allow Low GPU Memory mode (i.e. when building maps
 Allow immediately loading mips of textures (when possible) when their headers are loaded, saving IO & reducing latency
 Alpha decoder initialization failed
-Android SM 4.0 (VULKAN
-Android SM 4.1 (VULKAN
-Android SM 5.0 (VULKAN
 Android420ToABGR
 Android420ToARGB
 Android420ToARGBMatrix
 Android420ToI420
 Android420ToI420Rotate
-AngularSpan
 AnimGraphEditorUtils001
 AnimationSystemUtils_001
 AnimationSystem_001
@@ -623,12 +608,9 @@ Attempting to create a Vulkan pipeline without a vertex/mesh shader bound, abort
 Attempting to create a descriptor set with VK_EXT_descriptor_indexing, but it's not enabled
 Attempting to load Steam Shader Pre-Cache database from basePath: %s read-only: %s
 Attempting to purge m_fencedResourceList.Count() = %d, m_pendingFencedResourceQueue.Count() = %d, nCurrentCmdBuffersAvailable = %d, nAllocatedCommandBuffers = %d
-Attempting to release an invalid semaphore handle
 Attempting to use TSPEC_POOL_ALLOCATED texture without having allocated GPU memory for it: %s
-Attribute
 August
-B0I9J A
-B0I;J A
+A̋C4Hc
 B9<*uۋp
 BGR565
 BGR888
@@ -701,7 +683,9 @@ Buffer passed to JPEG library is too small
 ByteToFloat
 ByteToFloatRow_C
 BЋL$ 9L$X
-C A9F u
+B耀9耀7
+C(ZYA9
+C0XZH
 C0[]A
 C@H;C8
 C@H;CHs
@@ -715,9 +699,9 @@ CLargeCommandBufferChunk CUtlMemoryPool
 CMediumCommandBufferChunk CUtlMemoryPool
 CMemAllocSystemInitialize
 COLOR0
-CPt=HcS$L
+CP[A\A]A
+CPt5HcS
 CRC mismatch
-CRC32_ProcessBuffer
 CRayTracePipelineVulkan
 CRenderContextBase::Present
 CRenderContextVulkan:: Trying to resolve from a rect that is outside of the src rendertarget
@@ -772,10 +756,8 @@ CUtlFixedMemory overflow
 CUtlLinkedList overflow! (exhausted index range
 CUtlLinkedList overflow! (exhausted memory allocator
 CUtlRBTree overflow with %u elements
-CUtlStreamBuffer does not support TEXT_BUFFER's use CUtlBuffer
 CUtlVector
 CVertexBufferVulkan::Allocate called with invalid buffer size = %s for buffer (%s
-C\v@f
 Call to vkCreateSwapchainWSI returned a error %s
 Call to vkGetPhysicalDeviceSurfaceSupportKHR returned an error
 Can't clear TEXTURE_WAITING_FOR_IO flag because of streaming request mismatch: %d in handle, %d in request
@@ -789,8 +771,6 @@ Cannot reconstruct lineOffset table in DecodeEXRImage
 Cannot transcode due to multiple use of quantization table %d
 Cannot use imported metadata together with whitelists
 Caution: quantization tables are too coarse for baseline JPEG
-CharacterSetBuild
-CheckBox
 Checked pending presents %s times; waited %s times; abandoned %s times
 Checking for VK_NV_device_diagnostic_checkpoints indicating queue failure
 Checkpoint data: '%s' at pipeline stage %s
@@ -800,18 +780,15 @@ Clearing TEXTURE_WAITING_FOR_IO flag because it's has no streaming request id an
 Client Rendering
 ClientToolsInfo_001
 Closed temporary file %s
-ColorCorrection
 Command Buffer Labels - %d
 Command stream pools: %s bytes in base, %s bytes in medium, %s bytes in large (%s extra data fallbacks
 CommandLine
 Compacted: %llu buffers, %.2f MB (%.1f%% of %.2f MB uncompacted
-Compile Targets
 Complex
 Component %d: %dhx%dv q=%d
 Component %d: dc=%d ac=%d
 Component index %d: mismatching sampling ratio %d:%d, %d:%d, %c
 Compressed texture decoded in %.2f ms
-Compute Shader
 ComputeCumulativeSumRow_C
 ComputeCumulativeSumRow_SSE2
 ComputeTextureSpecificationFromMipDelta Adjusted
@@ -855,45 +832,47 @@ CreateInterface
 CreateNewThreadPool
 CreateSimpleThread
 CreateSwapChain
+Ctujf
 CumulativeSumToAverageRow_C
 CumulativeSumToAverageRow_SSE2
 Custom
 CustomData
 CustomPools
+D$ A9E
+D$ A9F u
+D$ A9FX
 D$ HcM
-D$ I+D
 D$$9D$L
 D$$9D$P
+D$(A9E
+D$(A9F`u
 D$(IcP`E
 D$09D$H
 D$0E1ۈL$)E
 D$0fH
 D$?t	8Co
 D$@fH
-D$@wWI
 D$D[A
 D$Ot	8Eo
-D$P[A
 D$QARH
 D$TPSj
 D$XPAVAU
 D$`fH
 D$xdH3
-D$ЋC8D9
 D16_SHADOW
 D24FS8
 D24X8_SHADOW
 D32FS8
-D9#t5H
-D9+u H
-D93~/H
-D9;u#H
-D9M̉CL
-D9{8~mA
-D9{\~MLc
-D9~8H
-D;!t$Hc
-D;"t+Hc
+D9+u'H
+D91u+H
+D93u#H
+D93u&H
+D93u+H
+D9>sދV
+D9kT|?Mi
+D9ÉGPA
+D;C uxH
+D;m H
 D;t$h~qH
 DCT coefficient out of range
 DCT scaled block size %dx%d not supported
@@ -925,15 +904,12 @@ Descriptor pool allocation failed on available pool, reducing descriptors to att
 Descriptor pool allocation failed, reducing descriptors to attempt allocating in pool to %d
 Descriptor set layout
 Desktop-friendly Fullscreen
-Details
 Detected RenderDoc %i.%i.%i
 Detected sliced file. Dropping entries from here
-Dev Shader
 Device ID mismatch in pipeline cache file (Got: %x Expected: %x).  Deleting %s in order to regenerate it
 DeviceID
 Didn't expect more than one scan
 Direct3D 11
-Direction3D
 Disabling graphics pipeline libraries for shader '%s' because it has too many UBOs in dynamic descriptor set has (%d) max (%d
 Disabling graphics pipeline libraries for shader '%s' because it has too many UBOs.  maxPerStageDescriptorUniformBuffers (%d) has vertex (%d) and fragment (%d
 Disabling graphics pipeline libraries for shader '%s' because it has unsupported descriptor types [ %s ].  Move them to a static descriptor set
@@ -959,24 +935,35 @@ During a VMA defrag, number of moves per pass
 During a VMA defrag, number of moves to process for a pass in a single frame update
 DynamicPoolPMB_%s
 Dynamically adjust texture streaming budget based on GPU memory usage
-E PAVAU
-E)l$ I
-E)l$ M
-E9<$u I
-E9<$u$I
+E 9C u
+E PATAW
+E(9C(u%A
+E9,$u$H
+E9,$u$I
+E9.u#H
+E9.u#I
+E9/u"H
+E9/u#H
+E9/u&H
+E94$u$H
+E97u#I
+E97u$H
+E97u&H
+E97u*H
 E9>u#H
 E9>u#I
-E9|$\~MLc
+E9>u*H
+E9t$\~TL
 E9|$dXZr	I
-E9~\~TLc
+E9~\~SL
+E;|$tsQH
 E<G&Iw
-EPHcM0L
-EPHc] Hcu
+E@+EX;E
+EPHcu H
 ERROR
 ERROR! VK call failed! result = %s ( %s
 ERROR: CUtlSymbolTableLarge element limit of %u exceeded
 ERROR: Resource name "%s" has the incorrect extension "%s" for the specified resource type (expected "%s
-EX9C$u
 EXECUTABLE_PATH
 EXPORTSYSTEM_INTERFACE_VERSION_001
 EXRHeader variable is not initialized
@@ -985,6 +972,8 @@ EXRReadFile() - G channel not found
 EXRReadFile() - R channel not found
 EXRReadFile() - cannot read image data
 EXTERNAL: %.2fmb
+EXt5E1
+E_displaH
 EarlyInit_Tier0
 EconItemToolModel_001
 Empty JPEG image (DNL not supported
@@ -1026,12 +1015,13 @@ Etc::Image::EncodingStatus Etc::Image::Encode(Etc::Image::Format, Etc::ErrorMetr
 Etc::IndividualTrys::IndividualTrys(Etc::ColorFloatRGBA, Etc::ColorFloatRGBA, const unsigned int*, const unsigned int*, unsigned int
 Evict all resident texture
 Exclusive Fullscreen
-Expression
-ExternalDescSet
-F 9G u
-F(9G(t
+F 9G t
+F$9G$u
+F(9G(u
+F,9G,uދF09G0u
+F0IcV(A
+F49G4u
 F8F8,8A
-F:McV(H
 FATAL ERROR: CUtlSymbolTableLarge element limit of %u exceeded
 FATAL ERROR: unable to register all schema data: %s
 FATAL: %s called on a pool context (no root available
@@ -1039,7 +1029,6 @@ FOSSILIH9
 FOSSILIZEDB
 FRAGMENTATION: %.2fmb
 Failed AllocateTexture for '%s
-Failed to add blob to cache
 Failed to advise of file usage. This is not fatal, but might compromise disk performance
 Failed to compute channel layout
 Failed to create VK shader module
@@ -1057,19 +1046,14 @@ Failed to get size of blob from cache
 Failed to get size of resource hashes
 Failed to initialize Vulkan memory manager
 Failed to initialized Vulkan Memory Allocator
-Failed to open file: %s
 Failed to open validation shader cache %s, might not exit yet
 Failed to parse channel info
 Failed to parse pNext chain for sType: %d
 Failed to prepare fossilize database: '%s
 Failed to read attribute
 Failed to save video settings config to '%s
-Failed to seek in file: %s
 Failed to setup frame pacing, renderthread is not available
 FallbackTexture
-FeatureToBool
-FeatureToFloat
-FeatureToInt
 Features
 February
 FhD#~\L
@@ -1133,10 +1117,12 @@ Freed EMS handle %u
 Freed XMS handle %u
 Friday
 Future already retrieved
+G A9D
+G I;G0
 G(H;G0r
 G(H;G0sN
-G89G@}:M
-G@t,D
+G89G@}=M
+G@t'D
 GCC: (SteamRT 12.2.0-14~steamrt3.1+bsrt3.1) 12.2.0
 GCC: (SteamRT 4.8.4-1ubuntu15~12.04+steamrt1.2+srt2) 4.8.4
 GCC: (SteamRT 9.3.0-13+steamrt1.2+srt1) 9.3.0
@@ -1149,10 +1135,8 @@ GLIBC_2.25
 GLIBC_2.27
 GLIBC_2.3
 GLIBC_2.3.2
-GLIBC_2.30
 GLIBC_2.4
 GLIBC_2.6
-GLIBC_2.7
 GLOBAL
 GLOBAL_H9
 GPU memory available (%d MB of %d MB used). Increasing texture pool size %d MB -> %d MB
@@ -1168,10 +1152,8 @@ GaussPlane_F32
 GaussRow_C
 GaussRow_F32_C
 General
-Geometry Shader
 GetARGBBlend
 GetCPUInformation
-GetDefaultMiniDumpTypeFlags
 GetDeviceSpecificTexture
 GetGPUFrameTimeMS called without setting RENDERDEBUGFLAG_ENABLE_GPU_TIMESTAMPS
 GetKV3MemberName
@@ -1194,8 +1176,6 @@ H010ToAB30
 H010ToABGR
 H010ToAR30
 H010ToARGB
-H1ȋO(H
-H1ȋO,H
 H210ToAB30
 H210ToABGR
 H210ToAR30
@@ -1211,26 +1191,24 @@ H422ToABGR
 H422ToARGB
 H444ToABGR
 H444ToARGB
-H5qß;H
-H97t[UH
 H9D$Ps
 H9X8t5L
 H9|$0
 H;/twH
-H;8taA
-H;=IQ
 H;@ t
-H;C s\H
-H;G s@H
+H;@ tJH
+H;@0tRH
+H;@HtJH
+H;@PtJH
+H;C sCH
 H;M s
-H;R tbH
-H;R0tbH
-H;RHtbH
-H;RPtbH
-H;X8t8L
+H;R0tJH
+H;X8t0L
 H;q@u
 H;qHtJH
-H;v0tWLcs(N
+H;v0tLLck(N
+H;v0taLck(J
+H;v0tzA
 HLSL SM6.0 level subgroup wave ops supported, subgroup size = %d
 HOST_CACHED
 HOST_COHERENT
@@ -1248,21 +1226,21 @@ HalfMergeUVRow_AVX2
 HalfMergeUVRow_C
 HalfMergeUVRow_SSSE3
 HammerMapLoader001
+Hc@xI
+HcCHD9
 HcCxfH
 HcD$tf
 HcE8Lc
-HcE8LcM
-HcK Ic
-HcM(HcU D
+HcE8Lcm
 HcO4McJ
-HcWhH
+HcU HcM(D
+Hc]HH9
+Hc} Hcu
 HcÉ\$0H
 HcÉ\$8H
-HcًE I
 Header size does not contain enough data in pipeline cache file %s.  Deleting
-HeightBlend
-HeightCorrection
 HelpSystem_001
+Hh#p\H
 Hitch alert: Present was waiting for %d iterations and %.1f seconds
 HostStateMgr001
 Huffman code size table overflow
@@ -1467,15 +1445,12 @@ I444ToARGBRow_SSSE3
 I444ToI420
 I444ToNV12
 I444ToNV21
-I97tsH
+I9D$@t:A
+I9G(Mcg
+I9G(Mco
 I9\$8u
-I9t$ u
-I;F s*H
-I;F s?H
+I;D$8I
 I;O s$H
-I;O s0H
-I;O snH
-I;W s$H
 I;^8t5H
 I;_8s(Li
 IB "%s": Tried to lock a GPU-only buffer
@@ -1488,7 +1463,6 @@ IB "%s": Wrote a non integral number of indices
 IB Size: %s (Count: %d
 IB: %d buffers, %.2fmb (peak %.2fmb
 IBPool
-IHDIDATv/1
 IL "%s": Unable to create input layout; layout has %d fields, which is more than %d
 IMAGE_FORMAT_IMC2
 IMAGE_FORMAT_NV12
@@ -1500,15 +1474,7 @@ INPUT_LAYOUT_VARIATION_DEFAULT
 INPUT_LAYOUT_VARIATION_MAX
 INPUT_LAYOUT_VARIATION_STREAM1_INSTANCEID
 INPUT_LAYOUT_VARIATION_STREAM1_INSTANCEID_MORPH_VERT_ID
-INVALID
-IOS_VULKAN
-IOS_VULKAN_4_0
-IOS_VULKAN_4_1
-IOS_VULKAN_5_0
 IPulseSystem_001
-IS_DIRECTX
-IS_MOBILE
-IS_VULKAN
 ITM_RU1
 ITM_RU8
 ITM_addUserCommitAction
@@ -1516,18 +1482,22 @@ ITM_deregisterTMCloneTable
 ITM_memcpyRnWt
 ITM_memcpyRtWn
 ITM_registerTMCloneTable
-IcD$ 9
-IcD$ H
 IcD$ I
-IcD$89
 IcD$8I
 IcD$hI
-IcE0Hc
 IcF(A9~<H
+IcG0Hc
+IcL$@Ic
 IcT$(H
+IcT$HI
 IcT$PI
 IcT$`I
-IcU4Mc
+IcT$`f
+IcT$xH
+IcW4Mc
+IcWHA;WX
+IcWxA
+Ic|$09
 If replaying just the application cache, make sure to replay together with the common cache, as application cache can depend on common cache
 IiGM>nw
 Image Layout Transitions (%s
@@ -1568,17 +1538,13 @@ InterpolateRow_Any_AVX2
 InterpolateRow_Any_SSSE3
 InterpolateRow_C
 InterpolateRow_SSSE3
-InvTextureDim
-InvViewportSize
 Invalid JPEG file structure: SOS before SOF
 Invalid JPEG file structure: missing SOS marker
 Invalid JPEG file structure: two SOF markers
 Invalid JPEG file structure: two SOI markers
 Invalid SOS parameters for sequential JPEG
-Invalid `part number' in EXR header chunks
 Invalid argument for DecodeEXRImage
 Invalid argument for LoadEXRImageFromMemory
-Invalid argument for LoadEXRMultipartImageFromMemory
 Invalid argument. `memory` or `exr_header` argument is null in ParseEXRHeaderFromMemory
 Invalid color quantization mode change
 Invalid component ID %d in SOS
@@ -1588,7 +1554,6 @@ Invalid data height value
 Invalid data width or data height
 Invalid data width value
 Invalid memory pool code %d
-Invalid offset size in EXR header chunks
 Invalid offset value in DecodeEXRImage
 Invalid parameters to AllocateForObject
 Invalid progressive parameters Ss=%d Se=%d Ah=%d Al=%d
@@ -1600,7 +1565,6 @@ Invalid texture spec (%s): %ix%ix%i %i mips fmt %i
 Invalid tile size x
 Invalid tile size y
 Invalid varint format
-InvokeMiniDumpHandler
 IssueTextureLoadRequest
 J400ToARGB
 J400ToARGBRow_Any_SSE2
@@ -1624,26 +1588,21 @@ JFIF extension marker: type 0x%02x, length %u
 JPEG datastream contains no image
 JPEG parameter struct mismatch: library thinks size is %u, caller expects %u
 JPEGMEM
-JPL;H8H
 JSON version mismatches
 January
-K8H;K
 Keeping resolution of (%dx%d
 KeyValueCache001
-KeyValues3: pre-allocated array memory is too small for %u elements (%u bytes available, %u bytes needed
-KeyValues3: pre-allocated table memory is too small for %u members (%u bytes available, %u bytes needed
 KeyValuesSystem
+L$ IcS
 L$B[A
 L$\D9
 L$hH;L$p
 L$xE1
-L9"sVH
+L9't.A
 L9*sfH
+L9[@u
 L9l$xt
-L9o r,H
-L; t.H
 L;`8t<H
-L>fff
 LAZILY_ALLOCATED
 LC_ADDRESS
 LC_COLLATE
@@ -1660,12 +1619,10 @@ LC_TIME
 LINEAR_D24S8
 LOG_GENERAL
 Label[%d] - %s { %f, %f, %f, %f
-LayerReference
 Layout Count( %d
-LcC<Hc
-LcV L
-LcuHL9
+Lc&D;f
 LegacyUserSettingsPathID
+LfE9_zrEfD;Z
 LoadEXRImageFromMemory() failed! Error message: %s
 LoadExplicitlyRequestedTextures
 LoadExplicitlyRequestedTextures Clamped
@@ -1681,13 +1638,9 @@ LoggingSystem_RegisterLoggingChannel
 Loongson-2K
 Loongson-3
 LowLatencySleep
-M1!/WA
-M;l$8I
+M8IcF
 MATCHFRAMEWORK_001
 MAX_ALLOC_CHUNK is wrong, please fix
-MD5Final
-MD5Init
-MD5Update
 MN_AddAsyncTextureBitsHookupJob Data
 MN_AddAsyncTextureBitsHookupJob Disk
 MN_BuildRequestedResourcesList
@@ -1706,22 +1659,18 @@ MainVs
 MapListService_001
 MapRefCount
 MaskCpuFlags
-MaterialID
 MaterialUtils_001
 MaxDeviceID
 Maximum resolution for top mip level in streaming textures
 Maximum supported image dimension is %u pixels
-Mc/E;o
-Mc<$E
-Mce0E;e@D
-MceHE;eXD
-Mct$0L
+Mc,$E;l
+Mc4$E;t
+Mct$ M
+Mct$XE
 MemAlloc_AllocFunc
 MemAlloc_CallocFunc
 MemAlloc_FreeFunc
-MemAlloc_ReallocFunc
 MemAlloc_StrDupFunc
-MemAlloc_StrDupWrapperFunc
 MemoryInfo
 MemoryPools
 MergeAR64Plane
@@ -1769,7 +1718,6 @@ MergeXRGBRow_Any_AVX2
 MergeXRGBRow_Any_SSE2
 MergeXRGBRow_C
 MergeXRGBRow_SSE2
-Mesh Shader
 MeshSystem001
 MeshUtils001
 MinDeviceID
@@ -1794,13 +1742,13 @@ Missing Huffman code table entry
 MnZ/rs
 ModelDocUtils001
 Monday
-MotionVectorsMaxDistance
 MultiDrawIndexedInstancedIndirect failed - invalid drawarg buffer
 MultiDrawIndexedInstancedIndirectCount failed - invalid drawarg buffer
 MultiDrawIndexedInstancedIndirectCount failed - invalid drawcount buffer
 MultiplyRow_16_AVX2
 MultiplyRow_16_Any_AVX2
 MultiplyRow_16_C
+Mȋ=Pz3
 N10__cxxabiv115__forced_unwindE
 N10__cxxabiv117__class_type_infoE
 N10__cxxabiv119__foreign_exceptionE
@@ -1836,9 +1784,6 @@ N9Fossilize21StateCreatorInterfaceE
 N9__gnu_cxx20recursive_init_errorE
 N9__gnu_cxx24__concurrence_lock_errorE
 N9__gnu_cxx26__concurrence_unlock_errorE
-NHcK Ic
-NHcKPIc
-NHcKhIc
 NORMAL
 NSt13__facet_shims12_GLOBAL__N_112collate_shimIcEE
 NSt13__facet_shims12_GLOBAL__N_112collate_shimIwEE
@@ -1903,7 +1848,6 @@ NSt7__cxx119money_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEEE
 NSt7__cxx119money_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEEE
 NSt8ios_base7failureB5cxx11E
 NSt8ios_base7failureE
-NULL VP8Io parameter in VP8Decode
 NV Raytracing Validation
 NV12Copy
 NV12Mirror
@@ -1963,7 +1907,6 @@ NVIDIA Low Latency/AMD Anti-Lag 2 (0 = off, 1 = on, 2 = NV-only, on + boost
 NVNGX/ReflexLateWarp
 NV_NULL
 N_U9203
-N`Ic~hH
 NavGameTest001
 NetworkClientService_001
 NetworkMessagesVersion001
@@ -1984,10 +1927,9 @@ Not implemented yet
 November
 NumCols() <= V_ARRAYSIZE( s_DummyRow
 NvLL_VK_Sleep vkLatencySleepNV error '%s
+O I;O0
 O(;O,}8Hc
 O(;O,}MHc
-O8A9O@L
-OH9JHt
 ORIGIN
 OUTSTANDING_HOOKUP_REQUEST
 OVER_BUDGET
@@ -2007,7 +1949,6 @@ Opened temporary file %s
 Options
 Output aborted
 Output file write error --- out of disk space
-Output memory size is zero
 Overall System GPU memory use
 Overflow of the sheet cache texture. Releasing and starting over. This is ok in asset browser, not so ok if the game is triggering this
 Overflow of the sheet cache texture: Try increasing SheetCacheTextureRows in gameinfo.gi (current value %d
@@ -2041,24 +1982,10 @@ P410ToARGBRow_SSSE3
 P8H=vtex
 P8H=vtext
 PAVAUH
-PC SM 4.0 (D3D10
-PC SM 4.0 (VULKAN
-PC SM 4.1 (D3D10.1
-PC SM 4.1 (VULKAN
-PC SM 5.0 (D3D11
-PC SM 5.0 (VULKAN
-PC SM 6.0 (VULKAN
-PC_SM_4_0
-PC_SM_4_0_VULKAN
-PC_SM_4_1
-PC_SM_4_1_VULKAN
-PC_SM_5_0
-PC_SM_5_0_VULKAN
-PC_SM_6_0_VULKAN
 PERF WARNING: Texture pool size set to more than 80%% of total GPU memory
 PERFORMANCE
-PHL9s0
-PHM9|$0L
+PHM9w0L
+PIcE I
 PLANAR
 PMB Type ( %s ): Count ( %d ) ( %llu MB
 POSITION
@@ -2066,11 +1993,10 @@ POSITION0
 POSITIONT
 PROTECTED
 PSO Count ( %d
-PS_RENDER_STATE
+P[A\A]A
 PanoramaTextServices001
 PanoramaUIClient001
 PanoramaUIEngine001
-ParallelForSharedCode
 ParseEXRHeaderFromMemory() failed! Error message: %s
 ParticleSystemMgr003
 Pc[A\A]A^A
@@ -2079,23 +2005,17 @@ Pipeline cache data not found.  Deleting %s
 Pipeline creation time of %fms exceeded throttle limit of %fms
 Pipeline layout
 Pipeline() != VK_NULL_HANDLE
-Pixel Shader
-Pixel Shader Render State
 Plat_CPUTickFrequency
 Plat_DestroyWindow
 Plat_ExitProcess
 Plat_FatalError
-Plat_FileExists
 Plat_FindOrCreateWrappedPlatWindow
 Plat_FloatTime
 Plat_GetClockStart
 Plat_GetCrtEnv
 Plat_GetDesktopResolution
 Plat_GetEnv
-Plat_GetExeModule
-Plat_GetModuleFilename
 Plat_GetModuleInterfaceFactory
-Plat_GetModuleProcAddress
 Plat_GetMonitorBounds
 Plat_GetMonitorCount
 Plat_GetMonitorResolution
@@ -2108,7 +2028,6 @@ Plat_GlobalMemoryStatus
 Plat_IsConsoleApplication
 Plat_IsInDebugSession
 Plat_IsWindowMinimized
-Plat_LoadModule
 Plat_LoadSDL
 Plat_MessageBox
 Plat_NeedsLowFragmentation
@@ -2117,7 +2036,6 @@ Plat_OsSpecificHandleToPlatWindow
 Plat_ReconfigureWindow
 Plat_RelativeTickFrequency
 Plat_RelativeTicks
-Plat_RemoveFile
 Plat_RequireSDL
 Plat_SetEnv
 Plat_TicksAfterSecsF
@@ -2143,7 +2061,6 @@ Prints out stats for the Vulkan memory manager
 Prints out stats for the Vulkan shader table
 Promise already satisfied
 PropertyEditorSystem_001
-QIcM8Ic
 QUEUED FOR DELETION
 Qkkbal
 Quantization table 0x%02x was not defined
@@ -2290,12 +2207,8 @@ RGBColorTable
 RGBColorTableRow_C
 RGBColorTableRow_X86
 RGBX8888
-RIFFH
-RIFFu
 Ran out of occlusion query slots
-RandomFloat
 Rasterizer state is VK_POLYGON_MODE_LINE but VkPhysicalDeviceFeatures.fillModeNonSolid is not supported.  Forcing to VK_POLYGON_MODE_FILL.  May result in incorrect rendering
-Raytracing Shader
 Read failed on temporary file
 Read from EMS failed
 Read from XMS failed
@@ -2309,7 +2222,6 @@ Register Count
 RegisterConCommand: Unknown error registering con command "%s
 RegisterConVar: Unknown error registering convar "%s
 RegisterMobileEventListener
-RegisterShader
 RegisterStringToken
 Reject swapchain blit request to swapchain that is no longer valid
 Release
@@ -2332,7 +2244,6 @@ RenderMultisampleType_t
 RenderPrimitiveType_t
 RenderService_001
 RenderSlotType_t
-RenderStateLiteral
 RenderSystem
 RenderSystem/AllowPartialMipChainImmediateTexLoads
 RenderSystem/AlwaysPreloadTexturesInGame
@@ -2383,16 +2294,15 @@ ResourceCompilerSystem001
 ResourceHandleUtils001
 ResourceManifestRegistry001
 ResourceSystem013
+ReturnJobManualEventToPool
 RotatePlane
 RotatePlane180
 RotatePlane270
 RotatePlane90
+S Hc{0L
 S9O$rNL
 S@H;SHs
 SDL_Vulkan_CreateSurface failed, error: %s
-SET_BY_FEATURE
-SET_BY_FEATURE_EQ
-SET_BY_FEATURE_NE
 SIGNED_R11
 SIGNED_RG11
 SLcw@E
@@ -2428,18 +2338,7 @@ STEAM_FOSSILIZE_DUMP_PATH_READ_ONLY
 STORAGE_BUFFER
 STORAGE_IMAGE
 STORAGE_TEXEL_BUFFER
-SUPPORTS_CS
-SUPPORTS_GS
 SV_Position
-S_BINDLESS_RUNTIME
-S_EXECUTION_REORDERING
-S_MOBILE
-S_MOLTEN_VK
-S_REVERSE_DEPTH_BUFFER
-S_SHADER_QUALITY
-S_SUBGROUP_WAVE_OPS
-S_SUPPORTS_CLIP_DISTANCE
-S_TOOLS_ENABLED
 Sampling factors too large for interleaved scan
 Saturday
 Saved video settings config to '%s
@@ -2652,8 +2551,6 @@ September
 SerializedEntitiesVersion001
 SeriousWarning
 ServerToolsInfo_001
-SetByArtist
-SetByArtistAndExpression
 SetConstantBufferDataInternal
 SetPlane
 SetRow_Any_X86
@@ -2668,15 +2565,12 @@ Shader cache size %s exceeds limit %s, deleting cache to reset
 Shader file version (%d), unsupported. Must be (%d) or higher
 Shader module
 ShaderBindingTable
-ShaderIDColor
-ShadingComplexity
 Show Block Labels
 Show Summary
 Size (in KBs) above which textures should be allocated in dedicated memory (NV-only
 Skipping pipeline layout creation, encountered null descriptor set layout
 Skipping texture streaming: looks like the texture was reloaded while in the streaming list (%s
 Skipping texture streaming: texture resource handles don't match
-Slider
 Smoothing not supported with nonstandard sampling ratios
 Snapshot %i
 SobelRow_Any_SSE2
@@ -2746,7 +2640,6 @@ SplitXRGBRow_C
 SplitXRGBRow_SSE2
 SplitXRGBRow_SSSE3
 Ss=%d, Se=%d, Ah=%d, Al=%d
-Ss?гY>Y
 St10bad_typeid
 St10ctype_base
 St10money_base
@@ -2884,9 +2777,11 @@ Streaming Validation: %s
 SubSystem / Rev:  0x%x / 0x%x
 Suballocations
 Subgroup wave op support required because VulkanRequireSubgroupWaveOpSupport is set in gameinfo.gi, but subgroup wave ops are not supported.  Vulkan device creation failed
-SubsurfaceProfile
 Successfully loaded Steam Shader Pre-cache database and pre-warmed registered shaders, total time: %0.2fs (pre-warm time: %0.2fs
 Sunday
+SupportsCubeMapArrays
+SupportsRayTracing
+SupportsReadOnlyDepthBufferAccess
 Suspension not allowed here
 SwapBuffers
 SwapBuffersRecreateSwapchain
@@ -2902,13 +2797,11 @@ SwapUVRow_Any_SSSE3
 SwapUVRow_C
 SwapUVRow_SSSE3
 Swapchain extent(s) are 0, skipping swapchain creation
-T$8| I
 T$@uDH
+T$HtRL
+T$HtTL
 T$XwR
-T$dAVD
 TANGENT
-TD_OFFSET_NORMAL
-TD_OFFSET_PACKED
 TEX read request: %d KB; %s
 TEX: %u textures, %.2fmb
 TEXCOORD
@@ -2946,9 +2839,6 @@ Texture memory: %s / %s MB; in %s textures (%s MB non-evictable
 Texture missing shader resource view when setting "%s" - returning error texture in CTextureManagerVK::GetImageView: "%s
 Texture streaming validation OK (%d texture loads in flight
 TextureBecameEvicted - %s is null
-TextureDim
-TextureDimLog2
-TextureSheetData
 Textures created overall: %s; textures evicted: %s
 The create info was likely not supported by device
 The minimum amount of GPU memory for streaming textures is set to %d MB
@@ -3021,20 +2911,19 @@ U422ToABGR
 U422ToARGB
 U444ToABGR
 U444ToARGB
+U@IcF
 UAVBarrier - requested barrier for more mip levels than are in the texture. Requested baseLevel: %d levelCount: %d (Actual levels: %d).  Clamping to actual number of levels
-UHHcQH
 UNIFORM_TEXEL_BUFFER
 UNKNOWN
 UP)EP
 USAGE
 UUID mismatch in pipeline cache file.  Deleting %s in order to regenerate it
-UUUUUU
 UUUUUUU
-UUUUUUUUH
 UUUUw
 UVScale
 UVScale_16
 UVWQ8888
+UX)EX
 UYVYToARGB
 UYVYToARGBRow_AVX2
 UYVYToARGBRow_Any_AVX2
@@ -3059,11 +2948,8 @@ UYVYToYRow_Any_AVX2
 UYVYToYRow_Any_SSE2
 UYVYToYRow_C
 UYVYToYRow_SSE2
-U`HcQ
-UfA9FzrNf9A
 Unable to create VkSurfaceKHR for invalid window handle
 Unable to determine texture heap size, assuming %llu MB
-Unable to find in-place conversion path
 Unable to find swapchain named %s
 Unable to open Vulkan pipeline cache %s file - might not exist yet
 Unable to parse Vulkan pipeline cache %s file.  Error: %s
@@ -3079,11 +2965,9 @@ Unexpected marker 0x%02x
 Unexpected resource version '%d' for '%s
 Unhandled VkObjectType
 Unhandled VkValidationFeatureDisableEXT
-Unknown
 Unknown APP0 marker (not JFIF), length %u
 Unknown APP14 marker (not Adobe), length %u
 Unknown Adobe color transform code %d
-Unknown H
 Unknown VkResult value
 Unknown compression type
 Unknown error
@@ -3091,7 +2975,6 @@ Unrecognized component IDs %d %d %d, assuming YCbCr
 UnregisterMobileEventListener
 Unsatisfied dependency at present time = death
 Unserialize
-Unsupported ETC image format %d
 Unsupported JPEG data precision %d
 Unsupported JPEG process: SOF type 0x%02x
 Unsupported PSD color mode
@@ -3137,11 +3020,11 @@ VBik001
 VConComm001
 VERBOSE
 VEngineCvar007
-VFX_PROGRAM_MAX
 VFileSystem017
 VK %s - Message Id Number: %d | Message Id Name: %s
 VKRenderThread
 VKRenderThread Worker
+VK_AMD_aI
 VK_AMD_anti_lag
 VK_AMD_memory_overallocation_behavior
 VK_BUFFER_USAGE_ACCELERATION_STRUCTURE_BUILD_INPUT_READ_ONLY_BIT_KHR
@@ -3186,9 +3069,9 @@ VK_ERROR_UNKNOWN
 VK_ERROR_VALIDATION_FAILED_EXT
 VK_EVENT_RESET
 VK_EVENT_SET
-VK_EXT_buffer_device_address
+VK_EXT_cH
 VK_EXT_conditional_rendering
-VK_EXT_dI
+VK_EXT_dH
 VK_EXT_debug_marker
 VK_EXT_debug_utils
 VK_EXT_depth_bias_control
@@ -3196,29 +3079,33 @@ VK_EXT_depth_bias_control does not support all required features, disabling
 VK_EXT_descriptor_indexing support required because VulkanRequireDescriptorIndxing is set in gameinfo.gi, but are not supported.  Vulkan device creation failed
 VK_EXT_device_generated_commands
 VK_EXT_device_generated_commands does not support all required features, disabling
+VK_EXT_eH
 VK_EXT_extended_dynamic_state
 VK_EXT_extended_dynamic_state2
 VK_EXT_extended_dynamic_state3
 VK_EXT_extended_dynamic_state_2 does not support extendedDynamicState2PatchControlPoints, disabling
 VK_EXT_extended_dynamic_state_2 does not support extendedDynamicState3DepthClampEnable or extendedDynamicState3PolygonMode, disabling
+VK_EXT_gH
 VK_EXT_graphics_pipeline_library
 VK_EXT_graphics_pipeline_library and dependent extensions enabled
-VK_EXT_lI
+VK_EXT_lH
 VK_EXT_load_store_op_none
-VK_EXT_mI
+VK_EXT_mH
 VK_EXT_memory_budget
 VK_EXT_mesh_shader
 VK_EXT_multi_draw
-VK_EXT_pI
+VK_EXT_pH
 VK_EXT_pageable_device_local_memory
 VK_EXT_pipeline_creation_cache_control
 VK_EXT_pipeline_robustness
-VK_EXT_rI
+VK_EXT_rH
 VK_EXT_robustness2
+VK_EXT_sH
 VK_EXT_subgroup_size_control
 VK_EXT_subgroup_size_control does not support required features, disabling
 VK_EXT_validation_cache
 VK_GOOGLE_display_timing
+VK_GOOGLH
 VK_IMAGE_USAGE_COLOR_ATTACHMENT_BIT
 VK_IMAGE_USAGE_DEPTH_STENCIL_ATTACHMENT_BIT
 VK_IMAGE_USAGE_INPUT_ATTACHMENT_BIT
@@ -3228,43 +3115,43 @@ VK_IMAGE_USAGE_TRANSFER_DST_BIT
 VK_IMAGE_USAGE_TRANSFER_SRC_BIT
 VK_IMAGE_USAGE_TRANSIENT_ATTACHMENT_BIT
 VK_INCOMPLETE
-VK_KHR_aI
+VK_KHR_aH
 VK_KHR_acceleration_structure
+VK_KHR_bH
 VK_KHR_buffer_device_address
-VK_KHR_create_renderpass2
-VK_KHR_dI
+VK_KHR_cH
+VK_KHR_dH
 VK_KHR_deferred_host_operations
-VK_KHR_depth_stencil_resolve
 VK_KHR_device_group_creation
 VK_KHR_dynamic_rendering
-VK_KHR_gI
-VK_KHR_get_memory_requirements2
+VK_KHR_gH
 VK_KHR_get_surface_capabilities2
-VK_KHR_maintenance3
-VK_KHR_pI
+VK_KHR_mH
+VK_KHR_pH
 VK_KHR_pipeline_executable_properties
 VK_KHR_pipeline_library
 VK_KHR_present_id
 VK_KHR_present_wait
 VK_KHR_present_wait does not support required feature presentWait or presentId, disabling
-VK_KHR_rI
+VK_KHR_rH
 VK_KHR_ray_query
 VK_KHR_ray_tracing_pipeline
 VK_KHR_ray_tracing_position_fetch
-VK_KHR_sI
+VK_KHR_sH
 VK_KHR_separate_depth_stencil_layouts
 VK_KHR_shader_clock
 VK_KHR_shader_clock does not support shaderDeviceClock, disabling
 VK_KHR_shader_integer_dot_product
 VK_KHR_shader_integer_dot_product does not support shaderIntegerDotProduct, disabling
-VK_KHR_shader_non_semantic_info
 VK_KHR_swapchain_mutable_format
 VK_KHR_synchronization2
 VK_LAYER_KHRONOS_validation
 VK_LAYER_LUNARG_standard_validation
 VK_NOT_READY
 VK_NV_device_diagnostic_checkpoints
+VK_NV_loH
 VK_NV_low_latency2
+VK_NV_raH
 VK_NV_ray_tracing_invocation_reorder
 VK_NV_ray_tracing_validation
 VK_NV_ray_tracing_validation not found.  Did you set NV_ALLOW_RAYTRACING_VALIDATION=1 in the environment
@@ -3362,34 +3249,20 @@ VScriptDbg
 VScriptManager010
 VStringTokenSystem001
 VTT for
-VULKAN
-VUUUA
 VWebm001
 VZ#-DLU[3=h
 V_:X1
-V_AppendSlash
 V_ComposeFileName
 V_CopyMemory3D
-V_DoubleToString_Unsafe
 V_ExtractFilePath
-V_FixDoubleSlashes
-V_FixSlashes
 V_FixupPathName
 V_GetFileExtension
-V_Get_stderr
-V_Int64ToString_Unsafe
 V_IsAbsolutePath
-V_LZ4_compressBound
-V_LZ4_compress_fast
 V_LZ4_decompress_safe
-V_PathContainsPath
 V_PrettifyMem
 V_PrettifyNum
 V_RemoveDotSlashes
-V_SetExtension
-V_StringAfterPrefix
 V_StringAfterPrefixCaseSensitive
-V_StringParseError
 V_StringToBool
 V_StringToColor
 V_StringToFloat32
@@ -3404,75 +3277,26 @@ V_StringToUint64
 V_StringToVector
 V_StringToVector2D
 V_StringToVector4D
-V_StripExtension
-V_StripLastDir
-V_StripTrailingSlash
-V_UInt32ToString_Unsafe
-V_UInt64ToString_Unsafe
-V_UnqualifiedFileName
-V_ZSTD_compressBound
-V_ZSTD_compress_usingCDict
-V_ZSTD_createCCtx
-V_ZSTD_createCDict_byReference
-V_ZSTD_createDCtx
-V_ZSTD_createDDict_byReference
 V_ZSTD_decompress
-V_ZSTD_decompress_usingDDict
-V_ZSTD_freeCCtx
-V_ZSTD_freeDCtx
-V_ZSTD_getDictID_fromDDict
-V_ZSTD_getDictID_fromFrame
-V_ZSTD_getFrameContentSize
-V_acosd
-V_acosf
-V_asinf
-V_atan2f
-V_atanf
-V_atofloat32
 V_atoi
-V_cosd
 V_cosf
-V_exp2f
-V_expf
-V_fclose
-V_fmodf
-V_fopenUTF8
-V_fpclassifyd
 V_fprintf
-V_fputc
-V_fread
-V_fwrite
-V_isnand
-V_log10f
 V_log2_uint
-V_log2f
 V_logf
-V_longjmp
-V_powd
 V_powf
 V_qsort
 V_qsort_s
 V_roundf
-V_setjmp
-V_sincosf
-V_sind
 V_sinf
 V_snprintf
 V_sscanf
-V_strEndsWith
-V_strcspn
 V_stricmp_fast
 V_strlower_fast
-V_strncat
 V_strncmp
 V_strncpy
 V_strnicmp_fast
-V_strspn
 V_strtoi64
-V_strtoui64
-V_tanf
 V_vsnprintf
-VectorText
 Vendor ID mismatch in pipeline cache file (Got: %x Expected: %x).  Deleting %s in order to regenerate it
 VendorID
 VendorId / DeviceId:  0x%x / 0x%x
@@ -3480,12 +3304,10 @@ Version
 Vertex Input Library
 Vertex Pool
 Vertex Pool %s total %s used, %i allocations
-Vertex Shader
 Vid:  %s, render at %i x %i, display at %i x %i
 Vid:  %s, render at %i x %i, display at %i x %i, refresh rate %.2fHz (%uHz desktop
 Video Card %s (%04x : %04x
 Video config version number changed ( '%s' is version %i, current version is %i ). Resetting video config
-Viewport
 Virtual array controller messed up
 VisBuilder_001
 Visible Snapshot
@@ -3540,13 +3362,13 @@ VulkanGPUMemVisThread
 Vulkan_DisableInstructions
 Vulkan_InitializationFailure
 Vulkan_RequiredExtensionMissing
+W I;W0
 W(H;W0r
 W(H;W0st
 WAITING_FOR_HOOKUP_JOB
 WAITING_FOR_IO
 WARNING
 WARNING: Trying to create a CRenderContextPtr without a valid context
-WATSH
 WDG,r3
 WITHIN_BUDGET
 WaitOnPresent
@@ -3596,9 +3418,7 @@ Wrong JPEG library version: library is %d, caller expects %d
 Wrote %s
 Wrote RenderDoc capture to %s
 X[A\A]A^A
-XfA9G
-Y>t$7
-YA1E1
+YIcL$8Ic
 YUY2ToARGB
 YUY2ToARGBRow_AVX2
 YUY2ToARGBRow_Any_AVX2
@@ -3625,11 +3445,8 @@ YUY2ToYRow_Any_SSE2
 YUY2ToYRow_C
 YUY2ToYRow_SSE2
 Z10DevWarningPKcz
-Z11FioCopyFilePKcS0_b
 Z13SaveKV3ToFileRK7KV3ID_tS1_PK10KeyValues3P10CUtlStringPKcS8_j
 Z13V_SplitStringPKcS0_R10CUtlVectorI10CUtlStringi10CUtlMemoryIS2_iLm0EEEb
-Z13base64_decodeR10CUtlBufferRKS
-Z13base64_encodeR10CUtlBufferRKS
 Z14GetGameInfoIntPKci
 Z14V_stristr_fastPKcS0
 Z15GetGameInfoBoolPKcb
@@ -3646,7 +3463,6 @@ Z20g_nSequentialIndicesIfE
 Z20g_nSequentialIndicesIiE
 Z22Assert_ConditionFailedRK34_AssertCompileTimeConstantStruct_t
 Z22Assert_ConditionFailedRK34_AssertCompileTimeConstantStruct_tPKcz
-Z23FormatArgumentsToBufferP19IFormatOutputStreamPKcPK28CTypeErasedFormattingWrapperi
 Z23_txnal_cow_string_c_strPKv
 Z23_txnal_sso_string_c_strPKv
 Z24g_flTValues0To1InclusiveIDv4_fE
@@ -3654,16 +3470,9 @@ Z24g_flTValues0To1InclusiveIfE
 Z26_txnal_logic_error_get_msgPv
 Z27_txnal_cow_string_D1_commitPv
 Z28_txnal_runtime_error_get_msgPv
-Z30LoggingSystem_IsChannelEnabledi18LoggingVerbosity_t
 Z35_txnal_cow_string_C1_for_exceptionsPvPKcS
 Z7LoadKV3P10KeyValues3P10CUtlStringP10CUtlBufferRK7KV3ID_tPKc
-Z8FormatToP19IFormatOutputStream20CFormatStringElementPKv
-Z8FormatToP19IFormatOutputStream20CFormatStringElementf
-Z8FormatToP19IFormatOutputStream20CFormatStringElementi
-Z9V_strnlenPKci
 ZEo^m
-ZFP comp
-ZFP compH
 ZFP compression is not supported
 ZGTtNKSt11logic_error4whatEv
 ZGTtNKSt13bad_exception4whatEv
@@ -3778,10 +3587,7 @@ ZGVNSt9money_putIcSt19ostreambuf_iteratorIcSt11char_traitsIcEEE2idE
 ZGVNSt9money_putIwSt19ostreambuf_iteratorIwSt11char_traitsIwEEE2idE
 ZL34RenderDocCaptureWindowAutoCompleteRK8CCommandR10CUtlVectorI10CUtlStringi10CUtlMemoryIS3_iLm0EEEEUlP14CSwapChainBaseE
 ZN10CCallQueue18ParallelCallQueuedEPKcP11IThreadPool
-ZN10CUtlBuffer10ParseTokenEPK14characterset_tPcib
 ZN10CUtlBuffer11GetOverflowEi
-ZN10CUtlBuffer11IsBigEndianEv
-ZN10CUtlBuffer11WriteToFileEPKcb
 ZN10CUtlBuffer12SetBigEndianEb
 ZN10CUtlBuffer14EnsureCapacityEi
 ZN10CUtlBuffer16SetOverflowFuncsEMS_FbiES1
@@ -3796,28 +3602,18 @@ ZN10CUtlBuffer7SeekGetENS_10SeekType_tEi
 ZN10CUtlBuffer7SeekPutENS_10SeekType_tEi
 ZN10CUtlBuffer8CheckGetEi
 ZN10CUtlBuffer8CheckPutEi
-ZN10CUtlBuffer9GetStringEP13CBufferString
-ZN10CUtlBuffer9GetStringEPci
 ZN10CUtlBuffer9PutStringEPKc
-ZN10CUtlBufferC1EPKvii
 ZN10CUtlBufferC1Eiii
 ZN10CUtlBufferC2Eiii
-ZN10CUtlString12GetForModifyEv
 ZN10CUtlString15FreeMemoryBlockEv
 ZN10CUtlString3SetEPKc
 ZN10CUtlString4TrimEPKc
 ZN10CUtlString5PurgeEv
 ZN10CUtlString6AppendEPKc
-ZN10CUtlString6AppendEPKci
 ZN10CUtlString6FormatEPKcz
 ZN10CUtlString7AcquireEP13CBufferStringb
 ZN10CUtlString9SetDirectEPKci
-ZN10CUtlString9SetLengthEi
-ZN10CUtlStringC1ERK13CBufferString
-ZN10CUtlStringaSERK13CBufferString
 ZN10CUtlStringpLEPKc
-ZN10CUtlStringpLERKS
-ZN10CUtlStringpLEc
 ZN10__cxxabiv111__terminateEPFvvE
 ZN10__cxxabiv112__unexpectedEPFvvE
 ZN10__cxxabiv115__forced_unwindD0Ev
@@ -3847,33 +3643,20 @@ ZN12CMemoryStack7FreeAllEb
 ZN12CMemoryStack8CommitToEPh
 ZN12CMemoryStackC1Ev
 ZN12CMemoryStackD1Ev
-ZN12CSplitString5SplitEPKciPS1_ib
 ZN12CThreadEvent3SetEv
 ZN12CThreadEventC1Eb
 ZN13CBufferString10ExtendPathEPKccb
 ZN13CBufferString10FixSlashesEc
-ZN13CBufferString10TruncateAtEib
-ZN13CBufferString11ShortenPathEb
 ZN13CBufferString11ToLowerFastEi
-ZN13CBufferString12AppendConcatEiPKPKcPKib
 ZN13CBufferString12AppendFormatEPKcz
 ZN13CBufferString12SetExtensionEPKcb
 ZN13CBufferString13AppendFormatVEPKcP13__va_list_tag
 ZN13CBufferString13FixupPathNameEc
-ZN13CBufferString14RemoveFirstDirEPS
-ZN13CBufferString14StripExtensionEb
-ZN13CBufferString15ComposeFileNameEPKcS1_c
-ZN13CBufferString15ExtractFilePathEPKcb
-ZN13CBufferString15ExtractFirstDirEPKc
-ZN13CBufferString16MakeAbsolutePathEPKcS1
-ZN13CBufferString16MakeRelativePathEPKcS1_b
-ZN13CBufferString16RemoveDotSlashesEc
 ZN13CBufferString16RemoveWhitespaceEv
 ZN13CBufferString18StripTrailingSlashEv
 ZN13CBufferString5PurgeEi
 ZN13CBufferString6FormatEPKcz
 ZN13CBufferString6InsertEiPKcib
-ZN13CBufferString7ReplaceEPKcS1_b
 ZN13CBufferString8MoveFromERS
 ZN13CBufferString8RemoveAtEii
 ZN13CBufferString9SetLengthEibPi
@@ -3881,19 +3664,7 @@ ZN13COneTimeEvent8AllocateEv
 ZN13CRawAllocator4FreeE18RawAllocatorType_tPvm
 ZN13CRawAllocator5AllocE18RawAllocatorType_tmPm
 ZN13CRenderDocAPI22CaptureRenderDocWindowERK15CCommandContextRK8CCommandEUlP14CSwapChainBaseE
-ZN13CSOAContainer10FilterFromERKS_iiiiiPKfbEUlvE
-ZN13CSOAContainer10FilterFromERKS_iiiiiPKfbEUlvE0
-ZN13CSOAContainer17SrgbGammaToLinearEiEUlvE
-ZN13CSOAContainer17SrgbLinearToGammaEiEUlvE
-ZN13CSOAContainer28QuarterSizeAttrWithBoxFilterERKS_iiP10CCallQueueEUlvE
-ZN13CSOAContainer28QuarterSizeAttrWithBoxFilterERKS_iiP10CCallQueueEUlvE0
-ZN13CSOAContainer32Normalized3x3SobelEdgeFilterFromERKS_iiibEUlvE
-ZN13CSOAContainer32Normalized3x3SobelEdgeFilterFromERKS_iiibEUlvE0
-ZN13CSOAContainer37Normalize3ComponentVectorInAttributesEiii5Vec3DIfEbbEUlvE
-ZN13CSOAContainer37Normalize3ComponentVectorInAttributesEiii5Vec3DIfEbbEUlvE0
 ZN13CSOAContainer8FillAttrEifEUlvE
-ZN13CSOAContainer9FilterInYEi9IntAABB_tiPKfbEUlvE
-ZN13CSOAContainer9FilterInZEi9IntAABB_tiPKfbEUlvE
 ZN13CThreadRWLock11UnlockWriteEPKci
 ZN13CThreadRWLock11WaitForReadEv
 ZN13CThreadRWLock12LockForWriteEPKci
@@ -3908,11 +3679,6 @@ ZN14CStringPool_CIC1Ev
 ZN14CStringPool_CID1Ev
 ZN14CUtlStringList11SplitStringEPKcPKS1_i
 ZN15CKeyValues_Data18Internal_GetStringEPKcPcm
-ZN15CKeyValues_Data19Internal_GetWStringEPKwPwm
-ZN15CUtlBinaryBlock9SetLengthEi
-ZN15CUtlSymbolTable9AddStringEPKcPb
-ZN15CUtlSymbolTableC1Eiib
-ZN15CUtlSymbolTableD1Ev
 ZN16CMiniDumpComment13AppendCommentEPKc
 ZN16CMiniDumpComment22AppendFormattedCommentEPKcz
 ZN16CMiniDumpComment27EnsureEndsWithNumCharactersEcib
@@ -3937,13 +3703,6 @@ ZN19CRenderDeviceVulkan29PerformQueuedTextureDeletionsEbEUlvE
 ZN19CRenderThreadVulkan36ExecuteOustandingSWCommandStreamJobsEvEUlvE
 ZN19CTextureManagerBase26MN_CacheRequestedResourcesER10CUtlVectorINS_15ToCacheHandle_tEi10CUtlMemoryIS1_iLm0EEEEUlP25IAsyncResourceDataRequestSt10unique_ptrI25IAsyncProcessedDataResultSt14default_deleteIS9_EEE
 ZN19CTextureManagerBase31MN_AddAsyncTextureBitsHookupJobEP12CTextureBaseRKNS_24AsyncTextureHookupData_tEEUlvE
-ZN19IFormatOutputStream11FormatArrayE28CTypeErasedFormattingWrapper20CFormatStringElementPPKvib
-ZN19IFormatOutputStream13Format2DTableE28CTypeErasedFormattingWrapper20CFormatStringElementPPKvii
-ZN19IFormatOutputStream15PutRepeatedCharEci
-ZN19IFormatOutputStream16FormatEnumHelperE20CFormatStringElementiSt16initializer_listISt4pairIiPKcEE
-ZN19IFormatOutputStream16FormatMaskHelperEiSt16initializer_listISt4pairIiPKcEE
-ZN19IFormatOutputStream17OutputIndentationEv
-ZN20CFormatStringElementC1EPKc
 ZN20CRenderContextVulkan12QueuePresentEP19SwapChainHandle_t__iP28IRenderDevicePresentCallbackEUlvE
 ZN20CRenderContextVulkan12QueuePresentEP19SwapChainHandle_t__iP28IRenderDevicePresentCallbackEUlvE0
 ZN22CPipelineManagerVulkan19LinkPipelineLibraryEPK15CPipelineVulkanP21PerThreadDataVulkan_tP22PipelineObjectVulkan_tEUlvE
@@ -3955,10 +3714,8 @@ ZN22CThreadRWLock_FastRead27HaveWriteLock_BlockReadsNowEb
 ZN22CThreadRWLock_FastRead35EncounteredComplexReadLockOperationEjbPKci
 ZN22CThreadRWLock_FastReadC1Ev
 ZN23CTextureStreamingHelper23IssueTextureLoadRequestEP12CTextureBaseRK22TextureSpecification_tEUlP25IAsyncResourceDataRequestSt10unique_ptrI25IAsyncProcessedDataResultSt14default_deleteIS8_EEE
-ZN24CUniformRandomStreamImplI16CThreadNullMutexE11RandomFloatEff
 ZN24CUtlMemoryBlockAllocator5AllocEj
 ZN24CUtlMemoryBlockAllocator5PurgeEv
-ZN24CUtlMemoryBlockAllocator9RemoveAllEm
 ZN24CUtlMemoryBlockAllocatorC1Eij18RawAllocatorType_t
 ZN24CUtlMemoryBlockAllocatorD1Ev
 ZN25CAsyncCompileHelperVulkan18FlushPipelineCacheEvEUlvE
@@ -3966,16 +3723,11 @@ ZN25CAsyncCompileHelperVulkan18QueueShaderCompileEP17CShaderVulkanBaseEUlvE
 ZN27CPipelineCacheManagerVulkan12LoadFromPathEP22CPipelineManagerVulkanRK10CUtlStringRK14CUtlStringListS4_iEUlvE
 ZN3Etc13EncodeMipmapsEPfjjNS_5Image6FormatENS_11ErrorMetricEfjjjjPNS_8RawImageEPibEUlPhE
 ZN9KeyValues10GetNextKeyEv
-ZN9KeyValues10SetWStringEPKcPKw
 ZN9KeyValues12LoadFromFileEP11IFileSystemPKcS3_PFbS3_PvES4_S3
-ZN9KeyValues12ReadAsBinaryER10CUtlBuffer
 ZN9KeyValues14GetFirstSubKeyEv
 ZN9KeyValues6SetIntEPKci
-ZN9KeyValues6SetPtrEPKcPv
 ZN9KeyValues7FindKeyE10HKeySymbol
 ZN9KeyValues7FindKeyEPKcb
-ZN9KeyValues8SetColorEPKc5Color
-ZN9KeyValues8SetFloatEPKcf
 ZN9KeyValues9SetStringEPKcS1
 ZN9KeyValuesC1EPKcP16IKeyValuesSystemb
 ZN9KeyValuesD1Ev
@@ -4009,17 +3761,12 @@ ZN9__gnu_cxxeqIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEbRKNS_17_
 ZN9__gnu_cxxeqIPcSsEEbRKNS_17__normal_iteratorIT_T0_EES7
 ZN9__gnu_cxxeqIPwNSt7__cxx1112basic_stringIwSt11char_traitsIwESaIwEEEEEbRKNS_17__normal_iteratorIT_T0_EESD
 ZN9__gnu_cxxeqIPwSbIwSt11char_traitsIwESaIwEEEEbRKNS_17__normal_iteratorIT_T0_EESB
-ZNK10CUtlString14StripExtensionEv
-ZNK10CUtlString15GetBaseFilenameEv
-ZNK10CUtlString15RemoveFromStartEPKcb
-ZNK10CUtlString21IsEqual_CaseSensitiveEPKc
 ZNK10CUtlString27IsEqual_FastCaseInsensitiveEPKc
 ZNK10CUtlString4LeftEi
 ZNK10CUtlString5SliceEii
 ZNK10CUtlString7ReplaceEPKcS1_b
 ZNK10CUtlStringeqERKS
 ZNK10CUtlStringixEi
-ZNK10CUtlStringplEPKc
 ZNK10__cxxabiv117__class_type_info10__do_catchEPKSt9type_infoPPvj
 ZNK10__cxxabiv117__class_type_info11__do_upcastEPKS0_PKvRNS0_15__upcast_resultE
 ZNK10__cxxabiv117__class_type_info11__do_upcastEPKS0_PPv
@@ -4032,19 +3779,12 @@ ZNK10__cxxabiv121__vmi_class_type_info11__do_upcastEPKNS_17__class_type_infoEPKv
 ZNK10__cxxabiv121__vmi_class_type_info12__do_dyncastElNS_17__class_type_info10__sub_kindEPKS1_PKvS4_S6_RNS1_16__dyncast_resultE
 ZNK10__cxxabiv121__vmi_class_type_info20__do_find_public_srcElPKvPKNS_17__class_type_infoES2
 ZNK13CBufferString10StartsWithEPKc
-ZNK13CBufferString8FormatToEP19IFormatOutputStream20CFormatStringElement
 ZNK14CPoolAllocator28Debug_GetAllocationsSnapshotEP10CUtlVectorINS_8Handle_tEi10CUtlMemoryIS1_iLm0EEE
 ZNK15CKeyValues_Data15Internal_GetIntEv
-ZNK15CUtlSymbolTable4FindEPKc
-ZNK15CUtlSymbolTable6StringE10CUtlSymbol
-ZNK9KeyValues11GetDataTypeEPKc
-ZNK9KeyValues13WriteAsBinaryER10CUtlBuffer
 ZNK9KeyValues19RecursiveSaveToFileER10CUtlBufferibb
 ZNK9KeyValues6GetIntEPKci
-ZNK9KeyValues6GetPtrEPKcPv
 ZNK9KeyValues7FindKeyEPKc
 ZNK9KeyValues7GetNameEv
-ZNK9KeyValues8GetColorEPKcRK5Color
 ZNK9KeyValues8GetFloatEPKcf
 ZNK9KeyValues9GetUint64EPKcy
 ZNK9__gnu_cxx24__concurrence_lock_error4whatEv
@@ -4176,8 +3916,6 @@ ZNKSs8capacityEv
 ZNKSs8max_sizeEv
 ZNKSs9_M_ibeginEv
 ZNKSsixEm
-ZNKSt10_HashtableISsSsSaISsENSt8__detail9_IdentityESt8equal_toISsESt4hashISsENS1_18_Mod_range_hashingENS1_20_Default_ranged_hashENS1_20_Prime_rehash_policyENS1_17_Hashtable_traitsILb1ELb1ELb1EEEE4findERKSs
-ZNKSt10_HashtableImmSaImENSt8__detail9_IdentityESt8equal_toImESt4hashImENS1_18_Mod_range_hashingENS1_20_Default_ranged_hashENS1_20_Prime_rehash_policyENS1_17_Hashtable_traitsILb0ELb1ELb1EEEE4findERKm
 ZNKSt10bad_typeid4whatEv
 ZNKSt10error_code23default_error_conditionEv
 ZNKSt10moneypunctIcLb0EE10neg_formatEv
@@ -5449,7 +5187,6 @@ ZNSspLEPKc
 ZNSspLERKSs
 ZNSspLESt16initializer_listIcE
 ZNSspLEc
-ZNSt10_HashtableISsSsSaISsENSt8__detail9_IdentityESt8equal_toISsESt4hashISsENS1_18_Mod_range_hashingENS1_20_Default_ranged_hashENS1_20_Prime_rehash_policyENS1_17_Hashtable_traitsILb1ELb1ELb1EEEE5clearEv
 ZNSt10__num_base11_S_atoms_inE
 ZNSt10__num_base12_S_atoms_outE
 ZNSt10__num_base15_S_format_floatERKSt8ios_basePcc
@@ -5568,8 +5305,6 @@ ZNSt11range_errorD0Ev
 ZNSt11range_errorD1Ev
 ZNSt11range_errorD2Ev
 ZNSt11this_thread11__sleep_forENSt6chrono8durationIlSt5ratioILl1ELl1EEEENS1_IlS2_ILl1ELl1000000000EEEE
-ZNSt12_Vector_baseIhSaIhEED1Ev
-ZNSt12_Vector_baseIhSaIhEED2Ev
 ZNSt12__cow_stringC1EOS
 ZNSt12__cow_stringC1EPKcm
 ZNSt12__cow_stringC1ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
@@ -6454,11 +6189,6 @@ ZNSt6thread6_StateD1Ev
 ZNSt6thread6_StateD2Ev
 ZNSt6thread6detachEv
 ZNSt6vectorIPSt12Catalog_infoSaIS1_EE17_M_realloc_insertEN9__gnu_cxx17__normal_iteratorIPS1_S3_EERKS1
-ZNSt6vectorIS_ImSaImEESaIS1_EE17_M_realloc_insertIJRKS1_EEEvN9__gnu_cxx17__normal_iteratorIPS1_S3_EEDpOT
-ZNSt6vectorIfSaIfEE17_M_default_appendEm
-ZNSt6vectorIhSaIhEE6resizeEm
-ZNSt6vectorIjSaIjEE17_M_default_appendEm
-ZNSt6vectorImSaImEE17_M_default_appendEm
 ZNSt7__cxx1110moneypunctIcLb0EE24_M_initialize_moneypunctEP15__locale_structPKc
 ZNSt7__cxx1110moneypunctIcLb0EE2idE
 ZNSt7__cxx1110moneypunctIcLb0EE4intlE
@@ -7056,7 +6786,6 @@ ZNSt8Catalogs8_M_eraseEi
 ZNSt8CatalogsD1Ev
 ZNSt8CatalogsD2Ev
 ZNSt8__detail12__prime_listE
-ZNSt8__detail9_Map_baseImSt4pairIKmPvESaIS4_ENS_10_Select1stESt8equal_toImESt4hashImENS_18_Mod_range_hashingENS_20_Default_ranged_hashENS_20_Prime_rehash_policyENS_17_Hashtable_traitsILb0ELb0ELb1EEELb1EEixERS2
 ZNSt8bad_castD0Ev
 ZNSt8bad_castD1Ev
 ZNSt8bad_castD2Ev
@@ -7304,6 +7033,7 @@ ZSt19__throw_ios_failurePKc
 ZSt19__throw_ios_failurePKci
 ZSt19__throw_logic_errorPKc
 ZSt19__throw_range_errorPKc
+ZSt19piecewise_construct
 ZSt19uncaught_exceptionsv
 ZSt20__throw_domain_errorPKc
 ZSt20__throw_future_errori
@@ -7334,6 +7064,9 @@ ZSt4endsIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6
 ZSt4endsIwSt11char_traitsIwEERSt13basic_ostreamIT_T0_ES6
 ZSt5flushIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6
 ZSt5flushIwSt11char_traitsIwEERSt13basic_ostreamIT_T0_ES6
+ZSt7getlineIcSt11char_traitsIcESaIcEERSt13basic_istreamIT_T0_ES7_RSbIS4_S5_T1_E
+ZSt7getlineIcSt11char_traitsIcESaIcEERSt13basic_istreamIT_T0_ES7_RSbIS4_S5_T1_ES4
+ZSt7getlineIwSt11char_traitsIwESaIwEERSt13basic_istreamIT_T0_ES7_RSbIS4_S5_T1_ES4
 ZSt7nothrow
 ZSt7setfillIcESt8_SetfillIT_ES1
 ZSt7setfillIwESt8_SetfillIT_ES1
@@ -7434,6 +7167,7 @@ ZStlsIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_St14_Resetiosflags
 ZStlsIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_St5_Setw
 ZStlsIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_St8_Setbase
 ZStlsIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_St8_SetfillIS3_E
+ZStlsIcSt11char_traitsIcESaIcEERSt13basic_ostreamIT_T0_ES7_RKSbIS4_S5_T1_E
 ZStlsIwSt11char_traitsIwEERSt13basic_ostreamIT_T0_ES6_PKS3
 ZStlsIwSt11char_traitsIwEERSt13basic_ostreamIT_T0_ES6_PKc
 ZStlsIwSt11char_traitsIwEERSt13basic_ostreamIT_T0_ES6_S3
@@ -7468,6 +7202,7 @@ ZStrsIcSt11char_traitsIcEERSt13basic_istreamIT_T0_ES6_St14_Resetiosflags
 ZStrsIcSt11char_traitsIcEERSt13basic_istreamIT_T0_ES6_St5_Setw
 ZStrsIcSt11char_traitsIcEERSt13basic_istreamIT_T0_ES6_St8_Setbase
 ZStrsIcSt11char_traitsIcEERSt13basic_istreamIT_T0_ES6_St8_SetfillIS3_E
+ZStrsIcSt11char_traitsIcESaIcEERSt13basic_istreamIT_T0_ES7_RSbIS4_S5_T1_E
 ZStrsIwSt11char_traitsIwEERSt13basic_istreamIT_T0_ES6_PS3
 ZStrsIwSt11char_traitsIwEERSt13basic_istreamIT_T0_ES6_RS3
 ZStrsIwSt11char_traitsIwEERSt13basic_istreamIT_T0_ES6_St12_Setiosflags
@@ -7477,7 +7212,6 @@ ZStrsIwSt11char_traitsIwEERSt13basic_istreamIT_T0_ES6_St5_Setw
 ZStrsIwSt11char_traitsIwEERSt13basic_istreamIT_T0_ES6_St8_Setbase
 ZStrsIwSt11char_traitsIwEERSt13basic_istreamIT_T0_ES6_St8_SetfillIS3_E
 ZTI17CThreadSyncObject
-ZTI19IFormatOutputStream
 ZTIN10__cxxabiv115__forced_unwindE
 ZTIN10__cxxabiv117__class_type_infoE
 ZTIN10__cxxabiv119__foreign_exceptionE
@@ -8005,8 +7739,6 @@ ZTv0_n24_NSt19basic_ostringstreamIcSt11char_traitsIcESaIcEED0Ev
 ZTv0_n24_NSt19basic_ostringstreamIcSt11char_traitsIcESaIcEED1Ev
 ZTv0_n24_NSt19basic_ostringstreamIwSt11char_traitsIwESaIwEED0Ev
 ZTv0_n24_NSt19basic_ostringstreamIwSt11char_traitsIwESaIwEED1Ev
-ZZNSt8__detail18__to_chars_10_implIjEEvPcjT_E8__digits
-ZZNSt9once_flag18_Prepare_executionC4IZSt9call_onceIMNSt13__future_base13_State_baseV2EFvPSt8functionIFSt10unique_ptrINS3_12_Result_baseENS7_8_DeleterEEvEEPbEJPS4_SC_SD_EEvRS_OT_DpOT0_EUlvE_EERSI_ENUlvE_4_FUNEv
 ZZNSt9once_flag18_Prepare_executionC4IZSt9call_onceIMSt6threadFvvEJPS3_EEvRS_OT_DpOT0_EUlvE_EERS8_ENUlvE_4_FUNEv
 ZZZZZZZZZZZZZZZ
 ZZZZZZZZZZZZZZZZ
@@ -8018,7 +7750,6 @@ ZdlPv
 ZdlPvSt11align_val_t
 ZdlPvm
 ZdlPvmSt11align_val_t
-Zft<[A
 ZnamRKSt9nothrow_t
 ZnamSt11align_val_t
 ZnamSt11align_val_tRKSt9nothrow_t
@@ -8028,10 +7759,13 @@ ZnwmSt11align_val_tRKSt9nothrow_t
 a_fDecodedAlpha >= 0.0f
 a_uiMultithreadingStride > 0
 a_uiRadius <= MAX_RADIUS
-addons
+address
 addressModeU
 addressModeV
 addressModeW
+aftermath
+aintenanH
+al_rendeH
 alignof
 allocateInPool
 allocator
@@ -8055,8 +7789,9 @@ attachment
 attachmentCount
 attachments
 attributes
-ay_traciI
-bKiQN;Mt
+autoconfig_level
+ay_queryH
+ay_traciH
 bValid
 bad partition length
 bad_function_call
@@ -8104,15 +7839,17 @@ boolean
 borderColor
 bpp >= 1 && bpp <= 4
 bss_start
-bucketdUH
+bucketdL
 budget
 buffer
 bufferImageGranularity
 byteaddressbuffer
 b}b*XhUu
+c8E9,$t.I
+c_state
 cacheData
-cache_cI
-cal_deviI
+cache_cH
+cal_deviH
 calloc
 cannot create shim for unknown locale::facet
 cannot create std::vector larger than max_size
@@ -8122,9 +7859,9 @@ cannot parse picture header
 cannot parse segment header
 capture
 cbuffer
-cceleratI
-ce_capabI
-ce_propeI
+cceleratH
+ce_capabH
+ce_propeH
 cfg/%svideo.txt
 cfg/%svideo_%02d.txt
 cfg/moddefaults.txt
@@ -8135,7 +7872,6 @@ channels" attribute not found in the header
 char16_t
 char32_t
 char8_t
-chlist
 chromaFilter
 chunkCount
 citadel
@@ -8145,7 +7881,6 @@ closedir
 closestHitShader
 co_await
 codeSize
-color32
 colorAttachmentFormats
 colorAttachments
 colorBlendOp
@@ -8153,12 +7888,12 @@ colorBlendState
 colorWriteEnables
 colorWriteMask
 combinerOps
+commandsH
 comment
 compareEnable
 compareMask
 compareOp
 components
-compressH
 compression
 compression" attribute not found in the header
 compute
@@ -8181,12 +7916,9 @@ counter_0
 covariant return thunk to
 cpu model
 cpu_info
-creationI
-cs_5_0
-cs_6_0
+creationH
 ctype_b_loc
 ctype_get_mb_cur_max
-ctype_toupper_loc
 cullMode
 customBorderColor
 cxa_allocate_dependent_exception
@@ -8222,7 +7954,6 @@ d %d %d %d
 d$HL;D$@tHH
 d$Pw[f
 d$pA9GX
-dHcCx1
 data height too large
 data width or data height is negative
 data width too large
@@ -8242,6 +7973,7 @@ decltype(nullptr
 dedicated
 default
 default arg
+deferTextureLoads
 delete
 deleted virtual method called
 dependencies
@@ -8292,9 +8024,9 @@ displayWindow" attribute not found in the header
 divisor
 dlBNvz!/u{1?cmR
 dl_iterate_phdr
-dlclose
 dlopen
 domainOrigin
+dontEvictTextures
 double
 dqe-KO{/3
 dstAccessMask
@@ -8319,39 +8051,44 @@ dy & 0x1ffff) == 0
 dy & 0x3ffff) == 0
 dynamic
 dynamicState
+dynamic_H
 dynamic_cast
 dynstr
 dynsym
-e_op_nonI
-ebug_marI
+e_op_nonH
+ebug_marH
 edata
 eeeeeeeeeeeeeeee
+eferred_H
 effortblocks = %d
 eh_frame
 eh_frame_hdr
-ehandle
 elements
-emory_buI
+ements2
+emory_buH
 empty
 encodingTry.m_fError < 3.40282346638528859811704183484516925e+38F
+enderingH
 engineName
 engineVersion
-entity_name
+epth_biaH
+epth_steH
 erZнm9
 errno_location
 erties2
-esh_shadI
-et_physiI
-et_surfaI
-evice_grI
-ewh/?y
-executabI
-externaldescriptorset
+esh_shadH
+et_memorH
+et_physiH
+et_surfaH
+evice_geH
+evice_grH
+executabH
 extraPrimitiveOverestimationSize
+f	XDH9
 f %f %f
 f %f %f %f
 f5J5J5J5J5J5J5J5J5J5J5J5J5J5J5J5Jx
-fD	HDA9
+f@u4H
 fMinAlpha <= fMaxAlpha
 fMinGrn <= fMaxGrn
 fMinRed <= fMaxRed
@@ -8368,8 +8105,6 @@ fallback3d.vtex
 fallbackcube.vtex
 fallbackcubearray.vtex
 fclose
-feature
-features
 fesetround
 fffff
 ffffff
@@ -8384,13 +8119,7 @@ fj".T\CMek2>x
 float Etc::Block4x4Encoding::CalcPixelError(Etc::ColorFloatRGBA, float, Etc::ColorFloatRGBA
 float Etc::Block4x4Encoding::GetError
 float128
-float2
-float3
 float32
-float3x3
-float4
-float4x3
-float4x4
 float64
 floatbitmap.cpp
 floatbitmap.cpp(318): Conversion not supported yet
@@ -8414,10 +8143,12 @@ futimens
 future
 fwrite
 fxstat64
-gAMAugA
+gAMAuWA
 g_Mathlib_GammaToLinearByteTable
 g_TSPointerListNodes
 g_bUpdateStringTokenDatabase
+g_globalLateBoundBindlessSet
+g_invocaH
 g_pEngineServiceMgr is NULL. Display mode information unavailable
 g_pMemAlloc
 g_pRenderDevice is NULL. %d adapter(s) available. Iterating adapters %d - %d
@@ -8450,15 +8181,13 @@ got.plt
 gpuraytracing
 graphicsPipelines
 groups
-gs_4_0
-gs_4_1
-gs_5_0
-gs_6_0
 guard variable for
 gxx_personality_v0
 hAUATSH
 h[A\A]A^A
-hader_clI
+hader_clH
+hader_inH
+hader_noH
 hardware
 header crc mismatch
 height
@@ -8483,6 +8212,7 @@ home/timo/source2/main/src/thirdparty/etc2comp/EtcLib/EtcCodec/EtcBlock4x4Encodi
 home/timo/source2/main/src/thirdparty/etc2comp/EtcLib/EtcCodec/EtcDifferentialTrys.cpp
 home/timo/source2/main/src/thirdparty/etc2comp/EtcLib/EtcCodec/EtcIndividualTrys.cpp
 home/timo/source2/main/src/thirdparty/etc2comp/EtcLib/EtcCodec/EtcSortedBlockList.cpp
+host_opeH
 i small allocs
 iBlue >= 0 && iBlue <= 15
 iBlue >= 0 && iBlue <= 31
@@ -8501,9 +8231,6 @@ iGreen1 >= (signed)(0 + a_uiRadius) && iGreen1 <= (signed)(31 - a_uiRadius
 iGreen2 < 0 || iGreen2 > 31
 iGreen2 >= (signed)(0 + a_uiRadius) && iGreen2 <= (signed)(31 - a_uiRadius
 iGreen2 >= 0 && iGreen2 <= 31
-iOS SM 4.0 (VULKAN
-iOS SM 4.1 (VULKAN
-iOS SM 5.0 (VULKAN
 iRed >= 0 && iRed <= 15
 iRed >= 0 && iRed <= 31
 iRed1 >= (signed)(0 + a_uiRadius) && iRed1 <= (signed)(31 - a_uiRadius
@@ -8511,10 +8238,11 @@ iRed2 < 0 || iRed2 > 31
 iRed2 >= (signed)(0 + a_uiRadius) && iRed2 <= (signed)(31 - a_uiRadius
 iRed2 >= 0 && iRed2 <= 31
 iboxwidth > 0
+ic_info
 iconv_close
 iconv_open
 ignore
-ilities2I
+ilities2H
 immediate
 immutableSamplers
 in.var.COLOR
@@ -8550,18 +8278,14 @@ invalid literal/length code
 invalid literal/lengths set
 invalid stored block lengths
 invalid window size
-ion typeH
-ion_fetcI
-ion_struI
+ion_fetcH
+ion_struH
 ios_base::_M_grow_words allocation failed
 ios_base::_M_grow_words is not valid
 iostream
 iostream error
-ipeline_I
-is not sH
-isoc99_sscanf
+ipeline_H
 iswctype_l
-isxdigit
 java Class for
 java resource
 kBgrF709Constants
@@ -8587,25 +8311,25 @@ kYvuV2020Constants
 kkkkkkkkkkkkkkk
 kkkkkkkkkkkkkkkk
 kzBB-1
-l$"L9j
-l$'L9j
 l$8AUj
+l$8Ic
 l$HA8nnA
 l$pfE
 lA9<$tbA
-lIVLFJ
 lambda
+latewarp
 layout
 layoutBindingFlags
 layoutBindings
 ld-linux-x86-64.so.2
-le_propeI
-lib_6_4
+le_propeH
 libc.so.6
 libdl.so.2
 libm.so.6
 libpthread.so.0
 libraries
+library
+libraryH
 libraryInfo
 libraryInterface
 librendersystemvulkan.so
@@ -8628,7 +8352,6 @@ locale::facet::_S_create_c_locale name not valid
 locale::facet::_S_lc_ctype_c_locale duplocale error
 locale::facet::_S_lc_ctype_c_locale newlocale error
 localize
-localtime
 location
 logicOp
 logicOpEnable
@@ -8673,7 +8396,6 @@ magFilter
 makemelast
 malloc
 mapEntries
-matrix3x4
 max megabytes
 max megatexels
 maxAnisotropy
@@ -8685,6 +8407,8 @@ maxPipelineRayHitAttributeSize
 maxPipelineRayPayloadSize
 maxPipelineRayRecursionDepth
 max_processor_count
+maxtexturepoolsize_2gb
+maxtextureres_2gb
 mbrtowc
 mbsnrtowcs
 mbsrtowcs
@@ -8710,20 +8434,18 @@ mj>zjZ
 mktime
 mmap64
 module
-ms_6_5
 mt19937
 multigpu_skip_semaphores
 multigpu_skip_transfers
 multisampleState
 munmap
 mutableDescriptorTypeLists
+n(ATSH
 n8ATUH
-nD$<fA
 nResult = vmaBindBufferMemory( m_MemoryManager.GetVmaAllocator(), pVmaAllocation, pBuffer
 nResult = vmaBindBufferMemory( m_pVmaAllocator, pMove->dstTmpAllocation, ( VkBuffer ) nNewObject
 nResult = vmaBindImageMemory( m_MemoryManager.GetVmaAllocator(), pVulkanImage->m_pVmaAllocation, pVulkanImage->m_pImage
 nResult = vmaBindImageMemory( m_pVmaAllocator, pMove->dstTmpAllocation, ( VkImage ) nNewObject
-nResult = vmaCreateAllocator( &allocatorCreateInfo, &m_pVmaAllocator
 nResult = vmaCreateBuffer( m_pVmaAllocator, &bufferCreateInfo, &allocInfo, ppVKBufferOut, ppVmaAllocationOut, nullptr
 nResult = vmaCreatePool( m_pVmaAllocator, &poolCreateInfo, &allocInfo.pool
 nResult = vmaCreatePool( m_pVmaAllocator, &poolCreateInfo, &pNewPool
@@ -8731,27 +8453,36 @@ nResult == VK_OPERATION_DEFERRED_KHR ) || ( nResult == VK_OPERATION_NOT_DEFERRED
 nSemaphoreIndex < static_cast< int32 >( m_nSwapQueueImageCount
 nSemaphoreIndex >= 0
 nTries < 10000000
+n_semantH
 nanosleep
+ncil_resH
+ndering
+nderpassH
+nerated_H
 newlocale
-ng_pipelD9
-ng_pipelI
-ng_positI
+ng_pipelH
+ng_positH
 nl_langinfo_l
 no failure reason set
 no memory during frame initialization
 no message
 noInvocationFragmentShadingRates
+no_render_thread_priority
+noantilag
 noexcept
 nogpuraytracing
+noinitfallbacktextures
+nomultigpu
 non-transaction clone for
 non-virtual thunk to
 nonCoherentAtomSize
+noreflex
 normal
 not enough space for format expansion (Please submit full bug report at https://gcc.gnu.org/bugsrg/bugs
 note.gnu.build-id
 note.gnu.gold-version
 note.stapsdt
-null VP8Io passed to VP8GetHeaders
+nti_lag
 nullDescriptor
 numImmutableSamplers
 numLayoutBindings
@@ -8765,26 +8496,25 @@ o@ATSD
 oL$0fA
 oXATUH
 o`ATUH
-oad_storI
-obustnesI
+oad_storH
+obustnesH
 occlusionquerymgr.cpp
 od$PfH
 of channels is zero
 offset
 ohATUH
 once_proxy
+onditionH
 open64
 opendir
 operator
-oup_creaI
+oup_creaH
 out.var.COLOR
 out.var.SV_TARGET0
 out.var.TEXCOORD0
 outputpatch
 p< tfv@<0u8H
 p< tnv`<0uXH
-p[A\A]A^A
-p[A\H
 panorama
 panorama_rt
 pass %u
@@ -8792,29 +8522,29 @@ passOp
 patchControlPoints
 pbucket->plinkLast->GetNext() == nullptr
 perties
+phD#X\L
 physicalDeviceFeatures
 pipelineBindPoint
+pipelineH
 pipelineLayoutFlags
 pipelineLayoutTable
 pipelineLayouts
 pixelAspectRatio
 pixelAspectRatio" attribute not found in the header
 png/jpg
-pointer
 polygonMode
 position
 positiont
 posix_fadvise64
+preloadtextures
 preserveAttachments
 primitiveRestartEnable
 printf
 provokingVertexMode
 ps_4_0
-ps_4_1
 ps_5_0
 ps_6_0
 pthread_cond_broadcast
-pthread_cond_clockwait
 pthread_cond_destroy
 pthread_cond_signal
 pthread_cond_wait
@@ -8845,11 +8575,11 @@ public/tier0/utltshash.h
 pure virtual method called
 pushConstantRanges
 p耀p耀p耀p
+q(AUATSH
 qangle
+qfA+Tu
 qqqqqqqqqqqqqqq
 qqqqqqqqqqqqqqqq
-quaternion
-rHc{x
 r_allow_low_gpu_memory_mode
 r_async_shader_compile_notify_frequency
 r_cache_pool_allocations
@@ -8902,6 +8632,7 @@ r_vma_defrag_max_allocation_size_per_pass
 r_vma_defrag_moves_per_frame
 r_vma_defrag_threshold_mb
 r_vulkan_force_sync1
+r_vulkan_render_threads
 r_vulkan_sw_cmd_lists
 r_wait_on_present
 random_device could not be read
@@ -8910,6 +8641,7 @@ random_device: rdrand failed
 random_device: rdseed failed
 random_device::random_device(const std::string&): device not available
 random_device::random_device(const std::string&): unsupported token
+raphics_H
 rasterizationSamples
 rasterizationState
 rasterizationStream
@@ -8922,6 +8654,7 @@ rasterizerorderedtexture1darray
 rasterizerorderedtexture2d
 rasterizerorderedtexture2darray
 rasterizerorderedtexture3d
+rations
 rayQueryFeatures.rayQuery not supported, disabling raytracing
 raytracingPipelines
 raytracingaccelerationstructure
@@ -8932,6 +8665,7 @@ readdir64
 readlink
 readpixels_staging_mem
 realloc
+reate_reH
 reation
 reductionMode
 reference
@@ -8939,37 +8673,34 @@ reference temporary
 reinterpret_cast
 rela.dyn
 rela.plt
-remove
 renderPass
 renderPasses
 renderPasses2
 rendercontextbase.cpp
 renderdevicebase.cpp
 renderdoc
+renderdoc_capture_validation_errors
 renderdoc_captures
 renderresource.h
 renderstatehelper.h
 rendersystem (%s) tracked resources
 rendersystemvulkan
+reorder
 requiredSubgroupSize
-resent_iI
+resent_iH
+resent_wH
 resolve
 resolveAttachments
-resource
-resource_name
 resourcesystem
-ression H
 restrict
 rethrow
 returning error texture in CTextureManagerVulkan::GetTextureResource
 rewind
-rhMcJxAQLc
 robustBufferAccess
 robustBufferAccess2
 robustImageAccess
 robustImageAccess2
 rodata
-rotation_vector
 roundf
 rtx_allow_blas_compact
 rtx_allow_blas_create
@@ -8977,7 +8708,6 @@ ructure
 rwbuffer
 rwbyteaddressbuffer
 rwstructuredbuffer
-rwstructuredbufferwithcounter
 rwtexture1d
 rwtexture1darray
 rwtexture2d
@@ -9005,7 +8735,6 @@ s8H;s@t]H
 s: Can't concatenate input layouts with more than %d fields total
 s: Invalid capacity %u
 s: Invalid grow amount %d
-s: Unable to compute hash for shader module
 s: __pos (which is %zu) > this->size() (which is %zu
 s: element count overflow (%u
 s: member count overflow (%u
@@ -9013,8 +8742,6 @@ s: vkAllocateMemory failed fallback system memory allocation.  Fatal error: out 
 s: vkAllocateMemory failed to allocate GPU memory.  Fatal error: out of GPU video memory and no fallback heap available
 s>b*w2
 s?H;D$pr
-s@H9s8
-s@H;sHs
 s_ColorTargetImageView
 s_ColorTargetImageViewSrgb
 s_CubeArrayImageView
@@ -9028,18 +8755,10 @@ s_PerArraySliceDepthStencilView
 s_PerMipLevelImageView
 s_PerMipLevelImageViewSrgb
 s_PerMipLevelUAVCompressedBlockView
+s_controH
 sampleMask
 sampleShadingEnable
-sampler1D
-sampler1DARRAY
-sampler2D
-sampler2DARRAY
-sampler3D
-sampler3DARRAY
-samplerCUBE
-samplerCUBEARRAY
 samplers
-samplerstateindex
 samples
 scale <= 32768
 scale >= 256
@@ -9050,6 +8769,7 @@ screenWindowCenter" attribute not found in the header
 screenWindowWidth
 screenWindowWidth" attribute not found in the header
 scroll
+sdl_displayindex
 sequence number %d too low in sheet file
 setLayouts
 setjmp
@@ -9091,13 +8811,11 @@ shaders.cache
 shadingRateAttachmentTexelSize
 shadowTargetSize forcing nPoolSizeInMb size to %d from %d, bLarge %d, avail %lld
 sheetcachetexture_.vtex
-shm_open
-shm_unlink
 shstrtab
 signed char
+size_conH
 sizeof
 snprintf
-soundevent
 specializationInfo
 specular
 sprintf
@@ -9119,6 +8837,8 @@ stageFlags
 stages
 stapsdt
 state machine violation - someone changed status while we were compiling
+state2
+state3
 static_cast
 std::allocator
 std::bad_alloc
@@ -9151,7 +8871,6 @@ stencilStoreOp
 stencilTestEnable
 stippledLineEnable
 storeOp
-strcasecmp
 strchr
 strcmp
 strcoll_l
@@ -9164,9 +8883,7 @@ stride
 string
 string literal
 string::string
-string_token
 strlen
-strncasecmp
 strncmp
 strncpy
 strnlen
@@ -9176,11 +8893,9 @@ strtof_l
 strtold_l
 strtoul
 strtoull
-struct
 structuredbuffer
 strxfrm_l
 st}<zt
-subclass
 subpass
 subpasses
 subpassinput
@@ -9188,43 +8903,35 @@ subpassinputms
 supersampleFragmentShadingRates
 syscall
 system
-t$ u0H
+t#D;`8t
 t$,9l
 t$`fA
-t%D9	u
-t'fD;)ty
+t'HcP H
+t)=hw
 t,0uWL
 t,@uWL
 t,PuWL
-t/HcG0
-t2HcQ
-t4HcVHD
-t7L;;u
 t9=hw
-t9L;(u
-t:HcQH
 t?H9I H
 tC7Ddx
 tCL9(u
-tDH9:u
 tF[A\A]A^A
-tGD9	u
 tHLcc(D;c8D
 tHvGH
 tKATUH
 tK[A\A]A^A
-tOH;:t
-tOL;(u
-tUHc;I
 tWAVAUATI
+tWLc#D;c
 tYvwH
 t[ATUH
+t_producH
 ta[A\A]A^A
 tangent
 tangents
 tangentt
 tbuffer
 tdata
+teger_doH
 template parameter object for
 terminate called after throwing an instance of
 terminate called recursively
@@ -9236,12 +8943,9 @@ texture1d
 texture1darray
 texture2d
 texture2darray
-texture2darrayindex
-texture2dindex
 texture2dms
 texture2dmsarray
 texture3d
-texture3dindex
 texturebase.cpp
 texturebase.cpp(2437):Error loading texture: %s
 texturebase.cpp(3463):ResourceHandleToData( %s ) failed! Falling back to error texture
@@ -9255,21 +8959,20 @@ texturebase.cpp(3595):ResourceHandleToData( %s ) failed! Falling back to error t
 texturebuffer
 texturecube
 texturecubearray
-texturecubearrayindex
-texturecubeindex
 tgL)c(H
 thread initialization failed
 throw
+tion_reoH
 tls_get_addr
 tm_clone_table
 too many length or distance symbols
+tools
 tools.txt
 topology
 towlower_l
 towupper_l
 transaction clone for
 transaction_safe
-transform
 transparency
 tried to delete shader twice
 trying to bind a deleted shader
@@ -9284,14 +8987,13 @@ typeinfo name for
 u iterated blocks
 u unfinished blocks
 u%HcCxH
-u.fD;P
-u5fD;H
-uGL;%P
 uP[A\A
 uP[A\A]A
 uQ[A\A]A
+u`ARWH
 ubH#D
-uchar32
+ubgroup_H
+uffer_deH
 uiTransparentPixels < PIXELS
 uint16
 uint32
@@ -9321,9 +9023,10 @@ unsigned int Etc::Image::IterateThroughWorstBlocks(unsigned int, unsigned int, u
 unsigned long
 unsigned long long
 unsigned short
-unspecified
-upportedH
 uselocale
+uv<gwZ
+uыr A9r
+v@VATAR
 validation.cache
 varintOffset
 varintSize
@@ -9331,10 +9034,8 @@ vasprintf
 vb_created_input_layout
 vector
 vector2
-vector2d
 vector3
 vector4
-vector4d
 vector::_M_default_append
 vector::_M_range_check: __n (which is %zu) >= this->size() (which is %zu
 vector::_M_realloc_insert
@@ -9344,9 +9045,8 @@ vertex pool
 vertexBindingDivisorCount
 vertexBindingDivisors
 vertexInputState
-vfx_dx11
 vfx_shader_file.cpp
-vfx_vulkan
+vice_addH
 video.cfg
 video_version
 viewMask
@@ -10139,7 +9839,6 @@ vkWriteMicromapsPropertiesEXT
 vmaAllocateMemory
 vmaAllocateMemory failed fallback system memory allocation.  Fatal error: out of video and system memory
 vmaAllocateMemory failed for DEVICE_LOCAL memory indicating video memory is full, trying again in system memory as a fallback
-vmaBeginDefragmentationPass defrag failed with error: %s
 vmaBeginDefragmentationPass: %.2f ms
 vmaBindImageMemory( GetVmaAllocator(), m_pDepthStencilImage->m_pVmaAllocation, m_pDepthStencilImage->m_pImage
 vmaBindImageMemory( GetVmaAllocator(), m_pIntermediateImageResolved->m_pVmaAllocation, m_pIntermediateImageResolved->m_pImage
@@ -10232,7 +9931,6 @@ void libyuv::SplitARGBPlaneOpaque(const uint8_t*, int, uint8_t*, int, uint8_t*, 
 void libyuv::SplitUVRow_16_C(const uint16_t*, uint16_t*, uint16_t*, int, int
 volatile
 vs_4_0
-vs_4_1
 vs_5_0
 vs_6_0
 vsnprintf
@@ -10271,6 +9969,8 @@ vulkan/shadertablevulkan.cpp
 vulkan/texturevulkan.cpp
 vulkan/texturevulkan.cpp(1541
 vulkan/vmaimpl.cpp
+vulkan_aggressive_command_pool_rebalancing
+vulkan_aggressive_command_pool_rebalancing_2gb
 vulkan_alloc_callbacks
 vulkan_allow_cpu
 vulkan_allow_virtual_gpu
@@ -10278,10 +9978,13 @@ vulkan_amd_disable_bind_vertex_buffers_workaround
 vulkan_amd_timestamp_workaround
 vulkan_batch_size
 vulkan_batch_submits
+vulkan_cmd_buffer_pool_size
 vulkan_dedicated_allocation_threshold
+vulkan_depth_texture_as_r32f
 vulkan_descriptor_sets_per_pool
 vulkan_disable_amd_memory_overallocation_behavior
 vulkan_disable_async_compute
+vulkan_disable_device_coherent_allocations
 vulkan_disable_ext_conditional_rendering
 vulkan_disable_ext_depth_bias_control
 vulkan_disable_ext_extended_dynamic_state
@@ -10296,6 +9999,7 @@ vulkan_disable_ext_pageable_device_local_memory
 vulkan_disable_ext_pipeline_creation_cache_control
 vulkan_disable_ext_validation_cache
 vulkan_disable_external_subpass_dependency
+vulkan_disable_fossilize_whitelist
 vulkan_disable_graphics_pipeline_library
 vulkan_disable_khr_buffer_device_address
 vulkan_disable_khr_dynamic_rendering
@@ -10306,6 +10010,7 @@ vulkan_disable_khr_shader_clock
 vulkan_disable_khr_shader_integer_dot_product
 vulkan_disable_khr_swapchain_mutable_format
 vulkan_disable_khr_synchronization2
+vulkan_disable_pipeline_cache
 vulkan_disable_steam_app_shader_cache
 vulkan_disable_steam_downloaded_shader_cache
 vulkan_disable_steam_shader_cache
@@ -10316,15 +10021,19 @@ vulkan_disable_validation_object_lifetimes
 vulkan_disable_validation_shaders
 vulkan_disable_validation_thread_safety
 vulkan_disable_validation_unique_handles
+vulkan_dump_shaders
 vulkan_enable_ext_device_generated_commands
 vulkan_enable_ext_pipeline_robustness
 vulkan_enable_google_display_timing
 vulkan_enable_gpu_validation
+vulkan_enable_nv_raytracing_validation
 vulkan_enable_robustness
 vulkan_enable_sync_validation
 vulkan_enable_validation
 vulkan_force_cpu
+vulkan_force_enable_debug_utils
 vulkan_force_sm60
+vulkan_fossilize_log_verbose
 vulkan_framebuffermgr_print
 vulkan_ignore_ctdl_bindless_non_blocking_issues
 vulkan_ignore_minspec
@@ -10332,26 +10041,37 @@ vulkan_link_time_optimize_libraries
 vulkan_memgr_fragmentation_print
 vulkan_memgr_print
 vulkan_memgr_telemetry_stats
+vulkan_metal_validation
 vulkan_peer2peer_mgpu.vtex
 vulkan_pipeline_compile_spew
 vulkan_pipeline_compile_throttle_ms
 vulkan_pipelinemgr_print
+vulkan_preload_fossilize
 vulkan_readpixels_resolve.vtex
 vulkan_shader_table_print
+vulkan_trim_all_command_pools
 vulkan_trim_all_command_pools_2gb
+vulkan_trim_command_pools
 vulkan_trim_command_pools_2gb
+vulkan_validation_error_assert
+vulkan_validation_error_exit_success
 vulkan_validation_info
 vulkan_validation_warnings
 vulkan_vma_defrag
 vulkan_vma_defrag_each_frame
 vulkan_vma_gpu_mem_dump
-w(9r(A
+vulkan_vma_shutdown
+vulkanrenderthreadstack
+w HcO0L
+w I;w0
 w+OQvr
 w0AUATI
-w0AUATSH
-wHAUATI
+w0E;w@D
 wPAUATSH
-wapchainI
+w\;p0s
+w_latencH
+w`E;wpD
+wapchainH
 wchar_t
 wcrtomb
 wcscmp
@@ -10361,20 +10081,19 @@ wcslen
 wcsnrtombs
 wcsxfrm_l
 wctype_l
+whMcOxAQLc
 with %d x %d thumbnail image
 wmemchr
 wmemcmp
 wmemcpy
 wmemmove
 wmemset
-wpAUATSH
 wpp >= 1 && wpp <= 2
 wrinkle
 writeMask
 writing renderdoc capture to %s
 wwwwwwwwwwwwwww
 wwwwwwwwwwwwwwww
-w耀G耀9耀E
 x != __null
 x0Ysqx
 xChromaOffset
@@ -10384,22 +10103,24 @@ x[A\A
 x[A\A]A^A
 xdigit
 xg^Jp5
-xhH;=y
-xn;F`}iH
 xstat64
-xtfw$<X
+xtended_H
+xv;F`}qH
 xxxxxxxxxxxxxxx
 xxxxxxxxxxxxxxxx
 y != __null
 y0L)A
 yChromaOffset
+y_requirH
+y_timingH
+y_tracinH
 ycbcrModel
 ycbcrRange
-yrt<Hk
-z(H;p8H
-z8H;H8H
-z@WAUH
-zMc^hH
-zXH;p8H
+ynamic_rH
+ynchroniH
+z$fA9z
+z&fA9z
+z0H9z8u
+zation2
 zel#|67
 zyxwvutsrqponmlkjihgfedcba`_^]\[ZYXWVUTSRQPONMLKJIHGFEDCBA@?>=<;:9876543210

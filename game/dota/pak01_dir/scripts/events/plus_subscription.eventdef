@@ -388,13 +388,32 @@
 		{
   			"season_id"				"20"
   			"season_loc_name"		"#DOTA_PlusSeason_SeasonWinter2024_Name"
- 			"season_start_time"		"1725404400" // 2024-12-02 16:00:00 PST
-			"season_end_time"		"1741143600" // 2025-03-04 18:00:00 PST
+ 			"season_start_time"		"1733184000" // 2024-12-02 16:00:00 PST
+			"season_end_time"		"1741107600" // 2025-03-04 09:00:00 PST
 			"season_quests"
 			{
 				"season_quests_action_prefix"	"season_winter_2024_"
 				"season_quests_title"			"#DOTA_PlusSeason_SeasonWinter2024_Quests"
 				"season_quests_subtitle"		"#DOTA_PlusSeason_SeasonWinter2024_Subtitle"
+			}
+		}
+		"spring_2025"
+		{
+  			"season_id"				"21"
+  			"season_loc_name"		"#DOTA_PlusSeason_SeasonSpring2025_Name"
+ 			"season_start_time"		"1741107600" // 2025-03-04 09:00:00 PST
+  			"season_end_time"		"1748991600" // 2025-06-03 16:00:00 PST
+			"season_treasure"
+			{
+				"season_treasure_item_def"		"31199"
+				"season_treasure_image"			"file://{images}/econ/tools/plus_winter_2022_treasure_large.png"
+				"season_treasure_description"	"#DOTA_PlusSeason_SeasonSpring2025_TreasureDescription"
+			}
+			"season_quests"
+			{
+				"season_quests_action_prefix"	"season_spring_2025_"
+				"season_quests_title"			"#DOTA_PlusSeason_SeasonSpring2025_Quests"
+				"season_quests_subtitle"		"#DOTA_PlusSeason_SeasonSpring2025_Subtitle"
 			}
 		}
 	}
@@ -745,6 +764,7 @@
 		"#include"		"scripts/events/plus_seasons/plus_season_summer_2024_quests.eventactions"
 		"#include"		"scripts/events/plus_seasons/plus_season_fall_2024_quests.eventactions"
 		"#include"		"scripts/events/plus_seasons/plus_season_winter_2024_quests.eventactions"
+		"#include"		"scripts/events/plus_seasons/plus_season_spring_2025_quests.eventactions"
 
 		// --------------------------------------------------------------------------
 		//  Chat Wheel
@@ -2189,6 +2209,34 @@
 					"grants"
 					{
 						"grant_item"	"27435"
+					}
+				}
+			}
+		}
+
+		"spring2025_shards_treasure_recycling"
+		{
+			"action_id"					"50050"
+			"max_grants"				"999999"
+		}
+		"spring2025_shards_treasure_recycling_reward"
+		{
+			"action_id"					"50051"
+			"max_grants"				"999999"
+			"claimable_if_prerequisites_satisfied"	"1"
+
+			"prerequisite_actions"
+			{
+				"spring2025_shards_treasure_recycling" "6 + 6n"
+			}
+
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"grants"
+					{
+						"grant_item"	"31199"
 					}
 				}
 			}
@@ -5128,23 +5176,43 @@
 			//}
 
 			// Winter 2024
-			"25_omgomni_2"
+			//"25_omgomni_2"
+			//{
+			//	"percentile"		"25"
+			//	"perk_type"			"Emoticon"
+			//	"perk_value"		"254"
+			//}
+			//"25_luna_rage_2"
+			//{
+			//	"percentile"		"25"
+			//	"perk_type"			"Emoticon"
+			//	"perk_value"		"278"
+			//}
+			//"25_euls_2"
+			//{
+			//	"percentile"		"25"
+			//	"perk_type"			"Emoticon"
+			//	"perk_value"		"273"
+			//}
+
+			// Spring 2025
+			"25_spleen_jump"
 			{
 				"percentile"		"25"
 				"perk_type"			"Emoticon"
-				"perk_value"		"254"
+				"perk_value"		"389"
 			}
-			"25_luna_rage_2"
+			"25_spoon_jump"
 			{
 				"percentile"		"25"
 				"perk_type"			"Emoticon"
-				"perk_value"		"278"
+				"perk_value"		"390"
 			}
-			"25_euls_2"
+			"25_squee_jump"
 			{
 				"percentile"		"25"
 				"perk_type"			"Emoticon"
-				"perk_value"		"273"
+				"perk_value"		"391"
 			}
 
 
@@ -5179,21 +5247,21 @@
 			{
 				"percentile"		"50"
 				"perk_type"			"ChatWheel"
-				"perk_value"		"704"	// Guild_TI10_Spray_17
+				"perk_value"		"714"
 			}
 
 			"50_spray_2"
 			{
 				"percentile"		"50"
 				"perk_type"			"ChatWheel"
-				"perk_value"		"705"	// Guild_ti11_shopkeeper
+				"perk_value"		"715"
 			}
 
 			"50_spray_3"
 			{
 				"percentile"		"50"
 				"perk_type"			"ChatWheel"
-				"perk_value"		"706"	// Guild_TI10_Spray_8
+				"perk_value"		"716"
 			}
 
 		// 75th percentile
@@ -5227,19 +5295,19 @@
 			{
 				"percentile"		"75"
 				"perk_type"			"ChatWheel"
-				"perk_value"		"707" // Guild_TI11_Caster_Chinese_6
+				"perk_value"		"717"
 			}
 			"75_chatline_2"
 			{
 				"percentile"		"75"
 				"perk_type"			"ChatWheel"
-				"perk_value"		"708" // Guild_TI11_Caster_Russian_2
+				"perk_value"		"718"
 			}
 			"75_chatline_3"
 			{
 				"percentile"		"75"
 				"perk_type"			"ChatWheel"
-				"perk_value"		"709" // Guild_TI11_Caster_English_6
+				"perk_value"		"719"
 			}
 		}
 
