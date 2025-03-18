@@ -211,7 +211,7 @@ namespace source2sdk::client
         MODIFIER_PROPERTY_HEALTH_BONUS = 0x61,
         // MScriptDescription "GetModifierExtraStrengthBonus GetModifierManaBonus"
         MODIFIER_PROPERTY_MANA_BONUS = 0x62,
-        // MScriptDescription "xë0û GetModifierExtraStrengthBonus"
+        // MScriptDescription "hë0û GetModifierExtraStrengthBonus"
         MODIFIER_PROPERTY_EXTRA_STRENGTH_BONUS = 0x63,
         // MScriptDescription "m_activityModifier GetModifierExtraHealthBonus"
         MODIFIER_PROPERTY_EXTRA_HEALTH_BONUS = 0x64,
