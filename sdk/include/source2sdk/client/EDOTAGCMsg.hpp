@@ -8,7 +8,7 @@
 
 namespace source2sdk::client
 {
-    // Enumerator count: 957
+    // Enumerator count: 959
     // Alignment: 4
     // Size: 0x4
     enum class EDOTAGCMsg : std::uint32_t
@@ -180,6 +180,8 @@ namespace source2sdk::client
         k_EMsgServerToGCRequestBatchPlayerResources = 0x1d1a,
         k_EMsgServerToGCRequestBatchPlayerResourcesResponse = 0x1d1b,
         k_EMsgGCCompendiumSetSelectionResponse = 0x1d1d,
+        k_EMsgGCRankedPlayerInfoSubmit = 0x1d1e,
+        k_EMsgGCRankedPlayerInfoSubmitResponse = 0x1d1f,
         k_EMsgGCPlayerInfoSubmit = 0x1d20,
         k_EMsgGCPlayerInfoSubmitResponse = 0x1d21,
         k_EMsgGCToGCGetAccountLevel = 0x1d22,

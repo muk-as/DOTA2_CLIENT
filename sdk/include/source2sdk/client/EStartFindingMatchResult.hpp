@@ -8,7 +8,7 @@
 
 namespace source2sdk::client
 {
-    // Enumerator count: 39
+    // Enumerator count: 41
     // Alignment: 4
     // Size: 0x4
     enum class EStartFindingMatchResult : std::uint32_t
@@ -52,5 +52,7 @@ namespace source2sdk::client
         k_EStartFindingMatchResult_SteamChinaBanned = 0x85,
         k_EStartFindingMatchResult_SteamChinaInvalidMixedParty = 0x86,
         k_EStartFindingMatchResult_RestrictedFromRanked = 0x87,
+        k_EStartFindingMatchResult_RankPreventsParties = 0x88,
+        k_EStartFindingMatchResult_RegisteredNameRequired = 0x89,
     };
 };
