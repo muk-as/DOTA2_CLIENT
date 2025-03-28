@@ -8,7 +8,7 @@
 
 namespace source2sdk::client
 {
-    // Enumerator count: 20
+    // Enumerator count: 21
     // Alignment: 4
     // Size: 0x4
     enum class DOTADamageFlag_t : std::uint32_t
@@ -33,5 +33,6 @@ namespace source2sdk::client
         DOTA_DAMAGE_FLAG_MAGIC_AUTO_ATTACK = 0x20000,
         DOTA_DAMAGE_FLAG_ATTACK_MODIFIER = 0x40000,
         DOTA_DAMAGE_FLAG_BYPASSES_ALL_BLOCK = 0x80000,
+        DOTA_DAMAGE_FLAG_NO_REFLECTION = 0x100000,
     };
 };
