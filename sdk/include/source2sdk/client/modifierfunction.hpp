@@ -129,7 +129,7 @@ namespace source2sdk::client
         MODIFIER_PROPERTY_SPELL_LIFESTEAL_AMPLIFY_PERCENTAGE = 0x38,
         // MScriptDescription "GetModifierMPRegenAmplify_Percentage GetModifierSpellLifestealRegenAmplify_Percentage_Unique"
         MODIFIER_PROPERTY_SPELL_LIFESTEAL_AMPLIFY_PERCENTAGE_UNIQUE = 0x39,
-        // MScriptDescription "ˆ€ë0û GetModifierMPRegenAmplify_Percentage"
+        // MScriptDescription "˜€ë0û GetModifierMPRegenAmplify_Percentage"
         MODIFIER_PROPERTY_MP_REGEN_AMPLIFY_PERCENTAGE = 0x3a,
         // MScriptDescription "P¾ý1û GetModifierMPRegenAmplify_Percentage_Unique"
         MODIFIER_PROPERTY_MP_REGEN_AMPLIFY_PERCENTAGE_UNIQUE = 0x3b,
