@@ -1,4 +1,7 @@
 #pragma once
+
+#include "source2sdk/source2gen/source2gen.hpp"
+#include <cstddef>
 #include <cstdint>
 
 // /////////////////////////////////////////////////////////////
@@ -6,22 +9,25 @@
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::client
+namespace source2sdk
 {
-    // Enumerator count: 5
-    // Alignment: 4
-    // Size: 0x4
-    enum class StanceType_t : std::uint32_t
+    namespace client
     {
-        // MPropertySuppressEnumerator
-        STANCE_CURRENT = 0xffffffff,
-        // MPropertyFriendlyName "Default"
-        STANCE_DEFAULT = 0x0,
-        // MPropertyFriendlyName "Crouching"
-        STANCE_CROUCHING = 0x1,
-        // MPropertyFriendlyName "Prone"
-        STANCE_PRONE = 0x2,
-        // MPropertySuppressEnumerator
-        NUM_STANCES = 0x3,
+        // Enumerator count: 5
+        // Alignment: 4
+        // Size: 0x4
+        enum class StanceType_t : std::uint32_t
+        {
+            // MPropertySuppressEnumerator
+            STANCE_CURRENT = 0xffffffff,
+            // MPropertyFriendlyName "Default"
+            STANCE_DEFAULT = 0x0,
+            // MPropertyFriendlyName "Crouching"
+            STANCE_CROUCHING = 0x1,
+            // MPropertyFriendlyName "Prone"
+            STANCE_PRONE = 0x2,
+            // MPropertySuppressEnumerator
+            NUM_STANCES = 0x3,
+        };
     };
 };

@@ -1,4 +1,7 @@
 #pragma once
+
+#include "source2sdk/source2gen/source2gen.hpp"
+#include <cstddef>
 #include <cstdint>
 
 // /////////////////////////////////////////////////////////////
@@ -6,15 +9,18 @@
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::client
+namespace source2sdk
 {
-    // Enumerator count: 3
-    // Alignment: 4
-    // Size: 0x4
-    enum class EStickerbookPageType : std::uint32_t
+    namespace client
     {
-        STICKER_PAGE_GENERIC = 0x0,
-        STICKER_PAGE_TEAM = 0x1,
-        STICKER_PAGE_TALENT = 0x2,
+        // Enumerator count: 3
+        // Alignment: 4
+        // Size: 0x4
+        enum class EStickerbookPageType : std::uint32_t
+        {
+            STICKER_PAGE_GENERIC = 0x0,
+            STICKER_PAGE_TEAM = 0x1,
+            STICKER_PAGE_TALENT = 0x2,
+        };
     };
 };

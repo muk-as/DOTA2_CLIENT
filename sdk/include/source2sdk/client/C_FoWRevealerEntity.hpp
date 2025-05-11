@@ -1,31 +1,36 @@
 #pragma once
-#include "source2sdk/client/C_BaseEntity.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/client/C_BaseEntity.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: client
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::client
+namespace source2sdk
 {
-    // Registered alignment: 0x8
-    // Alignment: 0x8
-    // Standard-layout class: false
-    // Size: 0x568
-    // Has VTable
-    // Construct allowed
-    #pragma pack(push, 1)
-    class C_FoWRevealerEntity : public client::C_BaseEntity
+    namespace client
     {
-    public:
-        uint32_t m_unViewerTeam; // 0x560        
-        int32_t m_nVisionRange; // 0x564        
+        // Registered alignment: 0x8
+        // Alignment: 0x8
+        // Standard-layout class: false
+        // Size: 0x518
+        // Has VTable
+        // Construct allowed
+        #pragma pack(push, 1)
+        class C_FoWRevealerEntity : public source2sdk::client::C_BaseEntity
+        {
+        public:
+            std::uint32_t m_unViewerTeam; // 0x510            
+            std::int32_t m_nVisionRange; // 0x514            
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in C_FoWRevealerEntity because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::client::C_FoWRevealerEntity) == 0x518);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in C_FoWRevealerEntity because it is not a standard-layout class
-    static_assert(sizeof(C_FoWRevealerEntity) == 0x568);
 };

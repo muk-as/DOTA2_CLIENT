@@ -1,4 +1,7 @@
 #pragma once
+
+#include "source2sdk/source2gen/source2gen.hpp"
+#include <cstddef>
 #include <cstdint>
 
 // /////////////////////////////////////////////////////////////
@@ -6,18 +9,21 @@
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::client
+namespace source2sdk
 {
-    // Enumerator count: 6
-    // Alignment: 1
-    // Size: 0x1
-    enum class EArtyGraphicsType : std::uint8_t
+    namespace client
     {
-        k_eSprite = 0,
-        k_eAnimatedSprite = 1,
-        k_eProgressBar = 2,
-        k_eUnit = 3,
-        k_eHero = 4,
-        k_eParticle = 5,
+        // Enumerator count: 6
+        // Alignment: 1
+        // Size: 0x1
+        enum class EArtyGraphicsType : std::uint8_t
+        {
+            k_eSprite = 0x0,
+            k_eAnimatedSprite = 0x1,
+            k_eProgressBar = 0x2,
+            k_eUnit = 0x3,
+            k_eHero = 0x4,
+            k_eParticle = 0x5,
+        };
     };
 };

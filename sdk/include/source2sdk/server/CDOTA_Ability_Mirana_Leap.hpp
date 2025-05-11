@@ -1,35 +1,35 @@
 #pragma once
-#include "source2sdk/server/CDOTABaseAbility.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/server/CDOTABaseAbility.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: server
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::server
+namespace source2sdk
 {
-    // Registered alignment: 0x8
-    // Alignment: 0x8
-    // Standard-layout class: false
-    // Size: 0x5e8
-    // Has VTable
-    // Construct allowed
-    // MClassHasEntityLimitedDataDesc
-    #pragma pack(push, 1)
-    class CDOTA_Ability_Mirana_Leap : public server::CDOTABaseAbility
+    namespace server
     {
-    public:
-        bool m_bIsVectorTargeted; // 0x5c8        
-        [[maybe_unused]] std::uint8_t pad_0x5c9[0x3]; // 0x5c9
-        Vector m_vEndpoint; // 0x5cc        
-        Vector m_vLandPosition; // 0x5d8        
-        [[maybe_unused]] std::uint8_t pad_0x5e4[0x4];
+        // Registered alignment: 0x8
+        // Alignment: 0x8
+        // Standard-layout class: false
+        // Size: 0x5b8
+        // Has VTable
+        // Construct allowed
+        // MClassHasEntityLimitedDataDesc
+        #pragma pack(push, 1)
+        class CDOTA_Ability_Mirana_Leap : public source2sdk::server::CDOTABaseAbility
+        {
+        public:
+            // No schema binary for binding
+        };
+        #pragma pack(pop)
+        
+        
+        static_assert(sizeof(source2sdk::server::CDOTA_Ability_Mirana_Leap) == 0x5b8);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in CDOTA_Ability_Mirana_Leap because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Ability_Mirana_Leap) == 0x5e8);
 };

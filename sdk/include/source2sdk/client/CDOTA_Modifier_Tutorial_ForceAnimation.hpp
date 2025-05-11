@@ -1,32 +1,37 @@
 #pragma once
-#include "source2sdk/client/CDOTA_Buff.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/client/CDOTA_Buff.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: client
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::client
+namespace source2sdk
 {
-    // Registered alignment: unknown
-    // Alignment: unknown
-    // Standard-layout class: false
-    // Size: 0x1710
-    // Has VTable
-    #pragma pack(push, 1)
-    class CDOTA_Modifier_Tutorial_ForceAnimation : public client::CDOTA_Buff
+    namespace client
     {
-    public:
-        int32_t m_nActivity; // 0x1708        
-        bool m_bLoop; // 0x170c        
-        bool m_bFacePlayer; // 0x170d        
-        [[maybe_unused]] std::uint8_t pad_0x170e[0x2];
+        // Registered alignment: unknown
+        // Alignment: unknown
+        // Standard-layout class: false
+        // Size: 0x1800
+        // Has VTable
+        #pragma pack(push, 1)
+        class CDOTA_Modifier_Tutorial_ForceAnimation : public source2sdk::client::CDOTA_Buff
+        {
+        public:
+            std::int32_t m_nActivity; // 0x17f8            
+            bool m_bLoop; // 0x17fc            
+            bool m_bFacePlayer; // 0x17fd            
+            uint8_t _pad17fe[0x2];
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in CDOTA_Modifier_Tutorial_ForceAnimation because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Tutorial_ForceAnimation) == 0x1800);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in CDOTA_Modifier_Tutorial_ForceAnimation because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_Tutorial_ForceAnimation) == 0x1710);
 };

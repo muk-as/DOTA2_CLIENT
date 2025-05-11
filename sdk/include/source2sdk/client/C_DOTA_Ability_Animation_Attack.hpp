@@ -1,32 +1,37 @@
 #pragma once
-#include "source2sdk/client/C_DOTABaseAbility.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/client/C_DOTABaseAbility.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: client
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::client
+namespace source2sdk
 {
-    // Registered alignment: unknown
-    // Alignment: 0x8
-    // Standard-layout class: false
-    // Size: 0x608
-    // Has VTable
-    // Is Abstract
-    // MClassHasEntityLimitedDataDesc
-    #pragma pack(push, 1)
-    class C_DOTA_Ability_Animation_Attack : public client::C_DOTABaseAbility
+    namespace client
     {
-    public:
-        float animation_time; // 0x600        
-        [[maybe_unused]] std::uint8_t pad_0x604[0x4];
+        // Registered alignment: unknown
+        // Alignment: 0x8
+        // Standard-layout class: false
+        // Size: 0x5b8
+        // Has VTable
+        // Is Abstract
+        // MClassHasEntityLimitedDataDesc
+        #pragma pack(push, 1)
+        class C_DOTA_Ability_Animation_Attack : public source2sdk::client::C_DOTABaseAbility
+        {
+        public:
+            float animation_time; // 0x5b0            
+            uint8_t _pad05b4[0x4];
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in C_DOTA_Ability_Animation_Attack because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Animation_Attack) == 0x5b8);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in C_DOTA_Ability_Animation_Attack because it is not a standard-layout class
-    static_assert(sizeof(C_DOTA_Ability_Animation_Attack) == 0x608);
 };

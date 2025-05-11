@@ -1,32 +1,37 @@
 #pragma once
-#include "source2sdk/client/C_DOTABaseAbility.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/client/C_DOTABaseAbility.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: client
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::client
+namespace source2sdk
 {
-    // Registered alignment: 0x8
-    // Alignment: 0x8
-    // Standard-layout class: false
-    // Size: 0x608
-    // Has VTable
-    // Construct allowed
-    // MClassHasEntityLimitedDataDesc
-    #pragma pack(push, 1)
-    class CDOTA_Ability_Shadow_Demon_Demonic_Purge : public client::C_DOTABaseAbility
+    namespace client
     {
-    public:
-        bool m_bGrantedScepterCharges; // 0x600        
-        [[maybe_unused]] std::uint8_t pad_0x601[0x7];
+        // Registered alignment: 0x8
+        // Alignment: 0x8
+        // Standard-layout class: false
+        // Size: 0x5b8
+        // Has VTable
+        // Construct allowed
+        // MClassHasEntityLimitedDataDesc
+        #pragma pack(push, 1)
+        class CDOTA_Ability_Shadow_Demon_Demonic_Purge : public source2sdk::client::C_DOTABaseAbility
+        {
+        public:
+            bool m_bGrantedScepterCharges; // 0x5b0            
+            uint8_t _pad05b1[0x7];
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in CDOTA_Ability_Shadow_Demon_Demonic_Purge because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::client::CDOTA_Ability_Shadow_Demon_Demonic_Purge) == 0x5b8);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in CDOTA_Ability_Shadow_Demon_Demonic_Purge because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Ability_Shadow_Demon_Demonic_Purge) == 0x608);
 };

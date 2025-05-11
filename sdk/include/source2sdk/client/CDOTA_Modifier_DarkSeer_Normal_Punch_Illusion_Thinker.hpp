@@ -1,40 +1,47 @@
 #pragma once
-#include "source2sdk/client/CDOTA_Buff.hpp"
-#include "source2sdk/client/ParticleIndex_t.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/client/CDOTA_Buff.hpp"
+#include "source2sdk/client/ParticleIndex_t.hpp"
+namespace source2sdk
+{
+    namespace client
+    {
+        struct C_BaseEntity;
+    };
+};
 
 // /////////////////////////////////////////////////////////////
 // Module: client
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::client
+namespace source2sdk
 {
-    class C_BaseEntity;
-};
-
-namespace source2sdk::client
-{
-    // Registered alignment: unknown
-    // Alignment: unknown
-    // Standard-layout class: false
-    // Size: 0x1720
-    // Has VTable
-    #pragma pack(push, 1)
-    class CDOTA_Modifier_DarkSeer_Normal_Punch_Illusion_Thinker : public client::CDOTA_Buff
+    namespace client
     {
-    public:
-        Vector m_vecIllusionSpawnPosition; // 0x1708        
-        int32_t speed; // 0x1714        
-        // m_hTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
-        // CHandle<client::C_BaseEntity> m_hTarget;
-        char m_hTarget[0x4]; // 0x1718        
-        client::ParticleIndex_t m_nFXIndex; // 0x171c        
+        // Registered alignment: unknown
+        // Alignment: unknown
+        // Standard-layout class: false
+        // Size: 0x1810
+        // Has VTable
+        #pragma pack(push, 1)
+        class CDOTA_Modifier_DarkSeer_Normal_Punch_Illusion_Thinker : public source2sdk::client::CDOTA_Buff
+        {
+        public:
+            Vector m_vecIllusionSpawnPosition; // 0x17f8            
+            std::int32_t speed; // 0x1804            
+            // m_hTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+            // CHandle<source2sdk::client::C_BaseEntity> m_hTarget;
+            char m_hTarget[0x4]; // 0x1808            
+            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x180c            
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in CDOTA_Modifier_DarkSeer_Normal_Punch_Illusion_Thinker because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_DarkSeer_Normal_Punch_Illusion_Thinker) == 0x1810);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in CDOTA_Modifier_DarkSeer_Normal_Punch_Illusion_Thinker because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_DarkSeer_Normal_Punch_Illusion_Thinker) == 0x1720);
 };

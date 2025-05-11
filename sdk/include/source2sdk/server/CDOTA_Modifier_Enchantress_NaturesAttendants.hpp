@@ -1,37 +1,42 @@
 #pragma once
-#include "source2sdk/client/CDOTA_Buff.hpp"
-#include "source2sdk/client/ParticleIndex_t.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/client/CDOTA_Buff.hpp"
+#include "source2sdk/client/ParticleIndex_t.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: server
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::server
+namespace source2sdk
 {
-    // Registered alignment: unknown
-    // Alignment: unknown
-    // Standard-layout class: false
-    // Size: 0x1728
-    // Has VTable
-    #pragma pack(push, 1)
-    class CDOTA_Modifier_Enchantress_NaturesAttendants : public client::CDOTA_Buff
+    namespace server
     {
-    public:
-        float heal_interval; // 0x1708        
-        float heal; // 0x170c        
-        int32_t radius; // 0x1710        
-        int32_t movespeed; // 0x1714        
-        int32_t wisp_count; // 0x1718        
-        client::ParticleIndex_t m_nWispFXIndex; // 0x171c        
-        bool m_bAutoWisps; // 0x1720        
-        [[maybe_unused]] std::uint8_t pad_0x1721[0x7];
+        // Registered alignment: unknown
+        // Alignment: unknown
+        // Standard-layout class: false
+        // Size: 0x1818
+        // Has VTable
+        #pragma pack(push, 1)
+        class CDOTA_Modifier_Enchantress_NaturesAttendants : public source2sdk::client::CDOTA_Buff
+        {
+        public:
+            float heal_interval; // 0x17f8            
+            float heal; // 0x17fc            
+            float radius; // 0x1800            
+            float movespeed; // 0x1804            
+            std::int32_t wisp_count; // 0x1808            
+            source2sdk::client::ParticleIndex_t m_nWispFXIndex; // 0x180c            
+            bool m_bAutoWisps; // 0x1810            
+            uint8_t _pad1811[0x7];
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in CDOTA_Modifier_Enchantress_NaturesAttendants because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Enchantress_NaturesAttendants) == 0x1818);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in CDOTA_Modifier_Enchantress_NaturesAttendants because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_Enchantress_NaturesAttendants) == 0x1728);
 };

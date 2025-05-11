@@ -1,37 +1,42 @@
 #pragma once
-#include "source2sdk/server/CBaseCombatCharacter.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/server/CBaseCombatCharacter.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: server
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::server
+namespace source2sdk
 {
-    // Registered alignment: 0x8
-    // Alignment: 0x8
-    // Standard-layout class: false
-    // Size: 0x968
-    // Has VTable
-    // Construct allowed
-    // MClassHasEntityLimitedDataDesc
-    // 
-    // static metadata: MNetworkVarNames "uint8 m_nLod"
-    #pragma pack(push, 1)
-    class NextBotCombatCharacter : public server::CBaseCombatCharacter
+    namespace server
     {
-    public:
-        [[maybe_unused]] std::uint8_t pad_0x8d8[0x88]; // 0x8d8
-        // metadata: MNetworkEnable
-        uint8_t m_nLod; // 0x960        
-        bool m_didModelChange; // 0x961        
-        [[maybe_unused]] std::uint8_t pad_0x962[0x6];
+        // Registered alignment: 0x8
+        // Alignment: 0x8
+        // Standard-layout class: false
+        // Size: 0x9a0
+        // Has VTable
+        // Construct allowed
+        // MClassHasEntityLimitedDataDesc
+        // 
+        // static metadata: MNetworkVarNames "uint8 m_nLod"
+        #pragma pack(push, 1)
+        class NextBotCombatCharacter : public source2sdk::server::CBaseCombatCharacter
+        {
+        public:
+            uint8_t _pad0910[0x88]; // 0x910
+            // metadata: MNetworkEnable
+            std::uint8_t m_nLod; // 0x998            
+            bool m_didModelChange; // 0x999            
+            uint8_t _pad099a[0x6];
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in NextBotCombatCharacter because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::server::NextBotCombatCharacter) == 0x9a0);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in NextBotCombatCharacter because it is not a standard-layout class
-    static_assert(sizeof(NextBotCombatCharacter) == 0x968);
 };

@@ -1,4 +1,7 @@
 #pragma once
+
+#include "source2sdk/source2gen/source2gen.hpp"
+#include <cstddef>
 #include <cstdint>
 
 // /////////////////////////////////////////////////////////////
@@ -6,16 +9,19 @@
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::client
+namespace source2sdk
 {
-    // Enumerator count: 4
-    // Alignment: 4
-    // Size: 0x4
-    enum class EQueryCvarValueStatus : std::uint32_t
+    namespace client
     {
-        eQueryCvarValueStatus_ValueIntact = 0x0,
-        eQueryCvarValueStatus_CvarNotFound = 0x1,
-        eQueryCvarValueStatus_NotACvar = 0x2,
-        eQueryCvarValueStatus_CvarProtected = 0x3,
+        // Enumerator count: 4
+        // Alignment: 4
+        // Size: 0x4
+        enum class EQueryCvarValueStatus : std::uint32_t
+        {
+            eQueryCvarValueStatus_ValueIntact = 0x0,
+            eQueryCvarValueStatus_CvarNotFound = 0x1,
+            eQueryCvarValueStatus_NotACvar = 0x2,
+            eQueryCvarValueStatus_CvarProtected = 0x3,
+        };
     };
 };

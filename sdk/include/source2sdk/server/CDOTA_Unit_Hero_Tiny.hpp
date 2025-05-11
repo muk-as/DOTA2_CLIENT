@@ -1,55 +1,64 @@
 #pragma once
-#include "source2sdk/client/ParticleIndex_t.hpp"
-#include "source2sdk/server/CDOTA_BaseNPC_Hero.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/client/ParticleIndex_t.hpp"
+#include "source2sdk/server/CDOTA_BaseNPC_Hero.hpp"
+namespace source2sdk
+{
+    namespace server
+    {
+        struct CBaseEntity;
+    };
+};
+namespace source2sdk
+{
+    namespace server
+    {
+        struct CDOTA_BaseNPC;
+    };
+};
 
 // /////////////////////////////////////////////////////////////
 // Module: server
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::server
+namespace source2sdk
 {
-    class CBaseEntity;
-};
-
-namespace source2sdk::server
-{
-    class CDOTA_BaseNPC;
-};
-
-namespace source2sdk::server
-{
-    // Registered alignment: 0x8
-    // Alignment: 0x8
-    // Standard-layout class: false
-    // Size: 0x1ed8
-    // Has VTable
-    // Construct allowed
-    // MClassHasEntityLimitedDataDesc
-    // 
-    // static metadata: MNetworkVarNames "CHandle< CDOTA_BaseNPC> m_hIllusionOwner"
-    // static metadata: MNetworkVarNames "bool m_bIllusionHasTree"
-    #pragma pack(push, 1)
-    class CDOTA_Unit_Hero_Tiny : public server::CDOTA_BaseNPC_Hero
+    namespace server
     {
-    public:
-        // m_hTreeWearable has a template type with potentially unknown template parameters. You can try uncommenting the field below.
-        // CHandle<server::CBaseEntity> m_hTreeWearable;
-        char m_hTreeWearable[0x4]; // 0x1ec8        
-        client::ParticleIndex_t m_nFXIndexScepterAmbient; // 0x1ecc        
-        // metadata: MNetworkEnable
-        // m_hIllusionOwner has a template type with potentially unknown template parameters. You can try uncommenting the field below.
-        // CHandle<server::CDOTA_BaseNPC> m_hIllusionOwner;
-        char m_hIllusionOwner[0x4]; // 0x1ed0        
-        // metadata: MNetworkEnable
-        bool m_bIllusionHasTree; // 0x1ed4        
-        [[maybe_unused]] std::uint8_t pad_0x1ed5[0x3];
+        // Registered alignment: 0x8
+        // Alignment: 0x8
+        // Standard-layout class: false
+        // Size: 0x1ea0
+        // Has VTable
+        // Construct allowed
+        // MClassHasEntityLimitedDataDesc
+        // 
+        // static metadata: MNetworkVarNames "CHandle< CDOTA_BaseNPC> m_hIllusionOwner"
+        // static metadata: MNetworkVarNames "bool m_bIllusionHasTree"
+        #pragma pack(push, 1)
+        class CDOTA_Unit_Hero_Tiny : public source2sdk::server::CDOTA_BaseNPC_Hero
+        {
+        public:
+            // m_hTreeWearable has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+            // CHandle<source2sdk::server::CBaseEntity> m_hTreeWearable;
+            char m_hTreeWearable[0x4]; // 0x1e90            
+            source2sdk::client::ParticleIndex_t m_nFXIndexScepterAmbient; // 0x1e94            
+            // metadata: MNetworkEnable
+            // m_hIllusionOwner has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+            // CHandle<source2sdk::server::CDOTA_BaseNPC> m_hIllusionOwner;
+            char m_hIllusionOwner[0x4]; // 0x1e98            
+            // metadata: MNetworkEnable
+            bool m_bIllusionHasTree; // 0x1e9c            
+            uint8_t _pad1e9d[0x3];
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in CDOTA_Unit_Hero_Tiny because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::server::CDOTA_Unit_Hero_Tiny) == 0x1ea0);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in CDOTA_Unit_Hero_Tiny because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Unit_Hero_Tiny) == 0x1ed8);
 };

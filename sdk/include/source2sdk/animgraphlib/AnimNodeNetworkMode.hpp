@@ -1,4 +1,7 @@
 #pragma once
+
+#include "source2sdk/source2gen/source2gen.hpp"
+#include <cstddef>
 #include <cstdint>
 
 // /////////////////////////////////////////////////////////////
@@ -6,16 +9,19 @@
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::animgraphlib
+namespace source2sdk
 {
-    // Enumerator count: 2
-    // Alignment: 4
-    // Size: 0x4
-    enum class AnimNodeNetworkMode : std::uint32_t
+    namespace animgraphlib
     {
-        // MPropertyFriendlyName "Server Authoritative"
-        ServerAuthoritative = 0x0,
-        // MPropertyFriendlyName "Client Simulate"
-        ClientSimulate = 0x1,
+        // Enumerator count: 2
+        // Alignment: 4
+        // Size: 0x4
+        enum class AnimNodeNetworkMode : std::uint32_t
+        {
+            // MPropertyFriendlyName "Server Authoritative"
+            ServerAuthoritative = 0x0,
+            // MPropertyFriendlyName "Client Simulate"
+            ClientSimulate = 0x1,
+        };
     };
 };

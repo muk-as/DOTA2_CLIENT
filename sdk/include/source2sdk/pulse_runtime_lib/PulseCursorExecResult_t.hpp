@@ -1,4 +1,7 @@
 #pragma once
+
+#include "source2sdk/source2gen/source2gen.hpp"
+#include <cstddef>
 #include <cstdint>
 
 // /////////////////////////////////////////////////////////////
@@ -6,16 +9,19 @@
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::pulse_runtime_lib
+namespace source2sdk
 {
-    // Enumerator count: 4
-    // Alignment: 4
-    // Size: 0x4
-    enum class PulseCursorExecResult_t : std::uint32_t
+    namespace pulse_runtime_lib
     {
-        Succeeded = 0x0,
-        Canceled = 0x1,
-        Failed = 0x2,
-        OngoingNotify = 0x3,
+        // Enumerator count: 4
+        // Alignment: 4
+        // Size: 0x4
+        enum class PulseCursorExecResult_t : std::uint32_t
+        {
+            Succeeded = 0x0,
+            Canceled = 0x1,
+            Failed = 0x2,
+            OngoingNotify = 0x3,
+        };
     };
 };

@@ -1,30 +1,35 @@
 #pragma once
-#include "source2sdk/server/CDOTA_Item_Necronomicon.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/server/CDOTA_Item_Necronomicon.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: server
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::server
+namespace source2sdk
 {
-    // Registered alignment: 0x8
-    // Alignment: 0x8
-    // Standard-layout class: false
-    // Size: 0x678
-    // Has VTable
-    // Construct allowed
-    // MClassHasEntityLimitedDataDesc
-    #pragma pack(push, 1)
-    class CDOTA_Item_Necronomicon_Level2 : public server::CDOTA_Item_Necronomicon
+    namespace server
     {
-    public:
-        // No schema binary for binding
+        // Registered alignment: 0x8
+        // Alignment: 0x8
+        // Standard-layout class: false
+        // Size: 0x690
+        // Has VTable
+        // Construct allowed
+        // MClassHasEntityLimitedDataDesc
+        #pragma pack(push, 1)
+        class CDOTA_Item_Necronomicon_Level2 : public source2sdk::server::CDOTA_Item_Necronomicon
+        {
+        public:
+            // No schema binary for binding
+        };
+        #pragma pack(pop)
+        
+        
+        static_assert(sizeof(source2sdk::server::CDOTA_Item_Necronomicon_Level2) == 0x690);
     };
-    #pragma pack(pop)
-    
-    static_assert(sizeof(CDOTA_Item_Necronomicon_Level2) == 0x678);
 };

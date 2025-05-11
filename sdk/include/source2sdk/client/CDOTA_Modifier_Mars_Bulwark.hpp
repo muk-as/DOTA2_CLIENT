@@ -1,32 +1,37 @@
 #pragma once
-#include "source2sdk/client/CDOTA_Buff.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/client/CDOTA_Buff.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: client
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::client
+namespace source2sdk
 {
-    // Registered alignment: unknown
-    // Alignment: unknown
-    // Standard-layout class: false
-    // Size: 0x1718
-    // Has VTable
-    #pragma pack(push, 1)
-    class CDOTA_Modifier_Mars_Bulwark : public client::CDOTA_Buff
+    namespace client
     {
-    public:
-        float physical_damage_reduction; // 0x1708        
-        float physical_damage_reduction_side; // 0x170c        
-        float forward_angle; // 0x1710        
-        float side_angle; // 0x1714        
+        // Registered alignment: unknown
+        // Alignment: unknown
+        // Standard-layout class: false
+        // Size: 0x1808
+        // Has VTable
+        #pragma pack(push, 1)
+        class CDOTA_Modifier_Mars_Bulwark : public source2sdk::client::CDOTA_Buff
+        {
+        public:
+            float physical_damage_reduction; // 0x17f8            
+            float physical_damage_reduction_side; // 0x17fc            
+            float forward_angle; // 0x1800            
+            float side_angle; // 0x1804            
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in CDOTA_Modifier_Mars_Bulwark because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Mars_Bulwark) == 0x1808);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in CDOTA_Modifier_Mars_Bulwark because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_Mars_Bulwark) == 0x1718);
 };

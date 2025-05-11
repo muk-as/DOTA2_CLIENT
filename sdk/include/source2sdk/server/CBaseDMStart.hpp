@@ -1,30 +1,35 @@
 #pragma once
-#include "source2sdk/server/CPointEntity.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/server/CPointEntity.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: server
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::server
+namespace source2sdk
 {
-    // Registered alignment: 0x8
-    // Alignment: 0x8
-    // Standard-layout class: false
-    // Size: 0x4e8
-    // Has VTable
-    // Construct allowed
-    #pragma pack(push, 1)
-    class CBaseDMStart : public server::CPointEntity
+    namespace server
     {
-    public:
-        CUtlSymbolLarge m_Master; // 0x4e0        
+        // Registered alignment: 0x8
+        // Alignment: 0x8
+        // Standard-layout class: false
+        // Size: 0x4e0
+        // Has VTable
+        // Construct allowed
+        #pragma pack(push, 1)
+        class CBaseDMStart : public source2sdk::server::CPointEntity
+        {
+        public:
+            CUtlSymbolLarge m_Master; // 0x4d8            
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in CBaseDMStart because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::server::CBaseDMStart) == 0x4e0);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in CBaseDMStart because it is not a standard-layout class
-    static_assert(sizeof(CBaseDMStart) == 0x4e8);
 };

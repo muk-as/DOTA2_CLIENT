@@ -1,4 +1,7 @@
 #pragma once
+
+#include "source2sdk/source2gen/source2gen.hpp"
+#include <cstddef>
 #include <cstdint>
 
 // /////////////////////////////////////////////////////////////
@@ -6,15 +9,18 @@
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::physicslib
+namespace source2sdk
 {
-    // Enumerator count: 3
-    // Alignment: 4
-    // Size: 0x4
-    enum class JointMotion_t : std::uint32_t
+    namespace physicslib
     {
-        JOINT_MOTION_FREE = 0x0,
-        JOINT_MOTION_LOCKED = 0x1,
-        JOINT_MOTION_COUNT = 0x2,
+        // Enumerator count: 3
+        // Alignment: 4
+        // Size: 0x4
+        enum class JointMotion_t : std::uint32_t
+        {
+            JOINT_MOTION_FREE = 0x0,
+            JOINT_MOTION_LOCKED = 0x1,
+            JOINT_MOTION_COUNT = 0x2,
+        };
     };
 };

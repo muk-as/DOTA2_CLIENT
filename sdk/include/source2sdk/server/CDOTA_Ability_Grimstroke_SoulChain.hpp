@@ -1,34 +1,39 @@
 #pragma once
-#include "source2sdk/server/CDOTABaseAbility.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/server/CDOTABaseAbility.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: server
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::server
+namespace source2sdk
 {
-    // Registered alignment: 0x8
-    // Alignment: 0x8
-    // Standard-layout class: false
-    // Size: 0x5d8
-    // Has VTable
-    // Construct allowed
-    // MClassHasEntityLimitedDataDesc
-    #pragma pack(push, 1)
-    class CDOTA_Ability_Grimstroke_SoulChain : public server::CDOTABaseAbility
+    namespace server
     {
-    public:
-        float chain_duration; // 0x5c8        
-        int32_t chain_latch_radius; // 0x5cc        
-        float creep_duration_pct; // 0x5d0        
-        [[maybe_unused]] std::uint8_t pad_0x5d4[0x4];
+        // Registered alignment: 0x8
+        // Alignment: 0x8
+        // Standard-layout class: false
+        // Size: 0x5c8
+        // Has VTable
+        // Construct allowed
+        // MClassHasEntityLimitedDataDesc
+        #pragma pack(push, 1)
+        class CDOTA_Ability_Grimstroke_SoulChain : public source2sdk::server::CDOTABaseAbility
+        {
+        public:
+            float chain_duration; // 0x5b8            
+            float chain_latch_radius; // 0x5bc            
+            float creep_duration_pct; // 0x5c0            
+            uint8_t _pad05c4[0x4];
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in CDOTA_Ability_Grimstroke_SoulChain because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::server::CDOTA_Ability_Grimstroke_SoulChain) == 0x5c8);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in CDOTA_Ability_Grimstroke_SoulChain because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Ability_Grimstroke_SoulChain) == 0x5d8);
 };

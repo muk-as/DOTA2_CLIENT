@@ -1,4 +1,7 @@
 #pragma once
+
+#include "source2sdk/source2gen/source2gen.hpp"
+#include <cstddef>
 #include <cstdint>
 
 // /////////////////////////////////////////////////////////////
@@ -6,16 +9,19 @@
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::client
+namespace source2sdk
 {
-    // Enumerator count: 4
-    // Alignment: 4
-    // Size: 0x4
-    enum class ESurvivorsEnemySpawnPositionsLayer : std::uint32_t
+    namespace client
     {
-        INVALID = 0xffffffff,
-        ENEMY_MAIN = 0x1,
-        DESTRUCTIBLE_MAIN = 0x2,
-        ENEMY_BOSS_ROOM = 0x3,
+        // Enumerator count: 4
+        // Alignment: 4
+        // Size: 0x4
+        enum class ESurvivorsEnemySpawnPositionsLayer : std::uint32_t
+        {
+            INVALID = 0xffffffff,
+            ENEMY_MAIN = 0x1,
+            DESTRUCTIBLE_MAIN = 0x2,
+            ENEMY_BOSS_ROOM = 0x3,
+        };
     };
 };

@@ -1,4 +1,7 @@
 #pragma once
+
+#include "source2sdk/source2gen/source2gen.hpp"
+#include <cstddef>
 #include <cstdint>
 
 // /////////////////////////////////////////////////////////////
@@ -6,16 +9,19 @@
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::animlib
+namespace source2sdk
 {
-    // Enumerator count: 4
-    // Alignment: 1
-    // Size: 0x1
-    enum class NmTargetWarpRule_t : std::uint8_t
+    namespace animlib
     {
-        WarpXY = 0,
-        WarpZ = 1,
-        WarpXYZ = 2,
-        RotationOnly = 3,
+        // Enumerator count: 4
+        // Alignment: 1
+        // Size: 0x1
+        enum class NmTargetWarpRule_t : std::uint8_t
+        {
+            WarpXY = 0x0,
+            WarpZ = 0x1,
+            WarpXYZ = 0x2,
+            RotationOnly = 0x3,
+        };
     };
 };

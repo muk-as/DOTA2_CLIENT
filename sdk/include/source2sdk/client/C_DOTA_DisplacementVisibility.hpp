@@ -1,34 +1,39 @@
 #pragma once
-#include "source2sdk/client/C_BaseEntity.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/client/C_BaseEntity.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: client
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::client
+namespace source2sdk
 {
-    // Registered alignment: 0x8
-    // Alignment: 0x8
-    // Standard-layout class: false
-    // Size: 0x568
-    // Has VTable
-    // Construct allowed
-    // 
-    // static metadata: MNetworkVarNames "int m_HiddenDisplacement"
-    #pragma pack(push, 1)
-    class C_DOTA_DisplacementVisibility : public client::C_BaseEntity
+    namespace client
     {
-    public:
-        // metadata: MNetworkEnable
-        int32_t m_HiddenDisplacement; // 0x560        
-        [[maybe_unused]] std::uint8_t pad_0x564[0x4];
+        // Registered alignment: 0x8
+        // Alignment: 0x8
+        // Standard-layout class: false
+        // Size: 0x518
+        // Has VTable
+        // Construct allowed
+        // 
+        // static metadata: MNetworkVarNames "int m_HiddenDisplacement"
+        #pragma pack(push, 1)
+        class C_DOTA_DisplacementVisibility : public source2sdk::client::C_BaseEntity
+        {
+        public:
+            // metadata: MNetworkEnable
+            std::int32_t m_HiddenDisplacement; // 0x510            
+            uint8_t _pad0514[0x4];
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in C_DOTA_DisplacementVisibility because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::client::C_DOTA_DisplacementVisibility) == 0x518);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in C_DOTA_DisplacementVisibility because it is not a standard-layout class
-    static_assert(sizeof(C_DOTA_DisplacementVisibility) == 0x568);
 };

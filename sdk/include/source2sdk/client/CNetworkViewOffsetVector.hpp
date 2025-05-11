@@ -1,5 +1,6 @@
 #pragma once
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
 
@@ -8,47 +9,50 @@
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::client
+namespace source2sdk
 {
-    // Registered alignment: unknown
-    // Alignment: 0x4
-    // Standard-layout class: true
-    // Size: 0x28
-    // Has Trivial Destructor
-    // 
-    // static metadata: MNetworkVarsAtomic
-    #pragma pack(push, 1)
-    class CNetworkViewOffsetVector
+    namespace client
     {
-    public:
-        [[maybe_unused]] std::uint8_t pad_0x00[0x10]; // 0x0
-        // metadata: MNetworkEnable
-        // metadata: MNetworkBitCount "10"
-        // metadata: MNetworkMinValue "-64,000000"
-        // metadata: MNetworkMaxValue "64,000000"
-        // metadata: MNetworkEncodeFlags "4"
-        // metadata: MNetworkChangeCallback "CNetworkViewOffsetVector"
-        CNetworkedQuantizedFloat m_vecX; // 0x10        
-        // metadata: MNetworkEnable
-        // metadata: MNetworkBitCount "10"
-        // metadata: MNetworkMinValue "-64,000000"
-        // metadata: MNetworkMaxValue "64,000000"
-        // metadata: MNetworkEncodeFlags "4"
-        // metadata: MNetworkChangeCallback "CNetworkViewOffsetVector"
-        CNetworkedQuantizedFloat m_vecY; // 0x18        
-        // metadata: MNetworkEnable
-        // metadata: MNetworkBitCount "20"
-        // metadata: MNetworkMinValue "0,000000"
-        // metadata: MNetworkMaxValue "128,000000"
-        // metadata: MNetworkEncodeFlags "4"
-        // metadata: MNetworkChangeCallback "CNetworkViewOffsetVector"
-        CNetworkedQuantizedFloat m_vecZ; // 0x20        
+        // Registered alignment: unknown
+        // Alignment: 0x4
+        // Standard-layout class: true
+        // Size: 0x28
+        // Has Trivial Destructor
+        // 
+        // static metadata: MNetworkVarsAtomic
+        #pragma pack(push, 1)
+        class CNetworkViewOffsetVector
+        {
+        public:
+            uint8_t _pad0000[0x10]; // 0x0
+            // metadata: MNetworkEnable
+            // metadata: MNetworkBitCount "10"
+            // metadata: MNetworkMinValue "-64,000000"
+            // metadata: MNetworkMaxValue "64,000000"
+            // metadata: MNetworkEncodeFlags "4"
+            // metadata: MNetworkChangeCallback "CNetworkViewOffsetVector"
+            CNetworkedQuantizedFloat m_vecX; // 0x10            
+            // metadata: MNetworkEnable
+            // metadata: MNetworkBitCount "10"
+            // metadata: MNetworkMinValue "-64,000000"
+            // metadata: MNetworkMaxValue "64,000000"
+            // metadata: MNetworkEncodeFlags "4"
+            // metadata: MNetworkChangeCallback "CNetworkViewOffsetVector"
+            CNetworkedQuantizedFloat m_vecY; // 0x18            
+            // metadata: MNetworkEnable
+            // metadata: MNetworkBitCount "20"
+            // metadata: MNetworkMinValue "0,000000"
+            // metadata: MNetworkMaxValue "128,000000"
+            // metadata: MNetworkEncodeFlags "4"
+            // metadata: MNetworkChangeCallback "CNetworkViewOffsetVector"
+            CNetworkedQuantizedFloat m_vecZ; // 0x20            
+        };
+        #pragma pack(pop)
+        
+        static_assert(offsetof(source2sdk::client::CNetworkViewOffsetVector, m_vecX) == 0x10);
+        static_assert(offsetof(source2sdk::client::CNetworkViewOffsetVector, m_vecY) == 0x18);
+        static_assert(offsetof(source2sdk::client::CNetworkViewOffsetVector, m_vecZ) == 0x20);
+        
+        static_assert(sizeof(source2sdk::client::CNetworkViewOffsetVector) == 0x28);
     };
-    #pragma pack(pop)
-    
-    static_assert(offsetof(CNetworkViewOffsetVector, m_vecX) == 0x10);
-    static_assert(offsetof(CNetworkViewOffsetVector, m_vecY) == 0x18);
-    static_assert(offsetof(CNetworkViewOffsetVector, m_vecZ) == 0x20);
-    
-    static_assert(sizeof(CNetworkViewOffsetVector) == 0x28);
 };

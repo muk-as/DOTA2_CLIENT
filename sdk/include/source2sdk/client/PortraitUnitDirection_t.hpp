@@ -1,4 +1,7 @@
 #pragma once
+
+#include "source2sdk/source2gen/source2gen.hpp"
+#include <cstddef>
 #include <cstdint>
 
 // /////////////////////////////////////////////////////////////
@@ -6,15 +9,18 @@
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::client
+namespace source2sdk
 {
-    // Enumerator count: 3
-    // Alignment: 4
-    // Size: 0x4
-    enum class PortraitUnitDirection_t : std::uint32_t
+    namespace client
     {
-        PORTRAIT_UNIT_DIRECTION_INVALID = 0xffffffff,
-        PORTRAIT_UNIT_DIRECTION_FORWARD = 0x0,
-        PORTRAIT_UNIT_DIRECTION_BACKWARD = 0x1,
+        // Enumerator count: 3
+        // Alignment: 4
+        // Size: 0x4
+        enum class PortraitUnitDirection_t : std::uint32_t
+        {
+            PORTRAIT_UNIT_DIRECTION_INVALID = 0xffffffff,
+            PORTRAIT_UNIT_DIRECTION_FORWARD = 0x0,
+            PORTRAIT_UNIT_DIRECTION_BACKWARD = 0x1,
+        };
     };
 };

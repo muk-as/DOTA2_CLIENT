@@ -1,32 +1,37 @@
 #pragma once
-#include "source2sdk/client/CDOTA_Modifier_Rooted.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/client/CDOTA_Modifier_Rooted.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: client
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::client
+namespace source2sdk
 {
-    // Registered alignment: unknown
-    // Alignment: unknown
-    // Standard-layout class: false
-    // Size: 0x1718
-    // Has VTable
-    #pragma pack(push, 1)
-    class CDOTA_Modifier_Medusa_GorgonGrasp_Root : public client::CDOTA_Modifier_Rooted
+    namespace client
     {
-    public:
-        float damage_pers; // 0x1708        
-        float damage_interval; // 0x170c        
-        float m_flTickDamage; // 0x1710        
-        [[maybe_unused]] std::uint8_t pad_0x1714[0x4];
+        // Registered alignment: unknown
+        // Alignment: unknown
+        // Standard-layout class: false
+        // Size: 0x1808
+        // Has VTable
+        #pragma pack(push, 1)
+        class CDOTA_Modifier_Medusa_GorgonGrasp_Root : public source2sdk::client::CDOTA_Modifier_Rooted
+        {
+        public:
+            float damage_pers; // 0x17f8            
+            float damage_interval; // 0x17fc            
+            float m_flTickDamage; // 0x1800            
+            uint8_t _pad1804[0x4];
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in CDOTA_Modifier_Medusa_GorgonGrasp_Root because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Medusa_GorgonGrasp_Root) == 0x1808);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in CDOTA_Modifier_Medusa_GorgonGrasp_Root because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_Medusa_GorgonGrasp_Root) == 0x1718);
 };

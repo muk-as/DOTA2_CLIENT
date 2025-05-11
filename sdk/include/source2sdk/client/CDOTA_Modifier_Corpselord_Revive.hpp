@@ -1,41 +1,48 @@
 #pragma once
-#include "source2sdk/client/CDOTA_Buff.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/client/CDOTA_Buff.hpp"
+namespace source2sdk
+{
+    namespace client
+    {
+        struct C_DOTA_BaseNPC;
+    };
+};
 
 // /////////////////////////////////////////////////////////////
 // Module: client
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::client
+namespace source2sdk
 {
-    class C_DOTA_BaseNPC;
-};
-
-namespace source2sdk::client
-{
-    // Registered alignment: unknown
-    // Alignment: unknown
-    // Standard-layout class: false
-    // Size: 0x1720
-    // Has VTable
-    #pragma pack(push, 1)
-    class CDOTA_Modifier_Corpselord_Revive : public client::CDOTA_Buff
+    namespace client
     {
-    public:
-        int32_t radius; // 0x1708        
-        int32_t ticks_to_revive; // 0x170c        
-        float tick_interval; // 0x1710        
-        // m_pReviveTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
-        // CHandle<client::C_DOTA_BaseNPC> m_pReviveTarget;
-        char m_pReviveTarget[0x4]; // 0x1714        
-        int32_t m_nCurrentTicks; // 0x1718        
-        [[maybe_unused]] std::uint8_t pad_0x171c[0x4];
+        // Registered alignment: unknown
+        // Alignment: unknown
+        // Standard-layout class: false
+        // Size: 0x1810
+        // Has VTable
+        #pragma pack(push, 1)
+        class CDOTA_Modifier_Corpselord_Revive : public source2sdk::client::CDOTA_Buff
+        {
+        public:
+            std::int32_t radius; // 0x17f8            
+            std::int32_t ticks_to_revive; // 0x17fc            
+            float tick_interval; // 0x1800            
+            // m_pReviveTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+            // CHandle<source2sdk::client::C_DOTA_BaseNPC> m_pReviveTarget;
+            char m_pReviveTarget[0x4]; // 0x1804            
+            std::int32_t m_nCurrentTicks; // 0x1808            
+            uint8_t _pad180c[0x4];
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in CDOTA_Modifier_Corpselord_Revive because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Corpselord_Revive) == 0x1810);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in CDOTA_Modifier_Corpselord_Revive because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_Corpselord_Revive) == 0x1720);
 };

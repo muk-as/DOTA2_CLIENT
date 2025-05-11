@@ -1,30 +1,35 @@
 #pragma once
-#include "source2sdk/client/C_DOTA_Item_Necronomicon.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/client/C_DOTA_Item_Necronomicon.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: client
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::client
+namespace source2sdk
 {
-    // Registered alignment: 0x8
-    // Alignment: 0x8
-    // Standard-layout class: false
-    // Size: 0x6a8
-    // Has VTable
-    // Construct allowed
-    // MClassHasEntityLimitedDataDesc
-    #pragma pack(push, 1)
-    class C_DOTA_Item_Necronomicon_Level3 : public client::C_DOTA_Item_Necronomicon
+    namespace client
     {
-    public:
-        // No schema binary for binding
+        // Registered alignment: 0x8
+        // Alignment: 0x8
+        // Standard-layout class: false
+        // Size: 0x658
+        // Has VTable
+        // Construct allowed
+        // MClassHasEntityLimitedDataDesc
+        #pragma pack(push, 1)
+        class C_DOTA_Item_Necronomicon_Level3 : public source2sdk::client::C_DOTA_Item_Necronomicon
+        {
+        public:
+            // No schema binary for binding
+        };
+        #pragma pack(pop)
+        
+        
+        static_assert(sizeof(source2sdk::client::C_DOTA_Item_Necronomicon_Level3) == 0x658);
     };
-    #pragma pack(pop)
-    
-    static_assert(sizeof(C_DOTA_Item_Necronomicon_Level3) == 0x6a8);
 };

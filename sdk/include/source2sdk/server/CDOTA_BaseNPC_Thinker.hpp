@@ -1,33 +1,38 @@
 #pragma once
-#include "source2sdk/server/CDOTA_BaseNPC.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/server/CDOTA_BaseNPC.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: server
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::server
+namespace source2sdk
 {
-    // Registered alignment: 0x8
-    // Alignment: 0x8
-    // Standard-layout class: false
-    // Size: 0x1870
-    // Has VTable
-    // Construct allowed
-    // MClassHasEntityLimitedDataDesc
-    #pragma pack(push, 1)
-    class CDOTA_BaseNPC_Thinker : public server::CDOTA_BaseNPC
+    namespace server
     {
-    public:
-        bool m_bSendToAllPlayers; // 0x1868        
-        bool m_bSendToClients; // 0x1869        
-        [[maybe_unused]] std::uint8_t pad_0x186a[0x6];
+        // Registered alignment: 0x8
+        // Alignment: 0x8
+        // Standard-layout class: false
+        // Size: 0x1868
+        // Has VTable
+        // Construct allowed
+        // MClassHasEntityLimitedDataDesc
+        #pragma pack(push, 1)
+        class CDOTA_BaseNPC_Thinker : public source2sdk::server::CDOTA_BaseNPC
+        {
+        public:
+            bool m_bSendToAllPlayers; // 0x1860            
+            bool m_bSendToClients; // 0x1861            
+            uint8_t _pad1862[0x6];
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in CDOTA_BaseNPC_Thinker because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::server::CDOTA_BaseNPC_Thinker) == 0x1868);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in CDOTA_BaseNPC_Thinker because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_BaseNPC_Thinker) == 0x1870);
 };

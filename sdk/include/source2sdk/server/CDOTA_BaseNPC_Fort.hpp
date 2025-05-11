@@ -1,30 +1,35 @@
 #pragma once
-#include "source2sdk/server/CDOTA_BaseNPC_Building.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/server/CDOTA_BaseNPC_Building.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: server
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::server
+namespace source2sdk
 {
-    // Registered alignment: 0x8
-    // Alignment: 0x8
-    // Standard-layout class: false
-    // Size: 0x1980
-    // Has VTable
-    // Construct allowed
-    #pragma pack(push, 1)
-    class CDOTA_BaseNPC_Fort : public server::CDOTA_BaseNPC_Building
+    namespace server
     {
-    public:
-        [[maybe_unused]] std::uint8_t pad_0x1978[0x8];
-        // No schema binary for binding
+        // Registered alignment: 0x8
+        // Alignment: 0x8
+        // Standard-layout class: false
+        // Size: 0x1978
+        // Has VTable
+        // Construct allowed
+        #pragma pack(push, 1)
+        class CDOTA_BaseNPC_Fort : public source2sdk::server::CDOTA_BaseNPC_Building
+        {
+        public:
+            uint8_t _pad1970[0x8];
+            // No schema binary for binding
+        };
+        #pragma pack(pop)
+        
+        
+        static_assert(sizeof(source2sdk::server::CDOTA_BaseNPC_Fort) == 0x1978);
     };
-    #pragma pack(pop)
-    
-    static_assert(sizeof(CDOTA_BaseNPC_Fort) == 0x1980);
 };

@@ -1,33 +1,38 @@
 #pragma once
-#include "source2sdk/client/CDOTA_Buff.hpp"
-#include "source2sdk/client/ParticleIndex_t.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/client/CDOTA_Buff.hpp"
+#include "source2sdk/client/ParticleIndex_t.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: server
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::server
+namespace source2sdk
 {
-    // Registered alignment: unknown
-    // Alignment: unknown
-    // Standard-layout class: false
-    // Size: 0x1718
-    // Has VTable
-    #pragma pack(push, 1)
-    class CDOTA_Modifier_Necrolyte_Heartstopper_Aura_Effect : public client::CDOTA_Buff
+    namespace server
     {
-    public:
-        float aura_damage; // 0x1708        
-        int32_t heal_reduction_pct; // 0x170c        
-        float heal_regen_to_damage; // 0x1710        
-        client::ParticleIndex_t m_nFXIndex; // 0x1714        
+        // Registered alignment: unknown
+        // Alignment: unknown
+        // Standard-layout class: false
+        // Size: 0x1808
+        // Has VTable
+        #pragma pack(push, 1)
+        class CDOTA_Modifier_Necrolyte_Heartstopper_Aura_Effect : public source2sdk::client::CDOTA_Buff
+        {
+        public:
+            float aura_damage; // 0x17f8            
+            std::int32_t heal_reduction_pct; // 0x17fc            
+            float heal_regen_to_damage; // 0x1800            
+            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x1804            
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in CDOTA_Modifier_Necrolyte_Heartstopper_Aura_Effect because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Necrolyte_Heartstopper_Aura_Effect) == 0x1808);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in CDOTA_Modifier_Necrolyte_Heartstopper_Aura_Effect because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_Necrolyte_Heartstopper_Aura_Effect) == 0x1718);
 };

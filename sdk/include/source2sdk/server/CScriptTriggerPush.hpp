@@ -1,31 +1,36 @@
 #pragma once
-#include "source2sdk/server/CTriggerPush.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/server/CTriggerPush.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: server
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::server
+namespace source2sdk
 {
-    // Registered alignment: 0x8
-    // Alignment: 0x8
-    // Standard-layout class: false
-    // Size: 0x9c8
-    // Has VTable
-    // Construct allowed
-    #pragma pack(push, 1)
-    class CScriptTriggerPush : public server::CTriggerPush
+    namespace server
     {
-    public:
-        Vector m_vExtent; // 0x9b8        
-        [[maybe_unused]] std::uint8_t pad_0x9c4[0x4];
+        // Registered alignment: 0x8
+        // Alignment: 0x8
+        // Standard-layout class: false
+        // Size: 0x9b0
+        // Has VTable
+        // Construct allowed
+        #pragma pack(push, 1)
+        class CScriptTriggerPush : public source2sdk::server::CTriggerPush
+        {
+        public:
+            Vector m_vExtent; // 0x9a0            
+            uint8_t _pad09ac[0x4];
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in CScriptTriggerPush because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::server::CScriptTriggerPush) == 0x9b0);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in CScriptTriggerPush because it is not a standard-layout class
-    static_assert(sizeof(CScriptTriggerPush) == 0x9c8);
 };

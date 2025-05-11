@@ -1,39 +1,44 @@
 #pragma once
+
+#include "source2sdk/source2gen/source2gen.hpp"
+#include <cstddef>
+#include <cstdint>
 #include "source2sdk/client/CDOTA_Buff.hpp"
 #include "source2sdk/client/ParticleIndex_t.hpp"
 #include "source2sdk/entity2/GameTime_t.hpp"
-#include "source2sdk/source2gen.hpp"
-#include <cstddef>
-#include <cstdint>
 
 // /////////////////////////////////////////////////////////////
 // Module: server
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::server
+namespace source2sdk
 {
-    // Registered alignment: unknown
-    // Alignment: unknown
-    // Standard-layout class: false
-    // Size: 0x1728
-    // Has VTable
-    #pragma pack(push, 1)
-    class CDOTA_Modifier_Alchemist_UnstableConcoction : public client::CDOTA_Buff
+    namespace server
     {
-    public:
-        float brew_time; // 0x1708        
-        float brew_explosion; // 0x170c        
-        entity2::GameTime_t m_fStartTime; // 0x1710        
-        entity2::GameTime_t m_fLastAlertTime; // 0x1714        
-        client::ParticleIndex_t m_nConcoctionFXIndex; // 0x1718        
-        bool m_bHasStunned; // 0x171c        
-        [[maybe_unused]] std::uint8_t pad_0x171d[0x3]; // 0x171d
-        int32_t damage_resistance; // 0x1720        
-        int32_t move_speed; // 0x1724        
+        // Registered alignment: unknown
+        // Alignment: unknown
+        // Standard-layout class: false
+        // Size: 0x1818
+        // Has VTable
+        #pragma pack(push, 1)
+        class CDOTA_Modifier_Alchemist_UnstableConcoction : public source2sdk::client::CDOTA_Buff
+        {
+        public:
+            float brew_time; // 0x17f8            
+            float brew_explosion; // 0x17fc            
+            source2sdk::entity2::GameTime_t m_fStartTime; // 0x1800            
+            source2sdk::entity2::GameTime_t m_fLastAlertTime; // 0x1804            
+            source2sdk::client::ParticleIndex_t m_nConcoctionFXIndex; // 0x1808            
+            bool m_bHasStunned; // 0x180c            
+            uint8_t _pad180d[0x3]; // 0x180d
+            std::int32_t damage_resistance; // 0x1810            
+            std::int32_t move_speed; // 0x1814            
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in CDOTA_Modifier_Alchemist_UnstableConcoction because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Alchemist_UnstableConcoction) == 0x1818);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in CDOTA_Modifier_Alchemist_UnstableConcoction because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_Alchemist_UnstableConcoction) == 0x1728);
 };

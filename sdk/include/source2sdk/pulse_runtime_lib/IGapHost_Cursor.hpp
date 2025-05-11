@@ -1,6 +1,6 @@
 #pragma once
-#include "source2sdk/pulse_runtime_lib/IGapHost_ExecLog.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
 
@@ -9,22 +9,27 @@
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::pulse_runtime_lib
+namespace source2sdk
 {
-    // Registered alignment: unknown
-    // Alignment: 0x1
-    // Standard-layout class: false
-    // Size: 0x8
-    // Has VTable
-    // Is Abstract
-    // Has Trivial Destructor
-    #pragma pack(push, 1)
-    class IGapHost_Cursor : public pulse_runtime_lib::IGapHost_ExecLog
+    namespace pulse_runtime_lib
     {
-    public:
-        // No schema binary for binding
+        // Registered alignment: unknown
+        // Alignment: 0x1
+        // Standard-layout class: true
+        // Size: 0x8
+        // Has VTable
+        // Is Abstract
+        // Has Trivial Destructor
+        #pragma pack(push, 1)
+        class IGapHost_Cursor
+        {
+        public:
+            uint8_t _pad0000[0x8];
+            // No schema binary for binding
+        };
+        #pragma pack(pop)
+        
+        
+        static_assert(sizeof(source2sdk::pulse_runtime_lib::IGapHost_Cursor) == 0x8);
     };
-    #pragma pack(pop)
-    
-    static_assert(sizeof(IGapHost_Cursor) == 0x8);
 };

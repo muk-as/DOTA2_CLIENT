@@ -1,4 +1,7 @@
 #pragma once
+
+#include "source2sdk/source2gen/source2gen.hpp"
+#include <cstddef>
 #include <cstdint>
 
 // /////////////////////////////////////////////////////////////
@@ -6,16 +9,19 @@
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::client
+namespace source2sdk
 {
-    // Enumerator count: 4
-    // Alignment: 4
-    // Size: 0x4
-    enum class WeaponSwitchReason_t : std::uint32_t
+    namespace client
     {
-        eDrawn = 0x0,
-        eEquipped = 0x1,
-        eUserInitiatedSwitchToLast = 0x2,
-        eUserInitiatedUIKeyPress = 0x3,
+        // Enumerator count: 4
+        // Alignment: 4
+        // Size: 0x4
+        enum class WeaponSwitchReason_t : std::uint32_t
+        {
+            eDrawn = 0x0,
+            eEquipped = 0x1,
+            eUserInitiatedSwitchToLast = 0x2,
+            eUserInitiatedUIKeyPress = 0x3,
+        };
     };
 };

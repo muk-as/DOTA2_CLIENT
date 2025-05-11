@@ -1,39 +1,44 @@
 #pragma once
-#include "source2sdk/client/C_DOTA_BaseNPC_Additive.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/client/C_DOTA_BaseNPC_Additive.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: client
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::client
+namespace source2sdk
 {
-    // Registered alignment: 0x8
-    // Alignment: 0x8
-    // Standard-layout class: false
-    // Size: 0x1980
-    // Has VTable
-    // Construct allowed
-    // MClassHasEntityLimitedDataDesc
-    // 
-    // static metadata: MNetworkVarNames "char m_pszNetworkedSoundLoop"
-    // static metadata: MNetworkVarNames "int m_nLoopingSoundParity"
-    #pragma pack(push, 1)
-    class C_DOTA_Unit_LoopingSound : public client::C_DOTA_BaseNPC_Additive
+    namespace client
     {
-    public:
-        [[maybe_unused]] std::uint8_t pad_0x1870[0x8]; // 0x1870
-        int32_t m_nPrevLoopingSoundParity; // 0x1878        
-        // metadata: MNetworkEnable
-        char m_pszNetworkedSoundLoop[256]; // 0x187c        
-        // metadata: MNetworkEnable
-        int32_t m_nLoopingSoundParity; // 0x197c        
+        // Registered alignment: 0x8
+        // Alignment: 0x8
+        // Standard-layout class: false
+        // Size: 0x18e8
+        // Has VTable
+        // Construct allowed
+        // MClassHasEntityLimitedDataDesc
+        // 
+        // static metadata: MNetworkVarNames "char m_pszNetworkedSoundLoop"
+        // static metadata: MNetworkVarNames "int m_nLoopingSoundParity"
+        #pragma pack(push, 1)
+        class C_DOTA_Unit_LoopingSound : public source2sdk::client::C_DOTA_BaseNPC_Additive
+        {
+        public:
+            uint8_t _pad17d8[0x8]; // 0x17d8
+            std::int32_t m_nPrevLoopingSoundParity; // 0x17e0            
+            // metadata: MNetworkEnable
+            char m_pszNetworkedSoundLoop[256]; // 0x17e4            
+            // metadata: MNetworkEnable
+            std::int32_t m_nLoopingSoundParity; // 0x18e4            
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in C_DOTA_Unit_LoopingSound because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::client::C_DOTA_Unit_LoopingSound) == 0x18e8);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in C_DOTA_Unit_LoopingSound because it is not a standard-layout class
-    static_assert(sizeof(C_DOTA_Unit_LoopingSound) == 0x1980);
 };

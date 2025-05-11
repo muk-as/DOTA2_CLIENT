@@ -1,5 +1,6 @@
 #pragma once
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
 
@@ -8,37 +9,40 @@
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::physicslib
+namespace source2sdk
 {
-    // Registered alignment: 0x8
-    // Alignment: 0x8
-    // Standard-layout class: true
-    // Size: 0x20
-    // Construct allowed
-    // 
-    // static metadata: MGetKV3ClassDefaults
-    #pragma pack(push, 1)
-    struct RnShapeDesc_t
+    namespace physicslib
     {
-    public:
-        uint32_t m_nCollisionAttributeIndex; // 0x0        
-        uint32_t m_nSurfacePropertyIndex; // 0x4        
-        CUtlString m_UserFriendlyName; // 0x8        
-        bool m_bUserFriendlyNameSealed; // 0x10        
-        bool m_bUserFriendlyNameLong; // 0x11        
-        [[maybe_unused]] std::uint8_t pad_0x12[0x2]; // 0x12
-        uint32_t m_nToolMaterialHash; // 0x14        
-        CGlobalSymbol m_sHitGroupName; // 0x18        
+        // Registered alignment: 0x8
+        // Alignment: 0x8
+        // Standard-layout class: true
+        // Size: 0x20
+        // Construct allowed
+        // 
+        // static metadata: MGetKV3ClassDefaults
+        #pragma pack(push, 1)
+        struct RnShapeDesc_t
+        {
+        public:
+            std::uint32_t m_nCollisionAttributeIndex; // 0x0            
+            std::uint32_t m_nSurfacePropertyIndex; // 0x4            
+            CUtlString m_UserFriendlyName; // 0x8            
+            bool m_bUserFriendlyNameSealed; // 0x10            
+            bool m_bUserFriendlyNameLong; // 0x11            
+            uint8_t _pad0012[0x2]; // 0x12
+            std::uint32_t m_nToolMaterialHash; // 0x14            
+            CGlobalSymbol m_sHitGroupName; // 0x18            
+        };
+        #pragma pack(pop)
+        
+        static_assert(offsetof(source2sdk::physicslib::RnShapeDesc_t, m_nCollisionAttributeIndex) == 0x0);
+        static_assert(offsetof(source2sdk::physicslib::RnShapeDesc_t, m_nSurfacePropertyIndex) == 0x4);
+        static_assert(offsetof(source2sdk::physicslib::RnShapeDesc_t, m_UserFriendlyName) == 0x8);
+        static_assert(offsetof(source2sdk::physicslib::RnShapeDesc_t, m_bUserFriendlyNameSealed) == 0x10);
+        static_assert(offsetof(source2sdk::physicslib::RnShapeDesc_t, m_bUserFriendlyNameLong) == 0x11);
+        static_assert(offsetof(source2sdk::physicslib::RnShapeDesc_t, m_nToolMaterialHash) == 0x14);
+        static_assert(offsetof(source2sdk::physicslib::RnShapeDesc_t, m_sHitGroupName) == 0x18);
+        
+        static_assert(sizeof(source2sdk::physicslib::RnShapeDesc_t) == 0x20);
     };
-    #pragma pack(pop)
-    
-    static_assert(offsetof(RnShapeDesc_t, m_nCollisionAttributeIndex) == 0x0);
-    static_assert(offsetof(RnShapeDesc_t, m_nSurfacePropertyIndex) == 0x4);
-    static_assert(offsetof(RnShapeDesc_t, m_UserFriendlyName) == 0x8);
-    static_assert(offsetof(RnShapeDesc_t, m_bUserFriendlyNameSealed) == 0x10);
-    static_assert(offsetof(RnShapeDesc_t, m_bUserFriendlyNameLong) == 0x11);
-    static_assert(offsetof(RnShapeDesc_t, m_nToolMaterialHash) == 0x14);
-    static_assert(offsetof(RnShapeDesc_t, m_sHitGroupName) == 0x18);
-    
-    static_assert(sizeof(RnShapeDesc_t) == 0x20);
 };

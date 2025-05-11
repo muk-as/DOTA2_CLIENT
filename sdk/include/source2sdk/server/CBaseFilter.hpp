@@ -1,37 +1,42 @@
 #pragma once
-#include "source2sdk/entity2/CEntityIOOutput.hpp"
-#include "source2sdk/server/CLogicalEntity.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/entity2/CEntityIOOutput.hpp"
+#include "source2sdk/server/CLogicalEntity.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: server
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::server
+namespace source2sdk
 {
-    // Registered alignment: 0x8
-    // Alignment: 0x8
-    // Standard-layout class: false
-    // Size: 0x538
-    // Has VTable
-    // Construct allowed
-    #pragma pack(push, 1)
-    class CBaseFilter : public server::CLogicalEntity
+    namespace server
     {
-    public:
-        bool m_bNegated; // 0x4e0        
-        [[maybe_unused]] std::uint8_t pad_0x4e1[0x7]; // 0x4e1
-        entity2::CEntityIOOutput m_OnPass; // 0x4e8        
-        entity2::CEntityIOOutput m_OnFail; // 0x510        
+        // Registered alignment: 0x8
+        // Alignment: 0x8
+        // Standard-layout class: false
+        // Size: 0x530
+        // Has VTable
+        // Construct allowed
+        #pragma pack(push, 1)
+        class CBaseFilter : public source2sdk::server::CLogicalEntity
+        {
+        public:
+            bool m_bNegated; // 0x4d8            
+            uint8_t _pad04d9[0x7]; // 0x4d9
+            source2sdk::entity2::CEntityIOOutput m_OnPass; // 0x4e0            
+            source2sdk::entity2::CEntityIOOutput m_OnFail; // 0x508            
+            
+            // Datamap fields:
+            // void InputTestActivator; // 0x0
+        };
+        #pragma pack(pop)
         
-        // Datamap fields:
-        // void InputTestActivator; // 0x0
+        // Cannot assert offsets of fields in CBaseFilter because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::server::CBaseFilter) == 0x530);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in CBaseFilter because it is not a standard-layout class
-    static_assert(sizeof(CBaseFilter) == 0x538);
 };

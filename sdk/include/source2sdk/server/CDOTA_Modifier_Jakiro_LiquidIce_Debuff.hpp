@@ -1,34 +1,39 @@
 #pragma once
-#include "source2sdk/client/CDOTA_Buff.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/client/CDOTA_Buff.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: server
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::server
+namespace source2sdk
 {
-    // Registered alignment: unknown
-    // Alignment: unknown
-    // Standard-layout class: false
-    // Size: 0x1720
-    // Has VTable
-    #pragma pack(push, 1)
-    class CDOTA_Modifier_Jakiro_LiquidIce_Debuff : public client::CDOTA_Buff
+    namespace server
     {
-    public:
-        int32_t damage; // 0x1708        
-        float pct_health_damage; // 0x170c        
-        int32_t movement_slow; // 0x1710        
-        int32_t slow_attack_speed_pct; // 0x1714        
-        float tick_rate; // 0x1718        
-        int32_t bonus_instance_damage_from_other_abilities; // 0x171c        
+        // Registered alignment: unknown
+        // Alignment: unknown
+        // Standard-layout class: false
+        // Size: 0x1810
+        // Has VTable
+        #pragma pack(push, 1)
+        class CDOTA_Modifier_Jakiro_LiquidIce_Debuff : public source2sdk::client::CDOTA_Buff
+        {
+        public:
+            std::int32_t damage; // 0x17f8            
+            float pct_health_damage; // 0x17fc            
+            std::int32_t movement_slow; // 0x1800            
+            std::int32_t slow_attack_speed_pct; // 0x1804            
+            float tick_rate; // 0x1808            
+            std::int32_t bonus_instance_damage_from_other_abilities; // 0x180c            
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in CDOTA_Modifier_Jakiro_LiquidIce_Debuff because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Jakiro_LiquidIce_Debuff) == 0x1810);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in CDOTA_Modifier_Jakiro_LiquidIce_Debuff because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_Jakiro_LiquidIce_Debuff) == 0x1720);
 };

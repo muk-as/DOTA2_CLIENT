@@ -1,31 +1,36 @@
 #pragma once
-#include "source2sdk/server/CFuncPlat.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/server/CFuncPlat.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: server
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::server
+namespace source2sdk
 {
-    // Registered alignment: 0x8
-    // Alignment: 0x8
-    // Standard-layout class: false
-    // Size: 0x878
-    // Has VTable
-    // Construct allowed
-    #pragma pack(push, 1)
-    class CFuncPlatRot : public server::CFuncPlat
+    namespace server
     {
-    public:
-        QAngle m_end; // 0x860        
-        QAngle m_start; // 0x86c        
+        // Registered alignment: 0x8
+        // Alignment: 0x8
+        // Standard-layout class: false
+        // Size: 0x870
+        // Has VTable
+        // Construct allowed
+        #pragma pack(push, 1)
+        class CFuncPlatRot : public source2sdk::server::CFuncPlat
+        {
+        public:
+            QAngle m_end; // 0x858            
+            QAngle m_start; // 0x864            
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in CFuncPlatRot because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::server::CFuncPlatRot) == 0x870);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in CFuncPlatRot because it is not a standard-layout class
-    static_assert(sizeof(CFuncPlatRot) == 0x878);
 };

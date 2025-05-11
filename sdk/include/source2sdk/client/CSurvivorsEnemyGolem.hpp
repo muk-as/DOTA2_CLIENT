@@ -1,28 +1,33 @@
 #pragma once
-#include "source2sdk/client/CSurvivorsEnemy.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/client/CSurvivorsEnemy.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: client
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::client
+namespace source2sdk
 {
-    // Registered alignment: unknown
-    // Alignment: 0x8
-    // Standard-layout class: false
-    // Size: 0x338
-    // Has VTable
-    #pragma pack(push, 1)
-    class CSurvivorsEnemyGolem : public client::CSurvivorsEnemy
+    namespace client
     {
-    public:
-        // No schema binary for binding
+        // Registered alignment: unknown
+        // Alignment: 0x8
+        // Standard-layout class: false
+        // Size: 0x338
+        // Has VTable
+        #pragma pack(push, 1)
+        class CSurvivorsEnemyGolem : public source2sdk::client::CSurvivorsEnemy
+        {
+        public:
+            // No schema binary for binding
+        };
+        #pragma pack(pop)
+        
+        
+        static_assert(sizeof(source2sdk::client::CSurvivorsEnemyGolem) == 0x338);
     };
-    #pragma pack(pop)
-    
-    static_assert(sizeof(CSurvivorsEnemyGolem) == 0x338);
 };

@@ -1,44 +1,49 @@
 #pragma once
-#include "source2sdk/server/CBaseEntity.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/server/CBaseEntity.hpp"
+#include "source2sdk/server/CPathQueryComponent.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: server
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::server
+namespace source2sdk
 {
-    // Registered alignment: 0x8
-    // Alignment: 0x8
-    // Standard-layout class: false
-    // Size: 0x588
-    // Has VTable
-    // Construct allowed
-    // 
-    // static metadata: MEntityAllowsPortraitWorldSpawn
-    // static metadata: MNetworkVarNames "CUtlString m_pathString"
-    #pragma pack(push, 1)
-    class CPathSimple : public server::CBaseEntity
+    namespace server
     {
-    public:
-        [[maybe_unused]] std::uint8_t pad_0x4e0[0x58]; // 0x4e0
-        // metadata: MNetworkEnable
-        CUtlString m_pathString; // 0x538        
-        // m_vecPathSamplePositions has a template type with potentially unknown template parameters. You can try uncommenting the field below.
-        // CUtlVector<Vector> m_vecPathSamplePositions;
-        char m_vecPathSamplePositions[0x18]; // 0x540        
-        // m_vecPathSampleParameters has a template type with potentially unknown template parameters. You can try uncommenting the field below.
-        // CUtlVector<float> m_vecPathSampleParameters;
-        char m_vecPathSampleParameters[0x18]; // 0x558        
-        // m_vecPathSampleDistances has a template type with potentially unknown template parameters. You can try uncommenting the field below.
-        // CUtlVector<float> m_vecPathSampleDistances;
-        char m_vecPathSampleDistances[0x18]; // 0x570        
+        // Registered alignment: 0x10
+        // Alignment: 0x10
+        // Standard-layout class: false
+        // Size: 0x5d0
+        // Has VTable
+        // Construct allowed
+        // 
+        // static metadata: MEntityAllowsPortraitWorldSpawn
+        // static metadata: MNetworkVarNames "CPathQueryComponent::Storage_t m_CPathQueryComponent"
+        // static metadata: MNetworkVarNames "CUtlString m_pathString"
+        #pragma pack(push, 1)
+        class CPathSimple : public source2sdk::server::CBaseEntity
+        {
+        public:
+            uint8_t _pad04d8[0x8]; // 0x4d8
+            // metadata: MNetworkEnable
+            // metadata: MNetworkUserGroup "CPathQueryComponent"
+            // metadata: MNetworkAlias "CPathQueryComponent"
+            // metadata: MNetworkTypeAlias "CPathQueryComponent"
+            source2sdk::server::CPathQueryComponent m_CPathQueryComponent; // 0x4e0            
+            uint8_t _pad0570[0x50]; // 0x570
+            // metadata: MNetworkEnable
+            CUtlString m_pathString; // 0x5c0            
+            uint8_t _pad05c8[0x8];
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in CPathSimple because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::server::CPathSimple) == 0x5d0);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in CPathSimple because it is not a standard-layout class
-    static_assert(sizeof(CPathSimple) == 0x588);
 };

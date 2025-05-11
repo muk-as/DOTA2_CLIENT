@@ -1,4 +1,7 @@
 #pragma once
+
+#include "source2sdk/source2gen/source2gen.hpp"
+#include <cstddef>
 #include <cstdint>
 
 // /////////////////////////////////////////////////////////////
@@ -6,16 +9,19 @@
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::client
+namespace source2sdk
 {
-    // Enumerator count: 4
-    // Alignment: 4
-    // Size: 0x4
-    enum class ECrowdLevel : std::uint32_t
+    namespace client
     {
-        CROWD_NONE = 0x0,
-        CROWD_LOW = 0x1,
-        CROWD_MEDIUM = 0x2,
-        CROWD_HIGH = 0x3,
+        // Enumerator count: 4
+        // Alignment: 4
+        // Size: 0x4
+        enum class ECrowdLevel : std::uint32_t
+        {
+            CROWD_NONE = 0x0,
+            CROWD_LOW = 0x1,
+            CROWD_MEDIUM = 0x2,
+            CROWD_HIGH = 0x3,
+        };
     };
 };

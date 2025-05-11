@@ -1,30 +1,35 @@
 #pragma once
-#include "source2sdk/client/C_DOTA_Ability_Ogre_Magi_Fireblast.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/client/C_DOTA_Ability_Ogre_Magi_Fireblast.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: client
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::client
+namespace source2sdk
 {
-    // Registered alignment: 0x8
-    // Alignment: 0x8
-    // Standard-layout class: false
-    // Size: 0x608
-    // Has VTable
-    // Construct allowed
-    // MClassHasEntityLimitedDataDesc
-    #pragma pack(push, 1)
-    class C_DOTA_Ability_Ogre_Magi_Unrefined_Fireblast : public client::C_DOTA_Ability_Ogre_Magi_Fireblast
+    namespace client
     {
-    public:
-        // No schema binary for binding
+        // Registered alignment: 0x8
+        // Alignment: 0x8
+        // Standard-layout class: false
+        // Size: 0x5b8
+        // Has VTable
+        // Construct allowed
+        // MClassHasEntityLimitedDataDesc
+        #pragma pack(push, 1)
+        class C_DOTA_Ability_Ogre_Magi_Unrefined_Fireblast : public source2sdk::client::C_DOTA_Ability_Ogre_Magi_Fireblast
+        {
+        public:
+            // No schema binary for binding
+        };
+        #pragma pack(pop)
+        
+        
+        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Ogre_Magi_Unrefined_Fireblast) == 0x5b8);
     };
-    #pragma pack(pop)
-    
-    static_assert(sizeof(C_DOTA_Ability_Ogre_Magi_Unrefined_Fireblast) == 0x608);
 };

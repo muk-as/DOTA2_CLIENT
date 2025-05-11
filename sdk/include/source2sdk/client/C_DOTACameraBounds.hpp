@@ -1,37 +1,42 @@
 #pragma once
-#include "source2sdk/client/C_BaseEntity.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/client/C_BaseEntity.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: client
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::client
+namespace source2sdk
 {
-    // Registered alignment: 0x8
-    // Alignment: 0x8
-    // Standard-layout class: false
-    // Size: 0x578
-    // Has VTable
-    // Construct allowed
-    // MClassHasEntityLimitedDataDesc
-    // 
-    // static metadata: MNetworkVarNames "Vector m_vecBoundsMin"
-    // static metadata: MNetworkVarNames "Vector m_vecBoundsMax"
-    #pragma pack(push, 1)
-    class C_DOTACameraBounds : public client::C_BaseEntity
+    namespace client
     {
-    public:
-        // metadata: MNetworkEnable
-        Vector m_vecBoundsMin; // 0x560        
-        // metadata: MNetworkEnable
-        Vector m_vecBoundsMax; // 0x56c        
+        // Registered alignment: 0x8
+        // Alignment: 0x8
+        // Standard-layout class: false
+        // Size: 0x528
+        // Has VTable
+        // Construct allowed
+        // MClassHasEntityLimitedDataDesc
+        // 
+        // static metadata: MNetworkVarNames "Vector m_vecBoundsMin"
+        // static metadata: MNetworkVarNames "Vector m_vecBoundsMax"
+        #pragma pack(push, 1)
+        class C_DOTACameraBounds : public source2sdk::client::C_BaseEntity
+        {
+        public:
+            // metadata: MNetworkEnable
+            Vector m_vecBoundsMin; // 0x510            
+            // metadata: MNetworkEnable
+            Vector m_vecBoundsMax; // 0x51c            
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in C_DOTACameraBounds because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::client::C_DOTACameraBounds) == 0x528);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in C_DOTACameraBounds because it is not a standard-layout class
-    static_assert(sizeof(C_DOTACameraBounds) == 0x578);
 };

@@ -1,34 +1,39 @@
 #pragma once
-#include "source2sdk/client/C_SoundEventEntity.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/client/C_SoundEventEntity.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: client
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::client
+namespace source2sdk
 {
-    // Registered alignment: 0x8
-    // Alignment: 0x8
-    // Standard-layout class: false
-    // Size: 0x628
-    // Has VTable
-    // Construct allowed
-    // 
-    // static metadata: MNetworkVarNames "float m_flRadius"
-    #pragma pack(push, 1)
-    class C_SoundEventSphereEntity : public client::C_SoundEventEntity
+    namespace client
     {
-    public:
-        // metadata: MNetworkEnable
-        float m_flRadius; // 0x620        
-        [[maybe_unused]] std::uint8_t pad_0x624[0x4];
+        // Registered alignment: 0x8
+        // Alignment: 0x8
+        // Standard-layout class: false
+        // Size: 0x5d8
+        // Has VTable
+        // Construct allowed
+        // 
+        // static metadata: MNetworkVarNames "float m_flRadius"
+        #pragma pack(push, 1)
+        class C_SoundEventSphereEntity : public source2sdk::client::C_SoundEventEntity
+        {
+        public:
+            // metadata: MNetworkEnable
+            float m_flRadius; // 0x5d0            
+            uint8_t _pad05d4[0x4];
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in C_SoundEventSphereEntity because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::client::C_SoundEventSphereEntity) == 0x5d8);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in C_SoundEventSphereEntity because it is not a standard-layout class
-    static_assert(sizeof(C_SoundEventSphereEntity) == 0x628);
 };

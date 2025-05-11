@@ -1,45 +1,54 @@
 #pragma once
-#include "source2sdk/client/CDOTA_Buff.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/client/CDOTA_Buff.hpp"
+namespace source2sdk
+{
+    namespace client
+    {
+        struct C_DOTA_BaseNPC;
+    };
+};
 
 // /////////////////////////////////////////////////////////////
 // Module: client
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::client
+namespace source2sdk
 {
-    class C_DOTA_BaseNPC;
-};
-
-namespace source2sdk::client
-{
-    // Registered alignment: unknown
-    // Alignment: unknown
-    // Standard-layout class: false
-    // Size: 0x1740
-    // Has VTable
-    #pragma pack(push, 1)
-    class CDOTA_Modifier_PrimalBeast_Pulverize_Self : public client::CDOTA_Buff
+    namespace client
     {
-    public:
-        // m_hTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
-        // CHandle<client::C_DOTA_BaseNPC> m_hTarget;
-        char m_hTarget[0x4]; // 0x1708        
-        Vector m_vPulverizeCenter; // 0x170c        
-        Vector m_vCasterStartPos; // 0x1718        
-        float splash_radius; // 0x1724        
-        float interval; // 0x1728        
-        float ministun; // 0x172c        
-        int32_t damage; // 0x1730        
-        int32_t bonus_damage_per_hit; // 0x1734        
-        int32_t m_nHitCount; // 0x1738        
-        float bonus_aoe_duration; // 0x173c        
+        // Registered alignment: unknown
+        // Alignment: unknown
+        // Standard-layout class: false
+        // Size: 0x1838
+        // Has VTable
+        #pragma pack(push, 1)
+        class CDOTA_Modifier_PrimalBeast_Pulverize_Self : public source2sdk::client::CDOTA_Buff
+        {
+        public:
+            // m_hTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+            // CHandle<source2sdk::client::C_DOTA_BaseNPC> m_hTarget;
+            char m_hTarget[0x4]; // 0x17f8            
+            Vector m_vPulverizeCenter; // 0x17fc            
+            Vector m_vCasterStartPos; // 0x1808            
+            float splash_radius; // 0x1814            
+            float interval; // 0x1818            
+            float ministun; // 0x181c            
+            std::int32_t damage; // 0x1820            
+            std::int32_t bonus_damage_per_hit; // 0x1824            
+            std::int32_t m_nHitCount; // 0x1828            
+            float bonus_aoe_duration; // 0x182c            
+            std::int32_t max_stacks; // 0x1830            
+            uint8_t _pad1834[0x4];
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in CDOTA_Modifier_PrimalBeast_Pulverize_Self because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_PrimalBeast_Pulverize_Self) == 0x1838);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in CDOTA_Modifier_PrimalBeast_Pulverize_Self because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_PrimalBeast_Pulverize_Self) == 0x1740);
 };

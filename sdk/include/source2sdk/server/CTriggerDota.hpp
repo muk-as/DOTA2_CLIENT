@@ -1,31 +1,36 @@
 #pragma once
-#include "source2sdk/server/CDotaEntityFilterFlags.hpp"
-#include "source2sdk/server/CTriggerMultiple.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/server/CDotaEntityFilterFlags.hpp"
+#include "source2sdk/server/CTriggerMultiple.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: server
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::server
+namespace source2sdk
 {
-    // Registered alignment: 0x8
-    // Alignment: 0x8
-    // Standard-layout class: false
-    // Size: 0x9c8
-    // Has VTable
-    // Construct allowed
-    #pragma pack(push, 1)
-    class CTriggerDota : public server::CTriggerMultiple
+    namespace server
     {
-    public:
-        server::CDotaEntityFilterFlags m_FilterFlags; // 0x9a8        
+        // Registered alignment: 0x8
+        // Alignment: 0x8
+        // Standard-layout class: false
+        // Size: 0x9b0
+        // Has VTable
+        // Construct allowed
+        #pragma pack(push, 1)
+        class CTriggerDota : public source2sdk::server::CTriggerMultiple
+        {
+        public:
+            source2sdk::server::CDotaEntityFilterFlags m_FilterFlags; // 0x990            
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in CTriggerDota because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::server::CTriggerDota) == 0x9b0);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in CTriggerDota because it is not a standard-layout class
-    static_assert(sizeof(CTriggerDota) == 0x9c8);
 };

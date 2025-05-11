@@ -1,43 +1,44 @@
 #pragma once
-#include "source2sdk/client/CDOTA_Buff.hpp"
-#include "source2sdk/client/ParticleIndex_t.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/client/CDOTA_Buff.hpp"
+#include "source2sdk/client/ParticleIndex_t.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: server
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::server
+namespace source2sdk
 {
-    // Registered alignment: unknown
-    // Alignment: unknown
-    // Standard-layout class: false
-    // Size: 0x1740
-    // Has VTable
-    #pragma pack(push, 1)
-    class CDOTA_Modifier_ArcWarden_Flux : public client::CDOTA_Buff
+    namespace server
     {
-    public:
-        int32_t m_nCasterTeam; // 0x1708        
-        int32_t damage_per_second; // 0x170c        
-        int32_t tempest_damage_per_second; // 0x1710        
-        int32_t search_radius; // 0x1714        
-        int32_t move_speed_slow_pct; // 0x1718        
-        int32_t tempest_move_speed_slow_pct; // 0x171c        
-        int32_t status_resist; // 0x1720        
-        float think_interval; // 0x1724        
-        int32_t applies_silence; // 0x1728        
-        int32_t m_nCurrentMovementSlow; // 0x172c        
-        int32_t m_nCurrentStatusResistance; // 0x1730        
-        client::ParticleIndex_t m_nFXIndex; // 0x1734        
-        bool m_bIsTempestVersion; // 0x1738        
-        [[maybe_unused]] std::uint8_t pad_0x1739[0x7];
+        // Registered alignment: unknown
+        // Alignment: unknown
+        // Standard-layout class: false
+        // Size: 0x1820
+        // Has VTable
+        #pragma pack(push, 1)
+        class CDOTA_Modifier_ArcWarden_Flux : public source2sdk::client::CDOTA_Buff
+        {
+        public:
+            std::int32_t m_nCasterTeam; // 0x17f8            
+            float damage_per_second; // 0x17fc            
+            std::int32_t search_radius; // 0x1800            
+            std::int32_t move_speed_slow_pct; // 0x1804            
+            std::int32_t status_resist; // 0x1808            
+            float think_interval; // 0x180c            
+            std::int32_t applies_silence; // 0x1810            
+            std::int32_t m_nCurrentMovementSlow; // 0x1814            
+            std::int32_t m_nCurrentStatusResistance; // 0x1818            
+            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x181c            
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in CDOTA_Modifier_ArcWarden_Flux because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_ArcWarden_Flux) == 0x1820);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in CDOTA_Modifier_ArcWarden_Flux because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_ArcWarden_Flux) == 0x1740);
 };

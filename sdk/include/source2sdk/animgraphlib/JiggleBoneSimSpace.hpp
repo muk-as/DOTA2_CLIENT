@@ -1,4 +1,7 @@
 #pragma once
+
+#include "source2sdk/source2gen/source2gen.hpp"
+#include <cstddef>
 #include <cstdint>
 
 // /////////////////////////////////////////////////////////////
@@ -6,18 +9,21 @@
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::animgraphlib
+namespace source2sdk
 {
-    // Enumerator count: 3
-    // Alignment: 4
-    // Size: 0x4
-    enum class JiggleBoneSimSpace : std::uint32_t
+    namespace animgraphlib
     {
-        // MPropertyFriendlyName "Local Space"
-        SimSpace_Local = 0x0,
-        // MPropertyFriendlyName "Model Space"
-        SimSpace_Model = 0x1,
-        // MPropertyFriendlyName "World Space"
-        SimSpace_World = 0x2,
+        // Enumerator count: 3
+        // Alignment: 4
+        // Size: 0x4
+        enum class JiggleBoneSimSpace : std::uint32_t
+        {
+            // MPropertyFriendlyName "Local Space"
+            SimSpace_Local = 0x0,
+            // MPropertyFriendlyName "Model Space"
+            SimSpace_Model = 0x1,
+            // MPropertyFriendlyName "World Space"
+            SimSpace_World = 0x2,
+        };
     };
 };

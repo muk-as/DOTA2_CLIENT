@@ -1,38 +1,45 @@
 #pragma once
-#include "source2sdk/client/CDOTA_Buff.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/client/CDOTA_Buff.hpp"
+namespace source2sdk
+{
+    namespace client
+    {
+        struct CDOTA_Buff;
+    };
+};
 
 // /////////////////////////////////////////////////////////////
 // Module: client
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::client
+namespace source2sdk
 {
-    class CDOTA_Buff;
-};
-
-namespace source2sdk::client
-{
-    // Registered alignment: unknown
-    // Alignment: unknown
-    // Standard-layout class: false
-    // Size: 0x1720
-    // Has VTable
-    #pragma pack(push, 1)
-    class CDOTA_Modifier_Elder_Titan_EarthSplitter_Thinker : public client::CDOTA_Buff
+    namespace client
     {
-    public:
-        int32_t crack_width; // 0x1708        
-        int32_t damage_pct; // 0x170c        
-        float slow_duration; // 0x1710        
-        float slow_duration_scepter; // 0x1714        
-        client::CDOTA_Buff* m_pParentModifier; // 0x1718        
+        // Registered alignment: unknown
+        // Alignment: unknown
+        // Standard-layout class: false
+        // Size: 0x1810
+        // Has VTable
+        #pragma pack(push, 1)
+        class CDOTA_Modifier_Elder_Titan_EarthSplitter_Thinker : public source2sdk::client::CDOTA_Buff
+        {
+        public:
+            float crack_width; // 0x17f8            
+            std::int32_t damage_pct; // 0x17fc            
+            float slow_duration; // 0x1800            
+            float slow_duration_scepter; // 0x1804            
+            source2sdk::client::CDOTA_Buff* m_pParentModifier; // 0x1808            
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in CDOTA_Modifier_Elder_Titan_EarthSplitter_Thinker because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Elder_Titan_EarthSplitter_Thinker) == 0x1810);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in CDOTA_Modifier_Elder_Titan_EarthSplitter_Thinker because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_Elder_Titan_EarthSplitter_Thinker) == 0x1720);
 };

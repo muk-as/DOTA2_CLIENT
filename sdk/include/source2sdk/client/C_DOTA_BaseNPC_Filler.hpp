@@ -1,29 +1,34 @@
 #pragma once
-#include "source2sdk/client/C_DOTA_BaseNPC_Building.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/client/C_DOTA_BaseNPC_Building.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: client
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::client
+namespace source2sdk
 {
-    // Registered alignment: 0x8
-    // Alignment: 0x8
-    // Standard-layout class: false
-    // Size: 0x18e0
-    // Has VTable
-    // Construct allowed
-    #pragma pack(push, 1)
-    class C_DOTA_BaseNPC_Filler : public client::C_DOTA_BaseNPC_Building
+    namespace client
     {
-    public:
-        // No schema binary for binding
+        // Registered alignment: 0x8
+        // Alignment: 0x8
+        // Standard-layout class: false
+        // Size: 0x1848
+        // Has VTable
+        // Construct allowed
+        #pragma pack(push, 1)
+        class C_DOTA_BaseNPC_Filler : public source2sdk::client::C_DOTA_BaseNPC_Building
+        {
+        public:
+            // No schema binary for binding
+        };
+        #pragma pack(pop)
+        
+        
+        static_assert(sizeof(source2sdk::client::C_DOTA_BaseNPC_Filler) == 0x1848);
     };
-    #pragma pack(pop)
-    
-    static_assert(sizeof(C_DOTA_BaseNPC_Filler) == 0x18e0);
 };

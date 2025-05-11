@@ -1,28 +1,33 @@
 #pragma once
-#include "source2sdk/server/CDOTA_Modifier_Truesight_Aura.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/server/CDOTA_Modifier_Truesight_Aura.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: server
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::server
+namespace source2sdk
 {
-    // Registered alignment: unknown
-    // Alignment: unknown
-    // Standard-layout class: false
-    // Size: 0x1710
-    // Has VTable
-    #pragma pack(push, 1)
-    class CDOTA_Modifier_Tower_Truesight_Aura : public server::CDOTA_Modifier_Truesight_Aura
+    namespace server
     {
-    public:
-        // No schema binary for binding
+        // Registered alignment: unknown
+        // Alignment: unknown
+        // Standard-layout class: false
+        // Size: 0x1800
+        // Has VTable
+        #pragma pack(push, 1)
+        class CDOTA_Modifier_Tower_Truesight_Aura : public source2sdk::server::CDOTA_Modifier_Truesight_Aura
+        {
+        public:
+            // No schema binary for binding
+        };
+        #pragma pack(pop)
+        
+        
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Tower_Truesight_Aura) == 0x1800);
     };
-    #pragma pack(pop)
-    
-    static_assert(sizeof(CDOTA_Modifier_Tower_Truesight_Aura) == 0x1710);
 };

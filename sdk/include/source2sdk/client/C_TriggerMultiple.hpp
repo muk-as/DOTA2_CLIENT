@@ -1,29 +1,34 @@
 #pragma once
-#include "source2sdk/client/C_BaseTrigger.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/client/C_BaseTrigger.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: client
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::client
+namespace source2sdk
 {
-    // Registered alignment: 0x8
-    // Alignment: 0x8
-    // Standard-layout class: false
-    // Size: 0x828
-    // Has VTable
-    // Construct allowed
-    #pragma pack(push, 1)
-    class C_TriggerMultiple : public client::C_BaseTrigger
+    namespace client
     {
-    public:
-        // No schema binary for binding
+        // Registered alignment: 0x8
+        // Alignment: 0x8
+        // Standard-layout class: false
+        // Size: 0x910
+        // Has VTable
+        // Construct allowed
+        #pragma pack(push, 1)
+        class C_TriggerMultiple : public source2sdk::client::C_BaseTrigger
+        {
+        public:
+            // No schema binary for binding
+        };
+        #pragma pack(pop)
+        
+        
+        static_assert(sizeof(source2sdk::client::C_TriggerMultiple) == 0x910);
     };
-    #pragma pack(pop)
-    
-    static_assert(sizeof(C_TriggerMultiple) == 0x828);
 };

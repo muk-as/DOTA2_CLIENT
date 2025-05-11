@@ -1,4 +1,7 @@
 #pragma once
+
+#include "source2sdk/source2gen/source2gen.hpp"
+#include <cstddef>
 #include <cstdint>
 
 // /////////////////////////////////////////////////////////////
@@ -6,15 +9,18 @@
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::client
+namespace source2sdk
 {
-    // Enumerator count: 3
-    // Alignment: 1
-    // Size: 0x1
-    enum class DamageOptions_t : std::uint8_t
+    namespace client
     {
-        DAMAGE_NO = 0,
-        DAMAGE_EVENTS_ONLY = 1,
-        DAMAGE_YES = 2,
+        // Enumerator count: 3
+        // Alignment: 1
+        // Size: 0x1
+        enum class DamageOptions_t : std::uint8_t
+        {
+            DAMAGE_NO = 0x0,
+            DAMAGE_EVENTS_ONLY = 0x1,
+            DAMAGE_YES = 0x2,
+        };
     };
 };

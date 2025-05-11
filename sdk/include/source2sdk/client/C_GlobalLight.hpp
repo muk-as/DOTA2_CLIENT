@@ -1,45 +1,45 @@
 #pragma once
-#include "source2sdk/client/C_BaseEntity.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/client/C_BaseEntity.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: client
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::client
+namespace source2sdk
 {
-    // Registered alignment: 0x10
-    // Alignment: 0x10
-    // Standard-layout class: false
-    // Size: 0xab0
-    // Has VTable
-    // Construct allowed
-    // 
-    // static metadata: MEntityAllowsPortraitWorldSpawn
-    #pragma pack(push, 1)
-    class C_GlobalLight : public client::C_BaseEntity
+    namespace client
     {
-    public:
-        [[maybe_unused]] std::uint8_t pad_0x560[0x520]; // 0x560
-        uint16_t m_WindClothForceHandle; // 0xa80        
-        [[maybe_unused]] std::uint8_t pad_0xa82[0x2e];
+        // Registered alignment: 0x10
+        // Alignment: 0x10
+        // Standard-layout class: false
+        // Size: 0xa60
+        // Has VTable
+        // Construct allowed
+        // 
+        // static metadata: MEntityAllowsPortraitWorldSpawn
+        #pragma pack(push, 1)
+        class C_GlobalLight : public source2sdk::client::C_BaseEntity
+        {
+        public:
+            uint8_t _pad0510[0x520]; // 0x510
+            std::uint16_t m_WindClothForceHandle; // 0xa30            
+            uint8_t _pad0a32[0x2e];
+            
+            // Datamap fields:
+            // CGlobalLightBase CGlobalLightBase; // 0x510
+            // void InputTurnOn; // 0x0
+            // void InputTurnOff; // 0x0
+            // float InputSetLightScale; // 0x0
+        };
+        #pragma pack(pop)
         
-        // Static fields:
-        static client::C_GlobalLight* &Get_sm_pGlobalLight() {return *reinterpret_cast<client::C_GlobalLight**>(interfaces::g_schema->FindTypeScopeForModule("client.dll")->FindDeclaredClass("C_GlobalLight")->GetStaticFields()[0]->m_pInstance);};
-        static CUtlStringToken &Get_sm_pSkyboxSlots() {return *reinterpret_cast<CUtlStringToken*>(interfaces::g_schema->FindTypeScopeForModule("client.dll")->FindDeclaredClass("C_GlobalLight")->GetStaticFields()[1]->m_pInstance);};
-        static CUtlVector<client::C_GlobalLight*> &Get_sm_nonPrimaryGlobalLights() {return *reinterpret_cast<CUtlVector<client::C_GlobalLight*>*>(interfaces::g_schema->FindTypeScopeForModule("client.dll")->FindDeclaredClass("C_GlobalLight")->GetStaticFields()[2]->m_pInstance);};
+        // Cannot assert offsets of fields in C_GlobalLight because it is not a standard-layout class
         
-        // Datamap fields:
-        // CGlobalLightBase CGlobalLightBase; // 0x560
-        // void InputTurnOn; // 0x0
-        // void InputTurnOff; // 0x0
-        // float InputSetLightScale; // 0x0
+        static_assert(sizeof(source2sdk::client::C_GlobalLight) == 0xa60);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in C_GlobalLight because it is not a standard-layout class
-    static_assert(sizeof(C_GlobalLight) == 0xab0);
 };

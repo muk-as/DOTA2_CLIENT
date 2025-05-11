@@ -1,4 +1,7 @@
 #pragma once
+
+#include "source2sdk/source2gen/source2gen.hpp"
+#include <cstddef>
 #include <cstdint>
 
 // /////////////////////////////////////////////////////////////
@@ -6,16 +9,19 @@
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::animationsystem
+namespace source2sdk
 {
-    // Enumerator count: 2
-    // Alignment: 4
-    // Size: 0x4
-    enum class MoodType_t : std::uint32_t
+    namespace animationsystem
     {
-        // MPropertyFriendlyName "Head"
-        eMoodType_Head = 0x0,
-        // MPropertyFriendlyName "Body"
-        eMoodType_Body = 0x1,
+        // Enumerator count: 2
+        // Alignment: 4
+        // Size: 0x4
+        enum class MoodType_t : std::uint32_t
+        {
+            // MPropertyFriendlyName "Head"
+            eMoodType_Head = 0x0,
+            // MPropertyFriendlyName "Body"
+            eMoodType_Body = 0x1,
+        };
     };
 };

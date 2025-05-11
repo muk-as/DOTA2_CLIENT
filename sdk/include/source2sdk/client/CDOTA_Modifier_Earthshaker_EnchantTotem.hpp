@@ -1,34 +1,39 @@
 #pragma once
-#include "source2sdk/client/CDOTA_Buff.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/client/CDOTA_Buff.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: client
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::client
+namespace source2sdk
 {
-    // Registered alignment: unknown
-    // Alignment: unknown
-    // Standard-layout class: false
-    // Size: 0x1720
-    // Has VTable
-    #pragma pack(push, 1)
-    class CDOTA_Modifier_Earthshaker_EnchantTotem : public client::CDOTA_Buff
+    namespace client
     {
-    public:
-        int32_t bonus_attack_range; // 0x1708        
-        int32_t totem_damage_percentage; // 0x170c        
-        int32_t scepter_cleave_pct; // 0x1710        
-        float scepter_cleave_starting_width; // 0x1714        
-        float scepter_cleave_ending_width; // 0x1718        
-        float scepter_cleave_distance; // 0x171c        
+        // Registered alignment: unknown
+        // Alignment: unknown
+        // Standard-layout class: false
+        // Size: 0x1810
+        // Has VTable
+        #pragma pack(push, 1)
+        class CDOTA_Modifier_Earthshaker_EnchantTotem : public source2sdk::client::CDOTA_Buff
+        {
+        public:
+            std::int32_t bonus_attack_range; // 0x17f8            
+            std::int32_t totem_damage_percentage; // 0x17fc            
+            std::int32_t scepter_cleave_pct; // 0x1800            
+            float scepter_cleave_starting_width; // 0x1804            
+            float scepter_cleave_ending_width; // 0x1808            
+            float scepter_cleave_distance; // 0x180c            
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in CDOTA_Modifier_Earthshaker_EnchantTotem because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Earthshaker_EnchantTotem) == 0x1810);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in CDOTA_Modifier_Earthshaker_EnchantTotem because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_Earthshaker_EnchantTotem) == 0x1720);
 };

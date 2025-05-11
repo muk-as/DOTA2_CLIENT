@@ -1,30 +1,36 @@
 #pragma once
-#include "source2sdk/client/CDOTA_Buff.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/client/CDOTA_Buff.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: server
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::server
+namespace source2sdk
 {
-    // Registered alignment: unknown
-    // Alignment: unknown
-    // Standard-layout class: false
-    // Size: 0x1710
-    // Has VTable
-    #pragma pack(push, 1)
-    class CDOTA_Modifier_DragonKnight_CorrosiveBreath : public client::CDOTA_Buff
+    namespace server
     {
-    public:
-        float corrosive_breath_duration; // 0x1708        
-        float ranged_splash_radius; // 0x170c        
+        // Registered alignment: unknown
+        // Alignment: unknown
+        // Standard-layout class: false
+        // Size: 0x1808
+        // Has VTable
+        #pragma pack(push, 1)
+        class CDOTA_Modifier_DragonKnight_CorrosiveBreath : public source2sdk::client::CDOTA_Buff
+        {
+        public:
+            uint8_t _pad17f8[0x8]; // 0x17f8
+            float corrosive_breath_duration; // 0x1800            
+            uint8_t _pad1804[0x4];
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in CDOTA_Modifier_DragonKnight_CorrosiveBreath because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_DragonKnight_CorrosiveBreath) == 0x1808);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in CDOTA_Modifier_DragonKnight_CorrosiveBreath because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_DragonKnight_CorrosiveBreath) == 0x1710);
 };

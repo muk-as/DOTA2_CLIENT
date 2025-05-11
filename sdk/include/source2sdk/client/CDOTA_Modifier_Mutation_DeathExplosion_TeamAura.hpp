@@ -1,28 +1,33 @@
 #pragma once
-#include "source2sdk/client/CDOTA_Modifier_Mutation_DeathExplosion_Aura.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/client/CDOTA_Modifier_Mutation_DeathExplosion_Aura.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: client
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::client
+namespace source2sdk
 {
-    // Registered alignment: unknown
-    // Alignment: unknown
-    // Standard-layout class: false
-    // Size: 0x1708
-    // Has VTable
-    #pragma pack(push, 1)
-    class CDOTA_Modifier_Mutation_DeathExplosion_TeamAura : public client::CDOTA_Modifier_Mutation_DeathExplosion_Aura
+    namespace client
     {
-    public:
-        // No schema binary for binding
+        // Registered alignment: unknown
+        // Alignment: unknown
+        // Standard-layout class: false
+        // Size: 0x17f8
+        // Has VTable
+        #pragma pack(push, 1)
+        class CDOTA_Modifier_Mutation_DeathExplosion_TeamAura : public source2sdk::client::CDOTA_Modifier_Mutation_DeathExplosion_Aura
+        {
+        public:
+            // No schema binary for binding
+        };
+        #pragma pack(pop)
+        
+        
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Mutation_DeathExplosion_TeamAura) == 0x17f8);
     };
-    #pragma pack(pop)
-    
-    static_assert(sizeof(CDOTA_Modifier_Mutation_DeathExplosion_TeamAura) == 0x1708);
 };

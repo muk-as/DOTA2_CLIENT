@@ -1,5 +1,6 @@
 #pragma once
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
 
@@ -8,32 +9,35 @@
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::soundsystem_lowlevel
+namespace source2sdk
 {
-    // Registered alignment: 0x4
-    // Alignment: 0x4
-    // Standard-layout class: true
-    // Size: 0x10
-    // Has Trivial Constructor
-    // Has Trivial Destructor
-    // Construct allowed
-    // 
-    // static metadata: MGetKV3ClassDefaults
-    #pragma pack(push, 1)
-    struct VMixDiffusorDesc_t
+    namespace soundsystem_lowlevel
     {
-    public:
-        float m_flSize; // 0x0        
-        float m_flComplexity; // 0x4        
-        float m_flFeedback; // 0x8        
-        float m_flOutputGain; // 0xc        
+        // Registered alignment: 0x4
+        // Alignment: 0x4
+        // Standard-layout class: true
+        // Size: 0x10
+        // Has Trivial Constructor
+        // Has Trivial Destructor
+        // Construct allowed
+        // 
+        // static metadata: MGetKV3ClassDefaults
+        #pragma pack(push, 1)
+        struct VMixDiffusorDesc_t
+        {
+        public:
+            float m_flSize; // 0x0            
+            float m_flComplexity; // 0x4            
+            float m_flFeedback; // 0x8            
+            float m_flOutputGain; // 0xc            
+        };
+        #pragma pack(pop)
+        
+        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixDiffusorDesc_t, m_flSize) == 0x0);
+        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixDiffusorDesc_t, m_flComplexity) == 0x4);
+        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixDiffusorDesc_t, m_flFeedback) == 0x8);
+        static_assert(offsetof(source2sdk::soundsystem_lowlevel::VMixDiffusorDesc_t, m_flOutputGain) == 0xc);
+        
+        static_assert(sizeof(source2sdk::soundsystem_lowlevel::VMixDiffusorDesc_t) == 0x10);
     };
-    #pragma pack(pop)
-    
-    static_assert(offsetof(VMixDiffusorDesc_t, m_flSize) == 0x0);
-    static_assert(offsetof(VMixDiffusorDesc_t, m_flComplexity) == 0x4);
-    static_assert(offsetof(VMixDiffusorDesc_t, m_flFeedback) == 0x8);
-    static_assert(offsetof(VMixDiffusorDesc_t, m_flOutputGain) == 0xc);
-    
-    static_assert(sizeof(VMixDiffusorDesc_t) == 0x10);
 };

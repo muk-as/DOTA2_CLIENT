@@ -1,39 +1,40 @@
 #pragma once
-#include "source2sdk/client/CDOTA_Buff.hpp"
-#include "source2sdk/client/PlayerID_t.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/client/CDOTA_Buff.hpp"
+#include "source2sdk/client/PlayerID_t.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: client
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::client
+namespace source2sdk
 {
-    // Registered alignment: unknown
-    // Alignment: unknown
-    // Standard-layout class: false
-    // Size: 0x1738
-    // Has VTable
-    #pragma pack(push, 1)
-    class CDOTA_Modifier_HallOfFame_Glow : public client::CDOTA_Buff
+    namespace client
     {
-    public:
-        // m_vecGlowingPlayerIDs has a template type with potentially unknown template parameters. You can try uncommenting the field below.
-        // CUtlVector<client::PlayerID_t> m_vecGlowingPlayerIDs;
-        char m_vecGlowingPlayerIDs[0x18]; // 0x1708        
-        // m_vecGlowingPlayerIDs2 has a template type with potentially unknown template parameters. You can try uncommenting the field below.
-        // CUtlVector<client::PlayerID_t> m_vecGlowingPlayerIDs2;
-        char m_vecGlowingPlayerIDs2[0x18]; // 0x1720        
+        // Registered alignment: unknown
+        // Alignment: unknown
+        // Standard-layout class: false
+        // Size: 0x1828
+        // Has VTable
+        #pragma pack(push, 1)
+        class CDOTA_Modifier_HallOfFame_Glow : public source2sdk::client::CDOTA_Buff
+        {
+        public:
+            // m_vecGlowingPlayerIDs has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+            // CUtlVector<source2sdk::client::PlayerID_t> m_vecGlowingPlayerIDs;
+            char m_vecGlowingPlayerIDs[0x18]; // 0x17f8            
+            // m_vecGlowingPlayerIDs2 has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+            // CUtlVector<source2sdk::client::PlayerID_t> m_vecGlowingPlayerIDs2;
+            char m_vecGlowingPlayerIDs2[0x18]; // 0x1810            
+        };
+        #pragma pack(pop)
         
-        // Static fields:
-        static CUtlVector<client::PlayerID_t> &Get_s_vecGlowingPlayerIDs() {return *reinterpret_cast<CUtlVector<client::PlayerID_t>*>(interfaces::g_schema->FindTypeScopeForModule("client.dll")->FindDeclaredClass("CDOTA_Modifier_HallOfFame_Glow")->GetStaticFields()[0]->m_pInstance);};
-        static CUtlVector<client::PlayerID_t> &Get_s_vecGlowingPlayerIDs2() {return *reinterpret_cast<CUtlVector<client::PlayerID_t>*>(interfaces::g_schema->FindTypeScopeForModule("client.dll")->FindDeclaredClass("CDOTA_Modifier_HallOfFame_Glow")->GetStaticFields()[1]->m_pInstance);};
+        // Cannot assert offsets of fields in CDOTA_Modifier_HallOfFame_Glow because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_HallOfFame_Glow) == 0x1828);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in CDOTA_Modifier_HallOfFame_Glow because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_HallOfFame_Glow) == 0x1738);
 };

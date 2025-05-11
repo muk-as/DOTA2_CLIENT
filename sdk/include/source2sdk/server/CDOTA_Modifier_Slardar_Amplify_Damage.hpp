@@ -1,43 +1,50 @@
 #pragma once
-#include "source2sdk/client/CDOTA_Buff.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/client/CDOTA_Buff.hpp"
+namespace source2sdk
+{
+    namespace server
+    {
+        struct CBaseEntity;
+    };
+};
 
 // /////////////////////////////////////////////////////////////
 // Module: server
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::server
+namespace source2sdk
 {
-    class CBaseEntity;
-};
-
-namespace source2sdk::server
-{
-    // Registered alignment: unknown
-    // Alignment: unknown
-    // Standard-layout class: false
-    // Size: 0x1730
-    // Has VTable
-    #pragma pack(push, 1)
-    class CDOTA_Modifier_Slardar_Amplify_Damage : public client::CDOTA_Buff
+    namespace server
     {
-    public:
-        int32_t armor_reduction; // 0x1708        
-        float scepter_delay; // 0x170c        
-        int32_t undispellable; // 0x1710        
-        float puddle_radius; // 0x1714        
-        float puddle_duration; // 0x1718        
-        Vector m_vecLastPuddle; // 0x171c        
-        // m_hPuddle has a template type with potentially unknown template parameters. You can try uncommenting the field below.
-        // CHandle<server::CBaseEntity> m_hPuddle;
-        char m_hPuddle[0x4]; // 0x1728        
-        int32_t m_nSelfBuffSerialNumber; // 0x172c        
+        // Registered alignment: unknown
+        // Alignment: unknown
+        // Standard-layout class: false
+        // Size: 0x1820
+        // Has VTable
+        #pragma pack(push, 1)
+        class CDOTA_Modifier_Slardar_Amplify_Damage : public source2sdk::client::CDOTA_Buff
+        {
+        public:
+            std::int32_t armor_reduction; // 0x17f8            
+            float scepter_delay; // 0x17fc            
+            std::int32_t undispellable; // 0x1800            
+            float puddle_radius; // 0x1804            
+            float puddle_duration; // 0x1808            
+            Vector m_vecLastPuddle; // 0x180c            
+            // m_hPuddle has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+            // CHandle<source2sdk::server::CBaseEntity> m_hPuddle;
+            char m_hPuddle[0x4]; // 0x1818            
+            std::int32_t m_nSelfBuffSerialNumber; // 0x181c            
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in CDOTA_Modifier_Slardar_Amplify_Damage because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Slardar_Amplify_Damage) == 0x1820);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in CDOTA_Modifier_Slardar_Amplify_Damage because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_Slardar_Amplify_Damage) == 0x1730);
 };

@@ -1,4 +1,7 @@
 #pragma once
+
+#include "source2sdk/source2gen/source2gen.hpp"
+#include <cstddef>
 #include <cstdint>
 
 // /////////////////////////////////////////////////////////////
@@ -6,16 +9,19 @@
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::soundsystem_voicecontainers
+namespace source2sdk
 {
-    // Enumerator count: 4
-    // Alignment: 1
-    // Size: 0x1
-    enum class CVSoundFormat_t : std::uint8_t
+    namespace soundsystem_voicecontainers
     {
-        PCM16 = 0,
-        PCM8 = 1,
-        MP3 = 2,
-        ADPCM = 3,
+        // Enumerator count: 4
+        // Alignment: 1
+        // Size: 0x1
+        enum class CVSoundFormat_t : std::uint8_t
+        {
+            PCM16 = 0x0,
+            PCM8 = 0x1,
+            MP3 = 0x2,
+            ADPCM = 0x3,
+        };
     };
 };

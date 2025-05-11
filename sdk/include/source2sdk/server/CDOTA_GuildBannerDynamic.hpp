@@ -1,55 +1,60 @@
 #pragma once
-#include "source2sdk/client/GuildID_t.hpp"
-#include "source2sdk/server/CDynamicProp.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/client/GuildID_t.hpp"
+#include "source2sdk/server/CDynamicProp.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: server
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::server
+namespace source2sdk
 {
-    // Registered alignment: 0x8
-    // Alignment: 0x8
-    // Standard-layout class: false
-    // Size: 0xaa0
-    // Has VTable
-    // Construct allowed
-    // MClassHasEntityLimitedDataDesc
-    // 
-    // static metadata: MEntityAllowsPortraitWorldSpawn
-    #pragma pack(push, 1)
-    class CDOTA_GuildBannerDynamic : public server::CDynamicProp
+    namespace server
     {
-    public:
-        // metadata: MNetworkEnable
-        bool m_bRespawnClientEntity; // 0xa80        
-        // metadata: MNetworkEnable
-        bool m_bPlaySpawnAnimation; // 0xa81        
-        // metadata: MNetworkEnable
-        uint8_t m_unGuildTier; // 0xa82        
-        // metadata: MNetworkEnable
-        uint8_t m_unPrimaryColor; // 0xa83        
-        // metadata: MNetworkEnable
-        uint8_t m_unSecondaryColor; // 0xa84        
-        // metadata: MNetworkEnable
-        uint8_t m_unPattern; // 0xa85        
-        [[maybe_unused]] std::uint8_t pad_0xa86[0x2]; // 0xa86
-        // metadata: MNetworkEnable
-        uint64_t m_unLogo; // 0xa88        
-        // metadata: MNetworkEnable
-        client::GuildID_t m_unGuildID; // 0xa90        
-        // metadata: MNetworkEnable
-        uint32_t m_unGuildFlags; // 0xa94        
-        // metadata: MNetworkEnable
-        bool m_bUsePanelCache; // 0xa98        
-        [[maybe_unused]] std::uint8_t pad_0xa99[0x7];
+        // Registered alignment: 0x8
+        // Alignment: 0x8
+        // Standard-layout class: false
+        // Size: 0xa90
+        // Has VTable
+        // Construct allowed
+        // MClassHasEntityLimitedDataDesc
+        // 
+        // static metadata: MEntityAllowsPortraitWorldSpawn
+        #pragma pack(push, 1)
+        class CDOTA_GuildBannerDynamic : public source2sdk::server::CDynamicProp
+        {
+        public:
+            // metadata: MNetworkEnable
+            bool m_bRespawnClientEntity; // 0xa70            
+            // metadata: MNetworkEnable
+            bool m_bPlaySpawnAnimation; // 0xa71            
+            // metadata: MNetworkEnable
+            std::uint8_t m_unGuildTier; // 0xa72            
+            // metadata: MNetworkEnable
+            std::uint8_t m_unPrimaryColor; // 0xa73            
+            // metadata: MNetworkEnable
+            std::uint8_t m_unSecondaryColor; // 0xa74            
+            // metadata: MNetworkEnable
+            std::uint8_t m_unPattern; // 0xa75            
+            uint8_t _pad0a76[0x2]; // 0xa76
+            // metadata: MNetworkEnable
+            std::uint64_t m_unLogo; // 0xa78            
+            // metadata: MNetworkEnable
+            source2sdk::client::GuildID_t m_unGuildID; // 0xa80            
+            // metadata: MNetworkEnable
+            std::uint32_t m_unGuildFlags; // 0xa84            
+            // metadata: MNetworkEnable
+            bool m_bUsePanelCache; // 0xa88            
+            uint8_t _pad0a89[0x7];
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in CDOTA_GuildBannerDynamic because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::server::CDOTA_GuildBannerDynamic) == 0xa90);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in CDOTA_GuildBannerDynamic because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_GuildBannerDynamic) == 0xaa0);
 };

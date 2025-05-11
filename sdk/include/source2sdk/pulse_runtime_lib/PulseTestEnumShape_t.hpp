@@ -1,4 +1,7 @@
 #pragma once
+
+#include "source2sdk/source2gen/source2gen.hpp"
+#include <cstddef>
 #include <cstdint>
 
 // /////////////////////////////////////////////////////////////
@@ -6,18 +9,21 @@
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::pulse_runtime_lib
+namespace source2sdk
 {
-    // Enumerator count: 3
-    // Alignment: 4
-    // Size: 0x4
-    enum class PulseTestEnumShape_t : std::uint32_t
+    namespace pulse_runtime_lib
     {
-        // MPropertyFriendlyName "Circle"
-        CIRCLE = 0x64,
-        // MPropertyFriendlyName "Square"
-        SQUARE = 0xc8,
-        // MPropertyFriendlyName "Triangle"
-        TRIANGLE = 0x12c,
+        // Enumerator count: 3
+        // Alignment: 4
+        // Size: 0x4
+        enum class PulseTestEnumShape_t : std::uint32_t
+        {
+            // MPropertyFriendlyName "Circle"
+            CIRCLE = 0x64,
+            // MPropertyFriendlyName "Square"
+            SQUARE = 0xc8,
+            // MPropertyFriendlyName "Triangle"
+            TRIANGLE = 0x12c,
+        };
     };
 };

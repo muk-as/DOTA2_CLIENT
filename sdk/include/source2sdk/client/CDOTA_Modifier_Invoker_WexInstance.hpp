@@ -1,30 +1,35 @@
 #pragma once
-#include "source2sdk/client/CDOTA_Modifier_Invoker_Instance.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/client/CDOTA_Modifier_Invoker_Instance.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: client
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::client
+namespace source2sdk
 {
-    // Registered alignment: unknown
-    // Alignment: unknown
-    // Standard-layout class: false
-    // Size: 0x1710
-    // Has VTable
-    #pragma pack(push, 1)
-    class CDOTA_Modifier_Invoker_WexInstance : public client::CDOTA_Modifier_Invoker_Instance
+    namespace client
     {
-    public:
-        float move_speed_per_instance; // 0x1708        
-        float cooldown_reduction; // 0x170c        
+        // Registered alignment: unknown
+        // Alignment: unknown
+        // Standard-layout class: false
+        // Size: 0x1800
+        // Has VTable
+        #pragma pack(push, 1)
+        class CDOTA_Modifier_Invoker_WexInstance : public source2sdk::client::CDOTA_Modifier_Invoker_Instance
+        {
+        public:
+            float move_speed_per_instance; // 0x17f8            
+            uint8_t _pad17fc[0x4];
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in CDOTA_Modifier_Invoker_WexInstance because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Invoker_WexInstance) == 0x1800);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in CDOTA_Modifier_Invoker_WexInstance because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_Invoker_WexInstance) == 0x1710);
 };

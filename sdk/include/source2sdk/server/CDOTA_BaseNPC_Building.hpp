@@ -1,121 +1,122 @@
 #pragma once
+
+#include "source2sdk/source2gen/source2gen.hpp"
+#include <cstddef>
+#include <cstdint>
 #include "source2sdk/animationsystem/HSequence.hpp"
 #include "source2sdk/client/DOTA_LANE.hpp"
 #include "source2sdk/client/FowCustomTeams_t.hpp"
 #include "source2sdk/client/PlayerID_t.hpp"
-#include "source2sdk/entity2/GameTime_t.hpp"
 #include "source2sdk/resourcesystem/InfoForResourceTypeIParticleSystemDefinition.hpp"
 #include "source2sdk/server/CDOTA_BaseNPC.hpp"
 #include "source2sdk/server/CountdownTimer.hpp"
-#include "source2sdk/source2gen.hpp"
-#include <cstddef>
-#include <cstdint>
 
 // /////////////////////////////////////////////////////////////
 // Module: server
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::server
+namespace source2sdk
 {
-    // Registered alignment: 0x8
-    // Alignment: 0x8
-    // Standard-layout class: false
-    // Size: 0x1978
-    // Has VTable
-    // Construct allowed
-    // MClassHasEntityLimitedDataDesc
-    // 
-    // static metadata: MNetworkExcludeByName "m_angRotation"
-    // static metadata: MNetworkExcludeByName "m_angRotation[0]"
-    // static metadata: MNetworkExcludeByName "m_angRotation[1]"
-    // static metadata: MNetworkVarNames "int m_iDamageLevel"
-    // static metadata: MNetworkVarNames "HParticleSystemDefinitionStrong m_nFXIndex"
-    // static metadata: MNetworkVarNames "HParticleSystemDefinitionStrong m_nFXIndexDestruction"
-    // static metadata: MNetworkVarNames "QAngle m_angInitialAngles"
-    // static metadata: MNetworkVarNames "HSequence m_hHeroStatueSequence"
-    // static metadata: MNetworkVarNames "HSequence m_hConstantLayerSequence"
-    // static metadata: MNetworkVarNames "float m_fHeroStatueCycle"
-    // static metadata: MNetworkVarNames "int m_iHeroStatueStatusEffectIndex"
-    // static metadata: MNetworkVarNames "bool m_bHeroStatue"
-    // static metadata: MNetworkVarNames "bool m_bBattleCup"
-    // static metadata: MNetworkVarNames "char m_HeroStatueInscription"
-    // static metadata: MNetworkVarNames "PlayerID_t m_iHeroStatueOwnerPlayerID"
-    // static metadata: MNetworkVarNames "Color m_ParticleTintColor"
-    // static metadata: MNetworkVarNames "FowCustomTeams_t m_nFoWTeam"
-    #pragma pack(push, 1)
-    class CDOTA_BaseNPC_Building : public server::CDOTA_BaseNPC
+    namespace server
     {
-    public:
-        // metadata: MNetworkEnable
-        int32_t m_iDamageLevel; // 0x1868        
-        [[maybe_unused]] std::uint8_t pad_0x186c[0x4]; // 0x186c
-        // metadata: MNetworkEnable
-        // m_nFXIndex has a template type with potentially unknown template parameters. You can try uncommenting the field below.
-        // CStrongHandle<resourcesystem::InfoForResourceTypeIParticleSystemDefinition> m_nFXIndex;
-        char m_nFXIndex[0x8]; // 0x1870        
-        // metadata: MNetworkEnable
-        // m_nFXIndexDestruction has a template type with potentially unknown template parameters. You can try uncommenting the field below.
-        // CStrongHandle<resourcesystem::InfoForResourceTypeIParticleSystemDefinition> m_nFXIndexDestruction;
-        char m_nFXIndexDestruction[0x8]; // 0x1878        
-        // metadata: MNetworkEnable
-        QAngle m_angInitialAngles; // 0x1880        
-        // metadata: MNetworkEnable
-        animationsystem::HSequence m_hHeroStatueSequence; // 0x188c        
-        // metadata: MNetworkEnable
-        animationsystem::HSequence m_hConstantLayerSequence; // 0x1890        
-        // metadata: MNetworkEnable
-        float m_fHeroStatueCycle; // 0x1894        
-        // metadata: MNetworkEnable
-        int32_t m_iHeroStatueStatusEffectIndex; // 0x1898        
-        // metadata: MNetworkEnable
-        bool m_bHeroStatue; // 0x189c        
-        // metadata: MNetworkEnable
-        bool m_bBattleCup; // 0x189d        
-        // metadata: MNetworkEnable
-        char m_HeroStatueInscription[32]; // 0x189e        
-        [[maybe_unused]] std::uint8_t pad_0x18be[0x2]; // 0x18be
-        // metadata: MNetworkEnable
-        client::PlayerID_t m_iHeroStatueOwnerPlayerID; // 0x18c0        
-        // metadata: MNetworkEnable
-        Color m_ParticleTintColor; // 0x18c4        
-        CUtlSymbolLarge m_sDestroySnd; // 0x18c8        
-        CUtlSymbolLarge m_sDmgLvl1Snd; // 0x18d0        
-        CUtlSymbolLarge m_sDmgLvl2Snd; // 0x18d8        
-        CUtlSymbolLarge m_iszLinkedUnit; // 0x18e0        
-        CUtlSymbolLarge m_iszAmbientEffectName; // 0x18e8        
-        CUtlSymbolLarge m_iszDestructionEffectName; // 0x18f0        
-        CUtlSymbolLarge m_iszDamageModelLevel1; // 0x18f8        
-        CUtlSymbolLarge m_iszDamageModelLevel2; // 0x1900        
-        CUtlSymbolLarge m_iszDamageEffectLevel1; // 0x1908        
-        CUtlSymbolLarge m_iszDamageEffectLevel2; // 0x1910        
-        float m_flDamageThresholdLevel1; // 0x1918        
-        float m_flDamageThresholdLevel2; // 0x191c        
-        bool m_bVulnerableOnCreepSpawn; // 0x1920        
-        bool m_bHasOverriddenDestructionEffect; // 0x1921        
-        [[maybe_unused]] std::uint8_t pad_0x1922[0x2]; // 0x1922
-        int32_t m_iUpgradeIdentifier; // 0x1924        
-        int32_t m_iInvulnCount; // 0x1928        
-        int32_t m_iPlayerOwner; // 0x192c        
-        client::DOTA_LANE m_Lane; // 0x1930        
-        float m_fAmountAlongLane[2]; // 0x1934        
-        Vector m_vOverrideInitialAngles; // 0x193c        
-        Vector m_vOverrideInitialAnglesBG; // 0x1948        
-        int32_t m_nOverrideInitialAngles; // 0x1954        
-        server::CountdownTimer m_IdleRareAnimationTime; // 0x1958        
-        // metadata: MNetworkEnable
-        client::FowCustomTeams_t m_nFoWTeam; // 0x1970        
-        [[maybe_unused]] std::uint8_t pad_0x1974[0x4];
+        // Registered alignment: 0x8
+        // Alignment: 0x8
+        // Standard-layout class: false
+        // Size: 0x1970
+        // Has VTable
+        // Construct allowed
+        // MClassHasEntityLimitedDataDesc
+        // 
+        // static metadata: MNetworkExcludeByName "m_angRotation"
+        // static metadata: MNetworkExcludeByName "m_angRotation[0]"
+        // static metadata: MNetworkExcludeByName "m_angRotation[1]"
+        // static metadata: MNetworkVarNames "int m_iDamageLevel"
+        // static metadata: MNetworkVarNames "HParticleSystemDefinitionStrong m_nFXIndex"
+        // static metadata: MNetworkVarNames "HParticleSystemDefinitionStrong m_nFXIndexDestruction"
+        // static metadata: MNetworkVarNames "QAngle m_angInitialAngles"
+        // static metadata: MNetworkVarNames "HSequence m_hHeroStatueSequence"
+        // static metadata: MNetworkVarNames "HSequence m_hConstantLayerSequence"
+        // static metadata: MNetworkVarNames "float m_fHeroStatueCycle"
+        // static metadata: MNetworkVarNames "int m_iHeroStatueStatusEffectIndex"
+        // static metadata: MNetworkVarNames "bool m_bHeroStatue"
+        // static metadata: MNetworkVarNames "bool m_bBattleCup"
+        // static metadata: MNetworkVarNames "char m_HeroStatueInscription"
+        // static metadata: MNetworkVarNames "PlayerID_t m_iHeroStatueOwnerPlayerID"
+        // static metadata: MNetworkVarNames "Color m_ParticleTintColor"
+        // static metadata: MNetworkVarNames "FowCustomTeams_t m_nFoWTeam"
+        #pragma pack(push, 1)
+        class CDOTA_BaseNPC_Building : public source2sdk::server::CDOTA_BaseNPC
+        {
+        public:
+            // metadata: MNetworkEnable
+            std::int32_t m_iDamageLevel; // 0x1860            
+            uint8_t _pad1864[0x4]; // 0x1864
+            // metadata: MNetworkEnable
+            // m_nFXIndex has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+            // CStrongHandle<source2sdk::resourcesystem::InfoForResourceTypeIParticleSystemDefinition> m_nFXIndex;
+            char m_nFXIndex[0x8]; // 0x1868            
+            // metadata: MNetworkEnable
+            // m_nFXIndexDestruction has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+            // CStrongHandle<source2sdk::resourcesystem::InfoForResourceTypeIParticleSystemDefinition> m_nFXIndexDestruction;
+            char m_nFXIndexDestruction[0x8]; // 0x1870            
+            // metadata: MNetworkEnable
+            QAngle m_angInitialAngles; // 0x1878            
+            // metadata: MNetworkEnable
+            source2sdk::animationsystem::HSequence m_hHeroStatueSequence; // 0x1884            
+            // metadata: MNetworkEnable
+            source2sdk::animationsystem::HSequence m_hConstantLayerSequence; // 0x1888            
+            // metadata: MNetworkEnable
+            float m_fHeroStatueCycle; // 0x188c            
+            // metadata: MNetworkEnable
+            std::int32_t m_iHeroStatueStatusEffectIndex; // 0x1890            
+            // metadata: MNetworkEnable
+            bool m_bHeroStatue; // 0x1894            
+            // metadata: MNetworkEnable
+            bool m_bBattleCup; // 0x1895            
+            // metadata: MNetworkEnable
+            char m_HeroStatueInscription[32]; // 0x1896            
+            uint8_t _pad18b6[0x2]; // 0x18b6
+            // metadata: MNetworkEnable
+            source2sdk::client::PlayerID_t m_iHeroStatueOwnerPlayerID; // 0x18b8            
+            // metadata: MNetworkEnable
+            Color m_ParticleTintColor; // 0x18bc            
+            CUtlSymbolLarge m_sDestroySnd; // 0x18c0            
+            CUtlSymbolLarge m_sDmgLvl1Snd; // 0x18c8            
+            CUtlSymbolLarge m_sDmgLvl2Snd; // 0x18d0            
+            CUtlSymbolLarge m_iszLinkedUnit; // 0x18d8            
+            CUtlSymbolLarge m_iszAmbientEffectName; // 0x18e0            
+            CUtlSymbolLarge m_iszDestructionEffectName; // 0x18e8            
+            CUtlSymbolLarge m_iszDamageModelLevel1; // 0x18f0            
+            CUtlSymbolLarge m_iszDamageModelLevel2; // 0x18f8            
+            CUtlSymbolLarge m_iszDamageEffectLevel1; // 0x1900            
+            CUtlSymbolLarge m_iszDamageEffectLevel2; // 0x1908            
+            float m_flDamageThresholdLevel1; // 0x1910            
+            float m_flDamageThresholdLevel2; // 0x1914            
+            bool m_bVulnerableOnCreepSpawn; // 0x1918            
+            bool m_bHasOverriddenDestructionEffect; // 0x1919            
+            uint8_t _pad191a[0x2]; // 0x191a
+            std::int32_t m_iUpgradeIdentifier; // 0x191c            
+            std::int32_t m_iInvulnCount; // 0x1920            
+            std::int32_t m_iPlayerOwner; // 0x1924            
+            source2sdk::client::DOTA_LANE m_Lane; // 0x1928            
+            float m_fAmountAlongLane[2]; // 0x192c            
+            Vector m_vOverrideInitialAngles; // 0x1934            
+            Vector m_vOverrideInitialAnglesBG; // 0x1940            
+            std::int32_t m_nOverrideInitialAngles; // 0x194c            
+            source2sdk::server::CountdownTimer m_IdleRareAnimationTime; // 0x1950            
+            // metadata: MNetworkEnable
+            source2sdk::client::FowCustomTeams_t m_nFoWTeam; // 0x1968            
+            uint8_t _pad196c[0x4];
+            
+            // Datamap fields:
+            // int32_t InputSetInvulnCount; // 0x0
+            // void InputReduceInvulnCount; // 0x0
+        };
+        #pragma pack(pop)
         
-        // Static fields:
-        static entity2::GameTime_t &Get_m_fLastAttackWarnTimers() {return *reinterpret_cast<entity2::GameTime_t*>(interfaces::g_schema->FindTypeScopeForModule("server.dll")->FindDeclaredClass("CDOTA_BaseNPC_Building")->GetStaticFields()[0]->m_pInstance);};
+        // Cannot assert offsets of fields in CDOTA_BaseNPC_Building because it is not a standard-layout class
         
-        // Datamap fields:
-        // int32_t InputSetInvulnCount; // 0x0
-        // void InputReduceInvulnCount; // 0x0
+        static_assert(sizeof(source2sdk::server::CDOTA_BaseNPC_Building) == 0x1970);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in CDOTA_BaseNPC_Building because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_BaseNPC_Building) == 0x1978);
 };

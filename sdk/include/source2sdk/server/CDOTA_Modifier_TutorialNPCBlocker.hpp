@@ -1,35 +1,40 @@
 #pragma once
-#include "source2sdk/client/CDOTA_Buff.hpp"
-#include "source2sdk/client/ParticleIndex_t.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/client/CDOTA_Buff.hpp"
+#include "source2sdk/client/ParticleIndex_t.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: server
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::server
+namespace source2sdk
 {
-    // Registered alignment: unknown
-    // Alignment: unknown
-    // Standard-layout class: false
-    // Size: 0x1738
-    // Has VTable
-    #pragma pack(push, 1)
-    class CDOTA_Modifier_TutorialNPCBlocker : public client::CDOTA_Buff
+    namespace server
     {
-    public:
-        Vector m_vecStart; // 0x1708        
-        Vector m_vecEnd; // 0x1714        
-        Vector m_vecCenter; // 0x1720        
-        client::ParticleIndex_t m_nFXIndex; // 0x172c        
-        bool m_bHidden; // 0x1730        
-        [[maybe_unused]] std::uint8_t pad_0x1731[0x7];
+        // Registered alignment: unknown
+        // Alignment: unknown
+        // Standard-layout class: false
+        // Size: 0x1828
+        // Has VTable
+        #pragma pack(push, 1)
+        class CDOTA_Modifier_TutorialNPCBlocker : public source2sdk::client::CDOTA_Buff
+        {
+        public:
+            Vector m_vecStart; // 0x17f8            
+            Vector m_vecEnd; // 0x1804            
+            Vector m_vecCenter; // 0x1810            
+            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x181c            
+            bool m_bHidden; // 0x1820            
+            uint8_t _pad1821[0x7];
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in CDOTA_Modifier_TutorialNPCBlocker because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_TutorialNPCBlocker) == 0x1828);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in CDOTA_Modifier_TutorialNPCBlocker because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_TutorialNPCBlocker) == 0x1738);
 };

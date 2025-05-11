@@ -1,4 +1,7 @@
 #pragma once
+
+#include "source2sdk/source2gen/source2gen.hpp"
+#include <cstddef>
 #include <cstdint>
 
 // /////////////////////////////////////////////////////////////
@@ -6,15 +9,18 @@
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::entity2
+namespace source2sdk
 {
-    // Enumerator count: 3
-    // Alignment: 4
-    // Size: 0x4
-    enum class EntityDormancyType_t : std::uint32_t
+    namespace entity2
     {
-        ENTITY_NOT_DORMANT = 0x0,
-        ENTITY_DORMANT = 0x1,
-        ENTITY_SUSPENDED = 0x2,
+        // Enumerator count: 3
+        // Alignment: 4
+        // Size: 0x4
+        enum class EntityDormancyType_t : std::uint32_t
+        {
+            ENTITY_NOT_DORMANT = 0x0,
+            ENTITY_DORMANT = 0x1,
+            ENTITY_SUSPENDED = 0x2,
+        };
     };
 };

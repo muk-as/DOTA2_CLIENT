@@ -1,30 +1,35 @@
 #pragma once
-#include "source2sdk/client/C_DOTA_BaseNPC_Additive.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/client/C_DOTA_BaseNPC_Additive.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: client
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::client
+namespace source2sdk
 {
-    // Registered alignment: 0x8
-    // Alignment: 0x8
-    // Standard-layout class: false
-    // Size: 0x1870
-    // Has VTable
-    // Construct allowed
-    // MClassHasEntityLimitedDataDesc
-    #pragma pack(push, 1)
-    class CDOTA_BaseNPC_Seasonal_TI9_Balloon : public client::C_DOTA_BaseNPC_Additive
+    namespace client
     {
-    public:
-        // No schema binary for binding
+        // Registered alignment: 0x8
+        // Alignment: 0x8
+        // Standard-layout class: false
+        // Size: 0x17d8
+        // Has VTable
+        // Construct allowed
+        // MClassHasEntityLimitedDataDesc
+        #pragma pack(push, 1)
+        class CDOTA_BaseNPC_Seasonal_TI9_Balloon : public source2sdk::client::C_DOTA_BaseNPC_Additive
+        {
+        public:
+            // No schema binary for binding
+        };
+        #pragma pack(pop)
+        
+        
+        static_assert(sizeof(source2sdk::client::CDOTA_BaseNPC_Seasonal_TI9_Balloon) == 0x17d8);
     };
-    #pragma pack(pop)
-    
-    static_assert(sizeof(CDOTA_BaseNPC_Seasonal_TI9_Balloon) == 0x1870);
 };

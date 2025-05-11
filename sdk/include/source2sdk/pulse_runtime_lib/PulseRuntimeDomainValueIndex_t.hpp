@@ -1,5 +1,6 @@
 #pragma once
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
 
@@ -8,27 +9,27 @@
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::pulse_runtime_lib
+namespace source2sdk
 {
-    // Registered alignment: unknown
-    // Alignment: 0x2
-    // Standard-layout class: true
-    // Size: 0x2
-    // Has Trivial Destructor
-    // 
-    // static metadata: MIsBoxedIntegerType
-    #pragma pack(push, 1)
-    struct PulseRuntimeDomainValueIndex_t
+    namespace pulse_runtime_lib
     {
-    public:
-        int16_t m_Value; // 0x0        
+        // Registered alignment: unknown
+        // Alignment: 0x2
+        // Standard-layout class: true
+        // Size: 0x2
+        // Has Trivial Destructor
+        // 
+        // static metadata: MIsBoxedIntegerType
+        #pragma pack(push, 1)
+        struct PulseRuntimeDomainValueIndex_t
+        {
+        public:
+            std::int16_t m_Value; // 0x0            
+        };
+        #pragma pack(pop)
         
-        // Static fields:
-        static bool &Get_IS_TYPESAFE_INTEGER() {return *reinterpret_cast<bool*>(interfaces::g_schema->FindTypeScopeForModule("!GlobalTypes")->FindDeclaredClass("PulseRuntimeDomainValueIndex_t")->GetStaticFields()[0]->m_pInstance);};
+        static_assert(offsetof(source2sdk::pulse_runtime_lib::PulseRuntimeDomainValueIndex_t, m_Value) == 0x0);
+        
+        static_assert(sizeof(source2sdk::pulse_runtime_lib::PulseRuntimeDomainValueIndex_t) == 0x2);
     };
-    #pragma pack(pop)
-    
-    static_assert(offsetof(PulseRuntimeDomainValueIndex_t, m_Value) == 0x0);
-    
-    static_assert(sizeof(PulseRuntimeDomainValueIndex_t) == 0x2);
 };

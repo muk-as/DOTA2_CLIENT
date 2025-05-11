@@ -1,4 +1,7 @@
 #pragma once
+
+#include "source2sdk/source2gen/source2gen.hpp"
+#include <cstddef>
 #include <cstdint>
 
 // /////////////////////////////////////////////////////////////
@@ -6,17 +9,20 @@
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::client
+namespace source2sdk
 {
-    // Enumerator count: 5
-    // Alignment: 4
-    // Size: 0x4
-    enum class ETimerAlertType : std::uint32_t
+    namespace client
     {
-        k_TimerAlertType_PowerRune = 0x1,
-        k_TimerAlertType_BountyRune = 0x2,
-        k_TimerAlertType_WisdomShrine = 0x3,
-        k_TimerAlertType_JungleCamps = 0x4,
-        k_TimerAlertType_LotusPool = 0x5,
+        // Enumerator count: 5
+        // Alignment: 4
+        // Size: 0x4
+        enum class ETimerAlertType : std::uint32_t
+        {
+            k_TimerAlertType_PowerRune = 0x1,
+            k_TimerAlertType_BountyRune = 0x2,
+            k_TimerAlertType_WisdomShrine = 0x3,
+            k_TimerAlertType_JungleCamps = 0x4,
+            k_TimerAlertType_LotusPool = 0x5,
+        };
     };
 };

@@ -1,4 +1,7 @@
 #pragma once
+
+#include "source2sdk/source2gen/source2gen.hpp"
+#include <cstddef>
 #include <cstdint>
 
 // /////////////////////////////////////////////////////////////
@@ -6,17 +9,20 @@
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::animgraphlib
+namespace source2sdk
 {
-    // Enumerator count: 5
-    // Alignment: 4
-    // Size: 0x4
-    enum class CAnimationGraphVisualizerPrimitiveType : std::uint32_t
+    namespace animgraphlib
     {
-        ANIMATIONGRAPHVISUALIZERPRIMITIVETYPE_Text = 0x0,
-        ANIMATIONGRAPHVISUALIZERPRIMITIVETYPE_Sphere = 0x1,
-        ANIMATIONGRAPHVISUALIZERPRIMITIVETYPE_Line = 0x2,
-        ANIMATIONGRAPHVISUALIZERPRIMITIVETYPE_Pie = 0x3,
-        ANIMATIONGRAPHVISUALIZERPRIMITIVETYPE_Axis = 0x4,
+        // Enumerator count: 5
+        // Alignment: 4
+        // Size: 0x4
+        enum class CAnimationGraphVisualizerPrimitiveType : std::uint32_t
+        {
+            ANIMATIONGRAPHVISUALIZERPRIMITIVETYPE_Text = 0x0,
+            ANIMATIONGRAPHVISUALIZERPRIMITIVETYPE_Sphere = 0x1,
+            ANIMATIONGRAPHVISUALIZERPRIMITIVETYPE_Line = 0x2,
+            ANIMATIONGRAPHVISUALIZERPRIMITIVETYPE_Pie = 0x3,
+            ANIMATIONGRAPHVISUALIZERPRIMITIVETYPE_Axis = 0x4,
+        };
     };
 };

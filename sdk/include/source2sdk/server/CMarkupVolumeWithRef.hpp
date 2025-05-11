@@ -1,34 +1,39 @@
 #pragma once
-#include "source2sdk/server/CMarkupVolumeTagged.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/server/CMarkupVolumeTagged.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: server
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::server
+namespace source2sdk
 {
-    // Registered alignment: 0x8
-    // Alignment: 0x8
-    // Standard-layout class: false
-    // Size: 0x808
-    // Has VTable
-    // Construct allowed
-    #pragma pack(push, 1)
-    class CMarkupVolumeWithRef : public server::CMarkupVolumeTagged
+    namespace server
     {
-    public:
-        bool m_bUseRef; // 0x7f0        
-        [[maybe_unused]] std::uint8_t pad_0x7f1[0x3]; // 0x7f1
-        Vector m_vRefPos; // 0x7f4        
-        float m_flRefDot; // 0x800        
-        [[maybe_unused]] std::uint8_t pad_0x804[0x4];
+        // Registered alignment: 0x8
+        // Alignment: 0x8
+        // Standard-layout class: false
+        // Size: 0x800
+        // Has VTable
+        // Construct allowed
+        #pragma pack(push, 1)
+        class CMarkupVolumeWithRef : public source2sdk::server::CMarkupVolumeTagged
+        {
+        public:
+            bool m_bUseRef; // 0x7e8            
+            uint8_t _pad07e9[0x3]; // 0x7e9
+            Vector m_vRefPos; // 0x7ec            
+            float m_flRefDot; // 0x7f8            
+            uint8_t _pad07fc[0x4];
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in CMarkupVolumeWithRef because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::server::CMarkupVolumeWithRef) == 0x800);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in CMarkupVolumeWithRef because it is not a standard-layout class
-    static_assert(sizeof(CMarkupVolumeWithRef) == 0x808);
 };

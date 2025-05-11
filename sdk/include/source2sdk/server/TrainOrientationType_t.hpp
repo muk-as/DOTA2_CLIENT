@@ -1,4 +1,7 @@
 #pragma once
+
+#include "source2sdk/source2gen/source2gen.hpp"
+#include <cstddef>
 #include <cstdint>
 
 // /////////////////////////////////////////////////////////////
@@ -6,16 +9,19 @@
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::server
+namespace source2sdk
 {
-    // Enumerator count: 4
-    // Alignment: 4
-    // Size: 0x4
-    enum class TrainOrientationType_t : std::uint32_t
+    namespace server
     {
-        TrainOrientation_Fixed = 0x0,
-        TrainOrientation_AtPathTracks = 0x1,
-        TrainOrientation_LinearBlend = 0x2,
-        TrainOrientation_EaseInEaseOut = 0x3,
+        // Enumerator count: 4
+        // Alignment: 4
+        // Size: 0x4
+        enum class TrainOrientationType_t : std::uint32_t
+        {
+            TrainOrientation_Fixed = 0x0,
+            TrainOrientation_AtPathTracks = 0x1,
+            TrainOrientation_LinearBlend = 0x2,
+            TrainOrientation_EaseInEaseOut = 0x3,
+        };
     };
 };

@@ -1,42 +1,47 @@
 #pragma once
-#include "source2sdk/client/CDOTA_Buff.hpp"
-#include "source2sdk/client/ParticleIndex_t.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/client/CDOTA_Buff.hpp"
+#include "source2sdk/client/ParticleIndex_t.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: server
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::server
+namespace source2sdk
 {
-    // Registered alignment: unknown
-    // Alignment: unknown
-    // Standard-layout class: false
-    // Size: 0x1750
-    // Has VTable
-    #pragma pack(push, 1)
-    class CDOTA_Modifier_Dawnbreaker_Celestial_Hammer_Movement : public client::CDOTA_Buff
+    namespace server
     {
-    public:
-        int32_t m_nProjectileID; // 0x1708        
-        int32_t projectile_speed; // 0x170c        
-        int32_t travel_speed_pct; // 0x1710        
-        int32_t m_nMaxRange; // 0x1714        
-        Vector m_vStartPoint; // 0x1718        
-        Vector m_vLastTrailThinkerLocation; // 0x1724        
-        Vector m_vEndPointShard; // 0x1730        
-        client::ParticleIndex_t m_nStatusFXIndex; // 0x173c        
-        int32_t flare_radius; // 0x1740        
-        bool bHasStartedBurning; // 0x1744        
-        [[maybe_unused]] std::uint8_t pad_0x1745[0x3]; // 0x1745
-        float flare_debuff_duration; // 0x1748        
-        [[maybe_unused]] std::uint8_t pad_0x174c[0x4];
+        // Registered alignment: unknown
+        // Alignment: unknown
+        // Standard-layout class: false
+        // Size: 0x1840
+        // Has VTable
+        #pragma pack(push, 1)
+        class CDOTA_Modifier_Dawnbreaker_Celestial_Hammer_Movement : public source2sdk::client::CDOTA_Buff
+        {
+        public:
+            std::int32_t m_nProjectileID; // 0x17f8            
+            std::int32_t projectile_speed; // 0x17fc            
+            std::int32_t travel_speed_pct; // 0x1800            
+            std::int32_t m_nMaxRange; // 0x1804            
+            Vector m_vStartPoint; // 0x1808            
+            Vector m_vLastTrailThinkerLocation; // 0x1814            
+            Vector m_vEndPointShard; // 0x1820            
+            source2sdk::client::ParticleIndex_t m_nStatusFXIndex; // 0x182c            
+            float flare_radius; // 0x1830            
+            bool bHasStartedBurning; // 0x1834            
+            uint8_t _pad1835[0x3]; // 0x1835
+            float flare_debuff_duration; // 0x1838            
+            float fire_trail_health_regen; // 0x183c            
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in CDOTA_Modifier_Dawnbreaker_Celestial_Hammer_Movement because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Dawnbreaker_Celestial_Hammer_Movement) == 0x1840);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in CDOTA_Modifier_Dawnbreaker_Celestial_Hammer_Movement because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_Dawnbreaker_Celestial_Hammer_Movement) == 0x1750);
 };

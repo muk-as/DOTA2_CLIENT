@@ -1,40 +1,47 @@
 #pragma once
-#include "source2sdk/client/CDOTA_Buff.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/client/CDOTA_Buff.hpp"
+namespace source2sdk
+{
+    namespace server
+    {
+        struct CBaseEntity;
+    };
+};
 
 // /////////////////////////////////////////////////////////////
 // Module: server
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::server
+namespace source2sdk
 {
-    class CBaseEntity;
-};
-
-namespace source2sdk::server
-{
-    // Registered alignment: unknown
-    // Alignment: unknown
-    // Standard-layout class: false
-    // Size: 0x1720
-    // Has VTable
-    #pragma pack(push, 1)
-    class CDOTA_Modifier_SpiritBreaker_NetherStrike : public client::CDOTA_Buff
+    namespace server
     {
-    public:
-        int32_t damage; // 0x1708        
-        bool m_bStrikeLanded; // 0x170c        
-        [[maybe_unused]] std::uint8_t pad_0x170d[0x3]; // 0x170d
-        Vector m_vCastLocation; // 0x1710        
-        // m_hTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
-        // CHandle<server::CBaseEntity> m_hTarget;
-        char m_hTarget[0x4]; // 0x171c        
+        // Registered alignment: unknown
+        // Alignment: unknown
+        // Standard-layout class: false
+        // Size: 0x1810
+        // Has VTable
+        #pragma pack(push, 1)
+        class CDOTA_Modifier_SpiritBreaker_NetherStrike : public source2sdk::client::CDOTA_Buff
+        {
+        public:
+            std::int32_t damage; // 0x17f8            
+            bool m_bStrikeLanded; // 0x17fc            
+            uint8_t _pad17fd[0x3]; // 0x17fd
+            Vector m_vCastLocation; // 0x1800            
+            // m_hTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+            // CHandle<source2sdk::server::CBaseEntity> m_hTarget;
+            char m_hTarget[0x4]; // 0x180c            
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in CDOTA_Modifier_SpiritBreaker_NetherStrike because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_SpiritBreaker_NetherStrike) == 0x1810);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in CDOTA_Modifier_SpiritBreaker_NetherStrike because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_SpiritBreaker_NetherStrike) == 0x1720);
 };

@@ -1,4 +1,7 @@
 #pragma once
+
+#include "source2sdk/source2gen/source2gen.hpp"
+#include <cstddef>
 #include <cstdint>
 
 // /////////////////////////////////////////////////////////////
@@ -6,15 +9,18 @@
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::client
+namespace source2sdk
 {
-    // Enumerator count: 3
-    // Alignment: 4
-    // Size: 0x4
-    enum class EHeroRelicRarity : std::uint32_t
+    namespace client
     {
-        HERO_RELIC_RARITY_INVALID = 0xffffffff,
-        HERO_RELIC_RARITY_COMMON = 0x0,
-        HERO_RELIC_RARITY_RARE = 0x1,
+        // Enumerator count: 3
+        // Alignment: 4
+        // Size: 0x4
+        enum class EHeroRelicRarity : std::uint32_t
+        {
+            HERO_RELIC_RARITY_INVALID = 0xffffffff,
+            HERO_RELIC_RARITY_COMMON = 0x0,
+            HERO_RELIC_RARITY_RARE = 0x1,
+        };
     };
 };

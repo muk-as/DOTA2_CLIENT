@@ -1,4 +1,7 @@
 #pragma once
+
+#include "source2sdk/source2gen/source2gen.hpp"
+#include <cstddef>
 #include <cstdint>
 
 // /////////////////////////////////////////////////////////////
@@ -6,15 +9,18 @@
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::client
+namespace source2sdk
 {
-    // Enumerator count: 3
-    // Alignment: 4
-    // Size: 0x4
-    enum class EItemSuggestPreference : std::uint32_t
+    namespace client
     {
-        k_EItemSuggestPreference_None = 0x0,
-        k_EItemSuggestPreference_Liked = 0x1,
-        k_EItemSuggestPreference_Disliked = 0x2,
+        // Enumerator count: 3
+        // Alignment: 4
+        // Size: 0x4
+        enum class EItemSuggestPreference : std::uint32_t
+        {
+            k_EItemSuggestPreference_None = 0x0,
+            k_EItemSuggestPreference_Liked = 0x1,
+            k_EItemSuggestPreference_Disliked = 0x2,
+        };
     };
 };

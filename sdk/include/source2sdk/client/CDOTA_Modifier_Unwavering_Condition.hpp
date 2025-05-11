@@ -1,30 +1,35 @@
 #pragma once
-#include "source2sdk/client/CDOTA_Buff_Item.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/client/CDOTA_Buff_Item.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: client
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::client
+namespace source2sdk
 {
-    // Registered alignment: unknown
-    // Alignment: unknown
-    // Standard-layout class: false
-    // Size: 0x1710
-    // Has VTable
-    #pragma pack(push, 1)
-    class CDOTA_Modifier_Unwavering_Condition : public client::CDOTA_Buff_Item
+    namespace client
     {
-    public:
-        int32_t max_health; // 0x1708        
-        int32_t magic_resist; // 0x170c        
+        // Registered alignment: unknown
+        // Alignment: unknown
+        // Standard-layout class: false
+        // Size: 0x1800
+        // Has VTable
+        #pragma pack(push, 1)
+        class CDOTA_Modifier_Unwavering_Condition : public source2sdk::client::CDOTA_Buff_Item
+        {
+        public:
+            std::int32_t max_health; // 0x17f8            
+            std::int32_t magic_resist; // 0x17fc            
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in CDOTA_Modifier_Unwavering_Condition because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Unwavering_Condition) == 0x1800);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in CDOTA_Modifier_Unwavering_Condition because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_Unwavering_Condition) == 0x1710);
 };

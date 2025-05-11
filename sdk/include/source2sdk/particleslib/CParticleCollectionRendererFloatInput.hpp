@@ -1,31 +1,36 @@
 #pragma once
-#include "source2sdk/particleslib/CParticleCollectionFloatInput.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/particleslib/CParticleCollectionFloatInput.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: particleslib
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::particleslib
+namespace source2sdk
 {
-    // Registered alignment: 0x8
-    // Alignment: 0x8
-    // Standard-layout class: false
-    // Size: 0x160
-    // Has VTable
-    // Construct allowed
-    // 
-    // static metadata: MGetKV3ClassDefaults
-    // static metadata: MPropertyCustomEditor "CollectionRendererFloatInput()"
-    #pragma pack(push, 1)
-    class CParticleCollectionRendererFloatInput : public particleslib::CParticleCollectionFloatInput
+    namespace particleslib
     {
-    public:
+        // Registered alignment: 0x8
+        // Alignment: 0x8
+        // Standard-layout class: false
+        // Size: 0x160
+        // Has VTable
+        // Construct allowed
+        // 
+        // static metadata: MGetKV3ClassDefaults
+        // static metadata: MPropertyCustomEditor "CollectionRendererFloatInput()"
+        #pragma pack(push, 1)
+        class CParticleCollectionRendererFloatInput : public source2sdk::particleslib::CParticleCollectionFloatInput
+        {
+        public:
+        };
+        #pragma pack(pop)
+        
+        
+        static_assert(sizeof(source2sdk::particleslib::CParticleCollectionRendererFloatInput) == 0x160);
     };
-    #pragma pack(pop)
-    
-    static_assert(sizeof(CParticleCollectionRendererFloatInput) == 0x160);
 };

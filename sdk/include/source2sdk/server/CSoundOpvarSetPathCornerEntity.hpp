@@ -1,36 +1,41 @@
 #pragma once
-#include "source2sdk/server/CSoundOpvarSetPointEntity.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/server/CSoundOpvarSetPointEntity.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: server
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::server
+namespace source2sdk
 {
-    // Registered alignment: 0x8
-    // Alignment: 0x8
-    // Standard-layout class: false
-    // Size: 0x6b0
-    // Has VTable
-    // Construct allowed
-    #pragma pack(push, 1)
-    class CSoundOpvarSetPathCornerEntity : public server::CSoundOpvarSetPointEntity
+    namespace server
     {
-    public:
-        [[maybe_unused]] std::uint8_t pad_0x688[0x18]; // 0x688
-        float m_flDistMinSqr; // 0x6a0        
-        float m_flDistMaxSqr; // 0x6a4        
-        CUtlSymbolLarge m_iszPathCornerEntityName; // 0x6a8        
+        // Registered alignment: 0x8
+        // Alignment: 0x8
+        // Standard-layout class: false
+        // Size: 0x6a8
+        // Has VTable
+        // Construct allowed
+        #pragma pack(push, 1)
+        class CSoundOpvarSetPathCornerEntity : public source2sdk::server::CSoundOpvarSetPointEntity
+        {
+        public:
+            uint8_t _pad0680[0x18]; // 0x680
+            float m_flDistMinSqr; // 0x698            
+            float m_flDistMaxSqr; // 0x69c            
+            CUtlSymbolLarge m_iszPathCornerEntityName; // 0x6a0            
+            
+            // Datamap fields:
+            // void CSoundOpvarSetPathCornerEntitySetOpvarThink; // 0x0
+        };
+        #pragma pack(pop)
         
-        // Datamap fields:
-        // void CSoundOpvarSetPathCornerEntitySetOpvarThink; // 0x0
+        // Cannot assert offsets of fields in CSoundOpvarSetPathCornerEntity because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::server::CSoundOpvarSetPathCornerEntity) == 0x6a8);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in CSoundOpvarSetPathCornerEntity because it is not a standard-layout class
-    static_assert(sizeof(CSoundOpvarSetPathCornerEntity) == 0x6b0);
 };

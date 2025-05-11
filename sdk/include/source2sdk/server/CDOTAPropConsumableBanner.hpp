@@ -1,35 +1,40 @@
 #pragma once
-#include "source2sdk/server/CDynamicProp.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/server/CDynamicProp.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: server
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::server
+namespace source2sdk
 {
-    // Registered alignment: 0x8
-    // Alignment: 0x8
-    // Standard-layout class: false
-    // Size: 0xa88
-    // Has VTable
-    // Construct allowed
-    // MClassHasEntityLimitedDataDesc
-    // 
-    // static metadata: MNetworkVarNames "bool m_bUseAvatar"
-    #pragma pack(push, 1)
-    class CDOTAPropConsumableBanner : public server::CDynamicProp
+    namespace server
     {
-    public:
-        // metadata: MNetworkEnable
-        bool m_bUseAvatar; // 0xa80        
-        [[maybe_unused]] std::uint8_t pad_0xa81[0x7];
+        // Registered alignment: 0x8
+        // Alignment: 0x8
+        // Standard-layout class: false
+        // Size: 0xa78
+        // Has VTable
+        // Construct allowed
+        // MClassHasEntityLimitedDataDesc
+        // 
+        // static metadata: MNetworkVarNames "bool m_bUseAvatar"
+        #pragma pack(push, 1)
+        class CDOTAPropConsumableBanner : public source2sdk::server::CDynamicProp
+        {
+        public:
+            // metadata: MNetworkEnable
+            bool m_bUseAvatar; // 0xa70            
+            uint8_t _pad0a71[0x7];
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in CDOTAPropConsumableBanner because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::server::CDOTAPropConsumableBanner) == 0xa78);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in CDOTAPropConsumableBanner because it is not a standard-layout class
-    static_assert(sizeof(CDOTAPropConsumableBanner) == 0xa88);
 };

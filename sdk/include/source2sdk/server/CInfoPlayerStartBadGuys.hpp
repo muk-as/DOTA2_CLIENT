@@ -1,29 +1,34 @@
 #pragma once
-#include "source2sdk/server/CInfoPlayerStartDota.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/server/CInfoPlayerStartDota.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: server
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::server
+namespace source2sdk
 {
-    // Registered alignment: 0x8
-    // Alignment: 0x8
-    // Standard-layout class: false
-    // Size: 0x538
-    // Has VTable
-    // Construct allowed
-    #pragma pack(push, 1)
-    class CInfoPlayerStartBadGuys : public server::CInfoPlayerStartDota
+    namespace server
     {
-    public:
-        // No schema binary for binding
+        // Registered alignment: 0x8
+        // Alignment: 0x8
+        // Standard-layout class: false
+        // Size: 0x530
+        // Has VTable
+        // Construct allowed
+        #pragma pack(push, 1)
+        class CInfoPlayerStartBadGuys : public source2sdk::server::CInfoPlayerStartDota
+        {
+        public:
+            // No schema binary for binding
+        };
+        #pragma pack(pop)
+        
+        
+        static_assert(sizeof(source2sdk::server::CInfoPlayerStartBadGuys) == 0x530);
     };
-    #pragma pack(pop)
-    
-    static_assert(sizeof(CInfoPlayerStartBadGuys) == 0x538);
 };

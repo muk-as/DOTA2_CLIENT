@@ -1,28 +1,33 @@
 #pragma once
-#include "source2sdk/server/CDOTA_Modifier_Nevermore_Requiem_Fear.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/server/CDOTA_Modifier_Nevermore_Requiem_Fear.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: server
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::server
+namespace source2sdk
 {
-    // Registered alignment: unknown
-    // Alignment: unknown
-    // Standard-layout class: false
-    // Size: 0x1718
-    // Has VTable
-    #pragma pack(push, 1)
-    class CDOTA_Modifier_Nevermore_Necromastery_Fear : public server::CDOTA_Modifier_Nevermore_Requiem_Fear
+    namespace server
     {
-    public:
-        // No schema binary for binding
+        // Registered alignment: unknown
+        // Alignment: unknown
+        // Standard-layout class: false
+        // Size: 0x1808
+        // Has VTable
+        #pragma pack(push, 1)
+        class CDOTA_Modifier_Nevermore_Necromastery_Fear : public source2sdk::server::CDOTA_Modifier_Nevermore_Requiem_Fear
+        {
+        public:
+            // No schema binary for binding
+        };
+        #pragma pack(pop)
+        
+        
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Nevermore_Necromastery_Fear) == 0x1808);
     };
-    #pragma pack(pop)
-    
-    static_assert(sizeof(CDOTA_Modifier_Nevermore_Necromastery_Fear) == 0x1718);
 };

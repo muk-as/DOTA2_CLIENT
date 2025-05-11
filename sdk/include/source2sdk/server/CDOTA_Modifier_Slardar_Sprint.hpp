@@ -1,35 +1,40 @@
 #pragma once
-#include "source2sdk/client/CDOTA_Buff.hpp"
-#include "source2sdk/entity2/GameTime_t.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/client/CDOTA_Buff.hpp"
+#include "source2sdk/entity2/GameTime_t.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: server
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::server
+namespace source2sdk
 {
-    // Registered alignment: unknown
-    // Alignment: unknown
-    // Standard-layout class: false
-    // Size: 0x1720
-    // Has VTable
-    #pragma pack(push, 1)
-    class CDOTA_Modifier_Slardar_Sprint : public client::CDOTA_Buff
+    namespace server
     {
-    public:
-        float bonus_speed; // 0x1708        
-        int32_t speed_burst_percent; // 0x170c        
-        float speed_burst_duration; // 0x1710        
-        float speed_burst_max_duration; // 0x1714        
-        entity2::GameTime_t m_fStartTime; // 0x1718        
-        [[maybe_unused]] std::uint8_t pad_0x171c[0x4];
+        // Registered alignment: unknown
+        // Alignment: unknown
+        // Standard-layout class: false
+        // Size: 0x1810
+        // Has VTable
+        #pragma pack(push, 1)
+        class CDOTA_Modifier_Slardar_Sprint : public source2sdk::client::CDOTA_Buff
+        {
+        public:
+            float bonus_speed; // 0x17f8            
+            std::int32_t speed_burst_percent; // 0x17fc            
+            float speed_burst_duration; // 0x1800            
+            float speed_burst_max_duration; // 0x1804            
+            source2sdk::entity2::GameTime_t m_fStartTime; // 0x1808            
+            uint8_t _pad180c[0x4];
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in CDOTA_Modifier_Slardar_Sprint because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Slardar_Sprint) == 0x1810);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in CDOTA_Modifier_Slardar_Sprint because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_Slardar_Sprint) == 0x1720);
 };

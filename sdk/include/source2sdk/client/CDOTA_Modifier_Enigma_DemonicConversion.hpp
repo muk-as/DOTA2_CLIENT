@@ -1,37 +1,42 @@
 #pragma once
-#include "source2sdk/client/CDOTA_Modifier_Kill.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/client/CDOTA_Modifier_Kill.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: client
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::client
+namespace source2sdk
 {
-    // Registered alignment: unknown
-    // Alignment: unknown
-    // Standard-layout class: false
-    // Size: 0x1730
-    // Has VTable
-    #pragma pack(push, 1)
-    class CDOTA_Modifier_Enigma_DemonicConversion : public client::CDOTA_Modifier_Kill
+    namespace client
     {
-    public:
-        int32_t m_iAttackCount; // 0x1710        
-        int32_t split_attack_count; // 0x1714        
-        float life_extension; // 0x1718        
-        int32_t eidolon_attack_range; // 0x171c        
-        int32_t eidolon_bonus_damage; // 0x1720        
-        int32_t eidolon_bonus_attack_speed; // 0x1724        
-        bool m_bAllowSplit; // 0x1728        
-        [[maybe_unused]] std::uint8_t pad_0x1729[0x3]; // 0x1729
-        int32_t m_nSpawnNum; // 0x172c        
+        // Registered alignment: unknown
+        // Alignment: unknown
+        // Standard-layout class: false
+        // Size: 0x1820
+        // Has VTable
+        #pragma pack(push, 1)
+        class CDOTA_Modifier_Enigma_DemonicConversion : public source2sdk::client::CDOTA_Modifier_Kill
+        {
+        public:
+            std::int32_t m_iAttackCount; // 0x1800            
+            std::int32_t split_attack_count; // 0x1804            
+            float life_extension; // 0x1808            
+            std::int32_t eidolon_attack_range; // 0x180c            
+            std::int32_t eidolon_bonus_damage; // 0x1810            
+            std::int32_t eidolon_bonus_attack_speed; // 0x1814            
+            bool m_bAllowSplit; // 0x1818            
+            uint8_t _pad1819[0x3]; // 0x1819
+            std::int32_t m_nSpawnNum; // 0x181c            
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in CDOTA_Modifier_Enigma_DemonicConversion because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Enigma_DemonicConversion) == 0x1820);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in CDOTA_Modifier_Enigma_DemonicConversion because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_Enigma_DemonicConversion) == 0x1730);
 };

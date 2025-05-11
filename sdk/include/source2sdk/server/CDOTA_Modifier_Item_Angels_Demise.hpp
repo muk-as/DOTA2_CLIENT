@@ -1,48 +1,49 @@
 #pragma once
-#include "source2sdk/server/CDOTA_Buff_Item.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/server/CDOTA_Buff_Item.hpp"
+namespace source2sdk
+{
+    namespace server
+    {
+        struct CDOTABaseAbility;
+    };
+};
 
 // /////////////////////////////////////////////////////////////
 // Module: server
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::server
+namespace source2sdk
 {
-    class CDOTABaseAbility;
-};
-
-namespace source2sdk::server
-{
-    // Registered alignment: unknown
-    // Alignment: unknown
-    // Standard-layout class: false
-    // Size: 0x1750
-    // Has VTable
-    #pragma pack(push, 1)
-    class CDOTA_Modifier_Item_Angels_Demise : public server::CDOTA_Buff_Item
+    namespace server
     {
-    public:
-        int32_t bonus_health; // 0x1708        
-        int32_t bonus_mana; // 0x170c        
-        float bonus_mana_regen; // 0x1710        
-        int32_t bonus_spell_damage; // 0x1714        
-        float slow_duration; // 0x1718        
-        int32_t bonus_all_stats; // 0x171c        
-        int32_t bonus_damage; // 0x1720        
-        int32_t crit_chance; // 0x1724        
-        int32_t crit_multiplier; // 0x1728        
-        int32_t spell_crit_multiplier; // 0x172c        
-        int32_t spell_crit_flat; // 0x1730        
-        [[maybe_unused]] std::uint8_t pad_0x1734[0x4]; // 0x1734
-        // vecActivatedAbilities has a template type with potentially unknown template parameters. You can try uncommenting the field below.
-        // CUtlVector<server::CDOTABaseAbility*> vecActivatedAbilities;
-        char vecActivatedAbilities[0x18]; // 0x1738        
+        // Registered alignment: unknown
+        // Alignment: unknown
+        // Standard-layout class: false
+        // Size: 0x1828
+        // Has VTable
+        #pragma pack(push, 1)
+        class CDOTA_Modifier_Item_Angels_Demise : public source2sdk::server::CDOTA_Buff_Item
+        {
+        public:
+            std::int32_t bonus_health; // 0x17f8            
+            std::int32_t bonus_mana; // 0x17fc            
+            float bonus_mana_regen; // 0x1800            
+            float bonus_spell_damage; // 0x1804            
+            float slow_duration; // 0x1808            
+            std::int32_t bonus_all_stats; // 0x180c            
+            // vecActivatedAbilities has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+            // CUtlVector<source2sdk::server::CDOTABaseAbility*> vecActivatedAbilities;
+            char vecActivatedAbilities[0x18]; // 0x1810            
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in CDOTA_Modifier_Item_Angels_Demise because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Item_Angels_Demise) == 0x1828);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in CDOTA_Modifier_Item_Angels_Demise because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_Item_Angels_Demise) == 0x1750);
 };

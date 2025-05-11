@@ -1,34 +1,39 @@
 #pragma once
-#include "source2sdk/client/C_BaseEntity.hpp"
-#include "source2sdk/client/C_EnvWindShared.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/client/C_BaseEntity.hpp"
+#include "source2sdk/client/C_EnvWindShared.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: client
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::client
+namespace source2sdk
 {
-    // Registered alignment: 0x8
-    // Alignment: 0x8
-    // Standard-layout class: false
-    // Size: 0x768
-    // Has VTable
-    // Construct allowed
-    // 
-    // static metadata: MNetworkVarNames "CEnvWindShared m_EnvWindShared"
-    #pragma pack(push, 1)
-    class C_EnvWindClientside : public client::C_BaseEntity
+    namespace client
     {
-    public:
-        // metadata: MNetworkEnable
-        client::C_EnvWindShared m_EnvWindShared; // 0x560        
+        // Registered alignment: 0x8
+        // Alignment: 0x8
+        // Standard-layout class: false
+        // Size: 0x718
+        // Has VTable
+        // Construct allowed
+        // 
+        // static metadata: MNetworkVarNames "CEnvWindShared m_EnvWindShared"
+        #pragma pack(push, 1)
+        class C_EnvWindClientside : public source2sdk::client::C_BaseEntity
+        {
+        public:
+            // metadata: MNetworkEnable
+            source2sdk::client::C_EnvWindShared m_EnvWindShared; // 0x510            
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in C_EnvWindClientside because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::client::C_EnvWindClientside) == 0x718);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in C_EnvWindClientside because it is not a standard-layout class
-    static_assert(sizeof(C_EnvWindClientside) == 0x768);
 };

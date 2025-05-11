@@ -1,40 +1,45 @@
 #pragma once
-#include "source2sdk/client/CDOTA_Buff.hpp"
-#include "source2sdk/entity2/GameTime_t.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/client/CDOTA_Buff.hpp"
+#include "source2sdk/entity2/GameTime_t.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: server
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::server
+namespace source2sdk
 {
-    // Registered alignment: unknown
-    // Alignment: unknown
-    // Standard-layout class: false
-    // Size: 0x17b0
-    // Has VTable
-    #pragma pack(push, 1)
-    class CDOTA_Modifier_SandKing_Epicenter : public client::CDOTA_Buff
+    namespace server
     {
-    public:
-        int32_t epicenter_radius_base; // 0x1708        
-        int32_t epicenter_radius_increment; // 0x170c        
-        int32_t epicenter_pulses; // 0x1710        
-        int32_t epicenter_radius[30]; // 0x1714        
-        int32_t m_iMaxPulses; // 0x178c        
-        int32_t m_iPulseCount; // 0x1790        
-        float m_flPulseTickRate; // 0x1794        
-        float spine_tick_rate; // 0x1798        
-        entity2::GameTime_t m_flLastDamageTime; // 0x179c        
-        entity2::GameTime_t m_flLastSpineTime; // 0x17a0        
-        [[maybe_unused]] std::uint8_t pad_0x17a4[0xc];
+        // Registered alignment: unknown
+        // Alignment: unknown
+        // Standard-layout class: false
+        // Size: 0x18a0
+        // Has VTable
+        #pragma pack(push, 1)
+        class CDOTA_Modifier_SandKing_Epicenter : public source2sdk::client::CDOTA_Buff
+        {
+        public:
+            float epicenter_radius_base; // 0x17f8            
+            float epicenter_radius_increment; // 0x17fc            
+            std::int32_t epicenter_pulses; // 0x1800            
+            float epicenter_radius[30]; // 0x1804            
+            std::int32_t m_iMaxPulses; // 0x187c            
+            std::int32_t m_iPulseCount; // 0x1880            
+            float m_flPulseTickRate; // 0x1884            
+            float spine_tick_rate; // 0x1888            
+            source2sdk::entity2::GameTime_t m_flLastDamageTime; // 0x188c            
+            source2sdk::entity2::GameTime_t m_flLastSpineTime; // 0x1890            
+            uint8_t _pad1894[0xc];
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in CDOTA_Modifier_SandKing_Epicenter because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_SandKing_Epicenter) == 0x18a0);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in CDOTA_Modifier_SandKing_Epicenter because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_SandKing_Epicenter) == 0x17b0);
 };

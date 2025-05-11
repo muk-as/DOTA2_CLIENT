@@ -1,33 +1,38 @@
 #pragma once
-#include "source2sdk/server/CDynamicProp.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/server/CDynamicProp.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: server
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::server
+namespace source2sdk
 {
-    // Registered alignment: 0x8
-    // Alignment: 0x8
-    // Standard-layout class: false
-    // Size: 0xa88
-    // Has VTable
-    // Construct allowed
-    // MClassHasEntityLimitedDataDesc
-    #pragma pack(push, 1)
-    class CDOTAPropCustomTexture : public server::CDynamicProp
+    namespace server
     {
-    public:
-        // metadata: MNetworkEnable
-        uint32_t m_unTeamID; // 0xa80        
-        [[maybe_unused]] std::uint8_t pad_0xa84[0x4];
+        // Registered alignment: 0x8
+        // Alignment: 0x8
+        // Standard-layout class: false
+        // Size: 0xa78
+        // Has VTable
+        // Construct allowed
+        // MClassHasEntityLimitedDataDesc
+        #pragma pack(push, 1)
+        class CDOTAPropCustomTexture : public source2sdk::server::CDynamicProp
+        {
+        public:
+            // metadata: MNetworkEnable
+            std::uint32_t m_unTeamID; // 0xa70            
+            uint8_t _pad0a74[0x4];
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in CDOTAPropCustomTexture because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::server::CDOTAPropCustomTexture) == 0xa78);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in CDOTAPropCustomTexture because it is not a standard-layout class
-    static_assert(sizeof(CDOTAPropCustomTexture) == 0xa88);
 };

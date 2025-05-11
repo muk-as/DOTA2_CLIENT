@@ -1,34 +1,39 @@
 #pragma once
-#include "source2sdk/server/CBaseTrigger.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/server/CBaseTrigger.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: server
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::server
+namespace source2sdk
 {
-    // Registered alignment: 0x8
-    // Alignment: 0x8
-    // Standard-layout class: false
-    // Size: 0x990
-    // Has VTable
-    // Construct allowed
-    #pragma pack(push, 1)
-    class CTriggerSave : public server::CBaseTrigger
+    namespace server
     {
-    public:
-        bool m_bForceNewLevelUnit; // 0x980        
-        [[maybe_unused]] std::uint8_t pad_0x981[0x3]; // 0x981
-        float m_fDangerousTimer; // 0x984        
-        int32_t m_minHitPoints; // 0x988        
-        [[maybe_unused]] std::uint8_t pad_0x98c[0x4];
+        // Registered alignment: 0x8
+        // Alignment: 0x8
+        // Standard-layout class: false
+        // Size: 0x978
+        // Has VTable
+        // Construct allowed
+        #pragma pack(push, 1)
+        class CTriggerSave : public source2sdk::server::CBaseTrigger
+        {
+        public:
+            bool m_bForceNewLevelUnit; // 0x968            
+            uint8_t _pad0969[0x3]; // 0x969
+            float m_fDangerousTimer; // 0x96c            
+            std::int32_t m_minHitPoints; // 0x970            
+            uint8_t _pad0974[0x4];
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in CTriggerSave because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::server::CTriggerSave) == 0x978);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in CTriggerSave because it is not a standard-layout class
-    static_assert(sizeof(CTriggerSave) == 0x990);
 };

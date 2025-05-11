@@ -1,4 +1,7 @@
 #pragma once
+
+#include "source2sdk/source2gen/source2gen.hpp"
+#include <cstddef>
 #include <cstdint>
 
 // /////////////////////////////////////////////////////////////
@@ -6,15 +9,18 @@
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::animgraphlib
+namespace source2sdk
 {
-    // Enumerator count: 3
-    // Alignment: 4
-    // Size: 0x4
-    enum class DampingSpeedFunction : std::uint32_t
+    namespace animgraphlib
     {
-        NoDamping = 0x0,
-        Constant = 0x1,
-        Spring = 0x2,
+        // Enumerator count: 3
+        // Alignment: 4
+        // Size: 0x4
+        enum class DampingSpeedFunction : std::uint32_t
+        {
+            NoDamping = 0x0,
+            Constant = 0x1,
+            Spring = 0x2,
+        };
     };
 };

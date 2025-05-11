@@ -1,40 +1,45 @@
 #pragma once
-#include "source2sdk/client/C_DOTA_BaseNPC_Additive.hpp"
-#include "source2sdk/client/ParticleIndex_t.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/client/C_DOTA_BaseNPC_Additive.hpp"
+#include "source2sdk/client/ParticleIndex_t.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: client
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::client
+namespace source2sdk
 {
-    // Registered alignment: 0x8
-    // Alignment: 0x8
-    // Standard-layout class: false
-    // Size: 0x1880
-    // Has VTable
-    // Construct allowed
-    // MClassHasEntityLimitedDataDesc
-    // 
-    // static metadata: MNetworkVarNames "int m_nTargetType"
-    // static metadata: MNetworkVarNames "int m_nTargetFlags"
-    #pragma pack(push, 1)
-    class C_DOTA_NPC_WitchDoctor_Ward : public client::C_DOTA_BaseNPC_Additive
+    namespace client
     {
-    public:
-        client::ParticleIndex_t m_nFXSkullIndex; // 0x1870        
-        // metadata: MNetworkEnable
-        int32_t m_nTargetType; // 0x1874        
-        // metadata: MNetworkEnable
-        int32_t m_nTargetFlags; // 0x1878        
-        [[maybe_unused]] std::uint8_t pad_0x187c[0x4];
+        // Registered alignment: 0x8
+        // Alignment: 0x8
+        // Standard-layout class: false
+        // Size: 0x17e8
+        // Has VTable
+        // Construct allowed
+        // MClassHasEntityLimitedDataDesc
+        // 
+        // static metadata: MNetworkVarNames "int m_nTargetType"
+        // static metadata: MNetworkVarNames "int m_nTargetFlags"
+        #pragma pack(push, 1)
+        class C_DOTA_NPC_WitchDoctor_Ward : public source2sdk::client::C_DOTA_BaseNPC_Additive
+        {
+        public:
+            source2sdk::client::ParticleIndex_t m_nFXSkullIndex; // 0x17d8            
+            // metadata: MNetworkEnable
+            std::int32_t m_nTargetType; // 0x17dc            
+            // metadata: MNetworkEnable
+            std::int32_t m_nTargetFlags; // 0x17e0            
+            uint8_t _pad17e4[0x4];
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in C_DOTA_NPC_WitchDoctor_Ward because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::client::C_DOTA_NPC_WitchDoctor_Ward) == 0x17e8);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in C_DOTA_NPC_WitchDoctor_Ward because it is not a standard-layout class
-    static_assert(sizeof(C_DOTA_NPC_WitchDoctor_Ward) == 0x1880);
 };

@@ -1,29 +1,34 @@
 #pragma once
-#include "source2sdk/client/CDOTA_Buff.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/client/CDOTA_Buff.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: server
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::server
+namespace source2sdk
 {
-    // Registered alignment: unknown
-    // Alignment: unknown
-    // Standard-layout class: false
-    // Size: 0x1720
-    // Has VTable
-    #pragma pack(push, 1)
-    class CDOTA_Modifier_Nyx_Assassin_Jolt_Damage_Tracker : public client::CDOTA_Buff
+    namespace server
     {
-    public:
-        [[maybe_unused]] std::uint8_t pad_0x1708[0x18];
-        // No schema binary for binding
+        // Registered alignment: unknown
+        // Alignment: unknown
+        // Standard-layout class: false
+        // Size: 0x1810
+        // Has VTable
+        #pragma pack(push, 1)
+        class CDOTA_Modifier_Nyx_Assassin_Jolt_Damage_Tracker : public source2sdk::client::CDOTA_Buff
+        {
+        public:
+            uint8_t _pad17f8[0x18];
+            // No schema binary for binding
+        };
+        #pragma pack(pop)
+        
+        
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Nyx_Assassin_Jolt_Damage_Tracker) == 0x1810);
     };
-    #pragma pack(pop)
-    
-    static_assert(sizeof(CDOTA_Modifier_Nyx_Assassin_Jolt_Damage_Tracker) == 0x1720);
 };

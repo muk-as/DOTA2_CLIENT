@@ -1,34 +1,39 @@
 #pragma once
-#include "source2sdk/client/CDOTA_Buff.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/client/CDOTA_Buff.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: client
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::client
+namespace source2sdk
 {
-    // Registered alignment: unknown
-    // Alignment: unknown
-    // Standard-layout class: false
-    // Size: 0x1720
-    // Has VTable
-    #pragma pack(push, 1)
-    class CDOTA_Modifier_MonkeyKing_BounceLeap : public client::CDOTA_Buff
+    namespace client
     {
-    public:
-        float give_up_distance; // 0x1708        
-        float ground_jump_distance; // 0x170c        
-        float m_flZDelta; // 0x1710        
-        float perched_day_vision; // 0x1714        
-        float perched_night_vision; // 0x1718        
-        [[maybe_unused]] std::uint8_t pad_0x171c[0x4];
+        // Registered alignment: unknown
+        // Alignment: unknown
+        // Standard-layout class: false
+        // Size: 0x1810
+        // Has VTable
+        #pragma pack(push, 1)
+        class CDOTA_Modifier_MonkeyKing_BounceLeap : public source2sdk::client::CDOTA_Buff
+        {
+        public:
+            float give_up_distance; // 0x17f8            
+            float ground_jump_distance; // 0x17fc            
+            float m_flZDelta; // 0x1800            
+            float perched_day_vision; // 0x1804            
+            float perched_night_vision; // 0x1808            
+            uint8_t _pad180c[0x4];
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in CDOTA_Modifier_MonkeyKing_BounceLeap because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_MonkeyKing_BounceLeap) == 0x1810);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in CDOTA_Modifier_MonkeyKing_BounceLeap because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_MonkeyKing_BounceLeap) == 0x1720);
 };

@@ -1,4 +1,7 @@
 #pragma once
+
+#include "source2sdk/source2gen/source2gen.hpp"
+#include <cstddef>
 #include <cstdint>
 
 // /////////////////////////////////////////////////////////////
@@ -6,16 +9,19 @@
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::server
+namespace source2sdk
 {
-    // Enumerator count: 4
-    // Alignment: 4
-    // Size: 0x4
-    enum class ScriptedMoveType_t : std::uint32_t
+    namespace server
     {
-        SCRIPTED_MOVETYPE_NONE = 0x0,
-        SCRIPTED_MOVETYPE_TO_WITH_DURATION = 0x1,
-        SCRIPTED_MOVETYPE_TO_WITH_MOVESPEED = 0x2,
-        SCRIPTED_MOVETYPE_SWEEP_TO_AT_MOVEMENT_SPEED = 0x3,
+        // Enumerator count: 4
+        // Alignment: 4
+        // Size: 0x4
+        enum class ScriptedMoveType_t : std::uint32_t
+        {
+            SCRIPTED_MOVETYPE_NONE = 0x0,
+            SCRIPTED_MOVETYPE_TO_WITH_DURATION = 0x1,
+            SCRIPTED_MOVETYPE_TO_WITH_MOVESPEED = 0x2,
+            SCRIPTED_MOVETYPE_SWEEP_TO_AT_MOVEMENT_SPEED = 0x3,
+        };
     };
 };

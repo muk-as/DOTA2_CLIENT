@@ -1,5 +1,6 @@
 #pragma once
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
 
@@ -8,28 +9,31 @@
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::soundsystem_voicecontainers
+namespace source2sdk
 {
-    // Registered alignment: 0x4
-    // Alignment: 0x4
-    // Standard-layout class: true
-    // Size: 0x8
-    // Has Trivial Constructor
-    // Has Trivial Destructor
-    // Construct allowed
-    // 
-    // static metadata: MGetKV3ClassDefaults
-    #pragma pack(push, 1)
-    class CAudioEmphasisSample
+    namespace soundsystem_voicecontainers
     {
-    public:
-        float m_flTime; // 0x0        
-        float m_flValue; // 0x4        
+        // Registered alignment: 0x4
+        // Alignment: 0x4
+        // Standard-layout class: true
+        // Size: 0x8
+        // Has Trivial Constructor
+        // Has Trivial Destructor
+        // Construct allowed
+        // 
+        // static metadata: MGetKV3ClassDefaults
+        #pragma pack(push, 1)
+        class CAudioEmphasisSample
+        {
+        public:
+            float m_flTime; // 0x0            
+            float m_flValue; // 0x4            
+        };
+        #pragma pack(pop)
+        
+        static_assert(offsetof(source2sdk::soundsystem_voicecontainers::CAudioEmphasisSample, m_flTime) == 0x0);
+        static_assert(offsetof(source2sdk::soundsystem_voicecontainers::CAudioEmphasisSample, m_flValue) == 0x4);
+        
+        static_assert(sizeof(source2sdk::soundsystem_voicecontainers::CAudioEmphasisSample) == 0x8);
     };
-    #pragma pack(pop)
-    
-    static_assert(offsetof(CAudioEmphasisSample, m_flTime) == 0x0);
-    static_assert(offsetof(CAudioEmphasisSample, m_flValue) == 0x4);
-    
-    static_assert(sizeof(CAudioEmphasisSample) == 0x8);
 };

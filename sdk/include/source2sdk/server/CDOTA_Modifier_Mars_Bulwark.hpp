@@ -1,35 +1,40 @@
 #pragma once
-#include "source2sdk/client/CDOTA_Buff.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/client/CDOTA_Buff.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: server
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::server
+namespace source2sdk
 {
-    // Registered alignment: unknown
-    // Alignment: unknown
-    // Standard-layout class: false
-    // Size: 0x1738
-    // Has VTable
-    #pragma pack(push, 1)
-    class CDOTA_Modifier_Mars_Bulwark : public client::CDOTA_Buff
+    namespace server
     {
-    public:
-        float physical_damage_reduction; // 0x1708        
-        float physical_damage_reduction_side; // 0x170c        
-        float forward_angle; // 0x1710        
-        float side_angle; // 0x1714        
-        [[maybe_unused]] std::uint8_t pad_0x1718[0x18]; // 0x1718
-        float m_flRecentDamage; // 0x1730        
-        [[maybe_unused]] std::uint8_t pad_0x1734[0x4];
+        // Registered alignment: unknown
+        // Alignment: unknown
+        // Standard-layout class: false
+        // Size: 0x1828
+        // Has VTable
+        #pragma pack(push, 1)
+        class CDOTA_Modifier_Mars_Bulwark : public source2sdk::client::CDOTA_Buff
+        {
+        public:
+            float physical_damage_reduction; // 0x17f8            
+            float physical_damage_reduction_side; // 0x17fc            
+            float forward_angle; // 0x1800            
+            float side_angle; // 0x1804            
+            uint8_t _pad1808[0x18]; // 0x1808
+            float m_flRecentDamage; // 0x1820            
+            uint8_t _pad1824[0x4];
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in CDOTA_Modifier_Mars_Bulwark because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Mars_Bulwark) == 0x1828);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in CDOTA_Modifier_Mars_Bulwark because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_Mars_Bulwark) == 0x1738);
 };

@@ -1,41 +1,48 @@
 #pragma once
-#include "source2sdk/client/CDOTA_Buff.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/client/CDOTA_Buff.hpp"
+namespace source2sdk
+{
+    namespace server
+    {
+        struct CBaseEntity;
+    };
+};
 
 // /////////////////////////////////////////////////////////////
 // Module: server
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::server
+namespace source2sdk
 {
-    class CBaseEntity;
-};
-
-namespace source2sdk::server
-{
-    // Registered alignment: unknown
-    // Alignment: unknown
-    // Standard-layout class: false
-    // Size: 0x1730
-    // Has VTable
-    #pragma pack(push, 1)
-    class CDOTA_Modifier_Weaver_Swarm : public client::CDOTA_Buff
+    namespace server
     {
-    public:
-        int32_t m_iMaxDist; // 0x1708        
-        int32_t m_iAttackCount; // 0x170c        
-        int32_t destroy_attacks; // 0x1710        
-        Vector m_vDirection; // 0x1714        
-        Vector m_vStartLoc; // 0x1720        
-        // m_hAttachTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
-        // CHandle<server::CBaseEntity> m_hAttachTarget;
-        char m_hAttachTarget[0x4]; // 0x172c        
+        // Registered alignment: unknown
+        // Alignment: unknown
+        // Standard-layout class: false
+        // Size: 0x1820
+        // Has VTable
+        #pragma pack(push, 1)
+        class CDOTA_Modifier_Weaver_Swarm : public source2sdk::client::CDOTA_Buff
+        {
+        public:
+            std::int32_t m_iMaxDist; // 0x17f8            
+            std::int32_t destroy_attacks; // 0x17fc            
+            Vector m_vDirection; // 0x1800            
+            Vector m_vStartLoc; // 0x180c            
+            // m_hAttachTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+            // CHandle<source2sdk::server::CBaseEntity> m_hAttachTarget;
+            char m_hAttachTarget[0x4]; // 0x1818            
+            uint8_t _pad181c[0x4];
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in CDOTA_Modifier_Weaver_Swarm because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Weaver_Swarm) == 0x1820);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in CDOTA_Modifier_Weaver_Swarm because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_Weaver_Swarm) == 0x1730);
 };

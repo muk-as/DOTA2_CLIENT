@@ -1,4 +1,7 @@
 #pragma once
+
+#include "source2sdk/source2gen/source2gen.hpp"
+#include <cstddef>
 #include <cstdint>
 
 // /////////////////////////////////////////////////////////////
@@ -6,15 +9,18 @@
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::client
+namespace source2sdk
 {
-    // Enumerator count: 3
-    // Alignment: 4
-    // Size: 0x4
-    enum class EDOTAMatchPlayerTimeCustomStat : std::uint32_t
+    namespace client
     {
-        k_EDOTA_MatchPlayerTimeCustomStat_HPRegenUnderT1Towers = 0x1,
-        k_EDOTA_MatchPlayerTimeCustomStat_MagicDamageReducedWithNewFormula_Absolute = 0x2,
-        k_EDOTA_MatchPlayerTimeCustomStat_MagicDamageReducedWithNewFormula_PercentOfTotalHP = 0x3,
+        // Enumerator count: 3
+        // Alignment: 4
+        // Size: 0x4
+        enum class EDOTAMatchPlayerTimeCustomStat : std::uint32_t
+        {
+            k_EDOTA_MatchPlayerTimeCustomStat_HPRegenUnderT1Towers = 0x1,
+            k_EDOTA_MatchPlayerTimeCustomStat_MagicDamageReducedWithNewFormula_Absolute = 0x2,
+            k_EDOTA_MatchPlayerTimeCustomStat_MagicDamageReducedWithNewFormula_PercentOfTotalHP = 0x3,
+        };
     };
 };

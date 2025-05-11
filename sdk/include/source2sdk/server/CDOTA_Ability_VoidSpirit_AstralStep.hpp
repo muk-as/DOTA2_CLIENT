@@ -1,38 +1,43 @@
 #pragma once
-#include "source2sdk/server/CDOTABaseAbility.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/server/CDOTABaseAbility.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: server
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::server
+namespace source2sdk
 {
-    // Registered alignment: 0x8
-    // Alignment: 0x8
-    // Standard-layout class: false
-    // Size: 0x600
-    // Has VTable
-    // Construct allowed
-    // MClassHasEntityLimitedDataDesc
-    #pragma pack(push, 1)
-    class CDOTA_Ability_VoidSpirit_AstralStep : public server::CDOTABaseAbility
+    namespace server
     {
-    public:
-        Vector m_vStartPos; // 0x5c8        
-        Vector m_vDestination; // 0x5d4        
-        Vector m_vDirection; // 0x5e0        
-        int32_t radius; // 0x5ec        
-        int32_t min_travel_distance; // 0x5f0        
-        int32_t max_travel_distance; // 0x5f4        
-        float debuff_duration; // 0x5f8        
-        float pop_damage_delay; // 0x5fc        
+        // Registered alignment: 0x8
+        // Alignment: 0x8
+        // Standard-layout class: false
+        // Size: 0x5f0
+        // Has VTable
+        // Construct allowed
+        // MClassHasEntityLimitedDataDesc
+        #pragma pack(push, 1)
+        class CDOTA_Ability_VoidSpirit_AstralStep : public source2sdk::server::CDOTABaseAbility
+        {
+        public:
+            Vector m_vStartPos; // 0x5b8            
+            Vector m_vDestination; // 0x5c4            
+            Vector m_vDirection; // 0x5d0            
+            float radius; // 0x5dc            
+            float min_travel_distance; // 0x5e0            
+            float max_travel_distance; // 0x5e4            
+            float debuff_duration; // 0x5e8            
+            float pop_damage_delay; // 0x5ec            
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in CDOTA_Ability_VoidSpirit_AstralStep because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::server::CDOTA_Ability_VoidSpirit_AstralStep) == 0x5f0);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in CDOTA_Ability_VoidSpirit_AstralStep because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Ability_VoidSpirit_AstralStep) == 0x600);
 };

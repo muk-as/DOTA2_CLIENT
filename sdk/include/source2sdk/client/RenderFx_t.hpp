@@ -1,4 +1,7 @@
 #pragma once
+
+#include "source2sdk/source2gen/source2gen.hpp"
+#include <cstddef>
 #include <cstdint>
 
 // /////////////////////////////////////////////////////////////
@@ -6,32 +9,35 @@
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::client
+namespace source2sdk
 {
-    // Enumerator count: 20
-    // Alignment: 1
-    // Size: 0x1
-    enum class RenderFx_t : std::uint8_t
+    namespace client
     {
-        kRenderFxNone = 0,
-        kRenderFxPulseSlow = 1,
-        kRenderFxPulseFast = 2,
-        kRenderFxPulseSlowWide = 3,
-        kRenderFxPulseFastWide = 4,
-        kRenderFxFadeSlow = 5,
-        kRenderFxFadeFast = 6,
-        kRenderFxSolidSlow = 7,
-        kRenderFxSolidFast = 8,
-        kRenderFxStrobeSlow = 9,
-        kRenderFxStrobeFast = 10,
-        kRenderFxStrobeFaster = 11,
-        kRenderFxFlickerSlow = 12,
-        kRenderFxFlickerFast = 13,
-        kRenderFxNoDissipation = 14,
-        kRenderFxFadeOut = 15,
-        kRenderFxFadeIn = 16,
-        kRenderFxPulseFastWider = 17,
-        kRenderFxGlowShell = 18,
-        kRenderFxMax = 19,
+        // Enumerator count: 20
+        // Alignment: 1
+        // Size: 0x1
+        enum class RenderFx_t : std::uint8_t
+        {
+            kRenderFxNone = 0x0,
+            kRenderFxPulseSlow = 0x1,
+            kRenderFxPulseFast = 0x2,
+            kRenderFxPulseSlowWide = 0x3,
+            kRenderFxPulseFastWide = 0x4,
+            kRenderFxFadeSlow = 0x5,
+            kRenderFxFadeFast = 0x6,
+            kRenderFxSolidSlow = 0x7,
+            kRenderFxSolidFast = 0x8,
+            kRenderFxStrobeSlow = 0x9,
+            kRenderFxStrobeFast = 0xa,
+            kRenderFxStrobeFaster = 0xb,
+            kRenderFxFlickerSlow = 0xc,
+            kRenderFxFlickerFast = 0xd,
+            kRenderFxNoDissipation = 0xe,
+            kRenderFxFadeOut = 0xf,
+            kRenderFxFadeIn = 0x10,
+            kRenderFxPulseFastWider = 0x11,
+            kRenderFxGlowShell = 0x12,
+            kRenderFxMax = 0x13,
+        };
     };
 };

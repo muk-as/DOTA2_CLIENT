@@ -1,67 +1,74 @@
 #pragma once
+
+#include "source2sdk/source2gen/source2gen.hpp"
+#include <cstddef>
+#include <cstdint>
 #include "source2sdk/client/CDOTA_Buff.hpp"
 #include "source2sdk/client/ParticleIndex_t.hpp"
 #include "source2sdk/entity2/GameTime_t.hpp"
-#include "source2sdk/source2gen.hpp"
-#include <cstddef>
-#include <cstdint>
+namespace source2sdk
+{
+    namespace server
+    {
+        struct CBaseEntity;
+    };
+};
 
 // /////////////////////////////////////////////////////////////
 // Module: server
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::server
+namespace source2sdk
 {
-    class CBaseEntity;
-};
-
-namespace source2sdk::server
-{
-    // Registered alignment: unknown
-    // Alignment: unknown
-    // Standard-layout class: false
-    // Size: 0x1780
-    // Has VTable
-    #pragma pack(push, 1)
-    class CDOTA_Modifier_AghsFort_AssaultCaptain_SunRay : public client::CDOTA_Buff
+    namespace server
     {
-    public:
-        int32_t hp_cost_perc_per_second; // 0x1708        
-        int32_t beam_range; // 0x170c        
-        int32_t base_damage; // 0x1710        
-        int32_t base_heal; // 0x1714        
-        float tick_interval; // 0x1718        
-        float forward_move_speed; // 0x171c        
-        float turn_rate_initial; // 0x1720        
-        float turn_rate; // 0x1724        
-        int32_t radius; // 0x1728        
-        int32_t self_turn_rate_percent; // 0x172c        
-        float m_flCurrentTime; // 0x1730        
-        entity2::GameTime_t m_flLastDamageTime; // 0x1734        
-        float m_flAccumulatedSelfDamage; // 0x1738        
-        bool m_bMovingForward; // 0x173c        
-        bool m_bTurningFast; // 0x173d        
-        [[maybe_unused]] std::uint8_t pad_0x173e[0x2]; // 0x173e
-        float m_flFacingTarget; // 0x1740        
-        float hp_perc_damage; // 0x1744        
-        float hp_perc_heal; // 0x1748        
-        client::ParticleIndex_t m_nBeamFXIndex; // 0x174c        
-        // m_hVisionThinkers has a template type with potentially unknown template parameters. You can try uncommenting the field below.
-        // CHandle<server::CBaseEntity> m_hVisionThinkers[8];
-        char m_hVisionThinkers[0x20]; // 0x1750        
-        // m_hBeamEnd has a template type with potentially unknown template parameters. You can try uncommenting the field below.
-        // CHandle<server::CBaseEntity> m_hBeamEnd;
-        char m_hBeamEnd[0x4]; // 0x1770        
-        bool m_bCreatedVisionThinkers; // 0x1774        
-        [[maybe_unused]] std::uint8_t pad_0x1775[0x3]; // 0x1775
-        // m_hBeamEndSound has a template type with potentially unknown template parameters. You can try uncommenting the field below.
-        // CHandle<server::CBaseEntity> m_hBeamEndSound;
-        char m_hBeamEndSound[0x4]; // 0x1778        
-        [[maybe_unused]] std::uint8_t pad_0x177c[0x4];
+        // Registered alignment: unknown
+        // Alignment: unknown
+        // Standard-layout class: false
+        // Size: 0x1870
+        // Has VTable
+        #pragma pack(push, 1)
+        class CDOTA_Modifier_AghsFort_AssaultCaptain_SunRay : public source2sdk::client::CDOTA_Buff
+        {
+        public:
+            std::int32_t hp_cost_perc_per_second; // 0x17f8            
+            std::int32_t beam_range; // 0x17fc            
+            std::int32_t base_damage; // 0x1800            
+            std::int32_t base_heal; // 0x1804            
+            float tick_interval; // 0x1808            
+            float forward_move_speed; // 0x180c            
+            float turn_rate_initial; // 0x1810            
+            float turn_rate; // 0x1814            
+            std::int32_t radius; // 0x1818            
+            std::int32_t self_turn_rate_percent; // 0x181c            
+            float m_flCurrentTime; // 0x1820            
+            source2sdk::entity2::GameTime_t m_flLastDamageTime; // 0x1824            
+            float m_flAccumulatedSelfDamage; // 0x1828            
+            bool m_bMovingForward; // 0x182c            
+            bool m_bTurningFast; // 0x182d            
+            uint8_t _pad182e[0x2]; // 0x182e
+            float m_flFacingTarget; // 0x1830            
+            float hp_perc_damage; // 0x1834            
+            float hp_perc_heal; // 0x1838            
+            source2sdk::client::ParticleIndex_t m_nBeamFXIndex; // 0x183c            
+            // m_hVisionThinkers has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+            // CHandle<source2sdk::server::CBaseEntity> m_hVisionThinkers[8];
+            char m_hVisionThinkers[0x20]; // 0x1840            
+            // m_hBeamEnd has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+            // CHandle<source2sdk::server::CBaseEntity> m_hBeamEnd;
+            char m_hBeamEnd[0x4]; // 0x1860            
+            bool m_bCreatedVisionThinkers; // 0x1864            
+            uint8_t _pad1865[0x3]; // 0x1865
+            // m_hBeamEndSound has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+            // CHandle<source2sdk::server::CBaseEntity> m_hBeamEndSound;
+            char m_hBeamEndSound[0x4]; // 0x1868            
+            uint8_t _pad186c[0x4];
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in CDOTA_Modifier_AghsFort_AssaultCaptain_SunRay because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_AghsFort_AssaultCaptain_SunRay) == 0x1870);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in CDOTA_Modifier_AghsFort_AssaultCaptain_SunRay because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_AghsFort_AssaultCaptain_SunRay) == 0x1780);
 };

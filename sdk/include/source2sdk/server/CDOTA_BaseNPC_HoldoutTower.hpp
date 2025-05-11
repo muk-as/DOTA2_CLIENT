@@ -1,32 +1,37 @@
 #pragma once
-#include "source2sdk/client/DOTA_HOLDOUT_TOWER_TYPE.hpp"
-#include "source2sdk/server/CDOTA_BaseNPC_Tower.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/client/DOTA_HOLDOUT_TOWER_TYPE.hpp"
+#include "source2sdk/server/CDOTA_BaseNPC_Tower.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: server
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::server
+namespace source2sdk
 {
-    // Registered alignment: 0x8
-    // Alignment: 0x8
-    // Standard-layout class: false
-    // Size: 0x19b8
-    // Has VTable
-    // Construct allowed
-    #pragma pack(push, 1)
-    class CDOTA_BaseNPC_HoldoutTower : public server::CDOTA_BaseNPC_Tower
+    namespace server
     {
-    public:
-        client::DOTA_HOLDOUT_TOWER_TYPE m_iTowerType; // 0x19b0        
-        [[maybe_unused]] std::uint8_t pad_0x19b4[0x4];
+        // Registered alignment: 0x8
+        // Alignment: 0x8
+        // Standard-layout class: false
+        // Size: 0x19b0
+        // Has VTable
+        // Construct allowed
+        #pragma pack(push, 1)
+        class CDOTA_BaseNPC_HoldoutTower : public source2sdk::server::CDOTA_BaseNPC_Tower
+        {
+        public:
+            source2sdk::client::DOTA_HOLDOUT_TOWER_TYPE m_iTowerType; // 0x19a8            
+            uint8_t _pad19ac[0x4];
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in CDOTA_BaseNPC_HoldoutTower because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::server::CDOTA_BaseNPC_HoldoutTower) == 0x19b0);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in CDOTA_BaseNPC_HoldoutTower because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_BaseNPC_HoldoutTower) == 0x19b8);
 };

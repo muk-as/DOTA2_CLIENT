@@ -1,4 +1,7 @@
 #pragma once
+
+#include "source2sdk/source2gen/source2gen.hpp"
+#include <cstddef>
 #include <cstdint>
 
 // /////////////////////////////////////////////////////////////
@@ -6,16 +9,19 @@
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::client
+namespace source2sdk
 {
-    // Enumerator count: 4
-    // Alignment: 4
-    // Size: 0x4
-    enum class ValueRemapperMomentumType_t : std::uint32_t
+    namespace client
     {
-        MomentumType_None = 0x0,
-        MomentumType_Friction = 0x1,
-        MomentumType_SpringTowardSnapValue = 0x2,
-        MomentumType_SpringAwayFromSnapValue = 0x3,
+        // Enumerator count: 4
+        // Alignment: 4
+        // Size: 0x4
+        enum class ValueRemapperMomentumType_t : std::uint32_t
+        {
+            MomentumType_None = 0x0,
+            MomentumType_Friction = 0x1,
+            MomentumType_SpringTowardSnapValue = 0x2,
+            MomentumType_SpringAwayFromSnapValue = 0x3,
+        };
     };
 };

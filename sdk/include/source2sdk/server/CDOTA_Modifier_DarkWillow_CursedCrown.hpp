@@ -1,33 +1,43 @@
 #pragma once
-#include "source2sdk/client/CDOTA_Buff.hpp"
-#include "source2sdk/entity2/GameTime_t.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/client/CDOTA_Buff.hpp"
+#include "source2sdk/entity2/GameTime_t.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: server
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::server
+namespace source2sdk
 {
-    // Registered alignment: unknown
-    // Alignment: unknown
-    // Standard-layout class: false
-    // Size: 0x1718
-    // Has VTable
-    #pragma pack(push, 1)
-    class CDOTA_Modifier_DarkWillow_CursedCrown : public client::CDOTA_Buff
+    namespace server
     {
-    public:
-        float delay; // 0x1708        
-        float stun_duration; // 0x170c        
-        float stun_radius; // 0x1710        
-        entity2::GameTime_t m_fStartTime; // 0x1714        
+        // Registered alignment: unknown
+        // Alignment: unknown
+        // Standard-layout class: false
+        // Size: 0x1818
+        // Has VTable
+        #pragma pack(push, 1)
+        class CDOTA_Modifier_DarkWillow_CursedCrown : public source2sdk::client::CDOTA_Buff
+        {
+        public:
+            float delay; // 0x17f8            
+            float stun_duration; // 0x17fc            
+            float stun_radius; // 0x1800            
+            std::int32_t accumulated_damage_pct; // 0x1804            
+            std::int32_t accumulated_damage_pct_ally; // 0x1808            
+            source2sdk::entity2::GameTime_t m_fStartTime; // 0x180c            
+            float flAccumulatedDamage; // 0x1810            
+            bool bAccumulatedDamageDealt; // 0x1814            
+            uint8_t _pad1815[0x3];
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in CDOTA_Modifier_DarkWillow_CursedCrown because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_DarkWillow_CursedCrown) == 0x1818);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in CDOTA_Modifier_DarkWillow_CursedCrown because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_DarkWillow_CursedCrown) == 0x1718);
 };

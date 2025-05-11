@@ -1,28 +1,33 @@
 #pragma once
-#include "source2sdk/client/CSurvivorsPowerUp_InstantAttack.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/client/CSurvivorsPowerUp_InstantAttack.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: client
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::client
+namespace source2sdk
 {
-    // Registered alignment: unknown
-    // Alignment: 0x8
-    // Standard-layout class: false
-    // Size: 0x6f0
-    // Has VTable
-    #pragma pack(push, 1)
-    class CSurvivorsPowerUp_Track : public client::CSurvivorsPowerUp_InstantAttack
+    namespace client
     {
-    public:
-        // No schema binary for binding
+        // Registered alignment: unknown
+        // Alignment: 0x8
+        // Standard-layout class: false
+        // Size: 0x6f0
+        // Has VTable
+        #pragma pack(push, 1)
+        class CSurvivorsPowerUp_Track : public source2sdk::client::CSurvivorsPowerUp_InstantAttack
+        {
+        public:
+            // No schema binary for binding
+        };
+        #pragma pack(pop)
+        
+        
+        static_assert(sizeof(source2sdk::client::CSurvivorsPowerUp_Track) == 0x6f0);
     };
-    #pragma pack(pop)
-    
-    static_assert(sizeof(CSurvivorsPowerUp_Track) == 0x6f0);
 };

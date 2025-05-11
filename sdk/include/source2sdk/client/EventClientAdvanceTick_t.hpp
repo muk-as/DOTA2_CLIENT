@@ -1,28 +1,33 @@
 #pragma once
-#include "source2sdk/client/EventAdvanceTick_t.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/client/EventAdvanceTick_t.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: client
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::client
+namespace source2sdk
 {
-    // Registered alignment: unknown
-    // Alignment: 0x4
-    // Standard-layout class: false
-    // Size: 0x40
-    // Has Trivial Destructor
-    #pragma pack(push, 1)
-    struct EventClientAdvanceTick_t : public client::EventAdvanceTick_t
+    namespace client
     {
-    public:
-        // No schema binary for binding
+        // Registered alignment: unknown
+        // Alignment: 0x4
+        // Standard-layout class: false
+        // Size: 0x40
+        // Has Trivial Destructor
+        #pragma pack(push, 1)
+        struct EventClientAdvanceTick_t : public source2sdk::client::EventAdvanceTick_t
+        {
+        public:
+            // No schema binary for binding
+        };
+        #pragma pack(pop)
+        
+        
+        static_assert(sizeof(source2sdk::client::EventClientAdvanceTick_t) == 0x40);
     };
-    #pragma pack(pop)
-    
-    static_assert(sizeof(EventClientAdvanceTick_t) == 0x40);
 };

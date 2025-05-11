@@ -1,55 +1,62 @@
 #pragma once
-#include "source2sdk/client/CDOTA_Buff.hpp"
-#include "source2sdk/client/ParticleIndex_t.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/client/CDOTA_Buff.hpp"
+#include "source2sdk/client/ParticleIndex_t.hpp"
+namespace source2sdk
+{
+    namespace client
+    {
+        struct C_BaseEntity;
+    };
+};
 
 // /////////////////////////////////////////////////////////////
 // Module: client
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::client
+namespace source2sdk
 {
-    class C_BaseEntity;
-};
-
-namespace source2sdk::client
-{
-    // Registered alignment: unknown
-    // Alignment: unknown
-    // Standard-layout class: false
-    // Size: 0x1750
-    // Has VTable
-    #pragma pack(push, 1)
-    class CDOTA_Modifier_MonkeyKing_Transform : public client::CDOTA_Buff
+    namespace client
     {
-    public:
-        CUtlString m_strDisguise; // 0x1708        
-        int32_t movespeed; // 0x1710        
-        int32_t m_nDisguisedSpeed; // 0x1714        
-        int32_t reveal_radius; // 0x1718        
-        client::ParticleIndex_t m_nDisguiseEffectIndex; // 0x171c        
-        // m_hCourierToClone has a template type with potentially unknown template parameters. You can try uncommenting the field below.
-        // CHandle<client::C_BaseEntity> m_hCourierToClone;
-        char m_hCourierToClone[0x4]; // 0x1720        
-        // m_hCreepToClone has a template type with potentially unknown template parameters. You can try uncommenting the field below.
-        // CHandle<client::C_BaseEntity> m_hCreepToClone;
-        char m_hCreepToClone[0x4]; // 0x1724        
-        // m_aryBountyRuneSpawners has a template type with potentially unknown template parameters. You can try uncommenting the field below.
-        // CUtlVector<CHandle<client::C_BaseEntity>> m_aryBountyRuneSpawners;
-        char m_aryBountyRuneSpawners[0x18]; // 0x1728        
-        bool m_bIsFlyingCourier; // 0x1740        
-        bool m_bIsRune; // 0x1741        
-        bool m_bIsBanana; // 0x1742        
-        bool m_bIsFakeAlly; // 0x1743        
-        uint32_t m_nMischiefUnitType; // 0x1744        
-        int32_t m_nMischiefHealthbarOffset; // 0x1748        
-        float invul_duration; // 0x174c        
+        // Registered alignment: unknown
+        // Alignment: unknown
+        // Standard-layout class: false
+        // Size: 0x1840
+        // Has VTable
+        #pragma pack(push, 1)
+        class CDOTA_Modifier_MonkeyKing_Transform : public source2sdk::client::CDOTA_Buff
+        {
+        public:
+            CUtlString m_strDisguise; // 0x17f8            
+            std::int32_t movespeed; // 0x1800            
+            std::int32_t m_nDisguisedSpeed; // 0x1804            
+            std::int32_t reveal_radius; // 0x1808            
+            source2sdk::client::ParticleIndex_t m_nDisguiseEffectIndex; // 0x180c            
+            // m_hCourierToClone has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+            // CHandle<source2sdk::client::C_BaseEntity> m_hCourierToClone;
+            char m_hCourierToClone[0x4]; // 0x1810            
+            // m_hCreepToClone has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+            // CHandle<source2sdk::client::C_BaseEntity> m_hCreepToClone;
+            char m_hCreepToClone[0x4]; // 0x1814            
+            // m_aryBountyRuneSpawners has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+            // CUtlVector<CHandle<source2sdk::client::C_BaseEntity>> m_aryBountyRuneSpawners;
+            char m_aryBountyRuneSpawners[0x18]; // 0x1818            
+            bool m_bIsFlyingCourier; // 0x1830            
+            bool m_bIsRune; // 0x1831            
+            bool m_bIsBanana; // 0x1832            
+            bool m_bIsFakeAlly; // 0x1833            
+            std::uint32_t m_nMischiefUnitType; // 0x1834            
+            std::int32_t m_nMischiefHealthbarOffset; // 0x1838            
+            float invul_duration; // 0x183c            
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in CDOTA_Modifier_MonkeyKing_Transform because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_MonkeyKing_Transform) == 0x1840);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in CDOTA_Modifier_MonkeyKing_Transform because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_MonkeyKing_Transform) == 0x1750);
 };

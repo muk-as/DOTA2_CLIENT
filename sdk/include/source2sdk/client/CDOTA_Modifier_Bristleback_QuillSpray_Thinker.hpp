@@ -1,43 +1,50 @@
 #pragma once
+
+#include "source2sdk/source2gen/source2gen.hpp"
+#include <cstddef>
+#include <cstdint>
 #include "source2sdk/client/CDOTA_Buff.hpp"
 #include "source2sdk/client/CountdownTimer.hpp"
 #include "source2sdk/entity2/GameTime_t.hpp"
-#include "source2sdk/source2gen.hpp"
-#include <cstddef>
-#include <cstdint>
+namespace source2sdk
+{
+    namespace client
+    {
+        struct C_BaseEntity;
+    };
+};
 
 // /////////////////////////////////////////////////////////////
 // Module: client
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::client
+namespace source2sdk
 {
-    class C_BaseEntity;
-};
-
-namespace source2sdk::client
-{
-    // Registered alignment: unknown
-    // Alignment: unknown
-    // Standard-layout class: false
-    // Size: 0x1748
-    // Has VTable
-    #pragma pack(push, 1)
-    class CDOTA_Modifier_Bristleback_QuillSpray_Thinker : public client::CDOTA_Buff
+    namespace client
     {
-    public:
-        float m_fCurRadius; // 0x1708        
-        entity2::GameTime_t m_fLastThink; // 0x170c        
-        // m_entitiesHit has a template type with potentially unknown template parameters. You can try uncommenting the field below.
-        // CUtlVector<CHandle<client::C_BaseEntity>> m_entitiesHit;
-        char m_entitiesHit[0x18]; // 0x1710        
-        client::CountdownTimer m_ViewerTimer; // 0x1728        
-        int32_t projectile_speed; // 0x1740        
-        float radius; // 0x1744        
+        // Registered alignment: unknown
+        // Alignment: unknown
+        // Standard-layout class: false
+        // Size: 0x1838
+        // Has VTable
+        #pragma pack(push, 1)
+        class CDOTA_Modifier_Bristleback_QuillSpray_Thinker : public source2sdk::client::CDOTA_Buff
+        {
+        public:
+            float m_fCurRadius; // 0x17f8            
+            source2sdk::entity2::GameTime_t m_fLastThink; // 0x17fc            
+            // m_entitiesHit has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+            // CUtlVector<CHandle<source2sdk::client::C_BaseEntity>> m_entitiesHit;
+            char m_entitiesHit[0x18]; // 0x1800            
+            source2sdk::client::CountdownTimer m_ViewerTimer; // 0x1818            
+            std::int32_t projectile_speed; // 0x1830            
+            float radius; // 0x1834            
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in CDOTA_Modifier_Bristleback_QuillSpray_Thinker because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Bristleback_QuillSpray_Thinker) == 0x1838);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in CDOTA_Modifier_Bristleback_QuillSpray_Thinker because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_Bristleback_QuillSpray_Thinker) == 0x1748);
 };

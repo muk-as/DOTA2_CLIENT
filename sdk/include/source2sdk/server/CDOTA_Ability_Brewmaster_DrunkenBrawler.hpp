@@ -1,40 +1,45 @@
 #pragma once
-#include "source2sdk/client/ParticleIndex_t.hpp"
-#include "source2sdk/server/CDOTABaseAbility.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/client/ParticleIndex_t.hpp"
+#include "source2sdk/server/CDOTABaseAbility.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: server
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::server
+namespace source2sdk
 {
-    // Registered alignment: 0x8
-    // Alignment: 0x8
-    // Standard-layout class: false
-    // Size: 0x5d8
-    // Has VTable
-    // Construct allowed
-    // MClassHasEntityLimitedDataDesc
-    // 
-    // static metadata: MNetworkVarNames "int m_iBrawlActive"
-    #pragma pack(push, 1)
-    class CDOTA_Ability_Brewmaster_DrunkenBrawler : public server::CDOTABaseAbility
+    namespace server
     {
-    public:
-        // metadata: MNetworkEnable
-        // metadata: MNetworkChangeCallback "OnBrawlActiveChanged"
-        int32_t m_iBrawlActive; // 0x5c8        
-        bool m_bUpdateIcons; // 0x5cc        
-        [[maybe_unused]] std::uint8_t pad_0x5cd[0x3]; // 0x5cd
-        client::ParticleIndex_t m_nDrunkenBrawlerFX; // 0x5d0        
-        [[maybe_unused]] std::uint8_t pad_0x5d4[0x4];
+        // Registered alignment: 0x8
+        // Alignment: 0x8
+        // Standard-layout class: false
+        // Size: 0x5c8
+        // Has VTable
+        // Construct allowed
+        // MClassHasEntityLimitedDataDesc
+        // 
+        // static metadata: MNetworkVarNames "int m_iBrawlActive"
+        #pragma pack(push, 1)
+        class CDOTA_Ability_Brewmaster_DrunkenBrawler : public source2sdk::server::CDOTABaseAbility
+        {
+        public:
+            // metadata: MNetworkEnable
+            // metadata: MNetworkChangeCallback "OnBrawlActiveChanged"
+            std::int32_t m_iBrawlActive; // 0x5b8            
+            bool m_bUpdateIcons; // 0x5bc            
+            uint8_t _pad05bd[0x3]; // 0x5bd
+            source2sdk::client::ParticleIndex_t m_nDrunkenBrawlerFX; // 0x5c0            
+            uint8_t _pad05c4[0x4];
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in CDOTA_Ability_Brewmaster_DrunkenBrawler because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::server::CDOTA_Ability_Brewmaster_DrunkenBrawler) == 0x5c8);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in CDOTA_Ability_Brewmaster_DrunkenBrawler because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Ability_Brewmaster_DrunkenBrawler) == 0x5d8);
 };

@@ -1,59 +1,64 @@
 #pragma once
-#include "source2sdk/server/CBaseEntity.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/server/CBaseEntity.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: server
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::server
+namespace source2sdk
 {
-    // Registered alignment: 0x8
-    // Alignment: 0x8
-    // Standard-layout class: false
-    // Size: 0x738
-    // Has VTable
-    // Construct allowed
-    // MClassHasEntityLimitedDataDesc
-    // MNetworkNoBase
-    // 
-    // static metadata: MNetworkVarNames "char m_pszSubquestText"
-    // static metadata: MNetworkVarNames "bool m_bHidden"
-    // static metadata: MNetworkVarNames "bool m_bCompleted"
-    // static metadata: MNetworkVarNames "bool m_bShowProgressBar"
-    // static metadata: MNetworkVarNames "int m_nProgressBarHueShift"
-    // static metadata: MNetworkVarNames "int m_pnTextReplaceValuesCDotaSubquestBase"
-    // static metadata: MNetworkVarNames "char m_pszTextReplaceString"
-    // static metadata: MNetworkVarNames "int m_nTextReplaceValueVersion"
-    #pragma pack(push, 1)
-    class CDotaSubquestBase : public server::CBaseEntity
+    namespace server
     {
-    public:
-        // metadata: MNetworkEnable
-        char m_pszSubquestText[256]; // 0x4e0        
-        // metadata: MNetworkEnable
-        bool m_bHidden; // 0x5e0        
-        // metadata: MNetworkEnable
-        bool m_bCompleted; // 0x5e1        
-        // metadata: MNetworkEnable
-        bool m_bShowProgressBar; // 0x5e2        
-        [[maybe_unused]] std::uint8_t pad_0x5e3[0x1]; // 0x5e3
-        // metadata: MNetworkEnable
-        int32_t m_nProgressBarHueShift; // 0x5e4        
-        // metadata: MNetworkEnable
-        int32_t m_pnTextReplaceValuesCDotaSubquestBase[2]; // 0x5e8        
-        // metadata: MNetworkEnable
-        char m_pszTextReplaceString[64]; // 0x5f0        
-        // metadata: MNetworkEnable
-        int32_t m_nTextReplaceValueVersion; // 0x630        
-        char m_pszSubquestName[256]; // 0x634        
-        [[maybe_unused]] std::uint8_t pad_0x734[0x4];
+        // Registered alignment: 0x8
+        // Alignment: 0x8
+        // Standard-layout class: false
+        // Size: 0x730
+        // Has VTable
+        // Construct allowed
+        // MClassHasEntityLimitedDataDesc
+        // MNetworkNoBase
+        // 
+        // static metadata: MNetworkVarNames "char m_pszSubquestText"
+        // static metadata: MNetworkVarNames "bool m_bHidden"
+        // static metadata: MNetworkVarNames "bool m_bCompleted"
+        // static metadata: MNetworkVarNames "bool m_bShowProgressBar"
+        // static metadata: MNetworkVarNames "int m_nProgressBarHueShift"
+        // static metadata: MNetworkVarNames "int m_pnTextReplaceValuesCDotaSubquestBase"
+        // static metadata: MNetworkVarNames "char m_pszTextReplaceString"
+        // static metadata: MNetworkVarNames "int m_nTextReplaceValueVersion"
+        #pragma pack(push, 1)
+        class CDotaSubquestBase : public source2sdk::server::CBaseEntity
+        {
+        public:
+            // metadata: MNetworkEnable
+            char m_pszSubquestText[256]; // 0x4d8            
+            // metadata: MNetworkEnable
+            bool m_bHidden; // 0x5d8            
+            // metadata: MNetworkEnable
+            bool m_bCompleted; // 0x5d9            
+            // metadata: MNetworkEnable
+            bool m_bShowProgressBar; // 0x5da            
+            uint8_t _pad05db[0x1]; // 0x5db
+            // metadata: MNetworkEnable
+            std::int32_t m_nProgressBarHueShift; // 0x5dc            
+            // metadata: MNetworkEnable
+            std::int32_t m_pnTextReplaceValuesCDotaSubquestBase[2]; // 0x5e0            
+            // metadata: MNetworkEnable
+            char m_pszTextReplaceString[64]; // 0x5e8            
+            // metadata: MNetworkEnable
+            std::int32_t m_nTextReplaceValueVersion; // 0x628            
+            char m_pszSubquestName[256]; // 0x62c            
+            uint8_t _pad072c[0x4];
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in CDotaSubquestBase because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::server::CDotaSubquestBase) == 0x730);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in CDotaSubquestBase because it is not a standard-layout class
-    static_assert(sizeof(CDotaSubquestBase) == 0x738);
 };

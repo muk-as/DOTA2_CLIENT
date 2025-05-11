@@ -1,28 +1,33 @@
 #pragma once
-#include "source2sdk/client/CStopwatchBase.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/client/CStopwatchBase.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: client
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::client
+namespace source2sdk
 {
-    // Registered alignment: unknown
-    // Alignment: 0x4
-    // Standard-layout class: false
-    // Size: 0xc
-    // Has Trivial Destructor
-    #pragma pack(push, 1)
-    class CSimpleStopwatch : public client::CStopwatchBase
+    namespace client
     {
-    public:
-        // No schema binary for binding
+        // Registered alignment: unknown
+        // Alignment: 0x4
+        // Standard-layout class: false
+        // Size: 0xc
+        // Has Trivial Destructor
+        #pragma pack(push, 1)
+        class CSimpleStopwatch : public source2sdk::client::CStopwatchBase
+        {
+        public:
+            // No schema binary for binding
+        };
+        #pragma pack(pop)
+        
+        
+        static_assert(sizeof(source2sdk::client::CSimpleStopwatch) == 0xc);
     };
-    #pragma pack(pop)
-    
-    static_assert(sizeof(CSimpleStopwatch) == 0xc);
 };

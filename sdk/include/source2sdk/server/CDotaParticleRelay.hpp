@@ -1,35 +1,40 @@
 #pragma once
-#include "source2sdk/server/CBaseEntity.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/server/CBaseEntity.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: server
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::server
+namespace source2sdk
 {
-    // Registered alignment: 0x8
-    // Alignment: 0x8
-    // Standard-layout class: false
-    // Size: 0x4e8
-    // Has VTable
-    // Construct allowed
-    #pragma pack(push, 1)
-    class CDotaParticleRelay : public server::CBaseEntity
+    namespace server
     {
-    public:
-        CUtlSymbolLarge m_particleSystemName; // 0x4e0        
+        // Registered alignment: 0x8
+        // Alignment: 0x8
+        // Standard-layout class: false
+        // Size: 0x4e0
+        // Has VTable
+        // Construct allowed
+        #pragma pack(push, 1)
+        class CDotaParticleRelay : public source2sdk::server::CBaseEntity
+        {
+        public:
+            CUtlSymbolLarge m_particleSystemName; // 0x4d8            
+            
+            // Datamap fields:
+            // void InputStart; // 0x0
+            // void InputStop; // 0x0
+            // void InputStopImmediate; // 0x0
+        };
+        #pragma pack(pop)
         
-        // Datamap fields:
-        // void InputStart; // 0x0
-        // void InputStop; // 0x0
-        // void InputStopImmediate; // 0x0
+        // Cannot assert offsets of fields in CDotaParticleRelay because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::server::CDotaParticleRelay) == 0x4e0);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in CDotaParticleRelay because it is not a standard-layout class
-    static_assert(sizeof(CDotaParticleRelay) == 0x4e8);
 };

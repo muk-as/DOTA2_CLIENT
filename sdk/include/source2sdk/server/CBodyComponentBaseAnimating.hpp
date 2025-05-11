@@ -1,40 +1,40 @@
 #pragma once
-#include "source2sdk/entity2/EntComponentInfo_t.hpp"
-#include "source2sdk/server/CBaseAnimatingController.hpp"
-#include "source2sdk/server/CBodyComponentSkeletonInstance.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/server/CBaseAnimatingController.hpp"
+#include "source2sdk/server/CBodyComponentSkeletonInstance.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: server
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::server
+namespace source2sdk
 {
-    // Registered alignment: unknown
-    // Alignment: unknown
-    // Standard-layout class: false
-    // Size: 0x9a0
-    // Has VTable
-    // Construct disallowed
-    // 
-    // static metadata: MNetworkVarNames "CBaseAnimatingController m_animationController"
-    #pragma pack(push, 1)
-    class CBodyComponentBaseAnimating : public server::CBodyComponentSkeletonInstance
+    namespace server
     {
-    public:
-        // metadata: MNetworkEnable
-        server::CBaseAnimatingController m_animationController; // 0x4d0        
-        [[maybe_unused]] std::uint8_t pad_0x998[0x8];
+        // Registered alignment: unknown
+        // Alignment: unknown
+        // Standard-layout class: false
+        // Size: 0x9e0
+        // Has VTable
+        // Construct disallowed
+        // 
+        // static metadata: MNetworkVarNames "CBaseAnimatingController m_animationController"
+        #pragma pack(push, 1)
+        class CBodyComponentBaseAnimating : public source2sdk::server::CBodyComponentSkeletonInstance
+        {
+        public:
+            // metadata: MNetworkEnable
+            source2sdk::server::CBaseAnimatingController m_animationController; // 0x510            
+            uint8_t _pad09d8[0x8];
+        };
+        #pragma pack(pop)
         
-        // Static fields:
-        static entity2::EntComponentInfo_t &Get_s_EntComponentInfo() {return *reinterpret_cast<entity2::EntComponentInfo_t*>(interfaces::g_schema->FindTypeScopeForModule("server.dll")->FindDeclaredClass("CBodyComponentBaseAnimating")->GetStaticFields()[0]->m_pInstance);};
-        static int32_t &Get_entity_component_error_class_decl_says_contained_but_impl_is_referenced() {return *reinterpret_cast<int32_t*>(interfaces::g_schema->FindTypeScopeForModule("server.dll")->FindDeclaredClass("CBodyComponentBaseAnimating")->GetStaticFields()[1]->m_pInstance);};
+        // Cannot assert offsets of fields in CBodyComponentBaseAnimating because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::server::CBodyComponentBaseAnimating) == 0x9e0);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in CBodyComponentBaseAnimating because it is not a standard-layout class
-    static_assert(sizeof(CBodyComponentBaseAnimating) == 0x9a0);
 };

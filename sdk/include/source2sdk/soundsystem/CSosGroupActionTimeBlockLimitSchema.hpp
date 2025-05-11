@@ -1,35 +1,40 @@
 #pragma once
-#include "source2sdk/soundsystem/CSosGroupActionSchema.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/soundsystem/CSosGroupActionSchema.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: soundsystem
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::soundsystem
+namespace source2sdk
 {
-    // Registered alignment: 0x8
-    // Alignment: 0x8
-    // Standard-layout class: false
-    // Size: 0x20
-    // Has VTable
-    // Construct allowed
-    // 
-    // static metadata: MGetKV3ClassDefaults
-    #pragma pack(push, 1)
-    class CSosGroupActionTimeBlockLimitSchema : public soundsystem::CSosGroupActionSchema
+    namespace soundsystem
     {
-    public:
-        // metadata: MPropertyFriendlyName "Max Count"
-        int32_t m_nMaxCount; // 0x18        
-        // metadata: MPropertyFriendlyName "Max Time"
-        float m_flMaxDuration; // 0x1c        
+        // Registered alignment: 0x8
+        // Alignment: 0x8
+        // Standard-layout class: false
+        // Size: 0x20
+        // Has VTable
+        // Construct allowed
+        // 
+        // static metadata: MGetKV3ClassDefaults
+        #pragma pack(push, 1)
+        class CSosGroupActionTimeBlockLimitSchema : public source2sdk::soundsystem::CSosGroupActionSchema
+        {
+        public:
+            // metadata: MPropertyFriendlyName "Max Count"
+            std::int32_t m_nMaxCount; // 0x18            
+            // metadata: MPropertyFriendlyName "Max Time"
+            float m_flMaxDuration; // 0x1c            
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in CSosGroupActionTimeBlockLimitSchema because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::soundsystem::CSosGroupActionTimeBlockLimitSchema) == 0x20);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in CSosGroupActionTimeBlockLimitSchema because it is not a standard-layout class
-    static_assert(sizeof(CSosGroupActionTimeBlockLimitSchema) == 0x20);
 };

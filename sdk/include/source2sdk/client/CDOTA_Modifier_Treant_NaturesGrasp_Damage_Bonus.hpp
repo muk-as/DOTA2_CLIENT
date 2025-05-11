@@ -1,28 +1,33 @@
 #pragma once
-#include "source2sdk/client/CDOTA_Modifier_Treant_NaturesGrasp_Damage.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/client/CDOTA_Modifier_Treant_NaturesGrasp_Damage.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: client
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::client
+namespace source2sdk
 {
-    // Registered alignment: unknown
-    // Alignment: unknown
-    // Standard-layout class: false
-    // Size: 0x1718
-    // Has VTable
-    #pragma pack(push, 1)
-    class CDOTA_Modifier_Treant_NaturesGrasp_Damage_Bonus : public client::CDOTA_Modifier_Treant_NaturesGrasp_Damage
+    namespace client
     {
-    public:
-        // No schema binary for binding
+        // Registered alignment: unknown
+        // Alignment: unknown
+        // Standard-layout class: false
+        // Size: 0x1808
+        // Has VTable
+        #pragma pack(push, 1)
+        class CDOTA_Modifier_Treant_NaturesGrasp_Damage_Bonus : public source2sdk::client::CDOTA_Modifier_Treant_NaturesGrasp_Damage
+        {
+        public:
+            // No schema binary for binding
+        };
+        #pragma pack(pop)
+        
+        
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Treant_NaturesGrasp_Damage_Bonus) == 0x1808);
     };
-    #pragma pack(pop)
-    
-    static_assert(sizeof(CDOTA_Modifier_Treant_NaturesGrasp_Damage_Bonus) == 0x1718);
 };

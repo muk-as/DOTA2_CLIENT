@@ -1,5 +1,6 @@
 #pragma once
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
 
@@ -8,21 +9,25 @@
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::entity2
+namespace source2sdk
 {
-    // Registered alignment: unknown
-    // Alignment: 0x1
-    // Standard-layout class: true
-    // Size: 0x30
-    // Has Trivial Destructor
-    #pragma pack(push, 1)
-    struct EntInput_t
+    namespace entity2
     {
-    public:
-        [[maybe_unused]] std::uint8_t pad_0x00[0x30];
-        // No schema binary for binding
+        // Registered alignment: unknown
+        // Alignment: 0x1
+        // Standard-layout class: true
+        // Size: 0x30
+        // Has Trivial Destructor
+        #pragma pack(push, 1)
+        struct EntInput_t
+        {
+        public:
+            uint8_t _pad0000[0x30];
+            // No schema binary for binding
+        };
+        #pragma pack(pop)
+        
+        
+        static_assert(sizeof(source2sdk::entity2::EntInput_t) == 0x30);
     };
-    #pragma pack(pop)
-    
-    static_assert(sizeof(EntInput_t) == 0x30);
 };

@@ -1,36 +1,41 @@
 #pragma once
-#include "source2sdk/client/CDOTA_Buff.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/client/CDOTA_Buff.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: server
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::server
+namespace source2sdk
 {
-    // Registered alignment: unknown
-    // Alignment: unknown
-    // Standard-layout class: false
-    // Size: 0x1730
-    // Has VTable
-    #pragma pack(push, 1)
-    class CDOTA_Modifier_Terrorblade_Metamorphosis : public client::CDOTA_Buff
+    namespace server
     {
-    public:
-        float base_attack_time; // 0x1708        
-        int32_t bonus_range; // 0x170c        
-        int32_t m_iOriginalAttackCapabilities; // 0x1710        
-        int32_t bonus_damage; // 0x1714        
-        int32_t speed_loss; // 0x1718        
-        int32_t attack_projectile_speed_bonus; // 0x171c        
-        CUtlSymbolLarge m_iszRangedAttackEffect; // 0x1720        
-        CUtlSymbolLarge m_iszOriginalRangedAttackEffect; // 0x1728        
+        // Registered alignment: unknown
+        // Alignment: unknown
+        // Standard-layout class: false
+        // Size: 0x1820
+        // Has VTable
+        #pragma pack(push, 1)
+        class CDOTA_Modifier_Terrorblade_Metamorphosis : public source2sdk::client::CDOTA_Buff
+        {
+        public:
+            float base_attack_time; // 0x17f8            
+            std::int32_t bonus_range; // 0x17fc            
+            std::int32_t m_iOriginalAttackCapabilities; // 0x1800            
+            std::int32_t bonus_damage; // 0x1804            
+            std::int32_t speed_loss; // 0x1808            
+            std::int32_t attack_projectile_speed_bonus; // 0x180c            
+            CUtlSymbolLarge m_iszRangedAttackEffect; // 0x1810            
+            CUtlSymbolLarge m_iszOriginalRangedAttackEffect; // 0x1818            
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in CDOTA_Modifier_Terrorblade_Metamorphosis because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Terrorblade_Metamorphosis) == 0x1820);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in CDOTA_Modifier_Terrorblade_Metamorphosis because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_Terrorblade_Metamorphosis) == 0x1730);
 };

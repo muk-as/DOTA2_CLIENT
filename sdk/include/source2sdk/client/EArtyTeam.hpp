@@ -1,4 +1,7 @@
 #pragma once
+
+#include "source2sdk/source2gen/source2gen.hpp"
+#include <cstddef>
 #include <cstdint>
 
 // /////////////////////////////////////////////////////////////
@@ -6,18 +9,21 @@
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::client
+namespace source2sdk
 {
-    // Enumerator count: 6
-    // Alignment: 1
-    // Size: 0x1
-    enum class EArtyTeam : std::uint8_t
+    namespace client
     {
-        k_eNoTeam = 0,
-        k_eYou = 1,
-        k_eThem = 2,
-        k_eNeutral = 4,
-        k_ePlayers = 3,
-        k_eAllTeams = 255,
+        // Enumerator count: 6
+        // Alignment: 1
+        // Size: 0x1
+        enum class EArtyTeam : std::uint8_t
+        {
+            k_eNoTeam = 0x0,
+            k_eYou = 0x1,
+            k_eThem = 0x2,
+            k_eNeutral = 0x4,
+            k_ePlayers = 0x3,
+            k_eAllTeams = 0xff,
+        };
     };
 };

@@ -1,51 +1,58 @@
 #pragma once
+
+#include "source2sdk/source2gen/source2gen.hpp"
+#include <cstddef>
+#include <cstdint>
 #include "source2sdk/client/CDOTA_Buff.hpp"
 #include "source2sdk/client/ParticleIndex_t.hpp"
 #include "source2sdk/entity2/GameTime_t.hpp"
-#include "source2sdk/source2gen.hpp"
-#include <cstddef>
-#include <cstdint>
+namespace source2sdk
+{
+    namespace client
+    {
+        struct C_BaseEntity;
+    };
+};
 
 // /////////////////////////////////////////////////////////////
 // Module: client
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::client
+namespace source2sdk
 {
-    class C_BaseEntity;
-};
-
-namespace source2sdk::client
-{
-    // Registered alignment: unknown
-    // Alignment: unknown
-    // Standard-layout class: false
-    // Size: 0x1738
-    // Has VTable
-    #pragma pack(push, 1)
-    class CDOTA_Modifier_MonkeyKing_FurArmy_SoldierInPosition : public client::CDOTA_Buff
+    namespace client
     {
-    public:
-        Vector m_vTargetPos; // 0x1708        
-        // m_hAttackTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
-        // CHandle<client::C_BaseEntity> m_hAttackTarget;
-        char m_hAttackTarget[0x4]; // 0x1714        
-        float attack_speed; // 0x1718        
-        int32_t second_radius; // 0x171c        
-        int32_t outer_attack_buffer; // 0x1720        
-        // m_hThinker has a template type with potentially unknown template parameters. You can try uncommenting the field below.
-        // CHandle<client::C_BaseEntity> m_hThinker;
-        char m_hThinker[0x4]; // 0x1724        
-        bool m_bDisarmed; // 0x1728        
-        [[maybe_unused]] std::uint8_t pad_0x1729[0x3]; // 0x1729
-        entity2::GameTime_t m_flNextAttackTime; // 0x172c        
-        client::ParticleIndex_t m_nFXIndex; // 0x1730        
-        bool m_bAutoSpawn; // 0x1734        
-        [[maybe_unused]] std::uint8_t pad_0x1735[0x3];
+        // Registered alignment: unknown
+        // Alignment: unknown
+        // Standard-layout class: false
+        // Size: 0x1828
+        // Has VTable
+        #pragma pack(push, 1)
+        class CDOTA_Modifier_MonkeyKing_FurArmy_SoldierInPosition : public source2sdk::client::CDOTA_Buff
+        {
+        public:
+            Vector m_vTargetPos; // 0x17f8            
+            // m_hAttackTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+            // CHandle<source2sdk::client::C_BaseEntity> m_hAttackTarget;
+            char m_hAttackTarget[0x4]; // 0x1804            
+            float attack_speed; // 0x1808            
+            float second_radius; // 0x180c            
+            std::int32_t outer_attack_buffer; // 0x1810            
+            // m_hThinker has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+            // CHandle<source2sdk::client::C_BaseEntity> m_hThinker;
+            char m_hThinker[0x4]; // 0x1814            
+            bool m_bDisarmed; // 0x1818            
+            uint8_t _pad1819[0x3]; // 0x1819
+            source2sdk::entity2::GameTime_t m_flNextAttackTime; // 0x181c            
+            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x1820            
+            bool m_bAutoSpawn; // 0x1824            
+            uint8_t _pad1825[0x3];
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in CDOTA_Modifier_MonkeyKing_FurArmy_SoldierInPosition because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_MonkeyKing_FurArmy_SoldierInPosition) == 0x1828);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in CDOTA_Modifier_MonkeyKing_FurArmy_SoldierInPosition because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_MonkeyKing_FurArmy_SoldierInPosition) == 0x1738);
 };

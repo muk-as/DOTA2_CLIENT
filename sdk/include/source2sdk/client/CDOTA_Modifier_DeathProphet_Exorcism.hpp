@@ -1,62 +1,71 @@
 #pragma once
-#include "source2sdk/client/CDOTA_Buff.hpp"
-#include "source2sdk/entity2/GameTime_t.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/client/CDOTA_Buff.hpp"
+#include "source2sdk/entity2/GameTime_t.hpp"
+namespace source2sdk
+{
+    namespace client
+    {
+        struct C_BaseEntity;
+    };
+};
+namespace source2sdk
+{
+    namespace client
+    {
+        struct sSpiritInfo;
+    };
+};
 
 // /////////////////////////////////////////////////////////////
 // Module: client
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::client
+namespace source2sdk
 {
-    class C_BaseEntity;
-};
-
-namespace source2sdk::client
-{
-    class sSpiritInfo;
-};
-
-namespace source2sdk::client
-{
-    // Registered alignment: unknown
-    // Alignment: unknown
-    // Standard-layout class: false
-    // Size: 0x1778
-    // Has VTable
-    #pragma pack(push, 1)
-    class CDOTA_Modifier_DeathProphet_Exorcism : public client::CDOTA_Buff
+    namespace client
     {
-    public:
-        int32_t radius; // 0x1708        
-        int32_t spirit_speed; // 0x170c        
-        int32_t max_distance; // 0x1710        
-        int32_t give_up_distance; // 0x1714        
-        int32_t heal_percent; // 0x1718        
-        int32_t spirit_duration; // 0x171c        
-        float ghost_spawn_rate; // 0x1720        
-        int32_t movement_bonus; // 0x1724        
-        int32_t m_iSpirits; // 0x1728        
-        entity2::GameTime_t m_fStartTime; // 0x172c        
-        entity2::GameTime_t m_fLastThinkTime; // 0x1730        
-        entity2::GameTime_t m_fSpawnTime; // 0x1734        
-        bool m_bFirstSpawn; // 0x1738        
-        bool m_bCommentedOnExpired; // 0x1739        
-        bool m_bForceExpired; // 0x173a        
-        [[maybe_unused]] std::uint8_t pad_0x173b[0x5]; // 0x173b
-        // m_vecDeadHeroes has a template type with potentially unknown template parameters. You can try uncommenting the field below.
-        // CUtlVector<CHandle<client::C_BaseEntity>> m_vecDeadHeroes;
-        char m_vecDeadHeroes[0x18]; // 0x1740        
-        // m_vecSpirits has a template type with potentially unknown template parameters. You can try uncommenting the field below.
-        // CUtlVector<client::sSpiritInfo*> m_vecSpirits;
-        char m_vecSpirits[0x18]; // 0x1758        
-        [[maybe_unused]] std::uint8_t pad_0x1770[0x8];
+        // Registered alignment: unknown
+        // Alignment: unknown
+        // Standard-layout class: false
+        // Size: 0x1868
+        // Has VTable
+        #pragma pack(push, 1)
+        class CDOTA_Modifier_DeathProphet_Exorcism : public source2sdk::client::CDOTA_Buff
+        {
+        public:
+            float radius; // 0x17f8            
+            std::int32_t spirit_speed; // 0x17fc            
+            std::int32_t max_distance; // 0x1800            
+            std::int32_t give_up_distance; // 0x1804            
+            std::int32_t heal_percent; // 0x1808            
+            std::int32_t spirit_duration; // 0x180c            
+            float ghost_spawn_rate; // 0x1810            
+            std::int32_t movement_bonus; // 0x1814            
+            std::int32_t m_iSpirits; // 0x1818            
+            source2sdk::entity2::GameTime_t m_fStartTime; // 0x181c            
+            source2sdk::entity2::GameTime_t m_fLastThinkTime; // 0x1820            
+            source2sdk::entity2::GameTime_t m_fSpawnTime; // 0x1824            
+            bool m_bFirstSpawn; // 0x1828            
+            bool m_bCommentedOnExpired; // 0x1829            
+            bool m_bForceExpired; // 0x182a            
+            uint8_t _pad182b[0x5]; // 0x182b
+            // m_vecDeadHeroes has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+            // CUtlVector<CHandle<source2sdk::client::C_BaseEntity>> m_vecDeadHeroes;
+            char m_vecDeadHeroes[0x18]; // 0x1830            
+            // m_vecSpirits has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+            // CUtlVector<source2sdk::client::sSpiritInfo*> m_vecSpirits;
+            char m_vecSpirits[0x18]; // 0x1848            
+            uint8_t _pad1860[0x8];
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in CDOTA_Modifier_DeathProphet_Exorcism because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_DeathProphet_Exorcism) == 0x1868);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in CDOTA_Modifier_DeathProphet_Exorcism because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_DeathProphet_Exorcism) == 0x1778);
 };

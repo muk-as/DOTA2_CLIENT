@@ -1,39 +1,44 @@
 #pragma once
-#include "source2sdk/client/CDOTA_Buff.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/client/CDOTA_Buff.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: client
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::client
+namespace source2sdk
 {
-    // Registered alignment: unknown
-    // Alignment: unknown
-    // Standard-layout class: false
-    // Size: 0x1740
-    // Has VTable
-    #pragma pack(push, 1)
-    class CDOTA_Modifier_Ringmaster_Spotlight_Thinker : public client::CDOTA_Buff
+    namespace client
     {
-    public:
-        bool self_spotlight; // 0x1708        
-        [[maybe_unused]] std::uint8_t pad_0x1709[0x3]; // 0x1709
-        float radius; // 0x170c        
-        float initial_speed; // 0x1710        
-        float sweep_speed; // 0x1714        
-        float sweep_radius; // 0x1718        
-        float linger_duration; // 0x171c        
-        int32_t spotlight_index; // 0x1720        
-        Vector m_vStartLocation; // 0x1724        
-        Vector m_vTargetLocation; // 0x1730        
-        float m_flTargetReachedTime; // 0x173c        
+        // Registered alignment: unknown
+        // Alignment: unknown
+        // Standard-layout class: false
+        // Size: 0x1830
+        // Has VTable
+        #pragma pack(push, 1)
+        class CDOTA_Modifier_Ringmaster_Spotlight_Thinker : public source2sdk::client::CDOTA_Buff
+        {
+        public:
+            bool self_spotlight; // 0x17f8            
+            uint8_t _pad17f9[0x3]; // 0x17f9
+            float radius; // 0x17fc            
+            float initial_speed; // 0x1800            
+            float sweep_speed; // 0x1804            
+            float sweep_radius; // 0x1808            
+            float linger_duration; // 0x180c            
+            std::int32_t spotlight_index; // 0x1810            
+            Vector m_vStartLocation; // 0x1814            
+            Vector m_vTargetLocation; // 0x1820            
+            float m_flTargetReachedTime; // 0x182c            
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in CDOTA_Modifier_Ringmaster_Spotlight_Thinker because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Ringmaster_Spotlight_Thinker) == 0x1830);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in CDOTA_Modifier_Ringmaster_Spotlight_Thinker because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_Ringmaster_Spotlight_Thinker) == 0x1740);
 };

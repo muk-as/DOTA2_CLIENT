@@ -1,34 +1,39 @@
 #pragma once
-#include "source2sdk/client/C_PointEntity.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/client/C_PointEntity.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: client
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::client
+namespace source2sdk
 {
-    // Registered alignment: 0x8
-    // Alignment: 0x8
-    // Standard-layout class: false
-    // Size: 0x568
-    // Has VTable
-    // Construct allowed
-    // 
-    // static metadata: MNetworkVarNames "bool m_bDisabled"
-    #pragma pack(push, 1)
-    class C_InfoPlayerStartDota : public client::C_PointEntity
+    namespace client
     {
-    public:
-        // metadata: MNetworkEnable
-        bool m_bDisabled; // 0x560        
-        [[maybe_unused]] std::uint8_t pad_0x561[0x7];
+        // Registered alignment: 0x8
+        // Alignment: 0x8
+        // Standard-layout class: false
+        // Size: 0x518
+        // Has VTable
+        // Construct allowed
+        // 
+        // static metadata: MNetworkVarNames "bool m_bDisabled"
+        #pragma pack(push, 1)
+        class C_InfoPlayerStartDota : public source2sdk::client::C_PointEntity
+        {
+        public:
+            // metadata: MNetworkEnable
+            bool m_bDisabled; // 0x510            
+            uint8_t _pad0511[0x7];
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in C_InfoPlayerStartDota because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::client::C_InfoPlayerStartDota) == 0x518);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in C_InfoPlayerStartDota because it is not a standard-layout class
-    static_assert(sizeof(C_InfoPlayerStartDota) == 0x568);
 };

@@ -1,28 +1,33 @@
 #pragma once
-#include "source2sdk/server/CDOTA_Modifier_BackdoorProtection.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/server/CDOTA_Modifier_BackdoorProtection.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: server
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::server
+namespace source2sdk
 {
-    // Registered alignment: unknown
-    // Alignment: unknown
-    // Standard-layout class: false
-    // Size: 0x1738
-    // Has VTable
-    #pragma pack(push, 1)
-    class CDOTA_Modifier_BackdoorProtectionInBase : public server::CDOTA_Modifier_BackdoorProtection
+    namespace server
     {
-    public:
-        // No schema binary for binding
+        // Registered alignment: unknown
+        // Alignment: unknown
+        // Standard-layout class: false
+        // Size: 0x1828
+        // Has VTable
+        #pragma pack(push, 1)
+        class CDOTA_Modifier_BackdoorProtectionInBase : public source2sdk::server::CDOTA_Modifier_BackdoorProtection
+        {
+        public:
+            // No schema binary for binding
+        };
+        #pragma pack(pop)
+        
+        
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_BackdoorProtectionInBase) == 0x1828);
     };
-    #pragma pack(pop)
-    
-    static_assert(sizeof(CDOTA_Modifier_BackdoorProtectionInBase) == 0x1738);
 };

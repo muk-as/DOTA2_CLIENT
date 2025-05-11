@@ -1,30 +1,35 @@
 #pragma once
-#include "source2sdk/animgraphlib/CPathAnimMotorUpdaterBase.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/animgraphlib/CPathAnimMotorUpdaterBase.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: animgraphlib
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::animgraphlib
+namespace source2sdk
 {
-    // Registered alignment: 0x8
-    // Alignment: 0x8
-    // Standard-layout class: false
-    // Size: 0x28
-    // Has VTable
-    // Construct allowed
-    // 
-    // static metadata: MGetKV3ClassDefaults
-    #pragma pack(push, 1)
-    class CPathAnimMotorUpdater : public animgraphlib::CPathAnimMotorUpdaterBase
+    namespace animgraphlib
     {
-    public:
+        // Registered alignment: 0x8
+        // Alignment: 0x8
+        // Standard-layout class: false
+        // Size: 0x28
+        // Has VTable
+        // Construct allowed
+        // 
+        // static metadata: MGetKV3ClassDefaults
+        #pragma pack(push, 1)
+        class CPathAnimMotorUpdater : public source2sdk::animgraphlib::CPathAnimMotorUpdaterBase
+        {
+        public:
+        };
+        #pragma pack(pop)
+        
+        
+        static_assert(sizeof(source2sdk::animgraphlib::CPathAnimMotorUpdater) == 0x28);
     };
-    #pragma pack(pop)
-    
-    static_assert(sizeof(CPathAnimMotorUpdater) == 0x28);
 };

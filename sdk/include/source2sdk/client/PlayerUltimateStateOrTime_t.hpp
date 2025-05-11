@@ -1,4 +1,7 @@
 #pragma once
+
+#include "source2sdk/source2gen/source2gen.hpp"
+#include <cstddef>
 #include <cstdint>
 
 // /////////////////////////////////////////////////////////////
@@ -6,16 +9,19 @@
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::client
+namespace source2sdk
 {
-    // Enumerator count: 4
-    // Alignment: 4
-    // Size: 0x4
-    enum class PlayerUltimateStateOrTime_t : std::uint32_t
+    namespace client
     {
-        PLAYER_ULTIMATE_STATE_READY = 0x0,
-        PLAYER_ULTIMATE_STATE_NO_MANA = 0xffffffff,
-        PLAYER_ULTIMATE_STATE_NOT_LEVELED = 0xfffffffe,
-        PLAYER_ULTIMATE_STATE_HIDDEN = 0xfffffffd,
+        // Enumerator count: 4
+        // Alignment: 4
+        // Size: 0x4
+        enum class PlayerUltimateStateOrTime_t : std::uint32_t
+        {
+            PLAYER_ULTIMATE_STATE_READY = 0x0,
+            PLAYER_ULTIMATE_STATE_NO_MANA = 0xffffffff,
+            PLAYER_ULTIMATE_STATE_NOT_LEVELED = 0xfffffffe,
+            PLAYER_ULTIMATE_STATE_HIDDEN = 0xfffffffd,
+        };
     };
 };

@@ -1,4 +1,7 @@
 #pragma once
+
+#include "source2sdk/source2gen/source2gen.hpp"
+#include <cstddef>
 #include <cstdint>
 
 // /////////////////////////////////////////////////////////////
@@ -6,20 +9,23 @@
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::client
+namespace source2sdk
 {
-    // Enumerator count: 8
-    // Alignment: 1
-    // Size: 0x1
-    enum class EDOTAFacetColor : std::uint8_t
+    namespace client
     {
-        FACET_COLOR_RED = 0,
-        FACET_COLOR_YELLOW = 1,
-        FACET_COLOR_GREEN = 2,
-        FACET_COLOR_BLUE = 3,
-        FACET_COLOR_PURPLE = 4,
-        FACET_COLOR_GRAY = 5,
-        FACET_COLOR_COUNT = 6,
-        FACET_COLOR_INVALID = 7,
+        // Enumerator count: 8
+        // Alignment: 1
+        // Size: 0x1
+        enum class EDOTAFacetColor : std::uint8_t
+        {
+            FACET_COLOR_RED = 0x0,
+            FACET_COLOR_YELLOW = 0x1,
+            FACET_COLOR_GREEN = 0x2,
+            FACET_COLOR_BLUE = 0x3,
+            FACET_COLOR_PURPLE = 0x4,
+            FACET_COLOR_GRAY = 0x5,
+            FACET_COLOR_COUNT = 0x6,
+            FACET_COLOR_INVALID = 0x7,
+        };
     };
 };

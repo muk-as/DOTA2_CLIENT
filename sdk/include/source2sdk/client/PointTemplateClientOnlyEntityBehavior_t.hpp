@@ -1,4 +1,7 @@
 #pragma once
+
+#include "source2sdk/source2gen/source2gen.hpp"
+#include <cstddef>
 #include <cstdint>
 
 // /////////////////////////////////////////////////////////////
@@ -6,14 +9,17 @@
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::client
+namespace source2sdk
 {
-    // Enumerator count: 2
-    // Alignment: 4
-    // Size: 0x4
-    enum class PointTemplateClientOnlyEntityBehavior_t : std::uint32_t
+    namespace client
     {
-        CREATE_FOR_CURRENTLY_CONNECTED_CLIENTS_ONLY = 0x0,
-        CREATE_FOR_CLIENTS_WHO_CONNECT_LATER = 0x1,
+        // Enumerator count: 2
+        // Alignment: 4
+        // Size: 0x4
+        enum class PointTemplateClientOnlyEntityBehavior_t : std::uint32_t
+        {
+            CREATE_FOR_CURRENTLY_CONNECTED_CLIENTS_ONLY = 0x0,
+            CREATE_FOR_CLIENTS_WHO_CONNECT_LATER = 0x1,
+        };
     };
 };

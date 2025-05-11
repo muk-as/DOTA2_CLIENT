@@ -1,32 +1,37 @@
 #pragma once
-#include "source2sdk/client/CDOTA_Buff_Item.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/client/CDOTA_Buff_Item.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: client
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::client
+namespace source2sdk
 {
-    // Registered alignment: unknown
-    // Alignment: unknown
-    // Standard-layout class: false
-    // Size: 0x1718
-    // Has VTable
-    #pragma pack(push, 1)
-    class CDOTA_Modifier_Item_Witches_Switch : public client::CDOTA_Buff_Item
+    namespace client
     {
-    public:
-        float bonus_health_regen; // 0x1708        
-        float bonus_mana_regen; // 0x170c        
-        int32_t bonus_armor; // 0x1710        
-        float aura_radius; // 0x1714        
+        // Registered alignment: unknown
+        // Alignment: unknown
+        // Standard-layout class: false
+        // Size: 0x1808
+        // Has VTable
+        #pragma pack(push, 1)
+        class CDOTA_Modifier_Item_Witches_Switch : public source2sdk::client::CDOTA_Buff_Item
+        {
+        public:
+            float bonus_health_regen; // 0x17f8            
+            float bonus_mana_regen; // 0x17fc            
+            std::int32_t bonus_armor; // 0x1800            
+            float aura_radius; // 0x1804            
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in CDOTA_Modifier_Item_Witches_Switch because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Item_Witches_Switch) == 0x1808);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in CDOTA_Modifier_Item_Witches_Switch because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_Item_Witches_Switch) == 0x1718);
 };

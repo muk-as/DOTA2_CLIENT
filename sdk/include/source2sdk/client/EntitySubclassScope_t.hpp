@@ -1,4 +1,7 @@
 #pragma once
+
+#include "source2sdk/source2gen/source2gen.hpp"
+#include <cstddef>
 #include <cstdint>
 
 // /////////////////////////////////////////////////////////////
@@ -6,14 +9,17 @@
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::client
+namespace source2sdk
 {
-    // Enumerator count: 2
-    // Alignment: 4
-    // Size: 0x4
-    enum class EntitySubclassScope_t : std::uint32_t
+    namespace client
     {
-        SUBCLASS_SCOPE_NONE = 0xffffffff,
-        SUBCLASS_SCOPE_COUNT = 0x0,
+        // Enumerator count: 2
+        // Alignment: 4
+        // Size: 0x4
+        enum class EntitySubclassScope_t : std::uint32_t
+        {
+            SUBCLASS_SCOPE_NONE = 0xffffffff,
+            SUBCLASS_SCOPE_COUNT = 0x0,
+        };
     };
 };

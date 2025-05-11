@@ -1,32 +1,37 @@
 #pragma once
-#include "source2sdk/server/CDOTA_BaseNPC_Hero.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/server/CDOTA_BaseNPC_Hero.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: server
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::server
+namespace source2sdk
 {
-    // Registered alignment: 0x8
-    // Alignment: 0x8
-    // Standard-layout class: false
-    // Size: 0x1ed0
-    // Has VTable
-    // Construct allowed
-    // MClassHasEntityLimitedDataDesc
-    #pragma pack(push, 1)
-    class CDOTA_Unit_Hero_VengefulSpirit : public server::CDOTA_BaseNPC_Hero
+    namespace server
     {
-    public:
-        bool m_bArcanaEquipped; // 0x1ec8        
-        [[maybe_unused]] std::uint8_t pad_0x1ec9[0x7];
+        // Registered alignment: 0x8
+        // Alignment: 0x8
+        // Standard-layout class: false
+        // Size: 0x1e98
+        // Has VTable
+        // Construct allowed
+        // MClassHasEntityLimitedDataDesc
+        #pragma pack(push, 1)
+        class CDOTA_Unit_Hero_VengefulSpirit : public source2sdk::server::CDOTA_BaseNPC_Hero
+        {
+        public:
+            bool m_bArcanaEquipped; // 0x1e90            
+            uint8_t _pad1e91[0x7];
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in CDOTA_Unit_Hero_VengefulSpirit because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::server::CDOTA_Unit_Hero_VengefulSpirit) == 0x1e98);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in CDOTA_Unit_Hero_VengefulSpirit because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Unit_Hero_VengefulSpirit) == 0x1ed0);
 };

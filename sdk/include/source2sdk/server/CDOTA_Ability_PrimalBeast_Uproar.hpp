@@ -1,37 +1,42 @@
 #pragma once
-#include "source2sdk/server/CDOTABaseAbility.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/server/CDOTABaseAbility.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: server
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::server
+namespace source2sdk
 {
-    // Registered alignment: 0x8
-    // Alignment: 0x8
-    // Standard-layout class: false
-    // Size: 0x5d0
-    // Has VTable
-    // Construct allowed
-    // MClassHasEntityLimitedDataDesc
-    // 
-    // static metadata: MNetworkVarNames "int m_iUproarStatus"
-    #pragma pack(push, 1)
-    class CDOTA_Ability_PrimalBeast_Uproar : public server::CDOTABaseAbility
+    namespace server
     {
-    public:
-        // metadata: MNetworkEnable
-        // metadata: MNetworkChangeCallback "OnUproarActiveChanged"
-        int32_t m_iUproarStatus; // 0x5c8        
-        bool m_bUpdateIcons; // 0x5cc        
-        [[maybe_unused]] std::uint8_t pad_0x5cd[0x3];
+        // Registered alignment: 0x8
+        // Alignment: 0x8
+        // Standard-layout class: false
+        // Size: 0x5c0
+        // Has VTable
+        // Construct allowed
+        // MClassHasEntityLimitedDataDesc
+        // 
+        // static metadata: MNetworkVarNames "int m_iUproarStatus"
+        #pragma pack(push, 1)
+        class CDOTA_Ability_PrimalBeast_Uproar : public source2sdk::server::CDOTABaseAbility
+        {
+        public:
+            // metadata: MNetworkEnable
+            // metadata: MNetworkChangeCallback "OnUproarActiveChanged"
+            std::int32_t m_iUproarStatus; // 0x5b8            
+            bool m_bUpdateIcons; // 0x5bc            
+            uint8_t _pad05bd[0x3];
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in CDOTA_Ability_PrimalBeast_Uproar because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::server::CDOTA_Ability_PrimalBeast_Uproar) == 0x5c0);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in CDOTA_Ability_PrimalBeast_Uproar because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Ability_PrimalBeast_Uproar) == 0x5d0);
 };

@@ -1,4 +1,7 @@
 #pragma once
+
+#include "source2sdk/source2gen/source2gen.hpp"
+#include <cstddef>
 #include <cstdint>
 
 // /////////////////////////////////////////////////////////////
@@ -6,16 +9,19 @@
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::particles
+namespace source2sdk
 {
-    // Enumerator count: 2
-    // Alignment: 4
-    // Size: 0x4
-    enum class ParticleMassMode_t : std::uint32_t
+    namespace particles
     {
-        // MPropertyFriendlyName "Radius cubed"
-        PARTICLE_MASSMODE_RADIUS_CUBED = 0x0,
-        // MPropertyFriendlyName "Radius squared"
-        PARTICLE_MASSMODE_RADIUS_SQUARED = 0x2,
+        // Enumerator count: 2
+        // Alignment: 4
+        // Size: 0x4
+        enum class ParticleMassMode_t : std::uint32_t
+        {
+            // MPropertyFriendlyName "Radius cubed"
+            PARTICLE_MASSMODE_RADIUS_CUBED = 0x0,
+            // MPropertyFriendlyName "Radius squared"
+            PARTICLE_MASSMODE_RADIUS_SQUARED = 0x2,
+        };
     };
 };

@@ -1,4 +1,7 @@
 #pragma once
+
+#include "source2sdk/source2gen/source2gen.hpp"
+#include <cstddef>
 #include <cstdint>
 
 // /////////////////////////////////////////////////////////////
@@ -6,13 +9,16 @@
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::client
+namespace source2sdk
 {
-    // Enumerator count: 1
-    // Alignment: 4
-    // Size: 0x4
-    enum class SVC_Messages_LowFrequency : std::uint32_t
+    namespace client
     {
-        svc_dummy = 0x258,
+        // Enumerator count: 1
+        // Alignment: 4
+        // Size: 0x4
+        enum class SVC_Messages_LowFrequency : std::uint32_t
+        {
+            svc_dummy = 0x258,
+        };
     };
 };

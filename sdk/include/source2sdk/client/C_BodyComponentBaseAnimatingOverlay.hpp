@@ -1,40 +1,40 @@
 #pragma once
-#include "source2sdk/client/CBodyComponentSkeletonInstance.hpp"
-#include "source2sdk/client/C_BaseAnimatingOverlayController.hpp"
-#include "source2sdk/entity2/EntComponentInfo_t.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/client/CBodyComponentSkeletonInstance.hpp"
+#include "source2sdk/client/C_BaseAnimatingOverlayController.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: client
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::client
+namespace source2sdk
 {
-    // Registered alignment: unknown
-    // Alignment: unknown
-    // Standard-layout class: false
-    // Size: 0xb40
-    // Has VTable
-    // Construct disallowed
-    // 
-    // static metadata: MNetworkVarNames "CBaseAnimatingOverlayController m_animationController"
-    #pragma pack(push, 1)
-    class C_BodyComponentBaseAnimatingOverlay : public client::CBodyComponentSkeletonInstance
+    namespace client
     {
-    public:
-        // metadata: MNetworkEnable
-        client::C_BaseAnimatingOverlayController m_animationController; // 0x4d0        
-        [[maybe_unused]] std::uint8_t pad_0xb38[0x8];
+        // Registered alignment: unknown
+        // Alignment: unknown
+        // Standard-layout class: false
+        // Size: 0xb80
+        // Has VTable
+        // Construct disallowed
+        // 
+        // static metadata: MNetworkVarNames "CBaseAnimatingOverlayController m_animationController"
+        #pragma pack(push, 1)
+        class C_BodyComponentBaseAnimatingOverlay : public source2sdk::client::CBodyComponentSkeletonInstance
+        {
+        public:
+            // metadata: MNetworkEnable
+            source2sdk::client::C_BaseAnimatingOverlayController m_animationController; // 0x510            
+            uint8_t _pad0b78[0x8];
+        };
+        #pragma pack(pop)
         
-        // Static fields:
-        static entity2::EntComponentInfo_t &Get_s_EntComponentInfo() {return *reinterpret_cast<entity2::EntComponentInfo_t*>(interfaces::g_schema->FindTypeScopeForModule("client.dll")->FindDeclaredClass("C_BodyComponentBaseAnimatingOverlay")->GetStaticFields()[0]->m_pInstance);};
-        static int32_t &Get_entity_component_error_class_decl_says_contained_but_impl_is_referenced() {return *reinterpret_cast<int32_t*>(interfaces::g_schema->FindTypeScopeForModule("client.dll")->FindDeclaredClass("C_BodyComponentBaseAnimatingOverlay")->GetStaticFields()[1]->m_pInstance);};
+        // Cannot assert offsets of fields in C_BodyComponentBaseAnimatingOverlay because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::client::C_BodyComponentBaseAnimatingOverlay) == 0xb80);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in C_BodyComponentBaseAnimatingOverlay because it is not a standard-layout class
-    static_assert(sizeof(C_BodyComponentBaseAnimatingOverlay) == 0xb40);
 };

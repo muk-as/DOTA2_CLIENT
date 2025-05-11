@@ -1,29 +1,34 @@
 #pragma once
-#include "source2sdk/server/CFuncMoveLinear.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/server/CFuncMoveLinear.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: server
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::server
+namespace source2sdk
 {
-    // Registered alignment: 0x8
-    // Alignment: 0x8
-    // Standard-layout class: false
-    // Size: 0x8d8
-    // Has VTable
-    // Construct allowed
-    #pragma pack(push, 1)
-    class CFuncMoveLinearAlias_momentary_door : public server::CFuncMoveLinear
+    namespace server
     {
-    public:
-        // No schema binary for binding
+        // Registered alignment: 0x8
+        // Alignment: 0x8
+        // Standard-layout class: false
+        // Size: 0x8d0
+        // Has VTable
+        // Construct allowed
+        #pragma pack(push, 1)
+        class CFuncMoveLinearAlias_momentary_door : public source2sdk::server::CFuncMoveLinear
+        {
+        public:
+            // No schema binary for binding
+        };
+        #pragma pack(pop)
+        
+        
+        static_assert(sizeof(source2sdk::server::CFuncMoveLinearAlias_momentary_door) == 0x8d0);
     };
-    #pragma pack(pop)
-    
-    static_assert(sizeof(CFuncMoveLinearAlias_momentary_door) == 0x8d8);
 };

@@ -1,5 +1,6 @@
 #pragma once
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
 
@@ -8,24 +9,27 @@
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::client
+namespace source2sdk
 {
-    // Registered alignment: unknown
-    // Alignment: 0x4
-    // Standard-layout class: true
-    // Size: 0x30
-    // Has VTable
-    // Is Abstract
-    #pragma pack(push, 1)
-    class C_DotaTree
+    namespace client
     {
-    public:
-        [[maybe_unused]] std::uint8_t pad_0x00[0x2c]; // 0x0
-        uint32_t m_unOccluderID; // 0x2c        
+        // Registered alignment: unknown
+        // Alignment: 0x4
+        // Standard-layout class: true
+        // Size: 0x30
+        // Has VTable
+        // Is Abstract
+        #pragma pack(push, 1)
+        class C_DotaTree
+        {
+        public:
+            uint8_t _pad0000[0x2c]; // 0x0
+            std::uint32_t m_unOccluderID; // 0x2c            
+        };
+        #pragma pack(pop)
+        
+        static_assert(offsetof(source2sdk::client::C_DotaTree, m_unOccluderID) == 0x2c);
+        
+        static_assert(sizeof(source2sdk::client::C_DotaTree) == 0x30);
     };
-    #pragma pack(pop)
-    
-    static_assert(offsetof(C_DotaTree, m_unOccluderID) == 0x2c);
-    
-    static_assert(sizeof(C_DotaTree) == 0x30);
 };

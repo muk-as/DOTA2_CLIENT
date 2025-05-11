@@ -1,30 +1,35 @@
 #pragma once
-#include "source2sdk/server/CDOTA_Modifier_MoveSpeed_Percentage.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/server/CDOTA_Modifier_MoveSpeed_Percentage.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: server
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::server
+namespace source2sdk
 {
-    // Registered alignment: unknown
-    // Alignment: unknown
-    // Standard-layout class: false
-    // Size: 0x1718
-    // Has VTable
-    #pragma pack(push, 1)
-    class CDOTA_Modifier_Huskar_Life_Break : public server::CDOTA_Modifier_MoveSpeed_Percentage
+    namespace server
     {
-    public:
-        int32_t attack_speed; // 0x1710        
-        [[maybe_unused]] std::uint8_t pad_0x1714[0x4];
+        // Registered alignment: unknown
+        // Alignment: unknown
+        // Standard-layout class: false
+        // Size: 0x1808
+        // Has VTable
+        #pragma pack(push, 1)
+        class CDOTA_Modifier_Huskar_Life_Break : public source2sdk::server::CDOTA_Modifier_MoveSpeed_Percentage
+        {
+        public:
+            std::int32_t attack_speed; // 0x1800            
+            uint8_t _pad1804[0x4];
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in CDOTA_Modifier_Huskar_Life_Break because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Huskar_Life_Break) == 0x1808);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in CDOTA_Modifier_Huskar_Life_Break because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_Huskar_Life_Break) == 0x1718);
 };

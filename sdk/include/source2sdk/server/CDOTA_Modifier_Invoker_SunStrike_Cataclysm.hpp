@@ -1,37 +1,42 @@
 #pragma once
-#include "source2sdk/client/CDOTA_Buff.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/client/CDOTA_Buff.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: server
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::server
+namespace source2sdk
 {
-    // Registered alignment: unknown
-    // Alignment: unknown
-    // Standard-layout class: false
-    // Size: 0x1730
-    // Has VTable
-    #pragma pack(push, 1)
-    class CDOTA_Modifier_Invoker_SunStrike_Cataclysm : public client::CDOTA_Buff
+    namespace server
     {
-    public:
-        int32_t area_of_effect; // 0x1708        
-        float damage; // 0x170c        
-        int32_t vision_distance; // 0x1710        
-        float vision_duration; // 0x1714        
-        float spell_amp; // 0x1718        
-        float spell_lifesteal; // 0x171c        
-        Vector m_vSoundPos; // 0x1720        
-        bool m_bPlaySound; // 0x172c        
-        [[maybe_unused]] std::uint8_t pad_0x172d[0x3];
+        // Registered alignment: unknown
+        // Alignment: unknown
+        // Standard-layout class: false
+        // Size: 0x1820
+        // Has VTable
+        #pragma pack(push, 1)
+        class CDOTA_Modifier_Invoker_SunStrike_Cataclysm : public source2sdk::client::CDOTA_Buff
+        {
+        public:
+            float area_of_effect; // 0x17f8            
+            float damage; // 0x17fc            
+            float vision_distance; // 0x1800            
+            float vision_duration; // 0x1804            
+            float spell_amp; // 0x1808            
+            float spell_lifesteal; // 0x180c            
+            Vector m_vSoundPos; // 0x1810            
+            bool m_bPlaySound; // 0x181c            
+            uint8_t _pad181d[0x3];
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in CDOTA_Modifier_Invoker_SunStrike_Cataclysm because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Invoker_SunStrike_Cataclysm) == 0x1820);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in CDOTA_Modifier_Invoker_SunStrike_Cataclysm because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_Invoker_SunStrike_Cataclysm) == 0x1730);
 };

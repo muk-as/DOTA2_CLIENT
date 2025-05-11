@@ -1,29 +1,34 @@
 #pragma once
-#include "source2sdk/client/C_DOTA_BaseNPC_HoldoutTower.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/client/C_DOTA_BaseNPC_HoldoutTower.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: client
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::client
+namespace source2sdk
 {
-    // Registered alignment: 0x8
-    // Alignment: 0x8
-    // Standard-layout class: false
-    // Size: 0x1958
-    // Has VTable
-    // Construct allowed
-    #pragma pack(push, 1)
-    class C_DOTA_BaseNPC_HoldoutTower_ReduceSpeed : public client::C_DOTA_BaseNPC_HoldoutTower
+    namespace client
     {
-    public:
-        // No schema binary for binding
+        // Registered alignment: 0x8
+        // Alignment: 0x8
+        // Standard-layout class: false
+        // Size: 0x18c0
+        // Has VTable
+        // Construct allowed
+        #pragma pack(push, 1)
+        class C_DOTA_BaseNPC_HoldoutTower_ReduceSpeed : public source2sdk::client::C_DOTA_BaseNPC_HoldoutTower
+        {
+        public:
+            // No schema binary for binding
+        };
+        #pragma pack(pop)
+        
+        
+        static_assert(sizeof(source2sdk::client::C_DOTA_BaseNPC_HoldoutTower_ReduceSpeed) == 0x18c0);
     };
-    #pragma pack(pop)
-    
-    static_assert(sizeof(C_DOTA_BaseNPC_HoldoutTower_ReduceSpeed) == 0x1958);
 };

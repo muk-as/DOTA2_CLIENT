@@ -1,4 +1,7 @@
 #pragma once
+
+#include "source2sdk/source2gen/source2gen.hpp"
+#include <cstddef>
 #include <cstdint>
 
 // /////////////////////////////////////////////////////////////
@@ -6,15 +9,18 @@
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::materialsystem2
+namespace source2sdk
 {
-    // Enumerator count: 3
-    // Alignment: 4
-    // Size: 0x4
-    enum class LayoutPositionType_e : std::uint32_t
+    namespace materialsystem2
     {
-        LAYOUTPOSITIONTYPE_VIEWPORT_RELATIVE = 0x0,
-        LAYOUTPOSITIONTYPE_FRACTIONAL = 0x1,
-        LAYOUTPOSITIONTYPE_NONE = 0x2,
+        // Enumerator count: 3
+        // Alignment: 4
+        // Size: 0x4
+        enum class LayoutPositionType_e : std::uint32_t
+        {
+            LAYOUTPOSITIONTYPE_VIEWPORT_RELATIVE = 0x0,
+            LAYOUTPOSITIONTYPE_FRACTIONAL = 0x1,
+            LAYOUTPOSITIONTYPE_NONE = 0x2,
+        };
     };
 };

@@ -1,35 +1,48 @@
 #pragma once
-#include "source2sdk/server/CDOTABaseAbility.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/server/CDOTABaseAbility.hpp"
+namespace source2sdk
+{
+    namespace server
+    {
+        struct CDOTABaseAbility;
+    };
+};
 
 // /////////////////////////////////////////////////////////////
 // Module: server
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::server
+namespace source2sdk
 {
-    // Registered alignment: 0x8
-    // Alignment: 0x8
-    // Standard-layout class: false
-    // Size: 0x5d8
-    // Has VTable
-    // Construct allowed
-    // MClassHasEntityLimitedDataDesc
-    #pragma pack(push, 1)
-    class CDOTA_Ability_DoomBringer_Devour : public server::CDOTABaseAbility
+    namespace server
     {
-    public:
-        int32_t m_nDevourFirstSlot; // 0x5c8        
-        bool m_bIsAltCastState; // 0x5cc        
-        [[maybe_unused]] std::uint8_t pad_0x5cd[0x3]; // 0x5cd
-        int32_t ability_bonus_level; // 0x5d0        
-        [[maybe_unused]] std::uint8_t pad_0x5d4[0x4];
+        // Registered alignment: 0x8
+        // Alignment: 0x8
+        // Standard-layout class: false
+        // Size: 0x5d8
+        // Has VTable
+        // Construct allowed
+        // MClassHasEntityLimitedDataDesc
+        #pragma pack(push, 1)
+        class CDOTA_Ability_DoomBringer_Devour : public source2sdk::server::CDOTABaseAbility
+        {
+        public:
+            bool m_bIsAltCastState; // 0x5b8            
+            uint8_t _pad05b9[0x3]; // 0x5b9
+            std::int32_t ability_bonus_level; // 0x5bc            
+            // m_vecAbilityDraftStolenAbilities has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+            // CUtlVector<CHandle<source2sdk::server::CDOTABaseAbility>> m_vecAbilityDraftStolenAbilities;
+            char m_vecAbilityDraftStolenAbilities[0x18]; // 0x5c0            
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in CDOTA_Ability_DoomBringer_Devour because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::server::CDOTA_Ability_DoomBringer_Devour) == 0x5d8);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in CDOTA_Ability_DoomBringer_Devour because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Ability_DoomBringer_Devour) == 0x5d8);
 };

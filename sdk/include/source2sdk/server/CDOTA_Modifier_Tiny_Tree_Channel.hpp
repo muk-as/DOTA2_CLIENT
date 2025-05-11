@@ -1,34 +1,39 @@
 #pragma once
-#include "source2sdk/client/CDOTA_Buff.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/client/CDOTA_Buff.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: server
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::server
+namespace source2sdk
 {
-    // Registered alignment: unknown
-    // Alignment: unknown
-    // Standard-layout class: false
-    // Size: 0x1728
-    // Has VTable
-    #pragma pack(push, 1)
-    class CDOTA_Modifier_Tiny_Tree_Channel : public client::CDOTA_Buff
+    namespace server
     {
-    public:
-        int32_t tree_grab_radius; // 0x1708        
-        int32_t splash_radius; // 0x170c        
-        int32_t speed; // 0x1710        
-        float interval; // 0x1714        
-        Vector m_vPos; // 0x1718        
-        [[maybe_unused]] std::uint8_t pad_0x1724[0x4];
+        // Registered alignment: unknown
+        // Alignment: unknown
+        // Standard-layout class: false
+        // Size: 0x1818
+        // Has VTable
+        #pragma pack(push, 1)
+        class CDOTA_Modifier_Tiny_Tree_Channel : public source2sdk::client::CDOTA_Buff
+        {
+        public:
+            float tree_grab_radius; // 0x17f8            
+            float splash_radius; // 0x17fc            
+            float speed; // 0x1800            
+            float interval; // 0x1804            
+            Vector m_vPos; // 0x1808            
+            uint8_t _pad1814[0x4];
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in CDOTA_Modifier_Tiny_Tree_Channel because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Tiny_Tree_Channel) == 0x1818);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in CDOTA_Modifier_Tiny_Tree_Channel because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_Tiny_Tree_Channel) == 0x1728);
 };

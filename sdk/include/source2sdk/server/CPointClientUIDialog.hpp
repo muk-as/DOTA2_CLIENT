@@ -1,43 +1,50 @@
 #pragma once
-#include "source2sdk/server/CBaseClientUIEntity.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/server/CBaseClientUIEntity.hpp"
+namespace source2sdk
+{
+    namespace server
+    {
+        struct CBaseEntity;
+    };
+};
 
 // /////////////////////////////////////////////////////////////
 // Module: server
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::server
+namespace source2sdk
 {
-    class CBaseEntity;
-};
-
-namespace source2sdk::server
-{
-    // Registered alignment: 0x8
-    // Alignment: 0x8
-    // Standard-layout class: false
-    // Size: 0x968
-    // Has VTable
-    // Construct allowed
-    // 
-    // static metadata: MNetworkVarNames "EHANDLE m_hActivator"
-    #pragma pack(push, 1)
-    class CPointClientUIDialog : public server::CBaseClientUIEntity
+    namespace server
     {
-    public:
-        // metadata: MNetworkEnable
-        // metadata: MNetworkChangeCallback "OnDialogActivatorChanged"
-        // m_hActivator has a template type with potentially unknown template parameters. You can try uncommenting the field below.
-        // CHandle<server::CBaseEntity> m_hActivator;
-        char m_hActivator[0x4]; // 0x960        
-        bool m_bStartEnabled; // 0x964        
-        [[maybe_unused]] std::uint8_t pad_0x965[0x3];
+        // Registered alignment: 0x8
+        // Alignment: 0x8
+        // Standard-layout class: false
+        // Size: 0x960
+        // Has VTable
+        // Construct allowed
+        // 
+        // static metadata: MNetworkVarNames "EHANDLE m_hActivator"
+        #pragma pack(push, 1)
+        class CPointClientUIDialog : public source2sdk::server::CBaseClientUIEntity
+        {
+        public:
+            // metadata: MNetworkEnable
+            // metadata: MNetworkChangeCallback "OnDialogActivatorChanged"
+            // m_hActivator has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+            // CHandle<source2sdk::server::CBaseEntity> m_hActivator;
+            char m_hActivator[0x4]; // 0x958            
+            bool m_bStartEnabled; // 0x95c            
+            uint8_t _pad095d[0x3];
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in CPointClientUIDialog because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::server::CPointClientUIDialog) == 0x960);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in CPointClientUIDialog because it is not a standard-layout class
-    static_assert(sizeof(CPointClientUIDialog) == 0x968);
 };

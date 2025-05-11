@@ -1,4 +1,7 @@
 #pragma once
+
+#include "source2sdk/source2gen/source2gen.hpp"
+#include <cstddef>
 #include <cstdint>
 
 // /////////////////////////////////////////////////////////////
@@ -6,21 +9,24 @@
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::client
+namespace source2sdk
 {
-    // Enumerator count: 9
-    // Alignment: 1
-    // Size: 0x1
-    enum class SolidType_t : std::uint8_t
+    namespace client
     {
-        SOLID_NONE = 0,
-        SOLID_BSP = 1,
-        SOLID_BBOX = 2,
-        SOLID_OBB = 3,
-        SOLID_SPHERE = 4,
-        SOLID_POINT = 5,
-        SOLID_VPHYSICS = 6,
-        SOLID_CAPSULE = 7,
-        SOLID_LAST = 8,
+        // Enumerator count: 9
+        // Alignment: 1
+        // Size: 0x1
+        enum class SolidType_t : std::uint8_t
+        {
+            SOLID_NONE = 0x0,
+            SOLID_BSP = 0x1,
+            SOLID_BBOX = 0x2,
+            SOLID_OBB = 0x3,
+            SOLID_SPHERE = 0x4,
+            SOLID_POINT = 0x5,
+            SOLID_VPHYSICS = 0x6,
+            SOLID_CAPSULE = 0x7,
+            SOLID_LAST = 0x8,
+        };
     };
 };

@@ -1,29 +1,34 @@
 #pragma once
-#include "source2sdk/client/C_BaseCombatCharacter.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/client/C_BaseCombatCharacter.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: client
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::client
+namespace source2sdk
 {
-    // Registered alignment: 0x8
-    // Alignment: 0x8
-    // Standard-layout class: false
-    // Size: 0xa58
-    // Has VTable
-    // Construct allowed
-    #pragma pack(push, 1)
-    class C_NetTestBaseCombatCharacter : public client::C_BaseCombatCharacter
+    namespace client
     {
-    public:
-        // No schema binary for binding
+        // Registered alignment: 0x8
+        // Alignment: 0x8
+        // Standard-layout class: false
+        // Size: 0xa08
+        // Has VTable
+        // Construct allowed
+        #pragma pack(push, 1)
+        class C_NetTestBaseCombatCharacter : public source2sdk::client::C_BaseCombatCharacter
+        {
+        public:
+            // No schema binary for binding
+        };
+        #pragma pack(pop)
+        
+        
+        static_assert(sizeof(source2sdk::client::C_NetTestBaseCombatCharacter) == 0xa08);
     };
-    #pragma pack(pop)
-    
-    static_assert(sizeof(C_NetTestBaseCombatCharacter) == 0xa58);
 };

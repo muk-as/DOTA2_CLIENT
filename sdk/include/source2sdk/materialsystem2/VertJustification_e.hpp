@@ -1,4 +1,7 @@
 #pragma once
+
+#include "source2sdk/source2gen/source2gen.hpp"
+#include <cstddef>
 #include <cstdint>
 
 // /////////////////////////////////////////////////////////////
@@ -6,16 +9,19 @@
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::materialsystem2
+namespace source2sdk
 {
-    // Enumerator count: 4
-    // Alignment: 4
-    // Size: 0x4
-    enum class VertJustification_e : std::uint32_t
+    namespace materialsystem2
     {
-        VERT_JUSTIFICATION_TOP = 0x0,
-        VERT_JUSTIFICATION_CENTER = 0x1,
-        VERT_JUSTIFICATION_BOTTOM = 0x2,
-        VERT_JUSTIFICATION_NONE = 0x3,
+        // Enumerator count: 4
+        // Alignment: 4
+        // Size: 0x4
+        enum class VertJustification_e : std::uint32_t
+        {
+            VERT_JUSTIFICATION_TOP = 0x0,
+            VERT_JUSTIFICATION_CENTER = 0x1,
+            VERT_JUSTIFICATION_BOTTOM = 0x2,
+            VERT_JUSTIFICATION_NONE = 0x3,
+        };
     };
 };

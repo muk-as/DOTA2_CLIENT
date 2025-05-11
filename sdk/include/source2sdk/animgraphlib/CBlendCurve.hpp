@@ -1,5 +1,6 @@
 #pragma once
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
 
@@ -8,27 +9,30 @@
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::animgraphlib
+namespace source2sdk
 {
-    // Registered alignment: 0x4
-    // Alignment: 0x4
-    // Standard-layout class: true
-    // Size: 0x8
-    // Has Trivial Destructor
-    // Construct allowed
-    // 
-    // static metadata: MGetKV3ClassDefaults
-    #pragma pack(push, 1)
-    class CBlendCurve
+    namespace animgraphlib
     {
-    public:
-        float m_flControlPoint1; // 0x0        
-        float m_flControlPoint2; // 0x4        
+        // Registered alignment: 0x4
+        // Alignment: 0x4
+        // Standard-layout class: true
+        // Size: 0x8
+        // Has Trivial Destructor
+        // Construct allowed
+        // 
+        // static metadata: MGetKV3ClassDefaults
+        #pragma pack(push, 1)
+        class CBlendCurve
+        {
+        public:
+            float m_flControlPoint1; // 0x0            
+            float m_flControlPoint2; // 0x4            
+        };
+        #pragma pack(pop)
+        
+        static_assert(offsetof(source2sdk::animgraphlib::CBlendCurve, m_flControlPoint1) == 0x0);
+        static_assert(offsetof(source2sdk::animgraphlib::CBlendCurve, m_flControlPoint2) == 0x4);
+        
+        static_assert(sizeof(source2sdk::animgraphlib::CBlendCurve) == 0x8);
     };
-    #pragma pack(pop)
-    
-    static_assert(offsetof(CBlendCurve, m_flControlPoint1) == 0x0);
-    static_assert(offsetof(CBlendCurve, m_flControlPoint2) == 0x4);
-    
-    static_assert(sizeof(CBlendCurve) == 0x8);
 };

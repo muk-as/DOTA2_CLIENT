@@ -1,29 +1,34 @@
 #pragma once
-#include "source2sdk/client/C_IngameEvent_Base.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/client/C_IngameEvent_Base.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: client
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::client
+namespace source2sdk
 {
-    // Registered alignment: 0x8
-    // Alignment: 0x8
-    // Standard-layout class: false
-    // Size: 0x1928
-    // Has VTable
-    // Construct allowed
-    #pragma pack(push, 1)
-    class CIngameEvent_PermanentGrants : public client::C_IngameEvent_Base
+    namespace client
     {
-    public:
-        // No schema binary for binding
+        // Registered alignment: 0x8
+        // Alignment: 0x8
+        // Standard-layout class: false
+        // Size: 0x18d8
+        // Has VTable
+        // Construct allowed
+        #pragma pack(push, 1)
+        class CIngameEvent_PermanentGrants : public source2sdk::client::C_IngameEvent_Base
+        {
+        public:
+            // No schema binary for binding
+        };
+        #pragma pack(pop)
+        
+        
+        static_assert(sizeof(source2sdk::client::CIngameEvent_PermanentGrants) == 0x18d8);
     };
-    #pragma pack(pop)
-    
-    static_assert(sizeof(CIngameEvent_PermanentGrants) == 0x1928);
 };

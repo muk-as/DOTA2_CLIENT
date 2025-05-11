@@ -1,31 +1,36 @@
 #pragma once
-#include "source2sdk/client/CBaseAnimatingActivity.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/client/CBaseAnimatingActivity.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: client
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::client
+namespace source2sdk
 {
-    // Registered alignment: 0x8
-    // Alignment: 0x8
-    // Standard-layout class: false
-    // Size: 0x860
-    // Has VTable
-    // Construct allowed
-    // MClassHasEntityLimitedDataDesc
-    #pragma pack(push, 1)
-    class C_DOTA_PortraitTree : public client::CBaseAnimatingActivity
+    namespace client
     {
-    public:
-        [[maybe_unused]] std::uint8_t pad_0x848[0x18];
-        // No schema binary for binding
+        // Registered alignment: 0x8
+        // Alignment: 0x8
+        // Standard-layout class: false
+        // Size: 0x810
+        // Has VTable
+        // Construct allowed
+        // MClassHasEntityLimitedDataDesc
+        #pragma pack(push, 1)
+        class C_DOTA_PortraitTree : public source2sdk::client::CBaseAnimatingActivity
+        {
+        public:
+            uint8_t _pad07f8[0x18];
+            // No schema binary for binding
+        };
+        #pragma pack(pop)
+        
+        
+        static_assert(sizeof(source2sdk::client::C_DOTA_PortraitTree) == 0x810);
     };
-    #pragma pack(pop)
-    
-    static_assert(sizeof(C_DOTA_PortraitTree) == 0x860);
 };

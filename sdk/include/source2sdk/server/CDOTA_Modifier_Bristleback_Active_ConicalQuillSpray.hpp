@@ -1,46 +1,51 @@
 #pragma once
-#include "source2sdk/client/CDOTA_Buff.hpp"
-#include "source2sdk/entity2/GameTime_t.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/client/CDOTA_Buff.hpp"
+#include "source2sdk/entity2/GameTime_t.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: server
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::server
+namespace source2sdk
 {
-    // Registered alignment: unknown
-    // Alignment: unknown
-    // Standard-layout class: false
-    // Size: 0x1750
-    // Has VTable
-    #pragma pack(push, 1)
-    class CDOTA_Modifier_Bristleback_Active_ConicalQuillSpray : public client::CDOTA_Buff
+    namespace server
     {
-    public:
-        int32_t activation_num_quill_sprays; // 0x1708        
-        float activation_spray_interval; // 0x170c        
-        int32_t activation_angle; // 0x1710        
-        int32_t cast_range_bonus; // 0x1714        
-        int32_t activation_movement_speed_pct; // 0x1718        
-        int32_t activation_turn_rate_pct; // 0x171c        
-        int32_t activation_disable_turning; // 0x1720        
-        int32_t activation_ignore_cast_angle; // 0x1724        
-        int32_t activation_turn_rate; // 0x1728        
-        float activation_delay; // 0x172c        
-        entity2::GameTime_t m_fStartTime; // 0x1730        
-        bool bDelayFinished; // 0x1734        
-        [[maybe_unused]] std::uint8_t pad_0x1735[0x3]; // 0x1735
-        float m_flFacingTarget; // 0x1738        
-        Vector m_vFacing; // 0x173c        
-        int32_t m_nNumSprays; // 0x1748        
-        [[maybe_unused]] std::uint8_t pad_0x174c[0x4];
+        // Registered alignment: unknown
+        // Alignment: unknown
+        // Standard-layout class: false
+        // Size: 0x1840
+        // Has VTable
+        #pragma pack(push, 1)
+        class CDOTA_Modifier_Bristleback_Active_ConicalQuillSpray : public source2sdk::client::CDOTA_Buff
+        {
+        public:
+            std::int32_t activation_num_quill_sprays; // 0x17f8            
+            float activation_spray_interval; // 0x17fc            
+            std::int32_t activation_angle; // 0x1800            
+            std::int32_t cast_range_bonus; // 0x1804            
+            std::int32_t activation_movement_speed_pct; // 0x1808            
+            std::int32_t activation_turn_rate_pct; // 0x180c            
+            std::int32_t activation_disable_turning; // 0x1810            
+            std::int32_t activation_ignore_cast_angle; // 0x1814            
+            std::int32_t activation_turn_rate; // 0x1818            
+            float activation_delay; // 0x181c            
+            source2sdk::entity2::GameTime_t m_fStartTime; // 0x1820            
+            bool bDelayFinished; // 0x1824            
+            uint8_t _pad1825[0x3]; // 0x1825
+            float m_flFacingTarget; // 0x1828            
+            Vector m_vFacing; // 0x182c            
+            std::int32_t m_nNumSprays; // 0x1838            
+            uint8_t _pad183c[0x4];
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in CDOTA_Modifier_Bristleback_Active_ConicalQuillSpray because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Bristleback_Active_ConicalQuillSpray) == 0x1840);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in CDOTA_Modifier_Bristleback_Active_ConicalQuillSpray because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_Bristleback_Active_ConicalQuillSpray) == 0x1750);
 };

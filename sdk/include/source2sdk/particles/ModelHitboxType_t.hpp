@@ -1,4 +1,7 @@
 #pragma once
+
+#include "source2sdk/source2gen/source2gen.hpp"
+#include <cstddef>
 #include <cstdint>
 
 // /////////////////////////////////////////////////////////////
@@ -6,16 +9,19 @@
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::particles
+namespace source2sdk
 {
-    // Enumerator count: 4
-    // Alignment: 4
-    // Size: 0x4
-    enum class ModelHitboxType_t : std::uint32_t
+    namespace particles
     {
-        MODEL_HITBOX_TYPE_STANDARD = 0x0,
-        MODEL_HITBOX_TYPE_RAW_BONES = 0x1,
-        MODEL_HITBOX_TYPE_RENDERBOUNDS = 0x2,
-        MODEL_HITBOX_TYPE_SNAPSHOT = 0x3,
+        // Enumerator count: 4
+        // Alignment: 4
+        // Size: 0x4
+        enum class ModelHitboxType_t : std::uint32_t
+        {
+            MODEL_HITBOX_TYPE_STANDARD = 0x0,
+            MODEL_HITBOX_TYPE_RAW_BONES = 0x1,
+            MODEL_HITBOX_TYPE_RENDERBOUNDS = 0x2,
+            MODEL_HITBOX_TYPE_SNAPSHOT = 0x3,
+        };
     };
 };

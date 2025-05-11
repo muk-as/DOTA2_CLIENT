@@ -1,36 +1,41 @@
 #pragma once
-#include "source2sdk/client/CDOTA_Buff.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/client/CDOTA_Buff.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: server
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::server
+namespace source2sdk
 {
-    // Registered alignment: unknown
-    // Alignment: unknown
-    // Standard-layout class: false
-    // Size: 0x1730
-    // Has VTable
-    #pragma pack(push, 1)
-    class CDOTA_Modifier_Tinker_MarchOfTheMachinesThinker : public client::CDOTA_Buff
+    namespace server
     {
-    public:
-        int32_t collision_radius; // 0x1708        
-        int32_t radius; // 0x170c        
-        int32_t distance; // 0x1710        
-        int32_t speed; // 0x1714        
-        int32_t machines_per_sec; // 0x1718        
-        int32_t heal_per_second; // 0x171c        
-        Vector m_vDir; // 0x1720        
-        [[maybe_unused]] std::uint8_t pad_0x172c[0x4];
+        // Registered alignment: unknown
+        // Alignment: unknown
+        // Standard-layout class: false
+        // Size: 0x1820
+        // Has VTable
+        #pragma pack(push, 1)
+        class CDOTA_Modifier_Tinker_MarchOfTheMachinesThinker : public source2sdk::client::CDOTA_Buff
+        {
+        public:
+            float collision_radius; // 0x17f8            
+            float radius; // 0x17fc            
+            float distance; // 0x1800            
+            float speed; // 0x1804            
+            std::int32_t machines_per_sec; // 0x1808            
+            std::int32_t heal_per_second; // 0x180c            
+            Vector m_vDir; // 0x1810            
+            uint8_t _pad181c[0x4];
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in CDOTA_Modifier_Tinker_MarchOfTheMachinesThinker because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Tinker_MarchOfTheMachinesThinker) == 0x1820);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in CDOTA_Modifier_Tinker_MarchOfTheMachinesThinker because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_Tinker_MarchOfTheMachinesThinker) == 0x1730);
 };

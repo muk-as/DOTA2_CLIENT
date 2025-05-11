@@ -1,4 +1,7 @@
 #pragma once
+
+#include "source2sdk/source2gen/source2gen.hpp"
+#include <cstddef>
 #include <cstdint>
 
 // /////////////////////////////////////////////////////////////
@@ -6,16 +9,19 @@
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::particles
+namespace source2sdk
 {
-    // Enumerator count: 2
-    // Alignment: 4
-    // Size: 0x4
-    enum class ParticleOmni2LightTypeChoiceList_t : std::uint32_t
+    namespace particles
     {
-        // MPropertyFriendlyName "Point"
-        PARTICLE_OMNI2_LIGHT_TYPE_POINT = 0x0,
-        // MPropertyFriendlyName "Sphere"
-        PARTICLE_OMNI2_LIGHT_TYPE_SPHERE = 0x1,
+        // Enumerator count: 2
+        // Alignment: 4
+        // Size: 0x4
+        enum class ParticleOmni2LightTypeChoiceList_t : std::uint32_t
+        {
+            // MPropertyFriendlyName "Point"
+            PARTICLE_OMNI2_LIGHT_TYPE_POINT = 0x0,
+            // MPropertyFriendlyName "Sphere"
+            PARTICLE_OMNI2_LIGHT_TYPE_SPHERE = 0x1,
+        };
     };
 };

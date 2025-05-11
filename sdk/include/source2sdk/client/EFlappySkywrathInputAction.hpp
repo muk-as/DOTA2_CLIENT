@@ -1,4 +1,7 @@
 #pragma once
+
+#include "source2sdk/source2gen/source2gen.hpp"
+#include <cstddef>
 #include <cstdint>
 
 // /////////////////////////////////////////////////////////////
@@ -6,18 +9,21 @@
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::client
+namespace source2sdk
 {
-    // Enumerator count: 6
-    // Alignment: 4
-    // Size: 0x4
-    enum class EFlappySkywrathInputAction : std::uint32_t
+    namespace client
     {
-        Jump = 0x0,
-        Dash = 0x1,
-        Dive = 0x2,
-        Glide = 0x3,
-        COUNT = 0x4,
-        None = 0xffffffff,
+        // Enumerator count: 6
+        // Alignment: 4
+        // Size: 0x4
+        enum class EFlappySkywrathInputAction : std::uint32_t
+        {
+            Jump = 0x0,
+            Dash = 0x1,
+            Dive = 0x2,
+            Glide = 0x3,
+            COUNT = 0x4,
+            None = 0xffffffff,
+        };
     };
 };

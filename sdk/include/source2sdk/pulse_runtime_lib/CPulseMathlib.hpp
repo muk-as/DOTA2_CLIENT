@@ -1,5 +1,6 @@
 #pragma once
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
 
@@ -8,23 +9,27 @@
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::pulse_runtime_lib
+namespace source2sdk
 {
-    // Registered alignment: unknown
-    // Alignment: 0x1
-    // Standard-layout class: true
-    // Size: 0x1
-    // Has Trivial Constructor
-    // Has Trivial Destructor
-    // 
-    // static metadata: MPulseLibraryBindings
-    // static metadata: MPropertyDescription "Basic math support."
-    #pragma pack(push, 1)
-    class CPulseMathlib
+    namespace pulse_runtime_lib
     {
-    public:
+        // Registered alignment: unknown
+        // Alignment: 0x1
+        // Standard-layout class: true
+        // Size: 0x1
+        // Has Trivial Constructor
+        // Has Trivial Destructor
+        // 
+        // static metadata: MPulseLibraryBindings
+        // static metadata: MPropertyDescription "Basic math support."
+        #pragma pack(push, 1)
+        class CPulseMathlib
+        {
+        public:
+        };
+        #pragma pack(pop)
+        
+        
+        static_assert(sizeof(source2sdk::pulse_runtime_lib::CPulseMathlib) == 0x1);
     };
-    #pragma pack(pop)
-    
-    static_assert(sizeof(CPulseMathlib) == 0x1);
 };

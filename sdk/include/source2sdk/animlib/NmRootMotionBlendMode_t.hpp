@@ -1,4 +1,7 @@
 #pragma once
+
+#include "source2sdk/source2gen/source2gen.hpp"
+#include <cstddef>
 #include <cstdint>
 
 // /////////////////////////////////////////////////////////////
@@ -6,16 +9,19 @@
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::animlib
+namespace source2sdk
 {
-    // Enumerator count: 4
-    // Alignment: 1
-    // Size: 0x1
-    enum class NmRootMotionBlendMode_t : std::uint8_t
+    namespace animlib
     {
-        Blend = 0,
-        Additive = 1,
-        IgnoreSource = 2,
-        IgnoreTarget = 3,
+        // Enumerator count: 4
+        // Alignment: 1
+        // Size: 0x1
+        enum class NmRootMotionBlendMode_t : std::uint8_t
+        {
+            Blend = 0x0,
+            Additive = 0x1,
+            IgnoreSource = 0x2,
+            IgnoreTarget = 0x3,
+        };
     };
 };

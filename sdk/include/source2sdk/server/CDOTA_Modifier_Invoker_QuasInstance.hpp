@@ -1,33 +1,36 @@
 #pragma once
-#include "source2sdk/server/CDOTA_Modifier_Invoker_Instance.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/server/CDOTA_Modifier_Invoker_Instance.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: server
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::server
+namespace source2sdk
 {
-    // Registered alignment: unknown
-    // Alignment: unknown
-    // Standard-layout class: false
-    // Size: 0x1720
-    // Has VTable
-    #pragma pack(push, 1)
-    class CDOTA_Modifier_Invoker_QuasInstance : public server::CDOTA_Modifier_Invoker_Instance
+    namespace server
     {
-    public:
-        float spell_lifesteal; // 0x1708        
-        float lifesteal_per_instance; // 0x170c        
-        int32_t health_regen_per_instance; // 0x1710        
-        [[maybe_unused]] std::uint8_t pad_0x1714[0x4]; // 0x1714
-        char* m_pSlotName; // 0x1718        
+        // Registered alignment: unknown
+        // Alignment: unknown
+        // Standard-layout class: false
+        // Size: 0x1808
+        // Has VTable
+        #pragma pack(push, 1)
+        class CDOTA_Modifier_Invoker_QuasInstance : public source2sdk::server::CDOTA_Modifier_Invoker_Instance
+        {
+        public:
+            float hp_regen_per_instance; // 0x17f8            
+            uint8_t _pad17fc[0x4]; // 0x17fc
+            char* m_pSlotName; // 0x1800            
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in CDOTA_Modifier_Invoker_QuasInstance because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Invoker_QuasInstance) == 0x1808);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in CDOTA_Modifier_Invoker_QuasInstance because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_Invoker_QuasInstance) == 0x1720);
 };

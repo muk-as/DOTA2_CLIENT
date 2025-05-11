@@ -1,32 +1,37 @@
 #pragma once
-#include "source2sdk/server/CDOTA_Modifier_PersistentInvisibility.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/server/CDOTA_Modifier_PersistentInvisibility.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: server
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::server
+namespace source2sdk
 {
-    // Registered alignment: unknown
-    // Alignment: unknown
-    // Standard-layout class: false
-    // Size: 0x1728
-    // Has VTable
-    #pragma pack(push, 1)
-    class CDOTA_Modifier_Riki_Backstab : public server::CDOTA_Modifier_PersistentInvisibility
+    namespace server
     {
-    public:
-        int32_t cleave; // 0x1718        
-        float bonus_health_regen; // 0x171c        
-        float bonus_mana_regen; // 0x1720        
-        int32_t creep_bonus_damage; // 0x1724        
+        // Registered alignment: unknown
+        // Alignment: unknown
+        // Standard-layout class: false
+        // Size: 0x1818
+        // Has VTable
+        #pragma pack(push, 1)
+        class CDOTA_Modifier_Riki_Backstab : public source2sdk::server::CDOTA_Modifier_PersistentInvisibility
+        {
+        public:
+            std::int32_t cleave; // 0x1808            
+            float bonus_health_regen; // 0x180c            
+            float bonus_mana_regen; // 0x1810            
+            std::int32_t creep_bonus_damage; // 0x1814            
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in CDOTA_Modifier_Riki_Backstab because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Riki_Backstab) == 0x1818);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in CDOTA_Modifier_Riki_Backstab because it is not a standard-layout class
-    static_assert(sizeof(CDOTA_Modifier_Riki_Backstab) == 0x1728);
 };

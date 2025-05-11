@@ -1,31 +1,36 @@
 #pragma once
-#include "source2sdk/server/CBaseAnimatingActivity.hpp"
-#include "source2sdk/source2gen.hpp"
+
+#include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/server/CBaseAnimatingActivity.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: server
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::server
+namespace source2sdk
 {
-    // Registered alignment: 0x8
-    // Alignment: 0x8
-    // Standard-layout class: false
-    // Size: 0x7c8
-    // Has VTable
-    // Construct allowed
-    #pragma pack(push, 1)
-    class CConstraintAnchor : public server::CBaseAnimatingActivity
+    namespace server
     {
-    public:
-        float m_massScale; // 0x7c0        
-        [[maybe_unused]] std::uint8_t pad_0x7c4[0x4];
+        // Registered alignment: 0x8
+        // Alignment: 0x8
+        // Standard-layout class: false
+        // Size: 0x7c0
+        // Has VTable
+        // Construct allowed
+        #pragma pack(push, 1)
+        class CConstraintAnchor : public source2sdk::server::CBaseAnimatingActivity
+        {
+        public:
+            float m_massScale; // 0x7b8            
+            uint8_t _pad07bc[0x4];
+        };
+        #pragma pack(pop)
+        
+        // Cannot assert offsets of fields in CConstraintAnchor because it is not a standard-layout class
+        
+        static_assert(sizeof(source2sdk::server::CConstraintAnchor) == 0x7c0);
     };
-    #pragma pack(pop)
-    
-    // Cannot assert offsets of fields in CConstraintAnchor because it is not a standard-layout class
-    static_assert(sizeof(CConstraintAnchor) == 0x7c8);
 };

@@ -1,4 +1,7 @@
 #pragma once
+
+#include "source2sdk/source2gen/source2gen.hpp"
+#include <cstddef>
 #include <cstdint>
 
 // /////////////////////////////////////////////////////////////
@@ -6,14 +9,17 @@
 // Created using source2gen - github.com/neverlosecc/source2gen
 // /////////////////////////////////////////////////////////////
 
-namespace source2sdk::soundsystem_lowlevel
+namespace source2sdk
 {
-    // Enumerator count: 2
-    // Alignment: 4
-    // Size: 0x4
-    enum class VMixPannerType_t : std::uint32_t
+    namespace soundsystem_lowlevel
     {
-        PANNER_TYPE_LINEAR = 0x0,
-        PANNER_TYPE_EQUAL_POWER = 0x1,
+        // Enumerator count: 2
+        // Alignment: 4
+        // Size: 0x4
+        enum class VMixPannerType_t : std::uint32_t
+        {
+            PANNER_TYPE_LINEAR = 0x0,
+            PANNER_TYPE_EQUAL_POWER = 0x1,
+        };
     };
 };
