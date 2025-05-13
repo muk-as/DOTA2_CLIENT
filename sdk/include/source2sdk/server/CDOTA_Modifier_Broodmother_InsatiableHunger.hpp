@@ -30,7 +30,7 @@ namespace source2sdk
             float shard_damage_tick_interval; // 0x1808            
             std::int32_t damage_tick_count; // 0x180c            
             std::int32_t shard_damage_per_tick; // 0x1810            
-            uint8_t _pad1814[0x4];
+            std::int32_t m_nTotalBonusDamage; // 0x1814            
         };
         #pragma pack(pop)
         
