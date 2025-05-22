@@ -122,9 +122,10 @@ function SwitchToNewFacet( nHeroID, nHeroFacet )
 function SwitchSpawnHeroFacet(nHeroID, nHeroFacet) {
 
 	var SpawnHeroFacetPicker = $('#SpawnHeroFacetPicker');
+	var nHeroFacetID = nHeroFacet & 0xFFFFFFFF;
 	if (SpawnHeroFacetPicker != null) {
-		$.Msg('SwitchSpawnHeroFacet ' + nHeroID + ' ' + nHeroFacet);
-		$.DispatchEvent('FireCustomGameEvent_Str', 'SelectSpawnHeroButtonPressed', String(nHeroID) + ':' + String(nHeroFacet));
+		$.Msg( 'SwitchSpawnHeroFacet ' + nHeroID + ' ' + nHeroFacetID );
+		$.DispatchEvent( 'FireCustomGameEvent_Str', 'SelectSpawnHeroButtonPressed', String( nHeroID ) + ':' + String( nHeroFacetID ) );
 	}
 }
 

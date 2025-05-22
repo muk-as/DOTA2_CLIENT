@@ -5,23 +5,30 @@
 	[
 		{
 			_class="CQBindableCommandAction"
+			name = "perf_refresh_tree"
+			binding="debugger:PerfRefresh"
+			text = "Refresh"
+			mode="COMMAND_TEXT_MODE_BUTTON"
+		},
+		{
+			_class="CQBindableCommandAction"
 			name = "perf_show_gather_styles"
 			binding="debugger:PerfShowGatherStyles"
-			text = "Gather Styles"
+			text = "Visualize Gather Styles"
 			mode="COMMAND_TEXT_MODE_BUTTON"
 		},
 		{
 			_class="CQBindableCommandAction"
 			name = "perf_show_resolve_styles"
 			binding="debugger:PerfShowResolveStyles"
-			text = "Resolve Styles"
+			text = "Visualize Resolve Styles"
 			mode="COMMAND_TEXT_MODE_BUTTON"
 		},
 		{
 			_class="CQBindableCommandAction"
 			name = "perf_show_layout"
 			binding="debugger:PerfShowLayout"
-			text = "Layout"
+			text = "Visualize Layout"
 			mode="COMMAND_TEXT_MODE_BUTTON"
 		},
 	]
@@ -29,14 +36,29 @@
 	vbox = 
 	[
 		{
-			_class = "QToolBar"
-			actions = 
+			hbox =
 			[
-				"perf_show_gather_styles",
-				"perf_show_resolve_styles",
-				{ separator = true },
-				"perf_show_layout",
-				{ separator = true },
+				{
+					_class="QLabel"
+					text="%num_items"
+					indent=10
+					fixed_height=32
+					fixed_width=125
+					background=[0,0,0]
+					foreground = [200, 200, 200]
+				},
+				{
+					_class = "QToolBar"
+					actions = 
+					[
+						"perf_refresh_tree",
+						{ separator = true },
+						"perf_show_gather_styles",
+						"perf_show_resolve_styles",
+						"perf_show_layout",
+						{ separator = true },
+					]
+				}
 			]
 		},
 		{

@@ -1,0 +1,522 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	dota_ui_panner = 
+	{
+		operators = 
+		[
+			
+			{
+				name = "_builtins"
+				operator = "sos_builtins"
+				_voicegraph = "dota.ui_pan"
+			},
+			
+			{
+				name = "public"
+				operator = "util_null"
+				operator_variables = 
+				{
+					import_public_opvars = "dota_src1_2d"
+					voicegraph = 
+					{
+						data_type = "string"
+						value = "dota.ui_pan"
+						_system_properties = 
+						{
+							display_group = "advanced"
+						}
+					}
+					use_voicegraph = 
+					{
+						data_type = "float"
+						value = "1.000000"
+					}
+					panner_mode = 
+					{
+						data_type = "enum"
+						enum_decl = 
+						{
+							value = 
+							[
+								"stereo",
+								"hrtf",
+								"bypass",
+							]
+						}
+						value = "bypass"
+						_system_properties = 
+						{
+							property_group = "Panner"
+						}
+					}
+					stereo_pan_curve = 
+					{
+						data_type = "float6"
+						soundevent_data = "true"
+						value = 
+						[
+							"[ -0.5, -1.0, -0.039472, -0.039472,2.0, 3.0,]",
+							"[ 0.0, 0.0, 2.04931, 1.954806, 0.0, 0.0,]",
+							"[ 0.5, 1.0, -0.000001, -0.000001,2.0, 3.0,]",
+						]
+						_system_properties = 
+						{
+							display_group = "advanced"
+							display_edit_type = "field_curve_2d_editor"
+							property_help = "Remaps normalized x value screen space to stereo pan."
+						}
+					}
+					uiposition = 
+					{
+						data_type = "float3"
+						value = "[0.0, 0.0, 0.0]"
+						_system_properties = 
+						{
+							display_edit_type = "field_position_editor"
+							property_group = "Position"
+						}
+					}
+					listener_projection_distance = 
+					{
+						data_type = "float"
+						value = "100.f"
+						_system_properties = 
+						{
+							display_edit_type = "field_position_editor"
+							property_group = "Position"
+						}
+					}
+					hrtf_pan_horizontal = 
+					{
+						data_type = "float6"
+						soundevent_data = "true"
+						value = 
+						[
+							"[ -0.5, -1.0, -0.039472, -0.039472,2.0, 3.0,]",
+							"[ 0.0, 0.0, 2.04931, 1.954806, 0.0, 0.0,]",
+							"[ 0.5, 1.0, -0.000001, -0.000001,2.0, 3.0,]",
+						]
+						_system_properties = 
+						{
+							display_group = "advanced"
+							display_edit_type = "field_curve_2d_editor"
+							property_help = "Remaps normalized x value screen space to stereo pan."
+						}
+					}
+					hrtf_pan_vertical = 
+					{
+						data_type = "float6"
+						soundevent_data = "true"
+						value = 
+						[
+							"[ -0.5, -1.0, -0.039472, -0.039472,2.0, 3.0,]",
+							"[ 0.0, 0.0, 2.04931, 1.954806, 0.0, 0.0,]",
+							"[ 0.5, 1.0, -0.000001, -0.000001,2.0, 3.0,]",
+						]
+						_system_properties = 
+						{
+							display_group = "advanced"
+							display_edit_type = "field_curve_2d_editor"
+							property_help = "Remaps normalized x value screen space to stereo pan."
+						}
+					}
+					mixgroup = 
+					{
+						data_type = "string"
+						value = "UI"
+					}
+				}
+			},
+			
+			{
+				name = "switch_track_name"
+				execute_once = "true"
+				operator = "ctrl_switch3_string"
+				input_index = "@public.panner_mode"
+				input1 = "stereo"
+				input2 = "hrtf"
+				input3 = "bypass"
+			},
+			
+			{
+				name = "is_stereo_mode"
+				execute_once = true
+				operator = "math_float"
+				apply = "equal"
+				input1 = "@public.panner_mode"
+				input2 = "0"
+			},
+			
+			{
+				name = "is_not_disabled"
+				execute_once = true
+				operator = "math_float"
+				apply = "not_equal"
+				input1 = "@public.panner_mode"
+				input2 = "2"
+			},
+			
+			{
+				name = "is_not_hrtf"
+				execute_once = true
+				operator = "math_float"
+				apply = "not_equal"
+				input1 = "@public.panner_mode"
+				input2 = "1"
+			},
+			
+			{
+				name = "is_hrtf"
+				execute_once = true
+				operator = "math_float"
+				apply = "equal"
+				input1 = "@public.panner_mode"
+				input2 = "1"
+			},
+			
+			{
+				name = "uiposition_elements"
+				input_execute = "@is_not_disabled.output"
+				operator = "util_elements_float3"
+				input = "@public.uiposition"
+			},
+			
+			{
+				name = "mult_enabled"
+				execute_once = true
+				operator = "math_float"
+				apply = "mult"
+				input1 = "@uiposition_elements.output_0"
+				input2 = "@is_not_disabled.output"
+			},
+			
+			{
+				name = "invert_x"
+				input_execute = "@is_not_disabled.output"
+				operator = "math_float"
+				apply = "mult"
+				input1 = "@mult_enabled.output"
+				input2 = "-1.0"
+			},
+			
+			{
+				name = "remap_stereo_pan_curve"
+				operator = "math_curve_2d"
+				input = "@invert_x.output"
+				public_field_name = "public.stereo_pan_curve"
+			},
+			
+			{
+				name = "globals"
+				operator = "get_system_globals"
+				input_execute = "1.0"
+				input_listener_index = "0"
+			},
+			
+			{
+				name = "listener_up"
+				input_execute = "@public.panner_mode"
+				operator = "util_elements_float3"
+				input = "@globals.output_listener_up"
+			},
+			
+			{
+				name = "listener_left"
+				input_execute = "@public.panner_mode"
+				operator = "util_elements_float3"
+				input = "@globals.output_listener_left"
+			},
+			
+			{
+				name = "listener_forward"
+				input_execute = "@public.panner_mode"
+				operator = "util_elements_float3"
+				input = "@globals.output_listener_forward"
+			},
+			
+			{
+				name = "remap_hrtf_vertical_pan"
+				operator = "math_curve_2d"
+				input = "@uiposition_elements.output_2"
+				input_execute = "@public.panner_mode"
+				public_field_name = "public.hrtf_pan_vertical"
+			},
+			
+			{
+				name = "remap_hrtf_horizontal_pan"
+				operator = "math_curve_2d"
+				input = "@uiposition_elements.output_0"
+				input_execute = "@public.panner_mode"
+				public_field_name = "public.hrtf_pan_horizontal"
+			},
+			
+			{
+				name = "scale_left_direction"
+				input_execute = "@public.panner_mode"
+				operator = "math_scale_float3"
+				input1 = "@globals.output_listener_left"
+				input2 = "@remap_hrtf_horizontal_pan.output"
+			},
+			
+			{
+				name = "scale_up_direction"
+				input_execute = "@public.panner_mode"
+				operator = "math_scale_float3"
+				input1 = "@globals.output_listener_up"
+				input2 = "@remap_hrtf_vertical_pan.output"
+			},
+			
+			{
+				name = "add_directions"
+				input_execute = "@public.panner_mode"
+				operator = "math_float3"
+				apply = "add"
+				input1 = "@scale_left_direction.output"
+				input2 = "@scale_up_direction.output"
+			},
+			
+			{
+				name = "add_forward"
+				input_execute = "@public.panner_mode"
+				operator = "math_float3"
+				apply = "add"
+				input1 = "@add_directions.output"
+				input2 = "@globals.output_listener_forward"
+			},
+			
+			{
+				name = "normalize_direction"
+				input_execute = "@public.panner_mode"
+				operator = "math_normalize_vec3"
+				input = "@add_forward.output"
+			},
+			
+			{
+				name = "project_direction"
+				input_execute = "@public.panner_mode"
+				operator = "math_scale_float3"
+				input1 = "@normalize_direction.output"
+				input2 = "@public.listener_projection_distance"
+			},
+			
+			{
+				name = "hrtf_position_final"
+				operator = "math_float3"
+				input_execute = "@public.panner_mode"
+				apply = "add"
+				input1 = "@globals.output_listener_position"
+				input2 = "@project_direction.output"
+			},
+			
+			{
+				name = "position_switch"
+				operator = "ctrl_switch_float3"
+				input_switch = "@is_not_hrtf.output"
+				input1 = "@hrtf_position_final.output"
+				input2 = "@globals.output_listener_position"
+			},
+			
+			{
+				name = "send_panner_value"
+				input_execute = "@is_stereo_mode.output"
+				operator = "vmix_voicegraph_input"
+				input_name = "pan_amount"
+				input = "@remap_stereo_pan_curve.output"
+			},
+			
+			{
+				name = "send_hrtf"
+				input_execute = "1.0"
+				operator = "vmix_voicegraph_input"
+				input_name = "hrtf_on"
+				input = "@is_hrtf.output"
+			},
+			
+			{
+				name = "source_info"
+				operator = "game_get_source_info"
+			},
+			
+			{
+				name = "convar_switch"
+				operator = "ctrl_switch3_float"
+				input_index = "@public.game_convar_index"
+				input0 = "@globals.output_snd_gamesound_convar"
+				input1 = "@globals.output_snd_musicvolume_convar"
+				input2 = "@globals.output_snd_gamevoice_convar"
+			},
+			
+			{
+				name = "get_vsnd"
+				operator = "opvar_get_vsnd"
+				execute_once = "true"
+				check_event_data = "@public.use_event_data"
+				input_operator_name = "public"
+				input_field_name = "vsnd_files"
+				input_use_namespace = "false"
+				array_selection_type = "random_exclusive"
+			},
+			
+			{
+				name = "soundevent_limit"
+				operator = "soundevent_limiter"
+				input_execute = "@public.limiter_on"
+				execute_once = "true"
+				input_max_events = "@public.limiter_max"
+				match_event_type = "@public.event_type"
+				match_entity = "@public.limiter_match_entity"
+				match_substring = "@public.limiter_match_substring"
+				match_event_name = "@public.limiter_event_name"
+				stop_oldest = "@public.limiter_stop_oldest"
+				match_duration_type = "greater_than_or_equal"
+				match_event_duration = "@public.limiter_match_event_duration"
+				match_this_event = "true"
+			},
+			
+			{
+				name = "get_event_info"
+				operator = "soundevent_get_info"
+			},
+			
+			{
+				name = "volume_random"
+				operator = "math_randomize_float"
+				execute_once = "true"
+				input = "1.000000"
+				input_rand_min = "@public.volume_rand_min"
+				input_rand_max = "@public.volume_rand_max"
+			},
+			
+			{
+				name = "pitch_random"
+				operator = "math_randomize_float"
+				execute_once = "true"
+				input = "@public.pitch"
+				input_rand_min = "@public.pitch_rand_min"
+				input_rand_max = "@public.pitch_rand_max"
+			},
+			
+			{
+				name = "mixer"
+				operator = "soundmixer_get_mixgroup"
+				mixgroup = "@public.mixgroup"
+				input_vsnd = "@get_vsnd.output"
+				input_class_name = "@source_info.output_entity_classname"
+				input_is_player = "0.000000"
+				input_soundlevel = "65.000000"
+				input_event_type = "@public.event_type"
+			},
+			
+			{
+				name = "mixer_mixgraph"
+				operator = "soundmixer_set_vmix"
+				input_mixgroups = "@mixer.output_mixgroups"
+			},
+			
+			{
+				name = "volume_fade_in"
+				operator = "math_remap_float"
+				input = "@get_event_info.output_elapsed_time"
+				input_min = "0.000000"
+				input_max = "@public.volume_fade_in"
+				input_map_min = "0.000000"
+				input_map_max = "1.000000"
+				default_to_max = "true"
+			},
+			
+			{
+				name = "volume_accumulate"
+				operator = "math_accumulate12_float"
+				apply = "mult"
+				input1 = "@volume_random.output"
+				input2 = "@public.volume"
+				input3 = "@mixer.output_volume"
+				input4 = "@globals.output_snd_gain_convar"
+				input5 = "@convar_switch.output"
+				input6 = "1.000000"
+				input7 = "1.000000"
+				input8 = "1.000000"
+				input9 = "@public.volume_atten"
+				input10 = "@volume_fade_in.output"
+				input11 = "1.000000"
+				input12 = "1.000000"
+			},
+			
+			{
+				name = "mixer_trigger"
+				operator = "soundmixer_set_trigger"
+				input_trigger = "@volume_accumulate.output"
+				input_mixgroups = "@mixer.output_mixgroups"
+			},
+			
+			{
+				name = "distance_to_source"
+				operator = "calc_distance"
+				input_position1 = "@position_switch.output"
+				input_position2 = "@globals.output_listener_position"
+			},
+			
+			{
+				name = "speakers_spatialize"
+				operator = "calc_spatialize_speakers_hrtf"
+				execute_once = "1.0"
+				input_360_listener = 0.000000
+				input_listener_angles = "@globals.output_listener_angles"
+				input_hrtf_on = "@public.panner_mode"
+				input_distance = "@distance_to_source.output"
+				input_source_position = "@position_switch.output"
+				input_listener_position = "@globals.output_listener_position"
+				input_listener_left = "@globals.output_listener_left"
+				input_listener_forward = "@globals.output_listener_forward"
+				input_listener_up = "@globals.output_listener_up"
+				input_spread_max_value = "0.0"
+				input_spread_min_value = "0.0"
+			},
+			
+			{
+				name = "volume_accumulate_fan"
+				operator = "util_float_to_speakers"
+				input = "@volume_accumulate.output"
+			},
+			
+			{
+				name = "speakers_scaled"
+				operator = "math_speakers"
+				apply = "mult"
+				input1 = "@volume_accumulate_fan.output"
+				input2 = "@speakers_spatialize.output"
+			},
+			
+			{
+				name = "set_builtins"
+				operator = "sos_set_builtins"
+				input_voicegraph = "@public.voicegraph"
+			},
+			
+			{
+				name = "start_vsnd"
+				operator = "vmix_voice_start"
+				input_vsnd1 = "@get_vsnd.output"
+				input_track1 = "@switch_track_name.output"
+				execute_once = "false"
+				input_start = "@get_event_info.output_unstopped"
+				input_speaker_volumes = "@speakers_scaled.output"
+				input_pitch = "@pitch_random.output"
+				input_delay = "@public.delay"
+				input_fade_out = "@public.volume_fade_out"
+				input_memory_type = "@public.memory_type"
+				input_max_gain_change_per_second = "@public.max_gain_change_per_second"
+			},
+			
+			{
+				name = "set_vsnd_status"
+				operator = "opvar_set_float"
+				input = "@start_vsnd.output_voice_finished"
+				input_stack_name = ""
+				input_operator_name = "public"
+				input_field_name = "output_voice_finished"
+				input_use_namespace = "true"
+			},
+		]
+	}
+}

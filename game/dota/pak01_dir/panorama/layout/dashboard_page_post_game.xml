@@ -123,7 +123,7 @@
 		</snippet>
 		<snippet name="DetailsDamageTableRowBasic">
 			<Panel class="DetailsTableRow">
-				<Image src="s2r://panorama/images/spellicons/attr_damage_png.vtex" class="DamageBasicIcon" scaling="stretch-to-cover-preserve-aspect" onmouseover="UIShowTextTooltip( #DOTA_HUD_Killcam_AttackDmg )" onmouseout="UIHideTextTooltip()" />
+				<Image id="DetailsAttackDamageImage" src="" texturewidth="128px" textureheight="128px" class="DamageBasicIcon" scaling="stretch-to-cover-preserve-aspect" onmouseover="UIShowTextTooltip( #DOTA_HUD_Killcam_AttackDmg )" onmouseout="UIHideTextTooltip()" />
 			</Panel>
 		</snippet>
 		<snippet name="DetailsDamageTableRowUnit">
@@ -265,6 +265,17 @@
 					<Panel id="RowBar" />
 				</Panel>
 				<Label id="RowValue" text="{i:value}" />
+			</Panel>
+		</snippet>
+		<snippet name="GraphEventColumn">
+			<Panel class="GraphEventColumn" hittest="false">
+				<Panel id="DireEvents" hittest="false" />
+				<Panel id="RadiantEvents" hittest="false" />
+			</Panel>
+		</snippet>
+		<snippet name="GraphEvent">
+			<Panel class="EventPanel" acceptsfocus="true">
+				<DOTAHeroImage id="HeroIcon" heroimagestyle="icon" />
 			</Panel>
 		</snippet>
 	</snippets>
@@ -1068,8 +1079,10 @@
 						</Panel>
 					</Panel>
 					<Panel id="DetailsBasicGraphs" class="DetailsPanel">
-						<Label id="DetailsBasicGraphsTopTeam" class="GraphTeamName" text="{s:radiant_name}" />
-						<Label id="DetailsBasicGraphsBottomTeam" class="GraphTeamName" text="{s:dire_name}" />
+						<Panel class="DetailsBasicTeamNames">
+							<Label id="DetailsBasicGraphsBottomTeam" class="GraphTeamName" text="{s:dire_name}" />
+							<Label id="DetailsBasicGraphsTopTeam" class="GraphTeamName" text="{s:radiant_name}" />
+						</Panel>
 						<Panel id="GraphLabels">
 							<Label id="DetailsBasicGraphsTopY1" class="MonoNumbersFont GraphYAxisLabel" text="{u:graph_y_1}" />
 							<Label id="DetailsBasicGraphsTopY2" class="MonoNumbersFont GraphYAxisLabel" text="{u:graph_y_2}" />
@@ -1081,21 +1094,26 @@
 							<Label id="DetailsBasicGraphsBottomY2" class="MonoNumbersFont GraphYAxisLabel TeamNetWorthBottomAxisLabel" text="{u:graph_y_2}" />
 							<Label id="DetailsBasicGraphsBottomY3" class="MonoNumbersFont GraphYAxisLabel TeamNetWorthBottomAxisLabel" text="{u:graph_y_3}" />
 						</Panel>
-						<UICanvas id="DetailsBasicGraphsCanvas" />
+						<Panel id="GraphVerticalMarker" hittest="false" hittestchildren="false">
+							<Panel id="GraphVerticalMarkerLine" />
+							<Label id="GraphVerticalMarkerTimeCode" text="23:46" />
+						</Panel>
+						<DOTAPostGameGraphCanvas id="DetailsBasicGraphsCanvas" onmouseout="DOTAPostGameGraphMouseOut()" require-composition-layer="true" tooltip_vertical_restriction_percent="0.14" />
 						<Panel id="DetailsBasicGraphsKey">
-							<Panel id="NetWorthKeyColorBox" class="KeyColorBox" />
-							<Label text="#dota_page_match_details_legend_net_worth_tooltip" />
-							<Panel id="ExperienceKeyColorBox" class="KeyColorBox" />
-							<Label text="#dota_page_match_details_legend_experience" />
 							<Panel id="WinProbability">
 								<Panel id="WinProbabilityKeyColorBox" class="KeyColorBox" />
 								<Label text="#dota_page_match_details_legend_win_probability" />
 							</Panel>
+							<Panel id="NetWorthKeyColorBox" class="KeyColorBox" />
+							<Label text="#dota_page_match_details_legend_net_worth_tooltip" />
+							<Panel id="ExperienceKeyColorBox" class="KeyColorBox" />
+							<Label text="#dota_page_match_details_legend_experience" />
 						</Panel>
-						<UICanvas id="DetailsPlayerNetWorthGraphCanvas" />
-						<UICanvas id="DetailsPlayerLevelGraphCanvas" />
-						<UICanvas id="DetailsPlayerHeroDamageGraphCanvas" />
-						<UICanvas id="TowersGraphCanvas" />
+						<DOTAPostGameGraphCanvas id="DetailsPlayerNetWorthGraphCanvas" onmouseout="DOTAPostGameGraphMouseOut()" require-composition-layer="true" />
+						<DOTAPostGameGraphCanvas id="DetailsPlayerLevelGraphCanvas" onmouseout="DOTAPostGameGraphMouseOut()" require-composition-layer="true" />
+						<DOTAPostGameGraphCanvas id="DetailsPlayerHeroDamageGraphCanvas" onmouseout="DOTAPostGameGraphMouseOut()" require-composition-layer="true" />
+						<Panel id="KillEvents" hittest="false" class="UnitsOnly" />
+						<UICanvas id="TowersGraphCanvas" require-composition-layer="true" />
 						<Panel id="TowersGraphLabels">
 							<Panel id="TowerName0" class="TowerName">
 								<Panel id="TowerNameBackground" />
@@ -1162,7 +1180,7 @@
 						</Panel>
 					</Panel>
 					<Panel id="PlayerItemsGraphContainer">
-						<UICanvas id="DetailsPlayerItemsGraphCanvas" />
+						<UICanvas id="DetailsPlayerItemsGraphCanvas" require-composition-layer="true" />
 						<Panel id="PlayerItemsRowContainer" />
 					</Panel>
 					<Panel class="RightVignette" hittest="false" />
@@ -1172,7 +1190,7 @@
 						<Panel id="GoldReceived">
 							<Label text="#DOTA_PlusPostGame_GoldReceivedTitle" class="DetailsTableTitle" />
 							<Panel id="GoldReceivedRows" />
-							<UICanvas id="GoldReceivedCanvas" />
+							<UICanvas id="GoldReceivedCanvas" require-composition-layer="true" />
 						</Panel>
 						<Panel id="XPReceived">
 							<Label text="#DOTA_PlusPostGame_XPReceivedTitle" class="DetailsTableTitle" />
@@ -1195,7 +1213,7 @@
 							<Label id="DetailsPersonalGraphsBottomY2" class="MonoNumbersFont GraphYAxisLabel TeamNetWorthBottomAxisLabel" text="{u:graph_y_2}" />
 							<Label id="DetailsPersonalGraphsBottomY3" class="MonoNumbersFont GraphYAxisLabel TeamNetWorthBottomAxisLabel" text="{u:graph_y_3}" />
 						</Panel>
-						<UICanvas id="DetailsPersonalCanvas" />
+						<UICanvas id="DetailsPersonalCanvas" require-composition-layer="true" />
 						<Label id="DetailsPersonalNoData" text="#DOTA_Page_Post_Game_Personal_NoData" />
 						<Panel id="DetailsPersonalStatKey">
 							<Label text="{s:stat0}" />
@@ -1266,6 +1284,16 @@
 							</Panel>
 						</Panel>
 						<Panel id="PinnedDire" class="PinnedTeam TopBottomFlow" />
+						<Panel id="ShowKills" class="LeftRightFlow">
+							<Image class="SkullIcon" src="s2r://panorama/images/hud/reborn/icon_death_psd.vtex" scaling="stretch-to-fit-preserve-aspect" />
+							<Label class="ShowKillsLabel" text="#dota_page_match_details_show_kills" />
+							<DropDown id="ShowKillsDropDown" class="ThinDropdown" oninputsubmit="DOTAPostGameShowKillsSelected()">
+								<Label class="ShowKillsDropDownItem" id="ShowKillsOption_All" text="#dota_page_match_details_all_kills" />
+								<Label class="ShowKillsDropDownItem" id="ShowKillsOption_Units" text="#dota_page_match_details_unit_kills" />
+								<Label class="ShowKillsDropDownItem" id="ShowKillsOption_Buildings" text="#dota_page_match_details_structure_kills" />
+								<Label class="ShowKillsDropDownItem" id="ShowKillsOption_None" text="#dota_page_match_details_hide_kills" />
+							</DropDown>
+						</Panel>
 					</Panel>
 					<Panel id="PinnedHeroesRightMargin" />
 				</Panel>

@@ -13,7 +13,7 @@ namespace source2sdk
 {
     namespace client
     {
-        // Enumerator count: 26
+        // Enumerator count: 23
         // Alignment: 4
         // Size: 0x4
         enum class DOTA_OVERHEAD_ALERT : std::uint32_t
@@ -31,9 +31,6 @@ namespace source2sdk
             OVERHEAD_ALERT_HEAL = 0xa,
             OVERHEAD_ALERT_MANA_ADD = 0xb,
             OVERHEAD_ALERT_MANA_LOSS = 0xc,
-            OVERHEAD_ALERT_LAST_HIT_EARLY = 0xd,
-            OVERHEAD_ALERT_LAST_HIT_CLOSE = 0xe,
-            OVERHEAD_ALERT_LAST_HIT_MISS = 0xf,
             OVERHEAD_ALERT_MAGICAL_BLOCK = 0x10,
             OVERHEAD_ALERT_INCOMING_DAMAGE = 0x11,
             OVERHEAD_ALERT_OUTGOING_DAMAGE = 0x12,

@@ -31,7 +31,6 @@
 0CThreadSemaphore@@QEAA@HHPEBD_N@Z
 0CUtlBuffer@@QEAA@HHH@Z
 0CUtlBuffer@@QEAA@PEBXHH@Z
-0CUtlMemoryBlockAllocator@@QEAA@HIW4RawAllocatorType_t@@@Z
 0CUtlString@@QEAA@AEBVCBufferString@@@Z
 0CUtlSymbolTable@@QEAA@HH_N@Z
 0HcC(H
@@ -58,7 +57,6 @@
 1CThreadMutex@@QEAA@XZ
 1CThreadSemaphore@@QEAA@XZ
 1CThreadSyncObject@@QEAA@XZ
-1CUtlMemoryBlockAllocator@@QEAA@XZ
 1CUtlSymbolTable@@QEAA@XZ
 1KeyValues@@QEAA@XZ
 1O\,n
@@ -71,7 +69,7 @@
 23s %s Kx=%-8s Au=%-4s Enc=%-9s Mac=%-4s%s
 240926000000Z
 241012000000Z
-250315014927Z0
+250522031800Z0
 271008235959Z0a1
 2DigiCert Trusted G4 RSA4096 SHA256 TimeStamping CA
 2DigiCert Trusted G4 RSA4096 SHA256 TimeStamping CA0
@@ -100,6 +98,7 @@
 3l$8A3
 3psC'dcG
 3ÉG03G
+3҉l$ A
 456789
 474E4U4W4c4i4m4
 4CUtlString@@QEAAAEAV0@AEBVCBufferString@@@Z
@@ -117,7 +116,7 @@
 8$4,8$4
 8A^A]A
 8A_A^A]A
-8B9<	u6H
+8B9<	u9
 8CUtlString@@QEBA_NAEBV0@@Z
 8D$ t4f
 8DigiCert Trusted G4 Code Signing RSA4096 SHA384 2021 CA1
@@ -128,8 +127,6 @@
 8sIssuer Unique ID
 8sSubject Unique ID
 8sVersion: %lu (0x%lx
-8s^uVL9
-8w^uSL9
 8|$Pu
 8~0tM
 9#9%9)9/9=9A9M9[9k9y9}9
@@ -139,8 +136,9 @@
 9|$0u.H
 A!A3A5A;A?AYAeAkAwA{A
 A*Z<Z
+A9	u3A
+A9	uaA
 A9wPt39uPt.H
-A:8ucI
 AA Compromise
 AACompromise
 ABCDEFGHIJKLMNOPQRSTUVWXYZ
@@ -331,6 +329,7 @@ ASN1_verify
 ASYNC Read: %s
 ATAUAVAW
 ATAUAVH
+ATAUAWH
 ATAUM3
 ATAVAW
 ATAVAWH
@@ -355,6 +354,7 @@ AV?$enable_shared_from_this@VCWriteRequestHandle@CAsyncFileSystem2@@@std
 AVCAsyncFileSystem2
 AVCBarrierRequest@CAsyncFileSystem2
 AVCBaseFileSystem
+AVCBaseVModuleMetadataProvider
 AVCBufferStream
 AVCCompletionQueue@CAsyncFileSystem2
 AVCCopyFileHandle@CAsyncFileSystem2
@@ -369,6 +369,7 @@ AVCIODelayAlarmThread
 AVCIOServiceThread@CAsyncFileSystem2
 AVCMemoryMappedFileSection
 AVCMemoryMappedFileSection_SelfDelete
+AVCModuleMetadataProvider_ResourceManifests
 AVCPackedStoreMemoryMappedFile
 AVCPackedStoreMemoryMappedFile_HierarchicalParent
 AVCPostConnectCallback
@@ -412,6 +413,7 @@ A_A^A\H
 A_A^A]A
 A_A^_ËB4A
 Acceptable OCSP Responses
+AcquireSRWLockExclusive
 ActivateByteSwapping@CUtlBuffer@@QEAAX_N@Z
 Add N ms of delay to every low-level read operation, to simulate a slow disk
 AddNullTermination@CUtlBuffer@@IEAAXXZ
@@ -421,8 +423,6 @@ Addreffing existing VPK file: %s
 Affiliation Changed
 AlignedByteArray not properly aligned
 Alignment
-Alloc@CRawAllocator@@SAPEAXW4RawAllocatorType_t@@_KPEA_K@Z
-Alloc@CUtlMemoryBlockAllocator@@QEAAII@Z
 AnimGraphEditorUtils001
 AnimationSystemUtils_001
 AnimationSystem_001
@@ -465,7 +465,7 @@ A~oUHI
 A~ou8gL
 A~ouhL
 B#B)B/BCBSBUB[BaBsB}B
-B(I9A
+B(I9A(u
 B2I_DSS
 B2I_RSA
 B64_READ_ASN1
@@ -693,6 +693,9 @@ CHECK_NAME_CONSTRAINTS
 CHECK_PADDING_MD
 CHECK_POLICY
 CHECK_SUITEB_CIPHER_LIST
+CKeyValues3Array::EnsureElementCapacity
+CKeyValues3Array::InsertMultipleBefore
+CKeyValues3Table::EnsureMemberCapacity
 CLIENT_CERTIFICATE
 CLIENT_FINISHED
 CLIENT_HELLO
@@ -870,9 +873,6 @@ CUtlDict<int,class CDefFastCaselessStringLess>::Insert
 CUtlFixedMemory overflow
 CUtlLinkedList overflow! (exhausted index range
 CUtlLinkedList overflow! (exhausted memory allocator
-CUtlMemory_RawAllocator<class CUtlHashtableEntry<unsigned int,struct empty_t> >::EnsureCapacity
-CUtlMemory_RawAllocator<unsigned int>::EnsureCapacity
-CUtlMemory_RawAllocator<unsigned int>::Grow
 CUtlRBTree overflow with %u elements
 CUtlRBTree<class CZipFile::CZipEntry,class CZipFile::CZipEntryLessFunc,int,class CUtlMemory<struct UtlRBTreeNode_t<class CZipFile::CZipEntry,int>,int,0> >::Insert
 CUtlRBTree<struct `public: virtual void __cdecl CBaseFileSystem::PrintSearchPaths(void)'::`2'::sort_search_paths_t,class CDefLess<struct `public: virtual void __cdecl CBaseFileSystem::PrintSearchPaths(void)'::`2'::sort_search_paths_t>,int,class CUtlMemory<struct UtlRBTreeNode_t<struct `public: virtual void __cdecl CBaseFileSystem::PrintSearchPaths(void)'::`2'::sort_search_paths_t,int>,int,0> >::Insert
@@ -924,8 +924,6 @@ CopyAFile: Cannot copy into a VPK or UGC file '%s
 CopyAFile: Failed to copy file %s
 CopyAFile: dest '%s' must be absolute path
 CorExitProcess
-CpaHFCL
-CreateEventW
 CreateFileA
 CreateFileMappingA
 CreateFileW
@@ -938,23 +936,20 @@ CryptReleaseContext
 Ct-<D
 Current
 D#D)D;D?DEDKDQDSDYDeDoD
-D$ Ic
 D$$D9s8
 D$$D9s8u
 D$(SUATAUAVAWH
 D$08\$0t
 D$0HcH
+D$18D$3t
 D$18F(u
 D$8D9~Pu=L
 D$8D9~PuCH
-D$8E3
 D$8HcH
 D$HH1C
-D$HtOH
 D$PE3
+D$`E3
 D$`fA
-D$df9A
-D$hsC
 D+s$D+s D
 D+{HD
 D2I_ASN1_BIT_STRING
@@ -978,10 +973,11 @@ D3t$<A3
 D3t$<F
 D7q/;M
 D81uUL9r
-D8k^uQL9
-D8k^uRL9
+D8c^uPL9
+D8g^uNL9
+D8k^uKL9
+D8o^uSL9
 D8t$ht
-D8w^uNL9
 D8}?t	H
 D9fPt6D9gPt0H
 D9|$8}O
@@ -1222,7 +1218,6 @@ Domain error
 Duplicate): [%s]\%s
 E+E1EAEIESEUEaEwE}E
 E-mail Protection
-E8L9m8tGH
 E9fPt
 EC PARAMETERS
 EC PRIVATE KEY
@@ -1517,6 +1512,7 @@ Extension Request
 ExtractFileBase@CBufferString@@QEAAPEBDPEBD_N@Z
 ExtractFilePath@CBufferString@@QEAAPEBDPEBD_N@Z
 ExtractFirstDir@CBufferString@@QEAAPEBDPEBD@Z
+ExtractModuleMetadata
 FATAL ERROR: CUtlSymbolTableLarge element limit of %u exceeded
 FATAL ERROR: unable to register all schema data: %s
 FILE pointer
@@ -1601,14 +1597,13 @@ FontManager_001
 Format@CBufferString@@QEAAHPEBDZZ
 Found existing value when inserting into dict - replacing existing value with new value. If this is intended behavior, use InsertOrReplace. If leaving existing values alone is intended, use InsertIfNotFound
 Found existing value when inserting into tree - replacing existing value with new value. If this is intended behavior, use InsertOrReplace. If leaving existing values alone is intended, use InsertIfNotFound. If duplicate entries are intended, use InsertWithDupes
-Free@CRawAllocator@@SAXW4RawAllocatorType_t@@PEAX_K@Z
 FreeEnvironmentStringsW
 FreeLibrary
 FreeMemoryBlock@CUtlString@@AEAAXXZ
 Friday
 From Steam: [%s]\%s
 Function not implemented
-GD$8E3
+GD$(E3
 GENERALIZEDTIME
 GENERALSTRING
 GENERAL_ALLOCATE_BOOLEAN
@@ -1660,6 +1655,8 @@ GOST94
 GOST94-GOST89-GOST89
 GOST94-NULL-GOST94
 GRAPHICSTRING
+GT$8E3
+GT$hE3
 GameResourceServiceClientV001
 GameResourceServiceServerV001
 GameUIService_001
@@ -1722,13 +1719,13 @@ GetTickCount
 GetTimeZoneInformation
 GetUserObjectInformationW
 GlobalMemoryStatus
+GpaHFCH
 H'H	O
 H(hqA1p
 H+D$xu
 H1GHM
 H5gRR
 H97u+A
-H99tjH
 H99uMH
 H9D$XH
 H9D$Xsi
@@ -1767,6 +1764,7 @@ HcRTH
 HcT$0L
 HcT$@L
 Hco(;o8
+Hc|$ L
 Heap32First
 Heap32ListFirst
 Heap32ListNext
@@ -1782,7 +1780,6 @@ I2B_PVK
 I2D_ASN1_TIME
 I2S_ASN1_IA5STRING
 I2V_AUTHORITY_INFO_ACCESS
-I9GPw	I
 I9}(tiH
 IA5STRING
 ICC or token signature
@@ -1825,6 +1822,7 @@ Illegal byte sequence
 Improper link
 Inappropriate I/O control operation
 Independent
+Inert VModuleMetadata
 Inherit all
 Inhibit Policy Mapping
 Init@CThread@@MEAA_NXZ
@@ -1859,6 +1857,7 @@ Issuer:%c
 Iw,e=2-b
 J<0"0i3
 JOINT-ISO-ITU-T
+JY&8l
 J_spY
 January
 Join@CThread@@QEAA_NI@Z
@@ -1872,6 +1871,8 @@ Key Agreement
 Key Compromise
 Key Encipherment
 KeyValueCache001
+KeyValues3: pre-allocated array memory is too small for %u elements (%u bytes available, %u bytes needed
+KeyValues3: pre-allocated table memory is too small for %u members (%u bytes available, %u bytes needed
 K£QlǣQlǣQlǣQlǣQlǣQlǣQlǣQl
 L$ SUVWAV
 L$ SUWATAUAVAW
@@ -1887,6 +1888,7 @@ L$0SUATAUAVAWH
 L$4+L$8
 L$4+L$H
 L&&jL&&jl66Zl66Z~??A~??A
+L9kPu*M
 L9sPu
 L;d$PA
 L;l$PA
@@ -1902,7 +1904,6 @@ LanmanServer
 LanmanWorkstation
 Lc&D;f
 Lc7D;w
-LcL$pH
 Lc\$pI
 Lct$8I
 LeaveCriticalSection
@@ -1955,7 +1956,7 @@ MapViewOfFile
 Mask Algorithm
 Master Chunk Hash bad
 MaterialUtils_001
-Mc7E;w
+Mcg(E;g8
 MemAlloc_StrDupFunc
 MeshSystem001
 MeshUtils001
@@ -2172,7 +2173,6 @@ OpenSSL error (%s): %s
 OpenSSL: FATAL
 Operation not permitted
 Order
-Oա3uc
 PAGN_4
 PARAMETERS
 PARSE_BAG
@@ -2180,6 +2180,8 @@ PARSE_BAGS
 PARSE_HTTP_LINE1
 PARSE_TAGGING
 PATHBYADDR
+PA_A^A]A
+PA_A^A]^]ËVp9V0|&@8ntt
 PAq=?Mp
 PBE-MD2-DES
 PBE-MD2-RC2-64
@@ -2463,7 +2465,6 @@ RC5-CFB
 RC5-ECB
 RC5-OFB
 RC5_CTRL
-RDATA
 READ_N
 REQUEST_CERTIFICATE
 REQUEST_VERIFY
@@ -2574,6 +2575,7 @@ RegisterEventSourceW
 Registered ID
 Release
 Release@CThreadSemaphore@@QEAA_NHPEAH@Z
+ReleaseSRWLockExclusive
 Remove From CRL
 RemoveAt@CBufferString@@QEAAPEBDHH@Z
 RemoveDotSlashes@CBufferString@@QEAAPEBDD@Z
@@ -2586,7 +2588,6 @@ RenderUtils_001
 ReportEventW
 Requested non-existent write path %s
 Require Explicit Policy
-ResetEvent
 Resource deadlock avoided
 Resource device
 Resource temporarily unavailable
@@ -2789,7 +2790,7 @@ SUITEB192
 SUVATAU
 SUVATAUAV
 SUVATAUAVAW
-SUVATAUH
+SUVATAUAVAWH
 SUVATAV
 SUVATAVAW
 SUVATAW
@@ -2810,10 +2811,13 @@ SUWATAUAV
 SUWATAUAVAW
 SUWATAUAVAWH
 SUWATAV
+SUWAVAWH
 SUWAWH
 SVATAU
+SVATAUAVH
 SVWATAUAVAW
 SVWATAUAVAWH
+SVWATAVAWH
 SVWAUAW
 SVWAWH
 SWATAU
@@ -2852,7 +2856,6 @@ SetConsoleMode
 SetDirect@CUtlString@@QEAAXPEBDH@Z
 SetEndOfFile
 SetEnvironmentVariableW
-SetEvent
 SetExternalBuffer@CUtlBuffer@@QEAAXPEAXHHH@Z
 SetFilePointer
 SetFilePointerEx
@@ -2869,7 +2872,7 @@ Signature verification failed
 Signature verified for %s
 Size of per file buffers. 0 for none
 Sleep@CThread@@SAXI@Z
-SleepConditionVariableCS
+SleepConditionVariableSRW
 Slice@CUtlString@@QEBA?AV1@HH@Z
 SoundOpSystem001
 SoundOpSystemEdit001
@@ -2885,6 +2888,7 @@ Source2EngineToServerStringTable001
 Source2GameClients001
 Source2GameEntities001
 Source2Host001
+Source2ModTools001
 Source2Server001
 Source2V8System001
 SpLc@0
@@ -3046,6 +3050,7 @@ USER32.DLL
 USER32.dll
 USERNOTICE
 USVATAUAVAWH
+USVATAUAWH
 USVATAUH
 USVAUAVAWH
 USVWATAUAVAW
@@ -3054,13 +3059,13 @@ USVWATAUAVH
 USVWATAUAWH
 USVWATAVAWH
 USVWATH
-USVWAVAWH
 USVWAVH
-USVWAWH
 USVWH
 USWATAUAVAWH
+USWATAUAVH
 USWATAUAWH
 USWATAWH
+USWATH
 UTCTIME
 UTF-16LEUNICODE
 UTF8STRING
@@ -3075,18 +3080,19 @@ UVATAUAW
 UVATAUH
 UVATAVAWH
 UVATAVH
+UVAVAWH
 UVWATAU
 UVWATAUAV
 UVWATAUAVAW
 UVWATAUAVAWH
 UVWATAUAWH
 UVWATAW
-UVWAUAVH
+UVWATAWH
 UVWAVAW
-UWATAUAVH
 UWATAVAW
 UWATAVAWH
 UWATAW
+UWATH
 Unable to remove %s
 Unable to rename "%s" to "%s
 UnhandledExceptionFilter
@@ -3158,14 +3164,11 @@ VScript
 VScriptDbg
 VScriptManager010
 VStringTokenSystem001
-VV5A`'LќM
 VWATAUAV
+VWATAUAVAW
 VWATAUAW
-VWATAUAWH
-VWATAUH
 VWATAVAW
 VWATAVAWH
-VWAWH
 VWSUATAUAVAW
 VWebm001
 V_ComposeFileName
@@ -3209,7 +3212,6 @@ V_ftell
 V_ftelli64
 V_fwrite
 V_hextobinary
-V_setvbuf
 V_stristr_fast@@YAPEBDPEBD0@Z
 V_strncmp
 V_strncpy
@@ -3231,7 +3233,6 @@ VggjeK uO5n
 VisBuilder_001
 Visual C++ CRT: Not enough memory to complete call to strerror
 Vrad3_001
-W	V_qsort
 W%08lX
 W@H1G@A
 WARNING: File might be corrupt or missing - '%s
@@ -3241,7 +3242,6 @@ WATAUAVAW
 WATAUAVAWH
 WATAUAW
 WATAVAW
-WATAVAWH
 WAVAW
 WAVAWH
 WIN32_BIND_FUNC
@@ -3266,7 +3266,6 @@ WTLS curve over a 160 bit prime field
 WTLS curvs over a 224 bit prime field
 Wait@CThreadSyncObject@@QEAA_NI@Z
 WaitForCreateComplete@CThread@@MEAA_NPEAVCThreadEvent@@@Z
-WaitForSingleObjectEx
 WakeAllConditionVariable
 Warning
 Washington1
@@ -3279,7 +3278,6 @@ WideCharToMultiByte
 WorldRendererMgr001
 WriteConsoleW
 WriteFile
-X	V_qsort_s
 X,,tX,,t4
 X.509 part of OpenSSL 1.0.2j  26 Sep 2016
 X400Name
@@ -3418,10 +3416,12 @@ X9_62_FIELDID
 X9_62_PENTANOMIAL
 XA_A]A
 XZP%c %d
+Y	V_qsort
 Y;C;8V
 Ye80D
 You must type in
 You need to read the OpenSSL FAQ, http://www.openssl.org/support/faq.html
+Z	V_qsort_s
 ZIP_EndOfCentralDirRecord
 ZIP_FileHeader
 ZIP_LocalFileHeader
@@ -3523,7 +3523,6 @@ api-ms-win-core-localization-obsolete-l1-2-0
 api-ms-win-core-processthreads-l1-1-2
 api-ms-win-core-string-l1-1-0
 api-ms-win-core-synch-l1-2-0
-api-ms-win-core-synch-l1-2-0.dll
 api-ms-win-core-sysinfo-l1-2-1
 api-ms-win-core-winrt-l1-1-0
 api-ms-win-core-xstate-l2-1-0
@@ -3566,6 +3565,7 @@ az-AZ-Cyrl
 az-AZ-Latn
 az-az-cyrl
 az-az-latn
+b	V_setvbuf
 b <= sizeof ctx->buf
 b <= sizeof ctx->final
 b2i_PVK_bio
@@ -4172,8 +4172,6 @@ d %d %d
 d %d %d %d
 d e not congruent to 1
 d$ fD
-d$HLc#L
-d$PMcL$(M
 d.allOrFirstTier
 d.authenticatedData
 d.certificate
@@ -4610,8 +4608,7 @@ f33Uf33U
 f9|$ tyf
 fA9	t	I
 fA9}@u	E
-fA;(t(fA98t
-fA;8unI
+fA;0t(fA9
 fB94ht	H
 fC94wu
 fD9	t(L
@@ -4678,7 +4675,6 @@ fs_warning_mode
 fullname
 func(%lu
 functionality not supported
-g	V_snprintf
 g E9oPt
 g_pMemAlloc
 generate cryptogram
@@ -4706,7 +4702,7 @@ group
 group2pkparameters failure
 hA^A]A
 hA_A^A]A
-hHcD$@Hk
+hHcD$8Hk
 h`H(|sO
 h`H1pqA
 haI)|pL
@@ -4741,6 +4737,7 @@ http://ocsp.digicert.com0C
 http://ocsp.digicert.com0X
 http://www.digicert.com/CPS0
 https proxy request
+i	V_snprintf
 i <= EVP_MAX_MD_SIZE
 i <= n
 i2b_PVK_bio
@@ -5195,7 +5192,6 @@ kL@8o(u
 kdf parameter error
 keepalive
 kernel32
-kernel32.dll
 key arg too long
 key expansion
 key gen error
@@ -5239,6 +5235,9 @@ krb5 server tkt expired
 krb5 server tkt not yet valid
 krb5 server tkt skew
 l <= sizeof(c->iv
+l$ HcA
+l$ Lcy
+l$ VAVAWH
 l$ VWATAVAWH
 l$ VWAUAVAW
 l$ VWAV
@@ -5286,8 +5285,6 @@ localityName
 location
 locator
 long)msg_hdr->msg_len) > 0
-m	V_sscanf
-mLLc/f
 mXRecord
 m_bNeedsSort
 mac absent
@@ -5598,6 +5595,7 @@ number=%d, address=%08lX
 numberOfTheDiskWithStartOfCentralDirectory
 numberOfThisDisk
 n潍n畔e敗d
+o	V_sscanf
 o2i_ECPublicKey
 oD$@fA
 oD$`fE
@@ -5882,7 +5880,7 @@ quz-PE
 quz-bo
 quz-ec
 quz-pe
-r	V_stricmp_fast
+r8H+ЋA
 r99Kr99K
 rFC822localPart
 rKf;\$t
@@ -5910,6 +5908,7 @@ rc5-cfb
 rc5-ecb
 rc5-ofb
 rdata
+rdata$00
 rdata$T
 rdata$r
 rdata$voltmd
@@ -5954,6 +5953,8 @@ reserved
 resource\cursor
 resource\flash3\images
 resource\flash3\videos
+resource_manifests
+resources
 responderId
 response
 response contains no revocation data
@@ -6037,11 +6038,14 @@ s/%llu
 s/%llu.vpk
 s2i_ASN1_INTEGER
 s2i_ASN1_OCTET_STRING
+s6@8w
 s: (%d bit
-s: Invalid capacity %u
-s: Invalid grow amount %d
 s: Invalid lock state %d
+s: element count overflow (%u
 s: file too large
+s: invalid insert point %u (current count %u
+s: max element overflow, cur count %u + %u
+s: member count overflow (%u
 s:%d: rec->data != rec->input
 s<EMPTY
 s<Not Supported
@@ -6366,6 +6370,8 @@ sms-fi
 snmpv2
 socket
 sound
+source_file
+source_line
 sr-BA-Cyrl
 sr-BA-Latn
 sr-SP-Cyrl
@@ -6582,9 +6588,9 @@ syr-SY
 syr-sy
 system lib
 system library
-t	V_strlower_fast
+t	@88t
+t	V_stricmp_fast
 t >= 0
-t D8m7t
 t$ ATAVAW
 t$ UWATAUAWH
 t$ WATAUAVAW
@@ -6593,17 +6599,19 @@ t$ WATAV
 t$ WAUAV
 t$ WAVAW
 t$(E3
+t$8@8w
+t$8Hc
 t$8Lcu
 t$;)u L
+t$@Hc
 t$@fD
+t$H;t
 t$HA_A^A]A
-t$PH9C
 t$Pu4H
 t$X9^8H
 t$x9k`H
 t$xH9n
 t$xt*3
-t&A88t
 t3HcK`A
 tA8_:t
 tIHcX H
@@ -6621,6 +6629,7 @@ text file busy
 text$di
 text$mn
 text$mn$00
+text$mn$21
 text$x
 text$yd
 text/plain
@@ -6674,8 +6683,8 @@ tlsv1 bad certificate status response
 tlsv1 certificate unobtainable
 tlsv1 unrecognized name
 tlsv1 unsupported extension
-tnE88tiH9
 to8\$ uE
+toE88tjH9
 token not present
 token present
 too large
@@ -6702,13 +6711,14 @@ type_id
 typeof
 t~H9}Pt_H9
 u$D8r(t
-u(f9Q
+u1@8w
 u8A9C8t
+u:@8w
 u<g~l<it[<ntP<ot,<pt
 uB!!cB!!c
 uED8r(t
 uF9C(tAL
-uHf9t$du
+uGfD9m4u
 uIA9J8t
 uJ4CA2
 uSA9B8t
@@ -6888,6 +6898,7 @@ uz-uz-latn
 u{L9mHu
 u~9t$Xt
 u͋C$9C rgH
+v	V_strlower_fast
 v2!L.2
 v2i_ASN1_BIT_STRING
 v2i_GENERAL_NAMES
@@ -6986,7 +6997,6 @@ www.digicert.com1!0
 www.digicert.com1$0
 x ATAVAWH
 x AUAVAWH
-x UATAWH
 x UAVAWH
 x121Address
 x500UniqueIdentifier

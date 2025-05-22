@@ -4,6 +4,7 @@
 0.32.29H
 00  000@@0    P
 000000
+0000000
 000000000000000000000000
 00000000000000000000000000000000000000000000000000000000
 0000@@P
@@ -45,6 +46,7 @@
 0removeDataEP22IPLBakedDataIdentifier
 0removeDataERKNS_19BakedDataIdentifierE
 0resetEv
+0reset_iir2Ev
 0reverbTimeEPKfiRKNS_18AirAbsorptionModelEi
 0rfE9
 0runPathingEv
@@ -52,6 +54,7 @@
 0sAllocatorE
 0sEnableDCCorrectionForPhaseInterpolationE
 0sSIMDLevelE
+0sUseOrder8E
 0u!E1
 0āx(D0
 1.2.13
@@ -65,6 +68,7 @@
 11AudioBufferER
 11AudioBufferERS1
 11I3DL2ReverbE
+11bandFiltersEPS0_i
 11calcNormalsEv
 11flatbuffers25flatbuffer_version_stringE
 11flatbuffers9AllocatorE
@@ -72,10 +76,12 @@
 11getTailSizeEv
 11nearestHRIRERKNS_7Vector3IfEE
 11reconstructEiPKPKNS_11EnergyFieldEPKPKfPKNS_18AirAbsorptionModelEPKPNS_15ImpulseResponseENS_18ReconstructionTypeEfi
+11resetFilterEv
 11setRotationERKNS_1
 12EPNS_8CContextEP16IPLAudioSettingsP32IPLVirtualSurroundEffectSettings
 12startThreadsEv
 13band_rotationEi
+13kBandPassNormE
 13uniformRandomEv
 14calcVoxelPointEiii
 14processNextJobEiRNSt3__16atomicIbEE
@@ -94,10 +100,8 @@
 16s_Sfs_ASM
 16sc_M7
 16u_E9
-17calcDeviationTermEfPf
 17remapNeighborhoodERNS_17ProbeNeighborhoodERKNS_10ProbeBatchE
 18AirAbsorptionModelES2
-18blendAndDecompressERKNS_17ProbeNeighborhoodERNS_11EnergyFieldE
 18calculateGainAndEQERKNS_15DirectSoundPathENS_17DirectEffectFlagsENS_16TransmissionTypeERfPf
 19__simd128_float32_t
 19kDefaultMinDistanceE
@@ -170,7 +174,6 @@
 1EiNS_9FFTDomainE
 1EiPKNS_5ProbeE
 1EiPKNS_7Vector3IfEE
-1EiPKPKNS_11EnergyFieldEf
 1EiPKh
 1EibRKNS_7Vector3IfEE
 1Eiifiii
@@ -183,8 +186,10 @@
 1_extension
 1aatc9
 1addConstantEiPKffPf
+1applyFloat_switchableEf
 1b!|H
 1ba< X
+1bandFiltersEPS0_i
 1calcWeightsERKNS_7Vector3IfEE
 1closestHitsEiPKNS_3RayEPKfS5_PNS_3HitE
 1distanceToMeasurementERKNS_7Vector3IfEEi
@@ -194,6 +199,7 @@
 1generateCentroidProbeERKNS_6ISceneERKNS_12SquareMatrixIfLi4EEERNS_10ProbeArrayE
 1generateSphereSamplesEiPNS_7Vector3IfEE
 1getFunctionEPvPKc
+1iO@ü2O,.glf
 1kLowCutoffFrequenciesE
 1kProbeLookupStackSizeE
 1medianSplitEPNS_11GrowableBoxEPiPKPNS_18CentroidCoordinateERKNS_3BoxEii
@@ -210,6 +216,7 @@
 1tail_float4EPf
 1thread
 1unwrapPhaseEiPf
+1}T/kV}=v
 2.17.7-alpha.1
 20calculate
 20findAllShortestPathsERKNS_6ISceneERKNS_10ProbeBatchERKNS_20ProbeVisibilityGraphEifffiPNS_9ProbePathE
@@ -299,11 +306,11 @@
 2EiNS_9FFTDomainE
 2EiPKNS_5ProbeE
 2EiPKNS_7Vector3IfEE
-2EiPKPKNS_11EnergyFieldEf
 2EiPKh
 2EibRKNS_7Vector3IfEE
 2Eiifiii
 2Eiifiiii
+2Filterer
 2HRTFDatabase14
 2SquareMatrixIfLi3EEE
 2V1;(%v
@@ -335,11 +342,13 @@
 2sUnwrapPhaseE
 2sh8Rotation
 2simplifyPathERKNS_6ISceneERKNS_10ProbeBatchERKNS_20ProbeVisibilityGraphERKNS_21ProbeVisibilityTesterEiiffbPi
+2spectrumPeakEv
 2toProbeArrayERNS_10ProbeArrayE
 2totalEnergyInHistogramEPKfi
 2transformHitERKNS_3HitERKNS_3RayE
 2transmissionERKNS_6ISceneERKNS_7Vector3IfEES7_Pfi
 2āx(d2
+3(gn%t
 3- =cO
 30;th
 30HybridReverbEffectDirectParamsERKNS_11AudioBufferERS4
@@ -357,7 +366,6 @@
 34OverlapSaveConvolutionEffectParamsERKNS_11AudioBufferE
 34OverlapSaveConvolutionEffectParamsERKNS_11AudioBufferER
 35calculateLinearInterpolationWeightsEfffiiRfS1
-38;S8P
 396js
 3;CScs
 3<h;6
@@ -396,6 +404,7 @@
 3mixEPKPKNSt3__17complexIfEES7
 3panningWeightERKNS_7Vector3IfEERKNS_13SpeakerLayoutEiPKNS_11PanningDataE
 3releaseEv
+3setDictionaryEiiPKf
 3setEi
 3updateReferenceLoudnessENS_12HRTFNormTypeE
 4 <(Xx
@@ -425,6 +434,7 @@
 4bakeERKNS_6ISceneERKNS_19BakedDataIdentifierEifffffbRKNS_7Vector3IfEEbiRNS_10ProbeBatchEPFvfPvESD
 4bakeERKNS_6ISceneERNS_20IReflectionSimulatorERKNS_19BakedDataIdentifierEbbiiffifiiNS_9SceneTypeENSt3__110shared_ptrINS_12OpenCLDeviceEEERNS_10ProbeBatchEPFvfPvESG
 4blackmanHarrisEiPf
+4calcEQForPathsERKNS_10ProbeBatchEPiS4_iPKNS_9SoundPathEPKfPfSA
 4checkOcclusionERKNS_6ISceneERKNS_7Vector3IfEE
 4convertedCoordinateSpaceERKNS_16CoordinateSpace3IfEE
 4default_deleteINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEEE
@@ -456,7 +466,6 @@
 5+;ruL
 512_bkd
 512_extension
-51GNJXs
 51SpeakersE
 56retainEv
 5:/F1
@@ -476,6 +485,7 @@
 5YAxisE
 5_32fc
 5applyEiPKfPf
+5applyFloat_iir2Ef
 5areProbesTooFarERKNS_10ProbeBatchEiif
 5b691n6
 5basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEE
@@ -506,14 +516,15 @@
 5t:\K6:U
 5tukeyEiiPf
 6$)2Az
-6,<qz
 60ÜZ{i
+61	`61
 62EPNS_8CContextEP16IPLAudioSettingsP33IPLAmbisonicsEncodeEffectSettings
 64bit)H
 64f_M7
 64fc_M7
 6:%Q6
 6:CI1
+6;M=RK
 6=4iＨxp
 6=X t
 6BufferedEQEffect23numTailSamplesRemainingEv
@@ -533,11 +544,11 @@
 6ReverbE
 6SphereE
 6VectorIfLi
-6\SNEsE
 6_32fc
 6addJobENSt3__18functionIFviRNS1_6atomicIbEEEEE
 6allocThreadIndexEv
 6anyHitERKNS_3RayEff
+6applyFloatArray_switchableEiPKfPf
 6applyReverbScaleEPKfRNS_11EnergyFieldE
 6areProbesVisibleERKNS_6ISceneERKNS_10ProbeBatchEiiff
 6b!|H
@@ -568,7 +579,7 @@
 6resizeEifi
 6resizeEii
 6retainEv
-6setFilter_float4ERKNS_3IIRE
+6setFilter_float4ERKNS_4IIR2E
 6setHasParametricEb
 6setPartitionedIRERNSt3__110unique_ptrINS_14OverlapSaveFIRENS_7deleterIS3_EEEE
 6threadEv
@@ -595,6 +606,7 @@
 7ae:%z
 7anyHitsEiPKNS_3RayEPKfS5_Pb
 7bad_function_callE
+7calcDeviationTermEfPf
 7disableERKNS_11EmbreeSceneE
 7escapedERKNS_6ISceneEiRKNS_3RayERKNS_3HitEf
 7firstArrivalAfterEfPKfi
@@ -614,6 +626,7 @@
 7sCancelE
 7sMemoryE
 7sahCostEfifif
+7setCompressedDataEiiPKf
 7speakersForLayoutENS_17SpeakerLayoutTypeE
 7toSOFACoordinatesERKNS_7Vector3IfEE
 7tor1
@@ -632,6 +645,7 @@
 8A_A^A]A
 8CContextE
 8DirectEffectParamsERKNS_11AudioBufferERS4
+8Filterer
 8HybridReverbEffectENS1_9allocatorIS2_EEEE
 8IHRTFMapE
 8JobGraph7isEmptyEv
@@ -653,6 +667,7 @@
 8bA|H
 8bQ|H
 8basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE
+8blendAndDecompressERKNS_17ProbeNeighborhoodERNS_11EnergyFieldE
 8bunz8
 8calcA
 8clampToValidRangesERNS_11I3DL2ReverbE
@@ -660,7 +675,7 @@
 8compressERNS_20BakedReflectionsDataEfRNS_26CompressedBakedReflectionsE
 8copyFromERKS0
 8distanceERKNS_10ProbeBatchE
-8estimateEPKNS_11EnergyFieldERKNS_6ReverbERNS_15ImpulseResponseEffiPf
+8estimateEPKNS_11EnergyFieldERKNS_6ReverbERNS_15ImpulseResponseEffiPfRi
 8estimateERKNS_11EnergyFieldERKNS_18AirAbsorptionModelERNS
 8evaluateERKNS_7Vector3IfEE
 8evaluateEf
@@ -685,7 +700,6 @@
 8tor1
 8tor4
 8tor8
-8u%om
 8āx(D8
 8āx(T8
 9(D>O
@@ -723,9 +737,10 @@
 9ffff
 9fffff
 9ffffff
-9findPathsERKNS_7Vector3IfEES4_RKNS_6ISceneERKNS_10ProbeBatchERKNS_17ProbeNeighborhoodESD_fffibbbbPfSE_PS2_SE_PFvS2_S2_bPvESG_b
+9findPathsERKNS_7Vector3IfEES4_RKNS_6ISceneERKNS_10ProbeBatchERKNS_17ProbeNeighborhoodESD_fffibbbbPfSE_PS2_SE_SE_PFvS2_S2_bPvESG_b
 9findPathsFromSourceProbeToListenerProbeERKNS_6ISceneERKNS_10ProbeBatchERKNS_17ProbeNeighborhoodERKNS_13BakedPathDataEififffbbbbPFvNS_7Vector3IfEESE_bPvESF_RiPNS_9SoundPathEPfPiSM
 9getLoadedBinaryPathEPKcPci
+9highShelfEff
 9highShelfEffi
 9intersectERKNS_3
 9inverseTransformRayERKNS_3RayERfS4
@@ -764,6 +779,7 @@ ACh B`z
 AH not sH
 AHI+A@I
 AH\u ŠY
+AIatLI
 AN6embree4sse221BVHNBuilderInstancingILi4ENS_12TriangleMeshEEE
 ANSt3__117bad_function_callE
 APIName
@@ -801,7 +817,6 @@ ATAUAVSH
 ATAUAVSUH
 ATAUAVUH
 ATAUAVUVA
-ATAUAW
 ATAUAWI
 ATAUAWSH
 ATAUAWSUH
@@ -893,7 +908,6 @@ A_A^A]A
 A_A^A]A\H
 A_A^A]A\[]ÐUSATAUAVAWI
 A_A^A]A\][ÐSUATAUAVAWH
-A_A^A]H
 A_A^A]ÃxX
 AccelN tH
 AccelN::intersector1
@@ -985,6 +999,7 @@ BVH8BuiH
 BVH8TriH
 BVH8VirH
 BXH+BPL
+B_2oi
 B`ěAi\BB
 BakedPathData
 BakedPathDataC
@@ -992,7 +1007,6 @@ BakedPathDataE
 BakedReflectionSimulator
 BakedReflections
 BakedReflectionsDataE
-Bands2
 Base_32f
 BatchE
 BatchENS1_9allocatorIS2_EEEE
@@ -1012,7 +1026,6 @@ BitRev1_Blk
 Bk(#B3
 BlendAndDecompress
 Blocks
-BoleA
 Bounds
 BoxERKNS_4MeshE
 Buffer
@@ -1044,6 +1057,7 @@ C4saveEPNS_17ISerializedObjectE
 C6CScene
 C6createStaticMeshEP21IPLStaticMeshSettingsPPNS_11IStaticMeshE
 C9createInstancedMeshEP24IPLInstancedMeshSettingsPPNS_14IInstancedMeshE
+C:#tv
 CCS_32f
 CC_12_9
 CC_1_11
@@ -1104,6 +1118,7 @@ CcsRecombine_32f
 Cffffff
 Channel
 Channels
+Cki(6
 ClusterMap
 Commit
 CompileFlags
@@ -1111,6 +1126,7 @@ Compiler
 Compressed
 CompressedBakedReflections
 CompressedBakedReflectionsE
+CompressedData
 CompressedEnergyFields
 CompressedEnergyFieldsENS1_9allocatorIS2_EEEE
 CompressedProbeBatch
@@ -1197,6 +1213,7 @@ DIMENSION_SCALE
 DLD<h
 DN6embree10FileStreamE
 DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd
+DT%.f0
 DX41H
 Data.Delay
 Data.IR
@@ -1231,14 +1248,14 @@ DirectivityERKNS_11DirectivityE
 DisplacementFunction
 DistanceAttenuationModel
 Dvc:e4
-E &=kb
 E I;E(s9
 E8I;E@s8
 E9|$8u
 E:	=680
 E:2dB
-EJ%9[0
-EN:n,1
+EJ%J=0
+EJ%y\0
+EJ-&x3
 EPI;EX
 EPI;EXw
 EPI;EXw;I
@@ -1248,7 +1265,6 @@ ERV:8DN
 EXI+EPH;C0w
 EXI+EPI
 EXI+EPL
-E^X"q7
 EarlyReflectionsDurationE
 Effect
 Effect2
@@ -1311,6 +1327,7 @@ Feature
 FeatureMask
 Features
 FeaturesToIdx
+Filter_iir2Ev
 FindNearest
 Finder
 FlatBuffers 1.12.0
@@ -1324,6 +1341,7 @@ ForwardEPK
 FpuSsx4TS
 FromExisting
 FromFloat
+FromProbeBatch
 Function
 FunctionH
 FwdRec_32f
@@ -1334,6 +1352,7 @@ G7CSource
 G7releaseEv
 G8H9D$H
 G9Z!¹p
+G@;(Axr
 GB largeH
 GCC_except_table0
 GCC_except_table1
@@ -1561,7 +1580,6 @@ GCC_except_table3
 GCC_except_table30
 GCC_except_table300
 GCC_except_table301
-GCC_except_table302
 GCC_except_table303
 GCC_except_table304
 GCC_except_table305
@@ -1630,7 +1648,6 @@ GCC_except_table361
 GCC_except_table363
 GCC_except_table364
 GCC_except_table365
-GCC_except_table366
 GCC_except_table367
 GCC_except_table368
 GCC_except_table369
@@ -1675,12 +1692,12 @@ GCC_except_table404
 GCC_except_table405
 GCC_except_table406
 GCC_except_table407
-GCC_except_table408
 GCC_except_table409
 GCC_except_table41
 GCC_except_table410
 GCC_except_table411
 GCC_except_table412
+GCC_except_table413
 GCC_except_table414
 GCC_except_table415
 GCC_except_table418
@@ -1690,18 +1707,19 @@ GCC_except_table420
 GCC_except_table421
 GCC_except_table422
 GCC_except_table423
-GCC_except_table424
 GCC_except_table425
 GCC_except_table426
 GCC_except_table427
+GCC_except_table428
+GCC_except_table429
 GCC_except_table43
 GCC_except_table430
 GCC_except_table431
 GCC_except_table432
 GCC_except_table433
+GCC_except_table434
 GCC_except_table435
 GCC_except_table436
-GCC_except_table437
 GCC_except_table438
 GCC_except_table439
 GCC_except_table44
@@ -1747,7 +1765,9 @@ GCC_except_table477
 GCC_except_table478
 GCC_except_table48
 GCC_except_table481
+GCC_except_table483
 GCC_except_table484
+GCC_except_table485
 GCC_except_table486
 GCC_except_table487
 GCC_except_table488
@@ -1851,9 +1871,8 @@ GetOutputs
 GetSize
 GetTail
 Gffff
-GiTD'yce
+Ghc5Cl
 GtainEv
-Gx6xرxd
 H	t$ I
 H āx(L80
 H#T$ H
@@ -1965,9 +1984,7 @@ ICμyj
 IEin$s8
 IHRTFE
 IH~'Ic
-II 6r,Y4(YYd
 IIRFilterer
-II\gG+ML
 IJKLMNOPH
 IM1:MT
 IM_1_16
@@ -2011,7 +2028,6 @@ IStaticMeshE
 ITrueAudioNextDeviceE
 IVirtualSurroundEffectE
 IXH+KPH9
-IYךit1
 Ic	HcS
 Ic2Ic<$L
 Ic6Ic<$L
@@ -2049,22 +2065,20 @@ J(vAL
 J1createSceneEP16IPLSceneSettingsPPNS_6ISceneE
 J3createContextEP18IPLContextSettingsPPNS_8IContextE
 J:SZL::wl
-J=" 1
+J=b!1
 JAKgdB
 JCαb3mAC
 JD$`0
+JM9\\mK
 JXH+JP
 JXH+JPL9
 JYT/lāz
 JcL8 H
 JmixAudioBufferEP14IPLAudioBufferS2
-Jnrj.c=Apd
 JobGraph
 JumpIndexForMergedLibs
 Jxāyn
 Jxāynt
-J가J관J글J쌀J
-K/lvQr
 K0H+K(H
 K7r:3`9:%0
 K<V=s
@@ -2136,6 +2150,7 @@ L+D$ I
 L+D$0I
 L+L$ I
 L+L$0I
+L/ok/Sl
 L10Kc4
 L3F I1
 L6createP
@@ -4473,16 +4488,14 @@ Lsrcunalign1gas_1
 Lsw_donegas_36
 Lsw_donegas_37
 Lyixk
+Lz`~1=N
 M9b t2
 M9b(t
 M9e t
 M9e(t
-M9l$(t
 M9l$0t M9l$8
 M9l$Xv
 M9q t2
-M9t$ t8
-M9t$(t
 M9t$0t M9t$8
 M9t$8v
 M9z t2
@@ -4530,6 +4543,7 @@ Mffffff
 MonoSpeakersE
 Mprim/s
 MtR:gTK9
+M耀M老N退N送O
 N in strH
 N11flatbuffers9AllocatorE
 N3api10CSimulatorE
@@ -5330,7 +5344,7 @@ NumDevicesEv
 NumProbes
 O0I9_0v
 OFAHRTFMap
-OLcsII
+OKD1cTEH30i
 OT9IGU9
 OUTLINED_FUNCTION_0
 OUTLINED_FUNCTION_1
@@ -5348,12 +5362,12 @@ OpenCLDeviceList
 OpenCLDeviceListE
 OpenCLDeviceListEP23IPLOpenCLDeviceSettingsPPNS_17IOpenCLDeviceListE
 OsetProfilerContextEPv
+Ot&[ E
 OverlapSaveConvolutionEffect2
 OverlapSaveFIR
 OverlapSaveFIRENS1_9allocatorIS2_EEEE
 OverlapSavePartitioner
 OverlapSavePartitionerENS1_9allocatorIS2_EEEE
-P(&4hg
 P88EB8j
 PATAWAVSAS
 PATAWAVSAUASARj
@@ -5373,11 +5387,13 @@ PKNS_10Serialized20CompressedProbeBatchE
 PKNS_10Serialized20NonUniformProbeBatchE
 PKNS_10Serialized4MeshE
 PKNS_10Serialized5SceneE
+PKPKNS_11EnergyFieldEf
 PKPNS_11EnergyFieldERNS_8JobGraphE
 PKfPFffiPvES3
 PNS_17ISerializedObjectE
 POPCNT
 PP[A^A
+PQrvy
 PSAVASARj
 PUUUUU
 PXXTh
@@ -5433,7 +5449,6 @@ Qk}9UH
 QuadMesh
 QuadSpeakersE
 R19__simd128_float32_t
-RAR(Ov
 RARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARAWARBSBSB]0
 RARARARARARARARARARARARARARARARARARAXARARARARARARARARARARARARARARARARARARARARARARARARARARARAXARARARARARARARARARARARARARARARARARARARARARARARARARARARAXARARARARARARARARARARARAXARARARARARARARAXARARARARARARARAXARARARARARARARAXARARARARARARARAXARARARARARARARAXARARARARARARARAXARARARARARARARAXARARARAXARARARAXARARARAXARARARARARARARARARARARARARARARARARARARAXARARARARARAXARARARARARARARARARARARARARARARARARARARARARARARARARAXARARARARARARARAXARARARARARARARAXARARARAXARARARAXARARARAXARARARAXARARARARARAXARARARARARAXARARARAXARARARAXARARARARARARARAXARARARARARARARAXARARARAXARARARARARARARARARARARARARAXARARARAXARARARARARAXARARARARARARARARARARARARARARARARARARARARARARARARARAXARARARARARARARARARARARARARARARARARARARARARARARARARAXARARARARARARARARARARARARARARARARARARARARARARARARARAXARARARARARARARARARARARARARARARARARARARARARARARARARAp
 RARARARARARARARARARARARAXARARARARARARARARARARARARARARARARARARARARARARARARARARARARAXARARARARARARARARARARARARARARARARARARARARARARARARARARARAXARARARARARARARARARARARAp
@@ -5461,6 +5476,7 @@ RE_1_8
 RE_2_16
 RE_3_16
 RKN3ipl7Vector3IdEE
+RKNS_10ProbeBatchEf
 RKNS_6ISceneERKNS_10ProbeBatchERKNS_21ProbeVisibilityTesterEfffiRNSt3__16atomicIbEEPFvfPvESE
 RKNS_6ISceneERKNS_10ProbeBatchEifffffbRKNS_7Vector3IfEEbiRNS_10ThreadPoolERNSt3__16atomicIbEEPFvfPvESH
 RKNS_6ReverbE
@@ -5473,9 +5489,7 @@ RNS_16SerializedObjectE
 RNS_17ProbeNeighborhoodE
 RNS_5ArrayIfLm2EEEiii
 RToCCS_32f
-RU'IJ
 RYL7T
-R[f4:1
 Radius
 Radix4
 RandomNumberGenerator
@@ -5506,6 +5520,8 @@ ReverbEffect23numTailSamplesRemainingEv
 ReverbEstimatorENS1_9allocatorIS2_EEEE
 Rffff
 Rffffff
+Rj,dB|M
+Rn7|q
 RotateEffect
 RotateEffectENS1_9allocatorIS2_EEEE
 Rotation
@@ -5513,6 +5529,7 @@ RotationEffect
 RotationEffectE
 RotationEffectEP16IPLAudioSettingsP35IPLAmbisonicsRotationEffectSettingsPPNS_25IAmbisonicsRotationEffectE
 S'pzk7NAC
+S:&l4
 SAH not H
 SASAYAVAVASAWAWAWAp
 SBSBSBSBSBSBSBSBSBSBSBSBSBSBSBSBSBSBSBSBSBSBSBSBSBSBSBSBUAU0
@@ -5618,6 +5635,7 @@ SimulationManager
 SimulationManager18hasListenerChangedEv
 SimulationManagerENS1_9allocatorIS2_EEEE
 Simulator
+SingularValues
 SizeEv
 Skylake H
 Skylake Server
@@ -5636,6 +5654,7 @@ Split_32fc
 Sqrt16_32f
 SqrtOne
 SreateBinauralEffectEP16IPLAudioSettingsP25IPLBinauralEffectSettingsPPNS_15IBinauralEffectE
+Ss-2CBw
 St3__1
 StaticMesh
 StaticMeshE
@@ -5645,7 +5664,6 @@ SubdivPaH
 SubdivisionMode
 System/Library/Frameworks/Accelerate.framework/Versions/A/Accelerate
 T	A@9i
-T /dvj
 T$ Jct
 T$ NcL
 T$ rEA9
@@ -5670,18 +5688,16 @@ T$\;Q0s
 T$ht)H
 T$pH9
 T9E)y; 9o
-T='.uNv
 TREEt
 TWO_12H
 TWO_32H
 TX,1H
-TY= +w
+TY=J"w
 TabDft
 TableCacheSize
 Targets
 Task3runERNS0_6ThreadE
 Tasking
-TbWJu
 Tf %f %f %f
 This is a netCDF dimension but not a netCDF variable
 Thread
@@ -5694,7 +5710,9 @@ Threshold_LT_32f
 Timer1
 Timer5startEv
 TinterleaveAudioBufferEP14IPLAudioBufferPf
+Tl"яizV
 Tl$PĂy
+TlLXP
 ToC_32fc
 ToCplx
 ToFloat
@@ -5712,7 +5730,9 @@ UARARAp
 UAWAVAUATSH
 UAWAVAUATSPE
 UAWAVAUATSPM
-UJ%P[0
+UJ%'x3
+UJ%043
+UJ%8!1
 UNKNOWN
 UNPACK_H_256
 UNPACK_H_CC99
@@ -5796,7 +5816,7 @@ VoxelGrid
 VoxelGrid8voxelizeERKNS_10StaticMeshERKNS_17VoxelGridSettingsE
 Vreate
 W fff
-W!0aH_ch
+W%q\0
 WARAWARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARAWAUAp
 WARNING: "Flush to Zero" or "Denormals are Zero" mode not enabled
 WAWAWAWAWAWAWAUAWAp
@@ -5806,6 +5826,7 @@ Wc;!42
 We9 =N
 WindowFunction
 Wr95B
+X"e#9
 X+L$xL
 X,;s 5;xA
 X3deinterleaveAudioBufferEPfP14IPLAudioBuffer
@@ -5825,9 +5846,9 @@ X`x*xjx
 Xc=+Xc=+Xc=+Xc
 Xd0@ŌY
 Xffff
-Xo(źX_H
 XrhD9
 Xs.<(1V
+Y%W$w
 Y6calculateRelativeDirectionE10IPLVector3S1_S1_S1
 Y@NSt3__119basic_ostringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE
 YA_A^A]A
@@ -5846,8 +5867,8 @@ Y]A_A]A
 Yd$ ŘY
 Yd$Puj
 YreateVirtualSurroundEffectEP16IPLAudioSettingsP32IPLVirtualSurroundEffectSettingsPPNS_22IVirtualSurroundEffectE
+Y|Kwi
 Z!0;1
-Z#/uI
 Z%F3lKpb
 Z12createHandleIN3ipl13PathSimulatorEEN12HandleTraitsIT_E11opaque_typeENSt3__110shared_ptrINS0_7ContextEEENS7_IS3_EE
 Z13releaseHandleIN3ipl13PathSimulatorEEvRN12HandleTraitsIT_E11opaque_typeE
@@ -6247,7 +6268,9 @@ ZN3api23CAmbisonicsEncodeEffect7releaseEv
 ZN3api23CAmbisonicsEncodeEffectC1EPNS_8CContextEP16IPLAudioSettingsP33IPLAmbisonicsEncodeEffectSettings
 ZN3api23CAmbisonicsEncodeEffectC2EPNS_8CContextEP16IPLAudioSettingsP33IPLAmbisonicsEncodeEffectSettings
 ZN3api23CCompressedEnergyFields18blendAndDecompressEPNS_18CProbeNeighborhoodEPNS_12CEnergyFieldE
+ZN3api23CCompressedEnergyFields6createEPNS_8CContextEPNS_11CProbeBatchEP33IPLEnergyFieldCompressionSettings
 ZN3api23CCompressedEnergyFields6createEPNS_8CContextEiPPNS_12CEnergyFieldEP33IPLEnergyFieldCompressionSettings
+ZN3api23CCompressedEnergyFields6createEPNS_8CContextEiiiiPKi
 ZN3api23CCompressedEnergyFields7releaseEv
 ZN3api23CValidatedInstancedMesh15updateTransformEPNS_6ISceneE12IPLMatrix4x4
 ZN3api23CValidatedInstancedMesh3addEPNS_6ISceneE
@@ -6505,10 +6528,24 @@ ZN3ipl11EnergyFieldC2EPKNS_10Serialized11EnergyFieldE
 ZN3ipl11EnergyFieldC2Efi
 ZN3ipl11EnergyFieldD0Ev
 ZN3ipl11EnergyFieldD1Ev
+ZN3ipl11IIRFilterer10reset_iir2Ev
 ZN3ipl11IIRFilterer11resetFilterEv
-ZN3ipl11IIRFilterer12apply_float4EiPKfPf
-ZN3ipl11IIRFilterer16setFilter_float4ERKNS_3IIRE
-ZN3ipl11IIRFilterer18resetFilter_float4Ev
+ZN3ipl11IIRFilterer14copyState_iir2ERKS0
+ZN3ipl11IIRFilterer14setFilter_iir2ERKNS_3IIRE
+ZN3ipl11IIRFilterer15applyFloat_iir2Ef
+ZN3ipl11IIRFilterer16applyFloat4_iir2E19__simd128_float32_t
+ZN3ipl11IIRFilterer16applyFloat4_iir2EDv4_f
+ZN3ipl11IIRFilterer16resetFilter_iir2Ev
+ZN3ipl11IIRFilterer16reset_switchableEv
+ZN3ipl11IIRFilterer16sEnableSwitchingE
+ZN3ipl11IIRFilterer20applyFloatArray_iir2EiPKfPf
+ZN3ipl11IIRFilterer20copyState_switchableERKS0
+ZN3ipl11IIRFilterer20setFilter_switchableERKNS_3IIRE
+ZN3ipl11IIRFilterer21applyFloat_switchableEf
+ZN3ipl11IIRFilterer22applyFloat4_switchableE19__simd128_float32_t
+ZN3ipl11IIRFilterer22applyFloat4_switchableEDv4_f
+ZN3ipl11IIRFilterer22resetFilter_switchableEv
+ZN3ipl11IIRFilterer26applyFloatArray_switchableEiPKfPf
 ZN3ipl11IIRFilterer5applyE19__simd128_float32_t
 ZN3ipl11IIRFilterer5applyEDv4_f
 ZN3ipl11IIRFilterer5applyEf
@@ -6566,6 +6603,27 @@ ZN3ipl12HRTFDatabase9wrapPhaseERNS_5ArrayIfLm1EEE
 ZN3ipl12HRTFDatabaseC1ERKNS_12HRTFSettingsEii
 ZN3ipl12HRTFDatabaseC2ERKNS_12HRTFSettingsEii
 ZN3ipl12HRTFDatabaseD2Ev
+ZN3ipl12IIR2Filterer11resetFilterEv
+ZN3ipl12IIR2Filterer12apply_float4EiPKfPf
+ZN3ipl12IIR2Filterer16setFilter_float4ERKNS_4IIR2E
+ZN3ipl12IIR2Filterer18resetFilter_float4Ev
+ZN3ipl12IIR2Filterer5applyE19__simd128_float32_t
+ZN3ipl12IIR2Filterer5applyEDv4_f
+ZN3ipl12IIR2Filterer5applyEf
+ZN3ipl12IIR2Filterer5applyEiPKfPf
+ZN3ipl12IIR2Filterer5resetEv
+ZN3ipl12IIR2Filterer9copyStateERKS0
+ZN3ipl12IIR2Filterer9setFilterERKNS_4IIR2E
+ZN3ipl12IIR2FiltererC1Ev
+ZN3ipl12IIR2FiltererC2Ev
+ZN3ipl12IIR8Filterer11resetFilterEv
+ZN3ipl12IIR8Filterer5applyE19__simd128_float32_t
+ZN3ipl12IIR8Filterer5applyEDv4_f
+ZN3ipl12IIR8Filterer5applyEf
+ZN3ipl12IIR8Filterer5applyEiPKfPf
+ZN3ipl12IIR8Filterer5resetEv
+ZN3ipl12IIR8Filterer9copyStateERKS0
+ZN3ipl12IIR8Filterer9setFilterERKNS_4IIR8E
 ZN3ipl12ProbeClusterD1Ev
 ZN3ipl12ProbeManager13addProbeBatchENSt3__110shared_ptrINS_10ProbeBatchEEE
 ZN3ipl12ProbeManager16removeProbeBatchENSt3__110shared_ptrINS_10ProbeBatchEEE
@@ -6628,15 +6686,16 @@ ZN3ipl13PanningEffect5applyERKNS_19PanningEffectParamsERKNS_11AudioBufferERS4
 ZN3ipl13PanningEffect5resetEv
 ZN3ipl13PanningEffectC1ERKNS_21PanningEffectSettingsE
 ZN3ipl13PanningEffectC2ERKNS_21PanningEffectSettingsE
+ZN3ipl13PathSimulator14calcEQForPathsERKNS_10ProbeBatchEPiS4_iPKNS_9SoundPathEPKfPfSA
 ZN3ipl13PathSimulator17calcDeviationTermEfPf
 ZN3ipl13PathSimulator24findPathsFromSourceProbeERKNS_6ISceneERKNS_10ProbeBatchERKNS_17ProbeNeighborhoodES9_RKNS_13BakedPathDataEiffffbbbbPFvNS_7Vector3IfEESE_bPvESF_RiPNS_9SoundPathEPfPiSM
 ZN3ipl13PathSimulator25calcDistanceRatioForPathsERKNS_7Vector3IfEERKNS_10ProbeBatchEPiS8_iPKNS_9SoundPathEPKfPf
-ZN3ipl13PathSimulator28calcAmbisonicsCoeffsForPathsERKNS_7Vector3IfEES4_RKNS_10ProbeBatchEPiS8_iPKNS_9SoundPathEPKfiPfSE
+ZN3ipl13PathSimulator28calcAmbisonicsCoeffsForPathsERKNS_7Vector3IfEES4_RKNS_10ProbeBatchEPiS8_iPKNS_9SoundPathEPKfiPf
 ZN3ipl13PathSimulator28calcAverageDirectionForPathsERKNS_7Vector3IfEES4_RKNS_10ProbeBatchEPiS8_iPKNS_9SoundPathEPKfPS2
 ZN3ipl13PathSimulator31sEnablePathsFromAllSourceProbesE
 ZN3ipl13PathSimulator39findPathsFromSourceProbeToListenerProbeERKNS_6ISceneERKNS_10ProbeBatchERKNS_17ProbeNeighborhoodERKNS_13BakedPathDataEififffbbbbPFvNS_7Vector3IfEESE_bPvESF_RiPNS_9SoundPathEPfPiSM
 ZN3ipl13PathSimulator46findShortestPathFromSourceProbeToListenerProbeERKNS_6ISceneERKNS_10ProbeBatchEiiRKNS_13BakedPathDataEfffbbbbRNS_9ProbePathEPFvNS_7Vector3IfEESD_bPvESE
-ZN3ipl13PathSimulator9findPathsERKNS_7Vector3IfEES4_RKNS_6ISceneERKNS_10ProbeBatchERKNS_17ProbeNeighborhoodESD_fffibbbbPfSE_PS2_SE_PFvS2_S2_bPvESG_b
+ZN3ipl13PathSimulator9findPathsERKNS_7Vector3IfEES4_RKNS_6ISceneERKNS_10ProbeBatchERKNS_17ProbeNeighborhoodESD_fffibbbbPfSE_PS2_SE_SE_PFvS2_S2_bPvESG_b
 ZN3ipl13PathSimulatorC1ERKNS_10ProbeBatchEibRKNS_7Vector3IfEE
 ZN3ipl13PathSimulatorC2ERKNS_10ProbeBatchEibRKNS_7Vector3IfEE
 ZN3ipl13ProbeClustersC1ERKNS_10ProbeArrayERKNS_9ProbeTreeERKNS_6ISceneERKNS_23ProbeClusteringSettingsE
@@ -6962,7 +7021,7 @@ ZN3ipl21HybridReverbEstimator12calcReverbIREiPKfS2
 ZN3ipl21HybridReverbEstimator13estimateDelayEff
 ZN3ipl21HybridReverbEstimator15calcRelativeEDCEPKfii
 ZN3ipl21HybridReverbEstimator22estimateHybridEQFromIRERKNS_15ImpulseResponseEffiPfS4
-ZN3ipl21HybridReverbEstimator8estimateEPKNS_11EnergyFieldERKNS_6ReverbERNS_15ImpulseResponseEffiPf
+ZN3ipl21HybridReverbEstimator8estimateEPKNS_11EnergyFieldERKNS_6ReverbERNS_15ImpulseResponseEffiPfRi
 ZN3ipl21HybridReverbEstimatorC1Efii
 ZN3ipl21HybridReverbEstimatorC2Efii
 ZN3ipl21HybridReverbEstimatorD2Ev
@@ -7013,9 +7072,15 @@ ZN3ipl22BufferedIndirectEffect5resetEv
 ZN3ipl22BufferedIndirectEffectC1ERKNS_13AudioSettingsERKNS_22IndirectEffectSettingsE
 ZN3ipl22BufferedIndirectEffectC2ERKNS_13AudioSettingsERKNS_22IndirectEffectSettingsE
 ZN3ipl22BufferedIndirectEffectD2Ev
+ZN3ipl22CompressedEnergyFields13setDictionaryEiiPKf
+ZN3ipl22CompressedEnergyFields17setCompressedDataEiiPKf
 ZN3ipl22CompressedEnergyFields18blendAndDecompressERKNS_17ProbeNeighborhoodERNS_11EnergyFieldE
+ZN3ipl22CompressedEnergyFieldsC1ERKNS_10ProbeBatchEf
 ZN3ipl22CompressedEnergyFieldsC1EiPKPKNS_11EnergyFieldEf
+ZN3ipl22CompressedEnergyFieldsC1EiiiiPKi
+ZN3ipl22CompressedEnergyFieldsC2ERKNS_10ProbeBatchEf
 ZN3ipl22CompressedEnergyFieldsC2EiPKPKNS_11EnergyFieldEf
+ZN3ipl22CompressedEnergyFieldsC2EiiiiPKi
 ZN3ipl22CompressedEnergyFieldsD2Ev
 ZN3ipl22ImpulseResponseFactory6createENS_18IndirectEffectTypeEfiiNSt3__110shared_ptrINS_12OpenCLDeviceEEE
 ZN3ipl22OverlapSavePartitioner9partitionERKNS_15ImpulseResponseEiiRNS_14OverlapSaveFIRE
@@ -7182,6 +7247,8 @@ ZN3ipl3FFTC1EiNS_9FFTDomainE
 ZN3ipl3FFTC2EiNS_9FFTDomainE
 ZN3ipl3FFTD1Ev
 ZN3ipl3FFTD2Ev
+ZN3ipl3IIR10sUseOrder8E
+ZN3ipl3IIR11bandFiltersEPS0_i
 ZN3ipl3IIR7lowPassEfi
 ZN3ipl3IIR7peakingEfffi
 ZN3ipl3IIR8bandPassEffi
@@ -7191,6 +7258,27 @@ ZN3ipl3IIR8spectrumEf
 ZN3ipl3IIR9highShelfEffi
 ZN3ipl3Log4initEPFvNS_15MessageSeverityEPKcE
 ZN3ipl3Log7messageENS_15MessageSeverityEPKcz
+ZN3ipl4IIR211bandFiltersEPS0_i
+ZN3ipl4IIR27lowPassEffi
+ZN3ipl4IIR27lowPassEfi
+ZN3ipl4IIR27peakingEfffi
+ZN3ipl4IIR28bandPassEffi
+ZN3ipl4IIR28highPassEffi
+ZN3ipl4IIR28highPassEfi
+ZN3ipl4IIR28lowShelfEfffi
+ZN3ipl4IIR28lowShelfEffi
+ZN3ipl4IIR28spectrumEf
+ZN3ipl4IIR29highShelfEfffi
+ZN3ipl4IIR29highShelfEffi
+ZN3ipl4IIR811bandFiltersEPS0_i
+ZN3ipl4IIR812spectrumPeakEv
+ZN3ipl4IIR87lowPassEfi
+ZN3ipl4IIR87peakingEfffi
+ZN3ipl4IIR88bandPassEffi
+ZN3ipl4IIR88highPassEfi
+ZN3ipl4IIR88lowShelfEffi
+ZN3ipl4IIR88spectrumEf
+ZN3ipl4IIR89highShelfEffi
 ZN3ipl4Math15doubleFactorialEj
 ZN3ipl4Math17kDegreesToRadiansE
 ZN3ipl4Math3kPiE
@@ -7218,6 +7306,7 @@ ZN3ipl5ArrayINS_12SoundPathRefELm2EE6resizeIjJjEEEvT_DpT0
 ZN3ipl5ArrayINS_12SoundPathRefELm2EEC1IiJiEEET_DpT0
 ZN3ipl5ArrayINS_12SoundPathRefELm2EED1Ev
 ZN3ipl5ArrayINS_13DynamicMatrixIfEELm2EE6resizeIiJiEEEvT_DpT0
+ZN3ipl5ArrayINS_13DynamicMatrixIfEELm2EED1Ev
 ZN3ipl5ArrayINS_13ProbeTreeNodeELm1EE6resizeIiJEEEvT_DpT0
 ZN3ipl5ArrayINS_13ProbeTreeNodeELm1EED1Ev
 ZN3ipl5ArrayINS_16AudioEffectStateELm1EEC2IiJEEET_DpT0
@@ -7284,6 +7373,7 @@ ZN3ipl5ArrayIiLm1EED1Ev
 ZN3ipl5ArrayIiLm2EE6resizeIiJiEEEvT_DpT0
 ZN3ipl5ArrayIiLm2EEC1IiJiEEET_DpT0
 ZN3ipl5ArrayIiLm2EED1Ev
+ZN3ipl5Bands13kBandPassNormE
 ZN3ipl5Bands21kLowCutoffFrequenciesE
 ZN3ipl5Bands22kHighCutoffFrequenciesE
 ZN3ipl5Delay3getER19__simd128_float32_t
@@ -7375,6 +7465,7 @@ ZN3ipl7Library6unloadEPv
 ZN3ipl7Vector3IfE6kXAxisE
 ZN3ipl7Vector3IfE6kYAxisE
 ZN3ipl7Vector3IfE6kZAxisE
+ZN3ipl7bw_to_qEff
 ZN3ipl7gMemoryEv
 ZN3ipl7inverseIfEEvRKNS_12SquareMatrixIT_Li4EEERS3
 ZN3ipl8EQEffect14normalizeGainsEPfRf
@@ -7440,6 +7531,7 @@ ZN3ipl9ProbeTreeD1Ev
 ZN3ipl9SoundPathC1ERKNS_9ProbePathERKNS_10ProbeBatchE
 ZN3ipl9SoundPathC2ERKNS_9ProbePathERKNS_10ProbeBatchE
 ZN3ipl9VoxelGrid8voxelizeERKNS_10StaticMeshERKNS_17VoxelGridSettingsE
+ZN3ipl9peaking_qEffffi
 ZN3ipleqERKNS_18AirAbsorptionModelES2
 ZN3ipleqERKNS_24DistanceAttenuationModelES2
 ZN3iplltERKNS_10PathFinder18PriorityQueueEntryES3
@@ -13180,6 +13272,7 @@ ZNSt3__112__hash_tableIPKN3ipl10ProbeBatchENS_4hashIS4_EENS_8equal_toIS4_EENS1_9
 ZNSt3__112__next_primeEm
 ZNSt3__112bad_weak_ptrD1Ev
 ZNSt3__112basic_stringIcNS_11char_traitsIcEEN3ipl9allocatorIcEEE21__grow_by_and_replaceEmmmmmmPKc
+ZNSt3__112basic_stringIcNS_11char_traitsIcEEN3ipl9allocatorIcEEEC1B7v160006IDnEEPKc
 ZNSt3__112basic_stringIcNS_11char_traitsIcEEN3ipl9allocatorIcEEED1Ev
 ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE6appendEPKc
 ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE6appendEPKcm
@@ -13793,6 +13886,7 @@ ZNSt3__19to_stringEf
 ZNSt3__19to_stringEi
 ZNSt3__19to_stringEx
 ZNSt3__1L20__throw_length_errorEPKc
+ZNSt3__1eqB7v160006IcNS_11char_traitsIcEEN3ipl9allocatorIcEEEEbRKNS_12basic_stringIT_T0_T1_EEPKS7
 ZNSt3__1mlB7v160006IfEENS_7complexIT_EERKS3_S5
 ZNSt3__1plB7v160006IcNS_11char_traitsIcEEN3ipl9allocatorIcEEEENS_12basic_stringIT_T0_T1_EERKSA_SC
 ZNSt3__1plIcNS_11char_traitsIcEENS_9allocatorIcEEEENS_12basic_stringIT_T0_T1_EEPKS6_RKS9
@@ -16397,15 +16491,17 @@ ZZNK6embree4sse25SetMB12linearBoundsINS0_18RecalculatePrimRefINS_8AccelSetEEEEEN
 ZdaPv
 ZdlPv
 Zero_8u
+Zm^I<3LwJ
 ZreateAmbisonics
 ZsJfxi
 Zxāyn
 a geomeH
 a singleH
+a"\4P
+a+PPb+Qpb+R c+S
 a6retainEv
 a7releaseEv
 a:4K5:`iX
-a\jf'l
 abcdefghH
 abcdefghijklmnopqrstuvwxyz
 abort
@@ -16519,6 +16615,11 @@ applyERKNS_30AmbisonicsBinauralEffectParamsERKNS_11AudioBufferERS4
 applyERKNS_33OverlapAddConvolutionEffectParamsERKNS_11AudioBufferERS4
 applyERKNS_33OverlapSaveConvolutionMixerParamsERNS_11AudioBufferE
 applyERKNS_35OverlapSaveConvolutionEffect2ParamsERKNS_11AudioBufferE
+applyFloat4_iir2E19__simd128_float32_t
+applyFloat4_iir2EDv4_f
+applyFloat4_switchableE19__simd128_float32_t
+applyFloat4_switchableEDv4_f
+applyFloatArray_iir2EiPKfPf
 applySpatialBlendEiifNS_13HRTFPhaseTypeERKNS_7Vector3IfEEiPKfS7_PfS8
 applyVolumeSettingsEfNS_12HRTFNormTypeE
 arameter1i
@@ -16742,7 +16843,6 @@ bT:(j6:2
 ba,@Yd
 baD X
 baLHY47b
-bad(W=li
 bakePaths
 bakePathsEP17IPLPathBakeParamsPFvfPvES3
 bakeReflections
@@ -16756,7 +16856,6 @@ ba}Hp
 ba}Hpбb
 ba}Hpڱbq}Hp۱bA}Hp
 ba}Hp۱ba|H
-ba~(o
 bdivisioH
 be idenH
 be of saH
@@ -16764,6 +16863,7 @@ benchmarH
 benchmark
 bezier1iH
 bezier1vH
+bgICSJ
 bhAKHT3
 blendERKS0_fRS0
 bm.212.0.3
@@ -16780,6 +16880,7 @@ bm.266.0.3
 bm.284.0.3
 bm.285.0.3
 bqLXT5
+bqLXT59A
 bq\HYt
 bqt@Yl$	b
 bq}Hp
@@ -16789,8 +16890,6 @@ bq}Hpαb
 bq}Hpбb
 bq}Hpбbq}Hp
 bq}HpڱbadH
-br8FFx3
-br}HX
 bs-X%%r
 bsULCűb
 bsmLCڱb
@@ -16824,6 +16923,7 @@ bvh8.triangle4v
 bvh8.triangle4vmb
 bvh_builH
 bvh_builder: branching factor too large
+bw_to_qEff
 by yourH
 bytes
 bytes/prim
@@ -16951,7 +17051,6 @@ ceneBuilH
 cenes caH
 ceptionsH
 cexpf_scalar
-cf!4訣ET
 cf_p1m1
 changeAttribute
 character
@@ -16990,6 +17089,8 @@ copyERKS0_RS0
 copyEnergyFieldsFromDeviceToHostEv
 copyFromFloat
 copyStateERKS0
+copyState_iir2ERKS0
+copyState_switchableERKS0
 copyToFloat
 copyright
 cosTbl
@@ -17097,7 +17198,6 @@ dError
 dHRTFERKNS_7Vector3IfEEPKPNSt3__17complexIfEEfNS_13HRTFPhaseTypeEPi
 dKd2ddd
 dQH;fdo
-dRSIN
 d\$1H
 data error
 data musH
@@ -17335,6 +17435,8 @@ e:Rfx
 e=rAe>U:f
 eBuilderH
 eGeometrH
+eKR E
+eMIνOP
 ePw:1
 ead_alloH
 eady assH
@@ -17346,6 +17448,7 @@ easy_processing
 ectFunctH
 ed by yoH
 edFunctiH
+edMU7d
 effect
 effectSettings
 effectSettings->hrtf
@@ -17378,7 +17481,9 @@ enableERKNS_11EmbreeSceneE
 enable_compressed_reverb_lookup
 enable_dc_correction_for_phase_interpolation
 enable_hybrid_eq_from_ir
-enable_hybrid_eqed_reverb_lookupenable_compresseompressed_reverbretain_uncompres
+enable_hybrid_eqed_reverb_lookupenable_compresse
+enable_iir_order_8
+enable_iir_order_switching
 enable_paths_from_all_source_probes
 enable_reverb_probe_caching_for_missing_probes
 enable_sH
@@ -17549,6 +17654,7 @@ fwrite
 g,;wa 9c
 g2(;p
 g2ERKNS_10ProbeBatchEi
+g7BLFc  4
 g8B~0GBf
 g: kP;O
 gAPIVersionEv
@@ -17608,12 +17714,13 @@ h1removeProbeEi
 h20getInfluencingProbesERKNS_7Vector3IfEERNS_17ProbeNeighborhoodEi
 h3addProbeArrayERKNS_10ProbeArrayE
 h4updateEndpointERKNS_19BakedDataIdentifierERKNS_6SphereE
+h5-9sR
 h7updateProbeRadiusEif
 h9updateProbePositionEiRKNS_7Vector3IfEE
 h:/1E
 h:p.Y
+hCf87j
 hMK</u
-hYT+ H
 hYT5 H
 h[A\A]A^A
 hair_accH
@@ -17638,9 +17745,11 @@ have_native_rcpd
 have_native_rsqrtd
 have_native_transcendentals
 have_native_trigonometry
+hd5r]%#RzA
 header crc mismatch
 heckOcclusion
 hffff
+highPassEf
 highPassEfi
 high_quaH
 high_quality
@@ -17656,6 +17765,7 @@ htt_extension
 hugepageH
 hugepages
 hvļTAS
+hy I7Hs
 hypotf
 iFiii#i
 iPKN3ipl7Vector3IfEEPKfPf
@@ -17677,6 +17787,7 @@ ignore_cH
 ignore_config_files
 iiPKNS_7Vector3IfEEPKNS_8TriangleE
 iiiPKNS_7Vector3IfEEPKNS_8TriangleEPKiPKNS_8MaterialE
+iiiPKi
 iiiRNSt3__16atomicIbEE
 ijklmnopH
 ilder_mbH
@@ -18136,8 +18247,19 @@ iplBinauralEffectRetain
 iplCalculateRelativeDirection
 iplCompressedEnergyFieldsBlendAndDecompress
 iplCompressedEnergyFieldsCreate
+iplCompressedEnergyFieldsCreateEmpty
+iplCompressedEnergyFieldsCreateFromProbeBatch
+iplCompressedEnergyFieldsGetCompressedData
+iplCompressedEnergyFieldsGetDictionary
+iplCompressedEnergyFieldsGetNumBands
+iplCompressedEnergyFieldsGetNumBins
+iplCompressedEnergyFieldsGetNumChannels
+iplCompressedEnergyFieldsGetNumProbes
+iplCompressedEnergyFieldsGetNumSingularValues
 iplCompressedEnergyFieldsRelease
 iplCompressedEnergyFieldsRetain
+iplCompressedEnergyFieldsSetCompressedData
+iplCompressedEnergyFieldsSetDictionary
 iplContextCreate
 iplContextRelease
 iplContextRetain
@@ -18338,12 +18460,16 @@ iplProbeNeighborhoodGetNumProbes
 iplProbeNeighborhoodGetNumValidProbes
 iplProbeNeighborhoodGetProbe
 iplProbeNeighborhoodGetProbe.cold.1
+iplProbeNeighborhoodGetProbeBatch
+iplProbeNeighborhoodGetProbeIndex
 iplProbeNeighborhoodRelease
 iplProbeNeighborhoodReset
 iplProbeNeighborhoodReset.cold.1
 iplProbeNeighborhoodResize
 iplProbeNeighborhoodResize.cold.1
 iplProbeNeighborhoodRetain
+iplProbeNeighborhoodSetProbeBatch
+iplProbeNeighborhoodSetProbeIndex
 iplRadeonRaysDeviceCreate
 iplRadeonRaysDeviceRelease
 iplRadeonRaysDeviceRetain
@@ -18639,6 +18765,7 @@ j7addDataERKNS_19BakedDataIdentifierENSt3__110unique_ptrINS_10IBakedDataENS_7del
 j8addProbeERKNS_6SphereE
 jRNS_16SerializedObjectE
 jY|/d
+js%Bsrr
 jt":2
 k"5:*ub
 k,e:EG1
@@ -19159,7 +19286,6 @@ kdTreeVisibilityFilterERKNS_7Vector3IfEES3_Pv
 kd_create
 kd_free
 kd_insert
-kd_lnj
 kd_nearest
 kd_nearest_i
 kedReflectionsCompressor
@@ -19168,6 +19294,7 @@ ker_row_twid_db
 key>com.apple.application-identifier</key
 kip_zeros
 kl_dft_avx
+l#,Hw
 l$(bQ|H
 l$0fC
 l$@fE
@@ -19624,13 +19751,11 @@ lQl6lll
 lR);ce
 lU ńX
 lX4)H
-lY=m%w
 lYR`ŤY
 lYT5@H
 lY\$ ŤX
 la_symbol_ptr
 lackmanEiPf
-lbaT(X
 lderTwoLH
 lder_isaH
 leaf_siH
@@ -19638,7 +19763,7 @@ leaves
 lection H
 led in sH
 legendreEif
-libphonon-55554944aa514bf9c3853b99a4d29630e0630141
+libphonon-55554944fa4a0c0a777f306d8df8b2a842cf2e71
 libphonon.dylib
 line segments
 line4i
@@ -19679,7 +19804,9 @@ lookup
 lookupBakedReflectionsEv
 lookupEnergyFieldEi
 loudness
+lowPassEf
 lowPassEfi
+lowShelfEff
 lowShelfEffi
 ltERKNS_10PathFinder18PriorityQueueEntryES3
 luded4 nH
@@ -19718,7 +19845,7 @@ max_spatH
 max_spatial_split_replications
 maximally 256 floating point values can be interpolated per vertex
 mbisonics
-mbisonicsCoeffsForPathsERKNS_7Vector3IfEES4_RKNS_10ProbeBatchEPiS8_iPKNS_9SoundPathEPKfiPfSE
+mbisonicsCoeffsForPathsERKNS_7Vector3IfEES4_RKNS_10ProbeBatchEPiS8_iPKNS_9SoundPathEPKfiPf
 mbreeDevice
 mbreeScene
 mbreeSceneE
@@ -19734,6 +19861,7 @@ memory monitor forced termination
 memset
 memset_pattern16
 metry grH
+mfffff
 min_leafH
 min_leaf_size
 minimally possible
@@ -19843,6 +19971,7 @@ n?0ho?s
 nMesh isH
 nN only H
 nRNS_16SerializedObjectE
+nV!C/A
 n_factorH
 nching fH
 nd rtcOcH
@@ -19897,7 +20026,6 @@ n{~MgN
 o not beH
 o):8tR
 o,<Lc
-o6,7-36
 o:cPO
 o;xXq
 oD$0fD
@@ -19919,6 +20047,7 @@ object_builder_mb
 ocator_rH
 ock_sizeH
 og 9P
+ohoh_A
 oiiiPKNS_7Vector3IfEEPKNS_8TriangleEPKiPKNS_8MaterialE
 ometriesH
 ommittedH
@@ -20152,6 +20281,7 @@ ownmix
 ownsFFTGetBufSize
 o|$ fD
 p AOgFG
+p62$lL
 p7M}f
 p=BAr
 pA]A\H
@@ -20162,6 +20292,7 @@ pH9\$Hu
 pI;G0vkH
 pL;d$0r
 pL;t$0r
+pP+[~ZE
 pXH+pPI;t$0w
 pXH+pPI;u0w	I
 pXH+pPI;v0w	I
@@ -20254,6 +20385,7 @@ params->type
 params->visRange
 pc_fpu
 peakingEfffi
+peaking_qEffffi
 pecifiedH
 penCLDevice
 pentium
@@ -20335,12 +20467,12 @@ pthread_setspecific failed
 putchar
 p}?N6embree4sse218BVHNBuilderVirtualILi4EE12BVHNBuilderVE
 q!L2|0
+q(&le
 q(uvA9
 q(u}A9
 q(u~A9
 q6cancelEv
 q7processERNS_8JobGraphE
-qE6gx
 qThreadPool
 qbvh4.triangle4i
 qbvh8.triangle4
@@ -20371,7 +20503,6 @@ r2c_1d_small_ipp_s
 r3mixERKS0_RS0
 r7convertAmbisonicsENS_14AmbisonicsTypeES1_RKS0_RS0
 r:gom:fp
-r=/ZS
 rFunctioH
 rGeometrH
 rLv|H
@@ -20407,8 +20538,10 @@ removeProbeEi
 removeStaticMeshENSt3__110shared_ptrINS_11IStaticMeshEEE
 resampler_basic_direct_double
 resampler_basic_interpolate_double
+reset
 resetEi
 resetEv
+resetFilter_switchableEv
 reset_mem
 result
 result.center.x
@@ -21003,24 +21136,24 @@ rted by H
 rtitioner
 ru6:2
 rwH;C wqH
-rxVY7
 ry is noH
 ryH;C wsH
 rzI;F wtI
 r~I;E wxI
 r~I;G wxI
+r~X.ON
 r辽ICA
 s alreadH
 s not maH
 s not suH
 s specifH
 s$W<M
-s/Y D
 s7downmixERKS0_RS0
 s: HRTF data contains Ambisonic HRIRs of unsupported order: %d
 s: Unsupported HRTF data format version: %d
 s: invalid %s: %s = %s
 sBitRev1_Blk
+sEnableSwitchingE
 sFunction
 sHH+s
 sRA; J
@@ -21061,7 +21194,11 @@ serializedObject
 setEiPKf
 setEiiPKf
 setFilterERKNS_3IIRE
+setFilterERKNS_4IIR2E
+setFilterERKNS_4IIR8E
 setFilterGainsEiPKf
+setFilter_iir2ERKNS_3IIRE
+setFilter_switchableERKNS_3IIRE
 setHasConvolutionEb
 setImpulseResponseERNSt3__110unique_ptrINS_15ImpulseResponseENS_7deleterIS3_EEEE
 setInputs
@@ -21327,6 +21464,7 @@ supporteH
 supported
 swapERS0_S1
 swapThreadEPNS0_6ThreadE
+switchableEv
 swriteEPKf
 sys_regrH
 sysconf
@@ -21435,6 +21573,7 @@ thread_vars
 threads
 threadsH
 thresholdEiPKffPf
+tiB6tri
 tical foH
 timesteH
 timestepH
@@ -21491,13 +21630,13 @@ u ARAS
 u"ffffff
 u(ARQP
 u. ;BS0
+u.92jc
 u8t>fD
 u:H+K@L
 uXI+uPH
 uXI+uPH;s0w	H
 uZEeu
 u]tcfD
-u`PARASSAT
 ualSAH nH
 ubdivisionMesh
 uded notH
@@ -21507,6 +21646,7 @@ uffer caH
 uffered
 ufferedHybridReverbEffect
 uffff
+uhPARASATAU
 uilder_mH
 ultiplyEiPK
 ummy_rtcore_ispc
@@ -21613,9 +21753,9 @@ usleep
 usr/lib/libSystem.B.dylib
 usr/lib/libc++.1.dylib
 uuNu'uu
-v	a"kin
 v %f %f %f
 v(IcV H
+v-"mbB
 v:lP :TFt82
 vDSP_DFT_DestroySetup
 vDSP_DFT_Execute
@@ -21623,7 +21763,6 @@ vDSP_DFT_zop_CreateSetup
 vDSP_DFT_zrop_CreateSetup
 vDSP_ctoz
 vDSP_ztoc
-vOR\2b
 vXI+vPH;s0w	H
 val0001
 val_32f
@@ -21673,7 +21812,7 @@ vssincos_data
 w(ffffff
 w0I+w(H
 w2ERKNS_13AudioSettingsERKNS_19DelayEffectSettingsE
-w;K,!yx
+w>6nSb
 wA^A]A
 wA_A^A]A
 wA_A^A]A\][ÐSUATAUAVAWH
@@ -21696,23 +21835,19 @@ wasted
 withstepdefine
 wni_extension
 writableH
-x(%GqI
-x(%Pl
-x(%bY
-x(%cY
-x(%ew
-x(%j2A
-x(-5c
-x(-uk
-x(5 c2
-x(58XA
-x(5Cg3
-x(5Dr7
-x(5`k0
-x(5sj2
-x(5w+K
-x(= GA
-x(=SO
+x(%2q
+x(%mVL
+x(%pl
+x(-6X
+x(-900
+x(-Ea
+x(-ud
+x(5@c2
+x(5XXA
+x(5cg3
+x(5dr7
+x(=NV
+x(=sO
 x(D$p
 x(D% H
 x(D& H
@@ -21728,7 +21863,6 @@ x(L/ H
 x(L1 āx(d! H
 x(L7 āx(\' H
 x(L7 āx(l' H
-x(L7 ňY
 x(L8P
 x(T7 āx(L' H
 x(T7 āx(t' H
@@ -21787,6 +21921,7 @@ x:P5Q:Zx
 x:_P2
 x>V6'?C
 x?S;3
+xI	el)l
 xYL% H
 xYT+ H
 xZx<xxx
@@ -21796,7 +21931,6 @@ x_extension
 xirectivityC
 xk]:45R
 xml version="1.0" encoding="UTF-8
-xz%~b
 y ID alrH
 y cannotH
 y in strH
@@ -22046,11 +22180,7 @@ ycreateStaticMeshE
 yiiiPKNS_7Vector3IfEEPKNS_8TriangleEPKiPKNS_8MaterialE
 yn->l7
 yn<9ă1
-yo%U$N
-yo5=$N
-yo5ui
-yo5v0N
-yoT$Pt
+yo5}%N
 yol$0L
 you can H
 you can use rtcSetIntersectFunctionN only in stream mode
@@ -22076,6 +22206,7 @@ z: SR
 z:> R9f
 zBitRev1_Blk
 zError
+zS#PsGv6
 zXH+zPH
 z]z@zzz z
 z_errmsg

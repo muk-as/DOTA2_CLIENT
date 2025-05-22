@@ -38,13 +38,14 @@
 
 .Ability DOTAAbilityImage
 {
+	contrast: 1;
 	box-shadow: inset 0px 0px 2px 0px rgba(255, 189, 46, 0.0);
-	transition-property: wash-color, brightness, pre-transform-scale2d, border, box-shadow ;
+	transition-property: contrast, wash-color, brightness, pre-transform-scale2d, border, box-shadow ;
 	transition-duration: .12s;
 	transition-timing-function: ease-in-out;
 }
 
-.Ability DOTAAbilityImage.Hovered
+.Ability:not(.AbilityChosen) DOTAAbilityImage.Hovered
 {
 	brightness: 2;
 	box-shadow: inset 0px 0px 12px 0px rgba(255, 189, 46, 0.596);
@@ -73,15 +74,16 @@
 
 .Hero DOTAHeroImage
 {
+	contrast: 1;
 	width: 87px;
 	height: 115px;
 	box-shadow: inset 0px 0px 2px 0px rgba(255, 189, 46, 0.0);
-	transition-property: wash-color, brightness, pre-transform-scale2d, border, box-shadow;
+	transition-property: contrast, wash-color, brightness, pre-transform-scale2d, border, box-shadow;
 	transition-duration: .12s;
 	transition-timing-function: ease-in-out;
 }
 
-.Hero DOTAHeroImage.Hovered
+.Hero:not(.HeroChosen) DOTAHeroImage.Hovered
 {
 	brightness: 2;
 	box-shadow: inset 0px 0px 12px 0px rgba(255, 189, 46, 0.596);
@@ -92,7 +94,7 @@
 	flow-children: right;
 }
 
-.AbilityChosen
+.AbilityChosen,.HeroChosen
 {
 	saturation: 0.3;
 	wash-color: #003030DD;
@@ -117,18 +119,24 @@
 	transition-timing-function: ease-in-out;
 }
 
+.Hero .ShardMarker,.Hero .ScepterMarker
+{
+	width: 36px;
+	height: 36px;
+}
+
 .ShardMarker
 {
 	background-image: url("s2r://panorama/images/hud/reborn/aghsstatus_shard_marker_psd.vtex");
 	vertical-align: bottom;
 }
 
-.Ability.HasScepterUpgrade .ScepterMarker
+.Ability.HasScepterUpgrade .ScepterMarker,.Hero.HasScepterUpgrade .ScepterMarker
 {
 	visibility: visible;
 }
 
-.Ability.HasShardUpgrade .ShardMarker
+.Ability.HasShardUpgrade .ShardMarker,.Hero.HasShardUpgrade .ShardMarker
 {
 	visibility: visible;
 	wash-color: #007ACC;
@@ -139,21 +147,22 @@
 	opacity: 1;
 }
 
-.AltIsDown .Ability.HasScepterUpgrade DOTAAbilityImage
+.AltIsDown .Ability.HasScepterUpgrade DOTAAbilityImage,.AltIsDown .Ability.HasShardUpgrade DOTAAbilityImage,.AltIsDown .Ability.HasScepterUpgrade.HasFacets DOTAAbilityImage,.AltIsDown .Ability.HasShardUpgrade.HasFacets DOTAAbilityImage,.AltIsDown .Hero.HasScepterUpgrade.HasFacets DOTAHeroImage,.AltIsDown .Hero.HasShardUpgrade.HasFacets DOTAHeroImage,.AltIsDown .Hero.HasScepterUpgrade DOTAHeroImage,.AltIsDown .Hero.HasShardUpgrade DOTAHeroImage
 {
-	wash-color: #fff;
-	saturation: 1;
+	wash-color: #91d2f8;
+	saturation: .1;
 	brightness: 1;
+	contrast: .95;
 }
 
-.AltIsDown .Ability.HasShardUpgrade DOTAAbilityImage
+.AltIsDown .Ability.HasFacets DOTAAbilityImage,.AltIsDown .Hero.HasFacets DOTAHeroImage
 {
-	wash-color: #fff;
-	saturation: 1;
-	brightness: 1;
+	wash-color: #f3ebdf;
+	saturation: .1;
+	brightness: .3;
 }
 
-.AltIsDown .AbilityChosen,.AltIsDown DOTAAbilityImage
+.AltIsDown .AbilityChosen,.AltIsDown .HeroChosen,.AltIsDown DOTAAbilityImage,.AltIsDown DOTAHeroImage
 {
 	wash-color: #222;
 	saturation: 0.3;

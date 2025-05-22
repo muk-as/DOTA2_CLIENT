@@ -13,9 +13,13 @@
 					<Panel class="GoldIcon" />
 					<Label class="OverviewHeroNetWorth" text="{i:net_worth}" hittest="false" />
 				</Panel>
-				<Panel class="LeftRightFlow CenterAlign" onmouseout="UIHideTextTooltip();" onmouseover="UIShowTextTooltip( #dota_settings_spectatordropdown_kda );">
-					<Label class="OverviewHeroKills" text="{d:kills}" hittest="false" />
-					<Label class="OverviewHeroDeathsAssists" text=" / {d:deaths} / {d:assists}" hittest="false" />
+				<Panel id="KDAContainer" class="LeftRightFlow" onmouseout="UIHideTextTooltip();" onmouseover="UIShowTextTooltip( #dota_settings_spectatordropdown_kda );">
+					<Label class="OverviewHeroDeathsAssistsLabel" text="#DOTA_Inventory_KDA" hittest="false" />
+					<Label class="OverviewHeroDeathsAssists" text="{d:kills} / {d:deaths} / {d:assists}" hittest="false" />
+				</Panel>
+				<Panel id="LastHitDenyContainer" class="LeftRightFlow" onmouseout="UIHideTextTooltip();" onmouseover="UIShowTextTooltip( #dota_settings_spectatordropdown_lasthits_denies );">
+					<Label class="OverviewLastHitsLabel" text="#DOTA_Inventory_LHD" hittest="false" />
+					<Label class="OverviewLastHits" text="{d:last_hits} / {d:denies}" hittest="false" />
 				</Panel>
 			</Panel>
 		</Panel>
@@ -29,7 +33,7 @@
 						<DOTAUserName id="PlayerName" class="OverviewHeroPlayerNameExpanded" proname="true" />
 						<Label id="BotPlayerName" class="OverviewHeroPlayerNameExpanded" text="{s:bot_player_name}" />
 						<Panel id="LvlHero" class="LeftRightFlow">
-							<Label class="HeroLevelLabel MonoNumbersFont" text="{d:hero_level}" />
+							<Label class="HeroLevelLabel MonoNumbersFont" text="{d:level}" />
 							<Panel class="TopBottomFlow">
 								<Label id="HeroName" text="{s:hero_name}" />
 								<DOTAFacetIcon id="FacetIcon" class="ShowName" />
@@ -39,6 +43,7 @@
 				</Panel>
 			</Panel>
 			<Panel id="ItemsContainer">
+				<Panel id="ScepterDetails" />
 				<Panel id="HeroItemsContainer" class="ItemsContainer">
 					<DOTAItemImage id="ItemIcon0" class="ItemIcon" />
 					<DOTAItemImage id="ItemIcon1" class="ItemIcon" />

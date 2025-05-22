@@ -1,0 +1,706 @@
+/* Prettified by Source 2 Viewer 0.0.0.0 - https://valveresourceformat.github.io */
+
+@define TextColor: #A7BCD8;
+@define TextColorLight: #CEDDF0;
+@define TextColorDark: #788eac;
+@define PhysicalDamageColor: #E0714C;
+@define MagicalDamageColor: #595EF3;
+@define PureDamageColor: #D8AF54;
+@define Gold1: #EFD4AC;
+@define Gold2: #CEA25A;
+@define Gold3: #976E28;
+DOTAAbilityDetailsV2
+{
+	width: 100%;
+	flow-children: down;
+	background-color: gradient( radial, 0% 0%, 0% 0%, 120% 120%, from( #222b33 ), to( #222b3300 ) );
+	visibility: collapse;
+}
+
+.TEMP_AbilityTooltipV2Toggle DOTAAbilityDetailsV2
+{
+	visibility: visible;
+}
+
+.AbilityCostIcon
+{
+	width: 18px;
+}
+
+.FacetIconContainer
+{
+	margin-right: 8px;
+	width: 20px;
+	height: width-percentage(100%);
+	box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.4);
+}
+
+.FacetIconContainer .FacetBackground
+{
+	border-radius: 3px;
+	opacity: 1;
+}
+
+.FacetIconContainer #FacetIcon
+{
+	width: 20px;
+	height: width-percentage(100%);
+	vertical-align: center;
+	horizontal-align: center;
+	img-shadow: 0px 1px 4px black;
+	background-size: 75%;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+#HeaderContainer
+{
+	width: 100%;
+	flow-children: right;
+	min-height: 44px;
+	border-bottom: 1px solid black;
+}
+
+#HeaderContainer .HeaderBackgound
+{
+	width: 100%;
+	height: 100%;
+	ignore-parent-flow: true;
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( #3c4751 ), to( #1f2429 ) );
+	border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+#HeaderContainer .HeaderBackgound .HeaderBackgoundTexture
+{
+	opacity: 0.1;
+	-s2-mix-blend-mode: screen;
+	opacity-brush: gradient( linear, 0% 0%, 100% 0%, from( #ffffff ), to( #ffffff00 ) );
+}
+
+#HeaderContainer #TextHeaderContainer
+{
+	width: fill-parent-flow( 1 );
+	flow-children: down;
+	vertical-align: center;
+	margin: 4px 16px;
+	margin-right: 4px;
+}
+
+#HeaderContainer #TextHeaderContainer #AbilityName
+{
+	width: 100%;
+	height: 28px;
+	margin-bottom: -2px;
+	text-transform: uppercase;
+	font-family: titleFont;
+	font-weight: semi-bold;
+	color: rgba(245, 245, 245, 0.9);
+	letter-spacing: 0.5px;
+	text-shadow: 0px 1px 8px rgba(0, 0, 0, 1);
+	text-overflow: shrink;
+}
+
+#HeaderContainer #TextHeaderContainer #AbilityCategory
+{
+	text-transform: uppercase;
+	font-size: 13px;
+	letter-spacing: 1.5px;
+	margin-top: -3px;
+	margin-bottom: 1px;
+	text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.8);
+	color: TextColorLight;
+	opacity: 0.8;
+}
+
+#HeaderContainer #CurrentAbilityCostsContainer
+{
+	flow-children: right;
+	vertical-align: center;
+	margin-right: 8px;
+}
+
+#HeaderContainer #CurrentAbilityCostsContainer .CurrentAbilityCostContainer
+{
+	flow-children: right;
+	vertical-align: center;
+	margin: 0px 3px;
+}
+
+#HeaderContainer #CurrentAbilityCostsContainer .CurrentAbilityCostContainer .CurrentAbilityCostLabel
+{
+	vertical-align: center;
+	max-width: 26px;
+	height: 16px;
+	margin-bottom: 2px;
+	margin-right: 2px;
+	font-size: 16px;
+	color: TextColorLight;
+	text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.8);
+	text-align: center;
+}
+
+#HeaderContainer #CurrentAbilityCostsContainer .CurrentAbilityCostContainer .AbilityCostIcon
+{
+	horizontal-align: center;
+}
+
+#HeaderContainer .LevelContainer
+{
+	width: 26px;
+	height: 26px;
+	background-color: rgba(0, 0, 0, 0.8);
+	border-radius: 80px;
+	vertical-align: center;
+	margin: 6px 8px 6px -4px;
+	border: 1.5px solid white;
+	border-brush: gradient( linear, 0% 0%, 0% 100%, from( Gold1 ), color-stop( 0.5, Gold2 ), to( Gold3 ) );
+	box-shadow: 0px 2px 8px -1px rgba(0, 0, 0, 0.8);
+}
+
+#HeaderContainer .LevelContainer Label
+{
+	horizontal-align: center;
+	vertical-align: center;
+	color: gradient( linear, 0% 20%, 0% 80%, from( Gold1 ), color-stop( 0.5, Gold2 ), to( Gold3 ) );
+	font-size: 16px;
+	font-weight: semi-bold;
+	text-shadow: 0px 1px 6px rgba(0, 0, 0, 0.6);
+}
+
+.CurrentAbilityCostContainer,.LevelContainer
+{
+	visibility: collapse;
+}
+
+.HasCurrentManaCost .ManaCostContainer,.HasCurrentHealthCost .HealthCostContainer,.HasCurrentCooldown .CooldownContainer,.HasCurrentLevel .LevelContainer
+{
+	visibility: visible;
+}
+
+#DetailsContainer
+{
+	visibility: collapse;
+}
+
+.IsDetailedTooltip #DetailsContainer
+{
+	visibility: visible;
+}
+
+.TEMP_DetailsContainer
+{
+	visibility: collapse;
+}
+
+.AltDetailsIndicatorContainer
+{
+	visibility: visible;
+}
+
+.IsDetailedTooltip .AltDetailsIndicatorContainer
+{
+	visibility: collapse;
+}
+
+#AbilityCategory
+{
+	visibility: collapse;
+}
+
+.HasAbilityCategory #AbilityCategory
+{
+	visibility: visible;
+}
+
+.StatsGroupTitle
+{
+	visibility: collapse;
+}
+
+.HasGroupTitle .StatsGroupTitle
+{
+	visibility: visible;
+}
+
+.StatsGroupDesc
+{
+	visibility: collapse;
+}
+
+.HasGroupDesc .StatsGroupDesc
+{
+	visibility: visible;
+}
+
+.FacetTitleContainer
+{
+	visibility: collapse;
+}
+
+.HasFacetName .FacetTitleContainer
+{
+	visibility: visible;
+}
+
+.FacetDescription
+{
+	visibility: collapse;
+}
+
+.HasFacetDesc .FacetDescription
+{
+	visibility: visible;
+}
+
+#SimpleDescriptionContainer
+{
+	padding: 10px 16px;
+	flow-children: down;
+}
+
+#SimpleDescriptionContainer .SimpleDescriptionText
+{
+	color: TextColor;
+	font-size: 16px;
+	line-height: 1.4;
+	font-family: titleFont;
+	text-shadow: 0px 1px 6px rgba(0, 0, 0, 0.6);
+}
+
+#SimpleDescriptionContainer .SimpleDescriptionText b
+{
+	color: TextColorLight;
+	font-weight: semi-bold;
+}
+
+#SimpleDescriptionContainer .SimpleDescriptionText .TooltipActiveDynamicValue
+{
+	color: gradient( linear, 0% 20%, 0% 80%, from( Gold1 ), color-stop( 0.5, Gold2 ), to( Gold3 ) );
+}
+
+.TooltipActiveDynamicValue
+{
+	color: gradient( linear, 0% 20%, 0% 80%, from( Gold1 ), color-stop( 0.5, Gold2 ), to( Gold3 ) );
+	font-weight: semi-bold;
+}
+
+#SimpleDescriptionLevelUp
+{
+	visibility: collapse;
+	margin-top: 10px;
+}
+
+.HasSimpleDescriptionLevelUp #SimpleDescriptionLevelUp
+{
+	visibility: visible;
+}
+
+#SimpleDescriptionContainerDynamic
+{
+	visibility: visible;
+	width: 100%;
+	flow-children: down;
+	margin-top: 4px;
+}
+
+.TEMP_DetailsContainer,#DetailsContainer
+{
+	width: 100%;
+	padding: 4px 8px;
+	flow-children: down;
+	border-top: 1px solid rgba(0, 0, 0, 0.6);
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.DetailsChunkAttributeGroupContainer
+{
+	visibility: visible;
+	flow-children: down;
+	width: 100%;
+}
+
+#DetailsContainer .FacetContainer
+{
+	visibility: collapse;
+}
+
+.StatsContainer
+{
+	width: 100%;
+	flow-children: down;
+	margin: 4px 0px;
+}
+
+.StatsContainer .StatsContainerTitle
+{
+	color: TextColor;
+	font-size: 14px;
+	margin-bottom: 2px;
+	margin-top: 2px;
+}
+
+.StatsContainer .StatsGroupTitle
+{
+	font-family: titleFont;
+	font-size: 14px;
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+	color: TextColorLight;
+	font-weight: semi-bold;
+}
+
+.StatsContainer Label
+{
+	font-size: 16px;
+	color: TextColorDark;
+	text-shadow: 0px 1px 6px black;
+}
+
+.StatsContainer.Common
+{
+	padding: 0px 8px;
+}
+
+.StatsContainer.Specific
+{
+	background-color: rgba(0, 0, 0, 0.5);
+	border: 1px solid black;
+	padding: 4px 8px;
+}
+
+.StatsContainer.Callouts .CalloutRow
+{
+	width: 100%;
+	flow-children: right;
+	padding: 2px 8px;
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( TextColorDark&11 ), to( TextColorDark&00 ) );
+	margin: 1px 0px;
+}
+
+.StatsContainer.Callouts .CalloutRow Label
+{
+	margin-right: 4px;
+	color: TextColor;
+}
+
+.StatsContainer.Callouts .CalloutRow Label.Physical
+{
+	color: PhysicalDamageColor;
+}
+
+.StatsContainer.Callouts .CalloutRow Label.Pure
+{
+	color: PureDamageColor;
+}
+
+.StatsContainer.Callouts .CalloutRow Label.Green
+{
+	color: winnerGreenLow;
+}
+
+.StatsContainer.Callouts .CalloutRow Label.Red
+{
+	color: loserRed;
+}
+
+.StatsContainer.Callouts .CalloutRow.Physical
+{
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( PhysicalDamageColor&11 ), to( PhysicalDamageColor&00 ) );
+}
+
+.StatsContainer.Callouts .CalloutRow.Pure
+{
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( PureDamageColor&11 ), to( PureDamageColor&00 ) );
+}
+
+.StatsContainer.Modifiers .ModifierRow
+{
+	width: 100%;
+	flow-children: right;
+	padding: 2px 8px;
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( TextColorDark&11 ), to( TextColorDark&00 ) );
+	margin: 1px 0px;
+}
+
+.StatsContainer.Modifiers .ModifierRow Label
+{
+	margin-right: 4px;
+	color: TextColor;
+}
+
+.StatsContainer.Modifiers .ModifierRow Label.TalentTree
+{
+	color: #e7cc91bb;
+}
+
+.StatsContainer.Modifiers .ModifierRow Label.Aghanims
+{
+	color: #6D9ADB;
+}
+
+.StatsContainer.Modifiers .ModifierRow Label.Aghanims b
+{
+	color: TextColorLight;
+	font-weight: normal;
+}
+
+.StatsContainer.Modifiers .ModifierRow.TalentTree
+{
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( Gold2&11 ), to( Gold3&00 ) );
+}
+
+.StatsContainer.Modifiers .ModifierRow.TalentTree .TalentTreeLevelContainer
+{
+	flow-children: right;
+	background-color: black;
+	border: 1px solid rgba(255, 255, 255, 0.03);
+	border-radius: 80px;
+	padding: 1px;
+}
+
+.StatsContainer.Modifiers .ModifierRow.TalentTree .TalentTreeLevelContainer Label
+{
+	font-size: 13px;
+	line-height: 1;
+	color: #E7D291;
+	margin-right: 0px;
+	margin-left: 3px;
+	text-shadow: 0px 0px 6px #ec790e76;
+}
+
+.StatsContainer.Modifiers .ModifierRow.TalentTree .TalentTreeLevelContainer .TalentTreeIcon
+{
+	width: 16px;
+}
+
+.StatsContainer.Modifiers .ModifierRow.Aghanims
+{
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( #0073FF11 ), to( #338AF500 ) );
+}
+
+.StatsContainer.Modifiers .ModifierRow.Aghanims .AghanimsIcon
+{
+	width: 18px;
+	height: 18px;
+	background-size: contain;
+}
+
+.StatsContainer.Modifiers .ModifierRow.Aghanims.Shard.On .AghanimsIcon
+{
+	background-image: url("s2r://panorama/images/tooltips/shard_icon_on_png.vtex");
+}
+
+.StatsContainer.Modifiers .ModifierRow.Aghanims.Shard.Off .AghanimsIcon
+{
+	background-image: url("s2r://panorama/images/tooltips/shard_icon_off_png.vtex");
+}
+
+.StatsContainer.Modifiers .ModifierRow.Aghanims.Scepter.On .AghanimsIcon
+{
+	background-image: url("s2r://panorama/images/tooltips/scepter_icon_on_png.vtex");
+}
+
+.StatsContainer.Modifiers .ModifierRow.Aghanims.Scepter.Off .AghanimsIcon
+{
+	background-image: url("s2r://panorama/images/tooltips/scepter_icon_off_png.vtex");
+}
+
+.StatsContainer.Facet .FacetBackground
+{
+	ignore-parent-flow: true;
+	width: 100%;
+	height: 100%;
+	opacity: 0.15;
+	box-shadow: inset 0px 0px 0px 1px rgba(255, 255, 255, 0.02);
+	border-radius: 4px;
+}
+
+.StatsContainer.Facet .StatRow
+{
+	border-top: 1px solid rgba(211, 237, 255, 0.04);
+	margin: 0px 8px;
+}
+
+.StatsContainer.Facet .FacetContainer
+{
+	flow-children: down;
+	padding: 4px 8px;
+}
+
+.StatsContainer.Facet .FacetContainer .FacetTitleContainer
+{
+	flow-children: right;
+	margin: 4px 0px 2px;
+}
+
+.StatsContainer.Facet .FacetContainer .FacetTitleContainer .FacetIconContainer .FacetBackground
+{
+	opacity: 1;
+	border-radius: 3px;
+}
+
+.StatsContainer.Facet .FacetContainer .FacetTitleContainer .FacetTitle
+{
+	vertical-align: center;
+	font-family: titleFont;
+	text-transform: uppercase;
+	font-weight: semi-bold;
+	font-size: 12px;
+	letter-spacing: 1px;
+	color: whitesmoke;
+}
+
+.StatsContainer.Facet .FacetContainer .FacetDescription
+{
+	color: TextColor;
+	margin-bottom: 4px;
+}
+
+.StatsContainer.Facet .FacetContainer .FacetDescription b
+{
+	color: TextColorLight;
+	font-weight: semi-bold;
+}
+
+.StatsContainer.Facet .FacetContainer .FacetDescription em
+{
+	color: TextColorLight;
+}
+
+.StatsContainer.Facet .FacetContainer .StatRow .StatLabel
+{
+	color: TextColor;
+}
+
+.StatsContainer .Facet.StatRow
+{
+	border-top: 0px;
+	padding: 0px;
+}
+
+.StatsContainer .Facet.StatRow .FacetBackground
+{
+	ignore-parent-flow: true;
+	width: 100%;
+	height: 100%;
+	opacity: 0.15;
+	box-shadow: inset 0px 0px 0px 1px rgba(255, 255, 255, 0.02);
+	border-radius: 4px;
+}
+
+.StatsContainer .Facet.StatRow .FacetIconContainer
+{
+	margin: 2px;
+	margin-right: 6px;
+}
+
+.StatsContainer .Facet.StatRow .FacetIconContainer .FacetBackground
+{
+	opacity: 1;
+	border-radius: 3px;
+}
+
+.StatsContainer .Facet.StatRow Label
+{
+	vertical-align: center;
+}
+
+.StatsContainer .Facet.StatRow .StatLabel
+{
+	color: TextColor;
+}
+
+.StatsContainer .Facet.StatRow .StatValue
+{
+	margin-right: 8px;
+}
+
+.StatsContainer .StatRow
+{
+	width: 100%;
+	flow-children: right;
+	padding: 1px 0px;
+	border-top: 1px solid rgba(211, 237, 255, 0.02);
+	border-brush: gradient( linear, 0% 0%, 100% 0%, from( rgba(255, 255, 255, 0) ), to( white ) );
+}
+
+.StatsContainer .StatRow.FirstRow
+{
+	border-top: 0px;
+}
+
+.StatsContainer .StatRow.IsStatValueMagicalDamage .StatValue
+{
+	color: MagicalDamageColor;
+}
+
+.StatsContainer .StatRow .StatValue
+{
+	margin: 0px 2px;
+}
+
+.StatsContainer .StatRow .StatValue .StatDivider
+{
+	color: TextColorDark&66;
+}
+
+.StatsContainer .StatRow .AbilityCostIcon
+{
+	margin-left: 2px;
+}
+
+.TEMP_DetailsContainer
+{
+	border: 1px solid rgba(255, 0, 255, 0.8);
+	visibility: collapse;
+}
+
+.TEMP_DetailsContainer .TEMP_Title
+{
+	color: rgba(255, 0, 255, 0.8);
+	font-size: 14px;
+	margin: 12px 0px;
+	width: 100%;
+	text-align: right;
+	font-size: 12px;
+}
+
+.StatRow .AbilityCostIcon
+{
+	visibility: collapse;
+}
+
+.IsStatValueCooldown .AbilityCostIcon.Cooldown,.IsStatValueManaCost .AbilityCostIcon.ManaCost,.IsStatValueCastRange .AbilityCostIcon.CastRange,.IsStatValueAreaOfEffectRadius .AbilityCostIcon.AOE
+{
+	visibility: visible;
+}
+
+.IsStatValuePhysicalDamage .StatValue
+{
+	color: PhysicalDamageColor;
+}
+
+.AltDetailsIndicatorContainer
+{
+	padding: 3px 8px;
+	width: 100%;
+	border-top: 1px solid rgba(0, 0, 0, 0.6);
+	background-color: rgba(0, 0, 0, 0.5);
+	flow-children: left;
+}
+
+.AltDetailsIndicatorContainer .AltKeyIcon
+{
+	vertical-align: center;
+	width: 28px;
+	margin-left: 6px;
+}
+
+.AltDetailsIndicatorContainer Label
+{
+	font-size: 14px;
+	color: LightGrey;
+	vertical-align: center;
+	margin-bottom: 2px;
+}
+

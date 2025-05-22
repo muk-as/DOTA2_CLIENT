@@ -24,6 +24,11 @@ DOTAShopItem:not(.HasSuggestionPct) #ItemImage
 	margin-bottom: 1px;
 }
 
+.ItemSpecificBindContainer DOTAShopItem #ItemImage
+{
+	margin-bottom: 0px;
+}
+
 #QuickBuyRows #ItemImage
 {
 	box-shadow: fill #000000ff 1px 1px 6px 0px;
@@ -107,6 +112,24 @@ DOTAShopItem.DraggedShopItem #ItemImage,DOTAShopItem.DraggedShopItem #CanPurchas
 	visibility: collapse;
 }
 
+#ActionOverlay
+{
+	width: 100%;
+	height: width-percentage( 72.7% );
+	background-color: rgba(0, 0, 0, 0.6);
+	border-radius: 2px;
+	background-size: 12px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-image: url("s2r://panorama/images/control_icons/24px/x_close.vsvg");
+	visibility: collapse;
+}
+
+DOTAQuickBuy.CtrlPressed.ShiftPressed:hover .QuickBuyRow #ActionOverlay
+{
+	visibility: visible;
+}
+
 @keyframes 'ShadowPulse'
 {
 	0%
@@ -154,16 +177,6 @@ DOTAShopItem.DraggedShopItem #ItemImage,DOTAShopItem.DraggedShopItem #CanPurchas
 	visibility: collapse;
 }
 
-.MainShopItem.SuggestLiked
-{
-	border: 2px solid green;
-}
-
-.MainShopItem.SuggestDisliked
-{
-	border: 1px solid red;
-}
-
 .MainShopItem.AvailableAtOtherShop #CanPurchaseOverlay,.SecretShopItem.CanPurchase #CanPurchaseOverlay,.MainShopItem.CanPurchase #CanPurchaseOverlay,.MainShopItem.CanPurchaseAtSecretShop #CanPurchaseOverlay
 {
 	background-image: url("s2r://panorama/images/hud/shopborder_canpurchase_psd.vtex");
@@ -185,6 +198,11 @@ DOTAShopItem.DraggedShopItem #ItemImage,DOTAShopItem.DraggedShopItem #CanPurchas
 {
 	background-image: url("s2r://panorama/images/hud/shopborder_nosecret_psd.vtex");
 	visibility: visible;
+}
+
+.MarkForBuySecretShopItems .SecretShopItem.AvailableAtOtherShopSecretShop #CanPurchaseOverlay,.MarkForBuySecretShopItems .SecretShopItem.CanPurchaseAtSecretShop #CanPurchaseOverlay
+{
+	background-image: url("s2r://panorama/images/hud/shopborder_affordablesecretitem_psd.vtex");
 }
 
 #GridMainShop #AvailableAtOtherShopOverlay
@@ -270,7 +288,7 @@ DOTAShopItem.DraggedShopItem #ItemImage,DOTAShopItem.DraggedShopItem #CanPurchas
 	visibility: collapse;
 }
 
-.PlusSequence .Purchased,.PlusOtherOptions .Purchased,.PlusGuide .EquippedNeutral
+.PlusSequence .Purchased,.PlusOtherOptions .Purchased,.PlusGuide .EquippedNeutral,.PurchasedItem
 {
 	saturation: 0;
 	brightness: 0.5;
@@ -377,6 +395,12 @@ DOTAQuickBuy .ShowStockAmount #StockAmount
 	visibility: visible;
 }
 
+.IsSuggestionHighlighted:not(.Purchased) #SuggestionPct
+{
+	color: #FBBE1A;
+	font-weight: bold;
+}
+
 .ShowSequenceArrow #SequenceArrow
 {
 	visibility: visible;
@@ -386,12 +410,108 @@ DOTAQuickBuy .ShowStockAmount #StockAmount
 {
 	background-image: url("s2r://panorama/images/control_icons/arrow_solid_right_drop_png.vtex");
 	background-size: 100%;
-	width: 10px;
-	height: 12px;
+	width: 9px;
+	height: 11px;
 	margin-top: 9px;
-	margin-left: 40px;
-	margin-right: -8px;
+	margin-left: 41px;
+	margin-right: -7px;
 	wash-color: #b98d4a;
 	visibility: collapse;
+}
+
+#MarkForBuyIcon
+{
+	horizontal-align: left;
+	vertical-align: bottom;
+	width: 16px;
+	height: 16px;
+	visibility: collapse;
+	margin-bottom: 2px;
+	margin-left: 1px;
+	img-shadow: 2px 2px 10px 3.0 #000000FF;
+}
+
+.MarkedForBuy #MarkForBuyIcon
+{
+	visibility: visible;
+	animation-name: BubbleUp;
+	animation-duration: 0.3s;
+	animation-timing-function: ease-in;
+	animation-iteration-count: 1;
+}
+
+.MarkedForBuy #ItemImage
+{
+	animation-name: BubbleUp;
+	animation-duration: 0.3s;
+	animation-timing-function: ease-in;
+	animation-iteration-count: 1;
+}
+
+@keyframes 'BubbleUp'
+{
+	0%
+	{
+		pre-transform-scale2d: .8;
+	}
+	
+	50%
+	{
+		pre-transform-scale2d: 1.1;
+	}
+	
+	100%
+	{
+		pre-transform-scale2d: 1;
+	}
+	
+}
+
+DOTAQuickBuy DOTAShopItem.PurchasableAccum.MarkedForBuy
+{
+	animation-name: Pulsing;
+	animation-duration: 0.5s;
+	animation-iteration-count: infinite;
+}
+
+@keyframes 'Pulsing'
+{
+	0%
+	{
+		pre-transform-scale2d: 1;
+	}
+	
+	33%
+	{
+		pre-transform-scale2d: 0.97;
+	}
+	
+	66%
+	{
+		pre-transform-scale2d: 1.03;
+	}
+	
+	100%
+	{
+		pre-transform-scale2d: 1;
+	}
+	
+}
+
+#BuybackProtectedIcon
+{
+	horizontal-align: right;
+	vertical-align: top;
+	width: 16px;
+	height: 16px;
+	visibility: collapse;
+	margin-top: 1px;
+	margin-right: 1px;
+	img-shadow: 2px 2px 10px 3.0 #000000FF;
+}
+
+.BuybackProtected #BuybackProtectedIcon
+{
+	visibility: visible;
 }
 

@@ -109,7 +109,7 @@ DOTATierTreasureDetails
 	text-shadow: 0px 0px 12px rgba(255, 255, 255, 0.05);
 }
 
-.OwnsTreasures.OwnsKeys #TreasureDetails #TreasureDetailsContents #TreasureInfo #UnlockChestButton
+.RequiresKeys.OwnsTreasures.OwnsKeys #TreasureDetails #TreasureDetailsContents #TreasureInfo #UnlockChestButton,.OwnsTreasures:not(.RequiresKey) #TreasureDetails #TreasureDetailsContents #TreasureInfo #UnlockChestButton
 {
 	animation-name: GlowTreasureButtonPrimary;
 	animation-duration: 1s;
@@ -167,44 +167,45 @@ DOTATierTreasureDetails
 	margin: 4px 0px;
 }
 
-#TreasureDetails #TreasureDetailsContents .TreasureMarketPurchaseRow
+#TreasureDetails #TreasureDetailsContents .TreasurePurchaseRow
 {
 	margin-top: 8px;
-	visibility: collapse;
-}
-
-#TreasureDetails #TreasureDetailsContents .TreasureMarketPurchaseRow .BuyOnMarketLabel
-{
-	vertical-align: center;
-	margin-right: 8px;
-}
-
-.TreasureMarketAvailable #TreasureDetails #TreasureDetailsContents .TreasureMarketPurchaseRow
-{
-	visibility: visible;
-}
-
-.IsSteamChina #TreasureDetails #TreasureDetailsContents .TreasureMarketPurchaseRow
-{
-	visibility: collapse;
+	width: 240px;
 }
 
 #TreasureDetails #TreasureDetailsContents #TreasureImageContainer
 {
 	flow-children: down;
+	height: 100%;
+	margin-right: 24px;
 }
 
 #TreasureDetails #TreasureDetailsContents #TreasureImageContainer #TreasureImage
 {
-	width: 86px;
+	width: 128px;
 	height: width-percentage( 65% );
 	tooltip-position: left;
-	visibility: collapse;
+	vertical-align: middle;
 }
 
 #TreasureDetails #TreasureDetailsContents #KeyInfo
 {
 	visibility: collapse;
+}
+
+#TreasureDetails #TreasureDetailsContents #KeyInfo #KeyImageContainer
+{
+	flow-children: down;
+	height: 100%;
+	margin-right: 24px;
+}
+
+#TreasureDetails #TreasureDetailsContents #KeyInfo #KeyImageContainer #KeyImage
+{
+	width: 128px;
+	height: width-percentage( 65% );
+	tooltip-position: left;
+	vertical-align: middle;
 }
 
 .RequiresKey #TreasureDetails #TreasureDetailsContents #KeyInfo
@@ -246,28 +247,7 @@ DOTATierTreasureDetails
 #TreasureDetails #TreasureDetailsContents #KeyInfo .PurchaseSubRow
 {
 	margin-bottom: 8px;
-}
-
-#TreasureDetails #TreasureDetailsContents #KeyInfo .PurchaseSubRow #BuyKeyButton
-{
-	margin-right: 6px;
-	visibility: collapse;
-}
-
-.KeySteamPurchasable #TreasureDetails #TreasureDetailsContents #KeyInfo .PurchaseSubRow #BuyKeyButton
-{
-	visibility: visible;
-}
-
-#TreasureDetails #TreasureDetailsContents #KeyInfo .PurchaseSubRow #BuyKeyShardsButton
-{
-	margin-right: 6px;
-	visibility: collapse;
-}
-
-.KeyShardPurchasable #TreasureDetails #TreasureDetailsContents #KeyInfo .PurchaseSubRow #BuyKeyShardsButton
-{
-	visibility: visible;
+	width: 240px;
 }
 
 #TreasureDetails #TreasureDetailsContents .TradeUpInformationContainer
@@ -275,6 +255,12 @@ DOTATierTreasureDetails
 	width: 400px;
 	padding: 16px 0px;
 	flow-children: down;
+	visibility: collapse;
+}
+
+.IsTierTreasure #TreasureDetails #TreasureDetailsContents .TradeUpInformationContainer
+{
+	visibility: visible;
 }
 
 #TreasureDetails #TreasureDetailsContents .TradeUpInformationContainer .TradeUpInformationLabel
@@ -411,6 +397,22 @@ DOTATierTreasureDetails
 	
 }
 
+#TreasureGrantButton,#KeyGrantButton
+{
+	visibility: collapse;
+	margin-right: 4px;
+}
+
+.MainBranch #TreasureGrantButton
+{
+	visibility: visible;
+}
+
+.MainBranch .RequiresKey #KeyGrantButton
+{
+	visibility: visible;
+}
+
 .ItemInfoColumn
 {
 	vertical-align: top;
@@ -490,6 +492,31 @@ DOTATierTreasureDetails
 	border-left: 3px solid rgba(255, 255, 255, 0.8);
 }
 
+.Selected__TreasureItemRarity_Rare .ItemInfoColumn .ItemDetails
+{
+	border-brush: rareTextColor;
+}
+
+.Selected__TreasureItemRarity_VeryRare .ItemInfoColumn .ItemDetails
+{
+	border-brush: veryRareTextColor;
+}
+
+.Selected__TreasureItemRarity_ExtremelyRare .ItemInfoColumn .ItemDetails
+{
+	border-brush: extremelyRareTextColor;
+}
+
+.Selected__TreasureItemRarity_UltraRare .ItemInfoColumn .ItemDetails
+{
+	border-brush: ultraRareChanceTextColor;
+}
+
+.Selected__TreasureItemRarity_CosmicallyRare .ItemInfoColumn .ItemDetails
+{
+	border-brush: cosmicallyRareChanceTextColor;
+}
+
 .Selected__TreasureItemRarity_Crate_Tier1 .ItemInfoColumn .ItemDetails
 {
 	border-brush: CrateTierOne_textcolor;
@@ -510,7 +537,7 @@ DOTATierTreasureDetails
 	border-brush: CrateTierFour_textcolor;
 }
 
-.Selected__TreasureItemRarity_Crate_Tier5 .ItemInfoColumn .ItemDetails,.Selected__TreasureItemRarity_CosmicallyRare .ItemInfoColumn .ItemDetails
+.Selected__TreasureItemRarity_Crate_Tier5 .ItemInfoColumn .ItemDetails
 {
 	border-brush: CrateTierFive_textcolor;
 }
@@ -527,6 +554,7 @@ DOTATierTreasureDetails
 	padding-bottom: 12px;
 	margin-bottom: 12px;
 	border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+	flow-children: right;
 }
 
 .ItemInfoColumn .ItemDetails .ItemDetailsHeader .CurrentItemTierLabel
@@ -534,6 +562,31 @@ DOTATierTreasureDetails
 	vertical-align: center;
 	text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.3);
 	brightness: 1.2;
+}
+
+.Selected__TreasureItemRarity_Rare .ItemInfoColumn .ItemDetails .ItemDetailsHeader .CurrentItemTierLabel
+{
+	color: rareTextColor;
+}
+
+.Selected__TreasureItemRarity_VeryRare .ItemInfoColumn .ItemDetails .ItemDetailsHeader .CurrentItemTierLabel
+{
+	color: veryRareTextColor;
+}
+
+.Selected__TreasureItemRarity_ExtremelyRare .ItemInfoColumn .ItemDetails .ItemDetailsHeader .CurrentItemTierLabel
+{
+	color: extremelyRareTextColor;
+}
+
+.Selected__TreasureItemRarity_UltraRare .ItemInfoColumn .ItemDetails .ItemDetailsHeader .CurrentItemTierLabel
+{
+	color: ultraRareChanceTextColor;
+}
+
+.Selected__TreasureItemRarity_CosmicallyRare .ItemInfoColumn .ItemDetails .ItemDetailsHeader .CurrentItemTierLabel
+{
+	color: cosmicallyRareChanceTextColor;
 }
 
 .Selected__TreasureItemRarity_Crate_Tier1 .ItemInfoColumn .ItemDetails .ItemDetailsHeader .CurrentItemTierLabel
@@ -556,9 +609,14 @@ DOTATierTreasureDetails
 	color: CrateTierFour_textcolor;
 }
 
-.Selected__TreasureItemRarity_Crate_Tier5 .ItemInfoColumn .ItemDetails .ItemDetailsHeader .CurrentItemTierLabel,.Selected__TreasureItemRarity_CosmicallyRare .ItemInfoColumn .ItemDetails .ItemDetailsHeader .CurrentItemTierLabel
+.Selected__TreasureItemRarity_Crate_Tier5 .ItemInfoColumn .ItemDetails .ItemDetailsHeader .CurrentItemTierLabel
 {
 	color: CrateTierFive_textcolor;
+}
+
+.ItemInfoColumn .ItemDetails .ItemDetailsHeader .EscalatingChance
+{
+	vertical-align: middle;
 }
 
 .ItemInfoColumn .ItemDetails .ItemDetailsHeader #ItemTradeUpContainer
@@ -617,6 +675,31 @@ DOTATierTreasureDetails
 	margin-bottom: 2px;
 }
 
+.Selected__TreasureItemRarity_Rare .ItemInfoColumn .ItemDetails .ItemDetailsContainer .ItemNameContainer .UnitName
+{
+	color: rareTextColor;
+}
+
+.Selected__TreasureItemRarity_VeryRare .ItemInfoColumn .ItemDetails .ItemDetailsContainer .ItemNameContainer .UnitName
+{
+	color: veryRareTextColor;
+}
+
+.Selected__TreasureItemRarity_ExtremelyRare .ItemInfoColumn .ItemDetails .ItemDetailsContainer .ItemNameContainer .UnitName
+{
+	color: extremelyRareTextColor;
+}
+
+.Selected__TreasureItemRarity_UltraRare .ItemInfoColumn .ItemDetails .ItemDetailsContainer .ItemNameContainer .UnitName
+{
+	color: ultraRareChanceTextColor;
+}
+
+.Selected__TreasureItemRarity_CosmicallyRare .ItemInfoColumn .ItemDetails .ItemDetailsContainer .ItemNameContainer .UnitName
+{
+	color: cosmicallyRareChanceTextColor;
+}
+
 .Selected__TreasureItemRarity_Crate_Tier1 .ItemInfoColumn .ItemDetails .ItemDetailsContainer .ItemNameContainer .UnitName
 {
 	color: CrateTierOne_textcolor;
@@ -637,7 +720,7 @@ DOTATierTreasureDetails
 	color: CrateTierFour_textcolor;
 }
 
-.Selected__TreasureItemRarity_Crate_Tier5 .ItemInfoColumn .ItemDetails .ItemDetailsContainer .ItemNameContainer .UnitName,.Selected__TreasureItemRarity_CosmicallyRare .ItemInfoColumn .ItemDetails .ItemDetailsContainer .ItemNameContainer .UnitName
+.Selected__TreasureItemRarity_Crate_Tier5 .ItemInfoColumn .ItemDetails .ItemDetailsContainer .ItemNameContainer .UnitName
 {
 	color: CrateTierFive_textcolor;
 }
@@ -652,6 +735,31 @@ DOTATierTreasureDetails
 	line-height: 112%;
 	color: white;
 	margin-bottom: 2px;
+}
+
+.Selected__TreasureItemRarity_Rare .ItemInfoColumn .ItemDetails .ItemDetailsContainer .ItemNameContainer .ItemName
+{
+	text-shadow: 0px 0px 12px 1.8 rareTextColor&44;
+}
+
+.Selected__TreasureItemRarity_VeryRare .ItemInfoColumn .ItemDetails .ItemDetailsContainer .ItemNameContainer .ItemName
+{
+	text-shadow: 0px 0px 12px 1.8 veryRareTextColor&44;
+}
+
+.Selected__TreasureItemRarity_ExtremelyRare .ItemInfoColumn .ItemDetails .ItemDetailsContainer .ItemNameContainer .ItemName
+{
+	text-shadow: 0px 0px 12px 1.8 extremelyRareTextColor&44;
+}
+
+.Selected__TreasureItemRarity_UltraRare .ItemInfoColumn .ItemDetails .ItemDetailsContainer .ItemNameContainer .ItemName
+{
+	text-shadow: 0px 0px 12px 1.8 ultraRareChanceTextColor&44;
+}
+
+.Selected__TreasureItemRarity_CosmicallyRare .ItemInfoColumn .ItemDetails .ItemDetailsContainer .ItemNameContainer .ItemName
+{
+	text-shadow: 0px 0px 12px 1.8 cosmicallyRareChanceTextColor&44;
 }
 
 .Selected__TreasureItemRarity_Crate_Tier1 .ItemInfoColumn .ItemDetails .ItemDetailsContainer .ItemNameContainer .ItemName
@@ -674,7 +782,7 @@ DOTATierTreasureDetails
 	text-shadow: 0px 0px 12px 1.8 CrateTierFour_bgcolor&44;
 }
 
-.Selected__TreasureItemRarity_Crate_Tier5 .ItemInfoColumn .ItemDetails .ItemDetailsContainer .ItemNameContainer .ItemName,.Selected__TreasureItemRarity_CosmicallyRare .ItemInfoColumn .ItemDetails .ItemDetailsContainer .ItemNameContainer .ItemName
+.Selected__TreasureItemRarity_Crate_Tier5 .ItemInfoColumn .ItemDetails .ItemDetailsContainer .ItemNameContainer .ItemName
 {
 	text-shadow: 0px 0px 12px 1.8 CrateTierFive_bgcolor&44;
 }
@@ -945,19 +1053,6 @@ DOTATierTreasureDetails
 	opacity: 0;
 }
 
-.OpeningAny.OpeningFinished #TreasureItemPreviewContainer
-{
-	opacity: 1.0;
-}
-
-.OpeningFinished #TreasureItemPreviewContainer
-{
-	transform: translateY(-100px) scale3d(1.1, 1.1, 1);
-	transition-duration: 0.2s;
-	transition-timing-function: ease-in;
-	transition-delay: 0s, 0.2s;
-}
-
 .TreasureHexFocused #TreasureItemPreviewContainer
 {
 	opacity: 0;
@@ -1045,7 +1140,6 @@ DOTATierTreasureDetails
 	padding-bottom: 130px;
 	transition-property: opacity;
 	transition-duration: 0.25s;
-	opacity-mask: url("s2r://panorama/images/masks/softeredge_horizontal_png.vtex");
 }
 
 .OpeningFailed #TreasureContentsContainer
@@ -1060,9 +1154,9 @@ DOTATierTreasureDetails
 
 #TreasureContentsContainer #TreasureContents
 {
+	horizontal-align: center;
 	vertical-align: bottom;
 	flow-children: right;
-	width: 100%;
 	margin-bottom: 8px;
 }
 
@@ -1090,6 +1184,16 @@ DOTATierTreasureDetails
 	transition-duration: 0.3s;
 	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
 	transition-delay: 0.3s;
+}
+
+.TreasureContentsCarouselWrap #TreasureContentsContainer
+{
+	opacity-mask: url("s2r://panorama/images/masks/softeredge_horizontal_png.vtex");
+}
+
+.TreasureContentsCarouselWrap #TreasureContentsContainer #TreasureContents
+{
+	width: 100%;
 }
 
 .ChestHex
@@ -1144,9 +1248,20 @@ DOTATierTreasureDetails
 
 .TreasureItem #TreasureItemEconImage
 {
+	width: 125px;
+	height: width-percentage( 65% );
+	margin-top: 20px;
 	vertical-align: center;
 	horizontal-align: center;
-	visibility: collapse;
+	transition-property: brightness, opacity, saturation, blur;
+	blur: gaussian( 0, 0, 0 );
+	transition-duration: 0.35s;
+	brightness: 1;
+}
+
+.TreasureItem #TreasureItemEconImage:hover
+{
+	brightness: 1.8;
 }
 
 .TreasureItem #TreasureItemPreview
@@ -1333,6 +1448,36 @@ DOTATierTreasureDetails
 	text-shadow: 0px 2px 6px 2 black;
 }
 
+.TreasureItemRarity_Default #TreasureItemRarityHex .RarityLabel
+{
+	visibility: collapse;
+}
+
+.TreasureItemRarity_Rare #TreasureItemRarityHex .RarityLabel
+{
+	color: rareTextColor;
+}
+
+.TreasureItemRarity_VeryRare #TreasureItemRarityHex .RarityLabel
+{
+	color: veryRareTextColor;
+}
+
+.TreasureItemRarity_ExtremelyRare #TreasureItemRarityHex .RarityLabel
+{
+	color: extremelyRareTextColor;
+}
+
+.TreasureItemRarity_UltraRare #TreasureItemRarityHex .RarityLabel
+{
+	color: ultraRareChanceTextColor;
+}
+
+.TreasureItemRarity_CosmicallyRare #TreasureItemRarityHex .RarityLabel
+{
+	color: cosmicallyRareChanceTextColor;
+}
+
 .TreasureItemRarity_Crate_Tier1 #TreasureItemRarityHex .RarityLabel
 {
 	color: CrateTierOne_textcolor;
@@ -1353,7 +1498,7 @@ DOTATierTreasureDetails
 	color: CrateTierFour_textcolor;
 }
 
-.TreasureItemRarity_Crate_Tier5 #TreasureItemRarityHex .RarityLabel,.TreasureItemRarity_CosmicallyRare #TreasureItemRarityHex .RarityLabel
+.TreasureItemRarity_Crate_Tier5 #TreasureItemRarityHex .RarityLabel
 {
 	color: CrateTierFive_textcolor;
 }
@@ -1365,6 +1510,36 @@ DOTATierTreasureDetails
 	vertical-align: bottom;
 	margin-bottom: 10px;
 	opacity: 0.2;
+}
+
+.TreasureItemRarity_Default #TreasureItemRarityHex .RarityDash
+{
+	visibility: collapse;
+}
+
+.TreasureItemRarity_Rare #TreasureItemRarityHex .RarityDash
+{
+	background-color: rareTextColor;
+}
+
+.TreasureItemRarity_VeryRare #TreasureItemRarityHex .RarityDash
+{
+	background-color: veryRareTextColor;
+}
+
+.TreasureItemRarity_ExtremelyRare #TreasureItemRarityHex .RarityDash
+{
+	background-color: extremelyRareTextColor;
+}
+
+.TreasureItemRarity_UltraRare #TreasureItemRarityHex .RarityDash
+{
+	background-color: ultraRareChanceTextColor;
+}
+
+.TreasureItemRarity_CosmicallyRare #TreasureItemRarityHex .RarityDash
+{
+	background-color: cosmicallyRareChanceTextColor;
 }
 
 .TreasureItemRarity_Crate_Tier1 #TreasureItemRarityHex .RarityDash
@@ -1387,7 +1562,7 @@ DOTATierTreasureDetails
 	background-color: CrateTierFour_textcolor;
 }
 
-.TreasureItemRarity_Crate_Tier5 #TreasureItemRarityHex .RarityDash,.TreasureItemRarity_CosmicallyRare #TreasureItemRarityHex .RarityDash
+.TreasureItemRarity_Crate_Tier5 #TreasureItemRarityHex .RarityDash
 {
 	background-color: CrateTierFive_textcolor;
 }
@@ -1424,6 +1599,31 @@ DOTATierTreasureDetails
 	visibility: visible;
 }
 
+.TreasureItemRarity_Rare #TreasureItemSubtext #TreasureItemImmortal
+{
+	color: rareTextColor;
+}
+
+.TreasureItemRarity_VeryRare #TreasureItemSubtext #TreasureItemImmortal
+{
+	color: veryRareTextColor;
+}
+
+.TreasureItemRarity_ExtremelyRare #TreasureItemSubtext #TreasureItemImmortal
+{
+	color: extremelyRareTextColor;
+}
+
+.TreasureItemRarity_UltraRare #TreasureItemSubtext #TreasureItemImmortal
+{
+	color: ultraRareChanceTextColor;
+}
+
+.TreasureItemRarity_CosmicallyRare #TreasureItemSubtext #TreasureItemImmortal
+{
+	color: cosmicallyRareChanceTextColor;
+}
+
 .TreasureItemRarity_Crate_Tier1 #TreasureItemSubtext #TreasureItemImmortal
 {
 	color: CrateTierOne_textcolor;
@@ -1444,7 +1644,7 @@ DOTATierTreasureDetails
 	color: CrateTierFour_textcolor;
 }
 
-.TreasureItemRarity_Crate_Tier5 #TreasureItemSubtext #TreasureItemImmortal,.TreasureItemRarity_CosmicallyRare #TreasureItemSubtext #TreasureItemImmortal
+.TreasureItemRarity_Crate_Tier5 #TreasureItemSubtext #TreasureItemImmortal
 {
 	color: CrateTierFive_textcolor;
 }
@@ -1471,6 +1671,31 @@ DOTATierTreasureDetails
 	visibility: visible;
 }
 
+.TreasureItemRarity_Rare #TreasureItemSubtext #TreasureItemSet
+{
+	color: rareTextColor;
+}
+
+.TreasureItemRarity_VeryRare #TreasureItemSubtext #TreasureItemSet
+{
+	color: veryRareTextColor;
+}
+
+.TreasureItemRarity_ExtremelyRare #TreasureItemSubtext #TreasureItemSet
+{
+	color: extremelyRareTextColor;
+}
+
+.TreasureItemRarity_UltraRare #TreasureItemSubtext #TreasureItemSet
+{
+	color: ultraRareChanceTextColor;
+}
+
+.TreasureItemRarity_CosmicallyRare #TreasureItemSubtext #TreasureItemSet
+{
+	color: cosmicallyRareChanceTextColor;
+}
+
 .TreasureItemRarity_Crate_Tier1 #TreasureItemSubtext #TreasureItemSet
 {
 	color: CrateTierOne_textcolor;
@@ -1491,7 +1716,7 @@ DOTATierTreasureDetails
 	color: CrateTierFour_textcolor;
 }
 
-.TreasureItemRarity_Crate_Tier5 #TreasureItemSubtext #TreasureItemSet,.TreasureItemRarity_CosmicallyRare #TreasureItemSubtext #TreasureItemSet
+.TreasureItemRarity_Crate_Tier5 #TreasureItemSubtext #TreasureItemSet
 {
 	color: CrateTierFive_textcolor;
 }
@@ -1499,6 +1724,31 @@ DOTATierTreasureDetails
 #TreasureItemSubtext #TreasureItemArcanaPersona
 {
 	font-size: 14px;
+}
+
+.TreasureItemRarity_Rare #TreasureItemSubtext #TreasureItemArcanaPersona
+{
+	color: rareTextColor;
+}
+
+.TreasureItemRarity_VeryRare #TreasureItemSubtext #TreasureItemArcanaPersona
+{
+	color: veryRareTextColor;
+}
+
+.TreasureItemRarity_ExtremelyRare #TreasureItemSubtext #TreasureItemArcanaPersona
+{
+	color: extremelyRareTextColor;
+}
+
+.TreasureItemRarity_UltraRare #TreasureItemSubtext #TreasureItemArcanaPersona
+{
+	color: ultraRareChanceTextColor;
+}
+
+.TreasureItemRarity_CosmicallyRare #TreasureItemSubtext #TreasureItemArcanaPersona
+{
+	color: cosmicallyRareChanceTextColor;
 }
 
 .TreasureItemRarity_Crate_Tier1 #TreasureItemSubtext #TreasureItemArcanaPersona
@@ -1521,7 +1771,7 @@ DOTATierTreasureDetails
 	color: CrateTierFour_textcolor;
 }
 
-.TreasureItemRarity_Crate_Tier5 #TreasureItemSubtext #TreasureItemArcanaPersona,.TreasureItemRarity_CosmicallyRare #TreasureItemSubtext #TreasureItemArcanaPersona
+.TreasureItemRarity_Crate_Tier5 #TreasureItemSubtext #TreasureItemArcanaPersona
 {
 	color: CrateTierFive_textcolor;
 }
@@ -1533,6 +1783,7 @@ DOTATierTreasureDetails
 	vertical-align: bottom;
 	horizontal-align: center;
 	margin-bottom: 272px;
+	visibility: collapse;
 	transition-property: opacity, transform;
 	transition-duration: 0.2s;
 	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
@@ -1548,6 +1799,169 @@ DOTATierTreasureDetails
 #TreasureContentsPagination #NextItemButton
 {
 	horizontal-align: right;
+}
+
+.TreasureContentsCarouselWrap #TreasureContentsPagination
+{
+	visibility: visible;
+}
+
+#TreasureRewardsContainer
+{
+	flow-children: none;
+	vertical-align: middle;
+	width: 100%;
+	padding-bottom: 130px;
+	transition-property: opacity;
+	transition-duration: 0.25s;
+	visibility: collapse;
+}
+
+#TreasureRewardsContainer #TreasureRewards
+{
+	horizontal-align: center;
+	vertical-align: middle;
+	flow-children: right;
+	margin-bottom: 8px;
+}
+
+.OpeningFinished #TreasureRewardsContainer
+{
+	visibility: visible;
+}
+
+.TreasureReward
+{
+	width: 1920px;
+	height: 1080px;
+	overflow: noclip;
+	vertical-align: middle;
+	opacity: 1;
+	transition-property: position, pre-transform-scale2d, transform, brightness, opacity;
+	transition-duration: 0.2s;
+	transition-timing-function: cubic-bezier(0, 0.9, 0, 0.9);
+}
+
+.TreasureReward #TreasureRewardPreview
+{
+	width: 1920px;
+	height: 1080px;
+	vertical-align: bottom;
+	transition-property: transform, brightness;
+	transition-duration: 0.5s;
+	transition-timing-function: cubic-bezier(0, 1, 0, 1);
+	transform: scale3d( 0.8, 0.8, 0) translateY( 0px );
+}
+
+.TreasureReward .ItemShadow
+{
+	width: 70%;
+	height: 24px;
+	vertical-align: bottom;
+	horizontal-align: center;
+	margin-bottom: 20px;
+	blur: gaussian( 4px );
+	background-color: gradient( radial, 50% 50%, 0% 0%, 40% 40%, from( rgba(0, 0, 0, 0.8) ), to( rgba(0, 0, 0, 0) ) );
+	margin-bottom: 40px;
+}
+
+.TreasureReward .ItemGlow
+{
+	width: 100%;
+	margin: 0px 76px 10px 76px;
+	height: 50%;
+	vertical-align: bottom;
+	margin-bottom: 30px;
+}
+
+.TreasureReward.TreasureItemRarity_Crate_Tier2 .ItemGlow
+{
+	background-color: gradient( linear, 0% 100%, 0% 50%, from ( #86EA6308 ), color-stop( 0.3, #86EA6304 ), to(#00AD6F00) );
+}
+
+.TreasureReward.TreasureItemRarity_Crate_Tier3 .ItemGlow
+{
+	background-color: gradient( linear, 0% 100%, 0% 50%, from ( #70E5FF08 ), color-stop( 0.3, #70E5FF04 ), to(#0EA1F300) );
+}
+
+.TreasureReward.TreasureItemRarity_Crate_Tier4 .ItemGlow
+{
+	background-color: gradient( linear, 0% 100%, 0% 50%, from ( #cd70ff08 ), color-stop( 0.3, #cd70ff04 ), to(#a600ff00) );
+}
+
+.TreasureReward.TreasureItemRarity_Crate_Tier5 .ItemGlow,.TreasureReward.TreasureItemRarity_CosmicallyRare .ItemGlow
+{
+	background-color: gradient( linear, 0% 100%, 0% 50%, from ( #FFC06208 ), color-stop( 0.3, #FFC06204 ), to(#FFC06200) );
+}
+
+.TreasureReward .ItemBackdrop
+{
+	width: 100%;
+	margin: 0px 76px 10px 76px;
+	height: 100%;
+	vertical-align: bottom;
+	margin-bottom: 30px;
+	visibility: collapse;
+}
+
+.TreasureReward .ItemBackdrop #ItemBackdropParticles
+{
+	width: 100%;
+	height: 100%;
+}
+
+.TreasureReward.ContainsImmortal .ItemBackdrop
+{
+	visibility: visible;
+}
+
+.TreasureReward.Focused #TreasureItemPreview
+{
+	transform: scale3d( 1, 1, 1) translateY( -16px );
+}
+
+.TreasureReward:hover
+{
+	brightness: 1.5;
+}
+
+#TreasureRewardsPagination
+{
+	flow-children: right;
+	width: 200px;
+	vertical-align: bottom;
+	horizontal-align: center;
+	margin-bottom: 150px;
+	visibility: collapse;
+}
+
+#TreasureRewardsPagination #NextRewardButton
+{
+	horizontal-align: right;
+}
+
+.GotMultipleTreasureRewards #TreasureRewardsPagination
+{
+	visibility: visible;
+}
+
+#TreasureRewardsCount
+{
+	vertical-align: middle;
+	width: fill-parent-flow( 1.0 );
+	text-align: center;
+	font-size: 20px;
+}
+
+#OpenAnotherButton
+{
+	margin-right: 12px;
+	visibility: collapse;
+}
+
+.OpeningFinished.OwnsTreasures #OpenAnotherButton
+{
+	visibility: visible;
 }
 
 #TreasureItemPreviewMovieContainer
@@ -1629,6 +2043,36 @@ DOTATierTreasureDetails
 	visibility: visible;
 }
 
+.Selected__TreasureItemRarity_Rare #TreasureOpeningBurst,.Selected__TreasureItemRarity_Rare #TreasureOpeningSparkles
+{
+	saturation: rareSaturation;
+	hue-rotation: rareHueRotation;
+}
+
+.Selected__TreasureItemRarity_VeryRare #TreasureOpeningBurst,.Selected__TreasureItemRarity_VeryRare #TreasureOpeningSparkles
+{
+	saturation: veryRareSaturation;
+	hue-rotation: veryRareHueRotation;
+}
+
+.Selected__TreasureItemRarity_ExtremelyRare #TreasureOpeningBurst,.Selected__TreasureItemRarity_ExtremelyRare #TreasureOpeningSparkles
+{
+	saturation: extremelyRareSaturation;
+	hue-rotation: extremelyRareHueRotation;
+}
+
+.Selected__TreasureItemRarity_UltraRare #TreasureOpeningBurst,.Selected__TreasureItemRarity_UltraRare #TreasureOpeningSparkles
+{
+	saturation: ultraRareChanceSaturation;
+	hue-rotation: ultraRareChanceHueRotation;
+}
+
+.Selected__TreasureItemRarity_CosmicallyRare #TreasureOpeningBurst,.Selected__TreasureItemRarity_CosmicallyRare #TreasureOpeningSparkles
+{
+	saturation: cosmicallyRareChanceSaturation;
+	hue-rotation: cosmicallyRareChanceHueRotation;
+}
+
 .Selected__TreasureItemRarity_Crate_Tier1 #TreasureOpeningBurst,.Selected__TreasureItemRarity_Crate_Tier1 #TreasureOpeningSparkles
 {
 	saturation: .5;
@@ -1653,7 +2097,7 @@ DOTATierTreasureDetails
 	hue-rotation: 170deg;
 }
 
-.Selected__TreasureItemRarity_Crate_Tier5 #TreasureOpeningBurst,.Selected__TreasureItemRarity_CosmicallyRare #TreasureOpeningBurst,.Selected__TreasureItemRarity_Crate_Tier5 #TreasureOpeningSparkles,.Selected__TreasureItemRarity_CosmicallyRare #TreasureOpeningSparkles
+.Selected__TreasureItemRarity_Crate_Tier5 #TreasureOpeningBurst,.Selected__TreasureItemRarity_Crate_Tier5 #TreasureOpeningSparkles
 {
 	saturation: 1;
 	hue-rotation: 270deg;
@@ -1752,5 +2196,283 @@ DOTATierTreasureDetails
 .Hidden
 {
 	visibility: collapse;
+}
+
+.RequiresKeyOnly
+{
+	visibility: collapse;
+}
+
+.RequiresKey .RequiresKeyOnly
+{
+	visibility: visible;
+}
+
+#RecycleButton.StartRecyclingButton
+{
+	margin-left: 18px;
+	visibility: collapse;
+}
+
+.TreasureRecyclingEnabled #RecycleButton.StartRecyclingButton
+{
+	visibility: visible;
+}
+
+#TreasureHelp
+{
+	flow-children: down;
+	background-color: #000000f6;
+	padding-bottom: 1px;
+	width: 460px;
+	opacity: 0;
+	max-height: 100%;
+	transition-property: opacity, max-height;
+	transition-duration: 0.1s;
+	transition-timing-function: ease-in-out;
+	horizontal-align: right;
+	vertical-align: bottom;
+	margin-bottom: 500px;
+	margin-right: PageEdgeMargin;
+}
+
+.TreasureHexFocused:not(.IsTierTreasure) #TreasureHelp
+{
+	opacity: 1;
+}
+
+#TreasureHelpHeaderPW,#TreasureHelpHeaderPWNotPurchasable,#TreasureHelpRareItemsPW,#TreasureHelpHeaderPWZoomedOut,#TreasureHelpHeaderPWZoomedOutPlural,.NotSelectedPeek.IsPeekable #TreasureHelpHeaderPW,.NotSelectedPeek.IsPeekable #TreasureHelpRareItemsPW
+{
+	visibility: collapse;
+}
+
+.IsZoomedOutPeekable:not(.PeekablePlural) #TreasureHelpHeaderPWZoomedOut
+{
+	visibility: visible;
+}
+
+.IsZoomedOutPeekable.PeekablePlural #TreasureHelpHeaderPWZoomedOutPlural
+{
+	visibility: visible;
+}
+
+.IsPeekable.IsZoomedOutPeekable #TreasureHelpHeaderPW,.IsPeekable.IsZoomedOutPeekable.PeekablePlural #TreasureHelpHeaderPW
+{
+	visibility: collapse;
+}
+
+.IsPeekable #TreasureHelpHeaderPW,.IsPeekable #TreasureHelpRareItemsPW
+{
+	visibility: visible;
+}
+
+.NotSelectedPeek #TreasureHelpHeaderPWNotPurchasable
+{
+	visibility: visible;
+}
+
+.IsPeekable #TreasureHelpHeader,.IsPeekable.HasRareItems #TreasureHelpRareItems
+{
+	visibility: collapse;
+}
+
+#TreasureHelpHeaderRow
+{
+	flow-children: right;
+	width: 100%;
+}
+
+#TreasureHelpHeaderContent
+{
+	flow-children: down;
+}
+
+#TreasureHelpIcon
+{
+	width: 16px;
+	height: 16px;
+	margin: 0px 12px;
+	margin-top: 4px;
+	vertical-align: middle;
+	opacity: 4;
+	wash-color: #18386e;
+	border-radius: 50%;
+}
+
+#TreasureHelpIcon Label
+{
+	font-weight: bold;
+	font-size: 16px;
+	margin-top: 2px;
+	color: white;
+	horizontal-align: center;
+	vertical-align: center;
+	text-align: center;
+}
+
+#TreasureHelpHeader,#TreasureHelpHeaderPW,#TreasureHelpHeaderPWNotPurchasable,#TreasureHelpHeaderPWZoomedOut,#TreasureHelpHeaderPWZoomedOutPlural,#TreasureHelpHeaderUnusuals
+{
+	margin: 8px 8px 4px 0px;
+	color: #cccccc;
+	text-transform: uppercase;
+	vertical-align: middle;
+}
+
+#TreasureHelpHeaderUnusuals
+{
+	visibility: collapse;
+}
+
+.HasUnusualItems #TreasureHelpHeaderUnusuals
+{
+	visibility: visible;
+}
+
+.ItemName
+{
+	color: #AAA;
+}
+
+#TreasureHelpDetails
+{
+	margin-left: 36px;
+	margin-bottom: 8px;
+	width: 390px;
+	flow-children: down;
+	visibility: collapse;
+}
+
+#TreasureHelp:hover #TreasureHelpDetails,.IsPeekable #TreasureHelpDetails
+{
+	visibility: visible;
+}
+
+#TreasureHelpDetails Label
+{
+	color: #666666;
+	font-size: 16px;
+}
+
+#TreasureHelpRareItems
+{
+	margin-top: 10px;
+	visibility: collapse;
+}
+
+.HasRareItems #TreasureHelpRareItems
+{
+	visibility: visible;
+}
+
+#TreasureHelpUnusualItems
+{
+	margin-top: 10px;
+	visibility: collapse;
+}
+
+.HasUnusualItems #TreasureHelpUnusualItems
+{
+	visibility: visible;
+}
+
+.EscalatingChancesPopupIcon,.EscalatingChancesIcon
+{
+	width: 20px;
+	height: 20px;
+	background-image: url("s2r://panorama/images/control_icons/escalation_arrow_psd.vtex");
+	background-size: contain;
+	margin: 2px;
+	vertical-align: center;
+	visibility: collapse;
+	tooltip-position: top;
+}
+
+.TreasureItemHasEscalatingChance .EscalatingChancesIcon
+{
+	visibility: visible;
+}
+
+.ShowEscalatingChancesPopup .EscalatingChancesPopupIcon
+{
+	visibility: visible;
+}
+
+.ShowEscalatingChancesPopup .EscalatingChancesIcon
+{
+	visibility: collapse;
+}
+
+.EscalatingChancesPopupIcon
+{
+	visibility: collapse;
+	pre-transform-scale2d: 1.0;
+	transition-property: pre-transform-scale2d;
+	transition-duration: 0.2s;
+}
+
+.EscalatingChancesPopupIcon:hover
+{
+	pre-transform-scale2d: 1.2;
+	brightness: 1.4;
+}
+
+.TreasureItemRarity_Uncommon .EscalatingChancesPopupIcon,.Selected__TreasureItemRarity_Uncommon .EscalatingChancesPopupIcon
+{
+	wash-color: uncommonEscalatingChanceIconColor;
+}
+
+.TreasureItemRarity_Rare .EscalatingChancesPopupIcon,.Selected__TreasureItemRarity_Rare .EscalatingChancesPopupIcon
+{
+	wash-color: rareEscalatingChanceIconColor;
+}
+
+.TreasureItemRarity_VeryRare .EscalatingChancesPopupIcon,.Selected__TreasureItemRarity_VeryRare .EscalatingChancesPopupIcon
+{
+	wash-color: veryRareEscalatingChanceIconColor;
+}
+
+.TreasureItemRarity_ExtremelyRare .EscalatingChancesPopupIcon,.Selected__TreasureItemRarity_ExtremelyRare .EscalatingChancesPopupIcon
+{
+	wash-color: extremelyRareEscalatingChanceIconColor;
+}
+
+.TreasureItemRarity_UltraRare .EscalatingChancesPopupIcon,.Selected__TreasureItemRarity_UltraRare .EscalatingChancesPopupIcon
+{
+	wash-color: ultraRareEscalatingChanceIconColor;
+}
+
+.TreasureItemRarity_CosmicallyRare .EscalatingChancesPopupIcon,.Selected__TreasureItemRarity_CosmicallyRare .EscalatingChancesPopupIcon
+{
+	wash-color: cosmicallyRareEscalatingChanceIconColor;
+}
+
+.TreasureItemRarity_Uncommon .EscalatingChancesIcon
+{
+	wash-color: uncommonEscalatingChanceIconColor;
+}
+
+.TreasureItemRarity_Rare .EscalatingChancesIcon
+{
+	wash-color: rareEscalatingChanceIconColor;
+}
+
+.TreasureItemRarity_VeryRare .EscalatingChancesIcon
+{
+	wash-color: veryRareEscalatingChanceIconColor;
+}
+
+.TreasureItemRarity_ExtremelyRare .EscalatingChancesIcon
+{
+	wash-color: extremelyRareEscalatingChanceIconColor;
+}
+
+.TreasureItemRarity_UltraRare .EscalatingChancesIcon
+{
+	wash-color: ultraRareEscalatingChanceIconColor;
+}
+
+.TreasureItemRarity_CosmicallyRare .EscalatingChancesIcon
+{
+	wash-color: cosmicallyRareEscalatingChanceIconColor;
 }
 

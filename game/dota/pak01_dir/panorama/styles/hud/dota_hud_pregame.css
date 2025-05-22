@@ -173,7 +173,7 @@ DOTAHudPreGame.EndPregameIntro.PregameIsPlayerDraft:not(.StrategyVisible) .ShowT
 {
 	width: 100%;
 	overflow: noclip;
-	margin-top: 70px;
+	margin-top: 64px;
 }
 
 #ClockLabel
@@ -298,7 +298,7 @@ DOTAHudPreGame.EndPregameIntro.PregameIsPlayerDraft:not(.StrategyVisible) .ShowT
 	horizontal-align: center;
 	width: fit-children;
 	text-align: center;
-	margin-top: 5px;
+	margin-top: 2px;
 	padding: 2px;
 	flow-children: right;
 	height: 25px;
@@ -379,6 +379,7 @@ DOTAHudPreGame.EndPregameIntro.PregameIsPlayerDraft:not(.StrategyVisible) .ShowT
 {
 	horizontal-align: center;
 	flow-children: right;
+	margin-top: 1px;
 	opacity: 0.0;
 	transition-property: opacity;
 	transition-duration: 0.5s;
@@ -406,11 +407,11 @@ DOTAHudPreGame.EndPregameIntro.PregameIsPlayerDraft:not(.StrategyVisible) .ShowT
 #PenaltyTimeLabel
 {
 	vertical-align: middle;
-	font-size: 16px;
+	font-size: 14px;
 	text-align: center;
 	text-transform: uppercase;
 	color: #f33;
-	padding-right: 16px;
+	margin-top: 1px;
 }
 
 #ReserveTimeLabel
@@ -1042,9 +1043,20 @@ DOTAHudPreGame.Reconnect.PreGamePhase
 	transition-timing-function: ease-in-out;
 }
 
-.AspectRatio4x3 #Chat
+.IsAbilityDraft #Chat
 {
-	width: 418px;
+	width: 618px;
+	opacity-brush: gradient( linear, 0% 100%, 0% 0%, from( #ffff ), color-stop( .45, #ffff ), color-stop( .46, #fffe ), color-stop( .51, #fff0 ), to( #0000 ) );
+}
+
+.IsAbilityDraft #BottomPanels
+{
+	margin-right: 650px;
+}
+
+.IsAbilityDraft.AspectRatio4x3 #BottomPanels
+{
+	margin-right: 412px;
 }
 
 .SwitchScreenButton
@@ -1484,8 +1496,8 @@ DOTAHudPreGame.Universal #PrimaryAttribute
 
 #BanOuter,#BanBar
 {
-	height: 100px;
-	width: 100px;
+	height: 80px;
+	width: 80px;
 	background-image: url("s2r://panorama/images/hud/reborn/ban_bar_psd.vtex");
 	background-size: contain;
 	background-repeat: no-repeat;
@@ -1493,6 +1505,7 @@ DOTAHudPreGame.Universal #PrimaryAttribute
 	opacity: 1;
 	horizontal-align: center;
 	vertical-align: top;
+	margin-top: 26px;
 	transition-property: wash-color;
 	transition-duration: 0.18s;
 }
@@ -1618,7 +1631,7 @@ DOTAHudPreGame.Universal #PrimaryAttribute
 	text-align: center;
 	text-overflow: shrink;
 	vertical-align: top;
-	margin-top: 21px;
+	margin-top: 45px;
 	horizontal-align: center;
 	text-shadow: 1px 3px 4px 3.0 #101010;
 	color: #ACBDE0;
@@ -2178,7 +2191,7 @@ DOTAHudPreGame.Universal #PrimaryAttribute
 {
 	width: 883px;
 	horizontal-align: right;
-	margin-top: 128px;
+	margin-top: 132px;
 	margin-right: 200px;
 	flow-children: right;
 }
@@ -2607,7 +2620,7 @@ DOTAHudPreGame.Universal #PrimaryAttribute
 
 .StrategyTabContents
 {
-	margin-top: 36px;
+	margin-top: 32px;
 	width: 883px;
 	opacity: 0.0;
 	transform: translateY( 40px );
@@ -2781,6 +2794,12 @@ DOTAHudPreGame.Universal #PrimaryAttribute
 	color: #8e9795;
 	font-size: 16px;
 	letter-spacing: 2px;
+	margin-bottom: 1px;
+}
+
+#StartingItemsOtherOptionsStrategyControl > .StrategyControlHeader
+{
+	visibility: collapse;
 }
 
 .StrategyControlHeader .DotaPlusIconSmall
@@ -2799,7 +2818,7 @@ DOTAHudPreGame.Universal #PrimaryAttribute
 
 .IsPlusAssistant #ItemSuggestions
 {
-	color: #D6C37B;
+	color: gradient( linear, 0% 0%, 0% 100%, from( dotaPlusLightGold ), to( dotaPlusGold ) );
 }
 
 .AspectRatio4x3 .StrategyControlTitle
@@ -2997,19 +3016,19 @@ DOTAHeroPickingHeroIcon.Dragging
 	wash-color: #898998;
 }
 
-.IsAbilityDraft #DashboardButton,.IsAbilityDraft #SettingsButton
+.IsAbilityDraft #DashboardButton,.IsAbilityDraft #SettingsRebornButton,.IsAbilityDraft #SettingsButton
 {
 	wash-color: #A5E5E5;
 	opacity: .3;
 }
 
-.IsAbilityDraft #DashboardButton:hover,.IsAbilityDraft #SettingsButton:hover
+.IsAbilityDraft #DashboardButton:hover,.IsAbilityDraft #SettingsRebornButton:hover,.IsAbilityDraft #SettingsButton:hover
 {
 	wash-color: #A5E5E5;
 	opacity: 1;
 }
 
-.IsAbilityDraft #DashboardButton:active,.IsAbilityDraft #SettingsButton:active
+.IsAbilityDraft #DashboardButton:active,.IsAbilityDraft #SettingsRebornButton:active,.IsAbilityDraft #SettingsButton:active
 {
 	wash-color: #000;
 }
@@ -3053,6 +3072,25 @@ DOTAHeroPickingHeroIcon.Dragging
 	margin-top: 13px;
 	transition-property: opacity;
 	transition-duration: 0.2s;
+	visibility: collapse;
+}
+
+#SettingsRebornButton
+{
+	width: 32px;
+	height: 32px;
+	background-image: url("s2r://panorama/images/control_icons/24px/settings.vsvg");
+	background-size: 27px;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	vertical-align: top;
+	margin-left: 62px;
+	margin-top: 13px;
+	background-texture-size: 48px;
+	wash-color: #444A55;
+	transition-property: opacity;
+	transition-duration: 0.2s;
+	visibility: visible;
 }
 
 .AspectRatio16x10 #SettingsButton
@@ -3070,6 +3108,29 @@ DOTAHeroPickingHeroIcon.Dragging
 }
 
 #SettingsButton.Activated
+{
+	animation-name: SettingsButtonAnimation;
+	animation-duration: 0.50s;
+	animation-delay: 0.15s;
+	animation-timing-function: linear;
+	animation-iteration-count: 1;
+}
+
+.AspectRatio16x10 #SettingsRebornButton
+{
+	margin-left: 38px;
+	margin-top: 8px;
+}
+
+.AspectRatio4x3 #SettingsRebornButton
+{
+	margin-left: 36px;
+	margin-top: 8px;
+	width: 24px;
+	height: 24px;
+}
+
+#SettingsRebornButton.Activated
 {
 	animation-name: SettingsButtonAnimation;
 	animation-duration: 0.50s;
@@ -3293,8 +3354,13 @@ DOTAHeroPickingHeroIcon.Dragging
 {
 	width: fit-children;
 	min-width: 300px;
-	margin-left: 20px;
 	visibility: visible;
+	margin-top: 5px;
+}
+
+.IsAbilityDraft #TeamPurchasesStrategyControl
+{
+	visibility: collapse;
 }
 
 .AspectRatio4x3 #TeamPurchasesStrategyControl
@@ -3309,12 +3375,13 @@ DOTAHeroPickingHeroIcon.Dragging
 
 #TeamPurchases
 {
-	flow-children: right;
+	flow-children: right-wrap;
 	margin-right: -4px;
 }
 
 DOTAPreGameTeamItem
 {
+	margin-bottom: 4px;
 	margin-right: 4px;
 	flow-children: down;
 }
@@ -3337,17 +3404,17 @@ DOTAPreGameTeamItem > DOTAShopItem,DOTAPreGameTeamItem > #HeroImage
 
 DOTAPreGameTeamItem > #HeroImage
 {
-	margin-top: 6px;
+	margin-top: 0px;
 	background-image: url("s2r://panorama/images/hud/reborn/inventory_item_well_psd.vtex");
 	background-size: cover;
-	background-color: #2f3338;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #242424fc ), to( #121212fc ) );
 }
 
 #StartingItems
 {
 	width: 100%;
 	margin-top: 16px;
-	height: 334px;
+	height: 340px;
 }
 
 .diretide2020 #StartingItems
@@ -3378,8 +3445,10 @@ DOTAPreGameTeamItem > #HeroImage
 
 #RemainingGoldContainer
 {
+	margin-top: -7px;
 	padding-left: 2px;
 	flow-children: right;
+	margin-bottom: 7px;
 }
 
 #StartingItemsGoldIcon
@@ -3425,7 +3494,7 @@ DOTAPreGameTeamItem > #HeroImage
 #StartingItemsLeftColumn
 {
 	flow-children: down;
-	width: 276px;
+	width: 272px;
 }
 
 .AspectRatio4x3 #StartingItemsLeftColumn
@@ -3435,12 +3504,12 @@ DOTAPreGameTeamItem > #HeroImage
 
 #StartingItemsRightColumn
 {
-	margin-left: 12px;
+	margin-left: 20px;
 	flow-children: down;
 	width: fill-parent-flow( 1.0 );
 }
 
-#StartingItemsRightColumnRow
+.StartingItemsRightColumnRow
 {
 	flow-children: right;
 	width: 100%;
@@ -3459,8 +3528,6 @@ DOTAPreGameTeamItem > #HeroImage
 .StartingItemsList
 {
 	flow-children: right-wrap;
-	width: 240px;
-	min-height: 70px;
 }
 
 .StartingItemsList > DOTAShopItem
@@ -3491,16 +3558,16 @@ DOTAPreGameTeamItem > #HeroImage
 
 #PlusWaiting
 {
-	width: 240px;
-	height: 70px;
-	horizontal-align: center;
+	width: 400px;
+	horizontal-align: left;
 	visibility: collapse;
 }
 
 #PlusWaiting Label
 {
-	font-size: 14px;
-	color: #BE9551;
+	font-size: 13px;
+	opacity: 0.35;
+	color: dotaPlusLightGold;
 }
 
 .IsPlusAssistant.PlusWaitingOnSelections .StartingItemsList
@@ -3539,6 +3606,15 @@ DOTAPreGameTeamItem > #HeroImage
 {
 	flow-children: right-wrap;
 	width: 600px;
+}
+
+#StartingItemsOtherOptions Label
+{
+	text-transform: uppercase;
+	color: #8e9795;
+	font-size: 16px;
+	letter-spacing: 2px;
+	margin-bottom: 2px;
 }
 
 .AspectRatio4x3 #StartingItemsOtherOptions
@@ -3590,15 +3666,15 @@ DOTAPreGameTeamItem > #HeroImage
 
 #InventoryStrategyControl
 {
-	margin-top: 25px;
+	margin-top: 15px;
 }
 
 #StartingItemsInventory
 {
 	flow-children: down;
 	width: 276px;
-	height: 157px;
-	padding-top: 10px;
+	height: 153px;
+	padding-top: 9px;
 	background-color: gradient( linear, 0% 0%, 0% 100%, from( #31323588 ), to( #31323533 ) );
 	border-top: 1px solid #55555544;
 	border-bottom: 1px solid #11111144;
@@ -5323,6 +5399,7 @@ DOTAHeroPickingCaptainsModeHeroPickOption.AvailableToPick #CaptainsModeHeroPickB
 .IsAbilityDraft.StrategyVisible.StrategyTimeActive #MainContents #StartingItems
 {
 	margin-top: 0;
+	height: 380px;
 }
 
 .IsAbilityDraft.StrategyVisible #AbilityDraft
@@ -5684,5 +5761,40 @@ DOTAHudPreGame.aghanim #RadiantTeamPlayers .Slot4
 .IsAbilityDraft .AbilityDraftFacets
 {
 	visibility: visible;
+}
+
+#pregame_consumables,#pregame_attributes
+{
+	width: 180px;
+	height: fit-children;
+	flow-children: down;
+	margin-right: 12px;
+}
+
+#pregame_accessories
+{
+	width: 180px;
+	height: fit-children;
+	flow-children: down;
+}
+
+.ItemGrid
+{
+	width: 100%;
+	height: 100px;
+	flow-children: right-wrap;
+}
+
+.IsAbilityDraft .ItemGrid
+{
+	height: 100px;
+}
+
+.ItemGrid > DOTAShopItem
+{
+	height: 30px;
+	width: 40px;
+	margin-right: 4px;
+	margin-bottom: 4px;
 }
 

@@ -7,7 +7,7 @@ DOTAHudHeroPickingPlayer
 	margin-right: -2px;
 	padding-bottom: 24px;
 	transform: translateY(-90px) translateX(-20px);
-	transition-property: transform, saturation, contrast, brightness, wash-color, pre-transform-scale2d;
+	transition-property: transform, saturation, contrast, brightness, wash-color, pre-transform-scale2d, opacity;
 	transition-duration: .3s;
 	transition-timing-function: ease-out;
 	context-menu-position: bottom;
@@ -25,6 +25,7 @@ DOTAHudHeroPickingPlayer
 	transform: translateY(-90px) translateX(-20px);
 	transition-duration: .3s;
 	transition-timing-function: ease-out;
+	opacity: 0;
 }
 
 #DireTeamPlayers DOTAHudHeroPickingPlayer
@@ -32,16 +33,19 @@ DOTAHudHeroPickingPlayer
 	transform: translateY(-90px) translateX(20px);
 	transition-duration: .3s;
 	transition-timing-function: ease-in;
+	opacity: 0;
 }
 
 DOTAHudPreGame.StartPregameIntro #DireTeamPlayers DOTAHudHeroPickingPlayer,DOTAHudPreGame.StartPregameIntro DOTAHudHeroPickingPlayer
 {
 	transform: translateY(0px);
+	opacity: 1;
 }
 
 DOTAHudPreGame.EndPregameIntro #DireTeamPlayers DOTAHudHeroPickingPlayer,DOTAHudPreGame.EndPregameIntro DOTAHudHeroPickingPlayer
 {
 	transform: translateY(0px);
+	opacity: 1;
 }
 
 #HeroImage
@@ -660,16 +664,21 @@ DOTAHudPreGame.StartPregameIntro #NameContainer
 	font-weight: medium;
 	margin-top: 1px;
 	font-size: 17px;
-	color: #7a8a9d;
+	color: #c6dfff79;
 	text-shadow: 0px 0px 0px 1 transparent;
 	letter-spacing: 0px;
 	transition-property: color, opacity, text-shadow, wash-color;
 	transition-duration: 0.3s;
-	text-shadow: 1px 1px 3px 2.0 #000000;
+	text-shadow: 0px 1px 6px 2.0 #000000;
 	tooltip-position: bottom;
 	tooltip-body-position: 50% 50%;
 	context-menu-position: bottom;
 	context-menu-body-position: 50% 50%;
+}
+
+.IsLocalPlayerPawn #NameContainer Label
+{
+	color: #e7f1ff;
 }
 
 .PlayerInControl #NameContainer Label
@@ -736,7 +745,13 @@ DOTAHudPreGame.StartPregameIntro #NameContainer
 .DOTA_GAMEMODE_AP .PlayerInControl #NameContainer Label
 {
 	text-shadow: none;
-	color: #7a8a9d;
+	color: #c6dfff79;
+	text-shadow: 0px 1px 8px black;
+}
+
+.DOTA_GAMEMODE_AP .PlayerInControl.IsLocalPlayerPawn #NameContainer Label
+{
+	color: #c6dfff;
 }
 
 .WaitingForPlayers .PlayerConnecting #NameContainer Label
@@ -789,7 +804,7 @@ DOTAHudPreGame.StartPregameIntro #NameContainer
 #NameContainer #GuildTag
 {
 	font-weight: light;
-	color: #7a8a9d;
+	color: #c6dfff79;
 	font-size: 12px;
 	vertical-align: middle;
 	visibility: collapse;
@@ -1126,6 +1141,50 @@ DOTAHudPreGame.StartPregameIntro #NameContainer
 	{
 		opacity: 0;
 		brightness: 1;
+	}
+	
+}
+
+.IsLocalPlayer
+{
+	horizontal-align: center;
+	width: 100%;
+	height: 160px;
+	overflow: noclip;
+	background-color: gradient( radial, 50% 0%, 0% 0%, 50% 100%, from( #bfe8ff ), color-stop( 0.4, #97c1ff6b ), color-stop( 0.7, #82b4ff14 ), to( #5580ff00 ) );
+	blur: gaussian(4px);
+	transform: translateY( 0px );
+	transition-property: transform;
+	transition-duration: 0.3s;
+	visibility: collapse;
+}
+
+.IsLocalPlayerPawn .IsLocalPlayer
+{
+	visibility: visible;
+	animation-name: GlowLocalPlayerEffect;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate-reverse;
+}
+
+.StrategyVisible .IsLocalPlayer
+{
+	transform: translateY( -24px );
+}
+
+@keyframes 'GlowLocalPlayerEffect'
+{
+	0%
+	{
+		opacity: 0.5;
+		brightness: 1;
+	}
+	
+	100%
+	{
+		opacity: 1;
+		brightness: 1.5;
 	}
 	
 }

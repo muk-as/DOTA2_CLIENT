@@ -3,37 +3,78 @@
 DOTATooltipGold #Contents
 {
 	flow-children: down;
-	background-color: gradient( linear, 0% 0%, 0% 100%, from( #2d2d2dfc ), to( #000000fc ) );
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #252B2F ), to( #191C1F ) );
+	width: 292px;
+	padding: 12px;
 }
 
 Label
 {
-	color: white;
-	font-weight: thin;
-	font-size: 17px;
+	color: LighterGrey&cc;
+	font-size: 14px;
+	text-shadow: 0px 1px 6px black;
 }
 
-#BuybackGold,#QuickbuyGold,#QuickbuyAndBuybackGold
+Label.StatLabel
+{
+	text-overflow: shrink;
+	width: fill-parent-flow( 1 );
+	margin-right: 4px;
+}
+
+Label.StatValue
+{
+	font-size: 14px;
+	text-align: right;
+}
+
+Label.Large
+{
+	color: LightestGrey;
+	font-size: 16px;
+	margin-top: -1px;
+}
+
+Label.Gold
+{
+	color: #f0c23a;
+}
+
+Label.Red
+{
+	color: loserRed;
+}
+
+Label.Green
+{
+	color: winnerGreen&aa;
+}
+
+Label.Bold
+{
+	font-weight: semi-bold;
+}
+
+.HorizontalDivider
+{
+	opacity: 0.05;
+	margin: 4px 0px;
+}
+
+.StatRow
 {
 	flow-children: right;
+	width: fill-parent-flow( 1 );
 }
 
 #BuybackGoldNeeded,#QuickbuyAndBuybackGoldNeeded,#QuickbuyGoldNeeded
 {
 	visibility: collapse;
-	color: #FF0000;
-	text-overflow: shrink;
 }
 
 .BuybackGoldRequired #BuybackGoldNeeded
 {
 	visibility: visible;
-}
-
-#BuybackGoldSurplus,#QuickbuyAndBuybackGoldSurplus,#QuickbuyGoldSurplus
-{
-	color: #aaff22;
-	text-overflow: shrink;
 }
 
 #BuybackGoldSurplus
@@ -103,14 +144,26 @@ Label
 
 #GoldIcon
 {
-	width: 19px;
-	height: 19px;
+	width: 16px;
+	height: 16px;
 	background-image: url("s2r://panorama/images/hud/icon_gold_psd.vtex");
-	background-size: 100% 100%;
-	background-position: 50% 50%;
-	margin-right: 5px;
-	margin-top: 2px;
-	margin-bottom: 2px;
+	background-size: cover;
+	background-position: center;
+	margin-left: 3px;
+	margin-top: 1px;
+	img-shadow: 0px 1px 6px black;
+}
+
+.TimerIcon
+{
+	width: 16px;
+	height: 16px;
+	padding: 1px;
+	wash-color: loserRed;
+	margin-left: 3px;
+	vertical-align: center;
+	margin-top: 1px;
+	img-shadow: 0px 1px 6px black;
 }
 
 #CooldownReady
@@ -159,6 +212,63 @@ Label
 }
 
 .ShowBuybackCost #BuybackCost
+{
+	visibility: visible;
+}
+
+.BuybackAvailableStatus,.BuybackUnavailableStatus
+{
+	width: 100%;
+	padding: 3px;
+	border-radius: 3px;
+	margin-top: 10px;
+	margin-bottom: 2px;
+}
+
+.BuybackAvailableStatus Label,.BuybackUnavailableStatus Label
+{
+	width: 100%;
+	text-align: center;
+	font-weight: semi-bold;
+	margin-top: -2px;
+	margin-bottom: 3px;
+}
+
+.BuybackAvailableStatus
+{
+	padding: 5px;
+	background-color: gradient( radial, 50% 0%, 0% 0%, 60% 100%, from( #504225 ), to( #1f1e1a ) );
+	border: 1.5px solid rgba(255, 255, 255, 1);
+	border-left: 0px;
+	border-right: 0px;
+	border-brush: gradient( linear, 0% 0%, 100% 0%, from( #a86700 ), color-stop( 0.5, #ffd932 ), to( #a86700 ) );
+	box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.6);
+	visibility: collapse;
+}
+
+.BuybackAvailableStatus Label
+{
+	color: whitesmoke;
+}
+
+.CooldownReady:not(.BuybackGoldRequired) .BuybackAvailableStatus
+{
+	visibility: visible;
+}
+
+.BuybackUnavailableStatus
+{
+	background-color: loserRed&11;
+	border: 1px solid loserRed&22;
+	visibility: collapse;
+}
+
+.BuybackUnavailableStatus Label
+{
+	color: loserRed;
+}
+
+.BuybackGoldRequired .BuybackUnavailableStatus,DOTATooltipGold:not(.CooldownReady) .BuybackUnavailableStatus
 {
 	visibility: visible;
 }

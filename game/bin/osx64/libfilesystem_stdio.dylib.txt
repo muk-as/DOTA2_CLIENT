@@ -51,6 +51,7 @@
 24CMemoryMappedFileSection
 256_enc
 25CFileSystemReloadFileList
+28CBaseVModuleMetadataProvider
 28CFioReadOnlyMemoryMappedFile
 28CPackedStoreMemoryMappedFile
 2cb:RO
@@ -65,6 +66,7 @@
 3l$ D1
 3l$,D
 3l$8D1
+41CModuleMetadataProvider_ResourceManifests
 474E4U4W4c4i4m4
 47CPackedStoreMemoryMappedFile_HierarchicalParent
 4ffffff
@@ -265,6 +267,8 @@ Acceptable OCSP Responses
 Add N ms of delay to every low-level read operation, to simulate a slow disk
 Adding VPK file: %s
 Addreffing existing VPK file: %s
+Afffff
+AlignedByteArray not properly aligned
 Alignment
 AnimGraphEditorUtils001
 AnimationSystemUtils_001
@@ -953,6 +957,7 @@ Experimental
 Exponent
 Extended OCSP Status
 Extension Request
+ExtractModuleMetadata
 EĈËe
 FATAL ERROR: CUtlSymbolTableLarge element limit of %u exceeded
 FATAL ERROR: unable to register all schema data: %s
@@ -1124,6 +1129,7 @@ ISO Member Body
 ISO US Member Body
 ISO-US
 Independent
+Inert VModuleMetadata
 Inherit all
 InputService_001
 InputStackSystemVersion001
@@ -1137,6 +1143,8 @@ JOINT-ISO-ITU-T
 J_spY
 KDF failed
 KeyValueCache001
+KeyValues3: pre-allocated array memory is too small for %u elements (%u bytes available, %u bytes needed
+KeyValues3: pre-allocated table memory is too small for %u members (%u bytes available, %u bytes needed
 K£QlǣQlǣQlǣQlǣQlǣQlǣQlǣQl
 L&&jL&&jl66Zl66Z~??A~??A
 L;d$PA
@@ -1520,6 +1528,7 @@ Plat_IsFile
 Plat_IsInDebugSession
 Plat_LoadModule
 Plat_NeedsLowFragmentation
+Plat_NonFatalErrorFunc
 Plat_RelativeTicks
 Plat_RemoveDirectory
 Plat_RemoveFile
@@ -1555,11 +1564,12 @@ RAND_get_rand_method
 RAND_init_fips
 RARARARARARA
 RARATAp
-RA\0xSBp p
+RAUASBpHphp0
+RA\NSBp p
 RA]ARARAUAp
 RAp0RAp
 RAp0RApXRAp
-RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBp(RBpP
+RBp0RBp0RBp0RBp0RBp0RBp0RBp0RBp0RBp0RBp0RBp0RBp0RBp0RBp0RBp0RBpX
 RC2-40-CBC
 RC2-64-CBC
 RC2-CBC
@@ -1590,7 +1600,7 @@ RFC 5639 curve over a 256 bit prime field
 RFC 5639 curve over a 320 bit prime field
 RFC 5639 curve over a 384 bit prime field
 RFC 5639 curve over a 512 bit prime field
-RGp@p0SCp0RHRARARAUARARAUAUARARAX
+RGp@p0SCp0RHRARARARARAUARARAUAUARARAX
 RIPEMD160
 RKSt9nothrow_t
 RSA Data Security, Inc
@@ -1873,6 +1883,7 @@ Source2EngineToServerStringTable001
 Source2GameClients001
 Source2GameEntities001
 Source2Host001
+Source2ModTools001
 Source2Server001
 Source2V8System001
 St11align_val_t
@@ -2242,7 +2253,6 @@ Z22Assert_ConditionFailedRK34_AssertCompileTimeConstantStruct_tPKcz
 Z8FioClosei
 Z9FioReadAtiyPviPi
 Z9V_strnlenPKci
-ZBRAUASBpHphp0
 ZIP_EndOfCentralDirRecord
 ZIP_FileHeader
 ZIP_LocalFileHeader
@@ -2289,8 +2299,6 @@ ZN13CBufferString6FormatEPKcz
 ZN13CBufferString6InsertEiPKcib
 ZN13CBufferString8RemoveAtEii
 ZN13CBufferString9SetLengthEibPi
-ZN13CRawAllocator4FreeE18RawAllocatorType_tPvm
-ZN13CRawAllocator5AllocE18RawAllocatorType_tmPm
 ZN13CThreadRWLock11UnlockWriteEPKci
 ZN13CThreadRWLock11WaitForReadEv
 ZN13CThreadRWLock12LockForWriteEPKci
@@ -2319,9 +2327,6 @@ ZN22CThreadRWLock_FastRead35EncounteredComplexReadLockOperationEjbPKci
 ZN22CThreadRWLock_FastReadC1Ev
 ZN23CUtlFilenameSymbolTable17FindOrAddFileNameEPKc
 ZN23CUtlFilenameSymbolTable6StringERKjP13CBufferString
-ZN24CUtlMemoryBlockAllocator5AllocEj
-ZN24CUtlMemoryBlockAllocatorC1Eij18RawAllocatorType_t
-ZN24CUtlMemoryBlockAllocatorD1Ev
 ZN7CThread15IsThreadRunningEv
 ZN7CThread21WaitForCreateCompleteEP12CThreadEvent
 ZN7CThread4InitEv
@@ -4407,6 +4412,8 @@ required compresssion algorithm missing
 resource/cursor
 resource/flash3/images
 resource/flash3/videos
+resource_manifests
+resources
 response contains no revocation data
 response setup error
 result too large
@@ -4475,11 +4482,12 @@ s/%llu.vpk
 s2i_ASN1_INTEGER
 s2i_ASN1_OCTET_STRING
 s: (%d bit
-s: Invalid capacity %u
-s: Invalid grow amount %d
 s: Invalid lock state %d
-s: Unsupported raw allocator type %u
+s: element count overflow (%u
 s: file too large
+s: invalid insert point %u (current count %u
+s: max element overflow, cur count %u + %u
+s: member count overflow (%u
 s=%(nh0
 sEH+t
 sOARecord
@@ -4730,6 +4738,8 @@ smime text error
 snmpv2
 socket
 sound
+source_file
+source_line
 srtp could not allocate profiles
 srtp protection profile list too long
 srtp unknown protection profile
@@ -4914,7 +4924,7 @@ t$ffff
 t%HcI H
 t'IcvX
 t,fff
-t-E#H\L
+t-E#HTL
 t2fffff
 t3Lcp H
 t:ffffff
@@ -5178,11 +5188,11 @@ virtual bool CBaseFileSystem::ReadToBuffer(FileHandle_t, CUtlBuffer &, int, FSAl
 virtual bool CBaseFileSystem::UnzipFile(const char *, const char *, const char
 virtual int CBaseFileSystem::ReadFileEx(const char *, const char *, void **, bool, bool, int, int, FSAllocFunc_t
 virtual void CBaseFileSystem::EnableWhitelistFileTracking(bool
+void CKeyValues3Array::EnsureElementCapacity(CKeyValues3Context *, int, bool, bool
+void CKeyValues3Array::InsertMultipleBefore(KeyValues3 *, int, int
+void CKeyValues3Table::EnsureMemberCapacity(CKeyValues3Context *, int, bool, bool
 void CSemiAutoRWLockT<CThreadRWLock_FastRead>::Unlock(const char *, int) [RWLOCK_TYPE = CThreadRWLock_FastRead
-void CUtlMemory_RawAllocator<CUtlHashtableEntry<unsigned int>>::EnsureCapacity(int) [T = CUtlHashtableEntry<unsigned int
-void CUtlMemory_RawAllocator<CUtlHashtableEntry<unsigned int>>::SetRawAllocatorType(RawAllocatorType_t) [T = CUtlHashtableEntry<unsigned int
-void CUtlMemory_RawAllocator<unsigned int>::EnsureCapacity(int) [T = unsigned int
-void CUtlMemory_RawAllocator<unsigned int>::Grow(int) [T = unsigned int
+vpA9v0
 vpaes
 vpaes_cbc_encrypt
 vpaes_decrypt
@@ -5210,6 +5220,7 @@ wap-wsg-idm-ecid-wtls9
 whfffff
 whirlpool
 wipe_cpu
+wpA9w0
 wrap error
 wrap mode not allowed
 write
@@ -5242,8 +5253,7 @@ x509 verification setup problems
 x509Certificate
 x509Crl
 xDۆxD
-xEA9@`~?I
-xIA9G
+xEA9@X~?I
 x[A\A]A^A
 x_long.c
 x_pubkey.c

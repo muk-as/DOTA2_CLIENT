@@ -341,7 +341,7 @@
 											</Panel>
 										</Panel>
 										<Panel id="StartingItemsRightColumn">
-											<Panel id="StartingItemsRightColumnRow">
+											<Panel class="StartingItemsRightColumnRow">
 												<Panel class="StrategyControl">
 													<Panel class="StrategyControlHeader">
 														<Label id="ItemSuggestions" class="StrategyControlTitle" text="{s:recommended_by}" />
@@ -351,19 +351,6 @@
 														<Label text="#DOTA_Hero_Selection_PlusWaiting" />
 													</Panel>
 												</Panel>
-												<Panel id="TeamPurchasesStrategyControl" class="StrategyControl">
-													<Panel class="StrategyControlHeader">
-														<Label class="StrategyControlTitle" text="#DOTA_Hero_Selection_TeamItems" />
-													</Panel>
-													<Panel id="TeamPurchases">
-														<DOTAPreGameTeamItem id="TeamCourierItem" itemname="item_courier" />
-														<DOTAPreGameTeamItem id="TeamWardItem0" itemname="item_ward_observer" />
-														<DOTAPreGameTeamItem id="TeamWardItem1" itemname="item_ward_observer" />
-														<DOTAPreGameTeamItem id="TeamSentryWardItem0" class="OptionalTeamPurchase" itemname="item_ward_sentry" />
-														<DOTAPreGameTeamItem id="TeamSentryWardItem1" class="OptionalTeamPurchase" itemname="item_ward_sentry" />
-														<DOTAPreGameTeamItem id="TeamSentryWardItem2" class="OptionalTeamPurchase" itemname="item_ward_sentry" />
-													</Panel>
-												</Panel>
 											</Panel>
 											<Panel id="StartingItemsOtherOptionsStrategyControl" class="StrategyControl">
 												<Panel class="StrategyControlHeader">
@@ -371,11 +358,23 @@
 												</Panel>
 												<Panel id="StartingItemsOtherOptions" />
 											</Panel>
-											<Panel id="TeamSharedItemsStrategyControl" class="StrategyControl">
-												<Panel class="StrategyControlHeader">
-													<Label class="StrategyControlTitle" text="#dota_item_build_common_shared_items" />
+											<Panel class="StartingItemsRightColumnRow">
+												<Panel id="TeamPurchasesStrategyControl" class="StrategyControl">
+													<Panel class="StrategyControlHeader">
+														<Label class="StrategyControlTitle" text="#DOTA_Hero_Selection_TeamItems" />
+													</Panel>
+													<Panel id="TeamPurchases">
+														<DOTAPreGameTeamItem id="TeamWardItem0" itemname="item_ward_observer" />
+														<DOTAPreGameTeamItem id="TeamWardItem1" itemname="item_ward_observer" />
+														<DOTAPreGameTeamItem id="TeamSentryWardItem0" itemname="item_ward_sentry" />
+														<DOTAPreGameTeamItem id="TeamSentryWardItem1" itemname="item_ward_sentry" />
+														<DOTAPreGameTeamItem id="TeamSentryWardItem2" itemname="item_ward_sentry" />
+														<DOTAPreGameTeamItem id="TeamBloodGrenadeItem0" itemname="item_blood_grenade" />
+														<DOTAPreGameTeamItem id="TeamBloodGrenadeItem1" itemname="item_blood_grenade" />
+														<DOTAPreGameTeamItem id="TeamSmokeOfDeceitItem0" itemname="item_smoke_of_deceit" />
+														<DOTAPreGameTeamItem id="TeamSmokeOfDeceitItem1" itemname="item_smoke_of_deceit" />
+													</Panel>
 												</Panel>
-												<Panel id="TeamSharedItemsContainer" />
 											</Panel>
 										</Panel>
 									</Panel>
@@ -492,12 +491,12 @@
 				<Panel class="CoachImage" />
 				<DOTACoachRatingIcon coach-rating="0" id="DireCoachIcon" class="CoachIcon" />
 			</Panel>
-			<Panel id="DireTeamPlayers" class="TeamPlayers">
-				<DOTAHudHeroPickingPlayer class="Slot5" />
-				<DOTAHudHeroPickingPlayer class="Slot6" />
-				<DOTAHudHeroPickingPlayer class="Slot7" />
-				<DOTAHudHeroPickingPlayer class="Slot8" />
-				<DOTAHudHeroPickingPlayer class="Slot9" />
+			<Panel id="DireTeamPlayers" class="TeamPlayers" hittest="false">
+				<DOTAHudHeroPickingPlayer class="Slot5" hittest="false" />
+				<DOTAHudHeroPickingPlayer class="Slot6" hittest="false" />
+				<DOTAHudHeroPickingPlayer class="Slot7" hittest="false" />
+				<DOTAHudHeroPickingPlayer class="Slot8" hittest="false" />
+				<DOTAHudHeroPickingPlayer class="Slot9" hittest="false" />
 				<Panel class="DraftPreferredRoles">
 					<Label class="DraftPreferredRolesLabel" text="#DOTA_PlayerDraft_PreferredRole" />
 					<Panel class="DraftPreferredRolesSeparator" />
@@ -551,6 +550,7 @@
 		</Panel>
 		<Button id="DashboardButton" onactivate="DOTAHUDShowDashboard();" />
 		<Button id="SettingsButton" onactivate="DOTAShowSettingsPopup();" />
+		<Button id="SettingsRebornButton" onactivate="DOTAShowSettingsRebornPopup();" />
 		<Panel id="ToGameTransition" class="TopBottomFlow" hittest="false" hittestchildren="false">
 			<Panel class="VerticalFiller" />
 			<Panel class="MiddleContainer LeftRightFlow">

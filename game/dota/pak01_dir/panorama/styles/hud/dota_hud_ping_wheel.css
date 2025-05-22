@@ -1,39 +1,348 @@
 /* Prettified by Source 2 Viewer 0.0.0.0 - https://valveresourceformat.github.io */
 
+@define innerDiameter: 70px;
+@define optionDistanceFromCenter: 120px;
+@define smallOptionDistanceFromCenter: 125px;
+@define minimapInnerDiameter: 80px;
+@define minimapOptionDistanceFromCenter: 117px;
+@define minimapSmallOptionDistanceFromCenter: 125px;
+@define outerDiameter: 200px;
+@define textOffset: 310px;
+@define minimapScale: 50%;
+@define mouseLineMaxDiameter: 400px;
 DOTAPingWheel
 {
 	width: 100%;
 	height: 100%;
+	flow-children: down;
+	transition-property: opacity;
+	transition-duration: 0.25s;
+	transition-delay: 0.05s;
 }
 
-.Hidden
+DOTAPingWheel.Hidden
+{
+	visibility: visible;
+	opacity: 0;
+	transition-duration: 0s;
+	transition-delay: 0s;
+}
+
+DOTAPingWheel.Hidden .BackgroundLayers
 {
 	visibility: collapse;
 }
 
-#Root
+DOTAPingWheel.Hidden .PingWheelOption
 {
-	width: 200px;
-	height: 200px;
-	border-radius: 50%;
+	visibility: collapse;
 }
 
-.PingWheelBG
+DOTAPingWheel.Hidden .PingWheelOption.Highlighted
+{
+	visibility: visible;
+}
+
+DOTAPingWheel.Hidden #MouseLineCanvas
+{
+	visibility: collapse;
+}
+
+DOTAPingWheel.Hidden.SomethingHighlighted
+{
+	visibility: visible;
+	opacity: 0;
+	transition-duration: 0s;
+}
+
+DOTAPingWheel.Hidden.SomethingHighlighted #Root .NameContainer
+{
+	visibility: collapse;
+	opacity: 0;
+}
+
+DOTAPingWheel.MiniMap
+{
+	ui-scale: minimapScale;
+}
+
+DOTAPingWheel.MiniMap .PingWheelOption
+{
+	width: 45px;
+	height: 45px;
+	opacity: 0.6;
+	saturation: 0.8;
+}
+
+DOTAPingWheel.MiniMap .Double .PingWheelOption
+{
+	width: 32px;
+	height: 32px;
+}
+
+DOTAPingWheel.MiniMap .NameContainer
+{
+	ui-scale: 150%;
+}
+
+DOTAPingWheel .BackgroundLayers
+{
+	background-color: none;
+}
+
+DOTAPingWheel .BackgroundLayers .Image
 {
 	width: 100%;
 	height: 100%;
-	background-position: 50% 50%;
-	background-size: 100%;
-	background-repeat: no-repeat;
-	opacity: 0.25;
+}
+
+DOTAPingWheel .BackgroundLayers .Direction .ThinSliceBG.Left
+{
+	transform: rotateZ( -45deg );
+}
+
+DOTAPingWheel .BackgroundLayers .Direction .ThickSliceBG,DOTAPingWheel .BackgroundLayers .Direction .ThinSliceBG,DOTAPingWheel .BackgroundLayers .Direction .Separator
+{
+	visibility: collapse;
+}
+
+DOTAPingWheel .BackgroundLayers .Direction.DoubleOption .Separator
+{
+	visibility: visible;
+}
+
+DOTAPingWheel .BackgroundLayers .Direction.SingleOption.Highlighted .ThickSliceBG
+{
+	visibility: visible;
+	opacity: 0.9;
+}
+
+DOTAPingWheel .BackgroundLayers .Direction.DoubleOption.ThinLeftHighlighted .ThinSliceBG.Left
+{
+	visibility: visible;
+	opacity: 0.9;
+}
+
+DOTAPingWheel .BackgroundLayers .Direction.DoubleOption.ThinRightHighlighted .ThinSliceBG.Right
+{
+	visibility: visible;
+	opacity: 0.9;
+}
+
+DOTAPingWheel .BackgroundLayers .Direction.Top
+{
+	transform: rotateZ( -90deg );
+}
+
+DOTAPingWheel .BackgroundLayers .Direction.Left
+{
+	transform: rotateZ( 180deg );
+}
+
+DOTAPingWheel .BackgroundLayers .Direction.Bottom
+{
+	transform: rotateZ( 90deg );
+	clip: radial( 50% 50%, 46deg, 88deg);
+}
+
+DOTAPingWheel.TopHighlighted .Direction.Top
+{
+	visibility: visible;
+}
+
+DOTAPingWheel.LeftHighlighted .Direction.Left
+{
+	visibility: visible;
+}
+
+DOTAPingWheel.RightHighlighted .Direction.Right
+{
+	visibility: visible;
+}
+
+DOTAPingWheel.BottomHighlighted .Direction.Bottom
+{
+	visibility: visible;
+}
+
+DOTAPingWheel .PingWheelOption.Default
+{
+	visibility: collapse;
+}
+
+DOTAPingWheel.SomethingHighlighted .Image.CenterBGPressed
+{
+	opacity: 0;
+}
+
+DOTAPingWheel.SomethingHighlighted .Image.CenterBG
+{
+	visibility: visible;
+}
+
+.Image
+{
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+}
+
+.Edge
+{
+	background-image: url("s2r://panorama/images/hud/ping_wheel/large/minimap_wheel_edge_png.vtex");
+	opacity: 0.5;
+}
+
+.ThickSliceBG
+{
+	opacity: 0;
+	transition-property: opacity;
+	transition-duration: 0.05s;
+	background-image: url("s2r://panorama/images/hud/ping_wheel/large/minimap_wheel_slice_hover_png.vtex");
+}
+
+.ThinSliceBG
+{
+	opacity: 0;
+	transition-property: opacity;
+	transition-duration: 0.05s;
+	background-image: url("s2r://panorama/images/hud/ping_wheel/large/minimap_wheel_slicethin_hover_png.vtex");
+}
+
+.CircleBackground
+{
+	background-image: url("s2r://panorama/images/hud/ping_wheel/large/minimap_wheel_background_png.vtex");
+	opacity: 0.4;
+}
+
+.CircleBottom
+{
+	background-image: url("s2r://panorama/images/hud/ping_wheel/large/minimap_wheel_background_bottomlayer_png.vtex");
+	opacity: 0.7;
+}
+
+.CenterBG
+{
+	background-image: url("s2r://panorama/images/hud/ping_wheel/large/minimap_wheel_middlebutton_png.vtex");
+	opacity: 0.5;
+}
+
+.CenterBGPressed
+{
+	opacity: 0.9;
+	transition-property: opacity;
+	transition-duration: 0.05s;
+	background-image: url("s2r://panorama/images/hud/ping_wheel/large/minimap_wheel_middlebutton_pressed_png.vtex");
+}
+
+.CenterX
+{
+	background-image: url("s2r://panorama/images/hud/ping_wheel/large/minimap_wheel_x_png.vtex");
+}
+
+.LinesX
+{
+	background-image: url("s2r://panorama/images/hud/ping_wheel/large/minimap_wheel_backlines_png.vtex");
+	opacity: 0.3;
+}
+
+.Separator
+{
+	background-image: url("s2r://panorama/images/hud/ping_wheel/large/minimap_wheel_backline_single_png.vtex");
+	opacity: 0.6;
+}
+
+#MouseLineCanvas
+{
+	width: 100%;
+	height: 100%;
+	horizontal-align: center;
+	vertical-align: center;
+	opacity-mask: url("s2r://panorama/images/masks/softedge_circle_png.vtex");
+}
+
+#Root
+{
+	horizontal-align: center;
+	vertical-align: center;
+	overflow:noclip;
+	width: mouseLineMaxDiameter;
+	height: mouseLineMaxDiameter;
+}
+
+#Root .CircleContainer
+{
+	horizontal-align: center;
+	vertical-align: center;
+	width: outerDiameter;
+	height: outerDiameter;
+	border-radius: 50%;
+}
+
+#Root .NameContainer
+{
+	margin-top: textOffset;
+	opacity: 0;
+	transition-property: opacity;
+	transition-duration: 0.1s;
+	transition-delay: 0.1s;
+	horizontal-align: center;
+	height: 50px;
+}
+
+#Root .NameContainer .PingName
+{
+	ignore-parent-flow: true;
+	vertical-align: top;
+	horizontal-align: center;
+	color: white;
+	font-weight: bold;
+	font-size: 20px;
+	text-align: center;
+	text-transform: uppercase;
+	text-shadow: 3px 3px 3px black;
+	text-overflow: shrink;
+}
+
+.SomethingHighlighted #Root .NameContainer
+{
+	opacity: 1;
+}
+
+.BackgroundLayers
+{
+	width: 100%;
+	height: 100%;
+	background-color: gradient( radial, 50% 50%, 0% 0%, outerDiameter outerDiameter, from( #000000ff ), to( #aaa0 ) );
+}
+
+.BackgroundLayers Image
+{
+	visibility: collapse;
+}
+
+.BackgroundLayers .Direction
+{
+	width: 100%;
+	height: 100%;
+}
+
+.DirectionContainer
+{
+	width: 100%;
+	height: 100%;
+	flow-children: none;
 }
 
 .PingWheelOption
 {
+	ignore-parent-flow: true;
+	width: 40px;
+	height: 40px;
+	vertical-align: center;
+	horizontal-align: center;
 	opacity: 0.5;
-	saturation: 0;
-	transition-property: opacity, saturation;
-	transition-duration: 0.1s;
+	saturation: 0.7;
 	z-index: 2;
 }
 
@@ -43,117 +352,30 @@ DOTAPingWheel
 	saturation: 1;
 }
 
-#TopRight.Highlighted
+.PingWheelOption.Default
 {
-	background-color: gradient( radial, 63% 50%, 0% 0%, 30px 30px, from( #ffff00dd ), to( #00000000 ) );
-}
-
-#Left.Highlighted
-{
-	background-color: gradient( radial, 50% 50%, 0% 0%, 30px 30px, from( #ffff00dd ), to( #00000000 ) );
-}
-
-#BottomLeft.Highlighted
-{
-	background-color: gradient( radial, 38% 50%, 0% 0%, 30px 30px, from( #ffff00dd ), to( #00000000 ) );
-}
-
-#TopLeft.Highlighted
-{
-	background-color: gradient( radial, 40% 50%, 0% 0%, 30px 30px, from( #ffff00dd ), to( #00000000 ) );
-}
-
-#BottomRight.Highlighted
-{
-	background-color: gradient( radial, 63% 50%, 0% 0%, 30px 30px, from( #ffff00dd ), to( #00000000 ) );
-}
-
-#Right.Highlighted
-{
-	background-color: gradient( radial, 50% 50%, 0% 0%, 30px 30px, from( #ffff00dd ), to( #00000000 ) );
-}
-
-#DefaultPing.Highlighted
-{
-	background-color: gradient( radial, 50% 50%, 0% 0%, 50px 50px, from( #ffff00dd ), to( #00000000 ) );
-}
-
-#Left
-{
-	width: 100px;
-	height: 45%;
-	vertical-align: center;
-	horizontal-align: left;
-	background-image: url("s2r://panorama/images/hud/reborn/ping_icon_waypoint_psd.vtex");
-	background-position: 50% 50%;
-	background-repeat: no-repeat;
-}
-
-#BottomLeft
-{
-	width: 100%;
-	height: 50%;
-	vertical-align: bottom;
-	horizontal-align: left;
-	background-image: url("s2r://panorama/images/hud/reborn/ping_icon_retreat_psd.vtex");
-	background-position: 35% 50%;
-	background-repeat: no-repeat;
-}
-
-#TopRight
-{
-	width: 100%;
-	height: 50%;
-	vertical-align: top;
-	horizontal-align: right;
-	background-image: url("s2r://panorama/images/hud/reborn/ping_icon_attack_psd.vtex");
-	background-position: 65% 50%;
-	background-repeat: no-repeat;
-}
-
-#TopLeft
-{
-	width: 100%;
-	height: 50%;
-	vertical-align: top;
-	horizontal-align: left;
-	background-image: url("s2r://panorama/images/hud/reborn/ping_icon_enemyward_psd.vtex");
-	background-position: 35% 50%;
-	background-repeat: no-repeat;
-}
-
-#Right
-{
-	width: 100px;
-	height: 45%;
-	vertical-align: center;
-	horizontal-align:right;
-	background-image: url("s2r://panorama/images/hud/reborn/ping_icon_friendlyward_psd.vtex");
-	background-position: 50% 50%;
-	background-repeat: no-repeat;
-}
-
-#BottomRight
-{
-	width: 100%;
-	height: 50%;
-	horizontal-align: right;
-	vertical-align: bottom;
-	background-image: url("s2r://panorama/images/hud/reborn/ping_icon_friendlyward_psd.vtex");
-	background-position: 65% 50%;
-	background-repeat: no-repeat;
-}
-
-#DefaultPing
-{
-	width: 50%;
-	height: 50%;
+	width: innerDiameter;
+	height: innerDiameter;
+	border-radius: 50%;
 	vertical-align: center;
 	horizontal-align: center;
-	background-image: url("s2r://panorama/images/hud/reborn/ping_icon_default_psd.vtex");
-	background-position: 50% 50%;
-	background-repeat: no-repeat;
-	background-size: 50%;
-	z-index: 0;
+}
+
+.PingWheelOption.Default #IconImage
+{
+	horizontal-align: center;
+	vertical-align: center;
+}
+
+.Double .PingWheelOption
+{
+	width: 35px;
+	height: 35px;
+}
+
+.PingWheelOption.Highlighted
+{
+	opacity: 1;
+	saturation: 1;
 }
 

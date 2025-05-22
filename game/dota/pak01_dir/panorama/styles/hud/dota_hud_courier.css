@@ -9,14 +9,9 @@
 {
 	width: 100%;
 	height: 100%;
-	margin-left: 0px;
+	margin-left: 4px;
 	visibility: visible;
 	flow-children: right;
-}
-
-.HUDFlipped #CourierControls
-{
-	margin-left: 4px;
 }
 
 .CourierDead #CourierControls
@@ -40,112 +35,157 @@
 
 .CourierButton
 {
-	height: 34px;
-	width: 34px;
-	background-size: 100% 100%;
-	overflow: noclip noclip;
+	width: 28px;
+	height: width-percentage( 100% );
+	vertical-align: center;
+	margin: 0px 3px;
+	background-color: gradient( radial, 50% 50%, 0% 0%, 50% 50%, from( #6882b172 ), color-stop( 0.75, #6882b125 ), to( #6882b100 ) );
+	box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.5);
+	border-radius: 80px;
+	border: 1.5px solid rgba(255, 255, 255, 0.9);
+	border-brush: gradient( linear, 0% 0%, 0% 100%, from( #c6daff ), to( #6882B1 ) );
+	transition-property: brightness;
+	transition-duration: 0.05s;
+	tooltip-position: top;
+	context-menu-position: top;
+}
+
+.CourierButton .CourierButtonIcon
+{
+	width: 28px;
+	height: width-percentage( 100% );
+	padding: 4px;
+	horizontal-align: center;
+	vertical-align: center;
+	img-shadow: 0px 1px 4px black;
+	opacity-brush: gradient( linear, 0% 20%, 0% 80%, from( #c6daff ), to( #6882B1 ) );
+}
+
+.CourierButton:hover
+{
+	brightness: 2;
 }
 
 .ScoutButton
 {
-	height: 34px;
-	width: 34px;
+	height: 32px;
+	width: 32px;
 	background-size: 100% 100%;
 	overflow: noclip noclip;
-	wash-color:yellow;
-}
-
-#SelectScoutButton
-{
-	tooltip-position: top;
-	context-menu-position: top;
-	margin-top: 13px;
-	background-image: url("s2r://panorama/images/hud/reborn/icon_courier_standard_psd.vtex");
-}
-
-#SelectCourierButton
-{
-	tooltip-position: top;
-	context-menu-position: top;
-	margin-top: 13px;
-	background-image: url("s2r://panorama/images/hud/reborn/icon_courier_standard_psd.vtex");
+	wash-color: yellow;
 }
 
 .NoCourier #SelectCourierButton
 {
-	background-image: url("s2r://panorama/images/hud/reborn/icon_courier_purchase_psd.vtex");
+	border-brush: gradient( linear, 0% 0%, 0% 100%, from( #ffdc71 ), to( #bc8b2e ) );
 }
 
-.HUDFlipped #DeliverItemsButton
+.NoCourier #SelectCourierButton .CourierButtonIcon
 {
-	margin-left: -3px;
-}
-
-#SelectCourierButton:hover
-{
-	brightness: 1.7;
-}
-
-#SelectScoutButton:hover
-{
-	brightness: 1.7;
+	opacity-brush: gradient( linear, 0% 20%, 0% 80%, from( #ffdc71 ), to( #da9e2f ) );
 }
 
 #DeliverItemsButton
 {
-	height: 60px;
-	width: 58px;
-	background-image: url("s2r://panorama/images/hud/reborn/icon_courier_deliver_on_psd.vtex");
-	background-size: 48px 48px;
-	background-position: 0px 6px;
-	background-repeat: no-repeat;
+	margin: 0px;
+	width: 48px;
+	height: width-percentage(100%);
+	vertical-align: center;
 	tooltip-position: top;
 	context-menu-position: top;
 }
 
-.NoCourier #DeliverItemsButton
+#DeliverItemsButton .CourierButton
 {
-	background-image: url("s2r://panorama/images/hud/reborn/icon_courier_deliver_off_psd.vtex");
+	horizontal-align: center;
+	width: 40px;
+	margin: 0px;
+	border-width: 2px;
 }
 
-.DeliveringToHero #DeliverItemsButton
+#DeliverItemsButton .CourierButton .CourierButtonIcon
 {
-	background-image: none;
-	padding-top: 4px;
-	padding-left: -2px;
+	width: 32px;
 }
 
-.DeliveringToHero #Spinner
+.NoCourier #DeliverItemsButton .CourierButton
 {
-	visibility: visible;
-	width: 48px;
-	height: 48px;
-	margin-top: 2px;
-	margin-left: 2px;
-	background-image: url("s2r://panorama/images/hud/reborn/icon_courier_inuse_psd.vtex");
+	saturation: 0.2;
+	border: 1.5px solid rgba(255, 255, 255, 0.2);
+	background-color: none;
+	box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.2);
+}
+
+.NoCourier #DeliverItemsButton .CourierButton .CourierButtonIcon
+{
+	opacity: 0.3;
+}
+
+.DeliveringToHero #DeliverItemsButton .CourierButton,.GoingToFountain #DeliverItemsButton .CourierButton,.GoingToSecretShop #DeliverItemsButton .CourierButton
+{
+	visibility: collapse;
+}
+
+#DeliverItemsButton .CourierAutoStatus
+{
+	margin-top: 3px;
+	margin-left: -22px;
+	height: 18px;
+	width: 18px;
+	border-radius: 50%;
+	background-color: gradient( linear, 0% 20%, 0% 80%, from( #c6daff ), to( #6882B1 ) );
+	border: 1px solid #300;
+	horizontal-align: right;
+	vertical-align: bottom;
+	opacity: 0;
+	transition-property: opacity;
+	transition-duration: .28s;
+	transition-timing-function: ease-in-out;
+}
+
+#DeliverItemsButton .CourierAutoStatus Label
+{
+	font-size: 12px;
+	height: 16px;
+	width: 16px;
+	color: black;
+	horizontal-align: right;
+	vertical-align: top;
+	text-align: center;
+	font-weight: bold;
+}
+
+.AutoModeOn.DeliveringToHero:not(.ExecutingManualOrder) #DeliverItemsButton .CourierAutoStatus,.AutoModeOn.GoingToFountain:not(.ExecutingManualOrder) #DeliverItemsButton .CourierAutoStatus,.AutoModeOn.GoingToSecretShop:not(.ExecutingManualOrder) #DeliverItemsButton .CourierAutoStatus
+{
+	opacity: 1;
+}
+
+#Spinner
+{
+	width: 46px;
+	height: width-percentage(100%);
+	horizontal-align: center;
+	vertical-align: center;
 	animation-name: SpinnerRotate;
 	animation-duration: 1.5s;
 	animation-timing-function: linear;
 	animation-iteration-count: infinite;
+	animation-direction: reverse;
+	visibility: collapse;
 }
 
-.DeliveringToHero.Paused #Spinner
+.DeliveringToHero #Spinner,.GoingToFountain #Spinner,.GoingToSecretShop #Spinner
+{
+	visibility: visible;
+}
+
+.Paused #Spinner
 {
 	animation-name: none;
 }
 
-#DeliverItemsButton:hover
-{
-	brightness: 2.0;
-}
-
 #CourierBurstButton
 {
-	tooltip-position: top;
-	margin-top: 13px;
-	margin-left: -2px;
-	visibility: visible;
-	background-image: url("s2r://panorama/images/hud/reborn/icon_courier_boost_on_psd.vtex");
 	visibility: collapse;
 }
 
@@ -156,26 +196,31 @@
 
 .HasBurstAbility:not(.BurstReady) #CourierBurstButton
 {
-	background-image: url("s2r://panorama/images/hud/reborn/icon_courier_boost_off_psd.vtex");
+	visibility: visible;
+	saturation: 0.2;
+	border: 1.5px solid rgba(255, 255, 255, 0.2);
+	background-color: none;
+	box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.2);
 }
 
-.HideBurstCooldown #BurstCooldownLabel
+.HasBurstAbility:not(.BurstReady) #CourierBurstButton .CourierButtonIcon
+{
+	opacity: 0.3;
+}
+
+.HideBurstCooldown #CourierBurstButton #BurstCooldownLabel
 {
 	visibility: collapse;
 }
 
-#CourierBurstButton:hover
+.BurstReady #CourierBurstButton #BurstCooldownLabel
 {
-	brightness: 2.0;
+	visibility: collapse;
 }
 
 #CourierShieldButton
 {
-	tooltip-position: top;
-	margin-top: 13px;
-	margin-left: -2px;
 	visibility: collapse;
-	background-image: url("s2r://panorama/images/hud/reborn/icon_courier_shield_on_psd.vtex");
 }
 
 .HasShieldAbility #CourierShieldButton
@@ -186,17 +231,25 @@
 .HasShieldAbility:not(.ShieldReady) #CourierShieldButton
 {
 	visibility: visible;
-	background-image: url("s2r://panorama/images/hud/reborn/icon_courier_shield_off_psd.vtex");
+	saturation: 0.2;
+	border: 1.5px solid rgba(255, 255, 255, 0.2);
+	background-color: none;
+	box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.2);
 }
 
-.HideShieldCooldown #ShieldCooldownLabel
+.HasShieldAbility:not(.ShieldReady) #CourierShieldButton .CourierButtonIcon
+{
+	opacity: 0.3;
+}
+
+.HideShieldCooldown #CourierShieldButton #ShieldCooldownLabel
 {
 	visibility: collapse;
 }
 
-#CourierShieldButton:hover
+.ShieldReady #CourierShieldButton #ShieldCooldownLabel
 {
-	brightness: 2.0;
+	visibility: collapse;
 }
 
 #BurstCooldownLabel,#ShieldCooldownLabel
@@ -205,23 +258,12 @@
 	font-size: 14px;
 	font-weight: bold;
 	font-family: monospaceNumbersFont;
-	letter-spacing: 1px;
+	margin-bottom: 1px;
+	text-shadow: 0px 1px 8px black;
 	width: 100%;
-	height: 100%;
+	vertical-align: center;
 	text-align: center;
-	padding-top: 9px;
-	padding-right: 2px;
 	visibility: visible;
-}
-
-.BurstReady #BurstCooldownLabel
-{
-	visibility: collapse;
-}
-
-.ShieldReady #ShieldCooldownLabel
-{
-	visibility: collapse;
 }
 
 #HeroImage
@@ -230,11 +272,47 @@
 	height: 26px;
 	visibility: collapse;
 	z-index: 2;
-	margin-left: 13px;
-	margin-top: 13px;
+	vertical-align: center;
+	horizontal-align: center;
 }
 
 .DeliveringToHero #HeroImage
+{
+	visibility: visible;
+}
+
+#FountainImage
+{
+	horizontal-align: center;
+	vertical-align: center;
+	width: 28px;
+	height: width-percentage( 100% );
+	padding: 4px;
+	margin-bottom: 2px;
+	img-shadow: 0px 1px 4px black;
+	opacity-brush: gradient( linear, 0% 20%, 0% 80%, from( #c6daff ), to( #6882B1 ) );
+	visibility: collapse;
+}
+
+.GoingToFountain #FountainImage
+{
+	visibility: visible;
+}
+
+#SecretShopImage
+{
+	horizontal-align: center;
+	vertical-align: center;
+	width: 28px;
+	height: width-percentage( 100% );
+	padding: 4px;
+	margin-bottom: 2px;
+	img-shadow: 0px 1px 4px black;
+	opacity-brush: gradient( linear, 0% 20%, 0% 80%, from( #ef3b4d ), to( #e02828 ) );
+	visibility: collapse;
+}
+
+.GoingToSecretShop #SecretShopImage
 {
 	visibility: visible;
 }
@@ -266,7 +344,7 @@
 
 #ItemsOnCourierBackground
 {
-	margin-top: 6px;
+	margin-top: 3px;
 	margin-left: -22px;
 	height: 22px;
 	width: 22px;
@@ -331,5 +409,129 @@
 {
 	saturation: 1.0;
 	brightness: 1.0;
+}
+
+#AutoCourierButton
+{
+	margin: 0px 1px;
+	visibility: collapse;
+	tooltip-position: top;
+	context-menu-position: top;
+}
+
+#AutoCourierButton.Visible
+{
+	visibility: visible;
+}
+
+.HotkeyContainer
+{
+	width: 16px;
+	height: 16px;
+	margin-top: 8px;
+	margin-left: 0px;
+	z-index: 5;
+	margin-right: -16px;
+	visibility: collapse;
+}
+
+.HotkeyContainer Label
+{
+	color: LightestGrey;
+}
+
+.Hotkey
+{
+	z-index: 16;
+	vertical-align: top;
+	horizontal-align: left;
+	min-width: 16px;
+	min-height: 16px;
+	max-width: 70px;
+	max-height: 15px;
+	white-space: nowrap;
+	margin-left: 0px;
+	margin-top: 0px;
+	background-color: #212726;
+	box-shadow: fill #0000007f 1px 1px 6px -1px;
+	border-radius: 3px;
+	border: 1px solid black;
+}
+
+.HotkeyText
+{
+	color: #bba995;
+	text-shadow: 1px 1px 0px 2 #000000;
+	font-size: 11px;
+	font-weight: normal;
+	text-align: center;
+	horizontal-align: center;
+	margin: 0px 0px -2px 0px;
+}
+
+.HasSelectCourierHotkey #SelectCourierHotkey
+{
+	visibility: visible;
+}
+
+DOTAHud.IsLocalPlayerSpectatingAllTeams .HasSelectCourierHotkey #SelectCourierHotkey,DOTAHud.IsLocalPlayerLiveSpectating .HasSelectCourierHotkey #SelectCourierHotkey
+{
+	visibility: collapse;
+}
+
+.HasCourierBurstHotkey #CourierBurstHotkey
+{
+	visibility: visible;
+}
+
+DOTAHud.IsLocalPlayerSpectatingAllTeams .HasCourierBurstHotkey #CourierBurstHotkey,DOTAHud.IsLocalPlayerLiveSpectating .HasCourierBurstHotkey #CourierBurstHotkey
+{
+	visibility: collapse;
+}
+
+.HasBurstAbility:not(.BurstReady) #CourierBurstHotkey
+{
+	visibility: collapse;
+}
+
+.HasCourierShieldHotkey #CourierShieldHotkey
+{
+	visibility: visible;
+}
+
+DOTAHud.IsLocalPlayerSpectatingAllTeams .HasCourierShieldHotkey #CourierShieldHotkey,DOTAHud.IsLocalPlayerLiveSpectating .HasCourierShieldHotkey #CourierShieldHotkey
+{
+	visibility: collapse;
+}
+
+.HasShieldAbility:not(.ShieldReady) #CourierShieldHotkey
+{
+	visibility: collapse;
+}
+
+.HasCourierDeliverHotkey #CourierDeliverHotkey
+{
+	visibility: visible;
+}
+
+DOTAHud.IsLocalPlayerSpectatingAllTeams .HasCourierDeliverHotkey #CourierDeliverHotkey,DOTAHud.IsLocalPlayerLiveSpectating .HasCourierDeliverHotkey #CourierDeliverHotkey
+{
+	visibility: collapse;
+}
+
+.HasAutoCourierHotkey #AutoCourierHotkey
+{
+	visibility: visible;
+}
+
+DOTAHud.IsLocalPlayerSpectatingAllTeams .HasAutoCourierHotkey #AutoCourierHotkey,DOTAHud.IsLocalPlayerLiveSpectating .HasAutoCourierHotkey #AutoCourierHotkey
+{
+	visibility: collapse;
+}
+
+#AutoDeliverViolator
+{
+	margin-top: 12px;
+	margin-left: -12px;
 }
 

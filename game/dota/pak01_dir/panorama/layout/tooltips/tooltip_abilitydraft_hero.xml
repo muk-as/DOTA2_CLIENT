@@ -7,9 +7,20 @@
 		<include src="s2r://panorama/styles/tooltips/tooltip_abilitydraft_hero.vcss_c" />
 	</styles>
 	<Panel class="Hero AbilityDraftHeroTooltip TopBottomFlow">
+		<Panel id="HeroInfoContainer">
+			<DOTAHeroImage id="HeroImage" heroimagestyle="landscape" scaling="stretch-to-cover-preserve-aspect" />
+			<Label id="HeroName" text="{s:hero_name}" />
+		</Panel>
+		<Panel id="InnateContainer">
+			<Panel class="InnateIcon" />
+			<Label id="InnateDesc" />
+		</Panel>
 		<Panel id="AttackDefenseContainer">
 			<Panel id="AttackContainer" class="TopBottomFlow">
-				<Label id="AttackHeader" text="#DOTA_HUD_Attack" />
+				<Panel class="LeftRightFlow Center">
+					<Panel class="AttackIcon IconPrefix" />
+					<Label id="AttackHeader" text="#DOTA_HUD_Attack" />
+				</Panel>
 				<Panel id="AttackSpeedRow" class="StatRow">
 					<Label id="AttackSpeedLabel" text="#DOTA_HUD_AttackSpeed" class="StatName" />
 					<Panel class="LeftRightFlow">
@@ -26,11 +37,15 @@
 					<Label id="RangeLabel" text="#DOTA_HUD_AttackRange" class="StatName" />
 					<Panel class="LeftRightFlow">
 						<Label id="Range" text="{d:attack_range}" class="BaseValue" />
+						<Panel id="AttackRangeIcon" class="IconPrefix" />
 					</Panel>
 				</Panel>
 			</Panel>
 			<Panel id="DefenseContainer" class="TopBottomFlow">
-				<Label id="DefenseHeader" text="#DOTA_HUD_Defense" />
+				<Panel class="LeftRightFlow Center">
+					<Panel class="DefenseIcon IconPrefix" />
+					<Label id="DefenseHeader" text="#DOTA_HUD_Defense" />
+				</Panel>
 				<Panel id="ArmorRow" class="StatRow">
 					<Label id="ArmorLabel" text="#DOTA_HUD_Armor" class="StatName" />
 					<Panel class="LeftRightFlow">
@@ -49,7 +64,10 @@
 			<Panel id="AdditionalStatsContainer" class="TopBottomFlow">
 				<Label class="AttributeRow ADStr" text="#DOTAAbilityDraft_Tooltip_Health" html="true" />
 				<Label class="AttributeRow ADMana" text="#DOTAAbilityDraft_Tooltip_Mana" html="true" />
-				<Label class="AttributeRow" text="#DOTAAbilityDraft_Tooltip_Speed" html="true" />
+				<Panel class="AttributeRow LeftRightFlow">
+					<Label class="" text="#DOTAAbilityDraft_Tooltip_Speed" html="true" />
+					<Panel id="MoveSpeedIcon" class="IconPrefix" />
+				</Panel>
 			</Panel>
 			<Panel id="AttributesContainer" class="TopBottomFlow">
 				<Panel id="StrengthContainer" class="LeftRightFlow AttributeRow">

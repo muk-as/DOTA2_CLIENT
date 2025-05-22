@@ -1,14 +1,14 @@
 /* Prettified by Source 2 Viewer 0.0.0.0 - https://valveresourceformat.github.io */
 
-@define phraseOffset: 95px;
-@define defaultPhraseHeight: 35px;
-@define heroPhraseHeight: 40px;
+@define phraseOffset: 100px;
+@define defaultPhraseHeight: 105px;
+@define heroPhraseHeight: 105px;
 @define arrowOffset: 60px;
 @define phraseMinimumPadding: 20px;
 DOTAChatWheel
 {
 	width: 100%;
-	height: 450px;
+	height: 100%;
 	horizontal-align: center;
 	vertical-align: middle;
 }
@@ -33,6 +33,13 @@ DOTAChatWheel
 	transition-duration: 0.1s;
 }
 
+.Phrase Label
+{
+	transition-property: color, ui-scale;
+	transition-duration: 0.1s;
+	text-shadow: 3px 3px 2px black;
+}
+
 .Phrase.IsSpray
 {
 	height: 64px;
@@ -52,9 +59,19 @@ DOTAChatWheel
 	font-weight: bold;
 }
 
-.Phrase.Selected
+.SomethingSelected .Phrase Label
+{
+	color: #AAA;
+}
+
+.SomethingSelected .Phrase.Selected
 {
 	pre-transform-scale2d: 1.3;
+}
+
+.SomethingSelected .Phrase.Selected Label
+{
+	color: #FFFFFF;
 }
 
 .Phrase #ChatWheelEmoticon
@@ -79,6 +96,7 @@ DOTAChatWheel
 	50%
 	{
 		text-shadow: 0px 0px 6px 1.0 #AAE9A7dd;
+		color: #ddd;
 	}
 	
 	100%
@@ -88,25 +106,16 @@ DOTAChatWheel
 	
 }
 
-.Phrase.Selected > Label
-{
-	animation-name: TextGlowPulse;
-	animation-duration: 1s;
-	animation-delay: 0s;
-	animation-timing-function: linear;
-	animation-iteration-count: infinite;
-}
-
 .ChatWheelSoundIcon
 {
 	width: 22px;
 	height: 22px;
 	margin-right: 4px;
-	transform: translateY( 8px );
 	background-image: url("s2r://panorama/images/hud/reborn/icon_scoreboard_mute_sound_psd.vtex");
 	background-repeat: no-repeat;
 	background-size: contain;
 	visibility: collapse;
+	vertical-align: center;
 }
 
 .Phrase.HasSound:not(.IsSpray) .ChatWheelSoundIcon
@@ -133,6 +142,7 @@ DOTAChatWheel
 {
 	width: 36px;
 	height: 36px;
+	vertical-align: center;
 	visibility: collapse;
 }
 
@@ -169,28 +179,96 @@ DOTAChatWheel
 	visibility: collapse;
 }
 
+#LineCanvas
+{
+	width: 100%;
+	height: 100%;
+	horizontal-align: center;
+	vertical-align: center;
+	opacity-mask: url("s2r://panorama/images/masks/softedge_circle_sharp_png.vtex");
+}
+
 #Wheel
 {
-	height: 164px;
-	width: 164px;
+	height: 596px;
+	width: 596px;
+}
+
+.Slices
+{
+	width: 600px;
+	height: 600px;
+}
+
+.Slices #SlicesSelection
+{
+	width: 100%;
+	height: 100%;
+	background-color: gradient( radial, 50% 50%, 0% 0%, 50% 50%, from( #fffa ), color-stop( 0.2, #fff7 ), to( #fff0 ) );
+	opacity: 0.5;
+}
+
+.Slices #SlicesSelection.Hidden
+{
+	visibility: collapse;
+}
+
+.SliceBackground
+{
+	width: 100%;
+	height: 100%;
+	background-color: gradient( radial, 50% 50%, 0% 0%, 50% 50%, from( #000f ), color-stop( 0.5, #000c ), to( #0000 ) );
+}
+
+.SliceBackground.Even
+{
+	background-color: gradient( radial, 50% 50%, 0% 0%, 50% 50%, from( #333f ), color-stop( 0.5, #333c ), to( #3330 ) );
+}
+
+.SliceBackground.SecondMod
+{
+	background-color: gradient( radial, 50% 50%, 0% 0%, 50% 50%, from( #000f ), color-stop( 0.5, #333c ), to( #4440 ) );
+}
+
+.SliceBackground.ThirdMod
+{
+	background-color: gradient( radial, 50% 50%, 0% 0%, 50% 50%, from( #333f ), color-stop( 0.5, #333c ), to( #3330 ) );
+}
+
+#SlicesBackgroundContainer
+{
+	width: 100%;
+	height: 100%;
+	opacity-mask: url("s2r://panorama/images/masks/softedge_circle_sharp_png.vtex");
+}
+
+.BackgroundPlate
+{
+	background-image: url("s2r://panorama/images/chat_wheel/background_plate_png.vtex");
+	background-position: center;
+	background-size: contain;
+	horizontal-align: center;
+	vertical-align: middle;
+	height: 180px;
+	width: 180px;
 }
 
 #WheelBG
 {
-	background-image: url("s2r://panorama/images/chat_wheel/circle_bg_png.vtex");
+	background-position: center;
 	background-size: contain;
 	horizontal-align: center;
 	vertical-align: middle;
-	height: 128px;
-	width: 128px;
-	margin-top: 11px;
-	margin-left: 4px;
+	height: 180px;
+	width: 180px;
+	transform: translateY( 6px );
 }
 
 #WheelCenter
 {
 	background-image: url("s2r://panorama/images/chat_wheel/circle_png.vtex");
 	background-size: contain;
+	background-position: center;
 	horizontal-align: center;
 	vertical-align: middle;
 	height: 128px;
@@ -201,6 +279,7 @@ DOTAChatWheel
 {
 	background-image: url("s2r://panorama/images/chat_wheel/circle_bg2_png.vtex");
 	background-size: contain;
+	background-position: center;
 	horizontal-align: center;
 	vertical-align: middle;
 	height: 128px;
@@ -212,27 +291,53 @@ DOTAChatWheel
 	background-image: url("s2r://panorama/images/chat_wheel/circle_pointer_png.vtex");
 	background-size: contain;
 	horizontal-align: center;
-	vertical-align: middle;
+	vertical-align: center;
 	height: 128px;
 	width: 128px;
+	opacity: 0.5;
 }
 
 #PointerContainer
 {
-	height: 164px;
-	width: 164px;
+	height: 180px;
+	width: 180px;
 	horizontal-align: center;
 	vertical-align: middle;
-	margin-left: 2px;
 }
 
 #Bubble
 {
-	background-image: url("s2r://panorama/images/chat_wheel/cursor_png.vtex");
+	background-image: url("s2r://panorama/images/chat_wheel/center_cursor_png.vtex");
 	horizontal-align: center;
 	vertical-align: middle;
 	height: 46px;
 	width: 46px;
+}
+
+#Cursor
+{
+	horizontal-align: center;
+	vertical-align: middle;
+	height: 32px;
+	width: 32px;
+	opacity: 0;
+	transition-property: opacity;
+	transition-duration: 0.5s;
+}
+
+#Cursor Image
+{
+	horizontal-align: center;
+	vertical-align: middle;
+	saturation: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.SomethingSelected #Cursor
+{
+	opacity: 1;
+	transition-duration: 0s;
 }
 
 #HeroImage
@@ -259,7 +364,7 @@ DOTAChatWheel
 	height: 46px;
 	width: 46px;
 	margin-left: 2px;
-	brightness: 2.0;
+	brightness: 1.6;
 	background-image: url("s2r://panorama/images/chat_wheel/arrow_psd.vtex");
 	background-position: center;
 	background-size: contain;

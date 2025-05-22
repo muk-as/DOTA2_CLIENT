@@ -6,7 +6,6 @@ function SetSearchFocus()
 function ClearSearch()
 {
 	$.DispatchEvent( "DOTAShopCancelSearch" );
-	$( "#SearchTextEntry" ).text = "";
 }
 
 function UpdateSelectedTab()

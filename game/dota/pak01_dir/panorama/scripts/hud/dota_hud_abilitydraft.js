@@ -63,7 +63,7 @@ function HeroesReady() {
 	} );			
 
 	$.Schedule( 3.1, function () {
-		scenePanel.FireEntityInput( 'block02_hero_button', 'SetAnimation', 'spin' );
+		scenePanel.FireEntityInput( 'block01_hero_button', 'SetAnimation', 'spin' );
 		scenePanel.FireEntityInput( 'block02_a0_button', 'SetAnimation', 'spin' );
 		scenePanel.FireEntityInput( 'block00_a1_button', 'SetAnimation', 'spin' );
 		scenePanel.FireEntityInput( 'block01_ult_button', 'SetAnimation', 'spin' );
@@ -71,7 +71,7 @@ function HeroesReady() {
 	} );			
 
 	$.Schedule( 3.2, function() {
-		scenePanel.FireEntityInput( 'block04_hero_button', 'SetAnimation', 'spin' );
+		scenePanel.FireEntityInput( 'block02_hero_button', 'SetAnimation', 'spin' );
 		scenePanel.FireEntityInput( 'block04_a0_button', 'SetAnimation', 'spin' );
 		scenePanel.FireEntityInput( 'block02_a1_button', 'SetAnimation', 'spin' );
 		scenePanel.FireEntityInput( 'block00_a2_button', 'SetAnimation', 'spin' );
@@ -80,7 +80,7 @@ function HeroesReady() {
 	} );			
 
 	$.Schedule( 3.3, function() {
-		scenePanel.FireEntityInput( 'block06_hero_button', 'SetAnimation', 'spin' );
+		scenePanel.FireEntityInput( 'block03_hero_button', 'SetAnimation', 'spin' );
 		scenePanel.FireEntityInput( 'block06_a0_button', 'SetAnimation', 'spin' );
 		scenePanel.FireEntityInput( 'block04_a1_button', 'SetAnimation', 'spin' );
 		scenePanel.FireEntityInput( 'block02_a2_button', 'SetAnimation', 'spin' );
@@ -90,7 +90,7 @@ function HeroesReady() {
 	} );			
 
 	$.Schedule( 3.4, function () {
-		scenePanel.FireEntityInput( 'block08_hero_button', 'SetAnimation', 'spin' );
+		scenePanel.FireEntityInput( 'block04_hero_button', 'SetAnimation', 'spin' );
 		scenePanel.FireEntityInput( 'block08_a0_button', 'SetAnimation', 'spin' );
 		scenePanel.FireEntityInput( 'block06_a1_button', 'SetAnimation', 'spin' );
 		scenePanel.FireEntityInput( 'block04_a2_button', 'SetAnimation', 'spin' );
@@ -101,7 +101,7 @@ function HeroesReady() {
 	} );			
 
 	$.Schedule( 3.5, function () {
-		scenePanel.FireEntityInput( 'block10_hero_button', 'SetAnimation', 'spin' );
+		scenePanel.FireEntityInput( 'block05_hero_button', 'SetAnimation', 'spin' );
 		scenePanel.FireEntityInput( 'block10_a0_button', 'SetAnimation', 'spin' );
 		scenePanel.FireEntityInput( 'block08_a1_button', 'SetAnimation', 'spin' );
 		scenePanel.FireEntityInput( 'block06_a2_button', 'SetAnimation', 'spin' );
@@ -110,7 +110,7 @@ function HeroesReady() {
 		scenePanel.FireEntityInput( 'block01_a2_button', 'SetAnimation', 'spin' );
 		scenePanel.FireEntityInput( 'block05_ult_button', 'SetAnimation', 'spin' );
 		scenePanel.FireEntityInput( 'block11_ult_button', 'SetAnimation', 'spin' );
-		scenePanel.FireEntityInput( 'block01_hero_button', 'SetAnimation', 'spin' );
+		scenePanel.FireEntityInput( 'block06_hero_button', 'SetAnimation', 'spin' );
 	} );			
 
 	$.Schedule( 3.6, function() {
@@ -120,7 +120,7 @@ function HeroesReady() {
 		scenePanel.FireEntityInput( 'block07_a0_button', 'SetAnimation', 'spin' );
 		scenePanel.FireEntityInput( 'block05_a1_button', 'SetAnimation', 'spin' );
 		scenePanel.FireEntityInput( 'block03_a2_button', 'SetAnimation', 'spin' );
-		scenePanel.FireEntityInput( 'block03_hero_button', 'SetAnimation', 'spin' );
+		scenePanel.FireEntityInput( 'block07_hero_button', 'SetAnimation', 'spin' );
 	} );			
 
 	$.Schedule( 3.7, function() {
@@ -128,7 +128,7 @@ function HeroesReady() {
 		scenePanel.FireEntityInput( 'block09_a0_button', 'SetAnimation', 'spin' );
 		scenePanel.FireEntityInput( 'block07_a1_button', 'SetAnimation', 'spin' );
 		scenePanel.FireEntityInput( 'block05_a2_button', 'SetAnimation', 'spin' );
-		scenePanel.FireEntityInput( 'block05_hero_button', 'SetAnimation', 'spin' );
+		scenePanel.FireEntityInput( 'block08_hero_button', 'SetAnimation', 'spin' );
 	} );			
 
 	$.Schedule( 3.8, function() {
@@ -136,7 +136,7 @@ function HeroesReady() {
 		scenePanel.FireEntityInput( 'block11_a0_button', 'SetAnimation', 'spin' );
 		scenePanel.FireEntityInput( 'block09_a1_button', 'SetAnimation', 'spin' );
 		scenePanel.FireEntityInput( 'block07_a2_button', 'SetAnimation', 'spin' );
-		scenePanel.FireEntityInput( 'block07_hero_button', 'SetAnimation', 'spin' );
+		scenePanel.FireEntityInput( 'block09_hero_button', 'SetAnimation', 'spin' );
 		
 	} );			
 
@@ -144,13 +144,13 @@ function HeroesReady() {
 
 		scenePanel.FireEntityInput( 'block11_a1_button', 'SetAnimation', 'spin' );
 		scenePanel.FireEntityInput( 'block09_a2_button', 'SetAnimation', 'spin' );
-		scenePanel.FireEntityInput( 'block09_hero_button', 'SetAnimation', 'spin' );
+		scenePanel.FireEntityInput( 'block10_hero_button', 'SetAnimation', 'spin' );
 	} );			
 
 	$.Schedule( 4.0, function() {
 
 		scenePanel.FireEntityInput( 'block11_a2_button', 'SetAnimation', 'spin' );
-		scenePanel.FireEntityInput( 'block1_hero_button', 'SetAnimation', 'spin' );
+		scenePanel.FireEntityInput( 'block11_hero_button', 'SetAnimation', 'spin' );
 	} );			
 } 
 
@@ -269,7 +269,7 @@ function OnHoverButtonHero(buttonName, heroPanelName) {
 		return;
 	}
 
-	if (!heroPanel.BAscendantHasClass('AbilityChosen') && !abilityDraftPanel.BHasClass('CurrentPlayerHasChosen')) {
+	if (!heroPanel.BAscendantHasClass('HeroChosen') && !abilityDraftPanel.BHasClass('CurrentPlayerHasChosen')) {
 		var scenePanel = $('#AbilitiesScene');
 		scenePanel.FireEntityInput(buttonName + '_button', 'SetAnimation', 'hover');
 	}
@@ -296,7 +296,7 @@ function OnMouseOutHero(buttonName, heroPanelName) {
 	}
 
 	var heroPanel = $('#' + heroPanelName);
-	if (!heroPanel.BAscendantHasClass('AbilityChosen')) {
+	if (!heroPanel.BAscendantHasClass('HeroChosen')) {
 		var scenePanel = $('#AbilitiesScene');
 		scenePanel.FireEntityInput(buttonName + '_button', 'SetAnimation', 'idle');
 	}
@@ -396,7 +396,7 @@ function OnActivateHero( blockName, heroPanelName, heroIndex )
 	}
 
 	var heroPanel = $( '#' + heroPanelName );
-	if (!heroPanel.BAscendantHasClass('AbilityChosen') )
+	if (!heroPanel.BAscendantHasClass('HeroChosen') )
 	{
 		var scenePanel = $( '#AbilitiesScene' );
 		scenePanel.FireEntityInput( blockName + '_activate_relay', 'Trigger', 0 );

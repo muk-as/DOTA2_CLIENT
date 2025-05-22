@@ -9,14 +9,20 @@
 		<include src="s2r://panorama/scripts/hud/dota_hud_abilitydraft.vjs_c" />
 	</scripts>
 	<snippets>
-		<snippet name="UltimateAbility">
-			<Panel class="Ability">
-				<DOTAAbilityImage id="AbilityImage" />
+		<snippet name="ADFacetSnippet">
+			<Panel class="FacetHolder">
+				<DOTAFacetIcon id="FacetIcon" />
 			</Panel>
 		</snippet>
-		<snippet name="Ability">
-			<Panel class="Ability">
-				<DOTAAbilityImage id="AbilityImage" />
+		<snippet name="PerAbilityFacetsContainer">
+			<Panel id="PerAbilityFacetsContainer" class="FacetsContainer" />
+		</snippet>
+		<snippet name="DraftedAbilityContainer">
+			<Panel class="DraftedAbilityContainer">
+				<DOTAAbilityImage id="AbilityImage" class="HeroAbility" abilityid="">
+					<Panel class="ScepterMarker" />
+					<Panel class="ShardMarker" />
+				</DOTAAbilityImage>
 			</Panel>
 		</snippet>
 		<snippet name="DraftOrderEntry">
@@ -29,6 +35,7 @@
 					<Label class="RoundNumber R4" text="5" hittest="false" />
 				</Panel>
 				<Panel id="HeroCard">
+					<Panel id="NoImageBackground" />
 					<DOTAHeroImage id="DraftOrderHeroImage" class="HeroImage StripHeroImage" heroimagestyle="portrait" hittest="false" />
 					<DOTAAvatarImage id="PlayerAvatarImage" class="AvatarImage StripAvatarImage" />
 					<Panel id="DisconnectedIcon" />
@@ -40,6 +47,7 @@
 				<Panel class="PanelBackground" />
 				<Panel class="HeroBackground" />
 				<DOTAHeroMovie id="PlayerHeroImage" class="HeroImage" heroname="" heroimagestyle="portrait" hittest="false" />
+				<Panel class="NoHeroPickedStub" />
 				<Panel id="MainDisconnectedIcon" />
 				<Panel class="NameContainer">
 					<Label id="PlayerHeroName" class="HeroName" text="{s:hero_name}" />
@@ -48,21 +56,10 @@
 						<Label id="PlayerName" class="PlayerName" text="{g:dota_filtered_string:player_name}" />
 						<Label id="GuildTag" class="PlayerName" text="{g:dota_filtered_string:guild_tag}" />
 					</Panel>
-					<Label class="PickingNext" text="#DOTAAbilityDraft_Picking_Next" />
 				</Panel>
-				<Panel class="HeroAbilityContainer">
-					<Panel class="AbilityContainer">
-						<DOTAAbilityImage id="Ability0" class="HeroAbility" abilityid="" />
-					</Panel>
-					<Panel class="AbilityContainer">
-						<DOTAAbilityImage id="Ability1" class="HeroAbility" abilityid="" />
-					</Panel>
-					<Panel class="AbilityContainer">
-						<DOTAAbilityImage id="Ability2" class="HeroAbility" abilityid="" />
-					</Panel>
-					<Panel class="AbilityContainer">
-						<DOTAAbilityImage id="Ability3" class="HeroAbility" abilityid="" />
-					</Panel>
+				<Panel class="HeroAbilityContainerOuter">
+					<Panel id="FacetsContainer" class="FacetsContainer" />
+					<Panel id="HeroAbilityContainer" class="HeroAbilityContainer" />
 				</Panel>
 				<Panel id="HeroStrAgiIntIcon" />
 				<Panel id="StatIcon" class="StatBranch" />
@@ -77,7 +74,7 @@
 	<DOTAAbilityDraft hittest="true" acceptsfocus="true">
 		<Panel id="MainContainer" onload="AsyncEvent( 0.1, RemoveStyle( AbilitiesScene, Dark ) ); AsyncEvent( 0.1, AddStyle( UIElements, MakeVisible ) );">
 			<DOTAScenePanel id="AbilitiesScene" class="Dark" map="scenes/hud/ability_draft_picker" camera="camera_0" light="ad_light" particleonly="false" antialias="true" hittest="false" renderdeferred="true" panoramasurfacexml="s2r://panorama/layout/hud/dota_hud_ad_texture_sheet.vxml_c" panoramasurfacewidth="1024" panoramasurfaceheight="1024" pin-fov="vertical" />
-			<Panel id="AbilityDraftUltimatesHitbox">
+			<Panel id="AbilityDraftUltimatesHitbox" class="DraftingHitbox">
 				<Panel class="AbilitiesSet TopLeftSet">
 					<Panel class="Row LeftRightFlow">
 						<Panel class="Ability" id="AbilityContainer_36" block="block00_ult" onmouseover="OnHoverButton(&apos;block00_ult&apos;, &apos;ability_id_36&apos;, true);" onmouseout="OnMouseOut( &apos;block00_ult&apos;, &apos;ability_id_36&apos; );" onactivate="OnActivateUltimate(&apos;block00_ult&apos;, &apos;ability_id_36&apos;, 36);">
@@ -121,7 +118,7 @@
 					</Panel>
 				</Panel>
 			</Panel>
-			<Panel id="AbilityDraftAbilitiesHitbox" hittest="false">
+			<Panel id="AbilityDraftAbilitiesHitbox" class="DraftingHitbox" hittest="false">
 				<Panel id="CenterBlock">
 					<Panel class="AbilitiesSet TopLeftSet">
 						<Panel class="Row LeftRightFlow">
@@ -265,7 +262,7 @@
 					</Panel>
 				</Panel>
 			</Panel>
-			<Panel id="AbilityDraftHeroesHitbox" hittest="false">
+			<Panel id="AbilityDraftHeroesHitbox" class="DraftingHitbox" hittest="false">
 				<Panel id="TopLeftHeroes" class="Column TopBottomFlow">
 					<Panel class="Hero" id="HeroContainer_0" block="block00_hero" onmouseover="OnHoverButtonHero(&apos;block00_hero&apos;, &apos;hero_id_0&apos;);" onmouseout="OnMouseOutHero( &apos;block00_hero&apos;, &apos;hero_id_0&apos; );" onactivate="OnActivateHero(&apos;block00_hero&apos;, &apos;hero_id_0&apos;, 0 );">
 						<DOTAHeroImage id="hero_id_0" />
@@ -331,7 +328,7 @@
 				<Panel id="BottomLeftCorner" class="Corners" hittest="false" />
 				<Panel id="BottomRightCorner" class="Corners" hittest="false" />
 			</Panel>
-			<Panel id="UIElements">
+			<Panel id="UIElements" hittest="false">
 				<Panel id="PickingGlowContainer" hittest="false">
 					<Panel id="PickingGlow" hittest="false" />
 				</Panel>
@@ -358,11 +355,15 @@
 					</Panel>
 					<Label id="ADLog" text="#DOTA_GameMode_AbilityDraft_ChangeLog_Title" onactivate="DOTAAbilityDraftShowChangeLog()" />
 				</Panel>
+				<Panel id="ADCtrlAltTip" onmouseout="UIHideTextTooltip();" onmouseover="UIShowTextTooltip( #DOTA_Chat_Ability_Draft_Start );">
+					<Panel class="InfoIcon" />
+					<Label text="#DOTA_MoreInformation" />
+				</Panel>
 			</Panel>
 		</Panel>
 		<Panel id="LoadingContainer" class="TopBottomFlow">
 			<Label id="ADLoadingTitle" text="#DOTA_GameMode_AbilityDraft" />
-			<Panel class="LeftRightFlow CenterAlign">
+			<Panel class="SpinnerContainer LeftRightFlow CenterAlign">
 				<Label id="ADLoading" text="#DOTA_LoadingPlayerLoading" />
 				<Panel class="Spinner" />
 			</Panel>
@@ -377,7 +378,8 @@
 					<Panel id="ChangelogDetailsScroll">
 						<Panel class="PingNotice" />
 						<Panel class="TopBottomFlow">
-							<Label class="ChangeLogText Latest" html="true" text="#DOTA_GameMode_AbilityDraft_ChangeLog_Latest_May_31_2024" />
+							<Label class="ChangeLogText Latest" html="true" text="#DOTA_GameMode_AbilityDraft_ChangeLog_Latest_May_22_2025" />
+							<Label class="ChangeLogText" html="true" text="#DOTA_GameMode_AbilityDraft_ChangeLog_Latest_May_31_2024" />
 							<Label class="ChangeLogText" html="true" text="#DOTA_GameMode_AbilityDraft_ChangeLog_Latest_Feb_08_2024" />
 							<Label class="ChangeLogText" html="true" text="#DOTA_GameMode_AbilityDraft_ChangeLog_Latest_Oct_06_2022" />
 							<Label class="ChangeLogText" html="true" text="#DOTA_GameMode_AbilityDraft_ChangeLog_Latest_Jun_01_2022" />

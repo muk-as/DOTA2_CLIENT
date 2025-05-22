@@ -7,21 +7,57 @@
 	</styles>
 	<DOTACourier>
 		<Panel id="CourierControls" hittest="false">
-			<Button id="SelectCourierButton" class="CourierButton" onactivate="DOTAHUDCourierSelectLeftClick();" onmouseout="UIHideTextTooltip()" oncontextmenu="DOTAHUDCourierSelectRightClick();" acceptsjoyfocus="true" />
+			<Panel id="SelectCourierHotkey" class="HotkeyContainer" hittest="false" hittestchildren="false">
+				<Panel class="Hotkey">
+					<Label class="HotkeyText" text="{s:select_courier_hotkey}" html="true" />
+				</Panel>
+			</Panel>
+			<Button id="SelectCourierButton" class="CourierButton" onactivate="DOTAHUDCourierSelectLeftClick();" onmouseout="UIHideTextTooltip()" oncontextmenu="DOTAHUDCourierSelectRightClick();" acceptsjoyfocus="true">
+				<Image class="CourierButtonIcon" src="s2r://panorama/images/control_icons/24px/couriers.vsvg" texturewidth="48px" textureheight="48px" />
+			</Button>
 			<Panel id="ItemsOnCourierBackground">
 				<Label id="ItemsOnCourier" class="MonoNumbersFont" text="{d:num_courier_items}" />
 			</Panel>
-			<Button id="CourierBurstButton" class="CourierButton" onactivate="DOTAHUDCourierBurst();" onmouseover="UIShowTextTooltip( #DOTA_HUD_CourierBurst )" onmouseout="UIHideTextTooltip()" acceptsjoyfocus="true">
+			<Panel id="CourierBurstHotkey" class="HotkeyContainer" hittest="false" hittestchildren="false">
+				<Panel class="Hotkey">
+					<Label class="HotkeyText" text="{s:courier_burst_hotkey}" html="true" />
+				</Panel>
+			</Panel>
+			<Panel id="CourierBurstButton" class="CourierButton" onactivate="DOTAHUDCourierBurst();" onmouseover="UIShowTextTooltip( #DOTA_HUD_CourierBurst )" onmouseout="UIHideTextTooltip()" acceptsjoyfocus="true">
+				<Image class="CourierButtonIcon" src="s2r://panorama/images/control_icons/24px/speed_boost.vsvg" texturewidth="48px" textureheight="48px" />
 				<Label id="BurstCooldownLabel" class="MonoNumbersFont" text="{d:burst_cooldown}" hittest="false" />
-			</Button>
-			<Button id="CourierShieldButton" class="CourierButton" onactivate="DOTAHUDCourierShield();" onmouseover="UIShowTextTooltip( #DOTA_HUD_CourierShield )" onmouseout="UIHideTextTooltip()" acceptsjoyfocus="true">
+			</Panel>
+			<Panel id="CourierShieldHotkey" class="HotkeyContainer" hittest="false" hittestchildren="false">
+				<Panel class="Hotkey">
+					<Label class="HotkeyText" text="{s:courier_shield_hotkey}" html="true" />
+				</Panel>
+			</Panel>
+			<Panel id="CourierShieldButton" class="CourierButton" onactivate="DOTAHUDCourierShield();" onmouseover="UIShowTextTooltip( #DOTA_HUD_CourierShield )" onmouseout="UIHideTextTooltip()" acceptsjoyfocus="true">
+				<Image class="CourierButtonIcon" src="s2r://panorama/images/control_icons/24px/armor.vsvg" texturewidth="48px" textureheight="48px" />
 				<Label id="ShieldCooldownLabel" class="MonoNumbersFont" text="{d:shield_cooldown}" hittest="false" />
-			</Button>
-			<Button id="DeliverItemsButton" class="CourierButton" onactivate="DOTAHUDCourierDeliverLeftClick();" oncontextmenu="DOTAHUDCourierDeliverRightClick();" onmouseover="UIShowTextTooltip( #DOTA_HUD_CourierDeliver )" onmouseout="UIHideTextTooltip()" acceptsjoyfocus="true">
-				<Image id="Spinner" class="CourierButton" />
-				<DOTAHeroImage id="HeroImage" heroid="55" />
+			</Panel>
+			<Panel id="CourierDeliverHotkey" class="HotkeyContainer" hittest="false" hittestchildren="false">
+				<Panel class="Hotkey">
+					<Label class="HotkeyText" text="{s:courier_deliver_hotkey}" html="true" />
+				</Panel>
+			</Panel>
+			<Panel id="DeliverItemsButton" onactivate="DOTAHUDCourierDeliverLeftClick();" oncontextmenu="DOTAHUDCourierDeliverRightClick();" onmouseover="UIShowTextTooltip( #DOTA_HUD_CourierDeliver )" onmouseout="UIHideTextTooltip()" acceptsjoyfocus="true">
+				<Panel class="CourierButton">
+					<Image class="CourierButtonIcon" src="s2r://panorama/images/control_icons/24px/arrow_alt_right.vsvg" texturewidth="48px" textureheight="48px" />
+				</Panel>
+				<Image id="Spinner" src="s2r://panorama/images/hud/reborn/courier_spinner.vsvg" texturewidth="48px" textureheight="48px" />
+				<DOTAHeroImage id="HeroImage" />
+				<Image id="FountainImage" src="s2r://panorama/images/control_icons/24px/home.vsvg" texturewidth="48px" textureheight="48px" />
+				<Image id="SecretShopImage" src="s2r://panorama/images/control_icons/24px/secret_shop.vsvg" texturewidth="48px" textureheight="48px" />
 				<Image id="OtherHeroDeliver" class="CourierButton" onactivate="DOTAHUDCourierDeliverToBestOtherPlayer();" />
-			</Button>
+				<Panel class="CourierAutoStatus" onmouseover="UIShowTextTooltip( #dota_settings_auto_courier_autodeliver_on_status )" onmouseout="UIHideTextTooltip()">
+					<Label text="A" />
+				</Panel>
+			</Panel>
+			<DOTAViolator id="AutoDeliverViolator" class="AutoDeliverViolator DOTAViolator" name="autodeliver_violator" hittest="false">
+				<Panel class="DOTAViolatorOuter" />
+				<Panel class="DOTAViolatorInner" />
+			</DOTAViolator>
 		</Panel>
 		<Panel id="DeadCourierPanel" onactivate="DOTAHUDCourierDeadLeftClick();" acceptsjoyfocus="true">
 			<Panel id="CourierDeadIcon" hittest="false" />

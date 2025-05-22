@@ -5,6 +5,19 @@
 		<include src="s2r://panorama/styles/hudstyles.vcss_c" />
 		<include src="s2r://panorama/styles/hud/dota_hud_spectator_graph.vcss_c" />
 	</styles>
+	<snippets>
+		<snippet name="GraphEventColumn">
+			<Panel class="GraphEventColumn" hittest="false">
+				<Panel id="RadiantKills" hittest="false" />
+				<Panel id="DireKills" hittest="false" />
+			</Panel>
+		</snippet>
+		<snippet name="GraphEvent">
+			<Panel class="EventPanel" acceptsfocus="true">
+				<Image id="HeroIcon" />
+			</Panel>
+		</snippet>
+	</snippets>
 	<DOTASpectatorGraph>
 		<Panel id="GraphLeftRightFlow" class="LeftRightFlow">
 			<Panel id="GraphTeams">
@@ -72,6 +85,7 @@
 				<Button id="CloseButton" onactivate="DOTASpectatorGraphClose()" />
 			</Panel>
 		</Panel>
+		<Panel id="EventsContainer" hittest="false" />
 		<Panel id="GraphContainer">
 			<UICanvas id="GraphCanvas" />
 			<Label id="DetailsBasicGraphsTopY1" class="MonoNumbersFont GraphYAxisLabel" text="{s:graph_y_1}" />
@@ -86,7 +100,6 @@
 			<Label id="DetailsBasicGraphsBottomTeam" text="{s:dire_name}" />
 		</Panel>
 		<Panel id="EventsAndTimelineContainer">
-			<Panel id="EventsContainer" />
 			<Panel id="GraphTimeline">
 				<Panel id="GraphTimelineLabels">
 					<Label id="TimelineLabel0" class="TimelineLabel" text="" />

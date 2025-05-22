@@ -5,16 +5,89 @@ DOTAQuickBuy
 	context-menu-position: top;
 }
 
-.potential_drop_target #QuickBuyRows
-{
-	box-shadow: inset #0B93BE44 0px 6px 6px 12px;
-}
-
 .AspectRatio4x3 .Legacy #GoldIcon
 {
 	width: 26px;
 	height: 26px;
 	margin-left: 3px;
+}
+
+.DropTarget
+{
+	width: 100%;
+	height: 100%;
+	border: 1px solid rgba(0, 183, 255, 0.6);
+	box-shadow: inset rgba(0, 183, 255, 0.1) 0px 0px 5px 1px;
+	border-style: dashed;
+	border-radius: 4px;
+	margin: 4px;
+	width: 178px;
+	background-color: rgba(0, 183, 255, 0.02);
+	transition-property: opacity;
+	transition-duration: 0.1s;
+	opacity: 0;
+}
+
+.HUDFlipped .DropTarget
+{
+	margin-left: 55px;
+}
+
+.ShowHint .DropTarget
+{
+	width: 230px;
+}
+
+.potential_drop_target .DropTarget
+{
+	opacity: 1;
+	transition-duration: 0s;
+}
+
+.QuickBuySlot .QuickBuySlotBg
+{
+	width: 38px;
+	height: 28px;
+	horizontal-align: center;
+	border: 1px solid rgba(0, 183, 255, 0.4);
+	box-shadow: inset rgba(0, 183, 255, 0.1) 0px 0px 5px 1px;
+	border-radius: 3px;
+	visibility: collapse;
+}
+
+.QuickBuySlot .QuickBuySlotDropTarget
+{
+	width: 32px;
+	height: 22px;
+	horizontal-align: center;
+	vertical-align: center;
+	padding: 5px;
+	background-color: rgba(0, 0, 0, 0.1);
+	brightness: 0.6;
+	img-shadow: 0px 1px 6px black;
+	border: 1px solid rgba(0, 183, 255, 0.6);
+	box-shadow: inset rgba(0, 183, 255, 0.1) 0px 0px 5px 1px;
+	border-style: dashed;
+	border-radius: 4px;
+	transition-duration: 0.1s;
+	transition-property: background-color, border, brightness;
+	visibility: collapse;
+}
+
+.QuickBuyItemDragging .QuickBuySlot .QuickBuySlotDropTarget.HasItem
+{
+	visibility: visible;
+}
+
+.QuickBuySlot .QuickBuySlotDropTarget.QuickBuyDraggingOver
+{
+	width: 38px;
+	height: 28px;
+}
+
+.CtrlPressed.potential_drop_target .QuickBuySlotBg
+{
+	visibility: visible;
 }
 
 .AspectRatio4x3 .Legacy #GoldLabel
@@ -24,17 +97,62 @@ DOTAQuickBuy
 	margin-top: 3px;
 }
 
+#QuickBuyRowsBuybackOverlay
+{
+	background-size: 100% 100%;
+	width: 100%;
+	height: 100%;
+	border: 1.5px solid rgba(255, 255, 255, 1);
+	border-left: 0px;
+	border-right: 0px;
+	border-radius: 2px;
+	border-brush: gradient( linear, 0% 0%, 100% 0%, from( #a86700 ), color-stop( 0.5, #ffd932 ), to( #a86700 ) );
+	box-shadow: inset 0px 0.5px 1px #ffe55538;
+	background-color: gradient( radial, 50% 0%, 0% 0%, 50% 100%, from( #ffaa000b ), to( #a8670000 ) );
+	visibility: collapse;
+}
+
+.CanAffordBuybackAndQuickbuy #QuickBuyRowsBuybackOverlay
+{
+	visibility: visible;
+}
+
+#ShopButtonBuybackOverlay
+{
+	width: 100%;
+	height: 42px;
+	vertical-align: center;
+	z-index: -1;
+	border: 1.5px solid rgba(255, 255, 255, 1);
+	border-radius: 3px;
+	border-left: 0px;
+	border-right: 0px;
+	border-brush: gradient( linear, 0% 0%, 100% 0%, from( #a86700 ), color-stop( 0.5, #ffd932 ), to( #a86700 ) );
+	box-shadow: inset 0px 0.5px 1px #ffe55538;
+	background-color: black;
+	visibility: collapse;
+}
+
+DOTAQuickBuy:not(.BuybackDisabled) #ShopButtonBuybackOverlay
+{
+	visibility: visible;
+}
+
+.ShopButtonContainer
+{
+	vertical-align: center;
+	margin-left: 8px;
+	height: 100%;
+}
+
 #ShopButton
 {
-	margin-left: 0px;
 	background-image: url("s2r://panorama/images/hud/hudv2_shopbutton_png.vtex");
 	background-size: 100% 100%;
 	width: 100px;
 	height: 36px;
-	vertical-align: bottom;
+	vertical-align: center;
 	horizontal-align: left;
-	margin-bottom: 12px;
-	margin-left: 15px;
 }
 
 .ShopInRange #ShopButton
@@ -107,7 +225,7 @@ DOTAQuickBuy
 #courier
 {
 	vertical-align: center;
-	width: 132px;
+	width: 100%;
 	height: 60px;
 	margin-left: 114px;
 }
@@ -116,7 +234,18 @@ DOTAQuickBuy
 {
 	margin-bottom: 60px;
 	width: 100%;
-	min-height: 40px;
+	min-height: 44px;
+	background-color: #252627ac;
+	background-img-opacity: 0.5;
+	box-shadow: inset 0px -1px 4px -1px rgba(0, 0, 0, 0.5);
+	margin-left: 1px;
+	margin-right: 0px;
+}
+
+.HUDFlipped #QuickBuyRows
+{
+	margin-left: 0px;
+	margin-right: 1px;
 }
 
 .HIDE_INVENTORY_QUICKBUY #QuickBuyRows
@@ -160,23 +289,35 @@ DOTAQuickBuy
 
 #Hint
 {
-	font-size: 14px;
-	color: #ffffff66;
-	width: 145px;
+	font-size: 13px;
+	color: #ffffffad;
+	text-shadow: 0px 1px 8px black;
+	width: fill-parent-flow(1);
 	vertical-align: middle;
 	margin-left: 8px;
-	margin-right: 40px;
+	margin-right: 85px;
 	padding-top: 2px;
 	padding-bottom: 0px;
 	opacity: 0;
 	line-height: 15px;
 }
 
+.HasSuggestedItem #Hint
+{
+	padding-left: 0px;
+	padding-right: 50px;
+}
+
 .HUDFlipped #Hint
 {
-	horizontal-align: right;
-	margin-right:8px;
-	margin-left: 4px;
+	margin-right: 24px;
+	margin-left: 64px;
+}
+
+.HUDFlipped .HasSuggestedItem #Hint
+{
+	padding-left: 38px;
+	padding-right: 0px;
 }
 
 .ShowHint:not(.ShowingQueryUnit) #Hint
@@ -184,12 +325,12 @@ DOTAQuickBuy
 	opacity: 1;
 }
 
-.ShowHint #ClearQuickBuy
+.ShowHint #ClearQuickBuy,.ShowHint #RemoveItemDropTarget
 {
 	visibility: collapse;
 }
 
-.ShowingQueryUnit #ClearQuickBuy
+.ShowingQueryUnit #ClearQuickBuy,.ShowingQueryUnit #BuybackProtection,.ShowingQueryUnit #RemoveItemDropTarget
 {
 	visibility: collapse;
 }
@@ -207,6 +348,12 @@ DOTAShopItem
 	width: 37px;
 	height: 29px;
 	margin-right: 3px;
+}
+
+DOTAShopItem.PurchaseInFlight
+{
+	brightness: 0.4;
+	transform: translateY( 1px );
 }
 
 DOTAItemImage
@@ -239,29 +386,113 @@ DOTAItemImage
 	margin-top: 20px;
 }
 
-#ClearQuickBuy
+.QuickBuyActionsContainer
 {
-	background-image: url("s2r://panorama/images/control_icons/x_close_png.vtex");
-	background-size: cover;
-	background-position: 50% 50%;
-	width: 16px;
-	height: 16px;
+	flow-children: right;
 	horizontal-align: right;
-	margin-top: 6px;
+	vertical-align: center;
 	margin-right: 56px;
-	brightness: 0.4;
-	transition-property: brightness;
-	transition-duration: 0.15s;
 }
 
-#ClearQuickBuy:hover
+.QuickBuyActionsContainer #ClearQuickBuy
 {
-	brightness: 1.0;
-}
-
-#ClearQuickBuy:active
-{
+	width: 24px;
+	height: 24px;
+	vertical-align: center;
+	border-radius: 50%;
+	padding: 5px;
+	background-color: rgba(0, 0, 0, 0.4);
+	border: 1px solid rgba(255, 255, 255, 0.2);
 	brightness: 0.6;
+	img-shadow: 0px 1px 6px black;
+	transition-duration: 0.1s;
+	transition-property: background-color, border, brightness;
+}
+
+.QuickBuyActionsContainer #ClearQuickBuy:hover
+{
+	background-color: rgba(0, 0, 0, 0.8);
+	border: 1px solid rgba(255, 255, 255, 0.4);
+	brightness: 1;
+}
+
+.QuickBuyItemDragging .QuickBuyActionsContainer #ClearQuickBuy
+{
+	visibility: collapse;
+}
+
+.QuickBuyActionsContainer #RemoveItemDropTarget
+{
+	width: 24px;
+	height: 24px;
+	vertical-align: center;
+	padding: 5px;
+	background-color: rgba(0, 0, 0, 0.4);
+	brightness: 0.6;
+	img-shadow: 0px 1px 6px black;
+	border: 1px solid rgba(0, 183, 255, 0.6);
+	box-shadow: inset rgba(0, 183, 255, 0.1) 0px 0px 5px 1px;
+	border-style: dashed;
+	border-radius: 4px;
+	transition-duration: 0.1s;
+	transition-property: background-color, border, brightness;
+	visibility: collapse;
+}
+
+.QuickBuyActionsContainer #RemoveItemDropTarget:hover
+{
+	background-color: rgba(0, 0, 0, 0.8);
+	border: 1px solid rgba(255, 255, 255, 0.4);
+	brightness: 1;
+}
+
+.QuickBuyItemDragging .QuickBuyActionsContainer #RemoveItemDropTarget
+{
+	visibility: visible;
+}
+
+.QuickBuyActionsContainer #BuybackProtection
+{
+	width: 30px;
+	height: 30px;
+	vertical-align: center;
+	tooltip-position: top;
+	background-image: url("s2r://panorama/images/hud/buyback_protection_off_png.vtex");
+	background-size: cover;
+	background-position: center;
+	transition-duration: 0.05s;
+	transition-property: transform, brightness;
+}
+
+.QuickBuyActionsContainer #BuybackProtection:hover
+{
+	brightness: 1.5;
+}
+
+.QuickBuyActionsContainer #BuybackProtection:active
+{
+	transform: translateY(1px);
+	brightness: 0.6;
+}
+
+.BuybackProtectionEnabled .QuickBuyActionsContainer #BuybackProtection
+{
+	background-image: url("s2r://panorama/images/hud/buyback_protection_on_png.vtex");
+}
+
+.HasSuggestedItem.ShowHint .QuickBuyActionsContainer #BuybackProtection
+{
+	margin-right: 46px;
+}
+
+.HUDFlipped .QuickBuyActionsContainer
+{
+	margin-right: 4px;
+}
+
+.HUDFlipped .HasSuggestedItem.ShowHint #BuybackProtection
+{
+	margin-right: 0px;
 }
 
 #SuggestItems
@@ -281,7 +512,7 @@ DOTAItemImage
 	transition-duration: 0.2s;
 }
 
-.ShowHint:not(.ShowingQueryUnit) #SuggestItems
+.ShowHint.HasSuggestedItem:not(.ShowingQueryUnit) #SuggestItems
 {
 	opacity: 1;
 }
@@ -292,7 +523,7 @@ DOTAItemImage
 	margin-left: 58px;
 }
 
-.ShowHint #SuggestItems
+.ShowHint.HasSuggestedItem #SuggestItems
 {
 	visibility: visible;
 }
@@ -307,45 +538,84 @@ DOTAItemImage
 	brightness: 1.5;
 }
 
-.HUDFlipped #ClearQuickBuy
-{
-	horizontal-align: left;
-	margin-left: 62px;
-	margin-right: 0px;
-}
-
-.AspectRatio4x3 .Legacy #ClearQuickBuy
-{
-	width: 28px;
-	height: 22px;
-}
-
 #Row0
 {
-	padding-left: 9px;
-	padding-top: 6px;
+	padding-left: 4px;
+	padding-top: 8px;
 	flow-children: right;
 }
 
 #Row1
 {
 	margin-top: 30px;
-	padding-left: 9px;
+	padding-left: 4px;
 	padding-top: 10px;
-	padding-bottom: 6px;
+	padding-bottom: 8px;
 	flow-children: right;
 }
 
 .HUDFlipped #Row0
 {
-	margin-right: 6px;
-	horizontal-align: right;
+	margin-left: 52px;
 }
 
 .HUDFlipped #Row1
 {
-	margin-right: 6px;
-	horizontal-align: right;
+	margin-left: 52px;
+}
+
+#OverflowIndicator
+{
+	border-radius: 3px;
+	border: 1px solid black;
+	background-color: #212726;
+	box-shadow: fill #0000007f 1px 1px 6px -1px;
+	x: 170px;
+	y: 58px;
+	min-width: 16px;
+	min-height: 16px;
+	padding:1px;
+}
+
+#OverflowIndicator.Hidden
+{
+	visibility: collapse;
+}
+
+#OverflowIndicator Label
+{
+	color: #c2bea3;
+	font-size: 11px;
+	text-align: center;
+	vertical-align: center;
+	horizontal-align: center;
+}
+
+#OverflowIndicator.Updated Label
+{
+	animation-name: UpdateFade;
+	animation-duration: 0.1s;
+	animation-fill-mode: forwards;
+}
+
+.HUDFlipped #OverflowIndicator
+{
+	x: 218px;
+}
+
+@keyframes 'UpdateFade'
+{
+	0%
+	{
+		brightness: 2;
+		transform: translateY( -1px );
+	}
+	
+	100%
+	{
+		brightness: 1;
+	}
+	
 }
 
 #StickyItemSlotContainer
@@ -354,7 +624,28 @@ DOTAItemImage
 	width: 53px;
 	background-color: #0000006F;
 	height: 100%;
-	flow-children: right;
+}
+
+#StickyItemSlotContainer.ShopItemBeingDragged .StickyDropTarget
+{
+	opacity: 1;
+	transition-duration: 0s;
+}
+
+#StickyItemSlotContainer .StickyDropTarget
+{
+	width: 100%;
+	height: 100%;
+	border: 1px solid rgba(0, 183, 255, 0.6);
+	box-shadow: inset rgba(0, 183, 255, 0.1) 0px 0px 5px 1px;
+	margin: 4px;
+	border-style: dashed;
+	border-radius: 4px;
+	width: 178px;
+	background-color: rgba(0, 183, 255, 0.02);
+	transition-property: opacity;
+	transition-duration: 0.1s;
+	opacity: 0;
 }
 
 .HUDFlipped #StickyItemSlotContainer
@@ -362,7 +653,7 @@ DOTAItemImage
 	horizontal-align: left;
 }
 
-#QuickBuySlot8
+#StickySlot
 {
 	vertical-align: center;
 	horizontal-align: center;
@@ -376,12 +667,11 @@ DOTAItemImage
 	brightness: 1.0;
 	z-index: -1;
 	box-shadow: #00000055 0px 0px 2px 2px;
-	margin-left: 134px;
-	margin-left: 12px;
 	transition-property: background-image;
 	transition-duration: .18s;
 	transition-timing-function: ease-in-out;
 	tooltip-position: top;
+	context-menu-position: top;
 }
 
 .Reborn #ShopButton Label
@@ -444,17 +734,13 @@ DOTAItemImage
 
 .Reborn #ShopCourierControls
 {
+	width: 100%;
 	vertical-align: bottom;
 }
 
 .HUDFlipped #courier
 {
-	margin-left: 115px;
-}
-
-.HUDFlipped #ShopButton
-{
-	margin-left: 8px;
+	margin-left: 116px;
 }
 
 .ShopButtonValueLabel
