@@ -13,7 +13,7 @@ namespace source2sdk
 {
     namespace client
     {
-        // Enumerator count: 959
+        // Enumerator count: 958
         // Alignment: 4
         // Size: 0x4
         enum class EDOTAGCMsg : std::uint32_t
@@ -695,7 +695,6 @@ namespace source2sdk
             k_EMsgClientToGCRequestAccountGuildPersonaInfoBatch = 0x2219,
             k_EMsgClientToGCRequestAccountGuildPersonaInfoBatchResponse = 0x221a,
             k_EMsgGCToClientUnderDraftGoldUpdated = 0x221b,
-            k_EMsgGCToServerRecordTrainingData = 0x221c,
             k_EMsgSignOutBounties = 0x221d,
             k_EMsgLobbyFeaturedGamemodeProgress = 0x221e,
             k_EMsgLobbyGauntletProgress = 0x221f,

@@ -138,7 +138,6 @@ namespace source2sdk
             DOTA_UM_HighFiveLeftHanging = 0x247,
             DOTA_UM_HighFiveCompleted = 0x248,
             DOTA_UM_ShovelUnearth = 0x249,
-            DOTA_EM_InvokerSpellCast = 0x24a,
             DOTA_UM_RadarAlert = 0x24b,
             DOTA_UM_AllStarEvent = 0x24c,
             DOTA_UM_TalentTreeAlert = 0x24d,
@@ -181,6 +180,7 @@ namespace source2sdk
             DOTA_UM_NeutralCraftAvailable = 0x273,
             DOTA_UM_TimerAlert = 0x274,
             DOTA_UM_MadstoneAlert = 0x275,
+            DOTA_UM_CourierLeftFountainAlert = 0x276,
         };
     };
 };

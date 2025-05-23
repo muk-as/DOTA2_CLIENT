@@ -13,7 +13,7 @@ namespace source2sdk
 {
     namespace client
     {
-        // Enumerator count: 90
+        // Enumerator count: 91
         // Alignment: 1
         // Size: 0x1
         enum class EDOTAFacetIcon : std::uint8_t
@@ -194,8 +194,10 @@ namespace source2sdk
             FACET_ICON_WOLF = 0x56,
             // MAlternateSemanticName
             FACET_ICON_XP = 0x57,
-            FACET_ICON_COUNT = 0x58,
-            FACET_ICON_INVALID = 0x59,
+            // MAlternateSemanticName
+            FACET_ICON_NONE = 0x58,
+            FACET_ICON_COUNT = 0x59,
+            FACET_ICON_INVALID = 0x5a,
         };
     };
 };

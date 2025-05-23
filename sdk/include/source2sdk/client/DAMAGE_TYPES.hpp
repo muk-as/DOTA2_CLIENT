@@ -25,7 +25,7 @@ namespace source2sdk
             DAMAGE_TYPE_MAGICAL = 0x2,
             DAMAGE_TYPE_PURE = 0x4,
             DAMAGE_TYPE_HP_REMOVAL = 0x8,
-            DAMAGE_TYPE_ABILITY_DEFINED = 0x16,
+            DAMAGE_TYPE_ABILITY_DEFINED = 0x10,
             DAMAGE_TYPE_ALL = 0x7,
         };
     };

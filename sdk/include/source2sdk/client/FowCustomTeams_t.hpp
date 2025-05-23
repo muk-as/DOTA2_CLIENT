@@ -23,7 +23,7 @@ namespace source2sdk
             FOW_TEAM_ARENA_OF_BLOOD = 0x7,
             FOW_TEAM_TUNNEL_VISION = 0x8,
             FOW_TEAM_WEIGHTED_PIE = 0x9,
-            FOW_TEAM_UNUSED4 = 0xa,
+            FOW_TEAM_BLOB = 0xa,
             FOW_TEAM_UNUSED5 = 0xb,
             FOW_TEAM_UNUSED6 = 0xc,
             FOW_TEAM_UNUSED7 = 0xd,

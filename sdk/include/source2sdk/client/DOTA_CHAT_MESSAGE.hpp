@@ -13,7 +13,7 @@ namespace source2sdk
 {
     namespace client
     {
-        // Enumerator count: 114
+        // Enumerator count: 115
         // Alignment: 4
         // Size: 0x4
         enum class DOTA_CHAT_MESSAGE : std::uint32_t
@@ -132,6 +132,7 @@ namespace source2sdk
             CHAT_MESSAGE_ALCHEMIST_GRANTED_SCEPTER = 0x78,
             CHAT_MESSAGE_PROTECTOR_SPAWNED = 0x79,
             CHAT_MESSAGE_CRAFTING_XP = 0x7a,
+            CHAT_MESSAGE_ROSHAN_ROAR = 0x7b,
         };
     };
 };
