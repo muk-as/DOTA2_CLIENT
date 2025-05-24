@@ -797,16 +797,6 @@ MoviePanel
 	brightness: 1.2;
 }
 
-#SettingsBody #NewSection
-{
-	visibility: collapse;
-}
-
-#SettingsBody #NewSection.HaveNewSettings
-{
-	visibility: visible;
-}
-
 #SettingsBody .SettingsSubsectionContainer
 {
 	width: 100%;
@@ -920,6 +910,197 @@ MoviePanel
 .HorizontalEnum RadioButton
 {
 	margin-right: 12px;
+}
+
+#NewSection
+{
+	visibility: collapse;
+}
+
+#NewSection.SettingsSectionContainer
+{
+	padding-bottom: 0px;
+	padding-right: 14px;
+}
+
+#NewSection.HaveNewSettings
+{
+	visibility: visible;
+}
+
+#NewSection .SettingsSectionTitleContainer
+{
+	z-index: 1;
+}
+
+#NewSection #NewSettingsContainer
+{
+	margin-top: -10px;
+	padding-top: 10px;
+	padding-bottom: 20px;
+	max-height: 200px;
+	overflow: squish scroll;
+	opacity-brush: gradient( linear, 0% 0%, 0% 200px, from( rgba(255, 255, 255, 0) ), color-stop(0.05, white ), color-stop(0.9, white ), to( rgba(255, 255, 255, 0) ) );
+}
+
+#NewSection #NewSettingsContainer VerticalScrollBar
+{
+	width: 4px;
+	margin: 12px 2px 22px;
+	opacity: 0;
+}
+
+#NewSection #NewSettingsContainer:hover VerticalScrollBar
+{
+	opacity: 1;
+}
+
+.NewSetting
+{
+	flow-children: right;
+	padding: 6px 10px 6px 16px;
+	border: 1px solid rgba(72, 75, 79, 0.662);
+	background-color: #50575b27;
+	margin: 2px 0px;
+	margin-right: 10px;
+	transition-duration: 0.05s, 0.1s;
+	transition-property: transform, border, background-color;
+}
+
+.NewSetting Label
+{
+	text-shadow: 0px 1px 8px rgba(0, 0, 0, 0.6);
+}
+
+.NewSetting:hover
+{
+	background-color: #61708150;
+	border: 1px solid rgb(84, 92, 104);
+}
+
+.NewSetting:hover .NewSettingInfo .NewSettingName
+{
+	color: white;
+}
+
+.NewSetting:hover .NewSettingInfo .NewSettingDescription
+{
+	color: LightestGrey;
+}
+
+.NewSetting:hover .NewSettingIcon
+{
+	opacity-brush: gradient( linear, 0% 0%, 0% 100%, from( LightestGrey ), to( LighterGrey ) );
+}
+
+.NewSetting:active
+{
+	transform: translateY( 1px );
+	brightness: 0.8;
+}
+
+.NewSetting .NewSettingIcon
+{
+	width: 26px;
+	height: width-percentage( 100% );
+	vertical-align: center;
+	margin-right: 16px;
+	opacity-brush: gradient( linear, 0% 0%, 0% 100%, from( LighterGrey ), to( LightGrey ) );
+	img-shadow: 0px 1px 8px black;
+	padding: 2px;
+	transition-duration: 0.1s;
+	transition-property: opacity-brush;
+}
+
+.NewSetting .NewSettingInfo
+{
+	width: fill-parent-flow( 1 );
+	flow-children: down;
+	vertical-align: center;
+}
+
+.NewSetting .NewSettingInfo .NewSettingName
+{
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 16px;
+	color: LightestGrey;
+	margin-bottom: -2px;
+	transition-duration: 0.1s;
+	transition-property: color;
+}
+
+.NewSetting .NewSettingInfo .NewSettingDescription
+{
+	font-size: 16px;
+	color: LightGrey;
+	transition-duration: 0.1s;
+	transition-property: color;
+}
+
+.NewSetting .NewSettingDateAdded
+{
+	vertical-align: center;
+	font-size: 14px;
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+	text-shadow: 0px 1px 6px rgba(0, 0, 0, 0.6);
+	color: LightGrey;
+}
+
+.NewSetting .NewSettingDismissIcon
+{
+	width: 28px;
+	height: width-percentage( 100% );
+	vertical-align: center;
+	wash-color: LightGrey;
+	padding: 6px;
+	border-radius: 3px;
+	margin-left: 12px;
+	border: 1px solid transparent;
+	transition-duration: 0.05s, 0.1s;
+	transition-property: transform, wash-color, background-color;
+}
+
+.NewSetting .NewSettingDismissIcon:hover
+{
+	border: 1px solid rgba(255, 255, 255, 0.043);
+	wash-color: none;
+	background-color: rgba(215, 245, 255, 0.08);
+}
+
+.NewSetting .NewSettingDismissIcon:active
+{
+	transform: scale3d( 0.96, 0.96, 1 );
+	brightness: 0.8;
+}
+
+.NewSettingBadge
+{
+	min-width: 76px;
+	vertical-align: center;
+	padding: 3px 0px;
+	margin-left: 12px;
+	border-radius: 50px;
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	color: white;
+	text-transform: uppercase;
+	font-size: 12px;
+	font-weight: semi-bold;
+	letter-spacing: 0.5px;
+	text-align: center;
+}
+
+.New .NewSettingBadge
+{
+	box-shadow: 0px 0px 16px rgba(1, 255, 85, 0.05);
+	background-color: #3aa347;
+}
+
+.Updated .NewSettingBadge
+{
+	box-shadow: 0px 0px 16px rgba(20, 149, 255, 0.1);
+	background-color: rgb(63, 140, 203);
 }
 
 .HotkeyLabel
@@ -1428,158 +1609,6 @@ MoviePanel
 .AspectRatioCheckBox.21x9
 {
 	width: height-percentage( 233% );
-}
-
-#NewSection.SettingsSectionContainer
-{
-	padding-bottom: 24px;
-}
-
-.NewSetting
-{
-	flow-children: right;
-	padding: 6px 10px 6px 16px;
-	border: 1px solid rgba(72, 75, 79, 0.662);
-	background-color: #50575b27;
-	margin: 2px 0px;
-	transition-duration: 0.05s, 0.1s;
-	transition-property: transform, border, background-color;
-}
-
-.NewSetting Label
-{
-	text-shadow: 0px 1px 8px rgba(0, 0, 0, 0.6);
-}
-
-.NewSetting:hover
-{
-	background-color: #61708150;
-	border: 1px solid rgb(84, 92, 104);
-}
-
-.NewSetting:hover .NewSettingInfo .NewSettingName
-{
-	color: white;
-}
-
-.NewSetting:hover .NewSettingInfo .NewSettingDescription
-{
-	color: LightestGrey;
-}
-
-.NewSetting:hover .NewSettingIcon
-{
-	opacity-brush: gradient( linear, 0% 0%, 0% 100%, from( LightestGrey ), to( LighterGrey ) );
-}
-
-.NewSetting:active
-{
-	transform: translateY( 1px );
-	brightness: 0.8;
-}
-
-.NewSetting .NewSettingIcon
-{
-	width: 26px;
-	height: width-percentage( 100% );
-	vertical-align: center;
-	margin-right: 16px;
-	opacity-brush: gradient( linear, 0% 0%, 0% 100%, from( LighterGrey ), to( LightGrey ) );
-	img-shadow: 0px 1px 8px black;
-	padding: 2px;
-	transition-duration: 0.1s;
-	transition-property: opacity-brush;
-}
-
-.NewSetting .NewSettingInfo
-{
-	width: fill-parent-flow( 1 );
-	flow-children: down;
-	vertical-align: center;
-}
-
-.NewSetting .NewSettingInfo .NewSettingName
-{
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	font-size: 16px;
-	color: LightestGrey;
-	margin-bottom: -2px;
-	transition-duration: 0.1s;
-	transition-property: color;
-}
-
-.NewSetting .NewSettingInfo .NewSettingDescription
-{
-	font-size: 16px;
-	color: LightGrey;
-	transition-duration: 0.1s;
-	transition-property: color;
-}
-
-.NewSetting .NewSettingDateAdded
-{
-	vertical-align: center;
-	font-size: 14px;
-	text-transform: uppercase;
-	letter-spacing: 1.5px;
-	text-shadow: 0px 1px 6px rgba(0, 0, 0, 0.6);
-	color: LightGrey;
-}
-
-.NewSetting .NewSettingDismissIcon
-{
-	width: 28px;
-	height: width-percentage( 100% );
-	vertical-align: center;
-	wash-color: LightGrey;
-	padding: 6px;
-	border-radius: 3px;
-	margin-left: 12px;
-	border: 1px solid transparent;
-	transition-duration: 0.05s, 0.1s;
-	transition-property: transform, wash-color, background-color;
-}
-
-.NewSetting .NewSettingDismissIcon:hover
-{
-	border: 1px solid rgba(255, 255, 255, 0.043);
-	wash-color: none;
-	background-color: rgba(215, 245, 255, 0.08);
-}
-
-.NewSetting .NewSettingDismissIcon:active
-{
-	transform: scale3d( 0.96, 0.96, 1 );
-	brightness: 0.8;
-}
-
-.NewSettingBadge
-{
-	min-width: 76px;
-	vertical-align: center;
-	padding: 3px 0px;
-	margin-left: 12px;
-	border-radius: 50px;
-	border: 1px solid rgba(255, 255, 255, 0.1);
-	color: white;
-	text-transform: uppercase;
-	font-size: 12px;
-	font-weight: semi-bold;
-	letter-spacing: 0.5px;
-	text-align: center;
-}
-
-.New .NewSettingBadge
-{
-	box-shadow: 0px 0px 16px rgba(1, 255, 85, 0.05);
-	background-color: #3aa347;
-}
-
-.Updated .NewSettingBadge
-{
-	box-shadow: 0px 0px 16px rgba(20, 149, 255, 0.1);
-	background-color: rgb(63, 140, 203);
 }
 
 .SectionSubTitleContainer
@@ -5207,8 +5236,8 @@ DOTASettingsEnum .EnumButton
 {
 	flow-children: right;
 	wash-color: #66aadd;
-	margin-left: 5px;
-	margin-bottom: 5px;
+	margin-left: 14px;
+	margin-bottom: 12px;
 	visibility: collapse;
 }
 
@@ -5216,7 +5245,7 @@ DOTASettingsEnum .EnumButton
 {
 	width: 24px;
 	height: 24px;
-	margin-right: 5px;
+	margin-right: 10px;
 	vertical-align: center;
 }
 
