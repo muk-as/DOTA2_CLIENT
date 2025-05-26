@@ -24,7 +24,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x610
+        // Size: 0x620
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -34,20 +34,19 @@ namespace source2sdk
         public:
             // hAlreadyHitList has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CBaseEntity>> hAlreadyHitList;
-            char hAlreadyHitList[0x18]; // 0x5b8            
+            char hAlreadyHitList[0x18]; // 0x5c0            
             // m_vecProjectileHandles has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<std::int32_t> m_vecProjectileHandles;
-            char m_vecProjectileHandles[0x18]; // 0x5d0            
-            uint8_t _pad05e8[0x8]; // 0x5e8
-            Vector m_vTarget; // 0x5f0            
-            Vector m_vSourcePosition; // 0x5fc            
-            std::int32_t damage; // 0x608            
-            uint8_t _pad060c[0x4];
+            char m_vecProjectileHandles[0x18]; // 0x5d8            
+            uint8_t _pad05f0[0x14]; // 0x5f0
+            Vector m_vTarget; // 0x604            
+            Vector m_vSourcePosition; // 0x610            
+            std::int32_t damage; // 0x61c            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_Aghanim_Spear because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Ability_Aghanim_Spear) == 0x610);
+        static_assert(sizeof(source2sdk::server::CDOTA_Ability_Aghanim_Spear) == 0x620);
     };
 };

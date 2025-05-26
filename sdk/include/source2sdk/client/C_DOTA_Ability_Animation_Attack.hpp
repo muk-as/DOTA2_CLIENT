@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x5b8
+        // Size: 0x688
         // Has VTable
         // Is Abstract
         // MClassHasEntityLimitedDataDesc
@@ -25,13 +25,13 @@ namespace source2sdk
         class C_DOTA_Ability_Animation_Attack : public source2sdk::client::C_DOTABaseAbility
         {
         public:
-            float animation_time; // 0x5b0            
-            uint8_t _pad05b4[0x4];
+            float animation_time; // 0x680            
+            uint8_t _pad0684[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Ability_Animation_Attack because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Animation_Attack) == 0x5b8);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Animation_Attack) == 0x688);
     };
 };

@@ -3,6 +3,7 @@
 #include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/animlib/CNmClip_ModelSpaceSamplingChainLink_t.hpp"
 #include "source2sdk/animlib/CNmRootMotionData.hpp"
 #include "source2sdk/animlib/CNmSyncTrack.hpp"
 #include "source2sdk/animlib/NmCompressionSettings_t.hpp"
@@ -20,7 +21,7 @@ namespace source2sdk
         // Registered alignment: 0x10
         // Alignment: 0x10
         // Standard-layout class: true
-        // Size: 0x1b0
+        // Size: 0x1e0
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -47,7 +48,14 @@ namespace source2sdk
             source2sdk::animlib::CNmSyncTrack m_syncTrack; // 0xa0            
             source2sdk::animlib::CNmRootMotionData m_rootMotion; // 0x150            
             bool m_bIsAdditive; // 0x1a0            
-            uint8_t _pad01a1[0xf];
+            uint8_t _pad01a1[0x7]; // 0x1a1
+            // m_modelSpaceSamplingChain has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+            // CUtlVector<source2sdk::animlib::CNmClip_ModelSpaceSamplingChainLink_t> m_modelSpaceSamplingChain;
+            char m_modelSpaceSamplingChain[0x18]; // 0x1a8            
+            // m_modelSpaceBoneSamplingIndices has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+            // CUtlVector<std::int32_t> m_modelSpaceBoneSamplingIndices;
+            char m_modelSpaceBoneSamplingIndices[0x18]; // 0x1c0            
+            uint8_t _pad01d8[0x8];
         };
         #pragma pack(pop)
         
@@ -61,7 +69,9 @@ namespace source2sdk
         static_assert(offsetof(source2sdk::animlib::CNmClip, m_syncTrack) == 0xa0);
         static_assert(offsetof(source2sdk::animlib::CNmClip, m_rootMotion) == 0x150);
         static_assert(offsetof(source2sdk::animlib::CNmClip, m_bIsAdditive) == 0x1a0);
+        static_assert(offsetof(source2sdk::animlib::CNmClip, m_modelSpaceSamplingChain) == 0x1a8);
+        static_assert(offsetof(source2sdk::animlib::CNmClip, m_modelSpaceBoneSamplingIndices) == 0x1c0);
         
-        static_assert(sizeof(source2sdk::animlib::CNmClip) == 0x1b0);
+        static_assert(sizeof(source2sdk::animlib::CNmClip) == 0x1e0);
     };
 };

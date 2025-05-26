@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x17f8
+        // Size: 0x1878
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Mutation_DeathExplosion_TeamAura : public source2sdk::server::CDOTA_Modifier_Mutation_DeathExplosion_Aura
@@ -28,6 +28,6 @@ namespace source2sdk
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Mutation_DeathExplosion_TeamAura) == 0x17f8);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Mutation_DeathExplosion_TeamAura) == 0x1878);
     };
 };

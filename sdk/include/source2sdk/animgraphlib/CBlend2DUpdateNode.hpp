@@ -24,7 +24,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0xf0
+        // Size: 0xf8
         // Has VTable
         // Construct allowed
         // 
@@ -45,24 +45,24 @@ namespace source2sdk
             // CUtlVector<std::int32_t> m_nodeItemIndices;
             char m_nodeItemIndices[0x18]; // 0xa8            
             source2sdk::animgraphlib::CAnimInputDamping m_damping; // 0xc0            
-            source2sdk::animgraphlib::AnimValueSource m_blendSourceX; // 0xd0            
-            source2sdk::animgraphlib::CAnimParamHandle m_paramX; // 0xd4            
-            uint8_t _pad00d6[0x2]; // 0xd6
-            source2sdk::animgraphlib::AnimValueSource m_blendSourceY; // 0xd8            
-            source2sdk::animgraphlib::CAnimParamHandle m_paramY; // 0xdc            
+            source2sdk::animgraphlib::AnimValueSource m_blendSourceX; // 0xd8            
+            source2sdk::animgraphlib::CAnimParamHandle m_paramX; // 0xdc            
             uint8_t _pad00de[0x2]; // 0xde
-            source2sdk::animgraphlib::Blend2DMode m_eBlendMode; // 0xe0            
-            float m_playbackSpeed; // 0xe4            
-            bool m_bLoop; // 0xe8            
-            bool m_bLockBlendOnReset; // 0xe9            
-            bool m_bLockWhenWaning; // 0xea            
-            bool m_bAnimEventsAndTagsOnMostWeightedOnly; // 0xeb            
-            uint8_t _pad00ec[0x4];
+            source2sdk::animgraphlib::AnimValueSource m_blendSourceY; // 0xe0            
+            source2sdk::animgraphlib::CAnimParamHandle m_paramY; // 0xe4            
+            uint8_t _pad00e6[0x2]; // 0xe6
+            source2sdk::animgraphlib::Blend2DMode m_eBlendMode; // 0xe8            
+            float m_playbackSpeed; // 0xec            
+            bool m_bLoop; // 0xf0            
+            bool m_bLockBlendOnReset; // 0xf1            
+            bool m_bLockWhenWaning; // 0xf2            
+            bool m_bAnimEventsAndTagsOnMostWeightedOnly; // 0xf3            
+            uint8_t _pad00f4[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CBlend2DUpdateNode because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::animgraphlib::CBlend2DUpdateNode) == 0xf0);
+        static_assert(sizeof(source2sdk::animgraphlib::CBlend2DUpdateNode) == 0xf8);
     };
 };

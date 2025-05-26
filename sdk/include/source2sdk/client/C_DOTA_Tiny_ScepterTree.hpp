@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0xbb0
+        // Size: 0xdc8
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -30,6 +30,6 @@ namespace source2sdk
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Tiny_ScepterTree) == 0xbb0);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Tiny_ScepterTree) == 0xdc8);
     };
 };

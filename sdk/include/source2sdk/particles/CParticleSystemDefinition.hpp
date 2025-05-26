@@ -247,7 +247,8 @@ namespace source2sdk
             std::int32_t m_nAggregationMinAvailableParticles; // 0x304            
             // metadata: MPropertyFriendlyName "aggregation radius"
             float m_flAggregateRadius; // 0x308            
-            // metadata: MPropertyFriendlyName "batch particle systems"
+            // metadata: MPropertyFriendlyName "batch particle systems (DO NOT USE)"
+            // metadata: MParticleAdvancedField
             bool m_bShouldBatch; // 0x30c            
             // metadata: MPropertyFriendlyName "Hitboxes fall back to render bounds"
             bool m_bShouldHitboxesFallbackToRenderBounds; // 0x30d            

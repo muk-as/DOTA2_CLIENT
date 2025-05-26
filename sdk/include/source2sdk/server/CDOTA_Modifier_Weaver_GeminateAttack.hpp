@@ -24,7 +24,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1800
+        // Size: 0x1880
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Weaver_GeminateAttack : public source2sdk::client::CDOTA_Buff
@@ -32,13 +32,13 @@ namespace source2sdk
         public:
             // m_hTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hTarget;
-            char m_hTarget[0x4]; // 0x17f8            
-            std::int32_t m_iAttacksRemaining; // 0x17fc            
+            char m_hTarget[0x4]; // 0x1878            
+            std::int32_t m_iAttacksRemaining; // 0x187c            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Weaver_GeminateAttack because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Weaver_GeminateAttack) == 0x1800);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Weaver_GeminateAttack) == 0x1880);
     };
 };

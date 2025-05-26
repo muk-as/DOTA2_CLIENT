@@ -32,7 +32,8 @@ namespace source2sdk
             source2sdk::worldrenderer::ObjectTypeFlags_t m_anyFlags; // 0x4            
             std::int16_t m_nLayer; // 0x8            
             std::int16_t m_instanceStream; // 0xa            
-            uint8_t _pad000c[0x4]; // 0xc
+            std::int16_t m_vertexAlbedoStream; // 0xc            
+            uint8_t _pad000e[0x2]; // 0xe
             // m_aggregateMeshes has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::worldrenderer::AggregateMeshInfo_t> m_aggregateMeshes;
             char m_aggregateMeshes[0x18]; // 0x10            
@@ -55,6 +56,7 @@ namespace source2sdk
         static_assert(offsetof(source2sdk::worldrenderer::AggregateSceneObject_t, m_anyFlags) == 0x4);
         static_assert(offsetof(source2sdk::worldrenderer::AggregateSceneObject_t, m_nLayer) == 0x8);
         static_assert(offsetof(source2sdk::worldrenderer::AggregateSceneObject_t, m_instanceStream) == 0xa);
+        static_assert(offsetof(source2sdk::worldrenderer::AggregateSceneObject_t, m_vertexAlbedoStream) == 0xc);
         static_assert(offsetof(source2sdk::worldrenderer::AggregateSceneObject_t, m_aggregateMeshes) == 0x10);
         static_assert(offsetof(source2sdk::worldrenderer::AggregateSceneObject_t, m_lodSetups) == 0x28);
         static_assert(offsetof(source2sdk::worldrenderer::AggregateSceneObject_t, m_visClusterMembership) == 0x40);

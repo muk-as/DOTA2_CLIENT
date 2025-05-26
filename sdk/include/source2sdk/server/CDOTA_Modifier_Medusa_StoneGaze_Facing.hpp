@@ -19,27 +19,27 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1830
+        // Size: 0x18b0
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Medusa_StoneGaze_Facing : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float face_duration; // 0x17f8            
-            float stone_duration; // 0x17fc            
-            float duration; // 0x1800            
-            float vision_cone; // 0x1804            
-            float m_flAccumulatedTime; // 0x1808            
-            uint8_t _pad180c[0x4]; // 0x180c
-            source2sdk::server::CountdownTimer ctFacing; // 0x1810            
-            bool m_bAlreadyStoned; // 0x1828            
-            uint8_t _pad1829[0x3]; // 0x1829
-            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x182c            
+            float face_duration; // 0x1878            
+            float stone_duration; // 0x187c            
+            float duration; // 0x1880            
+            float vision_cone; // 0x1884            
+            float m_flAccumulatedTime; // 0x1888            
+            uint8_t _pad188c[0x4]; // 0x188c
+            source2sdk::server::CountdownTimer ctFacing; // 0x1890            
+            bool m_bAlreadyStoned; // 0x18a8            
+            uint8_t _pad18a9[0x3]; // 0x18a9
+            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x18ac            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Medusa_StoneGaze_Facing because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Medusa_StoneGaze_Facing) == 0x1830);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Medusa_StoneGaze_Facing) == 0x18b0);
     };
 };

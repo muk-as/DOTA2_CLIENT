@@ -3,7 +3,6 @@
 #include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
-#include "source2sdk/client/AbilityID_t.hpp"
 #include "source2sdk/client/CBasePlayerController.hpp"
 #include "source2sdk/client/CUnitOrders.hpp"
 #include "source2sdk/client/ClientQuickBuyItemState.hpp"
@@ -47,7 +46,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0xe10
+        // Size: 0xef0
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -85,8 +84,6 @@ namespace source2sdk
         // static metadata: MNetworkVarNames "bool m_bInShowCaseMode"
         // static metadata: MNetworkVarNames "float m_flCameraZoomAmount"
         // static metadata: MNetworkVarNames "int m_iHighPriorityScore"
-        // static metadata: MNetworkVarNames "AbilityID_t m_quickBuyItems"
-        // static metadata: MNetworkVarNames "bool m_quickBuyIsPurchasable"
         // static metadata: MNetworkVarNames "float m_flUnfilteredFrameTime"
         // static metadata: MNetworkVarNames "int m_iMusicStatus"
         // static metadata: MNetworkVarNames "float m_flMusicOperatorVals"
@@ -97,217 +94,218 @@ namespace source2sdk
         class C_DOTAPlayerController : public source2sdk::client::CBasePlayerController
         {
         public:
-            uint8_t _pad0700[0xa0]; // 0x700
-            std::int32_t m_iMinimapMove; // 0x7a0            
-            uint8_t _pad07a4[0x4]; // 0x7a4
-            KeyValues* m_pClickBehaviorKeys; // 0x7a8            
-            source2sdk::entity2::GameTime_t m_flCenterTime; // 0x7b0            
-            std::int32_t m_iConfirmationIndex; // 0x7b4            
-            bool m_bCenterOnHero; // 0x7b8            
-            bool m_bHeroAssigned; // 0x7b9            
-            uint8_t _pad07ba[0x2]; // 0x7ba
-            std::int32_t m_nKeyBindHeroID; // 0x7bc            
+            uint8_t _pad07c8[0xb0]; // 0x7c8
+            std::int32_t m_iMinimapMove; // 0x878            
+            uint8_t _pad087c[0x4]; // 0x87c
+            KeyValues* m_pClickBehaviorKeys; // 0x880            
+            source2sdk::entity2::GameTime_t m_flCenterTime; // 0x888            
+            std::int32_t m_iConfirmationIndex; // 0x88c            
+            bool m_bCenterOnHero; // 0x890            
+            bool m_bHeroAssigned; // 0x891            
+            uint8_t _pad0892[0x2]; // 0x892
+            std::int32_t m_nKeyBindHeroID; // 0x894            
             // metadata: MNetworkEnable
-            bool m_bUsingCameraMan; // 0x7c0            
+            bool m_bUsingCameraMan; // 0x898            
             // metadata: MNetworkEnable
-            bool m_bUsingAssistedCameraOperator; // 0x7c1            
-            uint8_t _pad07c2[0x2]; // 0x7c2
+            bool m_bUsingAssistedCameraOperator; // 0x899            
+            uint8_t _pad089a[0x2]; // 0x89a
             // metadata: MNetworkEnable
-            std::int32_t m_nPlayerAssistFlags; // 0x7c4            
-            Vector m_vLatestEvent; // 0x7c8            
-            uint8_t _pad07d4[0x24]; // 0x7d4
+            std::int32_t m_nPlayerAssistFlags; // 0x89c            
+            Vector m_vLatestEvent; // 0x8a0            
+            uint8_t _pad08ac[0x24]; // 0x8ac
             // m_hFreeDrawAbility has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_DOTABaseAbility> m_hFreeDrawAbility;
-            char m_hFreeDrawAbility[0x4]; // 0x7f8            
-            Vector m_vLastFreeDrawPosition; // 0x7fc            
+            char m_hFreeDrawAbility[0x4]; // 0x8d0            
+            Vector m_vLastFreeDrawPosition; // 0x8d4            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnPlayerIDChanged"
-            source2sdk::client::PlayerID_t m_nPlayerID; // 0x808            
+            source2sdk::client::PlayerID_t m_nPlayerID; // 0x8e0            
             // metadata: MNetworkEnable
             // m_hAssignedHero has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hAssignedHero;
-            char m_hAssignedHero[0x4]; // 0x80c            
+            char m_hAssignedHero[0x4]; // 0x8e4            
             // m_hLastAssignedHero has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hLastAssignedHero;
-            char m_hLastAssignedHero[0x4]; // 0x810            
+            char m_hLastAssignedHero[0x4]; // 0x8e8            
             // metadata: MNetworkEnable
             // m_hKillCamUnit has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hKillCamUnit;
-            char m_hKillCamUnit[0x4]; // 0x814            
+            char m_hKillCamUnit[0x4]; // 0x8ec            
             // m_hPreviousKillCamUnit has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hPreviousKillCamUnit;
-            char m_hPreviousKillCamUnit[0x4]; // 0x818            
-            float m_flKillCamUnitReceivedTime; // 0x81c            
-            uint8_t _pad0820[0x8]; // 0x820
-            std::int32_t m_nRareLineClickCount; // 0x828            
-            std::int32_t m_nRareLinesPlayed; // 0x82c            
-            std::int32_t m_nRareLineGroup; // 0x830            
-            float m_flLastRareLinePlayTime; // 0x834            
-            float m_flUnitOrdersSendTime; // 0x838            
-            float m_flLastUnitOrdersSendTime; // 0x83c            
-            float m_flLastUnitOrdersTotalLatency; // 0x840            
-            bool m_bTeleportRequiresHalt; // 0x844            
-            bool m_bChannelRequiresHalt; // 0x845            
-            bool m_bAutoPurchaseItems; // 0x846            
-            bool m_bDisableHUDErrorMessages; // 0x847            
-            std::int32_t m_iMouseDragStartX; // 0x848            
-            std::int32_t m_iMouseDragStartY; // 0x84c            
-            std::int32_t m_nWeatherType; // 0x850            
-            bool m_bDynamicWeatherSystemActive; // 0x854            
-            bool m_bDynamicSoundHandled; // 0x855            
-            uint8_t _pad0856[0x2]; // 0x856
-            source2sdk::entity2::GameTime_t m_flDynamicWeatherNextSwitchTime; // 0x858            
-            source2sdk::entity2::GameTime_t m_flDynamicWeatherScaleFinishedTime; // 0x85c            
-            float m_flDynamicWeatherIntensity; // 0x860            
-            source2sdk::client::ParticleIndex_t m_nXPRangeFXIndex; // 0x864            
-            source2sdk::client::ParticleIndex_t m_nVisionRangeFXIndex; // 0x868            
-            uint8_t _pad086c[0x4]; // 0x86c
+            char m_hPreviousKillCamUnit[0x4]; // 0x8f0            
+            float m_flKillCamUnitReceivedTime; // 0x8f4            
+            uint8_t _pad08f8[0x8]; // 0x8f8
+            std::int32_t m_nRareLineClickCount; // 0x900            
+            std::int32_t m_nRareLinesPlayed; // 0x904            
+            std::int32_t m_nRareLineGroup; // 0x908            
+            float m_flLastRareLinePlayTime; // 0x90c            
+            float m_flUnitOrdersSendTime; // 0x910            
+            float m_flLastUnitOrdersSendTime; // 0x914            
+            float m_flLastUnitOrdersTotalLatency; // 0x918            
+            float m_flLastPingTime; // 0x91c            
+            float m_flPingAllowance; // 0x920            
+            bool m_bTeleportRequiresHalt; // 0x924            
+            bool m_bChannelRequiresHalt; // 0x925            
+            bool m_bInteractionChannelsRequireHalt; // 0x926            
+            bool m_bAutoPurchaseItems; // 0x927            
+            bool m_bDisableHUDErrorMessages; // 0x928            
+            uint8_t _pad0929[0x3]; // 0x929
+            std::int32_t m_iMouseDragStartX; // 0x92c            
+            std::int32_t m_iMouseDragStartY; // 0x930            
+            std::int32_t m_nWeatherType; // 0x934            
+            bool m_bDynamicWeatherSystemActive; // 0x938            
+            bool m_bDynamicSoundHandled; // 0x939            
+            uint8_t _pad093a[0x2]; // 0x93a
+            source2sdk::entity2::GameTime_t m_flDynamicWeatherNextSwitchTime; // 0x93c            
+            source2sdk::entity2::GameTime_t m_flDynamicWeatherScaleFinishedTime; // 0x940            
+            float m_flDynamicWeatherIntensity; // 0x944            
+            source2sdk::client::ParticleIndex_t m_nXPRangeFXIndex; // 0x948            
+            source2sdk::client::ParticleIndex_t m_nVisionRangeFXIndex; // 0x94c            
+            uint8_t _pad0950[0x4]; // 0x950
             // m_hRangeHintAbility has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_DOTABaseAbility> m_hRangeHintAbility;
-            char m_hRangeHintAbility[0x4]; // 0x870            
-            source2sdk::client::ParticleIndex_t m_nRangeHintFXIndex; // 0x874            
-            float m_flRangeHintFXLastRadius; // 0x878            
-            std::int32_t m_nSelectedControlGroup; // 0x87c            
+            char m_hRangeHintAbility[0x4]; // 0x954            
+            source2sdk::client::ParticleIndex_t m_nRangeHintFXIndex; // 0x958            
+            float m_flRangeHintFXLastRadius; // 0x95c            
+            std::int32_t m_nSelectedControlGroup; // 0x960            
             // metadata: MNetworkEnable
-            std::int32_t m_nCachedCoachedTeam; // 0x880            
+            std::int32_t m_nCachedCoachedTeam; // 0x964            
             // m_hActiveAbility has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_DOTABaseAbility> m_hActiveAbility;
-            char m_hActiveAbility[0x4]; // 0x884            
+            char m_hActiveAbility[0x4]; // 0x968            
+            uint8_t _pad096c[0x4]; // 0x96c
             // m_unitorders has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::client::CUnitOrders> m_unitorders;
-            char m_unitorders[0x18]; // 0x888            
-            std::int32_t m_nNextOutgoingOrderSequenceNumber; // 0x8a0            
+            char m_unitorders[0x18]; // 0x970            
+            std::int32_t m_nNextOutgoingOrderSequenceNumber; // 0x988            
             // metadata: MNetworkEnable
-            std::int32_t m_nServerOrderSequenceNumber; // 0x8a4            
-            std::int32_t m_nMaxSentOutgoingOrderSequenceNumber; // 0x8a8            
-            uint8_t _pad08ac[0x4]; // 0x8ac
+            std::int32_t m_nServerOrderSequenceNumber; // 0x98c            
+            std::int32_t m_nMaxSentOutgoingOrderSequenceNumber; // 0x990            
+            uint8_t _pad0994[0x4]; // 0x994
             // m_nSelectedUnits has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CEntityIndex> m_nSelectedUnits;
-            char m_nSelectedUnits[0x18]; // 0x8b0            
+            char m_nSelectedUnits[0x18]; // 0x998            
             // m_nWaypoints has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::client::ParticleIndex_t> m_nWaypoints;
-            char m_nWaypoints[0x18]; // 0x8c8            
-            std::int32_t m_iActions; // 0x8e0            
+            char m_nWaypoints[0x18]; // 0x9b0            
+            std::int32_t m_iActions; // 0x9c8            
             // m_hQueryUnit has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_DOTA_BaseNPC> m_hQueryUnit;
-            char m_hQueryUnit[0x4]; // 0x8e4            
-            bool m_bInQuery; // 0x8e8            
-            bool m_bSelectionChangedInDataUpdate; // 0x8e9            
-            uint8_t _pad08ea[0x66]; // 0x8ea
-            source2sdk::entity2::GameTime_t m_flQueryInhibitingActionTime; // 0x950            
-            float m_flQueryInhibitDuration; // 0x954            
+            char m_hQueryUnit[0x4]; // 0x9cc            
+            bool m_bInQuery; // 0x9d0            
+            bool m_bSelectionChangedInDataUpdate; // 0x9d1            
+            uint8_t _pad09d2[0x66]; // 0x9d2
+            source2sdk::entity2::GameTime_t m_flQueryInhibitingActionTime; // 0xa38            
+            float m_flQueryInhibitDuration; // 0xa3c            
             // m_RingedEntities has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::client::C_BaseEntity>> m_RingedEntities;
-            char m_RingedEntities[0x18]; // 0x958            
+            char m_RingedEntities[0x18]; // 0xa40            
             // m_ActiveRingOwners has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::client::C_BaseEntity>> m_ActiveRingOwners;
-            char m_ActiveRingOwners[0x18]; // 0x970            
-            bool m_bOverridingQuery; // 0x988            
-            uint8_t _pad0989[0x7]; // 0x989
-            float m_flLastAutoRepeatTime; // 0x990            
-            float m_flConsumeDoubleclickTime; // 0x994            
-            CUtlString m_LightInfoWeatherEffect; // 0x998            
-            bool m_bPreviousWasLightInfoWeather; // 0x9a0            
-            uint8_t _pad09a1[0x7]; // 0x9a1
-            CUtlString m_MapDefaultWeatherEffect; // 0x9a8            
-            bool m_bMapUsesDynamicWeather; // 0x9b0            
-            uint8_t _pad09b1[0x27]; // 0x9b1
-            std::int32_t m_nCastRangeEffectCreationRadius; // 0x9d8            
-            uint8_t _pad09dc[0x1c]; // 0x9dc
+            char m_ActiveRingOwners[0x18]; // 0xa58            
+            bool m_bOverridingQuery; // 0xa70            
+            uint8_t _pad0a71[0x7]; // 0xa71
+            float m_flLastAutoRepeatTime; // 0xa78            
+            bool m_bNextDoubleclickIsOnlyAClick; // 0xa7c            
+            uint8_t _pad0a7d[0x3]; // 0xa7d
+            float m_flConsumeDoubleclickTime; // 0xa80            
+            uint8_t _pad0a84[0x4]; // 0xa84
+            CUtlString m_LightInfoWeatherEffect; // 0xa88            
+            bool m_bPreviousWasLightInfoWeather; // 0xa90            
+            uint8_t _pad0a91[0x7]; // 0xa91
+            CUtlString m_MapDefaultWeatherEffect; // 0xa98            
+            bool m_bMapUsesDynamicWeather; // 0xaa0            
+            uint8_t _pad0aa1[0x27]; // 0xaa1
+            std::int32_t m_nCastRangeEffectCreationRadius; // 0xac8            
+            uint8_t _pad0acc[0x1c]; // 0xacc
             // m_vecSuggestedWardLocationEffects has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::client::ParticleIndex_t> m_vecSuggestedWardLocationEffects;
-            char m_vecSuggestedWardLocationEffects[0x18]; // 0x9f8            
-            source2sdk::client::C_DOTA_BaseNPC* m_pSmartCastNPC; // 0xa10            
-            source2sdk::client::ParticleIndex_t m_nTeamSprayParticleIndex; // 0xa18            
-            source2sdk::client::ParticleIndex_t m_nScanCastIndicatorParticleIndex; // 0xa1c            
-            bool m_bIsNextCastOrderFromMouseClick; // 0xa20            
-            uint8_t _pad0a21[0x37]; // 0xa21
+            char m_vecSuggestedWardLocationEffects[0x18]; // 0xae8            
+            source2sdk::client::C_DOTA_BaseNPC* m_pSmartCastNPC; // 0xb00            
+            source2sdk::client::ParticleIndex_t m_nTeamSprayParticleIndex; // 0xb08            
+            source2sdk::client::ParticleIndex_t m_nScanCastIndicatorParticleIndex; // 0xb0c            
+            bool m_bIsNextCastOrderFromMouseClick; // 0xb10            
+            uint8_t _pad0b11[0x57]; // 0xb11
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "DOTACommentatorTable"
             // metadata: MNetworkPriority "32"
-            std::int32_t m_iCursor[2]; // 0xa58            
+            std::int32_t m_iCursor[2]; // 0xb68            
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "DOTACommentatorTable"
-            std::int32_t m_iSpectatorClickBehavior; // 0xa60            
+            std::int32_t m_iSpectatorClickBehavior; // 0xb70            
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "DOTACommentatorTable"
-            float m_flAspectRatio; // 0xa64            
+            float m_flAspectRatio; // 0xb74            
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "DOTACommentatorTable"
             // m_hSpectatorQueryUnit has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hSpectatorQueryUnit;
-            char m_hSpectatorQueryUnit[0x4]; // 0xa68            
+            char m_hSpectatorQueryUnit[0x4]; // 0xb78            
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "DOTACommentatorTable"
-            std::int32_t m_iStatsPanel; // 0xa6c            
+            std::int32_t m_iStatsPanel; // 0xb7c            
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "DOTACommentatorTable"
-            std::int32_t m_iShopPanel; // 0xa70            
+            std::int32_t m_iShopPanel; // 0xb80            
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "DOTACommentatorTable"
-            source2sdk::client::ShopItemViewMode_t m_iShopViewMode; // 0xa74            
+            source2sdk::client::ShopItemViewMode_t m_iShopViewMode; // 0xb84            
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "DOTACommentatorTable"
-            std::int32_t m_iStatsDropdownCategory; // 0xa78            
+            std::int32_t m_iStatsDropdownCategory; // 0xb88            
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "DOTACommentatorTable"
-            std::int32_t m_iStatsDropdownSort; // 0xa7c            
+            std::int32_t m_iStatsDropdownSort; // 0xb8c            
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "DOTACommentatorTable"
-            char m_szShopString[64]; // 0xa80            
+            char m_szShopString[64]; // 0xb90            
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "DOTACommentatorTable"
             // m_vecClientQuickBuyState has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // C_UtlVectorEmbeddedNetworkVar<source2sdk::client::ClientQuickBuyItemState> m_vecClientQuickBuyState;
-            char m_vecClientQuickBuyState[0x68]; // 0xac0            
+            char m_vecClientQuickBuyState[0x68]; // 0xbd0            
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "DOTACommentatorTable"
-            bool m_bInShowCaseMode; // 0xb28            
-            uint8_t _pad0b29[0x3]; // 0xb29
+            bool m_bInShowCaseMode; // 0xc38            
+            uint8_t _pad0c39[0x3]; // 0xc39
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "DOTACommentatorTable"
-            float m_flCameraZoomAmount; // 0xb2c            
+            float m_flCameraZoomAmount; // 0xc3c            
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "DOTACommentatorTable"
-            std::int32_t m_iHighPriorityScore; // 0xb30            
+            std::int32_t m_iHighPriorityScore; // 0xc40            
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "DOTACommentatorTable"
-            source2sdk::client::AbilityID_t m_quickBuyItems[9]; // 0xb34            
-            // metadata: MNetworkEnable
-            // metadata: MNetworkUserGroup "DOTACommentatorTable"
-            bool m_quickBuyIsPurchasable[9]; // 0xb58            
-            uint8_t _pad0b61[0x3]; // 0xb61
-            // metadata: MNetworkEnable
-            // metadata: MNetworkUserGroup "DOTACommentatorTable"
-            float m_flUnfilteredFrameTime; // 0xb64            
+            float m_flUnfilteredFrameTime; // 0xc44            
             // m_NeutralCampAlarms has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::client::NeutralCampStackPullAlarm_t> m_NeutralCampAlarms;
-            char m_NeutralCampAlarms[0x18]; // 0xb68            
-            std::int32_t m_iPrevCursor[2]; // 0xb80            
-            uint8_t _pad0b88[0xa0]; // 0xb88
-            std::int32_t m_iPositionHistoryTail; // 0xc28            
+            char m_NeutralCampAlarms[0x18]; // 0xc48            
+            std::int32_t m_iPrevCursor[2]; // 0xc60            
+            uint8_t _pad0c68[0xa0]; // 0xc68
+            std::int32_t m_iPositionHistoryTail; // 0xd08            
             // metadata: MNetworkEnable
-            std::int32_t m_iMusicStatus; // 0xc2c            
-            std::int32_t m_iPreviousMusicStatus; // 0xc30            
-            bool m_bRequestedInventory; // 0xc34            
-            uint8_t _pad0c35[0x3]; // 0xc35
+            std::int32_t m_iMusicStatus; // 0xd0c            
+            std::int32_t m_iPreviousMusicStatus; // 0xd10            
+            bool m_bRequestedInventory; // 0xd14            
+            uint8_t _pad0d15[0x3]; // 0xd15
             // metadata: MNetworkEnable
-            float m_flMusicOperatorVals[3]; // 0xc38            
+            float m_flMusicOperatorVals[3]; // 0xd18            
             // metadata: MNetworkEnable
-            std::int32_t m_iMusicOperatorVals[4]; // 0xc44            
-            uint8_t _pad0c54[0x4]; // 0xc54
+            std::int32_t m_iMusicOperatorVals[4]; // 0xd24            
+            uint8_t _pad0d34[0x4]; // 0xd34
             // m_ControlGroups has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::client::sControlGroupElem> m_ControlGroups[10];
-            char m_ControlGroups[0xf0]; // 0xc58            
-            KeyValues* m_pkvControlGroupKV; // 0xd48            
-            uint8_t _pad0d50[0x58]; // 0xd50
-            float m_flAltHeldStartTime; // 0xda8            
-            uint8_t _pad0dac[0x64];
+            char m_ControlGroups[0xf0]; // 0xd38            
+            KeyValues* m_pkvControlGroupKV; // 0xe28            
+            uint8_t _pad0e30[0x58]; // 0xe30
+            float m_flAltHeldStartTime; // 0xe88            
+            uint8_t _pad0e8c[0x64];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTAPlayerController because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTAPlayerController) == 0xe10);
+        static_assert(sizeof(source2sdk::client::C_DOTAPlayerController) == 0xef0);
     };
 };

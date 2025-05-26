@@ -26,39 +26,39 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1838
+        // Size: 0x18b8
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Pugna_LifeDrain : public source2sdk::client::CDOTA_Buff
         {
         public:
-            std::int32_t health_drain; // 0x17f8            
-            std::int32_t ally_healing; // 0x17fc            
-            float health_drain_death_boost; // 0x1800            
-            float tick_rate; // 0x1804            
-            bool m_bDoRangeCheck; // 0x1808            
-            uint8_t _pad1809[0x3]; // 0x1809
-            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x180c            
-            source2sdk::entity2::GameTime_t m_flElapsedTime; // 0x1810            
-            bool m_bPrimary; // 0x1814            
-            bool m_bShard; // 0x1815            
-            bool m_bFromWard; // 0x1816            
-            uint8_t _pad1817[0x1]; // 0x1817
+            std::int32_t health_drain; // 0x1878            
+            std::int32_t ally_healing; // 0x187c            
+            float health_drain_death_boost; // 0x1880            
+            float tick_rate; // 0x1884            
+            bool m_bDoRangeCheck; // 0x1888            
+            uint8_t _pad1889[0x3]; // 0x1889
+            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x188c            
+            source2sdk::entity2::GameTime_t m_flElapsedTime; // 0x1890            
+            bool m_bPrimary; // 0x1894            
+            bool m_bShard; // 0x1895            
+            bool m_bFromWard; // 0x1896            
+            uint8_t _pad1897[0x1]; // 0x1897
             // m_hWard has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hWard;
-            char m_hWard[0x4]; // 0x1818            
-            float spell_amp_drain_duration; // 0x181c            
-            std::int32_t max_spell_amp_drain_pct; // 0x1820            
-            std::int32_t spell_amp_drain_rate; // 0x1824            
-            std::int32_t spell_amp_drain_rate_ward; // 0x1828            
-            std::int32_t spell_amp_drain_max; // 0x182c            
-            std::int32_t health_to_mana_rate; // 0x1830            
-            uint8_t _pad1834[0x4];
+            char m_hWard[0x4]; // 0x1898            
+            float spell_amp_drain_duration; // 0x189c            
+            std::int32_t max_spell_amp_drain_pct; // 0x18a0            
+            std::int32_t spell_amp_drain_rate; // 0x18a4            
+            std::int32_t spell_amp_drain_rate_ward; // 0x18a8            
+            std::int32_t spell_amp_drain_max; // 0x18ac            
+            std::int32_t health_to_mana_rate; // 0x18b0            
+            uint8_t _pad18b4[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Pugna_LifeDrain because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Pugna_LifeDrain) == 0x1838);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Pugna_LifeDrain) == 0x18b8);
     };
 };

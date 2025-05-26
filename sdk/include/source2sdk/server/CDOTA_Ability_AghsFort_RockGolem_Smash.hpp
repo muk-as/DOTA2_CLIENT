@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x5d8
+        // Size: 0x5e8
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -26,16 +26,15 @@ namespace source2sdk
         class CDOTA_Ability_AghsFort_RockGolem_Smash : public source2sdk::server::CDOTABaseAbility
         {
         public:
-            source2sdk::client::ParticleIndex_t m_nPreviewFX; // 0x5b8            
-            Vector m_vTargetLoc; // 0x5bc            
-            uint8_t _pad05c8[0x8]; // 0x5c8
-            std::int32_t radius; // 0x5d0            
-            uint8_t _pad05d4[0x4];
+            source2sdk::client::ParticleIndex_t m_nPreviewFX; // 0x5c0            
+            Vector m_vTargetLoc; // 0x5c4            
+            uint8_t _pad05d0[0x14]; // 0x5d0
+            std::int32_t radius; // 0x5e4            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_AghsFort_RockGolem_Smash because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Ability_AghsFort_RockGolem_Smash) == 0x5d8);
+        static_assert(sizeof(source2sdk::server::CDOTA_Ability_AghsFort_RockGolem_Smash) == 0x5e8);
     };
 };

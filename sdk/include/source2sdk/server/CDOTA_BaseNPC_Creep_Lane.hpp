@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x18b0
+        // Size: 0x18e8
         // Has VTable
         // Construct allowed
         // 
@@ -55,14 +55,14 @@ namespace source2sdk
         class CDOTA_BaseNPC_Creep_Lane : public source2sdk::server::CDOTA_BaseNPC_Creep
         {
         public:
-            uint8_t _pad1890[0x1c]; // 0x1890
+            uint8_t _pad18c8[0x1c]; // 0x18c8
             // metadata: MNetworkEnable
-            source2sdk::client::FowCustomTeams_t m_nFoWTeam; // 0x18ac            
+            source2sdk::client::FowCustomTeams_t m_nFoWTeam; // 0x18e4            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_BaseNPC_Creep_Lane because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_BaseNPC_Creep_Lane) == 0x18b0);
+        static_assert(sizeof(source2sdk::server::CDOTA_BaseNPC_Creep_Lane) == 0x18e8);
     };
 };

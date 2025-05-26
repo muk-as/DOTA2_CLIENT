@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x1f8
+        // Size: 0x270
         // Has VTable
         #pragma pack(push, 1)
         class CDOTAPlayer_CameraServices : public source2sdk::client::CPlayer_CameraServices
@@ -28,6 +28,6 @@ namespace source2sdk
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::client::CDOTAPlayer_CameraServices) == 0x1f8);
+        static_assert(sizeof(source2sdk::client::CDOTAPlayer_CameraServices) == 0x270);
     };
 };

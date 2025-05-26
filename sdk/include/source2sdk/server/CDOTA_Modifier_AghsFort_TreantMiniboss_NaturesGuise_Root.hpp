@@ -17,19 +17,19 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1800
+        // Size: 0x1880
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_AghsFort_TreantMiniboss_NaturesGuise_Root : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float m_iEntangleDamage; // 0x17f8            
-            uint8_t _pad17fc[0x4];
+            float m_iEntangleDamage; // 0x1878            
+            uint8_t _pad187c[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_AghsFort_TreantMiniboss_NaturesGuise_Root because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_AghsFort_TreantMiniboss_NaturesGuise_Root) == 0x1800);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_AghsFort_TreantMiniboss_NaturesGuise_Root) == 0x1880);
     };
 };

@@ -26,6 +26,7 @@ namespace source2sdk
         // static metadata: MNetworkVarNames "Vector m_vBoxMins"
         // static metadata: MNetworkVarNames "Vector m_vBoxMaxs"
         // static metadata: MNetworkVarNames "bool m_bStartDisabled"
+        // static metadata: MNetworkVarNames "bool m_bIndirectUseLPVs"
         // static metadata: MNetworkVarNames "float m_flStrength"
         // static metadata: MNetworkVarNames "int m_nFalloffShape"
         // static metadata: MNetworkVarNames "float m_flFalloffExponent"
@@ -39,50 +40,48 @@ namespace source2sdk
         // static metadata: MNetworkVarNames "bool m_bOverrideIndirectLightStrength"
         // static metadata: MNetworkVarNames "bool m_bOverrideSunLightStrength"
         // static metadata: MNetworkVarNames "bool m_bOverrideNoiseStrength"
-        // static metadata: MNetworkVarNames "bool m_bAllowLPVIndirect"
         #pragma pack(push, 1)
         class CEnvVolumetricFogVolume : public source2sdk::server::CBaseEntity
         {
         public:
             // metadata: MNetworkEnable
-            bool m_bActive; // 0x4d8            
-            uint8_t _pad04d9[0x3]; // 0x4d9
+            bool m_bActive; // 0x4e0            
+            uint8_t _pad04e1[0x3]; // 0x4e1
             // metadata: MNetworkEnable
-            Vector m_vBoxMins; // 0x4dc            
+            Vector m_vBoxMins; // 0x4e4            
             // metadata: MNetworkEnable
-            Vector m_vBoxMaxs; // 0x4e8            
+            Vector m_vBoxMaxs; // 0x4f0            
             // metadata: MNetworkEnable
-            bool m_bStartDisabled; // 0x4f4            
-            uint8_t _pad04f5[0x3]; // 0x4f5
+            bool m_bStartDisabled; // 0x4fc            
             // metadata: MNetworkEnable
-            float m_flStrength; // 0x4f8            
+            bool m_bIndirectUseLPVs; // 0x4fd            
+            uint8_t _pad04fe[0x2]; // 0x4fe
             // metadata: MNetworkEnable
-            std::int32_t m_nFalloffShape; // 0x4fc            
+            float m_flStrength; // 0x500            
             // metadata: MNetworkEnable
-            float m_flFalloffExponent; // 0x500            
+            std::int32_t m_nFalloffShape; // 0x504            
             // metadata: MNetworkEnable
-            float m_flHeightFogDepth; // 0x504            
+            float m_flFalloffExponent; // 0x508            
             // metadata: MNetworkEnable
-            float m_fHeightFogEdgeWidth; // 0x508            
+            float m_flHeightFogDepth; // 0x50c            
             // metadata: MNetworkEnable
-            float m_fIndirectLightStrength; // 0x50c            
+            float m_fHeightFogEdgeWidth; // 0x510            
             // metadata: MNetworkEnable
-            float m_fSunLightStrength; // 0x510            
+            float m_fIndirectLightStrength; // 0x514            
             // metadata: MNetworkEnable
-            float m_fNoiseStrength; // 0x514            
+            float m_fSunLightStrength; // 0x518            
             // metadata: MNetworkEnable
-            Color m_TintColor; // 0x518            
+            float m_fNoiseStrength; // 0x51c            
             // metadata: MNetworkEnable
-            bool m_bOverrideTintColor; // 0x51c            
+            Color m_TintColor; // 0x520            
             // metadata: MNetworkEnable
-            bool m_bOverrideIndirectLightStrength; // 0x51d            
+            bool m_bOverrideTintColor; // 0x524            
             // metadata: MNetworkEnable
-            bool m_bOverrideSunLightStrength; // 0x51e            
+            bool m_bOverrideIndirectLightStrength; // 0x525            
             // metadata: MNetworkEnable
-            bool m_bOverrideNoiseStrength; // 0x51f            
+            bool m_bOverrideSunLightStrength; // 0x526            
             // metadata: MNetworkEnable
-            bool m_bAllowLPVIndirect; // 0x520            
-            uint8_t _pad0521[0x7];
+            bool m_bOverrideNoiseStrength; // 0x527            
             
             // Datamap fields:
             // bool InputEnable; // 0x0

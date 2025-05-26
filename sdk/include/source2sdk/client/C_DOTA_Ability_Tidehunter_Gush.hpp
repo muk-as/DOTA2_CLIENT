@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x5c0
+        // Size: 0x698
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -25,13 +25,13 @@ namespace source2sdk
         class C_DOTA_Ability_Tidehunter_Gush : public source2sdk::client::C_DOTABaseAbility
         {
         public:
-            std::int32_t gush_damage; // 0x5b0            
-            uint8_t _pad05b4[0xc];
+            std::int32_t gush_damage; // 0x680            
+            uint8_t _pad0684[0x14];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Ability_Tidehunter_Gush because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Tidehunter_Gush) == 0x5c0);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Tidehunter_Gush) == 0x698);
     };
 };

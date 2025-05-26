@@ -4,6 +4,7 @@
 #include <cstddef>
 #include <cstdint>
 #include "source2sdk/particles/CParticleFunctionRenderer.hpp"
+#include "source2sdk/particles/ParticleAttrBoxFlags_t.hpp"
 #include "source2sdk/particles/ParticleColorBlendType_t.hpp"
 #include "source2sdk/particleslib/CParticleCollectionFloatInput.hpp"
 
@@ -19,7 +20,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x4f8
+        // Size: 0x500
         // Has VTable
         // Construct allowed
         // 
@@ -55,14 +56,19 @@ namespace source2sdk
             // metadata: MPropertyFriendlyName "control point (for finding nearest sim)"
             // metadata: MPropertySuppressExpr "m_bKillParticles == true"
             std::int32_t m_nControlPoint; // 0x4ec            
+            // metadata: MPropertyFriendlyName "specific sim id"
+            // metadata: MPropertySuppressExpr "m_bKillParticles == true"
+            std::int32_t m_nForcedSimId; // 0x4f0            
             // metadata: MPropertyFriendlyName "tint blend (color vs prop group gradient)"
-            source2sdk::particles::ParticleColorBlendType_t m_nColorBlendType; // 0x4f0            
-            uint8_t _pad04f4[0x4];
+            source2sdk::particles::ParticleColorBlendType_t m_nColorBlendType; // 0x4f4            
+            // metadata: MPropertyFriendlyName "forced status effect flags"
+            source2sdk::particles::ParticleAttrBoxFlags_t m_nForcedStatusEffects; // 0x4f8            
+            uint8_t _pad04fc[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_OP_ClientPhysics because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::particles::C_OP_ClientPhysics) == 0x4f8);
+        static_assert(sizeof(source2sdk::particles::C_OP_ClientPhysics) == 0x500);
     };
 };

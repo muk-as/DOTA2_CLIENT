@@ -19,25 +19,25 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1820
+        // Size: 0x18a0
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Enigma_Black_Hole_Pull_Scepter : public source2sdk::client::CDOTA_Buff
         {
         public:
-            std::int32_t scepter_drag_speed; // 0x17f8            
-            float scepter_pull_rotate_speed; // 0x17fc            
-            float aura_origin_x; // 0x1800            
-            float aura_origin_y; // 0x1804            
-            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x1808            
-            Vector m_vCenter; // 0x180c            
-            source2sdk::entity2::GameTime_t m_flLastThinkTime; // 0x1818            
-            uint8_t _pad181c[0x4];
+            std::int32_t scepter_drag_speed; // 0x1878            
+            float scepter_pull_rotate_speed; // 0x187c            
+            float aura_origin_x; // 0x1880            
+            float aura_origin_y; // 0x1884            
+            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x1888            
+            Vector m_vCenter; // 0x188c            
+            source2sdk::entity2::GameTime_t m_flLastThinkTime; // 0x1898            
+            uint8_t _pad189c[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Enigma_Black_Hole_Pull_Scepter because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Enigma_Black_Hole_Pull_Scepter) == 0x1820);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Enigma_Black_Hole_Pull_Scepter) == 0x18a0);
     };
 };

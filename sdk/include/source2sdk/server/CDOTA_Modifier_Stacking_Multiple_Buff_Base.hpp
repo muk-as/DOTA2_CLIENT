@@ -17,20 +17,20 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1800
+        // Size: 0x1880
         // Has VTable
         // Is Abstract
         #pragma pack(push, 1)
         class CDOTA_Modifier_Stacking_Multiple_Buff_Base : public source2sdk::client::CDOTA_Buff
         {
         public:
-            std::int32_t m_nParentBuffIndex; // 0x17f8            
-            uint8_t _pad17fc[0x4];
+            std::int32_t m_nParentBuffIndex; // 0x1878            
+            uint8_t _pad187c[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Stacking_Multiple_Buff_Base because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Stacking_Multiple_Buff_Base) == 0x1800);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Stacking_Multiple_Buff_Base) == 0x1880);
     };
 };

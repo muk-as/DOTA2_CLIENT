@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x5b8
+        // Size: 0x688
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -25,13 +25,13 @@ namespace source2sdk
         class C_DOTA_Ability_Muerta_DeadShot : public source2sdk::client::C_DOTABaseAbility
         {
         public:
-            float radius; // 0x5b0            
-            float speed; // 0x5b4            
+            float radius; // 0x680            
+            float speed; // 0x684            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Ability_Muerta_DeadShot because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Muerta_DeadShot) == 0x5b8);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Muerta_DeadShot) == 0x688);
     };
 };

@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x4d8
+        // Size: 0x4e0
         // Has VTable
         // Is Abstract
         // MNetworkNoBase
@@ -30,6 +30,6 @@ namespace source2sdk
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::server::CDOTABaseCustomHeroPickRules) == 0x4d8);
+        static_assert(sizeof(source2sdk::server::CDOTABaseCustomHeroPickRules) == 0x4e0);
     };
 };

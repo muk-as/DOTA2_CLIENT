@@ -49,6 +49,8 @@ namespace source2sdk
             source2sdk::particles::ParticleColorBlendType_t m_nColorBlendType; // 0xb48            
             uint8_t _pad0b4c[0x4]; // 0xb4c
             // metadata: MPropertyStartGroup
+            // metadata: MPropertyFriendlyName "cable material"
+            // metadata: MPropertyAttributeEditor "AssetBrowse( vmat, *extraFilterString=(shader=cables.vfx) )"
             // m_hMaterial has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CStrongHandle<source2sdk::resourcesystem::InfoForResourceTypeIMaterial2> m_hMaterial;
             char m_hMaterial[0x8]; // 0xb50            

@@ -22,7 +22,7 @@ namespace source2sdk
         // 
         // static metadata: MGetKV3ClassDefaults
         // static metadata: MVDataNodeType "1"
-        // static metadata: MFgdFromSchemaEditablePolymorphicThisClass
+        // static metadata: MPropertyPolymorphicClass
         // static metadata: MPropertyFriendlyName "Analysis Container"
         // static metadata: MPropertyDescription "Does Not Play Sound, member of CVoiceContainerDefaultDefault"
         #pragma pack(push, 1)

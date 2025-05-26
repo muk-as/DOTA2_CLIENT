@@ -17,21 +17,21 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1808
+        // Size: 0x1888
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Third_Eye : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float truesight_radius; // 0x17f8            
-            std::int32_t bonus_vision; // 0x17fc            
-            std::int32_t bonus_all_stats; // 0x1800            
-            uint8_t _pad1804[0x4];
+            float truesight_radius; // 0x1878            
+            std::int32_t bonus_vision; // 0x187c            
+            std::int32_t bonus_all_stats; // 0x1880            
+            uint8_t _pad1884[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Third_Eye because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Third_Eye) == 0x1808);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Third_Eye) == 0x1888);
     };
 };

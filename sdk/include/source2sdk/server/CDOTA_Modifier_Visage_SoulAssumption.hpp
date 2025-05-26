@@ -18,29 +18,29 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1840
+        // Size: 0x18c0
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Visage_SoulAssumption : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float radius; // 0x17f8            
-            std::int32_t stack_limit; // 0x17fc            
-            std::int32_t damage_limit; // 0x1800            
-            float stack_duration; // 0x1804            
-            float damage_min; // 0x1808            
-            float damage_max; // 0x180c            
-            source2sdk::client::ParticleIndex_t m_nFxIndexA; // 0x1810            
-            source2sdk::client::ParticleIndex_t m_nFxIndexB; // 0x1814            
-            std::int32_t iCur_stack; // 0x1818            
-            uint8_t _pad181c[0x1c]; // 0x181c
-            float m_fTotalDamage; // 0x1838            
-            uint8_t _pad183c[0x4];
+            float radius; // 0x1878            
+            std::int32_t stack_limit; // 0x187c            
+            std::int32_t damage_limit; // 0x1880            
+            float stack_duration; // 0x1884            
+            float damage_min; // 0x1888            
+            float damage_max; // 0x188c            
+            source2sdk::client::ParticleIndex_t m_nFxIndexA; // 0x1890            
+            source2sdk::client::ParticleIndex_t m_nFxIndexB; // 0x1894            
+            std::int32_t iCur_stack; // 0x1898            
+            uint8_t _pad189c[0x1c]; // 0x189c
+            float m_fTotalDamage; // 0x18b8            
+            uint8_t _pad18bc[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Visage_SoulAssumption because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Visage_SoulAssumption) == 0x1840);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Visage_SoulAssumption) == 0x18c0);
     };
 };

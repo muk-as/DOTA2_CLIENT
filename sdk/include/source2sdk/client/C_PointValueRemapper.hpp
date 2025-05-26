@@ -30,7 +30,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x588
+        // Size: 0x658
         // Has VTable
         // Construct allowed
         // 
@@ -56,62 +56,62 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            bool m_bDisabled; // 0x510            
-            bool m_bDisabledOld; // 0x511            
+            bool m_bDisabled; // 0x5e0            
+            bool m_bDisabledOld; // 0x5e1            
             // metadata: MNetworkEnable
-            bool m_bUpdateOnClient; // 0x512            
-            uint8_t _pad0513[0x1]; // 0x513
+            bool m_bUpdateOnClient; // 0x5e2            
+            uint8_t _pad05e3[0x1]; // 0x5e3
             // metadata: MNetworkEnable
-            source2sdk::client::ValueRemapperInputType_t m_nInputType; // 0x514            
+            source2sdk::client::ValueRemapperInputType_t m_nInputType; // 0x5e4            
             // metadata: MNetworkEnable
             // m_hRemapLineStart has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hRemapLineStart;
-            char m_hRemapLineStart[0x4]; // 0x518            
+            char m_hRemapLineStart[0x4]; // 0x5e8            
             // metadata: MNetworkEnable
             // m_hRemapLineEnd has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hRemapLineEnd;
-            char m_hRemapLineEnd[0x4]; // 0x51c            
+            char m_hRemapLineEnd[0x4]; // 0x5ec            
             // metadata: MNetworkEnable
-            float m_flMaximumChangePerSecond; // 0x520            
+            float m_flMaximumChangePerSecond; // 0x5f0            
             // metadata: MNetworkEnable
-            float m_flDisengageDistance; // 0x524            
+            float m_flDisengageDistance; // 0x5f4            
             // metadata: MNetworkEnable
-            float m_flEngageDistance; // 0x528            
+            float m_flEngageDistance; // 0x5f8            
             // metadata: MNetworkEnable
-            bool m_bRequiresUseKey; // 0x52c            
-            uint8_t _pad052d[0x3]; // 0x52d
+            bool m_bRequiresUseKey; // 0x5fc            
+            uint8_t _pad05fd[0x3]; // 0x5fd
             // metadata: MNetworkEnable
-            source2sdk::client::ValueRemapperOutputType_t m_nOutputType; // 0x530            
-            uint8_t _pad0534[0x4]; // 0x534
+            source2sdk::client::ValueRemapperOutputType_t m_nOutputType; // 0x600            
+            uint8_t _pad0604[0x4]; // 0x604
             // metadata: MNetworkEnable
             // m_hOutputEntities has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // C_NetworkUtlVectorBase<CHandle<source2sdk::client::C_BaseEntity>> m_hOutputEntities;
-            char m_hOutputEntities[0x18]; // 0x538            
+            char m_hOutputEntities[0x18]; // 0x608            
             // metadata: MNetworkEnable
-            source2sdk::client::ValueRemapperHapticsType_t m_nHapticsType; // 0x550            
+            source2sdk::client::ValueRemapperHapticsType_t m_nHapticsType; // 0x620            
             // metadata: MNetworkEnable
-            source2sdk::client::ValueRemapperMomentumType_t m_nMomentumType; // 0x554            
+            source2sdk::client::ValueRemapperMomentumType_t m_nMomentumType; // 0x624            
             // metadata: MNetworkEnable
-            float m_flMomentumModifier; // 0x558            
+            float m_flMomentumModifier; // 0x628            
             // metadata: MNetworkEnable
-            float m_flSnapValue; // 0x55c            
-            float m_flCurrentMomentum; // 0x560            
+            float m_flSnapValue; // 0x62c            
+            float m_flCurrentMomentum; // 0x630            
             // metadata: MNetworkEnable
-            source2sdk::client::ValueRemapperRatchetType_t m_nRatchetType; // 0x564            
-            float m_flRatchetOffset; // 0x568            
+            source2sdk::client::ValueRemapperRatchetType_t m_nRatchetType; // 0x634            
+            float m_flRatchetOffset; // 0x638            
             // metadata: MNetworkEnable
-            float m_flInputOffset; // 0x56c            
-            bool m_bEngaged; // 0x570            
-            bool m_bFirstUpdate; // 0x571            
-            uint8_t _pad0572[0x2]; // 0x572
-            float m_flPreviousValue; // 0x574            
-            source2sdk::entity2::GameTime_t m_flPreviousUpdateTickTime; // 0x578            
-            Vector m_vecPreviousTestPoint; // 0x57c            
+            float m_flInputOffset; // 0x63c            
+            bool m_bEngaged; // 0x640            
+            bool m_bFirstUpdate; // 0x641            
+            uint8_t _pad0642[0x2]; // 0x642
+            float m_flPreviousValue; // 0x644            
+            source2sdk::entity2::GameTime_t m_flPreviousUpdateTickTime; // 0x648            
+            Vector m_vecPreviousTestPoint; // 0x64c            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_PointValueRemapper because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_PointValueRemapper) == 0x588);
+        static_assert(sizeof(source2sdk::client::C_PointValueRemapper) == 0x658);
     };
 };

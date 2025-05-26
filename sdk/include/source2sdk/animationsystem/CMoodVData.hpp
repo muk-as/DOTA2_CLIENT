@@ -30,7 +30,7 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyDescription "Model to get the animation list from"
-            // metadata: MPropertyAutoRebuildOnChange
+            // metadata: MPropertyProvidesEditContextString
             // m_sModelName has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CResourceNameTyped<CWeakHandle<source2sdk::resourcesystem::InfoForResourceTypeCModel>> m_sModelName;
             char m_sModelName[0xe0]; // 0x0            

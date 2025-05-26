@@ -17,19 +17,19 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1800
+        // Size: 0x1880
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Windrunner_Arcana_Kill_Effect : public source2sdk::client::CDOTA_Buff
         {
         public:
-            bool m_bFrozen; // 0x17f8            
-            uint8_t _pad17f9[0x7];
+            bool m_bFrozen; // 0x1878            
+            uint8_t _pad1879[0x7];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Windrunner_Arcana_Kill_Effect because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Windrunner_Arcana_Kill_Effect) == 0x1800);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Windrunner_Arcana_Kill_Effect) == 0x1880);
     };
 };

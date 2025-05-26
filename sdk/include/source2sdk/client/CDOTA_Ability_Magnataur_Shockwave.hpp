@@ -25,7 +25,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x5e8
+        // Size: 0x6b8
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -33,19 +33,19 @@ namespace source2sdk
         class CDOTA_Ability_Magnataur_Shockwave : public source2sdk::client::C_DOTABaseAbility
         {
         public:
-            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x5b0            
-            std::int32_t m_nReturnDamagePct; // 0x5b4            
+            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x680            
+            std::int32_t m_nReturnDamagePct; // 0x684            
             // hAlreadyHitList has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::client::C_BaseEntity>> hAlreadyHitList;
-            char hAlreadyHitList[0x18]; // 0x5b8            
+            char hAlreadyHitList[0x18]; // 0x688            
             // hAlreadyHitListReturning has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::client::C_BaseEntity>> hAlreadyHitListReturning;
-            char hAlreadyHitListReturning[0x18]; // 0x5d0            
+            char hAlreadyHitListReturning[0x18]; // 0x6a0            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_Magnataur_Shockwave because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Ability_Magnataur_Shockwave) == 0x5e8);
+        static_assert(sizeof(source2sdk::client::CDOTA_Ability_Magnataur_Shockwave) == 0x6b8);
     };
 };

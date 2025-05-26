@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x5b8
+        // Size: 0x688
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -26,13 +26,13 @@ namespace source2sdk
         class C_DOTA_Ability_IceShaman_IncendiaryBomb : public source2sdk::client::C_DOTABaseAbility
         {
         public:
-            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x5b0            
-            uint8_t _pad05b4[0x4];
+            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x680            
+            uint8_t _pad0684[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Ability_IceShaman_IncendiaryBomb because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_IceShaman_IncendiaryBomb) == 0x5b8);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_IceShaman_IncendiaryBomb) == 0x688);
     };
 };

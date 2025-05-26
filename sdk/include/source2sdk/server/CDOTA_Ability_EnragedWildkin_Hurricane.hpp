@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x5f0
+        // Size: 0x5f8
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -25,17 +25,17 @@ namespace source2sdk
         class CDOTA_Ability_EnragedWildkin_Hurricane : public source2sdk::server::CDOTABaseAbility
         {
         public:
-            float distance; // 0x5b8            
-            Vector m_vEndpoint; // 0x5bc            
-            Vector m_vDashPosition; // 0x5c8            
-            Vector m_vFacePosition; // 0x5d4            
-            Vector m_vTravelDir; // 0x5e0            
-            float m_fTravelDistance; // 0x5ec            
+            float distance; // 0x5c0            
+            Vector m_vEndpoint; // 0x5c4            
+            Vector m_vDashPosition; // 0x5d0            
+            Vector m_vFacePosition; // 0x5dc            
+            Vector m_vTravelDir; // 0x5e8            
+            float m_fTravelDistance; // 0x5f4            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_EnragedWildkin_Hurricane because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Ability_EnragedWildkin_Hurricane) == 0x5f0);
+        static_assert(sizeof(source2sdk::server::CDOTA_Ability_EnragedWildkin_Hurricane) == 0x5f8);
     };
 };

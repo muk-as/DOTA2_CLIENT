@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x830
+        // Size: 0x9d0
         // Has VTable
         // Construct allowed
         // 
@@ -42,33 +42,33 @@ namespace source2sdk
         public:
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "LocalWeaponExclusive"
-            source2sdk::entity2::GameTick_t m_nNextPrimaryAttackTick; // 0x7f8            
+            source2sdk::entity2::GameTick_t m_nNextPrimaryAttackTick; // 0x998            
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "LocalWeaponExclusive"
-            float m_flNextPrimaryAttackTickRatio; // 0x7fc            
+            float m_flNextPrimaryAttackTickRatio; // 0x99c            
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "LocalWeaponExclusive"
-            source2sdk::entity2::GameTick_t m_nNextSecondaryAttackTick; // 0x800            
+            source2sdk::entity2::GameTick_t m_nNextSecondaryAttackTick; // 0x9a0            
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "LocalWeaponExclusive"
-            float m_flNextSecondaryAttackTickRatio; // 0x804            
+            float m_flNextSecondaryAttackTickRatio; // 0x9a4            
             // metadata: MNetworkEnable
             // metadata: MNetworkSerializer "minusone"
             // metadata: MNetworkPriority "32"
-            std::int32_t m_iClip1; // 0x808            
+            std::int32_t m_iClip1; // 0x9a8            
             // metadata: MNetworkEnable
             // metadata: MNetworkSerializer "minusone"
             // metadata: MNetworkUserGroup "LocalWeaponExclusive"
-            std::int32_t m_iClip2; // 0x80c            
+            std::int32_t m_iClip2; // 0x9ac            
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "LocalWeaponExclusive"
-            std::int32_t m_pReserveAmmo[2]; // 0x810            
-            uint8_t _pad0818[0x18];
+            std::int32_t m_pReserveAmmo[2]; // 0x9b0            
+            uint8_t _pad09b8[0x18];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_BasePlayerWeapon because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_BasePlayerWeapon) == 0x830);
+        static_assert(sizeof(source2sdk::client::C_BasePlayerWeapon) == 0x9d0);
     };
 };

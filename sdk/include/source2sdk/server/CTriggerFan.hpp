@@ -25,7 +25,7 @@ namespace source2sdk
         // Registered alignment: 0x10
         // Alignment: 0x10
         // Standard-layout class: false
-        // Size: 0xa20
+        // Size: 0xa50
         // Has VTable
         // Construct allowed
         // 
@@ -34,7 +34,8 @@ namespace source2sdk
         // static metadata: MNetworkVarNames "Vector m_vFanEnd"
         // static metadata: MNetworkVarNames "Vector m_vNoiseDirectionTarget"
         // static metadata: MNetworkVarNames "Vector m_vDirection"
-        // static metadata: MNetworkVarNames "bool m_bPushTowardsEntity"
+        // static metadata: MNetworkVarNames "bool m_bPushTowardsInfoTarget"
+        // static metadata: MNetworkVarNames "bool m_bPushAwayFromInfoTarget"
         // static metadata: MNetworkVarNames "Quaternion m_qNoiseDelta"
         // static metadata: MNetworkVarNames "CHandle< CInfoFan> m_hInfoFan"
         // static metadata: MNetworkVarNames "float m_flForce"
@@ -45,46 +46,48 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            Vector m_vFanOrigin; // 0x968            
+            Vector m_vFanOrigin; // 0x998            
             // metadata: MNetworkEnable
-            Vector m_vFanOriginOffset; // 0x974            
+            Vector m_vFanOriginOffset; // 0x9a4            
             // metadata: MNetworkEnable
-            Vector m_vFanEnd; // 0x980            
+            Vector m_vFanEnd; // 0x9b0            
             // metadata: MNetworkEnable
-            Vector m_vNoiseDirectionTarget; // 0x98c            
+            Vector m_vNoiseDirectionTarget; // 0x9bc            
             // metadata: MNetworkEnable
-            Vector m_vDirection; // 0x998            
+            Vector m_vDirection; // 0x9c8            
             // metadata: MNetworkEnable
-            bool m_bPushTowardsEntity; // 0x9a4            
-            uint8_t _pad09a5[0xb]; // 0x9a5
+            bool m_bPushTowardsInfoTarget; // 0x9d4            
             // metadata: MNetworkEnable
-            Quaternion m_qNoiseDelta; // 0x9b0            
+            bool m_bPushAwayFromInfoTarget; // 0x9d5            
+            uint8_t _pad09d6[0xa]; // 0x9d6
+            // metadata: MNetworkEnable
+            Quaternion m_qNoiseDelta; // 0x9e0            
             // metadata: MNetworkEnable
             // m_hInfoFan has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CInfoFan> m_hInfoFan;
-            char m_hInfoFan[0x4]; // 0x9c0            
+            char m_hInfoFan[0x4]; // 0x9f0            
             // metadata: MNetworkEnable
-            float m_flForce; // 0x9c4            
+            float m_flForce; // 0x9f4            
             // metadata: MNetworkEnable
-            bool m_bFalloff; // 0x9c8            
-            uint8_t _pad09c9[0x7]; // 0x9c9
+            bool m_bFalloff; // 0x9f8            
+            uint8_t _pad09f9[0x7]; // 0x9f9
             // metadata: MNetworkEnable
-            source2sdk::server::CountdownTimer m_RampTimer; // 0x9d0            
-            CUtlSymbolLarge m_iszInfoFan; // 0x9e8            
-            float m_flRopeForceScale; // 0x9f0            
-            float m_flParticleForceScale; // 0x9f4            
-            float m_flPlayerForce; // 0x9f8            
-            bool m_bPlayerWindblock; // 0x9fc            
-            uint8_t _pad09fd[0x3]; // 0x9fd
-            float m_flNPCForce; // 0xa00            
-            float m_flRampTime; // 0xa04            
-            float m_fNoiseDegrees; // 0xa08            
-            float m_fNoiseSpeed; // 0xa0c            
-            bool m_bPushPlayer; // 0xa10            
-            bool m_bRampDown; // 0xa11            
-            uint8_t _pad0a12[0x2]; // 0xa12
-            std::int32_t m_nManagerFanIdx; // 0xa14            
-            uint8_t _pad0a18[0x8];
+            source2sdk::server::CountdownTimer m_RampTimer; // 0xa00            
+            CUtlSymbolLarge m_iszInfoFan; // 0xa18            
+            float m_flRopeForceScale; // 0xa20            
+            float m_flParticleForceScale; // 0xa24            
+            float m_flPlayerForce; // 0xa28            
+            bool m_bPlayerWindblock; // 0xa2c            
+            uint8_t _pad0a2d[0x3]; // 0xa2d
+            float m_flNPCForce; // 0xa30            
+            float m_flRampTime; // 0xa34            
+            float m_fNoiseDegrees; // 0xa38            
+            float m_fNoiseSpeed; // 0xa3c            
+            bool m_bPushPlayer; // 0xa40            
+            bool m_bRampDown; // 0xa41            
+            uint8_t _pad0a42[0x2]; // 0xa42
+            std::int32_t m_nManagerFanIdx; // 0xa44            
+            uint8_t _pad0a48[0x8];
             
             // Datamap fields:
             // void CTriggerFanPushThink; // 0x0
@@ -93,6 +96,6 @@ namespace source2sdk
         
         // Cannot assert offsets of fields in CTriggerFan because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CTriggerFan) == 0xa20);
+        static_assert(sizeof(source2sdk::server::CTriggerFan) == 0xa50);
     };
 };

@@ -23,7 +23,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x1970
+        // Size: 0x19a8
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -50,64 +50,64 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            std::int32_t m_iDamageLevel; // 0x1860            
-            uint8_t _pad1864[0x4]; // 0x1864
+            std::int32_t m_iDamageLevel; // 0x1898            
+            uint8_t _pad189c[0x4]; // 0x189c
             // metadata: MNetworkEnable
             // m_nFXIndex has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CStrongHandle<source2sdk::resourcesystem::InfoForResourceTypeIParticleSystemDefinition> m_nFXIndex;
-            char m_nFXIndex[0x8]; // 0x1868            
+            char m_nFXIndex[0x8]; // 0x18a0            
             // metadata: MNetworkEnable
             // m_nFXIndexDestruction has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CStrongHandle<source2sdk::resourcesystem::InfoForResourceTypeIParticleSystemDefinition> m_nFXIndexDestruction;
-            char m_nFXIndexDestruction[0x8]; // 0x1870            
+            char m_nFXIndexDestruction[0x8]; // 0x18a8            
             // metadata: MNetworkEnable
-            QAngle m_angInitialAngles; // 0x1878            
+            QAngle m_angInitialAngles; // 0x18b0            
             // metadata: MNetworkEnable
-            source2sdk::animationsystem::HSequence m_hHeroStatueSequence; // 0x1884            
+            source2sdk::animationsystem::HSequence m_hHeroStatueSequence; // 0x18bc            
             // metadata: MNetworkEnable
-            source2sdk::animationsystem::HSequence m_hConstantLayerSequence; // 0x1888            
+            source2sdk::animationsystem::HSequence m_hConstantLayerSequence; // 0x18c0            
             // metadata: MNetworkEnable
-            float m_fHeroStatueCycle; // 0x188c            
+            float m_fHeroStatueCycle; // 0x18c4            
             // metadata: MNetworkEnable
-            std::int32_t m_iHeroStatueStatusEffectIndex; // 0x1890            
+            std::int32_t m_iHeroStatueStatusEffectIndex; // 0x18c8            
             // metadata: MNetworkEnable
-            bool m_bHeroStatue; // 0x1894            
+            bool m_bHeroStatue; // 0x18cc            
             // metadata: MNetworkEnable
-            bool m_bBattleCup; // 0x1895            
+            bool m_bBattleCup; // 0x18cd            
             // metadata: MNetworkEnable
-            char m_HeroStatueInscription[32]; // 0x1896            
-            uint8_t _pad18b6[0x2]; // 0x18b6
+            char m_HeroStatueInscription[32]; // 0x18ce            
+            uint8_t _pad18ee[0x2]; // 0x18ee
             // metadata: MNetworkEnable
-            source2sdk::client::PlayerID_t m_iHeroStatueOwnerPlayerID; // 0x18b8            
+            source2sdk::client::PlayerID_t m_iHeroStatueOwnerPlayerID; // 0x18f0            
             // metadata: MNetworkEnable
-            Color m_ParticleTintColor; // 0x18bc            
-            CUtlSymbolLarge m_sDestroySnd; // 0x18c0            
-            CUtlSymbolLarge m_sDmgLvl1Snd; // 0x18c8            
-            CUtlSymbolLarge m_sDmgLvl2Snd; // 0x18d0            
-            CUtlSymbolLarge m_iszLinkedUnit; // 0x18d8            
-            CUtlSymbolLarge m_iszAmbientEffectName; // 0x18e0            
-            CUtlSymbolLarge m_iszDestructionEffectName; // 0x18e8            
-            CUtlSymbolLarge m_iszDamageModelLevel1; // 0x18f0            
-            CUtlSymbolLarge m_iszDamageModelLevel2; // 0x18f8            
-            CUtlSymbolLarge m_iszDamageEffectLevel1; // 0x1900            
-            CUtlSymbolLarge m_iszDamageEffectLevel2; // 0x1908            
-            float m_flDamageThresholdLevel1; // 0x1910            
-            float m_flDamageThresholdLevel2; // 0x1914            
-            bool m_bVulnerableOnCreepSpawn; // 0x1918            
-            bool m_bHasOverriddenDestructionEffect; // 0x1919            
-            uint8_t _pad191a[0x2]; // 0x191a
-            std::int32_t m_iUpgradeIdentifier; // 0x191c            
-            std::int32_t m_iInvulnCount; // 0x1920            
-            std::int32_t m_iPlayerOwner; // 0x1924            
-            source2sdk::client::DOTA_LANE m_Lane; // 0x1928            
-            float m_fAmountAlongLane[2]; // 0x192c            
-            Vector m_vOverrideInitialAngles; // 0x1934            
-            Vector m_vOverrideInitialAnglesBG; // 0x1940            
-            std::int32_t m_nOverrideInitialAngles; // 0x194c            
-            source2sdk::server::CountdownTimer m_IdleRareAnimationTime; // 0x1950            
+            Color m_ParticleTintColor; // 0x18f4            
+            CUtlSymbolLarge m_sDestroySnd; // 0x18f8            
+            CUtlSymbolLarge m_sDmgLvl1Snd; // 0x1900            
+            CUtlSymbolLarge m_sDmgLvl2Snd; // 0x1908            
+            CUtlSymbolLarge m_iszLinkedUnit; // 0x1910            
+            CUtlSymbolLarge m_iszAmbientEffectName; // 0x1918            
+            CUtlSymbolLarge m_iszDestructionEffectName; // 0x1920            
+            CUtlSymbolLarge m_iszDamageModelLevel1; // 0x1928            
+            CUtlSymbolLarge m_iszDamageModelLevel2; // 0x1930            
+            CUtlSymbolLarge m_iszDamageEffectLevel1; // 0x1938            
+            CUtlSymbolLarge m_iszDamageEffectLevel2; // 0x1940            
+            float m_flDamageThresholdLevel1; // 0x1948            
+            float m_flDamageThresholdLevel2; // 0x194c            
+            bool m_bVulnerableOnCreepSpawn; // 0x1950            
+            bool m_bHasOverriddenDestructionEffect; // 0x1951            
+            uint8_t _pad1952[0x2]; // 0x1952
+            std::int32_t m_iUpgradeIdentifier; // 0x1954            
+            std::int32_t m_iInvulnCount; // 0x1958            
+            std::int32_t m_iPlayerOwner; // 0x195c            
+            source2sdk::client::DOTA_LANE m_Lane; // 0x1960            
+            float m_fAmountAlongLane[2]; // 0x1964            
+            Vector m_vOverrideInitialAngles; // 0x196c            
+            Vector m_vOverrideInitialAnglesBG; // 0x1978            
+            std::int32_t m_nOverrideInitialAngles; // 0x1984            
+            source2sdk::server::CountdownTimer m_IdleRareAnimationTime; // 0x1988            
             // metadata: MNetworkEnable
-            source2sdk::client::FowCustomTeams_t m_nFoWTeam; // 0x1968            
-            uint8_t _pad196c[0x4];
+            source2sdk::client::FowCustomTeams_t m_nFoWTeam; // 0x19a0            
+            uint8_t _pad19a4[0x4];
             
             // Datamap fields:
             // int32_t InputSetInvulnCount; // 0x0
@@ -117,6 +117,6 @@ namespace source2sdk
         
         // Cannot assert offsets of fields in CDOTA_BaseNPC_Building because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_BaseNPC_Building) == 0x1970);
+        static_assert(sizeof(source2sdk::server::CDOTA_BaseNPC_Building) == 0x19a8);
     };
 };

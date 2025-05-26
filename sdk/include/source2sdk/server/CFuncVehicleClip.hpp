@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x7a8
+        // Size: 0x7c8
         // Has VTable
         // Construct allowed
         #pragma pack(push, 1)
@@ -27,11 +27,13 @@ namespace source2sdk
             // Datamap fields:
             // void InputEnable; // 0x0
             // void InputDisable; // 0x0
+            // void InputEnable; // 0x0
+            // void InputDisable; // 0x0
             // No schema binary for binding
         };
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::server::CFuncVehicleClip) == 0x7a8);
+        static_assert(sizeof(source2sdk::server::CFuncVehicleClip) == 0x7c8);
     };
 };

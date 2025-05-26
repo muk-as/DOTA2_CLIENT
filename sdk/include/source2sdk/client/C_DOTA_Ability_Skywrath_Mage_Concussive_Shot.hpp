@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x5c8
+        // Size: 0x698
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -25,17 +25,17 @@ namespace source2sdk
         class C_DOTA_Ability_Skywrath_Mage_Concussive_Shot : public source2sdk::client::C_DOTABaseAbility
         {
         public:
-            float speed; // 0x5b0            
-            float slow_radius; // 0x5b4            
-            float damage; // 0x5b8            
-            float shot_vision; // 0x5bc            
-            float slow_duration; // 0x5c0            
-            float vision_duration; // 0x5c4            
+            float speed; // 0x680            
+            float slow_radius; // 0x684            
+            float damage; // 0x688            
+            float shot_vision; // 0x68c            
+            float slow_duration; // 0x690            
+            float vision_duration; // 0x694            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Ability_Skywrath_Mage_Concussive_Shot because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Skywrath_Mage_Concussive_Shot) == 0x5c8);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Skywrath_Mage_Concussive_Shot) == 0x698);
     };
 };

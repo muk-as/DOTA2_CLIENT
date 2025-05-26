@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x30
+        // Size: 0x40
         // Has VTable
         // Construct allowed
         // 
@@ -30,13 +30,13 @@ namespace source2sdk
         class CSmartPropVariable_GridOriginMode : public source2sdk::smartprops::CSmartPropVariable
         {
         public:
-            source2sdk::smartprops::SmartPropGridOriginBasis_t m_DefaultValue; // 0x28            
-            uint8_t _pad002c[0x4];
+            source2sdk::smartprops::SmartPropGridOriginBasis_t m_DefaultValue; // 0x38            
+            uint8_t _pad003c[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CSmartPropVariable_GridOriginMode because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::smartprops::CSmartPropVariable_GridOriginMode) == 0x30);
+        static_assert(sizeof(source2sdk::smartprops::CSmartPropVariable_GridOriginMode) == 0x40);
     };
 };

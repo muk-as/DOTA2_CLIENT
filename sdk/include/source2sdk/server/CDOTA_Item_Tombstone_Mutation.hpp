@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x6a8
+        // Size: 0x6b0
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -30,6 +30,6 @@ namespace source2sdk
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Item_Tombstone_Mutation) == 0x6a8);
+        static_assert(sizeof(source2sdk::server::CDOTA_Item_Tombstone_Mutation) == 0x6b0);
     };
 };

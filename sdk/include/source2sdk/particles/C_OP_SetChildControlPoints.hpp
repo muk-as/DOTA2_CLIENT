@@ -4,6 +4,7 @@
 #include <cstddef>
 #include <cstdint>
 #include "source2sdk/particles/CParticleFunctionOperator.hpp"
+#include "source2sdk/particles/ParticleOrientationType_t.hpp"
 #include "source2sdk/particleslib/CParticleCollectionFloatInput.hpp"
 
 // /////////////////////////////////////////////////////////////
@@ -40,7 +41,10 @@ namespace source2sdk
             bool m_bReverse; // 0x330            
             // metadata: MPropertyFriendlyName "set orientation"
             bool m_bSetOrientation; // 0x331            
-            uint8_t _pad0332[0x6];
+            uint8_t _pad0332[0x2]; // 0x332
+            // metadata: MPropertyFriendlyName "orientation set method"
+            // metadata: MPropertySuppressExpr "m_bSetOrientation == false"
+            source2sdk::particles::ParticleOrientationType_t m_nOrientation; // 0x334            
         };
         #pragma pack(pop)
         

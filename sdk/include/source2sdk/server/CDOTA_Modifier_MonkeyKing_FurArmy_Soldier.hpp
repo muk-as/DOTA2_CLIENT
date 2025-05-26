@@ -25,28 +25,28 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1828
+        // Size: 0x18a8
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_MonkeyKing_FurArmy_Soldier : public source2sdk::client::CDOTA_Buff
         {
         public:
-            Vector m_vTargetPos; // 0x17f8            
-            Vector m_vDirection; // 0x1804            
-            std::int32_t move_speed; // 0x1810            
+            Vector m_vTargetPos; // 0x1878            
+            Vector m_vDirection; // 0x1884            
+            std::int32_t move_speed; // 0x1890            
             // m_hThinker has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hThinker;
-            char m_hThinker[0x4]; // 0x1814            
-            bool m_bIsInPosition; // 0x1818            
-            uint8_t _pad1819[0x3]; // 0x1819
-            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x181c            
-            bool m_bAutoSpawn; // 0x1820            
-            uint8_t _pad1821[0x7];
+            char m_hThinker[0x4]; // 0x1894            
+            bool m_bIsInPosition; // 0x1898            
+            uint8_t _pad1899[0x3]; // 0x1899
+            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x189c            
+            bool m_bAutoSpawn; // 0x18a0            
+            uint8_t _pad18a1[0x7];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_MonkeyKing_FurArmy_Soldier because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_MonkeyKing_FurArmy_Soldier) == 0x1828);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_MonkeyKing_FurArmy_Soldier) == 0x18a8);
     };
 };

@@ -20,7 +20,7 @@ namespace source2sdk
         // Has VTable
         // Has Trivial Destructor
         // 
-        // static metadata: MGapTypeQueriesForScopeSingleton
+        // static metadata: MPulseTypeQueriesForScopeSingleton
         #pragma pack(push, 1)
         class CPulseRuntimeLibModuleLocalTypeQueryRegistration
         {

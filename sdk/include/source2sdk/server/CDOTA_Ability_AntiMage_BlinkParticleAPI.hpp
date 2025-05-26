@@ -16,22 +16,22 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: 0x1
         // Standard-layout class: true
-        // Size: 0x1
-        // Has Trivial Constructor
+        // Size: 0x8
         // Has Trivial Destructor
         // 
-        // static metadata: MPulseProvideFeatureTag "8"
         // static metadata: MPulseLibraryBindings
-        // static metadata: MParticleDomainTag "CDOTA_Ability_AntiMage_BlinkParticleAPI Antimage Blink Ability"
+        // static metadata: MPulseProvideFeatureTag "8"
         // static metadata: MPulseDomainHookInfo
+        // static metadata: MParticleDomainTag "CDOTA_Ability_AntiMage_BlinkParticleAPI Antimage Blink Ability"
         #pragma pack(push, 1)
         class CDOTA_Ability_AntiMage_BlinkParticleAPI
         {
         public:
+            uint8_t _pad0000[0x8];
         };
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Ability_AntiMage_BlinkParticleAPI) == 0x1);
+        static_assert(sizeof(source2sdk::server::CDOTA_Ability_AntiMage_BlinkParticleAPI) == 0x8);
     };
 };

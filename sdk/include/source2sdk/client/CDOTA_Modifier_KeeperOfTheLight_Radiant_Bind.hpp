@@ -18,28 +18,28 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1828
+        // Size: 0x18a8
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_KeeperOfTheLight_Radiant_Bind : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float slow; // 0x17f8            
-            std::int32_t magic_resistance; // 0x17fc            
-            float stun_duration; // 0x1800            
-            Vector vLastPos; // 0x1804            
-            bool bResetPosition; // 0x1810            
-            uint8_t _pad1811[0x3]; // 0x1811
-            float m_fAccumulatedDistance; // 0x1814            
-            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x1818            
-            source2sdk::client::ParticleIndex_t m_nStatusFXIndex; // 0x181c            
-            bool m_bStunned; // 0x1820            
-            uint8_t _pad1821[0x7];
+            float slow; // 0x1878            
+            std::int32_t magic_resistance; // 0x187c            
+            float stun_duration; // 0x1880            
+            Vector vLastPos; // 0x1884            
+            bool bResetPosition; // 0x1890            
+            uint8_t _pad1891[0x3]; // 0x1891
+            float m_fAccumulatedDistance; // 0x1894            
+            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x1898            
+            source2sdk::client::ParticleIndex_t m_nStatusFXIndex; // 0x189c            
+            bool m_bStunned; // 0x18a0            
+            uint8_t _pad18a1[0x7];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_KeeperOfTheLight_Radiant_Bind because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_KeeperOfTheLight_Radiant_Bind) == 0x1828);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_KeeperOfTheLight_Radiant_Bind) == 0x18a8);
     };
 };

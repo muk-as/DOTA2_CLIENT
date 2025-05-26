@@ -19,7 +19,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x5f8
+        // Size: 0x610
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -27,27 +27,28 @@ namespace source2sdk
         class CDOTA_Ability_Windrunner_Powershot : public source2sdk::server::CDOTABaseAbility
         {
         public:
-            uint8_t _pad05b8[0x8]; // 0x5b8
-            source2sdk::entity2::GameTime_t m_fStartTime; // 0x5c0            
-            float m_fPower; // 0x5c4            
-            std::int32_t m_iProjectile; // 0x5c8            
-            float damage_reduction; // 0x5cc            
-            float arrow_width; // 0x5d0            
-            std::int32_t powershot_damage; // 0x5d4            
-            float tree_width; // 0x5d8            
-            float slow; // 0x5dc            
-            float slow_duration; // 0x5e0            
-            float min_execute_threshold; // 0x5e4            
-            float max_execute_threshold; // 0x5e8            
-            bool m_bAwardedKillEater; // 0x5ec            
-            uint8_t _pad05ed[0x3]; // 0x5ed
-            std::int32_t m_nHeroesHit; // 0x5f0            
-            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x5f4            
+            uint8_t _pad05c0[0x14]; // 0x5c0
+            source2sdk::entity2::GameTime_t m_fStartTime; // 0x5d4            
+            float m_fPower; // 0x5d8            
+            std::int32_t m_iProjectile; // 0x5dc            
+            float damage_reduction; // 0x5e0            
+            float arrow_width; // 0x5e4            
+            std::int32_t powershot_damage; // 0x5e8            
+            float tree_width; // 0x5ec            
+            float slow; // 0x5f0            
+            float slow_duration; // 0x5f4            
+            float min_execute_threshold; // 0x5f8            
+            float max_execute_threshold; // 0x5fc            
+            bool m_bAwardedKillEater; // 0x600            
+            uint8_t _pad0601[0x3]; // 0x601
+            std::int32_t m_nHeroesHit; // 0x604            
+            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x608            
+            uint8_t _pad060c[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_Windrunner_Powershot because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Ability_Windrunner_Powershot) == 0x5f8);
+        static_assert(sizeof(source2sdk::server::CDOTA_Ability_Windrunner_Powershot) == 0x610);
     };
 };

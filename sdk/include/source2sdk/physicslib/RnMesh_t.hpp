@@ -19,7 +19,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: true
-        // Size: 0xa8
+        // Size: 0xc0
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -39,13 +39,16 @@ namespace source2sdk
             // m_Wings has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::physicslib::RnWing_t> m_Wings;
             char m_Wings[0x18]; // 0x60            
+            // m_TriangleEdgeFlags has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+            // CUtlVector<std::uint8_t> m_TriangleEdgeFlags;
+            char m_TriangleEdgeFlags[0x18]; // 0x78            
             // m_Materials has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<std::uint8_t> m_Materials;
-            char m_Materials[0x18]; // 0x78            
-            Vector m_vOrthographicAreas; // 0x90            
-            std::uint32_t m_nFlags; // 0x9c            
-            std::uint32_t m_nDebugFlags; // 0xa0            
-            uint8_t _pad00a4[0x4];
+            char m_Materials[0x18]; // 0x90            
+            Vector m_vOrthographicAreas; // 0xa8            
+            std::uint32_t m_nFlags; // 0xb4            
+            std::uint32_t m_nDebugFlags; // 0xb8            
+            uint8_t _pad00bc[0x4];
         };
         #pragma pack(pop)
         
@@ -55,11 +58,12 @@ namespace source2sdk
         static_assert(offsetof(source2sdk::physicslib::RnMesh_t, m_Vertices) == 0x30);
         static_assert(offsetof(source2sdk::physicslib::RnMesh_t, m_Triangles) == 0x48);
         static_assert(offsetof(source2sdk::physicslib::RnMesh_t, m_Wings) == 0x60);
-        static_assert(offsetof(source2sdk::physicslib::RnMesh_t, m_Materials) == 0x78);
-        static_assert(offsetof(source2sdk::physicslib::RnMesh_t, m_vOrthographicAreas) == 0x90);
-        static_assert(offsetof(source2sdk::physicslib::RnMesh_t, m_nFlags) == 0x9c);
-        static_assert(offsetof(source2sdk::physicslib::RnMesh_t, m_nDebugFlags) == 0xa0);
+        static_assert(offsetof(source2sdk::physicslib::RnMesh_t, m_TriangleEdgeFlags) == 0x78);
+        static_assert(offsetof(source2sdk::physicslib::RnMesh_t, m_Materials) == 0x90);
+        static_assert(offsetof(source2sdk::physicslib::RnMesh_t, m_vOrthographicAreas) == 0xa8);
+        static_assert(offsetof(source2sdk::physicslib::RnMesh_t, m_nFlags) == 0xb4);
+        static_assert(offsetof(source2sdk::physicslib::RnMesh_t, m_nDebugFlags) == 0xb8);
         
-        static_assert(sizeof(source2sdk::physicslib::RnMesh_t) == 0xa8);
+        static_assert(sizeof(source2sdk::physicslib::RnMesh_t) == 0xc0);
     };
 };

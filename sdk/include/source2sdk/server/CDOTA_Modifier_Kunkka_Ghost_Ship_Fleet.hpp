@@ -17,21 +17,21 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1818
+        // Size: 0x1898
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Kunkka_Ghost_Ship_Fleet : public source2sdk::client::CDOTA_Buff
         {
         public:
-            Vector vCasterOrigin; // 0x17f8            
-            Vector vEnd; // 0x1804            
-            std::int32_t hitcount; // 0x1810            
-            std::int32_t fleet_count; // 0x1814            
+            Vector vCasterOrigin; // 0x1878            
+            Vector vEnd; // 0x1884            
+            std::int32_t hitcount; // 0x1890            
+            std::int32_t fleet_count; // 0x1894            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Kunkka_Ghost_Ship_Fleet because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Kunkka_Ghost_Ship_Fleet) == 0x1818);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Kunkka_Ghost_Ship_Fleet) == 0x1898);
     };
 };

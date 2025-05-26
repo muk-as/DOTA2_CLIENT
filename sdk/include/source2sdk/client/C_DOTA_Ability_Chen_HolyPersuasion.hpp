@@ -24,7 +24,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x5c8
+        // Size: 0x698
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -34,12 +34,12 @@ namespace source2sdk
         public:
             // m_hDominatedUnits has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::client::C_BaseEntity>> m_hDominatedUnits;
-            char m_hDominatedUnits[0x18]; // 0x5b0            
+            char m_hDominatedUnits[0x18]; // 0x680            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Ability_Chen_HolyPersuasion because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Chen_HolyPersuasion) == 0x5c8);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Chen_HolyPersuasion) == 0x698);
     };
 };

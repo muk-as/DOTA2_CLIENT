@@ -18,21 +18,21 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1810
+        // Size: 0x1890
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifer_Item_TurtleShell_Shell : public source2sdk::client::CDOTA_Buff_Item
         {
         public:
-            std::int32_t damage_reduction; // 0x17f8            
-            Vector m_vecPosition; // 0x17fc            
-            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x1808            
-            uint8_t _pad180c[0x4];
+            std::int32_t damage_reduction; // 0x1878            
+            Vector m_vecPosition; // 0x187c            
+            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x1888            
+            uint8_t _pad188c[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifer_Item_TurtleShell_Shell because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifer_Item_TurtleShell_Shell) == 0x1810);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifer_Item_TurtleShell_Shell) == 0x1890);
     };
 };

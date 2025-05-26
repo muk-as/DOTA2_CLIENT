@@ -20,7 +20,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0xb0
+        // Size: 0xb8
         // Has VTable
         // Construct allowed
         // 
@@ -41,17 +41,17 @@ namespace source2sdk
             float m_flSpeedScaleBlending; // 0x88            
             uint8_t _pad008c[0x4]; // 0x8c
             source2sdk::animgraphlib::CAnimInputDamping m_turnDamping; // 0x90            
-            source2sdk::animgraphlib::AnimValueSource m_facingTarget; // 0xa0            
-            source2sdk::animgraphlib::CAnimParamHandle m_hParam; // 0xa4            
-            uint8_t _pad00a6[0x2]; // 0xa6
-            float m_flTurnToFaceOffset; // 0xa8            
-            bool m_bTurnToFace; // 0xac            
-            uint8_t _pad00ad[0x3];
+            source2sdk::animgraphlib::AnimValueSource m_facingTarget; // 0xa8            
+            source2sdk::animgraphlib::CAnimParamHandle m_hParam; // 0xac            
+            uint8_t _pad00ae[0x2]; // 0xae
+            float m_flTurnToFaceOffset; // 0xb0            
+            bool m_bTurnToFace; // 0xb4            
+            uint8_t _pad00b5[0x3];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CFollowPathUpdateNode because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::animgraphlib::CFollowPathUpdateNode) == 0xb0);
+        static_assert(sizeof(source2sdk::animgraphlib::CFollowPathUpdateNode) == 0xb8);
     };
 };

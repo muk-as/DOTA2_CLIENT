@@ -17,23 +17,23 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1810
+        // Size: 0x1890
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_AncientApparition_DeathRime : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float damage; // 0x17f8            
-            float slow; // 0x17fc            
-            float cast_slow; // 0x1800            
-            float strength_decrease; // 0x1804            
-            float aoe; // 0x1808            
-            uint8_t _pad180c[0x4];
+            float damage; // 0x1878            
+            float slow; // 0x187c            
+            float cast_slow; // 0x1880            
+            float strength_decrease; // 0x1884            
+            float aoe; // 0x1888            
+            uint8_t _pad188c[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_AncientApparition_DeathRime because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_AncientApparition_DeathRime) == 0x1810);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_AncientApparition_DeathRime) == 0x1890);
     };
 };

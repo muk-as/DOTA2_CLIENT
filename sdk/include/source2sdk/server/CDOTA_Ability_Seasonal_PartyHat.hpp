@@ -25,7 +25,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x5f8
+        // Size: 0x600
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -35,17 +35,17 @@ namespace source2sdk
         public:
             // m_vecParticles has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::client::ParticleIndex_t> m_vecParticles;
-            char m_vecParticles[0x18]; // 0x5b8            
+            char m_vecParticles[0x18]; // 0x5c0            
             // m_hAffectedEntities has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CBaseEntity>> m_hAffectedEntities;
-            char m_hAffectedEntities[0x18]; // 0x5d0            
-            std::int32_t m_nAllyCount; // 0x5e8            
-            Vector m_vTargetPos; // 0x5ec            
+            char m_hAffectedEntities[0x18]; // 0x5d8            
+            std::int32_t m_nAllyCount; // 0x5f0            
+            Vector m_vTargetPos; // 0x5f4            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_Seasonal_PartyHat because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Ability_Seasonal_PartyHat) == 0x5f8);
+        static_assert(sizeof(source2sdk::server::CDOTA_Ability_Seasonal_PartyHat) == 0x600);
     };
 };

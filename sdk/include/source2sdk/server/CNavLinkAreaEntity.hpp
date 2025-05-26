@@ -25,32 +25,33 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x580
+        // Size: 0x588
         // Has VTable
         // Construct allowed
         #pragma pack(push, 1)
         class CNavLinkAreaEntity : public source2sdk::server::CPointEntity
         {
         public:
-            float m_flWidth; // 0x4d8            
-            Vector m_vLocatorOffset; // 0x4dc            
-            QAngle m_qLocatorAnglesOffset; // 0x4e8            
-            uint8_t _pad04f4[0x4]; // 0x4f4
-            CUtlSymbolLarge m_strMovementForward; // 0x4f8            
-            CUtlSymbolLarge m_strMovementReverse; // 0x500            
-            std::int32_t m_nNavLinkIdForward; // 0x508            
-            std::int32_t m_nNavLinkIdReverse; // 0x50c            
-            bool m_bEnabled; // 0x510            
-            uint8_t _pad0511[0x7]; // 0x511
-            CUtlSymbolLarge m_strFilterName; // 0x518            
+            float m_flWidth; // 0x4e0            
+            Vector m_vLocatorOffset; // 0x4e4            
+            QAngle m_qLocatorAnglesOffset; // 0x4f0            
+            uint8_t _pad04fc[0x4]; // 0x4fc
+            CUtlSymbolLarge m_strMovementForward; // 0x500            
+            CUtlSymbolLarge m_strMovementReverse; // 0x508            
+            std::int32_t m_nNavLinkIdForward; // 0x510            
+            std::int32_t m_nNavLinkIdReverse; // 0x514            
+            bool m_bEnabled; // 0x518            
+            bool m_bAllowCrossMovableConnections; // 0x519            
+            uint8_t _pad051a[0x6]; // 0x51a
+            CUtlSymbolLarge m_strFilterName; // 0x520            
             // m_hFilter has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseFilter> m_hFilter;
-            char m_hFilter[0x4]; // 0x520            
-            uint8_t _pad0524[0x4]; // 0x524
-            source2sdk::entity2::CEntityIOOutput m_OnNavLinkStart; // 0x528            
-            source2sdk::entity2::CEntityIOOutput m_OnNavLinkFinish; // 0x550            
-            bool m_bIsTerminus; // 0x578            
-            uint8_t _pad0579[0x7];
+            char m_hFilter[0x4]; // 0x528            
+            uint8_t _pad052c[0x4]; // 0x52c
+            source2sdk::entity2::CEntityIOOutput m_OnNavLinkStart; // 0x530            
+            source2sdk::entity2::CEntityIOOutput m_OnNavLinkFinish; // 0x558            
+            bool m_bIsTerminus; // 0x580            
+            uint8_t _pad0581[0x7];
             
             // Datamap fields:
             // void InputEnable; // 0x0
@@ -60,6 +61,6 @@ namespace source2sdk
         
         // Cannot assert offsets of fields in CNavLinkAreaEntity because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CNavLinkAreaEntity) == 0x580);
+        static_assert(sizeof(source2sdk::server::CNavLinkAreaEntity) == 0x588);
     };
 };

@@ -17,23 +17,23 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1810
+        // Size: 0x1890
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_StormSpirit_Galvanized : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float perma_mp_per_kill; // 0x17f8            
-            float mp_per_kill; // 0x17fc            
-            std::int32_t aoe; // 0x1800            
-            std::int32_t charges_per_ult; // 0x1804            
-            std::int32_t charges_per_death; // 0x1808            
-            std::int32_t m_nCounter; // 0x180c            
+            float perma_mp_per_kill; // 0x1878            
+            float mp_per_kill; // 0x187c            
+            float aoe; // 0x1880            
+            std::int32_t charges_per_ult; // 0x1884            
+            std::int32_t charges_per_death; // 0x1888            
+            std::int32_t m_nCounter; // 0x188c            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_StormSpirit_Galvanized because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_StormSpirit_Galvanized) == 0x1810);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_StormSpirit_Galvanized) == 0x1890);
     };
 };

@@ -24,7 +24,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x5f0
+        // Size: 0x608
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -34,19 +34,19 @@ namespace source2sdk
         public:
             // hAlreadyHitList has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CBaseEntity>> hAlreadyHitList;
-            char hAlreadyHitList[0x18]; // 0x5b8            
-            float duration; // 0x5d0            
-            std::int32_t speed; // 0x5d4            
-            float damage; // 0x5d8            
-            float range; // 0x5dc            
-            std::int32_t projectile_width; // 0x5e0            
-            float neutral_shared_cooldown; // 0x5e4            
-            uint8_t _pad05e8[0x8];
+            char hAlreadyHitList[0x18]; // 0x5c0            
+            float duration; // 0x5d8            
+            std::int32_t speed; // 0x5dc            
+            float damage; // 0x5e0            
+            float range; // 0x5e4            
+            std::int32_t projectile_width; // 0x5e8            
+            float neutral_shared_cooldown; // 0x5ec            
+            uint8_t _pad05f0[0x18];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_Frogmen_ArmOfTheDeep because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Ability_Frogmen_ArmOfTheDeep) == 0x5f0);
+        static_assert(sizeof(source2sdk::server::CDOTA_Ability_Frogmen_ArmOfTheDeep) == 0x608);
     };
 };

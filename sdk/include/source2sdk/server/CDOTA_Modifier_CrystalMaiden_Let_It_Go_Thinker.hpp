@@ -17,19 +17,19 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1810
+        // Size: 0x1890
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_CrystalMaiden_Let_It_Go_Thinker : public source2sdk::client::CDOTA_Buff
         {
         public:
-            Vector m_vPathStart; // 0x17f8            
-            Vector m_vPathEnd; // 0x1804            
+            Vector m_vPathStart; // 0x1878            
+            Vector m_vPathEnd; // 0x1884            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_CrystalMaiden_Let_It_Go_Thinker because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_CrystalMaiden_Let_It_Go_Thinker) == 0x1810);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_CrystalMaiden_Let_It_Go_Thinker) == 0x1890);
     };
 };

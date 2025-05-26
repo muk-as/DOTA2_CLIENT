@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x1968
+        // Size: 0x19a0
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -29,15 +29,15 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            char m_pszNetworkedSoundLoop[256]; // 0x1860            
+            char m_pszNetworkedSoundLoop[256]; // 0x1898            
             // metadata: MNetworkEnable
-            std::int32_t m_nLoopingSoundParity; // 0x1960            
-            uint8_t _pad1964[0x4];
+            std::int32_t m_nLoopingSoundParity; // 0x1998            
+            uint8_t _pad199c[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Unit_LoopingSound because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Unit_LoopingSound) == 0x1968);
+        static_assert(sizeof(source2sdk::server::CDOTA_Unit_LoopingSound) == 0x19a0);
     };
 };

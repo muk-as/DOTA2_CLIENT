@@ -26,49 +26,49 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x18a0
+        // Size: 0x1920
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Pangolier_Gyroshell : public source2sdk::server::CDOTA_Modifier_DebuffImmune
         {
         public:
-            std::int32_t mp_cost_per_second; // 0x17f8            
-            float tick_interval; // 0x17fc            
-            float forward_move_speed; // 0x1800            
-            float turn_rate_boosted; // 0x1804            
-            float turn_rate; // 0x1808            
-            float hit_radius; // 0x180c            
-            float knockback_radius; // 0x1810            
-            std::int32_t damage_pct; // 0x1814            
-            bool m_bHitFirstUpdate; // 0x1818            
-            uint8_t _pad1819[0x3]; // 0x1819
-            source2sdk::entity2::GameTime_t m_flHitEndTime; // 0x181c            
-            float hit_recover_time; // 0x1820            
-            source2sdk::entity2::GameTime_t m_flJumpEndTime; // 0x1824            
-            float jump_recover_time; // 0x1828            
-            float m_flTurnBoostProgress; // 0x182c            
-            float m_flFacingTarget; // 0x1830            
-            bool m_bIsJumping; // 0x1834            
-            uint8_t _pad1835[0x3]; // 0x1835
-            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x1838            
-            uint8_t _pad183c[0x4]; // 0x183c
+            std::int32_t mp_cost_per_second; // 0x1878            
+            float tick_interval; // 0x187c            
+            float forward_move_speed; // 0x1880            
+            float turn_rate_boosted; // 0x1884            
+            float turn_rate; // 0x1888            
+            float hit_radius; // 0x188c            
+            float knockback_radius; // 0x1890            
+            std::int32_t damage_pct; // 0x1894            
+            bool m_bHitFirstUpdate; // 0x1898            
+            uint8_t _pad1899[0x3]; // 0x1899
+            source2sdk::entity2::GameTime_t m_flHitEndTime; // 0x189c            
+            float hit_recover_time; // 0x18a0            
+            source2sdk::entity2::GameTime_t m_flJumpEndTime; // 0x18a4            
+            float jump_recover_time; // 0x18a8            
+            float m_flTurnBoostProgress; // 0x18ac            
+            float m_flFacingTarget; // 0x18b0            
+            bool m_bIsJumping; // 0x18b4            
+            uint8_t _pad18b5[0x3]; // 0x18b5
+            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x18b8            
+            uint8_t _pad18bc[0x4]; // 0x18bc
             // m_flTurnHistory has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<float> m_flTurnHistory;
-            char m_flTurnHistory[0x18]; // 0x1840            
+            char m_flTurnHistory[0x18]; // 0x18c0            
             // m_vecHeroesHitLastRicochet has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CBaseEntity>> m_vecHeroesHitLastRicochet;
-            char m_vecHeroesHitLastRicochet[0x18]; // 0x1858            
+            char m_vecHeroesHitLastRicochet[0x18]; // 0x18d8            
             // m_vecHeroesCredited has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CBaseEntity>> m_vecHeroesCredited;
-            char m_vecHeroesCredited[0x18]; // 0x1870            
+            char m_vecHeroesCredited[0x18]; // 0x18f0            
             // m_vecHeroesHitCurrentRicochet has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CBaseEntity>> m_vecHeroesHitCurrentRicochet;
-            char m_vecHeroesHitCurrentRicochet[0x18]; // 0x1888            
+            char m_vecHeroesHitCurrentRicochet[0x18]; // 0x1908            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Pangolier_Gyroshell because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Pangolier_Gyroshell) == 0x18a0);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Pangolier_Gyroshell) == 0x1920);
     };
 };

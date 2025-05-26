@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x1b78
+        // Size: 0x1da8
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -28,19 +28,19 @@ namespace source2sdk
         class C_DOTA_Unit_Hero_Razor : public source2sdk::client::C_DOTA_BaseNPC_Hero
         {
         public:
-            std::int32_t m_iPoseParameterAim; // 0x1b68            
-            std::int32_t m_iPoseParameterRange; // 0x1b6c            
+            std::int32_t m_iPoseParameterAim; // 0x1d98            
+            std::int32_t m_iPoseParameterRange; // 0x1d9c            
             // metadata: MNetworkEnable
             // metadata: MNetworkPriority "32"
-            std::int32_t m_nTargetAngle; // 0x1b70            
+            std::int32_t m_nTargetAngle; // 0x1da0            
             // metadata: MNetworkEnable
             // metadata: MNetworkPriority "32"
-            std::int32_t m_nTargetRange; // 0x1b74            
+            std::int32_t m_nTargetRange; // 0x1da4            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Unit_Hero_Razor because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Unit_Hero_Razor) == 0x1b78);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Unit_Hero_Razor) == 0x1da8);
     };
 };

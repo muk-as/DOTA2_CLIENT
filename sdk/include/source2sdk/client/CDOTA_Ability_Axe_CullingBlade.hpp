@@ -24,7 +24,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x5c8
+        // Size: 0x698
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -32,18 +32,18 @@ namespace source2sdk
         class CDOTA_Ability_Axe_CullingBlade : public source2sdk::client::C_DOTABaseAbility
         {
         public:
-            bool m_bInterrupted; // 0x5b0            
-            uint8_t _pad05b1[0x3]; // 0x5b1
-            Vector m_vProjectileLocation; // 0x5b4            
+            bool m_bInterrupted; // 0x680            
+            uint8_t _pad0681[0x3]; // 0x681
+            Vector m_vProjectileLocation; // 0x684            
             // m_hTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hTarget;
-            char m_hTarget[0x4]; // 0x5c0            
-            uint8_t _pad05c4[0x4];
+            char m_hTarget[0x4]; // 0x690            
+            uint8_t _pad0694[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_Axe_CullingBlade because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Ability_Axe_CullingBlade) == 0x5c8);
+        static_assert(sizeof(source2sdk::client::CDOTA_Ability_Axe_CullingBlade) == 0x698);
     };
 };

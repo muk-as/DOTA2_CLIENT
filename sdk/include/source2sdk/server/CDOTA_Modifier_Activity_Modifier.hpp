@@ -17,18 +17,18 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1800
+        // Size: 0x1880
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Activity_Modifier : public source2sdk::client::CDOTA_Buff
         {
         public:
-            CUtlSymbolLarge m_activityModifier; // 0x17f8            
+            CUtlSymbolLarge m_activityModifier; // 0x1878            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Activity_Modifier because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Activity_Modifier) == 0x1800);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Activity_Modifier) == 0x1880);
     };
 };

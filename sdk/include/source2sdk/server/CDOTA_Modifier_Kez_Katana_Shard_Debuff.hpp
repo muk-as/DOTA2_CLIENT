@@ -3,7 +3,7 @@
 #include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
-#include "source2sdk/server/CDOTA_Modifier_Bashed.hpp"
+#include "source2sdk/client/CDOTA_Buff.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: server
@@ -17,17 +17,20 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x17f8
+        // Size: 0x1880
         // Has VTable
         #pragma pack(push, 1)
-        class CDOTA_Modifier_Kez_Katana_Shard_Debuff : public source2sdk::server::CDOTA_Modifier_Bashed
+        class CDOTA_Modifier_Kez_Katana_Shard_Debuff : public source2sdk::client::CDOTA_Buff
         {
         public:
-            // No schema binary for binding
+            std::int32_t armor_piercing_pct; // 0x1878            
+            bool m_bBackstabBonus; // 0x187c            
+            uint8_t _pad187d[0x3];
         };
         #pragma pack(pop)
         
+        // Cannot assert offsets of fields in CDOTA_Modifier_Kez_Katana_Shard_Debuff because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Kez_Katana_Shard_Debuff) == 0x17f8);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Kez_Katana_Shard_Debuff) == 0x1880);
     };
 };

@@ -17,19 +17,19 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1810
+        // Size: 0x1890
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Silver_Edge_WindWalk : public source2sdk::server::CDOTA_Modifier_Invisible
         {
         public:
-            std::int32_t windwalk_bonus_damage; // 0x1808            
-            std::int32_t windwalk_movement_speed; // 0x180c            
+            std::int32_t windwalk_bonus_damage; // 0x1888            
+            std::int32_t windwalk_movement_speed; // 0x188c            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Silver_Edge_WindWalk because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Silver_Edge_WindWalk) == 0x1810);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Silver_Edge_WindWalk) == 0x1890);
     };
 };

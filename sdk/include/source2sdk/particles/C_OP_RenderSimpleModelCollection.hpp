@@ -7,6 +7,7 @@
 #include "source2sdk/particles/ParticleAttributeIndex_t.hpp"
 #include "source2sdk/particleslib/CParticleCollectionFloatInput.hpp"
 #include "source2sdk/particleslib/CParticleModelInput.hpp"
+#include "source2sdk/particleslib/CPerParticleFloatInput.hpp"
 #include "source2sdk/resourcesystem/InfoForResourceTypeCModel.hpp"
 
 // /////////////////////////////////////////////////////////////
@@ -21,7 +22,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x3f8
+        // Size: 0x560
         // Has VTable
         // Construct allowed
         // 
@@ -51,16 +52,18 @@ namespace source2sdk
             bool m_bDisableMotionBlur; // 0x3e1            
             // metadata: MPropertyFriendlyName "accept decals"
             bool m_bAcceptsDecals; // 0x3e2            
-            uint8_t _pad03e3[0x1]; // 0x3e3
+            uint8_t _pad03e3[0x5]; // 0x3e3
+            // metadata: MPropertyFriendlyName "render filter"
+            source2sdk::particleslib::CPerParticleFloatInput m_fDrawFilter; // 0x3e8            
             // metadata: MPropertyFriendlyName "angular velocity attribute (improves motion blur)"
             // metadata: MPropertyAttributeChoiceName "particlefield_vector"
-            source2sdk::particles::ParticleAttributeIndex_t m_nAngularVelocityField; // 0x3e4            
-            uint8_t _pad03e8[0x10];
+            source2sdk::particles::ParticleAttributeIndex_t m_nAngularVelocityField; // 0x548            
+            uint8_t _pad054c[0x14];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_OP_RenderSimpleModelCollection because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::particles::C_OP_RenderSimpleModelCollection) == 0x3f8);
+        static_assert(sizeof(source2sdk::particles::C_OP_RenderSimpleModelCollection) == 0x560);
     };
 };

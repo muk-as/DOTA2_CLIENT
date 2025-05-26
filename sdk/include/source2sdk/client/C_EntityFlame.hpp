@@ -24,7 +24,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x548
+        // Size: 0x628
         // Has VTable
         // Construct allowed
         // 
@@ -37,22 +37,22 @@ namespace source2sdk
             // metadata: MNetworkEnable
             // m_hEntAttached has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hEntAttached;
-            char m_hEntAttached[0x4]; // 0x510            
-            uint8_t _pad0514[0x24]; // 0x514
+            char m_hEntAttached[0x4]; // 0x5e0            
+            uint8_t _pad05e4[0x24]; // 0x5e4
             // m_hOldAttached has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hOldAttached;
-            char m_hOldAttached[0x4]; // 0x538            
+            char m_hOldAttached[0x4]; // 0x608            
             // metadata: MNetworkEnable
-            bool m_bCheapEffect; // 0x53c            
-            uint8_t _pad053d[0xb];
+            bool m_bCheapEffect; // 0x60c            
+            uint8_t _pad060d[0x1b];
             
             // Datamap fields:
-            // void m_hEffect; // 0x518
+            // void m_hEffect; // 0x5e8
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_EntityFlame because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_EntityFlame) == 0x548);
+        static_assert(sizeof(source2sdk::client::C_EntityFlame) == 0x628);
     };
 };

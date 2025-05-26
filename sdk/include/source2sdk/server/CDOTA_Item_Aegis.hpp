@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x690
+        // Size: 0x698
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -26,13 +26,13 @@ namespace source2sdk
         class CDOTA_Item_Aegis : public source2sdk::server::CDOTA_Item
         {
         public:
-            std::int32_t m_iKillerTeam; // 0x688            
-            source2sdk::entity2::GameTime_t m_fEquipTime; // 0x68c            
+            std::int32_t m_iKillerTeam; // 0x690            
+            source2sdk::entity2::GameTime_t m_fEquipTime; // 0x694            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Item_Aegis because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Item_Aegis) == 0x690);
+        static_assert(sizeof(source2sdk::server::CDOTA_Item_Aegis) == 0x698);
     };
 };

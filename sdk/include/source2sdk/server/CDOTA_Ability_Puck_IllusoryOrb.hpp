@@ -26,7 +26,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x630
+        // Size: 0x650
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -34,28 +34,31 @@ namespace source2sdk
         class CDOTA_Ability_Puck_IllusoryOrb : public source2sdk::server::CDOTABaseAbility
         {
         public:
-            std::int32_t m_iProjectile; // 0x5b8            
-            uint8_t _pad05bc[0x4]; // 0x5bc
-            source2sdk::server::CountdownTimer m_ViewerTimer; // 0x5c0            
-            std::int32_t curve_orb; // 0x5d8            
-            float m_fTimeRemaining; // 0x5dc            
-            Vector m_vVectorTargetEndpoint; // 0x5e0            
-            Vector m_vCurveAcceleration; // 0x5ec            
-            Vector m_vStartPosition; // 0x5f8            
-            float orb_vision; // 0x604            
-            float max_distance; // 0x608            
-            float vision_duration; // 0x60c            
-            std::int32_t damage; // 0x610            
-            uint8_t _pad0614[0x4]; // 0x614
-            source2sdk::client::CSoundPatch* m_pSoundPatch; // 0x618            
-            uint8_t _pad0620[0x8]; // 0x620
-            source2sdk::client::ParticleIndex_t m_nCurvePathFXIndex; // 0x628            
-            uint8_t _pad062c[0x4];
+            std::int32_t m_iProjectile; // 0x5c0            
+            uint8_t _pad05c4[0x4]; // 0x5c4
+            source2sdk::server::CountdownTimer m_ViewerTimer; // 0x5c8            
+            std::int32_t curve_orb; // 0x5e0            
+            float m_fTimeRemaining; // 0x5e4            
+            float m_fElapsedTime; // 0x5e8            
+            Vector m_vVectorTargetEndpoint; // 0x5ec            
+            Vector m_vCurveAcceleration; // 0x5f8            
+            Vector m_vStartPosition; // 0x604            
+            float orb_vision; // 0x610            
+            float max_distance; // 0x614            
+            float vision_duration; // 0x618            
+            std::int32_t damage; // 0x61c            
+            float increase_per_sec; // 0x620            
+            float damage_interval; // 0x624            
+            float radius; // 0x628            
+            float damage_over_time_pct; // 0x62c            
+            source2sdk::client::CSoundPatch* m_pSoundPatch; // 0x630            
+            uint8_t _pad0638[0x14]; // 0x638
+            source2sdk::client::ParticleIndex_t m_nCurvePathFXIndex; // 0x64c            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_Puck_IllusoryOrb because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Ability_Puck_IllusoryOrb) == 0x630);
+        static_assert(sizeof(source2sdk::server::CDOTA_Ability_Puck_IllusoryOrb) == 0x650);
     };
 };

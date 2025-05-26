@@ -25,7 +25,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x678
+        // Size: 0x680
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -35,52 +35,52 @@ namespace source2sdk
         class CDOTA_Ability_Pudge_MeatHook : public source2sdk::server::CDOTABaseAbility
         {
         public:
-            uint8_t _pad05b8[0x10]; // 0x5b8
-            Vector m_vProjectileLocation; // 0x5c8            
-            float hook_speed; // 0x5d4            
-            std::int32_t hook_width; // 0x5d8            
-            std::int32_t hook_distance; // 0x5dc            
-            bool m_bRetracting; // 0x5e0            
-            bool m_bDiedInHook; // 0x5e1            
-            uint8_t _pad05e2[0x2]; // 0x5e2
+            uint8_t _pad05c0[0x10]; // 0x5c0
+            Vector m_vProjectileLocation; // 0x5d0            
+            float hook_speed; // 0x5dc            
+            std::int32_t hook_width; // 0x5e0            
+            std::int32_t hook_distance; // 0x5e4            
+            bool m_bRetracting; // 0x5e8            
+            bool m_bDiedInHook; // 0x5e9            
+            uint8_t _pad05ea[0x2]; // 0x5ea
             // m_hVictim has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hVictim;
-            char m_hVictim[0x4]; // 0x5e4            
-            Vector m_vTargetPosition; // 0x5e8            
-            Vector m_vCasterPosition; // 0x5f4            
-            bool m_bChainDetached; // 0x600            
-            uint8_t _pad0601[0x3]; // 0x601
-            source2sdk::client::ParticleIndex_t m_iChainParticle; // 0x604            
-            source2sdk::client::ParticleIndex_t m_iSecondaryChainParticle; // 0x608            
-            std::int32_t m_hHookProjectile; // 0x60c            
-            std::int32_t m_nManaCost; // 0x610            
+            char m_hVictim[0x4]; // 0x5ec            
+            Vector m_vTargetPosition; // 0x5f0            
+            Vector m_vCasterPosition; // 0x5fc            
+            bool m_bChainDetached; // 0x608            
+            uint8_t _pad0609[0x3]; // 0x609
+            source2sdk::client::ParticleIndex_t m_iChainParticle; // 0x60c            
+            source2sdk::client::ParticleIndex_t m_iSecondaryChainParticle; // 0x610            
+            std::int32_t m_hHookProjectile; // 0x614            
+            std::int32_t m_nManaCost; // 0x618            
             // m_hSourceCaster has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hSourceCaster;
-            char m_hSourceCaster[0x4]; // 0x614            
-            std::int32_t m_nNextConsecutiveHitCount; // 0x618            
-            Vector m_vEndpoint; // 0x61c            
+            char m_hSourceCaster[0x4]; // 0x61c            
+            std::int32_t m_nNextConsecutiveHitCount; // 0x620            
+            Vector m_vEndpoint; // 0x624            
             // metadata: MNetworkEnable
-            std::int32_t m_nConsecutiveHits; // 0x628            
-            bool m_bIsVectorTargeted; // 0x62c            
-            uint8_t _pad062d[0x3]; // 0x62d
-            Vector m_vTurnLocation; // 0x630            
-            Vector m_vDirectionAfterTurn; // 0x63c            
-            bool m_bHasTurned; // 0x648            
-            uint8_t _pad0649[0x3]; // 0x649
-            float m_flDistanceAfterTurn; // 0x64c            
-            Vector m_vFinalPosition; // 0x650            
-            float reveal_duration; // 0x65c            
-            std::int32_t curve_hook; // 0x660            
-            float curve_hook_turn_rate; // 0x664            
-            std::int32_t curve_hook_debug; // 0x668            
-            float m_fTimeRemaining; // 0x66c            
-            float m_flFacingTarget; // 0x670            
-            uint8_t _pad0674[0x4];
+            std::int32_t m_nConsecutiveHits; // 0x630            
+            bool m_bIsVectorTargeted; // 0x634            
+            uint8_t _pad0635[0x3]; // 0x635
+            Vector m_vTurnLocation; // 0x638            
+            Vector m_vDirectionAfterTurn; // 0x644            
+            bool m_bHasTurned; // 0x650            
+            uint8_t _pad0651[0x3]; // 0x651
+            float m_flDistanceAfterTurn; // 0x654            
+            Vector m_vFinalPosition; // 0x658            
+            float reveal_duration; // 0x664            
+            std::int32_t curve_hook; // 0x668            
+            float curve_hook_turn_rate; // 0x66c            
+            std::int32_t curve_hook_debug; // 0x670            
+            float m_fTimeRemaining; // 0x674            
+            float m_flFacingTarget; // 0x678            
+            uint8_t _pad067c[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_Pudge_MeatHook because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Ability_Pudge_MeatHook) == 0x678);
+        static_assert(sizeof(source2sdk::server::CDOTA_Ability_Pudge_MeatHook) == 0x680);
     };
 };

@@ -17,21 +17,21 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1818
+        // Size: 0x1898
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Morphling_Adaptive_Strike : public source2sdk::client::CDOTA_Buff
         {
         public:
-            Vector m_vStartPos; // 0x17f8            
-            Vector m_vDirection; // 0x1804            
-            float m_flTotalDistance; // 0x1810            
-            float m_flCurTime; // 0x1814            
+            Vector m_vStartPos; // 0x1878            
+            Vector m_vDirection; // 0x1884            
+            float m_flTotalDistance; // 0x1890            
+            float m_flCurTime; // 0x1894            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Morphling_Adaptive_Strike because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Morphling_Adaptive_Strike) == 0x1818);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Morphling_Adaptive_Strike) == 0x1898);
     };
 };

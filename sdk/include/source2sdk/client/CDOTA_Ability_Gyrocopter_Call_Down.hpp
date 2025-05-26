@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x5c0
+        // Size: 0x690
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -25,13 +25,13 @@ namespace source2sdk
         class CDOTA_Ability_Gyrocopter_Call_Down : public source2sdk::client::C_DOTABaseAbility
         {
         public:
-            Vector m_vEndpoint; // 0x5b0            
-            std::int32_t range_scepter; // 0x5bc            
+            Vector m_vEndpoint; // 0x680            
+            std::int32_t range_scepter; // 0x68c            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_Gyrocopter_Call_Down because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Ability_Gyrocopter_Call_Down) == 0x5c0);
+        static_assert(sizeof(source2sdk::client::CDOTA_Ability_Gyrocopter_Call_Down) == 0x690);
     };
 };

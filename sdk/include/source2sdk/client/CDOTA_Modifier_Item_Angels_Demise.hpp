@@ -24,26 +24,26 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1828
+        // Size: 0x18a8
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Item_Angels_Demise : public source2sdk::client::CDOTA_Buff_Item
         {
         public:
-            std::int32_t bonus_health; // 0x17f8            
-            std::int32_t bonus_mana; // 0x17fc            
-            float bonus_mana_regen; // 0x1800            
-            float bonus_spell_damage; // 0x1804            
-            float slow_duration; // 0x1808            
-            std::int32_t bonus_all_stats; // 0x180c            
+            std::int32_t bonus_health; // 0x1878            
+            std::int32_t bonus_mana; // 0x187c            
+            float bonus_mana_regen; // 0x1880            
+            float bonus_spell_damage; // 0x1884            
+            float slow_duration; // 0x1888            
+            std::int32_t bonus_all_stats; // 0x188c            
             // vecActivatedAbilities has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::client::C_DOTABaseAbility*> vecActivatedAbilities;
-            char vecActivatedAbilities[0x18]; // 0x1810            
+            char vecActivatedAbilities[0x18]; // 0x1890            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Item_Angels_Demise because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Item_Angels_Demise) == 0x1828);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Item_Angels_Demise) == 0x18a8);
     };
 };

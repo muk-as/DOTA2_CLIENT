@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x5b8
+        // Size: 0x5c0
         // Has VTable
         // Is Abstract
         // MClassHasEntityLimitedDataDesc
@@ -30,6 +30,6 @@ namespace source2sdk
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Ability_Frogmen_WaterBubble_Base) == 0x5b8);
+        static_assert(sizeof(source2sdk::server::CDOTA_Ability_Frogmen_WaterBubble_Base) == 0x5c0);
     };
 };

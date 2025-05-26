@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x668
+        // Size: 0x670
         // Has VTable
         // 
         // static metadata: MNetworkVarNames "CAnimationLayer m_AnimOverlay"
@@ -31,16 +31,16 @@ namespace source2sdk
             // metadata: MNetworkChangeCallback "OnOverlaysChanged2"
             // m_AnimOverlay has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // C_UtlVectorEmbeddedNetworkVar<source2sdk::client::CAnimationLayer> m_AnimOverlay;
-            char m_AnimOverlay[0x68]; // 0x5d8            
-            uint8_t _pad0640[0x28];
+            char m_AnimOverlay[0x68]; // 0x5e0            
+            uint8_t _pad0648[0x28];
             
             // Datamap fields:
-            // void m_iv_AnimOverlay; // 0x640
+            // void m_iv_AnimOverlay; // 0x648
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_BaseAnimatingOverlayController because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_BaseAnimatingOverlayController) == 0x668);
+        static_assert(sizeof(source2sdk::client::C_BaseAnimatingOverlayController) == 0x670);
     };
 };

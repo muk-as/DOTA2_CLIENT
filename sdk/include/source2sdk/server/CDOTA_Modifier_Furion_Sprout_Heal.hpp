@@ -17,21 +17,21 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1808
+        // Size: 0x1888
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Furion_Sprout_Heal : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float sprout_heal_interval; // 0x17f8            
-            std::int32_t sprout_heal_per_second; // 0x17fc            
-            std::int32_t building_healing_pct; // 0x1800            
-            uint8_t _pad1804[0x4];
+            float sprout_heal_interval; // 0x1878            
+            float sprout_heal_per_second; // 0x187c            
+            float building_healing_pct; // 0x1880            
+            uint8_t _pad1884[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Furion_Sprout_Heal because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Furion_Sprout_Heal) == 0x1808);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Furion_Sprout_Heal) == 0x1888);
     };
 };

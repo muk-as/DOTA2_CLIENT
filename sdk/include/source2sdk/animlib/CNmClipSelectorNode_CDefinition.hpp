@@ -3,7 +3,7 @@
 #include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
-#include "source2sdk/animlib/CNmPoseNode_CDefinition.hpp"
+#include "source2sdk/animlib/CNmClipReferenceNode_CDefinition.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: animlib
@@ -23,7 +23,7 @@ namespace source2sdk
         // 
         // static metadata: MGetKV3ClassDefaults
         #pragma pack(push, 1)
-        class CNmClipSelectorNode_CDefinition : public source2sdk::animlib::CNmPoseNode_CDefinition
+        class CNmClipSelectorNode_CDefinition : public source2sdk::animlib::CNmClipReferenceNode_CDefinition
         {
         public:
             // m_optionNodeIndices has a template type with potentially unknown template parameters. You can try uncommenting the field below.

@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0xb38
+        // Size: 0xcd8
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -32,27 +32,27 @@ namespace source2sdk
         class C_ColorCorrectionVolume : public source2sdk::client::C_BaseTrigger
         {
         public:
-            float m_LastEnterWeight; // 0x910            
-            source2sdk::entity2::GameTime_t m_LastEnterTime; // 0x914            
-            float m_LastExitWeight; // 0x918            
-            source2sdk::entity2::GameTime_t m_LastExitTime; // 0x91c            
+            float m_LastEnterWeight; // 0xab0            
+            source2sdk::entity2::GameTime_t m_LastEnterTime; // 0xab4            
+            float m_LastExitWeight; // 0xab8            
+            source2sdk::entity2::GameTime_t m_LastExitTime; // 0xabc            
             // metadata: MNetworkEnable
-            bool m_bEnabled; // 0x920            
-            uint8_t _pad0921[0x3]; // 0x921
+            bool m_bEnabled; // 0xac0            
+            uint8_t _pad0ac1[0x3]; // 0xac1
             // metadata: MNetworkEnable
-            float m_MaxWeight; // 0x924            
+            float m_MaxWeight; // 0xac4            
             // metadata: MNetworkEnable
-            float m_FadeDuration; // 0x928            
+            float m_FadeDuration; // 0xac8            
             // metadata: MNetworkEnable
-            float m_Weight; // 0x92c            
+            float m_Weight; // 0xacc            
             // metadata: MNetworkEnable
-            char m_lookupFilename[512]; // 0x930            
-            uint8_t _pad0b30[0x8];
+            char m_lookupFilename[512]; // 0xad0            
+            uint8_t _pad0cd0[0x8];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_ColorCorrectionVolume because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_ColorCorrectionVolume) == 0xb38);
+        static_assert(sizeof(source2sdk::client::C_ColorCorrectionVolume) == 0xcd8);
     };
 };

@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x5d0
+        // Size: 0x5d8
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -26,17 +26,17 @@ namespace source2sdk
         class CDOTA_Ability_OgreBruiser_OgreSmash : public source2sdk::server::CDOTABaseAbility
         {
         public:
-            std::int32_t radius; // 0x5b8            
-            float hero_stun_duration; // 0x5bc            
-            std::int32_t damage; // 0x5c0            
-            float damage_pct; // 0x5c4            
-            source2sdk::entity2::GameTime_t flCooldown; // 0x5c8            
-            uint8_t _pad05cc[0x4];
+            float radius; // 0x5c0            
+            float hero_stun_duration; // 0x5c4            
+            float damage; // 0x5c8            
+            float damage_pct; // 0x5cc            
+            source2sdk::entity2::GameTime_t flCooldown; // 0x5d0            
+            uint8_t _pad05d4[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_OgreBruiser_OgreSmash because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Ability_OgreBruiser_OgreSmash) == 0x5d0);
+        static_assert(sizeof(source2sdk::server::CDOTA_Ability_OgreBruiser_OgreSmash) == 0x5d8);
     };
 };

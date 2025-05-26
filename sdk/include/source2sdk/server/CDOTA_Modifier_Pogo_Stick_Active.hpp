@@ -17,32 +17,32 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1840
+        // Size: 0x18c0
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Pogo_Stick_Active : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float m_flTotalTime; // 0x17f8            
-            float m_flInitialVelocity; // 0x17fc            
-            Vector m_vStartPosition; // 0x1800            
-            Vector m_vTargetHorizontalDirection; // 0x180c            
-            float m_flCurrentTimeHoriz; // 0x1818            
-            float m_flCurrentTimeVert; // 0x181c            
-            bool m_bInterrupted; // 0x1820            
-            uint8_t _pad1821[0x3]; // 0x1821
-            std::int32_t leap_distance; // 0x1824            
-            float leap_speed; // 0x1828            
-            float leap_acceleration; // 0x182c            
-            std::int32_t leap_radius; // 0x1830            
-            float leap_bonus_duration; // 0x1834            
-            bool m_bLaunched; // 0x1838            
-            uint8_t _pad1839[0x7];
+            float m_flTotalTime; // 0x1878            
+            float m_flInitialVelocity; // 0x187c            
+            Vector m_vStartPosition; // 0x1880            
+            Vector m_vTargetHorizontalDirection; // 0x188c            
+            float m_flCurrentTimeHoriz; // 0x1898            
+            float m_flCurrentTimeVert; // 0x189c            
+            bool m_bInterrupted; // 0x18a0            
+            uint8_t _pad18a1[0x3]; // 0x18a1
+            std::int32_t leap_distance; // 0x18a4            
+            float leap_speed; // 0x18a8            
+            float leap_acceleration; // 0x18ac            
+            std::int32_t leap_radius; // 0x18b0            
+            float leap_bonus_duration; // 0x18b4            
+            bool m_bLaunched; // 0x18b8            
+            uint8_t _pad18b9[0x7];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Pogo_Stick_Active because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Pogo_Stick_Active) == 0x1840);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Pogo_Stick_Active) == 0x18c0);
     };
 };

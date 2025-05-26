@@ -16,7 +16,7 @@ namespace source2sdk
         // Registered alignment: 0x4
         // Alignment: 0x4
         // Standard-layout class: true
-        // Size: 0x1c
+        // Size: 0x18
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -37,8 +37,6 @@ namespace source2sdk
             float m_softContactFrequency; // 0x10            
             // metadata: MKV3TransferName "softcontactdampingratio"
             float m_softContactDampingRatio; // 0x14            
-            // metadata: MKV3TransferName "wheeldrag"
-            float m_wheelDrag; // 0x18            
         };
         #pragma pack(pop)
         
@@ -48,8 +46,7 @@ namespace source2sdk
         static_assert(offsetof(source2sdk::modellib::CPhysSurfacePropertiesPhysics, m_thickness) == 0xc);
         static_assert(offsetof(source2sdk::modellib::CPhysSurfacePropertiesPhysics, m_softContactFrequency) == 0x10);
         static_assert(offsetof(source2sdk::modellib::CPhysSurfacePropertiesPhysics, m_softContactDampingRatio) == 0x14);
-        static_assert(offsetof(source2sdk::modellib::CPhysSurfacePropertiesPhysics, m_wheelDrag) == 0x18);
         
-        static_assert(sizeof(source2sdk::modellib::CPhysSurfacePropertiesPhysics) == 0x1c);
+        static_assert(sizeof(source2sdk::modellib::CPhysSurfacePropertiesPhysics) == 0x18);
     };
 };

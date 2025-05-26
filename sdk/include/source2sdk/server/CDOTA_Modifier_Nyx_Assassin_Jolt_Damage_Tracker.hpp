@@ -17,18 +17,18 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1810
+        // Size: 0x1890
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Nyx_Assassin_Jolt_Damage_Tracker : public source2sdk::client::CDOTA_Buff
         {
         public:
-            uint8_t _pad17f8[0x18];
+            uint8_t _pad1878[0x18];
             // No schema binary for binding
         };
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Nyx_Assassin_Jolt_Damage_Tracker) == 0x1810);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Nyx_Assassin_Jolt_Damage_Tracker) == 0x1890);
     };
 };

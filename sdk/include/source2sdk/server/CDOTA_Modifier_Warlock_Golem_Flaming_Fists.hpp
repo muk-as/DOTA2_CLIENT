@@ -17,19 +17,19 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1800
+        // Size: 0x1880
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Warlock_Golem_Flaming_Fists : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float damage; // 0x17f8            
-            std::int32_t radius; // 0x17fc            
+            float damage; // 0x1878            
+            std::int32_t radius; // 0x187c            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Warlock_Golem_Flaming_Fists because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Warlock_Golem_Flaming_Fists) == 0x1800);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Warlock_Golem_Flaming_Fists) == 0x1880);
     };
 };

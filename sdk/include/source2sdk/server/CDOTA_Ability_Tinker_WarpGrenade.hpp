@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x5c8
+        // Size: 0x5d0
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -25,15 +25,15 @@ namespace source2sdk
         class CDOTA_Ability_Tinker_WarpGrenade : public source2sdk::server::CDOTABaseAbility
         {
         public:
-            float debuff_duration; // 0x5b8            
-            float bonus_distance; // 0x5bc            
-            float damage; // 0x5c0            
-            std::int32_t max_distance; // 0x5c4            
+            float debuff_duration; // 0x5c0            
+            float bonus_distance; // 0x5c4            
+            float damage; // 0x5c8            
+            std::int32_t max_distance; // 0x5cc            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_Tinker_WarpGrenade because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Ability_Tinker_WarpGrenade) == 0x5c8);
+        static_assert(sizeof(source2sdk::server::CDOTA_Ability_Tinker_WarpGrenade) == 0x5d0);
     };
 };

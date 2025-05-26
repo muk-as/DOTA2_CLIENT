@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x38
+        // Size: 0x30
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -29,6 +29,6 @@ namespace source2sdk
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::scenesystem::CSSDSMsg_PreLayer) == 0x38);
+        static_assert(sizeof(source2sdk::scenesystem::CSSDSMsg_PreLayer) == 0x30);
     };
 };

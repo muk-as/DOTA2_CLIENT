@@ -17,17 +17,17 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x6a8
+        // Size: 0x6c0
         // Has VTable
         // Construct allowed
         #pragma pack(push, 1)
         class CSoundOpvarSetPathCornerEntity : public source2sdk::server::CSoundOpvarSetPointEntity
         {
         public:
-            uint8_t _pad0680[0x18]; // 0x680
-            float m_flDistMinSqr; // 0x698            
-            float m_flDistMaxSqr; // 0x69c            
-            CUtlSymbolLarge m_iszPathCornerEntityName; // 0x6a0            
+            uint8_t _pad0698[0x18]; // 0x698
+            float m_flDistMinSqr; // 0x6b0            
+            float m_flDistMaxSqr; // 0x6b4            
+            CUtlSymbolLarge m_iszPathCornerEntityName; // 0x6b8            
             
             // Datamap fields:
             // void CSoundOpvarSetPathCornerEntitySetOpvarThink; // 0x0
@@ -36,6 +36,6 @@ namespace source2sdk
         
         // Cannot assert offsets of fields in CSoundOpvarSetPathCornerEntity because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CSoundOpvarSetPathCornerEntity) == 0x6a8);
+        static_assert(sizeof(source2sdk::server::CSoundOpvarSetPathCornerEntity) == 0x6c0);
     };
 };

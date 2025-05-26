@@ -17,25 +17,25 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1820
+        // Size: 0x18a0
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Mirana_Leap_Buff : public source2sdk::client::CDOTA_Buff
         {
         public:
-            std::int32_t leap_speedbonus; // 0x17f8            
-            std::int32_t leap_speedbonus_as; // 0x17fc            
-            std::int32_t crit_damage_pct; // 0x1800            
-            bool m_bCritUsed; // 0x1804            
-            uint8_t _pad1805[0x3]; // 0x1805
+            std::int32_t leap_speedbonus; // 0x1878            
+            std::int32_t leap_speedbonus_as; // 0x187c            
+            std::int32_t crit_damage_pct; // 0x1880            
+            bool m_bCritUsed; // 0x1884            
+            uint8_t _pad1885[0x3]; // 0x1885
             // m_vCritRecords has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<std::int16_t> m_vCritRecords;
-            char m_vCritRecords[0x18]; // 0x1808            
+            char m_vCritRecords[0x18]; // 0x1888            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Mirana_Leap_Buff because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Mirana_Leap_Buff) == 0x1820);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Mirana_Leap_Buff) == 0x18a0);
     };
 };

@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0xc8
+        // Size: 0xd8
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -26,12 +26,12 @@ namespace source2sdk
         struct RnMeshDesc_t : public source2sdk::physicslib::RnShapeDesc_t
         {
         public:
-            source2sdk::physicslib::RnMesh_t m_Mesh; // 0x20            
+            source2sdk::physicslib::RnMesh_t m_Mesh; // 0x18            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in RnMeshDesc_t because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::physicslib::RnMeshDesc_t) == 0xc8);
+        static_assert(sizeof(source2sdk::physicslib::RnMeshDesc_t) == 0xd8);
     };
 };

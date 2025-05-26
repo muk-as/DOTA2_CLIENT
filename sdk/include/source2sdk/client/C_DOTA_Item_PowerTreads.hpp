@@ -4,6 +4,7 @@
 #include <cstddef>
 #include <cstdint>
 #include "source2sdk/client/C_DOTA_Item.hpp"
+#include "source2sdk/client/ParticleIndex_t.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: client
@@ -17,7 +18,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x658
+        // Size: 0x728
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -29,13 +30,13 @@ namespace source2sdk
         public:
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnPowerTreadsStatChanged"
-            std::int32_t m_iStat; // 0x650            
-            uint8_t _pad0654[0x4];
+            std::int32_t m_iStat; // 0x720            
+            source2sdk::client::ParticleIndex_t nFXIndexTreads; // 0x724            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Item_PowerTreads because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Item_PowerTreads) == 0x658);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Item_PowerTreads) == 0x728);
     };
 };

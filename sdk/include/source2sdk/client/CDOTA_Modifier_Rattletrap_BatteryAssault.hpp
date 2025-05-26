@@ -17,18 +17,18 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1800
+        // Size: 0x1890
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Rattletrap_BatteryAssault : public source2sdk::client::CDOTA_Buff
         {
         public:
-            uint8_t _pad17f8[0x8];
+            uint8_t _pad1878[0x18];
             // No schema binary for binding
         };
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Rattletrap_BatteryAssault) == 0x1800);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Rattletrap_BatteryAssault) == 0x1890);
     };
 };

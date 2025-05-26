@@ -18,28 +18,28 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1838
+        // Size: 0x18b8
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Invoker_ColdSnap : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float freeze_damage; // 0x17f8            
-            float freeze_duration; // 0x17fc            
-            float freeze_cooldown; // 0x1800            
-            float damage_trigger; // 0x1804            
-            float spell_lifesteal; // 0x1808            
-            float spell_amp; // 0x180c            
-            float freeze_heal; // 0x1810            
-            float freeze_mana; // 0x1814            
-            std::int32_t nQuasApplications; // 0x1818            
-            std::int32_t nExortApplications; // 0x181c            
-            source2sdk::server::CountdownTimer m_freezeCooldownTimer; // 0x1820            
+            float freeze_damage; // 0x1878            
+            float freeze_duration; // 0x187c            
+            float freeze_cooldown; // 0x1880            
+            float damage_trigger; // 0x1884            
+            float spell_lifesteal; // 0x1888            
+            float spell_amp; // 0x188c            
+            float freeze_heal; // 0x1890            
+            float freeze_mana; // 0x1894            
+            std::int32_t nQuasApplications; // 0x1898            
+            std::int32_t nExortApplications; // 0x189c            
+            source2sdk::server::CountdownTimer m_freezeCooldownTimer; // 0x18a0            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Invoker_ColdSnap because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Invoker_ColdSnap) == 0x1838);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Invoker_ColdSnap) == 0x18b8);
     };
 };

@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x688
+        // Size: 0x690
         // Has VTable
         // Is Abstract
         // MClassHasEntityLimitedDataDesc
@@ -30,6 +30,6 @@ namespace source2sdk
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Item_Book) == 0x688);
+        static_assert(sizeof(source2sdk::server::CDOTA_Item_Book) == 0x690);
     };
 };

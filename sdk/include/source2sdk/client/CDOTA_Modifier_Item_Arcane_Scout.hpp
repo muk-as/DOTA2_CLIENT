@@ -17,19 +17,19 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1800
+        // Size: 0x1880
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Item_Arcane_Scout : public source2sdk::client::CDOTA_Buff_Item
         {
         public:
-            std::int32_t vision_bonus; // 0x17f8            
-            std::int32_t magic_resist; // 0x17fc            
+            std::int32_t vision_bonus; // 0x1878            
+            std::int32_t magic_resist; // 0x187c            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Item_Arcane_Scout because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Item_Arcane_Scout) == 0x1800);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Item_Arcane_Scout) == 0x1880);
     };
 };

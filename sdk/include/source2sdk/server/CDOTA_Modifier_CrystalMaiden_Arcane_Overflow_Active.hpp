@@ -17,21 +17,21 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1808
+        // Size: 0x1888
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_CrystalMaiden_Arcane_Overflow_Active : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float mana_battery_radius; // 0x17f8            
-            float mana_battery_mana_pct; // 0x17fc            
-            float activation_mana_cost_increase_pct; // 0x1800            
-            float activation_spell_amp_pct; // 0x1804            
+            float mana_battery_radius; // 0x1878            
+            float mana_battery_mana_pct; // 0x187c            
+            float activation_mana_cost_increase_pct; // 0x1880            
+            float activation_spell_amp_pct; // 0x1884            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_CrystalMaiden_Arcane_Overflow_Active because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_CrystalMaiden_Arcane_Overflow_Active) == 0x1808);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_CrystalMaiden_Arcane_Overflow_Active) == 0x1888);
     };
 };

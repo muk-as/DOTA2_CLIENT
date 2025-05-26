@@ -17,27 +17,27 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1828
+        // Size: 0x18b0
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Leshrac_Diabolic_Edict : public source2sdk::client::CDOTA_Buff
         {
         public:
-            std::int32_t num_explosions; // 0x17f8            
-            float radius; // 0x17fc            
-            float m_fExplosions; // 0x1800            
-            float tower_bonus; // 0x1804            
-            std::int32_t affects_buildings; // 0x1808            
-            std::int32_t damage; // 0x180c            
-            std::int32_t targets; // 0x1810            
-            std::int32_t iDamageType; // 0x1814            
-            bool m_bTalentActive; // 0x1818            
-            uint8_t _pad1819[0xf];
+            std::int32_t num_explosions; // 0x1878            
+            float radius; // 0x187c            
+            float m_fExplosions; // 0x1880            
+            float tower_bonus; // 0x1884            
+            std::int32_t affects_buildings; // 0x1888            
+            std::int32_t damage; // 0x188c            
+            std::int32_t targets; // 0x1890            
+            std::int32_t iDamageType; // 0x1894            
+            bool m_bTalentActive; // 0x1898            
+            uint8_t _pad1899[0x17];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Leshrac_Diabolic_Edict because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Leshrac_Diabolic_Edict) == 0x1828);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Leshrac_Diabolic_Edict) == 0x18b0);
     };
 };

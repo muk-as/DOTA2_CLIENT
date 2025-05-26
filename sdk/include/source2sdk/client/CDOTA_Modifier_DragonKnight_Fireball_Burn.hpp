@@ -17,19 +17,19 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1800
+        // Size: 0x1880
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_DragonKnight_Fireball_Burn : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float burn_interval; // 0x17f8            
-            std::int32_t damage; // 0x17fc            
+            float burn_interval; // 0x1878            
+            std::int32_t damage; // 0x187c            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_DragonKnight_Fireball_Burn because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_DragonKnight_Fireball_Burn) == 0x1800);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_DragonKnight_Fireball_Burn) == 0x1880);
     };
 };

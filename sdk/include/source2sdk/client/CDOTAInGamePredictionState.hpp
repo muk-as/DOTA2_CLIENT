@@ -19,7 +19,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x5a0
+        // Size: 0x670
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -33,26 +33,26 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            bool m_bVotingClosed; // 0x510            
+            bool m_bVotingClosed; // 0x5e0            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnAllPredictionsFinished"
-            bool m_bAllPredictionsFinished; // 0x511            
-            uint8_t _pad0512[0x6]; // 0x512
+            bool m_bAllPredictionsFinished; // 0x5e1            
+            uint8_t _pad05e2[0x6]; // 0x5e2
             // metadata: MNetworkEnable
             // m_vecPredictions has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // C_UtlVectorEmbeddedNetworkVar<source2sdk::client::InGamePredictionData_t> m_vecPredictions;
-            char m_vecPredictions[0x68]; // 0x518            
+            char m_vecPredictions[0x68]; // 0x5e8            
             // metadata: MNetworkEnable
-            source2sdk::client::LeagueID_t m_nLeagueID; // 0x580            
-            uint8_t _pad0584[0x4]; // 0x584
+            source2sdk::client::LeagueID_t m_nLeagueID; // 0x650            
+            uint8_t _pad0654[0x4]; // 0x654
             // m_vecPrevPredictions has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::client::InGamePredictionData_t> m_vecPrevPredictions;
-            char m_vecPrevPredictions[0x18]; // 0x588            
+            char m_vecPrevPredictions[0x18]; // 0x658            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTAInGamePredictionState because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTAInGamePredictionState) == 0x5a0);
+        static_assert(sizeof(source2sdk::client::CDOTAInGamePredictionState) == 0x670);
     };
 };

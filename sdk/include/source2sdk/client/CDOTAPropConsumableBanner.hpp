@@ -19,7 +19,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0xb08
+        // Size: 0xcd0
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -29,20 +29,20 @@ namespace source2sdk
         class CDOTAPropConsumableBanner : public source2sdk::client::C_DynamicProp
         {
         public:
-            uint8_t _pad0aa8[0x48]; // 0xaa8
-            source2sdk::client::PlayerID_t m_nPlayerID; // 0xaf0            
-            uint8_t _pad0af4[0x4]; // 0xaf4
+            uint8_t _pad0c70[0x48]; // 0xc70
+            source2sdk::client::PlayerID_t m_nPlayerID; // 0xcb8            
+            uint8_t _pad0cbc[0x4]; // 0xcbc
             // m_hAvatarTexture has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CStrongHandle<source2sdk::resourcesystem::InfoForResourceTypeCTextureBase> m_hAvatarTexture;
-            char m_hAvatarTexture[0x8]; // 0xaf8            
+            char m_hAvatarTexture[0x8]; // 0xcc0            
             // metadata: MNetworkEnable
-            bool m_bUseAvatar; // 0xb00            
-            uint8_t _pad0b01[0x7];
+            bool m_bUseAvatar; // 0xcc8            
+            uint8_t _pad0cc9[0x7];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTAPropConsumableBanner because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTAPropConsumableBanner) == 0xb08);
+        static_assert(sizeof(source2sdk::client::CDOTAPropConsumableBanner) == 0xcd0);
     };
 };

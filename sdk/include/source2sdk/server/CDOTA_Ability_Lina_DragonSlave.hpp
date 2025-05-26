@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x5d0
+        // Size: 0x5e0
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -25,16 +25,15 @@ namespace source2sdk
         class CDOTA_Ability_Lina_DragonSlave : public source2sdk::server::CDOTABaseAbility
         {
         public:
-            uint8_t _pad05b8[0x8]; // 0x5b8
-            std::int32_t dragon_slave_distance; // 0x5c0            
-            float dragon_slave_burn_duration; // 0x5c4            
-            float m_flDamage; // 0x5c8            
-            uint8_t _pad05cc[0x4];
+            uint8_t _pad05c0[0x14]; // 0x5c0
+            std::int32_t dragon_slave_distance; // 0x5d4            
+            float dragon_slave_burn_duration; // 0x5d8            
+            float m_flDamage; // 0x5dc            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_Lina_DragonSlave because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Ability_Lina_DragonSlave) == 0x5d0);
+        static_assert(sizeof(source2sdk::server::CDOTA_Ability_Lina_DragonSlave) == 0x5e0);
     };
 };

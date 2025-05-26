@@ -17,21 +17,21 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1808
+        // Size: 0x1888
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_FacelessVoid_TimeDilation_Distortion : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float slow_distance_min; // 0x17f8            
-            float slow_distance_max; // 0x17fc            
-            float attack_projectile_slow; // 0x1800            
-            uint8_t _pad1804[0x4];
+            float slow_distance_min; // 0x1878            
+            float slow_distance_max; // 0x187c            
+            float attack_projectile_slow; // 0x1880            
+            uint8_t _pad1884[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_FacelessVoid_TimeDilation_Distortion because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_FacelessVoid_TimeDilation_Distortion) == 0x1808);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_FacelessVoid_TimeDilation_Distortion) == 0x1888);
     };
 };

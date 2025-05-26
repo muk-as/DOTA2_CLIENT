@@ -24,7 +24,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x7b0
+        // Size: 0x7d0
         // Has VTable
         // Construct allowed
         // 
@@ -38,12 +38,12 @@ namespace source2sdk
             // metadata: MNetworkUserGroup "CLightComponent"
             // metadata: MNetworkAlias "CLightComponent"
             // metadata: MNetworkTypeAlias "CLightComponent"
-            source2sdk::server::CLightComponent* m_CLightComponent; // 0x7a8            
+            source2sdk::server::CLightComponent* m_CLightComponent; // 0x7c8            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CLightEntity because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CLightEntity) == 0x7b0);
+        static_assert(sizeof(source2sdk::server::CLightEntity) == 0x7d0);
     };
 };

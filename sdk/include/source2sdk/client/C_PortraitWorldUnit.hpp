@@ -21,7 +21,7 @@ namespace source2sdk
         // Registered alignment: 0x10
         // Alignment: 0x10
         // Standard-layout class: false
-        // Size: 0x1c20
+        // Size: 0x1e50
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -31,36 +31,36 @@ namespace source2sdk
         class C_PortraitWorldUnit : public source2sdk::client::C_DOTA_BaseNPC
         {
         public:
-            source2sdk::entity2::CEntityIOOutput m_OutputAnimOver; // 0x17d8            
-            bool m_bSuppressIntroEffects; // 0x1800            
-            bool m_bIsAlternateLoadout; // 0x1801            
-            bool m_bSkipBackgroundEntities; // 0x1802            
-            bool m_bSpawnBackgroundModels; // 0x1803            
-            bool m_bDeferredPortrait; // 0x1804            
-            bool m_bShowParticleAssetModifiers; // 0x1805            
-            bool m_bIgnorePortraitInfo; // 0x1806            
-            bool m_bFlyingCourier; // 0x1807            
-            bool m_bDisableDefaultModifiers; // 0x1808            
-            uint8_t _pad1809[0x3]; // 0x1809
-            std::int32_t m_nEffigyStatusEffect; // 0x180c            
-            CUtlSymbolLarge m_effigySequenceName; // 0x1810            
-            float m_flStartingAnimationCycle; // 0x1818            
-            float m_flAnimationPlaybackSpeed; // 0x181c            
-            float m_flRareLoadoutAnimChance; // 0x1820            
-            bool m_bSetDefaultActivityOnSequenceFinished; // 0x1824            
-            uint8_t _pad1825[0x3]; // 0x1825
+            source2sdk::entity2::CEntityIOOutput m_OutputAnimOver; // 0x1a00            
+            bool m_bSuppressIntroEffects; // 0x1a28            
+            bool m_bIsAlternateLoadout; // 0x1a29            
+            bool m_bSkipBackgroundEntities; // 0x1a2a            
+            bool m_bSpawnBackgroundModels; // 0x1a2b            
+            bool m_bDeferredPortrait; // 0x1a2c            
+            bool m_bShowParticleAssetModifiers; // 0x1a2d            
+            bool m_bIgnorePortraitInfo; // 0x1a2e            
+            bool m_bFlyingCourier; // 0x1a2f            
+            bool m_bDisableDefaultModifiers; // 0x1a30            
+            uint8_t _pad1a31[0x3]; // 0x1a31
+            std::int32_t m_nEffigyStatusEffect; // 0x1a34            
+            CUtlSymbolLarge m_effigySequenceName; // 0x1a38            
+            float m_flStartingAnimationCycle; // 0x1a40            
+            float m_flAnimationPlaybackSpeed; // 0x1a44            
+            float m_flRareLoadoutAnimChance; // 0x1a48            
+            bool m_bSetDefaultActivityOnSequenceFinished; // 0x1a4c            
+            uint8_t _pad1a4d[0x3]; // 0x1a4d
             // m_vecActivityModifiers has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CUtlSymbolLarge> m_vecActivityModifiers;
-            char m_vecActivityModifiers[0x18]; // 0x1828            
-            source2sdk::client::DOTAPortraitEnvironmentType_t m_environment; // 0x1840            
-            uint8_t _pad1844[0x4]; // 0x1844
-            source2sdk::client::StartupBehavior_t m_nStartupBehavior; // 0x1848            
-            uint8_t _pad184c[0x1e4]; // 0x184c
-            CUtlSymbolLarge m_cameraName; // 0x1a30            
-            uint8_t _pad1a38[0x50]; // 0x1a38
-            source2sdk::client::ParticleIndex_t m_nPortraitParticle; // 0x1a88            
-            std::int32_t m_nCourierType; // 0x1a8c            
-            uint8_t _pad1a90[0x190];
+            char m_vecActivityModifiers[0x18]; // 0x1a50            
+            source2sdk::client::DOTAPortraitEnvironmentType_t m_environment; // 0x1a68            
+            uint8_t _pad1a6c[0x4]; // 0x1a6c
+            source2sdk::client::StartupBehavior_t m_nStartupBehavior; // 0x1a70            
+            uint8_t _pad1a74[0x1e4]; // 0x1a74
+            CUtlSymbolLarge m_cameraName; // 0x1c58            
+            uint8_t _pad1c60[0x50]; // 0x1c60
+            source2sdk::client::ParticleIndex_t m_nPortraitParticle; // 0x1cb0            
+            std::int32_t m_nCourierType; // 0x1cb4            
+            uint8_t _pad1cb8[0x198];
             
             // Datamap fields:
             // CUtlSymbolLarge activity_modifier; // 0x7fffffff
@@ -90,6 +90,6 @@ namespace source2sdk
         
         // Cannot assert offsets of fields in C_PortraitWorldUnit because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_PortraitWorldUnit) == 0x1c20);
+        static_assert(sizeof(source2sdk::client::C_PortraitWorldUnit) == 0x1e50);
     };
 };

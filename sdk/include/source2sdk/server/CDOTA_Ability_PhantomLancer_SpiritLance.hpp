@@ -24,7 +24,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x5c0
+        // Size: 0x5c8
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -34,13 +34,13 @@ namespace source2sdk
         public:
             // m_hLastHitEntity has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hLastHitEntity;
-            char m_hLastHitEntity[0x4]; // 0x5b8            
-            std::int32_t m_nBounceCount; // 0x5bc            
+            char m_hLastHitEntity[0x4]; // 0x5c0            
+            std::int32_t m_nBounceCount; // 0x5c4            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_PhantomLancer_SpiritLance because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Ability_PhantomLancer_SpiritLance) == 0x5c0);
+        static_assert(sizeof(source2sdk::server::CDOTA_Ability_PhantomLancer_SpiritLance) == 0x5c8);
     };
 };

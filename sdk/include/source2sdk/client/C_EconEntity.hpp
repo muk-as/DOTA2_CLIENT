@@ -36,7 +36,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0xb20
+        // Size: 0xd38
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -46,36 +46,36 @@ namespace source2sdk
         class C_EconEntity : public source2sdk::client::C_BaseFlex
         {
         public:
-            uint8_t _pad0980[0x10]; // 0x980
+            uint8_t _pad0b98[0x10]; // 0xb98
             // metadata: MNetworkEnable
-            source2sdk::client::CAttributeContainer m_AttributeManager; // 0x990            
-            bool m_bClientside; // 0xad0            
-            uint8_t _pad0ad1[0x3]; // 0xad1
-            source2sdk::client::EconEntityParticleDisableMode_t m_nDisableMode; // 0xad4            
-            bool m_bParticleSystemsCreated; // 0xad8            
-            bool m_bForceDestroyAttachedParticlesImmediately; // 0xad9            
-            uint8_t _pad0ada[0x6]; // 0xada
+            source2sdk::client::CAttributeContainer m_AttributeManager; // 0xba8            
+            bool m_bClientside; // 0xce8            
+            uint8_t _pad0ce9[0x3]; // 0xce9
+            source2sdk::client::EconEntityParticleDisableMode_t m_nDisableMode; // 0xcec            
+            bool m_bParticleSystemsCreated; // 0xcf0            
+            bool m_bForceDestroyAttachedParticlesImmediately; // 0xcf1            
+            uint8_t _pad0cf2[0x6]; // 0xcf2
             // m_vecAttachedParticles has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::client::C_EconEntity_AttachedParticleInfo_t> m_vecAttachedParticles;
-            char m_vecAttachedParticles[0x18]; // 0xae0            
+            char m_vecAttachedParticles[0x18]; // 0xcf8            
             // m_hViewmodelAttachment has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::CBaseAnimatingActivity> m_hViewmodelAttachment;
-            char m_hViewmodelAttachment[0x4]; // 0xaf8            
-            std::int32_t m_iOldTeam; // 0xafc            
-            bool m_bAttachmentDirty; // 0xb00            
-            source2sdk::client::style_index_t m_iOldStyle; // 0xb01            
-            uint8_t _pad0b02[0x2]; // 0xb02
+            char m_hViewmodelAttachment[0x4]; // 0xd10            
+            std::int32_t m_iOldTeam; // 0xd14            
+            bool m_bAttachmentDirty; // 0xd18            
+            source2sdk::client::style_index_t m_iOldStyle; // 0xd19            
+            uint8_t _pad0d1a[0x2]; // 0xd1a
             // m_hOldProvidee has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hOldProvidee;
-            char m_hOldProvidee[0x4]; // 0xb04            
+            char m_hOldProvidee[0x4]; // 0xd1c            
             // m_vecAttachedModels has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::client::C_EconEntity_AttachedModelData_t> m_vecAttachedModels;
-            char m_vecAttachedModels[0x18]; // 0xb08            
+            char m_vecAttachedModels[0x18]; // 0xd20            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_EconEntity because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_EconEntity) == 0xb20);
+        static_assert(sizeof(source2sdk::client::C_EconEntity) == 0xd38);
     };
 };

@@ -18,21 +18,21 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x998
+        // Size: 0x9c8
         // Has VTable
         // Construct allowed
         #pragma pack(push, 1)
         class CTriggerDetectBulletFire : public source2sdk::server::CBaseTrigger
         {
         public:
-            bool m_bPlayerFireOnly; // 0x968            
-            uint8_t _pad0969[0x7]; // 0x969
-            source2sdk::entity2::CEntityIOOutput m_OnDetectedBulletFire; // 0x970            
+            bool m_bPlayerFireOnly; // 0x998            
+            uint8_t _pad0999[0x7]; // 0x999
+            source2sdk::entity2::CEntityIOOutput m_OnDetectedBulletFire; // 0x9a0            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CTriggerDetectBulletFire because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CTriggerDetectBulletFire) == 0x998);
+        static_assert(sizeof(source2sdk::server::CTriggerDetectBulletFire) == 0x9c8);
     };
 };

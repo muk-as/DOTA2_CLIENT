@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x588
+        // Size: 0x658
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -29,13 +29,13 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            source2sdk::client::PlayerID_t m_nPlayerID; // 0x580            
-            std::int32_t m_nTeam; // 0x584            
+            source2sdk::client::PlayerID_t m_nPlayerID; // 0x650            
+            std::int32_t m_nTeam; // 0x654            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CPlayerTrackedStatsEntity because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CPlayerTrackedStatsEntity) == 0x588);
+        static_assert(sizeof(source2sdk::client::CPlayerTrackedStatsEntity) == 0x658);
     };
 };

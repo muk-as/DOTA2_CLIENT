@@ -3,7 +3,7 @@
 #include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
-#include "source2sdk/animlib/CNmTask.hpp"
+#include "source2sdk/animlib/CNmPoseTask.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: animlib
@@ -17,19 +17,19 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: 0x1
         // Standard-layout class: false
-        // Size: 0xc0
+        // Size: 0xb8
         // Has VTable
         // Is Abstract
         #pragma pack(push, 1)
-        class CNmBlendTaskBase : public source2sdk::animlib::CNmTask
+        class CNmBlendTaskBase : public source2sdk::animlib::CNmPoseTask
         {
         public:
-            uint8_t _pad0030[0x90];
+            uint8_t _pad0030[0x88];
             // No schema binary for binding
         };
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::animlib::CNmBlendTaskBase) == 0xc0);
+        static_assert(sizeof(source2sdk::animlib::CNmBlendTaskBase) == 0xb8);
     };
 };

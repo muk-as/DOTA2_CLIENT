@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x4d8
+        // Size: 0x4e0
         // Has VTable
         // Construct allowed
         #pragma pack(push, 1)
@@ -29,6 +29,6 @@ namespace source2sdk
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::server::CInfoSpawnGroupLandmark) == 0x4d8);
+        static_assert(sizeof(source2sdk::server::CInfoSpawnGroupLandmark) == 0x4e0);
     };
 };

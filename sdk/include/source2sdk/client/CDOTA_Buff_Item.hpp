@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x17f8
+        // Size: 0x1878
         // Has VTable
         // Is Abstract
         #pragma pack(push, 1)
@@ -29,6 +29,6 @@ namespace source2sdk
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Buff_Item) == 0x17f8);
+        static_assert(sizeof(source2sdk::client::CDOTA_Buff_Item) == 0x1878);
     };
 };

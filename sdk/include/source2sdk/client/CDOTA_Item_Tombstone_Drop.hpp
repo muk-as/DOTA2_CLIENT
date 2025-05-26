@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x8c0
+        // Size: 0xa60
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -25,13 +25,13 @@ namespace source2sdk
         class CDOTA_Item_Tombstone_Drop : public source2sdk::client::C_DOTA_Item_Physical
         {
         public:
-            std::int32_t m_iTempViewer; // 0x8b8            
-            std::int32_t m_iTeam; // 0x8bc            
+            std::int32_t m_iTempViewer; // 0xa58            
+            std::int32_t m_iTeam; // 0xa5c            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Item_Tombstone_Drop because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Item_Tombstone_Drop) == 0x8c0);
+        static_assert(sizeof(source2sdk::client::CDOTA_Item_Tombstone_Drop) == 0xa60);
     };
 };

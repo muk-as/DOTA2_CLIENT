@@ -18,24 +18,24 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x890
+        // Size: 0x8b0
         // Has VTable
         // Construct allowed
         #pragma pack(push, 1)
         class CItem : public source2sdk::server::CBaseAnimatingActivity
         {
         public:
-            uint8_t _pad07b8[0x8]; // 0x7b8
-            source2sdk::entity2::CEntityIOOutput m_OnPlayerTouch; // 0x7c0            
-            source2sdk::entity2::CEntityIOOutput m_OnPlayerPickup; // 0x7e8            
-            bool m_bActivateWhenAtRest; // 0x810            
-            uint8_t _pad0811[0x7]; // 0x811
-            source2sdk::entity2::CEntityIOOutput m_OnCacheInteraction; // 0x818            
-            source2sdk::entity2::CEntityIOOutput m_OnGlovePulled; // 0x840            
-            Vector m_vOriginalSpawnOrigin; // 0x868            
-            QAngle m_vOriginalSpawnAngles; // 0x874            
-            bool m_bPhysStartAsleep; // 0x880            
-            uint8_t _pad0881[0xf];
+            uint8_t _pad07d8[0x8]; // 0x7d8
+            source2sdk::entity2::CEntityIOOutput m_OnPlayerTouch; // 0x7e0            
+            source2sdk::entity2::CEntityIOOutput m_OnPlayerPickup; // 0x808            
+            bool m_bActivateWhenAtRest; // 0x830            
+            uint8_t _pad0831[0x7]; // 0x831
+            source2sdk::entity2::CEntityIOOutput m_OnCacheInteraction; // 0x838            
+            source2sdk::entity2::CEntityIOOutput m_OnGlovePulled; // 0x860            
+            Vector m_vOriginalSpawnOrigin; // 0x888            
+            QAngle m_vOriginalSpawnAngles; // 0x894            
+            bool m_bPhysStartAsleep; // 0x8a0            
+            uint8_t _pad08a1[0xf];
             
             // Datamap fields:
             // void CItemItemTouch; // 0x0
@@ -46,6 +46,6 @@ namespace source2sdk
         
         // Cannot assert offsets of fields in CItem because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CItem) == 0x890);
+        static_assert(sizeof(source2sdk::server::CItem) == 0x8b0);
     };
 };

@@ -27,6 +27,7 @@ namespace source2sdk
         // static metadata: MPulseDomainOptInFeatureTag
         // static metadata: MPulseDomainOptInValueType
         // static metadata: MPulseDomainOptInValueType
+        // static metadata: MPulseDomainOptInVariableKeysSource
         #pragma pack(push, 1)
         class CPulseGraphInstance_PanoramaPanel : public source2sdk::pulse_runtime_lib::CBasePulseGraphInstance
         {

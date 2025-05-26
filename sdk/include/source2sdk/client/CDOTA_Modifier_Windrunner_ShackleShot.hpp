@@ -17,19 +17,19 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1800
+        // Size: 0x1880
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Windrunner_ShackleShot : public source2sdk::client::CDOTA_Modifier_Stunned
         {
         public:
-            float bounce_dmg; // 0x17f8            
-            float shackle_distance; // 0x17fc            
+            float bounce_dmg; // 0x1878            
+            float shackle_distance; // 0x187c            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Windrunner_ShackleShot because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Windrunner_ShackleShot) == 0x1800);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Windrunner_ShackleShot) == 0x1880);
     };
 };

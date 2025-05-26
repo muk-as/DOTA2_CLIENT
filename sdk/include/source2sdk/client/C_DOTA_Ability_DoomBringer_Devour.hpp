@@ -24,7 +24,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x5d0
+        // Size: 0x6a0
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -32,17 +32,17 @@ namespace source2sdk
         class C_DOTA_Ability_DoomBringer_Devour : public source2sdk::client::C_DOTABaseAbility
         {
         public:
-            bool m_bIsAltCastState; // 0x5b0            
-            uint8_t _pad05b1[0x3]; // 0x5b1
-            std::int32_t ability_bonus_level; // 0x5b4            
+            bool m_bIsAltCastState; // 0x680            
+            uint8_t _pad0681[0x3]; // 0x681
+            std::int32_t ability_bonus_level; // 0x684            
             // m_vecAbilityDraftStolenAbilities has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::client::C_DOTABaseAbility>> m_vecAbilityDraftStolenAbilities;
-            char m_vecAbilityDraftStolenAbilities[0x18]; // 0x5b8            
+            char m_vecAbilityDraftStolenAbilities[0x18]; // 0x688            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Ability_DoomBringer_Devour because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_DoomBringer_Devour) == 0x5d0);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_DoomBringer_Devour) == 0x6a0);
     };
 };

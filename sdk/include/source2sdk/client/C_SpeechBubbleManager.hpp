@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x1358
+        // Size: 0x1428
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -33,15 +33,15 @@ namespace source2sdk
             // metadata: MNetworkTypeAlias "m_SpeechBubbles"
             // m_SpeechBubbles has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // C_UtlVectorEmbeddedNetworkVar<source2sdk::client::C_SpeechBubbleInfo> m_SpeechBubbles;
-            char m_SpeechBubbles[0x578]; // 0x510            
-            uint8_t _pad0a88[0x840]; // 0xa88
-            std::uint32_t m_nLastCountInQueue[4]; // 0x12c8            
-            uint8_t _pad12d8[0x80];
+            char m_SpeechBubbles[0x578]; // 0x5e0            
+            uint8_t _pad0b58[0x840]; // 0xb58
+            std::uint32_t m_nLastCountInQueue[4]; // 0x1398            
+            uint8_t _pad13a8[0x80];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_SpeechBubbleManager because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_SpeechBubbleManager) == 0x1358);
+        static_assert(sizeof(source2sdk::client::C_SpeechBubbleManager) == 0x1428);
     };
 };

@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x5c8
+        // Size: 0x5d0
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -25,14 +25,14 @@ namespace source2sdk
         class CDOTA_Ability_Tinker_Rearm : public source2sdk::server::CDOTABaseAbility
         {
         public:
-            Vector m_vProjectileLocation; // 0x5b8            
-            bool affects_items; // 0x5c4            
-            uint8_t _pad05c5[0x3];
+            Vector m_vProjectileLocation; // 0x5c0            
+            bool affects_items; // 0x5cc            
+            uint8_t _pad05cd[0x3];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_Tinker_Rearm because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Ability_Tinker_Rearm) == 0x5c8);
+        static_assert(sizeof(source2sdk::server::CDOTA_Ability_Tinker_Rearm) == 0x5d0);
     };
 };

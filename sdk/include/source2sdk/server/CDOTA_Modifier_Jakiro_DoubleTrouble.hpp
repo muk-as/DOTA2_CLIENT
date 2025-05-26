@@ -24,23 +24,23 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1808
+        // Size: 0x1888
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Jakiro_DoubleTrouble : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float second_attack_delay; // 0x17f8            
-            float attack_damage_reduction; // 0x17fc            
+            float second_attack_delay; // 0x1878            
+            float attack_damage_reduction; // 0x187c            
             // m_hSecondaryTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hSecondaryTarget;
-            char m_hSecondaryTarget[0x4]; // 0x1800            
-            uint8_t _pad1804[0x4];
+            char m_hSecondaryTarget[0x4]; // 0x1880            
+            uint8_t _pad1884[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Jakiro_DoubleTrouble because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Jakiro_DoubleTrouble) == 0x1808);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Jakiro_DoubleTrouble) == 0x1888);
     };
 };

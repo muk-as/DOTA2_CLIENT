@@ -17,23 +17,23 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1828
+        // Size: 0x18a8
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Death_Prophet_MourningRitual : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float delay_pct; // 0x17f8            
-            float delay_time; // 0x17fc            
-            float damage_interval; // 0x1800            
-            float m_flDamageMultiplier; // 0x1804            
-            bool m_bApplyingDelayedDamage; // 0x1808            
-            uint8_t _pad1809[0x1f];
+            float delay_pct; // 0x1878            
+            float delay_time; // 0x187c            
+            float damage_interval; // 0x1880            
+            float m_flDamageMultiplier; // 0x1884            
+            bool m_bApplyingDelayedDamage; // 0x1888            
+            uint8_t _pad1889[0x1f];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Death_Prophet_MourningRitual because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Death_Prophet_MourningRitual) == 0x1828);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Death_Prophet_MourningRitual) == 0x18a8);
     };
 };

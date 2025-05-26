@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x800
+        // Size: 0x9a0
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -25,14 +25,14 @@ namespace source2sdk
         class C_DOTA_BinaryObject : public source2sdk::client::CBaseAnimatingActivity
         {
         public:
-            bool m_bActive; // 0x7f8            
-            uint8_t _pad07f9[0x3]; // 0x7f9
-            std::int32_t m_nBinaryID; // 0x7fc            
+            bool m_bActive; // 0x998            
+            uint8_t _pad0999[0x3]; // 0x999
+            std::int32_t m_nBinaryID; // 0x99c            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_BinaryObject because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_BinaryObject) == 0x800);
+        static_assert(sizeof(source2sdk::client::C_DOTA_BinaryObject) == 0x9a0);
     };
 };

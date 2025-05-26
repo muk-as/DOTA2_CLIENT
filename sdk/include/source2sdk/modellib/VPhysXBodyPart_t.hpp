@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: true
-        // Size: 0xb0
+        // Size: 0xa8
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -38,7 +38,6 @@ namespace source2sdk
             bool m_bOverrideMassCenter; // 0x98            
             uint8_t _pad0099[0x3]; // 0x99
             Vector m_vMassCenterOverride; // 0x9c            
-            CUtlString m_Tag; // 0xa8            
         };
         #pragma pack(pop)
         
@@ -54,8 +53,7 @@ namespace source2sdk
         static_assert(offsetof(source2sdk::modellib::VPhysXBodyPart_t, m_flAngularDrag) == 0x94);
         static_assert(offsetof(source2sdk::modellib::VPhysXBodyPart_t, m_bOverrideMassCenter) == 0x98);
         static_assert(offsetof(source2sdk::modellib::VPhysXBodyPart_t, m_vMassCenterOverride) == 0x9c);
-        static_assert(offsetof(source2sdk::modellib::VPhysXBodyPart_t, m_Tag) == 0xa8);
         
-        static_assert(sizeof(source2sdk::modellib::VPhysXBodyPart_t) == 0xb0);
+        static_assert(sizeof(source2sdk::modellib::VPhysXBodyPart_t) == 0xa8);
     };
 };

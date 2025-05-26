@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x6e8
+        // Size: 0x7b8
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -30,6 +30,6 @@ namespace source2sdk
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::client::C_DOTAMutationGameMode) == 0x6e8);
+        static_assert(sizeof(source2sdk::client::C_DOTAMutationGameMode) == 0x7b8);
     };
 };

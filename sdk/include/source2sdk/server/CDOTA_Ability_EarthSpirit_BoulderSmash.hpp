@@ -24,7 +24,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x5e8
+        // Size: 0x5f0
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -32,29 +32,29 @@ namespace source2sdk
         class CDOTA_Ability_EarthSpirit_BoulderSmash : public source2sdk::server::CDOTABaseAbility
         {
         public:
-            float speed; // 0x5b8            
-            float rock_damage; // 0x5bc            
-            float creep_multiplier; // 0x5c0            
-            float radius; // 0x5c4            
-            float rock_search_aoe; // 0x5c8            
-            float unit_distance; // 0x5cc            
-            float rock_distance; // 0x5d0            
-            std::int32_t m_nProjectileID; // 0x5d4            
+            float speed; // 0x5c0            
+            float rock_damage; // 0x5c4            
+            float creep_multiplier; // 0x5c8            
+            float radius; // 0x5cc            
+            float rock_search_aoe; // 0x5d0            
+            float unit_distance; // 0x5d4            
+            float rock_distance; // 0x5d8            
+            std::int32_t m_nProjectileID; // 0x5dc            
             // m_hCursorTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hCursorTarget;
-            char m_hCursorTarget[0x4]; // 0x5d8            
-            bool m_bUsedStone; // 0x5dc            
-            uint8_t _pad05dd[0x3]; // 0x5dd
+            char m_hCursorTarget[0x4]; // 0x5e0            
+            bool m_bUsedStone; // 0x5e4            
+            uint8_t _pad05e5[0x3]; // 0x5e5
             // m_hTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hTarget;
-            char m_hTarget[0x4]; // 0x5e0            
-            bool m_bTargetStone; // 0x5e4            
-            uint8_t _pad05e5[0x3];
+            char m_hTarget[0x4]; // 0x5e8            
+            bool m_bTargetStone; // 0x5ec            
+            uint8_t _pad05ed[0x3];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_EarthSpirit_BoulderSmash because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Ability_EarthSpirit_BoulderSmash) == 0x5e8);
+        static_assert(sizeof(source2sdk::server::CDOTA_Ability_EarthSpirit_BoulderSmash) == 0x5f0);
     };
 };

@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x30
+        // Size: 0x28
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -27,12 +27,12 @@ namespace source2sdk
         public:
             // m_Sphere has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // SphereBase_t<float> m_Sphere;
-            char m_Sphere[0x10]; // 0x20            
+            char m_Sphere[0x10]; // 0x18            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in RnSphereDesc_t because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::physicslib::RnSphereDesc_t) == 0x30);
+        static_assert(sizeof(source2sdk::physicslib::RnSphereDesc_t) == 0x28);
     };
 };

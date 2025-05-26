@@ -24,7 +24,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x678
+        // Size: 0x748
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -34,16 +34,16 @@ namespace source2sdk
         public:
             // m_hEntsHit has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::client::C_BaseEntity>> m_hEntsHit;
-            char m_hEntsHit[0x18]; // 0x650            
-            std::int32_t damage; // 0x668            
-            float duration; // 0x66c            
-            float spend_charge_delay; // 0x670            
-            uint8_t _pad0674[0x4];
+            char m_hEntsHit[0x18]; // 0x720            
+            std::int32_t damage; // 0x738            
+            float duration; // 0x73c            
+            float spend_charge_delay; // 0x740            
+            uint8_t _pad0744[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_AghsFort_Ravage_Potion because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Ability_AghsFort_Ravage_Potion) == 0x678);
+        static_assert(sizeof(source2sdk::client::CDOTA_Ability_AghsFort_Ravage_Potion) == 0x748);
     };
 };

@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0xdb8
+        // Size: 0xe88
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -25,14 +25,14 @@ namespace source2sdk
         class C_DOTA_Ability_MonkeyKing_TreeDance : public source2sdk::client::C_DOTABaseAbility
         {
         public:
-            std::int32_t perched_jump_distance; // 0x5b0            
-            std::int32_t ground_jump_distance; // 0x5b4            
-            uint8_t _pad05b8[0x800];
+            std::int32_t perched_jump_distance; // 0x680            
+            std::int32_t ground_jump_distance; // 0x684            
+            uint8_t _pad0688[0x800];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Ability_MonkeyKing_TreeDance because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_MonkeyKing_TreeDance) == 0xdb8);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_MonkeyKing_TreeDance) == 0xe88);
     };
 };

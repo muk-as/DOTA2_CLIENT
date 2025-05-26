@@ -17,19 +17,19 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1808
+        // Size: 0x1890
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Nian_WhirlpoolThinker : public source2sdk::client::CDOTA_Buff
         {
         public:
-            std::int32_t pull_radius; // 0x17f8            
-            uint8_t _pad17fc[0xc];
+            std::int32_t pull_radius; // 0x1878            
+            uint8_t _pad187c[0x14];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Nian_WhirlpoolThinker because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Nian_WhirlpoolThinker) == 0x1808);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Nian_WhirlpoolThinker) == 0x1890);
     };
 };

@@ -16,22 +16,22 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: 0x1
         // Standard-layout class: true
-        // Size: 0x1
-        // Has Trivial Constructor
+        // Size: 0x8
         // Has Trivial Destructor
         // 
-        // static metadata: MPulseProvideFeatureTag "8"
         // static metadata: MPulseLibraryBindings
-        // static metadata: MParticleDomainTag "C_DOTA_LinearProjectileInfoParticleAPI Linear Projectile"
+        // static metadata: MPulseProvideFeatureTag "8"
         // static metadata: MPulseDomainHookInfo
+        // static metadata: MParticleDomainTag "C_DOTA_LinearProjectileInfoParticleAPI Linear Projectile"
         #pragma pack(push, 1)
         class C_DOTA_LinearProjectileInfoParticleAPI
         {
         public:
+            uint8_t _pad0000[0x8];
         };
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_LinearProjectileInfoParticleAPI) == 0x1);
+        static_assert(sizeof(source2sdk::client::C_DOTA_LinearProjectileInfoParticleAPI) == 0x8);
     };
 };

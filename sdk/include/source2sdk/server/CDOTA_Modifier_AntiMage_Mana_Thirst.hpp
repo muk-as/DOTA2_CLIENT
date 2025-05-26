@@ -17,25 +17,25 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1818
+        // Size: 0x1898
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_AntiMage_Mana_Thirst : public source2sdk::client::CDOTA_Buff
         {
         public:
-            std::int32_t thirst_enabled; // 0x17f8            
-            std::int32_t threshold_pct; // 0x17fc            
-            std::int32_t bonus_attack_damage; // 0x1800            
-            float linger_duration; // 0x1804            
-            std::int32_t min_bonus_pct; // 0x1808            
-            std::int32_t max_bonus_pct; // 0x180c            
-            float thirst_range; // 0x1810            
-            uint8_t _pad1814[0x4];
+            std::int32_t thirst_enabled; // 0x1878            
+            std::int32_t threshold_pct; // 0x187c            
+            std::int32_t bonus_attack_damage; // 0x1880            
+            float linger_duration; // 0x1884            
+            std::int32_t min_bonus_pct; // 0x1888            
+            std::int32_t max_bonus_pct; // 0x188c            
+            float thirst_range; // 0x1890            
+            uint8_t _pad1894[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_AntiMage_Mana_Thirst because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_AntiMage_Mana_Thirst) == 0x1818);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_AntiMage_Mana_Thirst) == 0x1898);
     };
 };

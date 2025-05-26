@@ -17,20 +17,20 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x4e0
+        // Size: 0x4e8
         // Has VTable
         // Construct allowed
         #pragma pack(push, 1)
         class CFoWRevealerEntity : public source2sdk::server::CBaseEntity
         {
         public:
-            std::uint32_t m_unViewerTeam; // 0x4d8            
-            std::int32_t m_nVisionRange; // 0x4dc            
+            std::uint32_t m_unViewerTeam; // 0x4e0            
+            std::int32_t m_nVisionRange; // 0x4e4            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CFoWRevealerEntity because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CFoWRevealerEntity) == 0x4e0);
+        static_assert(sizeof(source2sdk::server::CFoWRevealerEntity) == 0x4e8);
     };
 };

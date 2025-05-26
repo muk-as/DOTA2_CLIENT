@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1828
+        // Size: 0x18a8
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_BackdoorProtectionInBase : public source2sdk::server::CDOTA_Modifier_BackdoorProtection
@@ -28,6 +28,6 @@ namespace source2sdk
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_BackdoorProtectionInBase) == 0x1828);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_BackdoorProtectionInBase) == 0x18a8);
     };
 };

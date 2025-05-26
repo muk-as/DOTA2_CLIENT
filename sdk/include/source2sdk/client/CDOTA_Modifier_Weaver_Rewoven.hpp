@@ -17,19 +17,19 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1800
+        // Size: 0x1880
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Weaver_Rewoven : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float attack_range_increase_per_stack; // 0x17f8            
-            float duration; // 0x17fc            
+            float attack_range_increase_per_stack; // 0x1878            
+            float duration; // 0x187c            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Weaver_Rewoven because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Weaver_Rewoven) == 0x1800);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Weaver_Rewoven) == 0x1880);
     };
 };

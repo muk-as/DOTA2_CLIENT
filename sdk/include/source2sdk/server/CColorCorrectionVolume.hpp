@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0xb88
+        // Size: 0xbb8
         // Has VTable
         // Construct allowed
         // 
@@ -31,18 +31,18 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            float m_MaxWeight; // 0x968            
+            float m_MaxWeight; // 0x998            
             // metadata: MNetworkEnable
-            float m_FadeDuration; // 0x96c            
+            float m_FadeDuration; // 0x99c            
             // metadata: MNetworkEnable
-            float m_Weight; // 0x970            
+            float m_Weight; // 0x9a0            
             // metadata: MNetworkEnable
-            char m_lookupFilename[512]; // 0x974            
-            float m_LastEnterWeight; // 0xb74            
-            source2sdk::entity2::GameTime_t m_LastEnterTime; // 0xb78            
-            float m_LastExitWeight; // 0xb7c            
-            source2sdk::entity2::GameTime_t m_LastExitTime; // 0xb80            
-            uint8_t _pad0b84[0x4];
+            char m_lookupFilename[512]; // 0x9a4            
+            float m_LastEnterWeight; // 0xba4            
+            source2sdk::entity2::GameTime_t m_LastEnterTime; // 0xba8            
+            float m_LastExitWeight; // 0xbac            
+            source2sdk::entity2::GameTime_t m_LastExitTime; // 0xbb0            
+            uint8_t _pad0bb4[0x4];
             
             // Datamap fields:
             // void CColorCorrectionVolumeThinkFunc; // 0x0
@@ -51,6 +51,6 @@ namespace source2sdk
         
         // Cannot assert offsets of fields in CColorCorrectionVolume because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CColorCorrectionVolume) == 0xb88);
+        static_assert(sizeof(source2sdk::server::CColorCorrectionVolume) == 0xbb8);
     };
 };

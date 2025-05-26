@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x38
+        // Size: 0x48
         // Has VTable
         // Construct allowed
         // 
@@ -27,13 +27,13 @@ namespace source2sdk
         class CSmartPropVariable_Angles : public source2sdk::smartprops::CSmartPropVariable
         {
         public:
-            QAngle m_DefaultValue; // 0x28            
-            uint8_t _pad0034[0x4];
+            QAngle m_DefaultValue; // 0x38            
+            uint8_t _pad0044[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CSmartPropVariable_Angles because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::smartprops::CSmartPropVariable_Angles) == 0x38);
+        static_assert(sizeof(source2sdk::smartprops::CSmartPropVariable_Angles) == 0x48);
     };
 };

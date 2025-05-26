@@ -4,8 +4,9 @@
 #include <cstddef>
 #include <cstdint>
 #include "source2sdk/client/AbilityID_t.hpp"
+#include "source2sdk/client/CDOTACourierController.hpp"
 #include "source2sdk/client/C_DOTA_UnitInventory.hpp"
-#include "source2sdk/client/HeroFacetID_t.hpp"
+#include "source2sdk/client/HeroFacetKey_t.hpp"
 #include "source2sdk/client/HeroID_t.hpp"
 #include "source2sdk/client/OverworldID_t.hpp"
 #include "source2sdk/client/OverworldTokenID_t.hpp"
@@ -32,7 +33,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: 0x8
         // Standard-layout class: true
-        // Size: 0x6e0
+        // Size: 0x1008
         // Has VTable
         // 
         // static metadata: MNetworkVarNames "int m_iReliableGold"
@@ -68,7 +69,7 @@ namespace source2sdk
         // static metadata: MNetworkVarNames "int m_iClaimedMissCount"
         // static metadata: MNetworkVarNames "int m_iMissCount"
         // static metadata: MNetworkVarNames "HeroID_t m_nPossibleHeroSelection"
-        // static metadata: MNetworkVarNames "HeroFacetID_t m_nPossibleHeroFacetSelection"
+        // static metadata: MNetworkVarNames "HeroFacetKey_t m_nPossibleHeroFacetSelection"
         // static metadata: MNetworkVarNames "GameTime_t m_flBuybackCooldownTime"
         // static metadata: MNetworkVarNames "GameTime_t m_flBuybackGoldLimitTime"
         // static metadata: MNetworkVarNames "float m_flBuybackCostTime"
@@ -95,10 +96,9 @@ namespace source2sdk
         // static metadata: MNetworkVarNames "AbilityID_t m_iSuggestedAbilities"
         // static metadata: MNetworkVarNames "float m_fSuggestedAbilityWeights"
         // static metadata: MNetworkVarNames "AbilityID_t m_iSuggestedPregameItems"
-        // static metadata: MNetworkVarNames "AbilityID_t m_iSuggestedItemSequences"
-        // static metadata: MNetworkVarNames "WeightedAbilitySuggestion_t m_iSuggestedWeightedItems"
-        // static metadata: MNetworkVarNames "WeightedAbilitySuggestion_t m_iSuggestedTopNItems"
-        // static metadata: MNetworkVarNames "WeightedAbilitySuggestion_t m_iSuggestedNeutralItems"
+        // static metadata: MNetworkVarNames "AbilityID_t m_iSuggestedItemSequence"
+        // static metadata: MNetworkVarNames "AbilityID_t m_iSuggestedItemSequenceVariants"
+        // static metadata: MNetworkVarNames "WeightedAbilitySuggestion_t m_iSuggestedItemOptions"
         // static metadata: MNetworkVarNames "WeightedAbilitySuggestion_t m_iSuggestedNeutralTrinkets"
         // static metadata: MNetworkVarNames "WeightedAbilitySuggestion_t m_iSuggestedNeutralEnhancements"
         // static metadata: MNetworkVarNames "HeroID_t m_iSuggestedHeroes"
@@ -126,6 +126,7 @@ namespace source2sdk
         // static metadata: MNetworkVarNames "int m_nAcquiredMadstone"
         // static metadata: MNetworkVarNames "int m_nCurrentMadstone"
         // static metadata: MNetworkVarNames "PlayerNeutralChoices_t m_NeutralChoices"
+        // static metadata: MNetworkVarNames "CDOTACourierController m_CourierController"
         #pragma pack(push, 1)
         struct DataTeamPlayer_t
         {
@@ -201,138 +202,138 @@ namespace source2sdk
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnDataTeamPlayerSelectionDirty"
             source2sdk::client::HeroID_t m_nPossibleHeroSelection; // 0xb0            
+            uint8_t _pad00b4[0x4]; // 0xb4
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnDataTeamPlayerSelectionDirty"
-            source2sdk::client::HeroFacetID_t m_nPossibleHeroFacetSelection; // 0xb4            
+            source2sdk::client::HeroFacetKey_t m_nPossibleHeroFacetSelection; // 0xb8            
             // metadata: MNetworkEnable
-            source2sdk::entity2::GameTime_t m_flBuybackCooldownTime; // 0xb8            
+            source2sdk::entity2::GameTime_t m_flBuybackCooldownTime; // 0xc0            
             // metadata: MNetworkEnable
-            source2sdk::entity2::GameTime_t m_flBuybackGoldLimitTime; // 0xbc            
+            source2sdk::entity2::GameTime_t m_flBuybackGoldLimitTime; // 0xc4            
             // metadata: MNetworkEnable
-            float m_flBuybackCostTime; // 0xc0            
+            float m_flBuybackCostTime; // 0xc8            
             // metadata: MNetworkEnable
-            float m_flCustomBuybackCooldown; // 0xc4            
+            float m_flCustomBuybackCooldown; // 0xcc            
             // metadata: MNetworkEnable
-            float m_fStuns; // 0xc8            
+            float m_fStuns; // 0xd0            
             // metadata: MNetworkEnable
-            float m_fHealing; // 0xcc            
+            float m_fHealing; // 0xd4            
             // metadata: MNetworkEnable
-            float m_fRegeneratedHealth; // 0xd0            
+            float m_fRegeneratedHealth; // 0xd8            
             // metadata: MNetworkEnable
-            std::int32_t m_iTowerKills; // 0xd4            
+            std::int32_t m_iTowerKills; // 0xdc            
             // metadata: MNetworkEnable
-            std::int32_t m_iRoshanKills; // 0xd8            
+            std::int32_t m_iRoshanKills; // 0xe0            
             // metadata: MNetworkEnable
             // m_hCameraTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hCameraTarget;
-            char m_hCameraTarget[0x4]; // 0xdc            
+            char m_hCameraTarget[0x4]; // 0xe4            
             // metadata: MNetworkEnable
             // m_hOverrideSelectionEntity has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hOverrideSelectionEntity;
-            char m_hOverrideSelectionEntity[0x4]; // 0xe0            
+            char m_hOverrideSelectionEntity[0x4]; // 0xe8            
             // metadata: MNetworkEnable
-            std::int32_t m_iObserverWardsPlaced; // 0xe4            
+            std::int32_t m_iObserverWardsPlaced; // 0xec            
             // metadata: MNetworkEnable
-            std::int32_t m_iSentryWardsPlaced; // 0xe8            
+            std::int32_t m_iSentryWardsPlaced; // 0xf0            
             // metadata: MNetworkEnable
-            std::int32_t m_iCreepsStacked; // 0xec            
+            std::int32_t m_iCreepsStacked; // 0xf4            
             // metadata: MNetworkEnable
-            std::int32_t m_iCampsStacked; // 0xf0            
+            std::int32_t m_iCampsStacked; // 0xf8            
             // metadata: MNetworkEnable
-            std::int32_t m_iRunePickups; // 0xf4            
+            std::int32_t m_iRunePickups; // 0xfc            
             // metadata: MNetworkEnable
-            std::int32_t m_iGoldSpentOnSupport; // 0xf8            
+            std::int32_t m_iGoldSpentOnSupport; // 0x100            
             // metadata: MNetworkEnable
-            std::int32_t m_iHeroDamage; // 0xfc            
+            std::int32_t m_iHeroDamage; // 0x104            
             // metadata: MNetworkEnable
-            std::int32_t m_iTowerDamage; // 0x100            
+            std::int32_t m_iTowerDamage; // 0x108            
             // metadata: MNetworkEnable
-            std::int32_t m_iWardsPurchased; // 0x104            
+            std::int32_t m_iWardsPurchased; // 0x10c            
             // metadata: MNetworkEnable
-            std::int32_t m_iWardsDestroyed; // 0x108            
-            uint8_t _pad010c[0x4]; // 0x10c
+            std::int32_t m_iWardsDestroyed; // 0x110            
+            uint8_t _pad0114[0x4]; // 0x114
             // metadata: MNetworkEnable
-            source2sdk::client::C_DOTA_UnitInventory m_PreGameInventory; // 0x110            
+            source2sdk::client::C_DOTA_UnitInventory m_PreGameInventory; // 0x118            
             // metadata: MNetworkEnable
-            std::int32_t m_nKillsPerOpposingTeamMember[24]; // 0x200            
+            std::int32_t m_nKillsPerOpposingTeamMember[24]; // 0x208            
             // metadata: MNetworkEnable
-            source2sdk::client::AbilityID_t m_iSuggestedAbilities[5]; // 0x260            
+            source2sdk::client::AbilityID_t m_iSuggestedAbilities[5]; // 0x268            
             // metadata: MNetworkEnable
-            float m_fSuggestedAbilityWeights[5]; // 0x274            
+            float m_fSuggestedAbilityWeights[5]; // 0x27c            
             // metadata: MNetworkEnable
-            // metadata: MNetworkChangeCallback "OnDataTeamPlayerSuggestedItemsChanged"
-            source2sdk::client::AbilityID_t m_iSuggestedPregameItems[15]; // 0x288            
+            // metadata: MNetworkChangeCallback "OnDataTeamPlayerSuggestedPregameItemsChanged"
+            source2sdk::client::AbilityID_t m_iSuggestedPregameItems[15]; // 0x290            
             // metadata: MNetworkEnable
-            // metadata: MNetworkChangeCallback "OnDataTeamPlayerSuggestedItemSequencesChanged"
-            source2sdk::client::AbilityID_t m_iSuggestedItemSequences[30]; // 0x2c4            
+            // metadata: MNetworkChangeCallback "OnDataTeamPlayerSuggestedItemSequenceChanged"
+            source2sdk::client::AbilityID_t m_iSuggestedItemSequence[50]; // 0x2cc            
             // metadata: MNetworkEnable
-            // metadata: MNetworkChangeCallback "OnDataTeamPlayerSuggestedItemsChanged"
-            source2sdk::client::WeightedAbilitySuggestion_t m_iSuggestedWeightedItems[15]; // 0x33c            
+            // metadata: MNetworkChangeCallback "OnDataTeamPlayerSuggestedItemSequenceVariantsChanged"
+            source2sdk::client::AbilityID_t m_iSuggestedItemSequenceVariants[150]; // 0x394            
             // metadata: MNetworkEnable
-            // metadata: MNetworkChangeCallback "OnDataTeamPlayerSuggestedItemsChanged"
-            source2sdk::client::WeightedAbilitySuggestion_t m_iSuggestedTopNItems[3]; // 0x3b4            
+            // metadata: MNetworkChangeCallback "OnDataTeamPlayerSuggestedItemOptionsChanged"
+            source2sdk::client::WeightedAbilitySuggestion_t m_iSuggestedItemOptions[250]; // 0x5ec            
             // metadata: MNetworkEnable
-            // metadata: MNetworkChangeCallback "OnDataTeamPlayerSuggestedItemsChanged"
-            source2sdk::client::WeightedAbilitySuggestion_t m_iSuggestedNeutralItems[30]; // 0x3cc            
+            // metadata: MNetworkChangeCallback "OnDataTeamPlayerSuggestedNeutralChanged"
+            source2sdk::client::WeightedAbilitySuggestion_t m_iSuggestedNeutralTrinkets[5]; // 0xdbc            
             // metadata: MNetworkEnable
-            // metadata: MNetworkChangeCallback "OnDataTeamPlayerSuggestedItemsChanged"
-            source2sdk::client::WeightedAbilitySuggestion_t m_iSuggestedNeutralTrinkets[5]; // 0x4bc            
+            // metadata: MNetworkChangeCallback "OnDataTeamPlayerSuggestedNeutralsChanged"
+            source2sdk::client::WeightedAbilitySuggestion_t m_iSuggestedNeutralEnhancements[5]; // 0xde4            
             // metadata: MNetworkEnable
-            // metadata: MNetworkChangeCallback "OnDataTeamPlayerSuggestedItemsChanged"
-            source2sdk::client::WeightedAbilitySuggestion_t m_iSuggestedNeutralEnhancements[5]; // 0x4e4            
+            source2sdk::client::HeroID_t m_iSuggestedHeroes[10]; // 0xe0c            
             // metadata: MNetworkEnable
-            source2sdk::client::HeroID_t m_iSuggestedHeroes[10]; // 0x50c            
+            float m_flSuggestedHeroesWeights[10]; // 0xe34            
             // metadata: MNetworkEnable
-            float m_flSuggestedHeroesWeights[10]; // 0x534            
+            std::int32_t m_iDamageByTypeReceivedPreReduction[3]; // 0xe5c            
             // metadata: MNetworkEnable
-            std::int32_t m_iDamageByTypeReceivedPreReduction[3]; // 0x55c            
+            std::int32_t m_iDamageByTypeReceivedPostReduction[3]; // 0xe68            
             // metadata: MNetworkEnable
-            std::int32_t m_iDamageByTypeReceivedPostReduction[3]; // 0x568            
+            std::int32_t m_iOutgoingDamageByTypePreReduction[3]; // 0xe74            
             // metadata: MNetworkEnable
-            std::int32_t m_iOutgoingDamageByTypePreReduction[3]; // 0x574            
+            std::int32_t m_iOutgoingDamageByTypePostReduction[3]; // 0xe80            
             // metadata: MNetworkEnable
-            std::int32_t m_iOutgoingDamageByTypePostReduction[3]; // 0x580            
+            source2sdk::client::OverworldID_t m_uSelectedOverworldID; // 0xe8c            
             // metadata: MNetworkEnable
-            source2sdk::client::OverworldID_t m_uSelectedOverworldID; // 0x58c            
+            source2sdk::client::OverworldTokenID_t m_uSelectedOverworldTokenRewards[3]; // 0xe8d            
             // metadata: MNetworkEnable
-            source2sdk::client::OverworldTokenID_t m_uSelectedOverworldTokenRewards[3]; // 0x58d            
+            std::int32_t m_iCommandsIssued; // 0xe90            
             // metadata: MNetworkEnable
-            std::int32_t m_iCommandsIssued; // 0x590            
+            std::int32_t m_iGoldSpentOnConsumables; // 0xe94            
             // metadata: MNetworkEnable
-            std::int32_t m_iGoldSpentOnConsumables; // 0x594            
+            std::int32_t m_iGoldSpentOnItems; // 0xe98            
             // metadata: MNetworkEnable
-            std::int32_t m_iGoldSpentOnItems; // 0x598            
+            std::int32_t m_iGoldSpentOnBuybacks; // 0xe9c            
             // metadata: MNetworkEnable
-            std::int32_t m_iGoldSpentOnBuybacks; // 0x59c            
+            std::int32_t m_iGoldLostToDeath; // 0xea0            
             // metadata: MNetworkEnable
-            std::int32_t m_iGoldLostToDeath; // 0x5a0            
+            bool m_bIsNewPlayer; // 0xea4            
             // metadata: MNetworkEnable
-            bool m_bIsNewPlayer; // 0x5a4            
-            // metadata: MNetworkEnable
-            bool m_bIsGuidePlayer; // 0x5a5            
-            uint8_t _pad05a6[0x2]; // 0x5a6
+            bool m_bIsGuidePlayer; // 0xea5            
+            uint8_t _pad0ea6[0x2]; // 0xea6
             // metadata: MNetworkEnable
             // metadata: MNetworkEncoder "fixed64"
             // metadata: MNetworkChangeCallback "OnDataTeamPlayerPlayerSteamIDsChanged"
-            std::uint64_t m_iPlayerSteamID; // 0x5a8            
+            std::uint64_t m_iPlayerSteamID; // 0xea8            
             // metadata: MNetworkEnable
-            std::int32_t m_iSmokesUsed; // 0x5b0            
+            std::int32_t m_iSmokesUsed; // 0xeb0            
             // metadata: MNetworkEnable
-            std::int32_t m_iNeutralTokensFound; // 0x5b4            
+            std::int32_t m_iNeutralTokensFound; // 0xeb4            
             // metadata: MNetworkEnable
-            std::int32_t m_iWatchersTaken; // 0x5b8            
+            std::int32_t m_iWatchersTaken; // 0xeb8            
             // metadata: MNetworkEnable
-            std::int32_t m_iLotusesTaken; // 0x5bc            
+            std::int32_t m_iLotusesTaken; // 0xebc            
             // metadata: MNetworkEnable
-            std::int32_t m_iTormentorKills; // 0x5c0            
+            std::int32_t m_iTormentorKills; // 0xec0            
             // metadata: MNetworkEnable
-            std::int32_t m_iCourierKills; // 0x5c4            
+            std::int32_t m_iCourierKills; // 0xec4            
             // metadata: MNetworkEnable
-            std::int32_t m_nAcquiredMadstone; // 0x5c8            
+            std::int32_t m_nAcquiredMadstone; // 0xec8            
             // metadata: MNetworkEnable
-            std::int32_t m_nCurrentMadstone; // 0x5cc            
+            std::int32_t m_nCurrentMadstone; // 0xecc            
             // metadata: MNetworkEnable
-            source2sdk::client::PlayerNeutralChoices_t m_NeutralChoices; // 0x5d0            
+            source2sdk::client::PlayerNeutralChoices_t m_NeutralChoices; // 0xed0            
+            // metadata: MNetworkEnable
+            source2sdk::client::CDOTACourierController m_CourierController; // 0xfe0            
         };
         #pragma pack(pop)
         
@@ -369,65 +370,65 @@ namespace source2sdk
         static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iClaimedMissCount) == 0xa8);
         static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iMissCount) == 0xac);
         static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_nPossibleHeroSelection) == 0xb0);
-        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_nPossibleHeroFacetSelection) == 0xb4);
-        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_flBuybackCooldownTime) == 0xb8);
-        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_flBuybackGoldLimitTime) == 0xbc);
-        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_flBuybackCostTime) == 0xc0);
-        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_flCustomBuybackCooldown) == 0xc4);
-        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_fStuns) == 0xc8);
-        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_fHealing) == 0xcc);
-        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_fRegeneratedHealth) == 0xd0);
-        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iTowerKills) == 0xd4);
-        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iRoshanKills) == 0xd8);
-        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_hCameraTarget) == 0xdc);
-        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_hOverrideSelectionEntity) == 0xe0);
-        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iObserverWardsPlaced) == 0xe4);
-        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iSentryWardsPlaced) == 0xe8);
-        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iCreepsStacked) == 0xec);
-        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iCampsStacked) == 0xf0);
-        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iRunePickups) == 0xf4);
-        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iGoldSpentOnSupport) == 0xf8);
-        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iHeroDamage) == 0xfc);
-        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iTowerDamage) == 0x100);
-        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iWardsPurchased) == 0x104);
-        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iWardsDestroyed) == 0x108);
-        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_PreGameInventory) == 0x110);
-        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_nKillsPerOpposingTeamMember) == 0x200);
-        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iSuggestedAbilities) == 0x260);
-        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_fSuggestedAbilityWeights) == 0x274);
-        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iSuggestedPregameItems) == 0x288);
-        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iSuggestedItemSequences) == 0x2c4);
-        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iSuggestedWeightedItems) == 0x33c);
-        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iSuggestedTopNItems) == 0x3b4);
-        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iSuggestedNeutralItems) == 0x3cc);
-        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iSuggestedNeutralTrinkets) == 0x4bc);
-        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iSuggestedNeutralEnhancements) == 0x4e4);
-        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iSuggestedHeroes) == 0x50c);
-        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_flSuggestedHeroesWeights) == 0x534);
-        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iDamageByTypeReceivedPreReduction) == 0x55c);
-        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iDamageByTypeReceivedPostReduction) == 0x568);
-        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iOutgoingDamageByTypePreReduction) == 0x574);
-        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iOutgoingDamageByTypePostReduction) == 0x580);
-        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_uSelectedOverworldID) == 0x58c);
-        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_uSelectedOverworldTokenRewards) == 0x58d);
-        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iCommandsIssued) == 0x590);
-        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iGoldSpentOnConsumables) == 0x594);
-        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iGoldSpentOnItems) == 0x598);
-        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iGoldSpentOnBuybacks) == 0x59c);
-        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iGoldLostToDeath) == 0x5a0);
-        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_bIsNewPlayer) == 0x5a4);
-        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_bIsGuidePlayer) == 0x5a5);
-        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iPlayerSteamID) == 0x5a8);
-        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iSmokesUsed) == 0x5b0);
-        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iNeutralTokensFound) == 0x5b4);
-        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iWatchersTaken) == 0x5b8);
-        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iLotusesTaken) == 0x5bc);
-        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iTormentorKills) == 0x5c0);
-        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iCourierKills) == 0x5c4);
-        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_nAcquiredMadstone) == 0x5c8);
-        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_nCurrentMadstone) == 0x5cc);
-        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_NeutralChoices) == 0x5d0);
+        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_nPossibleHeroFacetSelection) == 0xb8);
+        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_flBuybackCooldownTime) == 0xc0);
+        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_flBuybackGoldLimitTime) == 0xc4);
+        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_flBuybackCostTime) == 0xc8);
+        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_flCustomBuybackCooldown) == 0xcc);
+        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_fStuns) == 0xd0);
+        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_fHealing) == 0xd4);
+        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_fRegeneratedHealth) == 0xd8);
+        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iTowerKills) == 0xdc);
+        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iRoshanKills) == 0xe0);
+        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_hCameraTarget) == 0xe4);
+        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_hOverrideSelectionEntity) == 0xe8);
+        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iObserverWardsPlaced) == 0xec);
+        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iSentryWardsPlaced) == 0xf0);
+        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iCreepsStacked) == 0xf4);
+        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iCampsStacked) == 0xf8);
+        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iRunePickups) == 0xfc);
+        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iGoldSpentOnSupport) == 0x100);
+        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iHeroDamage) == 0x104);
+        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iTowerDamage) == 0x108);
+        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iWardsPurchased) == 0x10c);
+        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iWardsDestroyed) == 0x110);
+        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_PreGameInventory) == 0x118);
+        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_nKillsPerOpposingTeamMember) == 0x208);
+        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iSuggestedAbilities) == 0x268);
+        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_fSuggestedAbilityWeights) == 0x27c);
+        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iSuggestedPregameItems) == 0x290);
+        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iSuggestedItemSequence) == 0x2cc);
+        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iSuggestedItemSequenceVariants) == 0x394);
+        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iSuggestedItemOptions) == 0x5ec);
+        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iSuggestedNeutralTrinkets) == 0xdbc);
+        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iSuggestedNeutralEnhancements) == 0xde4);
+        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iSuggestedHeroes) == 0xe0c);
+        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_flSuggestedHeroesWeights) == 0xe34);
+        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iDamageByTypeReceivedPreReduction) == 0xe5c);
+        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iDamageByTypeReceivedPostReduction) == 0xe68);
+        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iOutgoingDamageByTypePreReduction) == 0xe74);
+        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iOutgoingDamageByTypePostReduction) == 0xe80);
+        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_uSelectedOverworldID) == 0xe8c);
+        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_uSelectedOverworldTokenRewards) == 0xe8d);
+        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iCommandsIssued) == 0xe90);
+        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iGoldSpentOnConsumables) == 0xe94);
+        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iGoldSpentOnItems) == 0xe98);
+        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iGoldSpentOnBuybacks) == 0xe9c);
+        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iGoldLostToDeath) == 0xea0);
+        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_bIsNewPlayer) == 0xea4);
+        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_bIsGuidePlayer) == 0xea5);
+        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iPlayerSteamID) == 0xea8);
+        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iSmokesUsed) == 0xeb0);
+        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iNeutralTokensFound) == 0xeb4);
+        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iWatchersTaken) == 0xeb8);
+        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iLotusesTaken) == 0xebc);
+        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iTormentorKills) == 0xec0);
+        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_iCourierKills) == 0xec4);
+        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_nAcquiredMadstone) == 0xec8);
+        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_nCurrentMadstone) == 0xecc);
+        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_NeutralChoices) == 0xed0);
+        static_assert(offsetof(source2sdk::client::DataTeamPlayer_t, m_CourierController) == 0xfe0);
         
-        static_assert(sizeof(source2sdk::client::DataTeamPlayer_t) == 0x6e0);
+        static_assert(sizeof(source2sdk::client::DataTeamPlayer_t) == 0x1008);
     };
 };

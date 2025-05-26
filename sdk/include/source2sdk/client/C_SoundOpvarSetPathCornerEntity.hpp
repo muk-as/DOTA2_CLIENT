@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x530
+        // Size: 0x600
         // Has VTable
         // Construct allowed
         #pragma pack(push, 1)
@@ -29,6 +29,6 @@ namespace source2sdk
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::client::C_SoundOpvarSetPathCornerEntity) == 0x530);
+        static_assert(sizeof(source2sdk::client::C_SoundOpvarSetPathCornerEntity) == 0x600);
     };
 };

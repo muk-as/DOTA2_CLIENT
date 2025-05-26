@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x1898
+        // Size: 0x18d0
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -26,13 +26,13 @@ namespace source2sdk
         class CDOTA_Unit_Brewmaster_PrimalVoid : public source2sdk::server::CDOTA_BaseNPC_Creep
         {
         public:
-            source2sdk::client::ParticleIndex_t m_nFXAmbient; // 0x1890            
-            uint8_t _pad1894[0x4];
+            source2sdk::client::ParticleIndex_t m_nFXAmbient; // 0x18c8            
+            uint8_t _pad18cc[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Unit_Brewmaster_PrimalVoid because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Unit_Brewmaster_PrimalVoid) == 0x1898);
+        static_assert(sizeof(source2sdk::server::CDOTA_Unit_Brewmaster_PrimalVoid) == 0x18d0);
     };
 };

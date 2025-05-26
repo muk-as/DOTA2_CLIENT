@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x5d0
+        // Size: 0x6a0
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -26,17 +26,17 @@ namespace source2sdk
         class C_DOTA_Ability_DragonKnight_BreatheFire : public source2sdk::client::C_DOTABaseAbility
         {
         public:
-            float start_radius; // 0x5b0            
-            float end_radius; // 0x5b4            
-            float damage; // 0x5b8            
-            Vector m_vStartPos; // 0x5bc            
-            source2sdk::entity2::GameTime_t m_fStartTime; // 0x5c8            
-            float m_fTotalTime; // 0x5cc            
+            float start_radius; // 0x680            
+            float end_radius; // 0x684            
+            float damage; // 0x688            
+            Vector m_vStartPos; // 0x68c            
+            source2sdk::entity2::GameTime_t m_fStartTime; // 0x698            
+            float m_fTotalTime; // 0x69c            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Ability_DragonKnight_BreatheFire because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_DragonKnight_BreatheFire) == 0x5d0);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_DragonKnight_BreatheFire) == 0x6a0);
     };
 };

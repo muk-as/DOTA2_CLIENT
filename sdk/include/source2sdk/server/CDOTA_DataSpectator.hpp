@@ -25,7 +25,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x15a8
+        // Size: 0x15b0
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -48,49 +48,49 @@ namespace source2sdk
             // metadata: MNetworkEnable
             // m_hPowerupRune_1 has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hPowerupRune_1;
-            char m_hPowerupRune_1[0x4]; // 0x14b8            
+            char m_hPowerupRune_1[0x4]; // 0x14c0            
             // metadata: MNetworkEnable
             // m_hPowerupRune_2 has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hPowerupRune_2;
-            char m_hPowerupRune_2[0x4]; // 0x14bc            
+            char m_hPowerupRune_2[0x4]; // 0x14c4            
             // metadata: MNetworkEnable
             // m_hBountyRune_1 has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hBountyRune_1;
-            char m_hBountyRune_1[0x4]; // 0x14c0            
+            char m_hBountyRune_1[0x4]; // 0x14c8            
             // metadata: MNetworkEnable
             // m_hBountyRune_2 has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hBountyRune_2;
-            char m_hBountyRune_2[0x4]; // 0x14c4            
+            char m_hBountyRune_2[0x4]; // 0x14cc            
             // metadata: MNetworkEnable
             // m_hBountyRune_3 has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hBountyRune_3;
-            char m_hBountyRune_3[0x4]; // 0x14c8            
+            char m_hBountyRune_3[0x4]; // 0x14d0            
             // metadata: MNetworkEnable
             // m_hBountyRune_4 has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hBountyRune_4;
-            char m_hBountyRune_4[0x4]; // 0x14cc            
+            char m_hBountyRune_4[0x4]; // 0x14d4            
             // metadata: MNetworkEnable
             // m_hXPRune_1 has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hXPRune_1;
-            char m_hXPRune_1[0x4]; // 0x14d0            
+            char m_hXPRune_1[0x4]; // 0x14d8            
             // metadata: MNetworkEnable
             // m_hXPRune_2 has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hXPRune_2;
-            char m_hXPRune_2[0x4]; // 0x14d4            
+            char m_hXPRune_2[0x4]; // 0x14dc            
             // metadata: MNetworkEnable
-            std::int32_t m_iNetWorth[24]; // 0x14d8            
+            std::int32_t m_iNetWorth[24]; // 0x14e0            
             // metadata: MNetworkEnable
-            float m_fRadiantWinProbability; // 0x1538            
-            uint8_t _pad153c[0x4]; // 0x153c
+            float m_fRadiantWinProbability; // 0x1540            
+            uint8_t _pad1544[0x4]; // 0x1544
             // metadata: MNetworkEnable
             // m_ThreatLevelInfos has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVectorEmbeddedNetworkVar<source2sdk::server::DOTAThreatLevelInfo_t> m_ThreatLevelInfos;
-            char m_ThreatLevelInfos[0x68]; // 0x1540            
+            char m_ThreatLevelInfos[0x68]; // 0x1548            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_DataSpectator because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_DataSpectator) == 0x15a8);
+        static_assert(sizeof(source2sdk::server::CDOTA_DataSpectator) == 0x15b0);
     };
 };

@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x5d0
+        // Size: 0x5d8
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -26,16 +26,16 @@ namespace source2sdk
         class CDOTA_Ability_Shredder_TimberChain : public source2sdk::server::CDOTABaseAbility
         {
         public:
-            std::int32_t chain_radius; // 0x5b8            
-            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x5bc            
-            Vector m_vProjectileVelocity; // 0x5c0            
-            bool m_bRetract; // 0x5cc            
-            uint8_t _pad05cd[0x3];
+            std::int32_t chain_radius; // 0x5c0            
+            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x5c4            
+            Vector m_vProjectileVelocity; // 0x5c8            
+            bool m_bRetract; // 0x5d4            
+            uint8_t _pad05d5[0x3];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_Shredder_TimberChain because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Ability_Shredder_TimberChain) == 0x5d0);
+        static_assert(sizeof(source2sdk::server::CDOTA_Ability_Shredder_TimberChain) == 0x5d8);
     };
 };

@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0xac8
+        // Size: 0xc68
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -34,23 +34,23 @@ namespace source2sdk
         class C_DOTA_Item_Rune : public source2sdk::client::CBaseAnimatingActivity
         {
         public:
-            uint8_t _pad07f8[0x18]; // 0x7f8
+            uint8_t _pad0998[0x18]; // 0x998
             // metadata: MNetworkEnable
-            std::int32_t m_iRuneType; // 0x810            
+            std::int32_t m_iRuneType; // 0x9b0            
             // metadata: MNetworkEnable
-            float m_flRuneTime; // 0x814            
+            float m_flRuneTime; // 0x9b4            
             // metadata: MNetworkEnable
-            std::int32_t m_nMapLocationTeam; // 0x818            
+            std::int32_t m_nMapLocationTeam; // 0x9b8            
             // metadata: MNetworkEnable
-            char m_szLocation[512]; // 0x81c            
-            std::int32_t m_iOldRuneType; // 0xa1c            
-            bool m_bShowingTooltip; // 0xa20            
-            uint8_t _pad0a21[0xa7];
+            char m_szLocation[512]; // 0x9bc            
+            std::int32_t m_iOldRuneType; // 0xbbc            
+            bool m_bShowingTooltip; // 0xbc0            
+            uint8_t _pad0bc1[0xa7];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Item_Rune because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Item_Rune) == 0xac8);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Item_Rune) == 0xc68);
     };
 };

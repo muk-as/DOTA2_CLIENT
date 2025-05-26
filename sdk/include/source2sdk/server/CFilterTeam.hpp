@@ -17,20 +17,20 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x538
+        // Size: 0x540
         // Has VTable
         // Construct allowed
         #pragma pack(push, 1)
         class CFilterTeam : public source2sdk::server::CBaseFilter
         {
         public:
-            std::int32_t m_iFilterTeam; // 0x530            
-            uint8_t _pad0534[0x4];
+            std::int32_t m_iFilterTeam; // 0x538            
+            uint8_t _pad053c[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CFilterTeam because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CFilterTeam) == 0x538);
+        static_assert(sizeof(source2sdk::server::CFilterTeam) == 0x540);
     };
 };

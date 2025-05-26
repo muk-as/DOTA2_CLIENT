@@ -17,21 +17,21 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x4f0
+        // Size: 0x4f8
         // Has VTable
         // Construct allowed
         #pragma pack(push, 1)
         class CLogicDistanceAutosave : public source2sdk::server::CLogicalEntity
         {
         public:
-            CUtlSymbolLarge m_iszTargetEntity; // 0x4d8            
-            float m_flDistanceToPlayer; // 0x4e0            
-            bool m_bForceNewLevelUnit; // 0x4e4            
-            bool m_bCheckCough; // 0x4e5            
-            bool m_bThinkDangerous; // 0x4e6            
-            uint8_t _pad04e7[0x1]; // 0x4e7
-            float m_flDangerousTime; // 0x4e8            
-            uint8_t _pad04ec[0x4];
+            CUtlSymbolLarge m_iszTargetEntity; // 0x4e0            
+            float m_flDistanceToPlayer; // 0x4e8            
+            bool m_bForceNewLevelUnit; // 0x4ec            
+            bool m_bCheckCough; // 0x4ed            
+            bool m_bThinkDangerous; // 0x4ee            
+            uint8_t _pad04ef[0x1]; // 0x4ef
+            float m_flDangerousTime; // 0x4f0            
+            uint8_t _pad04f4[0x4];
             
             // Datamap fields:
             // void InputSave; // 0x0
@@ -42,6 +42,6 @@ namespace source2sdk
         
         // Cannot assert offsets of fields in CLogicDistanceAutosave because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CLogicDistanceAutosave) == 0x4f0);
+        static_assert(sizeof(source2sdk::server::CLogicDistanceAutosave) == 0x4f8);
     };
 };

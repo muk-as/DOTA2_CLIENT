@@ -31,7 +31,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x4f0
+        // Size: 0x4f8
         // Has VTable
         // Construct allowed
         #pragma pack(push, 1)
@@ -40,16 +40,16 @@ namespace source2sdk
         public:
             // m_hAura has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CDOTA_BaseNPC> m_hAura;
-            char m_hAura[0x4]; // 0x4d8            
-            uint8_t _pad04dc[0x4]; // 0x4dc
-            CUtlSymbolLarge m_iOtherBlockerName; // 0x4e0            
+            char m_hAura[0x4]; // 0x4e0            
+            uint8_t _pad04e4[0x4]; // 0x4e4
+            CUtlSymbolLarge m_iOtherBlockerName; // 0x4e8            
             // m_hOtherBlocker has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hOtherBlocker;
-            char m_hOtherBlocker[0x4]; // 0x4e8            
-            bool m_bEndPoint; // 0x4ec            
-            bool m_bEnabled; // 0x4ed            
-            bool m_bStartDisabled; // 0x4ee            
-            bool m_bHidden; // 0x4ef            
+            char m_hOtherBlocker[0x4]; // 0x4f0            
+            bool m_bEndPoint; // 0x4f4            
+            bool m_bEnabled; // 0x4f5            
+            bool m_bStartDisabled; // 0x4f6            
+            bool m_bHidden; // 0x4f7            
             
             // Datamap fields:
             // void InputEnable; // 0x0
@@ -60,6 +60,6 @@ namespace source2sdk
         
         // Cannot assert offsets of fields in CDotaTutorialNPCBlocker because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDotaTutorialNPCBlocker) == 0x4f0);
+        static_assert(sizeof(source2sdk::server::CDotaTutorialNPCBlocker) == 0x4f8);
     };
 };

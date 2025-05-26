@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x7b8
+        // Size: 0x7d8
         // Has VTable
         // Construct allowed
         // 
@@ -28,14 +28,14 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            bool m_bShouldAnimateDuringGameplayPause; // 0x7a8            
+            bool m_bShouldAnimateDuringGameplayPause; // 0x7c8            
             // metadata: MNetworkEnable
-            bool m_bInitiallyPopulateInterpHistory; // 0x7a9            
-            bool m_bAnimationUpdateScheduled; // 0x7aa            
-            uint8_t _pad07ab[0x5]; // 0x7ab
+            bool m_bInitiallyPopulateInterpHistory; // 0x7c9            
+            bool m_bAnimationUpdateScheduled; // 0x7ca            
+            uint8_t _pad07cb[0x5]; // 0x7cb
             // m_pSuppressedAnimEventTags has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CUtlString>* m_pSuppressedAnimEventTags;
-            char m_pSuppressedAnimEventTags[0x8]; // 0x7b0            
+            char m_pSuppressedAnimEventTags[0x8]; // 0x7d0            
             
             // Datamap fields:
             // float InputSetPlaybackRate; // 0x0
@@ -44,6 +44,6 @@ namespace source2sdk
         
         // Cannot assert offsets of fields in CBaseAnimatingActivity because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CBaseAnimatingActivity) == 0x7b8);
+        static_assert(sizeof(source2sdk::server::CBaseAnimatingActivity) == 0x7d8);
     };
 };

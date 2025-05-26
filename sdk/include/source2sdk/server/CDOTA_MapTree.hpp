@@ -17,14 +17,14 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x508
+        // Size: 0x510
         // Has VTable
         // Construct allowed
         #pragma pack(push, 1)
         class CDOTA_MapTree : public source2sdk::server::CDOTA_BinaryObject
         {
         public:
-            uint8_t _pad04e0[0x28];
+            uint8_t _pad04e8[0x28];
             // Datamap fields:
             // void InputCutDown; // 0x0
             // void InputCutDownForever; // 0x0
@@ -34,6 +34,6 @@ namespace source2sdk
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::server::CDOTA_MapTree) == 0x508);
+        static_assert(sizeof(source2sdk::server::CDOTA_MapTree) == 0x510);
     };
 };

@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1830
+        // Size: 0x18b0
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Rattletrap_Cog_Pinball : public source2sdk::client::CDOTA_Modifier_Knockback
@@ -28,6 +28,6 @@ namespace source2sdk
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Rattletrap_Cog_Pinball) == 0x1830);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Rattletrap_Cog_Pinball) == 0x18b0);
     };
 };

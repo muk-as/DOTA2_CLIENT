@@ -27,43 +27,43 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x8f0
+        // Size: 0x910
         // Has VTable
         // Construct allowed
         #pragma pack(push, 1)
         class CEnvBeam : public source2sdk::server::CBeam
         {
         public:
-            std::int32_t m_active; // 0x848            
-            uint8_t _pad084c[0x4]; // 0x84c
+            std::int32_t m_active; // 0x868            
+            uint8_t _pad086c[0x4]; // 0x86c
             // m_spriteTexture has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CStrongHandle<source2sdk::resourcesystem::InfoForResourceTypeIMaterial2> m_spriteTexture;
-            char m_spriteTexture[0x8]; // 0x850            
-            CUtlSymbolLarge m_iszStartEntity; // 0x858            
-            CUtlSymbolLarge m_iszEndEntity; // 0x860            
-            float m_life; // 0x868            
-            float m_boltWidth; // 0x86c            
-            float m_noiseAmplitude; // 0x870            
-            std::int32_t m_speed; // 0x874            
-            float m_restrike; // 0x878            
-            uint8_t _pad087c[0x4]; // 0x87c
-            CUtlSymbolLarge m_iszSpriteName; // 0x880            
-            std::int32_t m_frameStart; // 0x888            
-            Vector m_vEndPointWorld; // 0x88c            
-            Vector m_vEndPointRelative; // 0x898            
-            float m_radius; // 0x8a4            
-            source2sdk::server::Touch_t m_TouchType; // 0x8a8            
-            uint8_t _pad08ac[0x4]; // 0x8ac
-            CUtlSymbolLarge m_iFilterName; // 0x8b0            
+            char m_spriteTexture[0x8]; // 0x870            
+            CUtlSymbolLarge m_iszStartEntity; // 0x878            
+            CUtlSymbolLarge m_iszEndEntity; // 0x880            
+            float m_life; // 0x888            
+            float m_boltWidth; // 0x88c            
+            float m_noiseAmplitude; // 0x890            
+            std::int32_t m_speed; // 0x894            
+            float m_restrike; // 0x898            
+            uint8_t _pad089c[0x4]; // 0x89c
+            CUtlSymbolLarge m_iszSpriteName; // 0x8a0            
+            std::int32_t m_frameStart; // 0x8a8            
+            Vector m_vEndPointWorld; // 0x8ac            
+            Vector m_vEndPointRelative; // 0x8b8            
+            float m_radius; // 0x8c4            
+            source2sdk::server::Touch_t m_TouchType; // 0x8c8            
+            uint8_t _pad08cc[0x4]; // 0x8cc
+            CUtlSymbolLarge m_iFilterName; // 0x8d0            
             // m_hFilter has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hFilter;
-            char m_hFilter[0x4]; // 0x8b8            
-            uint8_t _pad08bc[0x4]; // 0x8bc
-            CUtlSymbolLarge m_iszDecal; // 0x8c0            
-            source2sdk::entity2::CEntityIOOutput m_OnTouchedByEntity; // 0x8c8            
+            char m_hFilter[0x4]; // 0x8d8            
+            uint8_t _pad08dc[0x4]; // 0x8dc
+            CUtlSymbolLarge m_iszDecal; // 0x8e0            
+            source2sdk::entity2::CEntityIOOutput m_OnTouchedByEntity; // 0x8e8            
             
             // Datamap fields:
-            // int32_t m_nClipStyle; // 0x82c
+            // int32_t m_nClipStyle; // 0x84c
             // void CEnvBeamStrikeThink; // 0x0
             // void CEnvBeamUpdateThink; // 0x0
             // void InputTurnOn; // 0x0
@@ -75,6 +75,6 @@ namespace source2sdk
         
         // Cannot assert offsets of fields in CEnvBeam because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CEnvBeam) == 0x8f0);
+        static_assert(sizeof(source2sdk::server::CEnvBeam) == 0x910);
     };
 };

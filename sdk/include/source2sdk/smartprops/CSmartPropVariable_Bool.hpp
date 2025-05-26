@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x30
+        // Size: 0x40
         // Has VTable
         // Construct allowed
         // 
@@ -27,13 +27,13 @@ namespace source2sdk
         class CSmartPropVariable_Bool : public source2sdk::smartprops::CSmartPropVariable
         {
         public:
-            bool m_DefaultValue; // 0x28            
-            uint8_t _pad0029[0x7];
+            bool m_DefaultValue; // 0x38            
+            uint8_t _pad0039[0x7];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CSmartPropVariable_Bool because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::smartprops::CSmartPropVariable_Bool) == 0x30);
+        static_assert(sizeof(source2sdk::smartprops::CSmartPropVariable_Bool) == 0x40);
     };
 };

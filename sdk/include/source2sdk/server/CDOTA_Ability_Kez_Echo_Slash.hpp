@@ -27,9 +27,8 @@ namespace source2sdk
         class CDOTA_Ability_Kez_Echo_Slash : public source2sdk::server::CDOTA_Ability_Kez_BaseAbility
         {
         public:
-            Vector m_vInitialDirection; // 0x5c0            
-            Vector m_vStartPos; // 0x5cc            
-            uint8_t _pad05d8[0x8]; // 0x5d8
+            Vector m_vInitialDirection; // 0x5c8            
+            Vector m_vStartPos; // 0x5d4            
             CTransform m_InitialTransform; // 0x5e0            
             float katana_radius; // 0x600            
             float katana_distance; // 0x604            

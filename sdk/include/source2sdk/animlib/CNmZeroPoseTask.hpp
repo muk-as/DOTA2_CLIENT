@@ -3,7 +3,7 @@
 #include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
-#include "source2sdk/animlib/CNmTask.hpp"
+#include "source2sdk/animlib/CNmPoseTask.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: animlib
@@ -21,7 +21,7 @@ namespace source2sdk
         // Has VTable
         // Construct allowed
         #pragma pack(push, 1)
-        class CNmZeroPoseTask : public source2sdk::animlib::CNmTask
+        class CNmZeroPoseTask : public source2sdk::animlib::CNmPoseTask
         {
         public:
             // No schema binary for binding

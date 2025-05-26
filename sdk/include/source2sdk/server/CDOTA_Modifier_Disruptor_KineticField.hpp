@@ -17,29 +17,29 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1838
+        // Size: 0x18b8
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Disruptor_KineticField : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float radius; // 0x17f8            
-            Vector m_vOriginLoc; // 0x17fc            
-            bool m_bTruesight; // 0x1808            
-            uint8_t _pad1809[0x3]; // 0x1809
-            float damage_per_second; // 0x180c            
-            Vector m_vOrigin; // 0x1810            
-            Vector m_vWallRight; // 0x181c            
-            uint8_t _pad1828[0x4]; // 0x1828
-            bool is_wall; // 0x182c            
-            uint8_t _pad182d[0x3]; // 0x182d
-            float m_flWallThickness; // 0x1830            
-            uint8_t _pad1834[0x4];
+            float radius; // 0x1878            
+            Vector m_vOriginLoc; // 0x187c            
+            bool m_bTruesight; // 0x1888            
+            uint8_t _pad1889[0x3]; // 0x1889
+            float damage_per_second; // 0x188c            
+            Vector m_vOrigin; // 0x1890            
+            Vector m_vWallRight; // 0x189c            
+            uint8_t _pad18a8[0x4]; // 0x18a8
+            bool is_wall; // 0x18ac            
+            uint8_t _pad18ad[0x3]; // 0x18ad
+            float m_flWallThickness; // 0x18b0            
+            uint8_t _pad18b4[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Disruptor_KineticField because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Disruptor_KineticField) == 0x1838);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Disruptor_KineticField) == 0x18b8);
     };
 };

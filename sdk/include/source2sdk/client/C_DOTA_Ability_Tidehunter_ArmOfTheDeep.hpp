@@ -24,7 +24,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x5e0
+        // Size: 0x6c0
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -34,17 +34,17 @@ namespace source2sdk
         public:
             // hAlreadyHitList has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::client::C_BaseEntity>> hAlreadyHitList;
-            char hAlreadyHitList[0x18]; // 0x5b0            
-            float duration; // 0x5c8            
-            std::int32_t speed; // 0x5cc            
-            float damage; // 0x5d0            
-            float range; // 0x5d4            
-            uint8_t _pad05d8[0x8];
+            char hAlreadyHitList[0x18]; // 0x680            
+            float duration; // 0x698            
+            std::int32_t speed; // 0x69c            
+            float damage; // 0x6a0            
+            float range; // 0x6a4            
+            uint8_t _pad06a8[0x18];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Ability_Tidehunter_ArmOfTheDeep because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Tidehunter_ArmOfTheDeep) == 0x5e0);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Tidehunter_ArmOfTheDeep) == 0x6c0);
     };
 };

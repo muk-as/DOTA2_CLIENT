@@ -25,7 +25,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0xbb0
+        // Size: 0xdc8
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -70,40 +70,40 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            bool m_bOwnerModelChanged; // 0xb28            
+            bool m_bOwnerModelChanged; // 0xd40            
             // metadata: MNetworkEnable
-            bool m_bIsGeneratingEconItem; // 0xb29            
+            bool m_bIsGeneratingEconItem; // 0xd41            
             // metadata: MNetworkEnable
-            bool m_bIsItemVisibleOnGeneratedEntity; // 0xb2a            
+            bool m_bIsItemVisibleOnGeneratedEntity; // 0xd42            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnHideWearableButDrawAdditionalWearablesChanged"
-            bool m_bHideWearableButDrawAdditionalWearables; // 0xb2b            
+            bool m_bHideWearableButDrawAdditionalWearables; // 0xd43            
             // metadata: MNetworkEnable
             // m_hAdditionalWearable has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::CBaseAnimatingActivity> m_hAdditionalWearable;
-            char m_hAdditionalWearable[0x4]; // 0xb2c            
+            char m_hAdditionalWearable[0x4]; // 0xd44            
             // m_hDrawWearable has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_DOTAWearableItem> m_hDrawWearable;
-            char m_hDrawWearable[0x4]; // 0xb30            
-            bool m_bHiddenByCombiner; // 0xb34            
-            bool m_bHiddenByEquipmentSlot; // 0xb35            
-            bool m_bIsPortrait; // 0xb36            
-            uint8_t _pad0b37[0x1]; // 0xb37
-            float m_fZDelta; // 0xb38            
-            uint8_t _pad0b3c[0x4]; // 0xb3c
+            char m_hDrawWearable[0x4]; // 0xd48            
+            bool m_bHiddenByCombiner; // 0xd4c            
+            bool m_bHiddenByEquipmentSlot; // 0xd4d            
+            bool m_bIsPortrait; // 0xd4e            
+            uint8_t _pad0d4f[0x1]; // 0xd4f
+            float m_fZDelta; // 0xd50            
+            uint8_t _pad0d54[0x4]; // 0xd54
             // m_combinerMaterialOverrideList has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CStrongHandleCopyable<source2sdk::resourcesystem::InfoForResourceTypeIMaterial2>> m_combinerMaterialOverrideList;
-            char m_combinerMaterialOverrideList[0x18]; // 0xb40            
-            uint8_t _pad0b58[0x8]; // 0xb58
-            bool m_bCombinerMaterialOverrideListChanged; // 0xb60            
-            bool m_bRubickFollower; // 0xb61            
-            bool m_bHasPlayerModel; // 0xb62            
-            uint8_t _pad0b63[0x4d];
+            char m_combinerMaterialOverrideList[0x18]; // 0xd58            
+            uint8_t _pad0d70[0x8]; // 0xd70
+            bool m_bCombinerMaterialOverrideListChanged; // 0xd78            
+            bool m_bRubickFollower; // 0xd79            
+            bool m_bHasPlayerModel; // 0xd7a            
+            uint8_t _pad0d7b[0x4d];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTAWearableItem because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTAWearableItem) == 0xbb0);
+        static_assert(sizeof(source2sdk::client::C_DOTAWearableItem) == 0xdc8);
     };
 };

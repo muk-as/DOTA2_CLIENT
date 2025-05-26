@@ -19,7 +19,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x838
+        // Size: 0x858
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -32,27 +32,27 @@ namespace source2sdk
         class CDOTA_TempTree : public source2sdk::server::CBaseAnimatingActivity
         {
         public:
-            uint8_t _pad07b8[0x28]; // 0x7b8
-            source2sdk::entity2::GameTime_t m_fExpireTime; // 0x7e0            
+            uint8_t _pad07d8[0x28]; // 0x7d8
+            source2sdk::entity2::GameTime_t m_fExpireTime; // 0x800            
             // metadata: MNetworkEnable
-            Vector m_vecTreeCircleCenter; // 0x7e4            
+            Vector m_vecTreeCircleCenter; // 0x804            
             // metadata: MNetworkEnable
-            bool m_bCanApplyTreeCostume; // 0x7f0            
+            bool m_bCanApplyTreeCostume; // 0x810            
             // metadata: MNetworkEnable
-            bool m_bIsMangoTree; // 0x7f1            
-            uint8_t _pad07f2[0x6]; // 0x7f2
+            bool m_bIsMangoTree; // 0x811            
+            uint8_t _pad0812[0x6]; // 0x812
             // m_ParticleList has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::client::ParticleIndex_t> m_ParticleList;
-            char m_ParticleList[0x18]; // 0x7f8            
+            char m_ParticleList[0x18]; // 0x818            
             // metadata: MNetworkEnable
-            bool m_bIsPartOfFowSystem; // 0x810            
-            bool m_bForceVisible[15]; // 0x811            
-            uint8_t _pad0820[0x18];
+            bool m_bIsPartOfFowSystem; // 0x830            
+            bool m_bForceVisible[15]; // 0x831            
+            uint8_t _pad0840[0x18];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_TempTree because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_TempTree) == 0x838);
+        static_assert(sizeof(source2sdk::server::CDOTA_TempTree) == 0x858);
     };
 };

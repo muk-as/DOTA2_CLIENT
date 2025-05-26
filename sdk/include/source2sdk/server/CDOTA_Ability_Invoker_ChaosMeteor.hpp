@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x5f0
+        // Size: 0x600
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -25,19 +25,19 @@ namespace source2sdk
         class CDOTA_Ability_Invoker_ChaosMeteor : public source2sdk::server::CDOTA_Ability_Invoker_InvokedBase
         {
         public:
-            float area_of_effect; // 0x5c8            
-            float damage_interval; // 0x5cc            
-            float vision_distance; // 0x5d0            
-            float end_vision_duration; // 0x5d4            
-            float main_damage; // 0x5d8            
-            float burn_duration; // 0x5dc            
-            float burn_dps; // 0x5e0            
-            uint8_t _pad05e4[0xc];
+            float area_of_effect; // 0x5d0            
+            float damage_interval; // 0x5d4            
+            float vision_distance; // 0x5d8            
+            float end_vision_duration; // 0x5dc            
+            float main_damage; // 0x5e0            
+            float burn_duration; // 0x5e4            
+            float burn_dps; // 0x5e8            
+            uint8_t _pad05ec[0x14];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_Invoker_ChaosMeteor because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Ability_Invoker_ChaosMeteor) == 0x5f0);
+        static_assert(sizeof(source2sdk::server::CDOTA_Ability_Invoker_ChaosMeteor) == 0x600);
     };
 };

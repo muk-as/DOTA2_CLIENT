@@ -24,12 +24,10 @@ namespace source2sdk
         class CNavSpaceInfo : public source2sdk::server::CPointEntity
         {
         public:
-            bool m_bCreateFlightSpace; // 0x4d8            
-            uint8_t _pad04d9[0x7];
+            // No schema binary for binding
         };
         #pragma pack(pop)
         
-        // Cannot assert offsets of fields in CNavSpaceInfo because it is not a standard-layout class
         
         static_assert(sizeof(source2sdk::server::CNavSpaceInfo) == 0x4e0);
     };

@@ -24,7 +24,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x5f8
+        // Size: 0x600
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -32,19 +32,19 @@ namespace source2sdk
         class CDOTA_Ability_Ringmaster_Impalement : public source2sdk::server::CDOTABaseAbility
         {
         public:
-            Vector m_vStartPos; // 0x5b8            
-            std::int32_t dagger_width; // 0x5c4            
+            Vector m_vStartPos; // 0x5c0            
+            std::int32_t dagger_width; // 0x5cc            
             // m_ImpactedProjectiles has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<std::int32_t> m_ImpactedProjectiles;
-            char m_ImpactedProjectiles[0x18]; // 0x5c8            
+            char m_ImpactedProjectiles[0x18]; // 0x5d0            
             // m_vecBoxedUnitHits has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CUtlPair<std::int32_t,CHandle<source2sdk::server::CBaseEntity>>> m_vecBoxedUnitHits;
-            char m_vecBoxedUnitHits[0x18]; // 0x5e0            
+            char m_vecBoxedUnitHits[0x18]; // 0x5e8            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_Ringmaster_Impalement because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Ability_Ringmaster_Impalement) == 0x5f8);
+        static_assert(sizeof(source2sdk::server::CDOTA_Ability_Ringmaster_Impalement) == 0x600);
     };
 };

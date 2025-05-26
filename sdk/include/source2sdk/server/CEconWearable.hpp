@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x9a8
+        // Size: 0x9c8
         // Has VTable
         // Construct allowed
         // 
@@ -26,11 +26,11 @@ namespace source2sdk
         class CEconWearable : public source2sdk::server::CEconEntity
         {
         public:
-            uint8_t _pad09a0[0x8];
+            uint8_t _pad09c0[0x8];
         };
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::server::CEconWearable) == 0x9a8);
+        static_assert(sizeof(source2sdk::server::CEconWearable) == 0x9c8);
     };
 };

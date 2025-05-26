@@ -24,7 +24,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x5d8
+        // Size: 0x5e0
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -32,16 +32,16 @@ namespace source2sdk
         class CDOTA_Ability_Ringmaster_TheBox : public source2sdk::server::CDOTABaseAbility
         {
         public:
-            bool m_bGrantedScepterCharges; // 0x5b8            
-            uint8_t _pad05b9[0x7]; // 0x5b9
+            bool m_bGrantedScepterCharges; // 0x5c0            
+            uint8_t _pad05c1[0x7]; // 0x5c1
             // m_vecBoxedUnits has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CBaseEntity>> m_vecBoxedUnits;
-            char m_vecBoxedUnits[0x18]; // 0x5c0            
+            char m_vecBoxedUnits[0x18]; // 0x5c8            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_Ringmaster_TheBox because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Ability_Ringmaster_TheBox) == 0x5d8);
+        static_assert(sizeof(source2sdk::server::CDOTA_Ability_Ringmaster_TheBox) == 0x5e0);
     };
 };

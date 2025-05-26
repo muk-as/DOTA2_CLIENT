@@ -25,38 +25,38 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1840
+        // Size: 0x18c0
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_MonkeyKing_Transform : public source2sdk::client::CDOTA_Buff
         {
         public:
-            CUtlString m_strDisguise; // 0x17f8            
-            std::int32_t movespeed; // 0x1800            
-            std::int32_t m_nDisguisedSpeed; // 0x1804            
-            std::int32_t reveal_radius; // 0x1808            
-            source2sdk::client::ParticleIndex_t m_nDisguiseEffectIndex; // 0x180c            
+            CUtlString m_strDisguise; // 0x1878            
+            std::int32_t movespeed; // 0x1880            
+            std::int32_t m_nDisguisedSpeed; // 0x1884            
+            std::int32_t reveal_radius; // 0x1888            
+            source2sdk::client::ParticleIndex_t m_nDisguiseEffectIndex; // 0x188c            
             // m_hCourierToClone has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hCourierToClone;
-            char m_hCourierToClone[0x4]; // 0x1810            
+            char m_hCourierToClone[0x4]; // 0x1890            
             // m_hCreepToClone has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hCreepToClone;
-            char m_hCreepToClone[0x4]; // 0x1814            
+            char m_hCreepToClone[0x4]; // 0x1894            
             // m_aryBountyRuneSpawners has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CBaseEntity>> m_aryBountyRuneSpawners;
-            char m_aryBountyRuneSpawners[0x18]; // 0x1818            
-            bool m_bIsFlyingCourier; // 0x1830            
-            bool m_bIsRune; // 0x1831            
-            bool m_bIsBanana; // 0x1832            
-            bool m_bIsFakeAlly; // 0x1833            
-            std::uint32_t m_nMischiefUnitType; // 0x1834            
-            std::int32_t m_nMischiefHealthbarOffset; // 0x1838            
-            float invul_duration; // 0x183c            
+            char m_aryBountyRuneSpawners[0x18]; // 0x1898            
+            bool m_bIsFlyingCourier; // 0x18b0            
+            bool m_bIsRune; // 0x18b1            
+            bool m_bIsBanana; // 0x18b2            
+            bool m_bIsFakeAlly; // 0x18b3            
+            std::uint32_t m_nMischiefUnitType; // 0x18b4            
+            std::int32_t m_nMischiefHealthbarOffset; // 0x18b8            
+            float invul_duration; // 0x18bc            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_MonkeyKing_Transform because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_MonkeyKing_Transform) == 0x1840);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_MonkeyKing_Transform) == 0x18c0);
     };
 };

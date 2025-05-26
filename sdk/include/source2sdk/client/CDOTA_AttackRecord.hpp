@@ -32,7 +32,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: true
-        // Size: 0xf0
+        // Size: 0x100
         #pragma pack(push, 1)
         class CDOTA_AttackRecord
         {
@@ -105,11 +105,11 @@ namespace source2sdk
             uint8_t _pad00a4[0x4]; // 0xa4
             CUtlSymbolLarge m_iszAutoAttackRangedParticle; // 0xa8            
             CUtlSymbolLarge m_iszAutoAttackRangedParticleAdditionalEffect; // 0xb0            
-            uint8_t _pad00b8[0x8]; // 0xb8
-            source2sdk::client::ParticleIndex_t m_iCustomFXIndex; // 0xc0            
-            source2sdk::client::DOTAProjectileAttachment_t m_iCustomProjectileAttachment; // 0xc4            
-            uint8_t _pad00c8[0x18]; // 0xc8
-            KeyValues3 m_kvExtraData; // 0xe0            
+            uint8_t _pad00b8[0x14]; // 0xb8
+            source2sdk::client::ParticleIndex_t m_iCustomFXIndex; // 0xcc            
+            source2sdk::client::DOTAProjectileAttachment_t m_iCustomProjectileAttachment; // 0xd0            
+            uint8_t _pad00d4[0x1c]; // 0xd4
+            KeyValues3 m_kvExtraData; // 0xf0            
         };
         #pragma pack(pop)
         
@@ -166,10 +166,10 @@ namespace source2sdk
         static_assert(offsetof(source2sdk::client::CDOTA_AttackRecord, m_vBlockLoc) == 0x98);
         static_assert(offsetof(source2sdk::client::CDOTA_AttackRecord, m_iszAutoAttackRangedParticle) == 0xa8);
         static_assert(offsetof(source2sdk::client::CDOTA_AttackRecord, m_iszAutoAttackRangedParticleAdditionalEffect) == 0xb0);
-        static_assert(offsetof(source2sdk::client::CDOTA_AttackRecord, m_iCustomFXIndex) == 0xc0);
-        static_assert(offsetof(source2sdk::client::CDOTA_AttackRecord, m_iCustomProjectileAttachment) == 0xc4);
-        static_assert(offsetof(source2sdk::client::CDOTA_AttackRecord, m_kvExtraData) == 0xe0);
+        static_assert(offsetof(source2sdk::client::CDOTA_AttackRecord, m_iCustomFXIndex) == 0xcc);
+        static_assert(offsetof(source2sdk::client::CDOTA_AttackRecord, m_iCustomProjectileAttachment) == 0xd0);
+        static_assert(offsetof(source2sdk::client::CDOTA_AttackRecord, m_kvExtraData) == 0xf0);
         
-        static_assert(sizeof(source2sdk::client::CDOTA_AttackRecord) == 0xf0);
+        static_assert(sizeof(source2sdk::client::CDOTA_AttackRecord) == 0x100);
     };
 };

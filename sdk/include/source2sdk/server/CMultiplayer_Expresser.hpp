@@ -17,19 +17,19 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x90
+        // Size: 0x80
         // Has VTable
         #pragma pack(push, 1)
         class CMultiplayer_Expresser : public source2sdk::server::CAI_ExpresserWithFollowup
         {
         public:
-            bool m_bAllowMultipleScenes; // 0x88            
-            uint8_t _pad0089[0x7];
+            bool m_bAllowMultipleScenes; // 0x78            
+            uint8_t _pad0079[0x7];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CMultiplayer_Expresser because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CMultiplayer_Expresser) == 0x90);
+        static_assert(sizeof(source2sdk::server::CMultiplayer_Expresser) == 0x80);
     };
 };

@@ -25,45 +25,55 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1890
+        // Size: 0x1938
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_VoidSpirit_AetherRemnant_Unit : public source2sdk::client::CDOTA_Buff
         {
         public:
-            Vector m_vFacingDir; // 0x17f8            
-            uint8_t _pad1804[0x4]; // 0x1804
+            Vector m_vFacingDir; // 0x1878            
+            uint8_t _pad1884[0x4]; // 0x1884
             // m_hWatchPathThinkers has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CBaseEntity>> m_hWatchPathThinkers;
-            char m_hWatchPathThinkers[0x18]; // 0x1808            
-            source2sdk::client::ParticleIndex_t m_nBeamFXIndex; // 0x1820            
-            uint8_t _pad1824[0x4]; // 0x1824
+            char m_hWatchPathThinkers[0x18]; // 0x1888            
+            // m_hShardWatchPathThinkers has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+            // CUtlVector<CHandle<source2sdk::server::CBaseEntity>> m_hShardWatchPathThinkers;
+            char m_hShardWatchPathThinkers[0x18]; // 0x18a0            
+            source2sdk::client::ParticleIndex_t m_nBeamFXIndex; // 0x18b8            
+            source2sdk::client::ParticleIndex_t m_nShardBeamFXIndex; // 0x18bc            
+            source2sdk::client::ParticleIndex_t m_nHeroFXIndex; // 0x18c0            
+            uint8_t _pad18c4[0x4]; // 0x18c4
             // m_nViewerIDs has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<std::int32_t> m_nViewerIDs;
-            char m_nViewerIDs[0x18]; // 0x1828            
-            std::int32_t m_nViewerTeam; // 0x1840            
-            float remnant_watch_distance; // 0x1844            
-            float remnant_watch_radius; // 0x1848            
-            float duration; // 0x184c            
-            float watch_path_vision_radius; // 0x1850            
-            float impact_damage; // 0x1854            
-            float pull_duration; // 0x1858            
-            float activation_delay; // 0x185c            
-            bool m_bPiercesCreeps; // 0x1860            
-            uint8_t _pad1861[0x7]; // 0x1861
+            char m_nViewerIDs[0x18]; // 0x18c8            
+            std::int32_t m_nViewerTeam; // 0x18e0            
+            float remnant_watch_distance; // 0x18e4            
+            float remnant_watch_radius; // 0x18e8            
+            float duration; // 0x18ec            
+            float watch_path_vision_radius; // 0x18f0            
+            float impact_damage; // 0x18f4            
+            float pull_duration; // 0x18f8            
+            float activation_delay; // 0x18fc            
+            bool m_bPiercesCreeps; // 0x1900            
+            uint8_t _pad1901[0x7]; // 0x1901
             // m_hAlreadyHit has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CBaseEntity>> m_hAlreadyHit;
-            char m_hAlreadyHit[0x18]; // 0x1868            
-            bool bIsArtifice; // 0x1880            
-            uint8_t _pad1881[0x3]; // 0x1881
-            float artifice_duration_override; // 0x1884            
-            float artifice_pct_effectiveness; // 0x1888            
-            uint8_t _pad188c[0x4];
+            char m_hAlreadyHit[0x18]; // 0x1908            
+            bool bIsArtifice; // 0x1920            
+            uint8_t _pad1921[0x3]; // 0x1921
+            float artifice_duration_override; // 0x1924            
+            float artifice_pct_effectiveness; // 0x1928            
+            bool m_bActivated; // 0x192c            
+            uint8_t _pad192d[0x3]; // 0x192d
+            float m_flRotation; // 0x1930            
+            // m_hPartnerRemnant has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+            // CHandle<source2sdk::server::CBaseEntity> m_hPartnerRemnant;
+            char m_hPartnerRemnant[0x4]; // 0x1934            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_VoidSpirit_AetherRemnant_Unit because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_VoidSpirit_AetherRemnant_Unit) == 0x1890);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_VoidSpirit_AetherRemnant_Unit) == 0x1938);
     };
 };

@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x530
+        // Size: 0x538
         // Has VTable
         // Construct allowed
         // 
@@ -28,10 +28,10 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            bool m_bDisabled; // 0x4d8            
-            uint8_t _pad04d9[0x7]; // 0x4d9
-            source2sdk::entity2::CEntityIOOutput m_OnEnabled; // 0x4e0            
-            source2sdk::entity2::CEntityIOOutput m_OnDisabled; // 0x508            
+            bool m_bDisabled; // 0x4e0            
+            uint8_t _pad04e1[0x7]; // 0x4e1
+            source2sdk::entity2::CEntityIOOutput m_OnEnabled; // 0x4e8            
+            source2sdk::entity2::CEntityIOOutput m_OnDisabled; // 0x510            
             
             // Datamap fields:
             // void InputSetEnabled; // 0x0
@@ -42,6 +42,6 @@ namespace source2sdk
         
         // Cannot assert offsets of fields in CInfoPlayerStartDota because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CInfoPlayerStartDota) == 0x530);
+        static_assert(sizeof(source2sdk::server::CInfoPlayerStartDota) == 0x538);
     };
 };

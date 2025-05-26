@@ -31,7 +31,7 @@ namespace source2sdk
         // static metadata: MGetKV3ClassDefaults
         // static metadata: MVDataRoot
         // static metadata: MVDataNodeType "1"
-        // static metadata: MFgdFromSchemaEditablePolymorphicThisClass
+        // static metadata: MPropertyPolymorphicClass
         // static metadata: MVDataFileExtension
         // static metadata: MPropertyFriendlyName "VSND Container"
         // static metadata: MPropertyDescription "Voice Container Base"

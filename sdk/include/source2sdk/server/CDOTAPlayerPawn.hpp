@@ -3,7 +3,9 @@
 #include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
+#include "source2sdk/client/PlayerID_t.hpp"
 #include "source2sdk/server/CBasePlayerPawn.hpp"
+#include "source2sdk/server/CQuickBuyController.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: server
@@ -17,7 +19,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0xa58
+        // Size: 0xc10
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -35,6 +37,7 @@ namespace source2sdk
         // static metadata: MNetworkExcludeByUserGroup "overlay_vars"
         // static metadata: MNetworkExcludeByName "m_nTickBase"
         // static metadata: MNetworkUserGroupProxy "CDOTAPlayerPawn"
+        // static metadata: MNetworkUserGroupProxy "CDOTAPlayerPawn"
         // static metadata: MNetworkOverride "m_vecOrigin CGameSceneNode"
         // static metadata: MNetworkOverride "m_cellX CNetworkOriginCellCoordQuantizedVector"
         // static metadata: MNetworkOverride "m_cellY CNetworkOriginCellCoordQuantizedVector"
@@ -46,17 +49,27 @@ namespace source2sdk
         // static metadata: MNetworkIncludeByName "m_pCameraServices"
         // static metadata: MNetworkVarTypeOverride "CDOTAPlayer_MovementServices m_pMovementServices"
         // static metadata: MNetworkIncludeByName "m_pMovementServices"
+        // static metadata: MNetworkVarNames "CQuickBuyController m_quickBuyController"
+        // static metadata: MNetworkVarNames "PlayerID_t m_nPlayerID"
         #pragma pack(push, 1)
         class CDOTAPlayerPawn : public source2sdk::server::CBasePlayerPawn
         {
         public:
+            // metadata: MNetworkEnable
+            // metadata: MNetworkUserGroup "DOTATeamMatesAndCommentatorTable"
+            source2sdk::server::CQuickBuyController m_quickBuyController; // 0xa80            
+            // metadata: MNetworkEnable
+            source2sdk::client::PlayerID_t m_nPlayerID; // 0xc08            
+            uint8_t _pad0c0c[0x4];
+            
             // Datamap fields:
-            // CDOTAPlayer_CameraServices m_pCameraServices; // 0x948
-            // CDOTAPlayer_MovementServices m_pMovementServices; // 0x950
+            // CDOTAPlayer_CameraServices m_pCameraServices; // 0x970
+            // CDOTAPlayer_MovementServices m_pMovementServices; // 0x978
         };
         #pragma pack(pop)
         
+        // Cannot assert offsets of fields in CDOTAPlayerPawn because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTAPlayerPawn) == 0xa58);
+        static_assert(sizeof(source2sdk::server::CDOTAPlayerPawn) == 0xc10);
     };
 };

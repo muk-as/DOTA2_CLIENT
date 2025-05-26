@@ -17,18 +17,18 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x18d0
+        // Size: 0x1950
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Disruptor_Glimpse : public source2sdk::client::CDOTA_Buff
         {
         public:
-            Vector m_PositionIndex[18]; // 0x17f8            
+            Vector m_PositionIndex[18]; // 0x1878            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Disruptor_Glimpse because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Disruptor_Glimpse) == 0x18d0);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Disruptor_Glimpse) == 0x1950);
     };
 };

@@ -3,7 +3,7 @@
 #include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
-#include "source2sdk/animlib/CNmTask.hpp"
+#include "source2sdk/animlib/CNmPoseTask.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: animlib
@@ -21,7 +21,7 @@ namespace source2sdk
         // Has VTable
         // Construct allowed
         #pragma pack(push, 1)
-        class CNmCachedPoseReadTask : public source2sdk::animlib::CNmTask
+        class CNmCachedPoseReadTask : public source2sdk::animlib::CNmPoseTask
         {
         public:
             uint8_t _pad0030[0x8];

@@ -25,7 +25,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x580
+        // Size: 0x588
         // Has VTable
         // Construct allowed
         #pragma pack(push, 1)
@@ -34,19 +34,19 @@ namespace source2sdk
         public:
             // m_hPlayer has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hPlayer;
-            char m_hPlayer[0x4]; // 0x4d8            
-            uint8_t _pad04dc[0x4]; // 0x4dc
-            source2sdk::entity2::CEntityIOOutput m_PlayerHasAmmo; // 0x4e0            
-            source2sdk::entity2::CEntityIOOutput m_PlayerHasNoAmmo; // 0x508            
-            source2sdk::entity2::CEntityIOOutput m_PlayerDied; // 0x530            
+            char m_hPlayer[0x4]; // 0x4e0            
+            uint8_t _pad04e4[0x4]; // 0x4e4
+            source2sdk::entity2::CEntityIOOutput m_PlayerHasAmmo; // 0x4e8            
+            source2sdk::entity2::CEntityIOOutput m_PlayerHasNoAmmo; // 0x510            
+            source2sdk::entity2::CEntityIOOutput m_PlayerDied; // 0x538            
             // m_RequestedPlayerHealth has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CEntityOutputTemplate<std::int32_t> m_RequestedPlayerHealth;
-            char m_RequestedPlayerHealth[0x28]; // 0x558            
+            char m_RequestedPlayerHealth[0x28]; // 0x560            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CLogicPlayerProxy because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CLogicPlayerProxy) == 0x580);
+        static_assert(sizeof(source2sdk::server::CLogicPlayerProxy) == 0x588);
     };
 };

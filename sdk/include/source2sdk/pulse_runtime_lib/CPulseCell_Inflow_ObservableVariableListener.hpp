@@ -4,7 +4,7 @@
 #include <cstddef>
 #include <cstdint>
 #include "source2sdk/pulse_runtime_lib/CPulseCell_Inflow_BaseEntrypoint.hpp"
-#include "source2sdk/pulse_runtime_lib/CPulse_BlackboardReference.hpp"
+#include "source2sdk/pulse_runtime_lib/PulseRuntimeBlackboardReferenceIndex_t.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: pulse_runtime_lib
@@ -18,27 +18,27 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x188
+        // Size: 0x88
         // Has VTable
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
         // static metadata: MCellForDomain "BaseDomain"
         // static metadata: MPulseCellMethodBindings
-        // static metadata: MPulseCellOutflowHookInfo
+        // static metadata: MPulseCellOutflowHookInfo "†ç20˚"
         // static metadata: MPulseCellWithCustomDocNode
         #pragma pack(push, 1)
         class CPulseCell_Inflow_ObservableVariableListener : public source2sdk::pulse_runtime_lib::CPulseCell_Inflow_BaseEntrypoint
         {
         public:
-            source2sdk::pulse_runtime_lib::CPulse_BlackboardReference m_BlackboardReference; // 0x80            
-            bool m_bSelfReference; // 0x180            
-            uint8_t _pad0181[0x7];
+            source2sdk::pulse_runtime_lib::PulseRuntimeBlackboardReferenceIndex_t m_nBlackboardReference; // 0x80            
+            bool m_bSelfReference; // 0x82            
+            uint8_t _pad0083[0x5];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CPulseCell_Inflow_ObservableVariableListener because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::pulse_runtime_lib::CPulseCell_Inflow_ObservableVariableListener) == 0x188);
+        static_assert(sizeof(source2sdk::pulse_runtime_lib::CPulseCell_Inflow_ObservableVariableListener) == 0x88);
     };
 };

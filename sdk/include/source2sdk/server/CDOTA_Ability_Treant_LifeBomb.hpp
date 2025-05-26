@@ -25,7 +25,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x5c0
+        // Size: 0x5c8
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -33,15 +33,15 @@ namespace source2sdk
         class CDOTA_Ability_Treant_LifeBomb : public source2sdk::server::CDOTABaseAbility
         {
         public:
-            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x5b8            
+            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x5c0            
             // m_hRMine has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hRMine;
-            char m_hRMine[0x4]; // 0x5bc            
+            char m_hRMine[0x4]; // 0x5c4            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_Treant_LifeBomb because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Ability_Treant_LifeBomb) == 0x5c0);
+        static_assert(sizeof(source2sdk::server::CDOTA_Ability_Treant_LifeBomb) == 0x5c8);
     };
 };

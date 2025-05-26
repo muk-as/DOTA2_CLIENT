@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: 0x4
         // Standard-layout class: true
-        // Size: 0x34
+        // Size: 0x40
         // Has Trivial Destructor
         #pragma pack(push, 1)
         class sPlayerSnapshot
@@ -29,6 +29,10 @@ namespace source2sdk
             std::uint8_t unDeaths; // 0x31            
             std::uint8_t unAssists; // 0x32            
             std::uint8_t unLevel; // 0x33            
+            std::uint32_t unLastHits; // 0x34            
+            std::uint32_t unDenies; // 0x38            
+            std::uint8_t unFlags; // 0x3c            
+            uint8_t _pad003d[0x3];
         };
         #pragma pack(pop)
         
@@ -38,7 +42,10 @@ namespace source2sdk
         static_assert(offsetof(source2sdk::client::sPlayerSnapshot, unDeaths) == 0x31);
         static_assert(offsetof(source2sdk::client::sPlayerSnapshot, unAssists) == 0x32);
         static_assert(offsetof(source2sdk::client::sPlayerSnapshot, unLevel) == 0x33);
+        static_assert(offsetof(source2sdk::client::sPlayerSnapshot, unLastHits) == 0x34);
+        static_assert(offsetof(source2sdk::client::sPlayerSnapshot, unDenies) == 0x38);
+        static_assert(offsetof(source2sdk::client::sPlayerSnapshot, unFlags) == 0x3c);
         
-        static_assert(sizeof(source2sdk::client::sPlayerSnapshot) == 0x34);
+        static_assert(sizeof(source2sdk::client::sPlayerSnapshot) == 0x40);
     };
 };

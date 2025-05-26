@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0xb08
+        // Size: 0xcd0
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -28,13 +28,13 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            std::int32_t m_nPlayerID; // 0xb00            
-            uint8_t _pad0b04[0x4];
+            std::int32_t m_nPlayerID; // 0xcc8            
+            uint8_t _pad0ccc[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTAPropPlusPlayerGuildBanner because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTAPropPlusPlayerGuildBanner) == 0xb08);
+        static_assert(sizeof(source2sdk::client::CDOTAPropPlusPlayerGuildBanner) == 0xcd0);
     };
 };

@@ -19,7 +19,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x5f0
+        // Size: 0x5f8
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -27,20 +27,20 @@ namespace source2sdk
         class CDOTA_Ability_Nian_Apocalypse : public source2sdk::server::CDOTABaseAbility
         {
         public:
-            std::int32_t area_of_effect; // 0x5b8            
-            source2sdk::client::ParticleIndex_t m_nfxIndex_roar; // 0x5bc            
-            float fire_interval; // 0x5c0            
-            float delay; // 0x5c4            
-            float target_range; // 0x5c8            
-            uint8_t _pad05cc[0x4]; // 0x5cc
-            source2sdk::server::CountdownTimer m_ctTimer; // 0x5d0            
-            float m_flTiming; // 0x5e8            
-            uint8_t _pad05ec[0x4];
+            std::int32_t area_of_effect; // 0x5c0            
+            source2sdk::client::ParticleIndex_t m_nfxIndex_roar; // 0x5c4            
+            float fire_interval; // 0x5c8            
+            float delay; // 0x5cc            
+            float target_range; // 0x5d0            
+            uint8_t _pad05d4[0x4]; // 0x5d4
+            source2sdk::server::CountdownTimer m_ctTimer; // 0x5d8            
+            float m_flTiming; // 0x5f0            
+            uint8_t _pad05f4[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_Nian_Apocalypse because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Ability_Nian_Apocalypse) == 0x5f0);
+        static_assert(sizeof(source2sdk::server::CDOTA_Ability_Nian_Apocalypse) == 0x5f8);
     };
 };

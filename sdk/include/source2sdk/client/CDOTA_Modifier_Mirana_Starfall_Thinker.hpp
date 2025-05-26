@@ -17,19 +17,19 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1800
+        // Size: 0x1880
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Mirana_Starfall_Thinker : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float starfall_secondary_radius; // 0x17f8            
-            float starstruck_duration; // 0x17fc            
+            float starfall_secondary_radius; // 0x1878            
+            float starstruck_duration; // 0x187c            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Mirana_Starfall_Thinker because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Mirana_Starfall_Thinker) == 0x1800);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Mirana_Starfall_Thinker) == 0x1880);
     };
 };

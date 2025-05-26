@@ -24,7 +24,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1818
+        // Size: 0x18a8
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_AghsFort_TrapRoom_Hookshot : public source2sdk::client::CDOTA_Buff
@@ -32,16 +32,17 @@ namespace source2sdk
         public:
             // m_hTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hTarget;
-            char m_hTarget[0x4]; // 0x17f8            
-            Vector m_vStartPosition; // 0x17fc            
-            uint8_t _pad1808[0x8]; // 0x1808
-            std::int32_t speed; // 0x1810            
-            float duration; // 0x1814            
+            char m_hTarget[0x4]; // 0x1878            
+            Vector m_vStartPosition; // 0x187c            
+            uint8_t _pad1888[0x14]; // 0x1888
+            std::int32_t speed; // 0x189c            
+            float duration; // 0x18a0            
+            uint8_t _pad18a4[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_AghsFort_TrapRoom_Hookshot because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_AghsFort_TrapRoom_Hookshot) == 0x1818);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_AghsFort_TrapRoom_Hookshot) == 0x18a8);
     };
 };

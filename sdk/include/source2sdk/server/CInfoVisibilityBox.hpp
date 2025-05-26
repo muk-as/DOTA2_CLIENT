@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x4f0
+        // Size: 0x4f8
         // Has VTable
         // Construct allowed
         // 
@@ -28,14 +28,14 @@ namespace source2sdk
         class CInfoVisibilityBox : public source2sdk::server::CBaseEntity
         {
         public:
-            uint8_t _pad04d8[0x4]; // 0x4d8
+            uint8_t _pad04e0[0x4]; // 0x4e0
             // metadata: MNetworkEnable
-            std::int32_t m_nMode; // 0x4dc            
+            std::int32_t m_nMode; // 0x4e4            
             // metadata: MNetworkEnable
-            Vector m_vBoxSize; // 0x4e0            
+            Vector m_vBoxSize; // 0x4e8            
             // metadata: MNetworkEnable
-            bool m_bEnabled; // 0x4ec            
-            uint8_t _pad04ed[0x3];
+            bool m_bEnabled; // 0x4f4            
+            uint8_t _pad04f5[0x3];
             
             // Datamap fields:
             // void InputEnable; // 0x0
@@ -45,6 +45,6 @@ namespace source2sdk
         
         // Cannot assert offsets of fields in CInfoVisibilityBox because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CInfoVisibilityBox) == 0x4f0);
+        static_assert(sizeof(source2sdk::server::CInfoVisibilityBox) == 0x4f8);
     };
 };

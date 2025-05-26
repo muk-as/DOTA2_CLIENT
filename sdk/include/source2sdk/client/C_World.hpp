@@ -19,7 +19,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x810
+        // Size: 0x9b0
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -34,20 +34,20 @@ namespace source2sdk
             // metadata: MNetworkEnable
             // m_skyBoxFaces has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CStrongHandle<source2sdk::resourcesystem::InfoForResourceTypeIMaterial2> m_skyBoxFaces[6];
-            char m_skyBoxFaces[0x30]; // 0x7d0            
+            char m_skyBoxFaces[0x30]; // 0x970            
             // metadata: MNetworkEnable
             // m_hHeightFogTexture has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CStrongHandle<source2sdk::resourcesystem::InfoForResourceTypeCTextureBase> m_hHeightFogTexture;
-            char m_hHeightFogTexture[0x8]; // 0x800            
+            char m_hHeightFogTexture[0x8]; // 0x9a0            
             // metadata: MNetworkEnable
             // m_hHeightFogMaskTexture has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CStrongHandle<source2sdk::resourcesystem::InfoForResourceTypeCTextureBase> m_hHeightFogMaskTexture;
-            char m_hHeightFogMaskTexture[0x8]; // 0x808            
+            char m_hHeightFogMaskTexture[0x8]; // 0x9a8            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_World because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_World) == 0x810);
+        static_assert(sizeof(source2sdk::client::C_World) == 0x9b0);
     };
 };

@@ -18,29 +18,29 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x5d8
+        // Size: 0x5e0
         // Has VTable
         // Construct allowed
         #pragma pack(push, 1)
         class CMathCounter : public source2sdk::server::CLogicalEntity
         {
         public:
-            float m_flMin; // 0x4d8            
-            float m_flMax; // 0x4dc            
-            bool m_bHitMin; // 0x4e0            
-            bool m_bHitMax; // 0x4e1            
-            bool m_bDisabled; // 0x4e2            
-            uint8_t _pad04e3[0x5]; // 0x4e3
+            float m_flMin; // 0x4e0            
+            float m_flMax; // 0x4e4            
+            bool m_bHitMin; // 0x4e8            
+            bool m_bHitMax; // 0x4e9            
+            bool m_bDisabled; // 0x4ea            
+            uint8_t _pad04eb[0x5]; // 0x4eb
             // m_OutValue has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CEntityOutputTemplate<float> m_OutValue;
-            char m_OutValue[0x28]; // 0x4e8            
+            char m_OutValue[0x28]; // 0x4f0            
             // m_OnGetValue has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CEntityOutputTemplate<float> m_OnGetValue;
-            char m_OnGetValue[0x28]; // 0x510            
-            source2sdk::entity2::CEntityIOOutput m_OnHitMin; // 0x538            
-            source2sdk::entity2::CEntityIOOutput m_OnHitMax; // 0x560            
-            source2sdk::entity2::CEntityIOOutput m_OnChangedFromMin; // 0x588            
-            source2sdk::entity2::CEntityIOOutput m_OnChangedFromMax; // 0x5b0            
+            char m_OnGetValue[0x28]; // 0x518            
+            source2sdk::entity2::CEntityIOOutput m_OnHitMin; // 0x540            
+            source2sdk::entity2::CEntityIOOutput m_OnHitMax; // 0x568            
+            source2sdk::entity2::CEntityIOOutput m_OnChangedFromMin; // 0x590            
+            source2sdk::entity2::CEntityIOOutput m_OnChangedFromMax; // 0x5b8            
             
             // Datamap fields:
             // float InputAdd; // 0x0
@@ -60,6 +60,6 @@ namespace source2sdk
         
         // Cannot assert offsets of fields in CMathCounter because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CMathCounter) == 0x5d8);
+        static_assert(sizeof(source2sdk::server::CMathCounter) == 0x5e0);
     };
 };

@@ -17,29 +17,29 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1830
+        // Size: 0x18b0
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Pangolier_ShieldCrash_Jump : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float jump_duration; // 0x17f8            
-            float jump_duration_gyroshell; // 0x17fc            
-            std::int32_t jump_height; // 0x1800            
-            std::int32_t jump_height_gyroshell; // 0x1804            
-            float m_flStartZ; // 0x1808            
-            float m_flCurTime; // 0x180c            
-            float m_flJumpDuration; // 0x1810            
-            float m_flJumpHeight; // 0x1814            
-            std::int32_t jump_horizontal_distance; // 0x1818            
-            Vector m_vTargetHorizontalDirection; // 0x181c            
-            float m_flPreviousElapsedTime; // 0x1828            
-            uint8_t _pad182c[0x4];
+            float jump_duration; // 0x1878            
+            float jump_duration_gyroshell; // 0x187c            
+            std::int32_t jump_height; // 0x1880            
+            std::int32_t jump_height_gyroshell; // 0x1884            
+            float m_flStartZ; // 0x1888            
+            float m_flCurTime; // 0x188c            
+            float m_flJumpDuration; // 0x1890            
+            float m_flJumpHeight; // 0x1894            
+            std::int32_t jump_horizontal_distance; // 0x1898            
+            Vector m_vTargetHorizontalDirection; // 0x189c            
+            float m_flPreviousElapsedTime; // 0x18a8            
+            uint8_t _pad18ac[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Pangolier_ShieldCrash_Jump because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Pangolier_ShieldCrash_Jump) == 0x1830);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Pangolier_ShieldCrash_Jump) == 0x18b0);
     };
 };

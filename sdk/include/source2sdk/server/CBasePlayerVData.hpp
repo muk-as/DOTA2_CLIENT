@@ -28,6 +28,7 @@ namespace source2sdk
         class CBasePlayerVData : public source2sdk::client::CEntitySubclassVDataBase
         {
         public:
+            // metadata: MPropertyProvidesEditContextString
             // m_sModelName has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CResourceNameTyped<CWeakHandle<source2sdk::resourcesystem::InfoForResourceTypeCModel>> m_sModelName;
             char m_sModelName[0xe0]; // 0x28            

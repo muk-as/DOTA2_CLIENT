@@ -18,20 +18,20 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1808
+        // Size: 0x1898
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_PushWave : public source2sdk::client::CDOTA_Buff
         {
         public:
-            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x17f8            
-            float wave_radius; // 0x17fc            
-            uint8_t _pad1800[0x8];
+            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x1878            
+            float wave_radius; // 0x187c            
+            uint8_t _pad1880[0x18];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_PushWave because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_PushWave) == 0x1808);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_PushWave) == 0x1898);
     };
 };

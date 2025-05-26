@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x1868
+        // Size: 0x18a0
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -30,6 +30,6 @@ namespace source2sdk
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Unit_Announcer_Killing_Spree) == 0x1868);
+        static_assert(sizeof(source2sdk::server::CDOTA_Unit_Announcer_Killing_Spree) == 0x18a0);
     };
 };

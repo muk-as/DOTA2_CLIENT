@@ -55,7 +55,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x1f8
+        // Size: 0x270
         // Has VTable
         // 
         // static metadata: MNetworkVarNames "fogplayerparams_t m_PlayerFog"
@@ -108,12 +108,12 @@ namespace source2sdk
             // CHandle<source2sdk::client::C_PostProcessingVolume> m_hActivePostProcessingVolume;
             char m_hActivePostProcessingVolume[0x4]; // 0x1dc            
             QAngle m_angDemoViewAngles; // 0x1e0            
-            uint8_t _pad01ec[0xc];
+            uint8_t _pad01ec[0x84];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CPlayer_CameraServices because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CPlayer_CameraServices) == 0x1f8);
+        static_assert(sizeof(source2sdk::client::CPlayer_CameraServices) == 0x270);
     };
 };

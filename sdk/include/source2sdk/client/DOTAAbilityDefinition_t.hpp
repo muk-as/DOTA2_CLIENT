@@ -11,6 +11,7 @@
 #include "source2sdk/client/DOTA_UNIT_TARGET_FLAGS.hpp"
 #include "source2sdk/client/DOTA_UNIT_TARGET_TEAM.hpp"
 #include "source2sdk/client/DOTA_UNIT_TARGET_TYPE.hpp"
+#include "source2sdk/client/DotaAbilityRelationship_t.hpp"
 #include "source2sdk/client/DotaGestureSlot_t.hpp"
 #include "source2sdk/client/ItemQuality_t.hpp"
 #include "source2sdk/client/ItemRecipe_t.hpp"
@@ -37,7 +38,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: true
-        // Size: 0x270
+        // Size: 0x280
         #pragma pack(push, 1)
         struct DOTAAbilityDefinition_t
         {
@@ -75,9 +76,9 @@ namespace source2sdk
             std::int32_t m_iItemStockMax; // 0x9c            
             float m_fItemStockTime; // 0xa0            
             uint8_t _pad00a4[0x4]; // 0xa4
-            std::int32_t* m_pItemShopTagKeys; // 0xa8            
-            source2sdk::client::AbilityID_t m_nRecipeResultAbilityID; // 0xb0            
-            uint8_t _pad00b4[0x4]; // 0xb4
+            std::uint32_t* m_pItemShopTagKeys; // 0xa8            
+            std::int32_t m_nNumShopTagKeys; // 0xb0            
+            source2sdk::client::AbilityID_t m_nRecipeResultAbilityID; // 0xb4            
             // m_vecItemCombinesInto has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::client::AbilityID_t> m_vecItemCombinesInto;
             char m_vecItemCombinesInto[0x18]; // 0xb8            
@@ -88,35 +89,35 @@ namespace source2sdk
             source2sdk::client::ItemQuality_t m_ItemQuality; // 0xec            
             float m_flModifierValue; // 0xf0            
             float m_flModifierValueBonus; // 0xf4            
-            // m_InvalidHeroes has a template type with potentially unknown template parameters. You can try uncommenting the field below.
-            // CUtlVector<CUtlString> m_InvalidHeroes;
-            char m_InvalidHeroes[0x18]; // 0xf8            
-            uint8_t _pad0110[0xcc]; // 0x110
-            bool m_bHasScepterUpgrade; // 0x1dc            
-            bool m_bHasShardUpgrade; // 0x1dd            
-            uint8_t _pad01de[0x2]; // 0x1de
-            CUtlStringToken m_strScepterRequiredFacet; // 0x1e0            
-            CUtlStringToken m_strShardRequiredFacet; // 0x1e4            
-            bool m_bSharedWithTeammates; // 0x1e8            
-            uint8_t _pad01e9[0x3]; // 0x1e9
-            std::int32_t m_nCastRangeBuffer; // 0x1ec            
-            std::int32_t m_nSpecialAbilities; // 0x1f0            
-            uint8_t _pad01f4[0x4]; // 0x1f4
-            source2sdk::client::DOTASpecialAbility_t* m_pSpecialAbilities; // 0x1f8            
+            uint8_t _pad00f8[0xcc]; // 0xf8
+            bool m_bHasScepterUpgrade; // 0x1c4            
+            bool m_bHasShardUpgrade; // 0x1c5            
+            uint8_t _pad01c6[0x2]; // 0x1c6
+            CUtlStringToken m_strScepterRequiredFacet; // 0x1c8            
+            CUtlStringToken m_strShardRequiredFacet; // 0x1cc            
+            bool m_bSharedWithTeammates; // 0x1d0            
+            uint8_t _pad01d1[0x3]; // 0x1d1
+            std::int32_t m_nCastRangeBuffer; // 0x1d4            
+            std::int32_t m_nSpecialAbilities; // 0x1d8            
+            uint8_t _pad01dc[0x4]; // 0x1dc
+            source2sdk::client::DOTASpecialAbility_t* m_pSpecialAbilities; // 0x1e0            
             // m_OutgoingBonuses has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::client::DOTAOutgoingBonus_t> m_OutgoingBonuses;
-            char m_OutgoingBonuses[0x18]; // 0x200            
-            char* m_pModelName; // 0x218            
-            char* m_pModelAlternateName; // 0x220            
-            char* m_pEffectName; // 0x228            
-            char* m_pPingOverrideText; // 0x230            
-            char* m_pszRequiredCustomShopName; // 0x238            
-            char* m_pszLinkedScepterAbility; // 0x240            
-            char* m_pszLinkedShardAbility; // 0x248            
-            char* m_pszDependentOnAbility; // 0x250            
-            std::int32_t m_nKillToastOverride; // 0x258            
-            std::int32_t m_iLevelsBetweenUpgrades; // 0x25c            
-            std::int32_t m_iRequiredLevel; // 0x260            
+            char m_OutgoingBonuses[0x18]; // 0x1e8            
+            // m_mapRelationships has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+            // CUtlOrderedMap<CUtlStringToken,source2sdk::client::DotaAbilityRelationship_t> m_mapRelationships;
+            char m_mapRelationships[0x28]; // 0x200            
+            char* m_pModelName; // 0x228            
+            char* m_pModelAlternateName; // 0x230            
+            char* m_pEffectName; // 0x238            
+            char* m_pPingOverrideText; // 0x240            
+            char* m_pszRequiredCustomShopName; // 0x248            
+            char* m_pszLinkedScepterAbility; // 0x250            
+            char* m_pszLinkedShardAbility; // 0x258            
+            char* m_pszDependentOnAbility; // 0x260            
+            std::int32_t m_nKillToastOverride; // 0x268            
+            std::int32_t m_iLevelsBetweenUpgrades; // 0x26c            
+            std::int32_t m_iRequiredLevel; // 0x270            
             // start of bitfield block
             uint64_t m_bIsItem: 1;
             uint64_t m_bItemIsRecipe: 1;
@@ -161,7 +162,7 @@ namespace source2sdk
             uint64_t m_bActiveNeutral: 1;
             uint64_t m_bPassiveNeutral: 1;
             // end of bitfield block// 42 bits
-            uint8_t _pad026c[0x4];
+            uint8_t _pad027c[0x4];
         };
         #pragma pack(pop)
         
@@ -198,34 +199,35 @@ namespace source2sdk
         static_assert(offsetof(source2sdk::client::DOTAAbilityDefinition_t, m_iItemStockMax) == 0x9c);
         static_assert(offsetof(source2sdk::client::DOTAAbilityDefinition_t, m_fItemStockTime) == 0xa0);
         static_assert(offsetof(source2sdk::client::DOTAAbilityDefinition_t, m_pItemShopTagKeys) == 0xa8);
-        static_assert(offsetof(source2sdk::client::DOTAAbilityDefinition_t, m_nRecipeResultAbilityID) == 0xb0);
+        static_assert(offsetof(source2sdk::client::DOTAAbilityDefinition_t, m_nNumShopTagKeys) == 0xb0);
+        static_assert(offsetof(source2sdk::client::DOTAAbilityDefinition_t, m_nRecipeResultAbilityID) == 0xb4);
         static_assert(offsetof(source2sdk::client::DOTAAbilityDefinition_t, m_vecItemCombinesInto) == 0xb8);
         static_assert(offsetof(source2sdk::client::DOTAAbilityDefinition_t, m_vecItemRecipes) == 0xd0);
         static_assert(offsetof(source2sdk::client::DOTAAbilityDefinition_t, m_nUpgradeGoal) == 0xe8);
         static_assert(offsetof(source2sdk::client::DOTAAbilityDefinition_t, m_ItemQuality) == 0xec);
         static_assert(offsetof(source2sdk::client::DOTAAbilityDefinition_t, m_flModifierValue) == 0xf0);
         static_assert(offsetof(source2sdk::client::DOTAAbilityDefinition_t, m_flModifierValueBonus) == 0xf4);
-        static_assert(offsetof(source2sdk::client::DOTAAbilityDefinition_t, m_InvalidHeroes) == 0xf8);
-        static_assert(offsetof(source2sdk::client::DOTAAbilityDefinition_t, m_bHasScepterUpgrade) == 0x1dc);
-        static_assert(offsetof(source2sdk::client::DOTAAbilityDefinition_t, m_bHasShardUpgrade) == 0x1dd);
-        static_assert(offsetof(source2sdk::client::DOTAAbilityDefinition_t, m_strScepterRequiredFacet) == 0x1e0);
-        static_assert(offsetof(source2sdk::client::DOTAAbilityDefinition_t, m_strShardRequiredFacet) == 0x1e4);
-        static_assert(offsetof(source2sdk::client::DOTAAbilityDefinition_t, m_bSharedWithTeammates) == 0x1e8);
-        static_assert(offsetof(source2sdk::client::DOTAAbilityDefinition_t, m_nCastRangeBuffer) == 0x1ec);
-        static_assert(offsetof(source2sdk::client::DOTAAbilityDefinition_t, m_nSpecialAbilities) == 0x1f0);
-        static_assert(offsetof(source2sdk::client::DOTAAbilityDefinition_t, m_pSpecialAbilities) == 0x1f8);
-        static_assert(offsetof(source2sdk::client::DOTAAbilityDefinition_t, m_OutgoingBonuses) == 0x200);
-        static_assert(offsetof(source2sdk::client::DOTAAbilityDefinition_t, m_pModelName) == 0x218);
-        static_assert(offsetof(source2sdk::client::DOTAAbilityDefinition_t, m_pModelAlternateName) == 0x220);
-        static_assert(offsetof(source2sdk::client::DOTAAbilityDefinition_t, m_pEffectName) == 0x228);
-        static_assert(offsetof(source2sdk::client::DOTAAbilityDefinition_t, m_pPingOverrideText) == 0x230);
-        static_assert(offsetof(source2sdk::client::DOTAAbilityDefinition_t, m_pszRequiredCustomShopName) == 0x238);
-        static_assert(offsetof(source2sdk::client::DOTAAbilityDefinition_t, m_pszLinkedScepterAbility) == 0x240);
-        static_assert(offsetof(source2sdk::client::DOTAAbilityDefinition_t, m_pszLinkedShardAbility) == 0x248);
-        static_assert(offsetof(source2sdk::client::DOTAAbilityDefinition_t, m_pszDependentOnAbility) == 0x250);
-        static_assert(offsetof(source2sdk::client::DOTAAbilityDefinition_t, m_nKillToastOverride) == 0x258);
-        static_assert(offsetof(source2sdk::client::DOTAAbilityDefinition_t, m_iLevelsBetweenUpgrades) == 0x25c);
-        static_assert(offsetof(source2sdk::client::DOTAAbilityDefinition_t, m_iRequiredLevel) == 0x260);
+        static_assert(offsetof(source2sdk::client::DOTAAbilityDefinition_t, m_bHasScepterUpgrade) == 0x1c4);
+        static_assert(offsetof(source2sdk::client::DOTAAbilityDefinition_t, m_bHasShardUpgrade) == 0x1c5);
+        static_assert(offsetof(source2sdk::client::DOTAAbilityDefinition_t, m_strScepterRequiredFacet) == 0x1c8);
+        static_assert(offsetof(source2sdk::client::DOTAAbilityDefinition_t, m_strShardRequiredFacet) == 0x1cc);
+        static_assert(offsetof(source2sdk::client::DOTAAbilityDefinition_t, m_bSharedWithTeammates) == 0x1d0);
+        static_assert(offsetof(source2sdk::client::DOTAAbilityDefinition_t, m_nCastRangeBuffer) == 0x1d4);
+        static_assert(offsetof(source2sdk::client::DOTAAbilityDefinition_t, m_nSpecialAbilities) == 0x1d8);
+        static_assert(offsetof(source2sdk::client::DOTAAbilityDefinition_t, m_pSpecialAbilities) == 0x1e0);
+        static_assert(offsetof(source2sdk::client::DOTAAbilityDefinition_t, m_OutgoingBonuses) == 0x1e8);
+        static_assert(offsetof(source2sdk::client::DOTAAbilityDefinition_t, m_mapRelationships) == 0x200);
+        static_assert(offsetof(source2sdk::client::DOTAAbilityDefinition_t, m_pModelName) == 0x228);
+        static_assert(offsetof(source2sdk::client::DOTAAbilityDefinition_t, m_pModelAlternateName) == 0x230);
+        static_assert(offsetof(source2sdk::client::DOTAAbilityDefinition_t, m_pEffectName) == 0x238);
+        static_assert(offsetof(source2sdk::client::DOTAAbilityDefinition_t, m_pPingOverrideText) == 0x240);
+        static_assert(offsetof(source2sdk::client::DOTAAbilityDefinition_t, m_pszRequiredCustomShopName) == 0x248);
+        static_assert(offsetof(source2sdk::client::DOTAAbilityDefinition_t, m_pszLinkedScepterAbility) == 0x250);
+        static_assert(offsetof(source2sdk::client::DOTAAbilityDefinition_t, m_pszLinkedShardAbility) == 0x258);
+        static_assert(offsetof(source2sdk::client::DOTAAbilityDefinition_t, m_pszDependentOnAbility) == 0x260);
+        static_assert(offsetof(source2sdk::client::DOTAAbilityDefinition_t, m_nKillToastOverride) == 0x268);
+        static_assert(offsetof(source2sdk::client::DOTAAbilityDefinition_t, m_iLevelsBetweenUpgrades) == 0x26c);
+        static_assert(offsetof(source2sdk::client::DOTAAbilityDefinition_t, m_iRequiredLevel) == 0x270);
         // Cannot assert offset of bitfield DOTAAbilityDefinition_t::m_bIsItem
         // Cannot assert offset of bitfield DOTAAbilityDefinition_t::m_bItemIsRecipe
         // Cannot assert offset of bitfield DOTAAbilityDefinition_t::m_bItemIsRecipeGenerated
@@ -269,6 +271,6 @@ namespace source2sdk
         // Cannot assert offset of bitfield DOTAAbilityDefinition_t::m_bActiveNeutral
         // Cannot assert offset of bitfield DOTAAbilityDefinition_t::m_bPassiveNeutral
         
-        static_assert(sizeof(source2sdk::client::DOTAAbilityDefinition_t) == 0x270);
+        static_assert(sizeof(source2sdk::client::DOTAAbilityDefinition_t) == 0x280);
     };
 };

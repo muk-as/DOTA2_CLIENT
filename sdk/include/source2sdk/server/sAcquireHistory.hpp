@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: 0x8
         // Standard-layout class: true
-        // Size: 0x60
+        // Size: 0x68
         #pragma pack(push, 1)
         class sAcquireHistory
         {
@@ -37,6 +37,8 @@ namespace source2sdk
             // m_vecAvailableNeutralItemList has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::client::AbilityID_t> m_vecAvailableNeutralItemList;
             char m_vecAvailableNeutralItemList[0x18]; // 0x48            
+            bool m_bSold; // 0x60            
+            uint8_t _pad0061[0x7];
         };
         #pragma pack(pop)
         
@@ -49,7 +51,8 @@ namespace source2sdk
         static_assert(offsetof(source2sdk::server::sAcquireHistory, m_vecItemList) == 0x18);
         static_assert(offsetof(source2sdk::server::sAcquireHistory, m_vecTalentSkilledList) == 0x30);
         static_assert(offsetof(source2sdk::server::sAcquireHistory, m_vecAvailableNeutralItemList) == 0x48);
+        static_assert(offsetof(source2sdk::server::sAcquireHistory, m_bSold) == 0x60);
         
-        static_assert(sizeof(source2sdk::server::sAcquireHistory) == 0x60);
+        static_assert(sizeof(source2sdk::server::sAcquireHistory) == 0x68);
     };
 };

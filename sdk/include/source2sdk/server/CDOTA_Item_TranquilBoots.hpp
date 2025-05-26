@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x6a8
+        // Size: 0x6b0
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -26,16 +26,16 @@ namespace source2sdk
         class CDOTA_Item_TranquilBoots : public source2sdk::server::CDOTA_Item
         {
         public:
-            std::int32_t break_count; // 0x688            
-            uint8_t _pad068c[0x4]; // 0x68c
+            std::int32_t break_count; // 0x690            
+            uint8_t _pad0694[0x4]; // 0x694
             // m_DamageList has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::entity2::GameTime_t> m_DamageList;
-            char m_DamageList[0x18]; // 0x690            
+            char m_DamageList[0x18]; // 0x698            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Item_TranquilBoots because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Item_TranquilBoots) == 0x6a8);
+        static_assert(sizeof(source2sdk::server::CDOTA_Item_TranquilBoots) == 0x6b0);
     };
 };

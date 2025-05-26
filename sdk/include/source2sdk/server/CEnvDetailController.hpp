@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x4e0
+        // Size: 0x4e8
         // Has VTable
         // Construct allowed
         // MNetworkNoBase
@@ -29,14 +29,14 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            float m_flFadeStartDist; // 0x4d8            
+            float m_flFadeStartDist; // 0x4e0            
             // metadata: MNetworkEnable
-            float m_flFadeEndDist; // 0x4dc            
+            float m_flFadeEndDist; // 0x4e4            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CEnvDetailController because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CEnvDetailController) == 0x4e0);
+        static_assert(sizeof(source2sdk::server::CEnvDetailController) == 0x4e8);
     };
 };

@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x510
+        // Size: 0x5a0
         // Has VTable
         // Construct disallowed
         // 
@@ -35,6 +35,6 @@ namespace source2sdk
         
         // Cannot assert offsets of fields in CBodyComponentSkeletonInstance because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CBodyComponentSkeletonInstance) == 0x510);
+        static_assert(sizeof(source2sdk::client::CBodyComponentSkeletonInstance) == 0x5a0);
     };
 };

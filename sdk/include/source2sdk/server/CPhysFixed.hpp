@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x568
+        // Size: 0x578
         // Has VTable
         // Construct allowed
         #pragma pack(push, 1)
@@ -30,7 +30,9 @@ namespace source2sdk
             float m_flAngularDampingRatio; // 0x55c            
             bool m_bEnableLinearConstraint; // 0x560            
             bool m_bEnableAngularConstraint; // 0x561            
-            uint8_t _pad0562[0x6];
+            uint8_t _pad0562[0x6]; // 0x562
+            CUtlSymbolLarge m_sBoneName1; // 0x568            
+            CUtlSymbolLarge m_sBoneName2; // 0x570            
             
             // Datamap fields:
             // float InputSetLinearFrequency; // 0x0
@@ -42,6 +44,6 @@ namespace source2sdk
         
         // Cannot assert offsets of fields in CPhysFixed because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CPhysFixed) == 0x568);
+        static_assert(sizeof(source2sdk::server::CPhysFixed) == 0x578);
     };
 };

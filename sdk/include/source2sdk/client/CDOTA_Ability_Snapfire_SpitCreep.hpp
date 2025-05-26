@@ -24,7 +24,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x5b8
+        // Size: 0x688
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -32,15 +32,15 @@ namespace source2sdk
         class CDOTA_Ability_Snapfire_SpitCreep : public source2sdk::client::C_DOTABaseAbility
         {
         public:
-            std::int32_t m_nDamagePerProjectile; // 0x5b0            
+            std::int32_t m_nDamagePerProjectile; // 0x680            
             // m_hGobbledUnit has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hGobbledUnit;
-            char m_hGobbledUnit[0x4]; // 0x5b4            
+            char m_hGobbledUnit[0x4]; // 0x684            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_Snapfire_SpitCreep because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Ability_Snapfire_SpitCreep) == 0x5b8);
+        static_assert(sizeof(source2sdk::client::CDOTA_Ability_Snapfire_SpitCreep) == 0x688);
     };
 };

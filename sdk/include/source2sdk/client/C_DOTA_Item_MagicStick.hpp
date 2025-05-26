@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x658
+        // Size: 0x728
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -25,13 +25,13 @@ namespace source2sdk
         class C_DOTA_Item_MagicStick : public source2sdk::client::C_DOTA_Item
         {
         public:
-            float charge_radius; // 0x650            
-            std::int32_t max_charges; // 0x654            
+            float charge_radius; // 0x720            
+            std::int32_t max_charges; // 0x724            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Item_MagicStick because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Item_MagicStick) == 0x658);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Item_MagicStick) == 0x728);
     };
 };

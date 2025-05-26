@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0xac0
+        // Size: 0xc88
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -26,15 +26,15 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            std::uint32_t m_unTeamID; // 0xaa8            
-            uint8_t _pad0aac[0xc]; // 0xaac
-            bool m_bSetupMaterialProxy; // 0xab8            
-            uint8_t _pad0ab9[0x7];
+            std::uint32_t m_unTeamID; // 0xc70            
+            uint8_t _pad0c74[0xc]; // 0xc74
+            bool m_bSetupMaterialProxy; // 0xc80            
+            uint8_t _pad0c81[0x7];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTAPropCustomTexture because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTAPropCustomTexture) == 0xac0);
+        static_assert(sizeof(source2sdk::client::C_DOTAPropCustomTexture) == 0xc88);
     };
 };

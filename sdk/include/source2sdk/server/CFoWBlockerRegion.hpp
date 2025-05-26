@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x558
+        // Size: 0x560
         // Has VTable
         // Construct allowed
         // 
@@ -35,23 +35,23 @@ namespace source2sdk
             // metadata: MNetworkEnable
             // m_vecFowBlockers has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVectorEmbeddedNetworkVar<source2sdk::server::FowBlocker_t> m_vecFowBlockers;
-            char m_vecFowBlockers[0x68]; // 0x4d8            
+            char m_vecFowBlockers[0x68]; // 0x4e0            
             // metadata: MNetworkEnable
-            float m_flMinX; // 0x540            
+            float m_flMinX; // 0x548            
             // metadata: MNetworkEnable
-            float m_flMaxX; // 0x544            
+            float m_flMaxX; // 0x54c            
             // metadata: MNetworkEnable
-            float m_flMinY; // 0x548            
+            float m_flMinY; // 0x550            
             // metadata: MNetworkEnable
-            float m_flMaxY; // 0x54c            
+            float m_flMaxY; // 0x554            
             // metadata: MNetworkEnable
-            float m_flGridSize; // 0x550            
-            uint8_t _pad0554[0x4];
+            float m_flGridSize; // 0x558            
+            uint8_t _pad055c[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CFoWBlockerRegion because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CFoWBlockerRegion) == 0x558);
+        static_assert(sizeof(source2sdk::server::CFoWBlockerRegion) == 0x560);
     };
 };

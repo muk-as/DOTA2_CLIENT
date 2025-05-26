@@ -51,7 +51,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x4d8
+        // Size: 0x4e0
         // Has VTable
         // Construct allowed
         // 
@@ -96,6 +96,7 @@ namespace source2sdk
         // static metadata: MNetworkVarNames "float32 m_flGravityScale"
         // static metadata: MNetworkVarNames "float32 m_flTimeScale"
         // static metadata: MNetworkVarNames "float m_flWaterLevel"
+        // static metadata: MNetworkVarNames "bool m_bGravityDisabled"
         // static metadata: MNetworkVarNames "bool m_bAnimatedEveryTick"
         // static metadata: MNetworkVarNames "GameTime_t m_flNavIgnoreUntilTime"
         // static metadata: MNetworkVarNames "BloodType m_nBloodType"
@@ -250,7 +251,6 @@ namespace source2sdk
             // metadata: MNetworkEncoder "coord"
             float m_flElasticity; // 0x3f8            
             // metadata: MNetworkEnable
-            // metadata: MNetworkUserGroup "LocalPlayerExclusive"
             float m_flGravityScale; // 0x3fc            
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "LocalPlayerExclusive"
@@ -263,29 +263,33 @@ namespace source2sdk
             // metadata: MNetworkEncodeFlags "8"
             float m_flWaterLevel; // 0x404            
             // metadata: MNetworkEnable
-            bool m_bAnimatedEveryTick; // 0x408            
-            bool m_bDisableLowViolence; // 0x409            
-            std::uint8_t m_nWaterType; // 0x40a            
-            uint8_t _pad040b[0x1]; // 0x40b
-            std::int32_t m_iEFlags; // 0x40c            
-            source2sdk::entity2::CEntityIOOutput m_OnUser1; // 0x410            
-            source2sdk::entity2::CEntityIOOutput m_OnUser2; // 0x438            
-            source2sdk::entity2::CEntityIOOutput m_OnUser3; // 0x460            
-            source2sdk::entity2::CEntityIOOutput m_OnUser4; // 0x488            
-            std::int32_t m_iInitialTeamNum; // 0x4b0            
+            bool m_bGravityDisabled; // 0x408            
             // metadata: MNetworkEnable
-            source2sdk::entity2::GameTime_t m_flNavIgnoreUntilTime; // 0x4b4            
-            QAngle m_vecAngVelocity; // 0x4b8            
-            bool m_bNetworkQuantizeOriginAndAngles; // 0x4c4            
-            bool m_bLagCompensate; // 0x4c5            
-            uint8_t _pad04c6[0x2]; // 0x4c6
+            bool m_bAnimatedEveryTick; // 0x409            
+            bool m_bGravityActuallyDisabled; // 0x40a            
+            bool m_bDisableLowViolence; // 0x40b            
+            std::uint8_t m_nWaterType; // 0x40c            
+            uint8_t _pad040d[0x3]; // 0x40d
+            std::int32_t m_iEFlags; // 0x410            
+            uint8_t _pad0414[0x4]; // 0x414
+            source2sdk::entity2::CEntityIOOutput m_OnUser1; // 0x418            
+            source2sdk::entity2::CEntityIOOutput m_OnUser2; // 0x440            
+            source2sdk::entity2::CEntityIOOutput m_OnUser3; // 0x468            
+            source2sdk::entity2::CEntityIOOutput m_OnUser4; // 0x490            
+            std::int32_t m_iInitialTeamNum; // 0x4b8            
+            // metadata: MNetworkEnable
+            source2sdk::entity2::GameTime_t m_flNavIgnoreUntilTime; // 0x4bc            
+            QAngle m_vecAngVelocity; // 0x4c0            
+            bool m_bNetworkQuantizeOriginAndAngles; // 0x4cc            
+            bool m_bLagCompensate; // 0x4cd            
+            uint8_t _pad04ce[0x2]; // 0x4ce
             // m_pBlocker has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_pBlocker;
-            char m_pBlocker[0x4]; // 0x4c8            
-            float m_flLocalTime; // 0x4cc            
-            float m_flVPhysicsUpdateLocalTime; // 0x4d0            
+            char m_pBlocker[0x4]; // 0x4d0            
+            float m_flLocalTime; // 0x4d4            
+            float m_flVPhysicsUpdateLocalTime; // 0x4d8            
             // metadata: MNetworkEnable
-            source2sdk::client::BloodType m_nBloodType; // 0x4d4            
+            source2sdk::client::BloodType m_nBloodType; // 0x4dc            
             
             // Datamap fields:
             // CUtlSymbolLarge m_iszPrivateVScripts; // 0x8
@@ -350,6 +354,6 @@ namespace source2sdk
         
         // Cannot assert offsets of fields in CBaseEntity because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CBaseEntity) == 0x4d8);
+        static_assert(sizeof(source2sdk::server::CBaseEntity) == 0x4e0);
     };
 };

@@ -32,7 +32,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x628
+        // Size: 0x630
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -40,31 +40,31 @@ namespace source2sdk
         class CDOTA_Ability_NianCharge : public source2sdk::server::CDOTABaseAbility
         {
         public:
-            uint8_t _pad05b8[0x10]; // 0x5b8
-            bool m_bChargeFinished; // 0x5c8            
-            bool m_bPlayedChargeAnimation; // 0x5c9            
-            bool m_bPinning; // 0x5ca            
-            uint8_t _pad05cb[0x1]; // 0x5cb
-            source2sdk::entity2::GameTime_t m_flPinStartTime; // 0x5cc            
-            Vector m_vProjectileLocation; // 0x5d0            
-            Vector m_vTargetLocation; // 0x5dc            
+            uint8_t _pad05c0[0x10]; // 0x5c0
+            bool m_bChargeFinished; // 0x5d0            
+            bool m_bPlayedChargeAnimation; // 0x5d1            
+            bool m_bPinning; // 0x5d2            
+            uint8_t _pad05d3[0x1]; // 0x5d3
+            source2sdk::entity2::GameTime_t m_flPinStartTime; // 0x5d4            
+            Vector m_vProjectileLocation; // 0x5d8            
+            Vector m_vTargetLocation; // 0x5e4            
             // m_hTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hTarget;
-            char m_hTarget[0x4]; // 0x5e8            
-            uint8_t _pad05ec[0x4]; // 0x5ec
+            char m_hTarget[0x4]; // 0x5f0            
+            uint8_t _pad05f4[0x4]; // 0x5f4
             // m_hTrackingProjectileHits has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CBaseEntity>> m_hTrackingProjectileHits;
-            char m_hTrackingProjectileHits[0x18]; // 0x5f0            
+            char m_hTrackingProjectileHits[0x18]; // 0x5f8            
             // m_hTrackingProjectileTrees has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::server::CDOTA_Tree*> m_hTrackingProjectileTrees;
-            char m_hTrackingProjectileTrees[0x18]; // 0x608            
-            std::int32_t nFXIndex; // 0x620            
-            std::int32_t m_iCurProjectileIndex; // 0x624            
+            char m_hTrackingProjectileTrees[0x18]; // 0x610            
+            std::int32_t nFXIndex; // 0x628            
+            std::int32_t m_iCurProjectileIndex; // 0x62c            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_NianCharge because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Ability_NianCharge) == 0x628);
+        static_assert(sizeof(source2sdk::server::CDOTA_Ability_NianCharge) == 0x630);
     };
 };

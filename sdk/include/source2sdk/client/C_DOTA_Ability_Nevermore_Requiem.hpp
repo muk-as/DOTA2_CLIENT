@@ -25,7 +25,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x5e0
+        // Size: 0x6b0
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -33,20 +33,20 @@ namespace source2sdk
         class C_DOTA_Ability_Nevermore_Requiem : public source2sdk::client::C_DOTABaseAbility
         {
         public:
-            float requiem_line_width_start; // 0x5b0            
-            float requiem_line_width_end; // 0x5b4            
-            std::int32_t m_nCachedSouls; // 0x5b8            
-            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x5bc            
-            std::int32_t m_nKilleater_nLines; // 0x5c0            
-            uint8_t _pad05c4[0x4]; // 0x5c4
+            float requiem_line_width_start; // 0x680            
+            float requiem_line_width_end; // 0x684            
+            std::int32_t m_nCachedSouls; // 0x688            
+            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x68c            
+            std::int32_t m_nKilleater_nLines; // 0x690            
+            uint8_t _pad0694[0x4]; // 0x694
             // m_vecHeroesReqd has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::client::C_BaseEntity>> m_vecHeroesReqd;
-            char m_vecHeroesReqd[0x18]; // 0x5c8            
+            char m_vecHeroesReqd[0x18]; // 0x698            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Ability_Nevermore_Requiem because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Nevermore_Requiem) == 0x5e0);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Nevermore_Requiem) == 0x6b0);
     };
 };

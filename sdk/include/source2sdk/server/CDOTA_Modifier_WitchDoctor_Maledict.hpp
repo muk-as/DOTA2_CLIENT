@@ -17,24 +17,26 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1818
+        // Size: 0x18b0
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_WitchDoctor_Maledict : public source2sdk::client::CDOTA_Buff
         {
         public:
-            std::int32_t m_iStartHealth; // 0x17f8            
-            std::int32_t bonus_damage; // 0x17fc            
-            std::int32_t bonus_damage_threshold; // 0x1800            
-            std::int32_t ticks; // 0x1804            
-            std::int32_t iCurrentTick; // 0x1808            
-            std::int32_t health_restoration_reduction; // 0x180c            
-            uint8_t _pad1810[0x8];
+            std::int32_t m_iStartHealth; // 0x1878            
+            float bonus_damage; // 0x187c            
+            float bonus_damage_threshold; // 0x1880            
+            std::int32_t ticks; // 0x1884            
+            std::int32_t iCurrentTick; // 0x1888            
+            std::int32_t health_restoration_reduction; // 0x188c            
+            float spread_radius; // 0x1890            
+            float spread_pct; // 0x1894            
+            uint8_t _pad1898[0x18];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_WitchDoctor_Maledict because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_WitchDoctor_Maledict) == 0x1818);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_WitchDoctor_Maledict) == 0x18b0);
     };
 };

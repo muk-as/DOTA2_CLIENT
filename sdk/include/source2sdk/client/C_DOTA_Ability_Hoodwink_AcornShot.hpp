@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x5d8
+        // Size: 0x6a8
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -29,22 +29,22 @@ namespace source2sdk
         public:
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnAcornTreePlanted"
-            std::uint32_t m_nAcornTree; // 0x5b0            
-            float projectile_speed; // 0x5b4            
-            float bounce_delay; // 0x5b8            
-            float bounce_range; // 0x5bc            
-            std::int32_t bounce_count; // 0x5c0            
-            bool m_bIsAltCastState; // 0x5c4            
-            uint8_t _pad05c5[0x3]; // 0x5c5
-            std::int32_t can_bounce_off_of_trees; // 0x5c8            
-            std::int32_t bounces_after_tree_bounce; // 0x5cc            
-            bool bBouncedOffTree; // 0x5d0            
-            uint8_t _pad05d1[0x7];
+            std::uint32_t m_nAcornTree; // 0x680            
+            float projectile_speed; // 0x684            
+            float bounce_delay; // 0x688            
+            float bounce_range; // 0x68c            
+            std::int32_t bounce_count; // 0x690            
+            bool m_bIsAltCastState; // 0x694            
+            uint8_t _pad0695[0x3]; // 0x695
+            std::int32_t can_bounce_off_of_trees; // 0x698            
+            std::int32_t bounces_after_tree_bounce; // 0x69c            
+            bool bBouncedOffTree; // 0x6a0            
+            uint8_t _pad06a1[0x7];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Ability_Hoodwink_AcornShot because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Hoodwink_AcornShot) == 0x5d8);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Hoodwink_AcornShot) == 0x6a8);
     };
 };

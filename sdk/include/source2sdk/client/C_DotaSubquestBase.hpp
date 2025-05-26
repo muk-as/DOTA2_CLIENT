@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x668
+        // Size: 0x738
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -36,29 +36,29 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            char m_pszSubquestText[256]; // 0x510            
+            char m_pszSubquestText[256]; // 0x5e0            
             // metadata: MNetworkEnable
-            bool m_bHidden; // 0x610            
+            bool m_bHidden; // 0x6e0            
             // metadata: MNetworkEnable
-            bool m_bCompleted; // 0x611            
+            bool m_bCompleted; // 0x6e1            
             // metadata: MNetworkEnable
-            bool m_bShowProgressBar; // 0x612            
-            uint8_t _pad0613[0x1]; // 0x613
+            bool m_bShowProgressBar; // 0x6e2            
+            uint8_t _pad06e3[0x1]; // 0x6e3
             // metadata: MNetworkEnable
-            std::int32_t m_nProgressBarHueShift; // 0x614            
+            std::int32_t m_nProgressBarHueShift; // 0x6e4            
             // metadata: MNetworkEnable
-            std::int32_t m_pnTextReplaceValuesCDotaSubquestBase[2]; // 0x618            
+            std::int32_t m_pnTextReplaceValuesCDotaSubquestBase[2]; // 0x6e8            
             // metadata: MNetworkEnable
-            char m_pszTextReplaceString[64]; // 0x620            
+            char m_pszTextReplaceString[64]; // 0x6f0            
             // metadata: MNetworkEnable
-            std::int32_t m_nTextReplaceValueVersion; // 0x660            
-            bool m_bWasCompleted; // 0x664            
-            uint8_t _pad0665[0x3];
+            std::int32_t m_nTextReplaceValueVersion; // 0x730            
+            bool m_bWasCompleted; // 0x734            
+            uint8_t _pad0735[0x3];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DotaSubquestBase because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DotaSubquestBase) == 0x668);
+        static_assert(sizeof(source2sdk::client::C_DotaSubquestBase) == 0x738);
     };
 };

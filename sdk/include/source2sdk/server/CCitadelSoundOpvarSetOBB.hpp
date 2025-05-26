@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x528
+        // Size: 0x530
         // Has VTable
         // Construct allowed
         // 
@@ -34,27 +34,27 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            CUtlSymbolLarge m_iszStackName; // 0x4d8            
+            CUtlSymbolLarge m_iszStackName; // 0x4e0            
             // metadata: MNetworkEnable
-            CUtlSymbolLarge m_iszOperatorName; // 0x4e0            
+            CUtlSymbolLarge m_iszOperatorName; // 0x4e8            
             // metadata: MNetworkEnable
-            CUtlSymbolLarge m_iszOpvarName; // 0x4e8            
+            CUtlSymbolLarge m_iszOpvarName; // 0x4f0            
             // metadata: MNetworkEnable
-            Vector m_vDistanceInnerMins; // 0x4f0            
+            Vector m_vDistanceInnerMins; // 0x4f8            
             // metadata: MNetworkEnable
-            Vector m_vDistanceInnerMaxs; // 0x4fc            
+            Vector m_vDistanceInnerMaxs; // 0x504            
             // metadata: MNetworkEnable
-            Vector m_vDistanceOuterMins; // 0x508            
+            Vector m_vDistanceOuterMins; // 0x510            
             // metadata: MNetworkEnable
-            Vector m_vDistanceOuterMaxs; // 0x514            
+            Vector m_vDistanceOuterMaxs; // 0x51c            
             // metadata: MNetworkEnable
-            std::int32_t m_nAABBDirection; // 0x520            
-            uint8_t _pad0524[0x4];
+            std::int32_t m_nAABBDirection; // 0x528            
+            uint8_t _pad052c[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CCitadelSoundOpvarSetOBB because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CCitadelSoundOpvarSetOBB) == 0x528);
+        static_assert(sizeof(source2sdk::server::CCitadelSoundOpvarSetOBB) == 0x530);
     };
 };

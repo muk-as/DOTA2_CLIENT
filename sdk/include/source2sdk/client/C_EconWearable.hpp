@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0xb28
+        // Size: 0xd40
         // Has VTable
         // Construct allowed
         // 
@@ -26,11 +26,11 @@ namespace source2sdk
         class C_EconWearable : public source2sdk::client::C_EconEntity
         {
         public:
-            uint8_t _pad0b20[0x8];
+            uint8_t _pad0d38[0x8];
         };
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::client::C_EconWearable) == 0xb28);
+        static_assert(sizeof(source2sdk::client::C_EconWearable) == 0xd40);
     };
 };

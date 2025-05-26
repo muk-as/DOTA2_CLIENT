@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0xaf0
+        // Size: 0xb80
         // Has VTable
         // Construct disallowed
         // 
@@ -28,13 +28,12 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            source2sdk::client::C_BaseAnimatingController m_animationController; // 0x510            
-            uint8_t _pad0ae8[0x8];
+            source2sdk::client::C_BaseAnimatingController m_animationController; // 0x5a0            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_BodyComponentBaseAnimating because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_BodyComponentBaseAnimating) == 0xaf0);
+        static_assert(sizeof(source2sdk::client::C_BodyComponentBaseAnimating) == 0xb80);
     };
 };

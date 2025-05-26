@@ -24,7 +24,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1838
+        // Size: 0x18b8
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Visage_SummonFamiliars_In_Formation : public source2sdk::client::CDOTA_Buff
@@ -32,28 +32,28 @@ namespace source2sdk
         public:
             // m_hOwner has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hOwner;
-            char m_hOwner[0x4]; // 0x17f8            
+            char m_hOwner[0x4]; // 0x1878            
             // m_hCurrentTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hCurrentTarget;
-            char m_hCurrentTarget[0x4]; // 0x17fc            
-            std::int32_t familiar_index; // 0x1800            
-            std::int32_t back_distance; // 0x1804            
-            std::int32_t side_distance; // 0x1808            
-            Vector m_vecDesiredPosition; // 0x180c            
-            std::int32_t max_distance; // 0x1818            
-            std::int32_t return_distance; // 0x181c            
-            std::int32_t attack_range_buffer; // 0x1820            
-            float recall_duration; // 0x1824            
-            bool m_bTeleporting; // 0x1828            
-            uint8_t _pad1829[0x3]; // 0x1829
-            std::int32_t familiar_attack_range; // 0x182c            
-            std::int32_t additional_target_search_radius; // 0x1830            
-            uint8_t _pad1834[0x4];
+            char m_hCurrentTarget[0x4]; // 0x187c            
+            std::int32_t familiar_index; // 0x1880            
+            std::int32_t back_distance; // 0x1884            
+            std::int32_t side_distance; // 0x1888            
+            Vector m_vecDesiredPosition; // 0x188c            
+            float max_distance; // 0x1898            
+            float return_distance; // 0x189c            
+            float attack_range_buffer; // 0x18a0            
+            float recall_duration; // 0x18a4            
+            bool m_bTeleporting; // 0x18a8            
+            uint8_t _pad18a9[0x3]; // 0x18a9
+            std::int32_t familiar_attack_range; // 0x18ac            
+            float additional_target_search_radius; // 0x18b0            
+            uint8_t _pad18b4[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Visage_SummonFamiliars_In_Formation because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Visage_SummonFamiliars_In_Formation) == 0x1838);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Visage_SummonFamiliars_In_Formation) == 0x18b8);
     };
 };

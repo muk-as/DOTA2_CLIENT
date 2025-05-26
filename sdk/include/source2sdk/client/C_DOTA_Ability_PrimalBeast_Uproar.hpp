@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x5b8
+        // Size: 0x688
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -29,14 +29,14 @@ namespace source2sdk
         public:
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnUproarActiveChanged"
-            std::int32_t m_iUproarStatus; // 0x5b0            
-            bool m_bUpdateIcons; // 0x5b4            
-            uint8_t _pad05b5[0x3];
+            std::int32_t m_iUproarStatus; // 0x680            
+            bool m_bUpdateIcons; // 0x684            
+            uint8_t _pad0685[0x3];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Ability_PrimalBeast_Uproar because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_PrimalBeast_Uproar) == 0x5b8);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_PrimalBeast_Uproar) == 0x688);
     };
 };

@@ -18,20 +18,20 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x19b0
+        // Size: 0x19e8
         // Has VTable
         // Construct allowed
         #pragma pack(push, 1)
         class CDOTA_BaseNPC_HoldoutTower : public source2sdk::server::CDOTA_BaseNPC_Tower
         {
         public:
-            source2sdk::client::DOTA_HOLDOUT_TOWER_TYPE m_iTowerType; // 0x19a8            
-            uint8_t _pad19ac[0x4];
+            source2sdk::client::DOTA_HOLDOUT_TOWER_TYPE m_iTowerType; // 0x19e0            
+            uint8_t _pad19e4[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_BaseNPC_HoldoutTower because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_BaseNPC_HoldoutTower) == 0x19b0);
+        static_assert(sizeof(source2sdk::server::CDOTA_BaseNPC_HoldoutTower) == 0x19e8);
     };
 };

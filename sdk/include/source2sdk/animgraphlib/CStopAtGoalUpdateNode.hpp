@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x98
+        // Size: 0xa0
         // Has VTable
         // Construct allowed
         // 
@@ -39,6 +39,6 @@ namespace source2sdk
         
         // Cannot assert offsets of fields in CStopAtGoalUpdateNode because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::animgraphlib::CStopAtGoalUpdateNode) == 0x98);
+        static_assert(sizeof(source2sdk::animgraphlib::CStopAtGoalUpdateNode) == 0xa0);
     };
 };

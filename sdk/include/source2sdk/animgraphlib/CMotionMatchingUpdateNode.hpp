@@ -21,7 +21,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x140
+        // Size: 0x148
         // Has VTable
         // Construct allowed
         // 
@@ -58,17 +58,17 @@ namespace source2sdk
             float m_flGoalAssistTolerance; // 0x110            
             uint8_t _pad0114[0x4]; // 0x114
             source2sdk::animgraphlib::CAnimInputDamping m_distanceScale_Damping; // 0x118            
-            float m_flDistanceScale_OuterRadius; // 0x128            
-            float m_flDistanceScale_InnerRadius; // 0x12c            
-            float m_flDistanceScale_MaxScale; // 0x130            
-            float m_flDistanceScale_MinScale; // 0x134            
-            bool m_bEnableDistanceScaling; // 0x138            
-            uint8_t _pad0139[0x7];
+            float m_flDistanceScale_OuterRadius; // 0x130            
+            float m_flDistanceScale_InnerRadius; // 0x134            
+            float m_flDistanceScale_MaxScale; // 0x138            
+            float m_flDistanceScale_MinScale; // 0x13c            
+            bool m_bEnableDistanceScaling; // 0x140            
+            uint8_t _pad0141[0x7];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CMotionMatchingUpdateNode because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::animgraphlib::CMotionMatchingUpdateNode) == 0x140);
+        static_assert(sizeof(source2sdk::animgraphlib::CMotionMatchingUpdateNode) == 0x148);
     };
 };

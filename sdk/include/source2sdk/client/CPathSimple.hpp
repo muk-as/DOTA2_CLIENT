@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: 0x10
         // Alignment: 0x10
         // Standard-layout class: false
-        // Size: 0x610
+        // Size: 0x6f0
         // Has VTable
         // Construct allowed
         // 
@@ -29,21 +29,21 @@ namespace source2sdk
         class CPathSimple : public source2sdk::client::C_BaseEntity
         {
         public:
-            uint8_t _pad0510[0x10]; // 0x510
+            uint8_t _pad05e0[0x10]; // 0x5e0
             // metadata: MNetworkEnable
             // metadata: MNetworkUserGroup "CPathQueryComponent"
             // metadata: MNetworkAlias "CPathQueryComponent"
             // metadata: MNetworkTypeAlias "CPathQueryComponent"
-            source2sdk::client::CPathQueryComponent m_CPathQueryComponent; // 0x520            
-            uint8_t _pad05b0[0x50]; // 0x5b0
+            source2sdk::client::CPathQueryComponent m_CPathQueryComponent; // 0x5f0            
+            uint8_t _pad0690[0x50]; // 0x690
             // metadata: MNetworkEnable
-            CUtlString m_pathString; // 0x600            
-            uint8_t _pad0608[0x8];
+            CUtlString m_pathString; // 0x6e0            
+            uint8_t _pad06e8[0x8];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CPathSimple because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CPathSimple) == 0x610);
+        static_assert(sizeof(source2sdk::client::CPathSimple) == 0x6f0);
     };
 };

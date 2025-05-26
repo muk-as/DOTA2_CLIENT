@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x5d0
+        // Size: 0x6a0
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -25,19 +25,19 @@ namespace source2sdk
         class C_DOTA_Ability_Pangolier_Swashbuckle : public source2sdk::client::C_DOTABaseAbility
         {
         public:
-            float dash_speed; // 0x5b0            
-            float start_radius; // 0x5b4            
-            float end_radius; // 0x5b8            
-            float range; // 0x5bc            
-            float damage; // 0x5c0            
-            float attack_damage; // 0x5c4            
-            std::int32_t procs_onhit_effects; // 0x5c8            
-            uint8_t _pad05cc[0x4];
+            float dash_speed; // 0x680            
+            float start_radius; // 0x684            
+            float end_radius; // 0x688            
+            float range; // 0x68c            
+            float damage; // 0x690            
+            float attack_damage; // 0x694            
+            std::int32_t procs_onhit_effects; // 0x698            
+            uint8_t _pad069c[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Ability_Pangolier_Swashbuckle because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Pangolier_Swashbuckle) == 0x5d0);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Pangolier_Swashbuckle) == 0x6a0);
     };
 };

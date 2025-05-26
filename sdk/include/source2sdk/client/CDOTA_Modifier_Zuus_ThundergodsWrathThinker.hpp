@@ -17,23 +17,23 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1810
+        // Size: 0x1890
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Zuus_ThundergodsWrathThinker : public source2sdk::client::CDOTA_Buff
         {
         public:
-            std::int32_t damage; // 0x17f8            
-            float damage_pct; // 0x17fc            
-            float sight_duration; // 0x1800            
-            float growing_delay; // 0x1804            
-            float grow_kill_amp; // 0x1808            
-            uint8_t _pad180c[0x4];
+            std::int32_t damage; // 0x1878            
+            float damage_pct; // 0x187c            
+            float sight_duration; // 0x1880            
+            float growing_delay; // 0x1884            
+            float grow_kill_amp; // 0x1888            
+            uint8_t _pad188c[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Zuus_ThundergodsWrathThinker because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Zuus_ThundergodsWrathThinker) == 0x1810);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Zuus_ThundergodsWrathThinker) == 0x1890);
     };
 };

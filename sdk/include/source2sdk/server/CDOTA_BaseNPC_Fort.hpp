@@ -17,19 +17,19 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x1978
+        // Size: 0x19b0
         // Has VTable
         // Construct allowed
         #pragma pack(push, 1)
         class CDOTA_BaseNPC_Fort : public source2sdk::server::CDOTA_BaseNPC_Building
         {
         public:
-            uint8_t _pad1970[0x8];
+            uint8_t _pad19a8[0x8];
             // No schema binary for binding
         };
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::server::CDOTA_BaseNPC_Fort) == 0x1978);
+        static_assert(sizeof(source2sdk::server::CDOTA_BaseNPC_Fort) == 0x19b0);
     };
 };

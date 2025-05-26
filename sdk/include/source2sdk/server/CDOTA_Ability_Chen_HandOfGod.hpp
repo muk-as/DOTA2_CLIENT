@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x5b8
+        // Size: 0x5d8
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -25,11 +25,12 @@ namespace source2sdk
         class CDOTA_Ability_Chen_HandOfGod : public source2sdk::server::CDOTABaseAbility
         {
         public:
+            uint8_t _pad05c0[0x18];
             // No schema binary for binding
         };
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Ability_Chen_HandOfGod) == 0x5b8);
+        static_assert(sizeof(source2sdk::server::CDOTA_Ability_Chen_HandOfGod) == 0x5d8);
     };
 };

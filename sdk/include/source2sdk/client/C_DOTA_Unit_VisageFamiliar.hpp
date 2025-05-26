@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x17e8
+        // Size: 0x1a10
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -26,13 +26,13 @@ namespace source2sdk
         class C_DOTA_Unit_VisageFamiliar : public source2sdk::client::C_DOTA_BaseNPC_Creep
         {
         public:
-            source2sdk::client::ParticleIndex_t m_nFXAmbient; // 0x17e0            
-            uint8_t _pad17e4[0x4];
+            source2sdk::client::ParticleIndex_t m_nFXAmbient; // 0x1a08            
+            uint8_t _pad1a0c[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Unit_VisageFamiliar because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Unit_VisageFamiliar) == 0x17e8);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Unit_VisageFamiliar) == 0x1a10);
     };
 };

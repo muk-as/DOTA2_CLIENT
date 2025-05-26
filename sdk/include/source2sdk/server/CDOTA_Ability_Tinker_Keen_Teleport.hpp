@@ -25,7 +25,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x5e8
+        // Size: 0x5f0
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -33,23 +33,23 @@ namespace source2sdk
         class CDOTA_Ability_Tinker_Keen_Teleport : public source2sdk::server::CDOTABaseAbility
         {
         public:
-            std::int32_t creep_teleport_level; // 0x5b8            
-            std::int32_t hero_teleport_level; // 0x5bc            
-            float outpost_channel_time; // 0x5c0            
-            float jungle_outpost_channel_time; // 0x5c4            
+            std::int32_t creep_teleport_level; // 0x5c0            
+            std::int32_t hero_teleport_level; // 0x5c4            
+            float outpost_channel_time; // 0x5c8            
+            float jungle_outpost_channel_time; // 0x5cc            
             // m_hTeleportTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hTeleportTarget;
-            char m_hTeleportTarget[0x4]; // 0x5c8            
-            source2sdk::client::ParticleIndex_t m_nFXOrigin; // 0x5cc            
-            source2sdk::client::ParticleIndex_t m_nFXDestination; // 0x5d0            
-            Vector m_vDestination; // 0x5d4            
-            std::int32_t m_iMinDistance; // 0x5e0            
-            float m_flBaseTeleportTime; // 0x5e4            
+            char m_hTeleportTarget[0x4]; // 0x5d0            
+            source2sdk::client::ParticleIndex_t m_nFXOrigin; // 0x5d4            
+            source2sdk::client::ParticleIndex_t m_nFXDestination; // 0x5d8            
+            Vector m_vDestination; // 0x5dc            
+            std::int32_t m_iMinDistance; // 0x5e8            
+            float m_flBaseTeleportTime; // 0x5ec            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_Tinker_Keen_Teleport because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Ability_Tinker_Keen_Teleport) == 0x5e8);
+        static_assert(sizeof(source2sdk::server::CDOTA_Ability_Tinker_Keen_Teleport) == 0x5f0);
     };
 };

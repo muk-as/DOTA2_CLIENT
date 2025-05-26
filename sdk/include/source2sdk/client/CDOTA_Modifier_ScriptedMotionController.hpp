@@ -18,23 +18,23 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1820
+        // Size: 0x18a0
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_ScriptedMotionController : public source2sdk::client::CDOTA_Buff
         {
         public:
-            HSCRIPT m_hHorizontalControlFunction; // 0x17f8            
-            HSCRIPT m_hVerticalControlFunction; // 0x1800            
-            HSCRIPT m_hOnDestroyFunction; // 0x1808            
+            HSCRIPT m_hHorizontalControlFunction; // 0x1878            
+            HSCRIPT m_hVerticalControlFunction; // 0x1880            
+            HSCRIPT m_hOnDestroyFunction; // 0x1888            
             // m_parameterTable has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CVariantBase<source2sdk::entity2::CVariantDefaultAllocator> m_parameterTable;
-            char m_parameterTable[0x10]; // 0x1810            
+            char m_parameterTable[0x10]; // 0x1890            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_ScriptedMotionController because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_ScriptedMotionController) == 0x1820);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_ScriptedMotionController) == 0x18a0);
     };
 };

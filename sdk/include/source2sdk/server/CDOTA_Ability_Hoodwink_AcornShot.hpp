@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x608
+        // Size: 0x610
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -27,24 +27,24 @@ namespace source2sdk
         class CDOTA_Ability_Hoodwink_AcornShot : public source2sdk::server::CDOTABaseAbility
         {
         public:
-            uint8_t _pad05b8[0x28]; // 0x5b8
+            uint8_t _pad05c0[0x28]; // 0x5c0
             // metadata: MNetworkEnable
-            std::uint32_t m_nAcornTree; // 0x5e0            
-            float projectile_speed; // 0x5e4            
-            float bounce_delay; // 0x5e8            
-            float bounce_range; // 0x5ec            
-            std::int32_t bounce_count; // 0x5f0            
-            bool m_bIsAltCastState; // 0x5f4            
-            uint8_t _pad05f5[0x3]; // 0x5f5
-            std::int32_t can_bounce_off_of_trees; // 0x5f8            
-            std::int32_t bounces_after_tree_bounce; // 0x5fc            
-            bool bBouncedOffTree; // 0x600            
-            uint8_t _pad0601[0x7];
+            std::uint32_t m_nAcornTree; // 0x5e8            
+            float projectile_speed; // 0x5ec            
+            float bounce_delay; // 0x5f0            
+            float bounce_range; // 0x5f4            
+            std::int32_t bounce_count; // 0x5f8            
+            bool m_bIsAltCastState; // 0x5fc            
+            uint8_t _pad05fd[0x3]; // 0x5fd
+            std::int32_t can_bounce_off_of_trees; // 0x600            
+            std::int32_t bounces_after_tree_bounce; // 0x604            
+            bool bBouncedOffTree; // 0x608            
+            uint8_t _pad0609[0x7];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_Hoodwink_AcornShot because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Ability_Hoodwink_AcornShot) == 0x608);
+        static_assert(sizeof(source2sdk::server::CDOTA_Ability_Hoodwink_AcornShot) == 0x610);
     };
 };

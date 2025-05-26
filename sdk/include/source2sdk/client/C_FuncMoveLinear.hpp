@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x7d0
+        // Size: 0x970
         // Has VTable
         // Construct allowed
         // 
@@ -32,6 +32,6 @@ namespace source2sdk
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::client::C_FuncMoveLinear) == 0x7d0);
+        static_assert(sizeof(source2sdk::client::C_FuncMoveLinear) == 0x970);
     };
 };

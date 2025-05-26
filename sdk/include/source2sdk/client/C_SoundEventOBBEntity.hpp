@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x5f8
+        // Size: 0x6d0
         // Has VTable
         // Construct allowed
         // 
@@ -28,15 +28,15 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            Vector m_vMins; // 0x5d0            
+            Vector m_vMins; // 0x6a8            
             // metadata: MNetworkEnable
-            Vector m_vMaxs; // 0x5dc            
-            uint8_t _pad05e8[0x10];
+            Vector m_vMaxs; // 0x6b4            
+            uint8_t _pad06c0[0x10];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_SoundEventOBBEntity because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_SoundEventOBBEntity) == 0x5f8);
+        static_assert(sizeof(source2sdk::client::C_SoundEventOBBEntity) == 0x6d0);
     };
 };

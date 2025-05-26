@@ -40,7 +40,9 @@ namespace source2sdk
             source2sdk::particleslib::CPerParticleFloatInput m_nIncrement; // 0x328            
             // metadata: MPropertyFriendlyName "random parent particle distribution"
             bool m_bRandomDistribution; // 0x488            
-            uint8_t _pad0489[0x3]; // 0x489
+            // metadata: MPropertyFriendlyName "start at last parent particle in reverse"
+            bool m_bReverse; // 0x489            
+            uint8_t _pad048a[0x2]; // 0x48a
             // metadata: MPropertyFriendlyName "behavior if parent particle dies"
             source2sdk::particles::MissingParentInheritBehavior_t m_nMissingParentBehavior; // 0x48c            
             // metadata: MPropertyFriendlyName "Interpolation"

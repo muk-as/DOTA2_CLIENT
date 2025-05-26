@@ -25,7 +25,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1850
+        // Size: 0x18d0
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Luna_Eclipse : public source2sdk::client::CDOTA_Buff
@@ -33,29 +33,29 @@ namespace source2sdk
         public:
             // m_hTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hTarget;
-            char m_hTarget[0x4]; // 0x17f8            
-            float radius; // 0x17fc            
-            std::int32_t beams; // 0x1800            
-            std::int32_t hit_count; // 0x1804            
-            std::int32_t m_iBeamDamage; // 0x1808            
-            float beam_interval; // 0x180c            
-            float stun_duration; // 0x1810            
-            Vector vPosition; // 0x1814            
-            bool bAreaTarget; // 0x1820            
-            uint8_t _pad1821[0x3]; // 0x1821
-            std::int32_t m_iTickCount; // 0x1824            
-            source2sdk::client::ParticleIndex_t m_nMoonlightFXIndex; // 0x1828            
-            uint8_t _pad182c[0x4]; // 0x182c
+            char m_hTarget[0x4]; // 0x1878            
+            float radius; // 0x187c            
+            std::int32_t beams; // 0x1880            
+            std::int32_t hit_count; // 0x1884            
+            std::int32_t m_iBeamDamage; // 0x1888            
+            float beam_interval; // 0x188c            
+            float stun_duration; // 0x1890            
+            Vector vPosition; // 0x1894            
+            bool bAreaTarget; // 0x18a0            
+            uint8_t _pad18a1[0x3]; // 0x18a1
+            std::int32_t m_iTickCount; // 0x18a4            
+            source2sdk::client::ParticleIndex_t m_nMoonlightFXIndex; // 0x18a8            
+            uint8_t _pad18ac[0x4]; // 0x18ac
             // m_HitTargets has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::client::C_BaseEntity>> m_HitTargets;
-            char m_HitTargets[0x18]; // 0x1830            
-            float m_flBeamStun; // 0x1848            
-            uint8_t _pad184c[0x4];
+            char m_HitTargets[0x18]; // 0x18b0            
+            float m_flBeamStun; // 0x18c8            
+            uint8_t _pad18cc[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Luna_Eclipse because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Luna_Eclipse) == 0x1850);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Luna_Eclipse) == 0x18d0);
     };
 };

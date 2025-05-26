@@ -17,22 +17,22 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1808
+        // Size: 0x1888
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Tidehunter_Ravage : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float m_flStartZ; // 0x17f8            
-            float m_flCurTime; // 0x17fc            
-            bool m_bDamageApplied; // 0x1800            
-            uint8_t _pad1801[0x3]; // 0x1801
-            float damage; // 0x1804            
+            float m_flStartZ; // 0x1878            
+            float m_flCurTime; // 0x187c            
+            bool m_bDamageApplied; // 0x1880            
+            uint8_t _pad1881[0x3]; // 0x1881
+            float damage; // 0x1884            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Tidehunter_Ravage because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Tidehunter_Ravage) == 0x1808);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Tidehunter_Ravage) == 0x1888);
     };
 };

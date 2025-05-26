@@ -24,7 +24,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x658
+        // Size: 0x728
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -34,15 +34,15 @@ namespace source2sdk
         public:
             // m_hWarrior has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hWarrior;
-            char m_hWarrior[0x4]; // 0x650            
+            char m_hWarrior[0x4]; // 0x720            
             // m_hArcher has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hArcher;
-            char m_hArcher[0x4]; // 0x654            
+            char m_hArcher[0x4]; // 0x724            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Item_Necronomicon because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Item_Necronomicon) == 0x658);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Item_Necronomicon) == 0x728);
     };
 };

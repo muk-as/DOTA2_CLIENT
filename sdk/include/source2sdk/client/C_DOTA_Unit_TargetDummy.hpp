@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x1b78
+        // Size: 0x1da8
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -32,18 +32,18 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            float m_flDamageTaken; // 0x1b68            
+            float m_flDamageTaken; // 0x1d98            
             // metadata: MNetworkEnable
-            float m_flLastHit; // 0x1b6c            
+            float m_flLastHit; // 0x1d9c            
             // metadata: MNetworkEnable
-            source2sdk::entity2::GameTime_t m_flStartDamageTime; // 0x1b70            
+            source2sdk::entity2::GameTime_t m_flStartDamageTime; // 0x1da0            
             // metadata: MNetworkEnable
-            source2sdk::entity2::GameTime_t m_flLastTargetDummyDamageTime; // 0x1b74            
+            source2sdk::entity2::GameTime_t m_flLastTargetDummyDamageTime; // 0x1da4            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Unit_TargetDummy because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Unit_TargetDummy) == 0x1b78);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Unit_TargetDummy) == 0x1da8);
     };
 };

@@ -25,7 +25,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0xc98
+        // Size: 0xe60
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -33,25 +33,25 @@ namespace source2sdk
         class C_PlayerCosmeticPropClientside : public source2sdk::client::C_DynamicPropClientside
         {
         public:
-            std::int32_t m_iPlayerNum; // 0xab8            
-            std::int32_t m_iCosmeticType; // 0xabc            
-            char m_szProxyTextureName[260]; // 0xac0            
-            uint8_t _pad0bc4[0x4]; // 0xbc4
+            std::int32_t m_iPlayerNum; // 0xc80            
+            std::int32_t m_iCosmeticType; // 0xc84            
+            char m_szProxyTextureName[260]; // 0xc88            
+            uint8_t _pad0d8c[0x4]; // 0xd8c
             // m_hProxyTexture has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CStrongHandle<source2sdk::resourcesystem::InfoForResourceTypeCTextureBase> m_hProxyTexture;
-            char m_hProxyTexture[0x8]; // 0xbc8            
-            uint8_t _pad0bd0[0xa0]; // 0xbd0
-            bool m_bGeneratedShowcaseProps; // 0xc70            
-            uint8_t _pad0c71[0x7]; // 0xc71
+            char m_hProxyTexture[0x8]; // 0xd90            
+            uint8_t _pad0d98[0xa0]; // 0xd98
+            bool m_bGeneratedShowcaseProps; // 0xe38            
+            uint8_t _pad0e39[0x7]; // 0xe39
             // m_vecShowcaseProps has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::client::C_PlayerCosmeticPropClientside*> m_vecShowcaseProps;
-            char m_vecShowcaseProps[0x18]; // 0xc78            
-            source2sdk::client::C_EconItemView* m_pShowcaseItem; // 0xc90            
+            char m_vecShowcaseProps[0x18]; // 0xe40            
+            source2sdk::client::C_EconItemView* m_pShowcaseItem; // 0xe58            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_PlayerCosmeticPropClientside because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_PlayerCosmeticPropClientside) == 0xc98);
+        static_assert(sizeof(source2sdk::client::C_PlayerCosmeticPropClientside) == 0xe60);
     };
 };

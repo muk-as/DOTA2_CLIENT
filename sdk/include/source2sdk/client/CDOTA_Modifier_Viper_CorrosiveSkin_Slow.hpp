@@ -17,25 +17,25 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1818
+        // Size: 0x1898
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Viper_CorrosiveSkin_Slow : public source2sdk::client::CDOTA_Buff
         {
         public:
-            std::int32_t bonus_attack_speed; // 0x17f8            
-            float damage; // 0x17fc            
-            float effect_multiplier_distance; // 0x1800            
-            float effect_multiplier; // 0x1804            
-            std::int32_t bonus_status_resistance; // 0x1808            
-            std::int32_t nethertoxin_bonus_pct; // 0x180c            
-            bool m_bEffectMultiplied; // 0x1810            
-            uint8_t _pad1811[0x7];
+            std::int32_t bonus_attack_speed; // 0x1878            
+            float damage; // 0x187c            
+            float effect_multiplier_distance; // 0x1880            
+            float effect_multiplier; // 0x1884            
+            std::int32_t bonus_status_resistance; // 0x1888            
+            std::int32_t nethertoxin_bonus_pct; // 0x188c            
+            bool m_bEffectMultiplied; // 0x1890            
+            uint8_t _pad1891[0x7];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Viper_CorrosiveSkin_Slow because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Viper_CorrosiveSkin_Slow) == 0x1818);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Viper_CorrosiveSkin_Slow) == 0x1898);
     };
 };

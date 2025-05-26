@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0xa90
+        // Size: 0xad8
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -29,32 +29,32 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            bool m_bRespawnClientEntity; // 0xa70            
+            bool m_bRespawnClientEntity; // 0xab8            
             // metadata: MNetworkEnable
-            bool m_bPlaySpawnAnimation; // 0xa71            
+            bool m_bPlaySpawnAnimation; // 0xab9            
             // metadata: MNetworkEnable
-            std::uint8_t m_unGuildTier; // 0xa72            
+            std::uint8_t m_unGuildTier; // 0xaba            
             // metadata: MNetworkEnable
-            std::uint8_t m_unPrimaryColor; // 0xa73            
+            std::uint8_t m_unPrimaryColor; // 0xabb            
             // metadata: MNetworkEnable
-            std::uint8_t m_unSecondaryColor; // 0xa74            
+            std::uint8_t m_unSecondaryColor; // 0xabc            
             // metadata: MNetworkEnable
-            std::uint8_t m_unPattern; // 0xa75            
-            uint8_t _pad0a76[0x2]; // 0xa76
+            std::uint8_t m_unPattern; // 0xabd            
+            uint8_t _pad0abe[0x2]; // 0xabe
             // metadata: MNetworkEnable
-            std::uint64_t m_unLogo; // 0xa78            
+            std::uint64_t m_unLogo; // 0xac0            
             // metadata: MNetworkEnable
-            source2sdk::client::GuildID_t m_unGuildID; // 0xa80            
+            source2sdk::client::GuildID_t m_unGuildID; // 0xac8            
             // metadata: MNetworkEnable
-            std::uint32_t m_unGuildFlags; // 0xa84            
+            std::uint32_t m_unGuildFlags; // 0xacc            
             // metadata: MNetworkEnable
-            bool m_bUsePanelCache; // 0xa88            
-            uint8_t _pad0a89[0x7];
+            bool m_bUsePanelCache; // 0xad0            
+            uint8_t _pad0ad1[0x7];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_GuildBannerDynamic because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_GuildBannerDynamic) == 0xa90);
+        static_assert(sizeof(source2sdk::server::CDOTA_GuildBannerDynamic) == 0xad8);
     };
 };

@@ -17,23 +17,23 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1818
+        // Size: 0x1898
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Huskar_Inner_Fire_Knockback : public source2sdk::client::CDOTA_Buff
         {
         public:
-            Vector m_vDirection; // 0x17f8            
-            float m_flEndTime; // 0x1804            
-            float m_flCurTime; // 0x1808            
-            float knockback_distance; // 0x180c            
-            float knockback_duration; // 0x1810            
-            float effective_distance; // 0x1814            
+            Vector m_vDirection; // 0x1878            
+            float m_flEndTime; // 0x1884            
+            float m_flCurTime; // 0x1888            
+            float knockback_distance; // 0x188c            
+            float knockback_duration; // 0x1890            
+            float effective_distance; // 0x1894            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Huskar_Inner_Fire_Knockback because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Huskar_Inner_Fire_Knockback) == 0x1818);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Huskar_Inner_Fire_Knockback) == 0x1898);
     };
 };

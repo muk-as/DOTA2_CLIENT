@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x558
+        // Size: 0x628
         // Has VTable
         // Construct allowed
         // 
@@ -30,20 +30,20 @@ namespace source2sdk
         class CInfoWorldLayer : public source2sdk::client::C_BaseEntity
         {
         public:
-            source2sdk::entity2::CEntityIOOutput m_pOutputOnEntitiesSpawned; // 0x510            
+            source2sdk::entity2::CEntityIOOutput m_pOutputOnEntitiesSpawned; // 0x5e0            
             // metadata: MNetworkEnable
-            CUtlSymbolLarge m_worldName; // 0x538            
+            CUtlSymbolLarge m_worldName; // 0x608            
             // metadata: MNetworkEnable
-            CUtlSymbolLarge m_layerName; // 0x540            
+            CUtlSymbolLarge m_layerName; // 0x610            
             // metadata: MNetworkEnable
-            bool m_bWorldLayerVisible; // 0x548            
+            bool m_bWorldLayerVisible; // 0x618            
             // metadata: MNetworkEnable
-            bool m_bEntitiesSpawned; // 0x549            
-            bool m_bCreateAsChildSpawnGroup; // 0x54a            
-            uint8_t _pad054b[0x1]; // 0x54b
-            std::uint32_t m_hLayerSpawnGroup; // 0x54c            
-            bool m_bWorldLayerActuallyVisible; // 0x550            
-            uint8_t _pad0551[0x7];
+            bool m_bEntitiesSpawned; // 0x619            
+            bool m_bCreateAsChildSpawnGroup; // 0x61a            
+            uint8_t _pad061b[0x1]; // 0x61b
+            std::uint32_t m_hLayerSpawnGroup; // 0x61c            
+            bool m_bWorldLayerActuallyVisible; // 0x620            
+            uint8_t _pad0621[0x7];
             
             // Datamap fields:
             // void ShowWorldLayer; // 0x0
@@ -57,6 +57,6 @@ namespace source2sdk
         
         // Cannot assert offsets of fields in CInfoWorldLayer because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CInfoWorldLayer) == 0x558);
+        static_assert(sizeof(source2sdk::client::CInfoWorldLayer) == 0x628);
     };
 };

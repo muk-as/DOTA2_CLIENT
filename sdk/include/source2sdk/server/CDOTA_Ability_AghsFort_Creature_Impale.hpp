@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x5d0
+        // Size: 0x5d8
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -26,17 +26,17 @@ namespace source2sdk
         class CDOTA_Ability_AghsFort_Creature_Impale : public source2sdk::server::CDOTABaseAbility
         {
         public:
-            source2sdk::client::ParticleIndex_t m_nPreviewFX; // 0x5b8            
-            std::int32_t width; // 0x5bc            
-            float duration; // 0x5c0            
-            std::int32_t length; // 0x5c4            
-            std::int32_t speed; // 0x5c8            
-            uint8_t _pad05cc[0x4];
+            source2sdk::client::ParticleIndex_t m_nPreviewFX; // 0x5c0            
+            std::int32_t width; // 0x5c4            
+            float duration; // 0x5c8            
+            std::int32_t length; // 0x5cc            
+            std::int32_t speed; // 0x5d0            
+            uint8_t _pad05d4[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_AghsFort_Creature_Impale because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Ability_AghsFort_Creature_Impale) == 0x5d0);
+        static_assert(sizeof(source2sdk::server::CDOTA_Ability_AghsFort_Creature_Impale) == 0x5d8);
     };
 };

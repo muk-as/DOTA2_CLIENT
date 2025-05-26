@@ -45,7 +45,6 @@ namespace source2sdk
         // static metadata: MNetworkVarNames "float32 locallightscale"
         // static metadata: MNetworkVarNames "bool enable"
         // static metadata: MNetworkVarNames "bool blend"
-        // static metadata: MNetworkVarNames "bool m_bNoReflectionFog"
         #pragma pack(push, 1)
         struct fogparams_t
         {
@@ -111,8 +110,7 @@ namespace source2sdk
             bool enable; // 0x64            
             // metadata: MNetworkEnable
             bool blend; // 0x65            
-            // metadata: MNetworkEnable
-            bool m_bNoReflectionFog; // 0x66            
+            bool m_bPadding2; // 0x66            
             bool m_bPadding; // 0x67            
         };
         #pragma pack(pop)
@@ -140,7 +138,7 @@ namespace source2sdk
         static_assert(offsetof(source2sdk::server::fogparams_t, locallightscale) == 0x60);
         static_assert(offsetof(source2sdk::server::fogparams_t, enable) == 0x64);
         static_assert(offsetof(source2sdk::server::fogparams_t, blend) == 0x65);
-        static_assert(offsetof(source2sdk::server::fogparams_t, m_bNoReflectionFog) == 0x66);
+        static_assert(offsetof(source2sdk::server::fogparams_t, m_bPadding2) == 0x66);
         static_assert(offsetof(source2sdk::server::fogparams_t, m_bPadding) == 0x67);
         
         static_assert(sizeof(source2sdk::server::fogparams_t) == 0x68);

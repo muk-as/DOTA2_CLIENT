@@ -27,7 +27,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x1890
+        // Size: 0x18c8
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -40,27 +40,27 @@ namespace source2sdk
         class CDOTA_Unit_Scout : public source2sdk::server::CDOTA_BaseNPC_Additive
         {
         public:
-            bool m_bUnitRespawned; // 0x1860            
-            uint8_t _pad1861[0x3]; // 0x1861
+            bool m_bUnitRespawned; // 0x1898            
+            uint8_t _pad1899[0x3]; // 0x1899
             // metadata: MNetworkEnable
-            source2sdk::client::PlayerID_t m_nSoleControllingPlayer; // 0x1864            
+            source2sdk::client::PlayerID_t m_nSoleControllingPlayer; // 0x189c            
             // metadata: MNetworkEnable
-            source2sdk::entity2::GameTime_t m_flRespawnTime; // 0x1868            
+            source2sdk::entity2::GameTime_t m_flRespawnTime; // 0x18a0            
             // metadata: MNetworkEnable
-            source2sdk::client::ScoutState_t m_nScoutState; // 0x186c            
+            source2sdk::client::ScoutState_t m_nScoutState; // 0x18a4            
             // metadata: MNetworkEnable
             // m_hScoutStateEntity has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hScoutStateEntity;
-            char m_hScoutStateEntity[0x4]; // 0x1870            
-            uint8_t _pad1874[0x4]; // 0x1874
-            CUtlString m_strScoutModel; // 0x1878            
-            Vector m_vSpawnLocation; // 0x1880            
-            uint8_t _pad188c[0x4];
+            char m_hScoutStateEntity[0x4]; // 0x18a8            
+            uint8_t _pad18ac[0x4]; // 0x18ac
+            CUtlString m_strScoutModel; // 0x18b0            
+            Vector m_vSpawnLocation; // 0x18b8            
+            uint8_t _pad18c4[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Unit_Scout because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Unit_Scout) == 0x1890);
+        static_assert(sizeof(source2sdk::server::CDOTA_Unit_Scout) == 0x18c8);
     };
 };

@@ -24,24 +24,23 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1808
+        // Size: 0x1888
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Shadow_Demon_Disruption : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float m_flHealth; // 0x17f8            
-            float m_flDisseminate_Duration; // 0x17fc            
+            float m_flHealth; // 0x1878            
+            float m_flDisseminate_Duration; // 0x187c            
             // m_hDisseminateAbility has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hDisseminateAbility;
-            char m_hDisseminateAbility[0x4]; // 0x1800            
-            bool m_bCanCast; // 0x1804            
-            uint8_t _pad1805[0x3];
+            char m_hDisseminateAbility[0x4]; // 0x1880            
+            uint8_t _pad1884[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Shadow_Demon_Disruption because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Shadow_Demon_Disruption) == 0x1808);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Shadow_Demon_Disruption) == 0x1888);
     };
 };

@@ -26,7 +26,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x650
+        // Size: 0x720
         // Has VTable
         // Is Abstract
         // MClassHasEntityLimitedDataDesc
@@ -82,133 +82,133 @@ namespace source2sdk
         class C_DOTA_Item : public source2sdk::client::C_DOTABaseAbility
         {
         public:
-            std::int32_t m_CastAnimation; // 0x5b0            
+            std::int32_t m_CastAnimation; // 0x680            
             // metadata: MNetworkEnable
-            bool m_bCombinable; // 0x5b4            
-            // metadata: MNetworkEnable
-            // metadata: MNetworkPriority "32"
-            bool m_bPermanent; // 0x5b5            
+            bool m_bCombinable; // 0x684            
             // metadata: MNetworkEnable
             // metadata: MNetworkPriority "32"
-            bool m_bStackable; // 0x5b6            
-            uint8_t _pad05b7[0x1]; // 0x5b7
+            bool m_bPermanent; // 0x685            
             // metadata: MNetworkEnable
             // metadata: MNetworkPriority "32"
-            std::int32_t m_iStackableMax; // 0x5b8            
-            // metadata: MNetworkEnable
-            bool m_bRecipe; // 0x5bc            
-            // metadata: MNetworkEnable
-            bool m_bRecipeConsumesCharges; // 0x5bd            
-            uint8_t _pad05be[0x2]; // 0x5be
+            bool m_bStackable; // 0x686            
+            uint8_t _pad0687[0x1]; // 0x687
             // metadata: MNetworkEnable
             // metadata: MNetworkPriority "32"
-            std::int32_t m_iSharability; // 0x5c0            
+            std::int32_t m_iStackableMax; // 0x688            
             // metadata: MNetworkEnable
-            bool m_bDroppable; // 0x5c4            
+            bool m_bRecipe; // 0x68c            
             // metadata: MNetworkEnable
-            bool m_bPurchasable; // 0x5c5            
-            // metadata: MNetworkEnable
-            bool m_bSellable; // 0x5c6            
-            // metadata: MNetworkEnable
-            bool m_bInitiallySellable; // 0x5c7            
-            // metadata: MNetworkEnable
-            bool m_bForceUnsellable; // 0x5c8            
-            // metadata: MNetworkEnable
-            bool m_bRequiresCharges; // 0x5c9            
-            bool m_bDisplayCharges; // 0x5ca            
-            bool m_bHideCharges; // 0x5cb            
-            // metadata: MNetworkEnable
-            bool m_bKillable; // 0x5cc            
-            // metadata: MNetworkEnable
-            bool m_bGloballyCombinable; // 0x5cd            
-            // metadata: MNetworkEnable
-            bool m_bDisassemblable; // 0x5ce            
-            // metadata: MNetworkEnable
-            bool m_bNeverDisassemble; // 0x5cf            
-            // metadata: MNetworkEnable
-            bool m_bIsNeutralActiveDrop; // 0x5d0            
-            // metadata: MNetworkEnable
-            bool m_bIsNeutralPassiveDrop; // 0x5d1            
-            uint8_t _pad05d2[0x2]; // 0x5d2
-            // metadata: MNetworkEnable
-            std::int32_t m_nNeutralDropTeam; // 0x5d4            
-            // metadata: MNetworkEnable
-            bool m_bAlertable; // 0x5d8            
-            uint8_t _pad05d9[0x3]; // 0x5d9
+            bool m_bRecipeConsumesCharges; // 0x68d            
+            uint8_t _pad068e[0x2]; // 0x68e
             // metadata: MNetworkEnable
             // metadata: MNetworkPriority "32"
-            std::int32_t m_iInitialCharges; // 0x5dc            
+            std::int32_t m_iSharability; // 0x690            
             // metadata: MNetworkEnable
-            bool m_bCastOnPickup; // 0x5e0            
+            bool m_bDroppable; // 0x694            
             // metadata: MNetworkEnable
-            bool m_bOnlyPlayerHeroPickup; // 0x5e1            
+            bool m_bPurchasable; // 0x695            
             // metadata: MNetworkEnable
-            bool m_bCreepHeroPickup; // 0x5e2            
+            bool m_bSellable; // 0x696            
             // metadata: MNetworkEnable
-            bool m_bCanBeConsumed; // 0x5e3            
+            bool m_bInitiallySellable; // 0x697            
             // metadata: MNetworkEnable
-            std::int32_t m_iValuelessCharges; // 0x5e4            
+            bool m_bForceUnsellable; // 0x698            
             // metadata: MNetworkEnable
-            // metadata: MNetworkPriority "32"
-            std::int32_t m_iCurrentCharges; // 0x5e8            
+            bool m_bRequiresCharges; // 0x699            
+            bool m_bDisplayCharges; // 0x69a            
+            bool m_bHideCharges; // 0x69b            
             // metadata: MNetworkEnable
-            std::int32_t m_iSecondaryCharges; // 0x5ec            
+            bool m_bKillable; // 0x69c            
             // metadata: MNetworkEnable
-            std::int32_t m_iMaxCharges; // 0x5f0            
+            bool m_bGloballyCombinable; // 0x69d            
             // metadata: MNetworkEnable
-            bool m_bCombineLocked; // 0x5f4            
+            bool m_bDisassemblable; // 0x69e            
             // metadata: MNetworkEnable
-            bool m_bMarkForSell; // 0x5f5            
-            uint8_t _pad05f6[0x2]; // 0x5f6
+            bool m_bNeverDisassemble; // 0x69f            
             // metadata: MNetworkEnable
-            // metadata: MNetworkPriority "32"
-            source2sdk::entity2::GameTime_t m_flPurchaseTime; // 0x5f8            
+            bool m_bIsNeutralActiveDrop; // 0x6a0            
             // metadata: MNetworkEnable
-            // metadata: MNetworkPriority "32"
-            source2sdk::entity2::GameTime_t m_flAssembledTime; // 0x5fc            
+            bool m_bIsNeutralPassiveDrop; // 0x6a1            
+            uint8_t _pad06a2[0x2]; // 0x6a2
             // metadata: MNetworkEnable
-            bool m_bPurchasedWhileDead; // 0x600            
+            std::int32_t m_nNeutralDropTeam; // 0x6a4            
             // metadata: MNetworkEnable
-            bool m_bCanBeUsedOutOfInventory; // 0x601            
-            // metadata: MNetworkEnable
-            bool m_bItemEnabled; // 0x602            
-            uint8_t _pad0603[0x1]; // 0x603
+            bool m_bAlertable; // 0x6a8            
+            uint8_t _pad06a9[0x3]; // 0x6a9
             // metadata: MNetworkEnable
             // metadata: MNetworkPriority "32"
-            source2sdk::entity2::GameTime_t m_flEnableTime; // 0x604            
+            std::int32_t m_iInitialCharges; // 0x6ac            
             // metadata: MNetworkEnable
-            source2sdk::entity2::GameTime_t m_flReclaimTime; // 0x608            
+            bool m_bCastOnPickup; // 0x6b0            
             // metadata: MNetworkEnable
-            bool m_bDisplayOwnership; // 0x60c            
+            bool m_bOnlyPlayerHeroPickup; // 0x6b1            
             // metadata: MNetworkEnable
-            bool m_bShowOnMinimap; // 0x60d            
-            uint8_t _pad060e[0x2]; // 0x60e
+            bool m_bCreepHeroPickup; // 0x6b2            
             // metadata: MNetworkEnable
-            float m_flMinimapIconSize; // 0x610            
+            bool m_bCanBeConsumed; // 0x6b3            
             // metadata: MNetworkEnable
-            bool m_bIsUpgradeable; // 0x614            
-            uint8_t _pad0615[0x3]; // 0x615
+            std::int32_t m_iValuelessCharges; // 0x6b4            
             // metadata: MNetworkEnable
-            std::int32_t m_nUpgradeProgress; // 0x618            
+            // metadata: MNetworkPriority "32"
+            std::int32_t m_iCurrentCharges; // 0x6b8            
             // metadata: MNetworkEnable
-            std::int32_t m_nUpgradeGoal; // 0x61c            
+            std::int32_t m_iSecondaryCharges; // 0x6bc            
+            // metadata: MNetworkEnable
+            std::int32_t m_iMaxCharges; // 0x6c0            
+            // metadata: MNetworkEnable
+            bool m_bCombineLocked; // 0x6c4            
+            // metadata: MNetworkEnable
+            bool m_bMarkForSell; // 0x6c5            
+            uint8_t _pad06c6[0x2]; // 0x6c6
+            // metadata: MNetworkEnable
+            // metadata: MNetworkPriority "32"
+            source2sdk::entity2::GameTime_t m_flPurchaseTime; // 0x6c8            
+            // metadata: MNetworkEnable
+            // metadata: MNetworkPriority "32"
+            source2sdk::entity2::GameTime_t m_flAssembledTime; // 0x6cc            
+            // metadata: MNetworkEnable
+            bool m_bPurchasedWhileDead; // 0x6d0            
+            // metadata: MNetworkEnable
+            bool m_bCanBeUsedOutOfInventory; // 0x6d1            
+            // metadata: MNetworkEnable
+            bool m_bItemEnabled; // 0x6d2            
+            uint8_t _pad06d3[0x1]; // 0x6d3
+            // metadata: MNetworkEnable
+            // metadata: MNetworkPriority "32"
+            source2sdk::entity2::GameTime_t m_flEnableTime; // 0x6d4            
+            // metadata: MNetworkEnable
+            source2sdk::entity2::GameTime_t m_flReclaimTime; // 0x6d8            
+            // metadata: MNetworkEnable
+            bool m_bDisplayOwnership; // 0x6dc            
+            // metadata: MNetworkEnable
+            bool m_bShowOnMinimap; // 0x6dd            
+            uint8_t _pad06de[0x2]; // 0x6de
+            // metadata: MNetworkEnable
+            float m_flMinimapIconSize; // 0x6e0            
+            // metadata: MNetworkEnable
+            bool m_bIsUpgradeable; // 0x6e4            
+            uint8_t _pad06e5[0x3]; // 0x6e5
+            // metadata: MNetworkEnable
+            std::int32_t m_nUpgradeProgress; // 0x6e8            
+            // metadata: MNetworkEnable
+            std::int32_t m_nUpgradeGoal; // 0x6ec            
             // m_hOldOwnerEntity has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hOldOwnerEntity;
-            char m_hOldOwnerEntity[0x4]; // 0x620            
-            std::int32_t m_iOldCharges; // 0x624            
+            char m_hOldOwnerEntity[0x4]; // 0x6f0            
+            std::int32_t m_iOldCharges; // 0x6f4            
             // metadata: MNetworkEnable
-            source2sdk::client::PlayerID_t m_iPlayerOwnerID; // 0x628            
-            uint8_t _pad062c[0x4]; // 0x62c
+            source2sdk::client::PlayerID_t m_iPlayerOwnerID; // 0x6f8            
+            uint8_t _pad06fc[0x4]; // 0x6fc
             // metadata: MNetworkEnable
             // m_vecPreGameTransferPlayerIDs has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // C_NetworkUtlVectorBase<std::uint8_t> m_vecPreGameTransferPlayerIDs;
-            char m_vecPreGameTransferPlayerIDs[0x18]; // 0x630            
-            uint8_t _pad0648[0x8];
+            char m_vecPreGameTransferPlayerIDs[0x18]; // 0x700            
+            uint8_t _pad0718[0x8];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Item because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Item) == 0x650);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Item) == 0x720);
     };
 };

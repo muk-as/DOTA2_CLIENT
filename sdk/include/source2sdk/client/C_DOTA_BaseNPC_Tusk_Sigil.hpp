@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x17e8
+        // Size: 0x1a10
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -25,13 +25,13 @@ namespace source2sdk
         class C_DOTA_BaseNPC_Tusk_Sigil : public source2sdk::client::C_DOTA_BaseNPC_Additive
         {
         public:
-            QAngle m_angInitialAngles; // 0x17d8            
-            uint8_t _pad17e4[0x4];
+            QAngle m_angInitialAngles; // 0x1a00            
+            uint8_t _pad1a0c[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_BaseNPC_Tusk_Sigil because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_BaseNPC_Tusk_Sigil) == 0x17e8);
+        static_assert(sizeof(source2sdk::client::C_DOTA_BaseNPC_Tusk_Sigil) == 0x1a10);
     };
 };

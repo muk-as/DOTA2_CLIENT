@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0xa78
+        // Size: 0xac0
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -28,13 +28,13 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            bool m_bUseAvatar; // 0xa70            
-            uint8_t _pad0a71[0x7];
+            bool m_bUseAvatar; // 0xab8            
+            uint8_t _pad0ab9[0x7];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTAPropConsumableBanner because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTAPropConsumableBanner) == 0xa78);
+        static_assert(sizeof(source2sdk::server::CDOTAPropConsumableBanner) == 0xac0);
     };
 };

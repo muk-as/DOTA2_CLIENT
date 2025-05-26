@@ -24,7 +24,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x600
+        // Size: 0x608
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -32,19 +32,19 @@ namespace source2sdk
         class CDOTA_Ability_Broodmother_StickySnare : public source2sdk::server::CDOTABaseAbility
         {
         public:
-            Vector m_vEndpoint; // 0x5b8            
-            float duration; // 0x5c4            
-            float width; // 0x5c8            
-            bool m_bStolenSnareCheck; // 0x5cc            
-            uint8_t _pad05cd[0x1b]; // 0x5cd
+            Vector m_vEndpoint; // 0x5c0            
+            float duration; // 0x5cc            
+            float width; // 0x5d0            
+            bool m_bStolenSnareCheck; // 0x5d4            
+            uint8_t _pad05d5[0x1b]; // 0x5d5
             // m_vecSnares has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CBaseEntity>> m_vecSnares;
-            char m_vecSnares[0x18]; // 0x5e8            
+            char m_vecSnares[0x18]; // 0x5f0            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_Broodmother_StickySnare because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Ability_Broodmother_StickySnare) == 0x600);
+        static_assert(sizeof(source2sdk::server::CDOTA_Ability_Broodmother_StickySnare) == 0x608);
     };
 };

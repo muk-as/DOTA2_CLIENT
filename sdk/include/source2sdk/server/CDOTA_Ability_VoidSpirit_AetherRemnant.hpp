@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x5f8
+        // Size: 0x608
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -25,20 +25,19 @@ namespace source2sdk
         class CDOTA_Ability_VoidSpirit_AetherRemnant : public source2sdk::server::CDOTABaseAbility
         {
         public:
-            float start_radius; // 0x5b8            
-            float end_radius; // 0x5bc            
-            float remnant_watch_distance; // 0x5c0            
-            float projectile_speed; // 0x5c4            
-            uint8_t _pad05c8[0x8]; // 0x5c8
-            Vector m_vDashPosition; // 0x5d0            
-            Vector m_vFacePosition; // 0x5dc            
-            Vector m_vEndpoint; // 0x5e8            
-            uint8_t _pad05f4[0x4];
+            float start_radius; // 0x5c0            
+            float end_radius; // 0x5c4            
+            float remnant_watch_distance; // 0x5c8            
+            float projectile_speed; // 0x5cc            
+            uint8_t _pad05d0[0x14]; // 0x5d0
+            Vector m_vDashPosition; // 0x5e4            
+            Vector m_vFacePosition; // 0x5f0            
+            Vector m_vEndpoint; // 0x5fc            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_VoidSpirit_AetherRemnant because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Ability_VoidSpirit_AetherRemnant) == 0x5f8);
+        static_assert(sizeof(source2sdk::server::CDOTA_Ability_VoidSpirit_AetherRemnant) == 0x608);
     };
 };

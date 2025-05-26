@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x988
+        // Size: 0xb50
         // Has VTable
         // Construct allowed
         // 
@@ -34,13 +34,13 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            bool m_bAwake; // 0x980            
-            uint8_t _pad0981[0x7];
+            bool m_bAwake; // 0xb48            
+            uint8_t _pad0b49[0x7];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_PhysicsProp because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_PhysicsProp) == 0x988);
+        static_assert(sizeof(source2sdk::client::C_PhysicsProp) == 0xb50);
     };
 };

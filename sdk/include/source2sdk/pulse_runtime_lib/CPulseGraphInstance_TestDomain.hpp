@@ -24,6 +24,7 @@ namespace source2sdk
         // static metadata: MPulseDomainHookInfo
         // static metadata: MPulseLibraryBindings
         // static metadata: MPulseDomainOptInFeatureTag
+        // static metadata: MPulseDomainOptInVariableKeysSource
         #pragma pack(push, 1)
         class CPulseGraphInstance_TestDomain : public source2sdk::pulse_runtime_lib::CBasePulseGraphInstance
         {

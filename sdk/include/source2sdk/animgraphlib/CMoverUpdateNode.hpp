@@ -20,7 +20,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0xa8
+        // Size: 0xb0
         // Has VTable
         // Construct allowed
         // 
@@ -31,24 +31,24 @@ namespace source2sdk
         public:
             uint8_t _pad0070[0x8]; // 0x70
             source2sdk::animgraphlib::CAnimInputDamping m_damping; // 0x78            
-            source2sdk::animgraphlib::AnimValueSource m_facingTarget; // 0x88            
-            source2sdk::animgraphlib::CAnimParamHandle m_hMoveVecParam; // 0x8c            
-            source2sdk::animgraphlib::CAnimParamHandle m_hMoveHeadingParam; // 0x8e            
-            source2sdk::animgraphlib::CAnimParamHandle m_hTurnToFaceParam; // 0x90            
-            uint8_t _pad0092[0x2]; // 0x92
-            float m_flTurnToFaceOffset; // 0x94            
-            float m_flTurnToFaceLimit; // 0x98            
-            bool m_bAdditive; // 0x9c            
-            bool m_bApplyMovement; // 0x9d            
-            bool m_bOrientMovement; // 0x9e            
-            bool m_bApplyRotation; // 0x9f            
-            bool m_bLimitOnly; // 0xa0            
-            uint8_t _pad00a1[0x7];
+            source2sdk::animgraphlib::AnimValueSource m_facingTarget; // 0x90            
+            source2sdk::animgraphlib::CAnimParamHandle m_hMoveVecParam; // 0x94            
+            source2sdk::animgraphlib::CAnimParamHandle m_hMoveHeadingParam; // 0x96            
+            source2sdk::animgraphlib::CAnimParamHandle m_hTurnToFaceParam; // 0x98            
+            uint8_t _pad009a[0x2]; // 0x9a
+            float m_flTurnToFaceOffset; // 0x9c            
+            float m_flTurnToFaceLimit; // 0xa0            
+            bool m_bAdditive; // 0xa4            
+            bool m_bApplyMovement; // 0xa5            
+            bool m_bOrientMovement; // 0xa6            
+            bool m_bApplyRotation; // 0xa7            
+            bool m_bLimitOnly; // 0xa8            
+            uint8_t _pad00a9[0x7];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CMoverUpdateNode because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::animgraphlib::CMoverUpdateNode) == 0xa8);
+        static_assert(sizeof(source2sdk::animgraphlib::CMoverUpdateNode) == 0xb0);
     };
 };

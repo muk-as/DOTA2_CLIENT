@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x5c8
+        // Size: 0x698
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -25,15 +25,15 @@ namespace source2sdk
         class C_DOTA_Ability_Clinkz_BurningBarrage : public source2sdk::client::C_DOTABaseAbility
         {
         public:
-            Vector m_vStartPos; // 0x5b0            
-            std::int32_t m_iArrowProjectile; // 0x5bc            
-            std::int32_t m_nFXIndex; // 0x5c0            
-            float arrow_speed; // 0x5c4            
+            Vector m_vStartPos; // 0x680            
+            std::int32_t m_iArrowProjectile; // 0x68c            
+            std::int32_t m_nFXIndex; // 0x690            
+            float arrow_speed; // 0x694            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Ability_Clinkz_BurningBarrage because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Clinkz_BurningBarrage) == 0x5c8);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Clinkz_BurningBarrage) == 0x698);
     };
 };

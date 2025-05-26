@@ -4,6 +4,7 @@
 #include <cstddef>
 #include <cstdint>
 #include "source2sdk/animlib/CNmPassthroughNode_CDefinition.hpp"
+#include "source2sdk/animlib/NmIKBlendMode_t.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: animlib
@@ -17,7 +18,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x28
+        // Size: 0x30
         // Has VTable
         // Construct allowed
         // 
@@ -29,13 +30,15 @@ namespace source2sdk
             CGlobalSymbol m_effectorBoneID; // 0x18            
             std::int16_t m_nEffectorTargetNodeIdx; // 0x20            
             std::int16_t m_nEnabledNodeIdx; // 0x22            
-            bool m_bIsTargetInWorldSpace; // 0x24            
-            uint8_t _pad0025[0x3];
+            float m_flBlendTimeSeconds; // 0x24            
+            source2sdk::animlib::NmIKBlendMode_t m_blendMode; // 0x28            
+            bool m_bIsTargetInWorldSpace; // 0x29            
+            uint8_t _pad002a[0x6];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CNmTwoBoneIKNode::CDefinition because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::animlib::CNmTwoBoneIKNode_CDefinition) == 0x28);
+        static_assert(sizeof(source2sdk::animlib::CNmTwoBoneIKNode_CDefinition) == 0x30);
     };
 };

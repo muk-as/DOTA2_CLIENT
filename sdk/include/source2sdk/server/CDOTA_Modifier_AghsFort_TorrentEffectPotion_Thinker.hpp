@@ -17,25 +17,25 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1818
+        // Size: 0x1898
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_AghsFort_TorrentEffectPotion_Thinker : public source2sdk::server::CDOTA_Buff_Item
         {
         public:
-            float m_fProcChance; // 0x17f8            
-            std::int32_t m_nRadius; // 0x17fc            
-            std::int32_t m_nMovespeedBonus; // 0x1800            
-            float m_fStunDuration; // 0x1804            
-            float m_fSlowDuration; // 0x1808            
-            float m_fDelay; // 0x180c            
-            std::int32_t m_nTorrentDamage; // 0x1810            
-            uint8_t _pad1814[0x4];
+            float m_fProcChance; // 0x1878            
+            std::int32_t m_nRadius; // 0x187c            
+            std::int32_t m_nMovespeedBonus; // 0x1880            
+            float m_fStunDuration; // 0x1884            
+            float m_fSlowDuration; // 0x1888            
+            float m_fDelay; // 0x188c            
+            std::int32_t m_nTorrentDamage; // 0x1890            
+            uint8_t _pad1894[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_AghsFort_TorrentEffectPotion_Thinker because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_AghsFort_TorrentEffectPotion_Thinker) == 0x1818);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_AghsFort_TorrentEffectPotion_Thinker) == 0x1898);
     };
 };

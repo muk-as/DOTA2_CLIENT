@@ -23,7 +23,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0xb8
+        // Size: 0xc0
         // Has VTable
         // Construct allowed
         // 
@@ -43,18 +43,18 @@ namespace source2sdk
             source2sdk::animgraphlib::CAnimParamHandle m_hTargetOffsetParam; // 0x88            
             uint8_t _pad008a[0x6]; // 0x8a
             source2sdk::animgraphlib::CAnimInputDamping m_damping; // 0x90            
-            source2sdk::animgraphlib::OrientationWarpRootMotionSource_t m_eRootMotionSource; // 0xa0            
-            float m_flMaxRootMotionScale; // 0xa4            
-            bool m_bEnablePreferredRotationDirection; // 0xa8            
-            uint8_t _pad00a9[0x3]; // 0xa9
-            source2sdk::animgraphlib::AnimValueSource m_ePreferredRotationDirection; // 0xac            
-            float m_flPreferredRotationThreshold; // 0xb0            
-            uint8_t _pad00b4[0x4];
+            source2sdk::animgraphlib::OrientationWarpRootMotionSource_t m_eRootMotionSource; // 0xa8            
+            float m_flMaxRootMotionScale; // 0xac            
+            bool m_bEnablePreferredRotationDirection; // 0xb0            
+            uint8_t _pad00b1[0x3]; // 0xb1
+            source2sdk::animgraphlib::AnimValueSource m_ePreferredRotationDirection; // 0xb4            
+            float m_flPreferredRotationThreshold; // 0xb8            
+            uint8_t _pad00bc[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in COrientationWarpUpdateNode because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::animgraphlib::COrientationWarpUpdateNode) == 0xb8);
+        static_assert(sizeof(source2sdk::animgraphlib::COrientationWarpUpdateNode) == 0xc0);
     };
 };

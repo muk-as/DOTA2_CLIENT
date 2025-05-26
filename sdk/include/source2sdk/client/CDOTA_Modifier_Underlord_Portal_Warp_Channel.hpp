@@ -18,25 +18,25 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1818
+        // Size: 0x1898
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Underlord_Portal_Warp_Channel : public source2sdk::client::CDOTA_Buff
         {
         public:
-            source2sdk::client::ParticleIndex_t m_nfxTargetTp; // 0x17f8            
-            source2sdk::client::ParticleIndex_t m_nfxTargetTp2; // 0x17fc            
-            source2sdk::client::ParticleIndex_t m_nfxAmbientFx; // 0x1800            
-            source2sdk::client::ParticleIndex_t m_nfxPortal1; // 0x1804            
-            source2sdk::client::ParticleIndex_t m_nfxPortal2; // 0x1808            
-            float animation_rate; // 0x180c            
-            std::int32_t stop_distance; // 0x1810            
-            uint8_t _pad1814[0x4];
+            source2sdk::client::ParticleIndex_t m_nfxTargetTp; // 0x1878            
+            source2sdk::client::ParticleIndex_t m_nfxTargetTp2; // 0x187c            
+            source2sdk::client::ParticleIndex_t m_nfxAmbientFx; // 0x1880            
+            source2sdk::client::ParticleIndex_t m_nfxPortal1; // 0x1884            
+            source2sdk::client::ParticleIndex_t m_nfxPortal2; // 0x1888            
+            float animation_rate; // 0x188c            
+            std::int32_t stop_distance; // 0x1890            
+            uint8_t _pad1894[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Underlord_Portal_Warp_Channel because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Underlord_Portal_Warp_Channel) == 0x1818);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Underlord_Portal_Warp_Channel) == 0x1898);
     };
 };

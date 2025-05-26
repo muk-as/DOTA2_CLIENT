@@ -17,16 +17,16 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x4e8
+        // Size: 0x4f0
         // Has VTable
         // Construct allowed
         #pragma pack(push, 1)
         class CPhysImpact : public source2sdk::server::CPointEntity
         {
         public:
-            float m_damage; // 0x4d8            
-            float m_distance; // 0x4dc            
-            CUtlSymbolLarge m_directionEntityName; // 0x4e0            
+            float m_damage; // 0x4e0            
+            float m_distance; // 0x4e4            
+            CUtlSymbolLarge m_directionEntityName; // 0x4e8            
             
             // Datamap fields:
             // void CPhysImpactPointAtEntity; // 0x0
@@ -36,6 +36,6 @@ namespace source2sdk
         
         // Cannot assert offsets of fields in CPhysImpact because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CPhysImpact) == 0x4e8);
+        static_assert(sizeof(source2sdk::server::CPhysImpact) == 0x4f0);
     };
 };

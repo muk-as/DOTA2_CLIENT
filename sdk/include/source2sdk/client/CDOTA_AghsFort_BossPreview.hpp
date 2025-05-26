@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x530
+        // Size: 0x600
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -25,17 +25,17 @@ namespace source2sdk
         class CDOTA_AghsFort_BossPreview : public source2sdk::client::C_BaseEntity
         {
         public:
-            CUtlSymbolLarge m_strBossUnit; // 0x510            
-            CUtlSymbolLarge m_strModelName; // 0x518            
-            float m_flBossModelScale; // 0x520            
-            float m_flExtraModelScale; // 0x524            
-            std::int32_t m_nEncounterType; // 0x528            
-            uint8_t _pad052c[0x4];
+            CUtlSymbolLarge m_strBossUnit; // 0x5e0            
+            CUtlSymbolLarge m_strModelName; // 0x5e8            
+            float m_flBossModelScale; // 0x5f0            
+            float m_flExtraModelScale; // 0x5f4            
+            std::int32_t m_nEncounterType; // 0x5f8            
+            uint8_t _pad05fc[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_AghsFort_BossPreview because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_AghsFort_BossPreview) == 0x530);
+        static_assert(sizeof(source2sdk::client::CDOTA_AghsFort_BossPreview) == 0x600);
     };
 };

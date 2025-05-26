@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x7c0
+        // Size: 0x7e0
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -30,11 +30,11 @@ namespace source2sdk
         class CDOTA_Item_DeathGoldDropped : public source2sdk::server::CBaseAnimatingActivity
         {
         public:
-            uint8_t _pad07b8[0x8];
+            uint8_t _pad07d8[0x8];
         };
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Item_DeathGoldDropped) == 0x7c0);
+        static_assert(sizeof(source2sdk::server::CDOTA_Item_DeathGoldDropped) == 0x7e0);
     };
 };

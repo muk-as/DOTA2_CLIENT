@@ -16,8 +16,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: 0x1
         // Standard-layout class: true
-        // Size: 0x1
-        // Has Trivial Constructor
+        // Size: 0x8
         // Has Trivial Destructor
         // 
         // static metadata: MPulseLibraryBindings
@@ -26,10 +25,11 @@ namespace source2sdk
         class FakeEntity_tAPI
         {
         public:
+            uint8_t _pad0000[0x8];
         };
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::pulse_runtime_lib::FakeEntity_tAPI) == 0x1);
+        static_assert(sizeof(source2sdk::pulse_runtime_lib::FakeEntity_tAPI) == 0x8);
     };
 };

@@ -25,31 +25,31 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1858
+        // Size: 0x18d8
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_FacelessVoid_TimeLock : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float duration; // 0x17f8            
-            float duration_creep; // 0x17fc            
-            float delay; // 0x1800            
-            std::int32_t chance_pct; // 0x1804            
-            std::int32_t bonus_damage; // 0x1808            
-            source2sdk::entity2::GameTime_t last_attack_time; // 0x180c            
+            float duration; // 0x1878            
+            float duration_creep; // 0x187c            
+            float delay; // 0x1880            
+            std::int32_t chance_pct; // 0x1884            
+            std::int32_t bonus_damage; // 0x1888            
+            source2sdk::entity2::GameTime_t last_attack_time; // 0x188c            
             // m_ProcAttackRecords has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<std::int16_t> m_ProcAttackRecords;
-            char m_ProcAttackRecords[0x18]; // 0x1810            
-            source2sdk::entity2::GameTime_t apply_activity_modifier_until; // 0x1828            
-            source2sdk::entity2::GameTime_t disable_activity_modifier_until; // 0x182c            
+            char m_ProcAttackRecords[0x18]; // 0x1890            
+            source2sdk::entity2::GameTime_t apply_activity_modifier_until; // 0x18a8            
+            source2sdk::entity2::GameTime_t disable_activity_modifier_until; // 0x18ac            
             // m_mapTargets has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlOrderedMap<CHandle<source2sdk::client::C_DOTA_BaseNPC>,std::int32_t> m_mapTargets;
-            char m_mapTargets[0x28]; // 0x1830            
+            char m_mapTargets[0x28]; // 0x18b0            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_FacelessVoid_TimeLock because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_FacelessVoid_TimeLock) == 0x1858);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_FacelessVoid_TimeLock) == 0x18d8);
     };
 };

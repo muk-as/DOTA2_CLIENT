@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x5d0
+        // Size: 0x6a8
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -26,15 +26,15 @@ namespace source2sdk
         class C_DOTA_Ability_Rattletrap_Hookshot : public source2sdk::client::C_DOTABaseAbility
         {
         public:
-            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x5b0            
-            Vector m_vProjectileVelocity; // 0x5b4            
-            bool m_bRetract; // 0x5c0            
-            uint8_t _pad05c1[0xf];
+            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x680            
+            Vector m_vProjectileVelocity; // 0x684            
+            bool m_bRetract; // 0x690            
+            uint8_t _pad0691[0x17];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Ability_Rattletrap_Hookshot because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Rattletrap_Hookshot) == 0x5d0);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Rattletrap_Hookshot) == 0x6a8);
     };
 };

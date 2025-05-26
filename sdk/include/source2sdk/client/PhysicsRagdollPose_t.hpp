@@ -43,12 +43,14 @@ namespace source2sdk
             // m_hOwner has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hOwner;
             char m_hOwner[0x4]; // 0x20            
-            uint8_t _pad0024[0x24];
+            bool m_bSetFromDebugHistory; // 0x24            
+            uint8_t _pad0025[0x23];
         };
         #pragma pack(pop)
         
         static_assert(offsetof(source2sdk::client::PhysicsRagdollPose_t, m_Transforms) == 0x8);
         static_assert(offsetof(source2sdk::client::PhysicsRagdollPose_t, m_hOwner) == 0x20);
+        static_assert(offsetof(source2sdk::client::PhysicsRagdollPose_t, m_bSetFromDebugHistory) == 0x24);
         
         static_assert(sizeof(source2sdk::client::PhysicsRagdollPose_t) == 0x48);
     };

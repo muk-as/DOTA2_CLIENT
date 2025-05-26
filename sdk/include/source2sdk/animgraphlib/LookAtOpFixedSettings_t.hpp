@@ -19,7 +19,7 @@ namespace source2sdk
         // Registered alignment: 0x10
         // Alignment: 0x10
         // Standard-layout class: true
-        // Size: 0xc0
+        // Size: 0xd0
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -31,31 +31,31 @@ namespace source2sdk
             source2sdk::animgraphlib::CAnimInputDamping m_damping; // 0x80            
             // m_bones has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::animgraphlib::LookAtBone_t> m_bones;
-            char m_bones[0x18]; // 0x90            
-            float m_flYawLimit; // 0xa8            
-            float m_flPitchLimit; // 0xac            
-            float m_flHysteresisInnerAngle; // 0xb0            
-            float m_flHysteresisOuterAngle; // 0xb4            
-            bool m_bRotateYawForward; // 0xb8            
-            bool m_bMaintainUpDirection; // 0xb9            
-            bool m_bTargetIsPosition; // 0xba            
-            bool m_bUseHysteresis; // 0xbb            
-            uint8_t _pad00bc[0x4];
+            char m_bones[0x18]; // 0x98            
+            float m_flYawLimit; // 0xb0            
+            float m_flPitchLimit; // 0xb4            
+            float m_flHysteresisInnerAngle; // 0xb8            
+            float m_flHysteresisOuterAngle; // 0xbc            
+            bool m_bRotateYawForward; // 0xc0            
+            bool m_bMaintainUpDirection; // 0xc1            
+            bool m_bTargetIsPosition; // 0xc2            
+            bool m_bUseHysteresis; // 0xc3            
+            uint8_t _pad00c4[0xc];
         };
         #pragma pack(pop)
         
         static_assert(offsetof(source2sdk::animgraphlib::LookAtOpFixedSettings_t, m_attachment) == 0x0);
         static_assert(offsetof(source2sdk::animgraphlib::LookAtOpFixedSettings_t, m_damping) == 0x80);
-        static_assert(offsetof(source2sdk::animgraphlib::LookAtOpFixedSettings_t, m_bones) == 0x90);
-        static_assert(offsetof(source2sdk::animgraphlib::LookAtOpFixedSettings_t, m_flYawLimit) == 0xa8);
-        static_assert(offsetof(source2sdk::animgraphlib::LookAtOpFixedSettings_t, m_flPitchLimit) == 0xac);
-        static_assert(offsetof(source2sdk::animgraphlib::LookAtOpFixedSettings_t, m_flHysteresisInnerAngle) == 0xb0);
-        static_assert(offsetof(source2sdk::animgraphlib::LookAtOpFixedSettings_t, m_flHysteresisOuterAngle) == 0xb4);
-        static_assert(offsetof(source2sdk::animgraphlib::LookAtOpFixedSettings_t, m_bRotateYawForward) == 0xb8);
-        static_assert(offsetof(source2sdk::animgraphlib::LookAtOpFixedSettings_t, m_bMaintainUpDirection) == 0xb9);
-        static_assert(offsetof(source2sdk::animgraphlib::LookAtOpFixedSettings_t, m_bTargetIsPosition) == 0xba);
-        static_assert(offsetof(source2sdk::animgraphlib::LookAtOpFixedSettings_t, m_bUseHysteresis) == 0xbb);
+        static_assert(offsetof(source2sdk::animgraphlib::LookAtOpFixedSettings_t, m_bones) == 0x98);
+        static_assert(offsetof(source2sdk::animgraphlib::LookAtOpFixedSettings_t, m_flYawLimit) == 0xb0);
+        static_assert(offsetof(source2sdk::animgraphlib::LookAtOpFixedSettings_t, m_flPitchLimit) == 0xb4);
+        static_assert(offsetof(source2sdk::animgraphlib::LookAtOpFixedSettings_t, m_flHysteresisInnerAngle) == 0xb8);
+        static_assert(offsetof(source2sdk::animgraphlib::LookAtOpFixedSettings_t, m_flHysteresisOuterAngle) == 0xbc);
+        static_assert(offsetof(source2sdk::animgraphlib::LookAtOpFixedSettings_t, m_bRotateYawForward) == 0xc0);
+        static_assert(offsetof(source2sdk::animgraphlib::LookAtOpFixedSettings_t, m_bMaintainUpDirection) == 0xc1);
+        static_assert(offsetof(source2sdk::animgraphlib::LookAtOpFixedSettings_t, m_bTargetIsPosition) == 0xc2);
+        static_assert(offsetof(source2sdk::animgraphlib::LookAtOpFixedSettings_t, m_bUseHysteresis) == 0xc3);
         
-        static_assert(sizeof(source2sdk::animgraphlib::LookAtOpFixedSettings_t) == 0xc0);
+        static_assert(sizeof(source2sdk::animgraphlib::LookAtOpFixedSettings_t) == 0xd0);
     };
 };

@@ -26,7 +26,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x8b0
+        // Size: 0x8d0
         // Has VTable
         // Construct allowed
         // 
@@ -44,59 +44,59 @@ namespace source2sdk
         class CPointCommentaryNode : public source2sdk::server::CBaseAnimatingActivity
         {
         public:
-            CUtlSymbolLarge m_iszPreCommands; // 0x7b8            
-            CUtlSymbolLarge m_iszPostCommands; // 0x7c0            
+            CUtlSymbolLarge m_iszPreCommands; // 0x7d8            
+            CUtlSymbolLarge m_iszPostCommands; // 0x7e0            
             // metadata: MNetworkEnable
-            CUtlSymbolLarge m_iszCommentaryFile; // 0x7c8            
-            CUtlSymbolLarge m_iszViewTarget; // 0x7d0            
+            CUtlSymbolLarge m_iszCommentaryFile; // 0x7e8            
+            CUtlSymbolLarge m_iszViewTarget; // 0x7f0            
             // m_hViewTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hViewTarget;
-            char m_hViewTarget[0x4]; // 0x7d8            
+            char m_hViewTarget[0x4]; // 0x7f8            
             // m_hViewTargetAngles has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hViewTargetAngles;
-            char m_hViewTargetAngles[0x4]; // 0x7dc            
-            CUtlSymbolLarge m_iszViewPosition; // 0x7e0            
+            char m_hViewTargetAngles[0x4]; // 0x7fc            
+            CUtlSymbolLarge m_iszViewPosition; // 0x800            
             // metadata: MNetworkEnable
             // m_hViewPosition has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hViewPosition;
-            char m_hViewPosition[0x4]; // 0x7e8            
+            char m_hViewPosition[0x4]; // 0x808            
             // m_hViewPositionMover has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hViewPositionMover;
-            char m_hViewPositionMover[0x4]; // 0x7ec            
-            bool m_bPreventMovement; // 0x7f0            
-            bool m_bUnderCrosshair; // 0x7f1            
-            bool m_bUnstoppable; // 0x7f2            
-            uint8_t _pad07f3[0x1]; // 0x7f3
-            source2sdk::entity2::GameTime_t m_flFinishedTime; // 0x7f4            
-            Vector m_vecFinishOrigin; // 0x7f8            
-            QAngle m_vecOriginalAngles; // 0x804            
-            QAngle m_vecFinishAngles; // 0x810            
-            bool m_bPreventChangesWhileMoving; // 0x81c            
-            bool m_bDisabled; // 0x81d            
-            uint8_t _pad081e[0x2]; // 0x81e
-            Vector m_vecTeleportOrigin; // 0x820            
-            source2sdk::entity2::GameTime_t m_flAbortedPlaybackAt; // 0x82c            
-            source2sdk::entity2::CEntityIOOutput m_pOnCommentaryStarted; // 0x830            
-            source2sdk::entity2::CEntityIOOutput m_pOnCommentaryStopped; // 0x858            
+            char m_hViewPositionMover[0x4]; // 0x80c            
+            bool m_bPreventMovement; // 0x810            
+            bool m_bUnderCrosshair; // 0x811            
+            bool m_bUnstoppable; // 0x812            
+            uint8_t _pad0813[0x1]; // 0x813
+            source2sdk::entity2::GameTime_t m_flFinishedTime; // 0x814            
+            Vector m_vecFinishOrigin; // 0x818            
+            QAngle m_vecOriginalAngles; // 0x824            
+            QAngle m_vecFinishAngles; // 0x830            
+            bool m_bPreventChangesWhileMoving; // 0x83c            
+            bool m_bDisabled; // 0x83d            
+            uint8_t _pad083e[0x2]; // 0x83e
+            Vector m_vecTeleportOrigin; // 0x840            
+            source2sdk::entity2::GameTime_t m_flAbortedPlaybackAt; // 0x84c            
+            source2sdk::entity2::CEntityIOOutput m_pOnCommentaryStarted; // 0x850            
+            source2sdk::entity2::CEntityIOOutput m_pOnCommentaryStopped; // 0x878            
             // metadata: MNetworkEnable
-            bool m_bActive; // 0x880            
-            uint8_t _pad0881[0x3]; // 0x881
+            bool m_bActive; // 0x8a0            
+            uint8_t _pad08a1[0x3]; // 0x8a1
             // metadata: MNetworkEnable
-            source2sdk::entity2::GameTime_t m_flStartTime; // 0x884            
+            source2sdk::entity2::GameTime_t m_flStartTime; // 0x8a4            
             // metadata: MNetworkEnable
-            float m_flStartTimeInCommentary; // 0x888            
-            uint8_t _pad088c[0x4]; // 0x88c
+            float m_flStartTimeInCommentary; // 0x8a8            
+            uint8_t _pad08ac[0x4]; // 0x8ac
             // metadata: MNetworkEnable
-            CUtlSymbolLarge m_iszTitle; // 0x890            
+            CUtlSymbolLarge m_iszTitle; // 0x8b0            
             // metadata: MNetworkEnable
-            CUtlSymbolLarge m_iszSpeakers; // 0x898            
+            CUtlSymbolLarge m_iszSpeakers; // 0x8b8            
             // metadata: MNetworkEnable
-            std::int32_t m_iNodeNumber; // 0x8a0            
+            std::int32_t m_iNodeNumber; // 0x8c0            
             // metadata: MNetworkEnable
-            std::int32_t m_iNodeNumberMax; // 0x8a4            
+            std::int32_t m_iNodeNumberMax; // 0x8c4            
             // metadata: MNetworkEnable
-            bool m_bListenedTo; // 0x8a8            
-            uint8_t _pad08a9[0x7];
+            bool m_bListenedTo; // 0x8c8            
+            uint8_t _pad08c9[0x7];
             
             // Datamap fields:
             // void InputStartCommentary; // 0x0
@@ -112,6 +112,6 @@ namespace source2sdk
         
         // Cannot assert offsets of fields in CPointCommentaryNode because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CPointCommentaryNode) == 0x8b0);
+        static_assert(sizeof(source2sdk::server::CPointCommentaryNode) == 0x8d0);
     };
 };

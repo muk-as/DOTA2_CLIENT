@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x698
+        // Size: 0x6a0
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -30,15 +30,15 @@ namespace source2sdk
         public:
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnChaliceStoredRuneChanged"
-            std::int32_t m_iStoredRuneType; // 0x688            
-            source2sdk::entity2::GameTime_t m_fStoredRuneTime; // 0x68c            
-            float stored_rune_duration; // 0x690            
-            uint8_t _pad0694[0x4];
+            std::int32_t m_iStoredRuneType; // 0x690            
+            source2sdk::entity2::GameTime_t m_fStoredRuneTime; // 0x694            
+            float stored_rune_duration; // 0x698            
+            uint8_t _pad069c[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Item_Bottomless_Chalice because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Item_Bottomless_Chalice) == 0x698);
+        static_assert(sizeof(source2sdk::server::CDOTA_Item_Bottomless_Chalice) == 0x6a0);
     };
 };

@@ -17,21 +17,21 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1808
+        // Size: 0x1888
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Launchpad : public source2sdk::client::CDOTA_Buff
         {
         public:
-            std::int32_t m_iActualMovespeedBonus; // 0x17f8            
-            std::int32_t movespeed_bonus_fast; // 0x17fc            
-            std::int32_t movespeed_bonus_moderate; // 0x1800            
-            std::int32_t movespeed_bonus_slow; // 0x1804            
+            std::int32_t m_iActualMovespeedBonus; // 0x1878            
+            std::int32_t movespeed_bonus_fast; // 0x187c            
+            std::int32_t movespeed_bonus_moderate; // 0x1880            
+            std::int32_t movespeed_bonus_slow; // 0x1884            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Launchpad because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Launchpad) == 0x1808);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Launchpad) == 0x1888);
     };
 };

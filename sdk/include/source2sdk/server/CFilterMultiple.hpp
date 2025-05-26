@@ -25,24 +25,24 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x5b0
+        // Size: 0x5b8
         // Has VTable
         // Construct allowed
         #pragma pack(push, 1)
         class CFilterMultiple : public source2sdk::server::CBaseFilter
         {
         public:
-            source2sdk::client::filter_t m_nFilterType; // 0x530            
-            uint8_t _pad0534[0x4]; // 0x534
-            CUtlSymbolLarge m_iFilterName[10]; // 0x538            
+            source2sdk::client::filter_t m_nFilterType; // 0x538            
+            uint8_t _pad053c[0x4]; // 0x53c
+            CUtlSymbolLarge m_iFilterName[10]; // 0x540            
             // m_hFilter has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hFilter[10];
-            char m_hFilter[0x28]; // 0x588            
+            char m_hFilter[0x28]; // 0x590            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CFilterMultiple because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CFilterMultiple) == 0x5b0);
+        static_assert(sizeof(source2sdk::server::CFilterMultiple) == 0x5b8);
     };
 };

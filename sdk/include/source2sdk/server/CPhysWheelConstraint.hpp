@@ -50,6 +50,8 @@ namespace source2sdk
             uint8_t _pad0580[0x8];
             
             // Datamap fields:
+            // float InputSetMinSuspensionOffset; // 0x0
+            // float InputSetMaxSuspensionOffset; // 0x0
             // CUtlSymbolLarge InputSetSteeringMimicsEntity; // 0x0
         };
         #pragma pack(pop)

@@ -24,7 +24,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x5d8
+        // Size: 0x6a8
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -34,18 +34,18 @@ namespace source2sdk
         public:
             // m_vZombies has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::client::C_BaseEntity>> m_vZombies;
-            char m_vZombies[0x18]; // 0x5b0            
+            char m_vZombies[0x18]; // 0x680            
             // hTombstone has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> hTombstone;
-            char hTombstone[0x4]; // 0x5c8            
-            float radius; // 0x5cc            
-            float duration; // 0x5d0            
-            uint8_t _pad05d4[0x4];
+            char hTombstone[0x4]; // 0x698            
+            float radius; // 0x69c            
+            float duration; // 0x6a0            
+            uint8_t _pad06a4[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Ability_Undying_Tombstone because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Undying_Tombstone) == 0x5d8);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Undying_Tombstone) == 0x6a8);
     };
 };

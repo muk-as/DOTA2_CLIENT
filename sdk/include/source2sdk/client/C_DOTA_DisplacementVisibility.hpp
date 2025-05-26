@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x518
+        // Size: 0x5e8
         // Has VTable
         // Construct allowed
         // 
@@ -27,13 +27,13 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            std::int32_t m_HiddenDisplacement; // 0x510            
-            uint8_t _pad0514[0x4];
+            std::int32_t m_HiddenDisplacement; // 0x5e0            
+            uint8_t _pad05e4[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_DisplacementVisibility because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_DisplacementVisibility) == 0x518);
+        static_assert(sizeof(source2sdk::client::C_DOTA_DisplacementVisibility) == 0x5e8);
     };
 };

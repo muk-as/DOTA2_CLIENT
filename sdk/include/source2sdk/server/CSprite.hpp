@@ -27,7 +27,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x818
+        // Size: 0x838
         // Has VTable
         // Construct allowed
         // 
@@ -50,59 +50,59 @@ namespace source2sdk
             // metadata: MNetworkEnable
             // m_hSpriteMaterial has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CStrongHandle<source2sdk::resourcesystem::InfoForResourceTypeIMaterial2> m_hSpriteMaterial;
-            char m_hSpriteMaterial[0x8]; // 0x7a8            
+            char m_hSpriteMaterial[0x8]; // 0x7c8            
             // metadata: MNetworkEnable
             // m_hAttachedToEntity has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hAttachedToEntity;
-            char m_hAttachedToEntity[0x4]; // 0x7b0            
+            char m_hAttachedToEntity[0x4]; // 0x7d0            
             // metadata: MNetworkEnable
-            source2sdk::modellib::AttachmentHandle_t m_nAttachment; // 0x7b4            
-            uint8_t _pad07b5[0x3]; // 0x7b5
+            source2sdk::modellib::AttachmentHandle_t m_nAttachment; // 0x7d4            
+            uint8_t _pad07d5[0x3]; // 0x7d5
             // metadata: MNetworkEnable
             // metadata: MNetworkBitCount "8"
             // metadata: MNetworkMinValue "0,000000"
             // metadata: MNetworkMaxValue "60,000000"
             // metadata: MNetworkEncodeFlags "2"
-            float m_flSpriteFramerate; // 0x7b8            
+            float m_flSpriteFramerate; // 0x7d8            
             // metadata: MNetworkEnable
             // metadata: MNetworkBitCount "20"
             // metadata: MNetworkMinValue "0,000000"
             // metadata: MNetworkMaxValue "256,000000"
             // metadata: MNetworkEncodeFlags "1"
-            float m_flFrame; // 0x7bc            
-            source2sdk::entity2::GameTime_t m_flDieTime; // 0x7c0            
-            uint8_t _pad07c4[0xc]; // 0x7c4
+            float m_flFrame; // 0x7dc            
+            source2sdk::entity2::GameTime_t m_flDieTime; // 0x7e0            
+            uint8_t _pad07e4[0xc]; // 0x7e4
             // metadata: MNetworkEnable
-            std::uint32_t m_nBrightness; // 0x7d0            
+            std::uint32_t m_nBrightness; // 0x7f0            
             // metadata: MNetworkEnable
-            float m_flBrightnessDuration; // 0x7d4            
+            float m_flBrightnessDuration; // 0x7f4            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnSpriteScaleChanged"
-            float m_flSpriteScale; // 0x7d8            
+            float m_flSpriteScale; // 0x7f8            
             // metadata: MNetworkEnable
-            float m_flScaleDuration; // 0x7dc            
+            float m_flScaleDuration; // 0x7fc            
             // metadata: MNetworkEnable
-            bool m_bWorldSpaceScale; // 0x7e0            
-            uint8_t _pad07e1[0x3]; // 0x7e1
+            bool m_bWorldSpaceScale; // 0x800            
+            uint8_t _pad0801[0x3]; // 0x801
             // metadata: MNetworkEnable
             // metadata: MNetworkBitCount "6"
             // metadata: MNetworkMinValue "0,000000"
             // metadata: MNetworkMaxValue "64,000000"
             // metadata: MNetworkEncodeFlags "2"
-            float m_flGlowProxySize; // 0x7e4            
+            float m_flGlowProxySize; // 0x804            
             // metadata: MNetworkEnable
-            float m_flHDRColorScale; // 0x7e8            
-            source2sdk::entity2::GameTime_t m_flLastTime; // 0x7ec            
-            float m_flMaxFrame; // 0x7f0            
-            float m_flStartScale; // 0x7f4            
-            float m_flDestScale; // 0x7f8            
-            source2sdk::entity2::GameTime_t m_flScaleTimeStart; // 0x7fc            
-            std::int32_t m_nStartBrightness; // 0x800            
-            std::int32_t m_nDestBrightness; // 0x804            
-            source2sdk::entity2::GameTime_t m_flBrightnessTimeStart; // 0x808            
-            std::int32_t m_nSpriteWidth; // 0x80c            
-            std::int32_t m_nSpriteHeight; // 0x810            
-            uint8_t _pad0814[0x4];
+            float m_flHDRColorScale; // 0x808            
+            source2sdk::entity2::GameTime_t m_flLastTime; // 0x80c            
+            float m_flMaxFrame; // 0x810            
+            float m_flStartScale; // 0x814            
+            float m_flDestScale; // 0x818            
+            source2sdk::entity2::GameTime_t m_flScaleTimeStart; // 0x81c            
+            std::int32_t m_nStartBrightness; // 0x820            
+            std::int32_t m_nDestBrightness; // 0x824            
+            source2sdk::entity2::GameTime_t m_flBrightnessTimeStart; // 0x828            
+            std::int32_t m_nSpriteWidth; // 0x82c            
+            std::int32_t m_nSpriteHeight; // 0x830            
+            uint8_t _pad0834[0x4];
             
             // Datamap fields:
             // void CSpriteAnimateThink; // 0x0
@@ -120,6 +120,6 @@ namespace source2sdk
         
         // Cannot assert offsets of fields in CSprite because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CSprite) == 0x818);
+        static_assert(sizeof(source2sdk::server::CSprite) == 0x838);
     };
 };

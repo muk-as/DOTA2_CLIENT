@@ -25,26 +25,26 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1810
+        // Size: 0x1890
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Kez_FalconRush : public source2sdk::client::CDOTA_Buff
         {
         public:
-            std::int32_t buff_evasion_pct; // 0x17f8            
-            float rush_speed; // 0x17fc            
-            float rush_range; // 0x1800            
-            bool m_bInRush; // 0x1804            
-            uint8_t _pad1805[0x3]; // 0x1805
-            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x1808            
+            std::int32_t slow_resist; // 0x1878            
+            float rush_speed; // 0x187c            
+            float rush_range; // 0x1880            
+            bool m_bInRush; // 0x1884            
+            uint8_t _pad1885[0x3]; // 0x1885
+            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x1888            
             // m_hTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hTarget;
-            char m_hTarget[0x4]; // 0x180c            
+            char m_hTarget[0x4]; // 0x188c            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Kez_FalconRush because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Kez_FalconRush) == 0x1810);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Kez_FalconRush) == 0x1890);
     };
 };

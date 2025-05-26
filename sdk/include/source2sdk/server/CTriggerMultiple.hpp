@@ -18,14 +18,14 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x990
+        // Size: 0x9c0
         // Has VTable
         // Construct allowed
         #pragma pack(push, 1)
         class CTriggerMultiple : public source2sdk::server::CBaseTrigger
         {
         public:
-            source2sdk::entity2::CEntityIOOutput m_OnTrigger; // 0x968            
+            source2sdk::entity2::CEntityIOOutput m_OnTrigger; // 0x998            
             
             // Datamap fields:
             // void CTriggerMultipleMultiTouch; // 0x0
@@ -35,6 +35,6 @@ namespace source2sdk
         
         // Cannot assert offsets of fields in CTriggerMultiple because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CTriggerMultiple) == 0x990);
+        static_assert(sizeof(source2sdk::server::CTriggerMultiple) == 0x9c0);
     };
 };

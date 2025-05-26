@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x4e8
+        // Size: 0x4f0
         // Has VTable
         // Construct allowed
         // 
@@ -33,22 +33,22 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            std::int16_t m_nRadiantCheers; // 0x4d8            
+            std::int16_t m_nRadiantCheers; // 0x4e0            
             // metadata: MNetworkEnable
-            std::int16_t m_nDireCheers; // 0x4da            
+            std::int16_t m_nDireCheers; // 0x4e2            
             // metadata: MNetworkEnable
-            std::int16_t m_nRadiantPremiumCheers; // 0x4dc            
+            std::int16_t m_nRadiantPremiumCheers; // 0x4e4            
             // metadata: MNetworkEnable
-            std::int16_t m_nDirePremiumCheers; // 0x4de            
+            std::int16_t m_nDirePremiumCheers; // 0x4e6            
             // metadata: MNetworkEnable
-            source2sdk::client::ECrowdLevel m_nRadiantCrowdLevel; // 0x4e0            
+            source2sdk::client::ECrowdLevel m_nRadiantCrowdLevel; // 0x4e8            
             // metadata: MNetworkEnable
-            source2sdk::client::ECrowdLevel m_nDireCrowdLevel; // 0x4e4            
+            source2sdk::client::ECrowdLevel m_nDireCrowdLevel; // 0x4ec            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTACheers because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTACheers) == 0x4e8);
+        static_assert(sizeof(source2sdk::server::CDOTACheers) == 0x4f0);
     };
 };

@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x5d0
+        // Size: 0x6a0
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -25,19 +25,19 @@ namespace source2sdk
         class CDOTA_Ability_Magnataur_Skewer : public source2sdk::client::C_DOTABaseAbility
         {
         public:
-            float skewer_radius; // 0x5b0            
-            float skewer_speed; // 0x5b4            
-            float tree_radius; // 0x5b8            
-            float tree_hit_damage; // 0x5bc            
-            float cliff_hit_damage; // 0x5c0            
-            std::int32_t terrain_hit_increase_pct; // 0x5c4            
-            float terrain_hit_cooldown; // 0x5c8            
-            std::int32_t m_nTargetsHit; // 0x5cc            
+            float skewer_radius; // 0x680            
+            float skewer_speed; // 0x684            
+            float tree_radius; // 0x688            
+            float tree_hit_damage; // 0x68c            
+            float cliff_hit_damage; // 0x690            
+            std::int32_t terrain_hit_increase_pct; // 0x694            
+            float terrain_hit_cooldown; // 0x698            
+            std::int32_t m_nTargetsHit; // 0x69c            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_Magnataur_Skewer because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Ability_Magnataur_Skewer) == 0x5d0);
+        static_assert(sizeof(source2sdk::client::CDOTA_Ability_Magnataur_Skewer) == 0x6a0);
     };
 };

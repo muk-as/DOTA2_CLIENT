@@ -25,7 +25,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0xb00
+        // Size: 0xcc8
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -36,36 +36,36 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            bool m_bRespawnClientEntity; // 0xaa8            
+            bool m_bRespawnClientEntity; // 0xc70            
             // metadata: MNetworkEnable
-            bool m_bPlaySpawnAnimation; // 0xaa9            
+            bool m_bPlaySpawnAnimation; // 0xc71            
             // metadata: MNetworkEnable
-            std::uint8_t m_unGuildTier; // 0xaaa            
+            std::uint8_t m_unGuildTier; // 0xc72            
             // metadata: MNetworkEnable
-            std::uint8_t m_unPrimaryColor; // 0xaab            
+            std::uint8_t m_unPrimaryColor; // 0xc73            
             // metadata: MNetworkEnable
-            std::uint8_t m_unSecondaryColor; // 0xaac            
+            std::uint8_t m_unSecondaryColor; // 0xc74            
             // metadata: MNetworkEnable
-            std::uint8_t m_unPattern; // 0xaad            
-            uint8_t _pad0aae[0x2]; // 0xaae
+            std::uint8_t m_unPattern; // 0xc75            
+            uint8_t _pad0c76[0x2]; // 0xc76
             // metadata: MNetworkEnable
-            std::uint64_t m_unLogo; // 0xab0            
+            std::uint64_t m_unLogo; // 0xc78            
             // metadata: MNetworkEnable
-            source2sdk::client::GuildID_t m_unGuildID; // 0xab8            
+            source2sdk::client::GuildID_t m_unGuildID; // 0xc80            
             // metadata: MNetworkEnable
-            std::uint32_t m_unGuildFlags; // 0xabc            
+            std::uint32_t m_unGuildFlags; // 0xc84            
             // metadata: MNetworkEnable
-            bool m_bUsePanelCache; // 0xac0            
-            uint8_t _pad0ac1[0x3]; // 0xac1
+            bool m_bUsePanelCache; // 0xc88            
+            uint8_t _pad0c89[0x3]; // 0xc89
             // m_hClientEntity has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hClientEntity;
-            char m_hClientEntity[0x4]; // 0xac4            
-            uint8_t _pad0ac8[0x38];
+            char m_hClientEntity[0x4]; // 0xc8c            
+            uint8_t _pad0c90[0x38];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_GuildBannerDynamic because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_GuildBannerDynamic) == 0xb00);
+        static_assert(sizeof(source2sdk::client::C_DOTA_GuildBannerDynamic) == 0xcc8);
     };
 };

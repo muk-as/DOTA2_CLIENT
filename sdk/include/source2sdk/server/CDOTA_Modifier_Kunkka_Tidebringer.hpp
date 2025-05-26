@@ -18,27 +18,27 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1820
+        // Size: 0x18b0
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Kunkka_Tidebringer : public source2sdk::client::CDOTA_Buff
         {
         public:
-            bool m_bTidebringerAttack; // 0x17f8            
-            uint8_t _pad17f9[0x3]; // 0x17f9
-            float cleave_starting_width; // 0x17fc            
-            float cleave_ending_width; // 0x1800            
-            float cleave_distance; // 0x1804            
-            float damage_bonus; // 0x1808            
-            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x180c            
-            float cleave_damage; // 0x1810            
-            float cooldown_reduction_per_hero_hit; // 0x1814            
-            uint8_t _pad1818[0x8];
+            bool m_bTidebringerAttack; // 0x1878            
+            uint8_t _pad1879[0x3]; // 0x1879
+            float cleave_starting_width; // 0x187c            
+            float cleave_ending_width; // 0x1880            
+            float cleave_distance; // 0x1884            
+            float damage_bonus; // 0x1888            
+            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x188c            
+            float cleave_damage; // 0x1890            
+            float cooldown_reduction_per_hero_hit; // 0x1894            
+            uint8_t _pad1898[0x18];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Kunkka_Tidebringer because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Kunkka_Tidebringer) == 0x1820);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Kunkka_Tidebringer) == 0x18b0);
     };
 };

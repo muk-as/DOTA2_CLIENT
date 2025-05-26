@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x748
+        // Size: 0x750
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -28,12 +28,12 @@ namespace source2sdk
         public:
             // m_entityNameList has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CUtlSymbolLarge> m_entityNameList;
-            char m_entityNameList[0x18]; // 0x730            
+            char m_entityNameList[0x18]; // 0x738            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDotaSubquestEntityDeath because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDotaSubquestEntityDeath) == 0x748);
+        static_assert(sizeof(source2sdk::server::CDotaSubquestEntityDeath) == 0x750);
     };
 };

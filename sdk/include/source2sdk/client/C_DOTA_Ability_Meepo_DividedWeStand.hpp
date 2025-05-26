@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x5c0
+        // Size: 0x690
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -31,22 +31,22 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            std::int32_t m_nWhichDividedWeStand; // 0x5b0            
+            std::int32_t m_nWhichDividedWeStand; // 0x680            
             // metadata: MNetworkEnable
-            std::int32_t m_nNumDividedWeStand; // 0x5b4            
+            std::int32_t m_nNumDividedWeStand; // 0x684            
             // metadata: MNetworkEnable
             // m_entPrimeDividedWeStand has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_DOTA_Ability_Meepo_DividedWeStand> m_entPrimeDividedWeStand;
-            char m_entPrimeDividedWeStand[0x4]; // 0x5b8            
+            char m_entPrimeDividedWeStand[0x4]; // 0x688            
             // metadata: MNetworkEnable
             // m_entNextDividedWeStand has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_DOTA_Ability_Meepo_DividedWeStand> m_entNextDividedWeStand;
-            char m_entNextDividedWeStand[0x4]; // 0x5bc            
+            char m_entNextDividedWeStand[0x4]; // 0x68c            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Ability_Meepo_DividedWeStand because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Meepo_DividedWeStand) == 0x5c0);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Meepo_DividedWeStand) == 0x690);
     };
 };

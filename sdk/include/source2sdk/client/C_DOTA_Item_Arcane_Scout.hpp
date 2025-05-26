@@ -24,7 +24,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x658
+        // Size: 0x728
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -34,13 +34,13 @@ namespace source2sdk
         public:
             // m_hScout has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hScout;
-            char m_hScout[0x4]; // 0x650            
-            uint8_t _pad0654[0x4];
+            char m_hScout[0x4]; // 0x720            
+            uint8_t _pad0724[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Item_Arcane_Scout because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Item_Arcane_Scout) == 0x658);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Item_Arcane_Scout) == 0x728);
     };
 };

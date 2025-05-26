@@ -25,19 +25,19 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x858
+        // Size: 0x878
         // Has VTable
         // Construct allowed
         #pragma pack(push, 1)
         class CGunTarget : public source2sdk::server::CBaseToggle
         {
         public:
-            bool m_on; // 0x828            
-            uint8_t _pad0829[0x3]; // 0x829
+            bool m_on; // 0x848            
+            uint8_t _pad0849[0x3]; // 0x849
             // m_hTargetEnt has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hTargetEnt;
-            char m_hTargetEnt[0x4]; // 0x82c            
-            source2sdk::entity2::CEntityIOOutput m_OnDeath; // 0x830            
+            char m_hTargetEnt[0x4]; // 0x84c            
+            source2sdk::entity2::CEntityIOOutput m_OnDeath; // 0x850            
             
             // Datamap fields:
             // void CGunTargetNext; // 0x0
@@ -51,6 +51,6 @@ namespace source2sdk
         
         // Cannot assert offsets of fields in CGunTarget because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CGunTarget) == 0x858);
+        static_assert(sizeof(source2sdk::server::CGunTarget) == 0x878);
     };
 };

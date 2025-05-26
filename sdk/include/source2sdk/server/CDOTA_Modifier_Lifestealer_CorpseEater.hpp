@@ -17,21 +17,21 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1808
+        // Size: 0x1888
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Lifestealer_CorpseEater : public source2sdk::client::CDOTA_Buff
         {
         public:
-            std::int32_t bonus_hp_per_creep; // 0x17f8            
-            std::int32_t bonus_hp_per_hero; // 0x17fc            
-            std::int32_t m_nTotalBonusHP; // 0x1800            
-            uint8_t _pad1804[0x4];
+            std::int32_t bonus_hp_per_creep; // 0x1878            
+            std::int32_t bonus_hp_per_hero; // 0x187c            
+            std::int32_t m_nTotalBonusHP; // 0x1880            
+            uint8_t _pad1884[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Lifestealer_CorpseEater because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Lifestealer_CorpseEater) == 0x1808);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Lifestealer_CorpseEater) == 0x1888);
     };
 };

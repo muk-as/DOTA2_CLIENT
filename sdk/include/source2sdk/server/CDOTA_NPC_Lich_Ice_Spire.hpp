@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x1860
+        // Size: 0x1898
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -30,6 +30,6 @@ namespace source2sdk
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::server::CDOTA_NPC_Lich_Ice_Spire) == 0x1860);
+        static_assert(sizeof(source2sdk::server::CDOTA_NPC_Lich_Ice_Spire) == 0x1898);
     };
 };

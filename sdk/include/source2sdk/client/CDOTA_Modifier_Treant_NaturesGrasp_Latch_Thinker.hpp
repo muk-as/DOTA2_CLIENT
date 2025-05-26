@@ -17,22 +17,22 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1810
+        // Size: 0x1898
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Treant_NaturesGrasp_Latch_Thinker : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float latch_range; // 0x17f8            
-            float initial_latch_delay; // 0x17fc            
-            uint8_t _pad1800[0x8]; // 0x1800
-            bool m_bBonus; // 0x1808            
-            uint8_t _pad1809[0x7];
+            float latch_range; // 0x1878            
+            float initial_latch_delay; // 0x187c            
+            uint8_t _pad1880[0x14]; // 0x1880
+            bool m_bBonus; // 0x1894            
+            uint8_t _pad1895[0x3];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Treant_NaturesGrasp_Latch_Thinker because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Treant_NaturesGrasp_Latch_Thinker) == 0x1810);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Treant_NaturesGrasp_Latch_Thinker) == 0x1898);
     };
 };

@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x10
         // Alignment: 0x10
         // Standard-layout class: false
-        // Size: 0xa90
+        // Size: 0xc30
         // Has VTable
         // Construct allowed
         #pragma pack(push, 1)
@@ -29,6 +29,6 @@ namespace source2sdk
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::client::C_EnvDeferredSpotLightClientOnly) == 0xa90);
+        static_assert(sizeof(source2sdk::client::C_EnvDeferredSpotLightClientOnly) == 0xc30);
     };
 };

@@ -19,7 +19,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x1880
+        // Size: 0x18b8
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -27,17 +27,17 @@ namespace source2sdk
         class CDOTA_Unit_Nian_Attachment : public source2sdk::server::CDOTA_BaseNPC_Additive
         {
         public:
-            bool m_bAttachmentBroken; // 0x1860            
-            uint8_t _pad1861[0x3]; // 0x1861
-            source2sdk::client::ParticleIndex_t m_nfxIndex_tailgrow; // 0x1864            
+            bool m_bAttachmentBroken; // 0x1898            
+            uint8_t _pad1899[0x3]; // 0x1899
+            source2sdk::client::ParticleIndex_t m_nfxIndex_tailgrow; // 0x189c            
             // m_vecRecentDamage has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::server::NianDamageTaken_t> m_vecRecentDamage;
-            char m_vecRecentDamage[0x18]; // 0x1868            
+            char m_vecRecentDamage[0x18]; // 0x18a0            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Unit_Nian_Attachment because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Unit_Nian_Attachment) == 0x1880);
+        static_assert(sizeof(source2sdk::server::CDOTA_Unit_Nian_Attachment) == 0x18b8);
     };
 };

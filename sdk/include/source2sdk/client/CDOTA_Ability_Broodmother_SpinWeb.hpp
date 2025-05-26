@@ -24,7 +24,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x5e0
+        // Size: 0x6b0
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -34,15 +34,15 @@ namespace source2sdk
         public:
             // m_hWebs has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::client::C_BaseEntity>> m_hWebs;
-            char m_hWebs[0x18]; // 0x5b0            
+            char m_hWebs[0x18]; // 0x680            
             // m_hWebClusters has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CUtlVector<CHandle<source2sdk::client::C_BaseEntity>>> m_hWebClusters;
-            char m_hWebClusters[0x18]; // 0x5c8            
+            char m_hWebClusters[0x18]; // 0x698            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_Broodmother_SpinWeb because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Ability_Broodmother_SpinWeb) == 0x5e0);
+        static_assert(sizeof(source2sdk::client::CDOTA_Ability_Broodmother_SpinWeb) == 0x6b0);
     };
 };

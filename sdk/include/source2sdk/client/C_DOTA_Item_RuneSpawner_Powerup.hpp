@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x808
+        // Size: 0x9a8
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -31,22 +31,22 @@ namespace source2sdk
         class C_DOTA_Item_RuneSpawner_Powerup : public source2sdk::client::CBaseAnimatingActivity
         {
         public:
-            source2sdk::client::DOTA_RUNES m_nRuneType; // 0x7f8            
+            source2sdk::client::DOTA_RUNES m_nRuneType; // 0x998            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnPowerupLastSpawnTimeChanged"
-            float m_flLastSpawnTime; // 0x7fc            
+            float m_flLastSpawnTime; // 0x99c            
             // metadata: MNetworkEnable
-            float m_flNextSpawnTime; // 0x800            
+            float m_flNextSpawnTime; // 0x9a0            
             // metadata: MNetworkEnable
-            bool m_bNextRuneIsWater; // 0x804            
+            bool m_bNextRuneIsWater; // 0x9a4            
             // metadata: MNetworkEnable
-            bool m_bWillSpawnNextPowerRune; // 0x805            
-            uint8_t _pad0806[0x2];
+            bool m_bWillSpawnNextPowerRune; // 0x9a5            
+            uint8_t _pad09a6[0x2];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Item_RuneSpawner_Powerup because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Item_RuneSpawner_Powerup) == 0x808);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Item_RuneSpawner_Powerup) == 0x9a8);
     };
 };

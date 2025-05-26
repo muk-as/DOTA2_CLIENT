@@ -24,19 +24,19 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x4f0
+        // Size: 0x4f8
         // Has VTable
         // Construct allowed
         #pragma pack(push, 1)
         class CInstructorEventEntity : public source2sdk::server::CPointEntity
         {
         public:
-            CUtlSymbolLarge m_iszName; // 0x4d8            
-            CUtlSymbolLarge m_iszHintTargetEntity; // 0x4e0            
+            CUtlSymbolLarge m_iszName; // 0x4e0            
+            CUtlSymbolLarge m_iszHintTargetEntity; // 0x4e8            
             // m_hTargetPlayer has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBasePlayerPawn> m_hTargetPlayer;
-            char m_hTargetPlayer[0x4]; // 0x4e8            
-            uint8_t _pad04ec[0x4];
+            char m_hTargetPlayer[0x4]; // 0x4f0            
+            uint8_t _pad04f4[0x4];
             
             // Datamap fields:
             // CUtlSymbolLarge InputShowHint; // 0x0
@@ -47,6 +47,6 @@ namespace source2sdk
         
         // Cannot assert offsets of fields in CInstructorEventEntity because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CInstructorEventEntity) == 0x4f0);
+        static_assert(sizeof(source2sdk::server::CInstructorEventEntity) == 0x4f8);
     };
 };

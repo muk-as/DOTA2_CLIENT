@@ -32,7 +32,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x4e8
+        // Size: 0x4f0
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -45,22 +45,22 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            bool m_bStartRecording; // 0x4d8            
-            uint8_t _pad04d9[0x3]; // 0x4d9
+            bool m_bStartRecording; // 0x4e0            
+            uint8_t _pad04e1[0x3]; // 0x4e1
             // metadata: MNetworkEnable
             // m_hHero has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CDOTA_BaseNPC> m_hHero;
-            char m_hHero[0x4]; // 0x4dc            
+            char m_hHero[0x4]; // 0x4e4            
             // metadata: MNetworkEnable
             // m_hPlayer has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CDOTAPlayerController> m_hPlayer;
-            char m_hPlayer[0x4]; // 0x4e0            
-            source2sdk::entity2::GameTime_t m_flStartRecordingTime; // 0x4e4            
+            char m_hPlayer[0x4]; // 0x4e8            
+            source2sdk::entity2::GameTime_t m_flStartRecordingTime; // 0x4ec            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Hero_Recorder because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Hero_Recorder) == 0x4e8);
+        static_assert(sizeof(source2sdk::server::CDOTA_Hero_Recorder) == 0x4f0);
     };
 };

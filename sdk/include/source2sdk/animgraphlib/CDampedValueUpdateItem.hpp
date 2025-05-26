@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: true
-        // Size: 0x20
+        // Size: 0x28
         // Has Trivial Destructor
         // Construct allowed
         // 
@@ -28,17 +28,17 @@ namespace source2sdk
         {
         public:
             source2sdk::animgraphlib::CAnimInputDamping m_damping; // 0x0            
-            uint8_t _pad0010[0x8]; // 0x10
-            source2sdk::animgraphlib::CAnimParamHandle m_hParamIn; // 0x18            
-            source2sdk::animgraphlib::CAnimParamHandle m_hParamOut; // 0x1a            
-            uint8_t _pad001c[0x4];
+            uint8_t _pad0018[0x8]; // 0x18
+            source2sdk::animgraphlib::CAnimParamHandle m_hParamIn; // 0x20            
+            source2sdk::animgraphlib::CAnimParamHandle m_hParamOut; // 0x22            
+            uint8_t _pad0024[0x4];
         };
         #pragma pack(pop)
         
         static_assert(offsetof(source2sdk::animgraphlib::CDampedValueUpdateItem, m_damping) == 0x0);
-        static_assert(offsetof(source2sdk::animgraphlib::CDampedValueUpdateItem, m_hParamIn) == 0x18);
-        static_assert(offsetof(source2sdk::animgraphlib::CDampedValueUpdateItem, m_hParamOut) == 0x1a);
+        static_assert(offsetof(source2sdk::animgraphlib::CDampedValueUpdateItem, m_hParamIn) == 0x20);
+        static_assert(offsetof(source2sdk::animgraphlib::CDampedValueUpdateItem, m_hParamOut) == 0x22);
         
-        static_assert(sizeof(source2sdk::animgraphlib::CDampedValueUpdateItem) == 0x20);
+        static_assert(sizeof(source2sdk::animgraphlib::CDampedValueUpdateItem) == 0x28);
     };
 };

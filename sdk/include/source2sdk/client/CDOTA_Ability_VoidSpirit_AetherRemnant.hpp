@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x5c0
+        // Size: 0x690
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -25,15 +25,15 @@ namespace source2sdk
         class CDOTA_Ability_VoidSpirit_AetherRemnant : public source2sdk::client::C_DOTABaseAbility
         {
         public:
-            float start_radius; // 0x5b0            
-            float end_radius; // 0x5b4            
-            float remnant_watch_distance; // 0x5b8            
-            float projectile_speed; // 0x5bc            
+            float start_radius; // 0x680            
+            float end_radius; // 0x684            
+            float remnant_watch_distance; // 0x688            
+            float projectile_speed; // 0x68c            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_VoidSpirit_AetherRemnant because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Ability_VoidSpirit_AetherRemnant) == 0x5c0);
+        static_assert(sizeof(source2sdk::client::CDOTA_Ability_VoidSpirit_AetherRemnant) == 0x690);
     };
 };

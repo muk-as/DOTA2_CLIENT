@@ -17,14 +17,14 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x4e0
+        // Size: 0x4e8
         // Has VTable
         // Construct allowed
         #pragma pack(push, 1)
         class CDOTA_ItemSpawner : public source2sdk::server::CPointEntity
         {
         public:
-            CUtlSymbolLarge m_szItemName; // 0x4d8            
+            CUtlSymbolLarge m_szItemName; // 0x4e0            
             
             // Datamap fields:
             // void InputSpawnItem; // 0x0
@@ -34,6 +34,6 @@ namespace source2sdk
         
         // Cannot assert offsets of fields in CDOTA_ItemSpawner because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_ItemSpawner) == 0x4e0);
+        static_assert(sizeof(source2sdk::server::CDOTA_ItemSpawner) == 0x4e8);
     };
 };

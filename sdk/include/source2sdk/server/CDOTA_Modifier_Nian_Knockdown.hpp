@@ -17,22 +17,22 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1808
+        // Size: 0x1888
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Nian_Knockdown : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float m_flStandUpDuration; // 0x17f8            
-            float m_flKnockDownDuration; // 0x17fc            
-            bool m_bDebuff; // 0x1800            
-            bool m_bStandingUp; // 0x1801            
-            uint8_t _pad1802[0x6];
+            float m_flStandUpDuration; // 0x1878            
+            float m_flKnockDownDuration; // 0x187c            
+            bool m_bDebuff; // 0x1880            
+            bool m_bStandingUp; // 0x1881            
+            uint8_t _pad1882[0x6];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Nian_Knockdown because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Nian_Knockdown) == 0x1808);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Nian_Knockdown) == 0x1888);
     };
 };

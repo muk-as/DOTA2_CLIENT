@@ -38,7 +38,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: 0x8
         // Standard-layout class: true
-        // Size: 0xd0
+        // Size: 0xd8
         // Has Trivial Destructor
         #pragma pack(push, 1)
         class CModifierParams
@@ -91,48 +91,49 @@ namespace source2sdk
             bool bYashaAndKayaApplied; // 0x82            
             bool bStoutConsidered; // 0x83            
             bool bAegisUsed; // 0x84            
-            bool bInterrupted; // 0x85            
-            bool bDiffusalApplied; // 0x86            
-            bool bChainLightningConsidered; // 0x87            
-            bool bSuppressDamage; // 0x88            
-            bool bRangedAttack; // 0x89            
-            bool bProcessProcs; // 0x8a            
-            bool bProjectileIsFromIllusion; // 0x8b            
-            bool bHasMagicComponent; // 0x8c            
-            bool bIsSpellLifesteal; // 0x8d            
-            bool bBloodstoneRegenApplied; // 0x8e            
-            bool bShroudManaRestoreApplied; // 0x8f            
-            bool bPhylacteryApplied; // 0x90            
-            bool bAllowZeroDamageFromPostReductionBlock; // 0x91            
-            bool bForceMagicStickProc; // 0x92            
-            bool bIgnoreNegativeValuesIfDebuffImmune; // 0x93            
-            bool bIgnorePositiveValuesIfDebuffImmune; // 0x94            
-            bool bIgnoreAllIfDebuffImmune; // 0x95            
-            bool bAlsoIgnoreBuffsIfDebuffImmune; // 0x96            
-            bool bIgnoreLowerIfDebuffImmune; // 0x97            
-            float flIgnoreLowerIfDebuffImmune; // 0x98            
-            bool bIgnoreHigherIfDebuffImmune; // 0x9c            
-            uint8_t _pad009d[0x3]; // 0x9d
-            float flIgnoreHigherIfDebuffImmune; // 0xa0            
-            bool bIgnoreTemporaryAttackSpeedModifiers; // 0xa4            
-            uint8_t _pad00a5[0x3]; // 0xa5
-            char* pszAbilitySpecialName; // 0xa8            
-            std::int32_t nAbilitySpecialLevel; // 0xb0            
-            bool bIsRegen; // 0xb4            
-            uint8_t _pad00b5[0x3]; // 0xb5
+            bool bRaindropUsed; // 0x85            
+            bool bInterrupted; // 0x86            
+            bool bDiffusalApplied; // 0x87            
+            bool bChainLightningConsidered; // 0x88            
+            bool bSuppressDamage; // 0x89            
+            bool bRangedAttack; // 0x8a            
+            bool bProcessProcs; // 0x8b            
+            bool bProjectileIsFromIllusion; // 0x8c            
+            bool bHasMagicComponent; // 0x8d            
+            bool bIsSpellLifesteal; // 0x8e            
+            bool bBloodstoneRegenApplied; // 0x8f            
+            bool bShroudManaRestoreApplied; // 0x90            
+            bool bPhylacteryApplied; // 0x91            
+            bool bAllowZeroDamageFromPostReductionBlock; // 0x92            
+            bool bForceMagicStickProc; // 0x93            
+            bool bIgnoreNegativeValuesIfDebuffImmune; // 0x94            
+            bool bIgnorePositiveValuesIfDebuffImmune; // 0x95            
+            bool bIgnoreAllIfDebuffImmune; // 0x96            
+            bool bAlsoIgnoreBuffsIfDebuffImmune; // 0x97            
+            bool bIgnoreLowerIfDebuffImmune; // 0x98            
+            uint8_t _pad0099[0x3]; // 0x99
+            float flIgnoreLowerIfDebuffImmune; // 0x9c            
+            bool bIgnoreHigherIfDebuffImmune; // 0xa0            
+            uint8_t _pad00a1[0x3]; // 0xa1
+            float flIgnoreHigherIfDebuffImmune; // 0xa4            
+            bool bIgnoreTemporaryAttackSpeedModifiers; // 0xa8            
+            uint8_t _pad00a9[0x7]; // 0xa9
+            char* pszAbilitySpecialName; // 0xb0            
+            std::int32_t nAbilitySpecialLevel; // 0xb8            
             // hattacker has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> hattacker;
-            char hattacker[0x4]; // 0xb8            
+            char hattacker[0x4]; // 0xbc            
             // htarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> htarget;
-            char htarget[0x4]; // 0xbc            
+            char htarget[0x4]; // 0xc0            
             // hunit has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> hunit;
-            char hunit[0x4]; // 0xc0            
+            char hunit[0x4]; // 0xc4            
             // inflictor has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_DOTABaseAbility> inflictor;
-            char inflictor[0x4]; // 0xc4            
-            source2sdk::client::CDOTA_Buff* pAddedBuff; // 0xc8            
+            char inflictor[0x4]; // 0xc8            
+            uint8_t _pad00cc[0x4]; // 0xcc
+            source2sdk::client::CDOTA_Buff* pAddedBuff; // 0xd0            
         };
         #pragma pack(pop)
         
@@ -178,38 +179,38 @@ namespace source2sdk
         static_assert(offsetof(source2sdk::client::CModifierParams, bYashaAndKayaApplied) == 0x82);
         static_assert(offsetof(source2sdk::client::CModifierParams, bStoutConsidered) == 0x83);
         static_assert(offsetof(source2sdk::client::CModifierParams, bAegisUsed) == 0x84);
-        static_assert(offsetof(source2sdk::client::CModifierParams, bInterrupted) == 0x85);
-        static_assert(offsetof(source2sdk::client::CModifierParams, bDiffusalApplied) == 0x86);
-        static_assert(offsetof(source2sdk::client::CModifierParams, bChainLightningConsidered) == 0x87);
-        static_assert(offsetof(source2sdk::client::CModifierParams, bSuppressDamage) == 0x88);
-        static_assert(offsetof(source2sdk::client::CModifierParams, bRangedAttack) == 0x89);
-        static_assert(offsetof(source2sdk::client::CModifierParams, bProcessProcs) == 0x8a);
-        static_assert(offsetof(source2sdk::client::CModifierParams, bProjectileIsFromIllusion) == 0x8b);
-        static_assert(offsetof(source2sdk::client::CModifierParams, bHasMagicComponent) == 0x8c);
-        static_assert(offsetof(source2sdk::client::CModifierParams, bIsSpellLifesteal) == 0x8d);
-        static_assert(offsetof(source2sdk::client::CModifierParams, bBloodstoneRegenApplied) == 0x8e);
-        static_assert(offsetof(source2sdk::client::CModifierParams, bShroudManaRestoreApplied) == 0x8f);
-        static_assert(offsetof(source2sdk::client::CModifierParams, bPhylacteryApplied) == 0x90);
-        static_assert(offsetof(source2sdk::client::CModifierParams, bAllowZeroDamageFromPostReductionBlock) == 0x91);
-        static_assert(offsetof(source2sdk::client::CModifierParams, bForceMagicStickProc) == 0x92);
-        static_assert(offsetof(source2sdk::client::CModifierParams, bIgnoreNegativeValuesIfDebuffImmune) == 0x93);
-        static_assert(offsetof(source2sdk::client::CModifierParams, bIgnorePositiveValuesIfDebuffImmune) == 0x94);
-        static_assert(offsetof(source2sdk::client::CModifierParams, bIgnoreAllIfDebuffImmune) == 0x95);
-        static_assert(offsetof(source2sdk::client::CModifierParams, bAlsoIgnoreBuffsIfDebuffImmune) == 0x96);
-        static_assert(offsetof(source2sdk::client::CModifierParams, bIgnoreLowerIfDebuffImmune) == 0x97);
-        static_assert(offsetof(source2sdk::client::CModifierParams, flIgnoreLowerIfDebuffImmune) == 0x98);
-        static_assert(offsetof(source2sdk::client::CModifierParams, bIgnoreHigherIfDebuffImmune) == 0x9c);
-        static_assert(offsetof(source2sdk::client::CModifierParams, flIgnoreHigherIfDebuffImmune) == 0xa0);
-        static_assert(offsetof(source2sdk::client::CModifierParams, bIgnoreTemporaryAttackSpeedModifiers) == 0xa4);
-        static_assert(offsetof(source2sdk::client::CModifierParams, pszAbilitySpecialName) == 0xa8);
-        static_assert(offsetof(source2sdk::client::CModifierParams, nAbilitySpecialLevel) == 0xb0);
-        static_assert(offsetof(source2sdk::client::CModifierParams, bIsRegen) == 0xb4);
-        static_assert(offsetof(source2sdk::client::CModifierParams, hattacker) == 0xb8);
-        static_assert(offsetof(source2sdk::client::CModifierParams, htarget) == 0xbc);
-        static_assert(offsetof(source2sdk::client::CModifierParams, hunit) == 0xc0);
-        static_assert(offsetof(source2sdk::client::CModifierParams, inflictor) == 0xc4);
-        static_assert(offsetof(source2sdk::client::CModifierParams, pAddedBuff) == 0xc8);
+        static_assert(offsetof(source2sdk::client::CModifierParams, bRaindropUsed) == 0x85);
+        static_assert(offsetof(source2sdk::client::CModifierParams, bInterrupted) == 0x86);
+        static_assert(offsetof(source2sdk::client::CModifierParams, bDiffusalApplied) == 0x87);
+        static_assert(offsetof(source2sdk::client::CModifierParams, bChainLightningConsidered) == 0x88);
+        static_assert(offsetof(source2sdk::client::CModifierParams, bSuppressDamage) == 0x89);
+        static_assert(offsetof(source2sdk::client::CModifierParams, bRangedAttack) == 0x8a);
+        static_assert(offsetof(source2sdk::client::CModifierParams, bProcessProcs) == 0x8b);
+        static_assert(offsetof(source2sdk::client::CModifierParams, bProjectileIsFromIllusion) == 0x8c);
+        static_assert(offsetof(source2sdk::client::CModifierParams, bHasMagicComponent) == 0x8d);
+        static_assert(offsetof(source2sdk::client::CModifierParams, bIsSpellLifesteal) == 0x8e);
+        static_assert(offsetof(source2sdk::client::CModifierParams, bBloodstoneRegenApplied) == 0x8f);
+        static_assert(offsetof(source2sdk::client::CModifierParams, bShroudManaRestoreApplied) == 0x90);
+        static_assert(offsetof(source2sdk::client::CModifierParams, bPhylacteryApplied) == 0x91);
+        static_assert(offsetof(source2sdk::client::CModifierParams, bAllowZeroDamageFromPostReductionBlock) == 0x92);
+        static_assert(offsetof(source2sdk::client::CModifierParams, bForceMagicStickProc) == 0x93);
+        static_assert(offsetof(source2sdk::client::CModifierParams, bIgnoreNegativeValuesIfDebuffImmune) == 0x94);
+        static_assert(offsetof(source2sdk::client::CModifierParams, bIgnorePositiveValuesIfDebuffImmune) == 0x95);
+        static_assert(offsetof(source2sdk::client::CModifierParams, bIgnoreAllIfDebuffImmune) == 0x96);
+        static_assert(offsetof(source2sdk::client::CModifierParams, bAlsoIgnoreBuffsIfDebuffImmune) == 0x97);
+        static_assert(offsetof(source2sdk::client::CModifierParams, bIgnoreLowerIfDebuffImmune) == 0x98);
+        static_assert(offsetof(source2sdk::client::CModifierParams, flIgnoreLowerIfDebuffImmune) == 0x9c);
+        static_assert(offsetof(source2sdk::client::CModifierParams, bIgnoreHigherIfDebuffImmune) == 0xa0);
+        static_assert(offsetof(source2sdk::client::CModifierParams, flIgnoreHigherIfDebuffImmune) == 0xa4);
+        static_assert(offsetof(source2sdk::client::CModifierParams, bIgnoreTemporaryAttackSpeedModifiers) == 0xa8);
+        static_assert(offsetof(source2sdk::client::CModifierParams, pszAbilitySpecialName) == 0xb0);
+        static_assert(offsetof(source2sdk::client::CModifierParams, nAbilitySpecialLevel) == 0xb8);
+        static_assert(offsetof(source2sdk::client::CModifierParams, hattacker) == 0xbc);
+        static_assert(offsetof(source2sdk::client::CModifierParams, htarget) == 0xc0);
+        static_assert(offsetof(source2sdk::client::CModifierParams, hunit) == 0xc4);
+        static_assert(offsetof(source2sdk::client::CModifierParams, inflictor) == 0xc8);
+        static_assert(offsetof(source2sdk::client::CModifierParams, pAddedBuff) == 0xd0);
         
-        static_assert(sizeof(source2sdk::client::CModifierParams) == 0xd0);
+        static_assert(sizeof(source2sdk::client::CModifierParams) == 0xd8);
     };
 };

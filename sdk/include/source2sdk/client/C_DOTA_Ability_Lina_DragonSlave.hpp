@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x5c0
+        // Size: 0x690
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -25,15 +25,15 @@ namespace source2sdk
         class C_DOTA_Ability_Lina_DragonSlave : public source2sdk::client::C_DOTABaseAbility
         {
         public:
-            std::int32_t dragon_slave_distance; // 0x5b0            
-            float dragon_slave_burn_duration; // 0x5b4            
-            float m_flDamage; // 0x5b8            
-            uint8_t _pad05bc[0x4];
+            std::int32_t dragon_slave_distance; // 0x680            
+            float dragon_slave_burn_duration; // 0x684            
+            float m_flDamage; // 0x688            
+            uint8_t _pad068c[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Ability_Lina_DragonSlave because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Lina_DragonSlave) == 0x5c0);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Lina_DragonSlave) == 0x690);
     };
 };

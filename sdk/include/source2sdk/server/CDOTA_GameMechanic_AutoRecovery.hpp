@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x530
+        // Size: 0x538
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -25,17 +25,17 @@ namespace source2sdk
         class CDOTA_GameMechanic_AutoRecovery : public source2sdk::server::CServerOnlyEntity
         {
         public:
-            uint8_t _pad04d8[0x10]; // 0x4d8
-            float m_flRecoveryDelay; // 0x4e8            
-            float m_flHealthRegenPerSecond; // 0x4ec            
-            float m_flManaRegenPerSecond; // 0x4f0            
-            float m_flTickInterval; // 0x4f4            
-            uint8_t _pad04f8[0x38];
+            uint8_t _pad04e0[0x10]; // 0x4e0
+            float m_flRecoveryDelay; // 0x4f0            
+            float m_flHealthRegenPerSecond; // 0x4f4            
+            float m_flManaRegenPerSecond; // 0x4f8            
+            float m_flTickInterval; // 0x4fc            
+            uint8_t _pad0500[0x38];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_GameMechanic_AutoRecovery because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_GameMechanic_AutoRecovery) == 0x530);
+        static_assert(sizeof(source2sdk::server::CDOTA_GameMechanic_AutoRecovery) == 0x538);
     };
 };

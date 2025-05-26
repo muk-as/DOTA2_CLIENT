@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x18
+        // Size: 0x28
         // Has VTable
         // Construct allowed
         // 
@@ -29,12 +29,14 @@ namespace source2sdk
             std::int16_t m_nSwitchValueNodeIdx; // 0x10            
             std::int16_t m_nTrueValueNodeIdx; // 0x12            
             std::int16_t m_nFalseValueNodeIdx; // 0x14            
-            uint8_t _pad0016[0x2];
+            uint8_t _pad0016[0x2]; // 0x16
+            CGlobalSymbol m_falseValue; // 0x18            
+            CGlobalSymbol m_trueValue; // 0x20            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CNmIDSwitchNode::CDefinition because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::animlib::CNmIDSwitchNode_CDefinition) == 0x18);
+        static_assert(sizeof(source2sdk::animlib::CNmIDSwitchNode_CDefinition) == 0x28);
     };
 };

@@ -24,23 +24,21 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1808
+        // Size: 0x1880
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Gyrocopter_Flak_Cannon_Scepter : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float sidegunner_fire_rate; // 0x17f8            
+            float sidegunner_fire_rate; // 0x1878            
             // hSideGunner has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> hSideGunner;
-            char hSideGunner[0x4]; // 0x17fc            
-            std::int32_t m_iAttackRecord; // 0x1800            
-            uint8_t _pad1804[0x4];
+            char hSideGunner[0x4]; // 0x187c            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Gyrocopter_Flak_Cannon_Scepter because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Gyrocopter_Flak_Cannon_Scepter) == 0x1808);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Gyrocopter_Flak_Cannon_Scepter) == 0x1880);
     };
 };

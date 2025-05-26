@@ -17,22 +17,21 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1818
+        // Size: 0x18a0
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_ArcWarden_MagneticField_Thinker_Evasion : public source2sdk::client::CDOTA_Buff
         {
         public:
-            uint8_t _pad17f8[0x8]; // 0x17f8
-            float radius; // 0x1800            
-            Vector m_vPos; // 0x1804            
-            std::int32_t affects_buildings; // 0x1810            
-            uint8_t _pad1814[0x4];
+            uint8_t _pad1878[0x14]; // 0x1878
+            float radius; // 0x188c            
+            Vector m_vPos; // 0x1890            
+            std::int32_t affects_buildings; // 0x189c            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_ArcWarden_MagneticField_Thinker_Evasion because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_ArcWarden_MagneticField_Thinker_Evasion) == 0x1818);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_ArcWarden_MagneticField_Thinker_Evasion) == 0x18a0);
     };
 };

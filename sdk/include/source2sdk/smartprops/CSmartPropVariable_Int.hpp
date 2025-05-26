@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x38
+        // Size: 0x48
         // Has VTable
         // Construct allowed
         // 
@@ -27,19 +27,19 @@ namespace source2sdk
         class CSmartPropVariable_Int : public source2sdk::smartprops::CSmartPropVariable
         {
         public:
-            std::int32_t m_DefaultValue; // 0x28            
+            std::int32_t m_DefaultValue; // 0x38            
             // metadata: MPropertySortPriority "-1"
             // metadata: MPropertyReadonlyExpr
-            std::int32_t m_nParamaterMinValue; // 0x2c            
+            std::int32_t m_nParamaterMinValue; // 0x3c            
             // metadata: MPropertySortPriority "-1"
             // metadata: MPropertyReadonlyExpr
-            std::int32_t m_nParamaterMaxValue; // 0x30            
-            uint8_t _pad0034[0x4];
+            std::int32_t m_nParamaterMaxValue; // 0x40            
+            uint8_t _pad0044[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CSmartPropVariable_Int because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::smartprops::CSmartPropVariable_Int) == 0x38);
+        static_assert(sizeof(source2sdk::smartprops::CSmartPropVariable_Int) == 0x48);
     };
 };

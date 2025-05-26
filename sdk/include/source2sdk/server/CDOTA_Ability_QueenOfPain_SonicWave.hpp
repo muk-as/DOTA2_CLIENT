@@ -19,7 +19,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x5d8
+        // Size: 0x5e8
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -27,17 +27,17 @@ namespace source2sdk
         class CDOTA_Ability_QueenOfPain_SonicWave : public source2sdk::server::CDOTABaseAbility
         {
         public:
-            source2sdk::entity2::GameTime_t m_fStartTime; // 0x5b8            
-            float m_fTotalTime; // 0x5bc            
-            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x5c0            
-            float starting_aoe; // 0x5c4            
-            float final_aoe; // 0x5c8            
-            uint8_t _pad05cc[0xc];
+            source2sdk::entity2::GameTime_t m_fStartTime; // 0x5c0            
+            float m_fTotalTime; // 0x5c4            
+            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x5c8            
+            float starting_aoe; // 0x5cc            
+            float final_aoe; // 0x5d0            
+            uint8_t _pad05d4[0x14];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_QueenOfPain_SonicWave because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Ability_QueenOfPain_SonicWave) == 0x5d8);
+        static_assert(sizeof(source2sdk::server::CDOTA_Ability_QueenOfPain_SonicWave) == 0x5e8);
     };
 };

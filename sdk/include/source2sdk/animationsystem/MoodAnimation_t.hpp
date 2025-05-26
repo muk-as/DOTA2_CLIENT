@@ -26,8 +26,7 @@ namespace source2sdk
         {
         public:
             // metadata: MPropertyDescription "Name of the animation"
-            // metadata: MPropertyAttributeEditor "VDataModelAnim( m_sModelName; include_deltas )"
-            CUtlString m_sName; // 0x0            
+            CModelAnimNameWithDeltas m_sName; // 0x0            
             // metadata: MPropertyDescription "Weight of the animation, higher numbers get picked more"
             float m_flWeight; // 0x8            
             uint8_t _pad000c[0x4];

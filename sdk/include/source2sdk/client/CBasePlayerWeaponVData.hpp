@@ -36,6 +36,7 @@ namespace source2sdk
             CUtlString m_szClassName; // 0x10            
             // metadata: MPropertyStartGroup "Visuals"
             // metadata: MPropertyDescription "Model used on the ground or held by an entity"
+            // metadata: MPropertyProvidesEditContextString
             // m_szWorldModel has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CResourceNameTyped<CWeakHandle<source2sdk::resourcesystem::InfoForResourceTypeCModel>> m_szWorldModel;
             char m_szWorldModel[0xe0]; // 0x18            
@@ -49,7 +50,6 @@ namespace source2sdk
             bool m_bAllowFlipping; // 0x1d9            
             uint8_t _pad01da[0x6]; // 0x1da
             // metadata: MPropertyDescription "Attachment to fire bullets from"
-            // metadata: MPropertyAttributeEditor "VDataModelAttachment( m_szWorldModel )"
             CAttachmentNameSymbolWithStorage m_sMuzzleAttachment; // 0x1e0            
             // metadata: MPropertyDescription "Effect when firing this weapon"
             // m_szMuzzleFlashParticle has a template type with potentially unknown template parameters. You can try uncommenting the field below.
@@ -93,13 +93,13 @@ namespace source2sdk
             bool m_bAutoSwitchFrom; // 0x2fd            
             uint8_t _pad02fe[0x2]; // 0x2fe
             source2sdk::client::RumbleEffect_t m_iRumbleEffect; // 0x300            
+            float m_flDropSpeed; // 0x304            
             // metadata: MPropertyFriendlyName "HUD Bucket"
             // metadata: MPropertyDescription "Which 'column' to display this weapon in the HUD"
-            std::int32_t m_iSlot; // 0x304            
+            std::int32_t m_iSlot; // 0x308            
             // metadata: MPropertyFriendlyName "HUD Bucket Position"
             // metadata: MPropertyDescription "Which 'row' to display this weapon in the HUD"
-            std::int32_t m_iPosition; // 0x308            
-            uint8_t _pad030c[0x4]; // 0x30c
+            std::int32_t m_iPosition; // 0x30c            
             // metadata: MPropertyStartGroup "Sounds"
             // m_aShootSounds has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlOrderedMap<source2sdk::client::WeaponSound_t,CSoundEventName> m_aShootSounds;
@@ -127,8 +127,9 @@ namespace source2sdk
         static_assert(offsetof(source2sdk::client::CBasePlayerWeaponVData, m_bAutoSwitchTo) == 0x2fc);
         static_assert(offsetof(source2sdk::client::CBasePlayerWeaponVData, m_bAutoSwitchFrom) == 0x2fd);
         static_assert(offsetof(source2sdk::client::CBasePlayerWeaponVData, m_iRumbleEffect) == 0x300);
-        static_assert(offsetof(source2sdk::client::CBasePlayerWeaponVData, m_iSlot) == 0x304);
-        static_assert(offsetof(source2sdk::client::CBasePlayerWeaponVData, m_iPosition) == 0x308);
+        static_assert(offsetof(source2sdk::client::CBasePlayerWeaponVData, m_flDropSpeed) == 0x304);
+        static_assert(offsetof(source2sdk::client::CBasePlayerWeaponVData, m_iSlot) == 0x308);
+        static_assert(offsetof(source2sdk::client::CBasePlayerWeaponVData, m_iPosition) == 0x30c);
         static_assert(offsetof(source2sdk::client::CBasePlayerWeaponVData, m_aShootSounds) == 0x310);
         
         static_assert(sizeof(source2sdk::client::CBasePlayerWeaponVData) == 0x338);

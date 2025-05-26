@@ -18,19 +18,19 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1800
+        // Size: 0x1880
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Drow_Ranger_Glacier_Hilltop_Aura : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float shard_width; // 0x17f8            
-            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x17fc            
+            float shard_width; // 0x1878            
+            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x187c            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Drow_Ranger_Glacier_Hilltop_Aura because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Drow_Ranger_Glacier_Hilltop_Aura) == 0x1800);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Drow_Ranger_Glacier_Hilltop_Aura) == 0x1880);
     };
 };

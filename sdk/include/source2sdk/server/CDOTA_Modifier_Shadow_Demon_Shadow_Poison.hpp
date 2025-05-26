@@ -18,21 +18,21 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1808
+        // Size: 0x1888
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Shadow_Demon_Shadow_Poison : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float stack_damage; // 0x17f8            
-            float bonus_stack_damage; // 0x17fc            
-            std::int32_t max_multiply_stacks; // 0x1800            
-            source2sdk::client::ParticleIndex_t m_nFXStackIndex; // 0x1804            
+            float stack_damage; // 0x1878            
+            float bonus_stack_damage; // 0x187c            
+            std::int32_t max_multiply_stacks; // 0x1880            
+            source2sdk::client::ParticleIndex_t m_nFXStackIndex; // 0x1884            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Shadow_Demon_Shadow_Poison because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Shadow_Demon_Shadow_Poison) == 0x1808);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Shadow_Demon_Shadow_Poison) == 0x1888);
     };
 };

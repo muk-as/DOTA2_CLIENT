@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x1eb8
+        // Size: 0x1ef8
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -29,21 +29,21 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            std::uint32_t m_nTreeDisguise; // 0x1e90            
+            std::uint32_t m_nTreeDisguise; // 0x1ed0            
             // metadata: MNetworkEnable
-            std::uint32_t m_nPerchedTree; // 0x1e94            
-            Vector m_vLastPos; // 0x1e98            
-            bool m_bIsOnCloud; // 0x1ea4            
-            uint8_t _pad1ea5[0x3]; // 0x1ea5
-            float m_fTotalDistOnCloud; // 0x1ea8            
-            float m_fTotalDistoffCloud; // 0x1eac            
-            float m_fBackOnCloudThresh; // 0x1eb0            
-            uint8_t _pad1eb4[0x4];
+            std::uint32_t m_nPerchedTree; // 0x1ed4            
+            Vector m_vLastPos; // 0x1ed8            
+            bool m_bIsOnCloud; // 0x1ee4            
+            uint8_t _pad1ee5[0x3]; // 0x1ee5
+            float m_fTotalDistOnCloud; // 0x1ee8            
+            float m_fTotalDistoffCloud; // 0x1eec            
+            float m_fBackOnCloudThresh; // 0x1ef0            
+            uint8_t _pad1ef4[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Unit_Hero_MonkeyKing because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Unit_Hero_MonkeyKing) == 0x1eb8);
+        static_assert(sizeof(source2sdk::server::CDOTA_Unit_Hero_MonkeyKing) == 0x1ef8);
     };
 };

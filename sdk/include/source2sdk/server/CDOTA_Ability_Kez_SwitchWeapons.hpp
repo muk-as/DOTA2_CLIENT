@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x5c0
+        // Size: 0x5c8
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -28,13 +28,13 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            bool m_bSai; // 0x5b8            
-            uint8_t _pad05b9[0x7];
+            bool m_bSai; // 0x5c0            
+            uint8_t _pad05c1[0x7];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_Kez_SwitchWeapons because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Ability_Kez_SwitchWeapons) == 0x5c0);
+        static_assert(sizeof(source2sdk::server::CDOTA_Ability_Kez_SwitchWeapons) == 0x5c8);
     };
 };

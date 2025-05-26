@@ -25,11 +25,12 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0xb40
+        // Size: 0xd08
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
         // 
+        // static metadata: MNetworkVarNames "bool m_ragEnabled"
         // static metadata: MNetworkVarNames "Vector m_ragPos"
         // static metadata: MNetworkVarNames "QAngle m_ragAngles"
         // static metadata: MNetworkVarNames "float32 m_flBlendWeight"
@@ -38,44 +39,47 @@ namespace source2sdk
         class C_RagdollProp : public source2sdk::client::CBaseAnimGraph
         {
         public:
-            uint8_t _pad0ac8[0x8]; // 0xac8
+            uint8_t _pad0c78[0x8]; // 0xc78
+            // metadata: MNetworkEnable
+            // metadata: MNetworkChangeCallback "ragEnabledChanged"
+            // m_ragEnabled has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+            // C_NetworkUtlVectorBase<bool> m_ragEnabled;
+            char m_ragEnabled[0x18]; // 0xc80            
             // metadata: MNetworkEnable
             // metadata: MNetworkEncoder "coord"
-            // metadata: MNetworkChangeCallback "ragAnglesChanged"
             // m_ragPos has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // C_NetworkUtlVectorBase<Vector> m_ragPos;
-            char m_ragPos[0x18]; // 0xad0            
+            char m_ragPos[0x18]; // 0xc98            
             // metadata: MNetworkEnable
             // metadata: MNetworkEncoder "qangle"
             // metadata: MNetworkBitCount "13"
-            // metadata: MNetworkChangeCallback "ragAnglesChanged"
             // m_ragAngles has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // C_NetworkUtlVectorBase<QAngle> m_ragAngles;
-            char m_ragAngles[0x18]; // 0xae8            
+            char m_ragAngles[0x18]; // 0xcb0            
             // metadata: MNetworkEnable
             // metadata: MNetworkBitCount "8"
             // metadata: MNetworkMinValue "0,000000"
             // metadata: MNetworkMaxValue "1,000000"
             // metadata: MNetworkEncodeFlags "1"
-            float m_flBlendWeight; // 0xb00            
+            float m_flBlendWeight; // 0xcc8            
             // metadata: MNetworkEnable
             // m_hRagdollSource has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hRagdollSource;
-            char m_hRagdollSource[0x4]; // 0xb04            
-            source2sdk::modellib::AttachmentHandle_t m_iEyeAttachment; // 0xb08            
-            uint8_t _pad0b09[0x3]; // 0xb09
-            float m_flBlendWeightCurrent; // 0xb0c            
+            char m_hRagdollSource[0x4]; // 0xccc            
+            source2sdk::modellib::AttachmentHandle_t m_iEyeAttachment; // 0xcd0            
+            uint8_t _pad0cd1[0x3]; // 0xcd1
+            float m_flBlendWeightCurrent; // 0xcd4            
             // m_parentPhysicsBoneIndices has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<std::int32_t> m_parentPhysicsBoneIndices;
-            char m_parentPhysicsBoneIndices[0x18]; // 0xb10            
+            char m_parentPhysicsBoneIndices[0x18]; // 0xcd8            
             // m_worldSpaceBoneComputationOrder has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<std::int32_t> m_worldSpaceBoneComputationOrder;
-            char m_worldSpaceBoneComputationOrder[0x18]; // 0xb28            
+            char m_worldSpaceBoneComputationOrder[0x18]; // 0xcf0            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_RagdollProp because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_RagdollProp) == 0xb40);
+        static_assert(sizeof(source2sdk::client::C_RagdollProp) == 0xd08);
     };
 };

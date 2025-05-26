@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x1e98
+        // Size: 0x1ed8
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -29,15 +29,15 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            bool m_bShouldRespawn; // 0x1e90            
+            bool m_bShouldRespawn; // 0x1ed0            
             // metadata: MNetworkEnable
-            bool m_bStolen; // 0x1e91            
-            uint8_t _pad1e92[0x6];
+            bool m_bStolen; // 0x1ed1            
+            uint8_t _pad1ed2[0x6];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Unit_SpiritBear because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Unit_SpiritBear) == 0x1e98);
+        static_assert(sizeof(source2sdk::server::CDOTA_Unit_SpiritBear) == 0x1ed8);
     };
 };

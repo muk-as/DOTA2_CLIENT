@@ -24,7 +24,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x7e0
+        // Size: 0x980
         // Has VTable
         // Construct allowed
         // 
@@ -38,17 +38,17 @@ namespace source2sdk
             // metadata: MNetworkEnable
             // m_glowEntity has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseModelEntity> m_glowEntity;
-            char m_glowEntity[0x4]; // 0x7d0            
+            char m_glowEntity[0x4]; // 0x970            
             // metadata: MNetworkEnable
-            bool m_usable; // 0x7d4            
-            uint8_t _pad07d5[0x3]; // 0x7d5
+            bool m_usable; // 0x974            
+            uint8_t _pad0975[0x3]; // 0x975
             // metadata: MNetworkEnable
-            CUtlSymbolLarge m_szDisplayText; // 0x7d8            
+            CUtlSymbolLarge m_szDisplayText; // 0x978            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_BaseButton because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_BaseButton) == 0x7e0);
+        static_assert(sizeof(source2sdk::client::C_BaseButton) == 0x980);
     };
 };

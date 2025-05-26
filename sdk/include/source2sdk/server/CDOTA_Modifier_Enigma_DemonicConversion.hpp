@@ -17,26 +17,26 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1820
+        // Size: 0x18a0
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Enigma_DemonicConversion : public source2sdk::server::CDOTA_Modifier_Kill
         {
         public:
-            std::int32_t m_iAttackCount; // 0x1800            
-            std::int32_t split_attack_count; // 0x1804            
-            float life_extension; // 0x1808            
-            std::int32_t eidolon_attack_range; // 0x180c            
-            std::int32_t eidolon_bonus_damage; // 0x1810            
-            std::int32_t eidolon_bonus_attack_speed; // 0x1814            
-            bool m_bAllowSplit; // 0x1818            
-            uint8_t _pad1819[0x3]; // 0x1819
-            std::int32_t m_nSpawnNum; // 0x181c            
+            std::int32_t m_iAttackCount; // 0x1880            
+            std::int32_t split_attack_count; // 0x1884            
+            float life_extension; // 0x1888            
+            std::int32_t eidolon_attack_range; // 0x188c            
+            std::int32_t eidolon_bonus_damage; // 0x1890            
+            std::int32_t eidolon_bonus_attack_speed; // 0x1894            
+            bool m_bAllowSplit; // 0x1898            
+            uint8_t _pad1899[0x3]; // 0x1899
+            std::int32_t m_nSpawnNum; // 0x189c            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Enigma_DemonicConversion because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Enigma_DemonicConversion) == 0x1820);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Enigma_DemonicConversion) == 0x18a0);
     };
 };

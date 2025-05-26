@@ -35,6 +35,7 @@ namespace source2sdk
             
             // Datamap fields:
             // void CSplineConstraintUpdateThink; // 0x0
+            // CUtlSymbolLarge InputSetSplineEntity; // 0x0
         };
         #pragma pack(pop)
         

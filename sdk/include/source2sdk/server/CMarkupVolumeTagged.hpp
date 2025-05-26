@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x7e8
+        // Size: 0x808
         // Has VTable
         // Construct disallowed
         // MConstructibleClassBase
@@ -27,21 +27,21 @@ namespace source2sdk
         public:
             // m_GroupNames has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CGlobalSymbol> m_GroupNames;
-            char m_GroupNames[0x18]; // 0x7b0            
+            char m_GroupNames[0x18]; // 0x7d0            
             // m_Tags has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CGlobalSymbol> m_Tags;
-            char m_Tags[0x18]; // 0x7c8            
-            bool m_bIsGroup; // 0x7e0            
-            bool m_bGroupByPrefab; // 0x7e1            
-            bool m_bGroupByVolume; // 0x7e2            
-            bool m_bGroupOtherGroups; // 0x7e3            
-            bool m_bIsInGroup; // 0x7e4            
-            uint8_t _pad07e5[0x3];
+            char m_Tags[0x18]; // 0x7e8            
+            bool m_bIsGroup; // 0x800            
+            bool m_bGroupByPrefab; // 0x801            
+            bool m_bGroupByVolume; // 0x802            
+            bool m_bGroupOtherGroups; // 0x803            
+            bool m_bIsInGroup; // 0x804            
+            uint8_t _pad0805[0x3];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CMarkupVolumeTagged because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CMarkupVolumeTagged) == 0x7e8);
+        static_assert(sizeof(source2sdk::server::CMarkupVolumeTagged) == 0x808);
     };
 };

@@ -18,36 +18,36 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1840
+        // Size: 0x18c0
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_LootDrop_Thinker : public source2sdk::client::CDOTA_Buff
         {
         public:
-            bool m_bAutoPickup; // 0x17f8            
-            bool m_bOnlyPlayerHeroPickup; // 0x17f9            
-            bool m_bCreepHeroPickup; // 0x17fa            
-            bool m_bAutoUse; // 0x17fb            
-            bool m_bFlying; // 0x17fc            
-            bool m_bUseSpawnAnim; // 0x17fd            
-            bool m_bAutoTeleport; // 0x17fe            
-            uint8_t _pad17ff[0x1]; // 0x17ff
-            source2sdk::entity2::GameTime_t m_flKnockbackStartTime; // 0x1800            
-            source2sdk::entity2::GameTime_t m_flKnockbackEndTime; // 0x1804            
-            float m_flKnockbackHeight; // 0x1808            
-            float m_flInitialHeight; // 0x180c            
-            float m_flKnockbackDuration; // 0x1810            
-            float m_flEndHeight; // 0x1814            
-            Vector m_vStartPos; // 0x1818            
-            Vector m_vEndPos; // 0x1824            
-            float m_fPickupRadius; // 0x1830            
-            uint8_t _pad1834[0x4]; // 0x1834
-            CUtlString m_strTransitionEffect; // 0x1838            
+            bool m_bAutoPickup; // 0x1878            
+            bool m_bOnlyPlayerHeroPickup; // 0x1879            
+            bool m_bCreepHeroPickup; // 0x187a            
+            bool m_bAutoUse; // 0x187b            
+            bool m_bFlying; // 0x187c            
+            bool m_bUseSpawnAnim; // 0x187d            
+            bool m_bAutoTeleport; // 0x187e            
+            uint8_t _pad187f[0x1]; // 0x187f
+            source2sdk::entity2::GameTime_t m_flKnockbackStartTime; // 0x1880            
+            source2sdk::entity2::GameTime_t m_flKnockbackEndTime; // 0x1884            
+            float m_flKnockbackHeight; // 0x1888            
+            float m_flInitialHeight; // 0x188c            
+            float m_flKnockbackDuration; // 0x1890            
+            float m_flEndHeight; // 0x1894            
+            Vector m_vStartPos; // 0x1898            
+            Vector m_vEndPos; // 0x18a4            
+            float m_fPickupRadius; // 0x18b0            
+            uint8_t _pad18b4[0x4]; // 0x18b4
+            CUtlString m_strTransitionEffect; // 0x18b8            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_LootDrop_Thinker because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_LootDrop_Thinker) == 0x1840);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_LootDrop_Thinker) == 0x18c0);
     };
 };

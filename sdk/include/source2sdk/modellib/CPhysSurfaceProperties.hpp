@@ -6,6 +6,7 @@
 #include "source2sdk/modellib/CPhysSurfacePropertiesAudio.hpp"
 #include "source2sdk/modellib/CPhysSurfacePropertiesPhysics.hpp"
 #include "source2sdk/modellib/CPhysSurfacePropertiesSoundNames.hpp"
+#include "source2sdk/modellib/CPhysSurfacePropertiesVehicle.hpp"
 
 // /////////////////////////////////////////////////////////////
 // Module: modellib
@@ -39,7 +40,8 @@ namespace source2sdk
             CUtlString m_description; // 0x20            
             // metadata: MKV3TransferName "physics"
             source2sdk::modellib::CPhysSurfacePropertiesPhysics m_physics; // 0x28            
-            uint8_t _pad0044[0x4]; // 0x44
+            // metadata: MKV3TransferName "vehicleparams"
+            source2sdk::modellib::CPhysSurfacePropertiesVehicle m_vehicleParams; // 0x40            
             // metadata: MKV3TransferName "audiosounds"
             source2sdk::modellib::CPhysSurfacePropertiesSoundNames m_audioSounds; // 0x48            
             // metadata: MKV3TransferName "audioparams"
@@ -53,6 +55,7 @@ namespace source2sdk
         static_assert(offsetof(source2sdk::modellib::CPhysSurfaceProperties, m_bHidden) == 0x18);
         static_assert(offsetof(source2sdk::modellib::CPhysSurfaceProperties, m_description) == 0x20);
         static_assert(offsetof(source2sdk::modellib::CPhysSurfaceProperties, m_physics) == 0x28);
+        static_assert(offsetof(source2sdk::modellib::CPhysSurfaceProperties, m_vehicleParams) == 0x40);
         static_assert(offsetof(source2sdk::modellib::CPhysSurfaceProperties, m_audioSounds) == 0x48);
         static_assert(offsetof(source2sdk::modellib::CPhysSurfaceProperties, m_audioParams) == 0xa8);
         

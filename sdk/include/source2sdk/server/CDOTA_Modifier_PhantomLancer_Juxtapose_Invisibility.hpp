@@ -17,19 +17,19 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1810
+        // Size: 0x1890
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_PhantomLancer_Juxtapose_Invisibility : public source2sdk::server::CDOTA_Modifier_Invisible
         {
         public:
-            float invis_movespeed; // 0x1808            
-            uint8_t _pad180c[0x4];
+            float invis_movespeed; // 0x1888            
+            uint8_t _pad188c[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_PhantomLancer_Juxtapose_Invisibility because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_PhantomLancer_Juxtapose_Invisibility) == 0x1810);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_PhantomLancer_Juxtapose_Invisibility) == 0x1890);
     };
 };

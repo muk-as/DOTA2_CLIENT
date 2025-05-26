@@ -20,8 +20,8 @@ namespace source2sdk
         // Has Trivial Constructor
         // Has Trivial Destructor
         // 
-        // static metadata: MPulseProvideFeatureTag "2"
         // static metadata: MPulseLibraryBindings
+        // static metadata: MPulseProvideFeatureTag "2"
         #pragma pack(push, 1)
         class CPulsePanoramaFuncs
         {

@@ -24,7 +24,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x5d8
+        // Size: 0x5e0
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -34,14 +34,14 @@ namespace source2sdk
         public:
             // m_hAxes has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CBaseEntity>> m_hAxes;
-            char m_hAxes[0x18]; // 0x5b8            
-            std::int32_t m_nAxeIdx; // 0x5d0            
-            uint8_t _pad05d4[0x4];
+            char m_hAxes[0x18]; // 0x5c0            
+            std::int32_t m_nAxeIdx; // 0x5d8            
+            uint8_t _pad05dc[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_TrollWarlord_Whirling_Axes_Melee because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Ability_TrollWarlord_Whirling_Axes_Melee) == 0x5d8);
+        static_assert(sizeof(source2sdk::server::CDOTA_Ability_TrollWarlord_Whirling_Axes_Melee) == 0x5e0);
     };
 };

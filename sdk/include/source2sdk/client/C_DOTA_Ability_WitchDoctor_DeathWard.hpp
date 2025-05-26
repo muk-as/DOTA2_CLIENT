@@ -27,7 +27,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x5e8
+        // Size: 0x6b8
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -40,22 +40,22 @@ namespace source2sdk
             // metadata: MNetworkEnable
             // m_hWard has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hWard;
-            char m_hWard[0x4]; // 0x5b0            
-            std::int32_t bonus_accuracy; // 0x5b4            
-            std::int32_t m_iDamage; // 0x5b8            
-            std::int32_t m_iBounceRadius; // 0x5bc            
-            std::int32_t m_iProjectileSpeed; // 0x5c0            
-            source2sdk::entity2::GameTime_t m_fWardExpireTime; // 0x5c4            
-            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x5c8            
-            uint8_t _pad05cc[0x4]; // 0x5cc
+            char m_hWard[0x4]; // 0x680            
+            std::int32_t bonus_accuracy; // 0x684            
+            std::int32_t m_iDamage; // 0x688            
+            std::int32_t m_iBounceRadius; // 0x68c            
+            std::int32_t m_iProjectileSpeed; // 0x690            
+            source2sdk::entity2::GameTime_t m_fWardExpireTime; // 0x694            
+            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x698            
+            uint8_t _pad069c[0x4]; // 0x69c
             // m_BounceInfo has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::client::sBounceInfo> m_BounceInfo;
-            char m_BounceInfo[0x18]; // 0x5d0            
+            char m_BounceInfo[0x18]; // 0x6a0            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Ability_WitchDoctor_DeathWard because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_WitchDoctor_DeathWard) == 0x5e8);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_WitchDoctor_DeathWard) == 0x6b8);
     };
 };

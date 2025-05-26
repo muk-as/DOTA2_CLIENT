@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x608
+        // Size: 0x618
         // Has VTable
         // Construct allowed
         #pragma pack(push, 1)
@@ -49,6 +49,6 @@ namespace source2sdk
         
         // Cannot assert offsets of fields in CPhysSlideConstraint because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CPhysSlideConstraint) == 0x608);
+        static_assert(sizeof(source2sdk::server::CPhysSlideConstraint) == 0x618);
     };
 };

@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x17e0
+        // Size: 0x1a08
         // Has VTable
         // Construct allowed
         // 
@@ -27,13 +27,13 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            float m_flAim; // 0x17d8            
-            uint8_t _pad17dc[0x4];
+            float m_flAim; // 0x1a00            
+            uint8_t _pad1a04[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_BaseNPC_Creep because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_BaseNPC_Creep) == 0x17e0);
+        static_assert(sizeof(source2sdk::client::C_DOTA_BaseNPC_Creep) == 0x1a08);
     };
 };

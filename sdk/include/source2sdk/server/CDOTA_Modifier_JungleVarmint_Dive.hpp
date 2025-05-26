@@ -17,30 +17,30 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1838
+        // Size: 0x18b8
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_JungleVarmint_Dive : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float m_flTotalTime; // 0x17f8            
-            float m_flInitialVelocity; // 0x17fc            
-            Vector m_vStartPosition; // 0x1800            
-            Vector m_vTargetHorizontalDirection; // 0x180c            
-            float m_flCurrentTimeHoriz; // 0x1818            
-            float m_flCurrentTimeVert; // 0x181c            
-            bool m_bInterrupted; // 0x1820            
-            uint8_t _pad1821[0x3]; // 0x1821
-            std::int32_t distance; // 0x1824            
-            float speed; // 0x1828            
-            float acceleration; // 0x182c            
-            std::int32_t radius; // 0x1830            
-            uint8_t _pad1834[0x4];
+            float m_flTotalTime; // 0x1878            
+            float m_flInitialVelocity; // 0x187c            
+            Vector m_vStartPosition; // 0x1880            
+            Vector m_vTargetHorizontalDirection; // 0x188c            
+            float m_flCurrentTimeHoriz; // 0x1898            
+            float m_flCurrentTimeVert; // 0x189c            
+            bool m_bInterrupted; // 0x18a0            
+            uint8_t _pad18a1[0x3]; // 0x18a1
+            std::int32_t distance; // 0x18a4            
+            float speed; // 0x18a8            
+            float acceleration; // 0x18ac            
+            std::int32_t radius; // 0x18b0            
+            uint8_t _pad18b4[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_JungleVarmint_Dive because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_JungleVarmint_Dive) == 0x1838);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_JungleVarmint_Dive) == 0x18b8);
     };
 };

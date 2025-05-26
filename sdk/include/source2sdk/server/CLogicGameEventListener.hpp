@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x528
+        // Size: 0x530
         // Has VTable
         // Construct allowed
         // 
@@ -27,14 +27,14 @@ namespace source2sdk
         class CLogicGameEventListener : public source2sdk::server::CLogicalEntity
         {
         public:
-            uint8_t _pad04d8[0x10]; // 0x4d8
-            source2sdk::entity2::CEntityIOOutput m_OnEventFired; // 0x4e8            
-            CUtlSymbolLarge m_iszGameEventName; // 0x510            
-            CUtlSymbolLarge m_iszGameEventItem; // 0x518            
+            uint8_t _pad04e0[0x10]; // 0x4e0
+            source2sdk::entity2::CEntityIOOutput m_OnEventFired; // 0x4f0            
+            CUtlSymbolLarge m_iszGameEventName; // 0x518            
+            CUtlSymbolLarge m_iszGameEventItem; // 0x520            
             // metadata: MNetworkEnable
-            bool m_bEnabled; // 0x520            
-            bool m_bStartDisabled; // 0x521            
-            uint8_t _pad0522[0x6];
+            bool m_bEnabled; // 0x528            
+            bool m_bStartDisabled; // 0x529            
+            uint8_t _pad052a[0x6];
             
             // Datamap fields:
             // void InputEnable; // 0x0
@@ -45,6 +45,6 @@ namespace source2sdk
         
         // Cannot assert offsets of fields in CLogicGameEventListener because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CLogicGameEventListener) == 0x528);
+        static_assert(sizeof(source2sdk::server::CLogicGameEventListener) == 0x530);
     };
 };

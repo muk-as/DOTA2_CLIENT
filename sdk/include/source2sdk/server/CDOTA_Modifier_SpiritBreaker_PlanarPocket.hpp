@@ -25,7 +25,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1800
+        // Size: 0x1880
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_SpiritBreaker_PlanarPocket : public source2sdk::client::CDOTA_Buff
@@ -33,13 +33,13 @@ namespace source2sdk
         public:
             // m_hRedirectAbility has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hRedirectAbility;
-            char m_hRedirectAbility[0x4]; // 0x17f8            
-            source2sdk::entity2::GameTick_t nRedirectTick; // 0x17fc            
+            char m_hRedirectAbility[0x4]; // 0x1878            
+            source2sdk::entity2::GameTick_t nRedirectTick; // 0x187c            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_SpiritBreaker_PlanarPocket because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_SpiritBreaker_PlanarPocket) == 0x1800);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_SpiritBreaker_PlanarPocket) == 0x1880);
     };
 };

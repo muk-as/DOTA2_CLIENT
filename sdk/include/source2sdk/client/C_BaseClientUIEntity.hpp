@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x800
+        // Size: 0x9a0
         // Has VTable
         // Is Abstract
         // 
@@ -29,22 +29,22 @@ namespace source2sdk
         class C_BaseClientUIEntity : public source2sdk::client::C_BaseModelEntity
         {
         public:
-            uint8_t _pad07d0[0x8]; // 0x7d0
+            uint8_t _pad0970[0x8]; // 0x970
             // metadata: MNetworkEnable
-            bool m_bEnabled; // 0x7d8            
-            uint8_t _pad07d9[0x7]; // 0x7d9
+            bool m_bEnabled; // 0x978            
+            uint8_t _pad0979[0x7]; // 0x979
             // metadata: MNetworkEnable
-            CUtlSymbolLarge m_DialogXMLName; // 0x7e0            
+            CUtlSymbolLarge m_DialogXMLName; // 0x980            
             // metadata: MNetworkEnable
-            CUtlSymbolLarge m_PanelClassName; // 0x7e8            
+            CUtlSymbolLarge m_PanelClassName; // 0x988            
             // metadata: MNetworkEnable
-            CUtlSymbolLarge m_PanelID; // 0x7f0            
-            uint8_t _pad07f8[0x8];
+            CUtlSymbolLarge m_PanelID; // 0x990            
+            uint8_t _pad0998[0x8];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_BaseClientUIEntity because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_BaseClientUIEntity) == 0x800);
+        static_assert(sizeof(source2sdk::client::C_BaseClientUIEntity) == 0x9a0);
     };
 };

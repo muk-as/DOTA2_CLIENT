@@ -25,7 +25,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x5e8
+        // Size: 0x5f0
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -33,20 +33,20 @@ namespace source2sdk
         class CDOTA_Ability_EmberSpirit_SleightOfFist : public source2sdk::server::CDOTABaseAbility
         {
         public:
-            Vector m_vCastLoc; // 0x5b8            
-            std::int32_t m_nHeroesKilled; // 0x5c4            
+            Vector m_vCastLoc; // 0x5c0            
+            std::int32_t m_nHeroesKilled; // 0x5cc            
             // m_hAttackEntities has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CBaseEntity>> m_hAttackEntities;
-            char m_hAttackEntities[0x18]; // 0x5c8            
-            source2sdk::client::ParticleIndex_t m_nFXMarkerIndex; // 0x5e0            
+            char m_hAttackEntities[0x18]; // 0x5d0            
+            source2sdk::client::ParticleIndex_t m_nFXMarkerIndex; // 0x5e8            
             // m_hDoubleHitEntity has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hDoubleHitEntity;
-            char m_hDoubleHitEntity[0x4]; // 0x5e4            
+            char m_hDoubleHitEntity[0x4]; // 0x5ec            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_EmberSpirit_SleightOfFist because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Ability_EmberSpirit_SleightOfFist) == 0x5e8);
+        static_assert(sizeof(source2sdk::server::CDOTA_Ability_EmberSpirit_SleightOfFist) == 0x5f0);
     };
 };

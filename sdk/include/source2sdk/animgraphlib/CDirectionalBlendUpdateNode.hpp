@@ -21,7 +21,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0xa8
+        // Size: 0xb0
         // Has VTable
         // Construct allowed
         // 
@@ -34,19 +34,19 @@ namespace source2sdk
             source2sdk::animationsystem::HSequence m_hSequences[8]; // 0x5c            
             uint8_t _pad007c[0x4]; // 0x7c
             source2sdk::animgraphlib::CAnimInputDamping m_damping; // 0x80            
-            source2sdk::animgraphlib::AnimValueSource m_blendValueSource; // 0x90            
-            source2sdk::animgraphlib::CAnimParamHandle m_paramIndex; // 0x94            
-            uint8_t _pad0096[0x2]; // 0x96
-            float m_playbackSpeed; // 0x98            
-            float m_duration; // 0x9c            
-            bool m_bLoop; // 0xa0            
-            bool m_bLockBlendOnReset; // 0xa1            
-            uint8_t _pad00a2[0x6];
+            source2sdk::animgraphlib::AnimValueSource m_blendValueSource; // 0x98            
+            source2sdk::animgraphlib::CAnimParamHandle m_paramIndex; // 0x9c            
+            uint8_t _pad009e[0x2]; // 0x9e
+            float m_playbackSpeed; // 0xa0            
+            float m_duration; // 0xa4            
+            bool m_bLoop; // 0xa8            
+            bool m_bLockBlendOnReset; // 0xa9            
+            uint8_t _pad00aa[0x6];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDirectionalBlendUpdateNode because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::animgraphlib::CDirectionalBlendUpdateNode) == 0xa8);
+        static_assert(sizeof(source2sdk::animgraphlib::CDirectionalBlendUpdateNode) == 0xb0);
     };
 };

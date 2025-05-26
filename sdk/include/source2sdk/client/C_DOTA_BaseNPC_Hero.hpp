@@ -5,7 +5,7 @@
 #include <cstdint>
 #include "source2sdk/client/C_DOTA_BaseNPC_Additive.hpp"
 #include "source2sdk/client/CountdownTimer.hpp"
-#include "source2sdk/client/HeroFacetID_t.hpp"
+#include "source2sdk/client/HeroFacetKey_t.hpp"
 #include "source2sdk/client/HeroID_t.hpp"
 #include "source2sdk/client/ParticleIndex_t.hpp"
 #include "source2sdk/client/PlayerID_t.hpp"
@@ -31,7 +31,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x1b68
+        // Size: 0x1d98
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -50,7 +50,7 @@ namespace source2sdk
         // static metadata: MNetworkVarNames "EHANDLE m_hFacetAbilities"
         // static metadata: MNetworkVarNames "int m_iRecentDamage"
         // static metadata: MNetworkVarNames "PlayerID_t m_iPlayerID"
-        // static metadata: MNetworkVarNames "HeroFacetID_t m_iHeroFacetID"
+        // static metadata: MNetworkVarNames "HeroFacetKey_t m_iHeroFacetKey"
         // static metadata: MNetworkVarNames "CHandle<C_DOTA_BaseNPC_Hero> m_hReplicatingOtherHeroModel"
         // static metadata: MNetworkVarNames "bool m_bReincarnating"
         // static metadata: MNetworkVarNames "bool m_bCustomKillEffect"
@@ -62,105 +62,106 @@ namespace source2sdk
         class C_DOTA_BaseNPC_Hero : public source2sdk::client::C_DOTA_BaseNPC_Additive
         {
         public:
-            uint8_t _pad17d8[0x8]; // 0x17d8
+            uint8_t _pad1a00[0x8]; // 0x1a00
             // metadata: MNetworkEnable
             // metadata: MNetworkPriority "32"
-            std::int32_t m_iCurrentXP; // 0x17e0            
+            std::int32_t m_iCurrentXP; // 0x1a08            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnAbilityPointsChanged"
-            std::int32_t m_iAbilityPoints; // 0x17e4            
+            std::int32_t m_iAbilityPoints; // 0x1a0c            
             // metadata: MNetworkEnable
-            std::int32_t m_iTotalAbilityPoints; // 0x17e8            
+            std::int32_t m_iTotalAbilityPoints; // 0x1a10            
             // metadata: MNetworkEnable
-            source2sdk::entity2::GameTime_t m_flRespawnTime; // 0x17ec            
+            source2sdk::entity2::GameTime_t m_flRespawnTime; // 0x1a14            
             // metadata: MNetworkEnable
-            float m_flRespawnTimePenalty; // 0x17f0            
-            // metadata: MNetworkEnable
-            // metadata: MNetworkChangeCallback "OnBaseStatChanged"
-            float m_flStrength; // 0x17f4            
+            float m_flRespawnTimePenalty; // 0x1a18            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnBaseStatChanged"
-            float m_flAgility; // 0x17f8            
+            float m_flStrength; // 0x1a1c            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnBaseStatChanged"
-            float m_flIntellect; // 0x17fc            
+            float m_flAgility; // 0x1a20            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnBaseStatChanged"
-            float m_flStrengthTotal; // 0x1800            
+            float m_flIntellect; // 0x1a24            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnBaseStatChanged"
-            float m_flAgilityTotal; // 0x1804            
+            float m_flStrengthTotal; // 0x1a28            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnBaseStatChanged"
-            float m_flIntellectTotal; // 0x1808            
-            uint8_t _pad180c[0x4]; // 0x180c
+            float m_flAgilityTotal; // 0x1a2c            
+            // metadata: MNetworkEnable
+            // metadata: MNetworkChangeCallback "OnBaseStatChanged"
+            float m_flIntellectTotal; // 0x1a30            
+            uint8_t _pad1a34[0x4]; // 0x1a34
             // metadata: MNetworkEnable
             // m_hFacetAbilities has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // C_NetworkUtlVectorBase<CHandle<source2sdk::client::C_BaseEntity>> m_hFacetAbilities;
-            char m_hFacetAbilities[0x18]; // 0x1810            
+            char m_hFacetAbilities[0x18]; // 0x1a38            
             // metadata: MNetworkEnable
-            std::int32_t m_iRecentDamage; // 0x1828            
-            float m_fPainFactor; // 0x182c            
-            float m_fTargetPainFactor; // 0x1830            
-            bool m_bLifeState; // 0x1834            
-            bool m_bFirstSpawn; // 0x1835            
-            uint8_t _pad1836[0x2]; // 0x1836
-            source2sdk::client::ParticleIndex_t m_nFXStunIndex; // 0x1838            
-            source2sdk::client::ParticleIndex_t m_nFXSilenceIndex; // 0x183c            
-            source2sdk::client::ParticleIndex_t m_nFXDeathIndex; // 0x1840            
-            uint8_t _pad1844[0x24]; // 0x1844
+            std::int32_t m_iRecentDamage; // 0x1a50            
+            float m_fPainFactor; // 0x1a54            
+            float m_fTargetPainFactor; // 0x1a58            
+            bool m_bLifeState; // 0x1a5c            
+            bool m_bFirstSpawn; // 0x1a5d            
+            uint8_t _pad1a5e[0x2]; // 0x1a5e
+            source2sdk::client::ParticleIndex_t m_nFXStunIndex; // 0x1a60            
+            source2sdk::client::ParticleIndex_t m_nFXSilenceIndex; // 0x1a64            
+            source2sdk::client::ParticleIndex_t m_nFXDeathIndex; // 0x1a68            
+            uint8_t _pad1a6c[0x24]; // 0x1a6c
             // metadata: MNetworkEnable
-            source2sdk::client::PlayerID_t m_iPlayerID; // 0x1868            
+            source2sdk::client::PlayerID_t m_iPlayerID; // 0x1a90            
+            uint8_t _pad1a94[0x4]; // 0x1a94
             // metadata: MNetworkEnable
-            source2sdk::client::HeroFacetID_t m_iHeroFacetID; // 0x186c            
+            source2sdk::client::HeroFacetKey_t m_iHeroFacetKey; // 0x1a98            
             // metadata: MNetworkEnable
             // m_hReplicatingOtherHeroModel has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_DOTA_BaseNPC_Hero> m_hReplicatingOtherHeroModel;
-            char m_hReplicatingOtherHeroModel[0x4]; // 0x1870            
+            char m_hReplicatingOtherHeroModel[0x4]; // 0x1aa0            
             // metadata: MNetworkEnable
-            bool m_bReincarnating; // 0x1874            
+            bool m_bReincarnating; // 0x1aa4            
             // metadata: MNetworkEnable
-            bool m_bCustomKillEffect; // 0x1875            
-            uint8_t _pad1876[0x2]; // 0x1876
+            bool m_bCustomKillEffect; // 0x1aa5            
+            uint8_t _pad1aa6[0x2]; // 0x1aa6
             // metadata: MNetworkEnable
-            source2sdk::entity2::GameTime_t m_flSpawnedAt; // 0x1878            
+            source2sdk::entity2::GameTime_t m_flSpawnedAt; // 0x1aa8            
             // metadata: MNetworkEnable
-            bool m_bScriptDisableRespawns; // 0x187c            
-            uint8_t _pad187d[0x3]; // 0x187d
+            bool m_bScriptDisableRespawns; // 0x1aac            
+            uint8_t _pad1aad[0x3]; // 0x1aad
             // metadata: MNetworkEnable
-            std::int32_t m_iPrimaryAttribute; // 0x1880            
-            std::int32_t m_nLastDrawnHealth; // 0x1884            
-            float m_flHurtAmount; // 0x1888            
-            source2sdk::entity2::GameTime_t m_flLastHurtTime; // 0x188c            
-            float m_flHurtDecayRate; // 0x1890            
-            float m_flHealAmount; // 0x1894            
-            source2sdk::entity2::GameTime_t m_flLastHealTime; // 0x1898            
-            float m_flHealDecayRate; // 0x189c            
-            bool m_bIsFirstTimeHeal; // 0x18a0            
-            uint8_t _pad18a1[0x3]; // 0x18a1
-            source2sdk::entity2::GameTime_t m_flLastTreeShakeTime; // 0x18a4            
-            source2sdk::client::CountdownTimer m_CenterOnHeroCooldownTimer; // 0x18a8            
-            uint8_t _pad18c0[0x208]; // 0x18c0
+            std::int32_t m_iPrimaryAttribute; // 0x1ab0            
+            std::int32_t m_nLastDrawnHealth; // 0x1ab4            
+            float m_flHurtAmount; // 0x1ab8            
+            source2sdk::entity2::GameTime_t m_flLastHurtTime; // 0x1abc            
+            float m_flHurtDecayRate; // 0x1ac0            
+            float m_flHealAmount; // 0x1ac4            
+            source2sdk::entity2::GameTime_t m_flLastHealTime; // 0x1ac8            
+            float m_flHealDecayRate; // 0x1acc            
+            bool m_bIsFirstTimeHeal; // 0x1ad0            
+            uint8_t _pad1ad1[0x3]; // 0x1ad1
+            source2sdk::entity2::GameTime_t m_flLastTreeShakeTime; // 0x1ad4            
+            source2sdk::client::CountdownTimer m_CenterOnHeroCooldownTimer; // 0x1ad8            
+            uint8_t _pad1af0[0x208]; // 0x1af0
             // m_CombinedModels has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CStrongHandle<source2sdk::resourcesystem::InfoForResourceTypeCModel> m_CombinedModels[4];
-            char m_CombinedModels[0x20]; // 0x1ac8            
-            std::int32_t m_nCurrentCombinedModelIndex; // 0x1ae8            
-            std::int32_t m_nPendingCombinedModelIndex; // 0x1aec            
-            source2sdk::client::HeroID_t m_iHeroID; // 0x1af0            
-            float m_flCheckLegacyItemsAt; // 0x1af4            
-            bool m_bDisplayAdditionalHeroes; // 0x1af8            
-            uint8_t _pad1af9[0xf]; // 0x1af9
+            char m_CombinedModels[0x20]; // 0x1cf8            
+            std::int32_t m_nCurrentCombinedModelIndex; // 0x1d18            
+            std::int32_t m_nPendingCombinedModelIndex; // 0x1d1c            
+            source2sdk::client::HeroID_t m_iHeroID; // 0x1d20            
+            float m_flCheckLegacyItemsAt; // 0x1d24            
+            bool m_bDisplayAdditionalHeroes; // 0x1d28            
+            uint8_t _pad1d29[0xf]; // 0x1d29
             // m_CombinedParticleModels has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CStrongHandle<source2sdk::resourcesystem::InfoForResourceTypeCModel> m_CombinedParticleModels[4];
-            char m_CombinedParticleModels[0x20]; // 0x1b08            
+            char m_CombinedParticleModels[0x20]; // 0x1d38            
             // m_vecAttachedParticleIndeces has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::client::ParticleIndex_t> m_vecAttachedParticleIndeces;
-            char m_vecAttachedParticleIndeces[0x18]; // 0x1b28            
+            char m_vecAttachedParticleIndeces[0x18]; // 0x1d58            
             // m_hPets has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::client::C_BaseEntity>> m_hPets;
-            char m_hPets[0x18]; // 0x1b40            
-            source2sdk::client::ParticleIndex_t m_nKillStreakFX; // 0x1b58            
-            std::int32_t m_nKillStreakFXTier; // 0x1b5c            
+            char m_hPets[0x18]; // 0x1d70            
+            source2sdk::client::ParticleIndex_t m_nKillStreakFX; // 0x1d88            
+            std::int32_t m_nKillStreakFXTier; // 0x1d8c            
             // start of bitfield block
             uint16_t m_bBuybackDisabled: 1;
             uint16_t m_bWasFrozen: 1;
@@ -173,12 +174,12 @@ namespace source2sdk
             uint16_t m_bResetVisibility: 1;
             uint16_t m_bStoredVisibility: 1;
             // end of bitfield block// 10 bits
-            uint8_t _pad1b62[0x6];
+            uint8_t _pad1d92[0x6];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_BaseNPC_Hero because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_BaseNPC_Hero) == 0x1b68);
+        static_assert(sizeof(source2sdk::client::C_DOTA_BaseNPC_Hero) == 0x1d98);
     };
 };

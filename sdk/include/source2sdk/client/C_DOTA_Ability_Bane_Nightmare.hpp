@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x5c8
+        // Size: 0x698
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -25,13 +25,13 @@ namespace source2sdk
         class C_DOTA_Ability_Bane_Nightmare : public source2sdk::client::C_DOTABaseAbility
         {
         public:
-            Vector m_vEndpoint; // 0x5b0            
-            Vector m_vWalkDir; // 0x5bc            
+            Vector m_vEndpoint; // 0x680            
+            Vector m_vWalkDir; // 0x68c            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Ability_Bane_Nightmare because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Bane_Nightmare) == 0x5c8);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Ability_Bane_Nightmare) == 0x698);
     };
 };

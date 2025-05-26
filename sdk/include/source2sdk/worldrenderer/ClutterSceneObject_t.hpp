@@ -20,7 +20,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: true
-        // Size: 0xa8
+        // Size: 0xb0
         // Construct allowed
         // 
         // static metadata: MGetKV3ClassDefaults
@@ -49,7 +49,9 @@ namespace source2sdk
             // CStrongHandle<source2sdk::resourcesystem::InfoForResourceTypeCModel> m_renderableModel;
             char m_renderableModel[0x8]; // 0x98            
             CUtlStringToken m_materialGroup; // 0xa0            
-            uint8_t _pad00a4[0x4];
+            float m_flBeginCullSize; // 0xa4            
+            float m_flEndCullSize; // 0xa8            
+            uint8_t _pad00ac[0x4];
         };
         #pragma pack(pop)
         
@@ -62,7 +64,9 @@ namespace source2sdk
         static_assert(offsetof(source2sdk::worldrenderer::ClutterSceneObject_t, m_tiles) == 0x80);
         static_assert(offsetof(source2sdk::worldrenderer::ClutterSceneObject_t, m_renderableModel) == 0x98);
         static_assert(offsetof(source2sdk::worldrenderer::ClutterSceneObject_t, m_materialGroup) == 0xa0);
+        static_assert(offsetof(source2sdk::worldrenderer::ClutterSceneObject_t, m_flBeginCullSize) == 0xa4);
+        static_assert(offsetof(source2sdk::worldrenderer::ClutterSceneObject_t, m_flEndCullSize) == 0xa8);
         
-        static_assert(sizeof(source2sdk::worldrenderer::ClutterSceneObject_t) == 0xa8);
+        static_assert(sizeof(source2sdk::worldrenderer::ClutterSceneObject_t) == 0xb0);
     };
 };

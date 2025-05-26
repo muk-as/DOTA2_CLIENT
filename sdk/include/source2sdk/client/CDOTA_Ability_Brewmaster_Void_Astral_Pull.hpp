@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x5b8
+        // Size: 0x688
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -25,13 +25,13 @@ namespace source2sdk
         class CDOTA_Ability_Brewmaster_Void_Astral_Pull : public source2sdk::client::C_DOTABaseAbility
         {
         public:
-            std::int32_t pull_speed; // 0x5b0            
-            std::int32_t pull_distance; // 0x5b4            
+            std::int32_t pull_speed; // 0x680            
+            std::int32_t pull_distance; // 0x684            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_Brewmaster_Void_Astral_Pull because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Ability_Brewmaster_Void_Astral_Pull) == 0x5b8);
+        static_assert(sizeof(source2sdk::client::CDOTA_Ability_Brewmaster_Void_Astral_Pull) == 0x688);
     };
 };

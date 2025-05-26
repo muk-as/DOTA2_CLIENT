@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x530
+        // Size: 0x538
         // Has VTable
         // Construct allowed
         // 
@@ -29,21 +29,21 @@ namespace source2sdk
         class CInfoFan : public source2sdk::server::CPointEntity
         {
         public:
-            uint8_t _pad04d8[0x40]; // 0x4d8
+            uint8_t _pad04e0[0x40]; // 0x4e0
             // metadata: MNetworkEnable
-            float m_fFanForceMaxRadius; // 0x518            
+            float m_fFanForceMaxRadius; // 0x520            
             // metadata: MNetworkEnable
-            float m_fFanForceMinRadius; // 0x51c            
+            float m_fFanForceMinRadius; // 0x524            
             // metadata: MNetworkEnable
-            float m_flCurveDistRange; // 0x520            
-            uint8_t _pad0524[0x4]; // 0x524
+            float m_flCurveDistRange; // 0x528            
+            uint8_t _pad052c[0x4]; // 0x52c
             // metadata: MNetworkEnable
-            CUtlSymbolLarge m_FanForceCurveString; // 0x528            
+            CUtlSymbolLarge m_FanForceCurveString; // 0x530            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CInfoFan because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CInfoFan) == 0x530);
+        static_assert(sizeof(source2sdk::server::CInfoFan) == 0x538);
     };
 };

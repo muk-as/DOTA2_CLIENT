@@ -24,23 +24,23 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1810
+        // Size: 0x1898
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Kunkka_XMarksTheSpot : public source2sdk::client::CDOTA_Buff
         {
         public:
-            std::int32_t ally_ms; // 0x17f8            
-            std::int32_t ally_armor; // 0x17fc            
+            std::int32_t ally_ms; // 0x1878            
+            std::int32_t ally_armor; // 0x187c            
             // hThinker has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> hThinker;
-            char hThinker[0x4]; // 0x1800            
-            uint8_t _pad1804[0xc];
+            char hThinker[0x4]; // 0x1880            
+            uint8_t _pad1884[0x14];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Kunkka_XMarksTheSpot because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Kunkka_XMarksTheSpot) == 0x1810);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Kunkka_XMarksTheSpot) == 0x1898);
     };
 };

@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x5c0
+        // Size: 0x5c8
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -26,13 +26,13 @@ namespace source2sdk
         class CDOTA_Aghsfort_AbilityCrystalMaiden_FreezingField : public source2sdk::server::CDOTABaseAbility
         {
         public:
-            source2sdk::client::ParticleIndex_t m_nWarningFX; // 0x5b8            
-            source2sdk::client::ParticleIndex_t m_nRadiusFX; // 0x5bc            
+            source2sdk::client::ParticleIndex_t m_nWarningFX; // 0x5c0            
+            source2sdk::client::ParticleIndex_t m_nRadiusFX; // 0x5c4            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Aghsfort_AbilityCrystalMaiden_FreezingField because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Aghsfort_AbilityCrystalMaiden_FreezingField) == 0x5c0);
+        static_assert(sizeof(source2sdk::server::CDOTA_Aghsfort_AbilityCrystalMaiden_FreezingField) == 0x5c8);
     };
 };

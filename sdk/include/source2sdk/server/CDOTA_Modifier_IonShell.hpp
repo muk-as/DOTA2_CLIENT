@@ -17,22 +17,22 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1810
+        // Size: 0x18a0
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_IonShell : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float radius; // 0x17f8            
-            std::int32_t damage_per_second; // 0x17fc            
-            float tick_interval; // 0x1800            
-            std::int32_t bonus_health; // 0x1804            
-            uint8_t _pad1808[0x8];
+            float radius; // 0x1878            
+            std::int32_t damage_per_second; // 0x187c            
+            float tick_interval; // 0x1880            
+            std::int32_t bonus_health; // 0x1884            
+            uint8_t _pad1888[0x18];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_IonShell because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_IonShell) == 0x1810);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_IonShell) == 0x18a0);
     };
 };

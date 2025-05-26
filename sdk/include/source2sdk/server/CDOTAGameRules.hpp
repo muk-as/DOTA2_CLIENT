@@ -85,10 +85,11 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x58f8
+        // Size: 0x5900
         // Has VTable
         // 
         // static metadata: MNetworkVarNames "int m_nRuneCycle"
+        // static metadata: MNetworkVarNames "int m_nNextPowerRuneType"
         // static metadata: MNetworkVarNames "int m_iMiscHeroPickCounter"
         // static metadata: MNetworkVarNames "CHandle< CBaseEntity> m_hEndGameCinematicEntity"
         // static metadata: MNetworkVarNames "CHandle< CDOTA_BaseNPC> m_hOverlayHealthBarUnit"
@@ -271,695 +272,698 @@ namespace source2sdk
             uint8_t _pad00c0[0x50]; // 0xc0
             // metadata: MNetworkEnable
             std::int32_t m_nRuneCycle; // 0x110            
-            std::int32_t m_nNextPowerRuneSpawnIndex; // 0x114            
-            double m_flPauseTime; // 0x118            
-            source2sdk::client::PlayerID_t m_pausingPlayerId; // 0x120            
-            source2sdk::client::PlayerID_t m_unpausingPlayerId; // 0x124            
-            float m_fPauseRawTime; // 0x128            
-            float m_fPauseCurTime; // 0x12c            
-            float m_fUnpauseRawTime; // 0x130            
-            float m_fUnpauseCurTime; // 0x134            
-            std::int32_t m_nPausesRemaining[64]; // 0x138            
-            float m_nLastPauseTime[64]; // 0x238            
-            uint8_t _pad0338[0x8]; // 0x338
             // metadata: MNetworkEnable
-            std::int32_t m_iMiscHeroPickCounter; // 0x340            
+            std::int32_t m_nNextPowerRuneType; // 0x114            
+            std::int32_t m_nNextPowerRuneSpawnIndex; // 0x118            
+            uint8_t _pad011c[0x4]; // 0x11c
+            double m_flPauseTime; // 0x120            
+            source2sdk::client::PlayerID_t m_pausingPlayerId; // 0x128            
+            source2sdk::client::PlayerID_t m_unpausingPlayerId; // 0x12c            
+            float m_fPauseRawTime; // 0x130            
+            float m_fPauseCurTime; // 0x134            
+            float m_fUnpauseRawTime; // 0x138            
+            float m_fUnpauseCurTime; // 0x13c            
+            std::int32_t m_nPausesRemaining[64]; // 0x140            
+            float m_nLastPauseTime[64]; // 0x240            
+            uint8_t _pad0340[0x8]; // 0x340
+            // metadata: MNetworkEnable
+            std::int32_t m_iMiscHeroPickCounter; // 0x348            
             // metadata: MNetworkEnable
             // m_hEndGameCinematicEntity has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hEndGameCinematicEntity;
-            char m_hEndGameCinematicEntity[0x4]; // 0x344            
-            source2sdk::server::CountdownTimer m_EndGameCinematicTimer; // 0x348            
+            char m_hEndGameCinematicEntity[0x4]; // 0x34c            
+            source2sdk::server::CountdownTimer m_EndGameCinematicTimer; // 0x350            
             // metadata: MNetworkEnable
             // m_hOverlayHealthBarUnit has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CDOTA_BaseNPC> m_hOverlayHealthBarUnit;
-            char m_hOverlayHealthBarUnit[0x4]; // 0x360            
+            char m_hOverlayHealthBarUnit[0x4]; // 0x368            
             // metadata: MNetworkEnable
-            std::int32_t m_nOverlayHealthBarType; // 0x364            
+            std::int32_t m_nOverlayHealthBarType; // 0x36c            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnCinematicModeChanged"
-            bool m_bIsInCinematicMode; // 0x368            
-            bool m_bIsInClientSideCinematicMode; // 0x369            
+            bool m_bIsInCinematicMode; // 0x370            
+            bool m_bIsInClientSideCinematicMode; // 0x371            
             // metadata: MNetworkEnable
-            bool m_bFreeCourierMode; // 0x36a            
-            uint8_t _pad036b[0x1]; // 0x36b
-            std::int32_t m_nStartingGold; // 0x36c            
-            std::int32_t m_nGoldPerTick; // 0x370            
-            float m_flGoldTickTime; // 0x374            
-            bool m_bEnableSuggestAbilities; // 0x378            
-            bool m_bEnableSuggestItems; // 0x379            
-            uint8_t _pad037a[0x1e]; // 0x37a
+            bool m_bFreeCourierMode; // 0x372            
+            uint8_t _pad0373[0x1]; // 0x373
+            std::int32_t m_nStartingGold; // 0x374            
+            std::int32_t m_nGoldPerTick; // 0x378            
+            float m_flGoldTickTime; // 0x37c            
+            bool m_bEnableSuggestAbilities; // 0x380            
+            bool m_bEnableSuggestItems; // 0x381            
+            uint8_t _pad0382[0x1e]; // 0x382
             // metadata: MNetworkEnable
-            std::uint32_t m_unFanfareGoodGuys; // 0x398            
+            std::uint32_t m_unFanfareGoodGuys; // 0x3a0            
             // metadata: MNetworkEnable
-            std::uint32_t m_unFanfareBadGuys; // 0x39c            
-            source2sdk::entity2::GameTime_t m_flFanfareTime; // 0x3a0            
-            bool m_bSpeechUseSpawnInsteadOfRespawnConcept; // 0x3a4            
-            bool m_bSpeechSendTeamSpeaksToSpectators; // 0x3a5            
-            bool m_bIgnoreLobbyTeamsInCustomGames; // 0x3a6            
-            uint8_t _pad03a7[0x1]; // 0x3a7
-            std::int32_t m_nCustomGameBansPerTeam; // 0x3a8            
-            std::int32_t m_iFOWDefeatedTempViewer; // 0x3ac            
-            uint8_t _pad03b0[0x48]; // 0x3b0
+            std::uint32_t m_unFanfareBadGuys; // 0x3a4            
+            source2sdk::entity2::GameTime_t m_flFanfareTime; // 0x3a8            
+            bool m_bSpeechUseSpawnInsteadOfRespawnConcept; // 0x3ac            
+            bool m_bSpeechSendTeamSpeaksToSpectators; // 0x3ad            
+            bool m_bIgnoreLobbyTeamsInCustomGames; // 0x3ae            
+            uint8_t _pad03af[0x1]; // 0x3af
+            std::int32_t m_nCustomGameBansPerTeam; // 0x3b0            
+            std::int32_t m_iFOWDefeatedTempViewer; // 0x3b4            
+            uint8_t _pad03b8[0x48]; // 0x3b8
             // metadata: MNetworkEnable
-            std::int32_t m_nGameState; // 0x3f8            
+            std::int32_t m_nGameState; // 0x400            
             // metadata: MNetworkEnable
-            source2sdk::client::DOTA_HeroPickState m_nHeroPickState; // 0x3fc            
+            source2sdk::client::DOTA_HeroPickState m_nHeroPickState; // 0x404            
             // metadata: MNetworkEnable
-            bool m_bAlternateHeroGridsEnabled; // 0x400            
-            uint8_t _pad0401[0x3]; // 0x401
+            bool m_bAlternateHeroGridsEnabled; // 0x408            
+            uint8_t _pad0409[0x3]; // 0x409
             // metadata: MNetworkEnable
-            source2sdk::entity2::GameTime_t m_flStateTransitionTime; // 0x404            
+            source2sdk::entity2::GameTime_t m_flStateTransitionTime; // 0x40c            
             // metadata: MNetworkEnable
-            float m_flOverride_dota_hero_selection_time; // 0x408            
+            float m_flOverride_dota_hero_selection_time; // 0x410            
             // metadata: MNetworkEnable
-            float m_flOverride_dota_pregame_time; // 0x40c            
+            float m_flOverride_dota_pregame_time; // 0x414            
             // metadata: MNetworkEnable
-            float m_flOverride_dota_postgame_time; // 0x410            
+            float m_flOverride_dota_postgame_time; // 0x418            
             // metadata: MNetworkEnable
-            float m_flOverride_dota_strategy_time; // 0x414            
+            float m_flOverride_dota_strategy_time; // 0x41c            
             // metadata: MNetworkEnable
-            float m_flOverride_dota_team_showcase_duration; // 0x418            
+            float m_flOverride_dota_team_showcase_duration; // 0x420            
             // metadata: MNetworkEnable
-            float m_flOverride_dota_rune_spawn_time; // 0x41c            
+            float m_flOverride_dota_rune_spawn_time; // 0x424            
             // metadata: MNetworkEnable
-            float m_flShowcaseTime[15]; // 0x420            
+            float m_flShowcaseTime[15]; // 0x428            
             // metadata: MNetworkEnable
-            float m_flNeutralInitialSpawnOffset; // 0x45c            
-            float m_flOverride_dota_tree_regrow_time; // 0x460            
+            float m_flNeutralInitialSpawnOffset; // 0x464            
+            float m_flOverride_dota_tree_regrow_time; // 0x468            
             // metadata: MNetworkEnable
-            std::int32_t m_iGameMode; // 0x464            
+            std::int32_t m_iGameMode; // 0x46c            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnGameModeEntityChanged"
             // m_hGameModeEntity has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hGameModeEntity;
-            char m_hGameModeEntity[0x4]; // 0x468            
+            char m_hGameModeEntity[0x4]; // 0x470            
             // metadata: MNetworkEnable
             // m_hCustomHeroPickRulesEntity has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hCustomHeroPickRulesEntity;
-            char m_hCustomHeroPickRulesEntity[0x4]; // 0x46c            
+            char m_hCustomHeroPickRulesEntity[0x4]; // 0x474            
             // metadata: MNetworkEnable
-            source2sdk::entity2::GameTime_t m_flHeroPickStateTransitionTime; // 0x470            
-            uint8_t _pad0474[0x4]; // 0x474
+            source2sdk::entity2::GameTime_t m_flHeroPickStateTransitionTime; // 0x478            
+            uint8_t _pad047c[0x4]; // 0x47c
             // metadata: MNetworkEnable
             // metadata: MNetworkEncoder "fixed64"
-            std::uint64_t m_iPlayerIDsInControl; // 0x478            
+            std::uint64_t m_iPlayerIDsInControl; // 0x480            
             // metadata: MNetworkEnable
-            bool m_bSameHeroSelectionEnabled; // 0x480            
+            bool m_bSameHeroSelectionEnabled; // 0x488            
             // metadata: MNetworkEnable
-            bool m_bUseCustomHeroXPValue; // 0x481            
+            bool m_bUseCustomHeroXPValue; // 0x489            
             // metadata: MNetworkEnable
-            bool m_bUseBaseGoldBountyOnHeroes; // 0x482            
+            bool m_bUseBaseGoldBountyOnHeroes; // 0x48a            
             // metadata: MNetworkEnable
-            bool m_bUseUniversalShopMode; // 0x483            
+            bool m_bUseUniversalShopMode; // 0x48b            
             // metadata: MNetworkEnable
-            bool m_bHideKillMessageHeaders; // 0x484            
-            uint8_t _pad0485[0x3]; // 0x485
+            bool m_bHideKillMessageHeaders; // 0x48c            
+            uint8_t _pad048d[0x3]; // 0x48d
             // metadata: MNetworkEnable
-            float m_flHeroMinimapIconScale; // 0x488            
+            float m_flHeroMinimapIconScale; // 0x490            
             // metadata: MNetworkEnable
-            float m_flCreepMinimapIconScale; // 0x48c            
+            float m_flCreepMinimapIconScale; // 0x494            
             // metadata: MNetworkEnable
-            bool m_bCreepSpawningEnabled; // 0x490            
-            uint8_t _pad0491[0x3]; // 0x491
+            bool m_bCreepSpawningEnabled; // 0x498            
+            uint8_t _pad0499[0x3]; // 0x499
             // metadata: MNetworkEnable
-            float m_flRuneMinimapIconScale; // 0x494            
+            float m_flRuneMinimapIconScale; // 0x49c            
             // metadata: MNetworkEnable
-            char m_CustomVictoryMessage[256]; // 0x498            
+            char m_CustomVictoryMessage[256]; // 0x4a0            
             // metadata: MNetworkEnable
-            float m_flCustomGameEndDelay; // 0x598            
+            float m_flCustomGameEndDelay; // 0x5a0            
             // metadata: MNetworkEnable
-            float m_flCustomGameSetupAutoLaunchDelay; // 0x59c            
+            float m_flCustomGameSetupAutoLaunchDelay; // 0x5a4            
             // metadata: MNetworkEnable
-            float m_flCustomGameSetupTimeout; // 0x5a0            
+            float m_flCustomGameSetupTimeout; // 0x5a8            
             // metadata: MNetworkEnable
-            float m_flCustomVictoryMessageDuration; // 0x5a4            
+            float m_flCustomVictoryMessageDuration; // 0x5ac            
             // metadata: MNetworkEnable
-            float m_flHeroSelectPenaltyTime; // 0x5a8            
+            float m_flHeroSelectPenaltyTime; // 0x5b0            
             // metadata: MNetworkEnable
-            bool m_bCustomGameSetupAutoLaunchEnabled; // 0x5ac            
+            bool m_bCustomGameSetupAutoLaunchEnabled; // 0x5b4            
             // metadata: MNetworkEnable
-            bool m_bCustomGameTeamSelectionLocked; // 0x5ad            
+            bool m_bCustomGameTeamSelectionLocked; // 0x5b5            
             // metadata: MNetworkEnable
-            bool m_bCustomGameEnablePickRules; // 0x5ae            
+            bool m_bCustomGameEnablePickRules; // 0x5b6            
             // metadata: MNetworkEnable
-            bool m_bCustomGameAllowHeroPickMusic; // 0x5af            
+            bool m_bCustomGameAllowHeroPickMusic; // 0x5b7            
             // metadata: MNetworkEnable
-            bool m_bCustomGameAllowMusicAtGameStart; // 0x5b0            
+            bool m_bCustomGameAllowMusicAtGameStart; // 0x5b8            
             // metadata: MNetworkEnable
-            bool m_bCustomGameAllowBattleMusic; // 0x5b1            
+            bool m_bCustomGameAllowBattleMusic; // 0x5b9            
             // metadata: MNetworkEnable
-            bool m_bCustomGameDisableIK; // 0x5b2            
+            bool m_bCustomGameDisableIK; // 0x5ba            
             // metadata: MNetworkEnable
-            bool m_bCustomGameAllowSecondaryAbilitiesOnOtherUnits; // 0x5b3            
+            bool m_bCustomGameAllowSecondaryAbilitiesOnOtherUnits; // 0x5bb            
             // metadata: MNetworkEnable
-            std::int32_t m_iCMModePickBanOrder; // 0x5b4            
+            std::int32_t m_iCMModePickBanOrder; // 0x5bc            
             // metadata: MNetworkEnable
-            std::int32_t m_iCDModePickBanOrder; // 0x5b8            
+            std::int32_t m_iCDModePickBanOrder; // 0x5c0            
             // metadata: MNetworkEnable
-            std::int32_t m_nGGTeam; // 0x5bc            
+            std::int32_t m_nGGTeam; // 0x5c4            
             // metadata: MNetworkEnable
-            source2sdk::entity2::GameTime_t m_flGGEndsAtTime; // 0x5c0            
+            source2sdk::entity2::GameTime_t m_flGGEndsAtTime; // 0x5c8            
             // metadata: MNetworkEnable
-            bool m_bGGCalled; // 0x5c4            
+            bool m_bGGCalled; // 0x5cc            
             // metadata: MNetworkEnable
-            bool m_bWhiteListEnabled; // 0x5c5            
-            uint8_t _pad05c6[0x2]; // 0x5c6
+            bool m_bWhiteListEnabled; // 0x5cd            
+            uint8_t _pad05ce[0x2]; // 0x5ce
             // metadata: MNetworkEnable
             // metadata: MNetworkEncoder "fixed64"
             // metadata: MNetworkChangeCallback "OnWhitelistChanged"
-            std::uint64_t m_bItemWhiteList[4]; // 0x5c8            
+            std::uint64_t m_bItemWhiteList[4]; // 0x5d0            
             // metadata: MNetworkEnable
-            std::int32_t m_nLastHitUIMode; // 0x5e8            
+            std::int32_t m_nLastHitUIMode; // 0x5f0            
             // metadata: MNetworkEnable
-            bool m_bHUDTimerTutorialMode; // 0x5ec            
-            uint8_t _pad05ed[0x3]; // 0x5ed
-            source2sdk::server::CountdownTimer m_HeroPickMiscTimer; // 0x5f0            
-            source2sdk::server::CountdownTimer m_ExtraTimeTimer; // 0x608            
+            bool m_bHUDTimerTutorialMode; // 0x5f4            
+            uint8_t _pad05f5[0x3]; // 0x5f5
+            source2sdk::server::CountdownTimer m_HeroPickMiscTimer; // 0x5f8            
+            source2sdk::server::CountdownTimer m_ExtraTimeTimer; // 0x610            
             // metadata: MNetworkEnable
-            float m_fExtraTimeRemaining[2]; // 0x620            
+            float m_fExtraTimeRemaining[2]; // 0x628            
             // metadata: MNetworkEnable
-            bool m_bHeroRespawnEnabled; // 0x628            
+            bool m_bHeroRespawnEnabled; // 0x630            
             // metadata: MNetworkEnable
-            bool m_bIsRandomingEnabled; // 0x629            
-            uint8_t _pad062a[0x6]; // 0x62a
+            bool m_bIsRandomingEnabled; // 0x631            
+            uint8_t _pad0632[0x6]; // 0x632
             // m_HeroPickPhaseBitfield has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<std::int32_t> m_HeroPickPhaseBitfield;
-            char m_HeroPickPhaseBitfield[0x18]; // 0x630            
-            bool m_bHasSwapped[64]; // 0x648            
+            char m_HeroPickPhaseBitfield[0x18]; // 0x638            
+            bool m_bHasSwapped[64]; // 0x650            
             // metadata: MNetworkEnable
-            source2sdk::client::PlayerID_t m_iCaptainPlayerIDs[2]; // 0x688            
+            source2sdk::client::PlayerID_t m_iCaptainPlayerIDs[2]; // 0x690            
             // metadata: MNetworkEnable
-            source2sdk::client::HeroID_t m_BannedHeroes[24]; // 0x690            
+            source2sdk::client::HeroID_t m_BannedHeroes[24]; // 0x698            
             // metadata: MNetworkEnable
-            source2sdk::client::HeroID_t m_SelectedHeroes[24]; // 0x6f0            
+            source2sdk::client::HeroID_t m_SelectedHeroes[24]; // 0x6f8            
             // metadata: MNetworkEnable
-            std::int32_t m_iActiveTeam; // 0x750            
+            std::int32_t m_iActiveTeam; // 0x758            
             // metadata: MNetworkEnable
-            std::int32_t m_iStartingTeam; // 0x754            
+            std::int32_t m_iStartingTeam; // 0x75c            
             // metadata: MNetworkEnable
-            std::int32_t m_iPenaltyLevelRadiant; // 0x758            
+            std::int32_t m_iPenaltyLevelRadiant; // 0x760            
             // metadata: MNetworkEnable
-            std::int32_t m_iPenaltyLevelDire; // 0x75c            
+            std::int32_t m_iPenaltyLevelDire; // 0x764            
             // metadata: MNetworkEnable
-            bool m_bIsLoadingScenario; // 0x760            
-            uint8_t _pad0761[0x7]; // 0x761
+            bool m_bIsLoadingScenario; // 0x768            
+            uint8_t _pad0769[0x7]; // 0x769
             // m_vecBanNominatedHeroes has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::client::HeroID_t> m_vecBanNominatedHeroes;
-            char m_vecBanNominatedHeroes[0x18]; // 0x768            
+            char m_vecBanNominatedHeroes[0x18]; // 0x770            
             // metadata: MNetworkEnable
             // m_vecNewBannedHeroes has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CNetworkUtlVectorBase<source2sdk::client::HeroID_t> m_vecNewBannedHeroes;
-            char m_vecNewBannedHeroes[0x18]; // 0x780            
+            char m_vecNewBannedHeroes[0x18]; // 0x788            
             // metadata: MNetworkEnable
             // m_vecWhitelistedHeroes has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CNetworkUtlVectorBase<source2sdk::client::HeroID_t> m_vecWhitelistedHeroes;
-            char m_vecWhitelistedHeroes[0x18]; // 0x798            
+            char m_vecWhitelistedHeroes[0x18]; // 0x7a0            
             // metadata: MNetworkEnable
             // m_vecBlacklistedHeroes has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CNetworkUtlVectorBase<source2sdk::client::HeroID_t> m_vecBlacklistedHeroes;
-            char m_vecBlacklistedHeroes[0x18]; // 0x7b0            
+            char m_vecBlacklistedHeroes[0x18]; // 0x7b8            
             // metadata: MNetworkEnable
-            bool m_bHideBlacklistedHeroes; // 0x7c8            
-            uint8_t _pad07c9[0x3]; // 0x7c9
+            bool m_bHideBlacklistedHeroes; // 0x7d0            
+            uint8_t _pad07d1[0x3]; // 0x7d1
             // metadata: MNetworkEnable
-            std::int32_t m_nSeriesType; // 0x7cc            
+            std::int32_t m_nSeriesType; // 0x7d4            
             // metadata: MNetworkEnable
-            std::int32_t m_nRadiantSeriesWins; // 0x7d0            
+            std::int32_t m_nRadiantSeriesWins; // 0x7d8            
             // metadata: MNetworkEnable
-            std::int32_t m_nDireSeriesWins; // 0x7d4            
+            std::int32_t m_nDireSeriesWins; // 0x7dc            
             // metadata: MNetworkEnable
             // m_vecAvailableHerosPerPlayerID has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVectorEmbeddedNetworkVar<source2sdk::server::CHeroesPerPlayer> m_vecAvailableHerosPerPlayerID;
-            char m_vecAvailableHerosPerPlayerID[0x88]; // 0x7d8            
+            char m_vecAvailableHerosPerPlayerID[0x88]; // 0x7e0            
             // metadata: MNetworkEnable
             // m_vecLockedHerosByPlayerID has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVectorEmbeddedNetworkVar<source2sdk::server::CHeroesPerPlayer> m_vecLockedHerosByPlayerID;
-            char m_vecLockedHerosByPlayerID[0x88]; // 0x860            
+            char m_vecLockedHerosByPlayerID[0x88]; // 0x868            
             // metadata: MNetworkEnable
             // m_vecDisabledRandomHerosByPlayerID has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVectorEmbeddedNetworkVar<source2sdk::server::CHeroesPerPlayer> m_vecDisabledRandomHerosByPlayerID;
-            char m_vecDisabledRandomHerosByPlayerID[0x88]; // 0x8e8            
-            source2sdk::client::HeroID_t m_CustomGameForceSelectHero[24]; // 0x970            
-            float m_flGoldTime; // 0x9d0            
-            float m_flXPTime; // 0x9d4            
-            source2sdk::entity2::GameTime_t m_flCreepSpawntime; // 0x9d8            
-            float m_flAnnounceStartTime; // 0x9dc            
+            char m_vecDisabledRandomHerosByPlayerID[0x88]; // 0x8f0            
+            source2sdk::client::HeroID_t m_CustomGameForceSelectHero[24]; // 0x978            
+            float m_flGoldTime; // 0x9d8            
+            float m_flXPTime; // 0x9dc            
+            source2sdk::entity2::GameTime_t m_flCreepSpawntime; // 0x9e0            
+            float m_flAnnounceStartTime; // 0x9e4            
             // metadata: MNetworkEnable
-            std::int32_t m_iGoodTomeCount; // 0x9e0            
+            std::int32_t m_iGoodTomeCount; // 0x9e8            
             // metadata: MNetworkEnable
-            std::int32_t m_iBadTomeCount; // 0x9e4            
+            std::int32_t m_iBadTomeCount; // 0x9ec            
             // metadata: MNetworkEnable
-            source2sdk::entity2::GameTime_t m_flPreGameStartTime; // 0x9e8            
+            source2sdk::entity2::GameTime_t m_flPreGameStartTime; // 0x9f0            
             // metadata: MNetworkEnable
-            source2sdk::entity2::GameTime_t m_flGameStartTime; // 0x9ec            
+            source2sdk::entity2::GameTime_t m_flGameStartTime; // 0x9f4            
             // metadata: MNetworkEnable
-            source2sdk::entity2::GameTime_t m_flGameEndTime; // 0x9f0            
+            source2sdk::entity2::GameTime_t m_flGameEndTime; // 0x9f8            
             // metadata: MNetworkEnable
-            float m_flGameLoadTime; // 0x9f4            
+            float m_flGameLoadTime; // 0x9fc            
             // metadata: MNetworkEnable
-            std::int32_t m_iCustomGameScore[2]; // 0x9f8            
+            std::int32_t m_iCustomGameScore[2]; // 0xa00            
             // metadata: MNetworkEnable
-            std::int32_t m_nCustomGameDifficulty; // 0xa00            
-            bool m_bEnemyModifiersEnabled; // 0xa04            
-            uint8_t _pad0a05[0x3]; // 0xa05
-            std::int32_t m_iWaves; // 0xa08            
-            std::int32_t m_iCreepUpgradeState; // 0xa0c            
+            std::int32_t m_nCustomGameDifficulty; // 0xa08            
+            bool m_bEnemyModifiersEnabled; // 0xa0c            
+            uint8_t _pad0a0d[0x3]; // 0xa0d
+            std::int32_t m_iWaves; // 0xa10            
+            std::int32_t m_iCreepUpgradeState; // 0xa14            
             // metadata: MNetworkEnable
-            source2sdk::entity2::GameTime_t m_fGoodGlyphCooldown; // 0xa10            
+            source2sdk::entity2::GameTime_t m_fGoodGlyphCooldown; // 0xa18            
             // metadata: MNetworkEnable
-            source2sdk::entity2::GameTime_t m_fBadGlyphCooldown; // 0xa14            
+            source2sdk::entity2::GameTime_t m_fBadGlyphCooldown; // 0xa1c            
             // metadata: MNetworkEnable
-            source2sdk::entity2::GameTime_t m_flGlyphCooldowns[15]; // 0xa18            
+            source2sdk::entity2::GameTime_t m_flGlyphCooldowns[15]; // 0xa20            
             // metadata: MNetworkEnable
-            source2sdk::entity2::GameTime_t m_fGoodRadarCooldown; // 0xa54            
+            source2sdk::entity2::GameTime_t m_fGoodRadarCooldown; // 0xa5c            
             // metadata: MNetworkEnable
-            source2sdk::entity2::GameTime_t m_fBadRadarCooldown; // 0xa58            
+            source2sdk::entity2::GameTime_t m_fBadRadarCooldown; // 0xa60            
             // metadata: MNetworkEnable
-            source2sdk::entity2::GameTime_t m_flRadarCooldowns[15]; // 0xa5c            
+            source2sdk::entity2::GameTime_t m_flRadarCooldowns[15]; // 0xa64            
             // metadata: MNetworkEnable
-            std::int32_t m_iGoodRadarCharges; // 0xa98            
+            std::int32_t m_iGoodRadarCharges; // 0xaa0            
             // metadata: MNetworkEnable
-            std::int32_t m_iBadRadarCharges; // 0xa9c            
+            std::int32_t m_iBadRadarCharges; // 0xaa4            
             // metadata: MNetworkEnable
-            std::int32_t m_iRadarCharges[15]; // 0xaa0            
+            std::int32_t m_iRadarCharges[15]; // 0xaa8            
             // metadata: MNetworkEnable
-            float m_flOutpostTimes[24]; // 0xadc            
+            float m_flOutpostTimes[24]; // 0xae4            
             // metadata: MNetworkEnable
-            bool m_bIsNightstalkerNight; // 0xb3c            
+            bool m_bIsNightstalkerNight; // 0xb44            
             // metadata: MNetworkEnable
-            bool m_bIsTemporaryNight; // 0xb3d            
+            bool m_bIsTemporaryNight; // 0xb45            
             // metadata: MNetworkEnable
-            bool m_bIsTemporaryDay; // 0xb3e            
-            uint8_t _pad0b3f[0x1]; // 0xb3f
+            bool m_bIsTemporaryDay; // 0xb46            
+            uint8_t _pad0b47[0x1]; // 0xb47
             // metadata: MNetworkEnable
-            std::int32_t m_nRiverType; // 0xb40            
+            std::int32_t m_nRiverType; // 0xb48            
             // metadata: MNetworkEnable
-            source2sdk::client::PlayerID_t m_nTeamFeaturedPlayerID[15]; // 0xb44            
+            source2sdk::client::PlayerID_t m_nTeamFeaturedPlayerID[15]; // 0xb4c            
             // metadata: MNetworkEnable
-            source2sdk::client::item_definition_index_t m_nTeamVersusScreen[15]; // 0xb80            
-            float m_flGoldRedistributeTime; // 0xbbc            
-            std::int32_t m_nGoldToRedistribute[2]; // 0xbc0            
-            source2sdk::entity2::GameTime_t m_flNextPreGameThink; // 0xbc8            
-            source2sdk::entity2::GameTime_t m_flNextAllDraftGoldThink; // 0xbcc            
-            double m_flTimeEnteredState; // 0xbd0            
-            std::uint32_t m_unRiverAccountID; // 0xbd8            
-            uint8_t _pad0bdc[0x4]; // 0xbdc
-            source2sdk::client::itemid_t m_ulRiverItemID; // 0xbe0            
-            uint8_t _pad0be8[0x40]; // 0xbe8
+            source2sdk::client::item_definition_index_t m_nTeamVersusScreen[15]; // 0xb88            
+            float m_flGoldRedistributeTime; // 0xbc4            
+            std::int32_t m_nGoldToRedistribute[2]; // 0xbc8            
+            source2sdk::entity2::GameTime_t m_flNextPreGameThink; // 0xbd0            
+            source2sdk::entity2::GameTime_t m_flNextAllDraftGoldThink; // 0xbd4            
+            double m_flTimeEnteredState; // 0xbd8            
+            std::uint32_t m_unRiverAccountID; // 0xbe0            
+            uint8_t _pad0be4[0x4]; // 0xbe4
+            source2sdk::client::itemid_t m_ulRiverItemID; // 0xbe8            
+            uint8_t _pad0bf0[0x40]; // 0xbf0
             // metadata: MNetworkEnable
             // m_vecItemStockInfo has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVectorEmbeddedNetworkVar<source2sdk::server::CDOTA_ItemStockInfo> m_vecItemStockInfo;
-            char m_vecItemStockInfo[0x88]; // 0xc28            
+            char m_vecItemStockInfo[0x88]; // 0xc30            
             // metadata: MNetworkEnable
-            source2sdk::server::DOTA_AssassinMinigameNetworkState m_AssassinMiniGameNetData; // 0xcb0            
+            source2sdk::server::DOTA_AssassinMinigameNetworkState m_AssassinMiniGameNetData; // 0xcb8            
             // metadata: MNetworkEnable
-            std::int32_t m_nGameWinner; // 0xcc0            
-            uint8_t _pad0cc4[0x4]; // 0xcc4
+            std::int32_t m_nGameWinner; // 0xcc8            
+            uint8_t _pad0ccc[0x4]; // 0xccc
             // metadata: MNetworkEnable
-            source2sdk::client::MatchID_t m_unMatchID64; // 0xcc8            
+            source2sdk::client::MatchID_t m_unMatchID64; // 0xcd0            
             // metadata: MNetworkEnable
-            bool m_bMatchSignoutComplete; // 0xcd0            
-            uint8_t _pad0cd1[0x3]; // 0xcd1
+            bool m_bMatchSignoutComplete; // 0xcd8            
+            uint8_t _pad0cd9[0x3]; // 0xcd9
             // metadata: MNetworkEnable
             // m_hSideShop1 has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hSideShop1;
-            char m_hSideShop1[0x4]; // 0xcd4            
+            char m_hSideShop1[0x4]; // 0xcdc            
             // metadata: MNetworkEnable
             // m_hSideShop2 has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hSideShop2;
-            char m_hSideShop2[0x4]; // 0xcd8            
+            char m_hSideShop2[0x4]; // 0xce0            
             // metadata: MNetworkEnable
             // m_hSecretShop1 has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hSecretShop1;
-            char m_hSecretShop1[0x4]; // 0xcdc            
+            char m_hSecretShop1[0x4]; // 0xce4            
             // metadata: MNetworkEnable
             // m_hSecretShop2 has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hSecretShop2;
-            char m_hSecretShop2[0x4]; // 0xce0            
+            char m_hSecretShop2[0x4]; // 0xce8            
             // metadata: MNetworkEnable
             // m_hTeamFountains has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hTeamFountains[15];
-            char m_hTeamFountains[0x3c]; // 0xce4            
+            char m_hTeamFountains[0x3c]; // 0xcec            
             // metadata: MNetworkEnable
             // m_hTeamForts has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hTeamForts[15];
-            char m_hTeamForts[0x3c]; // 0xd20            
+            char m_hTeamForts[0x3c]; // 0xd28            
             // metadata: MNetworkEnable
             // m_hTeamShops has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hTeamShops[15];
-            char m_hTeamShops[0x3c]; // 0xd5c            
+            char m_hTeamShops[0x3c]; // 0xd64            
             // metadata: MNetworkEnable
             // m_hAnnouncerGood has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hAnnouncerGood;
-            char m_hAnnouncerGood[0x4]; // 0xd98            
+            char m_hAnnouncerGood[0x4]; // 0xda0            
             // metadata: MNetworkEnable
             // m_hAnnouncerBad has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hAnnouncerBad;
-            char m_hAnnouncerBad[0x4]; // 0xd9c            
+            char m_hAnnouncerBad[0x4]; // 0xda4            
             // metadata: MNetworkEnable
             // m_hAnnouncerSpectator has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hAnnouncerSpectator;
-            char m_hAnnouncerSpectator[0x4]; // 0xda0            
+            char m_hAnnouncerSpectator[0x4]; // 0xda8            
             // metadata: MNetworkEnable
             // m_hAnnouncerGood_KillingSpree has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hAnnouncerGood_KillingSpree;
-            char m_hAnnouncerGood_KillingSpree[0x4]; // 0xda4            
+            char m_hAnnouncerGood_KillingSpree[0x4]; // 0xdac            
             // metadata: MNetworkEnable
             // m_hAnnouncerBad_KillingSpree has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hAnnouncerBad_KillingSpree;
-            char m_hAnnouncerBad_KillingSpree[0x4]; // 0xda8            
+            char m_hAnnouncerBad_KillingSpree[0x4]; // 0xdb0            
             // metadata: MNetworkEnable
             // m_hAnnouncerSpectator_KillingSpree has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hAnnouncerSpectator_KillingSpree;
-            char m_hAnnouncerSpectator_KillingSpree[0x4]; // 0xdac            
+            char m_hAnnouncerSpectator_KillingSpree[0x4]; // 0xdb4            
             // metadata: MNetworkEnable
-            bool m_arrTier1TowerDestroyed[15]; // 0xdb0            
+            bool m_arrTier1TowerDestroyed[15]; // 0xdb8            
             // metadata: MNetworkEnable
-            bool m_arrTier2TowerDestroyed[15]; // 0xdbf            
+            bool m_arrTier2TowerDestroyed[15]; // 0xdc7            
             // metadata: MNetworkEnable
-            bool m_arrTier3TowerDestroyed[15]; // 0xdce            
+            bool m_arrTier3TowerDestroyed[15]; // 0xdd6            
             // metadata: MNetworkEnable
-            bool m_arrMeleeBarracksDestroyed[15]; // 0xddd            
+            bool m_arrMeleeBarracksDestroyed[15]; // 0xde5            
             // metadata: MNetworkEnable
-            bool m_bTier1TowerDestroyed; // 0xdec            
+            bool m_bTier1TowerDestroyed; // 0xdf4            
             // metadata: MNetworkEnable
-            bool m_bTier2TowerDestroyed; // 0xded            
+            bool m_bTier2TowerDestroyed; // 0xdf5            
             // metadata: MNetworkEnable
-            bool m_bTier3TowerDestroyed; // 0xdee            
+            bool m_bTier3TowerDestroyed; // 0xdf6            
             // metadata: MNetworkEnable
-            bool m_bMeleeBarracksDestroyed; // 0xdef            
-            float m_fTimeOfDay; // 0xdf0            
-            // metadata: MNetworkEnable
-            // metadata: MNetworkPriority "32"
-            std::int32_t m_iNetTimeOfDay; // 0xdf4            
-            // metadata: MNetworkEnable
-            float m_flDaytimeStart; // 0xdf8            
-            // metadata: MNetworkEnable
-            float m_flNighttimeStart; // 0xdfc            
-            // metadata: MNetworkEnable
-            std::int32_t m_nLoadedPlayers; // 0xe00            
-            // metadata: MNetworkEnable
-            std::int32_t m_nExpectedPlayers; // 0xe04            
-            uint8_t _pad0e08[0x8]; // 0xe08
-            // metadata: MNetworkEnable
-            std::int32_t m_iMinimapDebugGridState; // 0xe10            
-            uint8_t _pad0e14[0x7c]; // 0xe14
+            bool m_bMeleeBarracksDestroyed; // 0xdf7            
+            float m_fTimeOfDay; // 0xdf8            
             // metadata: MNetworkEnable
             // metadata: MNetworkPriority "32"
-            std::int32_t m_iFoWFrameNumber; // 0xe90            
+            std::int32_t m_iNetTimeOfDay; // 0xdfc            
             // metadata: MNetworkEnable
-            Vector m_vWeatherWindDirection; // 0xe94            
-            KeyValues* m_pKVPostGameTable; // 0xea0            
-            KeyValues* m_pKVEventMatchMetadata; // 0xea8            
-            KeyValues* m_pKVEventSignout; // 0xeb0            
-            uint8_t _pad0eb8[0x58]; // 0xeb8
+            float m_flDaytimeStart; // 0xe00            
             // metadata: MNetworkEnable
-            source2sdk::client::HeroID_t m_vecRequiredPlaytestHeroesStorage[24]; // 0xf10            
+            float m_flNighttimeStart; // 0xe04            
             // metadata: MNetworkEnable
-            source2sdk::client::HeroID_t m_vecRecommendedPlaytestHeroesStorage[24]; // 0xf70            
+            std::int32_t m_nLoadedPlayers; // 0xe08            
             // metadata: MNetworkEnable
-            bool m_bAllRequiredPlaytestHeroesPicked; // 0xfd0            
-            uint8_t _pad0fd1[0x3]; // 0xfd1
+            std::int32_t m_nExpectedPlayers; // 0xe0c            
+            uint8_t _pad0e10[0x8]; // 0xe10
             // metadata: MNetworkEnable
-            std::int32_t m_nLastPlaytestPickPhase; // 0xfd4            
-            std::int32_t m_nCustomGameFowTeamCount; // 0xfd8            
-            bool m_bUseAlternateABRules; // 0xfdc            
-            bool m_bLobbyIsAssociatedWithGame; // 0xfdd            
-            uint8_t _pad0fde[0x2]; // 0xfde
-            source2sdk::server::CountdownTimer m_BotDebugTimer; // 0xfe0            
+            std::int32_t m_iMinimapDebugGridState; // 0xe18            
+            uint8_t _pad0e1c[0x7c]; // 0xe1c
+            // metadata: MNetworkEnable
+            // metadata: MNetworkPriority "32"
+            std::int32_t m_iFoWFrameNumber; // 0xe98            
+            // metadata: MNetworkEnable
+            Vector m_vWeatherWindDirection; // 0xe9c            
+            KeyValues* m_pKVPostGameTable; // 0xea8            
+            KeyValues* m_pKVEventMatchMetadata; // 0xeb0            
+            KeyValues* m_pKVEventSignout; // 0xeb8            
+            uint8_t _pad0ec0[0x58]; // 0xec0
+            // metadata: MNetworkEnable
+            source2sdk::client::HeroID_t m_vecRequiredPlaytestHeroesStorage[24]; // 0xf18            
+            // metadata: MNetworkEnable
+            source2sdk::client::HeroID_t m_vecRecommendedPlaytestHeroesStorage[24]; // 0xf78            
+            // metadata: MNetworkEnable
+            bool m_bAllRequiredPlaytestHeroesPicked; // 0xfd8            
+            uint8_t _pad0fd9[0x3]; // 0xfd9
+            // metadata: MNetworkEnable
+            std::int32_t m_nLastPlaytestPickPhase; // 0xfdc            
+            std::int32_t m_nCustomGameFowTeamCount; // 0xfe0            
+            bool m_bUseAlternateABRules; // 0xfe4            
+            bool m_bLobbyIsAssociatedWithGame; // 0xfe5            
+            uint8_t _pad0fe6[0x2]; // 0xfe6
+            source2sdk::server::CountdownTimer m_BotDebugTimer; // 0xfe8            
             // metadata: MNetworkEnable
             // metadata: MNetworkPriority "48"
-            std::uint8_t m_BotDebugPushLane[18]; // 0xff8            
+            std::uint8_t m_BotDebugPushLane[18]; // 0x1000            
             // metadata: MNetworkEnable
-            std::uint8_t m_BotDebugDefendLane[18]; // 0x100a            
+            std::uint8_t m_BotDebugDefendLane[18]; // 0x1012            
             // metadata: MNetworkEnable
-            std::uint8_t m_BotDebugFarmLane[6]; // 0x101c            
+            std::uint8_t m_BotDebugFarmLane[6]; // 0x1024            
             // metadata: MNetworkEnable
-            std::uint8_t m_BotDebugRoam[8]; // 0x1022            
-            uint8_t _pad102a[0x2]; // 0x102a
+            std::uint8_t m_BotDebugRoam[8]; // 0x102a            
+            uint8_t _pad1032[0x2]; // 0x1032
             // metadata: MNetworkEnable
             // m_hBotDebugRoamTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hBotDebugRoamTarget[2];
-            char m_hBotDebugRoamTarget[0x8]; // 0x102c            
+            char m_hBotDebugRoamTarget[0x8]; // 0x1034            
             // metadata: MNetworkEnable
-            std::uint8_t m_BotDebugRoshan[2]; // 0x1034            
-            uint8_t _pad1036[0x2]; // 0x1036
-            source2sdk::client::ERoshanSpawnPhase m_nRoshanRespawnPhase; // 0x1038            
-            source2sdk::entity2::GameTime_t m_flRoshanRespawnPhaseEndTime; // 0x103c            
+            std::uint8_t m_BotDebugRoshan[2]; // 0x103c            
+            uint8_t _pad103e[0x2]; // 0x103e
+            source2sdk::client::ERoshanSpawnPhase m_nRoshanRespawnPhase; // 0x1040            
+            source2sdk::entity2::GameTime_t m_flRoshanRespawnPhaseEndTime; // 0x1044            
             // metadata: MNetworkEnable
             // metadata: MNetworkTypeAlias "CDOTA_AbilityDraftAbilityState[MAX_ABILITY_DRAFT_ABILITIES]"
             // m_AbilityDraftAbilities has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVectorEmbeddedNetworkVar<source2sdk::server::CDOTA_AbilityDraftAbilityState> m_AbilityDraftAbilities;
-            char m_AbilityDraftAbilities[0x88]; // 0x1040            
+            char m_AbilityDraftAbilities[0x88]; // 0x1048            
             // metadata: MNetworkEnable
             // metadata: MNetworkTypeAlias "CDOTA_AbilityDraftHeroState[DOTA_ABILITY_DRAFT_HEROES_PER_GAME]"
             // m_AbilityDraftHeroes has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVectorEmbeddedNetworkVar<source2sdk::server::CDOTA_AbilityDraftHeroState> m_AbilityDraftHeroes;
-            char m_AbilityDraftHeroes[0x88]; // 0x10c8            
+            char m_AbilityDraftHeroes[0x88]; // 0x10d0            
             // metadata: MNetworkEnable
-            bool m_bAbilityDraftCurrentPlayerHasPicked; // 0x1150            
-            uint8_t _pad1151[0x3]; // 0x1151
+            bool m_bAbilityDraftCurrentPlayerHasPicked; // 0x1158            
+            uint8_t _pad1159[0x3]; // 0x1159
             // metadata: MNetworkEnable
-            std::int32_t m_nAbilityDraftPlayerTracker; // 0x1154            
+            std::int32_t m_nAbilityDraftPlayerTracker; // 0x115c            
             // metadata: MNetworkEnable
-            std::int32_t m_nAbilityDraftRoundNumber; // 0x1158            
+            std::int32_t m_nAbilityDraftRoundNumber; // 0x1160            
             // metadata: MNetworkEnable
-            std::int32_t m_nAbilityDraftAdvanceSteps; // 0x115c            
+            std::int32_t m_nAbilityDraftAdvanceSteps; // 0x1164            
             // metadata: MNetworkEnable
-            std::int32_t m_nAbilityDraftPhase; // 0x1160            
+            std::int32_t m_nAbilityDraftPhase; // 0x1168            
             // metadata: MNetworkEnable
-            bool m_bIsPlayerDraft; // 0x1164            
-            uint8_t _pad1165[0x3]; // 0x1165
+            bool m_bIsPlayerDraft; // 0x116c            
+            uint8_t _pad116d[0x3]; // 0x116d
             // metadata: MNetworkEnable
-            source2sdk::client::DOTA_PlayerDraftState m_ePlayerDraftState; // 0x1168            
-            uint8_t _pad116c[0x4]; // 0x116c
+            source2sdk::client::DOTA_PlayerDraftState m_ePlayerDraftState; // 0x1170            
+            uint8_t _pad1174[0x4]; // 0x1174
             // metadata: MNetworkEnable
             // m_vecPlayerDraftPickOrder has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CNetworkUtlVectorBase<std::uint8_t> m_vecPlayerDraftPickOrder;
-            char m_vecPlayerDraftPickOrder[0x18]; // 0x1170            
+            char m_vecPlayerDraftPickOrder[0x18]; // 0x1178            
             // metadata: MNetworkEnable
-            std::int32_t m_nPlayerDraftPick; // 0x1188            
+            std::int32_t m_nPlayerDraftPick; // 0x1190            
             // metadata: MNetworkEnable
-            std::int32_t m_nPlayerDraftActiveTeam; // 0x118c            
+            std::int32_t m_nPlayerDraftActiveTeam; // 0x1194            
             // metadata: MNetworkEnable
-            float m_flPlayerDraftTimeBank[2]; // 0x1190            
+            float m_flPlayerDraftTimeBank[2]; // 0x1198            
             // m_vecARDMHeroes has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<KeyValues*> m_vecARDMHeroes[2];
-            char m_vecARDMHeroes[0x30]; // 0x1198            
-            std::int32_t m_nARDMHeroesPrecached; // 0x11c8            
-            float m_fLastARDMPrecache; // 0x11cc            
+            char m_vecARDMHeroes[0x30]; // 0x11a0            
+            std::int32_t m_nARDMHeroesPrecached; // 0x11d0            
+            float m_fLastARDMPrecache; // 0x11d4            
             // metadata: MNetworkEnable
-            std::int32_t m_nAllDraftPhase; // 0x11d0            
+            std::int32_t m_nAllDraftPhase; // 0x11d8            
             // metadata: MNetworkEnable
-            bool m_bAllDraftRadiantFirst; // 0x11d4            
+            bool m_bAllDraftRadiantFirst; // 0x11dc            
             // metadata: MNetworkEnable
-            bool m_bAllowOverrideVPK; // 0x11d5            
-            uint8_t _pad11d6[0x2]; // 0x11d6
+            bool m_bAllowOverrideVPK; // 0x11dd            
+            uint8_t _pad11de[0x2]; // 0x11de
             // metadata: MNetworkEnable
-            std::int32_t m_nARDMHeroesRemaining[2]; // 0x11d8            
+            std::int32_t m_nARDMHeroesRemaining[2]; // 0x11e0            
             // m_hGlobalPetList has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CDOTA_BaseNPC_Pet>> m_hGlobalPetList;
-            char m_hGlobalPetList[0x18]; // 0x11e0            
-            uint8_t _pad11f8[0x50]; // 0x11f8
-            std::int32_t m_nRadiantRoshanKills; // 0x1248            
-            std::int32_t m_nDireRoshanKills; // 0x124c            
-            std::int32_t m_nRoshanKillsDay; // 0x1250            
-            std::int32_t m_nRoshanKillsNight; // 0x1254            
-            std::int32_t m_nTormentorKills; // 0x1258            
-            std::int32_t m_nOutpostCaptures; // 0x125c            
-            uint8_t _pad1260[0xc]; // 0x1260
-            std::int32_t m_nDistanceCalculations; // 0x126c            
-            bool m_bLaneVictoryPredicted; // 0x1270            
-            uint8_t _pad1271[0x7]; // 0x1271
+            char m_hGlobalPetList[0x18]; // 0x11e8            
+            uint8_t _pad1200[0x50]; // 0x1200
+            std::int32_t m_nRadiantRoshanKills; // 0x1250            
+            std::int32_t m_nDireRoshanKills; // 0x1254            
+            std::int32_t m_nRoshanKillsDay; // 0x1258            
+            std::int32_t m_nRoshanKillsNight; // 0x125c            
+            std::int32_t m_nTormentorKills; // 0x1260            
+            std::int32_t m_nOutpostCaptures; // 0x1264            
+            uint8_t _pad1268[0xc]; // 0x1268
+            std::int32_t m_nDistanceCalculations; // 0x1274            
+            bool m_bLaneVictoryPredicted; // 0x1278            
+            uint8_t _pad1279[0x7]; // 0x1279
             // m_mapSuccessfulSmokes has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlOrderedMap<source2sdk::client::PlayerID_t,std::int32_t> m_mapSuccessfulSmokes;
-            char m_mapSuccessfulSmokes[0x28]; // 0x1278            
-            uint8_t _pad12a0[0x20]; // 0x12a0
+            char m_mapSuccessfulSmokes[0x28]; // 0x1280            
+            uint8_t _pad12a8[0x20]; // 0x12a8
             // metadata: MNetworkEnable
-            bool m_bExperimentalGameplay; // 0x12c0            
-            uint8_t _pad12c1[0x1f]; // 0x12c1
+            bool m_bExperimentalGameplay; // 0x12c8            
+            uint8_t _pad12c9[0x1f]; // 0x12c9
             // m_vecHeroPickRecord has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::client::HeroPickRecord_t> m_vecHeroPickRecord;
-            char m_vecHeroPickRecord[0x18]; // 0x12e0            
-            uint8_t _pad12f8[0x28]; // 0x12f8
+            char m_vecHeroPickRecord[0x18]; // 0x12e8            
+            uint8_t _pad1300[0x28]; // 0x1300
             // m_vecHeroDeathRecord has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::client::HeroDeathRecord_t> m_vecHeroDeathRecord;
-            char m_vecHeroDeathRecord[0x18]; // 0x1320            
-            uint8_t _pad1338[0x18]; // 0x1338
+            char m_vecHeroDeathRecord[0x18]; // 0x1328            
+            uint8_t _pad1340[0x18]; // 0x1340
             // m_BadResultPositionTriggers has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CBaseEntity>> m_BadResultPositionTriggers;
-            char m_BadResultPositionTriggers[0x18]; // 0x1350            
+            char m_BadResultPositionTriggers[0x18]; // 0x1358            
             // m_RoshanPositionTriggers has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CBaseEntity>> m_RoshanPositionTriggers;
-            char m_RoshanPositionTriggers[0x18]; // 0x1368            
+            char m_RoshanPositionTriggers[0x18]; // 0x1370            
             // m_vecAllDraftHeroPickRecord has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::client::HeroPickRecord_t> m_vecAllDraftHeroPickRecord;
-            char m_vecAllDraftHeroPickRecord[0x18]; // 0x1380            
+            char m_vecAllDraftHeroPickRecord[0x18]; // 0x1388            
             // m_vecAbilityDraftOrder has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlOrderedMap<source2sdk::client::PlayerID_t,CUtlVector<source2sdk::client::AbilityID_t>> m_vecAbilityDraftOrder;
-            char m_vecAbilityDraftOrder[0x28]; // 0x1398            
-            uint8_t _pad13c0[0x18]; // 0x13c0
-            std::int32_t m_nAllDraftHeroPickCollisionsThisPhase; // 0x13d8            
-            uint8_t _pad13dc[0x4]; // 0x13dc
+            char m_vecAbilityDraftOrder[0x28]; // 0x13a0            
+            uint8_t _pad13c8[0x18]; // 0x13c8
+            std::int32_t m_nAllDraftHeroPickCollisionsThisPhase; // 0x13e0            
+            uint8_t _pad13e4[0x4]; // 0x13e4
             // m_hRuneSpawners has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CBaseEntity>> m_hRuneSpawners;
-            char m_hRuneSpawners[0x18]; // 0x13e0            
+            char m_hRuneSpawners[0x18]; // 0x13e8            
             // m_hBountyRuneSpawners has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CBaseEntity>> m_hBountyRuneSpawners;
-            char m_hBountyRuneSpawners[0x18]; // 0x13f8            
+            char m_hBountyRuneSpawners[0x18]; // 0x1400            
             // m_hXPRuneSpawners has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CBaseEntity>> m_hXPRuneSpawners;
-            char m_hXPRuneSpawners[0x18]; // 0x1410            
+            char m_hXPRuneSpawners[0x18]; // 0x1418            
             // m_hNeutralSpawners has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CBaseEntity>> m_hNeutralSpawners[2];
-            char m_hNeutralSpawners[0x30]; // 0x1428            
-            std::int32_t m_iPreviousRune1; // 0x1458            
-            std::int32_t m_iPreviousRune2; // 0x145c            
+            char m_hNeutralSpawners[0x30]; // 0x1430            
+            std::int32_t m_iPreviousRune1; // 0x1460            
+            std::int32_t m_iPreviousRune2; // 0x1464            
             // m_vecAvailableRunes has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<std::int32_t> m_vecAvailableRunes;
-            char m_vecAvailableRunes[0x18]; // 0x1460            
-            float m_fNextPowerupRuneSpawnTime; // 0x1478            
-            float m_fNextBountyRuneSpawnTime; // 0x147c            
-            float m_fNextBountyRunePrepTime; // 0x1480            
-            float m_fNextXPRuneSpawnTime; // 0x1484            
-            bool m_aNeutralChoicesLoaded[5]; // 0x1488            
-            bool m_bFirstPowerupRune; // 0x148d            
-            bool m_bFirstBountyRune; // 0x148e            
-            bool m_bFilterMoreGold; // 0x148f            
-            bool m_bAllowOutpostXP; // 0x1490            
-            uint8_t _pad1491[0x3]; // 0x1491
+            char m_vecAvailableRunes[0x18]; // 0x1468            
+            float m_fNextPowerupRuneSpawnTime; // 0x1480            
+            float m_fNextBountyRuneSpawnTime; // 0x1484            
+            float m_fNextBountyRunePrepTime; // 0x1488            
+            float m_fNextXPRuneSpawnTime; // 0x148c            
+            bool m_aNeutralChoicesLoaded[5]; // 0x1490            
+            bool m_bFirstPowerupRune; // 0x1495            
+            bool m_bFirstBountyRune; // 0x1496            
+            bool m_bFilterMoreGold; // 0x1497            
+            bool m_bAllowOutpostXP; // 0x1498            
+            uint8_t _pad1499[0x3]; // 0x1499
             // m_hRoshanSpawner has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hRoshanSpawner;
-            char m_hRoshanSpawner[0x4]; // 0x1494            
-            std::int32_t m_iPreviousSpectators; // 0x1498            
-            std::uint32_t m_nMaxSpectators; // 0x149c            
+            char m_hRoshanSpawner[0x4]; // 0x149c            
+            std::int32_t m_iPreviousSpectators; // 0x14a0            
+            std::uint32_t m_nMaxSpectators; // 0x14a4            
             // m_hDroppedItems has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CBaseEntity>> m_hDroppedItems;
-            char m_hDroppedItems[0x18]; // 0x14a0            
+            char m_hDroppedItems[0x18]; // 0x14a8            
             // m_hWards has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CBaseEntity>> m_hWards;
-            char m_hWards[0x18]; // 0x14b8            
+            char m_hWards[0x18]; // 0x14c0            
             // m_hGameEvents has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hGameEvents;
-            char m_hGameEvents[0x4]; // 0x14d0            
-            uint8_t _pad14d4[0x1c]; // 0x14d4
+            char m_hGameEvents[0x4]; // 0x14d8            
+            uint8_t _pad14dc[0x1c]; // 0x14dc
             // m_Towers has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CBaseEntity>> m_Towers;
-            char m_Towers[0x18]; // 0x14f0            
+            char m_Towers[0x18]; // 0x14f8            
             // m_TeamTowers has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CDOTA_BaseNPC_Tower>> m_TeamTowers[10];
-            char m_TeamTowers[0xf0]; // 0x1508            
+            char m_TeamTowers[0xf0]; // 0x1510            
             // m_Outposts has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CBaseEntity>> m_Outposts;
-            char m_Outposts[0x18]; // 0x15f8            
+            char m_Outposts[0x18]; // 0x1600            
             // m_TeamTowerPositions has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<Vector> m_TeamTowerPositions[10];
-            char m_TeamTowerPositions[0xf0]; // 0x1610            
+            char m_TeamTowerPositions[0xf0]; // 0x1618            
             // m_TeamTowerLevels has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<std::int32_t> m_TeamTowerLevels[10];
-            char m_TeamTowerLevels[0xf0]; // 0x1700            
+            char m_TeamTowerLevels[0xf0]; // 0x1708            
             // m_TeamTowerLanes has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<std::int32_t> m_TeamTowerLanes[10];
-            char m_TeamTowerLanes[0xf0]; // 0x17f0            
+            char m_TeamTowerLanes[0xf0]; // 0x17f8            
             // m_TeamBarracks has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CDOTA_BaseNPC_Building>> m_TeamBarracks[10];
-            char m_TeamBarracks[0xf0]; // 0x18e0            
+            char m_TeamBarracks[0xf0]; // 0x18e8            
             // m_TeamShrines has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CDOTA_BaseNPC_Building>> m_TeamShrines[10];
-            char m_TeamShrines[0xf0]; // 0x19d0            
-            source2sdk::server::CountdownTimer m_TempDayTimer; // 0x1ac0            
-            source2sdk::server::CountdownTimer m_TempNightTimer; // 0x1ad8            
-            source2sdk::server::CountdownTimer m_NightstalkerNightTimer; // 0x1af0            
-            source2sdk::server::CountdownTimer m_TempRiverTimer; // 0x1b08            
-            bool m_bUseLenientAFK[2]; // 0x1b20            
-            bool m_bFirstBlood; // 0x1b22            
-            uint8_t _pad1b23[0x1]; // 0x1b23
-            std::int32_t m_nFirstBloodTime; // 0x1b24            
-            source2sdk::server::CountdownTimer m_CheckIdleTimer; // 0x1b28            
-            source2sdk::client::PlayerID_t m_nAnnounceHeroPickRadiantPlayerID; // 0x1b40            
-            source2sdk::client::PlayerID_t m_nAnnounceHeroPickDirePlayerID; // 0x1b44            
-            CUtlString m_pszLastUsedAbility[64]; // 0x1b48            
+            char m_TeamShrines[0xf0]; // 0x19d8            
+            source2sdk::server::CountdownTimer m_TempDayTimer; // 0x1ac8            
+            source2sdk::server::CountdownTimer m_TempNightTimer; // 0x1ae0            
+            source2sdk::server::CountdownTimer m_NightstalkerNightTimer; // 0x1af8            
+            source2sdk::server::CountdownTimer m_TempRiverTimer; // 0x1b10            
+            bool m_bUseLenientAFK[2]; // 0x1b28            
+            bool m_bFirstBlood; // 0x1b2a            
+            uint8_t _pad1b2b[0x1]; // 0x1b2b
+            std::int32_t m_nFirstBloodTime; // 0x1b2c            
+            source2sdk::server::CountdownTimer m_CheckIdleTimer; // 0x1b30            
+            source2sdk::client::PlayerID_t m_nAnnounceHeroPickRadiantPlayerID; // 0x1b48            
+            source2sdk::client::PlayerID_t m_nAnnounceHeroPickDirePlayerID; // 0x1b4c            
+            CUtlString m_pszLastUsedAbility[64]; // 0x1b50            
             // m_reconnectinfos has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::client::CDOTA_ReconnectInfo> m_reconnectinfos;
-            char m_reconnectinfos[0x18]; // 0x1d48            
+            char m_reconnectinfos[0x18]; // 0x1d50            
             // m_hEnemyCreepsInBase has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CBaseEntity>> m_hEnemyCreepsInBase[10];
-            char m_hEnemyCreepsInBase[0xf0]; // 0x1d60            
-            bool m_bTeamHasAbandonedPlayer[10]; // 0x1e50            
-            bool m_bLobbyHasLeaverDetected; // 0x1e5a            
-            bool m_bGameIsForcedSafeToLeave; // 0x1e5b            
-            bool m_bLobbyHasDicardMatchResults; // 0x1e5c            
-            uint8_t _pad1e5d[0x3]; // 0x1e5d
-            std::int32_t m_iGameEndReason; // 0x1e60            
-            bool m_bNotifiedPlayerLeaverStatus[64]; // 0x1e64            
-            bool m_bUploadedReplay; // 0x1ea4            
-            uint8_t _pad1ea5[0x3]; // 0x1ea5
-            float m_flLobbyWaitTime; // 0x1ea8            
-            bool m_bGameWasLoaded; // 0x1eac            
+            char m_hEnemyCreepsInBase[0xf0]; // 0x1d68            
+            bool m_bTeamHasAbandonedPlayer[10]; // 0x1e58            
+            bool m_bLobbyHasLeaverDetected; // 0x1e62            
+            bool m_bGameIsForcedSafeToLeave; // 0x1e63            
+            bool m_bLobbyHasDicardMatchResults; // 0x1e64            
+            uint8_t _pad1e65[0x3]; // 0x1e65
+            std::int32_t m_iGameEndReason; // 0x1e68            
+            bool m_bNotifiedPlayerLeaverStatus[64]; // 0x1e6c            
+            bool m_bUploadedReplay; // 0x1eac            
             uint8_t _pad1ead[0x3]; // 0x1ead
-            std::int32_t m_nLoadPauseFrameCount; // 0x1eb0            
-            uint8_t _pad1eb4[0x4]; // 0x1eb4
-            double m_flStateFallbackTransitionTime; // 0x1eb8            
-            source2sdk::server::EngineCountdownTimer m_timerFinishReplay; // 0x1ec0            
+            float m_flLobbyWaitTime; // 0x1eb0            
+            bool m_bGameWasLoaded; // 0x1eb4            
+            uint8_t _pad1eb5[0x3]; // 0x1eb5
+            std::int32_t m_nLoadPauseFrameCount; // 0x1eb8            
+            uint8_t _pad1ebc[0x4]; // 0x1ebc
+            double m_flStateFallbackTransitionTime; // 0x1ec0            
+            source2sdk::server::EngineCountdownTimer m_timerFinishReplay; // 0x1ec8            
             // m_vecChatLog has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::server::GameChatLogEntry_t> m_vecChatLog;
-            char m_vecChatLog[0x18]; // 0x1ed8            
-            uint8_t _pad1ef0[0x2658]; // 0x1ef0
-            bool m_bFatalErrorAbortGame; // 0x4548            
-            bool m_bFillEmptySlotsWithBots; // 0x4549            
-            uint8_t _pad454a[0x2]; // 0x454a
-            std::uint32_t m_dotaMapSpawnGroup; // 0x454c            
-            uint8_t _pad4550[0x28]; // 0x4550
+            char m_vecChatLog[0x18]; // 0x1ee0            
+            uint8_t _pad1ef8[0x2658]; // 0x1ef8
+            bool m_bFatalErrorAbortGame; // 0x4550            
+            bool m_bFillEmptySlotsWithBots; // 0x4551            
+            uint8_t _pad4552[0x2]; // 0x4552
+            std::uint32_t m_dotaMapSpawnGroup; // 0x4554            
+            uint8_t _pad4558[0x28]; // 0x4558
             // metadata: MNetworkEnable
-            std::uint32_t m_lobbyType; // 0x4578            
+            std::uint32_t m_lobbyType; // 0x4580            
             // metadata: MNetworkEnable
-            source2sdk::client::LeagueID_t m_lobbyLeagueID; // 0x457c            
+            source2sdk::client::LeagueID_t m_lobbyLeagueID; // 0x4584            
             // metadata: MNetworkEnable
-            char m_lobbyGameName[256]; // 0x4580            
+            char m_lobbyGameName[256]; // 0x4588            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnHeroStatueLiked"
             // m_vecHeroStatueLiked has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVectorEmbeddedNetworkVar<source2sdk::server::CHeroStatueLiked> m_vecHeroStatueLiked;
-            char m_vecHeroStatueLiked[0x88]; // 0x4680            
+            char m_vecHeroStatueLiked[0x88]; // 0x4688            
             // metadata: MNetworkEnable
-            std::int32_t m_CustomGameTeamMaxPlayers[15]; // 0x4708            
-            uint8_t _pad4744[0x44]; // 0x4744
+            std::int32_t m_CustomGameTeamMaxPlayers[15]; // 0x4710            
+            uint8_t _pad474c[0x44]; // 0x474c
             // metadata: MNetworkEnable
-            std::int32_t m_iMutations[5]; // 0x4788            
-            uint8_t _pad479c[0x4]; // 0x479c
+            std::int32_t m_iMutations[5]; // 0x4790            
+            uint8_t _pad47a4[0x4]; // 0x47a4
             // metadata: MNetworkEnable
             // m_vecIngameEvents has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CNetworkUtlVectorBase<CHandle<source2sdk::server::CIngameEvent_Base>> m_vecIngameEvents;
-            char m_vecIngameEvents[0x18]; // 0x47a0            
+            char m_vecIngameEvents[0x18]; // 0x47a8            
             // metadata: MNetworkEnable
-            std::int8_t m_nPrimaryIngameEventIndex; // 0x47b8            
-            uint8_t _pad47b9[0x3]; // 0x47b9
-            std::uint32_t m_nOfrendaPledges; // 0x47bc            
-            std::uint32_t m_nRadiantOfrendas; // 0x47c0            
-            std::uint32_t m_nDireOfrendas; // 0x47c4            
+            std::int8_t m_nPrimaryIngameEventIndex; // 0x47c0            
+            uint8_t _pad47c1[0x3]; // 0x47c1
+            std::uint32_t m_nOfrendaPledges; // 0x47c4            
+            std::uint32_t m_nRadiantOfrendas; // 0x47c8            
+            std::uint32_t m_nDireOfrendas; // 0x47cc            
             // metadata: MNetworkEnable
-            bool m_bOfrendaEnabled; // 0x47c8            
-            uint8_t _pad47c9[0x7]; // 0x47c9
+            bool m_bOfrendaEnabled; // 0x47d0            
+            uint8_t _pad47d1[0x7]; // 0x47d1
             // m_vecMuertaPartingShotSouls has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::client::sMuertaPartingShotSoulDef> m_vecMuertaPartingShotSouls;
-            char m_vecMuertaPartingShotSouls[0x18]; // 0x47d0            
-            uint8_t _pad47e8[0x18]; // 0x47e8
+            char m_vecMuertaPartingShotSouls[0x18]; // 0x47d8            
+            uint8_t _pad47f0[0x18]; // 0x47f0
             // metadata: MNetworkEnable
             // m_NeutralSpawnBoxes has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CNetworkUtlVectorBase<source2sdk::client::NeutralSpawnBoxes_t> m_NeutralSpawnBoxes;
-            char m_NeutralSpawnBoxes[0x60]; // 0x4800            
+            char m_NeutralSpawnBoxes[0x60]; // 0x4808            
             // metadata: MNetworkEnable
             // m_RegionTriggerBoxes has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CNetworkUtlVectorBase<source2sdk::client::RegionTriggerBoxes_t> m_RegionTriggerBoxes;
-            char m_RegionTriggerBoxes[0x60]; // 0x4860            
-            double m_flLastItemSuggestionRequestTime[15]; // 0x48c0            
-            uint8_t _pad4938[0xfb8]; // 0x4938
-            double m_flLastPerfSampleTime; // 0x58f0            
+            char m_RegionTriggerBoxes[0x60]; // 0x4868            
+            double m_flLastItemSuggestionRequestTime[15]; // 0x48c8            
+            uint8_t _pad4940[0xfb8]; // 0x4940
+            double m_flLastPerfSampleTime; // 0x58f8            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTAGameRules because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTAGameRules) == 0x58f8);
+        static_assert(sizeof(source2sdk::server::CDOTAGameRules) == 0x5900);
     };
 };

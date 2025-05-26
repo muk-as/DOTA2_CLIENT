@@ -16,7 +16,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: 0x8
         // Standard-layout class: true
-        // Size: 0xc0
+        // Size: 0xc8
         #pragma pack(push, 1)
         class CDecalInfo
         {
@@ -31,9 +31,9 @@ namespace source2sdk
             uint8_t _pad001c[0xc]; // 0x1c
             source2sdk::client::CDecalInfo* m_pNext; // 0x28            
             source2sdk::client::CDecalInfo* m_pPrev; // 0x30            
-            uint8_t _pad0038[0x80]; // 0x38
-            std::int32_t m_nDecalMaterialIndex; // 0xb8            
-            uint8_t _pad00bc[0x4];
+            uint8_t _pad0038[0x88]; // 0x38
+            std::int32_t m_nDecalMaterialIndex; // 0xc0            
+            uint8_t _pad00c4[0x4];
             
             // Datamap fields:
             // void m_decalEvent; // 0x38
@@ -50,8 +50,8 @@ namespace source2sdk
         static_assert(offsetof(source2sdk::client::CDecalInfo, m_nBoneIndex) == 0x18);
         static_assert(offsetof(source2sdk::client::CDecalInfo, m_pNext) == 0x28);
         static_assert(offsetof(source2sdk::client::CDecalInfo, m_pPrev) == 0x30);
-        static_assert(offsetof(source2sdk::client::CDecalInfo, m_nDecalMaterialIndex) == 0xb8);
+        static_assert(offsetof(source2sdk::client::CDecalInfo, m_nDecalMaterialIndex) == 0xc0);
         
-        static_assert(sizeof(source2sdk::client::CDecalInfo) == 0xc0);
+        static_assert(sizeof(source2sdk::client::CDecalInfo) == 0xc8);
     };
 };

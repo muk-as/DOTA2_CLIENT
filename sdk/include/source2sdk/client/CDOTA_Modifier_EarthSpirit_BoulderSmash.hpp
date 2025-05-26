@@ -17,20 +17,20 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1800
+        // Size: 0x1880
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_EarthSpirit_BoulderSmash : public source2sdk::client::CDOTA_Buff
         {
         public:
-            bool m_bInterrupted; // 0x17f8            
-            uint8_t _pad17f9[0x3]; // 0x17f9
-            std::int32_t m_nProjectileID; // 0x17fc            
+            bool m_bInterrupted; // 0x1878            
+            uint8_t _pad1879[0x3]; // 0x1879
+            std::int32_t m_nProjectileID; // 0x187c            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_EarthSpirit_BoulderSmash because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_EarthSpirit_BoulderSmash) == 0x1800);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_EarthSpirit_BoulderSmash) == 0x1880);
     };
 };

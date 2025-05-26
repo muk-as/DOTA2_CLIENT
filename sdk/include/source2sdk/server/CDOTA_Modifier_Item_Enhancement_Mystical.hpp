@@ -17,19 +17,21 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1800
+        // Size: 0x1888
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Item_Enhancement_Mystical : public source2sdk::server::CDOTA_Buff_Item
         {
         public:
-            float mana_regen; // 0x17f8            
-            float magic_res; // 0x17fc            
+            float mana_regen; // 0x1878            
+            float magic_res; // 0x187c            
+            float bonus_cast_range; // 0x1880            
+            uint8_t _pad1884[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Item_Enhancement_Mystical because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Item_Enhancement_Mystical) == 0x1800);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Item_Enhancement_Mystical) == 0x1888);
     };
 };

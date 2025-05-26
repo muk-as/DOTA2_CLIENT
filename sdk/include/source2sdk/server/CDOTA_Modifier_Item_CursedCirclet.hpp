@@ -17,19 +17,19 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1800
+        // Size: 0x1880
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Item_CursedCirclet : public source2sdk::server::CDOTA_Buff_Item
         {
         public:
-            float bonus_all_stats; // 0x17f8            
-            float attack_damage; // 0x17fc            
+            float bonus_all_stats; // 0x1878            
+            float attack_damage; // 0x187c            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Item_CursedCirclet because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Item_CursedCirclet) == 0x1800);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Item_CursedCirclet) == 0x1880);
     };
 };

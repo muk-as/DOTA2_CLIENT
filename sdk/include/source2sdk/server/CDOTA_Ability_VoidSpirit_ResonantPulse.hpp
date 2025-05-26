@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x5c8
+        // Size: 0x5d0
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -25,16 +25,16 @@ namespace source2sdk
         class CDOTA_Ability_VoidSpirit_ResonantPulse : public source2sdk::server::CDOTABaseAbility
         {
         public:
-            bool m_bGrantedScepterCharges; // 0x5b8            
-            uint8_t _pad05b9[0x3]; // 0x5b9
-            float buff_duration; // 0x5bc            
-            std::int32_t base_absorb_amount; // 0x5c0            
-            std::int32_t absorb_per_hero_hit; // 0x5c4            
+            bool m_bGrantedScepterCharges; // 0x5c0            
+            uint8_t _pad05c1[0x3]; // 0x5c1
+            float buff_duration; // 0x5c4            
+            float base_absorb_amount; // 0x5c8            
+            float absorb_per_hero_hit; // 0x5cc            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_VoidSpirit_ResonantPulse because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Ability_VoidSpirit_ResonantPulse) == 0x5c8);
+        static_assert(sizeof(source2sdk::server::CDOTA_Ability_VoidSpirit_ResonantPulse) == 0x5d0);
     };
 };

@@ -17,26 +17,26 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1828
+        // Size: 0x18a8
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Techies_RemoteMine : public source2sdk::client::CDOTA_Modifier_Invisible
         {
         public:
-            std::int32_t radius; // 0x1808            
-            std::int32_t damage; // 0x180c            
-            std::int32_t radius_scepter; // 0x1810            
-            std::int32_t damage_scepter; // 0x1814            
-            std::int32_t vision_radius; // 0x1818            
-            float vision_duration; // 0x181c            
-            std::int32_t model_scale; // 0x1820            
-            bool bExploding; // 0x1824            
-            uint8_t _pad1825[0x3];
+            std::int32_t radius; // 0x1888            
+            std::int32_t damage; // 0x188c            
+            std::int32_t radius_scepter; // 0x1890            
+            std::int32_t damage_scepter; // 0x1894            
+            std::int32_t vision_radius; // 0x1898            
+            float vision_duration; // 0x189c            
+            std::int32_t model_scale; // 0x18a0            
+            bool bExploding; // 0x18a4            
+            uint8_t _pad18a5[0x3];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Techies_RemoteMine because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Techies_RemoteMine) == 0x1828);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Techies_RemoteMine) == 0x18a8);
     };
 };

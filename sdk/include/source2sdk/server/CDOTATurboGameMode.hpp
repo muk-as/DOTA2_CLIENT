@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x8c0
+        // Size: 0x8c8
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -25,30 +25,30 @@ namespace source2sdk
         class CDOTATurboGameMode : public source2sdk::server::CDOTABaseGameMode
         {
         public:
-            uint8_t _pad0810[0x18]; // 0x810
-            std::int32_t m_nHighestLevelInCurrentGame; // 0x828            
-            uint8_t _pad082c[0x34]; // 0x82c
+            uint8_t _pad0818[0x18]; // 0x818
+            std::int32_t m_nHighestLevelInCurrentGame; // 0x830            
+            uint8_t _pad0834[0x34]; // 0x834
             // m_ExtraMeleeCreepTimes has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<float> m_ExtraMeleeCreepTimes;
-            char m_ExtraMeleeCreepTimes[0x18]; // 0x860            
+            char m_ExtraMeleeCreepTimes[0x18]; // 0x868            
             // m_ExtraRangedCreepTimes has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<float> m_ExtraRangedCreepTimes;
-            char m_ExtraRangedCreepTimes[0x18]; // 0x878            
+            char m_ExtraRangedCreepTimes[0x18]; // 0x880            
             // m_ExtraSiegeCreepTimes has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<float> m_ExtraSiegeCreepTimes;
-            char m_ExtraSiegeCreepTimes[0x18]; // 0x890            
-            std::int32_t m_nExtraGoldPerWave; // 0x8a8            
-            std::int32_t m_nExtraXPPerWave; // 0x8ac            
-            float m_flNextRewardDistributionTime; // 0x8b0            
-            float m_flNextWaveRecalculationTime; // 0x8b4            
-            bool m_bInOvertime; // 0x8b8            
-            bool m_bDistributingPassiveGoldAndXp; // 0x8b9            
-            uint8_t _pad08ba[0x6];
+            char m_ExtraSiegeCreepTimes[0x18]; // 0x898            
+            std::int32_t m_nExtraGoldPerWave; // 0x8b0            
+            std::int32_t m_nExtraXPPerWave; // 0x8b4            
+            float m_flNextRewardDistributionTime; // 0x8b8            
+            float m_flNextWaveRecalculationTime; // 0x8bc            
+            bool m_bInOvertime; // 0x8c0            
+            bool m_bDistributingPassiveGoldAndXp; // 0x8c1            
+            uint8_t _pad08c2[0x6];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTATurboGameMode because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTATurboGameMode) == 0x8c0);
+        static_assert(sizeof(source2sdk::server::CDOTATurboGameMode) == 0x8c8);
     };
 };

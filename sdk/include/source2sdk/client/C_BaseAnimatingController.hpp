@@ -23,7 +23,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x5d8
+        // Size: 0x5e0
         // Has VTable
         // 
         // static metadata: MNetworkOverride "m_baseLayer.m_hSequence"
@@ -82,16 +82,16 @@ namespace source2sdk
             uint8_t _pad00d6[0x29a]; // 0xd6
             source2sdk::client::C_CSequenceTransitioner2 m_SequenceTransitioner; // 0x370            
             source2sdk::animationsystem::HSequence m_hLastAnimEventSequence; // 0x528            
-            uint8_t _pad052c[0xac];
+            uint8_t _pad052c[0xb4];
             
             // Datamap fields:
-            // void m_iv_AnimOpHistory; // 0x530
-            // void m_iv_flPoseParameter; // 0x580
+            // void m_iv_AnimOpHistory; // 0x538
+            // void m_iv_flPoseParameter; // 0x588
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_BaseAnimatingController because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_BaseAnimatingController) == 0x5d8);
+        static_assert(sizeof(source2sdk::client::C_BaseAnimatingController) == 0x5e0);
     };
 };

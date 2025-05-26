@@ -24,7 +24,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1818
+        // Size: 0x1898
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Grimstroke_InkCreature_Latched : public source2sdk::client::CDOTA_Buff
@@ -32,20 +32,20 @@ namespace source2sdk
         public:
             // m_hAttachTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hAttachTarget;
-            char m_hAttachTarget[0x4]; // 0x17f8            
-            float m_fZOffset; // 0x17fc            
-            bool m_bRemovedByEnemy; // 0x1800            
-            uint8_t _pad1801[0x3]; // 0x1801
-            float latch_duration; // 0x1804            
-            std::int32_t pop_damage; // 0x1808            
-            std::int32_t latched_unit_offset; // 0x180c            
-            std::int32_t latched_unit_offset_short; // 0x1810            
-            uint8_t _pad1814[0x4];
+            char m_hAttachTarget[0x4]; // 0x1878            
+            float m_fZOffset; // 0x187c            
+            bool m_bRemovedByEnemy; // 0x1880            
+            uint8_t _pad1881[0x3]; // 0x1881
+            float latch_duration; // 0x1884            
+            std::int32_t pop_damage; // 0x1888            
+            std::int32_t latched_unit_offset; // 0x188c            
+            std::int32_t latched_unit_offset_short; // 0x1890            
+            uint8_t _pad1894[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Grimstroke_InkCreature_Latched because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Grimstroke_InkCreature_Latched) == 0x1818);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Grimstroke_InkCreature_Latched) == 0x1898);
     };
 };

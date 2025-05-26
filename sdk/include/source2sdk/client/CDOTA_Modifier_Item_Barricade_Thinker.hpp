@@ -17,21 +17,21 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1808
+        // Size: 0x1888
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Item_Barricade_Thinker : public source2sdk::client::CDOTA_Buff
         {
         public:
-            std::int32_t length; // 0x17f8            
-            std::int32_t width; // 0x17fc            
-            std::int32_t max_hits; // 0x1800            
-            std::int32_t m_iCurrentHits; // 0x1804            
+            std::int32_t length; // 0x1878            
+            std::int32_t width; // 0x187c            
+            std::int32_t max_hits; // 0x1880            
+            std::int32_t m_iCurrentHits; // 0x1884            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Item_Barricade_Thinker because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Item_Barricade_Thinker) == 0x1808);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Item_Barricade_Thinker) == 0x1888);
     };
 };

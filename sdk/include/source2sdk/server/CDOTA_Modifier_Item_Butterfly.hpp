@@ -17,23 +17,23 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1810
+        // Size: 0x1890
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Item_Butterfly : public source2sdk::server::CDOTA_Buff_Item
         {
         public:
-            std::int32_t bonus_damage; // 0x17f8            
-            std::int32_t bonus_agility; // 0x17fc            
-            std::int32_t bonus_evasion; // 0x1800            
-            std::int32_t bonus_attack_speed_pct; // 0x1804            
-            std::int32_t bonus_slow_resistance; // 0x1808            
-            uint8_t _pad180c[0x4];
+            std::int32_t bonus_damage; // 0x1878            
+            std::int32_t bonus_agility; // 0x187c            
+            std::int32_t bonus_evasion; // 0x1880            
+            std::int32_t bonus_attack_speed_pct; // 0x1884            
+            std::int32_t bonus_slow_resistance; // 0x1888            
+            uint8_t _pad188c[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Item_Butterfly because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Item_Butterfly) == 0x1810);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Item_Butterfly) == 0x1890);
     };
 };

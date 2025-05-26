@@ -24,7 +24,7 @@ namespace source2sdk
         class CInfoData : public source2sdk::server::CServerOnlyEntity
         {
         public:
-            uint8_t _pad04d8[0x398];
+            uint8_t _pad04e0[0x390];
             // No schema binary for binding
         };
         #pragma pack(pop)

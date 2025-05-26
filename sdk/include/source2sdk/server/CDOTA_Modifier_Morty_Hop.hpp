@@ -17,30 +17,30 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1838
+        // Size: 0x18b8
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Morty_Hop : public source2sdk::client::CDOTA_Buff
         {
         public:
-            Vector m_vStartPosition; // 0x17f8            
-            Vector m_vTargetPosition; // 0x1804            
-            float m_flCurrentTimeHoriz; // 0x1810            
-            float m_flCurrentTimeVert; // 0x1814            
-            float m_flZCoefficientA; // 0x1818            
-            float m_flZCoefficientB; // 0x181c            
-            bool m_bInterrupted; // 0x1820            
-            uint8_t _pad1821[0x3]; // 0x1821
-            float duration; // 0x1824            
-            std::int32_t height; // 0x1828            
-            std::int32_t damage; // 0x182c            
-            std::int32_t damage_radius; // 0x1830            
-            uint8_t _pad1834[0x4];
+            Vector m_vStartPosition; // 0x1878            
+            Vector m_vTargetPosition; // 0x1884            
+            float m_flCurrentTimeHoriz; // 0x1890            
+            float m_flCurrentTimeVert; // 0x1894            
+            float m_flZCoefficientA; // 0x1898            
+            float m_flZCoefficientB; // 0x189c            
+            bool m_bInterrupted; // 0x18a0            
+            uint8_t _pad18a1[0x3]; // 0x18a1
+            float duration; // 0x18a4            
+            std::int32_t height; // 0x18a8            
+            std::int32_t damage; // 0x18ac            
+            std::int32_t damage_radius; // 0x18b0            
+            uint8_t _pad18b4[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Morty_Hop because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Morty_Hop) == 0x1838);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Morty_Hop) == 0x18b8);
     };
 };

@@ -24,7 +24,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1808
+        // Size: 0x1888
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Gyrocopter_Call_Down_Thinker_Tracking : public source2sdk::client::CDOTA_Buff
@@ -32,13 +32,13 @@ namespace source2sdk
         public:
             // m_hTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hTarget;
-            char m_hTarget[0x4]; // 0x17f8            
-            Vector m_vLastKnownLocation; // 0x17fc            
+            char m_hTarget[0x4]; // 0x1878            
+            Vector m_vLastKnownLocation; // 0x187c            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Gyrocopter_Call_Down_Thinker_Tracking because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Gyrocopter_Call_Down_Thinker_Tracking) == 0x1808);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Gyrocopter_Call_Down_Thinker_Tracking) == 0x1888);
     };
 };

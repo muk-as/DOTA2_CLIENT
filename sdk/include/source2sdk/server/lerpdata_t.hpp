@@ -26,7 +26,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: 0x10
         // Standard-layout class: true
-        // Size: 0x40
+        // Size: 0x50
         // Has Trivial Destructor
         #pragma pack(push, 1)
         struct lerpdata_t
@@ -42,7 +42,7 @@ namespace source2sdk
             uint8_t _pad0018[0x8]; // 0x18
             Quaternion m_qStartRot; // 0x20            
             source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x30            
-            uint8_t _pad0034[0xc];
+            uint8_t _pad0034[0x1c];
             
             // Datamap fields:
             // void m_nSound; // 0x34
@@ -56,6 +56,6 @@ namespace source2sdk
         static_assert(offsetof(source2sdk::server::lerpdata_t, m_qStartRot) == 0x20);
         static_assert(offsetof(source2sdk::server::lerpdata_t, m_nFXIndex) == 0x30);
         
-        static_assert(sizeof(source2sdk::server::lerpdata_t) == 0x40);
+        static_assert(sizeof(source2sdk::server::lerpdata_t) == 0x50);
     };
 };

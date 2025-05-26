@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x5c0
+        // Size: 0x5c8
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -25,13 +25,13 @@ namespace source2sdk
         class CDOTA_Ability_WarpineRaider_SeedShot : public source2sdk::server::CDOTABaseAbility
         {
         public:
-            std::int32_t m_iBounces; // 0x5b8            
-            std::int32_t bounces; // 0x5bc            
+            std::int32_t m_iBounces; // 0x5c0            
+            std::int32_t bounces; // 0x5c4            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_WarpineRaider_SeedShot because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Ability_WarpineRaider_SeedShot) == 0x5c0);
+        static_assert(sizeof(source2sdk::server::CDOTA_Ability_WarpineRaider_SeedShot) == 0x5c8);
     };
 };

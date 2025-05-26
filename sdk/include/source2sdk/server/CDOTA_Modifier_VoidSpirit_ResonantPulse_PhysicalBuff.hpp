@@ -17,23 +17,23 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1810
+        // Size: 0x18a0
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_VoidSpirit_ResonantPulse_PhysicalBuff : public source2sdk::client::CDOTA_Buff
         {
         public:
-            std::int32_t base_absorb_amount; // 0x17f8            
-            std::int32_t m_nAbsorbRemaining; // 0x17fc            
-            std::int32_t m_nMaxAbsorb; // 0x1800            
-            bool is_all_barrier; // 0x1804            
-            bool m_bAllDamageAbsorb; // 0x1805            
-            uint8_t _pad1806[0xa];
+            float base_absorb_amount; // 0x1878            
+            std::int32_t m_nAbsorbRemaining; // 0x187c            
+            std::int32_t m_nMaxAbsorb; // 0x1880            
+            bool is_all_barrier; // 0x1884            
+            bool m_bAllDamageAbsorb; // 0x1885            
+            uint8_t _pad1886[0x1a];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_VoidSpirit_ResonantPulse_PhysicalBuff because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_VoidSpirit_ResonantPulse_PhysicalBuff) == 0x1810);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_VoidSpirit_ResonantPulse_PhysicalBuff) == 0x18a0);
     };
 };

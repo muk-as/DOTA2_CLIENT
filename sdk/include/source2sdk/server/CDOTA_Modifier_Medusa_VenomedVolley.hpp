@@ -17,24 +17,24 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1820
+        // Size: 0x18a0
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Medusa_VenomedVolley : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float duration; // 0x17f8            
-            std::int32_t attack_count; // 0x17fc            
+            float duration; // 0x1878            
+            std::int32_t attack_count; // 0x187c            
             // m_InFlightAttackRecords has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<std::int16_t> m_InFlightAttackRecords;
-            char m_InFlightAttackRecords[0x18]; // 0x1800            
-            bool m_bLastPrimaryIsVenomed; // 0x1818            
-            uint8_t _pad1819[0x7];
+            char m_InFlightAttackRecords[0x18]; // 0x1880            
+            bool m_bLastPrimaryIsVenomed; // 0x1898            
+            uint8_t _pad1899[0x7];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Medusa_VenomedVolley because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Medusa_VenomedVolley) == 0x1820);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Medusa_VenomedVolley) == 0x18a0);
     };
 };

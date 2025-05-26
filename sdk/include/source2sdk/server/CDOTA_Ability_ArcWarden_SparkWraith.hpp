@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x5d0
+        // Size: 0x5d8
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -25,17 +25,17 @@ namespace source2sdk
         class CDOTA_Ability_ArcWarden_SparkWraith : public source2sdk::server::CDOTABaseAbility
         {
         public:
-            float duration; // 0x5b8            
-            float activation_delay; // 0x5bc            
-            float wraith_vision_duration; // 0x5c0            
-            float wraith_vision_radius; // 0x5c4            
-            float spark_damage; // 0x5c8            
-            std::int32_t creep_damage_bonus_pct; // 0x5cc            
+            float duration; // 0x5c0            
+            float activation_delay; // 0x5c4            
+            float wraith_vision_duration; // 0x5c8            
+            float wraith_vision_radius; // 0x5cc            
+            float spark_damage; // 0x5d0            
+            std::int32_t creep_damage_bonus_pct; // 0x5d4            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_ArcWarden_SparkWraith because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Ability_ArcWarden_SparkWraith) == 0x5d0);
+        static_assert(sizeof(source2sdk::server::CDOTA_Ability_ArcWarden_SparkWraith) == 0x5d8);
     };
 };

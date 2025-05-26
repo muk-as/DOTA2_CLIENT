@@ -31,7 +31,7 @@ namespace source2sdk
         // Registered alignment: 0x10
         // Alignment: 0x10
         // Standard-layout class: false
-        // Size: 0x910
+        // Size: 0x9e0
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -44,37 +44,37 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            bool m_bStartRecording; // 0x510            
-            uint8_t _pad0511[0x3]; // 0x511
+            bool m_bStartRecording; // 0x5e0            
+            uint8_t _pad05e1[0x3]; // 0x5e1
             // metadata: MNetworkEnable
             // m_hHero has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_DOTA_BaseNPC> m_hHero;
-            char m_hHero[0x4]; // 0x514            
+            char m_hHero[0x4]; // 0x5e4            
             // metadata: MNetworkEnable
             // m_hPlayer has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_DOTAPlayerController> m_hPlayer;
-            char m_hPlayer[0x4]; // 0x518            
-            bool m_bRecording; // 0x51c            
-            bool m_bLastStartRecording; // 0x51d            
-            uint8_t _pad051e[0x2]; // 0x51e
-            float m_flLastCycle; // 0x520            
-            std::int32_t m_nCompletedCycles; // 0x524            
-            std::int32_t m_nFramesThisCycle; // 0x528            
-            std::int32_t m_nRecordedFrames; // 0x52c            
-            float m_flHeroAdvanceTime; // 0x530            
-            float m_flStartTime; // 0x534            
+            char m_hPlayer[0x4]; // 0x5e8            
+            bool m_bRecording; // 0x5ec            
+            bool m_bLastStartRecording; // 0x5ed            
+            uint8_t _pad05ee[0x2]; // 0x5ee
+            float m_flLastCycle; // 0x5f0            
+            std::int32_t m_nCompletedCycles; // 0x5f4            
+            std::int32_t m_nFramesThisCycle; // 0x5f8            
+            std::int32_t m_nRecordedFrames; // 0x5fc            
+            float m_flHeroAdvanceTime; // 0x600            
+            float m_flStartTime; // 0x604            
             // m_flCycles has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<float> m_flCycles;
-            char m_flCycles[0x18]; // 0x538            
+            char m_flCycles[0x18]; // 0x608            
             // m_pBatchFiles has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CUtlString*> m_pBatchFiles;
-            char m_pBatchFiles[0x18]; // 0x550            
-            uint8_t _pad0568[0x3a8];
+            char m_pBatchFiles[0x18]; // 0x620            
+            uint8_t _pad0638[0x3a8];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Hero_Recorder because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Hero_Recorder) == 0x910);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Hero_Recorder) == 0x9e0);
     };
 };

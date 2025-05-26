@@ -17,20 +17,20 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1808
+        // Size: 0x1888
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Rubick_SpellSteal : public source2sdk::client::CDOTA_Buff
         {
         public:
-            CUtlString m_strActivityModifier; // 0x17f8            
-            std::int32_t stolen_debuff_amp; // 0x1800            
-            float stolen_mana_reduction; // 0x1804            
+            CUtlString m_strActivityModifier; // 0x1878            
+            std::int32_t stolen_debuff_amp; // 0x1880            
+            float stolen_mana_reduction; // 0x1884            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Rubick_SpellSteal because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Rubick_SpellSteal) == 0x1808);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Rubick_SpellSteal) == 0x1888);
     };
 };

@@ -18,7 +18,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x5d0
+        // Size: 0x5e0
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -26,15 +26,15 @@ namespace source2sdk
         class CDOTA_Ability_Hoodwink_Bushwhack : public source2sdk::server::CDOTABaseAbility
         {
         public:
-            float trap_radius; // 0x5b8            
-            std::int32_t m_nProjectileHandle; // 0x5bc            
-            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x5c0            
-            uint8_t _pad05c4[0xc];
+            float trap_radius; // 0x5c0            
+            std::int32_t m_nProjectileHandle; // 0x5c4            
+            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x5c8            
+            uint8_t _pad05cc[0x14];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_Hoodwink_Bushwhack because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Ability_Hoodwink_Bushwhack) == 0x5d0);
+        static_assert(sizeof(source2sdk::server::CDOTA_Ability_Hoodwink_Bushwhack) == 0x5e0);
     };
 };

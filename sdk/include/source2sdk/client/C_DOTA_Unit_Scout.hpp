@@ -27,7 +27,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x18d0
+        // Size: 0x1af8
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -40,24 +40,24 @@ namespace source2sdk
         class C_DOTA_Unit_Scout : public source2sdk::client::C_DOTA_BaseNPC_Additive
         {
         public:
-            bool m_bUnitRespawned; // 0x17d8            
-            uint8_t _pad17d9[0x3]; // 0x17d9
+            bool m_bUnitRespawned; // 0x1a00            
+            uint8_t _pad1a01[0x3]; // 0x1a01
             // metadata: MNetworkEnable
-            source2sdk::client::PlayerID_t m_nSoleControllingPlayer; // 0x17dc            
+            source2sdk::client::PlayerID_t m_nSoleControllingPlayer; // 0x1a04            
             // metadata: MNetworkEnable
-            source2sdk::entity2::GameTime_t m_flRespawnTime; // 0x17e0            
+            source2sdk::entity2::GameTime_t m_flRespawnTime; // 0x1a08            
             // metadata: MNetworkEnable
-            source2sdk::client::ScoutState_t m_nScoutState; // 0x17e4            
+            source2sdk::client::ScoutState_t m_nScoutState; // 0x1a0c            
             // metadata: MNetworkEnable
             // m_hScoutStateEntity has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hScoutStateEntity;
-            char m_hScoutStateEntity[0x4]; // 0x17e8            
-            uint8_t _pad17ec[0xe4];
+            char m_hScoutStateEntity[0x4]; // 0x1a10            
+            uint8_t _pad1a14[0xe4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_Unit_Scout because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_Unit_Scout) == 0x18d0);
+        static_assert(sizeof(source2sdk::client::C_DOTA_Unit_Scout) == 0x1af8);
     };
 };

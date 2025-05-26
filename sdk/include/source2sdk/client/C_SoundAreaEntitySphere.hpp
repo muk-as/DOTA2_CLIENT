@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x540
+        // Size: 0x610
         // Has VTable
         // Construct allowed
         // 
@@ -27,13 +27,13 @@ namespace source2sdk
         {
         public:
             // metadata: MNetworkEnable
-            float m_flRadius; // 0x538            
-            uint8_t _pad053c[0x4];
+            float m_flRadius; // 0x608            
+            uint8_t _pad060c[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_SoundAreaEntitySphere because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_SoundAreaEntitySphere) == 0x540);
+        static_assert(sizeof(source2sdk::client::C_SoundAreaEntitySphere) == 0x610);
     };
 };

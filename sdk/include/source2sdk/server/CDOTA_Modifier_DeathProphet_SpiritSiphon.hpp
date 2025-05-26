@@ -25,34 +25,34 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1830
+        // Size: 0x18b0
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_DeathProphet_SpiritSiphon : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float flSmoothness; // 0x17f8            
-            float damage; // 0x17fc            
-            float damage_pct; // 0x1800            
-            std::int32_t drain_range; // 0x1804            
-            float haunt_duration; // 0x1808            
-            std::int32_t siphon_buffer; // 0x180c            
-            std::int32_t movement_steal; // 0x1810            
+            float flSmoothness; // 0x1878            
+            float damage; // 0x187c            
+            float damage_pct; // 0x1880            
+            std::int32_t drain_range; // 0x1884            
+            float haunt_duration; // 0x1888            
+            std::int32_t siphon_buffer; // 0x188c            
+            std::int32_t movement_steal; // 0x1890            
             // m_hTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hTarget;
-            char m_hTarget[0x4]; // 0x1814            
-            source2sdk::client::ParticleIndex_t m_iLinkIndex; // 0x1818            
-            std::int32_t m_nSelfBuffSerialNumber; // 0x181c            
-            std::int32_t m_nTargetDebuffSerialNumber; // 0x1820            
-            bool m_bAppliedFear; // 0x1824            
-            uint8_t _pad1825[0x3]; // 0x1825
-            float shard_fear_duration; // 0x1828            
-            float shard_consecutive_siphon_duration; // 0x182c            
+            char m_hTarget[0x4]; // 0x1894            
+            source2sdk::client::ParticleIndex_t m_iLinkIndex; // 0x1898            
+            std::int32_t m_nSelfBuffSerialNumber; // 0x189c            
+            std::int32_t m_nTargetDebuffSerialNumber; // 0x18a0            
+            bool m_bAppliedFear; // 0x18a4            
+            uint8_t _pad18a5[0x3]; // 0x18a5
+            float shard_fear_duration; // 0x18a8            
+            float shard_consecutive_siphon_duration; // 0x18ac            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_DeathProphet_SpiritSiphon because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_DeathProphet_SpiritSiphon) == 0x1830);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_DeathProphet_SpiritSiphon) == 0x18b0);
     };
 };
