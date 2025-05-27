@@ -34,7 +34,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_PROCATTACK_CONVERT_PHYSICAL_TO_MAGICAL = 0x6,
             // MScriptDescription "GetModifierProcAttack_BonusDamage_Pure GetModifierProcAttack_BonusDamage_Magical"
             MODIFIER_PROPERTY_PROCATTACK_BONUS_DAMAGE_MAGICAL = 0x7,
-            // MScriptDescription "–/˘1˚ GetModifierProcAttack_BonusDamage_Pure"
+            // MScriptDescription "–/W˚ GetModifierProcAttack_BonusDamage_Pure"
             MODIFIER_PROPERTY_PROCATTACK_BONUS_DAMAGE_PURE = 0x8,
             // MScriptDescription "GetModifierProcAttack_Feedback GetModifierProcAttack_BonusDamage_Magical_Target"
             MODIFIER_PROPERTY_PROCATTACK_BONUS_DAMAGE_MAGICAL_TARGET = 0x9,
@@ -76,13 +76,13 @@ namespace source2sdk
             MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE_MIN = 0x1b,
             // MScriptDescription "GetModifierMoveSpeed_AbsoluteMax"
             MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE_MAX = 0x1c,
-            // MScriptDescription "p∑¯1˚ GetModifierIgnoreMovespeedLimit"
+            // MScriptDescription "p∑V˚ GetModifierIgnoreMovespeedLimit"
             MODIFIER_PROPERTY_IGNORE_MOVESPEED_LIMIT = 0x1d,
             // MScriptDescription "GetModifierAttackSpeedBaseOverride GetModifierMoveSpeed_Limit"
             MODIFIER_PROPERTY_MOVESPEED_LIMIT = 0x1e,
             // MScriptDescription "GetModifierFixedAttackRate GetModifierAttackSpeedBaseOverride"
             MODIFIER_PROPERTY_ATTACKSPEED_BASE_OVERRIDE = 0x1f,
-            // MScriptDescription "∑¯1˚ GetModifierFixedAttackRate"
+            // MScriptDescription "∑V˚ GetModifierFixedAttackRate"
             MODIFIER_PROPERTY_FIXED_ATTACK_RATE = 0x20,
             // MScriptDescription "GetModifierAttackSpeed_Limit GetModifierAttackSpeedBonus_Constant"
             MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT = 0x21,
@@ -116,7 +116,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE_CREEP = 0x2f,
             // MScriptDescription "GetModifierSpellAmplify_PercentageUnique GetModifierSpellAmplify_Percentage"
             MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE = 0x30,
-            // MScriptDescription "êπ¯1˚ GetModifierSpellAmplify_PercentageUnique"
+            // MScriptDescription "êπV˚ GetModifierSpellAmplify_PercentageUnique"
             MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE_UNIQUE = 0x31,
             // MScriptDescription "GetModifierHealAmplify_PercentageSource GetModifierSpellAmplify_PercentageTarget"
             MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE_TARGET = 0x32,
@@ -130,7 +130,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_LIFESTEAL_AMPLIFY_PERCENTAGE = 0x36,
             // MScriptDescription "GetModifierSpellLifestealRegenAmplify_Percentage_Unique GetModifierSpellLifestealRegenAmplify_Percentage"
             MODIFIER_PROPERTY_SPELL_LIFESTEAL_AMPLIFY_PERCENTAGE = 0x37,
-            // MScriptDescription "@∫¯1˚ GetModifierSpellLifestealRegenAmplify_Percentage_Unique"
+            // MScriptDescription "@∫V˚ GetModifierSpellLifestealRegenAmplify_Percentage_Unique"
             MODIFIER_PROPERTY_SPELL_LIFESTEAL_AMPLIFY_PERCENTAGE_UNIQUE = 0x38,
             // MScriptDescription "GetModifierMPRegenAmplify_Percentage_Unique GetModifierMPRegenAmplify_Percentage"
             MODIFIER_PROPERTY_MP_REGEN_AMPLIFY_PERCENTAGE = 0x39,
@@ -152,7 +152,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_INCOMING_PHYSICAL_DAMAGE_CONSTANT = 0x41,
             // MScriptDescription "GetModifierEvasion_Constant GetModifierIncomingSpellDamageConstant"
             MODIFIER_PROPERTY_INCOMING_SPELL_DAMAGE_CONSTANT = 0x42,
-            // MScriptDescription "ª¯1˚ GetModifierEvasion_Constant"
+            // MScriptDescription "ªV˚ GetModifierEvasion_Constant"
             MODIFIER_PROPERTY_EVASION_CONSTANT = 0x43,
             // MScriptDescription "GetModifierStatusResistance GetModifierNegativeEvasion_Constant"
             MODIFIER_PROPERTY_NEGATIVE_EVASION_CONSTANT = 0x44,
@@ -178,7 +178,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS_UNIQUE = 0x4e,
             // MScriptDescription "GetModifierPhysicalArmorBonusPost GetModifierPhysicalArmorBonusUniqueActive"
             MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS_UNIQUE_ACTIVE = 0x4f,
-            // MScriptDescription "êº¯1˚ GetModifierPhysicalArmorBonusPost"
+            // MScriptDescription "êºV˚ GetModifierPhysicalArmorBonusPost"
             MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS_POST = 0x50,
             // MScriptDescription "GetModifierIgnorePhysicalArmor GetModifierMinPhysicalArmor"
             MODIFIER_PROPERTY_MIN_PHYSICAL_ARMOR = 0x51,
@@ -300,7 +300,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE = 0x8b,
             // MScriptDescription "GetModifierMagical_ConstantBlock GetModifierPreAttack_Target_CriticalStrike"
             MODIFIER_PROPERTY_PREATTACK_TARGET_CRITICALSTRIKE = 0x8c,
-            // MScriptDescription " ƒ¯1˚ GetModifierMagical_ConstantBlock"
+            // MScriptDescription " ƒV˚ GetModifierMagical_ConstantBlock"
             MODIFIER_PROPERTY_MAGICAL_CONSTANT_BLOCK = 0x8d,
             // MScriptDescription "GetModifierPhysical_ConstantBlockSpecial GetModifierPhysical_ConstantBlock"
             MODIFIER_PROPERTY_PHYSICAL_CONSTANT_BLOCK = 0x8e,
@@ -384,7 +384,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_DODGE_PROJECTILE = 0xb5,
             // MScriptDescription "GetModifierMaxDebuffDuration GetTriggerCosmeticAndEndAttack"
             MODIFIER_PROPERTY_TRIGGER_COSMETIC_AND_END_ATTACK = 0xb6,
-            // MScriptDescription " »¯1˚ GetModifierMaxDebuffDuration"
+            // MScriptDescription " »V˚ GetModifierMaxDebuffDuration"
             MODIFIER_PROPERTY_MAX_DEBUFF_DURATION = 0xb7,
             // MScriptDescription "GetModifierPreAttack_DeadlyBlow GetPrimaryStatDamageMultiplier"
             MODIFIER_PROPERTY_PRIMARY_STAT_DAMAGE_MULTIPLIER = 0xb8,
@@ -402,13 +402,13 @@ namespace source2sdk
             MODIFIER_PROPERTY_CONVERT_ATTACK_PHYSICAL_TO_PURE = 0xbe,
             // MScriptDescription "OnSpellTargetReady"
             MODIFIER_EVENT_ON_SPELL_TARGET_READY = 0xbf,
-            // MScriptDescription "…¯1˚ OnAttackRecord"
+            // MScriptDescription "…V˚ OnAttackRecord"
             MODIFIER_EVENT_ON_ATTACK_RECORD = 0xc0,
             // MScriptDescription "OnAttack OnAttackStart"
             MODIFIER_EVENT_ON_ATTACK_START = 0xc1,
             // MScriptDescription "OnAttackLanded OnAttack"
             MODIFIER_EVENT_ON_ATTACK = 0xc2,
-            // MScriptDescription "ê…¯1˚ OnAttackLanded"
+            // MScriptDescription "ê…V˚ OnAttackLanded"
             MODIFIER_EVENT_ON_ATTACK_LANDED = 0xc3,
             // MScriptDescription "OnAttackAllied OnAttackFail"
             MODIFIER_EVENT_ON_ATTACK_FAIL = 0xc4,
@@ -484,7 +484,7 @@ namespace source2sdk
             MODIFIER_EVENT_ON_MODIFIER_ADDED = 0xe7,
             // MScriptDescription "OnTooltip OnModifierRemoved"
             MODIFIER_EVENT_ON_MODIFIER_REMOVED = 0xe8,
-            // MScriptDescription "êÕ¯1˚ OnTooltip"
+            // MScriptDescription "êÕV˚ OnTooltip"
             MODIFIER_PROPERTY_TOOLTIP = 0xe9,
             // MScriptDescription "GetModifierModelScale GetModifierModelChange"
             MODIFIER_PROPERTY_MODEL_CHANGE = 0xea,
@@ -506,7 +506,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_TRANSLATE_ACTIVITY_MODIFIERS = 0xf2,
             // MScriptDescription "GetUnitLifetimeFraction GetAttackSound"
             MODIFIER_PROPERTY_TRANSLATE_ATTACK_SOUND = 0xf3,
-            // MScriptDescription "ÄŒ¯1˚ GetUnitLifetimeFraction"
+            // MScriptDescription "ÄŒV˚ GetUnitLifetimeFraction"
             MODIFIER_PROPERTY_LIFETIME_FRACTION = 0xf4,
             // MScriptDescription "GetModifierSpellsRequireHP GetModifierProvidesFOWVision"
             MODIFIER_PROPERTY_PROVIDES_FOW_POSITION = 0xf5,
@@ -592,7 +592,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_KNOCKBACK_AMPLIFICATION_PERCENTAGE = 0x11d,
             // MScriptDescription "GetModifierIncomingDamageConstant GetModifierHealthBarPips"
             MODIFIER_PROPERTY_HEALTHBAR_PIPS = 0x11e,
-            // MScriptDescription "`“¯1˚ GetModifierIncomingDamageConstant"
+            // MScriptDescription "`“V˚ GetModifierIncomingDamageConstant"
             MODIFIER_PROPERTY_INCOMING_DAMAGE_CONSTANT = 0x11f,
             // MScriptDescription "GetModifierAvoidDamageAfterReductions OnSpellAppliedSuccessfully"
             MODIFIER_EVENT_SPELL_APPLIED_SUCCESSFULLY = 0x120,
@@ -602,7 +602,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_FAIL_ATTACK = 0x122,
             // MScriptDescription "GetModifierSuppressFullscreenDeathFX GetModifierPrereduceIncomingDamage_Mult"
             MODIFIER_PROPERTY_PREREDUCE_INCOMING_DAMAGE_MULT = 0x123,
-            // MScriptDescription "“¯1˚ GetModifierSuppressFullscreenDeathFX"
+            // MScriptDescription "“V˚ GetModifierSuppressFullscreenDeathFX"
             MODIFIER_PROPERTY_SUPPRESS_FULLSCREEN_DEATH_FX = 0x124,
             // MScriptDescription "GetModifierDamageOutgoing_PercentageMultiplicative MODIFIER_PROPERTY_INCOMING_DAMAGE_CONSTANT_POST"
             MODIFIER_PROPERTY_INCOMING_DAMAGE_CONSTANT_POST = 0x125,
@@ -648,7 +648,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_FORCE_MAX_HEALTH = 0x139,
             // MScriptDescription "GetModifierAoEBonusConstant GetModifierForceMaxMana"
             MODIFIER_PROPERTY_FORCE_MAX_MANA = 0x13a,
-            // MScriptDescription " ‘¯1˚ GetModifierAoEBonusConstant"
+            // MScriptDescription " ‘V˚ GetModifierAoEBonusConstant"
             MODIFIER_PROPERTY_AOE_BONUS_CONSTANT = 0x13b,
             // MScriptDescription "OnTakeDamagePostUnavoidableBlock GetModifierAoEBonusConstantStacking"
             MODIFIER_PROPERTY_AOE_BONUS_CONSTANT_STACKING = 0x13c,
@@ -684,7 +684,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_BASE_HP_REGEN_PER_STR_BONUS_PERCENTAGE = 0x14b,
             // MScriptDescription "GetModifierBonusLotusHeal"
             MODIFIER_PROPERTY_BASE_ARMOR_PER_AGI_BONUS_PERCENTAGE = 0x14c,
-            // MScriptDescription "Ä÷¯1˚ GetModifierBonusLotusHeal"
+            // MScriptDescription "Ä÷V˚ GetModifierBonusLotusHeal"
             MODIFIER_PROPERTY_BASE_MP_REGEN_PER_INT_BONUS_PERCENTAGE = 0x14d,
             // MScriptDescription "OnDayStarted GetModifierBonusLotusHeal"
             MODIFIER_PROPERTY_BASE_MRES_PER_INT_BONUS_PERCENTAGE = 0x14e,
@@ -710,7 +710,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_KILL_STREAK_BONUS_GOLD_PERCENTAGE = 0x158,
             // MScriptDescription "GetModifierHeroFacetOverride GetModifierHPRegenMultiplierPreAmplification"
             MODIFIER_PROPERTY_HP_REGEN_MULTIPLIER_PRE_AMPLIFICATION = 0x159,
-            // MScriptDescription "`◊¯1˚ GetModifierHeroFacetOverride"
+            // MScriptDescription "`◊V˚ GetModifierHeroFacetOverride"
             MODIFIER_PROPERTY_HEROFACET_OVERRIDE = 0x15a,
             // MScriptDescription "OnCleaveAttackLanded OnTreeCutDown"
             MODIFIER_EVENT_ON_TREE_CUT_DOWN = 0x15b,

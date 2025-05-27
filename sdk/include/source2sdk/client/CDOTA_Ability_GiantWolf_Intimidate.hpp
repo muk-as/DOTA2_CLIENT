@@ -25,7 +25,7 @@ namespace source2sdk
         class CDOTA_Ability_GiantWolf_Intimidate : public source2sdk::client::C_DOTABaseAbility
         {
         public:
-            std::int32_t radius; // 0x680            
+            float radius; // 0x680            
             float duration; // 0x684            
         };
         #pragma pack(pop)
