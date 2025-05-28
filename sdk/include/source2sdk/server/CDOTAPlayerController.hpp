@@ -28,7 +28,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x970
+        // Size: 0x968
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -192,12 +192,12 @@ namespace source2sdk
             std::uint8_t m_pOrderRetirementHistory[10]; // 0x954            
             std::uint16_t m_nOrderRetirementSum; // 0x95e            
             std::int32_t m_nOrderRetirementLastTick; // 0x960            
-            uint8_t _pad0964[0xc];
+            uint8_t _pad0964[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTAPlayerController because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTAPlayerController) == 0x970);
+        static_assert(sizeof(source2sdk::server::CDOTAPlayerController) == 0x968);
     };
 };

@@ -19,7 +19,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0xc10
+        // Size: 0xc20
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -60,7 +60,11 @@ namespace source2sdk
             source2sdk::server::CQuickBuyController m_quickBuyController; // 0xa80            
             // metadata: MNetworkEnable
             source2sdk::client::PlayerID_t m_nPlayerID; // 0xc08            
-            uint8_t _pad0c0c[0x4];
+            bool m_bIsHLTV; // 0xc0c            
+            bool m_bIsTeamRestricted; // 0xc0d            
+            uint8_t _pad0c0e[0x2]; // 0xc0e
+            std::int32_t m_nTeamRestrictedTeamNum; // 0xc10            
+            uint8_t _pad0c14[0xc];
             
             // Datamap fields:
             // CDOTAPlayer_CameraServices m_pCameraServices; // 0x970
@@ -70,6 +74,6 @@ namespace source2sdk
         
         // Cannot assert offsets of fields in CDOTAPlayerPawn because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTAPlayerPawn) == 0xc10);
+        static_assert(sizeof(source2sdk::server::CDOTAPlayerPawn) == 0xc20);
     };
 };
