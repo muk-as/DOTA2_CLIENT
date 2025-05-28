@@ -19,26 +19,26 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x18c0
+        // Size: 0x18d0
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Ringmaster_Wheel_Mesmerize : public source2sdk::client::CDOTA_Buff
         {
         public:
-            uint8_t _pad1878[0x14]; // 0x1878
-            float wheel_stun; // 0x188c            
-            float mesmerize_radius; // 0x1890            
-            float vision_cone; // 0x1894            
-            float explosion_damage; // 0x1898            
-            uint8_t _pad189c[0x4]; // 0x189c
-            source2sdk::client::CountdownTimer m_ctFuseTimer; // 0x18a0            
-            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x18b8            
-            std::int32_t m_nTimesTriggered; // 0x18bc            
+            uint8_t _pad1888[0x14]; // 0x1888
+            float wheel_stun; // 0x189c            
+            float mesmerize_radius; // 0x18a0            
+            float vision_cone; // 0x18a4            
+            float explosion_damage; // 0x18a8            
+            uint8_t _pad18ac[0x4]; // 0x18ac
+            source2sdk::client::CountdownTimer m_ctFuseTimer; // 0x18b0            
+            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x18c8            
+            std::int32_t m_nTimesTriggered; // 0x18cc            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Ringmaster_Wheel_Mesmerize because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Ringmaster_Wheel_Mesmerize) == 0x18c0);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Ringmaster_Wheel_Mesmerize) == 0x18d0);
     };
 };

@@ -17,23 +17,23 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1890
+        // Size: 0x18a0
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Item_Orb_of_Pestilence : public source2sdk::client::CDOTA_Buff_Item
         {
         public:
-            std::int32_t poison_movement_speed_melee; // 0x1878            
-            std::int32_t poison_movement_speed_range; // 0x187c            
-            float poison_duration; // 0x1880            
-            float poison_damage; // 0x1884            
-            std::int32_t armor; // 0x1888            
-            float hp_regen; // 0x188c            
+            std::int32_t poison_movement_speed_melee; // 0x1888            
+            std::int32_t poison_movement_speed_range; // 0x188c            
+            float poison_duration; // 0x1890            
+            float poison_damage; // 0x1894            
+            std::int32_t armor; // 0x1898            
+            float hp_regen; // 0x189c            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Item_Orb_of_Pestilence because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Item_Orb_of_Pestilence) == 0x1890);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Item_Orb_of_Pestilence) == 0x18a0);
     };
 };

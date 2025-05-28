@@ -18,25 +18,25 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x18a0
+        // Size: 0x18b0
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_PrimalBeast_Pulverize : public source2sdk::client::CDOTA_Buff
         {
         public:
-            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x1878            
-            float m_flOffset; // 0x187c            
-            QAngle m_vStartAngles; // 0x1880            
-            Vector m_vStartLocation; // 0x188c            
-            float animation_rate; // 0x1898            
-            bool m_bInterrupted; // 0x189c            
-            bool m_bHasBeenDestroyed; // 0x189d            
-            uint8_t _pad189e[0x2];
+            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x1888            
+            float m_flOffset; // 0x188c            
+            QAngle m_vStartAngles; // 0x1890            
+            Vector m_vStartLocation; // 0x189c            
+            float animation_rate; // 0x18a8            
+            bool m_bInterrupted; // 0x18ac            
+            bool m_bHasBeenDestroyed; // 0x18ad            
+            uint8_t _pad18ae[0x2];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_PrimalBeast_Pulverize because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_PrimalBeast_Pulverize) == 0x18a0);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_PrimalBeast_Pulverize) == 0x18b0);
     };
 };

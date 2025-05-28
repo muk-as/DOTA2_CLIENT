@@ -18,22 +18,22 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1888
+        // Size: 0x1898
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Spawnlord_Master_Freeze : public source2sdk::client::CDOTA_Buff
         {
         public:
-            std::int32_t health_threshold_pct; // 0x1878            
-            bool m_bFreezeAttack; // 0x187c            
-            uint8_t _pad187d[0x3]; // 0x187d
-            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x1880            
-            uint8_t _pad1884[0x4];
+            std::int32_t health_threshold_pct; // 0x1888            
+            bool m_bFreezeAttack; // 0x188c            
+            uint8_t _pad188d[0x3]; // 0x188d
+            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x1890            
+            uint8_t _pad1894[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Spawnlord_Master_Freeze because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Spawnlord_Master_Freeze) == 0x1888);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Spawnlord_Master_Freeze) == 0x1898);
     };
 };

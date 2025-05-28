@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1878
+        // Size: 0x1888
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Mutation_CreateTombstone_Team_Aura : public source2sdk::server::CDOTA_Modifier_Mutation_CreateTombstone_Aura
@@ -28,6 +28,6 @@ namespace source2sdk
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Mutation_CreateTombstone_Team_Aura) == 0x1878);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Mutation_CreateTombstone_Team_Aura) == 0x1888);
     };
 };

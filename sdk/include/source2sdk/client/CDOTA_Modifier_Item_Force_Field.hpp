@@ -17,22 +17,22 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1888
+        // Size: 0x1898
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Item_Force_Field : public source2sdk::client::CDOTA_Buff_Item
         {
         public:
-            bool m_bAppliesToCreeps; // 0x1878            
-            uint8_t _pad1879[0x3]; // 0x1879
-            float bonus_aoe_radius; // 0x187c            
-            std::int32_t self_armor; // 0x1880            
-            std::int32_t self_mres; // 0x1884            
+            bool m_bAppliesToCreeps; // 0x1888            
+            uint8_t _pad1889[0x3]; // 0x1889
+            float bonus_aoe_radius; // 0x188c            
+            std::int32_t self_armor; // 0x1890            
+            std::int32_t self_mres; // 0x1894            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Item_Force_Field because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Item_Force_Field) == 0x1888);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Item_Force_Field) == 0x1898);
     };
 };

@@ -17,25 +17,25 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1898
+        // Size: 0x18a8
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Item_HelmOfTheDominator_BonusHealth : public source2sdk::client::CDOTA_Buff
         {
         public:
-            std::int32_t health_min; // 0x1878            
-            std::int32_t new_max; // 0x187c            
-            std::int32_t health_bonus; // 0x1880            
-            std::int32_t model_scale; // 0x1884            
-            std::int32_t creep_bonus_damage; // 0x1888            
-            std::int32_t creep_bonus_hp_regen; // 0x188c            
-            std::int32_t creep_bonus_mp_regen; // 0x1890            
-            std::int32_t creep_bonus_armor; // 0x1894            
+            std::int32_t health_min; // 0x1888            
+            std::int32_t new_max; // 0x188c            
+            std::int32_t health_bonus; // 0x1890            
+            std::int32_t model_scale; // 0x1894            
+            std::int32_t creep_bonus_damage; // 0x1898            
+            std::int32_t creep_bonus_hp_regen; // 0x189c            
+            std::int32_t creep_bonus_mp_regen; // 0x18a0            
+            std::int32_t creep_bonus_armor; // 0x18a4            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Item_HelmOfTheDominator_BonusHealth because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Item_HelmOfTheDominator_BonusHealth) == 0x1898);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Item_HelmOfTheDominator_BonusHealth) == 0x18a8);
     };
 };

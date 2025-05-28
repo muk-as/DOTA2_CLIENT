@@ -17,22 +17,22 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1888
+        // Size: 0x1898
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Item_Radiance : public source2sdk::server::CDOTA_Buff_Item
         {
         public:
-            std::int32_t bonus_damage; // 0x1878            
-            std::int32_t evasion; // 0x187c            
-            std::int32_t upgrade_day_vision; // 0x1880            
-            bool m_bLastToggleState; // 0x1884            
-            uint8_t _pad1885[0x3];
+            std::int32_t bonus_damage; // 0x1888            
+            std::int32_t evasion; // 0x188c            
+            std::int32_t upgrade_day_vision; // 0x1890            
+            bool m_bLastToggleState; // 0x1894            
+            uint8_t _pad1895[0x3];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Item_Radiance because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Item_Radiance) == 0x1888);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Item_Radiance) == 0x1898);
     };
 };

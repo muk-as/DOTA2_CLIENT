@@ -17,23 +17,23 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1890
+        // Size: 0x18a0
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Item_Star_Mace : public source2sdk::server::CDOTA_Buff_Item
         {
         public:
-            std::int32_t movement_speed_pct; // 0x1878            
-            float bonus_mana_regen; // 0x187c            
-            std::int32_t cleave_damage_percent; // 0x1880            
-            std::int32_t cleave_starting_width; // 0x1884            
-            std::int32_t cleave_ending_width; // 0x1888            
-            std::int32_t cleave_distance; // 0x188c            
+            std::int32_t movement_speed_pct; // 0x1888            
+            float bonus_mana_regen; // 0x188c            
+            std::int32_t cleave_damage_percent; // 0x1890            
+            std::int32_t cleave_starting_width; // 0x1894            
+            std::int32_t cleave_ending_width; // 0x1898            
+            std::int32_t cleave_distance; // 0x189c            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Item_Star_Mace because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Item_Star_Mace) == 0x1890);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Item_Star_Mace) == 0x18a0);
     };
 };

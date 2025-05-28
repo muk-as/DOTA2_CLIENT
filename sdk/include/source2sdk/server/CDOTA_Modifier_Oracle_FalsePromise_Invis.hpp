@@ -17,19 +17,19 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1890
+        // Size: 0x18a0
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Oracle_FalsePromise_Invis : public source2sdk::server::CDOTA_Modifier_PersistentInvisibility
         {
         public:
-            float shard_spell_amp_bonus; // 0x1888            
-            float shard_bat_bonus; // 0x188c            
+            float shard_spell_amp_bonus; // 0x1898            
+            float shard_bat_bonus; // 0x189c            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Oracle_FalsePromise_Invis because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Oracle_FalsePromise_Invis) == 0x1890);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Oracle_FalsePromise_Invis) == 0x18a0);
     };
 };

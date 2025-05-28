@@ -17,19 +17,19 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1880
+        // Size: 0x1890
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Leshrac_Greater_Lightning_Storm : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float radius; // 0x1878            
-            float interval; // 0x187c            
+            float radius; // 0x1888            
+            float interval; // 0x188c            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Leshrac_Greater_Lightning_Storm because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Leshrac_Greater_Lightning_Storm) == 0x1880);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Leshrac_Greater_Lightning_Storm) == 0x1890);
     };
 };

@@ -24,7 +24,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1888
+        // Size: 0x1898
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Eul_Cyclone : public source2sdk::client::CDOTA_Modifier_Cyclone
@@ -32,14 +32,14 @@ namespace source2sdk
         public:
             // m_hBlocker has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hBlocker;
-            char m_hBlocker[0x4]; // 0x1880            
-            bool m_bBlockerCreated; // 0x1884            
-            uint8_t _pad1885[0x3];
+            char m_hBlocker[0x4]; // 0x1890            
+            bool m_bBlockerCreated; // 0x1894            
+            uint8_t _pad1895[0x3];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Eul_Cyclone because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Eul_Cyclone) == 0x1888);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Eul_Cyclone) == 0x1898);
     };
 };

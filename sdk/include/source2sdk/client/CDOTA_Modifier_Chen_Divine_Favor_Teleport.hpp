@@ -17,19 +17,19 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1890
+        // Size: 0x18a0
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Chen_Divine_Favor_Teleport : public source2sdk::client::CDOTA_Buff
         {
         public:
-            bool bToChen; // 0x1878            
-            uint8_t _pad1879[0x17];
+            bool bToChen; // 0x1888            
+            uint8_t _pad1889[0x17];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Chen_Divine_Favor_Teleport because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Chen_Divine_Favor_Teleport) == 0x1890);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Chen_Divine_Favor_Teleport) == 0x18a0);
     };
 };

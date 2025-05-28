@@ -17,19 +17,19 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1880
+        // Size: 0x1890
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Fusion_runeHealing : public source2sdk::client::CDOTA_Buff
         {
         public:
-            std::int32_t health_regen; // 0x1878            
-            float m_fHealingDone; // 0x187c            
+            std::int32_t health_regen; // 0x1888            
+            float m_fHealingDone; // 0x188c            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Fusion_runeHealing because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Fusion_runeHealing) == 0x1880);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Fusion_runeHealing) == 0x1890);
     };
 };

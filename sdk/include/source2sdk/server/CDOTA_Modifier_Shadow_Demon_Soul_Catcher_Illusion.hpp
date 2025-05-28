@@ -24,7 +24,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1880
+        // Size: 0x1890
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Shadow_Demon_Soul_Catcher_Illusion : public source2sdk::client::CDOTA_Buff
@@ -32,13 +32,13 @@ namespace source2sdk
         public:
             // hTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> hTarget;
-            char hTarget[0x4]; // 0x1878            
-            uint8_t _pad187c[0x4];
+            char hTarget[0x4]; // 0x1888            
+            uint8_t _pad188c[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Shadow_Demon_Soul_Catcher_Illusion because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Shadow_Demon_Soul_Catcher_Illusion) == 0x1880);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Shadow_Demon_Soul_Catcher_Illusion) == 0x1890);
     };
 };

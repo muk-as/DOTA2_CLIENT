@@ -18,23 +18,23 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x18a0
+        // Size: 0x18b0
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Sand_King_Scorpion_Strike : public source2sdk::client::CDOTA_Buff
         {
         public:
-            bool m_bStrikeAttack; // 0x1878            
-            uint8_t _pad1879[0x3]; // 0x1879
-            std::int32_t bonus_attack_range; // 0x187c            
-            std::int32_t damage_percentage; // 0x1880            
-            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x1884            
-            uint8_t _pad1888[0x18];
+            bool m_bStrikeAttack; // 0x1888            
+            uint8_t _pad1889[0x3]; // 0x1889
+            std::int32_t bonus_attack_range; // 0x188c            
+            std::int32_t damage_percentage; // 0x1890            
+            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x1894            
+            uint8_t _pad1898[0x18];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Sand_King_Scorpion_Strike because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Sand_King_Scorpion_Strike) == 0x18a0);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Sand_King_Scorpion_Strike) == 0x18b0);
     };
 };

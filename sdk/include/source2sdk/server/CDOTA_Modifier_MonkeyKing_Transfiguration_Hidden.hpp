@@ -25,7 +25,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1880
+        // Size: 0x1890
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_MonkeyKing_Transfiguration_Hidden : public source2sdk::client::CDOTA_Buff
@@ -33,13 +33,13 @@ namespace source2sdk
         public:
             // m_hOriginalSoldier has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hOriginalSoldier;
-            char m_hOriginalSoldier[0x4]; // 0x1878            
-            source2sdk::client::ParticleIndex_t m_nRingFXIndex; // 0x187c            
+            char m_hOriginalSoldier[0x4]; // 0x1888            
+            source2sdk::client::ParticleIndex_t m_nRingFXIndex; // 0x188c            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_MonkeyKing_Transfiguration_Hidden because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_MonkeyKing_Transfiguration_Hidden) == 0x1880);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_MonkeyKing_Transfiguration_Hidden) == 0x1890);
     };
 };

@@ -25,7 +25,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x18b0
+        // Size: 0x18c0
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Grimstroke_SoulChain_ChannelCheck : public source2sdk::client::CDOTA_Buff
@@ -33,23 +33,23 @@ namespace source2sdk
         public:
             // m_hCurrentAbility has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hCurrentAbility;
-            char m_hCurrentAbility[0x4]; // 0x1878            
+            char m_hCurrentAbility[0x4]; // 0x1888            
             // m_hTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hTarget;
-            char m_hTarget[0x4]; // 0x187c            
+            char m_hTarget[0x4]; // 0x188c            
             // m_hAbilities has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::client::C_BaseEntity>> m_hAbilities;
-            char m_hAbilities[0x18]; // 0x1880            
-            Vector m_vLocation; // 0x1898            
-            source2sdk::entity2::GameTime_t m_fChannelEnd; // 0x18a4            
-            bool m_bInterrupt; // 0x18a8            
-            bool m_bExpired; // 0x18a9            
-            uint8_t _pad18aa[0x6];
+            char m_hAbilities[0x18]; // 0x1890            
+            Vector m_vLocation; // 0x18a8            
+            source2sdk::entity2::GameTime_t m_fChannelEnd; // 0x18b4            
+            bool m_bInterrupt; // 0x18b8            
+            bool m_bExpired; // 0x18b9            
+            uint8_t _pad18ba[0x6];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Grimstroke_SoulChain_ChannelCheck because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Grimstroke_SoulChain_ChannelCheck) == 0x18b0);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Grimstroke_SoulChain_ChannelCheck) == 0x18c0);
     };
 };

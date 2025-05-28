@@ -17,21 +17,21 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1888
+        // Size: 0x1898
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Item_Chipped_Vest : public source2sdk::client::CDOTA_Buff_Item
         {
         public:
-            float hp_regen; // 0x1878            
-            std::int32_t damage_return_hero; // 0x187c            
-            std::int32_t damage_return_creep; // 0x1880            
-            uint8_t _pad1884[0x4];
+            float hp_regen; // 0x1888            
+            std::int32_t damage_return_hero; // 0x188c            
+            std::int32_t damage_return_creep; // 0x1890            
+            uint8_t _pad1894[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Item_Chipped_Vest because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Item_Chipped_Vest) == 0x1888);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Item_Chipped_Vest) == 0x1898);
     };
 };

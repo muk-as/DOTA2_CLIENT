@@ -17,23 +17,23 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1890
+        // Size: 0x18a0
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Item_Hurricane_Pike : public source2sdk::server::CDOTA_Buff_Item
         {
         public:
-            std::int32_t bonus_health; // 0x1878            
-            std::int32_t bonus_intellect; // 0x187c            
-            std::int32_t bonus_agility; // 0x1880            
-            std::int32_t bonus_strength; // 0x1884            
-            std::int32_t base_attack_range; // 0x1888            
-            uint8_t _pad188c[0x4];
+            std::int32_t bonus_health; // 0x1888            
+            std::int32_t bonus_intellect; // 0x188c            
+            std::int32_t bonus_agility; // 0x1890            
+            std::int32_t bonus_strength; // 0x1894            
+            std::int32_t base_attack_range; // 0x1898            
+            uint8_t _pad189c[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Item_Hurricane_Pike because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Item_Hurricane_Pike) == 0x1890);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Item_Hurricane_Pike) == 0x18a0);
     };
 };

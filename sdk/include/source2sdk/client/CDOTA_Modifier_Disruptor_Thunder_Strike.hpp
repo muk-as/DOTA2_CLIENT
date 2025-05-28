@@ -17,23 +17,23 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1890
+        // Size: 0x18a0
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Disruptor_Thunder_Strike : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float strike_interval; // 0x1878            
-            float radius; // 0x187c            
-            std::int32_t strike_damage; // 0x1880            
-            std::int32_t strike_damage_bonus; // 0x1884            
-            std::int32_t hits_units_inside_kinetic; // 0x1888            
-            uint8_t _pad188c[0x4];
+            float strike_interval; // 0x1888            
+            float radius; // 0x188c            
+            std::int32_t strike_damage; // 0x1890            
+            std::int32_t strike_damage_bonus; // 0x1894            
+            std::int32_t hits_units_inside_kinetic; // 0x1898            
+            uint8_t _pad189c[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Disruptor_Thunder_Strike because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Disruptor_Thunder_Strike) == 0x1890);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Disruptor_Thunder_Strike) == 0x18a0);
     };
 };

@@ -17,21 +17,21 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1888
+        // Size: 0x1898
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Jakiro_LiquidFire_Burn : public source2sdk::client::CDOTA_Buff
         {
         public:
-            std::int32_t slow_attack_speed_pct; // 0x1878            
-            float damage; // 0x187c            
-            float pct_health_damage; // 0x1880            
-            float tick_rate; // 0x1884            
+            std::int32_t slow_attack_speed_pct; // 0x1888            
+            float damage; // 0x188c            
+            float pct_health_damage; // 0x1890            
+            float tick_rate; // 0x1894            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Jakiro_LiquidFire_Burn because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Jakiro_LiquidFire_Burn) == 0x1888);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Jakiro_LiquidFire_Burn) == 0x1898);
     };
 };

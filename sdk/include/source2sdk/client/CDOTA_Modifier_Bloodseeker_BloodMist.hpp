@@ -18,19 +18,19 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1890
+        // Size: 0x18a0
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Bloodseeker_BloodMist : public source2sdk::client::CDOTA_Buff
         {
         public:
-            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x1878            
-            uint8_t _pad187c[0x14];
+            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x1888            
+            uint8_t _pad188c[0x14];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Bloodseeker_BloodMist because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Bloodseeker_BloodMist) == 0x1890);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Bloodseeker_BloodMist) == 0x18a0);
     };
 };

@@ -17,22 +17,22 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1888
+        // Size: 0x1898
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_ShadowShaman_SerpentWard : public source2sdk::client::CDOTA_Buff
         {
         public:
-            std::int32_t bonus_attack_range; // 0x1878            
-            std::int32_t bonus_damage; // 0x187c            
-            std::int32_t bonus_attack_targets; // 0x1880            
-            bool is_mega_ward; // 0x1884            
-            uint8_t _pad1885[0x3];
+            std::int32_t bonus_attack_range; // 0x1888            
+            std::int32_t bonus_damage; // 0x188c            
+            std::int32_t bonus_attack_targets; // 0x1890            
+            bool is_mega_ward; // 0x1894            
+            uint8_t _pad1895[0x3];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_ShadowShaman_SerpentWard because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_ShadowShaman_SerpentWard) == 0x1888);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_ShadowShaman_SerpentWard) == 0x1898);
     };
 };

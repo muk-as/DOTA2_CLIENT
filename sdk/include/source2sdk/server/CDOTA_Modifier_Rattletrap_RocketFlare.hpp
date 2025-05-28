@@ -17,21 +17,21 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1898
+        // Size: 0x18a8
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Rattletrap_RocketFlare : public source2sdk::client::CDOTA_Buff
         {
         public:
-            uint8_t _pad1878[0x14]; // 0x1878
-            std::int32_t projectile_vision_radius; // 0x188c            
-            float projectile_vision_duration; // 0x1890            
-            uint8_t _pad1894[0x4];
+            uint8_t _pad1888[0x14]; // 0x1888
+            std::int32_t projectile_vision_radius; // 0x189c            
+            float projectile_vision_duration; // 0x18a0            
+            uint8_t _pad18a4[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Rattletrap_RocketFlare because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Rattletrap_RocketFlare) == 0x1898);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Rattletrap_RocketFlare) == 0x18a8);
     };
 };

@@ -18,21 +18,21 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1888
+        // Size: 0x1898
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Item_Disperser_Movespeed_Buff : public source2sdk::client::CDOTA_Buff
         {
         public:
-            std::int32_t movement_speed_buff_rate; // 0x1878            
-            float slow_resist; // 0x187c            
-            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x1880            
-            uint8_t _pad1884[0x4];
+            std::int32_t movement_speed_buff_rate; // 0x1888            
+            float slow_resist; // 0x188c            
+            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x1890            
+            uint8_t _pad1894[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Item_Disperser_Movespeed_Buff because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Item_Disperser_Movespeed_Buff) == 0x1888);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Item_Disperser_Movespeed_Buff) == 0x1898);
     };
 };

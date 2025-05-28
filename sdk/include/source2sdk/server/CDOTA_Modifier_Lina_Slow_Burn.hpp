@@ -17,20 +17,20 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1880
+        // Size: 0x1890
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Lina_Slow_Burn : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float damage; // 0x1878            
-            bool bIsLaguna; // 0x187c            
-            uint8_t _pad187d[0x3];
+            float damage; // 0x1888            
+            bool bIsLaguna; // 0x188c            
+            uint8_t _pad188d[0x3];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Lina_Slow_Burn because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Lina_Slow_Burn) == 0x1880);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Lina_Slow_Burn) == 0x1890);
     };
 };

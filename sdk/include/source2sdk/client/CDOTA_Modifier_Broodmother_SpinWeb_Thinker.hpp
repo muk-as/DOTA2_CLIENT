@@ -17,19 +17,19 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1880
+        // Size: 0x1890
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Broodmother_SpinWeb_Thinker : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float radius; // 0x1878            
-            std::int32_t m_nFXIndex; // 0x187c            
+            float radius; // 0x1888            
+            std::int32_t m_nFXIndex; // 0x188c            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Broodmother_SpinWeb_Thinker because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Broodmother_SpinWeb_Thinker) == 0x1880);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Broodmother_SpinWeb_Thinker) == 0x1890);
     };
 };

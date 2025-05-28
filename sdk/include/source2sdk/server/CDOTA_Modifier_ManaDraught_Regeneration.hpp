@@ -17,21 +17,21 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1888
+        // Size: 0x1898
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_ManaDraught_Regeneration : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float mana_restore; // 0x1878            
-            float mana_restore_pct; // 0x187c            
-            float m_fHealingDone; // 0x1880            
-            float m_fUseSpeed; // 0x1884            
+            float mana_restore; // 0x1888            
+            float mana_restore_pct; // 0x188c            
+            float m_fHealingDone; // 0x1890            
+            float m_fUseSpeed; // 0x1894            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_ManaDraught_Regeneration because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_ManaDraught_Regeneration) == 0x1888);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_ManaDraught_Regeneration) == 0x1898);
     };
 };

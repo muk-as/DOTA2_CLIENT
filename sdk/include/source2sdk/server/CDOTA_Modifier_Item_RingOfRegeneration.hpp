@@ -17,19 +17,19 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1880
+        // Size: 0x1890
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Item_RingOfRegeneration : public source2sdk::server::CDOTA_Buff_Item
         {
         public:
-            float bonus_health_regen; // 0x1878            
-            uint8_t _pad187c[0x4];
+            float bonus_health_regen; // 0x1888            
+            uint8_t _pad188c[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Item_RingOfRegeneration because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Item_RingOfRegeneration) == 0x1880);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Item_RingOfRegeneration) == 0x1890);
     };
 };

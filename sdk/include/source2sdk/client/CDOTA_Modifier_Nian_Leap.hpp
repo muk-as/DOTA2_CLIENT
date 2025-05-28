@@ -17,23 +17,23 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1890
+        // Size: 0x18a0
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Nian_Leap : public source2sdk::client::CDOTA_Buff
         {
         public:
-            std::int32_t pounce_distance; // 0x1878            
-            float pounce_speed; // 0x187c            
-            float pounce_acceleration; // 0x1880            
-            float initial_delay; // 0x1884            
-            float landing_delay; // 0x1888            
-            uint8_t _pad188c[0x4];
+            std::int32_t pounce_distance; // 0x1888            
+            float pounce_speed; // 0x188c            
+            float pounce_acceleration; // 0x1890            
+            float initial_delay; // 0x1894            
+            float landing_delay; // 0x1898            
+            uint8_t _pad189c[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Nian_Leap because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Nian_Leap) == 0x1890);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Nian_Leap) == 0x18a0);
     };
 };

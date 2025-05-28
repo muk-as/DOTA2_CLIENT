@@ -18,21 +18,21 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1888
+        // Size: 0x1898
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Ringmaster_CrystalBall_Truesight : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float radius; // 0x1878            
-            float truesight_linger_duration; // 0x187c            
-            source2sdk::client::ParticleIndex_t m_nAllyFXIndex; // 0x1880            
-            source2sdk::client::ParticleIndex_t m_nEnemyFXIndex; // 0x1884            
+            float radius; // 0x1888            
+            float truesight_linger_duration; // 0x188c            
+            source2sdk::client::ParticleIndex_t m_nAllyFXIndex; // 0x1890            
+            source2sdk::client::ParticleIndex_t m_nEnemyFXIndex; // 0x1894            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Ringmaster_CrystalBall_Truesight because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Ringmaster_CrystalBall_Truesight) == 0x1888);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Ringmaster_CrystalBall_Truesight) == 0x1898);
     };
 };

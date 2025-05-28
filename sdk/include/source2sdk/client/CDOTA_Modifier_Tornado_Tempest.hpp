@@ -17,23 +17,23 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x18a0
+        // Size: 0x18b0
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Tornado_Tempest : public source2sdk::client::CDOTA_Buff
         {
         public:
-            std::int32_t near_radius; // 0x1878            
-            std::int32_t near_damage; // 0x187c            
-            float far_radius; // 0x1880            
-            std::int32_t far_damage; // 0x1884            
-            float tick_rate; // 0x1888            
-            uint8_t _pad188c[0x14];
+            std::int32_t near_radius; // 0x1888            
+            std::int32_t near_damage; // 0x188c            
+            float far_radius; // 0x1890            
+            std::int32_t far_damage; // 0x1894            
+            float tick_rate; // 0x1898            
+            uint8_t _pad189c[0x14];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Tornado_Tempest because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Tornado_Tempest) == 0x18a0);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Tornado_Tempest) == 0x18b0);
     };
 };

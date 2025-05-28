@@ -24,33 +24,33 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1898
+        // Size: 0x18a8
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Gyrocopter_Side_Gunner : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float sidegunner_radius; // 0x1878            
-            float sidegunner_fire_rate; // 0x187c            
-            float m_flRotation; // 0x1880            
+            float sidegunner_radius; // 0x1888            
+            float sidegunner_fire_rate; // 0x188c            
+            float m_flRotation; // 0x1890            
             // m_hIdealTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hIdealTarget;
-            char m_hIdealTarget[0x4]; // 0x1884            
+            char m_hIdealTarget[0x4]; // 0x1894            
             // m_hSecondaryTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hSecondaryTarget;
-            char m_hSecondaryTarget[0x4]; // 0x1888            
-            float m_flLastFireTime; // 0x188c            
+            char m_hSecondaryTarget[0x4]; // 0x1898            
+            float m_flLastFireTime; // 0x189c            
             // m_hOwnerNPC has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hOwnerNPC;
-            char m_hOwnerNPC[0x4]; // 0x1890            
+            char m_hOwnerNPC[0x4]; // 0x18a0            
             // m_hOwningAbility has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hOwningAbility;
-            char m_hOwningAbility[0x4]; // 0x1894            
+            char m_hOwningAbility[0x4]; // 0x18a4            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Gyrocopter_Side_Gunner because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Gyrocopter_Side_Gunner) == 0x1898);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Gyrocopter_Side_Gunner) == 0x18a8);
     };
 };

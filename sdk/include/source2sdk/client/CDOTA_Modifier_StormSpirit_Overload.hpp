@@ -24,22 +24,22 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1898
+        // Size: 0x18a8
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_StormSpirit_Overload : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float overload_aoe; // 0x1878            
-            float overload_cast_range; // 0x187c            
+            float overload_aoe; // 0x1888            
+            float overload_cast_range; // 0x188c            
             // m_vecHitUnits has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::client::C_BaseEntity>> m_vecHitUnits;
-            char m_vecHitUnits[0x18]; // 0x1880            
+            char m_vecHitUnits[0x18]; // 0x1890            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_StormSpirit_Overload because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_StormSpirit_Overload) == 0x1898);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_StormSpirit_Overload) == 0x18a8);
     };
 };

@@ -18,24 +18,24 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1968
+        // Size: 0x1978
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_AntiMage_Counterspell : public source2sdk::client::CDOTA_Buff
         {
         public:
-            source2sdk::client::CModifierParams m_LastParams; // 0x1878            
-            std::int32_t magic_resistance; // 0x1950            
-            std::int32_t reflected_spell_amp; // 0x1954            
-            std::int32_t mana_drain_percent; // 0x1958            
-            std::int32_t damage_from_mana_drain_percent; // 0x195c            
-            std::int32_t max_damage_from_mana_drain; // 0x1960            
-            uint8_t _pad1964[0x4];
+            source2sdk::client::CModifierParams m_LastParams; // 0x1888            
+            std::int32_t magic_resistance; // 0x1960            
+            std::int32_t reflected_spell_amp; // 0x1964            
+            std::int32_t mana_drain_percent; // 0x1968            
+            std::int32_t damage_from_mana_drain_percent; // 0x196c            
+            std::int32_t max_damage_from_mana_drain; // 0x1970            
+            uint8_t _pad1974[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_AntiMage_Counterspell because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_AntiMage_Counterspell) == 0x1968);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_AntiMage_Counterspell) == 0x1978);
     };
 };

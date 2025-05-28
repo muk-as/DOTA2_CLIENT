@@ -24,7 +24,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x18b0
+        // Size: 0x18c0
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_EmberSpirit_FireRemnant_RemnantTracker : public source2sdk::client::CDOTA_Buff
@@ -32,17 +32,17 @@ namespace source2sdk
         public:
             // m_vActiveRemnants has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::client::C_BaseEntity>> m_vActiveRemnants;
-            char m_vActiveRemnants[0x18]; // 0x1878            
+            char m_vActiveRemnants[0x18]; // 0x1888            
             // m_vTrackingDelayedRemnants has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::client::C_BaseEntity>> m_vTrackingDelayedRemnants;
-            char m_vTrackingDelayedRemnants[0x18]; // 0x1890            
-            float shard_charge_radius; // 0x18a8            
-            uint8_t _pad18ac[0x4];
+            char m_vTrackingDelayedRemnants[0x18]; // 0x18a0            
+            float shard_charge_radius; // 0x18b8            
+            uint8_t _pad18bc[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_EmberSpirit_FireRemnant_RemnantTracker because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_EmberSpirit_FireRemnant_RemnantTracker) == 0x18b0);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_EmberSpirit_FireRemnant_RemnantTracker) == 0x18c0);
     };
 };

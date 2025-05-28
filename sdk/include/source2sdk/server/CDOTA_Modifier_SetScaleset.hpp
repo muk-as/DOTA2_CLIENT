@@ -17,20 +17,20 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1888
+        // Size: 0x1898
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_SetScaleset : public source2sdk::client::CDOTA_Buff
         {
         public:
-            CUtlString m_Scaleset; // 0x1878            
-            bool m_bActive; // 0x1880            
-            uint8_t _pad1881[0x7];
+            CUtlString m_Scaleset; // 0x1888            
+            bool m_bActive; // 0x1890            
+            uint8_t _pad1891[0x7];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_SetScaleset because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_SetScaleset) == 0x1888);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_SetScaleset) == 0x1898);
     };
 };

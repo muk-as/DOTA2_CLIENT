@@ -26,31 +26,31 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x18b8
+        // Size: 0x18c8
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Grimstroke_InkCreature : public source2sdk::client::CDOTA_Buff
         {
         public:
-            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x1878            
-            source2sdk::client::ParticleIndex_t m_nAmbientFXIndex; // 0x187c            
-            std::int32_t m_nAttackCount; // 0x1880            
-            bool m_bIsLatched; // 0x1884            
-            uint8_t _pad1885[0x3]; // 0x1885
+            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x1888            
+            source2sdk::client::ParticleIndex_t m_nAmbientFXIndex; // 0x188c            
+            std::int32_t m_nAttackCount; // 0x1890            
+            bool m_bIsLatched; // 0x1894            
+            uint8_t _pad1895[0x3]; // 0x1895
             // m_hAttachTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hAttachTarget;
-            char m_hAttachTarget[0x4]; // 0x1888            
-            uint8_t _pad188c[0x4]; // 0x188c
-            source2sdk::client::CountdownTimer m_EnemyVision; // 0x1890            
-            float latch_duration; // 0x18a8            
-            float speed; // 0x18ac            
-            std::int32_t destroy_attacks; // 0x18b0            
-            std::int32_t hero_attack_multiplier; // 0x18b4            
+            char m_hAttachTarget[0x4]; // 0x1898            
+            uint8_t _pad189c[0x4]; // 0x189c
+            source2sdk::client::CountdownTimer m_EnemyVision; // 0x18a0            
+            float latch_duration; // 0x18b8            
+            float speed; // 0x18bc            
+            std::int32_t destroy_attacks; // 0x18c0            
+            std::int32_t hero_attack_multiplier; // 0x18c4            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Grimstroke_InkCreature because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Grimstroke_InkCreature) == 0x18b8);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Grimstroke_InkCreature) == 0x18c8);
     };
 };

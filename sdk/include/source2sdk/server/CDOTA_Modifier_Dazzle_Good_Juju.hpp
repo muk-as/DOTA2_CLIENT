@@ -17,21 +17,21 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1888
+        // Size: 0x1898
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Dazzle_Good_Juju : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float cooldown_reduction; // 0x1878            
-            float item_cooldown_reduction; // 0x187c            
-            float duration; // 0x1880            
-            std::int32_t radius; // 0x1884            
+            float cooldown_reduction; // 0x1888            
+            float item_cooldown_reduction; // 0x188c            
+            float duration; // 0x1890            
+            std::int32_t radius; // 0x1894            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Dazzle_Good_Juju because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Dazzle_Good_Juju) == 0x1888);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Dazzle_Good_Juju) == 0x1898);
     };
 };

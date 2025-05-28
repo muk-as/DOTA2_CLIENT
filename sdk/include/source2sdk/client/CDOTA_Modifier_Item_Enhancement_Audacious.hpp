@@ -17,21 +17,21 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1888
+        // Size: 0x1898
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Item_Enhancement_Audacious : public source2sdk::client::CDOTA_Buff_Item
         {
         public:
-            float magic_damage; // 0x1878            
-            float attack_speed; // 0x187c            
-            float incoming_damage; // 0x1880            
-            uint8_t _pad1884[0x4];
+            float magic_damage; // 0x1888            
+            float attack_speed; // 0x188c            
+            float incoming_damage; // 0x1890            
+            uint8_t _pad1894[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Item_Enhancement_Audacious because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Item_Enhancement_Audacious) == 0x1888);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Item_Enhancement_Audacious) == 0x1898);
     };
 };

@@ -17,22 +17,22 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x18a0
+        // Size: 0x18b0
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Item_Circlet_Of_The_Flayed_Twins : public source2sdk::server::CDOTA_Buff_Item
         {
         public:
-            float damage_to_regen; // 0x1878            
-            float damage_time; // 0x187c            
-            float max_regen; // 0x1880            
-            float m_flRecentDamageTotal; // 0x1884            
-            uint8_t _pad1888[0x18];
+            float damage_to_regen; // 0x1888            
+            float damage_time; // 0x188c            
+            float max_regen; // 0x1890            
+            float m_flRecentDamageTotal; // 0x1894            
+            uint8_t _pad1898[0x18];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Item_Circlet_Of_The_Flayed_Twins because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Item_Circlet_Of_The_Flayed_Twins) == 0x18a0);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Item_Circlet_Of_The_Flayed_Twins) == 0x18b0);
     };
 };

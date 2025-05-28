@@ -18,21 +18,21 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1888
+        // Size: 0x1898
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Nevermore_Presence_Aura : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float presence_radius; // 0x1878            
-            float kill_buff_duration; // 0x187c            
-            source2sdk::entity2::GameTime_t m_fLastStackChange; // 0x1880            
-            uint8_t _pad1884[0x4];
+            float presence_radius; // 0x1888            
+            float kill_buff_duration; // 0x188c            
+            source2sdk::entity2::GameTime_t m_fLastStackChange; // 0x1890            
+            uint8_t _pad1894[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Nevermore_Presence_Aura because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Nevermore_Presence_Aura) == 0x1888);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Nevermore_Presence_Aura) == 0x1898);
     };
 };

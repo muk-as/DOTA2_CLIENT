@@ -18,23 +18,23 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1890
+        // Size: 0x18a0
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Item_WandOfTheBrine_Active : public source2sdk::client::CDOTA_Buff
         {
         public:
-            std::int32_t movement_speed; // 0x1878            
-            float interval; // 0x187c            
-            std::int32_t damage_reduction; // 0x1880            
-            std::int32_t heal; // 0x1884            
-            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x1888            
-            uint8_t _pad188c[0x4];
+            std::int32_t movement_speed; // 0x1888            
+            float interval; // 0x188c            
+            std::int32_t damage_reduction; // 0x1890            
+            std::int32_t heal; // 0x1894            
+            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x1898            
+            uint8_t _pad189c[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Item_WandOfTheBrine_Active because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Item_WandOfTheBrine_Active) == 0x1890);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Item_WandOfTheBrine_Active) == 0x18a0);
     };
 };

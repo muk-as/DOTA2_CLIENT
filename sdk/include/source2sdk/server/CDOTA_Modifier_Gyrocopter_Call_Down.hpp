@@ -25,35 +25,35 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x18b8
+        // Size: 0x18c8
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Gyrocopter_Call_Down : public source2sdk::client::CDOTA_Buff
         {
         public:
-            std::int32_t slow_duration; // 0x1878            
-            std::int32_t damage; // 0x187c            
-            float radius; // 0x1880            
-            std::int32_t slow; // 0x1884            
-            bool m_bDelayed; // 0x1888            
-            bool m_bAttachToRocket1; // 0x1889            
-            uint8_t _pad188a[0x6]; // 0x188a
+            std::int32_t slow_duration; // 0x1888            
+            std::int32_t damage; // 0x188c            
+            float radius; // 0x1890            
+            std::int32_t slow; // 0x1894            
+            bool m_bDelayed; // 0x1898            
+            bool m_bAttachToRocket1; // 0x1899            
+            uint8_t _pad189a[0x6]; // 0x189a
             // m_vecHitHeroes has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CBaseEntity>> m_vecHitHeroes;
-            char m_vecHitHeroes[0x18]; // 0x1890            
-            bool m_bHitInvisibleHeroes; // 0x18a8            
-            uint8_t _pad18a9[0x3]; // 0x18a9
-            source2sdk::client::ParticleIndex_t m_nMarkerIndex; // 0x18ac            
-            bool m_bIsTrackingMissile; // 0x18b0            
-            uint8_t _pad18b1[0x3]; // 0x18b1
+            char m_vecHitHeroes[0x18]; // 0x18a0            
+            bool m_bHitInvisibleHeroes; // 0x18b8            
+            uint8_t _pad18b9[0x3]; // 0x18b9
+            source2sdk::client::ParticleIndex_t m_nMarkerIndex; // 0x18bc            
+            bool m_bIsTrackingMissile; // 0x18c0            
+            uint8_t _pad18c1[0x3]; // 0x18c1
             // m_hTrackingTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hTrackingTarget;
-            char m_hTrackingTarget[0x4]; // 0x18b4            
+            char m_hTrackingTarget[0x4]; // 0x18c4            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Gyrocopter_Call_Down because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Gyrocopter_Call_Down) == 0x18b8);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Gyrocopter_Call_Down) == 0x18c8);
     };
 };

@@ -17,23 +17,23 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1890
+        // Size: 0x18a0
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Item_Infused_Raindrop : public source2sdk::server::CDOTA_Buff_Item
         {
         public:
-            float mana_regen; // 0x1878            
-            float bonus_armor; // 0x187c            
-            std::int32_t bonus_magical_armor; // 0x1880            
-            std::int32_t magic_damage_block; // 0x1884            
-            std::int32_t min_damage; // 0x1888            
-            uint8_t _pad188c[0x4];
+            float mana_regen; // 0x1888            
+            float bonus_armor; // 0x188c            
+            std::int32_t bonus_magical_armor; // 0x1890            
+            std::int32_t magic_damage_block; // 0x1894            
+            std::int32_t min_damage; // 0x1898            
+            uint8_t _pad189c[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Item_Infused_Raindrop because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Item_Infused_Raindrop) == 0x1890);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Item_Infused_Raindrop) == 0x18a0);
     };
 };

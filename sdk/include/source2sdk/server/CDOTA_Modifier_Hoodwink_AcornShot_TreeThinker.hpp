@@ -24,7 +24,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1888
+        // Size: 0x1898
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Hoodwink_AcornShot_TreeThinker : public source2sdk::client::CDOTA_Buff
@@ -32,15 +32,15 @@ namespace source2sdk
         public:
             // m_hTree has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CDOTA_TempTree> m_hTree;
-            char m_hTree[0x4]; // 0x1878            
-            std::int32_t fow_viewer; // 0x187c            
-            std::int32_t fow_team; // 0x1880            
-            uint8_t _pad1884[0x4];
+            char m_hTree[0x4]; // 0x1888            
+            std::int32_t fow_viewer; // 0x188c            
+            std::int32_t fow_team; // 0x1890            
+            uint8_t _pad1894[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Hoodwink_AcornShot_TreeThinker because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Hoodwink_AcornShot_TreeThinker) == 0x1888);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Hoodwink_AcornShot_TreeThinker) == 0x1898);
     };
 };

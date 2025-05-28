@@ -17,19 +17,19 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1880
+        // Size: 0x1890
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Item_BlightedSpirit_Blight : public source2sdk::client::CDOTA_Buff
         {
         public:
-            std::int32_t damage_per_second; // 0x1878            
-            std::int32_t heal_reduction; // 0x187c            
+            std::int32_t damage_per_second; // 0x1888            
+            std::int32_t heal_reduction; // 0x188c            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Item_BlightedSpirit_Blight because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Item_BlightedSpirit_Blight) == 0x1880);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Item_BlightedSpirit_Blight) == 0x1890);
     };
 };

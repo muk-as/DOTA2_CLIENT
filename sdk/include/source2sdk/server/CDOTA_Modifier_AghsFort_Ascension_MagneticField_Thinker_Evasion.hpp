@@ -17,19 +17,19 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1890
+        // Size: 0x18a0
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_AghsFort_Ascension_MagneticField_Thinker_Evasion : public source2sdk::client::CDOTA_Buff
         {
         public:
-            uint8_t _pad1878[0x14]; // 0x1878
-            float radius; // 0x188c            
+            uint8_t _pad1888[0x14]; // 0x1888
+            float radius; // 0x189c            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_AghsFort_Ascension_MagneticField_Thinker_Evasion because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_AghsFort_Ascension_MagneticField_Thinker_Evasion) == 0x1890);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_AghsFort_Ascension_MagneticField_Thinker_Evasion) == 0x18a0);
     };
 };

@@ -17,20 +17,20 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1898
+        // Size: 0x18a8
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Rattletrap_Cog_Thinker : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float cogs_radius; // 0x1878            
-            float extra_pull_buffer; // 0x187c            
-            uint8_t _pad1880[0x18];
+            float cogs_radius; // 0x1888            
+            float extra_pull_buffer; // 0x188c            
+            uint8_t _pad1890[0x18];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Rattletrap_Cog_Thinker because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Rattletrap_Cog_Thinker) == 0x1898);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Rattletrap_Cog_Thinker) == 0x18a8);
     };
 };

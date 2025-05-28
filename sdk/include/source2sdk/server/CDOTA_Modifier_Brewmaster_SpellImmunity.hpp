@@ -17,19 +17,19 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1880
+        // Size: 0x1890
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Brewmaster_SpellImmunity : public source2sdk::server::CDOTA_Modifier_DebuffImmune
         {
         public:
-            float magic_resist; // 0x1878            
-            uint8_t _pad187c[0x4];
+            float magic_resist; // 0x1888            
+            uint8_t _pad188c[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Brewmaster_SpellImmunity because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Brewmaster_SpellImmunity) == 0x1880);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Brewmaster_SpellImmunity) == 0x1890);
     };
 };

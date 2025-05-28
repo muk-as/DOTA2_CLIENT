@@ -18,18 +18,18 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1890
+        // Size: 0x18a0
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Creature_HybridFlyer : public source2sdk::client::CDOTA_Buff
         {
         public:
-            source2sdk::server::CountdownTimer m_ctTimer; // 0x1878            
+            source2sdk::server::CountdownTimer m_ctTimer; // 0x1888            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Creature_HybridFlyer because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Creature_HybridFlyer) == 0x1890);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Creature_HybridFlyer) == 0x18a0);
     };
 };

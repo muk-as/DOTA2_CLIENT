@@ -17,20 +17,20 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1898
+        // Size: 0x18a8
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Obsidian_Destroyer_StackingBonusMana : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float mana_increase; // 0x1878            
-            float mana_increase_duration; // 0x187c            
-            uint8_t _pad1880[0x18];
+            float mana_increase; // 0x1888            
+            float mana_increase_duration; // 0x188c            
+            uint8_t _pad1890[0x18];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Obsidian_Destroyer_StackingBonusMana because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Obsidian_Destroyer_StackingBonusMana) == 0x1898);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Obsidian_Destroyer_StackingBonusMana) == 0x18a8);
     };
 };

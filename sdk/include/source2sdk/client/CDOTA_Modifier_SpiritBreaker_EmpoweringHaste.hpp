@@ -17,21 +17,21 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1888
+        // Size: 0x1898
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_SpiritBreaker_EmpoweringHaste : public source2sdk::client::CDOTA_Buff
         {
         public:
-            std::int32_t bonus_movespeed_pct_self; // 0x1878            
-            std::int32_t bonus_movespeed_pct_allies; // 0x187c            
-            std::int32_t bonus_movespeed_pct_extra; // 0x1880            
-            std::int32_t duration; // 0x1884            
+            std::int32_t bonus_movespeed_pct_self; // 0x1888            
+            std::int32_t bonus_movespeed_pct_allies; // 0x188c            
+            std::int32_t bonus_movespeed_pct_extra; // 0x1890            
+            std::int32_t duration; // 0x1894            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_SpiritBreaker_EmpoweringHaste because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_SpiritBreaker_EmpoweringHaste) == 0x1888);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_SpiritBreaker_EmpoweringHaste) == 0x1898);
     };
 };
