@@ -22,7 +22,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE = 0x0,
             // MScriptDescription "GetModifierPreAttack_BonusDamage_Proc GetModifierPreAttack_BonusDamage_Target"
             MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE_TARGET = 0x1,
-            // MScriptDescription "¿õã(˚ GetModifierPreAttack_BonusDamage_Proc"
+            // MScriptDescription "–åã(˚ GetModifierPreAttack_BonusDamage_Proc"
             MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE_PROC = 0x2,
             // MScriptDescription "GetModifierBaseAttack_BonusDamage GetModifierPreAttack_BonusDamagePostCrit"
             MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE_POST_CRIT = 0x3,
@@ -138,7 +138,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_MP_REGEN_AMPLIFY_PERCENTAGE_UNIQUE = 0x3a,
             // MScriptDescription "GetModifierMPRestoreAmplify_Percentage GetModifierManaDrainAmplify_Percentage"
             MODIFIER_PROPERTY_MANA_DRAIN_AMPLIFY_PERCENTAGE = 0x3b,
-            // MScriptDescription "püã(˚ GetModifierMPRestoreAmplify_Percentage"
+            // MScriptDescription "Äêã(˚ GetModifierMPRestoreAmplify_Percentage"
             MODIFIER_PROPERTY_MP_RESTORE_AMPLIFY_PERCENTAGE = 0x3c,
             // MScriptDescription "GetModifierBaseDamageOutgoing_PercentageUnique GetModifierBaseDamageOutgoing_Percentage"
             MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE = 0x3d,
@@ -188,7 +188,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BASE_REDUCTION = 0x53,
             // MScriptDescription "GetModifierMagicalResistanceBonus GetModifierMagicalResistanceDirectModification"
             MODIFIER_PROPERTY_MAGICAL_RESISTANCE_DIRECT_MODIFICATION = 0x54,
-            // MScriptDescription "0°ã(˚ GetModifierMagicalResistanceBonus"
+            // MScriptDescription "@íã(˚ GetModifierMagicalResistanceBonus"
             MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS = 0x55,
             // MScriptDescription "GetModifierMagicalResistanceBonusUnique GetModifierMagicalResistanceBonusIllusions"
             MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS_ILLUSIONS = 0x56,
@@ -246,7 +246,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_CAST_RANGE_BONUS_TARGET = 0x70,
             // MScriptDescription "GetModifierAttackRangeOverride GetModifierCastRangeBonusStacking"
             MODIFIER_PROPERTY_CAST_RANGE_BONUS_STACKING = 0x71,
-            // MScriptDescription "0£ã(˚ GetModifierAttackRangeOverride"
+            // MScriptDescription "@îã(˚ GetModifierAttackRangeOverride"
             MODIFIER_PROPERTY_ATTACK_RANGE_BASE_OVERRIDE = 0x72,
             // MScriptDescription "GetModifierAttackRangeBonusUnique GetModifierAttackRangeBonus"
             MODIFIER_PROPERTY_ATTACK_RANGE_BONUS = 0x73,
@@ -286,7 +286,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_MANACOST_PERCENTAGE_STACKING = 0x84,
             // MScriptDescription "GetModifierPercentageHealthcostStacking GetModifierPercentageHealthcost"
             MODIFIER_PROPERTY_HEALTHCOST_PERCENTAGE = 0x85,
-            // MScriptDescription "∞§ã(˚ GetModifierPercentageHealthcostStacking"
+            // MScriptDescription "¿ïã(˚ GetModifierPercentageHealthcostStacking"
             MODIFIER_PROPERTY_HEALTHCOST_PERCENTAGE_STACKING = 0x86,
             // MScriptDescription "GetModifierPercentageDeathGoldCost GetModifierConstantDeathGoldCost"
             MODIFIER_PROPERTY_DEATHGOLDCOST = 0x87,
@@ -372,7 +372,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_ALWAYS_ETHEREAL_ATTACK = 0xaf,
             // MScriptDescription "GetModifierUnitStatsNeedsRefresh GetOverrideAttackMagical"
             MODIFIER_PROPERTY_OVERRIDE_ATTACK_MAGICAL = 0xb0,
-            // MScriptDescription "†ßã(˚ GetModifierUnitStatsNeedsRefresh"
+            // MScriptDescription "∞òã(˚ GetModifierUnitStatsNeedsRefresh"
             MODIFIER_PROPERTY_UNIT_STATS_NEEDS_REFRESH = 0xb1,
             // MScriptDescription "Unused Unused"
             MODIFIER_PROPERTY_BOUNTY_CREEP_MULTIPLIER = 0xb2,
@@ -422,7 +422,7 @@ namespace source2sdk
             MODIFIER_EVENT_ON_UNIT_MOVED = 0xc8,
             // MScriptDescription "OnAbilityExecuted OnAbilityStart"
             MODIFIER_EVENT_ON_ABILITY_START = 0xc9,
-            // MScriptDescription "`©ã(˚ OnAbilityExecuted"
+            // MScriptDescription "pöã(˚ OnAbilityExecuted"
             MODIFIER_EVENT_ON_ABILITY_EXECUTED = 0xca,
             // MScriptDescription "OnBreakInvisibility OnAbilityFullyCast"
             MODIFIER_EVENT_ON_ABILITY_FULLY_CAST = 0xcb,
@@ -448,7 +448,7 @@ namespace source2sdk
             MODIFIER_EVENT_ON_DAMAGE_CALCULATED = 0xd5,
             // MScriptDescription "gold_amount OnMagicDamageCalculated"
             MODIFIER_EVENT_ON_MAGIC_DAMAGE_CALCULATED = 0xd6,
-            // MScriptDescription "P™ã(˚ OnAttacked"
+            // MScriptDescription "`õã(˚ OnAttacked"
             MODIFIER_EVENT_ON_ATTACKED = 0xd7,
             // MScriptDescription "OnDeathCompleted OnDeath"
             MODIFIER_EVENT_ON_DEATH = 0xd8,
@@ -466,7 +466,7 @@ namespace source2sdk
             MODIFIER_EVENT_ON_TELEPORTED = 0xde,
             // MScriptDescription "OnHealthGained OnSetLocation"
             MODIFIER_EVENT_ON_SET_LOCATION = 0xdf,
-            // MScriptDescription "´ã(˚ OnHealthGained"
+            // MScriptDescription " úã(˚ OnHealthGained"
             MODIFIER_EVENT_ON_HEALTH_GAINED = 0xe0,
             // MScriptDescription "OnTakeDamageKillCredit OnManaGained"
             MODIFIER_EVENT_ON_MANA_GAINED = 0xe1,
@@ -492,7 +492,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_MODEL_SCALE = 0xeb,
             // MScriptDescription "GetModifierModelScaleUseInOutEase GetModifierModelScaleAnimateTime"
             MODIFIER_PROPERTY_MODEL_SCALE_ANIMATE_TIME = 0xec,
-            // MScriptDescription "´ã(˚ GetModifierModelScaleUseInOutEase"
+            // MScriptDescription " GetModifierModelScaleUseInOutEase"
             MODIFIER_PROPERTY_MODEL_SCALE_USE_IN_OUT_EASE = 0xed,
             // MScriptDescription "GetModifierScepter GetModifierModelScaleConstant"
             MODIFIER_PROPERTY_MODEL_SCALE_CONSTANT = 0xee,
@@ -602,7 +602,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_FAIL_ATTACK = 0x122,
             // MScriptDescription "GetModifierSuppressFullscreenDeathFX GetModifierPrereduceIncomingDamage_Mult"
             MODIFIER_PROPERTY_PREREDUCE_INCOMING_DAMAGE_MULT = 0x123,
-            // MScriptDescription "†Øã(˚ GetModifierSuppressFullscreenDeathFX"
+            // MScriptDescription "∞†ã(˚ GetModifierSuppressFullscreenDeathFX"
             MODIFIER_PROPERTY_SUPPRESS_FULLSCREEN_DEATH_FX = 0x124,
             // MScriptDescription "GetModifierDamageOutgoing_PercentageMultiplicative MODIFIER_PROPERTY_INCOMING_DAMAGE_CONSTANT_POST"
             MODIFIER_PROPERTY_INCOMING_DAMAGE_CONSTANT_POST = 0x125,
@@ -646,13 +646,13 @@ namespace source2sdk
             MODIFIER_PROPERTY_PRESERVE_NEUTRAL_ITEM_PASSIVES = 0x138,
             // MScriptDescription "GetModifierForceMaxHealth"
             MODIFIER_PROPERTY_FORCE_MAX_HEALTH = 0x139,
-            // MScriptDescription "GetModifierAoEBonusConstant GetModifierForceMaxMana"
+            // MScriptDescription "GetModifierForceMaxMana"
             MODIFIER_PROPERTY_FORCE_MAX_MANA = 0x13a,
             // MScriptDescription "GetModifierAoEBonusConstantStacking GetModifierAoEBonusConstant"
             MODIFIER_PROPERTY_AOE_BONUS_CONSTANT = 0x13b,
             // MScriptDescription "OnTakeDamagePostUnavoidableBlock GetModifierAoEBonusConstantStacking"
             MODIFIER_PROPERTY_AOE_BONUS_CONSTANT_STACKING = 0x13c,
-            // MScriptDescription "`±ã(˚ OnTakeDamagePostUnavoidableBlock"
+            // MScriptDescription "OnTakeDamagePostUnavoidableBlock"
             MODIFIER_EVENT_ON_TAKEDAMAGE_POST_UNAVOIDABLE_BLOCK = 0x13d,
             // MScriptDescription "GetSuppressCrit OnMuteDamageAbilities"
             MODIFIER_EVENT_ON_MUTE_DAMAGE_ABILITIES = 0x13e,
@@ -676,11 +676,11 @@ namespace source2sdk
             MODIFIER_PROPERTY_ATTACKSPEED_ABSOLUTE_MAX = 0x147,
             // MScriptDescription "OnHeroBeginDying GetModifierFoWTeam"
             MODIFIER_PROPERTY_FOW_TEAM = 0x148,
-            // MScriptDescription "OnHeroBeginDying"
+            // MScriptDescription "GetModifierBonusLotusHeal OnHeroBeginDying"
             MODIFIER_EVENT_ON_HERO_BEGIN_DYING = 0x149,
             // MScriptDescription "GetModifierBonusLotusHeal GetModifierBonusLotusHeal"
             MODIFIER_PROPERTY_BONUS_LOTUS_HEAL = 0x14a,
-            // MScriptDescription "damage_absorb GetModifierBonusLotusHeal"
+            // MScriptDescription "GetModifierBonusLotusHeal"
             MODIFIER_PROPERTY_BASE_HP_REGEN_PER_STR_BONUS_PERCENTAGE = 0x14b,
             // MScriptDescription "GetModifierBonusLotusHeal GetModifierBonusLotusHeal"
             MODIFIER_PROPERTY_BASE_ARMOR_PER_AGI_BONUS_PERCENTAGE = 0x14c,
@@ -692,7 +692,7 @@ namespace source2sdk
             MODIFIER_EVENT_ON_DAY_STARTED = 0x14f,
             // MScriptDescription "GetModifierCreateBonusIllusionChance OnNightStarted"
             MODIFIER_EVENT_ON_NIGHT_STARTED = 0x150,
-            // MScriptDescription "¿ã(˚ GetModifierCreateBonusIllusionChance"
+            // MScriptDescription "0±ã(˚ GetModifierCreateBonusIllusionChance"
             MODIFIER_PROPERTY_CREATE_BONUS_ILLUSION_CHANCE = 0x151,
             // MScriptDescription "GetModofierPropertyPseudoRandomBonus GetModifierCreateBonusIllusionCount"
             MODIFIER_PROPERTY_CREATE_BONUS_ILLUSION_COUNT = 0x152,
@@ -718,7 +718,7 @@ namespace source2sdk
             MODIFIER_EVENT_ON_CLEAVE_ATTACK_LANDED = 0x15c,
             // MScriptDescription "GetTierTokenReroll MinAttributeLevel"
             MODIFIER_PROPERTY_MIN_ATTRIBUTE_LEVEL = 0x15d,
-            // MScriptDescription "¿ã(˚ GetTierTokenReroll"
+            // MScriptDescription "≤ã(˚ GetTierTokenReroll"
             MODIFIER_PROPERTY_TIER_TOKEN_REROLL = 0x15e,
             // MScriptDescription "GetModifierTotal_ConstantBlockStacking GetVisionDegreeRestriction"
             MODIFIER_PROPERTY_VISION_DEGREES_RESTRICTION = 0x15f,
@@ -744,7 +744,7 @@ namespace source2sdk
             MODIFIER_EVENT_ON_RUNE_SPAWN = 0x169,
             // MScriptDescription "GetModifierProperty_MagicalLifesteal GetModifierProperty_PhysicalLifesteal"
             MODIFIER_PROPERTY_PHYSICAL_LIFESTEAL = 0x16a,
-            // MScriptDescription "–¡ã(˚ GetModifierProperty_MagicalLifesteal"
+            // MScriptDescription "≤ã(˚ GetModifierProperty_MagicalLifesteal"
             MODIFIER_PROPERTY_MAGICAL_LIFESTEAL = 0x16b,
             // MScriptDescription "GetModifierNeutralTrinketOptions OnPureDamageCalculated"
             MODIFIER_EVENT_ON_PURE_DAMAGE_CALCULATED = 0x16c,

@@ -4,6 +4,13 @@
 #include <cstddef>
 #include <cstdint>
 #include "source2sdk/client/C_DOTABaseAbility.hpp"
+namespace source2sdk
+{
+    namespace client
+    {
+        struct C_BaseEntity;
+    };
+};
 
 // /////////////////////////////////////////////////////////////
 // Module: client
@@ -17,7 +24,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x680
+        // Size: 0x688
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -25,11 +32,15 @@ namespace source2sdk
         class CDOTA_Ability_Bloodseeker_Bloodrage : public source2sdk::client::C_DOTABaseAbility
         {
         public:
-            // No schema binary for binding
+            // m_hTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+            // CHandle<source2sdk::client::C_BaseEntity> m_hTarget;
+            char m_hTarget[0x4]; // 0x680            
+            uint8_t _pad0684[0x4];
         };
         #pragma pack(pop)
         
+        // Cannot assert offsets of fields in CDOTA_Ability_Bloodseeker_Bloodrage because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Ability_Bloodseeker_Bloodrage) == 0x680);
+        static_assert(sizeof(source2sdk::client::CDOTA_Ability_Bloodseeker_Bloodrage) == 0x688);
     };
 };
