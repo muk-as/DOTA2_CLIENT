@@ -25,7 +25,7 @@ namespace source2sdk
         // static metadata: MGetKV3ClassDefaults
         // static metadata: MCellForDomain "TestDomain"
         // static metadata: MPulseCellMethodBindings
-        // static metadata: MPulseCellOutflowHookInfo "°ö$û"
+        // static metadata: MPulseCellOutflowHookInfo "ˆÆ&û"
         // static metadata: MPropertyFriendlyName "[Test] Explicit Yes/No Outflow"
         // static metadata: MPropertyDescription "Test node that picks between two outflows as specified in the test domain."
         #pragma pack(push, 1)

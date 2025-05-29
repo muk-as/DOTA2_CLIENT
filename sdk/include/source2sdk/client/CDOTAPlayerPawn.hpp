@@ -3,7 +3,6 @@
 #include "source2sdk/source2gen/source2gen.hpp"
 #include <cstddef>
 #include <cstdint>
-#include "source2sdk/client/CQuickBuyController.hpp"
 #include "source2sdk/client/C_BasePlayerPawn.hpp"
 #include "source2sdk/client/PlayerID_t.hpp"
 
@@ -19,7 +18,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0xee0
+        // Size: 0xd98
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -40,18 +39,14 @@ namespace source2sdk
         // static metadata: MNetworkIncludeByName "m_pCameraServices"
         // static metadata: MNetworkVarTypeOverride "CDOTAPlayer_MovementServices m_pMovementServices"
         // static metadata: MNetworkIncludeByName "m_pMovementServices"
-        // static metadata: MNetworkVarNames "CQuickBuyController m_quickBuyController"
         // static metadata: MNetworkVarNames "PlayerID_t m_nPlayerID"
         #pragma pack(push, 1)
         class CDOTAPlayerPawn : public source2sdk::client::C_BasePlayerPawn
         {
         public:
             // metadata: MNetworkEnable
-            // metadata: MNetworkUserGroup "DOTATeamMatesAndCommentatorTable"
-            source2sdk::client::CQuickBuyController m_quickBuyController; // 0xd90            
-            // metadata: MNetworkEnable
-            source2sdk::client::PlayerID_t m_nPlayerID; // 0xed8            
-            uint8_t _pad0edc[0x4];
+            source2sdk::client::PlayerID_t m_nPlayerID; // 0xd90            
+            uint8_t _pad0d94[0x4];
             
             // Datamap fields:
             // CDOTAPlayer_CameraServices m_pCameraServices; // 0xc58
@@ -61,6 +56,6 @@ namespace source2sdk
         
         // Cannot assert offsets of fields in CDOTAPlayerPawn because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTAPlayerPawn) == 0xee0);
+        static_assert(sizeof(source2sdk::client::CDOTAPlayerPawn) == 0xd98);
     };
 };

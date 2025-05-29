@@ -12,6 +12,7 @@
 #include "source2sdk/entity2/GameTime_t.hpp"
 #include "source2sdk/server/CDOTACourierController.hpp"
 #include "source2sdk/server/CDOTA_UnitInventory.hpp"
+#include "source2sdk/server/CQuickBuyController.hpp"
 #include "source2sdk/server/PlayerNeutralChoices_t.hpp"
 namespace source2sdk
 {
@@ -33,7 +34,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: 0x8
         // Standard-layout class: true
-        // Size: 0x1090
+        // Size: 0x1218
         // Has VTable
         // 
         // static metadata: MNetworkVarNames "int m_iReliableGold"
@@ -127,6 +128,7 @@ namespace source2sdk
         // static metadata: MNetworkVarNames "int m_nCurrentMadstone"
         // static metadata: MNetworkVarNames "PlayerNeutralChoices_t m_NeutralChoices"
         // static metadata: MNetworkVarNames "CDOTACourierController m_CourierController"
+        // static metadata: MNetworkVarNames "CQuickBuyController m_quickBuyController"
         #pragma pack(push, 1)
         struct DataTeamPlayer_t
         {
@@ -334,6 +336,8 @@ namespace source2sdk
             source2sdk::server::PlayerNeutralChoices_t m_NeutralChoices; // 0xed8            
             // metadata: MNetworkEnable
             source2sdk::server::CDOTACourierController m_CourierController; // 0xfe8            
+            // metadata: MNetworkEnable
+            source2sdk::server::CQuickBuyController m_quickBuyController; // 0x1090            
         };
         #pragma pack(pop)
         
@@ -428,7 +432,8 @@ namespace source2sdk
         static_assert(offsetof(source2sdk::server::DataTeamPlayer_t, m_nCurrentMadstone) == 0xed4);
         static_assert(offsetof(source2sdk::server::DataTeamPlayer_t, m_NeutralChoices) == 0xed8);
         static_assert(offsetof(source2sdk::server::DataTeamPlayer_t, m_CourierController) == 0xfe8);
+        static_assert(offsetof(source2sdk::server::DataTeamPlayer_t, m_quickBuyController) == 0x1090);
         
-        static_assert(sizeof(source2sdk::server::DataTeamPlayer_t) == 0x1090);
+        static_assert(sizeof(source2sdk::server::DataTeamPlayer_t) == 0x1218);
     };
 };
