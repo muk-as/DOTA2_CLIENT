@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1890
+        // Size: 0x1898
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Dezun_Bloodrite : public source2sdk::server::CDOTA_Buff_Item
@@ -25,11 +25,14 @@ namespace source2sdk
         public:
             float health_pct; // 0x1888            
             float aoe_pct; // 0x188c            
+            bool m_bAoERecursionBlock; // 0x1890            
+            bool m_bHealthCostRecursionBlock; // 0x1891            
+            uint8_t _pad1892[0x6];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Dezun_Bloodrite because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Dezun_Bloodrite) == 0x1890);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Dezun_Bloodrite) == 0x1898);
     };
 };
