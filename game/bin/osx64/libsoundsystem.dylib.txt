@@ -15,15 +15,14 @@
 0IcO(H
 0Icu8H
 0Lcg(M
-0[A\A]A^A
 0[A\A^A
 0__function6__baseIF
 0_t=H
+0contour
 0fffff
 0ffffff
-0max_pulses_table
-0og2lin
-0oise_shape
+0oise_shape_analysis_FLP
+0rocess
 0sb_iCDF
 0|t?L
 0|t?uj
@@ -176,11 +175,12 @@
 1ANYckrx
 1CMR]c
 1Ia	!9Qi
-1contour
+1NB_iCDF
+1delta_iCDF
 1f / %.1f
 1fffff
-1quantizer
-1rocess
+1lag_iCDF
+1quant_LTP_gains
 20CAudioDecoderEncoded
 20CAudioDecoderStretch
 20CAudioDecoderWaveMP3
@@ -498,15 +498,13 @@
 2=IVanw
 2?O_n
 2CScs
-2NB_iCDF
 2_3_COEFS
 2_COEFS
 2d] %16.16s : %s (%d) priority: %d
 2db) %6lli : %s
-2delta_iCDF
 2ffff
-2lag_iCDF
-2quant_LTP_gains
+2gains_FLP
+2ulses_per_block
 3 Hc|3$H
 3$Hc|3(H
 3(Hc|3,H
@@ -597,8 +595,8 @@
 3ffff
 3fffff
 3ffffff
-3gains_FLP
-3ulses_per_block
+3frac_FIR_12
+3idual_energy
 4$M;7s
 40CSchemaRegistration_soundsystem_lowlevel
 40CSosGroupActionMemberCountEnvelopeSchema
@@ -618,45 +616,44 @@
 4IIR_FIR
 4N28CVoiceContainerRandomSampler26CRandomSamplerInstanceViewE
 4_COEFS
-4_iCDF
+4down_FIR
 4ffff
-4ffffff
-4frac_FIR_12
-4idual_energy
 4private
+4up2_HQ
 5&YA1A
 5,¸YAiO
 5EPX_f
 5FSgr
 5_iCDF
 5covar_FLP
-5down_FIR
+5fffff
 5ffffff
-5up2_HQ
+5hell
+5hur_FLP
+5type_offset
+5vector_FLP
 6AMZhw
 6_COEFS
 6_iCDF
+6_offsets
+6decoder
+6encoder
 6ffff
-6hell
-6hur_FLP
 6s?fBbEcJYG[I[NYVP\B]@f;g<h<u4
-6type_offset
 6uu?L
 6uu?uj
-6vector_FLP
 7ESbp
 7M;4$s
-7_offsets
+7MS_to_LR
 7bad_function_callE
-7decoder
-7encoder
 7ffff
 7ffffff
 7n_iCDF
 7tereo
+7um_sqr_shift
 7耀7耀7耀7
 8 uLH
-8#,GfA
+8#,DfA
 8#<sfE
 8#DO`A
 8#FPfA
@@ -664,13 +661,18 @@
 8>0RF
 8CSosEdit
 8IVMixAPI
-8MS_to_LR
 8[A\A]A^A
 8[A^A
 8_iCDF
 8decode
+8encode
 8ffffff
-8um_sqr_shift
+8find_predictor
+8only_code_mid_iCDF
+8pred
+8quant_Q13
+8quant_pred
+94_iCDF
 9=aA\E
 9CAudioSDL
 9CSfxTable
@@ -681,12 +683,9 @@
 9S0~%A
 9S0~7A
 9S0~MA
-9encode
-9find_predictor
-9only_code_mid_iCDF
-9pred
-9quant_Q13
-9quant_pred
+9no_VAD_iCDF
+9uniform
+9warped_autocorrelation_FLP
 A#4$L
 A#T$TH
 A)D$LH
@@ -714,7 +713,7 @@ ARARAYA
 ARASASAp
 ARASCSAUBZARAp
 ARASCZAp
-ARATPSASAV
+ARATASSPAU
 ARAUAp
 ARAUB
 ARAVB
@@ -725,10 +724,9 @@ ARAZARAZAp
 ARAZAp
 ARA`2B
 ARA`?ARARARARAp
-ARPASAVH
 ARSARP
+ASARAW
 ASARAWj
-ASARPH
 ASATARP
 ASBSARB
 ASDSAp
@@ -737,13 +735,12 @@ ATAWASAR
 ATPSASAVAWAU
 ATPSASAWAUAV
 AUAQAP
-AUARASAW
 AUAWASAWA
-AUAWPAR
 AUBSAp
-AUPASAR
+AUSASAR
 AVARAS
-AWARAS
+AVAUPAR
+AVPASAR
 AWAVATS
 AWAVATS1
 AWAVATSA
@@ -923,7 +920,6 @@ Bass Mono
 Beat:	%f
 Below Threshold(dB
 BenchmarkService001
-Bfffff
 BinAdd
 BinDiv
 BinGtE
@@ -1229,8 +1225,7 @@ D90~+H
 D9?t%H
 D9h0~0H
 D9k0tEf
-D;%ju6
-D;5aC
+D;%JB6
 D;9tMH
 D>B<HuUZv
 DATA_CONST
@@ -1348,7 +1343,6 @@ ERROR: missing enum tokenset
 ESCAPE_CHAR
 ESCAPE_CODE
 EWaveform
-EXA)Á}P
 EXPONENT
 EXPORTSYSTEM_INTERFACE_VERSION_001
 EXT_iCDF
@@ -1438,6 +1432,7 @@ Extraneous input
 Extraneous input - expected %s
 Extraneous input - expected <EOF
 Extraneous token
+EȋE8AiI
 Eȋp\E1
 E耀D翰E
 F4u#z
@@ -1487,6 +1482,7 @@ Failed to save unsupported class
 Failed to start voice for %s
 Feedback
 Feedback scale
+Fffff
 Fffffff
 Field Name String Count: %i
 Field Type: %i
@@ -1555,6 +1551,7 @@ GetContiguousSamples_Float
 GetResourceManifest
 GetResourceManifestCount
 GetResourceManifests
+GetSA_Q8_c
 GetSfx: NULL name
 GetSoundEvent: unable to get event by hash %i
 GetSoundEvent: unable to get event by name %s
@@ -1621,7 +1618,6 @@ HcCPHc
 HcCTHc
 HcCXHc
 HcC`I9
-HcFLHc
 HcH$I9
 HcH`I9
 HcI Hc
@@ -1708,6 +1704,7 @@ If set to 1, report more error found when playing sounds
 If set to 1, show all incoming updates to vmix inputs
 If set to >= 0, we will use this mix modifier for source-specific DSP effects. Otherwise we will use the listener DSP value
 Ifffff
+Iffffff
 Incorrect sampling rate in %s (mp3 frames are at %dHz, .vsnd file has %dHz
 Increased audio mix latency to %d buffers
 Index
@@ -1766,6 +1763,7 @@ LOG_GENERAL
 LR_to_MS
 LVL: %f
 LayerTriH1
+Lc5$K
 Lc6Lc
 Lexer encountered %d error(s
 Lffff
@@ -1905,6 +1903,7 @@ Modulation Depth
 Modulation Frequency
 Modulator Frequency
 Music volume
+MÉChHcKl
 N0;J0u
 N18CVoiceContainerSet9CInstanceE
 N19CVoiceContainerBase10CParameterI23CParameterBlendInstancefEE
@@ -2023,7 +2022,6 @@ No input data for '%s'. (Empty buffer
 No map found
 No probes found in %s
 No scene loaded to export as Steam Audio scene
-NoiseLevels
 Not safe to 'new' this class due to alignment requirements
 Note: Array declaration using table syntax on field %s in stack %s. Please convert
 Note: Double array found in field %s in stack %s, value: %s
@@ -2080,8 +2078,8 @@ PANNER_TYPE_LINEAR
 PARAM COUNT COMPARE FAIL: %s->%s
 PARAMDATA COMPARE FAIL: %s->%s : %s
 PARAMINFO COMPARE FAIL: %s->%s
-PAUASAR
 PAVSARAS
+PAWASAR
 PC_FLP
 PHH=vmatu
 PIcWdH9
@@ -2191,7 +2189,7 @@ Purge and reload all vmidi data and files
 PurgeAndDeleteAll: Deleting orphaned CSoundEvent pointer for %s via shutdown
 Purges the VSnd table
 Q>0P7
-Q_WMat_EC_sse4_1
+Q_WMat_EC_c
 Qffff
 Quantization_Offsets_Q10
 Queued: elapsed time: %f, next sync time: %f, length: %f
@@ -2317,7 +2315,6 @@ SAQAVAR
 SASARAT
 SASASASBSAp
 SAUASFRGRGRGRBSASASASAXAXAR
-SA_Q8
 SBZARAp
 SDL Audio Device: %s (status: %d, driver: %s
 SDL Device Capture Audio Stream Failed To Open: %s
@@ -2391,7 +2388,7 @@ SOS_STOPTYPE_NONE
 SOS_STOPTYPE_OPVAR
 SOS_STOPTYPE_TIME
 SOUNDEVENT COMPARE SUCCESS: %s->%s
-SPATAR
+SPAWAR
 SSE and SSE2 are required
 STACK COMPARE FAIL: %s->%s
 STACK FPS: %f
@@ -3343,7 +3340,6 @@ allow_empty_match
 amp2Log2
 ampler
 analysis
-analysis_FLP
 analysis_core_FLP
 analysis_filter
 analysis_filter_FLP
@@ -3400,6 +3396,7 @@ bandwidth
 base_operator
 baseline
 bffff
+bffffff
 biased
 binary blob: %u bytes
 binary_blob
@@ -3564,7 +3561,7 @@ default
 defaultValue
 default_to_max
 deferred Sound Events
-del_dec_sse4_1
+del_dec_c
 delay
 delay count
 delay_override
@@ -4245,6 +4242,7 @@ less_than
 less_than_or_equal
 lexer error %d
 lexer->mTokens(): Error: No lexer rules were added to the lexer yet
+lffff
 libmpg123.dylib
 libopus unknown
 libsoundsystem.dylib
@@ -4676,6 +4674,7 @@ math_string
 math_velocity
 max_note
 max_output
+max_pulses_table
 max_trigger_amounts
 max_value
 max_velocity_db
@@ -4764,7 +4763,6 @@ nner_prod_sse
 no failure reason set
 no stack mem
 no text for the token
-no_VAD_iCDF
 noise_type
 normalise_bands
 normalise_vector
@@ -4783,6 +4781,7 @@ obXOF>82
 objc_imageinfo__DATA_CONST
 occlusion
 occlusion_db_loss
+og2lin
 on_first_frame
 onality
 opFields
@@ -5350,8 +5349,7 @@ silk_NLSF_interpolation_factor_iCDF
 silk_NLSF_stabilize
 silk_NLSF_unpack
 silk_NSQ_c
-silk_NSQ_del_dec_sse4_1
-silk_NSQ_sse4_1
+silk_NSQ_del_dec_c
 silk_NSQ_wrapper_FLP
 silk_PLC
 silk_PLC_Reset
@@ -5366,11 +5364,9 @@ silk_Resampler_2_3_COEFS_LQ
 silk_Resampler_3_4_COEFS
 silk_Transition_LP_A_Q28
 silk_Transition_LP_B_Q28
-silk_VAD_GetNoiseLevels
 silk_VAD_GetSA_Q8_c
-silk_VAD_GetSA_Q8_sse4_1
 silk_VAD_Init
-silk_VQ_WMat_EC_sse4_1
+silk_VQ_WMat_EC_c
 silk_ana_filt_bank_1
 silk_apply_sine_window_FLP
 silk_autocorrelation_FLP
@@ -5423,7 +5419,6 @@ silk_lsb_iCDF
 silk_max_pulses_table
 silk_nb_cbk_searchs_stage3
 silk_noise_shape_analysis_FLP
-silk_noise_shape_quantizer
 silk_pitch_analysis_core_FLP
 silk_pitch_contour_10_ms_NB_iCDF
 silk_pitch_contour_10_ms_iCDF
@@ -5762,7 +5757,6 @@ speaker_config
 sphere
 spline
 spreading_decision
-sse4_1
 stabilize
 stack_chk_fail
 stack_chk_guard
@@ -5815,16 +5809,15 @@ t!ffffff
 t#I;8t
 t#fff
 t#ffff
-t$4HcE
 t$fff
 t$fffff
+t$ffffff
 t%fffff
 t%ffffff
 t&fffff
 t'HcD3
 t'IcD
 t'ffffff
-t(fffff
 t)ffff
 t,fff
 t,ffffff
@@ -5833,11 +5826,11 @@ t-E9t
 t/ffffff
 t0fff
 t3Ai^8
+t4ffff
 t5D9{p
 t5ffff
 t5fffff
 t7Hc9H
-t7fffff
 t;KcD5
 t<fD;e
 t=ffff
@@ -5847,7 +5840,6 @@ tAA;A(u I
 tAIcD$ H
 tGfff
 tGffffff
-tMLc%N
 tMfE9
 tRA;D
 tUfffff
@@ -5859,12 +5851,12 @@ terpolate
 test_voice_container_nesting
 test_voice_containers
 tf_select_table
+tgfff
 thread_data
 thread_vars
 threshold
 threshold_type
 time slice ms
-tkfffff
 tlv_bootstrap
 tonality_analysis_init
 tonality_analysis_reset
@@ -5882,6 +5874,8 @@ track_stop
 tracks
 transmissionHigh
 trigger
+u AVAR
+u(AVATL
 u1ffffff
 u>fffff
 u>z<H9
@@ -5896,7 +5890,6 @@ ulses
 un_analysis
 undefined
 unexpected input
-uniform
 unknown
 unknown KV3 basic type '%s' (%d
 unknown error
@@ -5943,6 +5936,7 @@ util_timer
 util_timer_ramp
 utocorrelation_FLP
 uËẺE
+v`Ic~d
 values
 variable_cutoff
 vector
@@ -6026,7 +6020,6 @@ wH[A\A^A
 wLLco M
 w\IcD
 wait_for_track
-warped_autocorrelation_FLP
 wave_type
 wcscmp
 wcv?uj
