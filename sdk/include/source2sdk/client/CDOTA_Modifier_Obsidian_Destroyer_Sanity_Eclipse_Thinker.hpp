@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1888
+        // Size: 0x1878
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Obsidian_Destroyer_Sanity_Eclipse_Thinker : public source2sdk::client::CDOTA_Buff
@@ -28,6 +28,6 @@ namespace source2sdk
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Obsidian_Destroyer_Sanity_Eclipse_Thinker) == 0x1888);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Obsidian_Destroyer_Sanity_Eclipse_Thinker) == 0x1878);
     };
 };

@@ -17,19 +17,19 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1890
+        // Size: 0x1880
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Phoenix_Sun_Ray_Blind : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float miss_chance; // 0x1888            
-            float m_flTotalMissChance; // 0x188c            
+            float miss_chance; // 0x1878            
+            float m_flTotalMissChance; // 0x187c            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Phoenix_Sun_Ray_Blind because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Phoenix_Sun_Ray_Blind) == 0x1890);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Phoenix_Sun_Ray_Blind) == 0x1880);
     };
 };

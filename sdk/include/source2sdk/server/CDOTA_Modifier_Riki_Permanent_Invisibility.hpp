@@ -17,19 +17,19 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x18a0
+        // Size: 0x1890
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Riki_Permanent_Invisibility : public source2sdk::server::CDOTA_Modifier_PersistentInvisibility
         {
         public:
-            std::int32_t movement_speed; // 0x1898            
-            uint8_t _pad189c[0x4];
+            std::int32_t movement_speed; // 0x1888            
+            uint8_t _pad188c[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Riki_Permanent_Invisibility because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Riki_Permanent_Invisibility) == 0x18a0);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Riki_Permanent_Invisibility) == 0x1890);
     };
 };

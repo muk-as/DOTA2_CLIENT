@@ -17,19 +17,19 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1890
+        // Size: 0x1880
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Techies_Minefield_Sign_Scepter : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float aura_radius; // 0x1888            
-            float minefield_duration; // 0x188c            
+            float aura_radius; // 0x1878            
+            float minefield_duration; // 0x187c            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Techies_Minefield_Sign_Scepter because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Techies_Minefield_Sign_Scepter) == 0x1890);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Techies_Minefield_Sign_Scepter) == 0x1880);
     };
 };

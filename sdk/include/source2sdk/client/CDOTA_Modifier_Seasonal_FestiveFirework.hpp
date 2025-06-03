@@ -17,18 +17,18 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x18a0
+        // Size: 0x1890
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Seasonal_FestiveFirework : public source2sdk::client::CDOTA_Buff
         {
         public:
-            uint8_t _pad1888[0x18];
+            uint8_t _pad1878[0x18];
             // No schema binary for binding
         };
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Seasonal_FestiveFirework) == 0x18a0);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Seasonal_FestiveFirework) == 0x1890);
     };
 };

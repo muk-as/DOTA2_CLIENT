@@ -17,21 +17,21 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x18a0
+        // Size: 0x1890
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_JumpBoots : public source2sdk::client::CDOTA_Buff
         {
         public:
-            Vector m_vDirection; // 0x1888            
-            float m_flStartZ; // 0x1894            
-            float m_flCurTime; // 0x1898            
-            std::int32_t push_length; // 0x189c            
+            Vector m_vDirection; // 0x1878            
+            float m_flStartZ; // 0x1884            
+            float m_flCurTime; // 0x1888            
+            std::int32_t push_length; // 0x188c            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_JumpBoots because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_JumpBoots) == 0x18a0);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_JumpBoots) == 0x1890);
     };
 };

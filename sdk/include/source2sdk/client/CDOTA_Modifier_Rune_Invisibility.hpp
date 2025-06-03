@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1898
+        // Size: 0x1888
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Rune_Invisibility : public source2sdk::client::CDOTA_Modifier_Invisible
@@ -28,6 +28,6 @@ namespace source2sdk
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Rune_Invisibility) == 0x1898);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Rune_Invisibility) == 0x1888);
     };
 };

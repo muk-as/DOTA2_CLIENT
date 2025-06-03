@@ -17,18 +17,18 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1890
+        // Size: 0x1880
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Spectre_Arcana : public source2sdk::client::CDOTA_Buff
         {
         public:
-            uint8_t _pad1888[0x8];
+            uint8_t _pad1878[0x8];
             // No schema binary for binding
         };
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Spectre_Arcana) == 0x1890);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Spectre_Arcana) == 0x1880);
     };
 };

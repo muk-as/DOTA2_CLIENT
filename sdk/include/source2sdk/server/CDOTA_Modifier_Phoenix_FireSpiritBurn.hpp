@@ -17,23 +17,23 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x18a0
+        // Size: 0x1890
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Phoenix_FireSpiritBurn : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float tick_interval; // 0x1888            
-            float blind_duration; // 0x188c            
-            std::int32_t attackspeed_slow; // 0x1890            
-            std::int32_t damage_per_second; // 0x1894            
-            float blind_per_second; // 0x1898            
-            uint8_t _pad189c[0x4];
+            float tick_interval; // 0x1878            
+            float blind_duration; // 0x187c            
+            std::int32_t attackspeed_slow; // 0x1880            
+            std::int32_t damage_per_second; // 0x1884            
+            float blind_per_second; // 0x1888            
+            uint8_t _pad188c[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Phoenix_FireSpiritBurn because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Phoenix_FireSpiritBurn) == 0x18a0);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Phoenix_FireSpiritBurn) == 0x1890);
     };
 };

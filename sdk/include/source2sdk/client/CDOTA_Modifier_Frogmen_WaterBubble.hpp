@@ -18,23 +18,23 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x18a0
+        // Size: 0x1890
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Frogmen_WaterBubble : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float radius; // 0x1888            
-            float damage_absorb; // 0x188c            
-            std::int32_t m_nDamageAbsorbed; // 0x1890            
-            float heal_pct; // 0x1894            
-            source2sdk::entity2::GameTime_t m_flLastTickTime; // 0x1898            
-            uint8_t _pad189c[0x4];
+            float radius; // 0x1878            
+            float damage_absorb; // 0x187c            
+            std::int32_t m_nDamageAbsorbed; // 0x1880            
+            float heal_pct; // 0x1884            
+            source2sdk::entity2::GameTime_t m_flLastTickTime; // 0x1888            
+            uint8_t _pad188c[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Frogmen_WaterBubble because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Frogmen_WaterBubble) == 0x18a0);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Frogmen_WaterBubble) == 0x1890);
     };
 };

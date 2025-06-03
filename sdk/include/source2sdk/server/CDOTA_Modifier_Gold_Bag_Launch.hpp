@@ -17,19 +17,19 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x18c8
+        // Size: 0x18b8
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Gold_Bag_Launch : public source2sdk::server::CDOTA_Modifier_Knockback
         {
         public:
-            std::int32_t gold_amount; // 0x18c0            
-            uint8_t _pad18c4[0x4];
+            std::int32_t gold_amount; // 0x18b0            
+            uint8_t _pad18b4[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Gold_Bag_Launch because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Gold_Bag_Launch) == 0x18c8);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Gold_Bag_Launch) == 0x18b8);
     };
 };

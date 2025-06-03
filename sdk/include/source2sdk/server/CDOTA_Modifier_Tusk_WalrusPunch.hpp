@@ -25,32 +25,32 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x18c8
+        // Size: 0x18b8
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Tusk_WalrusPunch : public source2sdk::client::CDOTA_Buff
         {
         public:
-            std::int32_t crit_multiplier; // 0x1888            
-            std::int32_t bonus_damage; // 0x188c            
-            float air_time; // 0x1890            
-            float slow_duration; // 0x1894            
-            CUtlSymbolLarge m_iszRangedAttackEffect; // 0x1898            
+            std::int32_t crit_multiplier; // 0x1878            
+            std::int32_t bonus_damage; // 0x187c            
+            float air_time; // 0x1880            
+            float slow_duration; // 0x1884            
+            CUtlSymbolLarge m_iszRangedAttackEffect; // 0x1888            
             // m_hTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hTarget;
-            char m_hTarget[0x4]; // 0x18a0            
-            bool m_bWalrusPunch; // 0x18a4            
-            uint8_t _pad18a5[0x3]; // 0x18a5
+            char m_hTarget[0x4]; // 0x1890            
+            bool m_bWalrusPunch; // 0x1894            
+            uint8_t _pad1895[0x3]; // 0x1895
             // m_InFlightAttackRecords has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<std::int16_t> m_InFlightAttackRecords;
-            char m_InFlightAttackRecords[0x18]; // 0x18a8            
-            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x18c0            
-            std::int32_t m_nAttackRecord; // 0x18c4            
+            char m_InFlightAttackRecords[0x18]; // 0x1898            
+            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x18b0            
+            std::int32_t m_nAttackRecord; // 0x18b4            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Tusk_WalrusPunch because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Tusk_WalrusPunch) == 0x18c8);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Tusk_WalrusPunch) == 0x18b8);
     };
 };

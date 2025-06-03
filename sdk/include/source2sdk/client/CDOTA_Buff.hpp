@@ -26,7 +26,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1888
+        // Size: 0x1878
         // Has VTable
         // Is Abstract
         #pragma pack(push, 1)
@@ -86,13 +86,13 @@ namespace source2sdk
             // m_hAuraUnits has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::client::C_BaseEntity>> m_hAuraUnits;
             char m_hAuraUnits[0x18]; // 0xb8            
-            uint8_t _pad00d0[0x17b0]; // 0xd0
-            HSCRIPT m_hScriptScope; // 0x1880            
+            uint8_t _pad00d0[0x17a0]; // 0xd0
+            HSCRIPT m_hScriptScope; // 0x1870            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Buff because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Buff) == 0x1888);
+        static_assert(sizeof(source2sdk::client::CDOTA_Buff) == 0x1878);
     };
 };

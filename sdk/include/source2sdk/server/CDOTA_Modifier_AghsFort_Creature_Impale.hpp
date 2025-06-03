@@ -17,22 +17,22 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1898
+        // Size: 0x1888
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_AghsFort_Creature_Impale : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float m_flStartZ; // 0x1888            
-            float m_flCurTime; // 0x188c            
-            float m_flBuffDuration; // 0x1890            
-            bool m_bDamageApplied; // 0x1894            
-            uint8_t _pad1895[0x3];
+            float m_flStartZ; // 0x1878            
+            float m_flCurTime; // 0x187c            
+            float m_flBuffDuration; // 0x1880            
+            bool m_bDamageApplied; // 0x1884            
+            uint8_t _pad1885[0x3];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_AghsFort_Creature_Impale because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_AghsFort_Creature_Impale) == 0x1898);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_AghsFort_Creature_Impale) == 0x1888);
     };
 };

@@ -17,23 +17,23 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x18b0
+        // Size: 0x18a0
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Techies_ReactiveTazer : public source2sdk::client::CDOTA_Buff
         {
         public:
-            uint8_t _pad1888[0x14]; // 0x1888
-            std::int32_t bonus_ms; // 0x189c            
-            float stun_radius; // 0x18a0            
-            float stun_duration; // 0x18a4            
-            std::int32_t damage_percent; // 0x18a8            
-            std::int32_t m_nDamageRemaining; // 0x18ac            
+            uint8_t _pad1878[0x14]; // 0x1878
+            std::int32_t bonus_ms; // 0x188c            
+            float stun_radius; // 0x1890            
+            float stun_duration; // 0x1894            
+            std::int32_t damage_percent; // 0x1898            
+            std::int32_t m_nDamageRemaining; // 0x189c            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Techies_ReactiveTazer because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Techies_ReactiveTazer) == 0x18b0);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Techies_ReactiveTazer) == 0x18a0);
     };
 };

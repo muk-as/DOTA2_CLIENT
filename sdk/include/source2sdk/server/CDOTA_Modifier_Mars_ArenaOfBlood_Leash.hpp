@@ -17,22 +17,22 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x18a8
+        // Size: 0x1898
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Mars_ArenaOfBlood_Leash : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float radius; // 0x1888            
-            float width; // 0x188c            
-            std::int32_t obscure_vision; // 0x1890            
-            Vector m_vOriginLoc; // 0x1894            
-            uint8_t _pad18a0[0x8];
+            float radius; // 0x1878            
+            float width; // 0x187c            
+            std::int32_t obscure_vision; // 0x1880            
+            Vector m_vOriginLoc; // 0x1884            
+            uint8_t _pad1890[0x8];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Mars_ArenaOfBlood_Leash because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Mars_ArenaOfBlood_Leash) == 0x18a8);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Mars_ArenaOfBlood_Leash) == 0x1898);
     };
 };

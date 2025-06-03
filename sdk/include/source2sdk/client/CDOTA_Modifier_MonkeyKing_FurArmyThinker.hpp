@@ -19,30 +19,30 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x18d0
+        // Size: 0x18c0
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_MonkeyKing_FurArmyThinker : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float m_fDuration; // 0x1888            
-            source2sdk::entity2::GameTime_t m_fTimeThinkerCreated; // 0x188c            
+            float m_fDuration; // 0x1878            
+            source2sdk::entity2::GameTime_t m_fTimeThinkerCreated; // 0x187c            
             // m_vTargetPositions has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<Vector> m_vTargetPositions;
-            char m_vTargetPositions[0x18]; // 0x1890            
-            Vector m_vInitialPos; // 0x18a8            
-            float first_radius; // 0x18b4            
-            std::int32_t num_first_soldiers; // 0x18b8            
-            float second_radius; // 0x18bc            
-            std::int32_t num_second_soldiers; // 0x18c0            
-            source2sdk::client::ParticleIndex_t m_nRingFXIndex; // 0x18c4            
-            float final_radius; // 0x18c8            
-            float leadership_time_buffer; // 0x18cc            
+            char m_vTargetPositions[0x18]; // 0x1880            
+            Vector m_vInitialPos; // 0x1898            
+            float first_radius; // 0x18a4            
+            std::int32_t num_first_soldiers; // 0x18a8            
+            float second_radius; // 0x18ac            
+            std::int32_t num_second_soldiers; // 0x18b0            
+            source2sdk::client::ParticleIndex_t m_nRingFXIndex; // 0x18b4            
+            float final_radius; // 0x18b8            
+            float leadership_time_buffer; // 0x18bc            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_MonkeyKing_FurArmyThinker because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_MonkeyKing_FurArmyThinker) == 0x18d0);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_MonkeyKing_FurArmyThinker) == 0x18c0);
     };
 };

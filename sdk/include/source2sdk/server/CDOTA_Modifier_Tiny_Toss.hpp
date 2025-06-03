@@ -24,7 +24,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x18d8
+        // Size: 0x18c8
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Tiny_Toss : public source2sdk::client::CDOTA_Buff
@@ -32,29 +32,29 @@ namespace source2sdk
         public:
             // m_hTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hTarget;
-            char m_hTarget[0x4]; // 0x1888            
-            float m_flPredictedTotalTime; // 0x188c            
-            Vector m_vStartPosition; // 0x1890            
-            float m_flCurrentTimeHoriz; // 0x189c            
-            float m_flCurrentTimeVert; // 0x18a0            
-            bool m_bHorizontalMotionInterrupted; // 0x18a4            
-            bool m_bDamageApplied; // 0x18a5            
-            bool m_bTargetTeleported; // 0x18a6            
-            uint8_t _pad18a7[0x1]; // 0x18a7
-            Vector m_vHorizontalVelocity; // 0x18a8            
-            Vector m_vLastKnownTargetPosition; // 0x18b4            
-            float m_flInitialVelocityZ; // 0x18c0            
-            bool m_bDone; // 0x18c4            
-            uint8_t _pad18c5[0x3]; // 0x18c5
-            float radius; // 0x18c8            
-            std::int32_t toss_damage; // 0x18cc            
-            std::int32_t bonus_land_damage_pct; // 0x18d0            
-            float land_debuff_duration; // 0x18d4            
+            char m_hTarget[0x4]; // 0x1878            
+            float m_flPredictedTotalTime; // 0x187c            
+            Vector m_vStartPosition; // 0x1880            
+            float m_flCurrentTimeHoriz; // 0x188c            
+            float m_flCurrentTimeVert; // 0x1890            
+            bool m_bHorizontalMotionInterrupted; // 0x1894            
+            bool m_bDamageApplied; // 0x1895            
+            bool m_bTargetTeleported; // 0x1896            
+            uint8_t _pad1897[0x1]; // 0x1897
+            Vector m_vHorizontalVelocity; // 0x1898            
+            Vector m_vLastKnownTargetPosition; // 0x18a4            
+            float m_flInitialVelocityZ; // 0x18b0            
+            bool m_bDone; // 0x18b4            
+            uint8_t _pad18b5[0x3]; // 0x18b5
+            float radius; // 0x18b8            
+            std::int32_t toss_damage; // 0x18bc            
+            std::int32_t bonus_land_damage_pct; // 0x18c0            
+            float land_debuff_duration; // 0x18c4            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Tiny_Toss because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Tiny_Toss) == 0x18d8);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Tiny_Toss) == 0x18c8);
     };
 };

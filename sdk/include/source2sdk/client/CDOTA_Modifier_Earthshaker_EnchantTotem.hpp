@@ -17,23 +17,23 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x18a0
+        // Size: 0x1890
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Earthshaker_EnchantTotem : public source2sdk::client::CDOTA_Buff
         {
         public:
-            std::int32_t bonus_attack_range; // 0x1888            
-            std::int32_t totem_damage_percentage; // 0x188c            
-            std::int32_t scepter_cleave_pct; // 0x1890            
-            float scepter_cleave_starting_width; // 0x1894            
-            float scepter_cleave_ending_width; // 0x1898            
-            float scepter_cleave_distance; // 0x189c            
+            std::int32_t bonus_attack_range; // 0x1878            
+            std::int32_t totem_damage_percentage; // 0x187c            
+            std::int32_t scepter_cleave_pct; // 0x1880            
+            float scepter_cleave_starting_width; // 0x1884            
+            float scepter_cleave_ending_width; // 0x1888            
+            float scepter_cleave_distance; // 0x188c            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Earthshaker_EnchantTotem because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Earthshaker_EnchantTotem) == 0x18a0);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Earthshaker_EnchantTotem) == 0x1890);
     };
 };

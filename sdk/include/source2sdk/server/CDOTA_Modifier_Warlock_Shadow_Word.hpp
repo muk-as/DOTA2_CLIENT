@@ -17,21 +17,21 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x18a8
+        // Size: 0x1898
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Warlock_Shadow_Word : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float tick_interval; // 0x1888            
-            float damage; // 0x188c            
-            std::int32_t shard_movement_speed_pct; // 0x1890            
-            uint8_t _pad1894[0x14];
+            float tick_interval; // 0x1878            
+            float damage; // 0x187c            
+            std::int32_t shard_movement_speed_pct; // 0x1880            
+            uint8_t _pad1884[0x14];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Warlock_Shadow_Word because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Warlock_Shadow_Word) == 0x18a8);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Warlock_Shadow_Word) == 0x1898);
     };
 };

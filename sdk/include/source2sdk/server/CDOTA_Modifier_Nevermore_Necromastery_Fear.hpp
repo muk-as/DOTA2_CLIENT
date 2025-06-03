@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1898
+        // Size: 0x1888
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Nevermore_Necromastery_Fear : public source2sdk::server::CDOTA_Modifier_Nevermore_Requiem_Fear
@@ -28,6 +28,6 @@ namespace source2sdk
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Nevermore_Necromastery_Fear) == 0x1898);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Nevermore_Necromastery_Fear) == 0x1888);
     };
 };

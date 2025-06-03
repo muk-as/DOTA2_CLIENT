@@ -17,19 +17,19 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1890
+        // Size: 0x1880
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Tiny_Rocksteady : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float attack_speed_to_damage; // 0x1888            
-            float max_attack_speed; // 0x188c            
+            float attack_speed_to_damage; // 0x1878            
+            float max_attack_speed; // 0x187c            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Tiny_Rocksteady because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Tiny_Rocksteady) == 0x1890);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Tiny_Rocksteady) == 0x1880);
     };
 };

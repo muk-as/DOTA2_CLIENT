@@ -24,7 +24,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1898
+        // Size: 0x1888
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Axe_BerserkersCall : public source2sdk::client::CDOTA_Buff
@@ -32,16 +32,16 @@ namespace source2sdk
         public:
             // m_hZombieTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hZombieTarget;
-            char m_hZombieTarget[0x4]; // 0x1888            
-            bool m_bDidSetAttackTarget; // 0x188c            
-            uint8_t _pad188d[0x3]; // 0x188d
-            std::int32_t bonus_attack_speed; // 0x1890            
-            uint8_t _pad1894[0x4];
+            char m_hZombieTarget[0x4]; // 0x1878            
+            bool m_bDidSetAttackTarget; // 0x187c            
+            uint8_t _pad187d[0x3]; // 0x187d
+            std::int32_t bonus_attack_speed; // 0x1880            
+            uint8_t _pad1884[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Axe_BerserkersCall because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Axe_BerserkersCall) == 0x1898);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Axe_BerserkersCall) == 0x1888);
     };
 };

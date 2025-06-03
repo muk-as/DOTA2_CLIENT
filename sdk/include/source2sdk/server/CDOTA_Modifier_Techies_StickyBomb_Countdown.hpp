@@ -24,21 +24,21 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1898
+        // Size: 0x1888
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Techies_StickyBomb_Countdown : public source2sdk::client::CDOTA_Buff
         {
         public:
-            Vector m_vLastLoc; // 0x1888            
+            Vector m_vLastLoc; // 0x1878            
             // m_hAttachTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hAttachTarget;
-            char m_hAttachTarget[0x4]; // 0x1894            
+            char m_hAttachTarget[0x4]; // 0x1884            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Techies_StickyBomb_Countdown because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Techies_StickyBomb_Countdown) == 0x1898);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Techies_StickyBomb_Countdown) == 0x1888);
     };
 };

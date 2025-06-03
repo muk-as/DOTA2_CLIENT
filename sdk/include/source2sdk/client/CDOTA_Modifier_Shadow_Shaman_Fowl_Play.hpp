@@ -17,19 +17,19 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1890
+        // Size: 0x1880
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Shadow_Shaman_Fowl_Play : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float hex_duration; // 0x1888            
-            float damage_reduction_duration; // 0x188c            
+            float hex_duration; // 0x1878            
+            float damage_reduction_duration; // 0x187c            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Shadow_Shaman_Fowl_Play because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Shadow_Shaman_Fowl_Play) == 0x1890);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Shadow_Shaman_Fowl_Play) == 0x1880);
     };
 };

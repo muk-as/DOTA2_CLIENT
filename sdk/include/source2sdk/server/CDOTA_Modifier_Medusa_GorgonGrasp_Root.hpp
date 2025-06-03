@@ -17,21 +17,21 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1898
+        // Size: 0x1888
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Medusa_GorgonGrasp_Root : public source2sdk::server::CDOTA_Modifier_Rooted
         {
         public:
-            float damage_pers; // 0x1888            
-            float damage_interval; // 0x188c            
-            float m_flTickDamage; // 0x1890            
-            uint8_t _pad1894[0x4];
+            float damage_pers; // 0x1878            
+            float damage_interval; // 0x187c            
+            float m_flTickDamage; // 0x1880            
+            uint8_t _pad1884[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Medusa_GorgonGrasp_Root because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Medusa_GorgonGrasp_Root) == 0x1898);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Medusa_GorgonGrasp_Root) == 0x1888);
     };
 };

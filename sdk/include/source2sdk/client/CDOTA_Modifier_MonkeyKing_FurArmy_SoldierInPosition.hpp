@@ -26,33 +26,33 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x18b8
+        // Size: 0x18a8
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_MonkeyKing_FurArmy_SoldierInPosition : public source2sdk::client::CDOTA_Buff
         {
         public:
-            Vector m_vTargetPos; // 0x1888            
+            Vector m_vTargetPos; // 0x1878            
             // m_hAttackTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hAttackTarget;
-            char m_hAttackTarget[0x4]; // 0x1894            
-            float attack_speed; // 0x1898            
-            float final_radius; // 0x189c            
-            std::int32_t outer_attack_buffer; // 0x18a0            
+            char m_hAttackTarget[0x4]; // 0x1884            
+            float attack_speed; // 0x1888            
+            float final_radius; // 0x188c            
+            std::int32_t outer_attack_buffer; // 0x1890            
             // m_hThinker has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hThinker;
-            char m_hThinker[0x4]; // 0x18a4            
-            bool m_bDisarmed; // 0x18a8            
-            uint8_t _pad18a9[0x3]; // 0x18a9
-            source2sdk::entity2::GameTime_t m_flNextAttackTime; // 0x18ac            
-            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x18b0            
-            bool m_bAutoSpawn; // 0x18b4            
-            uint8_t _pad18b5[0x3];
+            char m_hThinker[0x4]; // 0x1894            
+            bool m_bDisarmed; // 0x1898            
+            uint8_t _pad1899[0x3]; // 0x1899
+            source2sdk::entity2::GameTime_t m_flNextAttackTime; // 0x189c            
+            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x18a0            
+            bool m_bAutoSpawn; // 0x18a4            
+            uint8_t _pad18a5[0x3];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_MonkeyKing_FurArmy_SoldierInPosition because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_MonkeyKing_FurArmy_SoldierInPosition) == 0x18b8);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_MonkeyKing_FurArmy_SoldierInPosition) == 0x18a8);
     };
 };

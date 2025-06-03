@@ -18,26 +18,26 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x18a8
+        // Size: 0x1898
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_AghsFort_RestorativeFlower : public source2sdk::client::CDOTA_Buff
         {
         public:
-            std::int32_t radius; // 0x1888            
-            std::int32_t heal; // 0x188c            
-            std::int32_t vision_radius; // 0x1890            
-            float vision_duration; // 0x1894            
-            std::int32_t model_scale; // 0x1898            
-            bool bExploding; // 0x189c            
-            uint8_t _pad189d[0x3]; // 0x189d
-            float stun_duration; // 0x18a0            
-            source2sdk::client::ParticleIndex_t m_nFXAmbient; // 0x18a4            
+            std::int32_t radius; // 0x1878            
+            std::int32_t heal; // 0x187c            
+            std::int32_t vision_radius; // 0x1880            
+            float vision_duration; // 0x1884            
+            std::int32_t model_scale; // 0x1888            
+            bool bExploding; // 0x188c            
+            uint8_t _pad188d[0x3]; // 0x188d
+            float stun_duration; // 0x1890            
+            source2sdk::client::ParticleIndex_t m_nFXAmbient; // 0x1894            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_AghsFort_RestorativeFlower because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_AghsFort_RestorativeFlower) == 0x18a8);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_AghsFort_RestorativeFlower) == 0x1898);
     };
 };

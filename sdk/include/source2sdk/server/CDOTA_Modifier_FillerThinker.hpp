@@ -24,7 +24,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x18a8
+        // Size: 0x1898
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_FillerThinker : public source2sdk::client::CDOTA_Buff
@@ -32,15 +32,15 @@ namespace source2sdk
         public:
             // hCasterList has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<CHandle<source2sdk::server::CBaseEntity>> hCasterList;
-            char hCasterList[0x18]; // 0x1888            
-            bool bStarted; // 0x18a0            
-            uint8_t _pad18a1[0x3]; // 0x18a1
-            std::int32_t nCount; // 0x18a4            
+            char hCasterList[0x18]; // 0x1878            
+            bool bStarted; // 0x1890            
+            uint8_t _pad1891[0x3]; // 0x1891
+            std::int32_t nCount; // 0x1894            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_FillerThinker because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_FillerThinker) == 0x18a8);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_FillerThinker) == 0x1898);
     };
 };

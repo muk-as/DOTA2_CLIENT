@@ -17,19 +17,19 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1890
+        // Size: 0x1880
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Item_HellbearTotem : public source2sdk::client::CDOTA_Buff_Item
         {
         public:
-            float heal_increase; // 0x1888            
-            float vision_bonus; // 0x188c            
+            float heal_increase; // 0x1878            
+            float vision_bonus; // 0x187c            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Item_HellbearTotem because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Item_HellbearTotem) == 0x1890);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Item_HellbearTotem) == 0x1880);
     };
 };

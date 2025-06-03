@@ -17,20 +17,20 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1890
+        // Size: 0x1880
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Kez_Katana_Shard_Debuff : public source2sdk::client::CDOTA_Buff
         {
         public:
-            std::int32_t armor_piercing_pct; // 0x1888            
-            bool m_bBackstabBonus; // 0x188c            
-            uint8_t _pad188d[0x3];
+            std::int32_t armor_piercing_pct; // 0x1878            
+            bool m_bBackstabBonus; // 0x187c            
+            uint8_t _pad187d[0x3];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Kez_Katana_Shard_Debuff because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Kez_Katana_Shard_Debuff) == 0x1890);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Kez_Katana_Shard_Debuff) == 0x1880);
     };
 };

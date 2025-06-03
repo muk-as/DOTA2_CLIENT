@@ -17,22 +17,22 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x18a8
+        // Size: 0x1898
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_FacelessVoid_TimeZone_Projectile_Effect : public source2sdk::client::CDOTA_Buff
         {
         public:
-            std::int32_t bonus_projectile_speed; // 0x1888            
-            float flRadius; // 0x188c            
-            Vector2D vCenter; // 0x1890            
-            Vector2D vLeft; // 0x1898            
-            Vector2D vForward; // 0x18a0            
+            std::int32_t bonus_projectile_speed; // 0x1878            
+            float flRadius; // 0x187c            
+            Vector2D vCenter; // 0x1880            
+            Vector2D vLeft; // 0x1888            
+            Vector2D vForward; // 0x1890            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_FacelessVoid_TimeZone_Projectile_Effect because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_FacelessVoid_TimeZone_Projectile_Effect) == 0x18a8);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_FacelessVoid_TimeZone_Projectile_Effect) == 0x1898);
     };
 };

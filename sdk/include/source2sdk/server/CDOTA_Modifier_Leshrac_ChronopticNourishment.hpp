@@ -17,19 +17,19 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1890
+        // Size: 0x1880
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Leshrac_ChronopticNourishment : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float mana_pct_per_hit; // 0x1888            
-            std::int32_t creep_penalty_reduction_pct; // 0x188c            
+            float mana_pct_per_hit; // 0x1878            
+            std::int32_t creep_penalty_reduction_pct; // 0x187c            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Leshrac_ChronopticNourishment because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Leshrac_ChronopticNourishment) == 0x1890);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Leshrac_ChronopticNourishment) == 0x1880);
     };
 };

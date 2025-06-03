@@ -17,22 +17,22 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x18a0
+        // Size: 0x1890
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_DragonKnight_SplashAttack : public source2sdk::client::CDOTA_Buff
         {
         public:
-            uint8_t _pad1888[0x8]; // 0x1888
-            float magic_damage; // 0x1890            
-            std::int32_t bonus_aoe; // 0x1894            
-            float ranged_splash_damage_pct; // 0x1898            
-            uint8_t _pad189c[0x4];
+            uint8_t _pad1878[0x8]; // 0x1878
+            float magic_damage; // 0x1880            
+            std::int32_t bonus_aoe; // 0x1884            
+            float ranged_splash_damage_pct; // 0x1888            
+            uint8_t _pad188c[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_DragonKnight_SplashAttack because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_DragonKnight_SplashAttack) == 0x18a0);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_DragonKnight_SplashAttack) == 0x1890);
     };
 };

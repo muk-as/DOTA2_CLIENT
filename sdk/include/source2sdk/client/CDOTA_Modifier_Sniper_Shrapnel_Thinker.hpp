@@ -17,20 +17,20 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x18a8
+        // Size: 0x1898
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Sniper_Shrapnel_Thinker : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float radius; // 0x1888            
-            bool m_bExploded; // 0x188c            
-            uint8_t _pad188d[0x1b];
+            float radius; // 0x1878            
+            bool m_bExploded; // 0x187c            
+            uint8_t _pad187d[0x1b];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Sniper_Shrapnel_Thinker because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Sniper_Shrapnel_Thinker) == 0x18a8);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Sniper_Shrapnel_Thinker) == 0x1898);
     };
 };

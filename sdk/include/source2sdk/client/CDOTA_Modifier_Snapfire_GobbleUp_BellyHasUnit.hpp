@@ -25,7 +25,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1898
+        // Size: 0x1888
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Snapfire_GobbleUp_BellyHasUnit : public source2sdk::client::CDOTA_Buff
@@ -33,16 +33,16 @@ namespace source2sdk
         public:
             // m_hGobbledUnit has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hGobbledUnit;
-            char m_hGobbledUnit[0x4]; // 0x1888            
-            source2sdk::client::PlayerID_t m_nOriginalControllingUnit; // 0x188c            
-            bool m_bUnitWasLaunched; // 0x1890            
-            uint8_t _pad1891[0x3]; // 0x1891
-            float max_time_in_belly; // 0x1894            
+            char m_hGobbledUnit[0x4]; // 0x1878            
+            source2sdk::client::PlayerID_t m_nOriginalControllingUnit; // 0x187c            
+            bool m_bUnitWasLaunched; // 0x1880            
+            uint8_t _pad1881[0x3]; // 0x1881
+            float max_time_in_belly; // 0x1884            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Snapfire_GobbleUp_BellyHasUnit because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Snapfire_GobbleUp_BellyHasUnit) == 0x1898);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Snapfire_GobbleUp_BellyHasUnit) == 0x1888);
     };
 };

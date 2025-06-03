@@ -17,22 +17,22 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x18c0
+        // Size: 0x18b0
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Mars_ArenaOfBlood_Thinker : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float radius; // 0x1888            
-            float formation_time; // 0x188c            
-            float m_flInitialZ; // 0x1890            
-            float m_flFinalZ; // 0x1894            
-            uint8_t _pad1898[0x28];
+            float radius; // 0x1878            
+            float formation_time; // 0x187c            
+            float m_flInitialZ; // 0x1880            
+            float m_flFinalZ; // 0x1884            
+            uint8_t _pad1888[0x28];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Mars_ArenaOfBlood_Thinker because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Mars_ArenaOfBlood_Thinker) == 0x18c0);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Mars_ArenaOfBlood_Thinker) == 0x18b0);
     };
 };

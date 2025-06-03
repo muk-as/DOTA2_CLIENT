@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1890
+        // Size: 0x1880
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Item_BootsOfTravel_2 : public source2sdk::client::CDOTA_Modifier_Item_BootsOfTravel
@@ -28,6 +28,6 @@ namespace source2sdk
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Item_BootsOfTravel_2) == 0x1890);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Item_BootsOfTravel_2) == 0x1880);
     };
 };

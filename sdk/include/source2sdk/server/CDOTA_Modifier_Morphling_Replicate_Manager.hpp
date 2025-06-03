@@ -17,18 +17,18 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x18b0
+        // Size: 0x18a0
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Morphling_Replicate_Manager : public source2sdk::client::CDOTA_Buff
         {
         public:
-            uint8_t _pad1888[0x28];
+            uint8_t _pad1878[0x28];
             // No schema binary for binding
         };
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Morphling_Replicate_Manager) == 0x18b0);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Morphling_Replicate_Manager) == 0x18a0);
     };
 };

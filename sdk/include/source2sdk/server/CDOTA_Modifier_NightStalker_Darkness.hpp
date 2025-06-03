@@ -18,23 +18,23 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x18a0
+        // Size: 0x1890
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_NightStalker_Darkness : public source2sdk::client::CDOTA_Buff
         {
         public:
-            std::int32_t bonus_damage; // 0x1888            
-            std::int32_t status_resistance; // 0x188c            
-            std::int32_t hp_regen; // 0x1890            
-            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x1894            
-            bool m_bIsDay; // 0x1898            
-            uint8_t _pad1899[0x7];
+            std::int32_t bonus_damage; // 0x1878            
+            std::int32_t status_resistance; // 0x187c            
+            std::int32_t hp_regen; // 0x1880            
+            source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x1884            
+            bool m_bIsDay; // 0x1888            
+            uint8_t _pad1889[0x7];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_NightStalker_Darkness because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_NightStalker_Darkness) == 0x18a0);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_NightStalker_Darkness) == 0x1890);
     };
 };

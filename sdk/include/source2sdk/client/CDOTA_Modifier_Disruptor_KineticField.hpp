@@ -17,24 +17,24 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x18b8
+        // Size: 0x18a8
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Disruptor_KineticField : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float radius; // 0x1888            
-            Vector m_vOriginLoc; // 0x188c            
-            bool m_bTruesight; // 0x1898            
-            uint8_t _pad1899[0x3]; // 0x1899
-            float damage_per_second; // 0x189c            
-            Vector m_vOrigin; // 0x18a0            
-            Vector m_vWallRight; // 0x18ac            
+            float radius; // 0x1878            
+            Vector m_vOriginLoc; // 0x187c            
+            bool m_bTruesight; // 0x1888            
+            uint8_t _pad1889[0x3]; // 0x1889
+            float damage_per_second; // 0x188c            
+            Vector m_vOrigin; // 0x1890            
+            Vector m_vWallRight; // 0x189c            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Disruptor_KineticField because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Disruptor_KineticField) == 0x18b8);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Disruptor_KineticField) == 0x18a8);
     };
 };

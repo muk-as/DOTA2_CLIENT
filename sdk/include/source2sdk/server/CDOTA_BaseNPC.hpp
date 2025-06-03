@@ -395,8 +395,7 @@ namespace source2sdk
             source2sdk::entity2::GameTime_t m_vLastVisibilityChange[15]; // 0xed8            
             uint8_t _pad0f14[0x1c]; // 0xf14
             bool m_bFirstSpawn; // 0xf30            
-            bool m_bForceTransmit; // 0xf31            
-            uint8_t _pad0f32[0x2]; // 0xf32
+            uint8_t _pad0f31[0x3]; // 0xf31
             // m_hAttackTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::server::CBaseEntity> m_hAttackTarget;
             char m_hAttackTarget[0x4]; // 0xf34            

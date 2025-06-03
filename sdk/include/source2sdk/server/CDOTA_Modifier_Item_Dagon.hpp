@@ -17,23 +17,23 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x18a0
+        // Size: 0x1890
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Item_Dagon : public source2sdk::server::CDOTA_Buff_Item
         {
         public:
-            std::int32_t bonus_int; // 0x1888            
-            std::int32_t bonus_str; // 0x188c            
-            std::int32_t bonus_agi; // 0x1890            
-            float passive_spell_lifesteal; // 0x1894            
-            float dagon_spell_lifesteal; // 0x1898            
-            uint8_t _pad189c[0x4];
+            std::int32_t bonus_int; // 0x1878            
+            std::int32_t bonus_str; // 0x187c            
+            std::int32_t bonus_agi; // 0x1880            
+            float passive_spell_lifesteal; // 0x1884            
+            float dagon_spell_lifesteal; // 0x1888            
+            uint8_t _pad188c[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Item_Dagon because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Item_Dagon) == 0x18a0);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Item_Dagon) == 0x1890);
     };
 };

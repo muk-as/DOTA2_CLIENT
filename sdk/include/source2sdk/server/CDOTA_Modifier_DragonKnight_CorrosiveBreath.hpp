@@ -17,20 +17,20 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1898
+        // Size: 0x1888
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_DragonKnight_CorrosiveBreath : public source2sdk::client::CDOTA_Buff
         {
         public:
-            uint8_t _pad1888[0x8]; // 0x1888
-            float corrosive_breath_duration; // 0x1890            
-            uint8_t _pad1894[0x4];
+            uint8_t _pad1878[0x8]; // 0x1878
+            float corrosive_breath_duration; // 0x1880            
+            uint8_t _pad1884[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_DragonKnight_CorrosiveBreath because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_DragonKnight_CorrosiveBreath) == 0x1898);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_DragonKnight_CorrosiveBreath) == 0x1888);
     };
 };

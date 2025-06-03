@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1890
+        // Size: 0x1880
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_CallOfTheWild_Boar_Poison : public source2sdk::client::CDOTA_Modifier_CallOfTheWild_Boar_PoisonBase
@@ -28,6 +28,6 @@ namespace source2sdk
         #pragma pack(pop)
         
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_CallOfTheWild_Boar_Poison) == 0x1890);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_CallOfTheWild_Boar_Poison) == 0x1880);
     };
 };

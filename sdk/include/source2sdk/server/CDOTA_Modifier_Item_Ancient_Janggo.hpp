@@ -17,21 +17,21 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1898
+        // Size: 0x1888
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Item_Ancient_Janggo : public source2sdk::server::CDOTA_Buff_Item
         {
         public:
-            float radius; // 0x1888            
-            std::int32_t bonus_str; // 0x188c            
-            std::int32_t bonus_int; // 0x1890            
-            uint8_t _pad1894[0x4];
+            float radius; // 0x1878            
+            std::int32_t bonus_str; // 0x187c            
+            std::int32_t bonus_int; // 0x1880            
+            uint8_t _pad1884[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Item_Ancient_Janggo because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Item_Ancient_Janggo) == 0x1898);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_Item_Ancient_Janggo) == 0x1888);
     };
 };

@@ -17,20 +17,20 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1890
+        // Size: 0x1880
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_FacelessVoid_Chronosphere_SelfBuff : public source2sdk::client::CDOTA_Buff
         {
         public:
-            float radius; // 0x1888            
-            bool square; // 0x188c            
-            uint8_t _pad188d[0x3];
+            float radius; // 0x1878            
+            bool square; // 0x187c            
+            uint8_t _pad187d[0x3];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_FacelessVoid_Chronosphere_SelfBuff because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_FacelessVoid_Chronosphere_SelfBuff) == 0x1890);
+        static_assert(sizeof(source2sdk::server::CDOTA_Modifier_FacelessVoid_Chronosphere_SelfBuff) == 0x1880);
     };
 };
