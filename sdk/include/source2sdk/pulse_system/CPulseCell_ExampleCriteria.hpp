@@ -24,7 +24,7 @@ namespace source2sdk
         // static metadata: MGetKV3ClassDefaults
         // static metadata: MCellForDomain "BaseDomain"
         // static metadata: MPulseCellMethodBindings
-        // static metadata: MPulseCellOutflowHookInfo "@En"û"
+        // static metadata: MPulseCellOutflowHookInfo "@Em"û"
         // static metadata: MPropertyFriendlyName "Example Criteria"
         // static metadata: MPropertyDescription "An example of requirement data with ports"
         #pragma pack(push, 1)

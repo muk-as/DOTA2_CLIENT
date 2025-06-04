@@ -25,7 +25,7 @@ namespace source2sdk
         // static metadata: MGetKV3ClassDefaults
         // static metadata: MCellForDomain "TestDomain"
         // static metadata: MPulseCellMethodBindings
-        // static metadata: MPulseCellOutflowHookInfo "HŠÅ&û"
+        // static metadata: MPulseCellOutflowHookInfo "¼Ä&û"
         #pragma pack(push, 1)
         class CPulseCell_Test_MultiOutflow_WithParams : public source2sdk::pulse_runtime_lib::CPulseCell_BaseFlow
         {

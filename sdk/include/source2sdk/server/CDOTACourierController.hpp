@@ -47,7 +47,6 @@ namespace source2sdk
         // static metadata: MNetworkVarNames "DOTA_SHOP_TYPE m_eFSMShop"
         // static metadata: MNetworkVarNames "EHANDLE m_hFSMUnit"
         // static metadata: MNetworkVarNames "ECourierState m_eFSMState"
-        // static metadata: MNetworkVarNames "bool m_bFSMTransferAfter"
         // static metadata: MNetworkVarNames "bool m_bFSMStashAfter"
         // static metadata: MNetworkVarNames "bool m_bManualRequest"
         #pragma pack(push, 1)
@@ -80,15 +79,13 @@ namespace source2sdk
             // metadata: MNetworkEnable
             source2sdk::client::ECourierState m_eFSMState; // 0x20            
             // metadata: MNetworkEnable
-            bool m_bFSMTransferAfter; // 0x24            
+            bool m_bFSMStashAfter; // 0x24            
             // metadata: MNetworkEnable
-            bool m_bFSMStashAfter; // 0x25            
-            // metadata: MNetworkEnable
-            bool m_bManualRequest; // 0x26            
-            bool m_bIgnoreNextPlayerInteraction; // 0x27            
-            bool m_bWasAlive; // 0x28            
-            bool m_bOwnerWasAlive; // 0x29            
-            uint8_t _pad002a[0x6]; // 0x2a
+            bool m_bManualRequest; // 0x25            
+            bool m_bIgnoreNextPlayerInteraction; // 0x26            
+            bool m_bWasAlive; // 0x27            
+            bool m_bTargetWasAlive; // 0x28            
+            uint8_t _pad0029[0x7]; // 0x29
             source2sdk::server::CountdownTimer m_TransitionTimer; // 0x30            
             source2sdk::server::CountdownTimer m_ManualTimer; // 0x48            
             float m_flCourier_wait_time_item_purchase; // 0x60            
@@ -118,12 +115,11 @@ namespace source2sdk
         static_assert(offsetof(source2sdk::server::CDOTACourierController, m_eFSMShop) == 0x18);
         static_assert(offsetof(source2sdk::server::CDOTACourierController, m_hFSMUnit) == 0x1c);
         static_assert(offsetof(source2sdk::server::CDOTACourierController, m_eFSMState) == 0x20);
-        static_assert(offsetof(source2sdk::server::CDOTACourierController, m_bFSMTransferAfter) == 0x24);
-        static_assert(offsetof(source2sdk::server::CDOTACourierController, m_bFSMStashAfter) == 0x25);
-        static_assert(offsetof(source2sdk::server::CDOTACourierController, m_bManualRequest) == 0x26);
-        static_assert(offsetof(source2sdk::server::CDOTACourierController, m_bIgnoreNextPlayerInteraction) == 0x27);
-        static_assert(offsetof(source2sdk::server::CDOTACourierController, m_bWasAlive) == 0x28);
-        static_assert(offsetof(source2sdk::server::CDOTACourierController, m_bOwnerWasAlive) == 0x29);
+        static_assert(offsetof(source2sdk::server::CDOTACourierController, m_bFSMStashAfter) == 0x24);
+        static_assert(offsetof(source2sdk::server::CDOTACourierController, m_bManualRequest) == 0x25);
+        static_assert(offsetof(source2sdk::server::CDOTACourierController, m_bIgnoreNextPlayerInteraction) == 0x26);
+        static_assert(offsetof(source2sdk::server::CDOTACourierController, m_bWasAlive) == 0x27);
+        static_assert(offsetof(source2sdk::server::CDOTACourierController, m_bTargetWasAlive) == 0x28);
         static_assert(offsetof(source2sdk::server::CDOTACourierController, m_TransitionTimer) == 0x30);
         static_assert(offsetof(source2sdk::server::CDOTACourierController, m_ManualTimer) == 0x48);
         static_assert(offsetof(source2sdk::server::CDOTACourierController, m_flCourier_wait_time_item_purchase) == 0x60);

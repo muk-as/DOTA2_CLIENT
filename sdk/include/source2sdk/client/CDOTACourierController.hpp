@@ -47,7 +47,6 @@ namespace source2sdk
         // static metadata: MNetworkVarNames "DOTA_SHOP_TYPE m_eFSMShop"
         // static metadata: MNetworkVarNames "EHANDLE m_hFSMUnit"
         // static metadata: MNetworkVarNames "ECourierState m_eFSMState"
-        // static metadata: MNetworkVarNames "bool m_bFSMTransferAfter"
         // static metadata: MNetworkVarNames "bool m_bFSMStashAfter"
         // static metadata: MNetworkVarNames "bool m_bManualRequest"
         #pragma pack(push, 1)
@@ -80,12 +79,10 @@ namespace source2sdk
             // metadata: MNetworkEnable
             source2sdk::client::ECourierState m_eFSMState; // 0x20            
             // metadata: MNetworkEnable
-            bool m_bFSMTransferAfter; // 0x24            
+            bool m_bFSMStashAfter; // 0x24            
             // metadata: MNetworkEnable
-            bool m_bFSMStashAfter; // 0x25            
-            // metadata: MNetworkEnable
-            bool m_bManualRequest; // 0x26            
-            uint8_t _pad0027[0x1];
+            bool m_bManualRequest; // 0x25            
+            uint8_t _pad0026[0x2];
         };
         #pragma pack(pop)
         
@@ -98,9 +95,8 @@ namespace source2sdk
         static_assert(offsetof(source2sdk::client::CDOTACourierController, m_eFSMShop) == 0x18);
         static_assert(offsetof(source2sdk::client::CDOTACourierController, m_hFSMUnit) == 0x1c);
         static_assert(offsetof(source2sdk::client::CDOTACourierController, m_eFSMState) == 0x20);
-        static_assert(offsetof(source2sdk::client::CDOTACourierController, m_bFSMTransferAfter) == 0x24);
-        static_assert(offsetof(source2sdk::client::CDOTACourierController, m_bFSMStashAfter) == 0x25);
-        static_assert(offsetof(source2sdk::client::CDOTACourierController, m_bManualRequest) == 0x26);
+        static_assert(offsetof(source2sdk::client::CDOTACourierController, m_bFSMStashAfter) == 0x24);
+        static_assert(offsetof(source2sdk::client::CDOTACourierController, m_bManualRequest) == 0x25);
         
         static_assert(sizeof(source2sdk::client::CDOTACourierController) == 0x28);
     };
