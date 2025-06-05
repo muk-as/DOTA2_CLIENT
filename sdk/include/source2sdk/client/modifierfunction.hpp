@@ -712,7 +712,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_HP_REGEN_MULTIPLIER_PRE_AMPLIFICATION = 0x159,
             // MScriptDescription "GetModifierHeroFacetOverride"
             MODIFIER_PROPERTY_HEROFACET_OVERRIDE = 0x15a,
-            // MScriptDescription "èØu'û OnTreeCutDown"
+            // MScriptDescription "Ùu'û OnTreeCutDown"
             MODIFIER_EVENT_ON_TREE_CUT_DOWN = 0x15b,
             // MScriptDescription "MinAttributeLevel OnCleaveAttackLanded"
             MODIFIER_EVENT_ON_CLEAVE_ATTACK_LANDED = 0x15c,
