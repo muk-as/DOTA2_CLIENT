@@ -28,11 +28,10 @@ namespace source2sdk
             float m_flOffset; // 0x187c            
             QAngle m_vStartAngles; // 0x1880            
             Vector m_vStartLocation; // 0x188c            
-            float animation_rate; // 0x1898            
-            bool m_bInterrupted; // 0x189c            
-            bool m_bHasBeenDestroyed; // 0x189d            
-            bool m_bIsHighestMeepo; // 0x189e            
-            uint8_t _pad189f[0x1];
+            bool m_bInterrupted; // 0x1898            
+            bool m_bHasBeenDestroyed; // 0x1899            
+            bool m_bIsHighestMeepo; // 0x189a            
+            uint8_t _pad189b[0x5];
         };
         #pragma pack(pop)
         
