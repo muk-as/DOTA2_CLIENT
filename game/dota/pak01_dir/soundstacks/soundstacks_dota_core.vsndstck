@@ -880,21 +880,6 @@
 						data_type = "float"
 						value = "0"
 					}
-					hrtf_enabled = 
-					{
-						data_type = "float"
-						value = "0.000000"
-					}
-					voicegraph = 
-					{
-						data_type = "string"
-						value = "dota.hrtf_basic"
-					}
-					voicegraph_track = 
-					{
-						data_type = "string"
-						value = "track_01"
-					}
 				}
 			},
 			
@@ -1301,42 +1286,6 @@
 			},
 			
 			{
-				name = "global_hrtf_enabled"
-				operator = "convar_get"
-				convar = "dota_enable_spatial_audio"
-			},
-			
-			{
-				name = "updated_hrtf_enabled"
-				operator = "math_float"
-				apply = "mult"
-				input1 = "@global_hrtf_enabled.output"
-				input2 = "@public.hrtf_enabled"
-			},
-			
-			{
-				name = "send_voicegraph_hrtf_enabled"
-				input_execute = "1"
-				operator = "vmix_voicegraph_input"
-				input_name = "HRTF Enabled"
-				input = "@updated_hrtf_enabled.output"
-			},
-			
-			{
-				name = "global_hrtf_mix"
-				operator = "convar_get"
-				convar = "dota_spatial_audio_mix"
-			},
-			
-			{
-				name = "send_voicegraph_hrtf_mix"
-				input_execute = "1"
-				operator = "vmix_voicegraph_input"
-				input_name = "HRTF Mix"
-				input = "@global_hrtf_mix.output"
-			},
-			
-			{
 				name = "start_vsnd"
 				operator = "vmix_voice_start"
 				input_vsnd1 = "@get_vsnd.output"
@@ -1648,7 +1597,7 @@
 						data_type = "float"
 						value = "100.000000"
 					}
-					hrtf_enabled = 
+					hrtf_on = 
 					{
 						data_type = "float"
 						value = "0.000000"
@@ -1990,7 +1939,35 @@
 			},
 			
 			{
-				name = "speakers_spatialize"
+				name = "global_hrtf_on"
+				operator = "convar_get"
+				convar = "dota_enable_spatial_audio"
+			},
+			
+			{
+				name = "updated_hrtf_on"
+				operator = "math_float"
+				apply = "mult"
+				input1 = "@global_hrtf_on.output"
+				input2 = "@public.hrtf_on"
+			},
+			
+			{
+				name = "updated_hrtf_off"
+				operator = "math_float"
+				apply = "invert"
+				input1 = "@updated_hrtf_on.output"
+			},
+			
+			{
+				name = "global_hrtf_mix"
+				operator = "convar_get"
+				convar = "dota_spatial_audio_mix"
+			},
+			
+			{
+				name = "speakers_spatialize_hrtf_off"
+				input_execute = "@updated_hrtf_off.output"
 				operator = "calc_spatialize_speakers"
 				input_radius = "300"
 				input_master_volume = "@volume_accumulate.output"
@@ -1999,6 +1976,44 @@
 				input_listener_position = "@globals.output_listener_position"
 				input_listener_left = "@globals.output_listener_left"
 				input_rear_stereo_scale = "1.000000"
+			},
+			
+			{
+				name = "speakers_spatialize_hrtf_on"
+				input_execute = "@updated_hrtf_on.output"
+				operator = "calc_spatialize_speakers_hrtf"
+				input_listener_angles = "@globals.output_listener_angles"
+				input_hrtf_on = "@updated_hrtf_on.output"
+				input_hrtf_mix = "@global_hrtf_mix.output"
+				input_distance = "@distance_to_source.output"
+				input_source_position = "@get_entity_info.output_position"
+				input_listener_position = "@globals.output_listener_position"
+				input_listener_left = "@globals.output_listener_left"
+				input_listener_forward = "@globals.output_listener_forward"
+				input_listener_up = "@globals.output_listener_up"
+			},
+			
+			{
+				name = "volume_accumulate_fan"
+				operator = "util_float_to_speakers"
+				input = "@volume_accumulate.output"
+			},
+			
+			{
+				name = "speakers_scaled"
+				operator = "math_speakers"
+				apply = "mult"
+				input1 = "@volume_accumulate_fan.output"
+				input2 = "@speakers_spatialize_hrtf_on.output"
+			},
+			
+			{
+				name = "speakers_spatialize"
+				input_execute = "1"
+				operator = "ctrl_switch_speakers"
+				input_switch = "@updated_hrtf_on.output"
+				input1 = "@speakers_spatialize_hrtf_off.output"
+				input2 = "@speakers_scaled.output"
 			},
 			
 			{
@@ -2034,31 +2049,11 @@
 			},
 			
 			{
-				name = "global_hrtf_enabled"
-				operator = "convar_get"
-				convar = "dota_enable_spatial_audio"
-			},
-			
-			{
-				name = "updated_hrtf_enabled"
-				operator = "math_float"
-				apply = "mult"
-				input1 = "@global_hrtf_enabled.output"
-				input2 = "@public.hrtf_enabled"
-			},
-			
-			{
 				name = "send_voicegraph_hrtf_enabled"
 				input_execute = "1"
 				operator = "vmix_voicegraph_input"
-				input_name = "HRTF Enabled"
-				input = "@updated_hrtf_enabled.output"
-			},
-			
-			{
-				name = "global_hrtf_mix"
-				operator = "convar_get"
-				convar = "dota_spatial_audio_mix"
+				input_name = "hrtf_on"
+				input = "@updated_hrtf_on.output"
 			},
 			
 			{
@@ -2070,11 +2065,18 @@
 			},
 			
 			{
+				name = "set_builtins"
+				input_execute = "@updated_hrtf_on.output"
+				operator = "sos_set_builtins"
+				input_voicegraph = "@public.voicegraph"
+			},
+			
+			{
 				name = "start_vsnd"
+				input_execute = "1"
 				operator = "vmix_voice_start"
 				input_vsnd1 = "@get_vsnd.output"
 				execute_once = "false"
-				input_execute = "1.000000"
 				input_start = "@stop_time_and_unstopped.output"
 				input_speaker_volumes = "@speakers_spatialize.output"
 				input_pitch = "@pitch_random.output"
@@ -2307,21 +2309,6 @@
 					{
 						data_type = "float"
 						value = "0"
-					}
-					hrtf_enabled = 
-					{
-						data_type = "float"
-						value = "1.000000"
-					}
-					voicegraph = 
-					{
-						data_type = "string"
-						value = "dota.hrtf_basic"
-					}
-					voicegraph_track = 
-					{
-						data_type = "string"
-						value = "track_01"
 					}
 				}
 			},
@@ -2579,42 +2566,6 @@
 				input_listener_position = "@globals.output_listener_position"
 				input_listener_left = "@globals.output_listener_left"
 				input_rear_stereo_scale = "1.000000"
-			},
-			
-			{
-				name = "global_hrtf_enabled"
-				operator = "convar_get"
-				convar = "dota_enable_spatial_audio"
-			},
-			
-			{
-				name = "updated_hrtf_enabled"
-				operator = "math_float"
-				apply = "mult"
-				input1 = "@global_hrtf_enabled.output"
-				input2 = "@public.hrtf_enabled"
-			},
-			
-			{
-				name = "send_voicegraph_hrtf_enabled"
-				input_execute = "1"
-				operator = "vmix_voicegraph_input"
-				input_name = "HRTF Enabled"
-				input = "@updated_hrtf_enabled.output"
-			},
-			
-			{
-				name = "global_hrtf_mix"
-				operator = "convar_get"
-				convar = "dota_spatial_audio_mix"
-			},
-			
-			{
-				name = "send_voicegraph_hrtf_mix"
-				input_execute = "1"
-				operator = "vmix_voicegraph_input"
-				input_name = "HRTF Mix"
-				input = "@global_hrtf_mix.output"
 			},
 			
 			{

@@ -33,9 +33,12 @@ namespace source2sdk
             // m_hStashOwner has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hStashOwner;
             char m_hStashOwner[0x4]; // 0x1878            
-            Vector m_vLocation; // 0x187c            
-            bool m_bTransferAfterTake; // 0x1888            
-            uint8_t _pad1889[0x7];
+            // m_hTarget has a template type with potentially unknown template parameters. You can try uncommenting the field below.
+            // CHandle<source2sdk::client::C_BaseEntity> m_hTarget;
+            char m_hTarget[0x4]; // 0x187c            
+            Vector m_vLocation; // 0x1880            
+            bool m_bTransferAfterTake; // 0x188c            
+            uint8_t _pad188d[0x3];
         };
         #pragma pack(pop)
         
