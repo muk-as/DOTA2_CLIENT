@@ -167,6 +167,7 @@
 							<Panel class="SettingsSectionColumn">
 								<DOTASettingsKeyBinder text="#dota_settings_grabstashitems" bind="GrabStashItems" onmouseover="UIShowTextTooltipStyled( #DOTA_Hotkeys_Tooltip_GrabStashItems, OptionsTooltip)" onmouseout="UIHideTextTooltip()" />
 								<DOTASettingsKeyBinder text="#dota_settings_openshop" bind="ShopToggle" onmouseover="UIShowTextTooltipStyled( #DOTA_Hotkeys_Tooltip_ShopToggle, OptionsTooltip)" onmouseout="UIHideTextTooltip()" />
+								<DOTASettingsKeyBinder text="#dota_settings_togglebuybackprotection" bind="ToggleBuybackProtection" new-setting-index="8" onmouseover="UIShowTextTooltipStyled( #DOTA_Hotkeys_Tooltip_ToggleBuybackProtection, OptionsTooltip)" onmouseout="UIHideTextTooltip()" />
 							</Panel>
 						</Panel>
 					</Panel>
@@ -577,7 +578,7 @@
 								<Panel class="HealthbarsPreviewContainer">
 									<Panel class="HealthbarsPreviewLabels">
 										<Label class="LabelSmall" text="#DOTA_PostGame_You" />
-										<Label class="LabelSmall" text="#DOTA_ChatTarget_GameAllies" />
+										<Label class="LabelSmall" text="#dota_settings_healthbar_allies" />
 									</Panel>
 									<Panel class="HealthbarPreview You">
 										<Panel id="HealthbarStatus">
@@ -689,6 +690,9 @@
 					<Panel class="SettingsSectionTitleContainer LeftRightFlow">
 						<Image class="SettingsSectionTitleIcon" texturewidth="48px" textureheight="48px" scaling="stretch-to-fit-preserve-aspect" src="s2r://panorama/images/control_icons/24px/display.vsvg" />
 						<Label class="SettingsSectionTitle" text="#dota_settings_video" />
+						<Button class="ResetDefaultsButton ButtonPrimary" onactivate="DOTASetVideoDefaults()">
+							<Label text="#dota_settings_pingwheel_defaults" />
+						</Button>
 					</Panel>
 					<Panel class="SettingsSubsectionContainer" subsection="#dota_settings_displaysection">
 						<Label class="SettingsSectionSubtitle" text="#dota_settings_displaysection" />
@@ -748,10 +752,6 @@
 								<Panel id="BottomVideoButtonsPanel" class="LeftRightFlow">
 									<Button id="ApplyResolutionButton" class="ButtonPrimary" onactivate="DOTAApplyResolutionChoice()">
 										<Label text="#dota_settings_apply" />
-									</Button>
-									<Panel style="width: 12px;" />
-									<Button onactivate="DOTASetVideoDefaults()" id="VideoDefaultsButton" class="ButtonPrimary">
-										<Label text="#dota_settings_videodefaults" />
 									</Button>
 								</Panel>
 							</Panel>
