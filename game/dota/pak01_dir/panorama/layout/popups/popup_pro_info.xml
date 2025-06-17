@@ -7,12 +7,30 @@
 	</styles>
 	<PopupProInfo class="PopupPanel Hidden" popupbackground="dim" oncancel="UIPopupButtonClicked()">
 		<Panel id="ProInfo">
+			<Panel id="ProPlayerAgreementOverlay">
+				<Label class="ProInfoTitle" text="#dota_profile_oi_register_title" />
+				<Label class="ProInfoTitleDetails" text="#dota_profile_oi_register_title_details" />
+				<Label class="ProInfoHeader" text="#dota_profile_oi_full_name" />
+				<Label class="ProInfoSub" text="#dota_profile_oi_full_name_sub" />
+				<TextEntry class="SmallerEntry" id="ProPlayerRealName" tabindex="auto" />
+				<Label class="ProInfoHeader" text="#dota_profile_oi_player_name" />
+				<Label class="ProInfoSub" text="#dota_profile_oi_player_name_sub_pro" />
+				<Label id="PlayerNameAccept" text="{s:player_name}" html="true" />
+				<Label class="ProInfoHeader" text="#dota_profile_oi_agreement_header" />
+				<Label class="AgreementBody" text="#dota_profile_oi_register_agreement" html="true" />
+				<Button id="ProInfoAgreementAccept" class="ButtonBevel" onactivate="DOTASubmitProPlayerInfo( true )">
+					<Label text="#dota_profile_oi_accept" />
+				</Button>
+				<Button id="ProInfoCancel" class="ProInfoButtons ButtonBevel Center" onactivate="DOTACloseAgreement()">
+					<Label text="#dota_profile_oi_cancel" />
+				</Button>
+			</Panel>
 			<Panel id="ProInfoPendingPanel" />
 			<Label class="ProInfoHeader" text="#dota_profile_oi_player_name" />
 			<Label class="ProInfoSub" text="#dota_profile_oi_player_name_sub" />
-			<TextEntry class="SmallerEntry" id="ProPlayerName" maxchars="16" tabindex="auto" />
+			<TextEntry class="SmallerEntry" id="ProPlayerName" tabindex="auto" />
 			<Label class="ProInfoHeader" text="#dota_profile_oi_team" />
-			<Label class="ProInfoSub" text="#dota_profile_oi_team_sub" />
+			<Label id="TeamNotPro" class="ProInfoSub" text="#dota_profile_oi_team_sub" />
 			<DropDown class="SmallerDropdown" id="ProTeam" />
 			<Label class="ProInfoHeader" text="#dota_profile_oi_sponsor" />
 			<Label class="ProInfoSub" text="#dota_profile_oi_sponsor_sub" />
@@ -27,11 +45,17 @@
 				<Label text="#dota_role_offlane" id="role_offlane" />
 				<Label text="#dota_role_support" id="role_support" />
 			</DropDown>
+			<Button id="ProAcceptAgreementPopup" class="RegisterProButton ButtonBevel" onactivate="DOTAProAcceptAgreementPopup()">
+				<Label text="#dota_profile_oi_register_pro" />
+			</Button>
+			<Panel id="ProAcceptedInfo">
+				<Label text="#dota_profile_oi_is_pro" />
+			</Panel>
 			<Panel id="ProInfoResults">
 				<Label id="ProInfoHeader" text="#dota_profile_oi_preview" />
 				<Label id="ProInfoPreview" />
 				<Panel id="ProInfoButtonsPanel" class="PopupButtonRow">
-					<Button id="ProInfoSubmit" class="ProInfoButtons ButtonBevel" onactivate="DOTASubmitProPlayerInfo()">
+					<Button id="ProInfoSubmit" class="ProInfoButtons ButtonBevel" onactivate="DOTASubmitProPlayerInfo( false )">
 						<Label text="#dota_profile_oi_submit_info" />
 					</Button>
 					<Button id="ProInfoCancel" class="ProInfoButtons ButtonBevel" onactivate="UIPopupButtonClicked()">
