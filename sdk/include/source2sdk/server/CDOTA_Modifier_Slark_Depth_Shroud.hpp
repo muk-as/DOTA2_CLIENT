@@ -27,7 +27,7 @@ namespace source2sdk
             source2sdk::client::ParticleIndex_t m_nFXIndex; // 0x1888            
             std::int32_t bonus_movement_speed; // 0x188c            
             float bonus_regen; // 0x1890            
-            uint8_t _pad1894[0x4];
+            std::int32_t attack_speed; // 0x1894            
         };
         #pragma pack(pop)
         

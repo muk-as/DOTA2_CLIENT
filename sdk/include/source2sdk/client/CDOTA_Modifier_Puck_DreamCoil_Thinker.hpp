@@ -25,7 +25,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x18c0
+        // Size: 0x18c8
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_Puck_DreamCoil_Thinker : public source2sdk::client::CDOTA_Buff
@@ -40,14 +40,16 @@ namespace source2sdk
             float coil_stun_duration; // 0x189c            
             float coil_duration; // 0x18a0            
             float coil_break_damage; // 0x18a4            
+            bool pierces_debuff_immunity; // 0x18a8            
+            uint8_t _pad18a9[0x7]; // 0x18a9
             // m_FXIndex has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CUtlVector<source2sdk::client::ParticleIndex_t> m_FXIndex;
-            char m_FXIndex[0x18]; // 0x18a8            
+            char m_FXIndex[0x18]; // 0x18b0            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_Puck_DreamCoil_Thinker because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Puck_DreamCoil_Thinker) == 0x18c0);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_Puck_DreamCoil_Thinker) == 0x18c8);
     };
 };

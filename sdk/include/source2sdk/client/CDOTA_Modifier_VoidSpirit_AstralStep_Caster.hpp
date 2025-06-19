@@ -23,7 +23,7 @@ namespace source2sdk
         class CDOTA_Modifier_VoidSpirit_AstralStep_Caster : public source2sdk::client::CDOTA_Buff
         {
         public:
-            std::int32_t bonus_damage; // 0x1878            
+            float crit_damage; // 0x1878            
             uint8_t _pad187c[0x4];
         };
         #pragma pack(pop)
