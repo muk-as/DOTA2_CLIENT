@@ -13,7 +13,7 @@ namespace source2sdk
 {
     namespace client
     {
-        // Enumerator count: 3
+        // Enumerator count: 5
         // Alignment: 4
         // Size: 0x4
         enum class ETalentContentStatus : std::uint32_t
@@ -21,6 +21,8 @@ namespace source2sdk
             TALENT_CONTENT_STATUS_INVALID = 0x0,
             TALENT_CONTENT_STATUS_PENDING = 0x1,
             TALENT_CONTENT_STATUS_EVALUATED = 0x2,
+            TALENT_CONTENT_STATUS_REJECTED = 0x3,
+            TALENT_CONTENT_STATUS_APPROVED = 0x4,
         };
     };
 };
