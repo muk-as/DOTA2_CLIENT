@@ -30,7 +30,7 @@ namespace source2sdk
             uint8_t _pad1881[0x3]; // 0x1881
             source2sdk::entity2::GameTime_t m_flNextReadyTime; // 0x1884            
             std::uint32_t m_uFoWVisibilityMask; // 0x1888            
-            uint8_t _pad188c[0x4];
+            std::int32_t m_nCapturingUnitCount; // 0x188c            
         };
         #pragma pack(pop)
         

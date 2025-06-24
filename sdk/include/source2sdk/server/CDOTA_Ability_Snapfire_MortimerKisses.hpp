@@ -29,7 +29,8 @@ namespace source2sdk
             std::int32_t damage_per_impact; // 0x5c4            
             float impact_radius; // 0x5c8            
             float projectile_vision; // 0x5cc            
-            uint8_t _pad05d0[0x18];
+            float min_range; // 0x5d0            
+            uint8_t _pad05d4[0x14];
         };
         #pragma pack(pop)
         

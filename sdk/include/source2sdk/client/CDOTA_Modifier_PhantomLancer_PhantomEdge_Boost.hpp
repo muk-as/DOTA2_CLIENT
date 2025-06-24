@@ -24,7 +24,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: unknown
         // Standard-layout class: false
-        // Size: 0x1890
+        // Size: 0x18a8
         // Has VTable
         #pragma pack(push, 1)
         class CDOTA_Modifier_PhantomLancer_PhantomEdge_Boost : public source2sdk::client::CDOTA_Buff
@@ -39,11 +39,15 @@ namespace source2sdk
             char m_hTarget[0x4]; // 0x1884            
             std::int32_t bonus_agility; // 0x1888            
             float illusion_spawn_radius; // 0x188c            
+            float illusion_spawn_travel_distance; // 0x1890            
+            float m_flDistanceAccumulator; // 0x1894            
+            Vector m_vPreviousLocation; // 0x1898            
+            uint8_t _pad18a4[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Modifier_PhantomLancer_PhantomEdge_Boost because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_PhantomLancer_PhantomEdge_Boost) == 0x1890);
+        static_assert(sizeof(source2sdk::client::CDOTA_Modifier_PhantomLancer_PhantomEdge_Boost) == 0x18a8);
     };
 };

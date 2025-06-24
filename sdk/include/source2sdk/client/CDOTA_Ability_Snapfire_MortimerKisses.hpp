@@ -17,7 +17,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x690
+        // Size: 0x698
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -29,11 +29,13 @@ namespace source2sdk
             std::int32_t damage_per_impact; // 0x684            
             float impact_radius; // 0x688            
             float projectile_vision; // 0x68c            
+            float min_range; // 0x690            
+            uint8_t _pad0694[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_Ability_Snapfire_MortimerKisses because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::CDOTA_Ability_Snapfire_MortimerKisses) == 0x690);
+        static_assert(sizeof(source2sdk::client::CDOTA_Ability_Snapfire_MortimerKisses) == 0x698);
     };
 };
