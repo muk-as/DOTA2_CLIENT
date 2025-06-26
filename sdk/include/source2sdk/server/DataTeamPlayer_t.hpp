@@ -34,7 +34,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: 0x8
         // Standard-layout class: true
-        // Size: 0x1308
+        // Size: 0x1320
         // Has VTable
         // 
         // static metadata: MNetworkVarNames "int m_iReliableGold"
@@ -341,7 +341,7 @@ namespace source2sdk
             // metadata: MNetworkEnable
             source2sdk::server::CDOTACourierController m_CourierController; // 0x10d8            
             // metadata: MNetworkEnable
-            source2sdk::server::CQuickBuyController m_quickBuyController; // 0x1180            
+            source2sdk::server::CQuickBuyController m_quickBuyController; // 0x1198            
         };
         #pragma pack(pop)
         
@@ -437,8 +437,8 @@ namespace source2sdk
         static_assert(offsetof(source2sdk::server::DataTeamPlayer_t, m_nCurrentMadstone) == 0xfc4);
         static_assert(offsetof(source2sdk::server::DataTeamPlayer_t, m_NeutralChoices) == 0xfc8);
         static_assert(offsetof(source2sdk::server::DataTeamPlayer_t, m_CourierController) == 0x10d8);
-        static_assert(offsetof(source2sdk::server::DataTeamPlayer_t, m_quickBuyController) == 0x1180);
+        static_assert(offsetof(source2sdk::server::DataTeamPlayer_t, m_quickBuyController) == 0x1198);
         
-        static_assert(sizeof(source2sdk::server::DataTeamPlayer_t) == 0x1308);
+        static_assert(sizeof(source2sdk::server::DataTeamPlayer_t) == 0x1320);
     };
 };

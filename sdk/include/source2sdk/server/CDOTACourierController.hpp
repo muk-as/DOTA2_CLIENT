@@ -4,6 +4,7 @@
 #include <cstddef>
 #include <cstdint>
 #include "source2sdk/client/DOTA_SHOP_TYPE.hpp"
+#include "source2sdk/client/DebugOverlayBits_t.hpp"
 #include "source2sdk/client/ECourierState.hpp"
 #include "source2sdk/client/PlayerID_t.hpp"
 #include "source2sdk/server/CountdownTimer.hpp"
@@ -34,7 +35,7 @@ namespace source2sdk
         // Registered alignment: unknown
         // Alignment: 0x8
         // Standard-layout class: true
-        // Size: 0xa8
+        // Size: 0xc0
         // Has VTable
         // MNetworkNoBase
         // 
@@ -102,7 +103,12 @@ namespace source2sdk
             // CUtlVector<bool> m_vecAutoState;
             char m_vecAutoState[0x18]; // 0x88            
             std::int32_t m_nLastSecondCaptured; // 0xa0            
-            uint8_t _pad00a4[0x4];
+            std::int32_t m_nMoveCount; // 0xa4            
+            Vector m_vLastPos; // 0xa8            
+            bool m_bDebugging; // 0xb4            
+            bool m_bTriggerDebug; // 0xb5            
+            uint8_t _pad00b6[0x2]; // 0xb6
+            source2sdk::client::DebugOverlayBits_t m_eDebugBits; // 0xb8            
         };
         #pragma pack(pop)
         
@@ -133,7 +139,12 @@ namespace source2sdk
         static_assert(offsetof(source2sdk::server::CDOTACourierController, m_flCourier_divert_near_shop_dist) == 0x80);
         static_assert(offsetof(source2sdk::server::CDOTACourierController, m_vecAutoState) == 0x88);
         static_assert(offsetof(source2sdk::server::CDOTACourierController, m_nLastSecondCaptured) == 0xa0);
+        static_assert(offsetof(source2sdk::server::CDOTACourierController, m_nMoveCount) == 0xa4);
+        static_assert(offsetof(source2sdk::server::CDOTACourierController, m_vLastPos) == 0xa8);
+        static_assert(offsetof(source2sdk::server::CDOTACourierController, m_bDebugging) == 0xb4);
+        static_assert(offsetof(source2sdk::server::CDOTACourierController, m_bTriggerDebug) == 0xb5);
+        static_assert(offsetof(source2sdk::server::CDOTACourierController, m_eDebugBits) == 0xb8);
         
-        static_assert(sizeof(source2sdk::server::CDOTACourierController) == 0xa8);
+        static_assert(sizeof(source2sdk::server::CDOTACourierController) == 0xc0);
     };
 };
