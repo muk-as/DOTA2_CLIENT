@@ -32,7 +32,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x14c0
+        // Size: 0x14c8
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -60,6 +60,8 @@ namespace source2sdk
         // static metadata: MNetworkVarNames "float m_vPossibleWardRadii"
         // static metadata: MNetworkVarNames "DOTATeleportInfo_t m_vecTrackedTeleports"
         // static metadata: MNetworkVarNames "CRoshanPhaseInfo m_roshanSpawnInfo"
+        // static metadata: MNetworkVarNames "int m_nNextPowerRuneType"
+        // static metadata: MNetworkVarNames "int m_nNextPowerRuneSpawnIndex"
         #pragma pack(push, 1)
         class CDOTA_DataNonSpectator : public source2sdk::server::CBaseEntity
         {
@@ -124,13 +126,17 @@ namespace source2sdk
             char m_vecTrackedTeleports[0x68]; // 0x1438            
             // metadata: MNetworkEnable
             source2sdk::server::CRoshanPhaseInfo m_roshanSpawnInfo; // 0x14a0            
-            std::int32_t m_iTowerKills; // 0x14b8            
-            uint8_t _pad14bc[0x4];
+            // metadata: MNetworkEnable
+            std::int32_t m_nNextPowerRuneType; // 0x14b8            
+            // metadata: MNetworkEnable
+            std::int32_t m_nNextPowerRuneSpawnIndex; // 0x14bc            
+            std::int32_t m_iTowerKills; // 0x14c0            
+            uint8_t _pad14c4[0x4];
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in CDOTA_DataNonSpectator because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::server::CDOTA_DataNonSpectator) == 0x14c0);
+        static_assert(sizeof(source2sdk::server::CDOTA_DataNonSpectator) == 0x14c8);
     };
 };

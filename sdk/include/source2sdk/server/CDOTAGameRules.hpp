@@ -89,7 +89,6 @@ namespace source2sdk
         // Has VTable
         // 
         // static metadata: MNetworkVarNames "int m_nRuneCycle"
-        // static metadata: MNetworkVarNames "int m_nNextPowerRuneType"
         // static metadata: MNetworkVarNames "int m_iMiscHeroPickCounter"
         // static metadata: MNetworkVarNames "CHandle< CBaseEntity> m_hEndGameCinematicEntity"
         // static metadata: MNetworkVarNames "CHandle< CDOTA_BaseNPC> m_hOverlayHealthBarUnit"
@@ -272,7 +271,6 @@ namespace source2sdk
             uint8_t _pad00c0[0x50]; // 0xc0
             // metadata: MNetworkEnable
             std::int32_t m_nRuneCycle; // 0x110            
-            // metadata: MNetworkEnable
             std::int32_t m_nNextPowerRuneType; // 0x114            
             std::int32_t m_nNextPowerRuneSpawnIndex; // 0x118            
             uint8_t _pad011c[0x4]; // 0x11c

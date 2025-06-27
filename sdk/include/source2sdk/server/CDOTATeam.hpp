@@ -66,16 +66,16 @@ namespace source2sdk
             bool m_bTeamCanSeeExactRoshanTimer; // 0x5d2            
             // metadata: MNetworkEnable
             bool m_bTeamCanSeeNextPowerRune; // 0x5d3            
+            std::int32_t m_nTeamCanSeeNextPowerRuneRefs; // 0x5d4            
             // metadata: MNetworkEnable
-            Color m_CustomHealthbarColor; // 0x5d4            
+            Color m_CustomHealthbarColor; // 0x5d8            
             // metadata: MNetworkEnable
-            char m_szTag[33]; // 0x5d8            
-            uint8_t _pad05f9[0x3]; // 0x5f9
-            std::int32_t m_event_lobby_updated; // 0x5fc            
-            std::int32_t m_nKillStreak; // 0x600            
-            std::int32_t m_iRecentKillCount; // 0x604            
-            std::int32_t m_iRandomNumber; // 0x608            
-            uint8_t _pad060c[0x4]; // 0x60c
+            char m_szTag[33]; // 0x5dc            
+            uint8_t _pad05fd[0x3]; // 0x5fd
+            std::int32_t m_event_lobby_updated; // 0x600            
+            std::int32_t m_nKillStreak; // 0x604            
+            std::int32_t m_iRecentKillCount; // 0x608            
+            std::int32_t m_iRandomNumber; // 0x60c            
             source2sdk::server::CountdownTimer m_RecentHeroKillTimer; // 0x610            
         };
         #pragma pack(pop)

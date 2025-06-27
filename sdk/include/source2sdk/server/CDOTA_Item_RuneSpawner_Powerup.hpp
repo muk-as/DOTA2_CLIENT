@@ -25,7 +25,6 @@ namespace source2sdk
         // static metadata: MNetworkVarNames "float m_flLastSpawnTime"
         // static metadata: MNetworkVarNames "float m_flNextSpawnTime"
         // static metadata: MNetworkVarNames "bool m_bNextRuneIsWater"
-        // static metadata: MNetworkVarNames "bool m_bWillSpawnNextPowerRune"
         #pragma pack(push, 1)
         class CDOTA_Item_RuneSpawner_Powerup : public source2sdk::server::CBaseAnimatingActivity
         {
@@ -37,9 +36,7 @@ namespace source2sdk
             float m_flNextSpawnTime; // 0x7e4            
             // metadata: MNetworkEnable
             bool m_bNextRuneIsWater; // 0x7e8            
-            // metadata: MNetworkEnable
-            bool m_bWillSpawnNextPowerRune; // 0x7e9            
-            uint8_t _pad07ea[0x6];
+            uint8_t _pad07e9[0x7];
         };
         #pragma pack(pop)
         

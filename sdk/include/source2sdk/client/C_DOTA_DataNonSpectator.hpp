@@ -32,7 +32,7 @@ namespace source2sdk
         // Registered alignment: 0x8
         // Alignment: 0x8
         // Standard-layout class: false
-        // Size: 0x15c0
+        // Size: 0x15c8
         // Has VTable
         // Construct allowed
         // MClassHasEntityLimitedDataDesc
@@ -62,6 +62,8 @@ namespace source2sdk
         // static metadata: MNetworkVarNames "float m_vPossibleWardRadii"
         // static metadata: MNetworkVarNames "DOTATeleportInfo_t m_vecTrackedTeleports"
         // static metadata: MNetworkVarNames "CRoshanPhaseInfo m_roshanSpawnInfo"
+        // static metadata: MNetworkVarNames "int m_nNextPowerRuneType"
+        // static metadata: MNetworkVarNames "int m_nNextPowerRuneSpawnIndex"
         #pragma pack(push, 1)
         class C_DOTA_DataNonSpectator : public source2sdk::client::C_BaseEntity
         {
@@ -133,11 +135,15 @@ namespace source2sdk
             char m_vecTrackedTeleports[0x68]; // 0x1540            
             // metadata: MNetworkEnable
             source2sdk::client::CRoshanPhaseInfo m_roshanSpawnInfo; // 0x15a8            
+            // metadata: MNetworkEnable
+            std::int32_t m_nNextPowerRuneType; // 0x15c0            
+            // metadata: MNetworkEnable
+            std::int32_t m_nNextPowerRuneSpawnIndex; // 0x15c4            
         };
         #pragma pack(pop)
         
         // Cannot assert offsets of fields in C_DOTA_DataNonSpectator because it is not a standard-layout class
         
-        static_assert(sizeof(source2sdk::client::C_DOTA_DataNonSpectator) == 0x15c0);
+        static_assert(sizeof(source2sdk::client::C_DOTA_DataNonSpectator) == 0x15c8);
     };
 };

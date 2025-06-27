@@ -61,7 +61,6 @@ namespace source2sdk
         // Has VTable
         // 
         // static metadata: MNetworkVarNames "int m_nRuneCycle"
-        // static metadata: MNetworkVarNames "int m_nNextPowerRuneType"
         // static metadata: MNetworkReplayCompatField "m_fGameTime"
         // static metadata: MNetworkVarNames "int m_iMiscHeroPickCounter"
         // static metadata: MNetworkVarNames "CHandle< CBaseEntity> m_hEndGameCinematicEntity"
@@ -245,80 +244,79 @@ namespace source2sdk
             // metadata: MNetworkEnable
             std::int32_t m_nRuneCycle; // 0x40            
             // metadata: MNetworkEnable
-            std::int32_t m_nNextPowerRuneType; // 0x44            
-            // metadata: MNetworkEnable
-            std::int32_t m_iMiscHeroPickCounter; // 0x48            
+            std::int32_t m_iMiscHeroPickCounter; // 0x44            
             // metadata: MNetworkEnable
             // m_hEndGameCinematicEntity has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hEndGameCinematicEntity;
-            char m_hEndGameCinematicEntity[0x4]; // 0x4c            
+            char m_hEndGameCinematicEntity[0x4]; // 0x48            
             // metadata: MNetworkEnable
             // m_hOverlayHealthBarUnit has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_DOTA_BaseNPC> m_hOverlayHealthBarUnit;
-            char m_hOverlayHealthBarUnit[0x4]; // 0x50            
+            char m_hOverlayHealthBarUnit[0x4]; // 0x4c            
             // metadata: MNetworkEnable
-            std::int32_t m_nOverlayHealthBarType; // 0x54            
+            std::int32_t m_nOverlayHealthBarType; // 0x50            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnCinematicModeChanged"
-            bool m_bIsInCinematicMode; // 0x58            
-            bool m_bIsInClientSideCinematicMode; // 0x59            
+            bool m_bIsInCinematicMode; // 0x54            
+            bool m_bIsInClientSideCinematicMode; // 0x55            
             // metadata: MNetworkEnable
-            bool m_bFreeCourierMode; // 0x5a            
-            uint8_t _pad005b[0x1]; // 0x5b
-            std::int32_t m_nStartingGold; // 0x5c            
-            std::int32_t m_nGoldPerTick; // 0x60            
-            float m_flGoldTickTime; // 0x64            
-            bool m_bItemWhiteListChanged; // 0x68            
-            bool m_bEnableSuggestAbilities; // 0x69            
-            bool m_bEnableSuggestItems; // 0x6a            
-            uint8_t _pad006b[0x1]; // 0x6b
+            bool m_bFreeCourierMode; // 0x56            
+            uint8_t _pad0057[0x1]; // 0x57
+            std::int32_t m_nStartingGold; // 0x58            
+            std::int32_t m_nGoldPerTick; // 0x5c            
+            float m_flGoldTickTime; // 0x60            
+            bool m_bItemWhiteListChanged; // 0x64            
+            bool m_bEnableSuggestAbilities; // 0x65            
+            bool m_bEnableSuggestItems; // 0x66            
+            uint8_t _pad0067[0x1]; // 0x67
             // metadata: MNetworkEnable
-            std::uint32_t m_unFanfareGoodGuys; // 0x6c            
+            std::uint32_t m_unFanfareGoodGuys; // 0x68            
             // metadata: MNetworkEnable
-            std::uint32_t m_unFanfareBadGuys; // 0x70            
-            std::int32_t m_iMapType; // 0x74            
+            std::uint32_t m_unFanfareBadGuys; // 0x6c            
+            std::int32_t m_iMapType; // 0x70            
             // metadata: MNetworkEnable
             // metadata: MNetworkAlias "m_nGameState"
-            std::int32_t m_nServerGameState; // 0x78            
+            std::int32_t m_nServerGameState; // 0x74            
             // metadata: MNetworkEnable
             // metadata: MNetworkAlias "m_nHeroPickState"
-            source2sdk::client::DOTA_HeroPickState m_nServerHeroPickState; // 0x7c            
-            std::int32_t m_nGameState; // 0x80            
-            source2sdk::client::DOTA_HeroPickState m_nHeroPickState; // 0x84            
+            source2sdk::client::DOTA_HeroPickState m_nServerHeroPickState; // 0x78            
+            std::int32_t m_nGameState; // 0x7c            
+            source2sdk::client::DOTA_HeroPickState m_nHeroPickState; // 0x80            
             // metadata: MNetworkEnable
-            bool m_bAlternateHeroGridsEnabled; // 0x88            
-            uint8_t _pad0089[0x3]; // 0x89
+            bool m_bAlternateHeroGridsEnabled; // 0x84            
+            uint8_t _pad0085[0x3]; // 0x85
             // metadata: MNetworkEnable
-            source2sdk::entity2::GameTime_t m_flStateTransitionTime; // 0x8c            
+            source2sdk::entity2::GameTime_t m_flStateTransitionTime; // 0x88            
             // metadata: MNetworkEnable
-            float m_flOverride_dota_hero_selection_time; // 0x90            
+            float m_flOverride_dota_hero_selection_time; // 0x8c            
             // metadata: MNetworkEnable
-            float m_flOverride_dota_pregame_time; // 0x94            
+            float m_flOverride_dota_pregame_time; // 0x90            
             // metadata: MNetworkEnable
-            float m_flOverride_dota_postgame_time; // 0x98            
+            float m_flOverride_dota_postgame_time; // 0x94            
             // metadata: MNetworkEnable
-            float m_flOverride_dota_strategy_time; // 0x9c            
+            float m_flOverride_dota_strategy_time; // 0x98            
             // metadata: MNetworkEnable
-            float m_flOverride_dota_team_showcase_duration; // 0xa0            
+            float m_flOverride_dota_team_showcase_duration; // 0x9c            
             // metadata: MNetworkEnable
-            float m_flOverride_dota_rune_spawn_time; // 0xa4            
+            float m_flOverride_dota_rune_spawn_time; // 0xa0            
             // metadata: MNetworkEnable
-            float m_flShowcaseTime[15]; // 0xa8            
+            float m_flShowcaseTime[15]; // 0xa4            
             // metadata: MNetworkEnable
-            float m_flNeutralInitialSpawnOffset; // 0xe4            
+            float m_flNeutralInitialSpawnOffset; // 0xe0            
             // metadata: MNetworkEnable
-            std::int32_t m_iGameMode; // 0xe8            
+            std::int32_t m_iGameMode; // 0xe4            
             // metadata: MNetworkEnable
             // metadata: MNetworkChangeCallback "OnGameModeEntityChanged"
             // m_hGameModeEntity has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hGameModeEntity;
-            char m_hGameModeEntity[0x4]; // 0xec            
+            char m_hGameModeEntity[0x4]; // 0xe8            
             // metadata: MNetworkEnable
             // m_hCustomHeroPickRulesEntity has a template type with potentially unknown template parameters. You can try uncommenting the field below.
             // CHandle<source2sdk::client::C_BaseEntity> m_hCustomHeroPickRulesEntity;
-            char m_hCustomHeroPickRulesEntity[0x4]; // 0xf0            
+            char m_hCustomHeroPickRulesEntity[0x4]; // 0xec            
             // metadata: MNetworkEnable
-            source2sdk::entity2::GameTime_t m_flHeroPickStateTransitionTime; // 0xf4            
+            source2sdk::entity2::GameTime_t m_flHeroPickStateTransitionTime; // 0xf0            
+            uint8_t _pad00f4[0x4]; // 0xf4
             // metadata: MNetworkEnable
             // metadata: MNetworkEncoder "fixed64"
             std::uint64_t m_iPlayerIDsInControl; // 0xf8            

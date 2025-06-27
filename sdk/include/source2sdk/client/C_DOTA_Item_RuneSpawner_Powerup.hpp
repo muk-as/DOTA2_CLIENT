@@ -26,7 +26,6 @@ namespace source2sdk
         // static metadata: MNetworkVarNames "float m_flLastSpawnTime"
         // static metadata: MNetworkVarNames "float m_flNextSpawnTime"
         // static metadata: MNetworkVarNames "bool m_bNextRuneIsWater"
-        // static metadata: MNetworkVarNames "bool m_bWillSpawnNextPowerRune"
         #pragma pack(push, 1)
         class C_DOTA_Item_RuneSpawner_Powerup : public source2sdk::client::CBaseAnimatingActivity
         {
@@ -39,9 +38,7 @@ namespace source2sdk
             float m_flNextSpawnTime; // 0x9a0            
             // metadata: MNetworkEnable
             bool m_bNextRuneIsWater; // 0x9a4            
-            // metadata: MNetworkEnable
-            bool m_bWillSpawnNextPowerRune; // 0x9a5            
-            uint8_t _pad09a6[0x2];
+            uint8_t _pad09a5[0x3];
         };
         #pragma pack(pop)
         
