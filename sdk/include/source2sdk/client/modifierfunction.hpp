@@ -136,7 +136,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_MP_REGEN_AMPLIFY_PERCENTAGE = 0x39,
             // MScriptDescription "GetModifierManaDrainAmplify_Percentage GetModifierMPRegenAmplify_Percentage_Unique"
             MODIFIER_PROPERTY_MP_REGEN_AMPLIFY_PERCENTAGE_UNIQUE = 0x3a,
-            // MScriptDescription "P!Å(˚ GetModifierManaDrainAmplify_Percentage"
+            // MScriptDescription "0!Å(˚ GetModifierManaDrainAmplify_Percentage"
             MODIFIER_PROPERTY_MANA_DRAIN_AMPLIFY_PERCENTAGE = 0x3b,
             // MScriptDescription "GetModifierBaseDamageOutgoing_Percentage GetModifierMPRestoreAmplify_Percentage"
             MODIFIER_PROPERTY_MP_RESTORE_AMPLIFY_PERCENTAGE = 0x3c,
@@ -162,7 +162,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_STATUS_RESISTANCE_STACKING = 0x46,
             // MScriptDescription "GetModifierAvoidDamage GetModifierStatusResistanceCaster"
             MODIFIER_PROPERTY_STATUS_RESISTANCE_CASTER = 0x47,
-            // MScriptDescription "0"Å(˚ GetModifierAvoidDamage"
+            // MScriptDescription ""Å(˚ GetModifierAvoidDamage"
             MODIFIER_PROPERTY_AVOID_DAMAGE = 0x48,
             // MScriptDescription "GetModifierMiss_Percentage GetModifierAvoidSpell"
             MODIFIER_PROPERTY_AVOID_SPELL = 0x49,
@@ -244,7 +244,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_CAST_RANGE_BONUS_PERCENTAGE = 0x6f,
             // MScriptDescription "GetModifierCastRangeBonusStacking GetModifierCastRangeBonusTarget"
             MODIFIER_PROPERTY_CAST_RANGE_BONUS_TARGET = 0x70,
-            // MScriptDescription "%Å(˚ GetModifierCastRangeBonusStacking"
+            // MScriptDescription "$Å(˚ GetModifierCastRangeBonusStacking"
             MODIFIER_PROPERTY_CAST_RANGE_BONUS_STACKING = 0x71,
             // MScriptDescription "GetModifierAttackRangeBonus GetModifierAttackRangeOverride"
             MODIFIER_PROPERTY_ATTACK_RANGE_BASE_OVERRIDE = 0x72,
@@ -284,7 +284,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_MANACOST_PERCENTAGE = 0x83,
             // MScriptDescription "GetModifierPercentageHealthcost GetModifierPercentageManacostStacking"
             MODIFIER_PROPERTY_MANACOST_PERCENTAGE_STACKING = 0x84,
-            // MScriptDescription "ê&Å(˚ GetModifierPercentageHealthcost"
+            // MScriptDescription "p&Å(˚ GetModifierPercentageHealthcost"
             MODIFIER_PROPERTY_HEALTHCOST_PERCENTAGE = 0x85,
             // MScriptDescription "GetModifierConstantDeathGoldCost GetModifierPercentageHealthcostStacking"
             MODIFIER_PROPERTY_HEALTHCOST_PERCENTAGE_STACKING = 0x86,
@@ -292,9 +292,9 @@ namespace source2sdk
             MODIFIER_PROPERTY_DEATHGOLDCOST = 0x87,
             // MScriptDescription "GetModifierPercentageExpRateBoost GetModifierPercentageDeathGoldCost"
             MODIFIER_PROPERTY_PERCENTAGE_DEATHGOLDCOST = 0x88,
-            // MScriptDescription "GetModifierPercentageGoldRateBoost GetModifierPercentageExpRateBoost"
+            // MScriptDescription "‡–l'˚ GetModifierPercentageExpRateBoost"
             MODIFIER_PROPERTY_EXP_RATE_BOOST = 0x89,
-            // MScriptDescription "∞–l'˚ GetModifierPercentageGoldRateBoost"
+            // MScriptDescription "GetModifierPreAttack_CriticalStrike GetModifierPercentageGoldRateBoost"
             MODIFIER_PROPERTY_GOLD_RATE_BOOST = 0x8a,
             // MScriptDescription "GetModifierPreAttack_Target_CriticalStrike GetModifierPreAttack_CriticalStrike"
             MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE = 0x8b,
@@ -320,7 +320,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_ABSORB_SPELL = 0x95,
             // MScriptDescription "GetDisableAutoAttack GetReflectSpell"
             MODIFIER_PROPERTY_REFLECT_SPELL = 0x96,
-            // MScriptDescription "¿'Å(˚ GetDisableAutoAttack"
+            // MScriptDescription "†'Å(˚ GetDisableAutoAttack"
             MODIFIER_PROPERTY_DISABLE_AUTOATTACK = 0x97,
             // MScriptDescription "GetBonusDayVisionPercentage GetBonusDayVision"
             MODIFIER_PROPERTY_BONUS_DAY_VISION = 0x98,
@@ -370,7 +370,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_ALWAYS_ALLOW_ATTACK = 0xae,
             // MScriptDescription "GetOverrideAttackMagical GetAllowEtherealAttack"
             MODIFIER_PROPERTY_ALWAYS_ETHEREAL_ATTACK = 0xaf,
-            // MScriptDescription "Ä)Å(˚ GetOverrideAttackMagical"
+            // MScriptDescription "`)Å(˚ GetOverrideAttackMagical"
             MODIFIER_PROPERTY_OVERRIDE_ATTACK_MAGICAL = 0xb0,
             // MScriptDescription "Unused GetModifierUnitStatsNeedsRefresh"
             MODIFIER_PROPERTY_UNIT_STATS_NEEDS_REFRESH = 0xb1,
@@ -420,7 +420,7 @@ namespace source2sdk
             MODIFIER_EVENT_ON_ORDER = 0xc7,
             // MScriptDescription "OnAbilityStart OnUnitMoved"
             MODIFIER_EVENT_ON_UNIT_MOVED = 0xc8,
-            // MScriptDescription "@+Å(˚ OnAbilityStart"
+            // MScriptDescription " +Å(˚ OnAbilityStart"
             MODIFIER_EVENT_ON_ABILITY_START = 0xc9,
             // MScriptDescription "OnAbilityFullyCast OnAbilityExecuted"
             MODIFIER_EVENT_ON_ABILITY_EXECUTED = 0xca,
@@ -540,7 +540,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_PRESERVE_PARTICLES_ON_MODEL_CHANGE = 0x103,
             // MScriptDescription "GetModifierIgnoreCooldown OnAttackFinished"
             MODIFIER_EVENT_ON_ATTACK_FINISHED = 0x104,
-            // MScriptDescription "†/Å(˚ GetModifierIgnoreCooldown"
+            // MScriptDescription "Ä/Å(˚ GetModifierIgnoreCooldown"
             MODIFIER_PROPERTY_IGNORE_COOLDOWN = 0x105,
             // MScriptDescription "GetVisualZDelta GetModifierCanAttackTrees"
             MODIFIER_PROPERTY_CAN_ATTACK_TREES = 0x106,
@@ -626,7 +626,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_BECOME_STRENGTH = 0x12e,
             // MScriptDescription "GetModifierBecomeIntelligence GetModifierBecomeAgility"
             MODIFIER_PROPERTY_BECOME_AGILITY = 0x12f,
-            // MScriptDescription "p2Å(˚ GetModifierBecomeIntelligence"
+            // MScriptDescription "P2Å(˚ GetModifierBecomeIntelligence"
             MODIFIER_PROPERTY_BECOME_INTELLIGENCE = 0x130,
             // MScriptDescription "OnForceProcMagicStick GetModifierBecomeUniversal"
             MODIFIER_PROPERTY_BECOME_UNIVERSAL = 0x131,
@@ -718,7 +718,7 @@ namespace source2sdk
             MODIFIER_EVENT_ON_CLEAVE_ATTACK_LANDED = 0x15c,
             // MScriptDescription "GetTierTokenReroll MinAttributeLevel"
             MODIFIER_PROPERTY_MIN_ATTRIBUTE_LEVEL = 0x15d,
-            // MScriptDescription "7Å(˚ GetTierTokenReroll"
+            // MScriptDescription "6Å(˚ GetTierTokenReroll"
             MODIFIER_PROPERTY_TIER_TOKEN_REROLL = 0x15e,
             // MScriptDescription "GetModifierTotal_ConstantBlockStacking GetVisionDegreeRestriction"
             MODIFIER_PROPERTY_VISION_DEGREES_RESTRICTION = 0x15f,
