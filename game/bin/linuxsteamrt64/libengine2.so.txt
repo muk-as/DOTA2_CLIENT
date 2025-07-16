@@ -36,6 +36,7 @@
 0=Off, 1=Surface Wireframe, 2=Transparent Wireframe
 0=Off, 1=Visualize trace from camera, 2=Visualize occlusion, 3=Visualize far field trace from camera
 0@Thv
+0Lcw4D
 0NETWORK_DISCONNECT_KICKED_VACNETABNORMALBEHAVIOR
 0NETWORK_DISCONNECT_REJECT_SERVERCDKEYAUTHINVALID
 0[A\A]A^A
@@ -619,7 +620,6 @@
 1: write to NULL
 1ANYckrx
 1CMR]c
-1Ia	!9Qi
 1f%% %s missed due to network (%d dropped, %d late)   Good:%d   BadOther:%d    Fixed: %d dropped, %d late
 1y5>~G
 2	.CMsgRGBA
@@ -894,6 +894,7 @@
 2f. Broadcast IO error. Please try again later
 2f. Broadcast Streaming error %d %s
 2f. Broadcast failed to start: cannot retrieve startup packet data
+2f. Broadcast live resync: malformed response: %s
 2f. Broadcast m_SyncResponse: unexpected response. fragment %d must be at/after start fragment %d
 2f. Broadcast playback failed to retrieve %s frame of fragment %d
 2f. Broadcast playback requesting fragment %d/%s
@@ -911,9 +912,11 @@
 2f. Playcast cannot retrieve fragment %d, retrying
 2f. Playcast failed to retrieve fragment %d (succ=%d, %.1f sec
 2f. Received signup fragment %d
+2f. Releasing fragment %d (older than %d
 2f. Requesting sync
 2f. Requesting sync from GC, start fragment %d match id %llu instance %d
 2f. Resync %d response requires full stream restart because signup fragment changed from %d to %d
+2f. Resynced live. Max tick updated: %d -> %d
 2f. Retrying sync in %.2f sec
 2f. Set playcast URL %s
 2f. Waiting %.2f seconds
@@ -1126,6 +1129,7 @@
 8ÐAVAUI
 8ÐAWAVAUATI
 8ÐAWAVAUATUSH
+8단8그8그8데8
 9*ubC
 92tLHcB
 92tdHcB
@@ -1953,6 +1957,7 @@ CBidirMsg_PredictionEvent
 CBidirMsg_RebroadcastGameEvent
 CBidirMsg_RebroadcastSource
 CBroadcastPlayer
+CBroadcastPlayer::SkipToTick( %d, %u
 CBugService
 CCIR601 sampling not implemented yet
 CCLCMsg_BaselineAck
@@ -2920,6 +2925,7 @@ CheckTransmit
 Cherokee
 ClampFloatToZero_SSE2
 Clamping split screen users to 1 due to -tools mode
+Clamping too-far-future tick from %d to %d
 Class data is a '%s', not a table
 Clear console output
 Clear console output from all views
@@ -3163,6 +3169,7 @@ D9sHLc
 D9{x~HH
 D9X0J
 D9ÉGPA
+D;-ll1
 D;4$}VD
 D;:t3HcB
 D;c4|	E1
@@ -4113,13 +4120,12 @@ H9p sMI9
 H9s@u
 H9z r
 H9z s
-H;=107
-H;=1F
-H;=20
-H;=Ae
-H;=Lm
-H;=QLB
-H;=fj
+H;-qYP
+H;5OfB
+H;=1E
+H;=Qn
+H;=W76
+H;=i9
 H;D$ps5H
 H;G s/L
 H;G0s0
@@ -4227,6 +4233,7 @@ HostStateRequest::Start(HSR_QUIT
 HostStateRequest::Start(HSR_SOURCETV_RELAY):  loop(%s) id(%u) addons(%s) desc(%s
 Host_EndGame: %s
 Hostname for server
+How far back before our current playback head in seconds to hold onto fragments
 How long to show the message about Killer Replay after death. The best setting is a bit shorter than spec_replay_autostart_delay + spec_replay_leadup_time + spec_replay_winddown_time
 How often to flash demo recording/playback overlay (0 - disable overlay, -1 - show always
 Http: %d failed, %d/%d max in flight
@@ -4513,6 +4520,7 @@ IgnoreChildProcesses
 Ignoring P2PSessionRequest_t from %s
 Ignoring extension
 Ignoring line in steam.inf: '%s
+Ignoring packet while skipping, skip to tick: %d, packet server tick: %d
 Ignoring unexpected sync from gc, match %llu:%d
 Ignoring unexpected sync from gc, match %llu:%d, expected %llu:%d
 Ignoring unexpected sync, %d bytes, resync %d
@@ -4710,6 +4718,8 @@ L9t$ t9H
 L9|$(tLL
 L;#tGH
 L;$$tJA
+L;%zT
+L;-Mq
 L;4$t0A
 L;4$trM
 L;k s3H
@@ -5789,9 +5799,6 @@ Overflowed failed to serialize CNETMsg_Tick_t
 Override Fog color: %f %f %f
 Overrides the SourceTV master root address
 Overrides the max players reported to prospective clients
-OдOдOдOдO
-O潤O潤O潤O
-O潤O潤O潤O潤O
 P D9cX
 P HcCP
 P HcCh
@@ -6050,7 +6057,6 @@ Playcast Canceling Fragment %d
 Playcast Debug String: %s
 Playcast HTTP error code: %d
 Playcast Spawn Group %d load at %d
-Playcast packet tick %d, %d Bytes
 Player
 Player %d%s
 Player %d] : "%s" = "%s
@@ -6191,6 +6197,7 @@ Quit after recording requested, quitting now
 Quit the game
 Quits game after demo playback
 Quitting
+Q盐Q称Q祸Q
 R D9cP
 R or (?[+-]digits must be followed by
 R11_EAC
@@ -6437,6 +6444,8 @@ ReplayEventType_t
 Request a VProf data stream from the remote server (requires authentication
 RequestPause_t
 Requested feature was omitted at compile time
+Requested new live tick, but already have another request in flight
+Requested new live tick, but stream is not active
 Requested size is too large to fit into size_t
 Requested:  %s
 Requesting full game update (%s
@@ -6491,7 +6500,6 @@ RunFrame
 RunPrediction
 Running SteamAPI_RunCallbacks for first time
 Running [%s
-S(Mct$0D
 S(t_HcL
 S3: Client SteamID %s doesn't match SteamID %s from auth blob
 S3: Client connected with expired ticket: UserID: %x
@@ -6500,7 +6508,6 @@ S3: Client connected with invalid ticket: UserID: %x
 S3: Client connected with ticket for the wrong game: UserID: %x
 S3: Duplicate client connection: UserID: %x SteamID %s
 S8A;S
-S?seT
 S@RAQD
 SAPu(H
 SAPu,H
@@ -6587,6 +6594,7 @@ STEAMVIDEO_INTERFACE_V002
 STEAM] %s
 STEAM_ID_LAN
 STEAM_ID_PENDING
+STREAM_DELTAFRAMES Failed to get fragment %d, stopping
 STRING
 STRING_PIECE
 ST_Tick
@@ -7532,6 +7540,7 @@ StringPrintfVector currently only supports up to
 StringTable %s
 Successfully disabled priority boost
 Successfully enabled priority boost
+Successfully retrieved fragment %d
 Successfully saved
 Suffix to append to the console log, may be changed to reopen the log
 Suggested field numbers for
@@ -7580,6 +7589,7 @@ T$HdH3
 T$XdH3
 T$Xff
 T$\McL$<B
+T$xdH3
 TGAWriter: Failed to serialize screenshot pixels (%d x %d, %s
 TLS init function for
 TLS wrapper function for
@@ -7604,7 +7614,6 @@ TYPE_SINT64
 TYPE_STRING
 TYPE_UINT32
 TYPE_UINT64
-Ta?jib
 Tagalog
 Tagbanwa
 Tags string is too long: %s
@@ -8190,6 +8199,7 @@ WARNING: msg overflowed for %s
 WARNING: setlocale('%s') failed, using locale: '%s'. International characters may not work
 WDG,r3
 Waiting For Keyframe
+Waiting For Live Resync
 Warning
 Warning - Tick mark is locked, ignoring change
 Warning parsing text-format
@@ -8304,7 +8314,6 @@ X-Origin-Auth header of the broadcast POSTs
 X-Origin-Auth header of the broadcast1 POSTs
 X-Origin-Delay
 X-Reason
-X?/QY?s
 XZw:H
 XZw>H
 X[A\A
@@ -14068,10 +14077,11 @@ d$0L+d$(H
 d. Msg_HltvReplay %s->%s
 d. Msg_Tick %d cl:delayed sv:real-time
 d. Msg_Tick %d cl:real-time sv:replay
-d. Skipping %d ticks, jumping to fragment %d
+d. Skipping %d ticks, jumping from fragment %d to %d. Ticks per fragment: (%f * %f
 d. Stream State %s -> %s, fragment %d
 d. parsing tick %d; %d bytes
 d. playcast: Adjusting fragment %d->%d, tick %d->%d
+d. playcast: Fragment %d keyframe and delta frames ready
 d. playcast: Fragment %d keyframe and delta frames ready, delayed precache took %.2f sec
 d. playcast: Play delta Fragment %d
 d. playcast: Play keyframe Fragment %d
@@ -14503,6 +14513,7 @@ g_pInputService->IsAppActive() = %d
 g_pMaterialSystem2->FrameUpdate
 g_pMemAlloc
 g_pMeshSystem->FrameUpdate
+g_pNetworkClientService->GetTotalTicks():%d
 g_pPerfTraceDepot
 g_pRenderDevice->Present
 g_pRenderDeviceMgr is NULL. Driver data unavailable
@@ -15044,7 +15055,6 @@ kkkkkkkkkkkkkkkk
 kp|	1
 l$0tTH
 l$lu	I
-l?O#m
 lA9?tdA
 l`UROM=;98310
 lambda
@@ -15144,7 +15154,6 @@ low_value
 low_violence
 lseek64
 lua_is_currently_executing
-m H;-4IP
 m_CScriptComponent
 m_FullSendTables
 m_HandleValue
@@ -15201,6 +15210,8 @@ m_nRenderHeight
 m_nRenderWidth
 m_nRuntimeIndex
 m_nSplitScreenSlot
+m_nStartHostTick:%d
+m_nStreamStartTick:%d
 m_nTargetType
 m_nTickCount
 m_nTimesToFire
@@ -15370,6 +15381,7 @@ n8ATUH
 n>sak
 nBits != 32
 nGVKUTS[BXIWH\KbHi:k6s4r7p8
+nTargetServerTick:%d
 nTries < 10000000
 nVF;3
 n`xBF|7T
@@ -15617,7 +15629,6 @@ p< tgv]<0ulH
 p< thv^<0uOI
 p< tpvV<0uJI
 p<0t9w
-p?IGq
 pClass
 pClass->m_ClassID(%i) >= %i
 pClient
@@ -16055,7 +16066,6 @@ round_start_ticks
 roundf
 rpt/%04d_%02d_%02d
 rs_recommend_gen
-rs_reset
 rtdelay
 ruby_package
 run prediction after every CreateMove instead of only after CreateMove for the final tick in a frame
@@ -16929,6 +16939,7 @@ svc_dummy
 swift_prefix
 symbols
 sync?fragment=%d
+syncResponse.nFragment: %d, tick: %d, syncResponse.nStartTick: %d, syncResponse.nMaxTick: %d
 sync_type
 sync_val_uint32
 syntax
@@ -16953,6 +16964,7 @@ t$0t51
 t$8ZYI9
 t$@E9t$PD
 t$@H;t$ t
+t$P;5y
 t%LcȋV I
 t*A;T
 t+H;y s
@@ -17082,6 +17094,7 @@ toolsVisMaxLightingComplexity
 toolsVisMode
 toolservice.cpp
 total sec
+total ticks, network client service: %d, broadcast player: %d
 total_data_in
 total_data_out
 total_packets_in
@@ -17150,6 +17163,7 @@ tv_password
 tv_password1
 tv_playcast_delay_prediction
 tv_playcast_delay_resync
+tv_playcast_fragment_cache_history_length
 tv_playcast_max_rcvage
 tv_playcast_max_rtdelay
 tv_playcast_origin_auth
@@ -17226,6 +17240,7 @@ uS[A\A]A
 uU[A\A]A
 uX[A\A]A
 uYIcT
+uZ[A\A]A
 u[%d items changed
 u^E8FHthI
 u_A8NHtiI
@@ -17233,9 +17248,8 @@ ua[A\A]A
 udA8NHtfI
 udp/ip   : %s:%i
 udp_port
-ueH;=F
-ufH;=G(6
-ufH;=W
+ufH;=W-6
+ufH;=w
 uh[A\A]A
 uint16
 uint32
@@ -17528,7 +17542,6 @@ w HcO0L
 w(AUATI
 w(Lco I
 w+OQvr
-w0Lco4D
 w5HcG8I
 w@AUATL
 wHAUATL
@@ -17627,6 +17640,7 @@ xstat64
 xuidReserve
 xxxxxxxxxxxxxxx
 xxxxxxxxxxxxxxxx
+x|H;=uQA
 y != __null
 y?$Cz
 y?Zzy

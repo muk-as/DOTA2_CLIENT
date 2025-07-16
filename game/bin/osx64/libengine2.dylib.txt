@@ -86,8 +86,6 @@
 0|t?L
 0|t?uj
 0|t?z7
-0很V定0徨V
-0拐V薐0拨V
 1 = Pause the game when pressing ~ to open the console. CTRL+~ opens the console without pause
 1 = Unpause the game when pressing ~ to close the console. 0 = Leave the game paused
 1 fD9
@@ -968,6 +966,7 @@
 2f. Broadcast IO error. Please try again later
 2f. Broadcast Streaming error %d %s
 2f. Broadcast failed to start: cannot retrieve startup packet data
+2f. Broadcast live resync: malformed response: %s
 2f. Broadcast m_SyncResponse: unexpected response. fragment %d must be at/after start fragment %d
 2f. Broadcast playback failed to retrieve %s frame of fragment %d
 2f. Broadcast playback requesting fragment %d/%s
@@ -985,9 +984,11 @@
 2f. Playcast cannot retrieve fragment %d, retrying
 2f. Playcast failed to retrieve fragment %d (succ=%d, %.1f sec
 2f. Received signup fragment %d
+2f. Releasing fragment %d (older than %d
 2f. Requesting sync
 2f. Requesting sync from GC, start fragment %d match id %llu instance %d
 2f. Resync %d response requires full stream restart because signup fragment changed from %d to %d
+2f. Resynced live. Max tick updated: %d -> %d
 2f. Retrying sync in %.2f sec
 2f. Set playcast URL %s
 2f. Waiting %.2f seconds
@@ -1418,7 +1419,7 @@ ARARARARARARARARARA\KRB]A`.Ap
 ARARARARARARARARARA\KRB`2ASBp
 ARARARARARARARARARAp
 ARARARARARARARARA\GUE
-ARARARARARARARA\H
+ARARARARARARARA\G
 ARARAp
 ARASAV
 ARATARA
@@ -1714,6 +1715,7 @@ AWAVSE1
 AWAVSH
 AWAVSP
 AWAVSP1
+AWAVSP9
 AWAVSP9w
 AWAVSPA
 AWAVSPD
@@ -2087,6 +2089,7 @@ CBidirMsg_PredictionEvent
 CBidirMsg_RebroadcastGameEvent
 CBidirMsg_RebroadcastSource
 CBroadcastPlayer
+CBroadcastPlayer::SkipToTick( %d, %u
 CBugService
 CCIR601 sampling not implemented yet
 CCLCMsg_BaselineAck
@@ -3016,6 +3019,7 @@ Ch~AH
 Ch~DH
 ClampFloatToZero_SSE2
 Clamping split screen users to 1 due to -tools mode
+Clamping too-far-future tick from %d to %d
 Class data is a '%s', not a table
 Clear console output
 Clear console output from all views
@@ -4296,6 +4300,7 @@ HostStateRequest::Start(HSR_QUIT
 HostStateRequest::Start(HSR_SOURCETV_RELAY):  loop(%s) id(%u) addons(%s) desc(%s
 Host_EndGame: %s
 Hostname for server
+How far back before our current playback head in seconds to hold onto fragments
 How long to show the message about Killer Replay after death. The best setting is a bit shorter than spec_replay_autostart_delay + spec_replay_leadup_time + spec_replay_winddown_time
 How often to flash demo recording/playback overlay (0 - disable overlay, -1 - show always
 Http: %d failed, %d/%d max in flight
@@ -4562,11 +4567,8 @@ IS_ALIGNED(src_height, 2
 IS_ALIGNED(src_width, 2
 IcD$ I
 IcD$ I9
-IcD$(H
 IcD$(H9
 IcD$(I
-IcD$0H9
-IcD$4H9
 IcD$4I
 IcD$8H9
 IcD$8I9
@@ -4626,6 +4628,7 @@ IgnoreChildProcesses
 Ignoring P2PSessionRequest_t from %s
 Ignoring extension
 Ignoring line in steam.inf: '%s
+Ignoring packet while skipping, skip to tick: %d, packet server tick: %d
 Ignoring unexpected sync from gc, match %llu:%d
 Ignoring unexpected sync from gc, match %llu:%d, expected %llu:%d
 Ignoring unexpected sync, %d bytes, resync %d
@@ -4844,6 +4847,7 @@ Latest:%6.2f   Excess:%6.2f   Actual:%6.2f..%6.2f (@%d,%d)   Est:%6.2f..%6.2f (@
 Launch path: %s
 LayeredGameRoot
 LayeredOnMod
+Lc5/KV
 Lc6Lc
 Lcw0E9
 LeavePVS
@@ -6086,7 +6090,6 @@ Playcast Canceling Fragment %d
 Playcast Debug String: %s
 Playcast HTTP error code: %d
 Playcast Spawn Group %d load at %d
-Playcast packet tick %d, %d Bytes
 Player
 Player %d%s
 Player %d] : "%s" = "%s
@@ -6513,6 +6516,8 @@ ReplayEventType_t
 Request a VProf data stream from the remote server (requires authentication
 RequestPause_t
 Requested feature was omitted at compile time
+Requested new live tick, but already have another request in flight
+Requested new live tick, but stream is not active
 Requested size is too large to fit into size_t
 Requested:  %s
 Requesting full game update (%s
@@ -6683,6 +6688,7 @@ STEAMVIDEO_INTERFACE_V002
 STEAM] %s
 STEAM_ID_LAN
 STEAM_ID_PENDING
+STREAM_DELTAFRAMES Failed to get fragment %d, stopping
 STRING
 STRING_PIECE
 ST_Tick
@@ -7502,6 +7508,7 @@ StringTable %s
 SubstituteAndAppend
 Successfully disabled priority boost
 Successfully enabled priority boost
+Successfully retrieved fragment %d
 Successfully saved
 Suffix to append to the console log, may be changed to reopen the log
 Suggested field numbers for
@@ -7779,7 +7786,6 @@ UNKNOWN
 UNKNOWN FAILURE
 UNKNOWN VALUE
 UNKNOWN_ENUM_VALUE_%s_%d
-UP)ＨU
 UPSTREAM (client->server
 URL of the broadcast relay
 URL of the broadcast relay1
@@ -8182,7 +8188,6 @@ Volumes/P4/steam/thirdpartycode/nonredist/libyuv/libyuv/source/scale_common.cc
 Volumes/P4/steam/thirdpartycode/nonredist/libyuv/libyuv/source/scale_uv.cc
 Vrad3_001
 V|x{w
-V菠1瀬V說1
 W HcG0Ic
 W }dL
 W4HcW8H
@@ -8206,6 +8211,7 @@ WAXARARASDp
 WDG,r3
 W\;Q0s
 Waiting For Keyframe
+Waiting For Live Resync
 Warning
 Warning - Tick mark is locked, ignoring change
 Warning parsing text-format
@@ -8395,7 +8401,7 @@ Z7SaveKV3RK7KV3ID_tS1_PK10KeyValues3P10CUtlStringP10CUtlBufferj
 ZARAWA
 ZARAWASBp
 ZASAXARARAXARARAZARAZARARAp
-ZAZAYARARAYARAYARA
+ZA[AYARARAYARAYARA
 ZEo^m
 ZL17force_fatal_errorRK15CCommandContextRK8CCommandE3$_1
 ZN10CCallQueue18ParallelCallQueuedEPKcP11IThreadPool
@@ -9705,10 +9711,11 @@ d spawn groups
 d. Msg_HltvReplay %s->%s
 d. Msg_Tick %d cl:delayed sv:real-time
 d. Msg_Tick %d cl:real-time sv:replay
-d. Skipping %d ticks, jumping to fragment %d
+d. Skipping %d ticks, jumping from fragment %d to %d. Ticks per fragment: (%f * %f
 d. Stream State %s -> %s, fragment %d
 d. parsing tick %d; %d bytes
 d. playcast: Adjusting fragment %d->%d, tick %d->%d
+d. playcast: Fragment %d keyframe and delta frames ready
 d. playcast: Fragment %d keyframe and delta frames ready, delayed precache took %.2f sec
 d. playcast: Play delta Fragment %d
 d. playcast: Play keyframe Fragment %d
@@ -10176,6 +10183,7 @@ g_pInputService->IsAppActive() = %d
 g_pMaterialSystem2->FrameUpdate
 g_pMemAlloc
 g_pMeshSystem->FrameUpdate
+g_pNetworkClientService->GetTotalTicks():%d
 g_pPerfTraceDepot
 g_pRenderDevice->Present
 g_pRenderDeviceMgr is NULL. Driver data unavailable
@@ -10374,6 +10382,7 @@ grp:%si
 gtpoollimitexec
 gtpoolstacksize
 gxx_personality_v0
+hA+N|A
 hA;^lu?D
 hISTt/A
 hSSSE3
@@ -10895,6 +10904,8 @@ m_nRenderHeight
 m_nRenderWidth
 m_nRuntimeIndex
 m_nSplitScreenSlot
+m_nStartHostTick:%d
+m_nStreamStartTick:%d
 m_nTargetType
 m_nTickCount
 m_nTimesToFire
@@ -11074,6 +11085,7 @@ n>sak
 nBits != 32
 nColor
 nGVKUTS[BXIWH\KbHi:k6s4r7p8
+nTargetServerTick:%d
 nTries < 10000000
 nUVRow_C
 nVF;3
@@ -11365,7 +11377,6 @@ p(SCp8pPp
 p(p p(p
 p(p(pXppppp8RARARARARARARA^DUARAYARAZARAp
 p(pPRC
-p(pxp(SCp
 p/ugH
 p0SBp0RBp0RBp0RBp0RBp0RBp0RBp0RBp0RBp0RBp0RBp0RBp0RBp0RBp0RBp0RBpHp
 p0TAUD
@@ -11440,6 +11451,7 @@ permanent
 permanently
 pfA;<wujH
 pfffff
+php(SCp
 php_class_prefix
 php_generic_services
 php_metadata_namespace
@@ -11606,7 +11618,6 @@ queuing %s for async execution
 quit = quit when movie recording stops
 quitonservershutdown
 qxs?z7
-q怀q送q怀r
 r%ffffff
 r1<_t
 r3fff
@@ -12679,6 +12690,7 @@ swift_prefix
 sxH+spH
 symbols
 sync?fragment=%d
+syncResponse.nFragment: %d, tick: %d, syncResponse.nStartTick: %d, syncResponse.nMaxTick: %d
 sync_type
 sync_val_uint32
 syntax
@@ -12709,7 +12721,6 @@ t#IcN8
 t#fff
 t#fffff
 t#ffffff
-t$ H;5
 t$ HcD
 t$0HcD
 t$4Lc
@@ -12733,7 +12744,6 @@ t%fffff
 t%ffffff
 t&IcD
 t&ffffff
-t'D9=a
 t'HcD3
 t'HcD7
 t'IcD
@@ -12872,7 +12882,6 @@ tkfffff
 tlv_bootstrap
 tnfffff
 to start from the outermost scope
-toffff
 toggle
 toggle: Cannot parse value "%s" as boolean
 toggle: Cannot parse value "%s" as float32
@@ -12893,6 +12902,7 @@ too many named subpatterns (maximum 10000
 toolframework2
 toolsVisMaxLightingComplexity
 total sec
+total ticks, network client service: %d, broadcast player: %d
 total_data_in
 total_data_out
 total_packets_in
@@ -12958,6 +12968,7 @@ tv_password
 tv_password1
 tv_playcast_delay_prediction
 tv_playcast_delay_resync
+tv_playcast_fragment_cache_history_length
 tv_playcast_max_rcvage
 tv_playcast_max_rtdelay
 tv_playcast_origin_auth
@@ -13152,6 +13163,8 @@ u{ffff
 űUȋM
 v3fffff
 v7fff
+v8H;5
+v8H;50
 v8IcV0H
 v:fff
 v:fffff
@@ -13382,7 +13395,6 @@ wsqnmcb_OD420
 wwgEbDgxvvfGb
 wwwwwwwwwwwwwww
 wwwwwwwwwwwwwwww
-wxH;5J
 w|IcGxH
 x != NULL
 x#A9Fp

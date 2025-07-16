@@ -5,6 +5,30 @@ DOTASpectatorOptions
 	width: 272px;
 }
 
+DOTASpectatorOptions.SkippingBroadcast #PlaybackControls
+{
+	saturation: 0.5;
+	brightness: 0.5;
+}
+
+DOTASpectatorOptions.SkippingBroadcast .BroadcastLoading.Spinner
+{
+	visibility: visible;
+}
+
+DOTASpectatorOptions.SkippingBroadcast #PlayButton
+{
+	opacity: 0;
+}
+
+.BroadcastLoading.Spinner
+{
+	ignore-parent-flow: true;
+	horizontal-align: center;
+	vertical-align: center;
+	visibility: collapse;
+}
+
 DOTASpectatorOptions.Hidden
 {
 	visibility: collapse;
@@ -107,14 +131,9 @@ DOTASpectatorOptions.Hidden
 	visibility: collapse;
 }
 
-.ExpandBroadcastControls #BroadcastControls
+.WatchingBroadcast #BroadcastControls
 {
 	visibility: visible;
-}
-
-.WatchingLiveWithDotaPlus #PlaybackControls,.WatchingBroadcast #PlaybackControls
-{
-	visibility: collapse;
 }
 
 #PlaybackControls
@@ -122,11 +141,9 @@ DOTASpectatorOptions.Hidden
 	flow-children: down;
 	padding: 2px 8px 12px 8px;
 	width: 100%;
-	transition-property: background-color;
-	transition-duration: 0.2s;
+	transition-property: background-color, brightness, saturation;
 	background-color: gradient( linear, 0% 0%, 0% 100%, from( #252727ee ), to( #25272700 ) );
-	transition-property: background-color;
-	transition-duration: 0.15s;
+	transition-duration: 0.15s, 0.2s, 0.2s;
 }
 
 #PlaybackControls.ShowExpandedPlaybackControls
@@ -202,7 +219,7 @@ DOTASpectatorOptions.Hidden
 	visibility: collapse;
 }
 
-.InDraftPhase #JumpAheadButton,#JumpAheadButtonDraftPhase
+.InDraftPhase #JumpAheadButton,.WatchingBroadcast #JumpAheadButton,#JumpAheadButtonDraftPhase
 {
 	visibility: collapse;
 }
@@ -741,9 +758,9 @@ DOTAHud:not(.IsLocalPlayerSpectatingAllTeams) #SpectatorCount,DOTAHud:not(.IsLoc
 	opacity: 1;
 }
 
-.PlaybackIsLive #GoLiveButton
+.ShowGoLiveButton #GoLiveButton
 {
-	visibility: collapse;
+	visibility: visible;
 }
 
 .GoLiveControls
@@ -753,6 +770,7 @@ DOTAHud:not(.IsLocalPlayerSpectatingAllTeams) #SpectatorCount,DOTAHud:not(.IsLoc
 
 #GoLiveButton
 {
+	visibility: collapse;
 	background-color: #3366aacc;
 	color: #8199C5;
 	border-radius: 5px;
@@ -1056,11 +1074,6 @@ DOTAHud:not(.IsLocalPlayerSpectatingAllTeams) #SpectatorCount,DOTAHud:not(.IsLoc
 	visibility: visible;
 }
 
-.PlaybackIsLive .SpeedControls
-{
-	visibility: collapse;
-}
-
 .SpeedControls
 {
 	flow-children: right;
@@ -1113,10 +1126,5 @@ DOTAHud:not(.IsLocalPlayerSpectatingAllTeams) #SpectatorCount,DOTAHud:not(.IsLoc
 #CameraTakeoverProgressBar_Left
 {
 	background-color: #b7c6e5;
-}
-
-DOTAHud:not(.HUDFlipped) .ShopOpen #MainPlaybackControls,DOTAHud:not(.HUDFlipped) .ShopOpen #ExpandedPlaybackControls
-{
-	visibility: collapse;
 }
 
