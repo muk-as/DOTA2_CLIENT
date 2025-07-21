@@ -264,7 +264,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_PROJECTILE_NAME = 0x79,
             // MScriptDescription "ReincarnateSuppressFX ReincarnateTime"
             MODIFIER_PROPERTY_REINCARNATION = 0x7a,
-            // MScriptDescription "àõl'û ReincarnateSuppressFX"
+            // MScriptDescription "GetModifierConstantRespawnTime ReincarnateSuppressFX"
             MODIFIER_PROPERTY_REINCARNATION_SUPPRESS_FX = 0x7b,
             // MScriptDescription "GetModifierPercentageRespawnTime GetModifierConstantRespawnTime"
             MODIFIER_PROPERTY_RESPAWNTIME = 0x7c,
@@ -272,7 +272,7 @@ namespace source2sdk
             MODIFIER_PROPERTY_RESPAWNTIME_PERCENTAGE = 0x7d,
             // MScriptDescription "GetModifierPercentageCooldown GetModifierStackingRespawnTime"
             MODIFIER_PROPERTY_RESPAWNTIME_STACKING = 0x7e,
-            // MScriptDescription "m_nActivity GetModifierPercentageCooldown"
+            // MScriptDescription " õl'û GetModifierPercentageCooldown"
             MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE = 0x7f,
             // MScriptDescription "GetModifierPercentageCasttime GetModifierPercentageCooldownOngoing"
             MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE_ONGOING = 0x80,

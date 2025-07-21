@@ -133,7 +133,7 @@ namespace source2sdk
         // static metadata: MNetworkVarNames "int m_iDamageBonus"
         // static metadata: MNetworkVarNames "int m_iBaseDamageMin"
         // static metadata: MNetworkVarNames "int m_iBaseDamageMax"
-        // static metadata: MNetworkVarNames "int m_iTaggedAsVisibleByTeam"
+        // static metadata: MNetworkReplayCompatField "m_iTaggedAsVisibleByTeam"
         // static metadata: MNetworkVarNames "CDOTA_ModifierManager m_ModifierManager"
         // static metadata: MNetworkVarNames "CDOTA_UnitInventory m_Inventory"
         // static metadata: MNetworkVarNames "uint64 m_nUnitState64"
@@ -329,9 +329,7 @@ namespace source2sdk
             std::int32_t m_iBaseDamageMin; // 0xdcc            
             // metadata: MNetworkEnable
             std::int32_t m_iBaseDamageMax; // 0xdd0            
-            // metadata: MNetworkEnable
-            // metadata: MNetworkPriority "32"
-            std::int32_t m_iTaggedAsVisibleByTeam; // 0xdd4            
+            uint8_t _pad0dd4[0x4]; // 0xdd4
             // metadata: MNetworkEnable
             source2sdk::client::CDOTA_ModifierManager m_ModifierManager; // 0xdd8            
             // metadata: MNetworkEnable

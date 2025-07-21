@@ -149,7 +149,6 @@ namespace source2sdk
         // static metadata: MNetworkVarNames "GameTime_t m_flLastAttackTime"
         // static metadata: MNetworkVarNames "uint64 m_nUnitState64"
         // static metadata: MNetworkVarNames "int8 m_nUnitModelVariant"
-        // static metadata: MNetworkVarNames "int m_iTaggedAsVisibleByTeam"
         // static metadata: MNetworkVarNames "uint64 m_iIsControllableByPlayer64"
         // static metadata: MNetworkVarNames "EHANDLE m_vecAbilities"
         // static metadata: MNetworkVarNames "CDOTA_ModifierManager m_ModifierManager"
@@ -417,8 +416,6 @@ namespace source2sdk
             source2sdk::entity2::GameTime_t m_fAttackPhaseEndTime; // 0xf70            
             source2sdk::entity2::GameTime_t m_flPositionUpdateTime; // 0xf74            
             Vector m_vLastPositionSent; // 0xf78            
-            // metadata: MNetworkEnable
-            // metadata: MNetworkPriority "32"
             std::int32_t m_iTaggedAsVisibleByTeam; // 0xf84            
             // metadata: MNetworkEnable
             std::uint64_t m_iIsControllableByPlayer64; // 0xf88            
