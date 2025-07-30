@@ -13,13 +13,13 @@ var UpdateBadgeTier = function ( nBadgeTier )
 
 var SetCurrentBadgeTier = function()
 {
-	// deprecated GetEventBadgeTier( EVENT_ID_INTERNATIONAL_2016 )
+	                                                              
 	var nBadgeTier = 0;
 	UpdateBadgeTier( nBadgeTier );
 }
 
 $.Schedule( 0.0, function()
 {
-	//$.RegisterForUnhandledEvent( 'DOTAEventBadgeTierUpdated', function ( eEvent, nBadgeTier ) { UpdateBadgeTier( nBadgeTier ); } );
+	                                                                                                                                 
 	$.RegisterEventHandler( 'DOTAScenePanelSceneLoaded', $( '#flag1' ), function () { SetCurrentBadgeTier(); } );
 });

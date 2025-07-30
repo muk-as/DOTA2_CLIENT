@@ -99,7 +99,7 @@ class AnimateHeroRelicsScreenAction extends RunSequentialActions
 
 	start()
 	{
-		// Create the screen and do a bunch of initial setup
+		                                                    
 		var panel = StartNewScreen( 'HeroRelicsProgressScreen' );
 		panel.BLoadLayoutSnippet( "HeroRelicsProgress" );
 
@@ -107,16 +107,16 @@ class AnimateHeroRelicsScreenAction extends RunSequentialActions
 
 		if ( typeof this.data.player_slot !== 'undefined' )
 		{
-			// Use this normally when viewing the details
+			                                             
 			heroModel.SetScenePanelToPlayerHero( this.data.match_id, this.data.player_slot );
 		}
 		else
 		{
-			// Use this for testing when we don't actually have match data
+			                                                              
 			heroModel.SetScenePanelToLocalHero( this.data.hero_id );
 		}
 
-		// Setup the sequence of actions to animate the screen
+		                                                      
 		this.actions.push( new AddClassAction( panel, 'ShowScreen' ) );
 		this.actions.push( new ActionWithTimeout( new WaitForClassAction( heroModel, 'SceneLoaded' ), 3.0 ) );
 		this.actions.push( new WaitAction( 0.5 ) );

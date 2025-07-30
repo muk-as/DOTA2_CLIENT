@@ -6,15 +6,15 @@ var RunPageAnimation = function ()
 	$.GetContextPanel().RemoveClass('ShowingAlternateStyle');
 	$( '#ModelContainer' ).RemoveAndDeleteChildren();
 	$( '#ModelContainer' ).BLoadLayoutSnippet( 'ModelSnippet' );
-	// disabling camera rotation for locked camera
-	//$( '#ModelBackground' ).SetRotateParams( 2, 2, 2, 2 );
+	                                              
+	                                                        
 
 	$( '#MainContainer' ).RemoveClass( 'Initialize' );
 	$( '#ModelBackground' ).RemoveClass( 'Initialize' );
 	$( '#ModelBackgroundAlt' ).RemoveClass( 'Initialize' );
 	$( '#DebutInformation' ).RemoveClass( 'Initialize' );
 	$( '#InformationBody' ).RemoveClass( 'Initialize' );
-//	$( '#ItemName' ).RemoveClass( 'Initialize' );
+  	                                             
 	$( '#TitleContainer' ).RemoveClass( 'Initialize' );
 	$( '#Title' ).RemoveClass( 'Initialize' );
 	$( '#ItemLore' ).RemoveClass( 'Initialize' );
@@ -28,9 +28,9 @@ var RunPageAnimation = function ()
 	$('#ModelBackgroundAlt').SetRotateParams( -2, 2, 0, 0 );
 	$.Schedule( 1.0, function () { $('#ModelBackgroundAlt').FireEntityInput( 'hero_wraith_king_alt', 'StartGestureOverride', 'ACT_DOTA_IDLE' ); } );
 	$.Schedule( 7.2, function () { $('#ModelBackgroundAlt').FireEntityInput( 'hero_wraith_king_alt', 'StartGestureOverride', 'ACT_DOTA_LOADOUT' ); } );
-	//$('#ModelBackgroundAlt').FireEntityInput( 'hero_wraith_king_alt', 'StartGestureOverride', 'ACT_DOTA_IDLE' );
-	//$.Schedule( 6.07, function () { $('#ModelBackgroundAlt').FireEntityInput( 'hero_wraith_king_alt', 'StartGestureOverride', 'ACT_DOTA_IDLE' ); } );
-	//$.Schedule( 2.07, function () { $('#ModelBackground').FireEntityInput( 'hero_wraith_king', 'StartGestureOverride', 'ACT_DOTA_IDLE' ); } );
+	                                                                                                              
+	                                                                                                                                                   
+	                                                                                                                                            
 
 	seq.actions.push( new WaitAction( 0.01 ) );
     seq.actions.push( new RunFunctionAction( function() { $.DispatchEvent( 'DOTASetCurrentDashboardPageFullscreen', true ); } ) )
@@ -48,17 +48,17 @@ var RunPageAnimation = function ()
 
 	
 	seq.actions.push( new WaitAction( 0.0 ) );
-//	seq.actions.push( new AddClassAction( $( '#ItemName' ), 'Initialize' ) );
-//	seq.actions.push( new WaitAction( 0.0 ) );
+  	                                                                         
+  	                                          
 	seq.actions.push( new AddClassAction( $( '#TitleContainer' ), 'Initialize' ) );
 	seq.actions.push( new AddClassAction( $( '#Title' ), 'Initialize' ) );
 	seq.actions.push( new AddClassAction( $( '#ItemLore' ), 'Initialize' ) );	
 	seq.actions.push( new AddClassAction( $( '#AlternateStyleButton' ), 'Initialize' ) );
 	seq.actions.push( new AddClassAction( $( '#DefaultStyleButton' ), 'Initialize' ) );
 	seq.actions.push( new AddClassAction( $( '#SealScene' ), 'Initialize' ) );
-//	seq.actions.push( new WaitAction( 5.0 ) );
+  	                                          
 
-		    // enabling camera movement
+		                               
 	seq.actions.push(new LerpRotateAction($('#ModelBackground'), 0, 0, 0, 0, -2, 2, 0, 0, 5.0));
 	seq.actions.push(new LerpRotateAction($('#ModelBackgroundAlt'), 0, 0, 0, 0, -2, 2, 0, 0, 5.0));
 	
@@ -72,8 +72,8 @@ function alternateStyle()
 	$('#ModelBackground').FireEntityInput('style_switch', 'Start', '0');
 	$('#ModelBackgroundAlt').FireEntityInput('style_switch', 'Stop', '0');
 	$('#ModelBackgroundAlt').FireEntityInput('style_switch', 'Start', '0');
-	//$.Schedule( 1.34, function () { $('#ModelBackground').FireEntityInput('hero_wraith_king', 'Disable', '0'); } );
-	//$.Schedule( 1.34, function () { $('#ModelBackground').FireEntityInput('hero_wraith_king_alt', 'Enable', '0'); } );
+	                                                                                                                 
+	                                                                                                                    
 }
 
 function originalStyle()
@@ -83,8 +83,8 @@ function originalStyle()
 	$('#ModelBackground').FireEntityInput('style_switch', 'Start', '0');
 	$('#ModelBackgroundAlt').FireEntityInput('style_switch', 'Stop', '0');
 	$('#ModelBackgroundAlt').FireEntityInput('style_switch', 'Start', '0');
-	//$.Schedule( 1.34, function () { $('#ModelBackground').FireEntityInput('hero_wraith_king', 'Enable', '0'); } );
-	//$.Schedule( 1.34, function () { $('#ModelBackground').FireEntityInput('hero_wraith_king_alt', 'Disable', '0'); } );
+	                                                                                                                
+	                                                                                                                     
 }
 
 function playArcanaLine()

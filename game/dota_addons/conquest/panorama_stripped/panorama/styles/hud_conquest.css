@@ -1,0 +1,1031 @@
+
+                                                                                
+.CustomHudRoot
+{
+	width: 100%;
+	height: 100%;
+}
+
+#CapturePoints
+{
+    margin-top: 105px;
+    flow-children: right;
+    horizontal-align: center;
+    border: 0px solid red;
+	transition-property: transform;
+    transition-duration: 1s;
+}
+
+#CapturePointsContested
+{
+    margin-top: 102px;
+    horizontal-align: center;
+	width: 120px;
+	height: 62px;
+    background-color: #00000044;
+	border: 2px solid white;
+	border-radius: 3px;
+}
+
+.cp_bias_m3
+{
+    transform: translateX(150px);
+}
+
+.cp_bias_m2
+{
+    transform: translateX(90px);
+}
+
+.cp_bias_m1
+{
+    transform: translateX(30px);
+}
+
+.cp_bias_0
+{
+}
+
+.cp_bias_p1
+{
+    transform: translateX(-30px);
+}
+
+.cp_bias_p2
+{
+    transform: translateX(-90px);
+}
+
+.cp_bias_p3
+{
+    transform: translateX(-150px);
+}
+
+.cp_label
+{
+    opacity: 1.0;
+    font-size: 16px ;
+    color: white;
+    text-shadow: 1px 1px 1px #000000;
+    horizontal-align: center;
+    vertical-align: center;
+}
+
+.cp_root
+{
+    width: 60px;
+    flow-children: down;
+}
+
+.cp_status
+{
+	width: 56px;
+    height: 56px;
+    horizontal-align: center;
+    border: 2px solid black;
+    overflow: noclip;
+    border-radius: 5px;
+	transition-property: pre-transform-scale2d;
+    transition-duration: 1s;
+}
+
+.cp_element
+{
+    flow-children: down;
+    horizontal-align: center;
+}
+
+.cp_root.cp_locked .cp_status
+{
+	pre-transform-scale2d: .75;
+}
+
+.cp_icon
+{
+    width: 100%;
+    height: 100%;
+    border: 0px solid red;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+    horizontal-align: center;
+    vertical-align: center;
+
+    opacity: 1.0;
+}
+
+.cp_root.being_fortified .cp_icon
+{
+    opacity: 0;
+}
+
+.cp_contrib
+{
+	width: 100%;
+	height: 100%;
+	visibility: collapse;
+	border: 3px solid white;
+}
+
+
+.cp_pulse
+{
+  	                          
+	width: 100%;
+	height: 100%;
+	animation-name: x;
+	animation-duration: 0.4s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	visibility: collapse;
+	border: 3px solid white;
+}
+
+@keyframes 'x' {}
+@keyframes 'PulseCPAnim'
+{
+	0%
+	{
+		opacity: 0.3;
+	}
+
+	50%
+	{
+		opacity: 0;
+	}
+
+	100%
+	{
+		opacity: 0.3;
+	}
+}
+
+.cp_root.cp1 .cp_icon
+{
+    background-image: url( "file://{images}/icon_1.psd");
+}
+
+.cp_root.cp2 .cp_icon
+{
+    background-image: url( "file://{images}/icon_2.psd");
+}
+
+.cp_root.cp3 .cp_icon
+{
+    background-image: url( "file://{images}/icon_3.psd");
+}
+
+.cp_root.cp4 .cp_icon
+{
+    background-image: url( "file://{images}/icon_4.psd");
+}
+
+.cp_root.cp5 .cp_icon
+{
+    background-image: url( "file://{images}/icon_5.psd");
+}
+
+.cp_root.controlled_by_ally .cp_icon
+{
+    wash-color: #9fff8b;
+}
+
+.ColorBlindModeEnabled .cp_root.controlled_by_ally .cp_icon
+{
+    wash-color: #b8d3ff;
+}
+
+.cp_root.controlled_by_enemy .cp_icon
+{
+    wash-color: #ff5f42;
+}
+
+  
+                                
+ 
+                        
+ 
+  
+
+#cp_current_owner
+{
+    width: 100%;
+    height: 100%;
+    background-color: gradient( linear, 0% 0%, 0% 100%, from( #535352 ), to( #434443 ) );
+}
+
+.cp_root.controlled_by_ally #cp_current_owner
+{
+    background-color: gradient( linear, 0% 0%, 0% 100%, from( #49bf32 ), to( #194011 ) );
+}
+
+.ColorBlindModeEnabled .cp_root.controlled_by_ally #cp_current_owner
+{
+    background-color: gradient( linear, 0% 0%, 0% 100%, from( #8db5ff ), to( #1b4bae ) );
+}
+
+.cp_root.controlled_by_enemy #cp_current_owner
+{
+    background-color: gradient( linear, 0% 0%, 0% 100%, from( #bf4732 ), to( #401811 ) );
+}
+
+#cp_capture_progress_bar
+{
+    height: 100%;
+    width: 200%;
+	opacity: 1;
+}
+
+#cp_capture_progress_bar_color
+{
+    height: 100%;
+    width: 100%;
+    transform: translateX(-6px);
+    opacity: 1;
+}
+
+.cp_root.being_captured_by_enemy #cp_capture_progress_bar
+{
+	opacity: 1;
+}
+
+.cp_root.being_captured_by_ally #cp_capture_progress_bar
+{
+	opacity: 1;
+}
+
+.cp_root.being_captured_by_enemy #cp_capture_progress_bar_color
+{
+	wash-color: #bf4732;
+}
+
+.cp_root.being_captured_by_ally #cp_capture_progress_bar_color
+{
+    wash-color: #49bf32;
+}
+
+.ColorBlindModeEnabled .cp_root.being_captured_by_ally #cp_capture_progress_bar_color
+{
+    wash-color: #8db5ff;
+}
+
+.cp_root.being_captured_by_dire #cp_capture_progress_bar
+{
+    transform: scaleX(-1);
+}
+
+.cp_root.cp_being_captured .cp_icon
+{
+	opacity: 1;
+}
+
+#cp_locked_symbol
+{
+    horizontal-align: center;
+    vertical-align: center;
+	margin-right: -1px;
+	margin-bottom: 1px;
+    height: 44px;
+    width: 44px;
+    opacity: 0;
+}
+
+.cp_root.cp_locked #cp_locked_symbol
+{
+    opacity: 1;
+}
+
+.cp_root.not_contestable #cp_locked_symbol
+{
+    opacity: 1;
+}
+
+.cp_root.being_fortified.cp_locked #cp_locked_symbol,
+.cp_root.being_fortified.not_contestable #cp_locked_symbol
+{
+    opacity: 0;
+}
+
+.cp_cap_number
+{
+    vertical-align: bottom;
+    font-weight: bold;
+    color: white;
+    font-size: 14px;
+    opacity: 0;
+	text-shadow: 0px 0px 4px 2.0 black;
+	margin: 20px 10px 2px 8px;
+}
+
+.cp_root.being_captured_by_radiant #cp_pro_number,
+.cp_root.dire_capturing #cp_anti_number
+{
+    text-align: left;
+    horizontal-align: left;
+}
+
+.cp_root.being_captured_by_dire #cp_pro_number,
+.cp_root.radiant_capturing #cp_anti_number
+{
+    text-align: right;
+    horizontal-align: right;
+}
+
+.cp_root.cp_being_captured #cp_pro_number
+{
+    opacity: 1;
+}
+
+.cp_root.being_captured_by_enemy #cp_pro_number,
+.cp_root.being_captured_by_ally #cp_anti_number
+{
+	color: #ff5f42;
+}
+
+.cp_root.being_captured_by_ally #cp_pro_number,
+.cp_root.being_captured_by_enemy #cp_anti_number
+{
+	color: #62ff42;
+}
+
+.ColorBlindModeEnabled .cp_root.being_captured_by_ally #cp_pro_number,
+.ColorBlindModeEnabled .cp_root.being_captured_by_enemy #cp_anti_number
+{
+	color: #51b1ff;
+}
+
+#cp_player_symbol_radiant
+{
+    horizontal-align: left;
+    vertical-align: bottom;
+	width: 65%;
+	height: 65%;
+    opacity: 0;
+    margin: 0 0 -6px -6px;
+}
+
+#cp_player_symbol_dire
+{
+    horizontal-align: right;
+    vertical-align: bottom;
+	width: 65%;
+	height: 65%;
+    opacity: 0;
+    margin: 0 -6px -6px 0;
+}
+
+#cp_attack_symbol
+{
+    horizontal-align: left;
+    vertical-align: bottom;
+	width: 30%;
+	height: 30%;
+    opacity: 0;
+    margin: 2px 4px;
+}
+
+.cp_defend_symbol
+{
+    vertical-align: bottom;
+	width: 30%;
+	height: 30%;
+    opacity: 0;
+}
+
+#cp_defend_symbol_radiant
+{
+    horizontal-align: left;
+    margin: 2px 4px;
+}
+
+#cp_defend_symbol_dire
+{
+    horizontal-align: right;
+    margin: 2px 5px;
+}
+
+.cp_root.radiant_on_point #cp_player_symbol_radiant
+{
+    opacity: 1;
+}
+
+.cp_root.dire_on_point #cp_player_symbol_dire
+{
+    opacity: 1;
+}
+
+.cp_root.radiant_capturing #cp_attack_symbol
+{
+    horizontal-align: left;
+    opacity: 1;
+}
+
+.cp_root.dire_capturing #cp_attack_symbol
+{
+    horizontal-align: right;
+    opacity: 1;
+}
+
+.cp_root.being_captured_by_radiant.dire_on_point #cp_defend_symbol_dire
+{
+    opacity: 1;
+}
+
+.cp_root.being_captured_by_dire.radiant_on_point #cp_defend_symbol_radiant
+{
+    opacity: 1;
+}
+
+.cp_root.is_neutral.dire_on_point.radiant_on_point #cp_defend_symbol_radiant,
+.cp_root.is_neutral.dire_on_point.radiant_on_point #cp_defend_symbol_dire
+{
+    opacity: 1;
+}
+
+#cp_fortified_symbol
+{
+    horizontal-align: center;
+    vertical-align: middle;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+}
+
+.cp_root.being_fortified #cp_fortified_symbol
+{
+    opacity: 1;
+}
+
+                                                                             
+#points_bar
+{
+    horizontal-align: center;
+    width: 50%;
+    flow-children: right;
+    height: 200px;
+}
+
+.AspectRatio16x9 #points_bar
+{
+    width: 45%;
+}
+
+.AspectRatio4x3 #points_bar
+{
+    width: 60%;
+}
+
+#instruction_panel
+{
+    width: 6%;
+    height: 32px;
+    color: #9e7305;
+    border: 1px solid black;
+    horizontal-align: center;
+    vertical-align: middle;
+    background-color: gradient( linear, 0% 0%, 0% 100%, from( #535352 ), to( #434443 ) );
+    opacity: 1;
+}
+
+.CustomHudRoot.active_timer #instruction_panel
+{
+    opacity: 1;
+}
+
+#instruction_label
+{
+    horizontal-align: center;
+    vertical-align: middle;
+    font-weight: bold;
+    font-size: 20px;
+    text-shadow: 2px 2px 2px #7b612b;
+    color: white;
+    text-align: center;
+    text-shadow: 2px 2px 2px #111111;
+}
+
+#DirePoints
+{
+    horizontal-align: right;
+}
+
+#RadiantPoints
+{
+    horizontal-align: left;
+}
+
+.PointShared
+{
+    width: 50%;
+    height: 24px;
+    height: 100%;
+}
+
+.ProgressBarBG
+{
+    width: 100%;
+    height: 100%;
+    border: 0px solid black;
+    background-color: gradient( linear, 0% 0%, 40% 0%, from( #782d1f ), to( #401811));
+}
+
+.local_player_team .ProgressBarBG
+{
+    background-color: gradient( linear, 60% 0%, 100% 0%, from( #083305 ), to( #386c33) );
+}
+
+.ColorBlindModeEnabled .local_player_team .ProgressBarBG
+{
+    background-color: gradient( linear, 60% 0%, 100% 0%, from( #0b4289 ), to( #3b6cd0) );
+}
+
+.SideShared
+{
+    height: 100%;
+    width: 100%;
+    vertical-align: top;
+    background-color: transparent;
+}
+
+#RadiantSide
+{
+    horizontal-align: left;
+    flow-children: right;
+}
+
+#DireProgressFill
+{
+    width: fill-parent-flow(1);
+}
+
+#DireSide
+{
+    horizontal-align: right;
+    flow-children: right;
+}
+
+.ProgressBarPart
+{
+    height: 32px;
+}
+
+#radiant_progress_bar
+{
+    width: 0%;
+    horizontal-align: left;
+	border-right: 2px solid white;
+	padding-right: -1px;        
+}
+
+#dire_progress_bar
+{
+    width: 0%;
+    horizontal-align: right;
+    transform: scaleX(-1);
+	border-right: 2px solid white;
+}
+
+.ProgressBarBody
+{
+    background-color: gradient( linear, 0% 0%, 0% 100%, from( #ff5f42 ), to( #803021));
+}
+
+.local_player_team .ProgressBarBody
+{
+    background-color: gradient( linear, 0% 0%, 0% 100%, from( #62ff42 ), to( #1a7607 ));
+}
+
+.ColorBlindModeEnabled .local_player_team .ProgressBarBody
+{
+    background-color: gradient( linear, 0% 0%, 0% 100%, from( #92b8ff ), to( #1844a0 ));
+}
+
+.ProgressEndContainer
+{
+    height: 100%;
+    width: 100%;
+    opacity: 0.45;
+    horizontal-align: right;
+	width: 300px;
+	overflow: clip;
+                                                                                               
+}
+
+.radiant_earning_points #radiant_end_container,
+.dire_earning_points #dire_end_container
+{
+	opacity: 1;
+}
+
+.ProgressEndContainerPulse
+{
+	width: 100px;
+    height: 100%;
+    vertical-align: center;
+    visibility: collapse;
+    horizontal-align: right;
+
+	animation-name: PulseAnim;
+	animation-duration: 5s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+
+    background-color: gradient( linear, 0% 0%, 100% 0%, from( #FFFFFF00 ), to( #FFFFFFAA ));
+}
+
+
+.radiant_earning_points #radiant_end_container_pulse,
+.dire_earning_points #dire_end_container_pulse
+{
+    visibility: visible;
+}
+
+
+@keyframes 'PulseAnim'
+{
+	0%
+	{
+		opacity: 0;
+	}
+
+	50%
+	{
+		opacity: 1;
+	}
+
+	100%
+	{
+		opacity: 0;
+	}
+}
+
+@keyframes 'ArrowArrive'
+{
+	0%
+	{
+		opacity: 0;
+		transform: translateX(-100px);
+	}
+
+	100%
+	{
+		opacity: 1;
+		transform: translateX(100px);
+	}
+}
+
+#radiant_arrow
+{
+}
+
+#radiant_arrow2
+{
+    margin-right: 20px;
+}
+
+#radiant_arrow3
+{
+    margin-right: 40px;
+}
+
+#dire_arrow
+{
+}
+
+#dire_arrow2
+{
+    margin-right: 20px;
+}
+
+#dire_arrow3
+{
+    margin-right: 40px;
+}
+
+.arrow_part
+{
+	width: 32px;
+    height: 100%;
+    vertical-align: center;
+    visibility: collapse;
+    horizontal-align: right;
+
+	animation-name: ArrowArrive;
+	animation-duration: 1.5s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+}
+
+.radiant_earning_points #radiant_arrow,
+.radiant_earning_double_points #radiant_arrow2,
+.radiant_earning_triple_points #radiant_arrow3,
+.dire_earning_points #dire_arrow,
+.dire_earning_double_points #dire_arrow2,
+.dire_earning_triple_points #dire_arrow3
+{
+    visibility: visible;
+}
+
+.radiant_earning_points .arrow_part,
+.dire_earning_points .arrow_part,
+.radiant_earning_points #radiant_end_container_pulse,
+.dire_earning_points #dire_end_container_pulse
+{
+	animation-duration: 2.4s;
+}
+
+.radiant_earning_double_points .arrow_part,
+.dire_earning_double_points .arrow_part,
+.radiant_earning_double_points #radiant_end_container_pulse,
+.dire_earning_double_points #dire_end_container_pulse
+{
+	animation-duration: 1.6s;
+}
+
+.radiant_earning_triple_points .arrow_part,
+.dire_earning_triple_points .arrow_part,
+.radiant_earning_triple_points #radiant_end_container_pulse,
+.dire_earning_triple_points #dire_end_container_pulse
+{
+	animation-duration: 0.8s;
+}
+
+                                                                                            
+#points_scores
+{
+    border: 1px solid black;
+    width: 50%;
+    height: 32px;
+    horizontal-align: center;
+    margin-top: 70px;
+}
+
+.AspectRatio16x9 #points_scores
+{
+    width: 45%;
+}
+
+.AspectRatio4x3 #points_scores
+{
+    width: 60%;
+}
+
+#Radiant
+{
+    width: 100%;
+    border: 0px solid red;
+    horizontal-align: center;
+    vertical-align: center;
+    margin-left: 6px;
+    text-align: left;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 2px #111111;
+}
+
+#Dire
+{
+    width: 100%;
+    border: 0px solid red;
+    horizontal-align: center;
+    vertical-align: center;
+    margin-right: 6px;
+    text-align: right;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 2px #111111;
+}
+
+#radiant_text
+{
+    text-align: center;
+    horizontal-align: center;
+}
+
+#dire_text
+{
+    text-align: center;
+    horizontal-align: center;
+}
+
+.points_text
+{
+    color: white;
+    font-size: 24px;
+    margin-top: 0px;
+}
+
+.milestone_image
+{
+    width: 9px;
+    height: 100%;
+    horizontal-align: center;
+    vertical-align: center;
+    border: 0px solid red;
+}
+
+.milestone_fill
+{
+    width: fill-parent-flow(1);
+    height: 100%;
+    border: 0px solid red;
+}
+
+.milestone_marker
+{
+	width: 2px;
+	height: 100%;
+	background-color: black;
+    background-color: gradient( linear, 0% 0%, 0% 100%, from( #bf4732 ), to( #823021) );
+}
+
+.local_player_team .milestone_marker
+{
+    background-color: gradient( linear, 0% 0%, 0% 100%, from( #49bf32 ), to( #1a4312) );
+}
+
+.ColorBlindModeEnabled .local_player_team .milestone_marker
+{
+    background-color: gradient( linear, 0% 0%, 0% 100%, from( #51b1ff ), to( #355daf) );
+}
+
+#center_milestone_marker
+{
+	background-color: black;
+}
+
+#points_scores_radiant
+{
+	width: 100%;
+	height: 100%;
+    horizontal-align: left;
+	flow-children: right;
+}
+
+#points_scores_dire
+{
+	width: 100%;
+	height: 100%;
+    horizontal-align: right;
+	flow-children: right;
+}
+
+#center_milestone_marker
+{
+	horizontal-align: center;
+}
+
+
+                                                                                     
+#AlertMessage
+{
+    color: white;
+    horizontal-align: center;
+    margin-top: 4px;
+    font-size: 32px;
+    font-weight: bold;
+    opacity: 1;
+    visibility: collapse;
+}
+
+.time_remaining #AlertMessage
+{
+    opacity: 1;
+    visibility: visible;
+}
+
+                                                                                        
+#WaypointMessage
+{
+    color: white;
+    horizontal-align: center;
+    margin-top: 4px;
+    font-size: 32px;
+    font-weight: bold;
+    opacity: 1;
+    visibility: collapse;
+	margin-top: 200px;
+}
+
+.waypoint_active #WaypointMessage
+{
+    opacity: 1;
+    visibility: visible;
+}
+
+                                                                                     
+#PointMessage
+{
+    flow-children: down;
+    margin-top: 0px;
+    opacity: 0;
+    horizontal-align: center;
+    transform: scaleX(2) scaleY(2);
+    visibility: collapse;
+    transition-property: transform, opacity;
+    transition-duration: 0.3s;
+	margin-top: 160px;
+}
+.point_notification
+{
+    color: white;
+    horizontal-align: center;
+    text-shadow: 4px 4px 4px #121212;
+}
+
+#PointMessage_Team
+{
+    font-size: 64px;
+}
+
+#PointMessage_Text
+{
+    font-size: 20px;
+    margin-top: -10px;
+}
+
+#PointMessage_Points
+{
+    font-size: 24px;
+}
+
+.points_achievement #PointMessage
+{
+    opacity: 1;
+    transform: scaleX(1) scaleY(1);
+    visibility: visible;
+}
+
+                                                                                         
+#MilestoneNotification
+{
+    height: 44px;
+    width: 50%;
+    horizontal-align: center;
+    flow-children: down;
+    margin-top: 0px;
+    margin-bottom: 14px;
+    opacity: 0;
+    visibility: collapse;
+    border: 0px solid red;
+	margin-top: 170px;
+}
+.milestone_active #MilestoneNotification
+{
+    opacity: 1;
+    visibility: visible;
+}
+
+.milestone_text
+{
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0px;
+    horizontal-align: center;
+    text-shadow: 4px 4px 4px #121212;
+}
+
+                                                                                        
+#CountdownNotification
+{
+    width: 25%;
+    height: 128px;
+    flow-children: down;
+    margin-top: 0px;
+    opacity: 0;
+    horizontal-align: center;
+    visibility: collapse;
+    border: 0px solid red;
+	margin-top: 200px;
+}
+
+.countdown_text
+{
+    color: white;
+    horizontal-align: center;
+    text-shadow: 4px 4px 4px #121212;
+}
+
+.countdown_active #CountdownNotification
+{
+    opacity: 1;
+    visibility: visible;
+}
+
+#CountdownMessage
+{
+    font-size: 48px;
+    text-align: center;
+}
+
+#CountdownNumbers
+{
+    font-size: 64px;
+    color: red;
+    text-align: center;
+    margin-top: -24px;
+}
+

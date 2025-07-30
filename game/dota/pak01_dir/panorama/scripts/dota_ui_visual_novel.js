@@ -11,18 +11,18 @@ function UpdateEffects() {
     if (!g_typeWriterEffect.m_panel || g_typeWriterEffect.m_bFinished) {
         return;
     }
-    //$.Msg(g_typeWriterEffect.m_nCharacterIndex, "/", g_typeWriterEffect.m_strText.length);
+                                                                                            
     g_typeWriterEffect.m_nCharacterIndex = g_typeWriterEffect.m_nCharacterIndex + 1;
     if (g_typeWriterEffect.m_nCharacterIndex >= g_typeWriterEffect.m_strText.length) {
         g_typeWriterEffect.m_bFinished = true;
     }
 
     var partialString = g_typeWriterEffect.m_strText.substring(0, g_typeWriterEffect.m_nCharacterIndex);
-    //$.Msg(partialString, " / ", g_typeWriterEffect.m_strText)
+                                                               
     g_typeWriterEffect.m_panel.text = partialString;
 
-    // Vary the character delay depending on punctuation.
-    var flCharacterDelay = 0.02; // Default
+                                                         
+    var flCharacterDelay = 0.02;           
     var lastCharacter = partialString.charAt(partialString.length - 1);
     if (lastCharacter == '.') {
         flCharacterDelay = 0.2;
@@ -44,7 +44,7 @@ function UpdateEffects() {
 
 function GoToNextStep() {
     if (!g_typeWriterEffect.m_bFinished) {
-        // Skip and finish the animation.
+                                         
         g_typeWriterEffect.m_bFinished = true;
         g_typeWriterEffect.m_panel.text = g_typeWriterEffect.m_strText;
         return false;
@@ -58,7 +58,7 @@ function OnDialogueTextChanged(dialoguePanelID, textPanelID, strText) {
     g_typeWriterEffect.m_nCharacterIndex = 0;
     g_typeWriterEffect.m_strText = strText;
 
-    // $.Msg("OnDialogueTextChange called: ", strText);
+                                                       
     g_typeWriterEffect.m_panel = textLabel;
     g_typeWriterEffect.m_bFinished = false;
     

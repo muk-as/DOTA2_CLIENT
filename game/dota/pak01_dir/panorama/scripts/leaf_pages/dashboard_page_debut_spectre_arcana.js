@@ -22,7 +22,7 @@ var RunPageAnimation = function ()
     g_seq.actions.push( new WaitForClassAction( $( '#ModelBackground' ), 'SceneLoaded' ) );
     
     g_seq.actions.push( new RunFunctionAction( function () { g_Stinger_SoundId = PlayUISoundScript( 'spectre_arc_debut_stinger'); }))
-    //g_seq.actions.push(new RunFunctionAction( function () { g_SFX_SoundId = PlayUISoundScript( 'spectre_arc_debut_sfx'); } ) )
+                                                                                                                                
     g_seq.actions.push( new AddClassAction( $( '#MainContainer' ), 'Initialize' ) );
     g_seq.actions.push( new AddClassAction( $( '#ModelBackground' ), 'Initialize' ) );
     g_seq.actions.push( new AddClassAction( $( '#ModelBackgroundAlt' ), 'Initialize' ) );

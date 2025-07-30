@@ -1,8 +1,8 @@
-// ----------------------------------------------------------------------------
-//
-// Coach Rating Screen
-//
-// ----------------------------------------------------------------------------
+                                                                               
+  
+                      
+  
+                                                                               
 
 class WaitForRatingStateChange extends WaitForConditionAction
 {
@@ -74,7 +74,7 @@ class AnimateCoachRatingScreenAction extends RunSequentialActions
 		var action_data = this.data;
 		var rating_data = this.coach_data;
 
-		// Create the screen and do a bunch of initial setup
+		                                                    
 		var panel = StartNewScreen( 'CoachRatingScreen' );
 		panel.BLoadLayoutSnippet( "CoachRating" );
 
@@ -97,7 +97,7 @@ class AnimateCoachRatingScreenAction extends RunSequentialActions
 
 			$.DispatchEvent( 'DOTASubmitCoachRating', action_data.match_id, rating_data.coach_account_id, strRating, strReason );
 
-			// Once a rating has been changed, disable all the other UI
+			                                                           
 			goodRatingButton.enabled = false;
 			badRatingButton.enabled = false;
 			abusiveRatingButton.enabled = false;
@@ -130,7 +130,7 @@ class AnimateCoachRatingScreenAction extends RunSequentialActions
 			waitForAbusiveRatingPopupAction.popupActive = false;
 		} );
 
-		// Setup the sequence of actions to animate the screen
+		                                                      
 		this.actions.push( new AddClassAction( panel, 'ShowScreen' ) );
 		this.actions.push( new AddScreenLinkAction( panel, 'CoachRatingProgress', '#DOTA_CoachRatingPostGame_CoachRating', function()
 		{
@@ -165,7 +165,7 @@ function TestAnimateCoachRating()
 {
 	var data =
 	{
-		//match_id: '123456789012345',
+		                              
 		match_id: '0',
 
 		coaches_need_rating:
@@ -175,11 +175,11 @@ function TestAnimateCoachRating()
 					coach_player_name: 'EricL',
 					coach_rating: 2345
 				}
-				//{
-				//	coach_account_id: 85501829,
-				//	coach_player_name: 'Cameron',
-				//	coach_rating: 5678
-				//}
+				   
+				  	                           
+				  	                             
+				  	                  
+				   
 			]
 	};
 

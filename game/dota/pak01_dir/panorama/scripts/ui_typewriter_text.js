@@ -24,12 +24,12 @@ function SkipToEnd() {
 function SetFinished() {
     g_typeWriterEffect.m_bFinished = true;
     if (g_typeWriterEffect.m_strText.length != 0) {
-        g_typeWriterEffect.m_panel.text = g_typeWriterEffect.m_strText;// + "<child id='Cursor' replacechar=' '/>";
+        g_typeWriterEffect.m_panel.text = g_typeWriterEffect.m_strText;                                            
     }
     g_typeWriterEffect.m_parentPanel.GetParent().SetHasClass("Animating", false);
     g_typeWriterEffect.m_parentPanel.SetHasClass( "AnimateCursor", false );
     $.DispatchEvent( 'DOTATypeWriterTextComplete', g_typeWriterEffect.m_parentPanel );
-    //$.Msg("Finished effects on ", g_typeWriterEffect.m_strText);
+                                                                  
 }
 
 function UpdateSounds() {
@@ -48,15 +48,15 @@ function strncmp(str1, str2, n) {
 }
 
 function splitHTMLString(htmlString) {
-    const regex = /<[^>]*>|[^<]+/g; // Regular expression to match HTML tags and text content
+    const regex = /<[^>]*>|[^<]+/g;                                                          
     return htmlString.match(regex);
 }
-// Since we're dynamically inserting a <span> in the middle of our dialogue line,
-// this can result in a formatting tag like <b></b> getting broken up. We need to
-// detect and fix these cases.
-// Example: <b>Hello <span>World</b></span>
-//          should be
-//          <b>Hello </b><span>World</span>
+                                                                                 
+                                                                                 
+                              
+                                           
+                     
+                                           
 function FixUpHtmlTags(strHtmlText) {
     var chunks = splitHTMLString(strHtmlText);
     var rebuiltString = "";
@@ -65,10 +65,10 @@ function FixUpHtmlTags(strHtmlText) {
     var someText = false;
     var isSpan = false;
 
-    //$.Msg("FixUphtmlTags, chunks: " + chunks.join('|'));
+                                                          
 
     for (var i = 0; i < chunks.length; ++i) {
-        // This is hacky, but we only need to support a limited number of tag types.
+                                                                                    
         var isOpeningTag = false;
         if (chunks[i] == "<b>") {
             isBold = true;
@@ -81,7 +81,7 @@ function FixUpHtmlTags(strHtmlText) {
         else if (strncmp(chunks[i], "<span", 5) == 0 ) {
             isSpan = true;
             someText = false;
-            //$.Msg("Detected span opening tag. " + i);
+                                                       
         }
         else if (chunks[i] == "</b>") {
             isBold = false;
@@ -91,8 +91,8 @@ function FixUpHtmlTags(strHtmlText) {
         }
         else if (strncmp(chunks[i], "<child ", 5) == 0) {
             if (isSpan) {
-                //$.Msg("Fixing up child inside span");
-                // Find the closing tag, and insert it here.
+                                                       
+                                                            
                 var closingTagIndex = chunks.indexOf("</span>", i);
                 chunks.splice(closingTagIndex, 1);
                 if (someText) {
@@ -104,7 +104,7 @@ function FixUpHtmlTags(strHtmlText) {
                 isSpan = false;
             } 
             else if (isBold) {
-                // Find the closing tag, and insert it here.
+                                                            
                 var closingTagIndex = chunks.indexOf("</b>", i);
                 chunks.splice(closingTagIndex, 1);
                 if (someText) {
@@ -140,13 +140,13 @@ function UpdateEffects() {
     }
 
     var nCharactersLeft = g_typeWriterEffect.m_strText.length - g_typeWriterEffect.m_nCharacterIndex;
-    //$.Msg(g_typeWriterEffect.m_nCharacterIndex, "/", g_typeWriterEffect.m_strText.length);
+                                                                                            
 
     var nCharIncrement = 1;
     if( g_typeWriterEffect.m_bSkipToEnd )
     {
-        // Only skip if we're not almost done. We want to process the last few characters, so that the cursor
-        // updates correctly.
+                                                                                                             
+                             
         if (nCharactersLeft > 5) {
             nCharIncrement = 5;
         }
@@ -162,13 +162,13 @@ function UpdateEffects() {
             if (lastCharacter === "<") {
                 someHtmlTag = true;
             }
-                // Html tag. Skip characters until we get to the end of the tag.
+                                                                                
             while (someHtmlTag && lastCharacter !== ">") {
                 g_typeWriterEffect.m_nCharacterIndex++;
                 if (g_typeWriterEffect.m_nCharacterIndex >= g_typeWriterEffect.m_strText.length)
                     break;
                 lastCharacter = g_typeWriterEffect.m_strText.charAt(g_typeWriterEffect.m_nCharacterIndex);
-                //$.Msg(lastCharacter);
+                                       
             }
             g_typeWriterEffect.m_nCharacterIndex++;
             if (g_typeWriterEffect.m_nCharacterIndex >= g_typeWriterEffect.m_strText.length)
@@ -188,7 +188,7 @@ function UpdateEffects() {
     var partialString = g_typeWriterEffect.m_strText.substring(0, g_typeWriterEffect.m_nCharacterIndex);
     var endString = g_typeWriterEffect.m_strText.substring(g_typeWriterEffect.m_nCharacterIndex);
 
-    // We want the cursor to act like the next character in the word so that it word breaks or wraps correctly.
+                                                                                                               
     var replaceCharAttribute = "";
     if (endString.length > 0 )
     {
@@ -199,7 +199,7 @@ function UpdateEffects() {
         else {
             replaceCharAttribute = " replacechar='" + endStartChar + "'";
         }
-        //$.Msg(replaceCharAttribute, partialString);
+                                                     
     }
 
     var combinedString = partialString + "<child id='Cursor'" + replaceCharAttribute + "/>";
@@ -207,12 +207,12 @@ function UpdateEffects() {
     if (endString.length > 0) {
         combinedString = combinedString + "<span class='HideText'>" + endString + "</span>";
     }
-    //$.Msg("Before:\t" + combinedString);
+                                          
     var fixedString = FixUpHtmlTags(combinedString);
-    //$.Msg("After:\t" + fixedString);
+                                      
     g_typeWriterEffect.m_panel.text = fixedString;
 
-    // Vary the character delay depending on punctuation.
+                                                         
     var flCharacterDelay = g_typeWriterEffect.m_flCharacterDelay;
     var lastCharacter = partialString.charAt(partialString.length - 1);
     var bAnimateCursor = false;
@@ -246,7 +246,7 @@ function UpdateEffects() {
 
 function GoToNextStep() {
     if (!g_typeWriterEffect.m_bFinished) {
-        // Skip and finish the animation.
+                                         
         SetFinished();
         return false;
     }
@@ -259,7 +259,7 @@ function OnTextChanged(parentPanel, strText, strVoice, flDelay, flSoundDelay, bI
     g_typeWriterEffect.m_nCharacterIndex = 0;
     g_typeWriterEffect.m_strText = strText;
 
-    // $.Msg("OnTextChanged called: ", strText);
+                                                
     g_typeWriterEffect.m_panel = textLabel;
     g_typeWriterEffect.m_bFinished = false;
     g_typeWriterEffect.m_bSkipToEnd = false;

@@ -3,7 +3,7 @@ function AbilityScenePanelReady() {
 	var scenePanel = $( '#AbilitiesScene' );
 
 	for (var iBlock = 0; iBlock < 12; iBlock++) {
-		var formattedBlockNumber = ('0' + iBlock).slice(-2); // 00 - 11
+		var formattedBlockNumber = ('0' + iBlock).slice(-2);           
 
 		for (var iAbility = 0; iAbility < 3; iAbility++) {
 			var abilityBlockName = 'block' + formattedBlockNumber + '_a' + iAbility + '_button';
@@ -34,7 +34,7 @@ function HeroesReady() {
 	
 	$.Schedule(0.1, function () {
 		for (var iBlock = 0; iBlock < 12; iBlock++) {
-			var formattedBlockNumber = ('0' + iBlock).slice(-2); // 00 - 11
+			var formattedBlockNumber = ('0' + iBlock).slice(-2);           
 
 			for (var iAbility = 0; iAbility < 3; iAbility++) {
 				var abilityBlockName = 'block' + formattedBlockNumber + '_a' + iAbility + '_button';

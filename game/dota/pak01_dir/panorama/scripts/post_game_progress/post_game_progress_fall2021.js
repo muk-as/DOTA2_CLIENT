@@ -1,8 +1,8 @@
-// Fall 2021 BP post game logic
+                               
 
-// ----------------------------------------------------------------------------
-// Weekly Quests
-// ----------------------------------------------------------------------------
+                                                                               
+                
+                                                                               
 
 class AnimateFall2021WeeklyQuestEntryAction extends RunSequentialActions
 {
@@ -68,7 +68,7 @@ class AnimateFall2021WeeklyQuestEntryAction extends RunSequentialActions
             if ( this.actionGranted.progress_start_value >= levelThreshold.threshold )
                 continue;
 
-            // Setup threshold
+                              
             this.actions.push( new RunFunctionAction( function( panel, lowerValue, nextThreshold )
             {
                 return function()
@@ -80,7 +80,7 @@ class AnimateFall2021WeeklyQuestEntryAction extends RunSequentialActions
                 };
             }( this.entryPanel, startValue, levelThreshold ) ) );
 
-            // Now animate up to either the end of the threshold, or the final value
+                                                                                    
             var nextAnimateValue = Math.min( levelThreshold.threshold, finalValue );
 
             var par = new RunParallelActions();
@@ -93,7 +93,7 @@ class AnimateFall2021WeeklyQuestEntryAction extends RunSequentialActions
 
             this.actions.push( par );
 
-            // Animate the star increasing
+                                          
             if ( nextAnimateValue == levelThreshold.threshold )
             {
                 var tierStar = questStars.GetChild( i );
@@ -109,7 +109,7 @@ class AnimateFall2021WeeklyQuestEntryAction extends RunSequentialActions
                 this.actions.push( new WaitAction( 0.4 ) );
             }
 
-            // Are we all done?
+                               
             if ( nextAnimateValue == finalValue )
                 break;
 
@@ -120,7 +120,7 @@ class AnimateFall2021WeeklyQuestEntryAction extends RunSequentialActions
     }
 }
 
-// ----------------------------------------------------------------------------
+                                                                               
 
 class AnimateFall2021WeeklyQuestsAction extends RunSequentialActions
 {
@@ -158,9 +158,9 @@ class AnimateFall2021WeeklyQuestsAction extends RunSequentialActions
     }
 }
 
-// ----------------------------------------------------------------------------
-// Event Game
-// ----------------------------------------------------------------------------
+                                                                               
+             
+                                                                               
 
 class AnimateFall2021EventGameAction extends RunSequentialActions
 {
@@ -203,9 +203,9 @@ class AnimateFall2021EventGameAction extends RunSequentialActions
 }
 
 
-// ----------------------------------------------------------------------------
-// Cavern Crawl
-// ----------------------------------------------------------------------------
+                                                                               
+               
+                                                                               
 
 class AnimateFall2021CavernCrawlAction extends RunSequentialActions
 {
@@ -236,9 +236,9 @@ class AnimateFall2021CavernCrawlAction extends RunSequentialActions
     }
 }
 
-// ----------------------------------------------------------------------------
-// Drow Arcana Minigame
-// ----------------------------------------------------------------------------
+                                                                               
+                       
+                                                                               
 
 class AnimateFall2021DrowArcanaMinigameAction extends RunSequentialActions
 {
@@ -262,9 +262,9 @@ class AnimateFall2021DrowArcanaMinigameAction extends RunSequentialActions
     }
 }
 
-// ----------------------------------------------------------------------------
-// Progress Screen
-// ----------------------------------------------------------------------------
+                                                                               
+                  
+                                                                               
 
 class AnimateFall2021ScreenAction extends RunSequentialActions
 {
@@ -276,15 +276,15 @@ class AnimateFall2021ScreenAction extends RunSequentialActions
 
     start()
     {
-        // Create the screen and do a bunch of initial setup
+                                                            
         var panel = StartNewScreen( 'Fall2021ProgressScreen' );
         panel.BLoadLayoutSnippet( "Fall2021Progress" );
         panel.SetDialogVariableInt( 'active_week', this.data.fall_2021_progress.active_season_id );
 
         var levelShield = panel.FindChildInLayoutFile( 'Fall2021LevelShield' );
-        //levelShield.SetEventPoints( this.data.fall_2021_progress.battle_points_event_id, this.data.fall_2021_progress.battle_points_start );
+                                                                                                                                              
 
-        // Setup the sequence of actions to animate the screen
+                                                              
         this.seq = new RunSequentialActions();
         this.actions.push( new AddClassAction( panel, 'ShowScreen' ) );
         this.actions.push( new SkippableAction( new WaitAction( 0.5 ) ) );
@@ -332,7 +332,7 @@ class AnimateFall2021ScreenAction extends RunSequentialActions
     }
 }
 
-//----------------------------------
+                                    
 
 function TestAnimateFall2021()
 {
@@ -350,7 +350,7 @@ function TestAnimateFall2021()
             weekly_quest_initial_stars: 2,
             actions_granted: [
                 {
-                    // Cross a tier
+                                   
                     progress_start_value: 1,
                     progress: 40,
                     level_thresholds: [
@@ -372,7 +372,7 @@ function TestAnimateFall2021()
                     ]
                 },
                 {
-                    // Cross past max tier
+                                          
                     progress_start_value: 141,
                     progress: 10,
                     level_thresholds: [
@@ -394,7 +394,7 @@ function TestAnimateFall2021()
                     ]
                 },
                 {
-                    // Minor increment
+                                      
                     progress_start_value: 0,
                     progress: 4,
                     level_thresholds: [

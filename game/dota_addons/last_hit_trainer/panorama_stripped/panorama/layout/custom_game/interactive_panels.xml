@@ -1,0 +1,230 @@
+<root>
+	<scripts>
+		<include src="file://{resources}/scripts/custom_game/interactive_panels.js" />
+	</scripts>
+	<styles>
+		<include src="file://{resources}/styles/custom_game/last_hit_trainer.css" />
+    </styles>
+	<Panel hittest="false" class="CustomHudRoot">
+
+		                      
+		<Panel id="splash_screen_container">
+			<Panel id="splash_screen_contents" class="VisibilityTransparent" >
+
+				<Panel id="ModeStartTitlePanel">
+					<Label id="ModeStartTitle" text="#DOTA_HUD_Mode_Start_Welcome"/>
+				</Panel>
+
+				<Panel id="splash_screen_textbox">
+
+					<Panel id="splash_screen_textbox_list">
+						<Label class="Headline3" text="#DOTA_HUD_Mode_Start_Description"/>
+						<Label class="Headline3" text="#DOTA_HUD_Mode_Start_Scoring"/>
+						<Label class="Headline3" text="#DOTA_HUD_Mode_Start_Round_Duration"/>
+						<Label class="Headline3" id="TiersDescription" text="#DOTA_HUD_Mode_Start_Tiers" html="true"/>
+					</Panel>
+
+				</Panel>
+
+				<Button class="PopupPanelButton" onactivate="PlayFirstRoundButtonPressed()">
+					<Label text="#Round_Start_Button"/>
+				</Button>
+
+			</Panel>
+
+		</Panel>
+
+		                     
+		<Panel id="ControlPanel">
+			<Panel class="ControlPanelContainer">
+				<Panel id="Maximized">
+					<Panel id="MinimizeButton">
+						<Label text="#Flyout_Panel_Title" />
+					</Panel>
+
+					<Panel class="Category">
+						<Label text=""/>
+
+						<Panel class="Row">
+							<Button class="DemoButton" onactivate="$.DispatchEvent('FireCustomGameEvent_Str', 'RoundStartButtonPressed', '' );">
+								<Label text="#Flyout_Restart_Round_Button"/>
+							</Button>
+						</Panel>
+
+						<Panel class="Row">
+							<Button id="NewHeroButton" class="DemoButton" onactivate="ToggleHeroPicker()">
+								<Label text="#Flyout_Choose_New_Hero_Button"/>
+							</Button>
+						</Panel>
+
+					</Panel>
+
+					<Panel class="Category">
+	        			<Label text=""/>
+
+						<Panel class="QuitPanel">
+							<Button class="QuitButton" onactivate="FireCustomGameEvent_Str( LeaveButtonPressed )">
+								<Label text="#Quit_Button"/>
+							</Button>
+						</Panel>
+
+					</Panel>
+				</Panel>
+			</Panel>
+
+			<Panel id="SelectHeroContainer">
+				<DOTAUIHeroPicker id="HeroPicker" />
+			</Panel>
+ 
+			    
+			                                                                                              
+				                                     
+			         
+			   
+
+		</Panel>
+
+		                           
+		<Panel id="RoundEndPanel" hittest="false">
+
+			<Panel id="RoundEndLabelPanel">
+				<Label id="RoundEndLabel" text="#DOTA_HUD_Round_Completed"/>
+			</Panel>
+
+			<Panel id="RoundEndStatsPanel">
+
+				<Panel id="RoundEndScore">
+					<Panel class="stat_title">
+						<Label text="#Round_End_Stats_Score"/>
+					</Panel>
+					<Panel class="value">
+						<Label id="Score" text="0"/>
+					</Panel>
+				</Panel>
+
+				<Panel class="RoundEndMiscStat">
+					<Panel class="stat_title">
+						<Label text="#DOTA_HUD_Last_Hits"/>
+					</Panel>
+					<Panel class="value">
+						<Label id="CreepsLastHit" text="0"/>
+					</Panel>
+				</Panel>
+
+				<Panel class="RoundEndMiscStat">
+					<Panel class="stat_title">
+						<Label text="#Round_End_Stats_Longest_Streak"/>
+					</Panel>
+					<Panel class="value">
+						<Label id="TopLastHitStreak" text="0"/>
+					</Panel>
+				</Panel>
+
+				<Panel class="RoundEndMiscStat">
+					<Panel class="stat_title">
+						<Label text="#DOTA_HUD_Denies"/>
+					</Panel>
+					<Panel class="value">
+						<Label id="CreepsDenied" text="0"/>
+					</Panel>
+				</Panel>
+
+				<Panel class="RoundEndMiscStat">
+					<Panel class="stat_title">
+						<Label text="#DOTA_HUD_Percentage"/>
+					</Panel>
+					<Panel class="value">
+						<Label id="TotalLastHitOrDenyPct" text="0"/>
+					</Panel>
+				</Panel>
+
+				<Panel class="RoundEndCreepTypeKills">
+					<Panel class="melee">
+						<Label text="Melee"/>
+						<Panel class="meleestats">
+							<Panel class="statrow">
+								<Panel class="value">
+									<Label id="MeleeCreepsKilled" text="0"/>
+								</Panel>
+								<Panel class="stat_title">
+									<Label text="#CreepStats_Kills"/>
+								</Panel>
+							</Panel>
+							<Panel class="statrow">
+								<Panel class="value">
+									<Label id="MeleeCreepsDenied" text="0"/>
+								</Panel>
+								<Panel class="stat_title">
+									<Label text="#CreepStats_Denies"/>
+								</Panel>
+							</Panel>
+							<Panel class="statrow">
+								<Panel class="value">
+									<Label id="GoldFromMeleeCreeps" text="0"/>
+								</Panel>
+								<Panel class="stat_title">
+									<Label text="#CreepStats_Gold"/>
+								</Panel>
+							</Panel>
+						</Panel>
+					</Panel>
+					<Panel class="ranged">
+						<Label text="Ranged"/>
+						<Panel class="rangedstats">
+							<Panel class="statrow">
+								<Panel class="value">
+									<Label id="RangedCreepsKilled" text="0"/>
+								</Panel>
+								<Panel class="stat_title">
+									<Label text="#CreepStats_Kills"/>
+								</Panel>
+							</Panel>
+							<Panel class="statrow">
+								<Panel class="value">
+									<Label id="RangedCreepsDenied" text="0"/>
+								</Panel>
+								<Panel class="stat_title">
+									<Label text="#CreepStats_Denies"/>
+								</Panel>
+							</Panel>
+							<Panel class="statrow">
+								<Panel class="value">
+									<Label id="GoldFromRangedCreeps" text="0"/>
+								</Panel>
+								<Panel class="stat_title">
+									<Label text="#CreepStats_Gold"/>
+								</Panel>
+							</Panel>
+						</Panel>
+					</Panel>
+				</Panel>
+
+				<Panel class="RoundEndMiscStat">
+					<Panel class="stat_title">
+						<Label text="#Round_End_Tier_Achieved"/>
+					</Panel>
+					<Panel class="value">
+						<Label id="TierAchieved" text="#Tier_None"/>
+					</Panel>
+				</Panel>
+
+			</Panel>
+
+			<Panel id="RoundEndButtonsPanel" >
+				<Button class="PopupPanelButton" onactivate="PlayAgainButtonPressed()">
+					<Label text="#Round_End_Panel_Play_Again"/>
+				</Button>
+
+				<Button class="PopupPanelButton" onactivate="RoundEndNewHeroButtonPressed()">
+					<Label text="#Round_End_Panel_New_Hero"/>
+				</Button>
+
+				<Button class="PopupPanelButton" onactivate="$.DispatchEvent('FireCustomGameEvent_Str', 'LeaveButtonPressed', '' );">
+					<Label text="#Round_End_Panel_Quit"/>
+				</Button>
+			</Panel>
+
+		</Panel>
+
+	</Panel>
+</root>

@@ -14,7 +14,7 @@ var UpdateBadgeTier = function ( nBadgeTier )
 
 var SetCurrentBadgeTier = function()
 {
-	// deprecated: GetEventBadgeTier( EVENT_ID_INTERNATIONAL_2020 )
+	                                                               
 	var nBadgeTier = 0;
 	UpdateBadgeTier( nBadgeTier );
 }
@@ -26,7 +26,7 @@ var UpdateScene = function( bCompendium )
 
 $.Schedule( 0.0, function()
 {
-	//$.RegisterForUnhandledEvent( 'DOTAEventBadgeTierUpdated', function( eEvent, nBadgeTier ) { UpdateBadgeTier( nBadgeTier ); } );
+	                                                                                                                                
 	$.RegisterForUnhandledEvent( 'DOTASeasonPassPageChanged', function( bCompendium ) { UpdateScene( bCompendium ); } );
 	$.RegisterEventHandler( 'DOTAScenePanelSceneLoaded', $( '#flag1' ), function() { SetCurrentBadgeTier(); } );
 });

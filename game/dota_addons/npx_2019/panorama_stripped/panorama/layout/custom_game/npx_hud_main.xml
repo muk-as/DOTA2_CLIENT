@@ -1,0 +1,173 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/dotastyles.css" />
+		<include src="file://{resources}/styles/hudstyles.css"/>
+		<include src="file://{resources}/styles/custom_game/npx_hud_main.css"/>
+		<include src="file://{resources}/styles/custom_game/npx_dialog.css"/>
+	</styles>
+
+	<scripts>
+		<include src="file://{resources}/scripts/custom_game/npx_hud_main.js" />
+	</scripts>
+
+	<snippets>
+		<snippet name="Task">
+			<Panel class="Task" hittest="false" hittestchildren="false">
+				<Panel class="TaskContents">
+					<Panel class="TaskImage"/>
+					<Panel class="TaskDetails">
+						<Label text="{s:task_name}" class="TaskText"/>
+						<Label text="({s:task_progress})" class="TaskProgressText"/>
+					</Panel>
+				</Panel>
+				
+				<Panel id="SubTasks"/>
+			</Panel>
+		</snippet>
+
+		<snippet name="Task2">
+			<Panel class="ObjectiveRoot">
+				<Panel id="TitleContainer" class="Objective">
+			    	<Panel id="TitleImage" class="Objective"/>
+			     	<Label text="{s:task_name}" id="TitleText" class="Objective"/>
+			     	<Label text="({s:task_progress}/{s:task_goal})" id="TitleTextProgress" class="Objective"/>
+			    </Panel>
+			    <Panel id="BodyContainer">
+			    	
+			        <Panel id="Body">
+			        	<Label text="{s:task_description}" id="BodyText"/>
+			       	</Panel>
+		     	
+			    </Panel>
+
+			 </Panel>
+		</snippet>
+	</snippets>
+
+	<Panel hittest="false" class="CustomHudRoot">
+
+		<Panel id="TutorialUIHint" hittest="false">
+			<Panel id="TutorialUIHintContentsContainer" hittest="false">
+				<Panel class="TipWizard" hittest="false"/>
+				<Label id="TutorialUIHintText" text="{s:ui_hint_text}" hittest="false"/>
+			</Panel>
+			<Panel id="TutorialUIHintHighlight1" class="TutorialUIHintHighlight" hittest="false"/>
+			<Panel id="TutorialUIHintHighlight2" class="TutorialUIHintHighlight" hittest="false"/>
+			<Panel id="TutorialUIHintHighlight3" class="TutorialUIHintHighlight" hittest="false"/>
+		</Panel>
+
+        <Panel id="BlackOverlay" hittest="false"/>
+
+		<Label id="HiddenLabel" hittest="false"/>
+		<Panel id="ObjectivesPanel" hittest="false">
+
+			<Panel id="ObjectiveContainer" hittest="false" hittestchildren="false">
+				<Label id="ObjectiveHeader" text="#DOTANPX_MainObjective"/>
+				<Label id="ObjectiveName" text="{s:main_objective}" />
+			</Panel>
+
+			<Panel id="TaskContainer" hittest="false">
+				<Label id="TaskHeader" text="#DOTANPX_Tasks" hittest="false"/>
+				<Panel id="TaskList" hittest="false"/>
+			</Panel>
+
+		</Panel>
+		
+		<Panel id="ScenarioDebugControls" hittest="false">
+			<Label id="ScenarioName" text="{s:scenario_name}"  hittest="false" />
+			<TextButton id="ScenarioRestartButton" class="PopupButton" onactivate="OnRestartButtonClicked()" text="#DOTANPX_Restart" />
+		</Panel>
+
+		<Panel id="QuitButtonContainer">
+			<Panel id="QuitButtonClickArea" onactivate="OnQuitButtonClicked()">
+				<Panel id="QuitButton" />
+				<Label id="QuitText" text="#DOTANPX_Quit"/>
+			</Panel>
+		</Panel>
+
+		<Panel id="HintPanel" hittest="false">
+			<Label id="HintTitle" text="#DotaNPX_Hint" hittest="false"/>
+			<Label id="HintText" text="{s:hint_text}" html="true" hittest="false"/>
+		</Panel>
+
+		<Panel id="WorldHintPanel" hittest="false">
+			<Label id="WorldHintText" text="{s:world_hint_text}" html="true" hittest="false"/>
+		</Panel>
+
+		<Panel id="DialogPanel" hittest="false">
+
+			<Panel id="DialogPanelBackground" hittest="false"/>
+			<DOTAScenePanel id="DialogPortrait" unit="npc_dota_hero_pudge" environment="default" particleonly="false" hittest="false"/>
+			<Panel id="GlassBallOverlay" hittest="false"/>
+			<Label id="DialogTitle" class="DialogPanelTitle TitleFont" text="{s:dialog_npc_name}" hittest="false"/>
+
+			<Panel id="DialogPanelContent" hittest="false">
+				<Panel class="SpeechBubble" hittest="false">
+					<Panel id="SpeechBubbleContainer" hittest="false">
+						<Panel class="SpeechBubbleBackgroundOutline" hittest="false"/>
+						<Panel class="SpeechBubbleCalloutSquash" hittest="false">
+							<Panel class="SpeechBubbleCallout" hittest="false"/>
+						</Panel>
+						<Panel class="SpeechBubbleBackground" hittest="false"/>
+					</Panel>
+					<Label id="DialogLabelSizer" html="true" class="DialogPanelText" text="{s:dialog_text_sizer}" hittest="false" />
+					<Label id="DialogLabel" html="true" class="DialogPanelText" text="{s:dialog_text}" hittest="false" />
+
+				</Panel>
+				<Panel class="DialogButtonContainer LeftRightFlow">
+					<Button id="ContinueDialogButton" class="ButtonBevel CloseButton" hittest="true"/>
+					<Button id="CloseDialogButton" class="ButtonBevel CloseButton" hittest="true"/>
+				</Panel>
+			</Panel>
+		</Panel>
+
+		<Panel id="FloatingDialogPanel" hittest="false">
+			<Panel id="FloatingBackground" hittest="false"/>
+			<Panel id="FloatingDialogPanelContent" hittest="false">
+				<Panel class="SpeechBubble" hittest="false">
+					<Panel id="SpeechBubbleContainer" hittest="false">
+						<Panel class="SpeechBubbleBackgroundOutline" hittest="false"/>
+						<Panel class="SpeechBubbleCalloutSquash" hittest="false">
+							<Panel class="SpeechBubbleCallout" hittest="false"/>
+						</Panel>
+						<Panel class="SpeechBubbleBackground" hittest="false"/>
+					</Panel>
+					<Label id="FloatingDialogLabelSizer" html="true" class="DialogPanelText" text="{s:dialog_text_sizer}" hittest="false" />
+					<Label id="FloatingDialogLabel" html="true" class="DialogPanelText" text="{s:dialog_text}" hittest="false" />
+				</Panel>
+
+			</Panel>
+		</Panel>
+
+		<Panel id="ScenarioCompletePanel" class="ScenarioFinishedPanel">
+			<Panel class="ScenarioFinishedContents">
+				<Label class="ScenarioFinishedTitle TitleFont" text="#DOTANPX_ScenarioComplete" />
+				<Panel class="FillHeight" />
+				<Panel class="ScenarioFinishedButtons">
+					<TextButton class="PopupButton Green" text="#DOTANPX_Ok" onactivate="OnWinButtonClicked()" />
+				</Panel>
+			</Panel>
+		</Panel>
+
+		<Panel id="ScenarioFailedPanel" class="ScenarioFinishedPanel">
+			<Panel class="ScenarioFinishedContents">
+				<Label class="ScenarioFinishedTitle TitleFont" text="#DOTANPX_ScenarioFailed" />
+				<Label class="ScenarioFinishedFailureReason" text="{s:failure_reason}" />
+				<Panel class="FillHeight" />
+				<Panel class="ScenarioFinishedButtons">
+					<TextButton class="PopupButton" text="#DOTANPX_Retry" onactivate="OnRestartButtonClicked()" />
+					<TextButton class="PopupButton Red" text="#DOTANPX_Exit" onactivate="OnExitButtonClicked()" />
+				</Panel>
+			</Panel>
+
+		</Panel>
+
+		<Panel id="TimerPanel">
+			<Label id="TimerHeader" text="{s:header}"/>
+			<Label id="TimerCountdown" text="{s:time}"/>
+		</Panel>
+
+
+	</Panel>
+
+</root>

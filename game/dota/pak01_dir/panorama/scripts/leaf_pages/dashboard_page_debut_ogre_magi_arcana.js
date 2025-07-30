@@ -11,13 +11,13 @@ var InfoDebugAction = function (InfoDebug) {
 
 var g_Toggle = false;
 var CameraToggle = function () {
-    //var flIntensity = g_Toggle ? 5.0 : 0.5;
-    //g_Toggle = !g_Toggle;
-    //$( '#Model' ).FireEntityInput( 'light_hero', 'Intensity', flIntensity );
+                                             
+                           
+                                                                              
 
     var strFunction = g_Toggle ? "om_arc_debut_camera_style_1" : "om_arc_debut_camera_style_2";
     g_Toggle = !g_Toggle;
-//    $('#Model').FireEntityInput('light_hero', strFunction, '');
+                                                                 
     $('#ModelBackground').FireEntityInput('debut_camera', 'SetAnimation', strFunction);
 }
 
@@ -27,8 +27,8 @@ var RunPageAnimation = function ()
 
 	$( '#ModelContainer' ).RemoveAndDeleteChildren();
 	$( '#ModelContainer' ).BLoadLayoutSnippet( 'ModelSnippet' );
-	// disabling camera rotation for locked camera
-	//$( '#ModelBackground' ).SetRotateParams( 2, 2, 2, 2 );
+	                                              
+	                                                        
 
 	$( '#MainContainer' ).RemoveClass( 'Initialize' );
 	$( '#ModelBackground' ).RemoveClass( 'Initialize' );
@@ -38,7 +38,7 @@ var RunPageAnimation = function ()
 	$( '#InformationBodyBackground' ).RemoveClass( 'Initialize' );
 	$( '#ItemLore' ).RemoveClass( 'Initialize' );
 
-	// Disabling Fullscreen allows Menu UI to display
+	                                                 
 	$.DispatchEvent( 'DOTASetCurrentDashboardPageFullscreen', true );
 
 	seq.actions.push( new WaitForClassAction( $( '#ModelBackground' ), 'SceneLoaded' ) );
@@ -56,7 +56,7 @@ var RunPageAnimation = function ()
 	seq.actions.push( new AddClassAction( $( '#InformationBodyBackground' ), 'Initialize' ) );
 	seq.actions.push( new AddClassAction( $( '#ItemLore' ), 'Initialize' ) );
 
-    // enabling camera movement
+                               
     seq.actions.push(new LerpRotateAction($('#ModelBackground'), 0, 0, 0, 0, -2, 2, -2, 2, 5.0));
     
 	seq.actions.push( new WaitAction( 0 ) );
